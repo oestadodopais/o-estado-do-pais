@@ -6,7 +6,7 @@
 id: "utao-ppp-contingencias-natureza-2026"
 
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
-value: "não encargos já reconhecidos"
+value: "São pretensões dos parceiros privados, e não encargos já reconhecidos; a sua concretização, total ou parcial, oneraria o saldo orçamental de anos futuros."
 unit: "afirmação"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
@@ -25,7 +25,7 @@ afirmacao: true
 reference_date: "2026-10-19"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "não encargos já reconhecidos"
+excerpt: "São pretensões dos parceiros privados, e não encargos já reconhecidos; a sua concretização, total ou parcial, oneraria o saldo orçamental de anos futuros."
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null
@@ -43,4 +43,10 @@ study: "oe-2027"
 note: "[note do motor] §94. A UTAO distingue as pretensões de reposição do equilíbrio financeiro, compensação e indemnização dos parceiros privados de encargos reconhecidos. A eventual materialização, total ou parcial, afetaria orçamentos futuros. Não somar as contingências da Tabela 21 aos encargos anuais do quadro 4.25 como se fossem da mesma natureza. Relatório publicado em 19 de outubro de 2026. · Cruzado de ResearchHub content/24 Orcamento 2027 Analise · utao-ppp-contingencias-natureza-2026."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
-corrections: []
+corrections:
+  - date: "2026-10-20"
+    kind: "correcao"
+    old_value: "não encargos já reconhecidos"
+    new_value: "São pretensões dos parceiros privados, e não encargos já reconhecidos; a sua concretização, total ou parcial, oneraria o saldo orçamental de anos futuros."
+    reason: "O fragmento foi substituído pela frase inteira do parecer da UTAO, conservando o sentido e a atribuição."
+    reason_en: "The fragment was replaced by the full sentence from the UTAO report, preserving its meaning and attribution."

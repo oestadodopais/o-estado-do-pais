@@ -201,6 +201,12 @@ checks = dict(
 sealed = {r['id']: r for r in book['claims']}
 for id in ['der-saude-bens-servicos-reducao-abs', 'der-saude-investimento-reducao-abs', 'der-saude-total-reducao-abs']:
     old(id)
+# A correção acrescenta provas e componentes; nenhuma linha atravessada fica fora da conferência.
+seen={r['id'] for r in rows}
+for id in A.load(A.ROOT/'publisher/recortes/v2d/provas.json')['rows']:
+    if id not in seen:
+        old(id)
+        seen.add(id)
 for entry in rows:
     row = sealed[entry['id']]
     if entry['value'] is not None and not row.get('value_not_numeric'):

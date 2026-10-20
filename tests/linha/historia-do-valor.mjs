@@ -2,6 +2,7 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { loadClaims, validateLedger } from '../../src/lib/ledger.mjs';
+import {conferirHistoriaDoValor,entradasDoValor,assinaturaDoValor} from '../../src/lib/historia-do-valor.mjs';
 const linhas = loadClaims({includeWithdrawn:true});
 const id = 'divida-das-familias-2025-ue';
 const original = linhas.get(id);
@@ -21,6 +22,18 @@ for (const [nome, muda, falha] of [
   } finally { linhas.set(id, original); }
 }
 assert.deepEqual(validateLedger().errors, []);
+const textual=linhas.get('utao-risco-execucao-sns-2027');
+const selo=entradasDoValor(textual).map(assinaturaDoValor);
+for(const [nome,muda,falha] of [
+ ['texto da afirmação editado',c=>{c.value+=' Palavra acrescentada.';},'não coincide com o excerto'],
+ ['correção textual retirada',c=>{c.corrections=[];},'retirada ou alterada'],
+ ['valor textual anterior inventado',c=>{c.corrections[0].old_value='Outra afirmação.';},'retirada ou alterada'],
+ ['afirmação textual vazia',c=>{c.corrections[0].new_value='';},'texto não vazio'],
+ ['linha numérica disfarçada de texto',c=>{c.unit='%';},'forma de número da casa'],
+]){
+ const c=structuredClone(textual),erros=[];muda(c);conferirHistoriaDoValor(c,selo,'ensaio',erros);
+ assert.ok(erros.some(e=>e.includes(falha)),nome);plantas.push({nome,falha,erros,mordeu:true});
+}
 const r = { controlos: 2, plantas };
 const i = process.argv.indexOf('--json');
 if (i >= 0) fs.writeFileSync(process.argv[i+1], JSON.stringify(r, null, 2)+'\n');

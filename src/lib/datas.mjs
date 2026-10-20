@@ -81,7 +81,7 @@ export function dataDaCasa(valor, lang = 'pt') {
 export function eCampoDeData(campo, valor) {
   if (campo === 'document.edition') return typeof valor === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(valor) && !Number.isNaN(Date.parse(valor)) && new Date(valor).toISOString().slice(0,10) === valor;
   if (typeof campo !== 'string') return false;
-  if (campo === 'access_date' || campo === 'reference_date' || campo === 'published_at') return true;
+  if (campo === 'access_date' || campo === 'reference_date' || campo === 'published_at' || campo === 'period') return true;
   if (campo === 'document.hosted.snapshot_date') return true;
   if (/^verifications\.\d+\.date$/.test(campo)) return true;
   return /^document\.computed_over\.files\.\d+\.snapshot_date$/.test(campo);

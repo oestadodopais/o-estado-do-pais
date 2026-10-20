@@ -9,6 +9,8 @@ import {loadClaims} from '../../src/lib/ledger.mjs';
 import {conferirDerivacoes, plantasDasDerivacoes} from './derivacoes.mjs';
 import {conferirPortasDoMetodo} from './metodo.mjs';
 import {conferirMarcasDoTitulo,plantasDosTitulos,tituloDeEnsaio} from './titulos.mjs';
+import {seloDoTituloDaDiscussao} from '../../scripts/porta-do-titulo-discussao.mjs';
+import {conferirRecibosCorrigidos} from './recibos.mjs';
 import {conferirAuditoriaDasExplicacoes, explicacaoPelaCelula, linhasDaExplicacao, textoSemSelos} from '../explicacoes/explicacao.mjs';
 // Lista independente do mandato: o título e estas seis partes, sem rótulos livres.
 const PARTES=[['como-foi-dito','Como foi dito','As it was said'],['fontes','O que as fontes dizem','What the sources say'],['comparacao','A comparação','The comparison'],['conclusao','A conclusão','The conclusion'],['recomendacao','A recomendação','The recommendation'],['opiniao','A opinião do lugar de direção',"The editorial seat's opinion"]];
@@ -72,6 +74,12 @@ export function conferirPagina(root,lang,linhas=loadClaims(),dist=process.env.OE
   const ps=a.querySelectorAll('[data-discussao-paragrafo]');
   if(ps.length!==esperado.paragrafos.length)erros.push('V2B texto: parágrafo em falta ou a mais');
   for(const [i,p] of esperado.paragrafos.entries())if(ps[i]?.getAttribute('data-discussao-paragrafo')!==p.caminho||textoSemSelos(ps[i]??parse('<p></p>'))!==p.texto)erros.push('V2B texto: palavras diferentes do mandato ou campo alterado');
+  for(const literal of a.querySelectorAll('a[data-discussao-literal="excerpt"]')){
+   const id=literal.querySelector('[data-linha-claim]')?.getAttribute('data-linha-claim');
+   const irmaos=literal.parentNode.childNodes,i=irmaos.indexOf(literal);
+   const fecho=irmaos[i+1],selo=irmaos[i+2];
+   if(fecho?.text!=='»'||!selo?.classList?.contains('src-chip')||selo?.getAttribute('href')!==recibo(id,lang))erros.push('V2D citação: selo tem de seguir a aspa de fecho');
+  }
   for(const id of e.afirmacoes){
    for(const campo of ['excerpt','attributed_to']){
     const nodes=a.querySelectorAll(`[data-linha-claim="${id}"][data-linha-campo="${campo}"]`);
@@ -105,7 +113,7 @@ export function conferirPagina(root,lang,linhas=loadClaims(),dist=process.env.OE
   }
   for(const n of a.querySelectorAll('[data-claim]')){
    const id=n.getAttribute('data-claim');
-   if(!n.parentNode?.querySelectorAll('a').some(x=>x.getAttribute('href')===recibo(id,lang)))erros.push('V2B toque: número sem selo adjacente');
+   if(!n.parentNode?.querySelectorAll('a').some(x=>x.getAttribute('href')===recibo(id,lang))&&!seloDoTituloDaDiscussao(n,id,lang,linhas))erros.push('V2B toque: número sem selo adjacente');
   }
  }
  return erros;
@@ -168,6 +176,7 @@ export function plantas(html,lang){
  const out=[];const run=(nome,mut,re)=>{for(const e of ITENS){const root=parse(html);mut(root.querySelector(`[data-discussao="${e.slug}"]`));const erros=conferirPagina(root,lang);out.push({nome,item:e.slug,lang,mordeu:erros.some(x=>re.test(x)),queixa:erros.find(x=>re.test(x))??null});}};
  run('citação sem token',r=>r.querySelector('[data-linha-campo="excerpt"]').removeAttribute('data-linha-campo'),/citação/);
  run('citação alterada',r=>r.querySelector('[data-linha-campo="excerpt"]').set_content('Uma citação adulterada.'),/literal/);
+ run('selo dentro das aspas',r=>{const a=r.querySelector('a[data-discussao-literal="excerpt"]'),nos=a.parentNode.childNodes,i=nos.indexOf(a),fecho=nos[i+1],selo=nos[i+2],html=selo.toString();selo.remove();fecho.remove();a.insertAdjacentHTML('afterend',html+'»');},/V2D citação/);
  run('adjetivo junto do nome',r=>{const n=r.querySelector('[data-linha-campo="attributed_to"]');n.set_content('irresponsável '+n.innerHTML);},/pessoas/);
  run('opinião sem rótulo',r=>r.querySelector('[data-discussao-parte="opiniao"] h3').remove(),/opinião/);
  run('item sem uma parte',r=>r.querySelector('[data-discussao-parte="recomendacao"]').remove(),/partes/);
@@ -178,7 +187,8 @@ export function plantas(html,lang){
 }
 export function conferirTudo(dist=path.join(raiz,'dist')){
  const metodo=conferirPortasDoMetodo(dist);
- const erros=[...conferirDeclaracoes(),...metodo.erros],provas=[...plantasDasDerivacoes(loadClaims()),...plantasDosTitulos(loadClaims()),...metodo.plantas],integracoes=[];
+ const recibosCorrigidos=conferirRecibosCorrigidos(dist,loadClaims());
+ const erros=[...conferirDeclaracoes(),...metodo.erros,...recibosCorrigidos.erros],provas=[...plantasDasDerivacoes(loadClaims()),...plantasDosTitulos(loadClaims()),...metodo.plantas,...recibosCorrigidos.plantas],integracoes=[];
  for(const lang of ['pt','en']){
   const file=path.join(dist,lang==='pt'?'o-que-se-discute/index.html':'en/under-discussion/index.html');
   if(!fs.existsSync(file)){erros.push('V2B página: página ausente');continue;}

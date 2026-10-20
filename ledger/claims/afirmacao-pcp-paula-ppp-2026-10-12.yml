@@ -36,6 +36,7 @@ check: null
 # A quem o valor é creditado. Lista de entidades, ou campo nenhum.
 attributed_to:
   - "Paula Santos"
+  - "PCP"
 
 study: "oe-2027"
 # Nota interna. NÃO é publicada: ver DECISIONS §1.24.

@@ -25,7 +25,7 @@ afirmacao: true
 reference_date: "2026-10-19"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "a despesa aumentaria 3,0%"
+excerpt: "Todavia, excluído o efeito do PRR, a despesa aumentaria 3,0%."
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null

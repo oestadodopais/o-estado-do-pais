@@ -1,48 +1,38 @@
-"""Relatório V2-d a partir das medições e dos resultados inspecionados."""
+"""Relatório V2-d-b a partir das linhas, frases, pesquisa e recibos inspecionados."""
 import json
 from pathlib import Path
-
-ROOT = Path(__file__).resolve().parent
-def read(name):
-    return json.loads((ROOT / name).read_text())
-
-partida = read('partida.json')
-final = read('frases-e-portas.json')
-decisoes = read('decisoes.json')
-results = read('resultados.json')
-lines = ['# V2-d: análise da Saúde e das parcerias', '', '## Estado', '', results['estado'], '',
-    '## Medida de partida e selagem', '',
-    f"Conferência de {len(partida['rows'])} linhas, com {len(partida['divergencias_numericas'])} divergências numéricas. O guião lê o livro regenerado e compara os valores com os corpos e as componentes. `partida.json` conserva as linhas do PDF, os cabeçalhos, os seletores, as páginas, os recibos, as células e os valores brutos da folha da execução.", '',
-    'A despesa efetiva de 2027 coincide com e sem PRR: 17 803,1 milhões de euros. A soma dos encargos brutos é 1 152 + 312 + 254 = 1 718. Nos seis pares de 2020 a 2025, a execução supera o orçamento inicial do mesmo ano. A quebra de perímetro entre anos não altera esta comparação interna.', '',
-    'Foram seladas 56 linhas novas no motor: 36 documentais e 20 derivadas. As páginas dos riscos são 369 e 370 do PDF, 353 e 354 impressas. A coluna selecionada fica ligada ao cabeçalho, ao ano e à fase; a planta troca a coluna e o valor esperado e é recusada.', '',
-    'O exportador comum atravessou 126 linhas e as provas de 142 linhas. Os corpos permanecem no motor; os excertos, os recibos, os resumos SHA-256 e as avaliações de direitos atravessam em `ledger/provas/v2d/provas.json`.', '',
-    '## Integração', '',
-    f"O inventário final contém {final['portas']['linhas_com_porta']} linhas com porta para os itens, das quais {final['portas']['linhas_novas_com_porta']} chegaram nesta travessia. As componentes das derivadas são acessíveis pelos respetivos recibos. Os seis pares anuais também integram a guarda da frase «todos os anos». Os títulos do topo e do menu vêm do mesmo resolvedor dos itens.", '',
-    '## Conferências e capturas', '',
-    '| Conferência | Código ou resultado |', '| --- | --- |']
-for name, value in results['conferencias'].items():
-    lines.append(f'| {name} | {value} |')
-lines += ['', results.get('capturas', 'Capturas ainda não executadas.'), '',
-    'Os registos extensos ficam fora do commit. Nenhum PNG é comitado. A corrida integral do sítio fica para o portão do GitHub na aterragem.', '',
-    '## Decisões', '',
-    'As decisões V2D-1 a V2D-6 ficaram documentadas na conferência do commit 3533f7a7. O §7 do mandato aceitou as correções da maior rubrica, da comparação das parcerias com 2025 e da designação «fora do PRR», e autorizou corrigir as restantes contradições. As redações efetivamente aplicadas e as decisões de integração seguem abaixo.', '']
+ROOT=Path(__file__).resolve().parent
+read=lambda name:json.loads((ROOT/name).read_text())
+partida=read('partida.json');final=read('frases-e-portas.json');decisoes=read('decisoes.json')
+results=read('resultados-v2db.json');pesquisa=read('pesquisa-receitas-proprias-v2db.json')
+lines=['# V2-d: análise da Saúde e das parcerias','','## A correção da leitura','',results['estado'],'',
+'Os achados 1 a 5 da leitura a frio eram plantas nas cópias do pacote. Esta passagem corrige os cinco Major reais e os problemas de leitura delimitados no pedido V2-d-b. A execução anterior e os seus resultados permanecem no histórico Git e em `resultados.json`.','',
+f"A conferência abrange {len(partida['rows'])} linhas, com {len(partida['divergencias_numericas'])} divergências numéricas. A travessia contém {results['linhas_exportadas']} linhas e {results['provas']} provas; {final['portas']['linhas_com_porta']} linhas têm porta nos itens, das quais {final['portas']['linhas_novas_com_porta']} pertencem à travessia V2-d. As restantes componentes são acessíveis pelos recibos das derivadas.",'',
+'Os riscos referem o primeiro trimestre de 2026, com data de referência 31.03.2026. A reserva passa a ter a frase inteira do relatório, assim como as três citações da UTAO. As duas citações cujo valor textual mudou conservam o fragmento anterior no histórico de correções. As quatro percentagens novas têm a conta completa e arredondamento a uma casa decimal. As séries identificam os documentos pelas capas, em vez de rótulos editoriais.','',
+'Os selos ficam depois das aspas e fora do título. As células conferem os valores, as citações, as atribuições, os recibos trimestrais, os títulos e os destinos dos selos. As famílias, as áreas, a auditoria das palavras e o inventário acompanham a nova redação.','',
+'## Conferências e capturas','','| Conferência | Resultado |','| --- | --- |']
+for k,v in results['conferencias'].items():lines.append(f'| {k} | {v} |')
+lines+=['',results['capturas'],'','Os códigos dos portões são lidos dos ficheiros da corrida e conservados em `portoes-v2db.json`. A corrida integral do sítio fica para o GitHub. Os PNG e os registos extensos ficam fora do commit. Não foi feito push.','',
+'## Pesquisa das receitas próprias','',
+'Comando: `'+pesquisa['command']+'`. Pesquisa no texto integral por `receitas?\\s+próprias?`, sem distinção de maiúsculas, incluindo singular e plural e quebras de linha.','',
+f"Foram pesquisadas {pesquisa['pages']} páginas e registadas {len(pesquisa['occurrences'])} ocorrências. {pesquisa['conclusion']}",'',
+'A afirmação de ausência fica delimitada ao relatório alojado. A pesquisa e os contextos completos estão em `pesquisa-receitas-proprias-v2db.json`. As páginas abaixo são as do PDF.','','| Página PDF | Contexto da ocorrência |','| --- | --- |']
+for o in pesquisa['occurrences']:lines.append(f"| {o['page']} | {o['context'].replace('|',' / ')} |")
+lines+=['','## Decisões novas','']
 for d in decisoes:
-    lines += [f"### {d['id']}: {d['tema']}", '', f"Antes: {d['antes']}", '', f"Depois: {d['depois']}", '', d['razao'], '']
-lines += ['## Valores lidos do livro selado', '', '| Identificador | Valor | Período |', '| --- | --- | --- |']
-for row in partida['rows']:
-    value = str(row['value']).replace('|', '\\|').replace('\n', ' ')
-    lines.append(f"| {row['id']} | {value} | {row['period']} |")
-for lang in ['pt', 'en']:
-    lines += ['', f'## Frases renderizadas: {lang.upper()}', '']
-    for item in final['edicoes'][lang]:
-        lines += [f"### {item['titulo']}", '']
-        for section in item['seccoes']:
-            lines += [f"**{section['titulo']}**", '']
-            for paragraph in section['paragrafos']:
-                lines += [paragraph, '']
-lines += ['## Reprodução', '',
-    'As declarações dos recibos são reproduzidas por `scripts/compor-familias-v2d.mjs`; a auditoria das palavras por `auditar-palavras.mjs`, nesta pasta. O guião `inventariar.mjs` recebe a medição da voz em JSON e um destino para o inventário recolhido. Os códigos finais e as cabeças conferidas estão em `portoes.json`.', '',
-    'Na raiz do sítio, passar `<motor>` ao guião `conferir-partida.py`, correr `medir-final.mjs` e depois `gerar-relatorio.py`, todos nesta pasta. No motor, `python3 -m publisher.v2d_export` prepara o manifesto e as provas; `python3 -m publisher.export_site_rows --manifest publisher/manifest.v2d.json --site <worktree> --write` atravessa pelo exportador comum.', '',
-    'Os portões correm por `sh scripts/leituras/portoes-pelo-escrivao.sh <temporario> v2d`; as capturas usam `pedido-capturas.json` pelo guião do escrivão. `check:cruzamento --with-origin` recebe o motor em `RESEARCHHUB_DIR`. O motor inteiro corre pelo pre-commit do escrivão.', '']
-(ROOT / 'LEIA-ME.md').write_text('\n'.join(lines))
-print('Relatório regenerado a partir das medições.')
+ if int(d['id'].split('-')[1])<27:continue
+ lines += [f"### {d['id']}: {d['tema']}",'',f"Antes: {d['antes']}",'',f"Depois: {d['depois']}",'',d['razao'],'']
+lines+=['As decisões V2D-7 a V2D-26 permanecem em `decisoes.json`; V2D-1 a V2D-6 estão documentadas na conferência do commit 3533f7a7.','','## Frases tal como renderizam','']
+for lang in ['pt','en']:
+ lines += [f'### Edição {lang.upper()}','']
+ for item in final['edicoes'][lang]:
+  lines += [f"**{item['titulo']}**",'']
+  for sec in item['seccoes']:
+   lines += [f"**{sec['titulo']}**",'']
+   for par in sec['paragrafos']:lines += [par,'']
+lines+=['## Reprodução','',
+'No motor, `python3 -m publisher.oe2027_analise_report --assemble --report`, `python3 -m publisher.v2d_export` e `python3 -m publisher.export_site_rows --manifest publisher/manifest.v2d.json --site <worktree> --write`. O pre-commit do escrivão executa `core.gate`.','',
+'No sítio, o compositor `scripts/compor-familias-v2d.mjs` e, nesta pasta, `conferir-partida.py <motor>`, `auditar-palavras.mjs`, `medir-final.mjs` e `gerar-relatorio.py` reproduzem as declarações e o relatório. `check:cruzamento --with-origin` recebe o motor em `RESEARCHHUB_DIR`.','',
+'Portões: `sh scripts/leituras/portoes-pelo-escrivao.sh <temporario> v2d`. Capturas: `sh scripts/leituras/capturar-pelo-escrivao.sh <pedido.json> <temporario>`, depois da construção, nas duas edições e cinco larguras.','']
+(ROOT/'LEIA-ME.md').write_text('\n'.join(lines))
+print('Relatório da correção regenerado a partir das medições.')

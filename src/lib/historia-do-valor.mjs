@@ -20,6 +20,10 @@ export function numeroDaCasa(valor) {
  * @param {string} onde @param {string[]} erros */
 export function conferirHistoriaDoValor(linha, seladas, onde, erros) {
   const entradas = entradasDoValor(linha);
+  // Uma afirmação textual tem história literal, sem passar pelo normalizador numérico.
+  const textual = linha.afirmacao === true && linha.unit === 'afirmação';
+  const forma = textual ? ((/** @type {unknown} */ v) => typeof v === 'string' && v.trim() ? v : null) : numeroDaCasa;
+  if (textual && linha.value !== linha.excerpt) erros.push(`${onde} história do valor: a afirmação textual não coincide com o excerto.`);
   if (seladas && JSON.stringify(entradas.slice(0, seladas.length).map(assinaturaDoValor)) !== JSON.stringify(seladas)) {
     erros.push(`${onde} história do valor: uma entrada selada foi retirada ou alterada.`);
   }
@@ -31,15 +35,15 @@ export function conferirHistoriaDoValor(linha, seladas, onde, erros) {
   for (const c of entradas) {
     if (String(c.date) < dia) erros.push(`${onde} história do valor: as entradas não estão por ordem cronológica.`);
     dia = String(c.date);
-    if (numeroDaCasa(c.old_value) === null || numeroDaCasa(c.new_value) === null) {
-      erros.push(`${onde} história do valor: os valores escrevem-se na forma de número da casa.`);
+    if (forma(c.old_value) === null || forma(c.new_value) === null) {
+      erros.push(`${onde} história do valor: ${textual ? 'as afirmações têm de conservar texto não vazio' : 'os valores escrevem-se na forma de número da casa'}.`);
     }
-    if (numeroDaCasa(c.old_value) !== numeroDaCasa(anterior)) {
+    if (forma(c.old_value) !== forma(anterior)) {
       erros.push(`${onde} história do valor: "old_value" é ${c.old_value}, mas antes vigorava ${anterior}.`);
     }
     anterior = c.new_value;
   }
-  if (entradas.length && (numeroDaCasa(linha.value) === null || numeroDaCasa(linha.value) !== numeroDaCasa(anterior))) {
+  if (entradas.length && (forma(linha.value) === null || forma(linha.value) !== forma(anterior))) {
     erros.push(`${onde} história do valor: "value" é ${linha.value}, mas o último "new_value" é ${anterior}.`);
   }
 }

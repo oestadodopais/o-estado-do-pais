@@ -11,19 +11,23 @@ const regra=(id,componentes,conta,casas=1)=>({id,componentes,conta,casas});
 export const DERIVACOES=[
  ...['pessoal','bens-servicos','investimento'].map(r=>regra(`der-saude-${r}-variacao-abs`,[s+r+'-2027',s+r+'-2026'],diferenca)),
  regra('der-saude-variacao-total-abs',[total(2027),total(2026)],diferenca),
+ regra('der-saude-reforco-total-2026',[total(2026),'saude-total-2026-orcamento-oe2026'],diferenca),
  ...['bens-servicos','investimento'].map(r=>regra(`der-saude-${r}-reducao-abs`,[s+r+'-2026',s+r+'-2027'],diferenca)),
  regra('der-saude-total-reducao-abs',[total(2026),total(2027)],diferenca),
  regra('der-saude-receitas-proprias-variacao-pct',[s+'fonte-receitas-proprias-2027',s+'fonte-receitas-proprias-2026'],percentagem),
  regra('der-saude-2027-vs-execucao-2025-pct',[total(2027),'saude-total-2025-execucao-cge2025'],percentagem),
  regra('der-ppp-brutos-todos-2027',[estrada+'brutos-2027','ppp-oe2027-ferroviario-2027','ppp-oe2027-saude-2027'],(...v)=>v.reduce((a,b)=>a+b,0),0),
+ regra('der-ppp-quota-rodoviario',[estrada+'liquidos-2027','oe-2027-ppp-total-encargos-liquidos-2027'],(a,b)=>a/b*100,2),
  regra('der-ppp-rodoviario-2027-vs-2021-pct',[estrada+'liquidos-2027','ppp-oe2022-liquidos-2021'],percentagem),
  ...['brutos','liquidos'].map(r=>regra(`der-ppp-pcp-vs-${r}`,['afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09',estrada+r+'-2027'],diferenca,0)),
  regra('der-utao-saude-reforco-2026',['utao-saude-efetiva-2026-estimativa','utao-saude-efetiva-2026-orcamento'],diferenca,0),
- ...['saude','educacao','trabalho-solidariedade-e-seguranca-social','infraestruturas-e-habitacao','justica','seguranca-interna'].map(r=>regra(`der-${r}-variacao-sem-prr-pct`,r==='saude'?[semPrr(2027),semPrr(2026)]:[`oe-2027-${r}-sem-prr-2027`,`oe-2027-${r}-sem-prr-2026`],percentagem)),
+ ...['saude','educacao','trabalho-solidariedade-e-seguranca-social','infraestruturas-e-habitacao','justica','seguranca-interna','financas','economia','coesao-territorial'].map(r=>regra(`der-${r}-variacao-sem-prr-pct`,r==='saude'?[semPrr(2027),semPrr(2026)]:[`oe-2027-${r}-sem-prr-2027`,`oe-2027-${r}-sem-prr-2026`],percentagem)),
+ ...['financas','economia','infraestruturas-e-habitacao','ambiente-e-energia'].map(r=>regra(`der-${r}-prr-2026`,[`oe-2027-${r}-efetiva-2026`,`oe-2027-${r}-sem-prr-2026`],diferenca)),
  regra('der-saude-prr-2026',[efetiva(2026),semPrr(2026)],diferenca),
  regra('der-saude-variacao-sem-prr',[semPrr(2027),semPrr(2026)],diferenca),
  regra('der-saude-variacao-efetiva',[efetiva(2027),efetiva(2026)],diferenca),
  regra('der-saude-razao-compensacao-prr',['der-saude-variacao-sem-prr','der-saude-prr-2026'],(a,b)=>a/b,4),
+ regra('der-saude-razao-compensacao-prr-pct',['der-saude-variacao-sem-prr','der-saude-prr-2026'],(a,b)=>a/b*100),
 ];
 export function conferirDerivacoes(linhas){
  const erros=[];
@@ -35,7 +39,7 @@ export function conferirDerivacoes(linhas){
   if(JSON.stringify([...(linha.derived_from??[])].sort())!==JSON.stringify([...componentes].sort()))erros.push(`V2D derivação: ${id} declara componentes diferentes da conta`);
   if(!linha.derivation?.trim()||!linha.derivation_en?.trim())erros.push(`V2D derivação: ${id} não explica a conta nas duas edições`);
  }
- for(const id of ['utao-risco-execucao-sns-2027','utao-ppp-contingencias-natureza-2026']){
+ for(const id of ['utao-risco-execucao-sns-2027','utao-ppp-contingencias-natureza-2026','oe-2027-outras-despesas-correntes-reserva']){
   const l=linhas.get(id);
   if(!l||l.afirmacao!==true||l.unit!=='afirmação'||l.value!==l.excerpt)erros.push(`V2D afirmação textual: ${id} não preserva o excerto como valor`);
  }

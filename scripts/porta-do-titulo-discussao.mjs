@@ -6,6 +6,21 @@ import {ITENS,DISCUSSAO} from '../src/data/discussao.mjs';
 import {routePath} from '../src/lib/routes.mjs';
 const normal=x=>String(x??'').replace(/\s+/g,' ').trim();
 const destinos=new Map();
+/** O título fica inteiro; os selos seguem-no fora do h2, no mesmo cabeçalho. */
+export function seloDoTituloDaDiscussao(el,id,lang,linhas){
+ const titulo=el.closest('[data-discussao-titulo]'),cabeca=titulo?.parentNode;
+ const e=ITENS.find(x=>x.slug===titulo?.closest('[data-discussao]')?.getAttribute('data-discussao'));
+ if(!e||!cabeca?.hasAttribute('data-discussao-cabecalho')||cabeca.querySelectorAll('[data-discussao-titulo]').length!==1||titulo.querySelector('.src-chip'))return false;
+ const partes=e.titulo[lang],valores=partes.filter(x=>x?.claim),datas=partes.filter(x=>x?.periodo);
+ const esperado=partes.map(x=>typeof x==='string'?x:x.claim?linhas.get(x.claim)?.value+(x.sufixo??''):x.periodo?linhas.get(x.periodo)?.reference_date:'').join('');
+ if(normal(titulo.text)!==normal(esperado)||!valores.some(x=>x.claim===id))return false;
+ const marcas=titulo.querySelectorAll('[data-claim]'),anos=titulo.querySelectorAll('[data-de-linha]');
+ if(marcas.length!==valores.length||marcas.some((m,i)=>m.getAttribute('data-claim')!==valores[i].claim||normal(m.text)!==normal(linhas.get(valores[i].claim)?.value)))return false;
+ if(anos.length!==datas.length||anos.some((m,i)=>m.getAttribute('data-de-linha')!==datas[i].periodo||m.getAttribute('data-de-campo')!=='reference_date'||m.getAttribute('data-nonledger')!=='data-da-linha'||normal(m.text)!==String(linhas.get(datas[i].periodo)?.reference_date)))return false;
+ const faixa=cabeca.querySelector('[data-discussao-selos-do-titulo]'),selos=faixa?.querySelectorAll('a.src-chip')??[];
+ if(faixa?.parentNode!==cabeca||cabeca.childNodes.indexOf(faixa)<cabeca.childNodes.indexOf(titulo)||cabeca.querySelectorAll('.src-chip').length!==valores.length)return false;
+ return selos.length===valores.length&&selos.every((s,i)=>s.getAttribute('href')===routePath('linha',lang,{slug:valores[i].claim}));
+}
 export function portaDoTituloDaDiscussao(el,id,lang,linhas,{dist,destino}={}){
  const a=el.closest('a');
  if(!a||a.closest('svg')||a.querySelector('a'))return false;
@@ -39,6 +54,6 @@ export function portaDoTituloDaDiscussao(el,id,lang,linhas,{dist,destino}={}){
  if(normal(semSelos.text)!==normal(titulo))return false;
  const citacoes=destino.querySelectorAll('[data-claim]');
  if(citacoes.length!==valores.length)return false;
- return citacoes.every((m,i)=>m.getAttribute('data-claim')===valores[i].claim&&normal(m.text)===normal(linhas.get(valores[i].claim)?.value)&&m.parentNode?.querySelectorAll('a.src-chip').some(s=>s.getAttribute('href')===routePath('linha',lang,{slug:valores[i].claim})));
+ return citacoes.every((m,i)=>m.getAttribute('data-claim')===valores[i].claim&&normal(m.text)===normal(linhas.get(valores[i].claim)?.value)&&seloDoTituloDaDiscussao(m,valores[i].claim,lang,linhas));
 
 }

@@ -352,6 +352,7 @@ function paginasDe(dir) {
  * @returns {string|null}
  */
 function campoDaData(linha, campo) {
+  if (campo === 'period') return typeof linha.period === 'string' && /^\d{4}-T[1-4]$/.test(linha.period) ? linha.period : null;
   if (campo === 'reference_date') return typeof linha.reference_date === 'string' ? linha.reference_date : null;
   if (campo === 'access_date') return typeof linha.access_date === 'string' ? linha.access_date : null;
   if (campo === 'published_at') return typeof linha.published_at === 'string' ? linha.published_at : null;

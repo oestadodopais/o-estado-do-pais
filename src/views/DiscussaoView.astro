@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import FraseDaExplicacao from '../components/explicacoes/FraseDaExplicacao.astro';
+import Provenance from '../components/Provenance.astro';
 import { DISCUSSAO } from '../data/discussao.mjs';
 import { itensResolvidos, portaDoItem } from '../lib/discussao.mjs';
 import { routePath } from '../lib/routes.mjs';
@@ -17,7 +18,10 @@ const itens = itensResolvidos(lang);
     <p class="explicacao-p discussao-ambito">{DISCUSSAO.ambito[lang]}</p>
     <ul class="discussao-sumario">{itens.map(e => <li><a href={portaDoItem(e.slug,lang)} data-discussao-porta={e.slug}><FraseDaExplicacao partes={e.titulo} lang={lang} selos={false} /></a></li>)}</ul>
     {itens.map(e => <article class="discussao-item" id={e.slug} data-discussao={e.slug}>
-      <h2 class="discussao-titulo" id={`${e.slug}-titulo`} data-discussao-titulo><FraseDaExplicacao partes={e.titulo} lang={lang} /></h2>
+      <div class="discussao-cabecalho" data-discussao-cabecalho>
+        <h2 class="discussao-titulo" id={`${e.slug}-titulo`} data-discussao-titulo><FraseDaExplicacao partes={e.titulo} lang={lang} selos={false} /></h2>
+        <span class="discussao-selos-do-titulo" data-discussao-selos-do-titulo>{e.titulo.filter(p => typeof p !== 'string' && p.claim).map(p => <Provenance id={p.claim} lang={lang} />)}</span>
+      </div>
       {e.seccoes.map(sec => <section class="discussao-seccao" data-discussao-parte={sec.id} aria-labelledby={`${e.slug}-titulo ${e.slug}-${sec.id}`}>
         <h3 class="discussao-rotulo" id={`${e.slug}-${sec.id}`}>{sec.titulo}</h3>
         {sec.blocos.map(b => b.tipo === 'paragrafo' && <p class="explicacao-p" data-discussao-paragrafo={b.caminho}><FraseDaExplicacao partes={b.pedacos} lang={lang} recibos={true} /></p>)}

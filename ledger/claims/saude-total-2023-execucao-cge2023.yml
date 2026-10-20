@@ -17,7 +17,7 @@ name_source: "Quadro 4.49; DESPESA TOTAL; coluna 4: 2023 execucao; p. 331 PDF (3
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Ministério das Finanças"
 document:
-  title: "Saúde: despesa total consolidada executada"
+  title: "Conta Geral do Estado 2023 · Relatório de Análise Global e Conta da Segurança Social"
   edition: "2023"
   locator: "Quadro 4.49; DESPESA TOTAL; coluna 4: 2023 execucao; p. 331 PDF (311 impressa)"
   source_sha256: "63b1af4397fac148d6acc72007432938f8a95d5c295db197e013ef54fdeb1aa3"

@@ -20,7 +20,8 @@ document:
   kind: "ficheiro"
 source_url: "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true"
 access_date: "2026-10-13"
-reference_date: "2027"
+reference_date: "2026-03-31"
+period: "2026-T1"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
 excerpt: "pedidos ou matérias em negociação (conforme descritas no referido despacho), no montante de cerca de 1122,5 milhões de euros; • Atualização, com base na informação mais recentemente reportada pelo representante do parceiro público, do valor da ação arbitral intentada, em 2024, pela Concessionária Autoestradas do Douro Litoral, no âmbito do Contrato de Concessão Douro Litoral, com fundamento nos efeitos da pandemia de COVID-19 e das medidas restritivas da liberdade de circulação de pessoas e de iniciativa económica privada."
@@ -34,7 +35,7 @@ check: null
 
 study: "oe-2027"
 # Nota interna. NÃO é publicada: ver DECISIONS §1.24.
-note: "[note do motor] Pedidos e litígios pendentes, não encargos anuais reconhecidos. Informação do capítulo dos riscos do relatório de 2027. · Cruzado de ResearchHub content/24 Orcamento 2027 Analise · ppp-oe2027-riscos-brisa."
+note: "[note do motor] Pedidos e litígios pendentes, não encargos anuais reconhecidos. Informação do capítulo dos riscos do relatório de 2027. O capítulo 6, p. 369 do PDF, diz: «a informação disponível reporta maioritariamente ao primeiro trimestre de 2026». · Cruzado de ResearchHub content/24 Orcamento 2027 Analise · ppp-oe2027-riscos-brisa."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []

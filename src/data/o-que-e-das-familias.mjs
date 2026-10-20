@@ -5061,6 +5061,20 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
       ]
     }
   },
+  "der-coesao-territorial-variacao-sem-prr-pct": {
+    "nome": {
+      "pt": "Coesão territorial, variação percentual sem PRR",
+      "en": "Territorial cohesion, percentage change outside the RRP"
+    },
+    "frase": {
+      "pt": [
+        "É a variação percentual da despesa efetiva consolidada sem PRR entre a estimativa e o orçamento seguinte do programa Coesão territorial."
+      ],
+      "en": [
+        "It is the percentage change in consolidated effective expenditure without the RRP between the estimate and the following budget for the Territorial cohesion programme."
+      ]
+    }
+  },
   "der-economia-prr-2026": {
     "nome": {
       "pt": "Economia, parcela do PRR",
@@ -5072,6 +5086,20 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
       ],
       "en": [
         "It is the difference between consolidated effective expenditure with and without the RRP in the estimate for the Economy programme."
+      ]
+    }
+  },
+  "der-economia-variacao-sem-prr-pct": {
+    "nome": {
+      "pt": "Economia, variação percentual sem PRR",
+      "en": "Economy, percentage change outside the RRP"
+    },
+    "frase": {
+      "pt": [
+        "É a variação percentual da despesa efetiva consolidada sem PRR entre a estimativa e o orçamento seguinte do programa Economia."
+      ],
+      "en": [
+        "It is the percentage change in consolidated effective expenditure without the RRP between the estimate and the following budget for the Economy programme."
       ]
     }
   },
@@ -5114,6 +5142,20 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
       ],
       "en": [
         "It is the difference between consolidated effective expenditure with and without the RRP in the estimate for the Finance programme."
+      ]
+    }
+  },
+  "der-financas-variacao-sem-prr-pct": {
+    "nome": {
+      "pt": "Finanças, variação percentual sem PRR",
+      "en": "Finance, percentage change outside the RRP"
+    },
+    "frase": {
+      "pt": [
+        "É a variação percentual da despesa efetiva consolidada sem PRR entre a estimativa e o orçamento seguinte do programa Finanças."
+      ],
+      "en": [
+        "It is the percentage change in consolidated effective expenditure without the RRP between the estimate and the following budget for the Finance programme."
       ]
     }
   },
@@ -5366,6 +5408,20 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
       ],
       "en": [
         "It is the increase in effective expenditure outside the RRP divided by the RRP component in the preceding estimate."
+      ]
+    }
+  },
+  "der-saude-razao-compensacao-prr-pct": {
+    "nome": {
+      "pt": "Percentagem da parcela do PRR reposta pelo aumento sem PRR",
+      "en": "Percentage of the RRP component replaced by the increase outside the RRP"
+    },
+    "frase": {
+      "pt": [
+        "É o aumento da despesa efetiva sem PRR dividido pela parcela do PRR na estimativa anterior, em percentagem."
+      ],
+      "en": [
+        "It is the increase in effective expenditure outside the RRP divided by the RRP component in the preceding estimate, as a percentage."
       ]
     }
   },
@@ -5719,6 +5775,34 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
       ]
     }
   },
+  "oe-2027-coesao-territorial-sem-prr-2026": {
+    "nome": {
+      "pt": "Coesão territorial, despesa efetiva consolidada sem PRR",
+      "en": "Territorial cohesion, consolidated effective expenditure excluding the RRP"
+    },
+    "frase": {
+      "pt": [
+        "É a despesa efetiva consolidada sem PRR do programa Coesão territorial, na coluna da estimativa."
+      ],
+      "en": [
+        "It is consolidated effective expenditure excluding the RRP for the Territorial cohesion programme, in the estimate column."
+      ]
+    }
+  },
+  "oe-2027-coesao-territorial-sem-prr-2027": {
+    "nome": {
+      "pt": "Coesão territorial, despesa efetiva consolidada sem PRR",
+      "en": "Territorial cohesion, consolidated effective expenditure excluding the RRP"
+    },
+    "frase": {
+      "pt": [
+        "É a despesa efetiva consolidada sem PRR do programa Coesão territorial, na coluna do orçamento."
+      ],
+      "en": [
+        "It is consolidated effective expenditure excluding the RRP for the Territorial cohesion programme, in the budget column."
+      ]
+    }
+  },
   "oe-2027-economia-efetiva-2026": {
     "nome": {
       "pt": "Economia, despesa efetiva consolidada",
@@ -5744,6 +5828,20 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
       ],
       "en": [
         "It is consolidated effective expenditure excluding the RRP for the Economy programme, in the estimate column."
+      ]
+    }
+  },
+  "oe-2027-economia-sem-prr-2027": {
+    "nome": {
+      "pt": "Economia, despesa efetiva consolidada sem PRR",
+      "en": "Economy, consolidated effective expenditure excluding the RRP"
+    },
+    "frase": {
+      "pt": [
+        "É a despesa efetiva consolidada sem PRR do programa Economia, na coluna do orçamento."
+      ],
+      "en": [
+        "It is consolidated effective expenditure excluding the RRP for the Economy programme, in the budget column."
       ]
     }
   },
@@ -5800,6 +5898,20 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
       ],
       "en": [
         "It is consolidated effective expenditure excluding the RRP for the Finance programme, in the estimate column."
+      ]
+    }
+  },
+  "oe-2027-financas-sem-prr-2027": {
+    "nome": {
+      "pt": "Finanças, despesa efetiva consolidada sem PRR",
+      "en": "Finance, consolidated effective expenditure excluding the RRP"
+    },
+    "frase": {
+      "pt": [
+        "É a despesa efetiva consolidada sem PRR do programa Finanças, na coluna do orçamento."
+      ],
+      "en": [
+        "It is consolidated effective expenditure excluding the RRP for the Finance programme, in the budget column."
       ]
     }
   },
@@ -5870,6 +5982,20 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
       ],
       "en": [
         "It is consolidated effective expenditure excluding the RRP for the Justice programme, in the budget column."
+      ]
+    }
+  },
+  "oe-2027-outras-despesas-correntes-reserva": {
+    "nome": {
+      "pt": "Explicação do crescimento das outras despesas correntes",
+      "en": "Explanation of the growth in other current expenditure"
+    },
+    "frase": {
+      "pt": [
+        "É a explicação do relatório para o crescimento das outras despesas correntes, decorrente da constituição de reservas orçamentais a mobilizar durante a execução."
+      ],
+      "en": [
+        "It is the report’s explanation of growth in other current expenditure, arising from the creation of budget reserves to be used during execution."
       ]
     }
   },
@@ -6307,6 +6433,20 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
       ]
     }
   },
+  "ppp-oe2026-brutos-2025": {
+    "nome": {
+      "pt": "Parcerias, encargos brutos rodoviários",
+      "en": "Partnerships, gross road charges"
+    },
+    "frase": {
+      "pt": [
+        "São os encargos brutos rodoviários das parcerias no quadro do relatório do Orçamento."
+      ],
+      "en": [
+        "These are gross road partnership charges in the Budget report table."
+      ]
+    }
+  },
   "ppp-oe2026-liquidos-2025": {
     "nome": {
       "pt": "Parcerias, encargos líquidos rodoviários",
@@ -6318,6 +6458,34 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
       ],
       "en": [
         "These are net road partnership charges in the Budget report table."
+      ]
+    }
+  },
+  "ppp-oe2026-receitas-2025": {
+    "nome": {
+      "pt": "Parcerias rodoviárias, receitas de portagem",
+      "en": "Road partnerships, toll revenue"
+    },
+    "frase": {
+      "pt": [
+        "São as receitas de portagem previstas para as parcerias rodoviárias no quadro do relatório do Orçamento."
+      ],
+      "en": [
+        "These are forecast toll revenues for road partnerships in the Budget report table."
+      ]
+    }
+  },
+  "ppp-oe2027-brutos-2027": {
+    "nome": {
+      "pt": "Parcerias, encargos brutos rodoviários",
+      "en": "Partnerships, gross road charges"
+    },
+    "frase": {
+      "pt": [
+        "São os encargos brutos rodoviários das parcerias no quadro do relatório do Orçamento."
+      ],
+      "en": [
+        "These are gross road partnership charges in the Budget report table."
       ]
     }
   },
@@ -6430,6 +6598,20 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
       ],
       "en": [
         "These are net road partnership charges in the Budget report table."
+      ]
+    }
+  },
+  "ppp-oe2027-receitas-2027": {
+    "nome": {
+      "pt": "Parcerias rodoviárias, receitas de portagem",
+      "en": "Road partnerships, toll revenue"
+    },
+    "frase": {
+      "pt": [
+        "São as receitas de portagem previstas para as parcerias rodoviárias no quadro do relatório do Orçamento."
+      ],
+      "en": [
+        "These are forecast toll revenues for road partnerships in the Budget report table."
       ]
     }
   },

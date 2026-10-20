@@ -207,6 +207,7 @@ interface Linha {
   access_date: unknown;
   published_at?: unknown;
   reference_date: unknown;
+  period?: string;
   /** A série no tempo de que a linha é o ponto do seu período (bloco RP3); opcional. */
   serie?: unknown;
   excerpt: unknown;

@@ -17,7 +17,7 @@ name_source: "Quadro 4.48; DESPESA TOTAL; coluna 4: 2024 execucao; p. 302 PDF (2
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Ministério das Finanças"
 document:
-  title: "Saúde: despesa total consolidada executada"
+  title: "Conta Geral do Estado 2024 · Relatório de Análise Global e Conta da Segurança Social"
   edition: "2024"
   locator: "Quadro 4.48; DESPESA TOTAL; coluna 4: 2024 execucao; p. 302 PDF (286 impressa)"
   source_sha256: "385f3ccd4b1823a992959e29b7fb3fa1f56890c026dc10778f00438b077abafb"

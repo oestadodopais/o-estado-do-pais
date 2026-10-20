@@ -16615,6 +16615,36 @@
     },
     {
       "chaves": [
+        "der-coesao-territorial-variacao-sem-prr-pct"
+      ],
+      "nome": {
+        "pt": "Coesão territorial, variação percentual sem PRR",
+        "en": "Territorial cohesion, percentage change outside the RRP"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a variação percentual da despesa efetiva consolidada sem PRR entre a estimativa e o orçamento seguinte do programa Coesão territorial.",
+          "en": "It is the percentage change in consolidated effective expenditure without the RRP between the estimate and the following budget for the Territorial cohesion programme.",
+          "partes": [
+            {
+              "pt": "É a variação percentual da despesa efetiva consolidada sem PRR entre a estimativa e o orçamento seguinte do programa Coesão territorial.",
+              "en": "It is the percentage change in consolidated effective expenditure without the RRP between the estimate and the following budget for the Territorial cohesion programme.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "derivation",
+                  "literal": "((oe-2027-coesao-territorial-sem-prr-2027) ÷ (oe-2027-coesao-territorial-sem-prr-2026) − 1) × 100. (388,1 ÷ 628,0 − 1) × 100 = -38.20063694267515923566878981 ≈ -38,2"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
         "der-economia-prr-2026"
       ],
       "nome": {
@@ -16636,6 +16666,36 @@
                   "linha": "propria",
                   "campo": "derivation",
                   "literal": "(oe-2027-economia-efetiva-2026) − (oe-2027-economia-sem-prr-2026). 2 312,1 − 955,0 = 1 357,1"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "der-economia-variacao-sem-prr-pct"
+      ],
+      "nome": {
+        "pt": "Economia, variação percentual sem PRR",
+        "en": "Economy, percentage change outside the RRP"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a variação percentual da despesa efetiva consolidada sem PRR entre a estimativa e o orçamento seguinte do programa Economia.",
+          "en": "It is the percentage change in consolidated effective expenditure without the RRP between the estimate and the following budget for the Economy programme.",
+          "partes": [
+            {
+              "pt": "É a variação percentual da despesa efetiva consolidada sem PRR entre a estimativa e o orçamento seguinte do programa Economia.",
+              "en": "It is the percentage change in consolidated effective expenditure without the RRP between the estimate and the following budget for the Economy programme.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "derivation",
+                  "literal": "((oe-2027-economia-sem-prr-2027) ÷ (oe-2027-economia-sem-prr-2026) − 1) × 100. (908,5 ÷ 955,0 − 1) × 100 = -4.869109947643979057591623040 ≈ -4,9"
                 }
               ]
             }
@@ -16726,6 +16786,36 @@
                   "linha": "propria",
                   "campo": "derivation",
                   "literal": "(oe-2027-financas-efetiva-2026) − (oe-2027-financas-sem-prr-2026). 10 707,0 − 9 234,3 = 1 472,7"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "der-financas-variacao-sem-prr-pct"
+      ],
+      "nome": {
+        "pt": "Finanças, variação percentual sem PRR",
+        "en": "Finance, percentage change outside the RRP"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a variação percentual da despesa efetiva consolidada sem PRR entre a estimativa e o orçamento seguinte do programa Finanças.",
+          "en": "It is the percentage change in consolidated effective expenditure without the RRP between the estimate and the following budget for the Finance programme.",
+          "partes": [
+            {
+              "pt": "É a variação percentual da despesa efetiva consolidada sem PRR entre a estimativa e o orçamento seguinte do programa Finanças.",
+              "en": "It is the percentage change in consolidated effective expenditure without the RRP between the estimate and the following budget for the Finance programme.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "derivation",
+                  "literal": "((oe-2027-financas-sem-prr-2027) ÷ (oe-2027-financas-sem-prr-2026) − 1) × 100. (8 509,7 ÷ 9 234,3 − 1) × 100 = -7.846831920123885946958621660 ≈ -7,8"
                 }
               ]
             }
@@ -16995,7 +17085,7 @@
                 {
                   "linha": "propria",
                   "campo": "derivation",
-                  "literal": "(oe-2027-ppp-rodoviario-encargos-liquidos-2027) ÷ (oe-2027-ppp-total-encargos-liquidos-2027) × 100. 889 ÷ 1 438 × 100 = 61,82"
+                  "literal": "(oe-2027-ppp-rodoviario-encargos-liquidos-2027) ÷ (oe-2027-ppp-total-encargos-liquidos-2027) × 100. 889 ÷ 1 438 × 100 = 61.82197496522948539638386648 ≈ 61,82"
                 }
               ]
             }
@@ -17266,6 +17356,36 @@
                   "linha": "propria",
                   "campo": "derivation",
                   "literal": "(der-saude-variacao-sem-prr) ÷ (der-saude-prr-2026). 511,8 ÷ 771,1 = 0,6637"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "der-saude-razao-compensacao-prr-pct"
+      ],
+      "nome": {
+        "pt": "Percentagem da parcela do PRR reposta pelo aumento sem PRR",
+        "en": "Percentage of the RRP component replaced by the increase outside the RRP"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o aumento da despesa efetiva sem PRR dividido pela parcela do PRR na estimativa anterior, em percentagem.",
+          "en": "It is the increase in effective expenditure outside the RRP divided by the RRP component in the preceding estimate, as a percentage.",
+          "partes": [
+            {
+              "pt": "É o aumento da despesa efetiva sem PRR dividido pela parcela do PRR na estimativa anterior, em percentagem.",
+              "en": "It is the increase in effective expenditure outside the RRP divided by the RRP component in the preceding estimate, as a percentage.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "derivation",
+                  "literal": "(der-saude-variacao-sem-prr) ÷ (der-saude-prr-2026) × 100. 511,8 ÷ 771,1 × 100 = 66.37271430424069511088056024 ≈ 66,4"
                 }
               ]
             }
@@ -18025,6 +18145,66 @@
     },
     {
       "chaves": [
+        "oe-2027-coesao-territorial-sem-prr-2026"
+      ],
+      "nome": {
+        "pt": "Coesão territorial, despesa efetiva consolidada sem PRR",
+        "en": "Territorial cohesion, consolidated effective expenditure excluding the RRP"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a despesa efetiva consolidada sem PRR do programa Coesão territorial, na coluna da estimativa.",
+          "en": "It is consolidated effective expenditure excluding the RRP for the Territorial cohesion programme, in the estimate column.",
+          "partes": [
+            {
+              "pt": "É a despesa efetiva consolidada sem PRR do programa Coesão territorial, na coluna da estimativa.",
+              "en": "It is consolidated effective expenditure excluding the RRP for the Territorial cohesion programme, in the estimate column.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Quadro 5.18. Coesão Territorial (PL07) — Conta do Programa Legado\n(milhões de euros)\n2026                             2027\nVariação       Variação     Estrutura 2027   Estrutura 2027\nClassificador Económico                                                                                 (%)         (Sem PRR)           (%)          (Sem PRR)\nEstimativa    Orçamento          Orçamento\nEstimativa                                                                         (%)                               (%)\n(Sem PRR)                        (Sem PRR)\n Despesa efetiva consolidada                           1 194,5               628,0        426,8              388,1        -64,3          -38,2\nSeleção: 2026 Estimativa (Sem PRR)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "oe-2027-coesao-territorial-sem-prr-2027"
+      ],
+      "nome": {
+        "pt": "Coesão territorial, despesa efetiva consolidada sem PRR",
+        "en": "Territorial cohesion, consolidated effective expenditure excluding the RRP"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a despesa efetiva consolidada sem PRR do programa Coesão territorial, na coluna do orçamento.",
+          "en": "It is consolidated effective expenditure excluding the RRP for the Territorial cohesion programme, in the budget column.",
+          "partes": [
+            {
+              "pt": "É a despesa efetiva consolidada sem PRR do programa Coesão territorial, na coluna do orçamento.",
+              "en": "It is consolidated effective expenditure excluding the RRP for the Territorial cohesion programme, in the budget column.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Quadro 5.18. Coesão Territorial (PL07) — Conta do Programa Legado\n(milhões de euros)\n2026                             2027\nVariação       Variação     Estrutura 2027   Estrutura 2027\nClassificador Económico                                                                                 (%)         (Sem PRR)           (%)          (Sem PRR)\nEstimativa    Orçamento          Orçamento\nEstimativa                                                                         (%)                               (%)\n(Sem PRR)                        (Sem PRR)\n Despesa efetiva consolidada                           1 194,5               628,0        426,8              388,1        -64,3          -38,2\nSeleção: 2027 Orçamento (Sem PRR)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
         "oe-2027-economia-efetiva-2026"
       ],
       "nome": {
@@ -18076,6 +18256,36 @@
                   "linha": "propria",
                   "campo": "excerpt",
                   "literal": "Quadro 5.16. Economia (PL06) — Conta do Programa Legado\n(milhões de euros)\n2026                             2027\nVariação       Variação     Estrutura 2027   Estrutura 2027\nClassificador Económico                                                                                  (%)         (Sem PRR)           (%)          (Sem PRR)\nEstimativa    Orçamento          Orçamento\nEstimativa                                                                          (%)                               (%)\n(Sem PRR)                        (Sem PRR)\n Despesa efetiva consolidada                           2 312,1               955,0       1 344,3             908,5         -41,9           -4,9\nSeleção: 2026 Estimativa (Sem PRR)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "oe-2027-economia-sem-prr-2027"
+      ],
+      "nome": {
+        "pt": "Economia, despesa efetiva consolidada sem PRR",
+        "en": "Economy, consolidated effective expenditure excluding the RRP"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a despesa efetiva consolidada sem PRR do programa Economia, na coluna do orçamento.",
+          "en": "It is consolidated effective expenditure excluding the RRP for the Economy programme, in the budget column.",
+          "partes": [
+            {
+              "pt": "É a despesa efetiva consolidada sem PRR do programa Economia, na coluna do orçamento.",
+              "en": "It is consolidated effective expenditure excluding the RRP for the Economy programme, in the budget column.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Quadro 5.16. Economia (PL06) — Conta do Programa Legado\n(milhões de euros)\n2026                             2027\nVariação       Variação     Estrutura 2027   Estrutura 2027\nClassificador Económico                                                                                  (%)         (Sem PRR)           (%)          (Sem PRR)\nEstimativa    Orçamento          Orçamento\nEstimativa                                                                          (%)                               (%)\n(Sem PRR)                        (Sem PRR)\n Despesa efetiva consolidada                           2 312,1               955,0       1 344,3             908,5         -41,9           -4,9\nSeleção: 2027 Orçamento (Sem PRR)"
                 }
               ]
             }
@@ -18196,6 +18406,36 @@
                   "linha": "propria",
                   "campo": "excerpt",
                   "literal": "Quadro 5.11. Finanças (PL04) — Conta do Programa Legado\n(milhões de euros)\n2026                                2027\nVariação                      Estrutura 2027\nVariação                       Estrutura 2027\nClassificador Económico                                                                                                        (Sem PRR)                        (Sem PRR)\nEstimativa                          Orçamento       (%)                                (%)\nEstimativa                           Orçamento                                            (%)                               (%)\n(Sem PRR)                           (Sem PRR)\n Despesa efetiva consolidada                             10 707,0             9 234,3         8 951,0            8 509,7         -16,4             -7,8\nSeleção: 2026 Estimativa (Sem PRR)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "oe-2027-financas-sem-prr-2027"
+      ],
+      "nome": {
+        "pt": "Finanças, despesa efetiva consolidada sem PRR",
+        "en": "Finance, consolidated effective expenditure excluding the RRP"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a despesa efetiva consolidada sem PRR do programa Finanças, na coluna do orçamento.",
+          "en": "It is consolidated effective expenditure excluding the RRP for the Finance programme, in the budget column.",
+          "partes": [
+            {
+              "pt": "É a despesa efetiva consolidada sem PRR do programa Finanças, na coluna do orçamento.",
+              "en": "It is consolidated effective expenditure excluding the RRP for the Finance programme, in the budget column.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Quadro 5.11. Finanças (PL04) — Conta do Programa Legado\n(milhões de euros)\n2026                                2027\nVariação                      Estrutura 2027\nVariação                       Estrutura 2027\nClassificador Económico                                                                                                        (Sem PRR)                        (Sem PRR)\nEstimativa                          Orçamento       (%)                                (%)\nEstimativa                           Orçamento                                            (%)                               (%)\n(Sem PRR)                           (Sem PRR)\n Despesa efetiva consolidada                             10 707,0             9 234,3         8 951,0            8 509,7         -16,4             -7,8\nSeleção: 2027 Orçamento (Sem PRR)"
                 }
               ]
             }
@@ -18346,6 +18586,36 @@
                   "linha": "propria",
                   "campo": "excerpt",
                   "literal": "Quadro 5.28. Justiça (PL11) — Conta do Programa Legado\n(milhões de euros)\n2026                             2027\nVariação       Variação                      Estrutura 2027\nEstrutura 2027\nClassificador Económico                               Estimativa                       Orçamento       (%)         (Sem PRR)                        (Sem PRR)\nEstimativa                        Orçamento                                                          (%)\n(Sem PRR)                        (Sem PRR)                      (%)                               (%)\n Despesa efetiva consolidada                          1 947,3            1 800,7       2 128,2            2 128,2          9,3          18,2\nSeleção: 2027 Orçamento (Sem PRR)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "oe-2027-outras-despesas-correntes-reserva"
+      ],
+      "nome": {
+        "pt": "Explicação do crescimento das outras despesas correntes",
+        "en": "Explanation of the growth in other current expenditure"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a explicação do relatório para o crescimento das outras despesas correntes, decorrente da constituição de reservas orçamentais a mobilizar durante a execução.",
+          "en": "It is the report’s explanation of growth in other current expenditure, arising from the creation of budget reserves to be used during execution.",
+          "partes": [
+            {
+              "pt": "É a explicação do relatório para o crescimento das outras despesas correntes, decorrente da constituição de reservas orçamentais a mobilizar durante a execução.",
+              "en": "It is the report’s explanation of growth in other current expenditure, arising from the creation of budget reserves to be used during execution.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "De relevar ainda o crescimento das outras despesas correntes, decorrente da constituição das reservas orçamentais a serem mobilizadas durante a execução orçamental, em linha com o aprofundamento da autonomia na gestão orçamental de cada área setorial iniciada em 2026."
                 }
               ]
             }
@@ -19285,6 +19555,36 @@
     },
     {
       "chaves": [
+        "ppp-oe2026-brutos-2025"
+      ],
+      "nome": {
+        "pt": "Parcerias, encargos brutos rodoviários",
+        "en": "Partnerships, gross road charges"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "São os encargos brutos rodoviários das parcerias no quadro do relatório do Orçamento.",
+          "en": "These are gross road partnership charges in the Budget report table.",
+          "partes": [
+            {
+              "pt": "São os encargos brutos rodoviários das parcerias no quadro do relatório do Orçamento.",
+              "en": "These are gross road partnership charges in the Budget report table.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\n   enca rgos brutos         1 234     1 212    1 047     951      830      699      631      454      333      321      262      183      157       178\nSeleção: 2025 estimativa"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
         "ppp-oe2026-liquidos-2025"
       ],
       "nome": {
@@ -19306,6 +19606,66 @@
                   "linha": "propria",
                   "campo": "excerpt",
                   "literal": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\n  Rodoviário                  843       950      774     681      (59)     412      368      226      141      128        66        0        9        17\nSeleção: 2025 estimativa"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "ppp-oe2026-receitas-2025"
+      ],
+      "nome": {
+        "pt": "Parcerias rodoviárias, receitas de portagem",
+        "en": "Road partnerships, toll revenue"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "São as receitas de portagem previstas para as parcerias rodoviárias no quadro do relatório do Orçamento.",
+          "en": "These are forecast toll revenues for road partnerships in the Budget report table.",
+          "partes": [
+            {
+              "pt": "São as receitas de portagem previstas para as parcerias rodoviárias no quadro do relatório do Orçamento.",
+              "en": "These are forecast toll revenues for road partnerships in the Budget report table.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\n    recei ta s                392       263      274     271      889      288      263      228      192      193      195      183      148       160\nSeleção: 2025 estimativa"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "ppp-oe2027-brutos-2027"
+      ],
+      "nome": {
+        "pt": "Parcerias, encargos brutos rodoviários",
+        "en": "Partnerships, gross road charges"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "São os encargos brutos rodoviários das parcerias no quadro do relatório do Orçamento.",
+          "en": "These are gross road partnership charges in the Budget report table.",
+          "partes": [
+            {
+              "pt": "São os encargos brutos rodoviários das parcerias no quadro do relatório do Orçamento.",
+              "en": "These are gross road partnership charges in the Budget report table.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\n encargos brutos       1 230   1 152    965     863     728     656      474     349        336     275     189     162     183       50\nSeleção: 2027 orcamento"
                 }
               ]
             }
@@ -19546,6 +19906,36 @@
                   "linha": "propria",
                   "campo": "excerpt",
                   "literal": "Setores       2040    2041    2042    2043    2044    2045    2046     2047       2048    2049    2050    2051    2052     2053\n Rodoviário               17       -       -       -       -       -        -          -       -       -       -       -       -        -\nSeleção: 2040 projecao"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "ppp-oe2027-receitas-2027"
+      ],
+      "nome": {
+        "pt": "Parcerias rodoviárias, receitas de portagem",
+        "en": "Road partnerships, toll revenue"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "São as receitas de portagem previstas para as parcerias rodoviárias no quadro do relatório do Orçamento.",
+          "en": "These are forecast toll revenues for road partnerships in the Budget report table.",
+          "partes": [
+            {
+              "pt": "São as receitas de portagem previstas para as parcerias rodoviárias no quadro do relatório do Orçamento.",
+              "en": "These are forecast toll revenues for road partnerships in the Budget report table.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\n     receitas           287     263     260     215     948     265      230     195        196     198     185     149     162        2\nSeleção: 2027 orcamento"
                 }
               ]
             }
@@ -20145,7 +20535,7 @@
                 {
                   "linha": "propria",
                   "campo": "excerpt",
-                  "literal": "não encargos já reconhecidos"
+                  "literal": "São pretensões dos parceiros privados, e não encargos já reconhecidos; a sua concretização, total ou parcial, oneraria o saldo orçamental de anos futuros."
                 }
               ]
             }
@@ -20175,7 +20565,7 @@
                 {
                   "linha": "propria",
                   "campo": "excerpt",
-                  "literal": "Existe um risco de pressão orçamental"
+                  "literal": "Existe um risco de pressão orçamental associado à execução do Serviço Nacional de Saúde (SNS)."
                 }
               ]
             }
@@ -20265,7 +20655,7 @@
                 {
                   "linha": "propria",
                   "campo": "excerpt",
-                  "literal": "a despesa aumentaria 3,0%"
+                  "literal": "Todavia, excluído o efeito do PRR, a despesa aumentaria 3,0%."
                 }
               ]
             }

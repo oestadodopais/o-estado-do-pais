@@ -1,0 +1,14 @@
+{
+  "estado": "V2-d-b em verificação. Linhas e prosa corrigidas; aguardam-se os portões e as capturas da nova cabeça.",
+  "linhas_exportadas": 139,
+  "provas": 155,
+  "conferencias": {
+    "partida": "0; 155 linhas, zero divergências",
+    "pesquisa documental do motor": "0; 36 conferências, 840 células Eurostat",
+    "travessia": "0; 139 linhas, 155 provas",
+    "teste da travessia": "0; 39 contas e componentes adulteradas recusadas",
+    "cruzamento com origem": "0; aviso de built_at do livro anterior, sem divergência de linhas ou ficheiros",
+    "auditoria das palavras": "0; 304 folhas e 3165 apoios"
+  },
+  "capturas": "Capturas da correção ainda não executadas."
+}

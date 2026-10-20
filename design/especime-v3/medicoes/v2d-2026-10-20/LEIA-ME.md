@@ -1,389 +1,173 @@
 # V2-d: análise da Saúde e das parcerias
 
-## Estado
+## A correção da leitura
 
-Implementação, selagem, travessia e conferências concluídas. Motor 48d97b85fdc4609a04baca0f392c02b5da71d931; construção e capturas do sítio 1e2e737e5dd87fbc17cf936e1f4f95d653956798. Este fecho acrescenta as provas e o relatório, sem alterar as páginas. Sem push. A conferência editorial e a leitura a frio pertencem ao lugar de direção.
+V2-d-b em verificação. Linhas e prosa corrigidas; aguardam-se os portões e as capturas da nova cabeça.
 
-## Medida de partida e selagem
+Os achados 1 a 5 da leitura a frio eram plantas nas cópias do pacote. Esta passagem corrige os cinco Major reais e os problemas de leitura delimitados no pedido V2-d-b. A execução anterior e os seus resultados permanecem no histórico Git e em `resultados.json`.
 
-Conferência de 142 linhas, com 0 divergências numéricas. O guião lê o livro regenerado e compara os valores com os corpos e as componentes. `partida.json` conserva as linhas do PDF, os cabeçalhos, os seletores, as páginas, os recibos, as células e os valores brutos da folha da execução.
+A conferência abrange 155 linhas, com 0 divergências numéricas. A travessia contém 139 linhas e 155 provas; 147 linhas têm porta nos itens, das quais 131 pertencem à travessia V2-d. As restantes componentes são acessíveis pelos recibos das derivadas.
 
-A despesa efetiva de 2027 coincide com e sem PRR: 17 803,1 milhões de euros. A soma dos encargos brutos é 1 152 + 312 + 254 = 1 718. Nos seis pares de 2020 a 2025, a execução supera o orçamento inicial do mesmo ano. A quebra de perímetro entre anos não altera esta comparação interna.
+Os riscos referem o primeiro trimestre de 2026, com data de referência 31.03.2026. A reserva passa a ter a frase inteira do relatório, assim como as três citações da UTAO. As duas citações cujo valor textual mudou conservam o fragmento anterior no histórico de correções. As quatro percentagens novas têm a conta completa e arredondamento a uma casa decimal. As séries identificam os documentos pelas capas, em vez de rótulos editoriais.
 
-Foram seladas 56 linhas novas no motor: 36 documentais e 20 derivadas. As páginas dos riscos são 369 e 370 do PDF, 353 e 354 impressas. A coluna selecionada fica ligada ao cabeçalho, ao ano e à fase; a planta troca a coluna e o valor esperado e é recusada.
-
-O exportador comum atravessou 126 linhas e as provas de 142 linhas. Os corpos permanecem no motor; os excertos, os recibos, os resumos SHA-256 e as avaliações de direitos atravessam em `ledger/provas/v2d/provas.json`.
-
-## Integração
-
-O inventário final contém 135 linhas com porta para os itens, das quais 119 chegaram nesta travessia. As componentes das derivadas são acessíveis pelos respetivos recibos. Os seis pares anuais também integram a guarda da frase «todos os anos». Os títulos do topo e do menu vêm do mesmo resolvedor dos itens.
+Os selos ficam depois das aspas e fora do título. As células conferem os valores, as citações, as atribuições, os recibos trimestrais, os títulos e os destinos dos selos. As famílias, as áreas, a auditoria das palavras e o inventário acompanham a nova redação.
 
 ## Conferências e capturas
 
-| Conferência | Código ou resultado |
+| Conferência | Resultado |
 | --- | --- |
-| conferência de partida | 0 |
-| pesquisa documental do motor | 0, 32 conferências e 840 células Eurostat |
-| travessia comum | 0 |
-| teste da travessia | 0, 35 contas e plantas |
-| cruzamento com origem | 0 |
-| declarações dos itens | 0 |
-| seleção dos portões | 0 |
-| afirmações contra os corpos | 0, 9 afirmações, 9 corpos e 29 plantas |
-| derivadas e série Saúde | 0, 24 fórmulas e seis pares anuais; quatro plantas |
-| auditoria das palavras | 290 folhas e 2 885 apoios; declaração conferida |
-| motor integral, pre-commit | 0, GATE: PASS, commit 48d97b85 |
-| livro do sítio | 0 |
-| primeira construção | 1: faltavam definições bilingues das novas famílias; restantes passos não executados (125) |
-| typecheck após guarda de componentes | 0 |
-| definições dos recibos, cobertura e K17 | 0; 126 linhas, 252 nomes e 252 frases nas duas edições |
-| segunda construção | 1: o título perdia as marcas dos tokens ao ser renderizado; restantes passos não executados (125) |
-| títulos ancorados, plantas | 0, 16 ensaios nas duas edições |
-| terceira construção | 1: HTML dos títulos aprovado; check:areas encontrou 103 linhas sem assunto declarado; restantes passos do perfil não executados (125) |
-| cobertura das novas linhas por assunto | 0, 65 Saúde, 58 Finanças e três agregados UE explicitamente excluídos |
-| diagnóstico posterior ao índice de áreas | formas, lugares, país, nomes, formato, navegação e sinais: 0; voz e língua exigem reconstrução após atualização dos inventários |
-| quarta construção | 1: seis declarações antigas foram marcadas como retiradas apesar de continuarem dentro dos parágrafos novos; substituídas pelas declarações completas |
-| voz após substituição das declarações | 0 |
-| séries, conferência dirigida | 0, 40 de 40 plantas |
-| cruzamento final com origem | 0; aviso de built_at do livro anterior, sem divergência de linhas ou ficheiros |
-| tentativa de frases compostas na sandbox | 1: tentativa indevida fora do escrivão; browserType.launch: Target page, context or browser has been closed; Error: kill EPERM. A conferência válida corre pelo escrivão no perfil V2-d. |
-| discussão após integração das áreas | 0, 80 de 80 plantas e 276 portas |
-| quinta corrida pelo escrivão | build, discussão, palavras, frases compostas, HTML, alvos, CSS, séries e tipos: 0; L1: 1, 3034 páginas contra teto 2782 |
-| final pelo escrivão: check:css | 0 |
-| final pelo escrivão: check:series | 0 |
-| final pelo escrivão: gate:html | 0 |
-| final pelo escrivão: check:lugar | 0 |
-| final pelo escrivão: check:discussao | 0 |
-| final pelo escrivão: check:palavras | 0 |
-| final pelo escrivão: check:frases-compostas | 0 |
-| final pelo escrivão: check:alvos | 0 |
-| final pelo escrivão: typecheck | 0 |
-| final pelo escrivão: build | 0 |
-| L1 final | 0, 2782 páginas, teto 2782, sem aumento |
-| célula final da discussão | 0, 86 de 86 plantas, 276 portas |
+| partida | 0; 155 linhas, zero divergências |
+| pesquisa documental do motor | 0; 36 conferências, 840 células Eurostat |
+| travessia | 0; 139 linhas, 155 provas |
+| teste da travessia | 0; 39 contas e componentes adulteradas recusadas |
+| cruzamento com origem | 0; aviso de built_at do livro anterior, sem divergência de linhas ou ficheiros |
+| auditoria das palavras | 0; 304 folhas e 3165 apoios |
 
-Capturas pelo escrivão: código 0, dez páginas completas e vinte recortes dos dois itens, nas edições PT e EN e nas larguras 390, 768, 1024, 1280 e 1600. Zero erros do navegador, pedidos externos, recursos recusados ou transbordos horizontais. Os trinta resumos SHA-256 foram reconferidos nos PNG. Inspeção visual do topo das dez páginas e dos recortes móveis das duas edições, sem cortes ou sobreposições identificados. Pedido e recibo em `pedido-capturas.json` e `capturas.json`; os PNG ficam em `<temporario>/v2d-capturas-final-f/`.
+Capturas da correção ainda não executadas.
 
-Os registos extensos ficam fora do commit. Nenhum PNG é comitado. A corrida integral do sítio fica para o portão do GitHub na aterragem.
+Os códigos dos portões são lidos dos ficheiros da corrida e conservados em `portoes-v2db.json`. A corrida integral do sítio fica para o GitHub. Os PNG e os registos extensos ficam fora do commit. Não foi feito push.
 
-## Decisões
+## Pesquisa das receitas próprias
 
-As decisões V2D-1 a V2D-6 ficaram documentadas na conferência do commit 3533f7a7. O §7 do mandato aceitou as correções da maior rubrica, da comparação das parcerias com 2025 e da designação «fora do PRR», e autorizou corrigir as restantes contradições. As redações efetivamente aplicadas e as decisões de integração seguem abaixo.
+Comando: `pdftotext -layout "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf" <temporario>/oe-relatorio.txt`. Pesquisa no texto integral por `receitas?\s+próprias?`, sem distinção de maiúsculas, incluindo singular e plural e quebras de linha.
 
-### V2D-7: Título com valores assinados
+Foram pesquisadas 466 páginas e registadas 45 ocorrências. Não foi encontrada explicação para o aumento das receitas próprias do programa Saúde. O quadro 5.37, p. 303 do PDF, dá 1 289,5 e 2 017,6. Conferidos também o capítulo Saúde e o contexto das ocorrências.
 
-Antes: O orçamento da Saúde para 2027: sobe 3 % ou cai 1,5 %? As duas contas, o que muda por dentro e o que ficou por dizer
+A afirmação de ausência fica delimitada ao relatório alojado. A pesquisa e os contextos completos estão em `pesquisa-receitas-proprias-v2db.json`. As páginas abaixo são as do PDF.
 
-Depois: O orçamento da Saúde para [período]: [variação sem PRR] sem PRR ou [variação total] no total? As duas contas, o que muda por dentro e o que ficou por dizer
+| Página PDF | Contexto da ocorrência |
+| --- | --- |
+| 93 | l, impulsionada sobretudo pelo crescimento das receitas de imposto municipal sobre imóveis (IMI) e de IMT, num contexto de dinamismo do mercado imobiliário. As receitas próprias não fiscais deverão manter um contributo positivo para a evolução da receita, destacando-se o comportamento dos subsídios recebidos por este subsetor, em particular os associados à medida de gratuitidade dos passes para os jovens até aos 23 anos. Do lado da |
+| 116 | As entidades integradas no SEE da área da Cultura orientam a sua atividade para a promoção da eficiência na utilização dos recursos públicos, o aumento das receitas próprias e a democratização do acesso aos bens culturais. No que respeita ao Organismo de Produção Artística, E.P.E. (OPART), a sua atividade mantém-se centrada no desenvolvimento e divulgação da criação artística, bem como na afirmação da excelência do Teatro Nacion |
+| 152 | RI RP FE TRF Total P1 P2 P3 P4 P5 Legenda: RI — Receitas de impostos; RP — Receitas próprias; FE — Fundos europeus; TRF — Transferências; P1 — Reforço do sistema de justiça e da atividade judicial; P2 — Transparência, fiscalização e combate à corrupção; P3 — Promoção da representatividade e da cidadania democrática; P4 — Valorizaç |
+| 157 | de Financiamento consolidada Orçamento 2026 Orçamento 2027 Receitas de Impostos 7 127,5 7 549,9 Receitas Próprias 50,5 15,2 Fundos Europeus 1,7 0,6 Transferências entre entidades 92,0 91,6 Diferen |
+| 162 | RI RP FE TRF Total P1 P2 P3 P4 P5 Legenda: RI — Receitas de impostos; RP — Receitas próprias; FE — Fundos europeus; TRF — Transferências; P1 — Coordenação governativa, planeamento e informação; P2 — Segurança e soberania nacional; P3 — Imigração; P4 — Comunicação social; P5 — Suporte à atividade da Missão de Base |
+| 163 | produção estatística Variação do montante de receitas próprias FF 513 do INE Número de estudos estatísticos disponibilizados relativos a estimativas da população residente |
+| 169 | reas de coordenação governativa, planeamento e informação, com maior peso na SG-GOV, e de produção e divulgação de informação estatística oficial pelo INE. As receitas próprias, que representam cerca de 27,2% do total da receita, com maior incidência na receita de taxas, multas e outras penalidades, com relevância para a Agência para a Integração, Migrações e Asilo, I.P. (AIMA), decorrente da concessão de vistos de curta duração, de |
+| 172 | RI RP FE TRF Total P1 P2 P3 P4 Legenda: RI — Receitas de impostos; RP — Receitas próprias; FE — Fundos europeus; TRF — Transferências; P1 — Política externa e assuntos europeus; P2 — Cooperação para o desenvolvimento, língua e cultura; P3 — Embaixadas, consulados e missões; P4 — Suporte à atividade da Missão de Base Orgân |
+| 173 | hadores dos SPE Obj. 3.2.1 Melhorar o funcionamento da rede externa Taxa de execução da receita própria arrecadada (no âmbito da receita própria da DGACCP e ECM, em despesa interna dos serviços) Ação 3.3 Investimento na rede |
+| 173 | lhorar o funcionamento da rede externa Taxa de execução da receita própria arrecadada (no âmbito da receita própria da DGACCP e ECM, em despesa interna dos serviços) Ação 3.3 Investimento na rede externa |
+| 188 | RI RP FE TRF Total P1 P2 P3 P4 P5 P6 P7 P8 Legenda: RI — Receitas de impostos; RP — Receitas próprias; FE — Fundos europeus; TRF — Transferências; P1 — Administração tributária e aduaneira; P2 — Gestão e monitorização da despesa fiscal; P3 — Tesouro e finanças; P4 — Administração Pública; P5 — Obrigações e políticas externas; P6 — Resposta a despe |
+| 196 | or Fonte de Financiamento consolidada Orçamento 2026 Orçamento 2027 Receitas de Impostos 16 152,0 22 781,7 Receitas Próprias 17 380,2 27 685,2 Fundos Europeus 381,0 16,3 Transferências entre entidades 222,5 248,6 Diferenças de consol |
+| 196 | 81,7 milhões de euros representam a componente de financiamento por receita de impostos afeta ao Programa Legado, sendo o restante financiamento proveniente de receitas próprias (27 685,2 milhões de euros), fundos europeus (16,3 milhões de euros) e transferências no âmbito da Administração Pública (248,6 milhões de euros). Do total da dotação de despesa efetiva consolidada destacam-se as transferências, em particular a associada à c |
+| 200 | or Fonte de Financiamento consolidada Orçamento 2026 Orçamento 2027 Receitas de Impostos 173 363,0 176 488,0 Receitas Próprias 14,0 12,6 Fundos Europeus Transferências entre entidades Diferenças de consolidação 826,3 20,3 Nota: O presente quadro exclui, nas rubricas de juros, t |
+| 203 | 571 56 RI RP FE TRF Total P1 P2 P3 P4 P5 Legenda: RI — Receitas de impostos; RP — Receitas próprias; FE — Fundos europeus; TRF — Transferências; P1 — Planeamento e desenvolvimento regional; P2 — Economia; P3 — Administração Local e ordenamento do território; P4 — Turismo, comércio e serviços; P5 — Suporte à atividade da Missão de Base Orgânica. Fontes: Mini |
+| 211 | ição da despesa por natureza e fonte de financiamento. A receita total consolidada cifra-se em 3153,3 milhões de euros, sendo maioritariamente constituída por receitas próprias, seguida de fundos europeus e transferências entre entidades. ORÇAMENTAÇÃO POR PROGRAMAS E POLÍTICAS SETORIAIS 195 |
+| 213 | No que respeita às fontes de financiamento, destacam-se as receitas próprias cobradas pelo Fundo de Contragarantia Mútuo, correspondente à estimativa de recuperação de capital e reembolsos de aplicações financeiras, seguido pelo Turismo de Portugal, I.P., beneficiário do imposto do jogo e do jogo online. Em termos de fundos europeus, |
+| 213 | es de euros se se excluir o PRR. A receita total consolidada ascende a 775,4 milhões de euros, prevalecendo as fontes de financiamento de fundos europeus e de receitas próprias. ORÇAMENTAÇÃO POR PROGRAMAS E POLÍTICAS SETORIAIS 197 |
+| 214 | e. Ao nível da receita, prevalece o financiamento comunitário, destacando-se a AD&C, com dotações suportadas pelo FEDER. No que respeita à despesa coberta por receitas próprias, destaca-se igualmente a AD&C, seguida do Fundo de Apoio Municipal, cujo financiamento da atividade assenta primordialmente em receita não efetiva, como reembolsos de aplicações financeiras e empréstimos concedidos aos municípios. 198 |
+| 216 | 88 RI RP FE TRF Total P1 P2 Legenda: RI — Receitas de impostos; RP — Receitas próprias; FE — Fundos europeus; TRF — Transferências; P1 — Simplificação; P2 — Digitalização. Fontes: Ministério das Finanças e Ministério da Reforma do Estado. 200 ORÇAMENTAÇÃO POR PROGRAMAS E POLÍTICAS SETORIAIS |
+| 225 | a ARTE, e do plano de formação e capacitação dos recursos humanos da Administração Pública, coordenado pelo Instituto Nacional da Administração, I.P. (INA). A receita própria proveniente sobretudo da venda de bens e serviços correntes, protagonizada pela ARTE, decorrente da utilização dos espaços nas Lojas de Cidadão, autenticação por chave móvel digital e utilização de gateway de SMS e de conta desmaterializada, certificação elet |
+| 228 | 186 RI RP FE TRF Total P1 P2 P3 P4 P5 Legenda: RI — Receitas de impostos; RP — Receitas próprias; FE — Fundos europeus; TRF — Transferências; P1 — Sustentação e operacionalidade; P2 — Apoios e benefícios; P3 — Investimentos e indústrias de defesa; P4 — Relações externas de defesa; P5 — Suporte à atividade da Missão de Base Orgânica. Fon |
+| 236 | o é sobretudo financiada por receitas de impostos (2942,4 milhões de euros), representando 77% do total consolidado, sendo ainda de referir o financiamento por receitas próprias, com 11% (420,1 milhões de euros) e por transferências com origem em outras entidades, com 10% (380,4 milhões de euros). Na estrutura da receita consolidada por classificação económica destacam-se as transferências correntes, as outras receitas e as vendas d |
+| 242 | 1 RI RP FE TRF Total P1 P2 P3 P4 Legenda: RI — Receitas de impostos; RP — Receitas próprias; FE — Fundos europeus; TRF — Transferências; P1 — Habitação; P2 — Infraestruturas; P3 — Mobilidade e transportes; P4 — Suporte à atividade da Missão de Base Orgânica. Fontes: Ministério das Finanças e Ministério das Infraestruturas e Habitaç |
+| 250 | Portugal, E.P.E., por sair do perímetro em 2027. Fonte: Ministério das Finanças. Da receita total, que ascende a 8552,4 milhões de euros, destaca-se o peso da receita própria associada a taxas, multas e outras penalidades, relativas às portagens e licenciamentos pela utilização de bens do domínio público adjudicados à Infraestruturas de Portugal, S.A. (IP); taxas de segurança aéreas cobradas pelas entidades de supervisão e regulaç |
+| 250 | Mobilidade e dos Transportes, previstas no âmbito dos licenciamento, certificações e registos. Contribui igualmente de forma significativa para o agregado de receita própria do Programa Legado a proveniente da venda de bens e serviços pela prestação de serviços de transporte ferroviário e fluvial de passageiros, a cargo das empresas públicas de transporte, bem como da receita associada à utilização da infraestrutura ferroviária g |
+| 256 | 367 RI RP FE TRF Total P1 P2 P3 P4 P5 Legenda: RI — Receitas de impostos; RP — Receitas próprias; FE — Fundos europeus; TRF — Transferências; P1 — Segurança, justiça juvenil, reinserção social, e proteção das vítimas; P2 — Prevenção e investigação criminal; P3 — Sistema judicial; P4 — Registos e notariado; P5 — Suporte à atividade da Missão d |
+| 264 | enientes e destinados a entidades do Programa Legado. Fonte: Ministério das Finanças. Do total da receita consolidada, 765,8 milhões de euros são referentes a receitas próprias, sendo o restante financiamento proveniente de receitas de impostos (1145 milhões de euros), de fundos europeus (49,5 milhões de euros) e de transferências no âmbito da Administração Pública (168,2 milhões de euros). Na receita, destacam-se as «Taxas, multas |
+| 267 | fontes de financiamento e programas (milhões de euros) Legenda: RI — Receitas de impostos; RP — Receitas próprias; FE — Fundos europeus; TRF — Transferências; P1 — Segurança e ordem pública; P2 — Emergência e proteção civil; P3 — Segurança rodoviária; P4 — Suporte à atividade da Missão de Base Orgânica. Fontes: Ministério das Finanças e Ministério |
+| 276 | eceitas de impostos. De destacar também os encargos com saúde, executados pela GNR, com 56,4 milhões de euros, dos quais 50,8 milhões de euros financiados por receita própria, e pela PSP, com 39,9 milhões de euros, integralmente cobertos por receita própria. Encontra-se também orçamentada pela SGMAI a indemnização compensatória de 26 milhões de euros, financiada por receitas de impostos, a transferir para a SIRESP, SA, pelos enca |
+| 276 | , com 56,4 milhões de euros, dos quais 50,8 milhões de euros financiados por receita própria, e pela PSP, com 39,9 milhões de euros, integralmente cobertos por receita própria. Encontra-se também orçamentada pela SGMAI a indemnização compensatória de 26 milhões de euros, financiada por receitas de impostos, a transferir para a SIRESP, SA, pelos encargos diretos e indiretos decorrentes do cumprimento das respetivas obrigações, nome |
+| 279 | 1 205 378 RI RP FE TRF Total P1 P2 P3 P4 P5 Legenda: RI — Receitas de impostos; RP — Receitas próprias; FE — Fundos europeus; TRF — Transferências; P1 — Administração escolar; P2 — Aprendizagem; P3 — Ensino superior; P4 — Ciência e inovação; P5 — Suporte à atividade da Missão de Base Orgânica. Fontes: Ministério das Finanças e Ministério da Educação, Ciência e |
+| 289 | ões de euros, sendo o restante financiamento proveniente de fundos europeus (142,4 milhões de euros), transferências entre entidades (119,5 milhões de euros) e receitas próprias das entidades que compõem o Programa Legado (107,6 milhões de euros). Quadro 5.33. Educação (PL13) — Conta do Programa Legado (milhões d |
+| 292 | rio das Finanças. A componente da despesa financiada por receitas de impostos ascende a 2069,1 milhões de euros, sendo o restante financiamento proveniente de receitas próprias das entidades que compõem o Programa Legado (936,4 milhões de euros), fundos europeus (603,9 milhões de euros) e transferências entre entidades (246 milhões de euros). As despesas com o pessoal ascendem a 2160,8 milhões de euros e representam cerca de 56% da |
+| 293 | a 2026 se excluirmos o PRR, verificado ao nível do financiamento europeu, com destaque para o Fundo Europeu de Desenvolvimento Regional, bem como com recurso a receitas próprias. Nas transferências de capital, que ascendem a 194,6 milhões de euros (5%), destacam-se as transferências enquadradas no financiamento de cooperação bilateral e participação em organismos internacionais, dos projetos de I&D, unidades de investigação e empreg |
+| 295 | 057 RI RP FE TRF Total P1 P2 P3 P4 Legenda: RI — Receitas de impostos; RP — Receitas próprias; FE — Fundos europeus; TRF — Transferências; P1 — Cuidados de saúde; P2 — Cuidados de saúde de longa duração; P3 — Promoção da saúde e prevenção da doença; P4 — Suporte à atividade da Missão de Base Orgânica. Fontes: Ministério das Fin |
+| 303 | or Fonte de Financiamento consolidada Orçamento 2026 Orçamento 2027 Receitas de Impostos 15 116,4 15 452,2 Receitas Próprias 1 289,5 2 017,6 Fundos Europeus 655,0 174,6 Transferências entre entidades 239,3 214,0 Diferenças de consoli |
+| 312 | RI RP FE TRF Total P1 P2 P3 P4 P5 P6 Legenda: RI — Receitas de impostos; RP — Receitas próprias; FE — Fundos europeus; TRF — Transferências; P1 — Políticas da Família; P2 — Trabalho e Emprego; P3 — Pobreza e Inclusão; P4 — Economia Social; P5 — Pensões e Complementos; P6 — Suporte à atividade da Missão de Base Orgânica. Fontes: Ministé |
+| 324 | Ministério das Finanças. Da dotação de despesa total consolidada do Programa, o financiamento por receita de impostos ascende a 22 987,3 milhões de euros, as receitas próprias a 5682,4 milhões de euros e as transferências entre entidades a 2127,2 milhões de euros. Na estrutura da dotação de despesa total consolidada por classificação económica destacam-se as transferências correntes para o orçamento da Segurança Social, no montant |
+| 326 | 77 RI RP FE TRF Total P1 P2 P3 Legenda: RI — Receitas de impostos; RP — Receitas próprias; FE — Fundos europeus; TRF — Transferências; P1 — Ambiente; P2 — Energia; P3 — Suporte à atividade da Missão de Base Orgânica. Fontes: Ministério das Finanças e Ministério do Ambiente e Energia. 310 ORÇAMENTAÇÃO POR PROGRAMAS E P |
+| 337 | 59 RI RP FE TRF Total P1 P2 P3 P4 P5 Legenda: RI — Receitas de impostos; RP — Receitas próprias; FE — Fundos europeus; TRF — Transferências; P1 — Cultura; P2 — Juventude; P3 — Igualdade; P4 — Desporto; P5 — Suporte à atividade da Missão de Base Orgânica. Fontes: Ministério das Finanças e Ministério da Cultura, Juventude e Desporto. |
+| 346 | ulta maioritariamente do Programa Alentejo 2030 no âmbito da iniciativa Évora Capital Europeia da Cultura 2027, através da Associação Évora 2027. No âmbito da receita própria, as vendas de bens e serviços, taxas, multas e outras penalidades e impostos indiretos correspondem à maior percentagem de receita, designadamente por via de receita de bilheteira de monumentos classificados de património mundial, palácios e museus, da MMP; t |
+| 348 | do Programa Legado. Fonte: Ministério das Finanças. Da receita total consolidada, de 173 milhões de euros, cerca de 46,1% são representados pela componente de receitas próprias, com maior peso em impostos indiretos, decorrente da afetação dos resultados líquidos dos jogos sociais explorados pela Santa Casa da Misericórdia de Lisboa ao Instituto Português do Desporto e da Juventude, I.P. (IPDJ). 57 As receitas de impostos (45,5 milh |
+| 351 | RI RP FE TRF Total P1 P2 P3 P4 Legenda: RI — Receitas de impostos; RP — Receitas próprias; FE — Fundos europeus; TRF — Transferências; P1 — Florestas e recursos naturais; P2 — Mar e pescas; P3 — Agricultura, desenvolvimento rural e inovação; P4 — Suporte à atividade da Missão de Base Orgânica. Fontes: Ministério das Fina |
+| 463 | Artística RNB Rendimento Nacional Bruto OSS Orçamento da Segurança Social RP Receitas Próprias OT Obrigações do Tesouro RPT Recursos Próprios Tradicionais OTAN Organização do Tratado do Atlântico Norte RSI Rendimento Social de Inserção OTRV Obrigações do Tesouro |
 
-A gramática aceita tokens no título, mas conserva o sinal e as casas do valor selado. A formulação evita escrever cai seguido de uma variação negativa e não inventa arredondamento. O ano também vem do livro. A edição inglesa é paralela.
+## Decisões novas
 
-### V2D-8: Afirmações e limites de interpretação
+### V2D-27: Redução do PRR nos outros programas
 
-Antes: As três afirmações são verdadeiras na sua linha e nenhuma diz a linha.
+Antes: O fim do PRR não é só da Saúde.
 
-Depois: As três afirmações correspondem a linhas diferentes do quadro e nenhuma apresenta as três medidas em conjunto.
+Depois: A redução do PRR não é só da Saúde.
 
-A afirmação do PCP nomeia o investimento e Leitão Amaro menciona expressamente retirar o PRR. Nenhuma apresenta em conjunto as três medidas do quadro.
+Os quadros mantêm despesa PRR em 2027 nas Finanças, Economia, Infraestruturas e Ambiente. Apenas a Saúde chega a zero entre os programas citados.
 
-### V2D-9: Previsão e financiamento na conclusão da Saúde
+### V2D-28: Variações com sinal
 
-Antes: A Saúde recebe em 2027 menos … do que gasta em 2026 … e o Estado repõe … O que sobe vai para o pessoal.
+Antes: e desce [valor negativo] nas Finanças, na Economia e na Coesão territorial
 
-Depois: A Saúde tem orçamentados em [ano] menos … do que a estimativa de despesa de [ano] … e a despesa fora do PRR sobe … A despesa com pessoal sobe, enquanto a compra de bens e serviços e o investimento descem.
+Depois: e varia [valor negativo] nas Finanças, na Economia e na Coesão territorial
 
-Distingue orçamento e estimativa de execução concluída, não atribui origem nacional a toda a despesa sem PRR e não omite os outros aumentos do quadro. Aplica V2D-3, V2D-4 e V2D-6.
+A gramática preserva o sinal: varia −7,8 %, −4,9 % e −38,2 % evita desce seguido de um valor negativo. A edição inglesa usa and changes by.
 
-### V2D-10: Risco de insuficiência
+### V2D-29: Reservas anteriores não demonstradas
 
-Antes: 2026 não será exceção … o reforço que virá … voltará a ser ultrapassado.
+Antes: que guarda em reservas a mobilizar durante a execução o que antes não guardava
 
-Depois: reforça o risco de nova insuficiência … a eventual necessidade de reforço … corre o risco de voltar a ser ultrapassado.
+Depois: que aumenta as outras despesas correntes por via das reservas a mobilizar durante a execução
 
-Os dados apoiam risco, não certeza sobre execução futura. A recomendação mantém execução mensal e reforço como assuntos concretos a acompanhar.
+A frase do relatório explica a evolução geral das outras despesas correntes, mas não prova inexistência anterior de reservas. O quadro já apresenta outras despesas correntes em 2026.
 
-### V2D-11: Fim do PRR
+### V2D-30: Período dos riscos na gramática
 
-Antes: um orçamento de transição para o fim do dinheiro europeu
+Antes: no primeiro trimestre de [período de ppp-oe2027-riscos-pedidos-rodoviarios]
 
-Depois: um orçamento de transição para o fim do PRR
+Depois: com dados do primeiro trimestre, reportados a 31.03.2026
 
-O próprio quadro mantém fundos europeus no orçamento seguinte. O fim do PRR não é o fim de todo o dinheiro europeu.
+O token de período lê reference_date. O motor e o YAML conservam period 2026-T1 e reference_date 2026-03-31; o recibo diz Dados do 1.º trimestre de 2026.
 
-### V2D-12: Série das parcerias
+### V2D-31: Frase inteira das reservas
 
-Antes: Ao longo dos anos, o Estado paga pelas parcerias rodoviárias menos do que pagava … A projeção desce até …
+Antes: De relevar ainda o crescimento das outras despesas correntes, decorrente da constituição das reservas orçamentais a serem mobilizadas durante a execução orçamental
 
-Depois: O relatório prevê para as parcerias rodoviárias … contra … executados … mas mais do que os … estimados … A projeção tem uma tendência de redução, com oscilações, até …
+Depois: De relevar ainda o crescimento das outras despesas correntes, decorrente da constituição das reservas orçamentais a serem mobilizadas durante a execução orçamental, em linha com o aprofundamento da autonomia na gestão orçamental de cada área setorial iniciada em 2026.
 
-Distingue execução, estimativas e orçamento. A projeção não tem descida contínua e a previsão final supera a estimativa de dois anos antes. Nos valores ano a ano, o plural estimativas abrange os anos intermédios.
+A página 67 do PDF inclui a oração final. A citação foi selada do ponto ao ponto. A data do relatório usada na afirmação é 8 de outubro de 2026, data limite da informação na introdução e data de entrega da proposta registada no corpo do Parlamento; a capa não imprime uma data de publicação distinta.
 
-### V2D-13: Conta do PCP e âmbito das afirmações
+### V2D-32: Introdução da citação da UTAO
 
-Antes: O número coincide, ao arredondar … O número do PCP é o custo bruto de todas as parcerias … e repeti-lo como mais de 1800 …
+Antes: A UTAO escreve que estes valores são «[excerto]».
 
-Depois: O número aproxima-se … sem que isso demonstre a conta que lhe deu origem … O número da primeira afirmação do PCP aproxima-se do custo bruto de todas as parcerias … a afirmação posterior já abrange as rodoviárias, ferroviárias e da saúde, mas o seu montante também excede a soma do quadro.
+Depois: A UTAO distingue os pedidos dos encargos efetivos: «[frase inteira]»
 
-A aproximação numérica não prova a conta feita pelo autor. O excerto completo posterior já nomeia os três setores. Aplica V2D-5 e V2D-6 e usa sempre o excerto literal integral do livro.
+A frase começa São pretensões dos parceiros privados. A nova introdução evita são «São e conserva o âmbito das contingências.
 
-### V2D-14: Limites da prova e pedidos pendentes
+### V2D-33: Pontuação dos excertos completos
 
-Antes: O número que falta em todos os discursos … esse custo foi decidido há mais de uma década … o leitor fica a saber o que o Estado deve às concessionárias.
+Antes: «[frase terminada em ponto]».
 
-Depois: O número que falta nas três afirmações citadas … [retirada a antiguidade contratual sem prova] … o leitor fica a saber os pagamentos previstos às concessionárias; fica por saber quanto dos pedidos pendentes se tornará encargo efetivo.
+Depois: «[frase terminada em ponto]»
 
-O universo conferido são as três afirmações citadas. Não há prova da antiguidade de todos os contratos e pedidos contingentes não são dívida reconhecida.
+Retirado o segundo ponto editorial nas quatro citações agora completas, nas duas edições. A deshifenização só junta palavras partidas entre linhas do PDF.
 
-### V2D-15: Módulos e sustentação anual
+### V2D-34: Títulos lidos nas capas
 
-Antes: Tokens negativos a seguir a menos; frase todos os anos apoiada apenas em exemplos extremos.
+Antes: PPP: liquidos rodoviários; Saúde: despesa total consolidada; exemplos com para ou de antes do ano
 
-Depois: Três derivadas positivas para as reduções; inventário declarativo dos seis pares de orçamento inicial e execução da Saúde.
+Depois: Orçamento do Estado [ano] · Relatório; Orçamento do Estado 2021 · Proposta de Lei e Relatório; Conta Geral do Estado [ano] · Relatório de Análise Global e Conta da Segurança Social
 
-A gramática não remove sinais. Os identificadores são der-saude-bens-servicos-reducao-abs, der-saude-investimento-reducao-abs e der-saude-total-reducao-abs. O inventário permite conferir cada ano, incluindo os intermédios, sem inserir prosa de método na página.
+As capas não imprimem para ou de antes do ano. Os subtítulos são documentais. As capas foram renderizadas e lidas; a tabela das línguas foi conferida de novo. O ano não se repete na frase de atribuição quando já consta do título.
 
-### V2D-16: Afirmações qualitativas
+### V2D-35: Selos fora da citação e do título
 
-Antes: As leituras qualitativas da UTAO tinham value e unit nulos.
+Antes: Selos dentro das aspas e do h2, intercalados na frase.
 
-Depois: O valor conserva o excerto textual inteiro, com unidade afirmação, atribuição e data de publicação.
+Depois: Selo depois da aspa de fecho; título inteiro no h2 e fontes na faixa imediatamente seguinte.
 
-Nenhum número foi inventado para permitir a travessia. O validador só admite esta forma quando afirmacao é true e value é exatamente excerpt.
+O número continua ligado à linha pelo token. O leitor de ecrã recebe o título sem os nomes das fontes intercalados; células e plantas conferem posição e destino dos selos.
 
-### V2D-17: Identificadores e períodos na travessia
+As decisões V2D-7 a V2D-26 permanecem em `decisoes.json`; V2D-1 a V2D-6 estão documentadas na conferência do commit 3533f7a7.
 
-Antes: O sítio recusava os sublinhados das coordenadas Eurostat e períodos comparativos como 2026/2027.
+## Frases tal como renderizam
 
-Depois: Os identificadores Eurostat preservam os sublinhados; as derivadas usam o ano final como reference_date e conservam os dois períodos na conta e nota.
+### Edição PT
 
-Preserva os identificadores prescritos e a gramática temporal do sítio. Os valores Eurostat mantêm a grafia API no motor e a vírgula decimal no sítio.
-
-### V2D-18: Rótulos e sinais contabilísticos
-
-Antes: A pesquisa tinha nomes sem name_source, incluindo descrições editoriais; o formatador não aceitava (220).
-
-Depois: Só os rótulos impressos conservam name com localizador. Citações usam document.title e derivadas usam description no motor. Os parênteses contabilísticos renderizam o sinal negativo.
-
-Não apresentar descrições como rótulos da fonte nem perder o sinal da projeção rodoviária.
-
-### V2D-19: Portões delimitados pelo mandato
-
-Antes: O escrivão só tinha corrida completa ou perfil V2-c.
-
-Depois: Perfil V2-d fechado para build, discussão, palavras, frases compostas, HTML, alvos, CSS, L1, séries e typecheck.
-
-A corrida integral do sítio fica para o GitHub, como pedido. O motor corre integralmente no pre-commit; cruzamento com origem corre à parte.
-
-### V2D-20: Ano do seletor não é o valor
-
-Antes: A régua das casas decimais interpretava o final Seleção: 2027 como o valor nas duas linhas setoriais das parcerias.
-
-Depois: A régua retira apenas a linha final de metadados Seleção antes de procurar o literal do valor. O excerto publicado permanece intacto.
-
-Uma planta confirma que o ano não substitui o valor; outra mantém a recusa de casas decimais alteradas, mesmo com o seletor no fim. A conferência da coluna e do valor continua no motor e na prova de partida.
-
-### V2D-21: Definições dos recibos novos
-
-Antes: As linhas novas ainda não tinham as definições bilingues exigidas pelos recibos.
-
-Depois: Cada uma das 126 linhas exportadas tem nome e definição nas duas edições, apoiados no excerto ou na derivação da própria linha; um compositor reproduz as declarações e a auditoria.
-
-A primeira construção recusou as famílias em falta. A cobertura dos recibos tem de acompanhar a travessia das linhas.
-
-### V2D-22: Títulos com números ligados às linhas
-
-Antes: O título era resolvido como texto simples nos vários pontos de entrada, perdendo as marcas dos valores e do período.
-
-Depois: Os pontos de entrada renderizam os pedaços do título e conservam a ligação de cada número à sua linha. No título do artigo há selos; as ligações de navegação levam ao artigo e são conferidas contra o destino, o título completo e os tokens, sem ligações aninhadas.
-
-O portão de HTML recusou os números sem ligação; as percentagens são medições e não podem receber uma isenção de texto estrutural.
-
-### V2D-23: Cobertura por matérias e língua das fontes
-
-Antes: As novas linhas estavam sem assunto declarado ou numa exclusão provisória, e os novos títulos não tinham língua declarada.
-
-Depois: 65 linhas pertencem à Saúde e 58 às Finanças; os três agregados da União ficam excluídos individualmente da cobertura nacional. Foram acrescentadas 37 declarações de língua dos títulos e localizadores. As unidades razão, euros por habitante e afirmação têm tradução inglesa declarada.
-
-As comparações orçamentais entre programas e os encargos das parcerias pertencem à política financeira do Estado. Não se alargaram matérias legais de água ou administração eleitoral para acomodar totais de outros programas.
-
-### V2D-24: Recibos acessíveis a partir de excertos e períodos
-
-Antes: Quatro linhas, nas duas edições, não tinham porta direta para o recibo: três eram citadas apenas pelo excerto e uma apenas pelo ano.
-
-Depois: Nos parágrafos da discussão, os excertos conservam a ligação à fonte e recebem o selo do recibo; os períodos ligam ao recibo da linha. Nas áreas, o percurso é cartão, selo, recibo e item; a célula confere cada destino em vez de exigir uma porta adicional ao nível da área.
-
-A célula exige acesso às provas de todas as linhas citadas. O comportamento é específico dos parágrafos da discussão e não acrescenta prosa sobre o método.
-
-### V2D-25: Inventário da voz
-
-Antes: O inventário conservava frases substituídas e não declarava os novos parágrafos e títulos.
-
-Depois: A medição do HTML recolheu 66 cadeias novas, 60 de conteúdo e seis de navegação; 38 declarações deixaram de se render e foram retiradas. Seis frases conservadas dentro dos parágrafos novos foram substituídas pelas declarações desses parágrafos completos, em vez de serem proibidas como retiradas.
-
-A exceção contextual inglesa «years with completed execution» descreve anos de execução orçamental concluída, não a completude do sítio; fica limitada à discussão. A leitura cruzada das novas frases continua atribuída à direção.
-
-### V2D-26: Uma só porta para o Método nos recibos novos
-
-Antes: Cada um dos 126 recibos novos, nas duas edições, repetia a porta do Método na regra da releitura e no rodapé. A L1 mediu 3034 páginas, 252 acima do teto de 2782.
-
-Depois: Os recibos novos conservam a porta da regra da releitura e suprimem a segunda porta do rodapé, pelo mecanismo já usado nos recibos NATO.
-
-A duplicação não acrescentava um destino. A lista explícita das 126 linhas delimita a alteração; a régua e o teto da L1 não mudam.
-
-## Valores lidos do livro selado
-
-| Identificador | Valor | Período |
-| --- | --- | --- |
-| oe-2027-saude-despesa-total-consolidada-2026 | 18 125,9 | 2026 |
-| oe-2027-saude-despesa-total-consolidada-2027 | 17 858,4 | 2027 |
-| oe-2027-saude-despesa-total-consolidada-variacao | -1,5 | 2027 |
-| oe-2027-saude-despesa-efetiva-consolidada-2026 | 18 062,4 | 2026 |
-| oe-2027-saude-despesa-efetiva-consolidada-2027 | 17 803,1 | 2027 |
-| oe-2027-saude-despesa-efetiva-consolidada-variacao | -1,4 | 2027 |
-| oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026 | 17 291,3 | 2026 |
-| oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027 | 17 803,1 | 2027 |
-| oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao | 3,0 | 2027 |
-| der-saude-prr-2026 | 771,1 | 2026 |
-| der-saude-variacao-sem-prr | 511,8 | 2026/2027 |
-| der-saude-variacao-efetiva | -259,3 | 2026/2027 |
-| der-saude-razao-compensacao-prr | 0,6637 | 2026/2027 |
-| der-saude-reforco-total-2026 | 825,7 | 2026 |
-| der-financas-prr-2026 | 1 472,7 | 2026 |
-| der-economia-prr-2026 | 1 357,1 | 2026 |
-| der-infraestruturas-e-habitacao-prr-2026 | 1 133,0 | 2026 |
-| der-ambiente-e-energia-prr-2026 | 823,2 | 2026 |
-| der-ppp-quota-rodoviario | 61,82 | 2027 |
-| utao-saude-efetiva-2026-orcamento | 17 147 | 2026 |
-| utao-saude-efetiva-2026-estimativa | 18 062 | 2026 |
-| saude-total-2020-orcamento-oe2020 | 11 282,2 | 2020 |
-| saude-total-2020-execucao-cge2020 | 11 731,9 | 2020 |
-| saude-total-2021-orcamento-oe2021 | 12 564,8 | 2021 |
-| saude-total-2021-execucao-cge2021 | 12 904,3 | 2021 |
-| saude-total-2022-orcamento-oe2022 | 13 578,1 | 2022 |
-| saude-total-2022-execucao-cge2022 | 14 016,8 | 2022 |
-| saude-total-2023-orcamento-oe2023 | 14 858,0 | 2023 |
-| saude-total-2023-execucao-cge2023 | 14 926,5 | 2023 |
-| saude-total-2024-orcamento-oe2024 | 15 709,4 | 2024 |
-| saude-total-2024-execucao-cge2024 | 15 808,8 | 2024 |
-| saude-total-2025-orcamento-oe2025 | 16 853,5 | 2025 |
-| saude-total-2025-execucao-cge2025 | 17 241,5 | 2025 |
-| saude-total-2026-orcamento-oe2026 | 17 300,2 | 2026 |
-| oe-2027-ppp-rodoviario-encargos-brutos-2027 | 1 152 | 2027 |
-| oe-2027-ppp-rodoviario-receitas-2027 | 263 | 2027 |
-| oe-2027-ppp-rodoviario-encargos-liquidos-2027 | 889 | 2027 |
-| oe-2027-ppp-total-encargos-liquidos-2027 | 1 438 | 2027 |
-| ppp-oe2022-liquidos-2021 | 1 250 | 2021 |
-| ppp-oe2023-liquidos-2022 | 1 192 | 2022 |
-| ppp-oe2024-liquidos-2023 | 1 105 | 2023 |
-| ppp-oe2025-liquidos-2024 | 1 012 | 2024 |
-| ppp-oe2026-liquidos-2025 | 843 | 2025 |
-| ppp-oe2027-liquidos-2026 | 942 | 2026 |
-| ppp-oe2027-liquidos-2028 | 705 | 2028 |
-| ppp-oe2027-liquidos-2029 | 648 | 2029 |
-| ppp-oe2027-liquidos-2030 | (220) | 2030 |
-| ppp-oe2027-liquidos-2035 | 77 | 2035 |
-| ppp-oe2027-liquidos-2040 | 17 | 2040 |
-| eurostat-hlth-sha11-hf-a-pc_gdp-tot_hf-pt-2024 | 10.20 | 2024 |
-| eurostat-hlth-sha11-hf-a-pc_gdp-tot_hf-eu27_2020-2024 | 10.16 | 2024 |
-| eurostat-hlth-sha11-hf-a-eur_hab-tot_hf-pt-2024 | 2764.83 | 2024 |
-| eurostat-hlth-sha11-hf-a-eur_hab-tot_hf-eu27_2020-2024 | 4074.88 | 2024 |
-| eurostat-hlth-sha11-hf-a-pc_gdp-hf1-pt-2024 | 6.31 | 2024 |
-| eurostat-hlth-sha11-hf-a-pc_gdp-hf1-eu27_2020-2024 | 8.17 | 2024 |
-| afirmacao-leitao-amaro-saude-oe2027-2026-10-09 | 3 | 2026-10-09 |
-| afirmacao-rtp-saude-queda-oe2027-2026-10-09 | 1,5 | 2026-10-09 |
-| afirmacao-pcp-paula-investimento-saude-2026-10-12 | 33,7 | 2026-10-12 |
-| utao-saude-sem-prr-2027 | 3,0 | 2027 |
-| utao-risco-execucao-sns-2027 | Existe um risco de pressão orçamental | 2027 |
-| afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09 | 1 700 | 2026-10-09 |
-| afirmacao-pcp-paula-ppp-2026-10-12 | 1800 | 2026-10-12 |
-| afirmacao-pcp-ppp-2026-10-15 | 1700 | 2026-10-15 |
-| utao-ppp-contingencias-natureza-2026 | não encargos já reconhecidos | 2026 |
-| oe-2027-saude-pessoal-2026 | 7 783,1 | 2026 |
-| oe-2027-saude-pessoal-2027 | 8 184,3 | 2027 |
-| oe-2027-saude-pessoal-variacao | 5,2 | 2027 |
-| oe-2027-saude-bens-servicos-2026 | 8 832,9 | 2026 |
-| oe-2027-saude-bens-servicos-2027 | 8 436,3 | 2027 |
-| oe-2027-saude-bens-servicos-variacao | -4,5 | 2027 |
-| oe-2027-saude-investimento-2026 | 1 022,5 | 2026 |
-| oe-2027-saude-investimento-2027 | 678,3 | 2027 |
-| oe-2027-saude-investimento-variacao | -33,7 | 2027 |
-| oe-2027-saude-outras-correntes-2026 | 32,4 | 2026 |
-| oe-2027-saude-outras-correntes-2027 | 303,7 | 2027 |
-| oe-2027-saude-transferencias-capital-2026 | 272,9 | 2026 |
-| oe-2027-saude-transferencias-capital-2027 | 0,0 | 2027 |
-| oe-2027-saude-investimento-variacao-sem-prr | 22,2 | 2027 |
-| oe-2027-saude-fonte-impostos-2026 | 15 116,4 | 2026 |
-| oe-2027-saude-fonte-impostos-2027 | 15 452,2 | 2027 |
-| oe-2027-saude-fonte-receitas-proprias-2026 | 1 289,5 | 2026 |
-| oe-2027-saude-fonte-receitas-proprias-2027 | 2 017,6 | 2027 |
-| oe-2027-saude-fonte-fundos-europeus-2026 | 655,0 | 2026 |
-| oe-2027-saude-fonte-fundos-europeus-2027 | 174,6 | 2027 |
-| oe-2027-saude-transferencias-sns-2026 | 14 935,8 | 2026 |
-| oe-2027-saude-transferencias-sns-2027 | 15 539,2 | 2027 |
-| oe-2027-saude-transferencias-sns-variacao | 4,0 | 2027 |
-| ppp-oe2027-ferroviario-2027 | 312 | 2027 |
-| ppp-oe2027-saude-2027 | 254 | 2027 |
-| ppp-oe2027-liquidos-2027-previsao-oe2026 | 774 | 2027 |
-| ppp-oe2027-riscos-pedidos-rodoviarios | 2388,2 | 2027 |
-| ppp-oe2027-riscos-acrescimo | 1140 | 2027 |
-| ppp-oe2027-riscos-brisa | 1122,5 | 2027 |
-| ppp-oe2027-riscos-rotas-algarve-principal | 445 | 2027 |
-| ppp-oe2027-riscos-rotas-algarve-mensal | 1,3 | 2027 |
-| dgo-2026-08-saude-efetiva-jan-ago-2025 | 9 861,9 | 2025 |
-| dgo-2026-08-saude-efetiva-jan-ago-2026 | 11 822,6 | 2026 |
-| dgo-2026-08-saude-efetiva-variacao-homologa | 19,9 | 2026 |
-| dgo-2026-08-sns-saldo-jan-ago-2026 | -918,5 | 2026 |
-| dgo-2026-08-sns-despesa-variacao-homologa | 13,2 | 2026 |
-| der-saude-pessoal-variacao-abs | 401,2 | 2027 |
-| der-saude-bens-servicos-variacao-abs | -396,6 | 2027 |
-| der-saude-investimento-variacao-abs | -344,2 | 2027 |
-| der-saude-variacao-total-abs | -267,5 | 2027 |
-| der-saude-receitas-proprias-variacao-pct | 56,5 | 2027 |
-| der-saude-2027-vs-execucao-2025-pct | 3,6 | 2027 |
-| der-ppp-brutos-todos-2027 | 1 718 | 2027 |
-| der-ppp-rodoviario-2027-vs-2021-pct | -28,9 | 2027 |
-| der-ppp-pcp-vs-brutos | 548 | 2027 |
-| der-ppp-pcp-vs-liquidos | 811 | 2027 |
-| der-utao-saude-reforco-2026 | 915 | 2026 |
-| der-saude-variacao-sem-prr-pct | 3,0 | 2027 |
-| oe-2027-educacao-sem-prr-2026 | 7 421,7 | 2026 |
-| oe-2027-educacao-sem-prr-2027 | 7 787,9 | 2027 |
-| der-educacao-variacao-sem-prr | 366,2 | 2026/2027 |
-| der-educacao-variacao-sem-prr-pct | 4,9 | 2027 |
-| oe-2027-trabalho-solidariedade-e-seguranca-social-sem-prr-2026 | 27 832,7 | 2026 |
-| oe-2027-trabalho-solidariedade-e-seguranca-social-sem-prr-2027 | 30 270,4 | 2027 |
-| der-trabalho-solidariedade-e-seguranca-social-variacao-sem-prr | 2 437,7 | 2026/2027 |
-| der-trabalho-solidariedade-e-seguranca-social-variacao-sem-prr-pct | 8,8 | 2027 |
-| oe-2027-infraestruturas-e-habitacao-sem-prr-2026 | 4 935,5 | 2026 |
-| oe-2027-infraestruturas-e-habitacao-sem-prr-2027 | 5 962,5 | 2027 |
-| der-infraestruturas-e-habitacao-variacao-sem-prr | 1 027,0 | 2026/2027 |
-| der-infraestruturas-e-habitacao-variacao-sem-prr-pct | 20,8 | 2027 |
-| oe-2027-justica-sem-prr-2026 | 1 800,7 | 2026 |
-| oe-2027-justica-sem-prr-2027 | 2 128,2 | 2027 |
-| der-justica-variacao-sem-prr | 327,5 | 2026/2027 |
-| der-justica-variacao-sem-prr-pct | 18,2 | 2027 |
-| oe-2027-seguranca-interna-sem-prr-2026 | 2 789,6 | 2026 |
-| oe-2027-seguranca-interna-sem-prr-2027 | 3 153,8 | 2027 |
-| der-seguranca-interna-variacao-sem-prr | 364,2 | 2026/2027 |
-| der-seguranca-interna-variacao-sem-prr-pct | 13,1 | 2027 |
-| oe-2027-financas-efetiva-2026 | 10 707,0 | 2026 |
-| oe-2027-financas-sem-prr-2026 | 9 234,3 | 2026 |
-| oe-2027-economia-efetiva-2026 | 2 312,1 | 2026 |
-| oe-2027-economia-sem-prr-2026 | 955,0 | 2026 |
-| oe-2027-infraestruturas-e-habitacao-efetiva-2026 | 6 068,5 | 2026 |
-| oe-2027-ambiente-e-energia-efetiva-2026 | 2 290,4 | 2026 |
-| oe-2027-ambiente-e-energia-sem-prr-2026 | 1 467,2 | 2026 |
-| der-saude-bens-servicos-reducao-abs | 396,6 | 2027 |
-| der-saude-investimento-reducao-abs | 344,2 | 2027 |
-| der-saude-total-reducao-abs | 267,5 | 2027 |
-
-## Frases renderizadas: PT
-
-### O orçamento da Saúde para 2027: 3,0 % sem PRR ou −1,5 % no total? As duas contas, o que muda por dentro e o que ficou por dizer
+**O orçamento da Saúde para 2027: 3,0 % sem PRR ou −1,5 % no total? As duas contas, o que muda por dentro e o que ficou por dizer**
 
 **Como foi dito**
 
-«Ora, esta verba do PRR foi excecional. Se retirarmos isso, o orçamento da Saúde sobre 3%», António Leitão Amaro, ministro da Presidência, num documento publicado pela RTP, a 09.10.2026. No mesmo dia, a RTP publicou: «O orçamento para Saúde sofre um corte em 2027. Cai 1,5 por cento. Estão atribuídos 17 mil 858 milhões de euros. Menos 267,5 milhões do que este ano.» A 12.10.2026, Paula Santos disse: «O investimento sofre um corte brutal de 33,7%.»
+«Ora, esta verba do PRR foi excecional. Se retirarmos isso, o orçamento da Saúde sobre 3%», António Leitão Amaro, ministro da Presidência, num documento publicado pela RTP, a 09.10.2026. No mesmo dia, a RTP publicou: «O orçamento para Saúde sofre um corte em 2027. Cai 1,5 por cento. Estão atribuídos 17 mil 858 milhões de euros. Menos 267,5 milhões do que este ano.» A 12.10.2026, Paula Santos · PCP disse: «O investimento sofre um corte brutal de 33,7%.»
 
 **O que as fontes dizem**
 
@@ -399,19 +183,19 @@ Desde 2020, a Saúde gastou todos os anos mais do que o orçamento inicial: 11�
 
 Na execução até agosto de 2026, a despesa efetiva do programa Saúde foi de 11 822,6, 19,9 % acima do mesmo período de 2025, e o Serviço Nacional de Saúde tinha nesses oito meses um saldo de −918,5 milhões de euros, com a despesa a crescer 13,2 %.
 
-Na comparação europeia, Portugal gastou em saúde 10,20 % do PIB em 2024, a União 10,16 %; por habitante, 2 764,83 euros contra 4 074,88 na União; só nos regimes públicos e nos regimes contributivos obrigatórios, 6,31 % do PIB contra 8,17 %.
+Na comparação europeia, Portugal gastou em saúde 10,20 % do PIB em 2024, a União 10,16 %; por habitante, em euros correntes e sem correção pelos preços, 2 764,83 euros contra 4 074,88 na União; só nos regimes públicos e nos regimes contributivos obrigatórios, 6,31 % do PIB contra 8,17 %.
 
 **A comparação**
 
-Os números da RTP, a queda, o montante e a diferença, coincidem com a linha da despesa total consolidada: de 18 125,9 para 17 858,4, −267,5 milhões de euros, −1,5 %. O número do ministro coincide com a variação da linha da despesa efetiva consolidada sem o PRR, 3,0 %, a mesma que o relatório escreve e que a UTAO confirma: «a despesa aumentaria 3,0%». O número do PCP sobre o investimento coincide com a linha do investimento com o PRR, −33,7 %; sem o PRR, a mesma linha sobe 22,2 %.
+Os números da RTP, a queda, o montante e a diferença, coincidem com a linha da despesa total consolidada: −267,5 milhões de euros, −1,5 %. O número do ministro coincide com a variação da linha da despesa efetiva consolidada sem o PRR, 3,0 %, a mesma que o relatório escreve e que a UTAO, a unidade técnica de apoio orçamental do Parlamento, confirma: «Todavia, excluído o efeito do PRR, a despesa aumentaria 3,0%.» O número do PCP sobre o investimento coincide com a linha do investimento com o PRR, −33,7 %; sem o PRR, a mesma linha sobe 22,2 %.
 
-A descida vem toda do fim do PRR. Em 2026 o PRR valia 771,1 na despesa efetiva da Saúde; em 2027 vale zero, e a despesa efetiva é a mesma com e sem ele, 17 803,1 e 17 803,1. A despesa fora do PRR sobe 511,8, o que repõe 0,6637 do que o PRR deixa; a diferença, −259,3, é a queda da despesa efetiva.
+A descida vem toda do fim do PRR. Em 2026 o PRR valia 771,1 na despesa efetiva da Saúde; em 2027 vale zero, e a despesa efetiva é a mesma com e sem ele, 17 803,1 e 17 803,1. A despesa fora do PRR sobe 511,8, o que repõe 66,4 % do que o PRR deixa; a diferença, −259,3, é a queda da despesa efetiva.
 
-O que sobe e o que desce não são a mesma coisa: o pessoal leva mais 401,2; a aquisição de bens e serviços leva menos 396,6; o investimento leva menos 344,2; e as outras despesas correntes passam de 32,4 para 303,7, sem que o relatório diga o que lá entra. O financiamento conta com receitas próprias a crescer 56,5 % e com fundos europeus a cair de 655,0 para 174,6.
+O que sobe e o que desce não são a mesma coisa: o pessoal leva mais 401,2; a aquisição de bens e serviços leva menos 396,6; o investimento leva menos 344,2; e as outras despesas correntes passam de 32,4 para 303,7, que o relatório explica assim: «De relevar ainda o crescimento das outras despesas correntes, decorrente da constituição das reservas orçamentais a serem mobilizadas durante a execução orçamental, em linha com o aprofundamento da autonomia na gestão orçamental de cada área setorial iniciada em 2026.» O financiamento conta com receitas próprias a crescer 56,5 % e com fundos europeus a cair de 655,0 para 174,6.
 
-O fim do PRR não é só da Saúde: em 2026 o PRR pesava 1 472,7 nas Finanças, 1 357,1 na Economia, 1 133,0 nas Infraestruturas e habitação, 823,2 no Ambiente e energia e 771,1 na Saúde. Em 2027 a despesa fora do PRR cresce 3,0 % na Saúde, 4,9 % na Educação, 8,8 % no Trabalho, solidariedade e segurança social, 20,8 % nas Infraestruturas e habitação, 18,2 % na Justiça e 13,1 % na Segurança interna.
+A redução do PRR não é só da Saúde: em 2026 o PRR pesava 1 472,7 nas Finanças, 1 357,1 na Economia, 1 133,0 nas Infraestruturas e habitação, 823,2 no Ambiente e energia e 771,1 na Saúde. Em 2027 a despesa fora do PRR cresce 3,0 % na Saúde, 4,9 % na Educação, 8,8 % no Trabalho, solidariedade e segurança social, 20,8 % nas Infraestruturas e habitação, 18,2 % na Justiça e 13,1 % na Segurança interna; e varia −7,8 % nas Finanças, −4,9 % na Economia e −38,2 % na Coesão territorial.
 
-O orçamento de 2027, 17 858,4, é inferior ao que o relatório estima que se gaste em 2026, 18 125,9, e superior em 3,6 % ao que se gastou em 2025, 17 241,5. A UTAO escreve, sobre a execução do Serviço Nacional de Saúde em 2027: «Existe um risco de pressão orçamental».
+O orçamento de 2027, 17 858,4, é inferior ao que o relatório estima que se gaste em 2026, 18 125,9, e superior em 3,6 % ao que se gastou em 2025, 17 241,5. A UTAO escreve, sobre a execução do Serviço Nacional de Saúde em 2027: «Existe um risco de pressão orçamental associado à execução do Serviço Nacional de Saúde (SNS).»
 
 **A conclusão**
 
@@ -419,17 +203,17 @@ As três afirmações correspondem a linhas diferentes do quadro e nenhuma apres
 
 **A recomendação**
 
-A pergunta útil não é se o orçamento da Saúde sobe ou desce, é se chega: a resposta dos últimos seis anos é que não chegou nenhuma vez, e a execução até agosto de 2026, 19,9 % acima de 2025, reforça o risco de nova insuficiência. Quem acompanhar a Saúde em 2027 olha para a execução mensal da DGO e para a eventual necessidade de reforço, não apenas para a aprovação.
+A pergunta útil não é se o orçamento da Saúde sobe ou desce, é se chega: a resposta dos últimos seis anos é que não chegou nenhuma vez, e a execução até agosto de 2026, 19,9 % acima de 2025, reforça o risco de nova insuficiência. Quem acompanhar a Saúde em 2027 olha para a execução mensal da Direção-Geral do Orçamento (DGO) e para a eventual necessidade de reforço, não apenas para a aprovação.
 
 **A opinião do lugar de direção**
 
-O ministro e a RTP escolheram cada um a linha que lhes convinha, e as duas são verdadeiras; a discussão sobre «sobe» ou «desce» esconde o que o quadro mostra: um orçamento que paga mais pessoal com menos compras e menos investimento, que conta com receitas próprias a crescer mais de metade sem o relatório dizer de onde, e que, pelo que a execução de 2026 e os seis anos anteriores mostram, corre o risco de voltar a ser ultrapassado. O orçamento da Saúde para 2027 é um orçamento de transição para o fim do PRR, e a sua medida certa conhece-se na execução, não na aprovação. Dizer isto custava mais do que dizer «sobe» ou «cai», e era o que o debate devia.
+O ministro e a RTP escolheram cada um a linha que lhes convinha, e as duas são verdadeiras; a discussão sobre «sobe» ou «desce» esconde o que o quadro mostra: um orçamento que paga mais pessoal com menos compras e menos investimento, que aumenta as outras despesas correntes por via das reservas a mobilizar durante a execução, que conta com receitas próprias a crescer mais de metade sem que o relatório explique de onde vêm, e que, pelo que a execução de 2026 e os seis anos anteriores mostram, corre o risco de voltar a ser ultrapassado. O orçamento da Saúde para 2027 é um orçamento de transição para o fim do PRR, e a sua medida certa conhece-se na execução, não na aprovação. Dizer isto custava mais do que dizer «sobe» ou «cai», e era o que o debate devia.
 
-### As parcerias rodoviárias: o que o Estado paga, o que vai pagar e o que não está no quadro
+**As parcerias rodoviárias: o que o Estado paga, o que vai pagar e o que não está no quadro**
 
 **Como foi dito**
 
-«Vem com um orçamento que entrega 1 700 milhões às parcerias público-privadas rodoviárias», Paulo Raimundo · PCP, na Assembleia da República, a 09.10.2026. A 12.10.2026, Paula Santos: «Em sentido inverso cresce mais do que o previsto a despesa com as chamadas PPP – rodoviárias, ferroviárias, saúde – com o Governo a desviar mais de 1800 milhões de euros de recursos públicos para os grupos económicos privados, sem que tal se traduza em novas infraestruturas ou investimento nas existentes.» A 15.10.2026, Paulo Raimundo: «Há condições, há recursos e meios, desde logo na Segurança Social, mas há também opções que se podem e têm de fazer, e entre os mais de 1700 milhões de euros que o Governo quer pagar em PPP e o aumento dos reformados, da nossa parte não temos dúvidas da opção a tomar.»
+«Vem com um orçamento que entrega 1 700 milhões às parcerias público-privadas rodoviárias», Paulo Raimundo · PCP, na Assembleia da República, a 09.10.2026. A 12.10.2026, Paula Santos · PCP: «Em sentido inverso cresce mais do que o previsto a despesa com as chamadas PPP – rodoviárias, ferroviárias, saúde – com o Governo a desviar mais de 1800 milhões de euros de recursos públicos para os grupos económicos privados, sem que tal se traduza em novas infraestruturas ou investimento nas existentes.» A 15.10.2026, Paulo Raimundo: «Há condições, há recursos e meios, desde logo na Segurança Social, mas há também opções que se podem e têm de fazer, e entre os mais de 1700 milhões de euros que o Governo quer pagar em PPP e o aumento dos reformados, da nossa parte não temos dúvidas da opção a tomar.»
 
 **O que as fontes dizem**
 
@@ -443,15 +227,15 @@ O relatório projeta 705 em 2028, 648 em 2029, 77 em 2035 e 17 em 2040, o últim
 
 Para 2027, o relatório do ano passado previa 774 de encargos líquidos; este prevê 889. Segundo o relatório, a diferença vem dos custos da cobrança das portagens e dos pagamentos ligados ao tráfego, que subiram, e das receitas de portagem, que desceram.
 
-Fora do quadro, no capítulo dos riscos, o relatório conta 2 388,2 milhões de euros em pedidos de reequilíbrio financeiro e litígios das concessionárias e subconcessionárias rodoviárias, 1 140 acima do relatório anterior, dos quais 1 122,5 da Brisa, na negociação em curso, e 445 da ação principal da Rotas do Algarve Litoral, em que o Estado já paga 1,3 milhões por mês a título provisório. A UTAO escreve que estes valores são «não encargos já reconhecidos».
+Fora do quadro, no capítulo dos riscos, o relatório conta 2 388,2 milhões de euros em pedidos de reequilíbrio financeiro e litígios das concessionárias e subconcessionárias rodoviárias, com dados do primeiro trimestre, reportados a 31.03.2026, 1 140 acima do relatório anterior, dos quais 1 122,5 da Brisa, na negociação em curso, e 445 da ação principal da Rotas do Algarve Litoral, em que a Infraestruturas de Portugal paga, por decisão provisória, cerca de 1,3 milhões por mês, mais IVA. A UTAO distingue os pedidos dos encargos efetivos: «São pretensões dos parceiros privados, e não encargos já reconhecidos; a sua concretização, total ou parcial, oneraria o saldo orçamental de anos futuros.»
 
 **A comparação**
 
 Nenhum dos valores rodoviários do quadro é igual a 1 700 milhões de euros: o número está 548 acima dos encargos brutos e 811 acima dos líquidos.
 
-O número aproxima-se da soma dos encargos brutos rodoviários com os encargos ferroviários e da saúde, 1 718, sem que isso demonstre a conta que lhe deu origem; as rodoviárias são 61,82 % do total líquido. O próprio PCP alargou depois o universo referido: «Em sentido inverso cresce mais do que o previsto a despesa com as chamadas PPP – rodoviárias, ferroviárias, saúde – com o Governo a desviar mais de 1800 milhões de euros de recursos públicos para os grupos económicos privados, sem que tal se traduza em novas infraestruturas ou investimento nas existentes.» a 12.10.2026, e «Há condições, há recursos e meios, desde logo na Segurança Social, mas há também opções que se podem e têm de fazer, e entre os mais de 1700 milhões de euros que o Governo quer pagar em PPP e o aumento dos reformados, da nossa parte não temos dúvidas da opção a tomar.» a 15.10.2026.
+O número aproxima-se da soma dos encargos brutos rodoviários com os encargos ferroviários e da saúde, 1 718, sem que isso demonstre a conta que lhe deu origem; as rodoviárias são 61,82 % do total líquido. O próprio PCP alargou depois o universo referido às parcerias rodoviárias, ferroviárias e da saúde, a 12.10.2026 e a 15.10.2026, com 1 800 milhões de euros e 1 700 milhões de euros.
 
-O relatório prevê para as parcerias rodoviárias 889 líquidos em 2027 contra 1 250 executados em 2021, −28,9 %; mas mais do que os 843 estimados para 2025, porque os encargos brutos voltaram a subir, e o relatório diz que passou a contar neles o apoio pago às concessionárias pelos descontos nas portagens, que o relatório anterior não contava. A projeção tem uma tendência de redução, com oscilações, até 17 em 2040.
+O relatório prevê para as parcerias rodoviárias 889 líquidos em 2027 contra 1 250 executados em 2021, −28,9 %; mas mais do que os 843 estimados para 2025: os encargos brutos descem de 1 234 para 1 152, e as receitas de portagem previstas descem mais, de 392 para 263. A projeção tem uma tendência de redução, com oscilações, até 17 em 2040.
 
 O número que falta nas três afirmações citadas é o dos pedidos pendentes, 2 388,2, que não está no quadro dos encargos nem nessas afirmações, e que é maior do que os encargos rodoviários brutos e do que o número da primeira afirmação.
 
@@ -461,20 +245,19 @@ O relatório prevê 889 milhões líquidos para as parcerias rodoviárias em 202
 
 **A recomendação**
 
-A discussão útil em 2027 é a negociação com a Brisa e os litígios pendentes, além do valor orçamentado dos pagamentos contratados. Quem quiser vigiar as parcerias olha para o capítulo dos riscos do relatório e para o relatório anual da UTAP, não só para o quadro dos encargos.
+A discussão útil em 2027 é a negociação com a Brisa e os litígios pendentes, além do valor orçamentado dos pagamentos contratados. Quem quiser vigiar as parcerias olha para o capítulo dos riscos do relatório e para o relatório anual da UTAP, a unidade técnica de acompanhamento de projetos, não só para o quadro dos encargos.
 
 **A opinião do lugar de direção**
 
-O PCP tem razão ao chamar a atenção para o custo das parcerias, mas erra ao atribuir às rodoviárias um número que ultrapassa os seus encargos brutos. As parcerias custam ao Estado mais de mil milhões brutos no ano orçamentado; a afirmação posterior já abrange as rodoviárias, ferroviárias e da saúde, mas o seu montante também excede a soma do quadro: «Em sentido inverso cresce mais do que o previsto a despesa com as chamadas PPP – rodoviárias, ferroviárias, saúde – com o Governo a desviar mais de 1800 milhões de euros de recursos públicos para os grupos económicos privados, sem que tal se traduza em novas infraestruturas ou investimento nas existentes.» O Governo, por sua vez, apresenta um quadro dos pagamentos contratados e remete para um capítulo de riscos os pedidos que podem mudar a conta. Entre os dois, o leitor fica a saber os pagamentos previstos às concessionárias; fica por saber quanto dos pedidos pendentes se tornará encargo efetivo, e é essa a conta que o Parlamento devia pedir antes de votar.
+O PCP tem razão ao chamar a atenção para o custo das parcerias, mas erra ao atribuir às rodoviárias um número que ultrapassa os seus encargos brutos. As parcerias custam ao Estado mais de mil milhões brutos no ano orçamentado; a afirmação posterior já abrange as rodoviárias, as ferroviárias e as da saúde, mas o seu montante, 1 800 milhões de euros, também excede a soma do quadro. O Governo, por sua vez, apresenta um quadro dos pagamentos contratados e remete para um capítulo de riscos os pedidos que podem mudar a conta. Entre os dois, o leitor fica a saber os pagamentos previstos às concessionárias; fica por saber quanto dos pedidos pendentes se tornará encargo efetivo, e é essa a conta que o Parlamento devia pedir antes de votar.
 
+### Edição EN
 
-## Frases renderizadas: EN
-
-### The Health budget for 2027: 3,0 % without the RRP or −1,5 % in total? Both counts, what changes inside it, and what went unsaid
+**The Health budget for 2027: 3,0 % without the RRP or −1,5 % in total? Both counts, what changes inside it, and what went unsaid**
 
 **As it was said**
 
-«Ora, esta verba do PRR foi excecional. Se retirarmos isso, o orçamento da Saúde sobre 3%», António Leitão Amaro, ministro da Presidência, in a document published by RTP, on 09.10.2026. On the same day, RTP published: «O orçamento para Saúde sofre um corte em 2027. Cai 1,5 por cento. Estão atribuídos 17 mil 858 milhões de euros. Menos 267,5 milhões do que este ano.» On 12.10.2026, Paula Santos said: «O investimento sofre um corte brutal de 33,7%.»
+«Ora, esta verba do PRR foi excecional. Se retirarmos isso, o orçamento da Saúde sobre 3%», António Leitão Amaro, ministro da Presidência, in a document published by RTP, on 09.10.2026. On the same day, RTP published: «O orçamento para Saúde sofre um corte em 2027. Cai 1,5 por cento. Estão atribuídos 17 mil 858 milhões de euros. Menos 267,5 milhões do que este ano.» On 12.10.2026, Paula Santos · PCP said: «O investimento sofre um corte brutal de 33,7%.»
 
 **What the sources say**
 
@@ -490,19 +273,19 @@ Since 2020, Health has spent more than its initial budget every year: 11 282,2
 
 In the execution to August 2026, the Health programme's effective expenditure was 11 822,6, 19,9 % above the same period of 2025, and the National Health Service had, in those eight months, a balance of −918,5 million euros, with expenditure growing 13,2 %.
 
-In the European comparison, Portugal spent 10,20 % of GDP on health in 2024, the EU 10,16 %; per inhabitant, 2 764,83 euros against 4 074,88 in the EU; in government schemes and compulsory contributory schemes alone, 6,31 % of GDP against 8,17 %.
+In the European comparison, Portugal spent 10,20 % of GDP on health in 2024, the EU 10,16 %; per inhabitant, in current euros and without correction for price levels, 2 764,83 euros against 4 074,88 in the EU; in government schemes and compulsory contributory schemes alone, 6,31 % of GDP against 8,17 %.
 
 **The comparison**
 
-RTP's figures, the fall, the amount and the difference, match the line for total consolidated expenditure: from 18 125,9 to 17 858,4, −267,5 million euros, −1,5 %. The minister's figure matches the change in the line for consolidated effective expenditure without the RRP, 3,0 %, the same one the report gives and the UTAO confirms: «a despesa aumentaria 3,0%». The PCP figure on investment matches the investment line with the RRP, −33,7 %; without the RRP, the same line rises 22,2 %.
+RTP's figures, the fall, the amount and the difference, match the line for total consolidated expenditure: −267,5 million euros, −1,5 %. The minister's figure matches the change in the line for consolidated effective expenditure without the RRP, 3,0 %, the one the report writes and the UTAO, Parliament's technical budget support unit, confirms: «Todavia, excluído o efeito do PRR, a despesa aumentaria 3,0%.» The PCP's figure on investment matches the investment line with the RRP, −33,7 %; without the RRP, the same line rises 22,2 %.
 
-The fall comes entirely from the end of the RRP. In 2026 the RRP accounted for 771,1 in effective Health expenditure; in 2027 it is zero, and effective expenditure is the same with and without it, 17 803,1 and 17 803,1. Expenditure outside the RRP rises 511,8, replacing 0,6637 of what the RRP leaves; the difference, −259,3, is the fall in effective expenditure.
+The fall comes entirely from the end of the RRP. In 2026 the RRP accounted for 771,1 in effective Health expenditure; in 2027 it is zero, and effective expenditure is the same with and without it, 17 803,1 and 17 803,1. Expenditure outside the RRP rises 511,8, replacing 66,4 % of what the RRP leaves; the difference, −259,3, is the fall in effective expenditure.
 
-What rises and what falls are not the same thing: personnel gets 401,2 more; the purchase of goods and services gets 396,6 less; investment gets 344,2 less; and other current expenditure goes from 32,4 to 303,7, without the report saying what it includes. The financing counts on own revenue growing 56,5 % and European funds falling from 655,0 to 174,6.
+What rises and what falls are not the same thing: personnel gets 401,2 more; the purchase of goods and services gets 396,6 less; investment gets 344,2 less; and other current expenditure goes from 32,4 to 303,7, which the report explains thus: «De relevar ainda o crescimento das outras despesas correntes, decorrente da constituição das reservas orçamentais a serem mobilizadas durante a execução orçamental, em linha com o aprofundamento da autonomia na gestão orçamental de cada área setorial iniciada em 2026.» The financing counts on own revenue growing 56,5 % and European funds falling from 655,0 to 174,6.
 
-The end of the RRP is not confined to Health: in 2026 the RRP accounted for 1 472,7 in Finance, 1 357,1 in Economy, 1 133,0 in Infrastructure and housing, 823,2 in Environment and energy and 771,1 in Health. In 2027 expenditure outside the RRP grows 3,0 % in Health, 4,9 % in Education, 8,8 % in Labour, solidarity and social security, 20,8 % in Infrastructure and housing, 18,2 % in Justice and 13,1 % in Internal security.
+The reduction in the RRP is not confined to Health: in 2026 the RRP accounted for 1 472,7 in Finance, 1 357,1 in Economy, 1 133,0 in Infrastructure and housing, 823,2 in Environment and energy and 771,1 in Health. In 2027 expenditure outside the RRP grows 3,0 % in Health, 4,9 % in Education, 8,8 % in Labour, solidarity and social security, 20,8 % in Infrastructure and housing, 18,2 % in Justice and 13,1 % in Internal security; and changes by −7,8 % in Finance, −4,9 % in Economy and −38,2 % in Territorial cohesion.
 
-The budget for 2027, 17 858,4, is below what the report estimates will be spent in 2026, 18 125,9, and 3,6 % above what was spent in 2025, 17 241,5. The UTAO writes, on the execution of the National Health Service in 2027: «Existe um risco de pressão orçamental».
+The budget for 2027, 17 858,4, is below what the report estimates will be spent in 2026, 18 125,9, and 3,6 % above what was spent in 2025, 17 241,5. The UTAO writes, on the execution of the National Health Service in 2027: «Existe um risco de pressão orçamental associado à execução do Serviço Nacional de Saúde (SNS).»
 
 **The conclusion**
 
@@ -510,17 +293,17 @@ The three claims correspond to different lines of the table and none presents al
 
 **The recommendation**
 
-The useful question is not whether the Health budget rises or falls, but whether it is enough: the answer of the last six years is that it never was, and the execution to August 2026, 19,9 % above 2025, reinforces the risk of another shortfall. Whoever follows Health in 2027 watches the DGO's monthly execution and the possible need for reinforcement, not just the approval.
+The useful question is not whether the Health budget rises or falls, but whether it is enough: the answer of the last six years is that it never was, and the execution to August 2026, 19,9 % above 2025, reinforces the risk of another shortfall. Whoever follows Health in 2027 watches the monthly execution of the Directorate-General for the Budget (DGO) and the possible need for reinforcement, not just the approval.
 
 **The editorial seat's opinion**
 
-The minister and RTP each chose the line that suited them, and both are true; the argument over «up» or «down» hides what the table shows: a budget that pays more staff with fewer purchases and less investment, that counts on own revenue growing by more than half without the report saying from where, and that, on the evidence of the 2026 execution and the six years before it, risks being exceeded again. The Health budget for 2027 is a transition budget for the end of the RRP, and its true size will be known in the execution, not at the vote. Saying this cost more than saying «up» or «down», and it was what the debate owed.
+The minister and RTP each chose the line that suited them, and both are true; the argument over «up» or «down» hides what the table shows: a budget that pays more staff with fewer purchases and less investment, that increases other current expenditure through reserves to be used during the year, that counts on own revenue growing by more than half without the report explaining where it comes from, and that, on the evidence of the 2026 execution and the six years before it, risks being exceeded again. The Health budget for 2027 is a transition budget for the end of the RRP, and its true size will be known in the execution, not at the vote. Saying this cost more than saying «up» or «down», and it was what the debate owed.
 
-### The road partnerships: what the State pays, what it will pay, and what the table leaves out
+**The road partnerships: what the State pays, what it will pay, and what the table leaves out**
 
 **As it was said**
 
-«Vem com um orçamento que entrega 1 700 milhões às parcerias público-privadas rodoviárias», Paulo Raimundo · PCP, in the Assembleia da República, on 09.10.2026. On 12.10.2026, Paula Santos: «Em sentido inverso cresce mais do que o previsto a despesa com as chamadas PPP – rodoviárias, ferroviárias, saúde – com o Governo a desviar mais de 1800 milhões de euros de recursos públicos para os grupos económicos privados, sem que tal se traduza em novas infraestruturas ou investimento nas existentes.» On 15.10.2026, Paulo Raimundo: «Há condições, há recursos e meios, desde logo na Segurança Social, mas há também opções que se podem e têm de fazer, e entre os mais de 1700 milhões de euros que o Governo quer pagar em PPP e o aumento dos reformados, da nossa parte não temos dúvidas da opção a tomar.»
+«Vem com um orçamento que entrega 1 700 milhões às parcerias público-privadas rodoviárias», Paulo Raimundo · PCP, in the Assembleia da República, on 09.10.2026. On 12.10.2026, Paula Santos · PCP: «Em sentido inverso cresce mais do que o previsto a despesa com as chamadas PPP – rodoviárias, ferroviárias, saúde – com o Governo a desviar mais de 1800 milhões de euros de recursos públicos para os grupos económicos privados, sem que tal se traduza em novas infraestruturas ou investimento nas existentes.» On 15.10.2026, Paulo Raimundo: «Há condições, há recursos e meios, desde logo na Segurança Social, mas há também opções que se podem e têm de fazer, e entre os mais de 1700 milhões de euros que o Governo quer pagar em PPP e o aumento dos reformados, da nossa parte não temos dúvidas da opção a tomar.»
 
 **What the sources say**
 
@@ -534,15 +317,15 @@ The report projects 705 in 2028, 648 in 2029, 77 in 2035 and 17 in 2040, the las
 
 For 2027, last year's report forecast 774 in net charges; this one forecasts 889. According to the report, the difference comes from toll collection costs and traffic-linked payments, which rose, and toll revenue, which fell.
 
-Outside the table, in the risks chapter, the report counts 2 388,2 million euros in financial rebalancing claims and litigation by road concessionaires and subconcessionaires, 1 140 above the previous report, including 1 122,5 from Brisa, in the ongoing negotiation, and 445 in the main action by Rotas do Algarve Litoral, in which the State already pays 1,3 million a month provisionally. The UTAO writes that these amounts are «não encargos já reconhecidos».
+Outside the table, in the risks chapter, the report counts 2 388,2 million euros in financial rebalancing claims and litigation by road concessionaires and subconcessionaires, with first-quarter data referenced to 31.03.2026, 1 140 above the previous report, including 1 122,5 from Brisa, in the ongoing negotiation, and 445 in the main action by Rotas do Algarve Litoral, in which Infraestruturas de Portugal pays, by provisional decision, around 1,3 million a month, plus VAT. The UTAO distinguishes claims from actual charges: «São pretensões dos parceiros privados, e não encargos já reconhecidos; a sua concretização, total ou parcial, oneraria o saldo orçamental de anos futuros.»
 
 **The comparison**
 
 None of the road figures in the table equals 1 700 million euros: the figure is 548 above gross charges and 811 above net charges.
 
-The figure is close to the sum of gross road charges and rail and health charges, 1 718, without that proving the calculation behind it; road partnerships are 61,82 % of the net total. The PCP itself later broadened the scope it referred to: «Em sentido inverso cresce mais do que o previsto a despesa com as chamadas PPP – rodoviárias, ferroviárias, saúde – com o Governo a desviar mais de 1800 milhões de euros de recursos públicos para os grupos económicos privados, sem que tal se traduza em novas infraestruturas ou investimento nas existentes.» on 12.10.2026, and «Há condições, há recursos e meios, desde logo na Segurança Social, mas há também opções que se podem e têm de fazer, e entre os mais de 1700 milhões de euros que o Governo quer pagar em PPP e o aumento dos reformados, da nossa parte não temos dúvidas da opção a tomar.» on 15.10.2026.
+The figure is close to the sum of gross road charges and rail and health charges, 1 718, without that proving the calculation behind it; road partnerships are 61,82 % of the net total. The PCP itself later widened the universe to the road, rail and health partnerships, on 12.10.2026 and on 15.10.2026, with 1 800 million euros and 1 700 million euros.
 
-The report forecasts net road partnership charges of 889 in 2027 against 1 250 executed in 2021, −28,9 %; but more than the 843 estimated for 2025, because gross charges rose again, and the report says it began counting the support paid to concessionaires for toll discounts, which the previous report did not count. The projection trends downwards, with fluctuations, to 17 in 2040.
+The report forecasts 889 net for the road partnerships in 2027 against 1 250 executed in 2021, −28,9 %; but more than the 843 estimated for 2025: gross charges fall from 1 234 to 1 152, and the forecast toll revenue falls further, from 392 to 263. The projection has a downward trend, with fluctuations, to 17 in 2040.
 
 The figure missing from the three quoted claims is that of the pending demands, 2 388,2, which is absent from the charges table and those claims, and exceeds gross road charges and the figure in the first claim.
 
@@ -552,16 +335,16 @@ The report forecasts 889 million net for the road partnerships in 2027, −28,9 
 
 **The recommendation**
 
-The useful debate in 2027 is the Brisa negotiation and the pending lawsuits, alongside the budgeted figure for contracted payments. Whoever wants to watch the partnerships looks at the report's risks chapter and at UTAP's annual report, not only at the table of charges.
+The useful debate in 2027 is the Brisa negotiation and the pending lawsuits, alongside the budgeted figure for contracted payments. Whoever wants to watch the partnerships looks at the report's risks chapter and at the annual report of UTAP, the technical unit for monitoring projects, not only at the table of charges.
 
 **The editorial seat's opinion**
 
-The PCP is right to draw attention to the cost of partnerships, but wrong to attribute to road partnerships a figure exceeding their gross charges. Partnerships cost the State over a billion gross in the budgeted year; the later claim already covers road, rail and health partnerships, but its amount also exceeds the sum in the table: «Em sentido inverso cresce mais do que o previsto a despesa com as chamadas PPP – rodoviárias, ferroviárias, saúde – com o Governo a desviar mais de 1800 milhões de euros de recursos públicos para os grupos económicos privados, sem que tal se traduza em novas infraestruturas ou investimento nas existentes.» The Government, for its part, presents a table of contracted payments and sends the claims that could change the bill to a risks chapter. Between the two, the reader learns the payments forecast for concessionaires; how much of the pending claims will become an actual charge remains unknown, and that is the bill Parliament should ask for before voting.
+The PCP is right to draw attention to the cost of partnerships, but wrong to attribute to road partnerships a figure exceeding their gross charges. Partnerships cost the State over a billion gross in the budgeted year; the later claim already covers road, rail and health partnerships, but its amount, 1 800 million euros, also exceeds the sum in the table. The Government, for its part, presents a table of contracted payments and sends the claims that could change the bill to a risks chapter. Between the two, the reader learns the payments forecast for concessionaires; how much of the pending claims will become an actual charge remains unknown, and that is the bill Parliament should ask for before voting.
 
 ## Reprodução
 
-As declarações dos recibos são reproduzidas por `scripts/compor-familias-v2d.mjs`; a auditoria das palavras por `auditar-palavras.mjs`, nesta pasta. O guião `inventariar.mjs` recebe a medição da voz em JSON e um destino para o inventário recolhido. Os códigos finais e as cabeças conferidas estão em `portoes.json`.
+No motor, `python3 -m publisher.oe2027_analise_report --assemble --report`, `python3 -m publisher.v2d_export` e `python3 -m publisher.export_site_rows --manifest publisher/manifest.v2d.json --site <worktree> --write`. O pre-commit do escrivão executa `core.gate`.
 
-Na raiz do sítio, passar `<motor>` ao guião `conferir-partida.py`, correr `medir-final.mjs` e depois `gerar-relatorio.py`, todos nesta pasta. No motor, `python3 -m publisher.v2d_export` prepara o manifesto e as provas; `python3 -m publisher.export_site_rows --manifest publisher/manifest.v2d.json --site <worktree> --write` atravessa pelo exportador comum.
+No sítio, o compositor `scripts/compor-familias-v2d.mjs` e, nesta pasta, `conferir-partida.py <motor>`, `auditar-palavras.mjs`, `medir-final.mjs` e `gerar-relatorio.py` reproduzem as declarações e o relatório. `check:cruzamento --with-origin` recebe o motor em `RESEARCHHUB_DIR`.
 
-Os portões correm por `sh scripts/leituras/portoes-pelo-escrivao.sh <temporario> v2d`; as capturas usam `pedido-capturas.json` pelo guião do escrivão. `check:cruzamento --with-origin` recebe o motor em `RESEARCHHUB_DIR`. O motor inteiro corre pelo pre-commit do escrivão.
+Portões: `sh scripts/leituras/portoes-pelo-escrivao.sh <temporario> v2d`. Capturas: `sh scripts/leituras/capturar-pelo-escrivao.sh <pedido.json> <temporario>`, depois da construção, nas duas edições e cinco larguras.

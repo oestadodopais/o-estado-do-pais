@@ -15,7 +15,7 @@ const apoiosSaude={
  '2.2':[saude+'pessoal-2027',saude+'bens-servicos-2027',saude+'investimento-2027',saude+'outras-correntes-2027',saude+'fonte-receitas-proprias-2027',saude+'fonte-fundos-europeus-2027'],
  '3.0':[...serie,saude+'pessoal-2027',saude+'bens-servicos-2027',saude+'investimento-2027'],
  '4.0':[...serie,'utao-risco-execucao-sns-2027'],
- '5.0':[...serie,'afirmacao-leitao-amaro-saude-oe2027-2026-10-09','afirmacao-rtp-saude-queda-oe2027-2026-10-09','der-saude-prr-2026','der-saude-pessoal-variacao-abs','der-saude-bens-servicos-reducao-abs','der-saude-investimento-reducao-abs','der-saude-receitas-proprias-variacao-pct','utao-risco-execucao-sns-2027'],
+ '5.0':[...serie,'afirmacao-leitao-amaro-saude-oe2027-2026-10-09','afirmacao-rtp-saude-queda-oe2027-2026-10-09','der-saude-prr-2026','der-saude-pessoal-variacao-abs','der-saude-bens-servicos-reducao-abs','der-saude-investimento-reducao-abs','der-saude-receitas-proprias-variacao-pct','oe-2027-outras-despesas-correntes-reserva','utao-risco-execucao-sns-2027'],
 };
 const apoiosPpp={
  titulo:['oe-2027-ppp-rodoviario-encargos-liquidos-2027','ppp-oe2027-riscos-pedidos-rodoviarios'],
@@ -27,7 +27,7 @@ const descricoes={
  'saude-no-orcamento':[
  ['Atribuições, citações e datas literais dos três intervenientes.'],
  ['Identificação do quadro, do programa e da unidade.', 'As três bases de comparação da despesa, sem as confundir.', 'Composição económica do programa e variações com e sem PRR.', 'Financiamento entre orçamentos e transferências para o SNS.', 'Comparação orçamento e execução dentro de cada um dos seis anos, com as duas bases de reforço de 2026 distintas.', 'Execução acumulada até agosto e saldo do SNS no mesmo período.', 'Comparação europeia pelas mesmas unidades, ano e regimes de financiamento.'],
- ['Coincidência de cada afirmação com uma linha, e confirmação da UTAO.', 'Substituição parcial da despesa PRR pela despesa fora do PRR; igualdade das bases em 2027.', 'Variações nas rubricas e fontes de financiamento; o excerto não discrimina as outras despesas correntes.', 'Comparação entre programas, sem confundir sem PRR com financiamento nacional.', 'Orçamento, estimativa e execução com períodos distintos e risco descrito pela UTAO.'],
+ ['Coincidência de cada afirmação com uma linha, e confirmação da UTAO.', 'Substituição parcial da despesa PRR pela despesa fora do PRR; igualdade das bases em 2027.', 'Variações nas rubricas e fontes de financiamento; o relatório explica o crescimento das outras despesas correntes pela constituição de reservas orçamentais.', 'Comparação entre programas, sem confundir sem PRR com financiamento nacional.', 'Orçamento, estimativa e execução com períodos distintos e risco descrito pela UTAO.'],
  ['Conclusão editorial sobre os perímetros, composição e insuficiência histórica dos orçamentos iniciais.'],
  ['Recomendação editorial de acompanhar a execução e o risco de reforço; não constitui previsão certa.'],
  ['Opinião expressamente rotulada sobre a seleção dos perímetros, a composição, receitas e risco de execução.']
@@ -35,7 +35,7 @@ const descricoes={
  'parcerias-rodoviarias':[
  ['Citações do PCP, atribuições e datas na ordem cronológica.'],
  ['Identificação do quadro, setores, ano e unidade.', 'Brutos, receitas, líquidos e soma dos setores, com a ressalva do total impresso.', 'Série dos encargos rodoviários, conservando execução, estimativas e orçamento.', 'Projeções contratuais e ano em que as receitas excedem encargos.', 'Revisão da previsão para o mesmo ano e fatores que o relatório lhe atribui.', 'Pedidos e litígios fora da previsão de encargos, com a natureza contingente explicitada pela UTAO.'],
- ['Diferença entre a afirmação e as duas medidas rodoviárias.', 'Aproximação à soma dos setores, sem provar a conta do autor, e alargamento posterior da formulação do PCP.', 'Comparação temporal, subida face a 2025 e inclusão do apoio às portagens.', 'Pedidos pendentes comparados com os valores anuais, sem os tratar como pagamentos certos.'],
+ ['Diferença entre a afirmação e as duas medidas rodoviárias.', 'Aproximação à soma dos setores, sem provar a conta do autor, e alargamento posterior da formulação do PCP.', 'Comparação temporal, subida líquida face a 2025 apesar da descida dos encargos brutos, e maior descida das receitas de portagem previstas.', 'Pedidos pendentes comparados com os valores anuais, sem os tratar como pagamentos certos.'],
  ['Conclusão editorial sobre encargos contratados, aproximação numérica e riscos contingentes.'],
  ['Recomendação editorial de acompanhar a negociação e os litígios nas fontes de risco.'],
  ['Opinião expressamente rotulada sobre a abrangência da afirmação e a separação entre encargos e riscos.']

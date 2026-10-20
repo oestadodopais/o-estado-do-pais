@@ -12,7 +12,7 @@ function conferir(root,lang,alvo){
 }
 export function conferirPortasDoMetodo(dist){
  const erros=[],plantas=[],linhas=loadClaims(),ids=Object.keys(travessia.rows);
- if(ids.length!==126||ids.some(id=>!linhas.has(id)))erros.push('V2D Método: o inventário dos recibos não contém as cento e vinte e seis linhas atravessadas');
+ if(ids.length!==139||ids.some(id=>!linhas.has(id)))erros.push('V2D Método: o inventário dos recibos não contém as cento e trinta e nove linhas atravessadas');
  for(const lang of ['pt','en']){
   const metodo=routePath('metodo',lang);
   for(const id of ids){

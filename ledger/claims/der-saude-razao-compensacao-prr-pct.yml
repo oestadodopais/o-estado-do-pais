@@ -1,0 +1,36 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "der-saude-razao-compensacao-prr-pct"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "66,4"
+unit: "%"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: null
+document: null
+source_url: null
+access_date: null
+reference_date: "2027"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: null
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: "(der-saude-variacao-sem-prr) ÷ (der-saude-prr-2026) × 100. 511,8 ÷ 771,1 × 100 = 66.37271430424069511088056024 ≈ 66,4"
+derivation_en: "(der-saude-variacao-sem-prr) ÷ (der-saude-prr-2026) × 100. 511,8 ÷ 771,1 × 100 = 66.37271430424069511088056024 ≈ 66,4"
+derived_from:
+  - "der-saude-variacao-sem-prr"
+  - "der-saude-prr-2026"
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: "round ( der-saude-variacao-sem-prr / der-saude-prr-2026 * 100 , 1 )"
+
+study: "oe-2027"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "Comparação entre os períodos 2026/2027. · [derivation do motor] {'components': ['der-saude-variacao-sem-prr', 'der-saude-prr-2026'], 'operation': 'percent', 'formula': '(der-saude-variacao-sem-prr) ÷ (der-saude-prr-2026) × 100', 'calculation': '511,8 ÷ 771,1 × 100 = 66.37271430424069511088056024 ≈ 66,4', 'rounding_places': 1} · [note do motor] Razão aritmética entre o aumento da despesa sem PRR e a componente PRR de 2026. Não prova a origem nacional do financiamento. · Cruzado de ResearchHub content/24 Orcamento 2027 Analise · der-saude-razao-compensacao-prr-pct."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

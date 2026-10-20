@@ -153,6 +153,12 @@
       "kind": "atualizacao",
       "old_value": "5",
       "new_value": "7"
+    },
+    {
+      "date": "2026-10-20",
+      "kind": "atualizacao",
+      "old_value": "7",
+      "new_value": "9"
     }
   ],
   "estudos-publicados": [
@@ -257,6 +263,22 @@
       "kind": "atualizacao",
       "old_value": "0,3",
       "new_value": "0,4"
+    }
+  ],
+  "utao-risco-execucao-sns-2027": [
+    {
+      "date": "2026-10-20",
+      "kind": "correcao",
+      "old_value": "Existe um risco de pressão orçamental",
+      "new_value": "Existe um risco de pressão orçamental associado à execução do Serviço Nacional de Saúde (SNS)."
+    }
+  ],
+  "utao-ppp-contingencias-natureza-2026": [
+    {
+      "date": "2026-10-20",
+      "kind": "correcao",
+      "old_value": "não encargos já reconhecidos",
+      "new_value": "São pretensões dos parceiros privados, e não encargos já reconhecidos; a sua concretização, total ou parcial, oneraria o saldo orçamental de anos futuros."
     }
   ]
 }

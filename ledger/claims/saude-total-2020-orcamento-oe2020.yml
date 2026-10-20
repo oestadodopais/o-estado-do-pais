@@ -17,7 +17,7 @@ name_source: "Quadro 4.61; Despesa Total Consolidada; coluna 2: 2020 orcamento; 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Ministério das Finanças"
 document:
-  title: "Saúde: despesa total consolidada"
+  title: "Orçamento do Estado 2020 · Relatório"
   edition: "2020"
   locator: "Quadro 4.61; Despesa Total Consolidada; coluna 2: 2020 orcamento; p. 191 PDF (177 impressa)"
   source_sha256: "6b4c6d70dc7ffb3d511afc7e0657a005b0c166d57114cee9d9b0765c71339ec0"

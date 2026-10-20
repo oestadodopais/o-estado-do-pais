@@ -304,6 +304,8 @@ export const CAMPOS = /** @type {const} */ ([
    */
   'published_at',
   'reference_date',
+  // Período declarado pela fonte, quando difere do dia de referência.
+  'period',
   /**
    * A SÉRIE NO TEMPO DE QUE A LINHA É O PONTO DO SEU PERÍODO (bloco RP3, 04.10.2026).
    *
@@ -2736,6 +2738,11 @@ export function validateLedger() {
     }
 
     // 7 — datas
+    if (c.period !== undefined) {
+      const trimestre = /^(\d{4})-T([1-4])$/.exec(String(c.period));
+      const fim = trimestre ? `${trimestre[1]}-${['03-31','06-30','09-30','12-31'][Number(trimestre[2])-1]}` : null;
+      if (!trimestre || c.reference_date !== fim) errors.push(`${onde} "period": o trimestre exige a data de referência do seu último dia.`);
+    }
     for (const campo of /** @type {const} */ (['access_date', 'reference_date'])) {
       const v = c[campo];
       if (v === null || v === undefined || v === POR_VERIFICAR) continue;

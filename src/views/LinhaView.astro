@@ -582,7 +582,7 @@ const ficha = [
   /* A DATA DE LEITURA NÃO ENTRA NA FICHA (09.09.2026, decisão 17): vive uma vez
      só, no bloco das verificações. O período de referência fica, porque é uma
      propriedade do número e não uma data da casa. */
-  { k: s.prov.referencia, campo: 'reference_date', valor: claim.reference_date },
+  { k: claim.period && lang === 'pt' ? 'Dados do' : s.prov.referencia, campo: claim.period ? 'period' : 'reference_date', valor: claim.period ?? claim.reference_date },
 ].filter((l) => l.valor !== null && l.valor !== undefined);
 
 /**
@@ -653,7 +653,7 @@ const atribuicaoPecas = [
         porta: typeof claim.document?.url === 'string' ? claim.document.url : null,
       }
     : null,
-  presente(claim.document?.edition)
+  presente(claim.document?.edition) && !(typeof claim.document.edition === 'string' && /^\d{4}$/.test(claim.document.edition) && String(claim.document.title ?? '').split(/\D+/).includes(claim.document.edition))
     ? {
         k: null,
         campo: 'document.edition',

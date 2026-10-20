@@ -828,7 +828,8 @@
       "derivation": null,
       "afirmacao": true,
       "attributed_to": [
-        "Paula Santos"
+        "Paula Santos",
+        "PCP"
       ],
       "published_at": "2026-10-12",
       "source_url": "https://www.pcp.pt/sobre-orcamento-do-estado-para-2027",
@@ -891,7 +892,8 @@
       "derivation": null,
       "afirmacao": true,
       "attributed_to": [
-        "Paula Santos"
+        "Paula Santos",
+        "PCP"
       ],
       "published_at": "2026-10-12",
       "source_url": "https://www.pcp.pt/sobre-orcamento-do-estado-para-2027",
@@ -1005,7 +1007,7 @@
     "utao-saude-sem-prr-2027": {
       "value": "3,0",
       "period": "2027",
-      "excerpt": "a despesa aumentaria 3,0%",
+      "excerpt": "Todavia, excluído o efeito do PRR, a despesa aumentaria 3,0%.",
       "document": {
         "title": "Relatório UTAO n.º 17/2026: Apreciação preliminar da Proposta de Orçamento do Estado para 2027",
         "file": "content/24 Orcamento 2027 Analise/source/debate/utao-oe2027-preliminar.pdf",
@@ -1062,9 +1064,9 @@
       }
     },
     "utao-risco-execucao-sns-2027": {
-      "value": "Existe um risco de pressão orçamental",
+      "value": "Existe um risco de pressão orçamental associado à execução do Serviço Nacional de Saúde (SNS).",
       "period": "2027",
-      "excerpt": "Existe um risco de pressão orçamental",
+      "excerpt": "Existe um risco de pressão orçamental associado à execução do Serviço Nacional de Saúde (SNS).",
       "document": {
         "title": "Relatório UTAO n.º 17/2026: Apreciação preliminar da Proposta de Orçamento do Estado para 2027",
         "file": "content/24 Orcamento 2027 Analise/source/debate/utao-oe2027-preliminar.pdf",
@@ -1121,9 +1123,9 @@
       }
     },
     "utao-ppp-contingencias-natureza-2026": {
-      "value": "não encargos já reconhecidos",
+      "value": "São pretensões dos parceiros privados, e não encargos já reconhecidos; a sua concretização, total ou parcial, oneraria o saldo orçamental de anos futuros.",
       "period": "2026",
-      "excerpt": "não encargos já reconhecidos",
+      "excerpt": "São pretensões dos parceiros privados, e não encargos já reconhecidos; a sua concretização, total ou parcial, oneraria o saldo orçamental de anos futuros.",
       "document": {
         "title": "Relatório UTAO n.º 17/2026: Apreciação preliminar da Proposta de Orçamento do Estado para 2027",
         "file": "content/24 Orcamento 2027 Analise/source/debate/utao-oe2027-preliminar.pdf",
@@ -1496,7 +1498,7 @@
       "period": "2021",
       "excerpt": "Setores        2021    2022    2023    2024    2025    2026    2027    2028    2029    2030    2031    2032    2033    2034\n Rodoviário             1 250   1 241   1 036    948     557     552     444     360     305     262     268     150      96      84\nSeleção: 2021 execucao",
       "document": {
-        "title": "PPP: liquidos rodoviários",
+        "title": "Orçamento do Estado 2022 · Relatório",
         "file": "content/24 Orcamento 2027 Analise/source/oe-2022.pdf",
         "source_sha256": "1dbeec1b9ca50153995a6d597b8af10d373e82a939500b88b6b85f6464b0c96b",
         "locator": "Quadro 4.20. Previsão dos encargos plurianuais com as Parcerias Público-Privadas; Rodoviário; coluna 1: 2021 execucao; p. 147 PDF (125 impressa)",
@@ -1571,7 +1573,7 @@
       "period": "2022",
       "excerpt": "Setores        2022    2023    2024    2025    2026    2027   2028     2029   2030   2031   2032   2033   2034   2035\n Rodoviário             1 192   1 062    882     594     371     392    311     254    225    260    156    106     94     36\nSeleção: 2022 estimativa",
       "document": {
-        "title": "PPP: liquidos rodoviários",
+        "title": "Orçamento do Estado 2023 · Relatório",
         "file": "content/24 Orcamento 2027 Analise/source/oe-2023.pdf",
         "source_sha256": "c7fbb54aa43f14efc646852babac436267b768a6f24042f26cf478c6d80a90fc",
         "locator": "Quadro 4.22. Previsão dos encargos plurianuais com as Parcerias Público-Privadas; Rodoviário; coluna 1: 2022 estimativa; p. 192 PDF (172 impressa)",
@@ -1646,7 +1648,7 @@
       "period": "2023",
       "excerpt": "Setores     2023       2024       2025       2026       2027       2028       2029       2030       2031       2032       2033       2034       2035       2036\n    Rodoviário           1 105      1 002       630        649        162        328        269        240        276        166        112        100         40        (26)\nSeleção: 2023 estimativa",
       "document": {
-        "title": "PPP: liquidos rodoviários",
+        "title": "Orçamento do Estado 2024 · Relatório",
         "file": "content/24 Orcamento 2027 Analise/source/oe-2024.pdf",
         "source_sha256": "59fa52aa5264d68eac642a0fa4b7f4c399a25c0ce6ea011553eb9fc7ba7bcf67",
         "locator": "Quadro 4.26. Previsão dos encargos plurianuais com as parcerias público-privadas; Rodoviário; coluna 1: 2023 estimativa; p. 191 PDF (175 impressa)",
@@ -1698,7 +1700,7 @@
       "period": "2024",
       "excerpt": "Setores          2024    2025    2026    2027    2028    2029    2030    2031    2032    2033    2034    2035   2036   2037\n Rodoviário               1 012    833     802     694      80     421     367     331     191     136     123      63    (4)      4\nSeleção: 2024 estimativa",
       "document": {
-        "title": "PPP: liquidos rodoviários",
+        "title": "Orçamento do Estado 2025 · Relatório",
         "file": "content/24 Orcamento 2027 Analise/source/oe-2025.pdf",
         "source_sha256": "67420242cef230c10e7d1bfecd01191f1e9a60fb30f81116f208bf335561b33a",
         "locator": "Quadro 4.25. Previsão dos encargos plurianuais com as parcerias público-privadas; Rodoviário; coluna 1: 2024 estimativa; p. 180 PDF (166 impressa)",
@@ -1773,10 +1775,160 @@
       "period": "2025",
       "excerpt": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\n  Rodoviário                  843       950      774     681      (59)     412      368      226      141      128        66        0        9        17\nSeleção: 2025 estimativa",
       "document": {
-        "title": "PPP: liquidos rodoviários",
+        "title": "Orçamento do Estado 2026 · Relatório",
         "file": "content/24 Orcamento 2027 Analise/source/oe-2026.pdf",
         "source_sha256": "a863f683d0145e3129e56278cbf450e95a405cb912a98e0383e0f83d6fcbc031",
         "locator": "Quadro 4.25. Previsão dos encargos plurianuais com as parcerias público-privadas; Rodoviário; coluna 1: 2025 estimativa; p. 119 PDF (103 impressa)",
+        "page": 119,
+        "printed_page": 103
+      },
+      "derivation": null,
+      "receipt": {
+        "pedido": "https://www.eo.gov.pt/politicaorcamental/OrcamentodeEstado/OE2026_doc16_Relatorio.pdf",
+        "endereco_final": "https://www.eo.gov.pt/politicaorcamental/OrcamentodeEstado/OE2026_doc16_Relatorio.pdf",
+        "acedido_em": "2026-10-19T22:20:21.872357+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "ficheiro": "oe-2026.pdf",
+        "estado": 200,
+        "tipo": "application/pdf",
+        "segundos": 7.686,
+        "erro": null,
+        "redirecionamentos": [],
+        "bytes": 13169148,
+        "sha256": "a863f683d0145e3129e56278cbf450e95a405cb912a98e0383e0f83d6fcbc031"
+      },
+      "rights": {
+        "redistributed": "Excerto, referência e recibo; o corpo permanece no motor.",
+        "licence": "Não se declara uma licença geral de redistribuição do corpo.",
+        "assessment": {
+          "anfitriao": "www.eo.gov.pt",
+          "publicar_corpos": false,
+          "alojamento": "Cópia privada para investigação, pedida no mandato. Nenhuma publicação de corpos ou de páginas.",
+          "reutilizacao": "Licença aberta específica não estabelecida para estes corpos. Acesso público, documento oficial ou política de privacidade não são autorização de republicação integral.",
+          "prova": {
+            "file": "content/20 Orcamento do Estado/source/eo-oe2026-aprovado.html",
+            "sha256": "fafa4df6f59df361b8e7df2be875887a0c6cb994599ef2e5923ae10ffc4a1fcb",
+            "receipt": "content/20 Orcamento do Estado/source/eo-oe2026-aprovado.html.pedido.json"
+          },
+          "pedidos": [
+            "content/24 Orcamento 2027 Analise/source/cge-2020-indice.html.pedido.json",
+            "content/24 Orcamento 2027 Analise/source/cge-2020.pdf.pedido.json",
+            "content/24 Orcamento 2027 Analise/source/cge-2021-indice.html.pedido.json",
+            "content/24 Orcamento 2027 Analise/source/cge-2021.pdf.pedido.json",
+            "content/24 Orcamento 2027 Analise/source/cge-2022-indice.html.pedido.json",
+            "content/24 Orcamento 2027 Analise/source/cge-2022.pdf.pedido.json",
+            "content/24 Orcamento 2027 Analise/source/cge-2023-indice.html.pedido.json",
+            "content/24 Orcamento 2027 Analise/source/cge-2023.pdf.pedido.json",
+            "content/24 Orcamento 2027 Analise/source/cge-2024-indice.html.pedido.json",
+            "content/24 Orcamento 2027 Analise/source/cge-2024.pdf.pedido.json",
+            "content/24 Orcamento 2027 Analise/source/cge-2025-indice.html.pedido.json",
+            "content/24 Orcamento 2027 Analise/source/cge-2025.pdf.pedido.json",
+            "content/24 Orcamento 2027 Analise/source/oe-2020-indice.html.pedido.json",
+            "content/24 Orcamento 2027 Analise/source/oe-2020.pdf.pedido.json",
+            "content/24 Orcamento 2027 Analise/source/oe-2021-eo.pdf.pedido.json",
+            "content/24 Orcamento 2027 Analise/source/oe-2022-indice.html.pedido.json",
+            "content/24 Orcamento 2027 Analise/source/oe-2022-rejeitado.pdf.pedido.json",
+            "content/24 Orcamento 2027 Analise/source/oe-2022.pdf.pedido.json",
+            "content/24 Orcamento 2027 Analise/source/oe-2023-indice.html.pedido.json",
+            "content/24 Orcamento 2027 Analise/source/oe-2023.pdf.pedido.json",
+            "content/24 Orcamento 2027 Analise/source/oe-2025-indice.html.pedido.json",
+            "content/24 Orcamento 2027 Analise/source/oe-2025.pdf.pedido.json",
+            "content/24 Orcamento 2027 Analise/source/oe-2026-indice.html.pedido.json",
+            "content/24 Orcamento 2027 Analise/source/oe-2026.pdf.pedido.json",
+            "content/20 Orcamento do Estado/source/eo-anexo-agosto.xlsx.pedido.json",
+            "content/22 TAP/source/cge-2022.pdf.pedido.json"
+          ],
+          "robots": "Não é utilizado como licença."
+        },
+        "origin_path": "content/24 Orcamento 2027 Analise/source/direitos/www.eo.gov.pt/avaliacao.json",
+        "sha256": "3c6ae5f2fa96d3036d2b74fa622294518199dfd0d9d2e696e8a738493b8efd52"
+      }
+    },
+    "ppp-oe2026-brutos-2025": {
+      "value": "1 234",
+      "period": "2025",
+      "excerpt": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\n   enca rgos brutos         1 234     1 212    1 047     951      830      699      631      454      333      321      262      183      157       178\nSeleção: 2025 estimativa",
+      "document": {
+        "title": "Orçamento do Estado 2026 · Relatório",
+        "file": "content/24 Orcamento 2027 Analise/source/oe-2026.pdf",
+        "source_sha256": "a863f683d0145e3129e56278cbf450e95a405cb912a98e0383e0f83d6fcbc031",
+        "locator": "Quadro 4.25. Previsão dos encargos plurianuais com as parcerias público-privadas; enca rgos brutos; coluna 1: 2025 estimativa; p. 119 PDF (103 impressa)",
+        "page": 119,
+        "printed_page": 103
+      },
+      "derivation": null,
+      "receipt": {
+        "pedido": "https://www.eo.gov.pt/politicaorcamental/OrcamentodeEstado/OE2026_doc16_Relatorio.pdf",
+        "endereco_final": "https://www.eo.gov.pt/politicaorcamental/OrcamentodeEstado/OE2026_doc16_Relatorio.pdf",
+        "acedido_em": "2026-10-19T22:20:21.872357+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "ficheiro": "oe-2026.pdf",
+        "estado": 200,
+        "tipo": "application/pdf",
+        "segundos": 7.686,
+        "erro": null,
+        "redirecionamentos": [],
+        "bytes": 13169148,
+        "sha256": "a863f683d0145e3129e56278cbf450e95a405cb912a98e0383e0f83d6fcbc031"
+      },
+      "rights": {
+        "redistributed": "Excerto, referência e recibo; o corpo permanece no motor.",
+        "licence": "Não se declara uma licença geral de redistribuição do corpo.",
+        "assessment": {
+          "anfitriao": "www.eo.gov.pt",
+          "publicar_corpos": false,
+          "alojamento": "Cópia privada para investigação, pedida no mandato. Nenhuma publicação de corpos ou de páginas.",
+          "reutilizacao": "Licença aberta específica não estabelecida para estes corpos. Acesso público, documento oficial ou política de privacidade não são autorização de republicação integral.",
+          "prova": {
+            "file": "content/20 Orcamento do Estado/source/eo-oe2026-aprovado.html",
+            "sha256": "fafa4df6f59df361b8e7df2be875887a0c6cb994599ef2e5923ae10ffc4a1fcb",
+            "receipt": "content/20 Orcamento do Estado/source/eo-oe2026-aprovado.html.pedido.json"
+          },
+          "pedidos": [
+            "content/24 Orcamento 2027 Analise/source/cge-2020-indice.html.pedido.json",
+            "content/24 Orcamento 2027 Analise/source/cge-2020.pdf.pedido.json",
+            "content/24 Orcamento 2027 Analise/source/cge-2021-indice.html.pedido.json",
+            "content/24 Orcamento 2027 Analise/source/cge-2021.pdf.pedido.json",
+            "content/24 Orcamento 2027 Analise/source/cge-2022-indice.html.pedido.json",
+            "content/24 Orcamento 2027 Analise/source/cge-2022.pdf.pedido.json",
+            "content/24 Orcamento 2027 Analise/source/cge-2023-indice.html.pedido.json",
+            "content/24 Orcamento 2027 Analise/source/cge-2023.pdf.pedido.json",
+            "content/24 Orcamento 2027 Analise/source/cge-2024-indice.html.pedido.json",
+            "content/24 Orcamento 2027 Analise/source/cge-2024.pdf.pedido.json",
+            "content/24 Orcamento 2027 Analise/source/cge-2025-indice.html.pedido.json",
+            "content/24 Orcamento 2027 Analise/source/cge-2025.pdf.pedido.json",
+            "content/24 Orcamento 2027 Analise/source/oe-2020-indice.html.pedido.json",
+            "content/24 Orcamento 2027 Analise/source/oe-2020.pdf.pedido.json",
+            "content/24 Orcamento 2027 Analise/source/oe-2021-eo.pdf.pedido.json",
+            "content/24 Orcamento 2027 Analise/source/oe-2022-indice.html.pedido.json",
+            "content/24 Orcamento 2027 Analise/source/oe-2022-rejeitado.pdf.pedido.json",
+            "content/24 Orcamento 2027 Analise/source/oe-2022.pdf.pedido.json",
+            "content/24 Orcamento 2027 Analise/source/oe-2023-indice.html.pedido.json",
+            "content/24 Orcamento 2027 Analise/source/oe-2023.pdf.pedido.json",
+            "content/24 Orcamento 2027 Analise/source/oe-2025-indice.html.pedido.json",
+            "content/24 Orcamento 2027 Analise/source/oe-2025.pdf.pedido.json",
+            "content/24 Orcamento 2027 Analise/source/oe-2026-indice.html.pedido.json",
+            "content/24 Orcamento 2027 Analise/source/oe-2026.pdf.pedido.json",
+            "content/20 Orcamento do Estado/source/eo-anexo-agosto.xlsx.pedido.json",
+            "content/22 TAP/source/cge-2022.pdf.pedido.json"
+          ],
+          "robots": "Não é utilizado como licença."
+        },
+        "origin_path": "content/24 Orcamento 2027 Analise/source/direitos/www.eo.gov.pt/avaliacao.json",
+        "sha256": "3c6ae5f2fa96d3036d2b74fa622294518199dfd0d9d2e696e8a738493b8efd52"
+      }
+    },
+    "ppp-oe2026-receitas-2025": {
+      "value": "392",
+      "period": "2025",
+      "excerpt": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\n    recei ta s                392       263      274     271      889      288      263      228      192      193      195      183      148       160\nSeleção: 2025 estimativa",
+      "document": {
+        "title": "Orçamento do Estado 2026 · Relatório",
+        "file": "content/24 Orcamento 2027 Analise/source/oe-2026.pdf",
+        "source_sha256": "a863f683d0145e3129e56278cbf450e95a405cb912a98e0383e0f83d6fcbc031",
+        "locator": "Quadro 4.25. Previsão dos encargos plurianuais com as parcerias público-privadas; recei ta s; coluna 1: 2025 estimativa; p. 119 PDF (103 impressa)",
         "page": 119,
         "printed_page": 103
       },
@@ -1848,7 +2000,7 @@
       "period": "2026",
       "excerpt": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\n Rodoviário             942     889     705     648    (220)    391      244     154        140      77       4      13      22       49\nSeleção: 2026 estimativa",
       "document": {
-        "title": "PPP: liquidos rodoviários",
+        "title": "Orçamento do Estado 2027 · Relatório",
         "file": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
         "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
         "locator": "Quadro 4.25. Previsão dos encargos plurianuais com as parcerias público-privadas; Rodoviário; coluna 1: 2026 estimativa; p. 123 PDF (107 impressa)",
@@ -1896,7 +2048,7 @@
       "period": "2028",
       "excerpt": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\n Rodoviário             942     889     705     648    (220)    391      244     154        140      77       4      13      22       49\nSeleção: 2028 projecao",
       "document": {
-        "title": "PPP: liquidos rodoviários",
+        "title": "Orçamento do Estado 2027 · Relatório",
         "file": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
         "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
         "locator": "Quadro 4.25. Previsão dos encargos plurianuais com as parcerias público-privadas; Rodoviário; coluna 3: 2028 projecao; p. 123 PDF (107 impressa)",
@@ -1944,7 +2096,7 @@
       "period": "2029",
       "excerpt": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\n Rodoviário             942     889     705     648    (220)    391      244     154        140      77       4      13      22       49\nSeleção: 2029 projecao",
       "document": {
-        "title": "PPP: liquidos rodoviários",
+        "title": "Orçamento do Estado 2027 · Relatório",
         "file": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
         "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
         "locator": "Quadro 4.25. Previsão dos encargos plurianuais com as parcerias público-privadas; Rodoviário; coluna 4: 2029 projecao; p. 123 PDF (107 impressa)",
@@ -1992,7 +2144,7 @@
       "period": "2030",
       "excerpt": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\n Rodoviário             942     889     705     648    (220)    391      244     154        140      77       4      13      22       49\nSeleção: 2030 projecao",
       "document": {
-        "title": "PPP: liquidos rodoviários",
+        "title": "Orçamento do Estado 2027 · Relatório",
         "file": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
         "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
         "locator": "Quadro 4.25. Previsão dos encargos plurianuais com as parcerias público-privadas; Rodoviário; coluna 5: 2030 projecao; p. 123 PDF (107 impressa)",
@@ -2040,10 +2192,106 @@
       "period": "2035",
       "excerpt": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\n Rodoviário             942     889     705     648    (220)    391      244     154        140      77       4      13      22       49\nSeleção: 2035 projecao",
       "document": {
-        "title": "PPP: liquidos rodoviários",
+        "title": "Orçamento do Estado 2027 · Relatório",
         "file": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
         "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
         "locator": "Quadro 4.25. Previsão dos encargos plurianuais com as parcerias público-privadas; Rodoviário; coluna 10: 2035 projecao; p. 123 PDF (107 impressa)",
+        "page": 123,
+        "printed_page": 107
+      },
+      "derivation": null,
+      "receipt": {
+        "estado": 200,
+        "ficheiro": "oe-relatorio.pdf",
+        "bytes": 25512364,
+        "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+        "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+        "endereco_final": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+        "acedido_em": "2026-10-13T18:47:56.980564+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor"
+      },
+      "rights": {
+        "redistributed": "Excerto, referência e recibo; o corpo permanece no motor.",
+        "licence": "Não se declara uma licença geral de redistribuição do corpo.",
+        "assessment": {
+          "anfitriao": "app.parlamento.pt",
+          "publicar_corpos": false,
+          "alojamento": "Cópia privada para investigação, pedida no mandato. Nenhuma publicação de corpos ou de páginas.",
+          "reutilizacao": "Licença aberta específica não estabelecida para estes corpos. Acesso público, documento oficial ou política de privacidade não são autorização de republicação integral.",
+          "prova": {
+            "file": "content/23 Habitacao/source/direitos/parlamento.html",
+            "sha256": "42b5ebc0fe02bd0e0a8d883a72da452edd07e58342aeb47967cfade3fdcf1073",
+            "receipt": "content/23 Habitacao/source/direitos/parlamento.html.pedido.json"
+          },
+          "pedidos": [
+            "content/24 Orcamento 2027 Analise/source/debate/utao-oe2027-infografia.pdf.pedido.json",
+            "content/24 Orcamento 2027 Analise/source/debate/utao-oe2027-preliminar.pdf.pedido.json",
+            "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf.pedido.json"
+          ],
+          "robots": "Não é utilizado como licença."
+        },
+        "origin_path": "content/24 Orcamento 2027 Analise/source/direitos/app.parlamento.pt/avaliacao.json",
+        "sha256": "e955562568605bdb2d5f59cae815cf59b8c615ca33c274a3bc4600225d08f5e0"
+      }
+    },
+    "ppp-oe2027-brutos-2027": {
+      "value": "1 152",
+      "period": "2027",
+      "excerpt": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\n encargos brutos       1 230   1 152    965     863     728     656      474     349        336     275     189     162     183       50\nSeleção: 2027 orcamento",
+      "document": {
+        "title": "Orçamento do Estado 2027 · Relatório",
+        "file": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
+        "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+        "locator": "Quadro 4.25. Previsão dos encargos plurianuais com as parcerias público-privadas; encargos brutos; coluna 2: 2027 orcamento; p. 123 PDF (107 impressa)",
+        "page": 123,
+        "printed_page": 107
+      },
+      "derivation": null,
+      "receipt": {
+        "estado": 200,
+        "ficheiro": "oe-relatorio.pdf",
+        "bytes": 25512364,
+        "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+        "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+        "endereco_final": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+        "acedido_em": "2026-10-13T18:47:56.980564+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor"
+      },
+      "rights": {
+        "redistributed": "Excerto, referência e recibo; o corpo permanece no motor.",
+        "licence": "Não se declara uma licença geral de redistribuição do corpo.",
+        "assessment": {
+          "anfitriao": "app.parlamento.pt",
+          "publicar_corpos": false,
+          "alojamento": "Cópia privada para investigação, pedida no mandato. Nenhuma publicação de corpos ou de páginas.",
+          "reutilizacao": "Licença aberta específica não estabelecida para estes corpos. Acesso público, documento oficial ou política de privacidade não são autorização de republicação integral.",
+          "prova": {
+            "file": "content/23 Habitacao/source/direitos/parlamento.html",
+            "sha256": "42b5ebc0fe02bd0e0a8d883a72da452edd07e58342aeb47967cfade3fdcf1073",
+            "receipt": "content/23 Habitacao/source/direitos/parlamento.html.pedido.json"
+          },
+          "pedidos": [
+            "content/24 Orcamento 2027 Analise/source/debate/utao-oe2027-infografia.pdf.pedido.json",
+            "content/24 Orcamento 2027 Analise/source/debate/utao-oe2027-preliminar.pdf.pedido.json",
+            "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf.pedido.json"
+          ],
+          "robots": "Não é utilizado como licença."
+        },
+        "origin_path": "content/24 Orcamento 2027 Analise/source/direitos/app.parlamento.pt/avaliacao.json",
+        "sha256": "e955562568605bdb2d5f59cae815cf59b8c615ca33c274a3bc4600225d08f5e0"
+      }
+    },
+    "ppp-oe2027-receitas-2027": {
+      "value": "263",
+      "period": "2027",
+      "excerpt": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\n     receitas           287     263     260     215     948     265      230     195        196     198     185     149     162        2\nSeleção: 2027 orcamento",
+      "document": {
+        "title": "Orçamento do Estado 2027 · Relatório",
+        "file": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
+        "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+        "locator": "Quadro 4.25. Previsão dos encargos plurianuais com as parcerias público-privadas; receitas; coluna 2: 2027 orcamento; p. 123 PDF (107 impressa)",
         "page": 123,
         "printed_page": 107
       },
@@ -2088,7 +2336,7 @@
       "period": "2040",
       "excerpt": "Setores       2040    2041    2042    2043    2044    2045    2046     2047       2048    2049    2050    2051    2052     2053\n Rodoviário               17       -       -       -       -       -        -          -       -       -       -       -       -        -\nSeleção: 2040 projecao",
       "document": {
-        "title": "PPP: liquidos rodoviários",
+        "title": "Orçamento do Estado 2027 · Relatório",
         "file": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
         "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
         "locator": "Quadro 4.25. Previsão dos encargos plurianuais com as parcerias público-privadas; Rodoviário; coluna 1: 2040 projecao; p. 123 PDF (107 impressa)",
@@ -2227,6 +2475,54 @@
         "sha256": "e955562568605bdb2d5f59cae815cf59b8c615ca33c274a3bc4600225d08f5e0"
       }
     },
+    "oe-2027-financas-sem-prr-2027": {
+      "value": "8 509,7",
+      "period": "2027",
+      "excerpt": "Quadro 5.11. Finanças (PL04) — Conta do Programa Legado\n(milhões de euros)\n2026                                2027\nVariação                      Estrutura 2027\nVariação                       Estrutura 2027\nClassificador Económico                                                                                                        (Sem PRR)                        (Sem PRR)\nEstimativa                          Orçamento       (%)                                (%)\nEstimativa                           Orçamento                                            (%)                               (%)\n(Sem PRR)                           (Sem PRR)\n Despesa efetiva consolidada                             10 707,0             9 234,3         8 951,0            8 509,7         -16,4             -7,8\nSeleção: 2027 Orçamento (Sem PRR)",
+      "document": {
+        "title": "Orçamento do Estado para 2027",
+        "file": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
+        "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+        "locator": "Quadro 5.11; Despesa efetiva consolidada; coluna 4: 2027 Orçamento (Sem PRR); p. 196 PDF (180 impressa)",
+        "page": 196,
+        "printed_page": 180
+      },
+      "derivation": null,
+      "receipt": {
+        "estado": 200,
+        "ficheiro": "oe-relatorio.pdf",
+        "bytes": 25512364,
+        "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+        "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+        "endereco_final": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+        "acedido_em": "2026-10-13T18:47:56.980564+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor"
+      },
+      "rights": {
+        "redistributed": "Excerto, referência e recibo; o corpo permanece no motor.",
+        "licence": "Não se declara uma licença geral de redistribuição do corpo.",
+        "assessment": {
+          "anfitriao": "app.parlamento.pt",
+          "publicar_corpos": false,
+          "alojamento": "Cópia privada para investigação, pedida no mandato. Nenhuma publicação de corpos ou de páginas.",
+          "reutilizacao": "Licença aberta específica não estabelecida para estes corpos. Acesso público, documento oficial ou política de privacidade não são autorização de republicação integral.",
+          "prova": {
+            "file": "content/23 Habitacao/source/direitos/parlamento.html",
+            "sha256": "42b5ebc0fe02bd0e0a8d883a72da452edd07e58342aeb47967cfade3fdcf1073",
+            "receipt": "content/23 Habitacao/source/direitos/parlamento.html.pedido.json"
+          },
+          "pedidos": [
+            "content/24 Orcamento 2027 Analise/source/debate/utao-oe2027-infografia.pdf.pedido.json",
+            "content/24 Orcamento 2027 Analise/source/debate/utao-oe2027-preliminar.pdf.pedido.json",
+            "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf.pedido.json"
+          ],
+          "robots": "Não é utilizado como licença."
+        },
+        "origin_path": "content/24 Orcamento 2027 Analise/source/direitos/app.parlamento.pt/avaliacao.json",
+        "sha256": "e955562568605bdb2d5f59cae815cf59b8c615ca33c274a3bc4600225d08f5e0"
+      }
+    },
     "oe-2027-economia-efetiva-2026": {
       "value": "2 312,1",
       "period": "2026",
@@ -2286,6 +2582,150 @@
         "locator": "Quadro 5.16; Despesa efetiva consolidada; coluna 2: 2026 Estimativa (Sem PRR); p. 212 PDF (196 impressa)",
         "page": 212,
         "printed_page": 196
+      },
+      "derivation": null,
+      "receipt": {
+        "estado": 200,
+        "ficheiro": "oe-relatorio.pdf",
+        "bytes": 25512364,
+        "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+        "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+        "endereco_final": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+        "acedido_em": "2026-10-13T18:47:56.980564+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor"
+      },
+      "rights": {
+        "redistributed": "Excerto, referência e recibo; o corpo permanece no motor.",
+        "licence": "Não se declara uma licença geral de redistribuição do corpo.",
+        "assessment": {
+          "anfitriao": "app.parlamento.pt",
+          "publicar_corpos": false,
+          "alojamento": "Cópia privada para investigação, pedida no mandato. Nenhuma publicação de corpos ou de páginas.",
+          "reutilizacao": "Licença aberta específica não estabelecida para estes corpos. Acesso público, documento oficial ou política de privacidade não são autorização de republicação integral.",
+          "prova": {
+            "file": "content/23 Habitacao/source/direitos/parlamento.html",
+            "sha256": "42b5ebc0fe02bd0e0a8d883a72da452edd07e58342aeb47967cfade3fdcf1073",
+            "receipt": "content/23 Habitacao/source/direitos/parlamento.html.pedido.json"
+          },
+          "pedidos": [
+            "content/24 Orcamento 2027 Analise/source/debate/utao-oe2027-infografia.pdf.pedido.json",
+            "content/24 Orcamento 2027 Analise/source/debate/utao-oe2027-preliminar.pdf.pedido.json",
+            "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf.pedido.json"
+          ],
+          "robots": "Não é utilizado como licença."
+        },
+        "origin_path": "content/24 Orcamento 2027 Analise/source/direitos/app.parlamento.pt/avaliacao.json",
+        "sha256": "e955562568605bdb2d5f59cae815cf59b8c615ca33c274a3bc4600225d08f5e0"
+      }
+    },
+    "oe-2027-economia-sem-prr-2027": {
+      "value": "908,5",
+      "period": "2027",
+      "excerpt": "Quadro 5.16. Economia (PL06) — Conta do Programa Legado\n(milhões de euros)\n2026                             2027\nVariação       Variação     Estrutura 2027   Estrutura 2027\nClassificador Económico                                                                                  (%)         (Sem PRR)           (%)          (Sem PRR)\nEstimativa    Orçamento          Orçamento\nEstimativa                                                                          (%)                               (%)\n(Sem PRR)                        (Sem PRR)\n Despesa efetiva consolidada                           2 312,1               955,0       1 344,3             908,5         -41,9           -4,9\nSeleção: 2027 Orçamento (Sem PRR)",
+      "document": {
+        "title": "Orçamento do Estado para 2027",
+        "file": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
+        "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+        "locator": "Quadro 5.16; Despesa efetiva consolidada; coluna 4: 2027 Orçamento (Sem PRR); p. 212 PDF (196 impressa)",
+        "page": 212,
+        "printed_page": 196
+      },
+      "derivation": null,
+      "receipt": {
+        "estado": 200,
+        "ficheiro": "oe-relatorio.pdf",
+        "bytes": 25512364,
+        "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+        "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+        "endereco_final": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+        "acedido_em": "2026-10-13T18:47:56.980564+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor"
+      },
+      "rights": {
+        "redistributed": "Excerto, referência e recibo; o corpo permanece no motor.",
+        "licence": "Não se declara uma licença geral de redistribuição do corpo.",
+        "assessment": {
+          "anfitriao": "app.parlamento.pt",
+          "publicar_corpos": false,
+          "alojamento": "Cópia privada para investigação, pedida no mandato. Nenhuma publicação de corpos ou de páginas.",
+          "reutilizacao": "Licença aberta específica não estabelecida para estes corpos. Acesso público, documento oficial ou política de privacidade não são autorização de republicação integral.",
+          "prova": {
+            "file": "content/23 Habitacao/source/direitos/parlamento.html",
+            "sha256": "42b5ebc0fe02bd0e0a8d883a72da452edd07e58342aeb47967cfade3fdcf1073",
+            "receipt": "content/23 Habitacao/source/direitos/parlamento.html.pedido.json"
+          },
+          "pedidos": [
+            "content/24 Orcamento 2027 Analise/source/debate/utao-oe2027-infografia.pdf.pedido.json",
+            "content/24 Orcamento 2027 Analise/source/debate/utao-oe2027-preliminar.pdf.pedido.json",
+            "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf.pedido.json"
+          ],
+          "robots": "Não é utilizado como licença."
+        },
+        "origin_path": "content/24 Orcamento 2027 Analise/source/direitos/app.parlamento.pt/avaliacao.json",
+        "sha256": "e955562568605bdb2d5f59cae815cf59b8c615ca33c274a3bc4600225d08f5e0"
+      }
+    },
+    "oe-2027-coesao-territorial-sem-prr-2026": {
+      "value": "628,0",
+      "period": "2026",
+      "excerpt": "Quadro 5.18. Coesão Territorial (PL07) — Conta do Programa Legado\n(milhões de euros)\n2026                             2027\nVariação       Variação     Estrutura 2027   Estrutura 2027\nClassificador Económico                                                                                 (%)         (Sem PRR)           (%)          (Sem PRR)\nEstimativa    Orçamento          Orçamento\nEstimativa                                                                         (%)                               (%)\n(Sem PRR)                        (Sem PRR)\n Despesa efetiva consolidada                           1 194,5               628,0        426,8              388,1        -64,3          -38,2\nSeleção: 2026 Estimativa (Sem PRR)",
+      "document": {
+        "title": "Orçamento do Estado para 2027",
+        "file": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
+        "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+        "locator": "Quadro 5.18; Despesa efetiva consolidada; coluna 2: 2026 Estimativa (Sem PRR); p. 214 PDF (198 impressa)",
+        "page": 214,
+        "printed_page": 198
+      },
+      "derivation": null,
+      "receipt": {
+        "estado": 200,
+        "ficheiro": "oe-relatorio.pdf",
+        "bytes": 25512364,
+        "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+        "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+        "endereco_final": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+        "acedido_em": "2026-10-13T18:47:56.980564+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor"
+      },
+      "rights": {
+        "redistributed": "Excerto, referência e recibo; o corpo permanece no motor.",
+        "licence": "Não se declara uma licença geral de redistribuição do corpo.",
+        "assessment": {
+          "anfitriao": "app.parlamento.pt",
+          "publicar_corpos": false,
+          "alojamento": "Cópia privada para investigação, pedida no mandato. Nenhuma publicação de corpos ou de páginas.",
+          "reutilizacao": "Licença aberta específica não estabelecida para estes corpos. Acesso público, documento oficial ou política de privacidade não são autorização de republicação integral.",
+          "prova": {
+            "file": "content/23 Habitacao/source/direitos/parlamento.html",
+            "sha256": "42b5ebc0fe02bd0e0a8d883a72da452edd07e58342aeb47967cfade3fdcf1073",
+            "receipt": "content/23 Habitacao/source/direitos/parlamento.html.pedido.json"
+          },
+          "pedidos": [
+            "content/24 Orcamento 2027 Analise/source/debate/utao-oe2027-infografia.pdf.pedido.json",
+            "content/24 Orcamento 2027 Analise/source/debate/utao-oe2027-preliminar.pdf.pedido.json",
+            "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf.pedido.json"
+          ],
+          "robots": "Não é utilizado como licença."
+        },
+        "origin_path": "content/24 Orcamento 2027 Analise/source/direitos/app.parlamento.pt/avaliacao.json",
+        "sha256": "e955562568605bdb2d5f59cae815cf59b8c615ca33c274a3bc4600225d08f5e0"
+      }
+    },
+    "oe-2027-coesao-territorial-sem-prr-2027": {
+      "value": "388,1",
+      "period": "2027",
+      "excerpt": "Quadro 5.18. Coesão Territorial (PL07) — Conta do Programa Legado\n(milhões de euros)\n2026                             2027\nVariação       Variação     Estrutura 2027   Estrutura 2027\nClassificador Económico                                                                                 (%)         (Sem PRR)           (%)          (Sem PRR)\nEstimativa    Orçamento          Orçamento\nEstimativa                                                                         (%)                               (%)\n(Sem PRR)                        (Sem PRR)\n Despesa efetiva consolidada                           1 194,5               628,0        426,8              388,1        -64,3          -38,2\nSeleção: 2027 Orçamento (Sem PRR)",
+      "document": {
+        "title": "Orçamento do Estado para 2027",
+        "file": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
+        "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+        "locator": "Quadro 5.18; Despesa efetiva consolidada; coluna 4: 2027 Orçamento (Sem PRR); p. 214 PDF (198 impressa)",
+        "page": 214,
+        "printed_page": 198
       },
       "derivation": null,
       "receipt": {
@@ -2952,7 +3392,7 @@
       "period": "2020",
       "excerpt": "(milhões de euros)\n2019                2020              Variação         Estrutura 2020\nEstim ativa          Orçam ento            (%)                  (%)\n Despesa Total Consolidada                                                     10 741,1            11 282,2              5,0\nSeleção: 2020 orcamento",
       "document": {
-        "title": "Saúde: despesa total consolidada",
+        "title": "Orçamento do Estado 2020 · Relatório",
         "file": "content/24 Orcamento 2027 Analise/source/oe-2020.pdf",
         "source_sha256": "6b4c6d70dc7ffb3d511afc7e0657a005b0c166d57114cee9d9b0765c71339ec0",
         "locator": "Quadro 4.61; Despesa Total Consolidada; coluna 2: 2020 orcamento; p. 191 PDF (177 impressa)",
@@ -3027,7 +3467,7 @@
       "period": "2021",
       "excerpt": "(milhões de euros)\n2020               2021            Variação          Estrutura 2021\nClassificador Económico\nEstimativa         Orçamento           (%)                   (%)\nDespesa total consolidada (1)                                      12 064,2          12 564,8                  4,1\nSeleção: 2021 orcamento",
       "document": {
-        "title": "Saúde: despesa total consolidada",
+        "title": "Orçamento do Estado 2021 · Proposta de Lei e Relatório",
         "file": "content/24 Orcamento 2027 Analise/source/oe-2021-eo.pdf",
         "source_sha256": "331c64486bb738e8f642cce674a9db2dfef000a9b3577d5d670c30af4b382082",
         "locator": "Quadro 5.50; Despesa total consolidada (1); coluna 2: 2021 orcamento; p. 284 PDF (260 impressa)",
@@ -3102,7 +3542,7 @@
       "period": "2022",
       "excerpt": "(milhões de euros)\n2021            2022\nVariação      Estrutura 2022\nClassificador Económico                    Execução\nOrçamento         (%)               (%)\nprovisória\n Despesa total consolidada                                                        12 853,7         13 578,1            5,6\nSeleção: 2022 orcamento",
       "document": {
-        "title": "Saúde: despesa total consolidada",
+        "title": "Orçamento do Estado 2022 · Relatório",
         "file": "content/24 Orcamento 2027 Analise/source/oe-2022.pdf",
         "source_sha256": "1dbeec1b9ca50153995a6d597b8af10d373e82a939500b88b6b85f6464b0c96b",
         "locator": "Quadro 5.52; Despesa total consolidada; coluna 2: 2022 orcamento; p. 323 PDF (301 impressa)",
@@ -3177,7 +3617,7 @@
       "period": "2023",
       "excerpt": "(milhões de euros)\n2022             2023            Variação         Estrutura 2023\nClassificador Económico\nEstimativa          Orçamento           (%)                  (%)\n Despesa total consolidada                                                                      13 782,0         14 858,0                 7,8\nSeleção: 2023 orcamento",
       "document": {
-        "title": "Saúde: despesa total consolidada",
+        "title": "Orçamento do Estado 2023 · Relatório",
         "file": "content/24 Orcamento 2027 Analise/source/oe-2023.pdf",
         "source_sha256": "c7fbb54aa43f14efc646852babac436267b768a6f24042f26cf478c6d80a90fc",
         "locator": "Quadro 5.49; Despesa total consolidada; coluna 2: 2023 orcamento; p. 335 PDF (315 impressa)",
@@ -3252,7 +3692,7 @@
       "period": "2024",
       "excerpt": "(milhões de euros)\n2023                 2024               Variação          Estrutura 2023\nClassificador Económico\n(%)                   (%)\nEstimativa            Orçamento\n  Despesa total consolidada                                                      14 922,8             15 709,4                    5,3\nSeleção: 2024 orcamento",
       "document": {
-        "title": "Saúde: despesa total consolidada",
+        "title": "Orçamento do Estado 2024 · Relatório",
         "file": "content/24 Orcamento 2027 Analise/source/oe-2024.pdf",
         "source_sha256": "59fa52aa5264d68eac642a0fa4b7f4c399a25c0ce6ea011553eb9fc7ba7bcf67",
         "locator": "Quadro 5.50; Despesa total consolidada; coluna 2: 2024 orcamento; p. 306 PDF (290 impressa)",
@@ -3304,7 +3744,7 @@
       "period": "2025",
       "excerpt": "(milhões de euros)\n2024                2025              Variação\nClassificador Económico                                                                               Estrutura 2025 (%)\n(%)\nEstimativa         Orçamento\n  Despesa total consolidada                                       15 467,8            16 853,5                   9,0\nSeleção: 2025 orcamento",
       "document": {
-        "title": "Saúde: despesa total consolidada",
+        "title": "Orçamento do Estado 2025 · Relatório",
         "file": "content/24 Orcamento 2027 Analise/source/oe-2025.pdf",
         "source_sha256": "67420242cef230c10e7d1bfecd01191f1e9a60fb30f81116f208bf335561b33a",
         "locator": "Quadro 5.40; Despesa total consolidada; coluna 2: 2025 orcamento; p. 289 PDF (275 impressa)",
@@ -3379,7 +3819,7 @@
       "period": "2026",
       "excerpt": "(milhões de euros)\n2025                2026              Variação\nClassificador Económico                                                                                Estrutura 2026 (%)\nEstimativa          Orçamento              (%)\n  Despesa total consolidada                                        17 045,7            17 300,2                   1,5\nSeleção: 2026 orcamento",
       "document": {
-        "title": "Saúde: despesa total consolidada",
+        "title": "Orçamento do Estado 2026 · Relatório",
         "file": "content/24 Orcamento 2027 Analise/source/oe-2026.pdf",
         "source_sha256": "a863f683d0145e3129e56278cbf450e95a405cb912a98e0383e0f83d6fcbc031",
         "locator": "Quadro 5.37; Despesa total consolidada; coluna 2: 2026 orcamento; p. 305 PDF (289 impressa)",
@@ -3454,7 +3894,7 @@
       "period": "2020",
       "excerpt": "(milhões de euros)\nOrçamento Corrigido de 2020                                 Execução de 2020\nDesignação                                                              Total                                                 Total\nEstado          SFA                                 Estado            SFA\nConsolidado                                           Consolidado\n                           DESPESA TOTAL                               10 816,6      22 093,5             12 615,4         10 757,5         21 224,0         11 731,9\nSeleção: 2020 execucao",
       "document": {
-        "title": "Saúde: despesa total consolidada executada",
+        "title": "Conta Geral do Estado 2020 · Relatório de Análise Global e Conta da Segurança Social",
         "file": "content/24 Orcamento 2027 Analise/source/cge-2020.pdf",
         "source_sha256": "7914e8afd405bca672015b7f6c2d6c663f870ad015431e7189885cf158e08ace",
         "locator": "Quadro 172; DESPESA TOTAL; coluna 6: 2020 execucao; p. 317 PDF (296 impressa)",
@@ -3529,7 +3969,7 @@
       "period": "2021",
       "excerpt": "(milhões de euros)\nOrçamento Corrigido de 2021               Execução de 2021\nDesignação                         Total não        Total             Total não           Total\nConsolidado     Consolidado        Consolidado        Consolidado\n                      DESPESA TOTAL                           34 853,6        14 383,9             33 296,3            12 904,3\nSeleção: 2021 execucao",
       "document": {
-        "title": "Saúde: despesa total consolidada executada",
+        "title": "Conta Geral do Estado 2021 · Relatório de Análise Global e Conta da Segurança Social",
         "file": "content/24 Orcamento 2027 Analise/source/cge-2021.pdf",
         "source_sha256": "30e1e9add47f385de43accead03a2ce0b67e3a4470c498dad63a3a059b5c6794",
         "locator": "Quadro 183; DESPESA TOTAL; coluna 4: 2021 execucao; p. 341 PDF (323 impressa)",
@@ -3604,7 +4044,7 @@
       "period": "2022",
       "excerpt": "(milhões de euros)\nOrçamento Corrigido de 2022               Execução de 2022\nDesignação\nTotal não            Total           Total não        Total\nconsolidado        Consolidado       consolidado    Consolidado\n    DESPESA TOTAL                                                        37 887,7           15 585,5          36 183,7       14 016,8\nSeleção: 2022 execucao",
       "document": {
-        "title": "Saúde: despesa total consolidada executada",
+        "title": "Conta Geral do Estado 2022 · Relatório de Análise Global e Conta da Segurança Social",
         "file": "content/22 TAP/source/cge-2022.pdf",
         "source_sha256": "2d34e7f87d70afad287af8b09af06fbb9e0ab41561d47327686fae5fa41ee618",
         "locator": "Quadro 4.51; DESPESA TOTAL; coluna 4: 2022 execucao; p. 316 PDF (296 impressa)",
@@ -3677,7 +4117,7 @@
       "period": "2023",
       "excerpt": "(milhões de euros)\nOrçamento Corrigido de 2023               Execução de 2023\nDesignação                          Total não                            Total não\nTotal Consolidado                  Total Consolidado\nconsolidado                          consolidado\n  DESPESA TOTAL                                                    41 587,7           16 824,0         39 591,0          14 926,5\nSeleção: 2023 execucao",
       "document": {
-        "title": "Saúde: despesa total consolidada executada",
+        "title": "Conta Geral do Estado 2023 · Relatório de Análise Global e Conta da Segurança Social",
         "file": "content/24 Orcamento 2027 Analise/source/cge-2023.pdf",
         "source_sha256": "63b1af4397fac148d6acc72007432938f8a95d5c295db197e013ef54fdeb1aa3",
         "locator": "Quadro 4.49; DESPESA TOTAL; coluna 4: 2023 execucao; p. 331 PDF (311 impressa)",
@@ -3752,7 +4192,7 @@
       "period": "2024",
       "excerpt": "(milhões de euros)\nOrçamento Corrigido de 2024             Execução de 2024\nDesignação                               Total não                            Total não\nTotal Consolidado                  Total Consolidado\nconsolidado                         consolidado\n      DESPESA TOTAL                                                       45 376,7          17 814,0         43 060,0          15 808,8\nSeleção: 2024 execucao",
       "document": {
-        "title": "Saúde: despesa total consolidada executada",
+        "title": "Conta Geral do Estado 2024 · Relatório de Análise Global e Conta da Segurança Social",
         "file": "content/24 Orcamento 2027 Analise/source/cge-2024.pdf",
         "source_sha256": "385f3ccd4b1823a992959e29b7fb3fa1f56890c026dc10778f00438b077abafb",
         "locator": "Quadro 4.48; DESPESA TOTAL; coluna 4: 2024 execucao; p. 302 PDF (286 impressa)",
@@ -3827,7 +4267,7 @@
       "period": "2025",
       "excerpt": "(milhões de euros)\nOrçamento Corrigido de 2025                         Execução de 2025\nDesignação                           Total não                             Total não                         Estrutura (%) do\nTotal Consolidado                   Total Consolidado\nconsolidado                           consolidado                        total consolidado\n DESPESA TOTAL                                                  49 466,7            19 482,7          46 971,2          17 241,5\nSeleção: 2025 execucao",
       "document": {
-        "title": "Saúde: despesa total consolidada executada",
+        "title": "Conta Geral do Estado 2025 · Relatório de Análise Global e Conta da Segurança Social",
         "file": "content/24 Orcamento 2027 Analise/source/cge-2025.pdf",
         "source_sha256": "d15f18e91b23ed9f987f605a4b72d45532f84e677048ffc3ca68b2b95d1ac415",
         "locator": "Quadro 4.19; DESPESA TOTAL; coluna 4: 2025 execucao; p. 247 PDF (231 impressa)",
@@ -5206,7 +5646,7 @@
       "period": "2027",
       "excerpt": "de 2027 prevê-se igualmente um aumento dos encargos líquidos face ao valor apresentado no Relatório do Orçamento do Estado para 2026. Enquanto este último apontava para encargos líquidos de 774 milhões de euros, o presente Relatório estima um montante de 889 milhões de euros. Ao nível dos encargos brutos, o incremento observável entre a projeção plurianual do Relatório do Orçamento do Estado para 2027 e a projeção constante do anterior",
       "document": {
-        "title": "Orçamento do Estado para 2027",
+        "title": "Orçamento do Estado 2027 · Relatório",
         "file": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
         "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
         "locator": "p. 125 PDF (109 impressa)",
@@ -5251,7 +5691,7 @@
     },
     "ppp-oe2027-riscos-pedidos-rodoviarios": {
       "value": "2388,2",
-      "period": "2027",
+      "period": "2026-T1",
       "excerpt": "De acordo com a informação disponível, o valor global dos pedidos de REF e dos pedidos formulados nos litígios em curso pelas concessionárias e subconcessionárias rodoviárias ascende a cerca de 2388,2 milhões de euros. Em comparação com o valor global dos riscos e contingências apresentado no Relatório do Orçamento do Estado para 2026, verifica-se um acréscimo de cerca de 1140 milhões de euros.",
       "document": {
         "title": "Orçamento do Estado para 2027",
@@ -5299,7 +5739,7 @@
     },
     "ppp-oe2027-riscos-acrescimo": {
       "value": "1140",
-      "period": "2027",
+      "period": "2026-T1",
       "excerpt": "e contingências apresentado no Relatório do Orçamento do Estado para 2026, verifica-se um acréscimo de cerca de 1140 milhões de euros. O aumento do valor global dos pedidos resulta essencialmente dos seguintes eventos: • Desenvolvimento do procedimento negocial conduzido pela comissão de negociação constituída através do Despacho nº 15154/2024, de 16 de dezembro de 2024, da",
       "document": {
         "title": "Orçamento do Estado para 2027",
@@ -5347,7 +5787,7 @@
     },
     "ppp-oe2027-riscos-brisa": {
       "value": "1122,5",
-      "period": "2027",
+      "period": "2026-T1",
       "excerpt": "pedidos ou matérias em negociação (conforme descritas no referido despacho), no montante de cerca de 1122,5 milhões de euros; • Atualização, com base na informação mais recentemente reportada pelo representante do parceiro público, do valor da ação arbitral intentada, em 2024, pela Concessionária Autoestradas do Douro Litoral, no âmbito do Contrato de Concessão Douro Litoral, com fundamento nos efeitos da pandemia de COVID-19 e das medidas restritivas da liberdade de circulação de pessoas e de iniciativa económica privada.",
       "document": {
         "title": "Orçamento do Estado para 2027",
@@ -5395,7 +5835,7 @@
     },
     "ppp-oe2027-riscos-rotas-algarve-principal": {
       "value": "445",
-      "period": "2027",
+      "period": "2026-T1",
       "excerpt": "60 O litígio em causa envolve (i) uma ação principal arbitral (ainda pendente), cujo valor ascende a 445 milhões de euros; e (ii) uma ação cautelar, no âmbito da qual o tribunal arbitral, pela decisão proferida no primeiro trimestre de 2021, condenou a Infraestruturas de Portugal a pagar à subconcessionária, a título provisório, um montante de cerca de 30 milhões de euros, acrescido de um valor mensal de cerca de 1,3 milhões de euros até à decisão da causa principal (valores acrescidos de imposto sobre o valor acrescentado nos termos legais).",
       "document": {
         "title": "Orçamento do Estado para 2027",
@@ -5443,7 +5883,7 @@
     },
     "ppp-oe2027-riscos-rotas-algarve-mensal": {
       "value": "1,3",
-      "period": "2027",
+      "period": "2026-T1",
       "excerpt": "Infraestruturas de Portugal a pagar à subconcessionária, a título provisório, um montante de cerca de 30 milhões de euros, acrescido de um valor mensal de cerca de 1,3 milhões de euros até à decisão da causa principal (valores acrescidos de imposto sobre o valor acrescentado nos termos legais). 354 ORÇAMENTAÇÃO POR PROGRAMAS E POLÍTICAS SETORIAIS",
       "document": {
         "title": "Orçamento do Estado para 2027",
@@ -5864,6 +6304,61 @@
         "sha256": "3c6ae5f2fa96d3036d2b74fa622294518199dfd0d9d2e696e8a738493b8efd52"
       }
     },
+    "oe-2027-outras-despesas-correntes-reserva": {
+      "value": "De relevar ainda o crescimento das outras despesas correntes, decorrente da constituição das reservas orçamentais a serem mobilizadas durante a execução orçamental, em linha com o aprofundamento da autonomia na gestão orçamental de cada área setorial iniciada em 2026.",
+      "period": "2027",
+      "excerpt": "De relevar ainda o crescimento das outras despesas correntes, decorrente da constituição das reservas orçamentais a serem mobilizadas durante a execução orçamental, em linha com o aprofundamento da autonomia na gestão orçamental de cada área setorial iniciada em 2026.",
+      "document": {
+        "title": "Orçamento do Estado 2027 · Relatório",
+        "file": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
+        "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+        "locator": "p. 67 PDF (51 impressa), explicação das outras despesas correntes",
+        "page": 67,
+        "printed_page": 51
+      },
+      "derivation": null,
+      "afirmacao": true,
+      "attributed_to": [
+        "Ministério das Finanças"
+      ],
+      "published_at": "2026-10-08",
+      "source_url": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+      "unit": "afirmação",
+      "receipt": {
+        "estado": 200,
+        "ficheiro": "oe-relatorio.pdf",
+        "bytes": 25512364,
+        "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+        "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+        "endereco_final": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+        "acedido_em": "2026-10-13T18:47:56.980564+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor"
+      },
+      "rights": {
+        "redistributed": "Excerto, referência e recibo; o corpo permanece no motor.",
+        "licence": "Não se declara uma licença geral de redistribuição do corpo.",
+        "assessment": {
+          "anfitriao": "app.parlamento.pt",
+          "publicar_corpos": false,
+          "alojamento": "Cópia privada para investigação, pedida no mandato. Nenhuma publicação de corpos ou de páginas.",
+          "reutilizacao": "Licença aberta específica não estabelecida para estes corpos. Acesso público, documento oficial ou política de privacidade não são autorização de republicação integral.",
+          "prova": {
+            "file": "content/23 Habitacao/source/direitos/parlamento.html",
+            "sha256": "42b5ebc0fe02bd0e0a8d883a72da452edd07e58342aeb47967cfade3fdcf1073",
+            "receipt": "content/23 Habitacao/source/direitos/parlamento.html.pedido.json"
+          },
+          "pedidos": [
+            "content/24 Orcamento 2027 Analise/source/debate/utao-oe2027-infografia.pdf.pedido.json",
+            "content/24 Orcamento 2027 Analise/source/debate/utao-oe2027-preliminar.pdf.pedido.json",
+            "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf.pedido.json"
+          ],
+          "robots": "Não é utilizado como licença."
+        },
+        "origin_path": "content/24 Orcamento 2027 Analise/source/direitos/app.parlamento.pt/avaliacao.json",
+        "sha256": "e955562568605bdb2d5f59cae815cf59b8c615ca33c274a3bc4600225d08f5e0"
+      }
+    },
     "der-ambiente-e-energia-prr-2026": {
       "value": "823,2",
       "period": "2026",
@@ -6091,7 +6586,7 @@
     "der-ppp-quota-rodoviario": {
       "value": "61,82",
       "period": "2027",
-      "excerpt": "889 ÷ 1 438 × 100 = 61,82",
+      "excerpt": "889 ÷ 1 438 × 100 = 61.82197496522948539638386648 ≈ 61,82",
       "document": null,
       "derivation": {
         "components": [
@@ -6100,7 +6595,7 @@
         ],
         "operation": "percent",
         "formula": "(oe-2027-ppp-rodoviario-encargos-liquidos-2027) ÷ (oe-2027-ppp-total-encargos-liquidos-2027) × 100",
-        "calculation": "889 ÷ 1 438 × 100 = 61,82",
+        "calculation": "889 ÷ 1 438 × 100 = 61.82197496522948539638386648 ≈ 61,82",
         "rounding_places": 2
       }
     },
@@ -6422,6 +6917,70 @@
         "operation": "change_pct",
         "formula": "((oe-2027-seguranca-interna-sem-prr-2027) ÷ (oe-2027-seguranca-interna-sem-prr-2026) − 1) × 100",
         "calculation": "(3 153,8 ÷ 2 789,6 − 1) × 100 = 13.05563521651849727559506740 ≈ 13,1",
+        "rounding_places": 1
+      }
+    },
+    "der-saude-razao-compensacao-prr-pct": {
+      "value": "66,4",
+      "period": "2026/2027",
+      "excerpt": "511,8 ÷ 771,1 × 100 = 66.37271430424069511088056024 ≈ 66,4",
+      "document": null,
+      "derivation": {
+        "components": [
+          "der-saude-variacao-sem-prr",
+          "der-saude-prr-2026"
+        ],
+        "operation": "percent",
+        "formula": "(der-saude-variacao-sem-prr) ÷ (der-saude-prr-2026) × 100",
+        "calculation": "511,8 ÷ 771,1 × 100 = 66.37271430424069511088056024 ≈ 66,4",
+        "rounding_places": 1
+      }
+    },
+    "der-financas-variacao-sem-prr-pct": {
+      "value": "-7,8",
+      "period": "2026/2027",
+      "excerpt": "(8 509,7 ÷ 9 234,3 − 1) × 100 = -7.846831920123885946958621660 ≈ -7,8",
+      "document": null,
+      "derivation": {
+        "components": [
+          "oe-2027-financas-sem-prr-2027",
+          "oe-2027-financas-sem-prr-2026"
+        ],
+        "operation": "change_pct",
+        "formula": "((oe-2027-financas-sem-prr-2027) ÷ (oe-2027-financas-sem-prr-2026) − 1) × 100",
+        "calculation": "(8 509,7 ÷ 9 234,3 − 1) × 100 = -7.846831920123885946958621660 ≈ -7,8",
+        "rounding_places": 1
+      }
+    },
+    "der-economia-variacao-sem-prr-pct": {
+      "value": "-4,9",
+      "period": "2026/2027",
+      "excerpt": "(908,5 ÷ 955,0 − 1) × 100 = -4.869109947643979057591623040 ≈ -4,9",
+      "document": null,
+      "derivation": {
+        "components": [
+          "oe-2027-economia-sem-prr-2027",
+          "oe-2027-economia-sem-prr-2026"
+        ],
+        "operation": "change_pct",
+        "formula": "((oe-2027-economia-sem-prr-2027) ÷ (oe-2027-economia-sem-prr-2026) − 1) × 100",
+        "calculation": "(908,5 ÷ 955,0 − 1) × 100 = -4.869109947643979057591623040 ≈ -4,9",
+        "rounding_places": 1
+      }
+    },
+    "der-coesao-territorial-variacao-sem-prr-pct": {
+      "value": "-38,2",
+      "period": "2026/2027",
+      "excerpt": "(388,1 ÷ 628,0 − 1) × 100 = -38.20063694267515923566878981 ≈ -38,2",
+      "document": null,
+      "derivation": {
+        "components": [
+          "oe-2027-coesao-territorial-sem-prr-2027",
+          "oe-2027-coesao-territorial-sem-prr-2026"
+        ],
+        "operation": "change_pct",
+        "formula": "((oe-2027-coesao-territorial-sem-prr-2027) ÷ (oe-2027-coesao-territorial-sem-prr-2026) − 1) × 100",
+        "calculation": "(388,1 ÷ 628,0 − 1) × 100 = -38.20063694267515923566878981 ≈ -38,2",
         "rounding_places": 1
       }
     }

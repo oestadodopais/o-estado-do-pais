@@ -20,8 +20,8 @@ reference_date: "2027"
 excerpt: null
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
-derivation: "(oe-2027-ppp-rodoviario-encargos-liquidos-2027) ÷ (oe-2027-ppp-total-encargos-liquidos-2027) × 100. 889 ÷ 1 438 × 100 = 61,82"
-derivation_en: "(oe-2027-ppp-rodoviario-encargos-liquidos-2027) ÷ (oe-2027-ppp-total-encargos-liquidos-2027) × 100. 889 ÷ 1 438 × 100 = 61,82"
+derivation: "(oe-2027-ppp-rodoviario-encargos-liquidos-2027) ÷ (oe-2027-ppp-total-encargos-liquidos-2027) × 100. 889 ÷ 1 438 × 100 = 61.82197496522948539638386648 ≈ 61,82"
+derivation_en: "(oe-2027-ppp-rodoviario-encargos-liquidos-2027) ÷ (oe-2027-ppp-total-encargos-liquidos-2027) × 100. 889 ÷ 1 438 × 100 = 61.82197496522948539638386648 ≈ 61,82"
 derived_from:
   - "oe-2027-ppp-rodoviario-encargos-liquidos-2027"
   - "oe-2027-ppp-total-encargos-liquidos-2027"
@@ -30,7 +30,7 @@ check: "round ( oe-2027-ppp-rodoviario-encargos-liquidos-2027 / oe-2027-ppp-tota
 
 study: "oe-2027"
 # Nota interna. NÃO é publicada: ver DECISIONS §1.24.
-note: "[derivation do motor] {'components': ['oe-2027-ppp-rodoviario-encargos-liquidos-2027', 'oe-2027-ppp-total-encargos-liquidos-2027'], 'operation': 'percent', 'formula': '(oe-2027-ppp-rodoviario-encargos-liquidos-2027) ÷ (oe-2027-ppp-total-encargos-liquidos-2027) × 100', 'calculation': '889 ÷ 1 438 × 100 = 61,82', 'rounding_places': 2} · [note do motor] Denominador é o total impresso, não a soma recalculada das parcelas arredondadas. · Cruzado de ResearchHub content/24 Orcamento 2027 Analise · der-ppp-quota-rodoviario."
+note: "[derivation do motor] {'components': ['oe-2027-ppp-rodoviario-encargos-liquidos-2027', 'oe-2027-ppp-total-encargos-liquidos-2027'], 'operation': 'percent', 'formula': '(oe-2027-ppp-rodoviario-encargos-liquidos-2027) ÷ (oe-2027-ppp-total-encargos-liquidos-2027) × 100', 'calculation': '889 ÷ 1 438 × 100 = 61.82197496522948539638386648 ≈ 61,82', 'rounding_places': 2} · [note do motor] Denominador é o total impresso, não a soma recalculada das parcelas arredondadas. · Cruzado de ResearchHub content/24 Orcamento 2027 Analise · der-ppp-quota-rodoviario."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []

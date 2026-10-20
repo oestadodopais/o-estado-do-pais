@@ -1,7 +1,7 @@
 {
   "estado": "linhas seladas; valores conferidos contra os corpos e contas refeitas a partir das componentes",
-  "motor_head": "48c98fc2463167a41ebf066298ccb823b75be52f",
-  "site_head": "3533f7a7b23424d7b726d8a6541a562761903f5a",
+  "motor_head": "48d97b85fdc4609a04baca0f392c02b5da71d931",
+  "site_head": "e60530bca3d080e8f13ba801d45c2b4723ea408b",
   "regeneracao_integral_igual_ao_livro": true,
   "rows": [
     {
@@ -659,7 +659,7 @@
       "period": "2027",
       "estado": "selada e conferida contra o corpo ou as componentes",
       "document": null,
-      "excerpt": "889 ÷ 1 438 × 100 = 61,82",
+      "excerpt": "889 ÷ 1 438 × 100 = 61.82197496522948539638386648 ≈ 61,82",
       "derivation": {
         "components": [
           "oe-2027-ppp-rodoviario-encargos-liquidos-2027",
@@ -667,7 +667,7 @@
         ],
         "operation": "percent",
         "formula": "(oe-2027-ppp-rodoviario-encargos-liquidos-2027) ÷ (oe-2027-ppp-total-encargos-liquidos-2027) × 100",
-        "calculation": "889 ÷ 1 438 × 100 = 61,82",
+        "calculation": "889 ÷ 1 438 × 100 = 61.82197496522948539638386648 ≈ 61,82",
         "rounding_places": 2
       },
       "note": "Denominador é o total impresso, não a soma recalculada das parcelas arredondadas.",
@@ -678,7 +678,7 @@
         ],
         "operation": "percent",
         "formula": "(oe-2027-ppp-rodoviario-encargos-liquidos-2027) ÷ (oe-2027-ppp-total-encargos-liquidos-2027) × 100",
-        "calculation": "889 ÷ 1 438 × 100 = 61,82",
+        "calculation": "889 ÷ 1 438 × 100 = 61.82197496522948539638386648 ≈ 61,82",
         "rounding_places": 2
       }
     },
@@ -805,7 +805,7 @@
       "period": "2020",
       "estado": "selada e conferida contra o corpo ou as componentes",
       "document": {
-        "title": "Saúde: despesa total consolidada",
+        "title": "Orçamento do Estado 2020 · Relatório",
         "file": "content/24 Orcamento 2027 Analise/source/oe-2020.pdf",
         "source_sha256": "6b4c6d70dc7ffb3d511afc7e0657a005b0c166d57114cee9d9b0765c71339ec0",
         "locator": "Quadro 4.61; Despesa Total Consolidada; coluna 2: 2020 orcamento; p. 191 PDF (177 impressa)",
@@ -834,7 +834,7 @@
         "program": "saude",
         "metric": "total",
         "report_year": 2020,
-        "title": "Saúde: despesa total consolidada",
+        "title": "Orçamento do Estado 2020 · Relatório",
         "unit": "milhões de euros",
         "expected_value": "11 282,2",
         "note": "Programa orçamental Saúde na ótica da contabilidade pública. Gémeo: content/20 Orcamento do Estado, função Saúde, classifica despesas por finalidade; o perímetro funcional difere do programa por organização. Não equivale à despesa corrente em saúde de todos os financiadores do Eurostat. Total inclui ativos e passivos financeiros; efetiva exclui-os.",
@@ -852,7 +852,7 @@
       "period": "2020",
       "estado": "selada e conferida contra o corpo ou as componentes",
       "document": {
-        "title": "Saúde: despesa total consolidada executada",
+        "title": "Conta Geral do Estado 2020 · Relatório de Análise Global e Conta da Segurança Social",
         "file": "content/24 Orcamento 2027 Analise/source/cge-2020.pdf",
         "source_sha256": "7914e8afd405bca672015b7f6c2d6c663f870ad015431e7189885cf158e08ace",
         "locator": "Quadro 172; DESPESA TOTAL; coluna 6: 2020 execucao; p. 317 PDF (296 impressa)",
@@ -883,7 +883,7 @@
         "program": "saude",
         "metric": "total",
         "report_year": 2020,
-        "title": "Saúde: despesa total consolidada executada",
+        "title": "Conta Geral do Estado 2020 · Relatório de Análise Global e Conta da Segurança Social",
         "unit": "milhões de euros",
         "expected_value": "11 731,9",
         "note": "Programa orçamental Saúde na ótica da contabilidade pública. Gémeo: content/20 Orcamento do Estado, função Saúde, classifica despesas por finalidade; o perímetro funcional difere do programa por organização. Não equivale à despesa corrente em saúde de todos os financiadores do Eurostat. Coluna Execução, Total Consolidado. O total inclui ativos e passivos financeiros; a efetiva exclui-os. Comparação com o agregado homónimo do relatório OE, mantendo o perímetro anual do programa.",
@@ -901,7 +901,7 @@
       "period": "2021",
       "estado": "selada e conferida contra o corpo ou as componentes",
       "document": {
-        "title": "Saúde: despesa total consolidada",
+        "title": "Orçamento do Estado 2021 · Proposta de Lei e Relatório",
         "file": "content/24 Orcamento 2027 Analise/source/oe-2021-eo.pdf",
         "source_sha256": "331c64486bb738e8f642cce674a9db2dfef000a9b3577d5d670c30af4b382082",
         "locator": "Quadro 5.50; Despesa total consolidada (1); coluna 2: 2021 orcamento; p. 284 PDF (260 impressa)",
@@ -931,7 +931,7 @@
         "program": "saude",
         "metric": "total",
         "report_year": 2021,
-        "title": "Saúde: despesa total consolidada",
+        "title": "Orçamento do Estado 2021 · Proposta de Lei e Relatório",
         "unit": "milhões de euros",
         "expected_value": "12 564,8",
         "note": "Programa orçamental Saúde na ótica da contabilidade pública. Gémeo: content/20 Orcamento do Estado, função Saúde, classifica despesas por finalidade; o perímetro funcional difere do programa por organização. Não equivale à despesa corrente em saúde de todos os financiadores do Eurostat. Total inclui ativos e passivos financeiros; efetiva exclui-os.",
@@ -949,7 +949,7 @@
       "period": "2021",
       "estado": "selada e conferida contra o corpo ou as componentes",
       "document": {
-        "title": "Saúde: despesa total consolidada executada",
+        "title": "Conta Geral do Estado 2021 · Relatório de Análise Global e Conta da Segurança Social",
         "file": "content/24 Orcamento 2027 Analise/source/cge-2021.pdf",
         "source_sha256": "30e1e9add47f385de43accead03a2ce0b67e3a4470c498dad63a3a059b5c6794",
         "locator": "Quadro 183; DESPESA TOTAL; coluna 4: 2021 execucao; p. 341 PDF (323 impressa)",
@@ -979,7 +979,7 @@
         "program": "saude",
         "metric": "total",
         "report_year": 2021,
-        "title": "Saúde: despesa total consolidada executada",
+        "title": "Conta Geral do Estado 2021 · Relatório de Análise Global e Conta da Segurança Social",
         "unit": "milhões de euros",
         "expected_value": "12 904,3",
         "note": "Programa orçamental Saúde na ótica da contabilidade pública. Gémeo: content/20 Orcamento do Estado, função Saúde, classifica despesas por finalidade; o perímetro funcional difere do programa por organização. Não equivale à despesa corrente em saúde de todos os financiadores do Eurostat. Coluna Execução, Total Consolidado. O total inclui ativos e passivos financeiros; a efetiva exclui-os. Comparação com o agregado homónimo do relatório OE, mantendo o perímetro anual do programa.",
@@ -997,7 +997,7 @@
       "period": "2022",
       "estado": "selada e conferida contra o corpo ou as componentes",
       "document": {
-        "title": "Saúde: despesa total consolidada",
+        "title": "Orçamento do Estado 2022 · Relatório",
         "file": "content/24 Orcamento 2027 Analise/source/oe-2022.pdf",
         "source_sha256": "1dbeec1b9ca50153995a6d597b8af10d373e82a939500b88b6b85f6464b0c96b",
         "locator": "Quadro 5.52; Despesa total consolidada; coluna 2: 2022 orcamento; p. 323 PDF (301 impressa)",
@@ -1029,7 +1029,7 @@
         "program": "saude",
         "metric": "total",
         "report_year": 2022,
-        "title": "Saúde: despesa total consolidada",
+        "title": "Orçamento do Estado 2022 · Relatório",
         "unit": "milhões de euros",
         "expected_value": "13 578,1",
         "note": "Programa orçamental Saúde na ótica da contabilidade pública. Gémeo: content/20 Orcamento do Estado, função Saúde, classifica despesas por finalidade; o perímetro funcional difere do programa por organização. Não equivale à despesa corrente em saúde de todos os financiadores do Eurostat. Total inclui ativos e passivos financeiros; efetiva exclui-os. Relatório da segunda proposta, abril de 2022. A coluna anterior é execução provisória de 2021, não estimativa.",
@@ -1047,7 +1047,7 @@
       "period": "2022",
       "estado": "selada e conferida contra o corpo ou as componentes",
       "document": {
-        "title": "Saúde: despesa total consolidada executada",
+        "title": "Conta Geral do Estado 2022 · Relatório de Análise Global e Conta da Segurança Social",
         "file": "content/22 TAP/source/cge-2022.pdf",
         "source_sha256": "2d34e7f87d70afad287af8b09af06fbb9e0ab41561d47327686fae5fa41ee618",
         "locator": "Quadro 4.51; DESPESA TOTAL; coluna 4: 2022 execucao; p. 316 PDF (296 impressa)",
@@ -1078,7 +1078,7 @@
         "program": "saude",
         "metric": "total",
         "report_year": 2022,
-        "title": "Saúde: despesa total consolidada executada",
+        "title": "Conta Geral do Estado 2022 · Relatório de Análise Global e Conta da Segurança Social",
         "unit": "milhões de euros",
         "expected_value": "14 016,8",
         "note": "Programa orçamental Saúde na ótica da contabilidade pública. Gémeo: content/20 Orcamento do Estado, função Saúde, classifica despesas por finalidade; o perímetro funcional difere do programa por organização. Não equivale à despesa corrente em saúde de todos os financiadores do Eurostat. Coluna Execução, Total Consolidado. O total inclui ativos e passivos financeiros; a efetiva exclui-os. Comparação com o agregado homónimo do relatório OE, mantendo o perímetro anual do programa. Corpo idêntico já alojado na pesquisa TAP, reutilizado pelo caminho e pelo sha256.",
@@ -1096,7 +1096,7 @@
       "period": "2023",
       "estado": "selada e conferida contra o corpo ou as componentes",
       "document": {
-        "title": "Saúde: despesa total consolidada",
+        "title": "Orçamento do Estado 2023 · Relatório",
         "file": "content/24 Orcamento 2027 Analise/source/oe-2023.pdf",
         "source_sha256": "c7fbb54aa43f14efc646852babac436267b768a6f24042f26cf478c6d80a90fc",
         "locator": "Quadro 5.49; Despesa total consolidada; coluna 2: 2023 orcamento; p. 335 PDF (315 impressa)",
@@ -1126,7 +1126,7 @@
         "program": "saude",
         "metric": "total",
         "report_year": 2023,
-        "title": "Saúde: despesa total consolidada",
+        "title": "Orçamento do Estado 2023 · Relatório",
         "unit": "milhões de euros",
         "expected_value": "14 858,0",
         "note": "Programa orçamental Saúde na ótica da contabilidade pública. Gémeo: content/20 Orcamento do Estado, função Saúde, classifica despesas por finalidade; o perímetro funcional difere do programa por organização. Não equivale à despesa corrente em saúde de todos os financiadores do Eurostat. Total inclui ativos e passivos financeiros; efetiva exclui-os. O quadro identifica a transferência da descentralização de competências para o programa Órgãos de Soberania em 2023; a comparação interanual pode refletir esta mudança de perímetro.",
@@ -1144,7 +1144,7 @@
       "period": "2023",
       "estado": "selada e conferida contra o corpo ou as componentes",
       "document": {
-        "title": "Saúde: despesa total consolidada executada",
+        "title": "Conta Geral do Estado 2023 · Relatório de Análise Global e Conta da Segurança Social",
         "file": "content/24 Orcamento 2027 Analise/source/cge-2023.pdf",
         "source_sha256": "63b1af4397fac148d6acc72007432938f8a95d5c295db197e013ef54fdeb1aa3",
         "locator": "Quadro 4.49; DESPESA TOTAL; coluna 4: 2023 execucao; p. 331 PDF (311 impressa)",
@@ -1175,7 +1175,7 @@
         "program": "saude",
         "metric": "total",
         "report_year": 2023,
-        "title": "Saúde: despesa total consolidada executada",
+        "title": "Conta Geral do Estado 2023 · Relatório de Análise Global e Conta da Segurança Social",
         "unit": "milhões de euros",
         "expected_value": "14 926,5",
         "note": "Programa orçamental Saúde na ótica da contabilidade pública. Gémeo: content/20 Orcamento do Estado, função Saúde, classifica despesas por finalidade; o perímetro funcional difere do programa por organização. Não equivale à despesa corrente em saúde de todos os financiadores do Eurostat. Coluna Execução, Total Consolidado. O total inclui ativos e passivos financeiros; a efetiva exclui-os. Comparação com o agregado homónimo do relatório OE, mantendo o perímetro anual do programa.",
@@ -1193,7 +1193,7 @@
       "period": "2024",
       "estado": "selada e conferida contra o corpo ou as componentes",
       "document": {
-        "title": "Saúde: despesa total consolidada",
+        "title": "Orçamento do Estado 2024 · Relatório",
         "file": "content/24 Orcamento 2027 Analise/source/oe-2024.pdf",
         "source_sha256": "59fa52aa5264d68eac642a0fa4b7f4c399a25c0ce6ea011553eb9fc7ba7bcf67",
         "locator": "Quadro 5.50; Despesa total consolidada; coluna 2: 2024 orcamento; p. 306 PDF (290 impressa)",
@@ -1224,7 +1224,7 @@
         "program": "saude",
         "metric": "total",
         "report_year": 2024,
-        "title": "Saúde: despesa total consolidada",
+        "title": "Orçamento do Estado 2024 · Relatório",
         "unit": "milhões de euros",
         "expected_value": "15 709,4",
         "note": "Programa orçamental Saúde na ótica da contabilidade pública. Gémeo: content/20 Orcamento do Estado, função Saúde, classifica despesas por finalidade; o perímetro funcional difere do programa por organização. Não equivale à despesa corrente em saúde de todos os financiadores do Eurostat. Total inclui ativos e passivos financeiros; efetiva exclui-os.",
@@ -1242,7 +1242,7 @@
       "period": "2024",
       "estado": "selada e conferida contra o corpo ou as componentes",
       "document": {
-        "title": "Saúde: despesa total consolidada executada",
+        "title": "Conta Geral do Estado 2024 · Relatório de Análise Global e Conta da Segurança Social",
         "file": "content/24 Orcamento 2027 Analise/source/cge-2024.pdf",
         "source_sha256": "385f3ccd4b1823a992959e29b7fb3fa1f56890c026dc10778f00438b077abafb",
         "locator": "Quadro 4.48; DESPESA TOTAL; coluna 4: 2024 execucao; p. 302 PDF (286 impressa)",
@@ -1273,7 +1273,7 @@
         "program": "saude",
         "metric": "total",
         "report_year": 2024,
-        "title": "Saúde: despesa total consolidada executada",
+        "title": "Conta Geral do Estado 2024 · Relatório de Análise Global e Conta da Segurança Social",
         "unit": "milhões de euros",
         "expected_value": "15 808,8",
         "note": "Programa orçamental Saúde na ótica da contabilidade pública. Gémeo: content/20 Orcamento do Estado, função Saúde, classifica despesas por finalidade; o perímetro funcional difere do programa por organização. Não equivale à despesa corrente em saúde de todos os financiadores do Eurostat. Coluna Execução, Total Consolidado. O total inclui ativos e passivos financeiros; a efetiva exclui-os. Comparação com o agregado homónimo do relatório OE, mantendo o perímetro anual do programa.",
@@ -1291,7 +1291,7 @@
       "period": "2025",
       "estado": "selada e conferida contra o corpo ou as componentes",
       "document": {
-        "title": "Saúde: despesa total consolidada",
+        "title": "Orçamento do Estado 2025 · Relatório",
         "file": "content/24 Orcamento 2027 Analise/source/oe-2025.pdf",
         "source_sha256": "67420242cef230c10e7d1bfecd01191f1e9a60fb30f81116f208bf335561b33a",
         "locator": "Quadro 5.40; Despesa total consolidada; coluna 2: 2025 orcamento; p. 289 PDF (275 impressa)",
@@ -1322,7 +1322,7 @@
         "program": "saude",
         "metric": "total",
         "report_year": 2025,
-        "title": "Saúde: despesa total consolidada",
+        "title": "Orçamento do Estado 2025 · Relatório",
         "unit": "milhões de euros",
         "expected_value": "16 853,5",
         "note": "Programa orçamental Saúde na ótica da contabilidade pública. Gémeo: content/20 Orcamento do Estado, função Saúde, classifica despesas por finalidade; o perímetro funcional difere do programa por organização. Não equivale à despesa corrente em saúde de todos os financiadores do Eurostat. Total inclui ativos e passivos financeiros; efetiva exclui-os.",
@@ -1340,7 +1340,7 @@
       "period": "2025",
       "estado": "selada e conferida contra o corpo ou as componentes",
       "document": {
-        "title": "Saúde: despesa total consolidada executada",
+        "title": "Conta Geral do Estado 2025 · Relatório de Análise Global e Conta da Segurança Social",
         "file": "content/24 Orcamento 2027 Analise/source/cge-2025.pdf",
         "source_sha256": "d15f18e91b23ed9f987f605a4b72d45532f84e677048ffc3ca68b2b95d1ac415",
         "locator": "Quadro 4.19; DESPESA TOTAL; coluna 4: 2025 execucao; p. 247 PDF (231 impressa)",
@@ -1371,7 +1371,7 @@
         "program": "saude",
         "metric": "total",
         "report_year": 2025,
-        "title": "Saúde: despesa total consolidada executada",
+        "title": "Conta Geral do Estado 2025 · Relatório de Análise Global e Conta da Segurança Social",
         "unit": "milhões de euros",
         "expected_value": "17 241,5",
         "note": "Programa orçamental Saúde na ótica da contabilidade pública. Gémeo: content/20 Orcamento do Estado, função Saúde, classifica despesas por finalidade; o perímetro funcional difere do programa por organização. Não equivale à despesa corrente em saúde de todos os financiadores do Eurostat. Coluna Execução, Total Consolidado. O total inclui ativos e passivos financeiros; a efetiva exclui-os. Comparação com o agregado homónimo do relatório OE, mantendo o perímetro anual do programa.",
@@ -1389,7 +1389,7 @@
       "period": "2026",
       "estado": "selada e conferida contra o corpo ou as componentes",
       "document": {
-        "title": "Saúde: despesa total consolidada",
+        "title": "Orçamento do Estado 2026 · Relatório",
         "file": "content/24 Orcamento 2027 Analise/source/oe-2026.pdf",
         "source_sha256": "a863f683d0145e3129e56278cbf450e95a405cb912a98e0383e0f83d6fcbc031",
         "locator": "Quadro 5.37; Despesa total consolidada; coluna 2: 2026 orcamento; p. 305 PDF (289 impressa)",
@@ -1419,7 +1419,7 @@
         "program": "saude",
         "metric": "total",
         "report_year": 2026,
-        "title": "Saúde: despesa total consolidada",
+        "title": "Orçamento do Estado 2026 · Relatório",
         "unit": "milhões de euros",
         "expected_value": "17 300,2",
         "note": "Programa orçamental Saúde na ótica da contabilidade pública. Gémeo: content/20 Orcamento do Estado, função Saúde, classifica despesas por finalidade; o perímetro funcional difere do programa por organização. Não equivale à despesa corrente em saúde de todos os financiadores do Eurostat. Total inclui ativos e passivos financeiros; efetiva exclui-os.",
@@ -1677,7 +1677,7 @@
       "period": "2021",
       "estado": "selada e conferida contra o corpo ou as componentes",
       "document": {
-        "title": "PPP: liquidos rodoviários",
+        "title": "Orçamento do Estado 2022 · Relatório",
         "file": "content/24 Orcamento 2027 Analise/source/oe-2022.pdf",
         "source_sha256": "1dbeec1b9ca50153995a6d597b8af10d373e82a939500b88b6b85f6464b0c96b",
         "locator": "Quadro 4.20. Previsão dos encargos plurianuais com as Parcerias Público-Privadas; Rodoviário; coluna 1: 2021 execucao; p. 147 PDF (125 impressa)",
@@ -1703,7 +1703,7 @@
         "program": "ppp",
         "metric": "liquidos",
         "report_year": 2022,
-        "title": "PPP: liquidos rodoviários",
+        "title": "Orçamento do Estado 2022 · Relatório",
         "unit": "milhões de euros",
         "expected_value": "1 250",
         "note": "Fluxos de caixa com IVA quando aplicável. Valores de 2021 a preços correntes; os seguintes a preços constantes de 2022. As estimativas de diferentes relatórios não são uma série de execução nem estão todas à mesma base de preços. O total líquido impresso é preservado, sem recalcular as parcelas arredondadas. O relatório de abril de 2022 identifica 2021 como execução, não estimativa.",
@@ -1720,7 +1720,7 @@
       "period": "2022",
       "estado": "selada e conferida contra o corpo ou as componentes",
       "document": {
-        "title": "PPP: liquidos rodoviários",
+        "title": "Orçamento do Estado 2023 · Relatório",
         "file": "content/24 Orcamento 2027 Analise/source/oe-2023.pdf",
         "source_sha256": "c7fbb54aa43f14efc646852babac436267b768a6f24042f26cf478c6d80a90fc",
         "locator": "Quadro 4.22. Previsão dos encargos plurianuais com as Parcerias Público-Privadas; Rodoviário; coluna 1: 2022 estimativa; p. 192 PDF (172 impressa)",
@@ -1746,7 +1746,7 @@
         "program": "ppp",
         "metric": "liquidos",
         "report_year": 2023,
-        "title": "PPP: liquidos rodoviários",
+        "title": "Orçamento do Estado 2023 · Relatório",
         "unit": "milhões de euros",
         "expected_value": "1 192",
         "note": "Fluxos de caixa com IVA quando aplicável. Valores de 2022 a preços correntes; os seguintes a preços constantes de 2023. As estimativas de diferentes relatórios não são uma série de execução nem estão todas à mesma base de preços. O total líquido impresso é preservado, sem recalcular as parcelas arredondadas.",
@@ -1763,7 +1763,7 @@
       "period": "2023",
       "estado": "selada e conferida contra o corpo ou as componentes",
       "document": {
-        "title": "PPP: liquidos rodoviários",
+        "title": "Orçamento do Estado 2024 · Relatório",
         "file": "content/24 Orcamento 2027 Analise/source/oe-2024.pdf",
         "source_sha256": "59fa52aa5264d68eac642a0fa4b7f4c399a25c0ce6ea011553eb9fc7ba7bcf67",
         "locator": "Quadro 4.26. Previsão dos encargos plurianuais com as parcerias público-privadas; Rodoviário; coluna 1: 2023 estimativa; p. 191 PDF (175 impressa)",
@@ -1789,7 +1789,7 @@
         "program": "ppp",
         "metric": "liquidos",
         "report_year": 2024,
-        "title": "PPP: liquidos rodoviários",
+        "title": "Orçamento do Estado 2024 · Relatório",
         "unit": "milhões de euros",
         "expected_value": "1 105",
         "note": "Fluxos de caixa com IVA quando aplicável. Valores de 2023 a preços correntes; os seguintes a preços constantes de 2024. As estimativas de diferentes relatórios não são uma série de execução nem estão todas à mesma base de preços. O total líquido impresso é preservado, sem recalcular as parcelas arredondadas.",
@@ -1806,7 +1806,7 @@
       "period": "2024",
       "estado": "selada e conferida contra o corpo ou as componentes",
       "document": {
-        "title": "PPP: liquidos rodoviários",
+        "title": "Orçamento do Estado 2025 · Relatório",
         "file": "content/24 Orcamento 2027 Analise/source/oe-2025.pdf",
         "source_sha256": "67420242cef230c10e7d1bfecd01191f1e9a60fb30f81116f208bf335561b33a",
         "locator": "Quadro 4.25. Previsão dos encargos plurianuais com as parcerias público-privadas; Rodoviário; coluna 1: 2024 estimativa; p. 180 PDF (166 impressa)",
@@ -1832,7 +1832,7 @@
         "program": "ppp",
         "metric": "liquidos",
         "report_year": 2025,
-        "title": "PPP: liquidos rodoviários",
+        "title": "Orçamento do Estado 2025 · Relatório",
         "unit": "milhões de euros",
         "expected_value": "1 012",
         "note": "Fluxos de caixa com IVA quando aplicável. Valores de 2024 a preços correntes; os seguintes a preços constantes de 2025. As estimativas de diferentes relatórios não são uma série de execução nem estão todas à mesma base de preços. O total líquido impresso é preservado, sem recalcular as parcelas arredondadas.",
@@ -1849,7 +1849,7 @@
       "period": "2025",
       "estado": "selada e conferida contra o corpo ou as componentes",
       "document": {
-        "title": "PPP: liquidos rodoviários",
+        "title": "Orçamento do Estado 2026 · Relatório",
         "file": "content/24 Orcamento 2027 Analise/source/oe-2026.pdf",
         "source_sha256": "a863f683d0145e3129e56278cbf450e95a405cb912a98e0383e0f83d6fcbc031",
         "locator": "Quadro 4.25. Previsão dos encargos plurianuais com as parcerias público-privadas; Rodoviário; coluna 1: 2025 estimativa; p. 119 PDF (103 impressa)",
@@ -1875,7 +1875,7 @@
         "program": "ppp",
         "metric": "liquidos",
         "report_year": 2026,
-        "title": "PPP: liquidos rodoviários",
+        "title": "Orçamento do Estado 2026 · Relatório",
         "unit": "milhões de euros",
         "expected_value": "843",
         "note": "Fluxos de caixa com IVA quando aplicável. Valores de 2025 a preços correntes; os seguintes a preços constantes de 2026. As estimativas de diferentes relatórios não são uma série de execução nem estão todas à mesma base de preços. O total líquido impresso é preservado, sem recalcular as parcelas arredondadas.",
@@ -1892,7 +1892,7 @@
       "period": "2026",
       "estado": "selada e conferida contra o corpo ou as componentes",
       "document": {
-        "title": "PPP: liquidos rodoviários",
+        "title": "Orçamento do Estado 2027 · Relatório",
         "file": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
         "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
         "locator": "Quadro 4.25. Previsão dos encargos plurianuais com as parcerias público-privadas; Rodoviário; coluna 1: 2026 estimativa; p. 123 PDF (107 impressa)",
@@ -1944,7 +1944,7 @@
         "program": "ppp",
         "metric": "liquidos",
         "report_year": 2027,
-        "title": "PPP: liquidos rodoviários",
+        "title": "Orçamento do Estado 2027 · Relatório",
         "unit": "milhões de euros",
         "expected_value": "942",
         "note": "Fluxos de caixa com IVA quando aplicável. Valores de 2026 a preços correntes; os seguintes a preços constantes de 2027. As estimativas de diferentes relatórios não são uma série de execução nem estão todas à mesma base de preços. O total líquido impresso é preservado, sem recalcular as parcelas arredondadas.",
@@ -1961,7 +1961,7 @@
       "period": "2028",
       "estado": "selada e conferida contra o corpo ou as componentes",
       "document": {
-        "title": "PPP: liquidos rodoviários",
+        "title": "Orçamento do Estado 2027 · Relatório",
         "file": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
         "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
         "locator": "Quadro 4.25. Previsão dos encargos plurianuais com as parcerias público-privadas; Rodoviário; coluna 3: 2028 projecao; p. 123 PDF (107 impressa)",
@@ -2013,7 +2013,7 @@
         "program": "ppp",
         "metric": "liquidos",
         "report_year": 2027,
-        "title": "PPP: liquidos rodoviários",
+        "title": "Orçamento do Estado 2027 · Relatório",
         "unit": "milhões de euros",
         "expected_value": "705",
         "note": "Fluxos de caixa com IVA quando aplicável. Valores de 2026 a preços correntes; os seguintes a preços constantes de 2027. As estimativas de diferentes relatórios não são uma série de execução nem estão todas à mesma base de preços. O total líquido impresso é preservado, sem recalcular as parcelas arredondadas.",
@@ -2030,7 +2030,7 @@
       "period": "2029",
       "estado": "selada e conferida contra o corpo ou as componentes",
       "document": {
-        "title": "PPP: liquidos rodoviários",
+        "title": "Orçamento do Estado 2027 · Relatório",
         "file": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
         "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
         "locator": "Quadro 4.25. Previsão dos encargos plurianuais com as parcerias público-privadas; Rodoviário; coluna 4: 2029 projecao; p. 123 PDF (107 impressa)",
@@ -2082,7 +2082,7 @@
         "program": "ppp",
         "metric": "liquidos",
         "report_year": 2027,
-        "title": "PPP: liquidos rodoviários",
+        "title": "Orçamento do Estado 2027 · Relatório",
         "unit": "milhões de euros",
         "expected_value": "648",
         "note": "Fluxos de caixa com IVA quando aplicável. Valores de 2026 a preços correntes; os seguintes a preços constantes de 2027. As estimativas de diferentes relatórios não são uma série de execução nem estão todas à mesma base de preços. O total líquido impresso é preservado, sem recalcular as parcelas arredondadas.",
@@ -2099,7 +2099,7 @@
       "period": "2030",
       "estado": "selada e conferida contra o corpo ou as componentes",
       "document": {
-        "title": "PPP: liquidos rodoviários",
+        "title": "Orçamento do Estado 2027 · Relatório",
         "file": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
         "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
         "locator": "Quadro 4.25. Previsão dos encargos plurianuais com as parcerias público-privadas; Rodoviário; coluna 5: 2030 projecao; p. 123 PDF (107 impressa)",
@@ -2151,7 +2151,7 @@
         "program": "ppp",
         "metric": "liquidos",
         "report_year": 2027,
-        "title": "PPP: liquidos rodoviários",
+        "title": "Orçamento do Estado 2027 · Relatório",
         "unit": "milhões de euros",
         "expected_value": "(220)",
         "note": "Fluxos de caixa com IVA quando aplicável. Valores de 2026 a preços correntes; os seguintes a preços constantes de 2027. As estimativas de diferentes relatórios não são uma série de execução nem estão todas à mesma base de preços. O total líquido impresso é preservado, sem recalcular as parcelas arredondadas.",
@@ -2168,7 +2168,7 @@
       "period": "2035",
       "estado": "selada e conferida contra o corpo ou as componentes",
       "document": {
-        "title": "PPP: liquidos rodoviários",
+        "title": "Orçamento do Estado 2027 · Relatório",
         "file": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
         "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
         "locator": "Quadro 4.25. Previsão dos encargos plurianuais com as parcerias público-privadas; Rodoviário; coluna 10: 2035 projecao; p. 123 PDF (107 impressa)",
@@ -2220,7 +2220,7 @@
         "program": "ppp",
         "metric": "liquidos",
         "report_year": 2027,
-        "title": "PPP: liquidos rodoviários",
+        "title": "Orçamento do Estado 2027 · Relatório",
         "unit": "milhões de euros",
         "expected_value": "77",
         "note": "Fluxos de caixa com IVA quando aplicável. Valores de 2026 a preços correntes; os seguintes a preços constantes de 2027. As estimativas de diferentes relatórios não são uma série de execução nem estão todas à mesma base de preços. O total líquido impresso é preservado, sem recalcular as parcelas arredondadas.",
@@ -2237,7 +2237,7 @@
       "period": "2040",
       "estado": "selada e conferida contra o corpo ou as componentes",
       "document": {
-        "title": "PPP: liquidos rodoviários",
+        "title": "Orçamento do Estado 2027 · Relatório",
         "file": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
         "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
         "locator": "Quadro 4.25. Previsão dos encargos plurianuais com as parcerias público-privadas; Rodoviário; coluna 1: 2040 projecao; p. 123 PDF (107 impressa)",
@@ -2289,7 +2289,7 @@
         "program": "ppp",
         "metric": "liquidos",
         "report_year": 2027,
-        "title": "PPP: liquidos rodoviários",
+        "title": "Orçamento do Estado 2027 · Relatório",
         "unit": "milhões de euros",
         "expected_value": "17",
         "note": "Fluxos de caixa com IVA quando aplicável. Valores de 2026 a preços correntes; os seguintes a preços constantes de 2027. As estimativas de diferentes relatórios não são uma série de execução nem estão todas à mesma base de preços. O total líquido impresso é preservado, sem recalcular as parcelas arredondadas.",
@@ -2575,8 +2575,11 @@
         "source_type": "party",
         "group": "debate-publico",
         "afirmacao": true,
-        "attributed_to": "Paula Santos",
-        "attribution_anchor": "Paula Santos",
+        "attributed_to": [
+          "Paula Santos",
+          "PCP"
+        ],
+        "attribution_anchor": "Declaração de Paula Santos, Presidente do Grupo Parlamentar do PCP",
         "date_anchor": "2026-10-12T15:23:08+0000",
         "date_pattern": "(2026\\-10\\-12)",
         "locator": "Corpo da página; afirmação e data identificadas pelos seletores",
@@ -2597,7 +2600,7 @@
         "page": 40,
         "printed_page": 39
       },
-      "excerpt": "a despesa aumentaria 3,0%",
+      "excerpt": "Todavia, excluído o efeito do PRR, a despesa aumentaria 3,0%.",
       "derivation": null,
       "note": "Continuação do §73. O aumento refere-se à despesa efetiva do programa Saúde excluindo PRR, na comparação da proposta de 2027 com a estimativa de 2026. A Tabela 15 distingue essa conta da despesa com consolidação no conjunto das administrações públicas. Relatório publicado em 19 de outubro de 2026.",
       "selector": {
@@ -2606,7 +2609,7 @@
         "file": "content/24 Orcamento 2027 Analise/source/debate/utao-oe2027-preliminar.pdf",
         "title": "Relatório UTAO n.º 17/2026: Apreciação preliminar da Proposta de Orçamento do Estado para 2027",
         "period": "2027",
-        "quote": "a despesa aumentaria 3,0%",
+        "quote": "Todavia, excluído o efeito do PRR, a despesa aumentaria 3,0%.",
         "value": "3,0",
         "unit": "%",
         "note": "Continuação do §73. O aumento refere-se à despesa efetiva do programa Saúde excluindo PRR, na comparação da proposta de 2027 com a estimativa de 2026. A Tabela 15 distingue essa conta da despesa com consolidação no conjunto das administrações públicas. Relatório publicado em 19 de outubro de 2026.",
@@ -2625,7 +2628,7 @@
     },
     {
       "id": "utao-risco-execucao-sns-2027",
-      "value": "Existe um risco de pressão orçamental",
+      "value": "Existe um risco de pressão orçamental associado à execução do Serviço Nacional de Saúde (SNS).",
       "expected": null,
       "period": "2027",
       "estado": "selada e conferida contra o corpo ou as componentes",
@@ -2637,7 +2640,7 @@
         "page": 53,
         "printed_page": 52
       },
-      "excerpt": "Existe um risco de pressão orçamental",
+      "excerpt": "Existe um risco de pressão orçamental associado à execução do Serviço Nacional de Saúde (SNS).",
       "derivation": null,
       "note": "§103, relativo à execução do SNS. A UTAO relaciona os défices persistentes, reforços orçamentais e injeções de capital para pagamentos em atraso com eventual necessidade de financiamento adicional em 2027, nomeadamente pessoal e consumos intermédios. Não quantifica esse financiamento adicional. Relatório publicado em 19 de outubro de 2026.",
       "selector": {
@@ -2646,8 +2649,8 @@
         "file": "content/24 Orcamento 2027 Analise/source/debate/utao-oe2027-preliminar.pdf",
         "title": "Relatório UTAO n.º 17/2026: Apreciação preliminar da Proposta de Orçamento do Estado para 2027",
         "period": "2027",
-        "quote": "Existe um risco de pressão orçamental",
-        "value": "Existe um risco de pressão orçamental",
+        "quote": "Existe um risco de pressão orçamental associado à execução do Serviço Nacional de Saúde (SNS).",
+        "value": "Existe um risco de pressão orçamental associado à execução do Serviço Nacional de Saúde (SNS).",
         "unit": "afirmação",
         "note": "§103, relativo à execução do SNS. A UTAO relaciona os défices persistentes, reforços orçamentais e injeções de capital para pagamentos em atraso com eventual necessidade de financiamento adicional em 2027, nomeadamente pessoal e consumos intermédios. Não quantifica esse financiamento adicional. Relatório publicado em 19 de outubro de 2026.",
         "source_type": "government",
@@ -2711,8 +2714,11 @@
         "source_type": "party",
         "group": "debate-publico",
         "afirmacao": true,
-        "attributed_to": "Paula Santos",
-        "attribution_anchor": "Paula Santos",
+        "attributed_to": [
+          "Paula Santos",
+          "PCP"
+        ],
+        "attribution_anchor": "Declaração de Paula Santos, Presidente do Grupo Parlamentar do PCP",
         "date_anchor": "2026-10-12T15:23:08+0000",
         "date_pattern": "(2026\\-10\\-12)",
         "locator": "Corpo da página; afirmação e data identificadas pelos seletores",
@@ -2757,7 +2763,7 @@
     },
     {
       "id": "utao-ppp-contingencias-natureza-2026",
-      "value": "não encargos já reconhecidos",
+      "value": "São pretensões dos parceiros privados, e não encargos já reconhecidos; a sua concretização, total ou parcial, oneraria o saldo orçamental de anos futuros.",
       "expected": null,
       "period": "2026",
       "estado": "selada e conferida contra o corpo ou as componentes",
@@ -2769,7 +2775,7 @@
         "page": 51,
         "printed_page": 50
       },
-      "excerpt": "não encargos já reconhecidos",
+      "excerpt": "São pretensões dos parceiros privados, e não encargos já reconhecidos; a sua concretização, total ou parcial, oneraria o saldo orçamental de anos futuros.",
       "derivation": null,
       "note": "§94. A UTAO distingue as pretensões de reposição do equilíbrio financeiro, compensação e indemnização dos parceiros privados de encargos reconhecidos. A eventual materialização, total ou parcial, afetaria orçamentos futuros. Não somar as contingências da Tabela 21 aos encargos anuais do quadro 4.25 como se fossem da mesma natureza. Relatório publicado em 19 de outubro de 2026.",
       "selector": {
@@ -2778,8 +2784,8 @@
         "file": "content/24 Orcamento 2027 Analise/source/debate/utao-oe2027-preliminar.pdf",
         "title": "Relatório UTAO n.º 17/2026: Apreciação preliminar da Proposta de Orçamento do Estado para 2027",
         "period": "2026",
-        "quote": "não encargos já reconhecidos",
-        "value": "não encargos já reconhecidos",
+        "quote": "São pretensões dos parceiros privados, e não encargos já reconhecidos; a sua concretização, total ou parcial, oneraria o saldo orçamental de anos futuros.",
+        "value": "São pretensões dos parceiros privados, e não encargos já reconhecidos; a sua concretização, total ou parcial, oneraria o saldo orçamental de anos futuros.",
         "unit": "afirmação",
         "note": "§94. A UTAO distingue as pretensões de reposição do equilíbrio financeiro, compensação e indemnização dos parceiros privados de encargos reconhecidos. A eventual materialização, total ou parcial, afetaria orçamentos futuros. Não somar as contingências da Tabela 21 aos encargos anuais do quadro 4.25 como se fossem da mesma natureza. Relatório publicado em 19 de outubro de 2026.",
         "source_type": "government",
@@ -5198,7 +5204,7 @@
       "estado": "selada e conferida contra o corpo ou as componentes",
       "excerpt": "de 2027 prevê-se igualmente um aumento dos encargos líquidos face ao valor apresentado no Relatório do Orçamento do Estado para 2026. Enquanto este último apontava para encargos líquidos de 774 milhões de euros, o presente Relatório estima um montante de 889 milhões de euros. Ao nível dos encargos brutos, o incremento observável entre a projeção plurianual do Relatório do Orçamento do Estado para 2027 e a projeção constante do anterior",
       "document": {
-        "title": "Orçamento do Estado para 2027",
+        "title": "Orçamento do Estado 2027 · Relatório",
         "file": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
         "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
         "locator": "p. 125 PDF (109 impressa)",
@@ -5211,7 +5217,7 @@
         "file": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
         "page": 125,
         "printed_page": 109,
-        "title": "Orçamento do Estado para 2027",
+        "title": "Orçamento do Estado 2027 · Relatório",
         "quote": "de 2027 prevê-se igualmente um aumento dos encargos líquidos face ao valor apresentado no Relatório do Orçamento do Estado para 2026. Enquanto este último apontava para encargos líquidos de 774 milhões de euros, o presente Relatório estima um montante de 889 milhões de euros. Ao nível dos encargos brutos, o incremento observável entre a projeção plurianual do Relatório do Orçamento do Estado para 2027 e a projeção constante do anterior",
         "value": "774",
         "unit": "milhões de euros",
@@ -5229,7 +5235,7 @@
       "id": "ppp-oe2027-riscos-pedidos-rodoviarios",
       "value": "2388,2",
       "expected": "2388,2",
-      "period": "2027",
+      "period": "2026-T1",
       "estado": "selada e conferida contra o corpo ou as componentes",
       "excerpt": "De acordo com a informação disponível, o valor global dos pedidos de REF e dos pedidos formulados nos litígios em curso pelas concessionárias e subconcessionárias rodoviárias ascende a cerca de 2388,2 milhões de euros. Em comparação com o valor global dos riscos e contingências apresentado no Relatório do Orçamento do Estado para 2026, verifica-se um acréscimo de cerca de 1140 milhões de euros.",
       "document": {
@@ -5250,21 +5256,23 @@
         "quote": "De acordo com a informação disponível, o valor global dos pedidos de REF e dos pedidos formulados nos litígios em curso pelas concessionárias e subconcessionárias rodoviárias ascende a cerca de 2388,2 milhões de euros. Em comparação com o valor global dos riscos e contingências apresentado no Relatório do Orçamento do Estado para 2026, verifica-se um acréscimo de cerca de 1140 milhões de euros.",
         "value": "2388,2",
         "unit": "milhões de euros",
-        "period": "2027",
+        "period": "2026-T1",
         "locator": "p. 369 PDF (353 impressa)",
-        "note": "Pedidos e litígios pendentes, não encargos anuais reconhecidos. Informação do capítulo dos riscos do relatório de 2027.",
+        "note": "Pedidos e litígios pendentes, não encargos anuais reconhecidos. Informação do capítulo dos riscos do relatório de 2027. O capítulo 6, p. 369 do PDF, diz: «a informação disponível reporta maioritariamente ao primeiro trimestre de 2026».",
         "group": "v2d",
         "entity_aliases": {
           "Ministério das Finanças": []
         },
-        "entity_anchor": "Ministério das Finanças"
+        "entity_anchor": "Ministério das Finanças",
+        "reference_date": "2026-03-31",
+        "report_year": 2027
       }
     },
     {
       "id": "ppp-oe2027-riscos-acrescimo",
       "value": "1140",
       "expected": "1140",
-      "period": "2027",
+      "period": "2026-T1",
       "estado": "selada e conferida contra o corpo ou as componentes",
       "excerpt": "e contingências apresentado no Relatório do Orçamento do Estado para 2026, verifica-se um acréscimo de cerca de 1140 milhões de euros. O aumento do valor global dos pedidos resulta essencialmente dos seguintes eventos: • Desenvolvimento do procedimento negocial conduzido pela comissão de negociação constituída através do Despacho nº 15154/2024, de 16 de dezembro de 2024, da",
       "document": {
@@ -5285,21 +5293,23 @@
         "quote": "e contingências apresentado no Relatório do Orçamento do Estado para 2026, verifica-se um acréscimo de cerca de 1140 milhões de euros. O aumento do valor global dos pedidos resulta essencialmente dos seguintes eventos: • Desenvolvimento do procedimento negocial conduzido pela comissão de negociação constituída através do Despacho nº 15154/2024, de 16 de dezembro de 2024, da",
         "value": "1140",
         "unit": "milhões de euros",
-        "period": "2027",
+        "period": "2026-T1",
         "locator": "p. 369 PDF (353 impressa)",
-        "note": "Pedidos e litígios pendentes, não encargos anuais reconhecidos. Informação do capítulo dos riscos do relatório de 2027.",
+        "note": "Pedidos e litígios pendentes, não encargos anuais reconhecidos. Informação do capítulo dos riscos do relatório de 2027. O capítulo 6, p. 369 do PDF, diz: «a informação disponível reporta maioritariamente ao primeiro trimestre de 2026».",
         "group": "v2d",
         "entity_aliases": {
           "Ministério das Finanças": []
         },
-        "entity_anchor": "Ministério das Finanças"
+        "entity_anchor": "Ministério das Finanças",
+        "reference_date": "2026-03-31",
+        "report_year": 2027
       }
     },
     {
       "id": "ppp-oe2027-riscos-brisa",
       "value": "1122,5",
       "expected": "1122,5",
-      "period": "2027",
+      "period": "2026-T1",
       "estado": "selada e conferida contra o corpo ou as componentes",
       "excerpt": "pedidos ou matérias em negociação (conforme descritas no referido despacho), no montante de cerca de 1122,5 milhões de euros; • Atualização, com base na informação mais recentemente reportada pelo representante do parceiro público, do valor da ação arbitral intentada, em 2024, pela Concessionária Autoestradas do Douro Litoral, no âmbito do Contrato de Concessão Douro Litoral, com fundamento nos efeitos da pandemia de COVID-19 e das medidas restritivas da liberdade de circulação de pessoas e de iniciativa económica privada.",
       "document": {
@@ -5320,21 +5330,23 @@
         "quote": "pedidos ou matérias em negociação (conforme descritas no referido despacho), no montante de cerca de 1122,5 milhões de euros; • Atualização, com base na informação mais recentemente reportada pelo representante do parceiro público, do valor da ação arbitral intentada, em 2024, pela Concessionária Autoestradas do Douro Litoral, no âmbito do Contrato de Concessão Douro Litoral, com fundamento nos efeitos da pandemia de COVID-19 e das medidas restritivas da liberdade de circulação de pessoas e de iniciativa económica privada.",
         "value": "1122,5",
         "unit": "milhões de euros",
-        "period": "2027",
+        "period": "2026-T1",
         "locator": "p. 369 PDF (353 impressa)",
-        "note": "Pedidos e litígios pendentes, não encargos anuais reconhecidos. Informação do capítulo dos riscos do relatório de 2027.",
+        "note": "Pedidos e litígios pendentes, não encargos anuais reconhecidos. Informação do capítulo dos riscos do relatório de 2027. O capítulo 6, p. 369 do PDF, diz: «a informação disponível reporta maioritariamente ao primeiro trimestre de 2026».",
         "group": "v2d",
         "entity_aliases": {
           "Ministério das Finanças": []
         },
-        "entity_anchor": "Ministério das Finanças"
+        "entity_anchor": "Ministério das Finanças",
+        "reference_date": "2026-03-31",
+        "report_year": 2027
       }
     },
     {
       "id": "ppp-oe2027-riscos-rotas-algarve-principal",
       "value": "445",
       "expected": "445",
-      "period": "2027",
+      "period": "2026-T1",
       "estado": "selada e conferida contra o corpo ou as componentes",
       "excerpt": "60 O litígio em causa envolve (i) uma ação principal arbitral (ainda pendente), cujo valor ascende a 445 milhões de euros; e (ii) uma ação cautelar, no âmbito da qual o tribunal arbitral, pela decisão proferida no primeiro trimestre de 2021, condenou a Infraestruturas de Portugal a pagar à subconcessionária, a título provisório, um montante de cerca de 30 milhões de euros, acrescido de um valor mensal de cerca de 1,3 milhões de euros até à decisão da causa principal (valores acrescidos de imposto sobre o valor acrescentado nos termos legais).",
       "document": {
@@ -5355,21 +5367,23 @@
         "quote": "60 O litígio em causa envolve (i) uma ação principal arbitral (ainda pendente), cujo valor ascende a 445 milhões de euros; e (ii) uma ação cautelar, no âmbito da qual o tribunal arbitral, pela decisão proferida no primeiro trimestre de 2021, condenou a Infraestruturas de Portugal a pagar à subconcessionária, a título provisório, um montante de cerca de 30 milhões de euros, acrescido de um valor mensal de cerca de 1,3 milhões de euros até à decisão da causa principal (valores acrescidos de imposto sobre o valor acrescentado nos termos legais).",
         "value": "445",
         "unit": "milhões de euros",
-        "period": "2027",
+        "period": "2026-T1",
         "locator": "p. 370 PDF (354 impressa)",
-        "note": "Pedidos e litígios pendentes, não encargos anuais reconhecidos. Informação do capítulo dos riscos do relatório de 2027.",
+        "note": "Pedidos e litígios pendentes, não encargos anuais reconhecidos. Informação do capítulo dos riscos do relatório de 2027. O capítulo 6, p. 369 do PDF, diz: «a informação disponível reporta maioritariamente ao primeiro trimestre de 2026».",
         "group": "v2d",
         "entity_aliases": {
           "Ministério das Finanças": []
         },
-        "entity_anchor": "Ministério das Finanças"
+        "entity_anchor": "Ministério das Finanças",
+        "reference_date": "2026-03-31",
+        "report_year": 2027
       }
     },
     {
       "id": "ppp-oe2027-riscos-rotas-algarve-mensal",
       "value": "1,3",
       "expected": "1,3",
-      "period": "2027",
+      "period": "2026-T1",
       "estado": "selada e conferida contra o corpo ou as componentes",
       "excerpt": "Infraestruturas de Portugal a pagar à subconcessionária, a título provisório, um montante de cerca de 30 milhões de euros, acrescido de um valor mensal de cerca de 1,3 milhões de euros até à decisão da causa principal (valores acrescidos de imposto sobre o valor acrescentado nos termos legais). 354 ORÇAMENTAÇÃO POR PROGRAMAS E POLÍTICAS SETORIAIS",
       "document": {
@@ -5390,14 +5404,16 @@
         "quote": "Infraestruturas de Portugal a pagar à subconcessionária, a título provisório, um montante de cerca de 30 milhões de euros, acrescido de um valor mensal de cerca de 1,3 milhões de euros até à decisão da causa principal (valores acrescidos de imposto sobre o valor acrescentado nos termos legais). 354 ORÇAMENTAÇÃO POR PROGRAMAS E POLÍTICAS SETORIAIS",
         "value": "1,3",
         "unit": "milhões de euros",
-        "period": "2027",
+        "period": "2026-T1",
         "locator": "p. 370 PDF (354 impressa)",
-        "note": "Pedidos e litígios pendentes, não encargos anuais reconhecidos. Informação do capítulo dos riscos do relatório de 2027.",
+        "note": "Pedidos e litígios pendentes, não encargos anuais reconhecidos. Informação do capítulo dos riscos do relatório de 2027. O capítulo 6, p. 369 do PDF, diz: «a informação disponível reporta maioritariamente ao primeiro trimestre de 2026». Pagamento pela Infraestruturas de Portugal desde 2021, por decisão cautelar, a título provisório, de cerca de 1,3 milhões de euros mensais, acrescidos de IVA.",
         "group": "v2d",
         "entity_aliases": {
           "Ministério das Finanças": []
         },
-        "entity_anchor": "Ministério das Finanças"
+        "entity_anchor": "Ministério das Finanças",
+        "reference_date": "2026-03-31",
+        "report_year": 2027
       }
     },
     {
@@ -8035,6 +8051,731 @@
         "operation": "subtract",
         "formula": "(oe-2027-saude-despesa-total-consolidada-2026) − (oe-2027-saude-despesa-total-consolidada-2027)",
         "calculation": "18 125,9 − 17 858,4 = 267,5",
+        "rounding_places": 1
+      }
+    },
+    {
+      "id": "ppp-oe2026-brutos-2025",
+      "value": "1 234",
+      "expected": null,
+      "period": "2025",
+      "estado": "selada e conferida contra o corpo ou as componentes",
+      "document": {
+        "title": "Orçamento do Estado 2026 · Relatório",
+        "file": "content/24 Orcamento 2027 Analise/source/oe-2026.pdf",
+        "source_sha256": "a863f683d0145e3129e56278cbf450e95a405cb912a98e0383e0f83d6fcbc031",
+        "locator": "Quadro 4.25. Previsão dos encargos plurianuais com as parcerias público-privadas; enca rgos brutos; coluna 1: 2025 estimativa; p. 119 PDF (103 impressa)",
+        "page": 119,
+        "printed_page": 103
+      },
+      "excerpt": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\n   enca rgos brutos         1 234     1 212    1 047     951      830      699      631      454      333      321      262      183      157       178\nSeleção: 2025 estimativa",
+      "derivation": null,
+      "note": "Fluxos de caixa com IVA quando aplicável. Valores de 2025 a preços correntes; os seguintes a preços constantes de 2026. As estimativas de diferentes relatórios não são uma série de execução nem estão todas à mesma base de preços. O total líquido impresso é preservado, sem recalcular as parcelas arredondadas.",
+      "selector": {
+        "kind": "pdf_cell",
+        "id": "ppp-oe2026-brutos-2025",
+        "file": "content/24 Orcamento 2027 Analise/source/oe-2026.pdf",
+        "page": 119,
+        "printed_page": 103,
+        "table": "Quadro 4.25. Previsão dos encargos plurianuais com as parcerias público-privadas",
+        "label": "enca rgos brutos",
+        "column": 0,
+        "occurrence": 0,
+        "header": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038",
+        "period": "2025",
+        "stage": "estimativa",
+        "program": "ppp",
+        "metric": "brutos",
+        "report_year": 2026,
+        "title": "Orçamento do Estado 2026 · Relatório",
+        "unit": "milhões de euros",
+        "expected_value": "1 234",
+        "note": "Fluxos de caixa com IVA quando aplicável. Valores de 2025 a preços correntes; os seguintes a preços constantes de 2026. As estimativas de diferentes relatórios não são uma série de execução nem estão todas à mesma base de preços. O total líquido impresso é preservado, sem recalcular as parcelas arredondadas.",
+        "entity_anchor": "Ministério das Finanças",
+        "entity_aliases": {
+          "Ministério das Finanças": []
+        }
+      }
+    },
+    {
+      "id": "ppp-oe2026-receitas-2025",
+      "value": "392",
+      "expected": null,
+      "period": "2025",
+      "estado": "selada e conferida contra o corpo ou as componentes",
+      "document": {
+        "title": "Orçamento do Estado 2026 · Relatório",
+        "file": "content/24 Orcamento 2027 Analise/source/oe-2026.pdf",
+        "source_sha256": "a863f683d0145e3129e56278cbf450e95a405cb912a98e0383e0f83d6fcbc031",
+        "locator": "Quadro 4.25. Previsão dos encargos plurianuais com as parcerias público-privadas; recei ta s; coluna 1: 2025 estimativa; p. 119 PDF (103 impressa)",
+        "page": 119,
+        "printed_page": 103
+      },
+      "excerpt": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\n    recei ta s                392       263      274     271      889      288      263      228      192      193      195      183      148       160\nSeleção: 2025 estimativa",
+      "derivation": null,
+      "note": "Fluxos de caixa com IVA quando aplicável. Valores de 2025 a preços correntes; os seguintes a preços constantes de 2026. As estimativas de diferentes relatórios não são uma série de execução nem estão todas à mesma base de preços. O total líquido impresso é preservado, sem recalcular as parcelas arredondadas.",
+      "selector": {
+        "kind": "pdf_cell",
+        "id": "ppp-oe2026-receitas-2025",
+        "file": "content/24 Orcamento 2027 Analise/source/oe-2026.pdf",
+        "page": 119,
+        "printed_page": 103,
+        "table": "Quadro 4.25. Previsão dos encargos plurianuais com as parcerias público-privadas",
+        "label": "recei ta s",
+        "column": 0,
+        "occurrence": 0,
+        "header": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038",
+        "period": "2025",
+        "stage": "estimativa",
+        "program": "ppp",
+        "metric": "receitas",
+        "report_year": 2026,
+        "title": "Orçamento do Estado 2026 · Relatório",
+        "unit": "milhões de euros",
+        "expected_value": "392",
+        "note": "Fluxos de caixa com IVA quando aplicável. Valores de 2025 a preços correntes; os seguintes a preços constantes de 2026. As estimativas de diferentes relatórios não são uma série de execução nem estão todas à mesma base de preços. O total líquido impresso é preservado, sem recalcular as parcelas arredondadas.",
+        "entity_anchor": "Ministério das Finanças",
+        "entity_aliases": {
+          "Ministério das Finanças": []
+        }
+      }
+    },
+    {
+      "id": "ppp-oe2027-brutos-2027",
+      "value": "1 152",
+      "expected": null,
+      "period": "2027",
+      "estado": "selada e conferida contra o corpo ou as componentes",
+      "document": {
+        "title": "Orçamento do Estado 2027 · Relatório",
+        "file": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
+        "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+        "locator": "Quadro 4.25. Previsão dos encargos plurianuais com as parcerias público-privadas; encargos brutos; coluna 2: 2027 orcamento; p. 123 PDF (107 impressa)",
+        "page": 123,
+        "printed_page": 107
+      },
+      "excerpt": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\n encargos brutos       1 230   1 152    965     863     728     656      474     349        336     275     189     162     183       50\nSeleção: 2027 orcamento",
+      "derivation": null,
+      "note": "Fluxos de caixa com IVA quando aplicável. Valores de 2026 a preços correntes; os seguintes a preços constantes de 2027. As estimativas de diferentes relatórios não são uma série de execução nem estão todas à mesma base de preços. O total líquido impresso é preservado, sem recalcular as parcelas arredondadas.",
+      "linha_pdf": [
+        " encargos brutos       1 230   1 152    965     863     728     656      474     349        336     275     189     162     183       50",
+        " encargos brutos           -       -      -       -       -       -        -       -          -       -       -       -       -        -",
+        " encargos brutos           -       -      -       -       -       -        -       -          -       -       -       -       -        -",
+        " encargos brutos         17        -      -       -       -       -        -       -          -       -       -       -       -        -",
+        " encargos brutos           -       -      -       -       -       -        -       -          -       -       -       -       -        -",
+        " encargos brutos           -       -      -       -       -       -        -       -          -       -       -       -       -        -",
+        " encargos brutos           -       -      -       -       -       -        -       -          -"
+      ],
+      "column": 1,
+      "column_label": null,
+      "cabecalho_pdf": [
+        "                   Quadro 4.25. Previsão dos encargos plurianuais com as parcerias público-privadas",
+        "                                                           (milhões de euros)",
+        "",
+        "         Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039",
+        " Rodoviário             942     889     705     648    (220)    391      244     154        140      77       4      13      22       49",
+        " encargos brutos       1 230   1 152    965     863     728     656      474     349        336     275     189     162     183       50",
+        "     receitas           287     263     260     215     948     265      230     195        196     198     185     149     162        2",
+        " Ferroviário            190     312     228      41     133     209      206     194        190     187     184     181     178      175",
+        " Saúde                  231     254     266     265     268     106       69      65         63      64      64      65      61       53",
+        " Aeroportuário          (14)    (13)    (26)    (26)    (26)    (26)     (26)    (40)       (40)    (40)    (40)    (40)    (54)     (54)",
+        " encargos brutos           -       -      -       -       -       -        -       -          -       -       -       -       -        -",
+        "     receitas            14      13      26      26      26      26       26      40         40      40      40      40      54       54",
+        " Oceanário               (3)     (3)     (3)     (3)     (3)     (3)      (3)     (3)        (3)     (3)     (3)     (3)     (3)      (3)",
+        " encargos brutos           -       -      -       -       -       -        -       -          -       -       -       -       -        -",
+        "     receitas             3       3       3       3       3       3        3       3          3       3       3       3       3        3",
+        " Total                 1 346   1 438   1 169    925     152     677      489     370        351     285     209     215     204      220"
+      ],
+      "selector": {
+        "kind": "pdf_cell",
+        "id": "ppp-oe2027-brutos-2027",
+        "file": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
+        "page": 123,
+        "printed_page": 107,
+        "table": "Quadro 4.25. Previsão dos encargos plurianuais com as parcerias público-privadas",
+        "label": "encargos brutos",
+        "column": 1,
+        "occurrence": 0,
+        "header": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039",
+        "period": "2027",
+        "stage": "orcamento",
+        "program": "ppp",
+        "metric": "brutos",
+        "report_year": 2027,
+        "title": "Orçamento do Estado 2027 · Relatório",
+        "unit": "milhões de euros",
+        "expected_value": "1 152",
+        "note": "Fluxos de caixa com IVA quando aplicável. Valores de 2026 a preços correntes; os seguintes a preços constantes de 2027. As estimativas de diferentes relatórios não são uma série de execução nem estão todas à mesma base de preços. O total líquido impresso é preservado, sem recalcular as parcelas arredondadas.",
+        "entity_anchor": "Ministério das Finanças",
+        "entity_aliases": {
+          "Ministério das Finanças": []
+        }
+      }
+    },
+    {
+      "id": "ppp-oe2027-receitas-2027",
+      "value": "263",
+      "expected": null,
+      "period": "2027",
+      "estado": "selada e conferida contra o corpo ou as componentes",
+      "document": {
+        "title": "Orçamento do Estado 2027 · Relatório",
+        "file": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
+        "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+        "locator": "Quadro 4.25. Previsão dos encargos plurianuais com as parcerias público-privadas; receitas; coluna 2: 2027 orcamento; p. 123 PDF (107 impressa)",
+        "page": 123,
+        "printed_page": 107
+      },
+      "excerpt": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\n     receitas           287     263     260     215     948     265      230     195        196     198     185     149     162        2\nSeleção: 2027 orcamento",
+      "derivation": null,
+      "note": "Fluxos de caixa com IVA quando aplicável. Valores de 2026 a preços correntes; os seguintes a preços constantes de 2027. As estimativas de diferentes relatórios não são uma série de execução nem estão todas à mesma base de preços. O total líquido impresso é preservado, sem recalcular as parcelas arredondadas.",
+      "linha_pdf": [
+        "     receitas           287     263     260     215     948     265      230     195        196     198     185     149     162        2",
+        "     receitas            14      13      26      26      26      26       26      40         40      40      40      40      54       54",
+        "     receitas             3       3       3       3       3       3        3       3          3       3       3       3       3        3",
+        "     receitas              -       -      -       -       -       -        -       -          -       -       -       -       -        -",
+        "     receitas            53      53      53      66      67      69       68      68         70      71      71      70      72      146",
+        "     receitas             3       3       3       3       3       1        -       -          -       -       -       -       -        -",
+        "     receitas           145     144     147     149     148     147      150     153        152"
+      ],
+      "column": 1,
+      "column_label": null,
+      "cabecalho_pdf": [
+        "                   Quadro 4.25. Previsão dos encargos plurianuais com as parcerias público-privadas",
+        "                                                           (milhões de euros)",
+        "",
+        "         Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039",
+        " Rodoviário             942     889     705     648    (220)    391      244     154        140      77       4      13      22       49",
+        " encargos brutos       1 230   1 152    965     863     728     656      474     349        336     275     189     162     183       50",
+        "     receitas           287     263     260     215     948     265      230     195        196     198     185     149     162        2",
+        " Ferroviário            190     312     228      41     133     209      206     194        190     187     184     181     178      175",
+        " Saúde                  231     254     266     265     268     106       69      65         63      64      64      65      61       53",
+        " Aeroportuário          (14)    (13)    (26)    (26)    (26)    (26)     (26)    (40)       (40)    (40)    (40)    (40)    (54)     (54)",
+        " encargos brutos           -       -      -       -       -       -        -       -          -       -       -       -       -        -",
+        "     receitas            14      13      26      26      26      26       26      40         40      40      40      40      54       54",
+        " Oceanário               (3)     (3)     (3)     (3)     (3)     (3)      (3)     (3)        (3)     (3)     (3)     (3)     (3)      (3)",
+        " encargos brutos           -       -      -       -       -       -        -       -          -       -       -       -       -        -",
+        "     receitas             3       3       3       3       3       3        3       3          3       3       3       3       3        3",
+        " Total                 1 346   1 438   1 169    925     152     677      489     370        351     285     209     215     204      220"
+      ],
+      "selector": {
+        "kind": "pdf_cell",
+        "id": "ppp-oe2027-receitas-2027",
+        "file": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
+        "page": 123,
+        "printed_page": 107,
+        "table": "Quadro 4.25. Previsão dos encargos plurianuais com as parcerias público-privadas",
+        "label": "receitas",
+        "column": 1,
+        "occurrence": 0,
+        "header": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039",
+        "period": "2027",
+        "stage": "orcamento",
+        "program": "ppp",
+        "metric": "receitas",
+        "report_year": 2027,
+        "title": "Orçamento do Estado 2027 · Relatório",
+        "unit": "milhões de euros",
+        "expected_value": "263",
+        "note": "Fluxos de caixa com IVA quando aplicável. Valores de 2026 a preços correntes; os seguintes a preços constantes de 2027. As estimativas de diferentes relatórios não são uma série de execução nem estão todas à mesma base de preços. O total líquido impresso é preservado, sem recalcular as parcelas arredondadas.",
+        "entity_anchor": "Ministério das Finanças",
+        "entity_aliases": {
+          "Ministério das Finanças": []
+        }
+      }
+    },
+    {
+      "id": "oe-2027-financas-sem-prr-2027",
+      "value": "8 509,7",
+      "expected": null,
+      "period": "2027",
+      "estado": "selada e conferida contra o corpo ou as componentes",
+      "document": {
+        "title": "Orçamento do Estado para 2027",
+        "file": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
+        "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+        "locator": "Quadro 5.11; Despesa efetiva consolidada; coluna 4: 2027 Orçamento (Sem PRR); p. 196 PDF (180 impressa)",
+        "page": 196,
+        "printed_page": 180
+      },
+      "excerpt": "Quadro 5.11. Finanças (PL04) — Conta do Programa Legado\n(milhões de euros)\n2026                                2027\nVariação                      Estrutura 2027\nVariação                       Estrutura 2027\nClassificador Económico                                                                                                        (Sem PRR)                        (Sem PRR)\nEstimativa                          Orçamento       (%)                                (%)\nEstimativa                           Orçamento                                            (%)                               (%)\n(Sem PRR)                           (Sem PRR)\n Despesa efetiva consolidada                             10 707,0             9 234,3         8 951,0            8 509,7         -16,4             -7,8\nSeleção: 2027 Orçamento (Sem PRR)",
+      "derivation": null,
+      "note": "Conta do programa legado, em contabilidade pública. Sem PRR pode incluir outros fundos europeus; não é sinónimo de financiamento exclusivamente nacional. Estimativa de 2026 comparada com proposta para 2027, não execução final.",
+      "linha_pdf": [
+        " Despesa efetiva consolidada                             10 707,0             9 234,3         8 951,0            8 509,7         -16,4             -7,8"
+      ],
+      "column": 3,
+      "column_label": "2027 Orçamento (Sem PRR)",
+      "coluna_ano_conferidos": true,
+      "cabecalho_pdf": [
+        "                                          Quadro 5.11. Finanças (PL04) — Conta do Programa Legado",
+        "                                                                                      (milhões de euros)",
+        "                                                                  2026                                2027",
+        "                                                                                                                                             Variação                      Estrutura 2027",
+        "                                                                                                                           Variação                       Estrutura 2027",
+        "             Classificador Económico                                                                                                        (Sem PRR)                        (Sem PRR)",
+        "                                                                         Estimativa                          Orçamento       (%)                                (%)",
+        "                                                     Estimativa                           Orçamento                                            (%)                               (%)",
+        "                                                                         (Sem PRR)                           (Sem PRR)",
+        "",
+        " DESPESA",
+        " Despesa corrente                                         7 884,4             7 715,6         7 504,7            7 203,7          -4,8             -6,6             14,8             14,3",
+        "     Despesas com o pessoal                                 718,0              718,0            765,2              765,2              6,6           6,6              1,5              1,5",
+        "     Aquisição de bens e serviços                         1 220,8             1 158,0         1 385,5            1 384,5          13,5             19,6              2,7              2,8",
+        "     Juros e outros encargos                                 14,2                14,2             1,5                1,5         -89,4            -89,4              0,0              0,0",
+        "     Transferências correntes                             5 224,1             5 118,0         4 812,5            4 512,5          -7,9            -11,8              9,5              9,0"
+      ],
+      "selector": {
+        "kind": "pdf_cell",
+        "id": "oe-2027-financas-sem-prr-2027",
+        "file": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
+        "page": 196,
+        "printed_page": 180,
+        "table": "Quadro 5.11",
+        "label": "Despesa efetiva consolidada",
+        "column": 3,
+        "header": [
+          "Quadro 5.11. Finanças (PL04) — Conta do Programa Legado",
+          "(milhões de euros)",
+          "2026                                2027",
+          "Variação                      Estrutura 2027",
+          "Variação                       Estrutura 2027",
+          "Classificador Económico                                                                                                        (Sem PRR)                        (Sem PRR)",
+          "Estimativa                          Orçamento       (%)                                (%)",
+          "Estimativa                           Orçamento                                            (%)                               (%)",
+          "(Sem PRR)                           (Sem PRR)"
+        ],
+        "column_label": "2027 Orçamento (Sem PRR)",
+        "period": "2027",
+        "stage": "orcamento",
+        "program": "financas",
+        "metric": "sem-prr",
+        "report_year": 2027,
+        "title": "Orçamento do Estado para 2027",
+        "unit": "milhões de euros",
+        "expected_value": "8 509,7",
+        "note": "Conta do programa legado, em contabilidade pública. Sem PRR pode incluir outros fundos europeus; não é sinónimo de financiamento exclusivamente nacional. Estimativa de 2026 comparada com proposta para 2027, não execução final.",
+        "program_name": "Finanças",
+        "entity_anchor": "Ministério das Finanças",
+        "entity_aliases": {
+          "Ministério das Finanças": []
+        }
+      }
+    },
+    {
+      "id": "oe-2027-economia-sem-prr-2027",
+      "value": "908,5",
+      "expected": null,
+      "period": "2027",
+      "estado": "selada e conferida contra o corpo ou as componentes",
+      "document": {
+        "title": "Orçamento do Estado para 2027",
+        "file": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
+        "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+        "locator": "Quadro 5.16; Despesa efetiva consolidada; coluna 4: 2027 Orçamento (Sem PRR); p. 212 PDF (196 impressa)",
+        "page": 212,
+        "printed_page": 196
+      },
+      "excerpt": "Quadro 5.16. Economia (PL06) — Conta do Programa Legado\n(milhões de euros)\n2026                             2027\nVariação       Variação     Estrutura 2027   Estrutura 2027\nClassificador Económico                                                                                  (%)         (Sem PRR)           (%)          (Sem PRR)\nEstimativa    Orçamento          Orçamento\nEstimativa                                                                          (%)                               (%)\n(Sem PRR)                        (Sem PRR)\n Despesa efetiva consolidada                           2 312,1               955,0       1 344,3             908,5         -41,9           -4,9\nSeleção: 2027 Orçamento (Sem PRR)",
+      "derivation": null,
+      "note": "Conta do programa legado, em contabilidade pública. Sem PRR pode incluir outros fundos europeus; não é sinónimo de financiamento exclusivamente nacional. Estimativa de 2026 comparada com proposta para 2027, não execução final.",
+      "linha_pdf": [
+        " Despesa efetiva consolidada                           2 312,1               955,0       1 344,3             908,5         -41,9           -4,9"
+      ],
+      "column": 3,
+      "column_label": "2027 Orçamento (Sem PRR)",
+      "coluna_ano_conferidos": true,
+      "cabecalho_pdf": [
+        "                                          Quadro 5.16. Economia (PL06) — Conta do Programa Legado",
+        "                                                                                (milhões de euros)",
+        "",
+        "                                                                2026                             2027",
+        "                                                                                                                      Variação       Variação     Estrutura 2027   Estrutura 2027",
+        "               Classificador Económico                                                                                  (%)         (Sem PRR)           (%)          (Sem PRR)",
+        "                                                                       Estimativa    Orçamento          Orçamento",
+        "                                                   Estimativa                                                                          (%)                               (%)",
+        "                                                                       (Sem PRR)                        (Sem PRR)",
+        "",
+        " DESPESA",
+        " Despesa corrente                                        573,9               568,5        758,1              758,1          32,1          33,3             24,1             29,0",
+        "     Des pes a s com o pes s oa l                        147,1               146,9        172,2              172,2          17,1          17,2               5,5              6,6",
+        "     Aqui s i çã o de bens e s ervi ços                  174,2               169,0        175,2              175,2           0,6            3,7              5,6              6,7",
+        "     Juros e outros enca rgos                             17,5                17,5         18,2               18,2           3,9            3,9              0,6              0,7",
+        "     Tra ns ferênci a s correntes                        223,7               223,7        241,2              241,2           7,8            7,8              7,7              9,2"
+      ],
+      "selector": {
+        "kind": "pdf_cell",
+        "id": "oe-2027-economia-sem-prr-2027",
+        "file": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
+        "page": 212,
+        "printed_page": 196,
+        "table": "Quadro 5.16",
+        "label": "Despesa efetiva consolidada",
+        "column": 3,
+        "header": [
+          "Quadro 5.16. Economia (PL06) — Conta do Programa Legado",
+          "(milhões de euros)",
+          "2026                             2027",
+          "Variação       Variação     Estrutura 2027   Estrutura 2027",
+          "Classificador Económico                                                                                  (%)         (Sem PRR)           (%)          (Sem PRR)",
+          "Estimativa    Orçamento          Orçamento",
+          "Estimativa                                                                          (%)                               (%)",
+          "(Sem PRR)                        (Sem PRR)"
+        ],
+        "column_label": "2027 Orçamento (Sem PRR)",
+        "period": "2027",
+        "stage": "orcamento",
+        "program": "economia",
+        "metric": "sem-prr",
+        "report_year": 2027,
+        "title": "Orçamento do Estado para 2027",
+        "unit": "milhões de euros",
+        "expected_value": "908,5",
+        "note": "Conta do programa legado, em contabilidade pública. Sem PRR pode incluir outros fundos europeus; não é sinónimo de financiamento exclusivamente nacional. Estimativa de 2026 comparada com proposta para 2027, não execução final.",
+        "program_name": "Economia",
+        "entity_anchor": "Ministério das Finanças",
+        "entity_aliases": {
+          "Ministério das Finanças": []
+        }
+      }
+    },
+    {
+      "id": "oe-2027-coesao-territorial-sem-prr-2026",
+      "value": "628,0",
+      "expected": null,
+      "period": "2026",
+      "estado": "selada e conferida contra o corpo ou as componentes",
+      "document": {
+        "title": "Orçamento do Estado para 2027",
+        "file": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
+        "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+        "locator": "Quadro 5.18; Despesa efetiva consolidada; coluna 2: 2026 Estimativa (Sem PRR); p. 214 PDF (198 impressa)",
+        "page": 214,
+        "printed_page": 198
+      },
+      "excerpt": "Quadro 5.18. Coesão Territorial (PL07) — Conta do Programa Legado\n(milhões de euros)\n2026                             2027\nVariação       Variação     Estrutura 2027   Estrutura 2027\nClassificador Económico                                                                                 (%)         (Sem PRR)           (%)          (Sem PRR)\nEstimativa    Orçamento          Orçamento\nEstimativa                                                                         (%)                               (%)\n(Sem PRR)                        (Sem PRR)\n Despesa efetiva consolidada                           1 194,5               628,0        426,8              388,1        -64,3          -38,2\nSeleção: 2026 Estimativa (Sem PRR)",
+      "derivation": null,
+      "note": "Conta do programa legado, em contabilidade pública. Sem PRR pode incluir outros fundos europeus; não é sinónimo de financiamento exclusivamente nacional. Estimativa de 2026 comparada com proposta para 2027, não execução final.",
+      "linha_pdf": [
+        " Despesa efetiva consolidada                           1 194,5               628,0        426,8              388,1        -64,3          -38,2"
+      ],
+      "column": 1,
+      "column_label": "2026 Estimativa (Sem PRR)",
+      "coluna_ano_conferidos": true,
+      "cabecalho_pdf": [
+        "                                        Quadro 5.18. Coesão Territorial (PL07) — Conta do Programa Legado",
+        "                                                                                (milhões de euros)",
+        "",
+        "                                                                2026                             2027",
+        "                                                                                                                     Variação       Variação     Estrutura 2027   Estrutura 2027",
+        "               Classificador Económico                                                                                 (%)         (Sem PRR)           (%)          (Sem PRR)",
+        "                                                                       Estimativa    Orçamento          Orçamento",
+        "                                                   Estimativa                                                                         (%)                               (%)",
+        "                                                                       (Sem PRR)                        (Sem PRR)",
+        "",
+        " DESPESA",
+        " Despesa corrente                                        704,2               605,0        342,4              331,7        -51,4          -45,2            47,2             48,3",
+        "     Des pes a s com o pes s oa l                        139,4               137,9        164,7              164,3         18,2          19,2             22,7             23,9",
+        "     Aqui s i çã o de bens e s ervi ços                   80,2                59,9         75,3               75,2         -6,1          25,5             10,4             11,0",
+        "     Juros e outros enca rgos                             49,6                49,6         13,1               13,1        -73,6          -73,6              1,8              1,9",
+        "     Tra ns ferênci a s correntes                        254,1               176,7         58,8               48,5        -76,9          -72,5              8,1              7,1"
+      ],
+      "selector": {
+        "kind": "pdf_cell",
+        "id": "oe-2027-coesao-territorial-sem-prr-2026",
+        "file": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
+        "page": 214,
+        "printed_page": 198,
+        "table": "Quadro 5.18",
+        "label": "Despesa efetiva consolidada",
+        "column": 1,
+        "header": [
+          "Quadro 5.18. Coesão Territorial (PL07) — Conta do Programa Legado",
+          "(milhões de euros)",
+          "2026                             2027",
+          "Variação       Variação     Estrutura 2027   Estrutura 2027",
+          "Classificador Económico                                                                                 (%)         (Sem PRR)           (%)          (Sem PRR)",
+          "Estimativa    Orçamento          Orçamento",
+          "Estimativa                                                                         (%)                               (%)",
+          "(Sem PRR)                        (Sem PRR)"
+        ],
+        "column_label": "2026 Estimativa (Sem PRR)",
+        "period": "2026",
+        "stage": "estimativa",
+        "program": "coesao-territorial",
+        "metric": "sem-prr",
+        "report_year": 2027,
+        "title": "Orçamento do Estado para 2027",
+        "unit": "milhões de euros",
+        "expected_value": "628,0",
+        "note": "Conta do programa legado, em contabilidade pública. Sem PRR pode incluir outros fundos europeus; não é sinónimo de financiamento exclusivamente nacional. Estimativa de 2026 comparada com proposta para 2027, não execução final.",
+        "program_name": "Coesão Territorial",
+        "entity_anchor": "Ministério das Finanças",
+        "entity_aliases": {
+          "Ministério das Finanças": []
+        }
+      }
+    },
+    {
+      "id": "oe-2027-coesao-territorial-sem-prr-2027",
+      "value": "388,1",
+      "expected": null,
+      "period": "2027",
+      "estado": "selada e conferida contra o corpo ou as componentes",
+      "document": {
+        "title": "Orçamento do Estado para 2027",
+        "file": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
+        "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+        "locator": "Quadro 5.18; Despesa efetiva consolidada; coluna 4: 2027 Orçamento (Sem PRR); p. 214 PDF (198 impressa)",
+        "page": 214,
+        "printed_page": 198
+      },
+      "excerpt": "Quadro 5.18. Coesão Territorial (PL07) — Conta do Programa Legado\n(milhões de euros)\n2026                             2027\nVariação       Variação     Estrutura 2027   Estrutura 2027\nClassificador Económico                                                                                 (%)         (Sem PRR)           (%)          (Sem PRR)\nEstimativa    Orçamento          Orçamento\nEstimativa                                                                         (%)                               (%)\n(Sem PRR)                        (Sem PRR)\n Despesa efetiva consolidada                           1 194,5               628,0        426,8              388,1        -64,3          -38,2\nSeleção: 2027 Orçamento (Sem PRR)",
+      "derivation": null,
+      "note": "Conta do programa legado, em contabilidade pública. Sem PRR pode incluir outros fundos europeus; não é sinónimo de financiamento exclusivamente nacional. Estimativa de 2026 comparada com proposta para 2027, não execução final.",
+      "linha_pdf": [
+        " Despesa efetiva consolidada                           1 194,5               628,0        426,8              388,1        -64,3          -38,2"
+      ],
+      "column": 3,
+      "column_label": "2027 Orçamento (Sem PRR)",
+      "coluna_ano_conferidos": true,
+      "cabecalho_pdf": [
+        "                                        Quadro 5.18. Coesão Territorial (PL07) — Conta do Programa Legado",
+        "                                                                                (milhões de euros)",
+        "",
+        "                                                                2026                             2027",
+        "                                                                                                                     Variação       Variação     Estrutura 2027   Estrutura 2027",
+        "               Classificador Económico                                                                                 (%)         (Sem PRR)           (%)          (Sem PRR)",
+        "                                                                       Estimativa    Orçamento          Orçamento",
+        "                                                   Estimativa                                                                         (%)                               (%)",
+        "                                                                       (Sem PRR)                        (Sem PRR)",
+        "",
+        " DESPESA",
+        " Despesa corrente                                        704,2               605,0        342,4              331,7        -51,4          -45,2            47,2             48,3",
+        "     Des pes a s com o pes s oa l                        139,4               137,9        164,7              164,3         18,2          19,2             22,7             23,9",
+        "     Aqui s i çã o de bens e s ervi ços                   80,2                59,9         75,3               75,2         -6,1          25,5             10,4             11,0",
+        "     Juros e outros enca rgos                             49,6                49,6         13,1               13,1        -73,6          -73,6              1,8              1,9",
+        "     Tra ns ferênci a s correntes                        254,1               176,7         58,8               48,5        -76,9          -72,5              8,1              7,1"
+      ],
+      "selector": {
+        "kind": "pdf_cell",
+        "id": "oe-2027-coesao-territorial-sem-prr-2027",
+        "file": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
+        "page": 214,
+        "printed_page": 198,
+        "table": "Quadro 5.18",
+        "label": "Despesa efetiva consolidada",
+        "column": 3,
+        "header": [
+          "Quadro 5.18. Coesão Territorial (PL07) — Conta do Programa Legado",
+          "(milhões de euros)",
+          "2026                             2027",
+          "Variação       Variação     Estrutura 2027   Estrutura 2027",
+          "Classificador Económico                                                                                 (%)         (Sem PRR)           (%)          (Sem PRR)",
+          "Estimativa    Orçamento          Orçamento",
+          "Estimativa                                                                         (%)                               (%)",
+          "(Sem PRR)                        (Sem PRR)"
+        ],
+        "column_label": "2027 Orçamento (Sem PRR)",
+        "period": "2027",
+        "stage": "orcamento",
+        "program": "coesao-territorial",
+        "metric": "sem-prr",
+        "report_year": 2027,
+        "title": "Orçamento do Estado para 2027",
+        "unit": "milhões de euros",
+        "expected_value": "388,1",
+        "note": "Conta do programa legado, em contabilidade pública. Sem PRR pode incluir outros fundos europeus; não é sinónimo de financiamento exclusivamente nacional. Estimativa de 2026 comparada com proposta para 2027, não execução final.",
+        "program_name": "Coesão Territorial",
+        "entity_anchor": "Ministério das Finanças",
+        "entity_aliases": {
+          "Ministério das Finanças": []
+        }
+      }
+    },
+    {
+      "id": "oe-2027-outras-despesas-correntes-reserva",
+      "value": "De relevar ainda o crescimento das outras despesas correntes, decorrente da constituição das reservas orçamentais a serem mobilizadas durante a execução orçamental, em linha com o aprofundamento da autonomia na gestão orçamental de cada área setorial iniciada em 2026.",
+      "expected": null,
+      "period": "2027",
+      "estado": "selada e conferida contra o corpo ou as componentes",
+      "document": {
+        "title": "Orçamento do Estado 2027 · Relatório",
+        "file": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
+        "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+        "locator": "p. 67 PDF (51 impressa), explicação das outras despesas correntes",
+        "page": 67,
+        "printed_page": 51
+      },
+      "excerpt": "De relevar ainda o crescimento das outras despesas correntes, decorrente da constituição das reservas orçamentais a serem mobilizadas durante a execução orçamental, em linha com o aprofundamento da autonomia na gestão orçamental de cada área setorial iniciada em 2026.",
+      "derivation": null,
+      "note": "Explicação geral da evolução das outras despesas correntes. A introdução data a informação do relatório de 8 de outubro de 2026, data da entrega da proposta registada pelo Parlamento. Não demonstra que antes não existiam reservas.",
+      "cabecalho_pdf": [
+        "4. Situação Financeira das",
+        "   Administrações Públicas:",
+        "   Contabilidade Pública",
+        "",
+        "",
+        "",
+        "O saldo das Administrações Públicas, em 2027, deverá situar-se em -401,2 milhões de euros.",
+        "Este valor compara com a estimativa da execução de 2026 de 170,6 milhões de euros, o",
+        "que resulta de um crescimento da despesa (2,8%) superior ao da receita (2,4%).",
+        "",
+        "Denota-se, do lado da receita, o crescimento dos impostos indiretos, onde se releva o",
+        "crescimento do imposto sobre o valor acrescentado (IVA), em linha com a previsão de",
+        "crescimento do consumo privado, das contribuições para a Segurança Social e, em menor",
+        "nível, os impostos diretos, onde se destaca o crescimento do Imposto sobre o rendimento",
+        "das pessoas singulares (IRS), resultante da expetativa de crescimento dos salários e do",
+        "emprego, embora moderado pelas medidas de alívio fiscal."
+      ],
+      "selector": {
+        "kind": "quote",
+        "id": "oe-2027-outras-despesas-correntes-reserva",
+        "file": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
+        "page": 67,
+        "printed_page": 51,
+        "title": "Orçamento do Estado 2027 · Relatório",
+        "period": "2027",
+        "quote": "De relevar ainda o crescimento das outras despesas correntes, decorrente da constituição das reservas orçamentais a serem mobilizadas durante a execução orçamental, em linha com o aprofundamento da autonomia na gestão orçamental de cada área setorial iniciada em 2026.",
+        "value": "De relevar ainda o crescimento das outras despesas correntes, decorrente da constituição das reservas orçamentais a serem mobilizadas durante a execução orçamental, em linha com o aprofundamento da autonomia na gestão orçamental de cada área setorial iniciada em 2026.",
+        "unit": "afirmação",
+        "value_not_numeric": true,
+        "afirmacao": true,
+        "attributed_to": [
+          "Ministério das Finanças"
+        ],
+        "attribution_anchor": "Ministério das Finanças",
+        "attribution_page": 2,
+        "published_at": "2026-10-08",
+        "publication_page": 3,
+        "publication_anchor": "8 de outubro de 2026",
+        "locator": "p. 67 PDF (51 impressa), explicação das outras despesas correntes",
+        "note": "Explicação geral da evolução das outras despesas correntes. A introdução data a informação do relatório de 8 de outubro de 2026, data da entrega da proposta registada pelo Parlamento. Não demonstra que antes não existiam reservas.",
+        "source_type": "government",
+        "group": "v2d",
+        "entity_anchor": "Ministério das Finanças",
+        "entity_aliases": {
+          "Ministério das Finanças": []
+        }
+      }
+    },
+    {
+      "id": "der-saude-razao-compensacao-prr-pct",
+      "value": "66,4",
+      "expected": null,
+      "period": "2026/2027",
+      "estado": "selada e conferida contra o corpo ou as componentes",
+      "document": null,
+      "excerpt": "511,8 ÷ 771,1 × 100 = 66.37271430424069511088056024 ≈ 66,4",
+      "derivation": {
+        "components": [
+          "der-saude-variacao-sem-prr",
+          "der-saude-prr-2026"
+        ],
+        "operation": "percent",
+        "formula": "(der-saude-variacao-sem-prr) ÷ (der-saude-prr-2026) × 100",
+        "calculation": "511,8 ÷ 771,1 × 100 = 66.37271430424069511088056024 ≈ 66,4",
+        "rounding_places": 1
+      },
+      "note": "Razão aritmética entre o aumento da despesa sem PRR e a componente PRR de 2026. Não prova a origem nacional do financiamento.",
+      "derivation_sealed": {
+        "components": [
+          "der-saude-variacao-sem-prr",
+          "der-saude-prr-2026"
+        ],
+        "operation": "percent",
+        "formula": "(der-saude-variacao-sem-prr) ÷ (der-saude-prr-2026) × 100",
+        "calculation": "511,8 ÷ 771,1 × 100 = 66.37271430424069511088056024 ≈ 66,4",
+        "rounding_places": 1
+      }
+    },
+    {
+      "id": "der-financas-variacao-sem-prr-pct",
+      "value": "-7,8",
+      "expected": null,
+      "period": "2026/2027",
+      "estado": "selada e conferida contra o corpo ou as componentes",
+      "document": null,
+      "excerpt": "(8 509,7 ÷ 9 234,3 − 1) × 100 = -7.846831920123885946958621660 ≈ -7,8",
+      "derivation": {
+        "components": [
+          "oe-2027-financas-sem-prr-2027",
+          "oe-2027-financas-sem-prr-2026"
+        ],
+        "operation": "change_pct",
+        "formula": "((oe-2027-financas-sem-prr-2027) ÷ (oe-2027-financas-sem-prr-2026) − 1) × 100",
+        "calculation": "(8 509,7 ÷ 9 234,3 − 1) × 100 = -7.846831920123885946958621660 ≈ -7,8",
+        "rounding_places": 1
+      },
+      "note": "Comparação entre proposta de orçamento para 2027 e estimativa para 2026. Sem PRR não significa apenas financiamento nacional.",
+      "derivation_sealed": {
+        "components": [
+          "oe-2027-financas-sem-prr-2027",
+          "oe-2027-financas-sem-prr-2026"
+        ],
+        "operation": "change_pct",
+        "formula": "((oe-2027-financas-sem-prr-2027) ÷ (oe-2027-financas-sem-prr-2026) − 1) × 100",
+        "calculation": "(8 509,7 ÷ 9 234,3 − 1) × 100 = -7.846831920123885946958621660 ≈ -7,8",
+        "rounding_places": 1
+      }
+    },
+    {
+      "id": "der-economia-variacao-sem-prr-pct",
+      "value": "-4,9",
+      "expected": null,
+      "period": "2026/2027",
+      "estado": "selada e conferida contra o corpo ou as componentes",
+      "document": null,
+      "excerpt": "(908,5 ÷ 955,0 − 1) × 100 = -4.869109947643979057591623040 ≈ -4,9",
+      "derivation": {
+        "components": [
+          "oe-2027-economia-sem-prr-2027",
+          "oe-2027-economia-sem-prr-2026"
+        ],
+        "operation": "change_pct",
+        "formula": "((oe-2027-economia-sem-prr-2027) ÷ (oe-2027-economia-sem-prr-2026) − 1) × 100",
+        "calculation": "(908,5 ÷ 955,0 − 1) × 100 = -4.869109947643979057591623040 ≈ -4,9",
+        "rounding_places": 1
+      },
+      "note": "Comparação entre proposta de orçamento para 2027 e estimativa para 2026. Sem PRR não significa apenas financiamento nacional.",
+      "derivation_sealed": {
+        "components": [
+          "oe-2027-economia-sem-prr-2027",
+          "oe-2027-economia-sem-prr-2026"
+        ],
+        "operation": "change_pct",
+        "formula": "((oe-2027-economia-sem-prr-2027) ÷ (oe-2027-economia-sem-prr-2026) − 1) × 100",
+        "calculation": "(908,5 ÷ 955,0 − 1) × 100 = -4.869109947643979057591623040 ≈ -4,9",
+        "rounding_places": 1
+      }
+    },
+    {
+      "id": "der-coesao-territorial-variacao-sem-prr-pct",
+      "value": "-38,2",
+      "expected": null,
+      "period": "2026/2027",
+      "estado": "selada e conferida contra o corpo ou as componentes",
+      "document": null,
+      "excerpt": "(388,1 ÷ 628,0 − 1) × 100 = -38.20063694267515923566878981 ≈ -38,2",
+      "derivation": {
+        "components": [
+          "oe-2027-coesao-territorial-sem-prr-2027",
+          "oe-2027-coesao-territorial-sem-prr-2026"
+        ],
+        "operation": "change_pct",
+        "formula": "((oe-2027-coesao-territorial-sem-prr-2027) ÷ (oe-2027-coesao-territorial-sem-prr-2026) − 1) × 100",
+        "calculation": "(388,1 ÷ 628,0 − 1) × 100 = -38.20063694267515923566878981 ≈ -38,2",
+        "rounding_places": 1
+      },
+      "note": "Comparação entre proposta de orçamento para 2027 e estimativa para 2026. Sem PRR não significa apenas financiamento nacional.",
+      "derivation_sealed": {
+        "components": [
+          "oe-2027-coesao-territorial-sem-prr-2027",
+          "oe-2027-coesao-territorial-sem-prr-2026"
+        ],
+        "operation": "change_pct",
+        "formula": "((oe-2027-coesao-territorial-sem-prr-2027) ÷ (oe-2027-coesao-territorial-sem-prr-2026) − 1) × 100",
+        "calculation": "(388,1 ÷ 628,0 − 1) × 100 = -38.20063694267515923566878981 ≈ -38,2",
         "rounding_places": 1
       }
     }

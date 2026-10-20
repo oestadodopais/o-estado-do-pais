@@ -138,5 +138,68 @@
     "antes": "Cada um dos 126 recibos novos, nas duas edições, repetia a porta do Método na regra da releitura e no rodapé. A L1 mediu 3034 páginas, 252 acima do teto de 2782.",
     "depois": "Os recibos novos conservam a porta da regra da releitura e suprimem a segunda porta do rodapé, pelo mecanismo já usado nos recibos NATO.",
     "razao": "A duplicação não acrescentava um destino. A lista explícita das 126 linhas delimita a alteração; a régua e o teto da L1 não mudam."
+  },
+  {
+    "id": "V2D-27",
+    "tema": "Redução do PRR nos outros programas",
+    "antes": "O fim do PRR não é só da Saúde.",
+    "depois": "A redução do PRR não é só da Saúde.",
+    "razao": "Os quadros mantêm despesa PRR em 2027 nas Finanças, Economia, Infraestruturas e Ambiente. Apenas a Saúde chega a zero entre os programas citados."
+  },
+  {
+    "id": "V2D-28",
+    "tema": "Variações com sinal",
+    "antes": "e desce [valor negativo] nas Finanças, na Economia e na Coesão territorial",
+    "depois": "e varia [valor negativo] nas Finanças, na Economia e na Coesão territorial",
+    "razao": "A gramática preserva o sinal: varia −7,8 %, −4,9 % e −38,2 % evita desce seguido de um valor negativo. A edição inglesa usa and changes by."
+  },
+  {
+    "id": "V2D-29",
+    "tema": "Reservas anteriores não demonstradas",
+    "antes": "que guarda em reservas a mobilizar durante a execução o que antes não guardava",
+    "depois": "que aumenta as outras despesas correntes por via das reservas a mobilizar durante a execução",
+    "razao": "A frase do relatório explica a evolução geral das outras despesas correntes, mas não prova inexistência anterior de reservas. O quadro já apresenta outras despesas correntes em 2026."
+  },
+  {
+    "id": "V2D-30",
+    "tema": "Período dos riscos na gramática",
+    "antes": "no primeiro trimestre de [período de ppp-oe2027-riscos-pedidos-rodoviarios]",
+    "depois": "com dados do primeiro trimestre, reportados a 31.03.2026",
+    "razao": "O token de período lê reference_date. O motor e o YAML conservam period 2026-T1 e reference_date 2026-03-31; o recibo diz Dados do 1.º trimestre de 2026."
+  },
+  {
+    "id": "V2D-31",
+    "tema": "Frase inteira das reservas",
+    "antes": "De relevar ainda o crescimento das outras despesas correntes, decorrente da constituição das reservas orçamentais a serem mobilizadas durante a execução orçamental",
+    "depois": "De relevar ainda o crescimento das outras despesas correntes, decorrente da constituição das reservas orçamentais a serem mobilizadas durante a execução orçamental, em linha com o aprofundamento da autonomia na gestão orçamental de cada área setorial iniciada em 2026.",
+    "razao": "A página 67 do PDF inclui a oração final. A citação foi selada do ponto ao ponto. A data do relatório usada na afirmação é 8 de outubro de 2026, data limite da informação na introdução e data de entrega da proposta registada no corpo do Parlamento; a capa não imprime uma data de publicação distinta."
+  },
+  {
+    "id": "V2D-32",
+    "tema": "Introdução da citação da UTAO",
+    "antes": "A UTAO escreve que estes valores são «[excerto]».",
+    "depois": "A UTAO distingue os pedidos dos encargos efetivos: «[frase inteira]»",
+    "razao": "A frase começa São pretensões dos parceiros privados. A nova introdução evita são «São e conserva o âmbito das contingências."
+  },
+  {
+    "id": "V2D-33",
+    "tema": "Pontuação dos excertos completos",
+    "antes": "«[frase terminada em ponto]».",
+    "depois": "«[frase terminada em ponto]»",
+    "razao": "Retirado o segundo ponto editorial nas quatro citações agora completas, nas duas edições. A deshifenização só junta palavras partidas entre linhas do PDF."
+  },
+  {
+    "id": "V2D-34",
+    "tema": "Títulos lidos nas capas",
+    "antes": "PPP: liquidos rodoviários; Saúde: despesa total consolidada; exemplos com para ou de antes do ano",
+    "depois": "Orçamento do Estado [ano] · Relatório; Orçamento do Estado 2021 · Proposta de Lei e Relatório; Conta Geral do Estado [ano] · Relatório de Análise Global e Conta da Segurança Social",
+    "razao": "As capas não imprimem para ou de antes do ano. Os subtítulos são documentais. As capas foram renderizadas e lidas; a tabela das línguas foi conferida de novo. O ano não se repete na frase de atribuição quando já consta do título."
+  },
+  {
+    "id": "V2D-35",
+    "tema": "Selos fora da citação e do título",
+    "antes": "Selos dentro das aspas e do h2, intercalados na frase.",
+    "depois": "Selo depois da aspa de fecho; título inteiro no h2 e fontes na faixa imediatamente seguinte.",
+    "razao": "O número continua ligado à linha pelo token. O leitor de ecrã recebe o título sem os nomes das fontes intercalados; células e plantas conferem posição e destino dos selos."
   }
 ]

@@ -12,7 +12,7 @@ unit: "milhões de euros"
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Ministério das Finanças"
 document:
-  title: "Orçamento do Estado para 2027"
+  title: "Orçamento do Estado 2027 · Relatório"
   edition: "2027"
   locator: "p. 125 PDF (109 impressa)"
   source_sha256: "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12"

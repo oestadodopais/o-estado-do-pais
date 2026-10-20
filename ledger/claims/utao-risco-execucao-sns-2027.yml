@@ -6,7 +6,7 @@
 id: "utao-risco-execucao-sns-2027"
 
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
-value: "Existe um risco de pressão orçamental"
+value: "Existe um risco de pressão orçamental associado à execução do Serviço Nacional de Saúde (SNS)."
 unit: "afirmação"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
@@ -25,7 +25,7 @@ afirmacao: true
 reference_date: "2026-10-19"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "Existe um risco de pressão orçamental"
+excerpt: "Existe um risco de pressão orçamental associado à execução do Serviço Nacional de Saúde (SNS)."
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null
@@ -43,4 +43,10 @@ study: "oe-2027"
 note: "[note do motor] §103, relativo à execução do SNS. A UTAO relaciona os défices persistentes, reforços orçamentais e injeções de capital para pagamentos em atraso com eventual necessidade de financiamento adicional em 2027, nomeadamente pessoal e consumos intermédios. Não quantifica esse financiamento adicional. Relatório publicado em 19 de outubro de 2026. · Cruzado de ResearchHub content/24 Orcamento 2027 Analise · utao-risco-execucao-sns-2027."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
-corrections: []
+corrections:
+  - date: "2026-10-20"
+    kind: "correcao"
+    old_value: "Existe um risco de pressão orçamental"
+    new_value: "Existe um risco de pressão orçamental associado à execução do Serviço Nacional de Saúde (SNS)."
+    reason: "O fragmento foi substituído pela frase inteira do parecer da UTAO, conservando o sentido e a atribuição."
+    reason_en: "The fragment was replaced by the full sentence from the UTAO report, preserving its meaning and attribution."
