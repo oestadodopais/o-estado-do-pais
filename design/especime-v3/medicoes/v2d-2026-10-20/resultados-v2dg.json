@@ -1,0 +1,829 @@
+{
+  "passagem": "V2-d-g",
+  "cabeca_conferida": "708dd04ebff3248ba87a18c746872896dbe87a8e",
+  "motor": {
+    "cabeca": "9981f281471d999c405bf2c423590ac6dcf2cf6e",
+    "codigo": 0,
+    "inicio": "2026-10-20T13:21:34Z",
+    "fim": "2026-10-20T13:34:13Z",
+    "estado_final": "",
+    "comando": "python3 -m core.gate",
+    "nota": "Mesmo comando do pre-commit, lido nesta passagem. Sem alteração ou novo commit no motor."
+  },
+  "primeira_corrida": {
+    "codigos": {
+      "verify": 1,
+      "motor": 0,
+      "typecheck": 0,
+      "build": 0
+    },
+    "verify": {
+      "cabeca": "e1d733ab93f9ec2f82dc09f385979fefa3c683ae",
+      "paralelo": 4,
+      "segundos": 447.934,
+      "ok": false,
+      "plantas": [
+        {
+          "falhas": [],
+          "planta": "a cadeia limpa passa, e o que o build já correu não corre outra vez",
+          "mordeu": true
+        },
+        {
+          "falhas": [],
+          "planta": "uma conferência nova só no verify corre sozinha",
+          "mordeu": true
+        },
+        {
+          "falhas": [
+            "U: «\"<casa>/.nvm/versions/node/v22.23.1/bin/node\" -e \"require('fs').writeFileSync(require('path').join('marcas','v2'),'')\"» está no verify, não é um passo do build e não correu aqui"
+          ],
+          "planta": "uma conferência tirada da escolha fecha a célula U",
+          "mordeu": true
+        },
+        {
+          "falhas": [
+            "U: «\"<casa>/.nvm/versions/node/v22.23.1/bin/node\" -e \"process.exit(3)\"» correu e não saiu com 0"
+          ],
+          "planta": "uma conferência vermelha fecha a corrida, e as outras acabam",
+          "mordeu": true
+        },
+        {
+          "falhas": [
+            "D: dist/x/index.html mudou de bytes durante as conferências"
+          ],
+          "planta": "uma conferência que escreve no dist/ fecha a célula D",
+          "mordeu": true
+        },
+        {
+          "falhas": [
+            "C: dist/version.json é de dddddddddddddddddddddddddddddddddddddddd e a árvore está em cccccccccccccccccccccccccccccccccccccccc",
+            "C: dist/prova.json é de dddddddddddddddddddddddddddddddddddddddd e a árvore está em cccccccccccccccccccccccccccccccccccccccc"
+          ],
+          "planta": "um dist/ de outra cabeça fecha a célula C",
+          "mordeu": true
+        },
+        {
+          "falhas": [
+            "U: o verify tem 5 passos pelos &&, e o leitor leu 4"
+          ],
+          "planta": "um passo vazio na cadeia não passa despercebido à contagem",
+          "mordeu": true
+        },
+        {
+          "falhas": [
+            "D: dist/x/index.html foi escrito durante as conferências (os bytes podem ter voltado, a hora de escrita não)"
+          ],
+          "planta": "uma conferência que escreve no dist/ e repõe os bytes fecha a célula D",
+          "mordeu": true
+        },
+        {
+          "planta": "uma conferência que troca um ficheiro do dist/ por uma cópia com os mesmos bytes e a mesma hora de escrita fecha a célula D",
+          "antes": {
+            "escrito": "1792498446415999000",
+            "inode": "263500487",
+            "tamanho": "19",
+            "resumo": "adbad8d628608be43ecbe916fd8e99b732fc607603e0150316a8d17dffa57b12"
+          },
+          "depois": {
+            "escrito": "1792498446415999000",
+            "inode": "263500494",
+            "tamanho": "19",
+            "resumo": "adbad8d628608be43ecbe916fd8e99b732fc607603e0150316a8d17dffa57b12"
+          },
+          "passos_da_troca": 1,
+          "codigo_da_troca": 0,
+          "falhas": [
+            "D: dist/x/index.html foi substituído por outro ficheiro durante as conferências (o inode mudou)"
+          ],
+          "mordeu": true
+        },
+        {
+          "falhas": [
+            "D: fonte.txt foi escrito durante as conferências (os bytes podem ter voltado, a hora de escrita não)"
+          ],
+          "planta": "uma conferência que escreve um ficheiro seguido da árvore e o repõe fecha a célula D",
+          "mordeu": true
+        },
+        {
+          "falhas": [
+            "C: dist/cadeia.json foi escrito a 2026-10-20T12:14:06.575Z, antes do carimbo desta construção (2026-10-20T13:13:06.575Z): é de outra construção"
+          ],
+          "planta": "um cadeia.json de outra construção fecha a célula C",
+          "mordeu": true
+        },
+        {
+          "falhas": [],
+          "planta": "uma conferência que escreve na árvore corre sozinha, depois do grupo",
+          "mordeu": true
+        }
+      ],
+      "corridos": [
+        {
+          "passo": "npm run check:alvos",
+          "fase": "grupo",
+          "codigo": 0,
+          "segundos": 235.875,
+          "inicio_s": 0,
+          "fim_s": 235.875
+        },
+        {
+          "passo": "npm run check:palavras",
+          "fase": "grupo",
+          "codigo": 0,
+          "segundos": 222.913,
+          "inicio_s": 0.002,
+          "fim_s": 222.915
+        },
+        {
+          "passo": "npm run check:moldura",
+          "fase": "grupo",
+          "codigo": 0,
+          "segundos": 144.95,
+          "inicio_s": 0.003,
+          "fim_s": 144.953
+        },
+        {
+          "passo": "npm run check:lugar",
+          "fase": "grupo",
+          "codigo": 0,
+          "segundos": 63.285,
+          "inicio_s": 0.004,
+          "fim_s": 63.289
+        },
+        {
+          "passo": "npm run check:indice",
+          "fase": "grupo",
+          "codigo": 1,
+          "segundos": 22.623,
+          "inicio_s": 63.289,
+          "fim_s": 85.912
+        },
+        {
+          "passo": "npm run check:cartao",
+          "fase": "grupo",
+          "codigo": 1,
+          "segundos": 12.303,
+          "inicio_s": 85.913,
+          "fim_s": 98.216
+        },
+        {
+          "passo": "npm run check:cabeca",
+          "fase": "grupo",
+          "codigo": 0,
+          "segundos": 6.763,
+          "inicio_s": 98.216,
+          "fim_s": 104.979
+        },
+        {
+          "passo": "npm run check:css",
+          "fase": "grupo",
+          "codigo": 0,
+          "segundos": 8.082,
+          "inicio_s": 104.979,
+          "fim_s": 113.061
+        },
+        {
+          "passo": "npm run check:alcance",
+          "fase": "grupo",
+          "codigo": 0,
+          "segundos": 8.224,
+          "inicio_s": 113.061,
+          "fim_s": 121.285
+        },
+        {
+          "passo": "npm run check:briefs",
+          "fase": "grupo",
+          "codigo": 0,
+          "segundos": 318.663,
+          "inicio_s": 121.285,
+          "fim_s": 439.948
+        },
+        {
+          "passo": "npm run check:leituras",
+          "fase": "grupo",
+          "codigo": 0,
+          "segundos": 119.622,
+          "inicio_s": 144.953,
+          "fim_s": 264.575
+        },
+        {
+          "passo": "npm run check:fontes",
+          "fase": "grupo",
+          "codigo": 0,
+          "segundos": 1.669,
+          "inicio_s": 222.915,
+          "fim_s": 224.584
+        },
+        {
+          "passo": "npm run mapa:unidades -- --verifica",
+          "fase": "grupo",
+          "codigo": 0,
+          "segundos": 0.233,
+          "inicio_s": 224.584,
+          "fim_s": 224.817
+        },
+        {
+          "passo": "npm run check:pais:auto-teste",
+          "fase": "grupo",
+          "codigo": 0,
+          "segundos": 1.734,
+          "inicio_s": 224.817,
+          "fim_s": 226.551
+        },
+        {
+          "passo": "npm run provar:eyetext",
+          "fase": "grupo",
+          "codigo": 0,
+          "segundos": 0.443,
+          "inicio_s": 226.551,
+          "fim_s": 226.994
+        },
+        {
+          "passo": "npm run provar:guardas",
+          "fase": "grupo",
+          "codigo": 0,
+          "segundos": 0.232,
+          "inicio_s": 226.994,
+          "fim_s": 227.226
+        },
+        {
+          "passo": "npm run check:mortos",
+          "fase": "grupo",
+          "codigo": 0,
+          "segundos": 2.341,
+          "inicio_s": 227.226,
+          "fim_s": 229.567
+        },
+        {
+          "passo": "npm run check:primeira",
+          "fase": "grupo",
+          "codigo": 0,
+          "segundos": 140.384,
+          "inicio_s": 229.567,
+          "fim_s": 369.951
+        },
+        {
+          "passo": "npm run check:privacidade",
+          "fase": "grupo",
+          "codigo": 0,
+          "segundos": 98.117,
+          "inicio_s": 235.875,
+          "fim_s": 333.992
+        },
+        {
+          "passo": "npm run check:sugestoes",
+          "fase": "grupo",
+          "codigo": 0,
+          "segundos": 0.174,
+          "inicio_s": 264.575,
+          "fim_s": 264.749
+        },
+        {
+          "passo": "npm run check:rotulos",
+          "fase": "grupo",
+          "codigo": 1,
+          "segundos": 4.435,
+          "inicio_s": 264.749,
+          "fim_s": 269.184
+        },
+        {
+          "passo": "npm run check:series",
+          "fase": "grupo",
+          "codigo": 0,
+          "segundos": 4.139,
+          "inicio_s": 269.184,
+          "fim_s": 273.323
+        },
+        {
+          "passo": "npm run check:indice-do-sitio",
+          "fase": "grupo",
+          "codigo": 0,
+          "segundos": 30.779,
+          "inicio_s": 273.324,
+          "fim_s": 304.103
+        },
+        {
+          "passo": "npm run check:explicacoes",
+          "fase": "grupo",
+          "codigo": 0,
+          "segundos": 14.786,
+          "inicio_s": 304.103,
+          "fim_s": 318.889
+        },
+        {
+          "passo": "npm run check:frases-compostas",
+          "fase": "grupo",
+          "codigo": 0,
+          "segundos": 57.555,
+          "inicio_s": 318.889,
+          "fim_s": 376.444
+        },
+        {
+          "passo": "npm run check:incorporar",
+          "fase": "grupo",
+          "codigo": 0,
+          "segundos": 27.303,
+          "inicio_s": 333.992,
+          "fim_s": 361.295
+        },
+        {
+          "passo": "npm run design:feixe",
+          "fase": "depois",
+          "codigo": 0,
+          "segundos": 3.514,
+          "inicio_s": 439.948,
+          "fim_s": 443.462
+        }
+      ],
+      "celulas": {
+        "U": {
+          "ok": false,
+          "falhas": [
+            "U: «npm run check:indice» correu e não saiu com 0",
+            "U: «npm run check:cartao» correu e não saiu com 0",
+            "U: «npm run check:rotulos» correu e não saiu com 0"
+          ],
+          "passos_do_verify": 48,
+          "cobertos_pelo_build": 21,
+          "corridos_aqui": 24
+        },
+        "D": {
+          "ok": true,
+          "falhas": [],
+          "diferencas": 0,
+          "ficheiros": 16662,
+          "ficheiros_da_arvore": 31481
+        },
+        "C": {
+          "ok": true,
+          "falhas": [],
+          "cabeca": "e1d733ab93f9ec2f82dc09f385979fefa3c683ae",
+          "carimbo": "2026-10-20T13:09:54.868Z",
+          "escritos": {
+            "prova.json": "2026-10-20T13:11:25.385Z",
+            "cadeia.json": "2026-10-20T13:11:28.163Z"
+          }
+        }
+      }
+    },
+    "estado_final": " M scripts/inventario-rotulos.mjs\n M tests/cartao/v2ah-palavras.mjs\n M tests/livro/indice.mjs\n",
+    "nota": "As emendas aos três testes foram aplicadas depois de o verify fechar, enquanto o core.gate do motor ainda corria."
+  },
+  "corrida_final": {
+    "codigos": {
+      "verify": 0,
+      "typecheck": 0,
+      "build": 0
+    },
+    "verify": {
+      "cabeca": "708dd04ebff3248ba87a18c746872896dbe87a8e",
+      "paralelo": 4,
+      "segundos": 541.484,
+      "ok": true,
+      "plantas": [
+        {
+          "falhas": [],
+          "planta": "a cadeia limpa passa, e o que o build já correu não corre outra vez",
+          "mordeu": true
+        },
+        {
+          "falhas": [],
+          "planta": "uma conferência nova só no verify corre sozinha",
+          "mordeu": true
+        },
+        {
+          "falhas": [
+            "U: «\"<casa>/.nvm/versions/node/v22.23.1/bin/node\" -e \"require('fs').writeFileSync(require('path').join('marcas','v2'),'')\"» está no verify, não é um passo do build e não correu aqui"
+          ],
+          "planta": "uma conferência tirada da escolha fecha a célula U",
+          "mordeu": true
+        },
+        {
+          "falhas": [
+            "U: «\"<casa>/.nvm/versions/node/v22.23.1/bin/node\" -e \"process.exit(3)\"» correu e não saiu com 0"
+          ],
+          "planta": "uma conferência vermelha fecha a corrida, e as outras acabam",
+          "mordeu": true
+        },
+        {
+          "falhas": [
+            "D: dist/x/index.html mudou de bytes durante as conferências"
+          ],
+          "planta": "uma conferência que escreve no dist/ fecha a célula D",
+          "mordeu": true
+        },
+        {
+          "falhas": [
+            "C: dist/version.json é de dddddddddddddddddddddddddddddddddddddddd e a árvore está em cccccccccccccccccccccccccccccccccccccccc",
+            "C: dist/prova.json é de dddddddddddddddddddddddddddddddddddddddd e a árvore está em cccccccccccccccccccccccccccccccccccccccc"
+          ],
+          "planta": "um dist/ de outra cabeça fecha a célula C",
+          "mordeu": true
+        },
+        {
+          "falhas": [
+            "U: o verify tem 5 passos pelos &&, e o leitor leu 4"
+          ],
+          "planta": "um passo vazio na cadeia não passa despercebido à contagem",
+          "mordeu": true
+        },
+        {
+          "falhas": [
+            "D: dist/x/index.html foi escrito durante as conferências (os bytes podem ter voltado, a hora de escrita não)"
+          ],
+          "planta": "uma conferência que escreve no dist/ e repõe os bytes fecha a célula D",
+          "mordeu": true
+        },
+        {
+          "planta": "uma conferência que troca um ficheiro do dist/ por uma cópia com os mesmos bytes e a mesma hora de escrita fecha a célula D",
+          "antes": {
+            "escrito": "1792500204684000000",
+            "inode": "263727516",
+            "tamanho": "19",
+            "resumo": "adbad8d628608be43ecbe916fd8e99b732fc607603e0150316a8d17dffa57b12"
+          },
+          "depois": {
+            "escrito": "1792500204684000000",
+            "inode": "263727523",
+            "tamanho": "19",
+            "resumo": "adbad8d628608be43ecbe916fd8e99b732fc607603e0150316a8d17dffa57b12"
+          },
+          "passos_da_troca": 1,
+          "codigo_da_troca": 0,
+          "falhas": [
+            "D: dist/x/index.html foi substituído por outro ficheiro durante as conferências (o inode mudou)"
+          ],
+          "mordeu": true
+        },
+        {
+          "falhas": [
+            "D: fonte.txt foi escrito durante as conferências (os bytes podem ter voltado, a hora de escrita não)"
+          ],
+          "planta": "uma conferência que escreve um ficheiro seguido da árvore e o repõe fecha a célula D",
+          "mordeu": true
+        },
+        {
+          "falhas": [
+            "C: dist/cadeia.json foi escrito a 2026-10-20T12:43:24.779Z, antes do carimbo desta construção (2026-10-20T13:42:24.780Z): é de outra construção"
+          ],
+          "planta": "um cadeia.json de outra construção fecha a célula C",
+          "mordeu": true
+        },
+        {
+          "falhas": [],
+          "planta": "uma conferência que escreve na árvore corre sozinha, depois do grupo",
+          "mordeu": true
+        }
+      ],
+      "corridos": [
+        {
+          "passo": "npm run check:alvos",
+          "fase": "grupo",
+          "codigo": 0,
+          "segundos": 269.17,
+          "inicio_s": 0,
+          "fim_s": 269.17
+        },
+        {
+          "passo": "npm run check:palavras",
+          "fase": "grupo",
+          "codigo": 0,
+          "segundos": 328.57,
+          "inicio_s": 0.001,
+          "fim_s": 328.571
+        },
+        {
+          "passo": "npm run check:moldura",
+          "fase": "grupo",
+          "codigo": 0,
+          "segundos": 146.303,
+          "inicio_s": 0.003,
+          "fim_s": 146.306
+        },
+        {
+          "passo": "npm run check:lugar",
+          "fase": "grupo",
+          "codigo": 0,
+          "segundos": 78.577,
+          "inicio_s": 0.004,
+          "fim_s": 78.581
+        },
+        {
+          "passo": "npm run check:indice",
+          "fase": "grupo",
+          "codigo": 0,
+          "segundos": 46.241,
+          "inicio_s": 78.582,
+          "fim_s": 124.823
+        },
+        {
+          "passo": "npm run check:cartao",
+          "fase": "grupo",
+          "codigo": 0,
+          "segundos": 55.942,
+          "inicio_s": 124.824,
+          "fim_s": 180.766
+        },
+        {
+          "passo": "npm run check:cabeca",
+          "fase": "grupo",
+          "codigo": 0,
+          "segundos": 9.736,
+          "inicio_s": 146.306,
+          "fim_s": 156.042
+        },
+        {
+          "passo": "npm run check:css",
+          "fase": "grupo",
+          "codigo": 0,
+          "segundos": 12.396,
+          "inicio_s": 156.043,
+          "fim_s": 168.439
+        },
+        {
+          "passo": "npm run check:alcance",
+          "fase": "grupo",
+          "codigo": 0,
+          "segundos": 9.562,
+          "inicio_s": 168.439,
+          "fim_s": 178.001
+        },
+        {
+          "passo": "npm run check:briefs",
+          "fase": "grupo",
+          "codigo": 0,
+          "segundos": 357.137,
+          "inicio_s": 178.001,
+          "fim_s": 535.138
+        },
+        {
+          "passo": "npm run check:leituras",
+          "fase": "grupo",
+          "codigo": 0,
+          "segundos": 162.206,
+          "inicio_s": 180.767,
+          "fim_s": 342.973
+        },
+        {
+          "passo": "npm run check:fontes",
+          "fase": "grupo",
+          "codigo": 0,
+          "segundos": 2.629,
+          "inicio_s": 269.171,
+          "fim_s": 271.8
+        },
+        {
+          "passo": "npm run mapa:unidades -- --verifica",
+          "fase": "grupo",
+          "codigo": 0,
+          "segundos": 0.492,
+          "inicio_s": 271.802,
+          "fim_s": 272.294
+        },
+        {
+          "passo": "npm run check:pais:auto-teste",
+          "fase": "grupo",
+          "codigo": 0,
+          "segundos": 2.596,
+          "inicio_s": 272.294,
+          "fim_s": 274.89
+        },
+        {
+          "passo": "npm run provar:eyetext",
+          "fase": "grupo",
+          "codigo": 0,
+          "segundos": 0.665,
+          "inicio_s": 274.892,
+          "fim_s": 275.557
+        },
+        {
+          "passo": "npm run provar:guardas",
+          "fase": "grupo",
+          "codigo": 0,
+          "segundos": 0.268,
+          "inicio_s": 275.558,
+          "fim_s": 275.826
+        },
+        {
+          "passo": "npm run check:mortos",
+          "fase": "grupo",
+          "codigo": 0,
+          "segundos": 2.803,
+          "inicio_s": 275.826,
+          "fim_s": 278.629
+        },
+        {
+          "passo": "npm run check:primeira",
+          "fase": "grupo",
+          "codigo": 0,
+          "segundos": 139.44,
+          "inicio_s": 278.629,
+          "fim_s": 418.069
+        },
+        {
+          "passo": "npm run check:privacidade",
+          "fase": "grupo",
+          "codigo": 0,
+          "segundos": 98.136,
+          "inicio_s": 328.572,
+          "fim_s": 426.708
+        },
+        {
+          "passo": "npm run check:sugestoes",
+          "fase": "grupo",
+          "codigo": 0,
+          "segundos": 0.239,
+          "inicio_s": 342.978,
+          "fim_s": 343.217
+        },
+        {
+          "passo": "npm run check:rotulos",
+          "fase": "grupo",
+          "codigo": 0,
+          "segundos": 5.122,
+          "inicio_s": 343.217,
+          "fim_s": 348.339
+        },
+        {
+          "passo": "npm run check:series",
+          "fase": "grupo",
+          "codigo": 0,
+          "segundos": 4.899,
+          "inicio_s": 348.339,
+          "fim_s": 353.238
+        },
+        {
+          "passo": "npm run check:indice-do-sitio",
+          "fase": "grupo",
+          "codigo": 0,
+          "segundos": 23.607,
+          "inicio_s": 353.238,
+          "fim_s": 376.845
+        },
+        {
+          "passo": "npm run check:explicacoes",
+          "fase": "grupo",
+          "codigo": 0,
+          "segundos": 8.75,
+          "inicio_s": 376.845,
+          "fim_s": 385.595
+        },
+        {
+          "passo": "npm run check:frases-compostas",
+          "fase": "grupo",
+          "codigo": 0,
+          "segundos": 68.105,
+          "inicio_s": 385.595,
+          "fim_s": 453.7
+        },
+        {
+          "passo": "npm run check:incorporar",
+          "fase": "grupo",
+          "codigo": 0,
+          "segundos": 39.062,
+          "inicio_s": 418.07,
+          "fim_s": 457.132
+        },
+        {
+          "passo": "npm run design:feixe",
+          "fase": "depois",
+          "codigo": 0,
+          "segundos": 3.01,
+          "inicio_s": 535.141,
+          "fim_s": 538.151
+        }
+      ],
+      "celulas": {
+        "U": {
+          "ok": true,
+          "falhas": [],
+          "passos_do_verify": 48,
+          "cobertos_pelo_build": 21,
+          "corridos_aqui": 27
+        },
+        "D": {
+          "ok": true,
+          "falhas": [],
+          "diferencas": 0,
+          "ficheiros": 16662,
+          "ficheiros_da_arvore": 31481
+        },
+        "C": {
+          "ok": true,
+          "falhas": [],
+          "cabeca": "708dd04ebff3248ba87a18c746872896dbe87a8e",
+          "carimbo": "2026-10-20T13:35:34.249Z",
+          "escritos": {
+            "prova.json": "2026-10-20T13:38:14.392Z",
+            "cadeia.json": "2026-10-20T13:38:18.085Z"
+          }
+        }
+      }
+    },
+    "estado_inicial": "limpa",
+    "estado_final": "",
+    "cabeca_final": "708dd04ebff3248ba87a18c746872896dbe87a8e"
+  },
+  "cruzamento_com_origem": {
+    "comando": "npm run check:cruzamento -- --with-origin",
+    "codigo": 0,
+    "aviso": "Hash global do estudo 20 alterado; sem divergências nas linhas atravessadas."
+  },
+  "nomes": {
+    "linhas": 142,
+    "edicoes": [
+      "pt",
+      "en"
+    ],
+    "identificadores_ou_titulos_de_documentos_como_nome": 0,
+    "registo": "src/data/nomes-v2d.mjs",
+    "campos_name_e_name_source_alterados": false
+  },
+  "nomes_em_falta_fora_do_v2d": {
+    "pt": {
+      "sem_nome": 25,
+      "v2d_sem_nome": [],
+      "ids": [
+        "distancia-acores-ue27-2024",
+        "distancia-alentejo-ue27-2000",
+        "distancia-alentejo-ue27-2024",
+        "distancia-algarve-ue27-2024",
+        "distancia-centro-ue27-2024",
+        "distancia-grande-lisboa-ue27-2024",
+        "distancia-madeira-ue27-2024",
+        "distancia-norte-ue27-2024",
+        "distancia-oeste-e-vale-do-tejo-ue27-2024",
+        "distancia-peninsula-de-setubal-ue27-2024",
+        "distancia-portugal-ue27-2024",
+        "distancia-setubal-grande-lisboa-2024",
+        "evora-divergencia-municipio-dgal-2024",
+        "evora-indice-de-divida-2014",
+        "evora-indice-de-divida-2017",
+        "evora-indice-de-divida-2021",
+        "evora-indice-de-divida-2024",
+        "evora-pelouros-2021-total",
+        "evora-pelouros-2025-total",
+        "evora-prr-execucao-2026",
+        "evora-prr-vencido-quota-2026",
+        "juros-das-administracoes-publicas-pib-2024",
+        "juros-das-administracoes-publicas-pib-2025",
+        "municipios-sem-estudo-aprofundado",
+        "saldo-natural-portugal-2025"
+      ]
+    },
+    "en": {
+      "sem_nome": 25,
+      "v2d_sem_nome": [],
+      "ids": [
+        "distancia-acores-ue27-2024",
+        "distancia-alentejo-ue27-2000",
+        "distancia-alentejo-ue27-2024",
+        "distancia-algarve-ue27-2024",
+        "distancia-centro-ue27-2024",
+        "distancia-grande-lisboa-ue27-2024",
+        "distancia-madeira-ue27-2024",
+        "distancia-norte-ue27-2024",
+        "distancia-oeste-e-vale-do-tejo-ue27-2024",
+        "distancia-peninsula-de-setubal-ue27-2024",
+        "distancia-portugal-ue27-2024",
+        "distancia-setubal-grande-lisboa-2024",
+        "evora-divergencia-municipio-dgal-2024",
+        "evora-indice-de-divida-2014",
+        "evora-indice-de-divida-2017",
+        "evora-indice-de-divida-2021",
+        "evora-indice-de-divida-2024",
+        "evora-pelouros-2021-total",
+        "evora-pelouros-2025-total",
+        "evora-prr-execucao-2026",
+        "evora-prr-vencido-quota-2026",
+        "juros-das-administracoes-publicas-pib-2024",
+        "juros-das-administracoes-publicas-pib-2025",
+        "municipios-sem-estudo-aprofundado",
+        "saldo-natural-portugal-2025"
+      ]
+    }
+  },
+  "html": [
+    {
+      "ficheiro": "o-que-se-discute/index.html",
+      "antes": "e37a8890ae640184cfd936e287beda9b5d91f59a0dbcc8e71a5e0d00572da53f",
+      "depois": "e37a8890ae640184cfd936e287beda9b5d91f59a0dbcc8e71a5e0d00572da53f",
+      "bytes_iguais": true
+    },
+    {
+      "ficheiro": "en/under-discussion/index.html",
+      "antes": "f194e3004bc06ed9537763df99f188ea6f7b94666f9124afc9a2a354f294c02e",
+      "depois": "f194e3004bc06ed9537763df99f188ea6f7b94666f9124afc9a2a354f294c02e",
+      "bytes_iguais": true
+    }
+  ],
+  "capturas_repetidas": false,
+  "motivo_das_capturas": "HTML idêntico byte a byte nas duas páginas da discussão.",
+  "k8": {
+    "recibos": [
+      "oe-2027-cenario-pib-real-crescimento-2027",
+      "oe-2027-cenario-ihpc-2026"
+    ],
+    "nota": "A contagem vermelha indicada pelo CI não se reproduziu no HTML de partida. A exceção ficou presa às rotas e aos excertos literais destes recibos, nas duas edições."
+  }
+}

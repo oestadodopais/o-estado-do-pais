@@ -1,5 +1,55 @@
 # V2-d: análise da Saúde e das parcerias
 
+## A sexta correção: a corrida inteira
+
+A cabeça do sítio conferida é `708dd04ebff3248ba87a18c746872896dbe87a8e`. O motor ficou em `9981f281471d999c405bf2c423590ac6dcf2cf6e`, sem alterações nesta passagem. A travessia atual tem 142 linhas, contadas no registo, embora o pedido inicial mencionasse 126. Todas têm nome de medida nas duas edições.
+
+### As quatro células que estavam vermelhas
+
+| Célula | Correção |
+| --- | --- |
+| `check:rotulos` | As linhas V2-d deixam de gerar cartões das áreas. O assunto e a razão de não distribuição ministerial ficam em `SEM_AREA`, como no V2-a. A régua das unidades passa a conferir o conjunto fechado V2-d: 142 recibos e 142 entradas do índice por edição. As quatro plantas novas trocam a unidade ou retiram a entrada, em português e inglês. |
+| `check:indice` | Os nomes bilingues entram pelo registo de nomes do projeto que o índice e a busca já leem. Os 81 localizadores novos são conferidos contra os documentos e excertos das provas seladas, com cinco alterações recusadas por linha. As plantas V2AF passam a usar o conjunto V2-a, em vez de qualquer identificador com um prefixo semelhante. I1, I3 e as suas plantas passaram. |
+| `check:cartao` | A exceção K8 só aceita o excerto literal, a identidade da linha e a rota do respetivo recibo. As frases do mandato K são conferidas nas linhas do V2-a; as novas linhas mantêm as conferências próprias das famílias e da discussão. A cadeia completa do cartão passou. |
+| `provar:guardas` | A lista tinha 33 campos e a prova ainda exigia 32. O campo `period` tinha sido colocado entre `reference_date` e `serie`. Corrigiu-se a contagem, repôs-se a ordem esperada e acrescentou-se a prova de que o período existe sem campos duplicados. As regras do valor textual igual ao excerto e do período do orçamento não foram relaxadas. |
+
+O mecanismo dos nomes merece uma distinção explícita: `name` e `name_source` guardam, neste repositório, o rótulo literal da fonte e o seu localizador. Alterar `name` para uma designação editorial faria esse campo afirmar uma transcrição que não existiu. Por isso, os nomes desta passagem estão em `src/data/nomes-v2d.mjs`, integrados em `NOMES_DO_PROJETO`; os campos das linhas exportadas ficaram intactos. A auditoria encontrou um nome em cada língua para as 142 linhas, sem nenhum identificador ou título de documento promovido a nome. O índice global conserva 25 linhas sem nome em cada edição, todas fora do conjunto V2-d; a contagem passou de 130 para 50 entradas sem nome no total das duas edições. A lista dessas linhas fica na prova, sem se declarar resolvida uma dívida alheia a esta passagem.
+
+Na K8, a inspeção encontrou «Governo Constitucional» nos excertos de `oe-2027-cenario-pib-real-crescimento-2027` e `oe-2027-cenario-ihpc-2026`, em ambas as edições. São citações do Conselho das Finanças Públicas e ambos os recibos já existem em `main`. A contagem vermelha de duas páginas na prosa da casa não se reproduziu no HTML de partida. A correção prende a exceção aos recibos efetivamente encontrados: a expressão da casa continua limitada ao índice das áreas. As plantas recusam palavras alteradas, ausência da marca, linha inexistente, expressão acrescentada pela casa e citação colocada noutra rota.
+
+### Códigos lidos e cobertura
+
+| Conferência | Código |
+| --- | ---: |
+| `build` completo | 0 |
+| `verify`, união dos 48 passos | 0 |
+| `typecheck` | 0 |
+| `check:rotulos` | 0 |
+| `check:areas`, no build | 0 |
+| `check:indice`, com navegador e plantas | 0 |
+| `check:cartao`, cadeia completa | 0 |
+| `provar:guardas` | 0 |
+| `check:series`, com o motor disponível | 0 |
+| `check:cruzamento --with-origin` | 0 |
+| Motor, `core.gate` | 0 |
+
+O escrivão executou o perfil completo, sem seleção V2-d. O seu mecanismo normal conferiu a união dos 48 passos: 21 executados pelo build e 27 executados depois. As células U, D e C passaram, incluindo a imutabilidade dos ficheiros e a cabeça construída. Não se afirma uma segunda execução literal de `npm run verify` em série: a prova cobre a cadeia inteira pelo mecanismo do escrivão. A corrida final começou e terminou com a árvore limpa.
+
+A primeira corrida completa teve `build=0`, `verify=1`, `typecheck=0` e `motor=0`. Revelou os âmbitos demasiado largos das plantas V2-a e a falta do conjunto V2-d na régua das unidades. As três emendas foram aplicadas depois de o verify terminar, enquanto o motor ainda corria; o estado final dessa primeira tentativa regista esses ficheiros modificados. Foram comitadas antes da corrida final. O motor passou com a mesma cabeça e árvore limpa. O seu pre-commit foi lido e contém exatamente `python3 -m core.gate`, o comando executado pelo escrivão; não houve novo commit no motor.
+
+O cruzamento com a origem passou. Conserva apenas o aviso já conhecido sobre o hash global do estudo 20, sem divergência em nenhuma linha atravessada. A discussão passou com as 128 plantas e as 306 portas de integração. As plantas das linhas textuais continuaram a recusar as alterações do excerto e do período.
+
+### HTML das duas páginas
+
+As duas páginas foram comparadas byte a byte e por SHA-256 antes e depois. Não houve alteração, pelo que não se repetiram as capturas da quinta correção.
+
+| Página | SHA-256 antes e depois |
+| --- | --- |
+| `o-que-se-discute/index.html` | `e37a8890ae640184cfd936e287beda9b5d91f59a0dbcc8e71a5e0d00572da53f` |
+| `en/under-discussion/index.html` | `f194e3004bc06ed9537763df99f188ea6f7b94666f9124afc9a2a354f294c02e` |
+
+As provas da corrida, os códigos, as cabeças, os estados das árvores e os hashes estão em `resultados-v2dg.json`. Os ficheiros `v2dg-*.codigo` copiam os códigos dos portões; o código das séries vem do registo da execução desse passo. O cruzamento está em `cruzamento-v2dg.log` e `cruzamento-v2dg.codigo`.
+
 ## A quinta correção
 
 Esta passagem corrige apenas os Major 5, 6 e 8 da leitura curta V2-d-e. Os achados 1 a 4 e o 7 eram plantas. Os resultados das passagens anteriores permanecem nos respetivos ficheiros e no histórico Git.

@@ -1,0 +1,24 @@
+
+> o-estado-do-pais@0.1.0 check:cruzamento
+> node scripts/check-cruzamento.mjs --with-origin
+
+
+  cruzamentos · 3254 linha(s) de origem externa em 10 registo(s) · 3254 conferida(s) contra o motor · 2155 com reconferência de programa acrescentada (3077 entrada(s)) · 5 planta(s) vista(s)
+  rótulos da fonte · 2175 de 3379 linha(s) com "name", todas vindas do motor · 3 planta(s) vista(s)
+  séries · 35 linha(s) de série em 1 registo(s) · 35 conferida(s) contra o motor · 4 planta(s) vista(s)
+  cruzamentos · 16 ficheiro(s) inteiro(s) em 11 registo(s) · 16 conferido(s) contra o motor · 5 item(ns) da agenda reconferidos
+    agua-nao-faturada: 1
+    avaliacao-economica-regional-de-portugal-2026: 8
+    concelhos-2026: 2767
+    dominios-2026: 40
+    evora-contas-da-camara-2010-2025: 33
+    evora-economia-e-dinheiro-publico-de-fora-da-camara: 17
+    evora-quem-governou-a-camara-2009-2025: 19
+    oe-2026: 209
+    oe-2027: 160
+
+  1 aviso(s):
+    · o ledger.json de "20 Orcamento do Estado" já não é o que atravessou. Por si só isto não quer dizer nada: o ficheiro traz um "built_at" que muda a cada reconstrução. O que prende é o resumo de cada LINHA — se nenhuma foi nomeada acima, nenhuma mudou.
+
+  ✓ cada linha e cada ficheiro vindos do motor são, byte a byte, o que atravessou, e são ainda o que o motor tem.
+

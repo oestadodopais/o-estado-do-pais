@@ -384,7 +384,7 @@ function textoVisivel(el) {
 }
 
 // K8: o índice das áreas é a única página com esta expressão na prosa da casa.
-// Os dois recibos citam a UTAO. A exceção exige rota, linha e excerto literal.
+// Os dois recibos citam o Conselho das Finanças Públicas. A exceção exige rota, linha e excerto literal.
 const RECIBOS_K8 = ['oe-2027-cenario-pib-real-crescimento-2027', 'oe-2027-cenario-ihpc-2026'];
 const linhasK8=loadClaims({includeWithdrawn:true});
 /** @param {import('node-html-parser').HTMLElement} root @param {string} rota */
