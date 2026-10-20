@@ -1,0 +1,34 @@
+---
+import Frase from '../../../../src/components/explicacoes/FraseDaExplicacao.astro';
+import { ITENS } from '../../../../src/data/discussao.mjs';
+import { resolverExplicacao } from '../../../../src/lib/explicacoes.mjs';
+
+// A planta altera os dados antes de construir: nunca fabrica a marcação do selo.
+const casos = [];
+for (const lang of ['pt', 'en']) {
+  for (const unidade of ['milhões de euros', 'mil milhões de euros', 'milhões', 'euros', '%', 'pontos percentuais', 'p.p.', 'million euros', 'billion euros', 'million', 'percentage points']) {
+    for (const plantada of [false, true]) {
+      const itens = structuredClone(ITENS);
+      const item = itens[0];
+      const sec = item.seccoes.find(s => s.conteudo.some(b => b.paragrafo?.[lang].some(t => t?.claim && t.sufixo)));
+      const bloco = sec.conteudo.find(b => b.paragrafo?.[lang].some(t => t?.claim && t.sufixo));
+      const tokens = bloco.paragrafo[lang];
+      const i = tokens.findIndex(t => t?.claim && t.sufixo);
+      const claim = tokens[i].claim;
+      tokens[i].sufixo = ' ' + unidade;
+      if (plantada) {
+        delete tokens[i].sufixo;
+        tokens.splice(i + 1, 0, ' ' + unidade + '; ');
+      }
+      const si = item.seccoes.indexOf(sec), bi = sec.conteudo.indexOf(bloco);
+      const caminho = `seccoes[${si}].conteudo[${bi}].paragrafo`;
+      const resolvida = resolverExplicacao(item, lang);
+      const partes = resolvida.seccoes[si].blocos.find(b => b.caminho === caminho).pedacos;
+      casos.push({lang, unidade, plantada, claim, caminho, partes});
+    }
+  }
+}
+---
+{casos.map(c => <section data-planta={String(c.plantada)} data-lingua={c.lang} data-unidade={c.unidade} data-linha={c.claim}>
+  <p data-discussao-paragrafo={c.caminho}><Frase partes={c.partes} lang={c.lang} selos={true} recibos={true} /></p>
+</section>)}

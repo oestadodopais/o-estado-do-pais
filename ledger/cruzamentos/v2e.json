@@ -199,7 +199,7 @@
     "eurostat-be-phys": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-20",
-      "exported_row_sha256": "a329ebac7e5ba2b69cfbfb46fdd79a835612f465d43a6da9d750155e56e2d15a",
+      "exported_row_sha256": "60f8d4697744a5521ea5fad80bffddc330dda7c4353f77d3a6de9d0dd2824445",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "8e316907ff630b414af5e38b90a4ae3b3999cf396c2cd4fffbec84b781480139",
       "rh_id": "eurostat-be-phys",
@@ -210,7 +210,7 @@
     "eurostat-el-phys": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-20",
-      "exported_row_sha256": "cd3f4587cd946f9b3663afc8bca2fe3d56d57a5920b16b07ab61b5f0c1e94deb",
+      "exported_row_sha256": "474153bde184fc47b237c5a08225e58c4ab3e9468bdaef6349941d646bfd0242",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "7d69fb509871d14c9319797b4b881d736904aa84a211220639cec4dc0040477c",
       "rh_id": "eurostat-el-phys",
@@ -243,7 +243,7 @@
     "eurostat-pt-phys": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-20",
-      "exported_row_sha256": "11e73db785b840bc45141ffc9c7ce0be980fc93f40888e91686d2e1cfbe2f572",
+      "exported_row_sha256": "2d7d95202f0a234d796bdfe6833ddeddbc950b480f72943fcbc616d72b177e2f",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "5566b07675991e3b7713704c3c2b37b85f59df8e3fcaded47d7ae74d243ed5c6",
       "rh_id": "eurostat-pt-phys",

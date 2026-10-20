@@ -7255,13 +7255,13 @@
         },
         {
           "caminho": "seccoes[1].conteudo[6].paragrafo[19]",
-          "pt": ", entre a Bélgica, com o valor mais baixo dos países com dados (",
-          "en": ", between Belgium, with the lowest value among countries with data (",
+          "pt": ", entre a Bélgica, com o valor mais baixo dos vinte e sete Estados-membros com dados (",
+          "en": ", between Belgium, with the lowest value among the twenty-seven member states with data (",
           "ramo": null,
           "partes": [
             {
-              "pt": ", entre a Bélgica, com o valor mais baixo dos países com dados (",
-              "en": ", between Belgium, with the lowest value among countries with data (",
+              "pt": ", entre a Bélgica, com o valor mais baixo dos vinte e sete Estados-membros com dados (",
+              "en": ", between Belgium, with the lowest value among the twenty-seven member states with data (",
               "classe": "leitura",
               "sobre": "Comparação europeia pelas mesmas unidades, ano e regimes de financiamento.",
               "apoios": [

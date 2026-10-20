@@ -936,3 +936,17 @@ A primeira tentativa de commit do motor foi recusada pela divergência entre o r
 Fica para o lugar de direção a leitura curta sobre este diff e a decisão de aterragem. Não houve fusão nem push.
 
 A corrida de `1c84445a5e86039f16a6ee94cd10a8722a935a85` saiu com `build=0`, `verify=1`, `typecheck=0`: restava H9, que contava o nome da lei dentro do código literal. A correção V2E-58 foi ensaiada na função da própria régua antes de entrar. `c/h9-recusa.json` conserva os códigos e a ocorrência; `c/h9-conferido.json` conserva o controlo e as duas adulterações recusadas. O fecho final volta a correr sobre o commit que contém este acerto.
+
+## A correção V2-e-d
+
+### Decisões
+
+- **V2E-59.** A frase dos médicos identifica os vinte e sete Estados-membros como o grupo da comparação, nas duas edições. A nota dos três recibos distingue esse grupo do conjunto alojado, que inclui outros países, e conserva a ausência de valor da Eslováquia. «Com dados» seleciona os membros com valor; não afirma que todos os membros tenham valor.
+- **V2E-60.** A planta da régua `unidadesDepoisDoSelo` altera uma cópia dos itens antes da construção: retira `sufixo` de um token de valor e insere a unidade nas palavras seguintes. O Astro constrói o parágrafo pelo componente real `FraseDaExplicacao`; só depois a régua lê o HTML. Os controlos conservam a unidade no sufixo. A planta passa a fazer parte de `check:discussao`.
+- **V2E-61.** A corrida completa, o cruzamento com a origem, as séries, o inventário e as capturas de entrega ficam em `d/`, dentro desta pasta. A cabeça verificada é o último commit que altera código ou dados. O commit posterior incorpora apenas o relatório e as provas dessa cabeça; não se atribui retroativamente o seu identificador à corrida. A identidade do código entregue é verificável pela ausência de diferenças fora desta pasta entre a cabeça dos portões e o commit de incorporação das provas.
+
+### Provas da preparação
+
+A planta construída deu 22 casos vermelhos e 22 controlos verdes: [planta-selos.json](d/planta-selos.json), [HTML construído](d/planta-selos.html) e [registo](d/planta-selos.log). O guião está em `tests/discussao/planta-selos.mjs` e a cópia dos itens é construída em `tests/discussao/planta-selos/pages/index.astro`.
+
+A primeira exportação foi recusada por `ModuleNotFoundError: No module named 'publisher'`; a repetição pelo módulo Python passou. Os registos estão em [exportacao.log](d/exportacao.log) e [exportacao-repetida.log](d/exportacao-repetida.log).

@@ -1,0 +1,5 @@
+V2E: 177 linhas e provas preparadas.
+Traceback (most recent call last):
+  File "<motor>/publisher/export_site_rows.py", line 159, in <module>
+    from publisher.definition_sources import fontes_da_definicao
+ModuleNotFoundError: No module named 'publisher'

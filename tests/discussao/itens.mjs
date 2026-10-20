@@ -344,6 +344,10 @@ export function conferirTudo(dist=path.join(raiz,'dist')){
 }
 if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url)){
  const r=process.argv.includes('--dados')?{erros:conferirDeclaracoes()}:conferirTudo(process.env.OEDP_DIST??path.join(raiz,'dist'));
+ if(!process.argv.includes('--dados')){
+  const {plantasDosSelosConstruidos}=await import('./planta-selos.mjs');
+  const selos=await plantasDosSelosConstruidos();r.plantas.push(...selos.plantas);
+ }
  const out=process.argv.indexOf('--json');if(out>=0)fs.writeFileSync(process.argv[out+1],JSON.stringify(r,null,2)+'\n');
  console.log(`V2B · ${r.erros.length} erro(s), ${r.plantas?.filter(p=>p.mordeu).length??0} de ${r.plantas?.length??0} plantas, ${r.integracoes?.length??0} portas de integração.`);
  for(const erro of r.erros)console.error(erro);

@@ -1,0 +1,491 @@
+{
+  "html_sha256": "3fc53356a4ad198659213c0b6ec39e4fd12064f168497965357cafb88b4966f7",
+  "controlos": [
+    {
+      "lang": "pt",
+      "unidade": "milhões de euros",
+      "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "codigo": 0,
+      "desvios": []
+    },
+    {
+      "lang": "pt",
+      "unidade": "mil milhões de euros",
+      "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "codigo": 0,
+      "desvios": []
+    },
+    {
+      "lang": "pt",
+      "unidade": "milhões",
+      "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "codigo": 0,
+      "desvios": []
+    },
+    {
+      "lang": "pt",
+      "unidade": "euros",
+      "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "codigo": 0,
+      "desvios": []
+    },
+    {
+      "lang": "pt",
+      "unidade": "%",
+      "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "codigo": 0,
+      "desvios": []
+    },
+    {
+      "lang": "pt",
+      "unidade": "pontos percentuais",
+      "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "codigo": 0,
+      "desvios": []
+    },
+    {
+      "lang": "pt",
+      "unidade": "p.p.",
+      "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "codigo": 0,
+      "desvios": []
+    },
+    {
+      "lang": "pt",
+      "unidade": "million euros",
+      "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "codigo": 0,
+      "desvios": []
+    },
+    {
+      "lang": "pt",
+      "unidade": "billion euros",
+      "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "codigo": 0,
+      "desvios": []
+    },
+    {
+      "lang": "pt",
+      "unidade": "million",
+      "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "codigo": 0,
+      "desvios": []
+    },
+    {
+      "lang": "pt",
+      "unidade": "percentage points",
+      "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "codigo": 0,
+      "desvios": []
+    },
+    {
+      "lang": "en",
+      "unidade": "milhões de euros",
+      "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "codigo": 0,
+      "desvios": []
+    },
+    {
+      "lang": "en",
+      "unidade": "mil milhões de euros",
+      "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "codigo": 0,
+      "desvios": []
+    },
+    {
+      "lang": "en",
+      "unidade": "milhões",
+      "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "codigo": 0,
+      "desvios": []
+    },
+    {
+      "lang": "en",
+      "unidade": "euros",
+      "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "codigo": 0,
+      "desvios": []
+    },
+    {
+      "lang": "en",
+      "unidade": "%",
+      "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "codigo": 0,
+      "desvios": []
+    },
+    {
+      "lang": "en",
+      "unidade": "pontos percentuais",
+      "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "codigo": 0,
+      "desvios": []
+    },
+    {
+      "lang": "en",
+      "unidade": "p.p.",
+      "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "codigo": 0,
+      "desvios": []
+    },
+    {
+      "lang": "en",
+      "unidade": "million euros",
+      "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "codigo": 0,
+      "desvios": []
+    },
+    {
+      "lang": "en",
+      "unidade": "billion euros",
+      "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "codigo": 0,
+      "desvios": []
+    },
+    {
+      "lang": "en",
+      "unidade": "million",
+      "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "codigo": 0,
+      "desvios": []
+    },
+    {
+      "lang": "en",
+      "unidade": "percentage points",
+      "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "codigo": 0,
+      "desvios": []
+    }
+  ],
+  "plantas": [
+    {
+      "lang": "pt",
+      "unidade": "milhões de euros",
+      "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "codigo": 1,
+      "desvios": [
+        {
+          "paragrafo": "seccoes[1].conteudo[1].paragrafo",
+          "recibo": "/livro-razao/oe-2027-saude-despesa-total-consolidada-variacao",
+          "depois": "milhões de euros; . A despesa efetiva consolidada passa de 18 062,4"
+        }
+      ],
+      "nome": "unidade depois do selo, construída dos dados",
+      "mordeu": true
+    },
+    {
+      "lang": "pt",
+      "unidade": "mil milhões de euros",
+      "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "codigo": 1,
+      "desvios": [
+        {
+          "paragrafo": "seccoes[1].conteudo[1].paragrafo",
+          "recibo": "/livro-razao/oe-2027-saude-despesa-total-consolidada-variacao",
+          "depois": "mil milhões de euros; . A despesa efetiva consolidada passa de 18 062,4"
+        }
+      ],
+      "nome": "unidade depois do selo, construída dos dados",
+      "mordeu": true
+    },
+    {
+      "lang": "pt",
+      "unidade": "milhões",
+      "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "codigo": 1,
+      "desvios": [
+        {
+          "paragrafo": "seccoes[1].conteudo[1].paragrafo",
+          "recibo": "/livro-razao/oe-2027-saude-despesa-total-consolidada-variacao",
+          "depois": "milhões; . A despesa efetiva consolidada passa de 18 062,4"
+        }
+      ],
+      "nome": "unidade depois do selo, construída dos dados",
+      "mordeu": true
+    },
+    {
+      "lang": "pt",
+      "unidade": "euros",
+      "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "codigo": 1,
+      "desvios": [
+        {
+          "paragrafo": "seccoes[1].conteudo[1].paragrafo",
+          "recibo": "/livro-razao/oe-2027-saude-despesa-total-consolidada-variacao",
+          "depois": "euros; . A despesa efetiva consolidada passa de 18 062,4"
+        }
+      ],
+      "nome": "unidade depois do selo, construída dos dados",
+      "mordeu": true
+    },
+    {
+      "lang": "pt",
+      "unidade": "%",
+      "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "codigo": 1,
+      "desvios": [
+        {
+          "paragrafo": "seccoes[1].conteudo[1].paragrafo",
+          "recibo": "/livro-razao/oe-2027-saude-despesa-total-consolidada-variacao",
+          "depois": "%; . A despesa efetiva consolidada passa de 18 062,4"
+        }
+      ],
+      "nome": "unidade depois do selo, construída dos dados",
+      "mordeu": true
+    },
+    {
+      "lang": "pt",
+      "unidade": "pontos percentuais",
+      "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "codigo": 1,
+      "desvios": [
+        {
+          "paragrafo": "seccoes[1].conteudo[1].paragrafo",
+          "recibo": "/livro-razao/oe-2027-saude-despesa-total-consolidada-variacao",
+          "depois": "pontos percentuais; . A despesa efetiva consolidada passa de 18 062,4"
+        }
+      ],
+      "nome": "unidade depois do selo, construída dos dados",
+      "mordeu": true
+    },
+    {
+      "lang": "pt",
+      "unidade": "p.p.",
+      "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "codigo": 1,
+      "desvios": [
+        {
+          "paragrafo": "seccoes[1].conteudo[1].paragrafo",
+          "recibo": "/livro-razao/oe-2027-saude-despesa-total-consolidada-variacao",
+          "depois": "p.p.; . A despesa efetiva consolidada passa de 18 062,4"
+        }
+      ],
+      "nome": "unidade depois do selo, construída dos dados",
+      "mordeu": true
+    },
+    {
+      "lang": "pt",
+      "unidade": "million euros",
+      "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "codigo": 1,
+      "desvios": [
+        {
+          "paragrafo": "seccoes[1].conteudo[1].paragrafo",
+          "recibo": "/livro-razao/oe-2027-saude-despesa-total-consolidada-variacao",
+          "depois": "million euros; . A despesa efetiva consolidada passa de 18 062,4"
+        }
+      ],
+      "nome": "unidade depois do selo, construída dos dados",
+      "mordeu": true
+    },
+    {
+      "lang": "pt",
+      "unidade": "billion euros",
+      "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "codigo": 1,
+      "desvios": [
+        {
+          "paragrafo": "seccoes[1].conteudo[1].paragrafo",
+          "recibo": "/livro-razao/oe-2027-saude-despesa-total-consolidada-variacao",
+          "depois": "billion euros; . A despesa efetiva consolidada passa de 18 062,4"
+        }
+      ],
+      "nome": "unidade depois do selo, construída dos dados",
+      "mordeu": true
+    },
+    {
+      "lang": "pt",
+      "unidade": "million",
+      "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "codigo": 1,
+      "desvios": [
+        {
+          "paragrafo": "seccoes[1].conteudo[1].paragrafo",
+          "recibo": "/livro-razao/oe-2027-saude-despesa-total-consolidada-variacao",
+          "depois": "million; . A despesa efetiva consolidada passa de 18 062,4"
+        }
+      ],
+      "nome": "unidade depois do selo, construída dos dados",
+      "mordeu": true
+    },
+    {
+      "lang": "pt",
+      "unidade": "percentage points",
+      "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "codigo": 1,
+      "desvios": [
+        {
+          "paragrafo": "seccoes[1].conteudo[1].paragrafo",
+          "recibo": "/livro-razao/oe-2027-saude-despesa-total-consolidada-variacao",
+          "depois": "percentage points; . A despesa efetiva consolidada passa de 18 062,4"
+        }
+      ],
+      "nome": "unidade depois do selo, construída dos dados",
+      "mordeu": true
+    },
+    {
+      "lang": "en",
+      "unidade": "milhões de euros",
+      "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "codigo": 1,
+      "desvios": [
+        {
+          "paragrafo": "seccoes[1].conteudo[1].paragrafo",
+          "recibo": "/en/ledger/oe-2027-saude-despesa-total-consolidada-variacao",
+          "depois": "milhões de euros; . Consolidated effective expenditure goes from 18 062,4"
+        }
+      ],
+      "nome": "unidade depois do selo, construída dos dados",
+      "mordeu": true
+    },
+    {
+      "lang": "en",
+      "unidade": "mil milhões de euros",
+      "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "codigo": 1,
+      "desvios": [
+        {
+          "paragrafo": "seccoes[1].conteudo[1].paragrafo",
+          "recibo": "/en/ledger/oe-2027-saude-despesa-total-consolidada-variacao",
+          "depois": "mil milhões de euros; . Consolidated effective expenditure goes from 18 062,4"
+        }
+      ],
+      "nome": "unidade depois do selo, construída dos dados",
+      "mordeu": true
+    },
+    {
+      "lang": "en",
+      "unidade": "milhões",
+      "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "codigo": 1,
+      "desvios": [
+        {
+          "paragrafo": "seccoes[1].conteudo[1].paragrafo",
+          "recibo": "/en/ledger/oe-2027-saude-despesa-total-consolidada-variacao",
+          "depois": "milhões; . Consolidated effective expenditure goes from 18 062,4"
+        }
+      ],
+      "nome": "unidade depois do selo, construída dos dados",
+      "mordeu": true
+    },
+    {
+      "lang": "en",
+      "unidade": "euros",
+      "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "codigo": 1,
+      "desvios": [
+        {
+          "paragrafo": "seccoes[1].conteudo[1].paragrafo",
+          "recibo": "/en/ledger/oe-2027-saude-despesa-total-consolidada-variacao",
+          "depois": "euros; . Consolidated effective expenditure goes from 18 062,4"
+        }
+      ],
+      "nome": "unidade depois do selo, construída dos dados",
+      "mordeu": true
+    },
+    {
+      "lang": "en",
+      "unidade": "%",
+      "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "codigo": 1,
+      "desvios": [
+        {
+          "paragrafo": "seccoes[1].conteudo[1].paragrafo",
+          "recibo": "/en/ledger/oe-2027-saude-despesa-total-consolidada-variacao",
+          "depois": "%; . Consolidated effective expenditure goes from 18 062,4"
+        }
+      ],
+      "nome": "unidade depois do selo, construída dos dados",
+      "mordeu": true
+    },
+    {
+      "lang": "en",
+      "unidade": "pontos percentuais",
+      "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "codigo": 1,
+      "desvios": [
+        {
+          "paragrafo": "seccoes[1].conteudo[1].paragrafo",
+          "recibo": "/en/ledger/oe-2027-saude-despesa-total-consolidada-variacao",
+          "depois": "pontos percentuais; . Consolidated effective expenditure goes from 18 062,4"
+        }
+      ],
+      "nome": "unidade depois do selo, construída dos dados",
+      "mordeu": true
+    },
+    {
+      "lang": "en",
+      "unidade": "p.p.",
+      "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "codigo": 1,
+      "desvios": [
+        {
+          "paragrafo": "seccoes[1].conteudo[1].paragrafo",
+          "recibo": "/en/ledger/oe-2027-saude-despesa-total-consolidada-variacao",
+          "depois": "p.p.; . Consolidated effective expenditure goes from 18 062,4"
+        }
+      ],
+      "nome": "unidade depois do selo, construída dos dados",
+      "mordeu": true
+    },
+    {
+      "lang": "en",
+      "unidade": "million euros",
+      "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "codigo": 1,
+      "desvios": [
+        {
+          "paragrafo": "seccoes[1].conteudo[1].paragrafo",
+          "recibo": "/en/ledger/oe-2027-saude-despesa-total-consolidada-variacao",
+          "depois": "million euros; . Consolidated effective expenditure goes from 18 062,4"
+        }
+      ],
+      "nome": "unidade depois do selo, construída dos dados",
+      "mordeu": true
+    },
+    {
+      "lang": "en",
+      "unidade": "billion euros",
+      "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "codigo": 1,
+      "desvios": [
+        {
+          "paragrafo": "seccoes[1].conteudo[1].paragrafo",
+          "recibo": "/en/ledger/oe-2027-saude-despesa-total-consolidada-variacao",
+          "depois": "billion euros; . Consolidated effective expenditure goes from 18 062,4"
+        }
+      ],
+      "nome": "unidade depois do selo, construída dos dados",
+      "mordeu": true
+    },
+    {
+      "lang": "en",
+      "unidade": "million",
+      "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "codigo": 1,
+      "desvios": [
+        {
+          "paragrafo": "seccoes[1].conteudo[1].paragrafo",
+          "recibo": "/en/ledger/oe-2027-saude-despesa-total-consolidada-variacao",
+          "depois": "million; . Consolidated effective expenditure goes from 18 062,4"
+        }
+      ],
+      "nome": "unidade depois do selo, construída dos dados",
+      "mordeu": true
+    },
+    {
+      "lang": "en",
+      "unidade": "percentage points",
+      "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "codigo": 1,
+      "desvios": [
+        {
+          "paragrafo": "seccoes[1].conteudo[1].paragrafo",
+          "recibo": "/en/ledger/oe-2027-saude-despesa-total-consolidada-variacao",
+          "depois": "percentage points; . Consolidated effective expenditure goes from 18 062,4"
+        }
+      ],
+      "nome": "unidade depois do selo, construída dos dados",
+      "mordeu": true
+    }
+  ]
+}

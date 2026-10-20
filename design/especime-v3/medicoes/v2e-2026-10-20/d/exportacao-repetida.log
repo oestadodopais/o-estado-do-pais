@@ -1,0 +1,341 @@
+
+  sítio: <worktree>
+
+  manifesto v2e · 177 linhas · 0 grupos excluídos
+
+    oe2027-indicador-medico                      as printed            Aumento do número de utentes com médico de família atribuídos
+    oe2027-compromisso-consultas                 as printed            Neste contexto, o Governo assume o compromisso de aumentar o número de consultas médicas, tanto nos cuidados de saúde primários quanto em contexto hospitalar, o que representa um passo decisivo na resposta à procura e no reforço da capacidade assistencial do SNS.
+    oe2027-compromisso-cirurgias                 as printed            O acesso a procedimentos cirúrgicos constitui igualmente uma prioridade central da ação do SNS, com a definição de metas claras de aumento do volume total de cirurgias e do peso da cirurgia em ambulatório.
+    dgo-atraso-45-p                              engine value          689,9
+    dgo-regularizacao-ae                         engine value          1 398,6
+    sns-divida-2026-divida-total-fornecedores-externos-0 engine value          21 139,04
+    sns-divida-2026-divida-total-fornecedores-externos-1 engine value          0,0
+    sns-divida-2026-divida-total-fornecedores-externos-2 engine value          0,0
+    sns-divida-2026-divida-total-fornecedores-externos-3 engine value          0,0
+    sns-divida-2026-divida-total-fornecedores-externos-4 engine value          0,0
+    sns-divida-2026-divida-total-fornecedores-externos-5 engine value          0,0
+    sns-divida-2026-divida-total-fornecedores-externos-6 engine value          51 048,46
+    sns-divida-2026-divida-total-fornecedores-externos-7 engine value          1 125 164,8
+    sns-divida-2026-divida-total-fornecedores-externos-8 engine value          11 417 286,29
+    sns-divida-2026-divida-total-fornecedores-externos-9 engine value          1 668 007,55
+    sns-divida-2026-divida-total-fornecedores-externos-10 engine value          17 673 094,39
+    sns-divida-2026-divida-total-fornecedores-externos-11 engine value          32 809 039,64
+    sns-divida-2026-divida-total-fornecedores-externos-12 engine value          54 036 318,23
+    sns-divida-2026-divida-total-fornecedores-externos-13 engine value          9 298 313,4
+    sns-divida-2026-divida-total-fornecedores-externos-14 engine value          30 053 451,96
+    sns-divida-2026-divida-total-fornecedores-externos-15 engine value          31 806 955,95
+    sns-divida-2026-divida-total-fornecedores-externos-16 engine value          20 181 346,6
+    sns-divida-2026-divida-total-fornecedores-externos-17 engine value          20 661 034,89
+    sns-divida-2026-divida-total-fornecedores-externos-18 engine value          17 789 083,51
+    sns-divida-2026-divida-total-fornecedores-externos-19 engine value          27 373 779,79
+    sns-divida-2026-divida-total-fornecedores-externos-20 engine value          21 143 744,3
+    sns-divida-2026-divida-total-fornecedores-externos-21 engine value          33 004 212,74
+    sns-divida-2026-divida-total-fornecedores-externos-22 engine value          38 312 955,25
+    sns-divida-2026-divida-total-fornecedores-externos-23 engine value          8 023 968,96
+    sns-divida-2026-divida-total-fornecedores-externos-24 engine value          48 372 856,2
+    sns-divida-2026-divida-total-fornecedores-externos-25 engine value          15 182 620,38
+    sns-divida-2026-divida-total-fornecedores-externos-26 engine value          121 758 344,94
+    sns-divida-2026-divida-total-fornecedores-externos-27 engine value          43 911 710,12
+    sns-divida-2026-divida-total-fornecedores-externos-28 engine value          45 004 872,14
+    sns-divida-2026-divida-total-fornecedores-externos-29 engine value          64 480 404,89
+    sns-divida-2026-divida-total-fornecedores-externos-30 engine value          23 290 140,0
+    sns-divida-2026-divida-total-fornecedores-externos-31 engine value          24 058 392,37
+    sns-divida-2026-divida-total-fornecedores-externos-32 engine value          64 001 396,65
+    sns-divida-2026-divida-total-fornecedores-externos-33 engine value          78 766 579,92
+    sns-divida-2026-divida-total-fornecedores-externos-34 engine value          75 400 927,11
+    sns-divida-2026-divida-total-fornecedores-externos-35 engine value          79 139 561,76
+    sns-divida-2026-divida-total-fornecedores-externos-36 engine value          39 733 703,03
+    sns-divida-2026-divida-total-fornecedores-externos-37 engine value          40 261 850,68
+    sns-divida-2026-divida-total-fornecedores-externos-38 engine value          21 797 878,9
+    sns-divida-2026-divida-total-fornecedores-externos-39 engine value          69 038 077,0
+    sns-divida-2026-divida-total-fornecedores-externos-40 engine value          13 696 249,15
+    sns-divida-2026-divida-total-fornecedores-externos-41 engine value          55 096 613,63
+    sns-divida-2026-divida-total-fornecedores-externos-42 engine value          25 815 480,53
+    sns-divida-2026-divida-total-fornecedores-externos-43 engine value          9 785 158,09
+    sns-divida-2026-divida-total-fornecedores-externos-44 engine value          13 628 037,49
+    sns-divida-2026-divida-total-fornecedores-externos-45 engine value          25 144 289,6
+    sns-divida-2026-divida-total-fornecedores-externos-46 engine value          19 413 374,76
+    sns-divida-2026-divida-total-fornecedores-externos-47 engine value          20 208 298,14
+    sns-divida-2026-divida-total-fornecedores-externos-48 engine value          18 944 991,03
+    sns-divida-2026-divida-total-fornecedores-externos-49 engine value          24 712 004,94
+    sns-divida-2026-divida-total-fornecedores-externos-50 engine value          30 543 294,73
+    sns-divida-2026-divida-total-fornecedores-externos-51 engine value          19 182 076,49
+    sns-divida-2026-divida-total-fornecedores-externos-52 engine value          10 679 203,53
+    pe-oe-brisa-negociacao                       as printed            Encontram-se igualmente em curso os trabalhos de negociação36 no âmbito do contrato de concessão da Brisa, abrangendo, entre outras matérias, a avaliação de investimentos contratualmente previstos, a verificação das condições e termos de uma eventual reposição do equilíbrio financeiro do contrato e a avaliação de eventuais novos investimentos a realizar.
+    pe-oe-brisa-pedido                           as printed            Desenvolvimento do procedimento negocial conduzido pela comissão de negociação constituída através do Despacho nº 15154/2024, de 16 de dezembro de 2024, da Diretora da UTAP, no âmbito do qual a Concessionária Brisa quantificou parte dos pedidos ou matérias em negociação (conforme descritas no referido despacho), no montante de cerca de 1122,5 milhões de euros;
+    pe-oe-riscos-total                           as printed            De acordo com a informação disponível, o valor global dos pedidos de REF e dos pedidos formulados nos litígios em curso pelas concessionárias e subconcessionárias rodoviárias ascende a cerca de 2388,2 milhões de euros. Em comparação com o valor global dos riscos e contingências apresentado no Relatório do Orçamento do Estado para 2026, verifica-se um acréscimo de cerca de 1140 milhões de euros.
+    pe-oe-riscos-nao-reconhecimento              as printed            Em todo o caso, importa sublinhar que a presente análise não implica qualquer reconhecimento ou assunção, ainda que tácita, de responsabilidades por parte dos parceiros públicos decorrentes das pretensões deduzidas pelos parceiros privados, quer quanto aos respetivos fundamentos, que, na maioria das situações, são rejeitados pelos parceiros públicos, quer quanto aos montantes peticionados.
+    pe-oe-algarve-cautelar                       as printed            O litígio em causa envolve (i) uma ação principal arbitral (ainda pendente), cujo valor ascende a 445 milhões de euros; e (ii) uma ação cautelar, no âmbito da qual o tribunal arbitral, pela decisão proferida no primeiro trimestre de 2021, condenou a Infraestruturas de Portugal a pagar à subconcessionária, a título provisório, um montante de cerca de 30 milhões de euros, acrescido de um valor mensal de cerca de 1,3 milhões de euros até à decisão da causa principal (valores acrescidos de imposto sobre o valor acrescentado nos termos legais).
+    pe-oe-algarve-provisorio                     as printed            Pagamento provisório de 15,2 milhões de euros (correspondente aos períodos do segundo semestre de 2025 e ao primeiro semestre de 2026) no âmbito do processo da Rotas do Algarve Litoral, S.A. 60, reduzindo, nessa medida, o valor da contingência em causa;
+    pe-oe-contingentes                           as printed            Ainda no que respeita aos principais riscos orçamentais identificados, importa mencionar que a previsão de encargos contingenciais não contempla o pagamento, a qualquer título, das denominadas compensações contingentes previstas nos contratos atualmente em vigor, em linha com o Relatório nº 15/2012, da 2ª secção do Tribunal de Contas (Auditoria ao Modelo de Gestão, Financiamento e Regulação do Setor Rodoviário), com exceção das situações em que esses pagamentos sejam reclamados pelos parceiros privados no âmbito dos processos judiciais ou arbitrais.
+    pe-oe-beira-abolicao                         as printed            Salienta-se ainda o desenvolvimento dos trabalhos de negociação no âmbito do contrato de concessão da Beira Interior, na sequência do pedido apresentado pela concessionária no contexto da abolição das portagens, tendo em vista verificar se estão reunidas as condições para a reposição do equilíbrio financeiro do contrato e para negociar os respetivos termos, abrangendo ainda a renegociação de outros aspetos contratuais relevantes e a avaliação de eventuais novos investimentos a realizar.
+    pe-oe-apoio-dl87a                            as printed            Regista-se também um aparente aumento dos encargos brutos plurianuais, decorrente da inclusão dos montantes relativos ao apoio pago às concessionárias com titularidade de portagem no âmbito do Decreto-Lei nº 87-A/2022. Este apoio não constava do Relatório do Orçamento do Estado anterior, uma vez que, do ponto de vista da Infraestruturas de Portugal, tem um efeito neutro (o montante desembolsado por esta entidade corresponde ao montante que lhe é atribuído pelo Estado). Contudo, na ótica do setor público como um todo, este apoio configura um encargo efetivo com parcerias público-privadas, pelo que se passa agora a incluir no presente Relatório. Em face desta alteração, os valores relativos a este item não são diretamente comparáveis com os apresentados no Relatório anterior, sendo que a comparabilidade fica assegurada a partir dos próximos Relatórios.
+    pe-despacho-alargamentos                     as printed            a) Avaliação dos alargamentos de vias a realizar assim como das regras contratuais relativas aos alargamentos de vias e sua eventual alteração;
+      ↳ #page=1 from the declared document.page
+    pe-despacho-investimentos-previstos          as printed            b) Avaliação de investimentos contratualmente previstos a realizar, incluindo a Ligação ao Novo Aeroporto de Lisboa e a Ligação à Plataforma Logística do Poceirão e a Ligação à Plataforma Logística Lisboa Norte, e consideração das comparticipações já pagas pelo Concedente relativamente a empreendimentos cuja implementação ainda não se iniciou, ou não se perspetiva iniciar;
+      ↳ #page=1 from the declared document.page
+    pe-despacho-equilibrio                       as printed            c) Verificação das condições do direito à reposição do equilíbrio financeiro do contrato e a negociação dos termos da eventual reposição desse equilíbrio, designadamente no que se refere: i) à implementação, através da publicação do Decreto-Lei n.º 71/2018, de 5 de setembro, das propostas do Grupo de Trabalho informal para a “Eventual Revisão do Sistema de Classificação de Veículos Ligeiros (Classes 1 e 2) para efeitos de Aplicação de Taxas de Portagem”, nos termos do Protocolo assinado em 9 de agosto de 2018 entre o IMT, I. P., e a BRISA; ii) à implementação do Decreto-Lei n.º 120/2021, de 24 de dezembro (que alterou o Decreto-Lei n.º 71/2018, de 5 de setembro), relativo à reclassificação em classe 1 dos veículos elétricos e híbridos dotados de tração aos dois eixos; iii. à atribuição de isenções de pagamento de taxas de portagem (aos veículos da Polícia Judiciária e aos veículos dedicados ao transporte de doentes); iv. à implementação do Decreto-Lei n.º 87-A/22, de 19 de dezembro (que aprovou o regime excecional de atualização das tarifas e taxas de portagem para o ano de 2023);
+      ↳ #page=1 from the declared document.page
+    pe-despacho-comparticipacoes                 as printed            d) Acertos relativamente a comparticipações financeiras pagas pelo Concedente para investimentos em aberto em 2008 e, entretanto, executados pela BRISA, à luz do controlo e reporte, nas suas competências contratuais e legais, pela Inspeção-Geral de Finanças — Autoridade de Auditoria;
+      ↳ #page=1 from the declared document.page
+    pe-despacho-braga                            as printed            e) Acerto relativamente ao pagamento das receitas de portagem na Circular Sul de Braga, para o período entre 31 de dezembro de 2008 (data do Acordo Brisa) e 5 de fevereiro de 2010 (data da transição da exploração da Ascendi para a Brisa);
+      ↳ #page=1 from the declared document.page
+    pe-despacho-investimentos-novos              as printed            f) Avaliação de eventuais novos investimentos a realizar, designadamente relativos a novas acessibilidades e a novas ligações à rede rodoviária envolvente, e ponderação da viabilidade, e dos efeitos, da sua integração na concessão;
+      ↳ #page=1 from the declared document.page
+    pe-despacho-limites                          as printed            g) Outras matérias contratuais que requeiram clarificação e estabilização, nomeadamente no que se refere a limites da concessão;
+      ↳ #page=2 from the declared document.page
+    pe-despacho-qualidade                        as printed            h) Exploração de possibilidades de obtenção de ganhos de eficiência na relação contratual, incluindo a definição de mecanismos relativos à monitorização e avaliação da qualidade de serviço, à semelhança do que se verifica com outras concessões e subconcessões rodoviárias.”
+      ↳ #page=2 from the declared document.page
+    pe-scut-trocos                               as printed            São eliminadas as taxas de portagem cobradas aos utilizadores nos lanços e sublanços das seguintes autoestradas: a) A4 — Transmontana e Túnel do Marão; b) A13 e A13-1 — Pinhal Interior; c) A22 — Algarve; d) A23 — Beira Interior; e) A24 — Interior Norte; f) A25 — Beiras Litoral e Alta; g) A28 — Litoral Norte, nos troços entre Esposende e Antas, e entre Neiva e Darque.
+      ↳ #page=1 from the declared document.page
+    pe-scut-vigencia                             as printed            A presente lei entra em vigor no dia 1 de janeiro de 2025.
+      ↳ #page=2 from the declared document.page
+    pe-dl87a-atualizacao                         as printed            1 — A atualização das tarifas e taxas de portagem para o ano de 2023 é fixada em 4,9 %, por aplicação de um coeficiente de 1,049 às tarifas e taxas em vigor no ano de 2022, sem prejuízo dos arredondamentos previstos contratualmente.
+      ↳ #page=1 from the declared document.page
+    pe-dl87a-apoio                               as printed            1 — O apoio é assegurado através de uma comparticipação do Estado, a entregar às concessionárias, em complemento do pagamento das tarifas e taxas de portagem realizado pelos utilizadores no montante correspondente à diferença entre a atualização definida no artigo anterior e uma atualização que corresponderia a 7.7 %.
+      ↳ #page=2 from the declared document.page
+    pe-dl87a-financiamento                       as printed            Os encargos resultantes do apoio previsto nos artigos 3.º e 4.º são suportados diretamente pelo Orçamento do Estado, a processar pela DGTF.
+      ↳ #page=3 from the declared document.page
+    pe-dl87a-efeitos                             as printed            2 — A fixação da atualização das taxas e tarifas de portagem nos termos do n.º 1 do artigo 2.º produz efeitos a 1 de janeiro de 2023.
+      ↳ #page=4 from the declared document.page
+    pe-tc15-acordos                              as printed            Porém, no decurso dos trabalhos de auditoria, em anexo aos contratos “reformados”, foi detetada a existência de acordos entre os Bancos financiadores, as Subconcessionárias e a E.P., S.A., consagrando um conjunto de denominadas “compensações contingentes”, as quais, nos termos acordados, são devidas às subconcessionárias sem reservas ou condições e têm por objetivo compensar as mesmas pelos custos financeiros adicionais sofridos, em resultado da crise financeira internacional.
+      ↳ #page=21 from the declared document.page
+    pe-tc15-remuneracao                          as printed            Atente-se que os acordos em causa constituíram, assim, uma forma adicional de remuneração das subconcessões, que não estava prevista nos cadernos de encargos, que não foi objeto de apreciação no âmbito da análise e da classificação das propostas, que não foi espelhada no texto dos contratos principais, designadamente nas cláusulas que, nos mesmos, definiram as remunerações, e que não foi visada por este Tribunal.
+      ↳ #page=21 from the declared document.page
+    pe-tc15-infracoes                            as printed            Neste contexto, o Tribunal vai estar atento aos eventuais pagamentos a realizar sob a forma de “compensações contingentes”, uma vez que podem, os mesmos, vir a constituir infrações financeiras.
+      ↳ #page=21 from the declared document.page
+    pe-tc15-fundamento                           as printed            No entanto, os pagamentos ou remunerações devidos nos termos de um contrato têm de encontrar o seu fundamento nas cláusulas contratuais que definem o respetivo regime jurídico, ou seja, se, quando, como e a quem os mesmos ou as mesmas são devidos, o que não é possível pela análise do Caso Base de uma subconcessão, uma vez que aquele é tão só um conjunto de pressupostos, projeções e outros dados de natureza económico-financeira.
+      ↳ #page=22 from the declared document.page
+    pe-tc15-futuros                              as printed            Os encargos futuros que a empresa prevê, com aquelas concessões, mais os compromissos que assumiu, no âmbito do NMGFSR para com as subconcessões rodoviárias, ascenderão, entre 2011 e 2014, a aproximadamente 3,3 mil milhões de euros.
+      ↳ #page=40 from the declared document.page
+    pe-brisa-prazo-minuta                        as printed            A concessão termina em 31 de Dezembro de 2035.
+    pe-brisa-periodo-imt                         as printed            Período da Concessão: 1972 – 2035
+    pe-brisa-vias-minuta                         as printed            1 — A concessão tem por objecto a construção, conservação e exploração, em regime de portagem, das seguintes auto-estradas: a) A 1/IP 1 — Auto-Estrada do Norte — desde Vila Franca de Xira até Carvalhos, com a extensão de 266,9 km; b) A 2/IP 1 — Auto-Estrada do Sul — desde Fogueteiro até à via longitudinal do Algarve, com a extensão de 225,8 km; c) A 3/IP 1 — auto-estrada Porto-Valença desde o nó da Maia até Valença, com a extensão de 98,1 km; d) A 4/IP 4 — auto-estrada Porto-Amarante desde o nó de Ermesinde até Amarante, com a extensão de 48,3 km; e) A 5/IC 15 — Auto-Estrada da Costa do Estoril — desde o nó do Estádio Nacional até Cascais, com a extensão de 16,9 km; f)A6/IP 7 — auto-estrada Marateca (A2) — Caia — desde a A 2 até Elvas, com a extensão de 138,8 km; g) A 10/IC 2 — auto-estrada Bucelas (CREL) — Carregado — IC 3, com a extensão de 39,8 km; h) A 12/IC 3 — auto-estrada que liga Setúbal ao Montijo, com a extensão de 24,8 km; i) A 13/IC 3/IC 11 — auto-estrada entre Almeirim e Marateca, com a extensão de 78,7 km; j) A 14/IP 3 — auto-estrada entre Santa Eulália e Coimbra (Norte), com a extensão de 39,9 km; l) Ligação ao novo aeroporto de Lisboa, cuja extensão dependerá da respectiva localização; m) A9/IC 18 — CREL — Circular Regional Exterior de Lisboa, desde o Estádio Nacional (A5) até Alverca, com a extensão de 34,4 km.
+    pe-dl87a-apoio-retificado                    as printed            «1 — O apoio é assegurado através de um pagamento do Estado, a entregar às concessionárias, em complemento do pagamento das tarifas e taxas de portagem realizado pelos utilizadores, no montante correspondente à diferença entre as tarifas e taxas de portagem que resultariam da aplicação de um coeficiente de atualização para o ano de 2023 de 1,077, equivalente a um aumento de 7,7 %, e as tarifas e taxas de portagem que resultam da aplicação do n.º 1 do artigo anterior.»
+      ↳ #page=1 from the declared document.page
+    pe-dl87a-descontos                           as printed            O disposto no presente decreto-lei não prejudica a aplicação dos regimes de descontos em vigor.
+      ↳ #page=1 from the declared document.page
+    pe-brisa-minuta-ano                          as printed            31 de Dezembro de 2008
+    pe-dl87a-publicacao-ano                      as printed            29 de dezembro de 2022
+      ↳ #page=1 from the declared document.page
+    prr-complemento-p3-1-24-estado               as printed            Completo
+      ↳ #page=3 from the declared document.page
+    prr-complemento-p3-1-32-estado               as printed            Completo
+      ↳ #page=3 from the declared document.page
+    prr-complemento-p3-1-33-estado               as printed            Completo
+      ↳ #page=3 from the declared document.page
+    prr-complemento-p3-1-3-estado                as printed            Completo
+      ↳ #page=3 from the declared document.page
+    prr-complemento-p3-1-8-estado                as printed            Completo
+      ↳ #page=3 from the declared document.page
+    prr-complemento-p4-1-1-estado                as printed            Completo
+      ↳ #page=4 from the declared document.page
+    prr-complemento-p4-1-5-estado                as printed            Completo
+      ↳ #page=4 from the declared document.page
+    prr-complemento-p4-1-12-estado               as printed            Completo
+      ↳ #page=4 from the declared document.page
+    prr-complemento-p4-1-40-estado               as printed            Completo
+      ↳ #page=4 from the declared document.page
+    prr-complemento-p4-1-41-estado               as printed            Completo
+      ↳ #page=4 from the declared document.page
+    prr-complemento-p4-1-2-estado                as printed            Completo
+      ↳ #page=4 from the declared document.page
+    prr-complemento-p5-1-22-estado               as printed            Completo
+      ↳ #page=5 from the declared document.page
+    prr-complemento-p5-1-28-estado               as printed            Completo
+      ↳ #page=5 from the declared document.page
+    prr-complemento-p5-1-11-estado               as printed            Completo
+      ↳ #page=5 from the declared document.page
+    prr-complemento-p5-1-7-estado                as printed            Completo
+      ↳ #page=5 from the declared document.page
+    prr-complemento-p5-1-9-estado                as printed            Completo
+      ↳ #page=5 from the declared document.page
+    prr-complemento-p6-1-37-estado               as printed            Completo
+      ↳ #page=6 from the declared document.page
+    prr-complemento-p6-1-42-estado               as printed            Completo
+      ↳ #page=6 from the declared document.page
+    prr-complemento-p6-1-10-estado               as printed            Completo
+      ↳ #page=6 from the declared document.page
+    prr-complemento-p7-1-34-estado               as printed            Em avaliação na CE
+      ↳ #page=7 from the declared document.page
+    prr-complemento-p7-1-35-estado               as printed            Em avaliação na CE
+      ↳ #page=7 from the declared document.page
+    prr-complemento-p7-1-36-estado               as printed            Em avaliação na CE
+      ↳ #page=7 from the declared document.page
+    prr-complemento-p7-1-38-estado               as printed            Em avaliação na CE
+      ↳ #page=7 from the declared document.page
+    prr-complemento-p7-1-39-estado               as printed            Em avaliação na CE
+      ↳ #page=7 from the declared document.page
+    prr-complemento-p8-1-21-estado               as printed            Dentro do Prazo
+      ↳ #page=8 from the declared document.page
+    prr-complemento-p8-1-25-estado               as printed            Dentro do Prazo
+      ↳ #page=8 from the declared document.page
+    prr-complemento-p9-1-17-estado               as printed            Dentro do Prazo
+      ↳ #page=9 from the declared document.page
+    prr-complemento-p9-1-18-estado               as printed            Dentro do Prazo
+      ↳ #page=9 from the declared document.page
+    prr-complemento-p9-1-26-estado               as printed            Dentro do Prazo
+      ↳ #page=9 from the declared document.page
+    prr-complemento-p9-1-30-estado               as printed            Dentro do Prazo
+      ↳ #page=9 from the declared document.page
+    prr-complemento-p9-1-43-estado               as printed            Dentro do Prazo
+      ↳ #page=9 from the declared document.page
+    prr-complemento-p9-1-44-estado               as printed            Dentro do Prazo
+      ↳ #page=9 from the declared document.page
+    sns-sem-medico-serie-antiga-2025-06          engine value          1 669 681
+    sns-sem-medico-serie-antiga-2026-06          engine value          1 672 130
+    sns-sem-medico-serie-nova-2026-08            engine value          1 362 294
+    sns-consultas-csp-2026-08                    engine value          2 577 538
+    sns-consultas-csp-2025-08                    engine value          2 392 474
+    sns-consultas-hospitalares-2026-07           engine value          8 700 823
+    sns-consultas-hospitalares-2025-07           engine value          8 542 822
+    sns-cirurgias-2026-07                        engine value          520 373
+    sns-cirurgias-2025-07                        engine value          544 482
+    sns-lista-cirurgia-2026-07                   engine value          284 210
+    sns-lista-cirurgia-2025-07                   engine value          268 645
+    sns-urgencias-2026-07                        engine value          3 261 701
+    sns-urgencias-2025-07                        engine value          3 312 702
+    sns-espera-rncci-2026-10-19                  engine value          2 482
+    sns-espera-rncci-2025-10-19                  engine value          2 220
+    eurostat-be-phys                             engine value          334,25
+    eurostat-el-phys                             engine value          626,89
+    eurostat-lu-nrs                              engine value          1 471,61
+    eurostat-pt-phys                             engine value          431,35
+    eurostat-pt-nrs                              engine value          721,28
+    eurostat-ro-nrs                              engine value          106,04
+    prr-monitorizacao-20261014-p2-c01-contratado as printed            2.011M €
+      ↳ #page=2 from the declared document.page
+    prr-monitorizacao-20261014-p2-c01-pago       as printed            947M €
+      ↳ #page=2 from the declared document.page
+    prr-monitorizacao-20261014-p2-c01-taxa       as printed            47%
+      ↳ #page=2 from the declared document.page
+    infarmed-ambulatorio-2026-07-p5-acumulado-encargo as published (alternate)  1 179,3
+    infarmed-ambulatorio-2026-07-p5-homologo-encargo as published (alternate)  1 089,4
+    infarmed-ambulatorio-limitacao               as printed            Os valores apresentados não refletem a totalidade das contribuições resultantes da implementação do Acordo Governo/APIFARMA e dos contratos de financiamento
+    infarmed-hospitalar-2026-07-p5-acumulado-encargo as published (alternate)  1 600,9
+    infarmed-hospitalar-2026-07-p5-homologo-encargo as published (alternate)  1 530,2
+    prr-marcos-metas-2025-p2-1-29-estado         as printed            Completo
+      ↳ #page=2 from the declared document.page
+    prr-marcos-metas-2025-p2-1-4-estado          as printed            Completo
+      ↳ #page=2 from the declared document.page
+    prr-marcos-metas-2025-p2-1-13-estado         as printed            Completo
+      ↳ #page=2 from the declared document.page
+    prr-marcos-metas-2025-p2-1-20-estado         as printed            Completo
+      ↳ #page=2 from the declared document.page
+    prr-marcos-metas-2025-p2-1-6-estado          as printed            Completo
+      ↳ #page=2 from the declared document.page
+    sns-sem-medico-elegibilidade                 as printed            Utentes inscritos que cumprem os critérios de elegibilidade para atribuição de Médico de Família. Cálculo: utentes com registo atualizado e contacto com o SNS nos últimos cinco anos.
+    sns-consultas-csp-descricao                  as printed            As consultas registadas no sistema Vitacare não entram no cálculo destas métricas. Os dados relativos a este indicador são de caráter temporário para o mês publicado mais recente.
+    sns-catalogo-acumulados                      as printed            De janeiro de 2013 ao mês n-2 anterior ao atual (valores acumulados)
+      sem recorte: oe2027-indicador-medico · no record in the vertical's snippets.json
+      sem recorte: oe2027-compromisso-consultas · no record in the vertical's snippets.json
+      sem recorte: oe2027-compromisso-cirurgias · no record in the vertical's snippets.json
+      sem recorte: pe-oe-brisa-negociacao · no record in the vertical's snippets.json
+      sem recorte: pe-oe-brisa-pedido · no record in the vertical's snippets.json
+      sem recorte: pe-oe-riscos-total · no record in the vertical's snippets.json
+      sem recorte: pe-oe-riscos-nao-reconhecimento · no record in the vertical's snippets.json
+      sem recorte: pe-oe-algarve-cautelar · no record in the vertical's snippets.json
+      sem recorte: pe-oe-algarve-provisorio · no record in the vertical's snippets.json
+      sem recorte: pe-oe-contingentes · no record in the vertical's snippets.json
+      sem recorte: pe-oe-beira-abolicao · no record in the vertical's snippets.json
+      sem recorte: pe-oe-apoio-dl87a · no record in the vertical's snippets.json
+      sem recorte: pe-despacho-alargamentos · no record in the vertical's snippets.json
+      sem recorte: pe-despacho-investimentos-previstos · no record in the vertical's snippets.json
+      sem recorte: pe-despacho-equilibrio · no record in the vertical's snippets.json
+      sem recorte: pe-despacho-comparticipacoes · no record in the vertical's snippets.json
+      sem recorte: pe-despacho-braga · no record in the vertical's snippets.json
+      sem recorte: pe-despacho-investimentos-novos · no record in the vertical's snippets.json
+      sem recorte: pe-despacho-limites · no record in the vertical's snippets.json
+      sem recorte: pe-despacho-qualidade · no record in the vertical's snippets.json
+      sem recorte: pe-scut-trocos · no record in the vertical's snippets.json
+      sem recorte: pe-scut-vigencia · no record in the vertical's snippets.json
+      sem recorte: pe-dl87a-atualizacao · no record in the vertical's snippets.json
+      sem recorte: pe-dl87a-apoio · no record in the vertical's snippets.json
+      sem recorte: pe-dl87a-financiamento · no record in the vertical's snippets.json
+      sem recorte: pe-dl87a-efeitos · no record in the vertical's snippets.json
+      sem recorte: pe-tc15-acordos · no record in the vertical's snippets.json
+      sem recorte: pe-tc15-remuneracao · no record in the vertical's snippets.json
+      sem recorte: pe-tc15-infracoes · no record in the vertical's snippets.json
+      sem recorte: pe-tc15-fundamento · no record in the vertical's snippets.json
+      sem recorte: pe-tc15-futuros · no record in the vertical's snippets.json
+      sem recorte: pe-brisa-prazo-minuta · no record in the vertical's snippets.json
+      sem recorte: pe-brisa-periodo-imt · no record in the vertical's snippets.json
+      sem recorte: pe-brisa-vias-minuta · no record in the vertical's snippets.json
+      sem recorte: pe-dl87a-apoio-retificado · no record in the vertical's snippets.json
+      sem recorte: pe-dl87a-descontos · no record in the vertical's snippets.json
+      sem recorte: pe-brisa-minuta-ano · no record in the vertical's snippets.json
+      sem recorte: pe-dl87a-publicacao-ano · no record in the vertical's snippets.json
+      sem recorte: prr-complemento-p3-1-24-estado · no record in the vertical's snippets.json
+      sem recorte: prr-complemento-p3-1-32-estado · no record in the vertical's snippets.json
+      sem recorte: prr-complemento-p3-1-33-estado · no record in the vertical's snippets.json
+      sem recorte: prr-complemento-p3-1-3-estado · no record in the vertical's snippets.json
+      sem recorte: prr-complemento-p3-1-8-estado · no record in the vertical's snippets.json
+      sem recorte: prr-complemento-p4-1-1-estado · no record in the vertical's snippets.json
+      sem recorte: prr-complemento-p4-1-5-estado · no record in the vertical's snippets.json
+      sem recorte: prr-complemento-p4-1-12-estado · no record in the vertical's snippets.json
+      sem recorte: prr-complemento-p4-1-40-estado · no record in the vertical's snippets.json
+      sem recorte: prr-complemento-p4-1-41-estado · no record in the vertical's snippets.json
+      sem recorte: prr-complemento-p4-1-2-estado · no record in the vertical's snippets.json
+      sem recorte: prr-complemento-p5-1-22-estado · no record in the vertical's snippets.json
+      sem recorte: prr-complemento-p5-1-28-estado · no record in the vertical's snippets.json
+      sem recorte: prr-complemento-p5-1-11-estado · no record in the vertical's snippets.json
+      sem recorte: prr-complemento-p5-1-7-estado · no record in the vertical's snippets.json
+      sem recorte: prr-complemento-p5-1-9-estado · no record in the vertical's snippets.json
+      sem recorte: prr-complemento-p6-1-37-estado · no record in the vertical's snippets.json
+      sem recorte: prr-complemento-p6-1-42-estado · no record in the vertical's snippets.json
+      sem recorte: prr-complemento-p6-1-10-estado · no record in the vertical's snippets.json
+      sem recorte: prr-complemento-p7-1-34-estado · no record in the vertical's snippets.json
+      sem recorte: prr-complemento-p7-1-35-estado · no record in the vertical's snippets.json
+      sem recorte: prr-complemento-p7-1-36-estado · no record in the vertical's snippets.json
+      sem recorte: prr-complemento-p7-1-38-estado · no record in the vertical's snippets.json
+      sem recorte: prr-complemento-p7-1-39-estado · no record in the vertical's snippets.json
+      sem recorte: prr-complemento-p8-1-21-estado · no record in the vertical's snippets.json
+      sem recorte: prr-complemento-p8-1-25-estado · no record in the vertical's snippets.json
+      sem recorte: prr-complemento-p9-1-17-estado · no record in the vertical's snippets.json
+      sem recorte: prr-complemento-p9-1-18-estado · no record in the vertical's snippets.json
+      sem recorte: prr-complemento-p9-1-26-estado · no record in the vertical's snippets.json
+      sem recorte: prr-complemento-p9-1-30-estado · no record in the vertical's snippets.json
+      sem recorte: prr-complemento-p9-1-43-estado · no record in the vertical's snippets.json
+      sem recorte: prr-complemento-p9-1-44-estado · no record in the vertical's snippets.json
+      sem recorte: prr-monitorizacao-20261014-p2-c01-contratado · no record in the vertical's snippets.json
+      sem recorte: prr-monitorizacao-20261014-p2-c01-pago · no record in the vertical's snippets.json
+      sem recorte: prr-monitorizacao-20261014-p2-c01-taxa · no record in the vertical's snippets.json
+      sem recorte: infarmed-ambulatorio-2026-07-p5-acumulado-encargo · no record in the vertical's snippets.json
+      sem recorte: infarmed-ambulatorio-2026-07-p5-homologo-encargo · no record in the vertical's snippets.json
+      sem recorte: infarmed-ambulatorio-limitacao · no record in the vertical's snippets.json
+      sem recorte: infarmed-hospitalar-2026-07-p5-acumulado-encargo · no record in the vertical's snippets.json
+      sem recorte: infarmed-hospitalar-2026-07-p5-homologo-encargo · no record in the vertical's snippets.json
+      sem recorte: prr-marcos-metas-2025-p2-1-29-estado · no record in the vertical's snippets.json
+      sem recorte: prr-marcos-metas-2025-p2-1-4-estado · no record in the vertical's snippets.json
+      sem recorte: prr-marcos-metas-2025-p2-1-13-estado · no record in the vertical's snippets.json
+      sem recorte: prr-marcos-metas-2025-p2-1-20-estado · no record in the vertical's snippets.json
+      sem recorte: prr-marcos-metas-2025-p2-1-6-estado · no record in the vertical's snippets.json
+    der-sns-consultas-csp-variacao-pct           derived               7,7   (= 7.7, engine agrees)
+    der-sns-cirurgias-variacao-pct               derived               −4,4   (= -4.4, engine agrees)
+    der-sns-lista-cirurgia-variacao-pct          derived               5,8   (= 5.8, engine agrees)
+    der-sns-espera-rncci-variacao-pct            derived               11,8   (= 11.8, engine agrees)
+    der-infarmed-total-2026-jan-jul              derived               2 780,2   (= 2780.2, engine agrees)
+    der-infarmed-total-2025-jan-jul              derived               2 619,6   (= 2619.6, engine agrees)
+    der-infarmed-variacao-pct                    derived               6,1   (= 6.1, engine agrees)
+    der-prr-saude-contratado-numerico            derived               2 011   (= 2011, engine agrees)
+    der-prr-saude-pago-numerico                  derived               947   (= 947, engine agrees)
+    der-prr-saude-taxa-numerico                  derived               47   (= 47, engine agrees)
+    der-prr-saude-por-pagar                      derived               1 064   (= 1064, engine agrees)
+    der-prr-saude-por-pagar-pct                  derived               52,9   (= 52.9, engine agrees)
+    der-prr-saude-marcos-total                   derived               37   (= 37, engine agrees)
+    der-prr-saude-marcos-completos               derived               24   (= 24, engine agrees)
+    der-sns-divida-fornecedores-2026-07          derived               1 517,5   (= 1517.5, engine agrees)
+
+  recortes: 0 de 83 linha(s) com página · 0 bytes
+
+  0 nova(s) · 3 alterada(s) · 174 inalterada(s) · registo a escrever
+  dívida de proveniência que atravessa: 0 linha(s) com excerto "[a verificar]" — nenhuma
+  rótulo da fonte: 7 de 177 linha(s), 2 rótulo(s) distinto(s): Health personnel · Regularização de dívidas vencidas a fornecedo…
+  sem rótulo impresso: 170 de 177 linha(s), a que a página chama pelo título do documento: oe2027-indicador-medico, oe2027-compromisso-consultas, oe2027-compromisso-cirurgias, dgo-atraso-45-p, sns-divida-2026-divida-total-fornecedores-externos-0, sns-divida-2026-divida-total-fornecedores-externos-1, sns-divida-2026-divida-total-fornecedores-externos-2, sns-divida-2026-divida-total-fornecedores-externos-3 e mais 162
+  pending_page: 0 linha(s) sem sítio desenhado onde ser impressa
+
+  Escritas 177 linhas em <worktree>/ledger/claims
+  Registo em <worktree>/ledger/cruzamentos/v2e.json
+  Recortes: 0 ficheiro(s) escrito(s) de 0 em <worktree>/public/recortes
+  Manifesto dos recortes em <motor>/publisher/recortes/manifest.v2e.json
+
