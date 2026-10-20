@@ -41,7 +41,7 @@ assert(cap.ok && !cap.falhas.length);
 assert(cap.resultados.every(r=>r.documento<=r.janela && r.corpo<=r.janela),'captura com transbordo');
 const visual=JSON.parse(fs.readFileSync(out+'/verificacao-visual.json'));
 s+=`A construção e as capturas correspondem à cabeça ${cap.cabeca}. O motor e o resultado do seu portão estão em motor-commit.json. Foram guardadas ${cap.resultados.length} capturas e ${cap.resultados.reduce((n,r)=>n+r.recortes.length,0)} recortes, nas larguras ${cap.larguras.join(', ')}. Nenhuma página excedeu a largura da janela; o manifesto não registou pedidos externos, recursos em falta ou erros de navegador. ${visual.observacao} As imagens ficam na pasta temporária; o manifesto, os resumos SHA-256 e a lista da inspeção ficam neste relatório.\n\n`;
-s+='As duas primeiras tentativas dos portões foram recusadas: a primeira pela tipagem do nome inglês e pelas auditorias das famílias retiradas; a segunda pelas frases antigas no inventário e pela conferência da sinopse sem o modificador absoluto. Os reparos foram comitados antes da corrida final. Os códigos com o prefixo tentativa guardam essas recusas; os códigos sem esse prefixo são os da entrega. Os códigos de planta iguais a um são recusas esperadas.\n\n';
+s+='As três primeiras tentativas dos portões foram recusadas: a primeira pela tipagem do nome inglês e pelas auditorias das famílias retiradas; a segunda pelas frases antigas no inventário e pela conferência da sinopse sem o modificador absoluto. A terceira detetou o inventário de língua desatualizado para os nomes e as edições documentais corrigidos. Os reparos foram comitados antes da corrida final. Os códigos com o prefixo tentativa guardam essas recusas; os códigos sem esse prefixo são os da entrega. Os códigos de planta iguais a um são recusas esperadas.\n\n';
 s+='### Resposta aos achados\n\n';
 for(let n=1;n<=5;n++)s+=`- Achado ${n}: **corrigido** no sentido de conferido sem o estrago. Era uma planta na cópia da leitura; a origem não continha essa alteração. As plantas desta entrega reconferem valores e excertos.\n`;
 for(const [n,[state,reason]] of Object.entries(findings))s+=`- Achado ${n}: **${state}**. ${reason}\n`;
@@ -54,7 +54,7 @@ s+='\nComandos: `medir.py --selagem`, `python3 -m core.compor_livros_test`, `RES
 const results=[];
 for(const lang of ['pt','en']){
  const r=JSON.parse(fs.readFileSync(`registos/${slug}/${lang}.record.json`));
- const old=JSON.parse(execFileSync('git',['show',`84840bcc7:registos/${slug}/${lang}.record.json`],{encoding:'utf8'}));
+ const old=JSON.parse(execFileSync('git',['show',`84840bcc7:registos/${slug}/${lang}.record.json`],{encoding:'utf8',maxBuffer:8*1024*1024}));
  const routes=lang==='pt'?[`estudos/${slug}`,`estudos/${slug}/documento`]:[`en/studies/${slug}`,`en/studies/${slug}/document`];
  const page=parse(fs.readFileSync(`dist/${routes[0]}/index.html`,'utf8'));
  const doc=parse(fs.readFileSync(`dist/${routes[1]}/index.html`,'utf8'));

@@ -68,7 +68,7 @@
     "check:incorporar": "node tests/incorporar/conferir.mjs && node tests/incorporar/navegador.mjs",
     "check:pais:auto-teste": "node tests/inicio/prazo-pela-celula.mjs",
     "check:discussao": "node tests/discussao/itens.mjs",
-    "check:eo1": "node tests/eo1/maquinaria.mjs && node tests/eo1/documento.mjs"
+    "check:eo1": "node tests/eo1/maquinaria.mjs && node tests/eo1/documento.mjs && node tests/eo1/lingua-nomes.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "3.7.4",
