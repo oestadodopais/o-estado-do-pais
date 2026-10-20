@@ -34,7 +34,10 @@ for(const [nome,muda,falha] of [
  const c=structuredClone(textual),erros=[];muda(c);conferirHistoriaDoValor(c,selo,'ensaio',erros);
  assert.ok(erros.some(e=>e.includes(falha)),nome);plantas.push({nome,falha,erros,mordeu:true});
 }
-for(const id of ['pe-oe-beira-abolicao','pe-oe-riscos-nao-reconhecimento']){
+// O corte editorial do não reconhecimento não conta como correção de erro.
+assert.deepEqual(entradasDoValor(linhas.get('pe-oe-riscos-nao-reconhecimento')),[]);
+assert.equal(linhas.get('correcoes-publicadas').value,'11');
+for(const id of ['pe-oe-beira-abolicao']){
  const original=linhas.get(id),seladas=JSON.parse(fs.readFileSync('ledger/historias-valores.json','utf8'))[id],erros=[];
  conferirHistoriaDoValor(original,seladas,'ensaio',erros);assert.deepEqual(erros,[]);
  for(const [nome,muda,falha] of [

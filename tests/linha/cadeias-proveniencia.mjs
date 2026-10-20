@@ -94,6 +94,12 @@ for (const [nome, mudar, queixa] of [
   ['Ressalva: texto vazio', c=>{c.ressalva=' '; c.ressalva_en='A notice.';}, '"ressalva" tem de ser texto não vazio'],
   ['Ressalva: número inventado', c=>{c.ressalva='A diferença é 987654321.'; c.ressalva_en='The difference is 987654321.';}, '"ressalva" contém o número "987654321" sem esse número completo'],
 ]) plantaDaLinha(nome, 'oe-2026-despesa-ministerio-saude', mudar, queixa, ressalvas);
+for(const [nome,mudar] of [
+ ['Catálogo: ano inventado na citação',c=>{c.ressalva=c.ressalva.replace('2013','987654321');}],
+ ['Catálogo: número inventado fora da citação',c=>{c.ressalva+=' 987654321.';}],
+ ['Catálogo: recibo auxiliar retirado',c=>{c.definition_sources=[];}],
+ ['Catálogo: hash auxiliar adulterado',c=>{for(const s of c.definition_sources)s.receipt.sha256='0'.repeat(64);}],
+])plantaDaLinha(nome,'sns-cirurgias-2026-07',mudar,'"ressalva" contém o número',ressalvas);
 for (const [nome, id, mudar] of [
   ['JSON-stat: linha portuguesa com pedido e corpo de Espanha', novo, c=>{
     c.source_url=c.source_url.replace('geo=PT','geo=ES');

@@ -17,7 +17,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { load } from 'js-yaml';
 import { DOCUMENT_FUNCTIONS, documentCall } from './document-checks.mjs';
-import {textoDocumentalConferido,acumuladoConferido} from './prova-efeitos.mjs';
+import {textoDocumentalConferido,acumuladoConferido,fragmentosAuxiliaresConferidos,tituloAuxiliarConferido} from './prova-efeitos.mjs';
 
 import { STUDY_IDS, COUNTS } from '../data/studies.mjs';
 import { KINDS, CAMPOS_DE_PROVENIENCIA } from '../data/correcoes.mjs';
@@ -922,7 +922,7 @@ export function errosDaRessalva(claim) {
   const fields = /** @type {const} */ (['ressalva', 'ressalva_en']);
   if (!fields.some(field => Object.hasOwn(claim, field))) return [];
   const errors = [];
-  const support = new Set([claim.excerpt, claim.derivation, claim.derivation_en]
+  const support = new Set([claim.excerpt, claim.derivation, claim.derivation_en,tituloAuxiliarConferido(claim)]
     .flatMap(numerosDaProsa).map(numeroDaRessalva).filter(n => n !== null));
   for (const field of fields) {
     const text = claim[field];
@@ -930,7 +930,9 @@ export function errosDaRessalva(claim) {
       errors.push(`"${field}" tem de ser texto não vazio; as duas línguas da ressalva são obrigatórias.`);
       continue;
     }
-    for (const token of numerosDaProsa(text)) {
+    let prose=text.replace(/\s+/g,' ');
+    for(const fragment of fragmentosAuxiliaresConferidos(claim))prose=prose.replaceAll(fragment,'');
+    for (const token of numerosDaProsa(prose)) {
       const number = numeroDaRessalva(token);
       if (number === null || !support.has(number)) {
         errors.push(`"${field}" contém o número "${token}" sem esse número completo no excerto ou na derivação.`);

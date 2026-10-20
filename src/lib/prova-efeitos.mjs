@@ -38,3 +38,24 @@ export function acumuladoConferido(c,provas=proofs){
  const m=/^(\d{4})-01\/\1-(0[1-9]|1[0-2])$/.exec(String(c.period));
  return !!m&&c.reference_date===`${m[1]}-${m[2]}`&&provas[c.id]?.period===c.period;
 }
+/** Fragmentos auxiliares ligados ao recibo alojado, não uma licença para outros números.
+ * @param {any} c @param {Record<string,any>} provas */
+export function fragmentosAuxiliaresConferidos(c,provas=proofs){
+ const p=provas[c.id];if(!p)return [];
+ const fragments=[];
+ for(const key of ['temporal_evidence','provisional_evidence']){
+  const e=p[key];
+  if(e&&typeof e.quote==='string'&&c.definition_sources?.some((/** @type {any} */ s)=>
+   s.receipt?.motor===e.file&&s.receipt?.sha256===e.sha256&&
+   String(s.receipt?.campo).split('; ').some((/** @type {string} */ v,/** @type {number} */ i,/** @type {string[]} */ a)=>i%2===0&&v===e.dataset&&a[i+1]===e.field))){
+   fragments.push(e.quote.replace(/\s+/g,' '),e.dataset);
+  }
+ }
+ return fragments;
+}
+/** O identificador numérico do documento vem do título selado.
+ * @param {any} c */
+export function tituloAuxiliarConferido(c){
+ const p=proofs[c.id];
+ return textoDocumentalConferido(c)&&p?.document?.title===c.document?.title?p.document.title:'';
+}
