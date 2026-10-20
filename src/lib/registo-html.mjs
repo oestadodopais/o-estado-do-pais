@@ -1,5 +1,6 @@
 import { nomeDoProjeto } from '../data/nomes-das-medidas.mjs';
 import { routePath } from './routes.mjs';
+import { ROTULOS_B1 } from '../data/rotulos-b1.mjs';
 /**
  * O renderizador do registo de conteúdo: do registo para a página de leitura.
  *
@@ -590,7 +591,7 @@ export function pecasDoCorpo({
       saida.html('</p>');
       if (bloco.source_rows?.length) {
         const lang = chave.endsWith('/en') ? 'en' : 'pt';
-        saida.html(`<details class="texto-fontes" data-fontes-da-unidade="${escapaAtributo(base)}"><summary>${lang === 'pt' ? 'Fontes deste parágrafo' : 'Sources for this paragraph'}</summary><ul>`);
+        saida.html(`<details class="texto-fontes" data-fontes-da-unidade="${escapaAtributo(base)}"><summary>${ROTULOS_B1[lang].fontesDoParagrafo}</summary><ul>`);
         for (const row of bloco.source_rows) {
           const id = linhaDoSitio(row);
           if (!id) throw new FalhaDoRegisto(`linha citada sem recibo: ${row}`);

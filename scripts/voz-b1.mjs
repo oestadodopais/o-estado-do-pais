@@ -16,6 +16,8 @@ const S = { pt: t('pt'), en: t('en') };
 import { VERBATIM } from '../src/data/verbatim.mjs';
 import { getClaim } from '../src/lib/ledger.mjs';
 import { POR_VERIFICAR } from '../src/data/marcador.mjs';
+import { nomeDoProjeto } from '../src/data/nomes-das-medidas.mjs';
+import { routePath } from '../src/lib/routes.mjs';
 import { sinopseEsperada, textoSemSelos } from './voz-pais.mjs';
 const normal = s => s.replace(/\s+/g, ' ').trim();
 export function verificaB1(raiz) {
@@ -87,6 +89,28 @@ export function verificaB1(raiz) {
       const tecnicos = new Set(['textoLinhaK', 'textoValorK', 'textoImpressoK', 'textoOrigemK', 'textoLinhaDoLivro', 'textoRegistoK'].map(k => S[lang].estudos[k]));
       const verificados = '[data-rotulo-ia="topo"], [data-registo-unidade], [data-registo-indice], [data-registo-posicao], [data-registo-linha], [data-claim], .src-chip, [data-prova], [data-verbatim]';
       const dispensados = new Set(main.querySelectorAll(verificados));
+      const portas = main.querySelectorAll('[data-fontes-da-unidade]');
+      if (portas.length) {
+        const record = JSON.parse(fs.readFileSync(path.join(raiz, 'registos', w.slug, `${lang}.record.json`), 'utf8'));
+        for (const porta of portas) {
+          const base = porta.getAttribute('data-fontes-da-unidade');
+          const block = record.blocks.find(b => base === `${w.slug}/${lang}#${b.i}`);
+          const links = porta.querySelectorAll('li a');
+          if (!block || links.length !== block.source_rows?.length) {
+            erros.push(`B1 fontes: ${base}: portas diferentes das linhas citadas.`);
+            continue;
+          }
+          links.forEach((link, i) => {
+            const id = block.source_rows[i], name = nomeDoProjeto(id)?.[lang];
+            const marca = link.querySelector('[data-nome="projeto"]');
+            if (link.getAttribute('href') !== routePath('linha', lang, {slug:id}) ||
+                normal(link.textContent) !== normal(name ?? ROTULOS_B1[lang].fonte) ||
+                (name && marca?.getAttribute('data-de-linha') !== id))
+              erros.push(`B1 fontes: ${base}: nome ou destino diferente da linha ${id}.`);
+            else if (marca) dispensados.add(marca);
+          });
+        }
+      }
       for (const el of main.querySelectorAll('[data-nonledger]')) {
         const motivo = el.getAttribute('data-nonledger');
         if (motivo === 'data-do-repositorio' && (el.closest('[data-estudo-edicao]') || el.closest('[data-sucessor-edicao]'))) dispensados.add(el);

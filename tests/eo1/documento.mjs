@@ -66,6 +66,12 @@ for(const lang of ['pt','en']){
   const el=page.querySelector(`[data-registo-unidade="${slug}/${lang}#${block.i}"]`);assert(el,'unidade ausente no HTML');
   for(const seal of el.querySelectorAll('[data-selo-etiqueta]'))seal.remove();
   assert.equal(norm(el.textContent),norm(block.text),'HTML diverge da linha do documento');units++;
+  if(block.kind==='paragraph'&&block.source_rows?.length){
+   const doors=page.querySelectorAll(`[data-fontes-da-unidade="${slug}/${lang}#${block.i}"]`);
+   assert.equal(doors.length,1,'porta de fontes ausente ou repetida');
+   assert.deepEqual(doors[0].querySelectorAll('li a').map(a=>a.getAttribute('href')),
+    block.source_rows.map(id=>lang==='pt'?`/livro-razao/${id}`:`/en/ledger/${id}`),'porta trocada');
+  }
  }
  const raw=parse(fs.readFileSync(`studies-src/${slug}/${lang}.html`,'utf8'));
  const actual=raw.querySelectorAll('body h1,body h2,body p').map(el=>norm(el.textContent));
