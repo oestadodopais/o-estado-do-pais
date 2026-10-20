@@ -2,6 +2,46 @@
   "erros": [],
   "plantas": [
     {
+      "nome": "valor do painel alterado",
+      "mordeu": true
+    },
+    {
+      "nome": "valor com identidade diferente",
+      "mordeu": true
+    },
+    {
+      "nome": "nome alterado pt",
+      "mordeu": true
+    },
+    {
+      "nome": "código alterado pt",
+      "mordeu": true
+    },
+    {
+      "nome": "nome de outra edição pt",
+      "mordeu": true
+    },
+    {
+      "nome": "nome sem prova pt",
+      "mordeu": true
+    },
+    {
+      "nome": "nome alterado en",
+      "mordeu": true
+    },
+    {
+      "nome": "código alterado en",
+      "mordeu": true
+    },
+    {
+      "nome": "nome de outra edição en",
+      "mordeu": true
+    },
+    {
+      "nome": "nome sem prova en",
+      "mordeu": true
+    },
+    {
       "nome": "texto documental com value alterado",
       "mordeu": true
     },

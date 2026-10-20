@@ -62,7 +62,7 @@ for(const [id,proof] of Object.entries(provas)){
  assert(texts,`falta frase própria: ${id}`);assert(!/\d/.test(texts.join('')));
  const [pt,en]=texts,campo=c.derivation?'derivation':'excerpt',literal=c[campo];
  assert(typeof literal==='string'&&literal.length>=4);
- const partes=[{pt,en,classe:'diz',apoios:[{campo,literal}]}];
+ const partes=[{pt,en,classe:'diz',apoios:[{linha:'propria',campo,literal}]}];
  familias[id]={nome:familiaNome,frase:{pt:[pt],en:[en]}};
  aud.familias.push({chaves:[id],nome:familiaNome,origens:[],folhas:[{pt,en,partes}]});
 }

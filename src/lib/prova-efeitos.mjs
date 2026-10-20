@@ -3,6 +3,20 @@ import fs from 'node:fs';
 import path from 'node:path';
 const file=path.join(process.cwd(),'ledger','provas','v2e','provas.json');
 const proofs=JSON.parse(fs.readFileSync(file,'utf8')).rows;
+/** @param {string} id */
+export function temProvaDeEfeito(id){return Object.hasOwn(proofs,id);}
+/** @param {string} id @param {string} texto @param {string} lang */
+export function nomeDoEfeitoConferido(id,texto,lang){
+ const p=proofs[id];
+ const esperado=lang==='pt'?p?.label:lang==='en'?p?.label_en:null;
+ return typeof esperado==='string'&&texto.replace(/\s+/g,' ').trim()===esperado.replace(/\s+/g,' ').trim();
+}
+/** Os três tokens do painel conservam a unidade impressa, exigida pelo mandato.
+ * @param {string} id @param {string} texto */
+export function valorImpressoDoPainelConferido(id,texto){
+ const ids=['prr-monitorizacao-20261014-p2-c01-contratado','prr-monitorizacao-20261014-p2-c01-pago','prr-monitorizacao-20261014-p2-c01-taxa'];
+ return ids.includes(id)&&typeof proofs[id]?.value==='string'&&texto===proofs[id].value;
+}
 /** @param {any} c @param {Record<string,any>} provas */
 export function textoDocumentalConferido(c,provas=proofs){
  const p=provas[c.id],doc=c.document;

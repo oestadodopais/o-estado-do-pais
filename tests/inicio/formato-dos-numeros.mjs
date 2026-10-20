@@ -60,6 +60,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
+import {valorImpressoDoPainelConferido} from '../../src/lib/prova-efeitos.mjs';
 
 const AQUI = path.dirname(fileURLToPath(import.meta.url));
 const RAIZ = path.resolve(AQUI, '..', '..');
@@ -95,6 +96,8 @@ export function conferirFormatoDaPagina(html, rel) {
     const [inteiro, , atributos, marca, chave, cru] = m;
     if (/\bdata-registo/.test(atributos)) continue;
     const texto = desfaz(cru).trim();
+    // V2-e: apenas os três tokens íntegros do painel, comparados à prova.
+    if (marca==='claim'&&valorImpressoDoPainelConferido(chave,texto)) continue;
     if (!/\d/.test(texto)) continue;
     const deValor = MARCAS_DE_VALOR.has(marca) || (marca === 'nonledger' && MOTIVOS_DE_VALOR.has(chave));
     const doSimbolo = deValor || (marca === 'nonledger' && MOTIVOS_SO_DO_SIMBOLO.has(chave));

@@ -86,6 +86,7 @@
 import { valorNaLingua } from '../lib/valor-na-lingua.mjs';
 import { notaDaBandeira } from '../lib/bandeira-da-fonte.mjs';
 import { getClaim } from '../lib/ledger.mjs';
+import {textoDocumentalConferido} from '../lib/prova-efeitos.mjs';
 import Provenance from './Provenance.astro';
 
 const {
@@ -158,6 +159,8 @@ if (!lang) {
 }
 
 const claim = getClaim(id);
+// Os textos documentais V2-e foram transcritos de fontes portuguesas.
+if (lang === 'en' && textoDocumentalConferido(claim)) rest.lang = 'pt-PT';
 const Tag = as;
 /* A etiqueta do VALOR, que é a única que a porta muda, e só no modo plano. */
 const TagDoValor = porta && plano && !chip ? 'a' : Tag;

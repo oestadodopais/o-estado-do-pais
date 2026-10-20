@@ -280,6 +280,7 @@ import { EDITIONS, workById, studyLabel } from '../src/data/studies.mjs';
 import { LEITURAS } from '../src/data/leituras.mjs';
 import { MEDIDAS_DO_DOMINIO_1 } from '../src/data/dominios.mjs';
 import { NOMES_DO_PROJETO } from '../src/data/nomes-das-medidas.mjs';
+import {textoDocumentalConferido,temProvaDeEfeito,nomeDoEfeitoConferido} from '../src/lib/prova-efeitos.mjs';
 import { MUNICIPIOS_COM_PAGINA } from '../src/data/municipios.mjs';
 import { MEDIDAS_DO_CONCELHO } from '../src/data/concelhos.mjs';
 /* A LISTA DA CARTA, PARA RECONTAR AS 29 UNIDADES E OS SEUS CONCELHOS (Emenda 20).
@@ -1250,6 +1251,12 @@ function eCitado(no) {
   const tag = String(no.rawTagName ?? '').toLowerCase();
   if (TAGS_CITADAS.has(tag)) return true;
   const attrs = no.attributes ?? {};
+  /* O valor documental continua conferido integralmente por data-claim.
+     Só a prova selada permite conservar a ortografia da fonte. */
+  if (attrs['data-claim']) {
+    const linha=claims.get(attrs['data-claim']);
+    if (linha&&textoDocumentalConferido(linha)) return true;
+  }
   if ('data-verbatim' in attrs) return true;
   if ('data-linha-campo' in attrs) return true;
   /* UE1 (29.09.2026): um campo de uma linha de série e o nome de um país são
@@ -5950,6 +5957,14 @@ for (const file of ficheirosHtml(DIST)) {
   }
 
   const aRemover = [];
+  /* Códigos e períodos no nome V2-e só passam com o nome bilingue da prova. */
+  for (const el of body.querySelectorAll('[data-nome="projeto"][data-de-linha]')) {
+    const id=el.getAttribute('data-de-linha');
+    if (!temProvaDeEfeito(id)) continue;
+    if (!nomeDoEfeitoConferido(id,el.text,linguaPagina))
+      err(`V2E nome: o nome de ${id} difere da prova selada nesta edição.`);
+    else aRemover.push(el);
+  }
   /* H2-b: o ano do acompanhamento vem da ficha, não do livro de medições.
      Só sai do varrimento depois de conferir a composição inteira e a rota. */
   for (const el of body.querySelectorAll('[data-estudo-em-curso]')) {

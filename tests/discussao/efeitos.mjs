@@ -2,8 +2,9 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {parse} from 'node-html-parser';
-import {textoDocumentalConferido,acumuladoConferido} from '../../src/lib/prova-efeitos.mjs';
+import {textoDocumentalConferido,acumuladoConferido,nomeDoEfeitoConferido} from '../../src/lib/prova-efeitos.mjs';
 import {lugarDaIncorporacao} from '../../src/lib/lugar-da-incorporacao.mjs';
+import {conferirFormatoDaPagina} from '../inicio/formato-dos-numeros.mjs';
 const proofFile=new URL('../../ledger/provas/v2e/provas.json',import.meta.url);
 const proofs=JSON.parse(fs.readFileSync(proofFile,'utf8')).rows;
 const idSite=id=>id.startsWith('eurostat-')?id:id.replaceAll('_','-').replaceAll('.','-').toLowerCase();
@@ -52,6 +53,21 @@ export function conferirEfeitos(linhas,itens){
 }
 export function plantasDosEfeitos(linhas,itens){
  const results=[];
+ const painel='prr-monitorizacao-20261014-p2-c01-taxa';
+ const html=(id,v)=>`<span data-claim="${id}">${v}</span>`;
+ if(conferirFormatoDaPagina(html(painel,'47%'),'planta').desvios.length)throw new Error('Painel íntegro recusado');
+ for(const [nome,id,v] of [['valor do painel alterado',painel,'48%'],['valor com identidade diferente','taxa-de-emprego-2025','47%']])
+  results.push({nome,mordeu:conferirFormatoDaPagina(html(id,v),'planta').desvios.some(d=>d.regra==='F4')});
+ const nomeId='prr-complemento-p4-1-40-estado';
+ for(const lang of ['pt','en']){
+  const correto=proofs[nomeId][lang==='pt'?'label':'label_en'];
+  for(const [nome,id,texto,edicao] of [
+   ['nome alterado',nomeId,correto+' alterado',lang],
+   ['código alterado',nomeId,correto.replace('1.40','9.99'),lang],
+   ['nome de outra edição',nomeId,correto,lang==='pt'?'en':'pt'],
+   ['nome sem prova','linha-inexistente',correto,lang],
+  ])results.push({nome:nome+' '+lang,mordeu:!nomeDoEfeitoConferido(id,texto,edicao)});
+ }
  const text=linhas.get('pe-despacho-braga');
  for(const [field,value] of [['value','Texto diferente'],['excerpt','Excerto diferente'],['unit','euros'],['source_url','https://example.invalid/'],['access_date','2000-01-01']]){
   const bad=structuredClone(text);bad[field]=value;

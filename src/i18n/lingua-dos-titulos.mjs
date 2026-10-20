@@ -43,6 +43,31 @@
 
 /** `pt` ou `en`, para cada título distinto do campo `document.title`. */
 export const LINGUA_DOS_TITULOS = {
+  // V2-e: cadeias lidas nos documentos e nas respostas das fontes.
+  "Relatório Semanal de Monitorização | 14-10-2026": "pt",
+  "Anexo III - Listagem de Marcos e Metas": "pt",
+  "ANEXOS ESTATÍSTICOS Agosto de 2026": "pt",
+  "Health personnel": "en",
+  "Monitorização da despesa com medicamentos | Ambulatório | Julho de 2026": "pt",
+  "Monitorização da despesa com medicamentos | Hospitalar | Julho de 2026": "pt",
+  "Orçamento do Estado 2027 RELATÓRIO": "pt",
+  "Concessões Rodoviárias": "pt",
+  "Resolução do Conselho de Ministros n.º 198-B/2008": "pt",
+  "Despacho n.º 15154/2024": "pt",
+  "Declaração de Retificação n.º 2/2023": "pt",
+  "Decreto-Lei n.º 87-A/2022": "pt",
+  "Lei n.º 37/2024, de 7 de agosto": "pt",
+  "AUDITORIA AO MODELO DE GESTÃO, FINANCIAMENTO E REGULAÇÃO DO SETOR RODOVIÁRIO": "pt",
+  "Intervenções Cirúrgicas nos Cuidados de Saúde Hospitalares": "pt",
+  "Consultas Médicas nos Cuidados de Saúde Primários": "pt",
+  "Consultas Médicas Hospitalares": "pt",
+  "Dívida Total, Vencida e Pagamentos em Atraso": "pt",
+  "Utentes a Aguardar Vaga de Cuidados Continuados": "pt",
+  "Inscritos em LIC dentro do TMRG (180 dias)": "pt",
+  "Utentes Inscritos em Cuidados de Saúde Primários": "pt",
+  "Inscritos em Cuidados de Saúde Primários": "pt",
+  "Atendimentos por Tipo de Urgência Hospitalar": "pt",
+
   // V2-d: cadeias conferidas nos corpos portugueses e na API inglesa do Eurostat.
   "Sobre o Orçamento do Estado para 2027": "pt",
   "OE 2027: Um assalto às nossas vidas. É preciso romper com esta política e abrir um novo rumo para Portugal": "pt",
@@ -247,6 +272,10 @@ export function linguaDoTituloDoDocumento(titulo, lang = 'pt') {
 
 /** `pt` ou `en`, para cada rótulo distinto do campo `name`. */
 export const LINGUA_DOS_ROTULOS = {
+  // V2-e: cadeias lidas nos documentos e nas respostas das fontes.
+  "Regularização de dívidas vencidas a fornecedores por parte de entidades do Serviço Nacional de Saúde, com contrapartida em reforços dos respetivos capitais pelo Estado (a)": "pt",
+  "Health personnel": "en",
+
   // V2-d: cadeias conferidas nos corpos portugueses e na API inglesa do Eurostat.
   "015 - Saúde": "pt",
   "Serviço Nacional de Saúde": "pt",
@@ -487,6 +516,14 @@ export function linguaDoRotuloDaFonte(rotulo, lang = 'pt') {
 
 /** `pt` ou `en`, para cada valor distinto do campo `source`. */
 export const LINGUA_DAS_FONTES = {
+  // V2-e: cadeias lidas nos documentos e nas respostas das fontes.
+  "Recuperar Portugal": "pt",
+  "INFARMED": "pt",
+  "Assembleia da República": "pt",
+  "Instituto da Mobilidade e dos Transportes": "pt",
+  "Tribunal de Contas": "pt",
+  "Serviço Nacional de Saúde": "pt",
+
   // V2-d: cadeias conferidas nos corpos portugueses e na API inglesa do Eurostat.
   "Paula Santos": "pt",
   "Paulo Raimundo": "pt",
@@ -586,6 +623,27 @@ export function linguaDaFonte(fonte, lang = 'pt') {
 
 /** `pt`, `en`, ou `null` para uma edição que não está em língua nenhuma. */
 export const LINGUA_DAS_EDICOES = {
+  // V2-e: cadeias lidas nos documentos e nas respostas das fontes.
+  "2026-10-14": null,
+  "2026-08": null,
+  "2026-01/2026-08": null,
+  "2026-01/2026-07": null,
+  "2025-01/2025-07": null,
+  "2026-07": null,
+  "1972/2035": null,
+  "2035-12-31": null,
+  "2008-12-31": null,
+  "2024-12-27": null,
+  "2025-01-01": null,
+  "2012": null,
+  "2025-12-31": null,
+  "2025-08": null,
+  "2025-10-19": null,
+  "2026-10-19": null,
+  "2025-07": null,
+  "2025-06": null,
+  "2026-06": null,
+
   // V2-d: cadeias conferidas nos corpos portugueses e na API inglesa do Eurostat.
   "2026-10-12": null,
   "2022": null,
@@ -739,6 +797,14 @@ export function linguaDaEdicao(edicao, lang = 'pt') {
 
 /** EX3: localizadores lidos nas folhas inglesas da NATO, declarados por inteiro. */
 export const LINGUA_DOS_LOCALIZADORES = {
+  // V2-e: coordenadas da resposta inglesa do Eurostat.
+  "freq=A; unit=P_HTHAB; wstatus=PRACT; med_spec=PHYS; geo=BE; time=2024; value[16]": "en",
+  "freq=A; unit=P_HTHAB; wstatus=PRACT; med_spec=PHYS; geo=EL; time=2024; value[58]": "en",
+  "freq=A; unit=P_HTHAB; wstatus=PRACT; med_spec=NRS; geo=LU; time=2024; value[574]": "en",
+  "freq=A; unit=P_HTHAB; wstatus=PRACT; med_spec=PHYS; geo=PT; time=2024; value[142]": "en",
+  "freq=A; unit=P_HTHAB; wstatus=PRACT; med_spec=NRS; geo=PT; time=2024; value[610]": "en",
+  "freq=A; unit=P_HTHAB; wstatus=PRACT; med_spec=NRS; geo=RO; time=2024; value[616]": "en",
+
   // V2-d: cadeias conferidas nos corpos portugueses e na API inglesa do Eurostat.
   "freq=A; unit=EUR_HAB; icha11_hf=TOT_HF; geo=EU27_2020; time=2024; value[4]": "en",
   "freq=A; unit=EUR_HAB; icha11_hf=TOT_HF; geo=PT; time=2024; value[136]": "en",

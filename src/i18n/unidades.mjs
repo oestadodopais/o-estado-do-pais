@@ -54,6 +54,17 @@
  * raras, para que quem lê veja primeiro o que mais se rende.
  */
 export const UNIDADES = {
+  // V2-e: traduções das unidades documentais e assistenciais.
+  "marcos e metas": "milestones and targets",
+  "Per hundred thousand inhabitants": "per hundred thousand inhabitants",
+  "texto": "text",
+  "percentagem": "percentage",
+  "intervenções cirúrgicas": "surgical procedures",
+  "consultas": "consultations",
+  "Euros": "euros",
+  "utentes": "users",
+  "episódios de urgência": "emergency episodes",
+
   // V2-d: «razão» é «ratio»; o valor é uma divisão, não uma percentagem.
   'razão': 'ratio',
   // A casa: as frases da comparação europeia dizem «euros per inhabitant».
@@ -244,6 +255,8 @@ export const UNIDADES_EM_PORTUGUES = {
  * @param {unknown} [value]
  */
 export function unidadeDaLinha(unit, lang = 'pt', value = null) {
+  if (unit === 'Per hundred thousand inhabitants' && lang !== 'en')
+    return {texto:'por cem mil habitantes',lingua:'pt-PT'};
   if (unit === 'avisos') return { texto: lang === 'en' ? (String(value) === '1' ? 'notice' : 'notices') : (String(value) === '1' ? 'aviso' : 'avisos'), lingua: lang === 'en' ? null : 'pt-PT' };
   const cru = unit === null || unit === undefined ? '' : String(unit);
   if (lang !== 'en') return { texto: dinheiroComPalavra(cru), lingua: 'pt-PT' };
