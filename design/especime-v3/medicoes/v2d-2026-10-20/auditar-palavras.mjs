@@ -43,6 +43,23 @@ const descricoes={
 };
 function tokens(x,out=[]){if(Array.isArray(x))x.forEach(y=>tokens(y,out));else if(x&&typeof x==='object'){for(const k of ['claim','literal','periodo','nome'])if(typeof x[k]==='string')out.push({id:x[k],campo:k==='periodo'?'reference_date':null});for(const [k,v] of Object.entries(x))if(!['claim','literal','periodo','nome'].includes(k))tokens(v,out);}return out;}
 function apoio(id,campo){const l=linhas.get(id);if(!l)throw new Error('Linha ainda não exportada: '+id);campo??=l.derivation?'derivation':'excerpt';const literal=l[campo];if(typeof literal!=='string'||literal.trim().length<4)throw new Error('Campo sem apoio: '+id+'.'+campo);return {linha:id,campo,literal};}
+function partesDaComparacao(parte){
+ const frases=[
+  ['é nesta rubrica que fica, para a Saúde, a dotação para reforçar os contratos-programa ainda por fechar','this line is where the provision to reinforce the contract-programmes still to be closed sits for Health','oe-2027-saude-dotacao-reforco-contratos-programa'],
+  ['os acordos entre a Administração Central do Sistema de Saúde e as entidades do Serviço Nacional de Saúde',"the agreements between the Central Administration of the Health System and the National Health Service's entities",'oe-2027-saude-contrato-programa-acss'],
+ ];
+ if(!parte.pt.includes(frases[0][0]))return [parte];
+ const partes=[];let pt=parte.pt,en=parte.en;
+ for(const [frasePt,fraseEn,id] of frases){
+  const a=pt.indexOf(frasePt),b=en.indexOf(fraseEn);
+  if(a<0||b<0)throw new Error('Frase fixa da comparação ausente');
+  partes.push({...parte,pt:pt.slice(0,a),en:en.slice(0,b)});
+  partes.push({...parte,pt:frasePt,en:fraseEn,sobre:'Apoio declarado para esta frase fixa.',apoios:[apoio(id,'excerpt')]});
+  pt=pt.slice(a+frasePt.length);en=en.slice(b+fraseEn.length);
+ }
+ partes.push({...parte,pt,en});
+ return partes;
+}
 const auditoria={explicacoes:ITENS.map(e=>{
  const extras=e.slug==='saude-no-orcamento'?apoiosSaude:apoiosPpp;
  const permitidas=linhasDaExplicacao(e,linhas);
@@ -56,7 +73,8 @@ const auditoria={explicacoes:ITENS.map(e=>{
   if(!refs.length)refs=(extras.titulo??[]).map(id=>({id,campo:null}));
   const unicas=new Map();for(const r of refs){if(!permitidas.has(r.id))throw new Error('Apoio fora do inventário: '+r.id);const a=apoio(r.id,r.campo);unicas.set(a.linha+'.'+a.campo,a);}
   const sobre=sec===null?'Leitura editorial dos valores e dos perímetros que o título anuncia.':descricoes[e.slug][sec][par??0];
-  return {...f,partes:[{pt:f.pt,en:f.en,classe:'leitura',sobre,apoios:[...unicas.values()]}]};
+  const parte={pt:f.pt,en:f.en,classe:'leitura',sobre,apoios:[...unicas.values()]};
+  return {...f,partes:e.slug==='saude-no-orcamento'&&chave==='2.2'?partesDaComparacao(parte):[parte]};
  })};
 })};
 const r=conferirAuditoriaDasExplicacoes({auditoria,explicacoes:ITENS,linhas});

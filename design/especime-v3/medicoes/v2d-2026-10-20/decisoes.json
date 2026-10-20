@@ -278,5 +278,26 @@
     "antes": "A comparação transcrevia a nota 26 inteira, incluindo a Defesa, sem explicar os contratos-programa.",
     "depois": "A comparação explica a Saúde nas palavras do sítio, em PT e EN. A frase inteira da ACSS da página 303 é selada e exportada; a auditoria apoia-se nela e na nota 26, ambas completas nos recibos. Os dois recibos ficam a um toque nos parágrafos da comparação e da opinião, pelos selos de proveniência existentes.",
     "razao": "O leitor recebe a explicação e pode abrir a prova integral. A linha nova tem verificações da citação, página, período e porta de integração."
+  },
+  {
+    "id": "V2D-47",
+    "tema": "Paráfrase limitada à frase da fonte",
+    "antes": "A comparação atribuía aos acordos o financiamento das entidades do SNS.",
+    "depois": "PT e EN identificam apenas os acordos entre a ACSS e as entidades do SNS, conforme o pedido V2-d-f.",
+    "razao": "A frase da página 303 nomeia as partes e os destinos do financiamento centralizado, sem fazer a afirmação retirada."
+  },
+  {
+    "id": "V2D-48",
+    "tema": "Apoios declarados por frase fixa",
+    "antes": "Os apoios da nota 26 e da página 303 estavam declarados em conjunto para o parágrafo.",
+    "depois": "A auditoria separa as duas frases fixas e declara para cada uma o apoio pedido. A célula recusa a remoção de qualquer dos dois apoios.",
+    "razao": "A presença de uma fonte no conjunto do parágrafo não basta para mostrar qual das frases apoia."
+  },
+  {
+    "id": "V2D-49",
+    "tema": "Recibo com o antecedente de Neste montante",
+    "antes": "O excerto abria com Neste montante sem identificar o montante.",
+    "depois": "O excerto e o valor conservam as duas frases completas da página 303, regeneradas do corpo. O período é 2027 e a publicação fica no campo próprio.",
+    "razao": "A frase anterior identifica as receitas de impostos de 15 452,2 milhões de euros. A correção do recibo conserva o texto anterior e o novo."
   }
 ]

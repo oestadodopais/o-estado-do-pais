@@ -46,6 +46,8 @@ export function conferirDerivacoes(linhas){
  for(const l of linhas.values()){
   if(l.afirmacao && l.document?.title==='Orçamento do Estado 2027 · Relatório' && (l.reference_date!=='2027'||l.published_at!=='2026-10-08'))erros.push(`V2D período textual: ${l.id} confunde orçamento e publicação`);
  }
+ const acss=linhas.get('oe-2027-saude-contrato-programa-acss');
+ if(!acss?.excerpt?.startsWith('Do total da despesa consolidada afeta ao Programa Legado,')||!acss.excerpt.includes('receitas de impostos (15 452,2 milhões de euros). Neste montante incluem-se'))erros.push('V2D antecedente: o recibo da ACSS omite o montante a que se refere');
  for(let ano=2020;ano<=2025;ano++){
   const inicial=linhas.get(`saude-total-${ano}-orcamento-oe${ano}`),execucao=linhas.get(`saude-total-${ano}-execucao-cge${ano}`);
   if(!inicial||!execucao||inicial.reference_date!==String(ano)||execucao.reference_date!==String(ano)||!(numero(execucao.value)>numero(inicial.value)))erros.push(`V2D série: orçamento inicial e execução de ${ano} não sustentam «todos os anos»`);
@@ -58,6 +60,7 @@ export function plantasDasDerivacoes(linhas){
   ['número derivado não bate com as componentes',c=>{c.get(id).value=String(numero(c.get(id).value)+1);}],
   ['componente da derivação trocada',c=>{c.get(id).derived_from[0]='oe-2027-ppp-rodoviario-encargos-liquidos-2027';}],
   ['período textual trocado pela publicação',c=>{c.get('oe-2027-saude-dotacao-reforco-contratos-programa').reference_date='2026-10-08';}],
+  ['antecedente do recibo da ACSS retirado',c=>{const l=c.get('oe-2027-saude-contrato-programa-acss');l.value=l.excerpt=l.excerpt.slice(l.excerpt.indexOf('Neste montante'));}],
   ['afirmação textual com número inventado',c=>{c.get('utao-risco-execucao-sns-2027').value='42';}],
   ['execução anual abaixo do orçamento inicial',c=>{c.get('saude-total-2022-execucao-cge2022').value='0';}],
  ].map(([nome,estraga])=>{

@@ -6,7 +6,7 @@
 id: "oe-2027-saude-contrato-programa-acss"
 
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
-value: "Neste montante incluem-se as verbas do contrato-programa a celebrar entre a Administração Central do Sistema de Saúde, IP (ACSS) e as entidades do Serviço Nacional de Saúde (SNS), destinadas ao financiamento centralizado da Rede Nacional de Cuidados Continuados, das parcerias público-privadas, entre outros."
+value: "Do total da despesa consolidada afeta ao Programa Legado, a maior parte é financiada por receitas de impostos (15 452,2 milhões de euros). Neste montante incluem-se as verbas do contrato-programa a celebrar entre a Administração Central do Sistema de Saúde, IP (ACSS) e as entidades do Serviço Nacional de Saúde (SNS), destinadas ao financiamento centralizado da Rede Nacional de Cuidados Continuados, das parcerias público-privadas, entre outros."
 unit: "afirmação"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
@@ -25,7 +25,7 @@ afirmacao: true
 reference_date: "2027"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "Neste montante incluem-se as verbas do contrato-programa a celebrar entre a Administração Central do Sistema de Saúde, IP (ACSS) e as entidades do Serviço Nacional de Saúde (SNS), destinadas ao financiamento centralizado da Rede Nacional de Cuidados Continuados, das parcerias público-privadas, entre outros."
+excerpt: "Do total da despesa consolidada afeta ao Programa Legado, a maior parte é financiada por receitas de impostos (15 452,2 milhões de euros). Neste montante incluem-se as verbas do contrato-programa a celebrar entre a Administração Central do Sistema de Saúde, IP (ACSS) e as entidades do Serviço Nacional de Saúde (SNS), destinadas ao financiamento centralizado da Rede Nacional de Cuidados Continuados, das parcerias público-privadas, entre outros."
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null
@@ -40,7 +40,13 @@ attributed_to:
 
 study: "oe-2027"
 # Nota interna. NÃO é publicada: ver DECISIONS §1.24.
-note: "[note do motor] Frase inteira sobre o contrato-programa entre a ACSS e as entidades do SNS e os destinos do financiamento centralizado. Não quantifica a dotação para reforço da nota 26. · Cruzado de ResearchHub content/24 Orcamento 2027 Analise · oe-2027-saude-contrato-programa-acss."
+note: "[note do motor] Duas frases inteiras: o antecedente de receitas de impostos e as verbas do contrato-programa entre a ACSS e as entidades do SNS. Não quantificam a dotação para reforço da nota 26. · Cruzado de ResearchHub content/24 Orcamento 2027 Analise · oe-2027-saude-contrato-programa-acss."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
-corrections: []
+corrections:
+  - date: "2026-10-20"
+    kind: "correcao"
+    old_value: "Neste montante incluem-se as verbas do contrato-programa a celebrar entre a Administração Central do Sistema de Saúde, IP (ACSS) e as entidades do Serviço Nacional de Saúde (SNS), destinadas ao financiamento centralizado da Rede Nacional de Cuidados Continuados, das parcerias público-privadas, entre outros."
+    new_value: "Do total da despesa consolidada afeta ao Programa Legado, a maior parte é financiada por receitas de impostos (15 452,2 milhões de euros). Neste montante incluem-se as verbas do contrato-programa a celebrar entre a Administração Central do Sistema de Saúde, IP (ACSS) e as entidades do Serviço Nacional de Saúde (SNS), destinadas ao financiamento centralizado da Rede Nacional de Cuidados Continuados, das parcerias público-privadas, entre outros."
+    reason: "O excerto passa a incluir a frase anterior, que identifica o montante das receitas de impostos a que se refere «Neste montante»."
+    reason_en: "The excerpt now includes the preceding sentence, which identifies the tax revenue amount referred to by «Neste montante»."

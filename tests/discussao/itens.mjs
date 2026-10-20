@@ -11,6 +11,7 @@ import {conferirPortasDoMetodo} from './metodo.mjs';
 import {conferirMarcasDoTitulo,plantasDosTitulos,tituloDeEnsaio} from './titulos.mjs';
 import {seloDoTituloDaDiscussao} from '../../scripts/porta-do-titulo-discussao.mjs';
 import {conferirRecibosCorrigidos} from './recibos.mjs';
+import {conferirApoiosDaComparacao,plantasDosApoios} from './apoios.mjs';
 import {conferirAuditoriaDasExplicacoes, explicacaoPelaCelula, linhasDaExplicacao, textoSemSelos} from '../explicacoes/explicacao.mjs';
 // Lista independente do mandato: o título e estas seis partes, sem rótulos livres.
 const PARTES=[['como-foi-dito','Como foi dito','As it was said'],['fontes','O que as fontes dizem','What the sources say'],['comparacao','A comparação','The comparison'],['conclusao','A conclusão','The conclusion'],['recomendacao','A recomendação','The recommendation'],['opiniao','A opinião do lugar de direção',"The editorial seat's opinion"]];
@@ -26,6 +27,7 @@ export function conferirDeclaracoes(itens=ITENS, linhas=loadClaims()) {
  const audit=JSON.parse(fs.readFileSync(path.join(raiz,'tests/discussao/palavras.json'),'utf8'));
  if(audit.explicacoes.some(e=>e.folhas.some(f=>f.partes.some(p=>p.apoios?.some(a=>a.campo==='note')))))erros.push('V2B apoio: note nunca apoia um item');
  erros.push(...conferirAuditoriaDasExplicacoes({explicacoes:itens,auditoria:audit,linhas}).erros);
+ erros.push(...conferirApoiosDaComparacao(audit));
  for(const e of itens){
   if(e.seccoes.map(s=>s.id).join('|')!==PARTES.map(s=>s[0]).join('|')||!e.titulo.pt?.length||!e.titulo.en?.length)erros.push('V2B partes: faltam partes obrigatórias');
   const q=e.seccoes.find(s=>s.id==='como-foi-dito');
@@ -195,7 +197,9 @@ export function plantas(html,lang){
 export function conferirTudo(dist=path.join(raiz,'dist')){
  const metodo=conferirPortasDoMetodo(dist);
  const recibosCorrigidos=conferirRecibosCorrigidos(dist,loadClaims());
+ const apoios=plantasDosApoios(JSON.parse(fs.readFileSync(path.join(raiz,'tests/discussao/palavras.json'),'utf8')));
  const erros=[...conferirDeclaracoes(),...metodo.erros,...recibosCorrigidos.erros],provas=[...plantasDasDerivacoes(loadClaims()),...plantasDosTitulos(loadClaims()),...metodo.plantas,...recibosCorrigidos.plantas],integracoes=[];
+ provas.push(...apoios);
  for(const lang of ['pt','en']){
   const file=path.join(dist,lang==='pt'?'o-que-se-discute/index.html':'en/under-discussion/index.html');
   if(!fs.existsSync(file)){erros.push('V2B página: página ausente');continue;}
