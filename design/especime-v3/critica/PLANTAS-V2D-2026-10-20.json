@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-20T01:06:06+00:00",
+ "copia": "<pacote>",
+ "plantas": [
+  {
+   "id": "E1",
+   "ficheiro": "built/o-que-se-discute/index.html",
+   "descricao": "o valor da ação principal da Rotas do Algarve Litoral alterado na página PT contra a linha e o relatório (445)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "2aab08cdf4c00653c2204a4742a6170a83d35b24da5c0fb2bc32e146d7254fb5",
+   "sha256_depois": "1a09d768c2de7b48ed43e2783318a0c8d0e9bc565b5b0798942b58defe8ee6c6",
+   "contexto_antes": "e</span><span class=\"vh\"> · <span>Ministério das Finanças</span></span></a></span> da Brisa, na negociação em curso, e <span class=\"claim claim-com-chip\"><span data-claim=\"ppp-oe2027-riscos-rotas-algarve-principal\" class=\"claim-value\">445</span><a class=\"src-chip\" href=\"/livro-razao/ppp-oe2027-riscos-rotas-algarve-principal\" data-nonledger=\"proveniencia\" data-selo-etiqueta=\"Ministério das Finanças\" tit",
+   "contexto_depois": "e</span><span class=\"vh\"> · <span>Ministério das Finanças</span></span></a></span> da Brisa, na negociação em curso, e <span class=\"claim claim-com-chip\"><span data-claim=\"ppp-oe2027-riscos-rotas-algarve-principal\" class=\"claim-value\">454</span><a class=\"src-chip\" href=\"/livro-razao/ppp-oe2027-riscos-rotas-algarve-principal\" data-nonledger=\"proveniencia\" data-selo-etiqueta=\"Ministério das Finanças\" tit"
+  },
+  {
+   "id": "E2",
+   "ficheiro": "built/o-que-se-discute/index.html",
+   "descricao": "a atribuição da afirmação de 12.10 sobre o investimento trocada na página PT (Paulo Raimundo em vez de Paula Santos)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "1a09d768c2de7b48ed43e2783318a0c8d0e9bc565b5b0798942b58defe8ee6c6",
+   "sha256_depois": "da588cf0d8a1f4579c8203f0831ce36e0b6113fb99df48c37c7259f45c68bf64",
+   "contexto_antes": "ao-literal\" href=\"/livro-razao/afirmacao-pcp-paula-investimento-saude-2026-10-12\" data-discussao-literal=\"attributed_to\"><span class=\"campo-valor\" lang=\"pt-PT\" data-linha-claim=\"afirmacao-pcp-paula-investimento-saude-2026-10-12\" data-linha-campo=\"attributed_to\">Paula Santos</span></a> disse: «<a class=\"discussao-literal\" href=\"https://www.pcp.pt/sobre-orcamento-do-estado-para-2027\" data-discussao-literal=\"excerpt\"><span class=\"campo-valo",
+   "contexto_depois": "ao-literal\" href=\"/livro-razao/afirmacao-pcp-paula-investimento-saude-2026-10-12\" data-discussao-literal=\"attributed_to\"><span class=\"campo-valor\" lang=\"pt-PT\" data-linha-claim=\"afirmacao-pcp-paula-investimento-saude-2026-10-12\" data-linha-campo=\"attributed_to\">Paulo Raimundo</span></a> disse: «<a class=\"discussao-literal\" href=\"https://www.pcp.pt/sobre-orcamento-do-estado-para-2027\" data-discussao-literal=\"excerpt\"><span class=\"campo-valo"
+  },
+  {
+   "id": "E3",
+   "ficheiro": "built/en/under-discussion/index.html",
+   "descricao": "a citação da UTAO alterada na página EN contra a linha e o parecer alojado",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "d0328f997b721940bd2dbf29b6f306b35e9513b46e8581da3515a74e13e23437",
+   "sha256_depois": "c91f58de9757d439a980bda50191039545fb697c59e1e247960452530ac09d14",
+   "contexto_antes": "-OE2027_preliminar.pdf&amp;Inline=true\" data-discussao-literal=\"excerpt\"><span class=\"campo-valor\" lang=\"pt-PT\" data-linha-claim=\"utao-risco-execucao-sns-2027\" data-linha-campo=\"excerpt\">Existe um risco de pressão orçamental</span></a><a class=\"src-chip\" href=\"/en/ledger/utao-risco-execucao-sns-2027\" data-nonledger=\"proveniencia\" data-selo-etiqueta=\"UTAO\" title=\"UTAO\"><span class=\"src-chi",
+   "contexto_depois": "-OE2027_preliminar.pdf&amp;Inline=true\" data-discussao-literal=\"excerpt\"><span class=\"campo-valor\" lang=\"pt-PT\" data-linha-claim=\"utao-risco-execucao-sns-2027\" data-linha-campo=\"excerpt\">Existe um risco grave de pressão orçamental</span></a><a class=\"src-chip\" href=\"/en/ledger/utao-risco-execucao-sns-2027\" data-nonledger=\"proveniencia\" data-selo-etiqueta=\"UTAO\" title=\"UTAO\"><span class=\"src-chi"
+  },
+  {
+   "id": "E4",
+   "ficheiro": "built/o-que-se-discute/index.html",
+   "descricao": "o encargo líquido rodoviário executado em 2021 alterado na página PT contra a linha e o relatório de 2022 (1 250)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "da588cf0d8a1f4579c8203f0831ce36e0b6113fb99df48c37c7259f45c68bf64",
+   "sha256_depois": "699c88205a3f0d48b37870a25151c0311d7137ca84571345d6b5b4c23cb06064",
+   "contexto_antes": "luem o IVA.</p><p class=\"explicacao-p\" data-discussao-paragrafo=\"seccoes[1].conteudo[2].paragrafo\" data-astro-cid-i65nnz7s>Os encargos líquidos rodoviários, ano a ano, pelos relatórios do Orçamento: <span class=\"claim claim-com-chip\"><span data-claim=\"ppp-oe2022-liquidos-2021\" class=\"claim-value\">1 250</span><a class=\"src-chip\" href=\"/livro-razao/ppp-oe2022-liquidos-2021\" data-nonledger=\"proveniencia\" data-selo-etiqueta=\"Ministério das Finanças\" title=\"Ministério das Finanças\"><span class=\"src-chip-texto\">fonte</span><span class=\"vh\"> · <span>M",
+   "contexto_depois": "luem o IVA.</p><p class=\"explicacao-p\" data-discussao-paragrafo=\"seccoes[1].conteudo[2].paragrafo\" data-astro-cid-i65nnz7s>Os encargos líquidos rodoviários, ano a ano, pelos relatórios do Orçamento: <span class=\"claim claim-com-chip\"><span data-claim=\"ppp-oe2022-liquidos-2021\" class=\"claim-value\">1 350</span><a class=\"src-chip\" href=\"/livro-razao/ppp-oe2022-liquidos-2021\" data-nonledger=\"proveniencia\" data-selo-etiqueta=\"Ministério das Finanças\" title=\"Ministério das Finanças\"><span class=\"src-chip-texto\">fonte</span><span class=\"vh\"> · <span>M"
+  },
+  {
+   "id": "E5",
+   "ficheiro": "ledger/claims/der-saude-prr-2026.yml",
+   "descricao": "o valor da linha derivada do PRR na Saúde alterado na cópia exportada, contra a sua própria derivação (771,1)",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "558a492fb666df121f13f01a910b2bfd07c841a436fa810dcba26e801776eb9b",
+   "sha256_depois": "0fba9ef2ce374f0675889696d6ca273763b8445d75cf24625b7ee67949481619",
+   "contexto_antes": " alteração aqui parte scripts/check-cruzamento.mjs.\n\nid: \"der-saude-prr-2026\"\n\n# O valor tal como é publicado, com formatação portuguesa. String, nunca número.\nvalue: \"771,1\"\nunit: \"milhões de euros\"\n\n# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.\nsource: null\ndocument: null\nsource_url: null\naccess_",
+   "contexto_depois": " alteração aqui parte scripts/check-cruzamento.mjs.\n\nid: \"der-saude-prr-2026\"\n\n# O valor tal como é publicado, com formatação portuguesa. String, nunca número.\nvalue: \"717,1\"\nunit: \"milhões de euros\"\n\n# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.\nsource: null\ndocument: null\nsource_url: null\naccess_"
+  }
+ ]
+}
