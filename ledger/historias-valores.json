@@ -159,6 +159,12 @@
       "kind": "atualizacao",
       "old_value": "7",
       "new_value": "9"
+    },
+    {
+      "date": "2026-10-20",
+      "kind": "atualizacao",
+      "old_value": "9",
+      "new_value": "10"
     }
   ],
   "estudos-publicados": [
@@ -279,6 +285,14 @@
       "kind": "correcao",
       "old_value": "não encargos já reconhecidos",
       "new_value": "São pretensões dos parceiros privados, e não encargos já reconhecidos; a sua concretização, total ou parcial, oneraria o saldo orçamental de anos futuros."
+    }
+  ],
+  "oe-2027-saude-contrato-programa-acss": [
+    {
+      "date": "2026-10-20",
+      "kind": "correcao",
+      "old_value": "Neste montante incluem-se as verbas do contrato-programa a celebrar entre a Administração Central do Sistema de Saúde, IP (ACSS) e as entidades do Serviço Nacional de Saúde (SNS), destinadas ao financiamento centralizado da Rede Nacional de Cuidados Continuados, das parcerias público-privadas, entre outros.",
+      "new_value": "Do total da despesa consolidada afeta ao Programa Legado, a maior parte é financiada por receitas de impostos (15 452,2 milhões de euros). Neste montante incluem-se as verbas do contrato-programa a celebrar entre a Administração Central do Sistema de Saúde, IP (ACSS) e as entidades do Serviço Nacional de Saúde (SNS), destinadas ao financiamento centralizado da Rede Nacional de Cuidados Continuados, das parcerias público-privadas, entre outros."
     }
   ]
 }

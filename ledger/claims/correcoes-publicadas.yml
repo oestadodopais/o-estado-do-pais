@@ -4,7 +4,7 @@
 id: "correcoes-publicadas"
 
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
-value: "9"
+value: "10"
 unit: "correções"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
@@ -27,7 +27,7 @@ derived_from: []
 check: "correcoes_publicadas"
 
 study: "o-estado-do-pais"
-note: "Esta edição corresponde à recontagem de 20.10.2026, que incluiu as duas correções dos valores textuais da UTAO para preservar as frases inteiras. As datas de referência e de leitura são as dessa recontagem do próprio livro-razão. O valor é reavaliado a cada construção: se entrar uma correção e o contador não mudar, a conferência falha. Os campos que só um documento externo poderia preencher ficam a null, pois a proveniência desta contagem é a sua derivação."
+note: "Esta edição corresponde à recontagem de 20.10.2026, que incluiu as duas correções dos valores textuais da UTAO e a inclusão do antecedente no excerto do contrato-programa da ACSS. As datas de referência e de leitura são as dessa recontagem do próprio livro-razão. O valor é reavaliado a cada construção: se entrar uma correção e o contador não mudar, a conferência falha. Os campos que só um documento externo poderia preencher ficam a null, pois a proveniência desta contagem é a sua derivação."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections:
@@ -49,3 +49,9 @@ corrections:
     new_value: "9"
     reason: "Duas correções publicadas a 20.10.2026 completam as afirmações textuais da UTAO sobre as contingências das parcerias e o risco de execução do Serviço Nacional de Saúde. A contagem passa a incluí-las; a recontagem não é uma correção adicional."
     reason_en: "Two corrections published on 20.10.2026 complete the UTAO's textual statements on partnership contingencies and the execution risk of the National Health Service. The count now includes them; the recount is not an additional correction."
+  - date: "2026-10-20"
+    kind: "atualizacao"
+    old_value: "9"
+    new_value: "10"
+    reason: "A correção do excerto sobre o contrato-programa da ACSS inclui a frase anterior, que identifica o montante referido. A contagem passa a incluí-la; a recontagem não é uma correção adicional."
+    reason_en: "The correction of the excerpt about the ACSS contract-programme includes the preceding sentence, which identifies the amount referred to. The count now includes it; the recount is not an additional correction."
