@@ -1,3 +1,4 @@
+import {SEM_AREA_V2E} from './areas-v2e.mjs';
 import { SEM_AREA_V2D, EXCLUSAO_UE_V2D, EXCLUSAO_V2A_SEM_V2D } from './areas-v2d.mjs';
 /**
  * ===========================================================================
@@ -703,6 +704,7 @@ export const AREAS = [
  * motivo }`.
  */
 export const SEM_AREA = [
+  ...SEM_AREA_V2E,
   ...SEM_AREA_V2D,
   EXCLUSAO_UE_V2D,
   {
