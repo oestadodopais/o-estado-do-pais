@@ -1,4 +1,4 @@
-import { REGRAS_V2D, EXCLUSAO_UE_V2D, EXCLUSAO_V2A_SEM_V2D } from './areas-v2d.mjs';
+import { SEM_AREA_V2D, EXCLUSAO_UE_V2D, EXCLUSAO_V2A_SEM_V2D } from './areas-v2d.mjs';
 /**
  * ===========================================================================
  * AS ÁREAS DE GOVERNO, E A MATÉRIA POR QUE CADA PEÇA LÁ ENTRA
@@ -702,13 +702,8 @@ export const AREAS = [
  * A forma de uma entrada é a mesma de uma regra: `{ estudos?, id, assunto,
  * motivo }`.
  */
-for (const { area, materia, regra } of REGRAS_V2D) {
-  const alvo = AREAS.find(a => a.slug === area)?.materias.find(m => m.materia === materia);
-  if (!alvo) throw new Error('V2D: matéria legal ausente para ' + area);
-  alvo.regras.push(regra);
-}
-
 export const SEM_AREA = [
+  ...SEM_AREA_V2D,
   EXCLUSAO_UE_V2D,
   {
     estudos: ['oe-2026'],

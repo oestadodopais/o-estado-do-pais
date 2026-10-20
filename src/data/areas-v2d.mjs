@@ -1,4 +1,4 @@
-/** V2-d: cobertura explícita das linhas atravessadas, sem ampliar as matérias legais. */
+/** V2-d: assuntos das linhas atravessadas, sem cartões nas áreas. */
 export const LINHAS_V2D_POR_ASSUNTO = {
   "saude": [
     "afirmacao-pcp-paula-investimento-saude-2026-10-12",
@@ -153,15 +153,18 @@ export const LINHAS_V2D_POR_ASSUNTO = {
 const escapar = id => id.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 /** @param {string[]} ids */
 const exatas = ids => new RegExp('^(?:' + ids.map(escapar).join('|') + ')$');
-export const REGRAS_V2D = [
-  { area: 'saude', materia: 'a política nacional de saúde', regra: {
+// Como no V2-a: os recibos sustentam a discussão, sem distribuição ministerial.
+export const SEM_AREA_V2D = [
+  {
     estudos: ['oe-2027'], id: exatas(LINHAS_V2D_POR_ASSUNTO.saude),
-    razao: 'A despesa da Saúde, a execução do Serviço Nacional de Saúde, o financiamento dos cuidados e as afirmações sobre estas contas dizem respeito à aplicação sustentável dos recursos da saúde, expressamente incluída na política nacional de saúde. A comparação europeia de Portugal mede os mesmos recursos no país.'
-  } },
-  { area: 'financas', materia: 'a política financeira do Estado', regra: {
+    assunto: 'Despesa e financiamento da Saúde, execução e afirmações sobre estas contas',
+    motivo: 'São fontes e contas da discussão do Orçamento. A declaração do assunto não cria cartões nas áreas ministeriais, como sucede com as linhas do V2-a.',
+  },
+  {
     estudos: ['oe-2027'], id: exatas(LINHAS_V2D_POR_ASSUNTO.financas),
-    razao: 'Os encargos contratados e os pedidos contingentes das parcerias, bem como as comparações da despesa orçamental e do financiamento PRR entre programas, medem compromissos e distribuição dos recursos financeiros do Estado. Não são medidas de resultados setoriais, como água ou administração eleitoral; o seu assunto é a política financeira do Estado.'
-  } },
+    assunto: 'Encargos e riscos das parcerias, despesa orçamental e financiamento PRR',
+    motivo: 'São fontes e contas da discussão do Orçamento. A comparação entre programas não atribui as linhas a cartões ministeriais, como sucede com as linhas do V2-a.',
+  },
 ];
 export const EXCLUSAO_UE_V2D = {
   estudos: ['oe-2027'], id: exatas(LINHAS_V2D_POR_ASSUNTO.uniao),

@@ -490,12 +490,37 @@ function rotuloXlsConfere(onde, linha) {
     typeof localizadorDoValor === 'string' && localizadorDoValor.startsWith(`${folha}!${valor}${numero}; `);
 }
 
+// V2-d: as novas formas só valem para a linha e o documento da prova selada.
+const PROVAS_V2D = JSON.parse(fs.readFileSync(path.join(RAIZ, 'ledger/provas/v2d/provas.json'), 'utf8')).rows;
+function localizadorV2dConfere(onde, linha) {
+  const prova = PROVAS_V2D[linha?.id];
+  const d = linha?.document, p = prova?.document;
+  if (!p || !d || !linha.name || d.title !== p.title || d.locator !== p.locator ||
+      d.source_sha256 !== p.source_sha256 || d.page !== p.page ||
+      linha.excerpt !== prova.excerpt || linha.reference_date !== prova.period) return false;
+  if (onde === d.locator + '; rótulo da linha' && /^(?:Quadro|Tabela) /.test(d.locator)) {
+    const partes = d.locator.split('; ');
+    return partes[1] === linha.name && prova.excerpt.includes(linha.name);
+  }
+  const folhas = {
+    'dgo-2026-08-saude-efetiva-jan-ago-2025': ['24 - Desp. Efetiva por PO', 'B26', '015 - Saúde'],
+    'dgo-2026-08-saude-efetiva-jan-ago-2026': ['24 - Desp. Efetiva por PO', 'B26', '015 - Saúde'],
+    'dgo-2026-08-saude-efetiva-variacao-homologa': ['24 - Desp. Efetiva por PO', 'B26', '015 - Saúde'],
+    'dgo-2026-08-sns-despesa-variacao-homologa': ['1 - Saldo Global Rec Desp', 'B16', 'Serviço Nacional de Saúde'],
+    'dgo-2026-08-sns-saldo-jan-ago-2026': ['1 - Saldo Global Rec Desp', 'B16', 'Serviço Nacional de Saúde'],
+  };
+  const f = folhas[linha.id];
+  return Boolean(f && onde === `Folha ${f[0]}; célula ${f[1]}` && linha.name === f[2] &&
+    d.locator.startsWith(`Folha ${f[0]}; `));
+}
+
 /** @param {unknown} onde @param {ContextoDoLocalizador} [linha] @returns {boolean} */
 function localizadorConhecido(onde, linha) {
   return (
     typeof onde === 'string' &&
     onde.trim() !== '' &&
-    LOCALIZADORES_CONHECIDOS.some((l) => l.forma.test(onde) && (!l.confere || l.confere(onde, linha)))
+    (localizadorV2dConfere(onde, linha) ||
+      LOCALIZADORES_CONHECIDOS.some((l) => l.forma.test(onde) && (!l.confere || l.confere(onde, linha))))
   );
 }
 
@@ -1905,6 +1930,19 @@ function provaLocalizadores() {
       if (!mordeu) falhas.push(`RP4N-g: a planta ${nome} passou`);
       console.log(`PLANTA ${nome}: ${mordeu ? 'RP4N-g: o localizador da pensão não corresponde à figura e à linha conferidas' : 'passou'}`);
     }
+    const v2d = [...LINHAS_DA_REGUA.values()].filter(l => localizadorV2dConfere(l.name_source, l));
+    if (!v2d.length) falhas.push('V2D: nenhuma forma nova conferida');
+    for (const original of v2d) for (const [campo, mudar] of [
+      ['rótulo', l => l.name = 'Rótulo do ensaio'],
+      ['localizador', l => l.name_source += ' alterado'],
+      ['período', l => l.reference_date = '1900'],
+      ['página', l => l.document.page = 1],
+      ['documento', l => l.document.source_sha256 = '0'.repeat(64)],
+    ]) {
+      const l = structuredClone(original); mudar(l);
+      if (localizadorV2dConfere(l.name_source, l)) falhas.push(`V2D: planta de ${campo} passou em ${l.id}`);
+    }
+    console.log(`V2D: ${v2d.length} rótulos com cinco plantas de origem por linha`);
     if (['I1', 'I3'].some((id) => !celulas.find((c) => c.id === id)?.passa)) {
       falhas.push('As plantas dos localizadores exigem I1 e I3 limpas antes do estrago.');
       return '';

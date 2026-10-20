@@ -304,8 +304,6 @@ export const CAMPOS = /** @type {const} */ ([
    */
   'published_at',
   'reference_date',
-  // Período declarado pela fonte, quando difere do dia de referência.
-  'period',
   /**
    * A SÉRIE NO TEMPO DE QUE A LINHA É O PONTO DO SEU PERÍODO (bloco RP3, 04.10.2026).
    *
@@ -319,6 +317,8 @@ export const CAMPOS = /** @type {const} */ ([
    * cartão preso à série é a célula S5 do `check:series`.
    */
   'serie',
+  // Período declarado pela fonte, quando difere do dia de referência.
+  'period',
   'excerpt',
   'source_flag',
   'source_flag_note',

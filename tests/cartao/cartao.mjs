@@ -383,15 +383,18 @@ function textoVisivel(el) {
   return soOQueSeVe(el).text.replace(/\s+/g, ' ').trim();
 }
 
-// K8 conta a prosa da casa. Só retira uma citação depois de a comparar com o livro.
+// K8: o índice das áreas é a única página com esta expressão na prosa da casa.
+// Os dois recibos citam a UTAO. A exceção exige rota, linha e excerto literal.
+const RECIBOS_K8 = ['oe-2027-cenario-pib-real-crescimento-2027', 'oe-2027-cenario-ihpc-2026'];
 const linhasK8=loadClaims({includeWithdrawn:true});
-/** @param {import('node-html-parser').HTMLElement} root */
-function textoDaCasaK8(root) {
+/** @param {import('node-html-parser').HTMLElement} root @param {string} rota */
+function textoDaCasaK8(root, rota) {
   if (!/Governo Constitucional|Constitutional Government/.test(root.text)) return root.text;
   const copia=parse(root.outerHTML), normal=s=>String(s??'').replace(/\s+/g,' ').trim();
   for(const el of copia.querySelectorAll('[data-linha-campo="excerpt"][data-linha-claim]')) {
     const c=linhasK8.get(el.getAttribute('data-linha-claim'));
-    if(c?.source_url && typeof c.excerpt==='string' && normal(el.textContent)===normal(c.excerpt)) el.remove();
+    if(c && RECIBOS_K8.includes(c.id) && [`/livro-razao/${c.id}`, `/en/ledger/${c.id}`].includes(rota.replace(/\/$/, '')) &&
+       c.source_url && typeof c.excerpt==='string' && normal(el.textContent)===normal(c.excerpt)) el.remove();
   }
   return copia.text;
 }
@@ -517,7 +520,7 @@ function corre(dist) {
       }
 
       /* K8 · a linha do tipo e a legenda da marca. */
-      const texto = textoDaCasaK8(root);
+      const texto = textoDaCasaK8(root, rota);
       if (texto.includes('Governo Constitucional')) contas.governo_constitucional_pt++;
       if (texto.includes('Constitutional Government')) contas.governo_constitucional_en++;
       if (root.querySelector('.marca-legenda')) {
@@ -2001,7 +2004,16 @@ if(PROVA) {
   const id='oe-2027-cenario-pib-real-crescimento-2027';
   const real=parse(fs.readFileSync(path.join(DIST,'livro-razao',id,'index.html'),'utf8'));
   const trecho=real.querySelector('[data-linha-campo="excerpt"]');
-  if(!trecho || !trecho.text.includes('Governo Constitucional') || textoDaCasaK8(real).includes('Governo Constitucional')) r.erros.push('K8: controlo da citação literal falhou');
+  for (const recibo of RECIBOS_K8) for (const base of ['livro-razao', 'en/ledger']) {
+    const rota = `/${base}/${recibo}`;
+    const pagina = parse(fs.readFileSync(path.join(DIST, base, recibo, 'index.html'), 'utf8'));
+    if (!pagina.text.includes('Governo Constitucional') || textoDaCasaK8(pagina, rota).includes('Governo Constitucional'))
+      r.erros.push(`K8: citação literal não conferida em ${rota}`);
+    if (!textoDaCasaK8(pagina, '/pagina-do-ensaio').includes('Governo Constitucional'))
+      r.erros.push(`K8: planta da citação fora do recibo não mordida em ${rota}`);
+    else console.log(`PLANTA K8 citação fora do recibo: ${rota}`);
+  }
+  if(!trecho || !trecho.text.includes('Governo Constitucional') || textoDaCasaK8(real, `/livro-razao/${id}`).includes('Governo Constitucional')) r.erros.push('K8: controlo da citação literal falhou');
   else for(const [nome,altera,lingua] of [
     ['citação sem marca de origem',t=>t.querySelector('[data-linha-campo="excerpt"]').removeAttribute('data-linha-campo'),'pt'],
     ['citação com linha inexistente',t=>t.querySelector('[data-linha-campo="excerpt"]').setAttribute('data-linha-claim','linha-do-ensaio'),'pt'],
@@ -2009,7 +2021,7 @@ if(PROVA) {
     ['expressão da casa em português',t=>t.querySelector('body').insertAdjacentHTML('beforeend','<p>Governo Constitucional</p>'),'pt'],
     ['expressão da casa em inglês',t=>t.querySelector('body').insertAdjacentHTML('beforeend','<p>Constitutional Government</p>'),'en'],
   ]) {
-    const t=parse(real.outerHTML);altera(t);const texto=textoDaCasaK8(t);
+    const t=parse(real.outerHTML);altera(t);const texto=textoDaCasaK8(t, `/livro-razao/${id}`);
     const queixas=errosGovernosK8(1+Number(texto.includes('Governo Constitucional')),1+Number(texto.includes('Constitutional Government')));
     const esperada=errosGovernosK8(lingua==='pt'?2:1,lingua==='en'?2:1)[0];
     if(!queixas.includes(esperada)) r.erros.push(`K8: planta não mordida: ${nome}`);
