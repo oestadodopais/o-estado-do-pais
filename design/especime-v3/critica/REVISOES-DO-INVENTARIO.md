@@ -800,3 +800,9 @@ A porta de exemplo do Método, pedida no ponto 6 do brief ER1, usa «Ver o recib
 | bloco | mudança | estado | nota |
 |---|---|---|---|
 | v2d | V2-d-b, correção da leitura: 32 cadeias novas recolhidas do HTML nas duas edições; 32 declarações anteriores retiradas | por ler | Codex gpt-6-astra, 20.10.2026: prosa dos dois itens e contadores do livro conferidos no HTML; nenhuma cadeia retirada está contida nas novas. Os valores, as citações e as atribuições continuam presos aos tokens. A leitura cruzada pertence à direção. |
+
+## V2-d: os dois itens e as portas
+
+| bloco | mudança | estado | nota |
+|---|---|---|---|
+| v2d | 10 cadeias novas recolhidas do HTML nas duas edições; 10 declarações anteriores retiradas | por ler | Codex gpt-6-astra, 20.10.2026: títulos, rótulos, prosa e navegação conferidos na construção; os valores, as citações e as atribuições continuam presos aos tokens. A leitura cruzada pertence à direção. |
