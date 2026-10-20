@@ -828,3 +828,9 @@ Seis declarações substituídas: comparação e opinião da Saúde nas duas edi
 | bloco | mudança | estado | nota |
 |---|---|---|---|
 | v2e | 28 cadeias novas recolhidas do HTML nas duas edições; 16 declarações anteriores retiradas | por ler | Codex gpt-6-astra, 20.10.2026: títulos, rótulos, prosa e navegação conferidos na construção; os valores, as citações e as atribuições continuam presos aos tokens. A leitura cruzada pertence à direção. |
+
+## V2-e-b: os dois itens e as portas
+
+| bloco | mudança | estado | nota |
+|---|---|---|---|
+| v2e-b | 43 cadeias novas recolhidas do HTML nas duas edições; 25 declarações anteriores retiradas | por ler | Codex gpt-6-astra, 20.10.2026: títulos, rótulos, prosa e navegação conferidos na construção; os valores, as citações e as atribuições continuam presos aos tokens. A leitura cruzada pertence à direção. |

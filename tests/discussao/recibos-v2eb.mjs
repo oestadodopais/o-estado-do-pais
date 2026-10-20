@@ -28,7 +28,8 @@ function conferir(root,c,lang){
   if(!codigo?.includes(esperado))erros.push('V2E recibo: incorporação omite o intervalo dos dados');
  }
  if(calculadas.includes(c.id)){
-  const nota=lang==='pt'?'Valor calculado sobre as linhas do documento.':'Value calculated from the document’s rows.';
+  // Estas linhas sem excerto imprimem a ressalva da linha no cabeçalho.
+  const nota=lang==='pt'?'Valor calculado sobre as linhas do documento.':'Value calculated from the document rows.';
   if(!root.querySelectorAll('.linha-nota').some(n=>normal(n.text)===nota)||
      root.querySelectorAll('.linha-nota').some(n=>/^(Transcrito da fonte|Transcribed from the source)/.test(n.text)))
    erros.push('V2E recibo: cálculo apresentado como transcrição');
@@ -54,11 +55,13 @@ export function conferirRecibosV2eb(dist,linhas){
     ['nome da medida retirado','.linha-nome-da-fonte [data-nome="projeto"]',n=>n.remove()],
     ['período acumulado trocado pelo mês final','.aparelho-ficha [data-de-campo="period"]',n=>n.set_content(c.reference_date)],
     ['componentes do cálculo retiradas','[data-linha-campo="derived_from"]',n=>n.remove()],
+    ['cálculo apresentado como transcrição','.linha-nota [data-linha-campo="ressalva"]',n=>n.set_content(lang==='pt'?'Transcrito da fonte, palavra por palavra.':'Transcribed from the source, word for word.')],
    ]){
     if(nome.startsWith('período')&&!c.period?.includes('/'))continue;
     if(nome.startsWith('componentes')&&!calculadas.includes(id))continue;
+    if(nome.startsWith('cálculo')&&!calculadas.includes(id))continue;
     const copia=parse(html),n=copia.querySelector(seletor);
-    if(n){muda(n);plantas.push({nome,lang,item:id,mordeu:conferir(copia,c,lang).length>0});}
+    if(n){muda(n);plantas.push({nome,lang,item:id,mordeu:conferir(root,c,lang).length===0&&conferir(copia,c,lang).length>0});}
    }
   }
  }

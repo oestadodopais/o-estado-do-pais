@@ -229,6 +229,11 @@ export function plantas(html,lang){
  const errada=correta.replace(`<span class="claim-sufixo"> ${unidade}</span>`,'').replace('</a></span>','</a></span> '+unidade);
  out.push({nome:'unidade depois do selo',lang,mordeu:unidadesDepoisDoSelo(parse(correta)).length===0&&unidadesDepoisDoSelo(parse(errada)).length===1});
  const inlineIntacto=conferirSelosInline(parse(html),lang).length===0;
+ const trimestreErrado=parse(html),trimestre=trimestreErrado.querySelector('#parcerias-rodoviarias [data-discussao-periodo="ppp-oe2027-riscos-pedidos-rodoviarios"] [data-de-campo="period"]');
+ const periodoEsperado=lang==='pt'?'1.º trimestre de 2026':'1st quarter of 2026';
+ const trimestreIntacto=trimestre?.text===periodoEsperado&&!conferirPagina(parse(html),lang).some(e=>e.startsWith('V2B texto:'));
+ trimestre?.set_content('31.03.2026');
+ out.push({nome:'trimestre substituído pelo último dia',lang,mordeu:trimestreIntacto&&conferirPagina(trimestreErrado,lang).some(e=>e.startsWith('V2B texto:'))});
  for(const [nome,muda] of [
   ['selo da alínea afastado das palavras',r=>{const selo=r.querySelector('[data-discussao-selo="pe-despacho-alargamentos"]');selo?.insertAdjacentHTML('beforebegin',' palavras alheias ');}],
   ['selo da alínea sem nome acessível',r=>{const selo=r.querySelector('[data-discussao-selo="pe-despacho-alargamentos"]');(selo?.matches('a')?selo:selo?.querySelector('a.src-chip'))?.removeAttribute('aria-label');}],

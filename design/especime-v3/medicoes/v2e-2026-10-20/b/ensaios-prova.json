@@ -1,0 +1,26 @@
+{
+  "v2eb-export4.log": [
+    "PASS · 74 conferências; 1007 linhas regeneradas, corpos e recibos conferidos"
+  ],
+  "v2eb-document-python.log": [
+    "PASS: 39 casos documentais, core e exportador"
+  ],
+  "v2eb-document-site.log": [
+    "PASS: operações documentais, valores alterados e plantas recusadas"
+  ],
+  "v2eb-document-core.log": [
+    "DERIVATIONS_TEST: PASS — 73 checks (known-positive caught, clean pass, hyphenated ids, round() 0dp and 1dp, unrounded refused, self-reference, unknown id, trailing junk, divide-by-zero, debt non-blocking, non-numeric referent, a printed value inherited by what is computed from it, and the three ways of getting that wrong: a number published over it, two different printed values in one expression, and a printed value published over numbers; os cinco empates a meio arredondados para longe do zero, os tres valores do meio-para-o-par recusados, as casas negativas recusadas; o contexto do processo a nao mandar nas contas; e a especificacao partilhada com o sitio, 32 casos, 10 recusas e 2 quase-igualdades)"
+  ],
+  "v2eb-semana-texto.log": [
+    "{\"plantas\":22,\"morderam\":22,\"semana\":{\"relidas\":90,\"valor\":0,\"forma\":0,\"proveniencia\":0}}"
+  ],
+  "v2eb-recibos-test.log": [
+    "{\"periodo\":\"2026-01/2026-07\",\"edicoes\":[\"pt\",\"en\"],\"plantasUnidadeRepetida\":[\"prr-monitorizacao-20261014-p2-c01-contratado\",\"prr-monitorizacao-20261014-p2-c01-pago\",\"prr-monitorizacao-20261014-p2-c01-taxa\"]}"
+  ],
+  "v2eb-historia-valores.log": [
+    "História do valor: 4 controlos e 19 plantas."
+  ],
+  "v2eb-conferencia-dados.log": [
+    "{\"erros\":0,\"plantas\":145,\"detetadas\":145}"
+  ]
+}

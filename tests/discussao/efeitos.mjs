@@ -101,8 +101,8 @@ export function conferirEfeitos(linhas,itens,nomes=NOMES_V2E){
 export function plantasDosEfeitos(linhas,itens){
  const results=[];
  for(const texto of [
-  'estão completos, entre eles o contrato de gestão para o Hospital de Lisboa Oriental.',
-  'are complete, including the management contract for Hospital de Lisboa Oriental.',
+  'estão completos, entre eles o contrato de gestão para o Hospital de Lisboa Oriental .',
+  'are complete, including the management contract for Hospital de Lisboa Oriental .',
  ]){
   const regras=leMarcadores(process.cwd());
   if(analisa(texto,'/o-que-se-discute',regras,'discussao').includes('complet'))throw new Error('Estado do PRR recusado');

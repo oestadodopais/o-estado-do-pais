@@ -1,0 +1,6507 @@
+{
+  "erros": [],
+  "plantas": [
+    {
+      "nome": "número derivado não bate com as componentes",
+      "mordeu": true,
+      "queixa": "V2D derivação: der-ppp-brutos-todos-2027 não bate com as componentes (1718)"
+    },
+    {
+      "nome": "componente da derivação trocada",
+      "mordeu": true,
+      "queixa": "V2D derivação: der-ppp-brutos-todos-2027 declara componentes diferentes da conta"
+    },
+    {
+      "nome": "período textual trocado pela publicação",
+      "mordeu": true,
+      "queixa": "V2D período textual: oe-2027-saude-dotacao-reforco-contratos-programa confunde orçamento e publicação"
+    },
+    {
+      "nome": "antecedente do recibo da ACSS retirado",
+      "mordeu": true,
+      "queixa": "V2D antecedente: o recibo da ACSS omite o montante a que se refere"
+    },
+    {
+      "nome": "afirmação textual com número inventado",
+      "mordeu": true,
+      "queixa": "V2D afirmação textual: utao-risco-execucao-sns-2027 não preserva o excerto como valor"
+    },
+    {
+      "nome": "execução anual abaixo do orçamento inicial",
+      "mordeu": true,
+      "queixa": "V2D série: orçamento inicial e execução de 2022 não sustentam «todos os anos»"
+    },
+    {
+      "nome": "título completo com destino selado aceite",
+      "lang": "pt",
+      "mordeu": true
+    },
+    {
+      "nome": "percentagem do título sem origem",
+      "lang": "pt",
+      "mordeu": true
+    },
+    {
+      "nome": "ano do título sem origem",
+      "lang": "pt",
+      "mordeu": true
+    },
+    {
+      "nome": "linha da percentagem do título trocada",
+      "lang": "pt",
+      "mordeu": true
+    },
+    {
+      "nome": "valor do título alterado",
+      "lang": "pt",
+      "mordeu": true
+    },
+    {
+      "nome": "destino do título trocado",
+      "lang": "pt",
+      "mordeu": true
+    },
+    {
+      "nome": "ano sem origem no título de destino",
+      "lang": "pt",
+      "mordeu": true
+    },
+    {
+      "nome": "selo ausente no título de destino",
+      "lang": "pt",
+      "mordeu": true
+    },
+    {
+      "nome": "selo dentro do título de destino",
+      "lang": "pt",
+      "mordeu": true
+    },
+    {
+      "nome": "selo deslocado para a secção",
+      "lang": "pt",
+      "mordeu": true
+    },
+    {
+      "nome": "título completo com destino selado aceite",
+      "lang": "en",
+      "mordeu": true
+    },
+    {
+      "nome": "percentagem do título sem origem",
+      "lang": "en",
+      "mordeu": true
+    },
+    {
+      "nome": "ano do título sem origem",
+      "lang": "en",
+      "mordeu": true
+    },
+    {
+      "nome": "linha da percentagem do título trocada",
+      "lang": "en",
+      "mordeu": true
+    },
+    {
+      "nome": "valor do título alterado",
+      "lang": "en",
+      "mordeu": true
+    },
+    {
+      "nome": "destino do título trocado",
+      "lang": "en",
+      "mordeu": true
+    },
+    {
+      "nome": "ano sem origem no título de destino",
+      "lang": "en",
+      "mordeu": true
+    },
+    {
+      "nome": "selo ausente no título de destino",
+      "lang": "en",
+      "mordeu": true
+    },
+    {
+      "nome": "selo dentro do título de destino",
+      "lang": "en",
+      "mordeu": true
+    },
+    {
+      "nome": "selo deslocado para a secção",
+      "lang": "en",
+      "mordeu": true
+    },
+    {
+      "nome": "inventário sem o contrato-programa da ACSS",
+      "mordeu": true
+    },
+    {
+      "nome": "inventário sem a dotação da Saúde",
+      "mordeu": true
+    },
+    {
+      "nome": "contagem mantida com outra linha no lugar da dotação",
+      "mordeu": true
+    },
+    {
+      "nome": "publicação no lugar do orçamento no cabeçalho oe-2027-outras-despesas-dotacoes-execucao",
+      "lang": "pt",
+      "mordeu": true
+    },
+    {
+      "nome": "publicação no lugar do orçamento no cabeçalho oe-2027-saude-contrato-programa-acss",
+      "lang": "pt",
+      "mordeu": true
+    },
+    {
+      "nome": "publicação no lugar do orçamento no cabeçalho oe-2027-saude-dotacao-reforco-contratos-programa",
+      "lang": "pt",
+      "mordeu": true
+    },
+    {
+      "nome": "segunda porta para o Método",
+      "lang": "pt",
+      "mordeu": true
+    },
+    {
+      "nome": "porta da releitura removida",
+      "lang": "pt",
+      "mordeu": true
+    },
+    {
+      "nome": "destino da releitura alterado",
+      "lang": "pt",
+      "mordeu": true
+    },
+    {
+      "nome": "publicação no lugar do orçamento no cabeçalho oe-2027-outras-despesas-dotacoes-execucao",
+      "lang": "en",
+      "mordeu": true
+    },
+    {
+      "nome": "publicação no lugar do orçamento no cabeçalho oe-2027-saude-contrato-programa-acss",
+      "lang": "en",
+      "mordeu": true
+    },
+    {
+      "nome": "publicação no lugar do orçamento no cabeçalho oe-2027-saude-dotacao-reforco-contratos-programa",
+      "lang": "en",
+      "mordeu": true
+    },
+    {
+      "nome": "segunda porta para o Método",
+      "lang": "en",
+      "mordeu": true
+    },
+    {
+      "nome": "porta da releitura removida",
+      "lang": "en",
+      "mordeu": true
+    },
+    {
+      "nome": "destino da releitura alterado",
+      "lang": "en",
+      "mordeu": true
+    },
+    {
+      "nome": "período acumulado trocado pelo mês final",
+      "lang": "pt",
+      "item": "der-infarmed-total-2025-jan-jul",
+      "mordeu": true
+    },
+    {
+      "nome": "período acumulado trocado pelo mês final",
+      "lang": "en",
+      "item": "der-infarmed-total-2025-jan-jul",
+      "mordeu": true
+    },
+    {
+      "nome": "período acumulado trocado pelo mês final",
+      "lang": "pt",
+      "item": "der-infarmed-total-2026-jan-jul",
+      "mordeu": true
+    },
+    {
+      "nome": "período acumulado trocado pelo mês final",
+      "lang": "en",
+      "item": "der-infarmed-total-2026-jan-jul",
+      "mordeu": true
+    },
+    {
+      "nome": "período acumulado trocado pelo mês final",
+      "lang": "pt",
+      "item": "der-infarmed-variacao-pct",
+      "mordeu": true
+    },
+    {
+      "nome": "período acumulado trocado pelo mês final",
+      "lang": "en",
+      "item": "der-infarmed-variacao-pct",
+      "mordeu": true
+    },
+    {
+      "nome": "componentes do cálculo retiradas",
+      "lang": "pt",
+      "item": "der-prr-saude-contratado-numerico",
+      "mordeu": true
+    },
+    {
+      "nome": "cálculo apresentado como transcrição",
+      "lang": "pt",
+      "item": "der-prr-saude-contratado-numerico",
+      "mordeu": true
+    },
+    {
+      "nome": "componentes do cálculo retiradas",
+      "lang": "en",
+      "item": "der-prr-saude-contratado-numerico",
+      "mordeu": true
+    },
+    {
+      "nome": "cálculo apresentado como transcrição",
+      "lang": "en",
+      "item": "der-prr-saude-contratado-numerico",
+      "mordeu": true
+    },
+    {
+      "nome": "componentes do cálculo retiradas",
+      "lang": "pt",
+      "item": "der-prr-saude-marcos-completos",
+      "mordeu": true
+    },
+    {
+      "nome": "cálculo apresentado como transcrição",
+      "lang": "pt",
+      "item": "der-prr-saude-marcos-completos",
+      "mordeu": true
+    },
+    {
+      "nome": "componentes do cálculo retiradas",
+      "lang": "en",
+      "item": "der-prr-saude-marcos-completos",
+      "mordeu": true
+    },
+    {
+      "nome": "cálculo apresentado como transcrição",
+      "lang": "en",
+      "item": "der-prr-saude-marcos-completos",
+      "mordeu": true
+    },
+    {
+      "nome": "componentes do cálculo retiradas",
+      "lang": "pt",
+      "item": "der-prr-saude-marcos-total",
+      "mordeu": true
+    },
+    {
+      "nome": "cálculo apresentado como transcrição",
+      "lang": "pt",
+      "item": "der-prr-saude-marcos-total",
+      "mordeu": true
+    },
+    {
+      "nome": "componentes do cálculo retiradas",
+      "lang": "en",
+      "item": "der-prr-saude-marcos-total",
+      "mordeu": true
+    },
+    {
+      "nome": "cálculo apresentado como transcrição",
+      "lang": "en",
+      "item": "der-prr-saude-marcos-total",
+      "mordeu": true
+    },
+    {
+      "nome": "componentes do cálculo retiradas",
+      "lang": "pt",
+      "item": "der-prr-saude-pago-numerico",
+      "mordeu": true
+    },
+    {
+      "nome": "cálculo apresentado como transcrição",
+      "lang": "pt",
+      "item": "der-prr-saude-pago-numerico",
+      "mordeu": true
+    },
+    {
+      "nome": "componentes do cálculo retiradas",
+      "lang": "en",
+      "item": "der-prr-saude-pago-numerico",
+      "mordeu": true
+    },
+    {
+      "nome": "cálculo apresentado como transcrição",
+      "lang": "en",
+      "item": "der-prr-saude-pago-numerico",
+      "mordeu": true
+    },
+    {
+      "nome": "componentes do cálculo retiradas",
+      "lang": "pt",
+      "item": "der-prr-saude-taxa-numerico",
+      "mordeu": true
+    },
+    {
+      "nome": "cálculo apresentado como transcrição",
+      "lang": "pt",
+      "item": "der-prr-saude-taxa-numerico",
+      "mordeu": true
+    },
+    {
+      "nome": "componentes do cálculo retiradas",
+      "lang": "en",
+      "item": "der-prr-saude-taxa-numerico",
+      "mordeu": true
+    },
+    {
+      "nome": "cálculo apresentado como transcrição",
+      "lang": "en",
+      "item": "der-prr-saude-taxa-numerico",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "dgo-atraso-45-p",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "dgo-atraso-45-p",
+      "mordeu": true
+    },
+    {
+      "nome": "período acumulado trocado pelo mês final",
+      "lang": "pt",
+      "item": "dgo-regularizacao-ae",
+      "mordeu": true
+    },
+    {
+      "nome": "período acumulado trocado pelo mês final",
+      "lang": "en",
+      "item": "dgo-regularizacao-ae",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "infarmed-ambulatorio-2026-07-p5-acumulado-encargo",
+      "mordeu": true
+    },
+    {
+      "nome": "período acumulado trocado pelo mês final",
+      "lang": "pt",
+      "item": "infarmed-ambulatorio-2026-07-p5-acumulado-encargo",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "infarmed-ambulatorio-2026-07-p5-acumulado-encargo",
+      "mordeu": true
+    },
+    {
+      "nome": "período acumulado trocado pelo mês final",
+      "lang": "en",
+      "item": "infarmed-ambulatorio-2026-07-p5-acumulado-encargo",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "infarmed-ambulatorio-2026-07-p5-homologo-encargo",
+      "mordeu": true
+    },
+    {
+      "nome": "período acumulado trocado pelo mês final",
+      "lang": "pt",
+      "item": "infarmed-ambulatorio-2026-07-p5-homologo-encargo",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "infarmed-ambulatorio-2026-07-p5-homologo-encargo",
+      "mordeu": true
+    },
+    {
+      "nome": "período acumulado trocado pelo mês final",
+      "lang": "en",
+      "item": "infarmed-ambulatorio-2026-07-p5-homologo-encargo",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "infarmed-ambulatorio-limitacao",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "infarmed-ambulatorio-limitacao",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "infarmed-hospitalar-2026-07-p5-acumulado-encargo",
+      "mordeu": true
+    },
+    {
+      "nome": "período acumulado trocado pelo mês final",
+      "lang": "pt",
+      "item": "infarmed-hospitalar-2026-07-p5-acumulado-encargo",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "infarmed-hospitalar-2026-07-p5-acumulado-encargo",
+      "mordeu": true
+    },
+    {
+      "nome": "período acumulado trocado pelo mês final",
+      "lang": "en",
+      "item": "infarmed-hospitalar-2026-07-p5-acumulado-encargo",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "infarmed-hospitalar-2026-07-p5-homologo-encargo",
+      "mordeu": true
+    },
+    {
+      "nome": "período acumulado trocado pelo mês final",
+      "lang": "pt",
+      "item": "infarmed-hospitalar-2026-07-p5-homologo-encargo",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "infarmed-hospitalar-2026-07-p5-homologo-encargo",
+      "mordeu": true
+    },
+    {
+      "nome": "período acumulado trocado pelo mês final",
+      "lang": "en",
+      "item": "infarmed-hospitalar-2026-07-p5-homologo-encargo",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "oe2027-compromisso-cirurgias",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "oe2027-compromisso-cirurgias",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "oe2027-compromisso-consultas",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "oe2027-compromisso-consultas",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "oe2027-indicador-medico",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "oe2027-indicador-medico",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "pe-brisa-minuta-ano",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "pe-brisa-minuta-ano",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "pe-brisa-periodo-imt",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "pe-brisa-periodo-imt",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "pe-brisa-prazo-minuta",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "pe-brisa-prazo-minuta",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "pe-brisa-vias-minuta",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "pe-brisa-vias-minuta",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "pe-despacho-alargamentos",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "pe-despacho-alargamentos",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "pe-despacho-braga",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "pe-despacho-braga",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "pe-despacho-comparticipacoes",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "pe-despacho-comparticipacoes",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "pe-despacho-equilibrio",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "pe-despacho-equilibrio",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "pe-despacho-investimentos-novos",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "pe-despacho-investimentos-novos",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "pe-despacho-investimentos-previstos",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "pe-despacho-investimentos-previstos",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "pe-despacho-limites",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "pe-despacho-limites",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "pe-despacho-qualidade",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "pe-despacho-qualidade",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "pe-dl87a-apoio-retificado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "pe-dl87a-apoio-retificado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "pe-dl87a-apoio",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "pe-dl87a-apoio",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "pe-dl87a-atualizacao",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "pe-dl87a-atualizacao",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "pe-dl87a-descontos",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "pe-dl87a-descontos",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "pe-dl87a-efeitos",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "pe-dl87a-efeitos",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "pe-dl87a-financiamento",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "pe-dl87a-financiamento",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "pe-dl87a-publicacao-ano",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "pe-dl87a-publicacao-ano",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "pe-oe-algarve-cautelar",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "pe-oe-algarve-cautelar",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "pe-oe-algarve-provisorio",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "pe-oe-algarve-provisorio",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "pe-oe-apoio-dl87a",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "pe-oe-apoio-dl87a",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "pe-oe-beira-abolicao",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "pe-oe-beira-abolicao",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "pe-oe-brisa-negociacao",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "pe-oe-brisa-negociacao",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "pe-oe-brisa-pedido",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "pe-oe-brisa-pedido",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "pe-oe-contingentes",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "pe-oe-contingentes",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "pe-oe-riscos-nao-reconhecimento",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "pe-oe-riscos-nao-reconhecimento",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "pe-oe-riscos-total",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "pe-oe-riscos-total",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "pe-scut-trocos",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "pe-scut-trocos",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "pe-scut-vigencia",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "pe-scut-vigencia",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "pe-tc15-acordos",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "pe-tc15-acordos",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "pe-tc15-fundamento",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "pe-tc15-fundamento",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "pe-tc15-futuros",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "pe-tc15-futuros",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "pe-tc15-infracoes",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "pe-tc15-infracoes",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "pe-tc15-remuneracao",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "pe-tc15-remuneracao",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "prr-complemento-p3-1-24-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "prr-complemento-p3-1-24-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "prr-complemento-p3-1-3-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "prr-complemento-p3-1-3-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "prr-complemento-p3-1-32-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "prr-complemento-p3-1-32-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "prr-complemento-p3-1-33-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "prr-complemento-p3-1-33-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "prr-complemento-p3-1-8-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "prr-complemento-p3-1-8-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "prr-complemento-p4-1-1-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "prr-complemento-p4-1-1-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "prr-complemento-p4-1-12-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "prr-complemento-p4-1-12-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "prr-complemento-p4-1-2-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "prr-complemento-p4-1-2-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "prr-complemento-p4-1-40-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "prr-complemento-p4-1-40-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "prr-complemento-p4-1-41-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "prr-complemento-p4-1-41-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "prr-complemento-p4-1-5-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "prr-complemento-p4-1-5-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "prr-complemento-p5-1-11-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "prr-complemento-p5-1-11-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "prr-complemento-p5-1-22-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "prr-complemento-p5-1-22-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "prr-complemento-p5-1-28-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "prr-complemento-p5-1-28-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "prr-complemento-p5-1-7-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "prr-complemento-p5-1-7-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "prr-complemento-p5-1-9-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "prr-complemento-p5-1-9-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "prr-complemento-p6-1-10-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "prr-complemento-p6-1-10-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "prr-complemento-p6-1-37-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "prr-complemento-p6-1-37-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "prr-complemento-p6-1-42-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "prr-complemento-p6-1-42-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "prr-complemento-p7-1-34-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "prr-complemento-p7-1-34-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "prr-complemento-p7-1-35-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "prr-complemento-p7-1-35-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "prr-complemento-p7-1-36-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "prr-complemento-p7-1-36-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "prr-complemento-p7-1-38-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "prr-complemento-p7-1-38-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "prr-complemento-p7-1-39-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "prr-complemento-p7-1-39-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "prr-complemento-p8-1-21-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "prr-complemento-p8-1-21-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "prr-complemento-p8-1-25-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "prr-complemento-p8-1-25-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "prr-complemento-p9-1-17-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "prr-complemento-p9-1-17-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "prr-complemento-p9-1-18-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "prr-complemento-p9-1-18-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "prr-complemento-p9-1-26-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "prr-complemento-p9-1-26-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "prr-complemento-p9-1-30-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "prr-complemento-p9-1-30-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "prr-complemento-p9-1-43-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "prr-complemento-p9-1-43-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "prr-complemento-p9-1-44-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "prr-complemento-p9-1-44-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "prr-marcos-metas-2025-p2-1-13-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "prr-marcos-metas-2025-p2-1-13-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "prr-marcos-metas-2025-p2-1-20-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "prr-marcos-metas-2025-p2-1-20-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "prr-marcos-metas-2025-p2-1-29-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "prr-marcos-metas-2025-p2-1-29-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "prr-marcos-metas-2025-p2-1-4-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "prr-marcos-metas-2025-p2-1-4-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "prr-marcos-metas-2025-p2-1-6-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "prr-marcos-metas-2025-p2-1-6-estado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "prr-monitorizacao-20261014-p2-c01-contratado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "prr-monitorizacao-20261014-p2-c01-contratado",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "prr-monitorizacao-20261014-p2-c01-pago",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "prr-monitorizacao-20261014-p2-c01-pago",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "prr-monitorizacao-20261014-p2-c01-taxa",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "prr-monitorizacao-20261014-p2-c01-taxa",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-catalogo-acumulados",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-catalogo-acumulados",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-cirurgias-2025-07",
+      "mordeu": true
+    },
+    {
+      "nome": "período acumulado trocado pelo mês final",
+      "lang": "pt",
+      "item": "sns-cirurgias-2025-07",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-cirurgias-2025-07",
+      "mordeu": true
+    },
+    {
+      "nome": "período acumulado trocado pelo mês final",
+      "lang": "en",
+      "item": "sns-cirurgias-2025-07",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-cirurgias-2026-07",
+      "mordeu": true
+    },
+    {
+      "nome": "período acumulado trocado pelo mês final",
+      "lang": "pt",
+      "item": "sns-cirurgias-2026-07",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-cirurgias-2026-07",
+      "mordeu": true
+    },
+    {
+      "nome": "período acumulado trocado pelo mês final",
+      "lang": "en",
+      "item": "sns-cirurgias-2026-07",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-consultas-csp-2025-08",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-consultas-csp-2025-08",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-consultas-csp-2026-08",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-consultas-csp-2026-08",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-consultas-csp-descricao",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-consultas-csp-descricao",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-consultas-hospitalares-2025-07",
+      "mordeu": true
+    },
+    {
+      "nome": "período acumulado trocado pelo mês final",
+      "lang": "pt",
+      "item": "sns-consultas-hospitalares-2025-07",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-consultas-hospitalares-2025-07",
+      "mordeu": true
+    },
+    {
+      "nome": "período acumulado trocado pelo mês final",
+      "lang": "en",
+      "item": "sns-consultas-hospitalares-2025-07",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-consultas-hospitalares-2026-07",
+      "mordeu": true
+    },
+    {
+      "nome": "período acumulado trocado pelo mês final",
+      "lang": "pt",
+      "item": "sns-consultas-hospitalares-2026-07",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-consultas-hospitalares-2026-07",
+      "mordeu": true
+    },
+    {
+      "nome": "período acumulado trocado pelo mês final",
+      "lang": "en",
+      "item": "sns-consultas-hospitalares-2026-07",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-0",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-0",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-1",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-1",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-10",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-10",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-11",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-11",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-12",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-12",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-13",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-13",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-14",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-14",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-15",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-15",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-16",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-16",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-17",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-17",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-18",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-18",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-19",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-19",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-2",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-2",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-20",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-20",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-21",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-21",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-22",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-22",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-23",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-23",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-24",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-24",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-25",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-25",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-26",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-26",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-27",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-27",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-28",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-28",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-29",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-29",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-3",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-3",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-30",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-30",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-31",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-31",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-32",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-32",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-33",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-33",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-34",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-34",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-35",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-35",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-36",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-36",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-37",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-37",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-38",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-38",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-39",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-39",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-4",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-4",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-40",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-40",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-41",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-41",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-42",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-42",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-43",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-43",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-44",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-44",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-45",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-45",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-46",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-46",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-47",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-47",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-48",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-48",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-49",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-49",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-5",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-5",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-50",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-50",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-51",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-51",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-52",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-52",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-6",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-6",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-7",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-7",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-8",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-8",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-9",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-divida-2026-divida-total-fornecedores-externos-9",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-espera-rncci-2025-10-19",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-espera-rncci-2025-10-19",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-espera-rncci-2026-10-19",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-espera-rncci-2026-10-19",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-lista-cirurgia-2025-07",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-lista-cirurgia-2025-07",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-lista-cirurgia-2026-07",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-lista-cirurgia-2026-07",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-sem-medico-elegibilidade",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-sem-medico-elegibilidade",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-sem-medico-serie-antiga-2025-06",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-sem-medico-serie-antiga-2025-06",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-sem-medico-serie-antiga-2026-06",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-sem-medico-serie-antiga-2026-06",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-sem-medico-serie-nova-2026-08",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-sem-medico-serie-nova-2026-08",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-urgencias-2025-07",
+      "mordeu": true
+    },
+    {
+      "nome": "período acumulado trocado pelo mês final",
+      "lang": "pt",
+      "item": "sns-urgencias-2025-07",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-urgencias-2025-07",
+      "mordeu": true
+    },
+    {
+      "nome": "período acumulado trocado pelo mês final",
+      "lang": "en",
+      "item": "sns-urgencias-2025-07",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "pt",
+      "item": "sns-urgencias-2026-07",
+      "mordeu": true
+    },
+    {
+      "nome": "período acumulado trocado pelo mês final",
+      "lang": "pt",
+      "item": "sns-urgencias-2026-07",
+      "mordeu": true
+    },
+    {
+      "nome": "nome da medida retirado",
+      "lang": "en",
+      "item": "sns-urgencias-2026-07",
+      "mordeu": true
+    },
+    {
+      "nome": "período acumulado trocado pelo mês final",
+      "lang": "en",
+      "item": "sns-urgencias-2026-07",
+      "mordeu": true
+    },
+    {
+      "nome": "recibo troca trimestre dos riscos pelo ano do documento",
+      "lang": "pt",
+      "item": "ppp-oe2027-riscos-acrescimo",
+      "mordeu": true
+    },
+    {
+      "nome": "recibo troca trimestre dos riscos pelo ano do documento",
+      "lang": "pt",
+      "item": "ppp-oe2027-riscos-brisa",
+      "mordeu": true
+    },
+    {
+      "nome": "recibo troca trimestre dos riscos pelo ano do documento",
+      "lang": "pt",
+      "item": "ppp-oe2027-riscos-pedidos-rodoviarios",
+      "mordeu": true
+    },
+    {
+      "nome": "recibo troca trimestre dos riscos pelo ano do documento",
+      "lang": "pt",
+      "item": "ppp-oe2027-riscos-rotas-algarve-mensal",
+      "mordeu": true
+    },
+    {
+      "nome": "recibo troca trimestre dos riscos pelo ano do documento",
+      "lang": "pt",
+      "item": "ppp-oe2027-riscos-rotas-algarve-principal",
+      "mordeu": true
+    },
+    {
+      "nome": "correção textual sem língua da fonte",
+      "lang": "en",
+      "item": "oe-2027-saude-contrato-programa-acss",
+      "mordeu": true
+    },
+    {
+      "nome": "correção textual sem língua da fonte",
+      "lang": "en",
+      "item": "pe-oe-beira-abolicao",
+      "mordeu": true
+    },
+    {
+      "nome": "correção textual sem língua da fonte",
+      "lang": "en",
+      "item": "pe-oe-riscos-nao-reconhecimento",
+      "mordeu": true
+    },
+    {
+      "nome": "recibo troca trimestre dos riscos pelo ano do documento",
+      "lang": "en",
+      "item": "ppp-oe2027-riscos-acrescimo",
+      "mordeu": true
+    },
+    {
+      "nome": "recibo troca trimestre dos riscos pelo ano do documento",
+      "lang": "en",
+      "item": "ppp-oe2027-riscos-brisa",
+      "mordeu": true
+    },
+    {
+      "nome": "recibo troca trimestre dos riscos pelo ano do documento",
+      "lang": "en",
+      "item": "ppp-oe2027-riscos-pedidos-rodoviarios",
+      "mordeu": true
+    },
+    {
+      "nome": "recibo troca trimestre dos riscos pelo ano do documento",
+      "lang": "en",
+      "item": "ppp-oe2027-riscos-rotas-algarve-mensal",
+      "mordeu": true
+    },
+    {
+      "nome": "recibo troca trimestre dos riscos pelo ano do documento",
+      "lang": "en",
+      "item": "ppp-oe2027-riscos-rotas-algarve-principal",
+      "mordeu": true
+    },
+    {
+      "nome": "correção textual sem língua da fonte",
+      "lang": "en",
+      "item": "utao-ppp-contingencias-natureza-2026",
+      "mordeu": true
+    },
+    {
+      "nome": "correção textual sem língua da fonte",
+      "lang": "en",
+      "item": "utao-risco-execucao-sns-2027",
+      "mordeu": true
+    },
+    {
+      "nome": "frase sem o seu apoio: oe-2027-saude-dotacao-reforco-contratos-programa",
+      "mordeu": true,
+      "queixa": "V2D apoio da frase: pt, oe-2027-saude-dotacao-reforco-contratos-programa ausente da frase correspondente"
+    },
+    {
+      "nome": "frase sem o seu apoio: oe-2027-saude-contrato-programa-acss",
+      "mordeu": true,
+      "queixa": "V2D apoio da frase: pt, oe-2027-saude-contrato-programa-acss ausente da frase correspondente"
+    },
+    {
+      "nome": "recibo V2E sem porta pt",
+      "mordeu": true
+    },
+    {
+      "nome": "recibo V2E sem porta en",
+      "mordeu": true
+    },
+    {
+      "nome": "estado completo fora da rota declarada",
+      "mordeu": true
+    },
+    {
+      "nome": "afirmação de completude acrescentada",
+      "mordeu": true
+    },
+    {
+      "nome": "estado completo fora da rota declarada",
+      "mordeu": true
+    },
+    {
+      "nome": "afirmação de completude acrescentada",
+      "mordeu": true
+    },
+    {
+      "nome": "valor do painel alterado",
+      "mordeu": true
+    },
+    {
+      "nome": "valor com identidade diferente",
+      "mordeu": true
+    },
+    {
+      "nome": "nome alterado pt",
+      "mordeu": true
+    },
+    {
+      "nome": "código alterado pt",
+      "mordeu": true
+    },
+    {
+      "nome": "nome de outra edição pt",
+      "mordeu": true
+    },
+    {
+      "nome": "nome sem prova pt",
+      "mordeu": true
+    },
+    {
+      "nome": "nome alterado en",
+      "mordeu": true
+    },
+    {
+      "nome": "código alterado en",
+      "mordeu": true
+    },
+    {
+      "nome": "nome de outra edição en",
+      "mordeu": true
+    },
+    {
+      "nome": "nome sem prova en",
+      "mordeu": true
+    },
+    {
+      "nome": "texto documental com value alterado",
+      "mordeu": true
+    },
+    {
+      "nome": "texto documental com excerpt alterado",
+      "mordeu": true
+    },
+    {
+      "nome": "texto documental com unit alterado",
+      "mordeu": true
+    },
+    {
+      "nome": "texto documental com source_url alterado",
+      "mordeu": true
+    },
+    {
+      "nome": "texto documental com access_date alterado",
+      "mordeu": true
+    },
+    {
+      "nome": "texto documental com documento source_sha256 alterado",
+      "mordeu": true
+    },
+    {
+      "nome": "texto documental com documento title alterado",
+      "mordeu": true
+    },
+    {
+      "nome": "texto documental com documento locator alterado",
+      "mordeu": true
+    },
+    {
+      "nome": "texto documental com documento page alterado",
+      "mordeu": true
+    },
+    {
+      "nome": "período acumulado alterado ou ausente",
+      "mordeu": true
+    },
+    {
+      "nome": "período acumulado alterado ou ausente",
+      "mordeu": true
+    },
+    {
+      "nome": "período acumulado alterado ou ausente",
+      "mordeu": true
+    },
+    {
+      "nome": "período acumulado alterado ou ausente",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova dgo-atraso-45-p",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova dgo-regularizacao-ae",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-0",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-1",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-2",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-3",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-4",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-5",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-6",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-7",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-8",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-9",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-10",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-11",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-12",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-13",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-14",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-15",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-16",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-17",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-18",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-19",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-20",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-21",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-22",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-23",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-24",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-25",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-26",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-27",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-28",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-29",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-30",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-31",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-32",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-33",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-34",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-35",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-36",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-37",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-38",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-39",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-40",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-41",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-42",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-43",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-44",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-45",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-46",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-47",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-48",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-49",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-50",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-51",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-52",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-sem-medico-serie-antiga-2025-06",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-sem-medico-serie-antiga-2026-06",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-sem-medico-serie-nova-2026-08",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-consultas-csp-2026-08",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-consultas-csp-2025-08",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-consultas-hospitalares-2026-07",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-consultas-hospitalares-2025-07",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-cirurgias-2026-07",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-cirurgias-2025-07",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-lista-cirurgia-2026-07",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-lista-cirurgia-2025-07",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-urgencias-2026-07",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-urgencias-2025-07",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-espera-rncci-2026-10-19",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-espera-rncci-2025-10-19",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova eurostat-be-phys",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova eurostat-el-phys",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova eurostat-lu-nrs",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova eurostat-pt-phys",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova eurostat-pt-nrs",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova eurostat-ro-nrs",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova prr-monitorizacao-20261014-p2-c01-contratado",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova prr-monitorizacao-20261014-p2-c01-pago",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova prr-monitorizacao-20261014-p2-c01-taxa",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova infarmed-ambulatorio-2026-07-p5-acumulado-encargo",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova infarmed-ambulatorio-2026-07-p5-homologo-encargo",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova infarmed-hospitalar-2026-07-p5-acumulado-encargo",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova infarmed-hospitalar-2026-07-p5-homologo-encargo",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova der-sns-consultas-csp-variacao-pct",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova der-sns-cirurgias-variacao-pct",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova der-sns-lista-cirurgia-variacao-pct",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova der-sns-espera-rncci-variacao-pct",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova der-infarmed-total-2026-jan-jul",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova der-infarmed-total-2025-jan-jul",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova der-infarmed-variacao-pct",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova der-prr-saude-contratado-numerico",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova der-prr-saude-pago-numerico",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova der-prr-saude-taxa-numerico",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova der-prr-saude-por-pagar",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova der-prr-saude-por-pagar-pct",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova der-prr-saude-marcos-total",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova der-prr-saude-marcos-completos",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova der-sns-divida-fornecedores-2026-07",
+      "mordeu": true
+    },
+    {
+      "nome": "nome ausente no registo pt",
+      "mordeu": true
+    },
+    {
+      "nome": "nome ausente no registo en",
+      "mordeu": true
+    },
+    {
+      "nome": "porta de linha sem utilização",
+      "mordeu": true
+    },
+    {
+      "nome": "porta de componente transitiva",
+      "mordeu": true
+    },
+    {
+      "nome": "conta alterada der-sns-consultas-csp-variacao-pct",
+      "mordeu": true
+    },
+    {
+      "nome": "conta alterada der-sns-cirurgias-variacao-pct",
+      "mordeu": true
+    },
+    {
+      "nome": "conta alterada der-sns-lista-cirurgia-variacao-pct",
+      "mordeu": true
+    },
+    {
+      "nome": "conta alterada der-sns-espera-rncci-variacao-pct",
+      "mordeu": true
+    },
+    {
+      "nome": "conta alterada der-infarmed-total-2026-jan-jul",
+      "mordeu": true
+    },
+    {
+      "nome": "conta alterada der-infarmed-total-2025-jan-jul",
+      "mordeu": true
+    },
+    {
+      "nome": "conta alterada der-infarmed-variacao-pct",
+      "mordeu": true
+    },
+    {
+      "nome": "conta alterada der-prr-saude-contratado-numerico",
+      "mordeu": true
+    },
+    {
+      "nome": "conta alterada der-prr-saude-pago-numerico",
+      "mordeu": true
+    },
+    {
+      "nome": "conta alterada der-prr-saude-taxa-numerico",
+      "mordeu": true
+    },
+    {
+      "nome": "conta alterada der-prr-saude-por-pagar",
+      "mordeu": true
+    },
+    {
+      "nome": "conta alterada der-prr-saude-por-pagar-pct",
+      "mordeu": true
+    },
+    {
+      "nome": "conta alterada der-prr-saude-marcos-total",
+      "mordeu": true
+    },
+    {
+      "nome": "conta alterada der-prr-saude-marcos-completos",
+      "mordeu": true
+    },
+    {
+      "nome": "conta alterada der-sns-divida-fornecedores-2026-07",
+      "mordeu": true
+    },
+    {
+      "nome": "exemplo PRR incompleto",
+      "mordeu": true
+    },
+    {
+      "nome": "unidade depois do selo",
+      "lang": "pt",
+      "mordeu": true
+    },
+    {
+      "nome": "trimestre substituído pelo último dia",
+      "lang": "pt",
+      "mordeu": true
+    },
+    {
+      "nome": "selo da alínea afastado das palavras",
+      "lang": "pt",
+      "mordeu": true
+    },
+    {
+      "nome": "selo da alínea sem nome acessível",
+      "lang": "pt",
+      "mordeu": true
+    },
+    {
+      "nome": "selo do exemplo PRR ausente",
+      "lang": "pt",
+      "mordeu": true
+    },
+    {
+      "nome": "citação sem token",
+      "item": "saude-no-orcamento",
+      "lang": "pt",
+      "mordeu": true,
+      "queixa": "V2B citação: citação ou atribuição sem token"
+    },
+    {
+      "nome": "citação sem token",
+      "item": "parcerias-rodoviarias",
+      "lang": "pt",
+      "mordeu": true,
+      "queixa": "V2B citação: citação ou atribuição sem token"
+    },
+    {
+      "nome": "citação alterada",
+      "item": "saude-no-orcamento",
+      "lang": "pt",
+      "mordeu": true,
+      "queixa": "V2B literal: citação ou atribuição alterada contra a linha"
+    },
+    {
+      "nome": "citação alterada",
+      "item": "parcerias-rodoviarias",
+      "lang": "pt",
+      "mordeu": true,
+      "queixa": "V2B literal: citação ou atribuição alterada contra a linha"
+    },
+    {
+      "nome": "recibo do contrato-programa ausente",
+      "item": "saude-no-orcamento",
+      "lang": "pt",
+      "mordeu": true,
+      "queixa": "V2D apoio textual: recibo ausente junto da explicação oe-2027-saude-contrato-programa-acss"
+    },
+    {
+      "nome": "selo dentro das aspas",
+      "item": "saude-no-orcamento",
+      "lang": "pt",
+      "mordeu": true,
+      "queixa": "V2D citação: selo tem de seguir a aspa de fecho"
+    },
+    {
+      "nome": "selo dentro das aspas",
+      "item": "parcerias-rodoviarias",
+      "lang": "pt",
+      "mordeu": true,
+      "queixa": "V2D citação: selo tem de seguir a aspa de fecho"
+    },
+    {
+      "nome": "adjetivo junto do nome",
+      "item": "saude-no-orcamento",
+      "lang": "pt",
+      "mordeu": true,
+      "queixa": "V2B pessoas: adjetivo colado a uma atribuição"
+    },
+    {
+      "nome": "adjetivo junto do nome",
+      "item": "parcerias-rodoviarias",
+      "lang": "pt",
+      "mordeu": true,
+      "queixa": "V2B pessoas: adjetivo colado a uma atribuição"
+    },
+    {
+      "nome": "opinião sem rótulo",
+      "item": "saude-no-orcamento",
+      "lang": "pt",
+      "mordeu": true,
+      "queixa": "V2B opinião: opinião sem rótulo"
+    },
+    {
+      "nome": "opinião sem rótulo",
+      "item": "parcerias-rodoviarias",
+      "lang": "pt",
+      "mordeu": true,
+      "queixa": "V2B opinião: opinião sem rótulo"
+    },
+    {
+      "nome": "item sem uma parte",
+      "item": "saude-no-orcamento",
+      "lang": "pt",
+      "mordeu": true,
+      "queixa": "V2B partes: faltam partes obrigatórias"
+    },
+    {
+      "nome": "item sem uma parte",
+      "item": "parcerias-rodoviarias",
+      "lang": "pt",
+      "mordeu": true,
+      "queixa": "V2B partes: faltam partes obrigatórias"
+    },
+    {
+      "nome": "porta da explicação ausente",
+      "item": "saude-no-orcamento",
+      "lang": "pt",
+      "mordeu": true,
+      "queixa": "V2B explicação: porta ausente, texto ou destino errado"
+    },
+    {
+      "nome": "bloco depois do painel",
+      "lang": "pt",
+      "mordeu": true
+    },
+    {
+      "nome": "marca ausente: data-discussao-inicio",
+      "lang": "pt",
+      "mordeu": true
+    },
+    {
+      "nome": "marca ausente: data-o-que-se-passa",
+      "lang": "pt",
+      "mordeu": true
+    },
+    {
+      "nome": "marca ausente: data-entradas",
+      "lang": "pt",
+      "mordeu": true
+    },
+    {
+      "nome": "bloco duplicado",
+      "lang": "pt",
+      "mordeu": true
+    },
+    {
+      "nome": "destino do título errado",
+      "lang": "pt",
+      "mordeu": true
+    },
+    {
+      "nome": "porta inicial errada",
+      "lang": "pt",
+      "mordeu": true
+    },
+    {
+      "nome": "unidade depois do selo",
+      "lang": "en",
+      "mordeu": true
+    },
+    {
+      "nome": "trimestre substituído pelo último dia",
+      "lang": "en",
+      "mordeu": true
+    },
+    {
+      "nome": "selo da alínea afastado das palavras",
+      "lang": "en",
+      "mordeu": true
+    },
+    {
+      "nome": "selo da alínea sem nome acessível",
+      "lang": "en",
+      "mordeu": true
+    },
+    {
+      "nome": "selo do exemplo PRR ausente",
+      "lang": "en",
+      "mordeu": true
+    },
+    {
+      "nome": "citação sem token",
+      "item": "saude-no-orcamento",
+      "lang": "en",
+      "mordeu": true,
+      "queixa": "V2B citação: citação ou atribuição sem token"
+    },
+    {
+      "nome": "citação sem token",
+      "item": "parcerias-rodoviarias",
+      "lang": "en",
+      "mordeu": true,
+      "queixa": "V2B citação: citação ou atribuição sem token"
+    },
+    {
+      "nome": "citação alterada",
+      "item": "saude-no-orcamento",
+      "lang": "en",
+      "mordeu": true,
+      "queixa": "V2B literal: citação ou atribuição alterada contra a linha"
+    },
+    {
+      "nome": "citação alterada",
+      "item": "parcerias-rodoviarias",
+      "lang": "en",
+      "mordeu": true,
+      "queixa": "V2B literal: citação ou atribuição alterada contra a linha"
+    },
+    {
+      "nome": "recibo do contrato-programa ausente",
+      "item": "saude-no-orcamento",
+      "lang": "en",
+      "mordeu": true,
+      "queixa": "V2D apoio textual: recibo ausente junto da explicação oe-2027-saude-contrato-programa-acss"
+    },
+    {
+      "nome": "selo dentro das aspas",
+      "item": "saude-no-orcamento",
+      "lang": "en",
+      "mordeu": true,
+      "queixa": "V2D citação: selo tem de seguir a aspa de fecho"
+    },
+    {
+      "nome": "selo dentro das aspas",
+      "item": "parcerias-rodoviarias",
+      "lang": "en",
+      "mordeu": true,
+      "queixa": "V2D citação: selo tem de seguir a aspa de fecho"
+    },
+    {
+      "nome": "adjetivo junto do nome",
+      "item": "saude-no-orcamento",
+      "lang": "en",
+      "mordeu": true,
+      "queixa": "V2B pessoas: adjetivo colado a uma atribuição"
+    },
+    {
+      "nome": "adjetivo junto do nome",
+      "item": "parcerias-rodoviarias",
+      "lang": "en",
+      "mordeu": true,
+      "queixa": "V2B pessoas: adjetivo colado a uma atribuição"
+    },
+    {
+      "nome": "opinião sem rótulo",
+      "item": "saude-no-orcamento",
+      "lang": "en",
+      "mordeu": true,
+      "queixa": "V2B opinião: opinião sem rótulo"
+    },
+    {
+      "nome": "opinião sem rótulo",
+      "item": "parcerias-rodoviarias",
+      "lang": "en",
+      "mordeu": true,
+      "queixa": "V2B opinião: opinião sem rótulo"
+    },
+    {
+      "nome": "item sem uma parte",
+      "item": "saude-no-orcamento",
+      "lang": "en",
+      "mordeu": true,
+      "queixa": "V2B partes: faltam partes obrigatórias"
+    },
+    {
+      "nome": "item sem uma parte",
+      "item": "parcerias-rodoviarias",
+      "lang": "en",
+      "mordeu": true,
+      "queixa": "V2B partes: faltam partes obrigatórias"
+    },
+    {
+      "nome": "porta da explicação ausente",
+      "item": "saude-no-orcamento",
+      "lang": "en",
+      "mordeu": true,
+      "queixa": "V2B explicação: porta ausente, texto ou destino errado"
+    },
+    {
+      "nome": "bloco depois do painel",
+      "lang": "en",
+      "mordeu": true
+    },
+    {
+      "nome": "marca ausente: data-discussao-inicio",
+      "lang": "en",
+      "mordeu": true
+    },
+    {
+      "nome": "marca ausente: data-o-que-se-passa",
+      "lang": "en",
+      "mordeu": true
+    },
+    {
+      "nome": "marca ausente: data-entradas",
+      "lang": "en",
+      "mordeu": true
+    },
+    {
+      "nome": "bloco duplicado",
+      "lang": "en",
+      "mordeu": true
+    },
+    {
+      "nome": "destino do título errado",
+      "lang": "en",
+      "mordeu": true
+    },
+    {
+      "nome": "porta inicial errada",
+      "lang": "en",
+      "mordeu": true
+    },
+    {
+      "nome": "porta por coincidência ausente",
+      "mordeu": true
+    },
+    {
+      "nome": "porta sem coincidência",
+      "mordeu": true
+    },
+    {
+      "nome": "destino de outro item",
+      "mordeu": true
+    },
+    {
+      "nome": "cartao: cartão sem selo para o recibo",
+      "lang": "pt",
+      "mordeu": true
+    },
+    {
+      "nome": "cartao: recibo sem porta para o item",
+      "lang": "pt",
+      "mordeu": true
+    },
+    {
+      "nome": "cartao: recibo ausente no percurso",
+      "lang": "pt",
+      "mordeu": true
+    },
+    {
+      "nome": "linha: cartão sem selo para o recibo",
+      "lang": "pt",
+      "mordeu": true
+    },
+    {
+      "nome": "linha: recibo sem porta para o item",
+      "lang": "pt",
+      "mordeu": true
+    },
+    {
+      "nome": "linha: recibo ausente no percurso",
+      "lang": "pt",
+      "mordeu": true
+    },
+    {
+      "nome": "régua sem a linha no recibo",
+      "lang": "pt",
+      "mordeu": true
+    },
+    {
+      "nome": "regua: cartão sem selo para o recibo",
+      "lang": "pt",
+      "mordeu": true
+    },
+    {
+      "nome": "regua: recibo sem porta para o item",
+      "lang": "pt",
+      "mordeu": true
+    },
+    {
+      "nome": "regua: recibo ausente no percurso",
+      "lang": "pt",
+      "mordeu": true
+    },
+    {
+      "nome": "registo: cartão sem selo para o recibo",
+      "lang": "pt",
+      "mordeu": true
+    },
+    {
+      "nome": "registo: recibo sem porta para o item",
+      "lang": "pt",
+      "mordeu": true
+    },
+    {
+      "nome": "registo: recibo ausente no percurso",
+      "lang": "pt",
+      "mordeu": true
+    },
+    {
+      "nome": "cartao: cartão sem selo para o recibo",
+      "lang": "en",
+      "mordeu": true
+    },
+    {
+      "nome": "cartao: recibo sem porta para o item",
+      "lang": "en",
+      "mordeu": true
+    },
+    {
+      "nome": "cartao: recibo ausente no percurso",
+      "lang": "en",
+      "mordeu": true
+    },
+    {
+      "nome": "linha: cartão sem selo para o recibo",
+      "lang": "en",
+      "mordeu": true
+    },
+    {
+      "nome": "linha: recibo sem porta para o item",
+      "lang": "en",
+      "mordeu": true
+    },
+    {
+      "nome": "linha: recibo ausente no percurso",
+      "lang": "en",
+      "mordeu": true
+    },
+    {
+      "nome": "régua sem a linha no recibo",
+      "lang": "en",
+      "mordeu": true
+    },
+    {
+      "nome": "regua: cartão sem selo para o recibo",
+      "lang": "en",
+      "mordeu": true
+    },
+    {
+      "nome": "regua: recibo sem porta para o item",
+      "lang": "en",
+      "mordeu": true
+    },
+    {
+      "nome": "regua: recibo ausente no percurso",
+      "lang": "en",
+      "mordeu": true
+    },
+    {
+      "nome": "registo: cartão sem selo para o recibo",
+      "lang": "en",
+      "mordeu": true
+    },
+    {
+      "nome": "registo: recibo sem porta para o item",
+      "lang": "en",
+      "mordeu": true
+    },
+    {
+      "nome": "registo: recibo ausente no percurso",
+      "lang": "en",
+      "mordeu": true
+    },
+    {
+      "nome": "declaração sem token",
+      "mordeu": true
+    }
+  ],
+  "integracoes": [
+    {
+      "pagina": "en/explainers/dinheiro-do-estado-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "tematica"
+    },
+    {
+      "pagina": "en/ledger/afirmacao-leitao-amaro-saude-oe2027-2026-10-09/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/afirmacao-pcp-paula-investimento-saude-2026-10-12/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/afirmacao-pcp-paula-ppp-2026-10-12/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/afirmacao-pcp-ppp-2026-10-15/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/afirmacao-rtp-saude-queda-oe2027-2026-10-09/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/der-ambiente-e-energia-prr-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/der-coesao-territorial-variacao-sem-prr-pct/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/der-economia-prr-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/der-economia-variacao-sem-prr-pct/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/der-educacao-variacao-sem-prr-pct/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/der-financas-prr-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/der-financas-variacao-sem-prr-pct/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/der-infarmed-total-2025-jan-jul/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/der-infarmed-total-2026-jan-jul/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/der-infarmed-variacao-pct/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/der-infraestruturas-e-habitacao-prr-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/der-infraestruturas-e-habitacao-variacao-sem-prr-pct/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/der-justica-variacao-sem-prr-pct/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/der-ppp-brutos-todos-2027/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/der-ppp-pcp-vs-brutos/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/der-ppp-pcp-vs-liquidos/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/der-ppp-quota-rodoviario/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/der-ppp-rodoviario-2027-vs-2021-pct/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/der-prr-saude-contratado-numerico/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/der-prr-saude-marcos-completos/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/der-prr-saude-marcos-total/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/der-prr-saude-pago-numerico/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/der-prr-saude-por-pagar/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/der-prr-saude-por-pagar-pct/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/der-prr-saude-taxa-numerico/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/der-saude-2027-vs-execucao-2025-pct/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/der-saude-bens-servicos-reducao-abs/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/der-saude-investimento-reducao-abs/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/der-saude-outras-correntes-variacao-abs/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/der-saude-pessoal-variacao-abs/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/der-saude-prr-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/der-saude-razao-compensacao-prr-pct/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/der-saude-receitas-proprias-variacao-pct/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/der-saude-reforco-total-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/der-saude-total-reducao-abs/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/der-saude-variacao-efetiva/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/der-saude-variacao-sem-prr/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/der-saude-variacao-sem-prr-pct/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/der-saude-variacao-total-abs/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/der-seguranca-interna-variacao-sem-prr-pct/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/der-sns-cirurgias-variacao-pct/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/der-sns-consultas-csp-variacao-pct/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/der-sns-divida-fornecedores-2026-07/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/der-sns-lista-cirurgia-variacao-pct/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/der-trabalho-solidariedade-e-seguranca-social-variacao-sem-prr-pct/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/der-utao-saude-reforco-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/dgo-2026-08-saude-efetiva-jan-ago-2025/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/dgo-2026-08-saude-efetiva-jan-ago-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/dgo-2026-08-saude-efetiva-variacao-homologa/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/dgo-2026-08-sns-despesa-variacao-homologa/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/dgo-2026-08-sns-saldo-jan-ago-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/dgo-atraso-45-p/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/dgo-regularizacao-ae/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/eurostat-be-phys/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/eurostat-el-phys/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/eurostat-hlth-sha11-hf-a-eur_hab-tot_hf-eu27_2020-2024/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/eurostat-hlth-sha11-hf-a-eur_hab-tot_hf-pt-2024/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/eurostat-hlth-sha11-hf-a-pc_gdp-hf1-eu27_2020-2024/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/eurostat-hlth-sha11-hf-a-pc_gdp-hf1-pt-2024/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/eurostat-hlth-sha11-hf-a-pc_gdp-tot_hf-eu27_2020-2024/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/eurostat-hlth-sha11-hf-a-pc_gdp-tot_hf-pt-2024/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/eurostat-pt-phys/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/infarmed-ambulatorio-2026-07-p5-acumulado-encargo/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/infarmed-ambulatorio-2026-07-p5-homologo-encargo/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/infarmed-ambulatorio-limitacao/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/infarmed-hospitalar-2026-07-p5-acumulado-encargo/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/infarmed-hospitalar-2026-07-p5-homologo-encargo/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-ambiente-e-energia-efetiva-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-ambiente-e-energia-sem-prr-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-coesao-territorial-sem-prr-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-coesao-territorial-sem-prr-2027/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-economia-efetiva-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-economia-sem-prr-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-economia-sem-prr-2027/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-educacao-sem-prr-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-educacao-sem-prr-2027/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-financas-efetiva-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-financas-sem-prr-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-financas-sem-prr-2027/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-infraestruturas-e-habitacao-efetiva-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-infraestruturas-e-habitacao-sem-prr-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-infraestruturas-e-habitacao-sem-prr-2027/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-justica-sem-prr-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-justica-sem-prr-2027/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-ppp-rodoviario-encargos-brutos-2027/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-ppp-rodoviario-encargos-liquidos-2027/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-ppp-rodoviario-receitas-2027/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-ppp-total-encargos-liquidos-2027/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-saude-bens-servicos-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-saude-bens-servicos-2027/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-saude-bens-servicos-variacao/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-saude-contrato-programa-acss/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-saude-despesa-efetiva-consolidada-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-saude-despesa-efetiva-consolidada-2027/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-saude-despesa-efetiva-consolidada-variacao/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-saude-despesa-total-consolidada-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-saude-despesa-total-consolidada-2027/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-saude-despesa-total-consolidada-variacao/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-saude-dotacao-reforco-contratos-programa/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-saude-fonte-fundos-europeus-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-saude-fonte-fundos-europeus-2027/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-saude-fonte-impostos-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-saude-fonte-impostos-2027/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-saude-fonte-receitas-proprias-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-saude-fonte-receitas-proprias-2027/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-saude-investimento-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-saude-investimento-2027/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-saude-investimento-variacao/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-saude-investimento-variacao-sem-prr/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-saude-outras-correntes-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-saude-outras-correntes-2027/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-saude-pessoal-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-saude-pessoal-2027/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-saude-pessoal-variacao/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-saude-transferencias-capital-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-saude-transferencias-capital-2027/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-saude-transferencias-sns-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-saude-transferencias-sns-2027/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-saude-transferencias-sns-variacao/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-seguranca-interna-sem-prr-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-seguranca-interna-sem-prr-2027/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-trabalho-solidariedade-e-seguranca-social-sem-prr-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-trabalho-solidariedade-e-seguranca-social-sem-prr-2027/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/pe-brisa-minuta-ano/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/pe-brisa-periodo-imt/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/pe-brisa-prazo-minuta/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/pe-despacho-alargamentos/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/pe-despacho-braga/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/pe-despacho-comparticipacoes/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/pe-despacho-equilibrio/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/pe-despacho-investimentos-novos/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/pe-despacho-investimentos-previstos/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/pe-despacho-limites/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/pe-despacho-qualidade/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/pe-dl87a-apoio-retificado/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/pe-dl87a-descontos/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/pe-dl87a-financiamento/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/pe-dl87a-publicacao-ano/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/pe-oe-apoio-dl87a/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/pe-oe-beira-abolicao/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/pe-oe-riscos-nao-reconhecimento/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/pe-scut-trocos/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/pe-scut-vigencia/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/ppp-oe2022-liquidos-2021/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/ppp-oe2023-liquidos-2022/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/ppp-oe2024-liquidos-2023/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/ppp-oe2025-liquidos-2024/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/ppp-oe2026-brutos-2025/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/ppp-oe2026-liquidos-2025/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/ppp-oe2026-receitas-2025/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/ppp-oe2027-brutos-2027/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/ppp-oe2027-ferroviario-2027/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/ppp-oe2027-liquidos-2026/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/ppp-oe2027-liquidos-2027-previsao-oe2026/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/ppp-oe2027-liquidos-2028/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/ppp-oe2027-liquidos-2029/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/ppp-oe2027-liquidos-2030/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/ppp-oe2027-liquidos-2035/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/ppp-oe2027-liquidos-2040/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/ppp-oe2027-receitas-2027/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/ppp-oe2027-riscos-acrescimo/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/ppp-oe2027-riscos-brisa/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/ppp-oe2027-riscos-pedidos-rodoviarios/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/ppp-oe2027-riscos-rotas-algarve-mensal/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/ppp-oe2027-riscos-rotas-algarve-principal/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/ppp-oe2027-saude-2027/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/prr-complemento-p3-1-24-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/prr-complemento-p3-1-3-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/prr-complemento-p3-1-32-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/prr-complemento-p3-1-33-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/prr-complemento-p3-1-8-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/prr-complemento-p4-1-1-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/prr-complemento-p4-1-12-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/prr-complemento-p4-1-2-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/prr-complemento-p4-1-40-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/prr-complemento-p4-1-41-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/prr-complemento-p4-1-5-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/prr-complemento-p5-1-11-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/prr-complemento-p5-1-22-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/prr-complemento-p5-1-28-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/prr-complemento-p5-1-7-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/prr-complemento-p5-1-9-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/prr-complemento-p6-1-10-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/prr-complemento-p6-1-37-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/prr-complemento-p6-1-42-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/prr-complemento-p7-1-34-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/prr-complemento-p7-1-35-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/prr-complemento-p7-1-36-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/prr-complemento-p7-1-38-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/prr-complemento-p7-1-39-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/prr-complemento-p8-1-21-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/prr-complemento-p8-1-25-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/prr-complemento-p9-1-17-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/prr-complemento-p9-1-18-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/prr-complemento-p9-1-26-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/prr-complemento-p9-1-30-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/prr-complemento-p9-1-43-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/prr-complemento-p9-1-44-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/prr-marcos-metas-2025-p2-1-13-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/prr-marcos-metas-2025-p2-1-20-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/prr-marcos-metas-2025-p2-1-29-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/prr-marcos-metas-2025-p2-1-4-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/prr-marcos-metas-2025-p2-1-6-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/prr-monitorizacao-20261014-p2-c01-contratado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/prr-monitorizacao-20261014-p2-c01-pago/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/prr-monitorizacao-20261014-p2-c01-taxa/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/saude-total-2020-execucao-cge2020/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/saude-total-2020-orcamento-oe2020/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/saude-total-2021-execucao-cge2021/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/saude-total-2021-orcamento-oe2021/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/saude-total-2022-execucao-cge2022/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/saude-total-2022-orcamento-oe2022/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/saude-total-2023-execucao-cge2023/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/saude-total-2023-orcamento-oe2023/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/saude-total-2024-execucao-cge2024/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/saude-total-2024-orcamento-oe2024/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/saude-total-2025-execucao-cge2025/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/saude-total-2025-orcamento-oe2025/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/saude-total-2026-orcamento-oe2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/sns-cirurgias-2025-07/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/sns-cirurgias-2026-07/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/sns-consultas-csp-2025-08/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/sns-consultas-csp-2026-08/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/sns-consultas-csp-descricao/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/sns-divida-2026-divida-total-fornecedores-externos-0/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/sns-divida-2026-divida-total-fornecedores-externos-1/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/sns-divida-2026-divida-total-fornecedores-externos-10/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/sns-divida-2026-divida-total-fornecedores-externos-11/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/sns-divida-2026-divida-total-fornecedores-externos-12/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/sns-divida-2026-divida-total-fornecedores-externos-13/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/sns-divida-2026-divida-total-fornecedores-externos-14/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/sns-divida-2026-divida-total-fornecedores-externos-15/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/sns-divida-2026-divida-total-fornecedores-externos-16/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/sns-divida-2026-divida-total-fornecedores-externos-17/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/sns-divida-2026-divida-total-fornecedores-externos-18/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/sns-divida-2026-divida-total-fornecedores-externos-19/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/sns-divida-2026-divida-total-fornecedores-externos-2/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/sns-divida-2026-divida-total-fornecedores-externos-20/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/sns-divida-2026-divida-total-fornecedores-externos-21/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/sns-divida-2026-divida-total-fornecedores-externos-22/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/sns-divida-2026-divida-total-fornecedores-externos-23/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/sns-divida-2026-divida-total-fornecedores-externos-24/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/sns-divida-2026-divida-total-fornecedores-externos-25/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/sns-divida-2026-divida-total-fornecedores-externos-26/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/sns-divida-2026-divida-total-fornecedores-externos-27/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/sns-divida-2026-divida-total-fornecedores-externos-28/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/sns-divida-2026-divida-total-fornecedores-externos-29/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/sns-divida-2026-divida-total-fornecedores-externos-3/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/sns-divida-2026-divida-total-fornecedores-externos-30/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/sns-divida-2026-divida-total-fornecedores-externos-31/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/sns-divida-2026-divida-total-fornecedores-externos-32/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/sns-divida-2026-divida-total-fornecedores-externos-33/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/sns-divida-2026-divida-total-fornecedores-externos-34/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/sns-divida-2026-divida-total-fornecedores-externos-35/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/sns-divida-2026-divida-total-fornecedores-externos-36/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/sns-divida-2026-divida-total-fornecedores-externos-37/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/sns-divida-2026-divida-total-fornecedores-externos-38/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/sns-divida-2026-divida-total-fornecedores-externos-39/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/sns-divida-2026-divida-total-fornecedores-externos-4/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/sns-divida-2026-divida-total-fornecedores-externos-40/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/sns-divida-2026-divida-total-fornecedores-externos-41/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/sns-divida-2026-divida-total-fornecedores-externos-42/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/sns-divida-2026-divida-total-fornecedores-externos-43/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/sns-divida-2026-divida-total-fornecedores-externos-44/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/sns-divida-2026-divida-total-fornecedores-externos-45/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/sns-divida-2026-divida-total-fornecedores-externos-46/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/sns-divida-2026-divida-total-fornecedores-externos-47/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/sns-divida-2026-divida-total-fornecedores-externos-48/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/sns-divida-2026-divida-total-fornecedores-externos-49/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/sns-divida-2026-divida-total-fornecedores-externos-5/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/sns-divida-2026-divida-total-fornecedores-externos-50/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/sns-divida-2026-divida-total-fornecedores-externos-51/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/sns-divida-2026-divida-total-fornecedores-externos-52/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/sns-divida-2026-divida-total-fornecedores-externos-6/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/sns-divida-2026-divida-total-fornecedores-externos-7/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/sns-divida-2026-divida-total-fornecedores-externos-8/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/sns-divida-2026-divida-total-fornecedores-externos-9/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/sns-lista-cirurgia-2025-07/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/sns-lista-cirurgia-2026-07/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/sns-sem-medico-elegibilidade/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/sns-sem-medico-serie-antiga-2025-06/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/sns-sem-medico-serie-antiga-2026-06/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/sns-sem-medico-serie-nova-2026-08/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/utao-ppp-contingencias-natureza-2026/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/utao-risco-execucao-sns-2027/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/utao-saude-efetiva-2026-estimativa/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/utao-saude-efetiva-2026-orcamento/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/utao-saude-sem-prr-2027/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "explicacoes/dinheiro-do-estado-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "tematica"
+    },
+    {
+      "pagina": "livro-razao/afirmacao-leitao-amaro-saude-oe2027-2026-10-09/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/afirmacao-pcp-paula-investimento-saude-2026-10-12/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/afirmacao-pcp-paula-ppp-2026-10-12/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/afirmacao-pcp-ppp-2026-10-15/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/afirmacao-rtp-saude-queda-oe2027-2026-10-09/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/der-ambiente-e-energia-prr-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/der-coesao-territorial-variacao-sem-prr-pct/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/der-economia-prr-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/der-economia-variacao-sem-prr-pct/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/der-educacao-variacao-sem-prr-pct/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/der-financas-prr-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/der-financas-variacao-sem-prr-pct/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/der-infarmed-total-2025-jan-jul/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/der-infarmed-total-2026-jan-jul/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/der-infarmed-variacao-pct/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/der-infraestruturas-e-habitacao-prr-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/der-infraestruturas-e-habitacao-variacao-sem-prr-pct/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/der-justica-variacao-sem-prr-pct/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/der-ppp-brutos-todos-2027/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/der-ppp-pcp-vs-brutos/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/der-ppp-pcp-vs-liquidos/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/der-ppp-quota-rodoviario/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/der-ppp-rodoviario-2027-vs-2021-pct/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/der-prr-saude-contratado-numerico/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/der-prr-saude-marcos-completos/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/der-prr-saude-marcos-total/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/der-prr-saude-pago-numerico/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/der-prr-saude-por-pagar/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/der-prr-saude-por-pagar-pct/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/der-prr-saude-taxa-numerico/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/der-saude-2027-vs-execucao-2025-pct/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/der-saude-bens-servicos-reducao-abs/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/der-saude-investimento-reducao-abs/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/der-saude-outras-correntes-variacao-abs/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/der-saude-pessoal-variacao-abs/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/der-saude-prr-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/der-saude-razao-compensacao-prr-pct/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/der-saude-receitas-proprias-variacao-pct/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/der-saude-reforco-total-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/der-saude-total-reducao-abs/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/der-saude-variacao-efetiva/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/der-saude-variacao-sem-prr/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/der-saude-variacao-sem-prr-pct/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/der-saude-variacao-total-abs/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/der-seguranca-interna-variacao-sem-prr-pct/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/der-sns-cirurgias-variacao-pct/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/der-sns-consultas-csp-variacao-pct/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/der-sns-divida-fornecedores-2026-07/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/der-sns-lista-cirurgia-variacao-pct/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/der-trabalho-solidariedade-e-seguranca-social-variacao-sem-prr-pct/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/der-utao-saude-reforco-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/dgo-2026-08-saude-efetiva-jan-ago-2025/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/dgo-2026-08-saude-efetiva-jan-ago-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/dgo-2026-08-saude-efetiva-variacao-homologa/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/dgo-2026-08-sns-despesa-variacao-homologa/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/dgo-2026-08-sns-saldo-jan-ago-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/dgo-atraso-45-p/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/dgo-regularizacao-ae/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/eurostat-be-phys/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/eurostat-el-phys/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/eurostat-hlth-sha11-hf-a-eur_hab-tot_hf-eu27_2020-2024/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/eurostat-hlth-sha11-hf-a-eur_hab-tot_hf-pt-2024/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/eurostat-hlth-sha11-hf-a-pc_gdp-hf1-eu27_2020-2024/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/eurostat-hlth-sha11-hf-a-pc_gdp-hf1-pt-2024/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/eurostat-hlth-sha11-hf-a-pc_gdp-tot_hf-eu27_2020-2024/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/eurostat-hlth-sha11-hf-a-pc_gdp-tot_hf-pt-2024/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/eurostat-pt-phys/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/infarmed-ambulatorio-2026-07-p5-acumulado-encargo/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/infarmed-ambulatorio-2026-07-p5-homologo-encargo/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/infarmed-ambulatorio-limitacao/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/infarmed-hospitalar-2026-07-p5-acumulado-encargo/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/infarmed-hospitalar-2026-07-p5-homologo-encargo/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-ambiente-e-energia-efetiva-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-ambiente-e-energia-sem-prr-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-coesao-territorial-sem-prr-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-coesao-territorial-sem-prr-2027/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-economia-efetiva-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-economia-sem-prr-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-economia-sem-prr-2027/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-educacao-sem-prr-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-educacao-sem-prr-2027/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-financas-efetiva-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-financas-sem-prr-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-financas-sem-prr-2027/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-infraestruturas-e-habitacao-efetiva-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-infraestruturas-e-habitacao-sem-prr-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-infraestruturas-e-habitacao-sem-prr-2027/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-justica-sem-prr-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-justica-sem-prr-2027/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-ppp-rodoviario-encargos-brutos-2027/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-ppp-rodoviario-encargos-liquidos-2027/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-ppp-rodoviario-receitas-2027/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-ppp-total-encargos-liquidos-2027/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-saude-bens-servicos-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-saude-bens-servicos-2027/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-saude-bens-servicos-variacao/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-saude-contrato-programa-acss/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-saude-despesa-efetiva-consolidada-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-saude-despesa-efetiva-consolidada-2027/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-saude-despesa-efetiva-consolidada-variacao/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-saude-despesa-total-consolidada-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-saude-despesa-total-consolidada-2027/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-saude-despesa-total-consolidada-variacao/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-saude-dotacao-reforco-contratos-programa/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-saude-fonte-fundos-europeus-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-saude-fonte-fundos-europeus-2027/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-saude-fonte-impostos-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-saude-fonte-impostos-2027/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-saude-fonte-receitas-proprias-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-saude-fonte-receitas-proprias-2027/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-saude-investimento-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-saude-investimento-2027/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-saude-investimento-variacao/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-saude-investimento-variacao-sem-prr/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-saude-outras-correntes-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-saude-outras-correntes-2027/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-saude-pessoal-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-saude-pessoal-2027/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-saude-pessoal-variacao/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-saude-transferencias-capital-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-saude-transferencias-capital-2027/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-saude-transferencias-sns-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-saude-transferencias-sns-2027/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-saude-transferencias-sns-variacao/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-seguranca-interna-sem-prr-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-seguranca-interna-sem-prr-2027/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-trabalho-solidariedade-e-seguranca-social-sem-prr-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-trabalho-solidariedade-e-seguranca-social-sem-prr-2027/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/pe-brisa-minuta-ano/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/pe-brisa-periodo-imt/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/pe-brisa-prazo-minuta/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/pe-despacho-alargamentos/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/pe-despacho-braga/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/pe-despacho-comparticipacoes/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/pe-despacho-equilibrio/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/pe-despacho-investimentos-novos/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/pe-despacho-investimentos-previstos/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/pe-despacho-limites/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/pe-despacho-qualidade/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/pe-dl87a-apoio-retificado/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/pe-dl87a-descontos/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/pe-dl87a-financiamento/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/pe-dl87a-publicacao-ano/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/pe-oe-apoio-dl87a/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/pe-oe-beira-abolicao/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/pe-oe-riscos-nao-reconhecimento/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/pe-scut-trocos/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/pe-scut-vigencia/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/ppp-oe2022-liquidos-2021/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/ppp-oe2023-liquidos-2022/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/ppp-oe2024-liquidos-2023/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/ppp-oe2025-liquidos-2024/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/ppp-oe2026-brutos-2025/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/ppp-oe2026-liquidos-2025/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/ppp-oe2026-receitas-2025/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/ppp-oe2027-brutos-2027/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/ppp-oe2027-ferroviario-2027/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/ppp-oe2027-liquidos-2026/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/ppp-oe2027-liquidos-2027-previsao-oe2026/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/ppp-oe2027-liquidos-2028/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/ppp-oe2027-liquidos-2029/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/ppp-oe2027-liquidos-2030/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/ppp-oe2027-liquidos-2035/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/ppp-oe2027-liquidos-2040/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/ppp-oe2027-receitas-2027/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/ppp-oe2027-riscos-acrescimo/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/ppp-oe2027-riscos-brisa/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/ppp-oe2027-riscos-pedidos-rodoviarios/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/ppp-oe2027-riscos-rotas-algarve-mensal/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/ppp-oe2027-riscos-rotas-algarve-principal/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/ppp-oe2027-saude-2027/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/prr-complemento-p3-1-24-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/prr-complemento-p3-1-3-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/prr-complemento-p3-1-32-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/prr-complemento-p3-1-33-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/prr-complemento-p3-1-8-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/prr-complemento-p4-1-1-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/prr-complemento-p4-1-12-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/prr-complemento-p4-1-2-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/prr-complemento-p4-1-40-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/prr-complemento-p4-1-41-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/prr-complemento-p4-1-5-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/prr-complemento-p5-1-11-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/prr-complemento-p5-1-22-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/prr-complemento-p5-1-28-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/prr-complemento-p5-1-7-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/prr-complemento-p5-1-9-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/prr-complemento-p6-1-10-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/prr-complemento-p6-1-37-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/prr-complemento-p6-1-42-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/prr-complemento-p7-1-34-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/prr-complemento-p7-1-35-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/prr-complemento-p7-1-36-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/prr-complemento-p7-1-38-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/prr-complemento-p7-1-39-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/prr-complemento-p8-1-21-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/prr-complemento-p8-1-25-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/prr-complemento-p9-1-17-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/prr-complemento-p9-1-18-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/prr-complemento-p9-1-26-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/prr-complemento-p9-1-30-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/prr-complemento-p9-1-43-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/prr-complemento-p9-1-44-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/prr-marcos-metas-2025-p2-1-13-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/prr-marcos-metas-2025-p2-1-20-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/prr-marcos-metas-2025-p2-1-29-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/prr-marcos-metas-2025-p2-1-4-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/prr-marcos-metas-2025-p2-1-6-estado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/prr-monitorizacao-20261014-p2-c01-contratado/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/prr-monitorizacao-20261014-p2-c01-pago/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/prr-monitorizacao-20261014-p2-c01-taxa/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/saude-total-2020-execucao-cge2020/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/saude-total-2020-orcamento-oe2020/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/saude-total-2021-execucao-cge2021/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/saude-total-2021-orcamento-oe2021/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/saude-total-2022-execucao-cge2022/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/saude-total-2022-orcamento-oe2022/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/saude-total-2023-execucao-cge2023/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/saude-total-2023-orcamento-oe2023/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/saude-total-2024-execucao-cge2024/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/saude-total-2024-orcamento-oe2024/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/saude-total-2025-execucao-cge2025/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/saude-total-2025-orcamento-oe2025/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/saude-total-2026-orcamento-oe2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/sns-cirurgias-2025-07/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/sns-cirurgias-2026-07/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/sns-consultas-csp-2025-08/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/sns-consultas-csp-2026-08/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/sns-consultas-csp-descricao/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/sns-divida-2026-divida-total-fornecedores-externos-0/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/sns-divida-2026-divida-total-fornecedores-externos-1/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/sns-divida-2026-divida-total-fornecedores-externos-10/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/sns-divida-2026-divida-total-fornecedores-externos-11/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/sns-divida-2026-divida-total-fornecedores-externos-12/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/sns-divida-2026-divida-total-fornecedores-externos-13/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/sns-divida-2026-divida-total-fornecedores-externos-14/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/sns-divida-2026-divida-total-fornecedores-externos-15/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/sns-divida-2026-divida-total-fornecedores-externos-16/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/sns-divida-2026-divida-total-fornecedores-externos-17/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/sns-divida-2026-divida-total-fornecedores-externos-18/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/sns-divida-2026-divida-total-fornecedores-externos-19/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/sns-divida-2026-divida-total-fornecedores-externos-2/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/sns-divida-2026-divida-total-fornecedores-externos-20/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/sns-divida-2026-divida-total-fornecedores-externos-21/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/sns-divida-2026-divida-total-fornecedores-externos-22/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/sns-divida-2026-divida-total-fornecedores-externos-23/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/sns-divida-2026-divida-total-fornecedores-externos-24/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/sns-divida-2026-divida-total-fornecedores-externos-25/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/sns-divida-2026-divida-total-fornecedores-externos-26/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/sns-divida-2026-divida-total-fornecedores-externos-27/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/sns-divida-2026-divida-total-fornecedores-externos-28/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/sns-divida-2026-divida-total-fornecedores-externos-29/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/sns-divida-2026-divida-total-fornecedores-externos-3/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/sns-divida-2026-divida-total-fornecedores-externos-30/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/sns-divida-2026-divida-total-fornecedores-externos-31/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/sns-divida-2026-divida-total-fornecedores-externos-32/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/sns-divida-2026-divida-total-fornecedores-externos-33/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/sns-divida-2026-divida-total-fornecedores-externos-34/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/sns-divida-2026-divida-total-fornecedores-externos-35/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/sns-divida-2026-divida-total-fornecedores-externos-36/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/sns-divida-2026-divida-total-fornecedores-externos-37/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/sns-divida-2026-divida-total-fornecedores-externos-38/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/sns-divida-2026-divida-total-fornecedores-externos-39/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/sns-divida-2026-divida-total-fornecedores-externos-4/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/sns-divida-2026-divida-total-fornecedores-externos-40/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/sns-divida-2026-divida-total-fornecedores-externos-41/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/sns-divida-2026-divida-total-fornecedores-externos-42/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/sns-divida-2026-divida-total-fornecedores-externos-43/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/sns-divida-2026-divida-total-fornecedores-externos-44/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/sns-divida-2026-divida-total-fornecedores-externos-45/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/sns-divida-2026-divida-total-fornecedores-externos-46/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/sns-divida-2026-divida-total-fornecedores-externos-47/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/sns-divida-2026-divida-total-fornecedores-externos-48/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/sns-divida-2026-divida-total-fornecedores-externos-49/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/sns-divida-2026-divida-total-fornecedores-externos-5/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/sns-divida-2026-divida-total-fornecedores-externos-50/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/sns-divida-2026-divida-total-fornecedores-externos-51/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/sns-divida-2026-divida-total-fornecedores-externos-52/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/sns-divida-2026-divida-total-fornecedores-externos-6/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/sns-divida-2026-divida-total-fornecedores-externos-7/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/sns-divida-2026-divida-total-fornecedores-externos-8/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/sns-divida-2026-divida-total-fornecedores-externos-9/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/sns-lista-cirurgia-2025-07/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/sns-lista-cirurgia-2026-07/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/sns-sem-medico-elegibilidade/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/sns-sem-medico-serie-antiga-2025-06/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/sns-sem-medico-serie-antiga-2026-06/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/sns-sem-medico-serie-nova-2026-08/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/utao-ppp-contingencias-natureza-2026/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/utao-risco-execucao-sns-2027/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/utao-saude-efetiva-2026-estimativa/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/utao-saude-efetiva-2026-orcamento/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/utao-saude-sem-prr-2027/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    }
+  ]
+}

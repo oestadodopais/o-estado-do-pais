@@ -113,6 +113,10 @@ export function periodoAqui(p, lang) {
   }
   const m = /^(\d{4})-(0[1-9]|1[0-2])$/.exec(p);
   if (m) return lang === 'en' ? `${MESES.en[Number(m[2]) - 1]} ${m[1]}` : `${MESES.pt[Number(m[2]) - 1]} de ${m[1]}`;
+  const trimestre = /^(\d{4})-T([1-4])$/.exec(p);
+  if (trimestre) return lang === 'en'
+    ? `${['1st', '2nd', '3rd', '4th'][Number(trimestre[2]) - 1]} quarter of ${trimestre[1]}`
+    : `${trimestre[2]}.º trimestre de ${trimestre[1]}`;
   if (/^\d{4}-\d{2}-\d{2}$/.test(p)) return p.split('-').reverse().join('.');
   return /^\d{4}$/.test(p) ? p : null;
 }
