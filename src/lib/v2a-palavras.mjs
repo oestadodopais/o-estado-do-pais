@@ -3,7 +3,7 @@ import {resolverComplemento} from './o-que-e-o-numero.mjs';
 const saude='oe-2027-saude-despesa-total-consolidada-';
 /** @param {string} id @param {'pt'|'en'} lang */
 export function continuacaoDoNomeV2a(id,lang) {
-  if(id.startsWith('oe-2027-saude-')) {
+  if(id.startsWith('oe-2027-saude-') || id==='oe-2027-outras-despesas-dotacoes-execucao') {
     if(id.endsWith('-variacao'))return [lang==='pt'?' entre a estimativa de ':' between the estimate for ',{periodo:id.replace(/variacao$/,'2026')},lang==='pt'?' e o orçamento para ':' and the budget for ',{periodo:id}];
     return [lang==='pt'?(id.endsWith('-2026')?', estimativa de ':', orçamento para '):(id.endsWith('-2026')?', ':', budget for '),{periodo:id},...(lang==='en'&&id.endsWith('-2026')?[' estimate']:[])];
   }

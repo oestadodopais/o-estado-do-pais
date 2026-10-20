@@ -9,7 +9,7 @@ const semPrr=ano=>s+'despesa-efetiva-consolidada-sem-prr-'+ano;
 const estrada='oe-2027-ppp-rodoviario-encargos-';
 const regra=(id,componentes,conta,casas=1)=>({id,componentes,conta,casas});
 export const DERIVACOES=[
- ...['pessoal','bens-servicos','investimento'].map(r=>regra(`der-saude-${r}-variacao-abs`,[s+r+'-2027',s+r+'-2026'],diferenca)),
+ ...['pessoal','bens-servicos','investimento','outras-correntes'].map(r=>regra(`der-saude-${r}-variacao-abs`,[s+r+'-2027',s+r+'-2026'],diferenca)),
  regra('der-saude-variacao-total-abs',[total(2027),total(2026)],diferenca),
  regra('der-saude-reforco-total-2026',[total(2026),'saude-total-2026-orcamento-oe2026'],diferenca),
  ...['bens-servicos','investimento'].map(r=>regra(`der-saude-${r}-reducao-abs`,[s+r+'-2026',s+r+'-2027'],diferenca)),
@@ -39,9 +39,12 @@ export function conferirDerivacoes(linhas){
   if(JSON.stringify([...(linha.derived_from??[])].sort())!==JSON.stringify([...componentes].sort()))erros.push(`V2D derivação: ${id} declara componentes diferentes da conta`);
   if(!linha.derivation?.trim()||!linha.derivation_en?.trim())erros.push(`V2D derivação: ${id} não explica a conta nas duas edições`);
  }
- for(const id of ['utao-risco-execucao-sns-2027','utao-ppp-contingencias-natureza-2026','oe-2027-outras-despesas-correntes-reserva']){
+ for(const id of ['utao-risco-execucao-sns-2027','utao-ppp-contingencias-natureza-2026','oe-2027-outras-despesas-dotacoes-execucao','oe-2027-saude-dotacao-reforco-contratos-programa']){
   const l=linhas.get(id);
   if(!l||l.afirmacao!==true||l.unit!=='afirmação'||l.value!==l.excerpt)erros.push(`V2D afirmação textual: ${id} não preserva o excerto como valor`);
+ }
+ for(const l of linhas.values()){
+  if(l.afirmacao && l.document?.title==='Orçamento do Estado 2027 · Relatório' && (l.reference_date!=='2027'||l.published_at!=='2026-10-08'))erros.push(`V2D período textual: ${l.id} confunde orçamento e publicação`);
  }
  for(let ano=2020;ano<=2025;ano++){
   const inicial=linhas.get(`saude-total-${ano}-orcamento-oe${ano}`),execucao=linhas.get(`saude-total-${ano}-execucao-cge${ano}`);
@@ -54,13 +57,14 @@ export function plantasDasDerivacoes(linhas){
  return [
   ['número derivado não bate com as componentes',c=>{c.get(id).value=String(numero(c.get(id).value)+1);}],
   ['componente da derivação trocada',c=>{c.get(id).derived_from[0]='oe-2027-ppp-rodoviario-encargos-liquidos-2027';}],
+  ['período textual trocado pela publicação',c=>{c.get('oe-2027-saude-dotacao-reforco-contratos-programa').reference_date='2026-10-08';}],
   ['afirmação textual com número inventado',c=>{c.get('utao-risco-execucao-sns-2027').value='42';}],
   ['execução anual abaixo do orçamento inicial',c=>{c.get('saude-total-2022-execucao-cge2022').value='0';}],
  ].map(([nome,estraga])=>{
   const copia=new Map([...linhas].map(([k,v])=>[k,structuredClone(v)]));
   if(!copia.has(id))return {nome,mordeu:false,queixa:'Linha da planta ausente'};
   estraga(copia);
-  const queixa=conferirDerivacoes(copia).find(e=>nome.startsWith('execução')?e.includes('V2D série'):nome.startsWith('afirmação')?e.includes('V2D afirmação textual'):e.includes(id))??null;
+  const queixa=conferirDerivacoes(copia).find(e=>nome.startsWith('período')?e.includes('V2D período textual'):nome.startsWith('execução')?e.includes('V2D série'):nome.startsWith('afirmação')?e.includes('V2D afirmação textual'):e.includes(id))??null;
   return {nome,mordeu:queixa!==null,queixa};
  });
 }

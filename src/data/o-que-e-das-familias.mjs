@@ -5369,6 +5369,20 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
       ]
     }
   },
+  "der-saude-outras-correntes-variacao-abs": {
+    "nome": {
+      "pt": "Variação absoluta das outras despesas correntes da Saúde",
+      "en": "Absolute change in Health other current expenditure"
+    },
+    "frase": {
+      "pt": [
+        "É o orçamento de outras despesas correntes da Saúde menos a estimativa do ano anterior."
+      ],
+      "en": [
+        "It is budgeted Health other current expenditure minus the preceding year’s estimate."
+      ]
+    }
+  },
   "der-saude-pessoal-variacao-abs": {
     "nome": {
       "pt": "Variação absoluta das despesas com pessoal da Saúde",
@@ -5985,31 +5999,17 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
       ]
     }
   },
-  "oe-2027-outras-despesas-correntes-reserva": {
+  "oe-2027-outras-despesas-dotacoes-execucao": {
     "nome": {
-      "pt": "Explicação do crescimento das outras despesas correntes",
-      "en": "Explanation of the growth in other current expenditure"
+      "pt": "Dotações a alocar durante a execução",
+      "en": "Appropriations to allocate during execution"
     },
     "frase": {
       "pt": [
-        "É a explicação do relatório para o crescimento das outras despesas correntes do conjunto das administrações públicas, decorrente da constituição de reservas orçamentais a mobilizar durante a execução."
+        "É a previsão de dotações a alocar a outras entidades durante a execução, nomeadamente na Saúde e na Defesa."
       ],
       "en": [
-        "It is the report’s explanation of growth in other current expenditure for general government as a whole, arising from the creation of budget reserves to be used during execution."
-      ]
-    }
-  },
-  "oe-2027-saude-acao-reserva-orcamental": {
-    "nome": {
-      "pt": "Reserva orçamental do programa Saúde",
-      "en": "Health programme budget reserve"
-    },
-    "frase": {
-      "pt": [
-        "É a reserva orçamental inscrita entre as ações do programa Saúde."
-      ],
-      "en": [
-        "It is the budget reserve listed among the Health programme’s actions."
+        "It is the provision of appropriations to allocate to other entities during execution, including Health and Defence."
       ]
     }
   },
@@ -6052,6 +6052,20 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
       ],
       "en": [
         "It is the published change in purchase of goods and services in the Health programme table."
+      ]
+    }
+  },
+  "oe-2027-saude-dotacao-reforco-contratos-programa": {
+    "nome": {
+      "pt": "Dotação para reforço dos contratos-programa da Saúde",
+      "en": "Appropriation to reinforce Health contract-programmes"
+    },
+    "frase": {
+      "pt": [
+        "É a dotação para reforço dos contratos-programa da Saúde cuja contratualização ainda decorre."
+      ],
+      "en": [
+        "It is the appropriation to reinforce Health contract-programmes whose contracting is still under way."
       ]
     }
   },

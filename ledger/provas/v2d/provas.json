@@ -6304,17 +6304,17 @@
         "sha256": "3c6ae5f2fa96d3036d2b74fa622294518199dfd0d9d2e696e8a738493b8efd52"
       }
     },
-    "oe-2027-outras-despesas-correntes-reserva": {
-      "value": "De relevar ainda o crescimento das outras despesas correntes, decorrente da constituição das reservas orçamentais a serem mobilizadas durante a execução orçamental, em linha com o aprofundamento da autonomia na gestão orçamental de cada área setorial iniciada em 2026.",
+    "oe-2027-outras-despesas-dotacoes-execucao": {
+      "value": "Neste agregado estão ainda previstas dotações destinadas a alocar a outras entidades 26 em sede de execução, nomeadamente nos Programas Legados da Saúde e da Defesa.",
       "period": "2027",
-      "excerpt": "De relevar ainda o crescimento das outras despesas correntes, decorrente da constituição das reservas orçamentais a serem mobilizadas durante a execução orçamental, em linha com o aprofundamento da autonomia na gestão orçamental de cada área setorial iniciada em 2026.",
+      "excerpt": "Neste agregado estão ainda previstas dotações destinadas a alocar a outras entidades 26 em sede de execução, nomeadamente nos Programas Legados da Saúde e da Defesa.",
       "document": {
         "title": "Orçamento do Estado 2027 · Relatório",
         "file": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
         "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-        "locator": "p. 67 PDF (51 impressa), outras despesas correntes do conjunto das administrações públicas",
-        "page": 67,
-        "printed_page": 51
+        "locator": "p. 88 PDF (72 impressa), Administração Central, outras despesas",
+        "page": 88,
+        "printed_page": 72
       },
       "derivation": null,
       "afirmacao": true,
@@ -6359,17 +6359,17 @@
         "sha256": "e955562568605bdb2d5f59cae815cf59b8c615ca33c274a3bc4600225d08f5e0"
       }
     },
-    "oe-2027-saude-acao-reserva-orcamental": {
-      "value": "Reserva orçamental",
+    "oe-2027-saude-dotacao-reforco-contratos-programa": {
+      "value": "São objeto de afetação específica no decurso da execução orçamental. Relevam, no Programa Legado da Defesa, a dotação destinada às forças nacionais destacadas, a afetar sobretudo aos ramos das Forças Armadas, e, no Programa Legado da Saúde, a dotação para reforço no âmbito dos contratos-programa cuja contratualização ainda decorre.",
       "period": "2027",
-      "excerpt": "Reserva orçamental",
+      "excerpt": "São objeto de afetação específica no decurso da execução orçamental. Relevam, no Programa Legado da Defesa, a dotação destinada às forças nacionais destacadas, a afetar sobretudo aos ramos das Forças Armadas, e, no Programa Legado da Saúde, a dotação para reforço no âmbito dos contratos-programa cuja contratualização ainda decorre.",
       "document": {
         "title": "Orçamento do Estado 2027 · Relatório",
         "file": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
         "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-        "locator": "Quadro 5.36. Objetivos e indicadores da Missão de Base Orgânica Saúde; Ação 4.3; p. 296 PDF (280 impressa)",
-        "page": 296,
-        "printed_page": 280
+        "locator": "p. 88 PDF (72 impressa), nota 26",
+        "page": 88,
+        "printed_page": 72
       },
       "derivation": null,
       "afirmacao": true,
@@ -7036,6 +7036,22 @@
         "operation": "change_pct",
         "formula": "((oe-2027-coesao-territorial-sem-prr-2027) ÷ (oe-2027-coesao-territorial-sem-prr-2026) − 1) × 100",
         "calculation": "(388,1 ÷ 628,0 − 1) × 100 = -38.20063694267515923566878981 ≈ -38,2",
+        "rounding_places": 1
+      }
+    },
+    "der-saude-outras-correntes-variacao-abs": {
+      "value": "271,3",
+      "period": "2027",
+      "excerpt": "303,7 − 32,4 = 271,3",
+      "document": null,
+      "derivation": {
+        "components": [
+          "oe-2027-saude-outras-correntes-2027",
+          "oe-2027-saude-outras-correntes-2026"
+        ],
+        "operation": "subtract",
+        "formula": "(oe-2027-saude-outras-correntes-2027) − (oe-2027-saude-outras-correntes-2026)",
+        "calculation": "303,7 − 32,4 = 271,3",
         "rounding_places": 1
       }
     }

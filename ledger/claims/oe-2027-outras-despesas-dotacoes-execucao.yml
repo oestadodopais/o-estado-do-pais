@@ -3,10 +3,10 @@
 # GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
 # Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
 
-id: "oe-2027-saude-acao-reserva-orcamental"
+id: "oe-2027-outras-despesas-dotacoes-execucao"
 
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
-value: "Reserva orçamental"
+value: "Neste agregado estão ainda previstas dotações destinadas a alocar a outras entidades 26 em sede de execução, nomeadamente nos Programas Legados da Saúde e da Defesa."
 unit: "afirmação"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
@@ -14,18 +14,18 @@ source: "Ministério das Finanças"
 document:
   title: "Orçamento do Estado 2027 · Relatório"
   edition: "2027"
-  locator: "Quadro 5.36. Objetivos e indicadores da Missão de Base Orgânica Saúde; Ação 4.3; p. 296 PDF (280 impressa)"
+  locator: "p. 88 PDF (72 impressa), Administração Central, outras despesas"
   source_sha256: "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12"
-  page: 296
+  page: 88
   kind: "pdf"
 source_url: "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true"
 access_date: "2026-10-13"
 published_at: "2026-10-08"
 afirmacao: true
-reference_date: "2026-10-08"
+reference_date: "2027"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "Reserva orçamental"
+excerpt: "Neste agregado estão ainda previstas dotações destinadas a alocar a outras entidades 26 em sede de execução, nomeadamente nos Programas Legados da Saúde e da Defesa."
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null
@@ -40,7 +40,7 @@ attributed_to:
 
 study: "oe-2027"
 # Nota interna. NÃO é publicada: ver DECISIONS §1.24.
-note: "[note do motor] Quadro 5.36, Ação 4.3 do programa Saúde: Reserva orçamental. O rótulo confirma a inscrição da ação; não explica o aumento das outras despesas correntes do programa. · Cruzado de ResearchHub content/24 Orcamento 2027 Analise · oe-2027-saude-acao-reserva-orcamental."
+note: "[note do motor] Frase completa do corpo; o número 26 remete para a nota da mesma página. · Cruzado de ResearchHub content/24 Orcamento 2027 Analise · oe-2027-outras-despesas-dotacoes-execucao."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []

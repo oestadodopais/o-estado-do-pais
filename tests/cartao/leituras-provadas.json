@@ -17275,6 +17275,36 @@
     },
     {
       "chaves": [
+        "der-saude-outras-correntes-variacao-abs"
+      ],
+      "nome": {
+        "pt": "Variação absoluta das outras despesas correntes da Saúde",
+        "en": "Absolute change in Health other current expenditure"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o orçamento de outras despesas correntes da Saúde menos a estimativa do ano anterior.",
+          "en": "It is budgeted Health other current expenditure minus the preceding year’s estimate.",
+          "partes": [
+            {
+              "pt": "É o orçamento de outras despesas correntes da Saúde menos a estimativa do ano anterior.",
+              "en": "It is budgeted Health other current expenditure minus the preceding year’s estimate.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "derivation",
+                  "literal": "(oe-2027-saude-outras-correntes-2027) − (oe-2027-saude-outras-correntes-2026). 303,7 − 32,4 = 271,3"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
         "der-saude-pessoal-variacao-abs"
       ],
       "nome": {
@@ -18595,57 +18625,27 @@
     },
     {
       "chaves": [
-        "oe-2027-outras-despesas-correntes-reserva"
+        "oe-2027-outras-despesas-dotacoes-execucao"
       ],
       "nome": {
-        "pt": "Explicação do crescimento das outras despesas correntes",
-        "en": "Explanation of the growth in other current expenditure"
+        "pt": "Dotações a alocar durante a execução",
+        "en": "Appropriations to allocate during execution"
       },
       "origens": [],
       "folhas": [
         {
-          "pt": "É a explicação do relatório para o crescimento das outras despesas correntes do conjunto das administrações públicas, decorrente da constituição de reservas orçamentais a mobilizar durante a execução.",
-          "en": "It is the report’s explanation of growth in other current expenditure for general government as a whole, arising from the creation of budget reserves to be used during execution.",
+          "pt": "É a previsão de dotações a alocar a outras entidades durante a execução, nomeadamente na Saúde e na Defesa.",
+          "en": "It is the provision of appropriations to allocate to other entities during execution, including Health and Defence.",
           "partes": [
             {
-              "pt": "É a explicação do relatório para o crescimento das outras despesas correntes do conjunto das administrações públicas, decorrente da constituição de reservas orçamentais a mobilizar durante a execução.",
-              "en": "It is the report’s explanation of growth in other current expenditure for general government as a whole, arising from the creation of budget reserves to be used during execution.",
+              "pt": "É a previsão de dotações a alocar a outras entidades durante a execução, nomeadamente na Saúde e na Defesa.",
+              "en": "It is the provision of appropriations to allocate to other entities during execution, including Health and Defence.",
               "classe": "diz",
               "apoios": [
                 {
                   "linha": "propria",
                   "campo": "excerpt",
-                  "literal": "De relevar ainda o crescimento das outras despesas correntes, decorrente da constituição das reservas orçamentais a serem mobilizadas durante a execução orçamental, em linha com o aprofundamento da autonomia na gestão orçamental de cada área setorial iniciada em 2026."
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "chaves": [
-        "oe-2027-saude-acao-reserva-orcamental"
-      ],
-      "nome": {
-        "pt": "Reserva orçamental do programa Saúde",
-        "en": "Health programme budget reserve"
-      },
-      "origens": [],
-      "folhas": [
-        {
-          "pt": "É a reserva orçamental inscrita entre as ações do programa Saúde.",
-          "en": "It is the budget reserve listed among the Health programme’s actions.",
-          "partes": [
-            {
-              "pt": "É a reserva orçamental inscrita entre as ações do programa Saúde.",
-              "en": "It is the budget reserve listed among the Health programme’s actions.",
-              "classe": "diz",
-              "apoios": [
-                {
-                  "linha": "propria",
-                  "campo": "excerpt",
-                  "literal": "Reserva orçamental"
+                  "literal": "Neste agregado estão ainda previstas dotações destinadas a alocar a outras entidades 26 em sede de execução, nomeadamente nos Programas Legados da Saúde e da Defesa."
                 }
               ]
             }
@@ -18736,6 +18736,36 @@
                   "linha": "propria",
                   "campo": "excerpt",
                   "literal": "Quadro 5.37. Saúde (PL15) — Conta do Pograma Legado\n(milhões de euros)\n2026                                2027\nVariação                       Estrutura 2027\nVariação                        Estrutura 2027\nClassificador Económico                                                                                                    (Sem PRR)                         (Sem PRR)\nEstimativa                          Orçamento       (%)                                 (%)\nEstimativa                           Orçamento                                            (%)                                (%)\n(Sem PRR)                           (Sem PRR)\n     Aquisição de bens e serviços                         8 832,9             8 802,2         8 436,3            8 436,3          -4,5             -4,2              47,2             47,2\nSeleção: Variação (%)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "oe-2027-saude-dotacao-reforco-contratos-programa"
+      ],
+      "nome": {
+        "pt": "Dotação para reforço dos contratos-programa da Saúde",
+        "en": "Appropriation to reinforce Health contract-programmes"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a dotação para reforço dos contratos-programa da Saúde cuja contratualização ainda decorre.",
+          "en": "It is the appropriation to reinforce Health contract-programmes whose contracting is still under way.",
+          "partes": [
+            {
+              "pt": "É a dotação para reforço dos contratos-programa da Saúde cuja contratualização ainda decorre.",
+              "en": "It is the appropriation to reinforce Health contract-programmes whose contracting is still under way.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "São objeto de afetação específica no decurso da execução orçamental. Relevam, no Programa Legado da Defesa, a dotação destinada às forças nacionais destacadas, a afetar sobretudo aos ramos das Forças Armadas, e, no Programa Legado da Saúde, a dotação para reforço no âmbito dos contratos-programa cuja contratualização ainda decorre."
                 }
               ]
             }
