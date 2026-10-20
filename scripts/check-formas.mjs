@@ -138,6 +138,7 @@ import { parse } from 'node-html-parser';
 
 import { loadClaims, getClaim, eValorTextual, parsePtNumber } from '../src/lib/ledger.mjs';
 import { dataDaCasa, eCampoDeData } from '../src/lib/datas.mjs';
+import {acumuladoConferido} from '../src/lib/prova-efeitos.mjs';
 import { matchPath, routePath, LANGS } from '../src/lib/routes.mjs';
 import { slugsDosDominios, medidasDoDominio } from '../src/data/dominios.mjs';
 import { FIGURAS } from '../src/data/figuras.mjs';
@@ -352,7 +353,7 @@ function paginasDe(dir) {
  * @returns {string|null}
  */
 function campoDaData(linha, campo) {
-  if (campo === 'period') return typeof linha.period === 'string' && /^\d{4}-T[1-4]$/.test(linha.period) ? linha.period : null;
+  if (campo === 'period') return typeof linha.period === 'string' && (/^\d{4}-T[1-4]$/.test(linha.period)||acumuladoConferido(linha)) ? linha.period : null;
   if (campo === 'reference_date') return typeof linha.reference_date === 'string' ? linha.reference_date : null;
   if (campo === 'access_date') return typeof linha.access_date === 'string' ? linha.access_date : null;
   if (campo === 'published_at') return typeof linha.published_at === 'string' ? linha.published_at : null;
