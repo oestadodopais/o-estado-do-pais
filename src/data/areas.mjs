@@ -411,6 +411,7 @@ export const AREAS = [
         regras: [
           {
             estudos: ['a-casa-em-portugal-e-na-europa'],
+            id: /^(?:hab-|der-hab-|oe-2027-calendario-generalidade$|posicao-)/,
             razao:
               'O estudo compara os preços, o acesso e as condições da habitação, as medidas públicas e as afirmações sobre este assunto em Portugal e na União Europeia.',
           },
