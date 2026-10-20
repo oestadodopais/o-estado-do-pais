@@ -1,0 +1,6 @@
+
+> o-estado-do-pais@0.1.0 check:series
+> node tests/series/series.mjs --prova --json design/especime-v3/medicoes/v2e-2026-10-20/d/entrega/series.json
+
+  check:series · 25 série(s) no tempo de 8327 ponto(s) · 2 derivada(s) com 152 ponto(s) refeitos · 12 linha(s) presa(s), 12 cartão(ões) no último ponto · 50 recibo(s) lidos · metade do motor da S3: 8175 ponto(s) no seu corpo · 40 de 40 planta(s) morderam
+  ✓ as séries no tempo têm a forma, a cadência, cada valor no seu excerto, a derivada refeita, cada linha presa no seu ponto e cada cartão no último, e os recibos com todos os pontos nas duas edições.

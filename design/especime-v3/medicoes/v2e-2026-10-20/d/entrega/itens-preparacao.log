@@ -1,0 +1,6 @@
+Warning: Detected unsettled top-level await at file://<worktree>/tests/discussao/itens.mjs:348
+  const {plantasDosSelosConstruidos}=await import('./planta-selos.mjs');
+                                     ^
+
+
+

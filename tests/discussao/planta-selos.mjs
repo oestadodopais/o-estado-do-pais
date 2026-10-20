@@ -7,9 +7,8 @@ import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import {build} from 'astro';
 import {parse} from 'node-html-parser';
-import {unidadesDepoisDoSelo} from './itens.mjs';
 
-export async function plantasDosSelosConstruidos(saida) {
+export async function plantasDosSelosConstruidos(saida, unidadesDepoisDoSelo) {
   const temporario = fs.mkdtempSync(path.join(os.tmpdir(), 'v2ed-selos-'));
   try {
     await build({configFile: false, srcDir: './tests/discussao/planta-selos',
@@ -45,12 +44,13 @@ export async function plantasDosSelosConstruidos(saida) {
   }
 }
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  const {unidadesDepoisDoSelo} = await import('./itens.mjs');
   if (process.argv[2] === '--medir') {
     const desvios = process.argv.slice(3).flatMap(f => unidadesDepoisDoSelo(parse(fs.readFileSync(f, 'utf8'))));
     console.log(JSON.stringify({codigo: desvios.length ? 1 : 0, desvios}));
     process.exitCode = desvios.length ? 1 : 0;
   } else {
-    const r = await plantasDosSelosConstruidos(process.argv[2]);
+    const r = await plantasDosSelosConstruidos(process.argv[2], unidadesDepoisDoSelo);
     console.log(`Selos construídos: ${r.plantas.length} plantas vermelhas; ${r.controlos.length} controlos verdes.`);
   }
 }
