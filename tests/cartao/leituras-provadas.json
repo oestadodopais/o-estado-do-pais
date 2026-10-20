@@ -61,6 +61,11 @@
       "quem": "Codex gpt-6-astra",
       "quando": "2026-10-14",
       "o_que": "Construção V2-a: frases conferidas nas linhas e documentos selados. A leitura a frio pertence à entrega seguinte."
+    },
+    {
+      "quem": "Codex gpt-6-astra",
+      "quando": "2026-10-20",
+      "o_que": "Construção V2-d: frases conferidas nas linhas e documentos selados. A leitura a frio pertence à entrega seguinte."
     }
   ],
   "comuns": [
@@ -16481,6 +16486,3786 @@
                   "linha": "propria",
                   "campo": "excerpt",
                   "literal": "At the 2025 NATO Summit in The Hague"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "afirmacao-pcp-paula-investimento-saude-2026-10-12"
+      ],
+      "nome": {
+        "pt": "Afirmação de Paula Santos sobre o investimento na Saúde",
+        "en": "Paula Santos’s statement on Health investment"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o corte no investimento na Saúde afirmado por Paula Santos.",
+          "en": "It is the cut in Health investment stated by Paula Santos.",
+          "partes": [
+            {
+              "pt": "É o corte no investimento na Saúde afirmado por Paula Santos.",
+              "en": "It is the cut in Health investment stated by Paula Santos.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "O investimento sofre um corte brutal de 33,7%."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "afirmacao-pcp-paula-ppp-2026-10-12"
+      ],
+      "nome": {
+        "pt": "Afirmação de Paula Santos sobre as parcerias",
+        "en": "Paula Santos’s statement on partnerships"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o montante referido por Paula Santos como despesa com as parcerias rodoviárias, ferroviárias e da saúde.",
+          "en": "It is the amount cited by Paula Santos as expenditure on road, rail and health partnerships.",
+          "partes": [
+            {
+              "pt": "É o montante referido por Paula Santos como despesa com as parcerias rodoviárias, ferroviárias e da saúde.",
+              "en": "It is the amount cited by Paula Santos as expenditure on road, rail and health partnerships.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Em sentido inverso cresce mais do que o previsto a despesa com as chamadas PPP – rodoviárias, ferroviárias, saúde – com o Governo a desviar mais de 1800 milhões de euros de recursos públicos para os grupos económicos privados, sem que tal se traduza em novas infraestruturas ou investimento nas existentes."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "afirmacao-pcp-ppp-2026-10-15"
+      ],
+      "nome": {
+        "pt": "Afirmação de Paulo Raimundo sobre as parcerias",
+        "en": "Paulo Raimundo’s statement on partnerships"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o montante referido por Paulo Raimundo como pagamentos do Governo em parcerias público-privadas.",
+          "en": "It is the amount cited by Paulo Raimundo as Government payments to public-private partnerships.",
+          "partes": [
+            {
+              "pt": "É o montante referido por Paulo Raimundo como pagamentos do Governo em parcerias público-privadas.",
+              "en": "It is the amount cited by Paulo Raimundo as Government payments to public-private partnerships.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Há condições, há recursos e meios, desde logo na Segurança Social, mas há também opções que se podem e têm de fazer, e entre os mais de 1700 milhões de euros que o Governo quer pagar em PPP e o aumento dos reformados, da nossa parte não temos dúvidas da opção a tomar."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "der-ambiente-e-energia-prr-2026"
+      ],
+      "nome": {
+        "pt": "Ambiente e energia, parcela do PRR",
+        "en": "Environment and energy, RRP component"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a diferença entre a despesa efetiva consolidada com e sem PRR na estimativa do programa Ambiente e energia.",
+          "en": "It is the difference between consolidated effective expenditure with and without the RRP in the estimate for the Environment and energy programme.",
+          "partes": [
+            {
+              "pt": "É a diferença entre a despesa efetiva consolidada com e sem PRR na estimativa do programa Ambiente e energia.",
+              "en": "It is the difference between consolidated effective expenditure with and without the RRP in the estimate for the Environment and energy programme.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "derivation",
+                  "literal": "(oe-2027-ambiente-e-energia-efetiva-2026) − (oe-2027-ambiente-e-energia-sem-prr-2026). 2 290,4 − 1 467,2 = 823,2"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "der-economia-prr-2026"
+      ],
+      "nome": {
+        "pt": "Economia, parcela do PRR",
+        "en": "Economy, RRP component"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a diferença entre a despesa efetiva consolidada com e sem PRR na estimativa do programa Economia.",
+          "en": "It is the difference between consolidated effective expenditure with and without the RRP in the estimate for the Economy programme.",
+          "partes": [
+            {
+              "pt": "É a diferença entre a despesa efetiva consolidada com e sem PRR na estimativa do programa Economia.",
+              "en": "It is the difference between consolidated effective expenditure with and without the RRP in the estimate for the Economy programme.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "derivation",
+                  "literal": "(oe-2027-economia-efetiva-2026) − (oe-2027-economia-sem-prr-2026). 2 312,1 − 955,0 = 1 357,1"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "der-educacao-variacao-sem-prr"
+      ],
+      "nome": {
+        "pt": "Educação, variação absoluta sem PRR",
+        "en": "Education, absolute change outside the RRP"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a variação absoluta da despesa efetiva consolidada sem PRR entre a estimativa e o orçamento seguinte do programa Educação.",
+          "en": "It is the absolute change in consolidated effective expenditure without the RRP between the estimate and the following budget for the Education programme.",
+          "partes": [
+            {
+              "pt": "É a variação absoluta da despesa efetiva consolidada sem PRR entre a estimativa e o orçamento seguinte do programa Educação.",
+              "en": "It is the absolute change in consolidated effective expenditure without the RRP between the estimate and the following budget for the Education programme.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "derivation",
+                  "literal": "(oe-2027-educacao-sem-prr-2027) − (oe-2027-educacao-sem-prr-2026). 7 787,9 − 7 421,7 = 366,2"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "der-educacao-variacao-sem-prr-pct"
+      ],
+      "nome": {
+        "pt": "Educação, variação percentual sem PRR",
+        "en": "Education, percentage change outside the RRP"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a variação percentual da despesa efetiva consolidada sem PRR entre a estimativa e o orçamento seguinte do programa Educação.",
+          "en": "It is the percentage change in consolidated effective expenditure without the RRP between the estimate and the following budget for the Education programme.",
+          "partes": [
+            {
+              "pt": "É a variação percentual da despesa efetiva consolidada sem PRR entre a estimativa e o orçamento seguinte do programa Educação.",
+              "en": "It is the percentage change in consolidated effective expenditure without the RRP between the estimate and the following budget for the Education programme.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "derivation",
+                  "literal": "((oe-2027-educacao-sem-prr-2027) ÷ (oe-2027-educacao-sem-prr-2026) − 1) × 100. (7 787,9 ÷ 7 421,7 − 1) × 100 = 4.934179500653489092795451200 ≈ 4,9"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "der-financas-prr-2026"
+      ],
+      "nome": {
+        "pt": "Finanças, parcela do PRR",
+        "en": "Finance, RRP component"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a diferença entre a despesa efetiva consolidada com e sem PRR na estimativa do programa Finanças.",
+          "en": "It is the difference between consolidated effective expenditure with and without the RRP in the estimate for the Finance programme.",
+          "partes": [
+            {
+              "pt": "É a diferença entre a despesa efetiva consolidada com e sem PRR na estimativa do programa Finanças.",
+              "en": "It is the difference between consolidated effective expenditure with and without the RRP in the estimate for the Finance programme.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "derivation",
+                  "literal": "(oe-2027-financas-efetiva-2026) − (oe-2027-financas-sem-prr-2026). 10 707,0 − 9 234,3 = 1 472,7"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "der-infraestruturas-e-habitacao-prr-2026"
+      ],
+      "nome": {
+        "pt": "Infraestruturas e habitação, parcela do PRR",
+        "en": "Infrastructure and housing, RRP component"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a diferença entre a despesa efetiva consolidada com e sem PRR na estimativa do programa Infraestruturas e habitação.",
+          "en": "It is the difference between consolidated effective expenditure with and without the RRP in the estimate for the Infrastructure and housing programme.",
+          "partes": [
+            {
+              "pt": "É a diferença entre a despesa efetiva consolidada com e sem PRR na estimativa do programa Infraestruturas e habitação.",
+              "en": "It is the difference between consolidated effective expenditure with and without the RRP in the estimate for the Infrastructure and housing programme.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "derivation",
+                  "literal": "(oe-2027-infraestruturas-e-habitacao-efetiva-2026) − (oe-2027-infraestruturas-e-habitacao-sem-prr-2026). 6 068,5 − 4 935,5 = 1 133,0"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "der-infraestruturas-e-habitacao-variacao-sem-prr"
+      ],
+      "nome": {
+        "pt": "Infraestruturas e habitação, variação absoluta sem PRR",
+        "en": "Infrastructure and housing, absolute change outside the RRP"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a variação absoluta da despesa efetiva consolidada sem PRR entre a estimativa e o orçamento seguinte do programa Infraestruturas e habitação.",
+          "en": "It is the absolute change in consolidated effective expenditure without the RRP between the estimate and the following budget for the Infrastructure and housing programme.",
+          "partes": [
+            {
+              "pt": "É a variação absoluta da despesa efetiva consolidada sem PRR entre a estimativa e o orçamento seguinte do programa Infraestruturas e habitação.",
+              "en": "It is the absolute change in consolidated effective expenditure without the RRP between the estimate and the following budget for the Infrastructure and housing programme.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "derivation",
+                  "literal": "(oe-2027-infraestruturas-e-habitacao-sem-prr-2027) − (oe-2027-infraestruturas-e-habitacao-sem-prr-2026). 5 962,5 − 4 935,5 = 1 027,0"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "der-infraestruturas-e-habitacao-variacao-sem-prr-pct"
+      ],
+      "nome": {
+        "pt": "Infraestruturas e habitação, variação percentual sem PRR",
+        "en": "Infrastructure and housing, percentage change outside the RRP"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a variação percentual da despesa efetiva consolidada sem PRR entre a estimativa e o orçamento seguinte do programa Infraestruturas e habitação.",
+          "en": "It is the percentage change in consolidated effective expenditure without the RRP between the estimate and the following budget for the Infrastructure and housing programme.",
+          "partes": [
+            {
+              "pt": "É a variação percentual da despesa efetiva consolidada sem PRR entre a estimativa e o orçamento seguinte do programa Infraestruturas e habitação.",
+              "en": "It is the percentage change in consolidated effective expenditure without the RRP between the estimate and the following budget for the Infrastructure and housing programme.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "derivation",
+                  "literal": "((oe-2027-infraestruturas-e-habitacao-sem-prr-2027) ÷ (oe-2027-infraestruturas-e-habitacao-sem-prr-2026) − 1) × 100. (5 962,5 ÷ 4 935,5 − 1) × 100 = 20.80842873062506331678654640 ≈ 20,8"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "der-justica-variacao-sem-prr"
+      ],
+      "nome": {
+        "pt": "Justiça, variação absoluta sem PRR",
+        "en": "Justice, absolute change outside the RRP"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a variação absoluta da despesa efetiva consolidada sem PRR entre a estimativa e o orçamento seguinte do programa Justiça.",
+          "en": "It is the absolute change in consolidated effective expenditure without the RRP between the estimate and the following budget for the Justice programme.",
+          "partes": [
+            {
+              "pt": "É a variação absoluta da despesa efetiva consolidada sem PRR entre a estimativa e o orçamento seguinte do programa Justiça.",
+              "en": "It is the absolute change in consolidated effective expenditure without the RRP between the estimate and the following budget for the Justice programme.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "derivation",
+                  "literal": "(oe-2027-justica-sem-prr-2027) − (oe-2027-justica-sem-prr-2026). 2 128,2 − 1 800,7 = 327,5"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "der-justica-variacao-sem-prr-pct"
+      ],
+      "nome": {
+        "pt": "Justiça, variação percentual sem PRR",
+        "en": "Justice, percentage change outside the RRP"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a variação percentual da despesa efetiva consolidada sem PRR entre a estimativa e o orçamento seguinte do programa Justiça.",
+          "en": "It is the percentage change in consolidated effective expenditure without the RRP between the estimate and the following budget for the Justice programme.",
+          "partes": [
+            {
+              "pt": "É a variação percentual da despesa efetiva consolidada sem PRR entre a estimativa e o orçamento seguinte do programa Justiça.",
+              "en": "It is the percentage change in consolidated effective expenditure without the RRP between the estimate and the following budget for the Justice programme.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "derivation",
+                  "literal": "((oe-2027-justica-sem-prr-2027) ÷ (oe-2027-justica-sem-prr-2026) − 1) × 100. (2 128,2 ÷ 1 800,7 − 1) × 100 = 18.18737157771977564280557560 ≈ 18,2"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "der-ppp-brutos-todos-2027"
+      ],
+      "nome": {
+        "pt": "Soma dos encargos brutos rodoviários e dos encargos ferroviários e da saúde",
+        "en": "Sum of gross road charges and rail and health charges"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a soma dos encargos brutos rodoviários com os encargos ferroviários e da saúde.",
+          "en": "It is the sum of gross road charges and rail and health charges.",
+          "partes": [
+            {
+              "pt": "É a soma dos encargos brutos rodoviários com os encargos ferroviários e da saúde.",
+              "en": "It is the sum of gross road charges and rail and health charges.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "derivation",
+                  "literal": "(oe-2027-ppp-rodoviario-encargos-brutos-2027) + (ppp-oe2027-ferroviario-2027) + (ppp-oe2027-saude-2027). 1 152 + 312 + 254 = 1 718"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "der-ppp-pcp-vs-brutos"
+      ],
+      "nome": {
+        "pt": "Diferença entre a afirmação do PCP e os encargos rodoviários brutos",
+        "en": "Difference between the PCP statement and gross road charges"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o montante afirmado pelo PCP menos os encargos brutos rodoviários.",
+          "en": "It is the amount stated by the PCP minus gross road charges.",
+          "partes": [
+            {
+              "pt": "É o montante afirmado pelo PCP menos os encargos brutos rodoviários.",
+              "en": "It is the amount stated by the PCP minus gross road charges.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "derivation",
+                  "literal": "(afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09) − (oe-2027-ppp-rodoviario-encargos-brutos-2027). 1 700 − 1 152 = 548"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "der-ppp-pcp-vs-liquidos"
+      ],
+      "nome": {
+        "pt": "Diferença entre a afirmação do PCP e os encargos rodoviários líquidos",
+        "en": "Difference between the PCP statement and net road charges"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o montante afirmado pelo PCP menos os encargos líquidos rodoviários.",
+          "en": "It is the amount stated by the PCP minus net road charges.",
+          "partes": [
+            {
+              "pt": "É o montante afirmado pelo PCP menos os encargos líquidos rodoviários.",
+              "en": "It is the amount stated by the PCP minus net road charges.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "derivation",
+                  "literal": "(afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09) − (oe-2027-ppp-rodoviario-encargos-liquidos-2027). 1 700 − 889 = 811"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "der-ppp-quota-rodoviario"
+      ],
+      "nome": {
+        "pt": "Peso das rodoviárias no total líquido das parcerias",
+        "en": "Road share of total net partnership charges"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a razão entre os encargos líquidos rodoviários e o total líquido de todos os setores, em percentagem.",
+          "en": "It is the ratio of net road charges to total net charges for all sectors, as a percentage.",
+          "partes": [
+            {
+              "pt": "É a razão entre os encargos líquidos rodoviários e o total líquido de todos os setores, em percentagem.",
+              "en": "It is the ratio of net road charges to total net charges for all sectors, as a percentage.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "derivation",
+                  "literal": "(oe-2027-ppp-rodoviario-encargos-liquidos-2027) ÷ (oe-2027-ppp-total-encargos-liquidos-2027) × 100. 889 ÷ 1 438 × 100 = 61,82"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "der-ppp-rodoviario-2027-vs-2021-pct"
+      ],
+      "nome": {
+        "pt": "Variação dos encargos rodoviários orçamentados face à execução anterior",
+        "en": "Change in budgeted road charges against earlier execution"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a variação percentual entre os encargos líquidos rodoviários orçamentados e a execução anterior identificada nas componentes.",
+          "en": "It is the percentage change between budgeted net road charges and the earlier execution identified in the components.",
+          "partes": [
+            {
+              "pt": "É a variação percentual entre os encargos líquidos rodoviários orçamentados e a execução anterior identificada nas componentes.",
+              "en": "It is the percentage change between budgeted net road charges and the earlier execution identified in the components.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "derivation",
+                  "literal": "((oe-2027-ppp-rodoviario-encargos-liquidos-2027) ÷ (ppp-oe2022-liquidos-2021) − 1) × 100. (889 ÷ 1 250 − 1) × 100 = -28.8800 ≈ -28,9"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "der-saude-2027-vs-execucao-2025-pct"
+      ],
+      "nome": {
+        "pt": "Variação do orçamento da Saúde face à execução anterior",
+        "en": "Change in the Health budget against earlier execution"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a variação percentual entre a despesa total consolidada orçamentada e a execução anterior identificada nas componentes.",
+          "en": "It is the percentage change between budgeted consolidated total expenditure and the earlier execution identified in the components.",
+          "partes": [
+            {
+              "pt": "É a variação percentual entre a despesa total consolidada orçamentada e a execução anterior identificada nas componentes.",
+              "en": "It is the percentage change between budgeted consolidated total expenditure and the earlier execution identified in the components.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "derivation",
+                  "literal": "((oe-2027-saude-despesa-total-consolidada-2027) ÷ (saude-total-2025-execucao-cge2025) − 1) × 100. (17 858,4 ÷ 17 241,5 − 1) × 100 = 3.577994954035321752747730800 ≈ 3,6"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "der-saude-bens-servicos-reducao-abs"
+      ],
+      "nome": {
+        "pt": "Redução da aquisição de bens e serviços da Saúde",
+        "en": "Reduction in Health purchase of goods and services"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a estimativa de aquisição de bens e serviços da Saúde menos o orçamento seguinte.",
+          "en": "It is estimated Health purchase of goods and services minus the following budget.",
+          "partes": [
+            {
+              "pt": "É a estimativa de aquisição de bens e serviços da Saúde menos o orçamento seguinte.",
+              "en": "It is estimated Health purchase of goods and services minus the following budget.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "derivation",
+                  "literal": "(oe-2027-saude-bens-servicos-2026) − (oe-2027-saude-bens-servicos-2027). 8 832,9 − 8 436,3 = 396,6"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "der-saude-bens-servicos-variacao-abs"
+      ],
+      "nome": {
+        "pt": "Variação absoluta da aquisição de bens e serviços da Saúde",
+        "en": "Absolute change in Health purchase of goods and services"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o orçamento de aquisição de bens e serviços da Saúde menos a estimativa do ano anterior.",
+          "en": "It is budgeted Health purchase of goods and services minus the preceding year’s estimate.",
+          "partes": [
+            {
+              "pt": "É o orçamento de aquisição de bens e serviços da Saúde menos a estimativa do ano anterior.",
+              "en": "It is budgeted Health purchase of goods and services minus the preceding year’s estimate.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "derivation",
+                  "literal": "(oe-2027-saude-bens-servicos-2027) − (oe-2027-saude-bens-servicos-2026). 8 436,3 − 8 832,9 = -396,6"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "der-saude-investimento-reducao-abs"
+      ],
+      "nome": {
+        "pt": "Redução do investimento da Saúde",
+        "en": "Reduction in Health investment"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a estimativa de investimento da Saúde menos o orçamento seguinte.",
+          "en": "It is estimated Health investment minus the following budget.",
+          "partes": [
+            {
+              "pt": "É a estimativa de investimento da Saúde menos o orçamento seguinte.",
+              "en": "It is estimated Health investment minus the following budget.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "derivation",
+                  "literal": "(oe-2027-saude-investimento-2026) − (oe-2027-saude-investimento-2027). 1 022,5 − 678,3 = 344,2"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "der-saude-investimento-variacao-abs"
+      ],
+      "nome": {
+        "pt": "Variação absoluta do investimento da Saúde",
+        "en": "Absolute change in Health investment"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o orçamento de investimento da Saúde menos a estimativa do ano anterior.",
+          "en": "It is budgeted Health investment minus the preceding year’s estimate.",
+          "partes": [
+            {
+              "pt": "É o orçamento de investimento da Saúde menos a estimativa do ano anterior.",
+              "en": "It is budgeted Health investment minus the preceding year’s estimate.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "derivation",
+                  "literal": "(oe-2027-saude-investimento-2027) − (oe-2027-saude-investimento-2026). 678,3 − 1 022,5 = -344,2"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "der-saude-pessoal-variacao-abs"
+      ],
+      "nome": {
+        "pt": "Variação absoluta das despesas com pessoal da Saúde",
+        "en": "Absolute change in Health personnel expenditure"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o orçamento de despesas com pessoal da Saúde menos a estimativa do ano anterior.",
+          "en": "It is budgeted Health personnel expenditure minus the preceding year’s estimate.",
+          "partes": [
+            {
+              "pt": "É o orçamento de despesas com pessoal da Saúde menos a estimativa do ano anterior.",
+              "en": "It is budgeted Health personnel expenditure minus the preceding year’s estimate.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "derivation",
+                  "literal": "(oe-2027-saude-pessoal-2027) − (oe-2027-saude-pessoal-2026). 8 184,3 − 7 783,1 = 401,2"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "der-saude-prr-2026"
+      ],
+      "nome": {
+        "pt": "Saúde, parcela do PRR",
+        "en": "Health, RRP component"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a diferença entre a despesa efetiva consolidada com e sem PRR na estimativa do programa Saúde.",
+          "en": "It is the difference between consolidated effective expenditure with and without the RRP in the estimate for the Health programme.",
+          "partes": [
+            {
+              "pt": "É a diferença entre a despesa efetiva consolidada com e sem PRR na estimativa do programa Saúde.",
+              "en": "It is the difference between consolidated effective expenditure with and without the RRP in the estimate for the Health programme.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "derivation",
+                  "literal": "(oe-2027-saude-despesa-efetiva-consolidada-2026) − (oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026). 18 062,4 − 17 291,3 = 771,1"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "der-saude-razao-compensacao-prr"
+      ],
+      "nome": {
+        "pt": "Razão entre o aumento sem PRR e a parcela do PRR que termina",
+        "en": "Ratio of the increase outside the RRP to the ending RRP component"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o aumento da despesa efetiva sem PRR dividido pela parcela do PRR na estimativa anterior.",
+          "en": "It is the increase in effective expenditure outside the RRP divided by the RRP component in the preceding estimate.",
+          "partes": [
+            {
+              "pt": "É o aumento da despesa efetiva sem PRR dividido pela parcela do PRR na estimativa anterior.",
+              "en": "It is the increase in effective expenditure outside the RRP divided by the RRP component in the preceding estimate.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "derivation",
+                  "literal": "(der-saude-variacao-sem-prr) ÷ (der-saude-prr-2026). 511,8 ÷ 771,1 = 0,6637"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "der-saude-receitas-proprias-variacao-pct"
+      ],
+      "nome": {
+        "pt": "Variação das receitas próprias da Saúde",
+        "en": "Change in Health own revenue"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a variação percentual das receitas próprias entre os dois orçamentos.",
+          "en": "It is the percentage change in own revenue between the two budgets.",
+          "partes": [
+            {
+              "pt": "É a variação percentual das receitas próprias entre os dois orçamentos.",
+              "en": "It is the percentage change in own revenue between the two budgets.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "derivation",
+                  "literal": "((oe-2027-saude-fonte-receitas-proprias-2027) ÷ (oe-2027-saude-fonte-receitas-proprias-2026) − 1) × 100. (2 017,6 ÷ 1 289,5 − 1) × 100 = 56.46374563784412563008918190 ≈ 56,5"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "der-saude-reforco-total-2026"
+      ],
+      "nome": {
+        "pt": "Diferença entre a estimativa e o orçamento inicial da Saúde",
+        "en": "Difference between the Health estimate and initial budget"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a estimativa de despesa total consolidada da Saúde menos o orçamento inicial do mesmo ano.",
+          "en": "It is estimated consolidated total Health expenditure minus the initial budget for the same year.",
+          "partes": [
+            {
+              "pt": "É a estimativa de despesa total consolidada da Saúde menos o orçamento inicial do mesmo ano.",
+              "en": "It is estimated consolidated total Health expenditure minus the initial budget for the same year.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "derivation",
+                  "literal": "(oe-2027-saude-despesa-total-consolidada-2026) − (saude-total-2026-orcamento-oe2026). 18 125,9 − 17 300,2 = 825,7"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "der-saude-total-reducao-abs"
+      ],
+      "nome": {
+        "pt": "Redução da despesa total da Saúde",
+        "en": "Reduction in total Health expenditure"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a estimativa de despesa total consolidada menos o orçamento do ano seguinte.",
+          "en": "It is the estimate of consolidated total expenditure minus the following year’s budget.",
+          "partes": [
+            {
+              "pt": "É a estimativa de despesa total consolidada menos o orçamento do ano seguinte.",
+              "en": "It is the estimate of consolidated total expenditure minus the following year’s budget.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "derivation",
+                  "literal": "(oe-2027-saude-despesa-total-consolidada-2026) − (oe-2027-saude-despesa-total-consolidada-2027). 18 125,9 − 17 858,4 = 267,5"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "der-saude-variacao-efetiva"
+      ],
+      "nome": {
+        "pt": "Variação absoluta da despesa efetiva da Saúde",
+        "en": "Absolute change in effective Health expenditure"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a despesa efetiva consolidada orçamentada menos a estimativa do ano anterior.",
+          "en": "It is budgeted consolidated effective expenditure minus the preceding year’s estimate.",
+          "partes": [
+            {
+              "pt": "É a despesa efetiva consolidada orçamentada menos a estimativa do ano anterior.",
+              "en": "It is budgeted consolidated effective expenditure minus the preceding year’s estimate.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "derivation",
+                  "literal": "(oe-2027-saude-despesa-efetiva-consolidada-2027) − (oe-2027-saude-despesa-efetiva-consolidada-2026). 17 803,1 − 18 062,4 = -259,3"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "der-saude-variacao-sem-prr"
+      ],
+      "nome": {
+        "pt": "Saúde, variação absoluta sem PRR",
+        "en": "Health, absolute change outside the RRP"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a variação absoluta da despesa efetiva consolidada sem PRR entre a estimativa e o orçamento seguinte do programa Saúde.",
+          "en": "It is the absolute change in consolidated effective expenditure without the RRP between the estimate and the following budget for the Health programme.",
+          "partes": [
+            {
+              "pt": "É a variação absoluta da despesa efetiva consolidada sem PRR entre a estimativa e o orçamento seguinte do programa Saúde.",
+              "en": "It is the absolute change in consolidated effective expenditure without the RRP between the estimate and the following budget for the Health programme.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "derivation",
+                  "literal": "(oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027) − (oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026). 17 803,1 − 17 291,3 = 511,8"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "der-saude-variacao-sem-prr-pct"
+      ],
+      "nome": {
+        "pt": "Saúde, variação percentual sem PRR",
+        "en": "Health, percentage change outside the RRP"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a variação percentual da despesa efetiva consolidada sem PRR entre a estimativa e o orçamento seguinte do programa Saúde.",
+          "en": "It is the percentage change in consolidated effective expenditure without the RRP between the estimate and the following budget for the Health programme.",
+          "partes": [
+            {
+              "pt": "É a variação percentual da despesa efetiva consolidada sem PRR entre a estimativa e o orçamento seguinte do programa Saúde.",
+              "en": "It is the percentage change in consolidated effective expenditure without the RRP between the estimate and the following budget for the Health programme.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "derivation",
+                  "literal": "((oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027) ÷ (oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026) − 1) × 100. (17 803,1 ÷ 17 291,3 − 1) × 100 = 2.959869992423935736468628700 ≈ 3,0"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "der-saude-variacao-total-abs"
+      ],
+      "nome": {
+        "pt": "Variação absoluta da despesa total da Saúde",
+        "en": "Absolute change in total Health expenditure"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a despesa total consolidada orçamentada menos a estimativa do ano anterior.",
+          "en": "It is budgeted consolidated total expenditure minus the preceding year’s estimate.",
+          "partes": [
+            {
+              "pt": "É a despesa total consolidada orçamentada menos a estimativa do ano anterior.",
+              "en": "It is budgeted consolidated total expenditure minus the preceding year’s estimate.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "derivation",
+                  "literal": "(oe-2027-saude-despesa-total-consolidada-2027) − (oe-2027-saude-despesa-total-consolidada-2026). 17 858,4 − 18 125,9 = -267,5"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "der-seguranca-interna-variacao-sem-prr"
+      ],
+      "nome": {
+        "pt": "Segurança interna, variação absoluta sem PRR",
+        "en": "Internal security, absolute change outside the RRP"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a variação absoluta da despesa efetiva consolidada sem PRR entre a estimativa e o orçamento seguinte do programa Segurança interna.",
+          "en": "It is the absolute change in consolidated effective expenditure without the RRP between the estimate and the following budget for the Internal security programme.",
+          "partes": [
+            {
+              "pt": "É a variação absoluta da despesa efetiva consolidada sem PRR entre a estimativa e o orçamento seguinte do programa Segurança interna.",
+              "en": "It is the absolute change in consolidated effective expenditure without the RRP between the estimate and the following budget for the Internal security programme.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "derivation",
+                  "literal": "(oe-2027-seguranca-interna-sem-prr-2027) − (oe-2027-seguranca-interna-sem-prr-2026). 3 153,8 − 2 789,6 = 364,2"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "der-seguranca-interna-variacao-sem-prr-pct"
+      ],
+      "nome": {
+        "pt": "Segurança interna, variação percentual sem PRR",
+        "en": "Internal security, percentage change outside the RRP"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a variação percentual da despesa efetiva consolidada sem PRR entre a estimativa e o orçamento seguinte do programa Segurança interna.",
+          "en": "It is the percentage change in consolidated effective expenditure without the RRP between the estimate and the following budget for the Internal security programme.",
+          "partes": [
+            {
+              "pt": "É a variação percentual da despesa efetiva consolidada sem PRR entre a estimativa e o orçamento seguinte do programa Segurança interna.",
+              "en": "It is the percentage change in consolidated effective expenditure without the RRP between the estimate and the following budget for the Internal security programme.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "derivation",
+                  "literal": "((oe-2027-seguranca-interna-sem-prr-2027) ÷ (oe-2027-seguranca-interna-sem-prr-2026) − 1) × 100. (3 153,8 ÷ 2 789,6 − 1) × 100 = 13.05563521651849727559506740 ≈ 13,1"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "der-trabalho-solidariedade-e-seguranca-social-variacao-sem-prr"
+      ],
+      "nome": {
+        "pt": "Trabalho, solidariedade e segurança social, variação absoluta sem PRR",
+        "en": "Labour, solidarity and social security, absolute change outside the RRP"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a variação absoluta da despesa efetiva consolidada sem PRR entre a estimativa e o orçamento seguinte do programa Trabalho, solidariedade e segurança social.",
+          "en": "It is the absolute change in consolidated effective expenditure without the RRP between the estimate and the following budget for the Labour, solidarity and social security programme.",
+          "partes": [
+            {
+              "pt": "É a variação absoluta da despesa efetiva consolidada sem PRR entre a estimativa e o orçamento seguinte do programa Trabalho, solidariedade e segurança social.",
+              "en": "It is the absolute change in consolidated effective expenditure without the RRP between the estimate and the following budget for the Labour, solidarity and social security programme.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "derivation",
+                  "literal": "(oe-2027-trabalho-solidariedade-e-seguranca-social-sem-prr-2027) − (oe-2027-trabalho-solidariedade-e-seguranca-social-sem-prr-2026). 30 270,4 − 27 832,7 = 2 437,7"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "der-trabalho-solidariedade-e-seguranca-social-variacao-sem-prr-pct"
+      ],
+      "nome": {
+        "pt": "Trabalho, solidariedade e segurança social, variação percentual sem PRR",
+        "en": "Labour, solidarity and social security, percentage change outside the RRP"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a variação percentual da despesa efetiva consolidada sem PRR entre a estimativa e o orçamento seguinte do programa Trabalho, solidariedade e segurança social.",
+          "en": "It is the percentage change in consolidated effective expenditure without the RRP between the estimate and the following budget for the Labour, solidarity and social security programme.",
+          "partes": [
+            {
+              "pt": "É a variação percentual da despesa efetiva consolidada sem PRR entre a estimativa e o orçamento seguinte do programa Trabalho, solidariedade e segurança social.",
+              "en": "It is the percentage change in consolidated effective expenditure without the RRP between the estimate and the following budget for the Labour, solidarity and social security programme.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "derivation",
+                  "literal": "((oe-2027-trabalho-solidariedade-e-seguranca-social-sem-prr-2027) ÷ (oe-2027-trabalho-solidariedade-e-seguranca-social-sem-prr-2026) − 1) × 100. (30 270,4 ÷ 27 832,7 − 1) × 100 = 8.758402885814168226582401300 ≈ 8,8"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "der-utao-saude-reforco-2026"
+      ],
+      "nome": {
+        "pt": "Diferença entre a estimativa e o orçamento da Saúde na UTAO",
+        "en": "Difference between the Health estimate and budget in the UTAO table"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a estimativa de despesa efetiva da Saúde menos o orçamento do mesmo ano, pelas duas linhas da UTAO.",
+          "en": "It is estimated effective Health expenditure minus the budget for the same year, using the two UTAO rows.",
+          "partes": [
+            {
+              "pt": "É a estimativa de despesa efetiva da Saúde menos o orçamento do mesmo ano, pelas duas linhas da UTAO.",
+              "en": "It is estimated effective Health expenditure minus the budget for the same year, using the two UTAO rows.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "derivation",
+                  "literal": "(utao-saude-efetiva-2026-estimativa) − (utao-saude-efetiva-2026-orcamento). 18 062 − 17 147 = 915"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "dgo-2026-08-saude-efetiva-jan-ago-2025"
+      ],
+      "nome": {
+        "pt": "Execução da despesa efetiva da Saúde até agosto",
+        "en": "Effective Health expenditure executed to August"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a despesa efetiva do programa Saúde acumulada de janeiro a agosto do ano de referência.",
+          "en": "It is effective Health programme expenditure accumulated from January to August of the reference year.",
+          "partes": [
+            {
+              "pt": "É a despesa efetiva do programa Saúde acumulada de janeiro a agosto do ano de referência.",
+              "en": "It is effective Health programme expenditure accumulated from January to August of the reference year.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "B6: Agosto de 2026; B8: Quadro 24 - Despesa Efetiva Consolidada por Programa Orçamental; B9: Período: janeiro a agosto; B26: 015 - Saúde; C11: 2025; C10: Execução Acumulada; E10: Variação Homóloga Acumulada; C26: 9 861,9"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "dgo-2026-08-saude-efetiva-jan-ago-2026"
+      ],
+      "nome": {
+        "pt": "Execução da despesa efetiva da Saúde até agosto",
+        "en": "Effective Health expenditure executed to August"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a despesa efetiva do programa Saúde acumulada de janeiro a agosto do ano de referência.",
+          "en": "It is effective Health programme expenditure accumulated from January to August of the reference year.",
+          "partes": [
+            {
+              "pt": "É a despesa efetiva do programa Saúde acumulada de janeiro a agosto do ano de referência.",
+              "en": "It is effective Health programme expenditure accumulated from January to August of the reference year.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "B6: Agosto de 2026; B8: Quadro 24 - Despesa Efetiva Consolidada por Programa Orçamental; B9: Período: janeiro a agosto; B26: 015 - Saúde; D11: 2026; C10: Execução Acumulada; E10: Variação Homóloga Acumulada; D26: 11 822,6"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "dgo-2026-08-saude-efetiva-variacao-homologa"
+      ],
+      "nome": {
+        "pt": "Variação homóloga da despesa efetiva da Saúde até agosto",
+        "en": "Year-on-year change in effective Health expenditure to August"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a variação percentual da despesa efetiva do programa Saúde acumulada até agosto face ao mesmo período do ano anterior.",
+          "en": "It is the percentage change in effective Health programme expenditure accumulated to August against the same period of the preceding year.",
+          "partes": [
+            {
+              "pt": "É a variação percentual da despesa efetiva do programa Saúde acumulada até agosto face ao mesmo período do ano anterior.",
+              "en": "It is the percentage change in effective Health programme expenditure accumulated to August against the same period of the preceding year.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "B6: Agosto de 2026; B8: Quadro 24 - Despesa Efetiva Consolidada por Programa Orçamental; B9: Período: janeiro a agosto; B26: 015 - Saúde; F11: Relativa (%); C10: Execução Acumulada; E10: Variação Homóloga Acumulada; F26: 19,9"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "dgo-2026-08-sns-despesa-variacao-homologa"
+      ],
+      "nome": {
+        "pt": "Variação homóloga da despesa do Serviço Nacional de Saúde",
+        "en": "Year-on-year change in National Health Service expenditure"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a variação percentual da despesa do Serviço Nacional de Saúde acumulada até agosto face ao mesmo período do ano anterior.",
+          "en": "It is the percentage change in National Health Service expenditure accumulated to August against the same period of the preceding year.",
+          "partes": [
+            {
+              "pt": "É a variação percentual da despesa do Serviço Nacional de Saúde acumulada até agosto face ao mesmo período do ano anterior.",
+              "en": "It is the percentage change in National Health Service expenditure accumulated to August against the same period of the preceding year.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "B6: Agosto de 2026; B8: Quadro 1 - Receita, despesa e saldo das Administrações Públicas; B9: Período: janeiro a agosto; B16: Serviço Nacional de Saúde; J11: Despesa; C10: Saldo; G10: Despesa; I10: Variação Homóloga Acumulada (%); J16: 13,2"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "dgo-2026-08-sns-saldo-jan-ago-2026"
+      ],
+      "nome": {
+        "pt": "Saldo do Serviço Nacional de Saúde até agosto",
+        "en": "National Health Service balance to August"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o saldo do Serviço Nacional de Saúde acumulado de janeiro a agosto.",
+          "en": "It is the National Health Service balance accumulated from January to August.",
+          "partes": [
+            {
+              "pt": "É o saldo do Serviço Nacional de Saúde acumulado de janeiro a agosto.",
+              "en": "It is the National Health Service balance accumulated from January to August.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "B6: Agosto de 2026; B8: Quadro 1 - Receita, despesa e saldo das Administrações Públicas; B9: Período: janeiro a agosto; B16: Serviço Nacional de Saúde; D11: 2026; C10: Saldo; G10: Despesa; I10: Variação Homóloga Acumulada (%); D16: -918,5"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "eurostat-hlth-sha11-hf-a-eur_hab-tot_hf-eu27_2020-2024"
+      ],
+      "nome": {
+        "pt": "Despesa em saúde, União Europeia, em todos os regimes de financiamento, euros por habitante",
+        "en": "Health expenditure, European Union, across all financing schemes, euros per inhabitant"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a despesa em saúde em todos os regimes de financiamento na União Europeia, expressa em euros por habitante, na série do Eurostat.",
+          "en": "It is health expenditure across all financing schemes in the European Union, expressed in euros per inhabitant, in the Eurostat series.",
+          "partes": [
+            {
+              "pt": "É a despesa em saúde em todos os regimes de financiamento na União Europeia, expressa em euros por habitante, na série do Eurostat.",
+              "en": "It is health expenditure across all financing schemes in the European Union, expressed in euros per inhabitant, in the Eurostat series.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"EUR_HAB\", \"icha11_hf\": \"TOT_HF\", \"geo\": \"EU27_2020\", \"time\": \"2024\"}, \"value\": \"4074.88\", \"status\": null}"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "eurostat-hlth-sha11-hf-a-eur_hab-tot_hf-pt-2024"
+      ],
+      "nome": {
+        "pt": "Despesa em saúde, Portugal, em todos os regimes de financiamento, euros por habitante",
+        "en": "Health expenditure, Portugal, across all financing schemes, euros per inhabitant"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a despesa em saúde em todos os regimes de financiamento em Portugal, expressa em euros por habitante, na série do Eurostat.",
+          "en": "It is health expenditure across all financing schemes in Portugal, expressed in euros per inhabitant, in the Eurostat series.",
+          "partes": [
+            {
+              "pt": "É a despesa em saúde em todos os regimes de financiamento em Portugal, expressa em euros por habitante, na série do Eurostat.",
+              "en": "It is health expenditure across all financing schemes in Portugal, expressed in euros per inhabitant, in the Eurostat series.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"EUR_HAB\", \"icha11_hf\": \"TOT_HF\", \"geo\": \"PT\", \"time\": \"2024\"}, \"value\": \"2764.83\", \"status\": null}"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "eurostat-hlth-sha11-hf-a-pc_gdp-hf1-eu27_2020-2024"
+      ],
+      "nome": {
+        "pt": "Despesa em saúde, União Europeia, nos regimes públicos e contributivos obrigatórios, percentagem do PIB",
+        "en": "Health expenditure, European Union, in government and compulsory contributory schemes, percentage of GDP"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a despesa em saúde nos regimes públicos e contributivos obrigatórios na União Europeia, expressa em percentagem do PIB, na série do Eurostat.",
+          "en": "It is health expenditure in government and compulsory contributory schemes in the European Union, expressed as a percentage of GDP, in the Eurostat series.",
+          "partes": [
+            {
+              "pt": "É a despesa em saúde nos regimes públicos e contributivos obrigatórios na União Europeia, expressa em percentagem do PIB, na série do Eurostat.",
+              "en": "It is health expenditure in government and compulsory contributory schemes in the European Union, expressed as a percentage of GDP, in the Eurostat series.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC_GDP\", \"icha11_hf\": \"HF1\", \"geo\": \"EU27_2020\", \"time\": \"2024\"}, \"value\": \"8.17\", \"status\": null}"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "eurostat-hlth-sha11-hf-a-pc_gdp-hf1-pt-2024"
+      ],
+      "nome": {
+        "pt": "Despesa em saúde, Portugal, nos regimes públicos e contributivos obrigatórios, percentagem do PIB",
+        "en": "Health expenditure, Portugal, in government and compulsory contributory schemes, percentage of GDP"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a despesa em saúde nos regimes públicos e contributivos obrigatórios em Portugal, expressa em percentagem do PIB, na série do Eurostat.",
+          "en": "It is health expenditure in government and compulsory contributory schemes in Portugal, expressed as a percentage of GDP, in the Eurostat series.",
+          "partes": [
+            {
+              "pt": "É a despesa em saúde nos regimes públicos e contributivos obrigatórios em Portugal, expressa em percentagem do PIB, na série do Eurostat.",
+              "en": "It is health expenditure in government and compulsory contributory schemes in Portugal, expressed as a percentage of GDP, in the Eurostat series.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC_GDP\", \"icha11_hf\": \"HF1\", \"geo\": \"PT\", \"time\": \"2024\"}, \"value\": \"6.31\", \"status\": null}"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "eurostat-hlth-sha11-hf-a-pc_gdp-tot_hf-eu27_2020-2024"
+      ],
+      "nome": {
+        "pt": "Despesa em saúde, União Europeia, em todos os regimes de financiamento, percentagem do PIB",
+        "en": "Health expenditure, European Union, across all financing schemes, percentage of GDP"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a despesa em saúde em todos os regimes de financiamento na União Europeia, expressa em percentagem do PIB, na série do Eurostat.",
+          "en": "It is health expenditure across all financing schemes in the European Union, expressed as a percentage of GDP, in the Eurostat series.",
+          "partes": [
+            {
+              "pt": "É a despesa em saúde em todos os regimes de financiamento na União Europeia, expressa em percentagem do PIB, na série do Eurostat.",
+              "en": "It is health expenditure across all financing schemes in the European Union, expressed as a percentage of GDP, in the Eurostat series.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC_GDP\", \"icha11_hf\": \"TOT_HF\", \"geo\": \"EU27_2020\", \"time\": \"2024\"}, \"value\": \"10.16\", \"status\": null}"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "eurostat-hlth-sha11-hf-a-pc_gdp-tot_hf-pt-2024"
+      ],
+      "nome": {
+        "pt": "Despesa em saúde, Portugal, em todos os regimes de financiamento, percentagem do PIB",
+        "en": "Health expenditure, Portugal, across all financing schemes, percentage of GDP"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a despesa em saúde em todos os regimes de financiamento em Portugal, expressa em percentagem do PIB, na série do Eurostat.",
+          "en": "It is health expenditure across all financing schemes in Portugal, expressed as a percentage of GDP, in the Eurostat series.",
+          "partes": [
+            {
+              "pt": "É a despesa em saúde em todos os regimes de financiamento em Portugal, expressa em percentagem do PIB, na série do Eurostat.",
+              "en": "It is health expenditure across all financing schemes in Portugal, expressed as a percentage of GDP, in the Eurostat series.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC_GDP\", \"icha11_hf\": \"TOT_HF\", \"geo\": \"PT\", \"time\": \"2024\"}, \"value\": \"10.20\", \"status\": null}"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "oe-2027-ambiente-e-energia-efetiva-2026"
+      ],
+      "nome": {
+        "pt": "Ambiente e energia, despesa efetiva consolidada",
+        "en": "Environment and energy, consolidated effective expenditure"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a despesa efetiva consolidada do programa Ambiente e energia, na coluna da estimativa.",
+          "en": "It is consolidated effective expenditure for the Environment and energy programme, in the estimate column.",
+          "partes": [
+            {
+              "pt": "É a despesa efetiva consolidada do programa Ambiente e energia, na coluna da estimativa.",
+              "en": "It is consolidated effective expenditure for the Environment and energy programme, in the estimate column.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "A Missão de Base Orgânica Ambiente e Energia evidencia, no orçamento para 2027, uma\ndotação de despesa total consolidada de 2265,2 milhões de euros. Excluído o efeito da\ndespesa relativa ao Plano de Recuperação e Resiliência (PRR), a dotação de despesa total\nconsolidada ascende a 1751,5 milhões de euros, o que representa um aumento de 15,4% face\nà estimativa para 2026. A despesa efetiva consolidada ascende a 2235,2 milhões de euros.\nExcluído o efeito da despesa relativa ao PRR, a dotação de despesa efetiva consolidada\nascende a 1721,5 milhões de euros, excedendo em 17,3% a estimativa para 2026 sem PRR,\nconforme demonstrado no quadro da Conta do Programa Legado, que evidencia\nigualmente a distribuição da despesa por natureza e fonte de financiamento.\n Despesa efetiva consolidada                           2 290,4             1 467,2       2 235,2            1 721,5         -2,4          17,3\nSeleção: 2026 Estimativa"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "oe-2027-ambiente-e-energia-sem-prr-2026"
+      ],
+      "nome": {
+        "pt": "Ambiente e energia, despesa efetiva consolidada sem PRR",
+        "en": "Environment and energy, consolidated effective expenditure excluding the RRP"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a despesa efetiva consolidada sem PRR do programa Ambiente e energia, na coluna da estimativa.",
+          "en": "It is consolidated effective expenditure excluding the RRP for the Environment and energy programme, in the estimate column.",
+          "partes": [
+            {
+              "pt": "É a despesa efetiva consolidada sem PRR do programa Ambiente e energia, na coluna da estimativa.",
+              "en": "It is consolidated effective expenditure excluding the RRP for the Environment and energy programme, in the estimate column.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "A Missão de Base Orgânica Ambiente e Energia evidencia, no orçamento para 2027, uma\ndotação de despesa total consolidada de 2265,2 milhões de euros. Excluído o efeito da\ndespesa relativa ao Plano de Recuperação e Resiliência (PRR), a dotação de despesa total\nconsolidada ascende a 1751,5 milhões de euros, o que representa um aumento de 15,4% face\nà estimativa para 2026. A despesa efetiva consolidada ascende a 2235,2 milhões de euros.\nExcluído o efeito da despesa relativa ao PRR, a dotação de despesa efetiva consolidada\nascende a 1721,5 milhões de euros, excedendo em 17,3% a estimativa para 2026 sem PRR,\nconforme demonstrado no quadro da Conta do Programa Legado, que evidencia\nigualmente a distribuição da despesa por natureza e fonte de financiamento.\n Despesa efetiva consolidada                           2 290,4             1 467,2       2 235,2            1 721,5         -2,4          17,3\nSeleção: 2026 Estimativa (Sem PRR)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "oe-2027-economia-efetiva-2026"
+      ],
+      "nome": {
+        "pt": "Economia, despesa efetiva consolidada",
+        "en": "Economy, consolidated effective expenditure"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a despesa efetiva consolidada do programa Economia, na coluna da estimativa.",
+          "en": "It is consolidated effective expenditure for the Economy programme, in the estimate column.",
+          "partes": [
+            {
+              "pt": "É a despesa efetiva consolidada do programa Economia, na coluna da estimativa.",
+              "en": "It is consolidated effective expenditure for the Economy programme, in the estimate column.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Quadro 5.16. Economia (PL06) — Conta do Programa Legado\n(milhões de euros)\n2026                             2027\nVariação       Variação     Estrutura 2027   Estrutura 2027\nClassificador Económico                                                                                  (%)         (Sem PRR)           (%)          (Sem PRR)\nEstimativa    Orçamento          Orçamento\nEstimativa                                                                          (%)                               (%)\n(Sem PRR)                        (Sem PRR)\n Despesa efetiva consolidada                           2 312,1               955,0       1 344,3             908,5         -41,9           -4,9\nSeleção: 2026 Estimativa"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "oe-2027-economia-sem-prr-2026"
+      ],
+      "nome": {
+        "pt": "Economia, despesa efetiva consolidada sem PRR",
+        "en": "Economy, consolidated effective expenditure excluding the RRP"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a despesa efetiva consolidada sem PRR do programa Economia, na coluna da estimativa.",
+          "en": "It is consolidated effective expenditure excluding the RRP for the Economy programme, in the estimate column.",
+          "partes": [
+            {
+              "pt": "É a despesa efetiva consolidada sem PRR do programa Economia, na coluna da estimativa.",
+              "en": "It is consolidated effective expenditure excluding the RRP for the Economy programme, in the estimate column.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Quadro 5.16. Economia (PL06) — Conta do Programa Legado\n(milhões de euros)\n2026                             2027\nVariação       Variação     Estrutura 2027   Estrutura 2027\nClassificador Económico                                                                                  (%)         (Sem PRR)           (%)          (Sem PRR)\nEstimativa    Orçamento          Orçamento\nEstimativa                                                                          (%)                               (%)\n(Sem PRR)                        (Sem PRR)\n Despesa efetiva consolidada                           2 312,1               955,0       1 344,3             908,5         -41,9           -4,9\nSeleção: 2026 Estimativa (Sem PRR)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "oe-2027-educacao-sem-prr-2026"
+      ],
+      "nome": {
+        "pt": "Educação, despesa efetiva consolidada sem PRR",
+        "en": "Education, consolidated effective expenditure excluding the RRP"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a despesa efetiva consolidada sem PRR do programa Educação, na coluna da estimativa.",
+          "en": "It is consolidated effective expenditure excluding the RRP for the Education programme, in the estimate column.",
+          "partes": [
+            {
+              "pt": "É a despesa efetiva consolidada sem PRR do programa Educação, na coluna da estimativa.",
+              "en": "It is consolidated effective expenditure excluding the RRP for the Education programme, in the estimate column.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "O Programa Legado da Educação evidencia, no orçamento para 2027, uma dotação de\nreceita e despesa total consolidadas de 7787,9 milhões de euros, o que traduz um acréscimo\nna receita de 3,5% (264,6 milhões de euros), expurgado o efeito da receita relativa ao Plano\nde Recuperação e Resiliência (PRR), e 4,9% (363,6 milhões de euros) na despesa face à\nexecução estimada até final de 2026, expurgado o efeito da despesa relativa ao PRR.\nA componente da despesa financiada por receitas de impostos ascende a 7418,5 milhões\nde euros, sendo o restante financiamento proveniente de fundos europeus (142,4 milhões\nde euros), transferências entre entidades (119,5 milhões de euros) e receitas próprias das\nentidades que compõem o Programa Legado (107,6 milhões de euros).\n Despesa efetiva consolidada                           7 670,9             7 421,7       7 787,9            7 787,9          1,5            4,9\nSeleção: 2026 Estimativa (Sem PRR)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "oe-2027-educacao-sem-prr-2027"
+      ],
+      "nome": {
+        "pt": "Educação, despesa efetiva consolidada sem PRR",
+        "en": "Education, consolidated effective expenditure excluding the RRP"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a despesa efetiva consolidada sem PRR do programa Educação, na coluna do orçamento.",
+          "en": "It is consolidated effective expenditure excluding the RRP for the Education programme, in the budget column.",
+          "partes": [
+            {
+              "pt": "É a despesa efetiva consolidada sem PRR do programa Educação, na coluna do orçamento.",
+              "en": "It is consolidated effective expenditure excluding the RRP for the Education programme, in the budget column.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "O Programa Legado da Educação evidencia, no orçamento para 2027, uma dotação de\nreceita e despesa total consolidadas de 7787,9 milhões de euros, o que traduz um acréscimo\nna receita de 3,5% (264,6 milhões de euros), expurgado o efeito da receita relativa ao Plano\nde Recuperação e Resiliência (PRR), e 4,9% (363,6 milhões de euros) na despesa face à\nexecução estimada até final de 2026, expurgado o efeito da despesa relativa ao PRR.\nA componente da despesa financiada por receitas de impostos ascende a 7418,5 milhões\nde euros, sendo o restante financiamento proveniente de fundos europeus (142,4 milhões\nde euros), transferências entre entidades (119,5 milhões de euros) e receitas próprias das\nentidades que compõem o Programa Legado (107,6 milhões de euros).\n Despesa efetiva consolidada                           7 670,9             7 421,7       7 787,9            7 787,9          1,5            4,9\nSeleção: 2027 Orçamento (Sem PRR)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "oe-2027-financas-efetiva-2026"
+      ],
+      "nome": {
+        "pt": "Finanças, despesa efetiva consolidada",
+        "en": "Finance, consolidated effective expenditure"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a despesa efetiva consolidada do programa Finanças, na coluna da estimativa.",
+          "en": "It is consolidated effective expenditure for the Finance programme, in the estimate column.",
+          "partes": [
+            {
+              "pt": "É a despesa efetiva consolidada do programa Finanças, na coluna da estimativa.",
+              "en": "It is consolidated effective expenditure for the Finance programme, in the estimate column.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Quadro 5.11. Finanças (PL04) — Conta do Programa Legado\n(milhões de euros)\n2026                                2027\nVariação                      Estrutura 2027\nVariação                       Estrutura 2027\nClassificador Económico                                                                                                        (Sem PRR)                        (Sem PRR)\nEstimativa                          Orçamento       (%)                                (%)\nEstimativa                           Orçamento                                            (%)                               (%)\n(Sem PRR)                           (Sem PRR)\n Despesa efetiva consolidada                             10 707,0             9 234,3         8 951,0            8 509,7         -16,4             -7,8\nSeleção: 2026 Estimativa"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "oe-2027-financas-sem-prr-2026"
+      ],
+      "nome": {
+        "pt": "Finanças, despesa efetiva consolidada sem PRR",
+        "en": "Finance, consolidated effective expenditure excluding the RRP"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a despesa efetiva consolidada sem PRR do programa Finanças, na coluna da estimativa.",
+          "en": "It is consolidated effective expenditure excluding the RRP for the Finance programme, in the estimate column.",
+          "partes": [
+            {
+              "pt": "É a despesa efetiva consolidada sem PRR do programa Finanças, na coluna da estimativa.",
+              "en": "It is consolidated effective expenditure excluding the RRP for the Finance programme, in the estimate column.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Quadro 5.11. Finanças (PL04) — Conta do Programa Legado\n(milhões de euros)\n2026                                2027\nVariação                      Estrutura 2027\nVariação                       Estrutura 2027\nClassificador Económico                                                                                                        (Sem PRR)                        (Sem PRR)\nEstimativa                          Orçamento       (%)                                (%)\nEstimativa                           Orçamento                                            (%)                               (%)\n(Sem PRR)                           (Sem PRR)\n Despesa efetiva consolidada                             10 707,0             9 234,3         8 951,0            8 509,7         -16,4             -7,8\nSeleção: 2026 Estimativa (Sem PRR)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "oe-2027-infraestruturas-e-habitacao-efetiva-2026"
+      ],
+      "nome": {
+        "pt": "Infraestruturas e habitação, despesa efetiva consolidada",
+        "en": "Infrastructure and housing, consolidated effective expenditure"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a despesa efetiva consolidada do programa Infraestruturas e habitação, na coluna da estimativa.",
+          "en": "It is consolidated effective expenditure for the Infrastructure and housing programme, in the estimate column.",
+          "partes": [
+            {
+              "pt": "É a despesa efetiva consolidada do programa Infraestruturas e habitação, na coluna da estimativa.",
+              "en": "It is consolidated effective expenditure for the Infrastructure and housing programme, in the estimate column.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Quadro 5.25. Infraestruturas e Habitação (PL10) — Conta do Programa Legado\n(milhões de euros)\n2026                             2027\nVariação                      Estrutura 2027\nVariação                   Estrutura 2027\nClassificador Económico                                                                                               (Sem PRR)                        (Sem PRR)\nEstimativa                       Orçamento       (%)                            (%)\nEstimativa                        Orçamento                                        (%)                               (%)\n(Sem PRR)                        (Sem PRR)\n Despesa efetiva consolidada                             6 068,5             4 935,5       5 989,1            5 962,5         -1,3         20,8\nSeleção: 2026 Estimativa"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "oe-2027-infraestruturas-e-habitacao-sem-prr-2026"
+      ],
+      "nome": {
+        "pt": "Infraestruturas e habitação, despesa efetiva consolidada sem PRR",
+        "en": "Infrastructure and housing, consolidated effective expenditure excluding the RRP"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a despesa efetiva consolidada sem PRR do programa Infraestruturas e habitação, na coluna da estimativa.",
+          "en": "It is consolidated effective expenditure excluding the RRP for the Infrastructure and housing programme, in the estimate column.",
+          "partes": [
+            {
+              "pt": "É a despesa efetiva consolidada sem PRR do programa Infraestruturas e habitação, na coluna da estimativa.",
+              "en": "It is consolidated effective expenditure excluding the RRP for the Infrastructure and housing programme, in the estimate column.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Quadro 5.25. Infraestruturas e Habitação (PL10) — Conta do Programa Legado\n(milhões de euros)\n2026                             2027\nVariação                      Estrutura 2027\nVariação                   Estrutura 2027\nClassificador Económico                                                                                               (Sem PRR)                        (Sem PRR)\nEstimativa                       Orçamento       (%)                            (%)\nEstimativa                        Orçamento                                        (%)                               (%)\n(Sem PRR)                        (Sem PRR)\n Despesa efetiva consolidada                             6 068,5             4 935,5       5 989,1            5 962,5         -1,3         20,8\nSeleção: 2026 Estimativa (Sem PRR)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "oe-2027-infraestruturas-e-habitacao-sem-prr-2027"
+      ],
+      "nome": {
+        "pt": "Infraestruturas e habitação, despesa efetiva consolidada sem PRR",
+        "en": "Infrastructure and housing, consolidated effective expenditure excluding the RRP"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a despesa efetiva consolidada sem PRR do programa Infraestruturas e habitação, na coluna do orçamento.",
+          "en": "It is consolidated effective expenditure excluding the RRP for the Infrastructure and housing programme, in the budget column.",
+          "partes": [
+            {
+              "pt": "É a despesa efetiva consolidada sem PRR do programa Infraestruturas e habitação, na coluna do orçamento.",
+              "en": "It is consolidated effective expenditure excluding the RRP for the Infrastructure and housing programme, in the budget column.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Quadro 5.25. Infraestruturas e Habitação (PL10) — Conta do Programa Legado\n(milhões de euros)\n2026                             2027\nVariação                      Estrutura 2027\nVariação                   Estrutura 2027\nClassificador Económico                                                                                               (Sem PRR)                        (Sem PRR)\nEstimativa                       Orçamento       (%)                            (%)\nEstimativa                        Orçamento                                        (%)                               (%)\n(Sem PRR)                        (Sem PRR)\n Despesa efetiva consolidada                             6 068,5             4 935,5       5 989,1            5 962,5         -1,3         20,8\nSeleção: 2027 Orçamento (Sem PRR)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "oe-2027-justica-sem-prr-2026"
+      ],
+      "nome": {
+        "pt": "Justiça, despesa efetiva consolidada sem PRR",
+        "en": "Justice, consolidated effective expenditure excluding the RRP"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a despesa efetiva consolidada sem PRR do programa Justiça, na coluna da estimativa.",
+          "en": "It is consolidated effective expenditure excluding the RRP for the Justice programme, in the estimate column.",
+          "partes": [
+            {
+              "pt": "É a despesa efetiva consolidada sem PRR do programa Justiça, na coluna da estimativa.",
+              "en": "It is consolidated effective expenditure excluding the RRP for the Justice programme, in the estimate column.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Quadro 5.28. Justiça (PL11) — Conta do Programa Legado\n(milhões de euros)\n2026                             2027\nVariação       Variação                      Estrutura 2027\nEstrutura 2027\nClassificador Económico                               Estimativa                       Orçamento       (%)         (Sem PRR)                        (Sem PRR)\nEstimativa                        Orçamento                                                          (%)\n(Sem PRR)                        (Sem PRR)                      (%)                               (%)\n Despesa efetiva consolidada                          1 947,3            1 800,7       2 128,2            2 128,2          9,3          18,2\nSeleção: 2026 Estimativa (Sem PRR)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "oe-2027-justica-sem-prr-2027"
+      ],
+      "nome": {
+        "pt": "Justiça, despesa efetiva consolidada sem PRR",
+        "en": "Justice, consolidated effective expenditure excluding the RRP"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a despesa efetiva consolidada sem PRR do programa Justiça, na coluna do orçamento.",
+          "en": "It is consolidated effective expenditure excluding the RRP for the Justice programme, in the budget column.",
+          "partes": [
+            {
+              "pt": "É a despesa efetiva consolidada sem PRR do programa Justiça, na coluna do orçamento.",
+              "en": "It is consolidated effective expenditure excluding the RRP for the Justice programme, in the budget column.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Quadro 5.28. Justiça (PL11) — Conta do Programa Legado\n(milhões de euros)\n2026                             2027\nVariação       Variação                      Estrutura 2027\nEstrutura 2027\nClassificador Económico                               Estimativa                       Orçamento       (%)         (Sem PRR)                        (Sem PRR)\nEstimativa                        Orçamento                                                          (%)\n(Sem PRR)                        (Sem PRR)                      (%)                               (%)\n Despesa efetiva consolidada                          1 947,3            1 800,7       2 128,2            2 128,2          9,3          18,2\nSeleção: 2027 Orçamento (Sem PRR)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "oe-2027-saude-bens-servicos-2026"
+      ],
+      "nome": {
+        "pt": "Saúde, aquisição de bens e serviços",
+        "en": "Health, purchase of goods and services"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o valor da aquisição de bens e serviços no quadro do programa Saúde.",
+          "en": "It is the value of purchase of goods and services in the Health programme table.",
+          "partes": [
+            {
+              "pt": "É o valor da aquisição de bens e serviços no quadro do programa Saúde.",
+              "en": "It is the value of purchase of goods and services in the Health programme table.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Quadro 5.37. Saúde (PL15) — Conta do Pograma Legado\n(milhões de euros)\n2026                                2027\nVariação                       Estrutura 2027\nVariação                        Estrutura 2027\nClassificador Económico                                                                                                    (Sem PRR)                         (Sem PRR)\nEstimativa                          Orçamento       (%)                                 (%)\nEstimativa                           Orçamento                                            (%)                                (%)\n(Sem PRR)                           (Sem PRR)\n     Aquisição de bens e serviços                         8 832,9             8 802,2         8 436,3            8 436,3          -4,5             -4,2              47,2             47,2\nSeleção: 2026 Estimativa"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "oe-2027-saude-bens-servicos-2027"
+      ],
+      "nome": {
+        "pt": "Saúde, aquisição de bens e serviços",
+        "en": "Health, purchase of goods and services"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o valor da aquisição de bens e serviços no quadro do programa Saúde.",
+          "en": "It is the value of purchase of goods and services in the Health programme table.",
+          "partes": [
+            {
+              "pt": "É o valor da aquisição de bens e serviços no quadro do programa Saúde.",
+              "en": "It is the value of purchase of goods and services in the Health programme table.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Quadro 5.37. Saúde (PL15) — Conta do Pograma Legado\n(milhões de euros)\n2026                                2027\nVariação                       Estrutura 2027\nVariação                        Estrutura 2027\nClassificador Económico                                                                                                    (Sem PRR)                         (Sem PRR)\nEstimativa                          Orçamento       (%)                                 (%)\nEstimativa                           Orçamento                                            (%)                                (%)\n(Sem PRR)                           (Sem PRR)\n     Aquisição de bens e serviços                         8 832,9             8 802,2         8 436,3            8 436,3          -4,5             -4,2              47,2             47,2\nSeleção: 2027 Orçamento"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "oe-2027-saude-bens-servicos-variacao"
+      ],
+      "nome": {
+        "pt": "Saúde, aquisição de bens e serviços, variação publicada",
+        "en": "Health, purchase of goods and services, published change"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a variação publicada da aquisição de bens e serviços no quadro do programa Saúde.",
+          "en": "It is the published change in purchase of goods and services in the Health programme table.",
+          "partes": [
+            {
+              "pt": "É a variação publicada da aquisição de bens e serviços no quadro do programa Saúde.",
+              "en": "It is the published change in purchase of goods and services in the Health programme table.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Quadro 5.37. Saúde (PL15) — Conta do Pograma Legado\n(milhões de euros)\n2026                                2027\nVariação                       Estrutura 2027\nVariação                        Estrutura 2027\nClassificador Económico                                                                                                    (Sem PRR)                         (Sem PRR)\nEstimativa                          Orçamento       (%)                                 (%)\nEstimativa                           Orçamento                                            (%)                                (%)\n(Sem PRR)                           (Sem PRR)\n     Aquisição de bens e serviços                         8 832,9             8 802,2         8 436,3            8 436,3          -4,5             -4,2              47,2             47,2\nSeleção: Variação (%)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "oe-2027-saude-fonte-fundos-europeus-2026"
+      ],
+      "nome": {
+        "pt": "Saúde, fundos europeus",
+        "en": "Health, European funds"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o valor dos fundos europeus no quadro do programa Saúde.",
+          "en": "It is the value of European funds in the Health programme table.",
+          "partes": [
+            {
+              "pt": "É o valor dos fundos europeus no quadro do programa Saúde.",
+              "en": "It is the value of European funds in the Health programme table.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Despesas por Fonte de Financiamento consolidada   Orçamento 2026    Orçamento 2027\n Fundos Europeus                                            655,0              174,6\nSeleção: Orçamento 2026"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "oe-2027-saude-fonte-fundos-europeus-2027"
+      ],
+      "nome": {
+        "pt": "Saúde, fundos europeus",
+        "en": "Health, European funds"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o valor dos fundos europeus no quadro do programa Saúde.",
+          "en": "It is the value of European funds in the Health programme table.",
+          "partes": [
+            {
+              "pt": "É o valor dos fundos europeus no quadro do programa Saúde.",
+              "en": "It is the value of European funds in the Health programme table.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Despesas por Fonte de Financiamento consolidada   Orçamento 2026    Orçamento 2027\n Fundos Europeus                                            655,0              174,6\nSeleção: Orçamento 2027"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "oe-2027-saude-fonte-impostos-2026"
+      ],
+      "nome": {
+        "pt": "Saúde, receitas de impostos",
+        "en": "Health, tax revenue"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o valor das receitas de impostos no quadro do programa Saúde.",
+          "en": "It is the value of tax revenue in the Health programme table.",
+          "partes": [
+            {
+              "pt": "É o valor das receitas de impostos no quadro do programa Saúde.",
+              "en": "It is the value of tax revenue in the Health programme table.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Despesas por Fonte de Financiamento consolidada   Orçamento 2026    Orçamento 2027\n Receitas de Impostos                                    15 116,4            15 452,2\nSeleção: Orçamento 2026"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "oe-2027-saude-fonte-impostos-2027"
+      ],
+      "nome": {
+        "pt": "Saúde, receitas de impostos",
+        "en": "Health, tax revenue"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o valor das receitas de impostos no quadro do programa Saúde.",
+          "en": "It is the value of tax revenue in the Health programme table.",
+          "partes": [
+            {
+              "pt": "É o valor das receitas de impostos no quadro do programa Saúde.",
+              "en": "It is the value of tax revenue in the Health programme table.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Despesas por Fonte de Financiamento consolidada   Orçamento 2026    Orçamento 2027\n Receitas de Impostos                                    15 116,4            15 452,2\nSeleção: Orçamento 2027"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "oe-2027-saude-fonte-receitas-proprias-2026"
+      ],
+      "nome": {
+        "pt": "Saúde, receitas próprias",
+        "en": "Health, own revenue"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o valor das receitas próprias no quadro do programa Saúde.",
+          "en": "It is the value of own revenue in the Health programme table.",
+          "partes": [
+            {
+              "pt": "É o valor das receitas próprias no quadro do programa Saúde.",
+              "en": "It is the value of own revenue in the Health programme table.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Despesas por Fonte de Financiamento consolidada   Orçamento 2026    Orçamento 2027\n Receitas Próprias                                        1 289,5             2 017,6\nSeleção: Orçamento 2026"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "oe-2027-saude-fonte-receitas-proprias-2027"
+      ],
+      "nome": {
+        "pt": "Saúde, receitas próprias",
+        "en": "Health, own revenue"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o valor das receitas próprias no quadro do programa Saúde.",
+          "en": "It is the value of own revenue in the Health programme table.",
+          "partes": [
+            {
+              "pt": "É o valor das receitas próprias no quadro do programa Saúde.",
+              "en": "It is the value of own revenue in the Health programme table.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Despesas por Fonte de Financiamento consolidada   Orçamento 2026    Orçamento 2027\n Receitas Próprias                                        1 289,5             2 017,6\nSeleção: Orçamento 2027"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "oe-2027-saude-investimento-2026"
+      ],
+      "nome": {
+        "pt": "Saúde, investimento",
+        "en": "Health, investment"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o valor do investimento no quadro do programa Saúde.",
+          "en": "It is the value of investment in the Health programme table.",
+          "partes": [
+            {
+              "pt": "É o valor do investimento no quadro do programa Saúde.",
+              "en": "It is the value of investment in the Health programme table.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Quadro 5.37. Saúde (PL15) — Conta do Pograma Legado\n(milhões de euros)\n2026                                2027\nVariação                       Estrutura 2027\nVariação                        Estrutura 2027\nClassificador Económico                                                                                                    (Sem PRR)                         (Sem PRR)\nEstimativa                          Orçamento       (%)                                 (%)\nEstimativa                           Orçamento                                            (%)                                (%)\n(Sem PRR)                           (Sem PRR)\n     Investimento                                         1 022,5              555,2            678,3              678,3         -33,7             22,2               3,8              3,8\nSeleção: 2026 Estimativa"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "oe-2027-saude-investimento-2027"
+      ],
+      "nome": {
+        "pt": "Saúde, investimento",
+        "en": "Health, investment"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o valor do investimento no quadro do programa Saúde.",
+          "en": "It is the value of investment in the Health programme table.",
+          "partes": [
+            {
+              "pt": "É o valor do investimento no quadro do programa Saúde.",
+              "en": "It is the value of investment in the Health programme table.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Quadro 5.37. Saúde (PL15) — Conta do Pograma Legado\n(milhões de euros)\n2026                                2027\nVariação                       Estrutura 2027\nVariação                        Estrutura 2027\nClassificador Económico                                                                                                    (Sem PRR)                         (Sem PRR)\nEstimativa                          Orçamento       (%)                                 (%)\nEstimativa                           Orçamento                                            (%)                                (%)\n(Sem PRR)                           (Sem PRR)\n     Investimento                                         1 022,5              555,2            678,3              678,3         -33,7             22,2               3,8              3,8\nSeleção: 2027 Orçamento"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "oe-2027-saude-investimento-variacao"
+      ],
+      "nome": {
+        "pt": "Saúde, investimento, variação publicada",
+        "en": "Health, investment, published change"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a variação publicada do investimento no quadro do programa Saúde.",
+          "en": "It is the published change in investment in the Health programme table.",
+          "partes": [
+            {
+              "pt": "É a variação publicada do investimento no quadro do programa Saúde.",
+              "en": "It is the published change in investment in the Health programme table.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Quadro 5.37. Saúde (PL15) — Conta do Pograma Legado\n(milhões de euros)\n2026                                2027\nVariação                       Estrutura 2027\nVariação                        Estrutura 2027\nClassificador Económico                                                                                                    (Sem PRR)                         (Sem PRR)\nEstimativa                          Orçamento       (%)                                 (%)\nEstimativa                           Orçamento                                            (%)                                (%)\n(Sem PRR)                           (Sem PRR)\n     Investimento                                         1 022,5              555,2            678,3              678,3         -33,7             22,2               3,8              3,8\nSeleção: Variação (%)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "oe-2027-saude-investimento-variacao-sem-prr"
+      ],
+      "nome": {
+        "pt": "Saúde, investimento, variação publicada sem PRR",
+        "en": "Health, investment, published change excluding the RRP"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a variação publicada do investimento sem PRR no quadro do programa Saúde.",
+          "en": "It is the published change in investment excluding the RRP in the Health programme table.",
+          "partes": [
+            {
+              "pt": "É a variação publicada do investimento sem PRR no quadro do programa Saúde.",
+              "en": "It is the published change in investment excluding the RRP in the Health programme table.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Quadro 5.37. Saúde (PL15) — Conta do Pograma Legado\n(milhões de euros)\n2026                                2027\nVariação                       Estrutura 2027\nVariação                        Estrutura 2027\nClassificador Económico                                                                                                    (Sem PRR)                         (Sem PRR)\nEstimativa                          Orçamento       (%)                                 (%)\nEstimativa                           Orçamento                                            (%)                                (%)\n(Sem PRR)                           (Sem PRR)\n     Investimento                                         1 022,5              555,2            678,3              678,3         -33,7             22,2               3,8              3,8\nSeleção: Variação (Sem PRR) (%)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "oe-2027-saude-outras-correntes-2026"
+      ],
+      "nome": {
+        "pt": "Saúde, outras despesas correntes",
+        "en": "Health, other current expenditure"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o valor das outras despesas correntes no quadro do programa Saúde.",
+          "en": "It is the value of other current expenditure in the Health programme table.",
+          "partes": [
+            {
+              "pt": "É o valor das outras despesas correntes no quadro do programa Saúde.",
+              "en": "It is the value of other current expenditure in the Health programme table.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Quadro 5.37. Saúde (PL15) — Conta do Pograma Legado\n(milhões de euros)\n2026                                2027\nVariação                       Estrutura 2027\nVariação                        Estrutura 2027\nClassificador Económico                                                                                                    (Sem PRR)                         (Sem PRR)\nEstimativa                          Orçamento       (%)                                 (%)\nEstimativa                           Orçamento                                            (%)                                (%)\n(Sem PRR)                           (Sem PRR)\n     Outras despesas correntes                               32,4                32,4           303,7              303,7          n.r.              n.r.              1,7              1,7\nSeleção: 2026 Estimativa"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "oe-2027-saude-outras-correntes-2027"
+      ],
+      "nome": {
+        "pt": "Saúde, outras despesas correntes",
+        "en": "Health, other current expenditure"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o valor das outras despesas correntes no quadro do programa Saúde.",
+          "en": "It is the value of other current expenditure in the Health programme table.",
+          "partes": [
+            {
+              "pt": "É o valor das outras despesas correntes no quadro do programa Saúde.",
+              "en": "It is the value of other current expenditure in the Health programme table.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Quadro 5.37. Saúde (PL15) — Conta do Pograma Legado\n(milhões de euros)\n2026                                2027\nVariação                       Estrutura 2027\nVariação                        Estrutura 2027\nClassificador Económico                                                                                                    (Sem PRR)                         (Sem PRR)\nEstimativa                          Orçamento       (%)                                 (%)\nEstimativa                           Orçamento                                            (%)                                (%)\n(Sem PRR)                           (Sem PRR)\n     Outras despesas correntes                               32,4                32,4           303,7              303,7          n.r.              n.r.              1,7              1,7\nSeleção: 2027 Orçamento"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "oe-2027-saude-pessoal-2026"
+      ],
+      "nome": {
+        "pt": "Saúde, despesas com pessoal",
+        "en": "Health, personnel expenditure"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o valor das despesas com pessoal no quadro do programa Saúde.",
+          "en": "It is the value of personnel expenditure in the Health programme table.",
+          "partes": [
+            {
+              "pt": "É o valor das despesas com pessoal no quadro do programa Saúde.",
+              "en": "It is the value of personnel expenditure in the Health programme table.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Quadro 5.37. Saúde (PL15) — Conta do Pograma Legado\n(milhões de euros)\n2026                                2027\nVariação                       Estrutura 2027\nVariação                        Estrutura 2027\nClassificador Económico                                                                                                    (Sem PRR)                         (Sem PRR)\nEstimativa                          Orçamento       (%)                                 (%)\nEstimativa                           Orçamento                                            (%)                                (%)\n(Sem PRR)                           (Sem PRR)\n     Despesas com o pessoal                               7 783,1             7 780,9         8 184,3            8 184,3              5,2           5,2              45,8             45,8\nSeleção: 2026 Estimativa"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "oe-2027-saude-pessoal-2027"
+      ],
+      "nome": {
+        "pt": "Saúde, despesas com pessoal",
+        "en": "Health, personnel expenditure"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o valor das despesas com pessoal no quadro do programa Saúde.",
+          "en": "It is the value of personnel expenditure in the Health programme table.",
+          "partes": [
+            {
+              "pt": "É o valor das despesas com pessoal no quadro do programa Saúde.",
+              "en": "It is the value of personnel expenditure in the Health programme table.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Quadro 5.37. Saúde (PL15) — Conta do Pograma Legado\n(milhões de euros)\n2026                                2027\nVariação                       Estrutura 2027\nVariação                        Estrutura 2027\nClassificador Económico                                                                                                    (Sem PRR)                         (Sem PRR)\nEstimativa                          Orçamento       (%)                                 (%)\nEstimativa                           Orçamento                                            (%)                                (%)\n(Sem PRR)                           (Sem PRR)\n     Despesas com o pessoal                               7 783,1             7 780,9         8 184,3            8 184,3              5,2           5,2              45,8             45,8\nSeleção: 2027 Orçamento"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "oe-2027-saude-pessoal-variacao"
+      ],
+      "nome": {
+        "pt": "Saúde, despesas com pessoal, variação publicada",
+        "en": "Health, personnel expenditure, published change"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a variação publicada das despesas com pessoal no quadro do programa Saúde.",
+          "en": "It is the published change in personnel expenditure in the Health programme table.",
+          "partes": [
+            {
+              "pt": "É a variação publicada das despesas com pessoal no quadro do programa Saúde.",
+              "en": "It is the published change in personnel expenditure in the Health programme table.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Quadro 5.37. Saúde (PL15) — Conta do Pograma Legado\n(milhões de euros)\n2026                                2027\nVariação                       Estrutura 2027\nVariação                        Estrutura 2027\nClassificador Económico                                                                                                    (Sem PRR)                         (Sem PRR)\nEstimativa                          Orçamento       (%)                                 (%)\nEstimativa                           Orçamento                                            (%)                                (%)\n(Sem PRR)                           (Sem PRR)\n     Despesas com o pessoal                               7 783,1             7 780,9         8 184,3            8 184,3              5,2           5,2              45,8             45,8\nSeleção: Variação (%)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "oe-2027-saude-transferencias-capital-2026"
+      ],
+      "nome": {
+        "pt": "Saúde, transferências de capital",
+        "en": "Health, capital transfers"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o valor das transferências de capital no quadro do programa Saúde.",
+          "en": "It is the value of capital transfers in the Health programme table.",
+          "partes": [
+            {
+              "pt": "É o valor das transferências de capital no quadro do programa Saúde.",
+              "en": "It is the value of capital transfers in the Health programme table.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Quadro 5.37. Saúde (PL15) — Conta do Pograma Legado\n(milhões de euros)\n2026                                2027\nVariação                       Estrutura 2027\nVariação                        Estrutura 2027\nClassificador Económico                                                                                                    (Sem PRR)                         (Sem PRR)\nEstimativa                          Orçamento       (%)                                 (%)\nEstimativa                           Orçamento                                            (%)                                (%)\n(Sem PRR)                           (Sem PRR)\n     Transferências de capital                              272,9                 1,8             0,0                0,0        -100,0            -97,6               0,0              0,0\nSeleção: 2026 Estimativa"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "oe-2027-saude-transferencias-capital-2027"
+      ],
+      "nome": {
+        "pt": "Saúde, transferências de capital",
+        "en": "Health, capital transfers"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o valor das transferências de capital no quadro do programa Saúde.",
+          "en": "It is the value of capital transfers in the Health programme table.",
+          "partes": [
+            {
+              "pt": "É o valor das transferências de capital no quadro do programa Saúde.",
+              "en": "It is the value of capital transfers in the Health programme table.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Quadro 5.37. Saúde (PL15) — Conta do Pograma Legado\n(milhões de euros)\n2026                                2027\nVariação                       Estrutura 2027\nVariação                        Estrutura 2027\nClassificador Económico                                                                                                    (Sem PRR)                         (Sem PRR)\nEstimativa                          Orçamento       (%)                                 (%)\nEstimativa                           Orçamento                                            (%)                                (%)\n(Sem PRR)                           (Sem PRR)\n     Transferências de capital                              272,9                 1,8             0,0                0,0        -100,0            -97,6               0,0              0,0\nSeleção: 2027 Orçamento"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "oe-2027-saude-transferencias-sns-2026"
+      ],
+      "nome": {
+        "pt": "Saúde, transferências para o Serviço Nacional de Saúde",
+        "en": "Health, transfers to the National Health Service"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o valor das transferências para o Serviço Nacional de Saúde no quadro do programa Saúde.",
+          "en": "It is the value of transfers to the National Health Service in the Health programme table.",
+          "partes": [
+            {
+              "pt": "É o valor das transferências para o Serviço Nacional de Saúde no quadro do programa Saúde.",
+              "en": "It is the value of transfers to the National Health Service in the Health programme table.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Quadro 5.38. Saúde (PL15) — Dotações específicas\n(milhões de euros)\n2026         2027       Variação\nAgregados / Programas Legados\nEstimativa   Orçamento      (%)\n    TRANSFERÊNCIAS SERVIÇO NACIONAL DE SAÚDE                               14 935,8     15 539,2         4,0\nSeleção: 2026 Estimativa"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "oe-2027-saude-transferencias-sns-2027"
+      ],
+      "nome": {
+        "pt": "Saúde, transferências para o Serviço Nacional de Saúde",
+        "en": "Health, transfers to the National Health Service"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o valor das transferências para o Serviço Nacional de Saúde no quadro do programa Saúde.",
+          "en": "It is the value of transfers to the National Health Service in the Health programme table.",
+          "partes": [
+            {
+              "pt": "É o valor das transferências para o Serviço Nacional de Saúde no quadro do programa Saúde.",
+              "en": "It is the value of transfers to the National Health Service in the Health programme table.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Quadro 5.38. Saúde (PL15) — Dotações específicas\n(milhões de euros)\n2026         2027       Variação\nAgregados / Programas Legados\nEstimativa   Orçamento      (%)\n    TRANSFERÊNCIAS SERVIÇO NACIONAL DE SAÚDE                               14 935,8     15 539,2         4,0\nSeleção: 2027 Orçamento"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "oe-2027-saude-transferencias-sns-variacao"
+      ],
+      "nome": {
+        "pt": "Saúde, transferências para o Serviço Nacional de Saúde, variação publicada",
+        "en": "Health, transfers to the National Health Service, published change"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a variação publicada das transferências para o Serviço Nacional de Saúde no quadro do programa Saúde.",
+          "en": "It is the published change in transfers to the National Health Service in the Health programme table.",
+          "partes": [
+            {
+              "pt": "É a variação publicada das transferências para o Serviço Nacional de Saúde no quadro do programa Saúde.",
+              "en": "It is the published change in transfers to the National Health Service in the Health programme table.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Quadro 5.38. Saúde (PL15) — Dotações específicas\n(milhões de euros)\n2026         2027       Variação\nAgregados / Programas Legados\nEstimativa   Orçamento      (%)\n    TRANSFERÊNCIAS SERVIÇO NACIONAL DE SAÚDE                               14 935,8     15 539,2         4,0\nSeleção: Variação (%)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "oe-2027-seguranca-interna-sem-prr-2026"
+      ],
+      "nome": {
+        "pt": "Segurança interna, despesa efetiva consolidada sem PRR",
+        "en": "Internal security, consolidated effective expenditure excluding the RRP"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a despesa efetiva consolidada sem PRR do programa Segurança interna, na coluna da estimativa.",
+          "en": "It is consolidated effective expenditure excluding the RRP for the Internal security programme, in the estimate column.",
+          "partes": [
+            {
+              "pt": "É a despesa efetiva consolidada sem PRR do programa Segurança interna, na coluna da estimativa.",
+              "en": "It is consolidated effective expenditure excluding the RRP for the Internal security programme, in the estimate column.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "O Programa Legado da Segurança Interna apresenta, no orçamento para 2027, um total de\n3201,7 milhões de euros de previsão de receita total consolidada e de 3164 milhões de euros\nde dotação de despesa total consolidada, representando um acréscimo de 13% face à\nestimativa de execução até final de 2026, expurgada do efeito da despesa relativa ao Plano\nde Recuperação e Resiliência (PRR), como demonstra a Conta do Programa Legado.\nQuadro 5.30. Segurança Interna (PL12) — Conta do Programa Legado\n(milhões de euros)\n2026                             2027\n Despesa efetiva consolidada                           2 884,6             2 789,6       3 153,8            3 153,8          9,3         13,1\nSeleção: 2026 Estimativa (Sem PRR)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "oe-2027-seguranca-interna-sem-prr-2027"
+      ],
+      "nome": {
+        "pt": "Segurança interna, despesa efetiva consolidada sem PRR",
+        "en": "Internal security, consolidated effective expenditure excluding the RRP"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a despesa efetiva consolidada sem PRR do programa Segurança interna, na coluna do orçamento.",
+          "en": "It is consolidated effective expenditure excluding the RRP for the Internal security programme, in the budget column.",
+          "partes": [
+            {
+              "pt": "É a despesa efetiva consolidada sem PRR do programa Segurança interna, na coluna do orçamento.",
+              "en": "It is consolidated effective expenditure excluding the RRP for the Internal security programme, in the budget column.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "O Programa Legado da Segurança Interna apresenta, no orçamento para 2027, um total de\n3201,7 milhões de euros de previsão de receita total consolidada e de 3164 milhões de euros\nde dotação de despesa total consolidada, representando um acréscimo de 13% face à\nestimativa de execução até final de 2026, expurgada do efeito da despesa relativa ao Plano\nde Recuperação e Resiliência (PRR), como demonstra a Conta do Programa Legado.\nQuadro 5.30. Segurança Interna (PL12) — Conta do Programa Legado\n(milhões de euros)\n2026                             2027\n Despesa efetiva consolidada                           2 884,6             2 789,6       3 153,8            3 153,8          9,3         13,1\nSeleção: 2027 Orçamento (Sem PRR)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "oe-2027-trabalho-solidariedade-e-seguranca-social-sem-prr-2026"
+      ],
+      "nome": {
+        "pt": "Trabalho, solidariedade e segurança social, despesa efetiva consolidada sem PRR",
+        "en": "Labour, solidarity and social security, consolidated effective expenditure excluding the RRP"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a despesa efetiva consolidada sem PRR do programa Trabalho, solidariedade e segurança social, na coluna da estimativa.",
+          "en": "It is consolidated effective expenditure excluding the RRP for the Labour, solidarity and social security programme, in the estimate column.",
+          "partes": [
+            {
+              "pt": "É a despesa efetiva consolidada sem PRR do programa Trabalho, solidariedade e segurança social, na coluna da estimativa.",
+              "en": "It is consolidated effective expenditure excluding the RRP for the Labour, solidarity and social security programme, in the estimate column.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Quadro 5.41. Trabalho, Solidariedade e Segurança Social (PL16) — Conta do Programa Legado\n(milhões de euros)\n2026                             2027\nVariação                      Estrutura 2027\nVariação                    Estrutura 2027\nClassificador Económico                                                                                              (Sem PRR)                        (Sem PRR)\nEstimativa                       Orçamento       (%)                             (%)\nEstimativa                        Orçamento                                         (%)                               (%)\n(Sem PRR)                        (Sem PRR)\n Despesa efetiva consolidada                          28 046,6            27 832,7      30 270,4           30 270,4          7,9            8,8\nSeleção: 2026 Estimativa (Sem PRR)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "oe-2027-trabalho-solidariedade-e-seguranca-social-sem-prr-2027"
+      ],
+      "nome": {
+        "pt": "Trabalho, solidariedade e segurança social, despesa efetiva consolidada sem PRR",
+        "en": "Labour, solidarity and social security, consolidated effective expenditure excluding the RRP"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a despesa efetiva consolidada sem PRR do programa Trabalho, solidariedade e segurança social, na coluna do orçamento.",
+          "en": "It is consolidated effective expenditure excluding the RRP for the Labour, solidarity and social security programme, in the budget column.",
+          "partes": [
+            {
+              "pt": "É a despesa efetiva consolidada sem PRR do programa Trabalho, solidariedade e segurança social, na coluna do orçamento.",
+              "en": "It is consolidated effective expenditure excluding the RRP for the Labour, solidarity and social security programme, in the budget column.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Quadro 5.41. Trabalho, Solidariedade e Segurança Social (PL16) — Conta do Programa Legado\n(milhões de euros)\n2026                             2027\nVariação                      Estrutura 2027\nVariação                    Estrutura 2027\nClassificador Económico                                                                                              (Sem PRR)                        (Sem PRR)\nEstimativa                       Orçamento       (%)                             (%)\nEstimativa                        Orçamento                                         (%)                               (%)\n(Sem PRR)                        (Sem PRR)\n Despesa efetiva consolidada                          28 046,6            27 832,7      30 270,4           30 270,4          7,9            8,8\nSeleção: 2027 Orçamento (Sem PRR)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "ppp-oe2022-liquidos-2021"
+      ],
+      "nome": {
+        "pt": "Parcerias, encargos líquidos rodoviários",
+        "en": "Partnerships, net road charges"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "São os encargos líquidos rodoviários das parcerias no quadro do relatório do Orçamento.",
+          "en": "These are net road partnership charges in the Budget report table.",
+          "partes": [
+            {
+              "pt": "São os encargos líquidos rodoviários das parcerias no quadro do relatório do Orçamento.",
+              "en": "These are net road partnership charges in the Budget report table.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Setores        2021    2022    2023    2024    2025    2026    2027    2028    2029    2030    2031    2032    2033    2034\n Rodoviário             1 250   1 241   1 036    948     557     552     444     360     305     262     268     150      96      84\nSeleção: 2021 execucao"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "ppp-oe2023-liquidos-2022"
+      ],
+      "nome": {
+        "pt": "Parcerias, encargos líquidos rodoviários",
+        "en": "Partnerships, net road charges"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "São os encargos líquidos rodoviários das parcerias no quadro do relatório do Orçamento.",
+          "en": "These are net road partnership charges in the Budget report table.",
+          "partes": [
+            {
+              "pt": "São os encargos líquidos rodoviários das parcerias no quadro do relatório do Orçamento.",
+              "en": "These are net road partnership charges in the Budget report table.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Setores        2022    2023    2024    2025    2026    2027   2028     2029   2030   2031   2032   2033   2034   2035\n Rodoviário             1 192   1 062    882     594     371     392    311     254    225    260    156    106     94     36\nSeleção: 2022 estimativa"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "ppp-oe2024-liquidos-2023"
+      ],
+      "nome": {
+        "pt": "Parcerias, encargos líquidos rodoviários",
+        "en": "Partnerships, net road charges"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "São os encargos líquidos rodoviários das parcerias no quadro do relatório do Orçamento.",
+          "en": "These are net road partnership charges in the Budget report table.",
+          "partes": [
+            {
+              "pt": "São os encargos líquidos rodoviários das parcerias no quadro do relatório do Orçamento.",
+              "en": "These are net road partnership charges in the Budget report table.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Setores     2023       2024       2025       2026       2027       2028       2029       2030       2031       2032       2033       2034       2035       2036\n    Rodoviário           1 105      1 002       630        649        162        328        269        240        276        166        112        100         40        (26)\nSeleção: 2023 estimativa"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "ppp-oe2025-liquidos-2024"
+      ],
+      "nome": {
+        "pt": "Parcerias, encargos líquidos rodoviários",
+        "en": "Partnerships, net road charges"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "São os encargos líquidos rodoviários das parcerias no quadro do relatório do Orçamento.",
+          "en": "These are net road partnership charges in the Budget report table.",
+          "partes": [
+            {
+              "pt": "São os encargos líquidos rodoviários das parcerias no quadro do relatório do Orçamento.",
+              "en": "These are net road partnership charges in the Budget report table.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Setores          2024    2025    2026    2027    2028    2029    2030    2031    2032    2033    2034    2035   2036   2037\n Rodoviário               1 012    833     802     694      80     421     367     331     191     136     123      63    (4)      4\nSeleção: 2024 estimativa"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "ppp-oe2026-liquidos-2025"
+      ],
+      "nome": {
+        "pt": "Parcerias, encargos líquidos rodoviários",
+        "en": "Partnerships, net road charges"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "São os encargos líquidos rodoviários das parcerias no quadro do relatório do Orçamento.",
+          "en": "These are net road partnership charges in the Budget report table.",
+          "partes": [
+            {
+              "pt": "São os encargos líquidos rodoviários das parcerias no quadro do relatório do Orçamento.",
+              "en": "These are net road partnership charges in the Budget report table.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\n  Rodoviário                  843       950      774     681      (59)     412      368      226      141      128        66        0        9        17\nSeleção: 2025 estimativa"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "ppp-oe2027-ferroviario-2027"
+      ],
+      "nome": {
+        "pt": "Parcerias, encargos ferroviários",
+        "en": "Partnerships, rail charges"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "São os encargos ferroviários das parcerias no quadro do relatório do Orçamento.",
+          "en": "These are rail partnership charges in the Budget report table.",
+          "partes": [
+            {
+              "pt": "São os encargos ferroviários das parcerias no quadro do relatório do Orçamento.",
+              "en": "These are rail partnership charges in the Budget report table.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\n Ferroviário            190     312     228      41     133     209      206     194        190     187     184     181     178      175\nSeleção: 2027"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "ppp-oe2027-liquidos-2026"
+      ],
+      "nome": {
+        "pt": "Parcerias, encargos líquidos rodoviários",
+        "en": "Partnerships, net road charges"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "São os encargos líquidos rodoviários das parcerias no quadro do relatório do Orçamento.",
+          "en": "These are net road partnership charges in the Budget report table.",
+          "partes": [
+            {
+              "pt": "São os encargos líquidos rodoviários das parcerias no quadro do relatório do Orçamento.",
+              "en": "These are net road partnership charges in the Budget report table.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\n Rodoviário             942     889     705     648    (220)    391      244     154        140      77       4      13      22       49\nSeleção: 2026 estimativa"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "ppp-oe2027-liquidos-2027-previsao-oe2026"
+      ],
+      "nome": {
+        "pt": "Previsão anterior dos encargos líquidos rodoviários",
+        "en": "Previous forecast of net road charges"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a previsão do relatório anterior para os encargos líquidos rodoviários, citada pelo relatório seguinte para o mesmo ano.",
+          "en": "It is the preceding report’s forecast of net road charges, cited by the following report for the same year.",
+          "partes": [
+            {
+              "pt": "É a previsão do relatório anterior para os encargos líquidos rodoviários, citada pelo relatório seguinte para o mesmo ano.",
+              "en": "It is the preceding report’s forecast of net road charges, cited by the following report for the same year.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "de 2027 prevê-se igualmente um aumento dos encargos líquidos face ao valor apresentado no Relatório do Orçamento do Estado para 2026. Enquanto este último apontava para encargos líquidos de 774 milhões de euros, o presente Relatório estima um montante de 889 milhões de euros. Ao nível dos encargos brutos, o incremento observável entre a projeção plurianual do Relatório do Orçamento do Estado para 2027 e a projeção constante do anterior"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "ppp-oe2027-liquidos-2028"
+      ],
+      "nome": {
+        "pt": "Parcerias, encargos líquidos rodoviários",
+        "en": "Partnerships, net road charges"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "São os encargos líquidos rodoviários das parcerias no quadro do relatório do Orçamento.",
+          "en": "These are net road partnership charges in the Budget report table.",
+          "partes": [
+            {
+              "pt": "São os encargos líquidos rodoviários das parcerias no quadro do relatório do Orçamento.",
+              "en": "These are net road partnership charges in the Budget report table.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\n Rodoviário             942     889     705     648    (220)    391      244     154        140      77       4      13      22       49\nSeleção: 2028 projecao"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "ppp-oe2027-liquidos-2029"
+      ],
+      "nome": {
+        "pt": "Parcerias, encargos líquidos rodoviários",
+        "en": "Partnerships, net road charges"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "São os encargos líquidos rodoviários das parcerias no quadro do relatório do Orçamento.",
+          "en": "These are net road partnership charges in the Budget report table.",
+          "partes": [
+            {
+              "pt": "São os encargos líquidos rodoviários das parcerias no quadro do relatório do Orçamento.",
+              "en": "These are net road partnership charges in the Budget report table.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\n Rodoviário             942     889     705     648    (220)    391      244     154        140      77       4      13      22       49\nSeleção: 2029 projecao"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "ppp-oe2027-liquidos-2030"
+      ],
+      "nome": {
+        "pt": "Parcerias, encargos líquidos rodoviários",
+        "en": "Partnerships, net road charges"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "São os encargos líquidos rodoviários das parcerias no quadro do relatório do Orçamento.",
+          "en": "These are net road partnership charges in the Budget report table.",
+          "partes": [
+            {
+              "pt": "São os encargos líquidos rodoviários das parcerias no quadro do relatório do Orçamento.",
+              "en": "These are net road partnership charges in the Budget report table.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\n Rodoviário             942     889     705     648    (220)    391      244     154        140      77       4      13      22       49\nSeleção: 2030 projecao"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "ppp-oe2027-liquidos-2035"
+      ],
+      "nome": {
+        "pt": "Parcerias, encargos líquidos rodoviários",
+        "en": "Partnerships, net road charges"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "São os encargos líquidos rodoviários das parcerias no quadro do relatório do Orçamento.",
+          "en": "These are net road partnership charges in the Budget report table.",
+          "partes": [
+            {
+              "pt": "São os encargos líquidos rodoviários das parcerias no quadro do relatório do Orçamento.",
+              "en": "These are net road partnership charges in the Budget report table.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\n Rodoviário             942     889     705     648    (220)    391      244     154        140      77       4      13      22       49\nSeleção: 2035 projecao"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "ppp-oe2027-liquidos-2040"
+      ],
+      "nome": {
+        "pt": "Parcerias, encargos líquidos rodoviários",
+        "en": "Partnerships, net road charges"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "São os encargos líquidos rodoviários das parcerias no quadro do relatório do Orçamento.",
+          "en": "These are net road partnership charges in the Budget report table.",
+          "partes": [
+            {
+              "pt": "São os encargos líquidos rodoviários das parcerias no quadro do relatório do Orçamento.",
+              "en": "These are net road partnership charges in the Budget report table.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Setores       2040    2041    2042    2043    2044    2045    2046     2047       2048    2049    2050    2051    2052     2053\n Rodoviário               17       -       -       -       -       -        -          -       -       -       -       -       -        -\nSeleção: 2040 projecao"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "ppp-oe2027-riscos-acrescimo"
+      ],
+      "nome": {
+        "pt": "Acréscimo dos pedidos rodoviários face ao relatório anterior",
+        "en": "Increase in road claims against the preceding report"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o acréscimo do valor dos pedidos rodoviários face ao relatório anterior.",
+          "en": "It is the increase in the value of road claims against the preceding report.",
+          "partes": [
+            {
+              "pt": "É o acréscimo do valor dos pedidos rodoviários face ao relatório anterior.",
+              "en": "It is the increase in the value of road claims against the preceding report.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "e contingências apresentado no Relatório do Orçamento do Estado para 2026, verifica-se um acréscimo de cerca de 1140 milhões de euros. O aumento do valor global dos pedidos resulta essencialmente dos seguintes eventos: • Desenvolvimento do procedimento negocial conduzido pela comissão de negociação constituída através do Despacho nº 15154/2024, de 16 de dezembro de 2024, da"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "ppp-oe2027-riscos-brisa"
+      ],
+      "nome": {
+        "pt": "Pedidos e matérias em negociação com a Brisa",
+        "en": "Claims and matters under negotiation with Brisa"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o montante dos pedidos ou matérias em negociação com a Brisa.",
+          "en": "It is the amount of the claims or matters under negotiation with Brisa.",
+          "partes": [
+            {
+              "pt": "É o montante dos pedidos ou matérias em negociação com a Brisa.",
+              "en": "It is the amount of the claims or matters under negotiation with Brisa.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "pedidos ou matérias em negociação (conforme descritas no referido despacho), no montante de cerca de 1122,5 milhões de euros; • Atualização, com base na informação mais recentemente reportada pelo representante do parceiro público, do valor da ação arbitral intentada, em 2024, pela Concessionária Autoestradas do Douro Litoral, no âmbito do Contrato de Concessão Douro Litoral, com fundamento nos efeitos da pandemia de COVID-19 e das medidas restritivas da liberdade de circulação de pessoas e de iniciativa económica privada."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "ppp-oe2027-riscos-pedidos-rodoviarios"
+      ],
+      "nome": {
+        "pt": "Pedidos de reequilíbrio e litígios rodoviários",
+        "en": "Road financial rebalancing claims and litigation"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o valor global dos pedidos de reequilíbrio financeiro e dos pedidos nos litígios em curso das concessionárias e subconcessionárias rodoviárias.",
+          "en": "It is the total value of financial rebalancing claims and claims in ongoing litigation by road concessionaires and subconcessionaires.",
+          "partes": [
+            {
+              "pt": "É o valor global dos pedidos de reequilíbrio financeiro e dos pedidos nos litígios em curso das concessionárias e subconcessionárias rodoviárias.",
+              "en": "It is the total value of financial rebalancing claims and claims in ongoing litigation by road concessionaires and subconcessionaires.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "De acordo com a informação disponível, o valor global dos pedidos de REF e dos pedidos formulados nos litígios em curso pelas concessionárias e subconcessionárias rodoviárias ascende a cerca de 2388,2 milhões de euros. Em comparação com o valor global dos riscos e contingências apresentado no Relatório do Orçamento do Estado para 2026, verifica-se um acréscimo de cerca de 1140 milhões de euros."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "ppp-oe2027-riscos-rotas-algarve-mensal"
+      ],
+      "nome": {
+        "pt": "Pagamento mensal provisório à Rotas do Algarve Litoral",
+        "en": "Provisional monthly payment to Rotas do Algarve Litoral"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o pagamento mensal provisório decidido pelo tribunal arbitral até à decisão da causa principal, acrescido de IVA.",
+          "en": "It is the provisional monthly payment ordered by the arbitration tribunal until the decision in the main case, plus VAT.",
+          "partes": [
+            {
+              "pt": "É o pagamento mensal provisório decidido pelo tribunal arbitral até à decisão da causa principal, acrescido de IVA.",
+              "en": "It is the provisional monthly payment ordered by the arbitration tribunal until the decision in the main case, plus VAT.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Infraestruturas de Portugal a pagar à subconcessionária, a título provisório, um montante de cerca de 30 milhões de euros, acrescido de um valor mensal de cerca de 1,3 milhões de euros até à decisão da causa principal (valores acrescidos de imposto sobre o valor acrescentado nos termos legais). 354 ORÇAMENTAÇÃO POR PROGRAMAS E POLÍTICAS SETORIAIS"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "ppp-oe2027-riscos-rotas-algarve-principal"
+      ],
+      "nome": {
+        "pt": "Ação principal da Rotas do Algarve Litoral",
+        "en": "Main action by Rotas do Algarve Litoral"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o valor da ação principal arbitral pendente da Rotas do Algarve Litoral.",
+          "en": "It is the value of the pending main arbitration action by Rotas do Algarve Litoral.",
+          "partes": [
+            {
+              "pt": "É o valor da ação principal arbitral pendente da Rotas do Algarve Litoral.",
+              "en": "It is the value of the pending main arbitration action by Rotas do Algarve Litoral.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "60 O litígio em causa envolve (i) uma ação principal arbitral (ainda pendente), cujo valor ascende a 445 milhões de euros; e (ii) uma ação cautelar, no âmbito da qual o tribunal arbitral, pela decisão proferida no primeiro trimestre de 2021, condenou a Infraestruturas de Portugal a pagar à subconcessionária, a título provisório, um montante de cerca de 30 milhões de euros, acrescido de um valor mensal de cerca de 1,3 milhões de euros até à decisão da causa principal (valores acrescidos de imposto sobre o valor acrescentado nos termos legais)."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "ppp-oe2027-saude-2027"
+      ],
+      "nome": {
+        "pt": "Parcerias, encargos da saúde",
+        "en": "Partnerships, health charges"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "São os encargos da saúde das parcerias no quadro do relatório do Orçamento.",
+          "en": "These are health partnership charges in the Budget report table.",
+          "partes": [
+            {
+              "pt": "São os encargos da saúde das parcerias no quadro do relatório do Orçamento.",
+              "en": "These are health partnership charges in the Budget report table.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\n Saúde                  231     254     266     265     268     106       69      65         63      64      64      65      61       53\nSeleção: 2027"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "saude-total-2020-execucao-cge2020"
+      ],
+      "nome": {
+        "pt": "Saúde, despesa total executada",
+        "en": "Health, executed total expenditure"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a despesa total executada do programa Saúde, publicada na Conta Geral do Estado.",
+          "en": "It is executed total Health programme expenditure, published in the General State Account.",
+          "partes": [
+            {
+              "pt": "É a despesa total executada do programa Saúde, publicada na Conta Geral do Estado.",
+              "en": "It is executed total Health programme expenditure, published in the General State Account.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "(milhões de euros)\nOrçamento Corrigido de 2020                                 Execução de 2020\nDesignação                                                              Total                                                 Total\nEstado          SFA                                 Estado            SFA\nConsolidado                                           Consolidado\n                           DESPESA TOTAL                               10 816,6      22 093,5             12 615,4         10 757,5         21 224,0         11 731,9\nSeleção: 2020 execucao"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "saude-total-2020-orcamento-oe2020"
+      ],
+      "nome": {
+        "pt": "Saúde, despesa total orçamentada",
+        "en": "Health, budgeted total expenditure"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a despesa total consolidada do programa Saúde no orçamento inicial.",
+          "en": "It is consolidated total Health programme expenditure in the initial budget.",
+          "partes": [
+            {
+              "pt": "É a despesa total consolidada do programa Saúde no orçamento inicial.",
+              "en": "It is consolidated total Health programme expenditure in the initial budget.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "(milhões de euros)\n2019                2020              Variação         Estrutura 2020\nEstim ativa          Orçam ento            (%)                  (%)\n Despesa Total Consolidada                                                     10 741,1            11 282,2              5,0\nSeleção: 2020 orcamento"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "saude-total-2021-execucao-cge2021"
+      ],
+      "nome": {
+        "pt": "Saúde, despesa total executada",
+        "en": "Health, executed total expenditure"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a despesa total executada do programa Saúde, publicada na Conta Geral do Estado.",
+          "en": "It is executed total Health programme expenditure, published in the General State Account.",
+          "partes": [
+            {
+              "pt": "É a despesa total executada do programa Saúde, publicada na Conta Geral do Estado.",
+              "en": "It is executed total Health programme expenditure, published in the General State Account.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "(milhões de euros)\nOrçamento Corrigido de 2021               Execução de 2021\nDesignação                         Total não        Total             Total não           Total\nConsolidado     Consolidado        Consolidado        Consolidado\n                      DESPESA TOTAL                           34 853,6        14 383,9             33 296,3            12 904,3\nSeleção: 2021 execucao"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "saude-total-2021-orcamento-oe2021"
+      ],
+      "nome": {
+        "pt": "Saúde, despesa total orçamentada",
+        "en": "Health, budgeted total expenditure"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a despesa total consolidada do programa Saúde no orçamento inicial.",
+          "en": "It is consolidated total Health programme expenditure in the initial budget.",
+          "partes": [
+            {
+              "pt": "É a despesa total consolidada do programa Saúde no orçamento inicial.",
+              "en": "It is consolidated total Health programme expenditure in the initial budget.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "(milhões de euros)\n2020               2021            Variação          Estrutura 2021\nClassificador Económico\nEstimativa         Orçamento           (%)                   (%)\nDespesa total consolidada (1)                                      12 064,2          12 564,8                  4,1\nSeleção: 2021 orcamento"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "saude-total-2022-execucao-cge2022"
+      ],
+      "nome": {
+        "pt": "Saúde, despesa total executada",
+        "en": "Health, executed total expenditure"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a despesa total executada do programa Saúde, publicada na Conta Geral do Estado.",
+          "en": "It is executed total Health programme expenditure, published in the General State Account.",
+          "partes": [
+            {
+              "pt": "É a despesa total executada do programa Saúde, publicada na Conta Geral do Estado.",
+              "en": "It is executed total Health programme expenditure, published in the General State Account.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "(milhões de euros)\nOrçamento Corrigido de 2022               Execução de 2022\nDesignação\nTotal não            Total           Total não        Total\nconsolidado        Consolidado       consolidado    Consolidado\n    DESPESA TOTAL                                                        37 887,7           15 585,5          36 183,7       14 016,8\nSeleção: 2022 execucao"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "saude-total-2022-orcamento-oe2022"
+      ],
+      "nome": {
+        "pt": "Saúde, despesa total orçamentada",
+        "en": "Health, budgeted total expenditure"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a despesa total consolidada do programa Saúde no orçamento inicial.",
+          "en": "It is consolidated total Health programme expenditure in the initial budget.",
+          "partes": [
+            {
+              "pt": "É a despesa total consolidada do programa Saúde no orçamento inicial.",
+              "en": "It is consolidated total Health programme expenditure in the initial budget.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "(milhões de euros)\n2021            2022\nVariação      Estrutura 2022\nClassificador Económico                    Execução\nOrçamento         (%)               (%)\nprovisória\n Despesa total consolidada                                                        12 853,7         13 578,1            5,6\nSeleção: 2022 orcamento"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "saude-total-2023-execucao-cge2023"
+      ],
+      "nome": {
+        "pt": "Saúde, despesa total executada",
+        "en": "Health, executed total expenditure"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a despesa total executada do programa Saúde, publicada na Conta Geral do Estado.",
+          "en": "It is executed total Health programme expenditure, published in the General State Account.",
+          "partes": [
+            {
+              "pt": "É a despesa total executada do programa Saúde, publicada na Conta Geral do Estado.",
+              "en": "It is executed total Health programme expenditure, published in the General State Account.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "(milhões de euros)\nOrçamento Corrigido de 2023               Execução de 2023\nDesignação                          Total não                            Total não\nTotal Consolidado                  Total Consolidado\nconsolidado                          consolidado\n  DESPESA TOTAL                                                    41 587,7           16 824,0         39 591,0          14 926,5\nSeleção: 2023 execucao"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "saude-total-2023-orcamento-oe2023"
+      ],
+      "nome": {
+        "pt": "Saúde, despesa total orçamentada",
+        "en": "Health, budgeted total expenditure"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a despesa total consolidada do programa Saúde no orçamento inicial.",
+          "en": "It is consolidated total Health programme expenditure in the initial budget.",
+          "partes": [
+            {
+              "pt": "É a despesa total consolidada do programa Saúde no orçamento inicial.",
+              "en": "It is consolidated total Health programme expenditure in the initial budget.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "(milhões de euros)\n2022             2023            Variação         Estrutura 2023\nClassificador Económico\nEstimativa          Orçamento           (%)                  (%)\n Despesa total consolidada                                                                      13 782,0         14 858,0                 7,8\nSeleção: 2023 orcamento"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "saude-total-2024-execucao-cge2024"
+      ],
+      "nome": {
+        "pt": "Saúde, despesa total executada",
+        "en": "Health, executed total expenditure"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a despesa total executada do programa Saúde, publicada na Conta Geral do Estado.",
+          "en": "It is executed total Health programme expenditure, published in the General State Account.",
+          "partes": [
+            {
+              "pt": "É a despesa total executada do programa Saúde, publicada na Conta Geral do Estado.",
+              "en": "It is executed total Health programme expenditure, published in the General State Account.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "(milhões de euros)\nOrçamento Corrigido de 2024             Execução de 2024\nDesignação                               Total não                            Total não\nTotal Consolidado                  Total Consolidado\nconsolidado                         consolidado\n      DESPESA TOTAL                                                       45 376,7          17 814,0         43 060,0          15 808,8\nSeleção: 2024 execucao"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "saude-total-2024-orcamento-oe2024"
+      ],
+      "nome": {
+        "pt": "Saúde, despesa total orçamentada",
+        "en": "Health, budgeted total expenditure"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a despesa total consolidada do programa Saúde no orçamento inicial.",
+          "en": "It is consolidated total Health programme expenditure in the initial budget.",
+          "partes": [
+            {
+              "pt": "É a despesa total consolidada do programa Saúde no orçamento inicial.",
+              "en": "It is consolidated total Health programme expenditure in the initial budget.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "(milhões de euros)\n2023                 2024               Variação          Estrutura 2023\nClassificador Económico\n(%)                   (%)\nEstimativa            Orçamento\n  Despesa total consolidada                                                      14 922,8             15 709,4                    5,3\nSeleção: 2024 orcamento"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "saude-total-2025-execucao-cge2025"
+      ],
+      "nome": {
+        "pt": "Saúde, despesa total executada",
+        "en": "Health, executed total expenditure"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a despesa total executada do programa Saúde, publicada na Conta Geral do Estado.",
+          "en": "It is executed total Health programme expenditure, published in the General State Account.",
+          "partes": [
+            {
+              "pt": "É a despesa total executada do programa Saúde, publicada na Conta Geral do Estado.",
+              "en": "It is executed total Health programme expenditure, published in the General State Account.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "(milhões de euros)\nOrçamento Corrigido de 2025                         Execução de 2025\nDesignação                           Total não                             Total não                         Estrutura (%) do\nTotal Consolidado                   Total Consolidado\nconsolidado                           consolidado                        total consolidado\n DESPESA TOTAL                                                  49 466,7            19 482,7          46 971,2          17 241,5\nSeleção: 2025 execucao"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "saude-total-2025-orcamento-oe2025"
+      ],
+      "nome": {
+        "pt": "Saúde, despesa total orçamentada",
+        "en": "Health, budgeted total expenditure"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a despesa total consolidada do programa Saúde no orçamento inicial.",
+          "en": "It is consolidated total Health programme expenditure in the initial budget.",
+          "partes": [
+            {
+              "pt": "É a despesa total consolidada do programa Saúde no orçamento inicial.",
+              "en": "It is consolidated total Health programme expenditure in the initial budget.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "(milhões de euros)\n2024                2025              Variação\nClassificador Económico                                                                               Estrutura 2025 (%)\n(%)\nEstimativa         Orçamento\n  Despesa total consolidada                                       15 467,8            16 853,5                   9,0\nSeleção: 2025 orcamento"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "saude-total-2026-orcamento-oe2026"
+      ],
+      "nome": {
+        "pt": "Saúde, despesa total orçamentada",
+        "en": "Health, budgeted total expenditure"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a despesa total consolidada do programa Saúde no orçamento inicial.",
+          "en": "It is consolidated total Health programme expenditure in the initial budget.",
+          "partes": [
+            {
+              "pt": "É a despesa total consolidada do programa Saúde no orçamento inicial.",
+              "en": "It is consolidated total Health programme expenditure in the initial budget.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "(milhões de euros)\n2025                2026              Variação\nClassificador Económico                                                                                Estrutura 2026 (%)\nEstimativa          Orçamento              (%)\n  Despesa total consolidada                                        17 045,7            17 300,2                   1,5\nSeleção: 2026 orcamento"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "utao-ppp-contingencias-natureza-2026"
+      ],
+      "nome": {
+        "pt": "Natureza dos pedidos contingentes das parcerias",
+        "en": "Nature of contingent partnership claims"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a distinção da UTAO entre pedidos contingentes e encargos já reconhecidos.",
+          "en": "It is the UTAO’s distinction between contingent claims and charges already recognised.",
+          "partes": [
+            {
+              "pt": "É a distinção da UTAO entre pedidos contingentes e encargos já reconhecidos.",
+              "en": "It is the UTAO’s distinction between contingent claims and charges already recognised.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "não encargos já reconhecidos"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "utao-risco-execucao-sns-2027"
+      ],
+      "nome": {
+        "pt": "Risco de pressão orçamental no Serviço Nacional de Saúde",
+        "en": "Risk of budget pressure in the National Health Service"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o risco de pressão orçamental identificado pela UTAO para o Serviço Nacional de Saúde.",
+          "en": "It is the risk of budget pressure identified by the UTAO for the National Health Service.",
+          "partes": [
+            {
+              "pt": "É o risco de pressão orçamental identificado pela UTAO para o Serviço Nacional de Saúde.",
+              "en": "It is the risk of budget pressure identified by the UTAO for the National Health Service.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Existe um risco de pressão orçamental"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "utao-saude-efetiva-2026-estimativa"
+      ],
+      "nome": {
+        "pt": "Saúde, despesa efetiva estimada na UTAO",
+        "en": "Health, estimated effective expenditure in the UTAO table"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a despesa efetiva da Saúde, com consolidação dentro do programa, na coluna da estimativa da tabela da UTAO.",
+          "en": "It is effective Health expenditure, consolidated within the programme, in the estimate column of the UTAO table.",
+          "partes": [
+            {
+              "pt": "É a despesa efetiva da Saúde, com consolidação dentro do programa, na coluna da estimativa da tabela da UTAO.",
+              "en": "It is effective Health expenditure, consolidated within the programme, in the estimate column of the UTAO table.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Tabela 15 – Despesas do Programa Orçamental/Legado Saúde\n(em milhões de euros e percentagem)\nVariação                               Taxa de variação\n2026\nM€                                           %\n2021       2022       2023         2024       2025                                 POE/2027                                                                            POE/2027\nEst/2026    Est/2026     POE/2027     Est/2026   Est/2026 POE/2027\nvs\nOE/2026     Estimativa                  vs           vs           vs          vs         vs           vs\nEst/2026\n2025       OE/2026      Est/2026      2025      OE/2026   Est/2026\n(s/PRR)\nDespesa efetiva (consolidação intra PO/PL)    12 859     13 957     14 812      15 696      17 190      17 147          18 062      17 803       873         915         -259          5,1       5,3          -1,4            3,0\nSeleção: 2026 Estimativa"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "utao-saude-efetiva-2026-orcamento"
+      ],
+      "nome": {
+        "pt": "Saúde, despesa efetiva orçamentada na UTAO",
+        "en": "Health, budgeted effective expenditure in the UTAO table"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a despesa efetiva da Saúde, com consolidação dentro do programa, na coluna do orçamento da tabela da UTAO.",
+          "en": "It is effective Health expenditure, consolidated within the programme, in the budget column of the UTAO table.",
+          "partes": [
+            {
+              "pt": "É a despesa efetiva da Saúde, com consolidação dentro do programa, na coluna do orçamento da tabela da UTAO.",
+              "en": "It is effective Health expenditure, consolidated within the programme, in the budget column of the UTAO table.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Tabela 15 – Despesas do Programa Orçamental/Legado Saúde\n(em milhões de euros e percentagem)\nVariação                               Taxa de variação\n2026\nM€                                           %\n2021       2022       2023         2024       2025                                 POE/2027                                                                            POE/2027\nEst/2026    Est/2026     POE/2027     Est/2026   Est/2026 POE/2027\nvs\nOE/2026     Estimativa                  vs           vs           vs          vs         vs           vs\nEst/2026\n2025       OE/2026      Est/2026      2025      OE/2026   Est/2026\n(s/PRR)\nDespesa efetiva (consolidação intra PO/PL)    12 859     13 957     14 812      15 696      17 190      17 147          18 062      17 803       873         915         -259          5,1       5,3          -1,4            3,0\nSeleção: 2026 OE/2026"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "utao-saude-sem-prr-2027"
+      ],
+      "nome": {
+        "pt": "Variação da despesa da Saúde sem PRR segundo a UTAO",
+        "en": "Change in Health expenditure excluding the RRP according to the UTAO"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a variação da despesa da Saúde sem PRR referida pela UTAO.",
+          "en": "It is the change in Health expenditure excluding the RRP cited by the UTAO.",
+          "partes": [
+            {
+              "pt": "É a variação da despesa da Saúde sem PRR referida pela UTAO.",
+              "en": "It is the change in Health expenditure excluding the RRP cited by the UTAO.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "a despesa aumentaria 3,0%"
                 }
               ]
             }

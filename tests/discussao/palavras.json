@@ -17218,7 +17218,7 @@
               "pt": "O número aproxima-se da soma dos encargos brutos rodoviários com os encargos ferroviários e da saúde, ",
               "en": "The figure is close to the sum of gross road charges and rail and health charges, ",
               "classe": "leitura",
-              "sobre": "Arredondamento da soma dos setores e alargamento posterior da formulação do PCP.",
+              "sobre": "Aproximação à soma dos setores, sem provar a conta do autor, e alargamento posterior da formulação do PCP.",
               "apoios": [
                 {
                   "linha": "der-ppp-brutos-todos-2027",
@@ -17264,7 +17264,7 @@
               "pt": ", sem que isso demonstre a conta que lhe deu origem; as rodoviárias são ",
               "en": ", without that proving the calculation behind it; road partnerships are ",
               "classe": "leitura",
-              "sobre": "Arredondamento da soma dos setores e alargamento posterior da formulação do PCP.",
+              "sobre": "Aproximação à soma dos setores, sem provar a conta do autor, e alargamento posterior da formulação do PCP.",
               "apoios": [
                 {
                   "linha": "der-ppp-brutos-todos-2027",
@@ -17310,7 +17310,7 @@
               "pt": " %",
               "en": " %",
               "classe": "leitura",
-              "sobre": "Arredondamento da soma dos setores e alargamento posterior da formulação do PCP.",
+              "sobre": "Aproximação à soma dos setores, sem provar a conta do autor, e alargamento posterior da formulação do PCP.",
               "apoios": [
                 {
                   "linha": "der-ppp-brutos-todos-2027",
@@ -17356,7 +17356,7 @@
               "pt": " do total líquido. O próprio PCP alargou depois o universo referido: «",
               "en": " of the net total. The PCP itself later broadened the scope it referred to: «",
               "classe": "leitura",
-              "sobre": "Arredondamento da soma dos setores e alargamento posterior da formulação do PCP.",
+              "sobre": "Aproximação à soma dos setores, sem provar a conta do autor, e alargamento posterior da formulação do PCP.",
               "apoios": [
                 {
                   "linha": "der-ppp-brutos-todos-2027",
@@ -17402,7 +17402,7 @@
               "pt": "» a ",
               "en": "» on ",
               "classe": "leitura",
-              "sobre": "Arredondamento da soma dos setores e alargamento posterior da formulação do PCP.",
+              "sobre": "Aproximação à soma dos setores, sem provar a conta do autor, e alargamento posterior da formulação do PCP.",
               "apoios": [
                 {
                   "linha": "der-ppp-brutos-todos-2027",
@@ -17448,7 +17448,7 @@
               "pt": ", e «",
               "en": ", and «",
               "classe": "leitura",
-              "sobre": "Arredondamento da soma dos setores e alargamento posterior da formulação do PCP.",
+              "sobre": "Aproximação à soma dos setores, sem provar a conta do autor, e alargamento posterior da formulação do PCP.",
               "apoios": [
                 {
                   "linha": "der-ppp-brutos-todos-2027",
@@ -17494,7 +17494,7 @@
               "pt": "» a ",
               "en": "» on ",
               "classe": "leitura",
-              "sobre": "Arredondamento da soma dos setores e alargamento posterior da formulação do PCP.",
+              "sobre": "Aproximação à soma dos setores, sem provar a conta do autor, e alargamento posterior da formulação do PCP.",
               "apoios": [
                 {
                   "linha": "der-ppp-brutos-todos-2027",
@@ -17540,7 +17540,7 @@
               "pt": ".",
               "en": ".",
               "classe": "leitura",
-              "sobre": "Arredondamento da soma dos setores e alargamento posterior da formulação do PCP.",
+              "sobre": "Aproximação à soma dos setores, sem provar a conta do autor, e alargamento posterior da formulação do PCP.",
               "apoios": [
                 {
                   "linha": "der-ppp-brutos-todos-2027",
@@ -18299,7 +18299,7 @@
               "pt": "A conclusão",
               "en": "The conclusion",
               "classe": "leitura",
-              "sobre": "Conclusão editorial sobre encargos contratados, arredondamento do número e riscos contingentes.",
+              "sobre": "Conclusão editorial sobre encargos contratados, aproximação numérica e riscos contingentes.",
               "apoios": [
                 {
                   "linha": "oe-2027-ppp-rodoviario-encargos-liquidos-2027",
@@ -18350,7 +18350,7 @@
               "pt": "O relatório prevê ",
               "en": "The report forecasts ",
               "classe": "leitura",
-              "sobre": "Conclusão editorial sobre encargos contratados, arredondamento do número e riscos contingentes.",
+              "sobre": "Conclusão editorial sobre encargos contratados, aproximação numérica e riscos contingentes.",
               "apoios": [
                 {
                   "linha": "oe-2027-ppp-rodoviario-encargos-liquidos-2027",
@@ -18401,7 +18401,7 @@
               "pt": " milhões líquidos para as parcerias rodoviárias em ",
               "en": " million net for the road partnerships in ",
               "classe": "leitura",
-              "sobre": "Conclusão editorial sobre encargos contratados, arredondamento do número e riscos contingentes.",
+              "sobre": "Conclusão editorial sobre encargos contratados, aproximação numérica e riscos contingentes.",
               "apoios": [
                 {
                   "linha": "oe-2027-ppp-rodoviario-encargos-liquidos-2027",
@@ -18452,7 +18452,7 @@
               "pt": ", ",
               "en": ", ",
               "classe": "leitura",
-              "sobre": "Conclusão editorial sobre encargos contratados, arredondamento do número e riscos contingentes.",
+              "sobre": "Conclusão editorial sobre encargos contratados, aproximação numérica e riscos contingentes.",
               "apoios": [
                 {
                   "linha": "oe-2027-ppp-rodoviario-encargos-liquidos-2027",
@@ -18503,7 +18503,7 @@
               "pt": " %",
               "en": " %",
               "classe": "leitura",
-              "sobre": "Conclusão editorial sobre encargos contratados, arredondamento do número e riscos contingentes.",
+              "sobre": "Conclusão editorial sobre encargos contratados, aproximação numérica e riscos contingentes.",
               "apoios": [
                 {
                   "linha": "oe-2027-ppp-rodoviario-encargos-liquidos-2027",
@@ -18554,7 +18554,7 @@
               "pt": " face à execução de ",
               "en": " against execution in ",
               "classe": "leitura",
-              "sobre": "Conclusão editorial sobre encargos contratados, arredondamento do número e riscos contingentes.",
+              "sobre": "Conclusão editorial sobre encargos contratados, aproximação numérica e riscos contingentes.",
               "apoios": [
                 {
                   "linha": "oe-2027-ppp-rodoviario-encargos-liquidos-2027",
@@ -18605,7 +18605,7 @@
               "pt": " mas acima da estimativa para ",
               "en": ", but above the estimate for ",
               "classe": "leitura",
-              "sobre": "Conclusão editorial sobre encargos contratados, arredondamento do número e riscos contingentes.",
+              "sobre": "Conclusão editorial sobre encargos contratados, aproximação numérica e riscos contingentes.",
               "apoios": [
                 {
                   "linha": "oe-2027-ppp-rodoviario-encargos-liquidos-2027",
@@ -18656,7 +18656,7 @@
               "pt": ", e o quadro projeta uma tendência de redução, com oscilações, até ao fim dos contratos. O número da primeira afirmação do PCP aproxima-se do custo bruto de todas as parcerias, não do das rodoviárias. E o que pode mudar a conta não está no quadro: ",
               "en": ", and the table projects a downward trend, with fluctuations, to the end of the contracts. The figure in the PCP's first claim is close to the gross cost of all partnerships, not of the road ones. And what could change the bill is not in the table: ",
               "classe": "leitura",
-              "sobre": "Conclusão editorial sobre encargos contratados, arredondamento do número e riscos contingentes.",
+              "sobre": "Conclusão editorial sobre encargos contratados, aproximação numérica e riscos contingentes.",
               "apoios": [
                 {
                   "linha": "oe-2027-ppp-rodoviario-encargos-liquidos-2027",
@@ -18707,7 +18707,7 @@
               "pt": " milhões de pedidos das concessionárias, dos quais ",
               "en": " million in concessionaires' claims, ",
               "classe": "leitura",
-              "sobre": "Conclusão editorial sobre encargos contratados, arredondamento do número e riscos contingentes.",
+              "sobre": "Conclusão editorial sobre encargos contratados, aproximação numérica e riscos contingentes.",
               "apoios": [
                 {
                   "linha": "oe-2027-ppp-rodoviario-encargos-liquidos-2027",
@@ -18758,7 +18758,7 @@
               "pt": " numa negociação em curso.",
               "en": " of them in a negotiation under way.",
               "classe": "leitura",
-              "sobre": "Conclusão editorial sobre encargos contratados, arredondamento do número e riscos contingentes.",
+              "sobre": "Conclusão editorial sobre encargos contratados, aproximação numérica e riscos contingentes.",
               "apoios": [
                 {
                   "linha": "oe-2027-ppp-rodoviario-encargos-liquidos-2027",

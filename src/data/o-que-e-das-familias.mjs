@@ -5002,3 +5002,1771 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     ]
   }
 });
+
+// V2D: declarações acrescentadas pelo compositor próprio.
+Object.assign(FAMILIAS_DAS_LINHAS, {
+  "afirmacao-pcp-paula-investimento-saude-2026-10-12": {
+    "nome": {
+      "pt": "Afirmação de Paula Santos sobre o investimento na Saúde",
+      "en": "Paula Santos’s statement on Health investment"
+    },
+    "frase": {
+      "pt": [
+        "É o corte no investimento na Saúde afirmado por Paula Santos."
+      ],
+      "en": [
+        "It is the cut in Health investment stated by Paula Santos."
+      ]
+    }
+  },
+  "afirmacao-pcp-paula-ppp-2026-10-12": {
+    "nome": {
+      "pt": "Afirmação de Paula Santos sobre as parcerias",
+      "en": "Paula Santos’s statement on partnerships"
+    },
+    "frase": {
+      "pt": [
+        "É o montante referido por Paula Santos como despesa com as parcerias rodoviárias, ferroviárias e da saúde."
+      ],
+      "en": [
+        "It is the amount cited by Paula Santos as expenditure on road, rail and health partnerships."
+      ]
+    }
+  },
+  "afirmacao-pcp-ppp-2026-10-15": {
+    "nome": {
+      "pt": "Afirmação de Paulo Raimundo sobre as parcerias",
+      "en": "Paulo Raimundo’s statement on partnerships"
+    },
+    "frase": {
+      "pt": [
+        "É o montante referido por Paulo Raimundo como pagamentos do Governo em parcerias público-privadas."
+      ],
+      "en": [
+        "It is the amount cited by Paulo Raimundo as Government payments to public-private partnerships."
+      ]
+    }
+  },
+  "der-ambiente-e-energia-prr-2026": {
+    "nome": {
+      "pt": "Ambiente e energia, parcela do PRR",
+      "en": "Environment and energy, RRP component"
+    },
+    "frase": {
+      "pt": [
+        "É a diferença entre a despesa efetiva consolidada com e sem PRR na estimativa do programa Ambiente e energia."
+      ],
+      "en": [
+        "It is the difference between consolidated effective expenditure with and without the RRP in the estimate for the Environment and energy programme."
+      ]
+    }
+  },
+  "der-economia-prr-2026": {
+    "nome": {
+      "pt": "Economia, parcela do PRR",
+      "en": "Economy, RRP component"
+    },
+    "frase": {
+      "pt": [
+        "É a diferença entre a despesa efetiva consolidada com e sem PRR na estimativa do programa Economia."
+      ],
+      "en": [
+        "It is the difference between consolidated effective expenditure with and without the RRP in the estimate for the Economy programme."
+      ]
+    }
+  },
+  "der-educacao-variacao-sem-prr": {
+    "nome": {
+      "pt": "Educação, variação absoluta sem PRR",
+      "en": "Education, absolute change outside the RRP"
+    },
+    "frase": {
+      "pt": [
+        "É a variação absoluta da despesa efetiva consolidada sem PRR entre a estimativa e o orçamento seguinte do programa Educação."
+      ],
+      "en": [
+        "It is the absolute change in consolidated effective expenditure without the RRP between the estimate and the following budget for the Education programme."
+      ]
+    }
+  },
+  "der-educacao-variacao-sem-prr-pct": {
+    "nome": {
+      "pt": "Educação, variação percentual sem PRR",
+      "en": "Education, percentage change outside the RRP"
+    },
+    "frase": {
+      "pt": [
+        "É a variação percentual da despesa efetiva consolidada sem PRR entre a estimativa e o orçamento seguinte do programa Educação."
+      ],
+      "en": [
+        "It is the percentage change in consolidated effective expenditure without the RRP between the estimate and the following budget for the Education programme."
+      ]
+    }
+  },
+  "der-financas-prr-2026": {
+    "nome": {
+      "pt": "Finanças, parcela do PRR",
+      "en": "Finance, RRP component"
+    },
+    "frase": {
+      "pt": [
+        "É a diferença entre a despesa efetiva consolidada com e sem PRR na estimativa do programa Finanças."
+      ],
+      "en": [
+        "It is the difference between consolidated effective expenditure with and without the RRP in the estimate for the Finance programme."
+      ]
+    }
+  },
+  "der-infraestruturas-e-habitacao-prr-2026": {
+    "nome": {
+      "pt": "Infraestruturas e habitação, parcela do PRR",
+      "en": "Infrastructure and housing, RRP component"
+    },
+    "frase": {
+      "pt": [
+        "É a diferença entre a despesa efetiva consolidada com e sem PRR na estimativa do programa Infraestruturas e habitação."
+      ],
+      "en": [
+        "It is the difference between consolidated effective expenditure with and without the RRP in the estimate for the Infrastructure and housing programme."
+      ]
+    }
+  },
+  "der-infraestruturas-e-habitacao-variacao-sem-prr": {
+    "nome": {
+      "pt": "Infraestruturas e habitação, variação absoluta sem PRR",
+      "en": "Infrastructure and housing, absolute change outside the RRP"
+    },
+    "frase": {
+      "pt": [
+        "É a variação absoluta da despesa efetiva consolidada sem PRR entre a estimativa e o orçamento seguinte do programa Infraestruturas e habitação."
+      ],
+      "en": [
+        "It is the absolute change in consolidated effective expenditure without the RRP between the estimate and the following budget for the Infrastructure and housing programme."
+      ]
+    }
+  },
+  "der-infraestruturas-e-habitacao-variacao-sem-prr-pct": {
+    "nome": {
+      "pt": "Infraestruturas e habitação, variação percentual sem PRR",
+      "en": "Infrastructure and housing, percentage change outside the RRP"
+    },
+    "frase": {
+      "pt": [
+        "É a variação percentual da despesa efetiva consolidada sem PRR entre a estimativa e o orçamento seguinte do programa Infraestruturas e habitação."
+      ],
+      "en": [
+        "It is the percentage change in consolidated effective expenditure without the RRP between the estimate and the following budget for the Infrastructure and housing programme."
+      ]
+    }
+  },
+  "der-justica-variacao-sem-prr": {
+    "nome": {
+      "pt": "Justiça, variação absoluta sem PRR",
+      "en": "Justice, absolute change outside the RRP"
+    },
+    "frase": {
+      "pt": [
+        "É a variação absoluta da despesa efetiva consolidada sem PRR entre a estimativa e o orçamento seguinte do programa Justiça."
+      ],
+      "en": [
+        "It is the absolute change in consolidated effective expenditure without the RRP between the estimate and the following budget for the Justice programme."
+      ]
+    }
+  },
+  "der-justica-variacao-sem-prr-pct": {
+    "nome": {
+      "pt": "Justiça, variação percentual sem PRR",
+      "en": "Justice, percentage change outside the RRP"
+    },
+    "frase": {
+      "pt": [
+        "É a variação percentual da despesa efetiva consolidada sem PRR entre a estimativa e o orçamento seguinte do programa Justiça."
+      ],
+      "en": [
+        "It is the percentage change in consolidated effective expenditure without the RRP between the estimate and the following budget for the Justice programme."
+      ]
+    }
+  },
+  "der-ppp-brutos-todos-2027": {
+    "nome": {
+      "pt": "Soma dos encargos brutos rodoviários e dos encargos ferroviários e da saúde",
+      "en": "Sum of gross road charges and rail and health charges"
+    },
+    "frase": {
+      "pt": [
+        "É a soma dos encargos brutos rodoviários com os encargos ferroviários e da saúde."
+      ],
+      "en": [
+        "It is the sum of gross road charges and rail and health charges."
+      ]
+    }
+  },
+  "der-ppp-pcp-vs-brutos": {
+    "nome": {
+      "pt": "Diferença entre a afirmação do PCP e os encargos rodoviários brutos",
+      "en": "Difference between the PCP statement and gross road charges"
+    },
+    "frase": {
+      "pt": [
+        "É o montante afirmado pelo PCP menos os encargos brutos rodoviários."
+      ],
+      "en": [
+        "It is the amount stated by the PCP minus gross road charges."
+      ]
+    }
+  },
+  "der-ppp-pcp-vs-liquidos": {
+    "nome": {
+      "pt": "Diferença entre a afirmação do PCP e os encargos rodoviários líquidos",
+      "en": "Difference between the PCP statement and net road charges"
+    },
+    "frase": {
+      "pt": [
+        "É o montante afirmado pelo PCP menos os encargos líquidos rodoviários."
+      ],
+      "en": [
+        "It is the amount stated by the PCP minus net road charges."
+      ]
+    }
+  },
+  "der-ppp-quota-rodoviario": {
+    "nome": {
+      "pt": "Peso das rodoviárias no total líquido das parcerias",
+      "en": "Road share of total net partnership charges"
+    },
+    "frase": {
+      "pt": [
+        "É a razão entre os encargos líquidos rodoviários e o total líquido de todos os setores, em percentagem."
+      ],
+      "en": [
+        "It is the ratio of net road charges to total net charges for all sectors, as a percentage."
+      ]
+    }
+  },
+  "der-ppp-rodoviario-2027-vs-2021-pct": {
+    "nome": {
+      "pt": "Variação dos encargos rodoviários orçamentados face à execução anterior",
+      "en": "Change in budgeted road charges against earlier execution"
+    },
+    "frase": {
+      "pt": [
+        "É a variação percentual entre os encargos líquidos rodoviários orçamentados e a execução anterior identificada nas componentes."
+      ],
+      "en": [
+        "It is the percentage change between budgeted net road charges and the earlier execution identified in the components."
+      ]
+    }
+  },
+  "der-saude-2027-vs-execucao-2025-pct": {
+    "nome": {
+      "pt": "Variação do orçamento da Saúde face à execução anterior",
+      "en": "Change in the Health budget against earlier execution"
+    },
+    "frase": {
+      "pt": [
+        "É a variação percentual entre a despesa total consolidada orçamentada e a execução anterior identificada nas componentes."
+      ],
+      "en": [
+        "It is the percentage change between budgeted consolidated total expenditure and the earlier execution identified in the components."
+      ]
+    }
+  },
+  "der-saude-bens-servicos-reducao-abs": {
+    "nome": {
+      "pt": "Redução da aquisição de bens e serviços da Saúde",
+      "en": "Reduction in Health purchase of goods and services"
+    },
+    "frase": {
+      "pt": [
+        "É a estimativa de aquisição de bens e serviços da Saúde menos o orçamento seguinte."
+      ],
+      "en": [
+        "It is estimated Health purchase of goods and services minus the following budget."
+      ]
+    }
+  },
+  "der-saude-bens-servicos-variacao-abs": {
+    "nome": {
+      "pt": "Variação absoluta da aquisição de bens e serviços da Saúde",
+      "en": "Absolute change in Health purchase of goods and services"
+    },
+    "frase": {
+      "pt": [
+        "É o orçamento de aquisição de bens e serviços da Saúde menos a estimativa do ano anterior."
+      ],
+      "en": [
+        "It is budgeted Health purchase of goods and services minus the preceding year’s estimate."
+      ]
+    }
+  },
+  "der-saude-investimento-reducao-abs": {
+    "nome": {
+      "pt": "Redução do investimento da Saúde",
+      "en": "Reduction in Health investment"
+    },
+    "frase": {
+      "pt": [
+        "É a estimativa de investimento da Saúde menos o orçamento seguinte."
+      ],
+      "en": [
+        "It is estimated Health investment minus the following budget."
+      ]
+    }
+  },
+  "der-saude-investimento-variacao-abs": {
+    "nome": {
+      "pt": "Variação absoluta do investimento da Saúde",
+      "en": "Absolute change in Health investment"
+    },
+    "frase": {
+      "pt": [
+        "É o orçamento de investimento da Saúde menos a estimativa do ano anterior."
+      ],
+      "en": [
+        "It is budgeted Health investment minus the preceding year’s estimate."
+      ]
+    }
+  },
+  "der-saude-pessoal-variacao-abs": {
+    "nome": {
+      "pt": "Variação absoluta das despesas com pessoal da Saúde",
+      "en": "Absolute change in Health personnel expenditure"
+    },
+    "frase": {
+      "pt": [
+        "É o orçamento de despesas com pessoal da Saúde menos a estimativa do ano anterior."
+      ],
+      "en": [
+        "It is budgeted Health personnel expenditure minus the preceding year’s estimate."
+      ]
+    }
+  },
+  "der-saude-prr-2026": {
+    "nome": {
+      "pt": "Saúde, parcela do PRR",
+      "en": "Health, RRP component"
+    },
+    "frase": {
+      "pt": [
+        "É a diferença entre a despesa efetiva consolidada com e sem PRR na estimativa do programa Saúde."
+      ],
+      "en": [
+        "It is the difference between consolidated effective expenditure with and without the RRP in the estimate for the Health programme."
+      ]
+    }
+  },
+  "der-saude-razao-compensacao-prr": {
+    "nome": {
+      "pt": "Razão entre o aumento sem PRR e a parcela do PRR que termina",
+      "en": "Ratio of the increase outside the RRP to the ending RRP component"
+    },
+    "frase": {
+      "pt": [
+        "É o aumento da despesa efetiva sem PRR dividido pela parcela do PRR na estimativa anterior."
+      ],
+      "en": [
+        "It is the increase in effective expenditure outside the RRP divided by the RRP component in the preceding estimate."
+      ]
+    }
+  },
+  "der-saude-receitas-proprias-variacao-pct": {
+    "nome": {
+      "pt": "Variação das receitas próprias da Saúde",
+      "en": "Change in Health own revenue"
+    },
+    "frase": {
+      "pt": [
+        "É a variação percentual das receitas próprias entre os dois orçamentos."
+      ],
+      "en": [
+        "It is the percentage change in own revenue between the two budgets."
+      ]
+    }
+  },
+  "der-saude-reforco-total-2026": {
+    "nome": {
+      "pt": "Diferença entre a estimativa e o orçamento inicial da Saúde",
+      "en": "Difference between the Health estimate and initial budget"
+    },
+    "frase": {
+      "pt": [
+        "É a estimativa de despesa total consolidada da Saúde menos o orçamento inicial do mesmo ano."
+      ],
+      "en": [
+        "It is estimated consolidated total Health expenditure minus the initial budget for the same year."
+      ]
+    }
+  },
+  "der-saude-total-reducao-abs": {
+    "nome": {
+      "pt": "Redução da despesa total da Saúde",
+      "en": "Reduction in total Health expenditure"
+    },
+    "frase": {
+      "pt": [
+        "É a estimativa de despesa total consolidada menos o orçamento do ano seguinte."
+      ],
+      "en": [
+        "It is the estimate of consolidated total expenditure minus the following year’s budget."
+      ]
+    }
+  },
+  "der-saude-variacao-efetiva": {
+    "nome": {
+      "pt": "Variação absoluta da despesa efetiva da Saúde",
+      "en": "Absolute change in effective Health expenditure"
+    },
+    "frase": {
+      "pt": [
+        "É a despesa efetiva consolidada orçamentada menos a estimativa do ano anterior."
+      ],
+      "en": [
+        "It is budgeted consolidated effective expenditure minus the preceding year’s estimate."
+      ]
+    }
+  },
+  "der-saude-variacao-sem-prr": {
+    "nome": {
+      "pt": "Saúde, variação absoluta sem PRR",
+      "en": "Health, absolute change outside the RRP"
+    },
+    "frase": {
+      "pt": [
+        "É a variação absoluta da despesa efetiva consolidada sem PRR entre a estimativa e o orçamento seguinte do programa Saúde."
+      ],
+      "en": [
+        "It is the absolute change in consolidated effective expenditure without the RRP between the estimate and the following budget for the Health programme."
+      ]
+    }
+  },
+  "der-saude-variacao-sem-prr-pct": {
+    "nome": {
+      "pt": "Saúde, variação percentual sem PRR",
+      "en": "Health, percentage change outside the RRP"
+    },
+    "frase": {
+      "pt": [
+        "É a variação percentual da despesa efetiva consolidada sem PRR entre a estimativa e o orçamento seguinte do programa Saúde."
+      ],
+      "en": [
+        "It is the percentage change in consolidated effective expenditure without the RRP between the estimate and the following budget for the Health programme."
+      ]
+    }
+  },
+  "der-saude-variacao-total-abs": {
+    "nome": {
+      "pt": "Variação absoluta da despesa total da Saúde",
+      "en": "Absolute change in total Health expenditure"
+    },
+    "frase": {
+      "pt": [
+        "É a despesa total consolidada orçamentada menos a estimativa do ano anterior."
+      ],
+      "en": [
+        "It is budgeted consolidated total expenditure minus the preceding year’s estimate."
+      ]
+    }
+  },
+  "der-seguranca-interna-variacao-sem-prr": {
+    "nome": {
+      "pt": "Segurança interna, variação absoluta sem PRR",
+      "en": "Internal security, absolute change outside the RRP"
+    },
+    "frase": {
+      "pt": [
+        "É a variação absoluta da despesa efetiva consolidada sem PRR entre a estimativa e o orçamento seguinte do programa Segurança interna."
+      ],
+      "en": [
+        "It is the absolute change in consolidated effective expenditure without the RRP between the estimate and the following budget for the Internal security programme."
+      ]
+    }
+  },
+  "der-seguranca-interna-variacao-sem-prr-pct": {
+    "nome": {
+      "pt": "Segurança interna, variação percentual sem PRR",
+      "en": "Internal security, percentage change outside the RRP"
+    },
+    "frase": {
+      "pt": [
+        "É a variação percentual da despesa efetiva consolidada sem PRR entre a estimativa e o orçamento seguinte do programa Segurança interna."
+      ],
+      "en": [
+        "It is the percentage change in consolidated effective expenditure without the RRP between the estimate and the following budget for the Internal security programme."
+      ]
+    }
+  },
+  "der-trabalho-solidariedade-e-seguranca-social-variacao-sem-prr": {
+    "nome": {
+      "pt": "Trabalho, solidariedade e segurança social, variação absoluta sem PRR",
+      "en": "Labour, solidarity and social security, absolute change outside the RRP"
+    },
+    "frase": {
+      "pt": [
+        "É a variação absoluta da despesa efetiva consolidada sem PRR entre a estimativa e o orçamento seguinte do programa Trabalho, solidariedade e segurança social."
+      ],
+      "en": [
+        "It is the absolute change in consolidated effective expenditure without the RRP between the estimate and the following budget for the Labour, solidarity and social security programme."
+      ]
+    }
+  },
+  "der-trabalho-solidariedade-e-seguranca-social-variacao-sem-prr-pct": {
+    "nome": {
+      "pt": "Trabalho, solidariedade e segurança social, variação percentual sem PRR",
+      "en": "Labour, solidarity and social security, percentage change outside the RRP"
+    },
+    "frase": {
+      "pt": [
+        "É a variação percentual da despesa efetiva consolidada sem PRR entre a estimativa e o orçamento seguinte do programa Trabalho, solidariedade e segurança social."
+      ],
+      "en": [
+        "It is the percentage change in consolidated effective expenditure without the RRP between the estimate and the following budget for the Labour, solidarity and social security programme."
+      ]
+    }
+  },
+  "der-utao-saude-reforco-2026": {
+    "nome": {
+      "pt": "Diferença entre a estimativa e o orçamento da Saúde na UTAO",
+      "en": "Difference between the Health estimate and budget in the UTAO table"
+    },
+    "frase": {
+      "pt": [
+        "É a estimativa de despesa efetiva da Saúde menos o orçamento do mesmo ano, pelas duas linhas da UTAO."
+      ],
+      "en": [
+        "It is estimated effective Health expenditure minus the budget for the same year, using the two UTAO rows."
+      ]
+    }
+  },
+  "dgo-2026-08-saude-efetiva-jan-ago-2025": {
+    "nome": {
+      "pt": "Execução da despesa efetiva da Saúde até agosto",
+      "en": "Effective Health expenditure executed to August"
+    },
+    "frase": {
+      "pt": [
+        "É a despesa efetiva do programa Saúde acumulada de janeiro a agosto do ano de referência."
+      ],
+      "en": [
+        "It is effective Health programme expenditure accumulated from January to August of the reference year."
+      ]
+    }
+  },
+  "dgo-2026-08-saude-efetiva-jan-ago-2026": {
+    "nome": {
+      "pt": "Execução da despesa efetiva da Saúde até agosto",
+      "en": "Effective Health expenditure executed to August"
+    },
+    "frase": {
+      "pt": [
+        "É a despesa efetiva do programa Saúde acumulada de janeiro a agosto do ano de referência."
+      ],
+      "en": [
+        "It is effective Health programme expenditure accumulated from January to August of the reference year."
+      ]
+    }
+  },
+  "dgo-2026-08-saude-efetiva-variacao-homologa": {
+    "nome": {
+      "pt": "Variação homóloga da despesa efetiva da Saúde até agosto",
+      "en": "Year-on-year change in effective Health expenditure to August"
+    },
+    "frase": {
+      "pt": [
+        "É a variação percentual da despesa efetiva do programa Saúde acumulada até agosto face ao mesmo período do ano anterior."
+      ],
+      "en": [
+        "It is the percentage change in effective Health programme expenditure accumulated to August against the same period of the preceding year."
+      ]
+    }
+  },
+  "dgo-2026-08-sns-despesa-variacao-homologa": {
+    "nome": {
+      "pt": "Variação homóloga da despesa do Serviço Nacional de Saúde",
+      "en": "Year-on-year change in National Health Service expenditure"
+    },
+    "frase": {
+      "pt": [
+        "É a variação percentual da despesa do Serviço Nacional de Saúde acumulada até agosto face ao mesmo período do ano anterior."
+      ],
+      "en": [
+        "It is the percentage change in National Health Service expenditure accumulated to August against the same period of the preceding year."
+      ]
+    }
+  },
+  "dgo-2026-08-sns-saldo-jan-ago-2026": {
+    "nome": {
+      "pt": "Saldo do Serviço Nacional de Saúde até agosto",
+      "en": "National Health Service balance to August"
+    },
+    "frase": {
+      "pt": [
+        "É o saldo do Serviço Nacional de Saúde acumulado de janeiro a agosto."
+      ],
+      "en": [
+        "It is the National Health Service balance accumulated from January to August."
+      ]
+    }
+  },
+  "eurostat-hlth-sha11-hf-a-eur_hab-tot_hf-eu27_2020-2024": {
+    "nome": {
+      "pt": "Despesa em saúde, União Europeia, em todos os regimes de financiamento, euros por habitante",
+      "en": "Health expenditure, European Union, across all financing schemes, euros per inhabitant"
+    },
+    "frase": {
+      "pt": [
+        "É a despesa em saúde em todos os regimes de financiamento na União Europeia, expressa em euros por habitante, na série do Eurostat."
+      ],
+      "en": [
+        "It is health expenditure across all financing schemes in the European Union, expressed in euros per inhabitant, in the Eurostat series."
+      ]
+    }
+  },
+  "eurostat-hlth-sha11-hf-a-eur_hab-tot_hf-pt-2024": {
+    "nome": {
+      "pt": "Despesa em saúde, Portugal, em todos os regimes de financiamento, euros por habitante",
+      "en": "Health expenditure, Portugal, across all financing schemes, euros per inhabitant"
+    },
+    "frase": {
+      "pt": [
+        "É a despesa em saúde em todos os regimes de financiamento em Portugal, expressa em euros por habitante, na série do Eurostat."
+      ],
+      "en": [
+        "It is health expenditure across all financing schemes in Portugal, expressed in euros per inhabitant, in the Eurostat series."
+      ]
+    }
+  },
+  "eurostat-hlth-sha11-hf-a-pc_gdp-hf1-eu27_2020-2024": {
+    "nome": {
+      "pt": "Despesa em saúde, União Europeia, nos regimes públicos e contributivos obrigatórios, percentagem do PIB",
+      "en": "Health expenditure, European Union, in government and compulsory contributory schemes, percentage of GDP"
+    },
+    "frase": {
+      "pt": [
+        "É a despesa em saúde nos regimes públicos e contributivos obrigatórios na União Europeia, expressa em percentagem do PIB, na série do Eurostat."
+      ],
+      "en": [
+        "It is health expenditure in government and compulsory contributory schemes in the European Union, expressed as a percentage of GDP, in the Eurostat series."
+      ]
+    }
+  },
+  "eurostat-hlth-sha11-hf-a-pc_gdp-hf1-pt-2024": {
+    "nome": {
+      "pt": "Despesa em saúde, Portugal, nos regimes públicos e contributivos obrigatórios, percentagem do PIB",
+      "en": "Health expenditure, Portugal, in government and compulsory contributory schemes, percentage of GDP"
+    },
+    "frase": {
+      "pt": [
+        "É a despesa em saúde nos regimes públicos e contributivos obrigatórios em Portugal, expressa em percentagem do PIB, na série do Eurostat."
+      ],
+      "en": [
+        "It is health expenditure in government and compulsory contributory schemes in Portugal, expressed as a percentage of GDP, in the Eurostat series."
+      ]
+    }
+  },
+  "eurostat-hlth-sha11-hf-a-pc_gdp-tot_hf-eu27_2020-2024": {
+    "nome": {
+      "pt": "Despesa em saúde, União Europeia, em todos os regimes de financiamento, percentagem do PIB",
+      "en": "Health expenditure, European Union, across all financing schemes, percentage of GDP"
+    },
+    "frase": {
+      "pt": [
+        "É a despesa em saúde em todos os regimes de financiamento na União Europeia, expressa em percentagem do PIB, na série do Eurostat."
+      ],
+      "en": [
+        "It is health expenditure across all financing schemes in the European Union, expressed as a percentage of GDP, in the Eurostat series."
+      ]
+    }
+  },
+  "eurostat-hlth-sha11-hf-a-pc_gdp-tot_hf-pt-2024": {
+    "nome": {
+      "pt": "Despesa em saúde, Portugal, em todos os regimes de financiamento, percentagem do PIB",
+      "en": "Health expenditure, Portugal, across all financing schemes, percentage of GDP"
+    },
+    "frase": {
+      "pt": [
+        "É a despesa em saúde em todos os regimes de financiamento em Portugal, expressa em percentagem do PIB, na série do Eurostat."
+      ],
+      "en": [
+        "It is health expenditure across all financing schemes in Portugal, expressed as a percentage of GDP, in the Eurostat series."
+      ]
+    }
+  },
+  "oe-2027-ambiente-e-energia-efetiva-2026": {
+    "nome": {
+      "pt": "Ambiente e energia, despesa efetiva consolidada",
+      "en": "Environment and energy, consolidated effective expenditure"
+    },
+    "frase": {
+      "pt": [
+        "É a despesa efetiva consolidada do programa Ambiente e energia, na coluna da estimativa."
+      ],
+      "en": [
+        "It is consolidated effective expenditure for the Environment and energy programme, in the estimate column."
+      ]
+    }
+  },
+  "oe-2027-ambiente-e-energia-sem-prr-2026": {
+    "nome": {
+      "pt": "Ambiente e energia, despesa efetiva consolidada sem PRR",
+      "en": "Environment and energy, consolidated effective expenditure excluding the RRP"
+    },
+    "frase": {
+      "pt": [
+        "É a despesa efetiva consolidada sem PRR do programa Ambiente e energia, na coluna da estimativa."
+      ],
+      "en": [
+        "It is consolidated effective expenditure excluding the RRP for the Environment and energy programme, in the estimate column."
+      ]
+    }
+  },
+  "oe-2027-economia-efetiva-2026": {
+    "nome": {
+      "pt": "Economia, despesa efetiva consolidada",
+      "en": "Economy, consolidated effective expenditure"
+    },
+    "frase": {
+      "pt": [
+        "É a despesa efetiva consolidada do programa Economia, na coluna da estimativa."
+      ],
+      "en": [
+        "It is consolidated effective expenditure for the Economy programme, in the estimate column."
+      ]
+    }
+  },
+  "oe-2027-economia-sem-prr-2026": {
+    "nome": {
+      "pt": "Economia, despesa efetiva consolidada sem PRR",
+      "en": "Economy, consolidated effective expenditure excluding the RRP"
+    },
+    "frase": {
+      "pt": [
+        "É a despesa efetiva consolidada sem PRR do programa Economia, na coluna da estimativa."
+      ],
+      "en": [
+        "It is consolidated effective expenditure excluding the RRP for the Economy programme, in the estimate column."
+      ]
+    }
+  },
+  "oe-2027-educacao-sem-prr-2026": {
+    "nome": {
+      "pt": "Educação, despesa efetiva consolidada sem PRR",
+      "en": "Education, consolidated effective expenditure excluding the RRP"
+    },
+    "frase": {
+      "pt": [
+        "É a despesa efetiva consolidada sem PRR do programa Educação, na coluna da estimativa."
+      ],
+      "en": [
+        "It is consolidated effective expenditure excluding the RRP for the Education programme, in the estimate column."
+      ]
+    }
+  },
+  "oe-2027-educacao-sem-prr-2027": {
+    "nome": {
+      "pt": "Educação, despesa efetiva consolidada sem PRR",
+      "en": "Education, consolidated effective expenditure excluding the RRP"
+    },
+    "frase": {
+      "pt": [
+        "É a despesa efetiva consolidada sem PRR do programa Educação, na coluna do orçamento."
+      ],
+      "en": [
+        "It is consolidated effective expenditure excluding the RRP for the Education programme, in the budget column."
+      ]
+    }
+  },
+  "oe-2027-financas-efetiva-2026": {
+    "nome": {
+      "pt": "Finanças, despesa efetiva consolidada",
+      "en": "Finance, consolidated effective expenditure"
+    },
+    "frase": {
+      "pt": [
+        "É a despesa efetiva consolidada do programa Finanças, na coluna da estimativa."
+      ],
+      "en": [
+        "It is consolidated effective expenditure for the Finance programme, in the estimate column."
+      ]
+    }
+  },
+  "oe-2027-financas-sem-prr-2026": {
+    "nome": {
+      "pt": "Finanças, despesa efetiva consolidada sem PRR",
+      "en": "Finance, consolidated effective expenditure excluding the RRP"
+    },
+    "frase": {
+      "pt": [
+        "É a despesa efetiva consolidada sem PRR do programa Finanças, na coluna da estimativa."
+      ],
+      "en": [
+        "It is consolidated effective expenditure excluding the RRP for the Finance programme, in the estimate column."
+      ]
+    }
+  },
+  "oe-2027-infraestruturas-e-habitacao-efetiva-2026": {
+    "nome": {
+      "pt": "Infraestruturas e habitação, despesa efetiva consolidada",
+      "en": "Infrastructure and housing, consolidated effective expenditure"
+    },
+    "frase": {
+      "pt": [
+        "É a despesa efetiva consolidada do programa Infraestruturas e habitação, na coluna da estimativa."
+      ],
+      "en": [
+        "It is consolidated effective expenditure for the Infrastructure and housing programme, in the estimate column."
+      ]
+    }
+  },
+  "oe-2027-infraestruturas-e-habitacao-sem-prr-2026": {
+    "nome": {
+      "pt": "Infraestruturas e habitação, despesa efetiva consolidada sem PRR",
+      "en": "Infrastructure and housing, consolidated effective expenditure excluding the RRP"
+    },
+    "frase": {
+      "pt": [
+        "É a despesa efetiva consolidada sem PRR do programa Infraestruturas e habitação, na coluna da estimativa."
+      ],
+      "en": [
+        "It is consolidated effective expenditure excluding the RRP for the Infrastructure and housing programme, in the estimate column."
+      ]
+    }
+  },
+  "oe-2027-infraestruturas-e-habitacao-sem-prr-2027": {
+    "nome": {
+      "pt": "Infraestruturas e habitação, despesa efetiva consolidada sem PRR",
+      "en": "Infrastructure and housing, consolidated effective expenditure excluding the RRP"
+    },
+    "frase": {
+      "pt": [
+        "É a despesa efetiva consolidada sem PRR do programa Infraestruturas e habitação, na coluna do orçamento."
+      ],
+      "en": [
+        "It is consolidated effective expenditure excluding the RRP for the Infrastructure and housing programme, in the budget column."
+      ]
+    }
+  },
+  "oe-2027-justica-sem-prr-2026": {
+    "nome": {
+      "pt": "Justiça, despesa efetiva consolidada sem PRR",
+      "en": "Justice, consolidated effective expenditure excluding the RRP"
+    },
+    "frase": {
+      "pt": [
+        "É a despesa efetiva consolidada sem PRR do programa Justiça, na coluna da estimativa."
+      ],
+      "en": [
+        "It is consolidated effective expenditure excluding the RRP for the Justice programme, in the estimate column."
+      ]
+    }
+  },
+  "oe-2027-justica-sem-prr-2027": {
+    "nome": {
+      "pt": "Justiça, despesa efetiva consolidada sem PRR",
+      "en": "Justice, consolidated effective expenditure excluding the RRP"
+    },
+    "frase": {
+      "pt": [
+        "É a despesa efetiva consolidada sem PRR do programa Justiça, na coluna do orçamento."
+      ],
+      "en": [
+        "It is consolidated effective expenditure excluding the RRP for the Justice programme, in the budget column."
+      ]
+    }
+  },
+  "oe-2027-saude-bens-servicos-2026": {
+    "nome": {
+      "pt": "Saúde, aquisição de bens e serviços",
+      "en": "Health, purchase of goods and services"
+    },
+    "frase": {
+      "pt": [
+        "É o valor da aquisição de bens e serviços no quadro do programa Saúde."
+      ],
+      "en": [
+        "It is the value of purchase of goods and services in the Health programme table."
+      ]
+    }
+  },
+  "oe-2027-saude-bens-servicos-2027": {
+    "nome": {
+      "pt": "Saúde, aquisição de bens e serviços",
+      "en": "Health, purchase of goods and services"
+    },
+    "frase": {
+      "pt": [
+        "É o valor da aquisição de bens e serviços no quadro do programa Saúde."
+      ],
+      "en": [
+        "It is the value of purchase of goods and services in the Health programme table."
+      ]
+    }
+  },
+  "oe-2027-saude-bens-servicos-variacao": {
+    "nome": {
+      "pt": "Saúde, aquisição de bens e serviços, variação publicada",
+      "en": "Health, purchase of goods and services, published change"
+    },
+    "frase": {
+      "pt": [
+        "É a variação publicada da aquisição de bens e serviços no quadro do programa Saúde."
+      ],
+      "en": [
+        "It is the published change in purchase of goods and services in the Health programme table."
+      ]
+    }
+  },
+  "oe-2027-saude-fonte-fundos-europeus-2026": {
+    "nome": {
+      "pt": "Saúde, fundos europeus",
+      "en": "Health, European funds"
+    },
+    "frase": {
+      "pt": [
+        "É o valor dos fundos europeus no quadro do programa Saúde."
+      ],
+      "en": [
+        "It is the value of European funds in the Health programme table."
+      ]
+    }
+  },
+  "oe-2027-saude-fonte-fundos-europeus-2027": {
+    "nome": {
+      "pt": "Saúde, fundos europeus",
+      "en": "Health, European funds"
+    },
+    "frase": {
+      "pt": [
+        "É o valor dos fundos europeus no quadro do programa Saúde."
+      ],
+      "en": [
+        "It is the value of European funds in the Health programme table."
+      ]
+    }
+  },
+  "oe-2027-saude-fonte-impostos-2026": {
+    "nome": {
+      "pt": "Saúde, receitas de impostos",
+      "en": "Health, tax revenue"
+    },
+    "frase": {
+      "pt": [
+        "É o valor das receitas de impostos no quadro do programa Saúde."
+      ],
+      "en": [
+        "It is the value of tax revenue in the Health programme table."
+      ]
+    }
+  },
+  "oe-2027-saude-fonte-impostos-2027": {
+    "nome": {
+      "pt": "Saúde, receitas de impostos",
+      "en": "Health, tax revenue"
+    },
+    "frase": {
+      "pt": [
+        "É o valor das receitas de impostos no quadro do programa Saúde."
+      ],
+      "en": [
+        "It is the value of tax revenue in the Health programme table."
+      ]
+    }
+  },
+  "oe-2027-saude-fonte-receitas-proprias-2026": {
+    "nome": {
+      "pt": "Saúde, receitas próprias",
+      "en": "Health, own revenue"
+    },
+    "frase": {
+      "pt": [
+        "É o valor das receitas próprias no quadro do programa Saúde."
+      ],
+      "en": [
+        "It is the value of own revenue in the Health programme table."
+      ]
+    }
+  },
+  "oe-2027-saude-fonte-receitas-proprias-2027": {
+    "nome": {
+      "pt": "Saúde, receitas próprias",
+      "en": "Health, own revenue"
+    },
+    "frase": {
+      "pt": [
+        "É o valor das receitas próprias no quadro do programa Saúde."
+      ],
+      "en": [
+        "It is the value of own revenue in the Health programme table."
+      ]
+    }
+  },
+  "oe-2027-saude-investimento-2026": {
+    "nome": {
+      "pt": "Saúde, investimento",
+      "en": "Health, investment"
+    },
+    "frase": {
+      "pt": [
+        "É o valor do investimento no quadro do programa Saúde."
+      ],
+      "en": [
+        "It is the value of investment in the Health programme table."
+      ]
+    }
+  },
+  "oe-2027-saude-investimento-2027": {
+    "nome": {
+      "pt": "Saúde, investimento",
+      "en": "Health, investment"
+    },
+    "frase": {
+      "pt": [
+        "É o valor do investimento no quadro do programa Saúde."
+      ],
+      "en": [
+        "It is the value of investment in the Health programme table."
+      ]
+    }
+  },
+  "oe-2027-saude-investimento-variacao": {
+    "nome": {
+      "pt": "Saúde, investimento, variação publicada",
+      "en": "Health, investment, published change"
+    },
+    "frase": {
+      "pt": [
+        "É a variação publicada do investimento no quadro do programa Saúde."
+      ],
+      "en": [
+        "It is the published change in investment in the Health programme table."
+      ]
+    }
+  },
+  "oe-2027-saude-investimento-variacao-sem-prr": {
+    "nome": {
+      "pt": "Saúde, investimento, variação publicada sem PRR",
+      "en": "Health, investment, published change excluding the RRP"
+    },
+    "frase": {
+      "pt": [
+        "É a variação publicada do investimento sem PRR no quadro do programa Saúde."
+      ],
+      "en": [
+        "It is the published change in investment excluding the RRP in the Health programme table."
+      ]
+    }
+  },
+  "oe-2027-saude-outras-correntes-2026": {
+    "nome": {
+      "pt": "Saúde, outras despesas correntes",
+      "en": "Health, other current expenditure"
+    },
+    "frase": {
+      "pt": [
+        "É o valor das outras despesas correntes no quadro do programa Saúde."
+      ],
+      "en": [
+        "It is the value of other current expenditure in the Health programme table."
+      ]
+    }
+  },
+  "oe-2027-saude-outras-correntes-2027": {
+    "nome": {
+      "pt": "Saúde, outras despesas correntes",
+      "en": "Health, other current expenditure"
+    },
+    "frase": {
+      "pt": [
+        "É o valor das outras despesas correntes no quadro do programa Saúde."
+      ],
+      "en": [
+        "It is the value of other current expenditure in the Health programme table."
+      ]
+    }
+  },
+  "oe-2027-saude-pessoal-2026": {
+    "nome": {
+      "pt": "Saúde, despesas com pessoal",
+      "en": "Health, personnel expenditure"
+    },
+    "frase": {
+      "pt": [
+        "É o valor das despesas com pessoal no quadro do programa Saúde."
+      ],
+      "en": [
+        "It is the value of personnel expenditure in the Health programme table."
+      ]
+    }
+  },
+  "oe-2027-saude-pessoal-2027": {
+    "nome": {
+      "pt": "Saúde, despesas com pessoal",
+      "en": "Health, personnel expenditure"
+    },
+    "frase": {
+      "pt": [
+        "É o valor das despesas com pessoal no quadro do programa Saúde."
+      ],
+      "en": [
+        "It is the value of personnel expenditure in the Health programme table."
+      ]
+    }
+  },
+  "oe-2027-saude-pessoal-variacao": {
+    "nome": {
+      "pt": "Saúde, despesas com pessoal, variação publicada",
+      "en": "Health, personnel expenditure, published change"
+    },
+    "frase": {
+      "pt": [
+        "É a variação publicada das despesas com pessoal no quadro do programa Saúde."
+      ],
+      "en": [
+        "It is the published change in personnel expenditure in the Health programme table."
+      ]
+    }
+  },
+  "oe-2027-saude-transferencias-capital-2026": {
+    "nome": {
+      "pt": "Saúde, transferências de capital",
+      "en": "Health, capital transfers"
+    },
+    "frase": {
+      "pt": [
+        "É o valor das transferências de capital no quadro do programa Saúde."
+      ],
+      "en": [
+        "It is the value of capital transfers in the Health programme table."
+      ]
+    }
+  },
+  "oe-2027-saude-transferencias-capital-2027": {
+    "nome": {
+      "pt": "Saúde, transferências de capital",
+      "en": "Health, capital transfers"
+    },
+    "frase": {
+      "pt": [
+        "É o valor das transferências de capital no quadro do programa Saúde."
+      ],
+      "en": [
+        "It is the value of capital transfers in the Health programme table."
+      ]
+    }
+  },
+  "oe-2027-saude-transferencias-sns-2026": {
+    "nome": {
+      "pt": "Saúde, transferências para o Serviço Nacional de Saúde",
+      "en": "Health, transfers to the National Health Service"
+    },
+    "frase": {
+      "pt": [
+        "É o valor das transferências para o Serviço Nacional de Saúde no quadro do programa Saúde."
+      ],
+      "en": [
+        "It is the value of transfers to the National Health Service in the Health programme table."
+      ]
+    }
+  },
+  "oe-2027-saude-transferencias-sns-2027": {
+    "nome": {
+      "pt": "Saúde, transferências para o Serviço Nacional de Saúde",
+      "en": "Health, transfers to the National Health Service"
+    },
+    "frase": {
+      "pt": [
+        "É o valor das transferências para o Serviço Nacional de Saúde no quadro do programa Saúde."
+      ],
+      "en": [
+        "It is the value of transfers to the National Health Service in the Health programme table."
+      ]
+    }
+  },
+  "oe-2027-saude-transferencias-sns-variacao": {
+    "nome": {
+      "pt": "Saúde, transferências para o Serviço Nacional de Saúde, variação publicada",
+      "en": "Health, transfers to the National Health Service, published change"
+    },
+    "frase": {
+      "pt": [
+        "É a variação publicada das transferências para o Serviço Nacional de Saúde no quadro do programa Saúde."
+      ],
+      "en": [
+        "It is the published change in transfers to the National Health Service in the Health programme table."
+      ]
+    }
+  },
+  "oe-2027-seguranca-interna-sem-prr-2026": {
+    "nome": {
+      "pt": "Segurança interna, despesa efetiva consolidada sem PRR",
+      "en": "Internal security, consolidated effective expenditure excluding the RRP"
+    },
+    "frase": {
+      "pt": [
+        "É a despesa efetiva consolidada sem PRR do programa Segurança interna, na coluna da estimativa."
+      ],
+      "en": [
+        "It is consolidated effective expenditure excluding the RRP for the Internal security programme, in the estimate column."
+      ]
+    }
+  },
+  "oe-2027-seguranca-interna-sem-prr-2027": {
+    "nome": {
+      "pt": "Segurança interna, despesa efetiva consolidada sem PRR",
+      "en": "Internal security, consolidated effective expenditure excluding the RRP"
+    },
+    "frase": {
+      "pt": [
+        "É a despesa efetiva consolidada sem PRR do programa Segurança interna, na coluna do orçamento."
+      ],
+      "en": [
+        "It is consolidated effective expenditure excluding the RRP for the Internal security programme, in the budget column."
+      ]
+    }
+  },
+  "oe-2027-trabalho-solidariedade-e-seguranca-social-sem-prr-2026": {
+    "nome": {
+      "pt": "Trabalho, solidariedade e segurança social, despesa efetiva consolidada sem PRR",
+      "en": "Labour, solidarity and social security, consolidated effective expenditure excluding the RRP"
+    },
+    "frase": {
+      "pt": [
+        "É a despesa efetiva consolidada sem PRR do programa Trabalho, solidariedade e segurança social, na coluna da estimativa."
+      ],
+      "en": [
+        "It is consolidated effective expenditure excluding the RRP for the Labour, solidarity and social security programme, in the estimate column."
+      ]
+    }
+  },
+  "oe-2027-trabalho-solidariedade-e-seguranca-social-sem-prr-2027": {
+    "nome": {
+      "pt": "Trabalho, solidariedade e segurança social, despesa efetiva consolidada sem PRR",
+      "en": "Labour, solidarity and social security, consolidated effective expenditure excluding the RRP"
+    },
+    "frase": {
+      "pt": [
+        "É a despesa efetiva consolidada sem PRR do programa Trabalho, solidariedade e segurança social, na coluna do orçamento."
+      ],
+      "en": [
+        "It is consolidated effective expenditure excluding the RRP for the Labour, solidarity and social security programme, in the budget column."
+      ]
+    }
+  },
+  "ppp-oe2022-liquidos-2021": {
+    "nome": {
+      "pt": "Parcerias, encargos líquidos rodoviários",
+      "en": "Partnerships, net road charges"
+    },
+    "frase": {
+      "pt": [
+        "São os encargos líquidos rodoviários das parcerias no quadro do relatório do Orçamento."
+      ],
+      "en": [
+        "These are net road partnership charges in the Budget report table."
+      ]
+    }
+  },
+  "ppp-oe2023-liquidos-2022": {
+    "nome": {
+      "pt": "Parcerias, encargos líquidos rodoviários",
+      "en": "Partnerships, net road charges"
+    },
+    "frase": {
+      "pt": [
+        "São os encargos líquidos rodoviários das parcerias no quadro do relatório do Orçamento."
+      ],
+      "en": [
+        "These are net road partnership charges in the Budget report table."
+      ]
+    }
+  },
+  "ppp-oe2024-liquidos-2023": {
+    "nome": {
+      "pt": "Parcerias, encargos líquidos rodoviários",
+      "en": "Partnerships, net road charges"
+    },
+    "frase": {
+      "pt": [
+        "São os encargos líquidos rodoviários das parcerias no quadro do relatório do Orçamento."
+      ],
+      "en": [
+        "These are net road partnership charges in the Budget report table."
+      ]
+    }
+  },
+  "ppp-oe2025-liquidos-2024": {
+    "nome": {
+      "pt": "Parcerias, encargos líquidos rodoviários",
+      "en": "Partnerships, net road charges"
+    },
+    "frase": {
+      "pt": [
+        "São os encargos líquidos rodoviários das parcerias no quadro do relatório do Orçamento."
+      ],
+      "en": [
+        "These are net road partnership charges in the Budget report table."
+      ]
+    }
+  },
+  "ppp-oe2026-liquidos-2025": {
+    "nome": {
+      "pt": "Parcerias, encargos líquidos rodoviários",
+      "en": "Partnerships, net road charges"
+    },
+    "frase": {
+      "pt": [
+        "São os encargos líquidos rodoviários das parcerias no quadro do relatório do Orçamento."
+      ],
+      "en": [
+        "These are net road partnership charges in the Budget report table."
+      ]
+    }
+  },
+  "ppp-oe2027-ferroviario-2027": {
+    "nome": {
+      "pt": "Parcerias, encargos ferroviários",
+      "en": "Partnerships, rail charges"
+    },
+    "frase": {
+      "pt": [
+        "São os encargos ferroviários das parcerias no quadro do relatório do Orçamento."
+      ],
+      "en": [
+        "These are rail partnership charges in the Budget report table."
+      ]
+    }
+  },
+  "ppp-oe2027-liquidos-2026": {
+    "nome": {
+      "pt": "Parcerias, encargos líquidos rodoviários",
+      "en": "Partnerships, net road charges"
+    },
+    "frase": {
+      "pt": [
+        "São os encargos líquidos rodoviários das parcerias no quadro do relatório do Orçamento."
+      ],
+      "en": [
+        "These are net road partnership charges in the Budget report table."
+      ]
+    }
+  },
+  "ppp-oe2027-liquidos-2027-previsao-oe2026": {
+    "nome": {
+      "pt": "Previsão anterior dos encargos líquidos rodoviários",
+      "en": "Previous forecast of net road charges"
+    },
+    "frase": {
+      "pt": [
+        "É a previsão do relatório anterior para os encargos líquidos rodoviários, citada pelo relatório seguinte para o mesmo ano."
+      ],
+      "en": [
+        "It is the preceding report’s forecast of net road charges, cited by the following report for the same year."
+      ]
+    }
+  },
+  "ppp-oe2027-liquidos-2028": {
+    "nome": {
+      "pt": "Parcerias, encargos líquidos rodoviários",
+      "en": "Partnerships, net road charges"
+    },
+    "frase": {
+      "pt": [
+        "São os encargos líquidos rodoviários das parcerias no quadro do relatório do Orçamento."
+      ],
+      "en": [
+        "These are net road partnership charges in the Budget report table."
+      ]
+    }
+  },
+  "ppp-oe2027-liquidos-2029": {
+    "nome": {
+      "pt": "Parcerias, encargos líquidos rodoviários",
+      "en": "Partnerships, net road charges"
+    },
+    "frase": {
+      "pt": [
+        "São os encargos líquidos rodoviários das parcerias no quadro do relatório do Orçamento."
+      ],
+      "en": [
+        "These are net road partnership charges in the Budget report table."
+      ]
+    }
+  },
+  "ppp-oe2027-liquidos-2030": {
+    "nome": {
+      "pt": "Parcerias, encargos líquidos rodoviários",
+      "en": "Partnerships, net road charges"
+    },
+    "frase": {
+      "pt": [
+        "São os encargos líquidos rodoviários das parcerias no quadro do relatório do Orçamento."
+      ],
+      "en": [
+        "These are net road partnership charges in the Budget report table."
+      ]
+    }
+  },
+  "ppp-oe2027-liquidos-2035": {
+    "nome": {
+      "pt": "Parcerias, encargos líquidos rodoviários",
+      "en": "Partnerships, net road charges"
+    },
+    "frase": {
+      "pt": [
+        "São os encargos líquidos rodoviários das parcerias no quadro do relatório do Orçamento."
+      ],
+      "en": [
+        "These are net road partnership charges in the Budget report table."
+      ]
+    }
+  },
+  "ppp-oe2027-liquidos-2040": {
+    "nome": {
+      "pt": "Parcerias, encargos líquidos rodoviários",
+      "en": "Partnerships, net road charges"
+    },
+    "frase": {
+      "pt": [
+        "São os encargos líquidos rodoviários das parcerias no quadro do relatório do Orçamento."
+      ],
+      "en": [
+        "These are net road partnership charges in the Budget report table."
+      ]
+    }
+  },
+  "ppp-oe2027-riscos-acrescimo": {
+    "nome": {
+      "pt": "Acréscimo dos pedidos rodoviários face ao relatório anterior",
+      "en": "Increase in road claims against the preceding report"
+    },
+    "frase": {
+      "pt": [
+        "É o acréscimo do valor dos pedidos rodoviários face ao relatório anterior."
+      ],
+      "en": [
+        "It is the increase in the value of road claims against the preceding report."
+      ]
+    }
+  },
+  "ppp-oe2027-riscos-brisa": {
+    "nome": {
+      "pt": "Pedidos e matérias em negociação com a Brisa",
+      "en": "Claims and matters under negotiation with Brisa"
+    },
+    "frase": {
+      "pt": [
+        "É o montante dos pedidos ou matérias em negociação com a Brisa."
+      ],
+      "en": [
+        "It is the amount of the claims or matters under negotiation with Brisa."
+      ]
+    }
+  },
+  "ppp-oe2027-riscos-pedidos-rodoviarios": {
+    "nome": {
+      "pt": "Pedidos de reequilíbrio e litígios rodoviários",
+      "en": "Road financial rebalancing claims and litigation"
+    },
+    "frase": {
+      "pt": [
+        "É o valor global dos pedidos de reequilíbrio financeiro e dos pedidos nos litígios em curso das concessionárias e subconcessionárias rodoviárias."
+      ],
+      "en": [
+        "It is the total value of financial rebalancing claims and claims in ongoing litigation by road concessionaires and subconcessionaires."
+      ]
+    }
+  },
+  "ppp-oe2027-riscos-rotas-algarve-mensal": {
+    "nome": {
+      "pt": "Pagamento mensal provisório à Rotas do Algarve Litoral",
+      "en": "Provisional monthly payment to Rotas do Algarve Litoral"
+    },
+    "frase": {
+      "pt": [
+        "É o pagamento mensal provisório decidido pelo tribunal arbitral até à decisão da causa principal, acrescido de IVA."
+      ],
+      "en": [
+        "It is the provisional monthly payment ordered by the arbitration tribunal until the decision in the main case, plus VAT."
+      ]
+    }
+  },
+  "ppp-oe2027-riscos-rotas-algarve-principal": {
+    "nome": {
+      "pt": "Ação principal da Rotas do Algarve Litoral",
+      "en": "Main action by Rotas do Algarve Litoral"
+    },
+    "frase": {
+      "pt": [
+        "É o valor da ação principal arbitral pendente da Rotas do Algarve Litoral."
+      ],
+      "en": [
+        "It is the value of the pending main arbitration action by Rotas do Algarve Litoral."
+      ]
+    }
+  },
+  "ppp-oe2027-saude-2027": {
+    "nome": {
+      "pt": "Parcerias, encargos da saúde",
+      "en": "Partnerships, health charges"
+    },
+    "frase": {
+      "pt": [
+        "São os encargos da saúde das parcerias no quadro do relatório do Orçamento."
+      ],
+      "en": [
+        "These are health partnership charges in the Budget report table."
+      ]
+    }
+  },
+  "saude-total-2020-execucao-cge2020": {
+    "nome": {
+      "pt": "Saúde, despesa total executada",
+      "en": "Health, executed total expenditure"
+    },
+    "frase": {
+      "pt": [
+        "É a despesa total executada do programa Saúde, publicada na Conta Geral do Estado."
+      ],
+      "en": [
+        "It is executed total Health programme expenditure, published in the General State Account."
+      ]
+    }
+  },
+  "saude-total-2020-orcamento-oe2020": {
+    "nome": {
+      "pt": "Saúde, despesa total orçamentada",
+      "en": "Health, budgeted total expenditure"
+    },
+    "frase": {
+      "pt": [
+        "É a despesa total consolidada do programa Saúde no orçamento inicial."
+      ],
+      "en": [
+        "It is consolidated total Health programme expenditure in the initial budget."
+      ]
+    }
+  },
+  "saude-total-2021-execucao-cge2021": {
+    "nome": {
+      "pt": "Saúde, despesa total executada",
+      "en": "Health, executed total expenditure"
+    },
+    "frase": {
+      "pt": [
+        "É a despesa total executada do programa Saúde, publicada na Conta Geral do Estado."
+      ],
+      "en": [
+        "It is executed total Health programme expenditure, published in the General State Account."
+      ]
+    }
+  },
+  "saude-total-2021-orcamento-oe2021": {
+    "nome": {
+      "pt": "Saúde, despesa total orçamentada",
+      "en": "Health, budgeted total expenditure"
+    },
+    "frase": {
+      "pt": [
+        "É a despesa total consolidada do programa Saúde no orçamento inicial."
+      ],
+      "en": [
+        "It is consolidated total Health programme expenditure in the initial budget."
+      ]
+    }
+  },
+  "saude-total-2022-execucao-cge2022": {
+    "nome": {
+      "pt": "Saúde, despesa total executada",
+      "en": "Health, executed total expenditure"
+    },
+    "frase": {
+      "pt": [
+        "É a despesa total executada do programa Saúde, publicada na Conta Geral do Estado."
+      ],
+      "en": [
+        "It is executed total Health programme expenditure, published in the General State Account."
+      ]
+    }
+  },
+  "saude-total-2022-orcamento-oe2022": {
+    "nome": {
+      "pt": "Saúde, despesa total orçamentada",
+      "en": "Health, budgeted total expenditure"
+    },
+    "frase": {
+      "pt": [
+        "É a despesa total consolidada do programa Saúde no orçamento inicial."
+      ],
+      "en": [
+        "It is consolidated total Health programme expenditure in the initial budget."
+      ]
+    }
+  },
+  "saude-total-2023-execucao-cge2023": {
+    "nome": {
+      "pt": "Saúde, despesa total executada",
+      "en": "Health, executed total expenditure"
+    },
+    "frase": {
+      "pt": [
+        "É a despesa total executada do programa Saúde, publicada na Conta Geral do Estado."
+      ],
+      "en": [
+        "It is executed total Health programme expenditure, published in the General State Account."
+      ]
+    }
+  },
+  "saude-total-2023-orcamento-oe2023": {
+    "nome": {
+      "pt": "Saúde, despesa total orçamentada",
+      "en": "Health, budgeted total expenditure"
+    },
+    "frase": {
+      "pt": [
+        "É a despesa total consolidada do programa Saúde no orçamento inicial."
+      ],
+      "en": [
+        "It is consolidated total Health programme expenditure in the initial budget."
+      ]
+    }
+  },
+  "saude-total-2024-execucao-cge2024": {
+    "nome": {
+      "pt": "Saúde, despesa total executada",
+      "en": "Health, executed total expenditure"
+    },
+    "frase": {
+      "pt": [
+        "É a despesa total executada do programa Saúde, publicada na Conta Geral do Estado."
+      ],
+      "en": [
+        "It is executed total Health programme expenditure, published in the General State Account."
+      ]
+    }
+  },
+  "saude-total-2024-orcamento-oe2024": {
+    "nome": {
+      "pt": "Saúde, despesa total orçamentada",
+      "en": "Health, budgeted total expenditure"
+    },
+    "frase": {
+      "pt": [
+        "É a despesa total consolidada do programa Saúde no orçamento inicial."
+      ],
+      "en": [
+        "It is consolidated total Health programme expenditure in the initial budget."
+      ]
+    }
+  },
+  "saude-total-2025-execucao-cge2025": {
+    "nome": {
+      "pt": "Saúde, despesa total executada",
+      "en": "Health, executed total expenditure"
+    },
+    "frase": {
+      "pt": [
+        "É a despesa total executada do programa Saúde, publicada na Conta Geral do Estado."
+      ],
+      "en": [
+        "It is executed total Health programme expenditure, published in the General State Account."
+      ]
+    }
+  },
+  "saude-total-2025-orcamento-oe2025": {
+    "nome": {
+      "pt": "Saúde, despesa total orçamentada",
+      "en": "Health, budgeted total expenditure"
+    },
+    "frase": {
+      "pt": [
+        "É a despesa total consolidada do programa Saúde no orçamento inicial."
+      ],
+      "en": [
+        "It is consolidated total Health programme expenditure in the initial budget."
+      ]
+    }
+  },
+  "saude-total-2026-orcamento-oe2026": {
+    "nome": {
+      "pt": "Saúde, despesa total orçamentada",
+      "en": "Health, budgeted total expenditure"
+    },
+    "frase": {
+      "pt": [
+        "É a despesa total consolidada do programa Saúde no orçamento inicial."
+      ],
+      "en": [
+        "It is consolidated total Health programme expenditure in the initial budget."
+      ]
+    }
+  },
+  "utao-ppp-contingencias-natureza-2026": {
+    "nome": {
+      "pt": "Natureza dos pedidos contingentes das parcerias",
+      "en": "Nature of contingent partnership claims"
+    },
+    "frase": {
+      "pt": [
+        "É a distinção da UTAO entre pedidos contingentes e encargos já reconhecidos."
+      ],
+      "en": [
+        "It is the UTAO’s distinction between contingent claims and charges already recognised."
+      ]
+    }
+  },
+  "utao-risco-execucao-sns-2027": {
+    "nome": {
+      "pt": "Risco de pressão orçamental no Serviço Nacional de Saúde",
+      "en": "Risk of budget pressure in the National Health Service"
+    },
+    "frase": {
+      "pt": [
+        "É o risco de pressão orçamental identificado pela UTAO para o Serviço Nacional de Saúde."
+      ],
+      "en": [
+        "It is the risk of budget pressure identified by the UTAO for the National Health Service."
+      ]
+    }
+  },
+  "utao-saude-efetiva-2026-estimativa": {
+    "nome": {
+      "pt": "Saúde, despesa efetiva estimada na UTAO",
+      "en": "Health, estimated effective expenditure in the UTAO table"
+    },
+    "frase": {
+      "pt": [
+        "É a despesa efetiva da Saúde, com consolidação dentro do programa, na coluna da estimativa da tabela da UTAO."
+      ],
+      "en": [
+        "It is effective Health expenditure, consolidated within the programme, in the estimate column of the UTAO table."
+      ]
+    }
+  },
+  "utao-saude-efetiva-2026-orcamento": {
+    "nome": {
+      "pt": "Saúde, despesa efetiva orçamentada na UTAO",
+      "en": "Health, budgeted effective expenditure in the UTAO table"
+    },
+    "frase": {
+      "pt": [
+        "É a despesa efetiva da Saúde, com consolidação dentro do programa, na coluna do orçamento da tabela da UTAO."
+      ],
+      "en": [
+        "It is effective Health expenditure, consolidated within the programme, in the budget column of the UTAO table."
+      ]
+    }
+  },
+  "utao-saude-sem-prr-2027": {
+    "nome": {
+      "pt": "Variação da despesa da Saúde sem PRR segundo a UTAO",
+      "en": "Change in Health expenditure excluding the RRP according to the UTAO"
+    },
+    "frase": {
+      "pt": [
+        "É a variação da despesa da Saúde sem PRR referida pela UTAO."
+      ],
+      "en": [
+        "It is the change in Health expenditure excluding the RRP cited by the UTAO."
+      ]
+    }
+  }
+});

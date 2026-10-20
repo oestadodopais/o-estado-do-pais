@@ -96,5 +96,12 @@
     "antes": "A régua das casas decimais interpretava o final Seleção: 2027 como o valor nas duas linhas setoriais das parcerias.",
     "depois": "A régua retira apenas a linha final de metadados Seleção antes de procurar o literal do valor. O excerto publicado permanece intacto.",
     "razao": "Uma planta confirma que o ano não substitui o valor; outra mantém a recusa de casas decimais alteradas, mesmo com o seletor no fim. A conferência da coluna e do valor continua no motor e na prova de partida."
+  },
+  {
+    "id": "V2D-21",
+    "tema": "Definições dos recibos novos",
+    "antes": "As linhas novas ainda não tinham as definições bilingues exigidas pelos recibos.",
+    "depois": "Cada uma das 126 linhas exportadas tem nome e definição nas duas edições, apoiados no excerto ou na derivação da própria linha; um compositor reproduz as declarações e a auditoria.",
+    "razao": "A primeira construção recusou as famílias em falta. A cobertura dos recibos tem de acompanhar a travessia das linhas."
   }
 ]

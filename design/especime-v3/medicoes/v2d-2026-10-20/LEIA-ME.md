@@ -32,6 +32,11 @@ O inventário final contém 135 linhas com porta para os itens, das quais 119 ch
 | afirmações contra os corpos | 0, 9 afirmações, 9 corpos e 29 plantas |
 | derivadas e série Saúde | 0, 24 fórmulas e seis pares anuais; quatro plantas |
 | auditoria das palavras | 290 folhas e 2 885 apoios; declaração conferida |
+| motor integral, pre-commit | 0, GATE: PASS, commit 48d97b85 |
+| livro do sítio | 0 |
+| primeira construção | 1: faltavam definições bilingues das novas famílias; restantes passos não executados (125) |
+| typecheck após guarda de componentes | 0 |
+| definições dos recibos, cobertura e K17 | 0; 126 linhas, 252 nomes e 252 frases nas duas edições |
 
 Capturas ainda não executadas.
 
@@ -152,6 +157,14 @@ Antes: A régua das casas decimais interpretava o final Seleção: 2027 como o v
 Depois: A régua retira apenas a linha final de metadados Seleção antes de procurar o literal do valor. O excerto publicado permanece intacto.
 
 Uma planta confirma que o ano não substitui o valor; outra mantém a recusa de casas decimais alteradas, mesmo com o seletor no fim. A conferência da coluna e do valor continua no motor e na prova de partida.
+
+### V2D-21: Definições dos recibos novos
+
+Antes: As linhas novas ainda não tinham as definições bilingues exigidas pelos recibos.
+
+Depois: Cada uma das 126 linhas exportadas tem nome e definição nas duas edições, apoiados no excerto ou na derivação da própria linha; um compositor reproduz as declarações e a auditoria.
+
+A primeira construção recusou as famílias em falta. A cobertura dos recibos tem de acompanhar a travessia das linhas.
 
 ## Valores lidos do livro selado
 
