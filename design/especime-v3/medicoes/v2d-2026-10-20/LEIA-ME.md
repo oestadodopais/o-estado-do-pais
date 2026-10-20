@@ -2,7 +2,9 @@
 
 ## A correção da leitura
 
-V2-d-b em verificação. Linhas e prosa corrigidas; aguardam-se os portões e as capturas da nova cabeça.
+Correção V2-d-b concluída e verificada. O motor passou o pre-commit integral; o sítio passou todos os passos do perfil V2-d e as capturas das duas edições nas cinco larguras.
+
+Cabeça de código do sítio construída, testada e capturada: `ae4ca98d66981c469bacb798e042061e9647aa8c`. Motor aprovado pelo pre-commit: `d19cb58a51416e506e14c3cad9e9a4afea687765`. O commit posterior apenas fecha este relatório e os recibos das verificações.
 
 Os achados 1 a 5 da leitura a frio eram plantas nas cópias do pacote. Esta passagem corrige os cinco Major reais e os problemas de leitura delimitados no pedido V2-d-b. A execução anterior e os seus resultados permanecem no histórico Git e em `resultados.json`.
 
@@ -39,8 +41,11 @@ Os selos ficam depois das aspas e fora do título. As células conferem os valor
 | portões e | build 1; restantes passos 125; quatro faltas na tabela de línguas dos rótulos e da edição do contador |
 | séries | 0; 25 séries, 8327 pontos, 40 de 40 plantas |
 | formato, navegação e sinais | 0 nos três passos dirigidos |
+| perfil V2-d final | 0 em todos os dez passos: build, check:alvos, check:css, check:discussao, check:frases-compostas, check:lugar, check:palavras, check:series, gate:html, typecheck |
+| línguas no HTML reconstruído | 0; títulos documentais, rótulos da fonte e edição do contador declarados |
+| auditoria das palavras no perfil final | 0; 23 de 23 plantas, nenhum achado |
 
-Capturas da correção ainda não executadas.
+Capturas aprovadas na cabeça ae4ca98d66981c469bacb798e042061e9647aa8c: dez páginas completas (PT e EN, a 390, 768, 1024, 1280 e 1600 píxeis) e vinte recortes dos dois itens. Os trinta SHA-256 foram conferidos; não há transbordo horizontal, pedidos externos, recursos em falta ou erros do navegador. A inspeção visual está registada em `inspecao-visual-v2db.json`; o pedido e o recibo estão em `pedido-capturas-v2db.json` e `capturas-v2db.json`.
 
 Os códigos dos portões são lidos dos ficheiros da corrida e conservados em `portoes-v2db.json`. A corrida integral do sítio fica para o GitHub. Os PNG e os registos extensos ficam fora do commit. Não foi feito push.
 

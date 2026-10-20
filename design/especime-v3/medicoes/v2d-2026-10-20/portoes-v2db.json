@@ -83,5 +83,22 @@
       "build": 1
     },
     "causa": "Faltavam as línguas de dois rótulos extraídos do quadro das parcerias; a declaração da edição do contador ainda tinha a data anterior."
+  },
+  {
+    "corrida": "f",
+    "cabeca": "ae4ca98d66981c469bacb798e042061e9647aa8c",
+    "codigos": {
+      "check:css": 0,
+      "check:series": 0,
+      "gate:html": 0,
+      "check:lugar": 0,
+      "check:discussao": 0,
+      "check:palavras": 0,
+      "check:frases-compostas": 0,
+      "check:alvos": 0,
+      "typecheck": 0,
+      "build": 0
+    },
+    "resultado": "Todos os passos do perfil V2-d aprovados."
   }
 ]

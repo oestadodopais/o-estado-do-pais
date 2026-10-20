@@ -1,0 +1,32 @@
+{
+  "cabeca": "ae4ca98d66981c469bacb798e042061e9647aa8c",
+  "edicoes": [
+    "pt",
+    "en"
+  ],
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "paginas": 10,
+  "recortes": 20,
+  "sha256_conferidos": 30,
+  "transbordo_horizontal": false,
+  "erros_do_navegador": [],
+  "recursos_recusados": [],
+  "pedidos_externos": [],
+  "leitura_visual": [
+    "Cabeças das páginas completas nas duas edições e cinco larguras.",
+    "Cabeças e finais dos dois itens, nas duas edições e cinco larguras.",
+    "Leitura integral dos dois itens nas capturas de 390 píxeis, nas duas edições."
+  ],
+  "achados": [
+    "Os títulos mantêm a frase inteira e os selos aparecem depois do título.",
+    "Os selos dos excertos aparecem depois das aspas de fecho.",
+    "Citações completas da UTAO e da reserva, percentagem 66,4 e dados trimestrais dos riscos legíveis.",
+    "Não foram observados cortes, sobreposições ou perda de texto nos recortes inspecionados."
+  ]
+}
