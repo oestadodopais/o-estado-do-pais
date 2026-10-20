@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import {portaHb1Valida,plantasDasPortasHb1} from './portas-hb1.mjs';
 /**
  * =============================================================================
  * A RÉGUA DO CARTÃO DE UMA MEDIDA · bloco P2, item 7 (15.09.2026)
@@ -618,6 +619,7 @@ function corre(dist) {
         for (const filho of [...cartao.childNodes, ...filhosDaDobra]) {
           const el = /** @type {any} */ (filho);
           if (!el.tagName) continue;
+          if (portaHb1Valida(el,id,langPagina)) continue;
           const classe = (el.getAttribute?.('class') ?? '').split(/\s+/).filter(Boolean);
           const conhecida = classe.find((c) => PECAS_PERMITIDAS.has(c));
           if (!conhecida) {
@@ -1831,6 +1833,7 @@ if (!fs.existsSync(DIST)) {
 }
 
 const r = corre(DIST);
+if (PROVA) { const hb1=plantasDasPortasHb1(rel=>fs.readFileSync(path.join(DIST,rel),'utf8'));r.erros.push(...hb1.erros);console.log(`HB1: ${hb1.controlos} portas e ${hb1.plantas} plantas.`); }
     if (PROVA) for (const lang of ['pt', 'en']) for (const planta of plantasDaFaixa(documentoDosAssuntos(DIST, lang).outerHTML, lang, `assuntos-${lang}`, { series: SERIES_DA_K18, paises: PAISES_DA_K18 })) {
   r.contas.plantas_k18++;
   if (!planta.passou) r.erros.push(`K18: a planta «${planta.nome}» não mordeu (${planta.porque}).`);

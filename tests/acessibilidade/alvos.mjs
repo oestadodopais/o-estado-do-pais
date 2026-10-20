@@ -106,7 +106,8 @@ import { fileURLToPath } from 'node:url';
 import { chromium } from 'playwright';
 import { parse, NodeType } from 'node-html-parser';
 
-import { routePath, LANGS } from '../../src/lib/routes.mjs';
+import { lerPaginaComCodigo, tirarCodigoConferido } from '../../scripts/incorporar-do-portao.mjs';
+import { matchPath, routePath, LANGS } from '../../src/lib/routes.mjs';
 import { unidadeDaLinha, UNIDADES_EM_PORTUGUES } from '../../src/i18n/unidades.mjs';
 import { feitioDeLei } from '../../src/i18n/nomes-de-lei.mjs';
 import { MUNICIPIOS } from '../../src/data/caop-centroids.mjs';
@@ -1534,7 +1535,8 @@ function varreLeis() {
       documentosAlojados++;
       continue;
     }
-    const root = parse(s);
+    const root = lerPaginaComCodigo(s);
+    tirarCodigoConferido(root, matchPath('/' + path.relative(DIST, f).replace(/index\.html$/, '')));
     const daFonte = new Set();
     for (const el of root.querySelectorAll(TRANSCRICAO_DA_FONTE)) {
       daFonte.add(el);

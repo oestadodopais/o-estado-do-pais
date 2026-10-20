@@ -1,0 +1,36 @@
+{
+  "construcao": "1da5f645d45866e5a7b1e7e615979f0e3975c59b",
+  "codigo": 0,
+  "contagens": {
+    "estudos": 3152,
+    "anteriores": 2782,
+    "novas": 370,
+    "recibos_novos": 362,
+    "outras_paginas": 8
+  },
+  "contrato": "l1-contrato.json",
+  "medicao": "l1-destinos.json",
+  "plantas": [
+    {
+      "nome": "multiplicidade nova numa página anterior",
+      "mordeu": true
+    },
+    {
+      "nome": "porta adicional num recibo novo",
+      "mordeu": true
+    },
+    {
+      "nome": "página fora da integração",
+      "mordeu": true
+    },
+    {
+      "nome": "recibo da integração em falta",
+      "mordeu": true
+    },
+    {
+      "nome": "contagem que diverge da régua",
+      "mordeu": true
+    }
+  ],
+  "limite": "A fotografia de partida antecede esta passagem. As oito páginas antigas cujas multiplicidades diferem estão enumeradas, sem afirmar que permaneceram iguais. A regra de contagem não mudou."
+}

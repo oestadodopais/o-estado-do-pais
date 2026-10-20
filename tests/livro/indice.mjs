@@ -151,6 +151,7 @@ const MARCADOR = '[a verificar]';
 /** A forma da data, refeita sem chamar a função que escreve a página. */
 function periodoEsperado(valor, lang) {
   const bruto = String(valor ?? '');
+  if (!bruto || bruto === MARCADOR) return lang === 'en' ? '[to verify]' : MARCADOR;
   const mes = /^(\d{4})-(0[1-9]|1[0-2])$/.exec(bruto);
   if (mes) {
     const meses = lang === 'en'
@@ -514,12 +515,21 @@ function localizadorV2dConfere(onde, linha) {
     d.locator.startsWith(`Folha ${f[0]}; `));
 }
 
+// HB1: conjunto fechado, conferido contra o motor e os resumos da travessia.
+const PROVAS_HB1_ROTULOS = JSON.parse(fs.readFileSync(path.join(RAIZ, 'ledger/provas/hb1/rotulos.json'), 'utf8')).rows;
+function localizadorHb1Confere(onde, linha) {
+  const p = PROVAS_HB1_ROTULOS[linha?.id]?.linha;
+  if (!p || onde !== p.name_source || !linha || linha.study !== p.study || linha.name !== p.name ||
+      linha.name_source !== p.name_source || linha.excerpt !== p.excerpt || linha.reference_date !== p.reference_date) return false;
+  return ['title','edition','locator','source_sha256','kind','page'].every(k => linha.document?.[k] === p.document?.[k]);
+}
+
 /** @param {unknown} onde @param {ContextoDoLocalizador} [linha] @returns {boolean} */
 function localizadorConhecido(onde, linha) {
   return (
     typeof onde === 'string' &&
     onde.trim() !== '' &&
-    (localizadorV2dConfere(onde, linha) ||
+    (localizadorHb1Confere(onde, linha) || localizadorV2dConfere(onde, linha) ||
       LOCALIZADORES_CONHECIDOS.some((l) => l.forma.test(onde) && (!l.confere || l.confere(onde, linha))))
   );
 }
@@ -799,6 +809,15 @@ celula('I2', 'as datas ISO à vista', (falhas) => {
     const fora = eForaDoAmbitoDasDatas(pag.rota);
     const raiz = dom(pag);
     const transcritos = new Set();
+    const citacoesDaLinha = new Set();
+    for (const el of raiz.querySelectorAll('[data-claim]')) {
+      const r = LINHAS_DA_REGUA.get(el.getAttribute('data-claim'));
+      const normal = t => String(t ?? '').replace(/\s+/g, ' ').trim();
+      if (r && ['texto','afirmação'].includes(r.unit) && r.value === r.excerpt && normal(el.textContent) === normal(r.value)) {
+        citacoesDaLinha.add(el);transcritos.add(el);
+        for (const d of el.querySelectorAll('*')) {citacoesDaLinha.add(d);transcritos.add(d);}
+      }
+    }
     for (const el of raiz.querySelectorAll(MARCA_DE_TRANSCRICAO)) {
       transcritos.add(el);
       for (const d of el.querySelectorAll('*')) transcritos.add(d);
@@ -813,6 +832,7 @@ celula('I2', 'as datas ISO à vista', (falhas) => {
         .join('');
       if (!ISO.test(proprio)) continue;
       const quantas = (proprio.match(ISO_G) ?? []).length;
+      if (citacoesDaLinha.has(el)) { emProsaTranscrita += quantas; continue; }
       if (SO_ISO.test(proprio)) {
         if (fora) {
           foraDoAmbito += quantas;
@@ -1947,6 +1967,16 @@ function provaLocalizadores() {
       falhas.push('As plantas dos localizadores exigem I1 e I3 limpas antes do estrago.');
       return '';
     }
+    let plantasHb1 = 0;
+    for (const id of Object.keys(PROVAS_HB1_ROTULOS)) {
+      const original = LINHAS_DA_REGUA.get(id);
+      if (!localizadorHb1Confere(original?.name_source, original)) falhas.push(`HB1: rótulo válido recusado em ${id}`);
+      for (const mudar of [l=>l.name+=' alterado',l=>l.name_source='origem desconhecida',l=>l.document.locator+=' alterado',l=>l.document.source_sha256='0'.repeat(64),l=>l.id='linha-inexistente']) {
+        const l=structuredClone(original);mudar(l);plantasHb1++;
+        if(localizadorHb1Confere(l.name_source,l)) falhas.push(`HB1: rótulo ou origem trocados passaram em ${id}`);
+      }
+    }
+    console.log(`HB1: ${Object.keys(PROVAS_HB1_ROTULOS).length} rótulos com ${plantasHb1} plantas de origem.`);
     for(const id of ['nato-defesa-portugal-pib-2024','nato-defesa-portugal-pib-2025','nato-defesa-portugal-pib-2026','nato-defesa-portugal-eur-2026']) {
       const original=LINHAS_DA_REGUA.get(id);
       if (!localizadorNatoConfere(original.name_source,original)) falhas.push('EX3: cabeçalho válido recusado');

@@ -6031,12 +6031,14 @@ for (const file of ficheirosHtml(DIST)) {
       continue;
     }
     const renderizado = decodeEntities(textoDe(el));
+    const valorNaForma = claim.unit === 'data' && /^\d{2}\/\d{2}\/\d{4}$/.test(String(claim.value))
+      ? String(claim.value).replaceAll('/', '.') : claim.value;
     if (digitsOf(renderizado) !== digitsOf(claim.value)) {
       err(
         `a afirmação "${id}" foi renderizada como "${renderizado.trim()}" mas o ` +
           `livro-razão diz "${claim.value}".`,
       );
-    } else if (formaDoValor(textoTranscrito(el)) !== formaDoValor(claim.value)) {
+    } else if (formaDoValor(textoTranscrito(el)) !== formaDoValor(valorNaForma)) {
       /* Os algarismos batem e a escrita não: o sinal, a vírgula ou um símbolo
          metido dentro do elemento. Ver formaDoValor(), que diz o que é a mesma
          escrita e o que é outro número. */

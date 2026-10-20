@@ -300,6 +300,11 @@ const TETOS = {
      enumera os três destinos repetidos em cada página nova e prova quatro plantas.
      O conjunto anterior de páginas mantém-se; as multiplicidades históricas não
      são declaradas iguais. A regra de contar os destinos permanece intacta. */
+  /* HB1: 2782 para 3152, medidos em l1-hb1.json. Entram 362 recibos das 181
+     linhas novas e oito páginas com as portas do estudo. As multiplicidades,
+     incluindo oito páginas anteriores alteradas, estão no contrato; cinco
+     plantas recusam um destino, uma multiplicidade ou uma página a mais ou a
+     menos. A regra de contagem permanece a mesma. */
   l1_paginas: TETO_B1.l1_paginas, // B1: o teto medido está escrito uma só vez no registo.
   /* L2a · páginas, fora de `/municipios`, que ligam a mais de `L2_LIMITE_NOMES`
      concelhos fora de uma lista fechada.
