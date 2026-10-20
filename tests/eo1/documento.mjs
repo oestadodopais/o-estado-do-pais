@@ -4,6 +4,8 @@ import fs from 'node:fs';
 import { createHash } from 'node:crypto';
 import { parse } from 'node-html-parser';
 import { loadClaims } from '../../src/lib/ledger.mjs';
+import { NOMES_EO1 } from '../../src/data/nomes-eo1.mjs';
+import { conferirNomeEo1 } from '../../scripts/nomes-eo1-do-portao.mjs';
 const slug='orcamento-2027-o-que-muda-e-para-quem';
 const norm=s=>String(s).replace(/[\u00a0\u202f]/g,' ');
 // Python conserva a distinção entre 300 e 300.0 no resumo da linha.
@@ -52,6 +54,12 @@ export function prove(record,lang){
 const dist=process.env.OEDP_DIST??'dist';let units=0;
 for(const lang of ['pt','en']){
  const recordBytes=fs.readFileSync(`registos/${slug}/${lang}.record.json`,'utf8');const record=JSON.parse(recordBytes);numberShape=JSON.parse(recordBytes,(k,v,c)=>typeof v==='number'?{rawNumber:c.source}:v).proof_rows;prove(record,lang);
+ for(const [id,names] of Object.entries(NOMES_EO1)) {
+  assert.equal(conferirNomeEo1(id,lang,names[lang],record.proof_rows),null);
+  assert(conferirNomeEo1(id,lang,names[lang]+' 999',record.proof_rows));
+  assert(conferirNomeEo1(id,lang,names[lang],{}));
+  if(/\d/.test(names[lang])) assert(conferirNomeEo1(id,lang,names[lang],{[id]:{}}));
+ }
  const route=lang==='pt'?`estudos/${slug}`:`en/studies/${slug}`;
  const page=parse(fs.readFileSync(`${dist}/${route}/index.html`,'utf8'));
  for(const block of record.blocks){

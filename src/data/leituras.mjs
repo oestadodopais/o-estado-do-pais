@@ -53,10 +53,10 @@ export const LEITURAS = {
       "claim": "pm-q3-6-r42-c3",
       "nome": {
         "pt": [
-          "de dívida pública em 2027, pela proposta de Orçamento"
+          "de dívida pública em ", { ref: '2027' }, ", pela proposta de Orçamento"
         ],
         "en": [
-          "public debt in 2027, by the Budget proposal"
+          "public debt in ", { ref: '2027' }, ", by the Budget proposal"
         ]
       }
     },
@@ -64,17 +64,17 @@ export const LEITURAS = {
       "claim": "der-oe2027-medidas-novas-saldo",
       "nome": {
         "pt": [
-          "é o que as três medidas novas de 2027 valem para o saldo"
+          "é o que as três medidas novas de ", { ref: '2027' }, " valem para o saldo"
         ],
         "en": [
-          "is what the three new measures of 2027 are worth to the balance"
+          "is what the three new measures of ", { ref: '2027' }, " are worth to the balance"
         ]
       }
     }
   ],
   "frase": {
     "pt": [
-      "As medidas novas do Orçamento de 2027 valem ",
+      "As medidas novas do Orçamento de ", { ref: '2027' }, " valem ",
       {
         "claim": "der-oe2027-medidas-novas-saldo"
       },
@@ -86,10 +86,10 @@ export const LEITURAS = {
       {
         "claim": "der-oe2027-juros-variacao-cp"
       },
-      " milhões: o que mais muda nas contas de 2027 não está no quadro das medidas."
+      " milhões: o que mais muda nas contas de ", { ref: '2027' }, " não está no quadro das medidas."
     ],
     "en": [
-      "The new measures of the 2027 Budget are worth ",
+      "The new measures of the ", { ref: '2027' }, " Budget are worth ",
       {
         "claim": "der-oe2027-medidas-novas-saldo"
       },
@@ -101,7 +101,7 @@ export const LEITURAS = {
       {
         "claim": "der-oe2027-juros-variacao-cp"
       },
-      " million: what changes most in the 2027 accounts is not in the table of measures."
+      " million: what changes most in the ", { ref: '2027' }, " accounts is not in the table of measures."
     ]
   },
   "origem": {

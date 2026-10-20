@@ -5,6 +5,7 @@ import assert from 'node:assert/strict';
 import {parse} from 'node-html-parser';
 const folder='design/especime-v3/medicoes/eo1-2026-10-20',slug='orcamento-2027-o-que-muda-e-para-quem';
 const gates=process.argv[2];assert(gates,'indicar a pasta dos códigos');
+const engineGates=process.argv[3]??gates;
 const measured=JSON.parse(fs.readFileSync(`${folder}/partida.json`));
 const escape=s=>String(s??'').replaceAll('|','\\|').replaceAll('\n',' ');
 let out='\n<!-- EO1-MEDIDO -->\n\n## Linhas seladas\n\n';
@@ -13,8 +14,9 @@ for(const [id,r]of Object.entries(measured.linhas_seladas))out+=`| ${id} | ${esc
 out+='\nOs resumos dos corpos e as posições de cada excerto estão em `partida.json`, em `novas`.\n\n## Contas refeitas\n\n| Identificador | Expressão | Resultado | Diferença |\n| --- | --- | --- | --- |\n';
 for(const d of measured.derivadas)out+=`| ${d.id} | ${escape(d.expressao)} | ${escape(d.resultado)} | ${d.diferenca} |\n`;
 out+='\n## Medidas comparadas\n\n';for(const [name,rows]of Object.entries(measured.comparacoes)){out+='### '+name.replaceAll('_',' ')+'\n\n';for(const id of rows){const r=measured.linhas[id];assert(r);out+=`- ${id}: ${r.value} ${r.unit}, ${r.period}. Localizador: ${r.locator}.\n`;}out+='\n';}
-out+='## Portões\n\nComando: `sh scripts/leituras/portoes-pelo-escrivao.sh <temporario> motor`. Os códigos abaixo foram lidos dos ficheiros da corrida, não inferidos da tentativa.\n\n';
-for(const name of ['build','verify','typecheck','motor']){const value=fs.readFileSync(path.join(gates,`${name}.codigo`),'utf8').trim();assert(/^\d+$/.test(value));out+=`- ${name}: ${value}.\n`;}
+out+='## Portões\n\nComandos: `sh scripts/leituras/portoes-pelo-escrivao.sh <temporario> motor` e, depois da correção do sítio, `sh scripts/leituras/portoes-pelo-escrivao.sh <temporario>`. O motor não mudou entre as corridas. Os códigos abaixo foram lidos dos ficheiros da corrida, não inferidos da tentativa.\n\n';
+for(const name of ['build','verify','typecheck','motor']){const dir=name==='motor'?engineGates:gates;const value=fs.readFileSync(path.join(dir,`${name}.codigo`),'utf8').trim();assert(/^\d+$/.test(value));out+=`- ${name}: ${value}.\n`;}
+out+=`\nCabeça conferida do sítio: \`${fs.readFileSync(path.join(gates,'cabeca'),'utf8').trim()}\`. Cabeça conferida do motor: \`${fs.readFileSync(path.join(engineGates,'motor.cabeca'),'utf8').trim()}\`.\n`;
 const editionData=[];for(const lang of ['pt','en']){
  const r=JSON.parse(fs.readFileSync(`registos/${slug}/${lang}.record.json`));
  const route=lang==='pt'?`estudos/${slug}`:`en/studies/${slug}`;

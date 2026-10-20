@@ -28,6 +28,8 @@ A medição lê também as medidas que não são intercambiáveis: a dívida de 
 - EO1-17. As linhas europeias e o salário mínimo espanhol têm o lugar da fonte, não herdam Portugal do estudo. A remuneração mínima portuguesa do diploma citado refere-se ao continente.
 
 - EO1-18. A chamada preliminar de `check:indice` foi um erro de execução: o guião também chama Playwright. O navegador foi recusado na sandbox (`browserType.launch: Target page, context or browser has been closed`). A conferência completa fica exclusivamente na corrida pelo escrivão; a tentativa recusada não conta como verificação.
+- EO1-19. A primeira corrida completa do sítio parou nos cartões: o excerto do CFP não cabia como manchete numérica. O cartão de uma linha textual passou a usar o nome do recibo, sem estado de limiar. O excerto mantém-se integral na linha e no documento. A primeira corrida registou `build` 1, `verify` 125 (não executado) e `typecheck` 0. A rasterização local corrigida terminou com código 0 e conferiu a paleta de todos os cartões; a corrida completa seguinte volta a construí-los.
+- EO1-20. Os nomes das novas linhas levam a sua origem também nos caminhos, no índice e nos cartões. A conferência exige o nome exato da edição e que os seus algarismos existam nos campos da linha de origem. A célula recusa nomes trocados, linhas ausentes e algarismos sem apoio. As linhas cujo valor é o excerto integral são citações para a régua ortográfica, continuando sujeitas à comparação do valor com o livro. A abertura inglesa conserva «In short», como o mandato pede, e a abertura nas duas edições admite a introdução antes das três partes. As duas rotas antigas de texto recebem o redirecionamento que a régua exige.
 
 ## Fontes e condições
 
@@ -37,4 +39,6 @@ Os pedidos, endereços oficiais, estados, datas, resumos e direitos estão nos r
 
 ## Verificação
 
-As plantas do compositor foram corridas por `python3 -m core.compor_livros_test`, através de `curto.sh`, com código 0. Em cada edição foram recusados um valor alterado no registo, um excerto cortado e um literal sem linha; cada recusa corresponde a código 1. Foi também recusado um algarismo escrito à mão. Os comandos e resultados dos portões e das capturas serão acrescentados depois da leitura dos ficheiros de resultado.
+As plantas do compositor foram corridas por `python3 -m core.compor_livros_test`, através de `curto.sh`, com código 0. Foi também recusado um algarismo escrito à mão.
+
+A célula do HTML foi executada em processos separados com `EO1_EDICAO=<edição> EO1_PLANTA=<planta> node --import ./design/especime-v3/medicoes/eo1-2026-10-20/injetar-planta.mjs tests/eo1/documento.mjs`. As edições são `pt` e `en`; as plantas são `valor`, `excerto` e `literal`. O injetor altera apenas o objeto lido pelo processo, não os ficheiros. Em cada edição foram recusados um valor alterado no registo, um excerto cortado e um literal sem linha. Os seis processos terminaram com código 1 e com a razão esperada, registada em `plantas.json`.

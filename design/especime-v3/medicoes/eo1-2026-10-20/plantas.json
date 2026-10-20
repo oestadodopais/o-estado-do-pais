@@ -1,0 +1,38 @@
+[
+  {
+    "edicao": "pt",
+    "planta": "valor",
+    "codigo": 1,
+    "mensagem": "AssertionError [ERR_ASSERTION]: valor do registo alterado"
+  },
+  {
+    "edicao": "pt",
+    "planta": "excerto",
+    "codigo": 1,
+    "mensagem": "AssertionError [ERR_ASSERTION]: excerto ou valor cortado"
+  },
+  {
+    "edicao": "pt",
+    "planta": "literal",
+    "codigo": 1,
+    "mensagem": "AssertionError [ERR_ASSERTION]: literal sem linha"
+  },
+  {
+    "edicao": "en",
+    "planta": "valor",
+    "codigo": 1,
+    "mensagem": "AssertionError [ERR_ASSERTION]: valor do registo alterado"
+  },
+  {
+    "edicao": "en",
+    "planta": "excerto",
+    "codigo": 1,
+    "mensagem": "AssertionError [ERR_ASSERTION]: excerto ou valor cortado"
+  },
+  {
+    "edicao": "en",
+    "planta": "literal",
+    "codigo": 1,
+    "mensagem": "AssertionError [ERR_ASSERTION]: literal sem linha"
+  }
+]

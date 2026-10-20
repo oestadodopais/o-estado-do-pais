@@ -280,6 +280,8 @@ import { EDITIONS, workById, studyLabel } from '../src/data/studies.mjs';
 import { LEITURAS } from '../src/data/leituras.mjs';
 import { MEDIDAS_DO_DOMINIO_1 } from '../src/data/dominios.mjs';
 import { NOMES_DO_PROJETO } from '../src/data/nomes-das-medidas.mjs';
+import { NOMES_EO1 } from '../src/data/nomes-eo1.mjs';
+import { conferirNomeEo1 } from './nomes-eo1-do-portao.mjs';
 import { MUNICIPIOS_COM_PAGINA } from '../src/data/municipios.mjs';
 import { MEDIDAS_DO_CONCELHO } from '../src/data/concelhos.mjs';
 /* A LISTA DA CARTA, PARA RECONTAR AS 29 UNIDADES E OS SEUS CONCELHOS (Emenda 20).
@@ -1252,6 +1254,8 @@ function eCitado(no) {
   const attrs = no.attributes ?? {};
   if ('data-verbatim' in attrs) return true;
   if ('data-linha-campo' in attrs) return true;
+  const citacao = claims.get(attrs['data-claim']);
+  if (citacao && ['texto', 'afirmação'].includes(citacao.unit) && citacao.value === citacao.excerpt) return true;
   /* UE1 (29.09.2026): um campo de uma linha de série e o nome de um país são
      transcritos (da resposta da fonte e da tabela de autoridade dos países), e
      o portão compara-os carácter a carácter, como a um `data-linha-campo`. A
@@ -2538,12 +2542,12 @@ function verificaTexto({ rota, root, err }) {
   {
     const nomes = lang === 'pt'
       ? ['Em resumo', 'O que este projeto conclui', 'O que podia funcionar melhor']
-      : ['In brief', 'What this project concludes', 'What could work better'];
+      : [chave === 'orcamento-2027-o-que-muda-e-para-quem/en' ? 'In short' : 'In brief', 'What this project concludes', 'What could work better'];
     const principais = registo.blocks.filter(b => b.kind === 'heading' && Number(b.level) === 2);
     const leituras = root.querySelectorAll('.estudo-leitura');
     const textos = root.querySelectorAll('.estudo-texto');
     if (textos.length !== 1) err(`B1 leitura ${chave}: deve existir um corpo de texto.`);
-    const primeiroConteudo = registo.blocks.find(b => b.i > 0);
+    const primeiroConteudo = registo.blocks.find(b => b.i > 0 && b.kind === 'heading' && Number(b.level) === 2);
     if (primeiroConteudo?.kind !== 'heading' || Number(primeiroConteudo.level) !== 2 || primeiroConteudo.text !== nomes[0]) {
       if (leituras.length) err(`B1 leitura ${chave}: registo sem abertura não pode ter leitura.`);
       console.log(`  B1 leitura ${chave}: sem leitura, o registo não começa por ${nomes[0]}.`);
@@ -5950,6 +5954,14 @@ for (const file of ficheirosHtml(DIST)) {
   }
 
   const aRemover = [];
+  for (const el of body.querySelectorAll('[data-nome][data-de-linha]')) {
+    const id = el.getAttribute('data-de-linha');
+    if (!NOMES_EO1[id]) continue;
+    const falta = conferirNomeEo1(id, rota?.lang, textoTranscrito(el),
+      registoDoPortao('orcamento-2027-o-que-muda-e-para-quem', 'pt')?.proof_rows);
+    if (falta) err(`EO1 nome ${id}: ${falta}.`);
+    else aRemover.push(el);
+  }
   /* H2-b: o ano do acompanhamento vem da ficha, não do livro de medições.
      Só sai do varrimento depois de conferir a composição inteira e a rota. */
   for (const el of body.querySelectorAll('[data-estudo-em-curso]')) {
@@ -8909,6 +8921,10 @@ for (const [nomePng, registo] of REGISTOS_DOS_CARTOES) {
             `"${v.linha}" tem "${claim.reference_date ?? '(nenhum)'}".`,
         );
       }
+    } else if (v.origem === 'nome-eo1') {
+      const falta = conferirNomeEo1(v.linha, registo.edicao, v.texto,
+        registoDoPortao('orcamento-2027-o-que-muda-e-para-quem', 'pt')?.proof_rows);
+      if (falta) errC(`EO1 nome ${v.linha}: ${falta}.`);
     } else if (v.origem === 'prova') {
       const contado = CONTAS[v.chave];
       if (contado === undefined) {

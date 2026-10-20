@@ -79,6 +79,8 @@ import { dataDaCasa } from './datas.mjs';
 import { ESTUDOS_DE_DADOS, studyLabel } from '../data/studies.mjs';
 import { getClaim, loadClaims } from './ledger.mjs';
 import { valorComUnidade } from './livro.mjs';
+import { nomeNoRecibo } from './o-que-e-o-numero.mjs';
+import { NOMES_EO1 } from '../data/nomes-eo1.mjs';
 import { unidadeDaLinha } from '../i18n/unidades.mjs';
 import { estadoDaMedida, palavraDoEstado } from './estado.mjs';
 import { prova } from './prova.mjs';
@@ -378,10 +380,9 @@ function modeloDoInicio(lang) {
 /**
  * O MODELO DE UMA PÁGINA DE LINHA.
  *
- * A manchete é o que a página tem por `<h1>`: o valor e a unidade. Não é uma
- * frase escrita para o cartão — é `valorComUnidade()`, a mesma função que
- * compõe o título da página e que aplica a regra da §11 (o símbolo cola-se ao
- * número, a palavra leva espaço).
+ * A manchete numérica usa `valorComUnidade()`, como o título da página.
+ * Uma linha textual usa o nome do recibo. O excerto integral continua no
+ * recibo; não se corta a citação para a fazer caber num cartão.
  *
  * O ESTADO só existe onde há limiar publicado, e o limiar de uma linha do painel
  * está declarado em `FIGURAS_PDM` — que é onde a peça da primeira página o vai
@@ -395,6 +396,8 @@ function modeloDoInicio(lang) {
 function modeloDaLinha(id, lang) {
   const s = t(lang);
   const claim = getClaim(id);
+  const textual = (claim.unit === 'texto' || claim.unit === 'afirmação') && claim.value === claim.excerpt;
+  const nomeTextual = Object.entries(NOMES_EO1).find(([chave]) => chave === id)?.[1][lang];
   const figura = FIGURAS_PDM.find((f) => f.claim === id) ?? null;
   const estado = figura ? (estadoDaMedida(claim, figura.limiar) ?? 'sem') : 'sem';
 
@@ -438,12 +441,14 @@ function modeloDaLinha(id, lang) {
        razão estava escrita em `src/lib/livro.mjs` como uma dívida: «traduzir a
        unidade ali é reconstruir os cartões todos, trabalho de outro bloco». É
        este o bloco. */
-    manchete: valorComUnidade(claim, lang),
+    manchete: textual ? nomeNoRecibo(id, lang).texto : valorComUnidade(claim, lang),
     fila: null,
     aparelho,
-    estado: { estado, palavra: PALAVRA[estado] },
+    estado: textual ? null : { estado, palavra: PALAVRA[estado] },
     meta,
-    valores,
+    valores: textual && nomeTextual ? [...valores, {
+      origem: 'nome-eo1', linha: id, texto: nomeTextual,
+    }] : valores,
     quadrados: null,
   };
 }
