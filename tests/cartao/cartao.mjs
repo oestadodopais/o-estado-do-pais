@@ -216,6 +216,9 @@
  */
 
 import './registo-leituras.mjs';
+import { retirarCitacoesEo1 } from '../../scripts/citacoes-eo1-do-portao.mjs';
+import { tirarCodigoConferido, lerPaginaComCodigo } from '../../scripts/incorporar-do-portao.mjs';
+import { matchPath as rotaDoCodigo } from '../../src/lib/routes.mjs';
 import fs from 'node:fs';
 import { documentoDosAssuntos } from '../inicio/paginas-dos-assuntos.mjs';
 import os from 'node:os';
@@ -384,16 +387,20 @@ function textoVisivel(el) {
 }
 
 // K8: o índice das áreas é a única página com esta expressão na prosa da casa.
-// Os dois recibos citam o Conselho das Finanças Públicas. A exceção exige rota, linha e excerto literal.
+// Os excertos dos recibos não são prosa do projeto. A exceção exige rota, linha e excerto literal.
 const RECIBOS_K8 = ['oe-2027-cenario-pib-real-crescimento-2027', 'oe-2027-cenario-ihpc-2026'];
 const linhasK8=loadClaims({includeWithdrawn:true});
 /** @param {import('node-html-parser').HTMLElement} root @param {string} rota */
 function textoDaCasaK8(root, rota) {
   if (!/Governo Constitucional|Constitutional Government/.test(root.text)) return root.text;
-  const copia=parse(root.outerHTML), normal=s=>String(s??'').replace(/\s+/g,' ').trim();
-  for(const el of copia.querySelectorAll('[data-linha-campo="excerpt"][data-linha-claim]')) {
-    const c=linhasK8.get(el.getAttribute('data-linha-claim'));
-    if(c && RECIBOS_K8.includes(c.id) && [`/livro-razao/${c.id}`, `/en/ledger/${c.id}`].includes(rota.replace(/\/$/, '')) &&
+  const copia=lerPaginaComCodigo(root.outerHTML), normal=s=>String(s??'').replace(/\s+/g,' ').trim();
+  const codigo=copia.querySelector('[data-incorporar-codigo]'), rotaCodigo=rotaDoCodigo(rota);
+  if (codigo && rotaCodigo?.key === 'linha' && rotaCodigo.params.slug === codigo.getAttribute('data-incorporar-codigo'))
+    tirarCodigoConferido(copia, rotaCodigo);
+  retirarCitacoesEo1(copia,rotaDoCodigo(rota),linhasK8);
+  for(const el of copia.querySelectorAll('[data-linha-campo="excerpt"][data-linha-claim], [data-claim]')) {
+    const c=linhasK8.get(el.getAttribute('data-linha-claim') ?? el.getAttribute('data-claim'));
+    if(c && (el.getAttribute('data-linha-campo') === 'excerpt' || (['texto','afirmação'].includes(c.unit) && c.value === c.excerpt)) && ([`/livro-razao/${c.id}`, `/en/ledger/${c.id}`].includes(rota.replace(/\/$/, '')) || (el.hasAttribute('data-claim') && c.value === c.excerpt && ['/livro-razao','/en/ledger'].includes(rota.replace(/\/$/, '')))) &&
        c.source_url && typeof c.excerpt==='string' && normal(el.textContent)===normal(c.excerpt)) el.remove();
   }
   return copia.text;

@@ -106,7 +106,8 @@ import { fileURLToPath } from 'node:url';
 import { chromium } from 'playwright';
 import { parse, NodeType } from 'node-html-parser';
 
-import { routePath, LANGS } from '../../src/lib/routes.mjs';
+import { tirarCodigoConferido, lerPaginaComCodigo } from '../../scripts/incorporar-do-portao.mjs';
+import { routePath, LANGS, matchPath } from '../../src/lib/routes.mjs';
 import { unidadeDaLinha, UNIDADES_EM_PORTUGUES } from '../../src/i18n/unidades.mjs';
 import { feitioDeLei } from '../../src/i18n/nomes-de-lei.mjs';
 import { MUNICIPIOS } from '../../src/data/caop-centroids.mjs';
@@ -1534,7 +1535,12 @@ function varreLeis() {
       documentosAlojados++;
       continue;
     }
-    const root = parse(s);
+    const root = lerPaginaComCodigo(s);
+    if (root.querySelector('[data-incorporar-codigo]')) {
+      const canonica = root.querySelector('link[rel="canonical"]')?.getAttribute('href');
+      if (!canonica) throw Error('H9: código sem página canónica');
+      tirarCodigoConferido(root, matchPath(new URL(canonica).pathname));
+    }
     const daFonte = new Set();
     for (const el of root.querySelectorAll(TRANSCRICAO_DA_FONTE)) {
       daFonte.add(el);

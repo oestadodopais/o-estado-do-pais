@@ -81,6 +81,7 @@
  * mesma função que a escreve confirma a função, não o sítio. Uma cadeia que mude
  * do outro lado tem de fazer esta régua falhar, e não acompanhá-la em silêncio.
  */
+import { localizadorEo1Confere } from '../../scripts/localizadores-eo1-do-portao.mjs';
 import fs from 'node:fs';
 import http from 'node:http';
 import path from 'node:path';
@@ -333,6 +334,7 @@ const LOCALIZADORES_CONHECIDOS = [
     onde: 'publisher/ex3.py: cabeçalho literal das folhas inglesas da NATO',
     confere: localizadorNatoConfere,
   },
+  { nome: 'EO1, coordenadas dos quadros e escalões', forma: /^(?:Quadro [234]\.[1236]\. |Artigo 68\.º; |Table III\.18\.1: |Gráfico 3\.5; ).+$/, onde: 'fontes alojadas do Orçamento e da previsão europeia', confere: localizadorEo1Confere },
   { nome: 'compromissos e cimeira na página HTML da NATO', forma: /^(?:2014 Wales Summit|The 5% Hague defence commitment|Core defence requirements)$/, onde: 'publisher/ex3.py: excertos literais da página alojada da NATO', confere: localizadorCompromissoNatoConfere },
 ];
 

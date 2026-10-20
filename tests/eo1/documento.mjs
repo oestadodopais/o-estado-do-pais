@@ -6,6 +6,9 @@ import { parse } from 'node-html-parser';
 import { loadClaims } from '../../src/lib/ledger.mjs';
 import { NOMES_EO1 } from '../../src/data/nomes-eo1.mjs';
 import { conferirNomeEo1 } from '../../scripts/nomes-eo1-do-portao.mjs';
+import { retirarCitacoesEo1 } from '../../scripts/citacoes-eo1-do-portao.mjs';
+import { portasObrigatoriasEo1 } from '../../scripts/portas-eo1-do-portao.mjs';
+import { localizadorEo1Confere } from '../../scripts/localizadores-eo1-do-portao.mjs';
 import { superficieDe } from '../../scripts/voz-palavras.mjs';
 const slug='orcamento-2027-o-que-muda-e-para-quem';
 const norm=s=>String(s).replace(/[\u00a0\u202f]/g,' ');
@@ -20,6 +23,16 @@ function canonical(x,shape){
 }
 const sha=x=>createHash('sha256').update(canonical(x,numberShape[x.id])).digest('hex');
 const claims=loadClaims();
+let localizadores=0;
+for (const c of claims.values()) {
+ if(c.study!==slug || !c.name || c.name_source==='label') continue;
+ assert(localizadorEo1Confere(c.name_source,c),'localizador sem prova: '+c.id); localizadores++;
+ for(const altera of [x=>x.name+=' alterado',x=>x.reference_date='1900',x=>x.document.page++,x=>x.document.source_sha256='0'.repeat(64),x=>x.document.locator+=' alterado']) {
+  const x=structuredClone(c);altera(x);assert(!localizadorEo1Confere(x.name_source,x),'localizador alterado aceite');
+ }
+ assert(!localizadorEo1Confere(c.name_source+' alterado',c),'coordenada alterada aceite');
+}
+console.log(`EO1: ${localizadores} localizadores, seis alterações rejeitadas por linha.`);
 const quotedClaim=[...claims.values()].find(c=>c.value===c.excerpt&&['texto','afirmação'].includes(c.unit)&&/\blimiar\b/.test(c.excerpt));
 assert(quotedClaim,'controlo da citação ausente');
 const htmlQuote=text=>`<body><span data-claim="${quotedClaim.id}">${text.replaceAll('&','&amp;').replaceAll('<','&lt;')}</span></body>`;
@@ -68,6 +81,16 @@ for(const lang of ['pt','en']){
  }
  const route=lang==='pt'?`estudos/${slug}`:`en/studies/${slug}`;
  const page=parse(fs.readFileSync(`${dist}/${route}/index.html`,'utf8'));
+ const rotaPortas={key:'estudo',lang,params:{slug}};
+ assert.deepEqual(portasObrigatoriasEo1(page,rotaPortas).erros,[]);
+ for(const altera of [r=>r.querySelector('[data-fontes-da-unidade] a').remove(),r=>r.querySelector('[data-fontes-da-unidade] a').setAttribute('href','/errado'),r=>r.querySelector('[data-fontes-da-unidade] a').set_content('Inventado')]) {
+  const x=parse(page.outerHTML);altera(x);assert(portasObrigatoriasEo1(x,rotaPortas).erros.length);
+ }
+ assert.equal(portasObrigatoriasEo1(page,{...rotaPortas,params:{slug:'outro'}}).portas.size,0);
+ const quoteCopy=parse(page.outerHTML);retirarCitacoesEo1(quoteCopy,rotaPortas,claims);
+ assert(!quoteCopy.text.includes('Governo Constitucional'),'citação literal contada como voz própria');
+ const extraCopy=parse(page.outerHTML);extraCopy.querySelector('[data-registo-unidade]').insertAdjacentHTML('beforeend',' Governo Constitucional');retirarCitacoesEo1(extraCopy,rotaPortas,claims);
+ assert(extraCopy.text.includes('Governo Constitucional'),'prosa acrescentada escondida como citação');
  for(const block of record.blocks){
   const el=page.querySelector(`[data-registo-unidade="${slug}/${lang}#${block.i}"]`);assert(el,'unidade ausente no HTML');
   for(const seal of el.querySelectorAll('[data-selo-etiqueta]'))seal.remove();
@@ -83,7 +106,12 @@ for(const lang of ['pt','en']){
  const actual=raw.querySelectorAll('body h1,body h2,body p').map(el=>norm(el.textContent));
  assert.deepEqual(actual,record.blocks.map(b=>norm(b.text)),'documento alojado diverge');
  const documentRoute=lang==='pt'?`estudos/${slug}/documento`:`en/studies/${slug}/document`;
- const built=parse(fs.readFileSync(`${dist}/${documentRoute}/index.html`,'utf8')).querySelector('[data-oedp-moldura]');assert(built,'moldura do documento ausente');
+ const documentPage=parse(fs.readFileSync(`${dist}/${documentRoute}/index.html`,'utf8'));
+ const documentRota={...rotaPortas,key:'documento'};assert.deepEqual(portasObrigatoriasEo1(documentPage,documentRota).erros,[]);
+ for(const altera of [r=>r.querySelector('[data-oedp-marca]').setAttribute('href','/errado'),r=>r.querySelector('[data-oedp-voltar]').set_content('Inventado'),r=>r.querySelector('[data-oedp-moldura] a').remove(),r=>r.querySelector('[data-oedp-faixa]').insertAdjacentHTML('beforeend','<a href="/extra">Extra</a>')]) {
+  const x=parse(documentPage.outerHTML);altera(x);assert(portasObrigatoriasEo1(x,documentRota).erros.length);
+ }
+ const built=documentPage.querySelector('[data-oedp-moldura]');assert(built,'moldura do documento ausente');
  assert.deepEqual(built.querySelectorAll('h1,h2,p').map(el=>norm(el.textContent)),actual,'documento construído diverge');
  const changed=structuredClone(record);changed.blocks.find(b=>b.figures.length).figures[0].value+='1';assert.throws(()=>prove(changed,lang));
  const cut=structuredClone(record);const b=cut.blocks.find(b=>b.proofs.some(p=>p.tipo==='excerto'));const quoted=b.proofs.find(p=>p.tipo==='excerto');const characters=Array.from(b.text);characters.splice(quoted.inicio,1);b.text=characters.join('');assert.throws(()=>prove(cut,lang));

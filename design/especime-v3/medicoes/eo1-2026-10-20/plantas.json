@@ -3,7 +3,7 @@
     "edicao": "pt",
     "planta": "valor",
     "codigo": 1,
-    "mensagem": "AssertionError [ERR_ASSERTION]: valor do registo alterado"
+    "mensagem": "AssertionError [ERR_ASSERTION]: linha alterada: oe-2027-calendario-entrega"
   },
   {
     "edicao": "pt",
@@ -21,7 +21,7 @@
     "edicao": "en",
     "planta": "valor",
     "codigo": 1,
-    "mensagem": "AssertionError [ERR_ASSERTION]: valor do registo alterado"
+    "mensagem": "AssertionError [ERR_ASSERTION]: linha alterada: oe-2027-calendario-entrega"
   },
   {
     "edicao": "en",

@@ -34,7 +34,7 @@ check: null
 
 study: "orcamento-2027-o-que-muda-e-para-quem"
 # Nota interna. NÃO é publicada: ver DECISIONS §1.24.
-note: "Intervalo do calendário: 2026/2027. · [note do motor] A tabela III.18.1 da mesma página imprime 87.6 para 2026. A divergência de 86.7 no texto é da fonte e não foi resolvida na recolha. · Cruzado de ResearchHub content/25 Orcamento 2027 Medidas · ce-primavera-2026-divida-texto-divergente."
+note: "Período completo da fonte: 2026/2027. · [note do motor] A tabela III.18.1 da mesma página imprime 87.6 para 2026. A divergência de 86.7 no texto é da fonte e não foi resolvida na recolha. · Cruzado de ResearchHub content/25 Orcamento 2027 Medidas · ce-primavera-2026-divida-texto-divergente."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []

@@ -34,7 +34,7 @@ check: null
 
 study: "orcamento-2027-o-que-muda-e-para-quem"
 # Nota interna. NÃO é publicada: ver DECISIONS §1.24.
-note: "Intervalo do calendário: 2026-10-27/2026-10-28. · [note do motor] Datas marcadas, não registo de votações já realizadas. Fonte alojada em investigação anterior, reutilizada pelo sha256. A página agrupa debate e votação na generalidade nos dois dias; não fixa aqui um dia isolado da votação. · Cruzado de ResearchHub content/24 Orcamento 2027 Analise · oe-2027-calendario-generalidade."
+note: "Período completo da fonte: 2026-10-27/2026-10-28. · [note do motor] Datas marcadas, não registo de votações já realizadas. Fonte alojada em investigação anterior, reutilizada pelo sha256. A página agrupa debate e votação na generalidade nos dois dias; não fixa aqui um dia isolado da votação. · Cruzado de ResearchHub content/24 Orcamento 2027 Analise · oe-2027-calendario-generalidade."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []

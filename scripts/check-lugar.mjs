@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { portasObrigatoriasEo1 } from './portas-eo1-do-portao.mjs';
 import { tirarCodigoConferido, lerPaginaComCodigo } from './incorporar-do-portao.mjs';
 /**
  * A RÉGUA DO BLOCO F1.10 · «uma coisa, um lugar».
@@ -1142,9 +1143,11 @@ for (const ficheiro of paginas) {
   /* Dois destinos iguais no MESMO ecrã, fora do cabeçalho e do rodapé. O
      fragmento não conta: `#m-x` e `#m-y` são dois sítios da mesma página, e
      `/x#a` e `/x#b` são duas portas para dois sítios da mesma página. */
+  const eo1 = portasObrigatoriasEo1(raiz, rota);
+  for (const erro of eo1.erros) falhas.push(`L1 ${erro}`);
   const destinos = new Map();
   for (const a of corpo.querySelectorAll('a[href]')) {
-    if (daMobilia.has(a) || b2.portas.has(a) || (chaveDaRota === 'estudo' && a.closest('[data-registo-unidade]'))) continue;
+    if (daMobilia.has(a) || b2.portas.has(a) || eo1.portas.has(a) || (chaveDaRota === 'estudo' && a.closest('[data-registo-unidade]'))) continue;
     const href = a.getAttribute('href') ?? '';
     if (!href || href.startsWith('#') || href.startsWith('mailto:')) continue;
     /* O marcador de um campo não confirmado é obrigatório em cada cartão.

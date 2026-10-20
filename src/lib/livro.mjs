@@ -17,6 +17,7 @@ import { routePath } from './routes.mjs';
 import { eDerivada, documentoDaLinha, provenienciaIncompleta } from './ledger.mjs';
 import { t } from '../i18n/strings.mjs';
 import { unidadeDaLinha } from '../i18n/unidades.mjs';
+import { NOMES_EO1 } from '../data/nomes-eo1.mjs';
 import { SITE_NAME } from '../../site.config.mjs';
 
 /**
@@ -86,9 +87,14 @@ export function valorComUnidade(claim, lang = null) {
  * @param {Linha} claim
  * @param {Lingua} lang
  */
+function nomeTextual(claim, lang) {
+  return ['texto', 'afirmação'].includes(String(claim.unit)) && claim.value === claim.excerpt ? Object.entries(NOMES_EO1).find(([id]) => id === claim.id)?.[1][lang] : null;
+}
+
+/** @param {Linha} claim @param {Lingua} lang */
 export function tituloDaLinha(claim, lang) {
   const s = t(lang);
-  return `${valorComUnidade(claim, lang)} · ${s.livro.eyebrow} · ${SITE_NAME}`;
+  return `${nomeTextual(claim, lang) ?? valorComUnidade(claim, lang)} · ${s.livro.eyebrow} · ${SITE_NAME}`;
 }
 
 /**
@@ -102,7 +108,7 @@ export function tituloDaLinha(claim, lang) {
  */
 export function descricaoDaLinha(claim, lang) {
   const s = t(lang);
-  const partes = [`${s.livro.linha.eyebrow} ${claim.id}`, valorComUnidade(claim, lang)];
+  const partes = [`${s.livro.linha.eyebrow} ${claim.id}`, nomeTextual(claim, lang) ?? valorComUnidade(claim, lang)];
 
   if (eDerivada(claim)) {
     partes.push(s.prov.naoPublicado);

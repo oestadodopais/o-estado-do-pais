@@ -34,7 +34,7 @@
     "ce-primavera-2026-divida-texto-divergente": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-20",
-      "exported_row_sha256": "4368df9eab513484303e1d59e36ab14450c9df83929c344067030605c91f4122",
+      "exported_row_sha256": "149df055e936c5d06c3194ea15c731417e7625995fa46f4344770a427349bf5f",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "2a9d3ec810c4e026706525a61aee41ca0cfda586183eca9a25fe6dae0a5c4d05",
       "rh_id": "ce-primavera-2026-divida-texto-divergente",
@@ -870,7 +870,7 @@
     "oe-2027-calendario-especialidade": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-20",
-      "exported_row_sha256": "28f7ec647bb6c9424071dc571fe87a9f3571972e10d72832319cb60adb76c64c",
+      "exported_row_sha256": "ebad33af2fd9b38c76bf79b6adda056219f205af706c28a842449740b8d913dc",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "a78720d2b215a07a20e74f6f00a5efa495acef3b16366715ddbbbc57193d21a0",
       "rh_id": "oe-2027-calendario-especialidade",
@@ -892,7 +892,7 @@
     "oe-2027-calendario-generalidade": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-20",
-      "exported_row_sha256": "df1f728bc1234572856887a0e69ce1469a510344129171f36cc1c432c0f395c1",
+      "exported_row_sha256": "2faeb2d9e7caaa060d9053f2ee00e0f6161edb242c83784594f64b48234f75d5",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "c25cbac9813811a18913bac189e9d9c2dab03b6a3294669289de4ed4cb7af3b0",
       "rh_id": "oe-2027-calendario-generalidade",
@@ -1926,7 +1926,7 @@
     "pm-q4-1-r11-c2": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-20",
-      "exported_row_sha256": "a01126e657a7fcaf5eb731d9188732e3f2fab2f5484bb6d9f246f3d95a7dffec",
+      "exported_row_sha256": "19591038117c6ba4625d3b68696f89419cd6eb146d32825e2aa328f4b603bf3b",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "1f72051420106a5ca50d6aaf3c91590ef7f0edccda86c9d53b5b01191c9dbaca",
       "rh_id": "pm-q4-1-r11-c2",
@@ -1948,7 +1948,7 @@
     "pm-q4-1-r12-c2": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-20",
-      "exported_row_sha256": "1aa472997565475728e715d8ef1bfeb04110e69112768f5a294def032af5b619",
+      "exported_row_sha256": "476ba4d8e2aaa6202e64249a80b97b69f6f240e76fedee970a485d52d9f5967b",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "9c2a69edec985da0061ac507d8a3944d2025a1b5d3d4e61b22c569089da7ccd8",
       "rh_id": "pm-q4-1-r12-c2",
@@ -1970,7 +1970,7 @@
     "pm-q4-1-r13-c2": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-20",
-      "exported_row_sha256": "10061c7729ae5524928227ab4ecfb8a0ed70fdf8ddb65d9b58a02ed219632702",
+      "exported_row_sha256": "12c0e0b8f5be95335acd39334364b33b0b77921c615f3172bdbab783e3a068bf",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "278e3e3eac47c3cd979228ea94f8e373942a768b80aaadbc29087c85b5d375be",
       "rh_id": "pm-q4-1-r13-c2",
@@ -2003,7 +2003,7 @@
     "pm-q4-1-r17-c2": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-20",
-      "exported_row_sha256": "007cf4e6f72e96db5020bb9e3b39d4cd38c2f20117f2a87a6424df5f12525ef9",
+      "exported_row_sha256": "5cf9746d0199c152edce65ad70b7c76d611294a0811408f017a14fb898fbefe8",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "19fd32a8988cfe0e86991d268b1c82a0c54b7214184e13aba4a22c8aabf7bd7b",
       "rh_id": "pm-q4-1-r17-c2",
@@ -2036,7 +2036,7 @@
     "pm-q4-1-r19-c2": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-20",
-      "exported_row_sha256": "a16827deef0fc586ad7e68634eff5065ad51c6ad851af0ae55cca98272898a25",
+      "exported_row_sha256": "ac85ade9321770114e14cd0813b66f988138b29d0bf04df8811cea720639b425",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ee3c9346a8987bce8d700afee2d33b3971b078cd4ebe0dac6898e3a77f49d1fe",
       "rh_id": "pm-q4-1-r19-c2",
@@ -2069,7 +2069,7 @@
     "pm-q4-1-r21-c2": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-20",
-      "exported_row_sha256": "fb6a5a87bff390d5f730a9cfdfa0f01257862e24b9ff342222d5fef5246b79ca",
+      "exported_row_sha256": "298c6227f4405f770996bdfc4a37256e676f271dc9060fec3516ba2c8fcbc760",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "f9ebd54331686b7780fe3ec9592af374ffcc69509a178910cb8e84b8e558d308",
       "rh_id": "pm-q4-1-r21-c2",
@@ -2091,7 +2091,7 @@
     "pm-q4-1-r22-c2": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-20",
-      "exported_row_sha256": "2f14d534025402f70afe214e5461ca86c52e1cbcf2b17bede1aca4fdeaac534b",
+      "exported_row_sha256": "897d27289ac398681d502eabe33611dd840acf89994a2ca56a682599503c0cb1",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "c72c5070afbe6869e1e96e020ba33f2e158d925ca0908d128d28c5acd067e620",
       "rh_id": "pm-q4-1-r22-c2",
@@ -2124,7 +2124,7 @@
     "pm-q4-1-r27-c2": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-20",
-      "exported_row_sha256": "3820af1a5d170b47a44d92667519b979d910d871a63bb2308e83a41d57cc5cfd",
+      "exported_row_sha256": "8319bce8eb9a0698ee0c6bfb644ec2ce4b7e5ce271a6717843aa36c3646916ec",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "5021c923ce2b09d413849ca4ba403ebe7fa0f996e1e4d2c724482a2f7cf5c4cb",
       "rh_id": "pm-q4-1-r27-c2",
@@ -2157,7 +2157,7 @@
     "pm-q4-1-r31-c2": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-20",
-      "exported_row_sha256": "54d73a891a8d2a2b8247793346ba68cb2693cb394c2d97c8aee4f9592ae5f2e6",
+      "exported_row_sha256": "d53775b54bf1964c795a003b515e31cb583b2be49659c9560383bb782e50f06b",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "c3f742bcf40c37cad813dbd88931829bbb7de4cb30e192084dd0a23d442d66dd",
       "rh_id": "pm-q4-1-r31-c2",
