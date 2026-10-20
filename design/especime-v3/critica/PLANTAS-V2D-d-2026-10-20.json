@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-20T10:08:36+00:00",
+ "copia": "<pacote>",
+ "plantas": [
+  {
+   "id": "H1",
+   "ficheiro": "built/o-que-se-discute/index.html",
+   "descricao": "a citação da nota 26 alterada na página PT contra a linha e a p. 88 do relatório",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "21b6ca4d0a2df8ab02eaa8f345dff9dcf2e7501e2b49753b788f31eca16dada7",
+   "sha256_depois": "e1d8765eb8f9af9fb940d905d24fc49a2d0252ce001b29aa4e77575f6cec84ac",
+   "contexto_antes": "destinada às forças nacionais destacadas, a afetar sobretudo aos ramos das Forças Armadas, e, no Programa Legado da Saúde, a dotação para reforço no âmbito dos contratos-programa cuja contratualização ainda decorre.</span></a>»<a class=\"src-chip\" href=\"/livro-razao/oe-2027-saude-dotacao-reforco-contratos-programa\" data-nonledger=\"proveniencia\" data-selo-etiqueta=\"Ministér",
+   "contexto_depois": "destinada às forças nacionais destacadas, a afetar sobretudo aos ramos das Forças Armadas, e, no Programa Legado da Saúde, a dotação para reforço no âmbito dos contratos-programa cuja contratualização já terminou.</span></a>»<a class=\"src-chip\" href=\"/livro-razao/oe-2027-saude-dotacao-reforco-contratos-programa\" data-nonledger=\"proveniencia\" data-selo-etiqueta=\"Ministér"
+  },
+  {
+   "id": "H2",
+   "ficheiro": "built/en/under-discussion/index.html",
+   "descricao": "a derivada das outras despesas correntes alterada na página EN contra a sua derivação (271,3)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "4f551ff31d7f0ee7025572104e366ba0ee85238d46d8b1a3f203f4b60dfae539",
+   "sha256_depois": "644a5b59ac8baf8a7ecdc2501296f5069e431d9fcd250a2185a0615bb17479b7",
+   "contexto_antes": "-etiqueta=\"Ministério das Finanças\" title=\"Ministério das Finanças\"><span class=\"src-chip-texto\">source</span><span class=\"vh\"> · <span lang=\"pt-PT\">Ministério das Finanças</span></span></a></span>, <span class=\"claim claim-com-chip\"><span data-claim=\"der-saude-outras-correntes-variacao-abs\" class=\"claim-value\">271,3</span><a class=\"src-chip\" href=\"/en/ledger/der-saude-outras-correntes-variacao-abs\" data-nonledger=\"proveniencia\" data-selo-etiqueta=\"calculated\" title=\"calculated\"><span class=\"src-chip-texto\">source</span><span class=\"vh\"> · calculated</span></",
+   "contexto_depois": "-etiqueta=\"Ministério das Finanças\" title=\"Ministério das Finanças\"><span class=\"src-chip-texto\">source</span><span class=\"vh\"> · <span lang=\"pt-PT\">Ministério das Finanças</span></span></a></span>, <span class=\"claim claim-com-chip\"><span data-claim=\"der-saude-outras-correntes-variacao-abs\" class=\"claim-value\">217,3</span><a class=\"src-chip\" href=\"/en/ledger/der-saude-outras-correntes-variacao-abs\" data-nonledger=\"proveniencia\" data-selo-etiqueta=\"calculated\" title=\"calculated\"><span class=\"src-chip-texto\">source</span><span class=\"vh\"> · calculated</span></"
+  },
+  {
+   "id": "H3",
+   "ficheiro": "built/o-que-se-discute/index.html",
+   "descricao": "a oração da opinião do item 1 diz na página PT que o orçamento guarda os milhões «para investimento», contra a frase e a nota 26",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "e1d8765eb8f9af9fb940d905d24fc49a2d0252ce001b29aa4e77575f6cec84ac",
+   "sha256_depois": "838c3065485aa88c215841d4178cd07406bc925e6e1e57067397bd01278da237",
+   "contexto_antes": "ledger=\"proveniencia\" data-selo-etiqueta=\"calculado\" title=\"calculado\"><span class=\"src-chip-texto\">fonte</span><span class=\"vh\"> · calculado</span></a></span> milhões para reforçar contratos-programa ainda por fechar, que conta com receitas próprias a crescer mais de metade sem que o relatório explique de onde vêm, e que, pelo que a execução de <a class=\"discussao-periodo\" ",
+   "contexto_depois": "ledger=\"proveniencia\" data-selo-etiqueta=\"calculado\" title=\"calculado\"><span class=\"src-chip-texto\">fonte</span><span class=\"vh\"> · calculado</span></a></span> milhões para investimento nos hospitais, que conta com receitas próprias a crescer mais de metade sem que o relatório explique de onde vêm, e que, pelo que a execução de <a class=\"discussao-periodo\" "
+  },
+  {
+   "id": "H4",
+   "ficheiro": "ledger/claims/oe-2027-saude-dotacao-reforco-contratos-programa.yml",
+   "descricao": "o período da linha textual nova volta à data de publicação na cópia exportada, contra a correção",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "5605cb9332677aa8fc5fb0f1b74d35ba369657909f54467c902c64d663babccd",
+   "sha256_depois": "5e24e7e858b50425c3641e80cc2622481dc950885bbe883fc62812a3f74af03e",
+   "contexto_antes": "6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true\"\naccess_date: \"2026-10-13\"\npublished_at: \"2026-10-08\"\nafirmacao: true\nreference_date: \"2027\"\n\n# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.\nexcerpt: \"São objeto de afetação específica no decurso da execução orçamental. Relevam, ",
+   "contexto_depois": "6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true\"\naccess_date: \"2026-10-13\"\npublished_at: \"2026-10-08\"\nafirmacao: true\nreference_date: \"2026-10-08\"\n\n# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.\nexcerpt: \"São objeto de afetação específica no decurso da execução orçamental. Relevam, "
+  },
+  {
+   "id": "H5",
+   "ficheiro": "ledger/claims/der-saude-outras-correntes-variacao-abs.yml",
+   "descricao": "o valor da derivada das outras despesas correntes alterado na cópia exportada contra a sua derivação",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "3dee1a68933531582f84735b84e0b4850db06a614a335468f78e7d0b2993157b",
+   "sha256_depois": "9d6fa633bfec186a080ae5146a049ea3f4c3277ea3a6cd1d6fdfa4f19968c511",
+   "contexto_antes": "e scripts/check-cruzamento.mjs.\n\nid: \"der-saude-outras-correntes-variacao-abs\"\n\n# O valor tal como é publicado, com formatação portuguesa. String, nunca número.\nvalue: \"271,3\"\nunit: \"milhões de euros\"\n\n# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.\nsource: null\ndocument: null\nsource_url: null\naccess_",
+   "contexto_depois": "e scripts/check-cruzamento.mjs.\n\nid: \"der-saude-outras-correntes-variacao-abs\"\n\n# O valor tal como é publicado, com formatação portuguesa. String, nunca número.\nvalue: \"217,3\"\nunit: \"milhões de euros\"\n\n# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.\nsource: null\ndocument: null\nsource_url: null\naccess_"
+  }
+ ]
+}
