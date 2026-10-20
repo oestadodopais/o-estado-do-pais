@@ -307,6 +307,8 @@ Esta secção substitui as conclusões anteriores nos pontos corrigidos. A V2E-3
 
 - **V2E-37.** A célula lê também períodos trimestrais e recusa a troca pelo último dia. Os recibos derivados sem excerto conferem a ressalva calculada que efetivamente imprimem, nas duas línguas, com plantas que a trocam por uma promessa de transcrição. A exceção dos estados completos do PRR acompanha o espaço deixado pela extração do selo, sem alargar a frase nem as rotas autorizadas.
 
+- **V2E-38.** A edição «2008», da linha nova do ano da minuta, fica explicitamente declarada sem língua. A régua da língua recusou a chave ausente; depois da declaração, passaram também as conferências do formato, da navegação e dos sinais da primeira página.
+
 ### Linhas seladas e cálculos
 
 Seladas de novo: `pe-oe-beira-abolicao`, sem a chamada de nota colada a «negociação», e `pe-oe-riscos-nao-reconhecimento`, só até «peticionados.». O histórico preserva os excertos anteriores. As linhas `pe-dl87a-financiamento`, `pe-dl87a-apoio` e `pe-dl87a-apoio-retificado` conservaram a fonte, com descrições corrigidas nos recibos.

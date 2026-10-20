@@ -633,6 +633,7 @@ export const LINGUA_DAS_EDICOES = {
   "1972/2035": null,
   "2035-12-31": null,
   "2008-12-31": null,
+  "2008": null,
   "2024-12-27": null,
   "2025-01-01": null,
   "2012": null,
