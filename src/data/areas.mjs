@@ -1,3 +1,4 @@
+import { REGRAS_V2D, EXCLUSAO_UE_V2D, EXCLUSAO_V2A_SEM_V2D } from './areas-v2d.mjs';
 /**
  * ===========================================================================
  * AS ÁREAS DE GOVERNO, E A MATÉRIA POR QUE CADA PEÇA LÁ ENTRA
@@ -701,7 +702,14 @@ export const AREAS = [
  * A forma de uma entrada é a mesma de uma regra: `{ estudos?, id, assunto,
  * motivo }`.
  */
+for (const { area, materia, regra } of REGRAS_V2D) {
+  const alvo = AREAS.find(a => a.slug === area)?.materias.find(m => m.materia === materia);
+  if (!alvo) throw new Error('V2D: matéria legal ausente para ' + area);
+  alvo.regras.push(regra);
+}
+
 export const SEM_AREA = [
+  EXCLUSAO_UE_V2D,
   {
     estudos: ['oe-2026'],
     id: /^nato-(?:compromisso-(?:gales-2014|haia-2035|haia-essencial-2035)|cimeira-haia-2025)$/,
@@ -716,7 +724,7 @@ export const SEM_AREA = [
   },
   {
     estudos: ['oe-2027'],
-    id: /^(?:oe-2027-(?:saude|ppp|cenario)-|afirmacao-(?:leitao-amaro-saude|pcp-ppp-rodoviarias|rtp-saude-queda)-oe2027-)/,
+    id: EXCLUSAO_V2A_SEM_V2D,
     assunto: 'Fontes da vigilância do Orçamento do Estado para 2027, bloco V2-a',
     motivo: 'O V2-a sela células e afirmações para o livro-razão. A página da vigilância e a comparação destas fontes pertencem ao V2-b; este bloco não distribui as afirmações por áreas ministeriais.',
   },

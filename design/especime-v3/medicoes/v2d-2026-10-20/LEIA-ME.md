@@ -39,6 +39,9 @@ O inventário final contém 135 linhas com porta para os itens, das quais 119 ch
 | definições dos recibos, cobertura e K17 | 0; 126 linhas, 252 nomes e 252 frases nas duas edições |
 | segunda construção | 1: o título perdia as marcas dos tokens ao ser renderizado; restantes passos não executados (125) |
 | títulos ancorados, plantas | 0, 16 ensaios nas duas edições |
+| terceira construção | 1: HTML dos títulos aprovado; check:areas encontrou 103 linhas sem assunto declarado; restantes passos do perfil não executados (125) |
+| cobertura das novas linhas por assunto | 0, 65 Saúde, 58 Finanças e três agregados UE explicitamente excluídos |
+| diagnóstico posterior ao índice de áreas | formas, lugares, país, nomes, formato, navegação e sinais: 0; voz e língua exigem reconstrução após atualização dos inventários |
 
 Capturas ainda não executadas.
 
@@ -175,6 +178,30 @@ Antes: O título era resolvido como texto simples nos vários pontos de entrada,
 Depois: Os pontos de entrada renderizam os pedaços do título e conservam a ligação de cada número à sua linha. No título do artigo há selos; as ligações de navegação levam ao artigo e são conferidas contra o destino, o título completo e os tokens, sem ligações aninhadas.
 
 O portão de HTML recusou os números sem ligação; as percentagens são medições e não podem receber uma isenção de texto estrutural.
+
+### V2D-23: Cobertura por matérias e língua das fontes
+
+Antes: As novas linhas estavam sem assunto declarado ou numa exclusão provisória, e os novos títulos não tinham língua declarada.
+
+Depois: 65 linhas pertencem à Saúde e 58 às Finanças; os três agregados da União ficam excluídos individualmente da cobertura nacional. Foram acrescentadas 37 declarações de língua dos títulos e localizadores.
+
+As comparações orçamentais entre programas e os encargos das parcerias pertencem à política financeira do Estado. Não se alargaram matérias legais de água ou administração eleitoral para acomodar totais de outros programas.
+
+### V2D-24: Recibos acessíveis a partir de excertos e períodos
+
+Antes: Quatro linhas, nas duas edições, não tinham porta direta para o recibo: três eram citadas apenas pelo excerto e uma apenas pelo ano.
+
+Depois: Nos parágrafos da discussão, os excertos conservam a ligação à fonte e recebem o selo do recibo; os períodos ligam ao recibo da linha.
+
+A célula exige acesso às provas de todas as linhas citadas. O comportamento é específico dos parágrafos da discussão e não acrescenta prosa sobre o método.
+
+### V2D-25: Inventário da voz
+
+Antes: O inventário conservava frases substituídas e não declarava os novos parágrafos e títulos.
+
+Depois: A medição do HTML recolheu 66 cadeias novas, 60 de conteúdo e seis de navegação, e retirou 44 declarações que deixaram de se render.
+
+A exceção contextual inglesa «years with completed execution» descreve anos de execução orçamental concluída, não a completude do sítio; fica limitada à discussão. A leitura cruzada das novas frases continua atribuída à direção.
 
 ## Valores lidos do livro selado
 

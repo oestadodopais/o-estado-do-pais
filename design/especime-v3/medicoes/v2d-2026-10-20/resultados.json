@@ -17,6 +17,9 @@
     "typecheck após guarda de componentes": 0,
     "definições dos recibos, cobertura e K17": "0; 126 linhas, 252 nomes e 252 frases nas duas edições",
     "segunda construção": "1: o título perdia as marcas dos tokens ao ser renderizado; restantes passos não executados (125)",
-    "títulos ancorados, plantas": "0, 16 ensaios nas duas edições"
+    "títulos ancorados, plantas": "0, 16 ensaios nas duas edições",
+    "terceira construção": "1: HTML dos títulos aprovado; check:areas encontrou 103 linhas sem assunto declarado; restantes passos do perfil não executados (125)",
+    "cobertura das novas linhas por assunto": "0, 65 Saúde, 58 Finanças e três agregados UE explicitamente excluídos",
+    "diagnóstico posterior ao índice de áreas": "formas, lugares, país, nomes, formato, navegação e sinais: 0; voz e língua exigem reconstrução após atualização dos inventários"
   }
 }

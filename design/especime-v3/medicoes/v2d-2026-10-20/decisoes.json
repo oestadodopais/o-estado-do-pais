@@ -110,5 +110,26 @@
     "antes": "O título era resolvido como texto simples nos vários pontos de entrada, perdendo as marcas dos valores e do período.",
     "depois": "Os pontos de entrada renderizam os pedaços do título e conservam a ligação de cada número à sua linha. No título do artigo há selos; as ligações de navegação levam ao artigo e são conferidas contra o destino, o título completo e os tokens, sem ligações aninhadas.",
     "razao": "O portão de HTML recusou os números sem ligação; as percentagens são medições e não podem receber uma isenção de texto estrutural."
+  },
+  {
+    "id": "V2D-23",
+    "tema": "Cobertura por matérias e língua das fontes",
+    "antes": "As novas linhas estavam sem assunto declarado ou numa exclusão provisória, e os novos títulos não tinham língua declarada.",
+    "depois": "65 linhas pertencem à Saúde e 58 às Finanças; os três agregados da União ficam excluídos individualmente da cobertura nacional. Foram acrescentadas 37 declarações de língua dos títulos e localizadores.",
+    "razao": "As comparações orçamentais entre programas e os encargos das parcerias pertencem à política financeira do Estado. Não se alargaram matérias legais de água ou administração eleitoral para acomodar totais de outros programas."
+  },
+  {
+    "id": "V2D-24",
+    "tema": "Recibos acessíveis a partir de excertos e períodos",
+    "antes": "Quatro linhas, nas duas edições, não tinham porta direta para o recibo: três eram citadas apenas pelo excerto e uma apenas pelo ano.",
+    "depois": "Nos parágrafos da discussão, os excertos conservam a ligação à fonte e recebem o selo do recibo; os períodos ligam ao recibo da linha.",
+    "razao": "A célula exige acesso às provas de todas as linhas citadas. O comportamento é específico dos parágrafos da discussão e não acrescenta prosa sobre o método."
+  },
+  {
+    "id": "V2D-25",
+    "tema": "Inventário da voz",
+    "antes": "O inventário conservava frases substituídas e não declarava os novos parágrafos e títulos.",
+    "depois": "A medição do HTML recolheu 66 cadeias novas, 60 de conteúdo e seis de navegação, e retirou 44 declarações que deixaram de se render.",
+    "razao": "A exceção contextual inglesa «years with completed execution» descreve anos de execução orçamental concluída, não a completude do sítio; fica limitada à discussão. A leitura cruzada das novas frases continua atribuída à direção."
   }
 ]

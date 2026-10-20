@@ -10,12 +10,13 @@
  * do projeto da linha. Nenhum pedaço de texto traz um algarismo: o resolvedor recusa-o antes de chegar aqui.
  */
 import Claim from '../Claim.astro';
+import Provenance from '../Provenance.astro';
 import CampoDaLinha from '../CampoDaLinha.astro';
 import { getClaim } from '../../lib/ledger.mjs';
 import { routePath } from '../../lib/routes.mjs';
 import DataDaLinha from '../DataDaLinha.astro';
 
-const { partes, lang = 'pt', selos = true } = Astro.props;
+const { partes, lang = 'pt', selos = true, recibos = false } = Astro.props;
 ---
 
 {
@@ -23,12 +24,12 @@ const { partes, lang = 'pt', selos = true } = Astro.props;
     if (typeof p === 'string') return <Fragment set:text={p} />;
     if (p.literal) {
       const l = p.literal;
-      return <a class="discussao-literal" href={l.campo === 'excerpt' ? getClaim(l.id).source_url : routePath('linha', lang, {slug:l.id})} data-discussao-literal={l.campo}><CampoDaLinha id={l.id} campo={l.campo} valor={l.texto} lang={lang} lingua={l.lingua} /></a>;
+      return <Fragment><a class="discussao-literal" href={l.campo === 'excerpt' ? getClaim(l.id).source_url : routePath('linha', lang, {slug:l.id})} data-discussao-literal={l.campo}><CampoDaLinha id={l.id} campo={l.campo} valor={l.texto} lang={lang} lingua={l.lingua} /></a>{recibos && selos && l.campo === 'excerpt' && <Provenance id={l.id} lang={lang} />}</Fragment>;
     }
     if (p.verbatim) return <span data-verbatim={p.verbatim} set:text={p.texto} />;
     if (p.termo) return <span lang={p.lingua} set:text={p.termo} />;
     if (p.claim) return <Claim id={p.claim} lang={lang} chip={selos} sufixo={p.sufixo ?? ''} />;
-    if (p.data) return <DataDaLinha id={p.data.id} campo={p.data.campo} valor={p.data.valor} lang={lang} />;
+    if (p.data) return recibos && selos ? <a class="discussao-periodo" data-discussao-periodo={p.data.id} href={routePath('linha', lang, {slug:p.data.id})}><DataDaLinha id={p.data.id} campo={p.data.campo} valor={p.data.valor} lang={lang} /></a> : <DataDaLinha id={p.data.id} campo={p.data.campo} valor={p.data.valor} lang={lang} />;
     return <span class="explicacao-nome" data-explicacao-nome={p.nome.id} set:text={p.nome.texto} />;
   })
 }

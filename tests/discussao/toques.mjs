@@ -15,7 +15,7 @@ export async function conferirToques(abre, origem) {
    await pagina.locator('[data-discussao-integracao="saude-no-orcamento"] a').click();
    if(new URL(pagina.url()).hash!=='#saude-no-orcamento')throw Error('V2B toques: a explicação não chegou ao item');
    resultados.push({lang,de:'explicação',para:'saude-no-orcamento',toques:1});
-   const portas=await pagina.locator('[data-discussao] .src-chip, [data-discussao] a[data-discussao-literal="attributed_to"]').evaluateAll(ns=>[...new Set(ns.map(n=>n.getAttribute('href')))]);
+   const portas=await pagina.locator('[data-discussao] .src-chip, [data-discussao] a[data-discussao-literal="attributed_to"], [data-discussao] a[data-discussao-periodo]').evaluateAll(ns=>[...new Set(ns.map(n=>n.getAttribute('href')))]);
    for(const href of portas){
     if(!href)throw Error('V2B toques: selo sem destino');
     await pagina.goto(origem+discussao);

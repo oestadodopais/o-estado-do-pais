@@ -94,7 +94,7 @@ export function conferirPagina(root,lang,linhas=loadClaims(),dist=process.env.OE
   const recolhe=x=>{if(Array.isArray(x))x.forEach(recolhe);else if(x&&typeof x==='object')for(const [k,v] of Object.entries(x)){if(['claim','literal','periodo','nome'].includes(k)&&typeof v==='string')citadas.add(v);else recolhe(v);}};
   recolhe(e);
   for(const id of citadas){
-   if(!a.querySelectorAll('a').some(n=>n.getAttribute('href')===recibo(id,lang)))erros.push('V2B recibo: linha citada sem porta direta para o recibo');
+   if(!a.querySelectorAll('a').some(n=>n.getAttribute('href')===recibo(id,lang)))erros.push(`V2B recibo: ${id} sem porta direta para o recibo`);
    const componentes=linhas.get(id)?.derived_from??[];
    if(componentes.length){
     const ficheiro=path.join(dist,recibo(id,lang),'index.html');
@@ -124,7 +124,7 @@ export function conferirInicio(root,lang){
 }
 export function conferirIntegracao(root,lang,pagina,linhas=loadClaims()){
  const erros=[];const main=root.querySelector('main');if(!main)return erros;
- const ids=new Set(main.querySelectorAll('[data-claim],[data-linha-claim],[data-de-linha],[data-explicacao-nome]').filter(n=>!n.closest('[data-discussao-integracao]')).map(n=>n.getAttribute('data-claim')??n.getAttribute('data-linha-claim')??n.getAttribute('data-de-linha')??n.getAttribute('data-explicacao-nome')));
+ const ids=new Set(main.querySelectorAll('[data-claim],[data-linha-claim],[data-de-linha],[data-explicacao-nome]').filter(n=>!n.closest('[data-discussao-integracao],[data-discussao-inicio],[data-discussao-porta],[data-discussao-titulo]')).map(n=>n.getAttribute('data-claim')??n.getAttribute('data-linha-claim')??n.getAttribute('data-de-linha')??n.getAttribute('data-explicacao-nome')));
  const tematica=pagina===`explicacoes/dinheiro-do-estado-2026/index.html`||pagina===`en/explainers/dinheiro-do-estado-2026/index.html`;
  const esperados=ITENS.filter(e=>[...linhasDaExplicacao(e,linhas)].some(id=>ids.has(id))||(tematica&&e.slug==='saude-no-orcamento'));
  const portas=main.querySelectorAll('[data-discussao-integracao]');

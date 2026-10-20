@@ -43,6 +43,16 @@
 
 /** `pt` ou `en`, para cada título distinto do campo `document.title`. */
 export const LINGUA_DOS_TITULOS = {
+  // V2-d: cadeias conferidas nos corpos portugueses e na API inglesa do Eurostat.
+  "Sobre o Orçamento do Estado para 2027": "pt",
+  "OE 2027: Um assalto às nossas vidas. É preciso romper com esta política e abrir um novo rumo para Portugal": "pt",
+  "Síntese da execução orçamental, agosto de 2026": "pt",
+  "Health care expenditure by financing scheme": "en",
+  "PPP: liquidos rodoviários": "pt",
+  "Saúde: despesa total consolidada executada": "pt",
+  "Saúde: despesa total consolidada": "pt",
+  "Relatório UTAO n.º 17/2026: Apreciação preliminar da Proposta de Orçamento do Estado para 2027": "pt",
+
   "Defence investment and NATO's 5% commitment": 'en',
   'Defence Investment of NATO Countries (2014-2026)': 'en',
   // V2-a: línguas lidas nos documentos alojados.
@@ -226,6 +236,24 @@ export function linguaDoTituloDoDocumento(titulo, lang = 'pt') {
 
 /** `pt` ou `en`, para cada rótulo distinto do campo `name`. */
 export const LINGUA_DOS_ROTULOS = {
+  // V2-d: cadeias conferidas nos corpos portugueses e na API inglesa do Eurostat.
+  "015 - Saúde": "pt",
+  "Serviço Nacional de Saúde": "pt",
+  "Aquisição de bens e serviços": "pt",
+  "Fundos Europeus": "pt",
+  "Receitas de Impostos": "pt",
+  "Receitas Próprias": "pt",
+  "Investimento": "pt",
+  "Outras despesas correntes": "pt",
+  "Despesas com o pessoal": "pt",
+  "Transferências de capital": "pt",
+  "TRANSFERÊNCIAS SERVIÇO NACIONAL DE SAÚDE": "pt",
+  "Ferroviário": "pt",
+  "Despesa Total Consolidada": "pt",
+  "Despesa total consolidada (1)": "pt",
+  "Despesa efetiva (consolidação intra PO/PL)": "pt",
+  "Health care expenditure by financing scheme": "en",
+
   '2014 Wales Summit': 'en',
   'The 5% Hague defence commitment': 'en',
   'Core defence requirements': 'en',
@@ -448,6 +476,11 @@ export function linguaDoRotuloDaFonte(rotulo, lang = 'pt') {
 
 /** `pt` ou `en`, para cada valor distinto do campo `source`. */
 export const LINGUA_DAS_FONTES = {
+  // V2-d: cadeias conferidas nos corpos portugueses e na API inglesa do Eurostat.
+  "Paula Santos": "pt",
+  "Paulo Raimundo": "pt",
+  "UTAO": "pt",
+
   'NATO': 'en',
   // V2-a: línguas lidas nos documentos alojados.
   "RTP": 'pt',
@@ -542,6 +575,12 @@ export function linguaDaFonte(fonte, lang = 'pt') {
 
 /** `pt`, `en`, ou `null` para uma edição que não está em língua nenhuma. */
 export const LINGUA_DAS_EDICOES = {
+  // V2-d: cadeias conferidas nos corpos portugueses e na API inglesa do Eurostat.
+  "2026-10-12": null,
+  "2022": null,
+  "2023": null,
+  "2020": null,
+
   "2026-10-15": null, // Data da cópia alojada da página da NATO.
   // V2-a: línguas lidas nos documentos alojados.
   "2026-10-09": null,
@@ -689,6 +728,14 @@ export function linguaDaEdicao(edicao, lang = 'pt') {
 
 /** EX3: localizadores lidos nas folhas inglesas da NATO, declarados por inteiro. */
 export const LINGUA_DOS_LOCALIZADORES = {
+  // V2-d: cadeias conferidas nos corpos portugueses e na API inglesa do Eurostat.
+  "freq=A; unit=EUR_HAB; icha11_hf=TOT_HF; geo=EU27_2020; time=2024; value[4]": "en",
+  "freq=A; unit=EUR_HAB; icha11_hf=TOT_HF; geo=PT; time=2024; value[136]": "en",
+  "freq=A; unit=PC_GDP; icha11_hf=HF1; geo=EU27_2020; time=2024; value[508]": "en",
+  "freq=A; unit=PC_GDP; icha11_hf=HF1; geo=PT; time=2024; value[640]": "en",
+  "freq=A; unit=PC_GDP; icha11_hf=TOT_HF; geo=EU27_2020; time=2024; value[340]": "en",
+  "freq=A; unit=PC_GDP; icha11_hf=TOT_HF; geo=PT; time=2024; value[472]": "en",
+
   '2014 Wales Summit': 'en',
   'The 5% Hague defence commitment': 'en',
   'Core defence requirements': 'en',
