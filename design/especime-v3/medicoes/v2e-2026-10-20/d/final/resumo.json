@@ -1,0 +1,57 @@
+{
+  "cabeca": "048b033fd006caf8acdeb159a462383297c84125",
+  "motor": "8f88bfea65f4017c782f8160fc4b508f2dceb369",
+  "codigos": {
+    "build": 0,
+    "verify": 0,
+    "typecheck": 0,
+    "motor": 0,
+    "series": 0,
+    "cruzamento": 0,
+    "inventario": 0,
+    "capturas": 0,
+    "planta-selos": 0,
+    "cabeca-regua": 0,
+    "planta-regua": 1
+  },
+  "capturas": 40,
+  "recortes": 40,
+  "transbordos": [],
+  "plantas": 22,
+  "controlos": 22,
+  "inventario": {
+    "cabeca": "048b033fd006caf8acdeb159a462383297c84125",
+    "nao_classificados": 0,
+    "declaracoes": {
+      "total": 2182,
+      "vivas": 1105,
+      "retiradas": 1077,
+      "rendidas": 3482,
+      "sem_estado": [],
+      "retiradas_sem_razao": [],
+      "rendidas_nas_isentas": 1550,
+      "vivas_que_nao_rendem": [],
+      "retiradas_que_rendem": []
+    },
+    "sha256_medicao": "c35b3fcfa7187c1536af74ca60b89ad2fc05688b36a909dd25a102f4e1bf7cbd"
+  },
+  "recusas": [
+    {
+      "pasta": "d/portoes",
+      "codigos": {
+        "build": 1,
+        "verify": 125,
+        "typecheck": 0
+      }
+    },
+    {
+      "pasta": "d/portoes-inventario",
+      "codigos": {
+        "build": 1,
+        "verify": 125,
+        "typecheck": 0
+      }
+    }
+  ],
+  "itens_importacao_circular_codigo": 13
+}

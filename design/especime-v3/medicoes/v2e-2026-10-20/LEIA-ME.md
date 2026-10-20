@@ -941,17 +941,52 @@ A corrida de `1c84445a5e86039f16a6ee94cd10a8722a935a85` saiu com `build=0`, `ver
 
 ### Decisões
 
-- **V2E-59.** A frase dos médicos identifica os vinte e sete Estados-membros como o grupo da comparação, nas duas edições. A nota dos três recibos distingue esse grupo do conjunto alojado, que inclui outros países, e conserva a ausência de valor da Eslováquia. «Com dados» seleciona os membros com valor; não afirma que todos os membros tenham valor.
-- **V2E-60.** A planta da régua `unidadesDepoisDoSelo` altera uma cópia dos itens antes da construção: retira `sufixo` de um token de valor e insere a unidade nas palavras seguintes. O Astro constrói o parágrafo pelo componente real `FraseDaExplicacao`; só depois a régua lê o HTML. Os controlos conservam a unidade no sufixo. A planta passa a fazer parte de `check:discussao`.
-- **V2E-61.** A corrida completa, o cruzamento com a origem, as séries, o inventário e as capturas de entrega ficam em `d/`, dentro desta pasta. A cabeça verificada é o último commit que altera código ou dados. O commit posterior incorpora apenas o relatório e as provas dessa cabeça; não se atribui retroativamente o seu identificador à corrida. A identidade do código entregue é verificável pela ausência de diferenças fora desta pasta entre a cabeça dos portões e o commit de incorporação das provas.
+- **V2E-59.** A frase dos médicos identifica os vinte e sete Estados-membros como o grupo da comparação, nas duas edições. Os três recibos dizem que o conjunto alojado inclui outros países e conservam a ausência de valor da Eslováquia. O cubo alojado tem 37 países; 26 dos 27 membros têm valor para a categoria e o ano comparados. A conferência está em [medicos.json](d/final/medicos.json).
+- **V2E-60.** A planta altera uma cópia dos itens antes de construir: retira `sufixo` de um token de valor e põe a unidade nas palavras seguintes. O Astro constrói o parágrafo pelo componente real `FraseDaExplicacao`; `unidadesDepoisDoSelo` mede esse HTML. Os controlos conservam a unidade no sufixo. Esta planta faz parte de `check:discussao`.
+- **V2E-61.** Os registos da entrega ficam no repositório. A cabeça identificada abaixo é o último commit que altera código, dados ou inventário da prosa. O commit posterior incorpora apenas este relatório e as provas. Não se atribui retroativamente o seu identificador à corrida: a igualdade do código entregue é conferida por `d/conferir-identidade.mjs`, que recusa qualquer diferença fora desta pasta entre a cabeça dos portões e a entrega.
+- **V2E-62.** A primeira corrida recusou as duas declarações antigas do inventário. As declarações vivas passam a coincidir com as novas frases. A recusa conserva `build=1`, `verify=125` (não executado) e `typecheck=0` em [d/portoes](d/portoes). O motor dessa corrida é a cabeça final do motor e passou o `core.gate`; só o sítio mudou depois, pelo que os seus portões foram repetidos integralmente.
+- **V2E-63.** O ensaio pela entrada habitual dos itens revelou uma importação circular na primeira ligação da planta (`Detected unsettled top-level await`, código 13). A célula passa a entregar diretamente a função da régua à planta. A repetição de preparação deu código 0, com 706 plantas em 706. As recusas e as repetições de preparação estão em `d/entrega/`; os resultados finais estão em `d/final/`.
 
-### Provas da preparação
+- **V2E-64.** A segunda corrida recusou a falta de entrada do bloco `v2e-d` no registo de revisões do inventário. A entrada foi acrescentada como «por ler», sem inventar uma leitura cruzada. A recusa está em `d/portoes-inventario/`; as medições dessa cabeça e o portão da voz reposto estão em `d/ensaio-inventario/`.
 
-A planta construída deu 22 casos vermelhos e 22 controlos verdes: [planta-selos.json](d/planta-selos.json), [HTML construído](d/planta-selos.html) e [registo](d/planta-selos.log). O guião está em `tests/discussao/planta-selos.mjs` e a cópia dos itens é construída em `tests/discussao/planta-selos/pages/index.astro`.
+### As duas frases tal como renderizam
 
-A primeira exportação foi recusada por `ModuleNotFoundError: No module named 'publisher'`; a repetição pelo módulo Python passou. Os registos estão em [exportacao.log](d/exportacao.log) e [exportacao-repetida.log](d/exportacao-repetida.log).
+**PT:** Portugal tinha 431,35 médicos em exercício por cem mil habitantes em 2024, entre a Bélgica, com o valor mais baixo dos vinte e sete Estados-membros com dados (334,25), e a Grécia, com o mais alto (626,89).
 
-- **V2E-62.** A primeira corrida do sítio recusou as duas declarações antigas do inventário da prosa. As declarações vivas passam a coincidir com as duas frases construídas. A tentativa recusada conserva `build=1`, `verify=125` (não executado) e `typecheck=0` em `d/portoes/`; não é uma prova verde.
-- **V2E-63.** O ensaio pela entrada habitual dos itens revelou uma importação circular na primeira ligação da planta (`Detected unsettled top-level await`, código 13). A célula passa a entregar diretamente a função da régua à planta construída. A repetição pela entrada habitual deu código 0, com 706 plantas em 706; o inventário reposto deu zero frases sem classe e zero declarações vivas ausentes. São ensaios de preparação, anteriores à nova cabeça e à repetição dos portões.
+**EN:** Portugal had 431,35 practising physicians per hundred thousand inhabitants in 2024, between Belgium, with the lowest value among the twenty-seven member states with data (334,25), and Greece, with the highest (626,89).
 
-- **V2E-64.** A segunda corrida recusou a falta de registo de revisão do bloco `v2e-d`. A entrada é acrescentada com estado «por ler», sem declarar uma leitura cruzada que não ocorreu. Os códigos recusados ficam em `d/portoes-inventario/` e as medições dessa cabeça em `d/ensaio-inventario/`.
+O HTML, os seus resumos SHA-256 e a conferência das notas dos seis recibos estão em [frases-renderizadas.json](d/final/frases-renderizadas.json).
+
+### Portões da entrega
+
+Cabeça do sítio: `048b033fd006caf8acdeb159a462383297c84125`. Cabeça do motor: `8f88bfea65f4017c782f8160fc4b508f2dceb369`. As cabeças de início e fim coincidem nos respetivos registos.
+
+| Conferência | Código | Registo |
+| --- | ---: | --- |
+| `build` | 0 | [build.codigo](d/portoes-final/build.codigo), [build.log](d/portoes-final/build.log) |
+| `verify` | 0 | [verify.codigo](d/portoes-final/verify.codigo), [verify.log](d/portoes-final/verify.log), [verify.json](d/portoes-final/verify.json) |
+| `typecheck` | 0 | [typecheck.codigo](d/portoes-final/typecheck.codigo), [typecheck.log](d/portoes-final/typecheck.log) |
+| `check:series`, com `RESEARCHHUB_DIR` | 0 | [series.codigo](d/final/series.codigo), [series.log](d/final/series.log), [series.json](d/final/series.json) |
+| `check:cruzamento --with-origin` | 0 | [cruzamento.codigo](d/final/cruzamento.codigo), [cruzamento.log](d/final/cruzamento.log) |
+| `core.gate` do motor | 0 | [motor.codigo](d/portoes/motor.codigo), [motor.cabeca](d/portoes/motor.cabeca), [motor.log](d/portoes/motor.log) |
+| Inventário da prosa | 0 | [inventario.codigo](d/final/inventario.codigo), [inventario.log](d/final/inventario.log), [inventario.json](d/final/inventario.json) |
+| Capturas pelo escrivão | 0 | [capturas.codigo](d/final/capturas.codigo), [capturas.log](d/final/capturas.log), [manifesto](d/final/capturas/capturas.json) |
+
+O `verify` usa a forma dos portões: a união conferida dos passos do build e dos restantes passos da cadeia completa de `npm run verify`, com prova da cabeça e da imutabilidade. O inventário final tem 0 frases sem classe e 0 declarações vivas ausentes. O cruzamento deu o aviso de reconstrução do livro do Orçamento; a conferência byte a byte das linhas e dos ficheiros atravessados passou.
+
+As capturas abrangem as duas edições da discussão e dos três recibos, nas cinco larguras habituais: 40 páginas completas e 40 recortes, sem transbordo horizontal. A leitura visual está em [inspecao-visual.json](d/final/inspecao-visual.json). Cada recorte coincide, píxel a píxel, com a sua caixa na captura completa, como regista [recortes-prova.json](d/final/recortes-prova.json). Os PNG ficam nesta pasta e são ignorados pelo repositório; o manifesto comitado conserva os seus nomes, dimensões e resumos SHA-256.
+
+### A planta da régua dos selos
+
+A construção da cópia dos dados deu código 0. A régua sobre o HTML plantado deu código **1**; sobre as duas páginas limpas da cabeça entregue deu código **0**. Há 22 plantas vermelhas e 22 controlos verdes.
+
+O guião está em `tests/discussao/planta-selos.mjs`; a cópia dos itens, em `tests/discussao/planta-selos/pages/index.astro`. O passo que planta o defeito é:
+
+```js
+delete tokens[i].sufixo;
+tokens.splice(i + 1, 0, ' ' + unidade + '; ');
+```
+
+Provas: [HTML construído](d/final/planta-selos.html), [casos e controlos](d/final/planta-selos.json), [planta-regua.codigo](d/final/planta-regua.codigo), [planta-regua.log](d/final/planta-regua.log), [cabeca-regua.codigo](d/final/cabeca-regua.codigo) e [cabeca-regua.log](d/final/cabeca-regua.log). O [resumo](d/final/resumo.json) reúne os códigos efetivamente lidos.
+
+A primeira exportação falhou por `ModuleNotFoundError`; a repetição pelo módulo Python passou. O primeiro guião de inventário falhou por importar diretamente um caminho interno inexistente do pacote; passou a importar a entrada pública. Esses erros de preparação ficam registados e não são apresentados como provas verdes. Não houve push.

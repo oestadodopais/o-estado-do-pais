@@ -1,0 +1,1155 @@
+{
+  "cabeca": "048b033fd006caf8acdeb159a462383297c84125",
+  "capturador_sha256": "909d23e15ab7fcb8bf855152503900aaeff0579b8b62da7aa1f1311b1268ecb1",
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "resultados": [
+    {
+      "ficheiro": "discussao-pt-390.png",
+      "rota": "/o-que-se-discute/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 16640,
+      "sha256": "8a878ee799944065ac37c9feee2a92f4ff42984f3ec5776402e3e9dc57f17426",
+      "recortes": [
+        {
+          "ficheiro": "discussao-pt-390-medicos.png",
+          "seletor": "#saude-no-orcamento [data-discussao-paragrafo=\"seccoes[1].conteudo[6].paragrafo\"]",
+          "origem": "discussao-pt-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 2842,
+            "width": 354,
+            "height": 416
+          },
+          "sha256": "ecbcc5916866a1070c9b44c0565be38e4a76e8d41a2d9e9a223edf106c852c78"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "discussao-pt-768.png",
+      "rota": "/o-que-se-discute/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 11705,
+      "sha256": "a8550c6afaeb7d509f8cb07ac1ba611fa8fc2e9dcdb65bde65c1fc4982d6d897",
+      "recortes": [
+        {
+          "ficheiro": "discussao-pt-768-medicos.png",
+          "seletor": "#saude-no-orcamento [data-discussao-paragrafo=\"seccoes[1].conteudo[6].paragrafo\"]",
+          "origem": "discussao-pt-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 2148,
+            "width": 529,
+            "height": 278
+          },
+          "sha256": "7d1e71cb4d8dc34462c6c0d981a623058a2107ca33a320f2264a2bb29c4e4107"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "discussao-pt-1024.png",
+      "rota": "/o-que-se-discute/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 11792,
+      "sha256": "1e8eefdaaf511044712c22c130705929e9efda7b0df99148e1cb70fc81314024",
+      "recortes": [
+        {
+          "ficheiro": "discussao-pt-1024-medicos.png",
+          "seletor": "#saude-no-orcamento [data-discussao-paragrafo=\"seccoes[1].conteudo[6].paragrafo\"]",
+          "origem": "discussao-pt-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 2211,
+            "width": 529,
+            "height": 277
+          },
+          "sha256": "ab35094425be2f31879c2b4df21880311339b3d7a51352e667562dcf730251d6"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "discussao-pt-1280.png",
+      "rota": "/o-que-se-discute/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 11894,
+      "sha256": "8ababc4bdd626d111de7c94ed6d4b6a17ad8188735f659e1bab38310125bd94f",
+      "recortes": [
+        {
+          "ficheiro": "discussao-pt-1280-medicos.png",
+          "seletor": "#saude-no-orcamento [data-discussao-paragrafo=\"seccoes[1].conteudo[6].paragrafo\"]",
+          "origem": "discussao-pt-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 2229,
+            "width": 528,
+            "height": 278
+          },
+          "sha256": "ec3095120e9e6a5aa225569f32b6a60d1152a3c69493cbbc1ee1b49feec308e6"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "discussao-pt-1600.png",
+      "rota": "/o-que-se-discute/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 11930,
+      "sha256": "5485687213f6f4759b332df35db9209250c78c44188e50fc83a34b303346b0e1",
+      "recortes": [
+        {
+          "ficheiro": "discussao-pt-1600-medicos.png",
+          "seletor": "#saude-no-orcamento [data-discussao-paragrafo=\"seccoes[1].conteudo[6].paragrafo\"]",
+          "origem": "discussao-pt-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 2235,
+            "width": 528,
+            "height": 278
+          },
+          "sha256": "ec3095120e9e6a5aa225569f32b6a60d1152a3c69493cbbc1ee1b49feec308e6"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "discussao-en-390.png",
+      "rota": "/en/under-discussion/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 16365,
+      "sha256": "83bb44fdfe634346c536d9fc5e26784574eac2f9232cbf07a6ff10b3b85574ef",
+      "recortes": [
+        {
+          "ficheiro": "discussao-en-390-medicos.png",
+          "seletor": "#saude-no-orcamento [data-discussao-paragrafo=\"seccoes[1].conteudo[6].paragrafo\"]",
+          "origem": "discussao-en-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 2815,
+            "width": 354,
+            "height": 415
+          },
+          "sha256": "33bc90654fbcf3f44da160e6f94445132ca9560c100643eb435d2623f236636d"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "discussao-en-768.png",
+      "rota": "/en/under-discussion/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 11457,
+      "sha256": "23de402ccfd9a62cd0a8320c199f58004ec5aaf68615da4b80c425ac20df6b14",
+      "recortes": [
+        {
+          "ficheiro": "discussao-en-768-medicos.png",
+          "seletor": "#saude-no-orcamento [data-discussao-paragrafo=\"seccoes[1].conteudo[6].paragrafo\"]",
+          "origem": "discussao-en-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 2121,
+            "width": 529,
+            "height": 277
+          },
+          "sha256": "0f972da7473eab38fe30882d1f292c1375c794ca2b9d7f5fa0a972688f06e8b1"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "discussao-en-1024.png",
+      "rota": "/en/under-discussion/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 11545,
+      "sha256": "d543059caa38328ce626ff9cad23354dfbc64cfc26e4f20803e95e97acd29260",
+      "recortes": [
+        {
+          "ficheiro": "discussao-en-1024-medicos.png",
+          "seletor": "#saude-no-orcamento [data-discussao-paragrafo=\"seccoes[1].conteudo[6].paragrafo\"]",
+          "origem": "discussao-en-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 2185,
+            "width": 529,
+            "height": 278
+          },
+          "sha256": "28f3024e964f423752111263d620eab3a5a4e190c96a6f5fe76e53b84cc71ca6"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "discussao-en-1280.png",
+      "rota": "/en/under-discussion/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 11647,
+      "sha256": "db75c0b270229f1dbe416d4429acb61c35186936dab6fc03d08c84d4d459274d",
+      "recortes": [
+        {
+          "ficheiro": "discussao-en-1280-medicos.png",
+          "seletor": "#saude-no-orcamento [data-discussao-paragrafo=\"seccoes[1].conteudo[6].paragrafo\"]",
+          "origem": "discussao-en-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 2204,
+            "width": 528,
+            "height": 277
+          },
+          "sha256": "3bd837bcf73c0c05600006e86f5c8bfc4e33e4df9591c5ab77fd19109b66fa38"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "discussao-en-1600.png",
+      "rota": "/en/under-discussion/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 11684,
+      "sha256": "542498d06f62f04e42faaa7b437015d6b54e7c5beb25d46a2c04c93e4c9e5884",
+      "recortes": [
+        {
+          "ficheiro": "discussao-en-1600-medicos.png",
+          "seletor": "#saude-no-orcamento [data-discussao-paragrafo=\"seccoes[1].conteudo[6].paragrafo\"]",
+          "origem": "discussao-en-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 2210,
+            "width": 528,
+            "height": 277
+          },
+          "sha256": "3bd837bcf73c0c05600006e86f5c8bfc4e33e4df9591c5ab77fd19109b66fa38"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "eurostat-pt-phys-pt-390.png",
+      "rota": "/livro-razao/eurostat-pt-phys/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3223,
+      "sha256": "0076892015bfed9280af480d258deb1cde459f6d38afd57382128e455776e46c",
+      "recortes": [
+        {
+          "ficheiro": "eurostat-pt-phys-pt-390-ressalva.png",
+          "seletor": "#ressalva",
+          "origem": "eurostat-pt-phys-pt-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 583,
+            "width": 354,
+            "height": 105
+          },
+          "sha256": "9b685f95050316943b811f22c34bb2bc632f916379c326df9425e9b268baf3c7"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "eurostat-pt-phys-pt-768.png",
+      "rota": "/livro-razao/eurostat-pt-phys/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 2945,
+      "sha256": "94075fc465e64ae67911798e68fd463c89e48209934cc679570f4468935568cc",
+      "recortes": [
+        {
+          "ficheiro": "eurostat-pt-phys-pt-768-ressalva.png",
+          "seletor": "#ressalva",
+          "origem": "eurostat-pt-phys-pt-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 583,
+            "width": 420,
+            "height": 105
+          },
+          "sha256": "1515c2344eb113d0364246a7ab8135f7ca024269c646feb4e091d883821e557c"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "eurostat-pt-phys-pt-1024.png",
+      "rota": "/livro-razao/eurostat-pt-phys/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2207,
+      "sha256": "6b356fea5e38959d09a71bbf5fca3914c112c21bd39682392380bc8b6098604e",
+      "recortes": [
+        {
+          "ficheiro": "eurostat-pt-phys-pt-1024-ressalva.png",
+          "seletor": "#ressalva",
+          "origem": "eurostat-pt-phys-pt-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 589,
+            "width": 420,
+            "height": 105
+          },
+          "sha256": "31683f317702987fd1247917292aa8a4badc5b3c290133113fbb221c71a4c937"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "eurostat-pt-phys-pt-1280.png",
+      "rota": "/livro-razao/eurostat-pt-phys/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2242,
+      "sha256": "0a0cd7e4a01d69b0192ddd14329380cd6e00f3653ebbb6e31cf2b6dad9ee3a9e",
+      "recortes": [
+        {
+          "ficheiro": "eurostat-pt-phys-pt-1280-ressalva.png",
+          "seletor": "#ressalva",
+          "origem": "eurostat-pt-phys-pt-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 600,
+            "width": 419,
+            "height": 106
+          },
+          "sha256": "f186b7337b49b17c9de4b9fa8ed9caf70a72baaa2ccac9ebdc3d650e6bd5279c"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "eurostat-pt-phys-pt-1600.png",
+      "rota": "/livro-razao/eurostat-pt-phys/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2249,
+      "sha256": "33706fb3a2ac5285aa4de9db408d726c4efef72c8850a651a7ea084c88a71690",
+      "recortes": [
+        {
+          "ficheiro": "eurostat-pt-phys-pt-1600-ressalva.png",
+          "seletor": "#ressalva",
+          "origem": "eurostat-pt-phys-pt-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 600,
+            "width": 419,
+            "height": 106
+          },
+          "sha256": "f186b7337b49b17c9de4b9fa8ed9caf70a72baaa2ccac9ebdc3d650e6bd5279c"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "eurostat-pt-phys-en-390.png",
+      "rota": "/en/ledger/eurostat-pt-phys/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3295,
+      "sha256": "2de2eb2fa47f5af160ad52fe24d702ffe464be08af5a1ebc3a43c6868d0b0df0",
+      "recortes": [
+        {
+          "ficheiro": "eurostat-pt-phys-en-390-ressalva.png",
+          "seletor": "#ressalva",
+          "origem": "eurostat-pt-phys-en-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 608,
+            "width": 354,
+            "height": 105
+          },
+          "sha256": "b667c7c6cd73f830d572174fe4a6d2c6fede4aa4fb01a4a5589f65a93af05c10"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "eurostat-pt-phys-en-768.png",
+      "rota": "/en/ledger/eurostat-pt-phys/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 2945,
+      "sha256": "fbe62edf2f819b13fbfe713c73f67fc5ffd75ec71b03fa94243ed1cfe590fc82",
+      "recortes": [
+        {
+          "ficheiro": "eurostat-pt-phys-en-768-ressalva.png",
+          "seletor": "#ressalva",
+          "origem": "eurostat-pt-phys-en-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 583,
+            "width": 420,
+            "height": 105
+          },
+          "sha256": "4300fba8edec40c0d00a49726c3e1b1fed0f5a4cd2d37ac77a7e3cdf344928c3"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "eurostat-pt-phys-en-1024.png",
+      "rota": "/en/ledger/eurostat-pt-phys/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2207,
+      "sha256": "a4064cc9ff9d58c092c036cf2e6a6e18c0564f5fc156346fe3ec3fbcec96c2c4",
+      "recortes": [
+        {
+          "ficheiro": "eurostat-pt-phys-en-1024-ressalva.png",
+          "seletor": "#ressalva",
+          "origem": "eurostat-pt-phys-en-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 589,
+            "width": 420,
+            "height": 105
+          },
+          "sha256": "d70581878361b2f3c21e2c2ae6d0775865a478fddd4ead4b414c0b8b74a0658c"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "eurostat-pt-phys-en-1280.png",
+      "rota": "/en/ledger/eurostat-pt-phys/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2242,
+      "sha256": "3219406c2bb01b096b2eaad0bc6eccd9f377c38c7ad8496ea28631520728ed24",
+      "recortes": [
+        {
+          "ficheiro": "eurostat-pt-phys-en-1280-ressalva.png",
+          "seletor": "#ressalva",
+          "origem": "eurostat-pt-phys-en-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 600,
+            "width": 419,
+            "height": 106
+          },
+          "sha256": "a890c4073c7fec3339a50ece9cf4592681bfed0fb7e8b9177f25ef578c42cb99"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "eurostat-pt-phys-en-1600.png",
+      "rota": "/en/ledger/eurostat-pt-phys/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2249,
+      "sha256": "2157d48f304af50f16a9017e28e1ec7d9bcc382aa1a8bae0099b605c1afb1b6f",
+      "recortes": [
+        {
+          "ficheiro": "eurostat-pt-phys-en-1600-ressalva.png",
+          "seletor": "#ressalva",
+          "origem": "eurostat-pt-phys-en-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 600,
+            "width": 419,
+            "height": 106
+          },
+          "sha256": "a890c4073c7fec3339a50ece9cf4592681bfed0fb7e8b9177f25ef578c42cb99"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "eurostat-be-phys-pt-390.png",
+      "rota": "/livro-razao/eurostat-be-phys/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3223,
+      "sha256": "81fe6b1fed7365d73b3368bfcb6a1dfa752e54615b7359b9a9f5f5bddc0f3111",
+      "recortes": [
+        {
+          "ficheiro": "eurostat-be-phys-pt-390-ressalva.png",
+          "seletor": "#ressalva",
+          "origem": "eurostat-be-phys-pt-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 583,
+            "width": 354,
+            "height": 105
+          },
+          "sha256": "9b685f95050316943b811f22c34bb2bc632f916379c326df9425e9b268baf3c7"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "eurostat-be-phys-pt-768.png",
+      "rota": "/livro-razao/eurostat-be-phys/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 2945,
+      "sha256": "68c587853ac414065ae5b426a75ff3c6d134650615c188ec33942b5b662239a1",
+      "recortes": [
+        {
+          "ficheiro": "eurostat-be-phys-pt-768-ressalva.png",
+          "seletor": "#ressalva",
+          "origem": "eurostat-be-phys-pt-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 583,
+            "width": 420,
+            "height": 105
+          },
+          "sha256": "1515c2344eb113d0364246a7ab8135f7ca024269c646feb4e091d883821e557c"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "eurostat-be-phys-pt-1024.png",
+      "rota": "/livro-razao/eurostat-be-phys/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2207,
+      "sha256": "12c7f416ad1b90fa9d7e23c7158b52ca929275767e97309b05ebdbf5472a3474",
+      "recortes": [
+        {
+          "ficheiro": "eurostat-be-phys-pt-1024-ressalva.png",
+          "seletor": "#ressalva",
+          "origem": "eurostat-be-phys-pt-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 589,
+            "width": 420,
+            "height": 105
+          },
+          "sha256": "31683f317702987fd1247917292aa8a4badc5b3c290133113fbb221c71a4c937"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "eurostat-be-phys-pt-1280.png",
+      "rota": "/livro-razao/eurostat-be-phys/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2242,
+      "sha256": "3ce3d50015e8fe4b8513f344c3bcd6202a2c09acf28f6e1ecaad1120326a7d9a",
+      "recortes": [
+        {
+          "ficheiro": "eurostat-be-phys-pt-1280-ressalva.png",
+          "seletor": "#ressalva",
+          "origem": "eurostat-be-phys-pt-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 600,
+            "width": 419,
+            "height": 106
+          },
+          "sha256": "f186b7337b49b17c9de4b9fa8ed9caf70a72baaa2ccac9ebdc3d650e6bd5279c"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "eurostat-be-phys-pt-1600.png",
+      "rota": "/livro-razao/eurostat-be-phys/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2249,
+      "sha256": "ce62957c58effb2d25229232b2f2954b621b27a40343341b450e9dcbb6e46679",
+      "recortes": [
+        {
+          "ficheiro": "eurostat-be-phys-pt-1600-ressalva.png",
+          "seletor": "#ressalva",
+          "origem": "eurostat-be-phys-pt-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 600,
+            "width": 419,
+            "height": 106
+          },
+          "sha256": "f186b7337b49b17c9de4b9fa8ed9caf70a72baaa2ccac9ebdc3d650e6bd5279c"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "eurostat-be-phys-en-390.png",
+      "rota": "/en/ledger/eurostat-be-phys/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3295,
+      "sha256": "8692144d28a76be83623d73e40f1a1137239bd818829c03268d6b1a86acdb10f",
+      "recortes": [
+        {
+          "ficheiro": "eurostat-be-phys-en-390-ressalva.png",
+          "seletor": "#ressalva",
+          "origem": "eurostat-be-phys-en-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 608,
+            "width": 354,
+            "height": 105
+          },
+          "sha256": "b667c7c6cd73f830d572174fe4a6d2c6fede4aa4fb01a4a5589f65a93af05c10"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "eurostat-be-phys-en-768.png",
+      "rota": "/en/ledger/eurostat-be-phys/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 2945,
+      "sha256": "9a6588714885a2659d1b454743135faa62e95c4fb9874be15240f72656c521dc",
+      "recortes": [
+        {
+          "ficheiro": "eurostat-be-phys-en-768-ressalva.png",
+          "seletor": "#ressalva",
+          "origem": "eurostat-be-phys-en-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 583,
+            "width": 420,
+            "height": 105
+          },
+          "sha256": "4300fba8edec40c0d00a49726c3e1b1fed0f5a4cd2d37ac77a7e3cdf344928c3"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "eurostat-be-phys-en-1024.png",
+      "rota": "/en/ledger/eurostat-be-phys/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2207,
+      "sha256": "fa01a3467ca9deb2f5ccce11912a3db1dc44a00b57054a98b41f3db1bba64162",
+      "recortes": [
+        {
+          "ficheiro": "eurostat-be-phys-en-1024-ressalva.png",
+          "seletor": "#ressalva",
+          "origem": "eurostat-be-phys-en-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 589,
+            "width": 420,
+            "height": 105
+          },
+          "sha256": "d70581878361b2f3c21e2c2ae6d0775865a478fddd4ead4b414c0b8b74a0658c"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "eurostat-be-phys-en-1280.png",
+      "rota": "/en/ledger/eurostat-be-phys/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2242,
+      "sha256": "713160d266c3639d970dd393db6fadf179028ed89b287a488164e35857a2a7c1",
+      "recortes": [
+        {
+          "ficheiro": "eurostat-be-phys-en-1280-ressalva.png",
+          "seletor": "#ressalva",
+          "origem": "eurostat-be-phys-en-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 600,
+            "width": 419,
+            "height": 106
+          },
+          "sha256": "a890c4073c7fec3339a50ece9cf4592681bfed0fb7e8b9177f25ef578c42cb99"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "eurostat-be-phys-en-1600.png",
+      "rota": "/en/ledger/eurostat-be-phys/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2249,
+      "sha256": "ebdab9f537b92607dee67151e91b0a220e95b7890f9e82aea8b673c158c2c5bd",
+      "recortes": [
+        {
+          "ficheiro": "eurostat-be-phys-en-1600-ressalva.png",
+          "seletor": "#ressalva",
+          "origem": "eurostat-be-phys-en-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 600,
+            "width": 419,
+            "height": 106
+          },
+          "sha256": "a890c4073c7fec3339a50ece9cf4592681bfed0fb7e8b9177f25ef578c42cb99"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "eurostat-el-phys-pt-390.png",
+      "rota": "/livro-razao/eurostat-el-phys/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3223,
+      "sha256": "12e34deca289be9bda8f866ef7821be4b4eccddb5c3d95aae2fd689bfca0d9d8",
+      "recortes": [
+        {
+          "ficheiro": "eurostat-el-phys-pt-390-ressalva.png",
+          "seletor": "#ressalva",
+          "origem": "eurostat-el-phys-pt-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 583,
+            "width": 354,
+            "height": 105
+          },
+          "sha256": "9b685f95050316943b811f22c34bb2bc632f916379c326df9425e9b268baf3c7"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "eurostat-el-phys-pt-768.png",
+      "rota": "/livro-razao/eurostat-el-phys/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 2945,
+      "sha256": "2e363bbee66ecc7f9dd00b9b34e242c35f920a10c03fe621910f8fdbdf257bd9",
+      "recortes": [
+        {
+          "ficheiro": "eurostat-el-phys-pt-768-ressalva.png",
+          "seletor": "#ressalva",
+          "origem": "eurostat-el-phys-pt-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 583,
+            "width": 420,
+            "height": 105
+          },
+          "sha256": "1515c2344eb113d0364246a7ab8135f7ca024269c646feb4e091d883821e557c"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "eurostat-el-phys-pt-1024.png",
+      "rota": "/livro-razao/eurostat-el-phys/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2207,
+      "sha256": "dbed09d119eae4930d970fbc10fd04c2f31823b5c3662b80f89174049cf0d6f4",
+      "recortes": [
+        {
+          "ficheiro": "eurostat-el-phys-pt-1024-ressalva.png",
+          "seletor": "#ressalva",
+          "origem": "eurostat-el-phys-pt-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 589,
+            "width": 420,
+            "height": 105
+          },
+          "sha256": "31683f317702987fd1247917292aa8a4badc5b3c290133113fbb221c71a4c937"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "eurostat-el-phys-pt-1280.png",
+      "rota": "/livro-razao/eurostat-el-phys/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2242,
+      "sha256": "5ed9d10df44dcf95e4596fe88ba2dc826830e2c498559a0e8b38f905becfea19",
+      "recortes": [
+        {
+          "ficheiro": "eurostat-el-phys-pt-1280-ressalva.png",
+          "seletor": "#ressalva",
+          "origem": "eurostat-el-phys-pt-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 600,
+            "width": 419,
+            "height": 106
+          },
+          "sha256": "f186b7337b49b17c9de4b9fa8ed9caf70a72baaa2ccac9ebdc3d650e6bd5279c"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "eurostat-el-phys-pt-1600.png",
+      "rota": "/livro-razao/eurostat-el-phys/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2249,
+      "sha256": "a764be3d47aaafdc84dbf6629b0e69170476144fdc96286ed7dabc2f7834978b",
+      "recortes": [
+        {
+          "ficheiro": "eurostat-el-phys-pt-1600-ressalva.png",
+          "seletor": "#ressalva",
+          "origem": "eurostat-el-phys-pt-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 600,
+            "width": 419,
+            "height": 106
+          },
+          "sha256": "f186b7337b49b17c9de4b9fa8ed9caf70a72baaa2ccac9ebdc3d650e6bd5279c"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "eurostat-el-phys-en-390.png",
+      "rota": "/en/ledger/eurostat-el-phys/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3295,
+      "sha256": "89a598c898c7a5132d885a10a30c8b3690a7865bf5af58cbc1eed42929f5645b",
+      "recortes": [
+        {
+          "ficheiro": "eurostat-el-phys-en-390-ressalva.png",
+          "seletor": "#ressalva",
+          "origem": "eurostat-el-phys-en-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 608,
+            "width": 354,
+            "height": 105
+          },
+          "sha256": "b667c7c6cd73f830d572174fe4a6d2c6fede4aa4fb01a4a5589f65a93af05c10"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "eurostat-el-phys-en-768.png",
+      "rota": "/en/ledger/eurostat-el-phys/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 2945,
+      "sha256": "e45d008d41d7b7923fc880068564c34a2cfa6a2416850bea5f5074c79aabe433",
+      "recortes": [
+        {
+          "ficheiro": "eurostat-el-phys-en-768-ressalva.png",
+          "seletor": "#ressalva",
+          "origem": "eurostat-el-phys-en-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 583,
+            "width": 420,
+            "height": 105
+          },
+          "sha256": "4300fba8edec40c0d00a49726c3e1b1fed0f5a4cd2d37ac77a7e3cdf344928c3"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "eurostat-el-phys-en-1024.png",
+      "rota": "/en/ledger/eurostat-el-phys/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2207,
+      "sha256": "9533b62734864972fe6a3202d938f0658cf3c066d5b22aaff2f53fbbc9b18b23",
+      "recortes": [
+        {
+          "ficheiro": "eurostat-el-phys-en-1024-ressalva.png",
+          "seletor": "#ressalva",
+          "origem": "eurostat-el-phys-en-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 589,
+            "width": 420,
+            "height": 105
+          },
+          "sha256": "d70581878361b2f3c21e2c2ae6d0775865a478fddd4ead4b414c0b8b74a0658c"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "eurostat-el-phys-en-1280.png",
+      "rota": "/en/ledger/eurostat-el-phys/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2242,
+      "sha256": "c3c3c3ba5cb6b2f925df4ab43d37907cb2658604200352e73df41a4ac90f3693",
+      "recortes": [
+        {
+          "ficheiro": "eurostat-el-phys-en-1280-ressalva.png",
+          "seletor": "#ressalva",
+          "origem": "eurostat-el-phys-en-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 600,
+            "width": 419,
+            "height": 106
+          },
+          "sha256": "a890c4073c7fec3339a50ece9cf4592681bfed0fb7e8b9177f25ef578c42cb99"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "eurostat-el-phys-en-1600.png",
+      "rota": "/en/ledger/eurostat-el-phys/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2249,
+      "sha256": "1fd2e2ebdb9299a38e9da48369470fd06dac6986442c64d26e0597a8e45ecfd1",
+      "recortes": [
+        {
+          "ficheiro": "eurostat-el-phys-en-1600-ressalva.png",
+          "seletor": "#ressalva",
+          "origem": "eurostat-el-phys-en-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 600,
+            "width": 419,
+            "height": 106
+          },
+          "sha256": "a890c4073c7fec3339a50ece9cf4592681bfed0fb7e8b9177f25ef578c42cb99"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    }
+  ],
+  "recursos": {
+    "version.json": "5782d1e0bec579f93b5492cd593219424d2f518c02fad32fc491657703a10414",
+    "o-que-se-discute/index.html": "5d23c077ad7ccaffb107476da5a369196bccb0e294333292843940c9d5e5f594",
+    "tipos/spectral/Spectral-Regular.woff2": "3c846b032ad614e02ebc439087bbcbb7371cfbdea6c8a4b568efa859537e9c43",
+    "tipos/bitter/Bitter[wght].woff2": "b4ad17520d0ce8bd1aa98af06e07ca94145522f868b5a010732eb5eee3ba2ea0",
+    "_astro/Base.BQy_YmNS.css": "06b4c86e257c2b983d86f36cc39344cbd00581cdc5d4a92bb431772efbdb2220",
+    "js/tema.js": "855bcee3ec1223b43e0f3e9a94c1fbdf1451e53830dcc022962b48e8d3340757",
+    "tipos/spectral-sc/SpectralSC-SemiBold.woff2": "b847fe8f1fe1a862ce15e288958d132940a8204951ef0dbe2c9ad8fd997f29e2",
+    "tipos/spectral/Spectral-Medium.woff2": "34f0ba222c28bc0ea816c693d05c528be4a5ee10c4b1765cdea774c6fb2502c2",
+    "tipos/spectral-sc/SpectralSC-Regular.woff2": "afa69dd2e7aaca2733883133745fd84c18dfac6a08d5999e69705ea7277240b8",
+    "en/under-discussion/index.html": "d902a333668aaf35a84715b2bfefe7f9a7fccc288b7f037ac681968eab6a83c1",
+    "livro-razao/eurostat-pt-phys/index.html": "78fb916f7a50ab4b384c977af5748fdb422e7723c91e7d1bf26db85cb6780b15",
+    "_astro/linha.3Gzj_PkP.css": "c02b8967ab663930fd1ad0a2904b7beef1b14bc2d3c91aec382ee180e3f2d645",
+    "js/copiar-incorporacao.js": "b75e5f90efcd85ea94274191e44a48594932638df67377c0b91ff367df97ca13",
+    "en/ledger/eurostat-pt-phys/index.html": "d5e15c8550c3b490755f2813bf1373a9c97494543a0ca63fcb7b48c91e2b5069",
+    "livro-razao/eurostat-be-phys/index.html": "3ef13c96c361843d8129ce3162b7e077015ce416e9ba359d70bba66521614683",
+    "en/ledger/eurostat-be-phys/index.html": "45792370362abfc7046f01e58960a6293a6ceb6909a31b61b6877d3257207dd9",
+    "livro-razao/eurostat-el-phys/index.html": "6935859c6584167ea4953b5bb9a4317cd99069cb23f189c4b56dd180d041eb5f",
+    "en/ledger/eurostat-el-phys/index.html": "a1bd8ca613d490cc680d7e4dae8426b23b03b4751e126829a99641a511526e50"
+  },
+  "falhas": [],
+  "ok": true
+}

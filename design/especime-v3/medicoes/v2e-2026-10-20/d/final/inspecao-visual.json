@@ -1,0 +1,35 @@
+{
+  "cabeca": "048b033fd006caf8acdeb159a462383297c84125",
+  "recortes_lidos": [
+    {
+      "ficheiro": "discussao-pt-390-medicos.png",
+      "sha256": "ecbcc5916866a1070c9b44c0565be38e4a76e8d41a2d9e9a223edf106c852c78",
+      "observacao": "Texto e valores legíveis, sem corte; o grupo da comparação está explícito."
+    },
+    {
+      "ficheiro": "discussao-pt-1600-medicos.png",
+      "sha256": "ec3095120e9e6a5aa225569f32b6a60d1152a3c69493cbbc1ee1b49feec308e6",
+      "observacao": "Texto e valores legíveis, sem corte; o grupo da comparação está explícito."
+    },
+    {
+      "ficheiro": "discussao-en-390-medicos.png",
+      "sha256": "33bc90654fbcf3f44da160e6f94445132ca9560c100643eb435d2623f236636d",
+      "observacao": "Texto e valores legíveis, sem corte; o grupo da comparação está explícito."
+    },
+    {
+      "ficheiro": "discussao-en-1600-medicos.png",
+      "sha256": "3bd837bcf73c0c05600006e86f5c8bfc4e33e4df9591c5ab77fd19109b66fa38",
+      "observacao": "Texto e valores legíveis, sem corte; o grupo da comparação está explícito."
+    },
+    {
+      "ficheiro": "eurostat-be-phys-pt-390-ressalva.png",
+      "sha256": "9b685f95050316943b811f22c34bb2bc632f916379c326df9425e9b268baf3c7",
+      "observacao": "Nota legível: distingue o grupo dos Estados-membros do conjunto alojado e conserva a ausência da Eslováquia."
+    },
+    {
+      "ficheiro": "eurostat-be-phys-en-390-ressalva.png",
+      "sha256": "b667c7c6cd73f830d572174fe4a6d2c6fede4aa4fb01a4a5589f65a93af05c10",
+      "observacao": "Nota legível: distingue o grupo dos Estados-membros do conjunto alojado e conserva a ausência da Eslováquia."
+    }
+  ]
+}

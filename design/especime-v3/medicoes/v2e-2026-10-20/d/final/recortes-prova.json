@@ -1,0 +1,246 @@
+{
+  "cabeca": "048b033fd006caf8acdeb159a462383297c84125",
+  "capturas": 40,
+  "recortes": [
+    {
+      "ficheiro": "discussao-pt-390-medicos.png",
+      "origem": "discussao-pt-390.png",
+      "sha256": "ecbcc5916866a1070c9b44c0565be38e4a76e8d41a2d9e9a223edf106c852c78",
+      "pixeis_iguais": true
+    },
+    {
+      "ficheiro": "discussao-pt-768-medicos.png",
+      "origem": "discussao-pt-768.png",
+      "sha256": "7d1e71cb4d8dc34462c6c0d981a623058a2107ca33a320f2264a2bb29c4e4107",
+      "pixeis_iguais": true
+    },
+    {
+      "ficheiro": "discussao-pt-1024-medicos.png",
+      "origem": "discussao-pt-1024.png",
+      "sha256": "ab35094425be2f31879c2b4df21880311339b3d7a51352e667562dcf730251d6",
+      "pixeis_iguais": true
+    },
+    {
+      "ficheiro": "discussao-pt-1280-medicos.png",
+      "origem": "discussao-pt-1280.png",
+      "sha256": "ec3095120e9e6a5aa225569f32b6a60d1152a3c69493cbbc1ee1b49feec308e6",
+      "pixeis_iguais": true
+    },
+    {
+      "ficheiro": "discussao-pt-1600-medicos.png",
+      "origem": "discussao-pt-1600.png",
+      "sha256": "ec3095120e9e6a5aa225569f32b6a60d1152a3c69493cbbc1ee1b49feec308e6",
+      "pixeis_iguais": true
+    },
+    {
+      "ficheiro": "discussao-en-390-medicos.png",
+      "origem": "discussao-en-390.png",
+      "sha256": "33bc90654fbcf3f44da160e6f94445132ca9560c100643eb435d2623f236636d",
+      "pixeis_iguais": true
+    },
+    {
+      "ficheiro": "discussao-en-768-medicos.png",
+      "origem": "discussao-en-768.png",
+      "sha256": "0f972da7473eab38fe30882d1f292c1375c794ca2b9d7f5fa0a972688f06e8b1",
+      "pixeis_iguais": true
+    },
+    {
+      "ficheiro": "discussao-en-1024-medicos.png",
+      "origem": "discussao-en-1024.png",
+      "sha256": "28f3024e964f423752111263d620eab3a5a4e190c96a6f5fe76e53b84cc71ca6",
+      "pixeis_iguais": true
+    },
+    {
+      "ficheiro": "discussao-en-1280-medicos.png",
+      "origem": "discussao-en-1280.png",
+      "sha256": "3bd837bcf73c0c05600006e86f5c8bfc4e33e4df9591c5ab77fd19109b66fa38",
+      "pixeis_iguais": true
+    },
+    {
+      "ficheiro": "discussao-en-1600-medicos.png",
+      "origem": "discussao-en-1600.png",
+      "sha256": "3bd837bcf73c0c05600006e86f5c8bfc4e33e4df9591c5ab77fd19109b66fa38",
+      "pixeis_iguais": true
+    },
+    {
+      "ficheiro": "eurostat-pt-phys-pt-390-ressalva.png",
+      "origem": "eurostat-pt-phys-pt-390.png",
+      "sha256": "9b685f95050316943b811f22c34bb2bc632f916379c326df9425e9b268baf3c7",
+      "pixeis_iguais": true
+    },
+    {
+      "ficheiro": "eurostat-pt-phys-pt-768-ressalva.png",
+      "origem": "eurostat-pt-phys-pt-768.png",
+      "sha256": "1515c2344eb113d0364246a7ab8135f7ca024269c646feb4e091d883821e557c",
+      "pixeis_iguais": true
+    },
+    {
+      "ficheiro": "eurostat-pt-phys-pt-1024-ressalva.png",
+      "origem": "eurostat-pt-phys-pt-1024.png",
+      "sha256": "31683f317702987fd1247917292aa8a4badc5b3c290133113fbb221c71a4c937",
+      "pixeis_iguais": true
+    },
+    {
+      "ficheiro": "eurostat-pt-phys-pt-1280-ressalva.png",
+      "origem": "eurostat-pt-phys-pt-1280.png",
+      "sha256": "f186b7337b49b17c9de4b9fa8ed9caf70a72baaa2ccac9ebdc3d650e6bd5279c",
+      "pixeis_iguais": true
+    },
+    {
+      "ficheiro": "eurostat-pt-phys-pt-1600-ressalva.png",
+      "origem": "eurostat-pt-phys-pt-1600.png",
+      "sha256": "f186b7337b49b17c9de4b9fa8ed9caf70a72baaa2ccac9ebdc3d650e6bd5279c",
+      "pixeis_iguais": true
+    },
+    {
+      "ficheiro": "eurostat-pt-phys-en-390-ressalva.png",
+      "origem": "eurostat-pt-phys-en-390.png",
+      "sha256": "b667c7c6cd73f830d572174fe4a6d2c6fede4aa4fb01a4a5589f65a93af05c10",
+      "pixeis_iguais": true
+    },
+    {
+      "ficheiro": "eurostat-pt-phys-en-768-ressalva.png",
+      "origem": "eurostat-pt-phys-en-768.png",
+      "sha256": "4300fba8edec40c0d00a49726c3e1b1fed0f5a4cd2d37ac77a7e3cdf344928c3",
+      "pixeis_iguais": true
+    },
+    {
+      "ficheiro": "eurostat-pt-phys-en-1024-ressalva.png",
+      "origem": "eurostat-pt-phys-en-1024.png",
+      "sha256": "d70581878361b2f3c21e2c2ae6d0775865a478fddd4ead4b414c0b8b74a0658c",
+      "pixeis_iguais": true
+    },
+    {
+      "ficheiro": "eurostat-pt-phys-en-1280-ressalva.png",
+      "origem": "eurostat-pt-phys-en-1280.png",
+      "sha256": "a890c4073c7fec3339a50ece9cf4592681bfed0fb7e8b9177f25ef578c42cb99",
+      "pixeis_iguais": true
+    },
+    {
+      "ficheiro": "eurostat-pt-phys-en-1600-ressalva.png",
+      "origem": "eurostat-pt-phys-en-1600.png",
+      "sha256": "a890c4073c7fec3339a50ece9cf4592681bfed0fb7e8b9177f25ef578c42cb99",
+      "pixeis_iguais": true
+    },
+    {
+      "ficheiro": "eurostat-be-phys-pt-390-ressalva.png",
+      "origem": "eurostat-be-phys-pt-390.png",
+      "sha256": "9b685f95050316943b811f22c34bb2bc632f916379c326df9425e9b268baf3c7",
+      "pixeis_iguais": true
+    },
+    {
+      "ficheiro": "eurostat-be-phys-pt-768-ressalva.png",
+      "origem": "eurostat-be-phys-pt-768.png",
+      "sha256": "1515c2344eb113d0364246a7ab8135f7ca024269c646feb4e091d883821e557c",
+      "pixeis_iguais": true
+    },
+    {
+      "ficheiro": "eurostat-be-phys-pt-1024-ressalva.png",
+      "origem": "eurostat-be-phys-pt-1024.png",
+      "sha256": "31683f317702987fd1247917292aa8a4badc5b3c290133113fbb221c71a4c937",
+      "pixeis_iguais": true
+    },
+    {
+      "ficheiro": "eurostat-be-phys-pt-1280-ressalva.png",
+      "origem": "eurostat-be-phys-pt-1280.png",
+      "sha256": "f186b7337b49b17c9de4b9fa8ed9caf70a72baaa2ccac9ebdc3d650e6bd5279c",
+      "pixeis_iguais": true
+    },
+    {
+      "ficheiro": "eurostat-be-phys-pt-1600-ressalva.png",
+      "origem": "eurostat-be-phys-pt-1600.png",
+      "sha256": "f186b7337b49b17c9de4b9fa8ed9caf70a72baaa2ccac9ebdc3d650e6bd5279c",
+      "pixeis_iguais": true
+    },
+    {
+      "ficheiro": "eurostat-be-phys-en-390-ressalva.png",
+      "origem": "eurostat-be-phys-en-390.png",
+      "sha256": "b667c7c6cd73f830d572174fe4a6d2c6fede4aa4fb01a4a5589f65a93af05c10",
+      "pixeis_iguais": true
+    },
+    {
+      "ficheiro": "eurostat-be-phys-en-768-ressalva.png",
+      "origem": "eurostat-be-phys-en-768.png",
+      "sha256": "4300fba8edec40c0d00a49726c3e1b1fed0f5a4cd2d37ac77a7e3cdf344928c3",
+      "pixeis_iguais": true
+    },
+    {
+      "ficheiro": "eurostat-be-phys-en-1024-ressalva.png",
+      "origem": "eurostat-be-phys-en-1024.png",
+      "sha256": "d70581878361b2f3c21e2c2ae6d0775865a478fddd4ead4b414c0b8b74a0658c",
+      "pixeis_iguais": true
+    },
+    {
+      "ficheiro": "eurostat-be-phys-en-1280-ressalva.png",
+      "origem": "eurostat-be-phys-en-1280.png",
+      "sha256": "a890c4073c7fec3339a50ece9cf4592681bfed0fb7e8b9177f25ef578c42cb99",
+      "pixeis_iguais": true
+    },
+    {
+      "ficheiro": "eurostat-be-phys-en-1600-ressalva.png",
+      "origem": "eurostat-be-phys-en-1600.png",
+      "sha256": "a890c4073c7fec3339a50ece9cf4592681bfed0fb7e8b9177f25ef578c42cb99",
+      "pixeis_iguais": true
+    },
+    {
+      "ficheiro": "eurostat-el-phys-pt-390-ressalva.png",
+      "origem": "eurostat-el-phys-pt-390.png",
+      "sha256": "9b685f95050316943b811f22c34bb2bc632f916379c326df9425e9b268baf3c7",
+      "pixeis_iguais": true
+    },
+    {
+      "ficheiro": "eurostat-el-phys-pt-768-ressalva.png",
+      "origem": "eurostat-el-phys-pt-768.png",
+      "sha256": "1515c2344eb113d0364246a7ab8135f7ca024269c646feb4e091d883821e557c",
+      "pixeis_iguais": true
+    },
+    {
+      "ficheiro": "eurostat-el-phys-pt-1024-ressalva.png",
+      "origem": "eurostat-el-phys-pt-1024.png",
+      "sha256": "31683f317702987fd1247917292aa8a4badc5b3c290133113fbb221c71a4c937",
+      "pixeis_iguais": true
+    },
+    {
+      "ficheiro": "eurostat-el-phys-pt-1280-ressalva.png",
+      "origem": "eurostat-el-phys-pt-1280.png",
+      "sha256": "f186b7337b49b17c9de4b9fa8ed9caf70a72baaa2ccac9ebdc3d650e6bd5279c",
+      "pixeis_iguais": true
+    },
+    {
+      "ficheiro": "eurostat-el-phys-pt-1600-ressalva.png",
+      "origem": "eurostat-el-phys-pt-1600.png",
+      "sha256": "f186b7337b49b17c9de4b9fa8ed9caf70a72baaa2ccac9ebdc3d650e6bd5279c",
+      "pixeis_iguais": true
+    },
+    {
+      "ficheiro": "eurostat-el-phys-en-390-ressalva.png",
+      "origem": "eurostat-el-phys-en-390.png",
+      "sha256": "b667c7c6cd73f830d572174fe4a6d2c6fede4aa4fb01a4a5589f65a93af05c10",
+      "pixeis_iguais": true
+    },
+    {
+      "ficheiro": "eurostat-el-phys-en-768-ressalva.png",
+      "origem": "eurostat-el-phys-en-768.png",
+      "sha256": "4300fba8edec40c0d00a49726c3e1b1fed0f5a4cd2d37ac77a7e3cdf344928c3",
+      "pixeis_iguais": true
+    },
+    {
+      "ficheiro": "eurostat-el-phys-en-1024-ressalva.png",
+      "origem": "eurostat-el-phys-en-1024.png",
+      "sha256": "d70581878361b2f3c21e2c2ae6d0775865a478fddd4ead4b414c0b8b74a0658c",
+      "pixeis_iguais": true
+    },
+    {
+      "ficheiro": "eurostat-el-phys-en-1280-ressalva.png",
+      "origem": "eurostat-el-phys-en-1280.png",
+      "sha256": "a890c4073c7fec3339a50ece9cf4592681bfed0fb7e8b9177f25ef578c42cb99",
+      "pixeis_iguais": true
+    },
+    {
+      "ficheiro": "eurostat-el-phys-en-1600-ressalva.png",
+      "origem": "eurostat-el-phys-en-1600.png",
+      "sha256": "a890c4073c7fec3339a50ece9cf4592681bfed0fb7e8b9177f25ef578c42cb99",
+      "pixeis_iguais": true
+    }
+  ]
+}
