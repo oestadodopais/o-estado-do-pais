@@ -9,11 +9,17 @@ id: "utao-divida-acrescimo-2026"
 value: "9,7"
 unit: "mil milhões de euros"
 
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "UTAO: dívida, acrescimo-2026"
+name_source: "§77; p. 44 PDF (43 impressa)"
+name_en: "UTAO: debt, acrescimo-2026"
+
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Unidade Técnica de Apoio Orçamental"
 document:
   title: "Relatório UTAO n.º 17/2026 Apreciação preliminar da Proposta de Orçamento do Estado para 2027"
-  edition: "2026"
+  edition: "2027"
   locator: "§77; p. 44 PDF (43 impressa)"
   source_sha256: "b42daf2a3b7d3a955fc28f379b60744719771212f167facafba41178c9d58083"
   page: 44

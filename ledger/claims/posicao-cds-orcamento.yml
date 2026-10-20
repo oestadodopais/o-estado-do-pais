@@ -9,6 +9,12 @@ id: "posicao-cds-orcamento"
 value: "\"Temos um bom Orçamento para 2027\", garante o CDS-PP"
 unit: "afirmação"
 
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Posição sobre o Orçamento do Estado de 2027"
+name_source: "Título h1 integral da notícia; data editorial identificada no documento"
+name_en: "Position on the 2027 State Budget"
+
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "RTP"
 document:

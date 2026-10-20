@@ -9,6 +9,12 @@ id: "pm-salario-minimo"
 value: "Em 2027, o Governo da AD elevará o salário mínimo (RMMG) para os 970 euros, concretizando o terceiro aumento consecutivo desde que tomou posse o XXIV Governo Constitucional, em 2024, ano em que a RMMG se cifrava nos 820 euros."
 unit: "texto"
 
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Remuneração mínima mensal garantida"
+name_source: "p. 20 PDF (4 impressa)"
+name_en: "Guaranteed minimum monthly wage"
+
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Ministério das Finanças"
 document:

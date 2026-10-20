@@ -9,6 +9,12 @@ id: "irs-2026-escalao-6-limite"
 value: "43 090"
 unit: "euros"
 
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "IRS: limite superior do escalão 6 em 2026"
+name_source: "Artigo 68.º; tabela da redação da Lei n.º 73-A/2025, de 30/12"
+name_en: "Income tax: upper limit of bracket 6 in 2026"
+
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "AT"
 document:

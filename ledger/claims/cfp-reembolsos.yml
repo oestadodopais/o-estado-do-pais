@@ -9,6 +9,12 @@ id: "cfp-reembolsos"
 value: "Por outro lado, o desfasamento entre os ajustamentos das tabelas de retenção na fonte e as alterações legislativas em sede de IRS tem sido significativo, introduzindo incerteza quanto à evolução dos reembolsos e das notas de cobrança e, por essa via, quanto ao rendimento disponível das famílias em 2027."
 unit: "afirmação"
 
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "IRS: reembolsos e rendimento disponível"
+name_source: "p. 14 PDF"
+name_en: "Personal income tax: refunds and disposable income"
+
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Conselho das Finanças Públicas"
 document:

@@ -9,6 +9,12 @@ id: "utao-risco-contingencias"
 value: "As responsabilidades contingentes constituem outro risco: decisões arbitrais desfavoráveis no âmbito das PPP e garantias às linhas de crédito criadas na sequência das tempestades (2000 M€ de crédito e 571 M€ de encargos plurianuais potenciais, Caixa 3). A prorrogação até ao final de 2027 da garantia pessoal do Estado ao crédito à habitação de jovens agrava-o: o stock de garantias ao abrigo do regime mais do que duplicou entre dezembro de 2025 e maio de 2026, de 449 M€ para 926 M€ (Tabela 19)."
 unit: "afirmação"
 
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Riscos: responsabilidades contingentes"
+name_source: "§106; p. 53 PDF (52 impressa)"
+name_en: "Risks: contingent liabilities"
+
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Unidade Técnica de Apoio Orçamental"
 document:

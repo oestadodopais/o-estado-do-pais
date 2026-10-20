@@ -9,11 +9,17 @@ id: "diploma-irc-artigo3"
 value: "Artigo 3.º Norma transitória 1 — A taxa prevista nos n.os 1 e 5 do artigo 87.º do Código do IRC, na redação conferida pela presente lei, aplica-se aos períodos de tributação que se iniciem em ou após 1 de janeiro de 2028. 2 — Nos períodos de tributação que se iniciem durante o ano de 2026, a taxa prevista nos n.os 1 e 5 do artigo 87.º do Código do IRC é de 19 %. 3 — Nos períodos de tributação que se iniciem durante o ano de 2027, a taxa prevista nos n.os 1 e 5 do artigo 87.º do Código do IRC é de 18 %. 4 — A taxa prevista no n.º 2 do artigo 87.º do Código do IRC, na redação conferida pela presente lei, aplica-se aos períodos de tributação que se iniciem em ou após 1 de janeiro de 2026."
 unit: "afirmação"
 
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "IRC: taxa de 18 % em 2027"
+name_source: "Artigo 3.º; pp. 1, 1, 2 PDF"
+name_en: "Corporate income tax: 18% rate in 2027"
+
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Assembleia da República"
 document:
   title: "Lei n.º 64/2025, de 7 de novembro"
-  edition: "2027"
+  edition: "2025"
   locator: "Artigo 3.º; pp. 1, 1, 2 PDF"
   source_sha256: "e510a3391c016e2282ceae7eaaa49f5e4fc3199871b5ffa8c410587c8cfebbbd"
   page: 1

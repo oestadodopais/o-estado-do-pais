@@ -9,6 +9,12 @@ id: "utao-risco-mercados"
 value: "A instabilidade política e a deterioração das finanças públicas francesas (défice de 5,1% do PIB em 2025 e de 5,4% previsto pelo Governo francês para 2026) poderão intensificar as tensões no mercado europeu de dívida soberana e elevar os prémios de risco e os custos de financiamento de Portugal. Acresce o risco quanto à trajetória da despesa líquida: a Comissão Europeia estima um desvio de 2,1% do PIB no final de 2027, acima do limiar de 0,6% (capítulo 3), e, na análise de sustentabilidade do MF, a probabilidade de o rácio da dívida em 2033 exceder o de 2028 é de 22,9% (capítulo 5)."
 unit: "afirmação"
 
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Riscos: mercados de dívida soberana"
+name_source: "§104; p. 53 PDF (52 impressa)"
+name_en: "Risks: sovereign debt markets"
+
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Unidade Técnica de Apoio Orçamental"
 document:

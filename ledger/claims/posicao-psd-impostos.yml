@@ -9,11 +9,17 @@ id: "posicao-psd-impostos"
 value: "Enquanto o Governo do PS aumentava impostos, defendeu Hugo Soares, \"este Governo não aumentou um único imposto nos orçamentos que apresentou\"."
 unit: "afirmação"
 
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Política fiscal e impostos"
+name_source: "Corpo da página; frase integral identificada pelo excerto; data editorial no documento"
+name_en: "Fiscal policy and taxes"
+
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Notícias ao Minuto"
 document:
   title: "\"Baile\" na AR com OE em destaque: A \"dança\" de Montenegro e oposição"
-  edition: "2027"
+  edition: "2026"
   locator: "Corpo da página; frase integral identificada pelo excerto; data editorial no documento"
   source_sha256: "22c7b74a496bf7501d0dfd83d6b123aec3c0e56a79e585ff9b96525f6dc47db2"
   page: 1

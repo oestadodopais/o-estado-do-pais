@@ -9,6 +9,12 @@ id: "utao-novas-saldo"
 value: "O MF prevê que em 2027 as novas medidas de política orçamental tenham um impacto residual no saldo orçamental avaliado em +79 M€ (+0,02% do PIB). Na receita, estas medidas terão um impacto positivo no saldo de +179 M€ (+0,05% do PIB); na despesa, o impacto das medidas, é negativo em 100 M€ (0,03% do PIB). Estes dados estão compilados na Tabela 9."
 unit: "afirmação"
 
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Medidas novas: impacto no saldo"
+name_source: "§40; p. 22 PDF (21 impressa)"
+name_en: "New measures: impact on balance"
+
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Unidade Técnica de Apoio Orçamental"
 document:

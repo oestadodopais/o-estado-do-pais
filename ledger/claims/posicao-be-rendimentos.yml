@@ -9,11 +9,17 @@ id: "posicao-be-rendimentos"
 value: "José Manuel Pureza considera que o Orçamento para 2027 “dá migalhas” aos trabalhadores, beneficia os mais ricos e ignora problemas estruturais."
 unit: "afirmação"
 
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Rendimentos dos trabalhadores"
+name_source: "Abertura editorial integral; data editorial 09/10/2026 - 10:09"
+name_en: "Workers income"
+
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "TV RECORD EUROPA"
 document:
   title: "OE2027: BE diz que Orçamento “dá migalhas a quem trabalha” e beneficia os mais ricos"
-  edition: "2027"
+  edition: "2026"
   locator: "Abertura editorial integral; data editorial 09/10/2026 - 10:09"
   source_sha256: "238ee6aebf1b46e1b6ccbf19fd839f29e514322c9c0ddc6c9f467b22838bba5c"
   page: 1

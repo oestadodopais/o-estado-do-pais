@@ -9,6 +9,12 @@ id: "der-oe2027-investimento-variacao-cp"
 value: "−2 347"
 unit: "milhões de euros"
 
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Investimento: variação em contabilidade pública"
+name_source: "Cálculo sobre as linhas identificadas"
+name_en: "Investment: public accounting change"
+
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: null
 document: null
@@ -20,8 +26,8 @@ reference_date: "2027"
 excerpt: null
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
-derivation: "pm-q4-1-r27-c1 - pm-q4-1-r27-c0. -2347"
-derivation_en: "pm-q4-1-r27-c1 - pm-q4-1-r27-c0. -2347"
+derivation: "10 417 (Investimentos) − 12 764 (Investimentos) = −2347. O sinal indica a direção da variação ou do resultado da conta."
+derivation_en: "10 417 (Investment) − 12 764 (Investment) = −2347. The sign indicates the direction of the change or calculation result."
 derived_from:
   - "pm-q4-1-r27-c1"
   - "pm-q4-1-r27-c0"

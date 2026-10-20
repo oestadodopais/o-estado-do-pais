@@ -7,12 +7,13 @@ id: "europa-saldo-ro-2025"
 
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
 value: "−7,9"
-unit: "%"
+unit: "% do PIB"
 
 # O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
-name: "Government revenue, expenditure and main aggregates"
-name_source: "label"
+name: "Saldo das administrações públicas, em percentagem do PIB"
+name_source: "freq=A; unit=PC_GDP; sector=S13; na_item=B9; geo=RO; time=2025; value[161]"
+name_en: "General government net lending or borrowing, as a percentage of GDP"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Eurostat"

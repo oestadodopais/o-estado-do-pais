@@ -10,10 +10,10 @@ A medição lê também as medidas que não são intercambiáveis: a dívida de 
 
 - EO1-1. A leitura crítica referida no mandato não existe nesta cabeça do sítio. As verificações foram feitas sobre os corpos alojados, sem atribuir à leitura ausente conclusões que não se pudessem refazer.
 - EO1-2. A citação do ministro das Finanças é a frase contínua do corpo do Observador. O corpo não contém as reticências do mandato. O título da notícia continua a ser a linha documental, distinta da citação.
-- EO1-3. A nota do quadro foi confirmada como «Nota: (i) invariante.». As chamadas coladas foram retiradas dos dois excertos da UTAO que as continham. Os excertos de juros e do risco do SNS foram reconferidos e já não continham essas chamadas. A limpeza fica declarada nos seletores e nas notas das linhas.
+- EO1-3. A nota do quadro foi confirmada como «Nota: (i) invariante.». As chamadas coladas foram retiradas dos dois excertos da UTAO que as continham. O PDF imprime também chamadas de nota nos excertos de juros e do risco do SNS; o excerto deixa-as cair por regra. A declaração anterior de que não as continham estava errada e é corrigida no EO1-b, pelo achado 25.
 - EO1-4. A frase «Os juros são a despesa que mais cresce» ficou fora: o mesmo quadro contém uma variação percentual superior noutra rubrica. Os valores dos juros e a comparação com o custo das medidas mantêm-se.
 - EO1-5. A sexta redução do IRS está na página PDF 55; a frase integral do percurso do IRC atravessa as páginas 55 e 56. Os localizadores são os medidos, não os indicados aproximadamente no mandato.
-- EO1-6. «É a soma de seis anos» ficou fora. As reduções citadas pelo próprio relatório não correspondem a seis anos. Ficou também fora a atribuição de uma parte da descida da dívida ao valor final do ajustamento: esse valor é uma contribuição positiva, não a diferença entre os dois anos.
+- EO1-6. «É a soma de seis anos» ficou fora. As reduções citadas pelo próprio relatório não correspondem a seis anos. Ficou também fora a atribuição de uma parte da descida da dívida ao valor final do ajustamento: esse valor é uma contribuição positiva, não a diferença entre os dois anos. A primeira construção também omitiu a frase inicial sobre as seis descidas do IRS, a frase sobre a ausência de aumentos de impostos e «só o Governo prevê». Essas omissões não estavam declaradas; o EO1-b repõe a primeira e mantém as outras fora quando não há prova suficiente, pelo achado 25.
 - EO1-7. A causalidade exclusiva «os impostos indiretos crescem pela economia, não pelas taxas» e a comparação com outros ministérios europeus ficaram fora por falta de apoio documental nesta pesquisa.
 - EO1-8. As datas de declarações que não existiam literalmente no excerto ou no localizador citados foram omitidas da prosa. A data da notícia de Sarmento, que tem apoio literal, mantém-se. Não se fabricou um localizador para fazer passar um literal.
 - EO1-9. A numeração editorial das secções e das conclusões foi retirada dos títulos e da prosa, conservando a ordem e os títulos: não é uma medida e o mandato só admite literais numéricos apoiados numa linha citada. O índice de navegação continua a distinguir as secções.
@@ -201,7 +201,7 @@ Os resumos dos corpos e as posições de cada excerto estão em `partida.json`, 
 ### divida 2025
 
 - PM:europa-divida-pt-2025: 89.7 Percentage of gross domestic product (GDP), 2025. Localizador: freq=A; unit=PC_GDP; sector=S13; na_item=GD; geo=PT; time=2025; value[155].
-- DOM:divida-publica-2025-notificacao-ine-2026-09: 89,2 null, null. Localizador: null.
+- DOM:divida-publica-2025-notificacao-ine-2026-09: valor 89,2. O livro do motor não declara os campos `unit`, `period` ou `locator`; a primeira medição registou essa ausência, que o relatório imprimiu como `null`. A linha exportada do sítio declara `% do PIB`, referência `2025` e localizador `Resumo, 1.º parágrafo`, no documento «Procedimento dos Défices Excessivos 2ª Notificação», publicado a 23 de setembro de 2026. A correção distingue os campos ausentes no livro dos metadados presentes na exportação.
 
 ### saldo 2027
 

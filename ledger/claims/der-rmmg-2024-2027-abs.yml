@@ -9,6 +9,12 @@ id: "der-rmmg-2024-2027-abs"
 value: "150"
 unit: "euros"
 
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Salário mínimo: aumento face a 2024"
+name_source: "Cálculo sobre as linhas identificadas"
+name_en: "Minimum wage: increase against 2024"
+
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: null
 document: null
@@ -20,8 +26,8 @@ reference_date: "2027"
 excerpt: null
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
-derivation: "oe-2027-rmmg-2027 - oe-2027-rmmg-2024. 150"
-derivation_en: "oe-2027-rmmg-2027 - oe-2027-rmmg-2024. 150"
+derivation: "970 (Remuneração mínima mensal garantida: 2027) − 820 (Remuneração mínima mensal garantida: 2024) = 150. O sinal indica a direção da variação ou do resultado da conta."
+derivation_en: "970 (Minimum monthly wage: 2027) − 820 (Minimum monthly wage: 2024) = 150. The sign indicates the direction of the change or calculation result."
 derived_from:
   - "oe-2027-rmmg-2027"
   - "oe-2027-rmmg-2024"

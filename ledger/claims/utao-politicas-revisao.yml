@@ -9,6 +9,12 @@ id: "utao-politicas-revisao"
 value: "O relatório da POE/2027 divulgou um quadro de políticas invariantes revisto face ao apresentado em final de agosto. Com efeito, o impacto orçamental das políticas invariantes passou de 4783 M€ para 5411 M€. Para esta deterioração adicional, destaca-se a despesa com juros (de 776 M€ para 1548 M€) e o investimento público excluído de PRR (de 433 M€ para 617 M€). Em sentido oposto, evidencia-se a revisão da despesa com pensões (de 1993 M€ para 1475 M€) e a passagem do reforço do complemento solidário para idosos (CSI; 100 M€) do QPI para as novas medidas (Tabela 9)."
 unit: "afirmação"
 
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Medidas: revisão das políticas invariantes"
+name_source: "§34; p. 21 PDF (20 impressa)"
+name_en: "Measures: unchanged-policy revision"
+
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Unidade Técnica de Apoio Orçamental"
 document:

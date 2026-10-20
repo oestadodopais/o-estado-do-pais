@@ -9,6 +9,12 @@ id: "cfp-riscos"
 value: "Ponderados os riscos, o cenário macroeconómico subjacente à POE/2027 afigura-se globalmente como estatisticamente provável. Ainda assim, como fundamentado no presente Parecer, é de notar a existência de riscos descendentes para a previsão de crescimento do PIB real em 2027. No que respeita à inflação, destaca-se uma potencial subestimação tanto em 2026, como em 2027."
 unit: "afirmação"
 
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Riscos: PIB e inflação"
+name_source: "p. 19 PDF"
+name_en: "Risks: GDP and inflation"
+
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Conselho das Finanças Públicas"
 document:

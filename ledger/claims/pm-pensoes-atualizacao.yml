@@ -9,6 +9,12 @@ id: "pm-pensoes-atualizacao"
 value: "Na estimativa de despesa com pensões considerou-se a atualização regular nos termos da Lei."
 unit: "texto"
 
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Atualização regular das pensões"
+name_source: "p. 102 PDF (86 impressa)"
+name_en: "Regular pension update"
+
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Ministério das Finanças"
 document:

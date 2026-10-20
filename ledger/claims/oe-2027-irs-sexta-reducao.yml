@@ -9,6 +9,12 @@ id: "oe-2027-irs-sexta-reducao"
 value: "O Orçamento do Estado para 2027 apresentará a sexta redução generalizada de IRS, considerando a redução das taxas em junho de 2024, junho de 2025, no Orçamento do Estado para 2026 e em setembro de 2026, a que acresce a atualização dos respetivos escalões nos Orçamentos do Estado para 2025, 2026 e 2027."
 unit: "texto"
 
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "IRS: sexta redução segundo o relatório"
+name_source: "p. 55 PDF (39 impressa)"
+name_en: "Income tax: sixth cut according to the report"
+
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Ministério das Finanças"
 document:

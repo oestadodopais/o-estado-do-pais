@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import { ESTUDO_EO1, PORTAS_EO1 } from '../src/data/portas-eo1.mjs';
+import { WORKS } from '../src/data/studies.mjs';
 import { ROTULOS_B1 } from '../src/data/rotulos-b1.mjs';
 import { nomeDoProjeto } from '../src/data/nomes-das-medidas.mjs';
 import { routePath } from '../src/lib/routes.mjs';
@@ -7,9 +8,36 @@ const normal = s => String(s ?? '').replace(/\s+/g, ' ').trim();
 const records = Object.fromEntries(['pt','en'].map(lang => [lang,
   JSON.parse(fs.readFileSync(new URL(`../registos/${ESTUDO_EO1}/${lang}.record.json`, import.meta.url), 'utf8'))]));
 
+/** A porta existe apenas nos dois itens nomeados e na explicação do Orçamento. */
+export function conferirPortasDeEntradaEo1(root, rota) {
+  const erros = [], portas = new Set();
+  const lang = rota?.lang;
+  const itens = ['saude-no-orcamento', 'parcerias-rodoviarias'];
+  const discussao = rota?.key === 'discussao';
+  const explicacao = rota?.key === 'explicacao' && rota.params?.slug === 'dinheiro-do-estado-2026';
+  const esperadas = discussao ? itens.length : explicacao ? 1 : 0;
+  const contentores = root.querySelectorAll('[data-eo1-porta]');
+  if (contentores.length !== esperadas) erros.push(`EO1: portas de entrada: esperadas ${esperadas}, encontradas ${contentores.length}`);
+  if (discussao) for (const id of itens)
+    if (root.querySelectorAll(`[data-discussao="${id}"] [data-eo1-porta]`).length !== 1)
+      erros.push(`EO1: porta de entrada ausente ou repetida no item ${id}`);
+  const destino = routePath('estudo', lang, {slug:ESTUDO_EO1});
+  const titulo = WORKS.find(w => w.slug === ESTUDO_EO1)?.editions.find(e => e.lang === lang)?.title;
+  for (const el of contentores) {
+    const links = el.querySelectorAll('a[href]');
+    if (discussao && !itens.includes(el.closest('[data-discussao]')?.getAttribute('data-discussao')))
+      erros.push('EO1: porta de entrada fora dos dois itens nomeados');
+    if (links.length !== 1 || links[0]?.getAttribute('href') !== destino ||
+        normal(el.textContent) !== `${lang === 'pt' ? 'O estudo: ' : 'The study: '}${titulo} →`)
+      erros.push('EO1: porta de entrada com título ou destino diferente');
+    else portas.add(links[0]);
+  }
+  return {erros, portas, esperadas, encontradas:contentores.length};
+}
+
 /** Só devolve nós concretos depois de conferir nomes, destinos e multiplicidade. */
 export function portasObrigatoriasEo1(root, rota) {
-  const portas = new Set(), erros = [];
+  const {portas, erros} = conferirPortasDeEntradaEo1(root, rota);
   if (rota?.params?.slug !== ESTUDO_EO1 || !['estudo','documento'].includes(rota.key))
     return { portas, erros };
   const lang = rota.lang;

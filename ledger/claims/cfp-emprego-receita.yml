@@ -9,6 +9,12 @@ id: "cfp-emprego-receita"
 value: "A previsão para o emprego (1,4%) é a mais elevada de entre as instituições de referência e situa-se no limite superior do intervalo de confiança a 30%. Assenta num crescimento da população ativa (1,3%) superior ao da população em idade ativa (0,6%), o que pressupõe um aumento expressivo da taxa de participação. Também para as remunerações por trabalhador, a previsão do MF é a mais elevada de entre as instituições de referência. O efeito conjugado destes dois elementos pode resultar em riscos acrescidos para a receita decorrente da massa salarial."
 unit: "afirmação"
 
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Riscos: emprego, salários e receita"
+name_source: "p. 19 PDF"
+name_en: "Risks: employment, wages and revenue"
+
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Conselho das Finanças Públicas"
 document:

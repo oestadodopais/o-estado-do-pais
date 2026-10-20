@@ -9,11 +9,17 @@ id: "oe-2027-calendario-generalidade"
 value: "27 e 28 de outubro"
 unit: "data"
 
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Debate e votação na generalidade"
+name_source: "Página parlamentar, calendário da proposta"
+name_en: "General debate and vote"
+
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Assembleia da República"
 document:
   title: "Orçamento do Estado para 2027"
-  edition: "2026-10-27/2026-10-28"
+  edition: "2027"
   locator: "Página parlamentar, calendário da proposta"
   source_sha256: "0d8ea877b233fd8743997a221b1117ab14fa6bb48dad864c4c69eeb2fffb4e0d"
   page: 1

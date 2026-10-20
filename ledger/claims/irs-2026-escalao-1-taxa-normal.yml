@@ -9,6 +9,12 @@ id: "irs-2026-escalao-1-taxa-normal"
 value: "12,50"
 unit: "%"
 
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "IRS: taxa normal do escalão 1 na tabela anterior a setembro de 2026"
+name_source: "Artigo 68.º; tabela da redação da Lei n.º 73-A/2025, de 30/12"
+name_en: "Income tax: normal rate of bracket 1 in the table preceding September 2026"
+
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "AT"
 document:

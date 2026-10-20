@@ -9,6 +9,12 @@ id: "pm-remuneracoes-atualizacao"
 value: "Ao nível da despesa, destaca-se a massa salarial dos trabalhadores da Administração Pública (948 milhões de euros), que inclui uma atualização das remunerações em 2,3%, e o reforço do CSI, com um impacto de 100 milhões de euros."
 unit: "texto"
 
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Atualização das remunerações públicas e reforço do CSI"
+name_source: "p. 58 PDF (42 impressa)"
+name_en: "Public wage update and CSI increase"
+
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Ministério das Finanças"
 document:

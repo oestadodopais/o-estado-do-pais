@@ -9,6 +9,12 @@ id: "pm-trajetoria-divida-2026-2027"
 value: "A dívida pública, em percentagem do PIB, deverá manter assim a trajetória decrescente, passando de 87,5% em 2026 para 84,5% em 2027."
 unit: "texto"
 
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Trajetória da dívida pública"
+name_source: "p. 65 PDF (49 impressa)"
+name_en: "Public debt path"
+
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Ministério das Finanças"
 document:

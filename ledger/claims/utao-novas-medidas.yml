@@ -9,6 +9,12 @@ id: "utao-novas-medidas"
 value: "À semelhança do observado nas Propostas de Orçamento do Estado dos dois anos anteriores, a POE/2027 apresenta um número reduzido de novas medidas e um impacto agregado limitado sobre o saldo orçamental. O Quadro 3.2 do relatório da POE/2027 identifica apenas três novas medidas. Uma das justificações prende-se com a estratégia do Governo de adotar medidas de política orçamental fora do âmbito do Orçamento do Estado e previamente à sua apresentação, como sucedeu, por exemplo, com a redução em 1 p.p. da taxa de IRC e da taxa de IRS sobre rendas moderadas (de 25% para 10%). Após a sua adoção, estas medidas passam a integrar o cenário de políticas invariantes. Neste contexto, o reduzido impacto orçamental das novas medidas indica que o cenário orçamental para 2027 assenta essencialmente nos efeitos das medidas permanentes adotadas em anos anteriores."
 unit: "afirmação"
 
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Medidas: novas e anteriormente adotadas"
+name_source: "§39; p. 22 PDF (21 impressa)"
+name_en: "Measures: new and previously adopted"
+
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Unidade Técnica de Apoio Orçamental"
 document:

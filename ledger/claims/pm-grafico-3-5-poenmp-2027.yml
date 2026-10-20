@@ -11,8 +11,9 @@ unit: "% do PIB"
 
 # O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
-name: "POENMP"
+name: "Trajetória da dívida pública (POENMP)"
 name_source: "Gráfico 3.5; série POENMP; 2027; p.65 PDF (49 impressa)"
+name_en: "Public debt path (POENMP)"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Ministério das Finanças"

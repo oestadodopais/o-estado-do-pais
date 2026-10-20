@@ -97,7 +97,7 @@ const itemDaProva = (parte) => {
     if (typeof parte === 'string') return <Fragment set:text={parte} />;
     if (parte.excerto) return <CampoDaLinha id={parte.excerto} campo="excerpt" valor={getClaim(parte.excerto).excerpt} lang={lang} lingua="pt-PT" />;
     if (parte.claim)
-      return <Claim id={parte.claim} lang={lang} chip={selos} sufixo={parte.sufixo ?? ''} />;
+      return <Claim id={parte.claim} lang={lang} chip={selos} abs={parte.abs === true} sufixo={parte.sufixo ?? ''} />;
     if (parte.ponto)
       return (
         <>

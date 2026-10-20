@@ -11,14 +11,15 @@ unit: "% of GDP"
 
 # O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
-name: "General government balance (c)"
-name_source: "Table III.18.1: Main features of country forecast - PORTUGAL; General government balance (c); coluna 7: 2027; p. 143 PDF (127 impressa); rótulo da linha"
+name: "Saldo das administrações públicas"
+name_source: "Table III.18.1: Main features of country forecast - PORTUGAL; General government balance (c); coluna 7: 2027; p. 143 PDF (127 impressa)"
+name_en: "General government balance"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "European Commission"
 document:
   title: "European Economic Forecast Spring 2026"
-  edition: "2027"
+  edition: "2026"
   locator: "Table III.18.1: Main features of country forecast - PORTUGAL; General government balance (c); coluna 7: 2027; p. 143 PDF (127 impressa)"
   source_sha256: "6d6dac3c4f1cecfa7c1b8e518eef22828a55f64d41264500026cbc0bb77da4e5"
   page: 143

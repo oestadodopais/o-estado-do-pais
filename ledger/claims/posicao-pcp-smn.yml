@@ -9,6 +9,12 @@ id: "posicao-pcp-smn"
 value: "O Governo quer limitar o SMN aos 970€ em 2027, quando em Espanha esse valor ultrapassou os 1220€ em 2026."
 unit: "afirmação"
 
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Salário mínimo nacional"
+name_source: "Corpo da página; frase integral identificada pelo excerto; data editorial no documento"
+name_en: "National minimum wage"
+
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Partido Comunista Português"
 document:

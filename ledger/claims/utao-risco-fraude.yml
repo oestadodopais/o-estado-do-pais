@@ -9,6 +9,12 @@ id: "utao-risco-fraude"
 value: "Subexecução da medida de combate à fraude no setor dos combustíveis. A POE/2027 prevê uma receita adicional de 300 M€ associada a esta medida, sem, contudo, apresentar informação que permita fundamentar a estimativa ou avaliar a sua exequibilidade. Subsiste, assim, um risco de concretização inferior ao previsto, atendendo aos antecedentes de medidas de combate à fraude cuja execução efetiva se revelou menor, ou relativamente às quais a Conta Geral do Estado não disponibilizou informação suficiente para aferir os resultados alcançados."
 unit: "afirmação"
 
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Riscos: combate à fraude nos combustíveis"
+name_source: "§101; p. 53 PDF (52 impressa)"
+name_en: "Risks: fuel fraud measures"
+
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Unidade Técnica de Apoio Orçamental"
 document:

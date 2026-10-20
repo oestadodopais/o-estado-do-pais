@@ -389,21 +389,21 @@ edicoes:
     lang: "pt"
     title: "O Orçamento de 2027: o que muda e para quem"
     origin: "researchhub"
-    origin_ref: "content/27 Orcamento 2027 O que muda/O Orçamento de 2027, o que muda e para quem (pt-PT).html @ 42b8e823c856a295346556be7f667a582bb47b3a"
+    origin_ref: "content/27 Orcamento 2027 O que muda/O Orçamento de 2027, o que muda e para quem (pt-PT).html @ aff6a55f63705775d30e05287f2ce8518ba7b12c"
     raw_file: "_raw/orcamento-2027-o-que-muda-e-para-quem.pt.html"
-    fetched_utc: "2026-10-20T17:00:42Z"
-    bytes_raw: 44750
-    bytes_normalized: 44750
-    sha256_raw: "7ee44f4465d82c1db43313bcdce7f9cb7238a7cea6850f9c1275154bc82a5cc9"
-    sha256_normalized: "7ee44f4465d82c1db43313bcdce7f9cb7238a7cea6850f9c1275154bc82a5cc9"
+    fetched_utc: "2026-10-20T20:22:02Z"
+    bytes_raw: 46223
+    bytes_normalized: 46223
+    sha256_raw: "ddc973191c339bc9df355908298ab554293bbe8fa3b74e9378fa2c0e982ab4ca"
+    sha256_normalized: "ddc973191c339bc9df355908298ab554293bbe8fa3b74e9378fa2c0e982ab4ca"
   - slug: orcamento-2027-o-que-muda-e-para-quem
     lang: "en"
     title: "The 2027 Budget: what changes, and for whom"
     origin: "researchhub"
-    origin_ref: "content/27 Orcamento 2027 O que muda/The 2027 Budget, what changes, and for whom.html @ 42b8e823c856a295346556be7f667a582bb47b3a"
+    origin_ref: "content/27 Orcamento 2027 O que muda/The 2027 Budget, what changes, and for whom.html @ aff6a55f63705775d30e05287f2ce8518ba7b12c"
     raw_file: "_raw/orcamento-2027-o-que-muda-e-para-quem.en.html"
-    fetched_utc: "2026-10-20T17:00:42Z"
-    bytes_raw: 43935
-    bytes_normalized: 43935
-    sha256_raw: "9ec3802f3a3c3dae9c8fe7fd01b071a9f791a5bd958b7544bd6be1ae33404ee0"
-    sha256_normalized: "9ec3802f3a3c3dae9c8fe7fd01b071a9f791a5bd958b7544bd6be1ae33404ee0"
+    fetched_utc: "2026-10-20T20:22:02Z"
+    bytes_raw: 45555
+    bytes_normalized: 45555
+    sha256_raw: "844f56b4cbde6bd541d8f5535483321bb01e5f87e7c9da4d50fb81b9c4a8a92a"
+    sha256_normalized: "844f56b4cbde6bd541d8f5535483321bb01e5f87e7c9da4d50fb81b9c4a8a92a"

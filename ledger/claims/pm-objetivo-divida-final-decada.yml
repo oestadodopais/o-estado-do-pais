@@ -9,6 +9,12 @@ id: "pm-objetivo-divida-final-decada"
 value: "A dívida pública continuará a reduzir-se, visando ficar abaixo dos 80% do produto interno bruto (PIB) no final da década."
 unit: "texto"
 
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Objetivo da dívida no final da década"
+name_source: "Sumário executivo; p. 16 PDF (II impressa); objetivo no final da década"
+name_en: "Debt target at the end of the decade"
+
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Ministério das Finanças"
 document:

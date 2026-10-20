@@ -9,11 +9,17 @@ id: "posicao-jpp-irs"
 value: "JPP pede maior protecção das famílias não abrangidas pela descida de IRS"
 unit: "afirmação"
 
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Proteção das famílias não abrangidas pela descida do IRS"
+name_source: "Título h1 integral da notícia; data editorial identificada no documento"
+name_en: "Protection for households outside the income tax reduction"
+
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Diário de Notícias"
 document:
   title: "JPP pede maior protecção das famílias não abrangidas pela descida de IRS"
-  edition: "2027"
+  edition: "2026"
   locator: "Título h1 integral da notícia; data editorial identificada no documento"
   source_sha256: "2c40b80d1daf15fcdf47911323f862c535224a1f9c69cc27fb5fdd26238c1fda"
   page: 1

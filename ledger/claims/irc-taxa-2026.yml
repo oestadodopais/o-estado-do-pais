@@ -9,11 +9,17 @@ id: "irc-taxa-2026"
 value: "19"
 unit: "%"
 
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "IRC: taxa geral em 2026"
+name_source: "Lei n.º 64/2025; artigo 3.º; p. 2 PDF"
+name_en: "Corporate tax: general rate in 2026"
+
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Assembleia da República"
 document:
   title: "Lei n.º 64/2025, de 7 de novembro"
-  edition: "2026"
+  edition: "2025"
   locator: "Lei n.º 64/2025; artigo 3.º; p. 2 PDF"
   source_sha256: "e510a3391c016e2282ceae7eaaa49f5e4fc3199871b5ffa8c410587c8cfebbbd"
   page: 2

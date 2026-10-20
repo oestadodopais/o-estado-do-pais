@@ -9,6 +9,12 @@ id: "utao-risco-pib"
 value: "Um crescimento económico inferior ao projetado constitui um risco para a concretização do saldo orçamental, em particular num cenário para 2027 em que a despesa corrente cresce 6,6% e a receita corrente 4,5% (Tabela 13). A POE/2027 assenta num crescimento real do PIB de 2,1%, acima das previsões do BdP, da CE e do CFP (1,8%), da OCDE (1,7%) e do FMI (1,6%) (capítulo 2), num enquadramento marcado pela incerteza geopolítica e pelos riscos associados à evolução dos preços da energia. Um abrandamento da atividade económica superior ao implícito no cenário orçamental traduzir-se-ia numa arrecadação inferior à prevista de impostos sobre o rendimento e o consumo, bem como de contribuições sociais, condicionando a execução da receita e colocando pressão sobre o saldo orçamental. O cenário depende ainda da execução do PT2030, cujos recebimentos se prevê que aumentem 65% em 2027 (+1948 M€) quando, a 31 de agosto de 2026, a execução financeira era de 21,7% da dotação, e da conclusão do PRR, cujo último pedido de pagamento (96 marcos e metas) estava em avaliação (Caixa 1)."
 unit: "afirmação"
 
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Riscos: crescimento económico e receita"
+name_source: "§98; p. 52 PDF (51 impressa)"
+name_en: "Risks: economic growth and revenue"
+
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Unidade Técnica de Apoio Orçamental"
 document:

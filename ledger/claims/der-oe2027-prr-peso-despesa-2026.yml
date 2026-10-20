@@ -9,6 +9,12 @@ id: "der-oe2027-prr-peso-despesa-2026"
 value: "7,6"
 unit: "%"
 
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "PRR: peso na despesa de 2026"
+name_source: "Cálculo sobre as linhas identificadas"
+name_en: "Recovery plan: share of 2026 expenditure"
+
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: null
 document: null
@@ -20,8 +26,8 @@ reference_date: "2026"
 excerpt: null
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
-derivation: "round ( pm-q3-1-r51-c1 / pm-q3-1-r50-c1 * 100 , 1 ). 7.6"
-derivation_en: "round ( pm-q3-1-r51-c1 / pm-q3-1-r50-c1 * 100 , 1 ). 7.6"
+derivation: "round ( 11 106 (PRR (Despesa total)) ÷ 146 472 (Despesa total) × 100 , 1 ) = 7,6. O sinal indica a direção da variação ou do resultado da conta."
+derivation_en: "round ( 11 106 (Recovery and Resilience Plan (Total expenditure)) ÷ 146 472 (Total expenditure) × 100 , 1 ) = 7.6. The sign indicates the direction of the change or calculation result."
 derived_from:
   - "pm-q3-1-r51-c1"
   - "pm-q3-1-r50-c1"

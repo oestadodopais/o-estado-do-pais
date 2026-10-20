@@ -9,6 +9,12 @@ id: "utao-divida-acrescimo-2027"
 value: "2,9"
 unit: "mil milhões de euros"
 
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "UTAO: dívida, acrescimo-2027"
+name_source: "§77; p. 44 PDF (43 impressa)"
+name_en: "UTAO: debt, acrescimo-2027"
+
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Unidade Técnica de Apoio Orçamental"
 document:

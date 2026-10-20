@@ -9,6 +9,12 @@ id: "cfp-medidas"
 value: "O MF estima um impacto macroeconómico reduzido das medidas de apoio ao rendimento das famílias com efeito no final de 2026. As medidas previstas para 2027 terão um impacto reduzido."
 unit: "afirmação"
 
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Medidas: impacto macroeconómico"
+name_source: "p. 13 PDF"
+name_en: "Measures: macroeconomic impact"
+
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Conselho das Finanças Públicas"
 document:

@@ -9,6 +9,12 @@ id: "oe-2027-quadro-3-2-nota-i"
 value: "Nota: (i) invariante."
 unit: "texto"
 
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Quadro das medidas: definição da marca (i)"
+name_source: "p. 59 PDF (43 impressa)"
+name_en: "Measures table: definition of mark (i)"
+
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Ministério das Finanças"
 document:

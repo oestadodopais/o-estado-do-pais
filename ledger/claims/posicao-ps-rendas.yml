@@ -9,11 +9,17 @@ id: "posicao-ps-rendas"
 value: "Arrendatários: dedução das rendas no IRS aumentada para 1.000 euros a partir de 2027."
 unit: "afirmação"
 
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Dedução das rendas no IRS"
+name_source: "Corpo da página; frase integral identificada pelo excerto; data editorial no documento"
+name_en: "Income tax deduction for rents"
+
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Partido Socialista"
 document:
   title: "Habitação: o que propusemos e o que vamos propor"
-  edition: "2027"
+  edition: "2026"
   locator: "Corpo da página; frase integral identificada pelo excerto; data editorial no documento"
   source_sha256: "9d5a4c543d4c6264ad453691a14593f1f07c401fe2d8f4cd4f966f270afec06e"
   page: 1

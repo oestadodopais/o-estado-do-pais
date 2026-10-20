@@ -9,6 +9,12 @@ id: "cfp-comparabilidade"
 value: "Ainda assim, face à reduzida dimensão das medidas de política comunicadas ao CFP para 2027 – inferior a 0,1% do PIB – o seu impacto não se afigura relevante para a comparação."
 unit: "afirmação"
 
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Medidas: comparabilidade das previsões"
+name_source: "p. 14 PDF"
+name_en: "Measures: comparability of forecasts"
+
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Conselho das Finanças Públicas"
 document:

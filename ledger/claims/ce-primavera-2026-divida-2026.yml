@@ -11,8 +11,9 @@ unit: "% of GDP"
 
 # O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
-name: "General government gross debt (c)"
-name_source: "Table III.18.1: Main features of country forecast - PORTUGAL; General government gross debt (c); coluna 6: 2026; p. 143 PDF (127 impressa); rótulo da linha"
+name: "Dívida pública bruta"
+name_source: "Table III.18.1: Main features of country forecast - PORTUGAL; General government gross debt (c); coluna 6: 2026; p. 143 PDF (127 impressa)"
+name_en: "General government gross debt"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "European Commission"

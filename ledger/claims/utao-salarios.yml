@@ -9,6 +9,12 @@ id: "utao-salarios"
 value: "A atualização salarial dos funcionários das Administrações Públicas prevista para 2027 é de 1231 M€, a qual acarreta receita de IRS (590 M€) e de contribuições sociais (471 M€). A atualização salarial inclui o aumento decorrente das progressões, promoções, a subida do Rendimento Mínimo Mensal Garantido (RMMG), os acordos salariais com carreiras profissionais e o acordo de rendimentos."
 unit: "afirmação"
 
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Salários públicos: atualização"
+name_source: "§38; p. 22 PDF (21 impressa)"
+name_en: "Public wages: adjustment"
+
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Unidade Técnica de Apoio Orçamental"
 document:

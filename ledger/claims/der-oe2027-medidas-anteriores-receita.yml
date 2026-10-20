@@ -9,6 +9,12 @@ id: "der-oe2027-medidas-anteriores-receita"
 value: "−263"
 unit: "milhões de euros"
 
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Medidas anteriores: receita"
+name_source: "Cálculo sobre as linhas identificadas"
+name_en: "Earlier measures: revenue"
+
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: null
 document: null
@@ -20,8 +26,8 @@ reference_date: "2027"
 excerpt: null
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
-derivation: "pm-q3-2-r7-c0 + pm-q3-2-r10-c0 + pm-q3-2-r11-c0 + pm-q3-2-r12-c0 + pm-q3-2-r15-c0 + pm-q3-2-r16-c0 + pm-q3-2-r18-c0. -263"
-derivation_en: "pm-q3-2-r7-c0 + pm-q3-2-r10-c0 + pm-q3-2-r11-c0 + pm-q3-2-r12-c0 + pm-q3-2-r15-c0 + pm-q3-2-r16-c0 + pm-q3-2-r18-c0. -263"
+derivation: "−94 (Habitação − redução IVA construção de 23% para 6% (i)) − 209 (Habitação − redução IRS rendas moderadas de 25% para 10% (i)) − 431 (Atualização dedução específica e escalões (i)) + 284 (Receita decorrente do aumento de salários (i) (IRS)) − 300 (Redução taxa em 1 p.p. (i)) + 124 (SIFIDE indireto (reversão) (i)) + 363 (Receita decorrente do aumento de salários (i) (Contribuições sociais)) = −263. O sinal indica a direção da variação ou do resultado da conta."
+derivation_en: "−94 (Housing: construction VAT cut from 23% to 6% (i)) − 209 (Housing: personal income tax on moderate rents cut from 25% to 10% (i)) − 431 (Updating the specific deduction and tax brackets (i)) + 284 (Revenue arising from wage increases (i) (personal income tax)) − 300 (Rate cut by 1 percentage point (i)) + 124 (Indirect SIFIDE (reversal) (i)) + 363 (Revenue arising from wage increases (i) (Social contributions)) = −263. The sign indicates the direction of the change or calculation result."
 derived_from:
   - "pm-q3-2-r7-c0"
   - "pm-q3-2-r10-c0"

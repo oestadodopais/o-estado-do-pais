@@ -234,10 +234,11 @@ export function lugarNoRecibo(id, lang) {
  * @param {string} id
  * @returns {{ campo: 'document.title'|'name', valor: string } | null}
  */
-export function nomeDaFonteNoRecibo(id) {
+export function nomeDaFonteNoRecibo(id, lang = 'pt') {
   const c = /** @type {any} */ (getClaim(id));
   const util = (/** @type {unknown} */ v) => typeof v === 'string' && v.trim() !== '' && v !== '[a verificar]';
   // O rótulo da medida tem precedência sobre o título do documento, em todas as famílias.
+  if (lang === 'en' && util(c.name_en)) return { campo: 'name_en', valor: c.name_en };
   if (util(c.name)) return { campo: /** @type {const} */ ('name'), valor: /** @type {string} */ (c.name) };
   if (util(c.document?.title)) return { campo: /** @type {const} */ ('document.title'), valor: /** @type {string} */ (c.document.title) };
   if (util(c.name)) return { campo: /** @type {const} */ ('name'), valor: /** @type {string} */ (c.name) };

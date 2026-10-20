@@ -7004,10 +7004,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Dívida pública bruta» no documento citado, para o período e na unidade indicados."
+        "É o valor de «Dívida pública bruta» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «General government gross debt» in the cited document, for the stated period and unit."
+        "It is the value of «General government gross debt» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "ce-primavera-2026-divida-2026"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "ce-primavera-2026-divida-2026"
+        },
+        "."
       ]
     }
   },
@@ -7018,10 +7032,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Dívida pública bruta» no documento citado, para o período e na unidade indicados."
+        "É o valor de «Dívida pública bruta» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «General government gross debt» in the cited document, for the stated period and unit."
+        "It is the value of «General government gross debt» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "ce-primavera-2026-divida-2027"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "ce-primavera-2026-divida-2027"
+        },
+        "."
       ]
     }
   },
@@ -7032,10 +7060,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a passagem do documento sobre «Trajetória da dívida no texto da Comissão Europeia», conservada no excerto."
+        "É a passagem do documento sobre «Trajetória da dívida no texto da Comissão Europeia», conservada no excerto. Referência: "
       ],
       "en": [
-        "It is the document's passage on «Debt trajectory in the European Commission text», preserved in the excerpt."
+        "It is the document's passage on «Debt trajectory in the European Commission text», preserved in the excerpt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "ce-primavera-2026-divida-texto-divergente"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "ce-primavera-2026-divida-texto-divergente"
+        },
+        "."
       ]
     }
   },
@@ -7046,10 +7088,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Crescimento real do PIB» no documento citado, para o período e na unidade indicados."
+        "É o valor de «Crescimento real do PIB» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Real GDP growth» in the cited document, for the stated period and unit."
+        "It is the value of «Real GDP growth» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "ce-primavera-2026-pib-2027"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "ce-primavera-2026-pib-2027"
+        },
+        "."
       ]
     }
   },
@@ -7060,10 +7116,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Saldo das administrações públicas» no documento citado, para o período e na unidade indicados."
+        "É o valor de «Saldo das administrações públicas» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «General government balance» in the cited document, for the stated period and unit."
+        "It is the value of «General government balance» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "ce-primavera-2026-saldo-2027"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "ce-primavera-2026-saldo-2027"
+        },
+        "."
       ]
     }
   },
@@ -7074,10 +7144,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a passagem do documento sobre «Medidas: comparabilidade das previsões», conservada no excerto."
+        "É a passagem do documento sobre «Medidas: comparabilidade das previsões», conservada no excerto. Referência: "
       ],
       "en": [
-        "It is the document's passage on «Measures: comparability of forecasts», preserved in the excerpt."
+        "It is the document's passage on «Measures: comparability of forecasts», preserved in the excerpt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "cfp-comparabilidade"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "cfp-comparabilidade"
+        },
+        "."
       ]
     }
   },
@@ -7088,10 +7172,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a passagem do documento sobre «Riscos: emprego, salários e receita», conservada no excerto."
+        "É a passagem do documento sobre «Riscos: emprego, salários e receita», conservada no excerto. Referência: "
       ],
       "en": [
-        "It is the document's passage on «Risks: employment, wages and revenue», preserved in the excerpt."
+        "It is the document's passage on «Risks: employment, wages and revenue», preserved in the excerpt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "cfp-emprego-receita"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "cfp-emprego-receita"
+        },
+        "."
       ]
     }
   },
@@ -7102,24 +7200,52 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a passagem do documento sobre «Medidas: impacto macroeconómico», conservada no excerto."
+        "É a passagem do documento sobre «Medidas: impacto macroeconómico», conservada no excerto. Referência: "
       ],
       "en": [
-        "It is the document's passage on «Measures: macroeconomic impact», preserved in the excerpt."
+        "It is the document's passage on «Measures: macroeconomic impact», preserved in the excerpt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "cfp-medidas"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "cfp-medidas"
+        },
+        "."
       ]
     }
   },
   "cfp-pensoes-irs": {
     "nome": {
-      "pt": "Medidas de pensões e IRS com efeitos no ano seguinte",
-      "en": "Pension and income tax measures affecting the following year"
+      "pt": "Pensões e IRS: o suplemento extraordinário e a descida das taxas, pelo CFP",
+      "en": "Pensions and income tax: the extraordinary supplement and the rate reduction, according to the CFP"
     },
     "frase": {
       "pt": [
-        "É a passagem do documento sobre «Medidas de pensões e IRS com efeitos no ano seguinte», conservada no excerto."
+        "É a passagem do documento sobre «Pensões e IRS: o suplemento extraordinário e a descida das taxas, pelo CFP», conservada no excerto. Referência: "
       ],
       "en": [
-        "It is the document's passage on «Pension and income tax measures affecting the following year», preserved in the excerpt."
+        "It is the document's passage on «Pensions and income tax: the extraordinary supplement and the rate reduction, according to the CFP», preserved in the excerpt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "cfp-pensoes-irs"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "cfp-pensoes-irs"
+        },
+        "."
       ]
     }
   },
@@ -7130,10 +7256,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a passagem do documento sobre «IRS: reembolsos e rendimento disponível», conservada no excerto."
+        "É a passagem do documento sobre «IRS: reembolsos e rendimento disponível», conservada no excerto. Referência: "
       ],
       "en": [
-        "It is the document's passage on «Personal income tax: refunds and disposable income», preserved in the excerpt."
+        "It is the document's passage on «Personal income tax: refunds and disposable income», preserved in the excerpt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "cfp-reembolsos"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "cfp-reembolsos"
+        },
+        "."
       ]
     }
   },
@@ -7144,24 +7284,52 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a passagem do documento sobre «Riscos: PIB e inflação», conservada no excerto."
+        "É a passagem do documento sobre «Riscos: PIB e inflação», conservada no excerto. Referência: "
       ],
       "en": [
-        "It is the document's passage on «Risks: GDP and inflation», preserved in the excerpt."
+        "It is the document's passage on «Risks: GDP and inflation», preserved in the excerpt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "cfp-riscos"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "cfp-riscos"
+        },
+        "."
       ]
     }
   },
   "der-csi-referencia-2026": {
     "nome": {
-      "pt": "CSI: referência mensal de ano da estimativa",
-      "en": "Solidarity supplement: estimate year monthly reference"
+      "pt": "CSI: referência mensal de dois mil e vinte e seis",
+      "en": "Solidarity supplement: two thousand and twenty-six monthly reference"
     },
     "frase": {
       "pt": [
-        "É o resultado da conta para «CSI: referência mensal de ano da estimativa», feita com as componentes identificadas neste recibo."
+        "É o resultado da conta para «CSI: referência mensal de dois mil e vinte e seis», feita com as componentes identificadas neste recibo. Referência: "
       ],
       "en": [
-        "It is the result of the calculation for «Solidarity supplement: estimate year monthly reference», using the components identified in this receipt."
+        "It is the result of the calculation for «Solidarity supplement: two thousand and twenty-six monthly reference», using the components identified in this receipt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "der-csi-referencia-2026"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "der-csi-referencia-2026"
+        },
+        "."
       ]
     }
   },
@@ -7172,10 +7340,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o resultado da conta para «Dívida: diferença entre Comissão Europeia e Orçamento», feita com as componentes identificadas neste recibo."
+        "É o resultado da conta para «Dívida: diferença entre Comissão Europeia e Orçamento», feita com as componentes identificadas neste recibo. Referência: "
       ],
       "en": [
-        "It is the result of the calculation for «Debt: gap between European Commission and Budget», using the components identified in this receipt."
+        "It is the result of the calculation for «Debt: gap between European Commission and Budget», using the components identified in this receipt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "der-divida-2027-oe-vs-ce"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "der-divida-2027-oe-vs-ce"
+        },
+        "."
       ]
     }
   },
@@ -7186,24 +7368,52 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o resultado da conta para «Dívida: diferença entre plano de médio prazo e Orçamento», feita com as componentes identificadas neste recibo."
+        "É o resultado da conta para «Dívida: diferença entre plano de médio prazo e Orçamento», feita com as componentes identificadas neste recibo. Referência: "
       ],
       "en": [
-        "It is the result of the calculation for «Debt: gap between medium-term plan and Budget», using the components identified in this receipt."
+        "It is the result of the calculation for «Debt: gap between medium-term plan and Budget», using the components identified in this receipt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "der-divida-2027-oe-vs-poenmp"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "der-divida-2027-oe-vs-poenmp"
+        },
+        "."
       ]
     }
   },
   "der-divida-pt-vs-ue-2025": {
     "nome": {
-      "pt": "Dívida: Portugal face à União em ano anterior à estimativa",
-      "en": "Debt: Portugal against the Union in year before the estimate"
+      "pt": "Dívida: Portugal face à União em dois mil e vinte e cinco",
+      "en": "Debt: Portugal against the Union in two thousand and twenty-five"
     },
     "frase": {
       "pt": [
-        "É o resultado da conta para «Dívida: Portugal face à União em ano anterior à estimativa», feita com as componentes identificadas neste recibo."
+        "É o resultado da conta para «Dívida: Portugal face à União em dois mil e vinte e cinco», feita com as componentes identificadas neste recibo. Referência: "
       ],
       "en": [
-        "It is the result of the calculation for «Debt: Portugal against the Union in year before the estimate», using the components identified in this receipt."
+        "It is the result of the calculation for «Debt: Portugal against the Union in two thousand and twenty-five», using the components identified in this receipt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "der-divida-pt-vs-ue-2025"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "der-divida-pt-vs-ue-2025"
+        },
+        "."
       ]
     }
   },
@@ -7214,10 +7424,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o resultado da conta para «IRS: atualização do limite do escalão um», feita com as componentes identificadas neste recibo."
+        "É o resultado da conta para «IRS: atualização do limite do escalão um», feita com as componentes identificadas neste recibo. Referência: "
       ],
       "en": [
-        "It is the result of the calculation for «Income tax: bracket one limit update», using the components identified in this receipt."
+        "It is the result of the calculation for «Income tax: bracket one limit update», using the components identified in this receipt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "der-irs-escalao-1-atualizacao-pct"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "der-irs-escalao-1-atualizacao-pct"
+        },
+        "."
       ]
     }
   },
@@ -7228,10 +7452,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o resultado da conta para «Despesa sem PRR: crescimento», feita com as componentes identificadas neste recibo."
+        "É o resultado da conta para «Despesa sem PRR: crescimento», feita com as componentes identificadas neste recibo. Referência: "
       ],
       "en": [
-        "It is the result of the calculation for «Expenditure excluding the recovery plan: growth», using the components identified in this receipt."
+        "It is the result of the calculation for «Expenditure excluding the recovery plan: growth», using the components identified in this receipt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "der-oe2027-despesa-sem-prr-variacao-pct"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "der-oe2027-despesa-sem-prr-variacao-pct"
+        },
+        "."
       ]
     }
   },
@@ -7242,10 +7480,52 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o resultado da conta para «Investimento: variação em contabilidade pública», feita com as componentes identificadas neste recibo."
+        "É o resultado da conta para «Investimento: variação em contabilidade pública», feita com as componentes identificadas neste recibo. Referência: "
       ],
       "en": [
-        "It is the result of the calculation for «Investment: public accounting change», using the components identified in this receipt."
+        "It is the result of the calculation for «Investment: public accounting change», using the components identified in this receipt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "der-oe2027-investimento-variacao-cp"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "der-oe2027-investimento-variacao-cp"
+        },
+        "."
+      ]
+    }
+  },
+  "der-oe2027-juros-variacao-cn": {
+    "nome": {
+      "pt": "Juros: variação em contabilidade nacional",
+      "en": "Interest: national accounts change"
+    },
+    "frase": {
+      "pt": [
+        "É o resultado da conta para «Juros: variação em contabilidade nacional», feita com as componentes identificadas neste recibo. Referência: "
+      ],
+      "en": [
+        "It is the result of the calculation for «Interest: national accounts change», using the components identified in this receipt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "der-oe2027-juros-variacao-cn"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "der-oe2027-juros-variacao-cn"
+        },
+        "."
       ]
     }
   },
@@ -7256,10 +7536,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o resultado da conta para «Juros: variação em contabilidade pública», feita com as componentes identificadas neste recibo."
+        "É o resultado da conta para «Juros: variação em contabilidade pública», feita com as componentes identificadas neste recibo. Referência: "
       ],
       "en": [
-        "It is the result of the calculation for «Interest: public accounting change», using the components identified in this receipt."
+        "It is the result of the calculation for «Interest: public accounting change», using the components identified in this receipt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "der-oe2027-juros-variacao-cp"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "der-oe2027-juros-variacao-cp"
+        },
+        "."
       ]
     }
   },
@@ -7270,10 +7564,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o resultado da conta para «Medidas anteriores: despesa», feita com as componentes identificadas neste recibo."
+        "É o resultado da conta para «Medidas anteriores: despesa», feita com as componentes identificadas neste recibo. Referência: "
       ],
       "en": [
-        "It is the result of the calculation for «Earlier measures: expenditure», using the components identified in this receipt."
+        "It is the result of the calculation for «Earlier measures: expenditure», using the components identified in this receipt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "der-oe2027-medidas-anteriores-despesa"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "der-oe2027-medidas-anteriores-despesa"
+        },
+        "."
       ]
     }
   },
@@ -7284,10 +7592,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o resultado da conta para «Medidas anteriores: receita», feita com as componentes identificadas neste recibo."
+        "É o resultado da conta para «Medidas anteriores: receita», feita com as componentes identificadas neste recibo. Referência: "
       ],
       "en": [
-        "It is the result of the calculation for «Earlier measures: revenue», using the components identified in this receipt."
+        "It is the result of the calculation for «Earlier measures: revenue», using the components identified in this receipt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "der-oe2027-medidas-anteriores-receita"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "der-oe2027-medidas-anteriores-receita"
+        },
+        "."
       ]
     }
   },
@@ -7298,10 +7620,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o resultado da conta para «Medidas anteriores: impacto no saldo», feita com as componentes identificadas neste recibo."
+        "É o resultado da conta para «Medidas anteriores: impacto no saldo», feita com as componentes identificadas neste recibo. Referência: "
       ],
       "en": [
-        "It is the result of the calculation for «Earlier measures: balance impact», using the components identified in this receipt."
+        "It is the result of the calculation for «Earlier measures: balance impact», using the components identified in this receipt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "der-oe2027-medidas-anteriores-saldo"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "der-oe2027-medidas-anteriores-saldo"
+        },
+        "."
       ]
     }
   },
@@ -7312,24 +7648,80 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o resultado da conta para «Medidas novas: impacto no saldo», feita com as componentes identificadas neste recibo."
+        "É o resultado da conta para «Medidas novas: impacto no saldo», feita com as componentes identificadas neste recibo. Referência: "
       ],
       "en": [
-        "It is the result of the calculation for «New measures: balance impact», using the components identified in this receipt."
+        "It is the result of the calculation for «New measures: balance impact», using the components identified in this receipt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "der-oe2027-medidas-novas-saldo"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "der-oe2027-medidas-novas-saldo"
+        },
+        "."
+      ]
+    }
+  },
+  "der-oe2027-medidas-soma-derivadas": {
+    "nome": {
+      "pt": "Soma dos impactos das linhas invariantes e das medidas novas no saldo",
+      "en": "Sum of unchanged-policy and new-measure balance impacts"
+    },
+    "frase": {
+      "pt": [
+        "É o resultado da conta para «Soma dos impactos das linhas invariantes e das medidas novas no saldo», feita com as componentes identificadas neste recibo. Referência: "
+      ],
+      "en": [
+        "It is the result of the calculation for «Sum of unchanged-policy and new-measure balance impacts», using the components identified in this receipt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "der-oe2027-medidas-soma-derivadas"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "der-oe2027-medidas-soma-derivadas"
+        },
+        "."
       ]
     }
   },
   "der-oe2027-prr-peso-despesa-2026": {
     "nome": {
-      "pt": "PRR: peso na despesa de ano da estimativa",
-      "en": "Recovery plan: share of estimate year expenditure"
+      "pt": "PRR: peso na despesa de dois mil e vinte e seis",
+      "en": "Recovery plan: share of two thousand and twenty-six expenditure"
     },
     "frase": {
       "pt": [
-        "É o resultado da conta para «PRR: peso na despesa de ano da estimativa», feita com as componentes identificadas neste recibo."
+        "É o resultado da conta para «PRR: peso na despesa de dois mil e vinte e seis», feita com as componentes identificadas neste recibo. Referência: "
       ],
       "en": [
-        "It is the result of the calculation for «Recovery plan: share of estimate year expenditure», using the components identified in this receipt."
+        "It is the result of the calculation for «Recovery plan: share of two thousand and twenty-six expenditure», using the components identified in this receipt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "der-oe2027-prr-peso-despesa-2026"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "der-oe2027-prr-peso-despesa-2026"
+        },
+        "."
       ]
     }
   },
@@ -7340,10 +7732,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o resultado da conta para «Receita sem PRR: crescimento», feita com as componentes identificadas neste recibo."
+        "É o resultado da conta para «Receita sem PRR: crescimento», feita com as componentes identificadas neste recibo. Referência: "
       ],
       "en": [
-        "It is the result of the calculation for «Revenue excluding the recovery plan: growth», using the components identified in this receipt."
+        "It is the result of the calculation for «Revenue excluding the recovery plan: growth», using the components identified in this receipt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "der-oe2027-receita-sem-prr-variacao-pct"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "der-oe2027-receita-sem-prr-variacao-pct"
+        },
+        "."
       ]
     }
   },
@@ -7354,52 +7760,108 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o resultado da conta para «Saldo: variação em contabilidade pública», feita com as componentes identificadas neste recibo."
+        "É o resultado da conta para «Saldo: variação em contabilidade pública», feita com as componentes identificadas neste recibo. Referência: "
       ],
       "en": [
-        "It is the result of the calculation for «Balance: public accounting change», using the components identified in this receipt."
+        "It is the result of the calculation for «Balance: public accounting change», using the components identified in this receipt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "der-oe2027-saldo-cp-variacao"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "der-oe2027-saldo-cp-variacao"
+        },
+        "."
       ]
     }
   },
   "der-rmmg-2024-2027-abs": {
     "nome": {
-      "pt": "Salário mínimo: aumento face a dois anos antes da estimativa",
-      "en": "Minimum wage: increase against two years before the estimate"
+      "pt": "Salário mínimo: aumento face a dois mil e vinte e quatro",
+      "en": "Minimum wage: increase against two thousand and twenty-four"
     },
     "frase": {
       "pt": [
-        "É o resultado da conta para «Salário mínimo: aumento face a dois anos antes da estimativa», feita com as componentes identificadas neste recibo."
+        "É o resultado da conta para «Salário mínimo: aumento face a dois mil e vinte e quatro», feita com as componentes identificadas neste recibo. Referência: "
       ],
       "en": [
-        "It is the result of the calculation for «Minimum wage: increase against two years before the estimate», using the components identified in this receipt."
+        "It is the result of the calculation for «Minimum wage: increase against two thousand and twenty-four», using the components identified in this receipt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "der-rmmg-2024-2027-abs"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "der-rmmg-2024-2027-abs"
+        },
+        "."
       ]
     }
   },
   "der-rmmg-2026-2027-abs": {
     "nome": {
-      "pt": "Salário mínimo: aumento face a ano da estimativa",
-      "en": "Minimum wage: increase against estimate year"
+      "pt": "Salário mínimo: aumento face a dois mil e vinte e seis",
+      "en": "Minimum wage: increase against two thousand and twenty-six"
     },
     "frase": {
       "pt": [
-        "É o resultado da conta para «Salário mínimo: aumento face a ano da estimativa», feita com as componentes identificadas neste recibo."
+        "É o resultado da conta para «Salário mínimo: aumento face a dois mil e vinte e seis», feita com as componentes identificadas neste recibo. Referência: "
       ],
       "en": [
-        "It is the result of the calculation for «Minimum wage: increase against estimate year», using the components identified in this receipt."
+        "It is the result of the calculation for «Minimum wage: increase against two thousand and twenty-six», using the components identified in this receipt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "der-rmmg-2026-2027-abs"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "der-rmmg-2026-2027-abs"
+        },
+        "."
       ]
     }
   },
   "der-rmmg-2026-2027-pct": {
     "nome": {
-      "pt": "Salário mínimo: aumento percentual face a ano da estimativa",
-      "en": "Minimum wage: percentage increase against estimate year"
+      "pt": "Salário mínimo: aumento percentual face a dois mil e vinte e seis",
+      "en": "Minimum wage: percentage increase against two thousand and twenty-six"
     },
     "frase": {
       "pt": [
-        "É o resultado da conta para «Salário mínimo: aumento percentual face a ano da estimativa», feita com as componentes identificadas neste recibo."
+        "É o resultado da conta para «Salário mínimo: aumento percentual face a dois mil e vinte e seis», feita com as componentes identificadas neste recibo. Referência: "
       ],
       "en": [
-        "It is the result of the calculation for «Minimum wage: percentage increase against estimate year», using the components identified in this receipt."
+        "It is the result of the calculation for «Minimum wage: percentage increase against two thousand and twenty-six», using the components identified in this receipt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "der-rmmg-2026-2027-pct"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "der-rmmg-2026-2027-pct"
+        },
+        "."
       ]
     }
   },
@@ -7410,10 +7872,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o resultado da conta para «Salários públicos: receita fiscal e contributiva sobre a atualização», feita com as componentes identificadas neste recibo."
+        "É o resultado da conta para «Salários públicos: receita fiscal e contributiva sobre a atualização», feita com as componentes identificadas neste recibo. Referência: "
       ],
       "en": [
-        "It is the result of the calculation for «Public wages: tax and contributions as a share of the update», using the components identified in this receipt."
+        "It is the result of the calculation for «Public wages: tax and contributions as a share of the update», using the components identified in this receipt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "der-salarios-publicos-retorno-pct"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "der-salarios-publicos-retorno-pct"
+        },
+        "."
       ]
     }
   },
@@ -7424,10 +7900,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a passagem do documento sobre «IVA: condições da taxa reduzida na habitação», conservada no excerto."
+        "É a passagem do documento sobre «IVA: condições da taxa reduzida na habitação», conservada no excerto. Referência: "
       ],
       "en": [
-        "It is the document's passage on «VAT: reduced housing rate conditions», preserved in the excerpt."
+        "It is the document's passage on «VAT: reduced housing rate conditions», preserved in the excerpt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "diploma-habitacao-artigo10"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "diploma-habitacao-artigo10"
+        },
+        "."
       ]
     }
   },
@@ -7438,10 +7928,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a passagem do documento sobre «Habitação: datas e condições de produção de efeitos», conservada no excerto."
+        "É a passagem do documento sobre «Habitação: datas e condições de produção de efeitos», conservada no excerto. Referência: "
       ],
       "en": [
-        "It is the document's passage on «Housing: dates and conditions for legal effects», preserved in the excerpt."
+        "It is the document's passage on «Housing: dates and conditions for legal effects», preserved in the excerpt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "diploma-habitacao-artigo18"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "diploma-habitacao-artigo18"
+        },
+        "."
       ]
     }
   },
@@ -7452,10 +7956,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a passagem do documento sobre «IVA: construção e reabilitação de habitação», conservada no excerto."
+        "É a passagem do documento sobre «IVA: construção e reabilitação de habitação», conservada no excerto. Referência: "
       ],
       "en": [
-        "It is the document's passage on «VAT: housing construction and rehabilitation», preserved in the excerpt."
+        "It is the document's passage on «VAT: housing construction and rehabilitation», preserved in the excerpt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "diploma-habitacao-artigo8"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "diploma-habitacao-artigo8"
+        },
+        "."
       ]
     }
   },
@@ -7466,10 +7984,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a passagem do documento sobre «IVA reduzido na construção e tributação das rendas», conservada no excerto."
+        "É a passagem do documento sobre «IVA reduzido na construção e tributação das rendas», conservada no excerto. Referência: "
       ],
       "en": [
-        "It is the document's passage on «Reduced construction VAT and taxation of rents», preserved in the excerpt."
+        "It is the document's passage on «Reduced construction VAT and taxation of rents», preserved in the excerpt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "diploma-habitacao-preambulo"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "diploma-habitacao-preambulo"
+        },
+        "."
       ]
     }
   },
@@ -7480,472 +8012,948 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a passagem do documento sobre «Percurso legal da taxa geral do IRC», conservada no excerto."
+        "É a passagem do documento sobre «Percurso legal da taxa geral do IRC», conservada no excerto. Referência: "
       ],
       "en": [
-        "It is the document's passage on «Statutory path of the corporate income tax rate», preserved in the excerpt."
+        "It is the document's passage on «Statutory path of the corporate income tax rate», preserved in the excerpt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "diploma-irc-artigo3"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "diploma-irc-artigo3"
+        },
+        "."
       ]
     }
   },
   "europa-divida-ee-2025": {
     "nome": {
-      "pt": "Dívida pública bruta",
-      "en": "General government gross debt"
+      "pt": "Dívida pública bruta consolidada, em percentagem do PIB",
+      "en": "General government consolidated gross debt, as a percentage of GDP"
     },
     "frase": {
       "pt": [
-        "É o valor de «Dívida pública bruta» no documento citado, para o período e na unidade indicados."
+        "É o valor de «Dívida pública bruta consolidada, em percentagem do PIB» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «General government gross debt» in the cited document, for the stated period and unit."
+        "It is the value of «General government consolidated gross debt, as a percentage of GDP» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "europa-divida-ee-2025"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "europa-divida-ee-2025"
+        },
+        "."
       ]
     }
   },
   "europa-divida-el-2025": {
     "nome": {
-      "pt": "Dívida pública bruta",
-      "en": "General government gross debt"
+      "pt": "Dívida pública bruta consolidada, em percentagem do PIB",
+      "en": "General government consolidated gross debt, as a percentage of GDP"
     },
     "frase": {
       "pt": [
-        "É o valor de «Dívida pública bruta» no documento citado, para o período e na unidade indicados."
+        "É o valor de «Dívida pública bruta consolidada, em percentagem do PIB» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «General government gross debt» in the cited document, for the stated period and unit."
+        "It is the value of «General government consolidated gross debt, as a percentage of GDP» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "europa-divida-el-2025"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "europa-divida-el-2025"
+        },
+        "."
       ]
     }
   },
   "europa-divida-es-2025": {
     "nome": {
-      "pt": "Dívida pública bruta",
-      "en": "General government gross debt"
+      "pt": "Dívida pública bruta consolidada, em percentagem do PIB",
+      "en": "General government consolidated gross debt, as a percentage of GDP"
     },
     "frase": {
       "pt": [
-        "É o valor de «Dívida pública bruta» no documento citado, para o período e na unidade indicados."
+        "É o valor de «Dívida pública bruta consolidada, em percentagem do PIB» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «General government gross debt» in the cited document, for the stated period and unit."
+        "It is the value of «General government consolidated gross debt, as a percentage of GDP» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "europa-divida-es-2025"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "europa-divida-es-2025"
+        },
+        "."
       ]
     }
   },
   "europa-divida-eu27_2020-2025": {
     "nome": {
-      "pt": "Dívida pública bruta",
-      "en": "General government gross debt"
+      "pt": "Dívida pública bruta consolidada, em percentagem do PIB",
+      "en": "General government consolidated gross debt, as a percentage of GDP"
     },
     "frase": {
       "pt": [
-        "É o valor de «Dívida pública bruta» no documento citado, para o período e na unidade indicados."
+        "É o valor de «Dívida pública bruta consolidada, em percentagem do PIB» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «General government gross debt» in the cited document, for the stated period and unit."
+        "It is the value of «General government consolidated gross debt, as a percentage of GDP» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "europa-divida-eu27_2020-2025"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "europa-divida-eu27_2020-2025"
+        },
+        "."
       ]
     }
   },
   "europa-divida-pt-2025": {
     "nome": {
-      "pt": "Dívida pública bruta",
-      "en": "General government gross debt"
+      "pt": "Dívida pública bruta consolidada, em percentagem do PIB",
+      "en": "General government consolidated gross debt, as a percentage of GDP"
     },
     "frase": {
       "pt": [
-        "É o valor de «Dívida pública bruta» no documento citado, para o período e na unidade indicados."
+        "É o valor de «Dívida pública bruta consolidada, em percentagem do PIB» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «General government gross debt» in the cited document, for the stated period and unit."
+        "It is the value of «General government consolidated gross debt, as a percentage of GDP» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "europa-divida-pt-2025"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "europa-divida-pt-2025"
+        },
+        "."
       ]
     }
   },
   "europa-saldo-cy-2025": {
     "nome": {
-      "pt": "Saldo das administrações públicas",
-      "en": "General government balance"
+      "pt": "Saldo das administrações públicas, em percentagem do PIB",
+      "en": "General government net lending or borrowing, as a percentage of GDP"
     },
     "frase": {
       "pt": [
-        "É o valor de «Saldo das administrações públicas» no documento citado, para o período e na unidade indicados."
+        "É o valor de «Saldo das administrações públicas, em percentagem do PIB» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «General government balance» in the cited document, for the stated period and unit."
+        "It is the value of «General government net lending or borrowing, as a percentage of GDP» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "europa-saldo-cy-2025"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "europa-saldo-cy-2025"
+        },
+        "."
       ]
     }
   },
   "europa-saldo-eu27_2020-2025": {
     "nome": {
-      "pt": "Saldo das administrações públicas",
-      "en": "General government balance"
+      "pt": "Saldo das administrações públicas, em percentagem do PIB",
+      "en": "General government net lending or borrowing, as a percentage of GDP"
     },
     "frase": {
       "pt": [
-        "É o valor de «Saldo das administrações públicas» no documento citado, para o período e na unidade indicados."
+        "É o valor de «Saldo das administrações públicas, em percentagem do PIB» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «General government balance» in the cited document, for the stated period and unit."
+        "It is the value of «General government net lending or borrowing, as a percentage of GDP» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "europa-saldo-eu27_2020-2025"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "europa-saldo-eu27_2020-2025"
+        },
+        "."
       ]
     }
   },
   "europa-saldo-pt-2025": {
     "nome": {
-      "pt": "Saldo das administrações públicas",
-      "en": "General government balance"
+      "pt": "Saldo das administrações públicas, em percentagem do PIB",
+      "en": "General government net lending or borrowing, as a percentage of GDP"
     },
     "frase": {
       "pt": [
-        "É o valor de «Saldo das administrações públicas» no documento citado, para o período e na unidade indicados."
+        "É o valor de «Saldo das administrações públicas, em percentagem do PIB» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «General government balance» in the cited document, for the stated period and unit."
+        "It is the value of «General government net lending or borrowing, as a percentage of GDP» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "europa-saldo-pt-2025"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "europa-saldo-pt-2025"
+        },
+        "."
       ]
     }
   },
   "europa-saldo-ro-2025": {
     "nome": {
-      "pt": "Saldo das administrações públicas",
-      "en": "General government balance"
+      "pt": "Saldo das administrações públicas, em percentagem do PIB",
+      "en": "General government net lending or borrowing, as a percentage of GDP"
     },
     "frase": {
       "pt": [
-        "É o valor de «Saldo das administrações públicas» no documento citado, para o período e na unidade indicados."
+        "É o valor de «Saldo das administrações públicas, em percentagem do PIB» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «General government balance» in the cited document, for the stated period and unit."
+        "It is the value of «General government net lending or borrowing, as a percentage of GDP» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "europa-saldo-ro-2025"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "europa-saldo-ro-2025"
+        },
+        "."
       ]
     }
   },
   "irc-taxa-2026": {
     "nome": {
-      "pt": "IRC: taxa geral em ano da estimativa",
-      "en": "Corporate tax: general rate in estimate year"
+      "pt": "IRC: taxa geral em dois mil e vinte e seis",
+      "en": "Corporate tax: general rate in two thousand and twenty-six"
     },
     "frase": {
       "pt": [
-        "É o valor de «IRC: taxa geral em ano da estimativa» no documento citado, para o período e na unidade indicados."
+        "É a taxa geral do IRC em "
       ],
       "en": [
-        "It is the value of «Corporate tax: general rate in estimate year» in the cited document, for the stated period and unit."
+        "It is the general corporate income tax rate in "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "irc-taxa-2026"
+        },
+        ", pela lei de novembro de dois mil e vinte e cinco."
+      ],
+      "en": [
+        {
+          "periodo": "irc-taxa-2026"
+        },
+        ", under the law of November two thousand and twenty-five."
       ]
     }
   },
   "irc-taxa-2027": {
     "nome": {
-      "pt": "IRC: taxa geral em ano da proposta",
-      "en": "Corporate tax: general rate in proposal year"
+      "pt": "IRC: taxa geral em dois mil e vinte e sete",
+      "en": "Corporate tax: general rate in two thousand and twenty-seven"
     },
     "frase": {
       "pt": [
-        "É o valor de «IRC: taxa geral em ano da proposta» no documento citado, para o período e na unidade indicados."
+        "É a taxa geral do IRC em "
       ],
       "en": [
-        "It is the value of «Corporate tax: general rate in proposal year» in the cited document, for the stated period and unit."
+        "It is the general corporate income tax rate in "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "irc-taxa-2027"
+        },
+        ", pela lei de novembro de dois mil e vinte e cinco."
+      ],
+      "en": [
+        {
+          "periodo": "irc-taxa-2027"
+        },
+        ", under the law of November two thousand and twenty-five."
       ]
     }
   },
   "irs-2026-escalao-1-limite": {
     "nome": {
-      "pt": "IRS: limite superior do escalão um em ano da estimativa",
-      "en": "Income tax: upper limit of bracket one in estimate year"
+      "pt": "IRS: limite superior do escalão um em dois mil e vinte e seis",
+      "en": "Income tax: upper limit of bracket one in two thousand and twenty-six"
     },
     "frase": {
       "pt": [
-        "É o valor de «IRS: limite superior do escalão um em ano da estimativa» no documento citado, para o período e na unidade indicados."
+        "É o valor de «IRS: limite superior do escalão um em dois mil e vinte e seis» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Income tax: upper limit of bracket one in estimate year» in the cited document, for the stated period and unit."
+        "It is the value of «Income tax: upper limit of bracket one in two thousand and twenty-six» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "irs-2026-escalao-1-limite"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "irs-2026-escalao-1-limite"
+        },
+        "."
       ]
     }
   },
   "irs-2026-escalao-1-taxa-normal": {
     "nome": {
-      "pt": "IRS: taxa normal do escalão um em ano da estimativa",
-      "en": "Income tax: normal rate of bracket one in estimate year"
+      "pt": "IRS: taxa normal do escalão um na tabela anterior a setembro de dois mil e vinte e seis",
+      "en": "Income tax: normal rate of bracket one in the table preceding September two thousand and twenty-six"
     },
     "frase": {
       "pt": [
-        "É o valor de «IRS: taxa normal do escalão um em ano da estimativa» no documento citado, para o período e na unidade indicados."
+        "É o valor de «IRS: taxa normal do escalão um na tabela anterior a setembro de dois mil e vinte e seis» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Income tax: normal rate of bracket one in estimate year» in the cited document, for the stated period and unit."
+        "It is the value of «Income tax: normal rate of bracket one in the table preceding September two thousand and twenty-six» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "irs-2026-escalao-1-taxa-normal"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "irs-2026-escalao-1-taxa-normal"
+        },
+        "."
       ]
     }
   },
   "irs-2026-escalao-2-limite": {
     "nome": {
-      "pt": "IRS: limite superior do escalão dois em ano da estimativa",
-      "en": "Income tax: upper limit of bracket two in estimate year"
+      "pt": "IRS: limite superior do escalão dois em dois mil e vinte e seis",
+      "en": "Income tax: upper limit of bracket two in two thousand and twenty-six"
     },
     "frase": {
       "pt": [
-        "É o valor de «IRS: limite superior do escalão dois em ano da estimativa» no documento citado, para o período e na unidade indicados."
+        "É o valor de «IRS: limite superior do escalão dois em dois mil e vinte e seis» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Income tax: upper limit of bracket two in estimate year» in the cited document, for the stated period and unit."
+        "It is the value of «Income tax: upper limit of bracket two in two thousand and twenty-six» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "irs-2026-escalao-2-limite"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "irs-2026-escalao-2-limite"
+        },
+        "."
       ]
     }
   },
   "irs-2026-escalao-2-taxa-normal": {
     "nome": {
-      "pt": "IRS: taxa normal do escalão dois em ano da estimativa",
-      "en": "Income tax: normal rate of bracket two in estimate year"
+      "pt": "IRS: taxa normal do escalão dois na tabela anterior a setembro de dois mil e vinte e seis",
+      "en": "Income tax: normal rate of bracket two in the table preceding September two thousand and twenty-six"
     },
     "frase": {
       "pt": [
-        "É o valor de «IRS: taxa normal do escalão dois em ano da estimativa» no documento citado, para o período e na unidade indicados."
+        "É o valor de «IRS: taxa normal do escalão dois na tabela anterior a setembro de dois mil e vinte e seis» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Income tax: normal rate of bracket two in estimate year» in the cited document, for the stated period and unit."
+        "It is the value of «Income tax: normal rate of bracket two in the table preceding September two thousand and twenty-six» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "irs-2026-escalao-2-taxa-normal"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "irs-2026-escalao-2-taxa-normal"
+        },
+        "."
       ]
     }
   },
   "irs-2026-escalao-3-limite": {
     "nome": {
-      "pt": "IRS: limite superior do escalão três em ano da estimativa",
-      "en": "Income tax: upper limit of bracket three in estimate year"
+      "pt": "IRS: limite superior do escalão três em dois mil e vinte e seis",
+      "en": "Income tax: upper limit of bracket three in two thousand and twenty-six"
     },
     "frase": {
       "pt": [
-        "É o valor de «IRS: limite superior do escalão três em ano da estimativa» no documento citado, para o período e na unidade indicados."
+        "É o valor de «IRS: limite superior do escalão três em dois mil e vinte e seis» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Income tax: upper limit of bracket three in estimate year» in the cited document, for the stated period and unit."
+        "It is the value of «Income tax: upper limit of bracket three in two thousand and twenty-six» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "irs-2026-escalao-3-limite"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "irs-2026-escalao-3-limite"
+        },
+        "."
       ]
     }
   },
   "irs-2026-escalao-3-taxa-normal": {
     "nome": {
-      "pt": "IRS: taxa normal do escalão três em ano da estimativa",
-      "en": "Income tax: normal rate of bracket three in estimate year"
+      "pt": "IRS: taxa normal do escalão três na tabela anterior a setembro de dois mil e vinte e seis",
+      "en": "Income tax: normal rate of bracket three in the table preceding September two thousand and twenty-six"
     },
     "frase": {
       "pt": [
-        "É o valor de «IRS: taxa normal do escalão três em ano da estimativa» no documento citado, para o período e na unidade indicados."
+        "É o valor de «IRS: taxa normal do escalão três na tabela anterior a setembro de dois mil e vinte e seis» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Income tax: normal rate of bracket three in estimate year» in the cited document, for the stated period and unit."
+        "It is the value of «Income tax: normal rate of bracket three in the table preceding September two thousand and twenty-six» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "irs-2026-escalao-3-taxa-normal"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "irs-2026-escalao-3-taxa-normal"
+        },
+        "."
       ]
     }
   },
   "irs-2026-escalao-4-limite": {
     "nome": {
-      "pt": "IRS: limite superior do escalão quatro em ano da estimativa",
-      "en": "Income tax: upper limit of bracket four in estimate year"
+      "pt": "IRS: limite superior do escalão quatro em dois mil e vinte e seis",
+      "en": "Income tax: upper limit of bracket four in two thousand and twenty-six"
     },
     "frase": {
       "pt": [
-        "É o valor de «IRS: limite superior do escalão quatro em ano da estimativa» no documento citado, para o período e na unidade indicados."
+        "É o valor de «IRS: limite superior do escalão quatro em dois mil e vinte e seis» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Income tax: upper limit of bracket four in estimate year» in the cited document, for the stated period and unit."
+        "It is the value of «Income tax: upper limit of bracket four in two thousand and twenty-six» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "irs-2026-escalao-4-limite"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "irs-2026-escalao-4-limite"
+        },
+        "."
       ]
     }
   },
   "irs-2026-escalao-4-taxa-normal": {
     "nome": {
-      "pt": "IRS: taxa normal do escalão quatro em ano da estimativa",
-      "en": "Income tax: normal rate of bracket four in estimate year"
+      "pt": "IRS: taxa normal do escalão quatro na tabela anterior a setembro de dois mil e vinte e seis",
+      "en": "Income tax: normal rate of bracket four in the table preceding September two thousand and twenty-six"
     },
     "frase": {
       "pt": [
-        "É o valor de «IRS: taxa normal do escalão quatro em ano da estimativa» no documento citado, para o período e na unidade indicados."
+        "É o valor de «IRS: taxa normal do escalão quatro na tabela anterior a setembro de dois mil e vinte e seis» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Income tax: normal rate of bracket four in estimate year» in the cited document, for the stated period and unit."
+        "It is the value of «Income tax: normal rate of bracket four in the table preceding September two thousand and twenty-six» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "irs-2026-escalao-4-taxa-normal"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "irs-2026-escalao-4-taxa-normal"
+        },
+        "."
       ]
     }
   },
   "irs-2026-escalao-5-limite": {
     "nome": {
-      "pt": "IRS: limite superior do escalão cinco em ano da estimativa",
-      "en": "Income tax: upper limit of bracket five in estimate year"
+      "pt": "IRS: limite superior do escalão cinco em dois mil e vinte e seis",
+      "en": "Income tax: upper limit of bracket five in two thousand and twenty-six"
     },
     "frase": {
       "pt": [
-        "É o valor de «IRS: limite superior do escalão cinco em ano da estimativa» no documento citado, para o período e na unidade indicados."
+        "É o valor de «IRS: limite superior do escalão cinco em dois mil e vinte e seis» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Income tax: upper limit of bracket five in estimate year» in the cited document, for the stated period and unit."
+        "It is the value of «Income tax: upper limit of bracket five in two thousand and twenty-six» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "irs-2026-escalao-5-limite"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "irs-2026-escalao-5-limite"
+        },
+        "."
       ]
     }
   },
   "irs-2026-escalao-5-taxa-normal": {
     "nome": {
-      "pt": "IRS: taxa normal do escalão cinco em ano da estimativa",
-      "en": "Income tax: normal rate of bracket five in estimate year"
+      "pt": "IRS: taxa normal do escalão cinco na tabela anterior a setembro de dois mil e vinte e seis",
+      "en": "Income tax: normal rate of bracket five in the table preceding September two thousand and twenty-six"
     },
     "frase": {
       "pt": [
-        "É o valor de «IRS: taxa normal do escalão cinco em ano da estimativa» no documento citado, para o período e na unidade indicados."
+        "É o valor de «IRS: taxa normal do escalão cinco na tabela anterior a setembro de dois mil e vinte e seis» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Income tax: normal rate of bracket five in estimate year» in the cited document, for the stated period and unit."
+        "It is the value of «Income tax: normal rate of bracket five in the table preceding September two thousand and twenty-six» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "irs-2026-escalao-5-taxa-normal"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "irs-2026-escalao-5-taxa-normal"
+        },
+        "."
       ]
     }
   },
   "irs-2026-escalao-6-limite": {
     "nome": {
-      "pt": "IRS: limite superior do escalão seis em ano da estimativa",
-      "en": "Income tax: upper limit of bracket six in estimate year"
+      "pt": "IRS: limite superior do escalão seis em dois mil e vinte e seis",
+      "en": "Income tax: upper limit of bracket six in two thousand and twenty-six"
     },
     "frase": {
       "pt": [
-        "É o valor de «IRS: limite superior do escalão seis em ano da estimativa» no documento citado, para o período e na unidade indicados."
+        "É o valor de «IRS: limite superior do escalão seis em dois mil e vinte e seis» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Income tax: upper limit of bracket six in estimate year» in the cited document, for the stated period and unit."
+        "It is the value of «Income tax: upper limit of bracket six in two thousand and twenty-six» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "irs-2026-escalao-6-limite"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "irs-2026-escalao-6-limite"
+        },
+        "."
       ]
     }
   },
   "irs-2026-escalao-6-taxa-normal": {
     "nome": {
-      "pt": "IRS: taxa normal do escalão seis em ano da estimativa",
-      "en": "Income tax: normal rate of bracket six in estimate year"
+      "pt": "IRS: taxa normal do escalão seis na tabela anterior a setembro de dois mil e vinte e seis",
+      "en": "Income tax: normal rate of bracket six in the table preceding September two thousand and twenty-six"
     },
     "frase": {
       "pt": [
-        "É o valor de «IRS: taxa normal do escalão seis em ano da estimativa» no documento citado, para o período e na unidade indicados."
+        "É o valor de «IRS: taxa normal do escalão seis na tabela anterior a setembro de dois mil e vinte e seis» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Income tax: normal rate of bracket six in estimate year» in the cited document, for the stated period and unit."
+        "It is the value of «Income tax: normal rate of bracket six in the table preceding September two thousand and twenty-six» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "irs-2026-escalao-6-taxa-normal"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "irs-2026-escalao-6-taxa-normal"
+        },
+        "."
       ]
     }
   },
   "irs-2026-escalao-7-limite": {
     "nome": {
-      "pt": "IRS: limite superior do escalão sete em ano da estimativa",
-      "en": "Income tax: upper limit of bracket seven in estimate year"
+      "pt": "IRS: limite superior do escalão sete em dois mil e vinte e seis",
+      "en": "Income tax: upper limit of bracket seven in two thousand and twenty-six"
     },
     "frase": {
       "pt": [
-        "É o valor de «IRS: limite superior do escalão sete em ano da estimativa» no documento citado, para o período e na unidade indicados."
+        "É o valor de «IRS: limite superior do escalão sete em dois mil e vinte e seis» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Income tax: upper limit of bracket seven in estimate year» in the cited document, for the stated period and unit."
+        "It is the value of «Income tax: upper limit of bracket seven in two thousand and twenty-six» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "irs-2026-escalao-7-limite"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "irs-2026-escalao-7-limite"
+        },
+        "."
       ]
     }
   },
   "irs-2026-escalao-8-limite": {
     "nome": {
-      "pt": "IRS: limite superior do escalão oito em ano da estimativa",
-      "en": "Income tax: upper limit of bracket eight in estimate year"
+      "pt": "IRS: limite superior do escalão oito em dois mil e vinte e seis",
+      "en": "Income tax: upper limit of bracket eight in two thousand and twenty-six"
     },
     "frase": {
       "pt": [
-        "É o valor de «IRS: limite superior do escalão oito em ano da estimativa» no documento citado, para o período e na unidade indicados."
+        "É o valor de «IRS: limite superior do escalão oito em dois mil e vinte e seis» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Income tax: upper limit of bracket eight in estimate year» in the cited document, for the stated period and unit."
+        "It is the value of «Income tax: upper limit of bracket eight in two thousand and twenty-six» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "irs-2026-escalao-8-limite"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "irs-2026-escalao-8-limite"
+        },
+        "."
       ]
     }
   },
   "irs-2027-escalao-1-limite": {
     "nome": {
-      "pt": "IRS: limite superior do escalão um em ano da proposta",
-      "en": "Income tax: upper limit of bracket one in proposal year"
+      "pt": "IRS: limite superior do escalão um em dois mil e vinte e sete",
+      "en": "Income tax: upper limit of bracket one in two thousand and twenty-seven"
     },
     "frase": {
       "pt": [
-        "É o valor de «IRS: limite superior do escalão um em ano da proposta» no documento citado, para o período e na unidade indicados."
+        "É o valor de «IRS: limite superior do escalão um em dois mil e vinte e sete» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Income tax: upper limit of bracket one in proposal year» in the cited document, for the stated period and unit."
+        "It is the value of «Income tax: upper limit of bracket one in two thousand and twenty-seven» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "irs-2027-escalao-1-limite"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "irs-2027-escalao-1-limite"
+        },
+        "."
       ]
     }
   },
   "irs-2027-escalao-2-limite": {
     "nome": {
-      "pt": "IRS: limite superior do escalão dois em ano da proposta",
-      "en": "Income tax: upper limit of bracket two in proposal year"
+      "pt": "IRS: limite superior do escalão dois em dois mil e vinte e sete",
+      "en": "Income tax: upper limit of bracket two in two thousand and twenty-seven"
     },
     "frase": {
       "pt": [
-        "É o valor de «IRS: limite superior do escalão dois em ano da proposta» no documento citado, para o período e na unidade indicados."
+        "É o valor de «IRS: limite superior do escalão dois em dois mil e vinte e sete» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Income tax: upper limit of bracket two in proposal year» in the cited document, for the stated period and unit."
+        "It is the value of «Income tax: upper limit of bracket two in two thousand and twenty-seven» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "irs-2027-escalao-2-limite"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "irs-2027-escalao-2-limite"
+        },
+        "."
       ]
     }
   },
   "irs-2027-escalao-3-limite": {
     "nome": {
-      "pt": "IRS: limite superior do escalão três em ano da proposta",
-      "en": "Income tax: upper limit of bracket three in proposal year"
+      "pt": "IRS: limite superior do escalão três em dois mil e vinte e sete",
+      "en": "Income tax: upper limit of bracket three in two thousand and twenty-seven"
     },
     "frase": {
       "pt": [
-        "É o valor de «IRS: limite superior do escalão três em ano da proposta» no documento citado, para o período e na unidade indicados."
+        "É o valor de «IRS: limite superior do escalão três em dois mil e vinte e sete» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Income tax: upper limit of bracket three in proposal year» in the cited document, for the stated period and unit."
+        "It is the value of «Income tax: upper limit of bracket three in two thousand and twenty-seven» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "irs-2027-escalao-3-limite"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "irs-2027-escalao-3-limite"
+        },
+        "."
       ]
     }
   },
   "irs-2027-escalao-4-limite": {
     "nome": {
-      "pt": "IRS: limite superior do escalão quatro em ano da proposta",
-      "en": "Income tax: upper limit of bracket four in proposal year"
+      "pt": "IRS: limite superior do escalão quatro em dois mil e vinte e sete",
+      "en": "Income tax: upper limit of bracket four in two thousand and twenty-seven"
     },
     "frase": {
       "pt": [
-        "É o valor de «IRS: limite superior do escalão quatro em ano da proposta» no documento citado, para o período e na unidade indicados."
+        "É o valor de «IRS: limite superior do escalão quatro em dois mil e vinte e sete» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Income tax: upper limit of bracket four in proposal year» in the cited document, for the stated period and unit."
+        "It is the value of «Income tax: upper limit of bracket four in two thousand and twenty-seven» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "irs-2027-escalao-4-limite"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "irs-2027-escalao-4-limite"
+        },
+        "."
       ]
     }
   },
   "irs-2027-escalao-5-limite": {
     "nome": {
-      "pt": "IRS: limite superior do escalão cinco em ano da proposta",
-      "en": "Income tax: upper limit of bracket five in proposal year"
+      "pt": "IRS: limite superior do escalão cinco em dois mil e vinte e sete",
+      "en": "Income tax: upper limit of bracket five in two thousand and twenty-seven"
     },
     "frase": {
       "pt": [
-        "É o valor de «IRS: limite superior do escalão cinco em ano da proposta» no documento citado, para o período e na unidade indicados."
+        "É o valor de «IRS: limite superior do escalão cinco em dois mil e vinte e sete» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Income tax: upper limit of bracket five in proposal year» in the cited document, for the stated period and unit."
+        "It is the value of «Income tax: upper limit of bracket five in two thousand and twenty-seven» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "irs-2027-escalao-5-limite"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "irs-2027-escalao-5-limite"
+        },
+        "."
       ]
     }
   },
   "irs-2027-escalao-6-limite": {
     "nome": {
-      "pt": "IRS: limite superior do escalão seis em ano da proposta",
-      "en": "Income tax: upper limit of bracket six in proposal year"
+      "pt": "IRS: limite superior do escalão seis em dois mil e vinte e sete",
+      "en": "Income tax: upper limit of bracket six in two thousand and twenty-seven"
     },
     "frase": {
       "pt": [
-        "É o valor de «IRS: limite superior do escalão seis em ano da proposta» no documento citado, para o período e na unidade indicados."
+        "É o valor de «IRS: limite superior do escalão seis em dois mil e vinte e sete» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Income tax: upper limit of bracket six in proposal year» in the cited document, for the stated period and unit."
+        "It is the value of «Income tax: upper limit of bracket six in two thousand and twenty-seven» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "irs-2027-escalao-6-limite"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "irs-2027-escalao-6-limite"
+        },
+        "."
       ]
     }
   },
   "irs-2027-escalao-7-limite": {
     "nome": {
-      "pt": "IRS: limite superior do escalão sete em ano da proposta",
-      "en": "Income tax: upper limit of bracket seven in proposal year"
+      "pt": "IRS: limite superior do escalão sete em dois mil e vinte e sete",
+      "en": "Income tax: upper limit of bracket seven in two thousand and twenty-seven"
     },
     "frase": {
       "pt": [
-        "É o valor de «IRS: limite superior do escalão sete em ano da proposta» no documento citado, para o período e na unidade indicados."
+        "É o valor de «IRS: limite superior do escalão sete em dois mil e vinte e sete» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Income tax: upper limit of bracket seven in proposal year» in the cited document, for the stated period and unit."
+        "It is the value of «Income tax: upper limit of bracket seven in two thousand and twenty-seven» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "irs-2027-escalao-7-limite"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "irs-2027-escalao-7-limite"
+        },
+        "."
       ]
     }
   },
   "irs-2027-escalao-8-limite": {
     "nome": {
-      "pt": "IRS: limite superior do escalão oito em ano da proposta",
-      "en": "Income tax: upper limit of bracket eight in proposal year"
+      "pt": "IRS: limite superior do escalão oito em dois mil e vinte e sete",
+      "en": "Income tax: upper limit of bracket eight in two thousand and twenty-seven"
     },
     "frase": {
       "pt": [
-        "É o valor de «IRS: limite superior do escalão oito em ano da proposta» no documento citado, para o período e na unidade indicados."
+        "É o valor de «IRS: limite superior do escalão oito em dois mil e vinte e sete» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Income tax: upper limit of bracket eight in proposal year» in the cited document, for the stated period and unit."
+        "It is the value of «Income tax: upper limit of bracket eight in two thousand and twenty-seven» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "irs-2027-escalao-8-limite"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "irs-2027-escalao-8-limite"
+        },
+        "."
       ]
     }
   },
@@ -7956,10 +8964,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «IRS: taxa normal do escalão um» no documento citado, para o período e na unidade indicados."
+        "É o valor de «IRS: taxa normal do escalão um» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Personal income tax: normal rate for bracket one» in the cited document, for the stated period and unit."
+        "It is the value of «Personal income tax: normal rate for bracket one» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "irs-escalao-1-taxa-normal"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "irs-escalao-1-taxa-normal"
+        },
+        "."
       ]
     }
   },
@@ -7970,10 +8992,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «IRS: taxa normal do escalão dois» no documento citado, para o período e na unidade indicados."
+        "É o valor de «IRS: taxa normal do escalão dois» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Personal income tax: normal rate for bracket two» in the cited document, for the stated period and unit."
+        "It is the value of «Personal income tax: normal rate for bracket two» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "irs-escalao-2-taxa-normal"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "irs-escalao-2-taxa-normal"
+        },
+        "."
       ]
     }
   },
@@ -7984,10 +9020,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «IRS: taxa normal do escalão três» no documento citado, para o período e na unidade indicados."
+        "É o valor de «IRS: taxa normal do escalão três» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Personal income tax: normal rate for bracket three» in the cited document, for the stated period and unit."
+        "It is the value of «Personal income tax: normal rate for bracket three» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "irs-escalao-3-taxa-normal"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "irs-escalao-3-taxa-normal"
+        },
+        "."
       ]
     }
   },
@@ -7998,10 +9048,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «IRS: taxa normal do escalão quatro» no documento citado, para o período e na unidade indicados."
+        "É o valor de «IRS: taxa normal do escalão quatro» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Personal income tax: normal rate for bracket four» in the cited document, for the stated period and unit."
+        "It is the value of «Personal income tax: normal rate for bracket four» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "irs-escalao-4-taxa-normal"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "irs-escalao-4-taxa-normal"
+        },
+        "."
       ]
     }
   },
@@ -8012,10 +9076,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «IRS: taxa normal do escalão cinco» no documento citado, para o período e na unidade indicados."
+        "É o valor de «IRS: taxa normal do escalão cinco» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Personal income tax: normal rate for bracket five» in the cited document, for the stated period and unit."
+        "It is the value of «Personal income tax: normal rate for bracket five» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "irs-escalao-5-taxa-normal"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "irs-escalao-5-taxa-normal"
+        },
+        "."
       ]
     }
   },
@@ -8026,10 +9104,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «IRS: taxa normal do escalão seis» no documento citado, para o período e na unidade indicados."
+        "É o valor de «IRS: taxa normal do escalão seis» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Personal income tax: normal rate for bracket six» in the cited document, for the stated period and unit."
+        "It is the value of «Personal income tax: normal rate for bracket six» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "irs-escalao-6-taxa-normal"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "irs-escalao-6-taxa-normal"
+        },
+        "."
       ]
     }
   },
@@ -8040,10 +9132,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «IRS: taxa normal do escalão sete» no documento citado, para o período e na unidade indicados."
+        "É o valor de «IRS: taxa normal do escalão sete» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Personal income tax: normal rate for bracket seven» in the cited document, for the stated period and unit."
+        "It is the value of «Personal income tax: normal rate for bracket seven» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "irs-escalao-7-taxa-normal"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "irs-escalao-7-taxa-normal"
+        },
+        "."
       ]
     }
   },
@@ -8054,10 +9160,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «IRS: taxa normal do escalão oito» no documento citado, para o período e na unidade indicados."
+        "É o valor de «IRS: taxa normal do escalão oito» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Personal income tax: normal rate for bracket eight» in the cited document, for the stated period and unit."
+        "It is the value of «Personal income tax: normal rate for bracket eight» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "irs-escalao-8-taxa-normal"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "irs-escalao-8-taxa-normal"
+        },
+        "."
       ]
     }
   },
@@ -8068,10 +9188,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «IRS: taxa normal do escalão nove» no documento citado, para o período e na unidade indicados."
+        "É o valor de «IRS: taxa normal do escalão nove» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Personal income tax: normal rate for bracket nine» in the cited document, for the stated period and unit."
+        "It is the value of «Personal income tax: normal rate for bracket nine» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "irs-escalao-9-taxa-normal"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "irs-escalao-9-taxa-normal"
+        },
+        "."
       ]
     }
   },
@@ -8082,10 +9216,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Entrega da proposta de Orçamento» no documento citado, para o período e na unidade indicados."
+        "É o valor de «Entrega da proposta de Orçamento» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Delivery of the Budget proposal» in the cited document, for the stated period and unit."
+        "It is the value of «Delivery of the Budget proposal» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "oe-2027-calendario-entrega"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "oe-2027-calendario-entrega"
+        },
+        "."
       ]
     }
   },
@@ -8096,10 +9244,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Debate e votação na especialidade» no documento citado, para o período e na unidade indicados."
+        "É o valor de «Debate e votação na especialidade» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Committee debate and vote» in the cited document, for the stated period and unit."
+        "It is the value of «Committee debate and vote» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "oe-2027-calendario-especialidade"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "oe-2027-calendario-especialidade"
+        },
+        "."
       ]
     }
   },
@@ -8110,10 +9272,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Votação final global» no documento citado, para o período e na unidade indicados."
+        "É o valor de «Votação final global» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Final global vote» in the cited document, for the stated period and unit."
+        "It is the value of «Final global vote» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "oe-2027-calendario-final-global"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "oe-2027-calendario-final-global"
+        },
+        "."
       ]
     }
   },
@@ -8124,10 +9300,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Debate e votação na generalidade» no documento citado, para o período e na unidade indicados."
+        "É o valor de «Debate e votação na generalidade» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «General debate and vote» in the cited document, for the stated period and unit."
+        "It is the value of «General debate and vote» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "oe-2027-calendario-generalidade"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "oe-2027-calendario-generalidade"
+        },
+        "."
       ]
     }
   },
@@ -8138,10 +9328,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «CSI: aumento mensal do valor de referência» no documento citado, para o período e na unidade indicados."
+        "É o valor de «CSI: aumento mensal do valor de referência» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Solidarity supplement: monthly increase» in the cited document, for the stated period and unit."
+        "It is the value of «Solidarity supplement: monthly increase» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "oe-2027-csi-aumento-2027"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "oe-2027-csi-aumento-2027"
+        },
+        "."
       ]
     }
   },
@@ -8152,10 +9356,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «CSI: valor de referência mensal» no documento citado, para o período e na unidade indicados."
+        "É o valor de «CSI: valor de referência mensal» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Solidarity supplement: monthly reference amount» in the cited document, for the stated period and unit."
+        "It is the value of «Solidarity supplement: monthly reference amount» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "oe-2027-csi-referencia-2027"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "oe-2027-csi-referencia-2027"
+        },
+        "."
       ]
     }
   },
@@ -8166,24 +9384,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «CSI: objetivo do valor de referência mensal» no documento citado, para o período e na unidade indicados."
+        "É o valor de «CSI: objetivo do valor de referência mensal» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Solidarity supplement: target monthly reference amount» in the cited document, for the stated period and unit."
+        "It is the value of «Solidarity supplement: target monthly reference amount» in the cited document, for the stated period and unit. Reference: "
       ]
-    }
-  },
-  "oe-2027-irc-21-para-17": {
-    "nome": {
-      "pt": "IRC: percurso das taxas segundo o relatório",
-      "en": "Corporate tax: rate path according to the report"
     },
-    "frase": {
+    "complemento": {
       "pt": [
-        "É a passagem do documento sobre «IRC: percurso das taxas segundo o relatório», conservada no excerto."
+        {
+          "periodo": "oe-2027-csi-referencia-2029"
+        },
+        "."
       ],
       "en": [
-        "It is the document's passage on «Corporate tax: rate path according to the report», preserved in the excerpt."
+        {
+          "periodo": "oe-2027-csi-referencia-2029"
+        },
+        "."
       ]
     }
   },
@@ -8194,10 +9412,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a passagem do documento sobre «IRS: sexta redução segundo o relatório», conservada no excerto."
+        "É a passagem do documento sobre «IRS: sexta redução segundo o relatório», conservada no excerto. Referência: "
       ],
       "en": [
-        "It is the document's passage on «Income tax: sixth cut according to the report», preserved in the excerpt."
+        "It is the document's passage on «Income tax: sixth cut according to the report», preserved in the excerpt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "oe-2027-irs-sexta-reducao"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "oe-2027-irs-sexta-reducao"
+        },
+        "."
       ]
     }
   },
@@ -8208,10 +9440,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a passagem do documento sobre «Fim do PRR: investimento», conservada no excerto."
+        "É a passagem do documento sobre «Fim do PRR: investimento», conservada no excerto. Referência: "
       ],
       "en": [
-        "It is the document's passage on «End of the recovery plan: investment», preserved in the excerpt."
+        "It is the document's passage on «End of the recovery plan: investment», preserved in the excerpt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "oe-2027-prr-fim-investimento"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "oe-2027-prr-fim-investimento"
+        },
+        "."
       ]
     }
   },
@@ -8222,10 +9468,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a passagem do documento sobre «Quadro das medidas: definição da marca (i)», conservada no excerto."
+        "É a passagem do documento sobre «Quadro das medidas: definição da marca (i)», conservada no excerto. Referência: "
       ],
       "en": [
-        "It is the document's passage on «Measures table: definition of mark (i)», preserved in the excerpt."
+        "It is the document's passage on «Measures table: definition of mark (i)», preserved in the excerpt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "oe-2027-quadro-3-2-nota-i"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "oe-2027-quadro-3-2-nota-i"
+        },
+        "."
       ]
     }
   },
@@ -8236,38 +9496,80 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Administração Pública: atualização das remunerações» no documento citado, para o período e na unidade indicados."
+        "É o valor de «Administração Pública: atualização das remunerações» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Public administration: wage update» in the cited document, for the stated period and unit."
+        "It is the value of «Public administration: wage update» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "oe-2027-remuneracoes-atualizacao-pct"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "oe-2027-remuneracoes-atualizacao-pct"
+        },
+        "."
       ]
     }
   },
   "oe-2027-rmmg-2024": {
     "nome": {
-      "pt": "Remuneração mínima mensal garantida: dois anos antes da estimativa",
-      "en": "Minimum monthly wage: two years before the estimate"
+      "pt": "Remuneração mínima mensal garantida: dois mil e vinte e quatro",
+      "en": "Minimum monthly wage: two thousand and twenty-four"
     },
     "frase": {
       "pt": [
-        "É o valor de «Remuneração mínima mensal garantida: dois anos antes da estimativa» no documento citado, para o período e na unidade indicados."
+        "É o valor de «Remuneração mínima mensal garantida: dois mil e vinte e quatro» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Minimum monthly wage: two years before the estimate» in the cited document, for the stated period and unit."
+        "It is the value of «Minimum monthly wage: two thousand and twenty-four» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "oe-2027-rmmg-2024"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "oe-2027-rmmg-2024"
+        },
+        "."
       ]
     }
   },
   "oe-2027-rmmg-2027": {
     "nome": {
-      "pt": "Remuneração mínima mensal garantida: ano da proposta",
-      "en": "Minimum monthly wage: proposal year"
+      "pt": "Remuneração mínima mensal garantida: dois mil e vinte e sete",
+      "en": "Minimum monthly wage: two thousand and twenty-seven"
     },
     "frase": {
       "pt": [
-        "É o valor de «Remuneração mínima mensal garantida: ano da proposta» no documento citado, para o período e na unidade indicados."
+        "É o valor de «Remuneração mínima mensal garantida: dois mil e vinte e sete» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Minimum monthly wage: proposal year» in the cited document, for the stated period and unit."
+        "It is the value of «Minimum monthly wage: two thousand and twenty-seven» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "oe-2027-rmmg-2027"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "oe-2027-rmmg-2027"
+        },
+        "."
       ]
     }
   },
@@ -8278,10 +9580,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a passagem do documento sobre «Valor de referência e despesa do CSI», conservada no excerto."
+        "É a passagem do documento sobre «Valor de referência e despesa do CSI», conservada no excerto. Referência: "
       ],
       "en": [
-        "It is the document's passage on «CSI reference amount and expenditure», preserved in the excerpt."
+        "It is the document's passage on «CSI reference amount and expenditure», preserved in the excerpt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-csi-referencia-2027"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-csi-referencia-2027"
+        },
+        "."
       ]
     }
   },
@@ -8292,10 +9608,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Trajetória da dívida pública (POENMP)» no documento citado, para o período e na unidade indicados."
+        "É o valor de «Trajetória da dívida pública (POENMP)» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Public debt path (POENMP)» in the cited document, for the stated period and unit."
+        "It is the value of «Public debt path (POENMP)» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-grafico-3-5-poenmp-2027"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-grafico-3-5-poenmp-2027"
+        },
+        "."
       ]
     }
   },
@@ -8306,10 +9636,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a passagem do documento sobre «Objetivo da dívida no final da década», conservada no excerto."
+        "É a passagem do documento sobre «Objetivo da dívida no final da década», conservada no excerto. Referência: "
       ],
       "en": [
-        "It is the document's passage on «Debt target at the end of the decade», preserved in the excerpt."
+        "It is the document's passage on «Debt target at the end of the decade», preserved in the excerpt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-objetivo-divida-final-decada"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-objetivo-divida-final-decada"
+        },
+        "."
       ]
     }
   },
@@ -8320,10 +9664,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a passagem do documento sobre «Atualização regular das pensões», conservada no excerto."
+        "É a passagem do documento sobre «Atualização regular das pensões», conservada no excerto. Referência: "
       ],
       "en": [
-        "It is the document's passage on «Regular pension update», preserved in the excerpt."
+        "It is the document's passage on «Regular pension update», preserved in the excerpt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-pensoes-atualizacao"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-pensoes-atualizacao"
+        },
+        "."
       ]
     }
   },
@@ -8334,10 +9692,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a passagem do documento sobre «Pensões e Complemento Solidário para Idosos», conservada no excerto."
+        "É a passagem do documento sobre «Pensões e Complemento Solidário para Idosos», conservada no excerto. Referência: "
       ],
       "en": [
-        "It is the document's passage on «Pensions and the Solidarity Supplement for the Elderly», preserved in the excerpt."
+        "It is the document's passage on «Pensions and the Solidarity Supplement for the Elderly», preserved in the excerpt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-pensoes-capitulo3"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-pensoes-capitulo3"
+        },
+        "."
       ]
     }
   },
@@ -8348,10 +9720,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Investimento (FBCF)» no documento citado, para o período e na unidade indicados."
+        "É o valor de «Investimento (FBCF)» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Investment (gross fixed capital formation)» in the cited document, for the stated period and unit."
+        "It is the value of «Investment (gross fixed capital formation)» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q2-3-r11-c1"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q2-3-r11-c1"
+        },
+        "."
       ]
     }
   },
@@ -8362,10 +9748,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Investimento (FBCF)» no documento citado, para o período e na unidade indicados."
+        "É o valor de «Investimento (FBCF)» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Investment (gross fixed capital formation)» in the cited document, for the stated period and unit."
+        "It is the value of «Investment (gross fixed capital formation)» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q2-3-r11-c2"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q2-3-r11-c2"
+        },
+        "."
       ]
     }
   },
@@ -8376,10 +9776,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «IHPC» no documento citado, para o período e na unidade indicados."
+        "É o valor de «IHPC» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Harmonised index of consumer prices» in the cited document, for the stated period and unit."
+        "It is the value of «Harmonised index of consumer prices» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q2-3-r19-c1"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q2-3-r19-c1"
+        },
+        "."
       ]
     }
   },
@@ -8390,10 +9804,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «IHPC» no documento citado, para o período e na unidade indicados."
+        "É o valor de «IHPC» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Harmonised index of consumer prices» in the cited document, for the stated period and unit."
+        "It is the value of «Harmonised index of consumer prices» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q2-3-r19-c2"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q2-3-r19-c2"
+        },
+        "."
       ]
     }
   },
@@ -8404,10 +9832,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Emprego (ótica de Contas Nacionais)» no documento citado, para o período e na unidade indicados."
+        "É o valor de «Emprego (ótica de Contas Nacionais)» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Employment (national accounts)» in the cited document, for the stated period and unit."
+        "It is the value of «Employment (national accounts)» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q2-3-r21-c2"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q2-3-r21-c2"
+        },
+        "."
       ]
     }
   },
@@ -8418,10 +9860,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Taxa de desemprego (% da população ativa)» no documento citado, para o período e na unidade indicados."
+        "É o valor de «Taxa de desemprego (% da população ativa)» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Unemployment rate (% of the labour force)» in the cited document, for the stated period and unit."
+        "It is the value of «Unemployment rate (% of the labour force)» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q2-3-r22-c2"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q2-3-r22-c2"
+        },
+        "."
       ]
     }
   },
@@ -8432,10 +9888,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Remunerações por trabalhador» no documento citado, para o período e na unidade indicados."
+        "É o valor de «Remunerações por trabalhador» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Compensation per employee» in the cited document, for the stated period and unit."
+        "It is the value of «Compensation per employee» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q2-3-r24-c2"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q2-3-r24-c2"
+        },
+        "."
       ]
     }
   },
@@ -8446,10 +9916,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «PIB» no documento citado, para o período e na unidade indicados."
+        "É o valor de «PIB» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «GDP» in the cited document, for the stated period and unit."
+        "It is the value of «GDP» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q2-3-r8-c1"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q2-3-r8-c1"
+        },
+        "."
       ]
     }
   },
@@ -8460,10 +9944,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «PIB» no documento citado, para o período e na unidade indicados."
+        "É o valor de «PIB» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «GDP» in the cited document, for the stated period and unit."
+        "It is the value of «GDP» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q2-3-r8-c2"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q2-3-r8-c2"
+        },
+        "."
       ]
     }
   },
@@ -8474,10 +9972,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Consumo privado» no documento citado, para o período e na unidade indicados."
+        "É o valor de «Consumo privado» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Private consumption» in the cited document, for the stated period and unit."
+        "It is the value of «Private consumption» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q2-3-r9-c2"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q2-3-r9-c2"
+        },
+        "."
       ]
     }
   },
@@ -8488,10 +10000,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Receita total» no quadro das administrações públicas em contabilidade nacional, para o período e na unidade indicados."
+        "É o valor de «Receita total» no quadro das administrações públicas em contabilidade nacional, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Total revenue» in the general government table in national accounts, for the stated period and unit."
+        "It is the value of «Total revenue» in the general government table in national accounts, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q3-1-r21-c1"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q3-1-r21-c1"
+        },
+        "."
       ]
     }
   },
@@ -8502,10 +10028,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Receita total» no quadro das administrações públicas em contabilidade nacional, para o período e na unidade indicados."
+        "É o valor de «Receita total» no quadro das administrações públicas em contabilidade nacional, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Total revenue» in the general government table in national accounts, for the stated period and unit."
+        "It is the value of «Total revenue» in the general government table in national accounts, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q3-1-r21-c2"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q3-1-r21-c2"
+        },
+        "."
       ]
     }
   },
@@ -8516,10 +10056,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Receita total» no quadro das administrações públicas em contabilidade nacional, para o período e na unidade indicados."
+        "É o valor de «Receita total» no quadro das administrações públicas em contabilidade nacional, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Total revenue» in the general government table in national accounts, for the stated period and unit."
+        "It is the value of «Total revenue» in the general government table in national accounts, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q3-1-r21-c4"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q3-1-r21-c4"
+        },
+        "."
       ]
     }
   },
@@ -8530,10 +10084,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Receita total» no quadro das administrações públicas em contabilidade nacional, para o período e na unidade indicados."
+        "É o valor de «Receita total» no quadro das administrações públicas em contabilidade nacional, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Total revenue» in the general government table in national accounts, for the stated period and unit."
+        "It is the value of «Total revenue» in the general government table in national accounts, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q3-1-r21-c5"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q3-1-r21-c5"
+        },
+        "."
       ]
     }
   },
@@ -8544,10 +10112,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «PRR (Receita total)» no quadro das administrações públicas em contabilidade nacional, para o período e na unidade indicados."
+        "É o valor de «PRR (Receita total)» no quadro das administrações públicas em contabilidade nacional, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Recovery and Resilience Plan (Total revenue)» in the general government table in national accounts, for the stated period and unit."
+        "It is the value of «Recovery and Resilience Plan (Total revenue)» in the general government table in national accounts, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q3-1-r22-c1"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q3-1-r22-c1"
+        },
+        "."
       ]
     }
   },
@@ -8558,10 +10140,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «PRR (Receita total)» no quadro das administrações públicas em contabilidade nacional, para o período e na unidade indicados."
+        "É o valor de «PRR (Receita total)» no quadro das administrações públicas em contabilidade nacional, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Recovery and Resilience Plan (Total revenue)» in the general government table in national accounts, for the stated period and unit."
+        "It is the value of «Recovery and Resilience Plan (Total revenue)» in the general government table in national accounts, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q3-1-r22-c2"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q3-1-r22-c2"
+        },
+        "."
       ]
     }
   },
@@ -8572,10 +10168,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «sem PRR (Receita total)» no quadro das administrações públicas em contabilidade nacional, para o período e na unidade indicados."
+        "É o valor de «sem PRR (Receita total)» no quadro das administrações públicas em contabilidade nacional, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Excluding the Recovery and Resilience Plan (Total revenue)» in the general government table in national accounts, for the stated period and unit."
+        "It is the value of «Excluding the Recovery and Resilience Plan (Total revenue)» in the general government table in national accounts, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q3-1-r23-c1"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q3-1-r23-c1"
+        },
+        "."
       ]
     }
   },
@@ -8586,10 +10196,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «sem PRR (Receita total)» no quadro das administrações públicas em contabilidade nacional, para o período e na unidade indicados."
+        "É o valor de «sem PRR (Receita total)» no quadro das administrações públicas em contabilidade nacional, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Excluding the Recovery and Resilience Plan (Total revenue)» in the general government table in national accounts, for the stated period and unit."
+        "It is the value of «Excluding the Recovery and Resilience Plan (Total revenue)» in the general government table in national accounts, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q3-1-r23-c2"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q3-1-r23-c2"
+        },
+        "."
       ]
     }
   },
@@ -8600,10 +10224,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Juros» no quadro das administrações públicas em contabilidade nacional, para o período e na unidade indicados."
+        "É o valor de «Juros» no quadro das administrações públicas em contabilidade nacional, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Interest» in the general government table in national accounts, for the stated period and unit."
+        "It is the value of «Interest» in the general government table in national accounts, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q3-1-r36-c1"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q3-1-r36-c1"
+        },
+        "."
       ]
     }
   },
@@ -8614,10 +10252,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Juros» no quadro das administrações públicas em contabilidade nacional, para o período e na unidade indicados."
+        "É o valor de «Juros» no quadro das administrações públicas em contabilidade nacional, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Interest» in the general government table in national accounts, for the stated period and unit."
+        "It is the value of «Interest» in the general government table in national accounts, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q3-1-r36-c2"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q3-1-r36-c2"
+        },
+        "."
       ]
     }
   },
@@ -8628,10 +10280,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Juros» no quadro das administrações públicas em contabilidade nacional, para o período e na unidade indicados."
+        "É o valor de «Juros» no quadro das administrações públicas em contabilidade nacional, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Interest» in the general government table in national accounts, for the stated period and unit."
+        "It is the value of «Interest» in the general government table in national accounts, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q3-1-r36-c5"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q3-1-r36-c5"
+        },
+        "."
       ]
     }
   },
@@ -8642,10 +10308,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Despesa total» no quadro das administrações públicas em contabilidade nacional, para o período e na unidade indicados."
+        "É o valor de «Despesa total» no quadro das administrações públicas em contabilidade nacional, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Total expenditure» in the general government table in national accounts, for the stated period and unit."
+        "It is the value of «Total expenditure» in the general government table in national accounts, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q3-1-r50-c1"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q3-1-r50-c1"
+        },
+        "."
       ]
     }
   },
@@ -8656,10 +10336,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Despesa total» no quadro das administrações públicas em contabilidade nacional, para o período e na unidade indicados."
+        "É o valor de «Despesa total» no quadro das administrações públicas em contabilidade nacional, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Total expenditure» in the general government table in national accounts, for the stated period and unit."
+        "It is the value of «Total expenditure» in the general government table in national accounts, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q3-1-r50-c2"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q3-1-r50-c2"
+        },
+        "."
       ]
     }
   },
@@ -8670,10 +10364,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Despesa total» no quadro das administrações públicas em contabilidade nacional, para o período e na unidade indicados."
+        "É o valor de «Despesa total» no quadro das administrações públicas em contabilidade nacional, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Total expenditure» in the general government table in national accounts, for the stated period and unit."
+        "It is the value of «Total expenditure» in the general government table in national accounts, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q3-1-r50-c4"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q3-1-r50-c4"
+        },
+        "."
       ]
     }
   },
@@ -8684,10 +10392,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Despesa total» no quadro das administrações públicas em contabilidade nacional, para o período e na unidade indicados."
+        "É o valor de «Despesa total» no quadro das administrações públicas em contabilidade nacional, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Total expenditure» in the general government table in national accounts, for the stated period and unit."
+        "It is the value of «Total expenditure» in the general government table in national accounts, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q3-1-r50-c5"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q3-1-r50-c5"
+        },
+        "."
       ]
     }
   },
@@ -8698,10 +10420,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «PRR (Despesa total)» no quadro das administrações públicas em contabilidade nacional, para o período e na unidade indicados."
+        "É o valor de «PRR (Despesa total)» no quadro das administrações públicas em contabilidade nacional, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Recovery and Resilience Plan (Total expenditure)» in the general government table in national accounts, for the stated period and unit."
+        "It is the value of «Recovery and Resilience Plan (Total expenditure)» in the general government table in national accounts, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q3-1-r51-c1"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q3-1-r51-c1"
+        },
+        "."
       ]
     }
   },
@@ -8712,10 +10448,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «PRR (Despesa total)» no quadro das administrações públicas em contabilidade nacional, para o período e na unidade indicados."
+        "É o valor de «PRR (Despesa total)» no quadro das administrações públicas em contabilidade nacional, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Recovery and Resilience Plan (Total expenditure)» in the general government table in national accounts, for the stated period and unit."
+        "It is the value of «Recovery and Resilience Plan (Total expenditure)» in the general government table in national accounts, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q3-1-r51-c2"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q3-1-r51-c2"
+        },
+        "."
       ]
     }
   },
@@ -8726,10 +10476,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «sem PRR (Despesa total)» no quadro das administrações públicas em contabilidade nacional, para o período e na unidade indicados."
+        "É o valor de «sem PRR (Despesa total)» no quadro das administrações públicas em contabilidade nacional, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Excluding the Recovery and Resilience Plan (Total expenditure)» in the general government table in national accounts, for the stated period and unit."
+        "It is the value of «Excluding the Recovery and Resilience Plan (Total expenditure)» in the general government table in national accounts, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q3-1-r52-c1"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q3-1-r52-c1"
+        },
+        "."
       ]
     }
   },
@@ -8740,10 +10504,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «sem PRR (Despesa total)» no quadro das administrações públicas em contabilidade nacional, para o período e na unidade indicados."
+        "É o valor de «sem PRR (Despesa total)» no quadro das administrações públicas em contabilidade nacional, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Excluding the Recovery and Resilience Plan (Total expenditure)» in the general government table in national accounts, for the stated period and unit."
+        "It is the value of «Excluding the Recovery and Resilience Plan (Total expenditure)» in the general government table in national accounts, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q3-1-r52-c2"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q3-1-r52-c2"
+        },
+        "."
       ]
     }
   },
@@ -8754,10 +10532,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Saldo primário» no quadro das administrações públicas em contabilidade nacional, para o período e na unidade indicados."
+        "É o valor de «Saldo primário» no quadro das administrações públicas em contabilidade nacional, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Primary balance» in the general government table in national accounts, for the stated period and unit."
+        "It is the value of «Primary balance» in the general government table in national accounts, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q3-1-r54-c1"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q3-1-r54-c1"
+        },
+        "."
       ]
     }
   },
@@ -8768,10 +10560,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Saldo primário» no quadro das administrações públicas em contabilidade nacional, para o período e na unidade indicados."
+        "É o valor de «Saldo primário» no quadro das administrações públicas em contabilidade nacional, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Primary balance» in the general government table in national accounts, for the stated period and unit."
+        "It is the value of «Primary balance» in the general government table in national accounts, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q3-1-r54-c2"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q3-1-r54-c2"
+        },
+        "."
       ]
     }
   },
@@ -8782,10 +10588,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Saldo primário» no quadro das administrações públicas em contabilidade nacional, para o período e na unidade indicados."
+        "É o valor de «Saldo primário» no quadro das administrações públicas em contabilidade nacional, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Primary balance» in the general government table in national accounts, for the stated period and unit."
+        "It is the value of «Primary balance» in the general government table in national accounts, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q3-1-r54-c4"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q3-1-r54-c4"
+        },
+        "."
       ]
     }
   },
@@ -8796,10 +10616,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Saldo primário» no quadro das administrações públicas em contabilidade nacional, para o período e na unidade indicados."
+        "É o valor de «Saldo primário» no quadro das administrações públicas em contabilidade nacional, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Primary balance» in the general government table in national accounts, for the stated period and unit."
+        "It is the value of «Primary balance» in the general government table in national accounts, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q3-1-r54-c5"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q3-1-r54-c5"
+        },
+        "."
       ]
     }
   },
@@ -8810,10 +10644,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Redução do IRS nas rendas moderadas» no quadro das medidas com impacto orçamental, para o período e na unidade indicados."
+        "É o valor de «Redução do IRS nas rendas moderadas» no quadro das medidas com impacto orçamental, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Income tax reduction on moderate rents» in the table of measures with a budgetary impact, for the stated period and unit."
+        "It is the value of «Income tax reduction on moderate rents» in the table of measures with a budgetary impact, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q3-2-r10-c0"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q3-2-r10-c0"
+        },
+        "."
       ]
     }
   },
@@ -8824,10 +10672,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Atualização dedução específica e escalões (i)» no quadro das medidas com impacto orçamental, para o período e na unidade indicados."
+        "É o valor de «Atualização dedução específica e escalões (i)» no quadro das medidas com impacto orçamental, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Updating the specific deduction and tax brackets (i)» in the table of measures with a budgetary impact, for the stated period and unit."
+        "It is the value of «Updating the specific deduction and tax brackets (i)» in the table of measures with a budgetary impact, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q3-2-r11-c0"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q3-2-r11-c0"
+        },
+        "."
       ]
     }
   },
@@ -8838,10 +10700,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Receita decorrente do aumento de salários (i) (IRS)» no quadro das medidas com impacto orçamental, para o período e na unidade indicados."
+        "É o valor de «Receita decorrente do aumento de salários (i) (IRS)» no quadro das medidas com impacto orçamental, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Revenue arising from wage increases (i) (personal income tax)» in the table of measures with a budgetary impact, for the stated period and unit."
+        "It is the value of «Revenue arising from wage increases (i) (personal income tax)» in the table of measures with a budgetary impact, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q3-2-r12-c0"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q3-2-r12-c0"
+        },
+        "."
       ]
     }
   },
@@ -8852,10 +10728,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Atualização do mínimo de existência» no quadro das medidas com impacto orçamental, para o período e na unidade indicados."
+        "É o valor de «Atualização do mínimo de existência» no quadro das medidas com impacto orçamental, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Updating the income below which no personal income tax is due» in the table of measures with a budgetary impact, for the stated period and unit."
+        "It is the value of «Updating the income below which no personal income tax is due» in the table of measures with a budgetary impact, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q3-2-r13-c0"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q3-2-r13-c0"
+        },
+        "."
       ]
     }
   },
@@ -8866,10 +10756,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «IRC» no quadro das medidas com impacto orçamental, para o período e na unidade indicados."
+        "É o valor de «IRC» no quadro das medidas com impacto orçamental, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Corporate income tax» in the table of measures with a budgetary impact, for the stated period and unit."
+        "It is the value of «Corporate income tax» in the table of measures with a budgetary impact, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q3-2-r14-c0"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q3-2-r14-c0"
+        },
+        "."
       ]
     }
   },
@@ -8880,10 +10784,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Redução taxa em um p.p. (i)» no quadro das medidas com impacto orçamental, para o período e na unidade indicados."
+        "É o valor de «Redução taxa em um p.p. (i)» no quadro das medidas com impacto orçamental, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Rate cut by one percentage point (i)» in the table of measures with a budgetary impact, for the stated period and unit."
+        "It is the value of «Rate cut by one percentage point (i)» in the table of measures with a budgetary impact, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q3-2-r15-c0"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q3-2-r15-c0"
+        },
+        "."
       ]
     }
   },
@@ -8894,10 +10812,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «SIFIDE indireto (reversão) (i)» no quadro das medidas com impacto orçamental, para o período e na unidade indicados."
+        "É o valor de «SIFIDE indireto (reversão) (i)» no quadro das medidas com impacto orçamental, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Indirect SIFIDE (reversal) (i)» in the table of measures with a budgetary impact, for the stated period and unit."
+        "It is the value of «Indirect SIFIDE (reversal) (i)» in the table of measures with a budgetary impact, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q3-2-r16-c0"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q3-2-r16-c0"
+        },
+        "."
       ]
     }
   },
@@ -8908,10 +10840,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Contribuições sociais» no quadro das medidas com impacto orçamental, para o período e na unidade indicados."
+        "É o valor de «Contribuições sociais» no quadro das medidas com impacto orçamental, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Social contributions» in the table of measures with a budgetary impact, for the stated period and unit."
+        "It is the value of «Social contributions» in the table of measures with a budgetary impact, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q3-2-r17-c0"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q3-2-r17-c0"
+        },
+        "."
       ]
     }
   },
@@ -8922,10 +10868,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Receita decorrente do aumento de salários (i) (Contribuições sociais)» no quadro das medidas com impacto orçamental, para o período e na unidade indicados."
+        "É o valor de «Receita decorrente do aumento de salários (i) (Contribuições sociais)» no quadro das medidas com impacto orçamental, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Revenue arising from wage increases (i) (Social contributions)» in the table of measures with a budgetary impact, for the stated period and unit."
+        "It is the value of «Revenue arising from wage increases (i) (Social contributions)» in the table of measures with a budgetary impact, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q3-2-r18-c0"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q3-2-r18-c0"
+        },
+        "."
       ]
     }
   },
@@ -8936,10 +10896,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Medidas despesa» no quadro das medidas com impacto orçamental, para o período e na unidade indicados."
+        "É o valor de «Medidas despesa» no quadro das medidas com impacto orçamental, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Expenditure measures» in the table of measures with a budgetary impact, for the stated period and unit."
+        "It is the value of «Expenditure measures» in the table of measures with a budgetary impact, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q3-2-r19-c0"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q3-2-r19-c0"
+        },
+        "."
       ]
     }
   },
@@ -8950,10 +10924,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Despesas com pessoal» no quadro das medidas com impacto orçamental, para o período e na unidade indicados."
+        "É o valor de «Despesas com pessoal» no quadro das medidas com impacto orçamental, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Compensation of employees» in the table of measures with a budgetary impact, for the stated period and unit."
+        "It is the value of «Compensation of employees» in the table of measures with a budgetary impact, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q3-2-r20-c0"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q3-2-r20-c0"
+        },
+        "."
       ]
     }
   },
@@ -8964,10 +10952,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Aumento acordo de rendimentos (i)» no quadro das medidas com impacto orçamental, para o período e na unidade indicados."
+        "É o valor de «Aumento acordo de rendimentos (i)» no quadro das medidas com impacto orçamental, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Increase under the incomes agreement (i)» in the table of measures with a budgetary impact, for the stated period and unit."
+        "It is the value of «Increase under the incomes agreement (i)» in the table of measures with a budgetary impact, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q3-2-r21-c0"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q3-2-r21-c0"
+        },
+        "."
       ]
     }
   },
@@ -8978,10 +10980,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Aumento RMMG (i)» no quadro das medidas com impacto orçamental, para o período e na unidade indicados."
+        "É o valor de «Aumento RMMG (i)» no quadro das medidas com impacto orçamental, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Minimum wage increase (i)» in the table of measures with a budgetary impact, for the stated period and unit."
+        "It is the value of «Minimum wage increase (i)» in the table of measures with a budgetary impact, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q3-2-r22-c0"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q3-2-r22-c0"
+        },
+        "."
       ]
     }
   },
@@ -8992,10 +11008,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Acordos salariais (i)» no quadro das medidas com impacto orçamental, para o período e na unidade indicados."
+        "É o valor de «Acordos salariais (i)» no quadro das medidas com impacto orçamental, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Wage agreements (i)» in the table of measures with a budgetary impact, for the stated period and unit."
+        "It is the value of «Wage agreements (i)» in the table of measures with a budgetary impact, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q3-2-r23-c0"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q3-2-r23-c0"
+        },
+        "."
       ]
     }
   },
@@ -9006,10 +11036,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Prestações sociais» no quadro das medidas com impacto orçamental, para o período e na unidade indicados."
+        "É o valor de «Prestações sociais» no quadro das medidas com impacto orçamental, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Social benefits» in the table of measures with a budgetary impact, for the stated period and unit."
+        "It is the value of «Social benefits» in the table of measures with a budgetary impact, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q3-2-r24-c0"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q3-2-r24-c0"
+        },
+        "."
       ]
     }
   },
@@ -9020,10 +11064,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Reforço Complemento Solidário para Idosos (CSI)» no quadro das medidas com impacto orçamental, para o período e na unidade indicados."
+        "É o valor de «Reforço Complemento Solidário para Idosos (CSI)» no quadro das medidas com impacto orçamental, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Increase in the solidarity supplement for older people» in the table of measures with a budgetary impact, for the stated period and unit."
+        "It is the value of «Increase in the solidarity supplement for older people» in the table of measures with a budgetary impact, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q3-2-r25-c0"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q3-2-r25-c0"
+        },
+        "."
       ]
     }
   },
@@ -9034,10 +11092,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Impacto no saldo» no quadro das medidas com impacto orçamental, para o período e na unidade indicados."
+        "É o valor de «Impacto no saldo» no quadro das medidas com impacto orçamental, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Impact on the balance» in the table of measures with a budgetary impact, for the stated period and unit."
+        "It is the value of «Impact on the balance» in the table of measures with a budgetary impact, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q3-2-r26-c0"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q3-2-r26-c0"
+        },
+        "."
       ]
     }
   },
@@ -9048,10 +11120,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Medidas receita» no quadro das medidas com impacto orçamental, para o período e na unidade indicados."
+        "É o valor de «Medidas receita» no quadro das medidas com impacto orçamental, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Revenue measures» in the table of measures with a budgetary impact, for the stated period and unit."
+        "It is the value of «Revenue measures» in the table of measures with a budgetary impact, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q3-2-r5-c0"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q3-2-r5-c0"
+        },
+        "."
       ]
     }
   },
@@ -9062,10 +11148,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «IVA» no quadro das medidas com impacto orçamental, para o período e na unidade indicados."
+        "É o valor de «IVA» no quadro das medidas com impacto orçamental, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «VAT» in the table of measures with a budgetary impact, for the stated period and unit."
+        "It is the value of «VAT» in the table of measures with a budgetary impact, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q3-2-r6-c0"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q3-2-r6-c0"
+        },
+        "."
       ]
     }
   },
@@ -9076,10 +11176,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Redução do IVA na construção» no quadro das medidas com impacto orçamental, para o período e na unidade indicados."
+        "É o valor de «Redução do IVA na construção» no quadro das medidas com impacto orçamental, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Construction VAT reduction» in the table of measures with a budgetary impact, for the stated period and unit."
+        "It is the value of «Construction VAT reduction» in the table of measures with a budgetary impact, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q3-2-r7-c0"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q3-2-r7-c0"
+        },
+        "."
       ]
     }
   },
@@ -9090,10 +11204,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Combate à fraude no setor dos combustíveis» no quadro das medidas com impacto orçamental, para o período e na unidade indicados."
+        "É o valor de «Combate à fraude no setor dos combustíveis» no quadro das medidas com impacto orçamental, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Combating fraud in the fuel sector» in the table of measures with a budgetary impact, for the stated period and unit."
+        "It is the value of «Combating fraud in the fuel sector» in the table of measures with a budgetary impact, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q3-2-r8-c0"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q3-2-r8-c0"
+        },
+        "."
       ]
     }
   },
@@ -9104,10 +11232,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «IRS» no quadro das medidas com impacto orçamental, para o período e na unidade indicados."
+        "É o valor de «IRS» no quadro das medidas com impacto orçamental, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Personal income tax» in the table of measures with a budgetary impact, for the stated period and unit."
+        "It is the value of «Personal income tax» in the table of measures with a budgetary impact, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q3-2-r9-c0"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q3-2-r9-c0"
+        },
+        "."
       ]
     }
   },
@@ -9118,10 +11260,52 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Administração Central (Saldo das AP em contabilidade pública)» na passagem entre contabilidade pública e contabilidade nacional, para o período e na unidade indicados."
+        "É o valor de «Administração Central (Saldo das AP em contabilidade pública)» na passagem entre contabilidade pública e contabilidade nacional, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Central government (General government balance in public accounts)» in the passage between public accounting and national accounts, for the stated period and unit."
+        "It is the value of «Central government (General government balance in public accounts)» in the passage between public accounting and national accounts, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q3-3-r24-c1"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q3-3-r24-c1"
+        },
+        "."
+      ]
+    }
+  },
+  "pm-q3-3-r25-c1": {
+    "nome": {
+      "pt": "Administração Regional e Local (Saldo das AP em contabilidade pública)",
+      "en": "Regional and local government (General government balance in public accounts)"
+    },
+    "frase": {
+      "pt": [
+        "É o valor de «Administração Regional e Local (Saldo das AP em contabilidade pública)» na passagem entre contabilidade pública e contabilidade nacional, para o período e na unidade indicados. Referência: "
+      ],
+      "en": [
+        "It is the value of «Regional and local government (General government balance in public accounts)» in the passage between public accounting and national accounts, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q3-3-r25-c1"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q3-3-r25-c1"
+        },
+        "."
       ]
     }
   },
@@ -9132,10 +11316,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Segurança Social (Saldo das AP em contabilidade pública)» na passagem entre contabilidade pública e contabilidade nacional, para o período e na unidade indicados."
+        "É o valor de «Segurança Social (Saldo das AP em contabilidade pública)» na passagem entre contabilidade pública e contabilidade nacional, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Social security (General government balance in public accounts)» in the passage between public accounting and national accounts, for the stated period and unit."
+        "It is the value of «Social security (General government balance in public accounts)» in the passage between public accounting and national accounts, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q3-3-r26-c1"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q3-3-r26-c1"
+        },
+        "."
       ]
     }
   },
@@ -9146,10 +11344,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Ajustamentos em Contas Nacionais» na passagem entre contabilidade pública e contabilidade nacional, para o período e na unidade indicados."
+        "É o valor de «Ajustamentos em Contas Nacionais» na passagem entre contabilidade pública e contabilidade nacional, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «National accounts adjustments» in the passage between public accounting and national accounts, for the stated period and unit."
+        "It is the value of «National accounts adjustments» in the passage between public accounting and national accounts, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q3-3-r27-c1"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q3-3-r27-c1"
+        },
+        "."
       ]
     }
   },
@@ -9160,10 +11372,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Diferença entre juros pagos e devidos do Estado» na passagem entre contabilidade pública e contabilidade nacional, para o período e na unidade indicados."
+        "É o valor de «Diferença entre juros pagos e devidos do Estado» na passagem entre contabilidade pública e contabilidade nacional, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Difference between State interest paid and accrued» in the passage between public accounting and national accounts, for the stated period and unit."
+        "It is the value of «Difference between State interest paid and accrued» in the passage between public accounting and national accounts, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q3-3-r31-c1"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q3-3-r31-c1"
+        },
+        "."
       ]
     }
   },
@@ -9174,10 +11400,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Entidades Públicas Reclassificadas» na passagem entre contabilidade pública e contabilidade nacional, para o período e na unidade indicados."
+        "É o valor de «Entidades Públicas Reclassificadas» na passagem entre contabilidade pública e contabilidade nacional, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Reclassified public entities» in the passage between public accounting and national accounts, for the stated period and unit."
+        "It is the value of «Reclassified public entities» in the passage between public accounting and national accounts, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q3-3-r33-c1"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q3-3-r33-c1"
+        },
+        "."
       ]
     }
   },
@@ -9188,10 +11428,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Injeções de capital e empréstimos» na passagem entre contabilidade pública e contabilidade nacional, para o período e na unidade indicados."
+        "É o valor de «Injeções de capital e empréstimos» na passagem entre contabilidade pública e contabilidade nacional, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Capital injections and loans» in the passage between public accounting and national accounts, for the stated period and unit."
+        "It is the value of «Capital injections and loans» in the passage between public accounting and national accounts, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q3-3-r34-c1"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q3-3-r34-c1"
+        },
+        "."
       ]
     }
   },
@@ -9202,10 +11456,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Saldo das AP em contabilidade nacional» na passagem entre contabilidade pública e contabilidade nacional, para o período e na unidade indicados."
+        "É o valor de «Saldo das AP em contabilidade nacional» na passagem entre contabilidade pública e contabilidade nacional, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «General government balance in national accounts» in the passage between public accounting and national accounts, for the stated period and unit."
+        "It is the value of «General government balance in national accounts» in the passage between public accounting and national accounts, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q3-3-r37-c0"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q3-3-r37-c0"
+        },
+        "."
       ]
     }
   },
@@ -9216,10 +11484,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Saldo das AP em contabilidade nacional» na passagem entre contabilidade pública e contabilidade nacional, para o período e na unidade indicados."
+        "É o valor de «Saldo das AP em contabilidade nacional» na passagem entre contabilidade pública e contabilidade nacional, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «General government balance in national accounts» in the passage between public accounting and national accounts, for the stated period and unit."
+        "It is the value of «General government balance in national accounts» in the passage between public accounting and national accounts, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q3-3-r37-c1"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q3-3-r37-c1"
+        },
+        "."
       ]
     }
   },
@@ -9230,10 +11512,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Saldo das AP em contabilidade nacional» na passagem entre contabilidade pública e contabilidade nacional, para o período e na unidade indicados."
+        "É o valor de «Saldo das AP em contabilidade nacional» na passagem entre contabilidade pública e contabilidade nacional, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «General government balance in national accounts» in the passage between public accounting and national accounts, for the stated period and unit."
+        "It is the value of «General government balance in national accounts» in the passage between public accounting and national accounts, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q3-3-r37-c3"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q3-3-r37-c3"
+        },
+        "."
       ]
     }
   },
@@ -9244,10 +11540,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Dívida pública consolidada (%)» na decomposição da trajetória da dívida pública, para o período e na unidade indicados."
+        "É o valor de «Dívida pública consolidada (%)» na decomposição da trajetória da dívida pública, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Consolidated public debt (%)» in the breakdown of the public debt trajectory, for the stated period and unit."
+        "It is the value of «Consolidated public debt (%)» in the breakdown of the public debt trajectory, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q3-6-r42-c1"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q3-6-r42-c1"
+        },
+        "."
       ]
     }
   },
@@ -9258,10 +11568,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Dívida pública consolidada (%)» na decomposição da trajetória da dívida pública, para o período e na unidade indicados."
+        "É o valor de «Dívida pública consolidada (%)» na decomposição da trajetória da dívida pública, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Consolidated public debt (%)» in the breakdown of the public debt trajectory, for the stated period and unit."
+        "It is the value of «Consolidated public debt (%)» in the breakdown of the public debt trajectory, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q3-6-r42-c2"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q3-6-r42-c2"
+        },
+        "."
       ]
     }
   },
@@ -9272,10 +11596,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Dívida pública consolidada (%)» na decomposição da trajetória da dívida pública, para o período e na unidade indicados."
+        "É o valor de «Dívida pública consolidada (%)» na decomposição da trajetória da dívida pública, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Consolidated public debt (%)» in the breakdown of the public debt trajectory, for the stated period and unit."
+        "It is the value of «Consolidated public debt (%)» in the breakdown of the public debt trajectory, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q3-6-r42-c3"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q3-6-r42-c3"
+        },
+        "."
       ]
     }
   },
@@ -9286,10 +11624,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Variação (p.p.)» na decomposição da trajetória da dívida pública, para o período e na unidade indicados."
+        "É o valor de «Variação (p.p.)» na decomposição da trajetória da dívida pública, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Change (percentage points)» in the breakdown of the public debt trajectory, for the stated period and unit."
+        "It is the value of «Change (percentage points)» in the breakdown of the public debt trajectory, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q3-6-r43-c2"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q3-6-r43-c2"
+        },
+        "."
       ]
     }
   },
@@ -9300,10 +11652,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Variação (p.p.)» na decomposição da trajetória da dívida pública, para o período e na unidade indicados."
+        "É o valor de «Variação (p.p.)» na decomposição da trajetória da dívida pública, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Change (percentage points)» in the breakdown of the public debt trajectory, for the stated period and unit."
+        "It is the value of «Change (percentage points)» in the breakdown of the public debt trajectory, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q3-6-r43-c3"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q3-6-r43-c3"
+        },
+        "."
       ]
     }
   },
@@ -9314,10 +11680,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Efeito saldo primário» na decomposição da trajetória da dívida pública, para o período e na unidade indicados."
+        "É o valor de «Efeito saldo primário» na decomposição da trajetória da dívida pública, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Primary balance effect» in the breakdown of the public debt trajectory, for the stated period and unit."
+        "It is the value of «Primary balance effect» in the breakdown of the public debt trajectory, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q3-6-r44-c2"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q3-6-r44-c2"
+        },
+        "."
       ]
     }
   },
@@ -9328,10 +11708,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Efeito saldo primário» na decomposição da trajetória da dívida pública, para o período e na unidade indicados."
+        "É o valor de «Efeito saldo primário» na decomposição da trajetória da dívida pública, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Primary balance effect» in the breakdown of the public debt trajectory, for the stated period and unit."
+        "It is the value of «Primary balance effect» in the breakdown of the public debt trajectory, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q3-6-r44-c3"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q3-6-r44-c3"
+        },
+        "."
       ]
     }
   },
@@ -9342,10 +11736,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Efeito dinâmico» na decomposição da trajetória da dívida pública, para o período e na unidade indicados."
+        "É o valor de «Efeito dinâmico» na decomposição da trajetória da dívida pública, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Dynamic effect» in the breakdown of the public debt trajectory, for the stated period and unit."
+        "It is the value of «Dynamic effect» in the breakdown of the public debt trajectory, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q3-6-r45-c2"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q3-6-r45-c2"
+        },
+        "."
       ]
     }
   },
@@ -9356,10 +11764,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Efeito dinâmico» na decomposição da trajetória da dívida pública, para o período e na unidade indicados."
+        "É o valor de «Efeito dinâmico» na decomposição da trajetória da dívida pública, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Dynamic effect» in the breakdown of the public debt trajectory, for the stated period and unit."
+        "It is the value of «Dynamic effect» in the breakdown of the public debt trajectory, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q3-6-r45-c3"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q3-6-r45-c3"
+        },
+        "."
       ]
     }
   },
@@ -9370,10 +11792,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Efeito juros» na decomposição da trajetória da dívida pública, para o período e na unidade indicados."
+        "É o valor de «Efeito juros» na decomposição da trajetória da dívida pública, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Interest effect» in the breakdown of the public debt trajectory, for the stated period and unit."
+        "It is the value of «Interest effect» in the breakdown of the public debt trajectory, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q3-6-r46-c3"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q3-6-r46-c3"
+        },
+        "."
       ]
     }
   },
@@ -9384,10 +11820,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Efeito PIB» na decomposição da trajetória da dívida pública, para o período e na unidade indicados."
+        "É o valor de «Efeito PIB» na decomposição da trajetória da dívida pública, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «GDP effect» in the breakdown of the public debt trajectory, for the stated period and unit."
+        "It is the value of «GDP effect» in the breakdown of the public debt trajectory, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q3-6-r47-c3"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q3-6-r47-c3"
+        },
+        "."
       ]
     }
   },
@@ -9398,10 +11848,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Ajustamento défice-dívida» na decomposição da trajetória da dívida pública, para o período e na unidade indicados."
+        "É o valor de «Ajustamento défice-dívida» na decomposição da trajetória da dívida pública, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Deficit-debt adjustment» in the breakdown of the public debt trajectory, for the stated period and unit."
+        "It is the value of «Deficit-debt adjustment» in the breakdown of the public debt trajectory, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q3-6-r50-c2"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q3-6-r50-c2"
+        },
+        "."
       ]
     }
   },
@@ -9412,10 +11876,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Ajustamento défice-dívida» na decomposição da trajetória da dívida pública, para o período e na unidade indicados."
+        "É o valor de «Ajustamento défice-dívida» na decomposição da trajetória da dívida pública, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Deficit-debt adjustment» in the breakdown of the public debt trajectory, for the stated period and unit."
+        "It is the value of «Deficit-debt adjustment» in the breakdown of the public debt trajectory, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q3-6-r50-c3"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q3-6-r50-c3"
+        },
+        "."
       ]
     }
   },
@@ -9426,10 +11904,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Impostos diretos» no quadro das administrações públicas em contabilidade pública, para o período e na unidade indicados."
+        "É o valor de «Impostos diretos» no quadro das administrações públicas em contabilidade pública, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Direct taxes» in the general government table in public accounting, for the stated period and unit."
+        "It is the value of «Direct taxes» in the general government table in public accounting, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q4-1-r11-c1"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q4-1-r11-c1"
+        },
+        "."
       ]
     }
   },
@@ -9440,10 +11932,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Impostos diretos» no quadro das administrações públicas em contabilidade pública, para o período e na unidade indicados."
+        "É o valor de «Impostos diretos» no quadro das administrações públicas em contabilidade pública, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Direct taxes» in the general government table in public accounting, for the stated period and unit."
+        "It is the value of «Direct taxes» in the general government table in public accounting, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q4-1-r11-c2"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q4-1-r11-c2"
+        },
+        "."
       ]
     }
   },
@@ -9454,10 +11960,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Impostos indiretos» no quadro das administrações públicas em contabilidade pública, para o período e na unidade indicados."
+        "É o valor de «Impostos indiretos» no quadro das administrações públicas em contabilidade pública, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Indirect taxes» in the general government table in public accounting, for the stated period and unit."
+        "It is the value of «Indirect taxes» in the general government table in public accounting, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q4-1-r12-c1"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q4-1-r12-c1"
+        },
+        "."
       ]
     }
   },
@@ -9468,10 +11988,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Impostos indiretos» no quadro das administrações públicas em contabilidade pública, para o período e na unidade indicados."
+        "É o valor de «Impostos indiretos» no quadro das administrações públicas em contabilidade pública, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Indirect taxes» in the general government table in public accounting, for the stated period and unit."
+        "It is the value of «Indirect taxes» in the general government table in public accounting, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q4-1-r12-c2"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q4-1-r12-c2"
+        },
+        "."
       ]
     }
   },
@@ -9482,10 +12016,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Contribuições de segurança social» no quadro das administrações públicas em contabilidade pública, para o período e na unidade indicados."
+        "É o valor de «Contribuições de segurança social» no quadro das administrações públicas em contabilidade pública, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Social security contributions» in the general government table in public accounting, for the stated period and unit."
+        "It is the value of «Social security contributions» in the general government table in public accounting, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q4-1-r13-c1"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q4-1-r13-c1"
+        },
+        "."
       ]
     }
   },
@@ -9496,10 +12044,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Contribuições de segurança social» no quadro das administrações públicas em contabilidade pública, para o período e na unidade indicados."
+        "É o valor de «Contribuições de segurança social» no quadro das administrações públicas em contabilidade pública, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Social security contributions» in the general government table in public accounting, for the stated period and unit."
+        "It is the value of «Social security contributions» in the general government table in public accounting, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q4-1-r13-c2"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q4-1-r13-c2"
+        },
+        "."
       ]
     }
   },
@@ -9510,10 +12072,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Receita Total» no quadro das administrações públicas em contabilidade pública, para o período e na unidade indicados."
+        "É o valor de «Receita Total» no quadro das administrações públicas em contabilidade pública, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Total revenue» in the general government table in public accounting, for the stated period and unit."
+        "It is the value of «Total revenue» in the general government table in public accounting, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q4-1-r17-c0"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q4-1-r17-c0"
+        },
+        "."
       ]
     }
   },
@@ -9524,10 +12100,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Receita Total» no quadro das administrações públicas em contabilidade pública, para o período e na unidade indicados."
+        "É o valor de «Receita Total» no quadro das administrações públicas em contabilidade pública, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Total revenue» in the general government table in public accounting, for the stated period and unit."
+        "It is the value of «Total revenue» in the general government table in public accounting, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q4-1-r17-c1"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q4-1-r17-c1"
+        },
+        "."
       ]
     }
   },
@@ -9538,10 +12128,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Receita Total» no quadro das administrações públicas em contabilidade pública, para o período e na unidade indicados."
+        "É o valor de «Receita Total» no quadro das administrações públicas em contabilidade pública, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Total revenue» in the general government table in public accounting, for the stated period and unit."
+        "It is the value of «Total revenue» in the general government table in public accounting, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q4-1-r17-c2"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q4-1-r17-c2"
+        },
+        "."
       ]
     }
   },
@@ -9552,10 +12156,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Despesas com pessoal» no quadro das administrações públicas em contabilidade pública, para o período e na unidade indicados."
+        "É o valor de «Despesas com pessoal» no quadro das administrações públicas em contabilidade pública, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Compensation of employees» in the general government table in public accounting, for the stated period and unit."
+        "It is the value of «Compensation of employees» in the general government table in public accounting, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q4-1-r19-c0"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q4-1-r19-c0"
+        },
+        "."
       ]
     }
   },
@@ -9566,10 +12184,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Despesas com pessoal» no quadro das administrações públicas em contabilidade pública, para o período e na unidade indicados."
+        "É o valor de «Despesas com pessoal» no quadro das administrações públicas em contabilidade pública, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Compensation of employees» in the general government table in public accounting, for the stated period and unit."
+        "It is the value of «Compensation of employees» in the general government table in public accounting, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q4-1-r19-c1"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q4-1-r19-c1"
+        },
+        "."
       ]
     }
   },
@@ -9580,10 +12212,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Despesas com pessoal» no quadro das administrações públicas em contabilidade pública, para o período e na unidade indicados."
+        "É o valor de «Despesas com pessoal» no quadro das administrações públicas em contabilidade pública, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Compensation of employees» in the general government table in public accounting, for the stated period and unit."
+        "It is the value of «Compensation of employees» in the general government table in public accounting, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q4-1-r19-c2"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q4-1-r19-c2"
+        },
+        "."
       ]
     }
   },
@@ -9594,10 +12240,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Juros e outros encargos» no quadro das administrações públicas em contabilidade pública, para o período e na unidade indicados."
+        "É o valor de «Juros e outros encargos» no quadro das administrações públicas em contabilidade pública, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Interest and other charges» in the general government table in public accounting, for the stated period and unit."
+        "It is the value of «Interest and other charges» in the general government table in public accounting, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q4-1-r21-c0"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q4-1-r21-c0"
+        },
+        "."
       ]
     }
   },
@@ -9608,10 +12268,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Juros e outros encargos» no quadro das administrações públicas em contabilidade pública, para o período e na unidade indicados."
+        "É o valor de «Juros e outros encargos» no quadro das administrações públicas em contabilidade pública, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Interest and other charges» in the general government table in public accounting, for the stated period and unit."
+        "It is the value of «Interest and other charges» in the general government table in public accounting, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q4-1-r21-c1"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q4-1-r21-c1"
+        },
+        "."
       ]
     }
   },
@@ -9622,10 +12296,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Juros e outros encargos» no quadro das administrações públicas em contabilidade pública, para o período e na unidade indicados."
+        "É o valor de «Juros e outros encargos» no quadro das administrações públicas em contabilidade pública, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Interest and other charges» in the general government table in public accounting, for the stated period and unit."
+        "It is the value of «Interest and other charges» in the general government table in public accounting, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q4-1-r21-c2"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q4-1-r21-c2"
+        },
+        "."
       ]
     }
   },
@@ -9636,10 +12324,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Transferências correntes» no quadro das administrações públicas em contabilidade pública, para o período e na unidade indicados."
+        "É o valor de «Transferências correntes» no quadro das administrações públicas em contabilidade pública, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Current transfers» in the general government table in public accounting, for the stated period and unit."
+        "It is the value of «Current transfers» in the general government table in public accounting, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q4-1-r22-c1"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q4-1-r22-c1"
+        },
+        "."
       ]
     }
   },
@@ -9650,10 +12352,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Transferências correntes» no quadro das administrações públicas em contabilidade pública, para o período e na unidade indicados."
+        "É o valor de «Transferências correntes» no quadro das administrações públicas em contabilidade pública, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Current transfers» in the general government table in public accounting, for the stated period and unit."
+        "It is the value of «Current transfers» in the general government table in public accounting, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q4-1-r22-c2"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q4-1-r22-c2"
+        },
+        "."
       ]
     }
   },
@@ -9664,10 +12380,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Investimentos» no quadro das administrações públicas em contabilidade pública, para o período e na unidade indicados."
+        "É o valor de «Investimentos» no quadro das administrações públicas em contabilidade pública, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Investment» in the general government table in public accounting, for the stated period and unit."
+        "It is the value of «Investment» in the general government table in public accounting, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q4-1-r27-c0"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q4-1-r27-c0"
+        },
+        "."
       ]
     }
   },
@@ -9678,10 +12408,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Investimentos» no quadro das administrações públicas em contabilidade pública, para o período e na unidade indicados."
+        "É o valor de «Investimentos» no quadro das administrações públicas em contabilidade pública, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Investment» in the general government table in public accounting, for the stated period and unit."
+        "It is the value of «Investment» in the general government table in public accounting, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q4-1-r27-c1"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q4-1-r27-c1"
+        },
+        "."
       ]
     }
   },
@@ -9692,10 +12436,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Investimentos» no quadro das administrações públicas em contabilidade pública, para o período e na unidade indicados."
+        "É o valor de «Investimentos» no quadro das administrações públicas em contabilidade pública, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Investment» in the general government table in public accounting, for the stated period and unit."
+        "It is the value of «Investment» in the general government table in public accounting, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q4-1-r27-c2"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q4-1-r27-c2"
+        },
+        "."
       ]
     }
   },
@@ -9706,10 +12464,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Despesa Total» no quadro das administrações públicas em contabilidade pública, para o período e na unidade indicados."
+        "É o valor de «Despesa Total» no quadro das administrações públicas em contabilidade pública, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Total expenditure» in the general government table in public accounting, for the stated period and unit."
+        "It is the value of «Total expenditure» in the general government table in public accounting, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q4-1-r31-c0"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q4-1-r31-c0"
+        },
+        "."
       ]
     }
   },
@@ -9720,10 +12492,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Despesa Total» no quadro das administrações públicas em contabilidade pública, para o período e na unidade indicados."
+        "É o valor de «Despesa Total» no quadro das administrações públicas em contabilidade pública, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Total expenditure» in the general government table in public accounting, for the stated period and unit."
+        "It is the value of «Total expenditure» in the general government table in public accounting, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q4-1-r31-c1"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q4-1-r31-c1"
+        },
+        "."
       ]
     }
   },
@@ -9734,10 +12520,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Despesa Total» no quadro das administrações públicas em contabilidade pública, para o período e na unidade indicados."
+        "É o valor de «Despesa Total» no quadro das administrações públicas em contabilidade pública, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Total expenditure» in the general government table in public accounting, for the stated period and unit."
+        "It is the value of «Total expenditure» in the general government table in public accounting, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q4-1-r31-c2"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q4-1-r31-c2"
+        },
+        "."
       ]
     }
   },
@@ -9748,10 +12548,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Saldo Global» no quadro das administrações públicas em contabilidade pública, para o período e na unidade indicados."
+        "É o valor de «Saldo Global» no quadro das administrações públicas em contabilidade pública, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Overall balance» in the general government table in public accounting, for the stated period and unit."
+        "It is the value of «Overall balance» in the general government table in public accounting, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q4-1-r32-c0"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q4-1-r32-c0"
+        },
+        "."
       ]
     }
   },
@@ -9762,10 +12576,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Saldo Global» no quadro das administrações públicas em contabilidade pública, para o período e na unidade indicados."
+        "É o valor de «Saldo Global» no quadro das administrações públicas em contabilidade pública, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Overall balance» in the general government table in public accounting, for the stated period and unit."
+        "It is the value of «Overall balance» in the general government table in public accounting, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q4-1-r32-c1"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q4-1-r32-c1"
+        },
+        "."
       ]
     }
   },
@@ -9776,10 +12604,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Saldo Global» no quadro das administrações públicas em contabilidade pública, para o período e na unidade indicados."
+        "É o valor de «Saldo Global» no quadro das administrações públicas em contabilidade pública, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Overall balance» in the general government table in public accounting, for the stated period and unit."
+        "It is the value of «Overall balance» in the general government table in public accounting, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q4-1-r32-c3"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q4-1-r32-c3"
+        },
+        "."
       ]
     }
   },
@@ -9790,10 +12632,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «Saldo Global» no quadro das administrações públicas em contabilidade pública, para o período e na unidade indicados."
+        "É o valor de «Saldo Global» no quadro das administrações públicas em contabilidade pública, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Overall balance» in the general government table in public accounting, for the stated period and unit."
+        "It is the value of «Overall balance» in the general government table in public accounting, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-q4-1-r32-c4"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-q4-1-r32-c4"
+        },
+        "."
       ]
     }
   },
@@ -9804,10 +12660,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a passagem do documento sobre «Atualização das remunerações públicas e reforço do CSI», conservada no excerto."
+        "É a passagem do documento sobre «Atualização das remunerações públicas e reforço do CSI», conservada no excerto. Referência: "
       ],
       "en": [
-        "It is the document's passage on «Public wage update and CSI increase», preserved in the excerpt."
+        "It is the document's passage on «Public wage update and CSI increase», preserved in the excerpt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-remuneracoes-atualizacao"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-remuneracoes-atualizacao"
+        },
+        "."
       ]
     }
   },
@@ -9818,10 +12688,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a passagem do documento sobre «Remuneração mínima mensal garantida», conservada no excerto."
+        "É a passagem do documento sobre «Remuneração mínima mensal garantida», conservada no excerto. Referência: "
       ],
       "en": [
-        "It is the document's passage on «Guaranteed minimum monthly wage», preserved in the excerpt."
+        "It is the document's passage on «Guaranteed minimum monthly wage», preserved in the excerpt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-salario-minimo"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-salario-minimo"
+        },
+        "."
       ]
     }
   },
@@ -9832,10 +12716,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a passagem do documento sobre «Trajetória da dívida pública», conservada no excerto."
+        "É a passagem do documento sobre «Trajetória da dívida pública», conservada no excerto. Referência: "
       ],
       "en": [
-        "It is the document's passage on «Public debt path», preserved in the excerpt."
+        "It is the document's passage on «Public debt path», preserved in the excerpt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "pm-trajetoria-divida-2026-2027"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "pm-trajetoria-divida-2026-2027"
+        },
+        "."
       ]
     }
   },
@@ -9846,24 +12744,52 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a posição atribuída no documento sobre «Rendimentos dos trabalhadores», transcrita no excerto."
+        "É a posição atribuída no documento sobre «Rendimentos dos trabalhadores», transcrita no excerto. Referência: "
       ],
       "en": [
-        "It is the position attributed in the document on «Workers income», transcribed in the excerpt."
+        "It is the position attributed in the document on «Workers income», transcribed in the excerpt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "posicao-be-rendimentos"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "posicao-be-rendimentos"
+        },
+        "."
       ]
     }
   },
   "posicao-cds-orcamento": {
     "nome": {
-      "pt": "Posição sobre o Orçamento do Estado de ano da proposta",
-      "en": "Position on the proposal year State Budget"
+      "pt": "Posição sobre o Orçamento do Estado de dois mil e vinte e sete",
+      "en": "Position on the two thousand and twenty-seven State Budget"
     },
     "frase": {
       "pt": [
-        "É a posição atribuída no documento sobre «Posição sobre o Orçamento do Estado de ano da proposta», transcrita no excerto."
+        "É a posição atribuída no documento sobre «Posição sobre o Orçamento do Estado de dois mil e vinte e sete», transcrita no excerto. Referência: "
       ],
       "en": [
-        "It is the position attributed in the document on «Position on the proposal year State Budget», transcribed in the excerpt."
+        "It is the position attributed in the document on «Position on the two thousand and twenty-seven State Budget», transcribed in the excerpt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "posicao-cds-orcamento"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "posicao-cds-orcamento"
+        },
+        "."
       ]
     }
   },
@@ -9874,10 +12800,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a posição atribuída no documento sobre «Pacote fiscal e apoios à habitação», transcrita no excerto."
+        "É a posição atribuída no documento sobre «Pacote fiscal e apoios à habitação», transcrita no excerto. Referência: "
       ],
       "en": [
-        "It is the position attributed in the document on «Housing tax package and rent support», transcribed in the excerpt."
+        "It is the position attributed in the document on «Housing tax package and rent support», transcribed in the excerpt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "posicao-chega-habitacao"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "posicao-chega-habitacao"
+        },
+        "."
       ]
     }
   },
@@ -9888,10 +12828,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a posição atribuída no documento sobre «CSI, pensões e atualização do IRS», transcrita no excerto."
+        "É a posição atribuída no documento sobre «CSI, pensões e atualização do IRS», transcrita no excerto. Referência: "
       ],
       "en": [
-        "It is the position attributed in the document on «Solidarity supplement, pensions and income tax adjustment», transcribed in the excerpt."
+        "It is the position attributed in the document on «Solidarity supplement, pensions and income tax adjustment», transcribed in the excerpt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "posicao-governo-csi-pensoes"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "posicao-governo-csi-pensoes"
+        },
+        "."
       ]
     }
   },
@@ -9902,10 +12856,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a posição atribuída no documento sobre «Objetivo do Governo para a dívida pública», transcrita no excerto."
+        "É a posição atribuída no documento sobre «Objetivo do Governo para a dívida pública», transcrita no excerto. Referência: "
       ],
       "en": [
-        "It is the position attributed in the document on «Government target for public debt», transcribed in the excerpt."
+        "It is the position attributed in the document on «Government target for public debt», transcribed in the excerpt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "posicao-governo-divida85"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "posicao-governo-divida85"
+        },
+        "."
       ]
     }
   },
@@ -9916,10 +12884,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a posição atribuída no documento sobre «Miranda Sarmento: dívida, citação pela notícia», transcrita no excerto."
+        "É a posição atribuída no documento sobre «Miranda Sarmento: dívida, citação pela notícia», transcrita no excerto. Referência: "
       ],
       "en": [
-        "It is the position attributed in the document on «Miranda Sarmento: debt, quotation in the news report», transcribed in the excerpt."
+        "It is the position attributed in the document on «Miranda Sarmento: debt, quotation in the news report», transcribed in the excerpt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "posicao-governo-divida85-citacao"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "posicao-governo-divida85-citacao"
+        },
+        "."
       ]
     }
   },
@@ -9930,10 +12912,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a posição atribuída no documento sobre «Redução do IRC», transcrita no excerto."
+        "É a posição atribuída no documento sobre «Redução do IRC», transcrita no excerto. Referência: "
       ],
       "en": [
-        "It is the position attributed in the document on «Corporate income tax reduction», transcribed in the excerpt."
+        "It is the position attributed in the document on «Corporate income tax reduction», transcribed in the excerpt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "posicao-governo-irc"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "posicao-governo-irc"
+        },
+        "."
       ]
     }
   },
@@ -9944,10 +12940,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a posição atribuída no documento sobre «IRS e IRS Jovem», transcrita no excerto."
+        "É a posição atribuída no documento sobre «IRS e IRS Jovem», transcrita no excerto. Referência: "
       ],
       "en": [
-        "It is the position attributed in the document on «Personal income tax and youth income tax», transcribed in the excerpt."
+        "It is the position attributed in the document on «Personal income tax and youth income tax», transcribed in the excerpt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "posicao-governo-irs"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "posicao-governo-irs"
+        },
+        "."
       ]
     }
   },
@@ -9958,10 +12968,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a posição atribuída no documento sobre «Proteção das famílias não abrangidas pela descida do IRS», transcrita no excerto."
+        "É a posição atribuída no documento sobre «Proteção das famílias não abrangidas pela descida do IRS», transcrita no excerto. Referência: "
       ],
       "en": [
-        "It is the position attributed in the document on «Protection for households outside the income tax reduction», transcribed in the excerpt."
+        "It is the position attributed in the document on «Protection for households outside the income tax reduction», transcribed in the excerpt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "posicao-jpp-irs"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "posicao-jpp-irs"
+        },
+        "."
       ]
     }
   },
@@ -9972,10 +12996,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a posição atribuída no documento sobre «Proposta do Livre para a taxa normal do IVA», transcrita no excerto."
+        "É a posição atribuída no documento sobre «Proposta do Livre para a taxa normal do IVA», transcrita no excerto. Referência: "
       ],
       "en": [
-        "It is the position attributed in the document on «Livre proposal for the standard VAT rate», transcribed in the excerpt."
+        "It is the position attributed in the document on «Livre proposal for the standard VAT rate», transcribed in the excerpt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "posicao-livre-iva"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "posicao-livre-iva"
+        },
+        "."
       ]
     }
   },
@@ -9986,10 +13024,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a posição atribuída no documento sobre «Investimento em habitação», transcrita no excerto."
+        "É a posição atribuída no documento sobre «Investimento em habitação», transcrita no excerto. Referência: "
       ],
       "en": [
-        "It is the position attributed in the document on «Housing investment», transcribed in the excerpt."
+        "It is the position attributed in the document on «Housing investment», transcribed in the excerpt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "posicao-pcp-habitacao"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "posicao-pcp-habitacao"
+        },
+        "."
       ]
     }
   },
@@ -10000,10 +13052,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a posição atribuída no documento sobre «IRC e benefícios fiscais», transcrita no excerto."
+        "É a posição atribuída no documento sobre «IRC e benefícios fiscais», transcrita no excerto. Referência: "
       ],
       "en": [
-        "It is the position attributed in the document on «Corporate income tax and tax benefits», transcribed in the excerpt."
+        "It is the position attributed in the document on «Corporate income tax and tax benefits», transcribed in the excerpt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "posicao-pcp-irc"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "posicao-pcp-irc"
+        },
+        "."
       ]
     }
   },
@@ -10014,10 +13080,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a posição atribuída no documento sobre «IRS Jovem, residentes não habituais e rendas», transcrita no excerto."
+        "É a posição atribuída no documento sobre «IRS Jovem, residentes não habituais e rendas», transcrita no excerto. Referência: "
       ],
       "en": [
-        "It is the position attributed in the document on «Youth income tax, non-habitual residents and rents», transcribed in the excerpt."
+        "It is the position attributed in the document on «Youth income tax, non-habitual residents and rents», transcribed in the excerpt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "posicao-pcp-irs-rendas"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "posicao-pcp-irs-rendas"
+        },
+        "."
       ]
     }
   },
@@ -10028,10 +13108,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a posição atribuída no documento sobre «Pensões e prestações sociais», transcrita no excerto."
+        "É a posição atribuída no documento sobre «Pensões e prestações sociais», transcrita no excerto. Referência: "
       ],
       "en": [
-        "It is the position attributed in the document on «Pensions and social benefits», transcribed in the excerpt."
+        "It is the position attributed in the document on «Pensions and social benefits», transcribed in the excerpt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "posicao-pcp-pensoes"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "posicao-pcp-pensoes"
+        },
+        "."
       ]
     }
   },
@@ -10042,10 +13136,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a posição atribuída no documento sobre «Salários públicos e subsídio de alimentação», transcrita no excerto."
+        "É a posição atribuída no documento sobre «Salários públicos e subsídio de alimentação», transcrita no excerto. Referência: "
       ],
       "en": [
-        "It is the position attributed in the document on «Public wages and meal allowance», transcribed in the excerpt."
+        "It is the position attributed in the document on «Public wages and meal allowance», transcribed in the excerpt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "posicao-pcp-salarios"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "posicao-pcp-salarios"
+        },
+        "."
       ]
     }
   },
@@ -10056,10 +13164,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a posição atribuída no documento sobre «Salário mínimo nacional», transcrita no excerto."
+        "É a posição atribuída no documento sobre «Salário mínimo nacional», transcrita no excerto. Referência: "
       ],
       "en": [
-        "It is the position attributed in the document on «National minimum wage», transcribed in the excerpt."
+        "It is the position attributed in the document on «National minimum wage», transcribed in the excerpt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "posicao-pcp-smn"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "posicao-pcp-smn"
+        },
+        "."
       ]
     }
   },
@@ -10070,10 +13192,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a posição atribuída no documento sobre «Redução seletiva do IRC», transcrita no excerto."
+        "É a posição atribuída no documento sobre «Redução seletiva do IRC», transcrita no excerto. Referência: "
       ],
       "en": [
-        "It is the position attributed in the document on «Targeted corporate income tax reduction», transcribed in the excerpt."
+        "It is the position attributed in the document on «Targeted corporate income tax reduction», transcribed in the excerpt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "posicao-ps-irc"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "posicao-ps-irc"
+        },
+        "."
       ]
     }
   },
@@ -10084,10 +13220,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a posição atribuída no documento sobre «Posição do PS sobre a atualização das pensões», transcrita no excerto."
+        "É a posição atribuída no documento sobre «Posição do PS sobre a atualização das pensões», transcrita no excerto. Referência: "
       ],
       "en": [
-        "It is the position attributed in the document on «PS position on pension updates», transcribed in the excerpt."
+        "It is the position attributed in the document on «PS position on pension updates», transcribed in the excerpt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "posicao-ps-pensoes"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "posicao-ps-pensoes"
+        },
+        "."
       ]
     }
   },
@@ -10098,10 +13248,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a posição atribuída no documento sobre «Dedução das rendas no IRS», transcrita no excerto."
+        "É a posição atribuída no documento sobre «Dedução das rendas no IRS», transcrita no excerto. Referência: "
       ],
       "en": [
-        "It is the position attributed in the document on «Income tax deduction for rents», transcribed in the excerpt."
+        "It is the position attributed in the document on «Income tax deduction for rents», transcribed in the excerpt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "posicao-ps-rendas"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "posicao-ps-rendas"
+        },
+        "."
       ]
     }
   },
@@ -10112,38 +13276,80 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a posição atribuída no documento sobre «Política fiscal e impostos», transcrita no excerto."
+        "É a posição atribuída no documento sobre «Política fiscal e impostos», transcrita no excerto. Referência: "
       ],
       "en": [
-        "It is the position attributed in the document on «Fiscal policy and taxes», transcribed in the excerpt."
+        "It is the position attributed in the document on «Fiscal policy and taxes», transcribed in the excerpt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "posicao-psd-impostos"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "posicao-psd-impostos"
+        },
+        "."
       ]
     }
   },
   "rmmg-2026": {
     "nome": {
-      "pt": "Remuneração mínima mensal garantida em ano da estimativa",
-      "en": "Minimum monthly wage in estimate year"
+      "pt": "Remuneração mínima mensal garantida em dois mil e vinte e seis",
+      "en": "Minimum monthly wage in two thousand and twenty-six"
     },
     "frase": {
       "pt": [
-        "É o valor de «Remuneração mínima mensal garantida em ano da estimativa» no documento citado, para o período e na unidade indicados."
+        "É a remuneração mínima mensal garantida em "
       ],
       "en": [
-        "It is the value of «Minimum monthly wage in estimate year» in the cited document, for the stated period and unit."
+        "It is the guaranteed minimum monthly wage in "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "rmmg-2026"
+        },
+        ", pelo decreto-lei que a fixou."
+      ],
+      "en": [
+        {
+          "periodo": "rmmg-2026"
+        },
+        ", under the decree-law that set it."
       ]
     }
   },
   "smi-espanha-2026": {
     "nome": {
-      "pt": "Espanha: salário mínimo mensal em ano da estimativa",
-      "en": "Spain: monthly minimum wage in estimate year"
+      "pt": "Espanha: salário mínimo mensal em dois mil e vinte e seis",
+      "en": "Spain: monthly minimum wage in two thousand and twenty-six"
     },
     "frase": {
       "pt": [
-        "É o valor de «Espanha: salário mínimo mensal em ano da estimativa» no documento citado, para o período e na unidade indicados."
+        "É o salário mínimo mensal de Espanha em "
       ],
       "en": [
-        "It is the value of «Spain: monthly minimum wage in estimate year» in the cited document, for the stated period and unit."
+        "It is Spain’s monthly minimum wage in "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "smi-espanha-2026"
+        },
+        ", pelo real decreto."
+      ],
+      "en": [
+        {
+          "periodo": "smi-espanha-2026"
+        },
+        ", under the royal decree."
       ]
     }
   },
@@ -10154,10 +13360,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «UTAO: acréscimo anual da dívida pública» no documento citado, para o período e na unidade indicados."
+        "É o valor de «UTAO: acréscimo anual da dívida pública» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «UTAO: annual increase in public debt» in the cited document, for the stated period and unit."
+        "It is the value of «UTAO: annual increase in public debt» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "utao-divida-acrescimo-2026"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "utao-divida-acrescimo-2026"
+        },
+        "."
       ]
     }
   },
@@ -10168,10 +13388,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «UTAO: acréscimo anual da dívida pública» no documento citado, para o período e na unidade indicados."
+        "É o valor de «UTAO: acréscimo anual da dívida pública» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «UTAO: annual increase in public debt» in the cited document, for the stated period and unit."
+        "It is the value of «UTAO: annual increase in public debt» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "utao-divida-acrescimo-2027"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "utao-divida-acrescimo-2027"
+        },
+        "."
       ]
     }
   },
@@ -10182,10 +13416,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a passagem do documento sobre «Dívida: ajustamento défice-dívida», conservada no excerto."
+        "É a passagem do documento sobre «Dívida: ajustamento défice-dívida», conservada no excerto. Referência: "
       ],
       "en": [
-        "It is the document's passage on «Debt: deficit-debt adjustment», preserved in the excerpt."
+        "It is the document's passage on «Debt: deficit-debt adjustment», preserved in the excerpt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "utao-divida-ajustamento"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "utao-divida-ajustamento"
+        },
+        "."
       ]
     }
   },
@@ -10196,10 +13444,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a passagem do documento sobre «Dívida: saldo primário e efeito dinâmico», conservada no excerto."
+        "É a passagem do documento sobre «Dívida: saldo primário e efeito dinâmico», conservada no excerto. Referência: "
       ],
       "en": [
-        "It is the document's passage on «Debt: primary balance and dynamic effect», preserved in the excerpt."
+        "It is the document's passage on «Debt: primary balance and dynamic effect», preserved in the excerpt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "utao-divida-efeitos"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "utao-divida-efeitos"
+        },
+        "."
       ]
     }
   },
@@ -10210,10 +13472,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «UTAO: dívida pública em euros» no documento citado, para o período e na unidade indicados."
+        "É o valor de «UTAO: dívida pública em euros» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «UTAO: public debt in euros» in the cited document, for the stated period and unit."
+        "It is the value of «UTAO: public debt in euros» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "utao-divida-stock-2026"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "utao-divida-stock-2026"
+        },
+        "."
       ]
     }
   },
@@ -10224,10 +13500,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «UTAO: dívida pública em euros» no documento citado, para o período e na unidade indicados."
+        "É o valor de «UTAO: dívida pública em euros» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «UTAO: public debt in euros» in the cited document, for the stated period and unit."
+        "It is the value of «UTAO: public debt in euros» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "utao-divida-stock-2027"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "utao-divida-stock-2027"
+        },
+        "."
       ]
     }
   },
@@ -10238,24 +13528,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a passagem do documento sobre «Dívida: despesa com juros», conservada no excerto."
+        "É a passagem do documento sobre «Dívida: despesa com juros», conservada no excerto. Referência: "
       ],
       "en": [
-        "It is the document's passage on «Debt: interest expenditure», preserved in the excerpt."
+        "It is the document's passage on «Debt: interest expenditure», preserved in the excerpt. Reference: "
       ]
-    }
-  },
-  "utao-juros-2027": {
-    "nome": {
-      "pt": "UTAO: juros da dívida",
-      "en": "UTAO: debt interest"
     },
-    "frase": {
+    "complemento": {
       "pt": [
-        "É o valor de «UTAO: juros da dívida» no documento citado, para o período e na unidade indicados."
+        {
+          "periodo": "utao-juros"
+        },
+        "."
       ],
       "en": [
-        "It is the value of «UTAO: debt interest» in the cited document, for the stated period and unit."
+        {
+          "periodo": "utao-juros"
+        },
+        "."
       ]
     }
   },
@@ -10266,10 +13556,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «UTAO: crescimento dos juros» no documento citado, para o período e na unidade indicados."
+        "É o valor de «UTAO: crescimento dos juros» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «UTAO: interest growth» in the cited document, for the stated period and unit."
+        "It is the value of «UTAO: interest growth» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "utao-juros-variacao-pct"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "utao-juros-variacao-pct"
+        },
+        "."
       ]
     }
   },
@@ -10280,10 +13584,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a passagem do documento sobre «Medidas: novas e anteriormente adotadas», conservada no excerto."
+        "É a passagem do documento sobre «Medidas: novas e anteriormente adotadas», conservada no excerto. Referência: "
       ],
       "en": [
-        "It is the document's passage on «Measures: new and previously adopted», preserved in the excerpt."
+        "It is the document's passage on «Measures: new and previously adopted», preserved in the excerpt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "utao-novas-medidas"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "utao-novas-medidas"
+        },
+        "."
       ]
     }
   },
@@ -10294,10 +13612,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a passagem do documento sobre «Medidas novas: impacto no saldo», conservada no excerto."
+        "É a passagem do documento sobre «Medidas novas: impacto no saldo», conservada no excerto. Referência: "
       ],
       "en": [
-        "It is the document's passage on «New measures: impact on balance», preserved in the excerpt."
+        "It is the document's passage on «New measures: impact on balance», preserved in the excerpt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "utao-novas-saldo"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "utao-novas-saldo"
+        },
+        "."
       ]
     }
   },
@@ -10308,10 +13640,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a passagem do documento sobre «Medidas: revisão das políticas invariantes», conservada no excerto."
+        "É a passagem do documento sobre «Medidas: revisão das políticas invariantes», conservada no excerto. Referência: "
       ],
       "en": [
-        "It is the document's passage on «Measures: unchanged-policy revision», preserved in the excerpt."
+        "It is the document's passage on «Measures: unchanged-policy revision», preserved in the excerpt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "utao-politicas-revisao"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "utao-politicas-revisao"
+        },
+        "."
       ]
     }
   },
@@ -10322,10 +13668,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a passagem do documento sobre «Medidas: impacto das políticas invariantes», conservada no excerto."
+        "É a passagem do documento sobre «Medidas: impacto das políticas invariantes», conservada no excerto. Referência: "
       ],
       "en": [
-        "It is the document's passage on «Measures: unchanged-policy impact», preserved in the excerpt."
+        "It is the document's passage on «Measures: unchanged-policy impact», preserved in the excerpt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "utao-politicas-saldo"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "utao-politicas-saldo"
+        },
+        "."
       ]
     }
   },
@@ -10336,10 +13696,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a passagem do documento sobre «Saldo: revisão face ao plano de médio prazo», conservada no excerto."
+        "É a passagem do documento sobre «Saldo: revisão face ao plano de médio prazo», conservada no excerto. Referência: "
       ],
       "en": [
-        "It is the document's passage on «Balance: revision against medium-term plan», preserved in the excerpt."
+        "It is the document's passage on «Balance: revision against medium-term plan», preserved in the excerpt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "utao-revisao-saldo"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "utao-revisao-saldo"
+        },
+        "."
       ]
     }
   },
@@ -10350,10 +13724,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a passagem do documento sobre «Riscos: responsabilidades contingentes», conservada no excerto."
+        "É a passagem do documento sobre «Riscos: responsabilidades contingentes», conservada no excerto. Referência: "
       ],
       "en": [
-        "It is the document's passage on «Risks: contingent liabilities», preserved in the excerpt."
+        "It is the document's passage on «Risks: contingent liabilities», preserved in the excerpt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "utao-risco-contingencias"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "utao-risco-contingencias"
+        },
+        "."
       ]
     }
   },
@@ -10364,10 +13752,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a passagem do documento sobre «Riscos: emprego público», conservada no excerto."
+        "É a passagem do documento sobre «Riscos: emprego público», conservada no excerto. Referência: "
       ],
       "en": [
-        "It is the document's passage on «Risks: public employment», preserved in the excerpt."
+        "It is the document's passage on «Risks: public employment», preserved in the excerpt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "utao-risco-emprego"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "utao-risco-emprego"
+        },
+        "."
       ]
     }
   },
@@ -10378,10 +13780,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a passagem do documento sobre «Riscos: fenómenos naturais extremos», conservada no excerto."
+        "É a passagem do documento sobre «Riscos: fenómenos naturais extremos», conservada no excerto. Referência: "
       ],
       "en": [
-        "It is the document's passage on «Risks: extreme natural events», preserved in the excerpt."
+        "It is the document's passage on «Risks: extreme natural events», preserved in the excerpt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "utao-risco-fenomenos"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "utao-risco-fenomenos"
+        },
+        "."
       ]
     }
   },
@@ -10392,10 +13808,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a passagem do documento sobre «Riscos: combate à fraude nos combustíveis», conservada no excerto."
+        "É a passagem do documento sobre «Riscos: combate à fraude nos combustíveis», conservada no excerto. Referência: "
       ],
       "en": [
-        "It is the document's passage on «Risks: fuel fraud measures», preserved in the excerpt."
+        "It is the document's passage on «Risks: fuel fraud measures», preserved in the excerpt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "utao-risco-fraude"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "utao-risco-fraude"
+        },
+        "."
       ]
     }
   },
@@ -10406,10 +13836,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a passagem do documento sobre «Riscos: encargos com juros», conservada no excerto."
+        "É a passagem do documento sobre «Riscos: encargos com juros», conservada no excerto. Referência: "
       ],
       "en": [
-        "It is the document's passage on «Risks: interest expenditure», preserved in the excerpt."
+        "It is the document's passage on «Risks: interest expenditure», preserved in the excerpt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "utao-risco-juros"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "utao-risco-juros"
+        },
+        "."
       ]
     }
   },
@@ -10420,10 +13864,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a passagem do documento sobre «Riscos: mercados de dívida soberana», conservada no excerto."
+        "É a passagem do documento sobre «Riscos: mercados de dívida soberana», conservada no excerto. Referência: "
       ],
       "en": [
-        "It is the document's passage on «Risks: sovereign debt markets», preserved in the excerpt."
+        "It is the document's passage on «Risks: sovereign debt markets», preserved in the excerpt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "utao-risco-mercados"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "utao-risco-mercados"
+        },
+        "."
       ]
     }
   },
@@ -10434,10 +13892,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a passagem do documento sobre «Riscos: crescimento económico e receita», conservada no excerto."
+        "É a passagem do documento sobre «Riscos: crescimento económico e receita», conservada no excerto. Referência: "
       ],
       "en": [
-        "It is the document's passage on «Risks: economic growth and revenue», preserved in the excerpt."
+        "It is the document's passage on «Risks: economic growth and revenue», preserved in the excerpt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "utao-risco-pib"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "utao-risco-pib"
+        },
+        "."
       ]
     }
   },
@@ -10448,10 +13920,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a passagem do documento sobre «Riscos: execução do SNS», conservada no excerto."
+        "É a passagem do documento sobre «Riscos: execução do SNS», conservada no excerto. Referência: "
       ],
       "en": [
-        "It is the document's passage on «Risks: national health service execution», preserved in the excerpt."
+        "It is the document's passage on «Risks: national health service execution», preserved in the excerpt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "utao-risco-sns"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "utao-risco-sns"
+        },
+        "."
       ]
     }
   },
@@ -10462,10 +13948,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a passagem do documento sobre «Salários públicos: atualização», conservada no excerto."
+        "É a passagem do documento sobre «Salários públicos: atualização», conservada no excerto. Referência: "
       ],
       "en": [
-        "It is the document's passage on «Public wages: adjustment», preserved in the excerpt."
+        "It is the document's passage on «Public wages: adjustment», preserved in the excerpt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "utao-salarios"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "utao-salarios"
+        },
+        "."
       ]
     }
   },
@@ -10476,10 +13976,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «UTAO: contribuições da atualização salarial» no documento citado, para o período e na unidade indicados."
+        "É o valor de «UTAO: contribuições da atualização salarial» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «UTAO: contributions from the wage update» in the cited document, for the stated period and unit."
+        "It is the value of «UTAO: contributions from the wage update» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "utao-salarios-cs"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "utao-salarios-cs"
+        },
+        "."
       ]
     }
   },
@@ -10490,10 +14004,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «UTAO: receita de IRS da atualização salarial» no documento citado, para o período e na unidade indicados."
+        "É o valor de «UTAO: receita de IRS da atualização salarial» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «UTAO: income tax from the wage update» in the cited document, for the stated period and unit."
+        "It is the value of «UTAO: income tax from the wage update» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "utao-salarios-irs"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "utao-salarios-irs"
+        },
+        "."
       ]
     }
   },
@@ -10504,10 +14032,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «UTAO: atualização salarial» no documento citado, para o período e na unidade indicados."
+        "É o valor de «UTAO: atualização salarial» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «UTAO: wage update» in the cited document, for the stated period and unit."
+        "It is the value of «UTAO: wage update» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "utao-salarios-valor"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "utao-salarios-valor"
+        },
+        "."
       ]
     }
   },
@@ -10518,10 +14060,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a passagem do documento sobre «Saldo orçamental», conservada no excerto."
+        "É a passagem do documento sobre «Saldo orçamental», conservada no excerto. Referência: "
       ],
       "en": [
-        "It is the document's passage on «Budget balance», preserved in the excerpt."
+        "It is the document's passage on «Budget balance», preserved in the excerpt. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "utao-saldo"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "utao-saldo"
+        },
+        "."
       ]
     }
   },
@@ -10532,10 +14088,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «UTAO: taxa de juro implícita» no documento citado, para o período e na unidade indicados."
+        "É o valor de «UTAO: taxa de juro implícita» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «UTAO: implicit interest rate» in the cited document, for the stated period and unit."
+        "It is the value of «UTAO: implicit interest rate» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "utao-taxa-implicita-2026"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "utao-taxa-implicita-2026"
+        },
+        "."
       ]
     }
   },
@@ -10546,10 +14116,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o valor de «UTAO: taxa de juro implícita» no documento citado, para o período e na unidade indicados."
+        "É o valor de «UTAO: taxa de juro implícita» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «UTAO: implicit interest rate» in the cited document, for the stated period and unit."
+        "It is the value of «UTAO: implicit interest rate» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "utao-taxa-implicita-2027"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "utao-taxa-implicita-2027"
+        },
+        "."
       ]
     }
   }

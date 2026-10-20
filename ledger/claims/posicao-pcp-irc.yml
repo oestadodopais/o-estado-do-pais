@@ -9,6 +9,12 @@ id: "posicao-pcp-irc"
 value: "O Governo fala em descida de impostos, mas a realidade é esta: o único imposto cuja receita diminuiu foi o IRC (imposto que incide sobre os rendimentos de capital), no próximo ano – com uma taxa de 18% - voltará a descer e a que se somam os benefícios fiscais de 1868 milhões de euros (apenas 1% das empresas absorvem mais de 50% destes benefícios)."
 unit: "afirmação"
 
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "IRC e benefícios fiscais"
+name_source: "Corpo da página; frase integral identificada pelo excerto; data editorial no documento"
+name_en: "Corporate income tax and tax benefits"
+
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Partido Comunista Português"
 document:

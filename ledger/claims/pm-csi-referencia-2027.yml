@@ -9,6 +9,12 @@ id: "pm-csi-referencia-2027"
 value: "A despesa com a prestação do CSI deverá atingir o montante de 709,7 milhões de euros, uma variação anual de 15,6% face a 2026, refletindo principalmente o aumento do valor de referência em 50 euros/mês em 2027, para 720 euros, no âmbito da sua trajetória de convergência para 870 euros em 2029."
 unit: "texto"
 
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Valor de referência e despesa do CSI"
+name_source: "p. 102 PDF (86 impressa)"
+name_en: "CSI reference amount and expenditure"
+
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Ministério das Finanças"
 document:

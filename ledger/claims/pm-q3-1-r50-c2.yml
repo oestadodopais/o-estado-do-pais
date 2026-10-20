@@ -11,8 +11,9 @@ unit: "milhões de euros"
 
 # O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
-name: "Despesa total"
+name: "Despesa total; 2027; orçamento; milhões de euros"
 name_source: "Quadro 3.1. Conta das Administrações Públicas: 2026-2027; Despesa total; coluna 3: 2027; orçamento; milhões de euros; p. 54 PDF (38 impressa)"
+name_en: "Total expenditure; 2027; budget; million euros"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Ministério das Finanças"

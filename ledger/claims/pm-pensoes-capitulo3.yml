@@ -9,6 +9,12 @@ id: "pm-pensoes-capitulo3"
 value: "Prestações sociais (3,8%), refletindo nomeadamente a estimativa da atualização regular das pensões, o reforço anual do complemento solidário para idosos que tem ocorrido desde 2024 e a atualização dos valores de referência das outras prestações sociais."
 unit: "texto"
 
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Pensões e CSI no capítulo 3"
+name_source: "Capítulo 3; p. 56 PDF (40 impressa)"
+name_en: "Pensions and CSI in chapter 3"
+
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Ministério das Finanças"
 document:

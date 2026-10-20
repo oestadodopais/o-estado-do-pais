@@ -9,6 +9,12 @@ id: "der-oe2027-medidas-anteriores-saldo"
 value: "−1 210"
 unit: "milhões de euros"
 
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Medidas anteriores: impacto no saldo"
+name_source: "Cálculo sobre as linhas identificadas"
+name_en: "Earlier measures: balance impact"
+
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: null
 document: null
@@ -20,8 +26,8 @@ reference_date: "2027"
 excerpt: null
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
-derivation: "der-oe2027-medidas-anteriores-receita - der-oe2027-medidas-anteriores-despesa. -1210"
-derivation_en: "der-oe2027-medidas-anteriores-receita - der-oe2027-medidas-anteriores-despesa. -1210"
+derivation: "−263 (Medidas anteriores: receita) − 947 (Medidas anteriores: despesa) = −1210. Um resultado negativo reduz o saldo; um resultado positivo aumenta-o."
+derivation_en: "−263 (Earlier measures: revenue) − 947 (Earlier measures: expenditure) = −1210. A negative result reduces the balance; a positive result increases it."
 derived_from:
   - "der-oe2027-medidas-anteriores-receita"
   - "der-oe2027-medidas-anteriores-despesa"

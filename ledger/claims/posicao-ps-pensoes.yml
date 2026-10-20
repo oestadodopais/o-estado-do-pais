@@ -9,11 +9,17 @@ id: "posicao-ps-pensoes"
 value: "Na área das pensões, o líder do PS defendeu uma revisão dos mecanismos de atualização que assegure dois princípios: acompanhar a inflação e favorecer as pensões mais baixas."
 unit: "afirmação"
 
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Posição do PS sobre a atualização das pensões"
+name_source: "Secção «Pensões com atualização regular e justiça social»; frase completa"
+name_en: "PS position on pension updates"
+
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Partido Socialista"
 document:
   title: "OE2027: PS leva propostas à especialidade para responder ao custo de vida"
-  edition: "2027"
+  edition: "2026"
   locator: "Secção «Pensões com atualização regular e justiça social»; frase completa"
   source_sha256: "aaada6556fd3b6c5b286267736981a873e9b30630f55d51bf53e7e83e8a688d5"
   page: 1

@@ -9,6 +9,12 @@ id: "utao-revisao-saldo"
 value: "O saldo orçamental previsto para 2027 reflete uma revisão em baixa face à previsão do POENMP divulgada em outubro de 2024. O saldo primário previsto para 2027 (2,5% do PIB) é inferior à previsão do POENMP (3,2%), devido sobretudo ao menor peso da receita total; a despesa com juros não entra no cálculo do saldo primário e agrava apenas o saldo orçamental. O peso da receita para 2027 (42,1% do PIB) é inferior ao que constava no POENMP (43,0%). Tendo por referência a estimativa para 2026, esta apresenta valores diferentes, mas próximos, dos que constavam no POENMP para os diversos indicadores que compõem o saldo orçamental (Tabela 4)."
 unit: "afirmação"
 
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Saldo: revisão face ao plano de médio prazo"
+name_source: "§26; p. 15 PDF (14 impressa)"
+name_en: "Balance: revision against medium-term plan"
+
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Unidade Técnica de Apoio Orçamental"
 document:

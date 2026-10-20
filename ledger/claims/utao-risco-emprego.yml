@@ -9,6 +9,12 @@ id: "utao-risco-emprego"
 value: "O MF propõe estabilizar o emprego público em 2027 em 768,4 mil trabalhadores (Relatório do MF, Quadro 4.42), nível idêntico ao de junho de 2026 (768 378, DGAEP), o que equivale a não haver crescimento líquido do emprego a partir de junho. Segundo dados provisórios da DGAEP, o nível de junho de 2026 está 1,0% (+7390) acima de junho de 2025 e 0,3% (+2100) acima de dezembro de 2025. A estabilização do emprego contém a massa salarial; entradas superiores às saídas aumentariam o emprego e a despesa com pessoal, que a POE/2027 já prevê crescer 5,3% (Tabela 7)."
 unit: "afirmação"
 
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Riscos: emprego público"
+name_source: "§102; p. 53 PDF (52 impressa)"
+name_en: "Risks: public employment"
+
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Unidade Técnica de Apoio Orçamental"
 document:

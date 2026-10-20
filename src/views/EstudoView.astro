@@ -68,9 +68,7 @@ function separar(partes, marca, depois = false) {
   return [antes, resto];
 }
 const [titulo, conteudo] = separar(pecas, '</h1>', true);
-const titulosDaLeitura = work.id === 'orcamento-2027-o-que-muda-e-para-quem' && lang === 'en'
-  ? ['In short', ...TITULOS_DA_LEITURA.en.slice(1)]
-  : TITULOS_DA_LEITURA[lang];
+const titulosDaLeitura = TITULOS_DA_LEITURA[lang];
 const principais = titulos.filter(t => t.nivel === 2);
 const primeiroConteudo = registo?.blocks.find(b => b.i > 0 && b.kind === 'heading' && Number(b.level) === 2);
 const temAbertura = primeiroConteudo?.kind === 'heading' && Number(primeiroConteudo.level) === 2 && primeiroConteudo.text === titulosDaLeitura[0];

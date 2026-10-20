@@ -7,12 +7,13 @@ id: "europa-divida-ee-2025"
 
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
 value: "24,1"
-unit: "%"
+unit: "% do PIB"
 
 # O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
-name: "Government deficit/surplus, debt and associated data"
-name_source: "label"
+name: "Dívida pública bruta consolidada, em percentagem do PIB"
+name_source: "freq=A; unit=PC_GDP; sector=S13; na_item=GD; geo=EE; time=2025; value[59]"
+name_en: "General government consolidated gross debt, as a percentage of GDP"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Eurostat"

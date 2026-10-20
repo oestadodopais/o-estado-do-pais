@@ -9,6 +9,12 @@ id: "utao-risco-fenomenos"
 value: "A ocorrência de novos fenómenos naturais extremos em 2027 poderá exigir a adoção de medidas extraordinárias de apoio público destinadas a mitigar os danos causados e a assegurar a recuperação dos setores e das infraestruturas afetados. A eventual necessidade de financiar estas medidas constituiria uma pressão adicional sobre a despesa pública, configurando um risco orçamental. A Caixa 3 apresenta os apoios já aprovados na sequência das tempestades de 2026."
 unit: "afirmação"
 
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Riscos: fenómenos naturais extremos"
+name_source: "§100; p. 53 PDF (52 impressa)"
+name_en: "Risks: extreme natural events"
+
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Unidade Técnica de Apoio Orçamental"
 document:

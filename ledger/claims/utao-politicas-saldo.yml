@@ -9,6 +9,12 @@ id: "utao-politicas-saldo"
 value: "No contexto das alterações introduzidas pelo MF no relatório da POE/2027, as medidas em vigor, incluídas no cenário de políticas invariantes, têm um impacto adicional líquido para o saldo orçamental de 2027 negativo em 5411 M€ (1,6% do PIB). Este resultado decorre, essencialmente, do acréscimo de medidas com impacto bruto no lado da despesa (5562 M€) visto que as medidas do lado da receita (Tabela 8), apesar de apresentarem valores absolutos elevados, apresentam no seu conjunto um montante significativamente inferior (151 M€)."
 unit: "afirmação"
 
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Medidas: impacto das políticas invariantes"
+name_source: "§35; p. 21 PDF (20 impressa)"
+name_en: "Measures: unchanged-policy impact"
+
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Unidade Técnica de Apoio Orçamental"
 document:

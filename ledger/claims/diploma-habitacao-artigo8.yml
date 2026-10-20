@@ -9,11 +9,17 @@ id: "diploma-habitacao-artigo8"
 value: "Artigo 8.º Aditamento à lista I anexa ao Código do Imposto sobre o Valor Acrescentado É aditada a verba 2.42 à lista I anexa ao Código do IVA, com a seguinte redação: «2.42 — As empreitadas de construção ou reabilitação de: 2.42.1 — Imóveis que se destinem à venda para habitação própria e permanente do adquirente ou imóveis que se destinem exclusivamente ao arrendamento habitacional, cujo preço de venda ou valor de renda mensal não exceda os limites a que se referem os n.os 2 e 3 do artigo 2.º do Decreto-Lei n.º 97/2026, de 20 de maio. Os termos e as condições para a aplicação desta verba são estabelecidos em legislação especial. 2.42.2 — Prédios urbanos ou frações autónomas de prédios urbanos para arrendamento habitacional ou arrendamento para subarrendamento habitacional abrangidos pelo regime de contratos de investimento para arrendamento aprovado em anexo ao Decreto-Lei n.º 97/2026, de 20 de maio.»"
 unit: "afirmação"
 
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "IVA: construção e reabilitação de habitação"
+name_source: "Artigo 8.º; pp. 11 PDF"
+name_en: "VAT: housing construction and rehabilitation"
+
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "PRESIDÊNCIA DO CONSELHO DE MINISTROS"
 document:
   title: "Decreto-Lei n.º 97/2026, de 20 de maio"
-  edition: "2027"
+  edition: "2026"
   locator: "Artigo 8.º; pp. 11 PDF"
   source_sha256: "a8ce8d796015f06ec247113a4184af61280940b473eda8f367cbff9666b5e32a"
   page: 11

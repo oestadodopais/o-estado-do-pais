@@ -9,11 +9,17 @@ id: "posicao-chega-habitacao"
 value: "André Ventura defende um pacote de emergência com benefícios fiscais, apoios às rendas e menos burocracia."
 unit: "afirmação"
 
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Pacote fiscal e apoios à habitação"
+name_source: "Corpo da página; frase integral identificada pelo excerto; data editorial no documento"
+name_en: "Housing tax package and rent support"
+
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Folha Nacional"
 document:
   title: "Ventura acusa PS de hipocrisia na habitação: “Montenegro falhou brutalmente, mas os socialistas fizeram pior”"
-  edition: "2027"
+  edition: "2026"
   locator: "Corpo da página; frase integral identificada pelo excerto; data editorial no documento"
   source_sha256: "eb89d16a5837c718866280139fdf6695b4eb6271ccf644694a4732793ec00dea"
   page: 1

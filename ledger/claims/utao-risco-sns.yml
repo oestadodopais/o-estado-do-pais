@@ -9,6 +9,12 @@ id: "utao-risco-sns"
 value: "Existe um risco de pressão orçamental associado à execução do Serviço Nacional de Saúde (SNS). A persistência de défices na execução financeira do SNS, apesar dos sucessivos reforços das dotações orçamentais e das recorrentes injeções de capital destinadas a regularizar pagamentos em atraso, evidencia a manutenção de pressões sobre a despesa que poderão não estar integralmente acomodadas no financiamento previsto para 2027. Estas pressões incidem, designadamente, sobre as despesas com pessoal e os consumos intermédios (Tabela 15), podendo traduzir-se em necessidades adicionais de financiamento durante o ano e constituir um risco descendente para o saldo orçamental das AP."
 unit: "afirmação"
 
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Riscos: execução do SNS"
+name_source: "§103; p. 53 PDF (52 impressa)"
+name_en: "Risks: national health service execution"
+
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Unidade Técnica de Apoio Orçamental"
 document:
@@ -34,7 +40,7 @@ check: null
 
 study: "orcamento-2027-o-que-muda-e-para-quem"
 # Nota interna. NÃO é publicada: ver DECISIONS §1.24.
-note: "[note do motor] A extração alojada desta passagem já não contém chamadas de nota; o excerto integral foi reconferido no corpo. · Cruzado de ResearchHub content/25 Orcamento 2027 Medidas · utao-risco-sns."
+note: "[note do motor] O PDF imprime chamadas de nota; o excerto deixa-as cair pela regra de transcrição, sem alterar as palavras da passagem. · Cruzado de ResearchHub content/25 Orcamento 2027 Medidas · utao-risco-sns."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []

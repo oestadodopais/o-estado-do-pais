@@ -9,6 +9,12 @@ id: "oe-2027-prr-fim-investimento"
 value: "Concluído o ciclo extraordinário de financiamento associado ao PRR, o volume global de investimento tenderá naturalmente a abrandar face aos níveis excecionais observados nos anos anteriores."
 unit: "texto"
 
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Fim do PRR: investimento"
+name_source: "p. 31 PDF (15 impressa)"
+name_en: "End of the recovery plan: investment"
+
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Ministério das Finanças"
 document:

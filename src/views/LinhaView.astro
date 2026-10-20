@@ -119,7 +119,7 @@ const claim = getClaim(id);
 const familiaRecibo = familiaDaLinha(id);
 const nomeRecibo = nomeNoRecibo(id, lang);
 const lugarRecibo = lugarNoRecibo(id, lang);
-const nomeDaFonte = nomeDaFonteNoRecibo(id);
+const nomeDaFonte = nomeDaFonteNoRecibo(id, lang);
 const oQueE = oQueEDaLinha(id, lang);
 const fontesSecundariasDaDefinicao = (claim.definition_sources ?? []).map(fonte => Object.entries(ORIGENS_DAS_DEFINICOES)
   .find(([chave, origem]) => origem.publicador === fonte.publisher && origem.url === fonte.url)?.[0]).filter(Boolean);
@@ -570,9 +570,9 @@ const ficha = [
      forma dos outros localizadores e leva a marca do documento. */
   {
     k: s.prov.rotuloDaFonte,
-    campo: 'name',
-    valor: claim.name ?? null,
-    lingua: linguaDoRotuloDaFonte(claim.name ?? null, lang),
+    campo: lang === 'en' && claim.name_en ? 'name_en' : 'name',
+    valor: (lang === 'en' && claim.name_en) || claim.name || null,
+    lingua: claim.name_en ? null : linguaDoRotuloDaFonte(claim.name ?? null, lang),
   },
   {
     k: s.prov.rotuloOnde,
@@ -640,7 +640,7 @@ const atribuicaoPecas = [
      mesmo sítio no mesmo ecrã (o recibo do PIB passou de três a quatro), que é o que a L1 do `check:lugar` conta. Onde
      a cabeça diz o título, a frase diz quem publicou e a edição; onde a cabeça diz o rótulo da fonte (uma linha sem
      título de documento), não há título para tirar. */
-  presente(claim.document?.title) && nomeDaFonte?.campo !== 'document.title'
+  presente(claim.document?.title) && nomeDaFonte?.campo !== 'document.title' && claim.study !== 'orcamento-2027-o-que-muda-e-para-quem'
     ? {
         k: s.livro.linha.publicadoEm,
         campo: 'document.title',
@@ -769,9 +769,10 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
             campo={nomeDaFonte.campo}
             valor={nomeDaFonte.valor}
             lang={lang}
-            lingua={nomeDaFonte.campo === 'name' ? linguaDoRotuloDaFonte(nomeDaFonte.valor, lang) : linguaDoTituloDoDocumento(nomeDaFonte.valor, lang)}
+            lingua={claim.name_en ? null : nomeDaFonte.campo === 'name' ? linguaDoRotuloDaFonte(nomeDaFonte.valor, lang) : linguaDoTituloDoDocumento(nomeDaFonte.valor, lang)}
           />
         )}{'»'}
+        {claim.study === 'orcamento-2027-o-que-muda-e-para-quem' && claim.document?.title && nomeDaFonte.campo !== 'document.title' && (<>{' · '}{claim.document.url ? <a class="ligacao-externa" href={claim.document.url} rel="noopener noreferrer external"><CampoDaLinha id={id} campo="document.title" valor={claim.document.title} lang={lang} lingua={linguaDoTituloDoDocumento(claim.document.title, lang)} /></a> : <CampoDaLinha id={id} campo="document.title" valor={claim.document.title} lang={lang} lingua={linguaDoTituloDoDocumento(claim.document.title, lang)} />}</>)}
       </p>
     )}
     <div class="linha-o-que-e" data-o-que-e={id} data-o-que-e-tipo={oQueE.tipo} data-o-que-e-familia={oQueE.chave}>

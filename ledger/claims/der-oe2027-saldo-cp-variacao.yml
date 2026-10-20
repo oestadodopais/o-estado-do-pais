@@ -9,6 +9,12 @@ id: "der-oe2027-saldo-cp-variacao"
 value: "−572"
 unit: "milhões de euros"
 
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Saldo: variação em contabilidade pública"
+name_source: "Cálculo sobre as linhas identificadas"
+name_en: "Balance: public accounting change"
+
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: null
 document: null
@@ -20,8 +26,8 @@ reference_date: "2027"
 excerpt: null
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
-derivation: "pm-q4-1-r32-c1 - pm-q4-1-r32-c0. -572"
-derivation_en: "pm-q4-1-r32-c1 - pm-q4-1-r32-c0. -572"
+derivation: "−401 (Saldo Global) − 171 (Saldo Global) = −572. Um resultado negativo reduz o saldo; um resultado positivo aumenta-o."
+derivation_en: "−401 (Overall balance) − 171 (Overall balance) = −572. A negative result reduces the balance; a positive result increases it."
 derived_from:
   - "pm-q4-1-r32-c1"
   - "pm-q4-1-r32-c0"

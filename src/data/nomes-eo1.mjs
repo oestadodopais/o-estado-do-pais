@@ -172,6 +172,22 @@ export const NOMES_EO1 = {
     "pt": "Ajustamento défice-dívida",
     "en": "Deficit-debt adjustment"
   },
+  "pm-q3-6-r44-c3": {
+    "pt": "Efeito saldo primário",
+    "en": "Primary balance effect"
+  },
+  "pm-q3-6-r44-c2": {
+    "pt": "Efeito saldo primário",
+    "en": "Primary balance effect"
+  },
+  "pm-q3-6-r45-c3": {
+    "pt": "Efeito dinâmico",
+    "en": "Dynamic effect"
+  },
+  "pm-q3-6-r45-c2": {
+    "pt": "Efeito dinâmico",
+    "en": "Dynamic effect"
+  },
   "ce-primavera-2026-divida-2027": {
     "pt": "Dívida pública bruta",
     "en": "General government gross debt"
@@ -256,13 +272,33 @@ export const NOMES_EO1 = {
     "pt": "Juros e outros encargos",
     "en": "Interest and other charges"
   },
+  "pm-q4-1-r31-c2": {
+    "pt": "Despesa Total",
+    "en": "Total expenditure"
+  },
+  "pm-q4-1-r19-c2": {
+    "pt": "Despesas com pessoal",
+    "en": "Compensation of employees"
+  },
+  "der-oe2027-juros-variacao-cn": {
+    "pt": "Juros: variação em contabilidade nacional",
+    "en": "Interest: national accounts change"
+  },
+  "pm-q3-1-r36-c2": {
+    "pt": "Juros",
+    "en": "Interest"
+  },
+  "pm-q3-1-r36-c1": {
+    "pt": "Juros",
+    "en": "Interest"
+  },
+  "pm-q3-2-r26-c0": {
+    "pt": "Impacto no saldo",
+    "en": "Impact on the balance"
+  },
   "utao-juros-variacao-pct": {
     "pt": "UTAO: crescimento dos juros",
     "en": "UTAO: interest growth"
-  },
-  "utao-juros-2027": {
-    "pt": "UTAO: juros da dívida",
-    "en": "UTAO: debt interest"
   },
   "utao-taxa-implicita-2026": {
     "pt": "UTAO: taxa de juro implícita",
@@ -275,6 +311,14 @@ export const NOMES_EO1 = {
   "cfp-riscos": {
     "pt": "Riscos: PIB e inflação",
     "en": "Risks: GDP and inflation"
+  },
+  "utao-salarios": {
+    "pt": "Salários públicos: atualização",
+    "en": "Public wages: adjustment"
+  },
+  "utao-risco-emprego": {
+    "pt": "Riscos: emprego público",
+    "en": "Risks: public employment"
   },
   "utao-salarios-valor": {
     "pt": "UTAO: atualização salarial",
@@ -304,18 +348,6 @@ export const NOMES_EO1 = {
     "pt": "Dívida pública abaixo de 85% do PIB em 2027",
     "en": "Public debt below 85% of GDP in 2027"
   },
-  "pm-q3-6-r44-c3": {
-    "pt": "Efeito saldo primário",
-    "en": "Primary balance effect"
-  },
-  "pm-q3-6-r45-c3": {
-    "pt": "Efeito dinâmico",
-    "en": "Dynamic effect"
-  },
-  "pm-q3-6-r45-c2": {
-    "pt": "Efeito dinâmico",
-    "en": "Dynamic effect"
-  },
   "pm-q2-3-r8-c2": {
     "pt": "PIB",
     "en": "GDP"
@@ -344,10 +376,6 @@ export const NOMES_EO1 = {
     "pt": "Despesa Total",
     "en": "Total expenditure"
   },
-  "pm-q4-1-r31-c2": {
-    "pt": "Despesa Total",
-    "en": "Total expenditure"
-  },
   "pm-q4-1-r32-c3": {
     "pt": "Saldo Global",
     "en": "Overall balance"
@@ -361,10 +389,6 @@ export const NOMES_EO1 = {
     "en": "Compensation of employees"
   },
   "pm-q4-1-r19-c1": {
-    "pt": "Despesas com pessoal",
-    "en": "Compensation of employees"
-  },
-  "pm-q4-1-r19-c2": {
     "pt": "Despesas com pessoal",
     "en": "Compensation of employees"
   },
@@ -432,14 +456,6 @@ export const NOMES_EO1 = {
     "pt": "PRR (Receita total)",
     "en": "Recovery and Resilience Plan (Total revenue)"
   },
-  "pm-q3-1-r36-c1": {
-    "pt": "Juros",
-    "en": "Interest"
-  },
-  "pm-q3-1-r36-c2": {
-    "pt": "Juros",
-    "en": "Interest"
-  },
   "pm-q3-1-r36-c5": {
     "pt": "Juros",
     "en": "Interest"
@@ -479,6 +495,10 @@ export const NOMES_EO1 = {
   "pm-q3-3-r26-c1": {
     "pt": "Segurança Social (1. Saldo das AP em contabilidade pública)",
     "en": "Social security (1. General government balance in public accounts)"
+  },
+  "pm-q3-3-r25-c1": {
+    "pt": "Administração Regional e Local (1. Saldo das AP em contabilidade pública)",
+    "en": "Regional and local government (1. General government balance in public accounts)"
   },
   "pm-q3-3-r24-c1": {
     "pt": "Administração Central (1. Saldo das AP em contabilidade pública)",
@@ -532,10 +552,6 @@ export const NOMES_EO1 = {
     "pt": "Saldo das administrações públicas",
     "en": "General government balance"
   },
-  "pm-q3-2-r26-c0": {
-    "pt": "Impacto no saldo",
-    "en": "Impact on the balance"
-  },
   "pm-q3-2-r5-c0": {
     "pt": "Medidas receita",
     "en": "Revenue measures"
@@ -572,6 +588,10 @@ export const NOMES_EO1 = {
     "pt": "Quadro das medidas: definição da marca (i)",
     "en": "Measures table: definition of mark (i)"
   },
+  "der-oe2027-medidas-soma-derivadas": {
+    "pt": "Soma dos impactos das linhas invariantes e das medidas novas no saldo",
+    "en": "Sum of unchanged-policy and new-measure balance impacts"
+  },
   "posicao-livre-iva": {
     "pt": "Descida da taxa normal do IVA para 21%",
     "en": "Standard VAT rate reduction to 21%"
@@ -583,6 +603,30 @@ export const NOMES_EO1 = {
   "utao-politicas-revisao": {
     "pt": "Medidas: revisão das políticas invariantes",
     "en": "Measures: unchanged-policy revision"
+  },
+  "irs-2026-escalao-1-taxa-normal": {
+    "pt": "IRS: taxa normal do escalão 1 na tabela anterior a setembro de 2026",
+    "en": "Income tax: normal rate of bracket 1 in the table preceding September 2026"
+  },
+  "irs-2026-escalao-2-taxa-normal": {
+    "pt": "IRS: taxa normal do escalão 2 na tabela anterior a setembro de 2026",
+    "en": "Income tax: normal rate of bracket 2 in the table preceding September 2026"
+  },
+  "irs-2026-escalao-3-taxa-normal": {
+    "pt": "IRS: taxa normal do escalão 3 na tabela anterior a setembro de 2026",
+    "en": "Income tax: normal rate of bracket 3 in the table preceding September 2026"
+  },
+  "irs-2026-escalao-4-taxa-normal": {
+    "pt": "IRS: taxa normal do escalão 4 na tabela anterior a setembro de 2026",
+    "en": "Income tax: normal rate of bracket 4 in the table preceding September 2026"
+  },
+  "irs-2026-escalao-5-taxa-normal": {
+    "pt": "IRS: taxa normal do escalão 5 na tabela anterior a setembro de 2026",
+    "en": "Income tax: normal rate of bracket 5 in the table preceding September 2026"
+  },
+  "irs-2026-escalao-6-taxa-normal": {
+    "pt": "IRS: taxa normal do escalão 6 na tabela anterior a setembro de 2026",
+    "en": "Income tax: normal rate of bracket 6 in the table preceding September 2026"
   },
   "irs-2027-escalao-1-limite": {
     "pt": "IRS: limite superior do escalão 1 em 2027",
@@ -680,30 +724,6 @@ export const NOMES_EO1 = {
     "pt": "IRS: atualização do limite do escalão 1",
     "en": "Income tax: bracket 1 limit update"
   },
-  "irs-2026-escalao-1-taxa-normal": {
-    "pt": "IRS: taxa normal do escalão 1 em 2026",
-    "en": "Income tax: normal rate of bracket 1 in 2026"
-  },
-  "irs-2026-escalao-2-taxa-normal": {
-    "pt": "IRS: taxa normal do escalão 2 em 2026",
-    "en": "Income tax: normal rate of bracket 2 in 2026"
-  },
-  "irs-2026-escalao-3-taxa-normal": {
-    "pt": "IRS: taxa normal do escalão 3 em 2026",
-    "en": "Income tax: normal rate of bracket 3 in 2026"
-  },
-  "irs-2026-escalao-4-taxa-normal": {
-    "pt": "IRS: taxa normal do escalão 4 em 2026",
-    "en": "Income tax: normal rate of bracket 4 in 2026"
-  },
-  "irs-2026-escalao-5-taxa-normal": {
-    "pt": "IRS: taxa normal do escalão 5 em 2026",
-    "en": "Income tax: normal rate of bracket 5 in 2026"
-  },
-  "irs-2026-escalao-6-taxa-normal": {
-    "pt": "IRS: taxa normal do escalão 6 em 2026",
-    "en": "Income tax: normal rate of bracket 6 in 2026"
-  },
   "oe-2027-irs-sexta-reducao": {
     "pt": "IRS: sexta redução segundo o relatório",
     "en": "Income tax: sixth cut according to the report"
@@ -768,14 +788,6 @@ export const NOMES_EO1 = {
     "pt": "Salários públicos e subsídio de alimentação",
     "en": "Public wages and meal allowance"
   },
-  "utao-salarios": {
-    "pt": "Salários públicos: atualização",
-    "en": "Public wages: adjustment"
-  },
-  "utao-risco-emprego": {
-    "pt": "Riscos: emprego público",
-    "en": "Risks: public employment"
-  },
   "pm-pensoes-capitulo3": {
     "pt": "Pensões e CSI no capítulo 3",
     "en": "Pensions and CSI in chapter 3"
@@ -793,8 +805,8 @@ export const NOMES_EO1 = {
     "en": "Solidarity supplement: target monthly reference amount"
   },
   "cfp-pensoes-irs": {
-    "pt": "Pensões e IRS: medidas em 2026 com efeitos em 2027",
-    "en": "Pensions and income tax: 2026 measures with effects in 2027"
+    "pt": "Pensões e IRS: as medidas de 2026 (o suplemento extraordinário e a descida das taxas), pelo CFP",
+    "en": "Pensions and income tax: the 2026 measures (the extraordinary supplement and the rate reduction), according to the CFP"
   },
   "posicao-governo-csi-pensoes": {
     "pt": "CSI, pensões e atualização do IRS",
@@ -840,10 +852,6 @@ export const NOMES_EO1 = {
     "pt": "IRC: taxa geral em 2026",
     "en": "Corporate tax: general rate in 2026"
   },
-  "oe-2027-irc-21-para-17": {
-    "pt": "IRC: percurso das taxas segundo o relatório",
-    "en": "Corporate tax: rate path according to the report"
-  },
   "posicao-governo-irc": {
     "pt": "Redução do IRC",
     "en": "Corporate income tax reduction"
@@ -888,10 +896,6 @@ export const NOMES_EO1 = {
     "pt": "Efeito PIB",
     "en": "GDP effect"
   },
-  "pm-q3-6-r44-c2": {
-    "pt": "Efeito saldo primário",
-    "en": "Primary balance effect"
-  },
   "utao-divida-efeitos": {
     "pt": "Dívida: saldo primário e efeito dinâmico",
     "en": "Debt: primary balance and dynamic effect"
@@ -929,44 +933,44 @@ export const NOMES_EO1 = {
     "en": "Debt: gap between medium-term plan and Budget"
   },
   "europa-divida-pt-2025": {
-    "pt": "Dívida pública bruta",
-    "en": "General government gross debt"
+    "pt": "Dívida pública bruta consolidada, em percentagem do PIB",
+    "en": "General government consolidated gross debt, as a percentage of GDP"
   },
   "europa-divida-eu27_2020-2025": {
-    "pt": "Dívida pública bruta",
-    "en": "General government gross debt"
+    "pt": "Dívida pública bruta consolidada, em percentagem do PIB",
+    "en": "General government consolidated gross debt, as a percentage of GDP"
   },
   "der-divida-pt-vs-ue-2025": {
     "pt": "Dívida: Portugal face à União em 2025",
     "en": "Debt: Portugal against the Union in 2025"
   },
   "europa-divida-ee-2025": {
-    "pt": "Dívida pública bruta",
-    "en": "General government gross debt"
+    "pt": "Dívida pública bruta consolidada, em percentagem do PIB",
+    "en": "General government consolidated gross debt, as a percentage of GDP"
   },
   "europa-divida-el-2025": {
-    "pt": "Dívida pública bruta",
-    "en": "General government gross debt"
+    "pt": "Dívida pública bruta consolidada, em percentagem do PIB",
+    "en": "General government consolidated gross debt, as a percentage of GDP"
   },
   "europa-divida-es-2025": {
-    "pt": "Dívida pública bruta",
-    "en": "General government gross debt"
+    "pt": "Dívida pública bruta consolidada, em percentagem do PIB",
+    "en": "General government consolidated gross debt, as a percentage of GDP"
   },
   "europa-saldo-pt-2025": {
-    "pt": "Saldo das administrações públicas",
-    "en": "General government balance"
+    "pt": "Saldo das administrações públicas, em percentagem do PIB",
+    "en": "General government net lending or borrowing, as a percentage of GDP"
   },
   "europa-saldo-eu27_2020-2025": {
-    "pt": "Saldo das administrações públicas",
-    "en": "General government balance"
+    "pt": "Saldo das administrações públicas, em percentagem do PIB",
+    "en": "General government net lending or borrowing, as a percentage of GDP"
   },
   "europa-saldo-ro-2025": {
-    "pt": "Saldo das administrações públicas",
-    "en": "General government balance"
+    "pt": "Saldo das administrações públicas, em percentagem do PIB",
+    "en": "General government net lending or borrowing, as a percentage of GDP"
   },
   "europa-saldo-cy-2025": {
-    "pt": "Saldo das administrações públicas",
-    "en": "General government balance"
+    "pt": "Saldo das administrações públicas, em percentagem do PIB",
+    "en": "General government net lending or borrowing, as a percentage of GDP"
   },
   "ce-primavera-2026-divida-texto-divergente": {
     "pt": "Trajetória da dívida no texto da Comissão Europeia",

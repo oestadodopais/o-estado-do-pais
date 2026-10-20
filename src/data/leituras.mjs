@@ -78,9 +78,9 @@ export const LEITURAS = {
       {
         "claim": "der-oe2027-medidas-novas-saldo"
       },
-      " milhões de euros a favor do saldo, as que já vinham decididas custam ",
+      " milhões de euros a favor do saldo, as dez linhas marcadas como invariantes pesam ",
       {
-        "claim": "der-oe2027-medidas-anteriores-saldo"
+        "claim": "der-oe2027-medidas-anteriores-saldo", "abs": true
       },
       " milhões, e os juros sobem ",
       {
@@ -93,9 +93,9 @@ export const LEITURAS = {
       {
         "claim": "der-oe2027-medidas-novas-saldo"
       },
-      " million euros to the balance, those already decided cost ",
+      " million euros to the balance, the ten lines marked as unchanged policies weigh ",
       {
-        "claim": "der-oe2027-medidas-anteriores-saldo"
+        "claim": "der-oe2027-medidas-anteriores-saldo", "abs": true
       },
       " million, and interest rises ",
       {

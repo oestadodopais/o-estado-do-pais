@@ -9,11 +9,17 @@ id: "ce-primavera-2026-divida-texto-divergente"
 value: "It is forecast to reach 86.7% of GDP in 2026 and 86.0% of GDP in 2027 on the back of persisting primary balance surpluses and favourable growth-interest rate differentials."
 unit: "texto"
 
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Trajetória da dívida no texto da Comissão Europeia"
+name_source: "p. 143 PDF (127 impressa)"
+name_en: "Debt trajectory in the European Commission text"
+
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "European Commission"
 document:
   title: "European Economic Forecast Spring 2026"
-  edition: "2026/2027"
+  edition: "2026"
   locator: "p. 143 PDF (127 impressa)"
   source_sha256: "6d6dac3c4f1cecfa7c1b8e518eef22828a55f64d41264500026cbc0bb77da4e5"
   page: 143

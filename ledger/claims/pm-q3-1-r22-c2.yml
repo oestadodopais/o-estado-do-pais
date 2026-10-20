@@ -11,8 +11,9 @@ unit: "milhões de euros"
 
 # O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
-name: "PRR"
+name: "PRR; 2027; orçamento; milhões de euros"
 name_source: "Quadro 3.1. Conta das Administrações Públicas: 2026-2027; PRR; coluna 3: 2027; orçamento; milhões de euros; p. 54 PDF (38 impressa)"
+name_en: "Recovery and Resilience Plan (Total revenue); 2027; budget; million euros"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Ministério das Finanças"

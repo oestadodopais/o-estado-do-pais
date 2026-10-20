@@ -9,6 +9,12 @@ id: "der-divida-2027-oe-vs-poenmp"
 value: "2,7"
 unit: "pontos percentuais"
 
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Dívida: diferença entre plano de médio prazo e Orçamento"
+name_source: "Cálculo sobre as linhas identificadas"
+name_en: "Debt: gap between medium-term plan and Budget"
+
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: null
 document: null
@@ -20,8 +26,8 @@ reference_date: "2027"
 excerpt: null
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
-derivation: "pm-grafico-3-5-poenmp-2027 - pm-q3-6-r42-c3. 2.7"
-derivation_en: "pm-grafico-3-5-poenmp-2027 - pm-q3-6-r42-c3. 2.7"
+derivation: "87,2 (Trajetória da dívida pública (POENMP)) − 84,5 (Dívida pública consolidada (%)) = 2,7. O sinal indica a direção da variação ou do resultado da conta."
+derivation_en: "87.2 (Public debt path (POENMP)) − 84.5 (Consolidated public debt (%)) = 2.7. The sign indicates the direction of the change or calculation result."
 derived_from:
   - "pm-grafico-3-5-poenmp-2027"
   - "pm-q3-6-r42-c3"

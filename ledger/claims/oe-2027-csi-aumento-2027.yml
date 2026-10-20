@@ -9,6 +9,12 @@ id: "oe-2027-csi-aumento-2027"
 value: "50"
 unit: "euros"
 
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "CSI: aumento mensal do valor de referência"
+name_source: "p. 102 PDF (86 impressa)"
+name_en: "Solidarity supplement: monthly increase"
+
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Ministério das Finanças"
 document:

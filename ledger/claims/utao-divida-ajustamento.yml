@@ -9,6 +9,12 @@ id: "utao-divida-ajustamento"
 value: "Apesar do menor contributo redutor do efeito dinâmico, a descida do rácio deverá acelerar em 2027, sobretudo devido à redução do ajustamento défice-dívida, que inclui operações financeiras que alteram a dívida sem afetarem na mesma medida o saldo orçamental. Segundo a POE/2027, este ajustamento deverá acrescentar 0,9 p.p. ao rácio, face a 3,1 p.p. em 2026. Esta diminuição reflete sobretudo a redução da aquisição líquida de ativos financeiros, de 9,3 mil M€ para 0,9 mil M€, em particular as menores aplicações em numerário e depósitos e a ausência de aquisições líquidas de títulos exceto ações em 2027. O aumento dos restantes contributos para o ajustamento compensa parcialmente esta redução. Este ajustamento permanece positivo e superior ao excedente orçamental previsto (0,1% do PIB), pelo que o stock nominal da dívida continuará a aumentar."
 unit: "afirmação"
 
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Dívida: ajustamento défice-dívida"
+name_source: "§79; p. 45 PDF (44 impressa)"
+name_en: "Debt: deficit-debt adjustment"
+
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Unidade Técnica de Apoio Orçamental"
 document:

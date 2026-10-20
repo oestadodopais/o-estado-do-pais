@@ -9,6 +9,12 @@ id: "utao-salarios-valor"
 value: "1 231"
 unit: "milhões de euros"
 
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "UTAO: atualização salarial"
+name_source: "§38; p. 22 PDF (21 impressa)"
+name_en: "UTAO: wage update"
+
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Unidade Técnica de Apoio Orçamental"
 document:

@@ -1,3 +1,4 @@
+import { apoioLiteralEo1, dataLiteralEo1, retirarAnosIsoladosEo1 } from '../../scripts/literais-eo1-do-portao.mjs';
 /** EO1: prova independente dos intervalos, citações e literais no HTML construído. */
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -22,31 +23,43 @@ function canonical(x,shape){
  return JSON.stringify(x);
 }
 const sha=x=>createHash('sha256').update(canonical(x,numberShape[x.id])).digest('hex');
+// Este modo expõe o código da recusa da célula, sem depender de um build.
+if (process.argv.includes('--planta-literal')) {
+ const plant={proof_rows:{apoio:{locator:'Artigo 18.º'}},blocks:[{text:'8.º',source_rows:['apoio'],proofs:[{tipo:'literal',inicio:0,fim:3,texto:'8.º',apoios:[{id:'apoio',campo:'locator'}]}],figures:[]}]};
+ try {prove(plant,'pt');console.log('Planta literal aceite indevidamente.');process.exit(0);}
+ catch(error) {if(error instanceof assert.AssertionError && /literal sem prova inteira/.test(error.message)){console.log('Recusado: literal 8.º sem prova inteira em Artigo 18.º.');process.exit(1);}throw error;}
+}
 const claims=loadClaims();
 let localizadores=0;
 for (const c of claims.values()) {
- if(c.study!==slug || !c.name || c.name_source==='label') continue;
- assert(localizadorEo1Confere(c.name_source,c),'localizador sem prova: '+c.id); localizadores++;
- for(const altera of [x=>x.name+=' alterado',x=>x.reference_date='1900',x=>x.document.page++,x=>x.document.source_sha256='0'.repeat(64),x=>x.document.locator+=' alterado']) {
-  const x=structuredClone(c);altera(x);assert(!localizadorEo1Confere(x.name_source,x),'localizador alterado aceite');
+ if(c.study!==slug) continue;
+ assert(c.name && c.name_en,'linha sem nome bilingue: '+c.id);
+ assert(localizadorEo1Confere(c.name_source,c),'nome, período ou localizador sem prova: '+c.id); localizadores++;
+ const alteracoes=[x=>x.name+=' alterado',x=>x.name_en+=' altered',x=>x.reference_date='1900'];
+ if(c.document)alteracoes.push(x=>x.document.page++,x=>x.document.source_sha256='0'.repeat(64),x=>x.document.locator+=' alterado');
+ for(const altera of alteracoes) {
+  const x=structuredClone(c);altera(x);assert(!localizadorEo1Confere(x.name_source,x),'nome, período ou localizador alterado aceite: '+c.id);
  }
  assert(!localizadorEo1Confere(c.name_source+' alterado',c),'coordenada alterada aceite');
 }
-console.log(`EO1: ${localizadores} localizadores, seis alterações rejeitadas por linha.`);
+console.log(`EO1: ${localizadores} localizadores, nomes e períodos conferidos em todas as linhas, com alterações rejeitadas.`);
 const quotedClaim=[...claims.values()].find(c=>c.value===c.excerpt&&['texto','afirmação'].includes(c.unit)&&/\blimiar\b/.test(c.excerpt));
 assert(quotedClaim,'controlo da citação ausente');
 const htmlQuote=text=>`<body><span data-claim="${quotedClaim.id}">${text.replaceAll('&','&amp;').replaceAll('<','&lt;')}</span></body>`;
 assert(!superficieDe(htmlQuote(quotedClaim.excerpt)).includes('limiar'),'citação integral confundida com prosa');
 assert(superficieDe(htmlQuote(quotedClaim.excerpt+' limiar')).includes('limiar'),'marca não pode dispensar texto acrescentado');
-function field(row,type,lang){
+function field(row,type,lang,modificador){
  if(type==='excerto')return norm(row.excerpt);
  if(type==='documento')return row.document.title;
  if(type==='medida')return row[lang==='pt'?'measure':'measure_en'];
  if(type==='atribuicao')return row.attributed_to.join(', ');
  const raw=String(row.value), c=claims.get(row.id);
+ if(row.unit==='data') return dataLiteralEo1(raw,lang);
  // As linhas AN e DOM já atravessaram por outros manifestos; a comparação
  // dos seus valores continua independente do intervalo do documento.
- const value=c?String(c.value):raw;
+ let value=c?String(c.value):raw;
+ if(modificador==='abs')value=value.replace(/^[+−-]/,'');
+ else assert(modificador===undefined,'modificador desconhecido');
  if(!/^[−+\-]?[\d\s\u202f\u00a0]+(?:,\d+)?$/.test(value))return norm(raw);
  if(lang==='pt')return norm(value);
  const [whole,frac]=value.replace(/[\s\u202f\u00a0]/g,'').split(',');
@@ -58,18 +71,24 @@ export function prove(record,lang){
   for(const q of block.proofs){
    assert(q.inicio>=end&&q.fim>q.inicio&&q.fim<=chars.length,'intervalo inválido');end=q.fim;
    assert.equal(chars.slice(q.inicio,q.fim).join(''),q.texto,'excerto ou valor cortado');
+   assert(q.modificador===undefined || (q.tipo==='valor'&&q.modificador==='abs'),'modificador fora de um valor');
    if(q.tipo==='literal'){
     assert(q.apoios.length,'literal sem linha');
-    for(const a of q.apoios){assert(block.source_rows.includes(a.id),'apoio fora do parágrafo');assert(String(record.proof_rows[a.id][a.campo]).includes(q.texto),'literal sem prova');}
+    assert.equal(q.texto,dataLiteralEo1(q.origem ?? q.texto,lang),'data literal divergente');
+    for(const a of q.apoios){assert(['excerpt','locator','published_at'].includes(a.campo),'campo de apoio literal inválido');assert(block.source_rows.includes(a.id),'apoio fora do parágrafo');assert(apoioLiteralEo1(record.proof_rows[a.id],a.campo,q.origem ?? q.texto),'literal sem prova inteira');}
    }else{
-    const row=record.proof_rows[q.id];assert.equal(sha(row),q.sha256_linha,'linha alterada: '+q.id);assert.equal(field(row,q.tipo,lang),q.texto,'valor ou excerto divergente');
+    const row=record.proof_rows[q.id];assert.equal(sha(row),q.sha256_linha,'linha alterada: '+q.id);assert.equal(field(row,q.tipo,lang,q.modificador),q.texto,'valor ou excerto divergente');
    }
    for(let i=q.inicio;i<q.fim;i++)covered.add(i);
   }
-  const outside=chars.map((c,i)=>covered.has(i)?' ':c).join('').replace(/(?<!\d)(?:19|20)\d\d(?!\d)/g,'');assert(!/\d/.test(outside),'algarismo sem linha');
+  const outside=retirarAnosIsoladosEo1(chars.map((c,i)=>covered.has(i)?' ':c).join(''));assert(!/\d/.test(outside),'algarismo sem linha');
   for(const f of block.figures){assert.equal(f.value,String(record.proof_rows[f.row].value),'valor do registo alterado');assert.equal(chars.slice(f.start,f.end).join(''),f.printed);}
  }
 }
+// A planta passa pela célula inteira, conservando apoios não vazios.
+const plantaLiteral = {proof_rows:{apoio:{locator:'Artigo 18.º'}},blocks:[{text:'8.º',source_rows:['apoio'],proofs:[{tipo:'literal',inicio:0,fim:3,texto:'8.º',apoios:[{id:'apoio',campo:'locator'}]}],figures:[]}]};
+assert.throws(()=>prove(plantaLiteral,'pt'),/literal sem prova inteira/);
+const literalCorreto=structuredClone(plantaLiteral);literalCorreto.proof_rows.apoio.locator='Artigo 8.º';prove(literalCorreto,'pt');
 const dist=process.env.OEDP_DIST??'dist';let units=0;
 for(const lang of ['pt','en']){
  const recordBytes=fs.readFileSync(`registos/${slug}/${lang}.record.json`,'utf8');const record=JSON.parse(recordBytes);numberShape=JSON.parse(recordBytes,(k,v,c)=>typeof v==='number'?{rawNumber:c.source}:v).proof_rows;prove(record,lang);

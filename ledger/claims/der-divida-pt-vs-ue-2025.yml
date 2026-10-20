@@ -9,6 +9,12 @@ id: "der-divida-pt-vs-ue-2025"
 value: "8,0"
 unit: "pontos percentuais"
 
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Dívida: Portugal face à União em 2025"
+name_source: "Cálculo sobre as linhas identificadas"
+name_en: "Debt: Portugal against the Union in 2025"
+
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: null
 document: null
@@ -20,8 +26,8 @@ reference_date: "2025"
 excerpt: null
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
-derivation: "europa-divida-pt-2025 - europa-divida-eu27_2020-2025. 8"
-derivation_en: "europa-divida-pt-2025 - europa-divida-eu27_2020-2025. 8"
+derivation: "89.7 (Dívida pública bruta consolidada, em percentagem do PIB) − 81.7 (Dívida pública bruta consolidada, em percentagem do PIB) = 8,0. O sinal indica a direção da variação ou do resultado da conta."
+derivation_en: "89.7 (General government consolidated gross debt, as a percentage of GDP) − 81.7 (General government consolidated gross debt, as a percentage of GDP) = 8.0. The sign indicates the direction of the change or calculation result."
 derived_from:
   - "europa-divida-pt-2025"
   - "europa-divida-eu27_2020-2025"

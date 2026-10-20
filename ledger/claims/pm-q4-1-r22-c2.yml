@@ -11,14 +11,15 @@ unit: "%"
 
 # O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
-name: "Transferências correntes"
+name: "Transferências correntes; 2027/2026; variação; %"
 name_source: "Quadro 4.1. Conta das Administrações Públicas em contabilidade pública; Transferências correntes; coluna 3: 2027/2026; variação; %; p. 68 PDF (52 impressa)"
+name_en: "Current transfers; 2027/2026; change; %"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Ministério das Finanças"
 document:
   title: "Orçamento do Estado 2027 RELATÓRIO"
-  edition: "2027/2026"
+  edition: "2027"
   locator: "Quadro 4.1. Conta das Administrações Públicas em contabilidade pública; Transferências correntes; coluna 3: 2027/2026; variação; %; p. 68 PDF (52 impressa)"
   source_sha256: "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12"
   page: 68

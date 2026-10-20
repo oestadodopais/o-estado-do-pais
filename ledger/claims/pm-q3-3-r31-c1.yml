@@ -11,8 +11,9 @@ unit: "milhões de euros"
 
 # O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
-name: "Diferença entre juros pagos e devidos do Estado"
+name: "Diferença entre juros pagos e devidos do Estado; 2027; orçamento; milhões de euros"
 name_source: "Quadro 3.3. Passagem de saldos de contabilidade pública a contabilidade nacional; Diferença entre juros pagos e devidos do Estado; coluna 2: 2027; orçamento; milhões de euros; p. 61 PDF (45 impressa)"
+name_en: "Difference between State interest paid and accrued; 2027; budget; million euros"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Ministério das Finanças"

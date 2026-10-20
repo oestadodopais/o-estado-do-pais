@@ -9,6 +9,12 @@ id: "cfp-pensoes-irs"
 value: "O MF estima um valor de 400 M€ quer para o suplemento extraordinário para pensionistas quer para a redução das taxas de IRS até ao 6.º escalão, com efeitos retroativos a janeiro (cerca de 0,25% do PIB no seu conjunto)."
 unit: "afirmação"
 
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Pensões e IRS: as medidas de 2026 (o suplemento extraordinário e a descida das taxas), pelo CFP"
+name_source: "p. 13 PDF"
+name_en: "Pensions and income tax: the 2026 measures (the extraordinary supplement and the rate reduction), according to the CFP"
+
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Conselho das Finanças Públicas"
 document:

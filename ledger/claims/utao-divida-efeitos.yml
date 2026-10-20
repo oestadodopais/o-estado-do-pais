@@ -9,6 +9,12 @@ id: "utao-divida-efeitos"
 value: "O reforço do excedente primário em 2027 não será suficiente para compensar a menor redução do rácio da dívida proporcionada pelo efeito dinâmico. Segundo a POE/2027 (Tabela 16), o saldo primário contribuirá para uma redução de 2,5 p.p., face a 2,1 p.p. em 2026. Em contrapartida, o abrandamento do PIB nominal e o aumento do custo médio da dívida limitarão a redução proporcionada pelo efeito dinâmico a 1,5 p.p., face a 2,6 p.p. no ano anterior. O contributo do crescimento nominal para a descida do rácio passará de 4,6 p.p. para 3,9 p.p., sobretudo devido à desaceleração do deflator do PIB e, em menor medida, do crescimento real, enquanto os juros, em sentido contrário, aumentarão o rácio em 2,4 p.p., face a 2,0 p.p. O contributo do crescimento nominal continuará, assim, a superar o dos juros, mas com uma diferença menor, tornando a redução do rácio mais dependente do excedente primário. Em conjunto, estas duas componentes deverão reduzir o rácio em cerca de 4,0 p.p. em 2027, face a 4,7 p.p. em 2026, antes de considerado o ajustamento défice-dívida."
 unit: "afirmação"
 
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Dívida: saldo primário e efeito dinâmico"
+name_source: "§78; p. 44 PDF (43 impressa)"
+name_en: "Debt: primary balance and dynamic effect"
+
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Unidade Técnica de Apoio Orçamental"
 document:

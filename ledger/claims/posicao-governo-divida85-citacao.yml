@@ -9,11 +9,17 @@ id: "posicao-governo-divida85-citacao"
 value: "A dívida pública deve continuar a ser a nossa principal preocupação nas contas públicas. Temos uma redução de cerca de quatro pontos percentuais nos últimos anos e estaremos abaixo dos 85% do PIB [Produto Interno Bruto] em 2027"
 unit: "afirmação"
 
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Miranda Sarmento: dívida, citação pela notícia"
+name_source: "Citação direta no corpo da notícia; 13 de outubro de 2026"
+name_en: "Miranda Sarmento: debt, quotation in the news report"
+
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Observador"
 document:
   title: "Miranda Sarmento: dívida pública abaixo dos 85% do PIB em 2027 é a \"principal preocupação\" do Governo"
-  edition: "2027"
+  edition: "2026"
   locator: "Citação direta no corpo da notícia; 13 de outubro de 2026"
   source_sha256: "7493205656f39b6465b14612fe7b420e974f042545e2e353845a4cd9ed08aaf1"
   page: 1
