@@ -1,7 +1,8 @@
 /** Tipos documentais V2-e: nenhuma prosa ou período passa sem a prova selada. */
 import fs from 'node:fs';
-const file=new URL('../../ledger/provas/v2e/provas.json',import.meta.url);
-const proofs=fs.existsSync(file)?JSON.parse(fs.readFileSync(file,'utf8')).rows:{};
+import path from 'node:path';
+const file=path.join(process.cwd(),'ledger','provas','v2e','provas.json');
+const proofs=JSON.parse(fs.readFileSync(file,'utf8')).rows;
 /** @param {any} c @param {Record<string,any>} provas */
 export function textoDocumentalConferido(c,provas=proofs){
  const p=provas[c.id],doc=c.document;
