@@ -32,7 +32,9 @@ for (const entrada of entradas) {
     g[0].reason === entrada.reason && g[0].reason_en === entrada.reason_en);
   if (igual) igual.push(entrada); else grupos.push([entrada]);
 }
-const linguaDoValor = (e, valor) => e.field === 'source' ? linguaDaFonte(valor, lang)
+const linguaDoValor = (e, valor) => claim.afirmacao === true && claim.unit === 'afirmação' && ['correcao','atualizacao'].includes(e.kind)
+  ? linguaDoTituloDoDocumento(claim.document?.title, lang)
+  : e.field === 'source' ? linguaDaFonte(valor, lang)
   : e.field === 'document.title' ? linguaDoTituloDoDocumento(valor, lang)
   : e.field === 'document.edition' ? linguaDaEdicao(valor, lang)
   : ['document.locator', 'excerpt'].includes(e.field) ? linguaDoTituloDoDocumento(claim.document?.title, lang) : undefined;

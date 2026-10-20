@@ -45,6 +45,7 @@ source_url: "[a verificar]"
 access_date: "[a verificar]"     # AAAA-MM-DD — quando foi lido
 published_at: null               # AAAA-MM-DD — quando a FONTE publicou (ver abaixo)
 reference_date: "2024"           # AAAA / AAAA-MM / AAAA-T1 a AAAA-T4 / AAAA-MM-DD, a que se refere
+period: null                     # Opcional: AAAA-T1 a AAAA-T4 quando reference_date é o último dia desse trimestre; o recibo apresenta o trimestre
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
 excerpt: "[a verificar]"
