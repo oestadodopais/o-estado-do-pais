@@ -19,6 +19,11 @@
  */
 /** @type {Record<string, string>} */
 export const LUGAR_DECLARADO_DAS_LINHAS = {
+  /* V2-e-b: os excertos corrigidos do relatório do orçamento nacional
+     tratam os encargos das parcerias e as pretensões das concessionárias
+     perante o Estado, incluindo a negociação da Beira Interior. */
+  'pe-oe-beira-abolicao': 'portugal',
+  'pe-oe-riscos-nao-reconhecimento': 'portugal',
   /* V2-d-b: as correções completam citações da UTAO sobre o orçamento
      nacional, os riscos das parcerias e a execução do SNS em Portugal. */
   'utao-ppp-contingencias-natureza-2026': 'portugal',

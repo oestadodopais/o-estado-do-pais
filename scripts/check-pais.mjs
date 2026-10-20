@@ -182,6 +182,26 @@ const CONTAGENS_DO_PROJETO = new Set(['correcoes_publicadas', 'estudos_no_arquiv
    técnica do Parlamento português. A origem selada fornece a segunda via,
    sem consultar a declaração de lugar nem o nome editorial da linha. */
 const provasOrcamentais = JSON.parse(fs.readFileSync('ledger/provas/v2d/provas.json', 'utf8')).rows;
+const provasEfeitos = JSON.parse(fs.readFileSync('ledger/provas/v2e/provas.json', 'utf8')).rows;
+function lugarDoTextoOrcamental(c) {
+  const p = provasEfeitos[c?.id];
+  if (!p || c.texto_documental !== true || c.unit !== 'texto' || p.unit !== 'texto' ||
+      c.study !== 'oe-2027' || c.source !== 'Assembleia da República' ||
+      p.document?.file !== 'content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf' ||
+      p.document.title !== 'Orçamento do Estado 2027 RELATÓRIO' ||
+      c.document?.source_sha256 !== p.document.source_sha256 ||
+      c.document?.title !== p.document.title || c.document?.page !== p.document.page ||
+      c.document?.locator !== p.document.locator ||
+      c.value !== p.value || c.excerpt !== p.excerpt ||
+      c.access_date !== p.receipt?.acedido_em?.slice(0,10)) return null;
+  const urls = [p.receipt?.pedido,p.receipt?.endereco_final].filter(Boolean).flatMap(address => {
+    const url = new URL(address);
+    if (url.protocol !== 'https:' || url.hostname !== 'app.parlamento.pt') return [];
+    url.hash = `page=${p.document.page}`;
+    return [address,url.href];
+  });
+  return urls.includes(c.source_url) ? PAIS : null;
+}
 function lugarDaAfirmacaoOrcamental(c) {
   const p = provasOrcamentais[c?.id];
   const autor = p?.document?.file === 'content/24 Orcamento 2027 Analise/source/debate/utao-oe2027-preliminar.pdf' ? 'UTAO'
@@ -217,6 +237,18 @@ for (const id of ['utao-ppp-contingencias-natureza-2026','utao-risco-execucao-sn
     if (lugarDaAfirmacaoOrcamental(copia) !== null) erros.push(`A1: a planta da origem orçamental (${campo}) não fechou para ${id}.`);
   }
 }
+for (const id of ['pe-oe-beira-abolicao','pe-oe-riscos-nao-reconhecimento']) {
+  const c = linha(id);
+  if (lugarDoTextoOrcamental(c) !== PAIS) erros.push(`A1: origem do texto orçamental selado recusada: ${id}.`);
+  for (const [campo,altera] of [
+    ['tipo',x=>{x.texto_documental=false;}],['estudo',x=>{x.study='outro';}],
+    ['fonte',x=>{x.source='Outra';}],['corpo',x=>{x.document.source_sha256='outro';}],
+    ['excerto',x=>{x.excerpt+=' Outra frase.';}],['endereço',x=>{x.source_url='https://example.invalid/';}],
+  ]) {
+    const copia=structuredClone(c);altera(copia);
+    if (lugarDoTextoOrcamental(copia)!==null) erros.push(`A1: planta do texto orçamental (${campo}) não fechou: ${id}.`);
+  }
+}
 /** O lugar DERIVADO, sem olhar para nenhuma tabela de lugares declarados. */
 function lugarDerivado(id) {
   const c = linha(id);
@@ -248,7 +280,7 @@ function lugarDerivado(id) {
   let geos = [];
   try { geos = c.source_url ? new URL(c.source_url).searchParams.getAll('geo') : []; } catch { geos = []; }
   const doPais = geos.length === 1 && geos[0] === 'PT' ? PAIS : undefined;
-  const d = [...new Set([doEstudo, doId, doPais, lugarDaAfirmacaoOrcamental(c)].filter(x => typeof x === 'string'))];
+  const d = [...new Set([doEstudo, doId, doPais, lugarDaAfirmacaoOrcamental(c), lugarDoTextoOrcamental(c)].filter(x => typeof x === 'string'))];
   if (d.length > 1) {
     erros.push(`A1: a linha ${id} deriva dois lugares diferentes (${d.join(', ')}).`);
     return null;
