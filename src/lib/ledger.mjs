@@ -1582,7 +1582,9 @@ export function validateLedger() {
     if (c.afirmacao === true) {
       if (!Array.isArray(c.attributed_to) || !c.attributed_to.length) errors.push(`${onde} V2A atribuição: falta attributed_to`);
       if (!['html', 'pdf'].includes(String(doc?.kind))) errors.push(`${onde} V2A documento: exige html ou pdf`);
-      if (!/^\d{4}-\d{2}-\d{2}$/.test(String(c.published_at ?? '')) || c.reference_date !== c.published_at) errors.push(`${onde} V2A data: falta a data do documento`);
+      const textoDoOrcamento = doc?.title === 'Orçamento do Estado 2027 · Relatório' && c.unit === 'afirmação';
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(String(c.published_at ?? ''))) errors.push(`${onde} V2A data: falta a data de publicação do documento`);
+      if (c.reference_date !== (textoDoOrcamento ? '2027' : c.published_at)) errors.push(`${onde} V2A data: período contrário ao documento`);
       if (!String(c.excerpt ?? '').trim() || c.excerpt === POR_VERIFICAR) errors.push(`${onde} V2A excerto: faltam as palavras exatas`);
       /** @param {unknown} v */
       const normal = v => String(v ?? '').replace(/[\s\u00a0\u202f]+/g, ' ').trim().replace(/(?<=\d) (?=\d)/g, '');

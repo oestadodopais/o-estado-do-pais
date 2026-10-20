@@ -119,6 +119,13 @@ plantaDaLinha('Conta da ressalva sem a versão inglesa', 'oe-2026-despesa-efetiv
 }, 'uma linha transcrita com "derivation" exige a ressalva nas duas línguas', ressalvas);
 assert.deepEqual(validateLedger().errors, []);
 controlos.push({nome:'Ressalvas e geografias intactas depois das plantas, com bandeiras antigas preservadas',passou:true});
+// V2-d-d: o ano do orçamento e a publicação são campos distintos.
+for(const id of ['oe-2027-outras-despesas-dotacoes-execucao','oe-2027-saude-dotacao-reforco-contratos-programa']){
+ plantaDaLinha('Orçamento com publicação no período: '+id,id,c=>{c.reference_date=c.published_at;},'V2A data: período contrário ao documento',plantas);
+ plantaDaLinha('Orçamento sem publicação: '+id,id,c=>{delete c.published_at;},'V2A data: falta a data de publicação do documento',plantas);
+}
+plantaDaLinha('Declaração pública com ano em vez de data','afirmacao-leitao-amaro-saude-oe2027-2026-10-09',c=>{c.reference_date='2027';},'V2A data: período contrário ao documento',plantas);
+assert.deepEqual(validateLedger().errors, []);
 const livro=validateLedger();
 const r={controlos,plantas,bandeiras,ressalvas,geografias,contagens:{controlos:controlos.length,plantas:plantas.length,bandeiras:bandeiras.length,ressalvas:ressalvas.length,geografias:geografias.length},erros_do_livro:livro.errors,avisos_do_livro:livro.warnings};
 const j=process.argv.indexOf('--json');if(j>=0)fs.writeFileSync(process.argv[j+1],JSON.stringify(r,null,2)+'\n');
