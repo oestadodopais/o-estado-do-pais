@@ -6055,6 +6055,20 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
       ]
     }
   },
+  "oe-2027-saude-contrato-programa-acss": {
+    "nome": {
+      "pt": "Contrato-programa entre a ACSS e as entidades do SNS",
+      "en": "Contract-programme between ACSS and NHS entities"
+    },
+    "frase": {
+      "pt": [
+        "É o contrato-programa entre a ACSS e as entidades do SNS por onde passa o financiamento centralizado."
+      ],
+      "en": [
+        "It is the contract-programme between ACSS and NHS entities through which centralised financing flows."
+      ]
+    }
+  },
   "oe-2027-saude-dotacao-reforco-contratos-programa": {
     "nome": {
       "pt": "Dotação para reforço dos contratos-programa da Saúde",

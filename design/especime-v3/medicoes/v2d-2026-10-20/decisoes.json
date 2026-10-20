@@ -264,5 +264,19 @@
     "antes": "O exportador substituía reference_date por published_at nas linhas textuais; o cabeçalho da Saúde mostrava a data de publicação como orçamento.",
     "depois": "As linhas textuais do relatório conservam reference_date igual a 2027 e published_at igual a 2026-10-08. Ambos os recibos novos mostram o orçamento para 2027 nas duas edições. O validador do livro e a conferência contra o corpo original passam a distinguir os campos, conservando a regra das declarações públicas.",
     "razao": "LinhaView.astro chama continuacaoDoNomeV2a; o token periodo é resolvido a partir de reference_date. A publicação aparece separadamente no campo published_at. A célula recusa a troca do ano pela data, nos dados e no cabeçalho renderizado."
+  },
+  {
+    "id": "V2D-45",
+    "tema": "Montante do reforço não quantificado",
+    "antes": "A opinião atribuía os 271,3 milhões ao reforço dos contratos-programa.",
+    "depois": "As duas edições atribuem os 271,3 milhões à variação das outras despesas correntes e dizem que o relatório não quantifica a dotação de reforço.",
+    "razao": "A nota 26 localiza a dotação no agregado, mas não declara o montante. A conta da variação da rubrica permanece 303,7 menos 32,4."
+  },
+  {
+    "id": "V2D-46",
+    "tema": "Explicação dos contratos-programa com recibos completos",
+    "antes": "A comparação transcrevia a nota 26 inteira, incluindo a Defesa, sem explicar os contratos-programa.",
+    "depois": "A comparação explica a Saúde nas palavras do sítio, em PT e EN. A frase inteira da ACSS da página 303 é selada e exportada; a auditoria apoia-se nela e na nota 26, ambas completas nos recibos.",
+    "razao": "O leitor recebe a explicação e pode abrir a prova integral. A linha nova tem verificações da citação, página, período e porta de integração."
   }
 ]

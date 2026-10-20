@@ -39,7 +39,7 @@ export function conferirDerivacoes(linhas){
   if(JSON.stringify([...(linha.derived_from??[])].sort())!==JSON.stringify([...componentes].sort()))erros.push(`V2D derivação: ${id} declara componentes diferentes da conta`);
   if(!linha.derivation?.trim()||!linha.derivation_en?.trim())erros.push(`V2D derivação: ${id} não explica a conta nas duas edições`);
  }
- for(const id of ['utao-risco-execucao-sns-2027','utao-ppp-contingencias-natureza-2026','oe-2027-outras-despesas-dotacoes-execucao','oe-2027-saude-dotacao-reforco-contratos-programa']){
+ for(const id of ['utao-risco-execucao-sns-2027','utao-ppp-contingencias-natureza-2026','oe-2027-outras-despesas-dotacoes-execucao','oe-2027-saude-dotacao-reforco-contratos-programa','oe-2027-saude-contrato-programa-acss']){
   const l=linhas.get(id);
   if(!l||l.afirmacao!==true||l.unit!=='afirmação'||l.value!==l.excerpt)erros.push(`V2D afirmação textual: ${id} não preserva o excerto como valor`);
  }

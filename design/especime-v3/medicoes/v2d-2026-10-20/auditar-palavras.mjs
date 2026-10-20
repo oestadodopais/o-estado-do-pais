@@ -12,10 +12,10 @@ const apoiosSaude={
  titulo:[saude+'despesa-efetiva-consolidada-sem-prr-variacao',saude+'despesa-total-consolidada-variacao'],
  '1.0':[saude+'despesa-total-consolidada-2027'],
  '1.4':serie,
- '2.2':['oe-2027-outras-despesas-dotacoes-execucao',saude+'pessoal-2027',saude+'bens-servicos-2027',saude+'investimento-2027',saude+'outras-correntes-2027',saude+'fonte-receitas-proprias-2027',saude+'fonte-fundos-europeus-2027'],
+ '2.2':['oe-2027-saude-dotacao-reforco-contratos-programa','oe-2027-saude-contrato-programa-acss',saude+'pessoal-2027',saude+'bens-servicos-2027',saude+'investimento-2027',saude+'outras-correntes-2027',saude+'fonte-receitas-proprias-2027',saude+'fonte-fundos-europeus-2027'],
  '3.0':[...serie,saude+'pessoal-2027',saude+'bens-servicos-2027',saude+'investimento-2027'],
  '4.0':[...serie,'utao-risco-execucao-sns-2027'],
- '5.0':['oe-2027-saude-dotacao-reforco-contratos-programa',...serie,'afirmacao-leitao-amaro-saude-oe2027-2026-10-09','afirmacao-rtp-saude-queda-oe2027-2026-10-09','der-saude-prr-2026','der-saude-pessoal-variacao-abs','der-saude-bens-servicos-reducao-abs','der-saude-investimento-reducao-abs','der-saude-receitas-proprias-variacao-pct','oe-2027-saude-outras-correntes-2026','oe-2027-saude-outras-correntes-2027','utao-risco-execucao-sns-2027'],
+ '5.0':['oe-2027-saude-dotacao-reforco-contratos-programa','oe-2027-saude-contrato-programa-acss',...serie,'afirmacao-leitao-amaro-saude-oe2027-2026-10-09','afirmacao-rtp-saude-queda-oe2027-2026-10-09','der-saude-prr-2026','der-saude-pessoal-variacao-abs','der-saude-bens-servicos-reducao-abs','der-saude-investimento-reducao-abs','der-saude-receitas-proprias-variacao-pct','oe-2027-saude-outras-correntes-2026','oe-2027-saude-outras-correntes-2027','utao-risco-execucao-sns-2027'],
 };
 const apoiosPpp={
  titulo:['oe-2027-ppp-rodoviario-encargos-liquidos-2027','ppp-oe2027-riscos-pedidos-rodoviarios'],
@@ -27,7 +27,7 @@ const descricoes={
  'saude-no-orcamento':[
  ['Atribuições, citações e datas literais dos três intervenientes.'],
  ['Identificação do quadro, do programa e da unidade.', 'As três bases de comparação da despesa, sem as confundir.', 'Composição económica do programa e variações com e sem PRR.', 'Financiamento entre orçamentos e transferências para o SNS.', 'Comparação orçamento e execução dentro de cada um dos seis anos, com as duas bases de reforço de 2026 distintas.', 'Execução acumulada até agosto e saldo do SNS no mesmo período.', 'Comparação europeia pelas mesmas unidades, ano e regimes de financiamento.'],
- ['Coincidência de cada afirmação com uma linha, e confirmação da UTAO.', 'Substituição parcial da despesa PRR pela despesa fora do PRR; igualdade das bases em 2027.', 'Variações nas rubricas e fontes de financiamento; a frase do agregado e a nota sobre a dotação para reforço dos contratos-programa ainda por contratualizar são transcritas integralmente.', 'Comparação entre programas, sem confundir sem PRR com financiamento nacional.', 'Orçamento, estimativa e execução com períodos distintos e risco descrito pela UTAO.'],
+ ['Coincidência de cada afirmação com uma linha, e confirmação da UTAO.', 'Substituição parcial da despesa PRR pela despesa fora do PRR; igualdade das bases em 2027.', 'Variações nas rubricas e fontes de financiamento; explicação da dotação sem montante declarado e dos contratos-programa, apoiada na nota 26 e na frase inteira sobre a ACSS da página 303, conservadas nos recibos.', 'Comparação entre programas, sem confundir sem PRR com financiamento nacional.', 'Orçamento, estimativa e execução com períodos distintos e risco descrito pela UTAO.'],
  ['Conclusão editorial sobre os perímetros, composição e insuficiência histórica dos orçamentos iniciais.'],
  ['Recomendação editorial de acompanhar a execução e o risco de reforço; não constitui previsão certa.'],
  ['Opinião expressamente rotulada sobre a seleção dos perímetros, a composição, receitas e risco de execução.']

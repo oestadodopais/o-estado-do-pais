@@ -11,8 +11,8 @@ function conferir(root,lang,alvo){
  return portas.length===1&&portas[0].getAttribute('href')===alvo?[]:['V2D Método: falta a porta única ou o destino está errado'];
 }
 function conferirInventario(ids,linhas){
- return ids.length===141&&['oe-2027-outras-despesas-dotacoes-execucao','oe-2027-saude-dotacao-reforco-contratos-programa','der-saude-outras-correntes-variacao-abs'].every(id=>ids.includes(id))&&ids.every(id=>linhas.has(id))
-  ?[]:['V2D Método: o inventário dos recibos não contém as cento e quarenta e uma linhas atravessadas, incluindo as dotações e a variação das outras despesas da Saúde'];
+ return ids.length===142&&['oe-2027-outras-despesas-dotacoes-execucao','oe-2027-saude-dotacao-reforco-contratos-programa','oe-2027-saude-contrato-programa-acss','der-saude-outras-correntes-variacao-abs'].every(id=>ids.includes(id))&&ids.every(id=>linhas.has(id))
+  ?[]:['V2D Método: o inventário dos recibos não contém as cento e quarenta e duas linhas atravessadas, incluindo as dotações e a variação das outras despesas da Saúde'];
 }
 function conferirPeriodo(root,lang){
  const h=root.querySelector('h1')?.textContent.replace(/\s+/g,' ').trim()??'';
@@ -21,6 +21,8 @@ function conferirPeriodo(root,lang){
 export function conferirPortasDoMetodo(dist){
  const erros=[],plantas=[],linhas=loadClaims(),ids=Object.keys(travessia.rows);
  erros.push(...conferirInventario(ids,linhas));
+ const semAcss=ids.filter(id=>id!=='oe-2027-saude-contrato-programa-acss');
+ plantas.push({nome:'inventário sem o contrato-programa da ACSS',mordeu:conferirInventario(semAcss,linhas).length>0});
  const semDotacao=ids.filter(id=>id!=='oe-2027-saude-dotacao-reforco-contratos-programa');
  plantas.push({nome:'inventário sem a dotação da Saúde',mordeu:conferirInventario(semDotacao,linhas).length>0});
  plantas.push({nome:'contagem mantida com outra linha no lugar da dotação',mordeu:conferirInventario([...semDotacao,semDotacao[0]],linhas).length>0});
@@ -32,7 +34,7 @@ export function conferirPortasDoMetodo(dist){
    const alvo=metodo+(verificacoesDaLinha(linhas.get(id)).length?'#livro-razao':'#releitura');
    const root=parse(fs.readFileSync(ficheiro,'utf8'));
    erros.push(...conferir(root,lang,alvo).map(e=>e+`: ${id} (${lang})`));
-   if(['oe-2027-outras-despesas-dotacoes-execucao','oe-2027-saude-dotacao-reforco-contratos-programa'].includes(id)){
+   if(['oe-2027-outras-despesas-dotacoes-execucao','oe-2027-saude-dotacao-reforco-contratos-programa','oe-2027-saude-contrato-programa-acss'].includes(id)){
     erros.push(...conferirPeriodo(root,lang).map(e=>e+`: ${id} (${lang})`));
     const errado=parse(root.toString());
     errado.querySelector('h1').set_content(errado.querySelector('h1').textContent.replace('2027','08.10.2026'));

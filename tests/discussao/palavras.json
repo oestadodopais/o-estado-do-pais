@@ -7876,7 +7876,7 @@
               "pt": "O que sobe e o que desce não são a mesma coisa: o pessoal leva mais ",
               "en": "What rises and what falls are not the same thing: personnel takes ",
               "classe": "leitura",
-              "sobre": "Variações nas rubricas e fontes de financiamento; a frase do agregado e a nota sobre a dotação para reforço dos contratos-programa ainda por contratualizar são transcritas integralmente.",
+              "sobre": "Variações nas rubricas e fontes de financiamento; explicação da dotação sem montante declarado e dos contratos-programa, apoiada na nota 26 e na frase inteira sobre a ACSS da página 303, conservadas nos recibos.",
               "apoios": [
                 {
                   "linha": "der-saude-pessoal-variacao-abs",
@@ -7909,11 +7909,6 @@
                   "literal": "(oe-2027-saude-outras-correntes-2027) − (oe-2027-saude-outras-correntes-2026). 303,7 − 32,4 = 271,3"
                 },
                 {
-                  "linha": "oe-2027-saude-dotacao-reforco-contratos-programa",
-                  "campo": "excerpt",
-                  "literal": "São objeto de afetação específica no decurso da execução orçamental. Relevam, no Programa Legado da Defesa, a dotação destinada às forças nacionais destacadas, a afetar sobretudo aos ramos das Forças Armadas, e, no Programa Legado da Saúde, a dotação para reforço no âmbito dos contratos-programa cuja contratualização ainda decorre."
-                },
-                {
                   "linha": "der-saude-receitas-proprias-variacao-pct",
                   "campo": "derivation",
                   "literal": "((oe-2027-saude-fonte-receitas-proprias-2027) ÷ (oe-2027-saude-fonte-receitas-proprias-2026) − 1) × 100. (2 017,6 ÷ 1 289,5 − 1) × 100 = 56.46374563784412563008918190 ≈ 56,5"
@@ -7929,9 +7924,14 @@
                   "literal": "Despesas por Fonte de Financiamento consolidada   Orçamento 2026    Orçamento 2027\n Fundos Europeus                                            655,0              174,6\nSeleção: Orçamento 2027"
                 },
                 {
-                  "linha": "oe-2027-outras-despesas-dotacoes-execucao",
+                  "linha": "oe-2027-saude-dotacao-reforco-contratos-programa",
                   "campo": "excerpt",
-                  "literal": "Neste agregado estão ainda previstas dotações destinadas a alocar a outras entidades 26 em sede de execução, nomeadamente nos Programas Legados da Saúde e da Defesa."
+                  "literal": "São objeto de afetação específica no decurso da execução orçamental. Relevam, no Programa Legado da Defesa, a dotação destinada às forças nacionais destacadas, a afetar sobretudo aos ramos das Forças Armadas, e, no Programa Legado da Saúde, a dotação para reforço no âmbito dos contratos-programa cuja contratualização ainda decorre."
+                },
+                {
+                  "linha": "oe-2027-saude-contrato-programa-acss",
+                  "campo": "excerpt",
+                  "literal": "Neste montante incluem-se as verbas do contrato-programa a celebrar entre a Administração Central do Sistema de Saúde, IP (ACSS) e as entidades do Serviço Nacional de Saúde (SNS), destinadas ao financiamento centralizado da Rede Nacional de Cuidados Continuados, das parcerias público-privadas, entre outros."
                 },
                 {
                   "linha": "oe-2027-saude-pessoal-2027",
@@ -7967,7 +7967,7 @@
               "pt": "; a aquisição de bens e serviços leva menos ",
               "en": " more; the purchase of goods and services takes ",
               "classe": "leitura",
-              "sobre": "Variações nas rubricas e fontes de financiamento; a frase do agregado e a nota sobre a dotação para reforço dos contratos-programa ainda por contratualizar são transcritas integralmente.",
+              "sobre": "Variações nas rubricas e fontes de financiamento; explicação da dotação sem montante declarado e dos contratos-programa, apoiada na nota 26 e na frase inteira sobre a ACSS da página 303, conservadas nos recibos.",
               "apoios": [
                 {
                   "linha": "der-saude-pessoal-variacao-abs",
@@ -8000,11 +8000,6 @@
                   "literal": "(oe-2027-saude-outras-correntes-2027) − (oe-2027-saude-outras-correntes-2026). 303,7 − 32,4 = 271,3"
                 },
                 {
-                  "linha": "oe-2027-saude-dotacao-reforco-contratos-programa",
-                  "campo": "excerpt",
-                  "literal": "São objeto de afetação específica no decurso da execução orçamental. Relevam, no Programa Legado da Defesa, a dotação destinada às forças nacionais destacadas, a afetar sobretudo aos ramos das Forças Armadas, e, no Programa Legado da Saúde, a dotação para reforço no âmbito dos contratos-programa cuja contratualização ainda decorre."
-                },
-                {
                   "linha": "der-saude-receitas-proprias-variacao-pct",
                   "campo": "derivation",
                   "literal": "((oe-2027-saude-fonte-receitas-proprias-2027) ÷ (oe-2027-saude-fonte-receitas-proprias-2026) − 1) × 100. (2 017,6 ÷ 1 289,5 − 1) × 100 = 56.46374563784412563008918190 ≈ 56,5"
@@ -8020,9 +8015,14 @@
                   "literal": "Despesas por Fonte de Financiamento consolidada   Orçamento 2026    Orçamento 2027\n Fundos Europeus                                            655,0              174,6\nSeleção: Orçamento 2027"
                 },
                 {
-                  "linha": "oe-2027-outras-despesas-dotacoes-execucao",
+                  "linha": "oe-2027-saude-dotacao-reforco-contratos-programa",
                   "campo": "excerpt",
-                  "literal": "Neste agregado estão ainda previstas dotações destinadas a alocar a outras entidades 26 em sede de execução, nomeadamente nos Programas Legados da Saúde e da Defesa."
+                  "literal": "São objeto de afetação específica no decurso da execução orçamental. Relevam, no Programa Legado da Defesa, a dotação destinada às forças nacionais destacadas, a afetar sobretudo aos ramos das Forças Armadas, e, no Programa Legado da Saúde, a dotação para reforço no âmbito dos contratos-programa cuja contratualização ainda decorre."
+                },
+                {
+                  "linha": "oe-2027-saude-contrato-programa-acss",
+                  "campo": "excerpt",
+                  "literal": "Neste montante incluem-se as verbas do contrato-programa a celebrar entre a Administração Central do Sistema de Saúde, IP (ACSS) e as entidades do Serviço Nacional de Saúde (SNS), destinadas ao financiamento centralizado da Rede Nacional de Cuidados Continuados, das parcerias público-privadas, entre outros."
                 },
                 {
                   "linha": "oe-2027-saude-pessoal-2027",
@@ -8058,7 +8058,7 @@
               "pt": "; o investimento leva menos ",
               "en": " less; investment takes ",
               "classe": "leitura",
-              "sobre": "Variações nas rubricas e fontes de financiamento; a frase do agregado e a nota sobre a dotação para reforço dos contratos-programa ainda por contratualizar são transcritas integralmente.",
+              "sobre": "Variações nas rubricas e fontes de financiamento; explicação da dotação sem montante declarado e dos contratos-programa, apoiada na nota 26 e na frase inteira sobre a ACSS da página 303, conservadas nos recibos.",
               "apoios": [
                 {
                   "linha": "der-saude-pessoal-variacao-abs",
@@ -8091,11 +8091,6 @@
                   "literal": "(oe-2027-saude-outras-correntes-2027) − (oe-2027-saude-outras-correntes-2026). 303,7 − 32,4 = 271,3"
                 },
                 {
-                  "linha": "oe-2027-saude-dotacao-reforco-contratos-programa",
-                  "campo": "excerpt",
-                  "literal": "São objeto de afetação específica no decurso da execução orçamental. Relevam, no Programa Legado da Defesa, a dotação destinada às forças nacionais destacadas, a afetar sobretudo aos ramos das Forças Armadas, e, no Programa Legado da Saúde, a dotação para reforço no âmbito dos contratos-programa cuja contratualização ainda decorre."
-                },
-                {
                   "linha": "der-saude-receitas-proprias-variacao-pct",
                   "campo": "derivation",
                   "literal": "((oe-2027-saude-fonte-receitas-proprias-2027) ÷ (oe-2027-saude-fonte-receitas-proprias-2026) − 1) × 100. (2 017,6 ÷ 1 289,5 − 1) × 100 = 56.46374563784412563008918190 ≈ 56,5"
@@ -8111,9 +8106,14 @@
                   "literal": "Despesas por Fonte de Financiamento consolidada   Orçamento 2026    Orçamento 2027\n Fundos Europeus                                            655,0              174,6\nSeleção: Orçamento 2027"
                 },
                 {
-                  "linha": "oe-2027-outras-despesas-dotacoes-execucao",
+                  "linha": "oe-2027-saude-dotacao-reforco-contratos-programa",
                   "campo": "excerpt",
-                  "literal": "Neste agregado estão ainda previstas dotações destinadas a alocar a outras entidades 26 em sede de execução, nomeadamente nos Programas Legados da Saúde e da Defesa."
+                  "literal": "São objeto de afetação específica no decurso da execução orçamental. Relevam, no Programa Legado da Defesa, a dotação destinada às forças nacionais destacadas, a afetar sobretudo aos ramos das Forças Armadas, e, no Programa Legado da Saúde, a dotação para reforço no âmbito dos contratos-programa cuja contratualização ainda decorre."
+                },
+                {
+                  "linha": "oe-2027-saude-contrato-programa-acss",
+                  "campo": "excerpt",
+                  "literal": "Neste montante incluem-se as verbas do contrato-programa a celebrar entre a Administração Central do Sistema de Saúde, IP (ACSS) e as entidades do Serviço Nacional de Saúde (SNS), destinadas ao financiamento centralizado da Rede Nacional de Cuidados Continuados, das parcerias público-privadas, entre outros."
                 },
                 {
                   "linha": "oe-2027-saude-pessoal-2027",
@@ -8149,7 +8149,7 @@
               "pt": "; e as outras despesas correntes passam de ",
               "en": " less; and other current expenditure goes from ",
               "classe": "leitura",
-              "sobre": "Variações nas rubricas e fontes de financiamento; a frase do agregado e a nota sobre a dotação para reforço dos contratos-programa ainda por contratualizar são transcritas integralmente.",
+              "sobre": "Variações nas rubricas e fontes de financiamento; explicação da dotação sem montante declarado e dos contratos-programa, apoiada na nota 26 e na frase inteira sobre a ACSS da página 303, conservadas nos recibos.",
               "apoios": [
                 {
                   "linha": "der-saude-pessoal-variacao-abs",
@@ -8182,11 +8182,6 @@
                   "literal": "(oe-2027-saude-outras-correntes-2027) − (oe-2027-saude-outras-correntes-2026). 303,7 − 32,4 = 271,3"
                 },
                 {
-                  "linha": "oe-2027-saude-dotacao-reforco-contratos-programa",
-                  "campo": "excerpt",
-                  "literal": "São objeto de afetação específica no decurso da execução orçamental. Relevam, no Programa Legado da Defesa, a dotação destinada às forças nacionais destacadas, a afetar sobretudo aos ramos das Forças Armadas, e, no Programa Legado da Saúde, a dotação para reforço no âmbito dos contratos-programa cuja contratualização ainda decorre."
-                },
-                {
                   "linha": "der-saude-receitas-proprias-variacao-pct",
                   "campo": "derivation",
                   "literal": "((oe-2027-saude-fonte-receitas-proprias-2027) ÷ (oe-2027-saude-fonte-receitas-proprias-2026) − 1) × 100. (2 017,6 ÷ 1 289,5 − 1) × 100 = 56.46374563784412563008918190 ≈ 56,5"
@@ -8202,9 +8197,14 @@
                   "literal": "Despesas por Fonte de Financiamento consolidada   Orçamento 2026    Orçamento 2027\n Fundos Europeus                                            655,0              174,6\nSeleção: Orçamento 2027"
                 },
                 {
-                  "linha": "oe-2027-outras-despesas-dotacoes-execucao",
+                  "linha": "oe-2027-saude-dotacao-reforco-contratos-programa",
                   "campo": "excerpt",
-                  "literal": "Neste agregado estão ainda previstas dotações destinadas a alocar a outras entidades 26 em sede de execução, nomeadamente nos Programas Legados da Saúde e da Defesa."
+                  "literal": "São objeto de afetação específica no decurso da execução orçamental. Relevam, no Programa Legado da Defesa, a dotação destinada às forças nacionais destacadas, a afetar sobretudo aos ramos das Forças Armadas, e, no Programa Legado da Saúde, a dotação para reforço no âmbito dos contratos-programa cuja contratualização ainda decorre."
+                },
+                {
+                  "linha": "oe-2027-saude-contrato-programa-acss",
+                  "campo": "excerpt",
+                  "literal": "Neste montante incluem-se as verbas do contrato-programa a celebrar entre a Administração Central do Sistema de Saúde, IP (ACSS) e as entidades do Serviço Nacional de Saúde (SNS), destinadas ao financiamento centralizado da Rede Nacional de Cuidados Continuados, das parcerias público-privadas, entre outros."
                 },
                 {
                   "linha": "oe-2027-saude-pessoal-2027",
@@ -8240,7 +8240,7 @@
               "pt": " para ",
               "en": " to ",
               "classe": "leitura",
-              "sobre": "Variações nas rubricas e fontes de financiamento; a frase do agregado e a nota sobre a dotação para reforço dos contratos-programa ainda por contratualizar são transcritas integralmente.",
+              "sobre": "Variações nas rubricas e fontes de financiamento; explicação da dotação sem montante declarado e dos contratos-programa, apoiada na nota 26 e na frase inteira sobre a ACSS da página 303, conservadas nos recibos.",
               "apoios": [
                 {
                   "linha": "der-saude-pessoal-variacao-abs",
@@ -8273,11 +8273,6 @@
                   "literal": "(oe-2027-saude-outras-correntes-2027) − (oe-2027-saude-outras-correntes-2026). 303,7 − 32,4 = 271,3"
                 },
                 {
-                  "linha": "oe-2027-saude-dotacao-reforco-contratos-programa",
-                  "campo": "excerpt",
-                  "literal": "São objeto de afetação específica no decurso da execução orçamental. Relevam, no Programa Legado da Defesa, a dotação destinada às forças nacionais destacadas, a afetar sobretudo aos ramos das Forças Armadas, e, no Programa Legado da Saúde, a dotação para reforço no âmbito dos contratos-programa cuja contratualização ainda decorre."
-                },
-                {
                   "linha": "der-saude-receitas-proprias-variacao-pct",
                   "campo": "derivation",
                   "literal": "((oe-2027-saude-fonte-receitas-proprias-2027) ÷ (oe-2027-saude-fonte-receitas-proprias-2026) − 1) × 100. (2 017,6 ÷ 1 289,5 − 1) × 100 = 56.46374563784412563008918190 ≈ 56,5"
@@ -8293,9 +8288,14 @@
                   "literal": "Despesas por Fonte de Financiamento consolidada   Orçamento 2026    Orçamento 2027\n Fundos Europeus                                            655,0              174,6\nSeleção: Orçamento 2027"
                 },
                 {
-                  "linha": "oe-2027-outras-despesas-dotacoes-execucao",
+                  "linha": "oe-2027-saude-dotacao-reforco-contratos-programa",
                   "campo": "excerpt",
-                  "literal": "Neste agregado estão ainda previstas dotações destinadas a alocar a outras entidades 26 em sede de execução, nomeadamente nos Programas Legados da Saúde e da Defesa."
+                  "literal": "São objeto de afetação específica no decurso da execução orçamental. Relevam, no Programa Legado da Defesa, a dotação destinada às forças nacionais destacadas, a afetar sobretudo aos ramos das Forças Armadas, e, no Programa Legado da Saúde, a dotação para reforço no âmbito dos contratos-programa cuja contratualização ainda decorre."
+                },
+                {
+                  "linha": "oe-2027-saude-contrato-programa-acss",
+                  "campo": "excerpt",
+                  "literal": "Neste montante incluem-se as verbas do contrato-programa a celebrar entre a Administração Central do Sistema de Saúde, IP (ACSS) e as entidades do Serviço Nacional de Saúde (SNS), destinadas ao financiamento centralizado da Rede Nacional de Cuidados Continuados, das parcerias público-privadas, entre outros."
                 },
                 {
                   "linha": "oe-2027-saude-pessoal-2027",
@@ -8331,7 +8331,7 @@
               "pt": ", mais ",
               "en": ", ",
               "classe": "leitura",
-              "sobre": "Variações nas rubricas e fontes de financiamento; a frase do agregado e a nota sobre a dotação para reforço dos contratos-programa ainda por contratualizar são transcritas integralmente.",
+              "sobre": "Variações nas rubricas e fontes de financiamento; explicação da dotação sem montante declarado e dos contratos-programa, apoiada na nota 26 e na frase inteira sobre a ACSS da página 303, conservadas nos recibos.",
               "apoios": [
                 {
                   "linha": "der-saude-pessoal-variacao-abs",
@@ -8364,11 +8364,6 @@
                   "literal": "(oe-2027-saude-outras-correntes-2027) − (oe-2027-saude-outras-correntes-2026). 303,7 − 32,4 = 271,3"
                 },
                 {
-                  "linha": "oe-2027-saude-dotacao-reforco-contratos-programa",
-                  "campo": "excerpt",
-                  "literal": "São objeto de afetação específica no decurso da execução orçamental. Relevam, no Programa Legado da Defesa, a dotação destinada às forças nacionais destacadas, a afetar sobretudo aos ramos das Forças Armadas, e, no Programa Legado da Saúde, a dotação para reforço no âmbito dos contratos-programa cuja contratualização ainda decorre."
-                },
-                {
                   "linha": "der-saude-receitas-proprias-variacao-pct",
                   "campo": "derivation",
                   "literal": "((oe-2027-saude-fonte-receitas-proprias-2027) ÷ (oe-2027-saude-fonte-receitas-proprias-2026) − 1) × 100. (2 017,6 ÷ 1 289,5 − 1) × 100 = 56.46374563784412563008918190 ≈ 56,5"
@@ -8384,9 +8379,14 @@
                   "literal": "Despesas por Fonte de Financiamento consolidada   Orçamento 2026    Orçamento 2027\n Fundos Europeus                                            655,0              174,6\nSeleção: Orçamento 2027"
                 },
                 {
-                  "linha": "oe-2027-outras-despesas-dotacoes-execucao",
+                  "linha": "oe-2027-saude-dotacao-reforco-contratos-programa",
                   "campo": "excerpt",
-                  "literal": "Neste agregado estão ainda previstas dotações destinadas a alocar a outras entidades 26 em sede de execução, nomeadamente nos Programas Legados da Saúde e da Defesa."
+                  "literal": "São objeto de afetação específica no decurso da execução orçamental. Relevam, no Programa Legado da Defesa, a dotação destinada às forças nacionais destacadas, a afetar sobretudo aos ramos das Forças Armadas, e, no Programa Legado da Saúde, a dotação para reforço no âmbito dos contratos-programa cuja contratualização ainda decorre."
+                },
+                {
+                  "linha": "oe-2027-saude-contrato-programa-acss",
+                  "campo": "excerpt",
+                  "literal": "Neste montante incluem-se as verbas do contrato-programa a celebrar entre a Administração Central do Sistema de Saúde, IP (ACSS) e as entidades do Serviço Nacional de Saúde (SNS), destinadas ao financiamento centralizado da Rede Nacional de Cuidados Continuados, das parcerias público-privadas, entre outros."
                 },
                 {
                   "linha": "oe-2027-saude-pessoal-2027",
@@ -8414,15 +8414,15 @@
         },
         {
           "caminho": "seccoes[2].conteudo[2].paragrafo[12]",
-          "pt": ". O relatório diz que este agregado guarda, na Saúde, «",
-          "en": " more. The report says this aggregate holds, for Health, «",
+          "pt": ". Segundo o relatório, é nesta rubrica que fica, para a Saúde, a dotação para reforçar os contratos-programa ainda por fechar, os acordos entre a Administração Central do Sistema de Saúde e as entidades do Serviço Nacional de Saúde por onde passa o financiamento destas; o próprio orçamento inscreve assim o reforço que antecipa, sem dizer quanto. O financiamento conta com receitas próprias a crescer ",
+          "en": " more. According to the report, this line is where the provision to reinforce the contract-programmes still to be closed sits for Health, the agreements between the Central Administration of the Health System and the National Health Service's entities through which their financing flows; the budget thus books the reinforcement it anticipates, without saying how much. The financing counts on own revenue growing ",
           "ramo": null,
           "partes": [
             {
-              "pt": ". O relatório diz que este agregado guarda, na Saúde, «",
-              "en": " more. The report says this aggregate holds, for Health, «",
+              "pt": ". Segundo o relatório, é nesta rubrica que fica, para a Saúde, a dotação para reforçar os contratos-programa ainda por fechar, os acordos entre a Administração Central do Sistema de Saúde e as entidades do Serviço Nacional de Saúde por onde passa o financiamento destas; o próprio orçamento inscreve assim o reforço que antecipa, sem dizer quanto. O financiamento conta com receitas próprias a crescer ",
+              "en": " more. According to the report, this line is where the provision to reinforce the contract-programmes still to be closed sits for Health, the agreements between the Central Administration of the Health System and the National Health Service's entities through which their financing flows; the budget thus books the reinforcement it anticipates, without saying how much. The financing counts on own revenue growing ",
               "classe": "leitura",
-              "sobre": "Variações nas rubricas e fontes de financiamento; a frase do agregado e a nota sobre a dotação para reforço dos contratos-programa ainda por contratualizar são transcritas integralmente.",
+              "sobre": "Variações nas rubricas e fontes de financiamento; explicação da dotação sem montante declarado e dos contratos-programa, apoiada na nota 26 e na frase inteira sobre a ACSS da página 303, conservadas nos recibos.",
               "apoios": [
                 {
                   "linha": "der-saude-pessoal-variacao-abs",
@@ -8455,9 +8455,95 @@
                   "literal": "(oe-2027-saude-outras-correntes-2027) − (oe-2027-saude-outras-correntes-2026). 303,7 − 32,4 = 271,3"
                 },
                 {
+                  "linha": "der-saude-receitas-proprias-variacao-pct",
+                  "campo": "derivation",
+                  "literal": "((oe-2027-saude-fonte-receitas-proprias-2027) ÷ (oe-2027-saude-fonte-receitas-proprias-2026) − 1) × 100. (2 017,6 ÷ 1 289,5 − 1) × 100 = 56.46374563784412563008918190 ≈ 56,5"
+                },
+                {
+                  "linha": "oe-2027-saude-fonte-fundos-europeus-2026",
+                  "campo": "excerpt",
+                  "literal": "Despesas por Fonte de Financiamento consolidada   Orçamento 2026    Orçamento 2027\n Fundos Europeus                                            655,0              174,6\nSeleção: Orçamento 2026"
+                },
+                {
+                  "linha": "oe-2027-saude-fonte-fundos-europeus-2027",
+                  "campo": "excerpt",
+                  "literal": "Despesas por Fonte de Financiamento consolidada   Orçamento 2026    Orçamento 2027\n Fundos Europeus                                            655,0              174,6\nSeleção: Orçamento 2027"
+                },
+                {
                   "linha": "oe-2027-saude-dotacao-reforco-contratos-programa",
                   "campo": "excerpt",
                   "literal": "São objeto de afetação específica no decurso da execução orçamental. Relevam, no Programa Legado da Defesa, a dotação destinada às forças nacionais destacadas, a afetar sobretudo aos ramos das Forças Armadas, e, no Programa Legado da Saúde, a dotação para reforço no âmbito dos contratos-programa cuja contratualização ainda decorre."
+                },
+                {
+                  "linha": "oe-2027-saude-contrato-programa-acss",
+                  "campo": "excerpt",
+                  "literal": "Neste montante incluem-se as verbas do contrato-programa a celebrar entre a Administração Central do Sistema de Saúde, IP (ACSS) e as entidades do Serviço Nacional de Saúde (SNS), destinadas ao financiamento centralizado da Rede Nacional de Cuidados Continuados, das parcerias público-privadas, entre outros."
+                },
+                {
+                  "linha": "oe-2027-saude-pessoal-2027",
+                  "campo": "excerpt",
+                  "literal": "Quadro 5.37. Saúde (PL15) — Conta do Pograma Legado\n(milhões de euros)\n2026                                2027\nVariação                       Estrutura 2027\nVariação                        Estrutura 2027\nClassificador Económico                                                                                                    (Sem PRR)                         (Sem PRR)\nEstimativa                          Orçamento       (%)                                 (%)\nEstimativa                           Orçamento                                            (%)                                (%)\n(Sem PRR)                           (Sem PRR)\n     Despesas com o pessoal                               7 783,1             7 780,9         8 184,3            8 184,3              5,2           5,2              45,8             45,8\nSeleção: 2027 Orçamento"
+                },
+                {
+                  "linha": "oe-2027-saude-bens-servicos-2027",
+                  "campo": "excerpt",
+                  "literal": "Quadro 5.37. Saúde (PL15) — Conta do Pograma Legado\n(milhões de euros)\n2026                                2027\nVariação                       Estrutura 2027\nVariação                        Estrutura 2027\nClassificador Económico                                                                                                    (Sem PRR)                         (Sem PRR)\nEstimativa                          Orçamento       (%)                                 (%)\nEstimativa                           Orçamento                                            (%)                                (%)\n(Sem PRR)                           (Sem PRR)\n     Aquisição de bens e serviços                         8 832,9             8 802,2         8 436,3            8 436,3          -4,5             -4,2              47,2             47,2\nSeleção: 2027 Orçamento"
+                },
+                {
+                  "linha": "oe-2027-saude-investimento-2027",
+                  "campo": "excerpt",
+                  "literal": "Quadro 5.37. Saúde (PL15) — Conta do Pograma Legado\n(milhões de euros)\n2026                                2027\nVariação                       Estrutura 2027\nVariação                        Estrutura 2027\nClassificador Económico                                                                                                    (Sem PRR)                         (Sem PRR)\nEstimativa                          Orçamento       (%)                                 (%)\nEstimativa                           Orçamento                                            (%)                                (%)\n(Sem PRR)                           (Sem PRR)\n     Investimento                                         1 022,5              555,2            678,3              678,3         -33,7             22,2               3,8              3,8\nSeleção: 2027 Orçamento"
+                },
+                {
+                  "linha": "oe-2027-saude-fonte-receitas-proprias-2027",
+                  "campo": "excerpt",
+                  "literal": "Despesas por Fonte de Financiamento consolidada   Orçamento 2026    Orçamento 2027\n Receitas Próprias                                        1 289,5             2 017,6\nSeleção: Orçamento 2027"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[2].paragrafo[13].sufixo",
+          "pt": " %",
+          "en": " %",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": " %",
+              "en": " %",
+              "classe": "leitura",
+              "sobre": "Variações nas rubricas e fontes de financiamento; explicação da dotação sem montante declarado e dos contratos-programa, apoiada na nota 26 e na frase inteira sobre a ACSS da página 303, conservadas nos recibos.",
+              "apoios": [
+                {
+                  "linha": "der-saude-pessoal-variacao-abs",
+                  "campo": "derivation",
+                  "literal": "(oe-2027-saude-pessoal-2027) − (oe-2027-saude-pessoal-2026). 8 184,3 − 7 783,1 = 401,2"
+                },
+                {
+                  "linha": "der-saude-bens-servicos-reducao-abs",
+                  "campo": "derivation",
+                  "literal": "(oe-2027-saude-bens-servicos-2026) − (oe-2027-saude-bens-servicos-2027). 8 832,9 − 8 436,3 = 396,6"
+                },
+                {
+                  "linha": "der-saude-investimento-reducao-abs",
+                  "campo": "derivation",
+                  "literal": "(oe-2027-saude-investimento-2026) − (oe-2027-saude-investimento-2027). 1 022,5 − 678,3 = 344,2"
+                },
+                {
+                  "linha": "oe-2027-saude-outras-correntes-2026",
+                  "campo": "excerpt",
+                  "literal": "Quadro 5.37. Saúde (PL15) — Conta do Pograma Legado\n(milhões de euros)\n2026                                2027\nVariação                       Estrutura 2027\nVariação                        Estrutura 2027\nClassificador Económico                                                                                                    (Sem PRR)                         (Sem PRR)\nEstimativa                          Orçamento       (%)                                 (%)\nEstimativa                           Orçamento                                            (%)                                (%)\n(Sem PRR)                           (Sem PRR)\n     Outras despesas correntes                               32,4                32,4           303,7              303,7          n.r.              n.r.              1,7              1,7\nSeleção: 2026 Estimativa"
+                },
+                {
+                  "linha": "oe-2027-saude-outras-correntes-2027",
+                  "campo": "excerpt",
+                  "literal": "Quadro 5.37. Saúde (PL15) — Conta do Pograma Legado\n(milhões de euros)\n2026                                2027\nVariação                       Estrutura 2027\nVariação                        Estrutura 2027\nClassificador Económico                                                                                                    (Sem PRR)                         (Sem PRR)\nEstimativa                          Orçamento       (%)                                 (%)\nEstimativa                           Orçamento                                            (%)                                (%)\n(Sem PRR)                           (Sem PRR)\n     Outras despesas correntes                               32,4                32,4           303,7              303,7          n.r.              n.r.              1,7              1,7\nSeleção: 2027 Orçamento"
+                },
+                {
+                  "linha": "der-saude-outras-correntes-variacao-abs",
+                  "campo": "derivation",
+                  "literal": "(oe-2027-saude-outras-correntes-2027) − (oe-2027-saude-outras-correntes-2026). 303,7 − 32,4 = 271,3"
                 },
                 {
                   "linha": "der-saude-receitas-proprias-variacao-pct",
@@ -8475,9 +8561,14 @@
                   "literal": "Despesas por Fonte de Financiamento consolidada   Orçamento 2026    Orçamento 2027\n Fundos Europeus                                            655,0              174,6\nSeleção: Orçamento 2027"
                 },
                 {
-                  "linha": "oe-2027-outras-despesas-dotacoes-execucao",
+                  "linha": "oe-2027-saude-dotacao-reforco-contratos-programa",
                   "campo": "excerpt",
-                  "literal": "Neste agregado estão ainda previstas dotações destinadas a alocar a outras entidades 26 em sede de execução, nomeadamente nos Programas Legados da Saúde e da Defesa."
+                  "literal": "São objeto de afetação específica no decurso da execução orçamental. Relevam, no Programa Legado da Defesa, a dotação destinada às forças nacionais destacadas, a afetar sobretudo aos ramos das Forças Armadas, e, no Programa Legado da Saúde, a dotação para reforço no âmbito dos contratos-programa cuja contratualização ainda decorre."
+                },
+                {
+                  "linha": "oe-2027-saude-contrato-programa-acss",
+                  "campo": "excerpt",
+                  "literal": "Neste montante incluem-se as verbas do contrato-programa a celebrar entre a Administração Central do Sistema de Saúde, IP (ACSS) e as entidades do Serviço Nacional de Saúde (SNS), destinadas ao financiamento centralizado da Rede Nacional de Cuidados Continuados, das parcerias público-privadas, entre outros."
                 },
                 {
                   "linha": "oe-2027-saude-pessoal-2027",
@@ -8505,15 +8596,15 @@
         },
         {
           "caminho": "seccoes[2].conteudo[2].paragrafo[14]",
-          "pt": "»: o próprio orçamento inscreve o reforço que antecipa. O financiamento conta com receitas próprias a crescer ",
-          "en": "»: the budget itself books the reinforcement it anticipates. The financing counts on own revenue growing ",
+          "pt": " e com fundos europeus a cair de ",
+          "en": " and on European funds falling from ",
           "ramo": null,
           "partes": [
             {
-              "pt": "»: o próprio orçamento inscreve o reforço que antecipa. O financiamento conta com receitas próprias a crescer ",
-              "en": "»: the budget itself books the reinforcement it anticipates. The financing counts on own revenue growing ",
+              "pt": " e com fundos europeus a cair de ",
+              "en": " and on European funds falling from ",
               "classe": "leitura",
-              "sobre": "Variações nas rubricas e fontes de financiamento; a frase do agregado e a nota sobre a dotação para reforço dos contratos-programa ainda por contratualizar são transcritas integralmente.",
+              "sobre": "Variações nas rubricas e fontes de financiamento; explicação da dotação sem montante declarado e dos contratos-programa, apoiada na nota 26 e na frase inteira sobre a ACSS da página 303, conservadas nos recibos.",
               "apoios": [
                 {
                   "linha": "der-saude-pessoal-variacao-abs",
@@ -8546,11 +8637,6 @@
                   "literal": "(oe-2027-saude-outras-correntes-2027) − (oe-2027-saude-outras-correntes-2026). 303,7 − 32,4 = 271,3"
                 },
                 {
-                  "linha": "oe-2027-saude-dotacao-reforco-contratos-programa",
-                  "campo": "excerpt",
-                  "literal": "São objeto de afetação específica no decurso da execução orçamental. Relevam, no Programa Legado da Defesa, a dotação destinada às forças nacionais destacadas, a afetar sobretudo aos ramos das Forças Armadas, e, no Programa Legado da Saúde, a dotação para reforço no âmbito dos contratos-programa cuja contratualização ainda decorre."
-                },
-                {
                   "linha": "der-saude-receitas-proprias-variacao-pct",
                   "campo": "derivation",
                   "literal": "((oe-2027-saude-fonte-receitas-proprias-2027) ÷ (oe-2027-saude-fonte-receitas-proprias-2026) − 1) × 100. (2 017,6 ÷ 1 289,5 − 1) × 100 = 56.46374563784412563008918190 ≈ 56,5"
@@ -8566,100 +8652,14 @@
                   "literal": "Despesas por Fonte de Financiamento consolidada   Orçamento 2026    Orçamento 2027\n Fundos Europeus                                            655,0              174,6\nSeleção: Orçamento 2027"
                 },
                 {
-                  "linha": "oe-2027-outras-despesas-dotacoes-execucao",
-                  "campo": "excerpt",
-                  "literal": "Neste agregado estão ainda previstas dotações destinadas a alocar a outras entidades 26 em sede de execução, nomeadamente nos Programas Legados da Saúde e da Defesa."
-                },
-                {
-                  "linha": "oe-2027-saude-pessoal-2027",
-                  "campo": "excerpt",
-                  "literal": "Quadro 5.37. Saúde (PL15) — Conta do Pograma Legado\n(milhões de euros)\n2026                                2027\nVariação                       Estrutura 2027\nVariação                        Estrutura 2027\nClassificador Económico                                                                                                    (Sem PRR)                         (Sem PRR)\nEstimativa                          Orçamento       (%)                                 (%)\nEstimativa                           Orçamento                                            (%)                                (%)\n(Sem PRR)                           (Sem PRR)\n     Despesas com o pessoal                               7 783,1             7 780,9         8 184,3            8 184,3              5,2           5,2              45,8             45,8\nSeleção: 2027 Orçamento"
-                },
-                {
-                  "linha": "oe-2027-saude-bens-servicos-2027",
-                  "campo": "excerpt",
-                  "literal": "Quadro 5.37. Saúde (PL15) — Conta do Pograma Legado\n(milhões de euros)\n2026                                2027\nVariação                       Estrutura 2027\nVariação                        Estrutura 2027\nClassificador Económico                                                                                                    (Sem PRR)                         (Sem PRR)\nEstimativa                          Orçamento       (%)                                 (%)\nEstimativa                           Orçamento                                            (%)                                (%)\n(Sem PRR)                           (Sem PRR)\n     Aquisição de bens e serviços                         8 832,9             8 802,2         8 436,3            8 436,3          -4,5             -4,2              47,2             47,2\nSeleção: 2027 Orçamento"
-                },
-                {
-                  "linha": "oe-2027-saude-investimento-2027",
-                  "campo": "excerpt",
-                  "literal": "Quadro 5.37. Saúde (PL15) — Conta do Pograma Legado\n(milhões de euros)\n2026                                2027\nVariação                       Estrutura 2027\nVariação                        Estrutura 2027\nClassificador Económico                                                                                                    (Sem PRR)                         (Sem PRR)\nEstimativa                          Orçamento       (%)                                 (%)\nEstimativa                           Orçamento                                            (%)                                (%)\n(Sem PRR)                           (Sem PRR)\n     Investimento                                         1 022,5              555,2            678,3              678,3         -33,7             22,2               3,8              3,8\nSeleção: 2027 Orçamento"
-                },
-                {
-                  "linha": "oe-2027-saude-fonte-receitas-proprias-2027",
-                  "campo": "excerpt",
-                  "literal": "Despesas por Fonte de Financiamento consolidada   Orçamento 2026    Orçamento 2027\n Receitas Próprias                                        1 289,5             2 017,6\nSeleção: Orçamento 2027"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "caminho": "seccoes[2].conteudo[2].paragrafo[15].sufixo",
-          "pt": " %",
-          "en": " %",
-          "ramo": null,
-          "partes": [
-            {
-              "pt": " %",
-              "en": " %",
-              "classe": "leitura",
-              "sobre": "Variações nas rubricas e fontes de financiamento; a frase do agregado e a nota sobre a dotação para reforço dos contratos-programa ainda por contratualizar são transcritas integralmente.",
-              "apoios": [
-                {
-                  "linha": "der-saude-pessoal-variacao-abs",
-                  "campo": "derivation",
-                  "literal": "(oe-2027-saude-pessoal-2027) − (oe-2027-saude-pessoal-2026). 8 184,3 − 7 783,1 = 401,2"
-                },
-                {
-                  "linha": "der-saude-bens-servicos-reducao-abs",
-                  "campo": "derivation",
-                  "literal": "(oe-2027-saude-bens-servicos-2026) − (oe-2027-saude-bens-servicos-2027). 8 832,9 − 8 436,3 = 396,6"
-                },
-                {
-                  "linha": "der-saude-investimento-reducao-abs",
-                  "campo": "derivation",
-                  "literal": "(oe-2027-saude-investimento-2026) − (oe-2027-saude-investimento-2027). 1 022,5 − 678,3 = 344,2"
-                },
-                {
-                  "linha": "oe-2027-saude-outras-correntes-2026",
-                  "campo": "excerpt",
-                  "literal": "Quadro 5.37. Saúde (PL15) — Conta do Pograma Legado\n(milhões de euros)\n2026                                2027\nVariação                       Estrutura 2027\nVariação                        Estrutura 2027\nClassificador Económico                                                                                                    (Sem PRR)                         (Sem PRR)\nEstimativa                          Orçamento       (%)                                 (%)\nEstimativa                           Orçamento                                            (%)                                (%)\n(Sem PRR)                           (Sem PRR)\n     Outras despesas correntes                               32,4                32,4           303,7              303,7          n.r.              n.r.              1,7              1,7\nSeleção: 2026 Estimativa"
-                },
-                {
-                  "linha": "oe-2027-saude-outras-correntes-2027",
-                  "campo": "excerpt",
-                  "literal": "Quadro 5.37. Saúde (PL15) — Conta do Pograma Legado\n(milhões de euros)\n2026                                2027\nVariação                       Estrutura 2027\nVariação                        Estrutura 2027\nClassificador Económico                                                                                                    (Sem PRR)                         (Sem PRR)\nEstimativa                          Orçamento       (%)                                 (%)\nEstimativa                           Orçamento                                            (%)                                (%)\n(Sem PRR)                           (Sem PRR)\n     Outras despesas correntes                               32,4                32,4           303,7              303,7          n.r.              n.r.              1,7              1,7\nSeleção: 2027 Orçamento"
-                },
-                {
-                  "linha": "der-saude-outras-correntes-variacao-abs",
-                  "campo": "derivation",
-                  "literal": "(oe-2027-saude-outras-correntes-2027) − (oe-2027-saude-outras-correntes-2026). 303,7 − 32,4 = 271,3"
-                },
-                {
                   "linha": "oe-2027-saude-dotacao-reforco-contratos-programa",
                   "campo": "excerpt",
                   "literal": "São objeto de afetação específica no decurso da execução orçamental. Relevam, no Programa Legado da Defesa, a dotação destinada às forças nacionais destacadas, a afetar sobretudo aos ramos das Forças Armadas, e, no Programa Legado da Saúde, a dotação para reforço no âmbito dos contratos-programa cuja contratualização ainda decorre."
                 },
                 {
-                  "linha": "der-saude-receitas-proprias-variacao-pct",
-                  "campo": "derivation",
-                  "literal": "((oe-2027-saude-fonte-receitas-proprias-2027) ÷ (oe-2027-saude-fonte-receitas-proprias-2026) − 1) × 100. (2 017,6 ÷ 1 289,5 − 1) × 100 = 56.46374563784412563008918190 ≈ 56,5"
-                },
-                {
-                  "linha": "oe-2027-saude-fonte-fundos-europeus-2026",
+                  "linha": "oe-2027-saude-contrato-programa-acss",
                   "campo": "excerpt",
-                  "literal": "Despesas por Fonte de Financiamento consolidada   Orçamento 2026    Orçamento 2027\n Fundos Europeus                                            655,0              174,6\nSeleção: Orçamento 2026"
-                },
-                {
-                  "linha": "oe-2027-saude-fonte-fundos-europeus-2027",
-                  "campo": "excerpt",
-                  "literal": "Despesas por Fonte de Financiamento consolidada   Orçamento 2026    Orçamento 2027\n Fundos Europeus                                            655,0              174,6\nSeleção: Orçamento 2027"
-                },
-                {
-                  "linha": "oe-2027-outras-despesas-dotacoes-execucao",
-                  "campo": "excerpt",
-                  "literal": "Neste agregado estão ainda previstas dotações destinadas a alocar a outras entidades 26 em sede de execução, nomeadamente nos Programas Legados da Saúde e da Defesa."
+                  "literal": "Neste montante incluem-se as verbas do contrato-programa a celebrar entre a Administração Central do Sistema de Saúde, IP (ACSS) e as entidades do Serviço Nacional de Saúde (SNS), destinadas ao financiamento centralizado da Rede Nacional de Cuidados Continuados, das parcerias público-privadas, entre outros."
                 },
                 {
                   "linha": "oe-2027-saude-pessoal-2027",
@@ -8687,15 +8687,15 @@
         },
         {
           "caminho": "seccoes[2].conteudo[2].paragrafo[16]",
-          "pt": " e com fundos europeus a cair de ",
-          "en": " and on European funds falling from ",
+          "pt": " para ",
+          "en": " to ",
           "ramo": null,
           "partes": [
             {
-              "pt": " e com fundos europeus a cair de ",
-              "en": " and on European funds falling from ",
+              "pt": " para ",
+              "en": " to ",
               "classe": "leitura",
-              "sobre": "Variações nas rubricas e fontes de financiamento; a frase do agregado e a nota sobre a dotação para reforço dos contratos-programa ainda por contratualizar são transcritas integralmente.",
+              "sobre": "Variações nas rubricas e fontes de financiamento; explicação da dotação sem montante declarado e dos contratos-programa, apoiada na nota 26 e na frase inteira sobre a ACSS da página 303, conservadas nos recibos.",
               "apoios": [
                 {
                   "linha": "der-saude-pessoal-variacao-abs",
@@ -8728,11 +8728,6 @@
                   "literal": "(oe-2027-saude-outras-correntes-2027) − (oe-2027-saude-outras-correntes-2026). 303,7 − 32,4 = 271,3"
                 },
                 {
-                  "linha": "oe-2027-saude-dotacao-reforco-contratos-programa",
-                  "campo": "excerpt",
-                  "literal": "São objeto de afetação específica no decurso da execução orçamental. Relevam, no Programa Legado da Defesa, a dotação destinada às forças nacionais destacadas, a afetar sobretudo aos ramos das Forças Armadas, e, no Programa Legado da Saúde, a dotação para reforço no âmbito dos contratos-programa cuja contratualização ainda decorre."
-                },
-                {
                   "linha": "der-saude-receitas-proprias-variacao-pct",
                   "campo": "derivation",
                   "literal": "((oe-2027-saude-fonte-receitas-proprias-2027) ÷ (oe-2027-saude-fonte-receitas-proprias-2026) − 1) × 100. (2 017,6 ÷ 1 289,5 − 1) × 100 = 56.46374563784412563008918190 ≈ 56,5"
@@ -8748,9 +8743,14 @@
                   "literal": "Despesas por Fonte de Financiamento consolidada   Orçamento 2026    Orçamento 2027\n Fundos Europeus                                            655,0              174,6\nSeleção: Orçamento 2027"
                 },
                 {
-                  "linha": "oe-2027-outras-despesas-dotacoes-execucao",
+                  "linha": "oe-2027-saude-dotacao-reforco-contratos-programa",
                   "campo": "excerpt",
-                  "literal": "Neste agregado estão ainda previstas dotações destinadas a alocar a outras entidades 26 em sede de execução, nomeadamente nos Programas Legados da Saúde e da Defesa."
+                  "literal": "São objeto de afetação específica no decurso da execução orçamental. Relevam, no Programa Legado da Defesa, a dotação destinada às forças nacionais destacadas, a afetar sobretudo aos ramos das Forças Armadas, e, no Programa Legado da Saúde, a dotação para reforço no âmbito dos contratos-programa cuja contratualização ainda decorre."
+                },
+                {
+                  "linha": "oe-2027-saude-contrato-programa-acss",
+                  "campo": "excerpt",
+                  "literal": "Neste montante incluem-se as verbas do contrato-programa a celebrar entre a Administração Central do Sistema de Saúde, IP (ACSS) e as entidades do Serviço Nacional de Saúde (SNS), destinadas ao financiamento centralizado da Rede Nacional de Cuidados Continuados, das parcerias público-privadas, entre outros."
                 },
                 {
                   "linha": "oe-2027-saude-pessoal-2027",
@@ -8778,97 +8778,6 @@
         },
         {
           "caminho": "seccoes[2].conteudo[2].paragrafo[18]",
-          "pt": " para ",
-          "en": " to ",
-          "ramo": null,
-          "partes": [
-            {
-              "pt": " para ",
-              "en": " to ",
-              "classe": "leitura",
-              "sobre": "Variações nas rubricas e fontes de financiamento; a frase do agregado e a nota sobre a dotação para reforço dos contratos-programa ainda por contratualizar são transcritas integralmente.",
-              "apoios": [
-                {
-                  "linha": "der-saude-pessoal-variacao-abs",
-                  "campo": "derivation",
-                  "literal": "(oe-2027-saude-pessoal-2027) − (oe-2027-saude-pessoal-2026). 8 184,3 − 7 783,1 = 401,2"
-                },
-                {
-                  "linha": "der-saude-bens-servicos-reducao-abs",
-                  "campo": "derivation",
-                  "literal": "(oe-2027-saude-bens-servicos-2026) − (oe-2027-saude-bens-servicos-2027). 8 832,9 − 8 436,3 = 396,6"
-                },
-                {
-                  "linha": "der-saude-investimento-reducao-abs",
-                  "campo": "derivation",
-                  "literal": "(oe-2027-saude-investimento-2026) − (oe-2027-saude-investimento-2027). 1 022,5 − 678,3 = 344,2"
-                },
-                {
-                  "linha": "oe-2027-saude-outras-correntes-2026",
-                  "campo": "excerpt",
-                  "literal": "Quadro 5.37. Saúde (PL15) — Conta do Pograma Legado\n(milhões de euros)\n2026                                2027\nVariação                       Estrutura 2027\nVariação                        Estrutura 2027\nClassificador Económico                                                                                                    (Sem PRR)                         (Sem PRR)\nEstimativa                          Orçamento       (%)                                 (%)\nEstimativa                           Orçamento                                            (%)                                (%)\n(Sem PRR)                           (Sem PRR)\n     Outras despesas correntes                               32,4                32,4           303,7              303,7          n.r.              n.r.              1,7              1,7\nSeleção: 2026 Estimativa"
-                },
-                {
-                  "linha": "oe-2027-saude-outras-correntes-2027",
-                  "campo": "excerpt",
-                  "literal": "Quadro 5.37. Saúde (PL15) — Conta do Pograma Legado\n(milhões de euros)\n2026                                2027\nVariação                       Estrutura 2027\nVariação                        Estrutura 2027\nClassificador Económico                                                                                                    (Sem PRR)                         (Sem PRR)\nEstimativa                          Orçamento       (%)                                 (%)\nEstimativa                           Orçamento                                            (%)                                (%)\n(Sem PRR)                           (Sem PRR)\n     Outras despesas correntes                               32,4                32,4           303,7              303,7          n.r.              n.r.              1,7              1,7\nSeleção: 2027 Orçamento"
-                },
-                {
-                  "linha": "der-saude-outras-correntes-variacao-abs",
-                  "campo": "derivation",
-                  "literal": "(oe-2027-saude-outras-correntes-2027) − (oe-2027-saude-outras-correntes-2026). 303,7 − 32,4 = 271,3"
-                },
-                {
-                  "linha": "oe-2027-saude-dotacao-reforco-contratos-programa",
-                  "campo": "excerpt",
-                  "literal": "São objeto de afetação específica no decurso da execução orçamental. Relevam, no Programa Legado da Defesa, a dotação destinada às forças nacionais destacadas, a afetar sobretudo aos ramos das Forças Armadas, e, no Programa Legado da Saúde, a dotação para reforço no âmbito dos contratos-programa cuja contratualização ainda decorre."
-                },
-                {
-                  "linha": "der-saude-receitas-proprias-variacao-pct",
-                  "campo": "derivation",
-                  "literal": "((oe-2027-saude-fonte-receitas-proprias-2027) ÷ (oe-2027-saude-fonte-receitas-proprias-2026) − 1) × 100. (2 017,6 ÷ 1 289,5 − 1) × 100 = 56.46374563784412563008918190 ≈ 56,5"
-                },
-                {
-                  "linha": "oe-2027-saude-fonte-fundos-europeus-2026",
-                  "campo": "excerpt",
-                  "literal": "Despesas por Fonte de Financiamento consolidada   Orçamento 2026    Orçamento 2027\n Fundos Europeus                                            655,0              174,6\nSeleção: Orçamento 2026"
-                },
-                {
-                  "linha": "oe-2027-saude-fonte-fundos-europeus-2027",
-                  "campo": "excerpt",
-                  "literal": "Despesas por Fonte de Financiamento consolidada   Orçamento 2026    Orçamento 2027\n Fundos Europeus                                            655,0              174,6\nSeleção: Orçamento 2027"
-                },
-                {
-                  "linha": "oe-2027-outras-despesas-dotacoes-execucao",
-                  "campo": "excerpt",
-                  "literal": "Neste agregado estão ainda previstas dotações destinadas a alocar a outras entidades 26 em sede de execução, nomeadamente nos Programas Legados da Saúde e da Defesa."
-                },
-                {
-                  "linha": "oe-2027-saude-pessoal-2027",
-                  "campo": "excerpt",
-                  "literal": "Quadro 5.37. Saúde (PL15) — Conta do Pograma Legado\n(milhões de euros)\n2026                                2027\nVariação                       Estrutura 2027\nVariação                        Estrutura 2027\nClassificador Económico                                                                                                    (Sem PRR)                         (Sem PRR)\nEstimativa                          Orçamento       (%)                                 (%)\nEstimativa                           Orçamento                                            (%)                                (%)\n(Sem PRR)                           (Sem PRR)\n     Despesas com o pessoal                               7 783,1             7 780,9         8 184,3            8 184,3              5,2           5,2              45,8             45,8\nSeleção: 2027 Orçamento"
-                },
-                {
-                  "linha": "oe-2027-saude-bens-servicos-2027",
-                  "campo": "excerpt",
-                  "literal": "Quadro 5.37. Saúde (PL15) — Conta do Pograma Legado\n(milhões de euros)\n2026                                2027\nVariação                       Estrutura 2027\nVariação                        Estrutura 2027\nClassificador Económico                                                                                                    (Sem PRR)                         (Sem PRR)\nEstimativa                          Orçamento       (%)                                 (%)\nEstimativa                           Orçamento                                            (%)                                (%)\n(Sem PRR)                           (Sem PRR)\n     Aquisição de bens e serviços                         8 832,9             8 802,2         8 436,3            8 436,3          -4,5             -4,2              47,2             47,2\nSeleção: 2027 Orçamento"
-                },
-                {
-                  "linha": "oe-2027-saude-investimento-2027",
-                  "campo": "excerpt",
-                  "literal": "Quadro 5.37. Saúde (PL15) — Conta do Pograma Legado\n(milhões de euros)\n2026                                2027\nVariação                       Estrutura 2027\nVariação                        Estrutura 2027\nClassificador Económico                                                                                                    (Sem PRR)                         (Sem PRR)\nEstimativa                          Orçamento       (%)                                 (%)\nEstimativa                           Orçamento                                            (%)                                (%)\n(Sem PRR)                           (Sem PRR)\n     Investimento                                         1 022,5              555,2            678,3              678,3         -33,7             22,2               3,8              3,8\nSeleção: 2027 Orçamento"
-                },
-                {
-                  "linha": "oe-2027-saude-fonte-receitas-proprias-2027",
-                  "campo": "excerpt",
-                  "literal": "Despesas por Fonte de Financiamento consolidada   Orçamento 2026    Orçamento 2027\n Receitas Próprias                                        1 289,5             2 017,6\nSeleção: Orçamento 2027"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "caminho": "seccoes[2].conteudo[2].paragrafo[20]",
           "pt": ".",
           "en": ".",
           "ramo": null,
@@ -8877,7 +8786,7 @@
               "pt": ".",
               "en": ".",
               "classe": "leitura",
-              "sobre": "Variações nas rubricas e fontes de financiamento; a frase do agregado e a nota sobre a dotação para reforço dos contratos-programa ainda por contratualizar são transcritas integralmente.",
+              "sobre": "Variações nas rubricas e fontes de financiamento; explicação da dotação sem montante declarado e dos contratos-programa, apoiada na nota 26 e na frase inteira sobre a ACSS da página 303, conservadas nos recibos.",
               "apoios": [
                 {
                   "linha": "der-saude-pessoal-variacao-abs",
@@ -8910,11 +8819,6 @@
                   "literal": "(oe-2027-saude-outras-correntes-2027) − (oe-2027-saude-outras-correntes-2026). 303,7 − 32,4 = 271,3"
                 },
                 {
-                  "linha": "oe-2027-saude-dotacao-reforco-contratos-programa",
-                  "campo": "excerpt",
-                  "literal": "São objeto de afetação específica no decurso da execução orçamental. Relevam, no Programa Legado da Defesa, a dotação destinada às forças nacionais destacadas, a afetar sobretudo aos ramos das Forças Armadas, e, no Programa Legado da Saúde, a dotação para reforço no âmbito dos contratos-programa cuja contratualização ainda decorre."
-                },
-                {
                   "linha": "der-saude-receitas-proprias-variacao-pct",
                   "campo": "derivation",
                   "literal": "((oe-2027-saude-fonte-receitas-proprias-2027) ÷ (oe-2027-saude-fonte-receitas-proprias-2026) − 1) × 100. (2 017,6 ÷ 1 289,5 − 1) × 100 = 56.46374563784412563008918190 ≈ 56,5"
@@ -8930,9 +8834,14 @@
                   "literal": "Despesas por Fonte de Financiamento consolidada   Orçamento 2026    Orçamento 2027\n Fundos Europeus                                            655,0              174,6\nSeleção: Orçamento 2027"
                 },
                 {
-                  "linha": "oe-2027-outras-despesas-dotacoes-execucao",
+                  "linha": "oe-2027-saude-dotacao-reforco-contratos-programa",
                   "campo": "excerpt",
-                  "literal": "Neste agregado estão ainda previstas dotações destinadas a alocar a outras entidades 26 em sede de execução, nomeadamente nos Programas Legados da Saúde e da Defesa."
+                  "literal": "São objeto de afetação específica no decurso da execução orçamental. Relevam, no Programa Legado da Defesa, a dotação destinada às forças nacionais destacadas, a afetar sobretudo aos ramos das Forças Armadas, e, no Programa Legado da Saúde, a dotação para reforço no âmbito dos contratos-programa cuja contratualização ainda decorre."
+                },
+                {
+                  "linha": "oe-2027-saude-contrato-programa-acss",
+                  "campo": "excerpt",
+                  "literal": "Neste montante incluem-se as verbas do contrato-programa a celebrar entre a Administração Central do Sistema de Saúde, IP (ACSS) e as entidades do Serviço Nacional de Saúde (SNS), destinadas ao financiamento centralizado da Rede Nacional de Cuidados Continuados, das parcerias público-privadas, entre outros."
                 },
                 {
                   "linha": "oe-2027-saude-pessoal-2027",
@@ -14020,6 +13929,11 @@
                   "literal": "São objeto de afetação específica no decurso da execução orçamental. Relevam, no Programa Legado da Defesa, a dotação destinada às forças nacionais destacadas, a afetar sobretudo aos ramos das Forças Armadas, e, no Programa Legado da Saúde, a dotação para reforço no âmbito dos contratos-programa cuja contratualização ainda decorre."
                 },
                 {
+                  "linha": "oe-2027-saude-contrato-programa-acss",
+                  "campo": "excerpt",
+                  "literal": "Neste montante incluem-se as verbas do contrato-programa a celebrar entre a Administração Central do Sistema de Saúde, IP (ACSS) e as entidades do Serviço Nacional de Saúde (SNS), destinadas ao financiamento centralizado da Rede Nacional de Cuidados Continuados, das parcerias público-privadas, entre outros."
+                },
+                {
                   "linha": "saude-total-2020-orcamento-oe2020",
                   "campo": "excerpt",
                   "literal": "(milhões de euros)\n2019                2020              Variação         Estrutura 2020\nEstim ativa          Orçam ento            (%)                  (%)\n Despesa Total Consolidada                                                     10 741,1            11 282,2              5,0\nSeleção: 2020 orcamento"
@@ -14135,13 +14049,13 @@
         },
         {
           "caminho": "seccoes[5].conteudo[0].paragrafo[0]",
-          "pt": "O ministro e a RTP escolheram cada um a linha que lhes convinha, e as duas são verdadeiras; a discussão sobre «sobe» ou «desce» esconde o que o quadro mostra: um orçamento que paga mais pessoal com menos compras e menos investimento, que guarda ",
-          "en": "The minister and RTP each chose the line that suited them, and both are true; the argument over «up» or «down» hides what the table shows: a budget that pays more staff with fewer purchases and less investment, that sets aside ",
+          "pt": "O ministro e a RTP escolheram cada um a linha que lhes convinha, e as duas são verdadeiras; a discussão sobre «sobe» ou «desce» esconde o que o quadro mostra: um orçamento que paga mais pessoal com menos compras e menos investimento, que guarda em outras despesas correntes mais ",
+          "en": "The minister and RTP each chose the line that suited them, and both are true; the argument over «up» or «down» hides what the table shows: a budget that pays more staff with fewer purchases and less investment, that holds ",
           "ramo": null,
           "partes": [
             {
-              "pt": "O ministro e a RTP escolheram cada um a linha que lhes convinha, e as duas são verdadeiras; a discussão sobre «sobe» ou «desce» esconde o que o quadro mostra: um orçamento que paga mais pessoal com menos compras e menos investimento, que guarda ",
-              "en": "The minister and RTP each chose the line that suited them, and both are true; the argument over «up» or «down» hides what the table shows: a budget that pays more staff with fewer purchases and less investment, that sets aside ",
+              "pt": "O ministro e a RTP escolheram cada um a linha que lhes convinha, e as duas são verdadeiras; a discussão sobre «sobe» ou «desce» esconde o que o quadro mostra: um orçamento que paga mais pessoal com menos compras e menos investimento, que guarda em outras despesas correntes mais ",
+              "en": "The minister and RTP each chose the line that suited them, and both are true; the argument over «up» or «down» hides what the table shows: a budget that pays more staff with fewer purchases and less investment, that holds ",
               "classe": "leitura",
               "sobre": "Opinião expressamente rotulada sobre a seleção dos perímetros, a composição, receitas e risco de execução.",
               "apoios": [
@@ -14164,6 +14078,11 @@
                   "linha": "oe-2027-saude-dotacao-reforco-contratos-programa",
                   "campo": "excerpt",
                   "literal": "São objeto de afetação específica no decurso da execução orçamental. Relevam, no Programa Legado da Defesa, a dotação destinada às forças nacionais destacadas, a afetar sobretudo aos ramos das Forças Armadas, e, no Programa Legado da Saúde, a dotação para reforço no âmbito dos contratos-programa cuja contratualização ainda decorre."
+                },
+                {
+                  "linha": "oe-2027-saude-contrato-programa-acss",
+                  "campo": "excerpt",
+                  "literal": "Neste montante incluem-se as verbas do contrato-programa a celebrar entre a Administração Central do Sistema de Saúde, IP (ACSS) e as entidades do Serviço Nacional de Saúde (SNS), destinadas ao financiamento centralizado da Rede Nacional de Cuidados Continuados, das parcerias público-privadas, entre outros."
                 },
                 {
                   "linha": "saude-total-2020-orcamento-oe2020",
@@ -14281,13 +14200,13 @@
         },
         {
           "caminho": "seccoes[5].conteudo[0].paragrafo[2]",
-          "pt": " milhões para reforçar contratos-programa ainda por fechar, que conta com receitas próprias a crescer mais de metade sem que o relatório explique de onde vêm, e que, pelo que a execução de ",
-          "en": " million to reinforce contract-programmes still to be closed, that counts on own revenue growing by more than half without the report explaining where it comes from, and that, on the evidence of the ",
+          "pt": " milhões, onde o relatório diz estar a dotação para reforçar contratos-programa ainda por fechar, sem dizer quanto, que conta com receitas próprias a crescer mais de metade sem que o relatório explique de onde vêm, e que, pelo que a execução de ",
+          "en": " million more in other current expenditure, where the report says the provision to reinforce contract-programmes still to be closed sits, without saying how much, that counts on own revenue growing by more than half without the report explaining where it comes from, and that, on the evidence of the ",
           "ramo": null,
           "partes": [
             {
-              "pt": " milhões para reforçar contratos-programa ainda por fechar, que conta com receitas próprias a crescer mais de metade sem que o relatório explique de onde vêm, e que, pelo que a execução de ",
-              "en": " million to reinforce contract-programmes still to be closed, that counts on own revenue growing by more than half without the report explaining where it comes from, and that, on the evidence of the ",
+              "pt": " milhões, onde o relatório diz estar a dotação para reforçar contratos-programa ainda por fechar, sem dizer quanto, que conta com receitas próprias a crescer mais de metade sem que o relatório explique de onde vêm, e que, pelo que a execução de ",
+              "en": " million more in other current expenditure, where the report says the provision to reinforce contract-programmes still to be closed sits, without saying how much, that counts on own revenue growing by more than half without the report explaining where it comes from, and that, on the evidence of the ",
               "classe": "leitura",
               "sobre": "Opinião expressamente rotulada sobre a seleção dos perímetros, a composição, receitas e risco de execução.",
               "apoios": [
@@ -14310,6 +14229,11 @@
                   "linha": "oe-2027-saude-dotacao-reforco-contratos-programa",
                   "campo": "excerpt",
                   "literal": "São objeto de afetação específica no decurso da execução orçamental. Relevam, no Programa Legado da Defesa, a dotação destinada às forças nacionais destacadas, a afetar sobretudo aos ramos das Forças Armadas, e, no Programa Legado da Saúde, a dotação para reforço no âmbito dos contratos-programa cuja contratualização ainda decorre."
+                },
+                {
+                  "linha": "oe-2027-saude-contrato-programa-acss",
+                  "campo": "excerpt",
+                  "literal": "Neste montante incluem-se as verbas do contrato-programa a celebrar entre a Administração Central do Sistema de Saúde, IP (ACSS) e as entidades do Serviço Nacional de Saúde (SNS), destinadas ao financiamento centralizado da Rede Nacional de Cuidados Continuados, das parcerias público-privadas, entre outros."
                 },
                 {
                   "linha": "saude-total-2020-orcamento-oe2020",
@@ -14458,6 +14382,11 @@
                   "literal": "São objeto de afetação específica no decurso da execução orçamental. Relevam, no Programa Legado da Defesa, a dotação destinada às forças nacionais destacadas, a afetar sobretudo aos ramos das Forças Armadas, e, no Programa Legado da Saúde, a dotação para reforço no âmbito dos contratos-programa cuja contratualização ainda decorre."
                 },
                 {
+                  "linha": "oe-2027-saude-contrato-programa-acss",
+                  "campo": "excerpt",
+                  "literal": "Neste montante incluem-se as verbas do contrato-programa a celebrar entre a Administração Central do Sistema de Saúde, IP (ACSS) e as entidades do Serviço Nacional de Saúde (SNS), destinadas ao financiamento centralizado da Rede Nacional de Cuidados Continuados, das parcerias público-privadas, entre outros."
+                },
+                {
                   "linha": "saude-total-2020-orcamento-oe2020",
                   "campo": "excerpt",
                   "literal": "(milhões de euros)\n2019                2020              Variação         Estrutura 2020\nEstim ativa          Orçam ento            (%)                  (%)\n Despesa Total Consolidada                                                     10 741,1            11 282,2              5,0\nSeleção: 2020 orcamento"
@@ -14602,6 +14531,11 @@
                   "linha": "oe-2027-saude-dotacao-reforco-contratos-programa",
                   "campo": "excerpt",
                   "literal": "São objeto de afetação específica no decurso da execução orçamental. Relevam, no Programa Legado da Defesa, a dotação destinada às forças nacionais destacadas, a afetar sobretudo aos ramos das Forças Armadas, e, no Programa Legado da Saúde, a dotação para reforço no âmbito dos contratos-programa cuja contratualização ainda decorre."
+                },
+                {
+                  "linha": "oe-2027-saude-contrato-programa-acss",
+                  "campo": "excerpt",
+                  "literal": "Neste montante incluem-se as verbas do contrato-programa a celebrar entre a Administração Central do Sistema de Saúde, IP (ACSS) e as entidades do Serviço Nacional de Saúde (SNS), destinadas ao financiamento centralizado da Rede Nacional de Cuidados Continuados, das parcerias público-privadas, entre outros."
                 },
                 {
                   "linha": "saude-total-2020-orcamento-oe2020",

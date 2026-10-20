@@ -69,7 +69,6 @@
           "der-saude-bens-servicos-reducao-abs",
           "der-saude-investimento-reducao-abs",
           "der-saude-outras-correntes-variacao-abs",
-          "oe-2027-saude-dotacao-reforco-contratos-programa",
           "der-financas-prr-2026",
           "der-economia-prr-2026",
           "der-infraestruturas-e-habitacao-prr-2026",
@@ -87,6 +86,8 @@
           "utao-risco-execucao-sns-2027",
           "der-saude-total-reducao-abs",
           "oe-2027-outras-despesas-dotacoes-execucao",
+          "oe-2027-saude-dotacao-reforco-contratos-programa",
+          "oe-2027-saude-contrato-programa-acss",
           "saude-total-2021-orcamento-oe2021",
           "saude-total-2021-execucao-cge2021",
           "saude-total-2022-orcamento-oe2022",
@@ -146,7 +147,7 @@
             "paragrafos": [
               "Os números da RTP, a queda, o montante e a diferença, coincidem com a linha da despesa total consolidada: −267,5 milhões de euros, −1,5 %. O número do ministro coincide com a variação da linha da despesa efetiva consolidada sem o PRR, 3,0 %, a mesma que o relatório escreve e que a UTAO, a unidade técnica de apoio orçamental do Parlamento, confirma: «Todavia, excluído o efeito do PRR, a despesa aumentaria 3,0%.» O número do PCP sobre o investimento coincide com a linha do investimento com o PRR, −33,7 %; sem o PRR, a mesma linha sobe 22,2 %.",
               "A descida vem toda do fim do PRR. Em 2026 o PRR valia 771,1 na despesa efetiva da Saúde; em 2027 vale zero, e a despesa efetiva é a mesma com e sem ele, 17 803,1 e 17 803,1. A despesa fora do PRR sobe 511,8, o que repõe 66,4 % do que o PRR deixa; a diferença, −259,3, é a queda da despesa efetiva.",
-              "O que sobe e o que desce não são a mesma coisa: o pessoal leva mais 401,2; a aquisição de bens e serviços leva menos 396,6; o investimento leva menos 344,2; e as outras despesas correntes passam de 32,4 para 303,7, mais 271,3. O relatório diz que este agregado guarda, na Saúde, «São objeto de afetação específica no decurso da execução orçamental. Relevam, no Programa Legado da Defesa, a dotação destinada às forças nacionais destacadas, a afetar sobretudo aos ramos das Forças Armadas, e, no Programa Legado da Saúde, a dotação para reforço no âmbito dos contratos-programa cuja contratualização ainda decorre.»: o próprio orçamento inscreve o reforço que antecipa. O financiamento conta com receitas próprias a crescer 56,5 % e com fundos europeus a cair de 655,0 para 174,6.",
+              "O que sobe e o que desce não são a mesma coisa: o pessoal leva mais 401,2; a aquisição de bens e serviços leva menos 396,6; o investimento leva menos 344,2; e as outras despesas correntes passam de 32,4 para 303,7, mais 271,3. Segundo o relatório, é nesta rubrica que fica, para a Saúde, a dotação para reforçar os contratos-programa ainda por fechar, os acordos entre a Administração Central do Sistema de Saúde e as entidades do Serviço Nacional de Saúde por onde passa o financiamento destas; o próprio orçamento inscreve assim o reforço que antecipa, sem dizer quanto. O financiamento conta com receitas próprias a crescer 56,5 % e com fundos europeus a cair de 655,0 para 174,6.",
               "A redução do PRR não é só da Saúde: em 2026 o PRR pesava 1 472,7 nas Finanças, 1 357,1 na Economia, 1 133,0 nas Infraestruturas e habitação, 823,2 no Ambiente e energia e 771,1 na Saúde. Em 2027 a despesa fora do PRR cresce 3,0 % na Saúde, 4,9 % na Educação, 8,8 % no Trabalho, solidariedade e segurança social, 20,8 % nas Infraestruturas e habitação, 18,2 % na Justiça e 13,1 % na Segurança interna; e varia −7,8 % nas Finanças, −4,9 % na Economia e −38,2 % na Coesão territorial.",
               "O orçamento de 2027, 17 858,4, é inferior ao que o relatório estima que se gaste em 2026, 18 125,9, e superior em 3,6 % ao que se gastou em 2025, 17 241,5. A UTAO escreve, sobre a execução do Serviço Nacional de Saúde em 2027: «Existe um risco de pressão orçamental associado à execução do Serviço Nacional de Saúde (SNS).»"
             ]
@@ -169,7 +170,7 @@
             "id": "opiniao",
             "titulo": "A opinião do lugar de direção",
             "paragrafos": [
-              "O ministro e a RTP escolheram cada um a linha que lhes convinha, e as duas são verdadeiras; a discussão sobre «sobe» ou «desce» esconde o que o quadro mostra: um orçamento que paga mais pessoal com menos compras e menos investimento, que guarda 271,3 milhões para reforçar contratos-programa ainda por fechar, que conta com receitas próprias a crescer mais de metade sem que o relatório explique de onde vêm, e que, pelo que a execução de 2026 e os seis anos anteriores mostram, corre o risco de voltar a ser ultrapassado. O orçamento da Saúde para 2027 é um orçamento de transição para o fim do PRR, e a sua medida certa conhece-se na execução, não na aprovação. Dizer isto custava mais do que dizer «sobe» ou «cai», e era o que o debate devia."
+              "O ministro e a RTP escolheram cada um a linha que lhes convinha, e as duas são verdadeiras; a discussão sobre «sobe» ou «desce» esconde o que o quadro mostra: um orçamento que paga mais pessoal com menos compras e menos investimento, que guarda em outras despesas correntes mais 271,3 milhões, onde o relatório diz estar a dotação para reforçar contratos-programa ainda por fechar, sem dizer quanto, que conta com receitas próprias a crescer mais de metade sem que o relatório explique de onde vêm, e que, pelo que a execução de 2026 e os seis anos anteriores mostram, corre o risco de voltar a ser ultrapassado. O orçamento da Saúde para 2027 é um orçamento de transição para o fim do PRR, e a sua medida certa conhece-se na execução, não na aprovação. Dizer isto custava mais do que dizer «sobe» ou «cai», e era o que o debate devia."
             ]
           }
         ]
@@ -338,7 +339,6 @@
           "der-saude-bens-servicos-reducao-abs",
           "der-saude-investimento-reducao-abs",
           "der-saude-outras-correntes-variacao-abs",
-          "oe-2027-saude-dotacao-reforco-contratos-programa",
           "der-financas-prr-2026",
           "der-economia-prr-2026",
           "der-infraestruturas-e-habitacao-prr-2026",
@@ -356,6 +356,8 @@
           "utao-risco-execucao-sns-2027",
           "der-saude-total-reducao-abs",
           "oe-2027-outras-despesas-dotacoes-execucao",
+          "oe-2027-saude-dotacao-reforco-contratos-programa",
+          "oe-2027-saude-contrato-programa-acss",
           "saude-total-2021-orcamento-oe2021",
           "saude-total-2021-execucao-cge2021",
           "saude-total-2022-orcamento-oe2022",
@@ -415,7 +417,7 @@
             "paragrafos": [
               "RTP's figures, the fall, the amount and the difference, match the line for total consolidated expenditure: −267,5 million euros, −1,5 %. The minister's figure matches the change in the line for consolidated effective expenditure without the RRP, 3,0 %, the one the report writes and the UTAO, Parliament's technical budget support unit, confirms: «Todavia, excluído o efeito do PRR, a despesa aumentaria 3,0%.» The PCP's figure on investment matches the investment line with the RRP, −33,7 %; without the RRP, the same line rises 22,2 %.",
               "The fall comes entirely from the end of the RRP. In 2026 the RRP accounted for 771,1 in effective Health expenditure; in 2027 it is zero, and effective expenditure is the same with and without it, 17 803,1 and 17 803,1. Expenditure outside the RRP rises 511,8, replacing 66,4 % of what the RRP leaves; the difference, −259,3, is the fall in effective expenditure.",
-              "What rises and what falls are not the same thing: personnel takes 401,2 more; the purchase of goods and services takes 396,6 less; investment takes 344,2 less; and other current expenditure goes from 32,4 to 303,7, 271,3 more. The report says this aggregate holds, for Health, «São objeto de afetação específica no decurso da execução orçamental. Relevam, no Programa Legado da Defesa, a dotação destinada às forças nacionais destacadas, a afetar sobretudo aos ramos das Forças Armadas, e, no Programa Legado da Saúde, a dotação para reforço no âmbito dos contratos-programa cuja contratualização ainda decorre.»: the budget itself books the reinforcement it anticipates. The financing counts on own revenue growing 56,5 % and on European funds falling from 655,0 to 174,6.",
+              "What rises and what falls are not the same thing: personnel takes 401,2 more; the purchase of goods and services takes 396,6 less; investment takes 344,2 less; and other current expenditure goes from 32,4 to 303,7, 271,3 more. According to the report, this line is where the provision to reinforce the contract-programmes still to be closed sits for Health, the agreements between the Central Administration of the Health System and the National Health Service's entities through which their financing flows; the budget thus books the reinforcement it anticipates, without saying how much. The financing counts on own revenue growing 56,5 % and on European funds falling from 655,0 to 174,6.",
               "The reduction in the RRP is not confined to Health: in 2026 the RRP accounted for 1 472,7 in Finance, 1 357,1 in Economy, 1 133,0 in Infrastructure and housing, 823,2 in Environment and energy and 771,1 in Health. In 2027 expenditure outside the RRP grows 3,0 % in Health, 4,9 % in Education, 8,8 % in Labour, solidarity and social security, 20,8 % in Infrastructure and housing, 18,2 % in Justice and 13,1 % in Internal security; and changes by −7,8 % in Finance, −4,9 % in Economy and −38,2 % in Territorial cohesion.",
               "The budget for 2027, 17 858,4, is below what the report estimates will be spent in 2026, 18 125,9, and 3,6 % above what was spent in 2025, 17 241,5. The UTAO writes, on the execution of the National Health Service in 2027: «Existe um risco de pressão orçamental associado à execução do Serviço Nacional de Saúde (SNS).»"
             ]
@@ -438,7 +440,7 @@
             "id": "opiniao",
             "titulo": "The editorial seat's opinion",
             "paragrafos": [
-              "The minister and RTP each chose the line that suited them, and both are true; the argument over «up» or «down» hides what the table shows: a budget that pays more staff with fewer purchases and less investment, that sets aside 271,3 million to reinforce contract-programmes still to be closed, that counts on own revenue growing by more than half without the report explaining where it comes from, and that, on the evidence of the 2026 execution and the six years before it, risks being exceeded again. The Health budget for 2027 is a transition budget for the end of the RRP, and its true size will be known in the execution, not at the vote. Saying this cost more than saying «up» or «down», and it was what the debate owed."
+              "The minister and RTP each chose the line that suited them, and both are true; the argument over «up» or «down» hides what the table shows: a budget that pays more staff with fewer purchases and less investment, that holds 271,3 million more in other current expenditure, where the report says the provision to reinforce contract-programmes still to be closed sits, without saying how much, that counts on own revenue growing by more than half without the report explaining where it comes from, and that, on the evidence of the 2026 execution and the six years before it, risks being exceeded again. The Health budget for 2027 is a transition budget for the end of the RRP, and its true size will be known in the execution, not at the vote. Saying this cost more than saying «up» or «down», and it was what the debate owed."
             ]
           }
         ]
@@ -911,6 +913,11 @@
       "reference_date": "2027"
     },
     {
+      "id": "oe-2027-saude-contrato-programa-acss",
+      "value": "Neste montante incluem-se as verbas do contrato-programa a celebrar entre a Administração Central do Sistema de Saúde, IP (ACSS) e as entidades do Serviço Nacional de Saúde (SNS), destinadas ao financiamento centralizado da Rede Nacional de Cuidados Continuados, das parcerias público-privadas, entre outros.",
+      "reference_date": "2027"
+    },
+    {
       "id": "oe-2027-saude-despesa-efetiva-consolidada-2026",
       "value": "18 062,4",
       "reference_date": "2026"
@@ -1287,8 +1294,8 @@
     }
   ],
   "portas": {
-    "linhas_com_porta": 149,
-    "linhas_novas_com_porta": 133,
+    "linhas_com_porta": 150,
+    "linhas_novas_com_porta": 134,
     "novas": [
       "afirmacao-pcp-paula-investimento-saude-2026-10-12",
       "afirmacao-pcp-paula-ppp-2026-10-12",
@@ -1357,6 +1364,7 @@
       "oe-2027-saude-bens-servicos-2026",
       "oe-2027-saude-bens-servicos-2027",
       "oe-2027-saude-bens-servicos-variacao",
+      "oe-2027-saude-contrato-programa-acss",
       "oe-2027-saude-dotacao-reforco-contratos-programa",
       "oe-2027-saude-fonte-fundos-europeus-2026",
       "oe-2027-saude-fonte-fundos-europeus-2027",

@@ -18745,6 +18745,36 @@
     },
     {
       "chaves": [
+        "oe-2027-saude-contrato-programa-acss"
+      ],
+      "nome": {
+        "pt": "Contrato-programa entre a ACSS e as entidades do SNS",
+        "en": "Contract-programme between ACSS and NHS entities"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o contrato-programa entre a ACSS e as entidades do SNS por onde passa o financiamento centralizado.",
+          "en": "It is the contract-programme between ACSS and NHS entities through which centralised financing flows.",
+          "partes": [
+            {
+              "pt": "É o contrato-programa entre a ACSS e as entidades do SNS por onde passa o financiamento centralizado.",
+              "en": "It is the contract-programme between ACSS and NHS entities through which centralised financing flows.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Neste montante incluem-se as verbas do contrato-programa a celebrar entre a Administração Central do Sistema de Saúde, IP (ACSS) e as entidades do Serviço Nacional de Saúde (SNS), destinadas ao financiamento centralizado da Rede Nacional de Cuidados Continuados, das parcerias público-privadas, entre outros."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
         "oe-2027-saude-dotacao-reforco-contratos-programa"
       ],
       "nome": {
