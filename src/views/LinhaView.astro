@@ -794,7 +794,7 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
     {fontesDaDefinicao.length > 0 && <OrigemDaDefinicao origens={origensDaDefinicao({origens:fontesDaDefinicao}, lang)} s={s} lang={lang} />}
     {parcelaFinanciamento && <div class="linha-o-que-e"><p class="linha-o-que-e-frase" data-jd1-parcela><Frase partes={parcelaFinanciamento} lang={lang} selos={false} /></p></div>}
     <p class="linha-valor">
-      <Claim id={id} lang={lang} as="span" class="linha-valor-num" plano>
+      <Claim id={id} lang={lang} as="span" class={`linha-valor-num${claim.texto_documental ? ' linha-valor-texto' : ''}`} plano>
       {/* O ESPAÇO ENTRE O VALOR E A UNIDADE É TEXTO DA PÁGINA (bloco R1,
           23.09.2026, I143). A folha separava-os com o `gap` de um `flex`, e o
           texto do título era «175pessoas»: um leitor de ecrã e quem copia o

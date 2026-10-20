@@ -2774,6 +2774,12 @@ a.badge-porta:hover {
   letter-spacing: 0.02em;
   color: var(--muted);
 }
+.linha-valor-texto {
+  font-size: 20px;
+  line-height: 1.5;
+  letter-spacing: normal;
+  overflow-wrap: anywhere;
+}
 .linha-id {
   font-family: var(--f-instr);
   font-variant-numeric: tabular-nums lining-nums;

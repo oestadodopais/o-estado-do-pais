@@ -22,6 +22,7 @@
       "derivation": null,
       "label": "Aumento do número de utentes com médico de família atribuídos",
       "label_en": "Increase in patients assigned a family doctor",
+      "temporal_evidence": null,
       "receipt": {
         "estado": 200,
         "ficheiro": "oe-relatorio.pdf",
@@ -94,6 +95,7 @@
       "derivation": null,
       "label": "Compromisso de aumentar consultas",
       "label_en": "Commitment to increase appointments",
+      "temporal_evidence": null,
       "receipt": {
         "estado": 200,
         "ficheiro": "oe-relatorio.pdf",
@@ -166,6 +168,7 @@
       "derivation": null,
       "label": "Compromisso de aumentar cirurgias",
       "label_en": "Commitment to increase surgery",
+      "temporal_evidence": null,
       "receipt": {
         "estado": 200,
         "ficheiro": "oe-relatorio.pdf",
@@ -239,6 +242,7 @@
       "derivation": null,
       "label": "Pagamentos em atraso das unidades de saúde EPE",
       "label_en": "Overdue payments by public enterprise health units",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://www.eo.gov.pt/execucaoorcamental/SintesedaExecucaoOrcamentalMensal/2026/setembro/0926-SinteseExecucaoOrcamental_agosto2026_AnexoEstatistico_vPT_VUK.xlsx",
         "endereco_final": "https://www.eo.gov.pt/execucaoorcamental/SintesedaExecucaoOrcamentalMensal/2026/setembro/0926-SinteseExecucaoOrcamental_agosto2026_AnexoEstatistico_vPT_VUK.xlsx",
@@ -315,6 +319,7 @@
       "derivation": null,
       "label": "Regularização de dívidas vencidas a fornecedores por parte de entidades do Serviço Nacional de Saúde, com contrapartida em reforços dos respetivos capitais pelo Estado (a)",
       "label_en": "Settlement of overdue NHS supplier debt backed by State capital increases",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://www.eo.gov.pt/execucaoorcamental/SintesedaExecucaoOrcamentalMensal/2026/setembro/0926-SinteseExecucaoOrcamental_agosto2026_AnexoEstatistico_vPT_VUK.xlsx",
         "endereco_final": "https://www.eo.gov.pt/execucaoorcamental/SintesedaExecucaoOrcamentalMensal/2026/setembro/0926-SinteseExecucaoOrcamental_agosto2026_AnexoEstatistico_vPT_VUK.xlsx",
@@ -388,6 +393,7 @@
       "derivation": null,
       "label": "Dívida a fornecedores externos, Administração Central do Sistema de Saúde, I.P",
       "label_en": "Debt to external suppliers, Administração Central do Sistema de Saúde, I.P",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
@@ -462,6 +468,7 @@
       "derivation": null,
       "label": "Dívida a fornecedores externos, Administração Regional de Saúde de Lisboa e Vale do Tejo",
       "label_en": "Debt to external suppliers, Administração Regional de Saúde de Lisboa e Vale do Tejo",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
@@ -536,6 +543,7 @@
       "derivation": null,
       "label": "Dívida a fornecedores externos, Administração Regional de Saúde do Alentejo",
       "label_en": "Debt to external suppliers, Administração Regional de Saúde do Alentejo",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
@@ -610,6 +618,7 @@
       "derivation": null,
       "label": "Dívida a fornecedores externos, Administração Regional de Saúde do Algarve",
       "label_en": "Debt to external suppliers, Administração Regional de Saúde do Algarve",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
@@ -684,6 +693,7 @@
       "derivation": null,
       "label": "Dívida a fornecedores externos, Administração Regional de Saúde do Centro",
       "label_en": "Debt to external suppliers, Administração Regional de Saúde do Centro",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
@@ -758,6 +768,7 @@
       "derivation": null,
       "label": "Dívida a fornecedores externos, Administração Regional de Saúde do Norte",
       "label_en": "Debt to external suppliers, Administração Regional de Saúde do Norte",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
@@ -832,6 +843,7 @@
       "derivation": null,
       "label": "Dívida a fornecedores externos, Direção Executiva do Serviço Nacional de Saúde, I.P.",
       "label_en": "Debt to external suppliers, Direção Executiva do Serviço Nacional de Saúde, I.P.",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
@@ -906,6 +918,7 @@
       "derivation": null,
       "label": "Dívida a fornecedores externos, Instituto Nacional de Emergência Médica",
       "label_en": "Debt to external suppliers, Instituto Nacional de Emergência Médica",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
@@ -980,6 +993,7 @@
       "derivation": null,
       "label": "Dívida a fornecedores externos, Instituto Nacional Saúde Dr. Ricardo Jorge - Lisboa",
       "label_en": "Debt to external suppliers, Instituto Nacional Saúde Dr. Ricardo Jorge - Lisboa",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
@@ -1054,6 +1068,7 @@
       "derivation": null,
       "label": "Dívida a fornecedores externos, Instituto para os Comportamentos Aditivos e as Dependências, I. P.",
       "label_en": "Debt to external suppliers, Instituto para os Comportamentos Aditivos e as Dependências, I. P.",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
@@ -1128,6 +1143,7 @@
       "derivation": null,
       "label": "Dívida a fornecedores externos, INSTITUTO PORTUGUES DE ONCOLOGIA DE COIMBRA, EPE",
       "label_en": "Debt to external suppliers, INSTITUTO PORTUGUES DE ONCOLOGIA DE COIMBRA, EPE",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
@@ -1202,6 +1218,7 @@
       "derivation": null,
       "label": "Dívida a fornecedores externos, INSTITUTO PORTUGUES DE ONCOLOGIA DE LISBOA, EPE",
       "label_en": "Debt to external suppliers, INSTITUTO PORTUGUES DE ONCOLOGIA DE LISBOA, EPE",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
@@ -1276,6 +1293,7 @@
       "derivation": null,
       "label": "Dívida a fornecedores externos, INSTITUTO PORTUGUES DE ONCOLOGIA DO PORTO, EPE",
       "label_en": "Debt to external suppliers, INSTITUTO PORTUGUES DE ONCOLOGIA DO PORTO, EPE",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
@@ -1350,6 +1368,7 @@
       "derivation": null,
       "label": "Dívida a fornecedores externos, Instituto Português Do Sangue e Da Transplantação, IP",
       "label_en": "Debt to external suppliers, Instituto Português Do Sangue e Da Transplantação, IP",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
@@ -1424,6 +1443,7 @@
       "derivation": null,
       "label": "Dívida a fornecedores externos, UNIDADE LOCAL DE SAÚDE ALTO MINHO, EPE",
       "label_en": "Debt to external suppliers, UNIDADE LOCAL DE SAÚDE ALTO MINHO, EPE",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
@@ -1498,6 +1518,7 @@
       "derivation": null,
       "label": "Dívida a fornecedores externos, Unidade Local de Saúde da Arrábida, E. P. E.",
       "label_en": "Debt to external suppliers, Unidade Local de Saúde da Arrábida, E. P. E.",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
@@ -1572,6 +1593,7 @@
       "derivation": null,
       "label": "Dívida a fornecedores externos, Unidade Local de Saúde da Cova da Beira, E. P. E.",
       "label_en": "Debt to external suppliers, Unidade Local de Saúde da Cova da Beira, E. P. E.",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
@@ -1646,6 +1668,7 @@
       "derivation": null,
       "label": "Dívida a fornecedores externos, UNIDADE LOCAL DE SAÚDE DA GUARDA, EPE",
       "label_en": "Debt to external suppliers, UNIDADE LOCAL DE SAÚDE DA GUARDA, EPE",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
@@ -1720,6 +1743,7 @@
       "derivation": null,
       "label": "Dívida a fornecedores externos, Unidade Local de Saúde da Lezíria, E. P. E",
       "label_en": "Debt to external suppliers, Unidade Local de Saúde da Lezíria, E. P. E",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
@@ -1794,6 +1818,7 @@
       "derivation": null,
       "label": "Dívida a fornecedores externos, Unidade Local de Saúde da Região de Aveiro, E. P. E.",
       "label_en": "Debt to external suppliers, Unidade Local de Saúde da Região de Aveiro, E. P. E.",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
@@ -1868,6 +1893,7 @@
       "derivation": null,
       "label": "Dívida a fornecedores externos, Unidade Local de Saúde da Região de Leiria, E. P. E.",
       "label_en": "Debt to external suppliers, Unidade Local de Saúde da Região de Leiria, E. P. E.",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
@@ -1942,6 +1968,7 @@
       "derivation": null,
       "label": "Dívida a fornecedores externos, Unidade Local de Saúde de Almada-Seixal, E. P. E.",
       "label_en": "Debt to external suppliers, Unidade Local de Saúde de Almada-Seixal, E. P. E.",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
@@ -2016,6 +2043,7 @@
       "derivation": null,
       "label": "Dívida a fornecedores externos, Unidade Local de Saúde de Amadora/Sintra, E. P. E.",
       "label_en": "Debt to external suppliers, Unidade Local de Saúde de Amadora/Sintra, E. P. E.",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
@@ -2090,6 +2118,7 @@
       "derivation": null,
       "label": "Dívida a fornecedores externos, Unidade Local de Saúde de Barcelos/Esposende, E. P. E.",
       "label_en": "Debt to external suppliers, Unidade Local de Saúde de Barcelos/Esposende, E. P. E.",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
@@ -2164,6 +2193,7 @@
       "derivation": null,
       "label": "Dívida a fornecedores externos, Unidade Local de Saúde de Braga, E. P. E.",
       "label_en": "Debt to external suppliers, Unidade Local de Saúde de Braga, E. P. E.",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
@@ -2238,6 +2268,7 @@
       "derivation": null,
       "label": "Dívida a fornecedores externos, UNIDADE LOCAL DE SAUDE DE CASTELO BRANCO, EPE",
       "label_en": "Debt to external suppliers, UNIDADE LOCAL DE SAUDE DE CASTELO BRANCO, EPE",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
@@ -2312,6 +2343,7 @@
       "derivation": null,
       "label": "Dívida a fornecedores externos, Unidade Local de Saúde de Coimbra, E. P. E.",
       "label_en": "Debt to external suppliers, Unidade Local de Saúde de Coimbra, E. P. E.",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
@@ -2386,6 +2418,7 @@
       "derivation": null,
       "label": "Dívida a fornecedores externos, Unidade Local de Saúde de Entre Douro e Vouga, E. P. E.",
       "label_en": "Debt to external suppliers, Unidade Local de Saúde de Entre Douro e Vouga, E. P. E.",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
@@ -2460,6 +2493,7 @@
       "derivation": null,
       "label": "Dívida a fornecedores externos, Unidade Local de Saúde de Gaia/Espinho, E. P. E.",
       "label_en": "Debt to external suppliers, Unidade Local de Saúde de Gaia/Espinho, E. P. E.",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
@@ -2534,6 +2568,7 @@
       "derivation": null,
       "label": "Dívida a fornecedores externos, Unidade Local de Saúde de Lisboa Ocidental, E. P. E.",
       "label_en": "Debt to external suppliers, Unidade Local de Saúde de Lisboa Ocidental, E. P. E.",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
@@ -2608,6 +2643,7 @@
       "derivation": null,
       "label": "Dívida a fornecedores externos, Unidade Local de Saúde de Loures-Odivelas, E. P. E.",
       "label_en": "Debt to external suppliers, Unidade Local de Saúde de Loures-Odivelas, E. P. E.",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
@@ -2682,6 +2718,7 @@
       "derivation": null,
       "label": "Dívida a fornecedores externos, UNIDADE LOCAL DE SAÚDE DE MATOSINHOS, EPE",
       "label_en": "Debt to external suppliers, UNIDADE LOCAL DE SAÚDE DE MATOSINHOS, EPE",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
@@ -2756,6 +2793,7 @@
       "derivation": null,
       "label": "Dívida a fornecedores externos, Unidade Local de Saúde de Santa Maria, E. P. E.",
       "label_en": "Debt to external suppliers, Unidade Local de Saúde de Santa Maria, E. P. E.",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
@@ -2830,6 +2868,7 @@
       "derivation": null,
       "label": "Dívida a fornecedores externos, Unidade Local de Saúde de Santo António, E. P. E.",
       "label_en": "Debt to external suppliers, Unidade Local de Saúde de Santo António, E. P. E.",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
@@ -2904,6 +2943,7 @@
       "derivation": null,
       "label": "Dívida a fornecedores externos, Unidade Local de Saúde de São João, E. P. E.",
       "label_en": "Debt to external suppliers, Unidade Local de Saúde de São João, E. P. E.",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
@@ -2978,6 +3018,7 @@
       "derivation": null,
       "label": "Dívida a fornecedores externos, Unidade Local de Saúde de São José, E. P. E.",
       "label_en": "Debt to external suppliers, Unidade Local de Saúde de São José, E. P. E.",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
@@ -3052,6 +3093,7 @@
       "derivation": null,
       "label": "Dívida a fornecedores externos, Unidade Local de Saúde de Trás-os-Montes e Alto Douro, E. P. E.",
       "label_en": "Debt to external suppliers, Unidade Local de Saúde de Trás-os-Montes e Alto Douro, E. P. E.",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
@@ -3126,6 +3168,7 @@
       "derivation": null,
       "label": "Dívida a fornecedores externos, Unidade Local de Saúde de Viseu Dão-Lafões, E. P. E.",
       "label_en": "Debt to external suppliers, Unidade Local de Saúde de Viseu Dão-Lafões, E. P. E.",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
@@ -3200,6 +3243,7 @@
       "derivation": null,
       "label": "Dívida a fornecedores externos, Unidade Local de Saúde do Alentejo Central, E. P. E.",
       "label_en": "Debt to external suppliers, Unidade Local de Saúde do Alentejo Central, E. P. E.",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
@@ -3274,6 +3318,7 @@
       "derivation": null,
       "label": "Dívida a fornecedores externos, Unidade Local de Saúde do Algarve, E. P. E.",
       "label_en": "Debt to external suppliers, Unidade Local de Saúde do Algarve, E. P. E.",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
@@ -3348,6 +3393,7 @@
       "derivation": null,
       "label": "Dívida a fornecedores externos, Unidade Local de Saúde do Alto Alentejo, E. P. E.",
       "label_en": "Debt to external suppliers, Unidade Local de Saúde do Alto Alentejo, E. P. E.",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
@@ -3422,6 +3468,7 @@
       "derivation": null,
       "label": "Dívida a fornecedores externos, Unidade Local de Saúde do Alto Ave, E. P. E.",
       "label_en": "Debt to external suppliers, Unidade Local de Saúde do Alto Ave, E. P. E.",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
@@ -3496,6 +3543,7 @@
       "derivation": null,
       "label": "Dívida a fornecedores externos, Unidade Local de Saúde do Arco Ribeirinho, E. P. E.",
       "label_en": "Debt to external suppliers, Unidade Local de Saúde do Arco Ribeirinho, E. P. E.",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
@@ -3570,6 +3618,7 @@
       "derivation": null,
       "label": "Dívida a fornecedores externos, Unidade Local de Saúde do Baixo Mondego, E. P. E.",
       "label_en": "Debt to external suppliers, Unidade Local de Saúde do Baixo Mondego, E. P. E.",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
@@ -3644,6 +3693,7 @@
       "derivation": null,
       "label": "Dívida a fornecedores externos, Unidade Local de Saúde do Estuário do Tejo, E. P. E.",
       "label_en": "Debt to external suppliers, Unidade Local de Saúde do Estuário do Tejo, E. P. E.",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
@@ -3718,6 +3768,7 @@
       "derivation": null,
       "label": "Dívida a fornecedores externos, UNIDADE LOCAL DE SAUDE DO LITORAL ALENTEJANO, EPE",
       "label_en": "Debt to external suppliers, UNIDADE LOCAL DE SAUDE DO LITORAL ALENTEJANO, EPE",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
@@ -3792,6 +3843,7 @@
       "derivation": null,
       "label": "Dívida a fornecedores externos, Unidade Local de Saúde do Médio Ave, E. P. E.",
       "label_en": "Debt to external suppliers, Unidade Local de Saúde do Médio Ave, E. P. E.",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
@@ -3866,6 +3918,7 @@
       "derivation": null,
       "label": "Dívida a fornecedores externos, Unidade Local de Saúde do Médio Tejo, E. P. E.",
       "label_en": "Debt to external suppliers, Unidade Local de Saúde do Médio Tejo, E. P. E.",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
@@ -3940,6 +3993,7 @@
       "derivation": null,
       "label": "Dívida a fornecedores externos, UNIDADE LOCAL DE SAUDE DO NORDESTE, EPE",
       "label_en": "Debt to external suppliers, UNIDADE LOCAL DE SAUDE DO NORDESTE, EPE",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
@@ -4014,6 +4068,7 @@
       "derivation": null,
       "label": "Dívida a fornecedores externos, Unidade Local de Saúde do Oeste, E. P. E.",
       "label_en": "Debt to external suppliers, Unidade Local de Saúde do Oeste, E. P. E.",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
@@ -4088,6 +4143,7 @@
       "derivation": null,
       "label": "Dívida a fornecedores externos, Unidade Local de Saúde do Tâmega e Sousa, E. P. E.",
       "label_en": "Debt to external suppliers, Unidade Local de Saúde do Tâmega e Sousa, E. P. E.",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
@@ -4162,6 +4218,7 @@
       "derivation": null,
       "label": "Dívida a fornecedores externos, Unidade Local de Saúde Póvoa de Varzim/Vila do Conde, E. P. E.",
       "label_en": "Debt to external suppliers, Unidade Local de Saúde Póvoa de Varzim/Vila do Conde, E. P. E.",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
@@ -4236,6 +4293,7 @@
       "derivation": null,
       "label": "Dívida a fornecedores externos, UNIDADE LOCAL DO BAIXO ALENTEJO, EPE",
       "label_en": "Debt to external suppliers, UNIDADE LOCAL DO BAIXO ALENTEJO, EPE",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
@@ -4312,6 +4370,7 @@
       "derivation": null,
       "label": "Negociação da concessão da Brisa",
       "label_en": "Brisa concession negotiations",
+      "temporal_evidence": null,
       "receipt": {
         "estado": 200,
         "ficheiro": "oe-relatorio.pdf",
@@ -4384,6 +4443,7 @@
       "derivation": null,
       "label": "Pedidos quantificados pela Brisa",
       "label_en": "Claims quantified by Brisa",
+      "temporal_evidence": null,
       "receipt": {
         "estado": 200,
         "ficheiro": "oe-relatorio.pdf",
@@ -4456,6 +4516,7 @@
       "derivation": null,
       "label": "Pedidos e litígios rodoviários",
       "label_en": "Road concession claims and disputes",
+      "temporal_evidence": null,
       "receipt": {
         "estado": 200,
         "ficheiro": "oe-relatorio.pdf",
@@ -4528,6 +4589,7 @@
       "derivation": null,
       "label": "Não reconhecimento das pretensões privadas",
       "label_en": "No recognition of private claims",
+      "temporal_evidence": null,
       "receipt": {
         "estado": 200,
         "ficheiro": "oe-relatorio.pdf",
@@ -4600,6 +4662,7 @@
       "derivation": null,
       "label": "Ação principal e pagamento cautelar à Rotas do Algarve Litoral",
       "label_en": "Main action and interim payment to Rotas do Algarve Litoral",
+      "temporal_evidence": null,
       "receipt": {
         "estado": 200,
         "ficheiro": "oe-relatorio.pdf",
@@ -4672,6 +4735,7 @@
       "derivation": null,
       "label": "Pagamento provisório à Rotas do Algarve Litoral",
       "label_en": "Interim payment to Rotas do Algarve Litoral",
+      "temporal_evidence": null,
       "receipt": {
         "estado": 200,
         "ficheiro": "oe-relatorio.pdf",
@@ -4744,6 +4808,7 @@
       "derivation": null,
       "label": "Compensações contingentes excluídas da previsão",
       "label_en": "Contingent compensation excluded from forecast",
+      "temporal_evidence": null,
       "receipt": {
         "estado": 200,
         "ficheiro": "oe-relatorio.pdf",
@@ -4816,6 +4881,7 @@
       "derivation": null,
       "label": "Beira Interior: pedido pela abolição de portagens",
       "label_en": "Beira Interior claim following toll abolition",
+      "temporal_evidence": null,
       "receipt": {
         "estado": 200,
         "ficheiro": "oe-relatorio.pdf",
@@ -4888,6 +4954,7 @@
       "derivation": null,
       "label": "Apoio às portagens: alteração do perímetro de reporte",
       "label_en": "Toll support: change in reporting perimeter",
+      "temporal_evidence": null,
       "receipt": {
         "estado": 200,
         "ficheiro": "oe-relatorio.pdf",
@@ -4960,6 +5027,7 @@
       "derivation": null,
       "label": "Alargamentos de vias",
       "label_en": "Road widening",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://files.diariodarepublica.pt/2s/2024/12/251000000/0003700039.pdf",
         "endereco_final": "https://files.diariodarepublica.pt/2s/2024/12/251000000/0003700039.pdf",
@@ -5036,6 +5104,7 @@
       "derivation": null,
       "label": "Investimentos contratualmente previstos",
       "label_en": "Contractually planned investment",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://files.diariodarepublica.pt/2s/2024/12/251000000/0003700039.pdf",
         "endereco_final": "https://files.diariodarepublica.pt/2s/2024/12/251000000/0003700039.pdf",
@@ -5112,6 +5181,7 @@
       "derivation": null,
       "label": "Reposição do equilíbrio financeiro",
       "label_en": "Restoration of financial balance",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://files.diariodarepublica.pt/2s/2024/12/251000000/0003700039.pdf",
         "endereco_final": "https://files.diariodarepublica.pt/2s/2024/12/251000000/0003700039.pdf",
@@ -5188,6 +5258,7 @@
       "derivation": null,
       "label": "Acertos de comparticipações financeiras",
       "label_en": "Adjustment of financial contributions",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://files.diariodarepublica.pt/2s/2024/12/251000000/0003700039.pdf",
         "endereco_final": "https://files.diariodarepublica.pt/2s/2024/12/251000000/0003700039.pdf",
@@ -5264,6 +5335,7 @@
       "derivation": null,
       "label": "Receitas da Circular Sul de Braga",
       "label_en": "Braga southern ring road toll revenue",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://files.diariodarepublica.pt/2s/2024/12/251000000/0003700039.pdf",
         "endereco_final": "https://files.diariodarepublica.pt/2s/2024/12/251000000/0003700039.pdf",
@@ -5340,6 +5412,7 @@
       "derivation": null,
       "label": "Novos investimentos",
       "label_en": "New investment",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://files.diariodarepublica.pt/2s/2024/12/251000000/0003700039.pdf",
         "endereco_final": "https://files.diariodarepublica.pt/2s/2024/12/251000000/0003700039.pdf",
@@ -5416,6 +5489,7 @@
       "derivation": null,
       "label": "Limites da concessão",
       "label_en": "Concession boundaries",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://files.diariodarepublica.pt/2s/2024/12/251000000/0003700039.pdf",
         "endereco_final": "https://files.diariodarepublica.pt/2s/2024/12/251000000/0003700039.pdf",
@@ -5492,6 +5566,7 @@
       "derivation": null,
       "label": "Monitorização da qualidade de serviço",
       "label_en": "Service quality monitoring",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://files.diariodarepublica.pt/2s/2024/12/251000000/0003700039.pdf",
         "endereco_final": "https://files.diariodarepublica.pt/2s/2024/12/251000000/0003700039.pdf",
@@ -5568,6 +5643,7 @@
       "derivation": null,
       "label": "Autoestradas e troços com eliminação de portagens",
       "label_en": "Motorways and sections with toll abolition",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://files.diariodarepublica.pt/1s/2024/08/15200/0001300014.pdf",
         "endereco_final": "https://files.diariodarepublica.pt/1s/2024/08/15200/0001300014.pdf",
@@ -5644,6 +5720,7 @@
       "derivation": null,
       "label": "Entrada em vigor da eliminação de portagens",
       "label_en": "Entry into force of toll abolition",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://files.diariodarepublica.pt/1s/2024/08/15200/0001300014.pdf",
         "endereco_final": "https://files.diariodarepublica.pt/1s/2024/08/15200/0001300014.pdf",
@@ -5720,6 +5797,7 @@
       "derivation": null,
       "label": "Atualização das portagens de 2023",
       "label_en": "2023 toll rate update",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://files.dre.pt/1s/2022/12/25001/0000200005.pdf",
         "endereco_final": "https://files.dre.pt/1s/2022/12/25001/0000200005.pdf",
@@ -5796,6 +5874,7 @@
       "derivation": null,
       "label": "Comparticipação do Estado nas portagens",
       "label_en": "State contribution to tolls",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://files.dre.pt/1s/2022/12/25001/0000200005.pdf",
         "endereco_final": "https://files.dre.pt/1s/2022/12/25001/0000200005.pdf",
@@ -5872,6 +5951,7 @@
       "derivation": null,
       "label": "Financiamento do apoio pelo Orçamento",
       "label_en": "Budget financing of toll support",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://files.dre.pt/1s/2022/12/25001/0000200005.pdf",
         "endereco_final": "https://files.dre.pt/1s/2022/12/25001/0000200005.pdf",
@@ -5948,6 +6028,7 @@
       "derivation": null,
       "label": "Produção de efeitos da atualização",
       "label_en": "Effective date of the update",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://files.dre.pt/1s/2022/12/25001/0000200005.pdf",
         "endereco_final": "https://files.dre.pt/1s/2022/12/25001/0000200005.pdf",
@@ -6024,6 +6105,7 @@
       "derivation": null,
       "label": "Acordos de compensações contingentes",
       "label_en": "Contingent compensation agreements",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://www.tcontas.pt/pt-pt/ProdutosTC/Relatorios/RelatoriosAuditoria/Documents/2012/rel015-2012-2s.pdf",
         "endereco_final": "https://www.tcontas.pt/pt-pt/ProdutosTC/Relatorios/RelatoriosAuditoria/Documents/2012/rel015-2012-2s.pdf",
@@ -6100,6 +6182,7 @@
       "derivation": null,
       "label": "Remuneração não visada",
       "label_en": "Remuneration not cleared by the Court",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://www.tcontas.pt/pt-pt/ProdutosTC/Relatorios/RelatoriosAuditoria/Documents/2012/rel015-2012-2s.pdf",
         "endereco_final": "https://www.tcontas.pt/pt-pt/ProdutosTC/Relatorios/RelatoriosAuditoria/Documents/2012/rel015-2012-2s.pdf",
@@ -6176,6 +6259,7 @@
       "derivation": null,
       "label": "Possíveis infrações nos pagamentos contingentes",
       "label_en": "Possible infringements in contingent payments",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://www.tcontas.pt/pt-pt/ProdutosTC/Relatorios/RelatoriosAuditoria/Documents/2012/rel015-2012-2s.pdf",
         "endereco_final": "https://www.tcontas.pt/pt-pt/ProdutosTC/Relatorios/RelatoriosAuditoria/Documents/2012/rel015-2012-2s.pdf",
@@ -6252,6 +6336,7 @@
       "derivation": null,
       "label": "Fundamento contratual dos pagamentos",
       "label_en": "Contractual basis for payments",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://www.tcontas.pt/pt-pt/ProdutosTC/Relatorios/RelatoriosAuditoria/Documents/2012/rel015-2012-2s.pdf",
         "endereco_final": "https://www.tcontas.pt/pt-pt/ProdutosTC/Relatorios/RelatoriosAuditoria/Documents/2012/rel015-2012-2s.pdf",
@@ -6328,6 +6413,7 @@
       "derivation": null,
       "label": "Encargos futuros previstos no relatório de 2012",
       "label_en": "Future charges forecast in the 2012 report",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://www.tcontas.pt/pt-pt/ProdutosTC/Relatorios/RelatoriosAuditoria/Documents/2012/rel015-2012-2s.pdf",
         "endereco_final": "https://www.tcontas.pt/pt-pt/ProdutosTC/Relatorios/RelatoriosAuditoria/Documents/2012/rel015-2012-2s.pdf",
@@ -6408,6 +6494,7 @@
       "derivation": null,
       "label": "Prazo da concessão da Brisa",
       "label_en": "Brisa concession expiry",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://www.imt-ip.pt/wp-content/uploads/IMTT/Portugues/InfraestruturasRodoviarias/RedeRodoviaria/Documents/Concessoes2014/Brisa_Minuta_Contrato_Concessao.zip",
         "endereco_final": "https://www.imt-ip.pt/wp-content/uploads/IMTT/Portugues/InfraestruturasRodoviarias/RedeRodoviaria/Documents/Concessoes2014/Brisa_Minuta_Contrato_Concessao.zip",
@@ -6484,6 +6571,7 @@
       "derivation": null,
       "label": "Período da concessão da Brisa no IMT",
       "label_en": "Brisa concession period reported by IMT",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://www.imt-ip.pt/rodoviario/infraestruturas-rodoviarias/rede-rodoviaria/concessoes-rede-nacional-de-autoestradas-concessionada-mapa-de-concessoes/",
         "endereco_final": "https://www.imt-ip.pt/rodoviario/infraestruturas-rodoviarias/rede-rodoviaria/concessoes-rede-nacional-de-autoestradas-concessionada-mapa-de-concessoes/",
@@ -6564,6 +6652,7 @@
       "derivation": null,
       "label": "Vias da concessão na minuta de 2008",
       "label_en": "Concession roads in the 2008 draft contract",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://www.imt-ip.pt/wp-content/uploads/IMTT/Portugues/InfraestruturasRodoviarias/RedeRodoviaria/Documents/Concessoes2014/Brisa_Minuta_Contrato_Concessao.zip",
         "endereco_final": "https://www.imt-ip.pt/wp-content/uploads/IMTT/Portugues/InfraestruturasRodoviarias/RedeRodoviaria/Documents/Concessoes2014/Brisa_Minuta_Contrato_Concessao.zip",
@@ -6640,6 +6729,7 @@
       "derivation": null,
       "label": "Pagamento do Estado nas portagens, redação retificada",
       "label_en": "State toll support payment, corrected wording",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://files.dre.pt/1s/2023/01/01300/0000900009.pdf",
         "endereco_final": "https://files.dre.pt/1s/2023/01/01300/0000900009.pdf",
@@ -6716,6 +6806,7 @@
       "derivation": null,
       "label": "Marco ou meta 1.24: Realização de ações de sensibilização e de formação para «construir os percursos dos doentes» no contexto das demências: Estado",
       "label_en": "Milestone or target 1.24: Dementia care pathway awareness and training: Status",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
         "endereco_final": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
@@ -6790,6 +6881,7 @@
       "derivation": null,
       "label": "Marco ou meta 1.32: Modernização das redes locais de tecnologias da informação: Estado",
       "label_en": "Milestone or target 1.32: Modernisation of local information technology networks: Status",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
         "endereco_final": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
@@ -6864,6 +6956,7 @@
       "derivation": null,
       "label": "Marco ou meta 1.33: Implementação de funcionalidades para telessaúde e telemonitorização: Estado",
       "label_en": "Milestone or target 1.33: Implementation of telehealth and remote monitoring functions: Status",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
         "endereco_final": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
@@ -6938,6 +7031,7 @@
       "derivation": null,
       "label": "Marco ou meta 1.3: Conclusão do processo de descentralização das responsabilidades no domínio da saúde nos municípios: Estado",
       "label_en": "Milestone or target 1.3: Completion of municipal health responsibility decentralisation: Status",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
         "endereco_final": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
@@ -7012,6 +7106,7 @@
       "derivation": null,
       "label": "Marco ou meta 1.8: Criação de novos Centros de Responsabilidade Integrados nos hospitais do Serviço Nacional de Saúde: Estado",
       "label_en": "Milestone or target 1.8: Creation of integrated responsibility centres in NHS hospitals: Status",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
         "endereco_final": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
@@ -7086,6 +7181,7 @@
       "derivation": null,
       "label": "Marco ou meta 1.1: Entrada em vigor de atos jurídicos no domínio dos cuidados de saúde primários: Estado",
       "label_en": "Milestone or target 1.1: Entry into force of primary healthcare legal acts: Status",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
         "endereco_final": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
@@ -7160,6 +7256,7 @@
       "derivation": null,
       "label": "Marco ou meta 1.5: Entrada em vigor da nova Lei de Saúde Mental, que estabelecerá os princípios relacionados com os direitos das pessoas com doença mental e regulará a hospitalização e o internamento compulsivos: Estado",
       "label_en": "Milestone or target 1.5: Entry into force of the new Mental Health Law: Status",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
         "endereco_final": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
@@ -7234,6 +7331,7 @@
       "derivation": null,
       "label": "Marco ou meta 1.12: Entrada em vigor do novo regime de exclusividade para o exercício de funções no Serviço Nacional de Saúde: Estado",
       "label_en": "Milestone or target 1.12: Entry into force of the NHS exclusivity regime: Status",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
         "endereco_final": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
@@ -7308,6 +7406,7 @@
       "derivation": null,
       "label": "Marco ou meta 1.40: Assinatura do contrato de gestão para a construção do Hospital de Lisboa Oriental: Estado",
       "label_en": "Milestone or target 1.40: Management contract for construction of Eastern Lisbon Hospital: Status",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
         "endereco_final": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
@@ -7382,6 +7481,7 @@
       "derivation": null,
       "label": "Marco ou meta 1.41: Aprovação do relatório que identifica as necessidades do Serviço Nacional de Saúde em matéria de equipamento médico pesado: Estado",
       "label_en": "Milestone or target 1.41: Approval of the NHS heavy medical equipment needs report: Status",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
         "endereco_final": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
@@ -7456,6 +7556,7 @@
       "derivation": null,
       "label": "Marco ou meta 1.2: Disponibilização de acesso ao instrumento de estratificação do risco para apoiar a gestão clínica nas unidades funcionais dos agrupamentos de centros de saúde: Estado",
       "label_en": "Milestone or target 1.2: Availability of the primary healthcare risk stratification tool: Status",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
         "endereco_final": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
@@ -7530,6 +7631,7 @@
       "derivation": null,
       "label": "Marco ou meta 1.22: Reforço da capacidade de resposta da Rede Nacional dos Cuidados Continuados Integrados e da Rede Nacional de Cuidados Paliativos, na vertente domiciliária: Estado",
       "label_en": "Milestone or target 1.22: Increased home care capacity in the integrated continuing care and palliative care networks: Status",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
         "endereco_final": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
@@ -7604,6 +7706,7 @@
       "derivation": null,
       "label": "Marco ou meta 1.28: Criação de equipas de saúde mental comunitária no Serviço Regional de Saúde da Madeira: Estado",
       "label_en": "Milestone or target 1.28: Creation of community mental health teams in Madeira: Status",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
         "endereco_final": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
@@ -7678,6 +7781,7 @@
       "derivation": null,
       "label": "Marco ou meta 1.11: Entrada em vigor do plano de ação para reforçar os mecanismos de compra centralizada de medicamentos: Estado",
       "label_en": "Milestone or target 1.11: Entry into force of the centralised medicine purchasing action plan: Status",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
         "endereco_final": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
@@ -7752,6 +7856,7 @@
       "derivation": null,
       "label": "Marco ou meta 1.7: Entrada em vigor do novo Plano de Contabilidade de Gestão do Serviço Nacional de Saúde: Estado",
       "label_en": "Milestone or target 1.7: Entry into force of the NHS management accounting plan: Status",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
         "endereco_final": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
@@ -7826,6 +7931,7 @@
       "derivation": null,
       "label": "Marco ou meta 1.9: Criação de novos Centros de Responsabilidade Integrados nos hospitais do Serviço Nacional de Saúde: Estado",
       "label_en": "Milestone or target 1.9: Creation of integrated responsibility centres in NHS hospitals: Status",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
         "endereco_final": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
@@ -7900,6 +8006,7 @@
       "derivation": null,
       "label": "Marco ou meta 1.37: Telemedicina no Serviço Regional de Saúde dos Açores: Estado",
       "label_en": "Milestone or target 1.37: Telemedicine in the Azores regional health service: Status",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
         "endereco_final": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
@@ -7974,6 +8081,7 @@
       "derivation": null,
       "label": "Marco ou meta 1.42: Aquisição de equipamento médico pesado: Estado",
       "label_en": "Milestone or target 1.42: Acquisition of heavy medical equipment: Status",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
         "endereco_final": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
@@ -8048,6 +8156,7 @@
       "derivation": null,
       "label": "Marco ou meta 1.10: Aumento no número de pacientes em hospitalização domiciliária com alta: Estado",
       "label_en": "Milestone or target 1.10: Increase in discharged home hospitalisation patients: Status",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
         "endereco_final": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
@@ -8122,6 +8231,7 @@
       "derivation": null,
       "label": "Marco ou meta 1.34: Disponibilidade de módulos de tecnologias de informação: Estado",
       "label_en": "Milestone or target 1.34: Availability of information technology modules: Status",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
         "endereco_final": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
@@ -8196,6 +8306,7 @@
       "derivation": null,
       "label": "Marco ou meta 1.35: Novo equipamento digital para o Serviço Regional de Saúde da Madeira: Estado",
       "label_en": "Milestone or target 1.35: New digital equipment for the Madeira regional health service: Status",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
         "endereco_final": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
@@ -8270,6 +8381,7 @@
       "derivation": null,
       "label": "Marco ou meta 1.36: Disponibilidade da aplicação e do sítio Web do Serviço Regional de Saúde dos Açores: Estado",
       "label_en": "Milestone or target 1.36: Availability of the Azores regional health service app and website: Status",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
         "endereco_final": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
@@ -8344,6 +8456,7 @@
       "derivation": null,
       "label": "Marco ou meta 1.38: Aquisição de kits de bicicletas: Estado",
       "label_en": "Milestone or target 1.38: Acquisition of bicycle kits: Status",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
         "endereco_final": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
@@ -8418,6 +8531,7 @@
       "derivation": null,
       "label": "Marco ou meta 1.39: Campanha para o Sistema Universal de Apoio à Vida Ativa: Estado",
       "label_en": "Milestone or target 1.39: Campaign for the Universal Support System for Active Living: Status",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
         "endereco_final": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
@@ -8492,6 +8606,7 @@
       "derivation": null,
       "label": "Marco ou meta 1.21: Renovação ou construção no sistema de saúde: Estado",
       "label_en": "Milestone or target 1.21: Renovation or construction in the health system: Status",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
         "endereco_final": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
@@ -8566,6 +8681,7 @@
       "derivation": null,
       "label": "Marco ou meta 1.25: Rede de cuidados de saúde mental: Estado",
       "label_en": "Milestone or target 1.25: Mental healthcare network: Status",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
         "endereco_final": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
@@ -8640,6 +8756,7 @@
       "derivation": null,
       "label": "Marco ou meta 1.17: Aquisição de equipamento e disponibilidade de serviços ou consultas nas unidades locais de saúde: Estado",
       "label_en": "Milestone or target 1.17: Acquisition of equipment and availability of local health unit services or consultations: Status",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
         "endereco_final": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
@@ -8714,6 +8831,7 @@
       "derivation": null,
       "label": "Marco ou meta 1.18: Construção ou renovação de unidades de saúde: Estado",
       "label_en": "Milestone or target 1.18: Construction or renovation of health units: Status",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
         "endereco_final": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
@@ -8788,6 +8906,7 @@
       "derivation": null,
       "label": "Marco ou meta 1.26: Construção e renovação de edifícios para serviços de saúde e equipamento para cuidados de saúde: Estado",
       "label_en": "Milestone or target 1.26: Construction and renovation of health service buildings and healthcare equipment: Status",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
         "endereco_final": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
@@ -8862,6 +8981,7 @@
       "derivation": null,
       "label": "Marco ou meta 1.30: Construção ou renovações no Serviço Regional de Saúde da Região Autónoma da Madeira: Estado",
       "label_en": "Milestone or target 1.30: Construction or renovation in the Madeira regional health service: Status",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
         "endereco_final": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
@@ -8936,6 +9056,7 @@
       "derivation": null,
       "label": "Marco ou meta 1.43: Aquisição de equipamento médico pesado: Estado",
       "label_en": "Milestone or target 1.43: Acquisition of heavy medical equipment: Status",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
         "endereco_final": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
@@ -9010,6 +9131,7 @@
       "derivation": null,
       "label": "Marco ou meta 1.44: Construção. equipamento e veículos para o Serviço Regional de Saúde dos Açores: Estado",
       "label_en": "Milestone or target 1.44: Construction, equipment and vehicles for the Azores regional health service: Status",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
         "endereco_final": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
@@ -9284,6 +9406,7 @@
       },
       "label": "Utentes sem médico de família atribuído",
       "label_en": "Patients without an assigned family doctor",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/utentes-inscritos-em-cuidados-de-saude-primarios/exports/json",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/utentes-inscritos-em-cuidados-de-saude-primarios/exports/json",
@@ -9560,6 +9683,7 @@
       },
       "label": "Utentes sem médico de família atribuído",
       "label_en": "Patients without an assigned family doctor",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/utentes-inscritos-em-cuidados-de-saude-primarios/exports/json",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/utentes-inscritos-em-cuidados-de-saude-primarios/exports/json",
@@ -10031,6 +10155,7 @@
       },
       "label": "Inscritos elegíveis sem médico de família atribuído",
       "label_en": "Eligible registered patients without an assigned family doctor",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/inscritoscuidadosdesaudeprimarios/exports/json",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/inscritoscuidadosdesaudeprimarios/exports/json",
@@ -10697,6 +10822,7 @@
       },
       "label": "Consultas médicas nos cuidados de saúde primários",
       "label_en": "Primary care medical consultations",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/evolucao-das-consultas-medicas-nos-csp/exports/json",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/evolucao-das-consultas-medicas-nos-csp/exports/json",
@@ -11363,6 +11489,7 @@
       },
       "label": "Consultas médicas nos cuidados de saúde primários",
       "label_en": "Primary care medical consultations",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/evolucao-das-consultas-medicas-nos-csp/exports/json",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/evolucao-das-consultas-medicas-nos-csp/exports/json",
@@ -11659,6 +11786,13 @@
       },
       "label": "Consultas médicas hospitalares",
       "label_en": "Hospital medical consultations",
+      "temporal_evidence": {
+        "file": "content/26 Saude e Parcerias Efeitos/source/saude/sns-catalogo.json",
+        "sha256": "fc6bf4974a6adf652841f9f8dbca71d75724fd7ff9291be29b8e7fcdf4460ac5",
+        "dataset": "01_sica_evolucao-mensal-das-consultas-medicas-hospitalares",
+        "field": "metas.dcat.temporal",
+        "quote": "De janeiro de 2013 ao mês n-2 anterior ao atual  (valores acumulados)"
+      },
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/01_sica_evolucao-mensal-das-consultas-medicas-hospitalares/exports/json",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/01_sica_evolucao-mensal-das-consultas-medicas-hospitalares/exports/json",
@@ -11955,6 +12089,13 @@
       },
       "label": "Consultas médicas hospitalares",
       "label_en": "Hospital medical consultations",
+      "temporal_evidence": {
+        "file": "content/26 Saude e Parcerias Efeitos/source/saude/sns-catalogo.json",
+        "sha256": "fc6bf4974a6adf652841f9f8dbca71d75724fd7ff9291be29b8e7fcdf4460ac5",
+        "dataset": "01_sica_evolucao-mensal-das-consultas-medicas-hospitalares",
+        "field": "metas.dcat.temporal",
+        "quote": "De janeiro de 2013 ao mês n-2 anterior ao atual  (valores acumulados)"
+      },
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/01_sica_evolucao-mensal-das-consultas-medicas-hospitalares/exports/json",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/01_sica_evolucao-mensal-das-consultas-medicas-hospitalares/exports/json",
@@ -12466,6 +12607,13 @@
       },
       "label": "Intervenções cirúrgicas programadas e urgentes",
       "label_en": "Scheduled and emergency surgical interventions",
+      "temporal_evidence": {
+        "file": "content/26 Saude e Parcerias Efeitos/source/saude/sns-catalogo.json",
+        "sha256": "fc6bf4974a6adf652841f9f8dbca71d75724fd7ff9291be29b8e7fcdf4460ac5",
+        "dataset": "intervencoes-cirurgicas",
+        "field": "metas.dcat.temporal",
+        "quote": "De janeiro de 2013 ao mês n-2 anterior ao atual (valores acumulados)"
+      },
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/intervencoes-cirurgicas/exports/json",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/intervencoes-cirurgicas/exports/json",
@@ -12977,6 +13125,13 @@
       },
       "label": "Intervenções cirúrgicas programadas e urgentes",
       "label_en": "Scheduled and emergency surgical interventions",
+      "temporal_evidence": {
+        "file": "content/26 Saude e Parcerias Efeitos/source/saude/sns-catalogo.json",
+        "sha256": "fc6bf4974a6adf652841f9f8dbca71d75724fd7ff9291be29b8e7fcdf4460ac5",
+        "dataset": "intervencoes-cirurgicas",
+        "field": "metas.dcat.temporal",
+        "quote": "De janeiro de 2013 ao mês n-2 anterior ao atual (valores acumulados)"
+      },
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/intervencoes-cirurgicas/exports/json",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/intervencoes-cirurgicas/exports/json",
@@ -13273,6 +13428,7 @@
       },
       "label": "Inscritos em lista de espera para cirurgia",
       "label_en": "Patients on the surgical waiting list",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/inscritos-em-lic-dentro-do-tmrg-180-dias/exports/json",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/inscritos-em-lic-dentro-do-tmrg-180-dias/exports/json",
@@ -13569,6 +13725,7 @@
       },
       "label": "Inscritos em lista de espera para cirurgia",
       "label_en": "Patients on the surgical waiting list",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/inscritos-em-lic-dentro-do-tmrg-180-dias/exports/json",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/inscritos-em-lic-dentro-do-tmrg-180-dias/exports/json",
@@ -13850,6 +14007,13 @@
       },
       "label": "Atendimentos em urgência hospitalar",
       "label_en": "Hospital emergency attendances",
+      "temporal_evidence": {
+        "file": "content/26 Saude e Parcerias Efeitos/source/saude/sns-catalogo.json",
+        "sha256": "fc6bf4974a6adf652841f9f8dbca71d75724fd7ff9291be29b8e7fcdf4460ac5",
+        "dataset": "atendimentos-por-tipo-de-urgencia-hospitalar-link",
+        "field": "metas.dcat.temporal",
+        "quote": "De janeiro de 2013 ao mês n-2 anterior ao atual  (valores acumulados)"
+      },
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/atendimentos-por-tipo-de-urgencia-hospitalar-link/exports/json",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/atendimentos-por-tipo-de-urgencia-hospitalar-link/exports/json",
@@ -14131,6 +14295,13 @@
       },
       "label": "Atendimentos em urgência hospitalar",
       "label_en": "Hospital emergency attendances",
+      "temporal_evidence": {
+        "file": "content/26 Saude e Parcerias Efeitos/source/saude/sns-catalogo.json",
+        "sha256": "fc6bf4974a6adf652841f9f8dbca71d75724fd7ff9291be29b8e7fcdf4460ac5",
+        "dataset": "atendimentos-por-tipo-de-urgencia-hospitalar-link",
+        "field": "metas.dcat.temporal",
+        "quote": "De janeiro de 2013 ao mês n-2 anterior ao atual  (valores acumulados)"
+      },
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/atendimentos-por-tipo-de-urgencia-hospitalar-link/exports/json",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/atendimentos-por-tipo-de-urgencia-hospitalar-link/exports/json",
@@ -14347,6 +14518,7 @@
       },
       "label": "Utentes a aguardar vaga na RNCCI",
       "label_en": "Patients waiting for a place in integrated long-term care",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/rncci-episodios/exports/json",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/rncci-episodios/exports/json",
@@ -14573,6 +14745,7 @@
       },
       "label": "Utentes a aguardar vaga na RNCCI",
       "label_en": "Patients waiting for a place in integrated long-term care",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/rncci-episodios/exports/json",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/rncci-episodios/exports/json",
@@ -14647,6 +14820,7 @@
       "derivation": null,
       "label": "Médicos por cem mil habitantes, Bélgica",
       "label_en": "Physicians per hundred thousand inhabitants, Belgium",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/hlth_rs_prs2?lang=EN&sinceTimePeriod=2020&unit=P_HTHAB",
         "endereco_final": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/hlth_rs_prs2?lang=EN&sinceTimePeriod=2020&unit=P_HTHAB",
@@ -14721,6 +14895,7 @@
       "derivation": null,
       "label": "Médicos por cem mil habitantes, Grécia",
       "label_en": "Physicians per hundred thousand inhabitants, Greece",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/hlth_rs_prs2?lang=EN&sinceTimePeriod=2020&unit=P_HTHAB",
         "endereco_final": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/hlth_rs_prs2?lang=EN&sinceTimePeriod=2020&unit=P_HTHAB",
@@ -14795,6 +14970,7 @@
       "derivation": null,
       "label": "Enfermeiros por cem mil habitantes, Luxemburgo",
       "label_en": "Nurses per hundred thousand inhabitants, Luxembourg",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/hlth_rs_prs2?lang=EN&sinceTimePeriod=2020&unit=P_HTHAB",
         "endereco_final": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/hlth_rs_prs2?lang=EN&sinceTimePeriod=2020&unit=P_HTHAB",
@@ -14869,6 +15045,7 @@
       "derivation": null,
       "label": "Médicos por cem mil habitantes, Portugal",
       "label_en": "Physicians per hundred thousand inhabitants, Portugal",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/hlth_rs_prs2?lang=EN&sinceTimePeriod=2020&unit=P_HTHAB",
         "endereco_final": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/hlth_rs_prs2?lang=EN&sinceTimePeriod=2020&unit=P_HTHAB",
@@ -14943,6 +15120,7 @@
       "derivation": null,
       "label": "Enfermeiros por cem mil habitantes, Portugal",
       "label_en": "Nurses per hundred thousand inhabitants, Portugal",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/hlth_rs_prs2?lang=EN&sinceTimePeriod=2020&unit=P_HTHAB",
         "endereco_final": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/hlth_rs_prs2?lang=EN&sinceTimePeriod=2020&unit=P_HTHAB",
@@ -15017,6 +15195,7 @@
       "derivation": null,
       "label": "Enfermeiros por cem mil habitantes, Roménia",
       "label_en": "Nurses per hundred thousand inhabitants, Romania",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/hlth_rs_prs2?lang=EN&sinceTimePeriod=2020&unit=P_HTHAB",
         "endereco_final": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/hlth_rs_prs2?lang=EN&sinceTimePeriod=2020&unit=P_HTHAB",
@@ -15093,6 +15272,7 @@
       "derivation": null,
       "label": "C01 - Serviço Nacional de Saúde: Contratado PRR",
       "label_en": "C01 - National Health Service: Contracted RRP funding",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/10/Relatorio-Monitorizacao-PRR-Sumario-20261014.pdf",
         "endereco_final": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/10/Relatorio-Monitorizacao-PRR-Sumario-20261014.pdf",
@@ -15167,6 +15347,7 @@
       "derivation": null,
       "label": "C01 - Serviço Nacional de Saúde: Pago PRR",
       "label_en": "C01 - National Health Service: Paid RRP funding",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/10/Relatorio-Monitorizacao-PRR-Sumario-20261014.pdf",
         "endereco_final": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/10/Relatorio-Monitorizacao-PRR-Sumario-20261014.pdf",
@@ -15241,6 +15422,7 @@
       "derivation": null,
       "label": "C01 - Serviço Nacional de Saúde: Pago a beneficiários diretos e finais (%)",
       "label_en": "C01 - National Health Service: Paid to direct and final beneficiaries (%)",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/10/Relatorio-Monitorizacao-PRR-Sumario-20261014.pdf",
         "endereco_final": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/10/Relatorio-Monitorizacao-PRR-Sumario-20261014.pdf",
@@ -15315,6 +15497,7 @@
       "derivation": null,
       "label": "Encargos SNS com medicamentos em ambulatório, 2026-01/2026-07",
       "label_en": "NHS medicines expenditure in outpatient care, 2026-01/2026-07",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://www.infarmed.pt/documents/15786/12177210/julho/636731d9-4b24-8fee-1e6b-cfbe168799db?version=1.0",
         "endereco_final": "https://www.infarmed.pt/documents/15786/12177210/julho/636731d9-4b24-8fee-1e6b-cfbe168799db?version=1.0",
@@ -15391,6 +15574,7 @@
       "derivation": null,
       "label": "Encargos SNS com medicamentos em ambulatório, 2025-01/2025-07",
       "label_en": "NHS medicines expenditure in outpatient care, 2025-01/2025-07",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://www.infarmed.pt/documents/15786/12177210/julho/636731d9-4b24-8fee-1e6b-cfbe168799db?version=1.0",
         "endereco_final": "https://www.infarmed.pt/documents/15786/12177210/julho/636731d9-4b24-8fee-1e6b-cfbe168799db?version=1.0",
@@ -15467,6 +15651,7 @@
       "derivation": null,
       "label": "Limitação dos valores Infarmed",
       "label_en": "Infarmed figures limitation",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://www.infarmed.pt/documents/15786/12177210/julho/636731d9-4b24-8fee-1e6b-cfbe168799db?version=1.0",
         "endereco_final": "https://www.infarmed.pt/documents/15786/12177210/julho/636731d9-4b24-8fee-1e6b-cfbe168799db?version=1.0",
@@ -15543,6 +15728,7 @@
       "derivation": null,
       "label": "Encargos SNS com medicamentos em meio hospitalar, 2026-01/2026-07",
       "label_en": "NHS medicines expenditure in hospitals, 2026-01/2026-07",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://www.infarmed.pt/documents/15786/12177214/julho/acb6f898-2e1a-a53a-d8b3-4113036599b4?version=1.0",
         "endereco_final": "https://www.infarmed.pt/documents/15786/12177214/julho/acb6f898-2e1a-a53a-d8b3-4113036599b4?version=1.0",
@@ -15619,6 +15805,7 @@
       "derivation": null,
       "label": "Encargos SNS com medicamentos em meio hospitalar, 2025-01/2025-07",
       "label_en": "NHS medicines expenditure in hospitals, 2025-01/2025-07",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://www.infarmed.pt/documents/15786/12177214/julho/acb6f898-2e1a-a53a-d8b3-4113036599b4?version=1.0",
         "endereco_final": "https://www.infarmed.pt/documents/15786/12177214/julho/acb6f898-2e1a-a53a-d8b3-4113036599b4?version=1.0",
@@ -15695,6 +15882,7 @@
       "derivation": null,
       "label": "Marco ou meta 1.29: Implantação do sistema de classificação, do perfil funcional e do sistema de referenciação dos utentes para o modelo regional de cuidados continuados integrados da Madeira: Estado",
       "label_en": "Milestone or target 1.29: Health milestone 1.29: Status",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
         "endereco_final": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
@@ -15769,6 +15957,7 @@
       "derivation": null,
       "label": "Marco ou meta 1.4: Entrada em vigor do novo Decreto-Lei de Saúde Mental, que estabelecerá os princípios para a organização dos cuidados de saúde mental: Estado",
       "label_en": "Milestone or target 1.4: Health milestone 1.4: Status",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
         "endereco_final": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
@@ -15843,6 +16032,7 @@
       "derivation": null,
       "label": "Marco ou meta 1.13: Entrada em vigor dos novos termos para a referenciação de episódios de urgência avaliados como brancos, azuis ou verdes nos serviços de urgência hospitalar para outros tipos de serviços de saúde, incluindo cuidados de saúde primários: Estado",
       "label_en": "Milestone or target 1.13: Health milestone 1.13: Status",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
         "endereco_final": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
@@ -15917,6 +16107,7 @@
       "derivation": null,
       "label": "Marco ou meta 1.20: Entrada em vigor do regulamento relativo à atribuição de apoios financeiros pelas Administrações Regionais de Saúde: Estado",
       "label_en": "Milestone or target 1.20: Health milestone 1.20: Status",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
         "endereco_final": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
@@ -15991,6 +16182,7 @@
       "derivation": null,
       "label": "Marco ou meta 1.6: Entrada em vigor do novo modelo de contratos de gestão: Estado",
       "label_en": "Milestone or target 1.6: Health milestone 1.6: Status",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
         "endereco_final": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
@@ -16078,6 +16270,7 @@
       },
       "label": "Variação homóloga de consultas nos cuidados primários",
       "label_en": "Year-on-year change in primary-care consultations",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/evolucao-das-consultas-medicas-nos-csp/exports/json",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/evolucao-das-consultas-medicas-nos-csp/exports/json",
@@ -16167,6 +16360,13 @@
       },
       "label": "Variação homóloga de cirurgias acumuladas de janeiro a julho",
       "label_en": "Year-on-year change in January to July surgeries",
+      "temporal_evidence": {
+        "file": "content/26 Saude e Parcerias Efeitos/source/saude/sns-catalogo.json",
+        "sha256": "fc6bf4974a6adf652841f9f8dbca71d75724fd7ff9291be29b8e7fcdf4460ac5",
+        "dataset": "intervencoes-cirurgicas",
+        "field": "metas.dcat.temporal",
+        "quote": "De janeiro de 2013 ao mês n-2 anterior ao atual (valores acumulados)"
+      },
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/intervencoes-cirurgicas/exports/json",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/intervencoes-cirurgicas/exports/json",
@@ -16256,6 +16456,7 @@
       },
       "label": "Variação homóloga de inscritos para cirurgia",
       "label_en": "Year-on-year change in surgery waiting list",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/inscritos-em-lic-dentro-do-tmrg-180-dias/exports/json",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/inscritos-em-lic-dentro-do-tmrg-180-dias/exports/json",
@@ -16345,6 +16546,7 @@
       },
       "label": "Variação homóloga de utentes à espera de cuidados continuados",
       "label_en": "Year-on-year change in patients waiting for continuing care",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/rncci-episodios/exports/json",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/rncci-episodios/exports/json",
@@ -16436,6 +16638,7 @@
       },
       "label": "Encargos SNS com medicamentos em ambulatório e no hospital",
       "label_en": "NHS expenditure on outpatient and hospital medicines",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://www.infarmed.pt/documents/15786/12177210/julho/636731d9-4b24-8fee-1e6b-cfbe168799db?version=1.0",
         "endereco_final": "https://www.infarmed.pt/documents/15786/12177210/julho/636731d9-4b24-8fee-1e6b-cfbe168799db?version=1.0",
@@ -16527,6 +16730,7 @@
       },
       "label": "Encargos SNS com medicamentos em ambulatório e no hospital",
       "label_en": "NHS expenditure on outpatient and hospital medicines",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://www.infarmed.pt/documents/15786/12177210/julho/636731d9-4b24-8fee-1e6b-cfbe168799db?version=1.0",
         "endereco_final": "https://www.infarmed.pt/documents/15786/12177210/julho/636731d9-4b24-8fee-1e6b-cfbe168799db?version=1.0",
@@ -16618,6 +16822,7 @@
       },
       "label": "Variação homóloga dos encargos SNS com medicamentos",
       "label_en": "Year-on-year change in NHS medicines expenditure",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://www.infarmed.pt/documents/15786/12177210/julho/636731d9-4b24-8fee-1e6b-cfbe168799db?version=1.0",
         "endereco_final": "https://www.infarmed.pt/documents/15786/12177210/julho/636731d9-4b24-8fee-1e6b-cfbe168799db?version=1.0",
@@ -16706,6 +16911,7 @@
       },
       "label": "Contratado na componente Saúde do PRR, leitura em milhões",
       "label_en": "Contracted for RRP Health, read in millions",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/10/Relatorio-Monitorizacao-PRR-Sumario-20261014.pdf",
         "endereco_final": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/10/Relatorio-Monitorizacao-PRR-Sumario-20261014.pdf",
@@ -16792,6 +16998,7 @@
       },
       "label": "Pago na componente Saúde do PRR, leitura em milhões",
       "label_en": "Paid for RRP Health, read in millions",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/10/Relatorio-Monitorizacao-PRR-Sumario-20261014.pdf",
         "endereco_final": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/10/Relatorio-Monitorizacao-PRR-Sumario-20261014.pdf",
@@ -16881,6 +17088,7 @@
       },
       "label": "PRR Saúde contratado por pagar",
       "label_en": "Contracted RRP Health amount still unpaid",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/10/Relatorio-Monitorizacao-PRR-Sumario-20261014.pdf",
         "endereco_final": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/10/Relatorio-Monitorizacao-PRR-Sumario-20261014.pdf",
@@ -16970,6 +17178,7 @@
       },
       "label": "Parte do contratado no PRR Saúde por pagar",
       "label_en": "Unpaid share of contracted RRP Health",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/10/Relatorio-Monitorizacao-PRR-Sumario-20261014.pdf",
         "endereco_final": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/10/Relatorio-Monitorizacao-PRR-Sumario-20261014.pdf",
@@ -17090,6 +17299,7 @@
       },
       "label": "Marcos e metas da componente Saúde no anexo anual",
       "label_en": "Milestones and targets of Health in the annual annex",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
         "endereco_final": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
@@ -17210,6 +17420,7 @@
       },
       "label": "Marcos e metas completos da componente Saúde no anexo anual",
       "label_en": "Completed milestones and targets of Health in the annual annex",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
         "endereco_final": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf",
@@ -17399,6 +17610,7 @@
       },
       "label": "Dívida das entidades SNS a fornecedores externos",
       "label_en": "NHS entities’ debt to external suppliers",
+      "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",
         "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade",

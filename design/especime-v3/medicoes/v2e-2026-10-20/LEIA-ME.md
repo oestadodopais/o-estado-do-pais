@@ -8,7 +8,7 @@ Implementação em verificação. Os portões completos e as capturas ainda não
 
 A dívida a fornecedores é a soma das 53 entidades, convertida de euros para milhões e arredondada a uma casa decimal: 1 517,5. Os pagamentos em atraso das EPE são `dgo-atraso-45-p`, 689,9 milhões em agosto. A regularização acumulada é `dgo-regularizacao-ae`, 1 398,6 milhões até agosto. São três medidas distintas.
 
-Os totais mensais dos três conjuntos hospitalares estão registados na partida. A progressão dentro do ano e o reinício em janeiro sustentam a leitura como acumulados. A descrição dos conjuntos não define expressamente essa natureza. O livro, as notas e as provas preservam esta distinção e usam o período de janeiro ao mês de referência.
+Os totais mensais dos três conjuntos hospitalares estão registados na partida. O campo metas.dcat.temporal do catálogo dos próprios conjuntos declara «valores acumulados». A definição está preservada em partida.json e conferida pelo extrator; a progressão dentro do ano e o reinício em janeiro também são verificados. O livro, as notas e as provas usam o período de janeiro ao mês de referência.
 
 ## Decisões
 

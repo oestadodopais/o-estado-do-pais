@@ -86,6 +86,8 @@ import { matchPath, routePath, LANGS } from './routes.mjs';
 import { t } from '../i18n/strings.mjs';
 import { FIGURAS_PDM, fixadorDoLimiar, comparacaoComOLimiar } from '../data/figuras.mjs';
 import { MANCHETE_DO_PAIS } from './inicio.mjs';
+import { textoDocumentalConferido } from './prova-efeitos.mjs';
+import { FAMILIAS_DAS_LINHAS } from '../data/o-que-e-das-familias.mjs';
 
 /**
  * As duas medidas, e porque são duas.
@@ -395,6 +397,11 @@ function modeloDoInicio(lang) {
 function modeloDaLinha(id, lang) {
   const s = t(lang);
   const claim = getClaim(id);
+  const familias = /** @type {Record<string,{nome?:{pt:string,en:string}}>} */ (FAMILIAS_DAS_LINHAS);
+  const nomeDocumental = textoDocumentalConferido(claim) ? familias[id]?.nome?.[lang] : null;
+  if (claim.texto_documental && (!nomeDocumental || /\d/.test(nomeDocumental))) {
+    throw new Error(`cartões: falta o nome documental conferido de ${id}.`);
+  }
   const figura = FIGURAS_PDM.find((f) => f.claim === id) ?? null;
   const estado = figura ? (estadoDaMedida(claim, figura.limiar) ?? 'sem') : 'sem';
 
@@ -438,7 +445,7 @@ function modeloDaLinha(id, lang) {
        razão estava escrita em `src/lib/livro.mjs` como uma dívida: «traduzir a
        unidade ali é reconstruir os cartões todos, trabalho de outro bloco». É
        este o bloco. */
-    manchete: valorComUnidade(claim, lang),
+    manchete: nomeDocumental ?? valorComUnidade(claim, lang),
     fila: null,
     aparelho,
     estado: { estado, palavra: PALAVRA[estado] },

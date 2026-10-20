@@ -8082,10 +8082,10 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a regra do diploma sobre o financiamento do apoio às concessionárias pelos descontos nas portagens."
+        "É a atualização das tarifas e taxas de portagem fixada pelo diploma."
       ],
       "en": [
-        "It is the decree’s rule on financing support to concessionaires for toll discounts."
+        "It is the toll rate update set by the decree."
       ]
     }
   },
@@ -8124,10 +8124,10 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a regra do diploma sobre o financiamento do apoio às concessionárias pelos descontos nas portagens."
+        "É a data em que a atualização das tarifas e taxas de portagem produz efeitos."
       ],
       "en": [
-        "It is the decree’s rule on financing support to concessionaires for toll discounts."
+        "It is the date when the toll rate update takes effect."
       ]
     }
   },
@@ -8236,10 +8236,10 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o prazo da concessão Brisa indicado no documento identificado na fonte."
+        "São as vias abrangidas pela concessão Brisa na minuta do contrato."
       ],
       "en": [
-        "It is the Brisa concession term stated in the document identified as the source."
+        "These are the roads covered by the Brisa concession in the draft contract."
       ]
     }
   },

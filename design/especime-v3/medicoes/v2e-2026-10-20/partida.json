@@ -1745,11 +1745,18 @@
         "2026-06": "7393757",
         "2026-07": "8700823"
       },
-      "natureza": "Acumulado desde janeiro, inferido da progressão dos registos e do reinício em janeiro; a descrição não o define expressamente.",
+      "natureza": "Acumulado desde janeiro, confirmado no campo metas.dcat.temporal do catálogo do próprio conjunto.",
       "periodos_corrigidos": [
         "2025-01/2025-07",
         "2026-01/2026-07"
-      ]
+      ],
+      "definicao_temporal": {
+        "ficheiro": "content/26 Saude e Parcerias Efeitos/source/saude/sns-catalogo.json",
+        "sha256": "fc6bf4974a6adf652841f9f8dbca71d75724fd7ff9291be29b8e7fcdf4460ac5",
+        "dataset": "01_sica_evolucao-mensal-das-consultas-medicas-hospitalares",
+        "campo": "metas.dcat.temporal",
+        "excerto": "De janeiro de 2013 ao mês n-2 anterior ao atual  (valores acumulados)"
+      }
     },
     {
       "ids": [
@@ -1783,11 +1790,18 @@
         "2026-06": "444708",
         "2026-07": "520373"
       },
-      "natureza": "Acumulado desde janeiro, inferido da progressão dos registos e do reinício em janeiro; a descrição não o define expressamente.",
+      "natureza": "Acumulado desde janeiro, confirmado no campo metas.dcat.temporal do catálogo do próprio conjunto.",
       "periodos_corrigidos": [
         "2025-01/2025-07",
         "2026-01/2026-07"
-      ]
+      ],
+      "definicao_temporal": {
+        "ficheiro": "content/26 Saude e Parcerias Efeitos/source/saude/sns-catalogo.json",
+        "sha256": "fc6bf4974a6adf652841f9f8dbca71d75724fd7ff9291be29b8e7fcdf4460ac5",
+        "dataset": "intervencoes-cirurgicas",
+        "campo": "metas.dcat.temporal",
+        "excerto": "De janeiro de 2013 ao mês n-2 anterior ao atual (valores acumulados)"
+      }
     },
     {
       "ids": [
@@ -1820,11 +1834,18 @@
         "2026-06": "2762677",
         "2026-07": "3261701"
       },
-      "natureza": "Acumulado desde janeiro, inferido da progressão dos registos e do reinício em janeiro; a descrição não o define expressamente.",
+      "natureza": "Acumulado desde janeiro, confirmado no campo metas.dcat.temporal do catálogo do próprio conjunto.",
       "periodos_corrigidos": [
         "2025-01/2025-07",
         "2026-01/2026-07"
-      ]
+      ],
+      "definicao_temporal": {
+        "ficheiro": "content/26 Saude e Parcerias Efeitos/source/saude/sns-catalogo.json",
+        "sha256": "fc6bf4974a6adf652841f9f8dbca71d75724fd7ff9291be29b8e7fcdf4460ac5",
+        "dataset": "atendimentos-por-tipo-de-urgencia-hospitalar-link",
+        "campo": "metas.dcat.temporal",
+        "excerto": "De janeiro de 2013 ao mês n-2 anterior ao atual  (valores acumulados)"
+      }
     }
   ],
   "divergencias": []

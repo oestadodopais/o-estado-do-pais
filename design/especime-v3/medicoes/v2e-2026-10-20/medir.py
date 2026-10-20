@@ -119,10 +119,16 @@ for prefix in ("sns-consultas-hospitalares-", "sns-cirurgias-", "sns-urgencias-"
             if record[field] is not None:
                 totals[record[spec["time_field"]]] += Decimal(str(record[field]))
     window = {k: str(v) for k, v in sorted(totals.items()) if "2025-01" <= k <= "2026-07"}
+    metadata = (motor / spec["metadata_file"]).read_bytes()
+    dataset = next(r for r in json.loads(metadata)["results"] if r["dataset_id"] == spec["dataset"])
+    temporal = dataset["metas"]["dcat"]["temporal"]
+    assert "valores acumulados" in temporal
     series.append(dict(ids=[prefix+"2025-07", prefix+"2026-07"], ficheiro=spec["file"],
                        sha256=hashlib.sha256(body).hexdigest(), campos=spec["fields"],
                        totais_por_mes=window,
-                       natureza="Acumulado desde janeiro, inferido da progressão dos registos e do reinício em janeiro; a descrição não o define expressamente.",
+                       natureza="Acumulado desde janeiro, confirmado no campo metas.dcat.temporal do catálogo do próprio conjunto.",
+                       definicao_temporal=dict(ficheiro=spec["metadata_file"], sha256=hashlib.sha256(metadata).hexdigest(),
+                                              dataset=spec["dataset"], campo="metas.dcat.temporal", excerto=temporal),
                        periodos_corrigidos=["2025-01/2025-07", "2026-01/2026-07"]))
 out = dict(livro="content/26 Saude e Parcerias Efeitos/ledger.json",
            sha256=hashlib.sha256(raw).hexdigest(),
