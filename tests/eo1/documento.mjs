@@ -6,6 +6,7 @@ import { parse } from 'node-html-parser';
 import { loadClaims } from '../../src/lib/ledger.mjs';
 import { NOMES_EO1 } from '../../src/data/nomes-eo1.mjs';
 import { conferirNomeEo1 } from '../../scripts/nomes-eo1-do-portao.mjs';
+import { superficieDe } from '../../scripts/voz-palavras.mjs';
 const slug='orcamento-2027-o-que-muda-e-para-quem';
 const norm=s=>String(s).replace(/[\u00a0\u202f]/g,' ');
 // Python conserva a distinção entre 300 e 300.0 no resumo da linha.
@@ -19,6 +20,11 @@ function canonical(x,shape){
 }
 const sha=x=>createHash('sha256').update(canonical(x,numberShape[x.id])).digest('hex');
 const claims=loadClaims();
+const quotedClaim=[...claims.values()].find(c=>c.value===c.excerpt&&['texto','afirmação'].includes(c.unit)&&/\blimiar\b/.test(c.excerpt));
+assert(quotedClaim,'controlo da citação ausente');
+const htmlQuote=text=>`<body><span data-claim="${quotedClaim.id}">${text.replaceAll('&','&amp;').replaceAll('<','&lt;')}</span></body>`;
+assert(!superficieDe(htmlQuote(quotedClaim.excerpt)).includes('limiar'),'citação integral confundida com prosa');
+assert(superficieDe(htmlQuote(quotedClaim.excerpt+' limiar')).includes('limiar'),'marca não pode dispensar texto acrescentado');
 function field(row,type,lang){
  if(type==='excerto')return norm(row.excerpt);
  if(type==='documento')return row.document.title;

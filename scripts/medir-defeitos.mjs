@@ -1736,6 +1736,11 @@ const PRIVACIDADE_INGLESA_DESCRICAO =
 const LADO_ABAIXO = 'Portugal está abaixo do valor de referência da Comissão Europeia, que é';
 const LADO_ENTRE = 'Portugal está entre os valores de referência da Comissão Europeia, que são';
 const RETIRADAS_DENTRO_DE_FRASE = new Map([
+  // EO1: a atualização da contagem faz o índice mostrar a definição desta linha.
+  // As antigas portas isoladas continuam proibidas; só se admite a definição inteira.
+  ['estudos publicados', new Set(['É o número de edições dos estudos publicados; a edição portuguesa e a inglesa do mesmo estudo contam em separado.'])],
+  ['Edições', new Set(['É o número de edições dos estudos publicados; a edição portuguesa e a inglesa do mesmo estudo contam em separado.'])],
+  ['Editions', new Set(['It is the number of editions of the studies published; the Portuguese and English editions of the same study count separately.'])],
   ['abaixo do valor de referência', new Set([`${LADO_ABAIXO} %.`, `${LADO_ABAIXO} − %.`, `${LADO_ABAIXO} − pp.`, `${LADO_ABAIXO} pp.`])],
   ['entre os valores de referência', new Set([`${LADO_ENTRE} − % e %.`, `${LADO_ENTRE} % e %.`])],
   [

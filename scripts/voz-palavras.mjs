@@ -65,8 +65,11 @@
  */
 import fs from 'node:fs';
 import path from 'node:path';
-import { parse } from 'node-html-parser';
 import { classeDoCampoDaSerie } from './campos-da-serie.mjs';
+import { loadClaims } from '../src/lib/ledger.mjs';
+import { matchPath } from '../src/lib/routes.mjs';
+import { lerPaginaComCodigo, tirarCodigoConferido } from './incorporar-do-portao.mjs';
+const linhasCitadas = loadClaims();
 
 /**
  * As palavras, e o que se escreve em vez de cada uma.
@@ -274,8 +277,21 @@ export const ATRIBUTOS_A_VISTA = ['title', 'aria-label', 'alt', 'placeholder'];
  * @returns {string}
  */
 export function superficieDe(html, opcoes = {}) {
-  const root = parse(html);
+  const root = lerPaginaComCodigo(html);
+  if (root.querySelector('[data-incorporar-codigo]')) {
+    const canonica = root.querySelector('link[rel="canonical"]')?.getAttribute('href');
+    if (!canonica) throw Error('ER1: código sem página canónica para a conferência da voz.');
+    tirarCodigoConferido(root, matchPath(new URL(canonica).pathname));
+  }
   for (const fora of root.querySelectorAll('script, style')) fora.remove();
+  // Um valor textual só sai como citação quando é o excerto integral da linha.
+  // Uma marca solta ou uma paráfrase continua a ser lida pela régua.
+  for (const campo of root.querySelectorAll('[data-claim]')) {
+    const linha = linhasCitadas.get(campo.getAttribute('data-claim'));
+    const normal = s => String(s).replace(/\s+/g, ' ').trim();
+    if (linha && ['texto', 'afirmação'].includes(linha.unit) && linha.value === linha.excerpt &&
+        normal(campo.textContent) === normal(linha.excerpt)) campo.remove();
+  }
   for (const campo of root.querySelectorAll(
     `[data-linha-campo], [data-verbatim], [data-registo], [data-agenda], [data-nonledger="nome-oficial-da-medida"], ${CAMPOS_DE_CORRECAO_TRANSCRITOS.map(
       (c) => `[data-correcao-campo="${c}"]`,

@@ -822,3 +822,10 @@ Seis declarações substituídas: comparação e opinião da Saúde nas duas edi
 | bloco | mudança | estado | nota |
 |---|---|---|---|
 | v2d | Retirada em PT e EN da atribuição de financiamento das entidades do SNS aos acordos | por ler | As declarações acompanham a redação pedida; os portões conferem a coincidência com o HTML. |
+
+
+## EO1: o estudo do Orçamento de 2027
+
+| bloco | linhas | leitura | quem, quando |
+| --- | --- | --- | --- |
+| eo1 | 8 novas; 4 retiradas | por ler | Codex gpt-6-astra, 20.10.2026: frases e contagens extraídas da construção. A leitura cruzada do diff fica pendente antes da fusão. |

@@ -1,6 +1,7 @@
 import { nomeDoProjeto } from '../data/nomes-das-medidas.mjs';
 import { routePath } from './routes.mjs';
 import { ROTULOS_B1 } from '../data/rotulos-b1.mjs';
+import { ESTUDO_EO1, PORTAS_EO1 } from '../data/portas-eo1.mjs';
 /**
  * O renderizador do registo de conteúdo: do registo para a página de leitura.
  *
@@ -586,11 +587,16 @@ export function pecasDoCorpo({
       return;
     }
     if (bloco.kind === 'paragraph') {
-      saida.html(`<p${marcaDoBloco}${atributosDaUnidade(base)}>`);
+      const lang = chave.endsWith('/en') ? 'en' : 'pt';
+      const porta = chave === `${ESTUDO_EO1}/${lang}` && bloco.links?.length === 1
+        ? Object.entries(PORTAS_EO1).find(([id, nomes]) =>
+          nomes[lang] === bloco.text && bloco.links?.[0]?.href === `${routePath('discussao',lang)}#${id}`)?.[0]
+        : null;
+      const integracao = porta ? ` class="regra-portas discussao-porta" data-discussao-integracao="${porta}" data-discussao-condicao="estudo-eo1"` : '';
+      saida.html(`<p${marcaDoBloco}${atributosDaUnidade(base)}${integracao}>`);
       escreveUnidade(bloco, base, saida, ctx);
       saida.html('</p>');
       if (bloco.source_rows?.length) {
-        const lang = chave.endsWith('/en') ? 'en' : 'pt';
         saida.html(`<details class="texto-fontes" data-fontes-da-unidade="${escapaAtributo(base)}"><summary>${ROTULOS_B1[lang].fontesDoParagrafo}</summary><ul>`);
         for (const row of bloco.source_rows) {
           const id = linhaDoSitio(row);

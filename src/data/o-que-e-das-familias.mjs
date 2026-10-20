@@ -8847,15 +8847,15 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "pm-q3-2-r13-c0": {
     "nome": {
-      "pt": "Atualização do limite do mínimo de existência",
-      "en": "Updating the minimum subsistence threshold"
+      "pt": "Atualização do mínimo de existência",
+      "en": "Updating the income below which no personal income tax is due"
     },
     "frase": {
       "pt": [
-        "É o valor de «Atualização do limite do mínimo de existência» no quadro das medidas com impacto orçamental, para o período e na unidade indicados."
+        "É o valor de «Atualização do mínimo de existência» no quadro das medidas com impacto orçamental, para o período e na unidade indicados."
       ],
       "en": [
-        "It is the value of «Updating the minimum subsistence threshold» in the table of measures with a budgetary impact, for the stated period and unit."
+        "It is the value of «Updating the income below which no personal income tax is due» in the table of measures with a budgetary impact, for the stated period and unit."
       ]
     }
   },

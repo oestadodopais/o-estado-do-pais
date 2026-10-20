@@ -5,6 +5,7 @@ import {loadClaims} from '../../../../src/lib/ledger.mjs';
 import {NOMES_EO1} from '../../../../src/data/nomes-eo1.mjs';
 const claims=loadClaims(),cross=JSON.parse(fs.readFileSync('ledger/cruzamentos/eo1.json','utf8'));
 const especiais={
+ 'pm-q3-2-r13-c0':['Atualização do mínimo de existência','Updating the income below which no personal income tax is due'],
  'diploma-irc-artigo3':['Percurso legal da taxa geral do IRC','Statutory path of the corporate income tax rate'],
  'diploma-habitacao-preambulo':['IVA reduzido na construção e tributação das rendas','Reduced construction VAT and taxation of rents'],
  'pm-q3-2-r7-c0':['Redução do IVA na construção','Construction VAT reduction'],
