@@ -1,0 +1,38 @@
+{
+  "cabeca": "7b2a08907aacd73c7cf89b4dcf8d114f83ca8a43",
+  "edicoes": [
+    "en",
+    "pt"
+  ],
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "paginas": 40,
+  "recortes": 90,
+  "sha256_conferidos": 130,
+  "recursos_conferidos": 18,
+  "transbordo_horizontal": 0,
+  "erros_do_navegador": 0,
+  "recursos_recusados": 0,
+  "pedidos_externos": 0,
+  "leitura_visual": [
+    "recibo-dotacoes-pt-390-cabecalho.png",
+    "recibo-dotacoes-en-390-cabecalho.png",
+    "recibo-contratos-pt-390-cabecalho.png",
+    "recibo-contratos-en-390-cabecalho.png",
+    "discussao-pt-390-saude-comparacao.png",
+    "discussao-en-1600-saude-comparacao.png",
+    "discussao-pt-390-saude-opiniao.png",
+    "discussao-en-390-saude-opiniao.png",
+    "recibo-variacao-pt-390-cabecalho.png",
+    "recibo-variacao-en-390-cabecalho.png",
+    "discussao-pt-1600-parcerias-comparacao.png",
+    "discussao-en-390-parcerias-comparacao.png"
+  ],
+  "achados": [],
+  "observacao": "Nos doze recortes inspecionados, cabeçalhos, frases, valores e selos legíveis, sem cortes de texto ou sobreposições. Os cabeçalhos textuais identificam o orçamento para 2027 nas duas edições. Os restantes PNG foram conferidos por hash e pelas medidas do navegador. Os hashes do HTML capturado coincidem com os da conferência dos parágrafos e recibos."
+}

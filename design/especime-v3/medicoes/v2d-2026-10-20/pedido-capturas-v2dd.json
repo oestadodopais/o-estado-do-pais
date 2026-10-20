@@ -1,0 +1,69 @@
+{
+  "paginas": [
+    {
+      "nome": "discussao",
+      "pt": "/o-que-se-discute/",
+      "en": "/en/under-discussion/",
+      "recortes": [
+        {
+          "nome": "saude",
+          "seletor": "#saude-no-orcamento"
+        },
+        {
+          "nome": "parcerias",
+          "seletor": "#parcerias-rodoviarias"
+        },
+        {
+          "nome": "saude-comparacao",
+          "seletor": "#saude-no-orcamento [data-discussao-parte=\"comparacao\"]"
+        },
+        {
+          "nome": "saude-recomendacao",
+          "seletor": "#saude-no-orcamento [data-discussao-parte=\"recomendacao\"]"
+        },
+        {
+          "nome": "parcerias-comparacao",
+          "seletor": "#parcerias-rodoviarias [data-discussao-parte=\"comparacao\"]"
+        },
+        {
+          "nome": "saude-opiniao",
+          "seletor": "#saude-no-orcamento [data-discussao-parte=\"opiniao\"]"
+        }
+      ]
+    },
+    {
+      "nome": "recibo-dotacoes",
+      "pt": "/livro-razao/oe-2027-outras-despesas-dotacoes-execucao/",
+      "en": "/en/ledger/oe-2027-outras-despesas-dotacoes-execucao/",
+      "recortes": [
+        {
+          "nome": "cabecalho",
+          "seletor": ".linha-cabeca"
+        }
+      ]
+    },
+    {
+      "nome": "recibo-contratos",
+      "pt": "/livro-razao/oe-2027-saude-dotacao-reforco-contratos-programa/",
+      "en": "/en/ledger/oe-2027-saude-dotacao-reforco-contratos-programa/",
+      "recortes": [
+        {
+          "nome": "cabecalho",
+          "seletor": ".linha-cabeca"
+        }
+      ]
+    },
+    {
+      "nome": "recibo-variacao",
+      "pt": "/livro-razao/der-saude-outras-correntes-variacao-abs/",
+      "en": "/en/ledger/der-saude-outras-correntes-variacao-abs/",
+      "recortes": [
+        {
+          "nome": "cabecalho",
+          "seletor": ".linha-cabeca"
+        }
+      ]
+    }
+  ],
+  "cabeca": "7b2a08907aacd73c7cf89b4dcf8d114f83ca8a43"
+}

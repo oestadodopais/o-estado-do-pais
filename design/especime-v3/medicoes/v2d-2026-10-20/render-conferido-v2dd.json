@@ -1,0 +1,83 @@
+{
+  "ok": true,
+  "cabeca": "7b2a08907aacd73c7cf89b4dcf8d114f83ca8a43",
+  "paragrafos": 60,
+  "paginas": [
+    {
+      "lang": "pt",
+      "ficheiro": "o-que-se-discute/index.html",
+      "sha256": "21b6ca4d0a2df8ab02eaa8f345dff9dcf2e7501e2b49753b788f31eca16dada7"
+    },
+    {
+      "lang": "en",
+      "ficheiro": "en/under-discussion/index.html",
+      "sha256": "4f551ff31d7f0ee7025572104e366ba0ee85238d46d8b1a3f203f4b60dfae539"
+    }
+  ],
+  "recibos": [
+    {
+      "id": "oe-2027-outras-despesas-dotacoes-execucao",
+      "lang": "pt",
+      "ficheiro": "livro-razao/oe-2027-outras-despesas-dotacoes-execucao/index.html",
+      "sha256": "4a1a90231b677894b10703f38396596d45b8aef3609d7b11ad80c5a492b8ab24",
+      "cabecalho": "Dotações a alocar durante a execução, orçamento para 2027",
+      "reference_date": "2027",
+      "published_at": "2026-10-08",
+      "excerto_ou_derivacao": "Neste agregado estão ainda previstas dotações destinadas a alocar a outras entidades 26 em sede de execução, nomeadamente nos Programas Legados da Saúde e da Defesa."
+    },
+    {
+      "id": "oe-2027-saude-dotacao-reforco-contratos-programa",
+      "lang": "pt",
+      "ficheiro": "livro-razao/oe-2027-saude-dotacao-reforco-contratos-programa/index.html",
+      "sha256": "be6b3df02514ffc19b0c8f3d6bcdcbc347ea059a8c0c0acc37db7e7d6f77a2b0",
+      "cabecalho": "Dotação para reforço dos contratos-programa da Saúde, orçamento para 2027",
+      "reference_date": "2027",
+      "published_at": "2026-10-08",
+      "excerto_ou_derivacao": "São objeto de afetação específica no decurso da execução orçamental. Relevam, no Programa Legado da Defesa, a dotação destinada às forças nacionais destacadas, a afetar sobretudo aos ramos das Forças Armadas, e, no Programa Legado da Saúde, a dotação para reforço no âmbito dos contratos-programa cuja contratualização ainda decorre."
+    },
+    {
+      "id": "der-saude-outras-correntes-variacao-abs",
+      "lang": "pt",
+      "ficheiro": "livro-razao/der-saude-outras-correntes-variacao-abs/index.html",
+      "sha256": "c3ac9e858646d99382720347e3af26a44d1c9c660a4d2a3b3cdf5e09e1b1e075",
+      "cabecalho": "Variação absoluta das outras despesas correntes da Saúde",
+      "reference_date": "2027",
+      "published_at": null,
+      "excerto_ou_derivacao": "(oe-2027-saude-outras-correntes-2027) − (oe-2027-saude-outras-correntes-2026). 303,7 − 32,4 = 271,3"
+    },
+    {
+      "id": "oe-2027-outras-despesas-dotacoes-execucao",
+      "lang": "en",
+      "ficheiro": "en/ledger/oe-2027-outras-despesas-dotacoes-execucao/index.html",
+      "sha256": "6a95f9ebf62712691519319e1636b5c7f45d091c60da55ae4e8873769f785841",
+      "cabecalho": "Appropriations to allocate during execution, budget for 2027",
+      "reference_date": "2027",
+      "published_at": "2026-10-08",
+      "excerto_ou_derivacao": "Neste agregado estão ainda previstas dotações destinadas a alocar a outras entidades 26 em sede de execução, nomeadamente nos Programas Legados da Saúde e da Defesa."
+    },
+    {
+      "id": "oe-2027-saude-dotacao-reforco-contratos-programa",
+      "lang": "en",
+      "ficheiro": "en/ledger/oe-2027-saude-dotacao-reforco-contratos-programa/index.html",
+      "sha256": "5d28fa82f12465203295662fd47f606b374884cd2511eb93895f916814151e6d",
+      "cabecalho": "Appropriation to reinforce Health contract-programmes, budget for 2027",
+      "reference_date": "2027",
+      "published_at": "2026-10-08",
+      "excerto_ou_derivacao": "São objeto de afetação específica no decurso da execução orçamental. Relevam, no Programa Legado da Defesa, a dotação destinada às forças nacionais destacadas, a afetar sobretudo aos ramos das Forças Armadas, e, no Programa Legado da Saúde, a dotação para reforço no âmbito dos contratos-programa cuja contratualização ainda decorre."
+    },
+    {
+      "id": "der-saude-outras-correntes-variacao-abs",
+      "lang": "en",
+      "ficheiro": "en/ledger/der-saude-outras-correntes-variacao-abs/index.html",
+      "sha256": "fe57d02d28c69d0085d73e11cfbb3e5f02ec46734ef9ee93cea97adae0fef955",
+      "cabecalho": "Absolute change in Health other current expenditure",
+      "reference_date": "2027",
+      "published_at": null,
+      "excerto_ou_derivacao": "(oe-2027-saude-outras-correntes-2027) − (oe-2027-saude-outras-correntes-2026). 303,7 − 32,4 = 271,3"
+    }
+  ],
+  "textuais_do_relatorio": [
+    "oe-2027-outras-despesas-dotacoes-execucao",
+    "oe-2027-saude-dotacao-reforco-contratos-programa"
+  ]
+}

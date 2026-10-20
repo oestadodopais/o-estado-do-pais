@@ -250,5 +250,19 @@
     "antes": "O inventário conservava dez cadeias substituídas e a célula do Método exigia 139 recibos.",
     "depois": "As dez cadeias são recolhidas do HTML e a célula exige 140 recibos, incluindo a reserva da Saúde. Duas plantas retiram a nova linha ou substituem-na conservando a contagem.",
     "razao": "A primeira corrida falhou nas frases anteriores; a segunda, na contagem anterior. A travessia exportada contém 140 linhas. A verificação de cada recibo e da sua porta mantém-se."
+  },
+  {
+    "id": "V2D-43",
+    "tema": "Dotação para contratos-programa da Saúde",
+    "antes": "A comparação citava a reserva geral e a ação de reserva da Saúde; a opinião dizia que aumentavam as outras despesas correntes.",
+    "depois": "Duas linhas transcrevem a frase do agregado e a nota 26 completas da página 88. A comparação e a opinião usam a variação de 271,3 e a dotação para contratos-programa ainda por contratualizar.",
+    "razao": "A reserva de 1 milhão do quadro 5.36 não explica o aumento. A frase do corpo e a nota 26 identificam as dotações a afetar em execução. As duas linhas anteriores permanecem no motor, com retirada explícita do manifesto do sítio."
+  },
+  {
+    "id": "V2D-44",
+    "tema": "Período do orçamento separado da publicação",
+    "antes": "O exportador substituía reference_date por published_at nas linhas textuais; o cabeçalho da Saúde mostrava a data de publicação como orçamento.",
+    "depois": "As linhas textuais do relatório conservam reference_date igual a 2027 e published_at igual a 2026-10-08. Ambos os recibos novos mostram o orçamento para 2027 nas duas edições. O validador do livro e a conferência contra o corpo original passam a distinguir os campos, conservando a regra das declarações públicas.",
+    "razao": "LinhaView.astro chama continuacaoDoNomeV2a; o token periodo é resolvido a partir de reference_date. A publicação aparece separadamente no campo published_at. A célula recusa a troca do ano pela data, nos dados e no cabeçalho renderizado."
   }
 ]

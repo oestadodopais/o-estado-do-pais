@@ -1,0 +1,27 @@
+{
+  "sitio_testado": "7b2a08907aacd73c7cf89b4dcf8d114f83ca8a43",
+  "motor": "8e1b9c49e091a9a6a2fb493dc4b345bc4753d9f7",
+  "codigos": {
+    "montagem_motor": 0,
+    "exportacao": 0,
+    "celulas_motor": 0,
+    "composicao_e_auditoria": 0,
+    "ledger:check": 0,
+    "check:cruzamento --with-origin": 0,
+    "core.gate (pre-commit)": 0,
+    "build": 0,
+    "check:alvos": 0,
+    "check:css": 0,
+    "check:discussao": 0,
+    "check:frases-compostas": 0,
+    "check:lugar": 0,
+    "check:palavras": 0,
+    "check:series": 0,
+    "gate:html": 0,
+    "typecheck": 0,
+    "capturas": 0,
+    "conferencia_do_relatorio_e_recibos": 0
+  },
+  "conferencias": "43 conferências do motor e 840 células Eurostat; auditoria com 306 folhas e 3240 apoios. O pre-commit do motor passou em 749 segundos. A célula dos itens passou com 119 plantas detetadas em 119. A conferência das afirmações leu 11 corpos e detetou 36 plantas, sem erros. Os 60 parágrafos coincidem com o HTML e os 6 recibos novos foram conferidos nas duas edições. As duas primeiras corridas tiveram build=1: primeiro, a igualdade indevida entre período e publicação no validador; depois, a mesma igualdade na conferência do corpo original. Os passos não executados têm código 125. A terceira corrida passou nos dez passos. O cruzamento com a origem passou; conserva o aviso informativo sobre o hash global do estudo 20, sem divergência nas linhas atravessadas.",
+  "capturas": "Capturas nas duas edições e nas cinco larguras declaradas: 40 vistas e 90 recortes; 130 hashes de PNG e 18 recursos conferidos, sem transbordo horizontal, pedidos externos, recursos recusados ou erros do navegador. Inspeção visual de 12 recortes, discriminados em inspecao-visual-v2dd.json. O HTML capturado coincide com os hashes da conferência textual. PNG em <temporario>/v2dd-capturas."
+}

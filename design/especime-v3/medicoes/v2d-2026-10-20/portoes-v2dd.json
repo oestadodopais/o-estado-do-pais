@@ -1,0 +1,388 @@
+[
+  {
+    "corrida": "v2dd-portoes",
+    "cabeca": "07b75b27ea441955dd14d6cac6dacf256c9c0684",
+    "codigos": {
+      "build": 1,
+      "check:alvos": 125,
+      "check:css": 125,
+      "check:discussao": 125,
+      "check:frases-compostas": 125,
+      "check:lugar": 125,
+      "check:palavras": 125,
+      "check:series": 125,
+      "gate:html": 125,
+      "typecheck": 125
+    },
+    "ultimas_linhas": {
+      "build": [
+        "  generatedMessage: true,",
+        "  code: 'ERR_ASSERTION',",
+        "  actual: [",
+        "    '[oe-2027-outras-despesas-dotacoes-execucao.yml] V2A data: falta a data do documento',",
+        "    '[oe-2027-saude-dotacao-reforco-contratos-programa.yml] V2A data: falta a data do documento'",
+        "  ],",
+        "  expected: [],",
+        "  operator: 'deepStrictEqual',",
+        "  diff: 'simple'",
+        "}",
+        "",
+        "Node.js v22.23.1"
+      ],
+      "check:alvos": [
+        "não correu: a construção não ficou verde"
+      ],
+      "check:css": [
+        "não correu: a construção não ficou verde"
+      ],
+      "check:discussao": [
+        "não correu: a construção não ficou verde"
+      ],
+      "check:frases-compostas": [
+        "não correu: a construção não ficou verde"
+      ],
+      "check:lugar": [
+        "não correu: a construção não ficou verde"
+      ],
+      "check:palavras": [
+        "não correu: a construção não ficou verde"
+      ],
+      "check:series": [
+        "não correu: a construção não ficou verde"
+      ],
+      "gate:html": [
+        "não correu: a construção não ficou verde"
+      ],
+      "typecheck": [
+        "não correu: a construção não ficou verde"
+      ]
+    }
+  },
+  {
+    "corrida": "v2dd-portoes-b",
+    "cabeca": "c249e46e7d8f4a42a88edc5e815221ecd105daa6",
+    "codigos": {
+      "build": 1,
+      "check:alvos": 125,
+      "check:css": 125,
+      "check:discussao": 125,
+      "check:frases-compostas": 125,
+      "check:lugar": 125,
+      "check:palavras": 125,
+      "check:series": 125,
+      "gate:html": 125,
+      "typecheck": 125
+    },
+    "ultimas_linhas": {
+      "build": [
+        "PLANTA hífen lexical conserva-se: V2D PDF: forma esperada preservada",
+        "PLANTA excerto V2D alterado: V2D excerto: palavras diferentes da prova ou da página citada",
+        "PLANTA autor V2D trocado: V2D atribuição: autor diferente do documento",
+        "PLANTA data V2D trocada: V2D data: diferente da publicação selada ou da data conferida no documento",
+        "PLANTA porta V2D trocada: V2D porta: diferente do pedido registado",
+        "PLANTA valor V2D fora do excerto: V2D valor: não coincide com o excerto selado",
+        "PLANTA unidade V2D trocada: V2D medida: unidade ou tipo de documento diferente",
+        "PLANTA hash V2D trocado: V2D selo: hash diferente do corpo alojado",
+        "PLANTA caminho V2D fora do motor: V2D selo: referência ou recibo incompleto",
+        "oe-2027-outras-despesas-dotacoes-execucao: V2D data: diferente da publicação selada ou da data conferida no documento",
+        "oe-2027-saude-dotacao-reforco-contratos-programa: V2D data: diferente da publicação selada ou da data conferida no documento",
+        "V2A: 11 afirmações conferidas, 11 corpos lidos, 32 plantas, 2 erros."
+      ],
+      "check:alvos": [
+        "não correu: a construção não ficou verde"
+      ],
+      "check:css": [
+        "não correu: a construção não ficou verde"
+      ],
+      "check:discussao": [
+        "não correu: a construção não ficou verde"
+      ],
+      "check:frases-compostas": [
+        "não correu: a construção não ficou verde"
+      ],
+      "check:lugar": [
+        "não correu: a construção não ficou verde"
+      ],
+      "check:palavras": [
+        "não correu: a construção não ficou verde"
+      ],
+      "check:series": [
+        "não correu: a construção não ficou verde"
+      ],
+      "gate:html": [
+        "não correu: a construção não ficou verde"
+      ],
+      "typecheck": [
+        "não correu: a construção não ficou verde"
+      ]
+    }
+  },
+  {
+    "corrida": "v2dd-portoes-c",
+    "cabeca": "7b2a08907aacd73c7cf89b4dcf8d114f83ca8a43",
+    "codigos": {
+      "build": 0,
+      "check:alvos": 0,
+      "check:css": 0,
+      "check:discussao": 0,
+      "check:frases-compostas": 0,
+      "check:lugar": 0,
+      "check:palavras": 0,
+      "check:series": 0,
+      "gate:html": 0,
+      "typecheck": 0
+    },
+    "ultimas_linhas": {
+      "build": [
+        "",
+        "sinais · 5 de 5 blocos na primeira página, 0 saída(s); o registo está em .sinais/primeira-pagina.json.",
+        "  SINAL · na explicação «dinheiro-do-estado-2026», as palavras em naoDiz[0][1] saíram da página: nenhuma linha casa com /juros|servico-da-divida|encargos-da-divida/ (7 casam)",
+        "sinais · 1 explicação(ões), 1 frase(s) guardada(s) fora da página; o registo está em .sinais/explicacoes.json.",
+        "  mordeu · uma condição falsa numa cópia das declarações (código 0)",
+        "  mordeu · um resolvedor que recusa tudo (código 1)",
+        "  mordeu · o passo da cadeia do build com um resolvedor que recusa tudo (código 1)",
+        "",
+        "> o-estado-do-pais@0.1.0 check:discussao",
+        "> node tests/discussao/itens.mjs",
+        "",
+        "V2B · 0 erro(s), 119 de 119 plantas, 304 portas de integração."
+      ],
+      "check:alvos": [
+        "  ✓ H7  20 algarismo(s) de manchete medidos · 0 em manchetes de uma linha citada, 0 sem os 44 px (nenhum) · 20 em manchetes de várias, 0 sem a largura ou sem a caixa de linha (nenhum) · 0 com uma porta de OUTRA linha dentro da sua área (nenhum)",
+        "  ✓ H8  cartões: 2440 registo(s), 1220 da edição inglesa, 1216 com unidade · 0 desenharam uma cadeia diferente da que a tabela manda · 2 ficam em português por decisão da tabela («factor» em 2: é o nome que o relatório citado dá ao número, e não uma unidade de contagem) · páginas inglesas: 3385 unidade(s) rendida(s), 0 diferentes do que a tabela manda",
+        "  ✓ H9  4133 página(s) inglesas lidas: 944 com um nome de diploma, 3189 sem nenhum, 3 documento(s) alojado(s) fora da conta · 949 nome(s): 944 com lang=\"pt-PT\", 5 dentro de uma transcrição da fonte (marca-se inteira, na língua da fonte: não é deste bloco), 0 sem marca",
+        "  ✓ H13  /lugares nas duas edições e nas 5 larguras: 10 passagem(ns) · portas de concelho por página: 308 (esperado 308, fora das duas tabelas com uma porta por linha) · dentro da lista agrupada: 308",
+        "  ✓ H15  pt@390: vazio 0 · «mour» 2 à vista, Mourão à vista · Enter com vários fica · «xyzq» 0 à vista, frase à vista, Enter fica · «mourao» 1 à vista, Enter abre Mourão || pt@1280: vazio 0 · «mour» 2 à vista, Mourão à vista · Enter com vários fica · «xyzq» 0 à vista, frase à vista, Enter fica · «mourao» 1 à vista, Enter abre Mourão || en@390: vazio 0 · «mour» 2 à vista, Mourão à vista · Enter com vários fica · «xyzq» 0 à vista, frase à vista, Enter fica · «mourao» 1 à vista, Enter abre Mourão || en@1280: vazio 0 · «mour» 2 à vista, Mourão à vista · Enter com vários fica · «xyzq» 0 à vista, frase à vista, Enter fica · «mourao» 1 à vista, Enter abre Mourão",
+        "  ✓ H16  8270 página(s) do dist/: 8245 com a porta das sugestões dentro do <footer>, 0 fora dele, 0 com mais de uma, 25 sem ela (e 25 sem a das correções; 0 página(s) sem a das sugestões e com a das correções, 0 sem a das correções e com a das sugestões) · nas rotas medidas: 370 de 370 passagens com uma porta no seu marco; 74 porta(s) a 390 e 74 a partir de 1024, 0 sem o alvo (nenhum) · o botão do formulário: 10 medição(ões), 0 abaixo de 44 px (nenhum) · o campo armadilhado: 10 medição(ões), 0 à vista, no teclado ou na árvore de acessibilidade",
+        "  ✓ H10  aria-expanded no dist/: 0 ocorrência(s) em 0 página(s) · ausência medida em todas as páginas próprias · conhecido positivo obrigatório: 1 ocorrência(s), recusado · Método: 10 passagem(ns), 0 sem título",
+        "",
+        "  escrito <temporario>",
+        "",
+        "  todas as células verdes.",
+        ""
+      ],
+      "check:css": [
+        "",
+        "> o-estado-do-pais@0.1.0 check:css",
+        "> node scripts/check-css.mjs --prova",
+        "",
+        "  folhas · positivo conhecido: C1 viu a classe cuja regra não chega à página; C2 viu os dois defeitos plantados (o nome colado ao estado e a abreviatura colada ao que se lhe segue). Nenhuma acusou a classe com regra na folha ligada, a regra embutida, a regra dentro de um `@media`, a classe sem regra, nem o par com espaço. Das cinco fronteiras entre peças de texto, duas ficaram vermelhas, uma foi isenta pelo expoente e duas foram separadas pela folha que a página liga; as duas marcas dentro de uma palavra não chegam a ser candidatas, porque têm um nó de texto antes.",
+        "",
+        "  folhas ✓ 8246 página(s) · 8 folha(s) construída(s) com 883 classe(s) estilizada(s) · 912 classe(s) rendidas no HTML · C1: 0 regras que não chegam · C2: 34572 fronteira(s) sem espaço no HTML, 0 coladas",
+        "        C2, das 34572 fronteiras: 14798 entre duas caixas (duas caixas não fazem uma palavra) · 19774 entre duas peças de texto, das quais 19774 a folha desta página separa com um «gap», uma margem ou um «display»",
+        "        C1 · 176 regra(s) que não chegam, em quarentena escrita em C1_EM_QUARENTENA: o MESMO defeito noutras rotas (as formas do concelho, o mapa do distrito, o distrito na busca do índice dos números), à espera da decisão do lugar de direção sobre que folha passa a chegar a que página. Não é uma exceção: é dívida contada.",
+        "        25 documento(s) de estudo alojado(s) tal como estão, fora das duas células: nenhuma linha deles é da casa.",
+        ""
+      ],
+      "check:discussao": [
+        "",
+        "> o-estado-do-pais@0.1.0 check:discussao",
+        "> node tests/discussao/itens.mjs",
+        "",
+        "V2B · 0 erro(s), 119 de 119 plantas, 304 portas de integração."
+      ],
+      "check:frases-compostas": [
+        "",
+        "> o-estado-do-pais@0.1.0 check:frases-compostas",
+        "> node tests/explicacoes/frases-compostas.mjs",
+        "",
+        "V2B · 238 caminhos por clique conferidos a 390 px.",
+        "FC · 28 passagem(ns) em 14 páginas, 1684 pedaços marcados vistos, 0 dentro de um contentor flexível, 0 documento(s) mais largos do que a janela; 36 de 36 plantas no navegador."
+      ],
+      "check:lugar": [
+        "  8.4 · definições de painel fora da declaração                    0  (teto 0) ok",
+        "  §7.10 · «[a verificar]» sem definição ao pé do primeiro          0  (teto 0) ok",
+        "  §7.10 · valores desenhados sem o seu texto na legenda            0  (teto 0) ok",
+        "  §7.4 e 8.6 · estudos fora da forma única                         0  (teto 0) ok",
+        "  §7.4 e 8.6, o que a régua leu: estudo 34 · texto 17 · indice 2 · edicoes 34 · linhas 22",
+        "  as exceções, e quantas vezes cada uma foi precisa:",
+        "      · «peça»     1 · a política de IA copia a POLITICA-DA-AUTONOMIA.md e fica como a fonte a escreveu",
+        "      · «trabalho»    37 · «trabalho» no sentido de emprego ou de labor, que não é o nome de um estudo",
+        "      · «trabalho»     1 · o grupo de trabalho é o publicador identificado do relatório das pensões, não o nome de um estudo",
+        "      · «indicador»     1 · «indicador» a nomear o campo que o publicador dá, e não uma medida da casa",
+        "      · «indicador»    26 · «indicador» dentro do endereço da API do INE (`json_indicador`), que é um caminho da fonte e não uma palavra da casa",
+        "check:lugar · verde."
+      ],
+      "check:palavras": [
+        "",
+        "> o-estado-do-pais@0.1.0 check:palavras",
+        "> node tests/voz/palavras-proibidas.mjs --prova",
+        "",
+        "  palavras ✓ 23 de 23 plantas vistas (14 palavras, 9 buracos da superfície) · 8271 página(s) medidas em repouso, 0 achados · 59 página(s) com a superfície estreitada por rota declarada"
+      ],
+      "check:series": [
+        "",
+        "> o-estado-do-pais@0.1.0 check:series",
+        "> node tests/series/series.mjs --prova",
+        "",
+        "  check:series · 25 série(s) no tempo de 8327 ponto(s) · 2 derivada(s) com 152 ponto(s) refeitos · 12 linha(s) presa(s), 12 cartão(ões) no último ponto · 50 recibo(s) lidos · metade do motor da S3: 8175 ponto(s) no seu corpo · 40 de 40 planta(s) morderam",
+        "  ✓ as séries no tempo têm a forma, a cadência, cada valor no seu excerto, a derivada refeita, cada linha presa no seu ponto e cada cartão no último, e os recibos com todos os pontos nas duas edições."
+      ],
+      "gate:html": [
+        "    · a afirmação \"vila-velha-de-rodao-limite-divida-dgal-2024\" está no livro-razão e tem página própria, mas nenhuma outra página a cita.",
+        "    · a afirmação \"vila-verde-limite-divida-dgal-2024\" está no livro-razão e tem página própria, mas nenhuma outra página a cita.",
+        "    · a afirmação \"vila-vicosa-limite-divida-dgal-2024\" está no livro-razão e tem página própria, mas nenhuma outra página a cita.",
+        "    · a afirmação \"vimioso-limite-divida-dgal-2024\" está no livro-razão e tem página própria, mas nenhuma outra página a cita.",
+        "    · a afirmação \"vinhais-limite-divida-dgal-2024\" está no livro-razão e tem página própria, mas nenhuma outra página a cita.",
+        "    · a afirmação \"viseu-limite-divida-dgal-2024\" está no livro-razão e tem página própria, mas nenhuma outra página a cita.",
+        "    · a afirmação \"vizela-limite-divida-dgal-2024\" está no livro-razão e tem página própria, mas nenhuma outra página a cita.",
+        "    · a afirmação \"vouzela-limite-divida-dgal-2024\" está no livro-razão e tem página própria, mas nenhuma outra página a cita.",
+        "",
+        "  ✓ nenhum algarismo sem proveniência nas páginas construídas.",
+        "    prova · 92 chaves reconferidas pelo portão · 96 números marcados nas páginas · 2 lista(s) de nomes recontada(s) · 320453 ligações internas (0 relativas, 17287 âncoras) · 80 recortes · 6 ficheiros alojados · 10 contas sobre ficheiros não alojados (12 com cópia arquivada) · 894 páginas de série · 2440 cartões de partilha (13716 valores recalculados, 2440 nomeados por páginas) · 2 manifestos (7 ícones medidos na cabeça do PNG) · escrito em /prova.json",
+        ""
+      ],
+      "typecheck": [
+        "",
+        "> o-estado-do-pais@0.1.0 typecheck",
+        "> tsc -p tsconfig.check.json",
+        ""
+      ]
+    }
+  },
+  {
+    "passo": "montagem_motor",
+    "ultimas_linhas": [
+      "relatório gerado: 1373 linhas; 78 pedidos novos; 10 corpos reutilizados"
+    ],
+    "codigo": 0
+  },
+  {
+    "passo": "exportacao_recusada",
+    "ultimas_linhas": [
+      "V2D: 141 linhas e 157 provas preparadas.",
+      "",
+      "  sítio: <worktree>",
+      "",
+      "  TRAVESSIA RECUSADA",
+      "",
+      "  Estas linhas atravessaram e já não estão no manifesto:",
+      "",
+      "    · oe-2027-outras-despesas-correntes-reserva",
+      "    · oe-2027-saude-acao-reserva-orcamental",
+      "",
+      "  Sair do manifesto não as tira do sítio: o ficheiro fica publicado e perde",
+      "  a guarda que prova que os seus bytes são os que atravessaram. Ou volta ao",
+      "  manifesto, ou entra em \"retired\" com `retired: true` e uma razão — e é",
+      "  retirada do sítio à mão, que é decisão editorial e faz-se lá.",
+      ""
+    ],
+    "codigo": 1
+  },
+  {
+    "passo": "exportacao",
+    "ultimas_linhas": [
+      "    der-coesao-territorial-variacao-sem-prr-pct  derived               −38,2   (= -38.2, engine agrees)",
+      "    der-saude-outras-correntes-variacao-abs      derived               271,3   (= 271.3, engine agrees)",
+      "",
+      "  recortes: 0 de 87 linha(s) com página · 0 bytes",
+      "",
+      "  3 nova(s) · 0 alterada(s) · 138 inalterada(s) · registo a escrever",
+      "  dívida de proveniência que atravessa: 0 linha(s) com excerto \"[a verificar]\" — nenhuma",
+      "  rótulo da fonte: 87 de 141 linha(s), 23 rótulo(s) distinto(s): 015 - Saúde · Aquisição de bens e serviços · DESPESA TOTAL · Despesa Total Consolidada · Despesa efetiva (consolidação intra PO/PL) · Despesa efetiva consolidada · Despesa total consolidada · Despesa total consolidada (1) · Despesas com o pessoal · Ferroviário · Fundos Europeus · Health care expenditure by financing scheme · Investimento · Outras despesas correntes · Receitas Próprias · Receitas de Impostos · Rodoviário · Saúde · Serviço Nacional de Saúde · TRANSFERÊNCIAS SERVIÇO NACIONAL DE SAÚDE · Transferências de capital · encargos brutos · receitas",
+      "  sem rótulo impresso: 54 de 141 linha(s), a que a página chama pelo título do documento: afirmacao-pcp-paula-ppp-2026-10-12, afirmacao-pcp-paula-investimento-saude-2026-10-12, afirmacao-pcp-ppp-2026-10-15, utao-saude-sem-prr-2027, utao-risco-execucao-sns-2027, utao-ppp-contingencias-natureza-2026, ppp-oe2027-liquidos-2027-previsao-oe2026, ppp-oe2027-riscos-pedidos-rodoviarios e mais 46",
+      "  pending_page: 0 linha(s) sem sítio desenhado onde ser impressa",
+      "",
+      "  Escritas 141 linhas em <worktree>/ledger/claims",
+      "  Registo em <worktree>/ledger/cruzamentos/v2d.json",
+      "  Recortes: 0 ficheiro(s) escrito(s) de 0 em <worktree>/public/recortes",
+      "  Manifesto dos recortes em <motor>/publisher/recortes/manifest.v2d.json",
+      ""
+    ],
+    "codigo": 0
+  },
+  {
+    "passo": "celulas_motor",
+    "ultimas_linhas": [
+      "PASS · 43 conferências OE2027; livro, corpos e recibos conferidos; 840 células Eurostat por índice independente."
+    ],
+    "codigo": 0
+  },
+  {
+    "passo": "composicao_e_auditoria",
+    "ultimas_linhas": [
+      "V2D: 141 famílias compostas e conferidas.",
+      "{\"explicacoes\":2,\"folhas\":306,\"partes\":306,\"diz\":0,\"conta\":0,\"liga\":0,\"aponta\":0,\"leitura\":306,\"apoios\":3240,\"origens\":0}",
+      "{\"linhas\":149,\"novas_com_porta\":133}"
+    ],
+    "codigo": 0
+  },
+  {
+    "passo": "cruzamento_com_origem",
+    "ultimas_linhas": [
+      "  cruzamentos · 16 ficheiro(s) inteiro(s) em 11 registo(s) · 16 conferido(s) contra o motor · 5 item(ns) da agenda reconferidos",
+      "    agua-nao-faturada: 1",
+      "    avaliacao-economica-regional-de-portugal-2026: 8",
+      "    concelhos-2026: 2767",
+      "    dominios-2026: 40",
+      "    evora-contas-da-camara-2010-2025: 33",
+      "    evora-economia-e-dinheiro-publico-de-fora-da-camara: 17",
+      "    evora-quem-governou-a-camara-2009-2025: 19",
+      "    oe-2026: 209",
+      "    oe-2027: 159",
+      "",
+      "  1 aviso(s):",
+      "    · o ledger.json de \"20 Orcamento do Estado\" já não é o que atravessou. Por si só isto não quer dizer nada: o ficheiro traz um \"built_at\" que muda a cada reconstrução. O que prende é o resumo de cada LINHA — se nenhuma foi nomeada acima, nenhuma mudou.",
+      "",
+      "  ✓ cada linha e cada ficheiro vindos do motor são, byte a byte, o que atravessou, e são ainda o que o motor tem.",
+      ""
+    ],
+    "codigo": 0
+  },
+  {
+    "passo": "core_gate_pre_commit",
+    "ultimas_linhas": [
+      "commit código 0 · cabeça 8e1b9c49",
+      "  GATE  editions evora-2027-pt-en ok",
+      "  GATE  editions evora-contas-camara-pt-en ok",
+      "  GATE  editions evora-contas-camara-pt-md-html ok",
+      "  GATE  editions evora-contas-camara-en-md-html ok",
+      "  GATE  editions evora-quem-governou-pt-md-html ok",
+      "  GATE  editions evora-economia-dinheiro-de-fora-pt-en ok",
+      "  GATE  editions evora-economia-dinheiro-de-fora-pt-md-html ok",
+      "  GATE  editions evora-economia-dinheiro-de-fora-en-md-html ok",
+      "  GATE  editions evora-2027-capital-europeia-da-cultura-pt-en ok",
+      "  GATE  editions evora-2027-capital-europeia-da-cultura-pt-md-html ok",
+      "  GATE  editions evora-2027-capital-europeia-da-cultura-en-md-html ok",
+      "  GATE: PASS"
+    ],
+    "codigo": 0
+  },
+  {
+    "passo": "ledger_check",
+    "ultimas_linhas": [
+      "PLANTA hifenização só no fim da linha do PDF: V2D PDF: forma esperada preservada",
+      "PLANTA hífen seguido de espaço corrido conserva-se: V2D PDF: forma esperada preservada",
+      "PLANTA hífen lexical conserva-se: V2D PDF: forma esperada preservada",
+      "PLANTA excerto V2D alterado: V2D excerto: palavras diferentes da prova ou da página citada",
+      "PLANTA autor V2D trocado: V2D atribuição: autor diferente do documento",
+      "PLANTA data V2D trocada: V2D data: diferente da publicação selada ou da data conferida no documento",
+      "PLANTA porta V2D trocada: V2D porta: diferente do pedido registado",
+      "PLANTA valor V2D fora do excerto: V2D valor: não coincide com o excerto selado",
+      "PLANTA unidade V2D trocada: V2D medida: unidade ou tipo de documento diferente",
+      "PLANTA hash V2D trocado: V2D selo: hash diferente do corpo alojado",
+      "PLANTA caminho V2D fora do motor: V2D selo: referência ou recibo incompleto",
+      "PLANTA período do orçamento trocado pela publicação: oe-2027-outras-despesas-dotacoes-execucao: V2D data: diferente da publicação selada ou da data conferida no documento",
+      "PLANTA período adulterado também na prova: oe-2027-outras-despesas-dotacoes-execucao: V2D data: diferente da publicação selada ou da data conferida no documento",
+      "PLANTA período do orçamento trocado pela publicação: oe-2027-saude-dotacao-reforco-contratos-programa: V2D data: diferente da publicação selada ou da data conferida no documento",
+      "PLANTA período adulterado também na prova: oe-2027-saude-dotacao-reforco-contratos-programa: V2D data: diferente da publicação selada ou da data conferida no documento",
+      "V2A: 11 afirmações conferidas, 11 corpos lidos, 36 plantas, 0 erros."
+    ],
+    "codigo": 0
+  },
+  {
+    "passo": "render",
+    "ultimas_linhas": [
+      "{\"ok\":true,\"paragrafos\":60,\"recibos\":6,\"textuais_do_relatorio\":2}"
+    ],
+    "codigo": 0
+  },
+  {
+    "passo": "capturas",
+    "codigo": 0,
+    "cabeca": "7b2a08907aacd73c7cf89b4dcf8d114f83ca8a43",
+    "vistas": 40,
+    "recortes": 90,
+    "falhas": []
+  }
+]
