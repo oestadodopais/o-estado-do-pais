@@ -5676,8 +5676,8 @@
      "value": "124"
     },
     {
-     "end": 1071,
-     "printed": "−176",
+     "end": 1070,
+     "printed": "176",
      "row": "pm-q3-2-r14-c0",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
@@ -5685,39 +5685,39 @@
      "value": "-176"
     },
     {
-     "end": 2329,
+     "end": 2328,
      "printed": "300",
      "row": "pm-q3-2-r8-c0",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 2326,
+     "start": 2325,
      "value": "300"
     },
     {
-     "end": 2394,
+     "end": 2393,
      "printed": "284",
      "row": "pm-q3-2-r12-c0",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 2391,
+     "start": 2390,
      "value": "284"
     },
     {
-     "end": 2429,
+     "end": 2428,
      "printed": "363",
      "row": "pm-q3-2-r18-c0",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 2426,
+     "start": 2425,
      "value": "363"
     },
     {
-     "end": 2475,
+     "end": 2474,
      "printed": "124",
      "row": "pm-q3-2-r16-c0",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 2472,
+     "start": 2471,
      "value": "124"
     }
    ],
@@ -5780,108 +5780,109 @@
      "tipo": "valor"
     },
     {
-     "fim": 1071,
+     "fim": 1070,
      "id": "pm-q3-2-r14-c0",
      "inicio": 1067,
      "livro": "PM",
+     "modificador": "abs",
      "sha256_linha": "3dca330fdf7eb79d5f11edb6a55edc807dc56fbd769f9e16a81d247921651ecb",
-     "texto": "−176",
+     "texto": "176",
      "tipo": "valor"
     },
     {
-     "fim": 1240,
+     "fim": 1239,
      "id": "posicao-governo-irc",
-     "inicio": 1102,
+     "inicio": 1101,
      "livro": "PM",
      "sha256_linha": "6d0dd4d4434b5424d856f596d99aeb3af6b5fabaa3133622465037f9670f664d",
      "texto": "Referiu também a redução do IRC e sublinhou que, nos 920 dias desde a primeira tomada de posse do Governo, não houve aumentos de impostos.",
      "tipo": "excerto"
     },
     {
-     "fim": 1419,
+     "fim": 1418,
      "id": "posicao-psd-impostos",
-     "inicio": 1351,
+     "inicio": 1350,
      "livro": "PM",
      "sha256_linha": "111baa9385216a4ef21653c3de4f1230eaf744d8bdb291a7279941527d78f0a6",
      "texto": "\"Baile\" na AR com OE em destaque: A \"dança\" de Montenegro e oposição",
      "tipo": "documento"
     },
     {
-     "fim": 1565,
+     "fim": 1564,
      "id": "posicao-psd-impostos",
-     "inicio": 1423,
+     "inicio": 1422,
      "livro": "PM",
      "sha256_linha": "111baa9385216a4ef21653c3de4f1230eaf744d8bdb291a7279941527d78f0a6",
      "texto": "Enquanto o Governo do PS aumentava impostos, defendeu Hugo Soares, \"este Governo não aumentou um único imposto nos orçamentos que apresentou\".",
      "tipo": "excerto"
     },
     {
-     "fim": 1596,
+     "fim": 1595,
      "id": "posicao-ps-irc",
-     "inicio": 1578,
+     "inicio": 1577,
      "livro": "PM",
      "sha256_linha": "e799cebb8981051d1aa149f303cfeec049b5424ec33bcee13d37590df9f52ff4",
      "texto": "José Luís Carneiro",
      "tipo": "atribuicao"
     },
     {
-     "fim": 1732,
+     "fim": 1731,
      "id": "posicao-ps-irc",
-     "inicio": 1599,
+     "inicio": 1598,
      "livro": "PM",
      "sha256_linha": "e799cebb8981051d1aa149f303cfeec049b5424ec33bcee13d37590df9f52ff4",
      "texto": "Para o líder do PS, a redução deste imposto deve ser “dirigida a prioridades de política económica e não para todos e de forma cega”.",
      "tipo": "excerto"
     },
     {
-     "fim": 2093,
+     "fim": 2092,
      "id": "posicao-pcp-irc",
-     "inicio": 1744,
+     "inicio": 1743,
      "livro": "PM",
      "sha256_linha": "568d1dcfc99b15122172c12c0a5ee8d6f32f73fcd6b2cdb10d0e897441b61a71",
      "texto": "O Governo fala em descida de impostos, mas a realidade é esta: o único imposto cuja receita diminuiu foi o IRC (imposto que incide sobre os rendimentos de capital), no próximo ano – com uma taxa de 18% - voltará a descer e a que se somam os benefícios fiscais de 1868 milhões de euros (apenas 1% das empresas absorvem mais de 50% destes benefícios).",
      "tipo": "excerto"
     },
     {
-     "fim": 2197,
+     "fim": 2196,
      "id": "posicao-cds-orcamento",
-     "inicio": 2145,
+     "inicio": 2144,
      "livro": "PM",
      "sha256_linha": "8ba4d7a046f9d493c5d583bbbc1192a43728b61077211ee217ea0e50075543b6",
      "texto": "\"Temos um bom Orçamento para 2027\", garante o CDS-PP",
      "tipo": "excerto"
     },
     {
-     "fim": 2329,
+     "fim": 2328,
      "id": "pm-q3-2-r8-c0",
-     "inicio": 2326,
+     "inicio": 2325,
      "livro": "PM",
      "sha256_linha": "be853ea41f752eb75342bb145e4957fc7e2d36d03b598ca50c018abe4bb57e1c",
      "texto": "300",
      "tipo": "valor"
     },
     {
-     "fim": 2394,
+     "fim": 2393,
      "id": "pm-q3-2-r12-c0",
-     "inicio": 2391,
+     "inicio": 2390,
      "livro": "PM",
      "sha256_linha": "9967c79d52acef9fb77bd862dba6c818e25865b56157ff41a788563a5c1cebe2",
      "texto": "284",
      "tipo": "valor"
     },
     {
-     "fim": 2429,
+     "fim": 2428,
      "id": "pm-q3-2-r18-c0",
-     "inicio": 2426,
+     "inicio": 2425,
      "livro": "PM",
      "sha256_linha": "f4bb472f00bbc10ac91c4a820df70fd2d3ee4580bf15377b0245f49b0ad226d2",
      "texto": "363",
      "tipo": "valor"
     },
     {
-     "fim": 2475,
+     "fim": 2474,
      "id": "pm-q3-2-r16-c0",
-     "inicio": 2472,
+     "inicio": 2471,
      "livro": "PM",
      "sha256_linha": "486b1ff0a47d6b69f87375df81b3bd815fa5397c1f5e87ff7321d6555a6cc0e3",
      "texto": "124",
@@ -5904,7 +5905,7 @@
     "pm-q3-2-r12-c0",
     "pm-q3-2-r18-c0"
    ],
-   "text": "The corporate income tax rate falls to 18 % in 2027, after 19 % in 2026, by the law of November 2025 that fixed the path of the rate (Lei n.º 64/2025, de 7 de novembro): «Artigo 3.º Norma transitória 1 — A taxa prevista nos n.os 1 e 5 do artigo 87.º do Código do IRC, na redação conferida pela presente lei, aplica-se aos períodos de tributação que se iniciem em ou após 1 de janeiro de 2028. 2 — Nos períodos de tributação que se iniciem durante o ano de 2026, a taxa prevista nos n.os 1 e 5 do artigo 87.º do Código do IRC é de 19 %. 3 — Nos períodos de tributação que se iniciem durante o ano de 2027, a taxa prevista nos n.os 1 e 5 do artigo 87.º do Código do IRC é de 18 %. 4 — A taxa prevista no n.º 2 do artigo 87.º do Código do IRC, na redação conferida pela presente lei, aplica-se aos períodos de tributação que se iniciem em ou após 1 de janeiro de 2026.» The 2027 cost in the table of measures is 300 million euros, partly offset by the reversal of the indirect business research and development tax incentive system (SIFIDE), 124 million, for a total of −176 million. The Prime Minister: «Referiu também a redução do IRC e sublinhou que, nos 920 dias desde a primeira tomada de posse do Governo, não houve aumentos de impostos.» The parliamentary leader of the Social Democratic Party (Partido Social Democrata, PSD), by the news report «\"Baile\" na AR com OE em destaque: A \"dança\" de Montenegro e oposição»: «Enquanto o Governo do PS aumentava impostos, defendeu Hugo Soares, \"este Governo não aumentou um único imposto nos orçamentos que apresentou\".» The PS, by José Luís Carneiro: «Para o líder do PS, a redução deste imposto deve ser “dirigida a prioridades de política económica e não para todos e de forma cega”.» The PCP: «O Governo fala em descida de impostos, mas a realidade é esta: o único imposto cuja receita diminuiu foi o IRC (imposto que incide sobre os rendimentos de capital), no próximo ano – com uma taxa de 18% - voltará a descer e a que se somam os benefícios fiscais de 1868 milhões de euros (apenas 1% das empresas absorvem mais de 50% destes benefícios).» CDS-Partido Popular (CDS), in the news headline: «\"Temos um bom Orçamento para 2027\", garante o CDS-PP» On the sentence «não houve aumentos de impostos»: in the table of measures, the revenue lines that grow are the fraud revenue (300 million), the revenue that wage growth brings in income tax (284 million) and in contributions (363 million), and the reversal of the SIFIDE (124 million); none is a rate increase."
+   "text": "The corporate income tax rate falls to 18 % in 2027, after 19 % in 2026, by the law of November 2025 that fixed the path of the rate (Lei n.º 64/2025, de 7 de novembro): «Artigo 3.º Norma transitória 1 — A taxa prevista nos n.os 1 e 5 do artigo 87.º do Código do IRC, na redação conferida pela presente lei, aplica-se aos períodos de tributação que se iniciem em ou após 1 de janeiro de 2028. 2 — Nos períodos de tributação que se iniciem durante o ano de 2026, a taxa prevista nos n.os 1 e 5 do artigo 87.º do Código do IRC é de 19 %. 3 — Nos períodos de tributação que se iniciem durante o ano de 2027, a taxa prevista nos n.os 1 e 5 do artigo 87.º do Código do IRC é de 18 %. 4 — A taxa prevista no n.º 2 do artigo 87.º do Código do IRC, na redação conferida pela presente lei, aplica-se aos períodos de tributação que se iniciem em ou após 1 de janeiro de 2026.» The 2027 cost in the table of measures is 300 million euros, partly offset by the reversal of the indirect business research and development tax incentive system (SIFIDE), 124 million, for a total of 176 million. The Prime Minister: «Referiu também a redução do IRC e sublinhou que, nos 920 dias desde a primeira tomada de posse do Governo, não houve aumentos de impostos.» The parliamentary leader of the Social Democratic Party (Partido Social Democrata, PSD), by the news report «\"Baile\" na AR com OE em destaque: A \"dança\" de Montenegro e oposição»: «Enquanto o Governo do PS aumentava impostos, defendeu Hugo Soares, \"este Governo não aumentou um único imposto nos orçamentos que apresentou\".» The PS, by José Luís Carneiro: «Para o líder do PS, a redução deste imposto deve ser “dirigida a prioridades de política económica e não para todos e de forma cega”.» The PCP: «O Governo fala em descida de impostos, mas a realidade é esta: o único imposto cuja receita diminuiu foi o IRC (imposto que incide sobre os rendimentos de capital), no próximo ano – com uma taxa de 18% - voltará a descer e a que se somam os benefícios fiscais de 1868 milhões de euros (apenas 1% das empresas absorvem mais de 50% destes benefícios).» CDS-Partido Popular (CDS), in the news headline: «\"Temos um bom Orçamento para 2027\", garante o CDS-PP» On the sentence «não houve aumentos de impostos»: in the table of measures, the revenue lines that grow are the fraud revenue (300 million), the revenue that wage growth brings in income tax (284 million) and in contributions (363 million), and the reversal of the SIFIDE (124 million); none is a rate increase."
   },
   {
    "figures": [],

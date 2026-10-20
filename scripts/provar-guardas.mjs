@@ -866,7 +866,16 @@ caso(
    igualdade passou de 24 a 25: a corrida com a lista nova e a igualdade velha
    recusou o caso, que é a prova de que ele morde num campo a mais como num a
    menos. */
-caso('CAMPOS/tamanho', true, CAMPOS.length === 33, 'os campos anteriores, a afirmação e o período declarado pela fonte.');
+caso('CAMPOS/tamanho', true, CAMPOS.length === 34, 'os campos anteriores e o nome inglês da medida.');
+/** @param {readonly string[]} campos */
+const nomeInglesNoFormato = campos => campos.filter(c => c === 'name_en').length === 1 &&
+  campos.indexOf('name_en') === campos.indexOf('name') + 1;
+caso('CAMPOS/nome-ingles', true, nomeInglesNoFormato(CAMPOS),
+  'O nome inglês existe uma vez, imediatamente depois do nome original.');
+caso('CAMPOS/nome-ingles-retirado', false, nomeInglesNoFormato(CAMPOS.filter(c => c !== 'name_en')),
+  'Retirar o campo inglês da cópia da lista tem de ser recusado.');
+caso('CAMPOS/nome-ingles-duplicado', false, nomeInglesNoFormato([...CAMPOS, 'name_en']),
+  'Acrescentar uma segunda ocorrência do campo inglês tem de ser recusado.');
 caso('CAMPOS/periodo', true, CAMPOS.includes('period') && new Set(CAMPOS).size === CAMPOS.length, 'o período existe uma vez, sem duplicar campos.');
 caso('CAMPOS/rp4n-h', true, CAMPOS.includes('access_date_kind') && CAMPOS.includes('name_source_en'), 'A data distingue alojamento de leitura e o localizador tem tradução própria.');
 caso('CAMPOS/rp4n-e', true, CAMPOS.includes('publication') && CAMPOS.includes('definition_sources'),

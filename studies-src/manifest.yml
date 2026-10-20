@@ -389,21 +389,21 @@ edicoes:
     lang: "pt"
     title: "O Orçamento de 2027: o que muda e para quem"
     origin: "researchhub"
-    origin_ref: "content/27 Orcamento 2027 O que muda/O Orçamento de 2027, o que muda e para quem (pt-PT).html @ aff6a55f63705775d30e05287f2ce8518ba7b12c"
+    origin_ref: "content/27 Orcamento 2027 O que muda/O Orçamento de 2027, o que muda e para quem (pt-PT).html @ c9a26f0201c6b7182c24b799f9ab668280b54ed0"
     raw_file: "_raw/orcamento-2027-o-que-muda-e-para-quem.pt.html"
-    fetched_utc: "2026-10-20T20:22:02Z"
-    bytes_raw: 46223
-    bytes_normalized: 46223
-    sha256_raw: "ddc973191c339bc9df355908298ab554293bbe8fa3b74e9378fa2c0e982ab4ca"
-    sha256_normalized: "ddc973191c339bc9df355908298ab554293bbe8fa3b74e9378fa2c0e982ab4ca"
+    fetched_utc: "2026-10-20T21:19:12Z"
+    bytes_raw: 46220
+    bytes_normalized: 46220
+    sha256_raw: "b711b9f70aa12af83cf5e5a6579a6a65759aa9eecfe3f3f6fb4452dba1829bcc"
+    sha256_normalized: "b711b9f70aa12af83cf5e5a6579a6a65759aa9eecfe3f3f6fb4452dba1829bcc"
   - slug: orcamento-2027-o-que-muda-e-para-quem
     lang: "en"
     title: "The 2027 Budget: what changes, and for whom"
     origin: "researchhub"
-    origin_ref: "content/27 Orcamento 2027 O que muda/The 2027 Budget, what changes, and for whom.html @ aff6a55f63705775d30e05287f2ce8518ba7b12c"
+    origin_ref: "content/27 Orcamento 2027 O que muda/The 2027 Budget, what changes, and for whom.html @ c9a26f0201c6b7182c24b799f9ab668280b54ed0"
     raw_file: "_raw/orcamento-2027-o-que-muda-e-para-quem.en.html"
-    fetched_utc: "2026-10-20T20:22:02Z"
-    bytes_raw: 45555
-    bytes_normalized: 45555
-    sha256_raw: "844f56b4cbde6bd541d8f5535483321bb01e5f87e7c9da4d50fb81b9c4a8a92a"
-    sha256_normalized: "844f56b4cbde6bd541d8f5535483321bb01e5f87e7c9da4d50fb81b9c4a8a92a"
+    fetched_utc: "2026-10-20T21:19:12Z"
+    bytes_raw: 45552
+    bytes_normalized: 45552
+    sha256_raw: "1e71a996336b127ca69d28f7354b5c71be0c27b0dfebbcceaf2e6366b48904d5"
+    sha256_normalized: "1e71a996336b127ca69d28f7354b5c71be0c27b0dfebbcceaf2e6366b48904d5"
