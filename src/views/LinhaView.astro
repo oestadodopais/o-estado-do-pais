@@ -1902,7 +1902,7 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
         <div class="aparelho-bloco incorporar-bloco" data-incorporar-bloco>
           {podeIncorporar(claim) ? <>
           <label class="linha-campo-k" data-voz for="codigo-incorporar">{s.incorporar.titulo}</label>
-          <textarea id="codigo-incorporar" data-incorporar-codigo={id} readonly spellcheck="false" rows="6">{codigoDaIncorporacao(claim, lang)}</textarea>
+          <textarea id="codigo-incorporar" lang={claim.texto_documental ? 'pt-PT' : undefined} data-incorporar-codigo={id} readonly spellcheck="false" rows="6">{codigoDaIncorporacao(claim, lang)}</textarea>
           <button type="button" data-voz hidden data-copiado={s.incorporar.copiado} data-selecionado={s.incorporar.selecionado} aria-live="polite">{s.incorporar.copiar}</button>
           </> : <>
             <span class="linha-campo-k" data-voz>{s.incorporar.titulo}</span>

@@ -250,6 +250,33 @@ try {
     }
     await ctx.close();
   }
+  // V2-e: o excerto mantém a língua no campo de cópia e depois da atualização.
+  modoAtual = 'normal';
+  const documental = linhas.find(l => l.id === 'pe-despacho-equilibrio');
+  assert(documental?.texto_documental);
+  for (const lang of ['pt','en']) {
+    const ctx = await navegador.newContext(); const page = await ctx.newPage();
+    await page.goto(sitio+routePath('linha',lang,{slug:documental.id}),{waitUntil:'networkidle'});
+    assert.equal(await page.locator('[data-incorporar-codigo]').getAttribute('lang'),'pt-PT');
+    const guardado = await page.locator('[data-incorporar-codigo]').inputValue();
+    const campo = parse(guardado).querySelector('a > span');
+    assert.equal(campo.getAttribute('lang'),'pt-PT'); assert.equal(campo.textContent,documental.value);
+    await page.goto(anfitria+'/'+lang,{waitUntil:'networkidle'});
+    const codigo = guardado.replace(/data-oedp-valor="[^"]*"/,'data-oedp-valor="ensaio"').replace(`src="${origemPublica}/incorporar.js"`,`src="${sitio}/incorporar.js"`);
+    await page.setContent(codigo,{waitUntil:'networkidle'});
+    await page.waitForFunction(() => document.querySelector('.oedp-numero')?.getAttribute('data-oedp-valor') !== 'ensaio');
+    const valor = page.locator('.oedp-numero a > span').first();
+    assert.equal(await valor.textContent(),documental.value);
+    const conferirLingua = lingua => assert.equal(lingua,'pt-PT','V2E incorporação: falta a língua portuguesa do excerto.');
+    conferirLingua(await valor.getAttribute('lang'));
+    await valor.evaluate(n => n.removeAttribute('lang'));
+    const linguaRetirada = await valor.getAttribute('lang');
+    assert.throws(() => conferirLingua(linguaRetirada), /V2E incorporação: falta a língua portuguesa/);
+    assert.equal(linguaRetirada,null);
+    r.casos.push({lang,modo:'texto-documental',linha:documental.id,valor:documental.value,lingua:'pt-PT',atualizado:true});
+    r.plantas.push({nome:'lingua-documental-retirada-'+lang,mordeu:true});
+    await ctx.close();
+  }
 } finally {await navegador.close();servidor.close();blog.close();}
 if(saida)fs.writeFileSync(saida,JSON.stringify(r,null,2)+'\n');
 console.log(JSON.stringify(r,null,2));

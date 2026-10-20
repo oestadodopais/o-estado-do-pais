@@ -61,7 +61,8 @@ export function codigoEsperado(c, lang) {
   const origem = 'https://' + SITE_HOST_DISPLAY;
   const href = origem + (lang === 'en' ? '/en/ledger/' : '/livro-razao/') + c.id;
   const lido = leituraDaIncorporacao(c, lang);
-  return `<p class="oedp-numero" lang="${t(lang).lang}" data-oedp="${escape(c.id)}" data-oedp-valor="${escape(c.value)}" data-oedp-lido="${escape(c.access_date)}"><a href="${href}">${escape(d.nome)}, ${escape(d.periodo)}: ${escape(c.value)} <span lang="${d.unidadeLang}">${escape(d.unidade)}</span></a> · <span lang="${d.fonteLang}">${escape(d.fonte)}</span>${d.fonte === lido ? '' : ', ' + escape(lido)} · ${escape(d.atribuicao)}${d.notas ? ` · <span>${escape(d.notas)}</span>` : ''}</p><script async src="${origem}/incorporar.js" referrerpolicy="no-referrer" crossorigin="anonymous"></script>`;
+  const valor = c.texto_documental === true ? `<span lang="pt-PT">${escape(c.value)}</span>` : escape(c.value);
+  return `<p class="oedp-numero" lang="${t(lang).lang}" data-oedp="${escape(c.id)}" data-oedp-valor="${escape(c.value)}" data-oedp-lido="${escape(c.access_date)}"><a href="${href}">${escape(d.nome)}, ${escape(d.periodo)}: ${valor} <span lang="${d.unidadeLang}">${escape(d.unidade)}</span></a> · <span lang="${d.fonteLang}">${escape(d.fonte)}</span>${d.fonte === lido ? '' : ', ' + escape(lido)} · ${escape(d.atribuicao)}${d.notas ? ` · <span>${escape(d.notas)}</span>` : ''}</p><script async src="${origem}/incorporar.js" referrerpolicy="no-referrer" crossorigin="anonymous"></script>`;
 }
 
 /* Os estados condicionais também têm palavras aprovadas. Não se tornam
@@ -128,6 +129,8 @@ export function conferirCodigo(root, rota, livro = linhas) {
     if (!linha || !LICENCA || campo.getAttribute('data-incorporar-codigo') !== linha.id ||
         campo.rawTagName !== 'textarea' || !campo.hasAttribute('readonly') || campo.childNodes.some(n => n.nodeType === 1)) {
       erros.push('ER1 código: marca fora do campo do recibo da própria linha.');
+    } else if (linha.texto_documental && campo.getAttribute('lang') !== 'pt-PT') {
+      erros.push('ER1 código: a transcrição portuguesa exige a língua declarada no campo de cópia.');
     } else if (campo.textContent !== codigoEsperado(linha, rota.lang)) {
       erros.push('ER1 código: o pedaço difere da linha, carácter a carácter.');
     }

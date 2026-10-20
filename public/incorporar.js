@@ -27,7 +27,14 @@
       var novo = document.createElement('p');
       var a = document.createElement('a');
       a.href = destino;
-      a.textContent = d.nome + ', ' + d.periodo + ': ' + d.valor + ' ';
+      a.textContent = d.nome + ', ' + d.periodo + ': ';
+      if (c.texto_documental === true) {
+        var valor = document.createElement('span');
+        valor.lang = 'pt-PT';
+        valor.textContent = d.valor;
+        a.appendChild(valor);
+        a.appendChild(document.createTextNode(' '));
+      } else a.appendChild(document.createTextNode(d.valor + ' '));
       var unidade = document.createElement('span');
       unidade.lang = d.unidadeLang;
       unidade.textContent = d.unidade;

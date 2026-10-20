@@ -4,6 +4,7 @@ import path from 'node:path';
 import {parse} from 'node-html-parser';
 import {tituloDaLinha,descricaoDaLinha} from '../../src/lib/livro.mjs';
 import {modeloDoCartao} from '../../src/lib/cartoes.mjs';
+import {codigoDaIncorporacao} from '../../src/lib/incorporar.mjs';
 import {FAMILIAS_DAS_LINHAS} from '../../src/data/o-que-e-das-familias.mjs';
 import {textoDocumentalConferido,acumuladoConferido,nomeDoEfeitoConferido} from '../../src/lib/prova-efeitos.mjs';
 import {lugarDaIncorporacao} from '../../src/lib/lugar-da-incorporacao.mjs';
@@ -29,6 +30,8 @@ export function conferirEfeitos(linhas,itens){
    const nome=FAMILIAS_DAS_LINHAS[id]?.nome?.[lang],cartao=modeloDoCartao({tipo:'linha',id,lang});
    if(!nome||!tituloDaLinha(c,lang).startsWith(nome+' · ')||!descricaoDaLinha(c,lang).includes(' · '+nome+' · '))erros.push(`V2E cabeçalho documental: ${id} ${lang}`);
    if(cartao.manchete!==nome||cartao.valores.some(v=>v.campo==='unit'))erros.push(`V2E cartão documental: ${id} ${lang}`);
+   const valor=parse(codigoDaIncorporacao(c,lang)).querySelector('a > span');
+   if(valor?.getAttribute('lang')!=='pt-PT'||valor.textContent!==c.value)erros.push(`V2E língua da incorporação: ${id} ${lang}`);
   }
 
   if(id.startsWith('der-')){
