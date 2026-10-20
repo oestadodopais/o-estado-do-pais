@@ -1,4 +1,5 @@
 /** A história do número, distinta da história da sua proveniência. */
+import {textoDocumentalConferido} from './prova-efeitos.mjs';
 /** @param {Record<string, any>} linha */
 export const entradasDoValor = (linha) => (Array.isArray(linha.corrections) ? linha.corrections : []).filter((c) => c && ['correcao', 'atualizacao'].includes(c.kind));
 /** @param {Record<string, any>} c */
@@ -21,9 +22,9 @@ export function numeroDaCasa(valor) {
 export function conferirHistoriaDoValor(linha, seladas, onde, erros) {
   const entradas = entradasDoValor(linha);
   // Uma afirmação textual tem história literal, sem passar pelo normalizador numérico.
-  const textual = linha.afirmacao === true && linha.unit === 'afirmação';
+  const textual = (linha.afirmacao === true && linha.unit === 'afirmação') || textoDocumentalConferido(linha);
   const forma = textual ? ((/** @type {unknown} */ v) => typeof v === 'string' && v.trim() ? v : null) : numeroDaCasa;
-  if (textual && linha.value !== linha.excerpt) erros.push(`${onde} história do valor: a afirmação textual não coincide com o excerto.`);
+  if (linha.afirmacao === true && linha.unit === 'afirmação' && linha.value !== linha.excerpt) erros.push(`${onde} história do valor: a afirmação textual não coincide com o excerto.`);
   if (seladas && JSON.stringify(entradas.slice(0, seladas.length).map(assinaturaDoValor)) !== JSON.stringify(seladas)) {
     erros.push(`${onde} história do valor: uma entrada selada foi retirada ou alterada.`);
   }

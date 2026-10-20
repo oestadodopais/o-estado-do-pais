@@ -34,7 +34,21 @@ for(const [nome,muda,falha] of [
  const c=structuredClone(textual),erros=[];muda(c);conferirHistoriaDoValor(c,selo,'ensaio',erros);
  assert.ok(erros.some(e=>e.includes(falha)),nome);plantas.push({nome,falha,erros,mordeu:true});
 }
-const r = { controlos: 2, plantas };
+for(const id of ['pe-oe-beira-abolicao','pe-oe-riscos-nao-reconhecimento']){
+ const original=linhas.get(id),seladas=JSON.parse(fs.readFileSync('ledger/historias-valores.json','utf8'))[id],erros=[];
+ conferirHistoriaDoValor(original,seladas,'ensaio',erros);assert.deepEqual(erros,[]);
+ for(const [nome,muda,falha] of [
+  ['texto documental anterior alterado',c=>{c.corrections[0].old_value+=' Palavra.';},'retirada ou alterada'],
+  ['correção documental retirada',c=>{c.corrections=[];},'retirada ou alterada'],
+  ['texto atual e excerto alterados juntos',c=>{c.value+=' Palavra.';c.excerpt=c.value;c.corrections[0].new_value=c.value;},'forma de número da casa'],
+  ['marca documental com fonte diferente',c=>{c.document.source_sha256='outro';},'forma de número da casa'],
+  ['texto documental sem selo de tipo',c=>{delete c.texto_documental;},'forma de número da casa'],
+ ]){
+  const c=structuredClone(original),erros=[];muda(c);conferirHistoriaDoValor(c,seladas,'ensaio',erros);
+  assert.ok(erros.some(e=>e.includes(falha)),`${id}: ${nome}`);plantas.push({nome:`${id}: ${nome}`,falha,erros,mordeu:true});
+ }
+}
+const r = { controlos: 4, plantas };
 const i = process.argv.indexOf('--json');
 if (i >= 0) fs.writeFileSync(process.argv[i+1], JSON.stringify(r, null, 2)+'\n');
 console.log(`História do valor: ${r.controlos} controlos e ${plantas.length} plantas.`);

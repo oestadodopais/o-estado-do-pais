@@ -6,6 +6,17 @@ const provas=JSON.parse(fs.readFileSync('ledger/provas/v2e/provas.json','utf8'))
 const claims=loadClaims();
 const nomes={},familias={},aud=JSON.parse(fs.readFileSync('tests/cartao/leituras-provadas.json','utf8'));
 const descriptions=[
+ [/^sns-sem-medico-elegibilidade$/, 'É a definição de elegibilidade para atribuição de médico de família no catálogo do SNS.', 'It is the NHS catalogue definition of eligibility for assignment of a family doctor.'],
+ [/^sns-consultas-csp-descricao$/, 'É a ressalva da fonte sobre a exclusão do Vitacare e o carácter provisório do último mês.', 'It is the source caveat about the exclusion of Vitacare and the provisional latest month.'],
+ [/^sns-catalogo-acumulados$/, 'É a definição temporal dos valores acumulados no catálogo do SNS.', 'It is the temporal definition of cumulative values in the NHS catalogue.'],
+ [/^sns-sem-medico-serie-nova/, 'Conta os utentes elegíveis inscritos sem médico de família atribuído, segundo as regras da nova série.', 'Counts eligible registered users without an assigned family doctor, under the rules of the new series.'],
+ [/^pe-dl87a-publicacao-ano$/, 'É a data do cabeçalho de publicação do decreto-lei sobre a atualização das portagens.', 'It is the publication header date of the decree-law on the toll update.'],
+ [/^pe-brisa-minuta-ano$/, 'É a data de publicação da minuta do contrato de concessão Brisa.', 'It is the publication date of the Brisa concession draft contract.'],
+ [/^pe-dl87a-financiamento$/, 'É a regra do financiamento do apoio pelo Orçamento do Estado, processado pela Direção-Geral do Tesouro e Finanças.', 'It is the rule for financing support through the State Budget, processed by the Directorate-General for Treasury and Finance.'],
+ [/^pe-dl87a-apoio-retificado$/, 'É a definição do apoio correspondente à diferença entre a atualização contratual das portagens e a atualização limitada, na redação retificada.', 'It is the definition of support covering the difference between the contractual and capped toll updates, in the rectified wording.'],
+ [/^pe-dl87a-apoio$/, 'É a definição do apoio pela diferença entre a atualização limitada das portagens e a contratual, na versão original do diploma.', 'It is the definition of support covering the difference between capped and contractual toll updates, in the original decree.'],
+ [/^pe-dl87a-descontos$/, 'É a disposição que preserva os regimes de descontos em vigor.', 'It is the provision preserving existing discount schemes.'],
+
  [/^sns-sem-medico/, 'Conta os utentes inscritos sem médico de família atribuído, na série indicada.', 'Counts registered users without an assigned family doctor, in the indicated series.'],
  [/^sns-consultas-csp/, 'Conta as consultas realizadas nos cuidados de saúde primários no mês indicado.', 'Counts primary-care consultations in the indicated month.'],
  [/^sns-consultas-hospitalares/, 'Conta as consultas hospitalares acumuladas desde janeiro até ao mês indicado.', 'Counts hospital consultations accumulated from January through the indicated month.'],
@@ -23,7 +34,7 @@ const descriptions=[
  [/^prr-monitorizacao.*taxa/, 'É a taxa de execução financeira da componente Saúde publicada no painel.', 'It is the Health component financial execution rate published in the dashboard.'],
  [/^prr-(marcos|complemento)/, 'É o estado do marco ou meta identificado no nome, tal como consta do anexo anual.', 'It is the status of the milestone or target identified in the name, as listed in the annual annex.'],
  [/^eurostat-.*-phys/, 'É o número de médicos por cem mil habitantes no país e período da linha.', 'It is the number of physicians per hundred thousand inhabitants in the country and period of the row.'],
- [/^eurostat-.*-nrs/, 'É o número de enfermeiros por cem mil habitantes no país e período da linha.', 'It is the number of nurses per hundred thousand inhabitants in the country and period of the row.'],
+ [/^eurostat-.*-nrs/, 'É o número de enfermeiros com qualificação reconhecida na União Europeia por cem mil habitantes no país e período da linha.', 'It is the number of nurses with an EU-recognised qualification per hundred thousand inhabitants in the country and period of the row.'],
  [/^oe2027-/, 'É o objetivo ou compromisso assistencial escrito no relatório do Orçamento, sem meta quantitativa nesta linha.', 'It is the care objective or commitment written in the Budget report, without a numerical target in this row.'],
  [/^pe-despacho-/, 'É uma tarefa atribuída à comissão de negociação da concessão Brisa pelo despacho.', 'It is a task assigned by the order to the Brisa concession negotiating committee.'],
  [/^pe-brisa-vias/, 'São as vias abrangidas pela concessão Brisa na minuta do contrato.', 'These are the roads covered by the Brisa concession in the draft contract.'],
@@ -31,7 +42,6 @@ const descriptions=[
  [/^pe-scut-/, 'É o excerto da lei sobre a eliminação de portagens e a sua entrada em vigor.', 'It is the excerpt from the law on toll abolition and its entry into force.'],
  [/^pe-dl87a-atualizacao/, 'É a atualização das tarifas e taxas de portagem fixada pelo diploma.', 'It is the toll rate update set by the decree.'],
  [/^pe-dl87a-efeitos/, 'É a data em que a atualização das tarifas e taxas de portagem produz efeitos.', 'It is the date when the toll rate update takes effect.'],
- [/^pe-dl87a-/, 'É a regra do diploma sobre o financiamento do apoio às concessionárias pelos descontos nas portagens.', 'It is the decree’s rule on financing support to concessionaires for toll discounts.'],
  [/^pe-tc15-/, 'É o excerto histórico do Tribunal de Contas sobre as parcerias e as compensações contingentes.', 'It is the historical Court of Auditors excerpt on partnerships and contingent compensation.'],
  [/^pe-oe-/, 'É o excerto do relatório do Orçamento sobre os riscos das parcerias rodoviárias.', 'It is the Budget report excerpt on road partnership risks.'],
 ];
@@ -51,6 +61,7 @@ for(const [id,proof] of Object.entries(provas)){
  const nome={pt:proof.label,en:proof.label_en};assert(nome.pt&&nome.en);
  nomes[id]=nome;
  let familiaNome={...nome};
+ if(id==='sns-sem-medico-serie-nova-2026-08')familiaNome={pt:'Utentes elegíveis sem médico de família atribuído',en:'Eligible users without an assigned family doctor'};
  if(/^prr-(complemento|marcos)/.test(id))familiaNome={pt:'Estado do marco ou meta da Saúde',en:'Health milestone or target status'};
  else if(id.startsWith('infarmed-'))for(const lang of ['pt','en'])familiaNome[lang]=familiaNome[lang].replace(/, \d{4}-\d{2}\/\d{4}-\d{2}$/,'');
  else if(id.startsWith('prr-monitorizacao'))for(const lang of ['pt','en'])familiaNome[lang]=familiaNome[lang].replace(/^C01 - /,'');
@@ -58,7 +69,7 @@ for(const [id,proof] of Object.entries(provas)){
  else if(id==='pe-tc15-futuros')familiaNome={pt:'Previsão histórica de encargos com as parcerias',en:'Historical forecast of partnership charges'};
  else if(id==='pe-brisa-vias-minuta')familiaNome={pt:'Vias da concessão Brisa na minuta',en:'Brisa concession roads in the draft contract'};
  assert(!/\d/.test(familiaNome.pt+familiaNome.en),`nome de família com algarismo: ${id}`);
- const texts=id.startsWith('der-')?derivedDescriptions[proof.derivation.operation]:descriptions.find(([re])=>re.test(id))?.slice(1);
+ const texts=id==='der-prr-saude-taxa-numerico'?['É a leitura numérica da taxa de execução financeira publicada no painel.','It is the numerical reading of the financial execution rate published on the dashboard.']:id.startsWith('der-')?derivedDescriptions[proof.derivation.operation]:descriptions.find(([re])=>re.test(id))?.slice(1);
  assert(texts,`falta frase própria: ${id}`);assert(!/\d/.test(texts.join('')));
  const [pt,en]=texts,campo=c.derivation?'derivation':'excerpt',literal=c[campo];
  assert(typeof literal==='string'&&literal.length>=4);

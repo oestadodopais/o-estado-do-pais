@@ -4,7 +4,7 @@
 id: "correcoes-publicadas"
 
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
-value: "10"
+value: "12"
 unit: "correções"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
@@ -55,3 +55,9 @@ corrections:
     new_value: "10"
     reason: "A correção do excerto sobre o contrato-programa da ACSS inclui a frase anterior, que identifica o montante referido. A contagem passa a incluí-la; a recontagem não é uma correção adicional."
     reason_en: "The correction of the excerpt about the ACSS contract-programme includes the preceding sentence, which identifies the amount referred to. The count now includes it; the recount is not an additional correction."
+  - date: "2026-10-20"
+    kind: "atualizacao"
+    old_value: "10"
+    new_value: "12"
+    reason: "As correções dos excertos sobre a negociação da Beira Interior e o não reconhecimento das pretensões das concessionárias entram na contagem. A recontagem não é uma correção adicional."
+    reason_en: "The corrections to the excerpts on the Beira Interior negotiation and the non-recognition of concessionaires’ claims enter the count. The recount is not an additional correction."

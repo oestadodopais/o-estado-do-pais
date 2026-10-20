@@ -3,6 +3,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {parse} from 'node-html-parser';
 import {LINGUA_DOS_TITULOS} from '../../src/i18n/lingua-dos-titulos.mjs';
+import {conferirRecibosV2eb,ensaiarRecibosV2eb} from './recibos-v2eb.mjs';
+import {textoDocumentalConferido} from '../../src/lib/prova-efeitos.mjs';
 const normal=x=>String(x??'').replace(/\s+/g,' ').trim();
 export function conferirHistoriaTextual(root,linha,lang){
  const erros=[],lingua=LINGUA_DOS_TITULOS[linha.document?.title];
@@ -26,9 +28,12 @@ function conferirPeriodo(root,linha,lang){
 }
 export function conferirRecibosCorrigidos(dist,linhas){
  const erros=[],plantas=[];
+ ensaiarRecibosV2eb();
+ const v2eb=conferirRecibosV2eb(dist,linhas);
+ erros.push(...v2eb.erros);plantas.push(...v2eb.plantas);
  for(const lang of ['pt','en'])for(const [id,l] of linhas){
   const risco=id.startsWith('ppp-oe2027-riscos-'),serie=/^ppp-oe20\d\d-liquidos-\d{4}$/.test(id)||id.startsWith('saude-total-');
-  const textual=l.afirmacao===true&&l.unit==='afirmação'&&(l.corrections??[]).some(c=>['correcao','atualizacao'].includes(c.kind));
+  const textual=((l.afirmacao===true&&l.unit==='afirmação')||textoDocumentalConferido(l))&&(l.corrections??[]).some(c=>['correcao','atualizacao'].includes(c.kind));
   if(!risco&&!serie&&!textual)continue;
   const ficheiro=path.join(dist,lang==='pt'?'livro-razao':'en/ledger',id,'index.html');
   if(!fs.existsSync(ficheiro)){erros.push(`V2D recibo: recibo corrigido ausente ${id} (${lang})`);continue;}

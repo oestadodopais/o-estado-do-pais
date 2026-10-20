@@ -16,6 +16,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { load } from 'js-yaml';
+import { DOCUMENT_FUNCTIONS, documentCall } from './document-checks.mjs';
 import {textoDocumentalConferido,acumuladoConferido} from './prova-efeitos.mjs';
 
 import { STUDY_IDS, COUNTS } from '../data/studies.mjs';
@@ -1314,6 +1315,8 @@ function operaComMarca(a, b, fn) {
 /**
  * Avalia uma expressão de verificação.
  * Aceita: números, ids de afirmações, nomes de contagens, + - * / e parênteses.
+ * As operações explícitas number_pt, count_rows e count_equal leem valores
+ * documentais pela gramática estrita de document-checks.mjs.
  * Os operadores e os parênteses TÊM de estar separados por espaços — os ids
  * contêm hífenes, e sem essa regra "a - b" seria ambíguo.
  *
@@ -1420,6 +1423,11 @@ export function evaluateCheck(
   function primary() {
     const t = next();
     if (t === undefined) throw new Error('expressão check truncada');
+    if (DOCUMENT_FUNCTIONS.has(t)) {
+      const result = documentCall(tokens, i - 1, linhas, selfId);
+      i = result.next;
+      return result.value;
+    }
     if (t === '(') {
       const v = expression();
       if (next() !== ')') throw new Error('falta um ) na expressão check');

@@ -165,6 +165,12 @@
       "kind": "atualizacao",
       "old_value": "9",
       "new_value": "10"
+    },
+    {
+      "date": "2026-10-20",
+      "kind": "atualizacao",
+      "old_value": "10",
+      "new_value": "12"
     }
   ],
   "estudos-publicados": [
@@ -293,6 +299,22 @@
       "kind": "correcao",
       "old_value": "Neste montante incluem-se as verbas do contrato-programa a celebrar entre a Administração Central do Sistema de Saúde, IP (ACSS) e as entidades do Serviço Nacional de Saúde (SNS), destinadas ao financiamento centralizado da Rede Nacional de Cuidados Continuados, das parcerias público-privadas, entre outros.",
       "new_value": "Do total da despesa consolidada afeta ao Programa Legado, a maior parte é financiada por receitas de impostos (15 452,2 milhões de euros). Neste montante incluem-se as verbas do contrato-programa a celebrar entre a Administração Central do Sistema de Saúde, IP (ACSS) e as entidades do Serviço Nacional de Saúde (SNS), destinadas ao financiamento centralizado da Rede Nacional de Cuidados Continuados, das parcerias público-privadas, entre outros."
+    }
+  ],
+  "pe-oe-beira-abolicao": [
+    {
+      "date": "2026-10-20",
+      "kind": "correcao",
+      "old_value": "Salienta-se ainda o desenvolvimento dos trabalhos de negociação 38 no âmbito do contrato de concessão da Beira Interior, na sequência do pedido apresentado pela concessionária no contexto da abolição das portagens, tendo em vista verificar se estão reunidas as condições para a reposição do equilíbrio financeiro do contrato e para negociar os respetivos termos, abrangendo ainda a renegociação de outros aspetos contratuais relevantes e a avaliação de eventuais novos investimentos a realizar.",
+      "new_value": "Salienta-se ainda o desenvolvimento dos trabalhos de negociação no âmbito do contrato de concessão da Beira Interior, na sequência do pedido apresentado pela concessionária no contexto da abolição das portagens, tendo em vista verificar se estão reunidas as condições para a reposição do equilíbrio financeiro do contrato e para negociar os respetivos termos, abrangendo ainda a renegociação de outros aspetos contratuais relevantes e a avaliação de eventuais novos investimentos a realizar."
+    }
+  ],
+  "pe-oe-riscos-nao-reconhecimento": [
+    {
+      "date": "2026-10-20",
+      "kind": "correcao",
+      "old_value": "Em todo o caso, importa sublinhar que a presente análise não implica qualquer reconhecimento ou assunção, ainda que tácita, de responsabilidades por parte dos parceiros públicos decorrentes das pretensões deduzidas pelos parceiros privados, quer quanto aos respetivos fundamentos, que, na maioria das situações, são rejeitados pelos parceiros públicos, quer quanto aos montantes peticionados. Com efeito, ao longo dos últimos anos verificou-se, em diversas situações, que os pedidos formulados pelos parceiros privados vieram a ser considerados improcedentes, ou que as responsabilidades financeiras imputadas aos parceiros públicos foram inferiores aos montantes inicialmente peticionados.",
+      "new_value": "Em todo o caso, importa sublinhar que a presente análise não implica qualquer reconhecimento ou assunção, ainda que tácita, de responsabilidades por parte dos parceiros públicos decorrentes das pretensões deduzidas pelos parceiros privados, quer quanto aos respetivos fundamentos, que, na maioria das situações, são rejeitados pelos parceiros públicos, quer quanto aos montantes peticionados."
     }
   ]
 }

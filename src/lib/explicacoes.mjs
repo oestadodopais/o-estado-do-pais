@@ -62,7 +62,7 @@ import { t } from '../i18n/strings.mjs';
 import { ENTRADAS } from '../data/primeira-pagina.mjs';
 
 /** Os pedaços calculados que a gramática das explicações conhece, e mais nenhum. */
-export const CHAVES_DA_EXPLICACAO = /** @type {const} */ (['claim', 'literal', 'verbatim', 'termo', 'periodo', 'nome', 'sinal', 'se', 'maiores', 'compara', 'comparaSaldos']);
+export const CHAVES_DA_EXPLICACAO = /** @type {const} */ (['claim', 'selo', 'literal', 'verbatim', 'termo', 'periodo', 'nome', 'sinal', 'se', 'maiores', 'compara', 'comparaSaldos']);
 /** O prefixo que separa, no nome do projeto de uma linha, a família do nome da função ou do ministério. */
 export const PREFIXO_DO_NOME = /** @type {const} */ ({ pt: ' que vai para ', en: ' going to ' });
 /**
@@ -84,10 +84,11 @@ export const FORMAS_DAS_FIGURAS = /** @type {const} */ (['barras-do-livro']);
 /**
  * @typedef {string
  *   | { claim: string, sufixo?: string }
+ *   | { selo: string }
  *   | { literal: { id: string, campo: string, texto: string, lingua: string|null } }
  *   | { verbatim: string, texto: string }
  *   | { termo: string, lingua: string }
- *   | { data: { id: string, campo: 'reference_date', valor: string } }
+ *   | { data: { id: string, campo: 'reference_date'|'period', valor: string } }
  *   | { nome: { id: string, texto: string } }
  * } PedacoDaExplicacao
  * @typedef {{ caminho: string, pedacos: PedacoDaExplicacao[] }} ParagrafoResolvido
@@ -256,6 +257,12 @@ function resolver(partes, lang, onde, ctx) {
       out.push({verbatim: o.verbatim, texto: VERBATIM[/** @type {keyof typeof VERBATIM} */ (o.verbatim)].text});
       return;
     }
+    if (chave === 'selo') {
+      if (Object.keys(o).join(',') !== 'selo' || !hasClaim(o.selo)) throw defeito(aqui, 'selo sem linha válida.');
+      ctx.linhas.add(o.selo);
+      out.push({selo:o.selo});
+      return;
+    }
     if (chave === 'literal') {
       if (Object.keys(o).sort().join(',') !== 'campo,literal' || !['excerpt', 'attributed_to', 'ressalva'].includes(o.campo)) throw defeito(aqui, 'campo literal não autorizado.');
       const row = getClaim(o.literal);
@@ -283,10 +290,11 @@ function resolver(partes, lang, onde, ctx) {
     }
     if (chave === 'periodo') {
       if (!hasClaim(o.periodo)) throw defeito(aqui, `a linha «${o.periodo}» não está no livro-razão.`);
-      const valor = getClaim(o.periodo).reference_date;
+      const linha = getClaim(o.periodo);
+      const valor = linha.period ?? linha.reference_date;
       if (typeof valor !== 'string' || !valor) throw defeito(aqui, `a linha «${o.periodo}» não tem período de referência.`);
       ctx.linhas.add(o.periodo);
-      out.push({ data: { id: o.periodo, campo: 'reference_date', valor } });
+      out.push({ data: { id: o.periodo, campo: linha.period ? 'period' : 'reference_date', valor } });
       return;
     }
     if (chave === 'nome') {
@@ -424,6 +432,7 @@ export function resolverExplicacao(e, lang) {
 export function textoDosPedacosDaExplicacao(pedacos, lang) {
   return pedacos.map((p) => {
     if (typeof p === 'string') return p;
+    if ('selo' in p) return '';
     if ('literal' in p) return p.literal.texto;
     if ('verbatim' in p) return p.texto;
     if ('termo' in p) return p.termo;

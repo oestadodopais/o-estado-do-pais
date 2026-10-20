@@ -75,7 +75,7 @@ const RAIZ = path.resolve(AQUI, '..', '..');
 export const AUDITORIA = path.join(RAIZ, 'tests', 'cartao', 'leituras-provadas.json');
 
 /** Os campos publicados de uma linha que podem apoiar uma parte de uma explicação; `nome` é o nome do projeto. */
-const CAMPOS_DA_LINHA = new Set(['source', 'reference_date', 'excerpt', 'unit', 'document.title', 'document.locator', 'name', 'ressalva', 'ressalva_en', 'derivation', 'derivation_en', 'nome']);
+const CAMPOS_DA_LINHA = new Set(['source', 'reference_date', 'period', 'excerpt', 'unit', 'document.title', 'document.locator', 'name', 'ressalva', 'ressalva_en', 'derivation', 'derivation_en', 'nome']);
 const NOTA_DO_PERIMETRO = 'execucao-2026-08-saldo-global-administracao-central-seguranca-social';
 const LITERAIS_DA_NOTA = new Set(['Não são grandezas diretamente comparáveis.', 'O Eurostat cobre todas as administrações públicas, incluindo as administrações regional e local']);
 const CAMPOS_DA_ORIGEM = new Set(['excerto', 'excertoEn', 'documento', 'publicador']);
@@ -103,6 +103,14 @@ const curto = (/** @type {string} */ s) => (s.length > 70 ? `${s.slice(0, 67)}�
 
 /** O período de uma linha na forma da casa, pela cópia desta célula. @param {string} p @param {'pt'|'en'} lang */
 export function periodoAqui(p, lang) {
+  const intervalo = /^(\d{4})-(0[1-9]|1[0-2])\/(\d{4})-(0[1-9]|1[0-2])$/.exec(p);
+  if (intervalo) {
+    const [, anoInicio, mesInicio, anoFim, mesFim] = intervalo;
+    const inicio = MESES[lang][Number(mesInicio) - 1], fim = MESES[lang][Number(mesFim) - 1];
+    return anoInicio === anoFim
+      ? (lang === 'en' ? `${inicio} to ${fim} ${anoFim}` : `${inicio} a ${fim} de ${anoFim}`)
+      : (lang === 'en' ? `${inicio} ${anoInicio} to ${fim} ${anoFim}` : `${inicio} de ${anoInicio} a ${fim} de ${anoFim}`);
+  }
   const m = /^(\d{4})-(0[1-9]|1[0-2])$/.exec(p);
   if (m) return lang === 'en' ? `${MESES.en[Number(m[2]) - 1]} ${m[1]}` : `${MESES.pt[Number(m[2]) - 1]} de ${m[1]}`;
   if (/^\d{4}-\d{2}-\d{2}$/.test(p)) return p.split('-').reverse().join('.');
@@ -216,14 +224,14 @@ export function linhasDaExplicacao(e, linhas) {
     if (Array.isArray(x)) x.forEach(anda);
     else if (x && typeof x === 'object') {
       for (const [k, v] of Object.entries(x)) {
-        if (['claim', 'literal', 'periodo', 'nome', 'sinal'].includes(k) && typeof v === 'string') out.add(v);
+        if (['claim', 'literal', 'periodo', 'nome', 'sinal', 'selo'].includes(k) && typeof v === 'string') out.add(v);
         else if (['linhas', 'primeiros', 'de', 'maiores', 'compara', 'comparaSaldos'].includes(k) && Array.isArray(v)) v.forEach((id) => typeof id === 'string' && out.add(id));
         else anda(v);
       }
     }
   };
   anda(e);
-  for (const id of [...out]) for (const d of linhas.get(id)?.derived_from ?? []) out.add(d);
+  for (const id of out) for (const d of linhas.get(id)?.derived_from ?? []) out.add(d);
   return out;
 }
 
@@ -661,7 +669,8 @@ function textoAqui(partes, lang, linhas) {
       if (!r) return '';
       return p.frase + r.map((x, k) => `${k === 0 ? '' : k === r.length - 1 ? p.ultimo : p.entre}${p.antes}${nomeAqui(x.id, lang) ?? ''}${p.abre}${valor(x.id, k === 0 ? p.sufixo : '')}${p.fecha}`).join('');
     }
-    if ('periodo' in p) return periodoAqui(String(linhas.get(p.periodo)?.reference_date ?? ''), lang) ?? '';
+    if ('periodo' in p) return periodoAqui(String(linhas.get(p.periodo)?.period ?? linhas.get(p.periodo)?.reference_date ?? ''), lang) ?? '';
+    if ('selo' in p) return '';
     if ('nome' in p) {
       const n = nomeAqui(p.nome, lang) ?? '';
       return p.inicial ? n.charAt(0).toUpperCase() + n.slice(1) : n;

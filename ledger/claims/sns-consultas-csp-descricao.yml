@@ -1,0 +1,40 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "sns-consultas-csp-descricao"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "As consultas registadas no sistema Vitacare não entram no cálculo destas métricas. Os dados relativos a este indicador são de caráter temporário para o mês publicado mais recente."
+unit: "texto"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Serviço Nacional de Saúde"
+document:
+  title: "Consultas Médicas nos Cuidados de Saúde Primários"
+  edition: "2026-08"
+  locator: "evolucao-das-consultas-medicas-nos-csp; metas.default.description"
+  source_sha256: "24164af100bd601cab9d55e37940470de23ecac40d5fbd93ee283ffb33d1c218"
+  kind: "ficheiro"
+source_url: "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets?limit=100&offset=100"
+access_date: "2026-10-20"
+texto_documental: true
+reference_date: "2026-08"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "As consultas registadas no sistema Vitacare não entram no cálculo destas métricas. Os dados relativos a este indicador são de caráter temporário para o mês publicado mais recente."
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "oe-2027"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Excerto do catálogo alojado com recibo. · Cruzado de ResearchHub content/26 Saude e Parcerias Efeitos · sns-consultas-csp-descricao."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

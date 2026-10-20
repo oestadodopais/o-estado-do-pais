@@ -1,0 +1,40 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "sns-catalogo-acumulados"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "De janeiro de 2013 ao mês n-2 anterior ao atual (valores acumulados)"
+unit: "texto"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Serviço Nacional de Saúde"
+document:
+  title: "Intervenções Cirúrgicas nos Cuidados de Saúde Hospitalares"
+  edition: "2026-07"
+  locator: "intervencoes-cirurgicas; metas.dcat.temporal"
+  source_sha256: "fc6bf4974a6adf652841f9f8dbca71d75724fd7ff9291be29b8e7fcdf4460ac5"
+  kind: "ficheiro"
+source_url: "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets?limit=100"
+access_date: "2026-10-20"
+texto_documental: true
+reference_date: "2026-07"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "De janeiro de 2013 ao mês n-2 anterior ao atual (valores acumulados)"
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "oe-2027"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Excerto do catálogo alojado com recibo. · Cruzado de ResearchHub content/26 Saude e Parcerias Efeitos · sns-catalogo-acumulados."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

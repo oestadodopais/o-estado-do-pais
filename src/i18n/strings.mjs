@@ -2363,6 +2363,7 @@ export const STRINGS = {
            como «o identificador da máquina» sem saber o que era. */
         identificadorK: 'identificador',
         excertoNota: 'Transcrito da fonte, palavra por palavra.',
+        excertoNotaCalculado: 'Valor calculado sobre as linhas do documento.',
         /* O RECIBO DE UM EXCERTO COMPOSTO (achado 5 da leitura a frio de
            15.09.2026). Noventa e uma linhas declaram na nota que o excerto foi
            composto a partir da resposta da fonte, e o recibo prometia-lhes
@@ -4198,6 +4199,7 @@ export const STRINGS = {
         aparelhoK: 'Provenance',
         identificadorK: 'identifier',
         excertoNota: 'Transcribed from the source, word for word.',
+        excertoNotaCalculado: 'Value calculated from the document’s rows.',
         excertoNotaComposto: "Excerpt composed from the source's response.",
         excertoPorConfirmar: 'The textual excerpt for this row has not been transcribed from the source yet.',
         excertoDerivada:

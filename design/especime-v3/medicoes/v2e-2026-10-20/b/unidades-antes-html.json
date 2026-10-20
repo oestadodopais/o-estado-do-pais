@@ -1,0 +1,156 @@
+{
+  "pt": [
+    {
+      "paragrafo": "seccoes[1].conteudo[5].paragrafo",
+      "recibo": "/livro-razao/dgo-2026-08-sns-saldo-jan-ago-2026",
+      "depois": "milhões de euros, com a despesa a crescer"
+    },
+    {
+      "paragrafo": "seccoes[1].conteudo[6].paragrafo",
+      "recibo": "/livro-razao/eurostat-hlth-sha11-hf-a-eur_hab-tot_hf-pt-2024",
+      "depois": "euros contra"
+    },
+    {
+      "paragrafo": "seccoes[1].conteudo[8].paragrafo",
+      "recibo": "/livro-razao/infarmed-ambulatorio-2026-07-p5-acumulado-encargo",
+      "depois": "milhões de euros em ambulatório de janeiro a julho e de"
+    },
+    {
+      "paragrafo": "seccoes[1].conteudo[8].paragrafo",
+      "recibo": "/livro-razao/der-sns-divida-fornecedores-2026-07",
+      "depois": "milhões de euros em"
+    },
+    {
+      "paragrafo": "seccoes[1].conteudo[8].paragrafo",
+      "recibo": "/livro-razao/dgo-atraso-45-p",
+      "depois": "milhões em"
+    },
+    {
+      "paragrafo": "seccoes[1].conteudo[8].paragrafo",
+      "recibo": "/livro-razao/dgo-regularizacao-ae",
+      "depois": "milhões até agosto."
+    },
+    {
+      "paragrafo": "seccoes[1].conteudo[9].paragrafo",
+      "recibo": "/livro-razao/der-prr-saude-por-pagar",
+      "depois": "milhões de euros,"
+    },
+    {
+      "paragrafo": "seccoes[2].conteudo[0].paragrafo",
+      "recibo": "/livro-razao/der-saude-variacao-total-abs",
+      "depois": "milhões de euros,"
+    },
+    {
+      "paragrafo": "seccoes[2].conteudo[5].paragrafo",
+      "recibo": "/livro-razao/der-saude-bens-servicos-reducao-abs",
+      "depois": "milhões de euros quando os encargos com medicamentos sobem"
+    },
+    {
+      "paragrafo": "seccoes[3].conteudo[0].paragrafo",
+      "recibo": "/livro-razao/der-saude-total-reducao-abs",
+      "depois": "milhões de euros do que a estimativa de despesa de"
+    },
+    {
+      "paragrafo": "seccoes[5].conteudo[0].paragrafo",
+      "recibo": "/livro-razao/der-saude-outras-correntes-variacao-abs",
+      "depois": "milhões, onde o relatório diz estar a dotação para reforçar contratos-programa ainda por fechar, sem dizer quanto, que conta com receitas próprias a crescer mais de metade sem que o relatório explique de onde vêm, e que, pelo que a execução de"
+    },
+    {
+      "paragrafo": "seccoes[1].conteudo[5].paragrafo",
+      "recibo": "/livro-razao/ppp-oe2027-riscos-pedidos-rodoviarios",
+      "depois": "milhões de euros em pedidos de reequilíbrio financeiro e litígios das concessionárias e subconcessionárias rodoviárias, com dados do primeiro trimestre, reportados a"
+    },
+    {
+      "paragrafo": "seccoes[1].conteudo[5].paragrafo",
+      "recibo": "/livro-razao/ppp-oe2027-riscos-rotas-algarve-mensal",
+      "depois": "milhões por mês, mais IVA. A UTAO distingue os pedidos dos encargos efetivos: «"
+    },
+    {
+      "paragrafo": "seccoes[3].conteudo[0].paragrafo",
+      "recibo": "/livro-razao/oe-2027-ppp-rodoviario-encargos-liquidos-2027",
+      "depois": "milhões líquidos para as parcerias rodoviárias em"
+    },
+    {
+      "paragrafo": "seccoes[3].conteudo[0].paragrafo",
+      "recibo": "/livro-razao/ppp-oe2027-riscos-pedidos-rodoviarios",
+      "depois": "milhões de pedidos das concessionárias, dos quais"
+    }
+  ],
+  "en": [
+    {
+      "paragrafo": "seccoes[1].conteudo[5].paragrafo",
+      "recibo": "/en/ledger/dgo-2026-08-sns-saldo-jan-ago-2026",
+      "depois": "million euros, with expenditure growing"
+    },
+    {
+      "paragrafo": "seccoes[1].conteudo[6].paragrafo",
+      "recibo": "/en/ledger/eurostat-hlth-sha11-hf-a-eur_hab-tot_hf-pt-2024",
+      "depois": "euros against"
+    },
+    {
+      "paragrafo": "seccoes[1].conteudo[8].paragrafo",
+      "recibo": "/en/ledger/infarmed-ambulatorio-2026-07-p5-acumulado-encargo",
+      "depois": "million euros in outpatient care from January to July and"
+    },
+    {
+      "paragrafo": "seccoes[1].conteudo[8].paragrafo",
+      "recibo": "/en/ledger/der-sns-divida-fornecedores-2026-07",
+      "depois": "million euros in"
+    },
+    {
+      "paragrafo": "seccoes[1].conteudo[8].paragrafo",
+      "recibo": "/en/ledger/dgo-atraso-45-p",
+      "depois": "million in"
+    },
+    {
+      "paragrafo": "seccoes[1].conteudo[8].paragrafo",
+      "recibo": "/en/ledger/dgo-regularizacao-ae",
+      "depois": "million through August."
+    },
+    {
+      "paragrafo": "seccoes[1].conteudo[9].paragrafo",
+      "recibo": "/en/ledger/der-prr-saude-por-pagar",
+      "depois": "million euros remain unpaid,"
+    },
+    {
+      "paragrafo": "seccoes[2].conteudo[0].paragrafo",
+      "recibo": "/en/ledger/der-saude-variacao-total-abs",
+      "depois": "million euros,"
+    },
+    {
+      "paragrafo": "seccoes[2].conteudo[5].paragrafo",
+      "recibo": "/en/ledger/der-saude-bens-servicos-reducao-abs",
+      "depois": "million euros while spending on medicines rises"
+    },
+    {
+      "paragrafo": "seccoes[3].conteudo[0].paragrafo",
+      "recibo": "/en/ledger/der-saude-total-reducao-abs",
+      "depois": "million euros less than the expenditure estimate for"
+    },
+    {
+      "paragrafo": "seccoes[5].conteudo[0].paragrafo",
+      "recibo": "/en/ledger/der-saude-outras-correntes-variacao-abs",
+      "depois": "million more in other current expenditure, where the report says the provision to reinforce contract-programmes still to be closed sits, without saying how much, that counts on own revenue growing by more than half without the report explaining where it comes from, and that, on the evidence of the"
+    },
+    {
+      "paragrafo": "seccoes[1].conteudo[5].paragrafo",
+      "recibo": "/en/ledger/ppp-oe2027-riscos-pedidos-rodoviarios",
+      "depois": "million euros in financial rebalancing claims and litigation by road concessionaires and subconcessionaires, with first-quarter data referenced to"
+    },
+    {
+      "paragrafo": "seccoes[1].conteudo[5].paragrafo",
+      "recibo": "/en/ledger/ppp-oe2027-riscos-rotas-algarve-mensal",
+      "depois": "million a month, plus VAT. The UTAO distinguishes claims from actual charges: «"
+    },
+    {
+      "paragrafo": "seccoes[3].conteudo[0].paragrafo",
+      "recibo": "/en/ledger/oe-2027-ppp-rodoviario-encargos-liquidos-2027",
+      "depois": "million net for the road partnerships in"
+    },
+    {
+      "paragrafo": "seccoes[3].conteudo[0].paragrafo",
+      "recibo": "/en/ledger/ppp-oe2027-riscos-pedidos-rodoviarios",
+      "depois": "million in concessionaires' claims,"
+    }
+  ]
+}

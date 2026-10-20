@@ -1,4 +1,5 @@
 import {loadClaims} from '../src/lib/ledger.mjs';
+import {valorImpressoDoPainelConferido} from '../src/lib/prova-efeitos.mjs';
 /** I143 e I158: o espaço do desenho também existe no texto que se copia e ouve.
  *  R4 (05.10.2026): o valor do recibo de uma linha deixou de ser o `<h1>` (o título passou a ser o nome da medida) e
  *  vive em `p.linha-valor`; a célula lê-o pela classe, com a mesma conferência. */
@@ -22,6 +23,11 @@ export function conferirValorUnidade(root, linhas = loadClaims()) {
     }
     const tipo = el.classList.contains('linha-valor') ? 'titulos' : 'cartoes';
     contas[tipo]++;
+    if (tipo === 'titulos' && claim && valorImpressoDoPainelConferido(claim.id, claim.value)) {
+      if (unidade) erros.push('V2E recibo: a unidade do painel está repetida depois do valor impresso');
+      if (valor.textContent !== claim.value) erros.push('V2E recibo: valor impresso diferente do painel selado');
+      continue;
+    }
     const marca = el.querySelector('.cartao-medida-marca');
     if (marca) {
       if (valor || unidade) erros.push('I143/I158: uma marca sem valor publicado traz valor ou unidade');

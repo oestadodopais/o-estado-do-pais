@@ -19,6 +19,10 @@ reference_date: "2026-07"
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
 excerpt: null
 
+# Ressalva publicada da casa, conferida no motor, nas duas línguas.
+ressalva: "Acumulado de janeiro ao mês, como o catálogo do SNS o diz; os valores repõem-se a zero em janeiro. Ver sns-catalogo-acumulados."
+ressalva_en: "Accumulated from January through the month, as stated in the NHS catalogue; values reset to zero in January. See sns-catalogo-acumulados."
+
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: "( sns-cirurgias-2026-07 / sns-cirurgias-2025-07 - 1 ) * 100 = -4,4"
 derivation_en: "( sns-cirurgias-2026-07 / sns-cirurgias-2025-07 - 1 ) * 100 = -4,4"

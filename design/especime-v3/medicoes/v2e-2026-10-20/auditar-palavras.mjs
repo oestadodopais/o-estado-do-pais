@@ -1,4 +1,4 @@
-/** Regenera a auditoria V2-e a partir das frases e dos campos selados. */
+/** Regenera a auditoria V2-e-b a partir das frases e dos campos selados. */
 import fs from 'node:fs';
 import {pathToFileURL} from 'node:url';
 const importar=p=>import(pathToFileURL(process.cwd()+'/'+p).href);
@@ -43,14 +43,14 @@ const descricoes={
 };
 const efeitosSaude=['sns-sem-medico-serie-nova-2026-08','der-sns-lista-cirurgia-variacao-pct','der-infarmed-variacao-pct','der-prr-saude-por-pagar-pct','der-sns-divida-fornecedores-2026-07'];
 for(const key of ['3.0','4.0','5.0'])apoiosSaude[key].push(...efeitosSaude);
-apoiosSaude['1.9']=['prr-complemento-p4-1-40-estado','prr-complemento-p6-1-42-estado'];
+apoiosSaude['1.9']=['prr-complemento-p4-1-40-estado'];
 apoiosPpp['1.6']=['alargamentos','investimentos-previstos','equilibrio','comparticipacoes','braga','investimentos-novos','limites','qualidade'].map(s=>'pe-despacho-'+s);
-apoiosPpp['3.0']=['pe-scut-vigencia','pe-dl87a-financiamento','pe-brisa-prazo-minuta','pe-oe-riscos-nao-reconhecimento',...apoiosPpp['1.6']];
-apoiosPpp['5.0'].push('pe-scut-trocos','pe-dl87a-financiamento');
+apoiosPpp['3.0']=['pe-scut-vigencia','pe-dl87a-financiamento','pe-dl87a-apoio-retificado','pe-oe-apoio-dl87a','pe-brisa-prazo-minuta','pe-oe-riscos-nao-reconhecimento',...apoiosPpp['1.6']];
+apoiosPpp['5.0'].push('pe-oe-beira-abolicao');
 descricoes['saude-no-orcamento'][1].push('Acesso e atividade do SNS, com as séries de médico de família e os períodos distintos.','Encargos com medicamentos e três medidas distintas de dívida e regularização.','Pagamentos do PRR e estados dos marcos, sem inferir execução física.');
 descricoes['saude-no-orcamento'][2].push('Composição orçamental ao lado de encargos com medicamentos, pagamentos do PRR e acesso ao serviço.');
-descricoes['parcerias-rodoviarias'][1].push('Prazo contratual e oito tarefas da negociação, com não reconhecimento dos pedidos.','Eliminação de portagens, financiamento dos descontos e advertência histórica do Tribunal de Contas, sem os confundir.');
-function tokens(x,out=[]){if(Array.isArray(x))x.forEach(y=>tokens(y,out));else if(x&&typeof x==='object'){for(const k of ['claim','literal','periodo','nome'])if(typeof x[k]==='string')out.push({id:x[k],campo:k==='periodo'?'reference_date':null});for(const [k,v] of Object.entries(x))if(!['claim','literal','periodo','nome'].includes(k))tokens(v,out);}return out;}
+descricoes['parcerias-rodoviarias'][1].push('Prazo contratual e oito tarefas da negociação, com não reconhecimento dos pedidos.','Eliminação de portagens e apoio pela diferença entre a atualização limitada e a contratual, com a definição retificada, a salvaguarda dos descontos, o financiamento pelo Orçamento do Estado, a inclusão nos encargos brutos e a negociação da Beira Interior.');
+function tokens(x,out=[]){if(Array.isArray(x))x.forEach(y=>tokens(y,out));else if(x&&typeof x==='object'){for(const k of ['claim','literal','periodo','nome','selo'])if(typeof x[k]==='string')out.push({id:x[k],campo:k==='periodo'?(linhas.get(x[k])?.period?'period':'reference_date'):null});for(const [k,v] of Object.entries(x))if(!['claim','literal','periodo','nome','selo'].includes(k))tokens(v,out);}return out;}
 function apoio(id,campo){const l=linhas.get(id);if(!l)throw new Error('Linha ainda não exportada: '+id);campo??=l.derivation?'derivation':'excerpt';const literal=l[campo];if(typeof literal!=='string'||literal.trim().length<4)throw new Error('Campo sem apoio: '+id+'.'+campo);return {linha:id,campo,literal};}
 function partesDaComparacao(parte){
  const frases=[

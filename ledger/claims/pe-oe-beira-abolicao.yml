@@ -6,7 +6,7 @@
 id: "pe-oe-beira-abolicao"
 
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
-value: "Salienta-se ainda o desenvolvimento dos trabalhos de negociação 38 no âmbito do contrato de concessão da Beira Interior, na sequência do pedido apresentado pela concessionária no contexto da abolição das portagens, tendo em vista verificar se estão reunidas as condições para a reposição do equilíbrio financeiro do contrato e para negociar os respetivos termos, abrangendo ainda a renegociação de outros aspetos contratuais relevantes e a avaliação de eventuais novos investimentos a realizar."
+value: "Salienta-se ainda o desenvolvimento dos trabalhos de negociação no âmbito do contrato de concessão da Beira Interior, na sequência do pedido apresentado pela concessionária no contexto da abolição das portagens, tendo em vista verificar se estão reunidas as condições para a reposição do equilíbrio financeiro do contrato e para negociar os respetivos termos, abrangendo ainda a renegociação de outros aspetos contratuais relevantes e a avaliação de eventuais novos investimentos a realizar."
 unit: "texto"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
@@ -24,7 +24,7 @@ texto_documental: true
 reference_date: "2027"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "Salienta-se ainda o desenvolvimento dos trabalhos de negociação 38 no âmbito do contrato de concessão da Beira Interior, na sequência do pedido apresentado pela concessionária no contexto da abolição das portagens, tendo em vista verificar se estão reunidas as condições para a reposição do equilíbrio financeiro do contrato e para negociar os respetivos termos, abrangendo ainda a renegociação de outros aspetos contratuais relevantes e a avaliação de eventuais novos investimentos a realizar."
+excerpt: "Salienta-se ainda o desenvolvimento dos trabalhos de negociação no âmbito do contrato de concessão da Beira Interior, na sequência do pedido apresentado pela concessionária no contexto da abolição das portagens, tendo em vista verificar se estão reunidas as condições para a reposição do equilíbrio financeiro do contrato e para negociar os respetivos termos, abrangendo ainda a renegociação de outros aspetos contratuais relevantes e a avaliação de eventuais novos investimentos a realizar."
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null
@@ -38,4 +38,10 @@ study: "oe-2027"
 note: "Cruzado de ResearchHub content/26 Saude e Parcerias Efeitos · pe-oe-beira-abolicao."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
-corrections: []
+corrections:
+  - date: "2026-10-20"
+    kind: "correcao"
+    old_value: "Salienta-se ainda o desenvolvimento dos trabalhos de negociação 38 no âmbito do contrato de concessão da Beira Interior, na sequência do pedido apresentado pela concessionária no contexto da abolição das portagens, tendo em vista verificar se estão reunidas as condições para a reposição do equilíbrio financeiro do contrato e para negociar os respetivos termos, abrangendo ainda a renegociação de outros aspetos contratuais relevantes e a avaliação de eventuais novos investimentos a realizar."
+    new_value: "Salienta-se ainda o desenvolvimento dos trabalhos de negociação no âmbito do contrato de concessão da Beira Interior, na sequência do pedido apresentado pela concessionária no contexto da abolição das portagens, tendo em vista verificar se estão reunidas as condições para a reposição do equilíbrio financeiro do contrato e para negociar os respetivos termos, abrangendo ainda a renegociação de outros aspetos contratuais relevantes e a avaliação de eventuais novos investimentos a realizar."
+    reason: "Retirada da chamada de nota colada à palavra negociação."
+    reason_en: "Removed the footnote marker attached to the word negociação."

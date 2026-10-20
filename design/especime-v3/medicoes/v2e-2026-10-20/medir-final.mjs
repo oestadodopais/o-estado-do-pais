@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import { itensResolvidos } from '../../../../src/lib/discussao.mjs';
 import { loadClaims } from '../../../../src/lib/ledger.mjs';
 import { textoDosPedacosDaExplicacao } from '../../../../src/lib/explicacoes.mjs';
-const pasta = new URL('./', import.meta.url);
+const pasta = new URL('./b/', import.meta.url);
 const linhas = loadClaims();
 const novos = new Set(Object.keys(JSON.parse(fs.readFileSync('ledger/cruzamentos/v2e.json', 'utf8')).rows));
 const edicoes = Object.fromEntries(['pt', 'en'].map(lang => [lang, itensResolvidos(lang).map(e => ({

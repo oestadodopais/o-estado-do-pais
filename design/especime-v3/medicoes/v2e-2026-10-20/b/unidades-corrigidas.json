@@ -1,0 +1,182 @@
+[
+  {
+    "ficheiro": "src/data/discussao.mjs",
+    "token": "'dgo-2026-08-sns-saldo-jan-ago-2026'",
+    "unidade": " milhões de euros",
+    "lingua": "pt"
+  },
+  {
+    "ficheiro": "src/data/discussao.mjs",
+    "token": "'dgo-2026-08-sns-saldo-jan-ago-2026'",
+    "unidade": " million euros",
+    "lingua": "en"
+  },
+  {
+    "ficheiro": "src/data/discussao.mjs",
+    "token": "'eurostat-hlth-sha11-hf-a-eur_hab-tot_hf-pt-2024'",
+    "unidade": " euros",
+    "lingua": "pt"
+  },
+  {
+    "ficheiro": "src/data/discussao.mjs",
+    "token": "'eurostat-hlth-sha11-hf-a-eur_hab-tot_hf-pt-2024'",
+    "unidade": " euros",
+    "lingua": "en"
+  },
+  {
+    "ficheiro": "src/data/discussao.mjs",
+    "token": "'der-saude-variacao-total-abs'",
+    "unidade": " milhões de euros",
+    "lingua": "pt"
+  },
+  {
+    "ficheiro": "src/data/discussao.mjs",
+    "token": "'der-saude-variacao-total-abs'",
+    "unidade": " million euros",
+    "lingua": "en"
+  },
+  {
+    "ficheiro": "src/data/discussao.mjs",
+    "token": "'der-saude-total-reducao-abs'",
+    "unidade": " milhões de euros",
+    "lingua": "pt"
+  },
+  {
+    "ficheiro": "src/data/discussao.mjs",
+    "token": "'der-saude-total-reducao-abs'",
+    "unidade": " million euros",
+    "lingua": "en"
+  },
+  {
+    "ficheiro": "src/data/discussao.mjs",
+    "token": "'der-saude-outras-correntes-variacao-abs'",
+    "unidade": " milhões",
+    "lingua": "pt"
+  },
+  {
+    "ficheiro": "src/data/discussao.mjs",
+    "token": "'der-saude-outras-correntes-variacao-abs'",
+    "unidade": " million",
+    "lingua": "en"
+  },
+  {
+    "ficheiro": "src/data/discussao.mjs",
+    "token": "'ppp-oe2027-riscos-pedidos-rodoviarios'",
+    "unidade": " milhões de euros",
+    "lingua": "pt"
+  },
+  {
+    "ficheiro": "src/data/discussao.mjs",
+    "token": "'ppp-oe2027-riscos-rotas-algarve-mensal'",
+    "unidade": " milhões",
+    "lingua": "pt"
+  },
+  {
+    "ficheiro": "src/data/discussao.mjs",
+    "token": "'ppp-oe2027-riscos-pedidos-rodoviarios'",
+    "unidade": " million euros",
+    "lingua": "en"
+  },
+  {
+    "ficheiro": "src/data/discussao.mjs",
+    "token": "'ppp-oe2027-riscos-rotas-algarve-mensal'",
+    "unidade": " million",
+    "lingua": "en"
+  },
+  {
+    "ficheiro": "src/data/discussao.mjs",
+    "token": "rod",
+    "unidade": " milhões",
+    "lingua": "pt"
+  },
+  {
+    "ficheiro": "src/data/discussao.mjs",
+    "token": "'ppp-oe2027-riscos-pedidos-rodoviarios'",
+    "unidade": " milhões",
+    "lingua": "pt"
+  },
+  {
+    "ficheiro": "src/data/discussao.mjs",
+    "token": "rod",
+    "unidade": " million",
+    "lingua": "en"
+  },
+  {
+    "ficheiro": "src/data/discussao.mjs",
+    "token": "'ppp-oe2027-riscos-pedidos-rodoviarios'",
+    "unidade": " million",
+    "lingua": "en"
+  },
+  {
+    "ficheiro": "src/data/discussao-efeitos.mjs",
+    "token": "'infarmed-ambulatorio-2026-07-p5-acumulado-encargo'",
+    "unidade": " milhões de euros",
+    "lingua": "pt"
+  },
+  {
+    "ficheiro": "src/data/discussao-efeitos.mjs",
+    "token": "'der-sns-divida-fornecedores-2026-07'",
+    "unidade": " milhões de euros",
+    "lingua": "pt"
+  },
+  {
+    "ficheiro": "src/data/discussao-efeitos.mjs",
+    "token": "'dgo-atraso-45-p'",
+    "unidade": " milhões",
+    "lingua": "pt"
+  },
+  {
+    "ficheiro": "src/data/discussao-efeitos.mjs",
+    "token": "'dgo-regularizacao-ae'",
+    "unidade": " milhões",
+    "lingua": "pt"
+  },
+  {
+    "ficheiro": "src/data/discussao-efeitos.mjs",
+    "token": "'infarmed-ambulatorio-2026-07-p5-acumulado-encargo'",
+    "unidade": " million euros",
+    "lingua": "en"
+  },
+  {
+    "ficheiro": "src/data/discussao-efeitos.mjs",
+    "token": "'der-sns-divida-fornecedores-2026-07'",
+    "unidade": " million euros",
+    "lingua": "en"
+  },
+  {
+    "ficheiro": "src/data/discussao-efeitos.mjs",
+    "token": "'dgo-atraso-45-p'",
+    "unidade": " million",
+    "lingua": "en"
+  },
+  {
+    "ficheiro": "src/data/discussao-efeitos.mjs",
+    "token": "'dgo-regularizacao-ae'",
+    "unidade": " million",
+    "lingua": "en"
+  },
+  {
+    "ficheiro": "src/data/discussao-efeitos.mjs",
+    "token": "'der-prr-saude-por-pagar'",
+    "unidade": " milhões de euros",
+    "lingua": "pt"
+  },
+  {
+    "ficheiro": "src/data/discussao-efeitos.mjs",
+    "token": "'der-prr-saude-por-pagar'",
+    "unidade": " million euros",
+    "lingua": "en"
+  },
+  {
+    "ficheiro": "src/data/discussao-efeitos.mjs",
+    "token": "'der-saude-bens-servicos-reducao-abs'",
+    "unidade": " milhões de euros",
+    "lingua": "pt"
+  },
+  {
+    "ficheiro": "src/data/discussao-efeitos.mjs",
+    "token": "'der-saude-bens-servicos-reducao-abs'",
+    "unidade": " million euros",
+    "lingua": "en"
+  }
+]

@@ -10,6 +10,7 @@ import { nomeNoRecibo } from '../src/lib/o-que-e-o-numero.mjs';
 import { unidadeDaLinha } from '../src/i18n/unidades.mjs';
 import { linguaDaFonte } from '../src/i18n/lingua-dos-titulos.mjs';
 import { dataDaCasa } from '../src/lib/datas.mjs';
+import { valorImpressoDoPainelConferido } from '../src/lib/prova-efeitos.mjs';
 import { t } from '../src/i18n/strings.mjs';
 import { LICENCA } from '../src/data/licenca.mjs';
 import { SITE_HOST_DISPLAY } from '../site.config.mjs';
@@ -41,8 +42,8 @@ export function dadosEsperados(c, lang) {
   }
   return {
     nome: nomeNoRecibo(c.id, lang).texto + (lugar ? ` · ${lugar.nome}` : ''),
-    periodo: c.reference_date ? dataDaCasa(c.reference_date, lang) : palavras.periodoEmFalta,
-    valor: String(c.value), unidade: un.texto, unidadeLang: un.lingua || t(lang).lang,
+    periodo: (c.period ?? c.reference_date) ? dataDaCasa(c.period ?? c.reference_date, lang) : palavras.periodoEmFalta,
+    valor: String(c.value), unidade: valorImpressoDoPainelConferido(c.id, c.value) ? '' : un.texto, unidadeLang: un.lingua || t(lang).lang,
     fonte: c.source || palavras.calculado, fonteLang: (c.source && linguaDaFonte(c.source, lang)) || t(lang).lang,
     data: dia, leitura: leituraDaIncorporacao(c, lang, dia),
     atribuicao: LICENCA ? LICENCA.atribuicao + ', ' + LICENCA.nome : '',
@@ -62,7 +63,7 @@ export function codigoEsperado(c, lang) {
   const href = origem + (lang === 'en' ? '/en/ledger/' : '/livro-razao/') + c.id;
   const lido = leituraDaIncorporacao(c, lang);
   const valor = c.texto_documental === true ? `<span lang="pt-PT">${escape(c.value)}</span>` : escape(c.value);
-  return `<p class="oedp-numero" lang="${t(lang).lang}" data-oedp="${escape(c.id)}" data-oedp-valor="${escape(c.value)}" data-oedp-lido="${escape(c.access_date)}"><a href="${href}">${escape(d.nome)}, ${escape(d.periodo)}: ${valor} <span lang="${d.unidadeLang}">${escape(d.unidade)}</span></a> · <span lang="${d.fonteLang}">${escape(d.fonte)}</span>${d.fonte === lido ? '' : ', ' + escape(lido)} · ${escape(d.atribuicao)}${d.notas ? ` · <span>${escape(d.notas)}</span>` : ''}</p><script async src="${origem}/incorporar.js" referrerpolicy="no-referrer" crossorigin="anonymous"></script>`;
+  return `<p class="oedp-numero" lang="${t(lang).lang}" data-oedp="${escape(c.id)}" data-oedp-valor="${escape(c.value)}" data-oedp-lido="${escape(c.access_date)}"><a href="${href}">${escape(d.nome)}, ${escape(d.periodo)}: ${valor}${d.unidade ? ` <span lang="${d.unidadeLang}">${escape(d.unidade)}</span>` : ''}</a> · <span lang="${d.fonteLang}">${escape(d.fonte)}</span>${d.fonte === lido ? '' : ', ' + escape(lido)} · ${escape(d.atribuicao)}${d.notas ? ` · <span>${escape(d.notas)}</span>` : ''}</p><script async src="${origem}/incorporar.js" referrerpolicy="no-referrer" crossorigin="anonymous"></script>`;
 }
 
 /* Os estados condicionais também têm palavras aprovadas. Não se tornam

@@ -21,7 +21,7 @@ export function itensResolvidos(lang) {
   return [...ITENS].sort((a,b) => b.escrita.localeCompare(a.escrita)).map(e => {
     const resolvido = resolverExplicacao(e, lang);
     const linhas = new Set([...resolvido.linhas, ...(e.linhas ?? [])]);
-    for (const id of [...linhas]) {
+    for (const id of linhas) {
       const componentes = getClaim(id).derived_from;
       if (Array.isArray(componentes)) for (const componente of componentes) linhas.add(componente);
     }

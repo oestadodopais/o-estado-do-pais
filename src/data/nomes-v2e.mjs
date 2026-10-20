@@ -360,6 +360,18 @@ export const NOMES_V2E = {
     "pt": "Pagamento do Estado nas portagens, redação retificada",
     "en": "State toll support payment, corrected wording"
   },
+  "pe-dl87a-descontos": {
+    "pt": "Preservação dos regimes de descontos",
+    "en": "Preservation of discount schemes"
+  },
+  "pe-brisa-minuta-ano": {
+    "pt": "Ano da minuta do contrato de concessão Brisa",
+    "en": "Year of the Brisa concession draft contract"
+  },
+  "pe-dl87a-publicacao-ano": {
+    "pt": "Ano de publicação do decreto-lei das portagens",
+    "en": "Publication year of the toll decree-law"
+  },
   "prr-complemento-p3-1-24-estado": {
     "pt": "Marco ou meta 1.24: Realização de ações de sensibilização e de formação para «construir os percursos dos doentes» no contexto das demências: Estado",
     "en": "Milestone or target 1.24: Dementia care pathway awareness and training: Status"
@@ -489,16 +501,16 @@ export const NOMES_V2E = {
     "en": "Milestone or target 1.44: Construction, equipment and vehicles for the Azores regional health service: Status"
   },
   "sns-sem-medico-serie-antiga-2025-06": {
-    "pt": "Utentes sem médico de família atribuído",
-    "en": "Patients without an assigned family doctor"
+    "pt": "Utentes inscritos sem médico de família atribuído (série anterior)",
+    "en": "Registered users without an assigned family doctor (earlier series)"
   },
   "sns-sem-medico-serie-antiga-2026-06": {
-    "pt": "Utentes sem médico de família atribuído",
-    "en": "Patients without an assigned family doctor"
+    "pt": "Utentes inscritos sem médico de família atribuído (série anterior)",
+    "en": "Registered users without an assigned family doctor (earlier series)"
   },
   "sns-sem-medico-serie-nova-2026-08": {
-    "pt": "Inscritos elegíveis sem médico de família atribuído",
-    "en": "Eligible registered patients without an assigned family doctor"
+    "pt": "Utentes elegíveis inscritos sem médico de família atribuído (série de julho de 2026)",
+    "en": "Eligible registered users without an assigned family doctor (series from July 2026)"
   },
   "sns-consultas-csp-2026-08": {
     "pt": "Consultas médicas nos cuidados de saúde primários",
@@ -525,12 +537,12 @@ export const NOMES_V2E = {
     "en": "Scheduled and emergency surgical interventions"
   },
   "sns-lista-cirurgia-2026-07": {
-    "pt": "Inscritos em lista de espera para cirurgia",
-    "en": "Patients on the surgical waiting list"
+    "pt": "Inscritos em lista para cirurgia (todos os inscritos no SIGIC)",
+    "en": "Patients on the surgery waiting list (all SIGIC registrations)"
   },
   "sns-lista-cirurgia-2025-07": {
-    "pt": "Inscritos em lista de espera para cirurgia",
-    "en": "Patients on the surgical waiting list"
+    "pt": "Inscritos em lista para cirurgia (todos os inscritos no SIGIC)",
+    "en": "Patients on the surgery waiting list (all SIGIC registrations)"
   },
   "sns-urgencias-2026-07": {
     "pt": "Atendimentos em urgência hospitalar",
@@ -549,28 +561,28 @@ export const NOMES_V2E = {
     "en": "Patients waiting for a place in integrated long-term care"
   },
   "eurostat-be-phys": {
-    "pt": "Médicos por cem mil habitantes, Bélgica",
-    "en": "Physicians per hundred thousand inhabitants, Belgium"
+    "pt": "Médicos em exercício por cem mil habitantes",
+    "en": "Practising physicians per hundred thousand inhabitants"
   },
   "eurostat-el-phys": {
-    "pt": "Médicos por cem mil habitantes, Grécia",
-    "en": "Physicians per hundred thousand inhabitants, Greece"
+    "pt": "Médicos em exercício por cem mil habitantes",
+    "en": "Practising physicians per hundred thousand inhabitants"
   },
   "eurostat-lu-nrs": {
-    "pt": "Enfermeiros por cem mil habitantes, Luxemburgo",
-    "en": "Nurses per hundred thousand inhabitants, Luxembourg"
+    "pt": "Enfermeiros com qualificação reconhecida na União Europeia por cem mil habitantes",
+    "en": "Nurses with an EU-recognised qualification per hundred thousand inhabitants"
   },
   "eurostat-pt-phys": {
-    "pt": "Médicos por cem mil habitantes, Portugal",
-    "en": "Physicians per hundred thousand inhabitants, Portugal"
+    "pt": "Médicos em exercício por cem mil habitantes",
+    "en": "Practising physicians per hundred thousand inhabitants"
   },
   "eurostat-pt-nrs": {
-    "pt": "Enfermeiros por cem mil habitantes, Portugal",
-    "en": "Nurses per hundred thousand inhabitants, Portugal"
+    "pt": "Enfermeiros com qualificação reconhecida na União Europeia por cem mil habitantes",
+    "en": "Nurses with an EU-recognised qualification per hundred thousand inhabitants"
   },
   "eurostat-ro-nrs": {
-    "pt": "Enfermeiros por cem mil habitantes, Roménia",
-    "en": "Nurses per hundred thousand inhabitants, Romania"
+    "pt": "Enfermeiros com qualificação reconhecida na União Europeia por cem mil habitantes",
+    "en": "Nurses with an EU-recognised qualification per hundred thousand inhabitants"
   },
   "prr-monitorizacao-20261014-p2-c01-contratado": {
     "pt": "C01 - Serviço Nacional de Saúde: Contratado PRR",
@@ -624,6 +636,18 @@ export const NOMES_V2E = {
     "pt": "Marco ou meta 1.6: Entrada em vigor do novo modelo de contratos de gestão: Estado",
     "en": "Milestone or target 1.6: Health milestone 1.6: Status"
   },
+  "sns-sem-medico-elegibilidade": {
+    "pt": "Elegibilidade para atribuição de médico de família",
+    "en": "Eligibility for assignment of a family doctor"
+  },
+  "sns-consultas-csp-descricao": {
+    "pt": "Consultas: exclusão do Vitacare e último mês provisório",
+    "en": "Consultations: Vitacare exclusion and provisional latest month"
+  },
+  "sns-catalogo-acumulados": {
+    "pt": "Período dos valores acumulados no catálogo do SNS",
+    "en": "Period of cumulative values in the NHS catalogue"
+  },
   "der-sns-consultas-csp-variacao-pct": {
     "pt": "Variação homóloga de consultas nos cuidados primários",
     "en": "Year-on-year change in primary-care consultations"
@@ -659,6 +683,10 @@ export const NOMES_V2E = {
   "der-prr-saude-pago-numerico": {
     "pt": "Pago na componente Saúde do PRR, leitura em milhões",
     "en": "Paid for RRP Health, read in millions"
+  },
+  "der-prr-saude-taxa-numerico": {
+    "pt": "Execução financeira da componente Saúde do PRR",
+    "en": "Financial execution of RRP Health"
   },
   "der-prr-saude-por-pagar": {
     "pt": "PRR Saúde contratado por pagar",

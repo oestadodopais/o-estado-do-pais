@@ -4569,10 +4569,10 @@
     },
     "pe-oe-riscos-nao-reconhecimento": {
       "id": "pe-oe-riscos-nao-reconhecimento",
-      "value": "Em todo o caso, importa sublinhar que a presente análise não implica qualquer reconhecimento ou assunção, ainda que tácita, de responsabilidades por parte dos parceiros públicos decorrentes das pretensões deduzidas pelos parceiros privados, quer quanto aos respetivos fundamentos, que, na maioria das situações, são rejeitados pelos parceiros públicos, quer quanto aos montantes peticionados. Com efeito, ao longo dos últimos anos verificou-se, em diversas situações, que os pedidos formulados pelos parceiros privados vieram a ser considerados improcedentes, ou que as responsabilidades financeiras imputadas aos parceiros públicos foram inferiores aos montantes inicialmente peticionados.",
+      "value": "Em todo o caso, importa sublinhar que a presente análise não implica qualquer reconhecimento ou assunção, ainda que tácita, de responsabilidades por parte dos parceiros públicos decorrentes das pretensões deduzidas pelos parceiros privados, quer quanto aos respetivos fundamentos, que, na maioria das situações, são rejeitados pelos parceiros públicos, quer quanto aos montantes peticionados.",
       "unit": "texto",
       "period": "2027",
-      "excerpt": "Em todo o caso, importa sublinhar que a presente análise não implica qualquer reconhecimento ou assunção, ainda que tácita, de responsabilidades por parte dos parceiros públicos decorrentes das pretensões deduzidas pelos parceiros privados, quer quanto aos respetivos fundamentos, que, na maioria das situações, são rejeitados pelos parceiros públicos, quer quanto aos montantes peticionados. Com efeito, ao longo dos últimos anos verificou-se, em diversas situações, que os pedidos formulados pelos parceiros privados vieram a ser considerados improcedentes, ou que as responsabilidades financeiras imputadas aos parceiros públicos foram inferiores aos montantes inicialmente peticionados.",
+      "excerpt": "Em todo o caso, importa sublinhar que a presente análise não implica qualquer reconhecimento ou assunção, ainda que tácita, de responsabilidades por parte dos parceiros públicos decorrentes das pretensões deduzidas pelos parceiros privados, quer quanto aos respetivos fundamentos, que, na maioria das situações, são rejeitados pelos parceiros públicos, quer quanto aos montantes peticionados.",
       "document": {
         "title": "Orçamento do Estado 2027 RELATÓRIO",
         "file": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
@@ -4861,10 +4861,10 @@
     },
     "pe-oe-beira-abolicao": {
       "id": "pe-oe-beira-abolicao",
-      "value": "Salienta-se ainda o desenvolvimento dos trabalhos de negociação 38 no âmbito do contrato de concessão da Beira Interior, na sequência do pedido apresentado pela concessionária no contexto da abolição das portagens, tendo em vista verificar se estão reunidas as condições para a reposição do equilíbrio financeiro do contrato e para negociar os respetivos termos, abrangendo ainda a renegociação de outros aspetos contratuais relevantes e a avaliação de eventuais novos investimentos a realizar.",
+      "value": "Salienta-se ainda o desenvolvimento dos trabalhos de negociação no âmbito do contrato de concessão da Beira Interior, na sequência do pedido apresentado pela concessionária no contexto da abolição das portagens, tendo em vista verificar se estão reunidas as condições para a reposição do equilíbrio financeiro do contrato e para negociar os respetivos termos, abrangendo ainda a renegociação de outros aspetos contratuais relevantes e a avaliação de eventuais novos investimentos a realizar.",
       "unit": "texto",
       "period": "2027",
-      "excerpt": "Salienta-se ainda o desenvolvimento dos trabalhos de negociação 38 no âmbito do contrato de concessão da Beira Interior, na sequência do pedido apresentado pela concessionária no contexto da abolição das portagens, tendo em vista verificar se estão reunidas as condições para a reposição do equilíbrio financeiro do contrato e para negociar os respetivos termos, abrangendo ainda a renegociação de outros aspetos contratuais relevantes e a avaliação de eventuais novos investimentos a realizar.",
+      "excerpt": "Salienta-se ainda o desenvolvimento dos trabalhos de negociação no âmbito do contrato de concessão da Beira Interior, na sequência do pedido apresentado pela concessionária no contexto da abolição das portagens, tendo em vista verificar se estão reunidas as condições para a reposição do equilíbrio financeiro do contrato e para negociar os respetivos termos, abrangendo ainda a renegociação de outros aspetos contratuais relevantes e a avaliação de eventuais novos investimentos a realizar.",
       "document": {
         "title": "Orçamento do Estado 2027 RELATÓRIO",
         "file": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
@@ -6744,6 +6744,241 @@
         "redirecionamentos": [],
         "bytes": 213950,
         "sha256": "60df9a4ce15d90077eeb94e99f4b942b6f9de36ebd3aac8b4f6c0e194d6318a5"
+      },
+      "rights": {
+        "redistributed": "Referência, excerto e recibo. Corpo conservado no motor.",
+        "assessment": {
+          "publicar_corpos": false,
+          "finalidade": "Pesquisa interna com recibos. Nenhum corpo é publicado.",
+          "anfitrioes": [
+            "diariodarepublica.pt",
+            "ec.europa.eu",
+            "erario.tcontas.pt",
+            "files.diariodarepublica.pt",
+            "files.dre.pt",
+            "infraestruturasdeportugal.pt",
+            "observador.pt",
+            "ordemdosmedicos.pt",
+            "porto.pcp.pt",
+            "portugal.gov.pt",
+            "recuperarportugal.gov.pt",
+            "simedicos.pt",
+            "transparencia.sns.gov.pt",
+            "webgate.ec.europa.eu",
+            "www.brisaconcessao.pt",
+            "www.eo.gov.pt",
+            "www.fnam.pt",
+            "www.imt-ip.pt",
+            "www.infarmed.pt",
+            "www.infraestruturasdeportugal.pt",
+            "www.ordemenfermeiros.pt",
+            "www.pcp.pt",
+            "www.razaoautomovel.com",
+            "www.rtp.pt",
+            "www.sep.org.pt",
+            "www.simedicos.pt",
+            "www.tcontas.pt"
+          ],
+          "nota": "As condições e licenças específicas conservadas nos metadados das fontes não são substituídas por autorização geral. Publicação de corpos não autorizada nesta passagem."
+        },
+        "origin_path": "content/26 Saude e Parcerias Efeitos/source/direitos/avaliacao.json"
+      }
+    },
+    "pe-dl87a-descontos": {
+      "id": "pe-dl87a-descontos",
+      "value": "O disposto no presente decreto-lei não prejudica a aplicação dos regimes de descontos em vigor.",
+      "unit": "texto",
+      "period": "2023",
+      "excerpt": "O disposto no presente decreto-lei não prejudica a aplicação dos regimes de descontos em vigor.",
+      "document": {
+        "title": "Decreto-Lei n.º 87-A/2022",
+        "file": "content/26 Saude e Parcerias Efeitos/source/parcerias/dl87a.pdf",
+        "source_sha256": "02f47b657bf38ea15f30749dd810c2a4bde5bdf68b5a8a70ab6108647b04dbf3",
+        "locator": "Artigo 1.º, n.º 2; PDF 1",
+        "page": 1,
+        "printed_page": null
+      },
+      "evidence": {
+        "file": "content/26 Saude e Parcerias Efeitos/source/parcerias/dl87a.pdf",
+        "sha256": "02f47b657bf38ea15f30749dd810c2a4bde5bdf68b5a8a70ab6108647b04dbf3",
+        "locator": "Artigo 1.º, n.º 2; PDF 1"
+      },
+      "derivation": null,
+      "label": "Preservação dos regimes de descontos",
+      "label_en": "Preservation of discount schemes",
+      "temporal_evidence": null,
+      "receipt": {
+        "pedido": "https://files.dre.pt/1s/2022/12/25001/0000200005.pdf",
+        "endereco_final": "https://files.dre.pt/1s/2022/12/25001/0000200005.pdf",
+        "acedido_em": "2026-10-20T13:12:29.561105+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "ficheiro": "parcerias/dl87a.pdf",
+        "estado": 200,
+        "tipo": "application/pdf",
+        "segundos": 0.247,
+        "erro": null,
+        "redirecionamentos": [],
+        "bytes": 485619,
+        "sha256": "02f47b657bf38ea15f30749dd810c2a4bde5bdf68b5a8a70ab6108647b04dbf3"
+      },
+      "rights": {
+        "redistributed": "Referência, excerto e recibo. Corpo conservado no motor.",
+        "assessment": {
+          "publicar_corpos": false,
+          "finalidade": "Pesquisa interna com recibos. Nenhum corpo é publicado.",
+          "anfitrioes": [
+            "diariodarepublica.pt",
+            "ec.europa.eu",
+            "erario.tcontas.pt",
+            "files.diariodarepublica.pt",
+            "files.dre.pt",
+            "infraestruturasdeportugal.pt",
+            "observador.pt",
+            "ordemdosmedicos.pt",
+            "porto.pcp.pt",
+            "portugal.gov.pt",
+            "recuperarportugal.gov.pt",
+            "simedicos.pt",
+            "transparencia.sns.gov.pt",
+            "webgate.ec.europa.eu",
+            "www.brisaconcessao.pt",
+            "www.eo.gov.pt",
+            "www.fnam.pt",
+            "www.imt-ip.pt",
+            "www.infarmed.pt",
+            "www.infraestruturasdeportugal.pt",
+            "www.ordemenfermeiros.pt",
+            "www.pcp.pt",
+            "www.razaoautomovel.com",
+            "www.rtp.pt",
+            "www.sep.org.pt",
+            "www.simedicos.pt",
+            "www.tcontas.pt"
+          ],
+          "nota": "As condições e licenças específicas conservadas nos metadados das fontes não são substituídas por autorização geral. Publicação de corpos não autorizada nesta passagem."
+        },
+        "origin_path": "content/26 Saude e Parcerias Efeitos/source/direitos/avaliacao.json"
+      }
+    },
+    "pe-brisa-minuta-ano": {
+      "id": "pe-brisa-minuta-ano",
+      "value": "31 de Dezembro de 2008",
+      "unit": "texto",
+      "period": "2008",
+      "excerpt": "31 de Dezembro de 2008",
+      "document": {
+        "title": "Resolução do Conselho de Ministros n.º 198-B/2008",
+        "file": "content/26 Saude e Parcerias Efeitos/source/parcerias/brisa-minuta.zip",
+        "source_sha256": "52663b43033ff89788c6fbb0716e736b33a178f3ed2890a76fe217cfe114af60",
+        "locator": "Brisa_Contrato_Concessao2008_RCM_198-B.pdf; p. 1 PDF; Cabeçalho da publicação, PDF 1",
+        "page": 1,
+        "printed_page": "9300-(393)",
+        "member": "Brisa_Contrato_Concessao2008_RCM_198-B.pdf",
+        "member_sha256": "45cd927591113e3898450eeb6971dec0cb3d92a37c5e8af31e80c54e31e4bdf1"
+      },
+      "evidence": {
+        "file": "content/26 Saude e Parcerias Efeitos/source/parcerias/brisa-minuta.zip",
+        "sha256": "52663b43033ff89788c6fbb0716e736b33a178f3ed2890a76fe217cfe114af60",
+        "locator": "Brisa_Contrato_Concessao2008_RCM_198-B.pdf; p. 1 PDF; Cabeçalho da publicação, PDF 1",
+        "member": "Brisa_Contrato_Concessao2008_RCM_198-B.pdf",
+        "member_sha256": "45cd927591113e3898450eeb6971dec0cb3d92a37c5e8af31e80c54e31e4bdf1"
+      },
+      "derivation": null,
+      "label": "Ano da minuta do contrato de concessão Brisa",
+      "label_en": "Year of the Brisa concession draft contract",
+      "temporal_evidence": null,
+      "receipt": {
+        "pedido": "https://www.imt-ip.pt/wp-content/uploads/IMTT/Portugues/InfraestruturasRodoviarias/RedeRodoviaria/Documents/Concessoes2014/Brisa_Minuta_Contrato_Concessao.zip",
+        "endereco_final": "https://www.imt-ip.pt/wp-content/uploads/IMTT/Portugues/InfraestruturasRodoviarias/RedeRodoviaria/Documents/Concessoes2014/Brisa_Minuta_Contrato_Concessao.zip",
+        "acedido_em": "2026-10-20T13:15:34.419917+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "ficheiro": "parcerias/brisa-minuta.zip",
+        "estado": 200,
+        "tipo": "application/zip",
+        "segundos": 0.349,
+        "erro": null,
+        "redirecionamentos": [],
+        "bytes": 467247,
+        "sha256": "52663b43033ff89788c6fbb0716e736b33a178f3ed2890a76fe217cfe114af60"
+      },
+      "rights": {
+        "redistributed": "Referência, excerto e recibo. Corpo conservado no motor.",
+        "assessment": {
+          "publicar_corpos": false,
+          "finalidade": "Pesquisa interna com recibos. Nenhum corpo é publicado.",
+          "anfitrioes": [
+            "diariodarepublica.pt",
+            "ec.europa.eu",
+            "erario.tcontas.pt",
+            "files.diariodarepublica.pt",
+            "files.dre.pt",
+            "infraestruturasdeportugal.pt",
+            "observador.pt",
+            "ordemdosmedicos.pt",
+            "porto.pcp.pt",
+            "portugal.gov.pt",
+            "recuperarportugal.gov.pt",
+            "simedicos.pt",
+            "transparencia.sns.gov.pt",
+            "webgate.ec.europa.eu",
+            "www.brisaconcessao.pt",
+            "www.eo.gov.pt",
+            "www.fnam.pt",
+            "www.imt-ip.pt",
+            "www.infarmed.pt",
+            "www.infraestruturasdeportugal.pt",
+            "www.ordemenfermeiros.pt",
+            "www.pcp.pt",
+            "www.razaoautomovel.com",
+            "www.rtp.pt",
+            "www.sep.org.pt",
+            "www.simedicos.pt",
+            "www.tcontas.pt"
+          ],
+          "nota": "As condições e licenças específicas conservadas nos metadados das fontes não são substituídas por autorização geral. Publicação de corpos não autorizada nesta passagem."
+        },
+        "origin_path": "content/26 Saude e Parcerias Efeitos/source/direitos/avaliacao.json"
+      }
+    },
+    "pe-dl87a-publicacao-ano": {
+      "id": "pe-dl87a-publicacao-ano",
+      "value": "29 de dezembro de 2022",
+      "unit": "texto",
+      "period": "2022",
+      "excerpt": "29 de dezembro de 2022",
+      "document": {
+        "title": "Decreto-Lei n.º 87-A/2022",
+        "file": "content/26 Saude e Parcerias Efeitos/source/parcerias/dl87a.pdf",
+        "source_sha256": "02f47b657bf38ea15f30749dd810c2a4bde5bdf68b5a8a70ab6108647b04dbf3",
+        "locator": "Cabeçalho da publicação, PDF 1",
+        "page": 1,
+        "printed_page": null
+      },
+      "evidence": {
+        "file": "content/26 Saude e Parcerias Efeitos/source/parcerias/dl87a.pdf",
+        "sha256": "02f47b657bf38ea15f30749dd810c2a4bde5bdf68b5a8a70ab6108647b04dbf3",
+        "locator": "Cabeçalho da publicação, PDF 1"
+      },
+      "derivation": null,
+      "label": "Ano de publicação do decreto-lei das portagens",
+      "label_en": "Publication year of the toll decree-law",
+      "temporal_evidence": null,
+      "receipt": {
+        "pedido": "https://files.dre.pt/1s/2022/12/25001/0000200005.pdf",
+        "endereco_final": "https://files.dre.pt/1s/2022/12/25001/0000200005.pdf",
+        "acedido_em": "2026-10-20T13:12:29.561105+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "ficheiro": "parcerias/dl87a.pdf",
+        "estado": 200,
+        "tipo": "application/pdf",
+        "segundos": 0.247,
+        "erro": null,
+        "redirecionamentos": [],
+        "bytes": 485619,
+        "sha256": "02f47b657bf38ea15f30749dd810c2a4bde5bdf68b5a8a70ab6108647b04dbf3"
       },
       "rights": {
         "redistributed": "Referência, excerto e recibo. Corpo conservado no motor.",
@@ -9404,8 +9639,8 @@
         "formula": "Soma dos campos selecionados nos registos identificados; campos nulos não convertidos em zero.",
         "result": "1669681"
       },
-      "label": "Utentes sem médico de família atribuído",
-      "label_en": "Patients without an assigned family doctor",
+      "label": "Utentes inscritos sem médico de família atribuído (série anterior)",
+      "label_en": "Registered users without an assigned family doctor (earlier series)",
       "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/utentes-inscritos-em-cuidados-de-saude-primarios/exports/json",
@@ -9681,8 +9916,8 @@
         "formula": "Soma dos campos selecionados nos registos identificados; campos nulos não convertidos em zero.",
         "result": "1672130"
       },
-      "label": "Utentes sem médico de família atribuído",
-      "label_en": "Patients without an assigned family doctor",
+      "label": "Utentes inscritos sem médico de família atribuído (série anterior)",
+      "label_en": "Registered users without an assigned family doctor (earlier series)",
       "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/utentes-inscritos-em-cuidados-de-saude-primarios/exports/json",
@@ -10153,8 +10388,8 @@
         "formula": "Soma dos campos selecionados nos registos identificados; campos nulos não convertidos em zero.",
         "result": "1362294"
       },
-      "label": "Inscritos elegíveis sem médico de família atribuído",
-      "label_en": "Eligible registered patients without an assigned family doctor",
+      "label": "Utentes elegíveis inscritos sem médico de família atribuído (série de julho de 2026)",
+      "label_en": "Eligible registered users without an assigned family doctor (series from July 2026)",
       "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/inscritoscuidadosdesaudeprimarios/exports/json",
@@ -13426,8 +13661,8 @@
         "formula": "Soma dos campos selecionados nos registos identificados; campos nulos não convertidos em zero.",
         "result": "284210"
       },
-      "label": "Inscritos em lista de espera para cirurgia",
-      "label_en": "Patients on the surgical waiting list",
+      "label": "Inscritos em lista para cirurgia (todos os inscritos no SIGIC)",
+      "label_en": "Patients on the surgery waiting list (all SIGIC registrations)",
       "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/inscritos-em-lic-dentro-do-tmrg-180-dias/exports/json",
@@ -13723,8 +13958,8 @@
         "formula": "Soma dos campos selecionados nos registos identificados; campos nulos não convertidos em zero.",
         "result": "268645"
       },
-      "label": "Inscritos em lista de espera para cirurgia",
-      "label_en": "Patients on the surgical waiting list",
+      "label": "Inscritos em lista para cirurgia (todos os inscritos no SIGIC)",
+      "label_en": "Patients on the surgery waiting list (all SIGIC registrations)",
       "temporal_evidence": null,
       "receipt": {
         "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/inscritos-em-lic-dentro-do-tmrg-180-dias/exports/json",
@@ -14818,8 +15053,8 @@
         "locator": "freq=A; unit=P_HTHAB; wstatus=PRACT; med_spec=PHYS; geo=BE; time=2024; value[16]"
       },
       "derivation": null,
-      "label": "Médicos por cem mil habitantes, Bélgica",
-      "label_en": "Physicians per hundred thousand inhabitants, Belgium",
+      "label": "Médicos em exercício por cem mil habitantes",
+      "label_en": "Practising physicians per hundred thousand inhabitants",
       "temporal_evidence": null,
       "receipt": {
         "pedido": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/hlth_rs_prs2?lang=EN&sinceTimePeriod=2020&unit=P_HTHAB",
@@ -14893,8 +15128,8 @@
         "locator": "freq=A; unit=P_HTHAB; wstatus=PRACT; med_spec=PHYS; geo=EL; time=2024; value[58]"
       },
       "derivation": null,
-      "label": "Médicos por cem mil habitantes, Grécia",
-      "label_en": "Physicians per hundred thousand inhabitants, Greece",
+      "label": "Médicos em exercício por cem mil habitantes",
+      "label_en": "Practising physicians per hundred thousand inhabitants",
       "temporal_evidence": null,
       "receipt": {
         "pedido": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/hlth_rs_prs2?lang=EN&sinceTimePeriod=2020&unit=P_HTHAB",
@@ -14968,8 +15203,8 @@
         "locator": "freq=A; unit=P_HTHAB; wstatus=PRACT; med_spec=NRS; geo=LU; time=2024; value[574]"
       },
       "derivation": null,
-      "label": "Enfermeiros por cem mil habitantes, Luxemburgo",
-      "label_en": "Nurses per hundred thousand inhabitants, Luxembourg",
+      "label": "Enfermeiros com qualificação reconhecida na União Europeia por cem mil habitantes",
+      "label_en": "Nurses with an EU-recognised qualification per hundred thousand inhabitants",
       "temporal_evidence": null,
       "receipt": {
         "pedido": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/hlth_rs_prs2?lang=EN&sinceTimePeriod=2020&unit=P_HTHAB",
@@ -15043,8 +15278,8 @@
         "locator": "freq=A; unit=P_HTHAB; wstatus=PRACT; med_spec=PHYS; geo=PT; time=2024; value[142]"
       },
       "derivation": null,
-      "label": "Médicos por cem mil habitantes, Portugal",
-      "label_en": "Physicians per hundred thousand inhabitants, Portugal",
+      "label": "Médicos em exercício por cem mil habitantes",
+      "label_en": "Practising physicians per hundred thousand inhabitants",
       "temporal_evidence": null,
       "receipt": {
         "pedido": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/hlth_rs_prs2?lang=EN&sinceTimePeriod=2020&unit=P_HTHAB",
@@ -15118,8 +15353,8 @@
         "locator": "freq=A; unit=P_HTHAB; wstatus=PRACT; med_spec=NRS; geo=PT; time=2024; value[610]"
       },
       "derivation": null,
-      "label": "Enfermeiros por cem mil habitantes, Portugal",
-      "label_en": "Nurses per hundred thousand inhabitants, Portugal",
+      "label": "Enfermeiros com qualificação reconhecida na União Europeia por cem mil habitantes",
+      "label_en": "Nurses with an EU-recognised qualification per hundred thousand inhabitants",
       "temporal_evidence": null,
       "receipt": {
         "pedido": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/hlth_rs_prs2?lang=EN&sinceTimePeriod=2020&unit=P_HTHAB",
@@ -15193,8 +15428,8 @@
         "locator": "freq=A; unit=P_HTHAB; wstatus=PRACT; med_spec=NRS; geo=RO; time=2024; value[616]"
       },
       "derivation": null,
-      "label": "Enfermeiros por cem mil habitantes, Roménia",
-      "label_en": "Nurses per hundred thousand inhabitants, Romania",
+      "label": "Enfermeiros com qualificação reconhecida na União Europeia por cem mil habitantes",
+      "label_en": "Nurses with an EU-recognised qualification per hundred thousand inhabitants",
       "temporal_evidence": null,
       "receipt": {
         "pedido": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/hlth_rs_prs2?lang=EN&sinceTimePeriod=2020&unit=P_HTHAB",
@@ -16235,6 +16470,231 @@
         "origin_path": "content/26 Saude e Parcerias Efeitos/source/direitos/avaliacao.json"
       }
     },
+    "sns-sem-medico-elegibilidade": {
+      "id": "sns-sem-medico-elegibilidade",
+      "value": "Utentes inscritos que cumprem os critérios de elegibilidade para atribuição de Médico de Família. Cálculo: utentes com registo atualizado e contacto com o SNS nos últimos cinco anos.",
+      "unit": "texto",
+      "period": "2026-08",
+      "excerpt": "Utentes inscritos que cumprem os critérios de elegibilidade para atribuição de Médico de Família. Cálculo: utentes com registo atualizado e contacto com o SNS nos últimos cinco anos.",
+      "document": {
+        "title": "Inscritos em Cuidados de Saúde Primários",
+        "file": "content/26 Saude e Parcerias Efeitos/source/saude/sns-catalogo-2.json",
+        "source_sha256": "24164af100bd601cab9d55e37940470de23ecac40d5fbd93ee283ffb33d1c218",
+        "locator": "inscritoscuidadosdesaudeprimarios; metas.default.description"
+      },
+      "evidence": {
+        "file": "content/26 Saude e Parcerias Efeitos/source/saude/sns-catalogo-2.json",
+        "sha256": "24164af100bd601cab9d55e37940470de23ecac40d5fbd93ee283ffb33d1c218",
+        "locator": "inscritoscuidadosdesaudeprimarios; metas.default.description"
+      },
+      "derivation": null,
+      "label": "Elegibilidade para atribuição de médico de família",
+      "label_en": "Eligibility for assignment of a family doctor",
+      "temporal_evidence": null,
+      "receipt": {
+        "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets?limit=100&offset=100",
+        "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets?limit=100&offset=100",
+        "acedido_em": "2026-10-20T13:11:04.370901+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "ficheiro": "saude/sns-catalogo-2.json",
+        "estado": 200,
+        "tipo": "application/json; charset=utf-8",
+        "segundos": 0.511,
+        "erro": null,
+        "redirecionamentos": [],
+        "bytes": 511702,
+        "sha256": "24164af100bd601cab9d55e37940470de23ecac40d5fbd93ee283ffb33d1c218"
+      },
+      "rights": {
+        "redistributed": "Referência, excerto e recibo. Corpo conservado no motor.",
+        "assessment": {
+          "publicar_corpos": false,
+          "finalidade": "Pesquisa interna com recibos. Nenhum corpo é publicado.",
+          "anfitrioes": [
+            "diariodarepublica.pt",
+            "ec.europa.eu",
+            "erario.tcontas.pt",
+            "files.diariodarepublica.pt",
+            "files.dre.pt",
+            "infraestruturasdeportugal.pt",
+            "observador.pt",
+            "ordemdosmedicos.pt",
+            "porto.pcp.pt",
+            "portugal.gov.pt",
+            "recuperarportugal.gov.pt",
+            "simedicos.pt",
+            "transparencia.sns.gov.pt",
+            "webgate.ec.europa.eu",
+            "www.brisaconcessao.pt",
+            "www.eo.gov.pt",
+            "www.fnam.pt",
+            "www.imt-ip.pt",
+            "www.infarmed.pt",
+            "www.infraestruturasdeportugal.pt",
+            "www.ordemenfermeiros.pt",
+            "www.pcp.pt",
+            "www.razaoautomovel.com",
+            "www.rtp.pt",
+            "www.sep.org.pt",
+            "www.simedicos.pt",
+            "www.tcontas.pt"
+          ],
+          "nota": "As condições e licenças específicas conservadas nos metadados das fontes não são substituídas por autorização geral. Publicação de corpos não autorizada nesta passagem."
+        },
+        "origin_path": "content/26 Saude e Parcerias Efeitos/source/direitos/avaliacao.json"
+      }
+    },
+    "sns-consultas-csp-descricao": {
+      "id": "sns-consultas-csp-descricao",
+      "value": "As consultas registadas no sistema Vitacare não entram no cálculo destas métricas. Os dados relativos a este indicador são de caráter temporário para o mês publicado mais recente.",
+      "unit": "texto",
+      "period": "2026-08",
+      "excerpt": "As consultas registadas no sistema Vitacare não entram no cálculo destas métricas. Os dados relativos a este indicador são de caráter temporário para o mês publicado mais recente.",
+      "document": {
+        "title": "Consultas Médicas nos Cuidados de Saúde Primários",
+        "file": "content/26 Saude e Parcerias Efeitos/source/saude/sns-catalogo-2.json",
+        "source_sha256": "24164af100bd601cab9d55e37940470de23ecac40d5fbd93ee283ffb33d1c218",
+        "locator": "evolucao-das-consultas-medicas-nos-csp; metas.default.description"
+      },
+      "evidence": {
+        "file": "content/26 Saude e Parcerias Efeitos/source/saude/sns-catalogo-2.json",
+        "sha256": "24164af100bd601cab9d55e37940470de23ecac40d5fbd93ee283ffb33d1c218",
+        "locator": "evolucao-das-consultas-medicas-nos-csp; metas.default.description"
+      },
+      "derivation": null,
+      "label": "Consultas: exclusão do Vitacare e último mês provisório",
+      "label_en": "Consultations: Vitacare exclusion and provisional latest month",
+      "temporal_evidence": null,
+      "receipt": {
+        "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets?limit=100&offset=100",
+        "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets?limit=100&offset=100",
+        "acedido_em": "2026-10-20T13:11:04.370901+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "ficheiro": "saude/sns-catalogo-2.json",
+        "estado": 200,
+        "tipo": "application/json; charset=utf-8",
+        "segundos": 0.511,
+        "erro": null,
+        "redirecionamentos": [],
+        "bytes": 511702,
+        "sha256": "24164af100bd601cab9d55e37940470de23ecac40d5fbd93ee283ffb33d1c218"
+      },
+      "rights": {
+        "redistributed": "Referência, excerto e recibo. Corpo conservado no motor.",
+        "assessment": {
+          "publicar_corpos": false,
+          "finalidade": "Pesquisa interna com recibos. Nenhum corpo é publicado.",
+          "anfitrioes": [
+            "diariodarepublica.pt",
+            "ec.europa.eu",
+            "erario.tcontas.pt",
+            "files.diariodarepublica.pt",
+            "files.dre.pt",
+            "infraestruturasdeportugal.pt",
+            "observador.pt",
+            "ordemdosmedicos.pt",
+            "porto.pcp.pt",
+            "portugal.gov.pt",
+            "recuperarportugal.gov.pt",
+            "simedicos.pt",
+            "transparencia.sns.gov.pt",
+            "webgate.ec.europa.eu",
+            "www.brisaconcessao.pt",
+            "www.eo.gov.pt",
+            "www.fnam.pt",
+            "www.imt-ip.pt",
+            "www.infarmed.pt",
+            "www.infraestruturasdeportugal.pt",
+            "www.ordemenfermeiros.pt",
+            "www.pcp.pt",
+            "www.razaoautomovel.com",
+            "www.rtp.pt",
+            "www.sep.org.pt",
+            "www.simedicos.pt",
+            "www.tcontas.pt"
+          ],
+          "nota": "As condições e licenças específicas conservadas nos metadados das fontes não são substituídas por autorização geral. Publicação de corpos não autorizada nesta passagem."
+        },
+        "origin_path": "content/26 Saude e Parcerias Efeitos/source/direitos/avaliacao.json"
+      }
+    },
+    "sns-catalogo-acumulados": {
+      "id": "sns-catalogo-acumulados",
+      "value": "De janeiro de 2013 ao mês n-2 anterior ao atual (valores acumulados)",
+      "unit": "texto",
+      "period": "2026-07",
+      "excerpt": "De janeiro de 2013 ao mês n-2 anterior ao atual (valores acumulados)",
+      "document": {
+        "title": "Intervenções Cirúrgicas nos Cuidados de Saúde Hospitalares",
+        "file": "content/26 Saude e Parcerias Efeitos/source/saude/sns-catalogo.json",
+        "source_sha256": "fc6bf4974a6adf652841f9f8dbca71d75724fd7ff9291be29b8e7fcdf4460ac5",
+        "locator": "intervencoes-cirurgicas; metas.dcat.temporal"
+      },
+      "evidence": {
+        "file": "content/26 Saude e Parcerias Efeitos/source/saude/sns-catalogo.json",
+        "sha256": "fc6bf4974a6adf652841f9f8dbca71d75724fd7ff9291be29b8e7fcdf4460ac5",
+        "locator": "intervencoes-cirurgicas; metas.dcat.temporal"
+      },
+      "derivation": null,
+      "label": "Período dos valores acumulados no catálogo do SNS",
+      "label_en": "Period of cumulative values in the NHS catalogue",
+      "temporal_evidence": null,
+      "receipt": {
+        "pedido": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets?limit=100",
+        "endereco_final": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets?limit=100",
+        "acedido_em": "2026-10-20T13:10:47.018835+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "ficheiro": "saude/sns-catalogo.json",
+        "estado": 200,
+        "tipo": "application/json; charset=utf-8",
+        "segundos": 2.881,
+        "erro": null,
+        "redirecionamentos": [],
+        "bytes": 876605,
+        "sha256": "fc6bf4974a6adf652841f9f8dbca71d75724fd7ff9291be29b8e7fcdf4460ac5"
+      },
+      "rights": {
+        "redistributed": "Referência, excerto e recibo. Corpo conservado no motor.",
+        "assessment": {
+          "publicar_corpos": false,
+          "finalidade": "Pesquisa interna com recibos. Nenhum corpo é publicado.",
+          "anfitrioes": [
+            "diariodarepublica.pt",
+            "ec.europa.eu",
+            "erario.tcontas.pt",
+            "files.diariodarepublica.pt",
+            "files.dre.pt",
+            "infraestruturasdeportugal.pt",
+            "observador.pt",
+            "ordemdosmedicos.pt",
+            "porto.pcp.pt",
+            "portugal.gov.pt",
+            "recuperarportugal.gov.pt",
+            "simedicos.pt",
+            "transparencia.sns.gov.pt",
+            "webgate.ec.europa.eu",
+            "www.brisaconcessao.pt",
+            "www.eo.gov.pt",
+            "www.fnam.pt",
+            "www.imt-ip.pt",
+            "www.infarmed.pt",
+            "www.infraestruturasdeportugal.pt",
+            "www.ordemenfermeiros.pt",
+            "www.pcp.pt",
+            "www.razaoautomovel.com",
+            "www.rtp.pt",
+            "www.sep.org.pt",
+            "www.simedicos.pt",
+            "www.tcontas.pt"
+          ],
+          "nota": "As condições e licenças específicas conservadas nos metadados das fontes não são substituídas por autorização geral. Publicação de corpos não autorizada nesta passagem."
+        },
+        "origin_path": "content/26 Saude e Parcerias Efeitos/source/direitos/avaliacao.json"
+      }
+    },
     "der-sns-consultas-csp-variacao-pct": {
       "id": "der-sns-consultas-csp-variacao-pct",
       "value": "7,7",
@@ -16882,7 +17342,7 @@
       "value": "2 011",
       "unit": "milhões de euros",
       "period": "2026-10-14",
-      "excerpt": "Leitura numérica de prr-monitorizacao-20261014-p2-C01-contratado: retirar a unidade e ler o ponto como separador de milhares. = 2 011",
+      "excerpt": "number_pt ( prr-monitorizacao-20261014-p2-C01-contratado ) = 2 011",
       "document": {
         "title": "Relatório Semanal de Monitorização | 14-10-2026",
         "file": "content/26 Saude e Parcerias Efeitos/source/saude/prr-monitorizacao-20261014.pdf",
@@ -16904,10 +17364,11 @@
         "operands": [
           "2011"
         ],
-        "formula": "Leitura numérica de prr-monitorizacao-20261014-p2-C01-contratado: retirar a unidade e ler o ponto como separador de milhares.",
-        "calculation": "Leitura numérica de prr-monitorizacao-20261014-p2-C01-contratado: retirar a unidade e ler o ponto como separador de milhares. = 2 011",
+        "formula": "number_pt ( prr-monitorizacao-20261014-p2-C01-contratado )",
+        "calculation": "number_pt ( prr-monitorizacao-20261014-p2-C01-contratado ) = 2 011",
         "rounding_places": 0,
-        "result": "2 011"
+        "result": "2 011",
+        "check": "round ( number_pt ( prr-monitorizacao-20261014-p2-C01-contratado ) , 0 )"
       },
       "label": "Contratado na componente Saúde do PRR, leitura em milhões",
       "label_en": "Contracted for RRP Health, read in millions",
@@ -16969,7 +17430,7 @@
       "value": "947",
       "unit": "milhões de euros",
       "period": "2026-10-14",
-      "excerpt": "Leitura numérica de prr-monitorizacao-20261014-p2-C01-pago: retirar a unidade e ler o ponto como separador de milhares. = 947",
+      "excerpt": "number_pt ( prr-monitorizacao-20261014-p2-C01-pago ) = 947",
       "document": {
         "title": "Relatório Semanal de Monitorização | 14-10-2026",
         "file": "content/26 Saude e Parcerias Efeitos/source/saude/prr-monitorizacao-20261014.pdf",
@@ -16991,13 +17452,102 @@
         "operands": [
           "947"
         ],
-        "formula": "Leitura numérica de prr-monitorizacao-20261014-p2-C01-pago: retirar a unidade e ler o ponto como separador de milhares.",
-        "calculation": "Leitura numérica de prr-monitorizacao-20261014-p2-C01-pago: retirar a unidade e ler o ponto como separador de milhares. = 947",
+        "formula": "number_pt ( prr-monitorizacao-20261014-p2-C01-pago )",
+        "calculation": "number_pt ( prr-monitorizacao-20261014-p2-C01-pago ) = 947",
         "rounding_places": 0,
-        "result": "947"
+        "result": "947",
+        "check": "round ( number_pt ( prr-monitorizacao-20261014-p2-C01-pago ) , 0 )"
       },
       "label": "Pago na componente Saúde do PRR, leitura em milhões",
       "label_en": "Paid for RRP Health, read in millions",
+      "temporal_evidence": null,
+      "receipt": {
+        "pedido": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/10/Relatorio-Monitorizacao-PRR-Sumario-20261014.pdf",
+        "endereco_final": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/10/Relatorio-Monitorizacao-PRR-Sumario-20261014.pdf",
+        "cliente": "curl com validação TLS ativa",
+        "acedido_em": "2026-10-20T13:13:53.609651+00:00",
+        "ficheiro": "saude/prr-monitorizacao-20261014.pdf",
+        "codigo_cliente": 0,
+        "estado": 200,
+        "tipo": "application/pdf",
+        "erro": "",
+        "bytes": 964925,
+        "sha256": "1db56cc1bba3055d1b0ea3c0d40954b59ec444a3279ddc4e1a2dfe6e9e5cc2b2"
+      },
+      "rights": {
+        "redistributed": "Referência, excerto e recibo. Corpo conservado no motor.",
+        "assessment": {
+          "publicar_corpos": false,
+          "finalidade": "Pesquisa interna com recibos. Nenhum corpo é publicado.",
+          "anfitrioes": [
+            "diariodarepublica.pt",
+            "ec.europa.eu",
+            "erario.tcontas.pt",
+            "files.diariodarepublica.pt",
+            "files.dre.pt",
+            "infraestruturasdeportugal.pt",
+            "observador.pt",
+            "ordemdosmedicos.pt",
+            "porto.pcp.pt",
+            "portugal.gov.pt",
+            "recuperarportugal.gov.pt",
+            "simedicos.pt",
+            "transparencia.sns.gov.pt",
+            "webgate.ec.europa.eu",
+            "www.brisaconcessao.pt",
+            "www.eo.gov.pt",
+            "www.fnam.pt",
+            "www.imt-ip.pt",
+            "www.infarmed.pt",
+            "www.infraestruturasdeportugal.pt",
+            "www.ordemenfermeiros.pt",
+            "www.pcp.pt",
+            "www.razaoautomovel.com",
+            "www.rtp.pt",
+            "www.sep.org.pt",
+            "www.simedicos.pt",
+            "www.tcontas.pt"
+          ],
+          "nota": "As condições e licenças específicas conservadas nos metadados das fontes não são substituídas por autorização geral. Publicação de corpos não autorizada nesta passagem."
+        },
+        "origin_path": "content/26 Saude e Parcerias Efeitos/source/direitos/avaliacao.json"
+      }
+    },
+    "der-prr-saude-taxa-numerico": {
+      "id": "der-prr-saude-taxa-numerico",
+      "value": "47",
+      "unit": "%",
+      "period": "2026-10-14",
+      "excerpt": "number_pt ( prr-monitorizacao-20261014-p2-C01-taxa ) = 47",
+      "document": {
+        "title": "Relatório Semanal de Monitorização | 14-10-2026",
+        "file": "content/26 Saude e Parcerias Efeitos/source/saude/prr-monitorizacao-20261014.pdf",
+        "source_sha256": "1db56cc1bba3055d1b0ea3c0d40954b59ec444a3279ddc4e1a2dfe6e9e5cc2b2",
+        "locator": "p. 2 PDF; quadro Implementação Financeira por Dimensão Estruturante e Componente; linha C01; coluna Pago a beneficiários diretos e finais (%)",
+        "page": 2,
+        "printed_page": 2
+      },
+      "evidence": {
+        "file": "content/26 Saude e Parcerias Efeitos/source/saude/prr-monitorizacao-20261014.pdf",
+        "sha256": "1db56cc1bba3055d1b0ea3c0d40954b59ec444a3279ddc4e1a2dfe6e9e5cc2b2",
+        "locator": "p. 2 PDF; quadro Implementação Financeira por Dimensão Estruturante e Componente; linha C01; coluna Pago a beneficiários diretos e finais (%)"
+      },
+      "derivation": {
+        "operation": "number",
+        "components": [
+          "prr-monitorizacao-20261014-p2-C01-taxa"
+        ],
+        "operands": [
+          "47"
+        ],
+        "formula": "number_pt ( prr-monitorizacao-20261014-p2-C01-taxa )",
+        "calculation": "number_pt ( prr-monitorizacao-20261014-p2-C01-taxa ) = 47",
+        "rounding_places": 0,
+        "result": "47",
+        "check": "round ( number_pt ( prr-monitorizacao-20261014-p2-C01-taxa ) , 0 )"
+      },
+      "label": "Execução financeira da componente Saúde do PRR",
+      "label_en": "Financial execution of RRP Health",
       "temporal_evidence": null,
       "receipt": {
         "pedido": "https://recuperarportugal.gov.pt/wp-content/uploads/2026/10/Relatorio-Monitorizacao-PRR-Sumario-20261014.pdf",
@@ -17236,7 +17786,7 @@
       "value": "37",
       "unit": "marcos e metas",
       "period": "2025",
-      "excerpt": "Contar as componentes = 37",
+      "excerpt": "count_rows ( prr-complemento-p3-1.24-estado , prr-complemento-p3-1.32-estado , prr-complemento-p3-1.33-estado , prr-complemento-p3-1.3-estado , prr-complemento-p3-1.8-estado , prr-complemento-p4-1.1-estado , prr-complemento-p4-1.5-estado , prr-complemento-p4-1.12-estado , prr-complemento-p4-1.40-estado , prr-complemento-p4-1.41-estado , prr-complemento-p4-1.2-estado , prr-complemento-p5-1.22-estado , prr-complemento-p5-1.28-estado , prr-complemento-p5-1.11-estado , prr-complemento-p5-1.7-estado , prr-complemento-p5-1.9-estado , prr-complemento-p6-1.37-estado , prr-complemento-p6-1.42-estado , prr-complemento-p6-1.10-estado , prr-complemento-p7-1.34-estado , prr-complemento-p7-1.35-estado , prr-complemento-p7-1.36-estado , prr-complemento-p7-1.38-estado , prr-complemento-p7-1.39-estado , prr-complemento-p8-1.21-estado , prr-complemento-p8-1.25-estado , prr-complemento-p9-1.17-estado , prr-complemento-p9-1.18-estado , prr-complemento-p9-1.26-estado , prr-complemento-p9-1.30-estado , prr-complemento-p9-1.43-estado , prr-complemento-p9-1.44-estado , prr-marcos-metas-2025-p2-1.29-estado , prr-marcos-metas-2025-p2-1.4-estado , prr-marcos-metas-2025-p2-1.13-estado , prr-marcos-metas-2025-p2-1.20-estado , prr-marcos-metas-2025-p2-1.6-estado ) = 37",
       "document": {
         "title": "Anexo III - Listagem de Marcos e Metas",
         "file": "content/26 Saude e Parcerias Efeitos/source/saude/prr-marcos-metas-2025.pdf",
@@ -17292,10 +17842,11 @@
           "prr-marcos-metas-2025-p2-1.6-estado"
         ],
         "operands": [],
-        "formula": "Contar as componentes",
-        "calculation": "Contar as componentes = 37",
+        "formula": "count_rows ( prr-complemento-p3-1.24-estado , prr-complemento-p3-1.32-estado , prr-complemento-p3-1.33-estado , prr-complemento-p3-1.3-estado , prr-complemento-p3-1.8-estado , prr-complemento-p4-1.1-estado , prr-complemento-p4-1.5-estado , prr-complemento-p4-1.12-estado , prr-complemento-p4-1.40-estado , prr-complemento-p4-1.41-estado , prr-complemento-p4-1.2-estado , prr-complemento-p5-1.22-estado , prr-complemento-p5-1.28-estado , prr-complemento-p5-1.11-estado , prr-complemento-p5-1.7-estado , prr-complemento-p5-1.9-estado , prr-complemento-p6-1.37-estado , prr-complemento-p6-1.42-estado , prr-complemento-p6-1.10-estado , prr-complemento-p7-1.34-estado , prr-complemento-p7-1.35-estado , prr-complemento-p7-1.36-estado , prr-complemento-p7-1.38-estado , prr-complemento-p7-1.39-estado , prr-complemento-p8-1.21-estado , prr-complemento-p8-1.25-estado , prr-complemento-p9-1.17-estado , prr-complemento-p9-1.18-estado , prr-complemento-p9-1.26-estado , prr-complemento-p9-1.30-estado , prr-complemento-p9-1.43-estado , prr-complemento-p9-1.44-estado , prr-marcos-metas-2025-p2-1.29-estado , prr-marcos-metas-2025-p2-1.4-estado , prr-marcos-metas-2025-p2-1.13-estado , prr-marcos-metas-2025-p2-1.20-estado , prr-marcos-metas-2025-p2-1.6-estado )",
+        "calculation": "count_rows ( prr-complemento-p3-1.24-estado , prr-complemento-p3-1.32-estado , prr-complemento-p3-1.33-estado , prr-complemento-p3-1.3-estado , prr-complemento-p3-1.8-estado , prr-complemento-p4-1.1-estado , prr-complemento-p4-1.5-estado , prr-complemento-p4-1.12-estado , prr-complemento-p4-1.40-estado , prr-complemento-p4-1.41-estado , prr-complemento-p4-1.2-estado , prr-complemento-p5-1.22-estado , prr-complemento-p5-1.28-estado , prr-complemento-p5-1.11-estado , prr-complemento-p5-1.7-estado , prr-complemento-p5-1.9-estado , prr-complemento-p6-1.37-estado , prr-complemento-p6-1.42-estado , prr-complemento-p6-1.10-estado , prr-complemento-p7-1.34-estado , prr-complemento-p7-1.35-estado , prr-complemento-p7-1.36-estado , prr-complemento-p7-1.38-estado , prr-complemento-p7-1.39-estado , prr-complemento-p8-1.21-estado , prr-complemento-p8-1.25-estado , prr-complemento-p9-1.17-estado , prr-complemento-p9-1.18-estado , prr-complemento-p9-1.26-estado , prr-complemento-p9-1.30-estado , prr-complemento-p9-1.43-estado , prr-complemento-p9-1.44-estado , prr-marcos-metas-2025-p2-1.29-estado , prr-marcos-metas-2025-p2-1.4-estado , prr-marcos-metas-2025-p2-1.13-estado , prr-marcos-metas-2025-p2-1.20-estado , prr-marcos-metas-2025-p2-1.6-estado ) = 37",
         "rounding_places": 0,
-        "result": "37"
+        "result": "37",
+        "check": "round ( count_rows ( prr-complemento-p3-1.24-estado , prr-complemento-p3-1.32-estado , prr-complemento-p3-1.33-estado , prr-complemento-p3-1.3-estado , prr-complemento-p3-1.8-estado , prr-complemento-p4-1.1-estado , prr-complemento-p4-1.5-estado , prr-complemento-p4-1.12-estado , prr-complemento-p4-1.40-estado , prr-complemento-p4-1.41-estado , prr-complemento-p4-1.2-estado , prr-complemento-p5-1.22-estado , prr-complemento-p5-1.28-estado , prr-complemento-p5-1.11-estado , prr-complemento-p5-1.7-estado , prr-complemento-p5-1.9-estado , prr-complemento-p6-1.37-estado , prr-complemento-p6-1.42-estado , prr-complemento-p6-1.10-estado , prr-complemento-p7-1.34-estado , prr-complemento-p7-1.35-estado , prr-complemento-p7-1.36-estado , prr-complemento-p7-1.38-estado , prr-complemento-p7-1.39-estado , prr-complemento-p8-1.21-estado , prr-complemento-p8-1.25-estado , prr-complemento-p9-1.17-estado , prr-complemento-p9-1.18-estado , prr-complemento-p9-1.26-estado , prr-complemento-p9-1.30-estado , prr-complemento-p9-1.43-estado , prr-complemento-p9-1.44-estado , prr-marcos-metas-2025-p2-1.29-estado , prr-marcos-metas-2025-p2-1.4-estado , prr-marcos-metas-2025-p2-1.13-estado , prr-marcos-metas-2025-p2-1.20-estado , prr-marcos-metas-2025-p2-1.6-estado ) , 0 )"
       },
       "label": "Marcos e metas da componente Saúde no anexo anual",
       "label_en": "Milestones and targets of Health in the annual annex",
@@ -17357,7 +17908,7 @@
       "value": "24",
       "unit": "marcos e metas",
       "period": "2025",
-      "excerpt": "Contar as componentes com value igual a Completo = 24",
+      "excerpt": "count_equal ( Completo , prr-complemento-p3-1.24-estado , prr-complemento-p3-1.32-estado , prr-complemento-p3-1.33-estado , prr-complemento-p3-1.3-estado , prr-complemento-p3-1.8-estado , prr-complemento-p4-1.1-estado , prr-complemento-p4-1.5-estado , prr-complemento-p4-1.12-estado , prr-complemento-p4-1.40-estado , prr-complemento-p4-1.41-estado , prr-complemento-p4-1.2-estado , prr-complemento-p5-1.22-estado , prr-complemento-p5-1.28-estado , prr-complemento-p5-1.11-estado , prr-complemento-p5-1.7-estado , prr-complemento-p5-1.9-estado , prr-complemento-p6-1.37-estado , prr-complemento-p6-1.42-estado , prr-complemento-p6-1.10-estado , prr-complemento-p7-1.34-estado , prr-complemento-p7-1.35-estado , prr-complemento-p7-1.36-estado , prr-complemento-p7-1.38-estado , prr-complemento-p7-1.39-estado , prr-complemento-p8-1.21-estado , prr-complemento-p8-1.25-estado , prr-complemento-p9-1.17-estado , prr-complemento-p9-1.18-estado , prr-complemento-p9-1.26-estado , prr-complemento-p9-1.30-estado , prr-complemento-p9-1.43-estado , prr-complemento-p9-1.44-estado , prr-marcos-metas-2025-p2-1.29-estado , prr-marcos-metas-2025-p2-1.4-estado , prr-marcos-metas-2025-p2-1.13-estado , prr-marcos-metas-2025-p2-1.20-estado , prr-marcos-metas-2025-p2-1.6-estado ) = 24",
       "document": {
         "title": "Anexo III - Listagem de Marcos e Metas",
         "file": "content/26 Saude e Parcerias Efeitos/source/saude/prr-marcos-metas-2025.pdf",
@@ -17413,10 +17964,11 @@
           "prr-marcos-metas-2025-p2-1.6-estado"
         ],
         "operands": [],
-        "formula": "Contar as componentes com value igual a Completo",
-        "calculation": "Contar as componentes com value igual a Completo = 24",
+        "formula": "count_equal ( Completo , prr-complemento-p3-1.24-estado , prr-complemento-p3-1.32-estado , prr-complemento-p3-1.33-estado , prr-complemento-p3-1.3-estado , prr-complemento-p3-1.8-estado , prr-complemento-p4-1.1-estado , prr-complemento-p4-1.5-estado , prr-complemento-p4-1.12-estado , prr-complemento-p4-1.40-estado , prr-complemento-p4-1.41-estado , prr-complemento-p4-1.2-estado , prr-complemento-p5-1.22-estado , prr-complemento-p5-1.28-estado , prr-complemento-p5-1.11-estado , prr-complemento-p5-1.7-estado , prr-complemento-p5-1.9-estado , prr-complemento-p6-1.37-estado , prr-complemento-p6-1.42-estado , prr-complemento-p6-1.10-estado , prr-complemento-p7-1.34-estado , prr-complemento-p7-1.35-estado , prr-complemento-p7-1.36-estado , prr-complemento-p7-1.38-estado , prr-complemento-p7-1.39-estado , prr-complemento-p8-1.21-estado , prr-complemento-p8-1.25-estado , prr-complemento-p9-1.17-estado , prr-complemento-p9-1.18-estado , prr-complemento-p9-1.26-estado , prr-complemento-p9-1.30-estado , prr-complemento-p9-1.43-estado , prr-complemento-p9-1.44-estado , prr-marcos-metas-2025-p2-1.29-estado , prr-marcos-metas-2025-p2-1.4-estado , prr-marcos-metas-2025-p2-1.13-estado , prr-marcos-metas-2025-p2-1.20-estado , prr-marcos-metas-2025-p2-1.6-estado )",
+        "calculation": "count_equal ( Completo , prr-complemento-p3-1.24-estado , prr-complemento-p3-1.32-estado , prr-complemento-p3-1.33-estado , prr-complemento-p3-1.3-estado , prr-complemento-p3-1.8-estado , prr-complemento-p4-1.1-estado , prr-complemento-p4-1.5-estado , prr-complemento-p4-1.12-estado , prr-complemento-p4-1.40-estado , prr-complemento-p4-1.41-estado , prr-complemento-p4-1.2-estado , prr-complemento-p5-1.22-estado , prr-complemento-p5-1.28-estado , prr-complemento-p5-1.11-estado , prr-complemento-p5-1.7-estado , prr-complemento-p5-1.9-estado , prr-complemento-p6-1.37-estado , prr-complemento-p6-1.42-estado , prr-complemento-p6-1.10-estado , prr-complemento-p7-1.34-estado , prr-complemento-p7-1.35-estado , prr-complemento-p7-1.36-estado , prr-complemento-p7-1.38-estado , prr-complemento-p7-1.39-estado , prr-complemento-p8-1.21-estado , prr-complemento-p8-1.25-estado , prr-complemento-p9-1.17-estado , prr-complemento-p9-1.18-estado , prr-complemento-p9-1.26-estado , prr-complemento-p9-1.30-estado , prr-complemento-p9-1.43-estado , prr-complemento-p9-1.44-estado , prr-marcos-metas-2025-p2-1.29-estado , prr-marcos-metas-2025-p2-1.4-estado , prr-marcos-metas-2025-p2-1.13-estado , prr-marcos-metas-2025-p2-1.20-estado , prr-marcos-metas-2025-p2-1.6-estado ) = 24",
         "rounding_places": 0,
-        "result": "24"
+        "result": "24",
+        "check": "round ( count_equal ( Completo , prr-complemento-p3-1.24-estado , prr-complemento-p3-1.32-estado , prr-complemento-p3-1.33-estado , prr-complemento-p3-1.3-estado , prr-complemento-p3-1.8-estado , prr-complemento-p4-1.1-estado , prr-complemento-p4-1.5-estado , prr-complemento-p4-1.12-estado , prr-complemento-p4-1.40-estado , prr-complemento-p4-1.41-estado , prr-complemento-p4-1.2-estado , prr-complemento-p5-1.22-estado , prr-complemento-p5-1.28-estado , prr-complemento-p5-1.11-estado , prr-complemento-p5-1.7-estado , prr-complemento-p5-1.9-estado , prr-complemento-p6-1.37-estado , prr-complemento-p6-1.42-estado , prr-complemento-p6-1.10-estado , prr-complemento-p7-1.34-estado , prr-complemento-p7-1.35-estado , prr-complemento-p7-1.36-estado , prr-complemento-p7-1.38-estado , prr-complemento-p7-1.39-estado , prr-complemento-p8-1.21-estado , prr-complemento-p8-1.25-estado , prr-complemento-p9-1.17-estado , prr-complemento-p9-1.18-estado , prr-complemento-p9-1.26-estado , prr-complemento-p9-1.30-estado , prr-complemento-p9-1.43-estado , prr-complemento-p9-1.44-estado , prr-marcos-metas-2025-p2-1.29-estado , prr-marcos-metas-2025-p2-1.4-estado , prr-marcos-metas-2025-p2-1.13-estado , prr-marcos-metas-2025-p2-1.20-estado , prr-marcos-metas-2025-p2-1.6-estado ) , 0 )"
       },
       "label": "Marcos e metas completos da componente Saúde no anexo anual",
       "label_en": "Completed milestones and targets of Health in the annual annex",

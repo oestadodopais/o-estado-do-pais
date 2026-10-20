@@ -134,7 +134,11 @@ export const LINHAS_V2E_POR_ASSUNTO = {
     "der-prr-saude-por-pagar-pct",
     "der-prr-saude-marcos-total",
     "der-prr-saude-marcos-completos",
-    "der-sns-divida-fornecedores-2026-07"
+    "der-sns-divida-fornecedores-2026-07",
+    "sns-sem-medico-elegibilidade",
+    "sns-consultas-csp-descricao",
+    "sns-catalogo-acumulados",
+    "der-prr-saude-taxa-numerico"
   ],
   "parcerias": [
     "pe-oe-brisa-negociacao",
@@ -168,7 +172,10 @@ export const LINHAS_V2E_POR_ASSUNTO = {
     "pe-brisa-prazo-minuta",
     "pe-brisa-periodo-imt",
     "pe-brisa-vias-minuta",
-    "pe-dl87a-apoio-retificado"
+    "pe-dl87a-apoio-retificado",
+    "pe-dl87a-descontos",
+    "pe-brisa-minuta-ano",
+    "pe-dl87a-publicacao-ano"
   ],
   "europa": [
     "eurostat-be-phys",

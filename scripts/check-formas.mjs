@@ -421,6 +421,15 @@ const temAlgarismo = (s) => /\d/.test(s);
  * @param {string} periodo @param {string} lang
  */
 const periodoDaCasaDoPortao = (periodo, lang) => {
+  const intervalo = /^(\d{4})-(0[1-9]|1[0-2])\/(\d{4})-(0[1-9]|1[0-2])$/.exec(periodo);
+  if (intervalo) {
+    const meses = MESES[lang === 'en' ? 'en' : 'pt'];
+    const primeiro = meses[Number(intervalo[2]) - 1];
+    const ultimo = meses[Number(intervalo[4]) - 1];
+    const de = lang === 'en' ? ' ' : ' de ';
+    const inicio = primeiro + (intervalo[1] === intervalo[3] ? '' : de + intervalo[1]);
+    return inicio + (lang === 'en' ? ' to ' : ' a ') + ultimo + de + intervalo[3];
+  }
   const mes = periodoPorExtenso(periodo, lang);
   if (mes) return mes;
   const t = /^(\d{4})-T([1-4])$/.exec(periodo);
@@ -844,7 +853,7 @@ for (const ficheiro of paginasDe(DIST)) {
     const lingua = rota?.lang === 'en' ? 'en' : 'pt';
     const preposicao = preposicaoDoPeriodo(el, bruto, lingua);
     if (preposicao) err(`${rel}: ${preposicao}`);
-    const esperado = dataDaCasa(bruto, lingua);
+    const esperado = bruto.includes('/') ? periodoDaCasaDoPortao(bruto, lingua) : dataDaCasa(bruto, lingua);
     const rendido = texto(el);
     if (rendido !== esperado) {
       err(

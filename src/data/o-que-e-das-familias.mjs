@@ -8096,10 +8096,10 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a regra do diploma sobre o financiamento do apoio às concessionárias pelos descontos nas portagens."
+        "É a definição do apoio pela diferença entre a atualização limitada das portagens e a contratual, na versão original do diploma."
       ],
       "en": [
-        "It is the decree’s rule on financing support to concessionaires for toll discounts."
+        "It is the definition of support covering the difference between capped and contractual toll updates, in the original decree."
       ]
     }
   },
@@ -8110,10 +8110,10 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a regra do diploma sobre o financiamento do apoio às concessionárias pelos descontos nas portagens."
+        "É a regra do financiamento do apoio pelo Orçamento do Estado, processado pela Direção-Geral do Tesouro e Finanças."
       ],
       "en": [
-        "It is the decree’s rule on financing support to concessionaires for toll discounts."
+        "It is the rule for financing support through the State Budget, processed by the Directorate-General for Treasury and Finance."
       ]
     }
   },
@@ -8250,10 +8250,52 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a regra do diploma sobre o financiamento do apoio às concessionárias pelos descontos nas portagens."
+        "É a definição do apoio correspondente à diferença entre a atualização contratual das portagens e a atualização limitada, na redação retificada."
       ],
       "en": [
-        "It is the decree’s rule on financing support to concessionaires for toll discounts."
+        "It is the definition of support covering the difference between the contractual and capped toll updates, in the rectified wording."
+      ]
+    }
+  },
+  "pe-dl87a-descontos": {
+    "nome": {
+      "pt": "Preservação dos regimes de descontos",
+      "en": "Preservation of discount schemes"
+    },
+    "frase": {
+      "pt": [
+        "É a disposição que preserva os regimes de descontos em vigor."
+      ],
+      "en": [
+        "It is the provision preserving existing discount schemes."
+      ]
+    }
+  },
+  "pe-brisa-minuta-ano": {
+    "nome": {
+      "pt": "Ano da minuta do contrato de concessão Brisa",
+      "en": "Year of the Brisa concession draft contract"
+    },
+    "frase": {
+      "pt": [
+        "É a data de publicação da minuta do contrato de concessão Brisa."
+      ],
+      "en": [
+        "It is the publication date of the Brisa concession draft contract."
+      ]
+    }
+  },
+  "pe-dl87a-publicacao-ano": {
+    "nome": {
+      "pt": "Ano de publicação do decreto-lei das portagens",
+      "en": "Publication year of the toll decree-law"
+    },
+    "frase": {
+      "pt": [
+        "É a data do cabeçalho de publicação do decreto-lei sobre a atualização das portagens."
+      ],
+      "en": [
+        "It is the publication header date of the decree-law on the toll update."
       ]
     }
   },
@@ -8707,8 +8749,8 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "sns-sem-medico-serie-antiga-2025-06": {
     "nome": {
-      "pt": "Utentes sem médico de família atribuído",
-      "en": "Patients without an assigned family doctor"
+      "pt": "Utentes inscritos sem médico de família atribuído (série anterior)",
+      "en": "Registered users without an assigned family doctor (earlier series)"
     },
     "frase": {
       "pt": [
@@ -8721,8 +8763,8 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "sns-sem-medico-serie-antiga-2026-06": {
     "nome": {
-      "pt": "Utentes sem médico de família atribuído",
-      "en": "Patients without an assigned family doctor"
+      "pt": "Utentes inscritos sem médico de família atribuído (série anterior)",
+      "en": "Registered users without an assigned family doctor (earlier series)"
     },
     "frase": {
       "pt": [
@@ -8735,15 +8777,15 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "sns-sem-medico-serie-nova-2026-08": {
     "nome": {
-      "pt": "Inscritos elegíveis sem médico de família atribuído",
-      "en": "Eligible registered patients without an assigned family doctor"
+      "pt": "Utentes elegíveis sem médico de família atribuído",
+      "en": "Eligible users without an assigned family doctor"
     },
     "frase": {
       "pt": [
-        "Conta os utentes inscritos sem médico de família atribuído, na série indicada."
+        "Conta os utentes elegíveis inscritos sem médico de família atribuído, segundo as regras da nova série."
       ],
       "en": [
-        "Counts registered users without an assigned family doctor, in the indicated series."
+        "Counts eligible registered users without an assigned family doctor, under the rules of the new series."
       ]
     }
   },
@@ -8833,8 +8875,8 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "sns-lista-cirurgia-2026-07": {
     "nome": {
-      "pt": "Inscritos em lista de espera para cirurgia",
-      "en": "Patients on the surgical waiting list"
+      "pt": "Inscritos em lista para cirurgia (todos os inscritos no SIGIC)",
+      "en": "Patients on the surgery waiting list (all SIGIC registrations)"
     },
     "frase": {
       "pt": [
@@ -8847,8 +8889,8 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "sns-lista-cirurgia-2025-07": {
     "nome": {
-      "pt": "Inscritos em lista de espera para cirurgia",
-      "en": "Patients on the surgical waiting list"
+      "pt": "Inscritos em lista para cirurgia (todos os inscritos no SIGIC)",
+      "en": "Patients on the surgery waiting list (all SIGIC registrations)"
     },
     "frase": {
       "pt": [
@@ -8917,8 +8959,8 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "eurostat-be-phys": {
     "nome": {
-      "pt": "Médicos por cem mil habitantes, Bélgica",
-      "en": "Physicians per hundred thousand inhabitants, Belgium"
+      "pt": "Médicos em exercício por cem mil habitantes",
+      "en": "Practising physicians per hundred thousand inhabitants"
     },
     "frase": {
       "pt": [
@@ -8931,8 +8973,8 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "eurostat-el-phys": {
     "nome": {
-      "pt": "Médicos por cem mil habitantes, Grécia",
-      "en": "Physicians per hundred thousand inhabitants, Greece"
+      "pt": "Médicos em exercício por cem mil habitantes",
+      "en": "Practising physicians per hundred thousand inhabitants"
     },
     "frase": {
       "pt": [
@@ -8945,22 +8987,22 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "eurostat-lu-nrs": {
     "nome": {
-      "pt": "Enfermeiros por cem mil habitantes, Luxemburgo",
-      "en": "Nurses per hundred thousand inhabitants, Luxembourg"
+      "pt": "Enfermeiros com qualificação reconhecida na União Europeia por cem mil habitantes",
+      "en": "Nurses with an EU-recognised qualification per hundred thousand inhabitants"
     },
     "frase": {
       "pt": [
-        "É o número de enfermeiros por cem mil habitantes no país e período da linha."
+        "É o número de enfermeiros com qualificação reconhecida na União Europeia por cem mil habitantes no país e período da linha."
       ],
       "en": [
-        "It is the number of nurses per hundred thousand inhabitants in the country and period of the row."
+        "It is the number of nurses with an EU-recognised qualification per hundred thousand inhabitants in the country and period of the row."
       ]
     }
   },
   "eurostat-pt-phys": {
     "nome": {
-      "pt": "Médicos por cem mil habitantes, Portugal",
-      "en": "Physicians per hundred thousand inhabitants, Portugal"
+      "pt": "Médicos em exercício por cem mil habitantes",
+      "en": "Practising physicians per hundred thousand inhabitants"
     },
     "frase": {
       "pt": [
@@ -8973,29 +9015,29 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "eurostat-pt-nrs": {
     "nome": {
-      "pt": "Enfermeiros por cem mil habitantes, Portugal",
-      "en": "Nurses per hundred thousand inhabitants, Portugal"
+      "pt": "Enfermeiros com qualificação reconhecida na União Europeia por cem mil habitantes",
+      "en": "Nurses with an EU-recognised qualification per hundred thousand inhabitants"
     },
     "frase": {
       "pt": [
-        "É o número de enfermeiros por cem mil habitantes no país e período da linha."
+        "É o número de enfermeiros com qualificação reconhecida na União Europeia por cem mil habitantes no país e período da linha."
       ],
       "en": [
-        "It is the number of nurses per hundred thousand inhabitants in the country and period of the row."
+        "It is the number of nurses with an EU-recognised qualification per hundred thousand inhabitants in the country and period of the row."
       ]
     }
   },
   "eurostat-ro-nrs": {
     "nome": {
-      "pt": "Enfermeiros por cem mil habitantes, Roménia",
-      "en": "Nurses per hundred thousand inhabitants, Romania"
+      "pt": "Enfermeiros com qualificação reconhecida na União Europeia por cem mil habitantes",
+      "en": "Nurses with an EU-recognised qualification per hundred thousand inhabitants"
     },
     "frase": {
       "pt": [
-        "É o número de enfermeiros por cem mil habitantes no país e período da linha."
+        "É o número de enfermeiros com qualificação reconhecida na União Europeia por cem mil habitantes no país e período da linha."
       ],
       "en": [
-        "It is the number of nurses per hundred thousand inhabitants in the country and period of the row."
+        "It is the number of nurses with an EU-recognised qualification per hundred thousand inhabitants in the country and period of the row."
       ]
     }
   },
@@ -9181,6 +9223,48 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
       ]
     }
   },
+  "sns-sem-medico-elegibilidade": {
+    "nome": {
+      "pt": "Elegibilidade para atribuição de médico de família",
+      "en": "Eligibility for assignment of a family doctor"
+    },
+    "frase": {
+      "pt": [
+        "É a definição de elegibilidade para atribuição de médico de família no catálogo do SNS."
+      ],
+      "en": [
+        "It is the NHS catalogue definition of eligibility for assignment of a family doctor."
+      ]
+    }
+  },
+  "sns-consultas-csp-descricao": {
+    "nome": {
+      "pt": "Consultas: exclusão do Vitacare e último mês provisório",
+      "en": "Consultations: Vitacare exclusion and provisional latest month"
+    },
+    "frase": {
+      "pt": [
+        "É a ressalva da fonte sobre a exclusão do Vitacare e o carácter provisório do último mês."
+      ],
+      "en": [
+        "It is the source caveat about the exclusion of Vitacare and the provisional latest month."
+      ]
+    }
+  },
+  "sns-catalogo-acumulados": {
+    "nome": {
+      "pt": "Período dos valores acumulados no catálogo do SNS",
+      "en": "Period of cumulative values in the NHS catalogue"
+    },
+    "frase": {
+      "pt": [
+        "É a definição temporal dos valores acumulados no catálogo do SNS."
+      ],
+      "en": [
+        "It is the temporal definition of cumulative values in the NHS catalogue."
+      ]
+    }
+  },
   "der-sns-consultas-csp-variacao-pct": {
     "nome": {
       "pt": "Variação homóloga de consultas nos cuidados primários",
@@ -9304,6 +9388,20 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
       ],
       "en": [
         "It is the numerical reading in million euros of the amount the dashboard presents with its unit."
+      ]
+    }
+  },
+  "der-prr-saude-taxa-numerico": {
+    "nome": {
+      "pt": "Execução financeira da componente Saúde do PRR",
+      "en": "Financial execution of RRP Health"
+    },
+    "frase": {
+      "pt": [
+        "É a leitura numérica da taxa de execução financeira publicada no painel."
+      ],
+      "en": [
+        "It is the numerical reading of the financial execution rate published on the dashboard."
       ]
     }
   },

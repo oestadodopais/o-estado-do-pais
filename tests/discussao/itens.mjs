@@ -12,8 +12,8 @@ import {conferirMarcasDoTitulo,plantasDosTitulos,tituloDeEnsaio} from './titulos
 import {seloDoTituloDaDiscussao} from '../../scripts/porta-do-titulo-discussao.mjs';
 import {conferirRecibosCorrigidos} from './recibos.mjs';
 import {conferirApoiosDaComparacao,plantasDosApoios} from './apoios.mjs';
-import {conferirEfeitos,plantasDosEfeitos,conferirRecibosDosEfeitos} from './efeitos.mjs';
-import {conferirAuditoriaDasExplicacoes, explicacaoPelaCelula, linhasDaExplicacao, textoSemSelos} from '../explicacoes/explicacao.mjs';
+import {conferirEfeitos,plantasDosEfeitos,conferirRecibosDosEfeitos,linhasImpressasOuDerivadas} from './efeitos.mjs';
+import {conferirAuditoriaDasExplicacoes, explicacaoPelaCelula, textoSemSelos} from '../explicacoes/explicacao.mjs';
 // Lista independente do mandato: o título e estas seis partes, sem rótulos livres.
 const PARTES=[['como-foi-dito','Como foi dito','As it was said'],['fontes','O que as fontes dizem','What the sources say'],['comparacao','A comparação','The comparison'],['conclusao','A conclusão','The conclusion'],['recomendacao','A recomendação','The recommendation'],['opiniao','A opinião do lugar de direção',"The editorial seat's opinion"]];
 const raiz=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../..');
@@ -22,6 +22,47 @@ const destino=(slug,lang)=>(lang==='pt'?'/o-que-se-discute/':'/en/under-discussi
 const recibo=(id,lang)=>(lang==='pt'?'/livro-razao/':'/en/ledger/')+id;
 const valores=x=>Number(String(x).replace(/[\s ]/g,'').replace('−','-').replace(',','.'));
 const ADJETIVOS=['mentiroso','mentirosa','irresponsável','corrupto','corrupta','incompetente','desonesto','desonesta','dishonest','corrupt','incompetent','irresponsible'];
+/** Segue a ordem lida, incluindo o texto depois do fecho do invólucro do valor. */
+export function unidadesDepoisDoSelo(root){
+ const desvios=[];
+ for(const p of root.querySelectorAll('[data-discussao-paragrafo]')){
+  const segmentos=[];
+  const anda=n=>{
+   if(n.classList?.contains('src-chip')){segmentos.push({selo:n});return;}
+   if(n.nodeType===3){segmentos.push({texto:n.text});return;}
+   for(const filho of n.childNodes??[])anda(filho);
+  };
+  anda(p);
+  for(const [i,s] of segmentos.entries()){
+   if(!s.selo)continue;
+   let depois='';
+   for(const seguinte of segmentos.slice(i+1)){if(seguinte.selo)break;depois+=seguinte.texto??'';if(depois.trim())break;}
+   if(/^\s*(?:milh(?:ão|ões)(?=\s|[,.;:]|$)|millions?(?=\s|[,.;:]|$)|euros?(?=\s|[,.;:]|$)|[%€])/iu.test(depois)){
+    desvios.push({paragrafo:p.getAttribute('data-discussao-paragrafo'),recibo:s.selo.getAttribute('href'),depois:normal(depois)});
+   }
+  }
+ }
+ return desvios;
+}
+export function conferirSelosInline(root,lang,linhas=loadClaims()){
+ const erros=[];
+ for(const item of ITENS)for(const [si,sec] of item.seccoes.entries())for(const [bi,bloco] of sec.conteudo.entries()){
+  const tokens=bloco.paragrafo?.[lang]??[];
+  for(const [i,token] of tokens.entries()){
+   if(!token?.selo)continue;
+   const id=token.selo,c=linhas.get(id),caminho=`seccoes[${si}].conteudo[${bi}].paragrafo`;
+   const par=root.querySelector(`[data-discussao="${item.slug}"] [data-discussao-paragrafo="${caminho}"]`);
+   const selos=par?.querySelectorAll(`[data-discussao-selo="${id}"]`)??[],selo=selos[0];
+   const etiqueta=lang==='pt'?'fonte':'source',alinea=/^([a-z])\)/.exec(c?.excerpt??'')?.[1];
+   const esperado=`${etiqueta} · ${c?.document?.title}${alinea?`, ${lang==='pt'?'alínea':'clause'} ${alinea})`:''}`;
+   const ancora=selo?.matches('a')?selo:selo?.querySelector('a.src-chip');
+   const anterior=selo?.previousSibling?.text??'';
+   const texto=typeof tokens[i-1]==='string'?tokens[i-1]:'';
+   if(selos.length!==1||ancora?.getAttribute('href')!==recibo(id,lang)||ancora?.getAttribute('aria-label')!==esperado||!texto||!normal(anterior).endsWith(normal(texto)))erros.push(`V2E selo inline: ${lang} ${id}`);
+  }
+ }
+ return erros;
+}
 export function conferirDeclaracoes(itens=ITENS, linhas=loadClaims()) {
  const erros=[...conferirDerivacoes(linhas),...conferirEfeitos(linhas,itens)];
  if(itens.map(e=>e.slug).join('|')!=='saude-no-orcamento|parcerias-rodoviarias')erros.push('V2B itens: faltam os dois itens mandatados');
@@ -53,6 +94,8 @@ export function conferirDeclaracoes(itens=ITENS, linhas=loadClaims()) {
 }
 export function conferirPagina(root,lang,linhas=loadClaims(),dist=process.env.OEDP_DIST??path.join(raiz,'dist')) {
  const erros=[];const main=root.querySelector('main');
+ erros.push(...conferirSelosInline(root,lang,linhas));
+ for(const d of unidadesDepoisDoSelo(root))erros.push(`V2E unidade depois do selo: ${lang} ${d.paragrafo} ${d.recibo}`);
  if(normal(main?.querySelector('h1')?.text)!==DISCUSSAO.titulo[lang])erros.push('V2B título: página ausente ou trocada');
  const artigos=main?.querySelectorAll('[data-discussao]')??[];
  const menu=main?.querySelectorAll('[data-discussao-porta]')??[];
@@ -107,7 +150,7 @@ export function conferirPagina(root,lang,linhas=loadClaims(),dist=process.env.OE
    }
   }
   const citadas=new Set();
-  const recolhe=x=>{if(Array.isArray(x))x.forEach(recolhe);else if(x&&typeof x==='object')for(const [k,v] of Object.entries(x)){if(['claim','literal','periodo','nome'].includes(k)&&typeof v==='string')citadas.add(v);else recolhe(v);}};
+  const recolhe=x=>{if(Array.isArray(x))x.forEach(recolhe);else if(x&&typeof x==='object')for(const [k,v] of Object.entries(x)){if(['claim','literal','periodo','nome','selo'].includes(k)&&typeof v==='string')citadas.add(v);else recolhe(v);}};
   recolhe(e);
   for(const id of citadas){
    if(!a.querySelectorAll('a').some(n=>n.getAttribute('href')===recibo(id,lang)))erros.push(`V2B recibo: ${id} sem porta direta para o recibo`);
@@ -148,7 +191,7 @@ export function conferirIntegracao(root,lang,pagina,linhas=loadClaims(),{dist=pr
   const dono=cartao?.getAttribute('data-cartao-medida')??cartao?.getAttribute('data-linha-sem-nome')??cartao?.getAttribute('data-correcao-entrada');
   const remissao=n.closest('[data-regua][data-selo-em]');
   if(!cartao||(dono!==id&&remissao?.getAttribute('data-selo-em')!==dono)){ids.add(id);continue;}
-  const relevantes=ITENS.filter(e=>linhasDaExplicacao(e,linhas).has(id));
+  const relevantes=ITENS.filter(e=>linhasImpressasOuDerivadas(e,linhas).has(id));
   if(!relevantes.length)continue;
   const chave=lang+':'+dono;
   if(!vistos.has(cartao))vistos.set(cartao,new Set());
@@ -164,7 +207,7 @@ export function conferirIntegracao(root,lang,pagina,linhas=loadClaims(),{dist=pr
   }
  }
  const tematica=pagina===`explicacoes/dinheiro-do-estado-2026/index.html`||pagina===`en/explainers/dinheiro-do-estado-2026/index.html`;
- const esperados=ITENS.filter(e=>[...linhasDaExplicacao(e,linhas)].some(id=>ids.has(id))||(tematica&&e.slug==='saude-no-orcamento'));
+ const esperados=ITENS.filter(e=>[...linhasImpressasOuDerivadas(e,linhas)].some(id=>ids.has(id))||(tematica&&e.slug==='saude-no-orcamento'));
  const portas=main.querySelectorAll('[data-discussao-integracao]');
  for(const a of main.querySelectorAll('a'))if(ITENS.some(e=>a.getAttribute('href')===destino(e.slug,lang))&&!a.closest('[data-discussao-integracao],[data-discussao-inicio]'))erros.push('V2B integração: porta sem condição declarada');
  if(portas.length!==esperados.length)erros.push(`V2B integração: presença ou ausência errada em ${pagina}`);
@@ -181,6 +224,19 @@ export function conferirIntegracao(root,lang,pagina,linhas=loadClaims(),{dist=pr
 }
 export function plantas(html,lang){
  const out=[];const run=(nome,mut,re)=>{for(const e of ITENS){const root=parse(html);mut(root.querySelector(`[data-discussao="${e.slug}"]`));const erros=conferirPagina(root,lang);out.push({nome,item:e.slug,lang,mordeu:erros.some(x=>re.test(x)),queixa:erros.find(x=>re.test(x))??null});}};
+ const unidade=lang==='pt'?'milhões de euros':'million euros';
+ const correta=`<main><p data-discussao-paragrafo="planta"><span class="claim"><span data-claim="planta">1</span><span class="claim-sufixo"> ${unidade}</span><a class="src-chip">fonte</a></span></p></main>`;
+ const errada=correta.replace(`<span class="claim-sufixo"> ${unidade}</span>`,'').replace('</a></span>','</a></span> '+unidade);
+ out.push({nome:'unidade depois do selo',lang,mordeu:unidadesDepoisDoSelo(parse(correta)).length===0&&unidadesDepoisDoSelo(parse(errada)).length===1});
+ const inlineIntacto=conferirSelosInline(parse(html),lang).length===0;
+ for(const [nome,muda] of [
+  ['selo da alínea afastado das palavras',r=>{const selo=r.querySelector('[data-discussao-selo="pe-despacho-alargamentos"]');selo?.insertAdjacentHTML('beforebegin',' palavras alheias ');}],
+  ['selo da alínea sem nome acessível',r=>{const selo=r.querySelector('[data-discussao-selo="pe-despacho-alargamentos"]');(selo?.matches('a')?selo:selo?.querySelector('a.src-chip'))?.removeAttribute('aria-label');}],
+  ['selo do exemplo PRR ausente',r=>r.querySelector('[data-discussao-selo="prr-complemento-p4-1-40-estado"]')?.remove()],
+ ]){
+  const r=parse(html);muda(r);
+  out.push({nome,lang,mordeu:inlineIntacto&&conferirSelosInline(r,lang).some(e=>e.startsWith('V2E selo inline:'))});
+ }
  run('citação sem token',r=>r.querySelector('[data-linha-campo="excerpt"]').removeAttribute('data-linha-campo'),/citação/);
  run('citação alterada',r=>r.querySelector('[data-linha-campo="excerpt"]').set_content('Uma citação adulterada.'),/literal/);
  const semAcss=parse(html);semAcss.querySelector('#saude-no-orcamento [data-discussao-parte="comparacao"] a[href*="oe-2027-saude-contrato-programa-acss"]')?.remove();
@@ -198,7 +254,7 @@ export function plantas(html,lang){
 export function conferirTudo(dist=path.join(raiz,'dist')){
  const metodo=conferirPortasDoMetodo(dist);
  const recibosCorrigidos=conferirRecibosCorrigidos(dist,loadClaims());
- const efeitos=conferirRecibosDosEfeitos(dist,ITENS);
+ const efeitos=conferirRecibosDosEfeitos(dist,ITENS,loadClaims());
  const apoios=plantasDosApoios(JSON.parse(fs.readFileSync(path.join(raiz,'tests/discussao/palavras.json'),'utf8')));
  const erros=[...conferirDeclaracoes(),...metodo.erros,...recibosCorrigidos.erros],provas=[...plantasDasDerivacoes(loadClaims()),...plantasDosTitulos(loadClaims()),...metodo.plantas,...recibosCorrigidos.plantas],integracoes=[];
  provas.push(...apoios);
@@ -216,7 +272,7 @@ export function conferirTudo(dist=path.join(raiz,'dist')){
   ]){const r=parse(home.toString());estraga(r);provas.push({nome,lang,mordeu:conferirInicio(r,lang).length>0});}
   const broken=parse(home.toString());broken.querySelector('[data-discussao-porta]')?.setAttribute('href','#errado');provas.push({nome:'porta inicial errada',lang,mordeu:conferirInicio(broken,lang).some(x=>x.includes('destino'))});
  }
- const idsDosItens=[...new Set(ITENS.flatMap(e=>[...linhasDaExplicacao(e,loadClaims())]))];
+ const idsDosItens=[...new Set(ITENS.flatMap(e=>[...linhasImpressasOuDerivadas(e,loadClaims())]))];
  const walk=p=>{for(const f of fs.readdirSync(p,{withFileTypes:true})){const n=path.join(p,f.name);if(f.isDirectory())walk(n);else if(f.name==='index.html'){
   const rel=path.relative(dist,n);if(rel==='o-que-se-discute/index.html'||rel==='en/under-discussion/index.html'||rel.includes('/documento/')||rel.includes('/document/'))continue;
   const html=fs.readFileSync(n,'utf8');

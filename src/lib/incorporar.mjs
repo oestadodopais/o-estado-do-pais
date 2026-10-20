@@ -11,7 +11,7 @@ import { SITE_HOST_DISPLAY } from '../../site.config.mjs';
 import { provenienciaIncompleta } from './ledger.mjs';
 import { leituraDaIncorporacao } from './leitura-da-incorporacao.mjs';
 import { caminhoDaLinha } from './livro.mjs';
-import { textoDocumentalConferido } from './prova-efeitos.mjs';
+import { textoDocumentalConferido, valorImpressoDoPainelConferido } from './prova-efeitos.mjs';
 
 /** @param {unknown} valor */
 export function escaparIncorporacao(valor) {
@@ -31,6 +31,7 @@ export function dadosDaIncorporacao(c, lang) {
   const nome = nomeNoRecibo(c.id, lang).texto;
   const lugar = lugarDaIncorporacao(c, lang);
   const unidade = unidadeDaLinha(c.unit, lang);
+  const unidadeNoValor = valorImpressoDoPainelConferido(c.id, c.value);
   const correcoes = (c.corrections ?? []).filter((/** @type {any} */ x) =>
     x.kind !== 'proveniencia' && x.new_value === c.value).sort((/** @type {any} */ a, /** @type {any} */ b) => b.date.localeCompare(a.date));
   const atualizada = correcoes[0]?.date ?? '';
@@ -45,8 +46,8 @@ export function dadosDaIncorporacao(c, lang) {
     lang === 'en' ? c.ressalva_en : c.ressalva].filter(Boolean).join(' ');
   return {
     nome: nome + (lugar ? ` · ${lugar.nome}` : ''),
-    periodo: c.reference_date ? dataDaCasa(c.reference_date, lang) : s.periodoEmFalta,
-    valor: String(c.value), unidade: unidade.texto, unidadeLang: unidade.lingua ?? t(lang).lang,
+    periodo: (c.period ?? c.reference_date) ? dataDaCasa(c.period ?? c.reference_date, lang) : s.periodoEmFalta,
+    valor: String(c.value), unidade: unidadeNoValor ? '' : unidade.texto, unidadeLang: unidade.lingua ?? t(lang).lang,
     fonte, fonteLang: (c.source ? linguaDaFonte(c.source, lang) : null) ?? t(lang).lang,
     data, leitura: leituraDaIncorporacao(c, lang, data),
     atribuicao: LICENCA ? `${LICENCA.atribuicao}, ${LICENCA.nome}` : '', notas,
@@ -65,7 +66,7 @@ export function codigoDaIncorporacao(c, lang) {
   const origem = `https://${SITE_HOST_DISPLAY}`;
   const valor = textoDocumentalConferido(c) ? `<span lang="pt-PT">${e(d.valor)}</span>` : e(d.valor);
   return `<p class="oedp-numero" lang="${t(lang).lang}" data-oedp="${e(c.id)}" data-oedp-valor="${e(c.value)}" data-oedp-lido="${e(c.access_date)}">` +
-    `<a href="${origem}${caminhoDaLinha(c.id, lang)}">${e(d.nome)}, ${e(d.periodo)}: ${valor} <span lang="${e(d.unidadeLang)}">${e(d.unidade)}</span></a> · ` +
+    `<a href="${origem}${caminhoDaLinha(c.id, lang)}">${e(d.nome)}, ${e(d.periodo)}: ${valor}${d.unidade ? ` <span lang="${e(d.unidadeLang)}">${e(d.unidade)}</span>` : ''}</a> · ` +
     `<span lang="${e(d.fonteLang)}">${e(d.fonte)}</span>${d.fonte === leitura ? '' : ', ' + e(leitura)} · ${e(d.atribuicao)}` +
     (d.notas ? ` · <span>${e(d.notas)}</span>` : '') +
     `</p><script async src="${origem}/incorporar.js" referrerpolicy="no-referrer" crossorigin="anonymous"></script>`;

@@ -10,35 +10,30 @@ value: "2 011"
 unit: "milhões de euros"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
-source: "Recuperar Portugal"
-document:
-  title: "Relatório Semanal de Monitorização | 14-10-2026"
-  edition: "2026-10-14"
-  locator: "p. 2 PDF; quadro Implementação Financeira por Dimensão Estruturante e Componente; linha C01; coluna Contratado PRR"
-  source_sha256: "1db56cc1bba3055d1b0ea3c0d40954b59ec444a3279ddc4e1a2dfe6e9e5cc2b2"
-  page: 2
-  kind: "ficheiro"
-source_url: "https://recuperarportugal.gov.pt/wp-content/uploads/2026/10/Relatorio-Monitorizacao-PRR-Sumario-20261014.pdf#page=2"
-access_date: "2026-10-20"
+source: null
+document: null
+source_url: null
+access_date: null
 reference_date: "2026-10-14"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "Leitura numérica de prr-monitorizacao-20261014-p2-C01-contratado: retirar a unidade e ler o ponto como separador de milhares. = 2 011"
+excerpt: null
 
 # Ressalva publicada da casa, conferida no motor, nas duas línguas.
-ressalva: "Valor calculado sobre as linhas do documento, não uma célula numérica transcrita."
-ressalva_en: "Value calculated from the document rows, not a transcribed numerical cell."
+ressalva: "Valor calculado sobre as linhas do documento."
+ressalva_en: "Value calculated from the document rows."
 
-# Aritmética da ressalva; o valor continua a ser o publicado pela fonte.
-derivation: "Leitura numérica de prr-monitorizacao-20261014-p2-C01-contratado: retirar a unidade e ler o ponto como separador de milhares. = 2 011; componentes: prr-monitorizacao-20261014-p2-C01-contratado"
-derivation_en: "Read the printed amount in million euros, treating the dot as a thousands separator = 2 011; components: prr-monitorizacao-20261014-p2-C01-contratado"
-derived_from: []
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: "number_pt ( prr-monitorizacao-20261014-p2-c01-contratado ) = 2 011"
+derivation_en: "number_pt ( prr-monitorizacao-20261014-p2-c01-contratado ) = 2 011"
+derived_from:
+  - "prr-monitorizacao-20261014-p2-c01-contratado"
 # Expressão verificada no build: tem de dar exactamente o valor acima.
-check: null
+check: "round ( number_pt ( prr-monitorizacao-20261014-p2-c01-contratado ) , 0 )"
 
 study: "oe-2027"
 # Nota interna. NÃO é publicada: ver DECISIONS §1.24.
-note: "[derivation do motor] {'operation': 'number', 'components': ['prr-monitorizacao-20261014-p2-C01-contratado'], 'operands': ['2011'], 'formula': 'Leitura numérica de prr-monitorizacao-20261014-p2-C01-contratado: retirar a unidade e ler o ponto como separador de milhares.', 'calculation': 'Leitura numérica de prr-monitorizacao-20261014-p2-C01-contratado: retirar a unidade e ler o ponto como separador de milhares. = 2 011', 'rounding_places': 0, 'result': '2 011'} · [note do motor] Conta sobre as linhas identificadas; pagamentos do PRR não medem execução física. · Cruzado de ResearchHub content/26 Saude e Parcerias Efeitos · der-prr-saude-contratado-numerico."
+note: "[derivation do motor] {'operation': 'number', 'components': ['prr-monitorizacao-20261014-p2-C01-contratado'], 'operands': ['2011'], 'formula': 'number_pt ( prr-monitorizacao-20261014-p2-C01-contratado )', 'calculation': 'number_pt ( prr-monitorizacao-20261014-p2-C01-contratado ) = 2 011', 'rounding_places': 0, 'result': '2 011', 'check': 'round ( number_pt ( prr-monitorizacao-20261014-p2-C01-contratado ) , 0 )'} · [note do motor] Conta sobre as linhas identificadas; pagamentos do PRR não medem execução física. · Cruzado de ResearchHub content/26 Saude e Parcerias Efeitos · der-prr-saude-contratado-numerico."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []

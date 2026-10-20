@@ -25,9 +25,19 @@
  *
  * @param {unknown} valor
  * @param {'pt'|'en'} [lang]
+ * @returns {string}
  */
 export function dataDaCasa(valor, lang = 'pt') {
   const periodo = String(valor ?? '');
+  const intervalo = /^(\d{4})-(0[1-9]|1[0-2])\/(\d{4})-(0[1-9]|1[0-2])$/.exec(periodo);
+  if (intervalo) {
+    const inicio = dataDaCasa(`${intervalo[1]}-${intervalo[2]}`, lang);
+    const fim = dataDaCasa(`${intervalo[3]}-${intervalo[4]}`, lang);
+    const primeiro = intervalo[1] === intervalo[3]
+      ? inicio.slice(0, -(intervalo[1].length + (lang === 'en' ? 1 : 4)))
+      : inicio;
+    return `${primeiro}${lang === 'en' ? ' to ' : ' a '}${fim}`;
+  }
   const mes = /^(\d{4})-(0[1-9]|1[0-2])$/.exec(periodo);
   if (mes) {
     const meses = lang === 'en'

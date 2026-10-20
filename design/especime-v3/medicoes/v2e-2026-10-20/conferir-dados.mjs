@@ -6,5 +6,5 @@ import {conferirEfeitos,plantasDosEfeitos} from '../../../../tests/discussao/efe
 const linhas=loadClaims(),erros=conferirEfeitos(linhas,ITENS),plantas=plantasDosEfeitos(linhas,ITENS);
 assert.deepEqual(erros,[]);
 assert(plantas.every(p=>p.mordeu),'planta sem recusa');
-fs.writeFileSync(new URL('conferencia-dados.json',import.meta.url),JSON.stringify({erros,plantas},null,2)+'\n');
+fs.writeFileSync(new URL('b/conferencia-dados.json',import.meta.url),JSON.stringify({erros,plantas},null,2)+'\n');
 console.log(JSON.stringify({erros:erros.length,plantas:plantas.length,detetadas:plantas.filter(p=>p.mordeu).length}));

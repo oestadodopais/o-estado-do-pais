@@ -22605,7 +22605,7 @@
                 {
                   "linha": "propria",
                   "campo": "excerpt",
-                  "literal": "Em todo o caso, importa sublinhar que a presente análise não implica qualquer reconhecimento ou assunção, ainda que tácita, de responsabilidades por parte dos parceiros públicos decorrentes das pretensões deduzidas pelos parceiros privados, quer quanto aos respetivos fundamentos, que, na maioria das situações, são rejeitados pelos parceiros públicos, quer quanto aos montantes peticionados. Com efeito, ao longo dos últimos anos verificou-se, em diversas situações, que os pedidos formulados pelos parceiros privados vieram a ser considerados improcedentes, ou que as responsabilidades financeiras imputadas aos parceiros públicos foram inferiores aos montantes inicialmente peticionados."
+                  "literal": "Em todo o caso, importa sublinhar que a presente análise não implica qualquer reconhecimento ou assunção, ainda que tácita, de responsabilidades por parte dos parceiros públicos decorrentes das pretensões deduzidas pelos parceiros privados, quer quanto aos respetivos fundamentos, que, na maioria das situações, são rejeitados pelos parceiros públicos, quer quanto aos montantes peticionados."
                 }
               ]
             }
@@ -22725,7 +22725,7 @@
                 {
                   "linha": "propria",
                   "campo": "excerpt",
-                  "literal": "Salienta-se ainda o desenvolvimento dos trabalhos de negociação 38 no âmbito do contrato de concessão da Beira Interior, na sequência do pedido apresentado pela concessionária no contexto da abolição das portagens, tendo em vista verificar se estão reunidas as condições para a reposição do equilíbrio financeiro do contrato e para negociar os respetivos termos, abrangendo ainda a renegociação de outros aspetos contratuais relevantes e a avaliação de eventuais novos investimentos a realizar."
+                  "literal": "Salienta-se ainda o desenvolvimento dos trabalhos de negociação no âmbito do contrato de concessão da Beira Interior, na sequência do pedido apresentado pela concessionária no contexto da abolição das portagens, tendo em vista verificar se estão reunidas as condições para a reposição do equilíbrio financeiro do contrato e para negociar os respetivos termos, abrangendo ainda a renegociação de outros aspetos contratuais relevantes e a avaliação de eventuais novos investimentos a realizar."
                 }
               ]
             }
@@ -23104,12 +23104,12 @@
       "origens": [],
       "folhas": [
         {
-          "pt": "É a regra do diploma sobre o financiamento do apoio às concessionárias pelos descontos nas portagens.",
-          "en": "It is the decree’s rule on financing support to concessionaires for toll discounts.",
+          "pt": "É a definição do apoio pela diferença entre a atualização limitada das portagens e a contratual, na versão original do diploma.",
+          "en": "It is the definition of support covering the difference between capped and contractual toll updates, in the original decree.",
           "partes": [
             {
-              "pt": "É a regra do diploma sobre o financiamento do apoio às concessionárias pelos descontos nas portagens.",
-              "en": "It is the decree’s rule on financing support to concessionaires for toll discounts.",
+              "pt": "É a definição do apoio pela diferença entre a atualização limitada das portagens e a contratual, na versão original do diploma.",
+              "en": "It is the definition of support covering the difference between capped and contractual toll updates, in the original decree.",
               "classe": "diz",
               "apoios": [
                 {
@@ -23134,12 +23134,12 @@
       "origens": [],
       "folhas": [
         {
-          "pt": "É a regra do diploma sobre o financiamento do apoio às concessionárias pelos descontos nas portagens.",
-          "en": "It is the decree’s rule on financing support to concessionaires for toll discounts.",
+          "pt": "É a regra do financiamento do apoio pelo Orçamento do Estado, processado pela Direção-Geral do Tesouro e Finanças.",
+          "en": "It is the rule for financing support through the State Budget, processed by the Directorate-General for Treasury and Finance.",
           "partes": [
             {
-              "pt": "É a regra do diploma sobre o financiamento do apoio às concessionárias pelos descontos nas portagens.",
-              "en": "It is the decree’s rule on financing support to concessionaires for toll discounts.",
+              "pt": "É a regra do financiamento do apoio pelo Orçamento do Estado, processado pela Direção-Geral do Tesouro e Finanças.",
+              "en": "It is the rule for financing support through the State Budget, processed by the Directorate-General for Treasury and Finance.",
               "classe": "diz",
               "apoios": [
                 {
@@ -23434,18 +23434,108 @@
       "origens": [],
       "folhas": [
         {
-          "pt": "É a regra do diploma sobre o financiamento do apoio às concessionárias pelos descontos nas portagens.",
-          "en": "It is the decree’s rule on financing support to concessionaires for toll discounts.",
+          "pt": "É a definição do apoio correspondente à diferença entre a atualização contratual das portagens e a atualização limitada, na redação retificada.",
+          "en": "It is the definition of support covering the difference between the contractual and capped toll updates, in the rectified wording.",
           "partes": [
             {
-              "pt": "É a regra do diploma sobre o financiamento do apoio às concessionárias pelos descontos nas portagens.",
-              "en": "It is the decree’s rule on financing support to concessionaires for toll discounts.",
+              "pt": "É a definição do apoio correspondente à diferença entre a atualização contratual das portagens e a atualização limitada, na redação retificada.",
+              "en": "It is the definition of support covering the difference between the contractual and capped toll updates, in the rectified wording.",
               "classe": "diz",
               "apoios": [
                 {
                   "linha": "propria",
                   "campo": "excerpt",
                   "literal": "«1 — O apoio é assegurado através de um pagamento do Estado, a entregar às concessionárias, em complemento do pagamento das tarifas e taxas de portagem realizado pelos utilizadores, no montante correspondente à diferença entre as tarifas e taxas de portagem que resultariam da aplicação de um coeficiente de atualização para o ano de 2023 de 1,077, equivalente a um aumento de 7,7 %, e as tarifas e taxas de portagem que resultam da aplicação do n.º 1 do artigo anterior.»"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "pe-dl87a-descontos"
+      ],
+      "nome": {
+        "pt": "Preservação dos regimes de descontos",
+        "en": "Preservation of discount schemes"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a disposição que preserva os regimes de descontos em vigor.",
+          "en": "It is the provision preserving existing discount schemes.",
+          "partes": [
+            {
+              "pt": "É a disposição que preserva os regimes de descontos em vigor.",
+              "en": "It is the provision preserving existing discount schemes.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "O disposto no presente decreto-lei não prejudica a aplicação dos regimes de descontos em vigor."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "pe-brisa-minuta-ano"
+      ],
+      "nome": {
+        "pt": "Ano da minuta do contrato de concessão Brisa",
+        "en": "Year of the Brisa concession draft contract"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a data de publicação da minuta do contrato de concessão Brisa.",
+          "en": "It is the publication date of the Brisa concession draft contract.",
+          "partes": [
+            {
+              "pt": "É a data de publicação da minuta do contrato de concessão Brisa.",
+              "en": "It is the publication date of the Brisa concession draft contract.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "31 de Dezembro de 2008"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "pe-dl87a-publicacao-ano"
+      ],
+      "nome": {
+        "pt": "Ano de publicação do decreto-lei das portagens",
+        "en": "Publication year of the toll decree-law"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a data do cabeçalho de publicação do decreto-lei sobre a atualização das portagens.",
+          "en": "It is the publication header date of the decree-law on the toll update.",
+          "partes": [
+            {
+              "pt": "É a data do cabeçalho de publicação do decreto-lei sobre a atualização das portagens.",
+              "en": "It is the publication header date of the decree-law on the toll update.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "29 de dezembro de 2022"
                 }
               ]
             }
@@ -24418,8 +24508,8 @@
         "sns-sem-medico-serie-antiga-2025-06"
       ],
       "nome": {
-        "pt": "Utentes sem médico de família atribuído",
-        "en": "Patients without an assigned family doctor"
+        "pt": "Utentes inscritos sem médico de família atribuído (série anterior)",
+        "en": "Registered users without an assigned family doctor (earlier series)"
       },
       "origens": [],
       "folhas": [
@@ -24448,8 +24538,8 @@
         "sns-sem-medico-serie-antiga-2026-06"
       ],
       "nome": {
-        "pt": "Utentes sem médico de família atribuído",
-        "en": "Patients without an assigned family doctor"
+        "pt": "Utentes inscritos sem médico de família atribuído (série anterior)",
+        "en": "Registered users without an assigned family doctor (earlier series)"
       },
       "origens": [],
       "folhas": [
@@ -24478,18 +24568,18 @@
         "sns-sem-medico-serie-nova-2026-08"
       ],
       "nome": {
-        "pt": "Inscritos elegíveis sem médico de família atribuído",
-        "en": "Eligible registered patients without an assigned family doctor"
+        "pt": "Utentes elegíveis sem médico de família atribuído",
+        "en": "Eligible users without an assigned family doctor"
       },
       "origens": [],
       "folhas": [
         {
-          "pt": "Conta os utentes inscritos sem médico de família atribuído, na série indicada.",
-          "en": "Counts registered users without an assigned family doctor, in the indicated series.",
+          "pt": "Conta os utentes elegíveis inscritos sem médico de família atribuído, segundo as regras da nova série.",
+          "en": "Counts eligible registered users without an assigned family doctor, under the rules of the new series.",
           "partes": [
             {
-              "pt": "Conta os utentes inscritos sem médico de família atribuído, na série indicada.",
-              "en": "Counts registered users without an assigned family doctor, in the indicated series.",
+              "pt": "Conta os utentes elegíveis inscritos sem médico de família atribuído, segundo as regras da nova série.",
+              "en": "Counts eligible registered users without an assigned family doctor, under the rules of the new series.",
               "classe": "diz",
               "apoios": [
                 {
@@ -24688,8 +24778,8 @@
         "sns-lista-cirurgia-2026-07"
       ],
       "nome": {
-        "pt": "Inscritos em lista de espera para cirurgia",
-        "en": "Patients on the surgical waiting list"
+        "pt": "Inscritos em lista para cirurgia (todos os inscritos no SIGIC)",
+        "en": "Patients on the surgery waiting list (all SIGIC registrations)"
       },
       "origens": [],
       "folhas": [
@@ -24718,8 +24808,8 @@
         "sns-lista-cirurgia-2025-07"
       ],
       "nome": {
-        "pt": "Inscritos em lista de espera para cirurgia",
-        "en": "Patients on the surgical waiting list"
+        "pt": "Inscritos em lista para cirurgia (todos os inscritos no SIGIC)",
+        "en": "Patients on the surgery waiting list (all SIGIC registrations)"
       },
       "origens": [],
       "folhas": [
@@ -24868,8 +24958,8 @@
         "eurostat-be-phys"
       ],
       "nome": {
-        "pt": "Médicos por cem mil habitantes, Bélgica",
-        "en": "Physicians per hundred thousand inhabitants, Belgium"
+        "pt": "Médicos em exercício por cem mil habitantes",
+        "en": "Practising physicians per hundred thousand inhabitants"
       },
       "origens": [],
       "folhas": [
@@ -24898,8 +24988,8 @@
         "eurostat-el-phys"
       ],
       "nome": {
-        "pt": "Médicos por cem mil habitantes, Grécia",
-        "en": "Physicians per hundred thousand inhabitants, Greece"
+        "pt": "Médicos em exercício por cem mil habitantes",
+        "en": "Practising physicians per hundred thousand inhabitants"
       },
       "origens": [],
       "folhas": [
@@ -24928,18 +25018,18 @@
         "eurostat-lu-nrs"
       ],
       "nome": {
-        "pt": "Enfermeiros por cem mil habitantes, Luxemburgo",
-        "en": "Nurses per hundred thousand inhabitants, Luxembourg"
+        "pt": "Enfermeiros com qualificação reconhecida na União Europeia por cem mil habitantes",
+        "en": "Nurses with an EU-recognised qualification per hundred thousand inhabitants"
       },
       "origens": [],
       "folhas": [
         {
-          "pt": "É o número de enfermeiros por cem mil habitantes no país e período da linha.",
-          "en": "It is the number of nurses per hundred thousand inhabitants in the country and period of the row.",
+          "pt": "É o número de enfermeiros com qualificação reconhecida na União Europeia por cem mil habitantes no país e período da linha.",
+          "en": "It is the number of nurses with an EU-recognised qualification per hundred thousand inhabitants in the country and period of the row.",
           "partes": [
             {
-              "pt": "É o número de enfermeiros por cem mil habitantes no país e período da linha.",
-              "en": "It is the number of nurses per hundred thousand inhabitants in the country and period of the row.",
+              "pt": "É o número de enfermeiros com qualificação reconhecida na União Europeia por cem mil habitantes no país e período da linha.",
+              "en": "It is the number of nurses with an EU-recognised qualification per hundred thousand inhabitants in the country and period of the row.",
               "classe": "diz",
               "apoios": [
                 {
@@ -24958,8 +25048,8 @@
         "eurostat-pt-phys"
       ],
       "nome": {
-        "pt": "Médicos por cem mil habitantes, Portugal",
-        "en": "Physicians per hundred thousand inhabitants, Portugal"
+        "pt": "Médicos em exercício por cem mil habitantes",
+        "en": "Practising physicians per hundred thousand inhabitants"
       },
       "origens": [],
       "folhas": [
@@ -24988,18 +25078,18 @@
         "eurostat-pt-nrs"
       ],
       "nome": {
-        "pt": "Enfermeiros por cem mil habitantes, Portugal",
-        "en": "Nurses per hundred thousand inhabitants, Portugal"
+        "pt": "Enfermeiros com qualificação reconhecida na União Europeia por cem mil habitantes",
+        "en": "Nurses with an EU-recognised qualification per hundred thousand inhabitants"
       },
       "origens": [],
       "folhas": [
         {
-          "pt": "É o número de enfermeiros por cem mil habitantes no país e período da linha.",
-          "en": "It is the number of nurses per hundred thousand inhabitants in the country and period of the row.",
+          "pt": "É o número de enfermeiros com qualificação reconhecida na União Europeia por cem mil habitantes no país e período da linha.",
+          "en": "It is the number of nurses with an EU-recognised qualification per hundred thousand inhabitants in the country and period of the row.",
           "partes": [
             {
-              "pt": "É o número de enfermeiros por cem mil habitantes no país e período da linha.",
-              "en": "It is the number of nurses per hundred thousand inhabitants in the country and period of the row.",
+              "pt": "É o número de enfermeiros com qualificação reconhecida na União Europeia por cem mil habitantes no país e período da linha.",
+              "en": "It is the number of nurses with an EU-recognised qualification per hundred thousand inhabitants in the country and period of the row.",
               "classe": "diz",
               "apoios": [
                 {
@@ -25018,18 +25108,18 @@
         "eurostat-ro-nrs"
       ],
       "nome": {
-        "pt": "Enfermeiros por cem mil habitantes, Roménia",
-        "en": "Nurses per hundred thousand inhabitants, Romania"
+        "pt": "Enfermeiros com qualificação reconhecida na União Europeia por cem mil habitantes",
+        "en": "Nurses with an EU-recognised qualification per hundred thousand inhabitants"
       },
       "origens": [],
       "folhas": [
         {
-          "pt": "É o número de enfermeiros por cem mil habitantes no país e período da linha.",
-          "en": "It is the number of nurses per hundred thousand inhabitants in the country and period of the row.",
+          "pt": "É o número de enfermeiros com qualificação reconhecida na União Europeia por cem mil habitantes no país e período da linha.",
+          "en": "It is the number of nurses with an EU-recognised qualification per hundred thousand inhabitants in the country and period of the row.",
           "partes": [
             {
-              "pt": "É o número de enfermeiros por cem mil habitantes no país e período da linha.",
-              "en": "It is the number of nurses per hundred thousand inhabitants in the country and period of the row.",
+              "pt": "É o número de enfermeiros com qualificação reconhecida na União Europeia por cem mil habitantes no país e período da linha.",
+              "en": "It is the number of nurses with an EU-recognised qualification per hundred thousand inhabitants in the country and period of the row.",
               "classe": "diz",
               "apoios": [
                 {
@@ -25435,6 +25525,96 @@
     },
     {
       "chaves": [
+        "sns-sem-medico-elegibilidade"
+      ],
+      "nome": {
+        "pt": "Elegibilidade para atribuição de médico de família",
+        "en": "Eligibility for assignment of a family doctor"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a definição de elegibilidade para atribuição de médico de família no catálogo do SNS.",
+          "en": "It is the NHS catalogue definition of eligibility for assignment of a family doctor.",
+          "partes": [
+            {
+              "pt": "É a definição de elegibilidade para atribuição de médico de família no catálogo do SNS.",
+              "en": "It is the NHS catalogue definition of eligibility for assignment of a family doctor.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Utentes inscritos que cumprem os critérios de elegibilidade para atribuição de Médico de Família. Cálculo: utentes com registo atualizado e contacto com o SNS nos últimos cinco anos."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "sns-consultas-csp-descricao"
+      ],
+      "nome": {
+        "pt": "Consultas: exclusão do Vitacare e último mês provisório",
+        "en": "Consultations: Vitacare exclusion and provisional latest month"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a ressalva da fonte sobre a exclusão do Vitacare e o carácter provisório do último mês.",
+          "en": "It is the source caveat about the exclusion of Vitacare and the provisional latest month.",
+          "partes": [
+            {
+              "pt": "É a ressalva da fonte sobre a exclusão do Vitacare e o carácter provisório do último mês.",
+              "en": "It is the source caveat about the exclusion of Vitacare and the provisional latest month.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "As consultas registadas no sistema Vitacare não entram no cálculo destas métricas. Os dados relativos a este indicador são de caráter temporário para o mês publicado mais recente."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "sns-catalogo-acumulados"
+      ],
+      "nome": {
+        "pt": "Período dos valores acumulados no catálogo do SNS",
+        "en": "Period of cumulative values in the NHS catalogue"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a definição temporal dos valores acumulados no catálogo do SNS.",
+          "en": "It is the temporal definition of cumulative values in the NHS catalogue.",
+          "partes": [
+            {
+              "pt": "É a definição temporal dos valores acumulados no catálogo do SNS.",
+              "en": "It is the temporal definition of cumulative values in the NHS catalogue.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "De janeiro de 2013 ao mês n-2 anterior ao atual (valores acumulados)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
         "der-sns-consultas-csp-variacao-pct"
       ],
       "nome": {
@@ -25665,7 +25845,7 @@
                 {
                   "linha": "propria",
                   "campo": "derivation",
-                  "literal": "Leitura numérica de prr-monitorizacao-20261014-p2-C01-contratado: retirar a unidade e ler o ponto como separador de milhares. = 2 011; componentes: prr-monitorizacao-20261014-p2-C01-contratado"
+                  "literal": "number_pt ( prr-monitorizacao-20261014-p2-c01-contratado ) = 2 011"
                 }
               ]
             }
@@ -25695,7 +25875,37 @@
                 {
                   "linha": "propria",
                   "campo": "derivation",
-                  "literal": "Leitura numérica de prr-monitorizacao-20261014-p2-C01-pago: retirar a unidade e ler o ponto como separador de milhares. = 947; componentes: prr-monitorizacao-20261014-p2-C01-pago"
+                  "literal": "number_pt ( prr-monitorizacao-20261014-p2-c01-pago ) = 947"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "der-prr-saude-taxa-numerico"
+      ],
+      "nome": {
+        "pt": "Execução financeira da componente Saúde do PRR",
+        "en": "Financial execution of RRP Health"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a leitura numérica da taxa de execução financeira publicada no painel.",
+          "en": "It is the numerical reading of the financial execution rate published on the dashboard.",
+          "partes": [
+            {
+              "pt": "É a leitura numérica da taxa de execução financeira publicada no painel.",
+              "en": "It is the numerical reading of the financial execution rate published on the dashboard.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "derivation",
+                  "literal": "number_pt ( prr-monitorizacao-20261014-p2-c01-taxa ) = 47"
                 }
               ]
             }
@@ -25785,7 +25995,7 @@
                 {
                   "linha": "propria",
                   "campo": "derivation",
-                  "literal": "Contar as componentes = 37; componentes: prr-complemento-p3-1.24-estado, prr-complemento-p3-1.32-estado, prr-complemento-p3-1.33-estado, prr-complemento-p3-1.3-estado, prr-complemento-p3-1.8-estado, prr-complemento-p4-1.1-estado, prr-complemento-p4-1.5-estado, prr-complemento-p4-1.12-estado, prr-complemento-p4-1.40-estado, prr-complemento-p4-1.41-estado, prr-complemento-p4-1.2-estado, prr-complemento-p5-1.22-estado, prr-complemento-p5-1.28-estado, prr-complemento-p5-1.11-estado, prr-complemento-p5-1.7-estado, prr-complemento-p5-1.9-estado, prr-complemento-p6-1.37-estado, prr-complemento-p6-1.42-estado, prr-complemento-p6-1.10-estado, prr-complemento-p7-1.34-estado, prr-complemento-p7-1.35-estado, prr-complemento-p7-1.36-estado, prr-complemento-p7-1.38-estado, prr-complemento-p7-1.39-estado, prr-complemento-p8-1.21-estado, prr-complemento-p8-1.25-estado, prr-complemento-p9-1.17-estado, prr-complemento-p9-1.18-estado, prr-complemento-p9-1.26-estado, prr-complemento-p9-1.30-estado, prr-complemento-p9-1.43-estado, prr-complemento-p9-1.44-estado, prr-marcos-metas-2025-p2-1.29-estado, prr-marcos-metas-2025-p2-1.4-estado, prr-marcos-metas-2025-p2-1.13-estado, prr-marcos-metas-2025-p2-1.20-estado, prr-marcos-metas-2025-p2-1.6-estado"
+                  "literal": "count_rows ( prr-complemento-p3-1-24-estado , prr-complemento-p3-1-32-estado , prr-complemento-p3-1-33-estado , prr-complemento-p3-1-3-estado , prr-complemento-p3-1-8-estado , prr-complemento-p4-1-1-estado , prr-complemento-p4-1-5-estado , prr-complemento-p4-1-12-estado , prr-complemento-p4-1-40-estado , prr-complemento-p4-1-41-estado , prr-complemento-p4-1-2-estado , prr-complemento-p5-1-22-estado , prr-complemento-p5-1-28-estado , prr-complemento-p5-1-11-estado , prr-complemento-p5-1-7-estado , prr-complemento-p5-1-9-estado , prr-complemento-p6-1-37-estado , prr-complemento-p6-1-42-estado , prr-complemento-p6-1-10-estado , prr-complemento-p7-1-34-estado , prr-complemento-p7-1-35-estado , prr-complemento-p7-1-36-estado , prr-complemento-p7-1-38-estado , prr-complemento-p7-1-39-estado , prr-complemento-p8-1-21-estado , prr-complemento-p8-1-25-estado , prr-complemento-p9-1-17-estado , prr-complemento-p9-1-18-estado , prr-complemento-p9-1-26-estado , prr-complemento-p9-1-30-estado , prr-complemento-p9-1-43-estado , prr-complemento-p9-1-44-estado , prr-marcos-metas-2025-p2-1-29-estado , prr-marcos-metas-2025-p2-1-4-estado , prr-marcos-metas-2025-p2-1-13-estado , prr-marcos-metas-2025-p2-1-20-estado , prr-marcos-metas-2025-p2-1-6-estado ) = 37"
                 }
               ]
             }
@@ -25815,7 +26025,7 @@
                 {
                   "linha": "propria",
                   "campo": "derivation",
-                  "literal": "Contar as componentes com value igual a Completo = 24; componentes: prr-complemento-p3-1.24-estado, prr-complemento-p3-1.32-estado, prr-complemento-p3-1.33-estado, prr-complemento-p3-1.3-estado, prr-complemento-p3-1.8-estado, prr-complemento-p4-1.1-estado, prr-complemento-p4-1.5-estado, prr-complemento-p4-1.12-estado, prr-complemento-p4-1.40-estado, prr-complemento-p4-1.41-estado, prr-complemento-p4-1.2-estado, prr-complemento-p5-1.22-estado, prr-complemento-p5-1.28-estado, prr-complemento-p5-1.11-estado, prr-complemento-p5-1.7-estado, prr-complemento-p5-1.9-estado, prr-complemento-p6-1.37-estado, prr-complemento-p6-1.42-estado, prr-complemento-p6-1.10-estado, prr-complemento-p7-1.34-estado, prr-complemento-p7-1.35-estado, prr-complemento-p7-1.36-estado, prr-complemento-p7-1.38-estado, prr-complemento-p7-1.39-estado, prr-complemento-p8-1.21-estado, prr-complemento-p8-1.25-estado, prr-complemento-p9-1.17-estado, prr-complemento-p9-1.18-estado, prr-complemento-p9-1.26-estado, prr-complemento-p9-1.30-estado, prr-complemento-p9-1.43-estado, prr-complemento-p9-1.44-estado, prr-marcos-metas-2025-p2-1.29-estado, prr-marcos-metas-2025-p2-1.4-estado, prr-marcos-metas-2025-p2-1.13-estado, prr-marcos-metas-2025-p2-1.20-estado, prr-marcos-metas-2025-p2-1.6-estado"
+                  "literal": "count_equal ( Completo , prr-complemento-p3-1-24-estado , prr-complemento-p3-1-32-estado , prr-complemento-p3-1-33-estado , prr-complemento-p3-1-3-estado , prr-complemento-p3-1-8-estado , prr-complemento-p4-1-1-estado , prr-complemento-p4-1-5-estado , prr-complemento-p4-1-12-estado , prr-complemento-p4-1-40-estado , prr-complemento-p4-1-41-estado , prr-complemento-p4-1-2-estado , prr-complemento-p5-1-22-estado , prr-complemento-p5-1-28-estado , prr-complemento-p5-1-11-estado , prr-complemento-p5-1-7-estado , prr-complemento-p5-1-9-estado , prr-complemento-p6-1-37-estado , prr-complemento-p6-1-42-estado , prr-complemento-p6-1-10-estado , prr-complemento-p7-1-34-estado , prr-complemento-p7-1-35-estado , prr-complemento-p7-1-36-estado , prr-complemento-p7-1-38-estado , prr-complemento-p7-1-39-estado , prr-complemento-p8-1-21-estado , prr-complemento-p8-1-25-estado , prr-complemento-p9-1-17-estado , prr-complemento-p9-1-18-estado , prr-complemento-p9-1-26-estado , prr-complemento-p9-1-30-estado , prr-complemento-p9-1-43-estado , prr-complemento-p9-1-44-estado , prr-marcos-metas-2025-p2-1-29-estado , prr-marcos-metas-2025-p2-1-4-estado , prr-marcos-metas-2025-p2-1-13-estado , prr-marcos-metas-2025-p2-1-20-estado , prr-marcos-metas-2025-p2-1-6-estado ) = 24"
                 }
               ]
             }
@@ -25845,7 +26055,7 @@
                 {
                   "linha": "propria",
                   "campo": "derivation",
-                  "literal": "( sns-divida-2026-divida_total_fornecedores_externos-0 + sns-divida-2026-divida_total_fornecedores_externos-1 + sns-divida-2026-divida_total_fornecedores_externos-2 + sns-divida-2026-divida_total_fornecedores_externos-3 + sns-divida-2026-divida_total_fornecedores_externos-4 + sns-divida-2026-divida_total_fornecedores_externos-5 + sns-divida-2026-divida_total_fornecedores_externos-6 + sns-divida-2026-divida_total_fornecedores_externos-7 + sns-divida-2026-divida_total_fornecedores_externos-8 + sns-divida-2026-divida_total_fornecedores_externos-9 + sns-divida-2026-divida_total_fornecedores_externos-10 + sns-divida-2026-divida_total_fornecedores_externos-11 + sns-divida-2026-divida_total_fornecedores_externos-12 + sns-divida-2026-divida_total_fornecedores_externos-13 + sns-divida-2026-divida_total_fornecedores_externos-14 + sns-divida-2026-divida_total_fornecedores_externos-15 + sns-divida-2026-divida_total_fornecedores_externos-16 + sns-divida-2026-divida_total_fornecedores_externos-17 + sns-divida-2026-divida_total_fornecedores_externos-18 + sns-divida-2026-divida_total_fornecedores_externos-19 + sns-divida-2026-divida_total_fornecedores_externos-20 + sns-divida-2026-divida_total_fornecedores_externos-21 + sns-divida-2026-divida_total_fornecedores_externos-22 + sns-divida-2026-divida_total_fornecedores_externos-23 + sns-divida-2026-divida_total_fornecedores_externos-24 + sns-divida-2026-divida_total_fornecedores_externos-25 + sns-divida-2026-divida_total_fornecedores_externos-26 + sns-divida-2026-divida_total_fornecedores_externos-27 + sns-divida-2026-divida_total_fornecedores_externos-28 + sns-divida-2026-divida_total_fornecedores_externos-29 + sns-divida-2026-divida_total_fornecedores_externos-30 + sns-divida-2026-divida_total_fornecedores_externos-31 + sns-divida-2026-divida_total_fornecedores_externos-32 + sns-divida-2026-divida_total_fornecedores_externos-33 + sns-divida-2026-divida_total_fornecedores_externos-34 + sns-divida-2026-divida_total_fornecedores_externos-35 + sns-divida-2026-divida_total_fornecedores_externos-36 + sns-divida-2026-divida_total_fornecedores_externos-37 + sns-divida-2026-divida_total_fornecedores_externos-38 + sns-divida-2026-divida_total_fornecedores_externos-39 + sns-divida-2026-divida_total_fornecedores_externos-40 + sns-divida-2026-divida_total_fornecedores_externos-41 + sns-divida-2026-divida_total_fornecedores_externos-42 + sns-divida-2026-divida_total_fornecedores_externos-43 + sns-divida-2026-divida_total_fornecedores_externos-44 + sns-divida-2026-divida_total_fornecedores_externos-45 + sns-divida-2026-divida_total_fornecedores_externos-46 + sns-divida-2026-divida_total_fornecedores_externos-47 + sns-divida-2026-divida_total_fornecedores_externos-48 + sns-divida-2026-divida_total_fornecedores_externos-49 + sns-divida-2026-divida_total_fornecedores_externos-50 + sns-divida-2026-divida_total_fornecedores_externos-51 + sns-divida-2026-divida_total_fornecedores_externos-52 ) / 1000000 = 1 517,5"
+                  "literal": "( sns-divida-2026-divida-total-fornecedores-externos-0 + sns-divida-2026-divida-total-fornecedores-externos-1 + sns-divida-2026-divida-total-fornecedores-externos-2 + sns-divida-2026-divida-total-fornecedores-externos-3 + sns-divida-2026-divida-total-fornecedores-externos-4 + sns-divida-2026-divida-total-fornecedores-externos-5 + sns-divida-2026-divida-total-fornecedores-externos-6 + sns-divida-2026-divida-total-fornecedores-externos-7 + sns-divida-2026-divida-total-fornecedores-externos-8 + sns-divida-2026-divida-total-fornecedores-externos-9 + sns-divida-2026-divida-total-fornecedores-externos-10 + sns-divida-2026-divida-total-fornecedores-externos-11 + sns-divida-2026-divida-total-fornecedores-externos-12 + sns-divida-2026-divida-total-fornecedores-externos-13 + sns-divida-2026-divida-total-fornecedores-externos-14 + sns-divida-2026-divida-total-fornecedores-externos-15 + sns-divida-2026-divida-total-fornecedores-externos-16 + sns-divida-2026-divida-total-fornecedores-externos-17 + sns-divida-2026-divida-total-fornecedores-externos-18 + sns-divida-2026-divida-total-fornecedores-externos-19 + sns-divida-2026-divida-total-fornecedores-externos-20 + sns-divida-2026-divida-total-fornecedores-externos-21 + sns-divida-2026-divida-total-fornecedores-externos-22 + sns-divida-2026-divida-total-fornecedores-externos-23 + sns-divida-2026-divida-total-fornecedores-externos-24 + sns-divida-2026-divida-total-fornecedores-externos-25 + sns-divida-2026-divida-total-fornecedores-externos-26 + sns-divida-2026-divida-total-fornecedores-externos-27 + sns-divida-2026-divida-total-fornecedores-externos-28 + sns-divida-2026-divida-total-fornecedores-externos-29 + sns-divida-2026-divida-total-fornecedores-externos-30 + sns-divida-2026-divida-total-fornecedores-externos-31 + sns-divida-2026-divida-total-fornecedores-externos-32 + sns-divida-2026-divida-total-fornecedores-externos-33 + sns-divida-2026-divida-total-fornecedores-externos-34 + sns-divida-2026-divida-total-fornecedores-externos-35 + sns-divida-2026-divida-total-fornecedores-externos-36 + sns-divida-2026-divida-total-fornecedores-externos-37 + sns-divida-2026-divida-total-fornecedores-externos-38 + sns-divida-2026-divida-total-fornecedores-externos-39 + sns-divida-2026-divida-total-fornecedores-externos-40 + sns-divida-2026-divida-total-fornecedores-externos-41 + sns-divida-2026-divida-total-fornecedores-externos-42 + sns-divida-2026-divida-total-fornecedores-externos-43 + sns-divida-2026-divida-total-fornecedores-externos-44 + sns-divida-2026-divida-total-fornecedores-externos-45 + sns-divida-2026-divida-total-fornecedores-externos-46 + sns-divida-2026-divida-total-fornecedores-externos-47 + sns-divida-2026-divida-total-fornecedores-externos-48 + sns-divida-2026-divida-total-fornecedores-externos-49 + sns-divida-2026-divida-total-fornecedores-externos-50 + sns-divida-2026-divida-total-fornecedores-externos-51 + sns-divida-2026-divida-total-fornecedores-externos-52 ) / 1000000 = 1 517,5"
                 }
               ]
             }

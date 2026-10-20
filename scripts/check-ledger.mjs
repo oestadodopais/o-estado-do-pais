@@ -12,6 +12,7 @@ import crypto from 'node:crypto';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
+import '../tests/linha/calculos-documentais.mjs';
 import {
   validateLedger,
   allClaims,

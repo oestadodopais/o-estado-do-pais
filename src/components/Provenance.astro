@@ -76,7 +76,7 @@ import DefinicaoDoMarcador from './DefinicaoDoMarcador.astro';
    está ali é da fonte e a casa não edita o que transcreve. `TextoView.astro`
    passa `definicao={false}`, e a marca da página não se gasta ali: quem leva a
    definição é o primeiro marcador FORA da transcrição. */
-const { id, lang, ancora = null, definicao: comDefinicao = true } = Astro.props;
+const { id, lang, ancora = null, definicao: comDefinicao = true, inline = false } = Astro.props;
 
 /**
  * A LÍNGUA É OBRIGATÓRIA, E A CONSTRUÇÃO PÁRA QUANDO FALTA (ISSUES I27).
@@ -106,6 +106,8 @@ if (!lang) {
 
 const s = t(lang);
 const claim = getClaim(id);
+const alinea = /^([a-h])\)/.exec(String(claim.excerpt ?? ''))?.[1];
+const nomeInline = inline ? `${s.prov.selo} · ${claim.document?.title}${alinea ? `, ${lang === 'pt' ? 'alínea' : 'clause'} ${alinea})` : ''}` : undefined;
 
 /* A porta. Quase sempre é a página da linha; na PRÓPRIA página da linha é uma
    âncora para o bloco da prova, porque estar já na página certa não dispensa a
@@ -193,6 +195,8 @@ const linguaDoPublicador = conhecido ? linguaDaFonte(publicador, lang) : null;
 <a
   class:list={['src-chip', incompleta && 'is-unverified']}
   href={porta}
+  aria-label={nomeInline}
+  data-discussao-selo={inline ? id : undefined}
   data-nonledger="proveniencia"
   data-selo-etiqueta={etiqueta}
   title={etiqueta}
