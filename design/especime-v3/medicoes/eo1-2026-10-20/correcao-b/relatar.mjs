@@ -33,8 +33,8 @@ const findings={
  29:['não corrigido','O endereço de rede no corpo dos direitos do Eurostat em content/23 ficou para a higiene do motor, como determina este mandato.'],
  30:['não corrigido','O artefacto de listagem do pacote pertence ao empacotador; o recibo da cópia de origem existe. Esta passagem não altera a escolha de cópias pelo empacotador.'],
 };
-let s='\n<!-- EO1-B -->\n\n## A correção EO1-b\n\n### §0. O que foi corrigido e medido\n\nA correção segue os achados da leitura EO1. A medição está em `correcao-b/medicao.json`; os códigos, os registos das plantas, as frases e as capturas ficam na mesma pasta. As frases abaixo foram extraídas do HTML das duas páginas em cada edição e comparadas com o registo.\n\n';
-s+='A pesquisa oficial não confirmou uma lei de setembro com a tabela do artigo do IRS. O [Despacho de outubro](https://diariodarepublica.pt/dr/detalhe/despacho/12523-a-2026-1180337885) refere a autorização parlamentar e trata das retenções. Não foi usado para fingir que a tabela anual tinha sido selada. O texto usa a alternativa do mandato e diz que não conferiu o diploma.\n\n';
+let s='\n<!-- EO1-B -->\n\n## A correção EO1-b\n\n### Âmbito e medição\n\nA correção segue os achados da leitura EO1. A medição está em `correcao-b/medicao.json`; os códigos, os registos das plantas, as frases e as capturas ficam na mesma pasta. As frases abaixo foram extraídas do HTML das duas páginas em cada edição e comparadas com o registo.\n\n';
+s+='A pesquisa oficial não confirmou uma lei de setembro com a tabela do artigo do IRS. O [Despacho de outubro](https://diariodarepublica.pt/dr/detalhe/despacho/12523-a-2026-1180337885) refere a autorização parlamentar e trata das retenções. Não foi tomado como prova da tabela anual. O texto usa a alternativa do mandato e diz que não conferiu o diploma.\n\n';
 s+='### Resposta aos achados\n\n';
 for(let n=1;n<=5;n++)s+=`- Achado ${n}: **corrigido** no sentido de conferido sem o estrago. Era uma planta na cópia da leitura; a origem não continha essa alteração. As plantas desta entrega reconferem valores e excertos.\n`;
 for(const [n,[state,reason]] of Object.entries(findings))s+=`- Achado ${n}: **${state}**. ${reason}\n`;
@@ -43,7 +43,7 @@ const codes=fs.readdirSync(out).filter(f=>f.endsWith('.codigo')).sort();
 for(const name of ['build','verify','typecheck','motor','selagem','compositor','cruzamento','series','capturas']) assert.equal(fs.readFileSync(`${out}/${name}.codigo`,'utf8').trim(),'0',`${name} não passou`);
 s+='### Códigos lidos dos ficheiros\n\n| Ficheiro | Código |\n| --- | --- |\n';
 for(const f of codes){const code=fs.readFileSync(`${out}/${f}`,'utf8').trim();assert(/^\d+$/.test(code));s+=`| correcao-b/${f} | ${code} |\n`;}
-s+='\nComandos: `medir.py --selagem`, `python3 -m core.compor_livros_test`, `RESEARCHHUB_DIR=<motor> npm run check:cruzamento -- --with-origin`, `RESEARCHHUB_DIR=<motor> npm run check:series`, os portões pelo escrivão com motor e as capturas pelo escrivão. Os registos completos permanecem na pasta temporária; só os excertos sanitizados e os códigos entram no relatório.\n\n';
+s+='\nComandos: `medir.py --selagem`, `python3 -m core.compor_livros_test`, `RESEARCHHUB_DIR=<motor> npm run check:cruzamento -- --with-origin`, `RESEARCHHUB_DIR=<motor> npm run check:series`, os portões do sítio pelo escrivão, o core.gate no commit do motor pelo escrivão e as capturas pelo escrivão. Os registos completos permanecem na pasta temporária; só os excertos sanitizados e os códigos entram no relatório.\n\n';
 const results=[];
 for(const lang of ['pt','en']){
  const r=JSON.parse(fs.readFileSync(`registos/${slug}/${lang}.record.json`));
@@ -60,7 +60,7 @@ for(const lang of ['pt','en']){
  }
 }
 fs.writeFileSync(out+'/frases-renderizadas.json',JSON.stringify(results,null,2)+'\n');
-s+='### Cada uso de abs, tal como renderiza\n\n';
+s+='### §0. Cada uso de abs, tal como renderiza\n\n';
 for(const b of results.filter(b=>b.absolutos.length))s+=`- ${b.edicao}, unidade ${b.unidade}, ${b.absolutos.map(a=>'`'+a.id+'|abs`').join(', ')}: ${b.texto}\n\n`;
 s+='A frase de entrada em `leituras.mjs` usa também o absoluto da linha das invariantes nas duas línguas; o selo declara o modificador e o portão compara-o com o valor absoluto da linha.\n\n';
 s+='### Siglas\n\nUTAO, CFP, IRS, IRC, IVA, CSI, PRR, PIB, SNS, INE, PS, PSD, PCP, CDS, JPP, PAN, BE, IL, MF, POE, POENMP, QPI, DGAEP, PPP, BdP, CE, OCDE, FMI, PT2030, AD, SMN, RMMG, BOE e SIFIDE. As expansões estão nas frases abaixo; SIFIDE conserva a expansão no parêntesis da secção das medidas, como determina o mandato. Os partidos Chega e Livre são escritos pelo nome.\n\n';

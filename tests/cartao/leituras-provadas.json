@@ -20760,66 +20760,6 @@
     },
     {
       "chaves": [
-        "oe-2027-irc-21-para-17"
-      ],
-      "nome": {
-        "pt": "IRC: percurso das taxas segundo o relatório",
-        "en": "Corporate tax: rate path according to the report"
-      },
-      "origens": [],
-      "folhas": [
-        {
-          "pt": "É a passagem do documento sobre «IRC: percurso das taxas segundo o relatório», conservada no excerto.",
-          "en": "It is the document's passage on «Corporate tax: rate path according to the report», preserved in the excerpt.",
-          "partes": [
-            {
-              "pt": "É a passagem do documento sobre «IRC: percurso das taxas segundo o relatório», conservada no excerto.",
-              "en": "It is the document's passage on «Corporate tax: rate path according to the report», preserved in the excerpt.",
-              "classe": "diz",
-              "apoios": [
-                {
-                  "linha": "propria",
-                  "campo": "excerpt",
-                  "literal": "Destaca-se ainda o alargamento do IRS Jovem; a redução do IRC de 21% em 2024 para 17% em 2028; a isenção de imposto municipal sobre as transmissões onerosas de imóveis (IMT) e imposto do selo na aquisição da primeira habitação por parte dos jovens até aos 35 anos; a redução do imposto sobre o valor acrescentado (IVA) de 23% para 6% na habitação e a redução do IRS de 25% para 10% nas rendas moderadas."
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "chaves": [
-        "utao-juros-2027"
-      ],
-      "nome": {
-        "pt": "UTAO: juros da dívida",
-        "en": "UTAO: debt interest"
-      },
-      "origens": [],
-      "folhas": [
-        {
-          "pt": "É o valor de «UTAO: juros da dívida» no documento citado, para o período e na unidade indicados.",
-          "en": "It is the value of «UTAO: debt interest» in the cited document, for the stated period and unit.",
-          "partes": [
-            {
-              "pt": "É o valor de «UTAO: juros da dívida» no documento citado, para o período e na unidade indicados.",
-              "en": "It is the value of «UTAO: debt interest» in the cited document, for the stated period and unit.",
-              "classe": "diz",
-              "apoios": [
-                {
-                  "linha": "propria",
-                  "campo": "excerpt",
-                  "literal": "A despesa com juros apresenta uma subida prevista de 23,2% em 2027, o que reflete uma variação nominal de 1,5 mil M€, ascendendo a 8,2 mil M€. Caso se concretize a previsão, a taxa de juro implícita (juros em percentagem da dívida pública) deverá subir de 2,4% em 2026 para 2,9% em 2027. É de referir que o máximo da série estatística para os juros foi atingido em 2014, acima do valor previsto para 2027 (a taxa de juro implícita foi de 3,6% em 2014)."
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "chaves": [
         "ce-primavera-2026-divida-2026"
       ],
       "nome": {

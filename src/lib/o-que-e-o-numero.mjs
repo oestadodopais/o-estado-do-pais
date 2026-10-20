@@ -232,7 +232,7 @@ export function lugarNoRecibo(id, lang) {
  * tem, o rótulo que a fonte imprime por cima da figura. Uma linha calculada não tem nem um nem outro.
  *
  * @param {string} id
- * @returns {{ campo: 'document.title'|'name', valor: string } | null}
+ * @returns {{ campo: 'document.title'|'name'|'name_en', valor: string } | null}
  */
 export function nomeDaFonteNoRecibo(id, lang = 'pt') {
   const c = /** @type {any} */ (getClaim(id));
