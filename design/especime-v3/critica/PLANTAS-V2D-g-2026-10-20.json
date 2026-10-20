@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-20T13:56:16+00:00",
+ "copia": "<pacote>",
+ "plantas": [
+  {
+   "id": "K2",
+   "ficheiro": "built/livro-razao/der-saude-prr-2026/index.html",
+   "descricao": "o cabeçalho do recibo da derivada do PRR nomeia outro programa (a Educação) na página construída",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "7658c3f9fb529560d7f4cc7ebafd7f77615ba7acd9a54d7917071c2b7a5890d4",
+   "sha256_depois": "03101035705c254cfb2d1a07a61dfd7e8bd6f3dfd153c6325f6b6a7ca53b904a",
+   "contexto_antes": "ros e fontes</a><span class=\"caminho-sep\" aria-hidden=\"true\">›</span><span class=\"caminho-aqui\" aria-current=\"page\"><span class=\"caminho-medida\" data-nome=\"projeto\" data-de-linha=\"der-saude-prr-2026\">PRR implícito na despesa efetiva, Saúde</span></span></nav></div></header><main id=\"conteudo\"><div class=\"rotulo-ia rotulo-ia-topo\" data-rotulo-ia=\"topo\"><p class=\"rotulo-ia-linha\">Texto gerado por inteligência artificial, segundo o <span ",
+   "contexto_depois": "ros e fontes</a><span class=\"caminho-sep\" aria-hidden=\"true\">›</span><span class=\"caminho-aqui\" aria-current=\"page\"><span class=\"caminho-medida\" data-nome=\"projeto\" data-de-linha=\"der-saude-prr-2026\">PRR implícito na despesa efetiva, Educação</span></span></nav></div></header><main id=\"conteudo\"><div class=\"rotulo-ia rotulo-ia-topo\" data-rotulo-ia=\"topo\"><p class=\"rotulo-ia-linha\">Texto gerado por inteligência artificial, segundo o <span "
+  },
+  {
+   "id": "K1",
+   "ficheiro": "src/data/nomes-v2d.mjs",
+   "descricao": "o nome da medida da derivada do PRR na Saúde trocado no registo dos nomes (nomeia a despesa total, não a efetiva)",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "ff15c275b224bee11455c0c2c29df5ef6acfabf293bab3f20315a0243bbd25cb",
+   "sha256_depois": "8cfd64e1b989fffbd94a3a978ab7c86798fab86b267d15c591993944b512ddb5",
+   "contexto_antes": "de-pessoal-variacao-abs\": {\n    \"pt\": \"Variação absoluta das despesas com pessoal da Saúde\",\n    \"en\": \"Absolute change in Health personnel expenditure\"\n  },\n  \"der-saude-prr-2026\": {\n    \"pt\": \"PRR implícito na despesa efetiva, Saúde\",\n    \"en\": \"Implied RRP in effective expenditure, Health\"\n  },\n  \"der-saude-razao-compensacao-prr\": {\n    \"pt\": \"Razão entre o aumento sem PRR e a parcela do P",
+   "contexto_depois": "de-pessoal-variacao-abs\": {\n    \"pt\": \"Variação absoluta das despesas com pessoal da Saúde\",\n    \"en\": \"Absolute change in Health personnel expenditure\"\n  },\n  \"der-saude-prr-2026\": {\n    \"pt\": \"PRR implícito na despesa total, Saúde\",\n    \"en\": \"Implied RRP in effective expenditure, Health\"\n  },\n  \"der-saude-razao-compensacao-prr\": {\n    \"pt\": \"Razão entre o aumento sem PRR e a parcela do P"
+  },
+  {
+   "id": "K4",
+   "ficheiro": "tests/cartao/cartao.mjs",
+   "descricao": "a sonda K8 neutralizada: devolve o texto sem olhar à expressão",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "9e5071b4fce38b922341f38fe1b5520514a93bd1354c9af1d915b887a2610274",
+   "sha256_depois": "ddd7e32829906e2648801ee393b7ffd0da73b788ad8865daec450afc786edc41",
+   "contexto_antes": "asK8=loadClaims({includeWithdrawn:true});\n/** @param {import('node-html-parser').HTMLElement} root @param {string} rota */\nfunction textoDaCasaK8(root, rota) {\n  if (!/Governo Constitucional|Constitutional Government/.test(root.text)) return root.text;\n  const copia=parse(root.outerHTML), normal=s=>String(s??'').replace(/\\s+/g,' ').trim();\n  for(const el of copia.querySelectorAll('[data-linha-campo=\"excerpt\"]",
+   "contexto_depois": "asK8=loadClaims({includeWithdrawn:true});\n/** @param {import('node-html-parser').HTMLElement} root @param {string} rota */\nfunction textoDaCasaK8(root, rota) {\n  return root.text;\n  const copia=parse(root.outerHTML), normal=s=>String(s??'').replace(/\\s+/g,' ').trim();\n  for(const el of copia.querySelectorAll('[data-linha-campo=\"excerpt\"]"
+  },
+  {
+   "id": "K3",
+   "ficheiro": "src/data/areas-v2d.mjs",
+   "descricao": "a derivada do PRR na Saúde retirada da lista de assuntos da Saúde (a cobertura por matérias perde a linha)",
+   "alcance": "fora dos hunks do diff, declarado pelo lugar de direção: a lista dos assuntos está inteira no pacote e a referência é a célula da cobertura por matérias, não o diff",
+   "sha256_antes": "5517f9043ff37e009899cce45e2e72eee9973cb8d472f96a26dbabee374966cb",
+   "sha256_depois": "7255ade732fd32b064c7e487825508ec4fa0c42079628f38ff16525e226a92bc",
+   "contexto_antes": "aude-investimento-reducao-abs\",\n    \"der-saude-investimento-variacao-abs\",\n    \"der-saude-outras-correntes-variacao-abs\",\n    \"der-saude-pessoal-variacao-abs\",\n    \"der-saude-prr-2026\",\n    \"der-saude-razao-compensacao-prr\",\n    \"der-saude-razao-compensacao-prr-pct\",\n    \"der-saude-receitas-proprias-variacao-pct\",\n    \"der-saude-reforco-total-2",
+   "contexto_depois": "aude-investimento-reducao-abs\",\n    \"der-saude-investimento-variacao-abs\",\n    \"der-saude-outras-correntes-variacao-abs\",\n    \"der-saude-pessoal-variacao-abs\",\n    \"der-saude-razao-compensacao-prr\",\n    \"der-saude-razao-compensacao-prr-pct\",\n    \"der-saude-receitas-proprias-variacao-pct\",\n    \"der-saude-reforco-total-2"
+  },
+  {
+   "id": "K5",
+   "ficheiro": "scripts/provar-guardas.mjs",
+   "descricao": "o guarda CAMPOS/tamanho passa a esperar a recusa: a prova aceitaria um validador que recusa campos válidos",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "863e2b86c90912ec33a39d21bb79071f17f471b6dfa06effa4f64c8c61a926da",
+   "sha256_depois": "a2eaa32fdfaff61d10b33d0371ee68c3aa334acc84c1bdfce439317cfec5f0cb",
+   "contexto_antes": "de passou de 24 a 25: a corrida com a lista nova e a igualdade velha\n   recusou o caso, que é a prova de que ele morde num campo a mais como num a\n   menos. */\ncaso('CAMPOS/tamanho', true, CAMPOS.length === 33, 'os campos anteriores, a afirmação e o período declarado pela fonte.');\ncaso('CAMPOS/periodo', true, CAMPOS.includes('period') && new Set",
+   "contexto_depois": "de passou de 24 a 25: a corrida com a lista nova e a igualdade velha\n   recusou o caso, que é a prova de que ele morde num campo a mais como num a\n   menos. */\ncaso('CAMPOS/tamanho', false, CAMPOS.length === 33, 'os campos anteriores, a afirmação e o período declarado pela fonte.');\ncaso('CAMPOS/periodo', true, CAMPOS.includes('period') && new Set"
+  }
+ ]
+}
