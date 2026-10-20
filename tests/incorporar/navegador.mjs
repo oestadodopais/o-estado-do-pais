@@ -255,14 +255,16 @@ try {
   const documental = linhas.find(l => l.id === 'pe-despacho-equilibrio');
   assert(documental?.texto_documental);
   for (const lang of ['pt','en']) {
-    const ctx = await navegador.newContext(); const page = await ctx.newPage();
+    const ctx = await navegador.newContext();
+    await ctx.route('**/*', route => [sitio,anfitria].includes(new URL(route.request().url()).origin) ? route.continue() : route.abort());
+    const page = await ctx.newPage();
     await page.goto(sitio+routePath('linha',lang,{slug:documental.id}),{waitUntil:'networkidle'});
     assert.equal(await page.locator('[data-incorporar-codigo]').getAttribute('lang'),'pt-PT');
     const guardado = await page.locator('[data-incorporar-codigo]').inputValue();
     const campo = parse(guardado).querySelector('a > span');
     assert.equal(campo.getAttribute('lang'),'pt-PT'); assert.equal(campo.textContent,documental.value);
     await page.goto(anfitria+'/'+lang,{waitUntil:'networkidle'});
-    const codigo = guardado.replace(/data-oedp-valor="[^"]*"/,'data-oedp-valor="ensaio"').replace(`src="${origemPublica}/incorporar.js"`,`src="${sitio}/incorporar.js"`);
+    const codigo = guardado.replace(/data-oedp-valor="[^"]*"/,'data-oedp-valor="ensaio"').replace(`src="https://${SITE_HOST_DISPLAY}/incorporar.js"`,`src="${sitio}/incorporar.js"`).replace(`src="${origemPublica}/incorporar.js"`,`src="${sitio}/incorporar.js"`);
     await page.setContent(codigo,{waitUntil:'networkidle'});
     await page.waitForFunction(() => document.querySelector('.oedp-numero')?.getAttribute('data-oedp-valor') !== 'ensaio');
     const valor = page.locator('.oedp-numero a > span').first();
