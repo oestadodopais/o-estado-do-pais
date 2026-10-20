@@ -25,7 +25,7 @@ export function itensResolvidos(lang) {
       const componentes = getClaim(id).derived_from;
       if (Array.isArray(componentes)) for (const componente of componentes) linhas.add(componente);
     }
-    return {...resolvido, linhas: [...linhas], afirmacoes: e.afirmacoes};
+    return {...resolvido, linhas: [...linhas], afirmacoes: e.afirmacoes, recibos: e.recibos};
   });
 }
 /** @param {string} slug @param {'pt'|'en'} lang */

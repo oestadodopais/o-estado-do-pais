@@ -24,7 +24,7 @@ const itens = itensResolvidos(lang);
       </div>
       {e.seccoes.map(sec => <section class="discussao-seccao" data-discussao-parte={sec.id} aria-labelledby={`${e.slug}-titulo ${e.slug}-${sec.id}`}>
         <h3 class="discussao-rotulo" id={`${e.slug}-${sec.id}`}>{sec.titulo}</h3>
-        {sec.blocos.map(b => b.tipo === 'paragrafo' && <p class="explicacao-p" data-discussao-paragrafo={b.caminho}><FraseDaExplicacao partes={b.pedacos} lang={lang} recibos={true} /></p>)}
+        {sec.blocos.map(b => b.tipo === 'paragrafo' && <p class="explicacao-p" data-discussao-paragrafo={b.caminho}><FraseDaExplicacao partes={b.pedacos} lang={lang} recibos={true} />{(e.recibos[b.caminho] ?? []).map(id => <Provenance id={id} lang={lang} />)}</p>)}
         {e.slug === 'saude-no-orcamento' && sec.id === 'fontes' && <p class="regra-portas discussao-porta"><a data-discussao-explicacao data-voz href={lang === 'pt' ? '/explicacoes/dinheiro-do-estado-2026/' : '/en/explainers/dinheiro-do-estado-2026/'}>{lang === 'pt' ? 'O que é a despesa efetiva consolidada →' : 'What consolidated effective expenditure is →'}</a></p>}
       </section>)}
     </article>)}

@@ -74,6 +74,10 @@ export function conferirPagina(root,lang,linhas=loadClaims(),dist=process.env.OE
   const ps=a.querySelectorAll('[data-discussao-paragrafo]');
   if(ps.length!==esperado.paragrafos.length)erros.push('V2B texto: parágrafo em falta ou a mais');
   for(const [i,p] of esperado.paragrafos.entries())if(ps[i]?.getAttribute('data-discussao-paragrafo')!==p.caminho||textoSemSelos(ps[i]??parse('<p></p>'))!==p.texto)erros.push('V2B texto: palavras diferentes do mandato ou campo alterado');
+  for(const [caminho,ids] of Object.entries(e.recibos ?? {})){
+   const par=ps.find(p=>p.getAttribute('data-discussao-paragrafo')===caminho);
+   for(const id of ids)if(!par?.querySelectorAll('a.src-chip').some(s=>s.getAttribute('href')===recibo(id,lang)))erros.push('V2D apoio textual: recibo ausente junto da explicação '+id);
+  }
   for(const literal of a.querySelectorAll('a[data-discussao-literal="excerpt"]')){
    const id=literal.querySelector('[data-linha-claim]')?.getAttribute('data-linha-claim');
    const irmaos=literal.parentNode.childNodes,i=irmaos.indexOf(literal);
@@ -176,6 +180,7 @@ export function plantas(html,lang){
  const out=[];const run=(nome,mut,re)=>{for(const e of ITENS){const root=parse(html);mut(root.querySelector(`[data-discussao="${e.slug}"]`));const erros=conferirPagina(root,lang);out.push({nome,item:e.slug,lang,mordeu:erros.some(x=>re.test(x)),queixa:erros.find(x=>re.test(x))??null});}};
  run('citação sem token',r=>r.querySelector('[data-linha-campo="excerpt"]').removeAttribute('data-linha-campo'),/citação/);
  run('citação alterada',r=>r.querySelector('[data-linha-campo="excerpt"]').set_content('Uma citação adulterada.'),/literal/);
+ run('recibo do contrato-programa ausente',r=>{r.querySelector('#saude-no-orcamento [data-discussao-parte="comparacao"] a[href*="oe-2027-saude-contrato-programa-acss"]')?.remove();},/V2D apoio textual/);
  run('selo dentro das aspas',r=>{const a=r.querySelector('a[data-discussao-literal="excerpt"]'),nos=a.parentNode.childNodes,i=nos.indexOf(a),fecho=nos[i+1],selo=nos[i+2],html=selo.toString();selo.remove();fecho.remove();a.insertAdjacentHTML('afterend',html+'»');},/V2D citação/);
  run('adjetivo junto do nome',r=>{const n=r.querySelector('[data-linha-campo="attributed_to"]');n.set_content('irresponsável '+n.innerHTML);},/pessoas/);
  run('opinião sem rótulo',r=>r.querySelector('[data-discussao-parte="opiniao"] h3').remove(),/opinião/);

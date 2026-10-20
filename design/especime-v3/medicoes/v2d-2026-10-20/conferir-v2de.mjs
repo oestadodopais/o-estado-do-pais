@@ -31,7 +31,7 @@ for(const lang of ['pt','en']){
  assert(opiniao.includes(lang==='pt'?'que guarda em outras despesas correntes mais 271,3 milhões, onde o relatório diz estar a dotação para reforçar contratos-programa ainda por fechar, sem dizer quanto':'that holds 271,3 million more in other current expenditure, where the report says the provision to reinforce contract-programmes still to be closed sits, without saying how much'));
  assert(!comparacao.includes('Defesa')&&!comparacao.includes('Defence'));
  for(const id of ['oe-2027-saude-dotacao-reforco-contratos-programa','oe-2027-saude-contrato-programa-acss']){
-  assert(root.querySelectorAll('a').some(a=>a.getAttribute('href')===(lang==='pt'?'/livro-razao/':'/en/ledger/')+id+'/'));
+  assert(root.querySelectorAll('a').some(a=>a.getAttribute('href')?.replace(/\/$/,'')===(lang==='pt'?'/livro-razao/':'/en/ledger/')+id));
  }
  result.paginas.push({lang,ficheiro,sha256:sha(body)});
  for(const id of ids){
