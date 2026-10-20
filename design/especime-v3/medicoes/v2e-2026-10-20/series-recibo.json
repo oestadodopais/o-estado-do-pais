@@ -1,0 +1,11 @@
+{
+  "origem": "portoes-verify.json",
+  "passo": {
+    "passo": "npm run check:series",
+    "fase": "grupo",
+    "codigo": 0,
+    "segundos": 5.741,
+    "inicio_s": 253.735,
+    "fim_s": 259.476
+  }
+}

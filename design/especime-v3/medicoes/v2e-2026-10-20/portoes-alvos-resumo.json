@@ -1,0 +1,135 @@
+{
+  "origem": "alvos.json",
+  "sha256_original": "e35c6b79afa5d9df397a91f3564c91216e6de690125f53661aab5495e0482168",
+  "paginas": 370,
+  "rotas": 74,
+  "larguras": [
+    390,
+    641,
+    768,
+    1023,
+    1280
+  ],
+  "celulas": [
+    {
+      "nome": "H1",
+      "passa": true,
+      "prova": "0 nó(s) em violação (0 graves) em 74 rotas × 2 larguras · nenhuma violação"
+    },
+    {
+      "nome": "H2",
+      "passa": true,
+      "prova": "fichas de concelho: 3220 medidas, 0 sem o alvo (nenhum) · a folha: 55 bloco(s) @media com tecto, 0 com uma regra de 44 px que acaba antes de 1024 · faixa 641 a 1023: 25335 alvos medidos, 16896 deles com 44 px a 390, 298 sem eles na faixa · destes, 0 são caixas e falham (nenhum), 277 são selos dentro de leitura ou sinopse em prosa corrida, cuja área de 44 px cruzaria a linha vizinha do mesmo parágrafo (27× a.src-chip «source · Ministério das Finanças» · 61.9×44.7 de toque (caixa 61×19); 24× a.src-chip «source · Ministério das Finanças» · 61.9×27.5 de toque (caixa 61×19); 24× a.src-chip «source · calculated» · 61.9×27.5 de toque (caixa 61×19); 18× a.src-chip «source · calculated» · 61.9×44.7 de toque (caixa 61×19)) e 0 são áreas de desenho, cujo alvo é a rede de nomes por baixo do mapa (nenhum), 9 estão numa página de leitura, que o brief põe fora deste bloco (3× a «A economia de Évora e o dinheiro p» · 88×22.3 de toque (caixa 437.4×45.5); 3× a «The economy of Évora and the publi» · 88×22.3 de toque (caixa 434.8×68); 1× a.texto-ligacao «Kohesio, via the EU Cohesion Open » · 88×18 de toque (caixa 248.4×36.6); 1× a.texto-ligacao «Kohesio, via the EU Cohesion Open » · 88×18.2 de toque (caixa 248.4×36.6)) e 12 quebram de linha dentro de uma frase, que é a dispensa que a WCAG 2.5.5 escreve para um alvo em linha (4× a.discussao-literal «Ora, esta verba do PRR foi excecio» · 88×27.8 de toque (caixa 461.3×54.6); 2× a «Alert Mechanism Report and Macroec» · 88×23.5 de toque (caixa 528.8×45.5); 2× a.discussao-literal «São pretensões dos parceiros priva» · 88×83.2 de toque (caixa 517.4×82.3); 2× a.discussao-literal «Ora, esta verba do PRR foi excecio» · 88×27.5 de toque (caixa 461.3×54.6)) · 5561 não medido(s)"
+    },
+    {
+      "nome": "H3",
+      "passa": true,
+      "prova": "8612 página(s) do dist/: 0 sem título único · nas rotas medidas: 0 de 370 passagens"
+    },
+    {
+      "nome": "H14",
+      "passa": true,
+      "prova": "370 passagens de todas as famílias com o rótulo de IA no topo: 0 sem linha única, corpo de 12 px ou posição antes do título"
+    },
+    {
+      "nome": "H4",
+      "passa": true,
+      "prova": "8612 página(s) do dist/: 8587 com a porta dentro do <footer>, 0 fora dele (0 dentro de um <main>, que não conta), 25 sem porta (os documentos alojados) · nas rotas medidas: 0 fora do <footer> ou de um <nav> com nome, 0 dentro de um <main>"
+    },
+    {
+      "nome": "H5",
+      "passa": true,
+      "prova": "16 caixa(s) com deslocamento horizontal medidas, 0 sem teclado, nome ou papel"
+    },
+    {
+      "nome": "H6",
+      "passa": true,
+      "prova": "primeira página, a 1280: 26 alvo(s) da I105 medidos, 0 abaixo de 32 px (nenhum)"
+    },
+    {
+      "nome": "H7",
+      "passa": true,
+      "prova": "20 algarismo(s) de manchete medidos · 0 em manchetes de uma linha citada, 0 sem os 44 px (nenhum) · 20 em manchetes de várias, 0 sem a largura ou sem a caixa de linha (nenhum) · 0 com uma porta de OUTRA linha dentro da sua área (nenhum)"
+    },
+    {
+      "nome": "H8",
+      "passa": true,
+      "prova": "cartões: 3124 registo(s), 1562 da edição inglesa, 1412 com unidade · 0 desenharam uma cadeia diferente da que a tabela manda · 2 ficam em português por decisão da tabela («factor» em 2: é o nome que o relatório citado dá ao número, e não uma unidade de contagem) · páginas inglesas: 4250 unidade(s) rendida(s), 0 diferentes do que a tabela manda"
+    },
+    {
+      "nome": "H9",
+      "passa": true,
+      "prova": "4304 página(s) inglesas lidas: 962 com um nome de diploma, 3342 sem nenhum, 3 documento(s) alojado(s) fora da conta · 998 nome(s): 988 com lang=\"pt-PT\", 10 dentro de uma transcrição da fonte (marca-se inteira, na língua da fonte: não é deste bloco), 0 sem marca"
+    },
+    {
+      "nome": "H13",
+      "passa": true,
+      "prova": "/lugares nas duas edições e nas 5 larguras: 10 passagem(ns) · portas de concelho por página: 308 (esperado 308, fora das duas tabelas com uma porta por linha) · dentro da lista agrupada: 308"
+    },
+    {
+      "nome": "H15",
+      "passa": true,
+      "prova": "pt@390: vazio 0 · «mour» 2 à vista, Mourão à vista · Enter com vários fica · «xyzq» 0 à vista, frase à vista, Enter fica · «mourao» 1 à vista, Enter abre Mourão || pt@1280: vazio 0 · «mour» 2 à vista, Mourão à vista · Enter com vários fica · «xyzq» 0 à vista, frase à vista, Enter fica · «mourao» 1 à vista, Enter abre Mourão || en@390: vazio 0 · «mour» 2 à vista, Mourão à vista · Enter com vários fica · «xyzq» 0 à vista, frase à vista, Enter fica · «mourao» 1 à vista, Enter abre Mourão || en@1280: vazio 0 · «mour» 2 à vista, Mourão à vista · Enter com vários fica · «xyzq» 0 à vista, frase à vista, Enter fica · «mourao» 1 à vista, Enter abre Mourão"
+    },
+    {
+      "nome": "H16",
+      "passa": true,
+      "prova": "8612 página(s) do dist/: 8587 com a porta das sugestões dentro do <footer>, 0 fora dele, 0 com mais de uma, 25 sem ela (e 25 sem a das correções; 0 página(s) sem a das sugestões e com a das correções, 0 sem a das correções e com a das sugestões) · nas rotas medidas: 370 de 370 passagens com uma porta no seu marco; 74 porta(s) a 390 e 74 a partir de 1024, 0 sem o alvo (nenhum) · o botão do formulário: 10 medição(ões), 0 abaixo de 44 px (nenhum) · o campo armadilhado: 10 medição(ões), 0 à vista, no teclado ou na árvore de acessibilidade"
+    },
+    {
+      "nome": "H10",
+      "passa": true,
+      "prova": "aria-expanded no dist/: 0 ocorrência(s) em 0 página(s) · ausência medida em todas as páginas próprias · conhecido positivo obrigatório: 1 ocorrência(s), recusado · Método: 10 passagem(ns), 0 sem título"
+    }
+  ],
+  "graves": 0,
+  "cartoes": {
+    "registos": 3124,
+    "en": 1562,
+    "comUnidade": 1412,
+    "semLivro": 0,
+    "ficamEmPortugues": 2,
+    "ficamPorUnidade": {
+      "factor": {
+        "cartoes": 2,
+        "razao": "é o nome que o relatório citado dá ao número, e não uma unidade de contagem"
+      }
+    },
+    "desenharamOutraCoisa": 0,
+    "exemplos": []
+  },
+  "leis": {
+    "comMarca": 988,
+    "emTranscricao": 10,
+    "semMarca": 0,
+    "paginasEn": 4304,
+    "paginasComDiploma": 962,
+    "paginasSemDiploma": 3342,
+    "documentosAlojados": 3,
+    "especies": [],
+    "exemplos": []
+  },
+  "plantas_da_espera": [
+    {
+      "nome": "folha atrasada reduz o alvo",
+      "celula": "H16",
+      "mensagem": "8612 página(s) do dist/: 8587 com a porta das sugestões dentro do <footer>, 0 fora dele, 0 com mais de uma, 25 sem ela (e 25 sem a das correções; 0 página(s) sem a das sugestões e com a das correções, 0 sem a das correções e com a das sugestões) · nas rotas medidas: 370 de 370 passagens com uma porta no seu marco; 74 porta(s) a 390 e 74 a partir de 1024, 0 sem o alvo (nenhum) · o botão do formulário: 10 medição(ões), 1 abaixo de 44 px (1× button.sugestoes-enviar «Enviar a sugestão» · 88×32 de toque (caixa 127.3×30)) · o campo armadilhado: 10 medição(ões), 0 à vista, no teclado ou na árvore de acessibilidade",
+      "folha_servida": true,
+      "mordeu": true
+    },
+    {
+      "nome": "alvo abaixo de 44 px",
+      "celula": "H16",
+      "mensagem": "8612 página(s) do dist/: 8587 com a porta das sugestões dentro do <footer>, 0 fora dele, 0 com mais de uma, 25 sem ela (e 25 sem a das correções; 0 página(s) sem a das sugestões e com a das correções, 0 sem a das correções e com a das sugestões) · nas rotas medidas: 370 de 370 passagens com uma porta no seu marco; 74 porta(s) a 390 e 74 a partir de 1024, 0 sem o alvo (nenhum) · o botão do formulário: 10 medição(ões), 1 abaixo de 44 px (1× button.sugestoes-enviar «Enviar a sugestão» · 88×32 de toque (caixa 127.3×30)) · o campo armadilhado: 10 medição(ões), 0 à vista, no teclado ou na árvore de acessibilidade",
+      "folha_servida": true,
+      "mordeu": true
+    },
+    {
+      "nome": "etiqueta cortada depois da primeira linha",
+      "celula": "H14",
+      "mensagem": "370 passagens de todas as famílias com o rótulo de IA no topo: 1 sem linha única, corpo de 12 px ou posição antes do título (sugestoes/pt@390)",
+      "folha_servida": true,
+      "mordeu": true
+    }
+  ]
+}

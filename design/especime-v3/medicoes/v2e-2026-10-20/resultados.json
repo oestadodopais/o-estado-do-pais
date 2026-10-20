@@ -1,0 +1,30 @@
+{
+  "cabeca_conferida": "e045033b1927a2883dc0eeecb00cd1fbefb91243",
+  "motor": "7772f6ebd1a2e38004b5f1c3eae673832feac4dd",
+  "codigos": {
+    "build": 0,
+    "verify": 0,
+    "typecheck": 0,
+    "motor_precommit": 0,
+    "series": 0,
+    "cruzamento_com_origem": 0
+  },
+  "linhas_seladas": 170,
+  "paragrafos_conferidos": 72,
+  "recibos_html": 340,
+  "capturas": 30,
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "rolagem_horizontal": false,
+  "celula_itens": {
+    "erros": 0,
+    "plantas_detetadas": 171,
+    "plantas": 171,
+    "portas_integracao": 646
+  }
+}

@@ -1,0 +1,108 @@
+[
+  {
+    "tentativa": 1,
+    "cabeca": "3dc2c25a25816db75cdeeb99f06b27cb040a0d20",
+    "inicio": "2026-10-20T15:55:35.723Z",
+    "fim": "2026-10-20T15:55:47.780Z",
+    "codigos": {
+      "build": 1,
+      "verify": 125,
+      "typecheck": 0
+    },
+    "estado_arvore_fim": [],
+    "prova_final": false
+  },
+  {
+    "tentativa": 2,
+    "cabeca": "a84661988b83c01d62ff5b284e683c89022664e6",
+    "inicio": "2026-10-20T15:56:49.665Z",
+    "fim": "2026-10-20T15:57:38.088Z",
+    "codigos": {
+      "build": 1,
+      "verify": 125,
+      "typecheck": 0
+    },
+    "estado_arvore_fim": [],
+    "prova_final": false
+  },
+  {
+    "tentativa": 3,
+    "cabeca": "5d0ce2aaac495b94979bd3c0d2fc1e10d791a3bc",
+    "inicio": "2026-10-20T16:13:58.675Z",
+    "fim": "2026-10-20T16:15:56.091Z",
+    "codigos": {
+      "build": 1,
+      "verify": 125,
+      "typecheck": 0
+    },
+    "estado_arvore_fim": [],
+    "prova_final": false
+  },
+  {
+    "tentativa": 4,
+    "cabeca": "53968a112127a6cd076d07d7702287c0f3b9ac3b",
+    "inicio": "2026-10-20T16:24:34.749Z",
+    "fim": "2026-10-20T16:26:40.607Z",
+    "codigos": {
+      "build": 1,
+      "verify": 125,
+      "typecheck": 0
+    },
+    "estado_arvore_fim": [],
+    "prova_final": false
+  },
+  {
+    "tentativa": 5,
+    "cabeca": "040a246359f6f7fd8753f74a46f9ae0e088016b0",
+    "inicio": "2026-10-20T16:32:18.220Z",
+    "fim": "2026-10-20T16:43:15.345Z",
+    "codigos": {
+      "build": 0,
+      "verify": 1,
+      "typecheck": 0
+    },
+    "estado_arvore_fim": [],
+    "prova_final": false
+  },
+  {
+    "tentativa": 6,
+    "cabeca": "8027d7ca0c928a0b3db76b72b1219b1a4567597e",
+    "inicio": "2026-10-20T16:45:53.530Z",
+    "fim": "2026-10-20T16:57:56.834Z",
+    "codigos": {
+      "build": 0,
+      "verify": 1,
+      "typecheck": 0
+    },
+    "estado_arvore_fim": [],
+    "prova_final": false
+  },
+  {
+    "tentativa": 7,
+    "cabeca": "5f7e5b0819c66ba1d9373010747ae7b2908ceaa9",
+    "inicio": "2026-10-20T16:58:57.896Z",
+    "fim": "2026-10-20T17:10:25.912Z",
+    "codigos": {
+      "build": 0,
+      "verify": 0,
+      "typecheck": 0
+    },
+    "estado_arvore_fim": [
+      " M tests/incorporar/navegador.mjs"
+    ],
+    "prova_final": false
+  },
+  {
+    "tentativa": 8,
+    "cabeca": "e045033b1927a2883dc0eeecb00cd1fbefb91243",
+    "inicio": "2026-10-20T17:10:42.535Z",
+    "fim": "2026-10-20T17:22:15.102Z",
+    "codigos": {
+      "build": 0,
+      "verify": 0,
+      "typecheck": 0
+    },
+    "estado_arvore_fim": [],
+    "prova_final": true
+  }
+]

@@ -1,0 +1,77 @@
+{
+  "cabeca": "e045033b1927a2883dc0eeecb00cd1fbefb91243",
+  "escopo": "Inspeção visual dos nove recortes listados; a medição automática cobre as trinta combinações de página, edição e largura.",
+  "recortes": [
+    {
+      "ficheiro": "discussao-pt-390-servico.png",
+      "sha256": "df5d750915fe365b5b5b7e7ceb1f70e7efbbaddf6ee4e0926a14571e5fc73721",
+      "largura": 390,
+      "lingua": "pt",
+      "observacao": "Valores, períodos e fontes legíveis; as linhas quebram sem cortar números ou sobrepor texto."
+    },
+    {
+      "ficheiro": "discussao-en-768-prr.png",
+      "sha256": "caf19b68b93b11d8e2437b414bff2ee7571f9e19d635a68a59b792306cb611d4",
+      "largura": 768,
+      "lingua": "en",
+      "observacao": "Os tokens impressos do painel não repetem unidades; o parágrafo e as duas fontes dos exemplos ficam legíveis."
+    },
+    {
+      "ficheiro": "discussao-pt-1024-portagens.png",
+      "sha256": "8853ef1f0512365048444a7e1b162f42f3f94be7fe3836e2ec41329f417627d7",
+      "largura": 1024,
+      "lingua": "pt",
+      "observacao": "A lista legal e as duas citações ficam inteiras no recorte, com ligações às fontes."
+    },
+    {
+      "ficheiro": "discussao-en-1280-brisa.png",
+      "sha256": "706aee8b9dbf0c2749113f6f9a5410713c37640b5c28eed37a901b28415e98e9",
+      "largura": 1280,
+      "lingua": "en",
+      "observacao": "O período, as tarefas e a citação integral estão legíveis; as fontes adicionais quebram para a linha seguinte."
+    },
+    {
+      "ficheiro": "discussao-pt-1600-medicamentos.png",
+      "sha256": "85afd518fd391ba251177c36788adaf14591cf765f08c427e9def74953bcbb15",
+      "largura": 1600,
+      "lingua": "pt",
+      "observacao": "Os encargos e as três medidas de dívida ficam distintos, com as unidades e os períodos visíveis."
+    },
+    {
+      "ficheiro": "inicio-pt-390-itens.png",
+      "sha256": "f993f84069353536b7027987508862eb79013a4d22fc61b4802a82d64c81a7c6",
+      "largura": 390,
+      "lingua": "pt",
+      "observacao": "As duas entradas quebram no espaço disponível e conservam os seus títulos e ligações."
+    },
+    {
+      "ficheiro": "inicio-en-1600-itens.png",
+      "sha256": "9dc9c49c1474acd57ab941eb4a134d04fc62330192405c09b6f174a54303f055",
+      "largura": 1600,
+      "lingua": "en",
+      "observacao": "As duas entradas estão legíveis na largura disponível, sem sobreposição."
+    },
+    {
+      "ficheiro": "recibo-brisa-pt-390-texto.png",
+      "sha256": "114c16f88a0d62f5be481b064d2d7adaea38a021ee206c56bcf688275f001976",
+      "largura": 390,
+      "lingua": "pt",
+      "observacao": "O excerto longo fica integral e legível no corpo de leitura, sem corte lateral."
+    },
+    {
+      "ficheiro": "recibo-brisa-en-1600-texto.png",
+      "sha256": "66718489b81141b11de03849520c2e5cc7a6007676740a8b3d59570f7d847f07",
+      "largura": 1600,
+      "lingua": "en",
+      "observacao": "A transcrição portuguesa fica integral no recibo inglês e a unidade textual é apresentada em inglês."
+    }
+  ],
+  "medicao_automatica": {
+    "paginas": 30,
+    "recortes": 70,
+    "excesso_horizontal": 0,
+    "erros_navegador": 0,
+    "pedidos_externos": 0,
+    "recursos_recusados": 0
+  }
+}
