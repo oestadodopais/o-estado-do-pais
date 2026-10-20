@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-20T12:11:50+00:00",
+ "copia": "<pacote>",
+ "plantas": [
+  {
+   "id": "J1",
+   "ficheiro": "built/o-que-se-discute/index.html",
+   "descricao": "a paráfrase PT volta a dizer o que a frase da p. 303 não diz (o financiamento a passar pelos contratos)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "e37a8890ae640184cfd936e287beda9b5d91f59a0dbcc8e71a5e0d00572da53f",
+   "sha256_depois": "b4d446a5673790c8f5e34169c80c9d7677001f61fb25286e1a9cf58bcdd41a39",
+   "contexto_antes": "h\"> · calculado</span></a></span>. Segundo o relatório, é nesta rubrica que fica, para a Saúde, a dotação para reforçar os contratos-programa ainda por fechar, os acordos entre a Administração Central do Sistema de Saúde e as entidades do Serviço Nacional de Saúde; o próprio orçamento inscreve assim o reforço que antecipa, sem dizer quanto. O financiamento conta com receitas próprias a crescer <span class=\"claim claim-com",
+   "contexto_depois": "h\"> · calculado</span></a></span>. Segundo o relatório, é nesta rubrica que fica, para a Saúde, a dotação para reforçar os contratos-programa ainda por fechar, os acordos entre a Administração Central do Sistema de Saúde e as entidades do Serviço Nacional de Saúde por onde passa todo o financiamento destas; o próprio orçamento inscreve assim o reforço que antecipa, sem dizer quanto. O financiamento conta com receitas próprias a crescer <span class=\"claim claim-com"
+  },
+  {
+   "id": "J2",
+   "ficheiro": "built/en/under-discussion/index.html",
+   "descricao": "a derivada 271,3 alterada na página EN",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "f194e3004bc06ed9537763df99f188ea6f7b94666f9124afc9a2a354f294c02e",
+   "sha256_depois": "f35592634a8e86ccc314bd78b244a80782496dd7ed92a1f71dd0d27cfb49a322",
+   "contexto_antes": "-etiqueta=\"Ministério das Finanças\" title=\"Ministério das Finanças\"><span class=\"src-chip-texto\">source</span><span class=\"vh\"> · <span lang=\"pt-PT\">Ministério das Finanças</span></span></a></span>, <span class=\"claim claim-com-chip\"><span data-claim=\"der-saude-outras-correntes-variacao-abs\" class=\"claim-value\">271,3</span><a class=\"src-chip\" href=\"/en/ledger/der-saude-outras-correntes-variacao-abs\" data-nonledger=\"proveniencia\" data-selo-etiqueta=\"calculated\" title=\"calculated\"><span class=\"src-chip-texto\">source</span><span class=\"vh\"> · calculated</span></",
+   "contexto_depois": "-etiqueta=\"Ministério das Finanças\" title=\"Ministério das Finanças\"><span class=\"src-chip-texto\">source</span><span class=\"vh\"> · <span lang=\"pt-PT\">Ministério das Finanças</span></span></a></span>, <span class=\"claim claim-com-chip\"><span data-claim=\"der-saude-outras-correntes-variacao-abs\" class=\"claim-value\">271,8</span><a class=\"src-chip\" href=\"/en/ledger/der-saude-outras-correntes-variacao-abs\" data-nonledger=\"proveniencia\" data-selo-etiqueta=\"calculated\" title=\"calculated\"><span class=\"src-chip-texto\">source</span><span class=\"vh\"> · calculated</span></"
+  },
+  {
+   "id": "J3",
+   "ficheiro": "built/o-que-se-discute/index.html",
+   "descricao": "a oração «sem dizer quanto» da opinião PT trocada por um montante",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "b4d446a5673790c8f5e34169c80c9d7677001f61fb25286e1a9cf58bcdd41a39",
+   "sha256_depois": "1b8845871c9a6f717bbf35328f63bd45289e4f639cc4874e367a5930148b8fe0",
+   "contexto_antes": "ass=\"src-chip-texto\">fonte</span><span class=\"vh\"> · calculado</span></a></span> milhões, onde o relatório diz estar a dotação para reforçar contratos-programa ainda por fechar, sem dizer quanto, que conta com receitas próprias a crescer mais de metade sem que o relatório explique de onde vêm, e que, pelo que a execução de <a class=\"discussao-periodo\" ",
+   "contexto_depois": "ass=\"src-chip-texto\">fonte</span><span class=\"vh\"> · calculado</span></a></span> milhões, onde o relatório diz estar a dotação para reforçar contratos-programa ainda por fechar, cerca de trezentos milhões, que conta com receitas próprias a crescer mais de metade sem que o relatório explique de onde vêm, e que, pelo que a execução de <a class=\"discussao-periodo\" "
+  },
+  {
+   "id": "J4",
+   "ficheiro": "ledger/claims/oe-2027-saude-contrato-programa-acss.yml",
+   "descricao": "o montante dentro do excerto de duas frases alterado na cópia exportada contra o corpo (15 452,2)",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "3ad22a07f904b005e58c5ce271a684f75672b2a76dacf4f4fdf54282dd080845",
+   "sha256_depois": "77fda045d7e1ed246efb5ff3a34dceb633c75d599ce91254235c2cfa42b5934f",
+   "contexto_antes": "cess_date: \"2026-10-13\"\npublished_at: \"2026-10-08\"\nafirmacao: true\nreference_date: \"2027\"\n\n# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.\nexcerpt: \"Do total da despesa consolidada afeta ao Programa Legado, a maior parte é financiada por receitas de impostos (15 452,2 milhões de euros). Neste montante incluem-se as verbas do contrato-programa a celebrar entre a Administração Central do Sistema de Saúde, IP (ACSS) e as entidades do Serviço Nacional de Saúde (SNS), destinadas ao financiamento centralizado da Rede Nacional de Cuidados Continuados, das parcerias público-privadas, entre outros.\"\n\n# null quando o valor é publicado; a aritmética explicada quando é calculado.\nderivation: null\nderivation_en: null\nderived_from: []\n# Expressão verificada no ",
+   "contexto_depois": "cess_date: \"2026-10-13\"\npublished_at: \"2026-10-08\"\nafirmacao: true\nreference_date: \"2027\"\n\n# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.\nexcerpt: \"Do total da despesa consolidada afeta ao Programa Legado, a maior parte é financiada por receitas de impostos (15 425,2 milhões de euros). Neste montante incluem-se as verbas do contrato-programa a celebrar entre a Administração Central do Sistema de Saúde, IP (ACSS) e as entidades do Serviço Nacional de Saúde (SNS), destinadas ao financiamento centralizado da Rede Nacional de Cuidados Continuados, das parcerias público-privadas, entre outros.\"\n\n# null quando o valor é publicado; a aritmética explicada quando é calculado.\nderivation: null\nderivation_en: null\nderived_from: []\n# Expressão verificada no "
+  },
+  {
+   "id": "J5",
+   "ficheiro": "ledger/claims/oe-2027-saude-contrato-programa-acss.yml",
+   "descricao": "o período da linha volta à data de publicação na cópia exportada",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "77fda045d7e1ed246efb5ff3a34dceb633c75d599ce91254235c2cfa42b5934f",
+   "sha256_depois": "5c7a6bcc93b8b0775cd108e3c974433d82b7d8ff330e41eb55407261838f17e2",
+   "contexto_antes": "6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true\"\naccess_date: \"2026-10-13\"\npublished_at: \"2026-10-08\"\nafirmacao: true\nreference_date: \"2027\"\n\n# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.\nexcerpt: \"Do total da despesa consolidada afeta ao Programa Legado, a maior parte é fina",
+   "contexto_depois": "6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true\"\naccess_date: \"2026-10-13\"\npublished_at: \"2026-10-08\"\nafirmacao: true\nreference_date: \"2026-10-08\"\n\n# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.\nexcerpt: \"Do total da despesa consolidada afeta ao Programa Legado, a maior parte é fina"
+  }
+ ]
+}
