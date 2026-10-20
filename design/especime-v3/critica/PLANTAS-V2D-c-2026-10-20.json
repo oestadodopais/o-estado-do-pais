@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-20T09:03:26+00:00",
+ "copia": "<pacote>",
+ "plantas": [
+  {
+   "id": "G1",
+   "ficheiro": "built/o-que-se-discute/index.html",
+   "descricao": "o excerto da ação do programa Saúde alterado na página PT contra a linha e o quadro 5.36",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "a1144c6f45dd57d6ed3048481b15a40a8f9c324aa91aa8c7d3731a643d88c659",
+   "sha256_depois": "7dd491552fe43e3bed3e0fb7f2f856d3b3ad2973778af8fbcd6fd9570654aef0",
+   "contexto_antes": "cde4db960.pdf&amp;Inline=true\" data-discussao-literal=\"excerpt\"><span class=\"campo-valor\" lang=\"pt-PT\" data-linha-claim=\"oe-2027-saude-acao-reserva-orcamental\" data-linha-campo=\"excerpt\">Reserva orçamental</span></a>»<a class=\"src-chip\" href=\"/livro-razao/oe-2027-saude-acao-reserva-orcamental\" data-nonledger=\"proveniencia\" data-selo-etiqueta=\"Ministério das Finanças\" ti",
+   "contexto_depois": "cde4db960.pdf&amp;Inline=true\" data-discussao-literal=\"excerpt\"><span class=\"campo-valor\" lang=\"pt-PT\" data-linha-claim=\"oe-2027-saude-acao-reserva-orcamental\" data-linha-campo=\"excerpt\">Reserva de gestão</span></a>»<a class=\"src-chip\" href=\"/livro-razao/oe-2027-saude-acao-reserva-orcamental\" data-nonledger=\"proveniencia\" data-selo-etiqueta=\"Ministério das Finanças\" ti"
+  },
+  {
+   "id": "G2",
+   "ficheiro": "built/en/under-discussion/index.html",
+   "descricao": "a frase do relatório sobre as reservas atribuída na página EN ao programa Saúde em vez do conjunto das administrações públicas",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "3d2480bb6bb675668bf4296c91189b56db7e5fc34a0670cf90d7cff8cedd49af",
+   "sha256_depois": "03b004ded397aa6ee9c302ba806d38e7689479afd30ff2695935edaeebcdf460",
+   "contexto_antes": "-chip-texto\">source</span><span class=\"vh\"> · <span lang=\"pt-PT\">Ministério das Finanças</span></span></a></span>. The report explains the growth of this line, for general government as a whole, thus: «<a class=\"discussao-literal\" href=\"https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvB",
+   "contexto_depois": "-chip-texto\">source</span><span class=\"vh\"> · <span lang=\"pt-PT\">Ministério das Finanças</span></span></a></span>. The report explains the growth of this line, for the Health programme, thus: «<a class=\"discussao-literal\" href=\"https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvB"
+  },
+  {
+   "id": "G3",
+   "ficheiro": "built/o-que-se-discute/index.html",
+   "descricao": "os encargos brutos de 2025 alterados na página PT contra a linha e o relatório de 2026 (1 234)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "7dd491552fe43e3bed3e0fb7f2f856d3b3ad2973778af8fbcd6fd9570654aef0",
+   "sha256_depois": "9ed252e18edc42d6b2da0414d7f1459b5168c97652a8bcbea5b50f6a7f9d0743",
+   "contexto_antes": " data-de-linha=\"ppp-oe2026-liquidos-2025\" data-de-campo=\"reference_date\">2025</span></a>: os encargos brutos descem de <span class=\"claim claim-com-chip\"><span data-claim=\"ppp-oe2026-brutos-2025\" class=\"claim-value\">1 234</span><a class=\"src-chip\" href=\"/livro-razao/ppp-oe2026-brutos-2025\" data-nonledger=\"proveniencia\" data-selo-etiqueta=\"Ministério das Finanças\" title=\"Ministério das ",
+   "contexto_depois": " data-de-linha=\"ppp-oe2026-liquidos-2025\" data-de-campo=\"reference_date\">2025</span></a>: os encargos brutos descem de <span class=\"claim claim-com-chip\"><span data-claim=\"ppp-oe2026-brutos-2025\" class=\"claim-value\">1 324</span><a class=\"src-chip\" href=\"/livro-razao/ppp-oe2026-brutos-2025\" data-nonledger=\"proveniencia\" data-selo-etiqueta=\"Ministério das Finanças\" title=\"Ministério das "
+  },
+  {
+   "id": "G4",
+   "ficheiro": "built/o-que-se-discute/index.html",
+   "descricao": "a recomendação do item 1 volta a mandar o leitor para a DGO na página PT, contra a correção",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "9ed252e18edc42d6b2da0414d7f1459b5168c97652a8bcbea5b50f6a7f9d0743",
+   "sha256_depois": "292c467510c339b5a662b877fd80ba43ee81accf8c33c973758e4f0544e603db",
+   "contexto_antes": "a-linha\" data-nonledger=\"data-da-linha\" data-de-linha=\"oe-2027-saude-despesa-total-consolidada-2027\" data-de-campo=\"reference_date\">2027</span></a> olha para a síntese mensal da execução orçamental da Entidade Orçamental e para a eventual necessidade de reforço, não apenas para a aprovação.</p></section><section class=\"discussao-seccao\" data-discussao-parte=\"opiniao\" aria-label",
+   "contexto_depois": "a-linha\" data-nonledger=\"data-da-linha\" data-de-linha=\"oe-2027-saude-despesa-total-consolidada-2027\" data-de-campo=\"reference_date\">2027</span></a> olha para a síntese mensal da execução orçamental da Direção-Geral do Orçamento (DGO) e para a eventual necessidade de reforço, não apenas para a aprovação.</p></section><section class=\"discussao-seccao\" data-discussao-parte=\"opiniao\" aria-label"
+  },
+  {
+   "id": "G5",
+   "ficheiro": "ledger/claims/ppp-oe2026-receitas-2025.yml",
+   "descricao": "o nome na fonte da linha das receitas de 2025 volta a «receitas de portagem» na cópia exportada, contra o quadro",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "9642c395c640d3e5ab4a2b78b84a42f187e57dffd00f88b889d1631c3169261b",
+   "sha256_depois": "da505c0cddc3e1284b7c77d21aea109296f83d092963556406326dbdbbab52f9",
+   "contexto_antes": "\nunit: \"milhões de euros\"\n\n# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,\n# e onde nele foi lido. Escrito pelo motor, nunca à mão.\nname: \"receitas\"\nname_source: \"Quadro 4.25. Previsão dos encargos plurianuais com as parcerias público-privadas; receitas; coluna 1: 2025 estimativa; p. 119 PDF (103 impressa);",
+   "contexto_depois": "\nunit: \"milhões de euros\"\n\n# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,\n# e onde nele foi lido. Escrito pelo motor, nunca à mão.\nname: \"receitas de portagem\"\nname_source: \"Quadro 4.25. Previsão dos encargos plurianuais com as parcerias público-privadas; receitas; coluna 1: 2025 estimativa; p. 119 PDF (103 impressa);"
+  }
+ ]
+}
