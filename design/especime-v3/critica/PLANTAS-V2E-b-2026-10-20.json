@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-20T19:46:47+00:00",
+ "copia": "<pacote>",
+ "plantas": [
+  {
+   "id": "Q1",
+   "ficheiro": "built/o-que-se-discute/index.html",
+   "descricao": "a citação retificada do decreto passa de «7,7 %» a «7,9 %» na página construída em português; a referência é a linha pe-dl87a-apoio-retificado e o corpo alojado dl87a.pdf",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "d99b2b5f3efbcdbf76b8e22c26600d3ee8121e5ca514d30d164e31f223830934",
+   "sha256_depois": "b741afec856b4d9137e80cf20eacadda323db85a1655aaac427fe9250b7dd48e",
+   "contexto_antes": "ante correspondente à diferença entre as tarifas e taxas de portagem que resultariam da aplicação de um coeficiente de atualização para o ano de 2023 de 1,077, equivalente a um aumento de 7,7 %, e as tarifas e taxas de portagem que resultam da aplicação do n.º 1 do artigo anterior.»</span></a>»<a class=\"src-chip\" href=\"/livro-razao/pe-dl87a-apoio-retificado\" data-n",
+   "contexto_depois": "ante correspondente à diferença entre as tarifas e taxas de portagem que resultariam da aplicação de um coeficiente de atualização para o ano de 2023 de 1,077, equivalente a um aumento de 7,9 %, e as tarifas e taxas de portagem que resultam da aplicação do n.º 1 do artigo anterior.»</span></a>»<a class=\"src-chip\" href=\"/livro-razao/pe-dl87a-apoio-retificado\" data-n"
+  },
+  {
+   "id": "Q2",
+   "ficheiro": "built/en/under-discussion/index.html",
+   "descricao": "a definição da elegibilidade passa de «cinco anos» a «três anos» na página construída em inglês; a referência é a linha sns-sem-medico-elegibilidade e o corpo alojado do catálogo",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "0fd81c7e6a0b582553892e155bc7184f0521329e12965da2c1ee6e4185ed9605",
+   "sha256_depois": "6928b1cea013908a91f437643b7c4fcbb9ecdc3894db3a988ecc7ec816d8cb3c",
+   "contexto_antes": "nha-campo=\"excerpt\">Utentes inscritos que cumprem os critérios de elegibilidade para atribuição de Médico de Família. Cálculo: utentes com registo atualizado e contacto com o SNS nos últimos cinco anos.</span></a>»<a class=\"src-chip\" href=\"/en/ledger/sns-sem-medico-elegibilidade\" data-nonledger=\"proveniencia\" data-selo-etiqueta=\"Serviço Nacional de Saúde\" titl",
+   "contexto_depois": "nha-campo=\"excerpt\">Utentes inscritos que cumprem os critérios de elegibilidade para atribuição de Médico de Família. Cálculo: utentes com registo atualizado e contacto com o SNS nos últimos três anos.</span></a>»<a class=\"src-chip\" href=\"/en/ledger/sns-sem-medico-elegibilidade\" data-nonledger=\"proveniencia\" data-selo-etiqueta=\"Serviço Nacional de Saúde\" titl"
+  },
+  {
+   "id": "Q3",
+   "ficheiro": "ledger/claims/sns-sem-medico-elegibilidade.yml",
+   "descricao": "a definição da elegibilidade passa de «cinco anos» a «quatro anos» na cópia exportada da linha nova; a referência é a linha do motor no motor/diff.patch e o corpo alojado do catálogo",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "4b9e208af2b9556f44dca812642630a7d01b1d4962daa373262b2eed6d65ac8f",
+   "sha256_depois": "f647f5e0ae10beb3e7bfd4333b81822e1d324f6f72f5015aca43e617f3aec0cc",
+   "contexto_antes": " aqui parte scripts/check-cruzamento.mjs.\n\nid: \"sns-sem-medico-elegibilidade\"\n\n# O valor tal como é publicado, com formatação portuguesa. String, nunca número.\nvalue: \"Utentes inscritos que cumprem os critérios de elegibilidade para atribuição de Médico de Família. Cálculo: utentes com registo atualizado e contacto com o SNS nos últimos cinco anos.\"\nunit: \"texto\"\n\n# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.\nsource: \"Serviço Nacional de Saúde\"\ndocument:\n  title: \"Inscrit",
+   "contexto_depois": " aqui parte scripts/check-cruzamento.mjs.\n\nid: \"sns-sem-medico-elegibilidade\"\n\n# O valor tal como é publicado, com formatação portuguesa. String, nunca número.\nvalue: \"Utentes inscritos que cumprem os critérios de elegibilidade para atribuição de Médico de Família. Cálculo: utentes com registo atualizado e contacto com o SNS nos últimos quatro anos.\"\nunit: \"texto\"\n\n# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.\nsource: \"Serviço Nacional de Saúde\"\ndocument:\n  title: \"Inscrit"
+  },
+  {
+   "id": "Q4",
+   "ficheiro": "ledger/claims/sns-catalogo-acumulados.yml",
+   "descricao": "a frase do catálogo passa de «valores acumulados» a «valores mensais» na cópia exportada da linha nova; a referência é a linha do motor e o corpo alojado sns-catalogo.json",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "631f8cdc117d5be48a9092734e1801b1360a5536dac0324c830d46da9a655068",
+   "sha256_depois": "65332d1c89db19b48bb1897412c461ba268ee314fb919ba81092e51333ec9319",
+   "contexto_antes": "ração aqui parte scripts/check-cruzamento.mjs.\n\nid: \"sns-catalogo-acumulados\"\n\n# O valor tal como é publicado, com formatação portuguesa. String, nunca número.\nvalue: \"De janeiro de 2013 ao mês n-2 anterior ao atual (valores acumulados)\"\nunit: \"texto\"\n\n# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.\nsource: \"Serviço Nacional de Saúde\"\ndocument:\n  title: \"Interve",
+   "contexto_depois": "ração aqui parte scripts/check-cruzamento.mjs.\n\nid: \"sns-catalogo-acumulados\"\n\n# O valor tal como é publicado, com formatação portuguesa. String, nunca número.\nvalue: \"De janeiro de 2013 ao mês n-2 anterior ao atual (valores mensais)\"\nunit: \"texto\"\n\n# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.\nsource: \"Serviço Nacional de Saúde\"\ndocument:\n  title: \"Interve"
+  },
+  {
+   "id": "Q5",
+   "ficheiro": "built/en/under-discussion/index.html",
+   "descricao": "o contratado do PRR passa de 2 011 a 2 101 milhões na página construída em inglês; a referência é a linha der-prr-saude-contratado-numerico e o painel alojado",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "6928b1cea013908a91f437643b7c4fcbb9ecdc3894db3a988ecc7ec816d8cb3c",
+   "sha256_depois": "ce5a12055ce50be3bbf57e6df8e4601bda20e9ce504ea6a569e997d1f18035ad",
+   "contexto_antes": "ha\" data-de-linha=\"prr-monitorizacao-20261014-p2-c01-contratado\" data-de-campo=\"reference_date\">14.10.2026</span></a>: <span class=\"claim claim-com-chip\"><span data-claim=\"der-prr-saude-contratado-numerico\" class=\"claim-value\">2 011</span><span class=\"claim-sufixo\"> million euros</span><a class=\"src-chip\" href=\"/en/ledger/der-prr-saude-contratado-numerico\" data-nonledger=\"proveniencia\" data",
+   "contexto_depois": "ha\" data-de-linha=\"prr-monitorizacao-20261014-p2-c01-contratado\" data-de-campo=\"reference_date\">14.10.2026</span></a>: <span class=\"claim claim-com-chip\"><span data-claim=\"der-prr-saude-contratado-numerico\" class=\"claim-value\">2 101</span><span class=\"claim-sufixo\"> million euros</span><a class=\"src-chip\" href=\"/en/ledger/der-prr-saude-contratado-numerico\" data-nonledger=\"proveniencia\" data"
+  }
+ ]
+}
