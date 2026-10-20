@@ -22,6 +22,16 @@ Os selos ficam depois das aspas e fora do título. As células conferem os valor
 | teste da travessia | 0; 39 contas e componentes adulteradas recusadas |
 | cruzamento com origem | 0; aviso de built_at do livro anterior, sem divergência de linhas ou ficheiros |
 | auditoria das palavras | 0; 304 folhas e 3165 apoios |
+| motor integral, pre-commit | 0; GATE: PASS; commit d19cb58a |
+| afirmações contra os corpos | 0; dez afirmações, dez corpos, 32 plantas |
+| derivadas independentes | 0; 34 fórmulas, incluindo as seis ausentes da primeira passagem e quatro percentagens novas |
+| história dos valores | 0; nove plantas, duas histórias textuais seladas |
+| leitura semanal | 0; nove plantas, sem tratar texto como subida ou descida |
+| typecheck dirigido | 0 |
+| portões a | build 1; restantes passos 125, não executados; faltava o lugar das correções |
+| portões b | build 1; restantes passos 125; leitura semanal ainda presumiu valores numéricos |
+| portões c | build 1; restantes passos 125; HTML recusou dez casos de integração das correções textuais |
+| inventário | 32 cadeias novas e 32 retiradas, recolhidas do HTML das duas edições |
 
 Capturas da correção ainda não executadas.
 
@@ -156,6 +166,14 @@ Antes: Selos dentro das aspas e do h2, intercalados na frase.
 Depois: Selo depois da aspa de fecho; título inteiro no h2 e fontes na faixa imediatamente seguinte.
 
 O número continua ligado à linha pelo token. O leitor de ecrã recebe o título sem os nomes das fontes intercalados; células e plantas conferem posição e destino dos selos.
+
+### V2D-36: Histórico das citações textuais
+
+Antes: A história e os consumidores das correções presumiam valores numéricos.
+
+Depois: As afirmações textuais têm história literal selada; permanecem no registo de correções e ficam fora das contas de subida e descida. Os textos portugueses são identificados como tal na edição inglesa.
+
+Completar os valores textuais da UTAO exige conservar os fragmentos anteriores. A exclusão numérica depende dos dois marcadores afirmacao e unidade afirmação, sem excluir afirmações numéricas. O contador passa de sete a nove correções, com atualização selada.
 
 As decisões V2D-7 a V2D-26 permanecem em `decisoes.json`; V2D-1 a V2D-6 estão documentadas na conferência do commit 3533f7a7.
 

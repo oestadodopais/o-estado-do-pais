@@ -1,0 +1,53 @@
+[
+  {
+    "corrida": "a",
+    "cabeca": "4808837fe254e49932f32e2ae88c6a40932796b4",
+    "codigos": {
+      "check:css": 125,
+      "check:series": 125,
+      "gate:html": 125,
+      "check:lugar": 125,
+      "check:discussao": 125,
+      "check:palavras": 125,
+      "check:frases-compostas": 125,
+      "check:alvos": 125,
+      "typecheck": 125,
+      "build": 1
+    },
+    "causa": "A construção recusou as duas correções textuais da UTAO por falta da declaração de lugar. Acrescentada a atribuição a Portugal com razão explícita."
+  },
+  {
+    "corrida": "b",
+    "cabeca": "ba9b3acf919d0a9c1a3d40e745ca514e8e6a3102",
+    "codigos": {
+      "check:css": 125,
+      "check:series": 125,
+      "gate:html": 125,
+      "check:lugar": 125,
+      "check:discussao": 125,
+      "check:palavras": 125,
+      "check:frases-compostas": 125,
+      "check:alvos": 125,
+      "typecheck": 125,
+      "build": 1
+    },
+    "causa": "A leitura semanal tratava toda a correção como mudança numérica e recusou as citações textuais da UTAO."
+  },
+  {
+    "corrida": "c",
+    "cabeca": "1cf5811f4a2e9e2e2dac5a96ac079082ebbc9c97",
+    "codigos": {
+      "check:css": 125,
+      "check:series": 125,
+      "gate:html": 125,
+      "check:lugar": 125,
+      "check:discussao": 125,
+      "check:palavras": 125,
+      "check:frases-compostas": 125,
+      "check:alvos": 125,
+      "typecheck": 125,
+      "build": 1
+    },
+    "causa": "HTML recusou dez casos nos índices e na conferência independente da leitura semanal, que ainda tratavam correções textuais como movimentos numéricos."
+  }
+]

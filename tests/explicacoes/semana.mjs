@@ -45,6 +45,8 @@ import { milharesDaCasa } from '../../src/lib/formato.mjs';
 import { t } from '../../src/i18n/strings.mjs';
 import { unidadeDaLinha } from '../../src/i18n/unidades.mjs';
 import { plantasDoInventarioDaSemana } from './inventario.mjs';
+import {contasDaSemanaNoPortao} from '../../scripts/explicacoes-do-portao.mjs';
+import {mudancasDoIndice,mudancasDoRegisto} from '../../src/lib/mudancas.mjs';
 import { conferirOQueENasMudancas, marcaOQueEComparada, plantasDoOQueE, plantasDoSeloDaDefinicao } from './o-que-e.mjs';
 
 const AQUI = path.dirname(fileURLToPath(import.meta.url));
@@ -265,8 +267,9 @@ export function provaNaCopiaPlantada(fim) {
     const valor=l.corrections.find((c)=>c.kind==='correcao');
     l.corrections=[{...valor,date:fim}];l.verifications=[];
     const m=new Map([[id,l]]),r=doResolvedor(m),c=semanaPelaCelula(m,fim);
+    const portao=contasDaSemanaNoPortao(m,inicio,fim);
     const registo=entradasDoRegisto('correcao').find(x=>x.claimId===id&&x.old_value===valor.old_value&&x.new_value===valor.new_value);
-    const ok=Boolean(registo)&&r.mudancas.length===0&&c.mudancas.length===0&&r.formas.length===0&&c.formas.length===0;
+    const ok=Boolean(registo)&&r.mudancas.length===0&&c.mudancas.length===0&&r.formas.length===0&&c.formas.length===0&&portao.valor===0&&portao.forma===0;
     plantas.push({nome:'correção textual permanece no registo sem virar movimento numérico',pediu:'registo com os dois textos e nenhuma subida, descida ou reformatação numérica',viu:`registo ${Boolean(registo)}, resolvedor ${r.mudancas.length}/${r.formas.length}, célula ${c.mudancas.length}/${c.formas.length}`,mordeu:ok});
     l.verifications=[{date:fim,result:'igual',by:'planta',path:null}];
     const rr=doResolvedor(m),cc=semanaPelaCelula(m,fim);
@@ -274,7 +277,15 @@ export function provaNaCopiaPlantada(fim) {
     for(const [campo,v] of [['afirmacao',false],['unit','%']]){
       const copia=structuredClone(l);copia[campo]=v;
       let recusada=false;try{doResolvedor(new Map([[id,copia]]));}catch(e){recusada=String(e).includes('não se lê como número');}
-      plantas.push({nome:`texto sem tipo textual completo (${campo})`,pediu:'recusa de valor não numérico',viu:String(recusada),mordeu:recusada});
+      const noPortao=contasDaSemanaNoPortao(new Map([[id,copia]]),inicio,fim);
+      plantas.push({nome:`texto sem tipo textual completo (${campo})`,pediu:'recusa de valor não numérico e nenhuma dispensa no portão',viu:String(recusada),mordeu:recusada&&noPortao.valor===1});
+    }
+    for(const lang of ['pt','en']){
+      const indice=mudancasDoIndice(lang),registo=mudancasDoRegisto(lang);
+      const ids=[...base.values()].filter(l=>l.afirmacao===true&&l.unit==='afirmação'&&(l.corrections??[]).some(c=>['correcao','atualizacao'].includes(c.kind))).map(l=>l.id);
+      const preservadas=ids.every(id=>registo.some(e=>e.tipo==='correcao'&&e.claim===id));
+      const excluidas=ids.every(id=>!indice.some(e=>e.claim===id));
+      plantas.push({nome:`afirmações textuais no registo, fora da comparação numérica do índice (${lang})`,pediu:'registo conserva textos; índice só compara números',viu:`registo ${preservadas}, índice ${excluidas}`,mordeu:preservadas&&excluidas});
     }
   }
   for (const p of plantas) if (!p.mordeu) erros.push(`W1 · a planta «${p.nome}» pediu ${p.pediu} e viu ${p.viu}`);

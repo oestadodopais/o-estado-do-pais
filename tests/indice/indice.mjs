@@ -72,10 +72,21 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { parse } from 'node-html-parser';
+import {load as yaml} from 'js-yaml';
 import { LANGS, matchPath, normalizePath, routePath } from '../../src/lib/routes.mjs';
 import { MEDIDA_REUNIDA } from '../../src/lib/pais.mjs';
 
 const DIST = process.env.OEDP_DIST ?? 'dist';
+// O tipo é lido da linha, sem reutilizar a seleção do resolvedor do índice.
+const tiposDasLinhas=new Map();
+function afirmacaoTextual(id){
+  if(!/^[a-z0-9_-]+$/.test(String(id??'')))return false;
+  if(!tiposDasLinhas.has(id)){
+    const f=path.join('ledger','claims',id+'.yml'),l=fs.existsSync(f)?yaml(fs.readFileSync(f,'utf8')):null;
+    tiposDasLinhas.set(id,l?.afirmacao===true&&l?.unit==='afirmação');
+  }
+  return tiposDasLinhas.get(id);
+}
 
 /** As famílias por dado que entram pela sua lista, e a chave da página dessa lista. */
 const PELA_LISTA = { linha: 'livro', livroConcelho: 'livroConcelhos', documento: 'estudo' };
@@ -315,7 +326,7 @@ export function conferirIndice({ indice, mapa, paginas, existe, lerPagina = ler 
     const frescas = new Map();
     registo.forEach((li, ordem) => {
       const linha = li.getAttribute('data-correcao-entrada');
-      if (!linha || Object.hasOwn(MEDIDA_REUNIDA, linha)) return;
+      if (!linha || Object.hasOwn(MEDIDA_REUNIDA, linha) || afirmacaoTextual(linha)) return;
       const d = li.querySelector('[data-correcao-campo="date"]');
       const data = d?.getAttribute('datetime') ?? '';
       const n = Number(d?.getAttribute('data-correcao-n') ?? -1);

@@ -8,7 +8,18 @@
     "travessia": "0; 139 linhas, 155 provas",
     "teste da travessia": "0; 39 contas e componentes adulteradas recusadas",
     "cruzamento com origem": "0; aviso de built_at do livro anterior, sem divergência de linhas ou ficheiros",
-    "auditoria das palavras": "0; 304 folhas e 3165 apoios"
+    "auditoria das palavras": "0; 304 folhas e 3165 apoios",
+    "motor integral, pre-commit": "0; GATE: PASS; commit d19cb58a",
+    "afirmações contra os corpos": "0; dez afirmações, dez corpos, 32 plantas",
+    "derivadas independentes": "0; 34 fórmulas, incluindo as seis ausentes da primeira passagem e quatro percentagens novas",
+    "história dos valores": "0; nove plantas, duas histórias textuais seladas",
+    "leitura semanal": "0; nove plantas, sem tratar texto como subida ou descida",
+    "typecheck dirigido": "0",
+    "portões a": "build 1; restantes passos 125, não executados; faltava o lugar das correções",
+    "portões b": "build 1; restantes passos 125; leitura semanal ainda presumiu valores numéricos",
+    "portões c": "build 1; restantes passos 125; HTML recusou dez casos de integração das correções textuais",
+    "inventário": "32 cadeias novas e 32 retiradas, recolhidas do HTML das duas edições"
   },
-  "capturas": "Capturas da correção ainda não executadas."
+  "capturas": "Capturas da correção ainda não executadas.",
+  "motor": "d19cb58a51416e506e14c3cad9e9a4afea687765"
 }

@@ -622,7 +622,7 @@ function anda(dir) {
         const dentro = ambito === 'pais'
           ? (tipo === 'projeto' || (tipo === 'correcao' && doLugar === PAIS))
           : ambito === 'indice'
-            ? rotaDaPagina?.key === 'indice' && tipo === 'correcao' && doLugar !== null
+            ? rotaDaPagina?.key === 'indice' && tipo === 'correcao' && doLugar !== null && !(linha(claim)?.afirmacao === true && linha(claim)?.unit === 'afirmação')
             : (tipo === 'correcao' && doLugar === ambito);
         if (!dentro)
           erros.push(`A1: ${onde}: a linha ${chave} é de «${doLugar ?? 'nenhum lugar'}» e a página é de «${ambito}».`);

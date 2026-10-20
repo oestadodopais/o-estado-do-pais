@@ -201,5 +201,12 @@
     "antes": "Selos dentro das aspas e do h2, intercalados na frase.",
     "depois": "Selo depois da aspa de fecho; título inteiro no h2 e fontes na faixa imediatamente seguinte.",
     "razao": "O número continua ligado à linha pelo token. O leitor de ecrã recebe o título sem os nomes das fontes intercalados; células e plantas conferem posição e destino dos selos."
+  },
+  {
+    "id": "V2D-36",
+    "tema": "Histórico das citações textuais",
+    "antes": "A história e os consumidores das correções presumiam valores numéricos.",
+    "depois": "As afirmações textuais têm história literal selada; permanecem no registo de correções e ficam fora das contas de subida e descida. Os textos portugueses são identificados como tal na edição inglesa.",
+    "razao": "Completar os valores textuais da UTAO exige conservar os fragmentos anteriores. A exclusão numérica depende dos dois marcadores afirmacao e unidade afirmação, sem excluir afirmações numéricas. O contador passa de sete a nove correções, com atualização selada."
   }
 ]
