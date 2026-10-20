@@ -23,6 +23,9 @@ export const LUGAR_DECLARADO_DAS_LINHAS = {
      nacional, os riscos das parcerias e a execução do SNS em Portugal. */
   'utao-ppp-contingencias-natureza-2026': 'portugal',
   'utao-risco-execucao-sns-2027': 'portugal',
+  /* V2-d-f: o excerto corrigido identifica receitas de impostos e verbas
+     do contrato-programa da ACSS no orçamento nacional da Saúde. */
+  'oe-2027-saude-contrato-programa-acss': 'portugal',
   /* E0, §1.146: a linha conta as confissões do próprio projeto. O seu lugar
      é O Estado do País, com a porta para o registo das correções. Não mede
      Portugal, uma região nem um concelho. */
