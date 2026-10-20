@@ -100,7 +100,8 @@ print('1m https://example.invalid/lancamento ● '+('Error' if modo=='vercel-fal
         self.assertEqual(r.returncode, 9)
         self.assertFalse(any(c[1:2] == ['push'] for c in chamadas if c[0] == 'git'))
         self.assertFalse(any(c[0] in ('gh', 'npm', 'vercel') for c in chamadas))
-        self.assertEqual([p['passo'] for p in recibo['passos']], ['tranca', 'parou'])
+        # A I238 (20.10.2026): as condições conferem-se antes de tomar a tranca; a recusa não a toca.
+        self.assertEqual([p['passo'] for p in recibo['passos']], ['parou'])
         self.assertIn('ramo diferente de main', recibo['passos'][-1]['motivo'])
 
     def test_main_por_fundir(self):
@@ -175,19 +176,28 @@ print('1m https://example.invalid/lancamento ● '+('Error' if modo=='vercel-fal
             self.assertNotIn("'-f'", texto)
             self.assertNotIn("'-D'", texto)
 
-    def test_tranca_ocupada_para_antes_de_publicar(self):
+    def test_tranca_ocupada_espera_antes_das_conferencias(self):
+        # A I238 (20.10.2026): a tranca só nos passos que tocam a máquina. Com a tranca ocupada, a aterragem
+        # publica o ramo e vigia a corrida do GitHub (que não tocam na máquina) e só depois espera pela
+        # tranca, antes das conferências com o motor e da fusão; nenhum passo da máquina corre enquanto espera.
         tranca = self.p / 'tranca'
         tranca.write_text('dono do ensaio\n')
         processo = subprocess.Popen(['sh', str(GUIOES / 'aterrar.sh'), str(self.w), str(self.saida)],
                                    env=self.env, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
         try:
-            self.assertIn('à espera da tranca', processo.stdout.readline())
+            linha = ''
+            for _ in range(20):
+                linha = processo.stdout.readline()
+                if 'à espera da tranca' in linha or not linha:
+                    break
+            self.assertIn('à espera da tranca', linha)
             processo.terminate()
             processo.communicate(timeout=5)
             self.assertEqual(processo.returncode, 130)
             self.assertEqual(tranca.read_text(), 'dono do ensaio\n')
             chamadas = [json.loads(l)['cmd'] for l in self.chamadas.read_text().splitlines()]
-            self.assertFalse(any(c[1:2] == ['push'] for c in chamadas))
+            self.assertTrue(any(c[1:2] == ['push'] for c in chamadas if c[0] == 'git'))
+            self.assertFalse(any(c[0] in ('npm', 'vercel') or c[1:2] == ['merge'] for c in chamadas))
         finally:
             if processo.poll() is None:
                 processo.kill()
@@ -213,15 +223,14 @@ print('1m https://example.invalid/lancamento ● '+('Error' if modo=='vercel-fal
         self.assertIn('60 minutos por omissão', r.stdout)
         recibo = json.loads((self.saida / 'aterragem.json').read_text())
         self.assertEqual(recibo['codigo'], 75)
-        passo = recibo['passos'][0]
-        self.assertEqual(passo['passo'], 'tranca')
+        passo = next(p for p in recibo['passos'] if p['passo'] == 'tranca')
         self.assertEqual(passo['codigo'], 75)
         self.assertEqual(passo['dono'], 'detentor sempre ativo')
         self.assertEqual(passo['teto_segundos'], 1)
         self.assertGreaterEqual(passo['espera_segundos'], 1)
         self.assertEqual(tranca.read_text(), 'detentor sempre ativo\n')
         chamadas = [json.loads(l)['cmd'] for l in self.chamadas.read_text().splitlines()]
-        self.assertFalse(any(c[1:2] == ['push'] for c in chamadas))
+        self.assertFalse(any(c[0] in ('npm', 'vercel') or c[1:2] == ['merge'] for c in chamadas))
 
     def test_teto_padrao_e_avisos_de_cinco_em_cinco_minutos(self):
         with patch.object(sys, 'path', [str(GUIOES), *sys.path]):
