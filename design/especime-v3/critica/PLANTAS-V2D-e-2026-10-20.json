@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-20T11:05:51+00:00",
+ "copia": "<pacote>",
+ "plantas": [
+  {
+   "id": "I1",
+   "ficheiro": "built/o-que-se-discute/index.html",
+   "descricao": "a página PT diz o montante que o relatório não dá: a oração «sem dizer quanto» da comparação trocada por um montante",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "227753bd6edd559d657abeaacdc97f59c97dad394c154a2803d3e1be10583522",
+   "sha256_depois": "87bb9b3354198337ee2df422bf18baae058c544f3d2340b24ad7bf266e172bc6",
+   "contexto_antes": "nda por fechar, os acordos entre a Administração Central do Sistema de Saúde e as entidades do Serviço Nacional de Saúde por onde passa o financiamento destas; o próprio orçamento inscreve assim o reforço que antecipa, sem dizer quanto. O financiamento conta com receitas próprias a crescer <span class=\"claim claim-com-chip\"><span data-claim=\"der-saude-receitas-proprias-variacao-pct\" class=\"cl",
+   "contexto_depois": "nda por fechar, os acordos entre a Administração Central do Sistema de Saúde e as entidades do Serviço Nacional de Saúde por onde passa o financiamento destas; o próprio orçamento inscreve assim o reforço que antecipa, cerca de duzentos milhões. O financiamento conta com receitas próprias a crescer <span class=\"claim claim-com-chip\"><span data-claim=\"der-saude-receitas-proprias-variacao-pct\" class=\"cl"
+  },
+  {
+   "id": "I2",
+   "ficheiro": "built/en/under-discussion/index.html",
+   "descricao": "a paráfrase EN troca «still to be closed» por «already closed», contra a nota 26",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "3073418884f2c6a5e822b31eec63aa45b3863aca557e8a5c3f7dcd4ce8e348d7",
+   "sha256_depois": "a85b007c6127bf0d577a13302a129bd80a4a2bb39ba7acffb3732e3b570b0e6b",
+   "contexto_antes": "culated\" title=\"calculated\"><span class=\"src-chip-texto\">source</span><span class=\"vh\"> · calculated</span></a></span> more. According to the report, this line is where the provision to reinforce the contract-programmes still to be closed sits for Health, the agreements between the Central Administration of the Health System and the National Health Service&#39;s entities through which their financing flows; the budget thus books the r",
+   "contexto_depois": "culated\" title=\"calculated\"><span class=\"src-chip-texto\">source</span><span class=\"vh\"> · calculated</span></a></span> more. According to the report, this line is where the provision to reinforce the contract-programmes already closed sits for Health, the agreements between the Central Administration of the Health System and the National Health Service&#39;s entities through which their financing flows; the budget thus books the r"
+  },
+  {
+   "id": "I3",
+   "ficheiro": "built/o-que-se-discute/index.html",
+   "descricao": "a derivada 271,3 alterada na página PT na opinião, contra a sua derivação",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "87bb9b3354198337ee2df422bf18baae058c544f3d2340b24ad7bf266e172bc6",
+   "sha256_depois": "4e2b6fd28ab8503705f4b2d706baf131fb6502113c44ef10442cf434df185d8f",
+   "contexto_antes": "data-selo-etiqueta=\"Ministério das Finanças\" title=\"Ministério das Finanças\"><span class=\"src-chip-texto\">fonte</span><span class=\"vh\"> · <span>Ministério das Finanças</span></span></a></span>, mais <span class=\"claim claim-com-chip\"><span data-claim=\"der-saude-outras-correntes-variacao-abs\" class=\"claim-value\">271,3</span><a class=\"src-chip\" href=\"/livro-razao/der-saude-outras-correntes-variacao-abs\" data-nonledger=\"proveniencia\" data-selo-etiqueta=\"calculado\" title=\"calculado\"><span class=\"src-chip-texto\">fonte</span><span class=\"vh\"> · calculado</span></a>",
+   "contexto_depois": "data-selo-etiqueta=\"Ministério das Finanças\" title=\"Ministério das Finanças\"><span class=\"src-chip-texto\">fonte</span><span class=\"vh\"> · <span>Ministério das Finanças</span></span></a></span>, mais <span class=\"claim claim-com-chip\"><span data-claim=\"der-saude-outras-correntes-variacao-abs\" class=\"claim-value\">217,3</span><a class=\"src-chip\" href=\"/livro-razao/der-saude-outras-correntes-variacao-abs\" data-nonledger=\"proveniencia\" data-selo-etiqueta=\"calculado\" title=\"calculado\"><span class=\"src-chip-texto\">fonte</span><span class=\"vh\"> · calculado</span></a>"
+  },
+  {
+   "id": "I5",
+   "ficheiro": "ledger/claims/oe-2027-saude-contrato-programa-acss.yml",
+   "descricao": "o período da linha nova volta à data de publicação na cópia exportada",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "2830021f7e87076f4de8ff01f1e658a932b061d62df3ecd31e7d678db8c9d7b6",
+   "sha256_depois": "737c4556af99bc7b72536af085cc89485ba7b8bc4bfd2cdd1f9b64a423b221f1",
+   "contexto_antes": "6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true\"\naccess_date: \"2026-10-13\"\npublished_at: \"2026-10-08\"\nafirmacao: true\nreference_date: \"2027\"\n\n# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.\nexcerpt: \"Neste montante incluem-se as verbas do contrato-programa a celebrar entre a Ad",
+   "contexto_depois": "6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true\"\naccess_date: \"2026-10-13\"\npublished_at: \"2026-10-08\"\nafirmacao: true\nreference_date: \"2026-10-08\"\n\n# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.\nexcerpt: \"Neste montante incluem-se as verbas do contrato-programa a celebrar entre a Ad"
+  },
+  {
+   "id": "I4",
+   "ficheiro": "ledger/claims/oe-2027-saude-contrato-programa-acss.yml",
+   "descricao": "o excerto da linha nova da p. 303 alterado na cópia exportada (a entidade trocada), contra o corpo",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "737c4556af99bc7b72536af085cc89485ba7b8bc4bfd2cdd1f9b64a423b221f1",
+   "sha256_depois": "44b0e26d7b627853f0a021910c43a0243dca03a747660b9c689ba13a912149c1",
+   "contexto_antes": "ate: \"2026-10-13\"\npublished_at: \"2026-10-08\"\nafirmacao: true\nreference_date: \"2026-10-08\"\n\n# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.\nexcerpt: \"Neste montante incluem-se as verbas do contrato-programa a celebrar entre a Administração Central do Sistema de Saúde, IP (ACSS) e as entidades do Serviço Nacional de Saúde (SNS), destinadas ao financiamento centralizado da Rede Nacional de Cuidados Continuados, das parcerias público-privadas, entre outros.\"\n\n# null quando o valor é publicado; a aritmética explicada quando é calculado.\nderivation: null\nderivation_en: null\nderived_from: []\n# Expressão verificada no ",
+   "contexto_depois": "ate: \"2026-10-13\"\npublished_at: \"2026-10-08\"\nafirmacao: true\nreference_date: \"2026-10-08\"\n\n# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.\nexcerpt: \"Neste montante incluem-se as verbas do contrato-programa a celebrar entre a Direção Executiva do SNS (DE-SNS) e as entidades do Serviço Nacional de Saúde (SNS), destinadas ao financiamento centralizado da Rede Nacional de Cuidados Continuados, das parcerias público-privadas, entre outros.\"\n\n# null quando o valor é publicado; a aritmética explicada quando é calculado.\nderivation: null\nderivation_en: null\nderived_from: []\n# Expressão verificada no "
+  }
+ ]
+}
