@@ -16,6 +16,7 @@ import path from 'node:path';
 import http from 'node:http';
 import { createHash } from 'node:crypto';
 import { chromium } from 'playwright';
+import sharp from 'sharp';
 import { medirMenu } from '../../design/especime-v3/medicoes/v2c-2026-10-19/medir-menu.mjs';
 
 const [pedido, pastaDada, distDado = 'dist'] = process.argv.slice(2);
@@ -87,13 +88,26 @@ try {
       }
       const ficheiro = prefixo+'.png';
       const bytes = await pagina.screenshot({path:path.join(pasta,ficheiro),fullPage:true,animations:'disabled'});
+      const imagem = await sharp(bytes).metadata();
       const recortes = [];
       for (const r of p.recortes ?? []) {
         const alvo = pagina.locator(r.seletor);
         if (await alvo.count() !== 1) throw new Error(`${prefixo}: o recorte ${r.nome} não aparece uma vez`);
         const nome = prefixo+'-'+r.nome+'.png';
-        const recorte = await alvo.screenshot({path:path.join(pasta,nome),animations:'disabled'});
-        recortes.push({ficheiro:nome,seletor:r.seletor,sha256:sha(recorte)});
+        // O recorte usa os píxeis da página completa, com a caixa medida
+        // no documento, para permitir a conferência exata da sua origem.
+        const caixa = await alvo.evaluate(el => {
+          const r = el.getBoundingClientRect();
+          const left = Math.floor(r.left + scrollX), top = Math.floor(r.top + scrollY);
+          return {left,top,width:Math.ceil(r.right + scrollX)-left,height:Math.ceil(r.bottom + scrollY)-top};
+        });
+        if (caixa.left < 0 || caixa.top < 0 || caixa.width < 1 || caixa.height < 1 ||
+            caixa.left + caixa.width > imagem.width || caixa.top + caixa.height > imagem.height) {
+          throw new Error(`${prefixo}: o recorte ${r.nome} fica fora da imagem completa`);
+        }
+        const recorte = await sharp(bytes).extract(caixa).png().toBuffer();
+        await fs.writeFile(path.join(pasta,nome),recorte);
+        recortes.push({ficheiro:nome,seletor:r.seletor,origem:ficheiro,caixa,sha256:sha(recorte)});
       }
       resultados.push({ficheiro,rota,lingua,largura,...medidas,sha256:sha(bytes),recortes,externos,erros,recusados});
       if (externos.length || erros.length || recusados.length) falhas.push(`${prefixo}: pedidos externos, recursos em falta ou erros do navegador`);
@@ -105,7 +119,7 @@ finally {
   await new Promise(r => servidor.close(r));
 }
 for (const [f,selo] of recursos) if (sha(await fs.readFile(path.join(dist,f))) !== selo) falhas.push(`recurso alterado: ${f}`);
-const recibo = {cabeca:config.cabeca,larguras,resultados,recursos:Object.fromEntries(recursos),falhas,ok:falhas.length===0};
+const recibo = {cabeca:config.cabeca,capturador_sha256:sha(await fs.readFile(new URL(import.meta.url))),larguras,resultados,recursos:Object.fromEntries(recursos),falhas,ok:falhas.length===0};
 await fs.writeFile(path.join(pasta,'capturas.json'),JSON.stringify(recibo,null,2)+'\n');
 console.log(JSON.stringify({ok:recibo.ok,capturas:resultados.length,falhas}));
 process.exitCode = recibo.ok ? 0 : 1;

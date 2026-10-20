@@ -1,0 +1,50 @@
+{
+  "cabeca": "476ca482394909ad1bd94e530cda480a866d3547",
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "paginas": [
+    {
+      "nome": "discussao",
+      "pt": "/o-que-se-discute/",
+      "en": "/en/under-discussion/",
+      "recortes": [
+        {
+          "nome": "servico",
+          "seletor": "#saude-no-orcamento [data-discussao-paragrafo=\"seccoes[1].conteudo[7].paragrafo\"]"
+        },
+        {
+          "nome": "medicamentos",
+          "seletor": "#saude-no-orcamento [data-discussao-paragrafo=\"seccoes[1].conteudo[8].paragrafo\"]"
+        },
+        {
+          "nome": "prr",
+          "seletor": "#saude-no-orcamento [data-discussao-paragrafo=\"seccoes[1].conteudo[9].paragrafo\"]"
+        },
+        {
+          "nome": "brisa",
+          "seletor": "#parcerias-rodoviarias [data-discussao-paragrafo=\"seccoes[1].conteudo[6].paragrafo\"]"
+        },
+        {
+          "nome": "portagens",
+          "seletor": "#parcerias-rodoviarias [data-discussao-paragrafo=\"seccoes[1].conteudo[7].paragrafo\"]"
+        }
+      ]
+    },
+    {
+      "nome": "inicio",
+      "pt": "/",
+      "en": "/en/",
+      "recortes": [
+        {
+          "nome": "itens",
+          "seletor": "[data-discussao-inicio]"
+        }
+      ]
+    }
+  ]
+}

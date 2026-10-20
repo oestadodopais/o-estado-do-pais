@@ -1,0 +1,117 @@
+{
+  "cabeca": "476ca482394909ad1bd94e530cda480a866d3547",
+  "metodo": "Inspeção visual do construtor por view_image, sem substituir a leitura editorial independente. O lote inspecionado e o lote de entrega têm píxeis iguais em cada ficheiro listado.",
+  "ficheiros": [
+    {
+      "ficheiro": "discussao-en-390-prr.png",
+      "pixels_diferentes_entre_lote_inspecionado_e_entrega": 0
+    },
+    {
+      "ficheiro": "discussao-en-390-servico.png",
+      "pixels_diferentes_entre_lote_inspecionado_e_entrega": 0
+    },
+    {
+      "ficheiro": "discussao-pt-390-medicamentos.png",
+      "pixels_diferentes_entre_lote_inspecionado_e_entrega": 0
+    },
+    {
+      "ficheiro": "discussao-en-390-medicamentos.png",
+      "pixels_diferentes_entre_lote_inspecionado_e_entrega": 0
+    },
+    {
+      "ficheiro": "discussao-pt-1024-brisa.png",
+      "pixels_diferentes_entre_lote_inspecionado_e_entrega": 0
+    },
+    {
+      "ficheiro": "discussao-en-1024-brisa.png",
+      "pixels_diferentes_entre_lote_inspecionado_e_entrega": 0
+    },
+    {
+      "ficheiro": "inicio-pt-390-itens.png",
+      "pixels_diferentes_entre_lote_inspecionado_e_entrega": 0
+    },
+    {
+      "ficheiro": "inicio-pt-768-itens.png",
+      "pixels_diferentes_entre_lote_inspecionado_e_entrega": 0
+    },
+    {
+      "ficheiro": "inicio-pt-1024-itens.png",
+      "pixels_diferentes_entre_lote_inspecionado_e_entrega": 0
+    },
+    {
+      "ficheiro": "inicio-pt-1280-itens.png",
+      "pixels_diferentes_entre_lote_inspecionado_e_entrega": 0
+    },
+    {
+      "ficheiro": "inicio-pt-1600-itens.png",
+      "pixels_diferentes_entre_lote_inspecionado_e_entrega": 0
+    },
+    {
+      "ficheiro": "inicio-en-390-itens.png",
+      "pixels_diferentes_entre_lote_inspecionado_e_entrega": 0
+    },
+    {
+      "ficheiro": "inicio-en-768-itens.png",
+      "pixels_diferentes_entre_lote_inspecionado_e_entrega": 0
+    },
+    {
+      "ficheiro": "inicio-en-1024-itens.png",
+      "pixels_diferentes_entre_lote_inspecionado_e_entrega": 0
+    },
+    {
+      "ficheiro": "inicio-en-1280-itens.png",
+      "pixels_diferentes_entre_lote_inspecionado_e_entrega": 0
+    },
+    {
+      "ficheiro": "inicio-en-1600-itens.png",
+      "pixels_diferentes_entre_lote_inspecionado_e_entrega": 0
+    },
+    {
+      "ficheiro": "discussao-pt-390-portagens.png",
+      "pixels_diferentes_entre_lote_inspecionado_e_entrega": 0
+    },
+    {
+      "ficheiro": "discussao-pt-768-portagens.png",
+      "pixels_diferentes_entre_lote_inspecionado_e_entrega": 0
+    },
+    {
+      "ficheiro": "discussao-pt-1024-portagens.png",
+      "pixels_diferentes_entre_lote_inspecionado_e_entrega": 0
+    },
+    {
+      "ficheiro": "discussao-pt-1280-portagens.png",
+      "pixels_diferentes_entre_lote_inspecionado_e_entrega": 0
+    },
+    {
+      "ficheiro": "discussao-pt-1600-portagens.png",
+      "pixels_diferentes_entre_lote_inspecionado_e_entrega": 0
+    },
+    {
+      "ficheiro": "discussao-en-390-portagens.png",
+      "pixels_diferentes_entre_lote_inspecionado_e_entrega": 0
+    },
+    {
+      "ficheiro": "discussao-en-768-portagens.png",
+      "pixels_diferentes_entre_lote_inspecionado_e_entrega": 0
+    },
+    {
+      "ficheiro": "discussao-en-1024-portagens.png",
+      "pixels_diferentes_entre_lote_inspecionado_e_entrega": 0
+    },
+    {
+      "ficheiro": "discussao-en-1280-portagens.png",
+      "pixels_diferentes_entre_lote_inspecionado_e_entrega": 0
+    },
+    {
+      "ficheiro": "discussao-en-1600-portagens.png",
+      "pixels_diferentes_entre_lote_inspecionado_e_entrega": 0
+    }
+  ],
+  "observacoes": [
+    "Sem texto cortado, sobreposição ou selos ilegíveis nos recortes inspecionados.",
+    "Nos recortes das portagens a largura menor pode deixar o selo final numa linha própria, legível.",
+    "Os recortes da entrada não contêm selos de fonte.",
+    "As aspas interiores do excerto retificado mantêm a transcrição da fonte."
+  ],
+  "ok": true
+}

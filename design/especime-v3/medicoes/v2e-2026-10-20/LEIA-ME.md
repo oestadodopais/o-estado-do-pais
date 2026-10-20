@@ -311,6 +311,8 @@ Esta secção substitui as conclusões anteriores nos pontos corrigidos. A V2E-3
 
 - **V2E-39.** O conjunto fechado da régua dos rótulos acompanha as linhas acrescentadas. Nos recibos do painel, confere a cadeia selada integral e recusa tanto a unidade retirada como a repetição marcada ou não marcada. A célula do índice distingue texto documental selado de mudança numérica, como a página e a leitura semanal, sem permitir ocultar uma linha numérica pela simples marca textual.
 
+- **V2E-40.** Os recortes passam a extrair os píxeis da captura completa, com a caixa e a origem no manifesto, para permitir a comparação exata. A suspeita visual inicial de perda de algarismos no recorte inglês do PRR não se confirmou: a comparação do primeiro lote encontrou zero píxeis diferentes na caixa correspondente. Não se declara um defeito da página nem um defeito confirmado do capturador anterior. O lote de entrega exercita o capturador e cada recorte confere-se contra a página completa; a prova está em `b/recortes-prova.json`. Esta alteração do utilitário de capturas e os ficheiros de prova são posteriores à cabeça que passou os portões; não alteram o conteúdo nem os recursos construídos.
+
 ### Linhas seladas e cálculos
 
 Seladas de novo: `pe-oe-beira-abolicao`, sem a chamada de nota colada a «negociação», e `pe-oe-riscos-nao-reconhecimento`, só até «peticionados.». O histórico preserva os excertos anteriores. As linhas `pe-dl87a-financiamento`, `pe-dl87a-apoio` e `pe-dl87a-apoio-retificado` conservaram a fonte, com descrições corrigidas nos recibos.
@@ -366,9 +368,36 @@ A lista resulta do HTML anterior (`b/unidades-antes-html.json`) e das alteraçõ
 | `ppp-oe2027-riscos-pedidos-rodoviarios` | `seccoes[3].conteudo[0].paragrafo` | million |
 
 
+### Provas de fecho da correção
+
+Cabeça construída e capturada: `476ca482394909ad1bd94e530cda480a866d3547`. O motor ficou em `e2ad177c`, com `GATE: PASS` no pre-commit, confirmado no resultado do escrivão (`b/motor-prova.json`). Os commits foram pedidos ao escrivão com os caminhos explícitos; não houve push.
+
+| Tentativa | Cabeça | build | verify | typecheck | Resultado |
+|---|---|---:|---:|---:|---|
+| 1 | `2ac26dba` | 1 | 125 | 0 | Recusada: faltava o âmbito nacional dos excertos corrigidos. |
+| 2 | `41154bed` | 1 | 125 | 0 | Recusada: a leitura semanal tentava comparar os excertos como números. |
+| 3 | `fa5e624b` | 1 | 125 | 0 | Recusada: inventário da prosa e expectativas de células por atualizar. |
+| 4 | `6dbfc7e4` | 1 | 125 | 0 | Recusada: a edição anual da minuta ainda não tinha língua explicitamente declarada. |
+| 5 | `67c0eb10` | 0 | 1 | 0 | Build verde; verify recusado pelas células dos rótulos e do índice. |
+| 6 | `476ca482` | 0 | 0 | 0 | Os três portões passaram. |
+
+Auditoria das palavras: 424 folhas, 428 partes e 5199 apoios, em `tests/discussao/palavras.json`; contagem em `b/auditoria.json`. A Beira Interior está declarada como apoio da opinião.
+
+Os códigos foram lidos dos ficheiros escritos pelo escrivão. O código de verify nas tentativas sem build completo significa que não correu. A corrida final pelo escrivão conferiu a união da suíte inteira, incluindo os passos já pagos pelo build e os restantes em paralelo, e a imutabilidade da construção. `b/verificacao-final.json` guarda os códigos e os resumos dos registos.
+
+Séries com o motor e cruzamento com a origem: código 0 e código 0. O cruzamento conserva o aviso de alteração do campo de construção do livro do Orçamento; nenhuma linha nem ficheiro de origem divergiu. O core.gate foi o do commit do motor, sem alterações posteriores nesse repositório.
+
+A conferência de dados detetou 145 de 145 plantas. A célula dos itens passou com zero erros e as plantas registadas em `b/celulas-itens.json`; o HTML conferiu 72 parágrafos e 296 recibos. As ocorrências de unidade depois do selo e os erros de posição/nome dos selos inline são zero nas duas edições. Os ensaios das funções documentais, do histórico, das correções textuais, do painel e do índice estão em `b/ensaios-prova.json`.
+
+Portas: 297 linhas usadas pelos itens; 148 linhas do bloco com porta. Das linhas do bloco, 29 ficam sem porta porque não são impressas, citadas nem componentes transitivas. As componentes dos marcos agora declaradas são uso real, pelo que a contagem não se fixa nas linhas sem uso apontadas antes dessa correção. As portas dos recibos são conferidas nas duas edições; a célula inclui também as portas dos índices e da explicação do dinheiro do Estado.
+
+Capturas: 20 páginas completas e 60 recortes, nas duas páginas, duas edições e nas larguras declaradas no pedido. Zero erros de navegador, pedidos externos, recursos recusados ou páginas mais largas do que a janela. Cada PNG foi reconferido pelo sha256. `b/capturas-pedido.json`, `b/capturas.json` e `b/inspecao-visual.json` guardam o pedido, o manifesto e a inspeção. As imagens ficam em `<temporario>/v2eb-capturas-entrega`, fora do repositório.
+
+Fica para o lugar de direção ler as duas edições e lançar a leitura curta sobre o diff, como o mandato pede. A célula dos apoios I241 permanece para a higiene. A correção não foi fundida nem publicada.
+
 ### Frases da correção tal como renderizam
 
-Conferidas no HTML da cabeça `fa5e624bbf7921068f69fc58ab36667ed55c14e4`: 72 parágrafos. Esta transcrição substitui, nos pontos corrigidos, a transcrição anterior do V2-e. Os selos não entram no texto corrido abaixo; a posição e o nome acessível são conferidos na célula e nas capturas.
+Conferidas no HTML da cabeça `476ca482394909ad1bd94e530cda480a866d3547`: 72 parágrafos. Esta transcrição substitui, nos pontos corrigidos, a transcrição anterior do V2-e. Os selos não entram no texto corrido abaixo; a posição e o nome acessível são conferidos na célula e nas capturas.
 
 #### PT
 

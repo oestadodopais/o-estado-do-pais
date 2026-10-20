@@ -1,0 +1,56 @@
+{
+  "cabeca": "476ca482394909ad1bd94e530cda480a866d3547",
+  "portoes": {
+    "build": 0,
+    "verify": 0,
+    "typecheck": 0
+  },
+  "series": 0,
+  "cruzamento": 0,
+  "resumos_dos_registos": {
+    "build": [
+      "  mordeu · uma condição falsa numa cópia das declarações (código 0)",
+      "  mordeu · um resolvedor que recusa tudo (código 1)",
+      "  mordeu · o passo da cadeia do build com um resolvedor que recusa tudo (código 1)",
+      "",
+      "> o-estado-do-pais@0.1.0 check:discussao",
+      "> node tests/discussao/itens.mjs",
+      "",
+      "V2B · 0 erro(s), 645 de 645 plantas, 600 portas de integração."
+    ],
+    "verify": [
+      "    ✓ npm run check:sugestoes                      0.3 s  código 0",
+      "    ✓ npm run provar:guardas                       0.2 s  código 0",
+      "    ✓ npm run mapa:unidades -- --verifica          0.2 s  código 0",
+      "  U ✓ 48 passos no verify: 21 corridos pelo build, 27 corridos aqui e verdes",
+      "  D ✓ nenhuma escrita durante as conferências nos 18609 ficheiros do dist/ (bytes, hora de escrita e inode) nem nos 31723 ficheiros que o git segue (hora de escrita, inode e tamanho)",
+      "  C ✓ a construção é da cabeça 476ca482394909ad1bd94e530cda480a866d3547, carimbada a 2026-10-20T19:23:01.094Z; prova.json escrito a 2026-10-20T19:24:58.740Z, cadeia.json a 2026-10-20T19:25:01.718Z",
+      "  442.7 s ao todo",
+      ""
+    ],
+    "typecheck": [
+      "",
+      "> o-estado-do-pais@0.1.0 typecheck",
+      "> tsc -p tsconfig.check.json",
+      ""
+    ],
+    "series-final": [
+      "",
+      "> o-estado-do-pais@0.1.0 check:series",
+      "> node tests/series/series.mjs --prova",
+      "",
+      "  check:series · 25 série(s) no tempo de 8327 ponto(s) · 2 derivada(s) com 152 ponto(s) refeitos · 12 linha(s) presa(s), 12 cartão(ões) no último ponto · 50 recibo(s) lidos · metade do motor da S3: 8175 ponto(s) no seu corpo · 40 de 40 planta(s) morderam",
+      "  ✓ as séries no tempo têm a forma, a cadência, cada valor no seu excerto, a derivada refeita, cada linha presa no seu ponto e cada cartão no último, e os recibos com todos os pontos nas duas edições."
+    ],
+    "cruzamento": [
+      "    oe-2026: 209",
+      "    oe-2027: 337",
+      "",
+      "  1 aviso(s):",
+      "    · o ledger.json de \"20 Orcamento do Estado\" já não é o que atravessou. Por si só isto não quer dizer nada: o ficheiro traz um \"built_at\" que muda a cada reconstrução. O que prende é o resumo de cada LINHA — se nenhuma foi nomeada acima, nenhuma mudou.",
+      "",
+      "  ✓ cada linha e cada ficheiro vindos do motor são, byte a byte, o que atravessou, e são ainda o que o motor tem.",
+      ""
+    ]
+  }
+}

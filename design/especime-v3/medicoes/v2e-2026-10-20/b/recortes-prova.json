@@ -1,0 +1,678 @@
+{
+  "cabeca": "476ca482394909ad1bd94e530cda480a866d3547",
+  "capturador_sha256": "909d23e15ab7fcb8bf855152503900aaeff0579b8b62da7aa1f1311b1268ecb1",
+  "recortes": [
+    {
+      "ficheiro": "discussao-pt-390-servico.png",
+      "origem": "discussao-pt-390.png",
+      "caixa": {
+        "left": 18,
+        "top": 3243,
+        "width": 354,
+        "height": 720
+      },
+      "pixels_diferentes": 0
+    },
+    {
+      "ficheiro": "discussao-pt-390-medicamentos.png",
+      "origem": "discussao-pt-390.png",
+      "caixa": {
+        "left": 18,
+        "top": 3976,
+        "width": 354,
+        "height": 775
+      },
+      "pixels_diferentes": 0
+    },
+    {
+      "ficheiro": "discussao-pt-390-prr.png",
+      "origem": "discussao-pt-390.png",
+      "caixa": {
+        "left": 18,
+        "top": 4764,
+        "width": 354,
+        "height": 305
+      },
+      "pixels_diferentes": 0
+    },
+    {
+      "ficheiro": "discussao-pt-390-brisa.png",
+      "origem": "discussao-pt-390.png",
+      "caixa": {
+        "left": 18,
+        "top": 12115,
+        "width": 354,
+        "height": 664
+      },
+      "pixels_diferentes": 0
+    },
+    {
+      "ficheiro": "discussao-pt-390-portagens.png",
+      "origem": "discussao-pt-390.png",
+      "caixa": {
+        "left": 18,
+        "top": 12792,
+        "width": 354,
+        "height": 2019
+      },
+      "pixels_diferentes": 0
+    },
+    {
+      "ficheiro": "discussao-pt-768-servico.png",
+      "origem": "discussao-pt-768.png",
+      "caixa": {
+        "left": 30,
+        "top": 2439,
+        "width": 529,
+        "height": 471
+      },
+      "pixels_diferentes": 0
+    },
+    {
+      "ficheiro": "discussao-pt-768-medicamentos.png",
+      "origem": "discussao-pt-768.png",
+      "caixa": {
+        "left": 30,
+        "top": 2923,
+        "width": 529,
+        "height": 471
+      },
+      "pixels_diferentes": 0
+    },
+    {
+      "ficheiro": "discussao-pt-768-prr.png",
+      "origem": "discussao-pt-768.png",
+      "caixa": {
+        "left": 30,
+        "top": 3407,
+        "width": 529,
+        "height": 194
+      },
+      "pixels_diferentes": 0
+    },
+    {
+      "ficheiro": "discussao-pt-768-brisa.png",
+      "origem": "discussao-pt-768.png",
+      "caixa": {
+        "left": 30,
+        "top": 8519,
+        "width": 529,
+        "height": 444
+      },
+      "pixels_diferentes": 0
+    },
+    {
+      "ficheiro": "discussao-pt-768-portagens.png",
+      "origem": "discussao-pt-768.png",
+      "caixa": {
+        "left": 30,
+        "top": 8976,
+        "width": 529,
+        "height": 1300
+      },
+      "pixels_diferentes": 0
+    },
+    {
+      "ficheiro": "discussao-pt-1024-servico.png",
+      "origem": "discussao-pt-1024.png",
+      "caixa": {
+        "left": 40,
+        "top": 2501,
+        "width": 529,
+        "height": 471
+      },
+      "pixels_diferentes": 0
+    },
+    {
+      "ficheiro": "discussao-pt-1024-medicamentos.png",
+      "origem": "discussao-pt-1024.png",
+      "caixa": {
+        "left": 40,
+        "top": 2985,
+        "width": 529,
+        "height": 471
+      },
+      "pixels_diferentes": 0
+    },
+    {
+      "ficheiro": "discussao-pt-1024-prr.png",
+      "origem": "discussao-pt-1024.png",
+      "caixa": {
+        "left": 40,
+        "top": 3469,
+        "width": 529,
+        "height": 195
+      },
+      "pixels_diferentes": 0
+    },
+    {
+      "ficheiro": "discussao-pt-1024-brisa.png",
+      "origem": "discussao-pt-1024.png",
+      "caixa": {
+        "left": 40,
+        "top": 8654,
+        "width": 529,
+        "height": 443
+      },
+      "pixels_diferentes": 0
+    },
+    {
+      "ficheiro": "discussao-pt-1024-portagens.png",
+      "origem": "discussao-pt-1024.png",
+      "caixa": {
+        "left": 40,
+        "top": 9110,
+        "width": 529,
+        "height": 1300
+      },
+      "pixels_diferentes": 0
+    },
+    {
+      "ficheiro": "discussao-pt-1280-servico.png",
+      "origem": "discussao-pt-1280.png",
+      "caixa": {
+        "left": 94,
+        "top": 2520,
+        "width": 528,
+        "height": 471
+      },
+      "pixels_diferentes": 0
+    },
+    {
+      "ficheiro": "discussao-pt-1280-medicamentos.png",
+      "origem": "discussao-pt-1280.png",
+      "caixa": {
+        "left": 94,
+        "top": 3004,
+        "width": 528,
+        "height": 470
+      },
+      "pixels_diferentes": 0
+    },
+    {
+      "ficheiro": "discussao-pt-1280-prr.png",
+      "origem": "discussao-pt-1280.png",
+      "caixa": {
+        "left": 94,
+        "top": 3487,
+        "width": 528,
+        "height": 195
+      },
+      "pixels_diferentes": 0
+    },
+    {
+      "ficheiro": "discussao-pt-1280-brisa.png",
+      "origem": "discussao-pt-1280.png",
+      "caixa": {
+        "left": 94,
+        "top": 8713,
+        "width": 528,
+        "height": 443
+      },
+      "pixels_diferentes": 0
+    },
+    {
+      "ficheiro": "discussao-pt-1280-portagens.png",
+      "origem": "discussao-pt-1280.png",
+      "caixa": {
+        "left": 94,
+        "top": 9169,
+        "width": 528,
+        "height": 1300
+      },
+      "pixels_diferentes": 0
+    },
+    {
+      "ficheiro": "discussao-pt-1600-servico.png",
+      "origem": "discussao-pt-1600.png",
+      "caixa": {
+        "left": 254,
+        "top": 2526,
+        "width": 528,
+        "height": 471
+      },
+      "pixels_diferentes": 0
+    },
+    {
+      "ficheiro": "discussao-pt-1600-medicamentos.png",
+      "origem": "discussao-pt-1600.png",
+      "caixa": {
+        "left": 254,
+        "top": 3010,
+        "width": 528,
+        "height": 471
+      },
+      "pixels_diferentes": 0
+    },
+    {
+      "ficheiro": "discussao-pt-1600-prr.png",
+      "origem": "discussao-pt-1600.png",
+      "caixa": {
+        "left": 254,
+        "top": 3494,
+        "width": 528,
+        "height": 194
+      },
+      "pixels_diferentes": 0
+    },
+    {
+      "ficheiro": "discussao-pt-1600-brisa.png",
+      "origem": "discussao-pt-1600.png",
+      "caixa": {
+        "left": 254,
+        "top": 8734,
+        "width": 528,
+        "height": 444
+      },
+      "pixels_diferentes": 0
+    },
+    {
+      "ficheiro": "discussao-pt-1600-portagens.png",
+      "origem": "discussao-pt-1600.png",
+      "caixa": {
+        "left": 254,
+        "top": 9191,
+        "width": 528,
+        "height": 1300
+      },
+      "pixels_diferentes": 0
+    },
+    {
+      "ficheiro": "discussao-en-390-servico.png",
+      "origem": "discussao-en-390.png",
+      "caixa": {
+        "left": 18,
+        "top": 3243,
+        "width": 354,
+        "height": 720
+      },
+      "pixels_diferentes": 0
+    },
+    {
+      "ficheiro": "discussao-en-390-medicamentos.png",
+      "origem": "discussao-en-390.png",
+      "caixa": {
+        "left": 18,
+        "top": 3976,
+        "width": 354,
+        "height": 720
+      },
+      "pixels_diferentes": 0
+    },
+    {
+      "ficheiro": "discussao-en-390-prr.png",
+      "origem": "discussao-en-390.png",
+      "caixa": {
+        "left": 18,
+        "top": 4709,
+        "width": 354,
+        "height": 305
+      },
+      "pixels_diferentes": 0
+    },
+    {
+      "ficheiro": "discussao-en-390-brisa.png",
+      "origem": "discussao-en-390.png",
+      "caixa": {
+        "left": 18,
+        "top": 11984,
+        "width": 354,
+        "height": 637
+      },
+      "pixels_diferentes": 0
+    },
+    {
+      "ficheiro": "discussao-en-390-portagens.png",
+      "origem": "discussao-en-390.png",
+      "caixa": {
+        "left": 18,
+        "top": 12634,
+        "width": 354,
+        "height": 1964
+      },
+      "pixels_diferentes": 0
+    },
+    {
+      "ficheiro": "discussao-en-768-servico.png",
+      "origem": "discussao-en-768.png",
+      "caixa": {
+        "left": 30,
+        "top": 2411,
+        "width": 529,
+        "height": 471
+      },
+      "pixels_diferentes": 0
+    },
+    {
+      "ficheiro": "discussao-en-768-medicamentos.png",
+      "origem": "discussao-en-768.png",
+      "caixa": {
+        "left": 30,
+        "top": 2895,
+        "width": 529,
+        "height": 471
+      },
+      "pixels_diferentes": 0
+    },
+    {
+      "ficheiro": "discussao-en-768-prr.png",
+      "origem": "discussao-en-768.png",
+      "caixa": {
+        "left": 30,
+        "top": 3379,
+        "width": 529,
+        "height": 194
+      },
+      "pixels_diferentes": 0
+    },
+    {
+      "ficheiro": "discussao-en-768-brisa.png",
+      "origem": "discussao-en-768.png",
+      "caixa": {
+        "left": 30,
+        "top": 8436,
+        "width": 529,
+        "height": 416
+      },
+      "pixels_diferentes": 0
+    },
+    {
+      "ficheiro": "discussao-en-768-portagens.png",
+      "origem": "discussao-en-768.png",
+      "caixa": {
+        "left": 30,
+        "top": 8865,
+        "width": 529,
+        "height": 1300
+      },
+      "pixels_diferentes": 0
+    },
+    {
+      "ficheiro": "discussao-en-1024-servico.png",
+      "origem": "discussao-en-1024.png",
+      "caixa": {
+        "left": 40,
+        "top": 2476,
+        "width": 529,
+        "height": 471
+      },
+      "pixels_diferentes": 0
+    },
+    {
+      "ficheiro": "discussao-en-1024-medicamentos.png",
+      "origem": "discussao-en-1024.png",
+      "caixa": {
+        "left": 40,
+        "top": 2960,
+        "width": 529,
+        "height": 471
+      },
+      "pixels_diferentes": 0
+    },
+    {
+      "ficheiro": "discussao-en-1024-prr.png",
+      "origem": "discussao-en-1024.png",
+      "caixa": {
+        "left": 40,
+        "top": 3444,
+        "width": 529,
+        "height": 194
+      },
+      "pixels_diferentes": 0
+    },
+    {
+      "ficheiro": "discussao-en-1024-brisa.png",
+      "origem": "discussao-en-1024.png",
+      "caixa": {
+        "left": 40,
+        "top": 8573,
+        "width": 529,
+        "height": 416
+      },
+      "pixels_diferentes": 0
+    },
+    {
+      "ficheiro": "discussao-en-1024-portagens.png",
+      "origem": "discussao-en-1024.png",
+      "caixa": {
+        "left": 40,
+        "top": 9002,
+        "width": 529,
+        "height": 1300
+      },
+      "pixels_diferentes": 0
+    },
+    {
+      "ficheiro": "discussao-en-1280-servico.png",
+      "origem": "discussao-en-1280.png",
+      "caixa": {
+        "left": 94,
+        "top": 2494,
+        "width": 528,
+        "height": 471
+      },
+      "pixels_diferentes": 0
+    },
+    {
+      "ficheiro": "discussao-en-1280-medicamentos.png",
+      "origem": "discussao-en-1280.png",
+      "caixa": {
+        "left": 94,
+        "top": 2978,
+        "width": 528,
+        "height": 471
+      },
+      "pixels_diferentes": 0
+    },
+    {
+      "ficheiro": "discussao-en-1280-prr.png",
+      "origem": "discussao-en-1280.png",
+      "caixa": {
+        "left": 94,
+        "top": 3462,
+        "width": 528,
+        "height": 194
+      },
+      "pixels_diferentes": 0
+    },
+    {
+      "ficheiro": "discussao-en-1280-brisa.png",
+      "origem": "discussao-en-1280.png",
+      "caixa": {
+        "left": 94,
+        "top": 8632,
+        "width": 528,
+        "height": 416
+      },
+      "pixels_diferentes": 0
+    },
+    {
+      "ficheiro": "discussao-en-1280-portagens.png",
+      "origem": "discussao-en-1280.png",
+      "caixa": {
+        "left": 94,
+        "top": 9061,
+        "width": 528,
+        "height": 1300
+      },
+      "pixels_diferentes": 0
+    },
+    {
+      "ficheiro": "discussao-en-1600-servico.png",
+      "origem": "discussao-en-1600.png",
+      "caixa": {
+        "left": 254,
+        "top": 2500,
+        "width": 528,
+        "height": 471
+      },
+      "pixels_diferentes": 0
+    },
+    {
+      "ficheiro": "discussao-en-1600-medicamentos.png",
+      "origem": "discussao-en-1600.png",
+      "caixa": {
+        "left": 254,
+        "top": 2984,
+        "width": 528,
+        "height": 471
+      },
+      "pixels_diferentes": 0
+    },
+    {
+      "ficheiro": "discussao-en-1600-prr.png",
+      "origem": "discussao-en-1600.png",
+      "caixa": {
+        "left": 254,
+        "top": 3468,
+        "width": 528,
+        "height": 194
+      },
+      "pixels_diferentes": 0
+    },
+    {
+      "ficheiro": "discussao-en-1600-brisa.png",
+      "origem": "discussao-en-1600.png",
+      "caixa": {
+        "left": 254,
+        "top": 8654,
+        "width": 528,
+        "height": 415
+      },
+      "pixels_diferentes": 0
+    },
+    {
+      "ficheiro": "discussao-en-1600-portagens.png",
+      "origem": "discussao-en-1600.png",
+      "caixa": {
+        "left": 254,
+        "top": 9082,
+        "width": 528,
+        "height": 1300
+      },
+      "pixels_diferentes": 0
+    },
+    {
+      "ficheiro": "inicio-pt-390-itens.png",
+      "origem": "inicio-pt-390.png",
+      "caixa": {
+        "left": 18,
+        "top": 288,
+        "width": 354,
+        "height": 195
+      },
+      "pixels_diferentes": 0
+    },
+    {
+      "ficheiro": "inicio-pt-768-itens.png",
+      "origem": "inicio-pt-768.png",
+      "caixa": {
+        "left": 30,
+        "top": 274,
+        "width": 708,
+        "height": 156
+      },
+      "pixels_diferentes": 0
+    },
+    {
+      "ficheiro": "inicio-pt-1024-itens.png",
+      "origem": "inicio-pt-1024.png",
+      "caixa": {
+        "left": 40,
+        "top": 255,
+        "width": 944,
+        "height": 139
+      },
+      "pixels_diferentes": 0
+    },
+    {
+      "ficheiro": "inicio-pt-1280-itens.png",
+      "origem": "inicio-pt-1280.png",
+      "caixa": {
+        "left": 94,
+        "top": 260,
+        "width": 1092,
+        "height": 139
+      },
+      "pixels_diferentes": 0
+    },
+    {
+      "ficheiro": "inicio-pt-1600-itens.png",
+      "origem": "inicio-pt-1600.png",
+      "caixa": {
+        "left": 254,
+        "top": 260,
+        "width": 1092,
+        "height": 139
+      },
+      "pixels_diferentes": 0
+    },
+    {
+      "ficheiro": "inicio-en-390-itens.png",
+      "origem": "inicio-en-390.png",
+      "caixa": {
+        "left": 18,
+        "top": 288,
+        "width": 354,
+        "height": 195
+      },
+      "pixels_diferentes": 0
+    },
+    {
+      "ficheiro": "inicio-en-768-itens.png",
+      "origem": "inicio-en-768.png",
+      "caixa": {
+        "left": 30,
+        "top": 274,
+        "width": 708,
+        "height": 156
+      },
+      "pixels_diferentes": 0
+    },
+    {
+      "ficheiro": "inicio-en-1024-itens.png",
+      "origem": "inicio-en-1024.png",
+      "caixa": {
+        "left": 40,
+        "top": 255,
+        "width": 944,
+        "height": 139
+      },
+      "pixels_diferentes": 0
+    },
+    {
+      "ficheiro": "inicio-en-1280-itens.png",
+      "origem": "inicio-en-1280.png",
+      "caixa": {
+        "left": 94,
+        "top": 260,
+        "width": 1092,
+        "height": 139
+      },
+      "pixels_diferentes": 0
+    },
+    {
+      "ficheiro": "inicio-en-1600-itens.png",
+      "origem": "inicio-en-1600.png",
+      "caixa": {
+        "left": 254,
+        "top": 260,
+        "width": 1092,
+        "height": 139
+      },
+      "pixels_diferentes": 0
+    }
+  ],
+  "suspeita_inicial_nao_confirmada": {
+    "ficheiro": "discussao-en-390-prr.png",
+    "lote": "primeira tentativa",
+    "caixa": {
+      "left": 18,
+      "top": 4709,
+      "width": 354,
+      "height": 305
+    },
+    "pixels_diferentes": 0
+  },
+  "ok": true
+}
