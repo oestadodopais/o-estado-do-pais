@@ -180,7 +180,9 @@ export function plantas(html,lang){
  const out=[];const run=(nome,mut,re)=>{for(const e of ITENS){const root=parse(html);mut(root.querySelector(`[data-discussao="${e.slug}"]`));const erros=conferirPagina(root,lang);out.push({nome,item:e.slug,lang,mordeu:erros.some(x=>re.test(x)),queixa:erros.find(x=>re.test(x))??null});}};
  run('citação sem token',r=>r.querySelector('[data-linha-campo="excerpt"]').removeAttribute('data-linha-campo'),/citação/);
  run('citação alterada',r=>r.querySelector('[data-linha-campo="excerpt"]').set_content('Uma citação adulterada.'),/literal/);
- run('recibo do contrato-programa ausente',r=>{r.querySelector('#saude-no-orcamento [data-discussao-parte="comparacao"] a[href*="oe-2027-saude-contrato-programa-acss"]')?.remove();},/V2D apoio textual/);
+ const semAcss=parse(html);semAcss.querySelector('#saude-no-orcamento [data-discussao-parte="comparacao"] a[href*="oe-2027-saude-contrato-programa-acss"]')?.remove();
+ const errosAcss=conferirPagina(semAcss,lang);
+ out.push({nome:'recibo do contrato-programa ausente',item:'saude-no-orcamento',lang,mordeu:errosAcss.some(x=>x.includes('V2D apoio textual')),queixa:errosAcss.find(x=>x.includes('V2D apoio textual'))??null});
  run('selo dentro das aspas',r=>{const a=r.querySelector('a[data-discussao-literal="excerpt"]'),nos=a.parentNode.childNodes,i=nos.indexOf(a),fecho=nos[i+1],selo=nos[i+2],html=selo.toString();selo.remove();fecho.remove();a.insertAdjacentHTML('afterend',html+'»');},/V2D citação/);
  run('adjetivo junto do nome',r=>{const n=r.querySelector('[data-linha-campo="attributed_to"]');n.set_content('irresponsável '+n.innerHTML);},/pessoas/);
  run('opinião sem rótulo',r=>r.querySelector('[data-discussao-parte="opiniao"] h3').remove(),/opinião/);
