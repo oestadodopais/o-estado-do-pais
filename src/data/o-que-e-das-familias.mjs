@@ -5992,10 +5992,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a explicação do relatório para o crescimento das outras despesas correntes, decorrente da constituição de reservas orçamentais a mobilizar durante a execução."
+        "É a explicação do relatório para o crescimento das outras despesas correntes do conjunto das administrações públicas, decorrente da constituição de reservas orçamentais a mobilizar durante a execução."
       ],
       "en": [
-        "It is the report’s explanation of growth in other current expenditure, arising from the creation of budget reserves to be used during execution."
+        "It is the report’s explanation of growth in other current expenditure for general government as a whole, arising from the creation of budget reserves to be used during execution."
+      ]
+    }
+  },
+  "oe-2027-saude-acao-reserva-orcamental": {
+    "nome": {
+      "pt": "Reserva orçamental do programa Saúde",
+      "en": "Health programme budget reserve"
+    },
+    "frase": {
+      "pt": [
+        "É a reserva orçamental inscrita entre as ações do programa Saúde."
+      ],
+      "en": [
+        "It is the budget reserve listed among the Health programme’s actions."
       ]
     }
   },
@@ -6463,15 +6477,15 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "ppp-oe2026-receitas-2025": {
     "nome": {
-      "pt": "Parcerias rodoviárias, receitas de portagem",
-      "en": "Road partnerships, toll revenue"
+      "pt": "Parcerias rodoviárias, receitas",
+      "en": "Road partnerships, revenue"
     },
     "frase": {
       "pt": [
-        "São as receitas de portagem previstas para as parcerias rodoviárias no quadro do relatório do Orçamento."
+        "São as receitas previstas para as parcerias rodoviárias no quadro do relatório do Orçamento."
       ],
       "en": [
-        "These are forecast toll revenues for road partnerships in the Budget report table."
+        "These are forecast revenues for road partnerships in the Budget report table."
       ]
     }
   },
@@ -6603,15 +6617,15 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "ppp-oe2027-receitas-2027": {
     "nome": {
-      "pt": "Parcerias rodoviárias, receitas de portagem",
-      "en": "Road partnerships, toll revenue"
+      "pt": "Parcerias rodoviárias, receitas",
+      "en": "Road partnerships, revenue"
     },
     "frase": {
       "pt": [
-        "São as receitas de portagem previstas para as parcerias rodoviárias no quadro do relatório do Orçamento."
+        "São as receitas previstas para as parcerias rodoviárias no quadro do relatório do Orçamento."
       ],
       "en": [
-        "These are forecast toll revenues for road partnerships in the Budget report table."
+        "These are forecast revenues for road partnerships in the Budget report table."
       ]
     }
   },

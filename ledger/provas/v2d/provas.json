@@ -1848,12 +1848,12 @@
     "ppp-oe2026-brutos-2025": {
       "value": "1 234",
       "period": "2025",
-      "excerpt": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\n   enca rgos brutos         1 234     1 212    1 047     951      830      699      631      454      333      321      262      183      157       178\nSeleção: 2025 estimativa",
+      "excerpt": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\nencargos brutos 1 234 1 212 1 047 951 830 699 631 454 333 321 262 183 157 178\nSeleção: 2025 estimativa",
       "document": {
         "title": "Orçamento do Estado 2026 · Relatório",
         "file": "content/24 Orcamento 2027 Analise/source/oe-2026.pdf",
         "source_sha256": "a863f683d0145e3129e56278cbf450e95a405cb912a98e0383e0f83d6fcbc031",
-        "locator": "Quadro 4.25. Previsão dos encargos plurianuais com as parcerias público-privadas; enca rgos brutos; coluna 1: 2025 estimativa; p. 119 PDF (103 impressa)",
+        "locator": "Quadro 4.25. Previsão dos encargos plurianuais com as parcerias público-privadas; encargos brutos; coluna 1: 2025 estimativa; p. 119 PDF (103 impressa)",
         "page": 119,
         "printed_page": 103
       },
@@ -1923,12 +1923,12 @@
     "ppp-oe2026-receitas-2025": {
       "value": "392",
       "period": "2025",
-      "excerpt": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\n    recei ta s                392       263      274     271      889      288      263      228      192      193      195      183      148       160\nSeleção: 2025 estimativa",
+      "excerpt": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\nreceitas 392 263 274 271 889 288 263 228 192 193 195 183 148 160\nSeleção: 2025 estimativa",
       "document": {
         "title": "Orçamento do Estado 2026 · Relatório",
         "file": "content/24 Orcamento 2027 Analise/source/oe-2026.pdf",
         "source_sha256": "a863f683d0145e3129e56278cbf450e95a405cb912a98e0383e0f83d6fcbc031",
-        "locator": "Quadro 4.25. Previsão dos encargos plurianuais com as parcerias público-privadas; recei ta s; coluna 1: 2025 estimativa; p. 119 PDF (103 impressa)",
+        "locator": "Quadro 4.25. Previsão dos encargos plurianuais com as parcerias público-privadas; receitas; coluna 1: 2025 estimativa; p. 119 PDF (103 impressa)",
         "page": 119,
         "printed_page": 103
       },
@@ -6312,9 +6312,64 @@
         "title": "Orçamento do Estado 2027 · Relatório",
         "file": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
         "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-        "locator": "p. 67 PDF (51 impressa), explicação das outras despesas correntes",
+        "locator": "p. 67 PDF (51 impressa), outras despesas correntes do conjunto das administrações públicas",
         "page": 67,
         "printed_page": 51
+      },
+      "derivation": null,
+      "afirmacao": true,
+      "attributed_to": [
+        "Ministério das Finanças"
+      ],
+      "published_at": "2026-10-08",
+      "source_url": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+      "unit": "afirmação",
+      "receipt": {
+        "estado": 200,
+        "ficheiro": "oe-relatorio.pdf",
+        "bytes": 25512364,
+        "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+        "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+        "endereco_final": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+        "acedido_em": "2026-10-13T18:47:56.980564+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor"
+      },
+      "rights": {
+        "redistributed": "Excerto, referência e recibo; o corpo permanece no motor.",
+        "licence": "Não se declara uma licença geral de redistribuição do corpo.",
+        "assessment": {
+          "anfitriao": "app.parlamento.pt",
+          "publicar_corpos": false,
+          "alojamento": "Cópia privada para investigação, pedida no mandato. Nenhuma publicação de corpos ou de páginas.",
+          "reutilizacao": "Licença aberta específica não estabelecida para estes corpos. Acesso público, documento oficial ou política de privacidade não são autorização de republicação integral.",
+          "prova": {
+            "file": "content/23 Habitacao/source/direitos/parlamento.html",
+            "sha256": "42b5ebc0fe02bd0e0a8d883a72da452edd07e58342aeb47967cfade3fdcf1073",
+            "receipt": "content/23 Habitacao/source/direitos/parlamento.html.pedido.json"
+          },
+          "pedidos": [
+            "content/24 Orcamento 2027 Analise/source/debate/utao-oe2027-infografia.pdf.pedido.json",
+            "content/24 Orcamento 2027 Analise/source/debate/utao-oe2027-preliminar.pdf.pedido.json",
+            "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf.pedido.json"
+          ],
+          "robots": "Não é utilizado como licença."
+        },
+        "origin_path": "content/24 Orcamento 2027 Analise/source/direitos/app.parlamento.pt/avaliacao.json",
+        "sha256": "e955562568605bdb2d5f59cae815cf59b8c615ca33c274a3bc4600225d08f5e0"
+      }
+    },
+    "oe-2027-saude-acao-reserva-orcamental": {
+      "value": "Reserva orçamental",
+      "period": "2027",
+      "excerpt": "Reserva orçamental",
+      "document": {
+        "title": "Orçamento do Estado 2027 · Relatório",
+        "file": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
+        "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+        "locator": "Quadro 5.36. Objetivos e indicadores da Missão de Base Orgânica Saúde; Ação 4.3; p. 296 PDF (280 impressa)",
+        "page": 296,
+        "printed_page": 280
       },
       "derivation": null,
       "afirmacao": true,

@@ -7869,14 +7869,14 @@
         {
           "caminho": "seccoes[2].conteudo[2].paragrafo[0]",
           "pt": "O que sobe e o que desce não são a mesma coisa: o pessoal leva mais ",
-          "en": "What rises and what falls are not the same thing: personnel gets ",
+          "en": "What rises and what falls are not the same thing: personnel takes ",
           "ramo": null,
           "partes": [
             {
               "pt": "O que sobe e o que desce não são a mesma coisa: o pessoal leva mais ",
-              "en": "What rises and what falls are not the same thing: personnel gets ",
+              "en": "What rises and what falls are not the same thing: personnel takes ",
               "classe": "leitura",
-              "sobre": "Variações nas rubricas e fontes de financiamento; o relatório explica o crescimento das outras despesas correntes pela constituição de reservas orçamentais.",
+              "sobre": "Variações nas rubricas e fontes de financiamento; a explicação das reservas refere-se ao conjunto das administrações públicas; o programa Saúde inscreve uma ação de reserva orçamental.",
               "apoios": [
                 {
                   "linha": "der-saude-pessoal-variacao-abs",
@@ -7907,6 +7907,11 @@
                   "linha": "oe-2027-outras-despesas-correntes-reserva",
                   "campo": "excerpt",
                   "literal": "De relevar ainda o crescimento das outras despesas correntes, decorrente da constituição das reservas orçamentais a serem mobilizadas durante a execução orçamental, em linha com o aprofundamento da autonomia na gestão orçamental de cada área setorial iniciada em 2026."
+                },
+                {
+                  "linha": "oe-2027-saude-acao-reserva-orcamental",
+                  "campo": "excerpt",
+                  "literal": "Reserva orçamental"
                 },
                 {
                   "linha": "der-saude-receitas-proprias-variacao-pct",
@@ -7950,14 +7955,14 @@
         {
           "caminho": "seccoes[2].conteudo[2].paragrafo[2]",
           "pt": "; a aquisição de bens e serviços leva menos ",
-          "en": " more; the purchase of goods and services gets ",
+          "en": " more; the purchase of goods and services takes ",
           "ramo": null,
           "partes": [
             {
               "pt": "; a aquisição de bens e serviços leva menos ",
-              "en": " more; the purchase of goods and services gets ",
+              "en": " more; the purchase of goods and services takes ",
               "classe": "leitura",
-              "sobre": "Variações nas rubricas e fontes de financiamento; o relatório explica o crescimento das outras despesas correntes pela constituição de reservas orçamentais.",
+              "sobre": "Variações nas rubricas e fontes de financiamento; a explicação das reservas refere-se ao conjunto das administrações públicas; o programa Saúde inscreve uma ação de reserva orçamental.",
               "apoios": [
                 {
                   "linha": "der-saude-pessoal-variacao-abs",
@@ -7988,6 +7993,11 @@
                   "linha": "oe-2027-outras-despesas-correntes-reserva",
                   "campo": "excerpt",
                   "literal": "De relevar ainda o crescimento das outras despesas correntes, decorrente da constituição das reservas orçamentais a serem mobilizadas durante a execução orçamental, em linha com o aprofundamento da autonomia na gestão orçamental de cada área setorial iniciada em 2026."
+                },
+                {
+                  "linha": "oe-2027-saude-acao-reserva-orcamental",
+                  "campo": "excerpt",
+                  "literal": "Reserva orçamental"
                 },
                 {
                   "linha": "der-saude-receitas-proprias-variacao-pct",
@@ -8031,14 +8041,14 @@
         {
           "caminho": "seccoes[2].conteudo[2].paragrafo[4]",
           "pt": "; o investimento leva menos ",
-          "en": " less; investment gets ",
+          "en": " less; investment takes ",
           "ramo": null,
           "partes": [
             {
               "pt": "; o investimento leva menos ",
-              "en": " less; investment gets ",
+              "en": " less; investment takes ",
               "classe": "leitura",
-              "sobre": "Variações nas rubricas e fontes de financiamento; o relatório explica o crescimento das outras despesas correntes pela constituição de reservas orçamentais.",
+              "sobre": "Variações nas rubricas e fontes de financiamento; a explicação das reservas refere-se ao conjunto das administrações públicas; o programa Saúde inscreve uma ação de reserva orçamental.",
               "apoios": [
                 {
                   "linha": "der-saude-pessoal-variacao-abs",
@@ -8069,6 +8079,11 @@
                   "linha": "oe-2027-outras-despesas-correntes-reserva",
                   "campo": "excerpt",
                   "literal": "De relevar ainda o crescimento das outras despesas correntes, decorrente da constituição das reservas orçamentais a serem mobilizadas durante a execução orçamental, em linha com o aprofundamento da autonomia na gestão orçamental de cada área setorial iniciada em 2026."
+                },
+                {
+                  "linha": "oe-2027-saude-acao-reserva-orcamental",
+                  "campo": "excerpt",
+                  "literal": "Reserva orçamental"
                 },
                 {
                   "linha": "der-saude-receitas-proprias-variacao-pct",
@@ -8119,7 +8134,7 @@
               "pt": "; e as outras despesas correntes passam de ",
               "en": " less; and other current expenditure goes from ",
               "classe": "leitura",
-              "sobre": "Variações nas rubricas e fontes de financiamento; o relatório explica o crescimento das outras despesas correntes pela constituição de reservas orçamentais.",
+              "sobre": "Variações nas rubricas e fontes de financiamento; a explicação das reservas refere-se ao conjunto das administrações públicas; o programa Saúde inscreve uma ação de reserva orçamental.",
               "apoios": [
                 {
                   "linha": "der-saude-pessoal-variacao-abs",
@@ -8150,6 +8165,11 @@
                   "linha": "oe-2027-outras-despesas-correntes-reserva",
                   "campo": "excerpt",
                   "literal": "De relevar ainda o crescimento das outras despesas correntes, decorrente da constituição das reservas orçamentais a serem mobilizadas durante a execução orçamental, em linha com o aprofundamento da autonomia na gestão orçamental de cada área setorial iniciada em 2026."
+                },
+                {
+                  "linha": "oe-2027-saude-acao-reserva-orcamental",
+                  "campo": "excerpt",
+                  "literal": "Reserva orçamental"
                 },
                 {
                   "linha": "der-saude-receitas-proprias-variacao-pct",
@@ -8200,7 +8220,7 @@
               "pt": " para ",
               "en": " to ",
               "classe": "leitura",
-              "sobre": "Variações nas rubricas e fontes de financiamento; o relatório explica o crescimento das outras despesas correntes pela constituição de reservas orçamentais.",
+              "sobre": "Variações nas rubricas e fontes de financiamento; a explicação das reservas refere-se ao conjunto das administrações públicas; o programa Saúde inscreve uma ação de reserva orçamental.",
               "apoios": [
                 {
                   "linha": "der-saude-pessoal-variacao-abs",
@@ -8231,6 +8251,11 @@
                   "linha": "oe-2027-outras-despesas-correntes-reserva",
                   "campo": "excerpt",
                   "literal": "De relevar ainda o crescimento das outras despesas correntes, decorrente da constituição das reservas orçamentais a serem mobilizadas durante a execução orçamental, em linha com o aprofundamento da autonomia na gestão orçamental de cada área setorial iniciada em 2026."
+                },
+                {
+                  "linha": "oe-2027-saude-acao-reserva-orcamental",
+                  "campo": "excerpt",
+                  "literal": "Reserva orçamental"
                 },
                 {
                   "linha": "der-saude-receitas-proprias-variacao-pct",
@@ -8273,15 +8298,15 @@
         },
         {
           "caminho": "seccoes[2].conteudo[2].paragrafo[10]",
-          "pt": ", que o relatório explica assim: «",
-          "en": ", which the report explains thus: «",
+          "pt": ". O relatório explica o crescimento desta rubrica, para o conjunto das administrações públicas, assim: «",
+          "en": ". The report explains the growth of this line, for general government as a whole, thus: «",
           "ramo": null,
           "partes": [
             {
-              "pt": ", que o relatório explica assim: «",
-              "en": ", which the report explains thus: «",
+              "pt": ". O relatório explica o crescimento desta rubrica, para o conjunto das administrações públicas, assim: «",
+              "en": ". The report explains the growth of this line, for general government as a whole, thus: «",
               "classe": "leitura",
-              "sobre": "Variações nas rubricas e fontes de financiamento; o relatório explica o crescimento das outras despesas correntes pela constituição de reservas orçamentais.",
+              "sobre": "Variações nas rubricas e fontes de financiamento; a explicação das reservas refere-se ao conjunto das administrações públicas; o programa Saúde inscreve uma ação de reserva orçamental.",
               "apoios": [
                 {
                   "linha": "der-saude-pessoal-variacao-abs",
@@ -8312,6 +8337,11 @@
                   "linha": "oe-2027-outras-despesas-correntes-reserva",
                   "campo": "excerpt",
                   "literal": "De relevar ainda o crescimento das outras despesas correntes, decorrente da constituição das reservas orçamentais a serem mobilizadas durante a execução orçamental, em linha com o aprofundamento da autonomia na gestão orçamental de cada área setorial iniciada em 2026."
+                },
+                {
+                  "linha": "oe-2027-saude-acao-reserva-orcamental",
+                  "campo": "excerpt",
+                  "literal": "Reserva orçamental"
                 },
                 {
                   "linha": "der-saude-receitas-proprias-variacao-pct",
@@ -8354,15 +8384,15 @@
         },
         {
           "caminho": "seccoes[2].conteudo[2].paragrafo[12]",
-          "pt": "» O financiamento conta com receitas próprias a crescer ",
-          "en": "» The financing counts on own revenue growing ",
+          "pt": "»; e o programa Saúde inscreve uma «",
+          "en": "»; and the Health programme lists a «",
           "ramo": null,
           "partes": [
             {
-              "pt": "» O financiamento conta com receitas próprias a crescer ",
-              "en": "» The financing counts on own revenue growing ",
+              "pt": "»; e o programa Saúde inscreve uma «",
+              "en": "»; and the Health programme lists a «",
               "classe": "leitura",
-              "sobre": "Variações nas rubricas e fontes de financiamento; o relatório explica o crescimento das outras despesas correntes pela constituição de reservas orçamentais.",
+              "sobre": "Variações nas rubricas e fontes de financiamento; a explicação das reservas refere-se ao conjunto das administrações públicas; o programa Saúde inscreve uma ação de reserva orçamental.",
               "apoios": [
                 {
                   "linha": "der-saude-pessoal-variacao-abs",
@@ -8395,85 +8425,9 @@
                   "literal": "De relevar ainda o crescimento das outras despesas correntes, decorrente da constituição das reservas orçamentais a serem mobilizadas durante a execução orçamental, em linha com o aprofundamento da autonomia na gestão orçamental de cada área setorial iniciada em 2026."
                 },
                 {
-                  "linha": "der-saude-receitas-proprias-variacao-pct",
-                  "campo": "derivation",
-                  "literal": "((oe-2027-saude-fonte-receitas-proprias-2027) ÷ (oe-2027-saude-fonte-receitas-proprias-2026) − 1) × 100. (2 017,6 ÷ 1 289,5 − 1) × 100 = 56.46374563784412563008918190 ≈ 56,5"
-                },
-                {
-                  "linha": "oe-2027-saude-fonte-fundos-europeus-2026",
+                  "linha": "oe-2027-saude-acao-reserva-orcamental",
                   "campo": "excerpt",
-                  "literal": "Despesas por Fonte de Financiamento consolidada   Orçamento 2026    Orçamento 2027\n Fundos Europeus                                            655,0              174,6\nSeleção: Orçamento 2026"
-                },
-                {
-                  "linha": "oe-2027-saude-fonte-fundos-europeus-2027",
-                  "campo": "excerpt",
-                  "literal": "Despesas por Fonte de Financiamento consolidada   Orçamento 2026    Orçamento 2027\n Fundos Europeus                                            655,0              174,6\nSeleção: Orçamento 2027"
-                },
-                {
-                  "linha": "oe-2027-saude-pessoal-2027",
-                  "campo": "excerpt",
-                  "literal": "Quadro 5.37. Saúde (PL15) — Conta do Pograma Legado\n(milhões de euros)\n2026                                2027\nVariação                       Estrutura 2027\nVariação                        Estrutura 2027\nClassificador Económico                                                                                                    (Sem PRR)                         (Sem PRR)\nEstimativa                          Orçamento       (%)                                 (%)\nEstimativa                           Orçamento                                            (%)                                (%)\n(Sem PRR)                           (Sem PRR)\n     Despesas com o pessoal                               7 783,1             7 780,9         8 184,3            8 184,3              5,2           5,2              45,8             45,8\nSeleção: 2027 Orçamento"
-                },
-                {
-                  "linha": "oe-2027-saude-bens-servicos-2027",
-                  "campo": "excerpt",
-                  "literal": "Quadro 5.37. Saúde (PL15) — Conta do Pograma Legado\n(milhões de euros)\n2026                                2027\nVariação                       Estrutura 2027\nVariação                        Estrutura 2027\nClassificador Económico                                                                                                    (Sem PRR)                         (Sem PRR)\nEstimativa                          Orçamento       (%)                                 (%)\nEstimativa                           Orçamento                                            (%)                                (%)\n(Sem PRR)                           (Sem PRR)\n     Aquisição de bens e serviços                         8 832,9             8 802,2         8 436,3            8 436,3          -4,5             -4,2              47,2             47,2\nSeleção: 2027 Orçamento"
-                },
-                {
-                  "linha": "oe-2027-saude-investimento-2027",
-                  "campo": "excerpt",
-                  "literal": "Quadro 5.37. Saúde (PL15) — Conta do Pograma Legado\n(milhões de euros)\n2026                                2027\nVariação                       Estrutura 2027\nVariação                        Estrutura 2027\nClassificador Económico                                                                                                    (Sem PRR)                         (Sem PRR)\nEstimativa                          Orçamento       (%)                                 (%)\nEstimativa                           Orçamento                                            (%)                                (%)\n(Sem PRR)                           (Sem PRR)\n     Investimento                                         1 022,5              555,2            678,3              678,3         -33,7             22,2               3,8              3,8\nSeleção: 2027 Orçamento"
-                },
-                {
-                  "linha": "oe-2027-saude-fonte-receitas-proprias-2027",
-                  "campo": "excerpt",
-                  "literal": "Despesas por Fonte de Financiamento consolidada   Orçamento 2026    Orçamento 2027\n Receitas Próprias                                        1 289,5             2 017,6\nSeleção: Orçamento 2027"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "caminho": "seccoes[2].conteudo[2].paragrafo[13].sufixo",
-          "pt": " %",
-          "en": " %",
-          "ramo": null,
-          "partes": [
-            {
-              "pt": " %",
-              "en": " %",
-              "classe": "leitura",
-              "sobre": "Variações nas rubricas e fontes de financiamento; o relatório explica o crescimento das outras despesas correntes pela constituição de reservas orçamentais.",
-              "apoios": [
-                {
-                  "linha": "der-saude-pessoal-variacao-abs",
-                  "campo": "derivation",
-                  "literal": "(oe-2027-saude-pessoal-2027) − (oe-2027-saude-pessoal-2026). 8 184,3 − 7 783,1 = 401,2"
-                },
-                {
-                  "linha": "der-saude-bens-servicos-reducao-abs",
-                  "campo": "derivation",
-                  "literal": "(oe-2027-saude-bens-servicos-2026) − (oe-2027-saude-bens-servicos-2027). 8 832,9 − 8 436,3 = 396,6"
-                },
-                {
-                  "linha": "der-saude-investimento-reducao-abs",
-                  "campo": "derivation",
-                  "literal": "(oe-2027-saude-investimento-2026) − (oe-2027-saude-investimento-2027). 1 022,5 − 678,3 = 344,2"
-                },
-                {
-                  "linha": "oe-2027-saude-outras-correntes-2026",
-                  "campo": "excerpt",
-                  "literal": "Quadro 5.37. Saúde (PL15) — Conta do Pograma Legado\n(milhões de euros)\n2026                                2027\nVariação                       Estrutura 2027\nVariação                        Estrutura 2027\nClassificador Económico                                                                                                    (Sem PRR)                         (Sem PRR)\nEstimativa                          Orçamento       (%)                                 (%)\nEstimativa                           Orçamento                                            (%)                                (%)\n(Sem PRR)                           (Sem PRR)\n     Outras despesas correntes                               32,4                32,4           303,7              303,7          n.r.              n.r.              1,7              1,7\nSeleção: 2026 Estimativa"
-                },
-                {
-                  "linha": "oe-2027-saude-outras-correntes-2027",
-                  "campo": "excerpt",
-                  "literal": "Quadro 5.37. Saúde (PL15) — Conta do Pograma Legado\n(milhões de euros)\n2026                                2027\nVariação                       Estrutura 2027\nVariação                        Estrutura 2027\nClassificador Económico                                                                                                    (Sem PRR)                         (Sem PRR)\nEstimativa                          Orçamento       (%)                                 (%)\nEstimativa                           Orçamento                                            (%)                                (%)\n(Sem PRR)                           (Sem PRR)\n     Outras despesas correntes                               32,4                32,4           303,7              303,7          n.r.              n.r.              1,7              1,7\nSeleção: 2027 Orçamento"
-                },
-                {
-                  "linha": "oe-2027-outras-despesas-correntes-reserva",
-                  "campo": "excerpt",
-                  "literal": "De relevar ainda o crescimento das outras despesas correntes, decorrente da constituição das reservas orçamentais a serem mobilizadas durante a execução orçamental, em linha com o aprofundamento da autonomia na gestão orçamental de cada área setorial iniciada em 2026."
+                  "literal": "Reserva orçamental"
                 },
                 {
                   "linha": "der-saude-receitas-proprias-variacao-pct",
@@ -8516,15 +8470,15 @@
         },
         {
           "caminho": "seccoes[2].conteudo[2].paragrafo[14]",
-          "pt": " e com fundos europeus a cair de ",
-          "en": " and European funds falling from ",
+          "pt": "» entre as suas ações. O financiamento conta com receitas próprias a crescer ",
+          "en": "» among its actions. The financing counts on own revenue growing ",
           "ramo": null,
           "partes": [
             {
-              "pt": " e com fundos europeus a cair de ",
-              "en": " and European funds falling from ",
+              "pt": "» entre as suas ações. O financiamento conta com receitas próprias a crescer ",
+              "en": "» among its actions. The financing counts on own revenue growing ",
               "classe": "leitura",
-              "sobre": "Variações nas rubricas e fontes de financiamento; o relatório explica o crescimento das outras despesas correntes pela constituição de reservas orçamentais.",
+              "sobre": "Variações nas rubricas e fontes de financiamento; a explicação das reservas refere-se ao conjunto das administrações públicas; o programa Saúde inscreve uma ação de reserva orçamental.",
               "apoios": [
                 {
                   "linha": "der-saude-pessoal-variacao-abs",
@@ -8555,6 +8509,97 @@
                   "linha": "oe-2027-outras-despesas-correntes-reserva",
                   "campo": "excerpt",
                   "literal": "De relevar ainda o crescimento das outras despesas correntes, decorrente da constituição das reservas orçamentais a serem mobilizadas durante a execução orçamental, em linha com o aprofundamento da autonomia na gestão orçamental de cada área setorial iniciada em 2026."
+                },
+                {
+                  "linha": "oe-2027-saude-acao-reserva-orcamental",
+                  "campo": "excerpt",
+                  "literal": "Reserva orçamental"
+                },
+                {
+                  "linha": "der-saude-receitas-proprias-variacao-pct",
+                  "campo": "derivation",
+                  "literal": "((oe-2027-saude-fonte-receitas-proprias-2027) ÷ (oe-2027-saude-fonte-receitas-proprias-2026) − 1) × 100. (2 017,6 ÷ 1 289,5 − 1) × 100 = 56.46374563784412563008918190 ≈ 56,5"
+                },
+                {
+                  "linha": "oe-2027-saude-fonte-fundos-europeus-2026",
+                  "campo": "excerpt",
+                  "literal": "Despesas por Fonte de Financiamento consolidada   Orçamento 2026    Orçamento 2027\n Fundos Europeus                                            655,0              174,6\nSeleção: Orçamento 2026"
+                },
+                {
+                  "linha": "oe-2027-saude-fonte-fundos-europeus-2027",
+                  "campo": "excerpt",
+                  "literal": "Despesas por Fonte de Financiamento consolidada   Orçamento 2026    Orçamento 2027\n Fundos Europeus                                            655,0              174,6\nSeleção: Orçamento 2027"
+                },
+                {
+                  "linha": "oe-2027-saude-pessoal-2027",
+                  "campo": "excerpt",
+                  "literal": "Quadro 5.37. Saúde (PL15) — Conta do Pograma Legado\n(milhões de euros)\n2026                                2027\nVariação                       Estrutura 2027\nVariação                        Estrutura 2027\nClassificador Económico                                                                                                    (Sem PRR)                         (Sem PRR)\nEstimativa                          Orçamento       (%)                                 (%)\nEstimativa                           Orçamento                                            (%)                                (%)\n(Sem PRR)                           (Sem PRR)\n     Despesas com o pessoal                               7 783,1             7 780,9         8 184,3            8 184,3              5,2           5,2              45,8             45,8\nSeleção: 2027 Orçamento"
+                },
+                {
+                  "linha": "oe-2027-saude-bens-servicos-2027",
+                  "campo": "excerpt",
+                  "literal": "Quadro 5.37. Saúde (PL15) — Conta do Pograma Legado\n(milhões de euros)\n2026                                2027\nVariação                       Estrutura 2027\nVariação                        Estrutura 2027\nClassificador Económico                                                                                                    (Sem PRR)                         (Sem PRR)\nEstimativa                          Orçamento       (%)                                 (%)\nEstimativa                           Orçamento                                            (%)                                (%)\n(Sem PRR)                           (Sem PRR)\n     Aquisição de bens e serviços                         8 832,9             8 802,2         8 436,3            8 436,3          -4,5             -4,2              47,2             47,2\nSeleção: 2027 Orçamento"
+                },
+                {
+                  "linha": "oe-2027-saude-investimento-2027",
+                  "campo": "excerpt",
+                  "literal": "Quadro 5.37. Saúde (PL15) — Conta do Pograma Legado\n(milhões de euros)\n2026                                2027\nVariação                       Estrutura 2027\nVariação                        Estrutura 2027\nClassificador Económico                                                                                                    (Sem PRR)                         (Sem PRR)\nEstimativa                          Orçamento       (%)                                 (%)\nEstimativa                           Orçamento                                            (%)                                (%)\n(Sem PRR)                           (Sem PRR)\n     Investimento                                         1 022,5              555,2            678,3              678,3         -33,7             22,2               3,8              3,8\nSeleção: 2027 Orçamento"
+                },
+                {
+                  "linha": "oe-2027-saude-fonte-receitas-proprias-2027",
+                  "campo": "excerpt",
+                  "literal": "Despesas por Fonte de Financiamento consolidada   Orçamento 2026    Orçamento 2027\n Receitas Próprias                                        1 289,5             2 017,6\nSeleção: Orçamento 2027"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[2].paragrafo[15].sufixo",
+          "pt": " %",
+          "en": " %",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": " %",
+              "en": " %",
+              "classe": "leitura",
+              "sobre": "Variações nas rubricas e fontes de financiamento; a explicação das reservas refere-se ao conjunto das administrações públicas; o programa Saúde inscreve uma ação de reserva orçamental.",
+              "apoios": [
+                {
+                  "linha": "der-saude-pessoal-variacao-abs",
+                  "campo": "derivation",
+                  "literal": "(oe-2027-saude-pessoal-2027) − (oe-2027-saude-pessoal-2026). 8 184,3 − 7 783,1 = 401,2"
+                },
+                {
+                  "linha": "der-saude-bens-servicos-reducao-abs",
+                  "campo": "derivation",
+                  "literal": "(oe-2027-saude-bens-servicos-2026) − (oe-2027-saude-bens-servicos-2027). 8 832,9 − 8 436,3 = 396,6"
+                },
+                {
+                  "linha": "der-saude-investimento-reducao-abs",
+                  "campo": "derivation",
+                  "literal": "(oe-2027-saude-investimento-2026) − (oe-2027-saude-investimento-2027). 1 022,5 − 678,3 = 344,2"
+                },
+                {
+                  "linha": "oe-2027-saude-outras-correntes-2026",
+                  "campo": "excerpt",
+                  "literal": "Quadro 5.37. Saúde (PL15) — Conta do Pograma Legado\n(milhões de euros)\n2026                                2027\nVariação                       Estrutura 2027\nVariação                        Estrutura 2027\nClassificador Económico                                                                                                    (Sem PRR)                         (Sem PRR)\nEstimativa                          Orçamento       (%)                                 (%)\nEstimativa                           Orçamento                                            (%)                                (%)\n(Sem PRR)                           (Sem PRR)\n     Outras despesas correntes                               32,4                32,4           303,7              303,7          n.r.              n.r.              1,7              1,7\nSeleção: 2026 Estimativa"
+                },
+                {
+                  "linha": "oe-2027-saude-outras-correntes-2027",
+                  "campo": "excerpt",
+                  "literal": "Quadro 5.37. Saúde (PL15) — Conta do Pograma Legado\n(milhões de euros)\n2026                                2027\nVariação                       Estrutura 2027\nVariação                        Estrutura 2027\nClassificador Económico                                                                                                    (Sem PRR)                         (Sem PRR)\nEstimativa                          Orçamento       (%)                                 (%)\nEstimativa                           Orçamento                                            (%)                                (%)\n(Sem PRR)                           (Sem PRR)\n     Outras despesas correntes                               32,4                32,4           303,7              303,7          n.r.              n.r.              1,7              1,7\nSeleção: 2027 Orçamento"
+                },
+                {
+                  "linha": "oe-2027-outras-despesas-correntes-reserva",
+                  "campo": "excerpt",
+                  "literal": "De relevar ainda o crescimento das outras despesas correntes, decorrente da constituição das reservas orçamentais a serem mobilizadas durante a execução orçamental, em linha com o aprofundamento da autonomia na gestão orçamental de cada área setorial iniciada em 2026."
+                },
+                {
+                  "linha": "oe-2027-saude-acao-reserva-orcamental",
+                  "campo": "excerpt",
+                  "literal": "Reserva orçamental"
                 },
                 {
                   "linha": "der-saude-receitas-proprias-variacao-pct",
@@ -8597,15 +8642,15 @@
         },
         {
           "caminho": "seccoes[2].conteudo[2].paragrafo[16]",
-          "pt": " para ",
-          "en": " to ",
+          "pt": " e com fundos europeus a cair de ",
+          "en": " and on European funds falling from ",
           "ramo": null,
           "partes": [
             {
-              "pt": " para ",
-              "en": " to ",
+              "pt": " e com fundos europeus a cair de ",
+              "en": " and on European funds falling from ",
               "classe": "leitura",
-              "sobre": "Variações nas rubricas e fontes de financiamento; o relatório explica o crescimento das outras despesas correntes pela constituição de reservas orçamentais.",
+              "sobre": "Variações nas rubricas e fontes de financiamento; a explicação das reservas refere-se ao conjunto das administrações públicas; o programa Saúde inscreve uma ação de reserva orçamental.",
               "apoios": [
                 {
                   "linha": "der-saude-pessoal-variacao-abs",
@@ -8636,6 +8681,11 @@
                   "linha": "oe-2027-outras-despesas-correntes-reserva",
                   "campo": "excerpt",
                   "literal": "De relevar ainda o crescimento das outras despesas correntes, decorrente da constituição das reservas orçamentais a serem mobilizadas durante a execução orçamental, em linha com o aprofundamento da autonomia na gestão orçamental de cada área setorial iniciada em 2026."
+                },
+                {
+                  "linha": "oe-2027-saude-acao-reserva-orcamental",
+                  "campo": "excerpt",
+                  "literal": "Reserva orçamental"
                 },
                 {
                   "linha": "der-saude-receitas-proprias-variacao-pct",
@@ -8678,15 +8728,15 @@
         },
         {
           "caminho": "seccoes[2].conteudo[2].paragrafo[18]",
-          "pt": ".",
-          "en": ".",
+          "pt": " para ",
+          "en": " to ",
           "ramo": null,
           "partes": [
             {
-              "pt": ".",
-              "en": ".",
+              "pt": " para ",
+              "en": " to ",
               "classe": "leitura",
-              "sobre": "Variações nas rubricas e fontes de financiamento; o relatório explica o crescimento das outras despesas correntes pela constituição de reservas orçamentais.",
+              "sobre": "Variações nas rubricas e fontes de financiamento; a explicação das reservas refere-se ao conjunto das administrações públicas; o programa Saúde inscreve uma ação de reserva orçamental.",
               "apoios": [
                 {
                   "linha": "der-saude-pessoal-variacao-abs",
@@ -8717,6 +8767,97 @@
                   "linha": "oe-2027-outras-despesas-correntes-reserva",
                   "campo": "excerpt",
                   "literal": "De relevar ainda o crescimento das outras despesas correntes, decorrente da constituição das reservas orçamentais a serem mobilizadas durante a execução orçamental, em linha com o aprofundamento da autonomia na gestão orçamental de cada área setorial iniciada em 2026."
+                },
+                {
+                  "linha": "oe-2027-saude-acao-reserva-orcamental",
+                  "campo": "excerpt",
+                  "literal": "Reserva orçamental"
+                },
+                {
+                  "linha": "der-saude-receitas-proprias-variacao-pct",
+                  "campo": "derivation",
+                  "literal": "((oe-2027-saude-fonte-receitas-proprias-2027) ÷ (oe-2027-saude-fonte-receitas-proprias-2026) − 1) × 100. (2 017,6 ÷ 1 289,5 − 1) × 100 = 56.46374563784412563008918190 ≈ 56,5"
+                },
+                {
+                  "linha": "oe-2027-saude-fonte-fundos-europeus-2026",
+                  "campo": "excerpt",
+                  "literal": "Despesas por Fonte de Financiamento consolidada   Orçamento 2026    Orçamento 2027\n Fundos Europeus                                            655,0              174,6\nSeleção: Orçamento 2026"
+                },
+                {
+                  "linha": "oe-2027-saude-fonte-fundos-europeus-2027",
+                  "campo": "excerpt",
+                  "literal": "Despesas por Fonte de Financiamento consolidada   Orçamento 2026    Orçamento 2027\n Fundos Europeus                                            655,0              174,6\nSeleção: Orçamento 2027"
+                },
+                {
+                  "linha": "oe-2027-saude-pessoal-2027",
+                  "campo": "excerpt",
+                  "literal": "Quadro 5.37. Saúde (PL15) — Conta do Pograma Legado\n(milhões de euros)\n2026                                2027\nVariação                       Estrutura 2027\nVariação                        Estrutura 2027\nClassificador Económico                                                                                                    (Sem PRR)                         (Sem PRR)\nEstimativa                          Orçamento       (%)                                 (%)\nEstimativa                           Orçamento                                            (%)                                (%)\n(Sem PRR)                           (Sem PRR)\n     Despesas com o pessoal                               7 783,1             7 780,9         8 184,3            8 184,3              5,2           5,2              45,8             45,8\nSeleção: 2027 Orçamento"
+                },
+                {
+                  "linha": "oe-2027-saude-bens-servicos-2027",
+                  "campo": "excerpt",
+                  "literal": "Quadro 5.37. Saúde (PL15) — Conta do Pograma Legado\n(milhões de euros)\n2026                                2027\nVariação                       Estrutura 2027\nVariação                        Estrutura 2027\nClassificador Económico                                                                                                    (Sem PRR)                         (Sem PRR)\nEstimativa                          Orçamento       (%)                                 (%)\nEstimativa                           Orçamento                                            (%)                                (%)\n(Sem PRR)                           (Sem PRR)\n     Aquisição de bens e serviços                         8 832,9             8 802,2         8 436,3            8 436,3          -4,5             -4,2              47,2             47,2\nSeleção: 2027 Orçamento"
+                },
+                {
+                  "linha": "oe-2027-saude-investimento-2027",
+                  "campo": "excerpt",
+                  "literal": "Quadro 5.37. Saúde (PL15) — Conta do Pograma Legado\n(milhões de euros)\n2026                                2027\nVariação                       Estrutura 2027\nVariação                        Estrutura 2027\nClassificador Económico                                                                                                    (Sem PRR)                         (Sem PRR)\nEstimativa                          Orçamento       (%)                                 (%)\nEstimativa                           Orçamento                                            (%)                                (%)\n(Sem PRR)                           (Sem PRR)\n     Investimento                                         1 022,5              555,2            678,3              678,3         -33,7             22,2               3,8              3,8\nSeleção: 2027 Orçamento"
+                },
+                {
+                  "linha": "oe-2027-saude-fonte-receitas-proprias-2027",
+                  "campo": "excerpt",
+                  "literal": "Despesas por Fonte de Financiamento consolidada   Orçamento 2026    Orçamento 2027\n Receitas Próprias                                        1 289,5             2 017,6\nSeleção: Orçamento 2027"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[2].paragrafo[20]",
+          "pt": ".",
+          "en": ".",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": ".",
+              "en": ".",
+              "classe": "leitura",
+              "sobre": "Variações nas rubricas e fontes de financiamento; a explicação das reservas refere-se ao conjunto das administrações públicas; o programa Saúde inscreve uma ação de reserva orçamental.",
+              "apoios": [
+                {
+                  "linha": "der-saude-pessoal-variacao-abs",
+                  "campo": "derivation",
+                  "literal": "(oe-2027-saude-pessoal-2027) − (oe-2027-saude-pessoal-2026). 8 184,3 − 7 783,1 = 401,2"
+                },
+                {
+                  "linha": "der-saude-bens-servicos-reducao-abs",
+                  "campo": "derivation",
+                  "literal": "(oe-2027-saude-bens-servicos-2026) − (oe-2027-saude-bens-servicos-2027). 8 832,9 − 8 436,3 = 396,6"
+                },
+                {
+                  "linha": "der-saude-investimento-reducao-abs",
+                  "campo": "derivation",
+                  "literal": "(oe-2027-saude-investimento-2026) − (oe-2027-saude-investimento-2027). 1 022,5 − 678,3 = 344,2"
+                },
+                {
+                  "linha": "oe-2027-saude-outras-correntes-2026",
+                  "campo": "excerpt",
+                  "literal": "Quadro 5.37. Saúde (PL15) — Conta do Pograma Legado\n(milhões de euros)\n2026                                2027\nVariação                       Estrutura 2027\nVariação                        Estrutura 2027\nClassificador Económico                                                                                                    (Sem PRR)                         (Sem PRR)\nEstimativa                          Orçamento       (%)                                 (%)\nEstimativa                           Orçamento                                            (%)                                (%)\n(Sem PRR)                           (Sem PRR)\n     Outras despesas correntes                               32,4                32,4           303,7              303,7          n.r.              n.r.              1,7              1,7\nSeleção: 2026 Estimativa"
+                },
+                {
+                  "linha": "oe-2027-saude-outras-correntes-2027",
+                  "campo": "excerpt",
+                  "literal": "Quadro 5.37. Saúde (PL15) — Conta do Pograma Legado\n(milhões de euros)\n2026                                2027\nVariação                       Estrutura 2027\nVariação                        Estrutura 2027\nClassificador Económico                                                                                                    (Sem PRR)                         (Sem PRR)\nEstimativa                          Orçamento       (%)                                 (%)\nEstimativa                           Orçamento                                            (%)                                (%)\n(Sem PRR)                           (Sem PRR)\n     Outras despesas correntes                               32,4                32,4           303,7              303,7          n.r.              n.r.              1,7              1,7\nSeleção: 2027 Orçamento"
+                },
+                {
+                  "linha": "oe-2027-outras-despesas-correntes-reserva",
+                  "campo": "excerpt",
+                  "literal": "De relevar ainda o crescimento das outras despesas correntes, decorrente da constituição das reservas orçamentais a serem mobilizadas durante a execução orçamental, em linha com o aprofundamento da autonomia na gestão orçamental de cada área setorial iniciada em 2026."
+                },
+                {
+                  "linha": "oe-2027-saude-acao-reserva-orcamental",
+                  "campo": "excerpt",
+                  "literal": "Reserva orçamental"
                 },
                 {
                   "linha": "der-saude-receitas-proprias-variacao-pct",
@@ -13687,13 +13828,13 @@
         },
         {
           "caminho": "seccoes[4].conteudo[0].paragrafo[8]",
-          "pt": " olha para a execução mensal da Direção-Geral do Orçamento (DGO) e para a eventual necessidade de reforço, não apenas para a aprovação.",
-          "en": " watches the monthly execution of the Directorate-General for the Budget (DGO) and the possible need for reinforcement, not just the approval.",
+          "pt": " olha para a síntese mensal da execução orçamental da Entidade Orçamental e para a eventual necessidade de reforço, não apenas para a aprovação.",
+          "en": " watches the Entidade Orçamental's monthly budget execution summary and the possible need for reinforcement, not just the approval.",
           "ramo": null,
           "partes": [
             {
-              "pt": " olha para a execução mensal da Direção-Geral do Orçamento (DGO) e para a eventual necessidade de reforço, não apenas para a aprovação.",
-              "en": " watches the monthly execution of the Directorate-General for the Budget (DGO) and the possible need for reinforcement, not just the approval.",
+              "pt": " olha para a síntese mensal da execução orçamental da Entidade Orçamental e para a eventual necessidade de reforço, não apenas para a aprovação.",
+              "en": " watches the Entidade Orçamental's monthly budget execution summary and the possible need for reinforcement, not just the approval.",
               "classe": "leitura",
               "sobre": "Recomendação editorial de acompanhar a execução e o risco de reforço; não constitui previsão certa.",
               "apoios": [
@@ -13904,9 +14045,14 @@
                   "literal": "((oe-2027-saude-fonte-receitas-proprias-2027) ÷ (oe-2027-saude-fonte-receitas-proprias-2026) − 1) × 100. (2 017,6 ÷ 1 289,5 − 1) × 100 = 56.46374563784412563008918190 ≈ 56,5"
                 },
                 {
-                  "linha": "oe-2027-outras-despesas-correntes-reserva",
+                  "linha": "oe-2027-saude-outras-correntes-2026",
                   "campo": "excerpt",
-                  "literal": "De relevar ainda o crescimento das outras despesas correntes, decorrente da constituição das reservas orçamentais a serem mobilizadas durante a execução orçamental, em linha com o aprofundamento da autonomia na gestão orçamental de cada área setorial iniciada em 2026."
+                  "literal": "Quadro 5.37. Saúde (PL15) — Conta do Pograma Legado\n(milhões de euros)\n2026                                2027\nVariação                       Estrutura 2027\nVariação                        Estrutura 2027\nClassificador Económico                                                                                                    (Sem PRR)                         (Sem PRR)\nEstimativa                          Orçamento       (%)                                 (%)\nEstimativa                           Orçamento                                            (%)                                (%)\n(Sem PRR)                           (Sem PRR)\n     Outras despesas correntes                               32,4                32,4           303,7              303,7          n.r.              n.r.              1,7              1,7\nSeleção: 2026 Estimativa"
+                },
+                {
+                  "linha": "oe-2027-saude-outras-correntes-2027",
+                  "campo": "excerpt",
+                  "literal": "Quadro 5.37. Saúde (PL15) — Conta do Pograma Legado\n(milhões de euros)\n2026                                2027\nVariação                       Estrutura 2027\nVariação                        Estrutura 2027\nClassificador Económico                                                                                                    (Sem PRR)                         (Sem PRR)\nEstimativa                          Orçamento       (%)                                 (%)\nEstimativa                           Orçamento                                            (%)                                (%)\n(Sem PRR)                           (Sem PRR)\n     Outras despesas correntes                               32,4                32,4           303,7              303,7          n.r.              n.r.              1,7              1,7\nSeleção: 2027 Orçamento"
                 },
                 {
                   "linha": "utao-risco-execucao-sns-2027",
@@ -13919,13 +14065,13 @@
         },
         {
           "caminho": "seccoes[5].conteudo[0].paragrafo[0]",
-          "pt": "O ministro e a RTP escolheram cada um a linha que lhes convinha, e as duas são verdadeiras; a discussão sobre «sobe» ou «desce» esconde o que o quadro mostra: um orçamento que paga mais pessoal com menos compras e menos investimento, que aumenta as outras despesas correntes por via das reservas a mobilizar durante a execução, que conta com receitas próprias a crescer mais de metade sem que o relatório explique de onde vêm, e que, pelo que a execução de ",
-          "en": "The minister and RTP each chose the line that suited them, and both are true; the argument over «up» or «down» hides what the table shows: a budget that pays more staff with fewer purchases and less investment, that increases other current expenditure through reserves to be used during the year, that counts on own revenue growing by more than half without the report explaining where it comes from, and that, on the evidence of the ",
+          "pt": "O ministro e a RTP escolheram cada um a linha que lhes convinha, e as duas são verdadeiras; a discussão sobre «sobe» ou «desce» esconde o que o quadro mostra: um orçamento que paga mais pessoal com menos compras e menos investimento, que aumenta as outras despesas correntes, que conta com receitas próprias a crescer mais de metade sem que o relatório explique de onde vêm, e que, pelo que a execução de ",
+          "en": "The minister and RTP each chose the line that suited them, and both are true; the argument over «up» or «down» hides what the table shows: a budget that pays more staff with fewer purchases and less investment, that increases other current expenditure, that counts on own revenue growing by more than half without the report explaining where it comes from, and that, on the evidence of the ",
           "ramo": null,
           "partes": [
             {
-              "pt": "O ministro e a RTP escolheram cada um a linha que lhes convinha, e as duas são verdadeiras; a discussão sobre «sobe» ou «desce» esconde o que o quadro mostra: um orçamento que paga mais pessoal com menos compras e menos investimento, que aumenta as outras despesas correntes por via das reservas a mobilizar durante a execução, que conta com receitas próprias a crescer mais de metade sem que o relatório explique de onde vêm, e que, pelo que a execução de ",
-              "en": "The minister and RTP each chose the line that suited them, and both are true; the argument over «up» or «down» hides what the table shows: a budget that pays more staff with fewer purchases and less investment, that increases other current expenditure through reserves to be used during the year, that counts on own revenue growing by more than half without the report explaining where it comes from, and that, on the evidence of the ",
+              "pt": "O ministro e a RTP escolheram cada um a linha que lhes convinha, e as duas são verdadeiras; a discussão sobre «sobe» ou «desce» esconde o que o quadro mostra: um orçamento que paga mais pessoal com menos compras e menos investimento, que aumenta as outras despesas correntes, que conta com receitas próprias a crescer mais de metade sem que o relatório explique de onde vêm, e que, pelo que a execução de ",
+              "en": "The minister and RTP each chose the line that suited them, and both are true; the argument over «up» or «down» hides what the table shows: a budget that pays more staff with fewer purchases and less investment, that increases other current expenditure, that counts on own revenue growing by more than half without the report explaining where it comes from, and that, on the evidence of the ",
               "classe": "leitura",
               "sobre": "Opinião expressamente rotulada sobre a seleção dos perímetros, a composição, receitas e risco de execução.",
               "apoios": [
@@ -14035,9 +14181,14 @@
                   "literal": "((oe-2027-saude-fonte-receitas-proprias-2027) ÷ (oe-2027-saude-fonte-receitas-proprias-2026) − 1) × 100. (2 017,6 ÷ 1 289,5 − 1) × 100 = 56.46374563784412563008918190 ≈ 56,5"
                 },
                 {
-                  "linha": "oe-2027-outras-despesas-correntes-reserva",
+                  "linha": "oe-2027-saude-outras-correntes-2026",
                   "campo": "excerpt",
-                  "literal": "De relevar ainda o crescimento das outras despesas correntes, decorrente da constituição das reservas orçamentais a serem mobilizadas durante a execução orçamental, em linha com o aprofundamento da autonomia na gestão orçamental de cada área setorial iniciada em 2026."
+                  "literal": "Quadro 5.37. Saúde (PL15) — Conta do Pograma Legado\n(milhões de euros)\n2026                                2027\nVariação                       Estrutura 2027\nVariação                        Estrutura 2027\nClassificador Económico                                                                                                    (Sem PRR)                         (Sem PRR)\nEstimativa                          Orçamento       (%)                                 (%)\nEstimativa                           Orçamento                                            (%)                                (%)\n(Sem PRR)                           (Sem PRR)\n     Outras despesas correntes                               32,4                32,4           303,7              303,7          n.r.              n.r.              1,7              1,7\nSeleção: 2026 Estimativa"
+                },
+                {
+                  "linha": "oe-2027-saude-outras-correntes-2027",
+                  "campo": "excerpt",
+                  "literal": "Quadro 5.37. Saúde (PL15) — Conta do Pograma Legado\n(milhões de euros)\n2026                                2027\nVariação                       Estrutura 2027\nVariação                        Estrutura 2027\nClassificador Económico                                                                                                    (Sem PRR)                         (Sem PRR)\nEstimativa                          Orçamento       (%)                                 (%)\nEstimativa                           Orçamento                                            (%)                                (%)\n(Sem PRR)                           (Sem PRR)\n     Outras despesas correntes                               32,4                32,4           303,7              303,7          n.r.              n.r.              1,7              1,7\nSeleção: 2027 Orçamento"
                 },
                 {
                   "linha": "utao-risco-execucao-sns-2027",
@@ -14166,9 +14317,14 @@
                   "literal": "((oe-2027-saude-fonte-receitas-proprias-2027) ÷ (oe-2027-saude-fonte-receitas-proprias-2026) − 1) × 100. (2 017,6 ÷ 1 289,5 − 1) × 100 = 56.46374563784412563008918190 ≈ 56,5"
                 },
                 {
-                  "linha": "oe-2027-outras-despesas-correntes-reserva",
+                  "linha": "oe-2027-saude-outras-correntes-2026",
                   "campo": "excerpt",
-                  "literal": "De relevar ainda o crescimento das outras despesas correntes, decorrente da constituição das reservas orçamentais a serem mobilizadas durante a execução orçamental, em linha com o aprofundamento da autonomia na gestão orçamental de cada área setorial iniciada em 2026."
+                  "literal": "Quadro 5.37. Saúde (PL15) — Conta do Pograma Legado\n(milhões de euros)\n2026                                2027\nVariação                       Estrutura 2027\nVariação                        Estrutura 2027\nClassificador Económico                                                                                                    (Sem PRR)                         (Sem PRR)\nEstimativa                          Orçamento       (%)                                 (%)\nEstimativa                           Orçamento                                            (%)                                (%)\n(Sem PRR)                           (Sem PRR)\n     Outras despesas correntes                               32,4                32,4           303,7              303,7          n.r.              n.r.              1,7              1,7\nSeleção: 2026 Estimativa"
+                },
+                {
+                  "linha": "oe-2027-saude-outras-correntes-2027",
+                  "campo": "excerpt",
+                  "literal": "Quadro 5.37. Saúde (PL15) — Conta do Pograma Legado\n(milhões de euros)\n2026                                2027\nVariação                       Estrutura 2027\nVariação                        Estrutura 2027\nClassificador Económico                                                                                                    (Sem PRR)                         (Sem PRR)\nEstimativa                          Orçamento       (%)                                 (%)\nEstimativa                           Orçamento                                            (%)                                (%)\n(Sem PRR)                           (Sem PRR)\n     Outras despesas correntes                               32,4                32,4           303,7              303,7          n.r.              n.r.              1,7              1,7\nSeleção: 2027 Orçamento"
                 },
                 {
                   "linha": "utao-risco-execucao-sns-2027",
@@ -14297,9 +14453,14 @@
                   "literal": "((oe-2027-saude-fonte-receitas-proprias-2027) ÷ (oe-2027-saude-fonte-receitas-proprias-2026) − 1) × 100. (2 017,6 ÷ 1 289,5 − 1) × 100 = 56.46374563784412563008918190 ≈ 56,5"
                 },
                 {
-                  "linha": "oe-2027-outras-despesas-correntes-reserva",
+                  "linha": "oe-2027-saude-outras-correntes-2026",
                   "campo": "excerpt",
-                  "literal": "De relevar ainda o crescimento das outras despesas correntes, decorrente da constituição das reservas orçamentais a serem mobilizadas durante a execução orçamental, em linha com o aprofundamento da autonomia na gestão orçamental de cada área setorial iniciada em 2026."
+                  "literal": "Quadro 5.37. Saúde (PL15) — Conta do Pograma Legado\n(milhões de euros)\n2026                                2027\nVariação                       Estrutura 2027\nVariação                        Estrutura 2027\nClassificador Económico                                                                                                    (Sem PRR)                         (Sem PRR)\nEstimativa                          Orçamento       (%)                                 (%)\nEstimativa                           Orçamento                                            (%)                                (%)\n(Sem PRR)                           (Sem PRR)\n     Outras despesas correntes                               32,4                32,4           303,7              303,7          n.r.              n.r.              1,7              1,7\nSeleção: 2026 Estimativa"
+                },
+                {
+                  "linha": "oe-2027-saude-outras-correntes-2027",
+                  "campo": "excerpt",
+                  "literal": "Quadro 5.37. Saúde (PL15) — Conta do Pograma Legado\n(milhões de euros)\n2026                                2027\nVariação                       Estrutura 2027\nVariação                        Estrutura 2027\nClassificador Económico                                                                                                    (Sem PRR)                         (Sem PRR)\nEstimativa                          Orçamento       (%)                                 (%)\nEstimativa                           Orçamento                                            (%)                                (%)\n(Sem PRR)                           (Sem PRR)\n     Outras despesas correntes                               32,4                32,4           303,7              303,7          n.r.              n.r.              1,7              1,7\nSeleção: 2027 Orçamento"
                 },
                 {
                   "linha": "utao-risco-execucao-sns-2027",
@@ -18615,7 +18776,7 @@
               "pt": "O relatório prevê para as parcerias rodoviárias ",
               "en": "The report forecasts ",
               "classe": "leitura",
-              "sobre": "Comparação temporal, subida líquida face a 2025 apesar da descida dos encargos brutos, e maior descida das receitas de portagem previstas.",
+              "sobre": "Comparação temporal, subida líquida face a 2025 apesar da descida dos encargos brutos, e maior descida das receitas previstas.",
               "apoios": [
                 {
                   "linha": "oe-2027-ppp-rodoviario-encargos-liquidos-2027",
@@ -18655,7 +18816,7 @@
                 {
                   "linha": "ppp-oe2026-brutos-2025",
                   "campo": "excerpt",
-                  "literal": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\n   enca rgos brutos         1 234     1 212    1 047     951      830      699      631      454      333      321      262      183      157       178\nSeleção: 2025 estimativa"
+                  "literal": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\nencargos brutos 1 234 1 212 1 047 951 830 699 631 454 333 321 262 183 157 178\nSeleção: 2025 estimativa"
                 },
                 {
                   "linha": "ppp-oe2027-brutos-2027",
@@ -18665,7 +18826,7 @@
                 {
                   "linha": "ppp-oe2026-receitas-2025",
                   "campo": "excerpt",
-                  "literal": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\n    recei ta s                392       263      274     271      889      288      263      228      192      193      195      183      148       160\nSeleção: 2025 estimativa"
+                  "literal": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\nreceitas 392 263 274 271 889 288 263 228 192 193 195 183 148 160\nSeleção: 2025 estimativa"
                 },
                 {
                   "linha": "ppp-oe2027-receitas-2027",
@@ -18696,7 +18857,7 @@
               "pt": " líquidos em ",
               "en": " net for the road partnerships in ",
               "classe": "leitura",
-              "sobre": "Comparação temporal, subida líquida face a 2025 apesar da descida dos encargos brutos, e maior descida das receitas de portagem previstas.",
+              "sobre": "Comparação temporal, subida líquida face a 2025 apesar da descida dos encargos brutos, e maior descida das receitas previstas.",
               "apoios": [
                 {
                   "linha": "oe-2027-ppp-rodoviario-encargos-liquidos-2027",
@@ -18736,7 +18897,7 @@
                 {
                   "linha": "ppp-oe2026-brutos-2025",
                   "campo": "excerpt",
-                  "literal": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\n   enca rgos brutos         1 234     1 212    1 047     951      830      699      631      454      333      321      262      183      157       178\nSeleção: 2025 estimativa"
+                  "literal": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\nencargos brutos 1 234 1 212 1 047 951 830 699 631 454 333 321 262 183 157 178\nSeleção: 2025 estimativa"
                 },
                 {
                   "linha": "ppp-oe2027-brutos-2027",
@@ -18746,7 +18907,7 @@
                 {
                   "linha": "ppp-oe2026-receitas-2025",
                   "campo": "excerpt",
-                  "literal": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\n    recei ta s                392       263      274     271      889      288      263      228      192      193      195      183      148       160\nSeleção: 2025 estimativa"
+                  "literal": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\nreceitas 392 263 274 271 889 288 263 228 192 193 195 183 148 160\nSeleção: 2025 estimativa"
                 },
                 {
                   "linha": "ppp-oe2027-receitas-2027",
@@ -18777,7 +18938,7 @@
               "pt": " contra ",
               "en": " against ",
               "classe": "leitura",
-              "sobre": "Comparação temporal, subida líquida face a 2025 apesar da descida dos encargos brutos, e maior descida das receitas de portagem previstas.",
+              "sobre": "Comparação temporal, subida líquida face a 2025 apesar da descida dos encargos brutos, e maior descida das receitas previstas.",
               "apoios": [
                 {
                   "linha": "oe-2027-ppp-rodoviario-encargos-liquidos-2027",
@@ -18817,7 +18978,7 @@
                 {
                   "linha": "ppp-oe2026-brutos-2025",
                   "campo": "excerpt",
-                  "literal": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\n   enca rgos brutos         1 234     1 212    1 047     951      830      699      631      454      333      321      262      183      157       178\nSeleção: 2025 estimativa"
+                  "literal": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\nencargos brutos 1 234 1 212 1 047 951 830 699 631 454 333 321 262 183 157 178\nSeleção: 2025 estimativa"
                 },
                 {
                   "linha": "ppp-oe2027-brutos-2027",
@@ -18827,7 +18988,7 @@
                 {
                   "linha": "ppp-oe2026-receitas-2025",
                   "campo": "excerpt",
-                  "literal": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\n    recei ta s                392       263      274     271      889      288      263      228      192      193      195      183      148       160\nSeleção: 2025 estimativa"
+                  "literal": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\nreceitas 392 263 274 271 889 288 263 228 192 193 195 183 148 160\nSeleção: 2025 estimativa"
                 },
                 {
                   "linha": "ppp-oe2027-receitas-2027",
@@ -18858,7 +19019,7 @@
               "pt": " executados em ",
               "en": " executed in ",
               "classe": "leitura",
-              "sobre": "Comparação temporal, subida líquida face a 2025 apesar da descida dos encargos brutos, e maior descida das receitas de portagem previstas.",
+              "sobre": "Comparação temporal, subida líquida face a 2025 apesar da descida dos encargos brutos, e maior descida das receitas previstas.",
               "apoios": [
                 {
                   "linha": "oe-2027-ppp-rodoviario-encargos-liquidos-2027",
@@ -18898,7 +19059,7 @@
                 {
                   "linha": "ppp-oe2026-brutos-2025",
                   "campo": "excerpt",
-                  "literal": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\n   enca rgos brutos         1 234     1 212    1 047     951      830      699      631      454      333      321      262      183      157       178\nSeleção: 2025 estimativa"
+                  "literal": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\nencargos brutos 1 234 1 212 1 047 951 830 699 631 454 333 321 262 183 157 178\nSeleção: 2025 estimativa"
                 },
                 {
                   "linha": "ppp-oe2027-brutos-2027",
@@ -18908,7 +19069,7 @@
                 {
                   "linha": "ppp-oe2026-receitas-2025",
                   "campo": "excerpt",
-                  "literal": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\n    recei ta s                392       263      274     271      889      288      263      228      192      193      195      183      148       160\nSeleção: 2025 estimativa"
+                  "literal": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\nreceitas 392 263 274 271 889 288 263 228 192 193 195 183 148 160\nSeleção: 2025 estimativa"
                 },
                 {
                   "linha": "ppp-oe2027-receitas-2027",
@@ -18939,7 +19100,7 @@
               "pt": ", ",
               "en": ", ",
               "classe": "leitura",
-              "sobre": "Comparação temporal, subida líquida face a 2025 apesar da descida dos encargos brutos, e maior descida das receitas de portagem previstas.",
+              "sobre": "Comparação temporal, subida líquida face a 2025 apesar da descida dos encargos brutos, e maior descida das receitas previstas.",
               "apoios": [
                 {
                   "linha": "oe-2027-ppp-rodoviario-encargos-liquidos-2027",
@@ -18979,7 +19140,7 @@
                 {
                   "linha": "ppp-oe2026-brutos-2025",
                   "campo": "excerpt",
-                  "literal": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\n   enca rgos brutos         1 234     1 212    1 047     951      830      699      631      454      333      321      262      183      157       178\nSeleção: 2025 estimativa"
+                  "literal": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\nencargos brutos 1 234 1 212 1 047 951 830 699 631 454 333 321 262 183 157 178\nSeleção: 2025 estimativa"
                 },
                 {
                   "linha": "ppp-oe2027-brutos-2027",
@@ -18989,7 +19150,7 @@
                 {
                   "linha": "ppp-oe2026-receitas-2025",
                   "campo": "excerpt",
-                  "literal": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\n    recei ta s                392       263      274     271      889      288      263      228      192      193      195      183      148       160\nSeleção: 2025 estimativa"
+                  "literal": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\nreceitas 392 263 274 271 889 288 263 228 192 193 195 183 148 160\nSeleção: 2025 estimativa"
                 },
                 {
                   "linha": "ppp-oe2027-receitas-2027",
@@ -19020,7 +19181,7 @@
               "pt": " %",
               "en": " %",
               "classe": "leitura",
-              "sobre": "Comparação temporal, subida líquida face a 2025 apesar da descida dos encargos brutos, e maior descida das receitas de portagem previstas.",
+              "sobre": "Comparação temporal, subida líquida face a 2025 apesar da descida dos encargos brutos, e maior descida das receitas previstas.",
               "apoios": [
                 {
                   "linha": "oe-2027-ppp-rodoviario-encargos-liquidos-2027",
@@ -19060,7 +19221,7 @@
                 {
                   "linha": "ppp-oe2026-brutos-2025",
                   "campo": "excerpt",
-                  "literal": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\n   enca rgos brutos         1 234     1 212    1 047     951      830      699      631      454      333      321      262      183      157       178\nSeleção: 2025 estimativa"
+                  "literal": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\nencargos brutos 1 234 1 212 1 047 951 830 699 631 454 333 321 262 183 157 178\nSeleção: 2025 estimativa"
                 },
                 {
                   "linha": "ppp-oe2027-brutos-2027",
@@ -19070,7 +19231,7 @@
                 {
                   "linha": "ppp-oe2026-receitas-2025",
                   "campo": "excerpt",
-                  "literal": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\n    recei ta s                392       263      274     271      889      288      263      228      192      193      195      183      148       160\nSeleção: 2025 estimativa"
+                  "literal": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\nreceitas 392 263 274 271 889 288 263 228 192 193 195 183 148 160\nSeleção: 2025 estimativa"
                 },
                 {
                   "linha": "ppp-oe2027-receitas-2027",
@@ -19101,7 +19262,7 @@
               "pt": "; mas mais do que os ",
               "en": "; but more than the ",
               "classe": "leitura",
-              "sobre": "Comparação temporal, subida líquida face a 2025 apesar da descida dos encargos brutos, e maior descida das receitas de portagem previstas.",
+              "sobre": "Comparação temporal, subida líquida face a 2025 apesar da descida dos encargos brutos, e maior descida das receitas previstas.",
               "apoios": [
                 {
                   "linha": "oe-2027-ppp-rodoviario-encargos-liquidos-2027",
@@ -19141,7 +19302,7 @@
                 {
                   "linha": "ppp-oe2026-brutos-2025",
                   "campo": "excerpt",
-                  "literal": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\n   enca rgos brutos         1 234     1 212    1 047     951      830      699      631      454      333      321      262      183      157       178\nSeleção: 2025 estimativa"
+                  "literal": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\nencargos brutos 1 234 1 212 1 047 951 830 699 631 454 333 321 262 183 157 178\nSeleção: 2025 estimativa"
                 },
                 {
                   "linha": "ppp-oe2027-brutos-2027",
@@ -19151,7 +19312,7 @@
                 {
                   "linha": "ppp-oe2026-receitas-2025",
                   "campo": "excerpt",
-                  "literal": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\n    recei ta s                392       263      274     271      889      288      263      228      192      193      195      183      148       160\nSeleção: 2025 estimativa"
+                  "literal": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\nreceitas 392 263 274 271 889 288 263 228 192 193 195 183 148 160\nSeleção: 2025 estimativa"
                 },
                 {
                   "linha": "ppp-oe2027-receitas-2027",
@@ -19182,7 +19343,7 @@
               "pt": " estimados para ",
               "en": " estimated for ",
               "classe": "leitura",
-              "sobre": "Comparação temporal, subida líquida face a 2025 apesar da descida dos encargos brutos, e maior descida das receitas de portagem previstas.",
+              "sobre": "Comparação temporal, subida líquida face a 2025 apesar da descida dos encargos brutos, e maior descida das receitas previstas.",
               "apoios": [
                 {
                   "linha": "oe-2027-ppp-rodoviario-encargos-liquidos-2027",
@@ -19222,7 +19383,7 @@
                 {
                   "linha": "ppp-oe2026-brutos-2025",
                   "campo": "excerpt",
-                  "literal": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\n   enca rgos brutos         1 234     1 212    1 047     951      830      699      631      454      333      321      262      183      157       178\nSeleção: 2025 estimativa"
+                  "literal": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\nencargos brutos 1 234 1 212 1 047 951 830 699 631 454 333 321 262 183 157 178\nSeleção: 2025 estimativa"
                 },
                 {
                   "linha": "ppp-oe2027-brutos-2027",
@@ -19232,7 +19393,7 @@
                 {
                   "linha": "ppp-oe2026-receitas-2025",
                   "campo": "excerpt",
-                  "literal": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\n    recei ta s                392       263      274     271      889      288      263      228      192      193      195      183      148       160\nSeleção: 2025 estimativa"
+                  "literal": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\nreceitas 392 263 274 271 889 288 263 228 192 193 195 183 148 160\nSeleção: 2025 estimativa"
                 },
                 {
                   "linha": "ppp-oe2027-receitas-2027",
@@ -19263,7 +19424,7 @@
               "pt": ": os encargos brutos descem de ",
               "en": ": gross charges fall from ",
               "classe": "leitura",
-              "sobre": "Comparação temporal, subida líquida face a 2025 apesar da descida dos encargos brutos, e maior descida das receitas de portagem previstas.",
+              "sobre": "Comparação temporal, subida líquida face a 2025 apesar da descida dos encargos brutos, e maior descida das receitas previstas.",
               "apoios": [
                 {
                   "linha": "oe-2027-ppp-rodoviario-encargos-liquidos-2027",
@@ -19303,7 +19464,7 @@
                 {
                   "linha": "ppp-oe2026-brutos-2025",
                   "campo": "excerpt",
-                  "literal": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\n   enca rgos brutos         1 234     1 212    1 047     951      830      699      631      454      333      321      262      183      157       178\nSeleção: 2025 estimativa"
+                  "literal": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\nencargos brutos 1 234 1 212 1 047 951 830 699 631 454 333 321 262 183 157 178\nSeleção: 2025 estimativa"
                 },
                 {
                   "linha": "ppp-oe2027-brutos-2027",
@@ -19313,7 +19474,7 @@
                 {
                   "linha": "ppp-oe2026-receitas-2025",
                   "campo": "excerpt",
-                  "literal": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\n    recei ta s                392       263      274     271      889      288      263      228      192      193      195      183      148       160\nSeleção: 2025 estimativa"
+                  "literal": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\nreceitas 392 263 274 271 889 288 263 228 192 193 195 183 148 160\nSeleção: 2025 estimativa"
                 },
                 {
                   "linha": "ppp-oe2027-receitas-2027",
@@ -19344,7 +19505,7 @@
               "pt": " para ",
               "en": " to ",
               "classe": "leitura",
-              "sobre": "Comparação temporal, subida líquida face a 2025 apesar da descida dos encargos brutos, e maior descida das receitas de portagem previstas.",
+              "sobre": "Comparação temporal, subida líquida face a 2025 apesar da descida dos encargos brutos, e maior descida das receitas previstas.",
               "apoios": [
                 {
                   "linha": "oe-2027-ppp-rodoviario-encargos-liquidos-2027",
@@ -19384,7 +19545,7 @@
                 {
                   "linha": "ppp-oe2026-brutos-2025",
                   "campo": "excerpt",
-                  "literal": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\n   enca rgos brutos         1 234     1 212    1 047     951      830      699      631      454      333      321      262      183      157       178\nSeleção: 2025 estimativa"
+                  "literal": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\nencargos brutos 1 234 1 212 1 047 951 830 699 631 454 333 321 262 183 157 178\nSeleção: 2025 estimativa"
                 },
                 {
                   "linha": "ppp-oe2027-brutos-2027",
@@ -19394,7 +19555,7 @@
                 {
                   "linha": "ppp-oe2026-receitas-2025",
                   "campo": "excerpt",
-                  "literal": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\n    recei ta s                392       263      274     271      889      288      263      228      192      193      195      183      148       160\nSeleção: 2025 estimativa"
+                  "literal": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\nreceitas 392 263 274 271 889 288 263 228 192 193 195 183 148 160\nSeleção: 2025 estimativa"
                 },
                 {
                   "linha": "ppp-oe2027-receitas-2027",
@@ -19417,15 +19578,15 @@
         },
         {
           "caminho": "seccoes[2].conteudo[2].paragrafo[18]",
-          "pt": ", e as receitas de portagem previstas descem mais, de ",
-          "en": ", and the forecast toll revenue falls further, from ",
+          "pt": ", e as receitas previstas descem mais, de ",
+          "en": ", and the forecast revenue falls further, from ",
           "ramo": null,
           "partes": [
             {
-              "pt": ", e as receitas de portagem previstas descem mais, de ",
-              "en": ", and the forecast toll revenue falls further, from ",
+              "pt": ", e as receitas previstas descem mais, de ",
+              "en": ", and the forecast revenue falls further, from ",
               "classe": "leitura",
-              "sobre": "Comparação temporal, subida líquida face a 2025 apesar da descida dos encargos brutos, e maior descida das receitas de portagem previstas.",
+              "sobre": "Comparação temporal, subida líquida face a 2025 apesar da descida dos encargos brutos, e maior descida das receitas previstas.",
               "apoios": [
                 {
                   "linha": "oe-2027-ppp-rodoviario-encargos-liquidos-2027",
@@ -19465,7 +19626,7 @@
                 {
                   "linha": "ppp-oe2026-brutos-2025",
                   "campo": "excerpt",
-                  "literal": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\n   enca rgos brutos         1 234     1 212    1 047     951      830      699      631      454      333      321      262      183      157       178\nSeleção: 2025 estimativa"
+                  "literal": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\nencargos brutos 1 234 1 212 1 047 951 830 699 631 454 333 321 262 183 157 178\nSeleção: 2025 estimativa"
                 },
                 {
                   "linha": "ppp-oe2027-brutos-2027",
@@ -19475,7 +19636,7 @@
                 {
                   "linha": "ppp-oe2026-receitas-2025",
                   "campo": "excerpt",
-                  "literal": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\n    recei ta s                392       263      274     271      889      288      263      228      192      193      195      183      148       160\nSeleção: 2025 estimativa"
+                  "literal": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\nreceitas 392 263 274 271 889 288 263 228 192 193 195 183 148 160\nSeleção: 2025 estimativa"
                 },
                 {
                   "linha": "ppp-oe2027-receitas-2027",
@@ -19506,7 +19667,7 @@
               "pt": " para ",
               "en": " to ",
               "classe": "leitura",
-              "sobre": "Comparação temporal, subida líquida face a 2025 apesar da descida dos encargos brutos, e maior descida das receitas de portagem previstas.",
+              "sobre": "Comparação temporal, subida líquida face a 2025 apesar da descida dos encargos brutos, e maior descida das receitas previstas.",
               "apoios": [
                 {
                   "linha": "oe-2027-ppp-rodoviario-encargos-liquidos-2027",
@@ -19546,7 +19707,7 @@
                 {
                   "linha": "ppp-oe2026-brutos-2025",
                   "campo": "excerpt",
-                  "literal": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\n   enca rgos brutos         1 234     1 212    1 047     951      830      699      631      454      333      321      262      183      157       178\nSeleção: 2025 estimativa"
+                  "literal": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\nencargos brutos 1 234 1 212 1 047 951 830 699 631 454 333 321 262 183 157 178\nSeleção: 2025 estimativa"
                 },
                 {
                   "linha": "ppp-oe2027-brutos-2027",
@@ -19556,7 +19717,7 @@
                 {
                   "linha": "ppp-oe2026-receitas-2025",
                   "campo": "excerpt",
-                  "literal": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\n    recei ta s                392       263      274     271      889      288      263      228      192      193      195      183      148       160\nSeleção: 2025 estimativa"
+                  "literal": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\nreceitas 392 263 274 271 889 288 263 228 192 193 195 183 148 160\nSeleção: 2025 estimativa"
                 },
                 {
                   "linha": "ppp-oe2027-receitas-2027",
@@ -19587,7 +19748,7 @@
               "pt": ". A projeção tem uma tendência de redução, com oscilações, até ",
               "en": ". The projection has a downward trend, with fluctuations, to ",
               "classe": "leitura",
-              "sobre": "Comparação temporal, subida líquida face a 2025 apesar da descida dos encargos brutos, e maior descida das receitas de portagem previstas.",
+              "sobre": "Comparação temporal, subida líquida face a 2025 apesar da descida dos encargos brutos, e maior descida das receitas previstas.",
               "apoios": [
                 {
                   "linha": "oe-2027-ppp-rodoviario-encargos-liquidos-2027",
@@ -19627,7 +19788,7 @@
                 {
                   "linha": "ppp-oe2026-brutos-2025",
                   "campo": "excerpt",
-                  "literal": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\n   enca rgos brutos         1 234     1 212    1 047     951      830      699      631      454      333      321      262      183      157       178\nSeleção: 2025 estimativa"
+                  "literal": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\nencargos brutos 1 234 1 212 1 047 951 830 699 631 454 333 321 262 183 157 178\nSeleção: 2025 estimativa"
                 },
                 {
                   "linha": "ppp-oe2027-brutos-2027",
@@ -19637,7 +19798,7 @@
                 {
                   "linha": "ppp-oe2026-receitas-2025",
                   "campo": "excerpt",
-                  "literal": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\n    recei ta s                392       263      274     271      889      288      263      228      192      193      195      183      148       160\nSeleção: 2025 estimativa"
+                  "literal": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\nreceitas 392 263 274 271 889 288 263 228 192 193 195 183 148 160\nSeleção: 2025 estimativa"
                 },
                 {
                   "linha": "ppp-oe2027-receitas-2027",
@@ -19668,7 +19829,7 @@
               "pt": " em ",
               "en": " in ",
               "classe": "leitura",
-              "sobre": "Comparação temporal, subida líquida face a 2025 apesar da descida dos encargos brutos, e maior descida das receitas de portagem previstas.",
+              "sobre": "Comparação temporal, subida líquida face a 2025 apesar da descida dos encargos brutos, e maior descida das receitas previstas.",
               "apoios": [
                 {
                   "linha": "oe-2027-ppp-rodoviario-encargos-liquidos-2027",
@@ -19708,7 +19869,7 @@
                 {
                   "linha": "ppp-oe2026-brutos-2025",
                   "campo": "excerpt",
-                  "literal": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\n   enca rgos brutos         1 234     1 212    1 047     951      830      699      631      454      333      321      262      183      157       178\nSeleção: 2025 estimativa"
+                  "literal": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\nencargos brutos 1 234 1 212 1 047 951 830 699 631 454 333 321 262 183 157 178\nSeleção: 2025 estimativa"
                 },
                 {
                   "linha": "ppp-oe2027-brutos-2027",
@@ -19718,7 +19879,7 @@
                 {
                   "linha": "ppp-oe2026-receitas-2025",
                   "campo": "excerpt",
-                  "literal": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\n    recei ta s                392       263      274     271      889      288      263      228      192      193      195      183      148       160\nSeleção: 2025 estimativa"
+                  "literal": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\nreceitas 392 263 274 271 889 288 263 228 192 193 195 183 148 160\nSeleção: 2025 estimativa"
                 },
                 {
                   "linha": "ppp-oe2027-receitas-2027",
@@ -19749,7 +19910,7 @@
               "pt": ".",
               "en": ".",
               "classe": "leitura",
-              "sobre": "Comparação temporal, subida líquida face a 2025 apesar da descida dos encargos brutos, e maior descida das receitas de portagem previstas.",
+              "sobre": "Comparação temporal, subida líquida face a 2025 apesar da descida dos encargos brutos, e maior descida das receitas previstas.",
               "apoios": [
                 {
                   "linha": "oe-2027-ppp-rodoviario-encargos-liquidos-2027",
@@ -19789,7 +19950,7 @@
                 {
                   "linha": "ppp-oe2026-brutos-2025",
                   "campo": "excerpt",
-                  "literal": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\n   enca rgos brutos         1 234     1 212    1 047     951      830      699      631      454      333      321      262      183      157       178\nSeleção: 2025 estimativa"
+                  "literal": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\nencargos brutos 1 234 1 212 1 047 951 830 699 631 454 333 321 262 183 157 178\nSeleção: 2025 estimativa"
                 },
                 {
                   "linha": "ppp-oe2027-brutos-2027",
@@ -19799,7 +19960,7 @@
                 {
                   "linha": "ppp-oe2026-receitas-2025",
                   "campo": "excerpt",
-                  "literal": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\n    recei ta s                392       263      274     271      889      288      263      228      192      193      195      183      148       160\nSeleção: 2025 estimativa"
+                  "literal": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\nreceitas 392 263 274 271 889 288 263 228 192 193 195 183 148 160\nSeleção: 2025 estimativa"
                 },
                 {
                   "linha": "ppp-oe2027-receitas-2027",

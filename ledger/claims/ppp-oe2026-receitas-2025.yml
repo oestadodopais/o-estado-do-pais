@@ -11,15 +11,15 @@ unit: "milhões de euros"
 
 # O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
-name: "recei ta s"
-name_source: "Quadro 4.25. Previsão dos encargos plurianuais com as parcerias público-privadas; recei ta s; coluna 1: 2025 estimativa; p. 119 PDF (103 impressa); rótulo da linha"
+name: "receitas"
+name_source: "Quadro 4.25. Previsão dos encargos plurianuais com as parcerias público-privadas; receitas; coluna 1: 2025 estimativa; p. 119 PDF (103 impressa); rótulo da linha"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Ministério das Finanças"
 document:
   title: "Orçamento do Estado 2026 · Relatório"
   edition: "2026"
-  locator: "Quadro 4.25. Previsão dos encargos plurianuais com as parcerias público-privadas; recei ta s; coluna 1: 2025 estimativa; p. 119 PDF (103 impressa)"
+  locator: "Quadro 4.25. Previsão dos encargos plurianuais com as parcerias público-privadas; receitas; coluna 1: 2025 estimativa; p. 119 PDF (103 impressa)"
   source_sha256: "a863f683d0145e3129e56278cbf450e95a405cb912a98e0383e0f83d6fcbc031"
   page: 119
   kind: "ficheiro"
@@ -28,7 +28,7 @@ access_date: "2026-10-19"
 reference_date: "2025"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\n    recei ta s                392       263      274     271      889      288      263      228      192      193      195      183      148       160\nSeleção: 2025 estimativa"
+excerpt: "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\nreceitas 392 263 274 271 889 288 263 228 192 193 195 183 148 160\nSeleção: 2025 estimativa"
 
 # Ressalva publicada da casa, conferida no motor, nas duas línguas.
 ressalva: "Estimativa, não execução apurada."

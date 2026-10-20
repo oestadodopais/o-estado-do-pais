@@ -215,5 +215,33 @@
     "antes": "A conferência independente derivava o lugar apenas do estudo, do identificador ou da geografia de uma consulta. As duas citações da UTAO não têm esses caminhos.",
     "depois": "O lugar Portugal é também derivado do parecer orçamental da UTAO, pela origem oficial do Parlamento e pela correspondência da linha com a prova documental selada.",
     "razao": "A declaração de lugar continua a ser comparada com uma via independente. O documento, o corpo, o endereço, a atribuição, o valor e o excerto têm de coincidir; a nova via entra na deteção de conflitos com as existentes. As correções textuais permanecem no registo público e o seu recibo dá acesso ao item."
+  },
+  {
+    "id": "V2D-38",
+    "tema": "Âmbito da explicação das reservas",
+    "antes": "A explicação geral era aplicada às outras despesas correntes da Saúde, também na opinião.",
+    "depois": "A comparação delimita a explicação ao conjunto das administrações públicas e cita separadamente a Reserva orçamental da Ação 4.3 do quadro 5.36. O recibo explicita o âmbito; a opinião mantém o aumento observado sem atribuir a sua causa às reservas.",
+    "razao": "O relatório não demonstra que a reserva da Saúde explique a passagem de 32,4 para 303,7. A página 296 confirma a ação, não essa relação causal."
+  },
+  {
+    "id": "V2D-39",
+    "tema": "Receitas das parcerias",
+    "antes": "A comparação e as famílias dos recibos chamavam receitas de portagem à linha receitas.",
+    "depois": "A comparação e os recibos dizem receitas nas duas edições. O parágrafo sobre a revisão da previsão conserva receitas de portagem.",
+    "razao": "O quadro 4.25 tem uma rubrica mais ampla. A página 125 do relatório de 2027 atribui expressamente o decréscimo da projeção de receita às receitas de portagem."
+  },
+  {
+    "id": "V2D-40",
+    "tema": "Palavras inteiras nos nomes das linhas",
+    "antes": "Dois rótulos de 2025 conservavam espaços introduzidos pela extração com layout.",
+    "depois": "Os nomes, localizadores e excertos são regenerados com encargos brutos e receitas. A linha inteira e o cabeçalho são confirmados pela extração raw do mesmo corpo; a seleção da coluna mantém a verificação do valor.",
+    "razao": "A leitura visual e a extração raw confirmam as palavras inteiras e os valores 1 234 e 392 na coluna 2025. As plantas trocam a coluna e alteram a confirmação raw para provar a recusa."
+  },
+  {
+    "id": "V2D-41",
+    "tema": "Entidade que publica a execução mensal",
+    "antes": "A recomendação dizia Direção-Geral do Orçamento (DGO).",
+    "depois": "A recomendação identifica a síntese mensal da execução orçamental da Entidade Orçamental nas duas edições. Os identificadores dgo-* ficam.",
+    "razao": "As cinco linhas já identificam a Entidade Orçamental, têm nomes de rubrica sem DGO e citam o corpo alojado de eo.gov.pt."
   }
 ]

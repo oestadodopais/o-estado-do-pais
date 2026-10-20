@@ -18604,18 +18604,48 @@
       "origens": [],
       "folhas": [
         {
-          "pt": "É a explicação do relatório para o crescimento das outras despesas correntes, decorrente da constituição de reservas orçamentais a mobilizar durante a execução.",
-          "en": "It is the report’s explanation of growth in other current expenditure, arising from the creation of budget reserves to be used during execution.",
+          "pt": "É a explicação do relatório para o crescimento das outras despesas correntes do conjunto das administrações públicas, decorrente da constituição de reservas orçamentais a mobilizar durante a execução.",
+          "en": "It is the report’s explanation of growth in other current expenditure for general government as a whole, arising from the creation of budget reserves to be used during execution.",
           "partes": [
             {
-              "pt": "É a explicação do relatório para o crescimento das outras despesas correntes, decorrente da constituição de reservas orçamentais a mobilizar durante a execução.",
-              "en": "It is the report’s explanation of growth in other current expenditure, arising from the creation of budget reserves to be used during execution.",
+              "pt": "É a explicação do relatório para o crescimento das outras despesas correntes do conjunto das administrações públicas, decorrente da constituição de reservas orçamentais a mobilizar durante a execução.",
+              "en": "It is the report’s explanation of growth in other current expenditure for general government as a whole, arising from the creation of budget reserves to be used during execution.",
               "classe": "diz",
               "apoios": [
                 {
                   "linha": "propria",
                   "campo": "excerpt",
                   "literal": "De relevar ainda o crescimento das outras despesas correntes, decorrente da constituição das reservas orçamentais a serem mobilizadas durante a execução orçamental, em linha com o aprofundamento da autonomia na gestão orçamental de cada área setorial iniciada em 2026."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "oe-2027-saude-acao-reserva-orcamental"
+      ],
+      "nome": {
+        "pt": "Reserva orçamental do programa Saúde",
+        "en": "Health programme budget reserve"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a reserva orçamental inscrita entre as ações do programa Saúde.",
+          "en": "It is the budget reserve listed among the Health programme’s actions.",
+          "partes": [
+            {
+              "pt": "É a reserva orçamental inscrita entre as ações do programa Saúde.",
+              "en": "It is the budget reserve listed among the Health programme’s actions.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Reserva orçamental"
                 }
               ]
             }
@@ -19575,7 +19605,7 @@
                 {
                   "linha": "propria",
                   "campo": "excerpt",
-                  "literal": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\n   enca rgos brutos         1 234     1 212    1 047     951      830      699      631      454      333      321      262      183      157       178\nSeleção: 2025 estimativa"
+                  "literal": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\nencargos brutos 1 234 1 212 1 047 951 830 699 631 454 333 321 262 183 157 178\nSeleção: 2025 estimativa"
                 }
               ]
             }
@@ -19618,24 +19648,24 @@
         "ppp-oe2026-receitas-2025"
       ],
       "nome": {
-        "pt": "Parcerias rodoviárias, receitas de portagem",
-        "en": "Road partnerships, toll revenue"
+        "pt": "Parcerias rodoviárias, receitas",
+        "en": "Road partnerships, revenue"
       },
       "origens": [],
       "folhas": [
         {
-          "pt": "São as receitas de portagem previstas para as parcerias rodoviárias no quadro do relatório do Orçamento.",
-          "en": "These are forecast toll revenues for road partnerships in the Budget report table.",
+          "pt": "São as receitas previstas para as parcerias rodoviárias no quadro do relatório do Orçamento.",
+          "en": "These are forecast revenues for road partnerships in the Budget report table.",
           "partes": [
             {
-              "pt": "São as receitas de portagem previstas para as parcerias rodoviárias no quadro do relatório do Orçamento.",
-              "en": "These are forecast toll revenues for road partnerships in the Budget report table.",
+              "pt": "São as receitas previstas para as parcerias rodoviárias no quadro do relatório do Orçamento.",
+              "en": "These are forecast revenues for road partnerships in the Budget report table.",
               "classe": "diz",
               "apoios": [
                 {
                   "linha": "propria",
                   "campo": "excerpt",
-                  "literal": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\n    recei ta s                392       263      274     271      889      288      263      228      192      193      195      183      148       160\nSeleção: 2025 estimativa"
+                  "literal": "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\nreceitas 392 263 274 271 889 288 263 228 192 193 195 183 148 160\nSeleção: 2025 estimativa"
                 }
               ]
             }
@@ -19918,18 +19948,18 @@
         "ppp-oe2027-receitas-2027"
       ],
       "nome": {
-        "pt": "Parcerias rodoviárias, receitas de portagem",
-        "en": "Road partnerships, toll revenue"
+        "pt": "Parcerias rodoviárias, receitas",
+        "en": "Road partnerships, revenue"
       },
       "origens": [],
       "folhas": [
         {
-          "pt": "São as receitas de portagem previstas para as parcerias rodoviárias no quadro do relatório do Orçamento.",
-          "en": "These are forecast toll revenues for road partnerships in the Budget report table.",
+          "pt": "São as receitas previstas para as parcerias rodoviárias no quadro do relatório do Orçamento.",
+          "en": "These are forecast revenues for road partnerships in the Budget report table.",
           "partes": [
             {
-              "pt": "São as receitas de portagem previstas para as parcerias rodoviárias no quadro do relatório do Orçamento.",
-              "en": "These are forecast toll revenues for road partnerships in the Budget report table.",
+              "pt": "São as receitas previstas para as parcerias rodoviárias no quadro do relatório do Orçamento.",
+              "en": "These are forecast revenues for road partnerships in the Budget report table.",
               "classe": "diz",
               "apoios": [
                 {

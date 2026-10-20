@@ -14,7 +14,7 @@ source: "Ministério das Finanças"
 document:
   title: "Orçamento do Estado 2027 · Relatório"
   edition: "2027"
-  locator: "p. 67 PDF (51 impressa), explicação das outras despesas correntes"
+  locator: "p. 67 PDF (51 impressa), outras despesas correntes do conjunto das administrações públicas"
   source_sha256: "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12"
   page: 67
   kind: "pdf"
@@ -40,7 +40,7 @@ attributed_to:
 
 study: "oe-2027"
 # Nota interna. NÃO é publicada: ver DECISIONS §1.24.
-note: "[note do motor] Explicação geral da evolução das outras despesas correntes. A introdução data a informação do relatório de 8 de outubro de 2026, data da entrega da proposta registada pelo Parlamento. Não demonstra que antes não existiam reservas. · Cruzado de ResearchHub content/24 Orcamento 2027 Analise · oe-2027-outras-despesas-correntes-reserva."
+note: "[note do motor] Explicação da evolução das outras despesas correntes para o conjunto das administrações públicas, não para o programa Saúde. A introdução data a informação do relatório de 8 de outubro de 2026, data da entrega da proposta registada pelo Parlamento. Não demonstra que antes não existiam reservas. · Cruzado de ResearchHub content/24 Orcamento 2027 Analise · oe-2027-outras-despesas-correntes-reserva."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []

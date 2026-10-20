@@ -247,9 +247,6 @@ export function linguaDoTituloDoDocumento(titulo, lang = 'pt') {
 
 /** `pt` ou `en`, para cada rótulo distinto do campo `name`. */
 export const LINGUA_DOS_ROTULOS = {
-  // V2-d-b: rótulos portugueses conservados tal como extraídos do quadro das parcerias.
-  "enca rgos brutos": "pt",
-  "recei ta s": "pt",
   // V2-d: cadeias conferidas nos corpos portugueses e na API inglesa do Eurostat.
   "015 - Saúde": "pt",
   "Serviço Nacional de Saúde": "pt",

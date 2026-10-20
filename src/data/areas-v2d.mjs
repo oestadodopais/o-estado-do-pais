@@ -27,6 +27,7 @@ export const LINHAS_V2D_POR_ASSUNTO = {
     "eurostat-hlth-sha11-hf-a-eur_hab-tot_hf-pt-2024",
     "eurostat-hlth-sha11-hf-a-pc_gdp-hf1-pt-2024",
     "eurostat-hlth-sha11-hf-a-pc_gdp-tot_hf-pt-2024",
+    "oe-2027-saude-acao-reserva-orcamental",
     "oe-2027-saude-bens-servicos-2026",
     "oe-2027-saude-bens-servicos-2027",
     "oe-2027-saude-bens-servicos-variacao",
