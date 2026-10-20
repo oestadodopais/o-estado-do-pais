@@ -102,6 +102,15 @@ class Aterragem:
                     time.sleep(min(10, max(0, teto - (time.monotonic() - inicio))))
         self.registar('tranca', 0)
 
+    def largar_tranca(self):
+        # A I238: a tranca só durante os passos que tocam a máquina (as conferências com o motor e a fusão),
+        # nunca durante as esperas pela corrida do GitHub e pela Vercel, que não tocam nas árvores; um
+        # construtor à espera dos portões deixa de bater no teto do escrivão por causa de uma aterragem.
+        if self.dono is not None and self.tranca.exists() and self.tranca.read_text() == self.dono:
+            self.tranca.unlink()
+        self.dono = None
+        self.registar('tranca-largada', 0)
+
     def correr(self, nome, args, cwd=None, teto=3000):
         inicio = agora()
         falha = None
@@ -211,19 +220,21 @@ class Aterragem:
     def executar(self):
         codigo = 9
         try:
-            self.tomar_tranca()
             self.conferir_arvores()
             self.cabeca_motor = git(self.motor, 'rev-parse', 'HEAD')
             self.recibo['cabeca_motor'] = self.cabeca_motor
             self.registar('condicoes', 0)
             self.correr('publicar-ramo', ['git', 'push', '-u', 'origin', self.ramo])
             self.github()
+            self.tomar_tranca()
+            self.conferir_arvores()
             self.correr('series', ['npm', 'run', 'check:series'])
             self.correr('cruzamento', ['npm', 'run', 'check:cruzamento', '--', '--with-origin'])
             self.conferir_arvores()
             self.correr('fundir-main', ['git', 'merge', '--ff-only', 'refs/heads/' + self.ramo], cwd=self.principal)
             self.exigir(git(self.principal, 'rev-parse', 'HEAD') == self.cabeca, 'main não está na cabeça conferida')
             self.correr('publicar-main', ['git', 'push', 'origin', 'main'], cwd=self.principal)
+            self.largar_tranca()
             self.vercel()
             self.correr('verify-deploy', ['npm', 'run', 'verify:deploy'], cwd=self.principal)
             self.conferir_arvores()

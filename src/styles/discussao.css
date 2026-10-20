@@ -19,8 +19,7 @@
 /* V2-c: só o resumo da primeira página se torna compacto. */
 .pp-discussao .discussao-sumario { max-width: none; }
 .pp-discussao .discussao-sumario a { padding-block: .5rem; font-size: 1rem; }
-@media (min-width: 768px) {
-  .pp-discussao .discussao-sumario { display: flex; flex-wrap: wrap; column-gap: .5rem; }
-  .pp-discussao .discussao-sumario li { display: flex; align-items: baseline; max-width: 100%; }
-  .pp-discussao .discussao-sumario li + li::before { content: '·'; margin-right: .5rem; }
-}
+/* Os itens do bloco da primeira página ficam um por linha em todas as larguras, sem separador: o «·» entre itens
+   em linha (V2-c) aparecia como uma marca só no segundo quando o primeiro título ocupava a linha inteira (o leitor,
+   20.10.2026). Os números dos títulos não ficam a negrito aqui, para os dois títulos terem o mesmo peso. */
+.pp-discussao .discussao-sumario .claim-value { font-weight: inherit; }
