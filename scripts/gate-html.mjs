@@ -280,6 +280,7 @@ import { EDITIONS, workById, studyLabel } from '../src/data/studies.mjs';
 import { LEITURAS } from '../src/data/leituras.mjs';
 import { MEDIDAS_DO_DOMINIO_1 } from '../src/data/dominios.mjs';
 import { NOMES_DO_PROJETO } from '../src/data/nomes-das-medidas.mjs';
+import { NOMES_HB1 } from '../src/data/nomes-hb1.mjs';
 import { MUNICIPIOS_COM_PAGINA } from '../src/data/municipios.mjs';
 import { MEDIDAS_DO_CONCELHO } from '../src/data/concelhos.mjs';
 /* A LISTA DA CARTA, PARA RECONTAR AS 29 UNIDADES E OS SEUS CONCELHOS (Emenda 20).
@@ -1250,6 +1251,10 @@ function eCitado(no) {
   const tag = String(no.rawTagName ?? '').toLowerCase();
   if (TAGS_CITADAS.has(tag)) return true;
   const attrs = no.attributes ?? {};
+  // Um valor textual é uma citação apenas quando é o excerto literal da linha.
+  // A conferência de data-claim continua a comparar todos os seus caracteres.
+  const citacao = claims.get(attrs['data-claim']);
+  if (citacao && ['texto', 'afirmação'].includes(citacao.unit) && citacao.value === citacao.excerpt) return true;
   if ('data-verbatim' in attrs) return true;
   if ('data-linha-campo' in attrs) return true;
   /* UE1 (29.09.2026): um campo de uma linha de série e o nome de um país são
@@ -1938,6 +1943,20 @@ const LINHA_DO_SITIO = new Map();
       }
     }
   }
+  // As séries HB1 partiram do sítio: resolver só os recibos presos pelo resumo.
+  const ficheiro = path.join(ROOT, 'ledger/provas/hb1/series.json');
+  if (fs.existsSync(ficheiro)) {
+    const prova = JSON.parse(fs.readFileSync(ficheiro, 'utf8'));
+    if (prova.rh_study !== '28 Habitacao Estudo') throw Error('HB1: origem de série inesperada');
+    for (const [id, item] of Object.entries(prova.rows)) {
+      if (!/^[a-z0-9-]+$/.test(id) || item.file !== `ledger/claims/${id}.yml`)
+        throw Error('HB1: caminho de série inválido');
+      const bytes = fs.readFileSync(path.join(ROOT, item.file));
+      if (crypto.createHash('sha256').update(bytes).digest('hex') !== item.sha256)
+        throw Error(`HB1: resumo da série divergente: ${id}`);
+      LINHA_DO_SITIO.set(`${prova.rh_study} ${id}`, id);
+    }
+  }
 }
 
 /** As unidades de um bloco do registo, com a coordenada da sua marca. */
@@ -2538,12 +2557,14 @@ function verificaTexto({ rota, root, err }) {
   {
     const nomes = lang === 'pt'
       ? ['Em resumo', 'O que este projeto conclui', 'O que podia funcionar melhor']
-      : ['In brief', 'What this project concludes', 'What could work better'];
+      : [slug === 'a-casa-em-portugal-e-na-europa' ? 'In short' : 'In brief', 'What this project concludes', 'What could work better'];
     const principais = registo.blocks.filter(b => b.kind === 'heading' && Number(b.level) === 2);
     const leituras = root.querySelectorAll('.estudo-leitura');
     const textos = root.querySelectorAll('.estudo-texto');
     if (textos.length !== 1) err(`B1 leitura ${chave}: deve existir um corpo de texto.`);
-    const primeiroConteudo = registo.blocks.find(b => b.i > 0);
+    const primeiroConteudo = slug === 'a-casa-em-portugal-e-na-europa'
+      ? registo.blocks.find(b => b.i > 0 && b.kind === 'heading' && Number(b.level) === 2)
+      : registo.blocks.find(b => b.i > 0);
     if (primeiroConteudo?.kind !== 'heading' || Number(primeiroConteudo.level) !== 2 || primeiroConteudo.text !== nomes[0]) {
       if (leituras.length) err(`B1 leitura ${chave}: registo sem abertura não pode ter leitura.`);
       console.log(`  B1 leitura ${chave}: sem leitura, o registo não começa por ${nomes[0]}.`);
@@ -8909,6 +8930,11 @@ for (const [nomePng, registo] of REGISTOS_DOS_CARTOES) {
             `"${v.linha}" tem "${claim.reference_date ?? '(nenhum)'}".`,
         );
       }
+    } else if (v.origem === 'nome-hb1') {
+      const claim = claims.get(v.linha);
+      const esperado = NOMES_HB1[v.linha]?.[registo.edicao];
+      if (!claim || !['texto', 'afirmação'].includes(claim.unit) || claim.value !== claim.excerpt || !esperado || v.texto !== esperado)
+        errC(`o nome HB1 do cartão difere da declaração da linha ${v.linha}.`);
     } else if (v.origem === 'prova') {
       const contado = CONTAS[v.chave];
       if (contado === undefined) {
