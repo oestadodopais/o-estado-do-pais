@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-20T14:21:59+00:00",
+ "copia": "<pacote>",
+ "plantas": [
+  {
+   "id": "M2",
+   "ficheiro": "motor/content/25 Orcamento 2027 Medidas/ledger.json",
+   "descricao": "value da linha diploma-irc-artigo3 alterado na cópia contra o corpo alojado",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "972471c99db4c2b77151486bd9b1110f21c0238b8a01f162bcfa3f474421cd8b",
+   "sha256_depois": "159324a0a16bbd78e236b976114149bf5ce2ba23c67113cbce1222ad080caad2",
+   "contexto_antes": "\n      \"medida\": \"IRS: escalões, taxas e mínimo de existência\",\n      \"medida_en\": \"Personal income tax: brackets, rates and minimum income\"\n    },\n    {\n      \"id\": \"diploma-irc-artigo3\",\n      \"value\": \"Artigo 3.º Norma transitória 1 — A taxa prevista nos n.os 1 e 5 do artigo 87.º do Código do IRC, na redação conferida pela presente lei, aplica-se aos períodos de tributação que se iniciem em ou após 1 de janeiro de 2028. 2 — Nos períodos de tributação que se iniciem durante o ano de 2026, a taxa prevista nos n.os 1 e 5 do artigo 87.º do Código do IRC é de 19 %. 3 — Nos períodos de tributação que se iniciem durante o ano de 2027, a taxa prevista nos n.os 1 e 5 do artigo 87.º do Código do IRC é de 18 %. 4 — A taxa prevista no n.º 2 do artigo 87.º do Código do IRC, na redação conferida pela presente lei, aplica-se aos períodos de tributação que se iniciem em ou após 1 de janeiro de 2026.\",\n      \"unit\": \"afirmação\",\n      \"period\": \"2027\",\n      \"reference_date\": \"2027\",\n      \"excerpt\": \"Artigo 3.º Norma transitória 1 — A taxa prevista nos n.os",
+   "contexto_depois": "\n      \"medida\": \"IRS: escalões, taxas e mínimo de existência\",\n      \"medida_en\": \"Personal income tax: brackets, rates and minimum income\"\n    },\n    {\n      \"id\": \"diploma-irc-artigo3\",\n      \"value\": \"Artigo 9.º Norma transitória 1 — A taxa prevista nos n.os 1 e 5 do artigo 87.º do Código do IRC, na redação conferida pela presente lei, aplica-se aos períodos de tributação que se iniciem em ou após 1 de janeiro de 2028. 2 — Nos períodos de tributação que se iniciem durante o ano de 2026, a taxa prevista nos n.os 1 e 5 do artigo 87.º do Código do IRC é de 19 %. 3 — Nos períodos de tributação que se iniciem durante o ano de 2027, a taxa prevista nos n.os 1 e 5 do artigo 87.º do Código do IRC é de 18 %. 4 — A taxa prevista no n.º 2 do artigo 87.º do Código do IRC, na redação conferida pela presente lei, aplica-se aos períodos de tributação que se iniciem em ou após 1 de janeiro de 2026.\",\n      \"unit\": \"afirmação\",\n      \"period\": \"2027\",\n      \"reference_date\": \"2027\",\n      \"excerpt\": \"Artigo 3.º Norma transitória 1 — A taxa prevista nos n.os"
+  },
+  {
+   "id": "M3",
+   "ficheiro": "motor/content/25 Orcamento 2027 Medidas/ledger.json",
+   "descricao": "value da linha ce-primavera-2026-pib-2027 alterado na cópia contra o corpo alojado",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "159324a0a16bbd78e236b976114149bf5ce2ba23c67113cbce1222ad080caad2",
+   "sha256_depois": "5867b6dcec1dcbdc2c01069d9af72ac4678cc9e3203431fd969466147ba94a62",
+   "contexto_antes": "cimento real do PIB\",\n      \"measure_en\": \"Real GDP growth\",\n      \"medida\": \"Crescimento real do PIB\",\n      \"medida_en\": \"Real GDP growth\"\n    },\n    {\n      \"id\": \"ce-primavera-2026-pib-2027\",\n      \"value\": \"1.8\",\n      \"unit\": \"Annual percentage change\",\n      \"period\": \"2027\",\n      \"reference_date\": \"2027\",\n      \"excerpt\": \"bn EUR        Curr. prices        % GDP   ",
+   "contexto_depois": "cimento real do PIB\",\n      \"measure_en\": \"Real GDP growth\",\n      \"medida\": \"Crescimento real do PIB\",\n      \"medida_en\": \"Real GDP growth\"\n    },\n    {\n      \"id\": \"ce-primavera-2026-pib-2027\",\n      \"value\": \"9.8\",\n      \"unit\": \"Annual percentage change\",\n      \"period\": \"2027\",\n      \"reference_date\": \"2027\",\n      \"excerpt\": \"bn EUR        Curr. prices        % GDP   "
+  },
+  {
+   "id": "M4",
+   "ficheiro": "motor/content/25 Orcamento 2027 Medidas/ledger.json",
+   "descricao": "value da linha europa-divida-pt-2020 alterado na cópia contra o corpo alojado",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "5867b6dcec1dcbdc2c01069d9af72ac4678cc9e3203431fd969466147ba94a62",
+   "sha256_depois": "0d285857947b76561195605fff0b381b46e822874f27a54861fec0f50adb9e4d",
+   "contexto_antes": "   \"measure_en\": \"General government gross debt\",\n      \"medida\": \"Dívida pública bruta\",\n      \"medida_en\": \"General government gross debt\"\n    },\n    {\n      \"id\": \"europa-divida-pt-2020\",\n      \"value\": \"134.1\",\n      \"unit\": \"Percentage of gross domestic product (GDP)\",\n      \"period\": \"2020\",\n      \"reference_date\": \"2020\",\n      \"excerpt\": \"{\\\"coordinates\\\": {\\\"fre",
+   "contexto_depois": "   \"measure_en\": \"General government gross debt\",\n      \"medida\": \"Dívida pública bruta\",\n      \"medida_en\": \"General government gross debt\"\n    },\n    {\n      \"id\": \"europa-divida-pt-2020\",\n      \"value\": \"934.1\",\n      \"unit\": \"Percentage of gross domestic product (GDP)\",\n      \"period\": \"2020\",\n      \"reference_date\": \"2020\",\n      \"excerpt\": \"{\\\"coordinates\\\": {\\\"fre"
+  },
+  {
+   "id": "M1",
+   "ficheiro": "motor/content/25 Orcamento 2027 Medidas/ledger.json",
+   "descricao": "o valor da linha europa-saldo-eu27_2020-2020 alterado na cópia contra o quadro do relatório",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "0d285857947b76561195605fff0b381b46e822874f27a54861fec0f50adb9e4d",
+   "sha256_depois": "ed613d173ead03ebacad2340deef7da363c295548ab3ef54318c60f953c00c1d",
+   "contexto_antes": "   \"measure_en\": \"General government gross debt\",\n      \"medida\": \"Dívida pública bruta\",\n      \"medida_en\": \"General government gross debt\"\n    },\n    {\n      \"id\": \"europa-saldo-eu27_2020-2020\",\n      \"value\": \"-6.7\",\n      \"unit\": \"Percentage of gross domestic product (GDP)\",\n      \"period\": \"2020\",\n      \"reference_date\": \"2020\",\n      \"excerpt\": \"{\\\"coordinates\\\": {\\\"fre",
+   "contexto_depois": "   \"measure_en\": \"General government gross debt\",\n      \"medida\": \"Dívida pública bruta\",\n      \"medida_en\": \"General government gross debt\"\n    },\n    {\n      \"id\": \"europa-saldo-eu27_2020-2020\",\n      \"value\": \"-9.7\",\n      \"unit\": \"Percentage of gross domestic product (GDP)\",\n      \"period\": \"2020\",\n      \"reference_date\": \"2020\",\n      \"excerpt\": \"{\\\"coordinates\\\": {\\\"fre"
+  },
+  {
+   "id": "M5",
+   "ficheiro": "motor/content/25 Orcamento 2027 Medidas/ledger.json",
+   "descricao": "a taxa normal do primeiro escalão do IRS alterada na cópia contra o articulado alojado",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "ed613d173ead03ebacad2340deef7da363c295548ab3ef54318c60f953c00c1d",
+   "sha256_depois": "8686bf9036e74ff1212db1ebe37ef57972c50b26871500d10eaec4cea3b362cd",
+   "contexto_antes": "Risks: contingent liabilities\",\n      \"medida\": \"Riscos: responsabilidades contingentes\",\n      \"medida_en\": \"Risks: contingent liabilities\"\n    },\n    {\n      \"id\": \"irs-escalao-1-taxa-normal\",\n      \"value\": \"12,20\",\n      \"unit\": \"%\",\n      \"period\": \"2027\",\n      \"reference_date\": \"2027\",\n      \"excerpt\": \"                                                                 ",
+   "contexto_depois": "Risks: contingent liabilities\",\n      \"medida\": \"Riscos: responsabilidades contingentes\",\n      \"medida_en\": \"Risks: contingent liabilities\"\n    },\n    {\n      \"id\": \"irs-escalao-1-taxa-normal\",\n      \"value\": \"92,20\",\n      \"unit\": \"%\",\n      \"period\": \"2027\",\n      \"reference_date\": \"2027\",\n      \"excerpt\": \"                                                                 "
+  }
+ ]
+}
