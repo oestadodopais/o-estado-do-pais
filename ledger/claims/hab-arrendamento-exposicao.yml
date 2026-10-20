@@ -1,0 +1,45 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "hab-arrendamento-exposicao"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "Nomeadamente, propõe-se que a resolução do contrato possa ocorrer quando haja mora igual ou superior a dois meses no pagamento da renda ou quando exista atraso superior a oito dias no pagamento de rendas, por mais de três vezes, seguidas ou interpoladas, num período de 12 meses, ou por mais de quatro vezes num período de 18 meses."
+unit: "texto"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Proposta de Lei n.º 103/XVII"
+name_source: "PDF p. 3; parágrafo identificado pelo início; área física declarada"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Governo"
+document:
+  title: "Proposta de Lei n.º 103/XVII"
+  edition: "[a verificar]"
+  locator: "PDF p. 3; parágrafo identificado pelo início; área física declarada"
+  source_sha256: "505b9d5fbeed485dd107377bbae07003f9f7fa4cd3f949534f6154f3b854d7bf"
+  page: 3
+  kind: "pdf"
+source_url: "https://app.parlamento.pt/webutils/docs/doc.pdf?path=PGqkJsL2G6lw3G9uygQPf1N1JH%252f%252b39M7GvgOIuNn9FNOwLO2SXVEvaHNII0zNl6xllstU3XfW8EfQWjgG%252buXWe1twkFNl7yALPxVM6Oml0ddQcK1qlunYed5let%252frSf5xjXbX4x3l2s1Z5Pvfiuu97KvT7AuI9IaGBhl3R1hzcZy7OvFxWrW6bWmDRQxr305vP52XJEjNNWGIbewa93ACJFq0UY%252fRon1UT94WBH%252fetlGKnHQOaVjs1V5brjBOhOzv%252f4HGHzYfSHk6w1cBu3faH2cgkTbVJLe%252f8rW%252fs4RtACxzeZ%252bgfFaWH74JS526shFMH5GuLqS8UlNBDDhmAvPvzOVHjFDu1B2p8lnJVx8PG0gA7MGYhCwpx0ajx8ooMJ%252b&fich=c0c6e27a-3ce4-49b8-a2e7-412f0a38f7ec.docx&Inline=true"
+access_date: "2026-10-19"
+reference_date: "[a verificar]"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "Nomeadamente, propõe-se que a resolução do contrato possa ocorrer quando haja mora igual ou superior a dois meses no pagamento da renda ou quando exista atraso superior a oito dias no pagamento de rendas, por mais de três vezes, seguidas ou interpoladas, num período de 12 meses, ou por mais de quatro vezes num período de 18 meses."
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "a-casa-em-portugal-e-na-europa"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Exposição de motivos de proposta; o articulado integral está alojado. Frase ou parágrafo completo, conferido por duas extrações. · Cruzado de ResearchHub content/23 Habitacao · hab-arrendamento-exposicao."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

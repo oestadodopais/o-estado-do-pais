@@ -1,0 +1,51 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "hab-livre-reinvestimento"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "[NOVO] g) Sem prejuízo do disposto nas alíneas b) a e) do número anterior, são igualmente excluídos da tributação os ganhos provenientes da transmissão onerosa de imóveis destinados a habitação própria e permanente do sujeito passivo ou do seu agregado familiar, quando o valor de realização, deduzido da amortização de eventual empréstimo contraído para a aquisição do imóvel, seja reinvestido na aquisição do direito de habitação em fogo que pertença a cooperativa em regime de propriedade coletiva e que se destine à sua habitação própria e permanente."
+unit: "afirmação"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "[NOVO] g) Sem prejuízo do disposto nas alíneas b) a e) do número anterior, são igualmente excluídos da tributação os ganhos provenientes da transmissão onerosa de imóveis destinados a habitação própria e permanente do sujeito passivo ou do seu agregado familiar, quando o valor de realização, deduzido da amortização de eventual empréstimo contraído para a aquisição do imóvel, seja reinvestido na aquisição do direito de habitação em fogo que pertença a cooperativa em regime de propriedade coletiva e que se destine à sua habitação própria e permanente."
+name_source: "PDF p. 4; parágrafo identificado pelo início; área física declarada"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "LIVRE"
+document:
+  title: "Projeto de Lei"
+  edition: "2026-09-25"
+  locator: "PDF p. 4; parágrafo identificado pelo início; área física declarada"
+  source_sha256: "e3ea510aea165b6eb9363e71dd1d34adc08a2099510d56e9f58d9b493db9f009"
+  page: 4
+  kind: "pdf"
+source_url: "https://app.parlamento.pt/webutils/docs/doc.pdf?path=H3IrR81fN9VFZrsCQTkTN5AkghiceZuLiS1BHt0rQRiRm%252brftgJqna3ABc3tQfSjxEfdODQstenjg%252bXz4PnfjZHLyGLvuwlJ%252fYVLdL5ZGHKXsQFqgHY6z15G3PUcVDRuX6BvxTEFoOFaK%252fOPQJIuOGUM%252f9oD5pECtQr0FElbK%252fxgjaPdG26iuVmKfSBbO%252f%252ba0NytZQKFXXwZvY4%252bb%252fVSrNc%252fL%252bwm5JGbgzP7UaaCzHAZWk6hXYjhU1QZa2gPSs5e9PbLU0FxXakzKZyn0GhTxNA8q1zWWn6MNOXefwJn%252fctNxq%252bk2WsmiFpEAyU%252bjZ3%252f8%252fq1xwgqZA6mfYVdNDviKKSgWZ2R8Jgt6UkKLac8SWKrajCIJzlmvqnqVw7oiZiP&fich=d607abf1-e8a6-4b65-984c-885fee6bc75e.pdf&Inline=true"
+access_date: "2026-10-19"
+published_at: "2026-09-25"
+afirmacao: true
+reference_date: "2026-09-25"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "[NOVO] g) Sem prejuízo do disposto nas alíneas b) a e) do número anterior, são igualmente excluídos da tributação os ganhos provenientes da transmissão onerosa de imóveis destinados a habitação própria e permanente do sujeito passivo ou do seu agregado familiar, quando o valor de realização, deduzido da amortização de eventual empréstimo contraído para a aquisição do imóvel, seja reinvestido na aquisição do direito de habitação em fogo que pertença a cooperativa em regime de propriedade coletiva e que se destine à sua habitação própria e permanente."
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+# A quem o valor é creditado. Lista de entidades, ou campo nenhum.
+attributed_to:
+  - "LIVRE"
+
+study: "a-casa-em-portugal-e-na-europa"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Proposta, não lei vigente; autoria e data no registo parlamentar associado. · Cruzado de ResearchHub content/23 Habitacao · hab-livre-reinvestimento."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

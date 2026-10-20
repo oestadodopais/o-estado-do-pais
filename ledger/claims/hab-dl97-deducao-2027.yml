@@ -1,0 +1,45 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "hab-dl97-deducao-2027"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "10 — O limite a que se refere a alínea a) do n.º 1 é elevado para 1000,00 €, sem prejuízo da aplicação do n.º 4, quando o limite de dedução daí resultante seja superior."
+unit: "texto"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Decreto-Lei n.º 97/2026, de 20 de maio"
+name_source: "PDF p. 8; Artigo 78.º-E, n.º 10; aplicação temporal pelo artigo 15.º, n.º 1"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "PRESIDÊNCIA DO CONSELHO DE MINISTROS"
+document:
+  title: "Decreto-Lei n.º 97/2026, de 20 de maio"
+  edition: "2026-05-20"
+  locator: "PDF p. 8; Artigo 78.º-E, n.º 10; aplicação temporal pelo artigo 15.º, n.º 1"
+  source_sha256: "a8ce8d796015f06ec247113a4184af61280940b473eda8f367cbff9666b5e32a"
+  page: 8
+  kind: "pdf"
+source_url: "https://files.diariodarepublica.pt/1s/2026/05/09700/0001400040.pdf#page=8"
+access_date: "2026-10-19"
+reference_date: "2026-05-20"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "10 — O limite a que se refere a alínea a) do n.º 1 é elevado para 1000,00 €, sem prejuízo da aplicação do n.º 4, quando o limite de dedução daí resultante seja superior."
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "a-casa-em-portugal-e-na-europa"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Texto original, não consolidado. · Cruzado de ResearchHub content/23 Habitacao · hab-dl97-deducao-2027."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

@@ -1,0 +1,44 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "hab-ine-preco-porto"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "3 729"
+unit: "€/m2"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Valor mediano das vendas por m² de alojamentos familiares; Porto"
+name_source: "Trimestral1_N2024.csv; linha 22; coluna 3"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "INE"
+document:
+  title: "Valor mediano das vendas por m² de alojamentos familiares"
+  edition: "2026-Q1"
+  locator: "Trimestral1_N2024.csv; linha 22; coluna 3"
+  source_sha256: "e7ab81e756a3f838bb008e414c1b35b2ba1fb7a57a235c9ada05e6ee3a63aa8c"
+  kind: "serie"
+source_url: "https://www.ine.pt/ngt_server/attachfileu.jsp?look_parentBoui=804179173&att_display=n&att_download=y"
+access_date: "2026-10-19"
+reference_date: "2026-T1"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "Valor mediano das vendas por m² de alojamentos familiares; Porto; 1ºT2026; 3 729"
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "a-casa-em-portugal-e-na-europa"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Célula do anexo trimestral do destaque de 17 de julho de 2026. A unidade está no destaque, não no cabeçalho deste CSV. Não confundir com os últimos doze meses. · Cruzado de ResearchHub content/23 Habitacao · hab-ine-preco-porto."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

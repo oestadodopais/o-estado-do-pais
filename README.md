@@ -260,8 +260,11 @@ por palavras). **Não tem resumo nem números do estudo**: um resumo escrito sem
 ler o estudo seria conteúdo inventado, e os números do estudo só entram quando
 cada um tiver a sua linha no livro-razão.
 
-Hoje estão alojados **vinte e cinco documentos** a 01.10.2026: todas as vinte e
-cinco edições do arquivo, dos seus dezassete trabalhos. Não falta nenhuma. Os
+Hoje estão alojados **vinte e sete documentos** a 20.10.2026: todas as vinte e
+sete edições do arquivo a 20.10.2026, dos seus dezoito trabalhos a 20.10.2026.
+Entraram as duas edições de «A casa em Portugal e na Europa». A frase dizia
+«vinte e cinco documentos a 01.10.2026: todas as vinte e cinco edições do arquivo,
+dos seus dezassete trabalhos». Não falta nenhuma. Os
 estudos de Évora de agosto e setembro ficam como edições datadas, sucedidas pelos
 de 01.10.2026. A frase dizia «dezoito
 documentos a 16.09.2026: todas as dezoito edições do arquivo, dos seus treze

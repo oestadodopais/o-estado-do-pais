@@ -53,7 +53,32 @@
  * A ordem é a da contagem no livro-razão, das mais frequentes para as mais
  * raras, para que quem lê veja primeiro o que mais se rende.
  */
+const UNIDADES_EUROSTAT_PT = {
+  "Percentage": "percentagem",
+  "Annual average rate of change": "taxa de variação média anual",
+  "Average": "média",
+  "Annual rate of change": "taxa de variação anual",
+  "Annual average index, 2015=100": "índice médio anual, 2015=100",
+  "Price-to-income ratio, index 2015=100": "rácio preço-rendimento, índice 2015=100",
+  "Quarterly index, 2015=100": "índice trimestral, 2015=100",
+  "Number": "número",
+  "Thousand": "milhares",
+  "Price-to-income ratio relative to long-term average": "rácio preço-rendimento face à média de longo prazo"
+};
+
 export const UNIDADES = {
+  ...Object.fromEntries(Object.keys(UNIDADES_EUROSTAT_PT).map(k => [k,k])),
+  "€/m2": "euros per square metre",
+  "Milhões de euros": "Million euros",
+  "N.º": "Number",
+  "Percentagem": "Percentage",
+  'texto': 'text',
+  'data': 'date',
+  'pontos percentuais': 'percentage points',
+  'pontos de índice': 'index points',
+  'alojamentos': 'dwellings',
+  'vezes': 'times',
+  'por mil habitantes': 'per thousand inhabitants',
   // V2-d: «razão» é «ratio»; o valor é uma divisão, não uma percentagem.
   'razão': 'ratio',
   // A casa: as frases da comparação europeia dizem «euros per inhabitant».
@@ -246,7 +271,7 @@ export const UNIDADES_EM_PORTUGUES = {
 export function unidadeDaLinha(unit, lang = 'pt', value = null) {
   if (unit === 'avisos') return { texto: lang === 'en' ? (String(value) === '1' ? 'notice' : 'notices') : (String(value) === '1' ? 'aviso' : 'avisos'), lingua: lang === 'en' ? null : 'pt-PT' };
   const cru = unit === null || unit === undefined ? '' : String(unit);
-  if (lang !== 'en') return { texto: dinheiroComPalavra(cru), lingua: 'pt-PT' };
+  if (lang !== 'en') return { texto: dinheiroComPalavra(UNIDADES_EUROSTAT_PT[cru] ?? cru), lingua: 'pt-PT' };
   const traduzida = Object.prototype.hasOwnProperty.call(UNIDADES, cru)
     ? /** @type {Record<string, string>} */ (UNIDADES)[cru]
     : null;
@@ -268,5 +293,5 @@ export function unidadeDaLinha(unit, lang = 'pt', value = null) {
  * @param {string} unidade
  */
 export function dinheiroComPalavra(unidade) {
-  return unidade.replace(/^€(?=\s|$)/u, 'euros');
+  return unidade.replace(/^€(?=\s|\/|$)/u, 'euros');
 }

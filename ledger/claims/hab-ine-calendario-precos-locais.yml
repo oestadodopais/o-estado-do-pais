@@ -1,0 +1,44 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "hab-ine-calendario-precos-locais"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "23/10/2026"
+unit: "data"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Portal Oficial - Instituto Nacional de Estatística"
+name_source: "HTML; início literal único"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "INE"
+document:
+  title: "Portal Oficial - Instituto Nacional de Estatística"
+  edition: "[a verificar]"
+  locator: "HTML; início literal único"
+  source_sha256: "74e73ab3b837f46944c24b048b8458dd457734002bb8244150c8726c77d32134"
+  kind: "html"
+source_url: "https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_dispinfest&xlang=pt"
+access_date: "2026-10-19"
+reference_date: "[a verificar]"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "ESTATÍSTICAS DE PREÇOS NA HABITAÇÃO AO NÍVEL LOCAL 2.º trimestre de 2026 23/10/2026"
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "a-casa-em-portugal-e-na-europa"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "Cruzado de ResearchHub content/23 Habitacao · hab-ine-calendario-precos-locais."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

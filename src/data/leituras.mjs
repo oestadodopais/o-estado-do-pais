@@ -47,6 +47,79 @@ const unidade = (id, lang) => unidadeDaLinha(getClaim(id).unit, lang).texto;
        sustentabilidade, a penalização de um ano é de 22,6%»
        (`studies-src/penalizacoes-por-reforma-antecipada-2026/pt.html`). */
 export const LEITURAS = {
+
+  "a-casa-em-portugal-e-na-europa": {
+    "medidas": [
+      {
+        "claim": "hab-tipsho60-a-ptir-i15-pt-2024",
+        "nome": {
+          "pt": [
+            "é o rácio entre os preços das casas e o rendimento em Portugal, com ",
+            {
+              "ref": "2015"
+            },
+            " igual a cem, o mais alto da União"
+          ],
+          "en": [
+            "is the ratio of house prices to income in Portugal, ",
+            {
+              "ref": "2015"
+            },
+            " equal to one hundred, the highest in the Union"
+          ]
+        }
+      },
+      {
+        "claim": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
+        "nome": {
+          "pt": [
+            "dos inquilinos a preços de mercado gastam mais de quarenta por cento do rendimento na casa"
+          ],
+          "en": [
+            "of tenants at market rents spend more than forty percent of their income on housing"
+          ]
+        }
+      }
+    ],
+    "frase": {
+      "pt": [
+        "Os preços reais das casas em Portugal subiram mais do que em qualquer país da União desde ",
+        {
+          "ref": "2015"
+        },
+        ", e a parte do rendimento gasta na habitação é menor do que a média europeia. Entre os inquilinos a preços de mercado, ",
+        {
+          "claim": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025"
+        },
+        " % estão em sobrecarga; os jovens saem de casa dos pais aos ",
+        {
+          "claim": "hab-yth-demo-030-a-avg-t-pt-2025"
+        },
+        " anos."
+      ],
+      "en": [
+        "Real house prices in Portugal rose more than in any country of the Union since ",
+        {
+          "ref": "2015"
+        },
+        ", and the share of income spent on housing is lower than the European average. Among tenants at market rents, ",
+        {
+          "claim": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025"
+        },
+        " % are overburdened; the young leave their parents’ home at ",
+        {
+          "claim": "hab-yth-demo-030-a-avg-t-pt-2025"
+        },
+        " years."
+      ]
+    },
+    "origem": {
+      "onde": "content/28 Habitacao Estudo/, abertura das duas edições",
+      "pt": "Descontada a inflação, o índice dos preços",
+      "en": "Net of inflation, the price index"
+    }
+  }
+,
   /* ----------------------------------------------------------------- 04 */
   'evora-prometido-pago-auditado-2026': {
     medidas: [

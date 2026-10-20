@@ -1,0 +1,50 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "hab-ps-mais-valias"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "Isenção de mais-valias na venda de casas já existentes, até 300 mil euros, para habitação própria, e tributação reduzida entre 300 e 500 mil euros."
+unit: "afirmação"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Isenção de mais-valias na venda de casas já existentes, até 300 mil euros, para habitação própria, e tributação reduzida entre 300 e 500 mil euros."
+name_source: "HTML; início literal único"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "José Luís Carneiro"
+document:
+  title: "Habitação: o que propusemos e o que vamos propor"
+  edition: "2026-10-19"
+  locator: "HTML; início literal único"
+  source_sha256: "e07a1aa4ec2c0ffb3a202ace8166dc62d29b2e94ad3888c6f50e84b658f56f0d"
+  kind: "html"
+source_url: "https://ps.pt/habitacao-o-que-propusemos-e-o-que-vamos-propor/"
+access_date: "2026-10-19"
+published_at: "2026-10-19"
+afirmacao: true
+reference_date: "2026-10-19"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "Isenção de mais-valias na venda de casas já existentes, até 300 mil euros, para habitação própria, e tributação reduzida entre 300 e 500 mil euros."
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+# A quem o valor é creditado. Lista de entidades, ou campo nenhum.
+attributed_to:
+  - "José Luís Carneiro"
+
+study: "a-casa-em-portugal-e-na-europa"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Data visível do artigo; o carimbo de maio junto ao perfil é conservado no corpo. Fonte estatística das casas habitáveis não identificada no artigo. · Cruzado de ResearchHub content/23 Habitacao · hab-ps-mais-valias."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

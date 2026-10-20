@@ -91,6 +91,37 @@ export function subjectLabel(subject, lang = 'pt') {
 }
 
 export const WORKS = [
+{
+  id: 'a-casa-em-portugal-e-na-europa',
+  slug: 'a-casa-em-portugal-e-na-europa',
+  tema: 'habitacao',
+  editions: [
+    {
+      lang: 'pt',
+      title: 'A casa em Portugal e na Europa',
+      date: null,
+      updated: null
+    },
+    {
+      lang: 'en',
+      title: 'Housing in Portugal and in Europe',
+      date: null,
+      updated: null
+    }
+  ],
+  pergunta: {
+    pt: 'Como está a casa em Portugal, e como se compara com a Europa?',
+    en: 'How is housing in Portugal, and how does it compare with Europe?'
+  },
+  verbatimDaPergunta: {
+    pt: 'estudo-hb1-pergunta-pt',
+    en: 'estudo-hb1-pergunta-en'
+  },
+  description: {
+    pt: 'Quanto custa uma casa, quem a paga e quem fica de fora, ao lado da União Europeia.',
+    en: 'What a home costs, who pays for it and who is left out, next to the European Union.'
+  }
+},
   /* OS QUATRO ESTUDOS DE ÉVORA DE 01.10.2026 (bloco E1, DECISIONS.md §1.145).
      Os seis estudos de Évora de agosto e setembro passaram a quatro, compostos no
      motor a partir dos registos dos antigos (content/16 a 19 do ResearchHub). O

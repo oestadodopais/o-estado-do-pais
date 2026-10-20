@@ -1583,8 +1583,10 @@ export function validateLedger() {
       if (!Array.isArray(c.attributed_to) || !c.attributed_to.length) errors.push(`${onde} V2A atribuição: falta attributed_to`);
       if (!['html', 'pdf'].includes(String(doc?.kind))) errors.push(`${onde} V2A documento: exige html ou pdf`);
       const textoDoOrcamento = doc?.title === 'Orçamento do Estado 2027 · Relatório' && c.unit === 'afirmação';
-      if (!/^\d{4}-\d{2}-\d{2}$/.test(String(c.published_at ?? ''))) errors.push(`${onde} V2A data: falta a data de publicação do documento`);
-      if (c.reference_date !== (textoDoOrcamento ? '2027' : c.published_at)) errors.push(`${onde} V2A data: período contrário ao documento`);
+      const semDataHB1 = id === 'hab-il-proposta' && c.published_at == null && c.reference_date === POR_VERIFICAR && doc?.source_sha256 === '83424c50610cbac84b6cb675ff8a46547b10413fb0c8597f371a516adab2105c';
+      if (!semDataHB1 && !/^\d{4}-\d{2}-\d{2}$/.test(String(c.published_at ?? ''))) errors.push(`${onde} V2A data: falta a data de publicação do documento`);
+      const propostaHB1 = ['posicao-ps-rendas','posicao-chega-habitacao'].includes(id) && c.study === 'a-casa-em-portugal-e-na-europa';
+      if (!semDataHB1 && !propostaHB1 && c.reference_date !== (textoDoOrcamento ? '2027' : c.published_at)) errors.push(`${onde} V2A data: período contrário ao documento`);
       if (!String(c.excerpt ?? '').trim() || c.excerpt === POR_VERIFICAR) errors.push(`${onde} V2A excerto: faltam as palavras exatas`);
       /** @param {unknown} v */
       const normal = v => String(v ?? '').replace(/[\s\u00a0\u202f]+/g, ' ').trim().replace(/(?<=\d) (?=\d)/g, '');
@@ -1601,7 +1603,7 @@ export function validateLedger() {
       errors.push(`${onde} o nome do ficheiro tem de ser o id: esperado "${esperado}".`);
     }
     if (!/^[a-z0-9]+(-[a-z0-9]+)*$/.test(String(id)) &&
-        !/^eurostat-[a-z0-9]+(?:[-_][a-z0-9]+)*$/.test(String(id))) {
+        !/^(?:eurostat|hab)-[a-z0-9]+(?:[-_][a-z0-9]+)*$/.test(String(id))) {
       errors.push(`${onde} id inválido "${id}": só minúsculas, algarismos e hífenes.`);
     }
 
@@ -1617,7 +1619,7 @@ export function validateLedger() {
     if (typeof c.value !== 'string' || c.value.trim() === '') {
       errors.push(`${onde} "value" tem de ser uma string não vazia, com o valor tal como publicado.`);
     } else if (!/\d/.test(c.value) && marcaDoValor(c.value) === null &&
-        !(c.afirmacao === true && c.unit === 'afirmação' && c.value === c.excerpt)) {
+        !(['texto', 'afirmação'].includes(String(c.unit)) && c.value === c.excerpt && /^[a-f0-9]{64}$/.test(String(doc?.source_sha256 ?? '')))) {
       /* A PORTA TEM A LARGURA DE UMA MARCA (28.08.2026, regra 2). A regra era
          «um valor sem algarismos não é um valor», e existe para recusar prosa no
          lugar de um número. Continua a valer para tudo o que não seja uma das

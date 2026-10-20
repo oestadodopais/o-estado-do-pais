@@ -1,0 +1,50 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "hab-imprensa-hospital"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "Duas pessoas foram encaminhadas para o hospital."
+unit: "afirmação"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Duas pessoas foram encaminhadas para o hospital."
+name_source: "HTML; início literal único"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "RTP"
+document:
+  title: "Montenegro afasta \"país em turbulência\". Dezenas de feridos em investida da polícia contra manifestantes no Porto"
+  edition: "2026-10-15"
+  locator: "HTML; início literal único"
+  source_sha256: "cb9da346a7b2f62547c7d2788e2b7067fcf04aab16658546ea8488d876e13559"
+  kind: "html"
+source_url: "https://www.rtp.pt/noticias/pais/dezenas-de-feridos-em-confrontos-entre-manifestantes-e-policia-no-porto_n1771773"
+access_date: "2026-10-19"
+published_at: "2026-10-15"
+afirmacao: true
+reference_date: "2026-10-15"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "Duas pessoas foram encaminhadas para o hospital."
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+# A quem o valor é creditado. Lista de entidades, ou campo nenhum.
+attributed_to:
+  - "RTP"
+
+study: "a-casa-em-portugal-e-na-europa"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Só em imprensa. Atribuição por confirmar na fonte primária; não tratar a transcrição do jornal como documento da pessoa ou entidade. Não harmonizar contagens. Data conferida no elemento time do artigo; a publicação em pub-data e a atualização têm o mesmo dia. Frase da narração da RTP, sem atribuição individual no artigo. · Cruzado de ResearchHub content/23 Habitacao · hab-imprensa-hospital."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

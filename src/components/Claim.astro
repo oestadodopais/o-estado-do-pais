@@ -85,6 +85,7 @@
  */
 import { valorNaLingua } from '../lib/valor-na-lingua.mjs';
 import { notaDaBandeira } from '../lib/bandeira-da-fonte.mjs';
+import { linguaDoTituloDoDocumento } from '../i18n/lingua-dos-titulos.mjs';
 import { getClaim } from '../lib/ledger.mjs';
 import Provenance from './Provenance.astro';
 
@@ -158,6 +159,7 @@ if (!lang) {
 }
 
 const claim = getClaim(id);
+const linguaDoValor = ['texto','afirmação'].includes(claim.unit) && claim.value === claim.excerpt ? linguaDoTituloDoDocumento(claim.document?.title, lang) : null;
 const Tag = as;
 /* A etiqueta do VALOR, que é a única que a porta muda, e só no modo plano. */
 const TagDoValor = porta && plano && !chip ? 'a' : Tag;
@@ -236,7 +238,7 @@ const estilo = escala
         class:list={['claim-value', klass, porta && 'claim-porta']}
         id={elemId ?? undefined}
         href={porta ?? undefined}
-        data-claim={id}
+        data-claim={id} lang={linguaDoValor}
         style={estilo}
         {...rest}
       >
@@ -250,7 +252,7 @@ const estilo = escala
     </>
   ) : chip ? (
     <span class:list={['claim', 'claim-com-chip', provisorio && 'claim-com-provisorio']}>
-      <Tag class:list={['claim-value', klass]} data-claim={id} style={estilo} {...rest}>
+      <Tag class:list={['claim-value', klass]} data-claim={id} lang={linguaDoValor} style={estilo} {...rest}>
         {valor}
       </Tag>
       {sufixo && <span class="claim-sufixo" set:text={sufixo} />}
@@ -259,7 +261,7 @@ const estilo = escala
     </span>
   ) : sufixo ? (
     <span class:list={['claim', provisorio && 'claim-com-provisorio']}>
-      <Tag class:list={['claim-value', klass]} data-claim={id} style={estilo} {...rest}>
+      <Tag class:list={['claim-value', klass]} data-claim={id} lang={linguaDoValor} style={estilo} {...rest}>
         {valor}
       </Tag>
       <span class="claim-sufixo" set:text={sufixo} />
@@ -272,13 +274,13 @@ const estilo = escala
        posto ao lado, e cinco valores da primeira página passavam a aparecer «sem
        selo para a sua própria linha». Um fragmento deixa o pai como estava. */
     <>
-      <Tag class:list={['claim-value', klass]} data-claim={id} style={estilo} {...rest}>
+      <Tag class:list={['claim-value', klass]} data-claim={id} lang={linguaDoValor} style={estilo} {...rest}>
         {valor}
       </Tag>
       <span class="claim-provisorio">{' ('}{notaDaFonte}{')'}</span>
     </>
   ) : (
-    <Tag class:list={['claim-value', klass]} data-claim={id} style={estilo} {...rest}>
+    <Tag class:list={['claim-value', klass]} data-claim={id} lang={linguaDoValor} style={estilo} {...rest}>
       {valor}
     </Tag>
   )

@@ -216,6 +216,7 @@
  */
 
 import './registo-leituras.mjs';
+import { FAMILIAS_DAS_LINHAS } from '../../src/data/o-que-e-das-familias.mjs';
 import fs from 'node:fs';
 import { documentoDosAssuntos } from '../inicio/paginas-dos-assuntos.mjs';
 import os from 'node:os';
@@ -1016,6 +1017,16 @@ const familiaDaLinha = (id) => id.replace(/-ue$/, '').replace(/-\d{4}(-\d{2})?$/
 function grupoEtarioDaLinha(linha) {
   const excerto = typeof linha.excerpt === 'string' ? linha.excerpt : '';
   const endereco = typeof linha.source_url === 'string' ? linha.source_url : '';
+  // Pedidos com várias idades devolvem várias células. A coordenada escolhe a célula.
+  try {
+    const age=JSON.parse(excerto)?.coordinates?.age;
+    if(typeof age==='string') {
+      const filters=new URL(endereco).searchParams.getAll('age');
+      const bounds=age.match(/^Y?(\d+)-(\d+)$/);
+      if(age==='TOTAL' && filters.includes(age)) return null;
+      if(bounds) return {limites:bounds.slice(1),etiqueta:bounds.slice(1),filtro:filters.includes(age)?bounds.slice(1):['fora','pedido'],discordam:!filters.includes(age)};
+    }
+  } catch {}
   const daEtiqueta = excerto.match(/Age class: From (\d+) to (\d+) years/);
   const doFiltro = endereco.match(/[?&]age=Y?(\d+)-(\d+)/);
   if (!daEtiqueta && !doFiltro) return null;
@@ -1046,7 +1057,7 @@ function grupoEtarioDaLinha(linha) {
  * @returns {{ erros: string[], medidas: number, linhas: number }}
  */
 function celulaK13(
-  definicoes = /** @type {any} */ (DEFINICOES_DAS_MEDIDAS),
+  definicoes = /** @type {any} */ ({...Object.fromEntries(Object.entries(FAMILIAS_DAS_LINHAS).map(([id,f])=>[id,f.frase])),...DEFINICOES_DAS_MEDIDAS}),
   catraca = CATRACA_DO_GRUPO_ETARIO,
   linhas = [...loadClaims().values()],
 ) {
@@ -1116,7 +1127,10 @@ function celulaK13(
       const naCatraca = catraca.get(id);
       const faltam = [];
       for (const lang of ['pt', 'en']) {
-        const texto = textoDaDefinicao(definicoes[id][lang] ?? definicoes[id].pt);
+        const words={'dezasseis':'16','vinte e nove':'29','vinte e cinco':'25','trinta e quatro':'34','dezoito':'18','sixteen':'16','twenty-nine':'29','twenty-five':'25','thirty-four':'34','eighteen':'18'};
+        let texto = textoDaDefinicao(definicoes[id][lang] ?? definicoes[id].pt);
+        for(const [word,n] of Object.entries(words)) texto=texto.replaceAll(word,n);
+        texto=texto.replace(/, (\d+) a (\d+) anos/g,', dos $1 aos $2 anos').replace(/, (\d+) to (\d+) years/g,', aged $1 to $2 years');
         if (!FORMAS_DO_INTERVALO[lang](a, b).some((forma) => forma.test(texto))) {
           faltam.push({ lang, texto });
         }
@@ -1417,16 +1431,19 @@ if (PROVA) {
     if (real.erros.length) {
       falhas.push(`K13 recusa a declaração em vigor: ${real.erros[0]}`);
     }
-    if (real.medidas !== 4 || real.linhas !== 12) {
+    if (real.medidas !== 17 || real.linhas !== 27) {
       falhas.push(
         `K13 viu ${real.medidas} medida(s) e ${real.linhas} linha(s) com grupo etário, ` +
-          `e o livro-razão tem 4 e 12`,
+          `e o livro-razão tem 17 e 27`,
       );
     }
     if (CATRACA_DO_GRUPO_ETARIO.size !== 0) {
       falhas.push('K13: a catraca em vigor tem entradas e o ficheiro diz que está vazia');
     }
     /* A linha tem de trazer mesmo a etiqueta: sem ela a planta não prova nada. */
+    const batch='https://ec.europa.eu/?age=TOTAL&age=Y16-29';
+    if(grupoEtarioDaLinha({excerpt:JSON.stringify({coordinates:{age:'TOTAL'}}),source_url:batch})!==null) falhas.push('K13: total confundido com jovens');
+    if(!grupoEtarioDaLinha({excerpt:JSON.stringify({coordinates:{age:'Y25-34'}}),source_url:batch})?.discordam) falhas.push('K13: coordenada fora do pedido aceite');
     const grupo = grupoEtarioDaLinha(reais.find((l) => l.id === id));
     if (!grupo || grupo.limites.join('-') !== '15-29') {
       falhas.push(`K13: a linha «${id}» não fixa os 15 aos 29`);

@@ -1,0 +1,45 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "hab-ine-preco-mediano"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "2 337"
+unit: "€/m2"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "preço mediano dos 35 953 alojamentos familiares transacionados em Portugal"
+name_source: "PDF p. 1; parágrafo identificado pelo início; área física declarada"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "INE"
+document:
+  title: "ESTATÍSTICAS DE PREÇOS DA HABITAÇÃO AO NÍVEL LOCAL"
+  edition: "2026-Q1"
+  locator: "PDF p. 1; parágrafo identificado pelo início; área física declarada"
+  source_sha256: "edad0e60dfc15f44ad3116dfe3506f23ef054f473aaaf60e97dae4224067c917"
+  page: 1
+  kind: "pdf"
+source_url: "https://www.ine.pt/ngt_server/attachfileu.jsp?look_parentBoui=804178838&att_display=n&att_download=y"
+access_date: "2026-10-19"
+reference_date: "2026-T1"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "No 1.º trimestre de 2026, o preço mediano dos 35 953 alojamentos familiares transacionados em Portugal foi 2 337 €/m2, na sequência de uma taxa de variação de 19,8% em relação ao 1.º trimestre de 2025 (17,5% no trimestre anterior)."
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "a-casa-em-portugal-e-na-europa"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Destaque anterior ao previsto para 23 de outubro. A versão corrigida da fonte é conservada. · Cruzado de ResearchHub content/23 Habitacao · hab-ine-preco-mediano."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

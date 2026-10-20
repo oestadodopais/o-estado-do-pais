@@ -1,0 +1,44 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "hab-votacao-pan"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "2026-09-30 | Votação na generalidade Votação em 2026-09-30 na Reunião Plenária n.º 7 Rejeitado Contra:PSD, CH, IL, CDS-PP Abstenção:PS, PCP A Favor: L, BE, PAN, JPP"
+unit: "texto"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Projeto de Resolução 1272/XVII/2 Por uma política de arrendamento que sirva à classe média e às famílias mais vulneráveis"
+name_source: "Histórico da iniciativa; votação na generalidade, reunião, resultado e votos por partido"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Assembleia da República"
+document:
+  title: "Projeto de Resolução 1272/XVII/2 Por uma política de arrendamento que sirva à classe média e às famílias mais vulneráveis"
+  edition: "2026-09-30"
+  locator: "Histórico da iniciativa; votação na generalidade, reunião, resultado e votos por partido"
+  source_sha256: "a8741cafc63a011759ab05ddd5fb9a910333c13efd6bf9cfdb42ca7a7ca22b7d"
+  kind: "html"
+source_url: "https://www.parlamento.pt/ActividadeParlamentar/Paginas/DetalheIniciativa.aspx?BID=377267"
+access_date: "2026-10-19"
+reference_date: "2026-09-30"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "2026-09-30 | Votação na generalidade Votação em 2026-09-30 na Reunião Plenária n.º 7 Rejeitado Contra:PSD, CH, IL, CDS-PP Abstenção:PS, PCP A Favor: L, BE, PAN, JPP"
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "a-casa-em-portugal-e-na-europa"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Registo parlamentar; não se atribui a decisão coletiva a uma pessoa. · Cruzado de ResearchHub content/23 Habitacao · hab-votacao-pan."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

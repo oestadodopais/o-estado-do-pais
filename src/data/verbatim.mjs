@@ -72,6 +72,28 @@ const totalMinisterios = ORIGENS_DAS_DEFINICOES['rp4n-total-ministerios'].excert
 if (!totalMinisterios) throw new Error('EX3: o total dos ministérios não se lê no excerto selado');
 
 export const VERBATIM = {
+
+  "estudo-hb1-pergunta-pt": {
+    "lang": "pt",
+    "origem": "Mandato HB1, secção 5, pergunta do estudo.",
+    "text": "Como está a casa em Portugal, e como se compara com a Europa?"
+  },
+  "estudo-hb1-titulo-pt": {
+    "lang": "pt",
+    "origem": "Título de studies-src/a-casa-em-portugal-e-na-europa/pt.html.",
+    "text": "A casa em Portugal e na Europa"
+  },
+  "estudo-hb1-pergunta-en": {
+    "lang": "en",
+    "origem": "Mandato HB1, secção 5, pergunta do estudo.",
+    "text": "How is housing in Portugal, and how does it compare with Europe?"
+  },
+  "estudo-hb1-titulo-en": {
+    "lang": "en",
+    "origem": "Título de studies-src/a-casa-em-portugal-e-na-europa/en.html.",
+    "text": "Housing in Portugal and in Europe"
+  }
+,
   'origem-rp4n-total-ministerios-montante': {lang: null, origem: 'rp4n-total-ministerios, campo excerto', text: totalMinisterios},
   'estudo-agua-abertura-pt': {
     lang: 'pt', origem: 'studies-src/onde-esta-a-agua/pt.html:215, primeira frase de p.standfirst.',

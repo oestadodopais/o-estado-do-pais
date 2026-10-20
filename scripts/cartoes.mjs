@@ -522,27 +522,29 @@ function desenha(modelo, dim) {
     y -= 44;
 
     /* O estado: o quadrado e a palavra, como em qualquer peça do sítio. */
-    const lado = 24;
-    const p = PINTURA[modelo.estado.estado];
-    partes.push(
-      `<rect x="${MARGEM}" y="${y - lado + 3}" width="${lado}" height="${lado}" ` +
-        `fill="${p.enchimento}" stroke="${p.contorno}" stroke-width="1.5"/>`,
-    );
-    partes.push(
-      texto(modelo.estado.palavra.toLocaleLowerCase(modelo.lang), {
-        x: MARGEM + lado + 14,
-        y,
-        familia: TIPO.versal,
-        corpo: 26,
-        peso: 600,
-        cor: p.palavra,
-        espacamento: 1.2,
-      }),
-    );
-    y -= 54;
+    if (modelo.estado) {
+      const lado = 24;
+      const p = PINTURA[modelo.estado.estado];
+      partes.push(
+        `<rect x="${MARGEM}" y="${y - lado + 3}" width="${lado}" height="${lado}" ` +
+          `fill="${p.enchimento}" stroke="${p.contorno}" stroke-width="1.5"/>`,
+      );
+      partes.push(
+        texto(modelo.estado.palavra.toLocaleLowerCase(modelo.lang), {
+          x: MARGEM + lado + 14,
+          y,
+          familia: TIPO.versal,
+          corpo: 26,
+          peso: 600,
+          cor: p.palavra,
+          espacamento: 1.2,
+        }),
+      );
+      y -= 54;
+    }
 
     const { corpo, linhas } = ajusta(modelo.manchete, {
-      familia: TIPO.aparelho,
+      familia: modelo.estado ? TIPO.aparelho : TIPO.prosa,
       peso: 600,
       espacamento: -2,
       corpoMax: 96,
@@ -556,7 +558,7 @@ function desenha(modelo, dim) {
         texto(linhas[i], {
           x: MARGEM,
           y,
-          familia: TIPO.aparelho,
+          familia: modelo.estado ? TIPO.aparelho : TIPO.prosa,
           corpo,
           peso: 600,
           cor: COR['--ink'],

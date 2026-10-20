@@ -1,0 +1,44 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "hab-ilc-lvho07c-a-pc-rent-mkt-ro-2025"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "56,0"
+unit: "Percentage"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Housing cost overburden rate by tenure status"
+name_source: "label; dimension.age.category.label"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Eurostat"
+document:
+  title: "Housing cost overburden rate by tenure status"
+  edition: "2025"
+  locator: "freq=A; unit=PC; tenure=RENT_MKT; geo=RO; time=2025; value[351]"
+  source_sha256: "9f0dfe142296f5e7aff87b477ce57ec4d0aeeca1ce05082d6da8b3de7ce2cf4a"
+  kind: "serie"
+source_url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/ilc_lvho07c?format=JSON&lang=EN&unit=PC&tenure=RENT_MKT&sinceTimePeriod=2015"
+access_date: "2026-10-20"
+reference_date: "2025"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"tenure\": \"RENT_MKT\", \"geo\": \"RO\", \"time\": \"2025\"}, \"value\": \"56.0\", \"status\": null}"
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "a-casa-em-portugal-e-na-europa"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "Cruzado de ResearchHub content/23 Habitacao · hab-ilc-lvho07c-a-pc-rent-mkt-ro-2025."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

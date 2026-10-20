@@ -1,0 +1,36 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "der-hab-renda-lisboa-vs-portugal"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "1,7"
+unit: "vezes"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: null
+document: null
+source_url: null
+access_date: null
+reference_date: "2026-T2"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: null
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: "round ( hab-ine-renda-lisboa / hab-ine-renda-portugal , 1 ) = 1.7"
+derivation_en: "round ( hab-ine-renda-lisboa / hab-ine-renda-portugal , 1 ) = 1.7"
+derived_from:
+  - "hab-ine-renda-lisboa"
+  - "hab-ine-renda-portugal"
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: "round ( hab-ine-renda-lisboa / hab-ine-renda-portugal , 1 )"
+
+study: "a-casa-em-portugal-e-na-europa"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[derivation do motor] {'components': ['hab-ine-renda-lisboa', 'hab-ine-renda-portugal'], 'formula': 'hab-ine-renda-lisboa / hab-ine-renda-portugal', 'calculation': 'hab-ine-renda-lisboa = 17.79; hab-ine-renda-portugal = 10.17; resultado = 1.749262536873156342182890855', 'rounding_places': 1} · Cruzado de ResearchHub content/23 Habitacao · der-hab-renda-lisboa-vs-portugal."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

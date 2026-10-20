@@ -1,0 +1,44 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "hab-imprensa-manif-rtp"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "cerca de 1.500 pessoas"
+unit: "texto"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "\"Não consegues pagar renda? Traz tenda\". Polícia desmonta acampamento no Porto"
+name_source: "HTML; início literal único"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "RTP"
+document:
+  title: "\"Não consegues pagar renda? Traz tenda\". Polícia desmonta acampamento no Porto"
+  edition: "[a verificar]"
+  locator: "HTML; início literal único"
+  source_sha256: "c67d11f5413d705e61f63614ad523cf7103800551e9a02c75735ba2409955b81"
+  kind: "html"
+source_url: "https://www.rtp.pt/noticias/pais/nao-consegues-pagar-renda-traz-tenda-policia-desmonta-acampamento-no-porto_n1771142"
+access_date: "2026-10-20"
+reference_date: "[a verificar]"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "cerca de 1.500 pessoas"
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "a-casa-em-portugal-e-na-europa"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "Cruzado de ResearchHub content/23 Habitacao · hab-imprensa-manif-rtp."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

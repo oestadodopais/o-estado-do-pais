@@ -1,3 +1,4 @@
+import {createHash} from 'node:crypto';
 #!/usr/bin/env node
 /**
  * A cadeia de cada algarismo de uma página de leitura, percorrida até onde ela
@@ -168,6 +169,17 @@ function linhasDoSitio() {
     const doc = leJson(path.join(CRUZAMENTOS, ficheiro), `ledger/cruzamentos/${ficheiro}`);
     for (const [siteId, linha] of Object.entries(doc?.rows ?? {})) {
       if (linha?.rh_study && linha?.rh_id) mapa.set(`${linha.rh_study} ${linha.rh_id}`, siteId);
+    }
+  }
+  const file = path.join(RAIZ, 'ledger/provas/hb1/series.json');
+  if (fs.existsSync(file)) {
+    const proof = leJson(file, 'séries HB1');
+    if (proof.rh_study !== '28 Habitacao Estudo') throw new Error('HB1: estudo da cópia divergente');
+    for (const [id, r] of Object.entries(proof.rows)) {
+      if (!/^[a-z0-9-]+$/.test(id) || r.file !== `ledger/claims/${id}.yml`) throw new Error('HB1: caminho inválido');
+      const digest = createHash('sha256').update(fs.readFileSync(path.join(CLAIMS, `${id}.yml`))).digest('hex');
+      if (digest !== r.sha256) throw new Error('HB1: a linha mudou sem recompor o documento: '+id);
+      mapa.set(`${proof.rh_study} ${id}`, id);
     }
   }
   return mapa;
@@ -412,6 +424,15 @@ for (const chave of chaves) {
            os dois ao mesmo tempo é o formato a dizer duas coisas. */
         const sha = figura.source_sha256;
         const motivo = figura.source_digest_kind;
+        if (figura.source_body) {
+          const corpo = figura.source_body;
+          const documento = registo.proof_rows?.[figura.row]?.document;
+          if (typeof corpo !== 'string' || !corpo.startsWith('content/') || corpo.split('/').includes('..') ||
+              documento?.file !== corpo || documento?.source_sha256 !== sha) {
+            err(`C1 ${marca}: o corpo integral não coincide com o ficheiro e o resumo da linha provada.`);
+          }
+        }
+
         if (sha !== null && sha !== undefined && motivo !== null && motivo !== undefined) {
           err(
             `C1 ${marca}: a figura traz resumo de origem E motivo ("${motivo}"), e o formato do ` +
@@ -423,7 +444,7 @@ for (const chave of chaves) {
               `C1 ${marca}: o resumo de origem não são 64 hexadecimais minúsculos: ` +
                 `${JSON.stringify(sha)}.`,
             );
-          } else if (!figura.source_digest_em) {
+          } else if (!(figura.source_digest_em || figura.source_body)) {
             err(
               `C1 ${marca}: a figura traz resumo de origem e não diz de que ficheiro ele é ` +
                 `(source_digest_em). Um resumo sem o ficheiro que ele resume não abre nada.`,

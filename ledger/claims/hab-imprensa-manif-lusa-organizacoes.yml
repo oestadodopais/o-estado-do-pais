@@ -1,0 +1,44 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "hab-imprensa-manif-lusa-organizacoes"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "mais de 30 organizações"
+unit: "texto"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Milhares saem à rua em Lisboa contra o custo de vida: “Não dá mais para viver assim”"
+name_source: "HTML; expressão literal na notícia que cita a Lusa"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Postal"
+document:
+  title: "Milhares saem à rua em Lisboa contra o custo de vida: “Não dá mais para viver assim”"
+  edition: "2026-10-10"
+  locator: "HTML; expressão literal na notícia que cita a Lusa"
+  source_sha256: "46ccb73acbe599d698cd3909de0d820432b31d99fb8367052fd2f5115f097bdb"
+  kind: "html"
+source_url: "https://postal.pt/nacional/milhares-saem-a-rua-em-lisboa-contra-o-custo-de-vida-nao-da-mais-para-viver-assim/"
+access_date: "2026-10-20"
+reference_date: "2026-10-10"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "mais de 30 organizações"
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "a-casa-em-portugal-e-na-europa"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "Cruzado de ResearchHub content/23 Habitacao · hab-imprensa-manif-lusa-organizacoes."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

@@ -1,0 +1,26 @@
+{
+  "rh_study": "28 Habitacao Estudo",
+  "snapshot": "content/28 Habitacao Estudo/Technical Source/series-do-sitio/ledger.json",
+  "rows": {
+    "sobrecarga-do-custo-da-habitacao-2025": {
+      "file": "ledger/claims/sobrecarga-do-custo-da-habitacao-2025.yml",
+      "sha256": "4c25633f5ca7ef447aebda73482d38bd9910c40543d78bc52b63a4de5a60fe9a",
+      "study": "quadro-institucional"
+    },
+    "sobrecarga-do-custo-da-habitacao-2025-ue": {
+      "file": "ledger/claims/sobrecarga-do-custo-da-habitacao-2025-ue.yml",
+      "sha256": "df1f01cd54b3723ead97bcd86b091fe573bdda8d0b7e7aa0ffa8f76735755661",
+      "study": "quadro-institucional"
+    },
+    "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025": {
+      "file": "ledger/claims/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025.yml",
+      "sha256": "37447737f7517ff276cb18ef016f7cc0e9b887fbae67bf39405ee5d6164401be",
+      "study": "dominios-2026"
+    },
+    "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue": {
+      "file": "ledger/claims/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue.yml",
+      "sha256": "aefb881e490194f29c5326f902f07c86861dfd07fb2be5e24ba4c86210721a1a",
+      "study": "dominios-2026"
+    }
+  }
+}

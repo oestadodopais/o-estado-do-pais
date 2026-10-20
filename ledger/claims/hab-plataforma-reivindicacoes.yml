@@ -1,0 +1,44 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "hab-plataforma-reivindicacoes"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "Precisamos de tectos às rendas e limites ao aumento das prestações, de mais habitação pública e do fim dos benefícios fiscais para especulação financeira."
+unit: "texto"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Manifestação - Já não dá mais para viver assim!"
+name_source: "HTML; início literal único"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Não dá mais para viver assim"
+document:
+  title: "Manifestação - Já não dá mais para viver assim!"
+  edition: "[a verificar]"
+  locator: "HTML; início literal único"
+  source_sha256: "bc347ecd05d35ec837e29569f4371bbdf942e5711b7bfb3a8d6a801e16c2f127"
+  kind: "html"
+source_url: "https://eventos.coletivos.org/event/manifestacao-ja-nao-da-mais-para-viver-assim"
+access_date: "2026-10-19"
+reference_date: "[a verificar]"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "Precisamos de tectos às rendas e limites ao aumento das prestações, de mais habitação pública e do fim dos benefícios fiscais para especulação financeira."
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "a-casa-em-portugal-e-na-europa"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "Cruzado de ResearchHub content/23 Habitacao · hab-plataforma-reivindicacoes."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

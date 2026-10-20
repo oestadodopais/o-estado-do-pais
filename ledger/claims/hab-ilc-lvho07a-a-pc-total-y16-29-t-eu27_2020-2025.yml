@@ -1,0 +1,44 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "hab-ilc-lvho07a-a-pc-total-y16-29-t-eu27_2020-2025"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "9,3"
+unit: "Percentage"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Housing cost overburden rate by age, sex and poverty status"
+name_source: "label; dimension.age.category.label"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Eurostat"
+document:
+  title: "Housing cost overburden rate by age, sex and poverty status"
+  edition: "2025"
+  locator: "freq=A; unit=PC; rskpovth=TOTAL; age=Y16-29; sex=T; geo=EU27_2020; time=2025; value[10]"
+  source_sha256: "2d38a6468f55fbafc82b398efb9b1c0ee38a2d2f59cfe63b51b3078f076ea8fc"
+  kind: "serie"
+source_url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/ilc_lvho07a?format=JSON&lang=EN&geo=AT&geo=BE&geo=BG&geo=CY&geo=CZ&geo=DE&geo=DK&geo=EE&geo=EL&geo=ES&geo=FI&geo=FR&geo=HR&geo=HU&geo=IE&geo=IT&geo=LT&geo=LU&geo=LV&geo=MT&geo=NL&geo=PL&geo=PT&geo=RO&geo=SE&geo=SI&geo=SK&geo=EU27_2020&sinceTimePeriod=2015&rskpovth=TOTAL&sex=T&age=Y16-29"
+access_date: "2026-10-19"
+reference_date: "2025"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"rskpovth\": \"TOTAL\", \"age\": \"Y16-29\", \"sex\": \"T\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"9.3\", \"status\": null}"
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "a-casa-em-portugal-e-na-europa"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] A União é o agregado publicado, nunca a média simples dos países. A bandeira pertence à célula.  · Cruzado de ResearchHub content/23 Habitacao · hab-ilc-lvho07a-a-pc-total-y16-29-t-eu27_2020-2025."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

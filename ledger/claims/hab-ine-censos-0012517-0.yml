@@ -1,0 +1,44 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "hab-ine-censos-0012517-0"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "12,1"
+unit: "%"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Proporção de alojamentos familiares clássicos vagos (%) por Localização geográfica à data dos Censos [2021] (NUTS - 2024); Decenal - INE, Recenseamento da população e habitação - Censos 2021"
+name_source: "Dados.2021[0]"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "INE"
+document:
+  title: "Proporção de alojamentos familiares clássicos vagos (%) por Localização geográfica à data dos Censos [2021] (NUTS - 2024); Decenal - INE, Recenseamento da população e habitação - Censos 2021"
+  edition: "2021"
+  locator: "Dados.2021[0]"
+  source_sha256: "9b4a971bfa569a02314680134b0be2d3c87c30948f29a3066178fabe140d0393"
+  kind: "serie"
+source_url: "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0012517&Dim1=S7A2021&Dim2=PT&lang=PT"
+access_date: "2026-10-19"
+reference_date: "2021"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "{\"geocod\": \"PT\", \"geodsg\": \"Portugal\", \"ind_string\": \"12,1\", \"valor\": \"12.1\"}"
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "a-casa-em-portugal-e-na-europa"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Categorias do INE como publicadas, sem soma derivada. · Cruzado de ResearchHub content/23 Habitacao · hab-ine-censos-0012517-0."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

@@ -1,0 +1,44 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "hab-prc-hpi-q-q-total-i15-q-eu27_2020-2026-q2"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "168,56"
+unit: "Quarterly index, 2015=100"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "House price index - quarterly data"
+name_source: "label; dimension.age.category.label"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Eurostat"
+document:
+  title: "House price index - quarterly data"
+  edition: "2026-Q2"
+  locator: "freq=Q; purchase=TOTAL; unit=I15_Q; geo=EU27_2020; time=2026-Q2; value[45]"
+  source_sha256: "139967be9abc6524df81b488dbf675ed6f717552e798e0113f758a0fb805083e"
+  kind: "serie"
+source_url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hpi_q?format=JSON&lang=EN&geo=AT&geo=BE&geo=BG&geo=CY&geo=CZ&geo=DE&geo=DK&geo=EE&geo=EL&geo=ES&geo=FI&geo=FR&geo=HR&geo=HU&geo=IE&geo=IT&geo=LT&geo=LU&geo=LV&geo=MT&geo=NL&geo=PL&geo=PT&geo=RO&geo=SE&geo=SI&geo=SK&geo=EU27_2020&sinceTimePeriod=2015&purchase=TOTAL&unit=RCH_A&unit=RCH_Q&unit=I15_Q"
+access_date: "2026-10-19"
+reference_date: "2026-T2"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "{\"coordinates\": {\"freq\": \"Q\", \"purchase\": \"TOTAL\", \"unit\": \"I15_Q\", \"geo\": \"EU27_2020\", \"time\": \"2026-Q2\"}, \"value\": \"168.56\", \"status\": null}"
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "a-casa-em-portugal-e-na-europa"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] A União é o agregado publicado, nunca a média simples dos países. A bandeira pertence à célula.  · Cruzado de ResearchHub content/23 Habitacao · hab-prc-hpi-q-q-total-i15-q-eu27_2020-2026-q2."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

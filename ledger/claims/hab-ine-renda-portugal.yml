@@ -1,0 +1,45 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "hab-ine-renda-portugal"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "10,17"
+unit: "€/m2"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "renda mediana dos 35 407 novos contratos de arrendamento em Portugal"
+name_source: "PDF p. 1; parágrafo identificado pelo início; área física declarada"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "INE"
+document:
+  title: "ESTATÍSTICAS DE RENDAS DA HABITAÇÃO AO NÍVEL LOCAL"
+  edition: "2026-Q2"
+  locator: "PDF p. 1; parágrafo identificado pelo início; área física declarada"
+  source_sha256: "8be6b068ef8c95a55f1269e20f19b2cfbea864c9e0838872d0b70758d91c9b84"
+  page: 1
+  kind: "pdf"
+source_url: "https://www.ine.pt/ngt_server/attachfileu.jsp?look_parentBoui=817240652&att_display=n&att_download=y"
+access_date: "2026-10-19"
+reference_date: "2026-T2"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "No 2.º trimestre de 2026, a renda mediana dos 35 407 novos contratos de arrendamento em Portugal atingiu 10,17 €/m2."
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "a-casa-em-portugal-e-na-europa"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "Cruzado de ResearchHub content/23 Habitacao · hab-ine-renda-portugal."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

@@ -400,6 +400,9 @@ if (nomeDerivado !== null && !eNomeDeMedida(nomeDerivado)) {
         </details>
       )}
 
+      {['precos-da-habitacao-2025', 'sobrecarga-do-custo-da-habitacao-2025', 'sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025'].includes(c.id) && (
+        <p class="regra-portas" data-hb1-porta={c.id}><a href={routePath('estudo', lang, {slug: 'a-casa-em-portugal-e-na-europa'})} data-verbatim={`estudo-hb1-titulo-${lang}`}>{lang === 'pt' ? 'A casa em Portugal e na Europa' : 'Housing in Portugal and in Europe'}</a></p>
+      )}
     </article>
   )
 }

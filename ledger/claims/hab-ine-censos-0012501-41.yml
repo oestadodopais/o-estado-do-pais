@@ -1,0 +1,44 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "hab-ine-censos-0012501-41"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "375 118"
+unit: "N.º"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Alojamentos familiares clássicos (N.º) por Localização geográfica à data dos Censos [2021] (NUTS - 2024), Forma de ocupação e Época de construção; Decenal - INE, Recenseamento da população e habitação - Censos 2021"
+name_source: "Dados.2021[41]"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "INE"
+document:
+  title: "Alojamentos familiares clássicos (N.º) por Localização geográfica à data dos Censos [2021] (NUTS - 2024), Forma de ocupação e Época de construção; Decenal - INE, Recenseamento da população e habitação - Censos 2021"
+  edition: "2021"
+  locator: "Dados.2021[41]"
+  source_sha256: "8f6e960ea840db86360754149e0fb1229fd92f7cd26116db0bc24ba1ff7db042"
+  kind: "serie"
+source_url: "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0012501&Dim1=S7A2021&Dim2=PT&lang=PT"
+access_date: "2026-10-19"
+reference_date: "2021"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "{\"geocod\": \"PT\", \"geodsg\": \"Portugal\", \"dim_3\": \"4\", \"dim_3_t\": \"Vago por outros motivos\", \"dim_4\": \"T\", \"dim_4_t\": \"Total\", \"ind_string\": \"375 118\", \"valor\": \"375118\"}"
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "a-casa-em-portugal-e-na-europa"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Categorias do INE como publicadas, sem soma derivada. · Cruzado de ResearchHub content/23 Habitacao · hab-ine-censos-0012501-41."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

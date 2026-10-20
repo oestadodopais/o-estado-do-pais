@@ -1,0 +1,44 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "hab-ilc-lvho07c-a-pc-own-nl-pt-2025"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "1,3"
+unit: "Percentage"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Housing cost overburden rate by tenure status"
+name_source: "label; dimension.age.category.label"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Eurostat"
+document:
+  title: "Housing cost overburden rate by tenure status"
+  edition: "2025"
+  locator: "freq=A; unit=PC; tenure=OWN_NL; geo=PT; time=2025; value[868]"
+  source_sha256: "57a1d9bd9178264c7588ef2a8360f9ddb7052cb3dab65f860c4290f94a33e367"
+  kind: "serie"
+source_url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/ilc_lvho07c?format=JSON&lang=EN&geo=AT&geo=BE&geo=BG&geo=CY&geo=CZ&geo=DE&geo=DK&geo=EE&geo=EL&geo=ES&geo=FI&geo=FR&geo=HR&geo=HU&geo=IE&geo=IT&geo=LT&geo=LU&geo=LV&geo=MT&geo=NL&geo=PL&geo=PT&geo=RO&geo=SE&geo=SI&geo=SK&geo=EU27_2020&sinceTimePeriod=2015&tenure=TOTAL&tenure=OWN_L&tenure=OWN_NL&tenure=RENT_FR"
+access_date: "2026-10-19"
+reference_date: "2025"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"tenure\": \"OWN_NL\", \"geo\": \"PT\", \"time\": \"2025\"}, \"value\": \"1.3\", \"status\": null}"
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "a-casa-em-portugal-e-na-europa"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] A União é o agregado publicado, nunca a média simples dos países. A bandeira pertence à célula.  · Cruzado de ResearchHub content/23 Habitacao · hab-ilc-lvho07c-a-pc-own-nl-pt-2025."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []
