@@ -3,8 +3,11 @@ import fs from 'node:fs';
 import {getClaim} from '../../src/lib/ledger.mjs';
 const frases=JSON.parse(fs.readFileSync(new URL('./v2ai-frases.json',import.meta.url),'utf8'));
 const origens=JSON.parse(fs.readFileSync(new URL('../../src/data/origens-v2a.json',import.meta.url),'utf8'));
+// O mandato K pertence às linhas atravessadas no V2-a, não a qualquer prefixo futuro.
+const linhasV2a = new Set(Object.keys(JSON.parse(fs.readFileSync(new URL('../../ledger/cruzamentos/v2a.json', import.meta.url), 'utf8')).rows));
 const normal=s=>String(s??'').replace(/\s+/g,' ').trim();
 export function conferirPalavrasSaude(root,id,lang) {
+ if (!linhasV2a.has(id)) return [];
  const saude=id.startsWith('oe-2027-saude-')||id.startsWith('afirmacao-leitao-')||id.startsWith('afirmacao-rtp-');
  const road=id.startsWith('oe-2027-ppp-rodoviario-'),total=id==='oe-2027-ppp-total-encargos-liquidos-2027',pcp=id.startsWith('afirmacao-pcp-');
  if(!saude&&!road&&!total&&!pcp)return [];

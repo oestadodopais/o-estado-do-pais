@@ -1997,7 +1997,7 @@ function provaLocalizadores() {
       copia.document.locator=copia.document.locator.replace('texto da p. 124 do PDF (108 impressa)','nota ao quadro 4.25');
       if(localizadorV2aConfere(copia.name_source,copia))falhas.push(`${mensagem}: planta não mordida`);else console.log(`PLANTA ${mensagem}`);
     }
-    for(const id of [...LINHAS_DA_REGUA.keys()].filter(id=>id.startsWith('oe-2027-')||/^afirmacao-.*oe2027/.test(id)))for(const campo of ['locator','locator_en']) {
+    for(const id of Object.keys(JSON.parse(fs.readFileSync(path.join(RAIZ, 'ledger/cruzamentos/v2a.json'), 'utf8')).rows))for(const campo of ['locator','locator_en']) {
       const original=LINHAS_DA_REGUA.get(id),copia=structuredClone(original);
       const mensagem=`V2AF localizador ${campo}: ${id}`;
       if(!localizadorV2aConfere(original.name_source,original))falhas.push(`${mensagem}: controlo positivo falhou`);
