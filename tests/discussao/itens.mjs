@@ -7,6 +7,7 @@ import {parse} from 'node-html-parser';
 import {ITENS, DISCUSSAO, PCP} from '../../src/data/discussao.mjs';
 import {loadClaims} from '../../src/lib/ledger.mjs';
 import {conferirDerivacoes, plantasDasDerivacoes} from './derivacoes.mjs';
+import {conferirPortasDoMetodo} from './metodo.mjs';
 import {conferirMarcasDoTitulo,plantasDosTitulos,tituloDeEnsaio} from './titulos.mjs';
 import {conferirAuditoriaDasExplicacoes, explicacaoPelaCelula, linhasDaExplicacao, textoSemSelos} from '../explicacoes/explicacao.mjs';
 // Lista independente do mandato: o título e estas seis partes, sem rótulos livres.
@@ -176,7 +177,8 @@ export function plantas(html,lang){
  return out;
 }
 export function conferirTudo(dist=path.join(raiz,'dist')){
- const erros=conferirDeclaracoes(),provas=[...plantasDasDerivacoes(loadClaims()),...plantasDosTitulos(loadClaims())],integracoes=[];
+ const metodo=conferirPortasDoMetodo(dist);
+ const erros=[...conferirDeclaracoes(),...metodo.erros],provas=[...plantasDasDerivacoes(loadClaims()),...plantasDosTitulos(loadClaims()),...metodo.plantas],integracoes=[];
  for(const lang of ['pt','en']){
   const file=path.join(dist,lang==='pt'?'o-que-se-discute/index.html':'en/under-discussion/index.html');
   if(!fs.existsSync(file)){erros.push('V2B página: página ausente');continue;}

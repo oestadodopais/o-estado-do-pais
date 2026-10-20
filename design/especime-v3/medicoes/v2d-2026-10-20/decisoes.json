@@ -131,5 +131,12 @@
     "antes": "O inventário conservava frases substituídas e não declarava os novos parágrafos e títulos.",
     "depois": "A medição do HTML recolheu 66 cadeias novas, 60 de conteúdo e seis de navegação; 38 declarações deixaram de se render e foram retiradas. Seis frases conservadas dentro dos parágrafos novos foram substituídas pelas declarações desses parágrafos completos, em vez de serem proibidas como retiradas.",
     "razao": "A exceção contextual inglesa «years with completed execution» descreve anos de execução orçamental concluída, não a completude do sítio; fica limitada à discussão. A leitura cruzada das novas frases continua atribuída à direção."
+  },
+  {
+    "id": "V2D-26",
+    "tema": "Uma só porta para o Método nos recibos novos",
+    "antes": "Cada um dos 126 recibos novos, nas duas edições, repetia a porta do Método na regra da releitura e no rodapé. A L1 mediu 3034 páginas, 252 acima do teto de 2782.",
+    "depois": "Os recibos novos conservam a porta da regra da releitura e suprimem a segunda porta do rodapé, pelo mecanismo já usado nos recibos NATO.",
+    "razao": "A duplicação não acrescentava um destino. A lista explícita das 126 linhas delimita a alteração; a régua e o teto da L1 não mudam."
   }
 ]

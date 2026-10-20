@@ -48,6 +48,7 @@ O inventário final contém 135 linhas com porta para os itens, das quais 119 ch
 | cruzamento final com origem | 0; aviso de built_at do livro anterior, sem divergência de linhas ou ficheiros |
 | tentativa de frases compostas na sandbox | 1: tentativa indevida fora do escrivão; browserType.launch: Target page, context or browser has been closed; Error: kill EPERM. A conferência válida corre pelo escrivão no perfil V2-d. |
 | discussão após integração das áreas | 0, 80 de 80 plantas e 276 portas |
+| quinta corrida pelo escrivão | build, discussão, palavras, frases compostas, HTML, alvos, CSS, séries e tipos: 0; L1: 1, 3034 páginas contra teto 2782 |
 
 Capturas ainda não executadas.
 
@@ -208,6 +209,14 @@ Antes: O inventário conservava frases substituídas e não declarava os novos p
 Depois: A medição do HTML recolheu 66 cadeias novas, 60 de conteúdo e seis de navegação; 38 declarações deixaram de se render e foram retiradas. Seis frases conservadas dentro dos parágrafos novos foram substituídas pelas declarações desses parágrafos completos, em vez de serem proibidas como retiradas.
 
 A exceção contextual inglesa «years with completed execution» descreve anos de execução orçamental concluída, não a completude do sítio; fica limitada à discussão. A leitura cruzada das novas frases continua atribuída à direção.
+
+### V2D-26: Uma só porta para o Método nos recibos novos
+
+Antes: Cada um dos 126 recibos novos, nas duas edições, repetia a porta do Método na regra da releitura e no rodapé. A L1 mediu 3034 páginas, 252 acima do teto de 2782.
+
+Depois: Os recibos novos conservam a porta da regra da releitura e suprimem a segunda porta do rodapé, pelo mecanismo já usado nos recibos NATO.
+
+A duplicação não acrescentava um destino. A lista explícita das 126 linhas delimita a alteração; a régua e o teto da L1 não mudam.
 
 ## Valores lidos do livro selado
 

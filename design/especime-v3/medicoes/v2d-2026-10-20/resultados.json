@@ -26,6 +26,7 @@
     "séries, conferência dirigida": "0, 40 de 40 plantas",
     "cruzamento final com origem": "0; aviso de built_at do livro anterior, sem divergência de linhas ou ficheiros",
     "tentativa de frases compostas na sandbox": "1: tentativa indevida fora do escrivão; browserType.launch: Target page, context or browser has been closed; Error: kill EPERM. A conferência válida corre pelo escrivão no perfil V2-d.",
-    "discussão após integração das áreas": "0, 80 de 80 plantas e 276 portas"
+    "discussão após integração das áreas": "0, 80 de 80 plantas e 276 portas",
+    "quinta corrida pelo escrivão": "build, discussão, palavras, frases compostas, HTML, alvos, CSS, séries e tipos: 0; L1: 1, 3034 páginas contra teto 2782"
   }
 }

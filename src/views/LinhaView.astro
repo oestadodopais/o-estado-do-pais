@@ -43,6 +43,7 @@
  * algarismos, e nenhum entra por dispensa.
  */
 import Base from '../layouts/Base.astro';
+import travessiaV2d from '../../ledger/cruzamentos/v2d.json';
 import PortasDaDiscussao from '../components/discussao/PortasDaDiscussao.astro';
 import Claim from '../components/Claim.astro';
 import CampoDaLinha from '../components/CampoDaLinha.astro';
@@ -1929,8 +1930,8 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
 
       <p class="rodape-nav aparelho-saidas">
         <a href={caminhoDoLivro(lang)}>{s.livro.linha.voltar}</a>
-        {/* EX3: a porta da releitura já abre o Método nestes recibos novos. */}
-        {!((id.startsWith('nato-defesa-portugal-') || id.startsWith('nato-compromisso-') || id === 'nato-cimeira-haia-2025') && verificacoes.length === 0) && <a href={`${routePath('metodo', lang)}#livro-razao`}>{s.livro.metodoLink}</a>}
+        {/* EX3 e V2-d: a porta da releitura já abre o Método nestes recibos. */}
+        {!((id.startsWith('nato-defesa-portugal-') || id.startsWith('nato-compromisso-') || id === 'nato-cimeira-haia-2025' || Object.hasOwn(travessiaV2d.rows, id)) && verificacoes.length === 0) && <a href={`${routePath('metodo', lang)}#livro-razao`}>{s.livro.metodoLink}</a>}
       </p>
     </aside>
   </div>
