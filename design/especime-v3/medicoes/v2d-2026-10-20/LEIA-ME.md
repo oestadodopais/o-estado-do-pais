@@ -2,7 +2,7 @@
 
 ## Estado
 
-Implementação e travessia concluídas; portões da cabeça e capturas ainda pendentes.
+Implementação, selagem, travessia e conferências concluídas. Motor 48d97b85fdc4609a04baca0f392c02b5da71d931; construção e capturas do sítio 1e2e737e5dd87fbc17cf936e1f4f95d653956798. Este fecho acrescenta as provas e o relatório, sem alterar as páginas. Sem push. A conferência editorial e a leitura a frio pertencem ao lugar de direção.
 
 ## Medida de partida e selagem
 
@@ -49,8 +49,20 @@ O inventário final contém 135 linhas com porta para os itens, das quais 119 ch
 | tentativa de frases compostas na sandbox | 1: tentativa indevida fora do escrivão; browserType.launch: Target page, context or browser has been closed; Error: kill EPERM. A conferência válida corre pelo escrivão no perfil V2-d. |
 | discussão após integração das áreas | 0, 80 de 80 plantas e 276 portas |
 | quinta corrida pelo escrivão | build, discussão, palavras, frases compostas, HTML, alvos, CSS, séries e tipos: 0; L1: 1, 3034 páginas contra teto 2782 |
+| final pelo escrivão: check:css | 0 |
+| final pelo escrivão: check:series | 0 |
+| final pelo escrivão: gate:html | 0 |
+| final pelo escrivão: check:lugar | 0 |
+| final pelo escrivão: check:discussao | 0 |
+| final pelo escrivão: check:palavras | 0 |
+| final pelo escrivão: check:frases-compostas | 0 |
+| final pelo escrivão: check:alvos | 0 |
+| final pelo escrivão: typecheck | 0 |
+| final pelo escrivão: build | 0 |
+| L1 final | 0, 2782 páginas, teto 2782, sem aumento |
+| célula final da discussão | 0, 86 de 86 plantas, 276 portas |
 
-Capturas ainda não executadas.
+Capturas pelo escrivão: código 0, dez páginas completas e vinte recortes dos dois itens, nas edições PT e EN e nas larguras 390, 768, 1024, 1280 e 1600. Zero erros do navegador, pedidos externos, recursos recusados ou transbordos horizontais. Os trinta resumos SHA-256 foram reconferidos nos PNG. Inspeção visual do topo das dez páginas e dos recortes móveis das duas edições, sem cortes ou sobreposições identificados. Pedido e recibo em `pedido-capturas.json` e `capturas.json`; os PNG ficam em `<temporario>/v2d-capturas-final-f/`.
 
 Os registos extensos ficam fora do commit. Nenhum PNG é comitado. A corrida integral do sítio fica para o portão do GitHub na aterragem.
 
@@ -547,6 +559,8 @@ The useful debate in 2027 is the Brisa negotiation and the pending lawsuits, alo
 The PCP is right to draw attention to the cost of partnerships, but wrong to attribute to road partnerships a figure exceeding their gross charges. Partnerships cost the State over a billion gross in the budgeted year; the later claim already covers road, rail and health partnerships, but its amount also exceeds the sum in the table: «Em sentido inverso cresce mais do que o previsto a despesa com as chamadas PPP – rodoviárias, ferroviárias, saúde – com o Governo a desviar mais de 1800 milhões de euros de recursos públicos para os grupos económicos privados, sem que tal se traduza em novas infraestruturas ou investimento nas existentes.» The Government, for its part, presents a table of contracted payments and sends the claims that could change the bill to a risks chapter. Between the two, the reader learns the payments forecast for concessionaires; how much of the pending claims will become an actual charge remains unknown, and that is the bill Parliament should ask for before voting.
 
 ## Reprodução
+
+As declarações dos recibos são reproduzidas por `scripts/compor-familias-v2d.mjs`; a auditoria das palavras por `auditar-palavras.mjs`, nesta pasta. O guião `inventariar.mjs` recebe a medição da voz em JSON e um destino para o inventário recolhido. Os códigos finais e as cabeças conferidas estão em `portoes.json`.
 
 Na raiz do sítio, passar `<motor>` ao guião `conferir-partida.py`, correr `medir-final.mjs` e depois `gerar-relatorio.py`, todos nesta pasta. No motor, `python3 -m publisher.v2d_export` prepara o manifesto e as provas; `python3 -m publisher.export_site_rows --manifest publisher/manifest.v2d.json --site <worktree> --write` atravessa pelo exportador comum.
 

@@ -1,5 +1,5 @@
 {
-  "estado": "Implementação e travessia concluídas; portões da cabeça e capturas ainda pendentes.",
+  "estado": "Implementação, selagem, travessia e conferências concluídas. Motor 48d97b85fdc4609a04baca0f392c02b5da71d931; construção e capturas do sítio 1e2e737e5dd87fbc17cf936e1f4f95d653956798. Este fecho acrescenta as provas e o relatório, sem alterar as páginas. Sem push. A conferência editorial e a leitura a frio pertencem ao lugar de direção.",
   "conferencias": {
     "conferência de partida": 0,
     "pesquisa documental do motor": "0, 32 conferências e 840 células Eurostat",
@@ -27,6 +27,19 @@
     "cruzamento final com origem": "0; aviso de built_at do livro anterior, sem divergência de linhas ou ficheiros",
     "tentativa de frases compostas na sandbox": "1: tentativa indevida fora do escrivão; browserType.launch: Target page, context or browser has been closed; Error: kill EPERM. A conferência válida corre pelo escrivão no perfil V2-d.",
     "discussão após integração das áreas": "0, 80 de 80 plantas e 276 portas",
-    "quinta corrida pelo escrivão": "build, discussão, palavras, frases compostas, HTML, alvos, CSS, séries e tipos: 0; L1: 1, 3034 páginas contra teto 2782"
-  }
+    "quinta corrida pelo escrivão": "build, discussão, palavras, frases compostas, HTML, alvos, CSS, séries e tipos: 0; L1: 1, 3034 páginas contra teto 2782",
+    "final pelo escrivão: check:css": 0,
+    "final pelo escrivão: check:series": 0,
+    "final pelo escrivão: gate:html": 0,
+    "final pelo escrivão: check:lugar": 0,
+    "final pelo escrivão: check:discussao": 0,
+    "final pelo escrivão: check:palavras": 0,
+    "final pelo escrivão: check:frases-compostas": 0,
+    "final pelo escrivão: check:alvos": 0,
+    "final pelo escrivão: typecheck": 0,
+    "final pelo escrivão: build": 0,
+    "L1 final": "0, 2782 páginas, teto 2782, sem aumento",
+    "célula final da discussão": "0, 86 de 86 plantas, 276 portas"
+  },
+  "capturas": "Capturas pelo escrivão: código 0, dez páginas completas e vinte recortes dos dois itens, nas edições PT e EN e nas larguras 390, 768, 1024, 1280 e 1600. Zero erros do navegador, pedidos externos, recursos recusados ou transbordos horizontais. Os trinta resumos SHA-256 foram reconferidos nos PNG. Inspeção visual do topo das dez páginas e dos recortes móveis das duas edições, sem cortes ou sobreposições identificados. Pedido e recibo em `pedido-capturas.json` e `capturas.json`; os PNG ficam em `<temporario>/v2d-capturas-final-f/`."
 }

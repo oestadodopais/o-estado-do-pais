@@ -1,0 +1,30 @@
+{
+  "cabeca_construida": "1e2e737e5dd87fbc17cf936e1f4f95d653956798",
+  "motor": "48d97b85fdc4609a04baca0f392c02b5da71d931",
+  "perfil": "v2d",
+  "codigos": {
+    "check:css": 0,
+    "check:series": 0,
+    "gate:html": 0,
+    "check:lugar": 0,
+    "check:discussao": 0,
+    "check:palavras": 0,
+    "check:frases-compostas": 0,
+    "check:alvos": 0,
+    "typecheck": 0,
+    "build": 0
+  },
+  "l1": {
+    "paginas_com_destinos_repetidos": 2782,
+    "teto": 2782
+  },
+  "motor_core_gate_pre_commit": 0,
+  "cruzamento_com_origem": 0,
+  "capturas": {
+    "paginas": 10,
+    "recortes": 20,
+    "falhas": 0,
+    "transbordos_horizontais": 0,
+    "png_fora_do_commit": true
+  }
+}

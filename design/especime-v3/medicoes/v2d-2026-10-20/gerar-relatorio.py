@@ -41,6 +41,7 @@ for lang in ['pt', 'en']:
             for paragraph in section['paragrafos']:
                 lines += [paragraph, '']
 lines += ['## Reprodução', '',
+    'As declarações dos recibos são reproduzidas por `scripts/compor-familias-v2d.mjs`; a auditoria das palavras por `auditar-palavras.mjs`, nesta pasta. O guião `inventariar.mjs` recebe a medição da voz em JSON e um destino para o inventário recolhido. Os códigos finais e as cabeças conferidas estão em `portoes.json`.', '',
     'Na raiz do sítio, passar `<motor>` ao guião `conferir-partida.py`, correr `medir-final.mjs` e depois `gerar-relatorio.py`, todos nesta pasta. No motor, `python3 -m publisher.v2d_export` prepara o manifesto e as provas; `python3 -m publisher.export_site_rows --manifest publisher/manifest.v2d.json --site <worktree> --write` atravessa pelo exportador comum.', '',
     'Os portões correm por `sh scripts/leituras/portoes-pelo-escrivao.sh <temporario> v2d`; as capturas usam `pedido-capturas.json` pelo guião do escrivão. `check:cruzamento --with-origin` recebe o motor em `RESEARCHHUB_DIR`. O motor inteiro corre pelo pre-commit do escrivão.', '']
 (ROOT / 'LEIA-ME.md').write_text('\n'.join(lines))

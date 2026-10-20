@@ -1,0 +1,20 @@
+{
+  "cabeca": "1e2e737e5dd87fbc17cf936e1f4f95d653956798",
+  "paginas": [
+    {
+      "nome": "discussao",
+      "pt": "/o-que-se-discute/",
+      "en": "/en/under-discussion/",
+      "recortes": [
+        {
+          "nome": "saude",
+          "seletor": "#saude-no-orcamento"
+        },
+        {
+          "nome": "parcerias",
+          "seletor": "#parcerias-rodoviarias"
+        }
+      ]
+    }
+  ]
+}
