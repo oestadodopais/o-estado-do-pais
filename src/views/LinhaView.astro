@@ -89,7 +89,7 @@ import OrigemDaDefinicao from '../components/OrigemDaDefinicao.astro';
 import { DEFINICOES_DAS_MEDIDAS, FIGURAS, ORIGENS_DAS_DEFINICOES, origensDaDefinicao } from '../data/figuras.mjs';
 import { ressalvaDaLinha } from '../data/dominios.mjs';
 import {
-  linguaDoTituloDoDocumento,
+  linguaDoLocalizador, linguaDoTituloDoDocumento,
   linguaDoRotuloDaFonte,
   linguaDaFonte,
   linguaDaEdicao,
@@ -559,7 +559,7 @@ const ficha = [
      * As cadeias estão declaradas na tabela de línguas; a L7 e a L4b
      * conferem a declaração e a língua efetiva nas duas edições.
      */
-    lingua: lang === 'en' && claim.document?.locator_en ? null : linguaDoTituloDoDocumento(claim.document?.title ?? null, lang),
+    lingua: lang === 'en' && claim.document?.locator_en ? null : linguaDoLocalizador(claim.document?.locator, claim.document?.title ?? null, lang),
   },
   /* O RÓTULO COM QUE A FONTE PUBLICA ESTA FIGURA, e onde no ficheiro alojado
      ele foi lido (29.08.2026). Vem a seguir ao localizador porque é o par dele
@@ -1291,7 +1291,7 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
                linha». A marca do campo continua no marcador, e por isso a
                conferência de transcrição do portão lê exactamente o mesmo. */
             <p class="linha-nota">
-              <CampoDaLinha id={id} campo="excerpt" valor={claim.excerpt} lang={lang} />{' '}
+              <CampoDaLinha id={id} campo="excerpt" valor={claim.excerpt} lang={lang} lingua={claim.value === claim.excerpt && ['texto','afirmação'].includes(claim.unit) ? linguaDoTituloDoDocumento(claim.document?.title, lang) : null} />{' '}
               {s.livro.linha.excertoPorConfirmar}
             </p>
           ) : (
@@ -1300,7 +1300,7 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
                 <QuadroFinanciamentoJd1 id={id} excerto={claim.excerpt} />
               ) : (
                 <blockquote class:list={["linha-excerto", { "linha-excerto-grafico": eCustoJd1 }]} tabindex={eCustoJd1 ? "0" : undefined}>
-                  <CampoDaLinha id={id} campo="excerpt" valor={claim.excerpt} lang={lang} />
+                  <CampoDaLinha id={id} campo="excerpt" valor={claim.excerpt} lang={lang} lingua={claim.value === claim.excerpt && ['texto','afirmação'].includes(claim.unit) ? linguaDoTituloDoDocumento(claim.document?.title, lang) : null} />
                 </blockquote>
               )}
               {/* O RECIBO DIZ O QUE O EXCERTO É (achado 5 da leitura a frio de

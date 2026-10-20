@@ -1,0 +1,40 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "irc-taxa-2027"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "18"
+unit: "%"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Assembleia da República"
+document:
+  title: "Lei n.º 64/2025, de 7 de novembro"
+  edition: "2027"
+  locator: "Lei n.º 64/2025; artigo 3.º; p. 2 PDF"
+  source_sha256: "e510a3391c016e2282ceae7eaaa49f5e4fc3199871b5ffa8c410587c8cfebbbd"
+  page: 2
+  kind: "ficheiro"
+source_url: "https://files.diariodarepublica.pt/1s/2025/11/21600/0000200003.pdf#page=2"
+access_date: "2026-10-20"
+reference_date: "2027"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "3 — Nos períodos de tributação que se iniciem durante o ano de 2027, a taxa prevista nos n.os 1 e 5 do artigo 87.º do Código do IRC é de 18 %."
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "orcamento-2027-o-que-muda-e-para-quem"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Texto integral do artigo na versão do diploma identificado. Os segmentos excluem apenas cabeçalhos e rodapés de paginação. · Cruzado de ResearchHub content/25 Orcamento 2027 Medidas · irc-taxa-2027."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

@@ -1,0 +1,44 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "europa-divida-el-2025"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "146,1"
+unit: "%"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Government deficit/surplus, debt and associated data"
+name_source: "label"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Eurostat"
+document:
+  title: "Government deficit/surplus, debt and associated data"
+  edition: "2025"
+  locator: "freq=A; unit=PC_GDP; sector=S13; na_item=GD; geo=EL; time=2025; value[71]"
+  source_sha256: "93840cb5e23289f2051dbc289c048146f5b1d66138f0f5a5a1373b1b3e96a153"
+  kind: "serie"
+source_url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/gov_10dd_edpt1?lang=EN&freq=A&unit=PC_GDP&sector=S13&na_item=GD&sinceTimePeriod=2020"
+access_date: "2026-10-20"
+reference_date: "2025"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC_GDP\", \"sector\": \"S13\", \"na_item\": \"GD\", \"geo\": \"EL\", \"time\": \"2025\"}, \"value\": \"146.1\", \"status\": null}"
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "orcamento-2027-o-que-muda-e-para-quem"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Administrações públicas (S13); dados anuais em percentagem do PIB. O agregado UE27 é publicado pelo Eurostat, não é a média aritmética dos países. Conservar a atualização e as bandeiras da resposta. Fonte: Eurostat. As notas em português são da equipa de recolha; o Eurostat não é responsável por estas adaptações. · Cruzado de ResearchHub content/25 Orcamento 2027 Medidas · europa-divida-el-2025."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

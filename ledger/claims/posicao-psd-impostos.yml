@@ -1,0 +1,46 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "posicao-psd-impostos"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "Enquanto o Governo do PS aumentava impostos, defendeu Hugo Soares, \"este Governo não aumentou um único imposto nos orçamentos que apresentou\"."
+unit: "afirmação"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Notícias ao Minuto"
+document:
+  title: "\"Baile\" na AR com OE em destaque: A \"dança\" de Montenegro e oposição"
+  edition: "2027"
+  locator: "Corpo da página; frase integral identificada pelo excerto; data editorial no documento"
+  source_sha256: "22c7b74a496bf7501d0dfd83d6b123aec3c0e56a79e585ff9b96525f6dc47db2"
+  page: 1
+  kind: "html"
+source_url: "https://m.noticiasaominuto.com/politica/3063997/ao-minuto-debate-quinzenal-ja-comecou-oe2027-em-analise"
+access_date: "2026-10-20"
+published_at: "2026-10-09"
+afirmacao: true
+reference_date: "2026-10-09"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "Enquanto o Governo do PS aumentava impostos, defendeu Hugo Soares, \"este Governo não aumentou um único imposto nos orçamentos que apresentou\"."
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+# A quem o valor é creditado. Lista de entidades, ou campo nenhum.
+attributed_to:
+  - "Hugo Soares"
+
+study: "orcamento-2027-o-que-muda-e-para-quem"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Posição atribuída. Os números da afirmação não constituem medição validada. Relato jornalístico do debate quinzenal de 9.10.2026. O excerto é uma afirmação política, não uma auditoria aos impostos. · Cruzado de ResearchHub content/25 Orcamento 2027 Medidas · posicao-psd-impostos."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

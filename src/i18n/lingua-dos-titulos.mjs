@@ -43,6 +43,25 @@
 
 /** `pt` ou `en`, para cada título distinto do campo `document.title`. */
 export const LINGUA_DOS_TITULOS = {
+  // EO1: nomes conferidos nos documentos alojados.
+  "European Economic Forecast Spring 2026": "en",
+  "Decreto-Lei n.º 97/2026, de 20 de maio": "pt",
+  "Lei n.º 64/2025, de 7 de novembro": "pt",
+  "Artigo 68.º Taxas gerais": "pt",
+  "Proposta de Lei n.º 110/XVII/2.ª Orçamento do Estado para 2027": "pt",
+  "Orçamento do Estado 2027 RELATÓRIO": "pt",
+  "OE2027: BE diz que Orçamento “dá migalhas a quem trabalha” e beneficia os mais ricos": "pt",
+  "\"Temos um bom Orçamento para 2027\", garante o CDS-PP": "pt",
+  "Ventura acusa PS de hipocrisia na habitação: “Montenegro falhou brutalmente, mas os socialistas fizeram pior”": "pt",
+  "Orçamento do Estado reforça valorização dos rendimentos e apoios às famílias e empresas": "pt",
+  "Miranda Sarmento: dívida pública abaixo dos 85% do PIB em 2027 é a \"principal preocupação\" do Governo": "pt",
+  "JPP pede maior protecção das famílias não abrangidas pela descida de IRS": "pt",
+  "Primeiro-ministro rejeita totalmente descer o IVA dos atuais 23% para 21%": "pt",
+  "OE2027: PS leva propostas à especialidade para responder ao custo de vida": "pt",
+  "Habitação: o que propusemos e o que vamos propor": "pt",
+  "\"Baile\" na AR com OE em destaque: A \"dança\" de Montenegro e oposição": "pt",
+  "Real Decreto 126/2026, de 18 de febrero, por el que se fija el salario mínimo interprofesional para 2026.": "es",
+  "Relatório UTAO n.º 17/2026 Apreciação preliminar da Proposta de Orçamento do Estado para 2027": "pt",
   // V2-d: cadeias conferidas nos corpos portugueses e na API inglesa do Eurostat.
   "Sobre o Orçamento do Estado para 2027": "pt",
   "OE 2027: Um assalto às nossas vidas. É preciso romper com esta política e abrir um novo rumo para Portugal": "pt",
@@ -219,7 +238,7 @@ export function linguaDoTituloDoDocumento(titulo, lang = 'pt') {
     : null;
   if (declarada === null) return null;
   if (declarada === lang) return null;
-  return declarada === 'pt' ? 'pt-PT' : 'en';
+  return declarada === 'pt' ? 'pt-PT' : declarada;
 }
 
 /**
@@ -247,6 +266,74 @@ export function linguaDoTituloDoDocumento(titulo, lang = 'pt') {
 
 /** `pt` ou `en`, para cada rótulo distinto do campo `name`. */
 export const LINGUA_DOS_ROTULOS = {
+  // EO1: nomes conferidos nos documentos alojados.
+  "General government gross debt (c)": "en",
+  "GDP": "en",
+  "General government balance (c)": "en",
+  "Government revenue, expenditure and main aggregates": "en",
+  "Até 8 666": "pt",
+  "De mais de 8 666 até 13 075": "pt",
+  "De mais de 13 075 até 18 530": "pt",
+  "De mais de 18 530 até 23 985": "pt",
+  "De mais de 23 985 até 30 538": "pt",
+  "De mais de 30 538 até 44 762": "pt",
+  "De mais de 44 762 até 48 373": "pt",
+  "De mais de 48 373 até 89 995": "pt",
+  "Superior a 89 995": "pt",
+  "POENMP": "pt",
+  "Investimento (FBCF)": "pt",
+  "Emprego (ótica de Contas Nacionais)": "pt",
+  "Taxa de desemprego (% da população ativa)": "pt",
+  "Remunerações por trabalhador": "pt",
+  "Consumo privado": "pt",
+  "Receita total": "pt",
+  "PRR": "pt",
+  "sem PRR": "pt",
+  "Despesa total": "pt",
+  "Saldo primário": "pt",
+  "Habitação - redução IRS rendas moderadas de 25% para 10% (i)": "pt",
+  "Atualização dedução específica e escalões (i)": "pt",
+  "Receita decorrente do aumento de salários (i)": "pt",
+  "Atualização do limite do mínimo de existência": "pt",
+  "IRC": "pt",
+  "Redução taxa em 1 p.p. (i)": "pt",
+  "SIFIDE indireto (reversão) (i)": "pt",
+  "Contribuições sociais": "pt",
+  "Medidas despesa": "pt",
+  "Despesas com pessoal": "pt",
+  "Aumento acordo de rendimentos (i)": "pt",
+  "Aumento RMMG (i)": "pt",
+  "Acordos salariais (i)": "pt",
+  "Prestações sociais": "pt",
+  "Reforço Complemento Solidário para Idosos (CSI)": "pt",
+  "Impacto no saldo": "pt",
+  "Medidas receita": "pt",
+  "IVA": "pt",
+  "Habitação - redução IVA construção de 23% para 6% (i)": "pt",
+  "Combate à fraude no setor dos combustíveis": "pt",
+  "IRS": "pt",
+  "Administração Central": "pt",
+  "Segurança Social": "pt",
+  "2. Ajustamentos em Contas Nacionais": "pt",
+  "Diferença entre juros pagos e devidos do Estado": "pt",
+  "Entidades Públicas Reclassificadas": "pt",
+  "Injeções de capital e empréstimos": "pt",
+  "3. Saldo das AP em contabilidade nacional (1+2)": "pt",
+  "Dívida pública consolidada (%)": "pt",
+  "Variação (p.p.)": "pt",
+  "Efeito saldo primário": "pt",
+  "Efeito dinâmico": "pt",
+  "Efeito juros": "pt",
+  "Efeito PIB": "pt",
+  "Ajustamento défice-dívida": "pt",
+  "Impostos diretos": "pt",
+  "Impostos indiretos": "pt",
+  "Contribuições de segurança social": "pt",
+  "Receita Total": "pt",
+  "Transferências correntes": "pt",
+  "Investimentos": "pt",
+  "Despesa Total": "pt",
+  "Saldo Global": "pt",
   // V2-d: cadeias conferidas nos corpos portugueses e na API inglesa do Eurostat.
   "015 - Saúde": "pt",
   "Serviço Nacional de Saúde": "pt",
@@ -451,7 +538,7 @@ export function linguaDoRotuloDaFonte(rotulo, lang = 'pt') {
     : null;
   if (declarada === null) return null;
   if (declarada === lang) return null;
-  return declarada === 'pt' ? 'pt-PT' : 'en';
+  return declarada === 'pt' ? 'pt-PT' : declarada;
 }
 
 /**
@@ -487,6 +574,22 @@ export function linguaDoRotuloDaFonte(rotulo, lang = 'pt') {
 
 /** `pt` ou `en`, para cada valor distinto do campo `source`. */
 export const LINGUA_DAS_FONTES = {
+  // EO1: nomes conferidos nos documentos alojados.
+  "European Commission": "en",
+  "PRESIDÊNCIA DO CONSELHO DE MINISTROS": "pt",
+  "Assembleia da República": "pt",
+  "AT": "pt",
+  "Presidência do Conselho de Ministros": "pt",
+  "TV RECORD EUROPA": "pt",
+  "Folha Nacional": "pt",
+  "Governo": "pt",
+  "Observador": "pt",
+  "Diário de Notícias": "pt",
+  "Partido Comunista Português": "pt",
+  "Partido Socialista": "pt",
+  "Notícias ao Minuto": "pt",
+  "Boletín Oficial del Estado": "es",
+  "Unidade Técnica de Apoio Orçamental": "pt",
   // V2-d: cadeias conferidas nos corpos portugueses e na API inglesa do Eurostat.
   "Paula Santos": "pt",
   "Paulo Raimundo": "pt",
@@ -544,7 +647,7 @@ export function linguaDaFonte(fonte, lang = 'pt') {
     : null;
   if (declarada === null) return null;
   if (declarada === lang) return null;
-  return declarada === 'pt' ? 'pt-PT' : 'en';
+  return declarada === 'pt' ? 'pt-PT' : declarada;
 }
 
 /**
@@ -586,6 +689,13 @@ export function linguaDaFonte(fonte, lang = 'pt') {
 
 /** `pt`, `en`, ou `null` para uma edição que não está em língua nenhuma. */
 export const LINGUA_DAS_EDICOES = {
+  "2026/2027": null,
+  "2026-10-08": null,
+  "2026-11-18/2026-11-23": null,
+  "2026-11-24": null,
+  "2026-10-27/2026-10-28": null,
+  "2029": null,
+  "2027/2026": null,
   // V2-d: cadeias conferidas nos corpos portugueses e na API inglesa do Eurostat.
   "2026-10-12": null,
   "2022": null,
@@ -734,11 +844,26 @@ export function linguaDaEdicao(edicao, lang = 'pt') {
   const declarada = /** @type {Record<string, string | null>} */ (LINGUA_DAS_EDICOES)[cru];
   if (declarada === null) return null;
   if (declarada === lang) return null;
-  return declarada === 'pt' ? 'pt-PT' : 'en';
+  return declarada === 'pt' ? 'pt-PT' : declarada;
 }
 
 /** EX3: localizadores lidos nas folhas inglesas da NATO, declarados por inteiro. */
 export const LINGUA_DOS_LOCALIZADORES = {
+  "Table III.18.1: Main features of country forecast - PORTUGAL; General government gross debt (c); coluna 6: 2026; p. 143 PDF (127 impressa)": "pt-PT",
+  "Table III.18.1: Main features of country forecast - PORTUGAL; General government gross debt (c); coluna 7: 2027; p. 143 PDF (127 impressa)": "pt-PT",
+  "p. 143 PDF (127 impressa)": "pt-PT",
+  "Table III.18.1: Main features of country forecast - PORTUGAL; GDP; coluna 9: 2027; p. 143 PDF (127 impressa)": "pt-PT",
+  "Table III.18.1: Main features of country forecast - PORTUGAL; General government balance (c); coluna 7: 2027; p. 143 PDF (127 impressa)": "pt-PT",
+  "freq=A; unit=PC_GDP; sector=S13; na_item=GD; geo=EE; time=2025; value[59]": "en",
+  "freq=A; unit=PC_GDP; sector=S13; na_item=GD; geo=EL; time=2025; value[71]": "en",
+  "freq=A; unit=PC_GDP; sector=S13; na_item=GD; geo=ES; time=2025; value[77]": "en",
+  "freq=A; unit=PC_GDP; sector=S13; na_item=GD; geo=EU27_2020; time=2025; value[5]": "en",
+  "freq=A; unit=PC_GDP; sector=S13; na_item=GD; geo=PT; time=2025; value[155]": "en",
+  "freq=A; unit=PC_GDP; sector=S13; na_item=B9; geo=CY; time=2025; value[101]": "en",
+  "freq=A; unit=PC_GDP; sector=S13; na_item=B9; geo=EU27_2020; time=2025; value[5]": "en",
+  "freq=A; unit=PC_GDP; sector=S13; na_item=B9; geo=PT; time=2025; value[155]": "en",
+  "freq=A; unit=PC_GDP; sector=S13; na_item=B9; geo=RO; time=2025; value[161]": "en",
+  "Real Decreto 126/2026; artículo 1": "es",
   // V2-d: cadeias conferidas nos corpos portugueses e na API inglesa do Eurostat.
   "freq=A; unit=EUR_HAB; icha11_hf=TOT_HF; geo=EU27_2020; time=2024; value[4]": "en",
   "freq=A; unit=EUR_HAB; icha11_hf=TOT_HF; geo=PT; time=2024; value[136]": "en",
@@ -755,3 +880,12 @@ export const LINGUA_DOS_LOCALIZADORES = {
   'Table 3!M27; Portugal; 2025e': 'en',
   'Table 3!N27; Portugal; 2026e': 'en',
 };
+
+/** EO1: o localizador pode usar outra língua que o título do documento.
+ * @param {unknown} texto @param {unknown} titulo @param {string} lang
+ */
+export function linguaDoLocalizador(texto, titulo, lang='pt') {
+ const declared=/** @type {Record<string,string>} */ (LINGUA_DOS_LOCALIZADORES)[String(texto??'')];
+ if (!declared) return linguaDoTituloDoDocumento(titulo,lang);
+ return declared===(lang==='pt'?'pt-PT':lang)?null:declared;
+}

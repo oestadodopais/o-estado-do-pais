@@ -1,0 +1,40 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "oe-2027-irc-21-para-17"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "Destaca-se ainda o alargamento do IRS Jovem; a redução do IRC de 21% em 2024 para 17% em 2028; a isenção de imposto municipal sobre as transmissões onerosas de imóveis (IMT) e imposto do selo na aquisição da primeira habitação por parte dos jovens até aos 35 anos; a redução do imposto sobre o valor acrescentado (IVA) de 23% para 6% na habitação e a redução do IRS de 25% para 10% nas rendas moderadas."
+unit: "texto"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Ministério das Finanças"
+document:
+  title: "Orçamento do Estado 2027 RELATÓRIO"
+  edition: "2027"
+  locator: "pp. 55 e 56 PDF (39 e 40 impressas)"
+  source_sha256: "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12"
+  page: 55
+  kind: "ficheiro"
+source_url: "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true"
+access_date: "2026-10-13"
+reference_date: "2027"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "Destaca-se ainda o alargamento do IRS Jovem; a redução do IRC de 21% em 2024 para 17% em 2028; a isenção de imposto municipal sobre as transmissões onerosas de imóveis (IMT) e imposto do selo na aquisição da primeira habitação por parte dos jovens até aos 35 anos; a redução do imposto sobre o valor acrescentado (IVA) de 23% para 6% na habitação e a redução do IRS de 25% para 10% nas rendas moderadas."
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "orcamento-2027-o-que-muda-e-para-quem"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Afirmação do relatório, não facto executado. · Cruzado de ResearchHub content/25 Orcamento 2027 Medidas · oe-2027-irc-21-para-17."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

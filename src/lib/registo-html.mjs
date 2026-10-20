@@ -1,3 +1,5 @@
+import { nomeDoProjeto } from '../data/nomes-das-medidas.mjs';
+import { routePath } from './routes.mjs';
 /**
  * O renderizador do registo de conteúdo: do registo para a página de leitura.
  *
@@ -586,6 +588,18 @@ export function pecasDoCorpo({
       saida.html(`<p${marcaDoBloco}${atributosDaUnidade(base)}>`);
       escreveUnidade(bloco, base, saida, ctx);
       saida.html('</p>');
+      if (bloco.source_rows?.length) {
+        const lang = chave.endsWith('/en') ? 'en' : 'pt';
+        saida.html(`<details class="texto-fontes" data-fontes-da-unidade="${escapaAtributo(base)}"><summary>${lang === 'pt' ? 'Fontes deste parágrafo' : 'Sources for this paragraph'}</summary><ul>`);
+        for (const row of bloco.source_rows) {
+          const id = linhaDoSitio(row);
+          if (!id) throw new FalhaDoRegisto(`linha citada sem recibo: ${row}`);
+          const nome = nomeDoProjeto(id)?.[lang];
+          const label = nome ? `<span data-nome="projeto" data-de-linha="${escapaAtributo(id)}">${escapaTexto(nome)}</span>` : (lang === 'pt' ? 'Fonte' : 'Source');
+          saida.html(`<li><a href="${escapaAtributo(routePath('linha', lang, { slug: id }))}">${label}</a></li>`);
+        }
+        saida.html('</ul></details>');
+      }
       return;
     }
     if (bloco.kind === 'list') {

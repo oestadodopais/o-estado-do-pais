@@ -54,6 +54,15 @@
  * raras, para que quem lê veja primeiro o que mais se rende.
  */
 export const UNIDADES = {
+  // EO1: unidades da Comissão Europeia e traduções de dicionário.
+  '% of GDP': '% of GDP',
+  'Annual percentage change': 'Annual percentage change',
+  'texto': 'text',
+  'data': 'date',
+  'pontos percentuais': 'percentage points',
+  'pontos percentuais do PIB': 'percentage points of GDP',
+  'mil milhões de euros': 'thousand million euros',
+
   // V2-d: «razão» é «ratio»; o valor é uma divisão, não uma percentagem.
   'razão': 'ratio',
   // A casa: as frases da comparação europeia dizem «euros per inhabitant».
@@ -246,6 +255,8 @@ export const UNIDADES_EM_PORTUGUES = {
 export function unidadeDaLinha(unit, lang = 'pt', value = null) {
   if (unit === 'avisos') return { texto: lang === 'en' ? (String(value) === '1' ? 'notice' : 'notices') : (String(value) === '1' ? 'aviso' : 'avisos'), lingua: lang === 'en' ? null : 'pt-PT' };
   const cru = unit === null || unit === undefined ? '' : String(unit);
+  if (lang !== 'en' && cru === '% of GDP') return { texto: '% do PIB', lingua: 'pt-PT' };
+  if (lang !== 'en' && cru === 'Annual percentage change') return { texto: 'variação percentual anual', lingua: 'pt-PT' };
   if (lang !== 'en') return { texto: dinheiroComPalavra(cru), lingua: 'pt-PT' };
   const traduzida = Object.prototype.hasOwnProperty.call(UNIDADES, cru)
     ? /** @type {Record<string, string>} */ (UNIDADES)[cru]

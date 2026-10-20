@@ -47,6 +47,69 @@ const unidade = (id, lang) => unidadeDaLinha(getClaim(id).unit, lang).texto;
        sustentabilidade, a penalização de um ano é de 22,6%»
        (`studies-src/penalizacoes-por-reforma-antecipada-2026/pt.html`). */
 export const LEITURAS = {
+"orcamento-2027-o-que-muda-e-para-quem": {
+  "medidas": [
+    {
+      "claim": "pm-q3-6-r42-c3",
+      "nome": {
+        "pt": [
+          "de dívida pública em 2027, pela proposta de Orçamento"
+        ],
+        "en": [
+          "public debt in 2027, by the Budget proposal"
+        ]
+      }
+    },
+    {
+      "claim": "der-oe2027-medidas-novas-saldo",
+      "nome": {
+        "pt": [
+          "é o que as três medidas novas de 2027 valem para o saldo"
+        ],
+        "en": [
+          "is what the three new measures of 2027 are worth to the balance"
+        ]
+      }
+    }
+  ],
+  "frase": {
+    "pt": [
+      "As medidas novas do Orçamento de 2027 valem ",
+      {
+        "claim": "der-oe2027-medidas-novas-saldo"
+      },
+      " milhões de euros a favor do saldo, as que já vinham decididas custam ",
+      {
+        "claim": "der-oe2027-medidas-anteriores-saldo"
+      },
+      " milhões, e os juros sobem ",
+      {
+        "claim": "der-oe2027-juros-variacao-cp"
+      },
+      " milhões: o que mais muda nas contas de 2027 não está no quadro das medidas."
+    ],
+    "en": [
+      "The new measures of the 2027 Budget are worth ",
+      {
+        "claim": "der-oe2027-medidas-novas-saldo"
+      },
+      " million euros to the balance, those already decided cost ",
+      {
+        "claim": "der-oe2027-medidas-anteriores-saldo"
+      },
+      " million, and interest rises ",
+      {
+        "claim": "der-oe2027-juros-variacao-cp"
+      },
+      " million: what changes most in the 2027 accounts is not in the table of measures."
+    ]
+  },
+  "origem": {
+    "onde": "content/27 Orcamento 2027 O que muda/, abertura das duas edições",
+    "pt": "O Orçamento para 2027 muda pouco por si próprio.",
+    "en": "The 2027 Budget changes little by itself."
+  }
+},
   /* ----------------------------------------------------------------- 04 */
   'evora-prometido-pago-auditado-2026': {
     medidas: [

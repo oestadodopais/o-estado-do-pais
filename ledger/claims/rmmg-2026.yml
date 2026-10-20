@@ -1,0 +1,40 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "rmmg-2026"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "920,00"
+unit: "euros"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "PRESIDÊNCIA DO CONSELHO DE MINISTROS"
+document:
+  title: "Decreto-Lei n.º 139/2025, de 29 de dezembro"
+  edition: "2026"
+  locator: "Decreto-Lei n.º 139/2025; artigo 3.º; p. 2 PDF"
+  source_sha256: "e9e6da9ad45ffb70cb0a19a755fd31e4da9934174a3885edaacf7523c842c64f"
+  page: 2
+  kind: "ficheiro"
+source_url: "https://files.diariodarepublica.pt/1s/2025/12/24900/0001400016.pdf#page=2"
+access_date: "2026-10-20"
+reference_date: "2026"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "O valor da RMMG a que se refere o n.º 1 do artigo 273.º do Código do Trabalho, aprovado em anexo à Lei n.º 7/2009, de 12 de fevereiro, na sua redação atual, é de € 920,00."
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "orcamento-2027-o-que-muda-e-para-quem"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Aplicável ao território continental, pelo artigo 2.º. Efeitos em 2026, pelo artigo 7.º. · Cruzado de ResearchHub content/25 Orcamento 2027 Medidas · rmmg-2026."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

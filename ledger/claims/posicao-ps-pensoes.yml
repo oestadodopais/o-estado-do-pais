@@ -1,0 +1,46 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "posicao-ps-pensoes"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "Na área das pensões, o líder do PS defendeu uma revisão dos mecanismos de atualização que assegure dois princípios: acompanhar a inflação e favorecer as pensões mais baixas."
+unit: "afirmação"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Partido Socialista"
+document:
+  title: "OE2027: PS leva propostas à especialidade para responder ao custo de vida"
+  edition: "2027"
+  locator: "Secção «Pensões com atualização regular e justiça social»; frase completa"
+  source_sha256: "aaada6556fd3b6c5b286267736981a873e9b30630f55d51bf53e7e83e8a688d5"
+  page: 1
+  kind: "html"
+source_url: "https://ps.pt/oe2027-ps-leva-propostas-a-especialidade-para-responder-ao-custo-de-vida/"
+access_date: "2026-10-20"
+published_at: "2026-10-14"
+afirmacao: true
+reference_date: "2026-10-14"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "Na área das pensões, o líder do PS defendeu uma revisão dos mecanismos de atualização que assegure dois princípios: acompanhar a inflação e favorecer as pensões mais baixas."
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+# A quem o valor é creditado. Lista de entidades, ou campo nenhum.
+attributed_to:
+  - "José Luís Carneiro"
+
+study: "orcamento-2027-o-que-muda-e-para-quem"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Posição atribuída sobre a atualização das pensões. A página relata entrevista à RTP na terça-feira; 14.10 é a data editorial. · Cruzado de ResearchHub content/25 Orcamento 2027 Medidas · posicao-ps-pensoes."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

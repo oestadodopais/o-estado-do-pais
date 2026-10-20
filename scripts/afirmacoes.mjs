@@ -1,3 +1,4 @@
+import {conferirAfirmacoesEo1} from './afirmacoes-eo1.mjs';
 /** V2-a: palavras, atribuição, data, porta e valor contra o corpo HTTP selado. */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -46,10 +47,11 @@ export function conferirPublicacao(nomes) {
 export function conferirAfirmacoes(claims,{plantar=true,motor=process.env.RESEARCHHUB_DIR}={}) {
   const prova=JSON.parse(fs.readFileSync('ledger/provas/v2a/provas.json','utf8'));
   const v2d=conferirAfirmacoesV2d(claims,{plantar,motor,excluir:new Set(Object.keys(prova.rows))});
-  const errors=[...conferirPublicacao(fs.readdirSync('ledger/provas/v2a')),...v2d.errors], plantas=[];
-  let checked=v2d.checked, bodies=v2d.bodies;
+  const eo1=conferirAfirmacoesEo1(claims,{plantar,motor});
+  const errors=[...eo1.errors,...conferirPublicacao(fs.readdirSync('ledger/provas/v2a')),...v2d.errors], plantas=[];
+  let checked=v2d.checked+eo1.checked, bodies=v2d.bodies+eo1.bodies;
   for(const c of claims.values()) {
-    if(!c.afirmacao||v2d.ids.has(c.id)) continue;
+    if(!c.afirmacao||v2d.ids.has(c.id)||eo1.ids.has(c.id)) continue;
     const p=prova.rows[c.id];
     let raw;
     if(motor && p && p.motor_path===`content/15 Orcamento do Estado 2027/source/v2a/${path.basename(p.file)}`) {
@@ -104,5 +106,5 @@ export function conferirAfirmacoes(claims,{plantar=true,motor=process.env.RESEAR
     assert(mensagem);plantas.push({nome:'âncora trocada por texto ausente',mensagem});
   }
   for(const [id,p] of Object.entries(prova.rows)) if(p.kind==='html' && !claims.get(id)?.afirmacao) errors.push(`${id}: V2A afirmação selada ausente do livro`);
-  return {errors,checked,bodies,plantas:[...plantas,...v2d.plantas]};
+  return {errors,checked,bodies,plantas:[...plantas,...v2d.plantas,...eo1.plantas]};
 }

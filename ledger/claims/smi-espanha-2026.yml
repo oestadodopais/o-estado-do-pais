@@ -1,0 +1,40 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "smi-espanha-2026"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "1 221"
+unit: "euros"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Boletín Oficial del Estado"
+document:
+  title: "Real Decreto 126/2026, de 18 de febrero, por el que se fija el salario mínimo interprofesional para 2026."
+  edition: "2026"
+  locator: "Real Decreto 126/2026; artículo 1"
+  source_sha256: "f6ee7e98dfb20f41b5235b852af6424196d405692b6cb2bdfb559b2996d40519"
+  page: 1
+  kind: "html"
+source_url: "https://www.boe.es/buscar/doc.php?id=BOE-A-2026-3815"
+access_date: "2026-10-20"
+reference_date: "2026"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "El salario mínimo para cualesquiera actividades en la agricultura, en la industria y en los servicios, sin distinción de sexo ni edad de las personas trabajadoras, queda fijado en 40,70 euros/día o 1 221 euros/mes, según el salario esté fijado por días o por meses."
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "orcamento-2027-o-que-muda-e-para-quem"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Valor mensal. A derivada comparativa não se publica sem prova do mesmo número de pagamentos nas duas fontes. · Cruzado de ResearchHub content/25 Orcamento 2027 Medidas · smi-espanha-2026."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

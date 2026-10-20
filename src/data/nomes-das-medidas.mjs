@@ -1,3 +1,4 @@
+import { NOMES_EO1 } from './nomes-eo1.mjs';
 import { NOMES_V2D } from './nomes-v2d.mjs';
 import { getClaim } from '../lib/ledger.mjs';
 import { NOMES_RP1 } from './medidas-rp1.mjs';
@@ -78,6 +79,7 @@ import { NOMES_OE1 } from './medidas-oe1.mjs';
  */
 export const NOMES_DO_PROJETO = {
   ...NOMES_V2D,
+  ...NOMES_EO1,
   /* E0c: o mesmo nome corrente do cartão; a entrada já diz o lugar da União. */
   'divida-das-familias-2025-ue': {
     pt: 'Dívida das famílias',

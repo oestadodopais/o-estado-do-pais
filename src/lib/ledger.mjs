@@ -1601,7 +1601,7 @@ export function validateLedger() {
       errors.push(`${onde} o nome do ficheiro tem de ser o id: esperado "${esperado}".`);
     }
     if (!/^[a-z0-9]+(-[a-z0-9]+)*$/.test(String(id)) &&
-        !/^eurostat-[a-z0-9]+(?:[-_][a-z0-9]+)*$/.test(String(id))) {
+        !/^(?:eurostat|europa)-[a-z0-9]+(?:[-_][a-z0-9]+)*$/.test(String(id))) {
       errors.push(`${onde} id inválido "${id}": só minúsculas, algarismos e hífenes.`);
     }
 
@@ -1617,7 +1617,7 @@ export function validateLedger() {
     if (typeof c.value !== 'string' || c.value.trim() === '') {
       errors.push(`${onde} "value" tem de ser uma string não vazia, com o valor tal como publicado.`);
     } else if (!/\d/.test(c.value) && marcaDoValor(c.value) === null &&
-        !(c.afirmacao === true && c.unit === 'afirmação' && c.value === c.excerpt)) {
+        !(['texto', 'afirmação'].includes(String(c.unit)) && c.value === c.excerpt && /^[a-f0-9]{64}$/.test(String(doc?.source_sha256 ?? '')))) {
       /* A PORTA TEM A LARGURA DE UMA MARCA (28.08.2026, regra 2). A regra era
          «um valor sem algarismos não é um valor», e existe para recusar prosa no
          lugar de um número. Continua a valer para tudo o que não seja uma das

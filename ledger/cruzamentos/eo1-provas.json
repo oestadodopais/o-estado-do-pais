@@ -1,0 +1,20 @@
+{
+  "exporter": "publisher/export_site_rows.py",
+  "origin": "ResearchHub",
+  "files": {
+    "provas.json": {
+      "destino": "ledger/provas/eo1",
+      "origin_path": "publisher/recortes/eo1/provas.json",
+      "origin_sha256": "8f41ff380728c22c925de416610da653d140d2ecc84297b9bc69016a6dc56086",
+      "exported_sha256": "8f41ff380728c22c925de416610da653d140d2ecc84297b9bc69016a6dc56086",
+      "exporter": "publisher/export_site_rows.py"
+    },
+    "nomes-eo1.mjs": {
+      "destino": "src/data",
+      "origin_path": "publisher/recortes/eo1/nomes-eo1.mjs",
+      "origin_sha256": "5b45ff88cfd6b9585dc70bfca70d173e051594492747f63d11c0816d9b77f78b",
+      "exported_sha256": "5b45ff88cfd6b9585dc70bfca70d173e051594492747f63d11c0816d9b77f78b",
+      "exporter": "publisher/export_site_rows.py"
+    }
+  }
+}

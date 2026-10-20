@@ -69,7 +69,7 @@ function separar(partes, marca, depois = false) {
 const [titulo, conteudo] = separar(pecas, '</h1>', true);
 const titulosDaLeitura = TITULOS_DA_LEITURA[lang];
 const principais = titulos.filter(t => t.nivel === 2);
-const primeiroConteudo = registo?.blocks.find(b => b.i > 0);
+const primeiroConteudo = registo?.blocks.find(b => b.i > 0 && b.kind === 'heading' && Number(b.level) === 2);
 const temAbertura = primeiroConteudo?.kind === 'heading' && Number(primeiroConteudo.level) === 2 && primeiroConteudo.text === titulosDaLeitura[0];
 const naLeitura = temAbertura ? principais.filter(t => titulosDaLeitura.includes(t.texto)) : [];
 if (temAbertura && (naLeitura.length !== titulosDaLeitura.length ||

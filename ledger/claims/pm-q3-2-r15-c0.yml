@@ -1,0 +1,45 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "pm-q3-2-r15-c0"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "−300"
+unit: "milhões de euros"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Redução taxa em 1 p.p. (i)"
+name_source: "Quadro 3.2. Principais medidas de política orçamental com impacto em 2027; Redução taxa em 1 p.p. (i); coluna 1: 2027; impacto incremental; milhões de euros; p. 59 PDF (43 impressa)"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Ministério das Finanças"
+document:
+  title: "Orçamento do Estado 2027 RELATÓRIO"
+  edition: "2027"
+  locator: "Quadro 3.2. Principais medidas de política orçamental com impacto em 2027; Redução taxa em 1 p.p. (i); coluna 1: 2027; impacto incremental; milhões de euros; p. 59 PDF (43 impressa)"
+  source_sha256: "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12"
+  page: 59
+  kind: "ficheiro"
+source_url: "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true"
+access_date: "2026-10-13"
+reference_date: "2027"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "           Quadro 3.2. Principais medidas de política orçamental com impacto em 2027\n                                                   (milhões de euros)\n                                                                                 Impacto incremental\n                                                                                      em 2027\nRedução taxa em 1 p.p. (i)                                                   -300\nSeleção: 2027; impacto incremental; milhões de euros"
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "orcamento-2027-o-que-muda-e-para-quem"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Valor impresso, não recalculado. Período da conta separado da publicação. A numeração da página PDF inclui as páginas iniciais. · Cruzado de ResearchHub content/25 Orcamento 2027 Medidas · pm-q3-2-r15-c0."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

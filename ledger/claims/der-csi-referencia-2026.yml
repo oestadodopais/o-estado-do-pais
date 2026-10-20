@@ -1,0 +1,36 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "der-csi-referencia-2026"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "670"
+unit: "euros"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: null
+document: null
+source_url: null
+access_date: null
+reference_date: "2026"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: null
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: "oe-2027-csi-referencia-2027 - oe-2027-csi-aumento-2027. 670"
+derivation_en: "oe-2027-csi-referencia-2027 - oe-2027-csi-aumento-2027. 670"
+derived_from:
+  - "oe-2027-csi-referencia-2027"
+  - "oe-2027-csi-aumento-2027"
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: "oe-2027-csi-referencia-2027 - oe-2027-csi-aumento-2027"
+
+study: "orcamento-2027-o-que-muda-e-para-quem"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[derivation do motor] {'components': ['oe-2027-csi-referencia-2027', 'oe-2027-csi-aumento-2027'], 'formula': 'oe-2027-csi-referencia-2027 - oe-2027-csi-aumento-2027', 'calculation': '670', 'rounding_places': 0} · Cruzado de ResearchHub content/25 Orcamento 2027 Medidas · der-csi-referencia-2026."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

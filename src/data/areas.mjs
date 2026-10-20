@@ -703,6 +703,12 @@ export const AREAS = [
  * motivo }`.
  */
 export const SEM_AREA = [
+  {
+    estudos: ['orcamento-2027-o-que-muda-e-para-quem'],
+    id: /./,
+    assunto: 'Medidas, contas, previsões e posições do estudo sobre o Orçamento',
+    motivo: 'Estas linhas sustentam o documento do estudo e os seus recibos. O estudo compara perímetros contabilísticos e efeitos nas pessoas; não distribui estes agregados e posições por cartões ministeriais.',
+  },
   ...SEM_AREA_V2D,
   EXCLUSAO_UE_V2D,
   {

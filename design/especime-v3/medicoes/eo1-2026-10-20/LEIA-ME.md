@@ -1,0 +1,40 @@
+# EO1, o estudo do Orçamento de 2027
+
+## Medição anterior à composição
+
+O comando `python3 design/especime-v3/medicoes/eo1-2026-10-20/medir.py <motor>` foi executado por `curto.sh`, com código 0. O `partida.json` conserva a cabeça dos livros antes das alterações, os valores, unidades, períodos, localizadores e resumos das linhas lidas. A passagem `--selagem`, também com código 0, acrescenta a prova dos excertos novos, o resumo do corpo alojado e a posição no texto extraído, e refaz cada derivada das componentes, com diferença zero. A posição refere-se ao texto normalizado extraído, não a um deslocamento binário dentro do PDF. O resumo é o do corpo binário.
+
+A medição lê também as medidas que não são intercambiáveis: a dívida de 2025 na atualização de abril do Eurostat e na notificação de setembro do INE; o saldo e os juros de 2027 em contabilidade pública e em contabilidade nacional; a dívida de 2027 no Orçamento, na previsão da primavera da Comissão Europeia e no plano de médio prazo. As diferenças de data, perímetro e fonte constam da secção das contas e da secção da dívida do documento.
+
+## Decisões de conteúdo
+
+- EO1-1. A leitura crítica referida no mandato não existe nesta cabeça do sítio. As verificações foram feitas sobre os corpos alojados, sem atribuir à leitura ausente conclusões que não se pudessem refazer.
+- EO1-2. A citação do ministro das Finanças é a frase contínua do corpo do Observador. O corpo não contém as reticências do mandato. O título da notícia continua a ser a linha documental, distinta da citação.
+- EO1-3. A nota do quadro foi confirmada como «Nota: (i) invariante.». As chamadas coladas foram retiradas dos dois excertos da UTAO que as continham. Os excertos de juros e do risco do SNS foram reconferidos e já não continham essas chamadas. A limpeza fica declarada nos seletores e nas notas das linhas.
+- EO1-4. A frase «Os juros são a despesa que mais cresce» ficou fora: o mesmo quadro contém uma variação percentual superior noutra rubrica. Os valores dos juros e a comparação com o custo das medidas mantêm-se.
+- EO1-5. A sexta redução do IRS está na página PDF 55; a frase integral do percurso do IRC atravessa as páginas 55 e 56. Os localizadores são os medidos, não os indicados aproximadamente no mandato.
+- EO1-6. «É a soma de seis anos» ficou fora. As reduções citadas pelo próprio relatório não correspondem a seis anos. Ficou também fora a atribuição de uma parte da descida da dívida ao valor final do ajustamento: esse valor é uma contribuição positiva, não a diferença entre os dois anos.
+- EO1-7. A causalidade exclusiva «os impostos indiretos crescem pela economia, não pelas taxas» e a comparação com outros ministérios europeus ficaram fora por falta de apoio documental nesta pesquisa.
+- EO1-8. As datas de declarações que não existiam literalmente no excerto ou no localizador citados foram omitidas da prosa. A data da notícia de Sarmento, que tem apoio literal, mantém-se. Não se fabricou um localizador para fazer passar um literal.
+- EO1-9. A numeração editorial das secções e das conclusões foi retirada dos títulos e da prosa, conservando a ordem e os títulos: não é uma medida e o mandato só admite literais numéricos apoiados numa linha citada. O índice de navegação continua a distinguir as secções.
+- EO1-10. A prosa da Comissão Europeia diverge do quadro para 2026. O estudo conserva a citação da prosa ao lado do valor do quadro, sem os corrigir nem escolher silenciosamente um deles.
+- EO1-11. O comparador aritmético do motor perdia o sinal negativo quando convertia os valores das componentes. Foi corrigido na leitura das componentes e do resultado, com plantas de sinais. A reconciliação textual antiga conserva a sua função de encontrar formas impressas; não decide o sinal de uma conta.
+- EO1-12. O compositor de livros prova intervalos completos. Uma citação é conferida integralmente contra o excerto, incluindo os seus números, e não por coincidências de números soltos. O portão reconstrói o registo e compara os seus bytes com o ficheiro entregue. O HTML tem uma conferência independente das duas edições.
+- EO1-13. Os dois corpos de resposta 403 do Banco de Portugal foram retirados por conterem um endereço de rede. Os recibos conservam o estado do pedido e declaram a retirada do corpo. A ausência não foi convertida num pedido bem sucedido.
+
+- EO1-14. A página do estudo contém a leitura na rota principal, segundo a arquitetura atual da casa. A célula e as capturas usam essa rota e a rota do documento alojado.
+- EO1-15. A cadeia distingue o resumo do corpo integral do antigo resumo de um ficheiro de recorte. O novo campo `source_body` só passa se o caminho e o resumo coincidirem com o documento da linha provada.
+- EO1-16. A prova independente do sítio conserva os lexemas numéricos do JSON para refazer o resumo Python: o metadado `300.0` não pode converter-se silenciosamente em `300`. O valor da linha continua a ser conferido separadamente.
+- EO1-17. As linhas europeias e o salário mínimo espanhol têm o lugar da fonte, não herdam Portugal do estudo. A remuneração mínima portuguesa do diploma citado refere-se ao continente.
+
+- EO1-18. A chamada preliminar de `check:indice` foi um erro de execução: o guião também chama Playwright. O navegador foi recusado na sandbox (`browserType.launch: Target page, context or browser has been closed`). A conferência completa fica exclusivamente na corrida pelo escrivão; a tentativa recusada não conta como verificação.
+
+## Fontes e condições
+
+A tabela de IRS de 2026 foi alojada da página oficial do artigo 68.º da Autoridade Tributária. Entrou a comparação dos limites, a atualização comum arredondada e a comparação das taxas. Não entrou a frase de ausência da tabela. A remuneração mínima de 2026 foi alojada do Decreto-Lei n.º 139/2025; entrou a comparação com 2027. O BOE foi alojado com o Real Decreto 126/2026; entrou o valor mensal espanhol. Não se derivou uma diferença entre países: a selagem desta linha prova o montante mensal, mas não prova que a forma de pagamento seja idêntica à portuguesa. A referência a catorze pagas não foi acrescentada sem essa prova na linha.
+
+Os pedidos, endereços oficiais, estados, datas, resumos e direitos estão nos recibos e no inventário de fontes do motor. Não se publicam os corpos integrais no sítio. A IL e o PAN permanecem ausências da pesquisa de posições posteriores à entrega, não afirmações de inexistência de posições políticas.
+
+## Verificação
+
+As plantas do compositor foram corridas por `python3 -m core.compor_livros_test`, através de `curto.sh`, com código 0. Em cada edição foram recusados um valor alterado no registo, um excerto cortado e um literal sem linha; cada recusa corresponde a código 1. Foi também recusado um algarismo escrito à mão. Os comandos e resultados dos portões e das capturas serão acrescentados depois da leitura dos ficheiros de resultado.

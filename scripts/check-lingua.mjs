@@ -309,10 +309,10 @@ for (const f of Object.keys(LINGUA_DAS_FONTES)) {
      já não importa desde 03.09.2026) como uma marca inventada, ou não sai de
      todo: nos dois casos a página fica errada e a régua ficava calada. */
   const v = LINGUA_DAS_FONTES[f];
-  if (v !== 'pt' && v !== 'en') {
+  if (v !== 'pt' && v !== 'en' && v !== 'es') {
     erros.push(
       `o organismo «${f.slice(0, 90)}» está declarado «${String(v)}», e um organismo só pode ` +
-        `estar declarado «pt» ou «en». Um nome de organismo está sempre numa língua: não há aqui ` +
+        `estar declarado «pt», «en» ou «es». Um nome de organismo está sempre numa língua: não há aqui ` +
         `o «sem língua» que as edições têm.`,
     );
   }
@@ -462,7 +462,7 @@ const norm = (s) => decodeEntities(String(s)).replace(/\s+/g, ' ').trim();
  */
 function efetivaEsperada(declarada, linguaDaPagina) {
   if (declarada === 'pt') return 'pt-PT';
-  if (declarada === 'en') return 'en';
+  if (declarada === 'en' || declarada === 'es') return declarada;
   return linguaDaPagina;
 }
 

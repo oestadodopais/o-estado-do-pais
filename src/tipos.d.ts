@@ -362,6 +362,8 @@ interface LigacaoDoRegisto {
 
 /** Uma unidade de texto do registo: um parágrafo, um item, uma célula. */
 interface UnidadeDoRegisto {
+  source_rows?: string[];
+  proofs?: Record<string, unknown>[];
   text?: string | null;
   figures?: FiguraDoRegisto[] | null;
   emphasis?: EnfaseDoRegisto[] | null;

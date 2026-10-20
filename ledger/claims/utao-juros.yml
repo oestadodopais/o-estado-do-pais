@@ -1,0 +1,40 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "utao-juros"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "A despesa com juros apresenta uma subida prevista de 23,2% em 2027, o que reflete uma variação nominal de 1,5 mil M€, ascendendo a 8,2 mil M€. Caso se concretize a previsão, a taxa de juro implícita (juros em percentagem da dívida pública) deverá subir de 2,4% em 2026 para 2,9% em 2027. É de referir que o máximo da série estatística para os juros foi atingido em 2014, acima do valor previsto para 2027 (a taxa de juro implícita foi de 3,6% em 2014)."
+unit: "afirmação"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Unidade Técnica de Apoio Orçamental"
+document:
+  title: "Relatório UTAO n.º 17/2026 Apreciação preliminar da Proposta de Orçamento do Estado para 2027"
+  edition: "2027"
+  locator: "§37; p. 22 PDF (21 impressa)"
+  source_sha256: "b42daf2a3b7d3a955fc28f379b60744719771212f167facafba41178c9d58083"
+  page: 22
+  kind: "ficheiro"
+source_url: "https://app.parlamento.pt/webutils/docs/doc.pdf?path=jXG0%2bDjqO%2fp24sKDn5FOWu7PztWEWehzpjBISfq%2bHBtO6CBEhPZcSa90e7P%2fEmuAirgdFc3uJ4AGHFGQz2ubmRHqIldswZvo4iG1rB8JkFdli%2bE%2b5pF7oAwuJr8C7utVPOh60GxHq8Dubj%2bAdy%2bfyHAcsqPX1u5E8MfUhNBiJZ3RXzFuyvv2o42Tg6o2xFCYvAHMzy%2fUJ6tdI8QCvqt13kcfQpd5lggsIcipfZ634nqHaBBebtywj7T9%2fatfLzpF%2f23WTlGF27nnlPWdE6EX%2fuXRp0W01R2qnbhElWeTDfJpVM2OwqoVmUrHDWhwdYoYgsbC0ZiVEkty%2bSS4oorZGF7d36ELrrmQzWsXI4671ROkNVrsg3EYXrY2YcUFP%2bDR0BSMGe3cyGx1BV%2bdxPbSwDriMMnzyX9Gma1KrrYmjsC0FEk%2fX1GL9Ns4N1JLVZOUSHzYhkXb7UtLAlhSpTP1tRutoSrfJqmMLBk6poYIIVQ5SHLnPIxaJMun7gsC0gMHgRLAGq3C%2fUjGEu0U%2bELEMg%3d%3d&fich=UTAO-Rel-17-2026-OE2027_preliminar.pdf&Inline=true"
+access_date: "2026-10-19"
+reference_date: "2027"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "A despesa com juros apresenta uma subida prevista de 23,2% em 2027, o que reflete uma variação nominal de 1,5 mil M€, ascendendo a 8,2 mil M€. Caso se concretize a previsão, a taxa de juro implícita (juros em percentagem da dívida pública) deverá subir de 2,4% em 2026 para 2,9% em 2027. É de referir que o máximo da série estatística para os juros foi atingido em 2014, acima do valor previsto para 2027 (a taxa de juro implícita foi de 3,6% em 2014)."
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "orcamento-2027-o-que-muda-e-para-quem"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] A extração alojada desta passagem já não contém chamadas de nota; o excerto integral foi reconferido no corpo. · Cruzado de ResearchHub content/25 Orcamento 2027 Medidas · utao-juros."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []
