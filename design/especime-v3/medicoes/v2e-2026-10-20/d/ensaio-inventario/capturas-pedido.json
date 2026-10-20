@@ -1,0 +1,49 @@
+{
+  "cabeca": "fb05bd2395ee5d059ffbf441c25ba191f4f5507e",
+  "paginas": [
+    {
+      "nome": "discussao",
+      "pt": "/o-que-se-discute/",
+      "en": "/en/under-discussion/",
+      "recortes": [
+        {
+          "nome": "medicos",
+          "seletor": "#saude-no-orcamento [data-discussao-paragrafo=\"seccoes[1].conteudo[6].paragrafo\"]"
+        }
+      ]
+    },
+    {
+      "nome": "eurostat-pt-phys",
+      "pt": "/livro-razao/eurostat-pt-phys/",
+      "en": "/en/ledger/eurostat-pt-phys/",
+      "recortes": [
+        {
+          "nome": "ressalva",
+          "seletor": "#ressalva"
+        }
+      ]
+    },
+    {
+      "nome": "eurostat-be-phys",
+      "pt": "/livro-razao/eurostat-be-phys/",
+      "en": "/en/ledger/eurostat-be-phys/",
+      "recortes": [
+        {
+          "nome": "ressalva",
+          "seletor": "#ressalva"
+        }
+      ]
+    },
+    {
+      "nome": "eurostat-el-phys",
+      "pt": "/livro-razao/eurostat-el-phys/",
+      "en": "/en/ledger/eurostat-el-phys/",
+      "recortes": [
+        {
+          "nome": "ressalva",
+          "seletor": "#ressalva"
+        }
+      ]
+    }
+  ]
+}

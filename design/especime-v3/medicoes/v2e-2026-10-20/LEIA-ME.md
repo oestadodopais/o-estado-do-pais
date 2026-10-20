@@ -953,3 +953,5 @@ A primeira exportação foi recusada por `ModuleNotFoundError: No module named '
 
 - **V2E-62.** A primeira corrida do sítio recusou as duas declarações antigas do inventário da prosa. As declarações vivas passam a coincidir com as duas frases construídas. A tentativa recusada conserva `build=1`, `verify=125` (não executado) e `typecheck=0` em `d/portoes/`; não é uma prova verde.
 - **V2E-63.** O ensaio pela entrada habitual dos itens revelou uma importação circular na primeira ligação da planta (`Detected unsettled top-level await`, código 13). A célula passa a entregar diretamente a função da régua à planta construída. A repetição pela entrada habitual deu código 0, com 706 plantas em 706; o inventário reposto deu zero frases sem classe e zero declarações vivas ausentes. São ensaios de preparação, anteriores à nova cabeça e à repetição dos portões.
+
+- **V2E-64.** A segunda corrida recusou a falta de registo de revisão do bloco `v2e-d`. A entrada é acrescentada com estado «por ler», sem declarar uma leitura cruzada que não ocorreu. Os códigos recusados ficam em `d/portoes-inventario/` e as medições dessa cabeça em `d/ensaio-inventario/`.

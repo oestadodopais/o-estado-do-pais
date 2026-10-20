@@ -840,3 +840,9 @@ Seis declarações substituídas: comparação e opinião da Saúde nas duas edi
 | bloco | mudança | estado | nota |
 |---|---|---|---|
 | v2e-c | 16 cadeias novas recolhidas do HTML nas duas edições; 14 declarações anteriores retiradas | por ler | Codex gpt-6-astra, 20.10.2026: títulos, rótulos, prosa e navegação conferidos na construção; os valores, as citações e as atribuições continuam presos aos tokens. A leitura cruzada pertence à direção. |
+
+## V2-e-d: o grupo da comparação dos médicos
+
+| bloco | mudança | estado | nota |
+|---|---|---|---|
+| v2e-d | Duas declarações da comparação dos médicos atualizadas, nas duas edições | por ler | A redação identifica os Estados-membros como o grupo da comparação. As declarações coincidem com o HTML construído; a leitura cruzada continua pendente. |
