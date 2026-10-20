@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-20T14:11:44+00:00",
+ "copia": "<pacote>",
+ "plantas": [
+  {
+   "id": "L2",
+   "ficheiro": "motor/content/26 Saude e Parcerias Efeitos/ledger.json",
+   "descricao": "a despesa com medicamentos em ambulatório alterada contra o Infarmed alojado",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "369861973279a11bbc240041c7525f8770b06b7cac86c3ce379f24e396701df3",
+   "sha256_depois": "ffc17c5b832cbbee32e0f321c5b0cdb2617f2a4322df326c9dfc755361ef1acd",
+   "contexto_antes": " RNCCI\",\n      \"label_en\": \"Patients waiting for a place in integrated long-term care\",\n      \"report\": true,\n      \"comparison\": \"year_ago\"\n    },\n    {\n      \"id\": \"medicamentos-ambulatorio-api-ultimo\",\n      \"value\": \"178168864.46\",\n      \"unit\": \"euros\",\n      \"period\": \"2026-07\",\n      \"reference_date\": \"2026-07\",\n      \"excerpt\": \"{\\\"dataset\\\": \\\"despesa-com-medicamentos-no-ambulatorio",
+   "contexto_depois": " RNCCI\",\n      \"label_en\": \"Patients waiting for a place in integrated long-term care\",\n      \"report\": true,\n      \"comparison\": \"year_ago\"\n    },\n    {\n      \"id\": \"medicamentos-ambulatorio-api-ultimo\",\n      \"value\": \"978168864.46\",\n      \"unit\": \"euros\",\n      \"period\": \"2026-07\",\n      \"reference_date\": \"2026-07\",\n      \"excerpt\": \"{\\\"dataset\\\": \\\"despesa-com-medicamentos-no-ambulatorio"
+  },
+  {
+   "id": "L3",
+   "ficheiro": "motor/content/26 Saude e Parcerias Efeitos/ledger.json",
+   "descricao": "o PRR pago na saúde alterado contra o documento alojado",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "ffc17c5b832cbbee32e0f321c5b0cdb2617f2a4322df326c9dfc755361ef1acd",
+   "sha256_depois": "0579ce81ee7338bc2a077e5c3e4a106b466535514aeefc1d1dd1b9632bc17621",
+   "contexto_antes": "s: Aprovado a 31.12.2025\",\n      \"label_en\": \"Primary health care with more services: Approved as of 31 December 2025\",\n      \"report\": true\n    },\n    {\n      \"id\": \"prr-anual-2025-p109-C01-i01-pago\",\n      \"value\": \"20%\",\n      \"unit\": \"percentagem\",\n      \"period\": \"2025-12-31\",\n      \"reference_date\": \"2025-12-31\",\n      \"excerpt\": \"Plano de Recuperação e Resiliência | Relató",
+   "contexto_depois": "s: Aprovado a 31.12.2025\",\n      \"label_en\": \"Primary health care with more services: Approved as of 31 December 2025\",\n      \"report\": true\n    },\n    {\n      \"id\": \"prr-anual-2025-p109-C01-i01-pago\",\n      \"value\": \"90%\",\n      \"unit\": \"percentagem\",\n      \"period\": \"2025-12-31\",\n      \"reference_date\": \"2025-12-31\",\n      \"excerpt\": \"Plano de Recuperação e Resiliência | Relató"
+  },
+  {
+   "id": "L4",
+   "ficheiro": "motor/content/26 Saude e Parcerias Efeitos/ledger.json",
+   "descricao": "o período da linha da Brisa alterado contra o documento",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "0579ce81ee7338bc2a077e5c3e4a106b466535514aeefc1d1dd1b9632bc17621",
+   "sha256_depois": "ab5e7a3e60b833e31350e1b36503d295fbcb1e337557f8c08c68325aa1a7c704",
+   "contexto_antes": ",\n      \"attributed_to\": [\n        \"Eurostat\"\n      ],\n      \"label\": \"População média anual\",\n      \"label_en\": \"Annual average population\"\n    },\n    {\n      \"id\": \"pe-oe-brisa-negociacao\",\n      \"value\": \"Encontram-se igualmente em curso os trabalhos de negociação36 no âmbito do contrato de concessão da Brisa, abrangendo, entre outras matérias, a avaliação de investimentos contratualmente previstos, a verificação das condições e termos de uma eventual reposição do equilíbrio financeiro do contrato e a avaliação de eventuais novos investimentos a realizar.\",\n      \"unit\": \"texto\",\n      \"period\": \"2027\",\n      \"reference_date\": \"2027\",\n      \"excerpt\": \"Encontram-se igualmente em curso os trabalhos de negociação36 no âmbito do contrato de concessão da Brisa, a",
+   "contexto_depois": ",\n      \"attributed_to\": [\n        \"Eurostat\"\n      ],\n      \"label\": \"População média anual\",\n      \"label_en\": \"Annual average population\"\n    },\n    {\n      \"id\": \"pe-oe-brisa-negociacao\",\n      \"value\": \"Encontram-se igualmente em curso os trabalhos de negociação36 no âmbito do contrato de concessão da Brisa, abrangendo, entre outras matérias, a avaliação de investimentos contratualmente previstos, a verificação das condições e termos de uma eventual reposição do equilíbrio financeiro do contrato e a avaliação de eventuais novos investimentos a realizar.\",\n      \"unit\": \"texto\",\n      \"period\": \"9027\",\n      \"reference_date\": \"2027\",\n      \"excerpt\": \"Encontram-se igualmente em curso os trabalhos de negociação36 no âmbito do contrato de concessão da Brisa, a"
+  },
+  {
+   "id": "L1",
+   "ficheiro": "motor/content/26 Saude e Parcerias Efeitos/ledger.json",
+   "descricao": "os utentes sem médico de família alterados contra o conjunto alojado",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "ab5e7a3e60b833e31350e1b36503d295fbcb1e337557f8c08c68325aa1a7c704",
+   "sha256_depois": "f1528b357346c601d672b849db50021a4498d55fda612eee2b5c0d23c251ef3f",
+   "contexto_antes": "nto\",\n      \"label_en\": \"Construction, equipment and vehicles for the Azores regional health service: Payment request\",\n      \"report\": true\n    },\n    {\n      \"id\": \"sns-sem-medico-serie-antiga-2016-01\",\n      \"value\": \"1053838\",\n      \"unit\": \"utentes\",\n      \"period\": \"2016-01\",\n      \"reference_date\": \"2016-01\",\n      \"excerpt\": \"{\\\"dataset\\\": \\\"utentes-inscritos-em-cuidados-de-saud",
+   "contexto_depois": "nto\",\n      \"label_en\": \"Construction, equipment and vehicles for the Azores regional health service: Payment request\",\n      \"report\": true\n    },\n    {\n      \"id\": \"sns-sem-medico-serie-antiga-2016-01\",\n      \"value\": \"9053838\",\n      \"unit\": \"utentes\",\n      \"period\": \"2016-01\",\n      \"reference_date\": \"2016-01\",\n      \"excerpt\": \"{\\\"dataset\\\": \\\"utentes-inscritos-em-cuidados-de-saud"
+  },
+  {
+   "id": "L5",
+   "ficheiro": "motor/content/26 Saude e Parcerias Efeitos/ledger.json",
+   "descricao": "um valor do Eurostat para Portugal alterado contra o JSON alojado",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "f1528b357346c601d672b849db50021a4498d55fda612eee2b5c0d23c251ef3f",
+   "sha256_depois": "61f1613700d86ed3fb22c199218301026bfa5524099608a3331ddc11e95e0968",
+   "contexto_antes": "   ],\n      \"label\": \"Enfermeiros por cem mil habitantes\",\n      \"label_en\": \"Nurses per hundred thousand inhabitants\",\n      \"report\": true\n    },\n    {\n      \"id\": \"eurostat-pt-phys\",\n      \"value\": \"431.35\",\n      \"unit\": \"Per hundred thousand inhabitants\",\n      \"period\": \"2024\",\n      \"reference_date\": \"2024\",\n      \"excerpt\": \"{\\\"coordinates\\\": {\\\"freq\\\": \\\"A\\\"",
+   "contexto_depois": "   ],\n      \"label\": \"Enfermeiros por cem mil habitantes\",\n      \"label_en\": \"Nurses per hundred thousand inhabitants\",\n      \"report\": true\n    },\n    {\n      \"id\": \"eurostat-pt-phys\",\n      \"value\": \"931.35\",\n      \"unit\": \"Per hundred thousand inhabitants\",\n      \"period\": \"2024\",\n      \"reference_date\": \"2024\",\n      \"excerpt\": \"{\\\"coordinates\\\": {\\\"freq\\\": \\\"A\\\""
+  }
+ ]
+}
