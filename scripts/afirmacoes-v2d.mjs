@@ -39,7 +39,7 @@ export function conferirAfirmacaoV2d(c,p,corpo){
  if(c.document?.source_sha256!==d?.source_sha256||(corpo&&corpo.hash!==d?.source_sha256))erros.push('V2D selo: hash diferente do corpo alojado');
  if(c.afirmacao!==true||p.afirmacao!==true||normal(c.excerpt)!==normal(p.excerpt)||(corpo&&!corpo.texto.includes(normal(c.excerpt))))erros.push('V2D excerto: palavras diferentes da prova ou da página citada');
  if(!p.attributed_to?.length||JSON.stringify(c.attributed_to)!==JSON.stringify(p.attributed_to)||(corpo&&(corpo.tipo==='html'?JSON.stringify(p.attributed_to)!==JSON.stringify(corpo.autores):p.attributed_to.some(a=>!corpo.autores?.toLowerCase().includes(a.toLowerCase())))))erros.push('V2D atribuição: autor diferente do documento');
- if(!/^\d{4}-\d{2}-\d{2}$/.test(p.published_at??'')||c.published_at!==p.published_at||c.reference_date!==p.published_at||(corpo&&(d.file===relatorio?corpo.limiteInformacao!==p.published_at:corpo.data!==p.published_at)))erros.push('V2D data: diferente da publicação selada ou da data conferida no documento');
+ if(!/^\d{4}-\d{2}-\d{2}$/.test(p.published_at??'')||c.published_at!==p.published_at||c.reference_date!==(d.file===relatorio?p.period:p.published_at)||(d.file===relatorio&&p.period!=='2027')||(corpo&&(d.file===relatorio?corpo.limiteInformacao!==p.published_at:corpo.data!==p.published_at)))erros.push('V2D data: diferente da publicação selada ou da data conferida no documento');
  if(c.source_url!==p.source_url||![r?.pedido,r?.endereco_final].includes(p.source_url))erros.push('V2D porta: diferente do pedido registado');
  const compacto=x=>normal(x).replace(/(?<=\d)\s+(?=\d)/g,'');
  const valor=compacto(c.value), prova=compacto(p.value), texto=compacto(c.excerpt);
@@ -73,6 +73,16 @@ export function conferirAfirmacoesV2d(claims,{plantar=true,motor,excluir=new Set
   let corpo;
   if(motor&&caminhoSeguro(p.document?.file)){try{corpo=corpoDoDocumento(p,motor);bodies++;}catch{errors.push(`${id}: V2D selo: corpo indisponível ou ilegível no motor indicado`);}}
   const encontrados=conferirAfirmacaoV2d(c,p,corpo);errors.push(...encontrados.map(e=>`${id}: ${e}`));checked++;
+  if(plantar&&!encontrados.length&&p.document.file===relatorio){
+   const copia=structuredClone(c);copia.reference_date=copia.published_at;
+   const mensagem=conferirAfirmacaoV2d(copia,p,corpo).find(e=>e.startsWith('V2D data:'));
+   plantas.push({nome:'período do orçamento trocado pela publicação: '+id,mensagem});
+   if(!mensagem)errors.push('V2D planta não mordeu: período do orçamento '+id);
+   const provaErrada=structuredClone(p);provaErrada.period=p.published_at;
+   const periodo=conferirAfirmacaoV2d(copia,provaErrada,corpo).find(e=>e.startsWith('V2D data:'));
+   plantas.push({nome:'período adulterado também na prova: '+id,mensagem:periodo});
+   if(!periodo)errors.push('V2D planta não mordeu: período da prova '+id);
+  }
   if(plantar&&!encontrados.length&&!plantas.some(p=>p.nome==='excerto V2D alterado')){
    for(const [nome,altera,prefixo] of [
     ['excerto V2D alterado',x=>{x.excerpt+=' Palavra acrescentada.';},'V2D excerto:'],
