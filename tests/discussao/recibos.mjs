@@ -27,7 +27,7 @@ function conferirPeriodo(root,linha,lang){
 export function conferirRecibosCorrigidos(dist,linhas){
  const erros=[],plantas=[];
  for(const lang of ['pt','en'])for(const [id,l] of linhas){
-  const risco=id.startsWith('ppp-oe2027-riscos-'),serie=/^(ppp-oe20\d\d-liquidos-|saude-total-)/.test(id);
+  const risco=id.startsWith('ppp-oe2027-riscos-'),serie=/^ppp-oe20\d\d-liquidos-\d{4}$/.test(id)||id.startsWith('saude-total-');
   const textual=l.afirmacao===true&&l.unit==='afirmação'&&(l.corrections??[]).some(c=>['correcao','atualizacao'].includes(c.kind));
   if(!risco&&!serie&&!textual)continue;
   const ficheiro=path.join(dist,lang==='pt'?'livro-razao':'en/ledger',id,'index.html');

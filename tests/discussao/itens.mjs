@@ -135,10 +135,10 @@ export function conferirIntegracao(root,lang,pagina,linhas=loadClaims(),{dist=pr
  const erros=[];const main=root.querySelector('main');if(!main)return erros;
  const nos=main.querySelectorAll('[data-claim],[data-linha-claim],[data-de-linha],[data-explicacao-nome]').filter(n=>!n.closest('[data-discussao-integracao],[data-discussao-inicio],[data-discussao-porta],[data-discussao-titulo]'));
  const idDoNo=n=>n.getAttribute('data-claim')??n.getAttribute('data-linha-claim')??n.getAttribute('data-de-linha')??n.getAttribute('data-explicacao-nome');
- const area=/^(?:en\/)?areas\/[^/]+\/index.html$/.test(pagina),ids=new Set(),vistos=new Map();
+ const area=/^(?:en\/)?areas\/[^/]+\/index.html$/.test(pagina),registo=/^(?:correcoes|en\/corrections)\/index.html$/.test(pagina),ids=new Set(),vistos=new Map();
  for(const n of nos){
-  const id=idDoNo(n),cartao=area?n.closest('article[data-cartao-medida][data-area-peca="medida"],div[data-linha-sem-nome][data-area-peca="medida"]'):null;
-  const dono=cartao?.getAttribute('data-cartao-medida')??cartao?.getAttribute('data-linha-sem-nome');
+  const id=idDoNo(n),cartao=area?n.closest('article[data-cartao-medida][data-area-peca="medida"],div[data-linha-sem-nome][data-area-peca="medida"]'):registo?n.closest('[data-mudou-registo] li[data-mudanca="correcao"][data-correcao-entrada]'):null;
+  const dono=cartao?.getAttribute('data-cartao-medida')??cartao?.getAttribute('data-linha-sem-nome')??cartao?.getAttribute('data-correcao-entrada');
   const remissao=n.closest('[data-regua][data-selo-em]');
   if(!cartao||(dono!==id&&remissao?.getAttribute('data-selo-em')!==dono)){ids.add(id);continue;}
   const relevantes=ITENS.filter(e=>linhasDaExplicacao(e,linhas).has(id));
@@ -216,12 +216,12 @@ export function conferirTudo(dist=path.join(raiz,'dist')){
  if(conferirIntegracao(parse(intacta),'pt','exemplo').length)erros.push('V2B integração: conhecido positivo recusado');
  for(const [nome,html] of [['porta por coincidência ausente',intacta.replace(/<p .*<\/p>/,'')],['porta sem coincidência',intacta.replace(/<span .*?<\/span>/,'')],['destino de outro item',intacta.replace(destino(demo.slug,'pt'),'#outra')]])provas.push({nome,mordeu:conferirIntegracao(parse(html),'pt','exemplo').length>0});
  // Nas áreas, cada cartão chega ao item pelo seu recibo, sem uma porta repetida para a página inteira.
- for(const lang of ['pt','en'])for(const forma of ['cartao','linha','regua']){
+ for(const lang of ['pt','en'])for(const forma of ['cartao','linha','regua','registo']){
   const dono=forma==='regua'?'oe-2027-saude-pessoal-2027':id;
-  const href=recibo(dono,lang),rota=(lang==='pt'?'':'en/')+'areas/ensaio/index.html';
-  const tag=forma==='linha'?'div':'article',marca=forma==='linha'?'data-linha-sem-nome':'data-cartao-medida';
+  const href=recibo(dono,lang),rota=forma==='registo'?(lang==='pt'?'correcoes':'en/corrections')+'/index.html':(lang==='pt'?'':'en/')+'areas/ensaio/index.html';
+  const tag=forma==='registo'?'li':forma==='linha'?'div':'article',marca=forma==='registo'?'data-correcao-entrada':forma==='linha'?'data-linha-sem-nome':'data-cartao-medida';
   const numero=forma==='regua'?`<span data-regua="anterior" data-selo-em="${dono}"><span data-claim="${id}"></span></span>`:`<span data-claim="${id}"></span>`;
-  const area=`<main><${tag} ${marca}="${dono}" data-area-peca="medida">${numero}<a class="src-chip" data-nonledger="proveniencia" href="${href}">fonte</a></${tag}></main>`;
+  const area=`<main>${forma==='registo'?'<ol data-mudou-registo>':''}<${tag} ${marca}="${dono}" ${forma==='registo'?'data-mudanca="correcao"':'data-area-peca="medida"'}>${numero}<a class="src-chip" data-nonledger="proveniencia" href="${href}">fonte</a></${tag}>${forma==='registo'?'</ol>':''}</main>`;
   const corpo=`<main><span data-claim="${id}"></span><section id="prova"><p data-discussao-integracao="${demo.slug}" data-discussao-condicao="linhas"><a href="${destino(demo.slug,lang)}">${DISCUSSAO.porta[lang]} ${tituloDeEnsaio(demo,lang,loadClaims())}</a></p></section></main>`;
   const mede=(a,c)=>conferirIntegracao(parse(a),lang,rota,loadClaims(),{dist,recibos:new Map([[lang+':'+dono,c?parse(c):null]])});
   if(forma==='regua')provas.push({nome:'régua sem a linha no recibo',lang,mordeu:mede(area,corpo.replace(/<span data-claim=.*?<\/span>/,'')).some(e=>e.includes('sem a linha comparada'))});
