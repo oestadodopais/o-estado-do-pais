@@ -26,12 +26,16 @@ Os selos ficam depois das aspas e fora do título. As células conferem os valor
 | afirmações contra os corpos | 0; dez afirmações, dez corpos, 32 plantas |
 | derivadas independentes | 0; 34 fórmulas, incluindo as seis ausentes da primeira passagem e quatro percentagens novas |
 | história dos valores | 0; nove plantas, duas histórias textuais seladas |
-| leitura semanal | 0; nove plantas, sem tratar texto como subida ou descida |
+| leitura semanal | 0; onze plantas, sem tratar texto como subida ou descida |
 | typecheck dirigido | 0 |
 | portões a | build 1; restantes passos 125, não executados; faltava o lugar das correções |
 | portões b | build 1; restantes passos 125; leitura semanal ainda presumiu valores numéricos |
 | portões c | build 1; restantes passos 125; HTML recusou dez casos de integração das correções textuais |
 | inventário | 32 cadeias novas e 32 retiradas, recolhidas do HTML das duas edições |
+| portões d | build 1; restantes passos 125; faltava a derivação independente do lugar das duas afirmações textuais da UTAO |
+| voz e inventário no HTML reconstruído | 0; 32 cadeias novas e 32 retiradas |
+| discussão no HTML reconstruído | 0; 112 de 112 plantas, 300 portas de integração |
+| país e lugar das correções | 0; duas origens positivas e dezasseis plantas documentais; declaração e derivação independentes |
 
 Capturas da correção ainda não executadas.
 
@@ -174,6 +178,14 @@ Antes: A história e os consumidores das correções presumiam valores numérico
 Depois: As afirmações textuais têm história literal selada; permanecem no registo de correções e ficam fora das contas de subida e descida. Os textos portugueses são identificados como tal na edição inglesa.
 
 Completar os valores textuais da UTAO exige conservar os fragmentos anteriores. A exclusão numérica depende dos dois marcadores afirmacao e unidade afirmação, sem excluir afirmações numéricas. O contador passa de sete a nove correções, com atualização selada.
+
+### V2D-37: Lugar das correções textuais
+
+Antes: A conferência independente derivava o lugar apenas do estudo, do identificador ou da geografia de uma consulta. As duas citações da UTAO não têm esses caminhos.
+
+Depois: O lugar Portugal é também derivado do parecer orçamental da UTAO, pela origem oficial do Parlamento e pela correspondência da linha com a prova documental selada.
+
+A declaração de lugar continua a ser comparada com uma via independente. O documento, o corpo, o endereço, a atribuição, o valor e o excerto têm de coincidir; a nova via entra na deteção de conflitos com as existentes. As correções textuais permanecem no registo público e o seu recibo dá acesso ao item.
 
 As decisões V2D-7 a V2D-26 permanecem em `decisoes.json`; V2D-1 a V2D-6 estão documentadas na conferência do commit 3533f7a7.
 

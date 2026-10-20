@@ -13,12 +13,16 @@
     "afirmações contra os corpos": "0; dez afirmações, dez corpos, 32 plantas",
     "derivadas independentes": "0; 34 fórmulas, incluindo as seis ausentes da primeira passagem e quatro percentagens novas",
     "história dos valores": "0; nove plantas, duas histórias textuais seladas",
-    "leitura semanal": "0; nove plantas, sem tratar texto como subida ou descida",
+    "leitura semanal": "0; onze plantas, sem tratar texto como subida ou descida",
     "typecheck dirigido": "0",
     "portões a": "build 1; restantes passos 125, não executados; faltava o lugar das correções",
     "portões b": "build 1; restantes passos 125; leitura semanal ainda presumiu valores numéricos",
     "portões c": "build 1; restantes passos 125; HTML recusou dez casos de integração das correções textuais",
-    "inventário": "32 cadeias novas e 32 retiradas, recolhidas do HTML das duas edições"
+    "inventário": "32 cadeias novas e 32 retiradas, recolhidas do HTML das duas edições",
+    "portões d": "build 1; restantes passos 125; faltava a derivação independente do lugar das duas afirmações textuais da UTAO",
+    "voz e inventário no HTML reconstruído": "0; 32 cadeias novas e 32 retiradas",
+    "discussão no HTML reconstruído": "0; 112 de 112 plantas, 300 portas de integração",
+    "país e lugar das correções": "0; duas origens positivas e dezasseis plantas documentais; declaração e derivação independentes"
   },
   "capturas": "Capturas da correção ainda não executadas.",
   "motor": "d19cb58a51416e506e14c3cad9e9a4afea687765"

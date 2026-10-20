@@ -178,6 +178,43 @@ function lugarNoIdentificador(id) {
 }
 /** As expressões verificadas das contagens que medem o próprio projeto. */
 const CONTAGENS_DO_PROJETO = new Set(['correcoes_publicadas', 'estudos_no_arquivo', 'edicoes_no_arquivo']);
+/* V2-d-b: estas frases tratam o orçamento nacional no parecer da unidade
+   técnica do Parlamento português. A origem selada fornece a segunda via,
+   sem consultar a declaração de lugar nem o nome editorial da linha. */
+const provasOrcamentais = JSON.parse(fs.readFileSync('ledger/provas/v2d/provas.json', 'utf8')).rows;
+function lugarDaAfirmacaoOrcamental(c) {
+  const p = provasOrcamentais[c?.id];
+  if (c?.afirmacao !== true || c.unit !== 'afirmação' || c.study !== 'oe-2027' || c.source !== 'UTAO' ||
+      p?.afirmacao !== true || p.unit !== 'afirmação' ||
+      p.document?.file !== 'content/24 Orcamento 2027 Analise/source/debate/utao-oe2027-preliminar.pdf' ||
+      c.document?.source_sha256 !== p.document.source_sha256 || c.document?.title !== p.document.title ||
+      c.source_url !== p.source_url || c.excerpt !== p.excerpt || c.value !== p.value ||
+      JSON.stringify(c.attributed_to) !== JSON.stringify(p.attributed_to) || JSON.stringify(p.attributed_to) !== '["UTAO"]') return null;
+  try {
+    const url = new URL(c.source_url);
+    if (url.protocol !== 'https:' || url.hostname !== 'app.parlamento.pt') return null;
+  } catch { return null; }
+  return PAIS;
+}
+// As plantas verificam a nova via sem dispensar a declaração nem a comparação
+// de lugares. Um campo documental adulterado deixa de derivar Portugal.
+for (const id of ['utao-ppp-contingencias-natureza-2026','utao-risco-execucao-sns-2027']) {
+  const c = linha(id);
+  if (lugarDaAfirmacaoOrcamental(c) !== PAIS) erros.push(`A1: o controlo da origem orçamental selada de ${id} foi recusado.`);
+  for (const [campo, altera] of [
+    ['tipo', x => { x.afirmacao = false; }],
+    ['unidade', x => { x.unit = '%'; }],
+    ['estudo', x => { x.study = 'outro'; }],
+    ['autor', x => { x.attributed_to = ['Outro']; }],
+    ['corpo', x => { x.document.source_sha256 = '0'.repeat(64); }],
+    ['título', x => { x.document.title = 'Outro documento'; }],
+    ['endereço', x => { x.source_url = 'https://example.invalid/parecer.pdf'; }],
+    ['excerto', x => { x.excerpt += ' Palavra acrescentada.'; }],
+  ]) {
+    const copia = structuredClone(c); altera(copia);
+    if (lugarDaAfirmacaoOrcamental(copia) !== null) erros.push(`A1: a planta da origem orçamental (${campo}) não fechou para ${id}.`);
+  }
+}
 /** O lugar DERIVADO, sem olhar para nenhuma tabela de lugares declarados. */
 function lugarDerivado(id) {
   const c = linha(id);
@@ -209,7 +246,7 @@ function lugarDerivado(id) {
   let geos = [];
   try { geos = c.source_url ? new URL(c.source_url).searchParams.getAll('geo') : []; } catch { geos = []; }
   const doPais = geos.length === 1 && geos[0] === 'PT' ? PAIS : undefined;
-  const d = [...new Set([doEstudo, doId, doPais].filter(x => typeof x === 'string'))];
+  const d = [...new Set([doEstudo, doId, doPais, lugarDaAfirmacaoOrcamental(c)].filter(x => typeof x === 'string'))];
   if (d.length > 1) {
     erros.push(`A1: a linha ${id} deriva dois lugares diferentes (${d.join(', ')}).`);
     return null;

@@ -208,5 +208,12 @@
     "antes": "A história e os consumidores das correções presumiam valores numéricos.",
     "depois": "As afirmações textuais têm história literal selada; permanecem no registo de correções e ficam fora das contas de subida e descida. Os textos portugueses são identificados como tal na edição inglesa.",
     "razao": "Completar os valores textuais da UTAO exige conservar os fragmentos anteriores. A exclusão numérica depende dos dois marcadores afirmacao e unidade afirmação, sem excluir afirmações numéricas. O contador passa de sete a nove correções, com atualização selada."
+  },
+  {
+    "id": "V2D-37",
+    "tema": "Lugar das correções textuais",
+    "antes": "A conferência independente derivava o lugar apenas do estudo, do identificador ou da geografia de uma consulta. As duas citações da UTAO não têm esses caminhos.",
+    "depois": "O lugar Portugal é também derivado do parecer orçamental da UTAO, pela origem oficial do Parlamento e pela correspondência da linha com a prova documental selada.",
+    "razao": "A declaração de lugar continua a ser comparada com uma via independente. O documento, o corpo, o endereço, a atribuição, o valor e o excerto têm de coincidir; a nova via entra na deteção de conflitos com as existentes. As correções textuais permanecem no registo público e o seu recibo dá acesso ao item."
   }
 ]

@@ -49,5 +49,22 @@
       "build": 1
     },
     "causa": "HTML recusou dez casos nos índices e na conferência independente da leitura semanal, que ainda tratavam correções textuais como movimentos numéricos."
+  },
+  {
+    "corrida": "d",
+    "cabeca": "5381f98ac71eb1cb393f13c0a27d626bfb8f0ca6",
+    "codigos": {
+      "check:css": 125,
+      "check:series": 125,
+      "gate:html": 125,
+      "check:lugar": 125,
+      "check:discussao": 125,
+      "check:palavras": 125,
+      "check:frases-compostas": 125,
+      "check:alvos": 125,
+      "typecheck": 125,
+      "build": 1
+    },
+    "causa": "A conferência dos lugares não conseguia derivar por via independente o lugar das duas afirmações textuais da UTAO: o identificador não contém geografia e a fonte interna não é um estudo do arquivo."
   }
 ]
