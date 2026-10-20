@@ -51,12 +51,19 @@
  *       node tests/voz/palavras-proibidas.mjs --json <ficheiro>
  */
 import fs from 'node:fs';
+import assert from 'node:assert/strict';
 import os from 'node:os';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 
 import { palavrasProibidasEm, PALAVRAS_PROIBIDAS, superficieDe } from '../../scripts/voz-palavras.mjs';
+
+// HB1: o título literal sai, a autorreferência e um título falso continuam.
+const tituloHB1 = 'A casa em Portugal e na Europa';
+assert(!superficieDe(`<body><span data-nonledger="titulo-de-estudo">${tituloHB1}</span></body>`).includes(tituloHB1));
+assert(superficieDe('<body><span data-nonledger="titulo-de-estudo">a casa verifica tudo</span></body>').includes('a casa verifica tudo'));
+assert(superficieDe(`<body><span data-nonledger="titulo-de-estudo">${tituloHB1}</span><p>a casa verifica tudo</p></body>`).includes('a casa verifica tudo'));
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const DIST = process.env.OEDP_DIST ? path.resolve(RAIZ, process.env.OEDP_DIST) : path.join(RAIZ, 'dist');

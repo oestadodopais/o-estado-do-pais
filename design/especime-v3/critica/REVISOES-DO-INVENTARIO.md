@@ -822,3 +822,9 @@ Seis declarações substituídas: comparação e opinião da Saúde nas duas edi
 | bloco | mudança | estado | nota |
 |---|---|---|---|
 | v2d | Retirada em PT e EN da atribuição de financiamento das entidades do SNS aos acordos | por ler | As declarações acompanham a redação pedida; os portões conferem a coincidência com o HTML. |
+
+## HB1: estudo da habitação
+
+| bloco | mudança | estado | nota |
+|---|---|---|---|
+| hb1 | Sinopse com os índices citados, rótulos do estudo e da área, contagens do livro e retirada das cadeias substituídas | por ler | Construção conferida nos tokens e no HTML; a leitura a frio pertence à passagem seguinte. |

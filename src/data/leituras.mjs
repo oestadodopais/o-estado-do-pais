@@ -83,30 +83,56 @@ export const LEITURAS = {
     ],
     "frase": {
       "pt": [
-        "Os preços reais das casas em Portugal subiram mais do que em qualquer país da União desde ",
+        "Descontada a inflação, o índice dos preços da habitação em ",
+        {
+          "ref": "2025"
+        },
+        " é de ",
+        {
+          "claim": "hab-tipsho10-a-i15-a-avg-pt-2025"
+        },
+        " em Portugal e ",
+        {
+          "claim": "hab-tipsho10-a-i15-a-avg-eu27_2020-2025"
+        },
+        " na União, com ",
         {
           "ref": "2015"
         },
-        ", e a parte do rendimento gasta na habitação é menor do que a média europeia. Entre os inquilinos a preços de mercado, ",
+        " igual a cem. Entre os inquilinos a preços de mercado, ",
         {
-          "claim": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025"
+          "claim": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
+          "sufixo": " %"
         },
-        " % estão em sobrecarga; os jovens saem de casa dos pais aos ",
+        " estão em sobrecarga; os jovens saem de casa dos pais aos ",
         {
           "claim": "hab-yth-demo-030-a-avg-t-pt-2025"
         },
         " anos."
       ],
       "en": [
-        "Real house prices in Portugal rose more than in any country of the Union since ",
+        "Net of inflation, the house price index in ",
+        {
+          "ref": "2025"
+        },
+        " is ",
+        {
+          "claim": "hab-tipsho10-a-i15-a-avg-pt-2025"
+        },
+        " in Portugal and ",
+        {
+          "claim": "hab-tipsho10-a-i15-a-avg-eu27_2020-2025"
+        },
+        " in the Union, with ",
         {
           "ref": "2015"
         },
-        ", and the share of income spent on housing is lower than the European average. Among tenants at market rents, ",
+        " equal to one hundred. Among tenants at market rents, ",
         {
-          "claim": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025"
+          "claim": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
+          "sufixo": " %"
         },
-        " % are overburdened; the young leave their parents’ home at ",
+        " are overburdened; the young leave their parents’ home at ",
         {
           "claim": "hab-yth-demo-030-a-avg-t-pt-2025"
         },

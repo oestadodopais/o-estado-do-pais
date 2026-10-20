@@ -67,6 +67,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { parse } from 'node-html-parser';
 import { classeDoCampoDaSerie } from './campos-da-serie.mjs';
+import { WORKS } from '../src/data/studies.mjs';
 
 /**
  * As palavras, e o que se escreve em vez de cada uma.
@@ -275,6 +276,12 @@ export const ATRIBUTOS_A_VISTA = ['title', 'aria-label', 'alt', 'placeholder'];
  */
 export function superficieDe(html, opcoes = {}) {
   const root = parse(html);
+  // O título sobre habitação não chama «casa» ao projeto. Só sai a cadeia
+  // exata de uma edição do arquivo, que o portão de HTML também confere.
+  const titulos = new Set(WORKS.flatMap(w => w.editions.map(e => e.title)));
+  for (const titulo of root.querySelectorAll('[data-nonledger="titulo-de-estudo"]')) {
+    if (titulos.has(titulo.textContent)) titulo.remove();
+  }
   for (const fora of root.querySelectorAll('script, style')) fora.remove();
   for (const campo of root.querySelectorAll(
     `[data-linha-campo], [data-verbatim], [data-registo], [data-agenda], [data-nonledger="nome-oficial-da-medida"], ${CAMPOS_DE_CORRECAO_TRANSCRITOS.map(
