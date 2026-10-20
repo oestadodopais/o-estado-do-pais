@@ -1,0 +1,27 @@
+{
+  "sitio_testado": "2141b14b5ffc23fd88728bf9036a7b9fd684d726",
+  "motor": "7e7c98406f9ccf30f705f3b030b628bc7fe494d1",
+  "codigos": {
+    "montagem_motor": 0,
+    "exportacao": 0,
+    "celulas_motor": 0,
+    "composicao_e_auditoria": 0,
+    "ledger:check": 0,
+    "check:cruzamento --with-origin": 0,
+    "core.gate (pre-commit)": 0,
+    "check:css": 0,
+    "check:series": 0,
+    "gate:html": 0,
+    "check:lugar": 0,
+    "check:discussao": 0,
+    "check:palavras": 0,
+    "check:frases-compostas": 0,
+    "check:alvos": 0,
+    "typecheck": 0,
+    "build": 0,
+    "capturas": 0,
+    "conferencia_do_relatorio_e_recibos": 0
+  },
+  "conferencias": "45 conferências do motor e 840 células Eurostat; auditoria com 305 folhas e 3230 apoios. Os 60 parágrafos coincidem com o HTML e os 8 recibos foram conferidos nas duas edições. A exportação e o cruzamento com a origem passaram. O aviso sobre o hash global do estudo 20 permanece informativo, sem divergências nas linhas atravessadas. A primeira corrida teve build=1 por declarações de frases desatualizadas; os passos seguintes ficaram com código 125. O inventário foi corrigido e os dez passos do perfil V2-d passaram na segunda corrida. A célula da discussão passou com 124 plantas detetadas em 124 e 306 portas de integração. A conferência preliminar do HTML encontrou a falta de acesso direto aos recibos; os selos das duas fontes foram acrescentados aos dois parágrafos e a conferência final passou. O core.gate do motor passou no pre-commit, conforme o resultado do escrivão.",
+  "capturas": "Capturas nas duas edições e nas 5 larguras declaradas: 50 vistas e 100 recortes; 150 hashes de PNG e 20 recursos conferidos. Sem transbordo horizontal, pedidos externos, recursos recusados ou erros do navegador. Inspeção visual de 10 recortes, discriminados em inspecao-visual-v2de.json. Os hashes do HTML capturado coincidem com a conferência textual. PNG em <temporario>/v2de-capturas."
+}

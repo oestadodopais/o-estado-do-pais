@@ -1,0 +1,36 @@
+{
+  "cabeca": "2141b14b5ffc23fd88728bf9036a7b9fd684d726",
+  "edicoes": [
+    "en",
+    "pt"
+  ],
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "paginas": 50,
+  "recortes": 100,
+  "sha256_conferidos": 150,
+  "recursos_conferidos": 20,
+  "transbordo_horizontal": 0,
+  "erros_do_navegador": 0,
+  "recursos_recusados": 0,
+  "pedidos_externos": 0,
+  "leitura_visual": [
+    "discussao-pt-390-saude-comparacao.png",
+    "discussao-en-1600-saude-comparacao.png",
+    "recibo-acss-pt-390-cabecalho.png",
+    "recibo-acss-en-390-cabecalho.png",
+    "discussao-pt-390-saude-opiniao.png",
+    "discussao-en-390-saude-opiniao.png",
+    "recibo-contratos-pt-390-cabecalho.png",
+    "recibo-contratos-en-390-cabecalho.png",
+    "discussao-pt-1600-parcerias-comparacao.png",
+    "discussao-en-390-parcerias-comparacao.png"
+  ],
+  "achados": [],
+  "observacao": "Nos dez recortes inspecionados, as frases e os excertos estão legíveis, sem cortes de texto ou sobreposições. A opinião distingue a variação da rubrica do montante não declarado da dotação. Os dois recibos textuais conservam as citações completas em português e identificam o orçamento para 2027. As páginas explicam a Saúde nas duas línguas e os selos dão acesso aos recibos. Os restantes PNG são conferidos por hash e pelas medidas do navegador."
+}

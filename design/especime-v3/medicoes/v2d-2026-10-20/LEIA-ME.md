@@ -1,18 +1,14 @@
 # V2-d: análise da Saúde e das parcerias
 
-## A terceira correção
+## A quarta correção
 
-Esta passagem corrige apenas os Major 5 e 7 da leitura curta V2-d-c. Os achados 1 a 4 e 6 eram plantas. Os resultados anteriores permanecem nos ficheiros das passagens anteriores e no histórico Git.
+Esta passagem corrige apenas os Major 6 e 7 da leitura curta V2-d-d. Os achados 1 a 5 eram plantas. Os resultados das passagens anteriores permanecem nos respetivos ficheiros e no histórico Git.
 
-Cabeça de código do sítio construída, testada e capturada: `7b2a08907aacd73c7cf89b4dcf8d114f83ca8a43`. Motor aprovado pelo pre-commit: `8e1b9c49e091a9a6a2fb493dc4b345bc4753d9f7`. O commit posterior fecha o relatório e os recibos das verificações.
+Cabeça de código do sítio construída, testada e capturada: `2141b14b5ffc23fd88728bf9036a7b9fd684d726`. Motor aprovado pelo pre-commit: `7e7c98406f9ccf30f705f3b030b628bc7fe494d1`. O commit posterior fecha o relatório e os recibos das verificações.
 
-A página 88 do PDF, 72 impressa, foi conferida no corpo alojado e na imagem renderizada. A linha oe-2027-outras-despesas-dotacoes-execucao conserva a frase inteira do corpo, incluindo o marcador de chamada 26. A linha oe-2027-saude-dotacao-reforco-contratos-programa conserva as duas frases completas da nota 26. A derivada der-saude-outras-correntes-variacao-abs subtrai 32,4 a 303,7 e dá 271,3 milhões de euros.
+A opinião nas duas edições distingue a variação de toda a rubrica das outras despesas correntes, 271,3 milhões, da dotação de reforço dos contratos-programa, cujo montante o relatório não diz. A comparação explica os contratos-programa nas palavras do sítio. As frases seguem o pedido palavra por palavra; as parcerias mantêm o texto anterior.
 
-As duas edições recebem as frases pedidas na comparação e na opinião da Saúde. A oração antiga indicada no pedido já não estava na cabeça recebida; a oração presente, que aumenta as outras despesas correntes, foi substituída pela formulação pedida sobre contratos-programa ainda por fechar. As parcerias conservam as frases da passagem anterior.
-
-As linhas oe-2027-outras-despesas-correntes-reserva e oe-2027-saude-acao-reserva-orcamental permanecem no motor e saem do sítio. A primeira tentativa de exportação recusou a sua omissão sem retirada explícita; o manifesto passou a registá-las em retired com razão escrita, e a exportação seguinte passou.
-
-O validador do livro e a conferência da fonte também exigiam a igualdade indevida entre período e publicação; ambos foram corrigidos e receberam plantas que adulteram esses campos. O template LinhaView.astro chama continuacaoDoNomeV2a, em src/lib/v2a-palavras.mjs. O token periodo é resolvido a partir de reference_date, agora 2027 nas linhas textuais do relatório exportadas. A data de publicação permanece em published_at, 2026-10-08, e aparece separadamente na ficha. Os cabeçalhos dos dois recibos novos foram conferidos no HTML nas duas edições; as plantas trocam o ano pela data para provar a recusa.
+A nova linha oe-2027-saude-contrato-programa-acss conserva a frase inteira da página 303 do PDF, 287 impressa, confirmada na camada textual e na imagem. A linha oe-2027-saude-dotacao-reforco-contratos-programa conserva a nota 26 inteira no recibo. Ambas estão exportadas, têm porta de integração e apoiam a auditoria das duas frases. A página deixa de transcrever a nota sobre a Defesa. O período continua a ser 2027 e a publicação permanece separada.
 
 ### Códigos observados
 
@@ -25,42 +21,42 @@ O validador do livro e a conferência da fonte também exigiam a igualdade indev
 | ledger:check | 0 |
 | check:cruzamento --with-origin | 0 |
 | core.gate (pre-commit) | 0 |
-| build | 0 |
-| check:alvos | 0 |
 | check:css | 0 |
-| check:discussao | 0 |
-| check:frases-compostas | 0 |
-| check:lugar | 0 |
-| check:palavras | 0 |
 | check:series | 0 |
 | gate:html | 0 |
+| check:lugar | 0 |
+| check:discussao | 0 |
+| check:palavras | 0 |
+| check:frases-compostas | 0 |
+| check:alvos | 0 |
 | typecheck | 0 |
+| build | 0 |
 | capturas | 0 |
 | conferencia_do_relatorio_e_recibos | 0 |
 
-43 conferências do motor e 840 células Eurostat; auditoria com 306 folhas e 3240 apoios. O pre-commit do motor passou em 749 segundos. A célula dos itens passou com 119 plantas detetadas em 119. A conferência das afirmações leu 11 corpos e detetou 36 plantas, sem erros. Os 60 parágrafos coincidem com o HTML e os 6 recibos novos foram conferidos nas duas edições. As duas primeiras corridas tiveram build=1: primeiro, a igualdade indevida entre período e publicação no validador; depois, a mesma igualdade na conferência do corpo original. Os passos não executados têm código 125. A terceira corrida passou nos dez passos. O cruzamento com a origem passou; conserva o aviso informativo sobre o hash global do estudo 20, sem divergência nas linhas atravessadas.
+45 conferências do motor e 840 células Eurostat; auditoria com 305 folhas e 3230 apoios. Os 60 parágrafos coincidem com o HTML e os 8 recibos foram conferidos nas duas edições. A exportação e o cruzamento com a origem passaram. O aviso sobre o hash global do estudo 20 permanece informativo, sem divergências nas linhas atravessadas. A primeira corrida teve build=1 por declarações de frases desatualizadas; os passos seguintes ficaram com código 125. O inventário foi corrigido e os dez passos do perfil V2-d passaram na segunda corrida. A célula da discussão passou com 124 plantas detetadas em 124 e 306 portas de integração. A conferência preliminar do HTML encontrou a falta de acesso direto aos recibos; os selos das duas fontes foram acrescentados aos dois parágrafos e a conferência final passou. O core.gate do motor passou no pre-commit, conforme o resultado do escrivão.
 
-Capturas nas duas edições e nas cinco larguras declaradas: 40 vistas e 90 recortes; 130 hashes de PNG e 18 recursos conferidos, sem transbordo horizontal, pedidos externos, recursos recusados ou erros do navegador. Inspeção visual de 12 recortes, discriminados em inspecao-visual-v2dd.json. O HTML capturado coincide com os hashes da conferência textual. PNG em <temporario>/v2dd-capturas.
+Capturas nas duas edições e nas 5 larguras declaradas: 50 vistas e 100 recortes; 150 hashes de PNG e 20 recursos conferidos. Sem transbordo horizontal, pedidos externos, recursos recusados ou erros do navegador. Inspeção visual de 10 recortes, discriminados em inspecao-visual-v2de.json. Os hashes do HTML capturado coincidem com a conferência textual. PNG em <temporario>/v2de-capturas.
 
-Os códigos e as últimas linhas dos registos estão em `portoes-v2dd.json`. O manifesto das capturas está em `capturas-v2dd.json`, e a inspeção em `inspecao-visual-v2dd.json`. Os registos extensos e os PNG ficam na pasta temporária da corrida. O perfil V2-d foi executado; a corrida integral do sítio fica para o GitHub. Não foi feito push.
+Os códigos e as últimas linhas dos registos estão em `portoes-v2de.json`. O manifesto das capturas está em `capturas-v2de.json`, e a inspeção em `inspecao-visual-v2de.json`. Os registos extensos e os PNG ficam na pasta temporária da corrida. O perfil V2-d foi executado; a corrida integral do sítio fica para o GitHub. Não foi feito push.
 
 ### Decisões
 
-**V2D-43: Dotação para contratos-programa da Saúde**
+**V2D-45: Montante do reforço não quantificado**
 
-Antes: A comparação citava a reserva geral e a ação de reserva da Saúde; a opinião dizia que aumentavam as outras despesas correntes.
+Antes: A opinião atribuía os 271,3 milhões ao reforço dos contratos-programa.
 
-Depois: Duas linhas transcrevem a frase do agregado e a nota 26 completas da página 88. A comparação e a opinião usam a variação de 271,3 e a dotação para contratos-programa ainda por contratualizar.
+Depois: As duas edições atribuem os 271,3 milhões à variação das outras despesas correntes e dizem que o relatório não quantifica a dotação de reforço.
 
-A reserva de 1 milhão do quadro 5.36 não explica o aumento. A frase do corpo e a nota 26 identificam as dotações a afetar em execução. As duas linhas anteriores permanecem no motor, com retirada explícita do manifesto do sítio.
+A nota 26 localiza a dotação no agregado, mas não declara o montante. A conta da variação da rubrica permanece 303,7 menos 32,4.
 
-**V2D-44: Período do orçamento separado da publicação**
+**V2D-46: Explicação dos contratos-programa com recibos completos**
 
-Antes: O exportador substituía reference_date por published_at nas linhas textuais; o cabeçalho da Saúde mostrava a data de publicação como orçamento.
+Antes: A comparação transcrevia a nota 26 inteira, incluindo a Defesa, sem explicar os contratos-programa.
 
-Depois: As linhas textuais do relatório conservam reference_date igual a 2027 e published_at igual a 2026-10-08. Ambos os recibos novos mostram o orçamento para 2027 nas duas edições. O validador do livro e a conferência contra o corpo original passam a distinguir os campos, conservando a regra das declarações públicas.
+Depois: A comparação explica a Saúde nas palavras do sítio, em PT e EN. A frase inteira da ACSS da página 303 é selada e exportada; a auditoria apoia-se nela e na nota 26, ambas completas nos recibos. Os dois recibos ficam a um toque nos parágrafos da comparação e da opinião, pelos selos de proveniência existentes.
 
-LinhaView.astro chama continuacaoDoNomeV2a; o token periodo é resolvido a partir de reference_date. A publicação aparece separadamente no campo published_at. A célula recusa a troca do ano pela data, nos dados e no cabeçalho renderizado.
+O leitor recebe a explicação e pode abrir a prova integral. A linha nova tem verificações da citação, página, período e porta de integração.
 
 ### Frases tal como renderizam
 
@@ -94,7 +90,7 @@ Os números da RTP, a queda, o montante e a diferença, coincidem com a linha da
 
 A descida vem toda do fim do PRR. Em 2026 o PRR valia 771,1 na despesa efetiva da Saúde; em 2027 vale zero, e a despesa efetiva é a mesma com e sem ele, 17 803,1 e 17 803,1. A despesa fora do PRR sobe 511,8, o que repõe 66,4 % do que o PRR deixa; a diferença, −259,3, é a queda da despesa efetiva.
 
-O que sobe e o que desce não são a mesma coisa: o pessoal leva mais 401,2; a aquisição de bens e serviços leva menos 396,6; o investimento leva menos 344,2; e as outras despesas correntes passam de 32,4 para 303,7, mais 271,3. O relatório diz que este agregado guarda, na Saúde, «São objeto de afetação específica no decurso da execução orçamental. Relevam, no Programa Legado da Defesa, a dotação destinada às forças nacionais destacadas, a afetar sobretudo aos ramos das Forças Armadas, e, no Programa Legado da Saúde, a dotação para reforço no âmbito dos contratos-programa cuja contratualização ainda decorre.»: o próprio orçamento inscreve o reforço que antecipa. O financiamento conta com receitas próprias a crescer 56,5 % e com fundos europeus a cair de 655,0 para 174,6.
+O que sobe e o que desce não são a mesma coisa: o pessoal leva mais 401,2; a aquisição de bens e serviços leva menos 396,6; o investimento leva menos 344,2; e as outras despesas correntes passam de 32,4 para 303,7, mais 271,3. Segundo o relatório, é nesta rubrica que fica, para a Saúde, a dotação para reforçar os contratos-programa ainda por fechar, os acordos entre a Administração Central do Sistema de Saúde e as entidades do Serviço Nacional de Saúde por onde passa o financiamento destas; o próprio orçamento inscreve assim o reforço que antecipa, sem dizer quanto. O financiamento conta com receitas próprias a crescer 56,5 % e com fundos europeus a cair de 655,0 para 174,6.
 
 A redução do PRR não é só da Saúde: em 2026 o PRR pesava 1 472,7 nas Finanças, 1 357,1 na Economia, 1 133,0 nas Infraestruturas e habitação, 823,2 no Ambiente e energia e 771,1 na Saúde. Em 2027 a despesa fora do PRR cresce 3,0 % na Saúde, 4,9 % na Educação, 8,8 % no Trabalho, solidariedade e segurança social, 20,8 % nas Infraestruturas e habitação, 18,2 % na Justiça e 13,1 % na Segurança interna; e varia −7,8 % nas Finanças, −4,9 % na Economia e −38,2 % na Coesão territorial.
 
@@ -110,7 +106,7 @@ A pergunta útil não é se o orçamento da Saúde sobe ou desce, é se chega: a
 
 **A opinião do lugar de direção**
 
-O ministro e a RTP escolheram cada um a linha que lhes convinha, e as duas são verdadeiras; a discussão sobre «sobe» ou «desce» esconde o que o quadro mostra: um orçamento que paga mais pessoal com menos compras e menos investimento, que guarda 271,3 milhões para reforçar contratos-programa ainda por fechar, que conta com receitas próprias a crescer mais de metade sem que o relatório explique de onde vêm, e que, pelo que a execução de 2026 e os seis anos anteriores mostram, corre o risco de voltar a ser ultrapassado. O orçamento da Saúde para 2027 é um orçamento de transição para o fim do PRR, e a sua medida certa conhece-se na execução, não na aprovação. Dizer isto custava mais do que dizer «sobe» ou «cai», e era o que o debate devia.
+O ministro e a RTP escolheram cada um a linha que lhes convinha, e as duas são verdadeiras; a discussão sobre «sobe» ou «desce» esconde o que o quadro mostra: um orçamento que paga mais pessoal com menos compras e menos investimento, que guarda em outras despesas correntes mais 271,3 milhões, onde o relatório diz estar a dotação para reforçar contratos-programa ainda por fechar, sem dizer quanto, que conta com receitas próprias a crescer mais de metade sem que o relatório explique de onde vêm, e que, pelo que a execução de 2026 e os seis anos anteriores mostram, corre o risco de voltar a ser ultrapassado. O orçamento da Saúde para 2027 é um orçamento de transição para o fim do PRR, e a sua medida certa conhece-se na execução, não na aprovação. Dizer isto custava mais do que dizer «sobe» ou «cai», e era o que o debate devia.
 
 **As parcerias rodoviárias: o que o Estado paga, o que vai pagar e o que não está no quadro**
 
@@ -184,7 +180,7 @@ RTP's figures, the fall, the amount and the difference, match the line for total
 
 The fall comes entirely from the end of the RRP. In 2026 the RRP accounted for 771,1 in effective Health expenditure; in 2027 it is zero, and effective expenditure is the same with and without it, 17 803,1 and 17 803,1. Expenditure outside the RRP rises 511,8, replacing 66,4 % of what the RRP leaves; the difference, −259,3, is the fall in effective expenditure.
 
-What rises and what falls are not the same thing: personnel takes 401,2 more; the purchase of goods and services takes 396,6 less; investment takes 344,2 less; and other current expenditure goes from 32,4 to 303,7, 271,3 more. The report says this aggregate holds, for Health, «São objeto de afetação específica no decurso da execução orçamental. Relevam, no Programa Legado da Defesa, a dotação destinada às forças nacionais destacadas, a afetar sobretudo aos ramos das Forças Armadas, e, no Programa Legado da Saúde, a dotação para reforço no âmbito dos contratos-programa cuja contratualização ainda decorre.»: the budget itself books the reinforcement it anticipates. The financing counts on own revenue growing 56,5 % and on European funds falling from 655,0 to 174,6.
+What rises and what falls are not the same thing: personnel takes 401,2 more; the purchase of goods and services takes 396,6 less; investment takes 344,2 less; and other current expenditure goes from 32,4 to 303,7, 271,3 more. According to the report, this line is where the provision to reinforce the contract-programmes still to be closed sits for Health, the agreements between the Central Administration of the Health System and the National Health Service's entities through which their financing flows; the budget thus books the reinforcement it anticipates, without saying how much. The financing counts on own revenue growing 56,5 % and on European funds falling from 655,0 to 174,6.
 
 The reduction in the RRP is not confined to Health: in 2026 the RRP accounted for 1 472,7 in Finance, 1 357,1 in Economy, 1 133,0 in Infrastructure and housing, 823,2 in Environment and energy and 771,1 in Health. In 2027 expenditure outside the RRP grows 3,0 % in Health, 4,9 % in Education, 8,8 % in Labour, solidarity and social security, 20,8 % in Infrastructure and housing, 18,2 % in Justice and 13,1 % in Internal security; and changes by −7,8 % in Finance, −4,9 % in Economy and −38,2 % in Territorial cohesion.
 
@@ -200,7 +196,7 @@ The useful question is not whether the Health budget rises or falls, but whether
 
 **The editorial seat's opinion**
 
-The minister and RTP each chose the line that suited them, and both are true; the argument over «up» or «down» hides what the table shows: a budget that pays more staff with fewer purchases and less investment, that sets aside 271,3 million to reinforce contract-programmes still to be closed, that counts on own revenue growing by more than half without the report explaining where it comes from, and that, on the evidence of the 2026 execution and the six years before it, risks being exceeded again. The Health budget for 2027 is a transition budget for the end of the RRP, and its true size will be known in the execution, not at the vote. Saying this cost more than saying «up» or «down», and it was what the debate owed.
+The minister and RTP each chose the line that suited them, and both are true; the argument over «up» or «down» hides what the table shows: a budget that pays more staff with fewer purchases and less investment, that holds 271,3 million more in other current expenditure, where the report says the provision to reinforce contract-programmes still to be closed sits, without saying how much, that counts on own revenue growing by more than half without the report explaining where it comes from, and that, on the evidence of the 2026 execution and the six years before it, risks being exceeded again. The Health budget for 2027 is a transition budget for the end of the RRP, and its true size will be known in the execution, not at the vote. Saying this cost more than saying «up» or «down», and it was what the debate owed.
 
 **The road partnerships: what the State pays, what it will pay, and what the table leaves out**
 
@@ -248,6 +244,6 @@ The PCP is right to draw attention to the cost of partnerships, but wrong to att
 
 No motor, `python3 -m publisher.oe2027_analise_report --assemble --report`, `python3 -m publisher.v2d_export` e `python3 -m publisher.export_site_rows --manifest publisher/manifest.v2d.json --site <worktree> --write`. As células correm por `python3 -m publisher.oe2027_analise_test --write-proof`; o pre-commit do escrivão executa `core.gate`.
 
-No sítio, `scripts/compor-familias-v2d.mjs` e, nesta pasta, `auditar-palavras.mjs`, `medir-final.mjs`, `conferir-v2dd.mjs` e `gerar-relatorio.py` reproduzem as declarações, as frases e o relatório. `check:cruzamento --with-origin` recebe o motor em `RESEARCHHUB_DIR`. Os comandos de saída extensa correm por `scripts/leituras/curto.sh`.
+No sítio, `scripts/compor-familias-v2d.mjs` e, nesta pasta, `auditar-palavras.mjs`, `medir-final.mjs`, `conferir-v2de.mjs` e `gerar-relatorio.py` reproduzem as declarações, as frases e o relatório. `check:cruzamento --with-origin` recebe o motor em `RESEARCHHUB_DIR`. Os comandos de saída extensa correm por `scripts/leituras/curto.sh`.
 
 Portões: `sh scripts/leituras/portoes-pelo-escrivao.sh <temporario> v2d`. Capturas: `sh scripts/leituras/capturar-pelo-escrivao.sh <pedido.json> <temporario>`, depois da construção, nas duas edições e cinco larguras.

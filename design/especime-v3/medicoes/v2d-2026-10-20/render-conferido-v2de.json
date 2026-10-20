@@ -1,0 +1,104 @@
+{
+  "ok": true,
+  "cabeca": "2141b14b5ffc23fd88728bf9036a7b9fd684d726",
+  "paragrafos": 60,
+  "paginas": [
+    {
+      "lang": "pt",
+      "ficheiro": "o-que-se-discute/index.html",
+      "sha256": "227753bd6edd559d657abeaacdc97f59c97dad394c154a2803d3e1be10583522"
+    },
+    {
+      "lang": "en",
+      "ficheiro": "en/under-discussion/index.html",
+      "sha256": "3073418884f2c6a5e822b31eec63aa45b3863aca557e8a5c3f7dcd4ce8e348d7"
+    }
+  ],
+  "recibos": [
+    {
+      "id": "oe-2027-outras-despesas-dotacoes-execucao",
+      "lang": "pt",
+      "ficheiro": "livro-razao/oe-2027-outras-despesas-dotacoes-execucao/index.html",
+      "sha256": "4a1a90231b677894b10703f38396596d45b8aef3609d7b11ad80c5a492b8ab24",
+      "cabecalho": "Dotações a alocar durante a execução, orçamento para 2027",
+      "reference_date": "2027",
+      "published_at": "2026-10-08",
+      "excerto_ou_derivacao": "Neste agregado estão ainda previstas dotações destinadas a alocar a outras entidades 26 em sede de execução, nomeadamente nos Programas Legados da Saúde e da Defesa."
+    },
+    {
+      "id": "oe-2027-saude-dotacao-reforco-contratos-programa",
+      "lang": "pt",
+      "ficheiro": "livro-razao/oe-2027-saude-dotacao-reforco-contratos-programa/index.html",
+      "sha256": "be6b3df02514ffc19b0c8f3d6bcdcbc347ea059a8c0c0acc37db7e7d6f77a2b0",
+      "cabecalho": "Dotação para reforço dos contratos-programa da Saúde, orçamento para 2027",
+      "reference_date": "2027",
+      "published_at": "2026-10-08",
+      "excerto_ou_derivacao": "São objeto de afetação específica no decurso da execução orçamental. Relevam, no Programa Legado da Defesa, a dotação destinada às forças nacionais destacadas, a afetar sobretudo aos ramos das Forças Armadas, e, no Programa Legado da Saúde, a dotação para reforço no âmbito dos contratos-programa cuja contratualização ainda decorre."
+    },
+    {
+      "id": "der-saude-outras-correntes-variacao-abs",
+      "lang": "pt",
+      "ficheiro": "livro-razao/der-saude-outras-correntes-variacao-abs/index.html",
+      "sha256": "c3ac9e858646d99382720347e3af26a44d1c9c660a4d2a3b3cdf5e09e1b1e075",
+      "cabecalho": "Variação absoluta das outras despesas correntes da Saúde",
+      "reference_date": "2027",
+      "published_at": null,
+      "excerto_ou_derivacao": "(oe-2027-saude-outras-correntes-2027) − (oe-2027-saude-outras-correntes-2026). 303,7 − 32,4 = 271,3"
+    },
+    {
+      "id": "oe-2027-saude-contrato-programa-acss",
+      "lang": "pt",
+      "ficheiro": "livro-razao/oe-2027-saude-contrato-programa-acss/index.html",
+      "sha256": "9fed27364fa7859160290bf9d3fd61de14407eefc0747522a501b147e0c1b411",
+      "cabecalho": "Contrato-programa entre a ACSS e as entidades do SNS, orçamento para 2027",
+      "reference_date": "2027",
+      "published_at": "2026-10-08",
+      "excerto_ou_derivacao": "Neste montante incluem-se as verbas do contrato-programa a celebrar entre a Administração Central do Sistema de Saúde, IP (ACSS) e as entidades do Serviço Nacional de Saúde (SNS), destinadas ao financiamento centralizado da Rede Nacional de Cuidados Continuados, das parcerias público-privadas, entre outros."
+    },
+    {
+      "id": "oe-2027-outras-despesas-dotacoes-execucao",
+      "lang": "en",
+      "ficheiro": "en/ledger/oe-2027-outras-despesas-dotacoes-execucao/index.html",
+      "sha256": "6a95f9ebf62712691519319e1636b5c7f45d091c60da55ae4e8873769f785841",
+      "cabecalho": "Appropriations to allocate during execution, budget for 2027",
+      "reference_date": "2027",
+      "published_at": "2026-10-08",
+      "excerto_ou_derivacao": "Neste agregado estão ainda previstas dotações destinadas a alocar a outras entidades 26 em sede de execução, nomeadamente nos Programas Legados da Saúde e da Defesa."
+    },
+    {
+      "id": "oe-2027-saude-dotacao-reforco-contratos-programa",
+      "lang": "en",
+      "ficheiro": "en/ledger/oe-2027-saude-dotacao-reforco-contratos-programa/index.html",
+      "sha256": "5d28fa82f12465203295662fd47f606b374884cd2511eb93895f916814151e6d",
+      "cabecalho": "Appropriation to reinforce Health contract-programmes, budget for 2027",
+      "reference_date": "2027",
+      "published_at": "2026-10-08",
+      "excerto_ou_derivacao": "São objeto de afetação específica no decurso da execução orçamental. Relevam, no Programa Legado da Defesa, a dotação destinada às forças nacionais destacadas, a afetar sobretudo aos ramos das Forças Armadas, e, no Programa Legado da Saúde, a dotação para reforço no âmbito dos contratos-programa cuja contratualização ainda decorre."
+    },
+    {
+      "id": "der-saude-outras-correntes-variacao-abs",
+      "lang": "en",
+      "ficheiro": "en/ledger/der-saude-outras-correntes-variacao-abs/index.html",
+      "sha256": "fe57d02d28c69d0085d73e11cfbb3e5f02ec46734ef9ee93cea97adae0fef955",
+      "cabecalho": "Absolute change in Health other current expenditure",
+      "reference_date": "2027",
+      "published_at": null,
+      "excerto_ou_derivacao": "(oe-2027-saude-outras-correntes-2027) − (oe-2027-saude-outras-correntes-2026). 303,7 − 32,4 = 271,3"
+    },
+    {
+      "id": "oe-2027-saude-contrato-programa-acss",
+      "lang": "en",
+      "ficheiro": "en/ledger/oe-2027-saude-contrato-programa-acss/index.html",
+      "sha256": "9e6e9d55c95aae98d622488101077a0f6a0a53312fc92b8086a085519bc7b0d3",
+      "cabecalho": "Contract-programme between ACSS and NHS entities, budget for 2027",
+      "reference_date": "2027",
+      "published_at": "2026-10-08",
+      "excerto_ou_derivacao": "Neste montante incluem-se as verbas do contrato-programa a celebrar entre a Administração Central do Sistema de Saúde, IP (ACSS) e as entidades do Serviço Nacional de Saúde (SNS), destinadas ao financiamento centralizado da Rede Nacional de Cuidados Continuados, das parcerias público-privadas, entre outros."
+    }
+  ],
+  "textuais_do_relatorio": [
+    "oe-2027-outras-despesas-dotacoes-execucao",
+    "oe-2027-saude-contrato-programa-acss",
+    "oe-2027-saude-dotacao-reforco-contratos-programa"
+  ]
+}
