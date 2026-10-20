@@ -41,5 +41,5 @@ corrections:
     kind: "atualizacao"
     old_value: "17"
     new_value: "18"
-    reason: "Entrou no arquivo o estudo A casa em Portugal e na Europa."
+    reason: "Entrou no arquivo o estudo da habitação em Portugal e na Europa."
     reason_en: "Housing in Portugal and in Europe entered the archive."

@@ -1735,7 +1735,15 @@ const PRIVACIDADE_INGLESA_DESCRICAO =
    da conta, e o valor de referência e o sinal são origens). As frases admitidas são as que a régua lê, inteiras. */
 const LADO_ABAIXO = 'Portugal está abaixo do valor de referência da Comissão Europeia, que é';
 const LADO_ENTRE = 'Portugal está entre os valores de referência da Comissão Europeia, que são';
+/* HB1-b, 20.10.2026: estes antigos rótulos aparecem dentro da definição de
+   edições em o-que-e-das-familias.mjs. Só estas duas frases completas são
+   admitidas; rótulos isolados ou uma definição alterada continuam a morder. */
+const DEFINICAO_EDICOES_PT = 'É o número de edições dos estudos publicados; a edição portuguesa e a inglesa do mesmo estudo contam em separado.';
+const DEFINICAO_EDICOES_EN = 'It is the number of editions of the studies published; the Portuguese and English editions of the same study count separately.';
 const RETIRADAS_DENTRO_DE_FRASE = new Map([
+  ['estudos publicados', new Set([DEFINICAO_EDICOES_PT])],
+  ['Edições', new Set([DEFINICAO_EDICOES_PT])],
+  ['Editions', new Set([DEFINICAO_EDICOES_EN])],
   ['abaixo do valor de referência', new Set([`${LADO_ABAIXO} %.`, `${LADO_ABAIXO} − %.`, `${LADO_ABAIXO} − pp.`, `${LADO_ABAIXO} pp.`])],
   ['entre os valores de referência', new Set([`${LADO_ENTRE} − % e %.`, `${LADO_ENTRE} % e %.`])],
   [
