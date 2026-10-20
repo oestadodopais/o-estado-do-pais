@@ -78,6 +78,7 @@ export const UNIDADES = {
   'pontos percentuais': 'percentage points',
   'alojamentos': 'dwellings',
   'vezes': 'times',
+  'anos': 'years',
   'por mil habitantes': 'per thousand inhabitants',
   // V2-d: «razão» é «ratio»; o valor é uma divisão, não uma percentagem.
   'razão': 'ratio',

@@ -1,5 +1,5 @@
-import {createHash} from 'node:crypto';
 #!/usr/bin/env node
+import {createHash} from 'node:crypto';
 /**
  * A cadeia de cada algarismo de uma página de leitura, percorrida até onde ela
  * chega, e recusada quando não chega a lado nenhum.

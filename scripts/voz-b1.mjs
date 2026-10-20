@@ -85,7 +85,8 @@ export function verificaB1(raiz) {
         POR_VERIFICAR, '[to verify]',
       ].map(normal));
       const tecnicos = new Set(['textoLinhaK', 'textoValorK', 'textoImpressoK', 'textoOrigemK', 'textoLinhaDoLivro', 'textoRegistoK'].map(k => S[lang].estudos[k]));
-      const verificados = '[data-rotulo-ia="topo"], [data-registo-unidade], [data-registo-indice], [data-registo-posicao], [data-registo-linha], [data-claim], .src-chip, [data-prova], [data-verbatim]';
+      // Os nomes das portas HB1 são comparados à declaração por medir-defeitos.
+      const verificados = '[data-rotulo-ia="topo"], [data-registo-unidade], [data-registo-indice], [data-registo-posicao], [data-registo-linha], [data-claim], .src-chip, [data-prova], [data-verbatim], .texto-fontes [data-nome]';
       const dispensados = new Set(main.querySelectorAll(verificados));
       for (const el of main.querySelectorAll('[data-nonledger]')) {
         const motivo = el.getAttribute('data-nonledger');
