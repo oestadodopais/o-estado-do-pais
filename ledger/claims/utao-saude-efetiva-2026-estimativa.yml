@@ -1,0 +1,49 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "utao-saude-efetiva-2026-estimativa"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "18 062"
+unit: "milhões de euros"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Despesa efetiva (consolidação intra PO/PL)"
+name_source: "Tabela 15; Despesa efetiva (consolidação intra PO/PL); coluna 7: 2026 Estimativa; p. 40 PDF (39 impressa); rótulo da linha"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Ministério das Finanças"
+document:
+  title: "Relatório UTAO n.º 17/2026: Apreciação preliminar da Proposta de Orçamento do Estado para 2027"
+  edition: "2027"
+  locator: "Tabela 15; Despesa efetiva (consolidação intra PO/PL); coluna 7: 2026 Estimativa; p. 40 PDF (39 impressa)"
+  source_sha256: "b42daf2a3b7d3a955fc28f379b60744719771212f167facafba41178c9d58083"
+  page: 40
+  kind: "ficheiro"
+source_url: "https://app.parlamento.pt/webutils/docs/doc.pdf?path=jXG0%2bDjqO%2fp24sKDn5FOWu7PztWEWehzpjBISfq%2bHBtO6CBEhPZcSa90e7P%2fEmuAirgdFc3uJ4AGHFGQz2ubmRHqIldswZvo4iG1rB8JkFdli%2bE%2b5pF7oAwuJr8C7utVPOh60GxHq8Dubj%2bAdy%2bfyHAcsqPX1u5E8MfUhNBiJZ3RXzFuyvv2o42Tg6o2xFCYvAHMzy%2fUJ6tdI8QCvqt13kcfQpd5lggsIcipfZ634nqHaBBebtywj7T9%2fatfLzpF%2f23WTlGF27nnlPWdE6EX%2fuXRp0W01R2qnbhElWeTDfJpVM2OwqoVmUrHDWhwdYoYgsbC0ZiVEkty%2bSS4oorZGF7d36ELrrmQzWsXI4671ROkNVrsg3EYXrY2YcUFP%2bDR0BSMGe3cyGx1BV%2bdxPbSwDriMMnzyX9Gma1KrrYmjsC0FEk%2fX1GL9Ns4N1JLVZOUSHzYhkXb7UtLAlhSpTP1tRutoSrfJqmMLBk6poYIIVQ5SHLnPIxaJMun7gsC0gMHgRLAGq3C%2fUjGEu0U%2bELEMg%3d%3d&fich=UTAO-Rel-17-2026-OE2027_preliminar.pdf&Inline=true"
+access_date: "2026-10-19"
+reference_date: "2026"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "Tabela 15 – Despesas do Programa Orçamental/Legado Saúde\n(em milhões de euros e percentagem)\nVariação                               Taxa de variação\n2026\nM€                                           %\n2021       2022       2023         2024       2025                                 POE/2027                                                                            POE/2027\nEst/2026    Est/2026     POE/2027     Est/2026   Est/2026 POE/2027\nvs\nOE/2026     Estimativa                  vs           vs           vs          vs         vs           vs\nEst/2026\n2025       OE/2026      Est/2026      2025      OE/2026   Est/2026\n(s/PRR)\nDespesa efetiva (consolidação intra PO/PL)    12 859     13 957     14 812      15 696      17 190      17 147          18 062      17 803       873         915         -259          5,1       5,3          -1,4            3,0\nSeleção: 2026 Estimativa"
+
+# Ressalva publicada da casa, conferida no motor, nas duas línguas.
+ressalva: "Estimativa, não execução apurada."
+ressalva_en: "Estimate, not recorded outturn."
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "oe-2027"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Série da UTAO, mantida separada da extração direta dos relatórios OE e CGE. A Tabela 15 cita CGE de 2021 a 2025, OE/2026 e POE/2027, Base SIGO e cálculos da UTAO. A nota (i) descreve a exclusão de fluxos provenientes e destinados a entidades do programa; a nota (ii) indica que os dados até 2025 são extraídos das contas do Programa Saúde das respetivas CGE. Não confundir esta linha com a linha inferior, por memória, com transferências consolidadas no âmbito das administrações públicas. Valores apresentados em milhões de euros sem casas decimais. · Cruzado de ResearchHub content/24 Orcamento 2027 Analise · utao-saude-efetiva-2026-estimativa."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

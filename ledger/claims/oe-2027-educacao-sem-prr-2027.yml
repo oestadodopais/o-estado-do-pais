@@ -1,0 +1,49 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "oe-2027-educacao-sem-prr-2027"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "7 787,9"
+unit: "milhões de euros"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Despesa efetiva consolidada"
+name_source: "Quadro 5.33; Despesa efetiva consolidada; coluna 4: 2027 Orçamento (Sem PRR); p. 289 PDF (273 impressa); rótulo da linha"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Ministério das Finanças"
+document:
+  title: "Orçamento do Estado para 2027"
+  edition: "2027"
+  locator: "Quadro 5.33; Despesa efetiva consolidada; coluna 4: 2027 Orçamento (Sem PRR); p. 289 PDF (273 impressa)"
+  source_sha256: "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12"
+  page: 289
+  kind: "ficheiro"
+source_url: "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true"
+access_date: "2026-10-13"
+reference_date: "2027"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "O Programa Legado da Educação evidencia, no orçamento para 2027, uma dotação de\nreceita e despesa total consolidadas de 7787,9 milhões de euros, o que traduz um acréscimo\nna receita de 3,5% (264,6 milhões de euros), expurgado o efeito da receita relativa ao Plano\nde Recuperação e Resiliência (PRR), e 4,9% (363,6 milhões de euros) na despesa face à\nexecução estimada até final de 2026, expurgado o efeito da despesa relativa ao PRR.\nA componente da despesa financiada por receitas de impostos ascende a 7418,5 milhões\nde euros, sendo o restante financiamento proveniente de fundos europeus (142,4 milhões\nde euros), transferências entre entidades (119,5 milhões de euros) e receitas próprias das\nentidades que compõem o Programa Legado (107,6 milhões de euros).\n Despesa efetiva consolidada                           7 670,9             7 421,7       7 787,9            7 787,9          1,5            4,9\nSeleção: 2027 Orçamento (Sem PRR)"
+
+# Ressalva publicada da casa, conferida no motor, nas duas línguas.
+ressalva: "Orçamento, não execução."
+ressalva_en: "Budget, not outturn."
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "oe-2027"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Conta do programa legado, em contabilidade pública. Sem PRR pode incluir outros fundos europeus; não é sinónimo de financiamento exclusivamente nacional. Estimativa de 2026 comparada com proposta para 2027, não execução final. · Cruzado de ResearchHub content/24 Orcamento 2027 Analise · oe-2027-educacao-sem-prr-2027."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

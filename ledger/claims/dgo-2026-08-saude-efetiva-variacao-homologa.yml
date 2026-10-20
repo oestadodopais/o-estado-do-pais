@@ -1,0 +1,44 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "dgo-2026-08-saude-efetiva-variacao-homologa"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "19,9"
+unit: "%"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "015 - Saúde"
+name_source: "Folha 24 - Desp. Efetiva por PO; célula B26"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Entidade Orçamental"
+document:
+  title: "Síntese da execução orçamental, agosto de 2026"
+  edition: "2026"
+  locator: "Folha 24 - Desp. Efetiva por PO; célula F26; Variação homóloga acumulada relativa (%)"
+  source_sha256: "448789ab49c7d764afe8f4f89dfa3385f1ec22ccf2d40ef6e2f677af14c96b2c"
+  kind: "ficheiro"
+source_url: "https://www.eo.gov.pt/execucaoorcamental/SintesedaExecucaoOrcamentalMensal/2026/setembro/0926-SinteseExecucaoOrcamental_agosto2026_AnexoEstatistico_vPT_VUK.xlsx"
+access_date: "2026-10-04"
+reference_date: "2026"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "B6: Agosto de 2026; B8: Quadro 24 - Despesa Efetiva Consolidada por Programa Orçamental; B9: Período: janeiro a agosto; B26: 015 - Saúde; F11: Relativa (%); C10: Execução Acumulada; E10: Variação Homóloga Acumulada; F26: 19,9"
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "oe-2027"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Execução de janeiro a agosto; variações homólogas sobre igual período do ano anterior. Valor bruto da célula: 19.880672604775047. Formato: #,##0.0. · Cruzado de ResearchHub content/24 Orcamento 2027 Analise · dgo-2026-08-saude-efetiva-variacao-homologa."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

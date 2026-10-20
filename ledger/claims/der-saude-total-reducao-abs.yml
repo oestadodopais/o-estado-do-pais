@@ -1,0 +1,36 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "der-saude-total-reducao-abs"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "267,5"
+unit: "milhões de euros"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: null
+document: null
+source_url: null
+access_date: null
+reference_date: "2027"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: null
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: "(oe-2027-saude-despesa-total-consolidada-2026) − (oe-2027-saude-despesa-total-consolidada-2027). 18 125,9 − 17 858,4 = 267,5"
+derivation_en: "(oe-2027-saude-despesa-total-consolidada-2026) − (oe-2027-saude-despesa-total-consolidada-2027). 18 125,9 − 17 858,4 = 267,5"
+derived_from:
+  - "oe-2027-saude-despesa-total-consolidada-2026"
+  - "oe-2027-saude-despesa-total-consolidada-2027"
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: "round ( oe-2027-saude-despesa-total-consolidada-2026 - oe-2027-saude-despesa-total-consolidada-2027 , 1 )"
+
+study: "oe-2027"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[derivation do motor] {'components': ['oe-2027-saude-despesa-total-consolidada-2026', 'oe-2027-saude-despesa-total-consolidada-2027'], 'operation': 'subtract', 'formula': '(oe-2027-saude-despesa-total-consolidada-2026) − (oe-2027-saude-despesa-total-consolidada-2027)', 'calculation': '18 125,9 − 17 858,4 = 267,5', 'rounding_places': 1} · [note do motor] Cálculo sobre as componentes identificadas, conservando os respetivos períodos e perímetros. · Cruzado de ResearchHub content/24 Orcamento 2027 Analise · der-saude-total-reducao-abs."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

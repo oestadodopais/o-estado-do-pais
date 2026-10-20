@@ -1583,7 +1583,7 @@ export function validateLedger() {
       if (!/^\d{4}-\d{2}-\d{2}$/.test(String(c.published_at ?? '')) || c.reference_date !== c.published_at) errors.push(`${onde} V2A data: falta a data do documento`);
       if (!String(c.excerpt ?? '').trim() || c.excerpt === POR_VERIFICAR) errors.push(`${onde} V2A excerto: faltam as palavras exatas`);
       /** @param {unknown} v */
-      const normal = v => String(v ?? '').replace(/[\s\u00a0\u202f]+/g, ' ').trim();
+      const normal = v => String(v ?? '').replace(/[\s\u00a0\u202f]+/g, ' ').trim().replace(/(?<=\d) (?=\d)/g, '');
       const valor = normal(c.value).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
       if (!valor || !new RegExp(`(?<![\\d,.])${valor}(?![\\d,.])`).test(normal(c.excerpt))) errors.push(`${onde} V2A valor: não aparece no excerto`);
     }
@@ -1596,7 +1596,8 @@ export function validateLedger() {
     if (c.__file !== esperado) {
       errors.push(`${onde} o nome do ficheiro tem de ser o id: esperado "${esperado}".`);
     }
-    if (!/^[a-z0-9]+(-[a-z0-9]+)*$/.test(String(id))) {
+    if (!/^[a-z0-9]+(-[a-z0-9]+)*$/.test(String(id)) &&
+        !/^eurostat-[a-z0-9]+(?:[-_][a-z0-9]+)*$/.test(String(id))) {
       errors.push(`${onde} id inválido "${id}": só minúsculas, algarismos e hífenes.`);
     }
 
@@ -1611,7 +1612,8 @@ export function validateLedger() {
     // 3 — valor e unidade
     if (typeof c.value !== 'string' || c.value.trim() === '') {
       errors.push(`${onde} "value" tem de ser uma string não vazia, com o valor tal como publicado.`);
-    } else if (!/\d/.test(c.value) && marcaDoValor(c.value) === null) {
+    } else if (!/\d/.test(c.value) && marcaDoValor(c.value) === null &&
+        !(c.afirmacao === true && c.unit === 'afirmação' && c.value === c.excerpt)) {
       /* A PORTA TEM A LARGURA DE UMA MARCA (28.08.2026, regra 2). A regra era
          «um valor sem algarismos não é um valor», e existe para recusar prosa no
          lugar de um número. Continua a valer para tudo o que não seja uma das

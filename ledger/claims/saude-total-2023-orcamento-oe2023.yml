@@ -1,0 +1,49 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "saude-total-2023-orcamento-oe2023"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "14 858,0"
+unit: "milhões de euros"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Despesa total consolidada"
+name_source: "Quadro 5.49; Despesa total consolidada; coluna 2: 2023 orcamento; p. 335 PDF (315 impressa); rótulo da linha"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Ministério das Finanças"
+document:
+  title: "Saúde: despesa total consolidada"
+  edition: "2023"
+  locator: "Quadro 5.49; Despesa total consolidada; coluna 2: 2023 orcamento; p. 335 PDF (315 impressa)"
+  source_sha256: "c7fbb54aa43f14efc646852babac436267b768a6f24042f26cf478c6d80a90fc"
+  page: 335
+  kind: "ficheiro"
+source_url: "https://www.eo.gov.pt/politicaorcamental/OrcamentodeEstado/2023/Proposta%20do%20Or%C3%A7amento/Documentos%20do%20OE/OE2023_doc16_Relatorio.pdf#page=335"
+access_date: "2026-10-19"
+reference_date: "2023"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "(milhões de euros)\n2022             2023            Variação         Estrutura 2023\nClassificador Económico\nEstimativa          Orçamento           (%)                  (%)\n Despesa total consolidada                                                                      13 782,0         14 858,0                 7,8\nSeleção: 2023 orcamento"
+
+# Ressalva publicada da casa, conferida no motor, nas duas línguas.
+ressalva: "Orçamento, não execução."
+ressalva_en: "Budget, not outturn."
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "oe-2027"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Programa orçamental Saúde na ótica da contabilidade pública. Gémeo: content/20 Orcamento do Estado, função Saúde, classifica despesas por finalidade; o perímetro funcional difere do programa por organização. Não equivale à despesa corrente em saúde de todos os financiadores do Eurostat. Total inclui ativos e passivos financeiros; efetiva exclui-os. O quadro identifica a transferência da descentralização de competências para o programa Órgãos de Soberania em 2023; a comparação interanual pode refletir esta mudança de perímetro. · Cruzado de ResearchHub content/24 Orcamento 2027 Analise · saude-total-2023-orcamento-oe2023."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

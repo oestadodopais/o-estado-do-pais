@@ -1,7 +1,7 @@
-"""Conferência de partida sobre os corpos alojados, antes da reescrita.
+"""Conferência de partida sobre os corpos alojados e o livro selado.
 
 Uso: python3 conferir-partida.py <motor>
-As candidatas ainda não são linhas seladas nem uma exportação para o sítio.
+As contas independentes são comparadas com as linhas seladas antes da exportação.
 """
 import hashlib
 import io
@@ -198,7 +198,26 @@ checks = dict(
     ppp_brutos_soma=by['der-ppp-brutos-todos-2027']['value'],
     execucao_superior_orcamento_por_ano={str(y):numeric(by[f'saude-total-{y}-execucao-cge{y}']['value'])>numeric(by[f'saude-total-{y}-orcamento-oe{y}']['value']) for y in range(2020,2026)},
 )
-result=dict(estado='conferência prévia; linhas candidatas ainda não seladas; reescrita pendente de decisão editorial',
+sealed = {r['id']: r for r in book['claims']}
+for id in ['der-saude-bens-servicos-reducao-abs', 'der-saude-investimento-reducao-abs', 'der-saude-total-reducao-abs']:
+    old(id)
+for entry in rows:
+    row = sealed[entry['id']]
+    if entry['value'] is not None and not row.get('value_not_numeric'):
+        assert numeric(entry['value']) == numeric(row['value']), 'Livro e corpo divergem: '+entry['id']
+    entry['value'] = row['value']
+    entry['period'] = row['period']
+    entry['estado'] = 'selada e conferida contra o corpo ou as componentes'
+    entry['excerpt'] = row['excerpt']
+    entry['document'] = row.get('document')
+    if row.get('derivation'):
+        entry['derivation_sealed'] = row['derivation']
+    selector = specs.get(entry['id'])
+    if selector:
+        entry['selector'] = selector
+        if selector.get('column_headers'):
+            entry['coluna_ano_conferidos'] = True
+result=dict(estado='linhas seladas; valores conferidos contra os corpos e contas refeitas a partir das componentes',
     motor_head=subprocess.check_output(['git','rev-parse','HEAD'],cwd=A.ROOT,text=True).strip(),
     site_head=subprocess.check_output(['git','rev-parse','HEAD'],cwd=OUT,text=True).strip(),
     regeneracao_integral_igual_ao_livro=True,rows=rows,checks=checks,divergencias_numericas=failures)

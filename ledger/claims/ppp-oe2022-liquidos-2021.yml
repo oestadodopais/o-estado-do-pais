@@ -1,0 +1,45 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "ppp-oe2022-liquidos-2021"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "1 250"
+unit: "milhões de euros"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Rodoviário"
+name_source: "Quadro 4.20. Previsão dos encargos plurianuais com as Parcerias Público-Privadas; Rodoviário; coluna 1: 2021 execucao; p. 147 PDF (125 impressa); rótulo da linha"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Ministério das Finanças"
+document:
+  title: "PPP: liquidos rodoviários"
+  edition: "2022"
+  locator: "Quadro 4.20. Previsão dos encargos plurianuais com as Parcerias Público-Privadas; Rodoviário; coluna 1: 2021 execucao; p. 147 PDF (125 impressa)"
+  source_sha256: "1dbeec1b9ca50153995a6d597b8af10d373e82a939500b88b6b85f6464b0c96b"
+  page: 147
+  kind: "ficheiro"
+source_url: "https://www.eo.gov.pt/politicaorcamental/OrcamentodeEstado/2022/Proposta%20do%20Or%C3%A7amento/Documentos%20do%20OE/OE2022_1_Relatorio.pdf#page=147"
+access_date: "2026-10-19"
+reference_date: "2021"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "Setores        2021    2022    2023    2024    2025    2026    2027    2028    2029    2030    2031    2032    2033    2034\n Rodoviário             1 250   1 241   1 036    948     557     552     444     360     305     262     268     150      96      84\nSeleção: 2021 execucao"
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "oe-2027"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Fluxos de caixa com IVA quando aplicável. Valores de 2021 a preços correntes; os seguintes a preços constantes de 2022. As estimativas de diferentes relatórios não são uma série de execução nem estão todas à mesma base de preços. O total líquido impresso é preservado, sem recalcular as parcelas arredondadas. O relatório de abril de 2022 identifica 2021 como execução, não estimativa. · Cruzado de ResearchHub content/24 Orcamento 2027 Analise · ppp-oe2022-liquidos-2021."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

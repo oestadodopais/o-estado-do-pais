@@ -85,7 +85,10 @@ export function numeroDoValor(valor) {
  * @param {string} excerto
  */
 export function literalDoValor(excerto) {
-  const m = /:\s*(-?\d{1,3}(?:,\d{3})+|-?\d+)(?:\.(\d+))?(?:\s+[a-z]{1,3})?\s*$/.exec(excerto);
+  // O seletor documental identifica a coluna. Não é o literal do valor.
+  // Retirá-lo da leitura deixa a régua conferir o literal anterior, quando existe.
+  const corpo = excerto.replace(/\nSeleção: [^\n]+\s*$/, '');
+  const m = /:\s*(-?\d{1,3}(?:,\d{3})+|-?\d+)(?:\.(\d+))?(?:\s+[a-z]{1,3})?\s*$/.exec(corpo);
   if (!m) return null;
   const literal = m[0].replace(/^:\s*/, '').trim();
   return { n: normal(m[1].replace(/,/g, ''), m[2] ?? ''), casas: (m[2] ?? '').length, literal };
@@ -208,6 +211,8 @@ export function linhasDasPlantas(linhas) {
     return mudar(JSON.parse(JSON.stringify(l)));
   };
   return [
+    { nome: 'o seletor de coluna não substitui o valor do excerto', linha: copia('jovens-nem-2025', l => ({...l, excerpt: l.excerpt + '\nSeleção: 2027'})), morde: false },
+    { nome: 'o seletor de coluna não esconde casas decimais alteradas', linha: copia('jovens-nem-2025', l => ({...l, value: '8', excerpt: l.excerpt + '\nSeleção: 2027'})), morde: true },
     { nome: 'a linha dos jovens com o valor antigo, «8» contra «8.0»', linha: copia('jovens-nem-2025', (l) => ({ ...l, value: '8' })), morde: true },
     { nome: 'uma linha composta arredondada, «2» contra «2.1 p»', linha: copia('credito-malparado-2025', (l) => ({ ...l, value: '2' })), morde: true },
     { nome: 'um inteiro alheio igual ao valor no mesmo excerto, «8» contra «… — Artigo 8 — … — 2025: 8.0»',

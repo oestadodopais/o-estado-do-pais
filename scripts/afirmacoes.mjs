@@ -4,6 +4,7 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import {parse} from 'node-html-parser';
 import assert from 'node:assert/strict';
+import {conferirAfirmacoesV2d} from './afirmacoes-v2d.mjs';
 
 const normal = s => String(s ?? '').replace(/\s+/g, ' ').trim();
 const sha = b => crypto.createHash('sha256').update(b).digest('hex');
@@ -44,10 +45,11 @@ export function conferirPublicacao(nomes) {
 }
 export function conferirAfirmacoes(claims,{plantar=true,motor=process.env.RESEARCHHUB_DIR}={}) {
   const prova=JSON.parse(fs.readFileSync('ledger/provas/v2a/provas.json','utf8'));
-  const errors=conferirPublicacao(fs.readdirSync('ledger/provas/v2a')), plantas=[];
-  let checked=0, bodies=0;
+  const v2d=conferirAfirmacoesV2d(claims,{plantar,motor,excluir:new Set(Object.keys(prova.rows))});
+  const errors=[...conferirPublicacao(fs.readdirSync('ledger/provas/v2a')),...v2d.errors], plantas=[];
+  let checked=v2d.checked, bodies=v2d.bodies;
   for(const c of claims.values()) {
-    if(!c.afirmacao) continue;
+    if(!c.afirmacao||v2d.ids.has(c.id)) continue;
     const p=prova.rows[c.id];
     let raw;
     if(motor && p && p.motor_path===`content/15 Orcamento do Estado 2027/source/v2a/${path.basename(p.file)}`) {
@@ -76,14 +78,14 @@ export function conferirAfirmacoes(claims,{plantar=true,motor=process.env.RESEAR
       const mensagem=conferirPublicacao(['provas.json',nome])[0];
       assert(mensagem?.startsWith('V2A direitos:'));plantas.push({nome:`corpo integral ${nome}`,mensagem});
     }
-    const c=[...claims.values()].find(c=>c.afirmacao), p=structuredClone(prova.rows[c.id]);
+    const c=[...claims.values()].find(c=>c.afirmacao&&prova.rows[c.id]), p=structuredClone(prova.rows[c.id]);
     p.motor_path='../fora.html';
     const mensagem=conferirAfirmacao(c,p).find(e=>e.startsWith('V2A referência:'));
     assert(mensagem);plantas.push({nome:'caminho fora do motor',mensagem});
   }
   if(plantar) {
     const datas=[['janeiro','2026-01-09'],['fevereiro','2026-02-09'],['março','2026-03-09'],['abril','2026-04-09'],['maio','2026-05-09'],['junho','2026-06-09'],['julho','2026-07-09'],['agosto','2026-08-09'],['setembro','2026-09-09'],['outubro','2026-10-09'],['novembro','2026-11-09'],['dezembro','2026-12-09']];
-    const pcp=[...claims.values()].find(c=>c.id.startsWith('afirmacao-pcp-'));
+    const pcp=[...claims.values()].find(c=>c.id.startsWith('afirmacao-pcp-')&&prova.rows[c.id]);
     const provaPcp=prova.rows[pcp.id];
     for(const [mes,expected] of datas) {
       assert.equal(dataDoPcp(`9 ${mes} 2026, Assembleia da República`),expected);
@@ -95,12 +97,12 @@ export function conferirAfirmacoes(claims,{plantar=true,motor=process.env.RESEAR
     const impossivel=Buffer.from('<p>31 fevereiro 2026, Assembleia da República</p>');
     const recusada=conferirAfirmacao(pcp,provaPcp,impossivel).find(e=>e.startsWith('V2A data:'));
     assert(recusada);plantas.push({nome:'dia impossível no PCP',mensagem:recusada});
-    const c=[...claims.values()].find(c=>c.afirmacao),p=structuredClone(prova.rows[c.id]);
+    const c=[...claims.values()].find(c=>c.afirmacao&&prova.rows[c.id]),p=structuredClone(prova.rows[c.id]);
     const raw=Buffer.from(`<p>${p.excerpt} ${p.attribution_anchor}</p>`);
     p.attribution_anchor='Autor ausente do ensaio';
     const mensagem=conferirAfirmacao(c,p,raw).find(e=>e.startsWith('V2A atribuição:'));
     assert(mensagem);plantas.push({nome:'âncora trocada por texto ausente',mensagem});
   }
   for(const [id,p] of Object.entries(prova.rows)) if(p.kind==='html' && !claims.get(id)?.afirmacao) errors.push(`${id}: V2A afirmação selada ausente do livro`);
-  return {errors,checked,bodies,plantas};
+  return {errors,checked,bodies,plantas:[...plantas,...v2d.plantas]};
 }

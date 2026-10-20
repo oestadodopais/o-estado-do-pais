@@ -1,0 +1,36 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "der-economia-prr-2026"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "1 357,1"
+unit: "milhões de euros"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: null
+document: null
+source_url: null
+access_date: null
+reference_date: "2026"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: null
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: "(oe-2027-economia-efetiva-2026) − (oe-2027-economia-sem-prr-2026). 2 312,1 − 955,0 = 1 357,1"
+derivation_en: "(oe-2027-economia-efetiva-2026) − (oe-2027-economia-sem-prr-2026). 2 312,1 − 955,0 = 1 357,1"
+derived_from:
+  - "oe-2027-economia-efetiva-2026"
+  - "oe-2027-economia-sem-prr-2026"
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: "round ( oe-2027-economia-efetiva-2026 - oe-2027-economia-sem-prr-2026 , 1 )"
+
+study: "oe-2027"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[derivation do motor] {'components': ['oe-2027-economia-efetiva-2026', 'oe-2027-economia-sem-prr-2026'], 'operation': 'subtract', 'formula': '(oe-2027-economia-efetiva-2026) − (oe-2027-economia-sem-prr-2026)', 'calculation': '2 312,1 − 955,0 = 1 357,1', 'rounding_places': 1} · [note do motor] Diferença entre valores impressos, arredondados a uma casa decimal. Sem PRR pode incluir outros fundos europeus. Comparação de estimativa com proposta de orçamento, não execução final. · Cruzado de ResearchHub content/24 Orcamento 2027 Analise · der-economia-prr-2026."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

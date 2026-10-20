@@ -1,0 +1,45 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "saude-total-2021-execucao-cge2021"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "12 904,3"
+unit: "milhões de euros"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "DESPESA TOTAL"
+name_source: "Quadro 183; DESPESA TOTAL; coluna 4: 2021 execucao; p. 341 PDF (323 impressa); rótulo da linha"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Ministério das Finanças"
+document:
+  title: "Saúde: despesa total consolidada executada"
+  edition: "2021"
+  locator: "Quadro 183; DESPESA TOTAL; coluna 4: 2021 execucao; p. 341 PDF (323 impressa)"
+  source_sha256: "30e1e9add47f385de43accead03a2ce0b67e3a4470c498dad63a3a059b5c6794"
+  page: 341
+  kind: "ficheiro"
+source_url: "https://www.eo.gov.pt/politicaorcamental/ContaGeraldoEstado/2021/CGE%202021%20vol1tomo01.pdf#page=341"
+access_date: "2026-10-19"
+reference_date: "2021"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "(milhões de euros)\nOrçamento Corrigido de 2021               Execução de 2021\nDesignação                         Total não        Total             Total não           Total\nConsolidado     Consolidado        Consolidado        Consolidado\n                      DESPESA TOTAL                           34 853,6        14 383,9             33 296,3            12 904,3\nSeleção: 2021 execucao"
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "oe-2027"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Programa orçamental Saúde na ótica da contabilidade pública. Gémeo: content/20 Orcamento do Estado, função Saúde, classifica despesas por finalidade; o perímetro funcional difere do programa por organização. Não equivale à despesa corrente em saúde de todos os financiadores do Eurostat. Coluna Execução, Total Consolidado. O total inclui ativos e passivos financeiros; a efetiva exclui-os. Comparação com o agregado homónimo do relatório OE, mantendo o perímetro anual do programa. · Cruzado de ResearchHub content/24 Orcamento 2027 Analise · saude-total-2021-execucao-cge2021."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

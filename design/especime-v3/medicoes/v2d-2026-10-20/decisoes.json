@@ -1,0 +1,100 @@
+[
+  {
+    "id": "V2D-7",
+    "tema": "Título com valores assinados",
+    "antes": "O orçamento da Saúde para 2027: sobe 3 % ou cai 1,5 %? As duas contas, o que muda por dentro e o que ficou por dizer",
+    "depois": "O orçamento da Saúde para [período]: [variação sem PRR] sem PRR ou [variação total] no total? As duas contas, o que muda por dentro e o que ficou por dizer",
+    "razao": "A gramática aceita tokens no título, mas conserva o sinal e as casas do valor selado. A formulação evita escrever cai seguido de uma variação negativa e não inventa arredondamento. O ano também vem do livro. A edição inglesa é paralela."
+  },
+  {
+    "id": "V2D-8",
+    "tema": "Afirmações e limites de interpretação",
+    "antes": "As três afirmações são verdadeiras na sua linha e nenhuma diz a linha.",
+    "depois": "As três afirmações correspondem a linhas diferentes do quadro e nenhuma apresenta as três medidas em conjunto.",
+    "razao": "A afirmação do PCP nomeia o investimento e Leitão Amaro menciona expressamente retirar o PRR. Nenhuma apresenta em conjunto as três medidas do quadro."
+  },
+  {
+    "id": "V2D-9",
+    "tema": "Previsão e financiamento na conclusão da Saúde",
+    "antes": "A Saúde recebe em 2027 menos … do que gasta em 2026 … e o Estado repõe … O que sobe vai para o pessoal.",
+    "depois": "A Saúde tem orçamentados em [ano] menos … do que a estimativa de despesa de [ano] … e a despesa fora do PRR sobe … A despesa com pessoal sobe, enquanto a compra de bens e serviços e o investimento descem.",
+    "razao": "Distingue orçamento e estimativa de execução concluída, não atribui origem nacional a toda a despesa sem PRR e não omite os outros aumentos do quadro. Aplica V2D-3, V2D-4 e V2D-6."
+  },
+  {
+    "id": "V2D-10",
+    "tema": "Risco de insuficiência",
+    "antes": "2026 não será exceção … o reforço que virá … voltará a ser ultrapassado.",
+    "depois": "reforça o risco de nova insuficiência … a eventual necessidade de reforço … corre o risco de voltar a ser ultrapassado.",
+    "razao": "Os dados apoiam risco, não certeza sobre execução futura. A recomendação mantém execução mensal e reforço como assuntos concretos a acompanhar."
+  },
+  {
+    "id": "V2D-11",
+    "tema": "Fim do PRR",
+    "antes": "um orçamento de transição para o fim do dinheiro europeu",
+    "depois": "um orçamento de transição para o fim do PRR",
+    "razao": "O próprio quadro mantém fundos europeus no orçamento seguinte. O fim do PRR não é o fim de todo o dinheiro europeu."
+  },
+  {
+    "id": "V2D-12",
+    "tema": "Série das parcerias",
+    "antes": "Ao longo dos anos, o Estado paga pelas parcerias rodoviárias menos do que pagava … A projeção desce até …",
+    "depois": "O relatório prevê para as parcerias rodoviárias … contra … executados … mas mais do que os … estimados … A projeção tem uma tendência de redução, com oscilações, até …",
+    "razao": "Distingue execução, estimativas e orçamento. A projeção não tem descida contínua e a previsão final supera a estimativa de dois anos antes. Nos valores ano a ano, o plural estimativas abrange os anos intermédios."
+  },
+  {
+    "id": "V2D-13",
+    "tema": "Conta do PCP e âmbito das afirmações",
+    "antes": "O número coincide, ao arredondar … O número do PCP é o custo bruto de todas as parcerias … e repeti-lo como mais de 1800 …",
+    "depois": "O número aproxima-se … sem que isso demonstre a conta que lhe deu origem … O número da primeira afirmação do PCP aproxima-se do custo bruto de todas as parcerias … a afirmação posterior já abrange as rodoviárias, ferroviárias e da saúde, mas o seu montante também excede a soma do quadro.",
+    "razao": "A aproximação numérica não prova a conta feita pelo autor. O excerto completo posterior já nomeia os três setores. Aplica V2D-5 e V2D-6 e usa sempre o excerto literal integral do livro."
+  },
+  {
+    "id": "V2D-14",
+    "tema": "Limites da prova e pedidos pendentes",
+    "antes": "O número que falta em todos os discursos … esse custo foi decidido há mais de uma década … o leitor fica a saber o que o Estado deve às concessionárias.",
+    "depois": "O número que falta nas três afirmações citadas … [retirada a antiguidade contratual sem prova] … o leitor fica a saber os pagamentos previstos às concessionárias; fica por saber quanto dos pedidos pendentes se tornará encargo efetivo.",
+    "razao": "O universo conferido são as três afirmações citadas. Não há prova da antiguidade de todos os contratos e pedidos contingentes não são dívida reconhecida."
+  },
+  {
+    "id": "V2D-15",
+    "tema": "Módulos e sustentação anual",
+    "antes": "Tokens negativos a seguir a menos; frase todos os anos apoiada apenas em exemplos extremos.",
+    "depois": "Três derivadas positivas para as reduções; inventário declarativo dos seis pares de orçamento inicial e execução da Saúde.",
+    "razao": "A gramática não remove sinais. Os identificadores são der-saude-bens-servicos-reducao-abs, der-saude-investimento-reducao-abs e der-saude-total-reducao-abs. O inventário permite conferir cada ano, incluindo os intermédios, sem inserir prosa de método na página."
+  },
+  {
+    "id": "V2D-16",
+    "tema": "Afirmações qualitativas",
+    "antes": "As leituras qualitativas da UTAO tinham value e unit nulos.",
+    "depois": "O valor conserva o excerto textual inteiro, com unidade afirmação, atribuição e data de publicação.",
+    "razao": "Nenhum número foi inventado para permitir a travessia. O validador só admite esta forma quando afirmacao é true e value é exatamente excerpt."
+  },
+  {
+    "id": "V2D-17",
+    "tema": "Identificadores e períodos na travessia",
+    "antes": "O sítio recusava os sublinhados das coordenadas Eurostat e períodos comparativos como 2026/2027.",
+    "depois": "Os identificadores Eurostat preservam os sublinhados; as derivadas usam o ano final como reference_date e conservam os dois períodos na conta e nota.",
+    "razao": "Preserva os identificadores prescritos e a gramática temporal do sítio. Os valores Eurostat mantêm a grafia API no motor e a vírgula decimal no sítio."
+  },
+  {
+    "id": "V2D-18",
+    "tema": "Rótulos e sinais contabilísticos",
+    "antes": "A pesquisa tinha nomes sem name_source, incluindo descrições editoriais; o formatador não aceitava (220).",
+    "depois": "Só os rótulos impressos conservam name com localizador. Citações usam document.title e derivadas usam description no motor. Os parênteses contabilísticos renderizam o sinal negativo.",
+    "razao": "Não apresentar descrições como rótulos da fonte nem perder o sinal da projeção rodoviária."
+  },
+  {
+    "id": "V2D-19",
+    "tema": "Portões delimitados pelo mandato",
+    "antes": "O escrivão só tinha corrida completa ou perfil V2-c.",
+    "depois": "Perfil V2-d fechado para build, discussão, palavras, frases compostas, HTML, alvos, CSS, L1, séries e typecheck.",
+    "razao": "A corrida integral do sítio fica para o GitHub, como pedido. O motor corre integralmente no pre-commit; cruzamento com origem corre à parte."
+  },
+  {
+    "id": "V2D-20",
+    "tema": "Ano do seletor não é o valor",
+    "antes": "A régua das casas decimais interpretava o final Seleção: 2027 como o valor nas duas linhas setoriais das parcerias.",
+    "depois": "A régua retira apenas a linha final de metadados Seleção antes de procurar o literal do valor. O excerto publicado permanece intacto.",
+    "razao": "Uma planta confirma que o ano não substitui o valor; outra mantém a recusa de casas decimais alteradas, mesmo com o seletor no fim. A conferência da coluna e do valor continua no motor e na prova de partida."
+  }
+]

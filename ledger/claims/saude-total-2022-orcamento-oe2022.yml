@@ -1,0 +1,49 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "saude-total-2022-orcamento-oe2022"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "13 578,1"
+unit: "milhões de euros"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Despesa total consolidada"
+name_source: "Quadro 5.52; Despesa total consolidada; coluna 2: 2022 orcamento; p. 323 PDF (301 impressa); rótulo da linha"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Ministério das Finanças"
+document:
+  title: "Saúde: despesa total consolidada"
+  edition: "2022"
+  locator: "Quadro 5.52; Despesa total consolidada; coluna 2: 2022 orcamento; p. 323 PDF (301 impressa)"
+  source_sha256: "1dbeec1b9ca50153995a6d597b8af10d373e82a939500b88b6b85f6464b0c96b"
+  page: 323
+  kind: "ficheiro"
+source_url: "https://www.eo.gov.pt/politicaorcamental/OrcamentodeEstado/2022/Proposta%20do%20Or%C3%A7amento/Documentos%20do%20OE/OE2022_1_Relatorio.pdf#page=323"
+access_date: "2026-10-19"
+reference_date: "2022"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "(milhões de euros)\n2021            2022\nVariação      Estrutura 2022\nClassificador Económico                    Execução\nOrçamento         (%)               (%)\nprovisória\n Despesa total consolidada                                                        12 853,7         13 578,1            5,6\nSeleção: 2022 orcamento"
+
+# Ressalva publicada da casa, conferida no motor, nas duas línguas.
+ressalva: "Orçamento, não execução."
+ressalva_en: "Budget, not outturn."
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "oe-2027"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Programa orçamental Saúde na ótica da contabilidade pública. Gémeo: content/20 Orcamento do Estado, função Saúde, classifica despesas por finalidade; o perímetro funcional difere do programa por organização. Não equivale à despesa corrente em saúde de todos os financiadores do Eurostat. Total inclui ativos e passivos financeiros; efetiva exclui-os. Relatório da segunda proposta, abril de 2022. A coluna anterior é execução provisória de 2021, não estimativa. · Cruzado de ResearchHub content/24 Orcamento 2027 Analise · saude-total-2022-orcamento-oe2022."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

@@ -1,0 +1,36 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "der-trabalho-solidariedade-e-seguranca-social-variacao-sem-prr-pct"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "8,8"
+unit: "%"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: null
+document: null
+source_url: null
+access_date: null
+reference_date: "2027"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: null
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: "((oe-2027-trabalho-solidariedade-e-seguranca-social-sem-prr-2027) ÷ (oe-2027-trabalho-solidariedade-e-seguranca-social-sem-prr-2026) − 1) × 100. (30 270,4 ÷ 27 832,7 − 1) × 100 = 8.758402885814168226582401300 ≈ 8,8"
+derivation_en: "((oe-2027-trabalho-solidariedade-e-seguranca-social-sem-prr-2027) ÷ (oe-2027-trabalho-solidariedade-e-seguranca-social-sem-prr-2026) − 1) × 100. (30 270,4 ÷ 27 832,7 − 1) × 100 = 8.758402885814168226582401300 ≈ 8,8"
+derived_from:
+  - "oe-2027-trabalho-solidariedade-e-seguranca-social-sem-prr-2027"
+  - "oe-2027-trabalho-solidariedade-e-seguranca-social-sem-prr-2026"
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: "round ( ( oe-2027-trabalho-solidariedade-e-seguranca-social-sem-prr-2027 / oe-2027-trabalho-solidariedade-e-seguranca-social-sem-prr-2026 - 1 ) * 100 , 1 )"
+
+study: "oe-2027"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[derivation do motor] {'components': ['oe-2027-trabalho-solidariedade-e-seguranca-social-sem-prr-2027', 'oe-2027-trabalho-solidariedade-e-seguranca-social-sem-prr-2026'], 'operation': 'change_pct', 'formula': '((oe-2027-trabalho-solidariedade-e-seguranca-social-sem-prr-2027) ÷ (oe-2027-trabalho-solidariedade-e-seguranca-social-sem-prr-2026) − 1) × 100', 'calculation': '(30 270,4 ÷ 27 832,7 − 1) × 100 = 8.758402885814168226582401300 ≈ 8,8', 'rounding_places': 1} · [note do motor] Cálculo sobre as componentes identificadas, conservando os respetivos períodos e perímetros. · Cruzado de ResearchHub content/24 Orcamento 2027 Analise · der-trabalho-solidariedade-e-seguranca-social-variacao-sem-prr-pct."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

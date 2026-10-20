@@ -94,14 +94,16 @@ correr() {
   return "$codigo"
 }
 usada=0
-# V2-c: seleção explícita pedida ao escrivão; a corrida completa mantém-se por omissão.
+# V2-c e V2-d: seleções explícitas pedidas ao escrivão; a corrida completa mantém-se por omissão.
 # O recibo só escolhe este perfil fechado, nunca comandos arbitrários.
 portoes="build verify typecheck"
 if [ -f "$O/selecao.json" ]; then
-  perfil=$(python3 -c 'import json,sys; r=json.load(open(sys.argv[1])); assert r == {"perfil":"v2c"}; print(r["perfil"])' "$O/selecao.json") || exit 9
-  [ "$perfil" = v2c ] || exit 9
+  perfil=$(python3 -c 'import json,sys; r=json.load(open(sys.argv[1])); assert r in ({"perfil":"v2c"}, {"perfil":"v2d"}); print(r["perfil"])' "$O/selecao.json") || exit 9
   [ "${OEDP_CONFERIR_MOTOR:-0}" = 0 ] || exit 9
   portoes="build check:discussao check:navegacao check:primeira check:cabeca gate:html check:alvos check:css check:frases-compostas check:lugar"
+  if [ "$perfil" = v2d ]; then
+    portoes="build check:discussao check:palavras check:frases-compostas gate:html check:alvos check:css check:lugar check:series typecheck"
+  fi
 fi
 for g in $portoes; do
   [ ! -e "$O/$g.codigo" ] || usada=1
@@ -120,7 +122,7 @@ git rev-parse HEAD > "$O/cabeca"
 printf 'limpa\n' > "$O/arvore.inicio"
 for g in $portoes; do
   date -u +%Y-%m-%dT%H:%M:%SZ > "$O/$g.inicio"
-  if [ "${perfil:-}" = v2c ] && [ "$g" != build ] && [ "$(cat "$O/build.codigo")" -ne 0 ]; then
+  if [ -n "${perfil:-}" ] && [ "$g" != build ] && [ "$(cat "$O/build.codigo")" -ne 0 ]; then
     echo 'não correu: a construção não ficou verde' > "$O/$g.log"
     codigo=125
   elif [ "$g" = verify ]; then

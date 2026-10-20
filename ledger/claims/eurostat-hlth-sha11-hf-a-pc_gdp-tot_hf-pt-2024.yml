@@ -1,0 +1,44 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "eurostat-hlth-sha11-hf-a-pc_gdp-tot_hf-pt-2024"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "10,20"
+unit: "%"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Health care expenditure by financing scheme"
+name_source: "label"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Eurostat"
+document:
+  title: "Health care expenditure by financing scheme"
+  edition: "2024"
+  locator: "freq=A; unit=PC_GDP; icha11_hf=TOT_HF; geo=PT; time=2024; value[472]"
+  source_sha256: "4b3a217450fa452c209d904ecef6cb5a5cfc83285d5c9ce8725b00bfbbfa1d11"
+  kind: "serie"
+source_url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/hlth_sha11_hf?format=JSON&lang=EN&freq=A&unit=PC_GDP&unit=EUR_HAB&icha11_hf=TOT_HF&icha11_hf=HF1&sinceTimePeriod=2020&geo=EU27_2020&geo=AT&geo=BE&geo=BG&geo=HR&geo=CY&geo=CZ&geo=DK&geo=EE&geo=FI&geo=FR&geo=DE&geo=EL&geo=HU&geo=IE&geo=IT&geo=LV&geo=LT&geo=LU&geo=MT&geo=NL&geo=PL&geo=PT&geo=RO&geo=SK&geo=SI&geo=ES&geo=SE"
+access_date: "2026-10-19"
+reference_date: "2024"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC_GDP\", \"icha11_hf\": \"TOT_HF\", \"geo\": \"PT\", \"time\": \"2024\"}, \"value\": \"10.20\", \"status\": null}"
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "oe-2027"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Despesa corrente de saúde segundo o SHA 2011, consumo final de bens e serviços de saúde dos residentes, sem investimento de capital. TOT_HF inclui todos os esquemas de financiamento; HF1 inclui esquemas governamentais e contributivos obrigatórios, não equivale estritamente ao financiamento público. EUR_HAB exprime euros por residente, sem correção de diferenças de preços entre países. Gémeos: a função Saúde de content/20 usa COFOG para as administrações públicas; o programa Saúde de content/15 é uma delimitação orçamental, com perímetro e base contabilística diferentes. Não formam uma série única com estas contas da saúde. O agregado UE27 é publicado pelo Eurostat, não calculado como média aritmética dos países. O valor conserva a grafia numérica da API; as bandeiras são conservadas. Fonte: Eurostat. As notas em português são da equipa de recolha; o Eurostat não é responsável por estas adaptações. · Cruzado de ResearchHub content/24 Orcamento 2027 Analise · eurostat-hlth-sha11-hf-a-pc_gdp-tot_hf-pt-2024."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

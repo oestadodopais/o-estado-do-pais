@@ -1,0 +1,49 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "ppp-oe2026-liquidos-2025"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "843"
+unit: "milhões de euros"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Rodoviário"
+name_source: "Quadro 4.25. Previsão dos encargos plurianuais com as parcerias público-privadas; Rodoviário; coluna 1: 2025 estimativa; p. 119 PDF (103 impressa); rótulo da linha"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Ministério das Finanças"
+document:
+  title: "PPP: liquidos rodoviários"
+  edition: "2026"
+  locator: "Quadro 4.25. Previsão dos encargos plurianuais com as parcerias público-privadas; Rodoviário; coluna 1: 2025 estimativa; p. 119 PDF (103 impressa)"
+  source_sha256: "a863f683d0145e3129e56278cbf450e95a405cb912a98e0383e0f83d6fcbc031"
+  page: 119
+  kind: "ficheiro"
+source_url: "https://www.eo.gov.pt/politicaorcamental/OrcamentodeEstado/OE2026_doc16_Relatorio.pdf#page=119"
+access_date: "2026-10-19"
+reference_date: "2025"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "Setores         2025     2026     2027     2028     2029     2030     2031     2032     2033     2034     2035     2036     2037      2038\n  Rodoviário                  843       950      774     681      (59)     412      368      226      141      128        66        0        9        17\nSeleção: 2025 estimativa"
+
+# Ressalva publicada da casa, conferida no motor, nas duas línguas.
+ressalva: "Estimativa, não execução apurada."
+ressalva_en: "Estimate, not recorded outturn."
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "oe-2027"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Fluxos de caixa com IVA quando aplicável. Valores de 2025 a preços correntes; os seguintes a preços constantes de 2026. As estimativas de diferentes relatórios não são uma série de execução nem estão todas à mesma base de preços. O total líquido impresso é preservado, sem recalcular as parcelas arredondadas. · Cruzado de ResearchHub content/24 Orcamento 2027 Analise · ppp-oe2026-liquidos-2025."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

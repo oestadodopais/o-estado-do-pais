@@ -1,0 +1,49 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "saude-total-2024-orcamento-oe2024"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "15 709,4"
+unit: "milhões de euros"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Despesa total consolidada"
+name_source: "Quadro 5.50; Despesa total consolidada; coluna 2: 2024 orcamento; p. 306 PDF (290 impressa); rótulo da linha"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Ministério das Finanças"
+document:
+  title: "Saúde: despesa total consolidada"
+  edition: "2024"
+  locator: "Quadro 5.50; Despesa total consolidada; coluna 2: 2024 orcamento; p. 306 PDF (290 impressa)"
+  source_sha256: "59fa52aa5264d68eac642a0fa4b7f4c399a25c0ce6ea011553eb9fc7ba7bcf67"
+  page: 306
+  kind: "ficheiro"
+source_url: "https://portugal.gov.pt/api/media/edge/Project/Portal-do-Governo/Portal-do-Governo/gc23/Files/Documentos/relatorio-do-orcamento-do-estado-2024/relatorio_do_orcamento_do_estado_2024.pdf#page=306"
+access_date: "2026-10-19"
+reference_date: "2024"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "(milhões de euros)\n2023                 2024               Variação          Estrutura 2023\nClassificador Económico\n(%)                   (%)\nEstimativa            Orçamento\n  Despesa total consolidada                                                      14 922,8             15 709,4                    5,3\nSeleção: 2024 orcamento"
+
+# Ressalva publicada da casa, conferida no motor, nas duas línguas.
+ressalva: "Orçamento, não execução."
+ressalva_en: "Budget, not outturn."
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "oe-2027"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Programa orçamental Saúde na ótica da contabilidade pública. Gémeo: content/20 Orcamento do Estado, função Saúde, classifica despesas por finalidade; o perímetro funcional difere do programa por organização. Não equivale à despesa corrente em saúde de todos os financiadores do Eurostat. Total inclui ativos e passivos financeiros; efetiva exclui-os. · Cruzado de ResearchHub content/24 Orcamento 2027 Analise · saude-total-2024-orcamento-oe2024."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []
