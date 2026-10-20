@@ -1,0 +1,261 @@
+[
+  {
+    "corrida": "v2dc-portoes",
+    "cabeca": "e978f05ee6b2fafe4c83964597e76e93b9b412e9",
+    "codigos": {
+      "build": 1,
+      "check:alvos": 125,
+      "check:css": 125,
+      "check:discussao": 125,
+      "check:frases-compostas": 125,
+      "check:lugar": 125,
+      "check:palavras": 125,
+      "check:series": 125,
+      "gate:html": 125,
+      "typecheck": 125
+    },
+    "ultimas_linhas_build": [
+      "    · bloco por classificar em /o-que-se-discute: «O ministro e a RTP escolheram cada um a linha que lhes convinha, e as duas são verdadeiras; a discussão sobre «sobe» ou «desce» esconde o que o quadro mostra: um orçamento que paga mais pessoal com menos compras e menos investimento, que aumenta as outras despesas correntes, que conta com receitas próprias a crescer mais de metade sem que o relatório explique de onde vêm, e que, pelo que a execução de e os seis anos anteriores mostram, corre o risco de voltar a ser ultrapassado. O orçamento da Saúde para é um orçamento de transição para o fim do PRR, e a sua medida certa conhece-se na execução, não na aprovação. Dizer isto custava mais do que dizer «sobe» ou «cai», e era o que o debate devia.»",
+      "    · bloco por classificar em /o-que-se-discute: «O que sobe e o que desce não são a mesma coisa: o pessoal leva mais ; a aquisição de bens e serviços leva menos ; o investimento leva menos ; e as outras despesas correntes passam de para . O relatório explica o crescimento desta rubrica, para o conjunto das administrações públicas, assim: « » ; e o programa Saúde inscreve uma « » entre as suas ações. O financiamento conta com receitas próprias a crescer % e com fundos europeus a cair de para .»",
+      "    · bloco por classificar em /o-que-se-discute: «O relatório prevê para as parcerias rodoviárias líquidos em contra executados em , % ; mas mais do que os estimados para : os encargos brutos descem de para , e as receitas previstas descem mais, de para . A projeção tem uma tendência de redução, com oscilações, até em .»",
+      "    · design/especime-v3/INVENTARIO-FRASES.md:4694: linha «viva» que não se rende em rota nenhuma. Ou a frase mudou e a linha ficou para trás, ou a rota saiu: nos dois casos a linha sai do ficheiro, ou passa a «retirada» com a razão escrita.",
+      "      «A pergunta útil não é se o orçamento da Saúde sobe ou desce, é se chega: a resposta dos últimos seis anos é qu»",
+      "    · design/especime-v3/INVENTARIO-FRASES.md:4699: linha «viva» que não se rende em rota nenhuma. Ou a frase mudou e a linha ficou para trás, ou a rota saiu: nos dois casos a linha sai do ficheiro, ou passa a «retirada» com a razão escrita.",
+      "      «O ministro e a RTP escolheram cada um a linha que lhes convinha, e as duas são verdadeiras; a discussão sobre »",
+      "    · design/especime-v3/INVENTARIO-FRASES.md:4702: linha «viva» que não se rende em rota nenhuma. Ou a frase mudou e a linha ficou para trás, ou a rota saiu: nos dois casos a linha sai do ficheiro, ou passa a «retirada» com a razão escrita.",
+      "      «O que sobe e o que desce não são a mesma coisa: o pessoal leva mais ; a aquisição de bens e serviços leva meno»",
+      "    · design/especime-v3/INVENTARIO-FRASES.md:4703: linha «viva» que não se rende em rota nenhuma. Ou a frase mudou e a linha ficou para trás, ou a rota saiu: nos dois casos a linha sai do ficheiro, ou passa a «retirada» com a razão escrita.",
+      "      «O relatório prevê para as parcerias rodoviárias líquidos em contra executados em , % ; mas mais do que os esti»",
+      "    · design/especime-v3/INVENTARIO-FRASES.md:4714: linha «viva» que não se rende em rota nenhuma. Ou a frase mudou e a linha ficou para trás, ou a rota saiu: nos dois casos a linha sai do ficheiro, ou passa a «retirada» com a razão escrita.",
+      "      «The minister and RTP each chose the line that suited them, and both are true; the argument over «up» or «down»»",
+      "    · design/especime-v3/INVENTARIO-FRASES.md:4716: linha «viva» que não se rende em rota nenhuma. Ou a frase mudou e a linha ficou para trás, ou a rota saiu: nos dois casos a linha sai do ficheiro, ou passa a «retirada» com a razão escrita.",
+      "      «The report forecasts net for the road partnerships in against executed in , % ; but more than the estimated fo»",
+      "    · design/especime-v3/INVENTARIO-FRASES.md:4718: linha «viva» que não se rende em rota nenhuma. Ou a frase mudou e a linha ficou para trás, ou a rota saiu: nos dois casos a linha sai do ficheiro, ou passa a «retirada» com a razão escrita.",
+      "      «The useful question is not whether the Health budget rises or falls, but whether it is enough: the answer of t»",
+      "    · design/especime-v3/INVENTARIO-FRASES.md:4719: linha «viva» que não se rende em rota nenhuma. Ou a frase mudou e a linha ficou para trás, ou a rota saiu: nos dois casos a linha sai do ficheiro, ou passa a «retirada» com a razão escrita.",
+      "      «What rises and what falls are not the same thing: personnel gets more; the purchase of goods and services gets»",
+      "    · design/especime-v3/INVENTARIO-FRASES.md:4722: linha «viva» que não se rende em rota nenhuma. Ou a frase mudou e a linha ficou para trás, ou a rota saiu: nos dois casos a linha sai do ficheiro, ou passa a «retirada» com a razão escrita.",
+      "      «3 373 afirmações · 407 de 3 373 calculadas · 2 767 de 3 373 linhas de concelhos»",
+      "    · design/especime-v3/INVENTARIO-FRASES.md:4723: linha «viva» que não se rende em rota nenhuma. Ou a frase mudou e a linha ficou para trás, ou a rota saiu: nos dois casos a linha sai do ficheiro, ou passa a «retirada» com a razão escrita.",
+      "      «3 373 claims · 407 of 3 373 calculated · 2 767 of 3 373 municipality rows»",
+      ""
+    ]
+  },
+  {
+    "corrida": "v2dc-portoes-final",
+    "cabeca": "d53681ca7671ba521c00fa26c14ad20ae6177515",
+    "codigos": {
+      "build": 1,
+      "check:alvos": 125,
+      "check:css": 125,
+      "check:discussao": 125,
+      "check:frases-compostas": 125,
+      "check:lugar": 125,
+      "check:palavras": 125,
+      "check:series": 125,
+      "gate:html": 125,
+      "typecheck": 125
+    },
+    "ultimas_linhas_build": [
+      "    {",
+      "      \"nome\": \"r2-base-do-indice-trocada\",",
+      "      \"celula\": \"FC5\",",
+      "      \"mordeu\": true,",
+      "      \"queixa\": \"FC5 · /municipios/evora/ · poderDeCompra: a comparação diz «Está acima da média de Portugal (101).» e a recomposição dá «Está acima da média de Portugal (100).»\"",
+      "    }",
+      "  ]",
+      "}",
+      "",
+      "> o-estado-do-pais@0.1.0 sinais",
+      "> node scripts/sinais-da-primeira-pagina.mjs --prova",
+      "",
+      "sinais · 5 de 5 blocos na primeira página, 0 saída(s); o registo está em .sinais/primeira-pagina.json.",
+      "  SINAL · na explicação «dinheiro-do-estado-2026», as palavras em naoDiz[0][1] saíram da página: nenhuma linha casa com /juros|servico-da-divida|encargos-da-divida/ (7 casam)",
+      "sinais · 1 explicação(ões), 1 frase(s) guardada(s) fora da página; o registo está em .sinais/explicacoes.json.",
+      "  mordeu · uma condição falsa numa cópia das declarações (código 0)",
+      "  mordeu · um resolvedor que recusa tudo (código 1)",
+      "  mordeu · o passo da cadeia do build com um resolvedor que recusa tudo (código 1)",
+      "",
+      "> o-estado-do-pais@0.1.0 check:discussao",
+      "> node tests/discussao/itens.mjs",
+      "",
+      "V2B · 1 erro(s), 112 de 112 plantas, 302 portas de integração.",
+      "V2D Método: o inventário dos recibos não contém as cento e trinta e nove linhas atravessadas"
+    ]
+  },
+  {
+    "corrida": "v2dc-portoes-entrega",
+    "cabeca": "5721861fca78e8a942d902c305c31d99bc077387",
+    "codigos": {
+      "build": 0,
+      "check:alvos": 0,
+      "check:css": 0,
+      "check:discussao": 0,
+      "check:frases-compostas": 0,
+      "check:lugar": 0,
+      "check:palavras": 0,
+      "check:series": 0,
+      "gate:html": 0,
+      "typecheck": 0
+    },
+    "registos": {
+      "build": [
+        "  mordeu · uma condição falsa numa cópia das declarações (código 0)",
+        "  mordeu · um resolvedor que recusa tudo (código 1)",
+        "  mordeu · o passo da cadeia do build com um resolvedor que recusa tudo (código 1)",
+        "",
+        "> o-estado-do-pais@0.1.0 check:discussao",
+        "> node tests/discussao/itens.mjs",
+        "",
+        "V2B · 0 erro(s), 114 de 114 plantas, 302 portas de integração."
+      ],
+      "check:alvos": [
+        "  ✓ H15  pt@390: vazio 0 · «mour» 2 à vista, Mourão à vista · Enter com vários fica · «xyzq» 0 à vista, frase à vista, Enter fica · «mourao» 1 à vista, Enter abre Mourão || pt@1280: vazio 0 · «mour» 2 à vista, Mourão à vista · Enter com vários fica · «xyzq» 0 à vista, frase à vista, Enter fica · «mourao» 1 à vista, Enter abre Mourão || en@390: vazio 0 · «mour» 2 à vista, Mourão à vista · Enter com vários fica · «xyzq» 0 à vista, frase à vista, Enter fica · «mourao» 1 à vista, Enter abre Mourão || en@1280: vazio 0 · «mour» 2 à vista, Mourão à vista · Enter com vários fica · «xyzq» 0 à vista, frase à vista, Enter fica · «mourao» 1 à vista, Enter abre Mourão",
+        "  ✓ H16  8268 página(s) do dist/: 8243 com a porta das sugestões dentro do <footer>, 0 fora dele, 0 com mais de uma, 25 sem ela (e 25 sem a das correções; 0 página(s) sem a das sugestões e com a das correções, 0 sem a das correções e com a das sugestões) · nas rotas medidas: 370 de 370 passagens com uma porta no seu marco; 74 porta(s) a 390 e 74 a partir de 1024, 0 sem o alvo (nenhum) · o botão do formulário: 10 medição(ões), 0 abaixo de 44 px (nenhum) · o campo armadilhado: 10 medição(ões), 0 à vista, no teclado ou na árvore de acessibilidade",
+        "  ✓ H10  aria-expanded no dist/: 0 ocorrência(s) em 0 página(s) · ausência medida em todas as páginas próprias · conhecido positivo obrigatório: 1 ocorrência(s), recusado · Método: 10 passagem(ns), 0 sem título",
+        "",
+        "  escrito <temporario>",
+        "",
+        "  todas as células verdes.",
+        ""
+      ],
+      "check:css": [
+        "",
+        "  folhas · positivo conhecido: C1 viu a classe cuja regra não chega à página; C2 viu os dois defeitos plantados (o nome colado ao estado e a abreviatura colada ao que se lhe segue). Nenhuma acusou a classe com regra na folha ligada, a regra embutida, a regra dentro de um `@media`, a classe sem regra, nem o par com espaço. Das cinco fronteiras entre peças de texto, duas ficaram vermelhas, uma foi isenta pelo expoente e duas foram separadas pela folha que a página liga; as duas marcas dentro de uma palavra não chegam a ser candidatas, porque têm um nó de texto antes.",
+        "",
+        "  folhas ✓ 8244 página(s) · 8 folha(s) construída(s) com 883 classe(s) estilizada(s) · 912 classe(s) rendidas no HTML · C1: 0 regras que não chegam · C2: 34564 fronteira(s) sem espaço no HTML, 0 coladas",
+        "        C2, das 34564 fronteiras: 14798 entre duas caixas (duas caixas não fazem uma palavra) · 19766 entre duas peças de texto, das quais 19766 a folha desta página separa com um «gap», uma margem ou um «display»",
+        "        C1 · 176 regra(s) que não chegam, em quarentena escrita em C1_EM_QUARENTENA: o MESMO defeito noutras rotas (as formas do concelho, o mapa do distrito, o distrito na busca do índice dos números), à espera da decisão do lugar de direção sobre que folha passa a chegar a que página. Não é uma exceção: é dívida contada.",
+        "        25 documento(s) de estudo alojado(s) tal como estão, fora das duas células: nenhuma linha deles é da casa.",
+        ""
+      ],
+      "check:discussao": [
+        "",
+        "> o-estado-do-pais@0.1.0 check:discussao",
+        "> node tests/discussao/itens.mjs",
+        "",
+        "V2B · 0 erro(s), 114 de 114 plantas, 302 portas de integração."
+      ],
+      "check:frases-compostas": [
+        "",
+        "> o-estado-do-pais@0.1.0 check:frases-compostas",
+        "> node tests/explicacoes/frases-compostas.mjs",
+        "",
+        "V2B · 238 caminhos por clique conferidos a 390 px.",
+        "FC · 28 passagem(ns) em 14 páginas, 1684 pedaços marcados vistos, 0 dentro de um contentor flexível, 0 documento(s) mais largos do que a janela; 36 de 36 plantas no navegador."
+      ],
+      "check:lugar": [
+        "  §7.4 e 8.6, o que a régua leu: estudo 34 · texto 17 · indice 2 · edicoes 34 · linhas 22",
+        "  as exceções, e quantas vezes cada uma foi precisa:",
+        "      · «peça»     1 · a política de IA copia a POLITICA-DA-AUTONOMIA.md e fica como a fonte a escreveu",
+        "      · «trabalho»    37 · «trabalho» no sentido de emprego ou de labor, que não é o nome de um estudo",
+        "      · «trabalho»     1 · o grupo de trabalho é o publicador identificado do relatório das pensões, não o nome de um estudo",
+        "      · «indicador»     1 · «indicador» a nomear o campo que o publicador dá, e não uma medida da casa",
+        "      · «indicador»    26 · «indicador» dentro do endereço da API do INE (`json_indicador`), que é um caminho da fonte e não uma palavra da casa",
+        "check:lugar · verde."
+      ],
+      "check:palavras": [
+        "",
+        "> o-estado-do-pais@0.1.0 check:palavras",
+        "> node tests/voz/palavras-proibidas.mjs --prova",
+        "",
+        "  palavras ✓ 23 de 23 plantas vistas (14 palavras, 9 buracos da superfície) · 8269 página(s) medidas em repouso, 0 achados · 59 página(s) com a superfície estreitada por rota declarada"
+      ],
+      "check:series": [
+        "",
+        "> o-estado-do-pais@0.1.0 check:series",
+        "> node tests/series/series.mjs --prova",
+        "",
+        "  check:series · 25 série(s) no tempo de 8327 ponto(s) · 2 derivada(s) com 152 ponto(s) refeitos · 12 linha(s) presa(s), 12 cartão(ões) no último ponto · 50 recibo(s) lidos · metade do motor da S3: 8175 ponto(s) no seu corpo · 40 de 40 planta(s) morderam",
+        "  ✓ as séries no tempo têm a forma, a cadência, cada valor no seu excerto, a derivada refeita, cada linha presa no seu ponto e cada cartão no último, e os recibos com todos os pontos nas duas edições."
+      ],
+      "gate:html": [
+        "    · a afirmação \"vinhais-limite-divida-dgal-2024\" está no livro-razão e tem página própria, mas nenhuma outra página a cita.",
+        "    · a afirmação \"viseu-limite-divida-dgal-2024\" está no livro-razão e tem página própria, mas nenhuma outra página a cita.",
+        "    · a afirmação \"vizela-limite-divida-dgal-2024\" está no livro-razão e tem página própria, mas nenhuma outra página a cita.",
+        "    · a afirmação \"vouzela-limite-divida-dgal-2024\" está no livro-razão e tem página própria, mas nenhuma outra página a cita.",
+        "",
+        "  ✓ nenhum algarismo sem proveniência nas páginas construídas.",
+        "    prova · 92 chaves reconferidas pelo portão · 96 números marcados nas páginas · 2 lista(s) de nomes recontada(s) · 320369 ligações internas (0 relativas, 17281 âncoras) · 80 recortes · 6 ficheiros alojados · 10 contas sobre ficheiros não alojados (12 com cópia arquivada) · 894 páginas de série · 2436 cartões de partilha (13700 valores recalculados, 2436 nomeados por páginas) · 2 manifestos (7 ícones medidos na cabeça do PNG) · escrito em /prova.json",
+        ""
+      ],
+      "typecheck": [
+        "",
+        "> o-estado-do-pais@0.1.0 typecheck",
+        "> tsc -p tsconfig.check.json",
+        ""
+      ]
+    },
+    "registos_auxiliares": {
+      "assemble": [
+        "relatório gerado: 1370 linhas; 78 pedidos novos; 10 corpos reutilizados"
+      ],
+      "export": [
+        "    der-economia-variacao-sem-prr-pct            derived               −4,9   (= -4.9, engine agrees)",
+        "    der-coesao-territorial-variacao-sem-prr-pct  derived               −38,2   (= -38.2, engine agrees)",
+        "",
+        "  recortes: 0 de 87 linha(s) com página · 0 bytes",
+        "",
+        "  1 nova(s) · 3 alterada(s) · 136 inalterada(s) · registo a escrever",
+        "  dívida de proveniência que atravessa: 0 linha(s) com excerto \"[a verificar]\" — nenhuma",
+        "  rótulo da fonte: 87 de 140 linha(s), 23 rótulo(s) distinto(s): 015 - Saúde · Aquisição de bens e serviços · DESPESA TOTAL · Despesa Total Consolidada · Despesa efetiva (consolidação intra PO/PL) · Despesa efetiva consolidada · Despesa total consolidada · Despesa total consolidada (1) · Despesas com o pessoal · Ferroviário · Fundos Europeus · Health care expenditure by financing scheme · Investimento · Outras despesas correntes · Receitas Próprias · Receitas de Impostos · Rodoviário · Saúde · Serviço Nacional de Saúde · TRANSFERÊNCIAS SERVIÇO NACIONAL DE SAÚDE · Transferências de capital · encargos brutos · receitas",
+        "  sem rótulo impresso: 53 de 140 linha(s), a que a página chama pelo título do documento: afirmacao-pcp-paula-ppp-2026-10-12, afirmacao-pcp-paula-investimento-saude-2026-10-12, afirmacao-pcp-ppp-2026-10-15, utao-saude-sem-prr-2027, utao-risco-execucao-sns-2027, utao-ppp-contingencias-natureza-2026, ppp-oe2027-liquidos-2027-previsao-oe2026, ppp-oe2027-riscos-pedidos-rodoviarios e mais 45",
+        "  pending_page: 0 linha(s) sem sítio desenhado onde ser impressa",
+        "",
+        "  Escritas 140 linhas em <worktree>/ledger/claims",
+        "  Registo em <worktree>/ledger/cruzamentos/v2d.json",
+        "  Recortes: 0 ficheiro(s) escrito(s) de 0 em <worktree>/public/recortes",
+        "  Manifesto dos recortes em <motor>/publisher/recortes/manifest.v2d.json",
+        ""
+      ],
+      "celulas": [
+        "PASS · 40 conferências OE2027; livro, corpos e recibos conferidos; 840 células Eurostat por índice independente."
+      ],
+      "composicao": [
+        "V2D: 140 famílias compostas e conferidas.",
+        "{\"explicacoes\":2,\"folhas\":305,\"partes\":305,\"diz\":0,\"conta\":0,\"liga\":0,\"aponta\":0,\"leitura\":305,\"apoios\":3194,\"origens\":0}",
+        "{\"linhas\":148,\"novas_com_porta\":132}"
+      ],
+      "cruzamento": [
+        "  cruzamentos · 16 ficheiro(s) inteiro(s) em 11 registo(s) · 16 conferido(s) contra o motor · 5 item(ns) da agenda reconferidos",
+        "    agua-nao-faturada: 1",
+        "    avaliacao-economica-regional-de-portugal-2026: 8",
+        "    concelhos-2026: 2767",
+        "    dominios-2026: 40",
+        "    evora-contas-da-camara-2010-2025: 33",
+        "    evora-economia-e-dinheiro-publico-de-fora-da-camara: 17",
+        "    evora-quem-governou-a-camara-2009-2025: 19",
+        "    oe-2026: 209",
+        "    oe-2027: 158",
+        "",
+        "  1 aviso(s):",
+        "    · o ledger.json de \"20 Orcamento do Estado\" já não é o que atravessou. Por si só isto não quer dizer nada: o ficheiro traz um \"built_at\" que muda a cada reconstrução. O que prende é o resumo de cada LINHA — se nenhuma foi nomeada acima, nenhuma mudou.",
+        "",
+        "  ✓ cada linha e cada ficheiro vindos do motor são, byte a byte, o que atravessou, e são ainda o que o motor tem.",
+        ""
+      ],
+      "motor-commit": [
+        "commit código 0 · cabeça 68d2ad67",
+        "  GATE  editions evora-2027-pt-en ok",
+        "  GATE  editions evora-contas-camara-pt-en ok",
+        "  GATE  editions evora-contas-camara-pt-md-html ok",
+        "  GATE  editions evora-contas-camara-en-md-html ok",
+        "  GATE  editions evora-quem-governou-pt-md-html ok",
+        "  GATE  editions evora-economia-dinheiro-de-fora-pt-en ok",
+        "  GATE  editions evora-economia-dinheiro-de-fora-pt-md-html ok",
+        "  GATE  editions evora-economia-dinheiro-de-fora-en-md-html ok",
+        "  GATE  editions evora-2027-capital-europeia-da-cultura-pt-en ok",
+        "  GATE  editions evora-2027-capital-europeia-da-cultura-pt-md-html ok",
+        "  GATE  editions evora-2027-capital-europeia-da-cultura-en-md-html ok",
+        "  GATE: PASS"
+      ],
+      "discussao": [
+        "",
+        "> o-estado-do-pais@0.1.0 check:discussao",
+        "> node tests/discussao/itens.mjs",
+        "",
+        "V2B · 0 erro(s), 114 de 114 plantas, 302 portas de integração."
+      ]
+    }
+  }
+]

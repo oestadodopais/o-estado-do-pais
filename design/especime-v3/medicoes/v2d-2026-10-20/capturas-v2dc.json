@@ -1,0 +1,436 @@
+{
+  "cabeca": "5721861fca78e8a942d902c305c31d99bc077387",
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "resultados": [
+    {
+      "ficheiro": "discussao-pt-390.png",
+      "rota": "/o-que-se-discute/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 11858,
+      "sha256": "1bd9bfb4066d77dcbf7c11ac5feec42bd7a849e34b8eb106b740e5fdb22cd326",
+      "recortes": [
+        {
+          "ficheiro": "discussao-pt-390-saude.png",
+          "seletor": "#saude-no-orcamento",
+          "sha256": "0bf1cf04a1067b8ea3a1af22d5e2c68ac2c211b4939b745b97855362c6c78f71"
+        },
+        {
+          "ficheiro": "discussao-pt-390-parcerias.png",
+          "seletor": "#parcerias-rodoviarias",
+          "sha256": "841aba6e5db4318aa17acfd33cdfe5bd52e30442615a3336ace4db093af59fd1"
+        },
+        {
+          "ficheiro": "discussao-pt-390-saude-comparacao.png",
+          "seletor": "#saude-no-orcamento [data-discussao-parte=\"comparacao\"]",
+          "sha256": "ff067f3ce32b02e01aed475f7bd27ab09739add07945dada5af0373f495ee39f"
+        },
+        {
+          "ficheiro": "discussao-pt-390-saude-recomendacao.png",
+          "seletor": "#saude-no-orcamento [data-discussao-parte=\"recomendacao\"]",
+          "sha256": "45f0e56ace3acb6abf0d93450eb9bf80ee1a0a0aeef7185c17288dadfbc288d4"
+        },
+        {
+          "ficheiro": "discussao-pt-390-parcerias-comparacao.png",
+          "seletor": "#parcerias-rodoviarias [data-discussao-parte=\"comparacao\"]",
+          "sha256": "ca197d9016dada829045938f5340c8d09707d85c15ce80bae562e8a1fb74eac4"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "discussao-pt-768.png",
+      "rota": "/o-que-se-discute/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 8553,
+      "sha256": "afd6f114676651bd2a3fcdd81d1b22d6953e4db10cab48759a2d66834649f3cc",
+      "recortes": [
+        {
+          "ficheiro": "discussao-pt-768-saude.png",
+          "seletor": "#saude-no-orcamento",
+          "sha256": "6bba918af731a2951fc4b31a8865ef466606717e5ccd2e8f356037444d0a876f"
+        },
+        {
+          "ficheiro": "discussao-pt-768-parcerias.png",
+          "seletor": "#parcerias-rodoviarias",
+          "sha256": "8324243e38a1350e4a011923991dc8202be9ebd65f08857d0e64a2ed71bed531"
+        },
+        {
+          "ficheiro": "discussao-pt-768-saude-comparacao.png",
+          "seletor": "#saude-no-orcamento [data-discussao-parte=\"comparacao\"]",
+          "sha256": "f719a7a0b206d708fb8be7391a02cda8d71a3a4f712a27200a26aada2fb9761d"
+        },
+        {
+          "ficheiro": "discussao-pt-768-saude-recomendacao.png",
+          "seletor": "#saude-no-orcamento [data-discussao-parte=\"recomendacao\"]",
+          "sha256": "a01a96f4dd6ce16707c699b79ef20cdef63e3aac1749b406681e94b33e46a83f"
+        },
+        {
+          "ficheiro": "discussao-pt-768-parcerias-comparacao.png",
+          "seletor": "#parcerias-rodoviarias [data-discussao-parte=\"comparacao\"]",
+          "sha256": "f50ee345f5ced40b77653fa77cf3617897edec18132251d703dbaf9b2a990286"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "discussao-pt-1024.png",
+      "rota": "/o-que-se-discute/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 8640,
+      "sha256": "52bfdb66c8af12ca58834dbb7044174d2189efd62e9f6f9d9741634c89c05276",
+      "recortes": [
+        {
+          "ficheiro": "discussao-pt-1024-saude.png",
+          "seletor": "#saude-no-orcamento",
+          "sha256": "d867545f7d2c9fc3d2d49e6ccacbb69cd0093ea5406a067d3e9dadc30bd3f2d3"
+        },
+        {
+          "ficheiro": "discussao-pt-1024-parcerias.png",
+          "seletor": "#parcerias-rodoviarias",
+          "sha256": "8105cdf4b6516f96b2ba15012ed5b108c208dcd50667acc5ee6a50e5541499ae"
+        },
+        {
+          "ficheiro": "discussao-pt-1024-saude-comparacao.png",
+          "seletor": "#saude-no-orcamento [data-discussao-parte=\"comparacao\"]",
+          "sha256": "2e5d029231d4414c69c65cbb7e73376aa7650941142b9c2a807248e8dffdb74c"
+        },
+        {
+          "ficheiro": "discussao-pt-1024-saude-recomendacao.png",
+          "seletor": "#saude-no-orcamento [data-discussao-parte=\"recomendacao\"]",
+          "sha256": "6cabde07c197028192634cd8e8c1585ccda96e4b856890fc7fa9333c8447ec54"
+        },
+        {
+          "ficheiro": "discussao-pt-1024-parcerias-comparacao.png",
+          "seletor": "#parcerias-rodoviarias [data-discussao-parte=\"comparacao\"]",
+          "sha256": "748db90b320236b65dfb986198daa9df52f2ecade1b566d3153dee3c448b1031"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "discussao-pt-1280.png",
+      "rota": "/o-que-se-discute/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 8741,
+      "sha256": "f8e76b9c834679bccd88c3bf7e6dcf0de3bd23f72f8124a72fcd4b7469c7653d",
+      "recortes": [
+        {
+          "ficheiro": "discussao-pt-1280-saude.png",
+          "seletor": "#saude-no-orcamento",
+          "sha256": "044bdd30e91514d4d210dae9cab41edf1681286d86f03f6026c00db3354bef2a"
+        },
+        {
+          "ficheiro": "discussao-pt-1280-parcerias.png",
+          "seletor": "#parcerias-rodoviarias",
+          "sha256": "1c5e94d7a9339ee49ce475c66c9dfc9c24e4571a230795813b15a52da555abd4"
+        },
+        {
+          "ficheiro": "discussao-pt-1280-saude-comparacao.png",
+          "seletor": "#saude-no-orcamento [data-discussao-parte=\"comparacao\"]",
+          "sha256": "278fa54c2e54b14f30f2dca433e32f1e5c3c0ede3baf6e9174e3881877f8d5ef"
+        },
+        {
+          "ficheiro": "discussao-pt-1280-saude-recomendacao.png",
+          "seletor": "#saude-no-orcamento [data-discussao-parte=\"recomendacao\"]",
+          "sha256": "54a51e22a6a727e66594a4605ad21224a755feb5b0ecff43b337cdd3dfff6399"
+        },
+        {
+          "ficheiro": "discussao-pt-1280-parcerias-comparacao.png",
+          "seletor": "#parcerias-rodoviarias [data-discussao-parte=\"comparacao\"]",
+          "sha256": "2b788b75042e5d637c10e766b3389cf7c16da4d244dff1dd3431812ef0d92919"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "discussao-pt-1600.png",
+      "rota": "/o-que-se-discute/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 8778,
+      "sha256": "d71be4ed0ea6322e944390525981e4679d5886b51d7e7a61ebde49c5ffb9ad04",
+      "recortes": [
+        {
+          "ficheiro": "discussao-pt-1600-saude.png",
+          "seletor": "#saude-no-orcamento",
+          "sha256": "ab2dcdc6193b6db4253bfb4cb1f0ecc55d85f3334d9cc9df6bf79e5f29c1865e"
+        },
+        {
+          "ficheiro": "discussao-pt-1600-parcerias.png",
+          "seletor": "#parcerias-rodoviarias",
+          "sha256": "b25d4f822be5a39ef06fb32aeb00056ef2cd9ba816f25d71d122275b80f5d2df"
+        },
+        {
+          "ficheiro": "discussao-pt-1600-saude-comparacao.png",
+          "seletor": "#saude-no-orcamento [data-discussao-parte=\"comparacao\"]",
+          "sha256": "640c74a707111ef66b07b69a64d782ec5938ad6de9719b410952a96a6ff64162"
+        },
+        {
+          "ficheiro": "discussao-pt-1600-saude-recomendacao.png",
+          "seletor": "#saude-no-orcamento [data-discussao-parte=\"recomendacao\"]",
+          "sha256": "300aa0a3e770696c2cf1580b7466069861c808aa376948f8d555d965131d7cd8"
+        },
+        {
+          "ficheiro": "discussao-pt-1600-parcerias-comparacao.png",
+          "seletor": "#parcerias-rodoviarias [data-discussao-parte=\"comparacao\"]",
+          "sha256": "ae73c7b675cb06f7e7769d38fb41d19dc0a70f1c4d9960e0c0507d6a323cfa1b"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "discussao-en-390.png",
+      "rota": "/en/under-discussion/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 11692,
+      "sha256": "e565c20c5ad81a6629fa64fb8ed8a57bda9d85e6faf085592ff7139b7250099e",
+      "recortes": [
+        {
+          "ficheiro": "discussao-en-390-saude.png",
+          "seletor": "#saude-no-orcamento",
+          "sha256": "aa080bbc9af8ea9831a13633c3e66f6a63c442157740feeeab9dee2d84b74773"
+        },
+        {
+          "ficheiro": "discussao-en-390-parcerias.png",
+          "seletor": "#parcerias-rodoviarias",
+          "sha256": "663c12bf739012cccce94065524772d133905eb099b4155fdb08c2b45642c6a1"
+        },
+        {
+          "ficheiro": "discussao-en-390-saude-comparacao.png",
+          "seletor": "#saude-no-orcamento [data-discussao-parte=\"comparacao\"]",
+          "sha256": "6d7126da2d5431ed317450d4dffaced76268b0ae7c661288e2f21e486b929c43"
+        },
+        {
+          "ficheiro": "discussao-en-390-saude-recomendacao.png",
+          "seletor": "#saude-no-orcamento [data-discussao-parte=\"recomendacao\"]",
+          "sha256": "817ddd38eea25a8af6c6141d94d96f32ba8b47614e7b57d0e81d360de8925ac1"
+        },
+        {
+          "ficheiro": "discussao-en-390-parcerias-comparacao.png",
+          "seletor": "#parcerias-rodoviarias [data-discussao-parte=\"comparacao\"]",
+          "sha256": "1f320ba555730265f09840d48a6106f532d7669e40a1d8cb1c5891bed1cea5e7"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "discussao-en-768.png",
+      "rota": "/en/under-discussion/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 8443,
+      "sha256": "81a08fa3c186b22142cb4469bb43ca7e6caa97feee04ba7b74df0e0ffbb8c2bc",
+      "recortes": [
+        {
+          "ficheiro": "discussao-en-768-saude.png",
+          "seletor": "#saude-no-orcamento",
+          "sha256": "e84967d84ff6f40a48d058f37e944a678d23e7671dbe6fefd1a7f6f2d59b32e1"
+        },
+        {
+          "ficheiro": "discussao-en-768-parcerias.png",
+          "seletor": "#parcerias-rodoviarias",
+          "sha256": "01ea4e366d7d3593b5d5f0a6a42a6d8cb839d96d466458cfded36592c04dbf13"
+        },
+        {
+          "ficheiro": "discussao-en-768-saude-comparacao.png",
+          "seletor": "#saude-no-orcamento [data-discussao-parte=\"comparacao\"]",
+          "sha256": "dc940714b815ec3e24fef14e068023b2c4ab9833dd9ac18df4ad88a1d897cb94"
+        },
+        {
+          "ficheiro": "discussao-en-768-saude-recomendacao.png",
+          "seletor": "#saude-no-orcamento [data-discussao-parte=\"recomendacao\"]",
+          "sha256": "3c02a544adc25af9bbdf0b75e75074c6c852b234b9ee3d0d89f5de539d0164d7"
+        },
+        {
+          "ficheiro": "discussao-en-768-parcerias-comparacao.png",
+          "seletor": "#parcerias-rodoviarias [data-discussao-parte=\"comparacao\"]",
+          "sha256": "746543944e375809aa42442710707c00a321e0c3e936d563bfadc12da8e7e7a9"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "discussao-en-1024.png",
+      "rota": "/en/under-discussion/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 8531,
+      "sha256": "7c1a99f9895e871fa70404208a444b5e422581373933a864019c31115909f23e",
+      "recortes": [
+        {
+          "ficheiro": "discussao-en-1024-saude.png",
+          "seletor": "#saude-no-orcamento",
+          "sha256": "6648c7665c5dc57b38cd71fa4ef093093a888ee17dab9eafe41dd06aa4cbf362"
+        },
+        {
+          "ficheiro": "discussao-en-1024-parcerias.png",
+          "seletor": "#parcerias-rodoviarias",
+          "sha256": "6bd6cdc8a7f8dad8e910096a5beadbc771a20133475bd8f7d9744b2610b799dc"
+        },
+        {
+          "ficheiro": "discussao-en-1024-saude-comparacao.png",
+          "seletor": "#saude-no-orcamento [data-discussao-parte=\"comparacao\"]",
+          "sha256": "fcfaf83c54fc1838373ab20ee520c56c0b3498717ccdb3f9ad8b776ff3202363"
+        },
+        {
+          "ficheiro": "discussao-en-1024-saude-recomendacao.png",
+          "seletor": "#saude-no-orcamento [data-discussao-parte=\"recomendacao\"]",
+          "sha256": "e80f4eee19fd1ea0e7db11fc2ee8e454bf7f6b8c6471b5baaa8f10e33fdce351"
+        },
+        {
+          "ficheiro": "discussao-en-1024-parcerias-comparacao.png",
+          "seletor": "#parcerias-rodoviarias [data-discussao-parte=\"comparacao\"]",
+          "sha256": "b954c625af26bd0b7b43f6d0eac4c8f85b4a1d001e0698a462a447a69ab1bc61"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "discussao-en-1280.png",
+      "rota": "/en/under-discussion/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 8633,
+      "sha256": "74f211684ccabd5f87f1ae64fe13d2aff4cd9d18b6b788a2ceca4d7854611b01",
+      "recortes": [
+        {
+          "ficheiro": "discussao-en-1280-saude.png",
+          "seletor": "#saude-no-orcamento",
+          "sha256": "96399ce0b69031ec2530106727af4cc0535ef8c8348e13a242e03b9bbca4867c"
+        },
+        {
+          "ficheiro": "discussao-en-1280-parcerias.png",
+          "seletor": "#parcerias-rodoviarias",
+          "sha256": "a52f128731faa4e8509f628f27a3ff104f6a6a932e49514494626952d414c6a7"
+        },
+        {
+          "ficheiro": "discussao-en-1280-saude-comparacao.png",
+          "seletor": "#saude-no-orcamento [data-discussao-parte=\"comparacao\"]",
+          "sha256": "7830f3faf365907018480e462f2d635730decea060b2aec7c725f1cced234dd4"
+        },
+        {
+          "ficheiro": "discussao-en-1280-saude-recomendacao.png",
+          "seletor": "#saude-no-orcamento [data-discussao-parte=\"recomendacao\"]",
+          "sha256": "4273dc4594c48e10a2a03a23b5501337bbb55742b3c79a6cdb6da9b07930a519"
+        },
+        {
+          "ficheiro": "discussao-en-1280-parcerias-comparacao.png",
+          "seletor": "#parcerias-rodoviarias [data-discussao-parte=\"comparacao\"]",
+          "sha256": "baaec3919882ce715e8604f9584800ecdfc2ccf8c0b990b0183835e476956dfb"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "discussao-en-1600.png",
+      "rota": "/en/under-discussion/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 8670,
+      "sha256": "b92f538e31916289ad088ee662a8395199c67dd3d543d1e5806a8d29a9d58b85",
+      "recortes": [
+        {
+          "ficheiro": "discussao-en-1600-saude.png",
+          "seletor": "#saude-no-orcamento",
+          "sha256": "f972271db098aacf233718c34843a85b7e5fc1d88c7d27b350525ff3d527a777"
+        },
+        {
+          "ficheiro": "discussao-en-1600-parcerias.png",
+          "seletor": "#parcerias-rodoviarias",
+          "sha256": "a994ac3b539f2c183bde0b1a34a9dbaef198eb4440cfc013ae38c87e3bb38b50"
+        },
+        {
+          "ficheiro": "discussao-en-1600-saude-comparacao.png",
+          "seletor": "#saude-no-orcamento [data-discussao-parte=\"comparacao\"]",
+          "sha256": "044b5f3d5d361e88c338cba83a82b735d7376583fa064e639bbc9bbf1d97ecea"
+        },
+        {
+          "ficheiro": "discussao-en-1600-saude-recomendacao.png",
+          "seletor": "#saude-no-orcamento [data-discussao-parte=\"recomendacao\"]",
+          "sha256": "388f29a13e4879c91e61abea319ce32cd601e651fdd588906408f29a880c22e7"
+        },
+        {
+          "ficheiro": "discussao-en-1600-parcerias-comparacao.png",
+          "seletor": "#parcerias-rodoviarias [data-discussao-parte=\"comparacao\"]",
+          "sha256": "12ecfa0fe9b80144849811c1b3c133c77b0cdd8c479fa0d5bf0444c9bd63cd73"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    }
+  ],
+  "recursos": {
+    "version.json": "153869d2a95d1c9c69b0fc643d6a89bcc282dc7bc2974d94685aa4e6d25e6f20",
+    "o-que-se-discute/index.html": "a1144c6f45dd57d6ed3048481b15a40a8f9c324aa91aa8c7d3731a643d88c659",
+    "tipos/spectral/Spectral-Regular.woff2": "3c846b032ad614e02ebc439087bbcbb7371cfbdea6c8a4b568efa859537e9c43",
+    "tipos/bitter/Bitter[wght].woff2": "b4ad17520d0ce8bd1aa98af06e07ca94145522f868b5a010732eb5eee3ba2ea0",
+    "_astro/Base.BHrCWcnd.css": "e131823b7f26169af951b3b7b4df44c7e5e864b5c4f84e7d35862e0ba4714548",
+    "js/tema.js": "855bcee3ec1223b43e0f3e9a94c1fbdf1451e53830dcc022962b48e8d3340757",
+    "tipos/spectral-sc/SpectralSC-SemiBold.woff2": "b847fe8f1fe1a862ce15e288958d132940a8204951ef0dbe2c9ad8fd997f29e2",
+    "tipos/spectral/Spectral-Medium.woff2": "34f0ba222c28bc0ea816c693d05c528be4a5ee10c4b1765cdea774c6fb2502c2",
+    "tipos/spectral-sc/SpectralSC-Regular.woff2": "afa69dd2e7aaca2733883133745fd84c18dfac6a08d5999e69705ea7277240b8",
+    "en/under-discussion/index.html": "3d2480bb6bb675668bf4296c91189b56db7e5fc34a0670cf90d7cff8cedd49af"
+  },
+  "falhas": [],
+  "ok": true
+}

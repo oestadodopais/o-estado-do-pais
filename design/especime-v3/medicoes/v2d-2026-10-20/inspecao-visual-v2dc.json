@@ -1,0 +1,31 @@
+{
+  "cabeca": "5721861fca78e8a942d902c305c31d99bc077387",
+  "edicoes": [
+    "en",
+    "pt"
+  ],
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "paginas": 10,
+  "recortes": 50,
+  "sha256_conferidos": 60,
+  "transbordo_horizontal": 0,
+  "erros_do_navegador": 0,
+  "recursos_recusados": 0,
+  "pedidos_externos": 0,
+  "leitura_visual": [
+    "discussao-pt-390-saude-comparacao.png",
+    "discussao-en-390-saude-recomendacao.png",
+    "discussao-pt-390-parcerias-comparacao.png",
+    "discussao-en-1600-saude-comparacao.png",
+    "discussao-pt-1600-saude-recomendacao.png",
+    "discussao-en-1600-parcerias-comparacao.png"
+  ],
+  "achados": [],
+  "observacao": "Nos seis recortes inspecionados, frases, valores e selos legíveis, sem cortes de texto ou sobreposições. Os restantes PNG foram conferidos por hash e pelas medidas do navegador."
+}

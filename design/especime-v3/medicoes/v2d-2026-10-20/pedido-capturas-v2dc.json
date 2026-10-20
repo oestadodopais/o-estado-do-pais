@@ -1,0 +1,32 @@
+{
+  "paginas": [
+    {
+      "nome": "discussao",
+      "pt": "/o-que-se-discute/",
+      "en": "/en/under-discussion/",
+      "recortes": [
+        {
+          "nome": "saude",
+          "seletor": "#saude-no-orcamento"
+        },
+        {
+          "nome": "parcerias",
+          "seletor": "#parcerias-rodoviarias"
+        },
+        {
+          "nome": "saude-comparacao",
+          "seletor": "#saude-no-orcamento [data-discussao-parte=\"comparacao\"]"
+        },
+        {
+          "nome": "saude-recomendacao",
+          "seletor": "#saude-no-orcamento [data-discussao-parte=\"recomendacao\"]"
+        },
+        {
+          "nome": "parcerias-comparacao",
+          "seletor": "#parcerias-rodoviarias [data-discussao-parte=\"comparacao\"]"
+        }
+      ]
+    }
+  ],
+  "cabeca": "5721861fca78e8a942d902c305c31d99bc077387"
+}

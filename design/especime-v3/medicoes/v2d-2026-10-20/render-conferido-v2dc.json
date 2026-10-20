@@ -1,0 +1,67 @@
+{
+  "ok": true,
+  "cabeca": "5721861fca78e8a942d902c305c31d99bc077387",
+  "paragrafos": 60,
+  "paginas": [
+    {
+      "lang": "pt",
+      "ficheiro": "o-que-se-discute/index.html",
+      "sha256": "a1144c6f45dd57d6ed3048481b15a40a8f9c324aa91aa8c7d3731a643d88c659"
+    },
+    {
+      "lang": "en",
+      "ficheiro": "en/under-discussion/index.html",
+      "sha256": "3d2480bb6bb675668bf4296c91189b56db7e5fc34a0670cf90d7cff8cedd49af"
+    }
+  ],
+  "recibos": [
+    {
+      "id": "oe-2027-saude-acao-reserva-orcamental",
+      "lang": "pt",
+      "sha256": "6ec062662907eec752046e2142c78ede7fada88cadf98ea13a3fc16c7ba8bc9d",
+      "excerto_integral": true
+    },
+    {
+      "id": "oe-2027-outras-despesas-correntes-reserva",
+      "lang": "pt",
+      "sha256": "8d529bdfd2a1da6163a310620a9d20cb7f0f528dacc469d61ba7b089dddda721",
+      "excerto_integral": true
+    },
+    {
+      "id": "ppp-oe2026-brutos-2025",
+      "lang": "pt",
+      "sha256": "60c4d4f78e217db31ba4b6078cfd5315b6899eaa5ef3b3385e4cf8376b757536",
+      "excerto_integral": true
+    },
+    {
+      "id": "ppp-oe2026-receitas-2025",
+      "lang": "pt",
+      "sha256": "dd14c44d7317d9a09c1a7a87347b1825f4d1b4d4411abe6a6f755d4d94214802",
+      "excerto_integral": true
+    },
+    {
+      "id": "oe-2027-saude-acao-reserva-orcamental",
+      "lang": "en",
+      "sha256": "cdfc2a0ca23e6127674e9e12e9de3240e533d49fc61b27f3bea9b05790967e53",
+      "excerto_integral": true
+    },
+    {
+      "id": "oe-2027-outras-despesas-correntes-reserva",
+      "lang": "en",
+      "sha256": "a95a071541be36ce31aad124f07849b9be881bec439c3da9241eefb096e8a543",
+      "excerto_integral": true
+    },
+    {
+      "id": "ppp-oe2026-brutos-2025",
+      "lang": "en",
+      "sha256": "2e0d3d62d6927a8838229d9c7ba08321ebf2eb00881215ce071f97b3b47cd65b",
+      "excerto_integral": true
+    },
+    {
+      "id": "ppp-oe2026-receitas-2025",
+      "lang": "en",
+      "sha256": "69a8a9707544c1d6c3489f59a5a6d69432f8befbc6e013fae0965512bd333a41",
+      "excerto_integral": true
+    }
+  ]
+}

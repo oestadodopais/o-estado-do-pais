@@ -1,0 +1,35 @@
+{
+  "estado": "Os Major 6 a 9 estão corrigidos nas duas edições; verificações e capturas da cabeça indicada concluídas.",
+  "sitio_testado": "5721861fca78e8a942d902c305c31d99bc077387",
+  "motor": "68d2ad676472304fe569289f43ecf91f72f95671",
+  "codigos": {
+    "montagem_motor": 0,
+    "exportacao": 0,
+    "celulas_motor": 0,
+    "composicao_e_auditoria": 0,
+    "check:cruzamento --with-origin": 0,
+    "core.gate (pre-commit)": 0,
+    "build": 0,
+    "check:alvos": 0,
+    "check:css": 0,
+    "check:discussao": 0,
+    "check:frases-compostas": 0,
+    "check:lugar": 0,
+    "check:palavras": 0,
+    "check:series": 0,
+    "gate:html": 0,
+    "typecheck": 0,
+    "capturas": 0,
+    "conferencia_do_relatorio_e_recibos": 0
+  },
+  "conferencias": "40 conferências do motor e 840 células Eurostat; auditoria com 305 folhas e 3194 apoios. A célula dos itens passou com 114 plantas detetadas em 114. Os 60 parágrafos do relatório coincidem com o HTML e os 8 recibos afetados foram conferidos nas duas edições. As duas primeiras corridas tiveram build=1: primeiro por frases desatualizadas no inventário, depois pela contagem anterior dos recibos. Os passos não executados nessas tentativas têm código 125. A terceira corrida passou nos dez passos.",
+  "capturas": "Capturas nas duas edições e nas cinco larguras declaradas: 10 páginas e 50 recortes; 60 hashes conferidos, sem transbordo horizontal, pedidos externos, recursos recusados ou erros do navegador. Inspeção visual de seis recortes, discriminados em inspecao-visual-v2dc.json. PNG em <temporario>/v2dc-capturas.",
+  "aviso_cruzamento": "O built_at do livro 20 Orcamento do Estado mudou; não foram encontradas divergências nas linhas exportadas.",
+  "novas_decisoes": [
+    "V2D-38",
+    "V2D-39",
+    "V2D-40",
+    "V2D-41",
+    "V2D-42"
+  ]
+}
