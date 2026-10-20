@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-20T19:07:58+00:00",
+ "copia": "<pacote>",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "ledger/claims/irs-2027-escalao-1-limite.yml",
+   "descricao": "o limite do primeiro escalão do IRS de 2027 passa de 8 666 para 8 686 euros na cópia exportada da linha; a referência é a tabela do artigo 68.º na p. 75 da proposta alojada e a linha do motor",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "6aaef6c6ce125339999da6b815206acf9ca9640b64346e63c28aec4f7ff9a0ef",
+   "sha256_depois": "562504590bf8f958f443333e467190b153345758b7c7386104cebc9a784e3dda",
+   "contexto_antes": "ção aqui parte scripts/check-cruzamento.mjs.\n\nid: \"irs-2027-escalao-1-limite\"\n\n# O valor tal como é publicado, com formatação portuguesa. String, nunca número.\nvalue: \"8 666\"\nunit: \"euros\"\n\n# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.\nsource: \"Presidência do Conselho de Ministros\"\ndocument:\n  titl",
+   "contexto_depois": "ção aqui parte scripts/check-cruzamento.mjs.\n\nid: \"irs-2027-escalao-1-limite\"\n\n# O valor tal como é publicado, com formatação portuguesa. String, nunca número.\nvalue: \"8 686\"\nunit: \"euros\"\n\n# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.\nsource: \"Presidência do Conselho de Ministros\"\ndocument:\n  titl"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "ledger/claims/der-oe2027-medidas-novas-saldo.yml",
+   "descricao": "a derivada das três medidas novas passa de 79 para 97 milhões na cópia exportada; a referência são as três componentes do Quadro 3.2 (300, −121, −100) e a frase da UTAO (+79 M€)",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "8d15544353ec62e0ea144cb7721c305e5240d39203d7f817639f7e70eb31747c",
+   "sha256_depois": "683c3c4402a94394fada70532ad5be9e976233be250e797dddb53e0e3d76be9b",
+   "contexto_antes": "qui parte scripts/check-cruzamento.mjs.\n\nid: \"der-oe2027-medidas-novas-saldo\"\n\n# O valor tal como é publicado, com formatação portuguesa. String, nunca número.\nvalue: \"79\"\nunit: \"milhões de euros\"\n\n# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.\nsource: null\ndocument: null\nsource_url: null\naccess_",
+   "contexto_depois": "qui parte scripts/check-cruzamento.mjs.\n\nid: \"der-oe2027-medidas-novas-saldo\"\n\n# O valor tal como é publicado, com formatação portuguesa. String, nunca número.\nvalue: \"97\"\nunit: \"milhões de euros\"\n\n# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.\nsource: null\ndocument: null\nsource_url: null\naccess_"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "built/estudos/orcamento-2027-o-que-muda-e-para-quem/documento/index.html",
+   "descricao": "a citação da nota do Quadro 3.2 passa de «Nota: (i) invariante.» a «Nota: (i) nova.» na página construída em português; a referência é a linha oe-2027-quadro-3-2-nota-i e a p. 59 do relatório alojado",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "8a352808784be1824a1920c09a3f19c7a671ffd44315938c25ad5823525b51e1",
+   "sha256_depois": "fddfb4161e72c822326a18d7b67948cd05341d0a60ea3024c425f27a26e306b5",
+   "contexto_antes": " são o reforço do Complemento Solidário para Idosos (100 milhões).</p>\n<p>O quadro marca dez das suas linhas com «(i)», e a nota do quadro diz o que a marca é: «Nota: (i) invariante.» São as medidas que já estavam em vigor antes desta proposta. Somadas, as linhas marcadas valem −263 milhões de euros na receita e 947 milhões na despesa, −1 21",
+   "contexto_depois": " são o reforço do Complemento Solidário para Idosos (100 milhões).</p>\n<p>O quadro marca dez das suas linhas com «(i)», e a nota do quadro diz o que a marca é: «Nota: (i) nova.» São as medidas que já estavam em vigor antes desta proposta. Somadas, as linhas marcadas valem −263 milhões de euros na receita e 947 milhões na despesa, −1 21"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "built/en/studies/orcamento-2027-o-que-muda-e-para-quem/document/index.html",
+   "descricao": "a citação do relatório sobre a trajetória da dívida passa de 84,5% para 84,9% na página construída em inglês; a referência é a linha pm-trajetoria-divida-2026-2027 e a p. 65 do relatório alojado",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "38589de901922bdc06d5491ec9ad0a312a2d8aaca6f9f090a05c3974b66b286b",
+   "sha256_depois": "68cbdbdc0c3e56462d85a357ad355b67de27d8cb8472a17e902af46f075859ce",
+   "contexto_antes": "debt: what falls, and why</h2>\n<p>The report: «A dívida pública, em percentagem do PIB, deverá manter assim a trajetória decrescente, passando de 87,5% em 2026 para 84,5% em 2027.» And the objective: «A dívida pública continuará a reduzir-se, visando ficar abaixo dos 80% do produto interno bruto (PIB) no final da década.» The finance mi",
+   "contexto_depois": "debt: what falls, and why</h2>\n<p>The report: «A dívida pública, em percentagem do PIB, deverá manter assim a trajetória decrescente, passando de 87,5% em 2026 para 84,9% em 2027.» And the objective: «A dívida pública continuará a reduzir-se, visando ficar abaixo dos 80% do produto interno bruto (PIB) no final da década.» The finance mi"
+  },
+  {
+   "id": "P5",
+   "ficheiro": "built/en/studies/orcamento-2027-o-que-muda-e-para-quem/document/index.html",
+   "descricao": "a atualização dos salários públicos passa de 2.3 % para 2.5 % na página construída em inglês; a referência é a linha oe-2027-remuneracoes-atualizacao-pct e a p. 58 do relatório alojado",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "68cbdbdc0c3e56462d85a357ad355b67de27d8cb8472a17e902af46f075859ce",
+   "sha256_depois": "68e084a7cce6e5d2d11c559f0c1a19ccf820241eba858bb174257e04c6d94dab",
+   "contexto_antes": "(the PRR, the European post-pandemic recovery money) ends in 2026.</p>\n<p>For people, the 2027 changes are largely nominal. The update of public administration wages, 2.3 %, equals the inflation the report itself forecasts for 2027, 2.3 %. Pensions get the regular update the law prescribes, with no rate written in the report. The minimum ",
+   "contexto_depois": "(the PRR, the European post-pandemic recovery money) ends in 2026.</p>\n<p>For people, the 2027 changes are largely nominal. The update of public administration wages, 2.5 %, equals the inflation the report itself forecasts for 2027, 2.3 %. Pensions get the regular update the law prescribes, with no rate written in the report. The minimum "
+  }
+ ]
+}
