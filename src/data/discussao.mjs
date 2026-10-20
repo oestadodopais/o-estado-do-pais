@@ -1,4 +1,5 @@
-/** V2-d: análise dos dois itens, apoiada nas linhas e nos excertos do livro. */
+/** V2-d e V2-e: análise dos dois itens, apoiada nas linhas e nos excertos do livro. */
+import {acrescentarEfeitos} from './discussao-efeitos.mjs';
 export const DISCUSSAO = {
   titulo: { pt: 'O que se discute', en: 'Under discussion' },
   ambito: { pt: 'As afirmações públicas, ao lado do que as fontes dizem.', en: 'Public statements, next to what the sources say.' },
@@ -111,3 +112,4 @@ export const ITENS = [
        ['The PCP is right to draw attention to the cost of partnerships, but wrong to attribute to road partnerships a figure exceeding their gross charges. Partnerships cost the State over a billion gross in the budgeted year; the later claim already covers road, rail and health partnerships, but its amount, ', {claim:PAULA_PPP,sufixo:' million euros'}, ', also exceeds the sum in the table. The Government, for its part, presents a table of contracted payments and sends the claims that could change the bill to a risks chapter. Between the two, the reader learns the payments forecast for concessionaires; how much of the pending claims will become an actual charge remains unknown, and that is the bill Parliament should ask for before voting.'])],
   ]),
 ];
+acrescentarEfeitos(ITENS);

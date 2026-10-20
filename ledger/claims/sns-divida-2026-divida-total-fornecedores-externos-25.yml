@@ -1,0 +1,39 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "sns-divida-2026-divida-total-fornecedores-externos-25"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "15 182 620,38"
+unit: "Euros"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Serviço Nacional de Saúde"
+document:
+  title: "Dívida Total, Vencida e Pagamentos em Atraso"
+  edition: "2026-07"
+  locator: "results[25].divida_total_fornecedores_externos; {\"periodo\": \"2026-07\", \"entidade\": \"UNIDADE LOCAL DE SAUDE DE CASTELO BRANCO, EPE\"}"
+  source_sha256: "a608cf2909f2dd3ce62ee21c3ea5fa7dc1fb950c6cb18f83eb627f7bfbcc34c4"
+  kind: "ficheiro"
+source_url: "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records?where=periodo%3Ddate%272026-07-01%27&limit=100&order_by=entidade"
+access_date: "2026-10-20"
+reference_date: "2026-07"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "{\"periodo\": \"2026-07\", \"regiao\": \"Região de Saúde do Centro\", \"entidade\": \"UNIDADE LOCAL DE SAUDE DE CASTELO BRANCO, EPE\", \"localizacao_geografica\": {\"lon\": \"-7.4981271\", \"lat\": \"39.8212263\"}, \"divida_total_fornecedores_externos\": \"15182620.38\", \"divida_vencida_fornecedores_externos\": \"5885047.48\", \"pagamentos_em_atraso\": \"-8522.99\"}"
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "oe-2027"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Valor por entidade. Stock em fim de mês. · Cruzado de ResearchHub content/26 Saude e Parcerias Efeitos · sns-divida-2026-divida_total_fornecedores_externos-25."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

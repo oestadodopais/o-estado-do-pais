@@ -1,0 +1,41 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "infarmed-ambulatorio-2026-07-p5-acumulado-encargo"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "1 179,3"
+unit: "milhões de euros"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "INFARMED"
+document:
+  title: "Monitorização da despesa com medicamentos | Ambulatório | Julho de 2026"
+  edition: "2026-01/2026-07"
+  locator: "p. 5 PDF; quadro Evolução dos Encargos do SNS; linha acumulado; coluna Encargo SNS"
+  source_sha256: "d6280c0138ee42cfa4af02e669567f839c154090c77e27f822e6a604abc8e91b"
+  page: 5
+  kind: "ficheiro"
+source_url: "https://www.infarmed.pt/documents/15786/12177210/julho/636731d9-4b24-8fee-1e6b-cfbe168799db?version=1.0"
+access_date: "2026-10-20"
+reference_date: "2026-07"
+period: "2026-01/2026-07"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "Monitorização da despesa com medicamentos | Ambulatório | Julho de 2026; Janeiro-Julho 2026; Encargo SNS; 1 179,3 M€"
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "oe-2027"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Leitura da célula ou ponto do gráfico na imagem da página. Período e coluna conservados.  O teste automático confere a integridade dos ficheiros e a correspondência à transcrição; a leitura do valor na imagem foi conferida visualmente, sem alegar extração textual automática. · Cruzado de ResearchHub content/26 Saude e Parcerias Efeitos · infarmed-ambulatorio-2026-07-p5-acumulado-encargo."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

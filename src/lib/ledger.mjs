@@ -16,6 +16,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { load } from 'js-yaml';
+import {textoDocumentalConferido,acumuladoConferido} from './prova-efeitos.mjs';
 
 import { STUDY_IDS, COUNTS } from '../data/studies.mjs';
 import { KINDS, CAMPOS_DE_PROVENIENCIA } from '../data/correcoes.mjs';
@@ -332,6 +333,7 @@ export const CAMPOS = /** @type {const} */ ([
   'check',
   'attributed_to',
   'afirmacao',
+  'texto_documental',
   'study',
   'note',
   'publication',
@@ -1578,6 +1580,7 @@ export function validateLedger() {
     const doc = documentoDaLinha(c);
     // V2-a, §1.181: as palavras atribuídas a quem o documento identifica.
     if (c.afirmacao !== undefined && c.afirmacao !== true) errors.push(`${onde} afirmacao só aceita true ou a ausência do campo`);
+    if(c.texto_documental!==undefined&&!textoDocumentalConferido(c))errors.push(`${onde} V2E texto documental: valor, excerto ou proveniência diferente da prova selada`);
     if (id.startsWith('afirmacao-') && c.afirmacao !== true) errors.push(`${onde} a família afirmacao exige afirmacao: true`);
     if (c.afirmacao === true) {
       if (!Array.isArray(c.attributed_to) || !c.attributed_to.length) errors.push(`${onde} V2A atribuição: falta attributed_to`);
@@ -1617,7 +1620,7 @@ export function validateLedger() {
     if (typeof c.value !== 'string' || c.value.trim() === '') {
       errors.push(`${onde} "value" tem de ser uma string não vazia, com o valor tal como publicado.`);
     } else if (!/\d/.test(c.value) && marcaDoValor(c.value) === null &&
-        !(c.afirmacao === true && c.unit === 'afirmação' && c.value === c.excerpt)) {
+        !(c.afirmacao === true && c.unit === 'afirmação' && c.value === c.excerpt) && !textoDocumentalConferido(c)) {
       /* A PORTA TEM A LARGURA DE UMA MARCA (28.08.2026, regra 2). A regra era
          «um valor sem algarismos não é um valor», e existe para recusar prosa no
          lugar de um número. Continua a valer para tudo o que não seja uma das
@@ -2743,7 +2746,7 @@ export function validateLedger() {
     if (c.period !== undefined) {
       const trimestre = /^(\d{4})-T([1-4])$/.exec(String(c.period));
       const fim = trimestre ? `${trimestre[1]}-${['03-31','06-30','09-30','12-31'][Number(trimestre[2])-1]}` : null;
-      if (!trimestre || c.reference_date !== fim) errors.push(`${onde} "period": o trimestre exige a data de referência do seu último dia.`);
+      if ((!trimestre || c.reference_date !== fim) && !acumuladoConferido(c)) errors.push(`${onde} "period": exige um trimestre com o último dia ou um acumulado selado com o mês final.`);
     }
     for (const campo of /** @type {const} */ (['access_date', 'reference_date'])) {
       const v = c[campo];

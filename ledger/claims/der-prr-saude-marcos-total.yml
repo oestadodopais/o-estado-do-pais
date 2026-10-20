@@ -1,0 +1,44 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "der-prr-saude-marcos-total"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "37"
+unit: "marcos e metas"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Recuperar Portugal"
+document:
+  title: "Anexo III - Listagem de Marcos e Metas"
+  edition: "2025"
+  locator: "p. 3 PDF; quadro Tabela 7 - Listagem de Marcos e Metas respeitantes a Pedidos de Pagamento submetidos à Comissão Europeia; linha 1.24; coluna Estado"
+  source_sha256: "d7e1016e374293b0de7f961a578c65e3fd1e490a77d16ba10dae01d3d46b60ec"
+  page: 3
+  kind: "ficheiro"
+source_url: "https://recuperarportugal.gov.pt/wp-content/uploads/2026/08/Anexo-III-Listagem-de-Marcos-e-Metas.pdf#page=3"
+access_date: "2026-10-20"
+reference_date: "2025"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "Contar as componentes = 37"
+
+# Ressalva publicada da casa, conferida no motor, nas duas línguas.
+ressalva: "Valor calculado sobre as linhas do documento, não uma célula numérica transcrita."
+ressalva_en: "Value calculated from the document rows, not a transcribed numerical cell."
+
+# Aritmética da ressalva; o valor continua a ser o publicado pela fonte.
+derivation: "Contar as componentes = 37; componentes: prr-complemento-p3-1.24-estado, prr-complemento-p3-1.32-estado, prr-complemento-p3-1.33-estado, prr-complemento-p3-1.3-estado, prr-complemento-p3-1.8-estado, prr-complemento-p4-1.1-estado, prr-complemento-p4-1.5-estado, prr-complemento-p4-1.12-estado, prr-complemento-p4-1.40-estado, prr-complemento-p4-1.41-estado, prr-complemento-p4-1.2-estado, prr-complemento-p5-1.22-estado, prr-complemento-p5-1.28-estado, prr-complemento-p5-1.11-estado, prr-complemento-p5-1.7-estado, prr-complemento-p5-1.9-estado, prr-complemento-p6-1.37-estado, prr-complemento-p6-1.42-estado, prr-complemento-p6-1.10-estado, prr-complemento-p7-1.34-estado, prr-complemento-p7-1.35-estado, prr-complemento-p7-1.36-estado, prr-complemento-p7-1.38-estado, prr-complemento-p7-1.39-estado, prr-complemento-p8-1.21-estado, prr-complemento-p8-1.25-estado, prr-complemento-p9-1.17-estado, prr-complemento-p9-1.18-estado, prr-complemento-p9-1.26-estado, prr-complemento-p9-1.30-estado, prr-complemento-p9-1.43-estado, prr-complemento-p9-1.44-estado, prr-marcos-metas-2025-p2-1.29-estado, prr-marcos-metas-2025-p2-1.4-estado, prr-marcos-metas-2025-p2-1.13-estado, prr-marcos-metas-2025-p2-1.20-estado, prr-marcos-metas-2025-p2-1.6-estado"
+derivation_en: "Count all Health component milestones and targets = 37; components: prr-complemento-p3-1.24-estado, prr-complemento-p3-1.32-estado, prr-complemento-p3-1.33-estado, prr-complemento-p3-1.3-estado, prr-complemento-p3-1.8-estado, prr-complemento-p4-1.1-estado, prr-complemento-p4-1.5-estado, prr-complemento-p4-1.12-estado, prr-complemento-p4-1.40-estado, prr-complemento-p4-1.41-estado, prr-complemento-p4-1.2-estado, prr-complemento-p5-1.22-estado, prr-complemento-p5-1.28-estado, prr-complemento-p5-1.11-estado, prr-complemento-p5-1.7-estado, prr-complemento-p5-1.9-estado, prr-complemento-p6-1.37-estado, prr-complemento-p6-1.42-estado, prr-complemento-p6-1.10-estado, prr-complemento-p7-1.34-estado, prr-complemento-p7-1.35-estado, prr-complemento-p7-1.36-estado, prr-complemento-p7-1.38-estado, prr-complemento-p7-1.39-estado, prr-complemento-p8-1.21-estado, prr-complemento-p8-1.25-estado, prr-complemento-p9-1.17-estado, prr-complemento-p9-1.18-estado, prr-complemento-p9-1.26-estado, prr-complemento-p9-1.30-estado, prr-complemento-p9-1.43-estado, prr-complemento-p9-1.44-estado, prr-marcos-metas-2025-p2-1.29-estado, prr-marcos-metas-2025-p2-1.4-estado, prr-marcos-metas-2025-p2-1.13-estado, prr-marcos-metas-2025-p2-1.20-estado, prr-marcos-metas-2025-p2-1.6-estado"
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "oe-2027"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[derivation do motor] {'operation': 'count', 'components': ['prr-complemento-p3-1.24-estado', 'prr-complemento-p3-1.32-estado', 'prr-complemento-p3-1.33-estado', 'prr-complemento-p3-1.3-estado', 'prr-complemento-p3-1.8-estado', 'prr-complemento-p4-1.1-estado', 'prr-complemento-p4-1.5-estado', 'prr-complemento-p4-1.12-estado', 'prr-complemento-p4-1.40-estado', 'prr-complemento-p4-1.41-estado', 'prr-complemento-p4-1.2-estado', 'prr-complemento-p5-1.22-estado', 'prr-complemento-p5-1.28-estado', 'prr-complemento-p5-1.11-estado', 'prr-complemento-p5-1.7-estado', 'prr-complemento-p5-1.9-estado', 'prr-complemento-p6-1.37-estado', 'prr-complemento-p6-1.42-estado', 'prr-complemento-p6-1.10-estado', 'prr-complemento-p7-1.34-estado', 'prr-complemento-p7-1.35-estado', 'prr-complemento-p7-1.36-estado', 'prr-complemento-p7-1.38-estado', 'prr-complemento-p7-1.39-estado', 'prr-complemento-p8-1.21-estado', 'prr-complemento-p8-1.25-estado', 'prr-complemento-p9-1.17-estado', 'prr-complemento-p9-1.18-estado', 'prr-complemento-p9-1.26-estado', 'prr-complemento-p9-1.30-estado', 'prr-complemento-p9-1.43-estado', 'prr-complemento-p9-1.44-estado', 'prr-marcos-metas-2025-p2-1.29-estado', 'prr-marcos-metas-2025-p2-1.4-estado', 'prr-marcos-metas-2025-p2-1.13-estado', 'prr-marcos-metas-2025-p2-1.20-estado', 'prr-marcos-metas-2025-p2-1.6-estado'], 'operands': [], 'formula': 'Contar as componentes', 'calculation': 'Contar as componentes = 37', 'rounding_places': 0, 'result': '37'} · [note do motor] Conta sobre as linhas identificadas; pagamentos do PRR não medem execução física. · Cruzado de ResearchHub content/26 Saude e Parcerias Efeitos · der-prr-saude-marcos-total."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

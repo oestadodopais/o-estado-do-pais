@@ -1,0 +1,41 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "pe-despacho-equilibrio"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "c) Verificação das condições do direito à reposição do equilíbrio financeiro do contrato e a negociação dos termos da eventual reposição desse equilíbrio, designadamente no que se refere: i) à implementação, através da publicação do Decreto-Lei n.º 71/2018, de 5 de setembro, das propostas do Grupo de Trabalho informal para a “Eventual Revisão do Sistema de Classificação de Veículos Ligeiros (Classes 1 e 2) para efeitos de Aplicação de Taxas de Portagem”, nos termos do Protocolo assinado em 9 de agosto de 2018 entre o IMT, I. P., e a BRISA; ii) à implementação do Decreto-Lei n.º 120/2021, de 24 de dezembro (que alterou o Decreto-Lei n.º 71/2018, de 5 de setembro), relativo à reclassificação em classe 1 dos veículos elétricos e híbridos dotados de tração aos dois eixos; iii. à atribuição de isenções de pagamento de taxas de portagem (aos veículos da Polícia Judiciária e aos veículos dedicados ao transporte de doentes); iv. à implementação do Decreto-Lei n.º 87-A/22, de 19 de dezembro (que aprovou o regime excecional de atualização das tarifas e taxas de portagem para o ano de 2023);"
+unit: "texto"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Diário da República"
+document:
+  title: "Despacho n.º 15154/2024"
+  edition: "2024-12-27"
+  locator: "Considerando b; tarefa equilibrio; PDF1"
+  source_sha256: "cedd69612497651c2997a56023ddb1cc8fbc62596c3d43194ce7e610221e8fc4"
+  page: 1
+  kind: "ficheiro"
+source_url: "https://files.diariodarepublica.pt/2s/2024/12/251000000/0003700039.pdf#page=1"
+access_date: "2026-10-20"
+texto_documental: true
+reference_date: "2024-12-27"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "c) Verificação das condições do direito à reposição do equilíbrio financeiro do contrato e a negociação dos termos da eventual reposição desse equilíbrio, designadamente no que se refere: i) à implementação, através da publicação do Decreto-Lei n.º 71/2018, de 5 de setembro, das propostas do Grupo de Trabalho informal para a “Eventual Revisão do Sistema de Classificação de Veículos Ligeiros (Classes 1 e 2) para efeitos de Aplicação de Taxas de Portagem”, nos termos do Protocolo assinado em 9 de agosto de 2018 entre o IMT, I. P., e a BRISA; ii) à implementação do Decreto-Lei n.º 120/2021, de 24 de dezembro (que alterou o Decreto-Lei n.º 71/2018, de 5 de setembro), relativo à reclassificação em classe 1 dos veículos elétricos e híbridos dotados de tração aos dois eixos; iii. à atribuição de isenções de pagamento de taxas de portagem (aos veículos da Polícia Judiciária e aos veículos dedicados ao transporte de doentes); iv. à implementação do Decreto-Lei n.º 87-A/22, de 19 de dezembro (que aprovou o regime excecional de atualização das tarifas e taxas de portagem para o ano de 2023);"
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "oe-2027"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Texto literal do diploma. A referência interna a 19 de dezembro no Decreto-Lei n.º 87-A/22 é conservada; o diploma foi publicado em 29 de dezembro de 2022. · Cruzado de ResearchHub content/26 Saude e Parcerias Efeitos · pe-despacho-equilibrio."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

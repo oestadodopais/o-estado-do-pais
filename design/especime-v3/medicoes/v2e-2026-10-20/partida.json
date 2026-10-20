@@ -1,0 +1,1831 @@
+{
+  "livro": "content/26 Saude e Parcerias Efeitos/ledger.json",
+  "sha256": "369861973279a11bbc240041c7525f8770b06b7cac86c3ce379f24e396701df3",
+  "linhas": [
+    {
+      "id": "dgo-atraso-45-p",
+      "value": "689,9",
+      "unit": "milhões de euros",
+      "period": "2026-08",
+      "note": "Pagamentos em atraso; não é dívida total. Quebra de definição em junho de 2026: prazo aplicável de 60 dias no SNS substitui mais de 90 dias após a data acordada. A nota da fonte é conservada integralmente no excerto. Valor bruto da célula: 689.8780166899998. Formato: #,##0.0.",
+      "label": "Unidades de Saúde EPE",
+      "label_en": "Public enterprise health units arrears"
+    },
+    {
+      "id": "dgo-regularizacao-ae",
+      "value": "1 398,6",
+      "unit": "milhões de euros",
+      "period": "2026-01/2026-08",
+      "note": "Pagamentos declarados pelas entidades, com contrapartida em reforço de capital. Não confundir pagamento executado com montante de capital autorizado. Valor bruto da célula: 1398.5612898499999. Formato: #,##0.0.",
+      "label": "Regularização de dívidas vencidas a fornecedores por parte de entidades do Serviço Nacional de Saúde, com contrapartida em reforços dos respetivos capitais pelo Estado (a)",
+      "label_en": "Settlement of overdue NHS supplier debt backed by State capital increases"
+    },
+    {
+      "id": "eurostat-be-phys",
+      "value": "334.25",
+      "unit": "Per hundred thousand inhabitants",
+      "period": "2024",
+      "note": "Último ano não nulo por país e categoria. Prioridade: em exercício (PRACT); se não existe, profissionalmente ativo (PACT); depois habilitado (LIC). Categorias diferentes não são equivalentes. UE27 sem agregado publicado é ausência, não média dos países.",
+      "label": "Médicos por cem mil habitantes",
+      "label_en": "Physicians per hundred thousand inhabitants"
+    },
+    {
+      "id": "eurostat-el-phys",
+      "value": "626.89",
+      "unit": "Per hundred thousand inhabitants",
+      "period": "2024",
+      "note": "Último ano não nulo por país e categoria. Prioridade: em exercício (PRACT); se não existe, profissionalmente ativo (PACT); depois habilitado (LIC). Categorias diferentes não são equivalentes. UE27 sem agregado publicado é ausência, não média dos países.",
+      "label": "Médicos por cem mil habitantes",
+      "label_en": "Physicians per hundred thousand inhabitants"
+    },
+    {
+      "id": "eurostat-lu-nrs",
+      "value": "1471.61",
+      "unit": "Per hundred thousand inhabitants",
+      "period": "2024",
+      "note": "Último ano não nulo por país e categoria. Prioridade: em exercício (PRACT); se não existe, profissionalmente ativo (PACT); depois habilitado (LIC). Categorias diferentes não são equivalentes. UE27 sem agregado publicado é ausência, não média dos países.",
+      "label": "Enfermeiros por cem mil habitantes",
+      "label_en": "Nurses per hundred thousand inhabitants"
+    },
+    {
+      "id": "eurostat-pt-nrs",
+      "value": "721.28",
+      "unit": "Per hundred thousand inhabitants",
+      "period": "2024",
+      "note": "Último ano não nulo por país e categoria. Prioridade: em exercício (PRACT); se não existe, profissionalmente ativo (PACT); depois habilitado (LIC). Categorias diferentes não são equivalentes. UE27 sem agregado publicado é ausência, não média dos países.",
+      "label": "Enfermeiros por cem mil habitantes",
+      "label_en": "Nurses per hundred thousand inhabitants"
+    },
+    {
+      "id": "eurostat-pt-phys",
+      "value": "431.35",
+      "unit": "Per hundred thousand inhabitants",
+      "period": "2024",
+      "note": "Último ano não nulo por país e categoria. Prioridade: em exercício (PRACT); se não existe, profissionalmente ativo (PACT); depois habilitado (LIC). Categorias diferentes não são equivalentes. UE27 sem agregado publicado é ausência, não média dos países.",
+      "label": "Médicos por cem mil habitantes",
+      "label_en": "Physicians per hundred thousand inhabitants"
+    },
+    {
+      "id": "eurostat-ro-nrs",
+      "value": "106.04",
+      "unit": "Per hundred thousand inhabitants",
+      "period": "2024",
+      "note": "Último ano não nulo por país e categoria. Prioridade: em exercício (PRACT); se não existe, profissionalmente ativo (PACT); depois habilitado (LIC). Categorias diferentes não são equivalentes. UE27 sem agregado publicado é ausência, não média dos países.",
+      "label": "Enfermeiros por cem mil habitantes",
+      "label_en": "Nurses per hundred thousand inhabitants"
+    },
+    {
+      "id": "infarmed-ambulatorio-2026-07-p5-acumulado-encargo",
+      "value": "1 179,3 M€",
+      "unit": "milhões de euros",
+      "period": "2026-01/2026-07",
+      "note": "Leitura da célula ou ponto do gráfico na imagem da página. Período e coluna conservados.  O teste automático confere a integridade dos ficheiros e a correspondência à transcrição; a leitura do valor na imagem foi conferida visualmente, sem alegar extração textual automática.",
+      "label": "Janeiro-Julho 2026: Encargo SNS",
+      "label_en": "January-July 2026: NHS expenditure"
+    },
+    {
+      "id": "infarmed-ambulatorio-2026-07-p5-homologo-encargo",
+      "value": "1 089,4 M€",
+      "unit": "milhões de euros",
+      "period": "2025-01/2025-07",
+      "note": "Leitura da célula ou ponto do gráfico na imagem da página. Período e coluna conservados.  O teste automático confere a integridade dos ficheiros e a correspondência à transcrição; a leitura do valor na imagem foi conferida visualmente, sem alegar extração textual automática.",
+      "label": "Janeiro-Julho 2025: Encargo SNS",
+      "label_en": "January-July 2025: NHS expenditure"
+    },
+    {
+      "id": "infarmed-ambulatorio-limitacao",
+      "value": "Os valores apresentados não refletem a totalidade das contribuições resultantes da implementação do Acordo Governo/APIFARMA e dos contratos de financiamento",
+      "unit": "texto",
+      "period": "2026-07",
+      "note": "Frase completa da Informação Prévia.",
+      "label": "Limitação dos valores Infarmed",
+      "label_en": "Infarmed figures limitation"
+    },
+    {
+      "id": "infarmed-hospitalar-2026-07-p5-acumulado-encargo",
+      "value": "1 600,9 M€",
+      "unit": "milhões de euros",
+      "period": "2026-01/2026-07",
+      "note": "Leitura da célula ou ponto do gráfico na imagem da página. Período e coluna conservados.  O teste automático confere a integridade dos ficheiros e a correspondência à transcrição; a leitura do valor na imagem foi conferida visualmente, sem alegar extração textual automática.",
+      "label": "Janeiro-Julho 2026: Encargo SNS",
+      "label_en": "January-July 2026: NHS expenditure"
+    },
+    {
+      "id": "infarmed-hospitalar-2026-07-p5-homologo-encargo",
+      "value": "1 530,2 M€",
+      "unit": "milhões de euros",
+      "period": "2025-01/2025-07",
+      "note": "Leitura da célula ou ponto do gráfico na imagem da página. Período e coluna conservados.  O teste automático confere a integridade dos ficheiros e a correspondência à transcrição; a leitura do valor na imagem foi conferida visualmente, sem alegar extração textual automática.",
+      "label": "Janeiro-Julho 2025: Encargo SNS",
+      "label_en": "January-July 2025: NHS expenditure"
+    },
+    {
+      "id": "oe2027-compromisso-cirurgias",
+      "value": "O acesso a procedimentos cirúrgicos constitui igualmente uma prioridade central da ação do SNS, com a definição de metas claras de aumento do volume total de cirurgias e do peso da cirurgia em ambulatório.",
+      "unit": "texto",
+      "period": "2027",
+      "note": "Intenção e previsão do Governo; não é resultado observado. Não fixa aqui quantidade para a meta assistencial.",
+      "label": "Compromisso de aumentar cirurgias",
+      "label_en": "Commitment to increase surgery"
+    },
+    {
+      "id": "oe2027-compromisso-consultas",
+      "value": "Neste contexto, o Governo assume o compromisso de aumentar o número de consultas médicas, tanto nos cuidados de saúde primários quanto em contexto hospitalar, o que representa um passo decisivo na resposta à procura e no reforço da capacidade assistencial do SNS.",
+      "unit": "texto",
+      "period": "2027",
+      "note": "Intenção e previsão do Governo; não é resultado observado. Não fixa aqui quantidade para a meta assistencial.",
+      "label": "Compromisso de aumentar consultas",
+      "label_en": "Commitment to increase appointments"
+    },
+    {
+      "id": "oe2027-indicador-medico",
+      "value": "Aumento do número de utentes com médico de família atribuídos",
+      "unit": "texto",
+      "period": "2027",
+      "note": "Indicador do quadro, sem valor de meta quantitativa. Os números da coluna Orçamento são dotações em milhões de euros, não metas assistenciais. Transcrição integral da célula textual.",
+      "label": "Aumento do número de utentes com médico de família atribuídos",
+      "label_en": "Increase in patients assigned a family doctor"
+    },
+    {
+      "id": "pe-brisa-periodo-imt",
+      "value": "Período da Concessão: 1972 – 2035",
+      "unit": "texto",
+      "period": "1972/2035",
+      "note": "O IMT indica o intervalo de anos; não é a data exata de assinatura.",
+      "label": "Período da concessão da Brisa no IMT",
+      "label_en": "Brisa concession period reported by IMT"
+    },
+    {
+      "id": "pe-brisa-prazo-minuta",
+      "value": "A concessão termina em 31 de Dezembro de 2035.",
+      "unit": "texto",
+      "period": "2035-12-31",
+      "note": "Minuta de 2008 e retificação de 2009 alojadas no ZIP. Recibo HTTP refere-se ao ZIP; o hash do membro identifica o PDF interno.",
+      "label": "Prazo da concessão da Brisa",
+      "label_en": "Brisa concession expiry"
+    },
+    {
+      "id": "pe-brisa-vias-minuta",
+      "value": "1 — A concessão tem por objecto a construção, conservação e exploração, em regime de portagem, das seguintes auto-estradas: a) A 1/IP 1 — Auto-Estrada do Norte — desde Vila Franca de Xira até Carvalhos, com a extensão de 266,9 km; b) A 2/IP 1 — Auto-Estrada do Sul — desde Fogueteiro até à via longitudinal do Algarve, com a extensão de 225,8 km; c) A 3/IP 1 — auto-estrada Porto-Valença desde o nó da Maia até Valença, com a extensão de 98,1 km; d) A 4/IP 4 — auto-estrada Porto-Amarante desde o nó de Ermesinde até Amarante, com a extensão de 48,3 km; e) A 5/IC 15 — Auto-Estrada da Costa do Estoril — desde o nó do Estádio Nacional até Cascais, com a extensão de 16,9 km; f)A6/IP 7 — auto-estrada Marateca (A2) — Caia — desde a A 2 até Elvas, com a extensão de 138,8 km; g) A 10/IC 2 — auto-estrada Bucelas (CREL) — Carregado — IC 3, com a extensão de 39,8 km; h) A 12/IC 3 — auto-estrada que liga Setúbal ao Montijo, com a extensão de 24,8 km; i) A 13/IC 3/IC 11 — auto-estrada entre Almeirim e Marateca, com a extensão de 78,7 km; j) A 14/IP 3 — auto-estrada entre Santa Eulália e Coimbra (Norte), com a extensão de 39,9 km; l) Ligação ao novo aeroporto de Lisboa, cuja extensão dependerá da respectiva localização; m) A9/IC 18 — CREL — Circular Regional Exterior de Lisboa, desde o Estádio Nacional (A5) até Alverca, com a extensão de 34,4 km.",
+      "unit": "texto",
+      "period": "2008-12-31",
+      "note": "Minuta aprovada em 2008. O ZIP contém também a retificação 16-C/2009, que incide sobre outros números e cláusulas. A lista não é convertida em cadastro atual de obras executadas.",
+      "label": "Vias da concessão na minuta de 2008",
+      "label_en": "Concession roads in the 2008 draft contract"
+    },
+    {
+      "id": "pe-despacho-alargamentos",
+      "value": "a) Avaliação dos alargamentos de vias a realizar assim como das regras contratuais relativas aos alargamentos de vias e sua eventual alteração;",
+      "unit": "texto",
+      "period": "2024-12-27",
+      "note": "Texto literal do diploma. A referência interna a 19 de dezembro no Decreto-Lei n.º 87-A/22 é conservada; o diploma foi publicado em 29 de dezembro de 2022.",
+      "label": "Alargamentos de vias",
+      "label_en": "Road widening"
+    },
+    {
+      "id": "pe-despacho-braga",
+      "value": "e) Acerto relativamente ao pagamento das receitas de portagem na Circular Sul de Braga, para Despacho n.º 15154/2024 o período entre 31 de dezembro de 2008 (data do Acordo Brisa) e 5 de fevereiro de 2010 (data da transição da exploração da Ascendi para a Brisa);",
+      "unit": "texto",
+      "period": "2024-12-27",
+      "note": "Texto literal do diploma. A referência interna a 19 de dezembro no Decreto-Lei n.º 87-A/22 é conservada; o diploma foi publicado em 29 de dezembro de 2022.",
+      "label": "Receitas da Circular Sul de Braga",
+      "label_en": "Braga southern ring road toll revenue"
+    },
+    {
+      "id": "pe-despacho-comparticipacoes",
+      "value": "d) Acertos relativamente a comparticipações financeiras pagas pelo Concedente para investimentos em aberto em 2008 e, entretanto, executados pela BRISA, à luz do controlo e reporte, nas suas competências contratuais e legais, pela Inspeção-Geral de Finanças — Autoridade de Auditoria;",
+      "unit": "texto",
+      "period": "2024-12-27",
+      "note": "Texto literal do diploma. A referência interna a 19 de dezembro no Decreto-Lei n.º 87-A/22 é conservada; o diploma foi publicado em 29 de dezembro de 2022.",
+      "label": "Acertos de comparticipações financeiras",
+      "label_en": "Adjustment of financial contributions"
+    },
+    {
+      "id": "pe-despacho-equilibrio",
+      "value": "c) Verificação das condições do direito à reposição do equilíbrio financeiro do contrato e a negociação dos termos da eventual reposição desse equilíbrio, designadamente no que se refere: i) à implementação, através da publicação do Decreto-Lei n.º 71/2018, de 5 de setembro, das propostas do Grupo de Trabalho informal para a “Eventual Revisão do Sistema de Classificação de Veículos Ligeiros (Classes 1 e 2) para efeitos de Aplicação de Taxas de Portagem”, nos termos do Protocolo assinado em 9 de agosto de 2018 entre o IMT, I. P., e a BRISA; ii) à implementação do Decreto-Lei n.º 120/2021, de 24 de dezembro (que alterou o Decreto-Lei n.º 71/2018, de 5 de setembro), relativo à reclassificação em classe 1 dos veículos elétricos e híbridos dotados de tração aos dois eixos; iii. à atribuição de isenções de pagamento de taxas de portagem (aos veículos da Polícia Judiciária e aos veículos dedicados ao transporte de doentes); iv. à implementação do Decreto-Lei n.º 87-A/22, de 19 de dezembro (que aprovou o regime excecional de atualização das tarifas e taxas de portagem para o ano de 2023);",
+      "unit": "texto",
+      "period": "2024-12-27",
+      "note": "Texto literal do diploma. A referência interna a 19 de dezembro no Decreto-Lei n.º 87-A/22 é conservada; o diploma foi publicado em 29 de dezembro de 2022.",
+      "label": "Reposição do equilíbrio financeiro",
+      "label_en": "Restoration of financial balance"
+    },
+    {
+      "id": "pe-despacho-investimentos-novos",
+      "value": "f) Avaliação de eventuais novos investimentos a realizar, designadamente relativos a novas acessibilidades e a novas ligações à rede rodoviária envolvente, e ponderação da viabilidade, e dos efeitos, da sua integração na concessão;",
+      "unit": "texto",
+      "period": "2024-12-27",
+      "note": "Texto literal do diploma. A referência interna a 19 de dezembro no Decreto-Lei n.º 87-A/22 é conservada; o diploma foi publicado em 29 de dezembro de 2022.",
+      "label": "Novos investimentos",
+      "label_en": "New investment"
+    },
+    {
+      "id": "pe-despacho-investimentos-previstos",
+      "value": "b) Avaliação de investimentos contratualmente previstos a realizar, incluindo a Ligação ao Novo Aeroporto de Lisboa e a Ligação à Plataforma Logística do Poceirão e a Ligação à Plataforma Logística Lisboa Norte, e consideração das comparticipações já pagas pelo Concedente relativamente a empreendimentos cuja implementação ainda não se iniciou, ou não se perspetiva iniciar;",
+      "unit": "texto",
+      "period": "2024-12-27",
+      "note": "Texto literal do diploma. A referência interna a 19 de dezembro no Decreto-Lei n.º 87-A/22 é conservada; o diploma foi publicado em 29 de dezembro de 2022.",
+      "label": "Investimentos contratualmente previstos",
+      "label_en": "Contractually planned investment"
+    },
+    {
+      "id": "pe-despacho-limites",
+      "value": "g) Outras matérias contratuais que requeiram clarificação e estabilização, nomeadamente no que se refere a limites da concessão;",
+      "unit": "texto",
+      "period": "2024-12-27",
+      "note": "Texto literal do diploma. A referência interna a 19 de dezembro no Decreto-Lei n.º 87-A/22 é conservada; o diploma foi publicado em 29 de dezembro de 2022.",
+      "label": "Limites da concessão",
+      "label_en": "Concession boundaries"
+    },
+    {
+      "id": "pe-despacho-qualidade",
+      "value": "h) Exploração de possibilidades de obtenção de ganhos de eficiência na relação contratual, incluindo a definição de mecanismos relativos à monitorização e avaliação da qualidade de serviço, à semelhança do que se verifica com outras concessões e subconcessões rodoviárias.”",
+      "unit": "texto",
+      "period": "2024-12-27",
+      "note": "Texto literal do diploma. A referência interna a 19 de dezembro no Decreto-Lei n.º 87-A/22 é conservada; o diploma foi publicado em 29 de dezembro de 2022.",
+      "label": "Monitorização da qualidade de serviço",
+      "label_en": "Service quality monitoring"
+    },
+    {
+      "id": "pe-dl87a-apoio",
+      "value": "1 — O apoio é assegurado através de uma comparticipação do Estado, a entregar às concessionárias, em complemento do pagamento das tarifas e taxas de portagem realizado pelos utilizadores no montante correspondente à diferença entre a atualização definida no artigo anterior e uma atualização que corresponderia a 7.7 %.",
+      "unit": "texto",
+      "period": "2023",
+      "note": "Versão original publicada, anterior à Declaração de Retificação n.º 2/2023.",
+      "label": "Comparticipação do Estado nas portagens",
+      "label_en": "State contribution to tolls"
+    },
+    {
+      "id": "pe-dl87a-apoio-retificado",
+      "value": "«1 — O apoio é assegurado através de um pagamento do Estado, a entregar às concessionárias, em complemento do pagamento das tarifas e taxas de portagem realizado pelos utilizadores, no montante correspondente à diferença entre as tarifas e taxas de portagem que resultariam da aplicação de um coeficiente de atualização para o ano de 2023 de 1,077, equivalente a um aumento de 7,7 %, e as tarifas e taxas de portagem que resultam da aplicação do n.º 1 do artigo anterior.»",
+      "unit": "texto",
+      "period": "2023",
+      "note": "A redação retificada substitui a referência a comparticipação na versão original.",
+      "label": "Pagamento do Estado nas portagens, redação retificada",
+      "label_en": "State toll support payment, corrected wording"
+    },
+    {
+      "id": "pe-dl87a-atualizacao",
+      "value": "1 — A atualização das tarifas e taxas de portagem para o ano de 2023 é fixada em 4,9 %, por aplicação de um coeficiente de 1,049 às tarifas e taxas em vigor no ano de 2022, sem prejuízo dos arredondamentos previstos contratualmente.",
+      "unit": "texto",
+      "period": "2023",
+      "note": "Versão original publicada, anterior à Declaração de Retificação n.º 2/2023.",
+      "label": "Atualização das portagens de 2023",
+      "label_en": "2023 toll rate update"
+    },
+    {
+      "id": "pe-dl87a-efeitos",
+      "value": "2 — A fixação da atualização das taxas e tarifas de portagem nos termos do n.º 1 do artigo 2.º produz efeitos a 1 de janeiro de 2023.",
+      "unit": "texto",
+      "period": "2023",
+      "note": "Versão original publicada, anterior à Declaração de Retificação n.º 2/2023.",
+      "label": "Produção de efeitos da atualização",
+      "label_en": "Effective date of the update"
+    },
+    {
+      "id": "pe-dl87a-financiamento",
+      "value": "Os encargos resultantes do apoio previsto nos artigos 3.º e 4.º são suportados diretamente pelo Orçamento do Estado, a processar pela DGTF.",
+      "unit": "texto",
+      "period": "2023",
+      "note": "Versão original publicada, anterior à Declaração de Retificação n.º 2/2023.",
+      "label": "Financiamento do apoio pelo Orçamento",
+      "label_en": "Budget financing of toll support"
+    },
+    {
+      "id": "pe-oe-algarve-cautelar",
+      "value": "O litígio em causa envolve (i) uma ação principal arbitral (ainda pendente), cujo valor ascende a 445 milhões de euros; e (ii) uma ação cautelar, no âmbito da qual o tribunal arbitral, pela decisão proferida no primeiro trimestre de 2021, condenou a Infraestruturas de Portugal a pagar à subconcessionária, a título provisório, um montante de cerca de 30 milhões de euros, acrescido de um valor mensal de cerca de 1,3 milhões de euros até à decisão da causa principal (valores acrescidos de imposto sobre o valor acrescentado nos termos legais).",
+      "unit": "texto",
+      "period": "2027",
+      "note": "Ação principal ainda pendente; valores acrescidos de IVA nos termos legais.",
+      "label": "Ação principal e pagamento cautelar à Rotas do Algarve Litoral",
+      "label_en": "Main action and interim payment to Rotas do Algarve Litoral"
+    },
+    {
+      "id": "pe-oe-algarve-provisorio",
+      "value": "Pagamento provisório de 15,2 milhões de euros (correspondente aos períodos do segundo semestre de 2025 e ao primeiro semestre de 2026) no âmbito do processo da Rotas do Algarve Litoral, S.A. 60, reduzindo, nessa medida, o valor da contingência em causa;",
+      "unit": "texto",
+      "period": "2027",
+      "note": "",
+      "label": "Pagamento provisório à Rotas do Algarve Litoral",
+      "label_en": "Interim payment to Rotas do Algarve Litoral"
+    },
+    {
+      "id": "pe-oe-apoio-dl87a",
+      "value": "Regista-se também um aparente aumento dos encargos brutos plurianuais, decorrente da inclusão dos montantes relativos ao apoio pago às concessionárias com titularidade de portagem no âmbito do Decreto-Lei nº 87-A/2022. Este apoio não constava do Relatório do Orçamento do Estado anterior, uma vez que, do ponto de vista da Infraestruturas de Portugal, tem um efeito neutro (o montante desembolsado por esta entidade corresponde ao montante que lhe é atribuído pelo Estado). Contudo, na ótica do setor público como um todo, este apoio configura um encargo efetivo com parcerias público-privadas, pelo que se passa agora a incluir no presente Relatório. Em face desta alteração, os valores relativos a este item não são diretamente comparáveis com os apresentados no Relatório anterior, sendo que a comparabilidade fica assegurada a partir dos próximos Relatórios.",
+      "unit": "texto",
+      "period": "2027",
+      "note": "",
+      "label": "Apoio às portagens: alteração do perímetro de reporte",
+      "label_en": "Toll support: change in reporting perimeter"
+    },
+    {
+      "id": "pe-oe-beira-abolicao",
+      "value": "Salienta-se ainda o desenvolvimento dos trabalhos de negociação 38 no âmbito do contrato de concessão da Beira Interior, na sequência do pedido apresentado pela concessionária no contexto da abolição das portagens, tendo em vista verificar se estão reunidas as condições para a reposição do equilíbrio financeiro do contrato e para negociar os respetivos termos, abrangendo ainda a renegociação de outros aspetos contratuais relevantes e a avaliação de eventuais novos investimentos a realizar.",
+      "unit": "texto",
+      "period": "2027",
+      "note": "",
+      "label": "Beira Interior: pedido pela abolição de portagens",
+      "label_en": "Beira Interior claim following toll abolition"
+    },
+    {
+      "id": "pe-oe-brisa-negociacao",
+      "value": "Encontram-se igualmente em curso os trabalhos de negociação36 no âmbito do contrato de concessão da Brisa, abrangendo, entre outras matérias, a avaliação de investimentos contratualmente previstos, a verificação das condições e termos de uma eventual reposição do equilíbrio financeiro do contrato e a avaliação de eventuais novos investimentos a realizar.",
+      "unit": "texto",
+      "period": "2027",
+      "note": "O algarismo 36 é a chamada da nota da comissão. Não constitui valor do pedido.",
+      "label": "Negociação da concessão da Brisa",
+      "label_en": "Brisa concession negotiations"
+    },
+    {
+      "id": "pe-oe-brisa-pedido",
+      "value": "Desenvolvimento do procedimento negocial conduzido pela comissão de negociação constituída através do Despacho nº 15154/2024, de 16 de dezembro de 2024, da Diretora da UTAP, no âmbito do qual a Concessionária Brisa quantificou parte dos pedidos ou matérias em negociação (conforme descritas no referido despacho), no montante de cerca de 1122,5 milhões de euros;",
+      "unit": "texto",
+      "period": "2027",
+      "note": "O relatório descreve pedidos do parceiro privado; não os reconhece como dívida pública.",
+      "label": "Pedidos quantificados pela Brisa",
+      "label_en": "Claims quantified by Brisa"
+    },
+    {
+      "id": "pe-oe-contingentes",
+      "value": "Ainda no que respeita aos principais riscos orçamentais identificados, importa mencionar que a previsão de encargos contingenciais não contempla o pagamento, a qualquer título, das denominadas compensações contingentes previstas nos contratos atualmente em vigor, em linha com o Relatório nº 15/2012, da 2ª secção do Tribunal de Contas (Auditoria ao Modelo de Gestão, Financiamento e Regulação do Setor Rodoviário), com exceção das situações em que esses pagamentos sejam reclamados pelos parceiros privados no âmbito dos processos judiciais ou arbitrais.",
+      "unit": "texto",
+      "period": "2027",
+      "note": "",
+      "label": "Compensações contingentes excluídas da previsão",
+      "label_en": "Contingent compensation excluded from forecast"
+    },
+    {
+      "id": "pe-oe-riscos-nao-reconhecimento",
+      "value": "Em todo o caso, importa sublinhar que a presente análise não implica qualquer reconhecimento ou assunção, ainda que tácita, de responsabilidades por parte dos parceiros públicos decorrentes das pretensões deduzidas pelos parceiros privados, quer quanto aos respetivos fundamentos, que, na maioria das situações, são rejeitados pelos parceiros públicos, quer quanto aos montantes peticionados. Com efeito, ao longo dos últimos anos verificou-se, em diversas situações, que os pedidos formulados pelos parceiros privados vieram a ser considerados improcedentes, ou que as responsabilidades financeiras imputadas aos parceiros públicos foram inferiores aos montantes inicialmente peticionados.",
+      "unit": "texto",
+      "period": "2027",
+      "note": "",
+      "label": "Não reconhecimento das pretensões privadas",
+      "label_en": "No recognition of private claims"
+    },
+    {
+      "id": "pe-oe-riscos-total",
+      "value": "De acordo com a informação disponível, o valor global dos pedidos de REF e dos pedidos formulados nos litígios em curso pelas concessionárias e subconcessionárias rodoviárias ascende a cerca de 2388,2 milhões de euros. Em comparação com o valor global dos riscos e contingências apresentado no Relatório do Orçamento do Estado para 2026, verifica-se um acréscimo de cerca de 1140 milhões de euros.",
+      "unit": "texto",
+      "period": "2027",
+      "note": "",
+      "label": "Pedidos e litígios rodoviários",
+      "label_en": "Road concession claims and disputes"
+    },
+    {
+      "id": "pe-scut-trocos",
+      "value": "São eliminadas as taxas de portagem cobradas aos utilizadores nos lanços e sublanços das seguintes autoestradas: a) A4 — Transmontana e Túnel do Marão; b) A13 e A13-1 — Pinhal Interior; c) A22 — Algarve; d) A23 — Beira Interior; e) A24 — Interior Norte; f) A25 — Beiras Litoral e Alta; g) A28 — Litoral Norte, nos troços entre Esposende e Antas, e entre Neiva e Darque.",
+      "unit": "texto",
+      "period": "2025-01-01",
+      "note": "",
+      "label": "Autoestradas e troços com eliminação de portagens",
+      "label_en": "Motorways and sections with toll abolition"
+    },
+    {
+      "id": "pe-scut-vigencia",
+      "value": "A presente lei entra em vigor no dia 1 de janeiro de 2025.",
+      "unit": "texto",
+      "period": "2025-01-01",
+      "note": "",
+      "label": "Entrada em vigor da eliminação de portagens",
+      "label_en": "Entry into force of toll abolition"
+    },
+    {
+      "id": "pe-tc15-acordos",
+      "value": "Porém, no decurso dos trabalhos de auditoria, em anexo aos contratos “reformados”, foi detetada a existência de acordos entre os Bancos financiadores, as Subconcessionárias e a E.P., S.A., consagrando um conjunto de denominadas “compensações contingentes”, as quais, nos termos acordados, são devidas às subconcessionárias sem reservas ou condições e têm por objetivo compensar as mesmas pelos custos financeiros adicionais sofridos, em resultado da crise financeira internacional.",
+      "unit": "texto",
+      "period": "2012",
+      "note": "Documento histórico; não é previsão para 2027.",
+      "label": "Acordos de compensações contingentes",
+      "label_en": "Contingent compensation agreements"
+    },
+    {
+      "id": "pe-tc15-fundamento",
+      "value": "No entanto, os pagamentos ou remunerações devidos nos termos de um contrato têm de encontrar o seu fundamento nas cláusulas contratuais que definem o respetivo regime jurídico, ou seja, se, quando, como e a quem os mesmos ou as mesmas são devidos, o que não é possível pela análise do Caso Base de uma subconcessão, uma vez que aquele é tão só um conjunto de pressupostos, projeções e outros dados de natureza económico-financeira.",
+      "unit": "texto",
+      "period": "2012",
+      "note": "Documento histórico; não é previsão para 2027.",
+      "label": "Fundamento contratual dos pagamentos",
+      "label_en": "Contractual basis for payments"
+    },
+    {
+      "id": "pe-tc15-futuros",
+      "value": "Os encargos futuros que a empresa prevê, com aquelas concessões, mais os compromissos que assumiu, no âmbito do NMGFSR para com as subconcessões rodoviárias, ascenderão, entre 2011 e 2014, a 59 aproximadamente 3,3 mil milhões de euros .",
+      "unit": "texto",
+      "period": "2012",
+      "note": "Documento histórico; não é previsão para 2027. O algarismo 59 deslocado na extração é a chamada de nota do PDF, não uma parcela do montante.",
+      "label": "Encargos futuros previstos no relatório de 2012",
+      "label_en": "Future charges forecast in the 2012 report"
+    },
+    {
+      "id": "pe-tc15-infracoes",
+      "value": "Neste contexto, o Tribunal vai estar atento aos eventuais pagamentos a realizar sob a forma de “compensações contingentes”, uma vez que podem, os mesmos, vir a constituir infrações financeiras.",
+      "unit": "texto",
+      "period": "2012",
+      "note": "Documento histórico; não é previsão para 2027.",
+      "label": "Possíveis infrações nos pagamentos contingentes",
+      "label_en": "Possible infringements in contingent payments"
+    },
+    {
+      "id": "pe-tc15-remuneracao",
+      "value": "Atente-se que os acordos em causa constituíram, assim, uma forma adicional de remuneração das subconcessões, que não estava prevista nos cadernos de encargos, que não foi objeto de apreciação no âmbito da análise e da classificação das propostas, que não foi espelhada no texto dos contratos principais, designadamente nas cláusulas que, nos mesmos, definiram as remunerações, e que não foi visada por este Tribunal.",
+      "unit": "texto",
+      "period": "2012",
+      "note": "Documento histórico; não é previsão para 2027.",
+      "label": "Remuneração não visada",
+      "label_en": "Remuneration not cleared by the Court"
+    },
+    {
+      "id": "prr-complemento-p3-1.24-estado",
+      "value": "Completo",
+      "unit": "texto",
+      "period": "2025-12-31",
+      "note": "Código da medida C01-i03. Tipo impresso: Marco. Estado reportado no anexo do Relatório Anual 2025. Esta linha não fornece a quantidade de equipamentos, edifícios, lugares ou pessoas realizada nem a meta numérica contratual. O teste automático confere a integridade dos ficheiros e a correspondência à transcrição; a leitura do valor na imagem foi conferida visualmente, sem alegar extração textual automática.",
+      "label": "Realização de ações de sensibilização e de formação para «construir os percursos dos doentes» no contexto das demências: Estado",
+      "label_en": "Dementia care pathway awareness and training: Status"
+    },
+    {
+      "id": "prr-complemento-p3-1.3-estado",
+      "value": "Completo",
+      "unit": "texto",
+      "period": "2025-12-31",
+      "note": "Código da medida C01-r01. Tipo impresso: Meta. Estado reportado no anexo do Relatório Anual 2025. Esta linha não fornece a quantidade de equipamentos, edifícios, lugares ou pessoas realizada nem a meta numérica contratual. O teste automático confere a integridade dos ficheiros e a correspondência à transcrição; a leitura do valor na imagem foi conferida visualmente, sem alegar extração textual automática.",
+      "label": "Conclusão do processo de descentralização das responsabilidades no domínio da saúde nos municípios: Estado",
+      "label_en": "Completion of municipal health responsibility decentralisation: Status"
+    },
+    {
+      "id": "prr-complemento-p3-1.32-estado",
+      "value": "Completo",
+      "unit": "texto",
+      "period": "2025-12-31",
+      "note": "Código da medida C01-i06. Tipo impresso: Meta. Estado reportado no anexo do Relatório Anual 2025. Esta linha não fornece a quantidade de equipamentos, edifícios, lugares ou pessoas realizada nem a meta numérica contratual. O teste automático confere a integridade dos ficheiros e a correspondência à transcrição; a leitura do valor na imagem foi conferida visualmente, sem alegar extração textual automática.",
+      "label": "Modernização das redes locais de tecnologias da informação: Estado",
+      "label_en": "Modernisation of local information technology networks: Status"
+    },
+    {
+      "id": "prr-complemento-p3-1.33-estado",
+      "value": "Completo",
+      "unit": "texto",
+      "period": "2025-12-31",
+      "note": "Código da medida C01-i06. Tipo impresso: Meta. Estado reportado no anexo do Relatório Anual 2025. Esta linha não fornece a quantidade de equipamentos, edifícios, lugares ou pessoas realizada nem a meta numérica contratual. O teste automático confere a integridade dos ficheiros e a correspondência à transcrição; a leitura do valor na imagem foi conferida visualmente, sem alegar extração textual automática.",
+      "label": "Implementação de funcionalidades para telessaúde e telemonitorização: Estado",
+      "label_en": "Implementation of telehealth and remote monitoring functions: Status"
+    },
+    {
+      "id": "prr-complemento-p3-1.8-estado",
+      "value": "Completo",
+      "unit": "texto",
+      "period": "2025-12-31",
+      "note": "Código da medida C01-r03. Tipo impresso: Meta. Estado reportado no anexo do Relatório Anual 2025. Esta linha não fornece a quantidade de equipamentos, edifícios, lugares ou pessoas realizada nem a meta numérica contratual. O teste automático confere a integridade dos ficheiros e a correspondência à transcrição; a leitura do valor na imagem foi conferida visualmente, sem alegar extração textual automática.",
+      "label": "Criação de novos Centros de Responsabilidade Integrados nos hospitais do Serviço Nacional de Saúde: Estado",
+      "label_en": "Creation of integrated responsibility centres in NHS hospitals: Status"
+    },
+    {
+      "id": "prr-complemento-p4-1.1-estado",
+      "value": "Completo",
+      "unit": "texto",
+      "period": "2025-12-31",
+      "note": "Código da medida C01-r01. Tipo impresso: Marco. Estado reportado no anexo do Relatório Anual 2025. Esta linha não fornece a quantidade de equipamentos, edifícios, lugares ou pessoas realizada nem a meta numérica contratual. O teste automático confere a integridade dos ficheiros e a correspondência à transcrição; a leitura do valor na imagem foi conferida visualmente, sem alegar extração textual automática.",
+      "label": "Entrada em vigor de atos jurídicos no domínio dos cuidados de saúde primários: Estado",
+      "label_en": "Entry into force of primary healthcare legal acts: Status"
+    },
+    {
+      "id": "prr-complemento-p4-1.12-estado",
+      "value": "Completo",
+      "unit": "texto",
+      "period": "2025-12-31",
+      "note": "Código da medida C01-r03. Tipo impresso: Marco. Estado reportado no anexo do Relatório Anual 2025. Esta linha não fornece a quantidade de equipamentos, edifícios, lugares ou pessoas realizada nem a meta numérica contratual. O teste automático confere a integridade dos ficheiros e a correspondência à transcrição; a leitura do valor na imagem foi conferida visualmente, sem alegar extração textual automática.",
+      "label": "Entrada em vigor do novo regime de exclusividade para o exercício de funções no Serviço Nacional de Saúde: Estado",
+      "label_en": "Entry into force of the NHS exclusivity regime: Status"
+    },
+    {
+      "id": "prr-complemento-p4-1.2-estado",
+      "value": "Completo",
+      "unit": "texto",
+      "period": "2025-12-31",
+      "note": "Código da medida C01-r01. Tipo impresso: Meta. Estado reportado no anexo do Relatório Anual 2025. Esta linha não fornece a quantidade de equipamentos, edifícios, lugares ou pessoas realizada nem a meta numérica contratual. O teste automático confere a integridade dos ficheiros e a correspondência à transcrição; a leitura do valor na imagem foi conferida visualmente, sem alegar extração textual automática.",
+      "label": "Disponibilização de acesso ao instrumento de estratificação do risco para apoiar a gestão clínica nas unidades funcionais dos agrupamentos de centros de saúde: Estado",
+      "label_en": "Availability of the primary healthcare risk stratification tool: Status"
+    },
+    {
+      "id": "prr-complemento-p4-1.40-estado",
+      "value": "Completo",
+      "unit": "texto",
+      "period": "2025-12-31",
+      "note": "Código da medida C01-i04. Tipo impresso: Marco. Estado reportado no anexo do Relatório Anual 2025. Esta linha não fornece a quantidade de equipamentos, edifícios, lugares ou pessoas realizada nem a meta numérica contratual. O teste automático confere a integridade dos ficheiros e a correspondência à transcrição; a leitura do valor na imagem foi conferida visualmente, sem alegar extração textual automática.",
+      "label": "Assinatura do contrato de gestão para a construção do Hospital de Lisboa Oriental: Estado",
+      "label_en": "Management contract for construction of Eastern Lisbon Hospital: Status"
+    },
+    {
+      "id": "prr-complemento-p4-1.41-estado",
+      "value": "Completo",
+      "unit": "texto",
+      "period": "2025-12-31",
+      "note": "Código da medida C01-i10. Tipo impresso: Marco. Estado reportado no anexo do Relatório Anual 2025. Esta linha não fornece a quantidade de equipamentos, edifícios, lugares ou pessoas realizada nem a meta numérica contratual. O teste automático confere a integridade dos ficheiros e a correspondência à transcrição; a leitura do valor na imagem foi conferida visualmente, sem alegar extração textual automática.",
+      "label": "Aprovação do relatório que identifica as necessidades do Serviço Nacional de Saúde em matéria de equipamento médico pesado: Estado",
+      "label_en": "Approval of the NHS heavy medical equipment needs report: Status"
+    },
+    {
+      "id": "prr-complemento-p4-1.5-estado",
+      "value": "Completo",
+      "unit": "texto",
+      "period": "2025-12-31",
+      "note": "Código da medida C01-r02. Tipo impresso: Marco. Estado reportado no anexo do Relatório Anual 2025. Esta linha não fornece a quantidade de equipamentos, edifícios, lugares ou pessoas realizada nem a meta numérica contratual. O teste automático confere a integridade dos ficheiros e a correspondência à transcrição; a leitura do valor na imagem foi conferida visualmente, sem alegar extração textual automática.",
+      "label": "Entrada em vigor da nova Lei de Saúde Mental, que estabelecerá os princípios relacionados com os direitos das pessoas com doença mental e regulará a hospitalização e o internamento compulsivos: Estado",
+      "label_en": "Entry into force of the new Mental Health Law: Status"
+    },
+    {
+      "id": "prr-complemento-p5-1.11-estado",
+      "value": "Completo",
+      "unit": "texto",
+      "period": "2025-12-31",
+      "note": "Código da medida C01-r03. Tipo impresso: Marco. Estado reportado no anexo do Relatório Anual 2025. Esta linha não fornece a quantidade de equipamentos, edifícios, lugares ou pessoas realizada nem a meta numérica contratual. O teste automático confere a integridade dos ficheiros e a correspondência à transcrição; a leitura do valor na imagem foi conferida visualmente, sem alegar extração textual automática.",
+      "label": "Entrada em vigor do plano de ação para reforçar os mecanismos de compra centralizada de medicamentos: Estado",
+      "label_en": "Entry into force of the centralised medicine purchasing action plan: Status"
+    },
+    {
+      "id": "prr-complemento-p5-1.22-estado",
+      "value": "Completo",
+      "unit": "texto",
+      "period": "2025-12-31",
+      "note": "Código da medida C01-i02. Tipo impresso: Meta. Estado reportado no anexo do Relatório Anual 2025. Esta linha não fornece a quantidade de equipamentos, edifícios, lugares ou pessoas realizada nem a meta numérica contratual. O teste automático confere a integridade dos ficheiros e a correspondência à transcrição; a leitura do valor na imagem foi conferida visualmente, sem alegar extração textual automática.",
+      "label": "Reforço da capacidade de resposta da Rede Nacional dos Cuidados Continuados Integrados e da Rede Nacional de Cuidados Paliativos, na vertente domiciliária: Estado",
+      "label_en": "Increased home care capacity in the integrated continuing care and palliative care networks: Status"
+    },
+    {
+      "id": "prr-complemento-p5-1.28-estado",
+      "value": "Completo",
+      "unit": "texto",
+      "period": "2025-12-31",
+      "note": "Código da medida C01-i05-RAM. Tipo impresso: Meta. Estado reportado no anexo do Relatório Anual 2025. Esta linha não fornece a quantidade de equipamentos, edifícios, lugares ou pessoas realizada nem a meta numérica contratual. O teste automático confere a integridade dos ficheiros e a correspondência à transcrição; a leitura do valor na imagem foi conferida visualmente, sem alegar extração textual automática.",
+      "label": "Criação de equipas de saúde mental comunitária no Serviço Regional de Saúde da Madeira: Estado",
+      "label_en": "Creation of community mental health teams in Madeira: Status"
+    },
+    {
+      "id": "prr-complemento-p5-1.7-estado",
+      "value": "Completo",
+      "unit": "texto",
+      "period": "2025-12-31",
+      "note": "Código da medida C01-r03. Tipo impresso: Marco. Estado reportado no anexo do Relatório Anual 2025. Esta linha não fornece a quantidade de equipamentos, edifícios, lugares ou pessoas realizada nem a meta numérica contratual. O teste automático confere a integridade dos ficheiros e a correspondência à transcrição; a leitura do valor na imagem foi conferida visualmente, sem alegar extração textual automática.",
+      "label": "Entrada em vigor do novo Plano de Contabilidade de Gestão do Serviço Nacional de Saúde: Estado",
+      "label_en": "Entry into force of the NHS management accounting plan: Status"
+    },
+    {
+      "id": "prr-complemento-p5-1.9-estado",
+      "value": "Completo",
+      "unit": "texto",
+      "period": "2025-12-31",
+      "note": "Código da medida C01-r03. Tipo impresso: Meta. Estado reportado no anexo do Relatório Anual 2025. Esta linha não fornece a quantidade de equipamentos, edifícios, lugares ou pessoas realizada nem a meta numérica contratual. O teste automático confere a integridade dos ficheiros e a correspondência à transcrição; a leitura do valor na imagem foi conferida visualmente, sem alegar extração textual automática.",
+      "label": "Criação de novos Centros de Responsabilidade Integrados nos hospitais do Serviço Nacional de Saúde: Estado",
+      "label_en": "Creation of integrated responsibility centres in NHS hospitals: Status"
+    },
+    {
+      "id": "prr-complemento-p6-1.10-estado",
+      "value": "Completo",
+      "unit": "texto",
+      "period": "2025-12-31",
+      "note": "Código da medida C01-r03. Tipo impresso: Meta. Estado reportado no anexo do Relatório Anual 2025. Esta linha não fornece a quantidade de equipamentos, edifícios, lugares ou pessoas realizada nem a meta numérica contratual. O teste automático confere a integridade dos ficheiros e a correspondência à transcrição; a leitura do valor na imagem foi conferida visualmente, sem alegar extração textual automática.",
+      "label": "Aumento no número de pacientes em hospitalização domiciliária com alta: Estado",
+      "label_en": "Increase in discharged home hospitalisation patients: Status"
+    },
+    {
+      "id": "prr-complemento-p6-1.37-estado",
+      "value": "Completo",
+      "unit": "texto",
+      "period": "2025-12-31",
+      "note": "Código da medida C01-i08-RAA. Tipo impresso: Marco. Estado reportado no anexo do Relatório Anual 2025. Esta linha não fornece a quantidade de equipamentos, edifícios, lugares ou pessoas realizada nem a meta numérica contratual. O teste automático confere a integridade dos ficheiros e a correspondência à transcrição; a leitura do valor na imagem foi conferida visualmente, sem alegar extração textual automática.",
+      "label": "Telemedicina no Serviço Regional de Saúde dos Açores: Estado",
+      "label_en": "Telemedicine in the Azores regional health service: Status"
+    },
+    {
+      "id": "prr-complemento-p6-1.42-estado",
+      "value": "Completo",
+      "unit": "texto",
+      "period": "2025-12-31",
+      "note": "Código da medida C01-i10. Tipo impresso: Meta. Estado reportado no anexo do Relatório Anual 2025. Esta linha não fornece a quantidade de equipamentos, edifícios, lugares ou pessoas realizada nem a meta numérica contratual. O teste automático confere a integridade dos ficheiros e a correspondência à transcrição; a leitura do valor na imagem foi conferida visualmente, sem alegar extração textual automática.",
+      "label": "Aquisição de equipamento médico pesado: Estado",
+      "label_en": "Acquisition of heavy medical equipment: Status"
+    },
+    {
+      "id": "prr-complemento-p7-1.34-estado",
+      "value": "Em avaliação na CE",
+      "unit": "texto",
+      "period": "2025-12-31",
+      "note": "Código da medida C01-i06. Tipo impresso: Marco. Estado reportado no anexo do Relatório Anual 2025. Esta linha não fornece a quantidade de equipamentos, edifícios, lugares ou pessoas realizada nem a meta numérica contratual. O teste automático confere a integridade dos ficheiros e a correspondência à transcrição; a leitura do valor na imagem foi conferida visualmente, sem alegar extração textual automática.",
+      "label": "Disponibilidade de módulos de tecnologias de informação: Estado",
+      "label_en": "Availability of information technology modules: Status"
+    },
+    {
+      "id": "prr-complemento-p7-1.35-estado",
+      "value": "Em avaliação na CE",
+      "unit": "texto",
+      "period": "2025-12-31",
+      "note": "Código da medida C01-i07-RAM. Tipo impresso: Meta. Estado reportado no anexo do Relatório Anual 2025. Esta linha não fornece a quantidade de equipamentos, edifícios, lugares ou pessoas realizada nem a meta numérica contratual. O teste automático confere a integridade dos ficheiros e a correspondência à transcrição; a leitura do valor na imagem foi conferida visualmente, sem alegar extração textual automática.",
+      "label": "Novo equipamento digital para o Serviço Regional de Saúde da Madeira: Estado",
+      "label_en": "New digital equipment for the Madeira regional health service: Status"
+    },
+    {
+      "id": "prr-complemento-p7-1.36-estado",
+      "value": "Em avaliação na CE",
+      "unit": "texto",
+      "period": "2025-12-31",
+      "note": "Código da medida C01-i08-RAA. Tipo impresso: Marco. Estado reportado no anexo do Relatório Anual 2025. Esta linha não fornece a quantidade de equipamentos, edifícios, lugares ou pessoas realizada nem a meta numérica contratual. O teste automático confere a integridade dos ficheiros e a correspondência à transcrição; a leitura do valor na imagem foi conferida visualmente, sem alegar extração textual automática.",
+      "label": "Disponibilidade da aplicação e do sítio Web do Serviço Regional de Saúde dos Açores: Estado",
+      "label_en": "Availability of the Azores regional health service app and website: Status"
+    },
+    {
+      "id": "prr-complemento-p7-1.38-estado",
+      "value": "Em avaliação na CE",
+      "unit": "texto",
+      "period": "2025-12-31",
+      "note": "Código da medida C01-i09. Tipo impresso: Marco. Estado reportado no anexo do Relatório Anual 2025. Esta linha não fornece a quantidade de equipamentos, edifícios, lugares ou pessoas realizada nem a meta numérica contratual. O teste automático confere a integridade dos ficheiros e a correspondência à transcrição; a leitura do valor na imagem foi conferida visualmente, sem alegar extração textual automática.",
+      "label": "Aquisição de kits de bicicletas: Estado",
+      "label_en": "Acquisition of bicycle kits: Status"
+    },
+    {
+      "id": "prr-complemento-p7-1.39-estado",
+      "value": "Em avaliação na CE",
+      "unit": "texto",
+      "period": "2025-12-31",
+      "note": "Código da medida C01-i09. Tipo impresso: Marco. Estado reportado no anexo do Relatório Anual 2025. Esta linha não fornece a quantidade de equipamentos, edifícios, lugares ou pessoas realizada nem a meta numérica contratual. O teste automático confere a integridade dos ficheiros e a correspondência à transcrição; a leitura do valor na imagem foi conferida visualmente, sem alegar extração textual automática.",
+      "label": "Campanha para o Sistema Universal de Apoio à Vida Ativa: Estado",
+      "label_en": "Campaign for the Universal Support System for Active Living: Status"
+    },
+    {
+      "id": "prr-complemento-p8-1.21-estado",
+      "value": "Dentro do Prazo",
+      "unit": "texto",
+      "period": "2025-12-31",
+      "note": "Código da medida C01-i02. Tipo impresso: Meta. Estado reportado no anexo do Relatório Anual 2025. Esta linha não fornece a quantidade de equipamentos, edifícios, lugares ou pessoas realizada nem a meta numérica contratual. O teste automático confere a integridade dos ficheiros e a correspondência à transcrição; a leitura do valor na imagem foi conferida visualmente, sem alegar extração textual automática.",
+      "label": "Renovação ou construção no sistema de saúde: Estado",
+      "label_en": "Renovation or construction in the health system: Status"
+    },
+    {
+      "id": "prr-complemento-p8-1.25-estado",
+      "value": "Dentro do Prazo",
+      "unit": "texto",
+      "period": "2025-12-31",
+      "note": "Código da medida C01-i03. Tipo impresso: Marco. Estado reportado no anexo do Relatório Anual 2025. Esta linha não fornece a quantidade de equipamentos, edifícios, lugares ou pessoas realizada nem a meta numérica contratual. O teste automático confere a integridade dos ficheiros e a correspondência à transcrição; a leitura do valor na imagem foi conferida visualmente, sem alegar extração textual automática.",
+      "label": "Rede de cuidados de saúde mental: Estado",
+      "label_en": "Mental healthcare network: Status"
+    },
+    {
+      "id": "prr-complemento-p9-1.17-estado",
+      "value": "Dentro do Prazo",
+      "unit": "texto",
+      "period": "2025-12-31",
+      "note": "Código da medida C01-i01. Tipo impresso: Marco. Estado reportado no anexo do Relatório Anual 2025. Esta linha não fornece a quantidade de equipamentos, edifícios, lugares ou pessoas realizada nem a meta numérica contratual. O teste automático confere a integridade dos ficheiros e a correspondência à transcrição; a leitura do valor na imagem foi conferida visualmente, sem alegar extração textual automática.",
+      "label": "Aquisição de equipamento e disponibilidade de serviços ou consultas nas unidades locais de saúde: Estado",
+      "label_en": "Acquisition of equipment and availability of local health unit services or consultations: Status"
+    },
+    {
+      "id": "prr-complemento-p9-1.18-estado",
+      "value": "Dentro do Prazo",
+      "unit": "texto",
+      "period": "2025-12-31",
+      "note": "Código da medida C01-i01. Tipo impresso: Meta. Estado reportado no anexo do Relatório Anual 2025. Esta linha não fornece a quantidade de equipamentos, edifícios, lugares ou pessoas realizada nem a meta numérica contratual. O teste automático confere a integridade dos ficheiros e a correspondência à transcrição; a leitura do valor na imagem foi conferida visualmente, sem alegar extração textual automática.",
+      "label": "Construção ou renovação de unidades de saúde: Estado",
+      "label_en": "Construction or renovation of health units: Status"
+    },
+    {
+      "id": "prr-complemento-p9-1.26-estado",
+      "value": "Dentro do Prazo",
+      "unit": "texto",
+      "period": "2025-12-31",
+      "note": "Código da medida C01-i04. Tipo impresso: Marco. Estado reportado no anexo do Relatório Anual 2025. Esta linha não fornece a quantidade de equipamentos, edifícios, lugares ou pessoas realizada nem a meta numérica contratual. O teste automático confere a integridade dos ficheiros e a correspondência à transcrição; a leitura do valor na imagem foi conferida visualmente, sem alegar extração textual automática.",
+      "label": "Construção e renovação de edifícios para serviços de saúde e equipamento para cuidados de saúde: Estado",
+      "label_en": "Construction and renovation of health service buildings and healthcare equipment: Status"
+    },
+    {
+      "id": "prr-complemento-p9-1.30-estado",
+      "value": "Dentro do Prazo",
+      "unit": "texto",
+      "period": "2025-12-31",
+      "note": "Código da medida C01-i05-RAM. Tipo impresso: Marco. Estado reportado no anexo do Relatório Anual 2025. Esta linha não fornece a quantidade de equipamentos, edifícios, lugares ou pessoas realizada nem a meta numérica contratual. O teste automático confere a integridade dos ficheiros e a correspondência à transcrição; a leitura do valor na imagem foi conferida visualmente, sem alegar extração textual automática.",
+      "label": "Construção ou renovações no Serviço Regional de Saúde da Região Autónoma da Madeira: Estado",
+      "label_en": "Construction or renovation in the Madeira regional health service: Status"
+    },
+    {
+      "id": "prr-complemento-p9-1.43-estado",
+      "value": "Dentro do Prazo",
+      "unit": "texto",
+      "period": "2025-12-31",
+      "note": "Código da medida C01-i10. Tipo impresso: Meta. Estado reportado no anexo do Relatório Anual 2025. Esta linha não fornece a quantidade de equipamentos, edifícios, lugares ou pessoas realizada nem a meta numérica contratual. O teste automático confere a integridade dos ficheiros e a correspondência à transcrição; a leitura do valor na imagem foi conferida visualmente, sem alegar extração textual automática.",
+      "label": "Aquisição de equipamento médico pesado: Estado",
+      "label_en": "Acquisition of heavy medical equipment: Status"
+    },
+    {
+      "id": "prr-complemento-p9-1.44-estado",
+      "value": "Dentro do Prazo",
+      "unit": "texto",
+      "period": "2025-12-31",
+      "note": "Código da medida C01-i11-RAA. Tipo impresso: Meta. Estado reportado no anexo do Relatório Anual 2025. Esta linha não fornece a quantidade de equipamentos, edifícios, lugares ou pessoas realizada nem a meta numérica contratual. O teste automático confere a integridade dos ficheiros e a correspondência à transcrição; a leitura do valor na imagem foi conferida visualmente, sem alegar extração textual automática.",
+      "label": "Construção. equipamento e veículos para o Serviço Regional de Saúde dos Açores: Estado",
+      "label_en": "Construction, equipment and vehicles for the Azores regional health service: Status"
+    },
+    {
+      "id": "prr-marcos-metas-2025-p2-1.13-estado",
+      "value": "Completo",
+      "unit": "texto",
+      "period": "2025-12-31",
+      "note": "Leitura da célula ou ponto do gráfico na imagem da página. Período e coluna conservados. Código da medida C01-i01. Estado do anexo do Relatório Anual 2025. Descrição de um marco, não medição de camas ou consultas realizadas. O teste automático confere a integridade dos ficheiros e a correspondência à transcrição; a leitura do valor na imagem foi conferida visualmente, sem alegar extração textual automática.",
+      "label": "Entrada em vigor dos novos termos para a referenciação de episódios de urgência avaliados como brancos, azuis ou verdes nos serviços de urgência hospitalar para outros tipos de serviços de saúde, incluindo cuidados de saúde primários: Estado",
+      "label_en": "Health milestone 1.13: Status"
+    },
+    {
+      "id": "prr-marcos-metas-2025-p2-1.20-estado",
+      "value": "Completo",
+      "unit": "texto",
+      "period": "2025-12-31",
+      "note": "Leitura da célula ou ponto do gráfico na imagem da página. Período e coluna conservados. Código da medida C01-i02. Estado do anexo do Relatório Anual 2025. Descrição de um marco, não medição de camas ou consultas realizadas. O teste automático confere a integridade dos ficheiros e a correspondência à transcrição; a leitura do valor na imagem foi conferida visualmente, sem alegar extração textual automática.",
+      "label": "Entrada em vigor do regulamento relativo à atribuição de apoios financeiros pelas Administrações Regionais de Saúde: Estado",
+      "label_en": "Health milestone 1.20: Status"
+    },
+    {
+      "id": "prr-marcos-metas-2025-p2-1.29-estado",
+      "value": "Completo",
+      "unit": "texto",
+      "period": "2025-12-31",
+      "note": "Leitura da célula ou ponto do gráfico na imagem da página. Período e coluna conservados. Código da medida C01-i05-RAM. Estado do anexo do Relatório Anual 2025. Descrição de um marco, não medição de camas ou consultas realizadas. O teste automático confere a integridade dos ficheiros e a correspondência à transcrição; a leitura do valor na imagem foi conferida visualmente, sem alegar extração textual automática.",
+      "label": "Implantação do sistema de classificação, do perfil funcional e do sistema de referenciação dos utentes para o modelo regional de cuidados continuados integrados da Madeira: Estado",
+      "label_en": "Health milestone 1.29: Status"
+    },
+    {
+      "id": "prr-marcos-metas-2025-p2-1.4-estado",
+      "value": "Completo",
+      "unit": "texto",
+      "period": "2025-12-31",
+      "note": "Leitura da célula ou ponto do gráfico na imagem da página. Período e coluna conservados. Código da medida C01-r02. Estado do anexo do Relatório Anual 2025. Descrição de um marco, não medição de camas ou consultas realizadas. O teste automático confere a integridade dos ficheiros e a correspondência à transcrição; a leitura do valor na imagem foi conferida visualmente, sem alegar extração textual automática.",
+      "label": "Entrada em vigor do novo Decreto-Lei de Saúde Mental, que estabelecerá os princípios para a organização dos cuidados de saúde mental: Estado",
+      "label_en": "Health milestone 1.4: Status"
+    },
+    {
+      "id": "prr-marcos-metas-2025-p2-1.6-estado",
+      "value": "Completo",
+      "unit": "texto",
+      "period": "2025-12-31",
+      "note": "Leitura da célula ou ponto do gráfico na imagem da página. Período e coluna conservados. Código da medida C01-r03. Estado do anexo do Relatório Anual 2025. Descrição de um marco, não medição de camas ou consultas realizadas. O teste automático confere a integridade dos ficheiros e a correspondência à transcrição; a leitura do valor na imagem foi conferida visualmente, sem alegar extração textual automática.",
+      "label": "Entrada em vigor do novo modelo de contratos de gestão: Estado",
+      "label_en": "Health milestone 1.6: Status"
+    },
+    {
+      "id": "prr-monitorizacao-20261014-p2-C01-contratado",
+      "value": "2.011M €",
+      "unit": "milhões de euros",
+      "period": "2026-10-14",
+      "note": "Leitura da célula ou ponto do gráfico na imagem da página. Período e coluna conservados.  O teste automático confere a integridade dos ficheiros e a correspondência à transcrição; a leitura do valor na imagem foi conferida visualmente, sem alegar extração textual automática.",
+      "label": "C01 - Serviço Nacional de Saúde: Contratado PRR",
+      "label_en": "C01 - National Health Service: Contracted RRP funding"
+    },
+    {
+      "id": "prr-monitorizacao-20261014-p2-C01-pago",
+      "value": "947M €",
+      "unit": "milhões de euros",
+      "period": "2026-10-14",
+      "note": "Leitura da célula ou ponto do gráfico na imagem da página. Período e coluna conservados.  O teste automático confere a integridade dos ficheiros e a correspondência à transcrição; a leitura do valor na imagem foi conferida visualmente, sem alegar extração textual automática.",
+      "label": "C01 - Serviço Nacional de Saúde: Pago PRR",
+      "label_en": "C01 - National Health Service: Paid RRP funding"
+    },
+    {
+      "id": "prr-monitorizacao-20261014-p2-C01-taxa",
+      "value": "47%",
+      "unit": "percentagem",
+      "period": "2026-10-14",
+      "note": "Leitura da célula ou ponto do gráfico na imagem da página. Período e coluna conservados.  O teste automático confere a integridade dos ficheiros e a correspondência à transcrição; a leitura do valor na imagem foi conferida visualmente, sem alegar extração textual automática.",
+      "label": "C01 - Serviço Nacional de Saúde: Pago a beneficiários diretos e finais (%)",
+      "label_en": "C01 - National Health Service: Paid to direct and final beneficiaries (%)"
+    },
+    {
+      "id": "sns-cirurgias-2025-07",
+      "value": "544482",
+      "unit": "intervenções cirúrgicas",
+      "period": "2025-07",
+      "note": "Programadas já incluem convencionais e ambulatório, não voltar a somá-las. Conserva período da API; descrição não explicita se os valores são mensais ou acumulados.",
+      "label": "Intervenções cirúrgicas programadas e urgentes",
+      "label_en": "Scheduled and emergency surgical interventions"
+    },
+    {
+      "id": "sns-cirurgias-2026-07",
+      "value": "520373",
+      "unit": "intervenções cirúrgicas",
+      "period": "2026-07",
+      "note": "Programadas já incluem convencionais e ambulatório, não voltar a somá-las. Conserva período da API; descrição não explicita se os valores são mensais ou acumulados.",
+      "label": "Intervenções cirúrgicas programadas e urgentes",
+      "label_en": "Scheduled and emergency surgical interventions"
+    },
+    {
+      "id": "sns-consultas-csp-2025-08",
+      "value": "2392474",
+      "unit": "consultas",
+      "period": "2025-08",
+      "note": "Soma das três modalidades e unidades. Dados do mês; o sistema Vitacare está excluído segundo a descrição do conjunto. Último mês provisório.",
+      "label": "Consultas médicas nos cuidados de saúde primários",
+      "label_en": "Primary care medical consultations"
+    },
+    {
+      "id": "sns-consultas-csp-2026-08",
+      "value": "2577538",
+      "unit": "consultas",
+      "period": "2026-08",
+      "note": "Soma das três modalidades e unidades. Dados do mês; o sistema Vitacare está excluído segundo a descrição do conjunto. Último mês provisório.",
+      "label": "Consultas médicas nos cuidados de saúde primários",
+      "label_en": "Primary care medical consultations"
+    },
+    {
+      "id": "sns-consultas-hospitalares-2025-07",
+      "value": "8542822",
+      "unit": "consultas",
+      "period": "2025-07",
+      "note": "Soma das instituições. Conserva o período tal como a API o dá. A descrição diz monitorização mensal, mas não explicita se o valor é mensal ou acumulado; não interpretar como fluxo apenas desse mês sem confirmação.",
+      "label": "Consultas médicas hospitalares",
+      "label_en": "Hospital medical consultations"
+    },
+    {
+      "id": "sns-consultas-hospitalares-2026-07",
+      "value": "8700823",
+      "unit": "consultas",
+      "period": "2026-07",
+      "note": "Soma das instituições. Conserva o período tal como a API o dá. A descrição diz monitorização mensal, mas não explicita se o valor é mensal ou acumulado; não interpretar como fluxo apenas desse mês sem confirmação.",
+      "label": "Consultas médicas hospitalares",
+      "label_en": "Hospital medical consultations"
+    },
+    {
+      "id": "sns-divida-2026-divida_total_fornecedores_externos-0",
+      "value": "21139.04",
+      "unit": "Euros",
+      "period": "2026-07",
+      "note": "Valor por entidade. Stock em fim de mês.",
+      "label": "Dívida Total (Fornecedores Externos)",
+      "label_en": "Total debt to external suppliers"
+    },
+    {
+      "id": "sns-divida-2026-divida_total_fornecedores_externos-1",
+      "value": "0.0",
+      "unit": "Euros",
+      "period": "2026-07",
+      "note": "Valor por entidade. Stock em fim de mês.",
+      "label": "Dívida Total (Fornecedores Externos)",
+      "label_en": "Total debt to external suppliers"
+    },
+    {
+      "id": "sns-divida-2026-divida_total_fornecedores_externos-10",
+      "value": "17673094.39",
+      "unit": "Euros",
+      "period": "2026-07",
+      "note": "Valor por entidade. Stock em fim de mês.",
+      "label": "Dívida Total (Fornecedores Externos)",
+      "label_en": "Total debt to external suppliers"
+    },
+    {
+      "id": "sns-divida-2026-divida_total_fornecedores_externos-11",
+      "value": "32809039.64",
+      "unit": "Euros",
+      "period": "2026-07",
+      "note": "Valor por entidade. Stock em fim de mês.",
+      "label": "Dívida Total (Fornecedores Externos)",
+      "label_en": "Total debt to external suppliers"
+    },
+    {
+      "id": "sns-divida-2026-divida_total_fornecedores_externos-12",
+      "value": "54036318.23",
+      "unit": "Euros",
+      "period": "2026-07",
+      "note": "Valor por entidade. Stock em fim de mês.",
+      "label": "Dívida Total (Fornecedores Externos)",
+      "label_en": "Total debt to external suppliers"
+    },
+    {
+      "id": "sns-divida-2026-divida_total_fornecedores_externos-13",
+      "value": "9298313.4",
+      "unit": "Euros",
+      "period": "2026-07",
+      "note": "Valor por entidade. Stock em fim de mês.",
+      "label": "Dívida Total (Fornecedores Externos)",
+      "label_en": "Total debt to external suppliers"
+    },
+    {
+      "id": "sns-divida-2026-divida_total_fornecedores_externos-14",
+      "value": "30053451.96",
+      "unit": "Euros",
+      "period": "2026-07",
+      "note": "Valor por entidade. Stock em fim de mês.",
+      "label": "Dívida Total (Fornecedores Externos)",
+      "label_en": "Total debt to external suppliers"
+    },
+    {
+      "id": "sns-divida-2026-divida_total_fornecedores_externos-15",
+      "value": "31806955.95",
+      "unit": "Euros",
+      "period": "2026-07",
+      "note": "Valor por entidade. Stock em fim de mês.",
+      "label": "Dívida Total (Fornecedores Externos)",
+      "label_en": "Total debt to external suppliers"
+    },
+    {
+      "id": "sns-divida-2026-divida_total_fornecedores_externos-16",
+      "value": "20181346.6",
+      "unit": "Euros",
+      "period": "2026-07",
+      "note": "Valor por entidade. Stock em fim de mês.",
+      "label": "Dívida Total (Fornecedores Externos)",
+      "label_en": "Total debt to external suppliers"
+    },
+    {
+      "id": "sns-divida-2026-divida_total_fornecedores_externos-17",
+      "value": "20661034.89",
+      "unit": "Euros",
+      "period": "2026-07",
+      "note": "Valor por entidade. Stock em fim de mês.",
+      "label": "Dívida Total (Fornecedores Externos)",
+      "label_en": "Total debt to external suppliers"
+    },
+    {
+      "id": "sns-divida-2026-divida_total_fornecedores_externos-18",
+      "value": "17789083.51",
+      "unit": "Euros",
+      "period": "2026-07",
+      "note": "Valor por entidade. Stock em fim de mês.",
+      "label": "Dívida Total (Fornecedores Externos)",
+      "label_en": "Total debt to external suppliers"
+    },
+    {
+      "id": "sns-divida-2026-divida_total_fornecedores_externos-19",
+      "value": "27373779.79",
+      "unit": "Euros",
+      "period": "2026-07",
+      "note": "Valor por entidade. Stock em fim de mês.",
+      "label": "Dívida Total (Fornecedores Externos)",
+      "label_en": "Total debt to external suppliers"
+    },
+    {
+      "id": "sns-divida-2026-divida_total_fornecedores_externos-2",
+      "value": "0.0",
+      "unit": "Euros",
+      "period": "2026-07",
+      "note": "Valor por entidade. Stock em fim de mês.",
+      "label": "Dívida Total (Fornecedores Externos)",
+      "label_en": "Total debt to external suppliers"
+    },
+    {
+      "id": "sns-divida-2026-divida_total_fornecedores_externos-20",
+      "value": "21143744.3",
+      "unit": "Euros",
+      "period": "2026-07",
+      "note": "Valor por entidade. Stock em fim de mês.",
+      "label": "Dívida Total (Fornecedores Externos)",
+      "label_en": "Total debt to external suppliers"
+    },
+    {
+      "id": "sns-divida-2026-divida_total_fornecedores_externos-21",
+      "value": "33004212.74",
+      "unit": "Euros",
+      "period": "2026-07",
+      "note": "Valor por entidade. Stock em fim de mês.",
+      "label": "Dívida Total (Fornecedores Externos)",
+      "label_en": "Total debt to external suppliers"
+    },
+    {
+      "id": "sns-divida-2026-divida_total_fornecedores_externos-22",
+      "value": "38312955.25",
+      "unit": "Euros",
+      "period": "2026-07",
+      "note": "Valor por entidade. Stock em fim de mês.",
+      "label": "Dívida Total (Fornecedores Externos)",
+      "label_en": "Total debt to external suppliers"
+    },
+    {
+      "id": "sns-divida-2026-divida_total_fornecedores_externos-23",
+      "value": "8023968.96",
+      "unit": "Euros",
+      "period": "2026-07",
+      "note": "Valor por entidade. Stock em fim de mês.",
+      "label": "Dívida Total (Fornecedores Externos)",
+      "label_en": "Total debt to external suppliers"
+    },
+    {
+      "id": "sns-divida-2026-divida_total_fornecedores_externos-24",
+      "value": "48372856.2",
+      "unit": "Euros",
+      "period": "2026-07",
+      "note": "Valor por entidade. Stock em fim de mês.",
+      "label": "Dívida Total (Fornecedores Externos)",
+      "label_en": "Total debt to external suppliers"
+    },
+    {
+      "id": "sns-divida-2026-divida_total_fornecedores_externos-25",
+      "value": "15182620.38",
+      "unit": "Euros",
+      "period": "2026-07",
+      "note": "Valor por entidade. Stock em fim de mês.",
+      "label": "Dívida Total (Fornecedores Externos)",
+      "label_en": "Total debt to external suppliers"
+    },
+    {
+      "id": "sns-divida-2026-divida_total_fornecedores_externos-26",
+      "value": "121758344.94",
+      "unit": "Euros",
+      "period": "2026-07",
+      "note": "Valor por entidade. Stock em fim de mês.",
+      "label": "Dívida Total (Fornecedores Externos)",
+      "label_en": "Total debt to external suppliers"
+    },
+    {
+      "id": "sns-divida-2026-divida_total_fornecedores_externos-27",
+      "value": "43911710.12",
+      "unit": "Euros",
+      "period": "2026-07",
+      "note": "Valor por entidade. Stock em fim de mês.",
+      "label": "Dívida Total (Fornecedores Externos)",
+      "label_en": "Total debt to external suppliers"
+    },
+    {
+      "id": "sns-divida-2026-divida_total_fornecedores_externos-28",
+      "value": "45004872.14",
+      "unit": "Euros",
+      "period": "2026-07",
+      "note": "Valor por entidade. Stock em fim de mês.",
+      "label": "Dívida Total (Fornecedores Externos)",
+      "label_en": "Total debt to external suppliers"
+    },
+    {
+      "id": "sns-divida-2026-divida_total_fornecedores_externos-29",
+      "value": "64480404.89",
+      "unit": "Euros",
+      "period": "2026-07",
+      "note": "Valor por entidade. Stock em fim de mês.",
+      "label": "Dívida Total (Fornecedores Externos)",
+      "label_en": "Total debt to external suppliers"
+    },
+    {
+      "id": "sns-divida-2026-divida_total_fornecedores_externos-3",
+      "value": "0.0",
+      "unit": "Euros",
+      "period": "2026-07",
+      "note": "Valor por entidade. Stock em fim de mês.",
+      "label": "Dívida Total (Fornecedores Externos)",
+      "label_en": "Total debt to external suppliers"
+    },
+    {
+      "id": "sns-divida-2026-divida_total_fornecedores_externos-30",
+      "value": "23290140.0",
+      "unit": "Euros",
+      "period": "2026-07",
+      "note": "Valor por entidade. Stock em fim de mês.",
+      "label": "Dívida Total (Fornecedores Externos)",
+      "label_en": "Total debt to external suppliers"
+    },
+    {
+      "id": "sns-divida-2026-divida_total_fornecedores_externos-31",
+      "value": "24058392.37",
+      "unit": "Euros",
+      "period": "2026-07",
+      "note": "Valor por entidade. Stock em fim de mês.",
+      "label": "Dívida Total (Fornecedores Externos)",
+      "label_en": "Total debt to external suppliers"
+    },
+    {
+      "id": "sns-divida-2026-divida_total_fornecedores_externos-32",
+      "value": "64001396.65",
+      "unit": "Euros",
+      "period": "2026-07",
+      "note": "Valor por entidade. Stock em fim de mês.",
+      "label": "Dívida Total (Fornecedores Externos)",
+      "label_en": "Total debt to external suppliers"
+    },
+    {
+      "id": "sns-divida-2026-divida_total_fornecedores_externos-33",
+      "value": "78766579.92",
+      "unit": "Euros",
+      "period": "2026-07",
+      "note": "Valor por entidade. Stock em fim de mês.",
+      "label": "Dívida Total (Fornecedores Externos)",
+      "label_en": "Total debt to external suppliers"
+    },
+    {
+      "id": "sns-divida-2026-divida_total_fornecedores_externos-34",
+      "value": "75400927.11",
+      "unit": "Euros",
+      "period": "2026-07",
+      "note": "Valor por entidade. Stock em fim de mês.",
+      "label": "Dívida Total (Fornecedores Externos)",
+      "label_en": "Total debt to external suppliers"
+    },
+    {
+      "id": "sns-divida-2026-divida_total_fornecedores_externos-35",
+      "value": "79139561.76",
+      "unit": "Euros",
+      "period": "2026-07",
+      "note": "Valor por entidade. Stock em fim de mês.",
+      "label": "Dívida Total (Fornecedores Externos)",
+      "label_en": "Total debt to external suppliers"
+    },
+    {
+      "id": "sns-divida-2026-divida_total_fornecedores_externos-36",
+      "value": "39733703.03",
+      "unit": "Euros",
+      "period": "2026-07",
+      "note": "Valor por entidade. Stock em fim de mês.",
+      "label": "Dívida Total (Fornecedores Externos)",
+      "label_en": "Total debt to external suppliers"
+    },
+    {
+      "id": "sns-divida-2026-divida_total_fornecedores_externos-37",
+      "value": "40261850.68",
+      "unit": "Euros",
+      "period": "2026-07",
+      "note": "Valor por entidade. Stock em fim de mês.",
+      "label": "Dívida Total (Fornecedores Externos)",
+      "label_en": "Total debt to external suppliers"
+    },
+    {
+      "id": "sns-divida-2026-divida_total_fornecedores_externos-38",
+      "value": "21797878.9",
+      "unit": "Euros",
+      "period": "2026-07",
+      "note": "Valor por entidade. Stock em fim de mês.",
+      "label": "Dívida Total (Fornecedores Externos)",
+      "label_en": "Total debt to external suppliers"
+    },
+    {
+      "id": "sns-divida-2026-divida_total_fornecedores_externos-39",
+      "value": "69038077.0",
+      "unit": "Euros",
+      "period": "2026-07",
+      "note": "Valor por entidade. Stock em fim de mês.",
+      "label": "Dívida Total (Fornecedores Externos)",
+      "label_en": "Total debt to external suppliers"
+    },
+    {
+      "id": "sns-divida-2026-divida_total_fornecedores_externos-4",
+      "value": "0.0",
+      "unit": "Euros",
+      "period": "2026-07",
+      "note": "Valor por entidade. Stock em fim de mês.",
+      "label": "Dívida Total (Fornecedores Externos)",
+      "label_en": "Total debt to external suppliers"
+    },
+    {
+      "id": "sns-divida-2026-divida_total_fornecedores_externos-40",
+      "value": "13696249.15",
+      "unit": "Euros",
+      "period": "2026-07",
+      "note": "Valor por entidade. Stock em fim de mês.",
+      "label": "Dívida Total (Fornecedores Externos)",
+      "label_en": "Total debt to external suppliers"
+    },
+    {
+      "id": "sns-divida-2026-divida_total_fornecedores_externos-41",
+      "value": "55096613.63",
+      "unit": "Euros",
+      "period": "2026-07",
+      "note": "Valor por entidade. Stock em fim de mês.",
+      "label": "Dívida Total (Fornecedores Externos)",
+      "label_en": "Total debt to external suppliers"
+    },
+    {
+      "id": "sns-divida-2026-divida_total_fornecedores_externos-42",
+      "value": "25815480.53",
+      "unit": "Euros",
+      "period": "2026-07",
+      "note": "Valor por entidade. Stock em fim de mês.",
+      "label": "Dívida Total (Fornecedores Externos)",
+      "label_en": "Total debt to external suppliers"
+    },
+    {
+      "id": "sns-divida-2026-divida_total_fornecedores_externos-43",
+      "value": "9785158.09",
+      "unit": "Euros",
+      "period": "2026-07",
+      "note": "Valor por entidade. Stock em fim de mês.",
+      "label": "Dívida Total (Fornecedores Externos)",
+      "label_en": "Total debt to external suppliers"
+    },
+    {
+      "id": "sns-divida-2026-divida_total_fornecedores_externos-44",
+      "value": "13628037.49",
+      "unit": "Euros",
+      "period": "2026-07",
+      "note": "Valor por entidade. Stock em fim de mês.",
+      "label": "Dívida Total (Fornecedores Externos)",
+      "label_en": "Total debt to external suppliers"
+    },
+    {
+      "id": "sns-divida-2026-divida_total_fornecedores_externos-45",
+      "value": "25144289.6",
+      "unit": "Euros",
+      "period": "2026-07",
+      "note": "Valor por entidade. Stock em fim de mês.",
+      "label": "Dívida Total (Fornecedores Externos)",
+      "label_en": "Total debt to external suppliers"
+    },
+    {
+      "id": "sns-divida-2026-divida_total_fornecedores_externos-46",
+      "value": "19413374.76",
+      "unit": "Euros",
+      "period": "2026-07",
+      "note": "Valor por entidade. Stock em fim de mês.",
+      "label": "Dívida Total (Fornecedores Externos)",
+      "label_en": "Total debt to external suppliers"
+    },
+    {
+      "id": "sns-divida-2026-divida_total_fornecedores_externos-47",
+      "value": "20208298.14",
+      "unit": "Euros",
+      "period": "2026-07",
+      "note": "Valor por entidade. Stock em fim de mês.",
+      "label": "Dívida Total (Fornecedores Externos)",
+      "label_en": "Total debt to external suppliers"
+    },
+    {
+      "id": "sns-divida-2026-divida_total_fornecedores_externos-48",
+      "value": "18944991.03",
+      "unit": "Euros",
+      "period": "2026-07",
+      "note": "Valor por entidade. Stock em fim de mês.",
+      "label": "Dívida Total (Fornecedores Externos)",
+      "label_en": "Total debt to external suppliers"
+    },
+    {
+      "id": "sns-divida-2026-divida_total_fornecedores_externos-49",
+      "value": "24712004.94",
+      "unit": "Euros",
+      "period": "2026-07",
+      "note": "Valor por entidade. Stock em fim de mês.",
+      "label": "Dívida Total (Fornecedores Externos)",
+      "label_en": "Total debt to external suppliers"
+    },
+    {
+      "id": "sns-divida-2026-divida_total_fornecedores_externos-5",
+      "value": "0.0",
+      "unit": "Euros",
+      "period": "2026-07",
+      "note": "Valor por entidade. Stock em fim de mês.",
+      "label": "Dívida Total (Fornecedores Externos)",
+      "label_en": "Total debt to external suppliers"
+    },
+    {
+      "id": "sns-divida-2026-divida_total_fornecedores_externos-50",
+      "value": "30543294.73",
+      "unit": "Euros",
+      "period": "2026-07",
+      "note": "Valor por entidade. Stock em fim de mês.",
+      "label": "Dívida Total (Fornecedores Externos)",
+      "label_en": "Total debt to external suppliers"
+    },
+    {
+      "id": "sns-divida-2026-divida_total_fornecedores_externos-51",
+      "value": "19182076.49",
+      "unit": "Euros",
+      "period": "2026-07",
+      "note": "Valor por entidade. Stock em fim de mês.",
+      "label": "Dívida Total (Fornecedores Externos)",
+      "label_en": "Total debt to external suppliers"
+    },
+    {
+      "id": "sns-divida-2026-divida_total_fornecedores_externos-52",
+      "value": "10679203.53",
+      "unit": "Euros",
+      "period": "2026-07",
+      "note": "Valor por entidade. Stock em fim de mês.",
+      "label": "Dívida Total (Fornecedores Externos)",
+      "label_en": "Total debt to external suppliers"
+    },
+    {
+      "id": "sns-divida-2026-divida_total_fornecedores_externos-6",
+      "value": "51048.46",
+      "unit": "Euros",
+      "period": "2026-07",
+      "note": "Valor por entidade. Stock em fim de mês.",
+      "label": "Dívida Total (Fornecedores Externos)",
+      "label_en": "Total debt to external suppliers"
+    },
+    {
+      "id": "sns-divida-2026-divida_total_fornecedores_externos-7",
+      "value": "1125164.8",
+      "unit": "Euros",
+      "period": "2026-07",
+      "note": "Valor por entidade. Stock em fim de mês.",
+      "label": "Dívida Total (Fornecedores Externos)",
+      "label_en": "Total debt to external suppliers"
+    },
+    {
+      "id": "sns-divida-2026-divida_total_fornecedores_externos-8",
+      "value": "11417286.29",
+      "unit": "Euros",
+      "period": "2026-07",
+      "note": "Valor por entidade. Stock em fim de mês.",
+      "label": "Dívida Total (Fornecedores Externos)",
+      "label_en": "Total debt to external suppliers"
+    },
+    {
+      "id": "sns-divida-2026-divida_total_fornecedores_externos-9",
+      "value": "1668007.55",
+      "unit": "Euros",
+      "period": "2026-07",
+      "note": "Valor por entidade. Stock em fim de mês.",
+      "label": "Dívida Total (Fornecedores Externos)",
+      "label_en": "Total debt to external suppliers"
+    },
+    {
+      "id": "sns-espera-rncci-2025-10-19",
+      "value": "2220",
+      "unit": "utentes",
+      "period": "2025-10-19",
+      "note": "Apuramento diário dos estados Ingresso/Aguarda Vaga. Soma das regiões e tipologias. Não corresponde ao número de referenciações.",
+      "label": "Utentes a aguardar vaga na RNCCI",
+      "label_en": "Patients waiting for a place in integrated long-term care"
+    },
+    {
+      "id": "sns-espera-rncci-2026-10-19",
+      "value": "2482",
+      "unit": "utentes",
+      "period": "2026-10-19",
+      "note": "Apuramento diário dos estados Ingresso/Aguarda Vaga. Soma das regiões e tipologias. Não corresponde ao número de referenciações.",
+      "label": "Utentes a aguardar vaga na RNCCI",
+      "label_en": "Patients waiting for a place in integrated long-term care"
+    },
+    {
+      "id": "sns-lista-cirurgia-2025-07",
+      "value": "268645",
+      "unit": "utentes",
+      "period": "2025-07",
+      "note": "Stock de inscritos. Campo total do denominador do indicador TMRG180dias, não apenas inscritos dentro do prazo.",
+      "label": "Inscritos em lista de espera para cirurgia",
+      "label_en": "Patients on the surgical waiting list"
+    },
+    {
+      "id": "sns-lista-cirurgia-2026-07",
+      "value": "284210",
+      "unit": "utentes",
+      "period": "2026-07",
+      "note": "Stock de inscritos. Campo total do denominador do indicador TMRG180dias, não apenas inscritos dentro do prazo.",
+      "label": "Inscritos em lista de espera para cirurgia",
+      "label_en": "Patients on the surgical waiting list"
+    },
+    {
+      "id": "sns-sem-medico-serie-antiga-2025-06",
+      "value": "1669681",
+      "unit": "utentes",
+      "period": "2025-06",
+      "note": "Portugal continental. Soma das unidades e, na série nova, das nacionalidades. Série antiga descontinuada em junho de 2026. Novas regras RNU desde julho de 2026: os universos não são diretamente comparáveis. Sem médico por opção é campo separado.",
+      "label": "Utentes sem médico de família atribuído",
+      "label_en": "Patients without an assigned family doctor"
+    },
+    {
+      "id": "sns-sem-medico-serie-antiga-2026-06",
+      "value": "1672130",
+      "unit": "utentes",
+      "period": "2026-06",
+      "note": "Portugal continental. Soma das unidades e, na série nova, das nacionalidades. Série antiga descontinuada em junho de 2026. Novas regras RNU desde julho de 2026: os universos não são diretamente comparáveis. Sem médico por opção é campo separado.",
+      "label": "Utentes sem médico de família atribuído",
+      "label_en": "Patients without an assigned family doctor"
+    },
+    {
+      "id": "sns-sem-medico-serie-nova-2026-08",
+      "value": "1362294",
+      "unit": "utentes",
+      "period": "2026-08",
+      "note": "Portugal continental. Soma das unidades e, na série nova, das nacionalidades. Série antiga descontinuada em junho de 2026. Novas regras RNU desde julho de 2026: os universos não são diretamente comparáveis. Sem médico por opção é campo separado. A nova elegibilidade exclui registos atualizados de não utilizadores sem contacto com o SNS há mais de cinco anos e registos atualizados de não residentes, conforme a descrição do novo conjunto.",
+      "label": "Inscritos elegíveis sem médico de família atribuído",
+      "label_en": "Eligible registered patients without an assigned family doctor"
+    },
+    {
+      "id": "sns-urgencias-2025-07",
+      "value": "3312702",
+      "unit": "episódios de urgência",
+      "period": "2025-07",
+      "note": "Soma do campo total; não somar também as especialidades. Conserva período da API; descrição não explicita mensal versus acumulado.",
+      "label": "Atendimentos em urgência hospitalar",
+      "label_en": "Hospital emergency attendances"
+    },
+    {
+      "id": "sns-urgencias-2026-07",
+      "value": "3261701",
+      "unit": "episódios de urgência",
+      "period": "2026-07",
+      "note": "Soma do campo total; não somar também as especialidades. Conserva período da API; descrição não explicita mensal versus acumulado.",
+      "label": "Atendimentos em urgência hospitalar",
+      "label_en": "Hospital emergency attendances"
+    }
+  ],
+  "extremos": {
+    "phys": {
+      "minimo": "eurostat-be-phys",
+      "maximo": "eurostat-el-phys",
+      "paises": 27
+    },
+    "nrs": {
+      "minimo": "eurostat-ro-nrs",
+      "maximo": "eurostat-lu-nrs",
+      "paises": 27
+    }
+  },
+  "derivadas": [
+    {
+      "id": "der-sns-consultas-csp-variacao-pct",
+      "componentes": [
+        "sns-consultas-csp-2026-08",
+        "sns-consultas-csp-2025-08"
+      ],
+      "operandos": [
+        "2577538",
+        "2392474"
+      ],
+      "operacao": "change_pct",
+      "resultado_sem_arredondamento": "7.735256475096490076799162700",
+      "resultado": "7.7"
+    },
+    {
+      "id": "der-sns-cirurgias-variacao-pct",
+      "componentes": [
+        "sns-cirurgias-2026-07",
+        "sns-cirurgias-2025-07"
+      ],
+      "operandos": [
+        "520373",
+        "544482"
+      ],
+      "operacao": "change_pct",
+      "resultado_sem_arredondamento": "-4.427878240235673539253822900",
+      "resultado": "-4.4"
+    },
+    {
+      "id": "der-sns-lista-cirurgia-variacao-pct",
+      "componentes": [
+        "sns-lista-cirurgia-2026-07",
+        "sns-lista-cirurgia-2025-07"
+      ],
+      "operandos": [
+        "284210",
+        "268645"
+      ],
+      "operacao": "change_pct",
+      "resultado_sem_arredondamento": "5.793891566937780342087141000",
+      "resultado": "5.8"
+    },
+    {
+      "id": "der-sns-espera-rncci-variacao-pct",
+      "componentes": [
+        "sns-espera-rncci-2026-10-19",
+        "sns-espera-rncci-2025-10-19"
+      ],
+      "operandos": [
+        "2482",
+        "2220"
+      ],
+      "operacao": "change_pct",
+      "resultado_sem_arredondamento": "11.80180180180180180180180180",
+      "resultado": "11.8"
+    },
+    {
+      "id": "der-infarmed-total-2026-jan-jul",
+      "componentes": [
+        "infarmed-ambulatorio-2026-07-p5-acumulado-encargo",
+        "infarmed-hospitalar-2026-07-p5-acumulado-encargo"
+      ],
+      "operandos": [
+        "1179.3",
+        "1600.9"
+      ],
+      "operacao": "sum",
+      "resultado_sem_arredondamento": "2780.2",
+      "resultado": "2780.2"
+    },
+    {
+      "id": "der-infarmed-total-2025-jan-jul",
+      "componentes": [
+        "infarmed-ambulatorio-2026-07-p5-homologo-encargo",
+        "infarmed-hospitalar-2026-07-p5-homologo-encargo"
+      ],
+      "operandos": [
+        "1089.4",
+        "1530.2"
+      ],
+      "operacao": "sum",
+      "resultado_sem_arredondamento": "2619.6",
+      "resultado": "2619.6"
+    },
+    {
+      "id": "der-infarmed-variacao-pct",
+      "componentes": [
+        "der-infarmed-total-2026-jan-jul",
+        "der-infarmed-total-2025-jan-jul"
+      ],
+      "operandos": [
+        "2780.2",
+        "2619.6"
+      ],
+      "operacao": "change_pct",
+      "resultado_sem_arredondamento": "6.130706978164605283249351000",
+      "resultado": "6.1"
+    },
+    {
+      "id": "der-prr-saude-por-pagar",
+      "componentes": [
+        "prr-monitorizacao-20261014-p2-C01-contratado",
+        "prr-monitorizacao-20261014-p2-C01-pago"
+      ],
+      "operandos": [
+        "2011",
+        "947"
+      ],
+      "operacao": "subtract",
+      "resultado_sem_arredondamento": "1064",
+      "resultado": "1064.0"
+    },
+    {
+      "id": "der-prr-saude-por-pagar-pct",
+      "componentes": [
+        "der-prr-saude-por-pagar",
+        "prr-monitorizacao-20261014-p2-C01-contratado"
+      ],
+      "operandos": [
+        "1064.0",
+        "2011"
+      ],
+      "operacao": "percent",
+      "resultado_sem_arredondamento": "52.90900049726504226752859274",
+      "resultado": "52.9"
+    },
+    {
+      "id": "der-sns-divida-fornecedores-2026-07",
+      "componentes": [
+        "sns-divida-2026-divida_total_fornecedores_externos-0",
+        "sns-divida-2026-divida_total_fornecedores_externos-1",
+        "sns-divida-2026-divida_total_fornecedores_externos-2",
+        "sns-divida-2026-divida_total_fornecedores_externos-3",
+        "sns-divida-2026-divida_total_fornecedores_externos-4",
+        "sns-divida-2026-divida_total_fornecedores_externos-5",
+        "sns-divida-2026-divida_total_fornecedores_externos-6",
+        "sns-divida-2026-divida_total_fornecedores_externos-7",
+        "sns-divida-2026-divida_total_fornecedores_externos-8",
+        "sns-divida-2026-divida_total_fornecedores_externos-9",
+        "sns-divida-2026-divida_total_fornecedores_externos-10",
+        "sns-divida-2026-divida_total_fornecedores_externos-11",
+        "sns-divida-2026-divida_total_fornecedores_externos-12",
+        "sns-divida-2026-divida_total_fornecedores_externos-13",
+        "sns-divida-2026-divida_total_fornecedores_externos-14",
+        "sns-divida-2026-divida_total_fornecedores_externos-15",
+        "sns-divida-2026-divida_total_fornecedores_externos-16",
+        "sns-divida-2026-divida_total_fornecedores_externos-17",
+        "sns-divida-2026-divida_total_fornecedores_externos-18",
+        "sns-divida-2026-divida_total_fornecedores_externos-19",
+        "sns-divida-2026-divida_total_fornecedores_externos-20",
+        "sns-divida-2026-divida_total_fornecedores_externos-21",
+        "sns-divida-2026-divida_total_fornecedores_externos-22",
+        "sns-divida-2026-divida_total_fornecedores_externos-23",
+        "sns-divida-2026-divida_total_fornecedores_externos-24",
+        "sns-divida-2026-divida_total_fornecedores_externos-25",
+        "sns-divida-2026-divida_total_fornecedores_externos-26",
+        "sns-divida-2026-divida_total_fornecedores_externos-27",
+        "sns-divida-2026-divida_total_fornecedores_externos-28",
+        "sns-divida-2026-divida_total_fornecedores_externos-29",
+        "sns-divida-2026-divida_total_fornecedores_externos-30",
+        "sns-divida-2026-divida_total_fornecedores_externos-31",
+        "sns-divida-2026-divida_total_fornecedores_externos-32",
+        "sns-divida-2026-divida_total_fornecedores_externos-33",
+        "sns-divida-2026-divida_total_fornecedores_externos-34",
+        "sns-divida-2026-divida_total_fornecedores_externos-35",
+        "sns-divida-2026-divida_total_fornecedores_externos-36",
+        "sns-divida-2026-divida_total_fornecedores_externos-37",
+        "sns-divida-2026-divida_total_fornecedores_externos-38",
+        "sns-divida-2026-divida_total_fornecedores_externos-39",
+        "sns-divida-2026-divida_total_fornecedores_externos-40",
+        "sns-divida-2026-divida_total_fornecedores_externos-41",
+        "sns-divida-2026-divida_total_fornecedores_externos-42",
+        "sns-divida-2026-divida_total_fornecedores_externos-43",
+        "sns-divida-2026-divida_total_fornecedores_externos-44",
+        "sns-divida-2026-divida_total_fornecedores_externos-45",
+        "sns-divida-2026-divida_total_fornecedores_externos-46",
+        "sns-divida-2026-divida_total_fornecedores_externos-47",
+        "sns-divida-2026-divida_total_fornecedores_externos-48",
+        "sns-divida-2026-divida_total_fornecedores_externos-49",
+        "sns-divida-2026-divida_total_fornecedores_externos-50",
+        "sns-divida-2026-divida_total_fornecedores_externos-51",
+        "sns-divida-2026-divida_total_fornecedores_externos-52"
+      ],
+      "operandos": [
+        "21139.04",
+        "0.0",
+        "0.0",
+        "0.0",
+        "0.0",
+        "0.0",
+        "51048.46",
+        "1125164.8",
+        "11417286.29",
+        "1668007.55",
+        "17673094.39",
+        "32809039.64",
+        "54036318.23",
+        "9298313.4",
+        "30053451.96",
+        "31806955.95",
+        "20181346.6",
+        "20661034.89",
+        "17789083.51",
+        "27373779.79",
+        "21143744.3",
+        "33004212.74",
+        "38312955.25",
+        "8023968.96",
+        "48372856.2",
+        "15182620.38",
+        "121758344.94",
+        "43911710.12",
+        "45004872.14",
+        "64480404.89",
+        "23290140.0",
+        "24058392.37",
+        "64001396.65",
+        "78766579.92",
+        "75400927.11",
+        "79139561.76",
+        "39733703.03",
+        "40261850.68",
+        "21797878.9",
+        "69038077.0",
+        "13696249.15",
+        "55096613.63",
+        "25815480.53",
+        "9785158.09",
+        "13628037.49",
+        "25144289.6",
+        "19413374.76",
+        "20208298.14",
+        "18944991.03",
+        "24712004.94",
+        "30543294.73",
+        "19182076.49",
+        "10679203.53"
+      ],
+      "operacao": "euros_to_millions",
+      "resultado_sem_arredondamento": "1517.49833395",
+      "resultado": "1517.5"
+    },
+    {
+      "id": "der-prr-saude-marcos-completos",
+      "componentes": [
+        "prr-complemento-p3-1.24-estado",
+        "prr-complemento-p3-1.32-estado",
+        "prr-complemento-p3-1.33-estado",
+        "prr-complemento-p3-1.3-estado",
+        "prr-complemento-p3-1.8-estado",
+        "prr-complemento-p4-1.1-estado",
+        "prr-complemento-p4-1.5-estado",
+        "prr-complemento-p4-1.12-estado",
+        "prr-complemento-p4-1.40-estado",
+        "prr-complemento-p4-1.41-estado",
+        "prr-complemento-p4-1.2-estado",
+        "prr-complemento-p5-1.22-estado",
+        "prr-complemento-p5-1.28-estado",
+        "prr-complemento-p5-1.11-estado",
+        "prr-complemento-p5-1.7-estado",
+        "prr-complemento-p5-1.9-estado",
+        "prr-complemento-p6-1.37-estado",
+        "prr-complemento-p6-1.42-estado",
+        "prr-complemento-p6-1.10-estado",
+        "prr-complemento-p7-1.34-estado",
+        "prr-complemento-p7-1.35-estado",
+        "prr-complemento-p7-1.36-estado",
+        "prr-complemento-p7-1.38-estado",
+        "prr-complemento-p7-1.39-estado",
+        "prr-complemento-p8-1.21-estado",
+        "prr-complemento-p8-1.25-estado",
+        "prr-complemento-p9-1.17-estado",
+        "prr-complemento-p9-1.18-estado",
+        "prr-complemento-p9-1.26-estado",
+        "prr-complemento-p9-1.30-estado",
+        "prr-complemento-p9-1.43-estado",
+        "prr-complemento-p9-1.44-estado",
+        "prr-marcos-metas-2025-p2-1.29-estado",
+        "prr-marcos-metas-2025-p2-1.4-estado",
+        "prr-marcos-metas-2025-p2-1.13-estado",
+        "prr-marcos-metas-2025-p2-1.20-estado",
+        "prr-marcos-metas-2025-p2-1.6-estado"
+      ],
+      "operacao": "count_equal",
+      "criterio": "Completo",
+      "resultado": 24,
+      "estados": {
+        "Completo": 24,
+        "Em avaliação na CE": 5,
+        "Dentro do Prazo": 8
+      }
+    }
+  ],
+  "natureza_series": [
+    {
+      "ids": [
+        "sns-consultas-hospitalares-2025-07",
+        "sns-consultas-hospitalares-2026-07"
+      ],
+      "ficheiro": "content/26 Saude e Parcerias Efeitos/source/saude/sns-01_sica_evolucao-mensal-das-consultas-medicas-hospitalares.json",
+      "sha256": "24f198159023c0ee952ce0c0c1f6b7da2847482ec374c59f884fb6e5acd3d381",
+      "campos": [
+        "no_de_consultas_medicas_total"
+      ],
+      "totais_por_mes": {
+        "2025-01": "1308326",
+        "2025-02": "2515750",
+        "2025-03": "3714671",
+        "2025-04": "4874998",
+        "2025-05": "6178349",
+        "2025-06": "7244955",
+        "2025-07": "8542822",
+        "2025-08": "9502363",
+        "2025-09": "10764726",
+        "2025-10": "12125112",
+        "2025-11": "13368238",
+        "2025-12": "14353475",
+        "2026-01": "1267184",
+        "2026-02": "2418583",
+        "2026-03": "3739845",
+        "2026-04": "5012878",
+        "2026-05": "6262971",
+        "2026-06": "7393757",
+        "2026-07": "8700823"
+      },
+      "natureza": "Acumulado desde janeiro, inferido da progressão dos registos e do reinício em janeiro; a descrição não o define expressamente.",
+      "periodos_corrigidos": [
+        "2025-01/2025-07",
+        "2026-01/2026-07"
+      ]
+    },
+    {
+      "ids": [
+        "sns-cirurgias-2025-07",
+        "sns-cirurgias-2026-07"
+      ],
+      "ficheiro": "content/26 Saude e Parcerias Efeitos/source/saude/sns-intervencoes-cirurgicas.json",
+      "sha256": "934ebd862fa9e954a8c4ff2b4dcbbcdd0ea34462c1b3a8c9b721fe1493b5f7de",
+      "campos": [
+        "no_intervencoes_cirurgicas_programadas",
+        "no_intervencoes_cirurgicas_urgentes"
+      ],
+      "totais_por_mes": {
+        "2025-01": "80245",
+        "2025-02": "156762",
+        "2025-03": "236230",
+        "2025-04": "310867",
+        "2025-05": "393304",
+        "2025-06": "464344",
+        "2025-07": "544482",
+        "2025-08": "607600",
+        "2025-09": "686507",
+        "2025-10": "767691",
+        "2025-11": "844928",
+        "2025-12": "903924",
+        "2026-01": "74984",
+        "2026-02": "146355",
+        "2026-03": "224581",
+        "2026-04": "300661",
+        "2026-05": "373890",
+        "2026-06": "444708",
+        "2026-07": "520373"
+      },
+      "natureza": "Acumulado desde janeiro, inferido da progressão dos registos e do reinício em janeiro; a descrição não o define expressamente.",
+      "periodos_corrigidos": [
+        "2025-01/2025-07",
+        "2026-01/2026-07"
+      ]
+    },
+    {
+      "ids": [
+        "sns-urgencias-2025-07",
+        "sns-urgencias-2026-07"
+      ],
+      "ficheiro": "content/26 Saude e Parcerias Efeitos/source/saude/sns-atendimentos-por-tipo-de-urgencia-hospitalar-link.json",
+      "sha256": "8bac77597962a3c18b7701790f35b589d9d4b909ff699016210cf1c023a40d1e",
+      "campos": [
+        "total_urgencias"
+      ],
+      "totais_por_mes": {
+        "2025-01": "493620",
+        "2025-02": "949711",
+        "2025-03": "1430571",
+        "2025-04": "1885119",
+        "2025-05": "2369588",
+        "2025-06": "2840705",
+        "2025-07": "3312702",
+        "2025-08": "3816542",
+        "2025-09": "4275082",
+        "2025-10": "4768292",
+        "2025-11": "5230942",
+        "2025-12": "5728295",
+        "2026-01": "444704",
+        "2026-02": "853600",
+        "2026-03": "1338752",
+        "2026-04": "1806950",
+        "2026-05": "2294268",
+        "2026-06": "2762677",
+        "2026-07": "3261701"
+      },
+      "natureza": "Acumulado desde janeiro, inferido da progressão dos registos e do reinício em janeiro; a descrição não o define expressamente.",
+      "periodos_corrigidos": [
+        "2025-01/2025-07",
+        "2026-01/2026-07"
+      ]
+    }
+  ],
+  "divergencias": []
+}

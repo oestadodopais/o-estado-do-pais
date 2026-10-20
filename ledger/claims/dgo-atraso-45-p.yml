@@ -1,0 +1,39 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "dgo-atraso-45-p"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "689,9"
+unit: "milhões de euros"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Entidade Orçamental"
+document:
+  title: "ANEXOS ESTATÍSTICOS Agosto de 2026"
+  edition: "2026-08"
+  locator: "Folha 19 - Dív não Fin; célula P45; 2026 ago*"
+  source_sha256: "448789ab49c7d764afe8f4f89dfa3385f1ec22ccf2d40ef6e2f677af14c96b2c"
+  kind: "ficheiro"
+source_url: "https://www.eo.gov.pt/execucaoorcamental/SintesedaExecucaoOrcamentalMensal/2026/setembro/0926-SinteseExecucaoOrcamental_agosto2026_AnexoEstatistico_vPT_VUK.xlsx"
+access_date: "2026-10-04"
+reference_date: "2026-08"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "B5: ANEXOS ESTATÍSTICOS; B6: Agosto de 2026; B8: Quadro 19 - Dívida não Financeira das Administrações Públicas; C39: Pagamentos em atraso - Stock em fim de período (consolidado); Q38: € Milhões; C45: Unidades de Saúde EPE; I40: 2026; P41: ago*; C54: A partir de junho de 2026, na sequência alteração da Lei dos Compromissos e Pagamentos em Atraso (LCPA) pela Lei n.º 24/2026, de 1 de junho, os pagamentos em atraso passaram a corresponder às contas a pagar não liquidadas para além dos prazos legalmente aplicáveis de 30 dias, em regra para entidades públicas, ou de 60 dias para as entidades que integram o Serviço Nacional de Saúde e outros casos legalmente previstos. A redação anterior da LCPA estabelecia que constituíam pagamentos em atraso as contas a pagar que permanecessem nessa situação mais de 90 dias após a data acordada.; C89: Com a entrada em vigor, em 2024, do novo modelo organizativo do Serviço Nacional de Saúde (Decreto-Lei n.º 102/2023, de 7 de novembro), a designação apresentada no quadro foi adaptada de Hospitais EPE para Unidades de Saúde EPE e passa a incluir igualmente os Hospitais do Sector Público Administrativo, os Agrupamentos de Centros de Saúde e os Centros de Saúde, entidades anteriormente integradas no subsetor da saúde.; P45: 689,9"
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "oe-2027"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Pagamentos em atraso; não é dívida total. Quebra de definição em junho de 2026: prazo aplicável de 60 dias no SNS substitui mais de 90 dias após a data acordada. A nota da fonte é conservada integralmente no excerto. Valor bruto da célula: 689.8780166899998. Formato: #,##0.0. · Cruzado de ResearchHub content/26 Saude e Parcerias Efeitos · dgo-atraso-45-p."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

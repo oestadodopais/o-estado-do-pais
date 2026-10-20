@@ -1,0 +1,41 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "pe-brisa-vias-minuta"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "1 — A concessão tem por objecto a construção, conservação e exploração, em regime de portagem, das seguintes auto-estradas: a) A 1/IP 1 — Auto-Estrada do Norte — desde Vila Franca de Xira até Carvalhos, com a extensão de 266,9 km; b) A 2/IP 1 — Auto-Estrada do Sul — desde Fogueteiro até à via longitudinal do Algarve, com a extensão de 225,8 km; c) A 3/IP 1 — auto-estrada Porto-Valença desde o nó da Maia até Valença, com a extensão de 98,1 km; d) A 4/IP 4 — auto-estrada Porto-Amarante desde o nó de Ermesinde até Amarante, com a extensão de 48,3 km; e) A 5/IC 15 — Auto-Estrada da Costa do Estoril — desde o nó do Estádio Nacional até Cascais, com a extensão de 16,9 km; f)A6/IP 7 — auto-estrada Marateca (A2) — Caia — desde a A 2 até Elvas, com a extensão de 138,8 km; g) A 10/IC 2 — auto-estrada Bucelas (CREL) — Carregado — IC 3, com a extensão de 39,8 km; h) A 12/IC 3 — auto-estrada que liga Setúbal ao Montijo, com a extensão de 24,8 km; i) A 13/IC 3/IC 11 — auto-estrada entre Almeirim e Marateca, com a extensão de 78,7 km; j) A 14/IP 3 — auto-estrada entre Santa Eulália e Coimbra (Norte), com a extensão de 39,9 km; l) Ligação ao novo aeroporto de Lisboa, cuja extensão dependerá da respectiva localização; m) A9/IC 18 — CREL — Circular Regional Exterior de Lisboa, desde o Estádio Nacional (A5) até Alverca, com a extensão de 34,4 km."
+unit: "texto"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Instituto da Mobilidade e dos Transportes"
+document:
+  title: "Resolução do Conselho de Ministros n.º 198-B/2008"
+  edition: "2008-12-31"
+  locator: "Brisa_Contrato_Concessao2008_RCM_198-B.pdf; p. 2 PDF; ZIP IMT; minuta anexa; cláusula1, n.º1; PDF2"
+  source_sha256: "52663b43033ff89788c6fbb0716e736b33a178f3ed2890a76fe217cfe114af60"
+  page: 2
+  kind: "ficheiro"
+source_url: "https://www.imt-ip.pt/wp-content/uploads/IMTT/Portugues/InfraestruturasRodoviarias/RedeRodoviaria/Documents/Concessoes2014/Brisa_Minuta_Contrato_Concessao.zip"
+access_date: "2026-10-20"
+texto_documental: true
+reference_date: "2008-12-31"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "1 — A concessão tem por objecto a construção, conservação e exploração, em regime de portagem, das seguintes auto-estradas: a) A 1/IP 1 — Auto-Estrada do Norte — desde Vila Franca de Xira até Carvalhos, com a extensão de 266,9 km; b) A 2/IP 1 — Auto-Estrada do Sul — desde Fogueteiro até à via longitudinal do Algarve, com a extensão de 225,8 km; c) A 3/IP 1 — auto-estrada Porto-Valença desde o nó da Maia até Valença, com a extensão de 98,1 km; d) A 4/IP 4 — auto-estrada Porto-Amarante desde o nó de Ermesinde até Amarante, com a extensão de 48,3 km; e) A 5/IC 15 — Auto-Estrada da Costa do Estoril — desde o nó do Estádio Nacional até Cascais, com a extensão de 16,9 km; f)A6/IP 7 — auto-estrada Marateca (A2) — Caia — desde a A 2 até Elvas, com a extensão de 138,8 km; g) A 10/IC 2 — auto-estrada Bucelas (CREL) — Carregado — IC 3, com a extensão de 39,8 km; h) A 12/IC 3 — auto-estrada que liga Setúbal ao Montijo, com a extensão de 24,8 km; i) A 13/IC 3/IC 11 — auto-estrada entre Almeirim e Marateca, com a extensão de 78,7 km; j) A 14/IP 3 — auto-estrada entre Santa Eulália e Coimbra (Norte), com a extensão de 39,9 km; l) Ligação ao novo aeroporto de Lisboa, cuja extensão dependerá da respectiva localização; m) A9/IC 18 — CREL — Circular Regional Exterior de Lisboa, desde o Estádio Nacional (A5) até Alverca, com a extensão de 34,4 km."
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "oe-2027"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Minuta aprovada em 2008. O ZIP contém também a retificação 16-C/2009, que incide sobre outros números e cláusulas. A lista não é convertida em cadastro atual de obras executadas. · Cruzado de ResearchHub content/26 Saude e Parcerias Efeitos · pe-brisa-vias-minuta."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

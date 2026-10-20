@@ -1,0 +1,41 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "pe-brisa-periodo-imt"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "Período da Concessão: 1972 – 2035"
+unit: "texto"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Instituto da Mobilidade e dos Transportes"
+document:
+  title: "Concessões Rodoviárias"
+  edition: "1972/2035"
+  locator: "Tabela Concessão Brisa; Período da Concessão"
+  source_sha256: "c6491cdf57e3b6bd76d80602387518bf3d1892451b8e52c660b24da0e8fe81d4"
+  page: 1
+  kind: "ficheiro"
+source_url: "https://www.imt-ip.pt/rodoviario/infraestruturas-rodoviarias/rede-rodoviaria/concessoes-rede-nacional-de-autoestradas-concessionada-mapa-de-concessoes/"
+access_date: "2026-10-20"
+texto_documental: true
+reference_date: "2035"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "Período da Concessão: 1972 – 2035"
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "oe-2027"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] O IMT indica o intervalo de anos; não é a data exata de assinatura. · Cruzado de ResearchHub content/26 Saude e Parcerias Efeitos · pe-brisa-periodo-imt."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

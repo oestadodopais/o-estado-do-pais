@@ -18,6 +18,12 @@ function nomeDaRegiao(slug) {
 /* Exceções lidas nas próprias linhas: a dimensão territorial do INE, os
    apuramentos CAOP, o âmbito do diploma e o par da distância calculada. */
 const EXCECOES = {
+  'eurostat-pt-phys': {pt:'Portugal',en:'Portugal'},
+  'eurostat-pt-nrs': {pt:'Portugal',en:'Portugal'},
+  'eurostat-be-phys': {pt:'Bélgica',en:'Belgium'},
+  'eurostat-el-phys': {pt:'Grécia',en:'Greece'},
+  'eurostat-ro-nrs': {pt:'Roménia',en:'Romania'},
+  'eurostat-lu-nrs': {pt:'Luxemburgo',en:'Luxembourg'},
   'alentejo-central-poder-de-compra-2023': { pt: 'Alentejo Central', en: 'Alentejo Central' },
   'municipios-acores-caop-2025': nomeDaRegiao('acores'),
   'municipios-madeira-caop-2025': nomeDaRegiao('madeira'),

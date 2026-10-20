@@ -1,0 +1,113 @@
+{
+  "erros": [],
+  "plantas": [
+    {
+      "nome": "texto documental com value alterado",
+      "mordeu": true
+    },
+    {
+      "nome": "texto documental com excerpt alterado",
+      "mordeu": true
+    },
+    {
+      "nome": "texto documental com unit alterado",
+      "mordeu": true
+    },
+    {
+      "nome": "texto documental com source_url alterado",
+      "mordeu": true
+    },
+    {
+      "nome": "texto documental com access_date alterado",
+      "mordeu": true
+    },
+    {
+      "nome": "texto documental com documento source_sha256 alterado",
+      "mordeu": true
+    },
+    {
+      "nome": "texto documental com documento title alterado",
+      "mordeu": true
+    },
+    {
+      "nome": "texto documental com documento locator alterado",
+      "mordeu": true
+    },
+    {
+      "nome": "texto documental com documento page alterado",
+      "mordeu": true
+    },
+    {
+      "nome": "período acumulado alterado",
+      "mordeu": true
+    },
+    {
+      "nome": "período acumulado alterado",
+      "mordeu": true
+    },
+    {
+      "nome": "período acumulado alterado",
+      "mordeu": true
+    },
+    {
+      "nome": "conta alterada der-sns-consultas-csp-variacao-pct",
+      "mordeu": true
+    },
+    {
+      "nome": "conta alterada der-sns-cirurgias-variacao-pct",
+      "mordeu": true
+    },
+    {
+      "nome": "conta alterada der-sns-lista-cirurgia-variacao-pct",
+      "mordeu": true
+    },
+    {
+      "nome": "conta alterada der-sns-espera-rncci-variacao-pct",
+      "mordeu": true
+    },
+    {
+      "nome": "conta alterada der-infarmed-total-2026-jan-jul",
+      "mordeu": true
+    },
+    {
+      "nome": "conta alterada der-infarmed-total-2025-jan-jul",
+      "mordeu": true
+    },
+    {
+      "nome": "conta alterada der-infarmed-variacao-pct",
+      "mordeu": true
+    },
+    {
+      "nome": "conta alterada der-prr-saude-contratado-numerico",
+      "mordeu": true
+    },
+    {
+      "nome": "conta alterada der-prr-saude-pago-numerico",
+      "mordeu": true
+    },
+    {
+      "nome": "conta alterada der-prr-saude-por-pagar",
+      "mordeu": true
+    },
+    {
+      "nome": "conta alterada der-prr-saude-por-pagar-pct",
+      "mordeu": true
+    },
+    {
+      "nome": "conta alterada der-prr-saude-marcos-total",
+      "mordeu": true
+    },
+    {
+      "nome": "conta alterada der-prr-saude-marcos-completos",
+      "mordeu": true
+    },
+    {
+      "nome": "conta alterada der-sns-divida-fornecedores-2026-07",
+      "mordeu": true
+    },
+    {
+      "nome": "exemplo PRR incompleto",
+      "mordeu": true
+    }
+  ]
+}

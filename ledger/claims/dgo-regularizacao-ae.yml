@@ -1,0 +1,45 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "dgo-regularizacao-ae"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "1 398,6"
+unit: "milhões de euros"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Regularização de dívidas vencidas a fornecedores por parte de entidades do Serviço Nacional de Saúde, com contrapartida em reforços dos respetivos capitais pelo Estado (a)"
+name_source: "Folha 21 - Ef Temp AC+SS; célula B68"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Entidade Orçamental"
+document:
+  title: "ANEXOS ESTATÍSTICOS Agosto de 2026"
+  edition: "2026-01/2026-08"
+  locator: "Folha 21 - Ef Temp AC+SS; célula AE68; 2026 Acumulado"
+  source_sha256: "448789ab49c7d764afe8f4f89dfa3385f1ec22ccf2d40ef6e2f677af14c96b2c"
+  kind: "ficheiro"
+source_url: "https://www.eo.gov.pt/execucaoorcamental/SintesedaExecucaoOrcamentalMensal/2026/setembro/0926-SinteseExecucaoOrcamental_agosto2026_AnexoEstatistico_vPT_VUK.xlsx"
+access_date: "2026-10-04"
+reference_date: "2026-08"
+period: "2026-01/2026-08"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "B5: ANEXOS ESTATÍSTICOS; B6: Agosto de 2026; B8: Quadro 21 - Efeitos temporários/especiais na conta da Administração Central e Segurança Social; S9: € Milhões; B68: Regularização de dívidas vencidas a fornecedores por parte de entidades do Serviço Nacional de Saúde, com contrapartida em reforços dos respetivos capitais pelo Estado (a); C68: Despesa; D68: D02; B78: (a) Os valores identificados neste item correspondem aos que foram registados pelas entidades nos sistemas de informação de suporte ao acompanhamento da execução orçamental. Valores mensais negativos resultam do registo, pelas entidades, de valores acumulados inferiores aos do mês precedente.; S10: 2026; AE11: Acumulado; AE68: 1 398,6"
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "oe-2027"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Pagamentos declarados pelas entidades, com contrapartida em reforço de capital. Não confundir pagamento executado com montante de capital autorizado. Valor bruto da célula: 1398.5612898499999. Formato: #,##0.0. · Cruzado de ResearchHub content/26 Saude e Parcerias Efeitos · dgo-regularizacao-ae."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

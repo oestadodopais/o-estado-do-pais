@@ -6994,3 +6994,2387 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     }
   }
 });
+
+// V2E: recibos dos efeitos.
+Object.assign(FAMILIAS_DAS_LINHAS, {
+  "oe2027-indicador-medico": {
+    "nome": {
+      "pt": "Aumento do número de utentes com médico de família atribuídos",
+      "en": "Increase in patients assigned a family doctor"
+    },
+    "frase": {
+      "pt": [
+        "É o indicador ou compromisso assistencial escrito no relatório do Orçamento, sem meta quantitativa nesta linha."
+      ],
+      "en": [
+        "It is the care indicator or commitment written in the Budget report, without a numerical target in this row."
+      ]
+    }
+  },
+  "oe2027-compromisso-consultas": {
+    "nome": {
+      "pt": "Compromisso de aumentar consultas",
+      "en": "Commitment to increase appointments"
+    },
+    "frase": {
+      "pt": [
+        "É o indicador ou compromisso assistencial escrito no relatório do Orçamento, sem meta quantitativa nesta linha."
+      ],
+      "en": [
+        "It is the care indicator or commitment written in the Budget report, without a numerical target in this row."
+      ]
+    }
+  },
+  "oe2027-compromisso-cirurgias": {
+    "nome": {
+      "pt": "Compromisso de aumentar cirurgias",
+      "en": "Commitment to increase surgery"
+    },
+    "frase": {
+      "pt": [
+        "É o indicador ou compromisso assistencial escrito no relatório do Orçamento, sem meta quantitativa nesta linha."
+      ],
+      "en": [
+        "It is the care indicator or commitment written in the Budget report, without a numerical target in this row."
+      ]
+    }
+  },
+  "dgo-atraso-45-p": {
+    "nome": {
+      "pt": "Pagamentos em atraso das unidades de saúde EPE",
+      "en": "Overdue payments by public enterprise health units"
+    },
+    "frase": {
+      "pt": [
+        "São pagamentos em atraso das unidades de saúde EPE. Não é a dívida total a fornecedores."
+      ],
+      "en": [
+        "It is overdue payments by public enterprise health units. It is not total debt to suppliers."
+      ]
+    }
+  },
+  "dgo-regularizacao-ae": {
+    "nome": {
+      "pt": "Regularização de dívidas vencidas a fornecedores por parte de entidades do Serviço Nacional de Saúde, com contrapartida em reforços dos respetivos capitais pelo Estado (a)",
+      "en": "Settlement of overdue NHS supplier debt backed by State capital increases"
+    },
+    "frase": {
+      "pt": [
+        "São regularizações de dívidas através de reforços de capital no período indicado."
+      ],
+      "en": [
+        "It is debt settlement through capital injections in the indicated period."
+      ]
+    }
+  },
+  "sns-divida-2026-divida-total-fornecedores-externos-0": {
+    "nome": {
+      "pt": "Dívida a fornecedores externos, Administração Central do Sistema de Saúde, I.P",
+      "en": "Debt to external suppliers, Administração Central do Sistema de Saúde, I.P"
+    },
+    "frase": {
+      "pt": [
+        "É a dívida a fornecedores externos da entidade identificada no nome."
+      ],
+      "en": [
+        "It is the debt to external suppliers of the entity identified in the name."
+      ]
+    }
+  },
+  "sns-divida-2026-divida-total-fornecedores-externos-1": {
+    "nome": {
+      "pt": "Dívida a fornecedores externos, Administração Regional de Saúde de Lisboa e Vale do Tejo",
+      "en": "Debt to external suppliers, Administração Regional de Saúde de Lisboa e Vale do Tejo"
+    },
+    "frase": {
+      "pt": [
+        "É a dívida a fornecedores externos da entidade identificada no nome."
+      ],
+      "en": [
+        "It is the debt to external suppliers of the entity identified in the name."
+      ]
+    }
+  },
+  "sns-divida-2026-divida-total-fornecedores-externos-2": {
+    "nome": {
+      "pt": "Dívida a fornecedores externos, Administração Regional de Saúde do Alentejo",
+      "en": "Debt to external suppliers, Administração Regional de Saúde do Alentejo"
+    },
+    "frase": {
+      "pt": [
+        "É a dívida a fornecedores externos da entidade identificada no nome."
+      ],
+      "en": [
+        "It is the debt to external suppliers of the entity identified in the name."
+      ]
+    }
+  },
+  "sns-divida-2026-divida-total-fornecedores-externos-3": {
+    "nome": {
+      "pt": "Dívida a fornecedores externos, Administração Regional de Saúde do Algarve",
+      "en": "Debt to external suppliers, Administração Regional de Saúde do Algarve"
+    },
+    "frase": {
+      "pt": [
+        "É a dívida a fornecedores externos da entidade identificada no nome."
+      ],
+      "en": [
+        "It is the debt to external suppliers of the entity identified in the name."
+      ]
+    }
+  },
+  "sns-divida-2026-divida-total-fornecedores-externos-4": {
+    "nome": {
+      "pt": "Dívida a fornecedores externos, Administração Regional de Saúde do Centro",
+      "en": "Debt to external suppliers, Administração Regional de Saúde do Centro"
+    },
+    "frase": {
+      "pt": [
+        "É a dívida a fornecedores externos da entidade identificada no nome."
+      ],
+      "en": [
+        "It is the debt to external suppliers of the entity identified in the name."
+      ]
+    }
+  },
+  "sns-divida-2026-divida-total-fornecedores-externos-5": {
+    "nome": {
+      "pt": "Dívida a fornecedores externos, Administração Regional de Saúde do Norte",
+      "en": "Debt to external suppliers, Administração Regional de Saúde do Norte"
+    },
+    "frase": {
+      "pt": [
+        "É a dívida a fornecedores externos da entidade identificada no nome."
+      ],
+      "en": [
+        "It is the debt to external suppliers of the entity identified in the name."
+      ]
+    }
+  },
+  "sns-divida-2026-divida-total-fornecedores-externos-6": {
+    "nome": {
+      "pt": "Dívida a fornecedores externos, Direção Executiva do Serviço Nacional de Saúde, I.P.",
+      "en": "Debt to external suppliers, Direção Executiva do Serviço Nacional de Saúde, I.P."
+    },
+    "frase": {
+      "pt": [
+        "É a dívida a fornecedores externos da entidade identificada no nome."
+      ],
+      "en": [
+        "It is the debt to external suppliers of the entity identified in the name."
+      ]
+    }
+  },
+  "sns-divida-2026-divida-total-fornecedores-externos-7": {
+    "nome": {
+      "pt": "Dívida a fornecedores externos, Instituto Nacional de Emergência Médica",
+      "en": "Debt to external suppliers, Instituto Nacional de Emergência Médica"
+    },
+    "frase": {
+      "pt": [
+        "É a dívida a fornecedores externos da entidade identificada no nome."
+      ],
+      "en": [
+        "It is the debt to external suppliers of the entity identified in the name."
+      ]
+    }
+  },
+  "sns-divida-2026-divida-total-fornecedores-externos-8": {
+    "nome": {
+      "pt": "Dívida a fornecedores externos, Instituto Nacional Saúde Dr. Ricardo Jorge - Lisboa",
+      "en": "Debt to external suppliers, Instituto Nacional Saúde Dr. Ricardo Jorge - Lisboa"
+    },
+    "frase": {
+      "pt": [
+        "É a dívida a fornecedores externos da entidade identificada no nome."
+      ],
+      "en": [
+        "It is the debt to external suppliers of the entity identified in the name."
+      ]
+    }
+  },
+  "sns-divida-2026-divida-total-fornecedores-externos-9": {
+    "nome": {
+      "pt": "Dívida a fornecedores externos, Instituto para os Comportamentos Aditivos e as Dependências, I. P.",
+      "en": "Debt to external suppliers, Instituto para os Comportamentos Aditivos e as Dependências, I. P."
+    },
+    "frase": {
+      "pt": [
+        "É a dívida a fornecedores externos da entidade identificada no nome."
+      ],
+      "en": [
+        "It is the debt to external suppliers of the entity identified in the name."
+      ]
+    }
+  },
+  "sns-divida-2026-divida-total-fornecedores-externos-10": {
+    "nome": {
+      "pt": "Dívida a fornecedores externos, INSTITUTO PORTUGUES DE ONCOLOGIA DE COIMBRA, EPE",
+      "en": "Debt to external suppliers, INSTITUTO PORTUGUES DE ONCOLOGIA DE COIMBRA, EPE"
+    },
+    "frase": {
+      "pt": [
+        "É a dívida a fornecedores externos da entidade identificada no nome."
+      ],
+      "en": [
+        "It is the debt to external suppliers of the entity identified in the name."
+      ]
+    }
+  },
+  "sns-divida-2026-divida-total-fornecedores-externos-11": {
+    "nome": {
+      "pt": "Dívida a fornecedores externos, INSTITUTO PORTUGUES DE ONCOLOGIA DE LISBOA, EPE",
+      "en": "Debt to external suppliers, INSTITUTO PORTUGUES DE ONCOLOGIA DE LISBOA, EPE"
+    },
+    "frase": {
+      "pt": [
+        "É a dívida a fornecedores externos da entidade identificada no nome."
+      ],
+      "en": [
+        "It is the debt to external suppliers of the entity identified in the name."
+      ]
+    }
+  },
+  "sns-divida-2026-divida-total-fornecedores-externos-12": {
+    "nome": {
+      "pt": "Dívida a fornecedores externos, INSTITUTO PORTUGUES DE ONCOLOGIA DO PORTO, EPE",
+      "en": "Debt to external suppliers, INSTITUTO PORTUGUES DE ONCOLOGIA DO PORTO, EPE"
+    },
+    "frase": {
+      "pt": [
+        "É a dívida a fornecedores externos da entidade identificada no nome."
+      ],
+      "en": [
+        "It is the debt to external suppliers of the entity identified in the name."
+      ]
+    }
+  },
+  "sns-divida-2026-divida-total-fornecedores-externos-13": {
+    "nome": {
+      "pt": "Dívida a fornecedores externos, Instituto Português Do Sangue e Da Transplantação, IP",
+      "en": "Debt to external suppliers, Instituto Português Do Sangue e Da Transplantação, IP"
+    },
+    "frase": {
+      "pt": [
+        "É a dívida a fornecedores externos da entidade identificada no nome."
+      ],
+      "en": [
+        "It is the debt to external suppliers of the entity identified in the name."
+      ]
+    }
+  },
+  "sns-divida-2026-divida-total-fornecedores-externos-14": {
+    "nome": {
+      "pt": "Dívida a fornecedores externos, UNIDADE LOCAL DE SAÚDE ALTO MINHO, EPE",
+      "en": "Debt to external suppliers, UNIDADE LOCAL DE SAÚDE ALTO MINHO, EPE"
+    },
+    "frase": {
+      "pt": [
+        "É a dívida a fornecedores externos da entidade identificada no nome."
+      ],
+      "en": [
+        "It is the debt to external suppliers of the entity identified in the name."
+      ]
+    }
+  },
+  "sns-divida-2026-divida-total-fornecedores-externos-15": {
+    "nome": {
+      "pt": "Dívida a fornecedores externos, Unidade Local de Saúde da Arrábida, E. P. E.",
+      "en": "Debt to external suppliers, Unidade Local de Saúde da Arrábida, E. P. E."
+    },
+    "frase": {
+      "pt": [
+        "É a dívida a fornecedores externos da entidade identificada no nome."
+      ],
+      "en": [
+        "It is the debt to external suppliers of the entity identified in the name."
+      ]
+    }
+  },
+  "sns-divida-2026-divida-total-fornecedores-externos-16": {
+    "nome": {
+      "pt": "Dívida a fornecedores externos, Unidade Local de Saúde da Cova da Beira, E. P. E.",
+      "en": "Debt to external suppliers, Unidade Local de Saúde da Cova da Beira, E. P. E."
+    },
+    "frase": {
+      "pt": [
+        "É a dívida a fornecedores externos da entidade identificada no nome."
+      ],
+      "en": [
+        "It is the debt to external suppliers of the entity identified in the name."
+      ]
+    }
+  },
+  "sns-divida-2026-divida-total-fornecedores-externos-17": {
+    "nome": {
+      "pt": "Dívida a fornecedores externos, UNIDADE LOCAL DE SAÚDE DA GUARDA, EPE",
+      "en": "Debt to external suppliers, UNIDADE LOCAL DE SAÚDE DA GUARDA, EPE"
+    },
+    "frase": {
+      "pt": [
+        "É a dívida a fornecedores externos da entidade identificada no nome."
+      ],
+      "en": [
+        "It is the debt to external suppliers of the entity identified in the name."
+      ]
+    }
+  },
+  "sns-divida-2026-divida-total-fornecedores-externos-18": {
+    "nome": {
+      "pt": "Dívida a fornecedores externos, Unidade Local de Saúde da Lezíria, E. P. E",
+      "en": "Debt to external suppliers, Unidade Local de Saúde da Lezíria, E. P. E"
+    },
+    "frase": {
+      "pt": [
+        "É a dívida a fornecedores externos da entidade identificada no nome."
+      ],
+      "en": [
+        "It is the debt to external suppliers of the entity identified in the name."
+      ]
+    }
+  },
+  "sns-divida-2026-divida-total-fornecedores-externos-19": {
+    "nome": {
+      "pt": "Dívida a fornecedores externos, Unidade Local de Saúde da Região de Aveiro, E. P. E.",
+      "en": "Debt to external suppliers, Unidade Local de Saúde da Região de Aveiro, E. P. E."
+    },
+    "frase": {
+      "pt": [
+        "É a dívida a fornecedores externos da entidade identificada no nome."
+      ],
+      "en": [
+        "It is the debt to external suppliers of the entity identified in the name."
+      ]
+    }
+  },
+  "sns-divida-2026-divida-total-fornecedores-externos-20": {
+    "nome": {
+      "pt": "Dívida a fornecedores externos, Unidade Local de Saúde da Região de Leiria, E. P. E.",
+      "en": "Debt to external suppliers, Unidade Local de Saúde da Região de Leiria, E. P. E."
+    },
+    "frase": {
+      "pt": [
+        "É a dívida a fornecedores externos da entidade identificada no nome."
+      ],
+      "en": [
+        "It is the debt to external suppliers of the entity identified in the name."
+      ]
+    }
+  },
+  "sns-divida-2026-divida-total-fornecedores-externos-21": {
+    "nome": {
+      "pt": "Dívida a fornecedores externos, Unidade Local de Saúde de Almada-Seixal, E. P. E.",
+      "en": "Debt to external suppliers, Unidade Local de Saúde de Almada-Seixal, E. P. E."
+    },
+    "frase": {
+      "pt": [
+        "É a dívida a fornecedores externos da entidade identificada no nome."
+      ],
+      "en": [
+        "It is the debt to external suppliers of the entity identified in the name."
+      ]
+    }
+  },
+  "sns-divida-2026-divida-total-fornecedores-externos-22": {
+    "nome": {
+      "pt": "Dívida a fornecedores externos, Unidade Local de Saúde de Amadora/Sintra, E. P. E.",
+      "en": "Debt to external suppliers, Unidade Local de Saúde de Amadora/Sintra, E. P. E."
+    },
+    "frase": {
+      "pt": [
+        "É a dívida a fornecedores externos da entidade identificada no nome."
+      ],
+      "en": [
+        "It is the debt to external suppliers of the entity identified in the name."
+      ]
+    }
+  },
+  "sns-divida-2026-divida-total-fornecedores-externos-23": {
+    "nome": {
+      "pt": "Dívida a fornecedores externos, Unidade Local de Saúde de Barcelos/Esposende, E. P. E.",
+      "en": "Debt to external suppliers, Unidade Local de Saúde de Barcelos/Esposende, E. P. E."
+    },
+    "frase": {
+      "pt": [
+        "É a dívida a fornecedores externos da entidade identificada no nome."
+      ],
+      "en": [
+        "It is the debt to external suppliers of the entity identified in the name."
+      ]
+    }
+  },
+  "sns-divida-2026-divida-total-fornecedores-externos-24": {
+    "nome": {
+      "pt": "Dívida a fornecedores externos, Unidade Local de Saúde de Braga, E. P. E.",
+      "en": "Debt to external suppliers, Unidade Local de Saúde de Braga, E. P. E."
+    },
+    "frase": {
+      "pt": [
+        "É a dívida a fornecedores externos da entidade identificada no nome."
+      ],
+      "en": [
+        "It is the debt to external suppliers of the entity identified in the name."
+      ]
+    }
+  },
+  "sns-divida-2026-divida-total-fornecedores-externos-25": {
+    "nome": {
+      "pt": "Dívida a fornecedores externos, UNIDADE LOCAL DE SAUDE DE CASTELO BRANCO, EPE",
+      "en": "Debt to external suppliers, UNIDADE LOCAL DE SAUDE DE CASTELO BRANCO, EPE"
+    },
+    "frase": {
+      "pt": [
+        "É a dívida a fornecedores externos da entidade identificada no nome."
+      ],
+      "en": [
+        "It is the debt to external suppliers of the entity identified in the name."
+      ]
+    }
+  },
+  "sns-divida-2026-divida-total-fornecedores-externos-26": {
+    "nome": {
+      "pt": "Dívida a fornecedores externos, Unidade Local de Saúde de Coimbra, E. P. E.",
+      "en": "Debt to external suppliers, Unidade Local de Saúde de Coimbra, E. P. E."
+    },
+    "frase": {
+      "pt": [
+        "É a dívida a fornecedores externos da entidade identificada no nome."
+      ],
+      "en": [
+        "It is the debt to external suppliers of the entity identified in the name."
+      ]
+    }
+  },
+  "sns-divida-2026-divida-total-fornecedores-externos-27": {
+    "nome": {
+      "pt": "Dívida a fornecedores externos, Unidade Local de Saúde de Entre Douro e Vouga, E. P. E.",
+      "en": "Debt to external suppliers, Unidade Local de Saúde de Entre Douro e Vouga, E. P. E."
+    },
+    "frase": {
+      "pt": [
+        "É a dívida a fornecedores externos da entidade identificada no nome."
+      ],
+      "en": [
+        "It is the debt to external suppliers of the entity identified in the name."
+      ]
+    }
+  },
+  "sns-divida-2026-divida-total-fornecedores-externos-28": {
+    "nome": {
+      "pt": "Dívida a fornecedores externos, Unidade Local de Saúde de Gaia/Espinho, E. P. E.",
+      "en": "Debt to external suppliers, Unidade Local de Saúde de Gaia/Espinho, E. P. E."
+    },
+    "frase": {
+      "pt": [
+        "É a dívida a fornecedores externos da entidade identificada no nome."
+      ],
+      "en": [
+        "It is the debt to external suppliers of the entity identified in the name."
+      ]
+    }
+  },
+  "sns-divida-2026-divida-total-fornecedores-externos-29": {
+    "nome": {
+      "pt": "Dívida a fornecedores externos, Unidade Local de Saúde de Lisboa Ocidental, E. P. E.",
+      "en": "Debt to external suppliers, Unidade Local de Saúde de Lisboa Ocidental, E. P. E."
+    },
+    "frase": {
+      "pt": [
+        "É a dívida a fornecedores externos da entidade identificada no nome."
+      ],
+      "en": [
+        "It is the debt to external suppliers of the entity identified in the name."
+      ]
+    }
+  },
+  "sns-divida-2026-divida-total-fornecedores-externos-30": {
+    "nome": {
+      "pt": "Dívida a fornecedores externos, Unidade Local de Saúde de Loures-Odivelas, E. P. E.",
+      "en": "Debt to external suppliers, Unidade Local de Saúde de Loures-Odivelas, E. P. E."
+    },
+    "frase": {
+      "pt": [
+        "É a dívida a fornecedores externos da entidade identificada no nome."
+      ],
+      "en": [
+        "It is the debt to external suppliers of the entity identified in the name."
+      ]
+    }
+  },
+  "sns-divida-2026-divida-total-fornecedores-externos-31": {
+    "nome": {
+      "pt": "Dívida a fornecedores externos, UNIDADE LOCAL DE SAÚDE DE MATOSINHOS, EPE",
+      "en": "Debt to external suppliers, UNIDADE LOCAL DE SAÚDE DE MATOSINHOS, EPE"
+    },
+    "frase": {
+      "pt": [
+        "É a dívida a fornecedores externos da entidade identificada no nome."
+      ],
+      "en": [
+        "It is the debt to external suppliers of the entity identified in the name."
+      ]
+    }
+  },
+  "sns-divida-2026-divida-total-fornecedores-externos-32": {
+    "nome": {
+      "pt": "Dívida a fornecedores externos, Unidade Local de Saúde de Santa Maria, E. P. E.",
+      "en": "Debt to external suppliers, Unidade Local de Saúde de Santa Maria, E. P. E."
+    },
+    "frase": {
+      "pt": [
+        "É a dívida a fornecedores externos da entidade identificada no nome."
+      ],
+      "en": [
+        "It is the debt to external suppliers of the entity identified in the name."
+      ]
+    }
+  },
+  "sns-divida-2026-divida-total-fornecedores-externos-33": {
+    "nome": {
+      "pt": "Dívida a fornecedores externos, Unidade Local de Saúde de Santo António, E. P. E.",
+      "en": "Debt to external suppliers, Unidade Local de Saúde de Santo António, E. P. E."
+    },
+    "frase": {
+      "pt": [
+        "É a dívida a fornecedores externos da entidade identificada no nome."
+      ],
+      "en": [
+        "It is the debt to external suppliers of the entity identified in the name."
+      ]
+    }
+  },
+  "sns-divida-2026-divida-total-fornecedores-externos-34": {
+    "nome": {
+      "pt": "Dívida a fornecedores externos, Unidade Local de Saúde de São João, E. P. E.",
+      "en": "Debt to external suppliers, Unidade Local de Saúde de São João, E. P. E."
+    },
+    "frase": {
+      "pt": [
+        "É a dívida a fornecedores externos da entidade identificada no nome."
+      ],
+      "en": [
+        "It is the debt to external suppliers of the entity identified in the name."
+      ]
+    }
+  },
+  "sns-divida-2026-divida-total-fornecedores-externos-35": {
+    "nome": {
+      "pt": "Dívida a fornecedores externos, Unidade Local de Saúde de São José, E. P. E.",
+      "en": "Debt to external suppliers, Unidade Local de Saúde de São José, E. P. E."
+    },
+    "frase": {
+      "pt": [
+        "É a dívida a fornecedores externos da entidade identificada no nome."
+      ],
+      "en": [
+        "It is the debt to external suppliers of the entity identified in the name."
+      ]
+    }
+  },
+  "sns-divida-2026-divida-total-fornecedores-externos-36": {
+    "nome": {
+      "pt": "Dívida a fornecedores externos, Unidade Local de Saúde de Trás-os-Montes e Alto Douro, E. P. E.",
+      "en": "Debt to external suppliers, Unidade Local de Saúde de Trás-os-Montes e Alto Douro, E. P. E."
+    },
+    "frase": {
+      "pt": [
+        "É a dívida a fornecedores externos da entidade identificada no nome."
+      ],
+      "en": [
+        "It is the debt to external suppliers of the entity identified in the name."
+      ]
+    }
+  },
+  "sns-divida-2026-divida-total-fornecedores-externos-37": {
+    "nome": {
+      "pt": "Dívida a fornecedores externos, Unidade Local de Saúde de Viseu Dão-Lafões, E. P. E.",
+      "en": "Debt to external suppliers, Unidade Local de Saúde de Viseu Dão-Lafões, E. P. E."
+    },
+    "frase": {
+      "pt": [
+        "É a dívida a fornecedores externos da entidade identificada no nome."
+      ],
+      "en": [
+        "It is the debt to external suppliers of the entity identified in the name."
+      ]
+    }
+  },
+  "sns-divida-2026-divida-total-fornecedores-externos-38": {
+    "nome": {
+      "pt": "Dívida a fornecedores externos, Unidade Local de Saúde do Alentejo Central, E. P. E.",
+      "en": "Debt to external suppliers, Unidade Local de Saúde do Alentejo Central, E. P. E."
+    },
+    "frase": {
+      "pt": [
+        "É a dívida a fornecedores externos da entidade identificada no nome."
+      ],
+      "en": [
+        "It is the debt to external suppliers of the entity identified in the name."
+      ]
+    }
+  },
+  "sns-divida-2026-divida-total-fornecedores-externos-39": {
+    "nome": {
+      "pt": "Dívida a fornecedores externos, Unidade Local de Saúde do Algarve, E. P. E.",
+      "en": "Debt to external suppliers, Unidade Local de Saúde do Algarve, E. P. E."
+    },
+    "frase": {
+      "pt": [
+        "É a dívida a fornecedores externos da entidade identificada no nome."
+      ],
+      "en": [
+        "It is the debt to external suppliers of the entity identified in the name."
+      ]
+    }
+  },
+  "sns-divida-2026-divida-total-fornecedores-externos-40": {
+    "nome": {
+      "pt": "Dívida a fornecedores externos, Unidade Local de Saúde do Alto Alentejo, E. P. E.",
+      "en": "Debt to external suppliers, Unidade Local de Saúde do Alto Alentejo, E. P. E."
+    },
+    "frase": {
+      "pt": [
+        "É a dívida a fornecedores externos da entidade identificada no nome."
+      ],
+      "en": [
+        "It is the debt to external suppliers of the entity identified in the name."
+      ]
+    }
+  },
+  "sns-divida-2026-divida-total-fornecedores-externos-41": {
+    "nome": {
+      "pt": "Dívida a fornecedores externos, Unidade Local de Saúde do Alto Ave, E. P. E.",
+      "en": "Debt to external suppliers, Unidade Local de Saúde do Alto Ave, E. P. E."
+    },
+    "frase": {
+      "pt": [
+        "É a dívida a fornecedores externos da entidade identificada no nome."
+      ],
+      "en": [
+        "It is the debt to external suppliers of the entity identified in the name."
+      ]
+    }
+  },
+  "sns-divida-2026-divida-total-fornecedores-externos-42": {
+    "nome": {
+      "pt": "Dívida a fornecedores externos, Unidade Local de Saúde do Arco Ribeirinho, E. P. E.",
+      "en": "Debt to external suppliers, Unidade Local de Saúde do Arco Ribeirinho, E. P. E."
+    },
+    "frase": {
+      "pt": [
+        "É a dívida a fornecedores externos da entidade identificada no nome."
+      ],
+      "en": [
+        "It is the debt to external suppliers of the entity identified in the name."
+      ]
+    }
+  },
+  "sns-divida-2026-divida-total-fornecedores-externos-43": {
+    "nome": {
+      "pt": "Dívida a fornecedores externos, Unidade Local de Saúde do Baixo Mondego, E. P. E.",
+      "en": "Debt to external suppliers, Unidade Local de Saúde do Baixo Mondego, E. P. E."
+    },
+    "frase": {
+      "pt": [
+        "É a dívida a fornecedores externos da entidade identificada no nome."
+      ],
+      "en": [
+        "It is the debt to external suppliers of the entity identified in the name."
+      ]
+    }
+  },
+  "sns-divida-2026-divida-total-fornecedores-externos-44": {
+    "nome": {
+      "pt": "Dívida a fornecedores externos, Unidade Local de Saúde do Estuário do Tejo, E. P. E.",
+      "en": "Debt to external suppliers, Unidade Local de Saúde do Estuário do Tejo, E. P. E."
+    },
+    "frase": {
+      "pt": [
+        "É a dívida a fornecedores externos da entidade identificada no nome."
+      ],
+      "en": [
+        "It is the debt to external suppliers of the entity identified in the name."
+      ]
+    }
+  },
+  "sns-divida-2026-divida-total-fornecedores-externos-45": {
+    "nome": {
+      "pt": "Dívida a fornecedores externos, UNIDADE LOCAL DE SAUDE DO LITORAL ALENTEJANO, EPE",
+      "en": "Debt to external suppliers, UNIDADE LOCAL DE SAUDE DO LITORAL ALENTEJANO, EPE"
+    },
+    "frase": {
+      "pt": [
+        "É a dívida a fornecedores externos da entidade identificada no nome."
+      ],
+      "en": [
+        "It is the debt to external suppliers of the entity identified in the name."
+      ]
+    }
+  },
+  "sns-divida-2026-divida-total-fornecedores-externos-46": {
+    "nome": {
+      "pt": "Dívida a fornecedores externos, Unidade Local de Saúde do Médio Ave, E. P. E.",
+      "en": "Debt to external suppliers, Unidade Local de Saúde do Médio Ave, E. P. E."
+    },
+    "frase": {
+      "pt": [
+        "É a dívida a fornecedores externos da entidade identificada no nome."
+      ],
+      "en": [
+        "It is the debt to external suppliers of the entity identified in the name."
+      ]
+    }
+  },
+  "sns-divida-2026-divida-total-fornecedores-externos-47": {
+    "nome": {
+      "pt": "Dívida a fornecedores externos, Unidade Local de Saúde do Médio Tejo, E. P. E.",
+      "en": "Debt to external suppliers, Unidade Local de Saúde do Médio Tejo, E. P. E."
+    },
+    "frase": {
+      "pt": [
+        "É a dívida a fornecedores externos da entidade identificada no nome."
+      ],
+      "en": [
+        "It is the debt to external suppliers of the entity identified in the name."
+      ]
+    }
+  },
+  "sns-divida-2026-divida-total-fornecedores-externos-48": {
+    "nome": {
+      "pt": "Dívida a fornecedores externos, UNIDADE LOCAL DE SAUDE DO NORDESTE, EPE",
+      "en": "Debt to external suppliers, UNIDADE LOCAL DE SAUDE DO NORDESTE, EPE"
+    },
+    "frase": {
+      "pt": [
+        "É a dívida a fornecedores externos da entidade identificada no nome."
+      ],
+      "en": [
+        "It is the debt to external suppliers of the entity identified in the name."
+      ]
+    }
+  },
+  "sns-divida-2026-divida-total-fornecedores-externos-49": {
+    "nome": {
+      "pt": "Dívida a fornecedores externos, Unidade Local de Saúde do Oeste, E. P. E.",
+      "en": "Debt to external suppliers, Unidade Local de Saúde do Oeste, E. P. E."
+    },
+    "frase": {
+      "pt": [
+        "É a dívida a fornecedores externos da entidade identificada no nome."
+      ],
+      "en": [
+        "It is the debt to external suppliers of the entity identified in the name."
+      ]
+    }
+  },
+  "sns-divida-2026-divida-total-fornecedores-externos-50": {
+    "nome": {
+      "pt": "Dívida a fornecedores externos, Unidade Local de Saúde do Tâmega e Sousa, E. P. E.",
+      "en": "Debt to external suppliers, Unidade Local de Saúde do Tâmega e Sousa, E. P. E."
+    },
+    "frase": {
+      "pt": [
+        "É a dívida a fornecedores externos da entidade identificada no nome."
+      ],
+      "en": [
+        "It is the debt to external suppliers of the entity identified in the name."
+      ]
+    }
+  },
+  "sns-divida-2026-divida-total-fornecedores-externos-51": {
+    "nome": {
+      "pt": "Dívida a fornecedores externos, Unidade Local de Saúde Póvoa de Varzim/Vila do Conde, E. P. E.",
+      "en": "Debt to external suppliers, Unidade Local de Saúde Póvoa de Varzim/Vila do Conde, E. P. E."
+    },
+    "frase": {
+      "pt": [
+        "É a dívida a fornecedores externos da entidade identificada no nome."
+      ],
+      "en": [
+        "It is the debt to external suppliers of the entity identified in the name."
+      ]
+    }
+  },
+  "sns-divida-2026-divida-total-fornecedores-externos-52": {
+    "nome": {
+      "pt": "Dívida a fornecedores externos, UNIDADE LOCAL DO BAIXO ALENTEJO, EPE",
+      "en": "Debt to external suppliers, UNIDADE LOCAL DO BAIXO ALENTEJO, EPE"
+    },
+    "frase": {
+      "pt": [
+        "É a dívida a fornecedores externos da entidade identificada no nome."
+      ],
+      "en": [
+        "It is the debt to external suppliers of the entity identified in the name."
+      ]
+    }
+  },
+  "pe-oe-brisa-negociacao": {
+    "nome": {
+      "pt": "Negociação da concessão da Brisa",
+      "en": "Brisa concession negotiations"
+    },
+    "frase": {
+      "pt": [
+        "É o excerto do relatório do Orçamento sobre os riscos das parcerias rodoviárias."
+      ],
+      "en": [
+        "It is the Budget report excerpt on road partnership risks."
+      ]
+    }
+  },
+  "pe-oe-brisa-pedido": {
+    "nome": {
+      "pt": "Pedidos quantificados pela Brisa",
+      "en": "Claims quantified by Brisa"
+    },
+    "frase": {
+      "pt": [
+        "É o excerto do relatório do Orçamento sobre os riscos das parcerias rodoviárias."
+      ],
+      "en": [
+        "It is the Budget report excerpt on road partnership risks."
+      ]
+    }
+  },
+  "pe-oe-riscos-total": {
+    "nome": {
+      "pt": "Pedidos e litígios rodoviários",
+      "en": "Road concession claims and disputes"
+    },
+    "frase": {
+      "pt": [
+        "É o excerto do relatório do Orçamento sobre os riscos das parcerias rodoviárias."
+      ],
+      "en": [
+        "It is the Budget report excerpt on road partnership risks."
+      ]
+    }
+  },
+  "pe-oe-riscos-nao-reconhecimento": {
+    "nome": {
+      "pt": "Não reconhecimento das pretensões privadas",
+      "en": "No recognition of private claims"
+    },
+    "frase": {
+      "pt": [
+        "É o excerto do relatório do Orçamento sobre os riscos das parcerias rodoviárias."
+      ],
+      "en": [
+        "It is the Budget report excerpt on road partnership risks."
+      ]
+    }
+  },
+  "pe-oe-algarve-cautelar": {
+    "nome": {
+      "pt": "Ação principal e pagamento cautelar à Rotas do Algarve Litoral",
+      "en": "Main action and interim payment to Rotas do Algarve Litoral"
+    },
+    "frase": {
+      "pt": [
+        "É o excerto do relatório do Orçamento sobre os riscos das parcerias rodoviárias."
+      ],
+      "en": [
+        "It is the Budget report excerpt on road partnership risks."
+      ]
+    }
+  },
+  "pe-oe-algarve-provisorio": {
+    "nome": {
+      "pt": "Pagamento provisório à Rotas do Algarve Litoral",
+      "en": "Interim payment to Rotas do Algarve Litoral"
+    },
+    "frase": {
+      "pt": [
+        "É o excerto do relatório do Orçamento sobre os riscos das parcerias rodoviárias."
+      ],
+      "en": [
+        "It is the Budget report excerpt on road partnership risks."
+      ]
+    }
+  },
+  "pe-oe-contingentes": {
+    "nome": {
+      "pt": "Compensações contingentes excluídas da previsão",
+      "en": "Contingent compensation excluded from forecast"
+    },
+    "frase": {
+      "pt": [
+        "É o excerto do relatório do Orçamento sobre os riscos das parcerias rodoviárias."
+      ],
+      "en": [
+        "It is the Budget report excerpt on road partnership risks."
+      ]
+    }
+  },
+  "pe-oe-beira-abolicao": {
+    "nome": {
+      "pt": "Beira Interior: pedido pela abolição de portagens",
+      "en": "Beira Interior claim following toll abolition"
+    },
+    "frase": {
+      "pt": [
+        "É o excerto do relatório do Orçamento sobre os riscos das parcerias rodoviárias."
+      ],
+      "en": [
+        "It is the Budget report excerpt on road partnership risks."
+      ]
+    }
+  },
+  "pe-oe-apoio-dl87a": {
+    "nome": {
+      "pt": "Apoio às portagens: alteração do perímetro de reporte",
+      "en": "Toll support: change in reporting perimeter"
+    },
+    "frase": {
+      "pt": [
+        "É o excerto do relatório do Orçamento sobre os riscos das parcerias rodoviárias."
+      ],
+      "en": [
+        "It is the Budget report excerpt on road partnership risks."
+      ]
+    }
+  },
+  "pe-despacho-alargamentos": {
+    "nome": {
+      "pt": "Alargamentos de vias",
+      "en": "Road widening"
+    },
+    "frase": {
+      "pt": [
+        "É uma tarefa atribuída à comissão de negociação da concessão Brisa pelo despacho."
+      ],
+      "en": [
+        "It is a task assigned by the order to the Brisa concession negotiating committee."
+      ]
+    }
+  },
+  "pe-despacho-investimentos-previstos": {
+    "nome": {
+      "pt": "Investimentos contratualmente previstos",
+      "en": "Contractually planned investment"
+    },
+    "frase": {
+      "pt": [
+        "É uma tarefa atribuída à comissão de negociação da concessão Brisa pelo despacho."
+      ],
+      "en": [
+        "It is a task assigned by the order to the Brisa concession negotiating committee."
+      ]
+    }
+  },
+  "pe-despacho-equilibrio": {
+    "nome": {
+      "pt": "Reposição do equilíbrio financeiro",
+      "en": "Restoration of financial balance"
+    },
+    "frase": {
+      "pt": [
+        "É uma tarefa atribuída à comissão de negociação da concessão Brisa pelo despacho."
+      ],
+      "en": [
+        "It is a task assigned by the order to the Brisa concession negotiating committee."
+      ]
+    }
+  },
+  "pe-despacho-comparticipacoes": {
+    "nome": {
+      "pt": "Acertos de comparticipações financeiras",
+      "en": "Adjustment of financial contributions"
+    },
+    "frase": {
+      "pt": [
+        "É uma tarefa atribuída à comissão de negociação da concessão Brisa pelo despacho."
+      ],
+      "en": [
+        "It is a task assigned by the order to the Brisa concession negotiating committee."
+      ]
+    }
+  },
+  "pe-despacho-braga": {
+    "nome": {
+      "pt": "Receitas da Circular Sul de Braga",
+      "en": "Braga southern ring road toll revenue"
+    },
+    "frase": {
+      "pt": [
+        "É uma tarefa atribuída à comissão de negociação da concessão Brisa pelo despacho."
+      ],
+      "en": [
+        "It is a task assigned by the order to the Brisa concession negotiating committee."
+      ]
+    }
+  },
+  "pe-despacho-investimentos-novos": {
+    "nome": {
+      "pt": "Novos investimentos",
+      "en": "New investment"
+    },
+    "frase": {
+      "pt": [
+        "É uma tarefa atribuída à comissão de negociação da concessão Brisa pelo despacho."
+      ],
+      "en": [
+        "It is a task assigned by the order to the Brisa concession negotiating committee."
+      ]
+    }
+  },
+  "pe-despacho-limites": {
+    "nome": {
+      "pt": "Limites da concessão",
+      "en": "Concession boundaries"
+    },
+    "frase": {
+      "pt": [
+        "É uma tarefa atribuída à comissão de negociação da concessão Brisa pelo despacho."
+      ],
+      "en": [
+        "It is a task assigned by the order to the Brisa concession negotiating committee."
+      ]
+    }
+  },
+  "pe-despacho-qualidade": {
+    "nome": {
+      "pt": "Monitorização da qualidade de serviço",
+      "en": "Service quality monitoring"
+    },
+    "frase": {
+      "pt": [
+        "É uma tarefa atribuída à comissão de negociação da concessão Brisa pelo despacho."
+      ],
+      "en": [
+        "It is a task assigned by the order to the Brisa concession negotiating committee."
+      ]
+    }
+  },
+  "pe-scut-trocos": {
+    "nome": {
+      "pt": "Autoestradas e troços com eliminação de portagens",
+      "en": "Motorways and sections with toll abolition"
+    },
+    "frase": {
+      "pt": [
+        "É o excerto da lei sobre a eliminação de portagens e a sua entrada em vigor."
+      ],
+      "en": [
+        "It is the excerpt from the law on toll abolition and its entry into force."
+      ]
+    }
+  },
+  "pe-scut-vigencia": {
+    "nome": {
+      "pt": "Entrada em vigor da eliminação de portagens",
+      "en": "Entry into force of toll abolition"
+    },
+    "frase": {
+      "pt": [
+        "É o excerto da lei sobre a eliminação de portagens e a sua entrada em vigor."
+      ],
+      "en": [
+        "It is the excerpt from the law on toll abolition and its entry into force."
+      ]
+    }
+  },
+  "pe-dl87a-atualizacao": {
+    "nome": {
+      "pt": "Atualização das portagens prevista no diploma",
+      "en": "Toll rate update set by the decree"
+    },
+    "frase": {
+      "pt": [
+        "É a regra do diploma sobre o financiamento do apoio às concessionárias pelos descontos nas portagens."
+      ],
+      "en": [
+        "It is the decree’s rule on financing support to concessionaires for toll discounts."
+      ]
+    }
+  },
+  "pe-dl87a-apoio": {
+    "nome": {
+      "pt": "Comparticipação do Estado nas portagens",
+      "en": "State contribution to tolls"
+    },
+    "frase": {
+      "pt": [
+        "É a regra do diploma sobre o financiamento do apoio às concessionárias pelos descontos nas portagens."
+      ],
+      "en": [
+        "It is the decree’s rule on financing support to concessionaires for toll discounts."
+      ]
+    }
+  },
+  "pe-dl87a-financiamento": {
+    "nome": {
+      "pt": "Financiamento do apoio pelo Orçamento",
+      "en": "Budget financing of toll support"
+    },
+    "frase": {
+      "pt": [
+        "É a regra do diploma sobre o financiamento do apoio às concessionárias pelos descontos nas portagens."
+      ],
+      "en": [
+        "It is the decree’s rule on financing support to concessionaires for toll discounts."
+      ]
+    }
+  },
+  "pe-dl87a-efeitos": {
+    "nome": {
+      "pt": "Produção de efeitos da atualização",
+      "en": "Effective date of the update"
+    },
+    "frase": {
+      "pt": [
+        "É a regra do diploma sobre o financiamento do apoio às concessionárias pelos descontos nas portagens."
+      ],
+      "en": [
+        "It is the decree’s rule on financing support to concessionaires for toll discounts."
+      ]
+    }
+  },
+  "pe-tc15-acordos": {
+    "nome": {
+      "pt": "Acordos de compensações contingentes",
+      "en": "Contingent compensation agreements"
+    },
+    "frase": {
+      "pt": [
+        "É o excerto histórico do Tribunal de Contas sobre as parcerias e as compensações contingentes."
+      ],
+      "en": [
+        "It is the historical Court of Auditors excerpt on partnerships and contingent compensation."
+      ]
+    }
+  },
+  "pe-tc15-remuneracao": {
+    "nome": {
+      "pt": "Remuneração não visada",
+      "en": "Remuneration not cleared by the Court"
+    },
+    "frase": {
+      "pt": [
+        "É o excerto histórico do Tribunal de Contas sobre as parcerias e as compensações contingentes."
+      ],
+      "en": [
+        "It is the historical Court of Auditors excerpt on partnerships and contingent compensation."
+      ]
+    }
+  },
+  "pe-tc15-infracoes": {
+    "nome": {
+      "pt": "Possíveis infrações nos pagamentos contingentes",
+      "en": "Possible infringements in contingent payments"
+    },
+    "frase": {
+      "pt": [
+        "É o excerto histórico do Tribunal de Contas sobre as parcerias e as compensações contingentes."
+      ],
+      "en": [
+        "It is the historical Court of Auditors excerpt on partnerships and contingent compensation."
+      ]
+    }
+  },
+  "pe-tc15-fundamento": {
+    "nome": {
+      "pt": "Fundamento contratual dos pagamentos",
+      "en": "Contractual basis for payments"
+    },
+    "frase": {
+      "pt": [
+        "É o excerto histórico do Tribunal de Contas sobre as parcerias e as compensações contingentes."
+      ],
+      "en": [
+        "It is the historical Court of Auditors excerpt on partnerships and contingent compensation."
+      ]
+    }
+  },
+  "pe-tc15-futuros": {
+    "nome": {
+      "pt": "Previsão histórica de encargos com as parcerias",
+      "en": "Historical forecast of partnership charges"
+    },
+    "frase": {
+      "pt": [
+        "É o excerto histórico do Tribunal de Contas sobre as parcerias e as compensações contingentes."
+      ],
+      "en": [
+        "It is the historical Court of Auditors excerpt on partnerships and contingent compensation."
+      ]
+    }
+  },
+  "pe-brisa-prazo-minuta": {
+    "nome": {
+      "pt": "Prazo da concessão da Brisa",
+      "en": "Brisa concession expiry"
+    },
+    "frase": {
+      "pt": [
+        "É o prazo da concessão Brisa indicado no documento identificado na fonte."
+      ],
+      "en": [
+        "It is the Brisa concession term stated in the document identified as the source."
+      ]
+    }
+  },
+  "pe-brisa-periodo-imt": {
+    "nome": {
+      "pt": "Período da concessão da Brisa no IMT",
+      "en": "Brisa concession period reported by IMT"
+    },
+    "frase": {
+      "pt": [
+        "É o prazo da concessão Brisa indicado no documento identificado na fonte."
+      ],
+      "en": [
+        "It is the Brisa concession term stated in the document identified as the source."
+      ]
+    }
+  },
+  "pe-brisa-vias-minuta": {
+    "nome": {
+      "pt": "Vias da concessão Brisa na minuta",
+      "en": "Brisa concession roads in the draft contract"
+    },
+    "frase": {
+      "pt": [
+        "É o prazo da concessão Brisa indicado no documento identificado na fonte."
+      ],
+      "en": [
+        "It is the Brisa concession term stated in the document identified as the source."
+      ]
+    }
+  },
+  "pe-dl87a-apoio-retificado": {
+    "nome": {
+      "pt": "Pagamento do Estado nas portagens, redação retificada",
+      "en": "State toll support payment, corrected wording"
+    },
+    "frase": {
+      "pt": [
+        "É a regra do diploma sobre o financiamento do apoio às concessionárias pelos descontos nas portagens."
+      ],
+      "en": [
+        "It is the decree’s rule on financing support to concessionaires for toll discounts."
+      ]
+    }
+  },
+  "prr-complemento-p3-1-24-estado": {
+    "nome": {
+      "pt": "Estado do marco ou meta da Saúde",
+      "en": "Health milestone or target status"
+    },
+    "frase": {
+      "pt": [
+        "É o estado do marco ou meta identificado no nome, tal como consta do anexo anual."
+      ],
+      "en": [
+        "It is the status of the milestone or target identified in the name, as listed in the annual annex."
+      ]
+    }
+  },
+  "prr-complemento-p3-1-32-estado": {
+    "nome": {
+      "pt": "Estado do marco ou meta da Saúde",
+      "en": "Health milestone or target status"
+    },
+    "frase": {
+      "pt": [
+        "É o estado do marco ou meta identificado no nome, tal como consta do anexo anual."
+      ],
+      "en": [
+        "It is the status of the milestone or target identified in the name, as listed in the annual annex."
+      ]
+    }
+  },
+  "prr-complemento-p3-1-33-estado": {
+    "nome": {
+      "pt": "Estado do marco ou meta da Saúde",
+      "en": "Health milestone or target status"
+    },
+    "frase": {
+      "pt": [
+        "É o estado do marco ou meta identificado no nome, tal como consta do anexo anual."
+      ],
+      "en": [
+        "It is the status of the milestone or target identified in the name, as listed in the annual annex."
+      ]
+    }
+  },
+  "prr-complemento-p3-1-3-estado": {
+    "nome": {
+      "pt": "Estado do marco ou meta da Saúde",
+      "en": "Health milestone or target status"
+    },
+    "frase": {
+      "pt": [
+        "É o estado do marco ou meta identificado no nome, tal como consta do anexo anual."
+      ],
+      "en": [
+        "It is the status of the milestone or target identified in the name, as listed in the annual annex."
+      ]
+    }
+  },
+  "prr-complemento-p3-1-8-estado": {
+    "nome": {
+      "pt": "Estado do marco ou meta da Saúde",
+      "en": "Health milestone or target status"
+    },
+    "frase": {
+      "pt": [
+        "É o estado do marco ou meta identificado no nome, tal como consta do anexo anual."
+      ],
+      "en": [
+        "It is the status of the milestone or target identified in the name, as listed in the annual annex."
+      ]
+    }
+  },
+  "prr-complemento-p4-1-1-estado": {
+    "nome": {
+      "pt": "Estado do marco ou meta da Saúde",
+      "en": "Health milestone or target status"
+    },
+    "frase": {
+      "pt": [
+        "É o estado do marco ou meta identificado no nome, tal como consta do anexo anual."
+      ],
+      "en": [
+        "It is the status of the milestone or target identified in the name, as listed in the annual annex."
+      ]
+    }
+  },
+  "prr-complemento-p4-1-5-estado": {
+    "nome": {
+      "pt": "Estado do marco ou meta da Saúde",
+      "en": "Health milestone or target status"
+    },
+    "frase": {
+      "pt": [
+        "É o estado do marco ou meta identificado no nome, tal como consta do anexo anual."
+      ],
+      "en": [
+        "It is the status of the milestone or target identified in the name, as listed in the annual annex."
+      ]
+    }
+  },
+  "prr-complemento-p4-1-12-estado": {
+    "nome": {
+      "pt": "Estado do marco ou meta da Saúde",
+      "en": "Health milestone or target status"
+    },
+    "frase": {
+      "pt": [
+        "É o estado do marco ou meta identificado no nome, tal como consta do anexo anual."
+      ],
+      "en": [
+        "It is the status of the milestone or target identified in the name, as listed in the annual annex."
+      ]
+    }
+  },
+  "prr-complemento-p4-1-40-estado": {
+    "nome": {
+      "pt": "Estado do marco ou meta da Saúde",
+      "en": "Health milestone or target status"
+    },
+    "frase": {
+      "pt": [
+        "É o estado do marco ou meta identificado no nome, tal como consta do anexo anual."
+      ],
+      "en": [
+        "It is the status of the milestone or target identified in the name, as listed in the annual annex."
+      ]
+    }
+  },
+  "prr-complemento-p4-1-41-estado": {
+    "nome": {
+      "pt": "Estado do marco ou meta da Saúde",
+      "en": "Health milestone or target status"
+    },
+    "frase": {
+      "pt": [
+        "É o estado do marco ou meta identificado no nome, tal como consta do anexo anual."
+      ],
+      "en": [
+        "It is the status of the milestone or target identified in the name, as listed in the annual annex."
+      ]
+    }
+  },
+  "prr-complemento-p4-1-2-estado": {
+    "nome": {
+      "pt": "Estado do marco ou meta da Saúde",
+      "en": "Health milestone or target status"
+    },
+    "frase": {
+      "pt": [
+        "É o estado do marco ou meta identificado no nome, tal como consta do anexo anual."
+      ],
+      "en": [
+        "It is the status of the milestone or target identified in the name, as listed in the annual annex."
+      ]
+    }
+  },
+  "prr-complemento-p5-1-22-estado": {
+    "nome": {
+      "pt": "Estado do marco ou meta da Saúde",
+      "en": "Health milestone or target status"
+    },
+    "frase": {
+      "pt": [
+        "É o estado do marco ou meta identificado no nome, tal como consta do anexo anual."
+      ],
+      "en": [
+        "It is the status of the milestone or target identified in the name, as listed in the annual annex."
+      ]
+    }
+  },
+  "prr-complemento-p5-1-28-estado": {
+    "nome": {
+      "pt": "Estado do marco ou meta da Saúde",
+      "en": "Health milestone or target status"
+    },
+    "frase": {
+      "pt": [
+        "É o estado do marco ou meta identificado no nome, tal como consta do anexo anual."
+      ],
+      "en": [
+        "It is the status of the milestone or target identified in the name, as listed in the annual annex."
+      ]
+    }
+  },
+  "prr-complemento-p5-1-11-estado": {
+    "nome": {
+      "pt": "Estado do marco ou meta da Saúde",
+      "en": "Health milestone or target status"
+    },
+    "frase": {
+      "pt": [
+        "É o estado do marco ou meta identificado no nome, tal como consta do anexo anual."
+      ],
+      "en": [
+        "It is the status of the milestone or target identified in the name, as listed in the annual annex."
+      ]
+    }
+  },
+  "prr-complemento-p5-1-7-estado": {
+    "nome": {
+      "pt": "Estado do marco ou meta da Saúde",
+      "en": "Health milestone or target status"
+    },
+    "frase": {
+      "pt": [
+        "É o estado do marco ou meta identificado no nome, tal como consta do anexo anual."
+      ],
+      "en": [
+        "It is the status of the milestone or target identified in the name, as listed in the annual annex."
+      ]
+    }
+  },
+  "prr-complemento-p5-1-9-estado": {
+    "nome": {
+      "pt": "Estado do marco ou meta da Saúde",
+      "en": "Health milestone or target status"
+    },
+    "frase": {
+      "pt": [
+        "É o estado do marco ou meta identificado no nome, tal como consta do anexo anual."
+      ],
+      "en": [
+        "It is the status of the milestone or target identified in the name, as listed in the annual annex."
+      ]
+    }
+  },
+  "prr-complemento-p6-1-37-estado": {
+    "nome": {
+      "pt": "Estado do marco ou meta da Saúde",
+      "en": "Health milestone or target status"
+    },
+    "frase": {
+      "pt": [
+        "É o estado do marco ou meta identificado no nome, tal como consta do anexo anual."
+      ],
+      "en": [
+        "It is the status of the milestone or target identified in the name, as listed in the annual annex."
+      ]
+    }
+  },
+  "prr-complemento-p6-1-42-estado": {
+    "nome": {
+      "pt": "Estado do marco ou meta da Saúde",
+      "en": "Health milestone or target status"
+    },
+    "frase": {
+      "pt": [
+        "É o estado do marco ou meta identificado no nome, tal como consta do anexo anual."
+      ],
+      "en": [
+        "It is the status of the milestone or target identified in the name, as listed in the annual annex."
+      ]
+    }
+  },
+  "prr-complemento-p6-1-10-estado": {
+    "nome": {
+      "pt": "Estado do marco ou meta da Saúde",
+      "en": "Health milestone or target status"
+    },
+    "frase": {
+      "pt": [
+        "É o estado do marco ou meta identificado no nome, tal como consta do anexo anual."
+      ],
+      "en": [
+        "It is the status of the milestone or target identified in the name, as listed in the annual annex."
+      ]
+    }
+  },
+  "prr-complemento-p7-1-34-estado": {
+    "nome": {
+      "pt": "Estado do marco ou meta da Saúde",
+      "en": "Health milestone or target status"
+    },
+    "frase": {
+      "pt": [
+        "É o estado do marco ou meta identificado no nome, tal como consta do anexo anual."
+      ],
+      "en": [
+        "It is the status of the milestone or target identified in the name, as listed in the annual annex."
+      ]
+    }
+  },
+  "prr-complemento-p7-1-35-estado": {
+    "nome": {
+      "pt": "Estado do marco ou meta da Saúde",
+      "en": "Health milestone or target status"
+    },
+    "frase": {
+      "pt": [
+        "É o estado do marco ou meta identificado no nome, tal como consta do anexo anual."
+      ],
+      "en": [
+        "It is the status of the milestone or target identified in the name, as listed in the annual annex."
+      ]
+    }
+  },
+  "prr-complemento-p7-1-36-estado": {
+    "nome": {
+      "pt": "Estado do marco ou meta da Saúde",
+      "en": "Health milestone or target status"
+    },
+    "frase": {
+      "pt": [
+        "É o estado do marco ou meta identificado no nome, tal como consta do anexo anual."
+      ],
+      "en": [
+        "It is the status of the milestone or target identified in the name, as listed in the annual annex."
+      ]
+    }
+  },
+  "prr-complemento-p7-1-38-estado": {
+    "nome": {
+      "pt": "Estado do marco ou meta da Saúde",
+      "en": "Health milestone or target status"
+    },
+    "frase": {
+      "pt": [
+        "É o estado do marco ou meta identificado no nome, tal como consta do anexo anual."
+      ],
+      "en": [
+        "It is the status of the milestone or target identified in the name, as listed in the annual annex."
+      ]
+    }
+  },
+  "prr-complemento-p7-1-39-estado": {
+    "nome": {
+      "pt": "Estado do marco ou meta da Saúde",
+      "en": "Health milestone or target status"
+    },
+    "frase": {
+      "pt": [
+        "É o estado do marco ou meta identificado no nome, tal como consta do anexo anual."
+      ],
+      "en": [
+        "It is the status of the milestone or target identified in the name, as listed in the annual annex."
+      ]
+    }
+  },
+  "prr-complemento-p8-1-21-estado": {
+    "nome": {
+      "pt": "Estado do marco ou meta da Saúde",
+      "en": "Health milestone or target status"
+    },
+    "frase": {
+      "pt": [
+        "É o estado do marco ou meta identificado no nome, tal como consta do anexo anual."
+      ],
+      "en": [
+        "It is the status of the milestone or target identified in the name, as listed in the annual annex."
+      ]
+    }
+  },
+  "prr-complemento-p8-1-25-estado": {
+    "nome": {
+      "pt": "Estado do marco ou meta da Saúde",
+      "en": "Health milestone or target status"
+    },
+    "frase": {
+      "pt": [
+        "É o estado do marco ou meta identificado no nome, tal como consta do anexo anual."
+      ],
+      "en": [
+        "It is the status of the milestone or target identified in the name, as listed in the annual annex."
+      ]
+    }
+  },
+  "prr-complemento-p9-1-17-estado": {
+    "nome": {
+      "pt": "Estado do marco ou meta da Saúde",
+      "en": "Health milestone or target status"
+    },
+    "frase": {
+      "pt": [
+        "É o estado do marco ou meta identificado no nome, tal como consta do anexo anual."
+      ],
+      "en": [
+        "It is the status of the milestone or target identified in the name, as listed in the annual annex."
+      ]
+    }
+  },
+  "prr-complemento-p9-1-18-estado": {
+    "nome": {
+      "pt": "Estado do marco ou meta da Saúde",
+      "en": "Health milestone or target status"
+    },
+    "frase": {
+      "pt": [
+        "É o estado do marco ou meta identificado no nome, tal como consta do anexo anual."
+      ],
+      "en": [
+        "It is the status of the milestone or target identified in the name, as listed in the annual annex."
+      ]
+    }
+  },
+  "prr-complemento-p9-1-26-estado": {
+    "nome": {
+      "pt": "Estado do marco ou meta da Saúde",
+      "en": "Health milestone or target status"
+    },
+    "frase": {
+      "pt": [
+        "É o estado do marco ou meta identificado no nome, tal como consta do anexo anual."
+      ],
+      "en": [
+        "It is the status of the milestone or target identified in the name, as listed in the annual annex."
+      ]
+    }
+  },
+  "prr-complemento-p9-1-30-estado": {
+    "nome": {
+      "pt": "Estado do marco ou meta da Saúde",
+      "en": "Health milestone or target status"
+    },
+    "frase": {
+      "pt": [
+        "É o estado do marco ou meta identificado no nome, tal como consta do anexo anual."
+      ],
+      "en": [
+        "It is the status of the milestone or target identified in the name, as listed in the annual annex."
+      ]
+    }
+  },
+  "prr-complemento-p9-1-43-estado": {
+    "nome": {
+      "pt": "Estado do marco ou meta da Saúde",
+      "en": "Health milestone or target status"
+    },
+    "frase": {
+      "pt": [
+        "É o estado do marco ou meta identificado no nome, tal como consta do anexo anual."
+      ],
+      "en": [
+        "It is the status of the milestone or target identified in the name, as listed in the annual annex."
+      ]
+    }
+  },
+  "prr-complemento-p9-1-44-estado": {
+    "nome": {
+      "pt": "Estado do marco ou meta da Saúde",
+      "en": "Health milestone or target status"
+    },
+    "frase": {
+      "pt": [
+        "É o estado do marco ou meta identificado no nome, tal como consta do anexo anual."
+      ],
+      "en": [
+        "It is the status of the milestone or target identified in the name, as listed in the annual annex."
+      ]
+    }
+  },
+  "sns-sem-medico-serie-antiga-2025-06": {
+    "nome": {
+      "pt": "Utentes sem médico de família atribuído",
+      "en": "Patients without an assigned family doctor"
+    },
+    "frase": {
+      "pt": [
+        "Conta os utentes inscritos sem médico de família atribuído, na série indicada."
+      ],
+      "en": [
+        "Counts registered users without an assigned family doctor, in the indicated series."
+      ]
+    }
+  },
+  "sns-sem-medico-serie-antiga-2026-06": {
+    "nome": {
+      "pt": "Utentes sem médico de família atribuído",
+      "en": "Patients without an assigned family doctor"
+    },
+    "frase": {
+      "pt": [
+        "Conta os utentes inscritos sem médico de família atribuído, na série indicada."
+      ],
+      "en": [
+        "Counts registered users without an assigned family doctor, in the indicated series."
+      ]
+    }
+  },
+  "sns-sem-medico-serie-nova-2026-08": {
+    "nome": {
+      "pt": "Inscritos elegíveis sem médico de família atribuído",
+      "en": "Eligible registered patients without an assigned family doctor"
+    },
+    "frase": {
+      "pt": [
+        "Conta os utentes inscritos sem médico de família atribuído, na série indicada."
+      ],
+      "en": [
+        "Counts registered users without an assigned family doctor, in the indicated series."
+      ]
+    }
+  },
+  "sns-consultas-csp-2026-08": {
+    "nome": {
+      "pt": "Consultas médicas nos cuidados de saúde primários",
+      "en": "Primary care medical consultations"
+    },
+    "frase": {
+      "pt": [
+        "Conta as consultas realizadas nos cuidados de saúde primários no mês indicado."
+      ],
+      "en": [
+        "Counts primary-care consultations in the indicated month."
+      ]
+    }
+  },
+  "sns-consultas-csp-2025-08": {
+    "nome": {
+      "pt": "Consultas médicas nos cuidados de saúde primários",
+      "en": "Primary care medical consultations"
+    },
+    "frase": {
+      "pt": [
+        "Conta as consultas realizadas nos cuidados de saúde primários no mês indicado."
+      ],
+      "en": [
+        "Counts primary-care consultations in the indicated month."
+      ]
+    }
+  },
+  "sns-consultas-hospitalares-2026-07": {
+    "nome": {
+      "pt": "Consultas médicas hospitalares",
+      "en": "Hospital medical consultations"
+    },
+    "frase": {
+      "pt": [
+        "Conta as consultas hospitalares acumuladas desde janeiro até ao mês indicado."
+      ],
+      "en": [
+        "Counts hospital consultations accumulated from January through the indicated month."
+      ]
+    }
+  },
+  "sns-consultas-hospitalares-2025-07": {
+    "nome": {
+      "pt": "Consultas médicas hospitalares",
+      "en": "Hospital medical consultations"
+    },
+    "frase": {
+      "pt": [
+        "Conta as consultas hospitalares acumuladas desde janeiro até ao mês indicado."
+      ],
+      "en": [
+        "Counts hospital consultations accumulated from January through the indicated month."
+      ]
+    }
+  },
+  "sns-cirurgias-2026-07": {
+    "nome": {
+      "pt": "Intervenções cirúrgicas programadas e urgentes",
+      "en": "Scheduled and emergency surgical interventions"
+    },
+    "frase": {
+      "pt": [
+        "Conta as intervenções cirúrgicas programadas e urgentes acumuladas desde janeiro até ao mês indicado."
+      ],
+      "en": [
+        "Counts scheduled and emergency surgeries accumulated from January through the indicated month."
+      ]
+    }
+  },
+  "sns-cirurgias-2025-07": {
+    "nome": {
+      "pt": "Intervenções cirúrgicas programadas e urgentes",
+      "en": "Scheduled and emergency surgical interventions"
+    },
+    "frase": {
+      "pt": [
+        "Conta as intervenções cirúrgicas programadas e urgentes acumuladas desde janeiro até ao mês indicado."
+      ],
+      "en": [
+        "Counts scheduled and emergency surgeries accumulated from January through the indicated month."
+      ]
+    }
+  },
+  "sns-lista-cirurgia-2026-07": {
+    "nome": {
+      "pt": "Inscritos em lista de espera para cirurgia",
+      "en": "Patients on the surgical waiting list"
+    },
+    "frase": {
+      "pt": [
+        "Conta os utentes inscritos para cirurgia no período indicado."
+      ],
+      "en": [
+        "Counts patients on the surgery waiting list in the indicated period."
+      ]
+    }
+  },
+  "sns-lista-cirurgia-2025-07": {
+    "nome": {
+      "pt": "Inscritos em lista de espera para cirurgia",
+      "en": "Patients on the surgical waiting list"
+    },
+    "frase": {
+      "pt": [
+        "Conta os utentes inscritos para cirurgia no período indicado."
+      ],
+      "en": [
+        "Counts patients on the surgery waiting list in the indicated period."
+      ]
+    }
+  },
+  "sns-urgencias-2026-07": {
+    "nome": {
+      "pt": "Atendimentos em urgência hospitalar",
+      "en": "Hospital emergency attendances"
+    },
+    "frase": {
+      "pt": [
+        "Conta os atendimentos em urgência hospitalar acumulados desde janeiro até ao mês indicado."
+      ],
+      "en": [
+        "Counts hospital emergency attendances accumulated from January through the indicated month."
+      ]
+    }
+  },
+  "sns-urgencias-2025-07": {
+    "nome": {
+      "pt": "Atendimentos em urgência hospitalar",
+      "en": "Hospital emergency attendances"
+    },
+    "frase": {
+      "pt": [
+        "Conta os atendimentos em urgência hospitalar acumulados desde janeiro até ao mês indicado."
+      ],
+      "en": [
+        "Counts hospital emergency attendances accumulated from January through the indicated month."
+      ]
+    }
+  },
+  "sns-espera-rncci-2026-10-19": {
+    "nome": {
+      "pt": "Utentes a aguardar vaga na RNCCI",
+      "en": "Patients waiting for a place in integrated long-term care"
+    },
+    "frase": {
+      "pt": [
+        "Conta os utentes à espera de vaga em cuidados continuados na data indicada."
+      ],
+      "en": [
+        "Counts patients waiting for continuing-care places on the indicated date."
+      ]
+    }
+  },
+  "sns-espera-rncci-2025-10-19": {
+    "nome": {
+      "pt": "Utentes a aguardar vaga na RNCCI",
+      "en": "Patients waiting for a place in integrated long-term care"
+    },
+    "frase": {
+      "pt": [
+        "Conta os utentes à espera de vaga em cuidados continuados na data indicada."
+      ],
+      "en": [
+        "Counts patients waiting for continuing-care places on the indicated date."
+      ]
+    }
+  },
+  "eurostat-be-phys": {
+    "nome": {
+      "pt": "Médicos por cem mil habitantes, Bélgica",
+      "en": "Physicians per hundred thousand inhabitants, Belgium"
+    },
+    "frase": {
+      "pt": [
+        "É o número de médicos por cem mil habitantes no país e período da linha."
+      ],
+      "en": [
+        "It is the number of physicians per hundred thousand inhabitants in the country and period of the row."
+      ]
+    }
+  },
+  "eurostat-el-phys": {
+    "nome": {
+      "pt": "Médicos por cem mil habitantes, Grécia",
+      "en": "Physicians per hundred thousand inhabitants, Greece"
+    },
+    "frase": {
+      "pt": [
+        "É o número de médicos por cem mil habitantes no país e período da linha."
+      ],
+      "en": [
+        "It is the number of physicians per hundred thousand inhabitants in the country and period of the row."
+      ]
+    }
+  },
+  "eurostat-lu-nrs": {
+    "nome": {
+      "pt": "Enfermeiros por cem mil habitantes, Luxemburgo",
+      "en": "Nurses per hundred thousand inhabitants, Luxembourg"
+    },
+    "frase": {
+      "pt": [
+        "É o número de enfermeiros por cem mil habitantes no país e período da linha."
+      ],
+      "en": [
+        "It is the number of nurses per hundred thousand inhabitants in the country and period of the row."
+      ]
+    }
+  },
+  "eurostat-pt-phys": {
+    "nome": {
+      "pt": "Médicos por cem mil habitantes, Portugal",
+      "en": "Physicians per hundred thousand inhabitants, Portugal"
+    },
+    "frase": {
+      "pt": [
+        "É o número de médicos por cem mil habitantes no país e período da linha."
+      ],
+      "en": [
+        "It is the number of physicians per hundred thousand inhabitants in the country and period of the row."
+      ]
+    }
+  },
+  "eurostat-pt-nrs": {
+    "nome": {
+      "pt": "Enfermeiros por cem mil habitantes, Portugal",
+      "en": "Nurses per hundred thousand inhabitants, Portugal"
+    },
+    "frase": {
+      "pt": [
+        "É o número de enfermeiros por cem mil habitantes no país e período da linha."
+      ],
+      "en": [
+        "It is the number of nurses per hundred thousand inhabitants in the country and period of the row."
+      ]
+    }
+  },
+  "eurostat-ro-nrs": {
+    "nome": {
+      "pt": "Enfermeiros por cem mil habitantes, Roménia",
+      "en": "Nurses per hundred thousand inhabitants, Romania"
+    },
+    "frase": {
+      "pt": [
+        "É o número de enfermeiros por cem mil habitantes no país e período da linha."
+      ],
+      "en": [
+        "It is the number of nurses per hundred thousand inhabitants in the country and period of the row."
+      ]
+    }
+  },
+  "prr-monitorizacao-20261014-p2-c01-contratado": {
+    "nome": {
+      "pt": "Serviço Nacional de Saúde: Contratado PRR",
+      "en": "National Health Service: Contracted RRP funding"
+    },
+    "frase": {
+      "pt": [
+        "É o montante contratado na componente Saúde do PRR, na data do painel."
+      ],
+      "en": [
+        "It is the contracted amount in the RRP Health component, at the dashboard date."
+      ]
+    }
+  },
+  "prr-monitorizacao-20261014-p2-c01-pago": {
+    "nome": {
+      "pt": "Serviço Nacional de Saúde: Pago PRR",
+      "en": "National Health Service: Paid RRP funding"
+    },
+    "frase": {
+      "pt": [
+        "É o montante pago na componente Saúde do PRR, na data do painel."
+      ],
+      "en": [
+        "It is the paid amount in the RRP Health component, at the dashboard date."
+      ]
+    }
+  },
+  "prr-monitorizacao-20261014-p2-c01-taxa": {
+    "nome": {
+      "pt": "Serviço Nacional de Saúde: Pago a beneficiários diretos e finais (%)",
+      "en": "National Health Service: Paid to direct and final beneficiaries (%)"
+    },
+    "frase": {
+      "pt": [
+        "É a taxa de execução financeira da componente Saúde publicada no painel."
+      ],
+      "en": [
+        "It is the Health component financial execution rate published in the dashboard."
+      ]
+    }
+  },
+  "infarmed-ambulatorio-2026-07-p5-acumulado-encargo": {
+    "nome": {
+      "pt": "Encargos SNS com medicamentos em ambulatório",
+      "en": "NHS medicines expenditure in outpatient care"
+    },
+    "frase": {
+      "pt": [
+        "São os encargos do Serviço Nacional de Saúde com medicamentos no contexto e período identificados no nome."
+      ],
+      "en": [
+        "It is National Health Service expenditure on medicines in the setting and period identified in the name."
+      ]
+    }
+  },
+  "infarmed-ambulatorio-2026-07-p5-homologo-encargo": {
+    "nome": {
+      "pt": "Encargos SNS com medicamentos em ambulatório",
+      "en": "NHS medicines expenditure in outpatient care"
+    },
+    "frase": {
+      "pt": [
+        "São os encargos do Serviço Nacional de Saúde com medicamentos no contexto e período identificados no nome."
+      ],
+      "en": [
+        "It is National Health Service expenditure on medicines in the setting and period identified in the name."
+      ]
+    }
+  },
+  "infarmed-ambulatorio-limitacao": {
+    "nome": {
+      "pt": "Limitação dos valores Infarmed",
+      "en": "Infarmed figures limitation"
+    },
+    "frase": {
+      "pt": [
+        "É a ressalva do Infarmed sobre as contribuições que os valores apresentados não refletem integralmente."
+      ],
+      "en": [
+        "It is Infarmed’s caveat on contributions not fully reflected in the reported values."
+      ]
+    }
+  },
+  "infarmed-hospitalar-2026-07-p5-acumulado-encargo": {
+    "nome": {
+      "pt": "Encargos SNS com medicamentos em meio hospitalar",
+      "en": "NHS medicines expenditure in hospitals"
+    },
+    "frase": {
+      "pt": [
+        "São os encargos do Serviço Nacional de Saúde com medicamentos no contexto e período identificados no nome."
+      ],
+      "en": [
+        "It is National Health Service expenditure on medicines in the setting and period identified in the name."
+      ]
+    }
+  },
+  "infarmed-hospitalar-2026-07-p5-homologo-encargo": {
+    "nome": {
+      "pt": "Encargos SNS com medicamentos em meio hospitalar",
+      "en": "NHS medicines expenditure in hospitals"
+    },
+    "frase": {
+      "pt": [
+        "São os encargos do Serviço Nacional de Saúde com medicamentos no contexto e período identificados no nome."
+      ],
+      "en": [
+        "It is National Health Service expenditure on medicines in the setting and period identified in the name."
+      ]
+    }
+  },
+  "prr-marcos-metas-2025-p2-1-29-estado": {
+    "nome": {
+      "pt": "Estado do marco ou meta da Saúde",
+      "en": "Health milestone or target status"
+    },
+    "frase": {
+      "pt": [
+        "É o estado do marco ou meta identificado no nome, tal como consta do anexo anual."
+      ],
+      "en": [
+        "It is the status of the milestone or target identified in the name, as listed in the annual annex."
+      ]
+    }
+  },
+  "prr-marcos-metas-2025-p2-1-4-estado": {
+    "nome": {
+      "pt": "Estado do marco ou meta da Saúde",
+      "en": "Health milestone or target status"
+    },
+    "frase": {
+      "pt": [
+        "É o estado do marco ou meta identificado no nome, tal como consta do anexo anual."
+      ],
+      "en": [
+        "It is the status of the milestone or target identified in the name, as listed in the annual annex."
+      ]
+    }
+  },
+  "prr-marcos-metas-2025-p2-1-13-estado": {
+    "nome": {
+      "pt": "Estado do marco ou meta da Saúde",
+      "en": "Health milestone or target status"
+    },
+    "frase": {
+      "pt": [
+        "É o estado do marco ou meta identificado no nome, tal como consta do anexo anual."
+      ],
+      "en": [
+        "It is the status of the milestone or target identified in the name, as listed in the annual annex."
+      ]
+    }
+  },
+  "prr-marcos-metas-2025-p2-1-20-estado": {
+    "nome": {
+      "pt": "Estado do marco ou meta da Saúde",
+      "en": "Health milestone or target status"
+    },
+    "frase": {
+      "pt": [
+        "É o estado do marco ou meta identificado no nome, tal como consta do anexo anual."
+      ],
+      "en": [
+        "It is the status of the milestone or target identified in the name, as listed in the annual annex."
+      ]
+    }
+  },
+  "prr-marcos-metas-2025-p2-1-6-estado": {
+    "nome": {
+      "pt": "Estado do marco ou meta da Saúde",
+      "en": "Health milestone or target status"
+    },
+    "frase": {
+      "pt": [
+        "É o estado do marco ou meta identificado no nome, tal como consta do anexo anual."
+      ],
+      "en": [
+        "It is the status of the milestone or target identified in the name, as listed in the annual annex."
+      ]
+    }
+  },
+  "der-sns-consultas-csp-variacao-pct": {
+    "nome": {
+      "pt": "Variação homóloga de consultas nos cuidados primários",
+      "en": "Year-on-year change in primary-care consultations"
+    },
+    "frase": {
+      "pt": [
+        "É a variação percentual face ao período homólogo, refeita das componentes identificadas."
+      ],
+      "en": [
+        "It is the percentage change against the corresponding period, recalculated from the identified components."
+      ]
+    }
+  },
+  "der-sns-cirurgias-variacao-pct": {
+    "nome": {
+      "pt": "Variação homóloga de cirurgias acumuladas de janeiro a julho",
+      "en": "Year-on-year change in January to July surgeries"
+    },
+    "frase": {
+      "pt": [
+        "É a variação percentual face ao período homólogo, refeita das componentes identificadas."
+      ],
+      "en": [
+        "It is the percentage change against the corresponding period, recalculated from the identified components."
+      ]
+    }
+  },
+  "der-sns-lista-cirurgia-variacao-pct": {
+    "nome": {
+      "pt": "Variação homóloga de inscritos para cirurgia",
+      "en": "Year-on-year change in surgery waiting list"
+    },
+    "frase": {
+      "pt": [
+        "É a variação percentual face ao período homólogo, refeita das componentes identificadas."
+      ],
+      "en": [
+        "It is the percentage change against the corresponding period, recalculated from the identified components."
+      ]
+    }
+  },
+  "der-sns-espera-rncci-variacao-pct": {
+    "nome": {
+      "pt": "Variação homóloga de utentes à espera de cuidados continuados",
+      "en": "Year-on-year change in patients waiting for continuing care"
+    },
+    "frase": {
+      "pt": [
+        "É a variação percentual face ao período homólogo, refeita das componentes identificadas."
+      ],
+      "en": [
+        "It is the percentage change against the corresponding period, recalculated from the identified components."
+      ]
+    }
+  },
+  "der-infarmed-total-2026-jan-jul": {
+    "nome": {
+      "pt": "Encargos SNS com medicamentos em ambulatório e no hospital",
+      "en": "NHS expenditure on outpatient and hospital medicines"
+    },
+    "frase": {
+      "pt": [
+        "É a soma dos encargos com medicamentos em ambulatório e em meio hospitalar."
+      ],
+      "en": [
+        "It is the sum of outpatient and hospital medicines expenditure."
+      ]
+    }
+  },
+  "der-infarmed-total-2025-jan-jul": {
+    "nome": {
+      "pt": "Encargos SNS com medicamentos em ambulatório e no hospital",
+      "en": "NHS expenditure on outpatient and hospital medicines"
+    },
+    "frase": {
+      "pt": [
+        "É a soma dos encargos com medicamentos em ambulatório e em meio hospitalar."
+      ],
+      "en": [
+        "It is the sum of outpatient and hospital medicines expenditure."
+      ]
+    }
+  },
+  "der-infarmed-variacao-pct": {
+    "nome": {
+      "pt": "Variação homóloga dos encargos SNS com medicamentos",
+      "en": "Year-on-year change in NHS medicines expenditure"
+    },
+    "frase": {
+      "pt": [
+        "É a variação percentual face ao período homólogo, refeita das componentes identificadas."
+      ],
+      "en": [
+        "It is the percentage change against the corresponding period, recalculated from the identified components."
+      ]
+    }
+  },
+  "der-prr-saude-contratado-numerico": {
+    "nome": {
+      "pt": "Contratado na componente Saúde do PRR, leitura em milhões",
+      "en": "Contracted for RRP Health, read in millions"
+    },
+    "frase": {
+      "pt": [
+        "É a leitura numérica em milhões de euros do montante que o painel apresenta com a unidade incorporada."
+      ],
+      "en": [
+        "It is the numerical reading in million euros of the amount the dashboard presents with its unit."
+      ]
+    }
+  },
+  "der-prr-saude-pago-numerico": {
+    "nome": {
+      "pt": "Pago na componente Saúde do PRR, leitura em milhões",
+      "en": "Paid for RRP Health, read in millions"
+    },
+    "frase": {
+      "pt": [
+        "É a leitura numérica em milhões de euros do montante que o painel apresenta com a unidade incorporada."
+      ],
+      "en": [
+        "It is the numerical reading in million euros of the amount the dashboard presents with its unit."
+      ]
+    }
+  },
+  "der-prr-saude-por-pagar": {
+    "nome": {
+      "pt": "PRR Saúde contratado por pagar",
+      "en": "Contracted RRP Health amount still unpaid"
+    },
+    "frase": {
+      "pt": [
+        "É o montante contratado na componente Saúde do PRR menos o montante pago."
+      ],
+      "en": [
+        "It is the contracted amount in the RRP Health component minus the paid amount."
+      ]
+    }
+  },
+  "der-prr-saude-por-pagar-pct": {
+    "nome": {
+      "pt": "Parte do contratado no PRR Saúde por pagar",
+      "en": "Unpaid share of contracted RRP Health"
+    },
+    "frase": {
+      "pt": [
+        "É a parte do contratado na componente Saúde do PRR que ainda não foi paga."
+      ],
+      "en": [
+        "It is the share of the contracted RRP Health amount that remains unpaid."
+      ]
+    }
+  },
+  "der-prr-saude-marcos-total": {
+    "nome": {
+      "pt": "Marcos e metas da componente Saúde no anexo anual",
+      "en": "Milestones and targets of Health in the annual annex"
+    },
+    "frase": {
+      "pt": [
+        "Conta os marcos e metas da componente Saúde no anexo anual."
+      ],
+      "en": [
+        "Counts the Health component milestones and targets in the annual annex."
+      ]
+    }
+  },
+  "der-prr-saude-marcos-completos": {
+    "nome": {
+      "pt": "Marcos e metas completos da componente Saúde no anexo anual",
+      "en": "Completed milestones and targets of Health in the annual annex"
+    },
+    "frase": {
+      "pt": [
+        "Conta os marcos e metas da componente Saúde cujo estado no anexo anual é completo."
+      ],
+      "en": [
+        "Counts the Health component milestones and targets whose annual annex status is complete."
+      ]
+    }
+  },
+  "der-sns-divida-fornecedores-2026-07": {
+    "nome": {
+      "pt": "Dívida das entidades SNS a fornecedores externos",
+      "en": "NHS entities’ debt to external suppliers"
+    },
+    "frase": {
+      "pt": [
+        "É a soma das dívidas a fornecedores externos das entidades do Serviço Nacional de Saúde, em milhões de euros."
+      ],
+      "en": [
+        "It is the sum of National Health Service entities’ debts to external suppliers, in million euros."
+      ]
+    }
+  }
+});

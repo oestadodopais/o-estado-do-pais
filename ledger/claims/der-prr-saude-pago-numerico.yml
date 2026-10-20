@@ -1,0 +1,44 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "der-prr-saude-pago-numerico"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "947"
+unit: "milhões de euros"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Recuperar Portugal"
+document:
+  title: "Relatório Semanal de Monitorização | 14-10-2026"
+  edition: "2026-10-14"
+  locator: "p. 2 PDF; quadro Implementação Financeira por Dimensão Estruturante e Componente; linha C01; coluna Pago PRR"
+  source_sha256: "1db56cc1bba3055d1b0ea3c0d40954b59ec444a3279ddc4e1a2dfe6e9e5cc2b2"
+  page: 2
+  kind: "ficheiro"
+source_url: "https://recuperarportugal.gov.pt/wp-content/uploads/2026/10/Relatorio-Monitorizacao-PRR-Sumario-20261014.pdf#page=2"
+access_date: "2026-10-20"
+reference_date: "2026-10-14"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "Leitura numérica de prr-monitorizacao-20261014-p2-C01-pago: retirar a unidade e ler o ponto como separador de milhares. = 947"
+
+# Ressalva publicada da casa, conferida no motor, nas duas línguas.
+ressalva: "Valor calculado sobre as linhas do documento, não uma célula numérica transcrita."
+ressalva_en: "Value calculated from the document rows, not a transcribed numerical cell."
+
+# Aritmética da ressalva; o valor continua a ser o publicado pela fonte.
+derivation: "Leitura numérica de prr-monitorizacao-20261014-p2-C01-pago: retirar a unidade e ler o ponto como separador de milhares. = 947; componentes: prr-monitorizacao-20261014-p2-C01-pago"
+derivation_en: "Read the printed amount in million euros, treating the dot as a thousands separator = 947; components: prr-monitorizacao-20261014-p2-C01-pago"
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "oe-2027"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[derivation do motor] {'operation': 'number', 'components': ['prr-monitorizacao-20261014-p2-C01-pago'], 'operands': ['947'], 'formula': 'Leitura numérica de prr-monitorizacao-20261014-p2-C01-pago: retirar a unidade e ler o ponto como separador de milhares.', 'calculation': 'Leitura numérica de prr-monitorizacao-20261014-p2-C01-pago: retirar a unidade e ler o ponto como separador de milhares. = 947', 'rounding_places': 0, 'result': '947'} · [note do motor] Conta sobre as linhas identificadas; pagamentos do PRR não medem execução física. · Cruzado de ResearchHub content/26 Saude e Parcerias Efeitos · der-prr-saude-pago-numerico."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

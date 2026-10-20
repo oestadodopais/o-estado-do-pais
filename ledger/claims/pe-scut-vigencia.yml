@@ -1,0 +1,41 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "pe-scut-vigencia"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "A presente lei entra em vigor no dia 1 de janeiro de 2025."
+unit: "texto"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Diário da República"
+document:
+  title: "Lei n.º 37/2024, de 7 de agosto"
+  edition: "2025-01-01"
+  locator: "Artigo4; PDF2"
+  source_sha256: "98b96dcca163eb13c20185f3b955a8a6abdb582007d7273208fda00d580c6570"
+  page: 2
+  kind: "ficheiro"
+source_url: "https://files.diariodarepublica.pt/1s/2024/08/15200/0001300014.pdf#page=2"
+access_date: "2026-10-20"
+texto_documental: true
+reference_date: "2025-01-01"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "A presente lei entra em vigor no dia 1 de janeiro de 2025."
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "oe-2027"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "Cruzado de ResearchHub content/26 Saude e Parcerias Efeitos · pe-scut-vigencia."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

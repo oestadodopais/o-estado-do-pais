@@ -1,0 +1,36 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "der-prr-saude-por-pagar-pct"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "52,9"
+unit: "%"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: null
+document: null
+source_url: null
+access_date: null
+reference_date: "2026-10-14"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: null
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: "der-prr-saude-por-pagar / der-prr-saude-contratado-numerico * 100 = 52,9"
+derivation_en: "der-prr-saude-por-pagar / der-prr-saude-contratado-numerico * 100 = 52,9"
+derived_from:
+  - "der-prr-saude-por-pagar"
+  - "der-prr-saude-contratado-numerico"
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: "round ( der-prr-saude-por-pagar / der-prr-saude-contratado-numerico * 100 , 1 )"
+
+study: "oe-2027"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[derivation do motor] {'operation': 'percent', 'components': ['der-prr-saude-por-pagar', 'der-prr-saude-contratado-numerico'], 'operands': ['1064', '2011'], 'formula': 'der-prr-saude-por-pagar / der-prr-saude-contratado-numerico * 100', 'calculation': 'der-prr-saude-por-pagar / der-prr-saude-contratado-numerico * 100 = 52,9', 'rounding_places': 1, 'result': '52,9', 'check': 'round ( der-prr-saude-por-pagar / der-prr-saude-contratado-numerico * 100 , 1 )'} · [note do motor] Conta sobre as linhas identificadas; pagamentos do PRR não medem execução física. · Cruzado de ResearchHub content/26 Saude e Parcerias Efeitos · der-prr-saude-por-pagar-pct."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

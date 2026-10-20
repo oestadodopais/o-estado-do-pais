@@ -1,0 +1,41 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "pe-despacho-investimentos-novos"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "f) Avaliação de eventuais novos investimentos a realizar, designadamente relativos a novas acessibilidades e a novas ligações à rede rodoviária envolvente, e ponderação da viabilidade, e dos efeitos, da sua integração na concessão;"
+unit: "texto"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Diário da República"
+document:
+  title: "Despacho n.º 15154/2024"
+  edition: "2024-12-27"
+  locator: "Considerando b; tarefa investimentos-novos; PDF1"
+  source_sha256: "cedd69612497651c2997a56023ddb1cc8fbc62596c3d43194ce7e610221e8fc4"
+  page: 1
+  kind: "ficheiro"
+source_url: "https://files.diariodarepublica.pt/2s/2024/12/251000000/0003700039.pdf#page=1"
+access_date: "2026-10-20"
+texto_documental: true
+reference_date: "2024-12-27"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "f) Avaliação de eventuais novos investimentos a realizar, designadamente relativos a novas acessibilidades e a novas ligações à rede rodoviária envolvente, e ponderação da viabilidade, e dos efeitos, da sua integração na concessão;"
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "oe-2027"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Texto literal do diploma. A referência interna a 19 de dezembro no Decreto-Lei n.º 87-A/22 é conservada; o diploma foi publicado em 29 de dezembro de 2022. · Cruzado de ResearchHub content/26 Saude e Parcerias Efeitos · pe-despacho-investimentos-novos."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

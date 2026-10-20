@@ -1,0 +1,37 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "der-infarmed-total-2025-jan-jul"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "2 619,6"
+unit: "milhões de euros"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: null
+document: null
+source_url: null
+access_date: null
+reference_date: "2025-07"
+period: "2025-01/2025-07"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: null
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: "infarmed-ambulatorio-2026-07-p5-homologo-encargo + infarmed-hospitalar-2026-07-p5-homologo-encargo = 2 619,6"
+derivation_en: "infarmed-ambulatorio-2026-07-p5-homologo-encargo + infarmed-hospitalar-2026-07-p5-homologo-encargo = 2 619,6"
+derived_from:
+  - "infarmed-ambulatorio-2026-07-p5-homologo-encargo"
+  - "infarmed-hospitalar-2026-07-p5-homologo-encargo"
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: "round ( infarmed-ambulatorio-2026-07-p5-homologo-encargo + infarmed-hospitalar-2026-07-p5-homologo-encargo , 1 )"
+
+study: "oe-2027"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[derivation do motor] {'operation': 'sum', 'components': ['infarmed-ambulatorio-2026-07-p5-homologo-encargo', 'infarmed-hospitalar-2026-07-p5-homologo-encargo'], 'operands': ['1089.4', '1530.2'], 'formula': 'infarmed-ambulatorio-2026-07-p5-homologo-encargo + infarmed-hospitalar-2026-07-p5-homologo-encargo', 'calculation': 'infarmed-ambulatorio-2026-07-p5-homologo-encargo + infarmed-hospitalar-2026-07-p5-homologo-encargo = 2 619,6', 'rounding_places': 1, 'result': '2 619,6', 'check': 'round ( infarmed-ambulatorio-2026-07-p5-homologo-encargo + infarmed-hospitalar-2026-07-p5-homologo-encargo , 1 )'} · [note do motor] Conta sobre as linhas identificadas; pagamentos do PRR não medem execução física. · Cruzado de ResearchHub content/26 Saude e Parcerias Efeitos · der-infarmed-total-2025-jan-jul."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

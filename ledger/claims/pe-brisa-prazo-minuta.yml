@@ -1,0 +1,41 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "pe-brisa-prazo-minuta"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "A concessão termina em 31 de Dezembro de 2035."
+unit: "texto"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Instituto da Mobilidade e dos Transportes"
+document:
+  title: "Resolução do Conselho de Ministros n.º 198-B/2008"
+  edition: "2035-12-31"
+  locator: "Brisa_Contrato_Concessao2008_RCM_198-B.pdf; p. 16 PDF; ZIP IMT; minuta anexa; cláusula38; PDF16"
+  source_sha256: "52663b43033ff89788c6fbb0716e736b33a178f3ed2890a76fe217cfe114af60"
+  page: 16
+  kind: "ficheiro"
+source_url: "https://www.imt-ip.pt/wp-content/uploads/IMTT/Portugues/InfraestruturasRodoviarias/RedeRodoviaria/Documents/Concessoes2014/Brisa_Minuta_Contrato_Concessao.zip"
+access_date: "2026-10-20"
+texto_documental: true
+reference_date: "2035-12-31"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "A concessão termina em 31 de Dezembro de 2035."
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "oe-2027"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Minuta de 2008 e retificação de 2009 alojadas no ZIP. Recibo HTTP refere-se ao ZIP; o hash do membro identifica o PDF interno. · Cruzado de ResearchHub content/26 Saude e Parcerias Efeitos · pe-brisa-prazo-minuta."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

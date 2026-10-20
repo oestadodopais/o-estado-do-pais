@@ -192,6 +192,7 @@ interface CorrecaoDaLinha {
  */
 interface Linha {
   afirmacao?: unknown;
+  texto_documental?: unknown;
   publication?: unknown;
   definition_sources?: unknown;
   id: string;

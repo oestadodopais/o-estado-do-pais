@@ -1,0 +1,41 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "pe-dl87a-apoio-retificado"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "«1 — O apoio é assegurado através de um pagamento do Estado, a entregar às concessionárias, em complemento do pagamento das tarifas e taxas de portagem realizado pelos utilizadores, no montante correspondente à diferença entre as tarifas e taxas de portagem que resultariam da aplicação de um coeficiente de atualização para o ano de 2023 de 1,077, equivalente a um aumento de 7,7 %, e as tarifas e taxas de portagem que resultam da aplicação do n.º 1 do artigo anterior.»"
+unit: "texto"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Diário da República"
+document:
+  title: "Declaração de Retificação n.º 2/2023"
+  edition: "2023"
+  locator: "Ponto2, deve ler-se; artigo3, n.º1; PDF1"
+  source_sha256: "60df9a4ce15d90077eeb94e99f4b942b6f9de36ebd3aac8b4f6c0e194d6318a5"
+  page: 1
+  kind: "ficheiro"
+source_url: "https://files.dre.pt/1s/2023/01/01300/0000900009.pdf#page=1"
+access_date: "2026-10-20"
+texto_documental: true
+reference_date: "2023"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "«1 — O apoio é assegurado através de um pagamento do Estado, a entregar às concessionárias, em complemento do pagamento das tarifas e taxas de portagem realizado pelos utilizadores, no montante correspondente à diferença entre as tarifas e taxas de portagem que resultariam da aplicação de um coeficiente de atualização para o ano de 2023 de 1,077, equivalente a um aumento de 7,7 %, e as tarifas e taxas de portagem que resultam da aplicação do n.º 1 do artigo anterior.»"
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "oe-2027"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] A redação retificada substitui a referência a comparticipação na versão original. · Cruzado de ResearchHub content/26 Saude e Parcerias Efeitos · pe-dl87a-apoio-retificado."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

@@ -1,0 +1,41 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "pe-tc15-remuneracao"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "Atente-se que os acordos em causa constituíram, assim, uma forma adicional de remuneração das subconcessões, que não estava prevista nos cadernos de encargos, que não foi objeto de apreciação no âmbito da análise e da classificação das propostas, que não foi espelhada no texto dos contratos principais, designadamente nas cláusulas que, nos mesmos, definiram as remunerações, e que não foi visada por este Tribunal."
+unit: "texto"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Tribunal de Contas"
+document:
+  title: "AUDITORIA AO MODELO DE GESTÃO, FINANCIAMENTO E REGULAÇÃO DO SETOR RODOVIÁRIO"
+  edition: "2012"
+  locator: "PDF21, impressa15"
+  source_sha256: "96970051a5bd9cea23bf28d57f3fafd0ab1e13e9340968c12884c423e551dc24"
+  page: 21
+  kind: "ficheiro"
+source_url: "https://www.tcontas.pt/pt-pt/ProdutosTC/Relatorios/RelatoriosAuditoria/Documents/2012/rel015-2012-2s.pdf#page=21"
+access_date: "2026-10-20"
+texto_documental: true
+reference_date: "2012"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "Atente-se que os acordos em causa constituíram, assim, uma forma adicional de remuneração das subconcessões, que não estava prevista nos cadernos de encargos, que não foi objeto de apreciação no âmbito da análise e da classificação das propostas, que não foi espelhada no texto dos contratos principais, designadamente nas cláusulas que, nos mesmos, definiram as remunerações, e que não foi visada por este Tribunal."
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "oe-2027"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Documento histórico; não é previsão para 2027. · Cruzado de ResearchHub content/26 Saude e Parcerias Efeitos · pe-tc15-remuneracao."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

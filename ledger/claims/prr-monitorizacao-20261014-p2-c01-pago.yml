@@ -1,0 +1,40 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "prr-monitorizacao-20261014-p2-c01-pago"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "947M €"
+unit: "milhões de euros"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Recuperar Portugal"
+document:
+  title: "Relatório Semanal de Monitorização | 14-10-2026"
+  edition: "2026-10-14"
+  locator: "p. 2 PDF; quadro Implementação Financeira por Dimensão Estruturante e Componente; linha C01; coluna Pago PRR"
+  source_sha256: "1db56cc1bba3055d1b0ea3c0d40954b59ec444a3279ddc4e1a2dfe6e9e5cc2b2"
+  page: 2
+  kind: "ficheiro"
+source_url: "https://recuperarportugal.gov.pt/wp-content/uploads/2026/10/Relatorio-Monitorizacao-PRR-Sumario-20261014.pdf#page=2"
+access_date: "2026-10-20"
+reference_date: "2026-10-14"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "Relatório Semanal de Monitorização | 14-10-2026; C01 - Serviço Nacional de Saúde; Pago PRR; 947M €"
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "oe-2027"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Leitura da célula ou ponto do gráfico na imagem da página. Período e coluna conservados.  O teste automático confere a integridade dos ficheiros e a correspondência à transcrição; a leitura do valor na imagem foi conferida visualmente, sem alegar extração textual automática. · Cruzado de ResearchHub content/26 Saude e Parcerias Efeitos · prr-monitorizacao-20261014-p2-C01-pago."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

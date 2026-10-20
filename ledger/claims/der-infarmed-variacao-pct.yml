@@ -1,0 +1,37 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "der-infarmed-variacao-pct"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "6,1"
+unit: "%"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: null
+document: null
+source_url: null
+access_date: null
+reference_date: "2026-07"
+period: "2026-01/2026-07"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: null
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: "( der-infarmed-total-2026-jan-jul / der-infarmed-total-2025-jan-jul - 1 ) * 100 = 6,1"
+derivation_en: "( der-infarmed-total-2026-jan-jul / der-infarmed-total-2025-jan-jul - 1 ) * 100 = 6,1"
+derived_from:
+  - "der-infarmed-total-2026-jan-jul"
+  - "der-infarmed-total-2025-jan-jul"
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: "round ( ( der-infarmed-total-2026-jan-jul / der-infarmed-total-2025-jan-jul - 1 ) * 100 , 1 )"
+
+study: "oe-2027"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[derivation do motor] {'operation': 'change_pct', 'components': ['der-infarmed-total-2026-jan-jul', 'der-infarmed-total-2025-jan-jul'], 'operands': ['2780.2', '2619.6'], 'formula': '( der-infarmed-total-2026-jan-jul / der-infarmed-total-2025-jan-jul - 1 ) * 100', 'calculation': '( der-infarmed-total-2026-jan-jul / der-infarmed-total-2025-jan-jul - 1 ) * 100 = 6,1', 'rounding_places': 1, 'result': '6,1', 'check': 'round ( ( der-infarmed-total-2026-jan-jul / der-infarmed-total-2025-jan-jul - 1 ) * 100 , 1 )'} · [note do motor] Conta sobre as linhas identificadas; pagamentos do PRR não medem execução física. · Cruzado de ResearchHub content/26 Saude e Parcerias Efeitos · der-infarmed-variacao-pct."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

@@ -1,0 +1,10 @@
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+import {loadClaims} from '../../../../src/lib/ledger.mjs';
+import {ITENS} from '../../../../src/data/discussao.mjs';
+import {conferirEfeitos,plantasDosEfeitos} from '../../../../tests/discussao/efeitos.mjs';
+const linhas=loadClaims(),erros=conferirEfeitos(linhas,ITENS),plantas=plantasDosEfeitos(linhas,ITENS);
+assert.deepEqual(erros,[]);
+assert(plantas.every(p=>p.mordeu),'planta sem recusa');
+fs.writeFileSync(new URL('conferencia-dados.json',import.meta.url),JSON.stringify({erros,plantas},null,2)+'\n');
+console.log(JSON.stringify({erros:erros.length,plantas:plantas.length,detetadas:plantas.filter(p=>p.mordeu).length}));

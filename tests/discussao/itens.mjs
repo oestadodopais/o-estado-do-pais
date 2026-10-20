@@ -12,6 +12,7 @@ import {conferirMarcasDoTitulo,plantasDosTitulos,tituloDeEnsaio} from './titulos
 import {seloDoTituloDaDiscussao} from '../../scripts/porta-do-titulo-discussao.mjs';
 import {conferirRecibosCorrigidos} from './recibos.mjs';
 import {conferirApoiosDaComparacao,plantasDosApoios} from './apoios.mjs';
+import {conferirEfeitos,plantasDosEfeitos,conferirRecibosDosEfeitos} from './efeitos.mjs';
 import {conferirAuditoriaDasExplicacoes, explicacaoPelaCelula, linhasDaExplicacao, textoSemSelos} from '../explicacoes/explicacao.mjs';
 // Lista independente do mandato: o título e estas seis partes, sem rótulos livres.
 const PARTES=[['como-foi-dito','Como foi dito','As it was said'],['fontes','O que as fontes dizem','What the sources say'],['comparacao','A comparação','The comparison'],['conclusao','A conclusão','The conclusion'],['recomendacao','A recomendação','The recommendation'],['opiniao','A opinião do lugar de direção',"The editorial seat's opinion"]];
@@ -22,7 +23,7 @@ const recibo=(id,lang)=>(lang==='pt'?'/livro-razao/':'/en/ledger/')+id;
 const valores=x=>Number(String(x).replace(/[\s ]/g,'').replace('−','-').replace(',','.'));
 const ADJETIVOS=['mentiroso','mentirosa','irresponsável','corrupto','corrupta','incompetente','desonesto','desonesta','dishonest','corrupt','incompetent','irresponsible'];
 export function conferirDeclaracoes(itens=ITENS, linhas=loadClaims()) {
- const erros=conferirDerivacoes(linhas);
+ const erros=[...conferirDerivacoes(linhas),...conferirEfeitos(linhas,itens)];
  if(itens.map(e=>e.slug).join('|')!=='saude-no-orcamento|parcerias-rodoviarias')erros.push('V2B itens: faltam os dois itens mandatados');
  const audit=JSON.parse(fs.readFileSync(path.join(raiz,'tests/discussao/palavras.json'),'utf8'));
  if(audit.explicacoes.some(e=>e.folhas.some(f=>f.partes.some(p=>p.apoios?.some(a=>a.campo==='note')))))erros.push('V2B apoio: note nunca apoia um item');
@@ -197,9 +198,11 @@ export function plantas(html,lang){
 export function conferirTudo(dist=path.join(raiz,'dist')){
  const metodo=conferirPortasDoMetodo(dist);
  const recibosCorrigidos=conferirRecibosCorrigidos(dist,loadClaims());
+ const efeitos=conferirRecibosDosEfeitos(dist,ITENS);
  const apoios=plantasDosApoios(JSON.parse(fs.readFileSync(path.join(raiz,'tests/discussao/palavras.json'),'utf8')));
  const erros=[...conferirDeclaracoes(),...metodo.erros,...recibosCorrigidos.erros],provas=[...plantasDasDerivacoes(loadClaims()),...plantasDosTitulos(loadClaims()),...metodo.plantas,...recibosCorrigidos.plantas],integracoes=[];
  provas.push(...apoios);
+ erros.push(...efeitos.erros);provas.push(...efeitos.plantas,...plantasDosEfeitos(loadClaims(),ITENS));
  for(const lang of ['pt','en']){
   const file=path.join(dist,lang==='pt'?'o-que-se-discute/index.html':'en/under-discussion/index.html');
   if(!fs.existsSync(file)){erros.push('V2B página: página ausente');continue;}

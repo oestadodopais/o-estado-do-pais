@@ -1,4 +1,5 @@
 import { valorNaLingua } from './valor-na-lingua.mjs';
+import {textoDocumentalConferido} from './prova-efeitos.mjs';
 /**
  * ===========================================================================
  * AS EXPLICAÇÕES · o resolvedor (bloco EX1, 05.10.2026)
@@ -258,7 +259,8 @@ function resolver(partes, lang, onde, ctx) {
     if (chave === 'literal') {
       if (Object.keys(o).sort().join(',') !== 'campo,literal' || !['excerpt', 'attributed_to', 'ressalva'].includes(o.campo)) throw defeito(aqui, 'campo literal não autorizado.');
       const row = getClaim(o.literal);
-      if (['excerpt', 'attributed_to'].includes(o.campo) && row.afirmacao !== true) throw defeito(aqui, 'a citação e a atribuição exigem uma afirmação.');
+      if (['excerpt', 'attributed_to'].includes(o.campo) && row.afirmacao !== true &&
+          !(o.campo==='excerpt'&&textoDocumentalConferido(row))) throw defeito(aqui, 'a citação exige uma afirmação ou um texto documental selado; a atribuição exige uma afirmação.');
       const autores = row.attributed_to;
       if (o.campo === 'attributed_to' && (!Array.isArray(autores) || !autores.every(x => typeof x === 'string'))) throw defeito(aqui, 'atribuição sem nomes literais.');
       const texto = o.campo === 'attributed_to' ? atribuicaoDaLinha(row) : o.campo === 'excerpt' ? row.excerpt : lang === 'en' ? row.ressalva_en : row.ressalva;

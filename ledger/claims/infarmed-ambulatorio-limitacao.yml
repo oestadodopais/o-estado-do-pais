@@ -1,0 +1,41 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "infarmed-ambulatorio-limitacao"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "Os valores apresentados não refletem a totalidade das contribuições resultantes da implementação do Acordo Governo/APIFARMA e dos contratos de financiamento"
+unit: "texto"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "INFARMED"
+document:
+  title: "Monitorização da despesa com medicamentos | Ambulatório | Julho de 2026"
+  edition: "2026-07"
+  locator: "p. 2 PDF (2 impressa)"
+  source_sha256: "d6280c0138ee42cfa4af02e669567f839c154090c77e27f822e6a604abc8e91b"
+  page: 2
+  kind: "ficheiro"
+source_url: "https://www.infarmed.pt/documents/15786/12177210/julho/636731d9-4b24-8fee-1e6b-cfbe168799db?version=1.0"
+access_date: "2026-10-20"
+texto_documental: true
+reference_date: "2026-07"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "Os valores apresentados não refletem a totalidade das contribuições resultantes da implementação do Acordo Governo/APIFARMA e dos contratos de financiamento"
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "oe-2027"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Frase completa da Informação Prévia. · Cruzado de ResearchHub content/26 Saude e Parcerias Efeitos · infarmed-ambulatorio-limitacao."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

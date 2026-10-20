@@ -1,0 +1,13 @@
+{
+  "exporter": "publisher/export_site_rows.py",
+  "origin": "ResearchHub",
+  "files": {
+    "provas.json": {
+      "destino": "ledger/provas/v2e",
+      "origin_path": "publisher/recortes/v2e/provas.json",
+      "origin_sha256": "52f2c58da5da39c80be1e97cd8f66ad3f6ab94cf652204d73c75443adbd92687",
+      "exported_sha256": "52f2c58da5da39c80be1e97cd8f66ad3f6ab94cf652204d73c75443adbd92687",
+      "exporter": "publisher/export_site_rows.py"
+    }
+  }
+}
