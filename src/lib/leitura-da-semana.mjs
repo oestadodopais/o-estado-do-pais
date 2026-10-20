@@ -44,6 +44,7 @@
  */
 
 import { allClaims, getClaim, hasClaim, parsePtNumber } from './ledger.mjs';
+import { textoDocumentalConferido } from './prova-efeitos.mjs';
 import { MEDIDA_REUNIDA } from './pais.mjs';
 import { nomeDaLinhaDerivada, nomeDoCartao } from './nomes.mjs';
 import { BLOCOS_DA_PRIMEIRA_PAGINA } from '../data/primeira-pagina.mjs';
@@ -113,7 +114,7 @@ export function leituraDaSemana({ fim = diaDaConstrucao(), linhas = allClaims() 
     if (entradas.some((/** @type {any} */ c) => c.kind === 'proveniencia')) deProveniencia.add(String(l.id));
     // Uma correção de uma frase continua no registo e no recibo. Só os valores
     // numéricos entram nas comparações «subiu», «desceu» e «mesmo número».
-    if (l.afirmacao === true && l.unit === 'afirmação') continue;
+    if ((l.afirmacao === true && l.unit === 'afirmação') || textoDocumentalConferido(l)) continue;
     const deValorAqui = entradas.filter((/** @type {any} */ c) => NATUREZAS_DE_VALOR.includes(c.kind))
       .sort((/** @type {any} */ a, /** @type {any} */ b) => a.date.localeCompare(b.date) || a.n - b.n);
     if (!deValorAqui.length) continue;

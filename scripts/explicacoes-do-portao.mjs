@@ -32,6 +32,7 @@ import path from 'node:path';
 import { parse } from 'node-html-parser';
 import { EXPLICACOES } from '../src/data/explicacoes/index.mjs';
 import { MEDIDA_REUNIDA } from '../src/lib/pais.mjs';
+import { textoDocumentalConferido } from '../src/lib/prova-efeitos.mjs';
 
 /** O estudo das contagens do próprio projeto, fora do âmbito da leitura. */
 const ESTUDO_DO_PROJETO = 'o-estado-do-pais';
@@ -94,7 +95,7 @@ export function contasDaSemanaNoPortao(claims, inicio, fim) {
     (l.corrections ?? []).forEach((/** @type {any} */ c, /** @type {number} */ n) => {
       if (!dentro(c?.date)) return;
       if (c.kind === 'proveniencia') proveniencia.add(id);
-      if (NATUREZAS_DE_VALOR.has(c.kind) && !(l.afirmacao === true && l.unit === 'afirmação')) deValor.push({ c, n });
+      if (NATUREZAS_DE_VALOR.has(c.kind) && !((l.afirmacao === true && l.unit === 'afirmação') || textoDocumentalConferido(l))) deValor.push({ c, n });
     });
     if (!deValor.length) continue;
     deValor.sort((a, b) => String(a.c.date).localeCompare(String(b.c.date)) || a.n - b.n);

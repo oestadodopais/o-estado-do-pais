@@ -27,6 +27,7 @@ import { MUDANCAS_DO_PROJETO } from '../data/mudancas-do-projeto.mjs';
 import { LUGAR_DECLARADO_DAS_LINHAS } from '../data/lugar-das-linhas.mjs';
 import { ROTULOS_B1 } from '../data/rotulos-b1.mjs';
 import { entradasDoRegisto, getClaim, motivoDaEntrada } from './ledger.mjs';
+import { textoDocumentalConferido } from './prova-efeitos.mjs';
 import { nomeDoCartao, nomeDaLinhaDerivada } from './nomes.mjs';
 import { estudosRecentes, LINHAS_DA_LEITURA_DO_PAIS, MEDIDA_REUNIDA } from './pais.mjs';
 import { routePath } from './routes.mjs';
@@ -348,7 +349,7 @@ export function mudancasDoIndice(lang) {
     // O resumo do índice compara valores numéricos. As frases corrigidas
     // conservam a entrada completa no registo e a história no recibo.
     const linha = getClaim(m.claim);
-    if (linha.afirmacao === true && linha.unit === 'afirmação') continue;
+    if ((linha.afirmacao === true && linha.unit === 'afirmação') || textoDocumentalConferido(linha)) continue;
     const atual = maisRecente.get(m.claim);
     if (!atual || m.data > atual.data || (m.data === atual.data && m.n > atual.n)) maisRecente.set(m.claim, m);
   }

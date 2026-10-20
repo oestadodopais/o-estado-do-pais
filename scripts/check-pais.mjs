@@ -12,6 +12,7 @@ import { WORKS, SUBJECTS, linguaDoTitulo } from '../src/data/studies.mjs';
 import { REGIOES } from '../src/data/regioes.mjs';
 import { MUNICIPIOS_COM_PAGINA } from '../src/data/municipios.mjs';
 import { LUGAR_DECLARADO_DAS_LINHAS } from '../src/data/lugar-das-linhas.mjs';
+import { textoDocumentalConferido } from '../src/lib/prova-efeitos.mjs';
 import { ROTULOS_B1 } from '../src/data/rotulos-b1.mjs';
 import { matchPath, normalizePath, routePath } from '../src/lib/routes.mjs';
 import { t } from '../src/i18n/strings.mjs';
@@ -693,7 +694,7 @@ function anda(dir) {
         const dentro = ambito === 'pais'
           ? (tipo === 'projeto' || (tipo === 'correcao' && doLugar === PAIS))
           : ambito === 'indice'
-            ? rotaDaPagina?.key === 'indice' && tipo === 'correcao' && doLugar !== null && !(linha(claim)?.afirmacao === true && linha(claim)?.unit === 'afirmação')
+            ? rotaDaPagina?.key === 'indice' && tipo === 'correcao' && doLugar !== null && !((linha(claim)?.afirmacao === true && linha(claim)?.unit === 'afirmação') || textoDocumentalConferido(linha(claim)))
             : (tipo === 'correcao' && doLugar === ambito);
         if (!dentro)
           erros.push(`A1: ${onde}: a linha ${chave} é de «${doLugar ?? 'nenhum lugar'}» e a página é de «${ambito}».`);

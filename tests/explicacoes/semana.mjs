@@ -41,6 +41,7 @@ import { BLOCOS_DA_PRIMEIRA_PAGINA } from '../../src/data/primeira-pagina.mjs';
 import { limiarDaLinha, nomeNaLista } from '../../src/lib/primeira-pagina.mjs';
 import { leituraDaSemana, primeiraFraseDaSemana, nomeNaSemana } from '../../src/lib/leitura-da-semana.mjs';
 import { dataDaCasa } from '../../src/lib/datas.mjs';
+import { textoDocumentalConferido } from '../../src/lib/prova-efeitos.mjs';
 import { milharesDaCasa } from '../../src/lib/formato.mjs';
 import { t } from '../../src/i18n/strings.mjs';
 import { unidadeDaLinha } from '../../src/i18n/unidades.mjs';
@@ -83,7 +84,7 @@ export function semanaPelaCelula(linhas, fim) {
     const doDia = (l.corrections ?? []).map((/** @type {any} */ c, /** @type {number} */ n) => ({ c, n })).filter((/** @type {any} */ x) => dentro(x.c?.date));
     if (doDia.some((/** @type {any} */ x) => x.c.kind === 'proveniencia')) proveniencia += 1;
     // A secção compara números; a correção textual permanece no registo.
-    if (l.afirmacao === true && l.unit === 'afirmação') continue;
+    if ((l.afirmacao === true && l.unit === 'afirmação') || textoDocumentalConferido(l)) continue;
     const deValor = doDia.filter((/** @type {any} */ x) => x.c.kind === 'correcao' || x.c.kind === 'atualizacao').sort((/** @type {any} */ a, /** @type {any} */ b) => a.c.date.localeCompare(b.c.date) || a.n - b.n);
     if (!deValor.length) continue;
     const p = deValor[0], u = deValor[deValor.length - 1];
@@ -282,11 +283,34 @@ export function provaNaCopiaPlantada(fim) {
     }
     for(const lang of ['pt','en']){
       const indice=mudancasDoIndice(lang),registo=mudancasDoRegisto(lang);
-      const ids=[...base.values()].filter(l=>l.afirmacao===true&&l.unit==='afirmação'&&(l.corrections??[]).some(c=>['correcao','atualizacao'].includes(c.kind))).map(l=>l.id);
+      const ids=[...base.values()].filter(l=>((l.afirmacao===true&&l.unit==='afirmação')||textoDocumentalConferido(l))&&(l.corrections??[]).some(c=>['correcao','atualizacao'].includes(c.kind))).map(l=>l.id);
       const preservadas=ids.every(id=>registo.some(e=>e.tipo==='correcao'&&e.claim===id));
       const excluidas=ids.every(id=>!indice.some(e=>e.claim===id));
       plantas.push({nome:`afirmações textuais no registo, fora da comparação numérica do índice (${lang})`,pediu:'registo conserva textos; índice só compara números',viu:`registo ${preservadas}, índice ${excluidas}`,mordeu:preservadas&&excluidas});
     }
+  }
+  for(const id of ['pe-oe-beira-abolicao','pe-oe-riscos-nao-reconhecimento']){
+    const l=structuredClone(base.get(id));
+    l.corrections=l.corrections.filter(c=>c.kind==='correcao').map(c=>({...c,date:fim}));
+    l.verifications=[{date:fim,result:'igual',by:'planta',path:null}];
+    const m=new Map([[id,l]]),r=doResolvedor(m),c=semanaPelaCelula(m,fim),p=contasDaSemanaNoPortao(m,inicio,fim);
+    const zero=r.mudancas.length===0&&c.mudancas.length===0&&p.valor===0&&r.formas.length===0&&c.formas.length===0&&p.forma===0;
+    plantas.push({nome:`correção documental selada fora da comparação numérica (${id})`,pediu:'nenhum movimento numérico; releitura conservada nos três leitores',viu:JSON.stringify({resolvedor:r.contagens,celula:c.contagens,portao:p}),mordeu:zero&&r.contagens.relidas===1&&c.contagens.relidas===1&&p.relidas===1});
+    for(const [campo,altera] of [
+      ['marca',x=>{delete x.texto_documental;}],['unidade',x=>{x.unit='%';}],
+      ['fonte',x=>{x.document.source_sha256='outra';}],['excerto',x=>{x.excerpt+=' Outra frase.';}],
+    ]){
+      const copia=structuredClone(l);altera(copia);const mapa=new Map([[id,copia]]);
+      let recusada=false;try{doResolvedor(mapa);}catch(e){recusada=String(e).includes('não se lê como número');}
+      const noPortao=contasDaSemanaNoPortao(mapa,inicio,fim),naCelula=semanaPelaCelula(mapa,fim);
+      plantas.push({nome:`dispensa documental adulterada (${id}, ${campo})`,pediu:'resolvedor recusa texto não selado; leitores não o dispensam',viu:String(recusada),mordeu:recusada&&noPortao.valor===1&&naCelula.contagens.valor===1});
+    }
+  }
+  {
+    const l=structuredClone(base.get(la));
+    l.texto_documental=true;l.unit='texto';l.corrections=[{kind:'atualizacao',date:fim,old_value:'1',new_value:'2'}];
+    const m=new Map([[l.id,l]]),r=doResolvedor(m),c=semanaPelaCelula(m,fim),p=contasDaSemanaNoPortao(m,inicio,fim);
+    plantas.push({nome:'linha numérica disfarçada de documento não desaparece',pediu:'uma mudança numérica nos três leitores',viu:JSON.stringify([r.contagens.valor,c.contagens.valor,p.valor]),mordeu:r.contagens.valor===1&&c.contagens.valor===1&&p.valor===1});
   }
   for (const p of plantas) if (!p.mordeu) erros.push(`W1 · a planta «${p.nome}» pediu ${p.pediu} e viu ${p.viu}`);
   return { erros, plantas };
