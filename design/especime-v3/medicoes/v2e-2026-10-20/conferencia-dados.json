@@ -2,6 +2,22 @@
   "erros": [],
   "plantas": [
     {
+      "nome": "estado completo fora da rota declarada",
+      "mordeu": true
+    },
+    {
+      "nome": "afirmação de completude acrescentada",
+      "mordeu": true
+    },
+    {
+      "nome": "estado completo fora da rota declarada",
+      "mordeu": true
+    },
+    {
+      "nome": "afirmação de completude acrescentada",
+      "mordeu": true
+    },
+    {
       "nome": "valor do painel alterado",
       "mordeu": true
     },

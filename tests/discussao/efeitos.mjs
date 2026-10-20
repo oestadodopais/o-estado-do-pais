@@ -5,6 +5,7 @@ import {parse} from 'node-html-parser';
 import {textoDocumentalConferido,acumuladoConferido,nomeDoEfeitoConferido} from '../../src/lib/prova-efeitos.mjs';
 import {lugarDaIncorporacao} from '../../src/lib/lugar-da-incorporacao.mjs';
 import {conferirFormatoDaPagina} from '../inicio/formato-dos-numeros.mjs';
+import {analisa,leMarcadores} from '../../scripts/voz.mjs';
 const proofFile=new URL('../../ledger/provas/v2e/provas.json',import.meta.url);
 const proofs=JSON.parse(fs.readFileSync(proofFile,'utf8')).rows;
 const idSite=id=>id.startsWith('eurostat-')?id:id.replaceAll('_','-').replaceAll('.','-').toLowerCase();
@@ -53,6 +54,15 @@ export function conferirEfeitos(linhas,itens){
 }
 export function plantasDosEfeitos(linhas,itens){
  const results=[];
+ for(const texto of [
+  'estão completos, entre eles o contrato de gestão para o Hospital de Lisboa Oriental e a aquisição de equipamento médico pesado.',
+  'are complete, including the management contract for Hospital de Lisboa Oriental and the purchase of heavy medical equipment.',
+ ]){
+  const regras=leMarcadores(process.cwd());
+  if(analisa(texto,'/o-que-se-discute',regras,'discussao').includes('complet'))throw new Error('Estado do PRR recusado');
+  results.push({nome:'estado completo fora da rota declarada',mordeu:analisa(texto,'/',regras,'home').includes('complet')});
+  results.push({nome:'afirmação de completude acrescentada',mordeu:analisa(texto+' O sítio está completo.','/o-que-se-discute',regras,'discussao').includes('complet')});
+ }
  const painel='prr-monitorizacao-20261014-p2-c01-taxa';
  const html=(id,v)=>`<span data-claim="${id}">${v}</span>`;
  if(conferirFormatoDaPagina(html(painel,'47%'),'planta').desvios.length)throw new Error('Painel íntegro recusado');
