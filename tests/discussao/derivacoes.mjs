@@ -67,7 +67,7 @@ export function plantasDasDerivacoes(linhas){
   const copia=new Map([...linhas].map(([k,v])=>[k,structuredClone(v)]));
   if(!copia.has(id))return {nome,mordeu:false,queixa:'Linha da planta ausente'};
   estraga(copia);
-  const queixa=conferirDerivacoes(copia).find(e=>nome.startsWith('período')?e.includes('V2D período textual'):nome.startsWith('execução')?e.includes('V2D série'):nome.startsWith('afirmação')?e.includes('V2D afirmação textual'):e.includes(id))??null;
+  const queixa=conferirDerivacoes(copia).find(e=>nome.startsWith('antecedente')?e.includes('V2D antecedente'):nome.startsWith('período')?e.includes('V2D período textual'):nome.startsWith('execução')?e.includes('V2D série'):nome.startsWith('afirmação')?e.includes('V2D afirmação textual'):e.includes(id))??null;
   return {nome,mordeu:queixa!==null,queixa};
  });
 }
