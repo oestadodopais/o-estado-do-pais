@@ -1,0 +1,107 @@
+{
+  "montagem_motor": {
+    "codigo": 0,
+    "registo": "<temporario>/v2df-montagem.log",
+    "sha256": "fde4c3a4c2d8f562dc8ab4a672c867b49ee647ae850ce2c9b43b14c563e19502",
+    "ultimas_linhas": [
+      "relatório gerado: 1374 linhas; 78 pedidos novos; 10 corpos reutilizados",
+      "V2D: 142 linhas e 158 provas preparadas."
+    ]
+  },
+  "exportacao_inicial": {
+    "codigo": 1,
+    "registo": "<temporario>/v2df-exportacao.log",
+    "sha256": "4508fac2af3d1c5030eba87cd2845da49560becb61e34e120cfddf7180c9d3b9",
+    "ultimas_linhas": [
+      "  TRAVESSIA RECUSADA",
+      "",
+      "  oe-2027-saude-contrato-programa-acss: this run exports 'Do total da despesa consolidada afeta ao Programa Legado, a maior parte é financiada por receitas de impostos (15 452,2 milhões de euros). Neste montante incluem-se as verbas do contrato-programa a celebrar entre a Administração Central do Sistema de Saúde, IP (ACSS) e as entidades do Serviço Nacional de Saúde (SNS), destinadas ao financiamento centralizado da Rede Nacional de Cuidados Continuados, das parcerias público-privadas, entre outros.' and the site's row publishes 'Neste montante incluem-se as verbas do contrato-programa a celebrar entre a Administração Central do Sistema de Saúde, IP (ACSS) e as entidades do Serviço Nacional de Saúde (SNS), destinadas ao financiamento centralizado da Rede Nacional de Cuidados Continuados, das parcerias público-privadas, entre outros.'. A crossed row whose value moves carries a typed `correcao` or `atualizacao` saying so, with `old_value` the value on disk and `new_value` the value this run exports. Without one the number changes on the page and nothing on the page says it changed.",
+      "      on disk:  Neste montante incluem-se as verbas do contrato-programa a celebrar entre a Administração Central do Sistema de Saúde, IP (ACSS) e as entidades do Serviço Nacional de Saúde (SNS), destinadas ao financiamento centralizado da Rede Nacional de Cuidados Continuados, das parcerias público-privadas, entre outros.   (read 2026-10-13)",
+      "      this run: Do total da despesa consolidada afeta ao Programa Legado, a maior parte é financiada por receitas de impostos (15 452,2 milhões de euros). Neste montante incluem-se as verbas do contrato-programa a celebrar entre a Administração Central do Sistema de Saúde, IP (ACSS) e as entidades do Serviço Nacional de Saúde (SNS), destinadas ao financiamento centralizado da Rede Nacional de Cuidados Continuados, das parcerias público-privadas, entre outros.   (read 2026-10-13)",
+      "",
+      "  Nada foi escrito. Um campo que não se conhece escreve-se \"[a verificar]\" no manifesto — nunca um valor plausível.",
+      ""
+    ]
+  },
+  "exportacao": {
+    "codigo": 0,
+    "registo": "<temporario>/v2df-exportacao-final.log",
+    "sha256": "fac176d5d6e73e93ad3f2ef2f820b7f2c5b050295513ba48f235e29ccd61291c",
+    "ultimas_linhas": [
+      "  sem rótulo impresso: 55 de 142 linha(s), a que a página chama pelo título do documento: afirmacao-pcp-paula-ppp-2026-10-12, afirmacao-pcp-paula-investimento-saude-2026-10-12, afirmacao-pcp-ppp-2026-10-15, utao-saude-sem-prr-2027, utao-risco-execucao-sns-2027, utao-ppp-contingencias-natureza-2026, ppp-oe2027-liquidos-2027-previsao-oe2026, ppp-oe2027-riscos-pedidos-rodoviarios e mais 47",
+      "  pending_page: 0 linha(s) sem sítio desenhado onde ser impressa",
+      "",
+      "  Escritas 142 linhas em <worktree>/ledger/claims",
+      "  Registo em <worktree>/ledger/cruzamentos/v2d.json",
+      "  Recortes: 0 ficheiro(s) escrito(s) de 0 em <worktree>/public/recortes",
+      "  Manifesto dos recortes em <motor>/publisher/recortes/manifest.v2d.json",
+      ""
+    ]
+  },
+  "celulas_motor": {
+    "codigo": 0,
+    "registo": "<temporario>/v2df-celulas-motor.log",
+    "sha256": "3ffbdb66378febaf521431228a9ed9662e3177066310d4d6e8d277505a2af1c7",
+    "ultimas_linhas": [
+      "PASS · 45 conferências OE2027; livro, corpos e recibos conferidos; 840 células Eurostat por índice independente."
+    ]
+  },
+  "celula_exportador": {
+    "codigo": 0,
+    "registo": "<temporario>/v2df-exportador-celula.log",
+    "sha256": "d6ad08024f860e98476bc4003c3e673f80dc719d2851870beedcb5089cbf1bac",
+    "ultimas_linhas": [
+      "PASS · V2D: 142 linhas, 40 contas e componentes adulteradas recusadas; regeneração idempotente."
+    ]
+  },
+  "composicao_e_auditoria": {
+    "codigo": 0,
+    "registo": "<temporario>/v2df-composicao.log",
+    "sha256": "2577e92983d257968f9424076e7d9f840ba816a163944a044d128ad6918bd8c7",
+    "ultimas_linhas": [
+      "V2D: 142 famílias compostas e conferidas.",
+      "{\"explicacoes\":2,\"folhas\":305,\"partes\":309,\"diz\":0,\"conta\":0,\"liga\":0,\"aponta\":0,\"leitura\":309,\"apoios\":3262,\"origens\":0}",
+      "{\"linhas\":150,\"novas_com_porta\":134}"
+    ]
+  },
+  "check:cruzamento --with-origin": {
+    "codigo": 0,
+    "registo": "<temporario>/v2df-cruzamento.log",
+    "sha256": "90609dd5724bc324848fa92e60239712a937b8b62c71423cf932a911e090bfe7",
+    "ultimas_linhas": [
+      "\u001b[90m    oe-2026: 209\u001b[0m",
+      "\u001b[90m    oe-2027: 160\u001b[0m",
+      "",
+      "\u001b[33m  1 aviso(s):\u001b[0m",
+      "\u001b[90m    · o ledger.json de \"20 Orcamento do Estado\" já não é o que atravessou. Por si só isto não quer dizer nada: o ficheiro traz um \"built_at\" que muda a cada reconstrução. O que prende é o resumo de cada LINHA — se nenhuma foi nomeada acima, nenhuma mudou.\u001b[0m",
+      "",
+      "  \u001b[32m✓\u001b[0m cada linha e cada ficheiro vindos do motor são, byte a byte, o que atravessou, e são ainda o que o motor tem.",
+      ""
+    ]
+  },
+  "commit_motor": {
+    "codigo": 0,
+    "cabeca": "9981f281",
+    "saida": [
+      "GATE  editions evora-2027-pt-en ok",
+      "GATE  editions evora-contas-camara-pt-en ok",
+      "GATE  editions evora-contas-camara-pt-md-html ok",
+      "GATE  editions evora-contas-camara-en-md-html ok",
+      "GATE  editions evora-quem-governou-pt-md-html ok",
+      "GATE  editions evora-economia-dinheiro-de-fora-pt-en ok",
+      "GATE  editions evora-economia-dinheiro-de-fora-pt-md-html ok",
+      "GATE  editions evora-economia-dinheiro-de-fora-en-md-html ok",
+      "GATE  editions evora-2027-capital-europeia-da-cultura-pt-en ok",
+      "GATE  editions evora-2027-capital-europeia-da-cultura-pt-md-html ok",
+      "GATE  editions evora-2027-capital-europeia-da-cultura-en-md-html ok",
+      "GATE: PASS"
+    ],
+    "quando": "2026-10-20T11:44:33Z"
+  },
+  "commit_codigo_sitio": {
+    "codigo": 0,
+    "cabeca": "4450a208",
+    "saida": [],
+    "quando": "2026-10-20T11:44:36Z"
+  }
+}
