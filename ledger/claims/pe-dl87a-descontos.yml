@@ -13,7 +13,7 @@ unit: "texto"
 source: "Diário da República"
 document:
   title: "Decreto-Lei n.º 87-A/2022"
-  edition: "2023"
+  edition: "2022"
   locator: "Artigo 1.º, n.º 2; PDF 1"
   source_sha256: "02f47b657bf38ea15f30749dd810c2a4bde5bdf68b5a8a70ab6108647b04dbf3"
   page: 1
@@ -21,7 +21,7 @@ document:
 source_url: "https://files.dre.pt/1s/2022/12/25001/0000200005.pdf#page=1"
 access_date: "2026-10-20"
 texto_documental: true
-reference_date: "2023"
+reference_date: "2022"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
 excerpt: "O disposto no presente decreto-lei não prejudica a aplicação dos regimes de descontos em vigor."

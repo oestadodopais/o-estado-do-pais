@@ -4,7 +4,7 @@
 id: "correcoes-publicadas"
 
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
-value: "12"
+value: "11"
 unit: "correções"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
@@ -58,6 +58,6 @@ corrections:
   - date: "2026-10-20"
     kind: "atualizacao"
     old_value: "10"
-    new_value: "12"
-    reason: "As correções dos excertos sobre a negociação da Beira Interior e o não reconhecimento das pretensões das concessionárias entram na contagem. A recontagem não é uma correção adicional."
-    reason_en: "The corrections to the excerpts on the Beira Interior negotiation and the non-recognition of concessionaires’ claims enter the count. The recount is not an additional correction."
+    new_value: "11"
+    reason: "A correção do excerto sobre a negociação da Beira Interior entra na contagem. O corte editorial da citação sobre o não reconhecimento não é um erro. A recontagem não é uma correção adicional."
+    reason_en: "The correction to the Beira Interior negotiation excerpt enters the count. The editorial cut of the non-recognition quotation is not an error. The recount is not an additional correction."

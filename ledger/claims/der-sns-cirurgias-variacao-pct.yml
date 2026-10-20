@@ -15,17 +15,18 @@ document: null
 source_url: null
 access_date: null
 reference_date: "2026-07"
+period: "2026-01/2026-07"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
 excerpt: null
 
 # Ressalva publicada da casa, conferida no motor, nas duas línguas.
-ressalva: "Acumulado de janeiro ao mês, como o catálogo do SNS o diz; os valores repõem-se a zero em janeiro. Ver sns-catalogo-acumulados."
-ressalva_en: "Accumulated from January through the month, as stated in the NHS catalogue; values reset to zero in January. See sns-catalogo-acumulados."
+ressalva: "O catálogo do SNS descreve a cobertura do conjunto como «De janeiro de 2013 ao mês n-2 anterior ao atual (valores acumulados)»; a leitura de acumulado de janeiro ao mês vem dos próprios valores, que repõem a zero em janeiro (conferido nos corpos pelo guião do bloco)."
+ressalva_en: "The NHS catalogue describes the dataset coverage as «De janeiro de 2013 ao mês n-2 anterior ao atual (valores acumulados)»; the reading as accumulated from January through the month comes from the values themselves, which reset to zero in January (checked in the bodies by the block script)."
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
-derivation: "( sns-cirurgias-2026-07 / sns-cirurgias-2025-07 - 1 ) * 100 = -4,4"
-derivation_en: "( sns-cirurgias-2026-07 / sns-cirurgias-2025-07 - 1 ) * 100 = -4,4"
+derivation: "( sns-cirurgias-2026-07 / sns-cirurgias-2025-07 - 1 ) * 100 = −4,4"
+derivation_en: "( sns-cirurgias-2026-07 / sns-cirurgias-2025-07 - 1 ) * 100 = −4,4"
 derived_from:
   - "sns-cirurgias-2026-07"
   - "sns-cirurgias-2025-07"
@@ -34,7 +35,7 @@ check: "round ( ( sns-cirurgias-2026-07 / sns-cirurgias-2025-07 - 1 ) * 100 , 1 
 
 study: "oe-2027"
 # Nota interna. NÃO é publicada: ver DECISIONS §1.24.
-note: "[derivation do motor] {'operation': 'change_pct', 'components': ['sns-cirurgias-2026-07', 'sns-cirurgias-2025-07'], 'operands': ['520373', '544482'], 'formula': '( sns-cirurgias-2026-07 / sns-cirurgias-2025-07 - 1 ) * 100', 'calculation': '( sns-cirurgias-2026-07 / sns-cirurgias-2025-07 - 1 ) * 100 = -4,4', 'rounding_places': 1, 'result': '-4,4', 'check': 'round ( ( sns-cirurgias-2026-07 / sns-cirurgias-2025-07 - 1 ) * 100 , 1 )'} · [note do motor] Conta sobre as linhas identificadas; pagamentos do PRR não medem execução física. · Cruzado de ResearchHub content/26 Saude e Parcerias Efeitos · der-sns-cirurgias-variacao-pct."
+note: "[derivation do motor] {'operation': 'change_pct', 'components': ['sns-cirurgias-2026-07', 'sns-cirurgias-2025-07'], 'operands': ['520373', '544482'], 'formula': '( sns-cirurgias-2026-07 / sns-cirurgias-2025-07 - 1 ) * 100', 'calculation': '( sns-cirurgias-2026-07 / sns-cirurgias-2025-07 - 1 ) * 100 = −4,4', 'rounding_places': 1, 'result': '-4,4', 'check': 'round ( ( sns-cirurgias-2026-07 / sns-cirurgias-2025-07 - 1 ) * 100 , 1 )'} · [note do motor] Conta sobre as linhas identificadas; pagamentos do PRR não medem execução física. · Cruzado de ResearchHub content/26 Saude e Parcerias Efeitos · der-sns-cirurgias-variacao-pct."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []

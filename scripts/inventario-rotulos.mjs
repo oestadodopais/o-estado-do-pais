@@ -75,7 +75,7 @@ import { fileURLToPath } from 'node:url';
 import { parse } from 'node-html-parser';
 
 import { loadClaims } from '../src/lib/ledger.mjs';
-import { valorImpressoDoPainelConferido } from '../src/lib/prova-efeitos.mjs';
+import { valorImpressoDoPainelConferido, textoDocumentalConferido } from '../src/lib/prova-efeitos.mjs';
 import { FIGURAS, DEFINICOES_DAS_MEDIDAS, ORIGENS_DAS_DEFINICOES, textoDaDefinicao } from '../src/data/figuras.mjs';
 import { MEDIDAS_DO_DOMINIO_1, DIPLOMAS_REGIONAIS_DO_SALARIO_MINIMO, ressalvaDosDiplomasRegionais } from '../src/data/dominios.mjs';
 import { NOMES_DO_PROJETO } from '../src/data/nomes-das-medidas.mjs';
@@ -192,7 +192,7 @@ export function conferirUnidadesOe1(root, { rota, lang, contas }) {
     const esperada = norm(comAPalavra(traduzida));
     // Nos três campos do painel, a unidade pertence à própria cadeia selada.
     // A dispensa só vale para o recibo, com valor e texto integral conferidos.
-    if (familia === 'recibos' && valorImpressoDoPainelConferido(id, linha.value)) {
+    if (familia === 'recibos' && (valorImpressoDoPainelConferido(id, linha.value) || textoDocumentalConferido(linha))) {
       const caixa = root.querySelector('.linha-valor');
       const valores = caixa?.querySelectorAll('[data-claim]') ?? [];
       if (elementos.length || caixa?.querySelector('[data-linha-campo="unit"], [data-unidade-da-casa]')) {

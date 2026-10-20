@@ -1,0 +1,2491 @@
+{
+  "edicoes": {
+    "pt": [
+      {
+        "slug": "saude-no-orcamento",
+        "titulo": "O orçamento da Saúde para 2027: 3,0 % sem PRR ou −1,5 % no total? As duas contas, o que muda por dentro e o que ficou por dizer",
+        "linhas": [
+          "oe-2027-saude-despesa-total-consolidada-2027",
+          "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+          "oe-2027-saude-despesa-total-consolidada-variacao",
+          "afirmacao-leitao-amaro-saude-oe2027-2026-10-09",
+          "afirmacao-rtp-saude-queda-oe2027-2026-10-09",
+          "afirmacao-pcp-paula-investimento-saude-2026-10-12",
+          "oe-2027-saude-despesa-total-consolidada-2026",
+          "oe-2027-saude-despesa-efetiva-consolidada-2026",
+          "oe-2027-saude-despesa-efetiva-consolidada-2027",
+          "oe-2027-saude-despesa-efetiva-consolidada-variacao",
+          "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026",
+          "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027",
+          "oe-2027-saude-pessoal-2026",
+          "oe-2027-saude-pessoal-2027",
+          "oe-2027-saude-pessoal-variacao",
+          "oe-2027-saude-bens-servicos-2026",
+          "oe-2027-saude-bens-servicos-2027",
+          "oe-2027-saude-bens-servicos-variacao",
+          "oe-2027-saude-investimento-2026",
+          "oe-2027-saude-investimento-2027",
+          "oe-2027-saude-investimento-variacao",
+          "oe-2027-saude-investimento-variacao-sem-prr",
+          "oe-2027-saude-outras-correntes-2026",
+          "oe-2027-saude-outras-correntes-2027",
+          "oe-2027-saude-transferencias-capital-2026",
+          "oe-2027-saude-transferencias-capital-2027",
+          "oe-2027-saude-fonte-impostos-2026",
+          "oe-2027-saude-fonte-impostos-2027",
+          "oe-2027-saude-fonte-receitas-proprias-2026",
+          "oe-2027-saude-fonte-receitas-proprias-2027",
+          "der-saude-receitas-proprias-variacao-pct",
+          "oe-2027-saude-fonte-fundos-europeus-2026",
+          "oe-2027-saude-fonte-fundos-europeus-2027",
+          "oe-2027-saude-transferencias-sns-2026",
+          "oe-2027-saude-transferencias-sns-2027",
+          "oe-2027-saude-transferencias-sns-variacao",
+          "saude-total-2020-orcamento-oe2020",
+          "saude-total-2020-execucao-cge2020",
+          "saude-total-2025-orcamento-oe2025",
+          "saude-total-2025-execucao-cge2025",
+          "saude-total-2026-orcamento-oe2026",
+          "der-saude-reforco-total-2026",
+          "der-utao-saude-reforco-2026",
+          "dgo-2026-08-saude-efetiva-jan-ago-2026",
+          "dgo-2026-08-saude-efetiva-variacao-homologa",
+          "dgo-2026-08-saude-efetiva-jan-ago-2025",
+          "dgo-2026-08-sns-saldo-jan-ago-2026",
+          "dgo-2026-08-sns-despesa-variacao-homologa",
+          "eurostat-hlth-sha11-hf-a-pc_gdp-tot_hf-pt-2024",
+          "eurostat-hlth-sha11-hf-a-pc_gdp-tot_hf-eu27_2020-2024",
+          "eurostat-hlth-sha11-hf-a-eur_hab-tot_hf-pt-2024",
+          "eurostat-hlth-sha11-hf-a-eur_hab-tot_hf-eu27_2020-2024",
+          "eurostat-hlth-sha11-hf-a-pc_gdp-hf1-pt-2024",
+          "eurostat-hlth-sha11-hf-a-pc_gdp-hf1-eu27_2020-2024",
+          "eurostat-pt-phys",
+          "eurostat-be-phys",
+          "eurostat-el-phys",
+          "sns-sem-medico-serie-nova-2026-08",
+          "sns-sem-medico-elegibilidade",
+          "sns-sem-medico-serie-antiga-2026-06",
+          "sns-sem-medico-serie-antiga-2025-06",
+          "sns-consultas-csp-2026-08",
+          "sns-consultas-csp-descricao",
+          "der-sns-consultas-csp-variacao-pct",
+          "sns-consultas-csp-2025-08",
+          "sns-cirurgias-2026-07",
+          "der-sns-cirurgias-variacao-pct",
+          "sns-cirurgias-2025-07",
+          "sns-lista-cirurgia-2026-07",
+          "der-sns-lista-cirurgia-variacao-pct",
+          "infarmed-ambulatorio-2026-07-p5-acumulado-encargo",
+          "infarmed-hospitalar-2026-07-p5-acumulado-encargo",
+          "der-infarmed-variacao-pct",
+          "infarmed-ambulatorio-limitacao",
+          "der-sns-divida-fornecedores-2026-07",
+          "dgo-atraso-45-p",
+          "dgo-regularizacao-ae",
+          "prr-monitorizacao-20261014-p2-c01-contratado",
+          "der-prr-saude-contratado-numerico",
+          "der-prr-saude-pago-numerico",
+          "der-prr-saude-taxa-numerico",
+          "der-prr-saude-por-pagar",
+          "der-prr-saude-por-pagar-pct",
+          "der-prr-saude-marcos-total",
+          "der-prr-saude-marcos-completos",
+          "prr-complemento-p4-1-40-estado",
+          "der-saude-variacao-total-abs",
+          "utao-saude-sem-prr-2027",
+          "der-saude-prr-2026",
+          "der-saude-variacao-sem-prr",
+          "der-saude-razao-compensacao-prr-pct",
+          "der-saude-variacao-efetiva",
+          "der-saude-pessoal-variacao-abs",
+          "der-saude-bens-servicos-reducao-abs",
+          "der-saude-investimento-reducao-abs",
+          "der-saude-outras-correntes-variacao-abs",
+          "der-financas-prr-2026",
+          "der-economia-prr-2026",
+          "der-infraestruturas-e-habitacao-prr-2026",
+          "der-ambiente-e-energia-prr-2026",
+          "der-saude-variacao-sem-prr-pct",
+          "der-educacao-variacao-sem-prr-pct",
+          "der-trabalho-solidariedade-e-seguranca-social-variacao-sem-prr-pct",
+          "der-infraestruturas-e-habitacao-variacao-sem-prr-pct",
+          "der-justica-variacao-sem-prr-pct",
+          "der-seguranca-interna-variacao-sem-prr-pct",
+          "der-financas-variacao-sem-prr-pct",
+          "der-economia-variacao-sem-prr-pct",
+          "der-coesao-territorial-variacao-sem-prr-pct",
+          "der-saude-2027-vs-execucao-2025-pct",
+          "utao-risco-execucao-sns-2027",
+          "der-saude-total-reducao-abs",
+          "oe-2027-saude-dotacao-reforco-contratos-programa",
+          "oe-2027-saude-contrato-programa-acss",
+          "saude-total-2021-orcamento-oe2021",
+          "saude-total-2021-execucao-cge2021",
+          "saude-total-2022-orcamento-oe2022",
+          "saude-total-2022-execucao-cge2022",
+          "saude-total-2023-orcamento-oe2023",
+          "saude-total-2023-execucao-cge2023",
+          "saude-total-2024-orcamento-oe2024",
+          "saude-total-2024-execucao-cge2024",
+          "utao-saude-efetiva-2026-estimativa",
+          "utao-saude-efetiva-2026-orcamento",
+          "sns-lista-cirurgia-2025-07",
+          "der-infarmed-total-2026-jan-jul",
+          "der-infarmed-total-2025-jan-jul",
+          "sns-divida-2026-divida-total-fornecedores-externos-0",
+          "sns-divida-2026-divida-total-fornecedores-externos-1",
+          "sns-divida-2026-divida-total-fornecedores-externos-2",
+          "sns-divida-2026-divida-total-fornecedores-externos-3",
+          "sns-divida-2026-divida-total-fornecedores-externos-4",
+          "sns-divida-2026-divida-total-fornecedores-externos-5",
+          "sns-divida-2026-divida-total-fornecedores-externos-6",
+          "sns-divida-2026-divida-total-fornecedores-externos-7",
+          "sns-divida-2026-divida-total-fornecedores-externos-8",
+          "sns-divida-2026-divida-total-fornecedores-externos-9",
+          "sns-divida-2026-divida-total-fornecedores-externos-10",
+          "sns-divida-2026-divida-total-fornecedores-externos-11",
+          "sns-divida-2026-divida-total-fornecedores-externos-12",
+          "sns-divida-2026-divida-total-fornecedores-externos-13",
+          "sns-divida-2026-divida-total-fornecedores-externos-14",
+          "sns-divida-2026-divida-total-fornecedores-externos-15",
+          "sns-divida-2026-divida-total-fornecedores-externos-16",
+          "sns-divida-2026-divida-total-fornecedores-externos-17",
+          "sns-divida-2026-divida-total-fornecedores-externos-18",
+          "sns-divida-2026-divida-total-fornecedores-externos-19",
+          "sns-divida-2026-divida-total-fornecedores-externos-20",
+          "sns-divida-2026-divida-total-fornecedores-externos-21",
+          "sns-divida-2026-divida-total-fornecedores-externos-22",
+          "sns-divida-2026-divida-total-fornecedores-externos-23",
+          "sns-divida-2026-divida-total-fornecedores-externos-24",
+          "sns-divida-2026-divida-total-fornecedores-externos-25",
+          "sns-divida-2026-divida-total-fornecedores-externos-26",
+          "sns-divida-2026-divida-total-fornecedores-externos-27",
+          "sns-divida-2026-divida-total-fornecedores-externos-28",
+          "sns-divida-2026-divida-total-fornecedores-externos-29",
+          "sns-divida-2026-divida-total-fornecedores-externos-30",
+          "sns-divida-2026-divida-total-fornecedores-externos-31",
+          "sns-divida-2026-divida-total-fornecedores-externos-32",
+          "sns-divida-2026-divida-total-fornecedores-externos-33",
+          "sns-divida-2026-divida-total-fornecedores-externos-34",
+          "sns-divida-2026-divida-total-fornecedores-externos-35",
+          "sns-divida-2026-divida-total-fornecedores-externos-36",
+          "sns-divida-2026-divida-total-fornecedores-externos-37",
+          "sns-divida-2026-divida-total-fornecedores-externos-38",
+          "sns-divida-2026-divida-total-fornecedores-externos-39",
+          "sns-divida-2026-divida-total-fornecedores-externos-40",
+          "sns-divida-2026-divida-total-fornecedores-externos-41",
+          "sns-divida-2026-divida-total-fornecedores-externos-42",
+          "sns-divida-2026-divida-total-fornecedores-externos-43",
+          "sns-divida-2026-divida-total-fornecedores-externos-44",
+          "sns-divida-2026-divida-total-fornecedores-externos-45",
+          "sns-divida-2026-divida-total-fornecedores-externos-46",
+          "sns-divida-2026-divida-total-fornecedores-externos-47",
+          "sns-divida-2026-divida-total-fornecedores-externos-48",
+          "sns-divida-2026-divida-total-fornecedores-externos-49",
+          "sns-divida-2026-divida-total-fornecedores-externos-50",
+          "sns-divida-2026-divida-total-fornecedores-externos-51",
+          "sns-divida-2026-divida-total-fornecedores-externos-52",
+          "prr-monitorizacao-20261014-p2-c01-pago",
+          "prr-monitorizacao-20261014-p2-c01-taxa",
+          "prr-complemento-p3-1-24-estado",
+          "prr-complemento-p3-1-32-estado",
+          "prr-complemento-p3-1-33-estado",
+          "prr-complemento-p3-1-3-estado",
+          "prr-complemento-p3-1-8-estado",
+          "prr-complemento-p4-1-1-estado",
+          "prr-complemento-p4-1-5-estado",
+          "prr-complemento-p4-1-12-estado",
+          "prr-complemento-p4-1-41-estado",
+          "prr-complemento-p4-1-2-estado",
+          "prr-complemento-p5-1-22-estado",
+          "prr-complemento-p5-1-28-estado",
+          "prr-complemento-p5-1-11-estado",
+          "prr-complemento-p5-1-7-estado",
+          "prr-complemento-p5-1-9-estado",
+          "prr-complemento-p6-1-37-estado",
+          "prr-complemento-p6-1-42-estado",
+          "prr-complemento-p6-1-10-estado",
+          "prr-complemento-p7-1-34-estado",
+          "prr-complemento-p7-1-35-estado",
+          "prr-complemento-p7-1-36-estado",
+          "prr-complemento-p7-1-38-estado",
+          "prr-complemento-p7-1-39-estado",
+          "prr-complemento-p8-1-21-estado",
+          "prr-complemento-p8-1-25-estado",
+          "prr-complemento-p9-1-17-estado",
+          "prr-complemento-p9-1-18-estado",
+          "prr-complemento-p9-1-26-estado",
+          "prr-complemento-p9-1-30-estado",
+          "prr-complemento-p9-1-43-estado",
+          "prr-complemento-p9-1-44-estado",
+          "prr-marcos-metas-2025-p2-1-29-estado",
+          "prr-marcos-metas-2025-p2-1-4-estado",
+          "prr-marcos-metas-2025-p2-1-13-estado",
+          "prr-marcos-metas-2025-p2-1-20-estado",
+          "prr-marcos-metas-2025-p2-1-6-estado",
+          "oe-2027-financas-efetiva-2026",
+          "oe-2027-financas-sem-prr-2026",
+          "oe-2027-economia-efetiva-2026",
+          "oe-2027-economia-sem-prr-2026",
+          "oe-2027-infraestruturas-e-habitacao-efetiva-2026",
+          "oe-2027-infraestruturas-e-habitacao-sem-prr-2026",
+          "oe-2027-ambiente-e-energia-efetiva-2026",
+          "oe-2027-ambiente-e-energia-sem-prr-2026",
+          "oe-2027-educacao-sem-prr-2027",
+          "oe-2027-educacao-sem-prr-2026",
+          "oe-2027-trabalho-solidariedade-e-seguranca-social-sem-prr-2027",
+          "oe-2027-trabalho-solidariedade-e-seguranca-social-sem-prr-2026",
+          "oe-2027-infraestruturas-e-habitacao-sem-prr-2027",
+          "oe-2027-justica-sem-prr-2027",
+          "oe-2027-justica-sem-prr-2026",
+          "oe-2027-seguranca-interna-sem-prr-2027",
+          "oe-2027-seguranca-interna-sem-prr-2026",
+          "oe-2027-financas-sem-prr-2027",
+          "oe-2027-economia-sem-prr-2027",
+          "oe-2027-coesao-territorial-sem-prr-2027",
+          "oe-2027-coesao-territorial-sem-prr-2026",
+          "infarmed-ambulatorio-2026-07-p5-homologo-encargo",
+          "infarmed-hospitalar-2026-07-p5-homologo-encargo"
+        ],
+        "seccoes": [
+          {
+            "id": "como-foi-dito",
+            "titulo": "Como foi dito",
+            "paragrafos": [
+              "«Ora, esta verba do PRR foi excecional. Se retirarmos isso, o orçamento da Saúde sobre 3%», António Leitão Amaro, ministro da Presidência, num documento publicado pela RTP, a 09.10.2026. No mesmo dia, a RTP publicou: «O orçamento para Saúde sofre um corte em 2027. Cai 1,5 por cento. Estão atribuídos 17 mil 858 milhões de euros. Menos 267,5 milhões do que este ano.» A 12.10.2026, Paula Santos · PCP disse: «O investimento sofre um corte brutal de 33,7%.»"
+            ]
+          },
+          {
+            "id": "fontes",
+            "titulo": "O que as fontes dizem",
+            "paragrafos": [
+              "O quadro 5.37 do relatório do Orçamento, o programa Saúde, em milhões de euros.",
+              "A despesa total consolidada passa de 18 125,9 em 2026 para 17 858,4 em 2027, uma variação de −1,5 %. A despesa efetiva consolidada passa de 18 062,4 para 17 803,1, −1,4 %. Sem o PRR, o Plano de Recuperação e Resiliência, a despesa efetiva consolidada passa de 17 291,3 para 17 803,1, 3,0 %.",
+              "Por dentro, a despesa com o pessoal passa de 7 783,1 para 8 184,3, 5,2 %; a aquisição de bens e serviços, a maior rubrica do programa, passa de 8 832,9 para 8 436,3, −4,5 %; o investimento passa de 1 022,5 para 678,3, −33,7 % com o PRR e 22,2 % sem ele; as outras despesas correntes passam de 32,4 para 303,7, e as transferências de capital de 272,9 para 0,0.",
+              "O financiamento, na comparação entre os dois orçamentos: as receitas de impostos passam de 15 116,4 para 15 452,2; as receitas próprias de 1 289,5 para 2 017,6, 56,5 %; os fundos europeus de 655,0 para 174,6. As transferências para o Serviço Nacional de Saúde passam de 14 935,8 para 15 539,2, 4,0 %.",
+              "Desde 2020, a Saúde gastou todos os anos mais do que o orçamento inicial: 11 282,2 orçamentados e 11 731,9 executados em 2020; 16 853,5 e 17 241,5 em 2025; em 2026 o orçamento inicial era 17 300,2 e a estimativa de execução do relatório é 18 125,9, 825,7 acima; a UTAO, que parte de outra base, conta 915 na despesa efetiva.",
+              "Na execução até agosto de 2026, a despesa efetiva do programa Saúde foi de 11 822,6, 19,9 % acima do mesmo período de 2025, e o Serviço Nacional de Saúde tinha nesses oito meses um saldo de −918,5 milhões de euros, com a despesa a crescer 13,2 %.",
+              "Na comparação europeia, Portugal gastou em saúde 10,20 % do PIB em 2024, a União 10,16 %; por habitante, em euros correntes e sem correção pelos preços, 2 764,83 euros contra 4 074,88 na União; só nos regimes públicos e nos regimes contributivos obrigatórios, 6,31 % do PIB contra 8,17 %. Portugal tinha 431,35 médicos em exercício por cem mil habitantes em 2024, entre a Bélgica, com o valor mais baixo dos países com dados (334,25), e a Grécia, com o mais alto (626,89).",
+              "No serviço, pelos dados abertos do Serviço Nacional de Saúde: em agosto de 2026 havia 1 362 294 utentes elegíveis inscritos sem médico de família atribuído, pela série que começou em julho desse ano e conta só os utentes elegíveis («Utentes inscritos que cumprem os critérios de elegibilidade para atribuição de Médico de Família. Cálculo: utentes com registo atualizado e contacto com o SNS nos últimos cinco anos.»), que por isso não se compara com a anterior; a série anterior dava 1 672 130 em junho de 2026 contra 1 669 681 um ano antes. As consultas nos cuidados primários foram 2 577 538 em agosto de 2026, o último mês, provisório na fonte, que diz: «As consultas registadas no sistema Vitacare não entram no cálculo destas métricas. Os dados relativos a este indicador são de caráter temporário para o mês publicado mais recente.»; 7,7 % acima de agosto de 2025; as cirurgias de janeiro a julho de 2026, 520 373, −4,4 % face a janeiro a julho de 2025; os inscritos para cirurgia, 284 210 em julho de 2026, 5,8 % face a um ano antes; nos três conjuntos, o último mês é provisório na fonte.",
+              "Os encargos do Serviço Nacional de Saúde com medicamentos, pelo Infarmed, foram de 1 179,3 milhões de euros em ambulatório de janeiro a julho de 2026 e de 1 600,9 em meio hospitalar, 6,1 % acima do mesmo período do ano anterior no conjunto; sobre as contribuições do acordo com a Associação Portuguesa da Indústria Farmacêutica (APIFARMA), o Infarmed avisa que «Os valores apresentados não refletem a totalidade das contribuições resultantes da implementação do Acordo Governo/APIFARMA e dos contratos de financiamento». A dívida das entidades do Serviço Nacional de Saúde a fornecedores externos era de 1 517,5 milhões de euros em julho de 2026; os pagamentos em atraso das unidades de saúde que são entidades públicas empresariais (EPE), 689,9 milhões em agosto de 2026, pela execução orçamental da Direção-Geral do Orçamento; e as entidades do Serviço Nacional de Saúde regularizaram 1 398,6 milhões de dívidas vencidas a fornecedores até agosto, com contrapartida em reforços de capital pelo Estado.",
+              "O PRR na saúde, à data de 14.10.2026: 2 011 milhões de euros contratados, 947 milhões pagos, uma execução financeira de 47 %; ficam por pagar 1 064 milhões de euros, 52,9 % do contratado. Dos 37 marcos e metas da componente da saúde no anexo anual de 2025, 24 estão completos, entre eles o contrato de gestão para o Hospital de Lisboa Oriental."
+            ]
+          },
+          {
+            "id": "comparacao",
+            "titulo": "A comparação",
+            "paragrafos": [
+              "Os números da RTP, a queda, o montante e a diferença, coincidem com a linha da despesa total consolidada: −267,5 milhões de euros, −1,5 %. O número do ministro coincide com a variação da linha da despesa efetiva consolidada sem o PRR, 3,0 %, a mesma que o relatório escreve e que a UTAO, a unidade técnica de apoio orçamental do Parlamento, confirma: «Todavia, excluído o efeito do PRR, a despesa aumentaria 3,0%.» O número do PCP sobre o investimento coincide com a linha do investimento com o PRR, −33,7 %; sem o PRR, a mesma linha sobe 22,2 %.",
+              "A descida vem toda do fim do PRR. Em 2026 o PRR valia 771,1 na despesa efetiva da Saúde; em 2027 vale zero, e a despesa efetiva é a mesma com e sem ele, 17 803,1 e 17 803,1. A despesa fora do PRR sobe 511,8, o que repõe 66,4 % do que o PRR deixa; a diferença, −259,3, é a queda da despesa efetiva.",
+              "O que sobe e o que desce não são a mesma coisa: o pessoal leva mais 401,2; a aquisição de bens e serviços leva menos 396,6; o investimento leva menos 344,2; e as outras despesas correntes passam de 32,4 para 303,7, mais 271,3. Segundo o relatório, é nesta rubrica que fica, para a Saúde, a dotação para reforçar os contratos-programa ainda por fechar, os acordos entre a Administração Central do Sistema de Saúde e as entidades do Serviço Nacional de Saúde; o próprio orçamento inscreve assim o reforço que antecipa, sem dizer quanto. O financiamento conta com receitas próprias a crescer 56,5 % e com fundos europeus a cair de 655,0 para 174,6.",
+              "A redução do PRR não é só da Saúde: em 2026 o PRR pesava 1 472,7 nas Finanças, 1 357,1 na Economia, 1 133,0 nas Infraestruturas e habitação, 823,2 no Ambiente e energia e 771,1 na Saúde. Em 2027 a despesa fora do PRR cresce 3,0 % na Saúde, 4,9 % na Educação, 8,8 % no Trabalho, solidariedade e segurança social, 20,8 % nas Infraestruturas e habitação, 18,2 % na Justiça e 13,1 % na Segurança interna; e varia −7,8 % nas Finanças, −4,9 % na Economia e −38,2 % na Coesão territorial.",
+              "O orçamento de 2027, 17 858,4, é inferior ao que o relatório estima que se gaste em 2026, 18 125,9, e superior em 3,6 % ao que se gastou em 2025, 17 241,5. A UTAO escreve, sobre a execução do Serviço Nacional de Saúde em 2027: «Existe um risco de pressão orçamental associado à execução do Serviço Nacional de Saúde (SNS).»",
+              "Posto ao lado do serviço: a compra de bens e serviços desce 396,6 milhões de euros quando os encargos com medicamentos sobem 6,1 % num ano; o investimento cai um terço quando 52,9 % do contratado no PRR na saúde está por pagar; e o pessoal, que sobe 5,2 %, é o lado de um serviço com 1 362 294 utentes elegíveis sem médico de família atribuído e uma lista de espera para cirurgia a crescer 5,8 % num ano."
+            ]
+          },
+          {
+            "id": "conclusao",
+            "titulo": "A conclusão",
+            "paragrafos": [
+              "As três afirmações correspondem a linhas diferentes do quadro e nenhuma apresenta as três medidas em conjunto. A Saúde tem orçamentados em 2027 menos 267,5 milhões de euros do que a estimativa de despesa de 2026 porque o PRR acaba, e a despesa fora do PRR sobe 511,8 face aos 771,1 que o PRR deixa. A despesa com pessoal sobe, enquanto a compra de bens e serviços e o investimento descem. Desde 2020 nenhum orçamento inicial da Saúde dos anos com execução concluída chegou ao fim do ano sem ser ultrapassado, e o de 2027 é inferior ao que se estima gastar em 2026. Para quem usa o Serviço Nacional de Saúde, o orçamento de 2027 é mais dinheiro para quem lá trabalha e menos para o que se compra e se constrói, numa altura em que os encargos com medicamentos são maiores do que há um ano, a lista de espera para cirurgia cresceu e cerca de metade do contratado no PRR na saúde está por pagar."
+            ]
+          },
+          {
+            "id": "recomendacao",
+            "titulo": "A recomendação",
+            "paragrafos": [
+              "A pergunta útil não é se o orçamento da Saúde sobe ou desce, é se chega: a resposta dos últimos seis anos é que não chegou nenhuma vez, e a execução até agosto de 2026, 19,9 % acima de 2025, reforça o risco de nova insuficiência. Quem acompanhar a Saúde em 2027 olha para a síntese mensal da execução orçamental da Entidade Orçamental e para a eventual necessidade de reforço, não apenas para a aprovação. Também acompanha os dados mensais do Serviço Nacional de Saúde: os utentes sem médico de família, a lista de espera para cirurgia e a dívida a fornecedores dizem mais sobre 2027 do que a votação."
+            ]
+          },
+          {
+            "id": "opiniao",
+            "titulo": "A opinião do lugar de direção",
+            "paragrafos": [
+              "O ministro e a RTP escolheram cada um a linha que lhes convinha, e as duas são verdadeiras; a discussão sobre «sobe» ou «desce» esconde o que o quadro mostra: um orçamento que paga mais pessoal com menos compras e menos investimento, que guarda em outras despesas correntes mais 271,3 milhões, onde o relatório diz estar a dotação para reforçar contratos-programa ainda por fechar, sem dizer quanto, que conta com receitas próprias a crescer mais de metade sem que o relatório explique de onde vêm, e que, pelo que a execução de 2026 e os seis anos anteriores mostram, corre o risco de voltar a ser ultrapassado. O orçamento da Saúde para 2027 é um orçamento de transição para o fim do PRR, e a sua medida certa conhece-se na execução, não na aprovação. Dizer isto custava mais do que dizer «sobe» ou «cai», e era o que o debate devia. Com estes números, a pergunta ao Governo e aos partidos não é «sobe ou desce»: é com que dinheiro se pagam os encargos com medicamentos que aumentaram 6,1 % e como se financia o investimento depois do PRR, com 52,9 % do contratado na saúde ainda por pagar. As afirmações citadas não respondem a essa pergunta."
+            ]
+          }
+        ]
+      },
+      {
+        "slug": "parcerias-rodoviarias",
+        "titulo": "As parcerias rodoviárias: o que o Estado paga, o que vai pagar e o que não está no quadro",
+        "linhas": [
+          "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
+          "afirmacao-pcp-paula-ppp-2026-10-12",
+          "afirmacao-pcp-ppp-2026-10-15",
+          "oe-2027-ppp-total-encargos-liquidos-2027",
+          "oe-2027-ppp-rodoviario-encargos-brutos-2027",
+          "oe-2027-ppp-rodoviario-receitas-2027",
+          "oe-2027-ppp-rodoviario-encargos-liquidos-2027",
+          "ppp-oe2027-ferroviario-2027",
+          "ppp-oe2027-saude-2027",
+          "der-ppp-brutos-todos-2027",
+          "ppp-oe2022-liquidos-2021",
+          "ppp-oe2023-liquidos-2022",
+          "ppp-oe2024-liquidos-2023",
+          "ppp-oe2025-liquidos-2024",
+          "ppp-oe2026-liquidos-2025",
+          "ppp-oe2027-liquidos-2026",
+          "ppp-oe2027-liquidos-2028",
+          "ppp-oe2027-liquidos-2029",
+          "ppp-oe2027-liquidos-2035",
+          "ppp-oe2027-liquidos-2040",
+          "ppp-oe2027-liquidos-2030",
+          "ppp-oe2027-liquidos-2027-previsao-oe2026",
+          "ppp-oe2027-riscos-pedidos-rodoviarios",
+          "ppp-oe2027-riscos-acrescimo",
+          "ppp-oe2027-riscos-brisa",
+          "ppp-oe2027-riscos-rotas-algarve-principal",
+          "ppp-oe2027-riscos-rotas-algarve-mensal",
+          "utao-ppp-contingencias-natureza-2026",
+          "pe-brisa-periodo-imt",
+          "pe-brisa-minuta-ano",
+          "pe-brisa-prazo-minuta",
+          "pe-despacho-alargamentos",
+          "pe-despacho-investimentos-previstos",
+          "pe-despacho-equilibrio",
+          "pe-despacho-comparticipacoes",
+          "pe-despacho-braga",
+          "pe-despacho-investimentos-novos",
+          "pe-despacho-limites",
+          "pe-despacho-qualidade",
+          "pe-oe-riscos-nao-reconhecimento",
+          "pe-scut-vigencia",
+          "pe-scut-trocos",
+          "pe-dl87a-apoio-retificado",
+          "pe-dl87a-publicacao-ano",
+          "pe-dl87a-descontos",
+          "pe-dl87a-financiamento",
+          "pe-oe-apoio-dl87a",
+          "pe-oe-beira-abolicao",
+          "der-ppp-pcp-vs-brutos",
+          "der-ppp-pcp-vs-liquidos",
+          "der-ppp-quota-rodoviario",
+          "der-ppp-rodoviario-2027-vs-2021-pct",
+          "ppp-oe2026-brutos-2025",
+          "ppp-oe2027-brutos-2027",
+          "ppp-oe2026-receitas-2025",
+          "ppp-oe2027-receitas-2027"
+        ],
+        "seccoes": [
+          {
+            "id": "como-foi-dito",
+            "titulo": "Como foi dito",
+            "paragrafos": [
+              "«Vem com um orçamento que entrega 1 700 milhões às parcerias público-privadas rodoviárias», Paulo Raimundo · PCP, na Assembleia da República, a 09.10.2026. A 12.10.2026, Paula Santos · PCP: «Em sentido inverso cresce mais do que o previsto a despesa com as chamadas PPP – rodoviárias, ferroviárias, saúde – com o Governo a desviar mais de 1800 milhões de euros de recursos públicos para os grupos económicos privados, sem que tal se traduza em novas infraestruturas ou investimento nas existentes.» A 15.10.2026, Paulo Raimundo: «Há condições, há recursos e meios, desde logo na Segurança Social, mas há também opções que se podem e têm de fazer, e entre os mais de 1700 milhões de euros que o Governo quer pagar em PPP e o aumento dos reformados, da nossa parte não temos dúvidas da opção a tomar.»"
+            ]
+          },
+          {
+            "id": "fontes",
+            "titulo": "O que as fontes dizem",
+            "paragrafos": [
+              "O quadro 4.25 do relatório do Orçamento, as parcerias público-privadas, 2027, em milhões de euros.",
+              "Os encargos brutos do setor rodoviário são 1 152; as receitas, 263; os encargos líquidos, 889. As parcerias ferroviárias custam 312 e as da saúde 254, numa linha única cada, sem receitas; os encargos brutos rodoviários mais os encargos ferroviários e da saúde somam 1 718, e o total líquido impresso para todos os setores é 1 438. Previsão, não execução. As linhas setoriais do quadro não somam exatamente o total impresso; o quadro não explica a diferença. O quadro diz que os valores são de caixa e, quando aplicável, incluem o IVA.",
+              "Os encargos líquidos rodoviários, ano a ano, pelos relatórios do Orçamento: 1 250 em 2021 (execução), 1 192 em 2022, 1 105 em 2023, 1 012 em 2024, 843 em 2025, 942 em 2026 (estimativas) e 889 em 2027 (orçamento).",
+              "O relatório projeta 705 em 2028, 648 em 2029, 77 em 2035 e 17 em 2040, o último ano com encargos rodoviários; em 2030 as receitas excedem os encargos e a linha é negativa, −220.",
+              "Para 2027, o relatório do ano passado previa 774 de encargos líquidos; este prevê 889. Segundo o relatório, a diferença vem dos custos da cobrança das portagens e dos pagamentos ligados ao tráfego, que subiram, e das receitas de portagem, que desceram.",
+              "Fora do quadro, no capítulo dos riscos, o relatório conta 2 388,2 milhões de euros em pedidos de reequilíbrio financeiro e litígios das concessionárias e subconcessionárias rodoviárias, com dados do primeiro trimestre, reportados a 1.º trimestre de 2026, 1 140 acima do relatório anterior, dos quais 1 122,5 da Brisa, na negociação em curso, e 445 da ação principal da Rotas do Algarve Litoral, em que a Infraestruturas de Portugal paga, por decisão provisória, cerca de 1,3 milhões por mês, mais IVA. A UTAO distingue os pedidos dos encargos efetivos: «São pretensões dos parceiros privados, e não encargos já reconhecidos; a sua concretização, total ou parcial, oneraria o saldo orçamental de anos futuros.»",
+              "O Instituto da Mobilidade e dos Transportes (IMT) indica para a concessão da Brisa «Período da Concessão: 1972 – 2035»; a minuta do contrato de concessão de 2008 fixa o fim em 31.12.2035. A comissão de negociação, pelo despacho publicado a 27.12.2024, trata dos alargamentos de vias, dos investimentos contratualmente previstos, da reposição do equilíbrio financeiro, dos acertos de comparticipações, da Circular Sul de Braga, de novos investimentos, dos limites da concessão e da qualidade do serviço. O relatório diz que «Em todo o caso, importa sublinhar que a presente análise não implica qualquer reconhecimento ou assunção, ainda que tácita, de responsabilidades por parte dos parceiros públicos decorrentes das pretensões deduzidas pelos parceiros privados, quer quanto aos respetivos fundamentos, que, na maioria das situações, são rejeitados pelos parceiros públicos, quer quanto aos montantes peticionados.»",
+              "Desde 01.01.2025 a lei eliminou as portagens em lanços e sublanços de sete autoestradas, que enumera a lista. Em 2023 o Estado limitou a atualização das portagens e paga às concessionárias, por conta do Orçamento do Estado, a diferença para a atualização que o decreto-lei de dezembro de 2022 toma como referência o artigo retificado; o decreto diz que «O disposto no presente decreto-lei não prejudica a aplicação dos regimes de descontos em vigor.», e os encargos são do Orçamento do Estado, pela Direção-Geral do Tesouro e Finanças (a DGTF): «Os encargos resultantes do apoio previsto nos artigos 3.º e 4.º são suportados diretamente pelo Orçamento do Estado, a processar pela DGTF.» O relatório do Orçamento de 2027 inclui agora esse apoio nos encargos brutos, e regista uma negociação com a concessionária da Beira Interior na sequência de um pedido ligado à eliminação das portagens."
+            ]
+          },
+          {
+            "id": "comparacao",
+            "titulo": "A comparação",
+            "paragrafos": [
+              "Nenhum dos valores rodoviários do quadro é igual a 1 700 milhões de euros: o número está 548 acima dos encargos brutos e 811 acima dos líquidos.",
+              "O número aproxima-se da soma dos encargos brutos rodoviários com os encargos ferroviários e da saúde, 1 718, sem que isso demonstre a conta que lhe deu origem; as rodoviárias são 61,82 % do total líquido. O próprio PCP alargou depois o universo referido às parcerias rodoviárias, ferroviárias e da saúde, a 12.10.2026 e a 15.10.2026, com 1 800 milhões de euros e 1 700 milhões de euros.",
+              "O relatório prevê para as parcerias rodoviárias 889 líquidos em 2027 contra 1 250 executados em 2021, −28,9 %; mas mais do que os 843 estimados para 2025: os encargos brutos descem de 1 234 para 1 152, e as receitas previstas descem mais, de 392 para 263. A projeção tem uma tendência de redução, com oscilações, até 17 em 2040.",
+              "O número que falta nas três afirmações citadas é o dos pedidos pendentes, 2 388,2, que não está no quadro dos encargos nem nessas afirmações, e que é maior do que os encargos rodoviários brutos e do que o número da primeira afirmação. A negociação da Brisa pode determinar que parte desses pedidos se torna encargo; a concessão termina em 31.12.2035."
+            ]
+          },
+          {
+            "id": "conclusao",
+            "titulo": "A conclusão",
+            "paragrafos": [
+              "O relatório prevê 889 milhões líquidos para as parcerias rodoviárias em 2027, −28,9 % face à execução de 2021 mas acima da estimativa para 2025, e o quadro projeta uma tendência de redução, com oscilações, até ao fim dos contratos. O número da primeira afirmação do PCP aproxima-se do custo bruto de todas as parcerias, não do das rodoviárias. E o que pode mudar a conta não está no quadro: 2 388,2 milhões de pedidos das concessionárias, dos quais 1 122,5 numa negociação em curso. Para quem conduz e para quem paga impostos: a lei eliminou portagens desde 01.01.2025; o Estado paga às concessionárias, desde 2023, a diferença entre a atualização limitada das portagens e a de referência do decreto, por conta do Orçamento do Estado, e esse apoio entra agora nos encargos brutos do quadro; a negociação da Brisa abrange investimentos e compensações numa concessão que termina em 31.12.2035; e os pedidos pendentes não são encargos efetivos reconhecidos."
+            ]
+          },
+          {
+            "id": "recomendacao",
+            "titulo": "A recomendação",
+            "paragrafos": [
+              "A discussão útil em 2027 é a negociação com a Brisa e os litígios pendentes, além do valor orçamentado dos pagamentos contratados. Quem quiser vigiar as parcerias olha para o capítulo dos riscos do relatório e para o relatório anual da UTAP, a unidade técnica de acompanhamento de projetos, não só para o quadro dos encargos."
+            ]
+          },
+          {
+            "id": "opiniao",
+            "titulo": "A opinião do lugar de direção",
+            "paragrafos": [
+              "O PCP tem razão ao chamar a atenção para o custo das parcerias, mas erra ao atribuir às rodoviárias um número que ultrapassa os seus encargos brutos. As parcerias custam ao Estado mais de mil milhões brutos no ano orçamentado; a afirmação posterior já abrange as rodoviárias, as ferroviárias e as da saúde, mas o seu montante, 1 800 milhões de euros, também excede a soma do quadro. O Governo, por sua vez, apresenta um quadro dos pagamentos contratados e remete para um capítulo de riscos os pedidos que podem mudar a conta. Entre os dois, o leitor fica a saber os pagamentos previstos às concessionárias; fica por saber quanto dos pedidos pendentes se tornará encargo efetivo, e o que o pedido da concessionária da Beira Interior ligado à eliminação das portagens, e os que vierem, vão custar: é essa a conta que o Parlamento devia pedir antes de votar."
+            ]
+          }
+        ]
+      }
+    ],
+    "en": [
+      {
+        "slug": "saude-no-orcamento",
+        "titulo": "The Health budget for 2027: 3,0 % without the RRP or −1,5 % in total? Both counts, what changes inside it, and what went unsaid",
+        "linhas": [
+          "oe-2027-saude-despesa-total-consolidada-2027",
+          "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+          "oe-2027-saude-despesa-total-consolidada-variacao",
+          "afirmacao-leitao-amaro-saude-oe2027-2026-10-09",
+          "afirmacao-rtp-saude-queda-oe2027-2026-10-09",
+          "afirmacao-pcp-paula-investimento-saude-2026-10-12",
+          "oe-2027-saude-despesa-total-consolidada-2026",
+          "oe-2027-saude-despesa-efetiva-consolidada-2026",
+          "oe-2027-saude-despesa-efetiva-consolidada-2027",
+          "oe-2027-saude-despesa-efetiva-consolidada-variacao",
+          "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026",
+          "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027",
+          "oe-2027-saude-pessoal-2026",
+          "oe-2027-saude-pessoal-2027",
+          "oe-2027-saude-pessoal-variacao",
+          "oe-2027-saude-bens-servicos-2026",
+          "oe-2027-saude-bens-servicos-2027",
+          "oe-2027-saude-bens-servicos-variacao",
+          "oe-2027-saude-investimento-2026",
+          "oe-2027-saude-investimento-2027",
+          "oe-2027-saude-investimento-variacao",
+          "oe-2027-saude-investimento-variacao-sem-prr",
+          "oe-2027-saude-outras-correntes-2026",
+          "oe-2027-saude-outras-correntes-2027",
+          "oe-2027-saude-transferencias-capital-2026",
+          "oe-2027-saude-transferencias-capital-2027",
+          "oe-2027-saude-fonte-impostos-2026",
+          "oe-2027-saude-fonte-impostos-2027",
+          "oe-2027-saude-fonte-receitas-proprias-2026",
+          "oe-2027-saude-fonte-receitas-proprias-2027",
+          "der-saude-receitas-proprias-variacao-pct",
+          "oe-2027-saude-fonte-fundos-europeus-2026",
+          "oe-2027-saude-fonte-fundos-europeus-2027",
+          "oe-2027-saude-transferencias-sns-2026",
+          "oe-2027-saude-transferencias-sns-2027",
+          "oe-2027-saude-transferencias-sns-variacao",
+          "saude-total-2020-orcamento-oe2020",
+          "saude-total-2020-execucao-cge2020",
+          "saude-total-2025-orcamento-oe2025",
+          "saude-total-2025-execucao-cge2025",
+          "saude-total-2026-orcamento-oe2026",
+          "der-saude-reforco-total-2026",
+          "der-utao-saude-reforco-2026",
+          "dgo-2026-08-saude-efetiva-jan-ago-2026",
+          "dgo-2026-08-saude-efetiva-variacao-homologa",
+          "dgo-2026-08-saude-efetiva-jan-ago-2025",
+          "dgo-2026-08-sns-saldo-jan-ago-2026",
+          "dgo-2026-08-sns-despesa-variacao-homologa",
+          "eurostat-hlth-sha11-hf-a-pc_gdp-tot_hf-pt-2024",
+          "eurostat-hlth-sha11-hf-a-pc_gdp-tot_hf-eu27_2020-2024",
+          "eurostat-hlth-sha11-hf-a-eur_hab-tot_hf-pt-2024",
+          "eurostat-hlth-sha11-hf-a-eur_hab-tot_hf-eu27_2020-2024",
+          "eurostat-hlth-sha11-hf-a-pc_gdp-hf1-pt-2024",
+          "eurostat-hlth-sha11-hf-a-pc_gdp-hf1-eu27_2020-2024",
+          "eurostat-pt-phys",
+          "eurostat-be-phys",
+          "eurostat-el-phys",
+          "sns-sem-medico-serie-nova-2026-08",
+          "sns-sem-medico-elegibilidade",
+          "sns-sem-medico-serie-antiga-2026-06",
+          "sns-sem-medico-serie-antiga-2025-06",
+          "sns-consultas-csp-2026-08",
+          "sns-consultas-csp-descricao",
+          "der-sns-consultas-csp-variacao-pct",
+          "sns-consultas-csp-2025-08",
+          "sns-cirurgias-2026-07",
+          "der-sns-cirurgias-variacao-pct",
+          "sns-cirurgias-2025-07",
+          "sns-lista-cirurgia-2026-07",
+          "der-sns-lista-cirurgia-variacao-pct",
+          "infarmed-ambulatorio-2026-07-p5-acumulado-encargo",
+          "infarmed-hospitalar-2026-07-p5-acumulado-encargo",
+          "der-infarmed-variacao-pct",
+          "infarmed-ambulatorio-limitacao",
+          "der-sns-divida-fornecedores-2026-07",
+          "dgo-atraso-45-p",
+          "dgo-regularizacao-ae",
+          "prr-monitorizacao-20261014-p2-c01-contratado",
+          "der-prr-saude-contratado-numerico",
+          "der-prr-saude-pago-numerico",
+          "der-prr-saude-taxa-numerico",
+          "der-prr-saude-por-pagar",
+          "der-prr-saude-por-pagar-pct",
+          "der-prr-saude-marcos-total",
+          "der-prr-saude-marcos-completos",
+          "prr-complemento-p4-1-40-estado",
+          "der-saude-variacao-total-abs",
+          "utao-saude-sem-prr-2027",
+          "der-saude-prr-2026",
+          "der-saude-variacao-sem-prr",
+          "der-saude-razao-compensacao-prr-pct",
+          "der-saude-variacao-efetiva",
+          "der-saude-pessoal-variacao-abs",
+          "der-saude-bens-servicos-reducao-abs",
+          "der-saude-investimento-reducao-abs",
+          "der-saude-outras-correntes-variacao-abs",
+          "der-financas-prr-2026",
+          "der-economia-prr-2026",
+          "der-infraestruturas-e-habitacao-prr-2026",
+          "der-ambiente-e-energia-prr-2026",
+          "der-saude-variacao-sem-prr-pct",
+          "der-educacao-variacao-sem-prr-pct",
+          "der-trabalho-solidariedade-e-seguranca-social-variacao-sem-prr-pct",
+          "der-infraestruturas-e-habitacao-variacao-sem-prr-pct",
+          "der-justica-variacao-sem-prr-pct",
+          "der-seguranca-interna-variacao-sem-prr-pct",
+          "der-financas-variacao-sem-prr-pct",
+          "der-economia-variacao-sem-prr-pct",
+          "der-coesao-territorial-variacao-sem-prr-pct",
+          "der-saude-2027-vs-execucao-2025-pct",
+          "utao-risco-execucao-sns-2027",
+          "der-saude-total-reducao-abs",
+          "oe-2027-saude-dotacao-reforco-contratos-programa",
+          "oe-2027-saude-contrato-programa-acss",
+          "saude-total-2021-orcamento-oe2021",
+          "saude-total-2021-execucao-cge2021",
+          "saude-total-2022-orcamento-oe2022",
+          "saude-total-2022-execucao-cge2022",
+          "saude-total-2023-orcamento-oe2023",
+          "saude-total-2023-execucao-cge2023",
+          "saude-total-2024-orcamento-oe2024",
+          "saude-total-2024-execucao-cge2024",
+          "utao-saude-efetiva-2026-estimativa",
+          "utao-saude-efetiva-2026-orcamento",
+          "sns-lista-cirurgia-2025-07",
+          "der-infarmed-total-2026-jan-jul",
+          "der-infarmed-total-2025-jan-jul",
+          "sns-divida-2026-divida-total-fornecedores-externos-0",
+          "sns-divida-2026-divida-total-fornecedores-externos-1",
+          "sns-divida-2026-divida-total-fornecedores-externos-2",
+          "sns-divida-2026-divida-total-fornecedores-externos-3",
+          "sns-divida-2026-divida-total-fornecedores-externos-4",
+          "sns-divida-2026-divida-total-fornecedores-externos-5",
+          "sns-divida-2026-divida-total-fornecedores-externos-6",
+          "sns-divida-2026-divida-total-fornecedores-externos-7",
+          "sns-divida-2026-divida-total-fornecedores-externos-8",
+          "sns-divida-2026-divida-total-fornecedores-externos-9",
+          "sns-divida-2026-divida-total-fornecedores-externos-10",
+          "sns-divida-2026-divida-total-fornecedores-externos-11",
+          "sns-divida-2026-divida-total-fornecedores-externos-12",
+          "sns-divida-2026-divida-total-fornecedores-externos-13",
+          "sns-divida-2026-divida-total-fornecedores-externos-14",
+          "sns-divida-2026-divida-total-fornecedores-externos-15",
+          "sns-divida-2026-divida-total-fornecedores-externos-16",
+          "sns-divida-2026-divida-total-fornecedores-externos-17",
+          "sns-divida-2026-divida-total-fornecedores-externos-18",
+          "sns-divida-2026-divida-total-fornecedores-externos-19",
+          "sns-divida-2026-divida-total-fornecedores-externos-20",
+          "sns-divida-2026-divida-total-fornecedores-externos-21",
+          "sns-divida-2026-divida-total-fornecedores-externos-22",
+          "sns-divida-2026-divida-total-fornecedores-externos-23",
+          "sns-divida-2026-divida-total-fornecedores-externos-24",
+          "sns-divida-2026-divida-total-fornecedores-externos-25",
+          "sns-divida-2026-divida-total-fornecedores-externos-26",
+          "sns-divida-2026-divida-total-fornecedores-externos-27",
+          "sns-divida-2026-divida-total-fornecedores-externos-28",
+          "sns-divida-2026-divida-total-fornecedores-externos-29",
+          "sns-divida-2026-divida-total-fornecedores-externos-30",
+          "sns-divida-2026-divida-total-fornecedores-externos-31",
+          "sns-divida-2026-divida-total-fornecedores-externos-32",
+          "sns-divida-2026-divida-total-fornecedores-externos-33",
+          "sns-divida-2026-divida-total-fornecedores-externos-34",
+          "sns-divida-2026-divida-total-fornecedores-externos-35",
+          "sns-divida-2026-divida-total-fornecedores-externos-36",
+          "sns-divida-2026-divida-total-fornecedores-externos-37",
+          "sns-divida-2026-divida-total-fornecedores-externos-38",
+          "sns-divida-2026-divida-total-fornecedores-externos-39",
+          "sns-divida-2026-divida-total-fornecedores-externos-40",
+          "sns-divida-2026-divida-total-fornecedores-externos-41",
+          "sns-divida-2026-divida-total-fornecedores-externos-42",
+          "sns-divida-2026-divida-total-fornecedores-externos-43",
+          "sns-divida-2026-divida-total-fornecedores-externos-44",
+          "sns-divida-2026-divida-total-fornecedores-externos-45",
+          "sns-divida-2026-divida-total-fornecedores-externos-46",
+          "sns-divida-2026-divida-total-fornecedores-externos-47",
+          "sns-divida-2026-divida-total-fornecedores-externos-48",
+          "sns-divida-2026-divida-total-fornecedores-externos-49",
+          "sns-divida-2026-divida-total-fornecedores-externos-50",
+          "sns-divida-2026-divida-total-fornecedores-externos-51",
+          "sns-divida-2026-divida-total-fornecedores-externos-52",
+          "prr-monitorizacao-20261014-p2-c01-pago",
+          "prr-monitorizacao-20261014-p2-c01-taxa",
+          "prr-complemento-p3-1-24-estado",
+          "prr-complemento-p3-1-32-estado",
+          "prr-complemento-p3-1-33-estado",
+          "prr-complemento-p3-1-3-estado",
+          "prr-complemento-p3-1-8-estado",
+          "prr-complemento-p4-1-1-estado",
+          "prr-complemento-p4-1-5-estado",
+          "prr-complemento-p4-1-12-estado",
+          "prr-complemento-p4-1-41-estado",
+          "prr-complemento-p4-1-2-estado",
+          "prr-complemento-p5-1-22-estado",
+          "prr-complemento-p5-1-28-estado",
+          "prr-complemento-p5-1-11-estado",
+          "prr-complemento-p5-1-7-estado",
+          "prr-complemento-p5-1-9-estado",
+          "prr-complemento-p6-1-37-estado",
+          "prr-complemento-p6-1-42-estado",
+          "prr-complemento-p6-1-10-estado",
+          "prr-complemento-p7-1-34-estado",
+          "prr-complemento-p7-1-35-estado",
+          "prr-complemento-p7-1-36-estado",
+          "prr-complemento-p7-1-38-estado",
+          "prr-complemento-p7-1-39-estado",
+          "prr-complemento-p8-1-21-estado",
+          "prr-complemento-p8-1-25-estado",
+          "prr-complemento-p9-1-17-estado",
+          "prr-complemento-p9-1-18-estado",
+          "prr-complemento-p9-1-26-estado",
+          "prr-complemento-p9-1-30-estado",
+          "prr-complemento-p9-1-43-estado",
+          "prr-complemento-p9-1-44-estado",
+          "prr-marcos-metas-2025-p2-1-29-estado",
+          "prr-marcos-metas-2025-p2-1-4-estado",
+          "prr-marcos-metas-2025-p2-1-13-estado",
+          "prr-marcos-metas-2025-p2-1-20-estado",
+          "prr-marcos-metas-2025-p2-1-6-estado",
+          "oe-2027-financas-efetiva-2026",
+          "oe-2027-financas-sem-prr-2026",
+          "oe-2027-economia-efetiva-2026",
+          "oe-2027-economia-sem-prr-2026",
+          "oe-2027-infraestruturas-e-habitacao-efetiva-2026",
+          "oe-2027-infraestruturas-e-habitacao-sem-prr-2026",
+          "oe-2027-ambiente-e-energia-efetiva-2026",
+          "oe-2027-ambiente-e-energia-sem-prr-2026",
+          "oe-2027-educacao-sem-prr-2027",
+          "oe-2027-educacao-sem-prr-2026",
+          "oe-2027-trabalho-solidariedade-e-seguranca-social-sem-prr-2027",
+          "oe-2027-trabalho-solidariedade-e-seguranca-social-sem-prr-2026",
+          "oe-2027-infraestruturas-e-habitacao-sem-prr-2027",
+          "oe-2027-justica-sem-prr-2027",
+          "oe-2027-justica-sem-prr-2026",
+          "oe-2027-seguranca-interna-sem-prr-2027",
+          "oe-2027-seguranca-interna-sem-prr-2026",
+          "oe-2027-financas-sem-prr-2027",
+          "oe-2027-economia-sem-prr-2027",
+          "oe-2027-coesao-territorial-sem-prr-2027",
+          "oe-2027-coesao-territorial-sem-prr-2026",
+          "infarmed-ambulatorio-2026-07-p5-homologo-encargo",
+          "infarmed-hospitalar-2026-07-p5-homologo-encargo"
+        ],
+        "seccoes": [
+          {
+            "id": "como-foi-dito",
+            "titulo": "As it was said",
+            "paragrafos": [
+              "«Ora, esta verba do PRR foi excecional. Se retirarmos isso, o orçamento da Saúde sobre 3%», António Leitão Amaro, ministro da Presidência, in a document published by RTP, on 09.10.2026. On the same day, RTP published: «O orçamento para Saúde sofre um corte em 2027. Cai 1,5 por cento. Estão atribuídos 17 mil 858 milhões de euros. Menos 267,5 milhões do que este ano.» On 12.10.2026, Paula Santos · PCP said: «O investimento sofre um corte brutal de 33,7%.»"
+            ]
+          },
+          {
+            "id": "fontes",
+            "titulo": "What the sources say",
+            "paragrafos": [
+              "Table 5.37 of the Budget report, the Health programme, in million euros.",
+              "Total consolidated expenditure goes from 18 125,9 in 2026 to 17 858,4 in 2027, a change of −1,5 %. Consolidated effective expenditure goes from 18 062,4 to 17 803,1, −1,4 %. Without the RRP, the Recovery and Resilience Plan, consolidated effective expenditure goes from 17 291,3 to 17 803,1, 3,0 %.",
+              "Inside it, personnel expenditure goes from 7 783,1 to 8 184,3, 5,2 %; the purchase of goods and services, the programme's largest line, goes from 8 832,9 to 8 436,3, −4,5 %; investment goes from 1 022,5 to 678,3, −33,7 % with the RRP and 22,2 % without it; other current expenditure goes from 32,4 to 303,7, and capital transfers from 272,9 to 0,0.",
+              "The financing, comparing the two budgets: tax revenue goes from 15 116,4 to 15 452,2; own revenue from 1 289,5 to 2 017,6, 56,5 %; European funds from 655,0 to 174,6. Transfers to the National Health Service go from 14 935,8 to 15 539,2, 4,0 %.",
+              "Since 2020, Health has spent more than its initial budget every year: 11 282,2 budgeted and 11 731,9 executed in 2020; 16 853,5 and 17 241,5 in 2025; in 2026 the initial budget was 17 300,2 and the report's execution estimate is 18 125,9, 825,7 above; the UTAO, starting from another base, counts 915 in effective expenditure.",
+              "In the execution to August 2026, the Health programme's effective expenditure was 11 822,6, 19,9 % above the same period of 2025, and the National Health Service had, in those eight months, a balance of −918,5 million euros, with expenditure growing 13,2 %.",
+              "In the European comparison, Portugal spent 10,20 % of GDP on health in 2024, the EU 10,16 %; per inhabitant, in current euros and without correction for price levels, 2 764,83 euros against 4 074,88 in the EU; in government schemes and compulsory contributory schemes alone, 6,31 % of GDP against 8,17 %. Portugal had 431,35 practising physicians per hundred thousand inhabitants in 2024, between Belgium, with the lowest value among countries with data (334,25), and Greece, with the highest (626,89).",
+              "In the service, by the National Health Service's open data: in August 2026 there were 1 362 294 eligible registered users without an assigned family doctor, by the series that began in July that year and counts only eligible users («Utentes inscritos que cumprem os critérios de elegibilidade para atribuição de Médico de Família. Cálculo: utentes com registo atualizado e contacto com o SNS nos últimos cinco anos.»), so it cannot be compared with the earlier series; the earlier series gave 1 672 130 in June 2026 against 1 669 681 a year earlier. Primary-care consultations were 2 577 538 in August 2026, the latest month, provisional in the source, which says: «As consultas registadas no sistema Vitacare não entram no cálculo destas métricas. Os dados relativos a este indicador são de caráter temporário para o mês publicado mais recente.»; 7,7 % above August 2025; surgeries from January to July 2026, 520 373, −4,4 % against January to July 2025; patients on the surgery waiting list, 284 210 in July 2026, 5,8 % against a year earlier; in all three datasets, the latest month is provisional at the source.",
+              "National Health Service expenditure on medicines, according to Infarmed, was 1 179,3 million euros in outpatient care from January to July 2026 and 1 600,9 in hospitals, 6,1 % above the same period of the previous year combined; on contributions under the agreement with the Portuguese Pharmaceutical Industry Association (APIFARMA), Infarmed warns that «Os valores apresentados não refletem a totalidade das contribuições resultantes da implementação do Acordo Governo/APIFARMA e dos contratos de financiamento». National Health Service entities owed external suppliers 1 517,5 million euros in July 2026; overdue payments by health units that are public enterprise entities (EPE) were 689,9 million in August 2026, according to the budget execution reported by the Directorate-General for the Budget; and the National Health Service's entities settled 1 398,6 million of overdue debts to suppliers through August, matched by capital injections from the State.",
+              "The RRP in health, as of 14.10.2026: 2 011 million euros contracted, 947 million paid, financial execution of 47 %; 1 064 million euros remain unpaid, 52,9 % of the contracted amount. Of the 37 milestones and targets for the health component in the annual annex for 2025, 24 are complete, including the management contract for Hospital de Lisboa Oriental."
+            ]
+          },
+          {
+            "id": "comparacao",
+            "titulo": "The comparison",
+            "paragrafos": [
+              "RTP's figures, the fall, the amount and the difference, match the line for total consolidated expenditure: −267,5 million euros, −1,5 %. The minister's figure matches the change in the line for consolidated effective expenditure without the RRP, 3,0 %, the one the report writes and the UTAO, Parliament's technical budget support unit, confirms: «Todavia, excluído o efeito do PRR, a despesa aumentaria 3,0%.» The PCP's figure on investment matches the investment line with the RRP, −33,7 %; without the RRP, the same line rises 22,2 %.",
+              "The fall comes entirely from the end of the RRP. In 2026 the RRP accounted for 771,1 in effective Health expenditure; in 2027 it is zero, and effective expenditure is the same with and without it, 17 803,1 and 17 803,1. Expenditure outside the RRP rises 511,8, replacing 66,4 % of what the RRP leaves; the difference, −259,3, is the fall in effective expenditure.",
+              "What rises and what falls are not the same thing: personnel takes 401,2 more; the purchase of goods and services takes 396,6 less; investment takes 344,2 less; and other current expenditure goes from 32,4 to 303,7, 271,3 more. According to the report, this line is where the provision to reinforce the contract-programmes still to be closed sits for Health, the agreements between the Central Administration of the Health System and the National Health Service's entities; the budget thus books the reinforcement it anticipates, without saying how much. The financing counts on own revenue growing 56,5 % and on European funds falling from 655,0 to 174,6.",
+              "The reduction in the RRP is not confined to Health: in 2026 the RRP accounted for 1 472,7 in Finance, 1 357,1 in Economy, 1 133,0 in Infrastructure and housing, 823,2 in Environment and energy and 771,1 in Health. In 2027 expenditure outside the RRP grows 3,0 % in Health, 4,9 % in Education, 8,8 % in Labour, solidarity and social security, 20,8 % in Infrastructure and housing, 18,2 % in Justice and 13,1 % in Internal security; and changes by −7,8 % in Finance, −4,9 % in Economy and −38,2 % in Territorial cohesion.",
+              "The budget for 2027, 17 858,4, is below what the report estimates will be spent in 2026, 18 125,9, and 3,6 % above what was spent in 2025, 17 241,5. The UTAO writes, on the execution of the National Health Service in 2027: «Existe um risco de pressão orçamental associado à execução do Serviço Nacional de Saúde (SNS).»",
+              "Set beside the service: the purchase of goods and services falls 396,6 million euros while spending on medicines rises 6,1 % in a year; investment falls by a third while 52,9 % of the RRP's contracted health amount is still unpaid; and personnel, up 5,2 %, is one side of a service with 1 362 294 eligible users without an assigned family doctor and a surgery waiting list growing 5,8 % in a year."
+            ]
+          },
+          {
+            "id": "conclusao",
+            "titulo": "The conclusion",
+            "paragrafos": [
+              "The three claims correspond to different lines of the table and none presents all three measures together. In 2027, Health is budgeted to receive 267,5 million euros less than the expenditure estimate for 2026 because the RRP ends, and expenditure outside the RRP rises 511,8 against the 771,1 the RRP leaves. Personnel expenditure rises, while the purchase of goods and services and investment fall. Since 2020, no initial Health budget in the years with completed execution has reached the end of the year without being exceeded, and the 2027 one is below what is estimated to be spent in 2026. For those who use the National Health Service, the budget for 2027 is more money for the people who work in it and less for what is bought and built, at a time when expenditure on medicines is higher than a year ago, the surgery waiting list has grown and around half of the contracted RRP health amount is still unpaid."
+            ]
+          },
+          {
+            "id": "recomendacao",
+            "titulo": "The recommendation",
+            "paragrafos": [
+              "The useful question is not whether the Health budget rises or falls, but whether it is enough: the answer of the last six years is that it never was, and the execution to August 2026, 19,9 % above 2025, reinforces the risk of another shortfall. Whoever follows Health in 2027 watches the Entidade Orçamental's monthly budget execution summary and the possible need for reinforcement, not just the approval. They also follow the National Health Service's monthly data: users without a family doctor, the surgery waiting list and the debt to suppliers say more about 2027 than the vote."
+            ]
+          },
+          {
+            "id": "opiniao",
+            "titulo": "The editorial seat's opinion",
+            "paragrafos": [
+              "The minister and RTP each chose the line that suited them, and both are true; the argument over «up» or «down» hides what the table shows: a budget that pays more staff with fewer purchases and less investment, that holds 271,3 million more in other current expenditure, where the report says the provision to reinforce contract-programmes still to be closed sits, without saying how much, that counts on own revenue growing by more than half without the report explaining where it comes from, and that, on the evidence of the 2026 execution and the six years before it, risks being exceeded again. The Health budget for 2027 is a transition budget for the end of the RRP, and its true size will be known in the execution, not at the vote. Saying this cost more than saying «up» or «down», and it was what the debate owed. With these numbers, the question to the Government and the parties is not «up or down»: it is which money pays for medicine expenditure that rose 6,1 % and how investment is financed after the RRP, with 52,9 % of the contracted health amount still unpaid. The quoted statements do not answer that question."
+            ]
+          }
+        ]
+      },
+      {
+        "slug": "parcerias-rodoviarias",
+        "titulo": "The road partnerships: what the State pays, what it will pay, and what the table leaves out",
+        "linhas": [
+          "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
+          "afirmacao-pcp-paula-ppp-2026-10-12",
+          "afirmacao-pcp-ppp-2026-10-15",
+          "oe-2027-ppp-total-encargos-liquidos-2027",
+          "oe-2027-ppp-rodoviario-encargos-brutos-2027",
+          "oe-2027-ppp-rodoviario-receitas-2027",
+          "oe-2027-ppp-rodoviario-encargos-liquidos-2027",
+          "ppp-oe2027-ferroviario-2027",
+          "ppp-oe2027-saude-2027",
+          "der-ppp-brutos-todos-2027",
+          "ppp-oe2022-liquidos-2021",
+          "ppp-oe2023-liquidos-2022",
+          "ppp-oe2024-liquidos-2023",
+          "ppp-oe2025-liquidos-2024",
+          "ppp-oe2026-liquidos-2025",
+          "ppp-oe2027-liquidos-2026",
+          "ppp-oe2027-liquidos-2028",
+          "ppp-oe2027-liquidos-2029",
+          "ppp-oe2027-liquidos-2035",
+          "ppp-oe2027-liquidos-2040",
+          "ppp-oe2027-liquidos-2030",
+          "ppp-oe2027-liquidos-2027-previsao-oe2026",
+          "ppp-oe2027-riscos-pedidos-rodoviarios",
+          "ppp-oe2027-riscos-acrescimo",
+          "ppp-oe2027-riscos-brisa",
+          "ppp-oe2027-riscos-rotas-algarve-principal",
+          "ppp-oe2027-riscos-rotas-algarve-mensal",
+          "utao-ppp-contingencias-natureza-2026",
+          "pe-brisa-periodo-imt",
+          "pe-brisa-minuta-ano",
+          "pe-brisa-prazo-minuta",
+          "pe-despacho-alargamentos",
+          "pe-despacho-investimentos-previstos",
+          "pe-despacho-equilibrio",
+          "pe-despacho-comparticipacoes",
+          "pe-despacho-braga",
+          "pe-despacho-investimentos-novos",
+          "pe-despacho-limites",
+          "pe-despacho-qualidade",
+          "pe-oe-riscos-nao-reconhecimento",
+          "pe-scut-vigencia",
+          "pe-scut-trocos",
+          "pe-dl87a-apoio-retificado",
+          "pe-dl87a-publicacao-ano",
+          "pe-dl87a-descontos",
+          "pe-dl87a-financiamento",
+          "pe-oe-apoio-dl87a",
+          "pe-oe-beira-abolicao",
+          "der-ppp-pcp-vs-brutos",
+          "der-ppp-pcp-vs-liquidos",
+          "der-ppp-quota-rodoviario",
+          "der-ppp-rodoviario-2027-vs-2021-pct",
+          "ppp-oe2026-brutos-2025",
+          "ppp-oe2027-brutos-2027",
+          "ppp-oe2026-receitas-2025",
+          "ppp-oe2027-receitas-2027"
+        ],
+        "seccoes": [
+          {
+            "id": "como-foi-dito",
+            "titulo": "As it was said",
+            "paragrafos": [
+              "«Vem com um orçamento que entrega 1 700 milhões às parcerias público-privadas rodoviárias», Paulo Raimundo · PCP, in the Assembleia da República, on 09.10.2026. On 12.10.2026, Paula Santos · PCP: «Em sentido inverso cresce mais do que o previsto a despesa com as chamadas PPP – rodoviárias, ferroviárias, saúde – com o Governo a desviar mais de 1800 milhões de euros de recursos públicos para os grupos económicos privados, sem que tal se traduza em novas infraestruturas ou investimento nas existentes.» On 15.10.2026, Paulo Raimundo: «Há condições, há recursos e meios, desde logo na Segurança Social, mas há também opções que se podem e têm de fazer, e entre os mais de 1700 milhões de euros que o Governo quer pagar em PPP e o aumento dos reformados, da nossa parte não temos dúvidas da opção a tomar.»"
+            ]
+          },
+          {
+            "id": "fontes",
+            "titulo": "What the sources say",
+            "paragrafos": [
+              "Table 4.25 of the Budget report, the public-private partnerships, 2027, in million euros.",
+              "Gross charges for the road sector are 1 152; revenue, 263; net charges, 889. Rail partnerships cost 312 and health ones 254, each on a single line, with no revenue; gross road charges plus rail and health charges add up to 1 718, and the printed net total for all sectors is 1 438. Forecast, not outturn. The sector rows in the table do not add up exactly to the printed total; the table does not explain the difference. The table says the values are on a cash basis and, where applicable, include VAT.",
+              "Net road charges, year by year, in the Budget reports: 1 250 in 2021 (execution), 1 192 in 2022, 1 105 in 2023, 1 012 in 2024, 843 in 2025, 942 in 2026 (estimates) and 889 in 2027 (budget).",
+              "The report projects 705 in 2028, 648 in 2029, 77 in 2035 and 17 in 2040, the last year with road charges; in 2030 revenue exceeds charges and the line is negative, −220.",
+              "For 2027, last year's report forecast 774 in net charges; this one forecasts 889. According to the report, the difference comes from toll collection costs and traffic-linked payments, which rose, and toll revenue, which fell.",
+              "Outside the table, in the risks chapter, the report counts 2 388,2 million euros in financial rebalancing claims and litigation by road concessionaires and subconcessionaires, with first-quarter data referenced to 1st quarter of 2026, 1 140 above the previous report, including 1 122,5 from Brisa, in the ongoing negotiation, and 445 in the main action by Rotas do Algarve Litoral, in which Infraestruturas de Portugal pays, by provisional decision, around 1,3 million a month, plus VAT. The UTAO distinguishes claims from actual charges: «São pretensões dos parceiros privados, e não encargos já reconhecidos; a sua concretização, total ou parcial, oneraria o saldo orçamental de anos futuros.»",
+              "The Institute for Mobility and Transport (IMT) gives the Brisa concession period as «Período da Concessão: 1972 – 2035»; the 2008 draft concession contract sets its end on 31.12.2035. Under the order published on 27.12.2024, the negotiating committee covers lane widening, contractually planned investment, restoring financial balance, contribution adjustments, the Braga southern ring road, new investment, concession boundaries and service quality. The report states that «Em todo o caso, importa sublinhar que a presente análise não implica qualquer reconhecimento ou assunção, ainda que tácita, de responsabilidades por parte dos parceiros públicos decorrentes das pretensões deduzidas pelos parceiros privados, quer quanto aos respetivos fundamentos, que, na maioria das situações, são rejeitados pelos parceiros públicos, quer quanto aos montantes peticionados.»",
+              "Since 01.01.2025 the law has abolished tolls on stretches of seven motorways, which it lists the list. In 2023 the State capped the toll update and pays the concessionaires, charged to the State Budget, the difference to the update that the decree-law of December 2022 takes as its reference the rectified article; the decree says that «O disposto no presente decreto-lei não prejudica a aplicação dos regimes de descontos em vigor.», and the charges fall on the State Budget, through the Directorate-General for Treasury and Finance (the DGTF): «Os encargos resultantes do apoio previsto nos artigos 3.º e 4.º são suportados diretamente pelo Orçamento do Estado, a processar pela DGTF.» The 2027 Budget report now includes that support in gross charges, and records a negotiation with the Beira Interior concessionaire following a claim linked to the toll abolition."
+            ]
+          },
+          {
+            "id": "comparacao",
+            "titulo": "The comparison",
+            "paragrafos": [
+              "None of the road figures in the table equals 1 700 million euros: the figure is 548 above gross charges and 811 above net charges.",
+              "The figure is close to the sum of gross road charges and rail and health charges, 1 718, without that proving the calculation behind it; road partnerships are 61,82 % of the net total. The PCP itself later widened the universe to the road, rail and health partnerships, on 12.10.2026 and on 15.10.2026, with 1 800 million euros and 1 700 million euros.",
+              "The report forecasts 889 net for the road partnerships in 2027 against 1 250 executed in 2021, −28,9 %; but more than the 843 estimated for 2025: gross charges fall from 1 234 to 1 152, and the forecast revenue falls further, from 392 to 263. The projection has a downward trend, with fluctuations, to 17 in 2040.",
+              "The figure missing from the three quoted claims is that of the pending demands, 2 388,2, which is absent from the charges table and those claims, and exceeds gross road charges and the figure in the first claim. The Brisa negotiation may determine what part of those claims becomes a charge; the concession ends on 31.12.2035."
+            ]
+          },
+          {
+            "id": "conclusao",
+            "titulo": "The conclusion",
+            "paragrafos": [
+              "The report forecasts 889 million net for the road partnerships in 2027, −28,9 % against execution in 2021, but above the estimate for 2025, and the table projects a downward trend, with fluctuations, to the end of the contracts. The figure in the PCP's first claim is close to the gross cost of all partnerships, not of the road ones. And what could change the bill is not in the table: 2 388,2 million in concessionaires' claims, 1 122,5 of them in a negotiation under way. For drivers and taxpayers: the law abolished tolls from 01.01.2025; since 2023 the State pays the concessionaires the difference between the capped toll update and the decree's reference update, charged to the State Budget, and that support now enters the table's gross charges; the Brisa negotiation covers investment and compensation in a concession ending on 31.12.2035; and pending claims are not recognised actual charges."
+            ]
+          },
+          {
+            "id": "recomendacao",
+            "titulo": "The recommendation",
+            "paragrafos": [
+              "The useful debate in 2027 is the Brisa negotiation and the pending lawsuits, alongside the budgeted figure for contracted payments. Whoever wants to watch the partnerships looks at the report's risks chapter and at the annual report of UTAP, the technical unit for monitoring projects, not only at the table of charges."
+            ]
+          },
+          {
+            "id": "opiniao",
+            "titulo": "The editorial seat's opinion",
+            "paragrafos": [
+              "The PCP is right to draw attention to the cost of partnerships, but wrong to attribute to road partnerships a figure exceeding their gross charges. Partnerships cost the State over a billion gross in the budgeted year; the later claim already covers road, rail and health partnerships, but its amount, 1 800 million euros, also exceeds the sum in the table. The Government, for its part, presents a table of contracted payments and sends the claims that could change the bill to a risks chapter. Between the two, the reader learns the payments forecast for concessionaires; how much of the pending claims will become an actual charge remains unknown, and what the Beira Interior concessionaire's claim linked to the toll abolition, and those that may follow, will cost: that is the bill Parliament should ask for before voting."
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "inventario": [
+    {
+      "id": "afirmacao-leitao-amaro-saude-oe2027-2026-10-09",
+      "value": "3",
+      "reference_date": "2026-10-09"
+    },
+    {
+      "id": "afirmacao-pcp-paula-investimento-saude-2026-10-12",
+      "value": "33,7",
+      "reference_date": "2026-10-12"
+    },
+    {
+      "id": "afirmacao-pcp-paula-ppp-2026-10-12",
+      "value": "1 800",
+      "reference_date": "2026-10-12"
+    },
+    {
+      "id": "afirmacao-pcp-ppp-2026-10-15",
+      "value": "1 700",
+      "reference_date": "2026-10-15"
+    },
+    {
+      "id": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
+      "value": "1 700",
+      "reference_date": "2026-10-09"
+    },
+    {
+      "id": "afirmacao-rtp-saude-queda-oe2027-2026-10-09",
+      "value": "1,5",
+      "reference_date": "2026-10-09"
+    },
+    {
+      "id": "der-ambiente-e-energia-prr-2026",
+      "value": "823,2",
+      "reference_date": "2026"
+    },
+    {
+      "id": "der-coesao-territorial-variacao-sem-prr-pct",
+      "value": "−38,2",
+      "reference_date": "2027"
+    },
+    {
+      "id": "der-economia-prr-2026",
+      "value": "1 357,1",
+      "reference_date": "2026"
+    },
+    {
+      "id": "der-economia-variacao-sem-prr-pct",
+      "value": "−4,9",
+      "reference_date": "2027"
+    },
+    {
+      "id": "der-educacao-variacao-sem-prr-pct",
+      "value": "4,9",
+      "reference_date": "2027"
+    },
+    {
+      "id": "der-financas-prr-2026",
+      "value": "1 472,7",
+      "reference_date": "2026"
+    },
+    {
+      "id": "der-financas-variacao-sem-prr-pct",
+      "value": "−7,8",
+      "reference_date": "2027"
+    },
+    {
+      "id": "der-infarmed-total-2025-jan-jul",
+      "value": "2 619,6",
+      "reference_date": "2025-07"
+    },
+    {
+      "id": "der-infarmed-total-2026-jan-jul",
+      "value": "2 780,2",
+      "reference_date": "2026-07"
+    },
+    {
+      "id": "der-infarmed-variacao-pct",
+      "value": "6,1",
+      "reference_date": "2026-07"
+    },
+    {
+      "id": "der-infraestruturas-e-habitacao-prr-2026",
+      "value": "1 133,0",
+      "reference_date": "2026"
+    },
+    {
+      "id": "der-infraestruturas-e-habitacao-variacao-sem-prr-pct",
+      "value": "20,8",
+      "reference_date": "2027"
+    },
+    {
+      "id": "der-justica-variacao-sem-prr-pct",
+      "value": "18,2",
+      "reference_date": "2027"
+    },
+    {
+      "id": "der-ppp-brutos-todos-2027",
+      "value": "1 718",
+      "reference_date": "2027"
+    },
+    {
+      "id": "der-ppp-pcp-vs-brutos",
+      "value": "548",
+      "reference_date": "2027"
+    },
+    {
+      "id": "der-ppp-pcp-vs-liquidos",
+      "value": "811",
+      "reference_date": "2027"
+    },
+    {
+      "id": "der-ppp-quota-rodoviario",
+      "value": "61,82",
+      "reference_date": "2027"
+    },
+    {
+      "id": "der-ppp-rodoviario-2027-vs-2021-pct",
+      "value": "−28,9",
+      "reference_date": "2027"
+    },
+    {
+      "id": "der-prr-saude-contratado-numerico",
+      "value": "2 011",
+      "reference_date": "2026-10-14"
+    },
+    {
+      "id": "der-prr-saude-marcos-completos",
+      "value": "24",
+      "reference_date": "2025"
+    },
+    {
+      "id": "der-prr-saude-marcos-total",
+      "value": "37",
+      "reference_date": "2025"
+    },
+    {
+      "id": "der-prr-saude-pago-numerico",
+      "value": "947",
+      "reference_date": "2026-10-14"
+    },
+    {
+      "id": "der-prr-saude-por-pagar",
+      "value": "1 064",
+      "reference_date": "2026-10-14"
+    },
+    {
+      "id": "der-prr-saude-por-pagar-pct",
+      "value": "52,9",
+      "reference_date": "2026-10-14"
+    },
+    {
+      "id": "der-prr-saude-taxa-numerico",
+      "value": "47",
+      "reference_date": "2026-10-14"
+    },
+    {
+      "id": "der-saude-2027-vs-execucao-2025-pct",
+      "value": "3,6",
+      "reference_date": "2027"
+    },
+    {
+      "id": "der-saude-bens-servicos-reducao-abs",
+      "value": "396,6",
+      "reference_date": "2027"
+    },
+    {
+      "id": "der-saude-investimento-reducao-abs",
+      "value": "344,2",
+      "reference_date": "2027"
+    },
+    {
+      "id": "der-saude-outras-correntes-variacao-abs",
+      "value": "271,3",
+      "reference_date": "2027"
+    },
+    {
+      "id": "der-saude-pessoal-variacao-abs",
+      "value": "401,2",
+      "reference_date": "2027"
+    },
+    {
+      "id": "der-saude-prr-2026",
+      "value": "771,1",
+      "reference_date": "2026"
+    },
+    {
+      "id": "der-saude-razao-compensacao-prr-pct",
+      "value": "66,4",
+      "reference_date": "2027"
+    },
+    {
+      "id": "der-saude-receitas-proprias-variacao-pct",
+      "value": "56,5",
+      "reference_date": "2027"
+    },
+    {
+      "id": "der-saude-reforco-total-2026",
+      "value": "825,7",
+      "reference_date": "2026"
+    },
+    {
+      "id": "der-saude-total-reducao-abs",
+      "value": "267,5",
+      "reference_date": "2027"
+    },
+    {
+      "id": "der-saude-variacao-efetiva",
+      "value": "−259,3",
+      "reference_date": "2027"
+    },
+    {
+      "id": "der-saude-variacao-sem-prr",
+      "value": "511,8",
+      "reference_date": "2027"
+    },
+    {
+      "id": "der-saude-variacao-sem-prr-pct",
+      "value": "3,0",
+      "reference_date": "2027"
+    },
+    {
+      "id": "der-saude-variacao-total-abs",
+      "value": "−267,5",
+      "reference_date": "2027"
+    },
+    {
+      "id": "der-seguranca-interna-variacao-sem-prr-pct",
+      "value": "13,1",
+      "reference_date": "2027"
+    },
+    {
+      "id": "der-sns-cirurgias-variacao-pct",
+      "value": "−4,4",
+      "reference_date": "2026-07"
+    },
+    {
+      "id": "der-sns-consultas-csp-variacao-pct",
+      "value": "7,7",
+      "reference_date": "2026-08"
+    },
+    {
+      "id": "der-sns-divida-fornecedores-2026-07",
+      "value": "1 517,5",
+      "reference_date": "2026-07"
+    },
+    {
+      "id": "der-sns-lista-cirurgia-variacao-pct",
+      "value": "5,8",
+      "reference_date": "2026-07"
+    },
+    {
+      "id": "der-trabalho-solidariedade-e-seguranca-social-variacao-sem-prr-pct",
+      "value": "8,8",
+      "reference_date": "2027"
+    },
+    {
+      "id": "der-utao-saude-reforco-2026",
+      "value": "915",
+      "reference_date": "2026"
+    },
+    {
+      "id": "dgo-2026-08-saude-efetiva-jan-ago-2025",
+      "value": "9 861,9",
+      "reference_date": "2025"
+    },
+    {
+      "id": "dgo-2026-08-saude-efetiva-jan-ago-2026",
+      "value": "11 822,6",
+      "reference_date": "2026"
+    },
+    {
+      "id": "dgo-2026-08-saude-efetiva-variacao-homologa",
+      "value": "19,9",
+      "reference_date": "2026"
+    },
+    {
+      "id": "dgo-2026-08-sns-despesa-variacao-homologa",
+      "value": "13,2",
+      "reference_date": "2026"
+    },
+    {
+      "id": "dgo-2026-08-sns-saldo-jan-ago-2026",
+      "value": "−918,5",
+      "reference_date": "2026"
+    },
+    {
+      "id": "dgo-atraso-45-p",
+      "value": "689,9",
+      "reference_date": "2026-08"
+    },
+    {
+      "id": "dgo-regularizacao-ae",
+      "value": "1 398,6",
+      "reference_date": "2026-08"
+    },
+    {
+      "id": "eurostat-be-phys",
+      "value": "334,25",
+      "reference_date": "2024"
+    },
+    {
+      "id": "eurostat-el-phys",
+      "value": "626,89",
+      "reference_date": "2024"
+    },
+    {
+      "id": "eurostat-hlth-sha11-hf-a-eur_hab-tot_hf-eu27_2020-2024",
+      "value": "4 074,88",
+      "reference_date": "2024"
+    },
+    {
+      "id": "eurostat-hlth-sha11-hf-a-eur_hab-tot_hf-pt-2024",
+      "value": "2 764,83",
+      "reference_date": "2024"
+    },
+    {
+      "id": "eurostat-hlth-sha11-hf-a-pc_gdp-hf1-eu27_2020-2024",
+      "value": "8,17",
+      "reference_date": "2024"
+    },
+    {
+      "id": "eurostat-hlth-sha11-hf-a-pc_gdp-hf1-pt-2024",
+      "value": "6,31",
+      "reference_date": "2024"
+    },
+    {
+      "id": "eurostat-hlth-sha11-hf-a-pc_gdp-tot_hf-eu27_2020-2024",
+      "value": "10,16",
+      "reference_date": "2024"
+    },
+    {
+      "id": "eurostat-hlth-sha11-hf-a-pc_gdp-tot_hf-pt-2024",
+      "value": "10,20",
+      "reference_date": "2024"
+    },
+    {
+      "id": "eurostat-pt-phys",
+      "value": "431,35",
+      "reference_date": "2024"
+    },
+    {
+      "id": "infarmed-ambulatorio-2026-07-p5-acumulado-encargo",
+      "value": "1 179,3",
+      "reference_date": "2026-07"
+    },
+    {
+      "id": "infarmed-ambulatorio-2026-07-p5-homologo-encargo",
+      "value": "1 089,4",
+      "reference_date": "2025-07"
+    },
+    {
+      "id": "infarmed-ambulatorio-limitacao",
+      "value": "Os valores apresentados não refletem a totalidade das contribuições resultantes da implementação do Acordo Governo/APIFARMA e dos contratos de financiamento",
+      "reference_date": "2026-07"
+    },
+    {
+      "id": "infarmed-hospitalar-2026-07-p5-acumulado-encargo",
+      "value": "1 600,9",
+      "reference_date": "2026-07"
+    },
+    {
+      "id": "infarmed-hospitalar-2026-07-p5-homologo-encargo",
+      "value": "1 530,2",
+      "reference_date": "2025-07"
+    },
+    {
+      "id": "oe-2027-ambiente-e-energia-efetiva-2026",
+      "value": "2 290,4",
+      "reference_date": "2026"
+    },
+    {
+      "id": "oe-2027-ambiente-e-energia-sem-prr-2026",
+      "value": "1 467,2",
+      "reference_date": "2026"
+    },
+    {
+      "id": "oe-2027-coesao-territorial-sem-prr-2026",
+      "value": "628,0",
+      "reference_date": "2026"
+    },
+    {
+      "id": "oe-2027-coesao-territorial-sem-prr-2027",
+      "value": "388,1",
+      "reference_date": "2027"
+    },
+    {
+      "id": "oe-2027-economia-efetiva-2026",
+      "value": "2 312,1",
+      "reference_date": "2026"
+    },
+    {
+      "id": "oe-2027-economia-sem-prr-2026",
+      "value": "955,0",
+      "reference_date": "2026"
+    },
+    {
+      "id": "oe-2027-economia-sem-prr-2027",
+      "value": "908,5",
+      "reference_date": "2027"
+    },
+    {
+      "id": "oe-2027-educacao-sem-prr-2026",
+      "value": "7 421,7",
+      "reference_date": "2026"
+    },
+    {
+      "id": "oe-2027-educacao-sem-prr-2027",
+      "value": "7 787,9",
+      "reference_date": "2027"
+    },
+    {
+      "id": "oe-2027-financas-efetiva-2026",
+      "value": "10 707,0",
+      "reference_date": "2026"
+    },
+    {
+      "id": "oe-2027-financas-sem-prr-2026",
+      "value": "9 234,3",
+      "reference_date": "2026"
+    },
+    {
+      "id": "oe-2027-financas-sem-prr-2027",
+      "value": "8 509,7",
+      "reference_date": "2027"
+    },
+    {
+      "id": "oe-2027-infraestruturas-e-habitacao-efetiva-2026",
+      "value": "6 068,5",
+      "reference_date": "2026"
+    },
+    {
+      "id": "oe-2027-infraestruturas-e-habitacao-sem-prr-2026",
+      "value": "4 935,5",
+      "reference_date": "2026"
+    },
+    {
+      "id": "oe-2027-infraestruturas-e-habitacao-sem-prr-2027",
+      "value": "5 962,5",
+      "reference_date": "2027"
+    },
+    {
+      "id": "oe-2027-justica-sem-prr-2026",
+      "value": "1 800,7",
+      "reference_date": "2026"
+    },
+    {
+      "id": "oe-2027-justica-sem-prr-2027",
+      "value": "2 128,2",
+      "reference_date": "2027"
+    },
+    {
+      "id": "oe-2027-ppp-rodoviario-encargos-brutos-2027",
+      "value": "1 152",
+      "reference_date": "2027"
+    },
+    {
+      "id": "oe-2027-ppp-rodoviario-encargos-liquidos-2027",
+      "value": "889",
+      "reference_date": "2027"
+    },
+    {
+      "id": "oe-2027-ppp-rodoviario-receitas-2027",
+      "value": "263",
+      "reference_date": "2027"
+    },
+    {
+      "id": "oe-2027-ppp-total-encargos-liquidos-2027",
+      "value": "1 438",
+      "reference_date": "2027"
+    },
+    {
+      "id": "oe-2027-saude-bens-servicos-2026",
+      "value": "8 832,9",
+      "reference_date": "2026"
+    },
+    {
+      "id": "oe-2027-saude-bens-servicos-2027",
+      "value": "8 436,3",
+      "reference_date": "2027"
+    },
+    {
+      "id": "oe-2027-saude-bens-servicos-variacao",
+      "value": "−4,5",
+      "reference_date": "2027"
+    },
+    {
+      "id": "oe-2027-saude-contrato-programa-acss",
+      "value": "Do total da despesa consolidada afeta ao Programa Legado, a maior parte é financiada por receitas de impostos (15 452,2 milhões de euros). Neste montante incluem-se as verbas do contrato-programa a celebrar entre a Administração Central do Sistema de Saúde, IP (ACSS) e as entidades do Serviço Nacional de Saúde (SNS), destinadas ao financiamento centralizado da Rede Nacional de Cuidados Continuados, das parcerias público-privadas, entre outros.",
+      "reference_date": "2027"
+    },
+    {
+      "id": "oe-2027-saude-despesa-efetiva-consolidada-2026",
+      "value": "18 062,4",
+      "reference_date": "2026"
+    },
+    {
+      "id": "oe-2027-saude-despesa-efetiva-consolidada-2027",
+      "value": "17 803,1",
+      "reference_date": "2027"
+    },
+    {
+      "id": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026",
+      "value": "17 291,3",
+      "reference_date": "2026"
+    },
+    {
+      "id": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027",
+      "value": "17 803,1",
+      "reference_date": "2027"
+    },
+    {
+      "id": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+      "value": "3,0",
+      "reference_date": "2027"
+    },
+    {
+      "id": "oe-2027-saude-despesa-efetiva-consolidada-variacao",
+      "value": "−1,4",
+      "reference_date": "2027"
+    },
+    {
+      "id": "oe-2027-saude-despesa-total-consolidada-2026",
+      "value": "18 125,9",
+      "reference_date": "2026"
+    },
+    {
+      "id": "oe-2027-saude-despesa-total-consolidada-2027",
+      "value": "17 858,4",
+      "reference_date": "2027"
+    },
+    {
+      "id": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "value": "−1,5",
+      "reference_date": "2027"
+    },
+    {
+      "id": "oe-2027-saude-dotacao-reforco-contratos-programa",
+      "value": "São objeto de afetação específica no decurso da execução orçamental. Relevam, no Programa Legado da Defesa, a dotação destinada às forças nacionais destacadas, a afetar sobretudo aos ramos das Forças Armadas, e, no Programa Legado da Saúde, a dotação para reforço no âmbito dos contratos-programa cuja contratualização ainda decorre.",
+      "reference_date": "2027"
+    },
+    {
+      "id": "oe-2027-saude-fonte-fundos-europeus-2026",
+      "value": "655,0",
+      "reference_date": "2026"
+    },
+    {
+      "id": "oe-2027-saude-fonte-fundos-europeus-2027",
+      "value": "174,6",
+      "reference_date": "2027"
+    },
+    {
+      "id": "oe-2027-saude-fonte-impostos-2026",
+      "value": "15 116,4",
+      "reference_date": "2026"
+    },
+    {
+      "id": "oe-2027-saude-fonte-impostos-2027",
+      "value": "15 452,2",
+      "reference_date": "2027"
+    },
+    {
+      "id": "oe-2027-saude-fonte-receitas-proprias-2026",
+      "value": "1 289,5",
+      "reference_date": "2026"
+    },
+    {
+      "id": "oe-2027-saude-fonte-receitas-proprias-2027",
+      "value": "2 017,6",
+      "reference_date": "2027"
+    },
+    {
+      "id": "oe-2027-saude-investimento-2026",
+      "value": "1 022,5",
+      "reference_date": "2026"
+    },
+    {
+      "id": "oe-2027-saude-investimento-2027",
+      "value": "678,3",
+      "reference_date": "2027"
+    },
+    {
+      "id": "oe-2027-saude-investimento-variacao",
+      "value": "−33,7",
+      "reference_date": "2027"
+    },
+    {
+      "id": "oe-2027-saude-investimento-variacao-sem-prr",
+      "value": "22,2",
+      "reference_date": "2027"
+    },
+    {
+      "id": "oe-2027-saude-outras-correntes-2026",
+      "value": "32,4",
+      "reference_date": "2026"
+    },
+    {
+      "id": "oe-2027-saude-outras-correntes-2027",
+      "value": "303,7",
+      "reference_date": "2027"
+    },
+    {
+      "id": "oe-2027-saude-pessoal-2026",
+      "value": "7 783,1",
+      "reference_date": "2026"
+    },
+    {
+      "id": "oe-2027-saude-pessoal-2027",
+      "value": "8 184,3",
+      "reference_date": "2027"
+    },
+    {
+      "id": "oe-2027-saude-pessoal-variacao",
+      "value": "5,2",
+      "reference_date": "2027"
+    },
+    {
+      "id": "oe-2027-saude-transferencias-capital-2026",
+      "value": "272,9",
+      "reference_date": "2026"
+    },
+    {
+      "id": "oe-2027-saude-transferencias-capital-2027",
+      "value": "0,0",
+      "reference_date": "2027"
+    },
+    {
+      "id": "oe-2027-saude-transferencias-sns-2026",
+      "value": "14 935,8",
+      "reference_date": "2026"
+    },
+    {
+      "id": "oe-2027-saude-transferencias-sns-2027",
+      "value": "15 539,2",
+      "reference_date": "2027"
+    },
+    {
+      "id": "oe-2027-saude-transferencias-sns-variacao",
+      "value": "4,0",
+      "reference_date": "2027"
+    },
+    {
+      "id": "oe-2027-seguranca-interna-sem-prr-2026",
+      "value": "2 789,6",
+      "reference_date": "2026"
+    },
+    {
+      "id": "oe-2027-seguranca-interna-sem-prr-2027",
+      "value": "3 153,8",
+      "reference_date": "2027"
+    },
+    {
+      "id": "oe-2027-trabalho-solidariedade-e-seguranca-social-sem-prr-2026",
+      "value": "27 832,7",
+      "reference_date": "2026"
+    },
+    {
+      "id": "oe-2027-trabalho-solidariedade-e-seguranca-social-sem-prr-2027",
+      "value": "30 270,4",
+      "reference_date": "2027"
+    },
+    {
+      "id": "pe-brisa-minuta-ano",
+      "value": "31 de Dezembro de 2008",
+      "reference_date": "2008"
+    },
+    {
+      "id": "pe-brisa-periodo-imt",
+      "value": "Período da Concessão: 1972 – 2035",
+      "reference_date": "2035"
+    },
+    {
+      "id": "pe-brisa-prazo-minuta",
+      "value": "A concessão termina em 31 de Dezembro de 2035.",
+      "reference_date": "2035-12-31"
+    },
+    {
+      "id": "pe-despacho-alargamentos",
+      "value": "a) Avaliação dos alargamentos de vias a realizar assim como das regras contratuais relativas aos alargamentos de vias e sua eventual alteração;",
+      "reference_date": "2024-12-27"
+    },
+    {
+      "id": "pe-despacho-braga",
+      "value": "e) Acerto relativamente ao pagamento das receitas de portagem na Circular Sul de Braga, para o período entre 31 de dezembro de 2008 (data do Acordo Brisa) e 5 de fevereiro de 2010 (data da transição da exploração da Ascendi para a Brisa);",
+      "reference_date": "2024-12-27"
+    },
+    {
+      "id": "pe-despacho-comparticipacoes",
+      "value": "d) Acertos relativamente a comparticipações financeiras pagas pelo Concedente para investimentos em aberto em 2008 e, entretanto, executados pela BRISA, à luz do controlo e reporte, nas suas competências contratuais e legais, pela Inspeção-Geral de Finanças — Autoridade de Auditoria;",
+      "reference_date": "2024-12-27"
+    },
+    {
+      "id": "pe-despacho-equilibrio",
+      "value": "c) Verificação das condições do direito à reposição do equilíbrio financeiro do contrato e a negociação dos termos da eventual reposição desse equilíbrio, designadamente no que se refere: i) à implementação, através da publicação do Decreto-Lei n.º 71/2018, de 5 de setembro, das propostas do Grupo de Trabalho informal para a “Eventual Revisão do Sistema de Classificação de Veículos Ligeiros (Classes 1 e 2) para efeitos de Aplicação de Taxas de Portagem”, nos termos do Protocolo assinado em 9 de agosto de 2018 entre o IMT, I. P., e a BRISA; ii) à implementação do Decreto-Lei n.º 120/2021, de 24 de dezembro (que alterou o Decreto-Lei n.º 71/2018, de 5 de setembro), relativo à reclassificação em classe 1 dos veículos elétricos e híbridos dotados de tração aos dois eixos; iii. à atribuição de isenções de pagamento de taxas de portagem (aos veículos da Polícia Judiciária e aos veículos dedicados ao transporte de doentes); iv. à implementação do Decreto-Lei n.º 87-A/22, de 19 de dezembro (que aprovou o regime excecional de atualização das tarifas e taxas de portagem para o ano de 2023);",
+      "reference_date": "2024-12-27"
+    },
+    {
+      "id": "pe-despacho-investimentos-novos",
+      "value": "f) Avaliação de eventuais novos investimentos a realizar, designadamente relativos a novas acessibilidades e a novas ligações à rede rodoviária envolvente, e ponderação da viabilidade, e dos efeitos, da sua integração na concessão;",
+      "reference_date": "2024-12-27"
+    },
+    {
+      "id": "pe-despacho-investimentos-previstos",
+      "value": "b) Avaliação de investimentos contratualmente previstos a realizar, incluindo a Ligação ao Novo Aeroporto de Lisboa e a Ligação à Plataforma Logística do Poceirão e a Ligação à Plataforma Logística Lisboa Norte, e consideração das comparticipações já pagas pelo Concedente relativamente a empreendimentos cuja implementação ainda não se iniciou, ou não se perspetiva iniciar;",
+      "reference_date": "2024-12-27"
+    },
+    {
+      "id": "pe-despacho-limites",
+      "value": "g) Outras matérias contratuais que requeiram clarificação e estabilização, nomeadamente no que se refere a limites da concessão;",
+      "reference_date": "2024-12-27"
+    },
+    {
+      "id": "pe-despacho-qualidade",
+      "value": "h) Exploração de possibilidades de obtenção de ganhos de eficiência na relação contratual, incluindo a definição de mecanismos relativos à monitorização e avaliação da qualidade de serviço, à semelhança do que se verifica com outras concessões e subconcessões rodoviárias.”",
+      "reference_date": "2024-12-27"
+    },
+    {
+      "id": "pe-dl87a-apoio-retificado",
+      "value": "«1 — O apoio é assegurado através de um pagamento do Estado, a entregar às concessionárias, em complemento do pagamento das tarifas e taxas de portagem realizado pelos utilizadores, no montante correspondente à diferença entre as tarifas e taxas de portagem que resultariam da aplicação de um coeficiente de atualização para o ano de 2023 de 1,077, equivalente a um aumento de 7,7 %, e as tarifas e taxas de portagem que resultam da aplicação do n.º 1 do artigo anterior.»",
+      "reference_date": "2023"
+    },
+    {
+      "id": "pe-dl87a-descontos",
+      "value": "O disposto no presente decreto-lei não prejudica a aplicação dos regimes de descontos em vigor.",
+      "reference_date": "2022"
+    },
+    {
+      "id": "pe-dl87a-financiamento",
+      "value": "Os encargos resultantes do apoio previsto nos artigos 3.º e 4.º são suportados diretamente pelo Orçamento do Estado, a processar pela DGTF.",
+      "reference_date": "2023"
+    },
+    {
+      "id": "pe-dl87a-publicacao-ano",
+      "value": "29 de dezembro de 2022",
+      "reference_date": "2022"
+    },
+    {
+      "id": "pe-oe-apoio-dl87a",
+      "value": "Regista-se também um aparente aumento dos encargos brutos plurianuais, decorrente da inclusão dos montantes relativos ao apoio pago às concessionárias com titularidade de portagem no âmbito do Decreto-Lei nº 87-A/2022. Este apoio não constava do Relatório do Orçamento do Estado anterior, uma vez que, do ponto de vista da Infraestruturas de Portugal, tem um efeito neutro (o montante desembolsado por esta entidade corresponde ao montante que lhe é atribuído pelo Estado). Contudo, na ótica do setor público como um todo, este apoio configura um encargo efetivo com parcerias público-privadas, pelo que se passa agora a incluir no presente Relatório. Em face desta alteração, os valores relativos a este item não são diretamente comparáveis com os apresentados no Relatório anterior, sendo que a comparabilidade fica assegurada a partir dos próximos Relatórios.",
+      "reference_date": "2027"
+    },
+    {
+      "id": "pe-oe-beira-abolicao",
+      "value": "Salienta-se ainda o desenvolvimento dos trabalhos de negociação no âmbito do contrato de concessão da Beira Interior, na sequência do pedido apresentado pela concessionária no contexto da abolição das portagens, tendo em vista verificar se estão reunidas as condições para a reposição do equilíbrio financeiro do contrato e para negociar os respetivos termos, abrangendo ainda a renegociação de outros aspetos contratuais relevantes e a avaliação de eventuais novos investimentos a realizar.",
+      "reference_date": "2027"
+    },
+    {
+      "id": "pe-oe-riscos-nao-reconhecimento",
+      "value": "Em todo o caso, importa sublinhar que a presente análise não implica qualquer reconhecimento ou assunção, ainda que tácita, de responsabilidades por parte dos parceiros públicos decorrentes das pretensões deduzidas pelos parceiros privados, quer quanto aos respetivos fundamentos, que, na maioria das situações, são rejeitados pelos parceiros públicos, quer quanto aos montantes peticionados.",
+      "reference_date": "2027"
+    },
+    {
+      "id": "pe-scut-trocos",
+      "value": "São eliminadas as taxas de portagem cobradas aos utilizadores nos lanços e sublanços das seguintes autoestradas: a) A4 — Transmontana e Túnel do Marão; b) A13 e A13-1 — Pinhal Interior; c) A22 — Algarve; d) A23 — Beira Interior; e) A24 — Interior Norte; f) A25 — Beiras Litoral e Alta; g) A28 — Litoral Norte, nos troços entre Esposende e Antas, e entre Neiva e Darque.",
+      "reference_date": "2025-01-01"
+    },
+    {
+      "id": "pe-scut-vigencia",
+      "value": "A presente lei entra em vigor no dia 1 de janeiro de 2025.",
+      "reference_date": "2025-01-01"
+    },
+    {
+      "id": "ppp-oe2022-liquidos-2021",
+      "value": "1 250",
+      "reference_date": "2021"
+    },
+    {
+      "id": "ppp-oe2023-liquidos-2022",
+      "value": "1 192",
+      "reference_date": "2022"
+    },
+    {
+      "id": "ppp-oe2024-liquidos-2023",
+      "value": "1 105",
+      "reference_date": "2023"
+    },
+    {
+      "id": "ppp-oe2025-liquidos-2024",
+      "value": "1 012",
+      "reference_date": "2024"
+    },
+    {
+      "id": "ppp-oe2026-brutos-2025",
+      "value": "1 234",
+      "reference_date": "2025"
+    },
+    {
+      "id": "ppp-oe2026-liquidos-2025",
+      "value": "843",
+      "reference_date": "2025"
+    },
+    {
+      "id": "ppp-oe2026-receitas-2025",
+      "value": "392",
+      "reference_date": "2025"
+    },
+    {
+      "id": "ppp-oe2027-brutos-2027",
+      "value": "1 152",
+      "reference_date": "2027"
+    },
+    {
+      "id": "ppp-oe2027-ferroviario-2027",
+      "value": "312",
+      "reference_date": "2027"
+    },
+    {
+      "id": "ppp-oe2027-liquidos-2026",
+      "value": "942",
+      "reference_date": "2026"
+    },
+    {
+      "id": "ppp-oe2027-liquidos-2027-previsao-oe2026",
+      "value": "774",
+      "reference_date": "2027"
+    },
+    {
+      "id": "ppp-oe2027-liquidos-2028",
+      "value": "705",
+      "reference_date": "2028"
+    },
+    {
+      "id": "ppp-oe2027-liquidos-2029",
+      "value": "648",
+      "reference_date": "2029"
+    },
+    {
+      "id": "ppp-oe2027-liquidos-2030",
+      "value": "−220",
+      "reference_date": "2030"
+    },
+    {
+      "id": "ppp-oe2027-liquidos-2035",
+      "value": "77",
+      "reference_date": "2035"
+    },
+    {
+      "id": "ppp-oe2027-liquidos-2040",
+      "value": "17",
+      "reference_date": "2040"
+    },
+    {
+      "id": "ppp-oe2027-receitas-2027",
+      "value": "263",
+      "reference_date": "2027"
+    },
+    {
+      "id": "ppp-oe2027-riscos-acrescimo",
+      "value": "1 140",
+      "reference_date": "2026-03-31"
+    },
+    {
+      "id": "ppp-oe2027-riscos-brisa",
+      "value": "1 122,5",
+      "reference_date": "2026-03-31"
+    },
+    {
+      "id": "ppp-oe2027-riscos-pedidos-rodoviarios",
+      "value": "2 388,2",
+      "reference_date": "2026-03-31"
+    },
+    {
+      "id": "ppp-oe2027-riscos-rotas-algarve-mensal",
+      "value": "1,3",
+      "reference_date": "2026-03-31"
+    },
+    {
+      "id": "ppp-oe2027-riscos-rotas-algarve-principal",
+      "value": "445",
+      "reference_date": "2026-03-31"
+    },
+    {
+      "id": "ppp-oe2027-saude-2027",
+      "value": "254",
+      "reference_date": "2027"
+    },
+    {
+      "id": "prr-complemento-p3-1-24-estado",
+      "value": "Completo",
+      "reference_date": "2025-12-31"
+    },
+    {
+      "id": "prr-complemento-p3-1-3-estado",
+      "value": "Completo",
+      "reference_date": "2025-12-31"
+    },
+    {
+      "id": "prr-complemento-p3-1-32-estado",
+      "value": "Completo",
+      "reference_date": "2025-12-31"
+    },
+    {
+      "id": "prr-complemento-p3-1-33-estado",
+      "value": "Completo",
+      "reference_date": "2025-12-31"
+    },
+    {
+      "id": "prr-complemento-p3-1-8-estado",
+      "value": "Completo",
+      "reference_date": "2025-12-31"
+    },
+    {
+      "id": "prr-complemento-p4-1-1-estado",
+      "value": "Completo",
+      "reference_date": "2025-12-31"
+    },
+    {
+      "id": "prr-complemento-p4-1-12-estado",
+      "value": "Completo",
+      "reference_date": "2025-12-31"
+    },
+    {
+      "id": "prr-complemento-p4-1-2-estado",
+      "value": "Completo",
+      "reference_date": "2025-12-31"
+    },
+    {
+      "id": "prr-complemento-p4-1-40-estado",
+      "value": "Completo",
+      "reference_date": "2025-12-31"
+    },
+    {
+      "id": "prr-complemento-p4-1-41-estado",
+      "value": "Completo",
+      "reference_date": "2025-12-31"
+    },
+    {
+      "id": "prr-complemento-p4-1-5-estado",
+      "value": "Completo",
+      "reference_date": "2025-12-31"
+    },
+    {
+      "id": "prr-complemento-p5-1-11-estado",
+      "value": "Completo",
+      "reference_date": "2025-12-31"
+    },
+    {
+      "id": "prr-complemento-p5-1-22-estado",
+      "value": "Completo",
+      "reference_date": "2025-12-31"
+    },
+    {
+      "id": "prr-complemento-p5-1-28-estado",
+      "value": "Completo",
+      "reference_date": "2025-12-31"
+    },
+    {
+      "id": "prr-complemento-p5-1-7-estado",
+      "value": "Completo",
+      "reference_date": "2025-12-31"
+    },
+    {
+      "id": "prr-complemento-p5-1-9-estado",
+      "value": "Completo",
+      "reference_date": "2025-12-31"
+    },
+    {
+      "id": "prr-complemento-p6-1-10-estado",
+      "value": "Completo",
+      "reference_date": "2025-12-31"
+    },
+    {
+      "id": "prr-complemento-p6-1-37-estado",
+      "value": "Completo",
+      "reference_date": "2025-12-31"
+    },
+    {
+      "id": "prr-complemento-p6-1-42-estado",
+      "value": "Completo",
+      "reference_date": "2025-12-31"
+    },
+    {
+      "id": "prr-complemento-p7-1-34-estado",
+      "value": "Em avaliação na CE",
+      "reference_date": "2025-12-31"
+    },
+    {
+      "id": "prr-complemento-p7-1-35-estado",
+      "value": "Em avaliação na CE",
+      "reference_date": "2025-12-31"
+    },
+    {
+      "id": "prr-complemento-p7-1-36-estado",
+      "value": "Em avaliação na CE",
+      "reference_date": "2025-12-31"
+    },
+    {
+      "id": "prr-complemento-p7-1-38-estado",
+      "value": "Em avaliação na CE",
+      "reference_date": "2025-12-31"
+    },
+    {
+      "id": "prr-complemento-p7-1-39-estado",
+      "value": "Em avaliação na CE",
+      "reference_date": "2025-12-31"
+    },
+    {
+      "id": "prr-complemento-p8-1-21-estado",
+      "value": "Dentro do Prazo",
+      "reference_date": "2025-12-31"
+    },
+    {
+      "id": "prr-complemento-p8-1-25-estado",
+      "value": "Dentro do Prazo",
+      "reference_date": "2025-12-31"
+    },
+    {
+      "id": "prr-complemento-p9-1-17-estado",
+      "value": "Dentro do Prazo",
+      "reference_date": "2025-12-31"
+    },
+    {
+      "id": "prr-complemento-p9-1-18-estado",
+      "value": "Dentro do Prazo",
+      "reference_date": "2025-12-31"
+    },
+    {
+      "id": "prr-complemento-p9-1-26-estado",
+      "value": "Dentro do Prazo",
+      "reference_date": "2025-12-31"
+    },
+    {
+      "id": "prr-complemento-p9-1-30-estado",
+      "value": "Dentro do Prazo",
+      "reference_date": "2025-12-31"
+    },
+    {
+      "id": "prr-complemento-p9-1-43-estado",
+      "value": "Dentro do Prazo",
+      "reference_date": "2025-12-31"
+    },
+    {
+      "id": "prr-complemento-p9-1-44-estado",
+      "value": "Dentro do Prazo",
+      "reference_date": "2025-12-31"
+    },
+    {
+      "id": "prr-marcos-metas-2025-p2-1-13-estado",
+      "value": "Completo",
+      "reference_date": "2025-12-31"
+    },
+    {
+      "id": "prr-marcos-metas-2025-p2-1-20-estado",
+      "value": "Completo",
+      "reference_date": "2025-12-31"
+    },
+    {
+      "id": "prr-marcos-metas-2025-p2-1-29-estado",
+      "value": "Completo",
+      "reference_date": "2025-12-31"
+    },
+    {
+      "id": "prr-marcos-metas-2025-p2-1-4-estado",
+      "value": "Completo",
+      "reference_date": "2025-12-31"
+    },
+    {
+      "id": "prr-marcos-metas-2025-p2-1-6-estado",
+      "value": "Completo",
+      "reference_date": "2025-12-31"
+    },
+    {
+      "id": "prr-monitorizacao-20261014-p2-c01-contratado",
+      "value": "2.011M €",
+      "reference_date": "2026-10-14"
+    },
+    {
+      "id": "prr-monitorizacao-20261014-p2-c01-pago",
+      "value": "947M €",
+      "reference_date": "2026-10-14"
+    },
+    {
+      "id": "prr-monitorizacao-20261014-p2-c01-taxa",
+      "value": "47%",
+      "reference_date": "2026-10-14"
+    },
+    {
+      "id": "saude-total-2020-execucao-cge2020",
+      "value": "11 731,9",
+      "reference_date": "2020"
+    },
+    {
+      "id": "saude-total-2020-orcamento-oe2020",
+      "value": "11 282,2",
+      "reference_date": "2020"
+    },
+    {
+      "id": "saude-total-2021-execucao-cge2021",
+      "value": "12 904,3",
+      "reference_date": "2021"
+    },
+    {
+      "id": "saude-total-2021-orcamento-oe2021",
+      "value": "12 564,8",
+      "reference_date": "2021"
+    },
+    {
+      "id": "saude-total-2022-execucao-cge2022",
+      "value": "14 016,8",
+      "reference_date": "2022"
+    },
+    {
+      "id": "saude-total-2022-orcamento-oe2022",
+      "value": "13 578,1",
+      "reference_date": "2022"
+    },
+    {
+      "id": "saude-total-2023-execucao-cge2023",
+      "value": "14 926,5",
+      "reference_date": "2023"
+    },
+    {
+      "id": "saude-total-2023-orcamento-oe2023",
+      "value": "14 858,0",
+      "reference_date": "2023"
+    },
+    {
+      "id": "saude-total-2024-execucao-cge2024",
+      "value": "15 808,8",
+      "reference_date": "2024"
+    },
+    {
+      "id": "saude-total-2024-orcamento-oe2024",
+      "value": "15 709,4",
+      "reference_date": "2024"
+    },
+    {
+      "id": "saude-total-2025-execucao-cge2025",
+      "value": "17 241,5",
+      "reference_date": "2025"
+    },
+    {
+      "id": "saude-total-2025-orcamento-oe2025",
+      "value": "16 853,5",
+      "reference_date": "2025"
+    },
+    {
+      "id": "saude-total-2026-orcamento-oe2026",
+      "value": "17 300,2",
+      "reference_date": "2026"
+    },
+    {
+      "id": "sns-cirurgias-2025-07",
+      "value": "544 482",
+      "reference_date": "2025-07"
+    },
+    {
+      "id": "sns-cirurgias-2026-07",
+      "value": "520 373",
+      "reference_date": "2026-07"
+    },
+    {
+      "id": "sns-consultas-csp-2025-08",
+      "value": "2 392 474",
+      "reference_date": "2025-08"
+    },
+    {
+      "id": "sns-consultas-csp-2026-08",
+      "value": "2 577 538",
+      "reference_date": "2026-08"
+    },
+    {
+      "id": "sns-consultas-csp-descricao",
+      "value": "As consultas registadas no sistema Vitacare não entram no cálculo destas métricas. Os dados relativos a este indicador são de caráter temporário para o mês publicado mais recente.",
+      "reference_date": "2026-08"
+    },
+    {
+      "id": "sns-divida-2026-divida-total-fornecedores-externos-0",
+      "value": "21 139,04",
+      "reference_date": "2026-07"
+    },
+    {
+      "id": "sns-divida-2026-divida-total-fornecedores-externos-1",
+      "value": "0,0",
+      "reference_date": "2026-07"
+    },
+    {
+      "id": "sns-divida-2026-divida-total-fornecedores-externos-10",
+      "value": "17 673 094,39",
+      "reference_date": "2026-07"
+    },
+    {
+      "id": "sns-divida-2026-divida-total-fornecedores-externos-11",
+      "value": "32 809 039,64",
+      "reference_date": "2026-07"
+    },
+    {
+      "id": "sns-divida-2026-divida-total-fornecedores-externos-12",
+      "value": "54 036 318,23",
+      "reference_date": "2026-07"
+    },
+    {
+      "id": "sns-divida-2026-divida-total-fornecedores-externos-13",
+      "value": "9 298 313,4",
+      "reference_date": "2026-07"
+    },
+    {
+      "id": "sns-divida-2026-divida-total-fornecedores-externos-14",
+      "value": "30 053 451,96",
+      "reference_date": "2026-07"
+    },
+    {
+      "id": "sns-divida-2026-divida-total-fornecedores-externos-15",
+      "value": "31 806 955,95",
+      "reference_date": "2026-07"
+    },
+    {
+      "id": "sns-divida-2026-divida-total-fornecedores-externos-16",
+      "value": "20 181 346,6",
+      "reference_date": "2026-07"
+    },
+    {
+      "id": "sns-divida-2026-divida-total-fornecedores-externos-17",
+      "value": "20 661 034,89",
+      "reference_date": "2026-07"
+    },
+    {
+      "id": "sns-divida-2026-divida-total-fornecedores-externos-18",
+      "value": "17 789 083,51",
+      "reference_date": "2026-07"
+    },
+    {
+      "id": "sns-divida-2026-divida-total-fornecedores-externos-19",
+      "value": "27 373 779,79",
+      "reference_date": "2026-07"
+    },
+    {
+      "id": "sns-divida-2026-divida-total-fornecedores-externos-2",
+      "value": "0,0",
+      "reference_date": "2026-07"
+    },
+    {
+      "id": "sns-divida-2026-divida-total-fornecedores-externos-20",
+      "value": "21 143 744,3",
+      "reference_date": "2026-07"
+    },
+    {
+      "id": "sns-divida-2026-divida-total-fornecedores-externos-21",
+      "value": "33 004 212,74",
+      "reference_date": "2026-07"
+    },
+    {
+      "id": "sns-divida-2026-divida-total-fornecedores-externos-22",
+      "value": "38 312 955,25",
+      "reference_date": "2026-07"
+    },
+    {
+      "id": "sns-divida-2026-divida-total-fornecedores-externos-23",
+      "value": "8 023 968,96",
+      "reference_date": "2026-07"
+    },
+    {
+      "id": "sns-divida-2026-divida-total-fornecedores-externos-24",
+      "value": "48 372 856,2",
+      "reference_date": "2026-07"
+    },
+    {
+      "id": "sns-divida-2026-divida-total-fornecedores-externos-25",
+      "value": "15 182 620,38",
+      "reference_date": "2026-07"
+    },
+    {
+      "id": "sns-divida-2026-divida-total-fornecedores-externos-26",
+      "value": "121 758 344,94",
+      "reference_date": "2026-07"
+    },
+    {
+      "id": "sns-divida-2026-divida-total-fornecedores-externos-27",
+      "value": "43 911 710,12",
+      "reference_date": "2026-07"
+    },
+    {
+      "id": "sns-divida-2026-divida-total-fornecedores-externos-28",
+      "value": "45 004 872,14",
+      "reference_date": "2026-07"
+    },
+    {
+      "id": "sns-divida-2026-divida-total-fornecedores-externos-29",
+      "value": "64 480 404,89",
+      "reference_date": "2026-07"
+    },
+    {
+      "id": "sns-divida-2026-divida-total-fornecedores-externos-3",
+      "value": "0,0",
+      "reference_date": "2026-07"
+    },
+    {
+      "id": "sns-divida-2026-divida-total-fornecedores-externos-30",
+      "value": "23 290 140,0",
+      "reference_date": "2026-07"
+    },
+    {
+      "id": "sns-divida-2026-divida-total-fornecedores-externos-31",
+      "value": "24 058 392,37",
+      "reference_date": "2026-07"
+    },
+    {
+      "id": "sns-divida-2026-divida-total-fornecedores-externos-32",
+      "value": "64 001 396,65",
+      "reference_date": "2026-07"
+    },
+    {
+      "id": "sns-divida-2026-divida-total-fornecedores-externos-33",
+      "value": "78 766 579,92",
+      "reference_date": "2026-07"
+    },
+    {
+      "id": "sns-divida-2026-divida-total-fornecedores-externos-34",
+      "value": "75 400 927,11",
+      "reference_date": "2026-07"
+    },
+    {
+      "id": "sns-divida-2026-divida-total-fornecedores-externos-35",
+      "value": "79 139 561,76",
+      "reference_date": "2026-07"
+    },
+    {
+      "id": "sns-divida-2026-divida-total-fornecedores-externos-36",
+      "value": "39 733 703,03",
+      "reference_date": "2026-07"
+    },
+    {
+      "id": "sns-divida-2026-divida-total-fornecedores-externos-37",
+      "value": "40 261 850,68",
+      "reference_date": "2026-07"
+    },
+    {
+      "id": "sns-divida-2026-divida-total-fornecedores-externos-38",
+      "value": "21 797 878,9",
+      "reference_date": "2026-07"
+    },
+    {
+      "id": "sns-divida-2026-divida-total-fornecedores-externos-39",
+      "value": "69 038 077,0",
+      "reference_date": "2026-07"
+    },
+    {
+      "id": "sns-divida-2026-divida-total-fornecedores-externos-4",
+      "value": "0,0",
+      "reference_date": "2026-07"
+    },
+    {
+      "id": "sns-divida-2026-divida-total-fornecedores-externos-40",
+      "value": "13 696 249,15",
+      "reference_date": "2026-07"
+    },
+    {
+      "id": "sns-divida-2026-divida-total-fornecedores-externos-41",
+      "value": "55 096 613,63",
+      "reference_date": "2026-07"
+    },
+    {
+      "id": "sns-divida-2026-divida-total-fornecedores-externos-42",
+      "value": "25 815 480,53",
+      "reference_date": "2026-07"
+    },
+    {
+      "id": "sns-divida-2026-divida-total-fornecedores-externos-43",
+      "value": "9 785 158,09",
+      "reference_date": "2026-07"
+    },
+    {
+      "id": "sns-divida-2026-divida-total-fornecedores-externos-44",
+      "value": "13 628 037,49",
+      "reference_date": "2026-07"
+    },
+    {
+      "id": "sns-divida-2026-divida-total-fornecedores-externos-45",
+      "value": "25 144 289,6",
+      "reference_date": "2026-07"
+    },
+    {
+      "id": "sns-divida-2026-divida-total-fornecedores-externos-46",
+      "value": "19 413 374,76",
+      "reference_date": "2026-07"
+    },
+    {
+      "id": "sns-divida-2026-divida-total-fornecedores-externos-47",
+      "value": "20 208 298,14",
+      "reference_date": "2026-07"
+    },
+    {
+      "id": "sns-divida-2026-divida-total-fornecedores-externos-48",
+      "value": "18 944 991,03",
+      "reference_date": "2026-07"
+    },
+    {
+      "id": "sns-divida-2026-divida-total-fornecedores-externos-49",
+      "value": "24 712 004,94",
+      "reference_date": "2026-07"
+    },
+    {
+      "id": "sns-divida-2026-divida-total-fornecedores-externos-5",
+      "value": "0,0",
+      "reference_date": "2026-07"
+    },
+    {
+      "id": "sns-divida-2026-divida-total-fornecedores-externos-50",
+      "value": "30 543 294,73",
+      "reference_date": "2026-07"
+    },
+    {
+      "id": "sns-divida-2026-divida-total-fornecedores-externos-51",
+      "value": "19 182 076,49",
+      "reference_date": "2026-07"
+    },
+    {
+      "id": "sns-divida-2026-divida-total-fornecedores-externos-52",
+      "value": "10 679 203,53",
+      "reference_date": "2026-07"
+    },
+    {
+      "id": "sns-divida-2026-divida-total-fornecedores-externos-6",
+      "value": "51 048,46",
+      "reference_date": "2026-07"
+    },
+    {
+      "id": "sns-divida-2026-divida-total-fornecedores-externos-7",
+      "value": "1 125 164,8",
+      "reference_date": "2026-07"
+    },
+    {
+      "id": "sns-divida-2026-divida-total-fornecedores-externos-8",
+      "value": "11 417 286,29",
+      "reference_date": "2026-07"
+    },
+    {
+      "id": "sns-divida-2026-divida-total-fornecedores-externos-9",
+      "value": "1 668 007,55",
+      "reference_date": "2026-07"
+    },
+    {
+      "id": "sns-lista-cirurgia-2025-07",
+      "value": "268 645",
+      "reference_date": "2025-07"
+    },
+    {
+      "id": "sns-lista-cirurgia-2026-07",
+      "value": "284 210",
+      "reference_date": "2026-07"
+    },
+    {
+      "id": "sns-sem-medico-elegibilidade",
+      "value": "Utentes inscritos que cumprem os critérios de elegibilidade para atribuição de Médico de Família. Cálculo: utentes com registo atualizado e contacto com o SNS nos últimos cinco anos.",
+      "reference_date": "2026-08"
+    },
+    {
+      "id": "sns-sem-medico-serie-antiga-2025-06",
+      "value": "1 669 681",
+      "reference_date": "2025-06"
+    },
+    {
+      "id": "sns-sem-medico-serie-antiga-2026-06",
+      "value": "1 672 130",
+      "reference_date": "2026-06"
+    },
+    {
+      "id": "sns-sem-medico-serie-nova-2026-08",
+      "value": "1 362 294",
+      "reference_date": "2026-08"
+    },
+    {
+      "id": "utao-ppp-contingencias-natureza-2026",
+      "value": "São pretensões dos parceiros privados, e não encargos já reconhecidos; a sua concretização, total ou parcial, oneraria o saldo orçamental de anos futuros.",
+      "reference_date": "2026-10-19"
+    },
+    {
+      "id": "utao-risco-execucao-sns-2027",
+      "value": "Existe um risco de pressão orçamental associado à execução do Serviço Nacional de Saúde (SNS).",
+      "reference_date": "2026-10-19"
+    },
+    {
+      "id": "utao-saude-efetiva-2026-estimativa",
+      "value": "18 062",
+      "reference_date": "2026"
+    },
+    {
+      "id": "utao-saude-efetiva-2026-orcamento",
+      "value": "17 147",
+      "reference_date": "2026"
+    },
+    {
+      "id": "utao-saude-sem-prr-2027",
+      "value": "3,0",
+      "reference_date": "2026-10-19"
+    }
+  ],
+  "portas": {
+    "linhas_com_porta": 297,
+    "linhas_novas_com_porta": 148,
+    "novas": [
+      "der-infarmed-total-2025-jan-jul",
+      "der-infarmed-total-2026-jan-jul",
+      "der-infarmed-variacao-pct",
+      "der-prr-saude-contratado-numerico",
+      "der-prr-saude-marcos-completos",
+      "der-prr-saude-marcos-total",
+      "der-prr-saude-pago-numerico",
+      "der-prr-saude-por-pagar",
+      "der-prr-saude-por-pagar-pct",
+      "der-prr-saude-taxa-numerico",
+      "der-sns-cirurgias-variacao-pct",
+      "der-sns-consultas-csp-variacao-pct",
+      "der-sns-divida-fornecedores-2026-07",
+      "der-sns-lista-cirurgia-variacao-pct",
+      "dgo-atraso-45-p",
+      "dgo-regularizacao-ae",
+      "eurostat-be-phys",
+      "eurostat-el-phys",
+      "eurostat-pt-phys",
+      "infarmed-ambulatorio-2026-07-p5-acumulado-encargo",
+      "infarmed-ambulatorio-2026-07-p5-homologo-encargo",
+      "infarmed-ambulatorio-limitacao",
+      "infarmed-hospitalar-2026-07-p5-acumulado-encargo",
+      "infarmed-hospitalar-2026-07-p5-homologo-encargo",
+      "pe-brisa-minuta-ano",
+      "pe-brisa-periodo-imt",
+      "pe-brisa-prazo-minuta",
+      "pe-despacho-alargamentos",
+      "pe-despacho-braga",
+      "pe-despacho-comparticipacoes",
+      "pe-despacho-equilibrio",
+      "pe-despacho-investimentos-novos",
+      "pe-despacho-investimentos-previstos",
+      "pe-despacho-limites",
+      "pe-despacho-qualidade",
+      "pe-dl87a-apoio-retificado",
+      "pe-dl87a-descontos",
+      "pe-dl87a-financiamento",
+      "pe-dl87a-publicacao-ano",
+      "pe-oe-apoio-dl87a",
+      "pe-oe-beira-abolicao",
+      "pe-oe-riscos-nao-reconhecimento",
+      "pe-scut-trocos",
+      "pe-scut-vigencia",
+      "prr-complemento-p3-1-24-estado",
+      "prr-complemento-p3-1-3-estado",
+      "prr-complemento-p3-1-32-estado",
+      "prr-complemento-p3-1-33-estado",
+      "prr-complemento-p3-1-8-estado",
+      "prr-complemento-p4-1-1-estado",
+      "prr-complemento-p4-1-12-estado",
+      "prr-complemento-p4-1-2-estado",
+      "prr-complemento-p4-1-40-estado",
+      "prr-complemento-p4-1-41-estado",
+      "prr-complemento-p4-1-5-estado",
+      "prr-complemento-p5-1-11-estado",
+      "prr-complemento-p5-1-22-estado",
+      "prr-complemento-p5-1-28-estado",
+      "prr-complemento-p5-1-7-estado",
+      "prr-complemento-p5-1-9-estado",
+      "prr-complemento-p6-1-10-estado",
+      "prr-complemento-p6-1-37-estado",
+      "prr-complemento-p6-1-42-estado",
+      "prr-complemento-p7-1-34-estado",
+      "prr-complemento-p7-1-35-estado",
+      "prr-complemento-p7-1-36-estado",
+      "prr-complemento-p7-1-38-estado",
+      "prr-complemento-p7-1-39-estado",
+      "prr-complemento-p8-1-21-estado",
+      "prr-complemento-p8-1-25-estado",
+      "prr-complemento-p9-1-17-estado",
+      "prr-complemento-p9-1-18-estado",
+      "prr-complemento-p9-1-26-estado",
+      "prr-complemento-p9-1-30-estado",
+      "prr-complemento-p9-1-43-estado",
+      "prr-complemento-p9-1-44-estado",
+      "prr-marcos-metas-2025-p2-1-13-estado",
+      "prr-marcos-metas-2025-p2-1-20-estado",
+      "prr-marcos-metas-2025-p2-1-29-estado",
+      "prr-marcos-metas-2025-p2-1-4-estado",
+      "prr-marcos-metas-2025-p2-1-6-estado",
+      "prr-monitorizacao-20261014-p2-c01-contratado",
+      "prr-monitorizacao-20261014-p2-c01-pago",
+      "prr-monitorizacao-20261014-p2-c01-taxa",
+      "sns-cirurgias-2025-07",
+      "sns-cirurgias-2026-07",
+      "sns-consultas-csp-2025-08",
+      "sns-consultas-csp-2026-08",
+      "sns-consultas-csp-descricao",
+      "sns-divida-2026-divida-total-fornecedores-externos-0",
+      "sns-divida-2026-divida-total-fornecedores-externos-1",
+      "sns-divida-2026-divida-total-fornecedores-externos-10",
+      "sns-divida-2026-divida-total-fornecedores-externos-11",
+      "sns-divida-2026-divida-total-fornecedores-externos-12",
+      "sns-divida-2026-divida-total-fornecedores-externos-13",
+      "sns-divida-2026-divida-total-fornecedores-externos-14",
+      "sns-divida-2026-divida-total-fornecedores-externos-15",
+      "sns-divida-2026-divida-total-fornecedores-externos-16",
+      "sns-divida-2026-divida-total-fornecedores-externos-17",
+      "sns-divida-2026-divida-total-fornecedores-externos-18",
+      "sns-divida-2026-divida-total-fornecedores-externos-19",
+      "sns-divida-2026-divida-total-fornecedores-externos-2",
+      "sns-divida-2026-divida-total-fornecedores-externos-20",
+      "sns-divida-2026-divida-total-fornecedores-externos-21",
+      "sns-divida-2026-divida-total-fornecedores-externos-22",
+      "sns-divida-2026-divida-total-fornecedores-externos-23",
+      "sns-divida-2026-divida-total-fornecedores-externos-24",
+      "sns-divida-2026-divida-total-fornecedores-externos-25",
+      "sns-divida-2026-divida-total-fornecedores-externos-26",
+      "sns-divida-2026-divida-total-fornecedores-externos-27",
+      "sns-divida-2026-divida-total-fornecedores-externos-28",
+      "sns-divida-2026-divida-total-fornecedores-externos-29",
+      "sns-divida-2026-divida-total-fornecedores-externos-3",
+      "sns-divida-2026-divida-total-fornecedores-externos-30",
+      "sns-divida-2026-divida-total-fornecedores-externos-31",
+      "sns-divida-2026-divida-total-fornecedores-externos-32",
+      "sns-divida-2026-divida-total-fornecedores-externos-33",
+      "sns-divida-2026-divida-total-fornecedores-externos-34",
+      "sns-divida-2026-divida-total-fornecedores-externos-35",
+      "sns-divida-2026-divida-total-fornecedores-externos-36",
+      "sns-divida-2026-divida-total-fornecedores-externos-37",
+      "sns-divida-2026-divida-total-fornecedores-externos-38",
+      "sns-divida-2026-divida-total-fornecedores-externos-39",
+      "sns-divida-2026-divida-total-fornecedores-externos-4",
+      "sns-divida-2026-divida-total-fornecedores-externos-40",
+      "sns-divida-2026-divida-total-fornecedores-externos-41",
+      "sns-divida-2026-divida-total-fornecedores-externos-42",
+      "sns-divida-2026-divida-total-fornecedores-externos-43",
+      "sns-divida-2026-divida-total-fornecedores-externos-44",
+      "sns-divida-2026-divida-total-fornecedores-externos-45",
+      "sns-divida-2026-divida-total-fornecedores-externos-46",
+      "sns-divida-2026-divida-total-fornecedores-externos-47",
+      "sns-divida-2026-divida-total-fornecedores-externos-48",
+      "sns-divida-2026-divida-total-fornecedores-externos-49",
+      "sns-divida-2026-divida-total-fornecedores-externos-5",
+      "sns-divida-2026-divida-total-fornecedores-externos-50",
+      "sns-divida-2026-divida-total-fornecedores-externos-51",
+      "sns-divida-2026-divida-total-fornecedores-externos-52",
+      "sns-divida-2026-divida-total-fornecedores-externos-6",
+      "sns-divida-2026-divida-total-fornecedores-externos-7",
+      "sns-divida-2026-divida-total-fornecedores-externos-8",
+      "sns-divida-2026-divida-total-fornecedores-externos-9",
+      "sns-lista-cirurgia-2025-07",
+      "sns-lista-cirurgia-2026-07",
+      "sns-sem-medico-elegibilidade",
+      "sns-sem-medico-serie-antiga-2025-06",
+      "sns-sem-medico-serie-antiga-2026-06",
+      "sns-sem-medico-serie-nova-2026-08"
+    ]
+  }
+}

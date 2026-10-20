@@ -75,7 +75,7 @@ import { copiaSemLeitura, estadoDaCopia } from '../lib/estado-da-copia.mjs';
 import { ANFITRIOES_SEM_RESPOSTA } from '../data/fontes.mjs';
 import { atrasoDaLinha } from '../lib/frescura.mjs';
 import { dataDaCasa } from '../lib/datas.mjs';
-import { valorImpressoDoPainelConferido } from '../lib/prova-efeitos.mjs';
+import { valorImpressoDoPainelConferido, textoDocumentalConferido } from '../lib/prova-efeitos.mjs';
 import { NOMES_V2E } from '../data/nomes-v2e.mjs';
 import { proximaConferenciaDaLinha, ancoraDoEvento } from '../lib/agenda.mjs';
 import { nomeOficial, reguaDaMedida, temRegua, evolucaoJd1 } from '../lib/enquadramento.mjs';
@@ -546,7 +546,7 @@ const ficha = [
   {
     k: s.prov.edicao,
     campo: 'document.edition',
-    valor: claim.document?.edition ?? null,
+    valor: /^\d{4}-\d{2}(?:\/\d{4}-\d{2})?$/.test(claim.document?.edition ?? '') && claim.document?.edition === (claim.period ?? claim.reference_date) ? null : claim.document?.edition ?? null,
     lingua: linguaDaEdicao(claim.document?.edition ?? null, lang),
   },
   /* Onde no documento está o excerto. Opcional: a maior parte das fontes é uma
@@ -659,7 +659,7 @@ const atribuicaoPecas = [
         porta: typeof claim.document?.url === 'string' ? claim.document.url : null,
       }
     : null,
-  presente(claim.document?.edition) && !(typeof claim.document.edition === 'string' && /^\d{4}$/.test(claim.document.edition) && String(claim.document.title ?? '').split(/\D+/).includes(claim.document.edition))
+  presente(claim.document?.edition) && !(/^\d{4}-\d{2}(?:\/\d{4}-\d{2})?$/.test(claim.document.edition) && claim.document.edition === (claim.period ?? claim.reference_date)) && !(typeof claim.document.edition === 'string' && /^\d{4}$/.test(claim.document.edition) && String(claim.document.title ?? '').split(/\D+/).includes(claim.document.edition))
     ? {
         k: null,
         campo: 'document.edition',
@@ -757,7 +757,7 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
     </h1>
     {nomeDaFonte && (
       <p class="linha-nome-da-fonte">
-        <span class="linha-campo-k">{s.livro.linha.nomeNaFonteK}</span>{' '}
+        <span class="linha-campo-k">{nomeDaMedidaV2e ? (lang === 'pt' ? 'A medida e o documento na fonte' : 'The measure and the source document') : s.livro.linha.nomeNaFonteK}</span>{' '}
         {nomeDaMedidaV2e && <><span data-nome="projeto" data-de-linha={id}>{nomeDaMedidaV2e}</span>{' · '}</>}
         {'«'}
         {/* O TÍTULO ABRE O DOCUMENTO QUANDO A LINHA DIZ ONDE ELE ESTÁ (a regra do F1.4, Major 9): o mesmo nome não fica
@@ -807,7 +807,7 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
           texto do título era «175pessoas»: um leitor de ecrã e quem copia o
           título liam uma palavra só. O espaço escreve-se aqui, e a célula do
           `gate:html` exige-o em todas as páginas de linha. */}
-      <Fragment slot="sufixo">{!unidadeNoValor && <>{' '}
+      <Fragment slot="sufixo">{!unidadeNoValor && !textoDocumentalConferido(claim) && <>{' '}
       <CampoDaLinha
         id={id}
         campo="unit"

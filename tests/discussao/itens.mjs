@@ -37,7 +37,7 @@ export function unidadesDepoisDoSelo(root){
    if(!s.selo)continue;
    let depois='';
    for(const seguinte of segmentos.slice(i+1)){if(seguinte.selo)break;depois+=seguinte.texto??'';if(depois.trim())break;}
-   if(/^\s*(?:milh(?:ão|ões)(?=\s|[,.;:]|$)|millions?(?=\s|[,.;:]|$)|euros?(?=\s|[,.;:]|$)|[%€])/iu.test(depois)){
+   if(/^\s*(?:(?:mil\s+)?milh(?:ão|ões)(?=\s|[,.;:]|$)|pontos\s+percentuais(?=\s|[,.;:]|$)|p\.p\.|percentage\s+points(?=\s|[,.;:]|$)|billions?(?=\s|[,.;:]|$)|millions?(?=\s|[,.;:]|$)|euros?(?=\s|[,.;:]|$)|[%€])/iu.test(depois)){
     desvios.push({paragrafo:p.getAttribute('data-discussao-paragrafo'),recibo:s.selo.getAttribute('href'),depois:normal(depois)});
    }
   }
@@ -50,6 +50,12 @@ export function conferirSelosInline(root,lang,linhas=loadClaims()){
   const tokens=bloco.paragrafo?.[lang]??[];
   for(const [i,token] of tokens.entries()){
    if(!token?.selo)continue;
+   if(token.texto){
+    const par=root.querySelector(`[data-discussao="${item.slug}"] [data-discussao-paragrafo="seccoes[${si}].conteudo[${bi}].paragrafo"]`);
+    const a=par?.querySelector(`[data-discussao-recibo="${token.selo}"]`);
+    if(a?.getAttribute('href')!==recibo(token.selo,lang)||a?.text!==token.texto)erros.push(`V2E porta textual: ${lang} ${token.selo}`);
+    continue;
+   }
    const id=token.selo,c=linhas.get(id),caminho=`seccoes[${si}].conteudo[${bi}].paragrafo`;
    const par=root.querySelector(`[data-discussao="${item.slug}"] [data-discussao-paragrafo="${caminho}"]`);
    const selos=par?.querySelectorAll(`[data-discussao-selo="${id}"]`)??[],selo=selos[0];
@@ -63,8 +69,32 @@ export function conferirSelosInline(root,lang,linhas=loadClaims()){
  }
  return erros;
 }
+const UNIDADES_DO_MANDATO=['milhões de euros','mil milhões de euros','milhões','euros','%','pontos percentuais','p.p.','million euros','billion euros','million','percentage points'];
+export function conferirUnidadesNosDados(itens=ITENS){
+ const erros=[];
+ for(const item of itens)for(const sec of item.seccoes)for(const b of sec.conteudo)for(const lang of ['pt','en']){
+  const tokens=b.paragrafo?.[lang]??[];
+  for(const [i,t] of tokens.entries())if(t?.claim&&!t.sufixo&&typeof tokens[i+1]==='string'){
+   const seguinte=tokens[i+1].trimStart();
+   if(UNIDADES_DO_MANDATO.some(u=>seguinte===u||seguinte.startsWith(u+' ')||seguinte.startsWith(u+',')||seguinte.startsWith(u+';')||seguinte.startsWith(u+'.')))
+    erros.push(`V2E unidade fora do token: ${lang} ${t.claim}`);
+  }
+ }
+ return erros;
+}
+export function plantasDasUnidades(){
+ return UNIDADES_DO_MANDATO.map(unidade=>{
+  const copia=structuredClone(ITENS),tokens=copia[0].seccoes.flatMap(s=>s.conteudo).map(b=>b.paragrafo.pt).find(ts=>ts.some(t=>t?.claim&&t.sufixo));
+  const i=tokens.findIndex(t=>t?.claim&&t.sufixo);if(i<0)throw new Error('Planta sem token real');
+  tokens[i].sufixo=' '+unidade;
+  const antes=conferirUnidadesNosDados(copia);
+  delete tokens[i].sufixo;tokens.splice(i+1,0,' '+unidade+'; ');
+  const erros=conferirUnidadesNosDados(copia);
+  return {nome:'sufixo retirado numa cópia dos itens: '+unidade,claim:tokens[i].claim,mordeu:antes.length===0&&erros.some(e=>e.includes('V2E unidade fora do token')),queixa:erros[0]??null};
+ });
+}
 export function conferirDeclaracoes(itens=ITENS, linhas=loadClaims()) {
- const erros=[...conferirDerivacoes(linhas),...conferirEfeitos(linhas,itens)];
+ const erros=[...conferirUnidadesNosDados(itens),...conferirDerivacoes(linhas),...conferirEfeitos(linhas,itens)];
  if(itens.map(e=>e.slug).join('|')!=='saude-no-orcamento|parcerias-rodoviarias')erros.push('V2B itens: faltam os dois itens mandatados');
  const audit=JSON.parse(fs.readFileSync(path.join(raiz,'tests/discussao/palavras.json'),'utf8'));
  if(audit.explicacoes.some(e=>e.folhas.some(f=>f.partes.some(p=>p.apoios?.some(a=>a.campo==='note')))))erros.push('V2B apoio: note nunca apoia um item');
@@ -224,10 +254,7 @@ export function conferirIntegracao(root,lang,pagina,linhas=loadClaims(),{dist=pr
 }
 export function plantas(html,lang){
  const out=[];const run=(nome,mut,re)=>{for(const e of ITENS){const root=parse(html);mut(root.querySelector(`[data-discussao="${e.slug}"]`));const erros=conferirPagina(root,lang);out.push({nome,item:e.slug,lang,mordeu:erros.some(x=>re.test(x)),queixa:erros.find(x=>re.test(x))??null});}};
- const unidade=lang==='pt'?'milhões de euros':'million euros';
- const correta=`<main><p data-discussao-paragrafo="planta"><span class="claim"><span data-claim="planta">1</span><span class="claim-sufixo"> ${unidade}</span><a class="src-chip">fonte</a></span></p></main>`;
- const errada=correta.replace(`<span class="claim-sufixo"> ${unidade}</span>`,'').replace('</a></span>','</a></span> '+unidade);
- out.push({nome:'unidade depois do selo',lang,mordeu:unidadesDepoisDoSelo(parse(correta)).length===0&&unidadesDepoisDoSelo(parse(errada)).length===1});
+ out.push(...plantasDasUnidades().map(p=>({...p,lang})));
  const inlineIntacto=conferirSelosInline(parse(html),lang).length===0;
  const trimestreErrado=parse(html),trimestre=trimestreErrado.querySelector('#parcerias-rodoviarias [data-discussao-periodo="ppp-oe2027-riscos-pedidos-rodoviarios"] [data-de-campo="period"]');
  const periodoEsperado=lang==='pt'?'1.º trimestre de 2026':'1st quarter of 2026';

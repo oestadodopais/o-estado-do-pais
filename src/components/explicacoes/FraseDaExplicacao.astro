@@ -29,6 +29,7 @@ const renderizadas = partes.map((/** @type {any} */ p, /** @type {number} */ i) 
 {
   renderizadas.map((/** @type {any} */ p) => {
     if (typeof p === 'string') return <Fragment set:text={p} />;
+    if (p.selo && p.texto) return <a class="discussao-periodo" data-discussao-recibo={p.selo} href={routePath('linha', lang, {slug:p.selo})}>{p.texto}</a>;
     if (p.selo) return selos && <Provenance id={p.selo} lang={lang} inline={true} />;
     if (p.literal) {
       const l = p.literal;

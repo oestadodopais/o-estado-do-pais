@@ -47,9 +47,10 @@ apoiosSaude['1.9']=['prr-complemento-p4-1-40-estado'];
 apoiosPpp['1.6']=['alargamentos','investimentos-previstos','equilibrio','comparticipacoes','braga','investimentos-novos','limites','qualidade'].map(s=>'pe-despacho-'+s);
 apoiosPpp['3.0']=['pe-scut-vigencia','pe-dl87a-financiamento','pe-dl87a-apoio-retificado','pe-oe-apoio-dl87a','pe-brisa-prazo-minuta','pe-oe-riscos-nao-reconhecimento',...apoiosPpp['1.6']];
 apoiosPpp['5.0'].push('pe-oe-beira-abolicao');
+apoiosPpp['1.7']=['pe-scut-trocos'];
 descricoes['saude-no-orcamento'][1].push('Acesso e atividade do SNS, com as séries de médico de família e os períodos distintos.','Encargos com medicamentos e três medidas distintas de dívida e regularização.','Pagamentos do PRR e estados dos marcos, sem inferir execução física.');
 descricoes['saude-no-orcamento'][2].push('Composição orçamental ao lado de encargos com medicamentos, pagamentos do PRR e acesso ao serviço.');
-descricoes['parcerias-rodoviarias'][1].push('Prazo contratual e oito tarefas da negociação, com não reconhecimento dos pedidos.','Eliminação de portagens e apoio pela diferença entre a atualização limitada e a contratual, com a definição retificada, a salvaguarda dos descontos, o financiamento pelo Orçamento do Estado, a inclusão nos encargos brutos e a negociação da Beira Interior.');
+descricoes['parcerias-rodoviarias'][1].push('Prazo contratual e oito tarefas da negociação, com não reconhecimento dos pedidos.','Eliminação de portagens e apoio pela diferença entre a atualização limitada e a de referência do decreto, com a definição retificada, a salvaguarda dos descontos, o financiamento pelo Orçamento do Estado, a inclusão nos encargos brutos e a negociação da Beira Interior.');
 function tokens(x,out=[]){if(Array.isArray(x))x.forEach(y=>tokens(y,out));else if(x&&typeof x==='object'){for(const k of ['claim','literal','periodo','nome','selo'])if(typeof x[k]==='string')out.push({id:x[k],campo:k==='periodo'?(linhas.get(x[k])?.period?'period':'reference_date'):null});for(const [k,v] of Object.entries(x))if(!['claim','literal','periodo','nome','selo'].includes(k))tokens(v,out);}return out;}
 function apoio(id,campo){const l=linhas.get(id);if(!l)throw new Error('Linha ainda não exportada: '+id);campo??=l.derivation?'derivation':'excerpt';const literal=l[campo];if(typeof literal!=='string'||literal.trim().length<4)throw new Error('Campo sem apoio: '+id+'.'+campo);return {linha:id,campo,literal};}
 function partesDaComparacao(parte){
@@ -83,6 +84,13 @@ const auditoria={explicacoes:ITENS.map(e=>{
   const unicas=new Map();for(const r of refs){if(!permitidas.has(r.id))throw new Error('Apoio fora do inventário: '+r.id);const a=apoio(r.id,r.campo);unicas.set(a.linha+'.'+a.campo,a);}
   const sobre=sec===null?'Leitura editorial dos valores e dos perímetros que o título anuncia.':descricoes[e.slug][sec][par??0];
   const parte={pt:f.pt,en:f.en,classe:'leitura',sobre,apoios:[...unicas.values()]};
+  if(e.slug==='parcerias-rodoviarias'&&chave==='1.7'&&f.pt.includes('sete autoestradas')){
+   const literal=linhas.get('pe-scut-trocos').excerpt;
+   const alineas=[...literal.matchAll(/(?:^|\s)([a-g])\)/g)].map(m=>m[1]);
+   if(alineas.join('')!=='abcdefg')throw new Error('V2EC: sete sem as alíneas a) a g)');
+   parte.sobre='Sete é a contagem conferida das alíneas a) a g) do excerto de pe-scut-trocos; cada alínea enumera uma autoestrada.';
+   parte.apoios=[apoio('pe-scut-trocos','excerpt')];
+  }
   return {...f,partes:e.slug==='saude-no-orcamento'&&chave==='2.2'?partesDaComparacao(parte):[parte]};
  })};
 })};

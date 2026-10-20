@@ -26,6 +26,10 @@ reference_date: "2023"
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
 excerpt: "«1 — O apoio é assegurado através de um pagamento do Estado, a entregar às concessionárias, em complemento do pagamento das tarifas e taxas de portagem realizado pelos utilizadores, no montante correspondente à diferença entre as tarifas e taxas de portagem que resultariam da aplicação de um coeficiente de atualização para o ano de 2023 de 1,077, equivalente a um aumento de 7,7 %, e as tarifas e taxas de portagem que resultam da aplicação do n.º 1 do artigo anterior.»"
 
+# Ressalva publicada da casa, conferida no motor, nas duas línguas.
+ressalva: "Redação da Declaração de Retificação n.º 2/2023, alojada com recibo e avaliação de direitos."
+ressalva_en: "Wording of Rectification Declaration No. 2/2023, preserved with its request receipt and rights assessment."
+
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null
 derivation_en: null

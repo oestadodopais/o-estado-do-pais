@@ -1,0 +1,71 @@
+{
+  "erros": [],
+  "plantas": [
+    {
+      "nome": "sufixo retirado numa cópia dos itens: milhões de euros",
+      "claim": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "mordeu": true,
+      "queixa": "V2E unidade fora do token: pt oe-2027-saude-despesa-total-consolidada-variacao"
+    },
+    {
+      "nome": "sufixo retirado numa cópia dos itens: mil milhões de euros",
+      "claim": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "mordeu": true,
+      "queixa": "V2E unidade fora do token: pt oe-2027-saude-despesa-total-consolidada-variacao"
+    },
+    {
+      "nome": "sufixo retirado numa cópia dos itens: milhões",
+      "claim": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "mordeu": true,
+      "queixa": "V2E unidade fora do token: pt oe-2027-saude-despesa-total-consolidada-variacao"
+    },
+    {
+      "nome": "sufixo retirado numa cópia dos itens: euros",
+      "claim": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "mordeu": true,
+      "queixa": "V2E unidade fora do token: pt oe-2027-saude-despesa-total-consolidada-variacao"
+    },
+    {
+      "nome": "sufixo retirado numa cópia dos itens: %",
+      "claim": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "mordeu": true,
+      "queixa": "V2E unidade fora do token: pt oe-2027-saude-despesa-total-consolidada-variacao"
+    },
+    {
+      "nome": "sufixo retirado numa cópia dos itens: pontos percentuais",
+      "claim": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "mordeu": true,
+      "queixa": "V2E unidade fora do token: pt oe-2027-saude-despesa-total-consolidada-variacao"
+    },
+    {
+      "nome": "sufixo retirado numa cópia dos itens: p.p.",
+      "claim": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "mordeu": true,
+      "queixa": "V2E unidade fora do token: pt oe-2027-saude-despesa-total-consolidada-variacao"
+    },
+    {
+      "nome": "sufixo retirado numa cópia dos itens: million euros",
+      "claim": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "mordeu": true,
+      "queixa": "V2E unidade fora do token: pt oe-2027-saude-despesa-total-consolidada-variacao"
+    },
+    {
+      "nome": "sufixo retirado numa cópia dos itens: billion euros",
+      "claim": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "mordeu": true,
+      "queixa": "V2E unidade fora do token: pt oe-2027-saude-despesa-total-consolidada-variacao"
+    },
+    {
+      "nome": "sufixo retirado numa cópia dos itens: million",
+      "claim": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "mordeu": true,
+      "queixa": "V2E unidade fora do token: pt oe-2027-saude-despesa-total-consolidada-variacao"
+    },
+    {
+      "nome": "sufixo retirado numa cópia dos itens: percentage points",
+      "claim": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "mordeu": true,
+      "queixa": "V2E unidade fora do token: pt oe-2027-saude-despesa-total-consolidada-variacao"
+    }
+  ]
+}

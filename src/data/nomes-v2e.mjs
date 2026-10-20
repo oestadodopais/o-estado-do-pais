@@ -618,23 +618,23 @@ export const NOMES_V2E = {
   },
   "prr-marcos-metas-2025-p2-1-29-estado": {
     "pt": "Marco ou meta 1.29: Implantação do sistema de classificação, do perfil funcional e do sistema de referenciação dos utentes para o modelo regional de cuidados continuados integrados da Madeira: Estado",
-    "en": "Milestone or target 1.29: Health milestone 1.29: Status"
+    "en": "Milestone or target 1.29: Implementation of the classification system, functional profile and user referral system for Madeira's regional integrated continuing care model: Status"
   },
   "prr-marcos-metas-2025-p2-1-4-estado": {
     "pt": "Marco ou meta 1.4: Entrada em vigor do novo Decreto-Lei de Saúde Mental, que estabelecerá os princípios para a organização dos cuidados de saúde mental: Estado",
-    "en": "Milestone or target 1.4: Health milestone 1.4: Status"
+    "en": "Milestone or target 1.4: Entry into force of the new Mental Health Decree-Law establishing the principles for the organisation of mental health care: Status"
   },
   "prr-marcos-metas-2025-p2-1-13-estado": {
     "pt": "Marco ou meta 1.13: Entrada em vigor dos novos termos para a referenciação de episódios de urgência avaliados como brancos, azuis ou verdes nos serviços de urgência hospitalar para outros tipos de serviços de saúde, incluindo cuidados de saúde primários: Estado",
-    "en": "Milestone or target 1.13: Health milestone 1.13: Status"
+    "en": "Milestone or target 1.13: Entry into force of new terms for referring emergency episodes triaged as white, blue or green in hospital emergency departments to other types of health services, including primary care: Status"
   },
   "prr-marcos-metas-2025-p2-1-20-estado": {
     "pt": "Marco ou meta 1.20: Entrada em vigor do regulamento relativo à atribuição de apoios financeiros pelas Administrações Regionais de Saúde: Estado",
-    "en": "Milestone or target 1.20: Health milestone 1.20: Status"
+    "en": "Milestone or target 1.20: Entry into force of the regulation on financial support awarded by Regional Health Administrations: Status"
   },
   "prr-marcos-metas-2025-p2-1-6-estado": {
     "pt": "Marco ou meta 1.6: Entrada em vigor do novo modelo de contratos de gestão: Estado",
-    "en": "Milestone or target 1.6: Health milestone 1.6: Status"
+    "en": "Milestone or target 1.6: Entry into force of the new management contract model: Status"
   },
   "sns-sem-medico-elegibilidade": {
     "pt": "Elegibilidade para atribuição de médico de família",

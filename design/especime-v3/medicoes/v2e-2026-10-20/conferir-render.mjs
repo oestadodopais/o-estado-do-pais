@@ -8,7 +8,7 @@ import {conferirRecibosDosEfeitos} from '../../../../tests/discussao/efeitos.mjs
 import {unidadesDepoisDoSelo,conferirSelosInline} from '../../../../tests/discussao/itens.mjs';
 import {ITENS} from '../../../../src/data/discussao.mjs';
 import {loadClaims} from '../../../../src/lib/ledger.mjs';
-const pasta=new URL('./b/',import.meta.url);
+const pasta=new URL(process.env.OEDP_MEDICAO ?? './b/',import.meta.url);
 const esperado=JSON.parse(fs.readFileSync(new URL('frases-e-portas.json',pasta)));
 const norm=s=>s.replace(/\s+/g,' ').trim();
 const sha=s=>createHash('sha256').update(s).digest('hex');

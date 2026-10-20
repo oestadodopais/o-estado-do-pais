@@ -188,6 +188,11 @@ export function folhasDaExplicacao(e) {
       out.push({caminho: `${c}.termo`, pt: a.termo, en: b.termo, ramo});
       return;
     }
+    if ('selo' in a && a.texto !== undefined) {
+      if (a.selo !== b.selo) throw new Error(`X1 · portas diferentes em ${c}`);
+      out.push({caminho:`${c}.texto`,pt:a.texto,en:b.texto,ramo});
+      return;
+    }
     if ('claim' in a) {
       if (a.claim !== b.claim) throw new Error(`X1 · as duas edições citam linhas diferentes em ${c}`);
       if (typeof a.sufixo === 'string') out.push({ caminho: `${c}.sufixo`, pt: a.sufixo, en: b.sufixo, ramo });
@@ -674,7 +679,7 @@ function textoAqui(partes, lang, linhas) {
       return p.frase + r.map((x, k) => `${k === 0 ? '' : k === r.length - 1 ? p.ultimo : p.entre}${p.antes}${nomeAqui(x.id, lang) ?? ''}${p.abre}${valor(x.id, k === 0 ? p.sufixo : '')}${p.fecha}`).join('');
     }
     if ('periodo' in p) return periodoAqui(String(linhas.get(p.periodo)?.period ?? linhas.get(p.periodo)?.reference_date ?? ''), lang) ?? '';
-    if ('selo' in p) return '';
+    if ('selo' in p) return p.texto ?? '';
     if ('nome' in p) {
       const n = nomeAqui(p.nome, lang) ?? '';
       return p.inicial ? n.charAt(0).toUpperCase() + n.slice(1) : n;

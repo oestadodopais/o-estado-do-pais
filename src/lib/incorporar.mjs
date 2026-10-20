@@ -31,7 +31,7 @@ export function dadosDaIncorporacao(c, lang) {
   const nome = nomeNoRecibo(c.id, lang).texto;
   const lugar = lugarDaIncorporacao(c, lang);
   const unidade = unidadeDaLinha(c.unit, lang);
-  const unidadeNoValor = valorImpressoDoPainelConferido(c.id, c.value);
+  const unidadeNoValor = valorImpressoDoPainelConferido(c.id, c.value) || textoDocumentalConferido(c);
   const correcoes = (c.corrections ?? []).filter((/** @type {any} */ x) =>
     x.kind !== 'proveniencia' && x.new_value === c.value).sort((/** @type {any} */ a, /** @type {any} */ b) => b.date.localeCompare(a.date));
   const atualizada = correcoes[0]?.date ?? '';

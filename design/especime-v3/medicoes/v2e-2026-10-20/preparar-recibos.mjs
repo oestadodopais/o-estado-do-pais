@@ -8,13 +8,13 @@ const nomes={},familias={},aud=JSON.parse(fs.readFileSync('tests/cartao/leituras
 const descriptions=[
  [/^sns-sem-medico-elegibilidade$/, 'É a definição de elegibilidade para atribuição de médico de família no catálogo do SNS.', 'It is the NHS catalogue definition of eligibility for assignment of a family doctor.'],
  [/^sns-consultas-csp-descricao$/, 'É a ressalva da fonte sobre a exclusão do Vitacare e o carácter provisório do último mês.', 'It is the source caveat about the exclusion of Vitacare and the provisional latest month.'],
- [/^sns-catalogo-acumulados$/, 'É a definição temporal dos valores acumulados no catálogo do SNS.', 'It is the temporal definition of cumulative values in the NHS catalogue.'],
+ [/^sns-catalogo-acumulados$/, 'É a descrição da cobertura temporal do conjunto no catálogo do SNS.', 'It is the description of the dataset’s temporal coverage in the NHS catalogue.'],
  [/^sns-sem-medico-serie-nova/, 'Conta os utentes elegíveis inscritos sem médico de família atribuído, segundo as regras da nova série.', 'Counts eligible registered users without an assigned family doctor, under the rules of the new series.'],
  [/^pe-dl87a-publicacao-ano$/, 'É a data do cabeçalho de publicação do decreto-lei sobre a atualização das portagens.', 'It is the publication header date of the decree-law on the toll update.'],
  [/^pe-brisa-minuta-ano$/, 'É a data de publicação da minuta do contrato de concessão Brisa.', 'It is the publication date of the Brisa concession draft contract.'],
  [/^pe-dl87a-financiamento$/, 'É a regra do financiamento do apoio pelo Orçamento do Estado, processado pela Direção-Geral do Tesouro e Finanças.', 'It is the rule for financing support through the State Budget, processed by the Directorate-General for Treasury and Finance.'],
- [/^pe-dl87a-apoio-retificado$/, 'É a definição do apoio correspondente à diferença entre a atualização contratual das portagens e a atualização limitada, na redação retificada.', 'It is the definition of support covering the difference between the contractual and capped toll updates, in the rectified wording.'],
- [/^pe-dl87a-apoio$/, 'É a definição do apoio pela diferença entre a atualização limitada das portagens e a contratual, na versão original do diploma.', 'It is the definition of support covering the difference between capped and contractual toll updates, in the original decree.'],
+ [/^pe-dl87a-apoio-retificado$/, 'É a definição do apoio correspondente à diferença entre a atualização de referência do decreto e a atualização limitada das portagens, na redação retificada.', 'It is the definition of support covering the difference between the decree’s reference and capped toll updates, in the rectified wording.'],
+ [/^pe-dl87a-apoio$/, 'É a definição do apoio pela diferença entre a atualização limitada das portagens e a de referência do decreto, na versão original do diploma.', 'It is the definition of support covering the difference between capped toll updates and the decree’s reference update, in the original decree.'],
  [/^pe-dl87a-descontos$/, 'É a disposição que preserva os regimes de descontos em vigor.', 'It is the provision preserving existing discount schemes.'],
 
  [/^sns-sem-medico/, 'Conta os utentes inscritos sem médico de família atribuído, na série indicada.', 'Counts registered users without an assigned family doctor, in the indicated series.'],
@@ -43,7 +43,8 @@ const descriptions=[
  [/^pe-dl87a-atualizacao/, 'É a atualização das tarifas e taxas de portagem fixada pelo diploma.', 'It is the toll rate update set by the decree.'],
  [/^pe-dl87a-efeitos/, 'É a data em que a atualização das tarifas e taxas de portagem produz efeitos.', 'It is the date when the toll rate update takes effect.'],
  [/^pe-tc15-/, 'É o excerto histórico do Tribunal de Contas sobre as parcerias e as compensações contingentes.', 'It is the historical Court of Auditors excerpt on partnerships and contingent compensation.'],
- [/^pe-oe-/, 'É o excerto do relatório do Orçamento sobre os riscos das parcerias rodoviárias.', 'It is the Budget report excerpt on road partnership risks.'],
+ [/^pe-oe-beira-abolicao$/, 'É a passagem da parte das negociações do capítulo das parcerias sobre o pedido da concessionária da Beira Interior ligado à eliminação das portagens.', 'It is the passage from the negotiations part of the partnerships chapter about the Beira Interior concessionaire’s claim linked to the toll abolition.'],
+ [/^pe-oe-/,  'É o excerto do relatório do Orçamento sobre os riscos das parcerias rodoviárias.', 'It is the Budget report excerpt on road partnership risks.'],
 ];
 const derivedDescriptions={
  change_pct:['É a variação percentual face ao período homólogo, refeita das componentes identificadas.','It is the percentage change against the corresponding period, recalculated from the identified components.'],

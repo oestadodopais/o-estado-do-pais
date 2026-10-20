@@ -7914,10 +7914,10 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o excerto do relatório do Orçamento sobre os riscos das parcerias rodoviárias."
+        "É a passagem da parte das negociações do capítulo das parcerias sobre o pedido da concessionária da Beira Interior ligado à eliminação das portagens."
       ],
       "en": [
-        "It is the Budget report excerpt on road partnership risks."
+        "It is the passage from the negotiations part of the partnerships chapter about the Beira Interior concessionaire’s claim linked to the toll abolition."
       ]
     }
   },
@@ -8096,10 +8096,10 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a definição do apoio pela diferença entre a atualização limitada das portagens e a contratual, na versão original do diploma."
+        "É a definição do apoio pela diferença entre a atualização limitada das portagens e a de referência do decreto, na versão original do diploma."
       ],
       "en": [
-        "It is the definition of support covering the difference between capped and contractual toll updates, in the original decree."
+        "It is the definition of support covering the difference between capped toll updates and the decree’s reference update, in the original decree."
       ]
     }
   },
@@ -8250,10 +8250,10 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a definição do apoio correspondente à diferença entre a atualização contratual das portagens e a atualização limitada, na redação retificada."
+        "É a definição do apoio correspondente à diferença entre a atualização de referência do decreto e a atualização limitada das portagens, na redação retificada."
       ],
       "en": [
-        "It is the definition of support covering the difference between the contractual and capped toll updates, in the rectified wording."
+        "It is the definition of support covering the difference between the decree’s reference and capped toll updates, in the rectified wording."
       ]
     }
   },
@@ -9258,10 +9258,10 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a definição temporal dos valores acumulados no catálogo do SNS."
+        "É a descrição da cobertura temporal do conjunto no catálogo do SNS."
       ],
       "en": [
-        "It is the temporal definition of cumulative values in the NHS catalogue."
+        "It is the description of the dataset’s temporal coverage in the NHS catalogue."
       ]
     }
   },

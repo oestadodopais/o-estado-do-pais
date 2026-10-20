@@ -84,7 +84,7 @@ export const FORMAS_DAS_FIGURAS = /** @type {const} */ (['barras-do-livro']);
 /**
  * @typedef {string
  *   | { claim: string, sufixo?: string }
- *   | { selo: string }
+ *   | { selo: string, texto?: string }
  *   | { literal: { id: string, campo: string, texto: string, lingua: string|null } }
  *   | { verbatim: string, texto: string }
  *   | { termo: string, lingua: string }
@@ -258,9 +258,9 @@ function resolver(partes, lang, onde, ctx) {
       return;
     }
     if (chave === 'selo') {
-      if (Object.keys(o).join(',') !== 'selo' || !hasClaim(o.selo)) throw defeito(aqui, 'selo sem linha válida.');
+      if (!['selo','selo,texto'].includes(Object.keys(o).sort().join(',')) || (o.texto !== undefined && (typeof o.texto !== 'string' || !o.texto.trim() || /\d/.test(o.texto))) || !hasClaim(o.selo)) throw defeito(aqui, 'selo sem linha válida.');
       ctx.linhas.add(o.selo);
-      out.push({selo:o.selo});
+      out.push({selo:o.selo,...(o.texto?{texto:o.texto}:{})});
       return;
     }
     if (chave === 'literal') {
@@ -432,7 +432,7 @@ export function resolverExplicacao(e, lang) {
 export function textoDosPedacosDaExplicacao(pedacos, lang) {
   return pedacos.map((p) => {
     if (typeof p === 'string') return p;
-    if ('selo' in p) return '';
+    if ('selo' in p) return p.texto ?? '';
     if ('literal' in p) return p.literal.texto;
     if ('verbatim' in p) return p.texto;
     if ('termo' in p) return p.termo;
