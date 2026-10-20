@@ -35,7 +35,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parse } from 'node-html-parser';
-import { loadClaims } from '../../src/lib/ledger.mjs';
+import { loadClaims, entradasDoRegisto } from '../../src/lib/ledger.mjs';
 import { MEDIDA_REUNIDA } from '../../src/lib/pais.mjs';
 import { BLOCOS_DA_PRIMEIRA_PAGINA } from '../../src/data/primeira-pagina.mjs';
 import { limiarDaLinha, nomeNaLista } from '../../src/lib/primeira-pagina.mjs';
@@ -80,6 +80,8 @@ export function semanaPelaCelula(linhas, fim) {
     if ((l.verifications ?? []).some((/** @type {any} */ v) => dentro(v?.date))) relidas += 1;
     const doDia = (l.corrections ?? []).map((/** @type {any} */ c, /** @type {number} */ n) => ({ c, n })).filter((/** @type {any} */ x) => dentro(x.c?.date));
     if (doDia.some((/** @type {any} */ x) => x.c.kind === 'proveniencia')) proveniencia += 1;
+    // A secção compara números; a correção textual permanece no registo.
+    if (l.afirmacao === true && l.unit === 'afirmação') continue;
     const deValor = doDia.filter((/** @type {any} */ x) => x.c.kind === 'correcao' || x.c.kind === 'atualizacao').sort((/** @type {any} */ a, /** @type {any} */ b) => a.c.date.localeCompare(b.c.date) || a.n - b.n);
     if (!deValor.length) continue;
     const p = deValor[0], u = deValor[deValor.length - 1];
@@ -257,6 +259,23 @@ export function provaNaCopiaPlantada(fim) {
     }
     const ok = JSON.stringify(r.contagens) === zero && JSON.stringify(c.contagens) === zero && r.mudancas.length === 0 && c.mudancas.length === 0 && iguais;
     plantas.push({ nome: `uma semana sem entrada nenhuma dentro da janela (${inicio} a ${fim})`, pediu: 'zero nas três contagens, nenhuma mudança, e a mesma primeira frase com nada relido e nada mudado', viu: `resolvedor ${JSON.stringify(r.contagens)}, célula ${JSON.stringify(c.contagens)}; ${frases.join(' · ')}`, mordeu: ok });
+  }
+  {
+    const id='utao-risco-execucao-sns-2027',l=structuredClone(base.get(id));
+    const valor=l.corrections.find((c)=>c.kind==='correcao');
+    l.corrections=[{...valor,date:fim}];l.verifications=[];
+    const m=new Map([[id,l]]),r=doResolvedor(m),c=semanaPelaCelula(m,fim);
+    const registo=entradasDoRegisto('correcao').find(x=>x.claimId===id&&x.old_value===valor.old_value&&x.new_value===valor.new_value);
+    const ok=Boolean(registo)&&r.mudancas.length===0&&c.mudancas.length===0&&r.formas.length===0&&c.formas.length===0;
+    plantas.push({nome:'correção textual permanece no registo sem virar movimento numérico',pediu:'registo com os dois textos e nenhuma subida, descida ou reformatação numérica',viu:`registo ${Boolean(registo)}, resolvedor ${r.mudancas.length}/${r.formas.length}, célula ${c.mudancas.length}/${c.formas.length}`,mordeu:ok});
+    l.verifications=[{date:fim,result:'igual',by:'planta',path:null}];
+    const rr=doResolvedor(m),cc=semanaPelaCelula(m,fim);
+    plantas.push({nome:'releitura textual não desaparece por excluir movimentos numéricos',pediu:'uma relida nos dois leitores',viu:`resolvedor ${rr.contagens.relidas}, célula ${cc.contagens.relidas}`,mordeu:rr.contagens.relidas===1&&cc.contagens.relidas===1});
+    for(const [campo,v] of [['afirmacao',false],['unit','%']]){
+      const copia=structuredClone(l);copia[campo]=v;
+      let recusada=false;try{doResolvedor(new Map([[id,copia]]));}catch(e){recusada=String(e).includes('não se lê como número');}
+      plantas.push({nome:`texto sem tipo textual completo (${campo})`,pediu:'recusa de valor não numérico',viu:String(recusada),mordeu:recusada});
+    }
   }
   for (const p of plantas) if (!p.mordeu) erros.push(`W1 · a planta «${p.nome}» pediu ${p.pediu} e viu ${p.viu}`);
   return { erros, plantas };
