@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-20T22:21:06+00:00",
+ "copia": "<pacote>",
+ "plantas": [
+  {
+   "id": "S1",
+   "ficheiro": "built/o-que-se-discute/index.html",
+   "descricao": "a contagem das autoestradas passa de sete para seis na página construída em português; a referência são as alíneas a) a g) do excerto de pe-scut-trocos e o apoio declarado na auditoria",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "33108f9f0f52342e12115afd0dfa3d6fb97c5e60419406a326ea6c9ed3fc1714",
+   "sha256_depois": "d2e53751db999cf29dabb8b1ca6040fcbed5529f4ae0adba10c6eda5572c8e66",
+   "contexto_antes": "a\" data-nonledger=\"data-da-linha\" data-de-linha=\"pe-scut-vigencia\" data-de-campo=\"reference_date\">01.01.2025</span></a> a lei eliminou as portagens em lanços e sublanços de sete autoestradas, que enumera (<a class=\"discussao-periodo\" data-discussao-recibo=\"pe-scut-trocos\" href=\"/livro-razao/pe-scut-trocos\">a lista</a>). Em <a class=\"discussao-perio",
+   "contexto_depois": "a\" data-nonledger=\"data-da-linha\" data-de-linha=\"pe-scut-vigencia\" data-de-campo=\"reference_date\">01.01.2025</span></a> a lei eliminou as portagens em lanços e sublanços de seis autoestradas, que enumera (<a class=\"discussao-periodo\" data-discussao-recibo=\"pe-scut-trocos\" href=\"/livro-razao/pe-scut-trocos\">a lista</a>). Em <a class=\"discussao-perio"
+  },
+  {
+   "id": "S4",
+   "ficheiro": "ledger/claims/der-sns-cirurgias-variacao-pct.yml",
+   "descricao": "a linha der-sns-cirurgias-variacao-pct.yml alterada numa cópia exportada (2026-01/2026-07…); a referência é a linha do motor no motor/diff.patch e o corpo alojado",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "9a5a9e11b2293397ecac20f6e5944e7b59dba41c54c03bb7f6ed660c03ffd81e",
+   "sha256_depois": "7d62bc8521c407eee3173bd17c5df6e2ba1b2e8ce491d533218e6d093ed95853",
+   "contexto_antes": "ncia. Em linhas derivadas fica a null: a proveniência é a das origens.\nsource: null\ndocument: null\nsource_url: null\naccess_date: null\nreference_date: \"2026-07\"\nperiod: \"2026-01/2026-07\"\n\n# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.\nexcerpt: null\n\n# Fontes secundárias da definição, com os recibos dos ficheiros alojados.",
+   "contexto_depois": "ncia. Em linhas derivadas fica a null: a proveniência é a das origens.\nsource: null\ndocument: null\nsource_url: null\naccess_date: null\nreference_date: \"2026-07\"\nperiod: \"2026-01/202670-\"\n\n# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.\nexcerpt: null\n\n# Fontes secundárias da definição, com os recibos dos ficheiros alojados."
+  },
+  {
+   "id": "S5",
+   "ficheiro": "motor/content/26 Saude e Parcerias Efeitos/ledger.json",
+   "descricao": "uma linha nova do livro do motor alterada (onze caracteres invertidos) na cópia do pacote; a referência é o corpo alojado",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
+   "sha256_depois": "6fd3ff3da0b3794fcb3ddfa7c22efc23cfe9c255a365a75ee2f14a1fb02f3938",
+   "contexto_antes": "\"id\": \"der-sns-cirurgias-variacao-pct\",\n      \"value\": \"-4,4\",\n      \"unit\": \"%\",\n      \"period\": \"2026-01/2026-07\",\n      \"reference_date\": \"2026-01/2026-07\",\n      \"excerpt\": \"( sns-cirurgias-2026-07 / sns-cirurgias-2025-07 - 1 ) * 100 = −4,4\",\n      \"source_excerpt\": \"( sns-cirurgias-2026-07 / sns-cirurgias-2025-07 - 1 ) * 100 = −4,4\",\n      \"locator\": \"Registos JSON 0,1,2,3,4,5,6,7,8,9,10,11,12,13,1",
+   "contexto_depois": "\"id\": \"der-sns-cirurgias-variacao-pct\",\n      \"value\": \"-4,4\",\n      \"unit\": \"%\",\n      \"period\": \"2026-01/2026-07\",\n      \"reference_date\": \"2026-01/2026-07\",\n      \"excerpt\": \"( sns-cirurgias-2026-07 / sns-cirurgias-2025-07 - 1 ) ,4− = 001 *4\",\n      \"source_excerpt\": \"( sns-cirurgias-2026-07 / sns-cirurgias-2025-07 - 1 ) * 100 = −4,4\",\n      \"locator\": \"Registos JSON 0,1,2,3,4,5,6,7,8,9,10,11,12,13,1"
+  },
+  {
+   "id": "S2",
+   "ficheiro": "built/en/under-discussion/index.html",
+   "descricao": "o valor mais baixo dos médicos por cem mil habitantes passa de 334,25 para 343,25 na página construída em inglês; a referência é a linha eurostat-be-phys e o corpo alojado do Eurostat",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "cc426bee3d988655705b727e5f4c46e0612793b67d15696574f1783994d0940c",
+   "sha256_depois": "ff2bbe680aa921fc3670c8b40878f046912bd20becbb8c3876536289d28d02b1",
+   "contexto_antes": "hys\" data-de-campo=\"reference_date\">2024</span></a>, between Belgium, with the lowest value among countries with data (<span class=\"claim claim-com-chip\"><span data-claim=\"eurostat-be-phys\" class=\"claim-value\">334,25</span><a class=\"src-chip\" href=\"/en/ledger/eurostat-be-phys\" data-nonledger=\"proveniencia\" data-selo-etiqueta=\"Eurostat\" title=\"Eurostat\"><span class=\"src-chip-",
+   "contexto_depois": "hys\" data-de-campo=\"reference_date\">2024</span></a>, between Belgium, with the lowest value among countries with data (<span class=\"claim claim-com-chip\"><span data-claim=\"eurostat-be-phys\" class=\"claim-value\">343,25</span><a class=\"src-chip\" href=\"/en/ledger/eurostat-be-phys\" data-nonledger=\"proveniencia\" data-selo-etiqueta=\"Eurostat\" title=\"Eurostat\"><span class=\"src-chip-"
+  },
+  {
+   "id": "S3",
+   "ficheiro": "built/o-que-se-discute/index.html",
+   "descricao": "a variação das cirurgias passa de −4,4 % para −4,9 % na primeira ocorrência da página construída em português; a referência é a derivada der-sns-cirurgias-variacao-pct e as suas componentes",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "d2e53751db999cf29dabb8b1ca6040fcbed5529f4ae0adba10c6eda5572c8e66",
+   "sha256_depois": "b659f671ec25f06533c34709441c7b88c3c4906ded689229dacd8b1ba3c4dd83",
+   "contexto_antes": "aúde\" title=\"Serviço Nacional de Saúde\"><span class=\"src-chip-texto\">fonte</span><span class=\"vh\"> · <span>Serviço Nacional de Saúde</span></span></a></span>, <span class=\"claim claim-com-chip\"><span data-claim=\"der-sns-cirurgias-variacao-pct\" class=\"claim-value\">−4,4</span><span class=\"claim-sufixo\"> %</span><a class=\"src-chip\" href=\"/livro-razao/der-sns-cirurgias-variacao-pct\" data-nonledger=\"proveniencia\" data-selo-etiquet",
+   "contexto_depois": "aúde\" title=\"Serviço Nacional de Saúde\"><span class=\"src-chip-texto\">fonte</span><span class=\"vh\"> · <span>Serviço Nacional de Saúde</span></span></a></span>, <span class=\"claim claim-com-chip\"><span data-claim=\"der-sns-cirurgias-variacao-pct\" class=\"claim-value\">−4,9</span><span class=\"claim-sufixo\"> %</span><a class=\"src-chip\" href=\"/livro-razao/der-sns-cirurgias-variacao-pct\" data-nonledger=\"proveniencia\" data-selo-etiquet"
+  }
+ ]
+}
