@@ -111,7 +111,7 @@ export const LEITURAS = {
         " anos."
       ],
       "en": [
-        "Net of inflation, the house price index in ",
+        "Net of inflation, the index of housing prices in ",
         {
           "ref": "2025"
         },

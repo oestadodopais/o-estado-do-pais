@@ -828,3 +828,5 @@ Seis declarações substituídas: comparação e opinião da Saúde nas duas edi
 | bloco | mudança | estado | nota |
 |---|---|---|---|
 | hb1 | Sinopse com os índices citados, rótulos do estudo e da área, contagens do livro e retirada das cadeias substituídas | por ler | Construção conferida nos tokens e no HTML; a leitura a frio pertence à passagem seguinte. |
+
+HB1-b, continuação de 20.10.2026: a construção com o estudo ligado à área retirou os três rótulos reativados a partir da construção anterior. Voltaram a retirados, com a razão. A sinopse inglesa diz «the index of housing prices» para distinguir a medida da autorreferência proibida. Estado da leitura a frio: por ler.
