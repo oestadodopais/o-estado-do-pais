@@ -406,7 +406,7 @@ function modeloDaLinha(id, lang) {
   const estado = figura ? (estadoDaMedida(claim, figura.limiar) ?? 'sem') : 'sem';
 
   const valores = [valorDaLinha(claim, 'value', lang)];
-  if (claim.unit) valores.push(valorDaLinha(claim, 'unit', lang));
+  if (claim.unit && !nomeDocumental) valores.push(valorDaLinha(claim, 'unit', lang));
   valores.push(valorDaLinha(claim, 'id', lang));
   if (claim.reference_date) valores.push(valorDaLinha(claim, 'reference_date', lang));
   if (claim.source) valores.push(valorDaLinha(claim, 'source', lang));

@@ -2,6 +2,9 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {parse} from 'node-html-parser';
+import {tituloDaLinha,descricaoDaLinha} from '../../src/lib/livro.mjs';
+import {modeloDoCartao} from '../../src/lib/cartoes.mjs';
+import {FAMILIAS_DAS_LINHAS} from '../../src/data/o-que-e-das-familias.mjs';
 import {textoDocumentalConferido,acumuladoConferido,nomeDoEfeitoConferido} from '../../src/lib/prova-efeitos.mjs';
 import {lugarDaIncorporacao} from '../../src/lib/lugar-da-incorporacao.mjs';
 import {conferirFormatoDaPagina} from '../inicio/formato-dos-numeros.mjs';
@@ -22,6 +25,12 @@ export function conferirEfeitos(linhas,itens){
   if(!c){erros.push(`V2E inventário: falta ${id}`);continue;}
   if(c.texto_documental&&!textoDocumentalConferido(c))erros.push(`V2E texto: ${id}`);
   if(c.period&&!acumuladoConferido(c))erros.push(`V2E acumulado: ${id}`);
+  if(c.texto_documental) for(const lang of ['pt','en']){
+   const nome=FAMILIAS_DAS_LINHAS[id]?.nome?.[lang],cartao=modeloDoCartao({tipo:'linha',id,lang});
+   if(!nome||!tituloDaLinha(c,lang).startsWith(nome+' · ')||!descricaoDaLinha(c,lang).includes(' · '+nome+' · '))erros.push(`V2E cabeçalho documental: ${id} ${lang}`);
+   if(cartao.manchete!==nome||cartao.valores.some(v=>v.campo==='unit'))erros.push(`V2E cartão documental: ${id} ${lang}`);
+  }
+
   if(id.startsWith('der-')){
    const ds=p.derivation,ids=ds.components.map(idSite),rs=ids.map(k=>linhas.get(k));
    if(rs.some(r=>!r)){erros.push(`V2E componentes: ${id}`);continue;}

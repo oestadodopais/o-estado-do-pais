@@ -96,9 +96,9 @@ const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 export const INVENTARIO_DECLARADO = path.join(RAIZ, 'design', 'especime-v3', 'rotulos', 'INVENTARIO.json');
 const LINHAS = loadClaims();
 /** O conjunto fechado OE1, conferido contra as linhas e contra cada edição construída. */
-const LINHAS_ESPERADAS = { oe1: 186, jd1: 15, v2a: 18, v2d: 142, ex3: 8 };
+const LINHAS_ESPERADAS = { oe1: 186, jd1: 15, v2a: 18, v2d: 142, v2e: 170, ex3: 8 };
 /** O estudo recebe outros blocos; a pertença vem do cruzamento de cada entrega. */
-const BLOCOS_DO_LIVRO = Object.fromEntries(['oe1', 'jd1', 'v2a', 'v2d', 'ex3'].map((bloco) => {
+const BLOCOS_DO_LIVRO = Object.fromEntries(['oe1', 'jd1', 'v2a', 'v2d', 'v2e', 'ex3'].map((bloco) => {
   const ids = new Set(Object.keys(JSON.parse(fs.readFileSync(path.join(RAIZ, 'ledger', 'cruzamentos', `${bloco}.json`), 'utf8')).rows));
   return [bloco, { ids, esperado: LINHAS_ESPERADAS[bloco] }];
 }));
@@ -155,7 +155,9 @@ function unidadeEsperada(id, lang) {
   if (casa) return { texto: norm(textoDosPedacos(casa[lang])), casa: true, aceite: true, de: 'declarada' };
   const linha = LINHAS.get(id);
   const u = String(linha?.unit ?? '');
-  const traduzida = lang === 'en' && Object.prototype.hasOwnProperty.call(UNIDADES, u) ? /** @type {Record<string, string>} */ (UNIDADES)[u] : u;
+  const traduzida = lang === 'pt' && u === 'Per hundred thousand inhabitants'
+      ? 'por cem mil habitantes'
+      : lang === 'en' && Object.prototype.hasOwnProperty.call(UNIDADES, u) ? /** @type {Record<string, string>} */ (UNIDADES)[u] : u;
   const emDivida = Object.prototype.hasOwnProperty.call(CARTOES_COM_A_UNIDADE_DA_LINHA_EM_DIVIDA, id);
   const aceite = Object.prototype.hasOwnProperty.call(UNIDADES_DA_LINHA_ACEITES_NUM_CARTAO, u) || emDivida;
   const portugues = lang === 'en' && Object.prototype.hasOwnProperty.call(UNIDADES_EM_PORTUGUES, u);
@@ -177,12 +179,14 @@ export function conferirUnidadesOe1(root, { rota, lang, contas }) {
     const bloco = blocoDaLinha(id);
     if (!bloco) return;
     const rotulo = bloco.toUpperCase();
-    if (linha?.study !== (['v2a', 'v2d'].includes(bloco) ? 'oe-2027' : 'oe-2026')) {
+    if (linha?.study !== (['v2a', 'v2d', 'v2e'].includes(bloco) ? 'oe-2027' : 'oe-2026')) {
       erros.push(`${rotulo}-unidade · ${rota} · ${id}: a linha do cruzamento não pertence ao estudo esperado`);
       return;
     }
     const u = String(linha.unit ?? '');
-    const traduzida = lang === 'en' && Object.prototype.hasOwnProperty.call(UNIDADES, u)
+    const traduzida = lang === 'pt' && u === 'Per hundred thousand inhabitants'
+      ? 'por cem mil habitantes'
+      : lang === 'en' && Object.prototype.hasOwnProperty.call(UNIDADES, u)
       ? /** @type {Record<string, string>} */ (UNIDADES)[u] : u;
     const esperada = norm(comAPalavra(traduzida));
     if (elementos.length !== 1) {
@@ -646,7 +650,7 @@ export function conferirConstrucao(dist) {
   if ((contas.ressalvas ?? 0) !== 2) erros.push(`R2-ressalva · a ressalva do recibo do salário mínimo foi conferida em ${contas.ressalvas ?? 0} página(s), e o recibo tem duas edições`);
   for (const [bloco, { ids, esperado }] of Object.entries(BLOCOS_DO_LIVRO)) {
     const rotulo = bloco.toUpperCase();
-    const presentes = [...ids].filter((id) => LINHAS.get(id)?.study === (['v2a', 'v2d'].includes(bloco) ? 'oe-2027' : 'oe-2026')).length;
+    const presentes = [...ids].filter((id) => LINHAS.get(id)?.study === (['v2a', 'v2d', 'v2e'].includes(bloco) ? 'oe-2027' : 'oe-2026')).length;
     if (!esperado || ids.size !== esperado || presentes !== esperado) erros.push(`${rotulo}-unidade · o livro tem ${presentes} linhas ${rotulo} e o conjunto fechado declara ${esperado}`);
     for (const lang of ['pt', 'en']) {
       if (contas[bloco].recibos[lang] !== esperado) erros.push(`${rotulo}-unidade · ${lang}: ${contas[bloco].recibos[lang]} recibos conferidos e o conjunto fechado declara ${esperado}`);
@@ -993,6 +997,27 @@ export function plantas(dist) {
       if (!item) return false;
       item.remove(); return true;
     }, new RegExp(`^V2D-unidade · /${rel}: o índice tem ${BLOCOS_DO_LIVRO.v2d.esperado - 1} entradas V2D e deve ter ${BLOCOS_DO_LIVRO.v2d.esperado}$`));
+  }
+  // V2-e: a unidade e a presença no índice são conferidas em ambas as edições.
+  for (const [lang, rel, unidade] of [['pt', 'livro-razao', 'milhões de euros'], ['en', 'en/ledger', 'million euros']]) {
+    const id = 'der-prr-saude-por-pagar';
+    planta(`v2e-unidade-trocada-${lang}`, 'unidade', `${rel}/${id}/index.html`, r => {
+      const u = r.querySelector('.linha-valor-unidade');
+      if (!u || visivel(u) !== unidade) return false;
+      u.set_content('%'); return true;
+    }, new RegExp(`^V2E-unidade · /${rel}/${id} · ${id}: a unidade diz «%»`));
+    planta(`v2e-entrada-retirada-${lang}`, 'contagem', `${rel}/index.html`, r => {
+      const item = r.querySelector(`.livro-item[data-linha-id="${id}"]`);
+      if (!item) return false;
+      item.remove(); return true;
+    }, new RegExp(`^V2E-unidade · /${rel}: o índice tem ${BLOCOS_DO_LIVRO.v2e.esperado - 1} entradas V2E e deve ter ${BLOCOS_DO_LIVRO.v2e.esperado}$`));
+  }
+  for (const [lang, rel] of [['pt', 'livro-razao'], ['en', 'en/ledger']]) {
+    const id = 'eurostat-pt-phys';
+    planta(`v2e-unidade-eurostat-trocada-${lang}`, 'unidade', `${rel}/${id}/index.html`, r => {
+      const u = r.querySelector('.linha-valor-unidade'); if (!u) return false;
+      u.set_content('por milhão de habitantes'); return true;
+    }, new RegExp(`^V2E-unidade · /${rel}/${id} · ${id}: a unidade diz`));
   }
   // JD1-b, achado 16: perder a entrada no cruzamento E no HTML nunca baixa a contagem esperada.
   {

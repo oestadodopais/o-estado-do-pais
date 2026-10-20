@@ -866,7 +866,8 @@ caso(
    igualdade passou de 24 a 25: a corrida com a lista nova e a igualdade velha
    recusou o caso, que é a prova de que ele morde num campo a mais como num a
    menos. */
-caso('CAMPOS/tamanho', true, CAMPOS.length === 33, 'os campos anteriores, a afirmação e o período declarado pela fonte.');
+caso('CAMPOS/tamanho', true, CAMPOS.length === 34, 'os campos anteriores, a afirmação, o período e o texto documental selado.');
+caso('CAMPOS/texto-documental', true, CAMPOS.includes('texto_documental'), 'O texto documental pertence ao formato conferido.');
 caso('CAMPOS/periodo', true, CAMPOS.includes('period') && new Set(CAMPOS).size === CAMPOS.length, 'o período existe uma vez, sem duplicar campos.');
 caso('CAMPOS/rp4n-h', true, CAMPOS.includes('access_date_kind') && CAMPOS.includes('name_source_en'), 'A data distingue alojamento de leitura e o localizador tem tradução própria.');
 caso('CAMPOS/rp4n-e', true, CAMPOS.includes('publication') && CAMPOS.includes('definition_sources'),

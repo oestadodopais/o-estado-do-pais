@@ -24,7 +24,7 @@ const descriptions=[
  [/^prr-(marcos|complemento)/, 'É o estado do marco ou meta identificado no nome, tal como consta do anexo anual.', 'It is the status of the milestone or target identified in the name, as listed in the annual annex.'],
  [/^eurostat-.*-phys/, 'É o número de médicos por cem mil habitantes no país e período da linha.', 'It is the number of physicians per hundred thousand inhabitants in the country and period of the row.'],
  [/^eurostat-.*-nrs/, 'É o número de enfermeiros por cem mil habitantes no país e período da linha.', 'It is the number of nurses per hundred thousand inhabitants in the country and period of the row.'],
- [/^oe2027-/, 'É o indicador ou compromisso assistencial escrito no relatório do Orçamento, sem meta quantitativa nesta linha.', 'It is the care indicator or commitment written in the Budget report, without a numerical target in this row.'],
+ [/^oe2027-/, 'É o objetivo ou compromisso assistencial escrito no relatório do Orçamento, sem meta quantitativa nesta linha.', 'It is the care objective or commitment written in the Budget report, without a numerical target in this row.'],
  [/^pe-despacho-/, 'É uma tarefa atribuída à comissão de negociação da concessão Brisa pelo despacho.', 'It is a task assigned by the order to the Brisa concession negotiating committee.'],
  [/^pe-brisa-vias/, 'São as vias abrangidas pela concessão Brisa na minuta do contrato.', 'These are the roads covered by the Brisa concession in the draft contract.'],
  [/^pe-brisa-/, 'É o prazo da concessão Brisa indicado no documento identificado na fonte.', 'It is the Brisa concession term stated in the document identified as the source.'],

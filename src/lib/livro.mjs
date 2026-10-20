@@ -17,6 +17,8 @@ import { routePath } from './routes.mjs';
 import { eDerivada, documentoDaLinha, provenienciaIncompleta } from './ledger.mjs';
 import { t } from '../i18n/strings.mjs';
 import { unidadeDaLinha } from '../i18n/unidades.mjs';
+import { textoDocumentalConferido } from './prova-efeitos.mjs';
+import { FAMILIAS_DAS_LINHAS } from '../data/o-que-e-das-familias.mjs';
 import { SITE_NAME } from '../../site.config.mjs';
 
 /**
@@ -79,16 +81,20 @@ export function valorComUnidade(claim, lang = null) {
   return `${claim.value} ${unidade}`;
 }
 
-/**
- * O título de uma página de linha: o valor, a unidade, a secção e a marca.
- * Sem prosa — é a linha a dizer o que é.
- *
- * @param {Linha} claim
- * @param {Lingua} lang
- */
+/** Os textos documentais têm nome curto no cabeçalho e transcrição no corpo.
+ * @param {Linha} claim @param {Lingua} lang */
+function mancheteDaLinha(claim, lang) {
+  if (!textoDocumentalConferido(claim)) return valorComUnidade(claim, lang);
+  const familias = /** @type {Record<string,{nome?:{pt:string,en:string}}>} */ (FAMILIAS_DAS_LINHAS);
+  const nome = familias[claim.id]?.nome?.[lang];
+  if (!nome || /\d/.test(nome)) throw new Error(`Falta o nome documental de ${claim.id}`);
+  return nome;
+}
+
+/** @param {Linha} claim @param {Lingua} lang */
 export function tituloDaLinha(claim, lang) {
   const s = t(lang);
-  return `${valorComUnidade(claim, lang)} · ${s.livro.eyebrow} · ${SITE_NAME}`;
+  return `${mancheteDaLinha(claim, lang)} · ${s.livro.eyebrow} · ${SITE_NAME}`;
 }
 
 /**
@@ -102,7 +108,7 @@ export function tituloDaLinha(claim, lang) {
  */
 export function descricaoDaLinha(claim, lang) {
   const s = t(lang);
-  const partes = [`${s.livro.linha.eyebrow} ${claim.id}`, valorComUnidade(claim, lang)];
+  const partes = [`${s.livro.linha.eyebrow} ${claim.id}`, mancheteDaLinha(claim, lang)];
 
   if (eDerivada(claim)) {
     partes.push(s.prov.naoPublicado);

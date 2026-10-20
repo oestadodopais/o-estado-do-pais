@@ -7004,10 +7004,10 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o indicador ou compromisso assistencial escrito no relatório do Orçamento, sem meta quantitativa nesta linha."
+        "É o objetivo ou compromisso assistencial escrito no relatório do Orçamento, sem meta quantitativa nesta linha."
       ],
       "en": [
-        "It is the care indicator or commitment written in the Budget report, without a numerical target in this row."
+        "It is the care objective or commitment written in the Budget report, without a numerical target in this row."
       ]
     }
   },
@@ -7018,10 +7018,10 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o indicador ou compromisso assistencial escrito no relatório do Orçamento, sem meta quantitativa nesta linha."
+        "É o objetivo ou compromisso assistencial escrito no relatório do Orçamento, sem meta quantitativa nesta linha."
       ],
       "en": [
-        "It is the care indicator or commitment written in the Budget report, without a numerical target in this row."
+        "It is the care objective or commitment written in the Budget report, without a numerical target in this row."
       ]
     }
   },
@@ -7032,10 +7032,10 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o indicador ou compromisso assistencial escrito no relatório do Orçamento, sem meta quantitativa nesta linha."
+        "É o objetivo ou compromisso assistencial escrito no relatório do Orçamento, sem meta quantitativa nesta linha."
       ],
       "en": [
-        "It is the care indicator or commitment written in the Budget report, without a numerical target in this row."
+        "It is the care objective or commitment written in the Budget report, without a numerical target in this row."
       ]
     }
   },

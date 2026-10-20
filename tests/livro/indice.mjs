@@ -514,12 +514,23 @@ function localizadorV2dConfere(onde, linha) {
     d.locator.startsWith(`Folha ${f[0]}; `));
 }
 
+// V2-e: a célula B68 dá o rótulo; AE68 dá o valor acumulado.
+const PROVAS_V2E = JSON.parse(fs.readFileSync(path.join(RAIZ, 'ledger/provas/v2e/provas.json'), 'utf8')).rows;
+function localizadorV2eConfere(onde, linha) {
+  if (linha?.id !== 'dgo-regularizacao-ae' || onde !== 'Folha 21 - Ef Temp AC+SS; célula B68') return false;
+  const p = PROVAS_V2E[linha.id], d = linha.document;
+  return linha.name === p.label && linha.period === p.period && linha.reference_date === '2026-08' &&
+    linha.excerpt === p.excerpt && linha.excerpt.includes(`B68: ${linha.name};`) &&
+    d?.title === p.document.title && d?.source_sha256 === p.document.source_sha256 &&
+    d?.locator === p.document.locator && d?.page === p.document.page;
+}
+
 /** @param {unknown} onde @param {ContextoDoLocalizador} [linha] @returns {boolean} */
 function localizadorConhecido(onde, linha) {
   return (
     typeof onde === 'string' &&
     onde.trim() !== '' &&
-    (localizadorV2dConfere(onde, linha) ||
+    (localizadorV2dConfere(onde, linha) || localizadorV2eConfere(onde, linha) ||
       LOCALIZADORES_CONHECIDOS.some((l) => l.forma.test(onde) && (!l.confere || l.confere(onde, linha))))
   );
 }
@@ -1930,6 +1941,19 @@ function provaLocalizadores() {
       if (!mordeu) falhas.push(`RP4N-g: a planta ${nome} passou`);
       console.log(`PLANTA ${nome}: ${mordeu ? 'RP4N-g: o localizador da pensão não corresponde à figura e à linha conferidas' : 'passou'}`);
     }
+    const v2e = LINHAS_DA_REGUA.get('dgo-regularizacao-ae');
+    if (!localizadorV2eConfere(v2e?.name_source, v2e)) falhas.push('V2E: rótulo B68 recusado');
+    for (const [campo, mudar] of [
+      ['identidade', l => l.id = 'outra-linha'], ['rótulo', l => l.name = 'Outro rótulo'],
+      ['localizador', l => l.name_source += ' alterado'], ['período', l => l.period = '2025-01/2025-08'],
+      ['referência', l => l.reference_date = '2025-08'], ['excerto', l => l.excerpt = 'Outro excerto'],
+      ['documento', l => l.document.source_sha256 = '0'.repeat(64)],
+      ['célula', l => l.document.locator = 'AE69'], ['página', l => l.document.page = 1],
+    ]) {
+      const l = structuredClone(v2e); mudar(l);
+      if (localizadorV2eConfere(l.name_source, l)) falhas.push(`V2E: planta de ${campo} passou`);
+    }
+    console.log('V2E: rótulo B68 com nove plantas de origem');
     const v2d = [...LINHAS_DA_REGUA.values()].filter(l => localizadorV2dConfere(l.name_source, l));
     if (!v2d.length) falhas.push('V2D: nenhuma forma nova conferida');
     for (const original of v2d) for (const [campo, mudar] of [
