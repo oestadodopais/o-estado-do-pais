@@ -1,0 +1,58 @@
+{
+  "cabeca": "1c84445a5e86039f16a6ee94cd10a8722a935a85",
+  "motor": "d4d0442323cfbd9bcbd79bcfcac7d169c5903c2e",
+  "codigos": {
+    "build": 0,
+    "verify": 1,
+    "typecheck": 0
+  },
+  "linhas": {
+    "verify.log": [
+      "          \"modo\": \"recusado-com-campo-source_url\",",
+      "          \"linha\": \"custo-unitario-do-trabalho-2024-recusado-endereco\",",
+      "          \"antes\": \"<p class=\\\"oedp-numero\\\" lang=\\\"pt-PT\\\" data-oedp=\\\"custo-unitario-do-trabalho-2024-recusado-endereco\\\" data-oedp-valor=\\\"ensaio\\\" data-oedp-lido=\\\"ensaio\\\"><span>Citação guardada</span></p>\",",
+      "          \"depois\": \"<p class=\\\"oedp-numero\\\" lang=\\\"pt-PT\\\" data-oedp=\\\"custo-unitario-do-trabalho-2024-recusado-endereco\\\" data-oedp-valor=\\\"17,9\\\" data-oedp-lido=\\\"2026-10-19\\\"><a href=\\\"http://127.0.0.1:52112/livro-razao/custo-unitario-do-trabalho-2024-recusado-endereco\\\">Custo do trabalho por unidade produzida (custo unitário do trabalho) · Portugal, 2024: 17,9 <span lang=\\\"pt-PT\\\">variação em três anos, %</span></a> · <span lang=\\\"en\\\">Eurostat</span>, lido a 19.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0 · <a href=\\\"http://127.0.0.1:52112/livro-razao/custo-unitario-do-trabalho-2024-recusado-endereco\\\" data-oedp-atualizado=\\\"\\\">Este número foi atualizado a 05.10.2026</a></p>\",",
+      "            \"mensagem\": \"ER1 navegador: a recusa só por source_url alterou o parágrafo colado.\"",
+      "          \"linha\": \"custo-unitario-do-trabalho-2024-recusado-endereco\",",
+      "          \"antes\": \"<p class=\\\"oedp-numero\\\" lang=\\\"en\\\" data-oedp=\\\"custo-unitario-do-trabalho-2024-recusado-endereco\\\" data-oedp-valor=\\\"ensaio\\\" data-oedp-lido=\\\"ensaio\\\"><span>Saved quotation</span></p>\",",
+      "          \"depois\": \"<p class=\\\"oedp-numero\\\" lang=\\\"en\\\" data-oedp=\\\"custo-unitario-do-trabalho-2024-recusado-endereco\\\" data-oedp-valor=\\\"ensaio\\\" data-oedp-lido=\\\"ensaio\\\"><span>Saved quotation</span></p>\",",
+      "          \"modo\": \"recusado-com-campo-excerpt\",",
+      "            \"mensagem\": \"ER1 navegador: a recusa só por excerpt alterou o parágrafo colado.\"",
+      "          \"modo\": \"recusado-com-campo-source_url\",",
+      "          \"linha\": \"custo-unitario-do-trabalho-2024-recusado-endereco\",",
+      "          \"antes\": \"<p class=\\\"oedp-numero\\\" lang=\\\"en\\\" data-oedp=\\\"custo-unitario-do-trabalho-2024-recusado-endereco\\\" data-oedp-valor=\\\"ensaio\\\" data-oedp-lido=\\\"ensaio\\\"><span>Saved quotation</span></p>\",",
+      "          \"depois\": \"<p class=\\\"oedp-numero\\\" lang=\\\"en\\\" data-oedp=\\\"custo-unitario-do-trabalho-2024-recusado-endereco\\\" data-oedp-valor=\\\"17,9\\\" data-oedp-lido=\\\"2026-10-19\\\"><a href=\\\"http://127.0.0.1:52112/en/ledger/custo-unitario-do-trabalho-2024-recusado-endereco\\\">Labour cost per unit of output (unit labour cost) · Portugal, 2024: 17,9 <span lang=\\\"en\\\">three-year change, %</span></a> · <span lang=\\\"en\\\">Eurostat</span>, read on 19.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0 · <a href=\\\"http://127.0.0.1:52112/en/ledger/custo-unitario-do-trabalho-2024-recusado-endereco\\\" data-oedp-atualizado=\\\"\\\">This number was updated on 05.10.2026</a></p>\",",
+      "            \"mensagem\": \"ER1 navegador: a recusa só por source_url alterou o parágrafo colado.\"",
+      "    FC · 28 passagem(ns) em 14 páginas, 2032 pedaços marcados vistos, 0 dentro de um contentor flexível, 0 documento(s) mais largos do que a janela; 36 de 36 plantas no navegador.",
+      "          §0 liga «1» a `plantas_da_copia_com_a_mesma_hora_no_verify_depois_do_build`",
+      "          §0 liga «28» a `linhas_recusadas`",
+      "    ✗ npm run check:alvos                        232.5 s  código 1",
+      "  U ✗ 48 passos no verify: 21 corridos pelo build, 26 corridos aqui e verdes"
+    ],
+    "typecheck.log": [],
+    "build.log": [
+      "F2 · RP4-c: 20104 valores e períodos de pontos nos desenhos, cada um comparado com o seu ponto · 6 de 6 plantas em memória",
+      "\u001b[32m  formas ✓\u001b[0m\u001b[90m 2 páginas dos lugares · 102 desenhos (serie-do-pais 84 · barras-do-livro 4 · barras 2 · paineis 4 · pares 2 · colunas 2 · mapa-por-concelho 4) · 57944 datas de linha conferidas · 4 leituras breves · 58 recibo(s) com as três datas e a última verificação à vista (de 29 linha(s) com leitura breve rendida, 0 derivada(s) sem datas próprias) · 2 ausências · ganho médio em 308/308 concelhos (controlo: população em 308) · atraso: 1 série(s), 278 linha(s), 1112 período(s) da fonte conferido(s) · frescura nos cartões de concelho: 278 pt e 278 en, de 278 e 278 cartões numa série atrasada (F17) · 2 frase(s) com contagem por extenso conferida(s) · calendário: 2 páginas, 8 pontos e 18 plantas · faixa da União (F19): 20 faixa(s), 20 nos assuntos, 560 marcas refeitas do valor (116 afastadas na vertical por terem o valor de outras, 560 etiquetas no title conferidas), 20 frases recompostas (2 com empate), 28 plantas a morder, 4 ressalva(s) nas pontas (4 nos assuntos), 27 ordinais e 10 marca(s) por edição com palavras (F19g, F19h), 8 plantas das palavras a morder, 6 plantas dos empates a morder · secção dos países (F20): 2 secção(ões), 20 faixa(s), 20 definição(ões) declarada(s), 560 marcas refeitas do valor (116 afastadas na vertical), 560 etiquetas do toque, 20 listas com 560 itens, 2 ressalva(s) da Comissão, 43 plantas a morder · 19888 data(s) de série\u001b[0m",
+      "  \"plantas\": [",
+      "      \"queixa\": \"    \\u001b[31m✗\\u001b[0m data-linha-claim=\\\"divida-das-familias-2025-ue\\\" numa página que não é do livro-razão. Esta marca é dos campos de uma linha, na página dessa linha ou no índice.\",",
+      "      \"queixa\": \"A porta estreita do portão recusa o contexto plantado.\",",
+      "      \"queixa\": \"A porta estreita do portão recusa o contexto plantado.\",",
+      "      \"queixa\": \"    \\u001b[31m✗\\u001b[0m [taxa-de-desemprego-2025.yml] história do valor: a lista tem 1 entradas e o registo sela 0.\",",
+      "      \"queixa\": \"    \\u001b[31m✗\\u001b[0m [taxa-de-desemprego-mip-2025.yml] história do valor: a lista tem 1 entradas e o registo sela 0.\",",
+      "      \"queixa\": \"    \\u001b[31m✗\\u001b[0m [correcoes-publicadas.yml] história do valor: a lista tem 5 entradas e o registo sela 0.\",",
+      "H2-b: 28 controlos e plantas do prazo e da composição dos estudos, data da construção 2026-10-20, sem escrever em dist/.",
+      "\u001b[90m        · er1b · lida (as leituras ER1-b, ER1-c/d, ER1-e e ER1-f pelo Opus, 07 e 12.10.2026, cinco plantas mordidas em cada)\u001b[0m",
+      "\u001b[90m        · frescura · leitura a frio (design/especime-v3/critica/2026-09-04-codex-leitura-f16-frescura.md, que o lugar de direção guarda na árvore principal e não neste ramo, e por isso esta coluna não o nomeia entre plicas: a conferência do portão exige que um ficheiro nomeado assim exista aqui), Codex `gpt-5.6-sol`, 04.09.2026, cinco plantas de três classes (5 de 5 vistas), doze achados\u001b[0m",
+      "\u001b[90m        · me1 · lida pelo Codex gpt-6-astra a 15.10.2026, cinco plantas em cinco, e pelo lugar de direção, e a leitura curta da passagem de correção, 15.10.2026, cinco plantas em cinco\u001b[0m",
+      "  nomes oficiais · 8627 página(s) lidas, 49 analisadas · 44 nome(s) em recibo (44 esperados, derivados do ficheiro), 0 em título de cartão · confirmados pela marca por fonte: 7 do INE, 15 da PORDATA · recusados: 19\u001b[0m",
+      "  \u001b[32m✓\u001b[0m nenhuma página rende um nome oficial que o motor não confirme como a mesma medida, e as 40 plantas foram recusadas ou aceites como deviam.",
+      "formato dos números · 8602 páginas, 58819 valores, 62473 algarismos declarados vistos à procura do símbolo ao lado («%» 13738 com espaço e 0 colado(s); «€» 0 depois e 0 antes) · 10 de 10 plantas a morder",
+      "  \"plantas\": [",
+      "  mordeu · um resolvedor que recusa tudo (código 1)",
+      "  mordeu · o passo da cadeia do build com um resolvedor que recusa tudo (código 1)",
+      "V2B · 0 erro(s), 684 de 684 plantas, 600 portas de integração."
+    ]
+  },
+  "causa": "H9 contava o nome da lei dentro do campo literal do código de incorporação.",
+  "h9": "✗ H9  4311 página(s) inglesas lidas: 966 com um nome de diploma, 3345 sem nenhum, 3 documento(s) alojado(s) fora da conta · 1007 nome(s): 996 com lang=\"pt-PT\", 10 dentro de uma transcrição da fonte (marca-se inteira, na língua da fonte: não é deste bloco), 1 sem marca (Lei n.º 24/2026 @ en/ledger/dgo-atraso-45-p/index.html)"
+}

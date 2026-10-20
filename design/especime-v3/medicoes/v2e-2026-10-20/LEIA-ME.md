@@ -629,6 +629,8 @@ A passagem reduz a citação legal do parágrafo das portagens a dois excertos e
 - **V2E-56.** As citações portuguesas nas ressalvas inglesas são marcadas inteiras como português quando coincidem com as provas seladas do SNS ou com a definição da DGO. A concatenação conserva todos os caracteres. A célula retira essa marca em cópias dos recibos e exige a recusa.
 - **V2E-57.** A célula da semana ensaia a correção documental real da Beira Interior. Nas duas línguas, exige também que o corte editorial do não reconhecimento fique fora do registo de erros.
 
+- **V2E-58.** H9 distingue a prosa do campo literal de código incorporável. O campo só sai da leitura depois da conferência integral dos seus bytes, pela mesma regra já usada no portão da língua. Na prova da função da régua, a ocorrência indevida cai de uma para zero; adulterar o código ou retirar a marca de língua continua a ser recusado.
+
 ### Estado dos achados da leitura curta
 
 | Achado | Estado | Razão |
@@ -925,10 +927,12 @@ A corrida intermédia acima foi recusada por H9 (marca de língua na ressalva in
 
 O corte da citação do não reconhecimento foi uma edição de extensão, sem erro factual na citação anterior. A retirada da chamada de nota colada a «negociação» na passagem da Beira Interior continua registada como correção.
 
-As provas locais iniciais dizem expressamente que não são a cabeça entregue. O fecho da entrega corre depois do último commit e guarda a cabeça real, os códigos, o inventário e as capturas em `<temporario>/v2ec-entrega/`; os registos dos portões ficam em `<temporario>/v2ec-portoes-entrega/`. O relatório de fecho dessa pasta cita os códigos dessa cabeça, sem criar um commit posterior que voltasse a tornar a prova antiga.
+As provas locais iniciais dizem expressamente que não são a cabeça entregue. O fecho da entrega corre depois do último commit e guarda a cabeça real, os códigos, o inventário e as capturas em `<temporario>/v2ec-entrega/`; os registos dos portões ficam em `<temporario>/v2ec-portoes-entrega-2/`. O relatório de fecho dessa pasta cita os códigos dessa cabeça, sem criar um commit posterior que voltasse a tornar a prova antiga.
 
 As capturas intermédias são vinte páginas completas e noventa recortes; vinte e quatro recortes foram lidos visualmente. As vinte páginas não têm transbordo horizontal. O inventário dessa cabeça tem zero frases sem classe e zero declarações vivas ausentes. O cruzamento com a origem saiu com código 0. O motor passou o core.gate completo no commit d4d0442323cfbd9bcbd79bcfcac7d169c5903c2e, que permanece sem alterações. As provas estão em c/capturas.json, c/inspecao-visual.json, c/inventario.json e c/motor-prova.json.
 
 A primeira tentativa de commit do motor foi recusada pela divergência entre o relatório gerado e o livro regenerado; o relatório foi regenerado, e a suíte específica passou. A primeira tentativa dos portões não correu porque havia guiões de prova ainda por registar. A corrida seguinte recusou a história selada ainda desatualizada e os números das citações auxiliares que a régua ainda não reconhecia. Ambas as causas foram corrigidas com plantas. As recusas e as corridas seguintes conservam os seus resultados, sem serem apresentadas como verificações verdes.
 
 Fica para o lugar de direção a leitura curta sobre este diff e a decisão de aterragem. Não houve fusão nem push.
+
+A corrida de `1c84445a5e86039f16a6ee94cd10a8722a935a85` saiu com `build=0`, `verify=1`, `typecheck=0`: restava H9, que contava o nome da lei dentro do código literal. A correção V2E-58 foi ensaiada na função da própria régua antes de entrar. `c/h9-recusa.json` conserva os códigos e a ocorrência; `c/h9-conferido.json` conserva o controlo e as duas adulterações recusadas. O fecho final volta a correr sobre o commit que contém este acerto.
