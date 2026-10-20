@@ -30,8 +30,8 @@ reference_date: "2024"
 excerpt: "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"P_HTHAB\", \"wstatus\": \"PRACT\", \"med_spec\": \"PHYS\", \"geo\": \"BE\", \"time\": \"2024\"}, \"value\": \"334.25\", \"status\": \"b\"}"
 
 # Ressalva publicada da casa, conferida no motor, nas duas línguas.
-ressalva: "A comparação usa médicos em exercício em 2024. Quatro países não têm valor para esta categoria e ano; não se substituem por médicos profissionalmente ativos ou habilitados."
-ressalva_en: "The comparison uses practising physicians in 2024. Four countries have no value for this category and year; professionally active or licensed physicians do not replace them."
+ressalva: "A comparação entre os países da União Europeia usa médicos em exercício em 2024. Na União Europeia, a Eslováquia não tem valor para esta categoria e ano; não se substituem por médicos profissionalmente ativos ou habilitados."
+ressalva_en: "The comparison between European Union countries uses practising physicians in 2024. In the European Union, Slovakia has no value for this category and year; professionally active or licensed physicians do not replace them."
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null

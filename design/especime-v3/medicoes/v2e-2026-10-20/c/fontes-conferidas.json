@@ -1,0 +1,87 @@
+{
+  "autoestradas": {
+    "contagem": 7,
+    "alineas": [
+      "a",
+      "b",
+      "c",
+      "d",
+      "e",
+      "f",
+      "g"
+    ]
+  },
+  "medicos": {
+    "ano": "2024",
+    "categoria": "PRACT",
+    "valores": {
+      "BE": 334.25,
+      "BG": 467.07,
+      "CZ": 429.41,
+      "DK": 466.42,
+      "DE": 475.4,
+      "EE": 357.86,
+      "IE": 388.46,
+      "EL": 626.89,
+      "ES": 463.78,
+      "FR": 393.85,
+      "HR": 410.14,
+      "IT": 575.43,
+      "CY": 549.62,
+      "LV": 340.19,
+      "LT": 466.96,
+      "LU": 408.86,
+      "HU": 371.53,
+      "MT": 458.12,
+      "NL": 395.61,
+      "AT": 563.51,
+      "PL": 386.2,
+      "PT": 431.35,
+      "RO": 381.24,
+      "SI": 356.91,
+      "FI": 362.12,
+      "SE": 465.86
+    },
+    "sem_valor": [
+      "SK"
+    ],
+    "minimo": "BE",
+    "maximo": "EL"
+  },
+  "provisorios": [
+    {
+      "id": "sns-consultas-csp-2026-08",
+      "file": "content/26 Saude e Parcerias Efeitos/source/saude/sns-catalogo-2.json",
+      "sha256": "24164af100bd601cab9d55e37940470de23ecac40d5fbd93ee283ffb33d1c218",
+      "dataset": "evolucao-das-consultas-medicas-nos-csp",
+      "field": "metas.default.description",
+      "quote": "Os dados relativos a este indicador são de caráter temporário para o mês publicado mais recente.",
+      "latest": "2026-08"
+    },
+    {
+      "id": "sns-cirurgias-2026-07",
+      "file": "content/26 Saude e Parcerias Efeitos/source/saude/sns-catalogo.json",
+      "sha256": "fc6bf4974a6adf652841f9f8dbca71d75724fd7ff9291be29b8e7fcdf4460ac5",
+      "dataset": "intervencoes-cirurgicas",
+      "field": "metas.default.description",
+      "quote": "Os dados relativos ao mês n-2, publicados até ao último dia útil do mês n, têm caráter provisório, sujeitos a eventuais atualizações.",
+      "latest": "2026-07"
+    },
+    {
+      "id": "sns-lista-cirurgia-2026-07",
+      "file": "content/26 Saude e Parcerias Efeitos/source/saude/sns-catalogo-2.json",
+      "sha256": "24164af100bd601cab9d55e37940470de23ecac40d5fbd93ee283ffb33d1c218",
+      "dataset": "inscritos-em-lic-dentro-do-tmrg-180-dias",
+      "field": "metas.default.description",
+      "quote": "Os dados relativos ao mês n-2, publicados até ao último dia útil do mês n, têm caráter provisório, sujeitos a eventuais atualizações.",
+      "latest": "2026-07"
+    }
+  ],
+  "retificacao": {
+    "ficheiro": "content/26 Saude e Parcerias Efeitos/source/parcerias/dl87a-retificacao.pdf",
+    "sha256": "60df9a4ce15d90077eeb94e99f4b942b6f9de36ebd3aac8b4f6c0e194d6318a5",
+    "recibo": true,
+    "direitos": true
+  },
+  "definicao_dgo": "A partir de junho de 2026, na sequência alteração da Lei dos Compromissos e Pagamentos em Atraso (LCPA) pela Lei n.º 24/2026, de 1 de junho, os pagamentos em atraso passaram a corresponder às contas a pagar não liquidadas para além dos prazos legalmente aplicáveis de 30 dias, em regra para entidades públicas, ou de 60 dias para as entidades que integram o Serviço Nacional de Saúde e outros casos legalmente previstos. A redação anterior da LCPA estabelecia que constituíam pagamentos em atraso as contas a pagar que permanecessem nessa situação mais de 90 dias após a data acordada."
+}

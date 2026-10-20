@@ -1,6 +1,7 @@
 /** Nomes e explicações dos recibos V2-e, a partir das provas atravessadas. */
 import fs from 'node:fs';
 import assert from 'node:assert/strict';
+import {dataDaCasa} from '../../../../src/lib/datas.mjs';
 import {loadClaims} from '../../../../src/lib/ledger.mjs';
 const provas=JSON.parse(fs.readFileSync('ledger/provas/v2e/provas.json','utf8')).rows;
 const claims=loadClaims();
@@ -60,11 +61,12 @@ aud.familias=aud.familias.filter(f=>!f.chaves?.some(id=>Object.hasOwn(provas,id)
 for(const [id,proof] of Object.entries(provas)){
  const c=claims.get(id);assert(c,`linha não atravessada: ${id}`);
  const nome={pt:proof.label,en:proof.label_en};assert(nome.pt&&nome.en);
+ if(id.startsWith('infarmed-')&&id.includes('-encargo'))for(const lang of ['pt','en'])nome[lang]=nome[lang].replace(proof.period,dataDaCasa(proof.period,lang));
  nomes[id]=nome;
  let familiaNome={...nome};
  if(id==='sns-sem-medico-serie-nova-2026-08')familiaNome={pt:'Utentes elegíveis sem médico de família atribuído',en:'Eligible users without an assigned family doctor'};
  if(/^prr-(complemento|marcos)/.test(id))familiaNome={pt:'Estado do marco ou meta da Saúde',en:'Health milestone or target status'};
- else if(id.startsWith('infarmed-'))for(const lang of ['pt','en'])familiaNome[lang]=familiaNome[lang].replace(/, \d{4}-\d{2}\/\d{4}-\d{2}$/,'');
+ else if(id.startsWith('infarmed-'))for(const lang of ['pt','en'])familiaNome[lang]=familiaNome[lang].replace(/, (?:\d{4}-\d{2}\/\d{4}-\d{2}|janeiro a julho de \d{4}|January to July \d{4})$/,'');
  else if(id.startsWith('prr-monitorizacao'))for(const lang of ['pt','en'])familiaNome[lang]=familiaNome[lang].replace(/^C01 - /,'');
  else if(id==='pe-dl87a-atualizacao')familiaNome={pt:'Atualização das portagens prevista no diploma',en:'Toll rate update set by the decree'};
  else if(id==='pe-tc15-futuros')familiaNome={pt:'Previsão histórica de encargos com as parcerias',en:'Historical forecast of partnership charges'};

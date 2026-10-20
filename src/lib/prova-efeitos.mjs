@@ -1,5 +1,6 @@
 /** Tipos documentais V2-e: nenhuma prosa ou período passa sem a prova selada. */
 import fs from 'node:fs';
+import {dataDaCasa} from './datas.mjs';
 import path from 'node:path';
 const file=path.join(process.cwd(),'ledger','provas','v2e','provas.json');
 const proofs=JSON.parse(fs.readFileSync(file,'utf8')).rows;
@@ -8,7 +9,8 @@ export function temProvaDeEfeito(id){return Object.hasOwn(proofs,id);}
 /** @param {string} id @param {string} texto @param {string} lang */
 export function nomeDoEfeitoConferido(id,texto,lang){
  const p=proofs[id];
- const esperado=lang==='pt'?p?.label:lang==='en'?p?.label_en:null;
+ let esperado=lang==='pt'?p?.label:lang==='en'?p?.label_en:null;
+ if(id.startsWith('infarmed-')&&id.includes('-encargo')&&typeof esperado==='string'&&typeof p?.period==='string'&&(lang==='pt'||lang==='en'))esperado=esperado.replace(p.period,dataDaCasa(p.period,lang));
  return typeof esperado==='string'&&texto.replace(/\s+/g,' ').trim()===esperado.replace(/\s+/g,' ').trim();
 }
 /** Os três tokens do painel conservam a unidade impressa, exigida pelo mandato.

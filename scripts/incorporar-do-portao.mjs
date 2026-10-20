@@ -10,7 +10,7 @@ import { nomeNoRecibo } from '../src/lib/o-que-e-o-numero.mjs';
 import { unidadeDaLinha } from '../src/i18n/unidades.mjs';
 import { linguaDaFonte } from '../src/i18n/lingua-dos-titulos.mjs';
 import { dataDaCasa } from '../src/lib/datas.mjs';
-import { valorImpressoDoPainelConferido } from '../src/lib/prova-efeitos.mjs';
+import { valorImpressoDoPainelConferido, textoDocumentalConferido } from '../src/lib/prova-efeitos.mjs';
 import { t } from '../src/i18n/strings.mjs';
 import { LICENCA } from '../src/data/licenca.mjs';
 import { SITE_HOST_DISPLAY } from '../site.config.mjs';
@@ -43,7 +43,7 @@ export function dadosEsperados(c, lang) {
   return {
     nome: nomeNoRecibo(c.id, lang).texto + (lugar ? ` · ${lugar.nome}` : ''),
     periodo: (c.period ?? c.reference_date) ? dataDaCasa(c.period ?? c.reference_date, lang) : palavras.periodoEmFalta,
-    valor: String(c.value), unidade: valorImpressoDoPainelConferido(c.id, c.value) ? '' : un.texto, unidadeLang: un.lingua || t(lang).lang,
+    valor: String(c.value), unidade: (valorImpressoDoPainelConferido(c.id, c.value) || textoDocumentalConferido(c)) ? '' : un.texto, unidadeLang: un.lingua || t(lang).lang,
     fonte: c.source || palavras.calculado, fonteLang: (c.source && linguaDaFonte(c.source, lang)) || t(lang).lang,
     data: dia, leitura: leituraDaIncorporacao(c, lang, dia),
     atribuicao: LICENCA ? LICENCA.atribuicao + ', ' + LICENCA.nome : '',

@@ -19,6 +19,13 @@ reference_date: "2026-07"
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
 excerpt: null
 
+# Fontes secundárias da definição, com os recibos dos ficheiros alojados.
+definition_sources: [{"publisher": "Serviço Nacional de Saúde", "receipt": {"campo": "inscritos-em-lic-dentro-do-tmrg-180-dias; metas.default.description", "cliente": "core.http.HttpClient.condicional", "hora": "2026-10-20T13:11:04.370901+00:00", "motor": "content/26 Saude e Parcerias Efeitos/source/saude/sns-catalogo-2.json", "sha256": "24164af100bd601cab9d55e37940470de23ecac40d5fbd93ee283ffb33d1c218"}, "url": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets?limit=100&offset=100"}]
+
+# Ressalva publicada da casa, conferida no motor, nas duas línguas.
+ressalva: "Último mês provisório. O catálogo do SNS, inscritos-em-lic-dentro-do-tmrg-180-dias, diz: «Os dados relativos ao mês n-2, publicados até ao último dia útil do mês n, têm caráter provisório, sujeitos a eventuais atualizações.»"
+ressalva_en: "Latest month provisional. The NHS catalogue, inscritos-em-lic-dentro-do-tmrg-180-dias, says: «Os dados relativos ao mês n-2, publicados até ao último dia útil do mês n, têm caráter provisório, sujeitos a eventuais atualizações.»"
+
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: "( sns-lista-cirurgia-2026-07 / sns-lista-cirurgia-2025-07 - 1 ) * 100 = 5,8"
 derivation_en: "( sns-lista-cirurgia-2026-07 / sns-lista-cirurgia-2025-07 - 1 ) * 100 = 5,8"

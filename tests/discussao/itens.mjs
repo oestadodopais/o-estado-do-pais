@@ -36,7 +36,7 @@ export function unidadesDepoisDoSelo(root){
   for(const [i,s] of segmentos.entries()){
    if(!s.selo)continue;
    let depois='';
-   for(const seguinte of segmentos.slice(i+1)){if(seguinte.selo)break;depois+=seguinte.texto??'';if(depois.trim())break;}
+   for(const seguinte of segmentos.slice(i+1)){if(seguinte.selo)break;depois+=seguinte.texto??'';if(depois.length>160)break;}
    if(/^\s*(?:(?:mil\s+)?milh(?:ão|ões)(?=\s|[,.;:]|$)|pontos\s+percentuais(?=\s|[,.;:]|$)|p\.p\.|percentage\s+points(?=\s|[,.;:]|$)|billions?(?=\s|[,.;:]|$)|millions?(?=\s|[,.;:]|$)|euros?(?=\s|[,.;:]|$)|[%€])/iu.test(depois)){
     desvios.push({paragrafo:p.getAttribute('data-discussao-paragrafo'),recibo:s.selo.getAttribute('href'),depois:normal(depois)});
    }
@@ -268,6 +268,13 @@ export function plantas(html,lang){
  ]){
   const r=parse(html);muda(r);
   out.push({nome,lang,mordeu:inlineIntacto&&conferirSelosInline(r,lang).some(e=>e.startsWith('V2E selo inline:'))});
+ }
+ for(const [nome,muda] of [
+  ['texto da porta do recibo alterado',a=>a.set_content('outra porta')],
+  ['destino da porta do recibo alterado',a=>a.setAttribute('href','/livro-razao/pe-dl87a-descontos')],
+ ]){
+  const r=parse(html),a=r.querySelector('[data-discussao-recibo="pe-scut-trocos"]');muda(a);
+  out.push({nome,lang,mordeu:inlineIntacto&&conferirSelosInline(r,lang).some(e=>e.startsWith('V2E porta textual:'))});
  }
  run('citação sem token',r=>r.querySelector('[data-linha-campo="excerpt"]').removeAttribute('data-linha-campo'),/citação/);
  run('citação alterada',r=>r.querySelector('[data-linha-campo="excerpt"]').set_content('Uma citação adulterada.'),/literal/);

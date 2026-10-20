@@ -24,8 +24,8 @@ export function conferirValorUnidade(root, linhas = loadClaims()) {
     const tipo = el.classList.contains('linha-valor') ? 'titulos' : 'cartoes';
     contas[tipo]++;
     if (tipo === 'titulos' && claim && (valorImpressoDoPainelConferido(claim.id, claim.value) || textoDocumentalConferido(claim))) {
-      if (unidade) erros.push('V2E recibo: a unidade do painel está repetida depois do valor impresso');
-      if (valor.textContent !== claim.value) erros.push('V2E recibo: valor impresso diferente do painel selado');
+      if (unidade) erros.push('V2E recibo: a unidade está repetida depois do valor documental conferido');
+      if (valor.textContent !== claim.value) erros.push('V2E recibo: valor impresso diferente da prova selada');
       continue;
     }
     const marca = el.querySelector('.cartao-medida-marca');

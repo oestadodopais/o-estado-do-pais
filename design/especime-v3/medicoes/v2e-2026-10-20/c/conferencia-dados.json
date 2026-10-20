@@ -1,0 +1,585 @@
+{
+  "erros": [],
+  "plantas": [
+    {
+      "nome": "estado completo fora da rota declarada",
+      "mordeu": true
+    },
+    {
+      "nome": "afirmação de completude acrescentada",
+      "mordeu": true
+    },
+    {
+      "nome": "estado completo fora da rota declarada",
+      "mordeu": true
+    },
+    {
+      "nome": "afirmação de completude acrescentada",
+      "mordeu": true
+    },
+    {
+      "nome": "valor do painel alterado",
+      "mordeu": true
+    },
+    {
+      "nome": "valor com identidade diferente",
+      "mordeu": true
+    },
+    {
+      "nome": "nome alterado pt",
+      "mordeu": true
+    },
+    {
+      "nome": "código alterado pt",
+      "mordeu": true
+    },
+    {
+      "nome": "nome de outra edição pt",
+      "mordeu": true
+    },
+    {
+      "nome": "nome sem prova pt",
+      "mordeu": true
+    },
+    {
+      "nome": "nome alterado en",
+      "mordeu": true
+    },
+    {
+      "nome": "código alterado en",
+      "mordeu": true
+    },
+    {
+      "nome": "nome de outra edição en",
+      "mordeu": true
+    },
+    {
+      "nome": "nome sem prova en",
+      "mordeu": true
+    },
+    {
+      "nome": "texto documental com value alterado",
+      "mordeu": true
+    },
+    {
+      "nome": "texto documental com excerpt alterado",
+      "mordeu": true
+    },
+    {
+      "nome": "texto documental com unit alterado",
+      "mordeu": true
+    },
+    {
+      "nome": "texto documental com source_url alterado",
+      "mordeu": true
+    },
+    {
+      "nome": "texto documental com access_date alterado",
+      "mordeu": true
+    },
+    {
+      "nome": "texto documental com documento source_sha256 alterado",
+      "mordeu": true
+    },
+    {
+      "nome": "texto documental com documento title alterado",
+      "mordeu": true
+    },
+    {
+      "nome": "texto documental com documento locator alterado",
+      "mordeu": true
+    },
+    {
+      "nome": "texto documental com documento page alterado",
+      "mordeu": true
+    },
+    {
+      "nome": "período acumulado alterado ou ausente",
+      "mordeu": true
+    },
+    {
+      "nome": "período acumulado alterado ou ausente",
+      "mordeu": true
+    },
+    {
+      "nome": "período acumulado alterado ou ausente",
+      "mordeu": true
+    },
+    {
+      "nome": "período acumulado alterado ou ausente",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova dgo-atraso-45-p",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova dgo-regularizacao-ae",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-0",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-1",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-2",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-3",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-4",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-5",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-6",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-7",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-8",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-9",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-10",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-11",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-12",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-13",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-14",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-15",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-16",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-17",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-18",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-19",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-20",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-21",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-22",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-23",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-24",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-25",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-26",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-27",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-28",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-29",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-30",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-31",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-32",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-33",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-34",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-35",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-36",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-37",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-38",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-39",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-40",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-41",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-42",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-43",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-44",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-45",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-46",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-47",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-48",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-49",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-50",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-51",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-divida-2026-divida-total-fornecedores-externos-52",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-sem-medico-serie-antiga-2025-06",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-sem-medico-serie-antiga-2026-06",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-sem-medico-serie-nova-2026-08",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-consultas-csp-2026-08",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-consultas-csp-2025-08",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-consultas-hospitalares-2026-07",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-consultas-hospitalares-2025-07",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-cirurgias-2026-07",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-cirurgias-2025-07",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-lista-cirurgia-2026-07",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-lista-cirurgia-2025-07",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-urgencias-2026-07",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-urgencias-2025-07",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-espera-rncci-2026-10-19",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova sns-espera-rncci-2025-10-19",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova eurostat-be-phys",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova eurostat-el-phys",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova eurostat-lu-nrs",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova eurostat-pt-phys",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova eurostat-pt-nrs",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova eurostat-ro-nrs",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova prr-monitorizacao-20261014-p2-c01-contratado",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova prr-monitorizacao-20261014-p2-c01-pago",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova prr-monitorizacao-20261014-p2-c01-taxa",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova infarmed-ambulatorio-2026-07-p5-acumulado-encargo",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova infarmed-ambulatorio-2026-07-p5-homologo-encargo",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova infarmed-hospitalar-2026-07-p5-acumulado-encargo",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova infarmed-hospitalar-2026-07-p5-homologo-encargo",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova der-sns-consultas-csp-variacao-pct",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova der-sns-cirurgias-variacao-pct",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova der-sns-lista-cirurgia-variacao-pct",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova der-sns-espera-rncci-variacao-pct",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova der-infarmed-total-2026-jan-jul",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova der-infarmed-total-2025-jan-jul",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova der-infarmed-variacao-pct",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova der-prr-saude-contratado-numerico",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova der-prr-saude-pago-numerico",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova der-prr-saude-taxa-numerico",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova der-prr-saude-por-pagar",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova der-prr-saude-por-pagar-pct",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova der-prr-saude-marcos-total",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova der-prr-saude-marcos-completos",
+      "mordeu": true
+    },
+    {
+      "nome": "número diferente da prova der-sns-divida-fornecedores-2026-07",
+      "mordeu": true
+    },
+    {
+      "nome": "nome ausente no registo pt",
+      "mordeu": true
+    },
+    {
+      "nome": "nome ausente no registo en",
+      "mordeu": true
+    },
+    {
+      "nome": "porta de linha sem utilização",
+      "mordeu": true
+    },
+    {
+      "nome": "porta de componente transitiva",
+      "mordeu": true
+    },
+    {
+      "nome": "conta alterada der-sns-consultas-csp-variacao-pct",
+      "mordeu": true
+    },
+    {
+      "nome": "conta alterada der-sns-cirurgias-variacao-pct",
+      "mordeu": true
+    },
+    {
+      "nome": "conta alterada der-sns-lista-cirurgia-variacao-pct",
+      "mordeu": true
+    },
+    {
+      "nome": "conta alterada der-sns-espera-rncci-variacao-pct",
+      "mordeu": true
+    },
+    {
+      "nome": "conta alterada der-infarmed-total-2026-jan-jul",
+      "mordeu": true
+    },
+    {
+      "nome": "conta alterada der-infarmed-total-2025-jan-jul",
+      "mordeu": true
+    },
+    {
+      "nome": "conta alterada der-infarmed-variacao-pct",
+      "mordeu": true
+    },
+    {
+      "nome": "conta alterada der-prr-saude-contratado-numerico",
+      "mordeu": true
+    },
+    {
+      "nome": "conta alterada der-prr-saude-pago-numerico",
+      "mordeu": true
+    },
+    {
+      "nome": "conta alterada der-prr-saude-taxa-numerico",
+      "mordeu": true
+    },
+    {
+      "nome": "conta alterada der-prr-saude-por-pagar",
+      "mordeu": true
+    },
+    {
+      "nome": "conta alterada der-prr-saude-por-pagar-pct",
+      "mordeu": true
+    },
+    {
+      "nome": "conta alterada der-prr-saude-marcos-total",
+      "mordeu": true
+    },
+    {
+      "nome": "conta alterada der-prr-saude-marcos-completos",
+      "mordeu": true
+    },
+    {
+      "nome": "conta alterada der-sns-divida-fornecedores-2026-07",
+      "mordeu": true
+    },
+    {
+      "nome": "exemplo PRR incompleto",
+      "mordeu": true
+    }
+  ]
+}

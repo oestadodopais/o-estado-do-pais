@@ -89,7 +89,8 @@ const auditoria={explicacoes:ITENS.map(e=>{
    const alineas=[...literal.matchAll(/(?:^|\s)([a-g])\)/g)].map(m=>m[1]);
    if(alineas.join('')!=='abcdefg')throw new Error('V2EC: sete sem as alíneas a) a g)');
    parte.sobre='Sete é a contagem conferida das alíneas a) a g) do excerto de pe-scut-trocos; cada alínea enumera uma autoestrada.';
-   parte.apoios=[apoio('pe-scut-trocos','excerpt')];
+   const [antesPt,depoisPt]=f.pt.split('sete'),[antesEn,depoisEn]=f.en.split('seven');
+   return {...f,partes:[{...parte,pt:antesPt,en:antesEn},{...parte,pt:'sete',en:'seven',apoios:[apoio('pe-scut-trocos','excerpt')]},{...parte,pt:depoisPt,en:depoisEn}]};
   }
   return {...f,partes:e.slug==='saude-no-orcamento'&&chave==='2.2'?partesDaComparacao(parte):[parte]};
  })};

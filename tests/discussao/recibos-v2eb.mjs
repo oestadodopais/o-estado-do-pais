@@ -74,7 +74,7 @@ export function ensaiarRecibosV2eb(){
   assert.equal(dataDaCasa(c.period,lang),esperado);
   assert.equal(dadosDaIncorporacao(c,lang).periodo,esperado);
   assert.ok(codigoDaIncorporacao(c,lang).includes(esperado));
-  for(const id of painel){
+  for(const id of [...painel,'pe-dl87a-descontos','sns-sem-medico-elegibilidade']){
    const l=linhas.get(id),certo=parse(`<p class="linha-valor"><span data-claim="${id}">${l.value}</span></p>`);
    assert.deepEqual(conferirValorUnidade(certo,linhas).erros,[]);
    certo.querySelector('p').insertAdjacentHTML('beforeend',` <span data-linha-campo="unit">${l.unit}</span>`);

@@ -16,7 +16,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "daa032e589b21c35736fb4a38ca7110ea5dd50433ef0bcaf71cead0aecec7fb7",
       "rh_id": "der-infarmed-total-2025-jan-jul",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -27,7 +27,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "6a17faf9f82e282b5c474fba7cb8e39b18442552ab486ba92b9fc540bc5db6a1",
       "rh_id": "der-infarmed-total-2026-jan-jul",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -38,7 +38,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ee7b319691080dfc8f159a00a99cfb89c5caed09f738eb5f76032db3c983eddc",
       "rh_id": "der-infarmed-variacao-pct",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -49,7 +49,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "0899db7f9363e0ec6c25842d9035c9dc4e602297d55c0489c611d3c066a89096",
       "rh_id": "der-prr-saude-contratado-numerico",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -60,7 +60,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "cb2ffdffe728589b9d2f678a432a3e91d90bef2b81a25fbb30a7196b28e1afd8",
       "rh_id": "der-prr-saude-marcos-completos",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -71,7 +71,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "74a3a0bdeccaf3ca2d43df1fb845080865b4190251327986469a28e8fca1e69b",
       "rh_id": "der-prr-saude-marcos-total",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -82,7 +82,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "e6e44f556c39c60b7cd9c35fc153f7faba77a7305121f52888c60b545fddb0d1",
       "rh_id": "der-prr-saude-pago-numerico",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -93,7 +93,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "7665c5df08a6cc753785b8ad6397b4cc1922df914541b5535c00ec04f2f4198c",
       "rh_id": "der-prr-saude-por-pagar",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -104,7 +104,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "4f2c35f97f18167f6a047b1f64e7beb77b4d6d244d80b0c53c27eb3c9892aa49",
       "rh_id": "der-prr-saude-por-pagar-pct",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -115,29 +115,29 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "399c46c5a4a5672df876516cdd68bf913c12d5307fe33adfbcd02beef2b8e21a",
       "rh_id": "der-prr-saude-taxa-numerico",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
     "der-sns-cirurgias-variacao-pct": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-20",
-      "exported_row_sha256": "e77c3b73e067435eb0922cbfa49e703706bddff0205625e4e2987989b3e6a147",
+      "exported_row_sha256": "9a5a9e11b2293397ecac20f6e5944e7b59dba41c54c03bb7f6ed660c03ffd81e",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
-      "origin_row_sha256": "97ec6258e4c75e373b2f00f07fa978ff55303b2846580fa73fc81fc25c2fe848",
+      "origin_row_sha256": "f1867ecdd2c42bf2ff092e1160b8cd1c89883e7936cc11c5ff46f6e375295a33",
       "rh_id": "der-sns-cirurgias-variacao-pct",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
     "der-sns-consultas-csp-variacao-pct": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-20",
-      "exported_row_sha256": "1af044a64bd0608200eb7b07c272ff44487706a9e0475ebb5127d6b96898dd97",
+      "exported_row_sha256": "d1f8d6c07ec4592246d52d72c86abc2b6cf682547d66346f5fe0a20ed70b409b",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "dfffec33749149f56c625984c5a133e141deabedae870d604442a615708c0374",
       "rh_id": "der-sns-consultas-csp-variacao-pct",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -148,7 +148,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "c19b0eb87f513dc7f0bd61a12bb2553e41b2775324d26123d327b1bd6e2a30c9",
       "rh_id": "der-sns-divida-fornecedores-2026-07",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -159,18 +159,18 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "1bb3868435a349353c9210822fd93e327b127edb8334765e26c0fae2bf5fb8a4",
       "rh_id": "der-sns-espera-rncci-variacao-pct",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
     "der-sns-lista-cirurgia-variacao-pct": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-20",
-      "exported_row_sha256": "7f724c49d1d8dfe0b2fb3ad9e5d0c8ad312587e14a234de178b34a4d19e6c609",
+      "exported_row_sha256": "ebfe39faaf4dbb61e1ddc9a59b46b311a6eb9b4310a6bb4aa0ce924b359a152e",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "c5a80309e9ec6d94cf114ab9c6392bfbe8550dab584da2e25d1a63c0c53a5bff",
       "rh_id": "der-sns-lista-cirurgia-variacao-pct",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -181,7 +181,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "c267e1d6c6d54949b88533714ca683f44243fe12175dd9ecb92d5c9721632a7c",
       "rh_id": "dgo-atraso-45-p",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -192,29 +192,29 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "bd8da66bd5a7fb3eeed3a63840a12bd181ddc3051a2a809a3e6d2a792c527ce8",
       "rh_id": "dgo-regularizacao-ae",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
     "eurostat-be-phys": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-20",
-      "exported_row_sha256": "61d439a5375ff7ab0aefbcf3b2db43aaf39b05c682ec048c775a913396b00826",
+      "exported_row_sha256": "a329ebac7e5ba2b69cfbfb46fdd79a835612f465d43a6da9d750155e56e2d15a",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "8e316907ff630b414af5e38b90a4ae3b3999cf396c2cd4fffbec84b781480139",
       "rh_id": "eurostat-be-phys",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
     "eurostat-el-phys": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-20",
-      "exported_row_sha256": "145a7fd4e2afe33578951099a9909f159fef1230fcb2159bc601289321e46905",
+      "exported_row_sha256": "cd3f4587cd946f9b3663afc8bca2fe3d56d57a5920b16b07ab61b5f0c1e94deb",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "7d69fb509871d14c9319797b4b881d736904aa84a211220639cec4dc0040477c",
       "rh_id": "eurostat-el-phys",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -225,7 +225,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "3e05ff006465afcada7b8b61e1e2da41e593683f5be29e90ee5241afb7ec321c",
       "rh_id": "eurostat-lu-nrs",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -236,18 +236,18 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "3738b163b8bcd691e7239517d5cec5dfede16891b36369486995434c457e2a06",
       "rh_id": "eurostat-pt-nrs",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
     "eurostat-pt-phys": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-20",
-      "exported_row_sha256": "01ecbf72e96561ec63e778655398b26ccbbfabdc20ae51477aff5f4b2c9ded3a",
+      "exported_row_sha256": "11e73db785b840bc45141ffc9c7ce0be980fc93f40888e91686d2e1cfbe2f572",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "5566b07675991e3b7713704c3c2b37b85f59df8e3fcaded47d7ae74d243ed5c6",
       "rh_id": "eurostat-pt-phys",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -258,7 +258,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "6db785a8488d17a98ff4e1ea0833b0a13b88b4531c5c184a76941d2499df1b2d",
       "rh_id": "eurostat-ro-nrs",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -269,7 +269,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "6fbf8749d53b9a04675211ab5529a1562d474d2804fb8da1c1c4d3909bc63aa5",
       "rh_id": "infarmed-ambulatorio-2026-07-p5-acumulado-encargo",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -280,7 +280,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "a4ff384a63a5540a224773eca0cee85dd781b1d9a2d3b61d62c2f42682ad3b24",
       "rh_id": "infarmed-ambulatorio-2026-07-p5-homologo-encargo",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -291,7 +291,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "3b3b495686a1caf58c6b93641405625764c0e671e294702b127163e3ed01a345",
       "rh_id": "infarmed-ambulatorio-limitacao",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -302,7 +302,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "a92cfb3f3ea1e90d9fea1ffe6ce852514d777ff539f92f3011c19a30c17a03a2",
       "rh_id": "infarmed-hospitalar-2026-07-p5-acumulado-encargo",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -313,7 +313,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "d6beca5b47981dac38cb4c0f04e8b039e096d096d9e41ab5cd06d4ef4bdbb7db",
       "rh_id": "infarmed-hospitalar-2026-07-p5-homologo-encargo",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -324,7 +324,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "6632753ba2c838a29a431f127ab0f3610227ec21cadb2a6ed169f0a3245b6cfb",
       "rh_id": "oe2027-compromisso-cirurgias",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -335,7 +335,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "6e7767d1cdc25db9abf6059499e9a18ba535883389004f476d996ccebdfe42ad",
       "rh_id": "oe2027-compromisso-consultas",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -346,7 +346,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "eaa4326cd4e17e2d944a6085951dc5864398e9ab31d076d70bd8e395e65b0975",
       "rh_id": "oe2027-indicador-medico",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -357,7 +357,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ea83d19c962e26c300effa04fa0818baa3849ce426db45b148a60d3320f2eb0e",
       "rh_id": "pe-brisa-minuta-ano",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -368,7 +368,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "a847b88598cf140253cfea2d5427851587b5ef6637630cd2cc8a072ddbd1ef25",
       "rh_id": "pe-brisa-periodo-imt",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -379,7 +379,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "031234f7aeb764fec93292bbb768d873e9b93a63cfbbaaa412592f36fd40c702",
       "rh_id": "pe-brisa-prazo-minuta",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -390,7 +390,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "d8025201f43461455c9f70936d4aee45e05c03cc074a41212bb5a4b585ccebaf",
       "rh_id": "pe-brisa-vias-minuta",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -401,7 +401,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "eb5a243b2c7fccbedabdd6de2281002f3f3a72f4be776b8e9fabaf75e53dd2e4",
       "rh_id": "pe-despacho-alargamentos",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -412,7 +412,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "f45814c187ffa87dcc3407fe59ded3a2e2c056f2a86a7ffc8e5641e7f563d8aa",
       "rh_id": "pe-despacho-braga",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -423,7 +423,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "abace0872acb96f9c12e6222210116e79b8c5d960518d58dd7a9db0ca167477a",
       "rh_id": "pe-despacho-comparticipacoes",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -434,7 +434,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ff5266151ba65ca9776d43a14ea6ef7096a48cf796e9abff769a61327e13b714",
       "rh_id": "pe-despacho-equilibrio",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -445,7 +445,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "d67fa32a06238f5d7a43df70ab820037bcd996fb1d8db1d2c008fda12106ac88",
       "rh_id": "pe-despacho-investimentos-novos",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -456,7 +456,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "8942054b27d5c38227acf5a97439b73feb8d43c046e24265671740c743e88246",
       "rh_id": "pe-despacho-investimentos-previstos",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -467,7 +467,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "8d4095f8328709e637a3e5a125108862a5cb13fd441cb5ad71545efa0d19b219",
       "rh_id": "pe-despacho-limites",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -478,7 +478,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "7c6a19094b8f88dfc24c6c925645fb198ea4de1de505c18a7848a9a58e6711cb",
       "rh_id": "pe-despacho-qualidade",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -489,7 +489,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "2d4012e2e658a86fdd7d2dcf9e2ab1cb8dbdea4416bd536a7e03d34c5b7286ee",
       "rh_id": "pe-dl87a-apoio",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -500,7 +500,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "d100a4a21be04f2aa88c2a90f0263275ebd346dbe0644b4a8eb00ffb866617b6",
       "rh_id": "pe-dl87a-apoio-retificado",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -511,7 +511,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "a009224fbb6203bf041137b2a7171ba62a57f372be9121622ddd4650c07e4393",
       "rh_id": "pe-dl87a-atualizacao",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -522,7 +522,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "613a93b53ec9b8278683ff3c0d37f3a8ff615c8b3266c50ae237aa420b8a9928",
       "rh_id": "pe-dl87a-descontos",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -533,7 +533,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "78c7de5901a52afbeb0b2fa8fe10975f611d185655321dc9d6c0d32a4fc31b7b",
       "rh_id": "pe-dl87a-efeitos",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -544,7 +544,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "2ea335c095da949b721ade87746657585783ad1f89bab37d964f68b28ccafb81",
       "rh_id": "pe-dl87a-financiamento",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -555,7 +555,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ee0617db57311ec274916930148673938ce7d1ce6c49a65c029ed5184e420a47",
       "rh_id": "pe-dl87a-publicacao-ano",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -566,7 +566,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ceba0a91db11aa5b5fef4f98422ea6f8bf43b58b8e194f3f45a7ad565d76b524",
       "rh_id": "pe-oe-algarve-cautelar",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -577,7 +577,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "7e6f7c5d01cb4a6602f0e0b549c6f6e95d87c39a084de69ac87d7af5ee9da871",
       "rh_id": "pe-oe-algarve-provisorio",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -588,7 +588,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "14969aac3caec81a686f4e2f0418ea2fac96b1daffa9e4b3d262583c2414eb89",
       "rh_id": "pe-oe-apoio-dl87a",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -599,7 +599,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "0b2144924ed0de5d829250273401d246b4e2183821d81f2bb066e579f376d571",
       "rh_id": "pe-oe-beira-abolicao",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -610,7 +610,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "b4d48dd9ed673582fcd8200d20fb5e2b3f315bb6142bf5927151a167b786e476",
       "rh_id": "pe-oe-brisa-negociacao",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -621,7 +621,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "746e7cf3e17fa17650c00d9946fb3f167f1adf71ccd27a4d96669f8021945adc",
       "rh_id": "pe-oe-brisa-pedido",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -632,7 +632,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "fc09ebae82d457a8e167e9d6a0354e54687f7fc4c688905eb75d35fdad228f5d",
       "rh_id": "pe-oe-contingentes",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -643,7 +643,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "666c93c378959a37222f4121d9dca37af8a305e5044f520a3e0ba7e9036088cf",
       "rh_id": "pe-oe-riscos-nao-reconhecimento",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -654,7 +654,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "4570db26f99e3bba847d2a31b45d75ecbef3ac5a98183f5b71fcb7a138216b11",
       "rh_id": "pe-oe-riscos-total",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -665,7 +665,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ebeb68dc558a020196c1764cdb2913f91a57911164af05f41116b4692011cc1e",
       "rh_id": "pe-scut-trocos",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -676,7 +676,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "3cdeceb4f8da4ff239efd58af8721d9f38cc6b2ee4ca87c546b6be3fe77f301b",
       "rh_id": "pe-scut-vigencia",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -687,7 +687,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "776063ac093095911d60312950dbb94a32489eb13e85c00baeece3f2562f88a0",
       "rh_id": "pe-tc15-acordos",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -698,7 +698,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "471697162ee4792be80946b1d38c0c1e35e2388259ac9f5c0db5c80bbb0cd00a",
       "rh_id": "pe-tc15-fundamento",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -709,7 +709,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "c440bc4dcf08d1e06eba2dbf4a8ea806ccb85d96c46f66f71e3526dc165c986f",
       "rh_id": "pe-tc15-futuros",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -720,7 +720,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "cfd1634b0f254a73421e788e9cdb702c9bbfd18a7938490727fdba19c327aea9",
       "rh_id": "pe-tc15-infracoes",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -731,7 +731,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ffc682799fbd953721211b788dbb2d400a444ef7c0b49f4eb97a6d37c6c63576",
       "rh_id": "pe-tc15-remuneracao",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -742,7 +742,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "8105ec61ddea1e7e53e0d3e8e61d028780439f876326f2bd56c32744efffd5e8",
       "rh_id": "prr-complemento-p3-1.24-estado",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -753,7 +753,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "603a8f530dac23131e310ea1316e33a710234bb51e13ac9775b4f0502e6a6298",
       "rh_id": "prr-complemento-p3-1.3-estado",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -764,7 +764,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ce430d0723fda9ce8048987884d8710923d3c251df80c906595ab714b94a61bb",
       "rh_id": "prr-complemento-p3-1.32-estado",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -775,7 +775,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "257c991df6b58b5a75d071c20c2710860987a10e53d59f9619776f128881edbd",
       "rh_id": "prr-complemento-p3-1.33-estado",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -786,7 +786,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "f132ab2bc0e2cce0e7c1ae3e5f04d5b84758f648d2171194eec0eab86ac05cb1",
       "rh_id": "prr-complemento-p3-1.8-estado",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -797,7 +797,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "0207f238c3afecb75603f5131ac29a9e8936c6aef92ba310cc07363ea8cd360c",
       "rh_id": "prr-complemento-p4-1.1-estado",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -808,7 +808,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "fbe6dbcbce5e375b317a12e28bcdcc57929700c551139ce8260d9804d45fe291",
       "rh_id": "prr-complemento-p4-1.12-estado",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -819,7 +819,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "1f2d076fa593063e7c4d2364497b2a951d058d9beb21dbea89eb6ee8ec0ca182",
       "rh_id": "prr-complemento-p4-1.2-estado",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -830,7 +830,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ec68629972393058d360465b76880c5d50151ba34cddc633b145cc8a75a738b0",
       "rh_id": "prr-complemento-p4-1.40-estado",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -841,7 +841,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "962adac85d4b6d0dd74732bece27b516b4acdab158fc874159d5d0d53d2b1d5a",
       "rh_id": "prr-complemento-p4-1.41-estado",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -852,7 +852,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "6f8eef54f94492d05a7f61c36e37f84bd752ba9fbdf0aa88a29ab39a1186d69e",
       "rh_id": "prr-complemento-p4-1.5-estado",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -863,7 +863,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "3b6f6e4dc991dbddb95cb02276195b6b6558c80b28cc416b015ccd5b8332b2dd",
       "rh_id": "prr-complemento-p5-1.11-estado",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -874,7 +874,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "8c9e4133d34e0e23c30910c3ece80acf2cffddf5aed004940a11e62175453fe4",
       "rh_id": "prr-complemento-p5-1.22-estado",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -885,7 +885,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "e46fbb282cbdf7bc30107692531535c40cfa48817cac2967fc6640c1367ebd89",
       "rh_id": "prr-complemento-p5-1.28-estado",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -896,7 +896,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "1c62d11392ffde83f814ae79342cf23039e3b7b655c5d4b62d5d7c628935938d",
       "rh_id": "prr-complemento-p5-1.7-estado",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -907,7 +907,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "f748af23dc025fca95dcc7224ade919fb5e3bcec36780b6e7b04b5a218e31c0d",
       "rh_id": "prr-complemento-p5-1.9-estado",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -918,7 +918,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "33ad40602f5e3bb6fe24430717ff63b928e8c696835cf06bea6d0c94dc2aa6a5",
       "rh_id": "prr-complemento-p6-1.10-estado",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -929,7 +929,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "f501f1448ae457a203b481d8c33a3f62d3bbc975f4f457144b38449d564497a5",
       "rh_id": "prr-complemento-p6-1.37-estado",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -940,7 +940,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "4b403c4734c08b02724484cd960a0c6865edc19fcda96d9dc20c7a8aa649b071",
       "rh_id": "prr-complemento-p6-1.42-estado",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -951,7 +951,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "cf191ca63dd7f9f8b0348a76d908fbaa490ddd3cf00436794cee0ea013348043",
       "rh_id": "prr-complemento-p7-1.34-estado",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -962,7 +962,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "8aece936869f58e527545199b4e9bdfe2930a33e8a23e1285a717f006015e174",
       "rh_id": "prr-complemento-p7-1.35-estado",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -973,7 +973,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "b2803b70553200db5548ff8c787ed532a1a33d43f5f6f8930683bacf82ab863b",
       "rh_id": "prr-complemento-p7-1.36-estado",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -984,7 +984,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "d3494560451dbdb7ac39fb059f2b54750bb2828d72c96558f2dbc743aa70634d",
       "rh_id": "prr-complemento-p7-1.38-estado",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -995,7 +995,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "9c6e631eb77efc60cb93de9f4ba09d83f793f52c637245f91e8eb7c062136be7",
       "rh_id": "prr-complemento-p7-1.39-estado",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1006,7 +1006,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "686fbfb85cb4e0f4b7e8940e3b6ea9dc1d95ea14c51480bd767147ee5ffc526c",
       "rh_id": "prr-complemento-p8-1.21-estado",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1017,7 +1017,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "52eb3d2805c191603f935777a644addaeea3da163fe1a4a92eec5e95a2b635e7",
       "rh_id": "prr-complemento-p8-1.25-estado",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1028,7 +1028,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "2066d9fb92374295704128e243c27467747fcf429f7ad17d6bb5b5fdf8f8f61b",
       "rh_id": "prr-complemento-p9-1.17-estado",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1039,7 +1039,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "757a486ba4f3a50f7988c68f16629b8e72ae4f9c7b9794bd55d93ce14f33b346",
       "rh_id": "prr-complemento-p9-1.18-estado",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1050,7 +1050,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "20ce99a7e04cc77cdc18d1854c269eb00e5986d255d0fd1defed7441368864dd",
       "rh_id": "prr-complemento-p9-1.26-estado",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1061,7 +1061,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ca9db8bd152f3065cdd460f33ea3eb7a12efa72d6fe17e563feb31ae23efaa47",
       "rh_id": "prr-complemento-p9-1.30-estado",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1072,7 +1072,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "66342d77f62c0705442bb59b64926b949de95087927272d87733a22e00671b4e",
       "rh_id": "prr-complemento-p9-1.43-estado",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1083,7 +1083,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "c717c9ab5533fb8ffdd5f5177986e1871f952dc53db611c8f87b2fe9d3a53234",
       "rh_id": "prr-complemento-p9-1.44-estado",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1094,7 +1094,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "c36142f19ef7a3dbec4ea8a63965e36dcc503b6fcf8d01ea1f3c838d4d04adbc",
       "rh_id": "prr-marcos-metas-2025-p2-1.13-estado",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1105,7 +1105,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "2437d2b67ce04fa6782b7993e02e631ed1b6dae305751d37fd2b15aa313d2962",
       "rh_id": "prr-marcos-metas-2025-p2-1.20-estado",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1116,7 +1116,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "12f3dbe77bc6a81df5a6f5abb285ad4b994df19a4cf6b076a8bda5d87207a584",
       "rh_id": "prr-marcos-metas-2025-p2-1.29-estado",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1127,7 +1127,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "0f2b2d3ff35943240e2586325cded98ccbef59e3f2e5aed4a6046000c5c02c6a",
       "rh_id": "prr-marcos-metas-2025-p2-1.4-estado",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1138,7 +1138,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "b13ee8b040eac17a51d076898c01dce517403ba7894c1da7fec2079b4933fb22",
       "rh_id": "prr-marcos-metas-2025-p2-1.6-estado",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1149,7 +1149,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "425835009909325fab1cfa4e632bc3c5b68f8f2be2f9fa4a4f51a61521f1e122",
       "rh_id": "prr-monitorizacao-20261014-p2-C01-contratado",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1160,7 +1160,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "3bdcfa8b44ad393a728c1253484b5b4865cae050af938ff0d69240d0c43c55ae",
       "rh_id": "prr-monitorizacao-20261014-p2-C01-pago",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1171,7 +1171,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "c0b9f37b3d1f88cca793fef34940db85f3caf96fe3b56aa77b73c35375bbd4ca",
       "rh_id": "prr-monitorizacao-20261014-p2-C01-taxa",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1182,51 +1182,51 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "44ec780f9f02cd393a71a6e4a275cd399d904db7d9fc38697e3891ed81dcb442",
       "rh_id": "sns-catalogo-acumulados",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
     "sns-cirurgias-2025-07": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-20",
-      "exported_row_sha256": "09b1ba9424aacecbba1cf7c3393baf7644d133405d273f33217dbeea58bfd96c",
+      "exported_row_sha256": "6219dcd292eb8d823ef3ea73310151633cb2be0c843562926bad7ba9a4c5ca26",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
-      "origin_row_sha256": "29e87ae92e3ec6cf4eaa28e63ba34e17fe8e22c3eebcf9f199c6b29f073830db",
+      "origin_row_sha256": "733a67cbeff4105ee989231608a649819fbb0aa4f5c5768a49b27417915de09f",
       "rh_id": "sns-cirurgias-2025-07",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
     "sns-cirurgias-2026-07": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-20",
-      "exported_row_sha256": "a507a3f7303b7c75dd40aefe203595cb21f6943c91e3ac24a418d5a85d1f6567",
+      "exported_row_sha256": "a6c7e17be757de5329d9b25300c09ac86f74473321dee2202bea4e1f01a50276",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
-      "origin_row_sha256": "217a1bcfdffa36fc5028b7cde5c01bfe05d04ce41804cd6eae929968a7c1d99d",
+      "origin_row_sha256": "22754dcbef18bd6282f59f5748d4da88a55768d8be05624600d899c889a63bac",
       "rh_id": "sns-cirurgias-2026-07",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
     "sns-consultas-csp-2025-08": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-20",
-      "exported_row_sha256": "9d63f10fe0fcde51b65d544d7d41ce808cbf28ff785ad1b62cb7e2a95ea59a57",
+      "exported_row_sha256": "64fbb103efdf77471eba3ad74e67c7c17f17fe567d7a9170fb0100270c72f7bd",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "6487f08cdaa6941553c7e30d50760a185f0a34d25d53f38b423a919a04a93cc5",
       "rh_id": "sns-consultas-csp-2025-08",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
     "sns-consultas-csp-2026-08": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-20",
-      "exported_row_sha256": "ac630d7affe71aa34cfdfb1517c7b5ef48d18c39334a09c1d52bdb7883d0a58a",
+      "exported_row_sha256": "3e9effafc29c86deac1f231aa98fcf69de5ac4647d2ad1ae675eea1d97544489",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "021614031a089436191db75346845d7e2245c58fcc9269d7e1950fea403358ce",
       "rh_id": "sns-consultas-csp-2026-08",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1237,29 +1237,29 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "d61b666599a8dc87cd1f869baa93d1248a994216e6b391af47eb8a0f66647bff",
       "rh_id": "sns-consultas-csp-descricao",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
     "sns-consultas-hospitalares-2025-07": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-20",
-      "exported_row_sha256": "4f22a07cfcb980230821cbbfae4fc5f70f9e80da7bbf55fb5a3e7f75baabe6c5",
+      "exported_row_sha256": "95192a3a6163d9198c4a0a813d11891f5d13b27db20cc0dadd0b91753dcf0028",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
-      "origin_row_sha256": "eddfb48a7d2931ed07bffd902c163b80ec6074b0561c8298b6952ff9d3bfe3e5",
+      "origin_row_sha256": "ebe4d8aed40e2343db726fc13ad4dc5abe313293f5a726140ef0968c69a1d6c9",
       "rh_id": "sns-consultas-hospitalares-2025-07",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
     "sns-consultas-hospitalares-2026-07": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-20",
-      "exported_row_sha256": "1298f162c7372209f72a8da1ba8aecdc1b5ef083ad96db3651389bbd43bcd736",
+      "exported_row_sha256": "5282fde2ac84c70c13a113d3d23d58eb956fa3649a3cf077f951472e61f4520f",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
-      "origin_row_sha256": "65f100504c6ac7b663fac09b80d2ae1f53a6429dde799c6c1e2151efc60f61f1",
+      "origin_row_sha256": "d1577f342681fe6f73fedadd148f20dc2b11e186b3509188d07735f593f4f97c",
       "rh_id": "sns-consultas-hospitalares-2026-07",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1270,7 +1270,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "e482f403a44fec46a5b51e1bf785290e28d374536518fa8c1dec5cb00c940fbf",
       "rh_id": "sns-divida-2026-divida_total_fornecedores_externos-0",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1281,7 +1281,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "0c381a1ac192403f9d61fb744507b33f45d7116cab7e52049e32dc29fa6dc945",
       "rh_id": "sns-divida-2026-divida_total_fornecedores_externos-1",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1292,7 +1292,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "969edd323d67469bcd584160cef92550055c900726c29aa342b6eeb23d305c4a",
       "rh_id": "sns-divida-2026-divida_total_fornecedores_externos-10",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1303,7 +1303,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "9282672c251a5acf59699c3fa2d3827ed4b8a651cfc2dad94fdfdc72d265cbb9",
       "rh_id": "sns-divida-2026-divida_total_fornecedores_externos-11",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1314,7 +1314,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "bd46c89343d817d1a02e77d5ac971b85a473783fa66168ea1fe37b8f3e60046f",
       "rh_id": "sns-divida-2026-divida_total_fornecedores_externos-12",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1325,7 +1325,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "a0dc3e6386e908502c7f9497a78d565a6dbacd9c00825b456a50dc9244c8b94b",
       "rh_id": "sns-divida-2026-divida_total_fornecedores_externos-13",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1336,7 +1336,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "00e2fb6abf6007b2155d4a2c2548dcb7aff4328e76675bd06146e4de6adfc02a",
       "rh_id": "sns-divida-2026-divida_total_fornecedores_externos-14",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1347,7 +1347,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "7b536509f7233ddaa80efe6fefc47573918b9ff3f31c1c7568e8d89f352f94f7",
       "rh_id": "sns-divida-2026-divida_total_fornecedores_externos-15",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1358,7 +1358,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "92d66a51edef3d3fe4237c2ff8378a48bb9178a0e407b999acdfc64f4a31473a",
       "rh_id": "sns-divida-2026-divida_total_fornecedores_externos-16",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1369,7 +1369,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "36349b2b1b7d61f74273d5d41886596be8a58bb470749c9ec81922f3394af6e9",
       "rh_id": "sns-divida-2026-divida_total_fornecedores_externos-17",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1380,7 +1380,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "8876632545c1bea6816df51f0146757bd2f2e1a4d80fffebce97ac9e7b31d8ad",
       "rh_id": "sns-divida-2026-divida_total_fornecedores_externos-18",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1391,7 +1391,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "f77c3e3f408ab86e230abd8b33a5b62346bcdcf65bdce7583c7b13c0849a5287",
       "rh_id": "sns-divida-2026-divida_total_fornecedores_externos-19",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1402,7 +1402,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "cd50db6c1fb6fa0c59cdf80588cfb4f6622a84b742278a0165b825277312ba1f",
       "rh_id": "sns-divida-2026-divida_total_fornecedores_externos-2",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1413,7 +1413,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "49300d00fd462e441fbb6e3eceeea5ade4efdd7fe8b69c8969009820cf41d245",
       "rh_id": "sns-divida-2026-divida_total_fornecedores_externos-20",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1424,7 +1424,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "f4fad5e753638699231b3017b36c0cab186e6994a9945ed1c99d8d48f0db2fa8",
       "rh_id": "sns-divida-2026-divida_total_fornecedores_externos-21",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1435,7 +1435,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "f7e4a2cabae28842cdc182a6253d1b12b74cae4b208c69045c84b0069ede62d4",
       "rh_id": "sns-divida-2026-divida_total_fornecedores_externos-22",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1446,7 +1446,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "490a6c8f11851097e8b36ab0faf11cdf0a8cf4c1097f3e64b24f1fb6c338bba3",
       "rh_id": "sns-divida-2026-divida_total_fornecedores_externos-23",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1457,7 +1457,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "6e20e9d971a4643e4d005d568852f84c5fd18873fb9e769a1079177120a38354",
       "rh_id": "sns-divida-2026-divida_total_fornecedores_externos-24",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1468,7 +1468,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "10a7a469b28eb0c18ae0672a0fde9d0af3f74fba7b15b08ed0e082a4160a7989",
       "rh_id": "sns-divida-2026-divida_total_fornecedores_externos-25",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1479,7 +1479,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "115245a67cefd08089a93bf94bc2ce512d0a75d0f79e250d36b40b7927e239c6",
       "rh_id": "sns-divida-2026-divida_total_fornecedores_externos-26",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1490,7 +1490,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "521f8d6027c837d655d1e240c459823c2e71823423a04f5561d49a246e3c03b0",
       "rh_id": "sns-divida-2026-divida_total_fornecedores_externos-27",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1501,7 +1501,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "f22ba1c3a7485b7907a5c7d2ceb94df596a551a280bae827843b1ea6c14876b7",
       "rh_id": "sns-divida-2026-divida_total_fornecedores_externos-28",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1512,7 +1512,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "e7e6689508b812f9903ef5e575d71e815cd4b6d70dc5a693c39ed19ac1b6da8a",
       "rh_id": "sns-divida-2026-divida_total_fornecedores_externos-29",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1523,7 +1523,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "540736a98e4acae47797f1e9f65f8b8393be836bd74e72ecb17ed2626c849070",
       "rh_id": "sns-divida-2026-divida_total_fornecedores_externos-3",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1534,7 +1534,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "fb54b973c5b43cdc5904c12bcf7a73d4b7919c0c49dccc54fcfee66f670652e0",
       "rh_id": "sns-divida-2026-divida_total_fornecedores_externos-30",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1545,7 +1545,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "66381028b62d44df83e7ed4cbb20dc344c14d1ec0db9e36a385e7f89c5672f66",
       "rh_id": "sns-divida-2026-divida_total_fornecedores_externos-31",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1556,7 +1556,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "3c36af611a29cce71e7fdd3fb46482ce5c28f7b2200771ed7ee0a0ea473024e8",
       "rh_id": "sns-divida-2026-divida_total_fornecedores_externos-32",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1567,7 +1567,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "b59a3eda50c4f6e1df0b159792c506dd801c488cbf82fada0dc8a2a07bcd6f61",
       "rh_id": "sns-divida-2026-divida_total_fornecedores_externos-33",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1578,7 +1578,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "73511372b60e2bb2258b7ddab5c51cdf1a3d433d911d4896e13ca123edd9baab",
       "rh_id": "sns-divida-2026-divida_total_fornecedores_externos-34",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1589,7 +1589,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "e8cd08d17756f08253fdf7986a5ddb854c0c0af385e28abef7546eb5943cd55d",
       "rh_id": "sns-divida-2026-divida_total_fornecedores_externos-35",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1600,7 +1600,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "385bb4217e55df7eb5d1caed2811aeac0281b560cd48ea0213c21f350715c5d1",
       "rh_id": "sns-divida-2026-divida_total_fornecedores_externos-36",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1611,7 +1611,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ebd8023ec388423fa4e9c71784f3ab332c2594e4fb0aa713e0f01321b6bce0f0",
       "rh_id": "sns-divida-2026-divida_total_fornecedores_externos-37",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1622,7 +1622,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "55ef7fc4005192e443d7d4221712a6ff1cb0fedbef41bf4af1aa736cddb42253",
       "rh_id": "sns-divida-2026-divida_total_fornecedores_externos-38",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1633,7 +1633,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "0c105dd0a75e9160feab88638692aa48324ba9aca7861814327114711dbf0ec9",
       "rh_id": "sns-divida-2026-divida_total_fornecedores_externos-39",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1644,7 +1644,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "b658c338fdd78c11b1d4e2c2b38f636c2a44aaf19412df05102971206e105dab",
       "rh_id": "sns-divida-2026-divida_total_fornecedores_externos-4",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1655,7 +1655,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "3b87b67cf0caddb1e934f071f926441918f1215cb6840e27cd4ae9037c33d62e",
       "rh_id": "sns-divida-2026-divida_total_fornecedores_externos-40",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1666,7 +1666,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "4c685228ae945436ba0d6a183db95059e1ba719237395bb9288a641a8d749a84",
       "rh_id": "sns-divida-2026-divida_total_fornecedores_externos-41",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1677,7 +1677,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "c14414082bc4e2f553440d8e47f26f6aa1cf6773f4f0006bdc93a657fbbbe5ba",
       "rh_id": "sns-divida-2026-divida_total_fornecedores_externos-42",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1688,7 +1688,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "6c71411724bf1647e2b1e84e3e16b9532680a9476de505318a4dd1bd737b16a1",
       "rh_id": "sns-divida-2026-divida_total_fornecedores_externos-43",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1699,7 +1699,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "e0f23757b797076230a60c94a2778a37ad33958d80ba731a4a58848809569d60",
       "rh_id": "sns-divida-2026-divida_total_fornecedores_externos-44",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1710,7 +1710,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "2c8556a9d6da886059f966b78c9ad7a51964ff9ae5d8950d8b841dd1ccf2f455",
       "rh_id": "sns-divida-2026-divida_total_fornecedores_externos-45",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1721,7 +1721,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "a0097508869df42515d38e5ee29d5fd3ad3d2af284235f07e5f510661d6730cd",
       "rh_id": "sns-divida-2026-divida_total_fornecedores_externos-46",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1732,7 +1732,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "5b65bc6f3e8d9f26b18854ac99062b49174be305d396a1d23c26c284a093cb77",
       "rh_id": "sns-divida-2026-divida_total_fornecedores_externos-47",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1743,7 +1743,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "4fc31dd055604d71d30195c8c8495fe084bf5b1e7b5c48f1d26c09328585e031",
       "rh_id": "sns-divida-2026-divida_total_fornecedores_externos-48",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1754,7 +1754,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "b527104b016109d30740b34617c37bab9026137fec2541a844354a518f9814b2",
       "rh_id": "sns-divida-2026-divida_total_fornecedores_externos-49",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1765,7 +1765,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "03e85335f142404af7ce545013389b9d88265de430061b616f984b1ef6e7a7d6",
       "rh_id": "sns-divida-2026-divida_total_fornecedores_externos-5",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1776,7 +1776,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "5f05e601349f41b883c3f176fcae88093bd9f74726052d07fdab6a7b0841ccc1",
       "rh_id": "sns-divida-2026-divida_total_fornecedores_externos-50",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1787,7 +1787,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "17b80e676477f1deb5d9a6010eae31186e05490be57e703014f305b756595b00",
       "rh_id": "sns-divida-2026-divida_total_fornecedores_externos-51",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1798,7 +1798,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "38433b85ab3efa521ad3be4e350ba4be144ae560facce913e0cf14ba247cdc43",
       "rh_id": "sns-divida-2026-divida_total_fornecedores_externos-52",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1809,7 +1809,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "7432e71150ec12ccdbe8abf9ddee10c45615644fff2ba81bc267506c7eae3b07",
       "rh_id": "sns-divida-2026-divida_total_fornecedores_externos-6",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1820,7 +1820,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "506f41ee1ce9d557c1919097c44555d4e53e3e5d4aeeb416527518609f633131",
       "rh_id": "sns-divida-2026-divida_total_fornecedores_externos-7",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1831,7 +1831,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "9e937a5d8d7db4268915c59e034e1b2358cac0870ab6ee01d31cde8d71dc6e65",
       "rh_id": "sns-divida-2026-divida_total_fornecedores_externos-8",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1842,7 +1842,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "b65551b8acfea7e493ed3a5466aa92010bdaadc743aedb773779b4a208f968a6",
       "rh_id": "sns-divida-2026-divida_total_fornecedores_externos-9",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1853,7 +1853,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "1997d0b8019346cabe41ea00986414fe97c9fe0a044a168d6e2e676a9d21c8b8",
       "rh_id": "sns-espera-rncci-2025-10-19",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1864,29 +1864,29 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "010b91ebac625e1dd9bb4aff196b1a06a2d21edd141da902431c311a6fad4182",
       "rh_id": "sns-espera-rncci-2026-10-19",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
     "sns-lista-cirurgia-2025-07": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-20",
-      "exported_row_sha256": "cc80cc8173f5102820e34eba17c1e6fd2eee3ec3b39204124b5d4d0942cc7741",
+      "exported_row_sha256": "e77ab63fb75290d4594d88e710dbf541e7b1d5e94b913e0597a13b3f0c75da82",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "225c137c326d324d7a5c41e4365313c001ec3f0e45bb1929624127e858d21e05",
       "rh_id": "sns-lista-cirurgia-2025-07",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
     "sns-lista-cirurgia-2026-07": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-20",
-      "exported_row_sha256": "7b18205e3188a20b2f42a40b98c0aea42cdff9e362dd08b9f55f79eeaf07f9ce",
+      "exported_row_sha256": "6c76a6d0d1229ba6d9f4412ef8f14300a7a2149998990c7b0bc481504dab490e",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "5036dce6df0915822b0ab13e8b7a95b46bff5fc01936a43f8eec203a6a5d5aa9",
       "rh_id": "sns-lista-cirurgia-2026-07",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1897,7 +1897,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "d3d961c4196f62251b508fbe71b253fd555f98ee4c0fc67f128888ae8f5b37e0",
       "rh_id": "sns-sem-medico-elegibilidade",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1908,7 +1908,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "f1ff49ae5dec6fa180bd106f05a054411c0da288b07810973bcb4cc5b4893756",
       "rh_id": "sns-sem-medico-serie-antiga-2025-06",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1919,7 +1919,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "0d599b08e28178f7adeac2588a9f1c96b689eefe2b8320af2a16fa27cdaccf7e",
       "rh_id": "sns-sem-medico-serie-antiga-2026-06",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
@@ -1930,29 +1930,29 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "b547a2038e526ab4be5c508662c0066067c54c511a9aa906407d5697bcf8f772",
       "rh_id": "sns-sem-medico-serie-nova-2026-08",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
     "sns-urgencias-2025-07": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-20",
-      "exported_row_sha256": "89c1c8075f31bb99df21260f717821bd37d47c9bdd6d7f5c129c627ad3899497",
+      "exported_row_sha256": "60bc71984da55f97ca0ada8f3d7c459d86b30e8e44e1ddbdf9c67c374db8f86f",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
-      "origin_row_sha256": "c16130ca08b901c654343a2c8025da796fc427310ffb94d0eca8852bd2d5a1cc",
+      "origin_row_sha256": "65662e8fae1fbf1421646a9f21fee8a7fbee819ccfc89f8c4730f8b64f23200a",
       "rh_id": "sns-urgencias-2025-07",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     },
     "sns-urgencias-2026-07": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-20",
-      "exported_row_sha256": "a210835aa06e307aaf8fe25aa8612d0e04ece1966a2b28b5bbec2cce6b490f14",
+      "exported_row_sha256": "9c2a42544cabc574e6b0c3d27fe1ff924699446f5eec374bd58816bb11253273",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
-      "origin_row_sha256": "cae04c7cc1044a48995211158addc3f40e1729879dcf09e96bf93917d0ef8043",
+      "origin_row_sha256": "45a7391ed1205c4136f957e9f3ad8ee4a801cbc134d5972d258e728c2daabb48",
       "rh_id": "sns-urgencias-2026-07",
-      "rh_ledger_sha256": "0127796e3f4195a445b29e8c31011ed5fcc6ef613f75085fcb894582e255c228",
+      "rh_ledger_sha256": "43331ccb54dead9f9a8b0aa8bec9432971c908a835975505778083d27b7e17df",
       "rh_study": "26 Saude e Parcerias Efeitos",
       "verifications_at_export": 0
     }

@@ -19,6 +19,13 @@ reference_date: "2026-08"
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
 excerpt: null
 
+# Fontes secundárias da definição, com os recibos dos ficheiros alojados.
+definition_sources: [{"publisher": "Serviço Nacional de Saúde", "receipt": {"campo": "evolucao-das-consultas-medicas-nos-csp; metas.default.description", "cliente": "core.http.HttpClient.condicional", "hora": "2026-10-20T13:11:04.370901+00:00", "motor": "content/26 Saude e Parcerias Efeitos/source/saude/sns-catalogo-2.json", "sha256": "24164af100bd601cab9d55e37940470de23ecac40d5fbd93ee283ffb33d1c218"}, "url": "https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets?limit=100&offset=100"}]
+
+# Ressalva publicada da casa, conferida no motor, nas duas línguas.
+ressalva: "Último mês provisório. O catálogo do SNS, evolucao-das-consultas-medicas-nos-csp, diz: «Os dados relativos a este indicador são de caráter temporário para o mês publicado mais recente.»"
+ressalva_en: "Latest month provisional. The NHS catalogue, evolucao-das-consultas-medicas-nos-csp, says: «Os dados relativos a este indicador são de caráter temporário para o mês publicado mais recente.»"
+
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: "( sns-consultas-csp-2026-08 / sns-consultas-csp-2025-08 - 1 ) * 100 = 7,7"
 derivation_en: "( sns-consultas-csp-2026-08 / sns-consultas-csp-2025-08 - 1 ) * 100 = 7,7"

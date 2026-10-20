@@ -597,24 +597,24 @@ export const NOMES_V2E = {
     "en": "C01 - National Health Service: Paid to direct and final beneficiaries (%)"
   },
   "infarmed-ambulatorio-2026-07-p5-acumulado-encargo": {
-    "pt": "Encargos SNS com medicamentos em ambulatório, 2026-01/2026-07",
-    "en": "NHS medicines expenditure in outpatient care, 2026-01/2026-07"
+    "pt": "Encargos SNS com medicamentos em ambulatório, janeiro a julho de 2026",
+    "en": "NHS medicines expenditure in outpatient care, January to July 2026"
   },
   "infarmed-ambulatorio-2026-07-p5-homologo-encargo": {
-    "pt": "Encargos SNS com medicamentos em ambulatório, 2025-01/2025-07",
-    "en": "NHS medicines expenditure in outpatient care, 2025-01/2025-07"
+    "pt": "Encargos SNS com medicamentos em ambulatório, janeiro a julho de 2025",
+    "en": "NHS medicines expenditure in outpatient care, January to July 2025"
   },
   "infarmed-ambulatorio-limitacao": {
     "pt": "Limitação dos valores Infarmed",
     "en": "Infarmed figures limitation"
   },
   "infarmed-hospitalar-2026-07-p5-acumulado-encargo": {
-    "pt": "Encargos SNS com medicamentos em meio hospitalar, 2026-01/2026-07",
-    "en": "NHS medicines expenditure in hospitals, 2026-01/2026-07"
+    "pt": "Encargos SNS com medicamentos em meio hospitalar, janeiro a julho de 2026",
+    "en": "NHS medicines expenditure in hospitals, January to July 2026"
   },
   "infarmed-hospitalar-2026-07-p5-homologo-encargo": {
-    "pt": "Encargos SNS com medicamentos em meio hospitalar, 2025-01/2025-07",
-    "en": "NHS medicines expenditure in hospitals, 2025-01/2025-07"
+    "pt": "Encargos SNS com medicamentos em meio hospitalar, janeiro a julho de 2025",
+    "en": "NHS medicines expenditure in hospitals, January to July 2025"
   },
   "prr-marcos-metas-2025-p2-1-29-estado": {
     "pt": "Marco ou meta 1.29: Implantação do sistema de classificação, do perfil funcional e do sistema de referenciação dos utentes para o modelo regional de cuidados continuados integrados da Madeira: Estado",

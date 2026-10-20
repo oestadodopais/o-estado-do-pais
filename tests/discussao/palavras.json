@@ -27956,13 +27956,71 @@
         },
         {
           "caminho": "seccoes[1].conteudo[7].paragrafo[2]",
-          "pt": " a lei eliminou as portagens em lanços e sublanços de sete autoestradas, que enumera ",
-          "en": " the law has abolished tolls on stretches of seven motorways, which it lists ",
+          "pt": " a lei eliminou as portagens em lanços e sublanços de sete autoestradas, que enumera (",
+          "en": " the law has abolished tolls on stretches of seven motorways, which it lists (",
           "ramo": null,
           "partes": [
             {
-              "pt": " a lei eliminou as portagens em lanços e sublanços de sete autoestradas, que enumera ",
-              "en": " the law has abolished tolls on stretches of seven motorways, which it lists ",
+              "pt": " a lei eliminou as portagens em lanços e sublanços de ",
+              "en": " the law has abolished tolls on stretches of ",
+              "classe": "leitura",
+              "sobre": "Sete é a contagem conferida das alíneas a) a g) do excerto de pe-scut-trocos; cada alínea enumera uma autoestrada.",
+              "apoios": [
+                {
+                  "linha": "pe-scut-vigencia",
+                  "campo": "reference_date",
+                  "literal": "2025-01-01"
+                },
+                {
+                  "linha": "pe-scut-trocos",
+                  "campo": "excerpt",
+                  "literal": "São eliminadas as taxas de portagem cobradas aos utilizadores nos lanços e sublanços das seguintes autoestradas: a) A4 — Transmontana e Túnel do Marão; b) A13 e A13-1 — Pinhal Interior; c) A22 — Algarve; d) A23 — Beira Interior; e) A24 — Interior Norte; f) A25 — Beiras Litoral e Alta; g) A28 — Litoral Norte, nos troços entre Esposende e Antas, e entre Neiva e Darque."
+                },
+                {
+                  "linha": "pe-dl87a-apoio-retificado",
+                  "campo": "reference_date",
+                  "literal": "2023"
+                },
+                {
+                  "linha": "pe-dl87a-publicacao-ano",
+                  "campo": "reference_date",
+                  "literal": "2022"
+                },
+                {
+                  "linha": "pe-dl87a-apoio-retificado",
+                  "campo": "excerpt",
+                  "literal": "«1 — O apoio é assegurado através de um pagamento do Estado, a entregar às concessionárias, em complemento do pagamento das tarifas e taxas de portagem realizado pelos utilizadores, no montante correspondente à diferença entre as tarifas e taxas de portagem que resultariam da aplicação de um coeficiente de atualização para o ano de 2023 de 1,077, equivalente a um aumento de 7,7 %, e as tarifas e taxas de portagem que resultam da aplicação do n.º 1 do artigo anterior.»"
+                },
+                {
+                  "linha": "pe-dl87a-descontos",
+                  "campo": "excerpt",
+                  "literal": "O disposto no presente decreto-lei não prejudica a aplicação dos regimes de descontos em vigor."
+                },
+                {
+                  "linha": "pe-dl87a-financiamento",
+                  "campo": "excerpt",
+                  "literal": "Os encargos resultantes do apoio previsto nos artigos 3.º e 4.º são suportados diretamente pelo Orçamento do Estado, a processar pela DGTF."
+                },
+                {
+                  "linha": "pe-oe-apoio-dl87a",
+                  "campo": "reference_date",
+                  "literal": "2027"
+                },
+                {
+                  "linha": "pe-oe-apoio-dl87a",
+                  "campo": "excerpt",
+                  "literal": "Regista-se também um aparente aumento dos encargos brutos plurianuais, decorrente da inclusão dos montantes relativos ao apoio pago às concessionárias com titularidade de portagem no âmbito do Decreto-Lei nº 87-A/2022. Este apoio não constava do Relatório do Orçamento do Estado anterior, uma vez que, do ponto de vista da Infraestruturas de Portugal, tem um efeito neutro (o montante desembolsado por esta entidade corresponde ao montante que lhe é atribuído pelo Estado). Contudo, na ótica do setor público como um todo, este apoio configura um encargo efetivo com parcerias público-privadas, pelo que se passa agora a incluir no presente Relatório. Em face desta alteração, os valores relativos a este item não são diretamente comparáveis com os apresentados no Relatório anterior, sendo que a comparabilidade fica assegurada a partir dos próximos Relatórios."
+                },
+                {
+                  "linha": "pe-oe-beira-abolicao",
+                  "campo": "excerpt",
+                  "literal": "Salienta-se ainda o desenvolvimento dos trabalhos de negociação no âmbito do contrato de concessão da Beira Interior, na sequência do pedido apresentado pela concessionária no contexto da abolição das portagens, tendo em vista verificar se estão reunidas as condições para a reposição do equilíbrio financeiro do contrato e para negociar os respetivos termos, abrangendo ainda a renegociação de outros aspetos contratuais relevantes e a avaliação de eventuais novos investimentos a realizar."
+                }
+              ]
+            },
+            {
+              "pt": "sete",
+              "en": "seven",
               "classe": "leitura",
               "sobre": "Sete é a contagem conferida das alíneas a) a g) do excerto de pe-scut-trocos; cada alínea enumera uma autoestrada.",
               "apoios": [
@@ -27970,6 +28028,64 @@
                   "linha": "pe-scut-trocos",
                   "campo": "excerpt",
                   "literal": "São eliminadas as taxas de portagem cobradas aos utilizadores nos lanços e sublanços das seguintes autoestradas: a) A4 — Transmontana e Túnel do Marão; b) A13 e A13-1 — Pinhal Interior; c) A22 — Algarve; d) A23 — Beira Interior; e) A24 — Interior Norte; f) A25 — Beiras Litoral e Alta; g) A28 — Litoral Norte, nos troços entre Esposende e Antas, e entre Neiva e Darque."
+                }
+              ]
+            },
+            {
+              "pt": " autoestradas, que enumera (",
+              "en": " motorways, which it lists (",
+              "classe": "leitura",
+              "sobre": "Sete é a contagem conferida das alíneas a) a g) do excerto de pe-scut-trocos; cada alínea enumera uma autoestrada.",
+              "apoios": [
+                {
+                  "linha": "pe-scut-vigencia",
+                  "campo": "reference_date",
+                  "literal": "2025-01-01"
+                },
+                {
+                  "linha": "pe-scut-trocos",
+                  "campo": "excerpt",
+                  "literal": "São eliminadas as taxas de portagem cobradas aos utilizadores nos lanços e sublanços das seguintes autoestradas: a) A4 — Transmontana e Túnel do Marão; b) A13 e A13-1 — Pinhal Interior; c) A22 — Algarve; d) A23 — Beira Interior; e) A24 — Interior Norte; f) A25 — Beiras Litoral e Alta; g) A28 — Litoral Norte, nos troços entre Esposende e Antas, e entre Neiva e Darque."
+                },
+                {
+                  "linha": "pe-dl87a-apoio-retificado",
+                  "campo": "reference_date",
+                  "literal": "2023"
+                },
+                {
+                  "linha": "pe-dl87a-publicacao-ano",
+                  "campo": "reference_date",
+                  "literal": "2022"
+                },
+                {
+                  "linha": "pe-dl87a-apoio-retificado",
+                  "campo": "excerpt",
+                  "literal": "«1 — O apoio é assegurado através de um pagamento do Estado, a entregar às concessionárias, em complemento do pagamento das tarifas e taxas de portagem realizado pelos utilizadores, no montante correspondente à diferença entre as tarifas e taxas de portagem que resultariam da aplicação de um coeficiente de atualização para o ano de 2023 de 1,077, equivalente a um aumento de 7,7 %, e as tarifas e taxas de portagem que resultam da aplicação do n.º 1 do artigo anterior.»"
+                },
+                {
+                  "linha": "pe-dl87a-descontos",
+                  "campo": "excerpt",
+                  "literal": "O disposto no presente decreto-lei não prejudica a aplicação dos regimes de descontos em vigor."
+                },
+                {
+                  "linha": "pe-dl87a-financiamento",
+                  "campo": "excerpt",
+                  "literal": "Os encargos resultantes do apoio previsto nos artigos 3.º e 4.º são suportados diretamente pelo Orçamento do Estado, a processar pela DGTF."
+                },
+                {
+                  "linha": "pe-oe-apoio-dl87a",
+                  "campo": "reference_date",
+                  "literal": "2027"
+                },
+                {
+                  "linha": "pe-oe-apoio-dl87a",
+                  "campo": "excerpt",
+                  "literal": "Regista-se também um aparente aumento dos encargos brutos plurianuais, decorrente da inclusão dos montantes relativos ao apoio pago às concessionárias com titularidade de portagem no âmbito do Decreto-Lei nº 87-A/2022. Este apoio não constava do Relatório do Orçamento do Estado anterior, uma vez que, do ponto de vista da Infraestruturas de Portugal, tem um efeito neutro (o montante desembolsado por esta entidade corresponde ao montante que lhe é atribuído pelo Estado). Contudo, na ótica do setor público como um todo, este apoio configura um encargo efetivo com parcerias público-privadas, pelo que se passa agora a incluir no presente Relatório. Em face desta alteração, os valores relativos a este item não são diretamente comparáveis com os apresentados no Relatório anterior, sendo que a comparabilidade fica assegurada a partir dos próximos Relatórios."
+                },
+                {
+                  "linha": "pe-oe-beira-abolicao",
+                  "campo": "excerpt",
+                  "literal": "Salienta-se ainda o desenvolvimento dos trabalhos de negociação no âmbito do contrato de concessão da Beira Interior, na sequência do pedido apresentado pela concessionária no contexto da abolição das portagens, tendo em vista verificar se estão reunidas as condições para a reposição do equilíbrio financeiro do contrato e para negociar os respetivos termos, abrangendo ainda a renegociação de outros aspetos contratuais relevantes e a avaliação de eventuais novos investimentos a realizar."
                 }
               ]
             }
@@ -28043,13 +28159,13 @@
         },
         {
           "caminho": "seccoes[1].conteudo[7].paragrafo[4]",
-          "pt": ". Em ",
-          "en": ". In ",
+          "pt": "). Em ",
+          "en": "). In ",
           "ramo": null,
           "partes": [
             {
-              "pt": ". Em ",
-              "en": ". In ",
+              "pt": "). Em ",
+              "en": "). In ",
               "classe": "leitura",
               "sobre": "Eliminação de portagens e apoio pela diferença entre a atualização limitada e a de referência do decreto, com a definição retificada, a salvaguarda dos descontos, o financiamento pelo Orçamento do Estado, a inclusão nos encargos brutos e a negociação da Beira Interior.",
               "apoios": [
@@ -28175,13 +28291,13 @@
         },
         {
           "caminho": "seccoes[1].conteudo[7].paragrafo[8]",
-          "pt": " toma como referência ",
-          "en": " takes as its reference ",
+          "pt": " toma como referência (",
+          "en": " takes as its reference (",
           "ramo": null,
           "partes": [
             {
-              "pt": " toma como referência ",
-              "en": " takes as its reference ",
+              "pt": " toma como referência (",
+              "en": " takes as its reference (",
               "classe": "leitura",
               "sobre": "Eliminação de portagens e apoio pela diferença entre a atualização limitada e a de referência do decreto, com a definição retificada, a salvaguarda dos descontos, o financiamento pelo Orçamento do Estado, a inclusão nos encargos brutos e a negociação da Beira Interior.",
               "apoios": [
@@ -28307,13 +28423,13 @@
         },
         {
           "caminho": "seccoes[1].conteudo[7].paragrafo[10]",
-          "pt": "; o decreto diz que «",
-          "en": "; the decree says that «",
+          "pt": "); o decreto diz que «",
+          "en": "); the decree says that «",
           "ramo": null,
           "partes": [
             {
-              "pt": "; o decreto diz que «",
-              "en": "; the decree says that «",
+              "pt": "); o decreto diz que «",
+              "en": "); the decree says that «",
               "classe": "leitura",
               "sobre": "Eliminação de portagens e apoio pela diferença entre a atualização limitada e a de referência do decreto, com a definição retificada, a salvaguarda dos descontos, o financiamento pelo Orçamento do Estado, a inclusão nos encargos brutos e a negociação da Beira Interior.",
               "apoios": [
