@@ -15,6 +15,8 @@
     "livro do sítio": 0,
     "primeira construção": "1: faltavam definições bilingues das novas famílias; restantes passos não executados (125)",
     "typecheck após guarda de componentes": 0,
-    "definições dos recibos, cobertura e K17": "0; 126 linhas, 252 nomes e 252 frases nas duas edições"
+    "definições dos recibos, cobertura e K17": "0; 126 linhas, 252 nomes e 252 frases nas duas edições",
+    "segunda construção": "1: o título perdia as marcas dos tokens ao ser renderizado; restantes passos não executados (125)",
+    "títulos ancorados, plantas": "0, 16 ensaios nas duas edições"
   }
 }

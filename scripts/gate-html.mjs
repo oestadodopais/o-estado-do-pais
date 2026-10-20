@@ -345,6 +345,7 @@ import {
 import { VERIFICACAO } from '../src/data/verificacao.mjs';
 import { SERIES_ATRASADAS } from '../src/data/frescura.mjs';
 import { seloDoValorDoCartao } from './selo-do-cartao.mjs';
+import { portaDoTituloDaDiscussao } from './porta-do-titulo-discussao.mjs';
 import { prova, CAMINHO_DA_PROVA } from '../src/lib/prova.mjs';
 import {
   carregaFormas,
@@ -3589,6 +3590,9 @@ function auditaSelo(el, id, lang, err, rota) {
      manda o leitor para fora da sua edição, e agora fecha a construção. */
   const alvos = [routePath('linha', lang, { slug: id })];
   const alvo = alvos[0];
+
+  // V2D: título navegável integral, com valores e ano presos às linhas, para o próprio item.
+  if (portaDoTituloDaDiscussao(el, id, lang, claims, {dist:DIST})) return;
 
   if (dentroDeSvg(el)) {
     /* Um <a> dentro de um desenho não se lê como porta: o selo de um valor

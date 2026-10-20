@@ -37,6 +37,8 @@ O inventário final contém 135 linhas com porta para os itens, das quais 119 ch
 | primeira construção | 1: faltavam definições bilingues das novas famílias; restantes passos não executados (125) |
 | typecheck após guarda de componentes | 0 |
 | definições dos recibos, cobertura e K17 | 0; 126 linhas, 252 nomes e 252 frases nas duas edições |
+| segunda construção | 1: o título perdia as marcas dos tokens ao ser renderizado; restantes passos não executados (125) |
+| títulos ancorados, plantas | 0, 16 ensaios nas duas edições |
 
 Capturas ainda não executadas.
 
@@ -165,6 +167,14 @@ Antes: As linhas novas ainda não tinham as definições bilingues exigidas pelo
 Depois: Cada uma das 126 linhas exportadas tem nome e definição nas duas edições, apoiados no excerto ou na derivação da própria linha; um compositor reproduz as declarações e a auditoria.
 
 A primeira construção recusou as famílias em falta. A cobertura dos recibos tem de acompanhar a travessia das linhas.
+
+### V2D-22: Títulos com números ligados às linhas
+
+Antes: O título era resolvido como texto simples nos vários pontos de entrada, perdendo as marcas dos valores e do período.
+
+Depois: Os pontos de entrada renderizam os pedaços do título e conservam a ligação de cada número à sua linha. No título do artigo há selos; as ligações de navegação levam ao artigo e são conferidas contra o destino, o título completo e os tokens, sem ligações aninhadas.
+
+O portão de HTML recusou os números sem ligação; as percentagens são medições e não podem receber uma isenção de texto estrutural.
 
 ## Valores lidos do livro selado
 
@@ -319,7 +329,7 @@ A primeira construção recusou as famílias em falta. A cobertura dos recibos t
 
 **Como foi dito**
 
-«Ora, esta verba do PRR foi excecional. Se retirarmos isso, o orçamento da Saúde sobre 3%», António Leitão Amaro, ministro da Presidência, num documento publicado pela RTP, a 09.10.2026. No mesmo dia, a RTP publicou: «O orçamento para Saúde sofre um corte em 2027. Cai 1,5 por cento. Estão atribuídos 17 mil 858 milhões de euros. Menos 267,5 milhões do que este ano.». A 12.10.2026, Paula Santos disse: «O investimento sofre um corte brutal de 33,7%.»
+«Ora, esta verba do PRR foi excecional. Se retirarmos isso, o orçamento da Saúde sobre 3%», António Leitão Amaro, ministro da Presidência, num documento publicado pela RTP, a 09.10.2026. No mesmo dia, a RTP publicou: «O orçamento para Saúde sofre um corte em 2027. Cai 1,5 por cento. Estão atribuídos 17 mil 858 milhões de euros. Menos 267,5 milhões do que este ano.» A 12.10.2026, Paula Santos disse: «O investimento sofre um corte brutal de 33,7%.»
 
 **O que as fontes dizem**
 
@@ -347,7 +357,7 @@ O que sobe e o que desce não são a mesma coisa: o pessoal leva mais 401,2; a a
 
 O fim do PRR não é só da Saúde: em 2026 o PRR pesava 1 472,7 nas Finanças, 1 357,1 na Economia, 1 133,0 nas Infraestruturas e habitação, 823,2 no Ambiente e energia e 771,1 na Saúde. Em 2027 a despesa fora do PRR cresce 3,0 % na Saúde, 4,9 % na Educação, 8,8 % no Trabalho, solidariedade e segurança social, 20,8 % nas Infraestruturas e habitação, 18,2 % na Justiça e 13,1 % na Segurança interna.
 
-O orçamento de 2027, 17 858,4, é inferior ao que o relatório estima que se gaste em 2026, 18 125,9, e superior em 3,6 % ao que se gastou em 2025, 17 241,5. A UTAO escreve, sobre a execução do Serviço Nacional de Saúde em 2027: «Existe um risco de pressão orçamental»
+O orçamento de 2027, 17 858,4, é inferior ao que o relatório estima que se gaste em 2026, 18 125,9, e superior em 3,6 % ao que se gastou em 2025, 17 241,5. A UTAO escreve, sobre a execução do Serviço Nacional de Saúde em 2027: «Existe um risco de pressão orçamental».
 
 **A conclusão**
 
@@ -365,7 +375,7 @@ O ministro e a RTP escolheram cada um a linha que lhes convinha, e as duas são 
 
 **Como foi dito**
 
-«Vem com um orçamento que entrega 1 700 milhões às parcerias público-privadas rodoviárias», Paulo Raimundo · PCP, na Assembleia da República, a 09.10.2026. A 12.10.2026, Paula Santos: «Em sentido inverso cresce mais do que o previsto a despesa com as chamadas PPP – rodoviárias, ferroviárias, saúde – com o Governo a desviar mais de 1800 milhões de euros de recursos públicos para os grupos económicos privados, sem que tal se traduza em novas infraestruturas ou investimento nas existentes.». A 15.10.2026, Paulo Raimundo: «Há condições, há recursos e meios, desde logo na Segurança Social, mas há também opções que se podem e têm de fazer, e entre os mais de 1700 milhões de euros que o Governo quer pagar em PPP e o aumento dos reformados, da nossa parte não temos dúvidas da opção a tomar.»
+«Vem com um orçamento que entrega 1 700 milhões às parcerias público-privadas rodoviárias», Paulo Raimundo · PCP, na Assembleia da República, a 09.10.2026. A 12.10.2026, Paula Santos: «Em sentido inverso cresce mais do que o previsto a despesa com as chamadas PPP – rodoviárias, ferroviárias, saúde – com o Governo a desviar mais de 1800 milhões de euros de recursos públicos para os grupos económicos privados, sem que tal se traduza em novas infraestruturas ou investimento nas existentes.» A 15.10.2026, Paulo Raimundo: «Há condições, há recursos e meios, desde logo na Segurança Social, mas há também opções que se podem e têm de fazer, e entre os mais de 1700 milhões de euros que o Governo quer pagar em PPP e o aumento dos reformados, da nossa parte não temos dúvidas da opção a tomar.»
 
 **O que as fontes dizem**
 
@@ -379,7 +389,7 @@ O relatório projeta 705 em 2028, 648 em 2029, 77 em 2035 e 17 em 2040, o últim
 
 Para 2027, o relatório do ano passado previa 774 de encargos líquidos; este prevê 889. Segundo o relatório, a diferença vem dos custos da cobrança das portagens e dos pagamentos ligados ao tráfego, que subiram, e das receitas de portagem, que desceram.
 
-Fora do quadro, no capítulo dos riscos, o relatório conta 2 388,2 milhões de euros em pedidos de reequilíbrio financeiro e litígios das concessionárias e subconcessionárias rodoviárias, 1 140 acima do relatório anterior, dos quais 1 122,5 da Brisa, na negociação em curso, e 445 da ação principal da Rotas do Algarve Litoral, em que o Estado já paga 1,3 milhões por mês a título provisório. A UTAO escreve que estes valores são «não encargos já reconhecidos»
+Fora do quadro, no capítulo dos riscos, o relatório conta 2 388,2 milhões de euros em pedidos de reequilíbrio financeiro e litígios das concessionárias e subconcessionárias rodoviárias, 1 140 acima do relatório anterior, dos quais 1 122,5 da Brisa, na negociação em curso, e 445 da ação principal da Rotas do Algarve Litoral, em que o Estado já paga 1,3 milhões por mês a título provisório. A UTAO escreve que estes valores são «não encargos já reconhecidos».
 
 **A comparação**
 
@@ -410,7 +420,7 @@ O PCP tem razão ao chamar a atenção para o custo das parcerias, mas erra ao a
 
 **As it was said**
 
-«Ora, esta verba do PRR foi excecional. Se retirarmos isso, o orçamento da Saúde sobre 3%», António Leitão Amaro, ministro da Presidência, in a document published by RTP, on 09.10.2026. On the same day, RTP published: «O orçamento para Saúde sofre um corte em 2027. Cai 1,5 por cento. Estão atribuídos 17 mil 858 milhões de euros. Menos 267,5 milhões do que este ano.». On 12.10.2026, Paula Santos said: «O investimento sofre um corte brutal de 33,7%.»
+«Ora, esta verba do PRR foi excecional. Se retirarmos isso, o orçamento da Saúde sobre 3%», António Leitão Amaro, ministro da Presidência, in a document published by RTP, on 09.10.2026. On the same day, RTP published: «O orçamento para Saúde sofre um corte em 2027. Cai 1,5 por cento. Estão atribuídos 17 mil 858 milhões de euros. Menos 267,5 milhões do que este ano.» On 12.10.2026, Paula Santos said: «O investimento sofre um corte brutal de 33,7%.»
 
 **What the sources say**
 
@@ -438,7 +448,7 @@ What rises and what falls are not the same thing: personnel gets 401,2 more; the
 
 The end of the RRP is not confined to Health: in 2026 the RRP accounted for 1 472,7 in Finance, 1 357,1 in Economy, 1 133,0 in Infrastructure and housing, 823,2 in Environment and energy and 771,1 in Health. In 2027 expenditure outside the RRP grows 3,0 % in Health, 4,9 % in Education, 8,8 % in Labour, solidarity and social security, 20,8 % in Infrastructure and housing, 18,2 % in Justice and 13,1 % in Internal security.
 
-The budget for 2027, 17 858,4, is below what the report estimates will be spent in 2026, 18 125,9, and 3,6 % above what was spent in 2025, 17 241,5. The UTAO writes, on the execution of the National Health Service in 2027: «Existe um risco de pressão orçamental»
+The budget for 2027, 17 858,4, is below what the report estimates will be spent in 2026, 18 125,9, and 3,6 % above what was spent in 2025, 17 241,5. The UTAO writes, on the execution of the National Health Service in 2027: «Existe um risco de pressão orçamental».
 
 **The conclusion**
 
@@ -456,7 +466,7 @@ The minister and RTP each chose the line that suited them, and both are true; th
 
 **As it was said**
 
-«Vem com um orçamento que entrega 1 700 milhões às parcerias público-privadas rodoviárias», Paulo Raimundo · PCP, in the Assembleia da República, on 09.10.2026. On 12.10.2026, Paula Santos: «Em sentido inverso cresce mais do que o previsto a despesa com as chamadas PPP – rodoviárias, ferroviárias, saúde – com o Governo a desviar mais de 1800 milhões de euros de recursos públicos para os grupos económicos privados, sem que tal se traduza em novas infraestruturas ou investimento nas existentes.». On 15.10.2026, Paulo Raimundo: «Há condições, há recursos e meios, desde logo na Segurança Social, mas há também opções que se podem e têm de fazer, e entre os mais de 1700 milhões de euros que o Governo quer pagar em PPP e o aumento dos reformados, da nossa parte não temos dúvidas da opção a tomar.»
+«Vem com um orçamento que entrega 1 700 milhões às parcerias público-privadas rodoviárias», Paulo Raimundo · PCP, in the Assembleia da República, on 09.10.2026. On 12.10.2026, Paula Santos: «Em sentido inverso cresce mais do que o previsto a despesa com as chamadas PPP – rodoviárias, ferroviárias, saúde – com o Governo a desviar mais de 1800 milhões de euros de recursos públicos para os grupos económicos privados, sem que tal se traduza em novas infraestruturas ou investimento nas existentes.» On 15.10.2026, Paulo Raimundo: «Há condições, há recursos e meios, desde logo na Segurança Social, mas há também opções que se podem e têm de fazer, e entre os mais de 1700 milhões de euros que o Governo quer pagar em PPP e o aumento dos reformados, da nossa parte não temos dúvidas da opção a tomar.»
 
 **What the sources say**
 
@@ -470,7 +480,7 @@ The report projects 705 in 2028, 648 in 2029, 77 in 2035 and 17 in 2040, the las
 
 For 2027, last year's report forecast 774 in net charges; this one forecasts 889. According to the report, the difference comes from toll collection costs and traffic-linked payments, which rose, and toll revenue, which fell.
 
-Outside the table, in the risks chapter, the report counts 2 388,2 million euros in financial rebalancing claims and litigation by road concessionaires and subconcessionaires, 1 140 above the previous report, including 1 122,5 from Brisa, in the ongoing negotiation, and 445 in the main action by Rotas do Algarve Litoral, in which the State already pays 1,3 million a month provisionally. The UTAO writes that these amounts are «não encargos já reconhecidos»
+Outside the table, in the risks chapter, the report counts 2 388,2 million euros in financial rebalancing claims and litigation by road concessionaires and subconcessionaires, 1 140 above the previous report, including 1 122,5 from Brisa, in the ongoing negotiation, and 445 in the main action by Rotas do Algarve Litoral, in which the State already pays 1,3 million a month provisionally. The UTAO writes that these amounts are «não encargos já reconhecidos».
 
 **The comparison**
 

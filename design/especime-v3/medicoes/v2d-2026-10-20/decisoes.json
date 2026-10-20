@@ -103,5 +103,12 @@
     "antes": "As linhas novas ainda não tinham as definições bilingues exigidas pelos recibos.",
     "depois": "Cada uma das 126 linhas exportadas tem nome e definição nas duas edições, apoiados no excerto ou na derivação da própria linha; um compositor reproduz as declarações e a auditoria.",
     "razao": "A primeira construção recusou as famílias em falta. A cobertura dos recibos tem de acompanhar a travessia das linhas."
+  },
+  {
+    "id": "V2D-22",
+    "tema": "Títulos com números ligados às linhas",
+    "antes": "O título era resolvido como texto simples nos vários pontos de entrada, perdendo as marcas dos valores e do período.",
+    "depois": "Os pontos de entrada renderizam os pedaços do título e conservam a ligação de cada número à sua linha. No título do artigo há selos; as ligações de navegação levam ao artigo e são conferidas contra o destino, o título completo e os tokens, sem ligações aninhadas.",
+    "razao": "O portão de HTML recusou os números sem ligação; as percentagens são medições e não podem receber uma isenção de texto estrutural."
   }
 ]

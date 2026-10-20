@@ -7,6 +7,7 @@ import {parse} from 'node-html-parser';
 import {ITENS, DISCUSSAO, PCP} from '../../src/data/discussao.mjs';
 import {loadClaims} from '../../src/lib/ledger.mjs';
 import {conferirDerivacoes, plantasDasDerivacoes} from './derivacoes.mjs';
+import {conferirMarcasDoTitulo,plantasDosTitulos,tituloDeEnsaio} from './titulos.mjs';
 import {conferirAuditoriaDasExplicacoes, explicacaoPelaCelula, linhasDaExplicacao, textoSemSelos} from '../explicacoes/explicacao.mjs';
 // Lista independente do mandato: o título e estas seis partes, sem rótulos livres.
 const PARTES=[['como-foi-dito','Como foi dito','As it was said'],['fontes','O que as fontes dizem','What the sources say'],['comparacao','A comparação','The comparison'],['conclusao','A conclusão','The conclusion'],['recomendacao','A recomendação','The recommendation'],['opiniao','A opinião do lugar de direção',"The editorial seat's opinion"]];
@@ -48,11 +49,16 @@ export function conferirPagina(root,lang,linhas=loadClaims(),dist=process.env.OE
  const erros=[];const main=root.querySelector('main');
  if(normal(main?.querySelector('h1')?.text)!==DISCUSSAO.titulo[lang])erros.push('V2B título: página ausente ou trocada');
  const artigos=main?.querySelectorAll('[data-discussao]')??[];
+ const menu=main?.querySelectorAll('[data-discussao-porta]')??[];
+ if(menu.length!==ITENS.length)erros.push('V2D menu: número de títulos diferente');
+ for(const [i,e] of ITENS.entries()){const m=menu[i];erros.push(...conferirMarcasDoTitulo(m,e,lang,linhas));if(m?.getAttribute('href')!==destino(e.slug,lang)||normal(m?.text)!==explicacaoPelaCelula(e,lang,linhas).titulo)erros.push('V2D menu: título ou destino diferente');}
  if(artigos.map(a=>a.getAttribute('data-discussao')).join('|')!==ITENS.map(e=>e.slug).join('|'))erros.push('V2B ordem: itens ausentes, repetidos ou fora de ordem');
  for(const e of ITENS){
   const a=artigos.find(a=>a.getAttribute('data-discussao')===e.slug);if(!a){erros.push('V2B partes: item ausente');continue;}
   const esperado=explicacaoPelaCelula(e,lang,linhas);
-  if(normal(a.querySelector('[data-discussao-titulo]')?.text)!==esperado.titulo)erros.push('V2B título: o item não tem o título declarado');
+  const titulo=a.querySelector('[data-discussao-titulo]');
+  erros.push(...conferirMarcasDoTitulo(titulo,e,lang,linhas));
+  if(textoSemSelos(titulo??parse('<h2></h2>'))!==esperado.titulo)erros.push('V2B título: o item não tem o título declarado');
   const seccoes=a.querySelectorAll('[data-discussao-parte]');
   if(e.slug==='saude-no-orcamento'){
    const href=lang==='pt'?'/explicacoes/dinheiro-do-estado-2026/':'/en/explainers/dinheiro-do-estado-2026/';
@@ -108,7 +114,7 @@ export function conferirInicio(root,lang){
  if(!bloco)return ['V2B início: bloco ausente'];
  const links=bloco.querySelectorAll('[data-discussao-porta]');
  if(links.length!==ITENS.length)erros.push('V2B início: títulos em falta ou a mais');
- for(const [i,e] of ITENS.entries())if(links[i]?.getAttribute('href')!==destino(e.slug,lang)||normal(links[i]?.text)!==explicacaoPelaCelula(e,lang,loadClaims()).titulo)erros.push('V2B início: destino ou título errado');
+ for(const [i,e] of ITENS.entries()){erros.push(...conferirMarcasDoTitulo(links[i],e,lang,loadClaims()));if(links[i]?.getAttribute('href')!==destino(e.slug,lang)||normal(links[i]?.text)!==explicacaoPelaCelula(e,lang,loadClaims()).titulo)erros.push('V2B início: destino ou título errado');}
  const content=root.querySelector('main')?.innerHTML??'';
  const marcas=['data-discussao-inicio','data-o-que-se-passa','data-entradas'].map(m=>content.indexOf(m));
  if(marcas.some(n=>n<0)||!(marcas[0]<marcas[1]&&marcas[1]<marcas[2]))erros.push('V2C início: marca ausente ou bloco fora do lugar');
@@ -126,6 +132,7 @@ export function conferirIntegracao(root,lang,pagina,linhas=loadClaims()){
  if(portas.length!==esperados.length)erros.push(`V2B integração: presença ou ausência errada em ${pagina}`);
  for(const e of esperados){
   const p=portas.find(p=>p.getAttribute('data-discussao-integracao')===e.slug),a=p?.querySelector('a');
+  erros.push(...conferirMarcasDoTitulo(a,e,lang,linhas));
   if(a?.getAttribute('href')!==destino(e.slug,lang)||normal(a?.text)!==normal(DISCUSSAO.porta[lang]+' '+explicacaoPelaCelula(e,lang,linhas).titulo))erros.push(`V2B integração: destino ou título errado em ${pagina}`);
   if(tematica&&(p?.getAttribute('data-discussao-condicao')!=='tematica'||p?.closest('[data-explicacao-secao]')?.getAttribute('data-explicacao-secao')!=='por-funcao'))erros.push('V2B integração: porta temática fora da secção');
   if(/^(?:en\/ledger|livro-razao)\/[^/]+\/index.html$/.test(pagina)&&!p?.closest('#prova'))erros.push('V2B integração: porta fora da secção da prova');
@@ -147,7 +154,7 @@ export function plantas(html,lang){
  return out;
 }
 export function conferirTudo(dist=path.join(raiz,'dist')){
- const erros=conferirDeclaracoes(),provas=plantasDasDerivacoes(loadClaims()),integracoes=[];
+ const erros=conferirDeclaracoes(),provas=[...plantasDasDerivacoes(loadClaims()),...plantasDosTitulos(loadClaims())],integracoes=[];
  for(const lang of ['pt','en']){
   const file=path.join(dist,lang==='pt'?'o-que-se-discute/index.html':'en/under-discussion/index.html');
   if(!fs.existsSync(file)){erros.push('V2B página: página ausente');continue;}
@@ -171,7 +178,7 @@ export function conferirTudo(dist=path.join(raiz,'dist')){
   for(const p of root.querySelectorAll('[data-discussao-integracao]'))integracoes.push({pagina:rel,item:p.getAttribute('data-discussao-integracao'),condicao:p.getAttribute('data-discussao-condicao')});
  }};};walk(dist);
  const demo=ITENS[0], id=demo.afirmacoes[0];
- const intacta=`<main><section><span data-claim="${id}"></span><p data-discussao-integracao="${demo.slug}" data-discussao-condicao="linhas"><a href="${destino(demo.slug,'pt')}">${DISCUSSAO.porta.pt} ${explicacaoPelaCelula(demo,'pt',loadClaims()).titulo}</a></p></section></main>`;
+ const intacta=`<main><section><span data-claim="${id}"></span><p data-discussao-integracao="${demo.slug}" data-discussao-condicao="linhas"><a href="${destino(demo.slug,'pt')}">${DISCUSSAO.porta.pt} ${tituloDeEnsaio(demo,'pt',loadClaims())}</a></p></section></main>`;
  if(conferirIntegracao(parse(intacta),'pt','exemplo').length)erros.push('V2B integração: conhecido positivo recusado');
  for(const [nome,html] of [['porta por coincidência ausente',intacta.replace(/<p .*<\/p>/,'')],['porta sem coincidência',intacta.replace(/<span .*?<\/span>/,'')],['destino de outro item',intacta.replace(destino(demo.slug,'pt'),'#outra')]])provas.push({nome,mordeu:conferirIntegracao(parse(html),'pt','exemplo').length>0});
  const semToken=structuredClone(ITENS);semToken[0].seccoes[0].conteudo[0].paragrafo.pt[1]='Citação sem linha';

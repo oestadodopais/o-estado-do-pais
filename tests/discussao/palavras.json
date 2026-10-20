@@ -438,13 +438,13 @@
         },
         {
           "caminho": "seccoes[0].conteudo[0].paragrafo[10]",
-          "pt": "». A ",
-          "en": "». On ",
+          "pt": "» A ",
+          "en": "» On ",
           "ramo": null,
           "partes": [
             {
-              "pt": "». A ",
-              "en": "». On ",
+              "pt": "» A ",
+              "en": "» On ",
               "classe": "leitura",
               "sobre": "Atribuições, citações e datas literais dos três intervenientes.",
               "apoios": [
@@ -10984,13 +10984,13 @@
         },
         {
           "caminho": "seccoes[2].conteudo[4].paragrafo[18]",
-          "pt": "»",
-          "en": "»",
+          "pt": "».",
+          "en": "».",
           "ramo": null,
           "partes": [
             {
-              "pt": "»",
-              "en": "»",
+              "pt": "».",
+              "en": "».",
               "classe": "leitura",
               "sobre": "Orçamento, estimativa e execução com períodos distintos e risco descrito pela UTAO.",
               "apoios": [
@@ -13815,13 +13815,13 @@
         },
         {
           "caminho": "seccoes[0].conteudo[0].paragrafo[12]",
-          "pt": "». A ",
-          "en": "». On ",
+          "pt": "» A ",
+          "en": "» On ",
           "ramo": null,
           "partes": [
             {
-              "pt": "». A ",
-              "en": "». On ",
+              "pt": "» A ",
+              "en": "» On ",
               "classe": "leitura",
               "sobre": "Citações do PCP, atribuições e datas na ordem cronológica.",
               "apoios": [
@@ -16978,13 +16978,13 @@
         },
         {
           "caminho": "seccoes[1].conteudo[5].paragrafo[12]",
-          "pt": "»",
-          "en": "»",
+          "pt": "».",
+          "en": "».",
           "ramo": null,
           "partes": [
             {
-              "pt": "»",
-              "en": "»",
+              "pt": "».",
+              "en": "».",
               "classe": "leitura",
               "sobre": "Pedidos e litígios fora da previsão de encargos, com a natureza contingente explicitada pela UTAO.",
               "apoios": [
