@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-20T07:39:57+00:00",
+ "copia": "<pacote>",
+ "plantas": [
+  {
+   "id": "F1",
+   "ficheiro": "built/o-que-se-discute/index.html",
+   "descricao": "as receitas de portagem de 2025 alteradas na página PT contra a linha e o relatório de 2026 (392)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "cd9ab16e35089d652d5533e4f4b02327018f7d8a75097c4e2765ceb3e36edf04",
+   "sha256_depois": "05d2ec1a437293c1d0085bad83530d4ffe7b41a3bbe256fcf6c7449cf2728697",
+   "contexto_antes": "ss=\"vh\"> · <span>Ministério das Finanças</span></span></a></span>, e as receitas de portagem previstas descem mais, de <span class=\"claim claim-com-chip\"><span data-claim=\"ppp-oe2026-receitas-2025\" class=\"claim-value\">392</span><a class=\"src-chip\" href=\"/livro-razao/ppp-oe2026-receitas-2025\" data-nonledger=\"proveniencia\" data-selo-etiqueta=\"Ministério das Finanças\" title=\"Ministério da",
+   "contexto_depois": "ss=\"vh\"> · <span>Ministério das Finanças</span></span></a></span>, e as receitas de portagem previstas descem mais, de <span class=\"claim claim-com-chip\"><span data-claim=\"ppp-oe2026-receitas-2025\" class=\"claim-value\">329</span><a class=\"src-chip\" href=\"/livro-razao/ppp-oe2026-receitas-2025\" data-nonledger=\"proveniencia\" data-selo-etiqueta=\"Ministério das Finanças\" title=\"Ministério da"
+  },
+  {
+   "id": "F2",
+   "ficheiro": "built/o-que-se-discute/index.html",
+   "descricao": "a percentagem derivada da reposição do PRR alterada na página PT contra a sua derivação (66,4)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "05d2ec1a437293c1d0085bad83530d4ffe7b41a3bbe256fcf6c7449cf2728697",
+   "sha256_depois": "9dbcfbc6f1af637773a3a4fc359ad8671429f506e3b87e01bcced787818ac5a8",
+   "contexto_antes": "itle=\"calculado\"><span class=\"src-chip-texto\">fonte</span><span class=\"vh\"> · calculado</span></a></span>, o que repõe <span class=\"claim claim-com-chip\"><span data-claim=\"der-saude-razao-compensacao-prr-pct\" class=\"claim-value\">66,4</span><span class=\"claim-sufixo\"> %</span><a class=\"src-chip\" href=\"/livro-razao/der-saude-razao-compensacao-prr-pct\" data-nonledger=\"proveniencia\" data-selo-etiqueta",
+   "contexto_depois": "itle=\"calculado\"><span class=\"src-chip-texto\">fonte</span><span class=\"vh\"> · calculado</span></a></span>, o que repõe <span class=\"claim claim-com-chip\"><span data-claim=\"der-saude-razao-compensacao-prr-pct\" class=\"claim-value\">46,4</span><span class=\"claim-sufixo\"> %</span><a class=\"src-chip\" href=\"/livro-razao/der-saude-razao-compensacao-prr-pct\" data-nonledger=\"proveniencia\" data-selo-etiqueta"
+  },
+  {
+   "id": "F3",
+   "ficheiro": "built/en/under-discussion/index.html",
+   "descricao": "a citação do relatório sobre as reservas alterada na página EN contra a linha e o PDF",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "220119ff76b0c70ceb44fa15c894787313db2a32c1991b8a3223e3957ca6a635",
+   "sha256_depois": "f5858792677a66c39816046807b19f8a52e60ba33cb681afa83a926416045bde",
+   "contexto_antes": "2027-outras-despesas-correntes-reserva\" data-linha-campo=\"excerpt\">De relevar ainda o crescimento das outras despesas correntes, decorrente da constituição das reservas orçamentais a serem mobilizadas durante a execução orçamental, em linha com o aprofundamento da autonomia na gestão orçamental de cada área setorial iniciada em 2026.</span></a>»<a class=\"src-chip\" href=\"/en/le",
+   "contexto_depois": "2027-outras-despesas-correntes-reserva\" data-linha-campo=\"excerpt\">De relevar ainda o crescimento das outras despesas correntes, decorrente da constituição das reservas orçamentais a serem canceladas durante a execução orçamental, em linha com o aprofundamento da autonomia na gestão orçamental de cada área setorial iniciada em 2026.</span></a>»<a class=\"src-chip\" href=\"/en/le"
+  },
+  {
+   "id": "F5",
+   "ficheiro": "built/o-que-se-discute/index.html",
+   "descricao": "o sinal da variação fora do PRR das Finanças perdido na página PT (a frase diz que desce)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "9dbcfbc6f1af637773a3a4fc359ad8671429f506e3b87e01bcced787818ac5a8",
+   "sha256_depois": "55b222fbd67df51d4713db9f0376dae36cbaf9b38788d045a59eeb906e913831",
+   "contexto_antes": "<span class=\"src-chip-texto\">fonte</span><span class=\"vh\"> · calculado</span></a></span> na Segurança interna; e varia <span class=\"claim claim-com-chip\"><span data-claim=\"der-financas-variacao-sem-prr-pct\" class=\"claim-value\">−7,8</span><span class=\"claim-sufixo\"> %</span><a class=\"src-chip\" href=\"/livro-razao/der-financas-variacao-sem-prr-pct\" data-nonledger=\"proveniencia\" data-selo-etiqueta=\"",
+   "contexto_depois": "<span class=\"src-chip-texto\">fonte</span><span class=\"vh\"> · calculado</span></a></span> na Segurança interna; e varia <span class=\"claim claim-com-chip\"><span data-claim=\"der-financas-variacao-sem-prr-pct\" class=\"claim-value\">7,8</span><span class=\"claim-sufixo\"> %</span><a class=\"src-chip\" href=\"/livro-razao/der-financas-variacao-sem-prr-pct\" data-nonledger=\"proveniencia\" data-selo-etiqueta=\""
+  },
+  {
+   "id": "F4",
+   "ficheiro": "ledger/claims/ppp-oe2027-riscos-pedidos-rodoviarios.yml",
+   "descricao": "a data de referência da linha dos pedidos pendentes alterada na cópia exportada (o relatório diz o primeiro trimestre de 2026)",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "16894c8ebe596ffa45ecff527750531628bb312e74a370a02c6180c6e2482ca8",
+   "sha256_depois": "14448ead6afc7f62d2b72d88c959018765e790714dc3873c9d393b47f5dd18ea",
+   "contexto_antes": "OFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true\"\naccess_date: \"2026-10-13\"\nreference_date: \"2026-03-31\"\nperiod: \"2026-T1\"\n\n# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.\nexcerpt: \"De acordo com a informação disponível, o valor global dos pe",
+   "contexto_depois": "OFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true\"\naccess_date: \"2026-10-13\"\nreference_date: \"2026-06-30\"\nperiod: \"2026-T1\"\n\n# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.\nexcerpt: \"De acordo com a informação disponível, o valor global dos pe"
+  }
+ ]
+}
