@@ -10,9 +10,16 @@ function conferir(root,lang,alvo){
  const portas=root.querySelectorAll('main a[href]').filter(a=>!a.closest('[data-rotulo-ia]')&&a.getAttribute('href').split('#')[0].replace(/\/$/,'')===routePath('metodo',lang));
  return portas.length===1&&portas[0].getAttribute('href')===alvo?[]:['V2D Método: falta a porta única ou o destino está errado'];
 }
+function conferirInventario(ids,linhas){
+ return ids.length===140&&ids.includes('oe-2027-saude-acao-reserva-orcamental')&&ids.every(id=>linhas.has(id))
+  ?[]:['V2D Método: o inventário dos recibos não contém as cento e quarenta linhas atravessadas, incluindo a reserva da Saúde'];
+}
 export function conferirPortasDoMetodo(dist){
  const erros=[],plantas=[],linhas=loadClaims(),ids=Object.keys(travessia.rows);
- if(ids.length!==139||ids.some(id=>!linhas.has(id)))erros.push('V2D Método: o inventário dos recibos não contém as cento e trinta e nove linhas atravessadas');
+ erros.push(...conferirInventario(ids,linhas));
+ const semReserva=ids.filter(id=>id!=='oe-2027-saude-acao-reserva-orcamental');
+ plantas.push({nome:'inventário sem a nova reserva da Saúde',mordeu:conferirInventario(semReserva,linhas).length>0});
+ plantas.push({nome:'contagem mantida com outra linha no lugar da reserva',mordeu:conferirInventario([...semReserva,semReserva[0]],linhas).length>0});
  for(const lang of ['pt','en']){
   const metodo=routePath('metodo',lang);
   for(const id of ids){

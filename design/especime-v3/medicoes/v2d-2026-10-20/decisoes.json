@@ -243,5 +243,12 @@
     "antes": "A recomendação dizia Direção-Geral do Orçamento (DGO).",
     "depois": "A recomendação identifica a síntese mensal da execução orçamental da Entidade Orçamental nas duas edições. Os identificadores dgo-* ficam.",
     "razao": "As cinco linhas já identificam a Entidade Orçamental, têm nomes de rubrica sem DGO e citam o corpo alojado de eo.gov.pt."
+  },
+  {
+    "id": "V2D-42",
+    "tema": "Inventários após a nova linha textual",
+    "antes": "O inventário conservava dez cadeias substituídas e a célula do Método exigia 139 recibos.",
+    "depois": "As dez cadeias são recolhidas do HTML e a célula exige 140 recibos, incluindo a reserva da Saúde. Duas plantas retiram a nova linha ou substituem-na conservando a contagem.",
+    "razao": "A primeira corrida falhou nas frases anteriores; a segunda, na contagem anterior. A travessia exportada contém 140 linhas. A verificação de cada recibo e da sua porta mantém-se."
   }
 ]
