@@ -1,0 +1,65 @@
+{
+  "cabeca": "ab1d00262134b4593fa2020e11e11e8c9aaccced",
+  "paginas": [
+    {
+      "nome": "estudo",
+      "pt": "/estudos/orcamento-2027-o-que-muda-e-para-quem/",
+      "en": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/",
+      "recortes": [
+        {
+          "nome": "titulo",
+          "seletor": "[data-registo-unidade$=\"#0\"]"
+        },
+        {
+          "nome": "resumo",
+          "seletor": "[data-registo-unidade$=\"#3\"]"
+        }
+      ]
+    },
+    {
+      "nome": "recibo-citacao",
+      "pt": "/livro-razao/utao-risco-mercados/",
+      "en": "/en/ledger/utao-risco-mercados/",
+      "recortes": [
+        {
+          "nome": "titulo",
+          "seletor": ".linha-titulo"
+        },
+        {
+          "nome": "excerto",
+          "seletor": ".linha-valor-textual"
+        }
+      ]
+    },
+    {
+      "nome": "documento",
+      "pt": "/estudos/orcamento-2027-o-que-muda-e-para-quem/documento/",
+      "en": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/document/",
+      "recortes": [
+        {
+          "nome": "titulo",
+          "seletor": "[data-oedp-moldura] h1"
+        },
+        {
+          "nome": "resumo",
+          "seletor": "[data-oedp-moldura] p:nth-of-type(2)"
+        }
+      ]
+    },
+    {
+      "nome": "recibo-derivada",
+      "pt": "/livro-razao/der-oe2027-medidas-novas-saldo/",
+      "en": "/en/ledger/der-oe2027-medidas-novas-saldo/",
+      "recortes": [
+        {
+          "nome": "titulo",
+          "seletor": ".linha-titulo"
+        },
+        {
+          "nome": "conta",
+          "seletor": ".linha-derivacao"
+        }
+      ]
+    }
+  ]
+}

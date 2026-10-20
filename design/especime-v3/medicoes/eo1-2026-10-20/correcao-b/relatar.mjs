@@ -81,4 +81,4 @@ fs.writeFileSync(out+'/entradas-renderizadas.json',JSON.stringify(entradas,null,
 s+='### Siglas\n\nUTAO, CFP, IRS, IRC, IVA, CSI, PRR, PIB, SNS, INE, PS, PSD, PCP, CDS, JPP, PAN, BE, IL, MF, POE, POENMP, QPI, DGAEP, PPP, BdP, CE, OCDE, FMI, PT2030, AD, SMN, RMMG, BOE e SIFIDE. As expansões estão nas frases abaixo; SIFIDE conserva a expansão no parêntesis da secção das medidas, como determina o mandato. Os partidos Chega e Livre são escritos pelo nome.\n\n';
 s+='### Frases novas ou mudadas, tal como renderizam\n\n';
 for(const lang of ['pt','en']){s+='#### '+lang+'\n\n';for(const b of results.filter(b=>b.edicao===lang&&b.alterada))s+=`**Unidade ${b.unidade}.** ${b.texto}\n\n`;}
-const readme=dir+'/LEIA-ME.md',previous=fs.readFileSync(readme,'utf8').split('\n<!-- EO1-B -->')[0];fs.writeFileSync(readme,previous+s);console.log('EO1-b: relatório extraído das duas páginas nas duas línguas; códigos lidos.');
+const readme=dir+'/LEIA-ME.md',previous=fs.readFileSync(readme,'utf8').split('\n<!-- EO1-B -->')[0];fs.writeFileSync(readme,(previous+s).trimEnd()+'\n');console.log('EO1-b: relatório extraído das duas páginas nas duas línguas; códigos lidos.');
