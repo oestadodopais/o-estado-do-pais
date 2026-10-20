@@ -309,6 +309,8 @@ Esta secção substitui as conclusões anteriores nos pontos corrigidos. A V2E-3
 
 - **V2E-38.** A edição «2008», da linha nova do ano da minuta, fica explicitamente declarada sem língua. A régua da língua recusou a chave ausente; depois da declaração, passaram também as conferências do formato, da navegação e dos sinais da primeira página.
 
+- **V2E-39.** O conjunto fechado da régua dos rótulos acompanha as linhas acrescentadas. Nos recibos do painel, confere a cadeia selada integral e recusa tanto a unidade retirada como a repetição marcada ou não marcada. A célula do índice distingue texto documental selado de mudança numérica, como a página e a leitura semanal, sem permitir ocultar uma linha numérica pela simples marca textual.
+
 ### Linhas seladas e cálculos
 
 Seladas de novo: `pe-oe-beira-abolicao`, sem a chamada de nota colada a «negociação», e `pe-oe-riscos-nao-reconhecimento`, só até «peticionados.». O histórico preserva os excertos anteriores. As linhas `pe-dl87a-financiamento`, `pe-dl87a-apoio` e `pe-dl87a-apoio-retificado` conservaram a fonte, com descrições corrigidas nos recibos.

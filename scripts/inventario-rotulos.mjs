@@ -75,6 +75,7 @@ import { fileURLToPath } from 'node:url';
 import { parse } from 'node-html-parser';
 
 import { loadClaims } from '../src/lib/ledger.mjs';
+import { valorImpressoDoPainelConferido } from '../src/lib/prova-efeitos.mjs';
 import { FIGURAS, DEFINICOES_DAS_MEDIDAS, ORIGENS_DAS_DEFINICOES, textoDaDefinicao } from '../src/data/figuras.mjs';
 import { MEDIDAS_DO_DOMINIO_1, DIPLOMAS_REGIONAIS_DO_SALARIO_MINIMO, ressalvaDosDiplomasRegionais } from '../src/data/dominios.mjs';
 import { NOMES_DO_PROJETO } from '../src/data/nomes-das-medidas.mjs';
@@ -96,7 +97,7 @@ const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 export const INVENTARIO_DECLARADO = path.join(RAIZ, 'design', 'especime-v3', 'rotulos', 'INVENTARIO.json');
 const LINHAS = loadClaims();
 /** O conjunto fechado OE1, conferido contra as linhas e contra cada edição construída. */
-const LINHAS_ESPERADAS = { oe1: 186, jd1: 15, v2a: 18, v2d: 142, v2e: 170, ex3: 8 };
+const LINHAS_ESPERADAS = { oe1: 186, jd1: 15, v2a: 18, v2d: 142, v2e: 177, ex3: 8 };
 /** O estudo recebe outros blocos; a pertença vem do cruzamento de cada entrega. */
 const BLOCOS_DO_LIVRO = Object.fromEntries(['oe1', 'jd1', 'v2a', 'v2d', 'v2e', 'ex3'].map((bloco) => {
   const ids = new Set(Object.keys(JSON.parse(fs.readFileSync(path.join(RAIZ, 'ledger', 'cruzamentos', `${bloco}.json`), 'utf8')).rows));
@@ -189,6 +190,23 @@ export function conferirUnidadesOe1(root, { rota, lang, contas }) {
       : lang === 'en' && Object.prototype.hasOwnProperty.call(UNIDADES, u)
       ? /** @type {Record<string, string>} */ (UNIDADES)[u] : u;
     const esperada = norm(comAPalavra(traduzida));
+    // Nos três campos do painel, a unidade pertence à própria cadeia selada.
+    // A dispensa só vale para o recibo, com valor e texto integral conferidos.
+    if (familia === 'recibos' && valorImpressoDoPainelConferido(id, linha.value)) {
+      const caixa = root.querySelector('.linha-valor');
+      const valores = caixa?.querySelectorAll('[data-claim]') ?? [];
+      if (elementos.length || caixa?.querySelector('[data-linha-campo="unit"], [data-unidade-da-casa]')) {
+        erros.push(`${rotulo}-unidade · ${rota} · ${id}: o painel repete a unidade fora da cadeia selada`);
+        return;
+      }
+      if (valores.length !== 1 || valores[0].getAttribute('data-claim') !== id ||
+          visivel(valores[0]) !== norm(linha.value) || visivel(caixa) !== norm(linha.value)) {
+        erros.push(`${rotulo}-unidade · ${rota} · ${id}: o painel não conserva integralmente a cadeia selada, com a unidade incluída`);
+        return;
+      }
+      contas[bloco][familia][lang]++;
+      return;
+    }
     if (elementos.length !== 1) {
       erros.push(`${rotulo}-unidade · ${rota} · ${id}: ${familia} tem ${elementos.length} campos de unidade e deve ter um`);
       return;
@@ -1018,6 +1036,25 @@ export function plantas(dist) {
       const u = r.querySelector('.linha-valor-unidade'); if (!u) return false;
       u.set_content('por milhão de habitantes'); return true;
     }, new RegExp(`^V2E-unidade · /${rel}/${id} · ${id}: a unidade diz`));
+  }
+  for (const [lang, rel] of [['pt', 'livro-razao'], ['en', 'en/ledger']]) {
+    for (const campo of ['contratado', 'pago', 'taxa']) {
+      const id = `prr-monitorizacao-20261014-p2-c01-${campo}`;
+      planta(`v2e-painel-sem-unidade-${campo}-${lang}`, 'unidade', `${rel}/${id}/index.html`, r => {
+        const v = r.querySelector(`.linha-valor [data-claim="${id}"]`);
+        if (!v || !/(?:M\s*€|\s*%)$/.test(v.text)) return false;
+        v.set_content(v.text.replace(/(?:M\s*€|\s*%)$/, '')); return true;
+      }, /: o painel não conserva integralmente a cadeia selada/);
+      planta(`v2e-painel-unidade-duplicada-${campo}-${lang}`, 'unidade', `${rel}/${id}/index.html`, r => {
+        const caixa = r.querySelector('.linha-valor'); if (!caixa) return false;
+        caixa.insertAdjacentHTML('beforeend', `<span class="linha-valor-unidade" data-linha-claim="${id}" data-linha-campo="unit">${LINHAS.get(id).unit}</span>`);
+        return true;
+      }, /: o painel repete a unidade fora da cadeia selada/);
+      planta(`v2e-painel-unidade-solta-${campo}-${lang}`, 'unidade', `${rel}/${id}/index.html`, r => {
+        const caixa = r.querySelector('.linha-valor'); if (!caixa) return false;
+        caixa.insertAdjacentHTML('beforeend', `<span>${LINHAS.get(id).unit}</span>`); return true;
+      }, /: o painel não conserva integralmente a cadeia selada/);
+    }
   }
   // JD1-b, achado 16: perder a entrada no cruzamento E no HTML nunca baixa a contagem esperada.
   {

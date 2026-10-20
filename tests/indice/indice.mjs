@@ -49,7 +49,8 @@
  *        registo, desde a passagem R3-b),
  *        a mesma data, os mesmos dois valores e o mesmo lugar escrito, e com a marca da fonte para o
  *        recibo da sua linha; uma linha reunida noutra (`MEDIDA_REUNIDA`) não entra, porque a medida
- *        entra pela linha que fica; e nenhuma linha da lista se lê igual a outra (a passagem final do
+ *        entra pela linha que fica; afirmações e textos documentais selados ficam no registo, fora
+ *        desta comparação numérica; e nenhuma linha da lista se lê igual a outra (a passagem final do
  *        R3: as duas taxas de desemprego de 2025, uma por baixo da outra, eram duas linhas iguais
  *        para quem lê);
  *   I7 · nenhum destino se repete no corpo do índice (a regra da L1 do `check:lugar`, com as mesmas
@@ -75,15 +76,20 @@ import { parse } from 'node-html-parser';
 import {load as yaml} from 'js-yaml';
 import { LANGS, matchPath, normalizePath, routePath } from '../../src/lib/routes.mjs';
 import { MEDIDA_REUNIDA } from '../../src/lib/pais.mjs';
+import { textoDocumentalConferido } from '../../src/lib/prova-efeitos.mjs';
 
 const DIST = process.env.OEDP_DIST ?? 'dist';
 // O tipo é lido da linha, sem reutilizar a seleção do resolvedor do índice.
 const tiposDasLinhas=new Map();
+/** O marcador sozinho não dispensa uma linha: o texto documental tem de conservar a prova. */
+export function textoForaDoResumo(linha){
+  return !!linha&&((linha.afirmacao===true&&linha.unit==='afirmação')||textoDocumentalConferido(linha));
+}
 function afirmacaoTextual(id){
   if(!/^[a-z0-9_-]+$/.test(String(id??'')))return false;
   if(!tiposDasLinhas.has(id)){
     const f=path.join('ledger','claims',id+'.yml'),l=fs.existsSync(f)?yaml(fs.readFileSync(f,'utf8')):null;
-    tiposDasLinhas.set(id,l?.afirmacao===true&&l?.unit==='afirmação');
+    tiposDasLinhas.set(id,textoForaDoResumo(l));
   }
   return tiposDasLinhas.get(id);
 }
@@ -513,14 +519,32 @@ export function plantasDoIndice(base) {
       return comPaginas({}, new Map([[caminhoDoRegisto, registo.toString()]]));
     }, [new RegExp(`^I6 pt: «O que mudou» do índice tem 8 linha\\(s\\) em 1 lista\\(s\\), e o começo do registo dá 8; a primeira que difere: ${linhaDaPrimeira} · ${nDaPrimeira} · .*, e o registo dá ${linhaDaPrimeira} · ${nDaPrimeira + 1} · .* · valor plantado · `)], true],
   ];
+  const documento=yaml(fs.readFileSync(path.join('ledger','claims','pe-oe-beira-abolicao.yml'),'utf8'));
+  const registoDocumental=parse(ler(routePath('correcoes','pt'))??'').querySelector('[data-mudou-registo] li[data-correcao-entrada="pe-oe-beira-abolicao"]');
+  casos.push(['r3-celula-correcao-documental-no-resumo-numerico',()=>comPt(d=>{
+    const lista=d.querySelector('main [data-mudou-ambito="indice"]');
+    if(lista&&registoDocumental){lista.querySelectorAll('li').at(-1)?.remove();lista.insertAdjacentHTML('afterbegin',registoDocumental.toString());}
+  }),[/^I6 pt: «O que mudou» do índice/]]);
+  const tipos=[{nome:'r3-celula-texto-documental-selado-dispensado',mordeu:textoForaDoResumo(documento),queixas:[]}];
+  for(const [campo,altera] of [
+    ['marca',c=>{delete c.texto_documental;}],['unidade',c=>{c.unit='%';}],
+    ['valor',c=>{c.value+=' Outro texto.';}],['excerto',c=>{c.excerpt+=' Outro texto.';}],
+    ['fonte',c=>{c.document.source_sha256='outra';}],
+  ]){
+    const copia=structuredClone(documento);altera(copia);
+    tipos.push({nome:'r3-celula-texto-sem-selo-valido-nao-dispensado-'+campo,mordeu:!textoForaDoResumo(copia),queixas:[]});
+  }
+  const numerica=yaml(fs.readFileSync(path.join('ledger','claims','sns-lista-cirurgia-2026-07.yml'),'utf8'));
+  numerica.texto_documental=true;numerica.unit='texto';
+  tipos.push({nome:'r3-celula-numero-disfarcado-de-texto-nao-desaparece',mordeu:!textoForaDoResumo(numerica),queixas:[]});
   /* `soEstas`: a planta só morde se as queixas forem todas das que ela nomeia (as plantas da passagem R3-b provam
      que é a conferência nova que morde, e não outra pelo caminho). */
-  return casos.map(([nome, faz, mordidas, soEstas = false]) => {
+  return [...tipos,...casos.map(([nome, faz, mordidas, soEstas = false]) => {
     const r = conferirIndice(faz());
     const todas = mordidas.every((re) => r.erros.some((e) => re.test(e)));
     const soAsDela = !soEstas || r.erros.every((e) => mordidas.some((re) => re.test(e)));
     return { nome, mordeu: todas && soAsDela, so_as_dela: soEstas ? soAsDela : undefined, queixas: r.erros.slice(0, 6) };
-  });
+  })];
 }
 
 const principal = process.argv[1] && path.resolve(process.argv[1]) === path.resolve(new URL(import.meta.url).pathname);
