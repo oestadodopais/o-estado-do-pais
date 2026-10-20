@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-19T22:59:41+00:00",
+ "copia": "<pacote>",
+ "plantas": [
+  {
+   "id": "R1",
+   "ficheiro": "motor/content/24 Orcamento 2027 Analise/ledger.json",
+   "descricao": "o valor da linha derivada do PRR na Saúde em 2026 alterado (a derivação diz 771,1)",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "df4fd9fccb9adb824898e1885d10b0eacccaf36186eb41cd26b1358fea2b91d8",
+   "sha256_depois": "20d97fffb5f06792c71f72282b1a0f762fd2e490b2f97b56cffc6d08e78d2025",
+   "contexto_antes": "final.\",\n      \"program\": \"representacao-externa\",\n      \"metric\": \"variacao-efetiva\",\n      \"stage\": \"derivada\",\n      \"status\": \"derivado\"\n    },\n    {\n      \"id\": \"der-saude-prr-2026\",\n      \"value\": \"771,1\",\n      \"unit\": \"milhões de euros\",\n      \"period\": \"2026\",\n      \"reference_date\": \"2026\",\n      \"name\": \"Componente PRR implícita: saude\",\n      \"excerpt\": \"1",
+   "contexto_depois": "final.\",\n      \"program\": \"representacao-externa\",\n      \"metric\": \"variacao-efetiva\",\n      \"stage\": \"derivada\",\n      \"status\": \"derivado\"\n    },\n    {\n      \"id\": \"der-saude-prr-2026\",\n      \"value\": \"717,1\",\n      \"unit\": \"milhões de euros\",\n      \"period\": \"2026\",\n      \"reference_date\": \"2026\",\n      \"name\": \"Componente PRR implícita: saude\",\n      \"excerpt\": \"1"
+  },
+  {
+   "id": "R2",
+   "ficheiro": "motor/content/24 Orcamento 2027 Analise/ledger.json",
+   "descricao": "a execução da Saúde em 2025 alterada contra a Conta Geral do Estado alojada",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "20d97fffb5f06792c71f72282b1a0f762fd2e490b2f97b56cffc6d08e78d2025",
+   "sha256_depois": "f8faebc06894a27093a6466f1a0d218ef918a4902da9d8f78f6d77aa1ae5cb28",
+   "contexto_antes": "    \"program\": \"saude\",\n      \"metric\": \"efetiva\",\n      \"report_year\": 2024,\n      \"visual_checked\": true,\n      \"source_value\": \"15 695,3\"\n    },\n    {\n      \"id\": \"saude-total-2025-execucao-cge2025\",\n      \"value\": \"17 241,5\",\n      \"unit\": \"milhões de euros\",\n      \"period\": \"2025\",\n      \"reference_date\": \"2025\",\n      \"name\": \"DESPESA TOTAL\",\n      \"excerpt\": \"(milhões de euros)\\",
+   "contexto_depois": "    \"program\": \"saude\",\n      \"metric\": \"efetiva\",\n      \"report_year\": 2024,\n      \"visual_checked\": true,\n      \"source_value\": \"15 695,3\"\n    },\n    {\n      \"id\": \"saude-total-2025-execucao-cge2025\",\n      \"value\": \"17 421,5\",\n      \"unit\": \"milhões de euros\",\n      \"period\": \"2025\",\n      \"reference_date\": \"2025\",\n      \"name\": \"DESPESA TOTAL\",\n      \"excerpt\": \"(milhões de euros)\\"
+  },
+  {
+   "id": "R3",
+   "ficheiro": "motor/content/24 Orcamento 2027 Analise/ledger.json",
+   "descricao": "o encargo líquido rodoviário projetado para 2028 alterado contra o quadro 4.25 alojado",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "f8faebc06894a27093a6466f1a0d218ef918a4902da9d8f78f6d77aa1ae5cb28",
+   "sha256_depois": "7486fe366b49cf721c5274d2a299024c6e266bc1280208fe742e34a1306eaf7a",
+   "contexto_antes": "ido\",\n      \"stage\": \"orcamento\",\n      \"program\": \"ppp\",\n      \"metric\": \"liquidos\",\n      \"report_year\": 2027,\n      \"source_value\": \"889\"\n    },\n    {\n      \"id\": \"ppp-oe2027-liquidos-2028\",\n      \"value\": \"705\",\n      \"unit\": \"milhões de euros\",\n      \"period\": \"2028\",\n      \"reference_date\": \"2028\",\n      \"name\": \"Rodoviário\",\n      \"excerpt\": \"Setores       2026    ",
+   "contexto_depois": "ido\",\n      \"stage\": \"orcamento\",\n      \"program\": \"ppp\",\n      \"metric\": \"liquidos\",\n      \"report_year\": 2027,\n      \"source_value\": \"889\"\n    },\n    {\n      \"id\": \"ppp-oe2027-liquidos-2028\",\n      \"value\": \"750\",\n      \"unit\": \"milhões de euros\",\n      \"period\": \"2028\",\n      \"reference_date\": \"2028\",\n      \"name\": \"Rodoviário\",\n      \"excerpt\": \"Setores       2026    "
+  },
+  {
+   "id": "R4",
+   "ficheiro": "motor/content/24 Orcamento 2027 Analise/ledger.json",
+   "descricao": "a despesa em saúde de Portugal em % do PIB alterada contra o JSON do Eurostat alojado",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "7486fe366b49cf721c5274d2a299024c6e266bc1280208fe742e34a1306eaf7a",
+   "sha256_depois": "0b5089c27e866107abd5ffb4a3834f378b895f817d92a276fe16264871a55d98",
+   "contexto_antes": "+0200\",\n      \"geo_label\": \"Portugal\",\n      \"financing_label\": \"All financing schemes\",\n      \"attributed_to\": [\n        \"Eurostat\"\n      ]\n    },\n    {\n      \"id\": \"eurostat-hlth-sha11-hf-a-pc_gdp-tot_hf-pt-2024\",\n      \"value\": \"10.20\",\n      \"unit\": \"Percentage of gross domestic product (GDP)\",\n      \"period\": \"2024\",\n      \"reference_date\": \"2024\",\n      \"name\": \"Health care expenditure by ",
+   "contexto_depois": "+0200\",\n      \"geo_label\": \"Portugal\",\n      \"financing_label\": \"All financing schemes\",\n      \"attributed_to\": [\n        \"Eurostat\"\n      ]\n    },\n    {\n      \"id\": \"eurostat-hlth-sha11-hf-a-pc_gdp-tot_hf-pt-2024\",\n      \"value\": \"10.02\",\n      \"unit\": \"Percentage of gross domestic product (GDP)\",\n      \"period\": \"2024\",\n      \"reference_date\": \"2024\",\n      \"name\": \"Health care expenditure by "
+  },
+  {
+   "id": "R5",
+   "ficheiro": "motor/content/24 Orcamento 2027 Analise/ledger.json",
+   "descricao": "as datas do debate na generalidade alteradas na linha do calendário contra a página do Parlamento alojada",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "0b5089c27e866107abd5ffb4a3834f378b895f817d92a276fe16264871a55d98",
+   "sha256_depois": "a89923f6238fdc3ec4280cc2226f298f44518fa63d036fbcb6040daadc547a6c",
+   "contexto_antes": "e votação na generalidade nos dois dias; não fixa aqui um dia isolado da votação.\",\n      \"status\": \"conferido\",\n      \"group\": \"calendario\"\n    },\n    {\n      \"id\": \"oe-2027-calendario-generalidade\",\n      \"value\": \"27 e 28 de outubro\",\n      \"unit\": \"data\",\n      \"period\": \"2026-10-27/2026-10-28\",\n      \"reference_date\": \"2026-10-27/2026-10-28\",\n      \"name\": \"Orçamento do Estado para 2",
+   "contexto_depois": "e votação na generalidade nos dois dias; não fixa aqui um dia isolado da votação.\",\n      \"status\": \"conferido\",\n      \"group\": \"calendario\"\n    },\n    {\n      \"id\": \"oe-2027-calendario-generalidade\",\n      \"value\": \"29 e 30 de outubro\",\n      \"unit\": \"data\",\n      \"period\": \"2026-10-27/2026-10-28\",\n      \"reference_date\": \"2026-10-27/2026-10-28\",\n      \"name\": \"Orçamento do Estado para 2"
+  }
+ ]
+}
