@@ -1,14 +1,14 @@
 # V2-d: análise da Saúde e das parcerias
 
-## A quarta correção
+## A quinta correção
 
-Esta passagem corrige apenas os Major 6 e 7 da leitura curta V2-d-d. Os achados 1 a 5 eram plantas. Os resultados das passagens anteriores permanecem nos respetivos ficheiros e no histórico Git.
+Esta passagem corrige apenas os Major 5, 6 e 8 da leitura curta V2-d-e. Os achados 1 a 4 e o 7 eram plantas. Os resultados das passagens anteriores permanecem nos respetivos ficheiros e no histórico Git.
 
-Cabeça de código do sítio construída, testada e capturada: `2141b14b5ffc23fd88728bf9036a7b9fd684d726`. Motor aprovado pelo pre-commit: `7e7c98406f9ccf30f705f3b030b628bc7fe494d1`. O commit posterior fecha o relatório e os recibos das verificações.
+Cabeça de código do sítio construída, testada e capturada: `ba7e2438d9458760a52518494e0da6d94c4692ef`. Motor aprovado pelo pre-commit: `9981f281471d999c405bf2c423590ac6dcf2cf6e`. O commit posterior fecha o relatório e os recibos das verificações.
 
-A opinião nas duas edições distingue a variação de toda a rubrica das outras despesas correntes, 271,3 milhões, da dotação de reforço dos contratos-programa, cujo montante o relatório não diz. A comparação explica os contratos-programa nas palavras do sítio. As frases seguem o pedido palavra por palavra; as parcerias mantêm o texto anterior.
+A comparação nas duas edições deixa de atribuir aos acordos o financiamento das entidades do SNS. A redação identifica os acordos entre a ACSS e as entidades do SNS, seguindo o pedido. A auditoria separa as duas frases fixas: a dotação tem como apoio a nota 26; a identificação dos acordos tem como apoio a página 303. A célula verifica cada associação e recusa a falta de qualquer dos dois apoios. As parcerias mantêm o texto anterior.
 
-A nova linha oe-2027-saude-contrato-programa-acss conserva a frase inteira da página 303 do PDF, 287 impressa, confirmada na camada textual e na imagem. A linha oe-2027-saude-dotacao-reforco-contratos-programa conserva a nota 26 inteira no recibo. Ambas estão exportadas, têm porta de integração e apoiam a auditoria das duas frases. A página deixa de transcrever a nota sobre a Defesa. O período continua a ser 2027 e a publicação permanece separada.
+A linha oe-2027-saude-contrato-programa-acss conserva agora as duas frases inteiras da página 303 do PDF, 287 impressa, confirmadas na camada textual do corpo alojado. O antecedente identifica as receitas de impostos de 15 452,2 milhões de euros. O motor e a exportação foram regenerados do corpo. O recibo regista a correção, com o texto anterior e o novo. O período continua a ser 2027 e a publicação permanece no campo próprio, 2026-10-08. A célula recusa a retirada do antecedente.
 
 ### Códigos observados
 
@@ -17,46 +17,58 @@ A nova linha oe-2027-saude-contrato-programa-acss conserva a frase inteira da p�
 | montagem_motor | 0 |
 | exportacao | 0 |
 | celulas_motor | 0 |
+| celula_exportador | 0 |
 | composicao_e_auditoria | 0 |
-| ledger:check | 0 |
 | check:cruzamento --with-origin | 0 |
+| ledger:check | 0 |
+| check:pais | 0 |
+| check:voz | 0 |
+| check:discussao | 0 |
 | core.gate (pre-commit) | 0 |
 | check:css | 0 |
 | check:series | 0 |
 | gate:html | 0 |
 | check:lugar | 0 |
-| check:discussao | 0 |
 | check:palavras | 0 |
 | check:frases-compostas | 0 |
 | check:alvos | 0 |
 | typecheck | 0 |
 | build | 0 |
 | capturas | 0 |
-| conferencia_do_relatorio_e_recibos | 0 |
+| conferencia_do_render | 0 |
+| conferencia_dos_hashes | 0 |
 
-45 conferências do motor e 840 células Eurostat; auditoria com 305 folhas e 3230 apoios. Os 60 parágrafos coincidem com o HTML e os 8 recibos foram conferidos nas duas edições. A exportação e o cruzamento com a origem passaram. O aviso sobre o hash global do estudo 20 permanece informativo, sem divergências nas linhas atravessadas. A primeira corrida teve build=1 por declarações de frases desatualizadas; os passos seguintes ficaram com código 125. O inventário foi corrigido e os dez passos do perfil V2-d passaram na segunda corrida. A célula da discussão passou com 124 plantas detetadas em 124 e 306 portas de integração. A conferência preliminar do HTML encontrou a falta de acesso direto aos recibos; os selos das duas fontes foram acrescentados aos dois parágrafos e a conferência final passou. O core.gate do motor passou no pre-commit, conforme o resultado do escrivão.
+45 conferências do motor e 840 células Eurostat; célula do exportador com 142 linhas e 40 contas; auditoria com 305 folhas, 309 partes e 3262 apoios. A discussão passou com 128 plantas detetadas em 128 e 306 portas de integração. Os 60 parágrafos coincidem com o HTML e os 8 recibos foram conferidos nas duas edições. O texto das parcerias coincide com o da cabeça de partida. A exportação e o cruzamento com a origem passaram; permanece o aviso informativo sobre o hash global do estudo 20, sem divergências nas linhas atravessadas. O core.gate passou no pre-commit do motor. A primeira exportação foi recusada por faltar o registo da correção textual; a repetição passou depois de o acrescentar. As tentativas anteriores dos portões registam a recusa da árvore suja e falhas no selo e contador de correções, na declaração e conferência independente do lugar e na associação da mensagem da planta do antecedente. Todas foram corrigidas antes da corrida final, cujos dez passos passaram.
 
-Capturas nas duas edições e nas 5 larguras declaradas: 50 vistas e 100 recortes; 150 hashes de PNG e 20 recursos conferidos. Sem transbordo horizontal, pedidos externos, recursos recusados ou erros do navegador. Inspeção visual de 10 recortes, discriminados em inspecao-visual-v2de.json. Os hashes do HTML capturado coincidem com a conferência textual. PNG em <temporario>/v2de-capturas.
+Capturas nas duas edições e nas 5 larguras declaradas: 50 vistas e 110 recortes; 160 hashes de PNG e 20 recursos conferidos. Sem transbordo horizontal, pedidos externos, recursos recusados ou erros do navegador. Inspeção visual de 10 recortes, discriminados em inspecao-visual-v2df.json. Os hashes do HTML capturado coincidem com a conferência textual. PNG em <temporario>/v2df-capturas.
 
-Os códigos e as últimas linhas dos registos estão em `portoes-v2de.json`. O manifesto das capturas está em `capturas-v2de.json`, e a inspeção em `inspecao-visual-v2de.json`. Os registos extensos e os PNG ficam na pasta temporária da corrida. O perfil V2-d foi executado; a corrida integral do sítio fica para o GitHub. Não foi feito push.
+Os códigos e as últimas linhas dos registos estão em `portoes-v2df.json`. O manifesto das capturas está em `capturas-v2df.json`, e a inspeção em `inspecao-visual-v2df.json`. Os registos extensos e os PNG ficam na pasta temporária da corrida. O perfil V2-d foi executado; a corrida integral do sítio fica para o GitHub. Não foi feito push.
 
 ### Decisões
 
-**V2D-45: Montante do reforço não quantificado**
+**V2D-47: Paráfrase limitada à frase da fonte**
 
-Antes: A opinião atribuía os 271,3 milhões ao reforço dos contratos-programa.
+Antes: A comparação atribuía aos acordos o financiamento das entidades do SNS.
 
-Depois: As duas edições atribuem os 271,3 milhões à variação das outras despesas correntes e dizem que o relatório não quantifica a dotação de reforço.
+Depois: PT e EN identificam apenas os acordos entre a ACSS e as entidades do SNS, conforme o pedido V2-d-f.
 
-A nota 26 localiza a dotação no agregado, mas não declara o montante. A conta da variação da rubrica permanece 303,7 menos 32,4.
+A frase da página 303 nomeia as partes e os destinos do financiamento centralizado, sem fazer a afirmação retirada.
 
-**V2D-46: Explicação dos contratos-programa com recibos completos**
+**V2D-48: Apoios declarados por frase fixa**
 
-Antes: A comparação transcrevia a nota 26 inteira, incluindo a Defesa, sem explicar os contratos-programa.
+Antes: Os apoios da nota 26 e da página 303 estavam declarados em conjunto para o parágrafo.
 
-Depois: A comparação explica a Saúde nas palavras do sítio, em PT e EN. A frase inteira da ACSS da página 303 é selada e exportada; a auditoria apoia-se nela e na nota 26, ambas completas nos recibos. Os dois recibos ficam a um toque nos parágrafos da comparação e da opinião, pelos selos de proveniência existentes.
+Depois: A auditoria separa as duas frases fixas e declara para cada uma o apoio pedido. A célula recusa a remoção de qualquer dos dois apoios.
 
-O leitor recebe a explicação e pode abrir a prova integral. A linha nova tem verificações da citação, página, período e porta de integração.
+A presença de uma fonte no conjunto do parágrafo não basta para mostrar qual das frases apoia.
+
+**V2D-49: Recibo com o antecedente de Neste montante**
+
+Antes: O excerto abria com Neste montante sem identificar o montante.
+
+Depois: O excerto e o valor conservam as duas frases completas da página 303, regeneradas do corpo. O período é 2027 e a publicação fica no campo próprio.
+
+A frase anterior identifica as receitas de impostos de 15 452,2 milhões de euros. A correção do recibo conserva o texto anterior e o novo.
 
 ### Frases tal como renderizam
 
@@ -90,7 +102,7 @@ Os números da RTP, a queda, o montante e a diferença, coincidem com a linha da
 
 A descida vem toda do fim do PRR. Em 2026 o PRR valia 771,1 na despesa efetiva da Saúde; em 2027 vale zero, e a despesa efetiva é a mesma com e sem ele, 17 803,1 e 17 803,1. A despesa fora do PRR sobe 511,8, o que repõe 66,4 % do que o PRR deixa; a diferença, −259,3, é a queda da despesa efetiva.
 
-O que sobe e o que desce não são a mesma coisa: o pessoal leva mais 401,2; a aquisição de bens e serviços leva menos 396,6; o investimento leva menos 344,2; e as outras despesas correntes passam de 32,4 para 303,7, mais 271,3. Segundo o relatório, é nesta rubrica que fica, para a Saúde, a dotação para reforçar os contratos-programa ainda por fechar, os acordos entre a Administração Central do Sistema de Saúde e as entidades do Serviço Nacional de Saúde por onde passa o financiamento destas; o próprio orçamento inscreve assim o reforço que antecipa, sem dizer quanto. O financiamento conta com receitas próprias a crescer 56,5 % e com fundos europeus a cair de 655,0 para 174,6.
+O que sobe e o que desce não são a mesma coisa: o pessoal leva mais 401,2; a aquisição de bens e serviços leva menos 396,6; o investimento leva menos 344,2; e as outras despesas correntes passam de 32,4 para 303,7, mais 271,3. Segundo o relatório, é nesta rubrica que fica, para a Saúde, a dotação para reforçar os contratos-programa ainda por fechar, os acordos entre a Administração Central do Sistema de Saúde e as entidades do Serviço Nacional de Saúde; o próprio orçamento inscreve assim o reforço que antecipa, sem dizer quanto. O financiamento conta com receitas próprias a crescer 56,5 % e com fundos europeus a cair de 655,0 para 174,6.
 
 A redução do PRR não é só da Saúde: em 2026 o PRR pesava 1 472,7 nas Finanças, 1 357,1 na Economia, 1 133,0 nas Infraestruturas e habitação, 823,2 no Ambiente e energia e 771,1 na Saúde. Em 2027 a despesa fora do PRR cresce 3,0 % na Saúde, 4,9 % na Educação, 8,8 % no Trabalho, solidariedade e segurança social, 20,8 % nas Infraestruturas e habitação, 18,2 % na Justiça e 13,1 % na Segurança interna; e varia −7,8 % nas Finanças, −4,9 % na Economia e −38,2 % na Coesão territorial.
 
@@ -180,7 +192,7 @@ RTP's figures, the fall, the amount and the difference, match the line for total
 
 The fall comes entirely from the end of the RRP. In 2026 the RRP accounted for 771,1 in effective Health expenditure; in 2027 it is zero, and effective expenditure is the same with and without it, 17 803,1 and 17 803,1. Expenditure outside the RRP rises 511,8, replacing 66,4 % of what the RRP leaves; the difference, −259,3, is the fall in effective expenditure.
 
-What rises and what falls are not the same thing: personnel takes 401,2 more; the purchase of goods and services takes 396,6 less; investment takes 344,2 less; and other current expenditure goes from 32,4 to 303,7, 271,3 more. According to the report, this line is where the provision to reinforce the contract-programmes still to be closed sits for Health, the agreements between the Central Administration of the Health System and the National Health Service's entities through which their financing flows; the budget thus books the reinforcement it anticipates, without saying how much. The financing counts on own revenue growing 56,5 % and on European funds falling from 655,0 to 174,6.
+What rises and what falls are not the same thing: personnel takes 401,2 more; the purchase of goods and services takes 396,6 less; investment takes 344,2 less; and other current expenditure goes from 32,4 to 303,7, 271,3 more. According to the report, this line is where the provision to reinforce the contract-programmes still to be closed sits for Health, the agreements between the Central Administration of the Health System and the National Health Service's entities; the budget thus books the reinforcement it anticipates, without saying how much. The financing counts on own revenue growing 56,5 % and on European funds falling from 655,0 to 174,6.
 
 The reduction in the RRP is not confined to Health: in 2026 the RRP accounted for 1 472,7 in Finance, 1 357,1 in Economy, 1 133,0 in Infrastructure and housing, 823,2 in Environment and energy and 771,1 in Health. In 2027 expenditure outside the RRP grows 3,0 % in Health, 4,9 % in Education, 8,8 % in Labour, solidarity and social security, 20,8 % in Infrastructure and housing, 18,2 % in Justice and 13,1 % in Internal security; and changes by −7,8 % in Finance, −4,9 % in Economy and −38,2 % in Territorial cohesion.
 
@@ -244,6 +256,6 @@ The PCP is right to draw attention to the cost of partnerships, but wrong to att
 
 No motor, `python3 -m publisher.oe2027_analise_report --assemble --report`, `python3 -m publisher.v2d_export` e `python3 -m publisher.export_site_rows --manifest publisher/manifest.v2d.json --site <worktree> --write`. As células correm por `python3 -m publisher.oe2027_analise_test --write-proof`; o pre-commit do escrivão executa `core.gate`.
 
-No sítio, `scripts/compor-familias-v2d.mjs` e, nesta pasta, `auditar-palavras.mjs`, `medir-final.mjs`, `conferir-v2de.mjs` e `gerar-relatorio.py` reproduzem as declarações, as frases e o relatório. `check:cruzamento --with-origin` recebe o motor em `RESEARCHHUB_DIR`. Os comandos de saída extensa correm por `scripts/leituras/curto.sh`.
+No sítio, `scripts/compor-familias-v2d.mjs` e, nesta pasta, `auditar-palavras.mjs`, `medir-final.mjs`, `conferir-v2df.mjs` e `gerar-relatorio.py` reproduzem as declarações, as frases e o relatório. `check:cruzamento --with-origin` recebe o motor em `RESEARCHHUB_DIR`. Os comandos de saída extensa correm por `scripts/leituras/curto.sh`.
 
 Portões: `sh scripts/leituras/portoes-pelo-escrivao.sh <temporario> v2d`. Capturas: `sh scripts/leituras/capturar-pelo-escrivao.sh <pedido.json> <temporario>`, depois da construção, nas duas edições e cinco larguras.

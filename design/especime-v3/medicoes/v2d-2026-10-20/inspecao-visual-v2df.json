@@ -1,0 +1,17 @@
+{
+  "cabeca": "ba7e2438d9458760a52518494e0da6d94c4692ef",
+  "ficheiros_inspecionados": [
+    "recibo-acss-pt-390-excerto.png",
+    "recibo-acss-en-390-excerto.png",
+    "discussao-pt-390-saude-comparacao.png",
+    "discussao-en-390-saude-comparacao.png",
+    "discussao-pt-1280-saude-comparacao.png",
+    "discussao-en-1280-saude-comparacao.png",
+    "recibo-acss-pt-1280-excerto.png",
+    "recibo-acss-en-1280-excerto.png",
+    "recibo-acss-pt-390-cabecalho.png",
+    "recibo-acss-en-390-cabecalho.png"
+  ],
+  "quantidade": 10,
+  "observacao": "A comparação apresenta a redação pedida nas duas edições, em telemóvel e ecrã largo. Os excertos incluem as duas frases completas, com o antecedente das receitas de impostos. Os cabeçalhos identificam o orçamento para 2027. Não se observaram cortes nem sobreposições nos recortes inspecionados."
+}

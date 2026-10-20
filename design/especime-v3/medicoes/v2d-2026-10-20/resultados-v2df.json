@@ -1,0 +1,32 @@
+{
+  "sitio_testado": "ba7e2438d9458760a52518494e0da6d94c4692ef",
+  "motor": "9981f281471d999c405bf2c423590ac6dcf2cf6e",
+  "codigos": {
+    "montagem_motor": 0,
+    "exportacao": 0,
+    "celulas_motor": 0,
+    "celula_exportador": 0,
+    "composicao_e_auditoria": 0,
+    "check:cruzamento --with-origin": 0,
+    "ledger:check": 0,
+    "check:pais": 0,
+    "check:voz": 0,
+    "check:discussao": 0,
+    "core.gate (pre-commit)": 0,
+    "check:css": 0,
+    "check:series": 0,
+    "gate:html": 0,
+    "check:lugar": 0,
+    "check:palavras": 0,
+    "check:frases-compostas": 0,
+    "check:alvos": 0,
+    "typecheck": 0,
+    "build": 0,
+    "capturas": 0,
+    "conferencia_do_render": 0,
+    "conferencia_dos_hashes": 0
+  },
+  "parcerias_inalteradas": true,
+  "conferencias": "45 conferências do motor e 840 células Eurostat; célula do exportador com 142 linhas e 40 contas; auditoria com 305 folhas, 309 partes e 3262 apoios. A discussão passou com 128 plantas detetadas em 128 e 306 portas de integração. Os 60 parágrafos coincidem com o HTML e os 8 recibos foram conferidos nas duas edições. O texto das parcerias coincide com o da cabeça de partida. A exportação e o cruzamento com a origem passaram; permanece o aviso informativo sobre o hash global do estudo 20, sem divergências nas linhas atravessadas. O core.gate passou no pre-commit do motor. A primeira exportação foi recusada por faltar o registo da correção textual; a repetição passou depois de o acrescentar. As tentativas anteriores dos portões registam a recusa da árvore suja e falhas no selo e contador de correções, na declaração e conferência independente do lugar e na associação da mensagem da planta do antecedente. Todas foram corrigidas antes da corrida final, cujos dez passos passaram.",
+  "capturas": "Capturas nas duas edições e nas 5 larguras declaradas: 50 vistas e 110 recortes; 160 hashes de PNG e 20 recursos conferidos. Sem transbordo horizontal, pedidos externos, recursos recusados ou erros do navegador. Inspeção visual de 10 recortes, discriminados em inspecao-visual-v2df.json. Os hashes do HTML capturado coincidem com a conferência textual. PNG em <temporario>/v2df-capturas."
+}

@@ -1,0 +1,1386 @@
+{
+  "cabeca": "ba7e2438d9458760a52518494e0da6d94c4692ef",
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "resultados": [
+    {
+      "ficheiro": "discussao-pt-390.png",
+      "rota": "/o-que-se-discute/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 11858,
+      "sha256": "6449e74e78c2d02a0e165256716fc600f9ee45cce16a66e989cf75f72d34911f",
+      "recortes": [
+        {
+          "ficheiro": "discussao-pt-390-saude.png",
+          "seletor": "#saude-no-orcamento",
+          "sha256": "b084de60c6862f11903bb3238ff4a33cb0370ba9ad7ea478ab98fb34b5e0bf63"
+        },
+        {
+          "ficheiro": "discussao-pt-390-parcerias.png",
+          "seletor": "#parcerias-rodoviarias",
+          "sha256": "841aba6e5db4318aa17acfd33cdfe5bd52e30442615a3336ace4db093af59fd1"
+        },
+        {
+          "ficheiro": "discussao-pt-390-saude-comparacao.png",
+          "seletor": "#saude-no-orcamento [data-discussao-parte=\"comparacao\"]",
+          "sha256": "c9511ee7767a6c1e258b2a03b3962118ec1ae3fff18d52819be04401ebf8f368"
+        },
+        {
+          "ficheiro": "discussao-pt-390-saude-recomendacao.png",
+          "seletor": "#saude-no-orcamento [data-discussao-parte=\"recomendacao\"]",
+          "sha256": "febbe4b91639bfe047b7de147b9e130f7a7499828bca3a428482dd270c3c7f24"
+        },
+        {
+          "ficheiro": "discussao-pt-390-parcerias-comparacao.png",
+          "seletor": "#parcerias-rodoviarias [data-discussao-parte=\"comparacao\"]",
+          "sha256": "ca197d9016dada829045938f5340c8d09707d85c15ce80bae562e8a1fb74eac4"
+        },
+        {
+          "ficheiro": "discussao-pt-390-saude-opiniao.png",
+          "seletor": "#saude-no-orcamento [data-discussao-parte=\"opiniao\"]",
+          "sha256": "b7e566d487422b2c6339d47c0f430ccf838af6ae32c4cd0248a1c09979097d5d"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "discussao-pt-768.png",
+      "rota": "/o-que-se-discute/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 8553,
+      "sha256": "7c82fb385f3c03a8300ac995f55302f830e595dbde374a85fea7eeb16fc8e713",
+      "recortes": [
+        {
+          "ficheiro": "discussao-pt-768-saude.png",
+          "seletor": "#saude-no-orcamento",
+          "sha256": "9877962aef25dfe576c65fb06910501be5b5771b7bd0c2485ba05307287c840c"
+        },
+        {
+          "ficheiro": "discussao-pt-768-parcerias.png",
+          "seletor": "#parcerias-rodoviarias",
+          "sha256": "8324243e38a1350e4a011923991dc8202be9ebd65f08857d0e64a2ed71bed531"
+        },
+        {
+          "ficheiro": "discussao-pt-768-saude-comparacao.png",
+          "seletor": "#saude-no-orcamento [data-discussao-parte=\"comparacao\"]",
+          "sha256": "cd0bf1a217d0ab0aee95b577216c639e92740c97eab7cad529a966ea831dc899"
+        },
+        {
+          "ficheiro": "discussao-pt-768-saude-recomendacao.png",
+          "seletor": "#saude-no-orcamento [data-discussao-parte=\"recomendacao\"]",
+          "sha256": "841fa8b84837212437ee5937450feddb0fb51c1eeeed64782d9e9155710cb9df"
+        },
+        {
+          "ficheiro": "discussao-pt-768-parcerias-comparacao.png",
+          "seletor": "#parcerias-rodoviarias [data-discussao-parte=\"comparacao\"]",
+          "sha256": "f50ee345f5ced40b77653fa77cf3617897edec18132251d703dbaf9b2a990286"
+        },
+        {
+          "ficheiro": "discussao-pt-768-saude-opiniao.png",
+          "seletor": "#saude-no-orcamento [data-discussao-parte=\"opiniao\"]",
+          "sha256": "2548cbeffc2e0de824a6a9f788a5235df044ea505d7ef8c01de213f066782e04"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "discussao-pt-1024.png",
+      "rota": "/o-que-se-discute/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 8640,
+      "sha256": "5eb8c7ce04617f44d0307a905d082ceb84dcd87f5355ad5de9fbf902deb1509d",
+      "recortes": [
+        {
+          "ficheiro": "discussao-pt-1024-saude.png",
+          "seletor": "#saude-no-orcamento",
+          "sha256": "272a97d30417f935d633030361e007709533c382b82b768a55c51a0bd2961cd3"
+        },
+        {
+          "ficheiro": "discussao-pt-1024-parcerias.png",
+          "seletor": "#parcerias-rodoviarias",
+          "sha256": "8105cdf4b6516f96b2ba15012ed5b108c208dcd50667acc5ee6a50e5541499ae"
+        },
+        {
+          "ficheiro": "discussao-pt-1024-saude-comparacao.png",
+          "seletor": "#saude-no-orcamento [data-discussao-parte=\"comparacao\"]",
+          "sha256": "17395a7cc727ec2c407319d00ecb2c7ae609c75238ff6fd9f3426ea852391a62"
+        },
+        {
+          "ficheiro": "discussao-pt-1024-saude-recomendacao.png",
+          "seletor": "#saude-no-orcamento [data-discussao-parte=\"recomendacao\"]",
+          "sha256": "f5e56646ff1ff14c01ddd48a30c11ccf84c8ccb6808274df9d4df470162ecfcc"
+        },
+        {
+          "ficheiro": "discussao-pt-1024-parcerias-comparacao.png",
+          "seletor": "#parcerias-rodoviarias [data-discussao-parte=\"comparacao\"]",
+          "sha256": "748db90b320236b65dfb986198daa9df52f2ecade1b566d3153dee3c448b1031"
+        },
+        {
+          "ficheiro": "discussao-pt-1024-saude-opiniao.png",
+          "seletor": "#saude-no-orcamento [data-discussao-parte=\"opiniao\"]",
+          "sha256": "a67fc3284cb0e4687d1a58cfff95dbd76da56d17a4152d0fc8e333df16e5e670"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "discussao-pt-1280.png",
+      "rota": "/o-que-se-discute/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 8741,
+      "sha256": "c2bb0e04594710e49d725659a6e03ae0b3e653173863343a4f276c376fec76c6",
+      "recortes": [
+        {
+          "ficheiro": "discussao-pt-1280-saude.png",
+          "seletor": "#saude-no-orcamento",
+          "sha256": "1b78865970dd9f57457d5c5324d54e74255cf40577e74958e4b468f2c6bbaa71"
+        },
+        {
+          "ficheiro": "discussao-pt-1280-parcerias.png",
+          "seletor": "#parcerias-rodoviarias",
+          "sha256": "1c5e94d7a9339ee49ce475c66c9dfc9c24e4571a230795813b15a52da555abd4"
+        },
+        {
+          "ficheiro": "discussao-pt-1280-saude-comparacao.png",
+          "seletor": "#saude-no-orcamento [data-discussao-parte=\"comparacao\"]",
+          "sha256": "7a48836e15a48c97132b36e3ab0aa5c1bf648f83674d3c370896a2561915ae0d"
+        },
+        {
+          "ficheiro": "discussao-pt-1280-saude-recomendacao.png",
+          "seletor": "#saude-no-orcamento [data-discussao-parte=\"recomendacao\"]",
+          "sha256": "c53a9c2edc06981069080c2feae81a8631210ad879cc7174f76b1a331406ad33"
+        },
+        {
+          "ficheiro": "discussao-pt-1280-parcerias-comparacao.png",
+          "seletor": "#parcerias-rodoviarias [data-discussao-parte=\"comparacao\"]",
+          "sha256": "2b788b75042e5d637c10e766b3389cf7c16da4d244dff1dd3431812ef0d92919"
+        },
+        {
+          "ficheiro": "discussao-pt-1280-saude-opiniao.png",
+          "seletor": "#saude-no-orcamento [data-discussao-parte=\"opiniao\"]",
+          "sha256": "8f4cc0556e0260048492686936e2888325cbda7d40d74a6feb6003105b8460d7"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "discussao-pt-1600.png",
+      "rota": "/o-que-se-discute/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 8778,
+      "sha256": "ab8962a870db2915189b57c219265cd1a697140996e8ace53888b2d47dabeb70",
+      "recortes": [
+        {
+          "ficheiro": "discussao-pt-1600-saude.png",
+          "seletor": "#saude-no-orcamento",
+          "sha256": "972bc23c3007c2eea5949c713dc11384791d57e597bb9ddd936782e5b4e768bb"
+        },
+        {
+          "ficheiro": "discussao-pt-1600-parcerias.png",
+          "seletor": "#parcerias-rodoviarias",
+          "sha256": "b25d4f822be5a39ef06fb32aeb00056ef2cd9ba816f25d71d122275b80f5d2df"
+        },
+        {
+          "ficheiro": "discussao-pt-1600-saude-comparacao.png",
+          "seletor": "#saude-no-orcamento [data-discussao-parte=\"comparacao\"]",
+          "sha256": "58e401bbaca10f301f8c769105e0b1e0ba39609768c519a6642b689b32ebcfcb"
+        },
+        {
+          "ficheiro": "discussao-pt-1600-saude-recomendacao.png",
+          "seletor": "#saude-no-orcamento [data-discussao-parte=\"recomendacao\"]",
+          "sha256": "0f537efc13bed3b382d280f61fd8d51b2aca765d87e24cd79676f4e477871324"
+        },
+        {
+          "ficheiro": "discussao-pt-1600-parcerias-comparacao.png",
+          "seletor": "#parcerias-rodoviarias [data-discussao-parte=\"comparacao\"]",
+          "sha256": "ae73c7b675cb06f7e7769d38fb41d19dc0a70f1c4d9960e0c0507d6a323cfa1b"
+        },
+        {
+          "ficheiro": "discussao-pt-1600-saude-opiniao.png",
+          "seletor": "#saude-no-orcamento [data-discussao-parte=\"opiniao\"]",
+          "sha256": "c60a37811385129b584847adfbee68dad2762da18a786579848ce03a1c01d2d6"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "discussao-en-390.png",
+      "rota": "/en/under-discussion/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 11748,
+      "sha256": "594fbd9f4041a911b982b716801a5cda5e3d77041c8c3c9a7e1ecaf23ee2cbbc",
+      "recortes": [
+        {
+          "ficheiro": "discussao-en-390-saude.png",
+          "seletor": "#saude-no-orcamento",
+          "sha256": "6e49b044da1516d3473e3087d18a4f167e29731687144a87ca54dbd2c6f32df8"
+        },
+        {
+          "ficheiro": "discussao-en-390-parcerias.png",
+          "seletor": "#parcerias-rodoviarias",
+          "sha256": "d70e977e0765eae4842af56a4389638ecb93253e20227187c0be0b806adb8600"
+        },
+        {
+          "ficheiro": "discussao-en-390-saude-comparacao.png",
+          "seletor": "#saude-no-orcamento [data-discussao-parte=\"comparacao\"]",
+          "sha256": "392bf15a016a80387896a2d8dd347ecf5a15b2f3ccdcf97336d53df7463b86cf"
+        },
+        {
+          "ficheiro": "discussao-en-390-saude-recomendacao.png",
+          "seletor": "#saude-no-orcamento [data-discussao-parte=\"recomendacao\"]",
+          "sha256": "ec6ea6d2a9d3334834216f4bfd715471ef57d71aec94de3e25259324f7aa160b"
+        },
+        {
+          "ficheiro": "discussao-en-390-parcerias-comparacao.png",
+          "seletor": "#parcerias-rodoviarias [data-discussao-parte=\"comparacao\"]",
+          "sha256": "3083d0aca3ef59452a80401d40d924f15ff61cb05a175c6010b546387b06592d"
+        },
+        {
+          "ficheiro": "discussao-en-390-saude-opiniao.png",
+          "seletor": "#saude-no-orcamento [data-discussao-parte=\"opiniao\"]",
+          "sha256": "cfaa6692b8502fd02bb2ebaec8761e987647e5570dee2558e1f889ec8834a9ee"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "discussao-en-768.png",
+      "rota": "/en/under-discussion/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 8443,
+      "sha256": "58730e226c311b31234a6a22c138c8c4ba48edbe03a7ad74e93710e5b27b2644",
+      "recortes": [
+        {
+          "ficheiro": "discussao-en-768-saude.png",
+          "seletor": "#saude-no-orcamento",
+          "sha256": "0dfa56dd58de5f86119b072329e8e861141eca7edcfce25fe99b96bcffab1922"
+        },
+        {
+          "ficheiro": "discussao-en-768-parcerias.png",
+          "seletor": "#parcerias-rodoviarias",
+          "sha256": "01ea4e366d7d3593b5d5f0a6a42a6d8cb839d96d466458cfded36592c04dbf13"
+        },
+        {
+          "ficheiro": "discussao-en-768-saude-comparacao.png",
+          "seletor": "#saude-no-orcamento [data-discussao-parte=\"comparacao\"]",
+          "sha256": "c342cfc797a00c3078c2fa235d4d1a46746bf66cbbb0181f7fab5bfce9ef86c7"
+        },
+        {
+          "ficheiro": "discussao-en-768-saude-recomendacao.png",
+          "seletor": "#saude-no-orcamento [data-discussao-parte=\"recomendacao\"]",
+          "sha256": "bc9e4f251da88aceb264673538e31dcbfed888af3c805e5fc416a8c066fef5f9"
+        },
+        {
+          "ficheiro": "discussao-en-768-parcerias-comparacao.png",
+          "seletor": "#parcerias-rodoviarias [data-discussao-parte=\"comparacao\"]",
+          "sha256": "746543944e375809aa42442710707c00a321e0c3e936d563bfadc12da8e7e7a9"
+        },
+        {
+          "ficheiro": "discussao-en-768-saude-opiniao.png",
+          "seletor": "#saude-no-orcamento [data-discussao-parte=\"opiniao\"]",
+          "sha256": "df6ca342da39277abfa67675a38acf18ae2f301e0a5cabcd79bb25f0653e4661"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "discussao-en-1024.png",
+      "rota": "/en/under-discussion/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 8531,
+      "sha256": "a2bef7cd50703509f6af9c10c0bd8d78a4c164ba5a6c9b0fafa7c74b3970746d",
+      "recortes": [
+        {
+          "ficheiro": "discussao-en-1024-saude.png",
+          "seletor": "#saude-no-orcamento",
+          "sha256": "c5922248de166307444bf082212d4b9a5590c2724e81b8ebd31fab770660488b"
+        },
+        {
+          "ficheiro": "discussao-en-1024-parcerias.png",
+          "seletor": "#parcerias-rodoviarias",
+          "sha256": "6bd6cdc8a7f8dad8e910096a5beadbc771a20133475bd8f7d9744b2610b799dc"
+        },
+        {
+          "ficheiro": "discussao-en-1024-saude-comparacao.png",
+          "seletor": "#saude-no-orcamento [data-discussao-parte=\"comparacao\"]",
+          "sha256": "24918128703ced02579ac70412a25d51c2adc4d20e234a09cf87a2ae5afe3656"
+        },
+        {
+          "ficheiro": "discussao-en-1024-saude-recomendacao.png",
+          "seletor": "#saude-no-orcamento [data-discussao-parte=\"recomendacao\"]",
+          "sha256": "0af09afacaf4ddcdaa99646fb35290f257f1873fb3e1b109b77b12cfb88a15b8"
+        },
+        {
+          "ficheiro": "discussao-en-1024-parcerias-comparacao.png",
+          "seletor": "#parcerias-rodoviarias [data-discussao-parte=\"comparacao\"]",
+          "sha256": "b954c625af26bd0b7b43f6d0eac4c8f85b4a1d001e0698a462a447a69ab1bc61"
+        },
+        {
+          "ficheiro": "discussao-en-1024-saude-opiniao.png",
+          "seletor": "#saude-no-orcamento [data-discussao-parte=\"opiniao\"]",
+          "sha256": "181a80eaf2bfbb96edc0cabda343356b00a369ccd60697a8d7530e4e8f6b0448"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "discussao-en-1280.png",
+      "rota": "/en/under-discussion/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 8633,
+      "sha256": "fa66637593d06c6dc0d78b1b650487bbbccd22c50bd797bd3eb8867c02f5bfec",
+      "recortes": [
+        {
+          "ficheiro": "discussao-en-1280-saude.png",
+          "seletor": "#saude-no-orcamento",
+          "sha256": "a18d6e668f90076903e633c824c949f57f01e5d7c51bcec29c732d137b29d6a3"
+        },
+        {
+          "ficheiro": "discussao-en-1280-parcerias.png",
+          "seletor": "#parcerias-rodoviarias",
+          "sha256": "a52f128731faa4e8509f628f27a3ff104f6a6a932e49514494626952d414c6a7"
+        },
+        {
+          "ficheiro": "discussao-en-1280-saude-comparacao.png",
+          "seletor": "#saude-no-orcamento [data-discussao-parte=\"comparacao\"]",
+          "sha256": "d4bdefec65276bc0494d5512d2018fc712ac830821d5c10483a2103fd383f982"
+        },
+        {
+          "ficheiro": "discussao-en-1280-saude-recomendacao.png",
+          "seletor": "#saude-no-orcamento [data-discussao-parte=\"recomendacao\"]",
+          "sha256": "8b76918a735e8fb617d7d09d018a8b9214e0dcaf51f65b4e9cd9b4d6fa60ced2"
+        },
+        {
+          "ficheiro": "discussao-en-1280-parcerias-comparacao.png",
+          "seletor": "#parcerias-rodoviarias [data-discussao-parte=\"comparacao\"]",
+          "sha256": "baaec3919882ce715e8604f9584800ecdfc2ccf8c0b990b0183835e476956dfb"
+        },
+        {
+          "ficheiro": "discussao-en-1280-saude-opiniao.png",
+          "seletor": "#saude-no-orcamento [data-discussao-parte=\"opiniao\"]",
+          "sha256": "e083633f613d136fc60a5a0207fb517e9edf9ae6e837e7e341363347b18e9cb6"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "discussao-en-1600.png",
+      "rota": "/en/under-discussion/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 8670,
+      "sha256": "fdf361141f9b5f326053a7ac5b713943047886b935ce3d302db3b12e52e4378f",
+      "recortes": [
+        {
+          "ficheiro": "discussao-en-1600-saude.png",
+          "seletor": "#saude-no-orcamento",
+          "sha256": "1bd2dc5aae17b813f7eff283c3abb2d9c7c224a68481386598f926520956af40"
+        },
+        {
+          "ficheiro": "discussao-en-1600-parcerias.png",
+          "seletor": "#parcerias-rodoviarias",
+          "sha256": "a994ac3b539f2c183bde0b1a34a9dbaef198eb4440cfc013ae38c87e3bb38b50"
+        },
+        {
+          "ficheiro": "discussao-en-1600-saude-comparacao.png",
+          "seletor": "#saude-no-orcamento [data-discussao-parte=\"comparacao\"]",
+          "sha256": "8ef7785aac8951cdbedfb7466001355281e8bb7a84b0da15975e9cbe29e5a92f"
+        },
+        {
+          "ficheiro": "discussao-en-1600-saude-recomendacao.png",
+          "seletor": "#saude-no-orcamento [data-discussao-parte=\"recomendacao\"]",
+          "sha256": "265edd17e52a2fd3029d8199729d888cb41b25a5cd9743a40f658e0e59a1e9a5"
+        },
+        {
+          "ficheiro": "discussao-en-1600-parcerias-comparacao.png",
+          "seletor": "#parcerias-rodoviarias [data-discussao-parte=\"comparacao\"]",
+          "sha256": "12ecfa0fe9b80144849811c1b3c133c77b0cdd8c479fa0d5bf0444c9bd63cd73"
+        },
+        {
+          "ficheiro": "discussao-en-1600-saude-opiniao.png",
+          "seletor": "#saude-no-orcamento [data-discussao-parte=\"opiniao\"]",
+          "sha256": "4bee183ec5ba69614e645fed51178f7eec4958d99ac7c183219a21e267adafd3"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-dotacoes-pt-390.png",
+      "rota": "/livro-razao/oe-2027-outras-despesas-dotacoes-execucao/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3811,
+      "sha256": "cc3dd14c3cd201e5466b74b5aeaa25e869d95d1216dd7f2e9709b0a5baa03699",
+      "recortes": [
+        {
+          "ficheiro": "recibo-dotacoes-pt-390-cabecalho.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "1557f269bce91dae2803d2ed315e1cf3466a596a3a22b46245ffee76ea55eaec"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-dotacoes-pt-768.png",
+      "rota": "/livro-razao/oe-2027-outras-despesas-dotacoes-execucao/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3185,
+      "sha256": "9371d7714da15aa92ca0f5d117fc5e2f67a0dae57f34af1ca2c0521549a858ee",
+      "recortes": [
+        {
+          "ficheiro": "recibo-dotacoes-pt-768-cabecalho.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "b4dfbed562738f111594b055d4a92335b72e62af34b040e3e9cfc3e559aeb40c"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-dotacoes-pt-1024.png",
+      "rota": "/livro-razao/oe-2027-outras-despesas-dotacoes-execucao/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2501,
+      "sha256": "332ce84f7cccec0d445e74c81c8a62d14b1875be5663c24a49acbce967436adf",
+      "recortes": [
+        {
+          "ficheiro": "recibo-dotacoes-pt-1024-cabecalho.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "f0e2810d043138ac4204f9f30e8863dd0b903bfe7aa680c1ffd279df734881f5"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-dotacoes-pt-1280.png",
+      "rota": "/livro-razao/oe-2027-outras-despesas-dotacoes-execucao/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2718,
+      "sha256": "35bd4504ca932225ff1a655330dc2e5ff68acc8882a7e4f9bbdb94fd39353735",
+      "recortes": [
+        {
+          "ficheiro": "recibo-dotacoes-pt-1280-cabecalho.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "dad0f3744ea1fe35e38c97a9ab5e7cfc90c138cd71668bc8f64147e445e94acf"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-dotacoes-pt-1600.png",
+      "rota": "/livro-razao/oe-2027-outras-despesas-dotacoes-execucao/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2725,
+      "sha256": "19e2fcc63c29203344cb6bbe6a7aab65bc31a5fcfc198d1fe9aeb0c94eda28ae",
+      "recortes": [
+        {
+          "ficheiro": "recibo-dotacoes-pt-1600-cabecalho.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "dad0f3744ea1fe35e38c97a9ab5e7cfc90c138cd71668bc8f64147e445e94acf"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-dotacoes-en-390.png",
+      "rota": "/en/ledger/oe-2027-outras-despesas-dotacoes-execucao/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3942,
+      "sha256": "6612c2eed8320f248ce3564c04a0be6e26628a7f92318282eb374f2dfb30dcb2",
+      "recortes": [
+        {
+          "ficheiro": "recibo-dotacoes-en-390-cabecalho.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "5b6e9101eefc734e518bd26e6e562c4f8655234370224df03798de5f66ee9b96"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-dotacoes-en-768.png",
+      "rota": "/en/ledger/oe-2027-outras-despesas-dotacoes-execucao/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3229,
+      "sha256": "1fc48827713291ac952406174862845b97e36e741b29f9a79adcf5544f32e330",
+      "recortes": [
+        {
+          "ficheiro": "recibo-dotacoes-en-768-cabecalho.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "4f0b3f86f572d7b3d956a96139d4bffc2b78df13078524b5a1c26632b19600f7"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-dotacoes-en-1024.png",
+      "rota": "/en/ledger/oe-2027-outras-despesas-dotacoes-execucao/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2545,
+      "sha256": "49a02821e9d092e8f6bd036612bb559ef4a4b3bf35c4152f1ef6c29b0f43a19c",
+      "recortes": [
+        {
+          "ficheiro": "recibo-dotacoes-en-1024-cabecalho.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "5ab5a39334e490e31c0fb81f4ce71f628e8f5aa491c6899baf5bb89fb1e07170"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-dotacoes-en-1280.png",
+      "rota": "/en/ledger/oe-2027-outras-despesas-dotacoes-execucao/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2762,
+      "sha256": "e4fb498e0e62d905321c116629ee5930660e0d218aacbb5b13cae11885817d3c",
+      "recortes": [
+        {
+          "ficheiro": "recibo-dotacoes-en-1280-cabecalho.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "71ea1890d2e362641fef7b30ae7566f6c6cddbb3857060034c0afc28e7683d63"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-dotacoes-en-1600.png",
+      "rota": "/en/ledger/oe-2027-outras-despesas-dotacoes-execucao/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2768,
+      "sha256": "f9cd3ec144fa56da7bfac2068913e8f3bb21212bdd270110b852f1671c4cbf86",
+      "recortes": [
+        {
+          "ficheiro": "recibo-dotacoes-en-1600-cabecalho.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "71ea1890d2e362641fef7b30ae7566f6c6cddbb3857060034c0afc28e7683d63"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-contratos-pt-390.png",
+      "rota": "/livro-razao/oe-2027-saude-dotacao-reforco-contratos-programa/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 4282,
+      "sha256": "992a50045969a519489cbbc30d6245bb1da9257b9033ad2d2e8abd9cfe75381b",
+      "recortes": [
+        {
+          "ficheiro": "recibo-contratos-pt-390-cabecalho.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "cb56d1c7f207b09d4ea7d221da98d99b7b65a9d27dd3fd3547de454d1dbefadf"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-contratos-pt-768.png",
+      "rota": "/livro-razao/oe-2027-saude-dotacao-reforco-contratos-programa/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3493,
+      "sha256": "e501f5e78a11f0b65a3b78c7477be6135e8a79c524d7ec6dafdf13d488753451",
+      "recortes": [
+        {
+          "ficheiro": "recibo-contratos-pt-768-cabecalho.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "f0942457982bab30ae9a4a5a87781b97a693cb3696de43de6b8961dc2c8a0fb1"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-contratos-pt-1024.png",
+      "rota": "/livro-razao/oe-2027-saude-dotacao-reforco-contratos-programa/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2926,
+      "sha256": "be1509217ed08b65e61f0b65cf0ef527ab38e2b01bdc9d6be699a4a75b07c2d7",
+      "recortes": [
+        {
+          "ficheiro": "recibo-contratos-pt-1024-cabecalho.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "5f56210cc62aaa655455db6e917070acce53ad7300a9fcd211e19b0ad3858e80"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-contratos-pt-1280.png",
+      "rota": "/livro-razao/oe-2027-saude-dotacao-reforco-contratos-programa/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 3384,
+      "sha256": "9b72bfc641719997d999ec8ece8afab1e210492838c7e27bd5dcd59cec7db4d5",
+      "recortes": [
+        {
+          "ficheiro": "recibo-contratos-pt-1280-cabecalho.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "095535dfba43e3934b3e21c539628df50c16527a8b63bed9cdff2b1672b2b50c"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-contratos-pt-1600.png",
+      "rota": "/livro-razao/oe-2027-saude-dotacao-reforco-contratos-programa/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 3390,
+      "sha256": "fdb9d12786d18ab311bdc2d87df6a993441dea0e0dac1b6b3ed2ea7e48132e88",
+      "recortes": [
+        {
+          "ficheiro": "recibo-contratos-pt-1600-cabecalho.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "095535dfba43e3934b3e21c539628df50c16527a8b63bed9cdff2b1672b2b50c"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-contratos-en-390.png",
+      "rota": "/en/ledger/oe-2027-saude-dotacao-reforco-contratos-programa/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 4426,
+      "sha256": "a4be1766ef438cd8f7f428bc1b847d61e1cb58d40e1ce40e0583d3f12a4dffe0",
+      "recortes": [
+        {
+          "ficheiro": "recibo-contratos-en-390-cabecalho.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "831f15422b23a201ab4d10f41a6bd45504d1920a538aadc3d57f57a7d6c8631b"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-contratos-en-768.png",
+      "rota": "/en/ledger/oe-2027-saude-dotacao-reforco-contratos-programa/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3502,
+      "sha256": "2576d95ab127988c513fc6ffb18e502ed59d792067fa571c84dd17485428f4de",
+      "recortes": [
+        {
+          "ficheiro": "recibo-contratos-en-768-cabecalho.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "8c4a14e817cd8501cbc022fb6454a9c7a631f967ef58256252fcc01bf59e5711"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-contratos-en-1024.png",
+      "rota": "/en/ledger/oe-2027-saude-dotacao-reforco-contratos-programa/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2926,
+      "sha256": "bcf214d1c88b8985e6ecf0ae7ba22088506d5fbcbfcd6ef3b81836d7a0f62e9c",
+      "recortes": [
+        {
+          "ficheiro": "recibo-contratos-en-1024-cabecalho.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "bad510f8be4b3a984e387bb8d878a2b0e6eafdc8352386a80558c16af5aba10d"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-contratos-en-1280.png",
+      "rota": "/en/ledger/oe-2027-saude-dotacao-reforco-contratos-programa/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 3384,
+      "sha256": "c40d7b05ccf302f6c08e8bf024a0e408eda648fe4e0d0d9a6b8350a4980cb382",
+      "recortes": [
+        {
+          "ficheiro": "recibo-contratos-en-1280-cabecalho.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "e041875ea756492fa89757c68b3f0f17795e5b00ba6b25397253b5b0889a00cc"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-contratos-en-1600.png",
+      "rota": "/en/ledger/oe-2027-saude-dotacao-reforco-contratos-programa/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 3390,
+      "sha256": "93a9265d9ce75671b83a2af645cc9c7b2b647e26623481794e7cfd5e503fbbcb",
+      "recortes": [
+        {
+          "ficheiro": "recibo-contratos-en-1600-cabecalho.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "e041875ea756492fa89757c68b3f0f17795e5b00ba6b25397253b5b0889a00cc"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-variacao-pt-390.png",
+      "rota": "/livro-razao/der-saude-outras-correntes-variacao-abs/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 2669,
+      "sha256": "3ce5fa927be7ac57a77c8efa76e86a27bbc36d4b560f815b27df99002eda3c6b",
+      "recortes": [
+        {
+          "ficheiro": "recibo-variacao-pt-390-cabecalho.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "cd4ac7303e5c51a7befa78f4787fc2e88cea2201a21284d48ed0e5829c113f40"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-variacao-pt-768.png",
+      "rota": "/livro-razao/der-saude-outras-correntes-variacao-abs/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 2428,
+      "sha256": "454bbfb2a9565ec01b65804189669a0fdb6e22edf8656bed70fd3946e7530282",
+      "recortes": [
+        {
+          "ficheiro": "recibo-variacao-pt-768-cabecalho.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "5ae264eb8b6cdc02cc23c734d4d5cda91207f423c0ad7778d176e3b82a631740"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-variacao-pt-1024.png",
+      "rota": "/livro-razao/der-saude-outras-correntes-variacao-abs/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 1630,
+      "sha256": "732fa9219ee5879f3a1ab83da2e16eeef4f85828a34da521f95b626cb1a46cd1",
+      "recortes": [
+        {
+          "ficheiro": "recibo-variacao-pt-1024-cabecalho.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "e0b9a3d24c48ed8973b2a3886ece60984e3670691bcc14ec56b7cd81042d07d9"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-variacao-pt-1280.png",
+      "rota": "/livro-razao/der-saude-outras-correntes-variacao-abs/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 1674,
+      "sha256": "854865ec6f9aaf11df4ca474006b085a9b434bbc6b1a818b3d0d476de06ec575",
+      "recortes": [
+        {
+          "ficheiro": "recibo-variacao-pt-1280-cabecalho.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "44a0da32641591a88c5b48cdacc81c1e89442d23ab4d56d5a16bfb257366108f"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-variacao-pt-1600.png",
+      "rota": "/livro-razao/der-saude-outras-correntes-variacao-abs/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 1680,
+      "sha256": "15a56a2b92e42071af0c85e36c7e2681be2c42539231932ab216a63d60a2c141",
+      "recortes": [
+        {
+          "ficheiro": "recibo-variacao-pt-1600-cabecalho.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "44a0da32641591a88c5b48cdacc81c1e89442d23ab4d56d5a16bfb257366108f"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-variacao-en-390.png",
+      "rota": "/en/ledger/der-saude-outras-correntes-variacao-abs/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 2698,
+      "sha256": "9cd5a9581ac349833c6221182ae24335d1da0bd338412faf6bd14c1b7365a395",
+      "recortes": [
+        {
+          "ficheiro": "recibo-variacao-en-390-cabecalho.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "89368f80c2772d3a189cc305593959c1941d24c9dacf5796fa22648081a033cd"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-variacao-en-768.png",
+      "rota": "/en/ledger/der-saude-outras-correntes-variacao-abs/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 2428,
+      "sha256": "1e70555fef68c8d543fdf3553dcdf0c09cfc34a97bfc2258daab28d600bb3613",
+      "recortes": [
+        {
+          "ficheiro": "recibo-variacao-en-768-cabecalho.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "b7ab7c3acd8edd1397b972bbae0e7e105a89460bdbdbbf28eea05400c3256517"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-variacao-en-1024.png",
+      "rota": "/en/ledger/der-saude-outras-correntes-variacao-abs/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 1611,
+      "sha256": "28a7cbe0b3be1436a308b35cb766e6cfa61fdd4cd5107154ae0f94f2eff24a44",
+      "recortes": [
+        {
+          "ficheiro": "recibo-variacao-en-1024-cabecalho.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "d2fe413ae8f96271007930b5a76fdb3173af6fd757f5263322ab853884d17b88"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-variacao-en-1280.png",
+      "rota": "/en/ledger/der-saude-outras-correntes-variacao-abs/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 1655,
+      "sha256": "8c2cc970b2009edab21580de95f3bf13d8f5f297ba227d6bf9fcb5af66056eeb",
+      "recortes": [
+        {
+          "ficheiro": "recibo-variacao-en-1280-cabecalho.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "ca810c5e9239b9b6d600fa3834c2bc919f1102e8f01590c3b5667db453983b7f"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-variacao-en-1600.png",
+      "rota": "/en/ledger/der-saude-outras-correntes-variacao-abs/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 1662,
+      "sha256": "aa66a9d305ea9f2eda7899b8d0f344cc5e30b34922f692fd6edaf3c3d03b2f77",
+      "recortes": [
+        {
+          "ficheiro": "recibo-variacao-en-1600-cabecalho.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "ca810c5e9239b9b6d600fa3834c2bc919f1102e8f01590c3b5667db453983b7f"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-acss-pt-390.png",
+      "rota": "/livro-razao/oe-2027-saude-contrato-programa-acss/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 4963,
+      "sha256": "4bc7d67e2755eba08d49ecc0b6878cc0159b33b482bbb179ae7cce11c9b3f515",
+      "recortes": [
+        {
+          "ficheiro": "recibo-acss-pt-390-cabecalho.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "d1b01ddf65c7e7ff1c1ce80dc84c5b5732454a983e2d6dc37ba6edc1263d05ed"
+        },
+        {
+          "ficheiro": "recibo-acss-pt-390-excerto.png",
+          "seletor": ".linha-excerto",
+          "sha256": "34335be4065137fb8ca56c68453dcd2ae08364ee653b2db1eb25579c7d5926db"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-acss-pt-768.png",
+      "rota": "/livro-razao/oe-2027-saude-contrato-programa-acss/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3868,
+      "sha256": "2c082ae4a9840f01f1c9bef9ce9afa34ebf41ccd4da8c26737f62779271350be",
+      "recortes": [
+        {
+          "ficheiro": "recibo-acss-pt-768-cabecalho.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "4e004c7feabb10747609b7c9f7116c103c7cffb8e77ae5ca6fc7e5814109a145"
+        },
+        {
+          "ficheiro": "recibo-acss-pt-768-excerto.png",
+          "seletor": ".linha-excerto",
+          "sha256": "2e7db5dfe3fc8b64906e1d409a006e509775939860ab3609508798de22eac9ed"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-acss-pt-1024.png",
+      "rota": "/livro-razao/oe-2027-saude-contrato-programa-acss/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 3366,
+      "sha256": "5cd381d0e1881b95d6406a55ba619b1c4b4c79bce03dbbb8d1d345c502349174",
+      "recortes": [
+        {
+          "ficheiro": "recibo-acss-pt-1024-cabecalho.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "38b0ec1cd3193887a09dc38b8c5bfe6b6da720d67c3bef7192fa41fac0413094"
+        },
+        {
+          "ficheiro": "recibo-acss-pt-1024-excerto.png",
+          "seletor": ".linha-excerto",
+          "sha256": "518647c69a55d3d8f6f4edad23b5d4fab427e5a336482ea99adec370bf14a822"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-acss-pt-1280.png",
+      "rota": "/livro-razao/oe-2027-saude-contrato-programa-acss/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 3886,
+      "sha256": "6d06529ff437a7c237879029ae3c612d1237940bd33448963a48f5f4c030f23a",
+      "recortes": [
+        {
+          "ficheiro": "recibo-acss-pt-1280-cabecalho.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "0eb76f78f0a8bb469b9596bd609ff096a3be1c6487bbb086fbcccb8bff8dcedf"
+        },
+        {
+          "ficheiro": "recibo-acss-pt-1280-excerto.png",
+          "seletor": ".linha-excerto",
+          "sha256": "f439dc8957f7ffeff797fa535d7ec173d8a35892f6e6a08e902d23db10ebe234"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-acss-pt-1600.png",
+      "rota": "/livro-razao/oe-2027-saude-contrato-programa-acss/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 3892,
+      "sha256": "42d395346508974435e51b83dba37cf52d6ab235d569a2af567b4df467003dd8",
+      "recortes": [
+        {
+          "ficheiro": "recibo-acss-pt-1600-cabecalho.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "0eb76f78f0a8bb469b9596bd609ff096a3be1c6487bbb086fbcccb8bff8dcedf"
+        },
+        {
+          "ficheiro": "recibo-acss-pt-1600-excerto.png",
+          "seletor": ".linha-excerto",
+          "sha256": "f439dc8957f7ffeff797fa535d7ec173d8a35892f6e6a08e902d23db10ebe234"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-acss-en-390.png",
+      "rota": "/en/ledger/oe-2027-saude-contrato-programa-acss/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 5083,
+      "sha256": "445f95367d9b44cb98a146baa4494cc52fd01d43b860d6399026ca309c4f6f99",
+      "recortes": [
+        {
+          "ficheiro": "recibo-acss-en-390-cabecalho.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "927e94f1c35d504a94e475a8a38676a9dd9c2222135e1d0ca81c0d71343c9335"
+        },
+        {
+          "ficheiro": "recibo-acss-en-390-excerto.png",
+          "seletor": ".linha-excerto",
+          "sha256": "7775b1b132f829b843e26aa219c112b8ab2d392d352c3720dada6429885b6fb1"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-acss-en-768.png",
+      "rota": "/en/ledger/oe-2027-saude-contrato-programa-acss/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3912,
+      "sha256": "8a1a2c0e3d13ab0931b7b6ffcb898ff5b0db9bfd57e39dc17f0c87e42cd99ddb",
+      "recortes": [
+        {
+          "ficheiro": "recibo-acss-en-768-cabecalho.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "f464b84c10a841cdf623700f305063a234db60224a45f70e6e4fcf9c14ba9ecc"
+        },
+        {
+          "ficheiro": "recibo-acss-en-768-excerto.png",
+          "seletor": ".linha-excerto",
+          "sha256": "2e7db5dfe3fc8b64906e1d409a006e509775939860ab3609508798de22eac9ed"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-acss-en-1024.png",
+      "rota": "/en/ledger/oe-2027-saude-contrato-programa-acss/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 3393,
+      "sha256": "f2a17dad76287584dd44b51d3abd18c76f6c30233c8d74bf5948e8b2de3af5a0",
+      "recortes": [
+        {
+          "ficheiro": "recibo-acss-en-1024-cabecalho.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "72891f131ae89b12bc2097c9203fe6c0cedb7432a5dbf1d764f5b435f2ad323b"
+        },
+        {
+          "ficheiro": "recibo-acss-en-1024-excerto.png",
+          "seletor": ".linha-excerto",
+          "sha256": "107719a808d6569ab096e7b69957a9b27f405e1008747cb09a96816af712a77e"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-acss-en-1280.png",
+      "rota": "/en/ledger/oe-2027-saude-contrato-programa-acss/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 3913,
+      "sha256": "3980e086267fbc0aebfa4a9fdbc25de86d4db106721f9541d5f3e46ea2b71f58",
+      "recortes": [
+        {
+          "ficheiro": "recibo-acss-en-1280-cabecalho.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "13829509de48f6b5077db65026803a81e83c2030c8b8a7cc361a5b71164af772"
+        },
+        {
+          "ficheiro": "recibo-acss-en-1280-excerto.png",
+          "seletor": ".linha-excerto",
+          "sha256": "2e761f3a16f43ebab90bec1260d561a1d313ae690ddfca95cccfd1906ca902db"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-acss-en-1600.png",
+      "rota": "/en/ledger/oe-2027-saude-contrato-programa-acss/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 3920,
+      "sha256": "f6f17dad0bc7a07679302aec5d94d380daeb768132a0f5e9e5c4b4d2eb90da17",
+      "recortes": [
+        {
+          "ficheiro": "recibo-acss-en-1600-cabecalho.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "13829509de48f6b5077db65026803a81e83c2030c8b8a7cc361a5b71164af772"
+        },
+        {
+          "ficheiro": "recibo-acss-en-1600-excerto.png",
+          "seletor": ".linha-excerto",
+          "sha256": "2e761f3a16f43ebab90bec1260d561a1d313ae690ddfca95cccfd1906ca902db"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    }
+  ],
+  "recursos": {
+    "version.json": "2de3506084df3f997edaa1f8dafb6cd4d35444a1569eb1ce20e4357f5c872012",
+    "o-que-se-discute/index.html": "e37a8890ae640184cfd936e287beda9b5d91f59a0dbcc8e71a5e0d00572da53f",
+    "tipos/spectral/Spectral-Regular.woff2": "3c846b032ad614e02ebc439087bbcbb7371cfbdea6c8a4b568efa859537e9c43",
+    "_astro/Base.BHrCWcnd.css": "e131823b7f26169af951b3b7b4df44c7e5e864b5c4f84e7d35862e0ba4714548",
+    "tipos/bitter/Bitter[wght].woff2": "b4ad17520d0ce8bd1aa98af06e07ca94145522f868b5a010732eb5eee3ba2ea0",
+    "js/tema.js": "855bcee3ec1223b43e0f3e9a94c1fbdf1451e53830dcc022962b48e8d3340757",
+    "tipos/spectral/Spectral-Medium.woff2": "34f0ba222c28bc0ea816c693d05c528be4a5ee10c4b1765cdea774c6fb2502c2",
+    "tipos/spectral-sc/SpectralSC-SemiBold.woff2": "b847fe8f1fe1a862ce15e288958d132940a8204951ef0dbe2c9ad8fd997f29e2",
+    "tipos/spectral-sc/SpectralSC-Regular.woff2": "afa69dd2e7aaca2733883133745fd84c18dfac6a08d5999e69705ea7277240b8",
+    "en/under-discussion/index.html": "f194e3004bc06ed9537763df99f188ea6f7b94666f9124afc9a2a354f294c02e",
+    "livro-razao/oe-2027-outras-despesas-dotacoes-execucao/index.html": "4a1a90231b677894b10703f38396596d45b8aef3609d7b11ad80c5a492b8ab24",
+    "_astro/linha.3Gzj_PkP.css": "c02b8967ab663930fd1ad0a2904b7beef1b14bc2d3c91aec382ee180e3f2d645",
+    "js/copiar-incorporacao.js": "b75e5f90efcd85ea94274191e44a48594932638df67377c0b91ff367df97ca13",
+    "en/ledger/oe-2027-outras-despesas-dotacoes-execucao/index.html": "6a95f9ebf62712691519319e1636b5c7f45d091c60da55ae4e8873769f785841",
+    "livro-razao/oe-2027-saude-dotacao-reforco-contratos-programa/index.html": "be6b3df02514ffc19b0c8f3d6bcdcbc347ea059a8c0c0acc37db7e7d6f77a2b0",
+    "en/ledger/oe-2027-saude-dotacao-reforco-contratos-programa/index.html": "5d28fa82f12465203295662fd47f606b374884cd2511eb93895f916814151e6d",
+    "livro-razao/der-saude-outras-correntes-variacao-abs/index.html": "c3ac9e858646d99382720347e3af26a44d1c9c660a4d2a3b3cdf5e09e1b1e075",
+    "en/ledger/der-saude-outras-correntes-variacao-abs/index.html": "fe57d02d28c69d0085d73e11cfbb3e5f02ec46734ef9ee93cea97adae0fef955",
+    "livro-razao/oe-2027-saude-contrato-programa-acss/index.html": "8c0e6702023bbe8e24da4e192ebb3e36bcc0d92f6a542dfe4eb50bca01e0705b",
+    "en/ledger/oe-2027-saude-contrato-programa-acss/index.html": "93ecb63ee00e22a2481ed1b05f771b330bb033bf7f0f750012d763945a82c05f"
+  },
+  "falhas": [],
+  "ok": true
+}

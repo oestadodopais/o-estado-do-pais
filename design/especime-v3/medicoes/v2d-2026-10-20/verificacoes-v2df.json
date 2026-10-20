@@ -69,13 +69,13 @@
     "registo": "<temporario>/v2df-cruzamento.log",
     "sha256": "90609dd5724bc324848fa92e60239712a937b8b62c71423cf932a911e090bfe7",
     "ultimas_linhas": [
-      "\u001b[90m    oe-2026: 209\u001b[0m",
-      "\u001b[90m    oe-2027: 160\u001b[0m",
+      "    oe-2026: 209",
+      "    oe-2027: 160",
       "",
-      "\u001b[33m  1 aviso(s):\u001b[0m",
-      "\u001b[90m    · o ledger.json de \"20 Orcamento do Estado\" já não é o que atravessou. Por si só isto não quer dizer nada: o ficheiro traz um \"built_at\" que muda a cada reconstrução. O que prende é o resumo de cada LINHA — se nenhuma foi nomeada acima, nenhuma mudou.\u001b[0m",
+      "  1 aviso(s):",
+      "    · o ledger.json de \"20 Orcamento do Estado\" já não é o que atravessou. Por si só isto não quer dizer nada: o ficheiro traz um \"built_at\" que muda a cada reconstrução. O que prende é o resumo de cada LINHA — se nenhuma foi nomeada acima, nenhuma mudou.",
       "",
-      "  \u001b[32m✓\u001b[0m cada linha e cada ficheiro vindos do motor são, byte a byte, o que atravessou, e são ainda o que o motor tem.",
+      "  ✓ cada linha e cada ficheiro vindos do motor são, byte a byte, o que atravessou, e são ainda o que o motor tem.",
       ""
     ]
   },
@@ -103,5 +103,58 @@
     "cabeca": "4450a208",
     "saida": [],
     "quando": "2026-10-20T11:44:36Z"
+  },
+  "ledger:check": {
+    "codigo": 0,
+    "registo": "<temporario>/v2df-ledger.log",
+    "sha256": "765e75516962d15ad00c6324f1a1d86d226395d46562735a336c47d4fbf7fd95",
+    "ultimas_linhas": [
+      "PLANTA caminho V2D fora do motor: V2D selo: referência ou recibo incompleto",
+      "PLANTA período do orçamento trocado pela publicação: oe-2027-outras-despesas-dotacoes-execucao: V2D data: diferente da publicação selada ou da data conferida no documento",
+      "PLANTA período adulterado também na prova: oe-2027-outras-despesas-dotacoes-execucao: V2D data: diferente da publicação selada ou da data conferida no documento",
+      "PLANTA período do orçamento trocado pela publicação: oe-2027-saude-dotacao-reforco-contratos-programa: V2D data: diferente da publicação selada ou da data conferida no documento",
+      "PLANTA período adulterado também na prova: oe-2027-saude-dotacao-reforco-contratos-programa: V2D data: diferente da publicação selada ou da data conferida no documento",
+      "PLANTA período do orçamento trocado pela publicação: oe-2027-saude-contrato-programa-acss: V2D data: diferente da publicação selada ou da data conferida no documento",
+      "PLANTA período adulterado também na prova: oe-2027-saude-contrato-programa-acss: V2D data: diferente da publicação selada ou da data conferida no documento",
+      "V2A: 12 afirmações conferidas, 12 corpos lidos, 38 plantas, 0 erros."
+    ]
+  },
+  "check:pais": {
+    "codigo": 0,
+    "registo": "<temporario>/v2df-pais.log",
+    "sha256": "982dc1ad069be6128854615f840df650226eb912c6cabc6eb9e84c9bfc64da5f",
+    "ultimas_linhas": [
+      "E1: prazo e razão conferidos pela chamada da check:pais.",
+      "T9: 30 cartões com valor de referência nos temas e nas entradas, 10 fora e 20 dentro, cada um com a cor do seu estado.",
+      "B1 país: 47 medidas, 9 temas, 8248 menus, 4 mudanças declaradas, 4 listas com teto 8, 2 registos de 61 mudanças, 98 títulos de edição.",
+      "B1 país: todas as conferências a 0."
+    ]
+  },
+  "check:voz": {
+    "codigo": 0,
+    "registo": "<temporario>/v2df-voz.log",
+    "sha256": "56fa292e246e68ebf85d04dfbb3ac706d9c42002ee9d3fca13e6e752b2672697",
+    "ultimas_linhas": [
+      "        · v2ac · por ler",
+      "        · v2ai · por ler",
+      "        · v2ak · por ler",
+      "        · v2b · por ler",
+      "        · v2d · por ler",
+      "        1 exceção(ões) por exercer, e o ficheiro di-lo:",
+      "        · «a verificar»",
+      ""
+    ]
+  },
+  "check:discussao": {
+    "codigo": 0,
+    "registo": "<temporario>/v2df-discussao.log",
+    "sha256": "dde18148839c389bf523c81971e2a20a35a41762f1feb904647508dca104425f",
+    "ultimas_linhas": [
+      "",
+      "> o-estado-do-pais@0.1.0 check:discussao",
+      "> node tests/discussao/itens.mjs",
+      "",
+      "V2B · 0 erro(s), 128 de 128 plantas, 306 portas de integração."
+    ]
   }
 }

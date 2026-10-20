@@ -1,0 +1,366 @@
+[
+  {
+    "corrida": "v2df-portoes",
+    "codigo": 9,
+    "recusa": "árvore suja; nenhum portão correu"
+  },
+  {
+    "corrida": "v2df-portoes-final",
+    "cabeca": "e72f769020a2dd748cc0bca44b383605d990daf9",
+    "codigos": {
+      "check:css": 125,
+      "check:series": 125,
+      "gate:html": 125,
+      "check:lugar": 125,
+      "check:discussao": 125,
+      "check:palavras": 125,
+      "check:frases-compostas": 125,
+      "check:alvos": 125,
+      "typecheck": 125,
+      "build": 1
+    },
+    "ultimas_linhas": {
+      "check:alvos": [
+        "não correu: a construção não ficou verde"
+      ],
+      "gate:html": [
+        "não correu: a construção não ficou verde"
+      ],
+      "check:discussao": [
+        "não correu: a construção não ficou verde"
+      ],
+      "typecheck": [
+        "não correu: a construção não ficou verde"
+      ],
+      "check:palavras": [
+        "não correu: a construção não ficou verde"
+      ],
+      "check:frases-compostas": [
+        "não correu: a construção não ficou verde"
+      ],
+      "check:lugar": [
+        "não correu: a construção não ficou verde"
+      ],
+      "check:css": [
+        "não correu: a construção não ficou verde"
+      ],
+      "check:series": [
+        "não correu: a construção não ficou verde"
+      ],
+      "build": [
+        "      '    check: correcoes_publicadas\\n' +",
+        "      '    calculado: 10\\n' +",
+        "      '    publicado: 9 (9)\\n' +",
+        "      '    A comparação é exata: não há tolerância nenhuma, e uma derivação que só bate arredondada diz o arredondamento na própria expressão.',",
+        "    '[oe-2027-saude-contrato-programa-acss.yml] história do valor: a lista tem 1 entradas e o registo sela 0.'",
+        "  ],",
+        "  expected: [],",
+        "  operator: 'deepStrictEqual',",
+        "  diff: 'simple'",
+        "}",
+        "",
+        "Node.js v22.23.1"
+      ]
+    }
+  },
+  {
+    "corrida": "v2df-portoes-recontagem",
+    "cabeca": "22ced40a9587cb61013978c84218670686a77d5e",
+    "codigos": {
+      "check:css": 125,
+      "check:series": 125,
+      "gate:html": 125,
+      "check:lugar": 125,
+      "check:discussao": 125,
+      "check:palavras": 125,
+      "check:frases-compostas": 125,
+      "check:alvos": 125,
+      "typecheck": 125,
+      "build": 1
+    },
+    "ultimas_linhas": {
+      "check:alvos": [
+        "não correu: a construção não ficou verde"
+      ],
+      "gate:html": [
+        "não correu: a construção não ficou verde"
+      ],
+      "check:discussao": [
+        "não correu: a construção não ficou verde"
+      ],
+      "typecheck": [
+        "não correu: a construção não ficou verde"
+      ],
+      "check:palavras": [
+        "não correu: a construção não ficou verde"
+      ],
+      "check:frases-compostas": [
+        "não correu: a construção não ficou verde"
+      ],
+      "check:lugar": [
+        "não correu: a construção não ficou verde"
+      ],
+      "check:css": [
+        "não correu: a construção não ficou verde"
+      ],
+      "check:series": [
+        "não correu: a construção não ficou verde"
+      ],
+      "build": [
+        "    at AstroComponentInstance.init (file://<worktree>/dist/.prerender/chunks/server_DTCS7PMV.mjs:1707:27)",
+        "    at AstroComponentInstance.render (file://<worktree>/dist/.prerender/chunks/server_DTCS7PMV.mjs:1714:28)",
+        "    at Object.render (file://<worktree>/dist/.prerender/chunks/server_DTCS7PMV.mjs:2369:19)",
+        "    at renderChild (file://<worktree>/dist/.prerender/chunks/server_DTCS7PMV.mjs:1626:44)",
+        "12:47:03 [ERROR] [build] Caught error rendering /correcoes: Error: mudancas: a linha \"oe-2027-saude-contrato-programa-acss\" mudou e nenhuma declaração diz de que lugar é. Escreva-o em src/data/lugar-das-linhas.mjs, com a razão.",
+        "mudancas: a linha \"oe-2027-saude-contrato-programa-acss\" mudou e nenhuma declaração diz de que lugar é. Escreva-o em src/data/lugar-das-linhas.mjs, com a razão.",
+        "  Stack trace:",
+        "    at file://<worktree>/dist/.prerender/chunks/mudancas_C8wUT306.mjs:260:21",
+        "    at correcoesDasLinhas (file://<worktree>/dist/.prerender/chunks/mudancas_C8wUT306.mjs:256:82)",
+        "    at file://<worktree>/dist/.prerender/chunks/CorrecoesView_PWPjNpH3.mjs:23:19",
+        "    at AstroComponentInstance.init (file://<worktree>/dist/.prerender/chunks/server_DTCS7PMV.mjs:1707:27)",
+        "    at Object.render (file://<worktree>/dist/.prerender/chunks/server_DTCS7PMV.mjs:2369:19)"
+      ]
+    }
+  },
+  {
+    "corrida": "v2df-portoes-lugar",
+    "cabeca": "91cc0682a584243345610280b9d7e43823866fec",
+    "codigos": {
+      "check:css": 125,
+      "check:series": 125,
+      "gate:html": 125,
+      "check:lugar": 125,
+      "check:discussao": 125,
+      "check:palavras": 125,
+      "check:frases-compostas": 125,
+      "check:alvos": 125,
+      "typecheck": 125,
+      "build": 1
+    },
+    "ultimas_linhas": {
+      "check:alvos": [
+        "não correu: a construção não ficou verde"
+      ],
+      "gate:html": [
+        "não correu: a construção não ficou verde"
+      ],
+      "check:discussao": [
+        "não correu: a construção não ficou verde"
+      ],
+      "typecheck": [
+        "não correu: a construção não ficou verde"
+      ],
+      "check:palavras": [
+        "não correu: a construção não ficou verde"
+      ],
+      "check:frases-compostas": [
+        "não correu: a construção não ficou verde"
+      ],
+      "check:lugar": [
+        "não correu: a construção não ficou verde"
+      ],
+      "check:css": [
+        "não correu: a construção não ficou verde"
+      ],
+      "check:series": [
+        "não correu: a construção não ficou verde"
+      ],
+      "build": [
+        "  mordeu · a legenda do mapa da dívida na forma antiga",
+        "  mordeu · o teto do cabeçalho da tabela escrito à mão",
+        "  mordeu · as palavras de antes no cartão das câmaras",
+        "índice de dívida · todas as células a 0.",
+        "",
+        "> o-estado-do-pais@0.1.0 check:pais",
+        "> node scripts/check-pais.mjs && node tests/inicio/linhas-da-casa.mjs --prova && node tests/inicio/estudos-em-curso.mjs",
+        "",
+        "E1: prazo e razão conferidos pela chamada da check:pais.",
+        "T9: 30 cartões com valor de referência nos temas e nas entradas, 10 fora e 20 dentro, cada um com a cor do seu estado.",
+        "B1 país: 47 medidas, 9 temas, 8248 menus, 4 mudanças declaradas, 4 listas com teto 8, 2 registos de 61 mudanças, 98 títulos de edição.",
+        "A1: oe-2027-saude-contrato-programa-acss está em lugar-das-linhas.mjs e não deriva lugar nenhum."
+      ]
+    }
+  },
+  {
+    "corrida": "v2df-portoes-origem",
+    "cabeca": "bd2e4cc8bef65140facde42fe5ff34d898194a71",
+    "codigos": {
+      "check:css": 125,
+      "check:series": 125,
+      "gate:html": 125,
+      "check:lugar": 125,
+      "check:discussao": 125,
+      "check:palavras": 125,
+      "check:frases-compostas": 125,
+      "check:alvos": 125,
+      "typecheck": 125,
+      "build": 1
+    },
+    "ultimas_linhas": {
+      "check:alvos": [
+        "não correu: a construção não ficou verde"
+      ],
+      "gate:html": [
+        "não correu: a construção não ficou verde"
+      ],
+      "check:discussao": [
+        "não correu: a construção não ficou verde"
+      ],
+      "typecheck": [
+        "não correu: a construção não ficou verde"
+      ],
+      "check:palavras": [
+        "não correu: a construção não ficou verde"
+      ],
+      "check:frases-compostas": [
+        "não correu: a construção não ficou verde"
+      ],
+      "check:lugar": [
+        "não correu: a construção não ficou verde"
+      ],
+      "check:css": [
+        "não correu: a construção não ficou verde"
+      ],
+      "check:series": [
+        "não correu: a construção não ficou verde"
+      ],
+      "build": [
+        "sinais · 5 de 5 blocos na primeira página, 0 saída(s); o registo está em .sinais/primeira-pagina.json.",
+        "  SINAL · na explicação «dinheiro-do-estado-2026», as palavras em naoDiz[0][1] saíram da página: nenhuma linha casa com /juros|servico-da-divida|encargos-da-divida/ (7 casam)",
+        "sinais · 1 explicação(ões), 1 frase(s) guardada(s) fora da página; o registo está em .sinais/explicacoes.json.",
+        "  mordeu · uma condição falsa numa cópia das declarações (código 0)",
+        "  mordeu · um resolvedor que recusa tudo (código 1)",
+        "  mordeu · o passo da cadeia do build com um resolvedor que recusa tudo (código 1)",
+        "",
+        "> o-estado-do-pais@0.1.0 check:discussao",
+        "> node tests/discussao/itens.mjs",
+        "",
+        "V2B · 1 erro(s), 127 de 128 plantas, 306 portas de integração.",
+        "V2B planta não mordeu: antecedente do recibo da ACSS retirado"
+      ]
+    }
+  },
+  {
+    "corrida": "v2df-portoes-confirmados",
+    "cabeca": "ba7e2438d9458760a52518494e0da6d94c4692ef",
+    "codigos": {
+      "check:css": 0,
+      "check:series": 0,
+      "gate:html": 0,
+      "check:lugar": 0,
+      "check:discussao": 0,
+      "check:palavras": 0,
+      "check:frases-compostas": 0,
+      "check:alvos": 0,
+      "typecheck": 0,
+      "build": 0
+    },
+    "ultimas_linhas": {
+      "check:alvos": [
+        "  ✓ H7  20 algarismo(s) de manchete medidos · 0 em manchetes de uma linha citada, 0 sem os 44 px (nenhum) · 20 em manchetes de várias, 0 sem a largura ou sem a caixa de linha (nenhum) · 0 com uma porta de OUTRA linha dentro da sua área (nenhum)",
+        "  ✓ H8  cartões: 2444 registo(s), 1222 da edição inglesa, 1218 com unidade · 0 desenharam uma cadeia diferente da que a tabela manda · 2 ficam em português por decisão da tabela («factor» em 2: é o nome que o relatório citado dá ao número, e não uma unidade de contagem) · páginas inglesas: 3400 unidade(s) rendida(s), 0 diferentes do que a tabela manda",
+        "  ✓ H9  4134 página(s) inglesas lidas: 944 com um nome de diploma, 3190 sem nenhum, 3 documento(s) alojado(s) fora da conta · 949 nome(s): 944 com lang=\"pt-PT\", 5 dentro de uma transcrição da fonte (marca-se inteira, na língua da fonte: não é deste bloco), 0 sem marca",
+        "  ✓ H13  /lugares nas duas edições e nas 5 larguras: 10 passagem(ns) · portas de concelho por página: 308 (esperado 308, fora das duas tabelas com uma porta por linha) · dentro da lista agrupada: 308",
+        "  ✓ H15  pt@390: vazio 0 · «mour» 2 à vista, Mourão à vista · Enter com vários fica · «xyzq» 0 à vista, frase à vista, Enter fica · «mourao» 1 à vista, Enter abre Mourão || pt@1280: vazio 0 · «mour» 2 à vista, Mourão à vista · Enter com vários fica · «xyzq» 0 à vista, frase à vista, Enter fica · «mourao» 1 à vista, Enter abre Mourão || en@390: vazio 0 · «mour» 2 à vista, Mourão à vista · Enter com vários fica · «xyzq» 0 à vista, frase à vista, Enter fica · «mourao» 1 à vista, Enter abre Mourão || en@1280: vazio 0 · «mour» 2 à vista, Mourão à vista · Enter com vários fica · «xyzq» 0 à vista, frase à vista, Enter fica · «mourao» 1 à vista, Enter abre Mourão",
+        "  ✓ H16  8272 página(s) do dist/: 8247 com a porta das sugestões dentro do <footer>, 0 fora dele, 0 com mais de uma, 25 sem ela (e 25 sem a das correções; 0 página(s) sem a das sugestões e com a das correções, 0 sem a das correções e com a das sugestões) · nas rotas medidas: 370 de 370 passagens com uma porta no seu marco; 74 porta(s) a 390 e 74 a partir de 1024, 0 sem o alvo (nenhum) · o botão do formulário: 10 medição(ões), 0 abaixo de 44 px (nenhum) · o campo armadilhado: 10 medição(ões), 0 à vista, no teclado ou na árvore de acessibilidade",
+        "  ✓ H10  aria-expanded no dist/: 0 ocorrência(s) em 0 página(s) · ausência medida em todas as páginas próprias · conhecido positivo obrigatório: 1 ocorrência(s), recusado · Método: 10 passagem(ns), 0 sem título",
+        "",
+        "  escrito <temporario>",
+        "",
+        "  todas as células verdes.",
+        ""
+      ],
+      "gate:html": [
+        "    · a afirmação \"vila-velha-de-rodao-limite-divida-dgal-2024\" está no livro-razão e tem página própria, mas nenhuma outra página a cita.",
+        "    · a afirmação \"vila-verde-limite-divida-dgal-2024\" está no livro-razão e tem página própria, mas nenhuma outra página a cita.",
+        "    · a afirmação \"vila-vicosa-limite-divida-dgal-2024\" está no livro-razão e tem página própria, mas nenhuma outra página a cita.",
+        "    · a afirmação \"vimioso-limite-divida-dgal-2024\" está no livro-razão e tem página própria, mas nenhuma outra página a cita.",
+        "    · a afirmação \"vinhais-limite-divida-dgal-2024\" está no livro-razão e tem página própria, mas nenhuma outra página a cita.",
+        "    · a afirmação \"viseu-limite-divida-dgal-2024\" está no livro-razão e tem página própria, mas nenhuma outra página a cita.",
+        "    · a afirmação \"vizela-limite-divida-dgal-2024\" está no livro-razão e tem página própria, mas nenhuma outra página a cita.",
+        "    · a afirmação \"vouzela-limite-divida-dgal-2024\" está no livro-razão e tem página própria, mas nenhuma outra página a cita.",
+        "",
+        "  ✓ nenhum algarismo sem proveniência nas páginas construídas.",
+        "    prova · 92 chaves reconferidas pelo portão · 96 números marcados nas páginas · 2 lista(s) de nomes recontada(s) · 320545 ligações internas (0 relativas, 17293 âncoras) · 80 recortes · 6 ficheiros alojados · 10 contas sobre ficheiros não alojados (12 com cópia arquivada) · 894 páginas de série · 2444 cartões de partilha (13740 valores recalculados, 2444 nomeados por páginas) · 2 manifestos (7 ícones medidos na cabeça do PNG) · escrito em /prova.json",
+        ""
+      ],
+      "check:discussao": [
+        "",
+        "> o-estado-do-pais@0.1.0 check:discussao",
+        "> node tests/discussao/itens.mjs",
+        "",
+        "V2B · 0 erro(s), 128 de 128 plantas, 306 portas de integração."
+      ],
+      "typecheck": [
+        "",
+        "> o-estado-do-pais@0.1.0 typecheck",
+        "> tsc -p tsconfig.check.json",
+        ""
+      ],
+      "check:palavras": [
+        "",
+        "> o-estado-do-pais@0.1.0 check:palavras",
+        "> node tests/voz/palavras-proibidas.mjs --prova",
+        "",
+        "  palavras ✓ 23 de 23 plantas vistas (14 palavras, 9 buracos da superfície) · 8273 página(s) medidas em repouso, 0 achados · 59 página(s) com a superfície estreitada por rota declarada"
+      ],
+      "check:frases-compostas": [
+        "",
+        "> o-estado-do-pais@0.1.0 check:frases-compostas",
+        "> node tests/explicacoes/frases-compostas.mjs",
+        "",
+        "V2B · 240 caminhos por clique conferidos a 390 px.",
+        "FC · 28 passagem(ns) em 14 páginas, 1692 pedaços marcados vistos, 0 dentro de um contentor flexível, 0 documento(s) mais largos do que a janela; 36 de 36 plantas no navegador."
+      ],
+      "check:lugar": [
+        "  8.4 · definições de painel fora da declaração                    0  (teto 0) ok",
+        "  §7.10 · «[a verificar]» sem definição ao pé do primeiro          0  (teto 0) ok",
+        "  §7.10 · valores desenhados sem o seu texto na legenda            0  (teto 0) ok",
+        "  §7.4 e 8.6 · estudos fora da forma única                         0  (teto 0) ok",
+        "  §7.4 e 8.6, o que a régua leu: estudo 34 · texto 17 · indice 2 · edicoes 34 · linhas 22",
+        "  as exceções, e quantas vezes cada uma foi precisa:",
+        "      · «peça»     1 · a política de IA copia a POLITICA-DA-AUTONOMIA.md e fica como a fonte a escreveu",
+        "      · «trabalho»    37 · «trabalho» no sentido de emprego ou de labor, que não é o nome de um estudo",
+        "      · «trabalho»     1 · o grupo de trabalho é o publicador identificado do relatório das pensões, não o nome de um estudo",
+        "      · «indicador»     1 · «indicador» a nomear o campo que o publicador dá, e não uma medida da casa",
+        "      · «indicador»    26 · «indicador» dentro do endereço da API do INE (`json_indicador`), que é um caminho da fonte e não uma palavra da casa",
+        "check:lugar · verde."
+      ],
+      "check:css": [
+        "",
+        "> o-estado-do-pais@0.1.0 check:css",
+        "> node scripts/check-css.mjs --prova",
+        "",
+        "  folhas · positivo conhecido: C1 viu a classe cuja regra não chega à página; C2 viu os dois defeitos plantados (o nome colado ao estado e a abreviatura colada ao que se lhe segue). Nenhuma acusou a classe com regra na folha ligada, a regra embutida, a regra dentro de um `@media`, a classe sem regra, nem o par com espaço. Das cinco fronteiras entre peças de texto, duas ficaram vermelhas, uma foi isenta pelo expoente e duas foram separadas pela folha que a página liga; as duas marcas dentro de uma palavra não chegam a ser candidatas, porque têm um nó de texto antes.",
+        "",
+        "  folhas ✓ 8248 página(s) · 8 folha(s) construída(s) com 883 classe(s) estilizada(s) · 912 classe(s) rendidas no HTML · C1: 0 regras que não chegam · C2: 34600 fronteira(s) sem espaço no HTML, 0 coladas",
+        "        C2, das 34600 fronteiras: 14806 entre duas caixas (duas caixas não fazem uma palavra) · 19794 entre duas peças de texto, das quais 19794 a folha desta página separa com um «gap», uma margem ou um «display»",
+        "        C1 · 176 regra(s) que não chegam, em quarentena escrita em C1_EM_QUARENTENA: o MESMO defeito noutras rotas (as formas do concelho, o mapa do distrito, o distrito na busca do índice dos números), à espera da decisão do lugar de direção sobre que folha passa a chegar a que página. Não é uma exceção: é dívida contada.",
+        "        25 documento(s) de estudo alojado(s) tal como estão, fora das duas células: nenhuma linha deles é da casa.",
+        ""
+      ],
+      "check:series": [
+        "",
+        "> o-estado-do-pais@0.1.0 check:series",
+        "> node tests/series/series.mjs --prova",
+        "",
+        "  check:series · 25 série(s) no tempo de 8327 ponto(s) · 2 derivada(s) com 152 ponto(s) refeitos · 12 linha(s) presa(s), 12 cartão(ões) no último ponto · 50 recibo(s) lidos · metade do motor da S3: 8175 ponto(s) no seu corpo · 40 de 40 planta(s) morderam",
+        "  ✓ as séries no tempo têm a forma, a cadência, cada valor no seu excerto, a derivada refeita, cada linha presa no seu ponto e cada cartão no último, e os recibos com todos os pontos nas duas edições."
+      ],
+      "build": [
+        "",
+        "sinais · 5 de 5 blocos na primeira página, 0 saída(s); o registo está em .sinais/primeira-pagina.json.",
+        "  SINAL · na explicação «dinheiro-do-estado-2026», as palavras em naoDiz[0][1] saíram da página: nenhuma linha casa com /juros|servico-da-divida|encargos-da-divida/ (7 casam)",
+        "sinais · 1 explicação(ões), 1 frase(s) guardada(s) fora da página; o registo está em .sinais/explicacoes.json.",
+        "  mordeu · uma condição falsa numa cópia das declarações (código 0)",
+        "  mordeu · um resolvedor que recusa tudo (código 1)",
+        "  mordeu · o passo da cadeia do build com um resolvedor que recusa tudo (código 1)",
+        "",
+        "> o-estado-do-pais@0.1.0 check:discussao",
+        "> node tests/discussao/itens.mjs",
+        "",
+        "V2B · 0 erro(s), 128 de 128 plantas, 306 portas de integração."
+      ]
+    }
+  }
+]
