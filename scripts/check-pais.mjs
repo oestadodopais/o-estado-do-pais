@@ -184,12 +184,14 @@ const CONTAGENS_DO_PROJETO = new Set(['correcoes_publicadas', 'estudos_no_arquiv
 const provasOrcamentais = JSON.parse(fs.readFileSync('ledger/provas/v2d/provas.json', 'utf8')).rows;
 function lugarDaAfirmacaoOrcamental(c) {
   const p = provasOrcamentais[c?.id];
-  if (c?.afirmacao !== true || c.unit !== 'afirmação' || c.study !== 'oe-2027' || c.source !== 'UTAO' ||
+  const autor = p?.document?.file === 'content/24 Orcamento 2027 Analise/source/debate/utao-oe2027-preliminar.pdf' ? 'UTAO'
+    : p?.document?.file === 'content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf'
+      && p.document.title === 'Orçamento do Estado 2027 · Relatório' ? 'Ministério das Finanças' : null;
+  if (!autor || c?.afirmacao !== true || c.unit !== 'afirmação' || c.study !== 'oe-2027' || c.source !== autor ||
       p?.afirmacao !== true || p.unit !== 'afirmação' ||
-      p.document?.file !== 'content/24 Orcamento 2027 Analise/source/debate/utao-oe2027-preliminar.pdf' ||
       c.document?.source_sha256 !== p.document.source_sha256 || c.document?.title !== p.document.title ||
       c.source_url !== p.source_url || c.excerpt !== p.excerpt || c.value !== p.value ||
-      JSON.stringify(c.attributed_to) !== JSON.stringify(p.attributed_to) || JSON.stringify(p.attributed_to) !== '["UTAO"]') return null;
+      JSON.stringify(c.attributed_to) !== JSON.stringify(p.attributed_to) || JSON.stringify(p.attributed_to) !== JSON.stringify([autor])) return null;
   try {
     const url = new URL(c.source_url);
     if (url.protocol !== 'https:' || url.hostname !== 'app.parlamento.pt') return null;
@@ -198,7 +200,7 @@ function lugarDaAfirmacaoOrcamental(c) {
 }
 // As plantas verificam a nova via sem dispensar a declaração nem a comparação
 // de lugares. Um campo documental adulterado deixa de derivar Portugal.
-for (const id of ['utao-ppp-contingencias-natureza-2026','utao-risco-execucao-sns-2027']) {
+for (const id of ['utao-ppp-contingencias-natureza-2026','utao-risco-execucao-sns-2027','oe-2027-saude-contrato-programa-acss']) {
   const c = linha(id);
   if (lugarDaAfirmacaoOrcamental(c) !== PAIS) erros.push(`A1: o controlo da origem orçamental selada de ${id} foi recusado.`);
   for (const [campo, altera] of [
