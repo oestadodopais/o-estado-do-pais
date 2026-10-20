@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-20T17:29:31+00:00",
+ "copia": "<pacote>",
+ "plantas": [
+  {
+   "id": "N3",
+   "ficheiro": "built/o-que-se-discute/index.html",
+   "descricao": "a contagem dos marcos completos do PRR na saúde sobe de 24 para 25 na página construída em português; a referência é a derivada der-prr-saude-marcos-completos no livro e as 37 linhas dos marcos",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "89a0642ae59d064bf7aca2c5d6945cfc2802becb8c21404afbc03cad97753cbb",
+   "sha256_depois": "f3c24f8e258a10f2890cf484662870f43c95265319dd9750980a309b6382f5d7",
+   "contexto_antes": "a\" data-nonledger=\"data-da-linha\" data-de-linha=\"der-prr-saude-marcos-total\" data-de-campo=\"reference_date\">2025</span></a>, <span class=\"claim claim-com-chip\"><span data-claim=\"der-prr-saude-marcos-completos\" class=\"claim-value\">24</span><a class=\"src-chip\" href=\"/livro-razao/der-prr-saude-marcos-completos\" data-nonledger=\"proveniencia\" data-selo-etiqueta=\"Recuperar Portugal\" title=\"Recuperar Po",
+   "contexto_depois": "a\" data-nonledger=\"data-da-linha\" data-de-linha=\"der-prr-saude-marcos-total\" data-de-campo=\"reference_date\">2025</span></a>, <span class=\"claim claim-com-chip\"><span data-claim=\"der-prr-saude-marcos-completos\" class=\"claim-value\">25</span><a class=\"src-chip\" href=\"/livro-razao/der-prr-saude-marcos-completos\" data-nonledger=\"proveniencia\" data-selo-etiqueta=\"Recuperar Portugal\" title=\"Recuperar Po"
+  },
+  {
+   "id": "N4",
+   "ficheiro": "built/en/under-discussion/index.html",
+   "descricao": "a data do fim da concessão da Brisa passa de 31.12.2035 para 31.12.2036 na primeira ocorrência da página construída em inglês; a referência é a linha pe-brisa-prazo-minuta e o corpo alojado da minuta",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "30cc2c0fb6af85d767760080be7b8a3da7207c8709813fc5bfd6dd2a450cd534",
+   "sha256_depois": "9f02e964aff644bb58cb7889c133123bfb5ee591f6f45d764aab0d276c17331a",
+   "contexto_antes": "pe-brisa-prazo-minuta\" href=\"/en/ledger/pe-brisa-prazo-minuta\"><span class=\"data-da-linha\" data-nonledger=\"data-da-linha\" data-de-linha=\"pe-brisa-prazo-minuta\" data-de-campo=\"reference_date\">31.12.2035</span></a>. Under the order published on <a class=\"discussao-periodo\" data-discussao-periodo=\"pe-despacho-alargamentos\" href=\"/en/ledger/pe-despacho-alargamentos\"><span class=\"dat",
+   "contexto_depois": "pe-brisa-prazo-minuta\" href=\"/en/ledger/pe-brisa-prazo-minuta\"><span class=\"data-da-linha\" data-nonledger=\"data-da-linha\" data-de-linha=\"pe-brisa-prazo-minuta\" data-de-campo=\"reference_date\">31.12.2036</span></a>. Under the order published on <a class=\"discussao-periodo\" data-discussao-periodo=\"pe-despacho-alargamentos\" href=\"/en/ledger/pe-despacho-alargamentos\"><span class=\"dat"
+  },
+  {
+   "id": "N5",
+   "ficheiro": "built/o-que-se-discute/index.html",
+   "descricao": "a variação dos encargos com medicamentos passa de 6,1 % para 6,4 % na primeira ocorrência da página construída em português; a referência é a derivada der-infarmed-variacao-pct e as suas componentes",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "f3c24f8e258a10f2890cf484662870f43c95265319dd9750980a309b6382f5d7",
+   "sha256_depois": "39369169fd3af519228f1f1ed8b91de840eba1d557df886d34b88447ce345f48",
+   "contexto_antes": "roveniencia\" data-selo-etiqueta=\"INFARMED\" title=\"INFARMED\"><span class=\"src-chip-texto\">fonte</span><span class=\"vh\"> · <span>INFARMED</span></span></a></span> em meio hospitalar, <span class=\"claim claim-com-chip\"><span data-claim=\"der-infarmed-variacao-pct\" class=\"claim-value\">6,1</span><span class=\"claim-sufixo\"> %</span><a class=\"src-chip\" href=\"/livro-razao/der-infarmed-variacao-pct\" data-nonledger=\"proveniencia\" data-selo-etiqueta=\"calculad",
+   "contexto_depois": "roveniencia\" data-selo-etiqueta=\"INFARMED\" title=\"INFARMED\"><span class=\"src-chip-texto\">fonte</span><span class=\"vh\"> · <span>INFARMED</span></span></a></span> em meio hospitalar, <span class=\"claim claim-com-chip\"><span data-claim=\"der-infarmed-variacao-pct\" class=\"claim-value\">6,4</span><span class=\"claim-sufixo\"> %</span><a class=\"src-chip\" href=\"/livro-razao/der-infarmed-variacao-pct\" data-nonledger=\"proveniencia\" data-selo-etiqueta=\"calculad"
+  },
+  {
+   "id": "N1",
+   "ficheiro": "ledger/claims/sns-consultas-csp-2026-08.yml",
+   "descricao": "o valor das consultas nos cuidados primários de agosto de 2026 passa de 2 577 538 para 2 577 583 na cópia exportada da linha; a referência é a linha do motor no motor/diff.patch e o corpo alojado do Portal da Transparência",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "ac630d7affe71aa34cfdfb1517c7b5ef48d18c39334a09c1d52bdb7883d0a58a",
+   "sha256_depois": "bc51c4f54b5194951b1dd375643ed97c79af5e555ec7a8a2516d47eefdc3121e",
+   "contexto_antes": "ção aqui parte scripts/check-cruzamento.mjs.\n\nid: \"sns-consultas-csp-2026-08\"\n\n# O valor tal como é publicado, com formatação portuguesa. String, nunca número.\nvalue: \"2 577 538\"\nunit: \"consultas\"\n\n# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.\nsource: \"Serviço Nacional de Saúde\"\ndocument:\n  title: \"Con",
+   "contexto_depois": "ção aqui parte scripts/check-cruzamento.mjs.\n\nid: \"sns-consultas-csp-2026-08\"\n\n# O valor tal como é publicado, com formatação portuguesa. String, nunca número.\nvalue: \"2 577 583\"\nunit: \"consultas\"\n\n# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.\nsource: \"Serviço Nacional de Saúde\"\ndocument:\n  title: \"Con"
+  },
+  {
+   "id": "N2",
+   "ficheiro": "ledger/claims/sns-cirurgias-2026-07.yml",
+   "descricao": "o período das cirurgias de 2026 passa do acumulado 2026-01/2026-07 a um mês só, 2026-07, na cópia exportada da linha; a referência é a linha do motor (period 2026-01/2026-07) e o catálogo do SNS que diz «valores acumulados»",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "b491a82db82a8c4143ed0d5bdcd4b310ddd7aca8856083303eb6c4e803c1bb09",
+   "sha256_depois": "74aa359010b22666aef34bc440fbe756a5856f794401c3fe4e5e68e878fb06b7",
+   "contexto_antes": ": \"https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/intervencoes-cirurgicas/exports/json\"\naccess_date: \"2026-10-20\"\nreference_date: \"2026-07\"\nperiod: \"2026-01/2026-07\"\n\n# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.\nexcerpt: \"{\\\"dataset\\\": \\\"intervencoes-cirurgicas\\\", \\\"title\\\": \\\"Intervenções Cirúrgica",
+   "contexto_depois": ": \"https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/intervencoes-cirurgicas/exports/json\"\naccess_date: \"2026-10-20\"\nreference_date: \"2026-07\"\nperiod: \"2026-07\"\n\n# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.\nexcerpt: \"{\\\"dataset\\\": \\\"intervencoes-cirurgicas\\\", \\\"title\\\": \\\"Intervenções Cirúrgica"
+  }
+ ]
+}
