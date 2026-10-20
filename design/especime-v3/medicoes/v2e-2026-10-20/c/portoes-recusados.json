@@ -1,0 +1,20 @@
+[
+  {
+    "pasta": "v2ec-portoes-1",
+    "codigo": 9,
+    "codigos": {},
+    "recusa": null,
+    "saida": "portoes: árvore suja; registe as mudanças antes de conferir a cabeça do código\n"
+  },
+  {
+    "pasta": "v2ec-portoes-2",
+    "codigo": 1,
+    "codigos": {
+      "build": "1",
+      "verify": "125",
+      "typecheck": "0"
+    },
+    "recusa": null,
+    "saida": "à espera da tranca da máquina: 2026-10-20T21:03:34Z <worktree> pid=11858\nFIM 4874b816\nbuild=1\nverify=125\ntypecheck=0\n"
+  }
+]

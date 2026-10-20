@@ -59,3 +59,21 @@ export function tituloAuxiliarConferido(c){
  const p=proofs[c.id];
  return textoDocumentalConferido(c)&&p?.document?.title===c.document?.title?p.document.title:'';
 }
+/** Separa só as citações portuguesas reconhecidas nos corpos selados.
+ * A concatenação conserva a ressalva inteira, incluindo as aspas.
+ * @param {string} id @param {unknown} texto */
+export function partesDaRessalvaConferida(id,texto){
+ const p=proofs[id],s=String(texto??'');if(!p)return null;
+ const normal=(/** @type {string} */ v)=>v.replace(/\s+/g,' ').trim();
+ const quotes=[p.temporal_evidence?.quote,p.provisional_evidence?.quote].filter(Boolean).map(normal);
+ const partes=[];let fim=0;
+ for(const m of s.matchAll(/«([^»]+)»/gu)){
+  if(m.index>fim)partes.push({texto:s.slice(fim,m.index),pt:false});
+  const q=normal(m[1]);
+  partes.push({texto:m[0],pt:quotes.includes(q)||(id==='dgo-atraso-45-p'&&normal(p.excerpt).includes(q))});
+  fim=m.index+m[0].length;
+ }
+ if(fim<s.length)partes.push({texto:s.slice(fim),pt:false});
+ if(partes.map(x=>x.texto).join('')!==s)throw new Error('A partição da ressalva alterou o texto.');
+ return partes.some(x=>x.pt)?partes:null;
+}

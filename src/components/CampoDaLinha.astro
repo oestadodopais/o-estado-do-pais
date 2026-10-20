@@ -31,6 +31,7 @@ import ProsaComLeis from './ProsaComLeis.astro';
 import DataDaLinha from './DataDaLinha.astro';
 import DefinicaoDoMarcador from './DefinicaoDoMarcador.astro';
 import { eCampoDeData } from '../lib/datas.mjs';
+import { partesDaRessalvaConferida } from '../lib/prova-efeitos.mjs';
 
 const {
   id,
@@ -118,6 +119,8 @@ const classeDaData = ['campo-valor', klass].filter(Boolean).join(' ');
  * maneiras diferentes.
  */
 const marcaLeis = leis === true && lang === 'en' && !porVerificar;
+const citacoesPt = campo === 'ressalva' && lang === 'en' && !porVerificar
+  ? partesDaRessalvaConferida(id, valor) : null;
 ---
 
 {
@@ -148,7 +151,9 @@ const marcaLeis = leis === true && lang === 'en' && !porVerificar;
       data-linha-claim={id}
       data-linha-campo={campo}
     >
-      {marcaLeis ? (
+      {citacoesPt ? (
+        citacoesPt.map(p => p.pt ? <span lang="pt-PT">{p.texto}</span> : p.texto)
+      ) : marcaLeis ? (
         <ProsaComLeis texto={valor} lang={lang} onde={`${id}.${campo}`} />
       ) : pedacos === null ? (
         apresentado

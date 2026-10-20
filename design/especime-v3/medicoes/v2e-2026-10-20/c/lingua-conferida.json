@@ -1,0 +1,17 @@
+{
+  "estado": "Construção local posterior à corrida recusada, antes do commit de entrega.",
+  "resultados": [
+    {
+      "ficheiro": "en/ledger/dgo-atraso-45-p/index.html",
+      "ressalvas": 1,
+      "lingua": "pt-PT",
+      "texto_inalterado": true
+    },
+    {
+      "ficheiro": "en/ledger/index.html",
+      "ressalvas": 1,
+      "lingua": "pt-PT",
+      "texto_inalterado": true
+    }
+  ]
+}

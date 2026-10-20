@@ -1,0 +1,305 @@
+{
+  "cabeca": "5fc6c0e738b483483ceb7bccf8d89e8269adb686",
+  "recibos": [
+    {
+      "id": "der-sns-cirurgias-variacao-pct",
+      "lang": "pt",
+      "nome": "Variação homóloga de cirurgias acumuladas de janeiro a julho",
+      "ressalva": "O catálogo do SNS descreve a cobertura do conjunto como «De janeiro de 2013 ao mês n-2 anterior ao atual (valores acumulados)»; a leitura de acumulado de janeiro ao mês vem dos próprios valores, que repõem a zero em janeiro (conferido nos corpos pelo guião do bloco). Último mês provisório. O catálogo do SNS, intervencoes-cirurgicas, diz: «Os dados relativos ao mês n-2, publicados até ao último dia útil do mês n, têm caráter provisório, sujeitos a eventuais atualizações.»"
+    },
+    {
+      "id": "dgo-atraso-45-p",
+      "lang": "pt",
+      "nome": "Pagamentos em atraso das unidades de saúde EPE",
+      "ressalva": "Definição da DGO, aplicável desde junho de 2026, na nota do quadro de agosto de 2026: «A partir de junho de 2026, na sequência alteração da Lei dos Compromissos e Pagamentos em Atraso (LCPA) pela Lei n.º 24/2026, de 1 de junho, os pagamentos em atraso passaram a corresponder às contas a pagar não liquidadas para além dos prazos legalmente aplicáveis de 30 dias, em regra para entidades públicas, ou de 60 dias para as entidades que integram o Serviço Nacional de Saúde e outros casos legalmente previstos. A redação anterior da LCPA estabelecia que constituíam pagamentos em atraso as contas a pagar que permanecessem nessa situação mais de 90 dias após a data acordada.»"
+    },
+    {
+      "id": "eurostat-be-phys",
+      "lang": "pt",
+      "nome": "Médicos em exercício por cem mil habitantes",
+      "ressalva": "A comparação entre os países da União Europeia usa médicos em exercício em 2024. Na União Europeia, a Eslováquia não tem valor para esta categoria e ano; não se substituem por médicos profissionalmente ativos ou habilitados."
+    },
+    {
+      "id": "eurostat-el-phys",
+      "lang": "pt",
+      "nome": "Médicos em exercício por cem mil habitantes",
+      "ressalva": "A comparação entre os países da União Europeia usa médicos em exercício em 2024. Na União Europeia, a Eslováquia não tem valor para esta categoria e ano; não se substituem por médicos profissionalmente ativos ou habilitados."
+    },
+    {
+      "id": "eurostat-pt-phys",
+      "lang": "pt",
+      "nome": "Médicos em exercício por cem mil habitantes",
+      "ressalva": "A comparação entre os países da União Europeia usa médicos em exercício em 2024. Na União Europeia, a Eslováquia não tem valor para esta categoria e ano; não se substituem por médicos profissionalmente ativos ou habilitados."
+    },
+    {
+      "id": "infarmed-ambulatorio-2026-07-p5-acumulado-encargo",
+      "lang": "pt",
+      "nome": "Encargos SNS com medicamentos em ambulatório, janeiro a julho de 2026",
+      "ressalva": null
+    },
+    {
+      "id": "infarmed-ambulatorio-2026-07-p5-homologo-encargo",
+      "lang": "pt",
+      "nome": "Encargos SNS com medicamentos em ambulatório, janeiro a julho de 2025",
+      "ressalva": null
+    },
+    {
+      "id": "infarmed-hospitalar-2026-07-p5-acumulado-encargo",
+      "lang": "pt",
+      "nome": "Encargos SNS com medicamentos em meio hospitalar, janeiro a julho de 2026",
+      "ressalva": null
+    },
+    {
+      "id": "infarmed-hospitalar-2026-07-p5-homologo-encargo",
+      "lang": "pt",
+      "nome": "Encargos SNS com medicamentos em meio hospitalar, janeiro a julho de 2025",
+      "ressalva": null
+    },
+    {
+      "id": "pe-dl87a-apoio-retificado",
+      "lang": "pt",
+      "nome": "Pagamento do Estado nas portagens, redação retificada",
+      "ressalva": "Redação da Declaração de Retificação n.º 2/2023, alojada com recibo e avaliação de direitos."
+    },
+    {
+      "id": "pe-dl87a-descontos",
+      "lang": "pt",
+      "nome": "Preservação dos regimes de descontos",
+      "ressalva": null
+    },
+    {
+      "id": "pe-oe-beira-abolicao",
+      "lang": "pt",
+      "nome": "Beira Interior: pedido pela abolição de portagens",
+      "ressalva": null
+    },
+    {
+      "id": "prr-marcos-metas-2025-p2-1-13-estado",
+      "lang": "pt",
+      "nome": "Marco ou meta 1.13: Entrada em vigor dos novos termos para a referenciação de episódios de urgência avaliados como brancos, azuis ou verdes nos serviços de urgência hospitalar para outros tipos de serviços de saúde, incluindo cuidados de saúde primários: Estado",
+      "ressalva": null
+    },
+    {
+      "id": "prr-marcos-metas-2025-p2-1-20-estado",
+      "lang": "pt",
+      "nome": "Marco ou meta 1.20: Entrada em vigor do regulamento relativo à atribuição de apoios financeiros pelas Administrações Regionais de Saúde: Estado",
+      "ressalva": null
+    },
+    {
+      "id": "prr-marcos-metas-2025-p2-1-29-estado",
+      "lang": "pt",
+      "nome": "Marco ou meta 1.29: Implantação do sistema de classificação, do perfil funcional e do sistema de referenciação dos utentes para o modelo regional de cuidados continuados integrados da Madeira: Estado",
+      "ressalva": null
+    },
+    {
+      "id": "prr-marcos-metas-2025-p2-1-4-estado",
+      "lang": "pt",
+      "nome": "Marco ou meta 1.4: Entrada em vigor do novo Decreto-Lei de Saúde Mental, que estabelecerá os princípios para a organização dos cuidados de saúde mental: Estado",
+      "ressalva": null
+    },
+    {
+      "id": "prr-marcos-metas-2025-p2-1-6-estado",
+      "lang": "pt",
+      "nome": "Marco ou meta 1.6: Entrada em vigor do novo modelo de contratos de gestão: Estado",
+      "ressalva": null
+    },
+    {
+      "id": "sns-cirurgias-2025-07",
+      "lang": "pt",
+      "nome": "Intervenções cirúrgicas programadas e urgentes",
+      "ressalva": "O catálogo do SNS descreve a cobertura do conjunto como «De janeiro de 2013 ao mês n-2 anterior ao atual (valores acumulados)»; a leitura de acumulado de janeiro ao mês vem dos próprios valores, que repõem a zero em janeiro (conferido nos corpos pelo guião do bloco). Não é o último mês publicado. O catálogo do SNS, intervencoes-cirurgicas, diz: «Os dados relativos ao mês n-2, publicados até ao último dia útil do mês n, têm caráter provisório, sujeitos a eventuais atualizações.»"
+    },
+    {
+      "id": "sns-cirurgias-2026-07",
+      "lang": "pt",
+      "nome": "Intervenções cirúrgicas programadas e urgentes",
+      "ressalva": "O catálogo do SNS descreve a cobertura do conjunto como «De janeiro de 2013 ao mês n-2 anterior ao atual (valores acumulados)»; a leitura de acumulado de janeiro ao mês vem dos próprios valores, que repõem a zero em janeiro (conferido nos corpos pelo guião do bloco). Último mês provisório. O catálogo do SNS, intervencoes-cirurgicas, diz: «Os dados relativos ao mês n-2, publicados até ao último dia útil do mês n, têm caráter provisório, sujeitos a eventuais atualizações.»"
+    },
+    {
+      "id": "sns-consultas-csp-2026-08",
+      "lang": "pt",
+      "nome": "Consultas médicas nos cuidados de saúde primários",
+      "ressalva": "Último mês provisório. O catálogo do SNS, evolucao-das-consultas-medicas-nos-csp, diz: «Os dados relativos a este indicador são de caráter temporário para o mês publicado mais recente.»"
+    },
+    {
+      "id": "sns-consultas-hospitalares-2025-07",
+      "lang": "pt",
+      "nome": "Consultas médicas hospitalares",
+      "ressalva": "O catálogo do SNS descreve a cobertura do conjunto como «De janeiro de 2013 ao mês n-2 anterior ao atual (valores acumulados)»; a leitura de acumulado de janeiro ao mês vem dos próprios valores, que repõem a zero em janeiro (conferido nos corpos pelo guião do bloco)."
+    },
+    {
+      "id": "sns-consultas-hospitalares-2026-07",
+      "lang": "pt",
+      "nome": "Consultas médicas hospitalares",
+      "ressalva": "O catálogo do SNS descreve a cobertura do conjunto como «De janeiro de 2013 ao mês n-2 anterior ao atual (valores acumulados)»; a leitura de acumulado de janeiro ao mês vem dos próprios valores, que repõem a zero em janeiro (conferido nos corpos pelo guião do bloco)."
+    },
+    {
+      "id": "sns-lista-cirurgia-2026-07",
+      "lang": "pt",
+      "nome": "Inscritos em lista para cirurgia (todos os inscritos no SIGIC)",
+      "ressalva": "Último mês provisório. O catálogo do SNS, inscritos-em-lic-dentro-do-tmrg-180-dias, diz: «Os dados relativos ao mês n-2, publicados até ao último dia útil do mês n, têm caráter provisório, sujeitos a eventuais atualizações.»"
+    },
+    {
+      "id": "sns-urgencias-2025-07",
+      "lang": "pt",
+      "nome": "Atendimentos em urgência hospitalar",
+      "ressalva": "O catálogo do SNS descreve a cobertura do conjunto como «De janeiro de 2013 ao mês n-2 anterior ao atual (valores acumulados)»; a leitura de acumulado de janeiro ao mês vem dos próprios valores, que repõem a zero em janeiro (conferido nos corpos pelo guião do bloco)."
+    },
+    {
+      "id": "sns-urgencias-2026-07",
+      "lang": "pt",
+      "nome": "Atendimentos em urgência hospitalar",
+      "ressalva": "O catálogo do SNS descreve a cobertura do conjunto como «De janeiro de 2013 ao mês n-2 anterior ao atual (valores acumulados)»; a leitura de acumulado de janeiro ao mês vem dos próprios valores, que repõem a zero em janeiro (conferido nos corpos pelo guião do bloco)."
+    },
+    {
+      "id": "der-sns-cirurgias-variacao-pct",
+      "lang": "en",
+      "nome": "Year-on-year change in January to July surgeries",
+      "ressalva": "The NHS catalogue describes the dataset coverage as «De janeiro de 2013 ao mês n-2 anterior ao atual (valores acumulados)»; the reading as accumulated from January through the month comes from the values themselves, which reset to zero in January (checked in the bodies by the block script). Latest month provisional. The NHS catalogue, intervencoes-cirurgicas, says: «Os dados relativos ao mês n-2, publicados até ao último dia útil do mês n, têm caráter provisório, sujeitos a eventuais atualizações.»"
+    },
+    {
+      "id": "dgo-atraso-45-p",
+      "lang": "en",
+      "nome": "Overdue payments by public enterprise health units",
+      "ressalva": "DGO definition, applicable since June 2026, in the August 2026 table note: «A partir de junho de 2026, na sequência alteração da Lei dos Compromissos e Pagamentos em Atraso (LCPA) pela Lei n.º 24/2026, de 1 de junho, os pagamentos em atraso passaram a corresponder às contas a pagar não liquidadas para além dos prazos legalmente aplicáveis de 30 dias, em regra para entidades públicas, ou de 60 dias para as entidades que integram o Serviço Nacional de Saúde e outros casos legalmente previstos. A redação anterior da LCPA estabelecia que constituíam pagamentos em atraso as contas a pagar que permanecessem nessa situação mais de 90 dias após a data acordada.»"
+    },
+    {
+      "id": "eurostat-be-phys",
+      "lang": "en",
+      "nome": "Practising physicians per hundred thousand inhabitants",
+      "ressalva": "The comparison between European Union countries uses practising physicians in 2024. In the European Union, Slovakia has no value for this category and year; professionally active or licensed physicians do not replace them."
+    },
+    {
+      "id": "eurostat-el-phys",
+      "lang": "en",
+      "nome": "Practising physicians per hundred thousand inhabitants",
+      "ressalva": "The comparison between European Union countries uses practising physicians in 2024. In the European Union, Slovakia has no value for this category and year; professionally active or licensed physicians do not replace them."
+    },
+    {
+      "id": "eurostat-pt-phys",
+      "lang": "en",
+      "nome": "Practising physicians per hundred thousand inhabitants",
+      "ressalva": "The comparison between European Union countries uses practising physicians in 2024. In the European Union, Slovakia has no value for this category and year; professionally active or licensed physicians do not replace them."
+    },
+    {
+      "id": "infarmed-ambulatorio-2026-07-p5-acumulado-encargo",
+      "lang": "en",
+      "nome": "NHS medicines expenditure in outpatient care, January to July 2026",
+      "ressalva": null
+    },
+    {
+      "id": "infarmed-ambulatorio-2026-07-p5-homologo-encargo",
+      "lang": "en",
+      "nome": "NHS medicines expenditure in outpatient care, January to July 2025",
+      "ressalva": null
+    },
+    {
+      "id": "infarmed-hospitalar-2026-07-p5-acumulado-encargo",
+      "lang": "en",
+      "nome": "NHS medicines expenditure in hospitals, January to July 2026",
+      "ressalva": null
+    },
+    {
+      "id": "infarmed-hospitalar-2026-07-p5-homologo-encargo",
+      "lang": "en",
+      "nome": "NHS medicines expenditure in hospitals, January to July 2025",
+      "ressalva": null
+    },
+    {
+      "id": "pe-dl87a-apoio-retificado",
+      "lang": "en",
+      "nome": "State toll support payment, corrected wording",
+      "ressalva": "Wording of Rectification Declaration No. 2/2023, preserved with its request receipt and rights assessment."
+    },
+    {
+      "id": "pe-dl87a-descontos",
+      "lang": "en",
+      "nome": "Preservation of discount schemes",
+      "ressalva": null
+    },
+    {
+      "id": "pe-oe-beira-abolicao",
+      "lang": "en",
+      "nome": "Beira Interior claim following toll abolition",
+      "ressalva": null
+    },
+    {
+      "id": "prr-marcos-metas-2025-p2-1-13-estado",
+      "lang": "en",
+      "nome": "Milestone or target 1.13: Entry into force of new terms for referring emergency episodes triaged as white, blue or green in hospital emergency departments to other types of health services, including primary care: Status",
+      "ressalva": null
+    },
+    {
+      "id": "prr-marcos-metas-2025-p2-1-20-estado",
+      "lang": "en",
+      "nome": "Milestone or target 1.20: Entry into force of the regulation on financial support awarded by Regional Health Administrations: Status",
+      "ressalva": null
+    },
+    {
+      "id": "prr-marcos-metas-2025-p2-1-29-estado",
+      "lang": "en",
+      "nome": "Milestone or target 1.29: Implementation of the classification system, functional profile and user referral system for Madeira's regional integrated continuing care model: Status",
+      "ressalva": null
+    },
+    {
+      "id": "prr-marcos-metas-2025-p2-1-4-estado",
+      "lang": "en",
+      "nome": "Milestone or target 1.4: Entry into force of the new Mental Health Decree-Law establishing the principles for the organisation of mental health care: Status",
+      "ressalva": null
+    },
+    {
+      "id": "prr-marcos-metas-2025-p2-1-6-estado",
+      "lang": "en",
+      "nome": "Milestone or target 1.6: Entry into force of the new management contract model: Status",
+      "ressalva": null
+    },
+    {
+      "id": "sns-cirurgias-2025-07",
+      "lang": "en",
+      "nome": "Scheduled and emergency surgical interventions",
+      "ressalva": "The NHS catalogue describes the dataset coverage as «De janeiro de 2013 ao mês n-2 anterior ao atual (valores acumulados)»; the reading as accumulated from January through the month comes from the values themselves, which reset to zero in January (checked in the bodies by the block script). Not the latest published month. The NHS catalogue, intervencoes-cirurgicas, says: «Os dados relativos ao mês n-2, publicados até ao último dia útil do mês n, têm caráter provisório, sujeitos a eventuais atualizações.»"
+    },
+    {
+      "id": "sns-cirurgias-2026-07",
+      "lang": "en",
+      "nome": "Scheduled and emergency surgical interventions",
+      "ressalva": "The NHS catalogue describes the dataset coverage as «De janeiro de 2013 ao mês n-2 anterior ao atual (valores acumulados)»; the reading as accumulated from January through the month comes from the values themselves, which reset to zero in January (checked in the bodies by the block script). Latest month provisional. The NHS catalogue, intervencoes-cirurgicas, says: «Os dados relativos ao mês n-2, publicados até ao último dia útil do mês n, têm caráter provisório, sujeitos a eventuais atualizações.»"
+    },
+    {
+      "id": "sns-consultas-csp-2026-08",
+      "lang": "en",
+      "nome": "Primary care medical consultations",
+      "ressalva": "Latest month provisional. The NHS catalogue, evolucao-das-consultas-medicas-nos-csp, says: «Os dados relativos a este indicador são de caráter temporário para o mês publicado mais recente.»"
+    },
+    {
+      "id": "sns-consultas-hospitalares-2025-07",
+      "lang": "en",
+      "nome": "Hospital medical consultations",
+      "ressalva": "The NHS catalogue describes the dataset coverage as «De janeiro de 2013 ao mês n-2 anterior ao atual (valores acumulados)»; the reading as accumulated from January through the month comes from the values themselves, which reset to zero in January (checked in the bodies by the block script)."
+    },
+    {
+      "id": "sns-consultas-hospitalares-2026-07",
+      "lang": "en",
+      "nome": "Hospital medical consultations",
+      "ressalva": "The NHS catalogue describes the dataset coverage as «De janeiro de 2013 ao mês n-2 anterior ao atual (valores acumulados)»; the reading as accumulated from January through the month comes from the values themselves, which reset to zero in January (checked in the bodies by the block script)."
+    },
+    {
+      "id": "sns-lista-cirurgia-2026-07",
+      "lang": "en",
+      "nome": "Patients on the surgery waiting list (all SIGIC registrations)",
+      "ressalva": "Latest month provisional. The NHS catalogue, inscritos-em-lic-dentro-do-tmrg-180-dias, says: «Os dados relativos ao mês n-2, publicados até ao último dia útil do mês n, têm caráter provisório, sujeitos a eventuais atualizações.»"
+    },
+    {
+      "id": "sns-urgencias-2025-07",
+      "lang": "en",
+      "nome": "Hospital emergency attendances",
+      "ressalva": "The NHS catalogue describes the dataset coverage as «De janeiro de 2013 ao mês n-2 anterior ao atual (valores acumulados)»; the reading as accumulated from January through the month comes from the values themselves, which reset to zero in January (checked in the bodies by the block script)."
+    },
+    {
+      "id": "sns-urgencias-2026-07",
+      "lang": "en",
+      "nome": "Hospital emergency attendances",
+      "ressalva": "The NHS catalogue describes the dataset coverage as «De janeiro de 2013 ao mês n-2 anterior ao atual (valores acumulados)»; the reading as accumulated from January through the month comes from the values themselves, which reset to zero in January (checked in the bodies by the block script)."
+    }
+  ]
+}

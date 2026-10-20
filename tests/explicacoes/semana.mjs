@@ -289,7 +289,13 @@ export function provaNaCopiaPlantada(fim) {
       plantas.push({nome:`afirmações textuais no registo, fora da comparação numérica do índice (${lang})`,pediu:'registo conserva textos; índice só compara números',viu:`registo ${preservadas}, índice ${excluidas}`,mordeu:preservadas&&excluidas});
     }
   }
-  for(const id of ['pe-oe-beira-abolicao','pe-oe-riscos-nao-reconhecimento']){
+  for(const lang of ['pt','en']){
+    const id='pe-oe-riscos-nao-reconhecimento';
+    const fora=!(base.get(id).corrections??[]).some(c=>c.kind==='correcao')&&
+      !mudancasDoRegisto(lang).some(e=>e.tipo==='correcao'&&e.claim===id);
+    plantas.push({nome:`corte editorial fora do registo de erros (${lang})`,pediu:'nenhuma correção de erro',viu:String(fora),mordeu:fora});
+  }
+  for(const id of ['pe-oe-beira-abolicao']){
     const l=structuredClone(base.get(id));
     l.corrections=l.corrections.filter(c=>c.kind==='correcao').map(c=>({...c,date:fim}));
     l.verifications=[{date:fim,result:'igual',by:'planta',path:null}];

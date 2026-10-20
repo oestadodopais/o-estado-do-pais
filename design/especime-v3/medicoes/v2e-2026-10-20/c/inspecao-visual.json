@@ -1,0 +1,39 @@
+{
+  "cabeca": "5fc6c0e738b483483ceb7bccf8d89e8269adb686",
+  "capturas": 20,
+  "recortes": 90,
+  "transbordos": 0,
+  "lidos": [
+    "discussao-pt-390-portagens.png",
+    "discussao-en-390-portagens.png",
+    "discussao-pt-768-portagens.png",
+    "discussao-en-768-portagens.png",
+    "discussao-pt-1024-portagens.png",
+    "discussao-en-1024-portagens.png",
+    "discussao-pt-1280-portagens.png",
+    "discussao-en-1280-portagens.png",
+    "discussao-pt-1600-portagens.png",
+    "discussao-en-1600-portagens.png",
+    "discussao-pt-390-medicos.png",
+    "discussao-en-390-medicos.png",
+    "discussao-pt-390-servico.png",
+    "discussao-en-390-servico.png",
+    "discussao-pt-390-medicamentos.png",
+    "discussao-en-390-medicamentos.png",
+    "discussao-pt-390-opiniao.png",
+    "discussao-en-390-opiniao.png",
+    "discussao-pt-390-conclusao.png",
+    "discussao-en-390-conclusao.png",
+    "inicio-pt-390-itens.png",
+    "inicio-en-390-itens.png",
+    "inicio-pt-1600-itens.png",
+    "inicio-en-1600-itens.png"
+  ],
+  "observacoes": [
+    "Parágrafo das portagens lido nas cinco larguras e nas duas edições; as portas textuais e as duas citações cabem na coluna.",
+    "Médicos, serviço, medicamentos, conclusão e opinião lidos a 390 px nas duas edições; os períodos e as palavras corrigidas estão visíveis.",
+    "Portas dos itens na primeira página lidas a 390 e 1600 px, nas duas edições.",
+    "Os vinte documentos têm a largura da janela; nenhuma captura registou pedido externo, erro de navegador ou recurso recusado."
+  ],
+  "estado": "Leitura visual da cabeça intermédia; a entrega repete as capturas sobre a cabeça final e compara os hashes."
+}

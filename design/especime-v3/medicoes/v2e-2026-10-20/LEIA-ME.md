@@ -602,3 +602,333 @@ The useful debate in 2027 is the Brisa negotiation and the pending lawsuits, alo
 **The editorial seat's opinion**
 
 The PCP is right to draw attention to the cost of partnerships, but wrong to attribute to road partnerships a figure exceeding their gross charges. Partnerships cost the State over a billion gross in the budgeted year; the later claim already covers road, rail and health partnerships, but its amount, 1 800 million euros, also exceeds the sum in the table. The Government, for its part, presents a table of contracted payments and sends the claims that could change the bill to a risks chapter. Between the two, the reader learns the payments forecast for concessionaires; how much of the pending claims will become an actual charge remains unknown, and what the concessionaires’ claims linked to the toll abolition, such as Beira Interior’s, will cost: that is the bill Parliament should ask for before voting.
+
+## A correção V2-e-c
+
+A passagem reduz a citação legal do parágrafo das portagens a dois excertos e põe a lista e o artigo retificado a um toque. Nos recibos, separa a cobertura descrita pelo catálogo da leitura dos valores acumulados, declara o último mês provisório nos três conjuntos e corrige períodos, definições e nomes.
+
+### Decisões
+
+- **V2E-41.** A diferença paga pelo Estado tem por referência a atualização do decreto. A palavra «contratual» sai dessa descrição, da conclusão e das explicações dos dois recibos do apoio.
+- **V2E-42.** As portas «a lista» e «o artigo retificado» usam a gramática dos selos com texto declarado. A célula confere o texto e o destino. Os dois outros apoios do relatório conservam os selos da casa. Parênteses integram as duas portas textuais na frase, em ambas as edições.
+- **V2E-43.** «Sete» conta as alíneas a) a g) do excerto da lei. O guião confere a sequência e a auditoria declara o apoio dessa palavra.
+- **V2E-44.** O estado provisório vem do catálogo próprio de cada conjunto, com excerto, localização e hash na prova. A cobertura do catálogo não prova o reinício anual; esse reinício é conferido nos valores pelo extrator.
+- **V2E-45.** O corpo Eurostat alojado contraria a nota pedida no mandato: no universo dos países da União Europeia, há uma ausência em 2024 para PRACT, a Eslováquia, e não quatro. A frase do mandato mantém-se no parágrafo de comparação com a União; os recibos explicitam o universo e a ausência medida. Bélgica e Grécia são os extremos desse universo.
+- **V2E-46.** A variação das cirurgias usa o intervalo janeiro a julho no motor, no recibo e na incorporação. A conta apresentada termina com o sinal menos tipográfico. O ano do Infarmed chega pelo token de período.
+- **V2E-47.** A definição dos pagamentos em atraso é a nota C54 do quadro alojado da DGO, aplicável desde junho de 2026. Transcreve-se a nota completa, com a data, sem substituir a definição por uma paráfrase.
+- **V2E-48.** A dispensa da unidade «texto» exige a prova documental selada. As réguas continuam a recusar um valor ou uma unidade adulterados. O nome editorial da medida deixa de ser apresentado sob o rótulo exclusivo «O nome na fonte».
+- **V2E-49.** As traduções dos cinco marcos pertencem ao registo editorial dos nomes. Não alteram a transcrição visual da fonte. A descrição da Beira Interior identifica a parte das negociações do capítulo das parcerias; a opinião distingue o pedido documentado dos pedidos que poderão surgir.
+- **V2E-50.** A retificação já estava alojada no motor, mas não tinha seguido no pacote anterior. O recibo passa a declará-la expressamente, e cada grupo de corpos recebe a avaliação de direitos ao lado, como o empacotador existente procura. A edição dos descontos passa a 2022.
+- **V2E-51.** A régua cobre as onze expressões de unidade pedidas. Cada planta retira o sufixo de um token numa cópia dos itens reais e põe a célula vermelha. A verificação do HTML continua independente.
+- **V2E-52.** O corte da citação do não reconhecimento é edição, não correção de erro. Sai do registo de erros; a correção da Beira Interior fica. A contagem pública volta a onze.
+- **V2E-53.** As provas anteriores não são reescritas como se fossem da cabeça entregue. Depois do último commit correm os portões, o inventário e as capturas de entrega; os seus ficheiros guardam a cabeça efetivamente verificada. Não há push nesta passagem.
+
+- **V2E-54.** A régua dos números nas ressalvas reconhece somente os fragmentos exatos das provas auxiliares com ficheiro, hash e campo ligados ao recibo. As plantas adulteram o ano, acrescentam um número fora da citação, retiram o recibo e alteram o hash. O título selado sustenta o identificador da retificação.
+- **V2E-55.** O registo selado da história acompanha a retirada editorial autorizada; as restantes entradas ficam intactas. As plantas da correção textual continuam na Beira Interior, e uma asserção exige a ausência do corte editorial no registo de erros.
+
+- **V2E-56.** As citações portuguesas nas ressalvas inglesas são marcadas inteiras como português quando coincidem com as provas seladas do SNS ou com a definição da DGO. A concatenação conserva todos os caracteres. A célula retira essa marca em cópias dos recibos e exige a recusa.
+- **V2E-57.** A célula da semana ensaia a correção documental real da Beira Interior. Nas duas línguas, exige também que o corte editorial do não reconhecimento fique fora do registo de erros.
+
+### Estado dos achados da leitura curta
+
+| Achado | Estado | Razão |
+|---|---|---|
+| 1 | corrigido | Planta da leitura, não erro real; a célula compara o valor do PRR nas duas edições. |
+| 2 | corrigido | Planta da leitura; o artigo retificado fica no recibo e sai da citação longa na página. |
+| 3 | corrigido | Planta da leitura; a elegibilidade continua presa ao excerto selado. |
+| 4 | corrigido | Planta da leitura; valor e excerto do catálogo conferem com o corpo. |
+| 5 | corrigido | Planta da leitura; valor e excerto da elegibilidade conferem com o corpo. |
+| 6 | corrigido | Atualização de referência do decreto na página, conclusão e recibos. |
+| 7 | corrigido | Cobertura atribuída ao catálogo; acumulação atribuída à leitura dos valores, com o reinício anual conferido. |
+| 8 | corrigido | Os três conjuntos declaram o último mês provisório; os recibos citam o catálogo próprio. |
+| 9 | corrigido | Lista inteira de unidades e plantas nos dados reais dos itens. |
+| 10 | corrigido | Extremos dos médicos identificados e comparação das cirurgias datada. A divergência sobre o número de países sem dados fica documentada na V2E-45. |
+| 11 | corrigido | Intervalo completo na derivada e sinal menos tipográfico na conta. |
+| 12 | corrigido | Artigo longo fora da página; citações restantes sem ponto dos dois lados das aspas. |
+| 13 | corrigido | O rótulo distingue a medida editorial do documento na fonte. |
+| 14 | corrigido | Edição 2022 no recibo dos descontos. |
+| 15 | corrigido | Traduções dos cinco nomes portugueses no registo editorial. |
+| 16 | corrigido | Definição DGO transcrita e datada, unidade textual retirada, período Infarmed com ano e intervalo pela forma da casa. |
+| 17 | corrigido | Corte editorial fora do registo de erros e contagem pública onze. |
+| 18 | corrigido | Pedido singular documentado, hipótese futura distinguida e localização da passagem corrigida. |
+| 19 | em parte | Retificação, recibo e direitos conferidos; os grupos de corpos têm direitos ao lado. As citações do catálogo mantêm os endereços API dos pedidos selados. A ferramenta de consulta não conseguiu abrir as páginas humanas dos conjuntos, pelo que não se declara uma porta alternativa verificada. |
+| 20 | corrigido | Portões, inventário e capturas de entrega presos à cabeça final; HTML antes e depois guardado e mostrado. As provas das corridas intermédias identificam as respetivas cabeças. |
+| 21 | corrigido | As duas frases pedidas para o item 1 foram implementadas; o juízo editorial final pertence à leitura cruzada. |
+| 22 | corrigido | O parágrafo das portagens fica com duas citações e a síntese pedida; o juízo editorial final pertence à leitura cruzada. |
+| 23 | corrigido | Constatação positiva da leitura anterior. Corpos, recibos e direitos conferidos pelos hashes e pela prova de fontes. |
+| 24 | corrigido | Constatação positiva da leitura anterior. O cruzamento com a origem confere as linhas exportadas; as novas cabeças são identificadas nas provas. |
+| 25 | corrigido | Constatação positiva da leitura anterior. A célula compara todos os parágrafos com a declaração nas duas edições. |
+| 26 | corrigido | Constatação positiva da leitura anterior. As somas SNS e a leitura dos acumulados voltam a ser regeneradas pelo motor. |
+| 27 | corrigido | Constatação positiva da leitura anterior. As citações continuam a reproduzir os excertos selados dos corpos. |
+| 28 | corrigido | Constatação positiva da leitura anterior. A régua do HTML confere a posição dos selos perante as unidades. |
+| 29 | corrigido | Constatação positiva da leitura anterior. Os selos das alíneas do despacho e do exemplo PRR conservam a verificação própria. |
+| 30 | corrigido | Constatação positiva da leitura anterior. As derivações PRR conservam expressão e portas para as componentes. |
+| 31 | corrigido | Constatação positiva da leitura anterior. Os intervalos conferem no recibo e no código de incorporação, incluindo agora a derivada das cirurgias. |
+| 32 | corrigido | Constatação positiva da leitura anterior. As frases já corrigidas na passagem anterior são preservadas, com os acertos desta passagem. |
+| 33 | corrigido | Constatação positiva da leitura anterior. Os cortes editoriais anteriores mantêm-se, sem passar a contar como erros. |
+| 34 | corrigido | Constatação positiva da leitura anterior. Os nomes das medidas mantêm-se; o rótulo já não os apresenta como transcrição exclusiva da fonte. |
+| 35 | corrigido | Constatação positiva da leitura anterior. As portas continuam a seguir usos reais e componentes transitivas. |
+| 36 | corrigido | Constatação positiva da leitura anterior. As provas continuam a recusar a perda do período e a alteração dos valores; a opinião usa o pedido documentado. |
+| 37 | corrigido | Constatação positiva da leitura anterior. Os campos do painel mantêm a unidade selada; a dispensa das linhas textuais também exige a prova. |
+| 38 | corrigido | Constatação positiva da leitura anterior. As funções documentais continuam sujeitas às plantas das formas inválidas. |
+| 39 | corrigido | Constatação positiva da leitura anterior. As contagens novas são lidas dos resultados da passagem; as antigas não são repetidas como atuais. |
+
+### Medição e auditoria
+
+Parágrafo das portagens, PT: 2974 caracteres antes e 893 depois, medidos pelo texto do HTML sem os selos.
+
+Parágrafo das portagens, EN: 2952 caracteres antes e 871 depois, medidos pelo texto do HTML sem os selos.
+
+Auditoria das palavras: 427 folhas, 433 partes e 5283 apoios. As sete autoestradas, o universo dos médicos, a definição DGO e as ressalvas provisórias são recontados em `c/fontes-conferidas.json`. A palavra «sete» tem uma parte própria na auditoria.
+
+### HTML de uma frase antes e depois
+
+PT, antes:
+
+```html
+ Nos médicos em exercício por cem mil habitantes, em <a class="discussao-periodo" data-discussao-periodo="eurostat-pt-phys" href="/livro-razao/eurostat-pt-phys"><span class="data-da-linha" data-nonledger="data-da-linha" data-de-linha="eurostat-pt-phys" data-de-campo="reference_date">2024</span></a>, Portugal tinha <span class="claim claim-com-chip"><span data-claim="eurostat-pt-phys" class="claim-value">431,35</span><a class="src-chip" href="/livro-razao/eurostat-pt-phys" data-nonledger="proveniencia" data-selo-etiqueta="Eurostat" title="Eurostat"><span class="src-chip-texto">fonte</span><span class="vh"> · <span lang="en">Eurostat</span></span></a></span> médicos. Entre os países com valor em <a class="discussao-periodo" data-discussao-periodo="eurostat-pt-phys" href="/livro-razao/eurostat-pt-phys"><span class="data-da-linha" data-nonledger="data-da-linha" data-de-linha="eurostat-pt-phys" data-de-campo="reference_date">2024</span></a>, a Bélgica tinha <span class="claim claim-com-chip"><span data-claim="eurostat-be-phys" class="claim-value">334,25</span><a class="src-chip" href="/livro-razao/eurostat-be-phys" data-nonledger="proveniencia" data-selo-etiqueta="Eurostat" title="Eurostat"><span class="src-chip-texto">fonte</span><span class="vh"> · <span lang="en">Eurostat</span></span></a></span> médicos por cem mil habitantes e a Grécia <span class="claim claim-com-chip"><span data-claim="eurostat-el-phys" class="claim-value">626,89</span><a class="src-chip" href="/livro-razao/eurostat-el-phys" data-nonledger="proveniencia" data-selo-etiqueta="Eurostat" title="Eurostat"><span class="src-chip-texto">fonte</span><span class="vh"> · <span lang="en">Eurostat</span></span></a></span>.
+```
+
+PT, depois:
+
+```html
+ Portugal tinha <span class="claim claim-com-chip"><span data-claim="eurostat-pt-phys" class="claim-value">431,35</span><a class="src-chip" href="/livro-razao/eurostat-pt-phys" data-nonledger="proveniencia" data-selo-etiqueta="Eurostat" title="Eurostat"><span class="src-chip-texto">fonte</span><span class="vh"> · <span lang="en">Eurostat</span></span></a></span> médicos em exercício por cem mil habitantes em <a class="discussao-periodo" data-discussao-periodo="eurostat-pt-phys" href="/livro-razao/eurostat-pt-phys"><span class="data-da-linha" data-nonledger="data-da-linha" data-de-linha="eurostat-pt-phys" data-de-campo="reference_date">2024</span></a>, entre a Bélgica, com o valor mais baixo dos países com dados (<span class="claim claim-com-chip"><span data-claim="eurostat-be-phys" class="claim-value">334,25</span><a class="src-chip" href="/livro-razao/eurostat-be-phys" data-nonledger="proveniencia" data-selo-etiqueta="Eurostat" title="Eurostat"><span class="src-chip-texto">fonte</span><span class="vh"> · <span lang="en">Eurostat</span></span></a></span>), e a Grécia, com o mais alto (<span class="claim claim-com-chip"><span data-claim="eurostat-el-phys" class="claim-value">626,89</span><a class="src-chip" href="/livro-razao/eurostat-el-phys" data-nonledger="proveniencia" data-selo-etiqueta="Eurostat" title="Eurostat"><span class="src-chip-texto">fonte</span><span class="vh"> · <span lang="en">Eurostat</span></span></a></span>).
+```
+
+EN, antes:
+
+```html
+ For practising physicians per hundred thousand inhabitants in <a class="discussao-periodo" data-discussao-periodo="eurostat-pt-phys" href="/en/ledger/eurostat-pt-phys"><span class="data-da-linha" data-nonledger="data-da-linha" data-de-linha="eurostat-pt-phys" data-de-campo="reference_date">2024</span></a>, Portugal had <span class="claim claim-com-chip"><span data-claim="eurostat-pt-phys" class="claim-value">431,35</span><a class="src-chip" href="/en/ledger/eurostat-pt-phys" data-nonledger="proveniencia" data-selo-etiqueta="Eurostat" title="Eurostat"><span class="src-chip-texto">source</span><span class="vh"> · <span>Eurostat</span></span></a></span> physicians. Among countries with a value in <a class="discussao-periodo" data-discussao-periodo="eurostat-pt-phys" href="/en/ledger/eurostat-pt-phys"><span class="data-da-linha" data-nonledger="data-da-linha" data-de-linha="eurostat-pt-phys" data-de-campo="reference_date">2024</span></a>, Belgium had <span class="claim claim-com-chip"><span data-claim="eurostat-be-phys" class="claim-value">334,25</span><a class="src-chip" href="/en/ledger/eurostat-be-phys" data-nonledger="proveniencia" data-selo-etiqueta="Eurostat" title="Eurostat"><span class="src-chip-texto">source</span><span class="vh"> · <span>Eurostat</span></span></a></span> physicians per hundred thousand inhabitants and Greece <span class="claim claim-com-chip"><span data-claim="eurostat-el-phys" class="claim-value">626,89</span><a class="src-chip" href="/en/ledger/eurostat-el-phys" data-nonledger="proveniencia" data-selo-etiqueta="Eurostat" title="Eurostat"><span class="src-chip-texto">source</span><span class="vh"> · <span>Eurostat</span></span></a></span>.
+```
+
+EN, depois:
+
+```html
+ Portugal had <span class="claim claim-com-chip"><span data-claim="eurostat-pt-phys" class="claim-value">431,35</span><a class="src-chip" href="/en/ledger/eurostat-pt-phys" data-nonledger="proveniencia" data-selo-etiqueta="Eurostat" title="Eurostat"><span class="src-chip-texto">source</span><span class="vh"> · <span>Eurostat</span></span></a></span> practising physicians per hundred thousand inhabitants in <a class="discussao-periodo" data-discussao-periodo="eurostat-pt-phys" href="/en/ledger/eurostat-pt-phys"><span class="data-da-linha" data-nonledger="data-da-linha" data-de-linha="eurostat-pt-phys" data-de-campo="reference_date">2024</span></a>, between Belgium, with the lowest value among countries with data (<span class="claim claim-com-chip"><span data-claim="eurostat-be-phys" class="claim-value">334,25</span><a class="src-chip" href="/en/ledger/eurostat-be-phys" data-nonledger="proveniencia" data-selo-etiqueta="Eurostat" title="Eurostat"><span class="src-chip-texto">source</span><span class="vh"> · <span>Eurostat</span></span></a></span>), and Greece, with the highest (<span class="claim claim-com-chip"><span data-claim="eurostat-el-phys" class="claim-value">626,89</span><a class="src-chip" href="/en/ledger/eurostat-el-phys" data-nonledger="proveniencia" data-selo-etiqueta="Eurostat" title="Eurostat"><span class="src-chip-texto">source</span><span class="vh"> · <span>Eurostat</span></span></a></span>).
+```
+
+### Frases novas e mudadas tal como renderizam
+
+Os parágrafos abaixo são extraídos do HTML e comparados pela célula com a declaração nas duas edições. Incluem o contexto das frases modificadas.
+
+#### PT
+
+saude-no-orcamento, `seccoes[1].conteudo[6].paragrafo`:
+
+Na comparação europeia, Portugal gastou em saúde 10,20 % do PIB em 2024, a União 10,16 %; por habitante, em euros correntes e sem correção pelos preços, 2 764,83 euros contra 4 074,88 na União; só nos regimes públicos e nos regimes contributivos obrigatórios, 6,31 % do PIB contra 8,17 %. Portugal tinha 431,35 médicos em exercício por cem mil habitantes em 2024, entre a Bélgica, com o valor mais baixo dos países com dados (334,25), e a Grécia, com o mais alto (626,89).
+
+saude-no-orcamento, `seccoes[1].conteudo[7].paragrafo`:
+
+No serviço, pelos dados abertos do Serviço Nacional de Saúde: em agosto de 2026 havia 1 362 294 utentes elegíveis inscritos sem médico de família atribuído, pela série que começou em julho desse ano e conta só os utentes elegíveis («Utentes inscritos que cumprem os critérios de elegibilidade para atribuição de Médico de Família. Cálculo: utentes com registo atualizado e contacto com o SNS nos últimos cinco anos.»), que por isso não se compara com a anterior; a série anterior dava 1 672 130 em junho de 2026 contra 1 669 681 um ano antes. As consultas nos cuidados primários foram 2 577 538 em agosto de 2026, o último mês, provisório na fonte, que diz: «As consultas registadas no sistema Vitacare não entram no cálculo destas métricas. Os dados relativos a este indicador são de caráter temporário para o mês publicado mais recente.»; 7,7 % acima de agosto de 2025; as cirurgias de janeiro a julho de 2026, 520 373, −4,4 % face a janeiro a julho de 2025; os inscritos para cirurgia, 284 210 em julho de 2026, 5,8 % face a um ano antes; nos três conjuntos, o último mês é provisório na fonte.
+
+saude-no-orcamento, `seccoes[1].conteudo[8].paragrafo`:
+
+Os encargos do Serviço Nacional de Saúde com medicamentos, pelo Infarmed, foram de 1 179,3 milhões de euros em ambulatório de janeiro a julho de 2026 e de 1 600,9 em meio hospitalar, 6,1 % acima do mesmo período do ano anterior no conjunto; sobre as contribuições do acordo com a Associação Portuguesa da Indústria Farmacêutica (APIFARMA), o Infarmed avisa que «Os valores apresentados não refletem a totalidade das contribuições resultantes da implementação do Acordo Governo/APIFARMA e dos contratos de financiamento». A dívida das entidades do Serviço Nacional de Saúde a fornecedores externos era de 1 517,5 milhões de euros em julho de 2026; os pagamentos em atraso das unidades de saúde que são entidades públicas empresariais (EPE), 689,9 milhões em agosto de 2026, pela execução orçamental da Direção-Geral do Orçamento; e as entidades do Serviço Nacional de Saúde regularizaram 1 398,6 milhões de dívidas vencidas a fornecedores até agosto, com contrapartida em reforços de capital pelo Estado.
+
+parcerias-rodoviarias, `seccoes[1].conteudo[6].paragrafo`:
+
+O Instituto da Mobilidade e dos Transportes (IMT) indica para a concessão da Brisa «Período da Concessão: 1972 – 2035»; a minuta do contrato de concessão de 2008 fixa o fim em 31.12.2035. A comissão de negociação, pelo despacho publicado a 27.12.2024, trata dos alargamentos de vias, dos investimentos contratualmente previstos, da reposição do equilíbrio financeiro, dos acertos de comparticipações, da Circular Sul de Braga, de novos investimentos, dos limites da concessão e da qualidade do serviço. O relatório diz que «Em todo o caso, importa sublinhar que a presente análise não implica qualquer reconhecimento ou assunção, ainda que tácita, de responsabilidades por parte dos parceiros públicos decorrentes das pretensões deduzidas pelos parceiros privados, quer quanto aos respetivos fundamentos, que, na maioria das situações, são rejeitados pelos parceiros públicos, quer quanto aos montantes peticionados.»
+
+parcerias-rodoviarias, `seccoes[1].conteudo[7].paragrafo`:
+
+Desde 01.01.2025 a lei eliminou as portagens em lanços e sublanços de sete autoestradas, que enumera (a lista). Em 2023 o Estado limitou a atualização das portagens e paga às concessionárias, por conta do Orçamento do Estado, a diferença para a atualização que o decreto-lei de dezembro de 2022 toma como referência (o artigo retificado); o decreto diz que «O disposto no presente decreto-lei não prejudica a aplicação dos regimes de descontos em vigor.», e os encargos são do Orçamento do Estado, pela Direção-Geral do Tesouro e Finanças (a DGTF): «Os encargos resultantes do apoio previsto nos artigos 3.º e 4.º são suportados diretamente pelo Orçamento do Estado, a processar pela DGTF.» O relatório do Orçamento de 2027 inclui agora esse apoio nos encargos brutos, e regista uma negociação com a concessionária da Beira Interior na sequência de um pedido ligado à eliminação das portagens.
+
+parcerias-rodoviarias, `seccoes[3].conteudo[0].paragrafo`:
+
+O relatório prevê 889 milhões líquidos para as parcerias rodoviárias em 2027, −28,9 % face à execução de 2021 mas acima da estimativa para 2025, e o quadro projeta uma tendência de redução, com oscilações, até ao fim dos contratos. O número da primeira afirmação do PCP aproxima-se do custo bruto de todas as parcerias, não do das rodoviárias. E o que pode mudar a conta não está no quadro: 2 388,2 milhões de pedidos das concessionárias, dos quais 1 122,5 numa negociação em curso. Para quem conduz e para quem paga impostos: a lei eliminou portagens desde 01.01.2025; o Estado paga às concessionárias, desde 2023, a diferença entre a atualização limitada das portagens e a de referência do decreto, por conta do Orçamento do Estado, e esse apoio entra agora nos encargos brutos do quadro; a negociação da Brisa abrange investimentos e compensações numa concessão que termina em 31.12.2035; e os pedidos pendentes não são encargos efetivos reconhecidos.
+
+parcerias-rodoviarias, `seccoes[5].conteudo[0].paragrafo`:
+
+O PCP tem razão ao chamar a atenção para o custo das parcerias, mas erra ao atribuir às rodoviárias um número que ultrapassa os seus encargos brutos. As parcerias custam ao Estado mais de mil milhões brutos no ano orçamentado; a afirmação posterior já abrange as rodoviárias, as ferroviárias e as da saúde, mas o seu montante, 1 800 milhões de euros, também excede a soma do quadro. O Governo, por sua vez, apresenta um quadro dos pagamentos contratados e remete para um capítulo de riscos os pedidos que podem mudar a conta. Entre os dois, o leitor fica a saber os pagamentos previstos às concessionárias; fica por saber quanto dos pedidos pendentes se tornará encargo efetivo, e o que o pedido da concessionária da Beira Interior ligado à eliminação das portagens, e os que vierem, vão custar: é essa a conta que o Parlamento devia pedir antes de votar.
+
+#### EN
+
+saude-no-orcamento, `seccoes[1].conteudo[6].paragrafo`:
+
+In the European comparison, Portugal spent 10,20 % of GDP on health in 2024, the EU 10,16 %; per inhabitant, in current euros and without correction for price levels, 2 764,83 euros against 4 074,88 in the EU; in government schemes and compulsory contributory schemes alone, 6,31 % of GDP against 8,17 %. Portugal had 431,35 practising physicians per hundred thousand inhabitants in 2024, between Belgium, with the lowest value among countries with data (334,25), and Greece, with the highest (626,89).
+
+saude-no-orcamento, `seccoes[1].conteudo[7].paragrafo`:
+
+In the service, by the National Health Service's open data: in August 2026 there were 1 362 294 eligible registered users without an assigned family doctor, by the series that began in July that year and counts only eligible users («Utentes inscritos que cumprem os critérios de elegibilidade para atribuição de Médico de Família. Cálculo: utentes com registo atualizado e contacto com o SNS nos últimos cinco anos.»), so it cannot be compared with the earlier series; the earlier series gave 1 672 130 in June 2026 against 1 669 681 a year earlier. Primary-care consultations were 2 577 538 in August 2026, the latest month, provisional in the source, which says: «As consultas registadas no sistema Vitacare não entram no cálculo destas métricas. Os dados relativos a este indicador são de caráter temporário para o mês publicado mais recente.»; 7,7 % above August 2025; surgeries from January to July 2026, 520 373, −4,4 % against January to July 2025; patients on the surgery waiting list, 284 210 in July 2026, 5,8 % against a year earlier; in all three datasets, the latest month is provisional at the source.
+
+saude-no-orcamento, `seccoes[1].conteudo[8].paragrafo`:
+
+National Health Service expenditure on medicines, according to Infarmed, was 1 179,3 million euros in outpatient care from January to July 2026 and 1 600,9 in hospitals, 6,1 % above the same period of the previous year combined; on contributions under the agreement with the Portuguese Pharmaceutical Industry Association (APIFARMA), Infarmed warns that «Os valores apresentados não refletem a totalidade das contribuições resultantes da implementação do Acordo Governo/APIFARMA e dos contratos de financiamento». National Health Service entities owed external suppliers 1 517,5 million euros in July 2026; overdue payments by health units that are public enterprise entities (EPE) were 689,9 million in August 2026, according to the budget execution reported by the Directorate-General for the Budget; and the National Health Service's entities settled 1 398,6 million of overdue debts to suppliers through August, matched by capital injections from the State.
+
+parcerias-rodoviarias, `seccoes[1].conteudo[6].paragrafo`:
+
+The Institute for Mobility and Transport (IMT) gives the Brisa concession period as «Período da Concessão: 1972 – 2035»; the 2008 draft concession contract sets its end on 31.12.2035. Under the order published on 27.12.2024, the negotiating committee covers lane widening, contractually planned investment, restoring financial balance, contribution adjustments, the Braga southern ring road, new investment, concession boundaries and service quality. The report states that «Em todo o caso, importa sublinhar que a presente análise não implica qualquer reconhecimento ou assunção, ainda que tácita, de responsabilidades por parte dos parceiros públicos decorrentes das pretensões deduzidas pelos parceiros privados, quer quanto aos respetivos fundamentos, que, na maioria das situações, são rejeitados pelos parceiros públicos, quer quanto aos montantes peticionados.»
+
+parcerias-rodoviarias, `seccoes[1].conteudo[7].paragrafo`:
+
+Since 01.01.2025 the law has abolished tolls on stretches of seven motorways, which it lists (the list). In 2023 the State capped the toll update and pays the concessionaires, charged to the State Budget, the difference to the update that the decree-law of December 2022 takes as its reference (the rectified article); the decree says that «O disposto no presente decreto-lei não prejudica a aplicação dos regimes de descontos em vigor.», and the charges fall on the State Budget, through the Directorate-General for Treasury and Finance (the DGTF): «Os encargos resultantes do apoio previsto nos artigos 3.º e 4.º são suportados diretamente pelo Orçamento do Estado, a processar pela DGTF.» The 2027 Budget report now includes that support in gross charges, and records a negotiation with the Beira Interior concessionaire following a claim linked to the toll abolition.
+
+parcerias-rodoviarias, `seccoes[3].conteudo[0].paragrafo`:
+
+The report forecasts 889 million net for the road partnerships in 2027, −28,9 % against execution in 2021, but above the estimate for 2025, and the table projects a downward trend, with fluctuations, to the end of the contracts. The figure in the PCP's first claim is close to the gross cost of all partnerships, not of the road ones. And what could change the bill is not in the table: 2 388,2 million in concessionaires' claims, 1 122,5 of them in a negotiation under way. For drivers and taxpayers: the law abolished tolls from 01.01.2025; since 2023 the State pays the concessionaires the difference between the capped toll update and the decree's reference update, charged to the State Budget, and that support now enters the table's gross charges; the Brisa negotiation covers investment and compensation in a concession ending on 31.12.2035; and pending claims are not recognised actual charges.
+
+parcerias-rodoviarias, `seccoes[5].conteudo[0].paragrafo`:
+
+The PCP is right to draw attention to the cost of partnerships, but wrong to attribute to road partnerships a figure exceeding their gross charges. Partnerships cost the State over a billion gross in the budgeted year; the later claim already covers road, rail and health partnerships, but its amount, 1 800 million euros, also exceeds the sum in the table. The Government, for its part, presents a table of contracted payments and sends the claims that could change the bill to a risks chapter. Between the two, the reader learns the payments forecast for concessionaires; how much of the pending claims will become an actual charge remains unknown, and what the Beira Interior concessionaire's claim linked to the toll abolition, and those that may follow, will cost: that is the bill Parliament should ask for before voting.
+
+### Nomes e ressalvas dos recibos, tal como renderizam
+
+As repetições literais agrupam-se pelos identificadores. O ficheiro `c/recibos-conferidos.json` conserva cada recibo nas duas edições.
+
+#### PT
+
+`der-sns-cirurgias-variacao-pct`, `sns-cirurgias-2026-07`:
+
+O catálogo do SNS descreve a cobertura do conjunto como «De janeiro de 2013 ao mês n-2 anterior ao atual (valores acumulados)»; a leitura de acumulado de janeiro ao mês vem dos próprios valores, que repõem a zero em janeiro (conferido nos corpos pelo guião do bloco). Último mês provisório. O catálogo do SNS, intervencoes-cirurgicas, diz: «Os dados relativos ao mês n-2, publicados até ao último dia útil do mês n, têm caráter provisório, sujeitos a eventuais atualizações.»
+
+`dgo-atraso-45-p`:
+
+Definição da DGO, aplicável desde junho de 2026, na nota do quadro de agosto de 2026: «A partir de junho de 2026, na sequência alteração da Lei dos Compromissos e Pagamentos em Atraso (LCPA) pela Lei n.º 24/2026, de 1 de junho, os pagamentos em atraso passaram a corresponder às contas a pagar não liquidadas para além dos prazos legalmente aplicáveis de 30 dias, em regra para entidades públicas, ou de 60 dias para as entidades que integram o Serviço Nacional de Saúde e outros casos legalmente previstos. A redação anterior da LCPA estabelecia que constituíam pagamentos em atraso as contas a pagar que permanecessem nessa situação mais de 90 dias após a data acordada.»
+
+`eurostat-be-phys`, `eurostat-el-phys`, `eurostat-pt-phys`:
+
+A comparação entre os países da União Europeia usa médicos em exercício em 2024. Na União Europeia, a Eslováquia não tem valor para esta categoria e ano; não se substituem por médicos profissionalmente ativos ou habilitados.
+
+`infarmed-ambulatorio-2026-07-p5-acumulado-encargo`:
+
+Encargos SNS com medicamentos em ambulatório, janeiro a julho de 2026
+
+`infarmed-ambulatorio-2026-07-p5-homologo-encargo`:
+
+Encargos SNS com medicamentos em ambulatório, janeiro a julho de 2025
+
+`infarmed-hospitalar-2026-07-p5-acumulado-encargo`:
+
+Encargos SNS com medicamentos em meio hospitalar, janeiro a julho de 2026
+
+`infarmed-hospitalar-2026-07-p5-homologo-encargo`:
+
+Encargos SNS com medicamentos em meio hospitalar, janeiro a julho de 2025
+
+`pe-dl87a-apoio-retificado`:
+
+Redação da Declaração de Retificação n.º 2/2023, alojada com recibo e avaliação de direitos.
+
+`prr-marcos-metas-2025-p2-1-13-estado`:
+
+Marco ou meta 1.13: Entrada em vigor dos novos termos para a referenciação de episódios de urgência avaliados como brancos, azuis ou verdes nos serviços de urgência hospitalar para outros tipos de serviços de saúde, incluindo cuidados de saúde primários: Estado
+
+`prr-marcos-metas-2025-p2-1-20-estado`:
+
+Marco ou meta 1.20: Entrada em vigor do regulamento relativo à atribuição de apoios financeiros pelas Administrações Regionais de Saúde: Estado
+
+`prr-marcos-metas-2025-p2-1-29-estado`:
+
+Marco ou meta 1.29: Implantação do sistema de classificação, do perfil funcional e do sistema de referenciação dos utentes para o modelo regional de cuidados continuados integrados da Madeira: Estado
+
+`prr-marcos-metas-2025-p2-1-4-estado`:
+
+Marco ou meta 1.4: Entrada em vigor do novo Decreto-Lei de Saúde Mental, que estabelecerá os princípios para a organização dos cuidados de saúde mental: Estado
+
+`prr-marcos-metas-2025-p2-1-6-estado`:
+
+Marco ou meta 1.6: Entrada em vigor do novo modelo de contratos de gestão: Estado
+
+`sns-cirurgias-2025-07`:
+
+O catálogo do SNS descreve a cobertura do conjunto como «De janeiro de 2013 ao mês n-2 anterior ao atual (valores acumulados)»; a leitura de acumulado de janeiro ao mês vem dos próprios valores, que repõem a zero em janeiro (conferido nos corpos pelo guião do bloco). Não é o último mês publicado. O catálogo do SNS, intervencoes-cirurgicas, diz: «Os dados relativos ao mês n-2, publicados até ao último dia útil do mês n, têm caráter provisório, sujeitos a eventuais atualizações.»
+
+`sns-consultas-csp-2026-08`:
+
+Último mês provisório. O catálogo do SNS, evolucao-das-consultas-medicas-nos-csp, diz: «Os dados relativos a este indicador são de caráter temporário para o mês publicado mais recente.»
+
+`sns-consultas-hospitalares-2025-07`, `sns-consultas-hospitalares-2026-07`, `sns-urgencias-2025-07`, `sns-urgencias-2026-07`:
+
+O catálogo do SNS descreve a cobertura do conjunto como «De janeiro de 2013 ao mês n-2 anterior ao atual (valores acumulados)»; a leitura de acumulado de janeiro ao mês vem dos próprios valores, que repõem a zero em janeiro (conferido nos corpos pelo guião do bloco).
+
+`sns-lista-cirurgia-2026-07`:
+
+Último mês provisório. O catálogo do SNS, inscritos-em-lic-dentro-do-tmrg-180-dias, diz: «Os dados relativos ao mês n-2, publicados até ao último dia útil do mês n, têm caráter provisório, sujeitos a eventuais atualizações.»
+
+#### EN
+
+`der-sns-cirurgias-variacao-pct`, `sns-cirurgias-2026-07`:
+
+The NHS catalogue describes the dataset coverage as «De janeiro de 2013 ao mês n-2 anterior ao atual (valores acumulados)»; the reading as accumulated from January through the month comes from the values themselves, which reset to zero in January (checked in the bodies by the block script). Latest month provisional. The NHS catalogue, intervencoes-cirurgicas, says: «Os dados relativos ao mês n-2, publicados até ao último dia útil do mês n, têm caráter provisório, sujeitos a eventuais atualizações.»
+
+`dgo-atraso-45-p`:
+
+DGO definition, applicable since June 2026, in the August 2026 table note: «A partir de junho de 2026, na sequência alteração da Lei dos Compromissos e Pagamentos em Atraso (LCPA) pela Lei n.º 24/2026, de 1 de junho, os pagamentos em atraso passaram a corresponder às contas a pagar não liquidadas para além dos prazos legalmente aplicáveis de 30 dias, em regra para entidades públicas, ou de 60 dias para as entidades que integram o Serviço Nacional de Saúde e outros casos legalmente previstos. A redação anterior da LCPA estabelecia que constituíam pagamentos em atraso as contas a pagar que permanecessem nessa situação mais de 90 dias após a data acordada.»
+
+`eurostat-be-phys`, `eurostat-el-phys`, `eurostat-pt-phys`:
+
+The comparison between European Union countries uses practising physicians in 2024. In the European Union, Slovakia has no value for this category and year; professionally active or licensed physicians do not replace them.
+
+`infarmed-ambulatorio-2026-07-p5-acumulado-encargo`:
+
+NHS medicines expenditure in outpatient care, January to July 2026
+
+`infarmed-ambulatorio-2026-07-p5-homologo-encargo`:
+
+NHS medicines expenditure in outpatient care, January to July 2025
+
+`infarmed-hospitalar-2026-07-p5-acumulado-encargo`:
+
+NHS medicines expenditure in hospitals, January to July 2026
+
+`infarmed-hospitalar-2026-07-p5-homologo-encargo`:
+
+NHS medicines expenditure in hospitals, January to July 2025
+
+`pe-dl87a-apoio-retificado`:
+
+Wording of Rectification Declaration No. 2/2023, preserved with its request receipt and rights assessment.
+
+`prr-marcos-metas-2025-p2-1-13-estado`:
+
+Milestone or target 1.13: Entry into force of new terms for referring emergency episodes triaged as white, blue or green in hospital emergency departments to other types of health services, including primary care: Status
+
+`prr-marcos-metas-2025-p2-1-20-estado`:
+
+Milestone or target 1.20: Entry into force of the regulation on financial support awarded by Regional Health Administrations: Status
+
+`prr-marcos-metas-2025-p2-1-29-estado`:
+
+Milestone or target 1.29: Implementation of the classification system, functional profile and user referral system for Madeira's regional integrated continuing care model: Status
+
+`prr-marcos-metas-2025-p2-1-4-estado`:
+
+Milestone or target 1.4: Entry into force of the new Mental Health Decree-Law establishing the principles for the organisation of mental health care: Status
+
+`prr-marcos-metas-2025-p2-1-6-estado`:
+
+Milestone or target 1.6: Entry into force of the new management contract model: Status
+
+`sns-cirurgias-2025-07`:
+
+The NHS catalogue describes the dataset coverage as «De janeiro de 2013 ao mês n-2 anterior ao atual (valores acumulados)»; the reading as accumulated from January through the month comes from the values themselves, which reset to zero in January (checked in the bodies by the block script). Not the latest published month. The NHS catalogue, intervencoes-cirurgicas, says: «Os dados relativos ao mês n-2, publicados até ao último dia útil do mês n, têm caráter provisório, sujeitos a eventuais atualizações.»
+
+`sns-consultas-csp-2026-08`:
+
+Latest month provisional. The NHS catalogue, evolucao-das-consultas-medicas-nos-csp, says: «Os dados relativos a este indicador são de caráter temporário para o mês publicado mais recente.»
+
+`sns-consultas-hospitalares-2025-07`, `sns-consultas-hospitalares-2026-07`, `sns-urgencias-2025-07`, `sns-urgencias-2026-07`:
+
+The NHS catalogue describes the dataset coverage as «De janeiro de 2013 ao mês n-2 anterior ao atual (valores acumulados)»; the reading as accumulated from January through the month comes from the values themselves, which reset to zero in January (checked in the bodies by the block script).
+
+`sns-lista-cirurgia-2026-07`:
+
+Latest month provisional. The NHS catalogue, inscritos-em-lic-dentro-do-tmrg-180-dias, says: «Os dados relativos ao mês n-2, publicados até ao último dia útil do mês n, têm caráter provisório, sujeitos a eventuais atualizações.»
+
+### Verificação e entrega
+
+Cabeça desta corrida: `5fc6c0e738b483483ceb7bccf8d89e8269adb686`. Motor: `d4d0442323cfbd9bcbd79bcfcac7d169c5903c2e`.
+
+Códigos lidos dos ficheiros dos portões: `build=0`, `verify=1`, `typecheck=0`.
+
+A corrida intermédia acima foi recusada por H9 (marca de língua na ressalva inglesa da DGO) e W1 (plantas ainda presas à correção editorial retirada). Depois dos acertos, os ensaios locais passaram: 684 plantas dos itens em 684, 19 plantas da semana em 19 e typecheck com código 0. A medição e a leitura visual desta corrida estão identificadas pela sua cabeça, sem serem apresentadas como a entrega final.
+
+O corte da citação do não reconhecimento foi uma edição de extensão, sem erro factual na citação anterior. A retirada da chamada de nota colada a «negociação» na passagem da Beira Interior continua registada como correção.
+
+As provas locais iniciais dizem expressamente que não são a cabeça entregue. O fecho da entrega corre depois do último commit e guarda a cabeça real, os códigos, o inventário e as capturas em `<temporario>/v2ec-entrega/`; os registos dos portões ficam em `<temporario>/v2ec-portoes-entrega/`. O relatório de fecho dessa pasta cita os códigos dessa cabeça, sem criar um commit posterior que voltasse a tornar a prova antiga.
+
+As capturas intermédias são vinte páginas completas e noventa recortes; vinte e quatro recortes foram lidos visualmente. As vinte páginas não têm transbordo horizontal. O inventário dessa cabeça tem zero frases sem classe e zero declarações vivas ausentes. O cruzamento com a origem saiu com código 0. O motor passou o core.gate completo no commit d4d0442323cfbd9bcbd79bcfcac7d169c5903c2e, que permanece sem alterações. As provas estão em c/capturas.json, c/inspecao-visual.json, c/inventario.json e c/motor-prova.json.
+
+A primeira tentativa de commit do motor foi recusada pela divergência entre o relatório gerado e o livro regenerado; o relatório foi regenerado, e a suíte específica passou. A primeira tentativa dos portões não correu porque havia guiões de prova ainda por registar. A corrida seguinte recusou a história selada ainda desatualizada e os números das citações auxiliares que a régua ainda não reconhecia. Ambas as causas foram corrigidas com plantas. As recusas e as corridas seguintes conservam os seus resultados, sem serem apresentadas como verificações verdes.
+
+Fica para o lugar de direção a leitura curta sobre este diff e a decisão de aterragem. Não houve fusão nem push.

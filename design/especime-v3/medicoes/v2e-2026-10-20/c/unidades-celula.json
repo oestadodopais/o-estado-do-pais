@@ -1,0 +1,159 @@
+{
+  "controlo": true,
+  "plantas": [
+    {
+      "lang": "pt",
+      "unidade": "milhões de euros",
+      "claim": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "queixa": "V2E unidade fora do token: pt oe-2027-saude-despesa-total-consolidada-variacao",
+      "mordeu": true
+    },
+    {
+      "lang": "pt",
+      "unidade": "mil milhões de euros",
+      "claim": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "queixa": "V2E unidade fora do token: pt oe-2027-saude-despesa-total-consolidada-variacao",
+      "mordeu": true
+    },
+    {
+      "lang": "pt",
+      "unidade": "milhões",
+      "claim": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "queixa": "V2E unidade fora do token: pt oe-2027-saude-despesa-total-consolidada-variacao",
+      "mordeu": true
+    },
+    {
+      "lang": "pt",
+      "unidade": "euros",
+      "claim": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "queixa": "V2E unidade fora do token: pt oe-2027-saude-despesa-total-consolidada-variacao",
+      "mordeu": true
+    },
+    {
+      "lang": "pt",
+      "unidade": "%",
+      "claim": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "queixa": "V2E unidade fora do token: pt oe-2027-saude-despesa-total-consolidada-variacao",
+      "mordeu": true
+    },
+    {
+      "lang": "pt",
+      "unidade": "pontos percentuais",
+      "claim": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "queixa": "V2E unidade fora do token: pt oe-2027-saude-despesa-total-consolidada-variacao",
+      "mordeu": true
+    },
+    {
+      "lang": "pt",
+      "unidade": "p.p.",
+      "claim": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "queixa": "V2E unidade fora do token: pt oe-2027-saude-despesa-total-consolidada-variacao",
+      "mordeu": true
+    },
+    {
+      "lang": "pt",
+      "unidade": "million euros",
+      "claim": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "queixa": "V2E unidade fora do token: pt oe-2027-saude-despesa-total-consolidada-variacao",
+      "mordeu": true
+    },
+    {
+      "lang": "pt",
+      "unidade": "billion euros",
+      "claim": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "queixa": "V2E unidade fora do token: pt oe-2027-saude-despesa-total-consolidada-variacao",
+      "mordeu": true
+    },
+    {
+      "lang": "pt",
+      "unidade": "million",
+      "claim": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "queixa": "V2E unidade fora do token: pt oe-2027-saude-despesa-total-consolidada-variacao",
+      "mordeu": true
+    },
+    {
+      "lang": "pt",
+      "unidade": "percentage points",
+      "claim": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "queixa": "V2E unidade fora do token: pt oe-2027-saude-despesa-total-consolidada-variacao",
+      "mordeu": true
+    },
+    {
+      "lang": "en",
+      "unidade": "milhões de euros",
+      "claim": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "queixa": "V2E unidade fora do token: en oe-2027-saude-despesa-total-consolidada-variacao",
+      "mordeu": true
+    },
+    {
+      "lang": "en",
+      "unidade": "mil milhões de euros",
+      "claim": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "queixa": "V2E unidade fora do token: en oe-2027-saude-despesa-total-consolidada-variacao",
+      "mordeu": true
+    },
+    {
+      "lang": "en",
+      "unidade": "milhões",
+      "claim": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "queixa": "V2E unidade fora do token: en oe-2027-saude-despesa-total-consolidada-variacao",
+      "mordeu": true
+    },
+    {
+      "lang": "en",
+      "unidade": "euros",
+      "claim": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "queixa": "V2E unidade fora do token: en oe-2027-saude-despesa-total-consolidada-variacao",
+      "mordeu": true
+    },
+    {
+      "lang": "en",
+      "unidade": "%",
+      "claim": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "queixa": "V2E unidade fora do token: en oe-2027-saude-despesa-total-consolidada-variacao",
+      "mordeu": true
+    },
+    {
+      "lang": "en",
+      "unidade": "pontos percentuais",
+      "claim": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "queixa": "V2E unidade fora do token: en oe-2027-saude-despesa-total-consolidada-variacao",
+      "mordeu": true
+    },
+    {
+      "lang": "en",
+      "unidade": "p.p.",
+      "claim": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "queixa": "V2E unidade fora do token: en oe-2027-saude-despesa-total-consolidada-variacao",
+      "mordeu": true
+    },
+    {
+      "lang": "en",
+      "unidade": "million euros",
+      "claim": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "queixa": "V2E unidade fora do token: en oe-2027-saude-despesa-total-consolidada-variacao",
+      "mordeu": true
+    },
+    {
+      "lang": "en",
+      "unidade": "billion euros",
+      "claim": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "queixa": "V2E unidade fora do token: en oe-2027-saude-despesa-total-consolidada-variacao",
+      "mordeu": true
+    },
+    {
+      "lang": "en",
+      "unidade": "million",
+      "claim": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "queixa": "V2E unidade fora do token: en oe-2027-saude-despesa-total-consolidada-variacao",
+      "mordeu": true
+    },
+    {
+      "lang": "en",
+      "unidade": "percentage points",
+      "claim": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "queixa": "V2E unidade fora do token: en oe-2027-saude-despesa-total-consolidada-variacao",
+      "mordeu": true
+    }
+  ]
+}

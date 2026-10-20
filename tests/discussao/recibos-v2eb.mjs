@@ -14,6 +14,11 @@ const calculadas=['der-prr-saude-marcos-completos','der-prr-saude-marcos-total',
 const painel=['contratado','pago','taxa'].map(x=>`prr-monitorizacao-20261014-p2-c01-${x}`);
 function conferir(root,c,lang){
  const erros=[];
+ if(lang==='en'&&(c.id.includes('sns-')||c.id==='dgo-atraso-45-p')){
+  const marcadas=root.querySelectorAll('#ressalva [lang="pt-PT"]').map(n=>normal(n.text));
+  for(const m of (c.ressalva_en??'').matchAll(/«[^»]+»/gu))
+   if(!marcadas.includes(normal(m[0])))erros.push('V2E recibo: citação portuguesa da ressalva sem marca de língua');
+ }
  if(NOMES_V2E[c.id]&&!c.name&&c.document?.title){
   const nome=root.querySelector('.linha-nome-da-fonte');
   if(normal(nome?.querySelector('[data-nome="projeto"]')?.text)!==normal(NOMES_V2E[c.id][lang])||
@@ -52,6 +57,7 @@ export function conferirRecibosV2eb(dist,linhas){
    const html=fs.readFileSync(file,'utf8'),root=parse(html);
    erros.push(...conferir(root,c,lang).map(e=>`${e}: ${id} (${lang})`));
    for(const [nome,seletor,muda] of [
+    ['língua da citação retirada','#ressalva [lang="pt-PT"]',n=>n.removeAttribute('lang')],
     ['nome da medida retirado','.linha-nome-da-fonte [data-nome="projeto"]',n=>n.remove()],
     ['período acumulado trocado pelo mês final','.aparelho-ficha [data-de-campo="period"]',n=>n.set_content(c.reference_date)],
     ['componentes do cálculo retiradas','[data-linha-campo="derived_from"]',n=>n.remove()],
