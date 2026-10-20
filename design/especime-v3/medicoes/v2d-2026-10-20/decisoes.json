@@ -115,21 +115,21 @@
     "id": "V2D-23",
     "tema": "Cobertura por matérias e língua das fontes",
     "antes": "As novas linhas estavam sem assunto declarado ou numa exclusão provisória, e os novos títulos não tinham língua declarada.",
-    "depois": "65 linhas pertencem à Saúde e 58 às Finanças; os três agregados da União ficam excluídos individualmente da cobertura nacional. Foram acrescentadas 37 declarações de língua dos títulos e localizadores.",
+    "depois": "65 linhas pertencem à Saúde e 58 às Finanças; os três agregados da União ficam excluídos individualmente da cobertura nacional. Foram acrescentadas 37 declarações de língua dos títulos e localizadores. As unidades razão, euros por habitante e afirmação têm tradução inglesa declarada.",
     "razao": "As comparações orçamentais entre programas e os encargos das parcerias pertencem à política financeira do Estado. Não se alargaram matérias legais de água ou administração eleitoral para acomodar totais de outros programas."
   },
   {
     "id": "V2D-24",
     "tema": "Recibos acessíveis a partir de excertos e períodos",
     "antes": "Quatro linhas, nas duas edições, não tinham porta direta para o recibo: três eram citadas apenas pelo excerto e uma apenas pelo ano.",
-    "depois": "Nos parágrafos da discussão, os excertos conservam a ligação à fonte e recebem o selo do recibo; os períodos ligam ao recibo da linha.",
+    "depois": "Nos parágrafos da discussão, os excertos conservam a ligação à fonte e recebem o selo do recibo; os períodos ligam ao recibo da linha. Nas áreas, o percurso é cartão, selo, recibo e item; a célula confere cada destino em vez de exigir uma porta adicional ao nível da área.",
     "razao": "A célula exige acesso às provas de todas as linhas citadas. O comportamento é específico dos parágrafos da discussão e não acrescenta prosa sobre o método."
   },
   {
     "id": "V2D-25",
     "tema": "Inventário da voz",
     "antes": "O inventário conservava frases substituídas e não declarava os novos parágrafos e títulos.",
-    "depois": "A medição do HTML recolheu 66 cadeias novas, 60 de conteúdo e seis de navegação, e retirou 44 declarações que deixaram de se render.",
+    "depois": "A medição do HTML recolheu 66 cadeias novas, 60 de conteúdo e seis de navegação; 38 declarações deixaram de se render e foram retiradas. Seis frases conservadas dentro dos parágrafos novos foram substituídas pelas declarações desses parágrafos completos, em vez de serem proibidas como retiradas.",
     "razao": "A exceção contextual inglesa «years with completed execution» descreve anos de execução orçamental concluída, não a completude do sítio; fica limitada à discussão. A leitura cruzada das novas frases continua atribuída à direção."
   }
 ]

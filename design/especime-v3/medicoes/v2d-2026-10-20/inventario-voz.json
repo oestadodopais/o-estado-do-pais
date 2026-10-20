@@ -472,5 +472,14 @@
         "/en/ledger"
       ]
     }
-  ]
+  ],
+  "substituidas_por_paragrafo_completo": [
+    "A despesa total consolidada passa de em para em , uma variação de % .",
+    "« », , na Assembleia da República, a .",
+    "Total consolidated expenditure goes from in to in , a change of % .",
+    "« », , in the Assembleia da República, on .",
+    "« », , in a document published by RTP, on . On the same day, published: « »",
+    "« », , num documento publicado pela RTP, a . No mesmo dia, a publicou: « »"
+  ],
+  "retiradas": 38
 }

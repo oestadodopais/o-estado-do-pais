@@ -28,8 +28,9 @@ let original=fs.readFileSync(file,'utf8');
 const retiradas=medicao.frases_da_casa.declaracoes.vivas_que_nao_rendem;
 const linhas=original.split('\n');
 for(const r of retiradas){
- if(!['v2b','ex3'].includes(r.bloco))throw new Error('Retirada fora do âmbito: '+r.bloco);
+ if(!['v2b','v2d','ex3'].includes(r.bloco))throw new Error('Retirada fora do âmbito: '+r.bloco);
  if(!linhas[r.n-1]?.includes('| viva |'))throw new Error('Estado alterado desde a medição');
+ if([...frases.values()].some(f=>f.texto.includes(r.texto))){linhas[r.n-1]='';continue;}
  linhas[r.n-1]=linhas[r.n-1].replace('| viva |','| retirada |').replace(/\|\s*$/, 'Substituída no V2-d pela análise ou pela contagem atual do livro. |');
 }
 original=linhas.join('\n');

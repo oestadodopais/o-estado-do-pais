@@ -122,9 +122,31 @@ export function conferirInicio(root,lang){
  if(bloco.querySelector('h2 a')?.getAttribute('href')!==routePath('discussao',lang))erros.push('V2C início: destino do título errado');
  return erros;
 }
-export function conferirIntegracao(root,lang,pagina,linhas=loadClaims()){
+export function conferirIntegracao(root,lang,pagina,linhas=loadClaims(),{dist=process.env.OEDP_DIST??path.join(raiz,'dist'),recibos=new Map()}={}){
  const erros=[];const main=root.querySelector('main');if(!main)return erros;
- const ids=new Set(main.querySelectorAll('[data-claim],[data-linha-claim],[data-de-linha],[data-explicacao-nome]').filter(n=>!n.closest('[data-discussao-integracao],[data-discussao-inicio],[data-discussao-porta],[data-discussao-titulo]')).map(n=>n.getAttribute('data-claim')??n.getAttribute('data-linha-claim')??n.getAttribute('data-de-linha')??n.getAttribute('data-explicacao-nome')));
+ const nos=main.querySelectorAll('[data-claim],[data-linha-claim],[data-de-linha],[data-explicacao-nome]').filter(n=>!n.closest('[data-discussao-integracao],[data-discussao-inicio],[data-discussao-porta],[data-discussao-titulo]'));
+ const idDoNo=n=>n.getAttribute('data-claim')??n.getAttribute('data-linha-claim')??n.getAttribute('data-de-linha')??n.getAttribute('data-explicacao-nome');
+ const area=/^(?:en\/)?areas\/[^/]+\/index.html$/.test(pagina),ids=new Set(),vistos=new Map();
+ for(const n of nos){
+  const id=idDoNo(n),cartao=area?n.closest('article[data-cartao-medida][data-area-peca="medida"],div[data-linha-sem-nome][data-area-peca="medida"]'):null;
+  const dono=cartao?.getAttribute('data-cartao-medida')??cartao?.getAttribute('data-linha-sem-nome');
+  const remissao=n.closest('[data-regua][data-selo-em]');
+  if(!cartao||(dono!==id&&remissao?.getAttribute('data-selo-em')!==dono)){ids.add(id);continue;}
+  const relevantes=ITENS.filter(e=>linhasDaExplicacao(e,linhas).has(id));
+  if(!relevantes.length)continue;
+  const chave=lang+':'+dono;
+  if(!vistos.has(cartao))vistos.set(cartao,new Set());
+  if(vistos.get(cartao).has(id))continue;vistos.get(cartao).add(id);
+  if(!cartao.querySelectorAll('a.src-chip[data-nonledger="proveniencia"]').some(a=>a.getAttribute('href')===recibo(dono,lang))){erros.push(`V2D percurso: cartão ${id} sem selo para o recibo`);continue;}
+  if(!recibos.has(chave)){const f=path.join(dist,recibo(dono,lang),'index.html');recibos.set(chave,fs.existsSync(f)?parse(fs.readFileSync(f,'utf8')):null);}
+  const documento=recibos.get(chave);
+  if(!documento){erros.push(`V2D percurso: recibo de ${id} ausente`);continue;}
+  if(dono!==id&&!documento.querySelector(`[data-claim="${id}"],[data-linha-claim="${id}"]`)){erros.push(`V2D percurso: recibo de ${dono} sem a linha comparada ${id}`);continue;}
+  for(const e of relevantes){
+   const porta=documento.querySelector(`#prova [data-discussao-integracao="${e.slug}"]`),a=porta?.querySelector('a');
+   if(porta?.getAttribute('data-discussao-condicao')!=='linhas'||a?.getAttribute('href')!==destino(e.slug,lang)||normal(a?.text)!==normal(DISCUSSAO.porta[lang]+' '+explicacaoPelaCelula(e,lang,linhas).titulo)||conferirMarcasDoTitulo(a,e,lang,linhas).length)erros.push(`V2D percurso: recibo de ${id} sem porta completa para ${e.slug}`);
+  }
+ }
  const tematica=pagina===`explicacoes/dinheiro-do-estado-2026/index.html`||pagina===`en/explainers/dinheiro-do-estado-2026/index.html`;
  const esperados=ITENS.filter(e=>[...linhasDaExplicacao(e,linhas)].some(id=>ids.has(id))||(tematica&&e.slug==='saude-no-orcamento'));
  const portas=main.querySelectorAll('[data-discussao-integracao]');
@@ -174,13 +196,26 @@ export function conferirTudo(dist=path.join(raiz,'dist')){
   const html=fs.readFileSync(n,'utf8');
   if(!html.includes('data-discussao-integracao')&&!ITENS.some(e=>html.includes('#'+e.slug))&&!idsDosItens.some(id=>html.includes(id))&&!rel.includes('dinheiro-do-estado-2026'))continue;
   const root=parse(html),lang=rel.startsWith('en/')?'en':'pt';
-  erros.push(...conferirIntegracao(root,lang,rel));
+  erros.push(...conferirIntegracao(root,lang,rel,loadClaims(),{dist}));
   for(const p of root.querySelectorAll('[data-discussao-integracao]'))integracoes.push({pagina:rel,item:p.getAttribute('data-discussao-integracao'),condicao:p.getAttribute('data-discussao-condicao')});
  }};};walk(dist);
  const demo=ITENS[0], id=demo.afirmacoes[0];
  const intacta=`<main><section><span data-claim="${id}"></span><p data-discussao-integracao="${demo.slug}" data-discussao-condicao="linhas"><a href="${destino(demo.slug,'pt')}">${DISCUSSAO.porta.pt} ${tituloDeEnsaio(demo,'pt',loadClaims())}</a></p></section></main>`;
  if(conferirIntegracao(parse(intacta),'pt','exemplo').length)erros.push('V2B integração: conhecido positivo recusado');
  for(const [nome,html] of [['porta por coincidência ausente',intacta.replace(/<p .*<\/p>/,'')],['porta sem coincidência',intacta.replace(/<span .*?<\/span>/,'')],['destino de outro item',intacta.replace(destino(demo.slug,'pt'),'#outra')]])provas.push({nome,mordeu:conferirIntegracao(parse(html),'pt','exemplo').length>0});
+ // Nas áreas, cada cartão chega ao item pelo seu recibo, sem uma porta repetida para a página inteira.
+ for(const lang of ['pt','en'])for(const forma of ['cartao','linha','regua']){
+  const dono=forma==='regua'?'oe-2027-saude-pessoal-2027':id;
+  const href=recibo(dono,lang),rota=(lang==='pt'?'':'en/')+'areas/ensaio/index.html';
+  const tag=forma==='linha'?'div':'article',marca=forma==='linha'?'data-linha-sem-nome':'data-cartao-medida';
+  const numero=forma==='regua'?`<span data-regua="anterior" data-selo-em="${dono}"><span data-claim="${id}"></span></span>`:`<span data-claim="${id}"></span>`;
+  const area=`<main><${tag} ${marca}="${dono}" data-area-peca="medida">${numero}<a class="src-chip" data-nonledger="proveniencia" href="${href}">fonte</a></${tag}></main>`;
+  const corpo=`<main><span data-claim="${id}"></span><section id="prova"><p data-discussao-integracao="${demo.slug}" data-discussao-condicao="linhas"><a href="${destino(demo.slug,lang)}">${DISCUSSAO.porta[lang]} ${tituloDeEnsaio(demo,lang,loadClaims())}</a></p></section></main>`;
+  const mede=(a,c)=>conferirIntegracao(parse(a),lang,rota,loadClaims(),{dist,recibos:new Map([[lang+':'+dono,c?parse(c):null]])});
+  if(forma==='regua')provas.push({nome:'régua sem a linha no recibo',lang,mordeu:mede(area,corpo.replace(/<span data-claim=.*?<\/span>/,'')).some(e=>e.includes('sem a linha comparada'))});
+  if(mede(area,corpo).length)erros.push('V2D percurso: cartão com caminho completo recusado');
+  for(const [nome,a,c] of [['cartão sem selo para o recibo',area.replace(/<a class="src-chip".*?<\/a>/,''),corpo],['recibo sem porta para o item',area,'<main><section id="prova"></section></main>'],['recibo ausente no percurso',area,null]])provas.push({nome:forma+': '+nome,lang,mordeu:mede(a,c).some(e=>e.startsWith('V2D percurso:'))});
+ }
  const semToken=structuredClone(ITENS);semToken[0].seccoes[0].conteudo[0].paragrafo.pt[1]='Citação sem linha';
  provas.push({nome:'declaração sem token',mordeu:conferirDeclaracoes(semToken).some(x=>x.includes('V2B citação'))});
  for(const p of provas)if(!p.mordeu)erros.push('V2B planta não mordeu: '+p.nome);

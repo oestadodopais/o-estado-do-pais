@@ -793,4 +793,4 @@ A porta de exemplo do Método, pedida no ponto 6 do brief ER1, usa «Ver o recib
 
 | bloco | mudança | estado | nota |
 |---|---|---|---|
-| v2d | 66 cadeias novas recolhidas do HTML nas duas edições; 44 declarações anteriores retiradas | por ler | Codex gpt-6-astra, 20.10.2026: títulos, rótulos, prosa e navegação conferidos na construção; os valores, as citações e as atribuições continuam presos aos tokens. A leitura cruzada pertence à direção. |
+| v2d | 66 cadeias novas recolhidas do HTML nas duas edições; 38 declarações anteriores retiradas e seis substituídas pelos parágrafos completos, que conservam as frases | por ler | Codex gpt-6-astra, 20.10.2026: títulos, rótulos, prosa e navegação conferidos na construção; os valores, as citações e as atribuições continuam presos aos tokens. A leitura cruzada pertence à direção. |

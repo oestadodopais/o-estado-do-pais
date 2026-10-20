@@ -42,6 +42,12 @@ O inventário final contém 135 linhas com porta para os itens, das quais 119 ch
 | terceira construção | 1: HTML dos títulos aprovado; check:areas encontrou 103 linhas sem assunto declarado; restantes passos do perfil não executados (125) |
 | cobertura das novas linhas por assunto | 0, 65 Saúde, 58 Finanças e três agregados UE explicitamente excluídos |
 | diagnóstico posterior ao índice de áreas | formas, lugares, país, nomes, formato, navegação e sinais: 0; voz e língua exigem reconstrução após atualização dos inventários |
+| quarta construção | 1: seis declarações antigas foram marcadas como retiradas apesar de continuarem dentro dos parágrafos novos; substituídas pelas declarações completas |
+| voz após substituição das declarações | 0 |
+| séries, conferência dirigida | 0, 40 de 40 plantas |
+| cruzamento final com origem | 0; aviso de built_at do livro anterior, sem divergência de linhas ou ficheiros |
+| tentativa de frases compostas na sandbox | 1: tentativa indevida fora do escrivão; browserType.launch: Target page, context or browser has been closed; Error: kill EPERM. A conferência válida corre pelo escrivão no perfil V2-d. |
+| discussão após integração das áreas | 0, 80 de 80 plantas e 276 portas |
 
 Capturas ainda não executadas.
 
@@ -183,7 +189,7 @@ O portão de HTML recusou os números sem ligação; as percentagens são mediç
 
 Antes: As novas linhas estavam sem assunto declarado ou numa exclusão provisória, e os novos títulos não tinham língua declarada.
 
-Depois: 65 linhas pertencem à Saúde e 58 às Finanças; os três agregados da União ficam excluídos individualmente da cobertura nacional. Foram acrescentadas 37 declarações de língua dos títulos e localizadores.
+Depois: 65 linhas pertencem à Saúde e 58 às Finanças; os três agregados da União ficam excluídos individualmente da cobertura nacional. Foram acrescentadas 37 declarações de língua dos títulos e localizadores. As unidades razão, euros por habitante e afirmação têm tradução inglesa declarada.
 
 As comparações orçamentais entre programas e os encargos das parcerias pertencem à política financeira do Estado. Não se alargaram matérias legais de água ou administração eleitoral para acomodar totais de outros programas.
 
@@ -191,7 +197,7 @@ As comparações orçamentais entre programas e os encargos das parcerias perten
 
 Antes: Quatro linhas, nas duas edições, não tinham porta direta para o recibo: três eram citadas apenas pelo excerto e uma apenas pelo ano.
 
-Depois: Nos parágrafos da discussão, os excertos conservam a ligação à fonte e recebem o selo do recibo; os períodos ligam ao recibo da linha.
+Depois: Nos parágrafos da discussão, os excertos conservam a ligação à fonte e recebem o selo do recibo; os períodos ligam ao recibo da linha. Nas áreas, o percurso é cartão, selo, recibo e item; a célula confere cada destino em vez de exigir uma porta adicional ao nível da área.
 
 A célula exige acesso às provas de todas as linhas citadas. O comportamento é específico dos parágrafos da discussão e não acrescenta prosa sobre o método.
 
@@ -199,7 +205,7 @@ A célula exige acesso às provas de todas as linhas citadas. O comportamento é
 
 Antes: O inventário conservava frases substituídas e não declarava os novos parágrafos e títulos.
 
-Depois: A medição do HTML recolheu 66 cadeias novas, 60 de conteúdo e seis de navegação, e retirou 44 declarações que deixaram de se render.
+Depois: A medição do HTML recolheu 66 cadeias novas, 60 de conteúdo e seis de navegação; 38 declarações deixaram de se render e foram retiradas. Seis frases conservadas dentro dos parágrafos novos foram substituídas pelas declarações desses parágrafos completos, em vez de serem proibidas como retiradas.
 
 A exceção contextual inglesa «years with completed execution» descreve anos de execução orçamental concluída, não a completude do sítio; fica limitada à discussão. A leitura cruzada das novas frases continua atribuída à direção.
 

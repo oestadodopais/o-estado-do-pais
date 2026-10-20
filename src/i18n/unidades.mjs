@@ -54,6 +54,12 @@
  * raras, para que quem lê veja primeiro o que mais se rende.
  */
 export const UNIDADES = {
+  // V2-d: «razão» é «ratio»; o valor é uma divisão, não uma percentagem.
+  'razão': 'ratio',
+  // A casa: as frases da comparação europeia dizem «euros per inhabitant».
+  'euros por habitante': 'euros per inhabitant',
+  // A casa: os nomes das afirmações públicas nos recibos usam «statement».
+  'afirmação': 'statement',
   cimeira: 'summit', // NATO: «2025 NATO Summit in The Hague», na linha da cimeira.
   '% do valor contratado': '% of contracted amount',
   // RP4-n-e: unidade de contagem traduzida; o singular depende do valor.

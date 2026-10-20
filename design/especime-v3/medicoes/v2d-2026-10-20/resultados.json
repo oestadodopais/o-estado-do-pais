@@ -20,6 +20,12 @@
     "títulos ancorados, plantas": "0, 16 ensaios nas duas edições",
     "terceira construção": "1: HTML dos títulos aprovado; check:areas encontrou 103 linhas sem assunto declarado; restantes passos do perfil não executados (125)",
     "cobertura das novas linhas por assunto": "0, 65 Saúde, 58 Finanças e três agregados UE explicitamente excluídos",
-    "diagnóstico posterior ao índice de áreas": "formas, lugares, país, nomes, formato, navegação e sinais: 0; voz e língua exigem reconstrução após atualização dos inventários"
+    "diagnóstico posterior ao índice de áreas": "formas, lugares, país, nomes, formato, navegação e sinais: 0; voz e língua exigem reconstrução após atualização dos inventários",
+    "quarta construção": "1: seis declarações antigas foram marcadas como retiradas apesar de continuarem dentro dos parágrafos novos; substituídas pelas declarações completas",
+    "voz após substituição das declarações": 0,
+    "séries, conferência dirigida": "0, 40 de 40 plantas",
+    "cruzamento final com origem": "0; aviso de built_at do livro anterior, sem divergência de linhas ou ficheiros",
+    "tentativa de frases compostas na sandbox": "1: tentativa indevida fora do escrivão; browserType.launch: Target page, context or browser has been closed; Error: kill EPERM. A conferência válida corre pelo escrivão no perfil V2-d.",
+    "discussão após integração das áreas": "0, 80 de 80 plantas e 276 portas"
   }
 }
