@@ -3,6 +3,7 @@ import fs from 'node:fs';
 import assert from 'node:assert/strict';
 import {execFileSync} from 'node:child_process';
 import {parse} from 'node-html-parser';
+import {textoSemSelos} from '../../../../../scripts/voz-pais.mjs';
 const dir='design/especime-v3/medicoes/eo1-2026-10-20',out=dir+'/correcao-b';
 const slug='orcamento-2027-o-que-muda-e-para-quem';
 const norm=x=>x.replace(/[\u00a0\u202f]/g,' ');
@@ -35,6 +36,12 @@ const findings={
 };
 let s='\n<!-- EO1-B -->\n\n## A correção EO1-b\n\n### Âmbito e medição\n\nA correção segue os achados da leitura EO1. A medição está em `correcao-b/medicao.json`; os códigos, os registos das plantas, as frases e as capturas ficam na mesma pasta. As frases abaixo foram extraídas do HTML das duas páginas em cada edição e comparadas com o registo.\n\n';
 s+='A pesquisa oficial não confirmou uma lei de setembro com a tabela do artigo do IRS. O [Despacho de outubro](https://diariodarepublica.pt/dr/detalhe/despacho/12523-a-2026-1180337885) refere a autorização parlamentar e trata das retenções. Não foi tomado como prova da tabela anual. O texto usa a alternativa do mandato e diz que não conferiu o diploma.\n\n';
+const cap=JSON.parse(fs.readFileSync(out+'/capturas.json'));
+assert(cap.ok && !cap.falhas.length);
+assert(cap.resultados.every(r=>r.documento<=r.janela && r.corpo<=r.janela),'captura com transbordo');
+const visual=JSON.parse(fs.readFileSync(out+'/verificacao-visual.json'));
+s+=`A construção e as capturas correspondem à cabeça ${cap.cabeca}. O motor e o resultado do seu portão estão em motor-commit.json. Foram guardadas ${cap.resultados.length} capturas e ${cap.resultados.reduce((n,r)=>n+r.recortes.length,0)} recortes, nas larguras ${cap.larguras.join(', ')}. Nenhuma página excedeu a largura da janela; o manifesto não registou pedidos externos, recursos em falta ou erros de navegador. ${visual.observacao} As imagens ficam na pasta temporária; o manifesto, os resumos SHA-256 e a lista da inspeção ficam neste relatório.\n\n`;
+s+='As duas primeiras tentativas dos portões foram recusadas: a primeira pela tipagem do nome inglês e pelas auditorias das famílias retiradas; a segunda pelas frases antigas no inventário e pela conferência da sinopse sem o modificador absoluto. Os reparos foram comitados antes da corrida final. Os códigos com o prefixo tentativa guardam essas recusas; os códigos sem esse prefixo são os da entrega. Os códigos de planta iguais a um são recusas esperadas.\n\n';
 s+='### Resposta aos achados\n\n';
 for(let n=1;n<=5;n++)s+=`- Achado ${n}: **corrigido** no sentido de conferido sem o estrago. Era uma planta na cópia da leitura; a origem não continha essa alteração. As plantas desta entrega reconferem valores e excertos.\n`;
 for(const [n,[state,reason]] of Object.entries(findings))s+=`- Achado ${n}: **${state}**. ${reason}\n`;
@@ -62,7 +69,15 @@ for(const lang of ['pt','en']){
 fs.writeFileSync(out+'/frases-renderizadas.json',JSON.stringify(results,null,2)+'\n');
 s+='### §0. Cada uso de abs, tal como renderiza\n\n';
 for(const b of results.filter(b=>b.absolutos.length))s+=`- ${b.edicao}, unidade ${b.unidade}, ${b.absolutos.map(a=>'`'+a.id+'|abs`').join(', ')}: ${b.texto}\n\n`;
-s+='A frase de entrada em `leituras.mjs` usa também o absoluto da linha das invariantes nas duas línguas; o selo declara o modificador e o portão compara-o com o valor absoluto da linha.\n\n';
+const entradas=[];
+for(const lang of ['pt','en']) {
+ const home=parse(fs.readFileSync(lang==='pt'?'dist/index.html':'dist/en/index.html','utf8'));
+ const e=home.querySelector(`[data-estudo="${slug}"] .estudo-resumo`);assert(e);
+ assert(e.querySelector('[data-claim-modificador="abs"]'));
+ const texto=textoSemSelos(e);entradas.push({edicao:lang,texto});
+ s+=`- ${lang}, frase de entrada, der-oe2027-medidas-anteriores-saldo com abs: ${texto}\n\n`;
+}
+fs.writeFileSync(out+'/entradas-renderizadas.json',JSON.stringify(entradas,null,2)+'\n');
 s+='### Siglas\n\nUTAO, CFP, IRS, IRC, IVA, CSI, PRR, PIB, SNS, INE, PS, PSD, PCP, CDS, JPP, PAN, BE, IL, MF, POE, POENMP, QPI, DGAEP, PPP, BdP, CE, OCDE, FMI, PT2030, AD, SMN, RMMG, BOE e SIFIDE. As expansões estão nas frases abaixo; SIFIDE conserva a expansão no parêntesis da secção das medidas, como determina o mandato. Os partidos Chega e Livre são escritos pelo nome.\n\n';
 s+='### Frases novas ou mudadas, tal como renderizam\n\n';
 for(const lang of ['pt','en']){s+='#### '+lang+'\n\n';for(const b of results.filter(b=>b.edicao===lang&&b.alterada))s+=`**Unidade ${b.unidade}.** ${b.texto}\n\n`;}

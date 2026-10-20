@@ -829,3 +829,9 @@ Seis declarações substituídas: comparação e opinião da Saúde nas duas edi
 | bloco | linhas | leitura | quem, quando |
 | --- | --- | --- | --- |
 | eo1 | 8 novas; 4 retiradas | por ler | Codex gpt-6-astra, 20.10.2026: frases e contagens extraídas da construção. A leitura cruzada do diff fica pendente antes da fusão. |
+
+## EO1-b: correção das invariantes e contagens
+
+| bloco | linhas | leitura | quem, quando |
+| --- | --- | --- | --- |
+| eo1-b | 4 novas; 4 retiradas | por ler | Codex gpt-6-astra, 20.10.2026: frases e contagens recolhidas do HTML corrigido. A leitura cruzada pertence à direção. |

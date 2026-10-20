@@ -4751,11 +4751,20 @@ ainda por explicar (o achado 7), fica aqui como retirada.*
 
 | classe | texto | bloco | estado | razão |
 | --- | --- | --- | --- | --- |
-| conteudo | 3 630 afirmações · 427 de 3 630 calculadas · 2 767 de 3 630 linhas de concelhos | eo1 | viva | Recolhida do HTML construído: texto do mandato, rótulo das fontes ou contagem refeita do livro. |
-| conteudo | 3 630 claims · 427 of 3 630 calculated · 2 767 of 3 630 municipality rows | eo1 | viva | Recolhida do HTML construído: texto do mandato, rótulo das fontes ou contagem refeita do livro. |
+| conteudo | 3 630 afirmações · 427 de 3 630 calculadas · 2 767 de 3 630 linhas de concelhos | eo1-b | retirada | Recolhida do HTML construído: texto do mandato, rótulo das fontes ou contagem refeita do livro. EO1-b: substituída pela frase corrigida ou pela contagem medida no HTML. |
+| conteudo | 3 630 claims · 427 of 3 630 calculated · 2 767 of 3 630 municipality rows | eo1-b | retirada | Recolhida do HTML construído: texto do mandato, rótulo das fontes ou contagem refeita do livro. EO1-b: substituída pela frase corrigida ou pela contagem medida no HTML. |
 | conteudo | A proposta de Orçamento lida pelo que faz a quem trabalha, a quem recebe pensão, a quem tem casa para pagar, às empresas e à dívida. | eo1 | viva | Recolhida do HTML construído: texto do mandato, rótulo das fontes ou contagem refeita do livro. |
-| conteudo | As medidas novas do Orçamento de valem milhões de euros a favor do saldo, as que já vinham decididas custam milhões, e os juros sobem milhões: o que mais muda nas contas de não está no quadro das medidas. | eo1 | viva | Recolhida do HTML construído: texto do mandato, rótulo das fontes ou contagem refeita do livro. |
+| conteudo | As medidas novas do Orçamento de valem milhões de euros a favor do saldo, as que já vinham decididas custam milhões, e os juros sobem milhões: o que mais muda nas contas de não está no quadro das medidas. | eo1-b | retirada | Recolhida do HTML construído: texto do mandato, rótulo das fontes ou contagem refeita do livro. EO1-b: substituída pela frase corrigida ou pela contagem medida no HTML. |
 | navegacao | Fontes deste parágrafo | eo1 | viva | Recolhida do HTML construído: texto do mandato, rótulo das fontes ou contagem refeita do livro. |
 | navegacao | Sources for this paragraph | eo1 | viva | Recolhida do HTML construído: texto do mandato, rótulo das fontes ou contagem refeita do livro. |
 | conteudo | The Budget proposal read by what it does to those who work, to pensioners, to those paying for a home, to companies and to the debt. | eo1 | viva | Recolhida do HTML construído: texto do mandato, rótulo das fontes ou contagem refeita do livro. |
-| conteudo | The new measures of the Budget are worth million euros to the balance, those already decided cost million, and interest rises million: what changes most in the accounts is not in the table of measures. | eo1 | viva | Recolhida do HTML construído: texto do mandato, rótulo das fontes ou contagem refeita do livro. |
+| conteudo | The new measures of the Budget are worth million euros to the balance, those already decided cost million, and interest rises million: what changes most in the accounts is not in the table of measures. | eo1-b | retirada | Recolhida do HTML construído: texto do mandato, rótulo das fontes ou contagem refeita do livro. EO1-b: substituída pela frase corrigida ou pela contagem medida no HTML. |
+
+## EO1-b: frases e contagens da correção
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | 3 631 afirmações · 429 de 3 631 calculadas · 2 767 de 3 631 linhas de concelhos | eo1-b | viva | Recolhida do HTML construído e conferida pelo portão da voz. Leitura cruzada pendente. |
+| conteudo | 3 631 claims · 429 of 3 631 calculated · 2 767 of 3 631 municipality rows | eo1-b | viva | Recolhida do HTML construído e conferida pelo portão da voz. Leitura cruzada pendente. |
+| conteudo | As medidas novas do Orçamento de valem milhões de euros a favor do saldo, as dez linhas marcadas como invariantes pesam milhões, e os juros sobem milhões: o que mais muda nas contas de não está no quadro das medidas. | eo1-b | viva | Recolhida do HTML construído e conferida pelo portão da voz. Leitura cruzada pendente. |
+| conteudo | The new measures of the Budget are worth million euros to the balance, the ten lines marked as unchanged policies weigh million, and interest rises million: what changes most in the accounts is not in the table of measures. | eo1-b | viva | Recolhida do HTML construído e conferida pelo portão da voz. Leitura cruzada pendente. |

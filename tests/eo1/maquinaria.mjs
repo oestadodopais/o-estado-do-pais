@@ -5,9 +5,10 @@ import os from 'node:os';
 import path from 'node:path';
 import {execFileSync} from 'node:child_process';
 import {parse} from 'node-html-parser';
-import {loadClaims} from '../../src/lib/ledger.mjs';
+import {getClaim,loadClaims} from '../../src/lib/ledger.mjs';
 import {SEM_AREA} from '../../src/data/areas.mjs';
 import {WORKS} from '../../src/data/studies.mjs';
+import {sinopseEsperada,conferirSinopse} from '../../scripts/voz-pais.mjs';
 import {conferirAberturaB1} from '../../scripts/abertura-b1-do-portao.mjs';
 import {conferirPortasDeEntradaEo1} from '../../scripts/portas-eo1-do-portao.mjs';
 import {literalInteiroEo1, retirarAnosIsoladosEo1} from '../../scripts/literais-eo1-do-portao.mjs';
@@ -48,6 +49,13 @@ try {
 } finally {fs.rmSync(pasta,{recursive:true,force:true});}
 
 for(const lang of ['pt','en']) {
+ const work=WORKS.find(w=>w.slug===slug);
+ const assinado=String(getClaim('der-oe2027-medidas-anteriores-saldo').value).replace(/\s+/g,' ');
+ assert(/^[−-]/.test(assinado));
+ const absoluto=assinado.slice(1),sinopse=sinopseEsperada(work,lang);
+ assert(sinopse.includes(absoluto)&&!sinopse.includes(assinado),'sinopse não aplicou abs');
+ assert.deepEqual(conferirSinopse(parse('<p>'+sinopse+'</p>'),work,lang),[]);
+ assert(conferirSinopse(parse('<p>'+sinopse.replace(absoluto,assinado)+'</p>'),work,lang).length,'sinopse aceitou o sinal retirado por abs');plantas++;
  const rota={key:'discussao',lang,params:{}};
  const titulo=WORKS.find(w=>w.slug===slug).editions.find(e=>e.lang===lang).title;
  const destino=lang==='pt'?`/estudos/${slug}`:`/en/studies/${slug}`;
