@@ -66,5 +66,22 @@
       "build": 1
     },
     "causa": "A conferência dos lugares não conseguia derivar por via independente o lugar das duas afirmações textuais da UTAO: o identificador não contém geografia e a fonte interna não é um estudo do arquivo."
+  },
+  {
+    "corrida": "e",
+    "cabeca": "896660e79ddc699a798c95d62f4005d1ef379548",
+    "codigos": {
+      "check:css": 125,
+      "check:series": 125,
+      "gate:html": 125,
+      "check:lugar": 125,
+      "check:discussao": 125,
+      "check:palavras": 125,
+      "check:frases-compostas": 125,
+      "check:alvos": 125,
+      "typecheck": 125,
+      "build": 1
+    },
+    "causa": "Faltavam as línguas de dois rótulos extraídos do quadro das parcerias; a declaração da edição do contador ainda tinha a data anterior."
   }
 ]

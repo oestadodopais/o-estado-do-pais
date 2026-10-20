@@ -247,6 +247,9 @@ export function linguaDoTituloDoDocumento(titulo, lang = 'pt') {
 
 /** `pt` ou `en`, para cada rótulo distinto do campo `name`. */
 export const LINGUA_DOS_ROTULOS = {
+  // V2-d-b: rótulos portugueses conservados tal como extraídos do quadro das parcerias.
+  "enca rgos brutos": "pt",
+  "recei ta s": "pt",
   // V2-d: cadeias conferidas nos corpos portugueses e na API inglesa do Eurostat.
   "015 - Saúde": "pt",
   "Serviço Nacional de Saúde": "pt",
@@ -668,9 +671,9 @@ export const LINGUA_DAS_EDICOES = {
      dos estudos de Évora, e a passagem E1b para as duas contagens do arquivo),
      e a de 16.09.2026 saiu. */
   '12.08.2026': null,
-  /* A recontagem de Correções publicadas usa a data da edição, sem língua. A de 30.09.2026 (o E0) passou a
-     02.10.2026 com a recontagem do K2, e a chave anda com ela. */
-  '02.10.2026': null,
+  /* A recontagem de Correções publicadas usa a data da edição, sem língua.
+     A edição passou de 02.10.2026 para 20.10.2026 na correção V2-d-b. */
+  '20.10.2026': null,
   '01.10.2026': null,
 
   /* --- os nomes de ficheiro do publicador -------------------------------- */

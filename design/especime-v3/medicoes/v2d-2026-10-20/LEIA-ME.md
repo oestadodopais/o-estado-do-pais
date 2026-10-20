@@ -36,6 +36,9 @@ Os selos ficam depois das aspas e fora do título. As células conferem os valor
 | voz e inventário no HTML reconstruído | 0; 32 cadeias novas e 32 retiradas |
 | discussão no HTML reconstruído | 0; 112 de 112 plantas, 300 portas de integração |
 | país e lugar das correções | 0; duas origens positivas e dezasseis plantas documentais; declaração e derivação independentes |
+| portões e | build 1; restantes passos 125; quatro faltas na tabela de línguas dos rótulos e da edição do contador |
+| séries | 0; 25 séries, 8327 pontos, 40 de 40 plantas |
+| formato, navegação e sinais | 0 nos três passos dirigidos |
 
 Capturas da correção ainda não executadas.
 
