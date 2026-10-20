@@ -53,6 +53,7 @@
  * A ordem é a da contagem no livro-razão, das mais frequentes para as mais
  * raras, para que quem lê veja primeiro o que mais se rende.
  */
+/** @type {Record<string, string>} */
 const UNIDADES_EUROSTAT_PT = {
   "Percentage": "percentagem",
   "Annual average rate of change": "taxa de variação média anual",
@@ -75,7 +76,6 @@ export const UNIDADES = {
   'texto': 'text',
   'data': 'date',
   'pontos percentuais': 'percentage points',
-  'pontos de índice': 'index points',
   'alojamentos': 'dwellings',
   'vezes': 'times',
   'por mil habitantes': 'per thousand inhabitants',

@@ -8,6 +8,20 @@
   },
   "edicoes": [
     {
+      "slug": "a-casa-em-portugal-e-na-europa",
+      "lang": "pt",
+      "data": "2026-10-20",
+      "commit": "8944f25675b9dad2a4d166b1fbf22f6b412bd15f",
+      "ficheiro": "studies-src/a-casa-em-portugal-e-na-europa/pt.html"
+    },
+    {
+      "slug": "a-casa-em-portugal-e-na-europa",
+      "lang": "en",
+      "data": "2026-10-20",
+      "commit": "8944f25675b9dad2a4d166b1fbf22f6b412bd15f",
+      "ficheiro": "studies-src/a-casa-em-portugal-e-na-europa/en.html"
+    },
+    {
       "slug": "agua-nao-faturada",
       "lang": "pt",
       "data": "2026-08-12",
