@@ -1,0 +1,889 @@
+{
+  "cabeca": "4531f0c11cb29ea1bdf21db399ef4b3f14aaa0d3",
+  "validacao_automatica": {
+    "codigo": 0,
+    "paginas": 20,
+    "pngs_conferidos": 120,
+    "transbordos_horizontais": 0,
+    "erros_do_navegador": 0,
+    "recursos_em_falta": 0,
+    "pedidos_externos": 0
+  },
+  "inspecao_visual": {
+    "ficheiros": [
+      "estudo-pt-390-resumo.png",
+      "estudo-pt-768-resumo.png",
+      "estudo-pt-1024-resumo.png",
+      "estudo-pt-1280-resumo.png",
+      "estudo-pt-1600-resumo.png",
+      "estudo-en-390-resumo.png",
+      "estudo-en-768-resumo.png",
+      "estudo-en-1024-resumo.png",
+      "estudo-en-1280-resumo.png",
+      "estudo-en-1600-resumo.png",
+      "documento-pt-390-resumo.png",
+      "documento-pt-768-resumo.png",
+      "documento-pt-1024-resumo.png",
+      "documento-pt-1280-resumo.png",
+      "documento-pt-1600-resumo.png",
+      "documento-en-390-resumo.png",
+      "documento-en-768-resumo.png",
+      "documento-en-1024-resumo.png",
+      "documento-en-1280-resumo.png",
+      "documento-en-1600-resumo.png",
+      "estudo-pt-390.png",
+      "estudo-en-1600.png",
+      "documento-pt-390.png",
+      "documento-en-1600.png",
+      "estudo-pt-390-precos-locais.png",
+      "estudo-en-1600-precos-locais.png",
+      "documento-pt-390-lei.png",
+      "estudo-en-390-lei.png",
+      "estudo-pt-1600-rua.png",
+      "documento-en-390-rua.png"
+    ],
+    "observacao": "Sem cortes ou sobreposições observados nos resumos das duas páginas e edições nas cinco larguras. Foram também vistas quatro capturas completas para a organização geral e amostras dos preços locais, da lei e da rua. Esta inspeção visual não substitui a leitura a frio do conteúdo."
+  },
+  "dimensoes_png": [
+    {
+      "ficheiro": "estudo-pt-390.png",
+      "dimensoes": [
+        390,
+        23411
+      ]
+    },
+    {
+      "ficheiro": "estudo-pt-390-titulo.png",
+      "dimensoes": [
+        334,
+        61
+      ]
+    },
+    {
+      "ficheiro": "estudo-pt-390-resumo.png",
+      "dimensoes": [
+        354,
+        477
+      ]
+    },
+    {
+      "ficheiro": "estudo-pt-390-precos-locais.png",
+      "dimensoes": [
+        354,
+        421
+      ]
+    },
+    {
+      "ficheiro": "estudo-pt-390-lei.png",
+      "dimensoes": [
+        354,
+        673
+      ]
+    },
+    {
+      "ficheiro": "estudo-pt-390-rua.png",
+      "dimensoes": [
+        354,
+        589
+      ]
+    },
+    {
+      "ficheiro": "estudo-pt-768.png",
+      "dimensoes": [
+        768,
+        19182
+      ]
+    },
+    {
+      "ficheiro": "estudo-pt-768-titulo.png",
+      "dimensoes": [
+        380,
+        70
+      ]
+    },
+    {
+      "ficheiro": "estudo-pt-768-resumo.png",
+      "dimensoes": [
+        545,
+        374
+      ]
+    },
+    {
+      "ficheiro": "estudo-pt-768-precos-locais.png",
+      "dimensoes": [
+        545,
+        344
+      ]
+    },
+    {
+      "ficheiro": "estudo-pt-768-lei.png",
+      "dimensoes": [
+        545,
+        488
+      ]
+    },
+    {
+      "ficheiro": "estudo-pt-768-rua.png",
+      "dimensoes": [
+        545,
+        457
+      ]
+    },
+    {
+      "ficheiro": "estudo-pt-1024.png",
+      "dimensoes": [
+        1024,
+        18425
+      ]
+    },
+    {
+      "ficheiro": "estudo-pt-1024-titulo.png",
+      "dimensoes": [
+        495,
+        91
+      ]
+    },
+    {
+      "ficheiro": "estudo-pt-1024-resumo.png",
+      "dimensoes": [
+        545,
+        374
+      ]
+    },
+    {
+      "ficheiro": "estudo-pt-1024-precos-locais.png",
+      "dimensoes": [
+        545,
+        344
+      ]
+    },
+    {
+      "ficheiro": "estudo-pt-1024-lei.png",
+      "dimensoes": [
+        545,
+        487
+      ]
+    },
+    {
+      "ficheiro": "estudo-pt-1024-rua.png",
+      "dimensoes": [
+        545,
+        457
+      ]
+    },
+    {
+      "ficheiro": "estudo-pt-1280.png",
+      "dimensoes": [
+        1280,
+        18563
+      ]
+    },
+    {
+      "ficheiro": "estudo-pt-1280-titulo.png",
+      "dimensoes": [
+        494,
+        90
+      ]
+    },
+    {
+      "ficheiro": "estudo-pt-1280-resumo.png",
+      "dimensoes": [
+        544,
+        374
+      ]
+    },
+    {
+      "ficheiro": "estudo-pt-1280-precos-locais.png",
+      "dimensoes": [
+        544,
+        345
+      ]
+    },
+    {
+      "ficheiro": "estudo-pt-1280-lei.png",
+      "dimensoes": [
+        544,
+        488
+      ]
+    },
+    {
+      "ficheiro": "estudo-pt-1280-rua.png",
+      "dimensoes": [
+        544,
+        457
+      ]
+    },
+    {
+      "ficheiro": "estudo-pt-1600.png",
+      "dimensoes": [
+        1600,
+        18569
+      ]
+    },
+    {
+      "ficheiro": "estudo-pt-1600-titulo.png",
+      "dimensoes": [
+        494,
+        90
+      ]
+    },
+    {
+      "ficheiro": "estudo-pt-1600-resumo.png",
+      "dimensoes": [
+        544,
+        374
+      ]
+    },
+    {
+      "ficheiro": "estudo-pt-1600-precos-locais.png",
+      "dimensoes": [
+        544,
+        345
+      ]
+    },
+    {
+      "ficheiro": "estudo-pt-1600-lei.png",
+      "dimensoes": [
+        544,
+        488
+      ]
+    },
+    {
+      "ficheiro": "estudo-pt-1600-rua.png",
+      "dimensoes": [
+        544,
+        457
+      ]
+    },
+    {
+      "ficheiro": "estudo-en-390.png",
+      "dimensoes": [
+        390,
+        23401
+      ]
+    },
+    {
+      "ficheiro": "estudo-en-390-titulo.png",
+      "dimensoes": [
+        334,
+        61
+      ]
+    },
+    {
+      "ficheiro": "estudo-en-390-resumo.png",
+      "dimensoes": [
+        354,
+        477
+      ]
+    },
+    {
+      "ficheiro": "estudo-en-390-precos-locais.png",
+      "dimensoes": [
+        354,
+        421
+      ]
+    },
+    {
+      "ficheiro": "estudo-en-390-lei.png",
+      "dimensoes": [
+        354,
+        673
+      ]
+    },
+    {
+      "ficheiro": "estudo-en-390-rua.png",
+      "dimensoes": [
+        354,
+        589
+      ]
+    },
+    {
+      "ficheiro": "estudo-en-768.png",
+      "dimensoes": [
+        768,
+        19151
+      ]
+    },
+    {
+      "ficheiro": "estudo-en-768-titulo.png",
+      "dimensoes": [
+        380,
+        70
+      ]
+    },
+    {
+      "ficheiro": "estudo-en-768-resumo.png",
+      "dimensoes": [
+        545,
+        375
+      ]
+    },
+    {
+      "ficheiro": "estudo-en-768-precos-locais.png",
+      "dimensoes": [
+        545,
+        345
+      ]
+    },
+    {
+      "ficheiro": "estudo-en-768-lei.png",
+      "dimensoes": [
+        545,
+        487
+      ]
+    },
+    {
+      "ficheiro": "estudo-en-768-rua.png",
+      "dimensoes": [
+        545,
+        457
+      ]
+    },
+    {
+      "ficheiro": "estudo-en-1024.png",
+      "dimensoes": [
+        1024,
+        18393
+      ]
+    },
+    {
+      "ficheiro": "estudo-en-1024-titulo.png",
+      "dimensoes": [
+        495,
+        91
+      ]
+    },
+    {
+      "ficheiro": "estudo-en-1024-resumo.png",
+      "dimensoes": [
+        545,
+        374
+      ]
+    },
+    {
+      "ficheiro": "estudo-en-1024-precos-locais.png",
+      "dimensoes": [
+        545,
+        344
+      ]
+    },
+    {
+      "ficheiro": "estudo-en-1024-lei.png",
+      "dimensoes": [
+        545,
+        488
+      ]
+    },
+    {
+      "ficheiro": "estudo-en-1024-rua.png",
+      "dimensoes": [
+        545,
+        457
+      ]
+    },
+    {
+      "ficheiro": "estudo-en-1280.png",
+      "dimensoes": [
+        1280,
+        18531
+      ]
+    },
+    {
+      "ficheiro": "estudo-en-1280-titulo.png",
+      "dimensoes": [
+        494,
+        90
+      ]
+    },
+    {
+      "ficheiro": "estudo-en-1280-resumo.png",
+      "dimensoes": [
+        544,
+        374
+      ]
+    },
+    {
+      "ficheiro": "estudo-en-1280-precos-locais.png",
+      "dimensoes": [
+        544,
+        344
+      ]
+    },
+    {
+      "ficheiro": "estudo-en-1280-lei.png",
+      "dimensoes": [
+        544,
+        487
+      ]
+    },
+    {
+      "ficheiro": "estudo-en-1280-rua.png",
+      "dimensoes": [
+        544,
+        457
+      ]
+    },
+    {
+      "ficheiro": "estudo-en-1600.png",
+      "dimensoes": [
+        1600,
+        18538
+      ]
+    },
+    {
+      "ficheiro": "estudo-en-1600-titulo.png",
+      "dimensoes": [
+        494,
+        90
+      ]
+    },
+    {
+      "ficheiro": "estudo-en-1600-resumo.png",
+      "dimensoes": [
+        544,
+        374
+      ]
+    },
+    {
+      "ficheiro": "estudo-en-1600-precos-locais.png",
+      "dimensoes": [
+        544,
+        344
+      ]
+    },
+    {
+      "ficheiro": "estudo-en-1600-lei.png",
+      "dimensoes": [
+        544,
+        487
+      ]
+    },
+    {
+      "ficheiro": "estudo-en-1600-rua.png",
+      "dimensoes": [
+        544,
+        457
+      ]
+    },
+    {
+      "ficheiro": "documento-pt-390.png",
+      "dimensoes": [
+        390,
+        16713
+      ]
+    },
+    {
+      "ficheiro": "documento-pt-390-titulo.png",
+      "dimensoes": [
+        350,
+        77
+      ]
+    },
+    {
+      "ficheiro": "documento-pt-390-resumo.png",
+      "dimensoes": [
+        350,
+        364
+      ]
+    },
+    {
+      "ficheiro": "documento-pt-390-precos-locais.png",
+      "dimensoes": [
+        350,
+        312
+      ]
+    },
+    {
+      "ficheiro": "documento-pt-390-lei.png",
+      "dimensoes": [
+        350,
+        571
+      ]
+    },
+    {
+      "ficheiro": "documento-pt-390-rua.png",
+      "dimensoes": [
+        350,
+        493
+      ]
+    },
+    {
+      "ficheiro": "documento-pt-768.png",
+      "dimensoes": [
+        768,
+        8879
+      ]
+    },
+    {
+      "ficheiro": "documento-pt-768-titulo.png",
+      "dimensoes": [
+        728,
+        38
+      ]
+    },
+    {
+      "ficheiro": "documento-pt-768-resumo.png",
+      "dimensoes": [
+        728,
+        182
+      ]
+    },
+    {
+      "ficheiro": "documento-pt-768-precos-locais.png",
+      "dimensoes": [
+        728,
+        157
+      ]
+    },
+    {
+      "ficheiro": "documento-pt-768-lei.png",
+      "dimensoes": [
+        728,
+        260
+      ]
+    },
+    {
+      "ficheiro": "documento-pt-768-rua.png",
+      "dimensoes": [
+        728,
+        234
+      ]
+    },
+    {
+      "ficheiro": "documento-pt-1024.png",
+      "dimensoes": [
+        1024,
+        7738
+      ]
+    },
+    {
+      "ficheiro": "documento-pt-1024-titulo.png",
+      "dimensoes": [
+        864,
+        39
+      ]
+    },
+    {
+      "ficheiro": "documento-pt-1024-resumo.png",
+      "dimensoes": [
+        864,
+        156
+      ]
+    },
+    {
+      "ficheiro": "documento-pt-1024-precos-locais.png",
+      "dimensoes": [
+        864,
+        130
+      ]
+    },
+    {
+      "ficheiro": "documento-pt-1024-lei.png",
+      "dimensoes": [
+        864,
+        234
+      ]
+    },
+    {
+      "ficheiro": "documento-pt-1024-rua.png",
+      "dimensoes": [
+        864,
+        208
+      ]
+    },
+    {
+      "ficheiro": "documento-pt-1280.png",
+      "dimensoes": [
+        1280,
+        7738
+      ]
+    },
+    {
+      "ficheiro": "documento-pt-1280-titulo.png",
+      "dimensoes": [
+        864,
+        39
+      ]
+    },
+    {
+      "ficheiro": "documento-pt-1280-resumo.png",
+      "dimensoes": [
+        864,
+        156
+      ]
+    },
+    {
+      "ficheiro": "documento-pt-1280-precos-locais.png",
+      "dimensoes": [
+        864,
+        130
+      ]
+    },
+    {
+      "ficheiro": "documento-pt-1280-lei.png",
+      "dimensoes": [
+        864,
+        234
+      ]
+    },
+    {
+      "ficheiro": "documento-pt-1280-rua.png",
+      "dimensoes": [
+        864,
+        208
+      ]
+    },
+    {
+      "ficheiro": "documento-pt-1600.png",
+      "dimensoes": [
+        1600,
+        7738
+      ]
+    },
+    {
+      "ficheiro": "documento-pt-1600-titulo.png",
+      "dimensoes": [
+        864,
+        39
+      ]
+    },
+    {
+      "ficheiro": "documento-pt-1600-resumo.png",
+      "dimensoes": [
+        864,
+        156
+      ]
+    },
+    {
+      "ficheiro": "documento-pt-1600-precos-locais.png",
+      "dimensoes": [
+        864,
+        130
+      ]
+    },
+    {
+      "ficheiro": "documento-pt-1600-lei.png",
+      "dimensoes": [
+        864,
+        234
+      ]
+    },
+    {
+      "ficheiro": "documento-pt-1600-rua.png",
+      "dimensoes": [
+        864,
+        208
+      ]
+    },
+    {
+      "ficheiro": "documento-en-390.png",
+      "dimensoes": [
+        390,
+        16305
+      ]
+    },
+    {
+      "ficheiro": "documento-en-390-titulo.png",
+      "dimensoes": [
+        350,
+        77
+      ]
+    },
+    {
+      "ficheiro": "documento-en-390-resumo.png",
+      "dimensoes": [
+        350,
+        337
+      ]
+    },
+    {
+      "ficheiro": "documento-en-390-precos-locais.png",
+      "dimensoes": [
+        350,
+        312
+      ]
+    },
+    {
+      "ficheiro": "documento-en-390-lei.png",
+      "dimensoes": [
+        350,
+        571
+      ]
+    },
+    {
+      "ficheiro": "documento-en-390-rua.png",
+      "dimensoes": [
+        350,
+        519
+      ]
+    },
+    {
+      "ficheiro": "documento-en-768.png",
+      "dimensoes": [
+        768,
+        8775
+      ]
+    },
+    {
+      "ficheiro": "documento-en-768-titulo.png",
+      "dimensoes": [
+        728,
+        38
+      ]
+    },
+    {
+      "ficheiro": "documento-en-768-resumo.png",
+      "dimensoes": [
+        728,
+        182
+      ]
+    },
+    {
+      "ficheiro": "documento-en-768-precos-locais.png",
+      "dimensoes": [
+        728,
+        157
+      ]
+    },
+    {
+      "ficheiro": "documento-en-768-lei.png",
+      "dimensoes": [
+        728,
+        286
+      ]
+    },
+    {
+      "ficheiro": "documento-en-768-rua.png",
+      "dimensoes": [
+        728,
+        260
+      ]
+    },
+    {
+      "ficheiro": "documento-en-1024.png",
+      "dimensoes": [
+        1024,
+        7712
+      ]
+    },
+    {
+      "ficheiro": "documento-en-1024-titulo.png",
+      "dimensoes": [
+        864,
+        39
+      ]
+    },
+    {
+      "ficheiro": "documento-en-1024-resumo.png",
+      "dimensoes": [
+        864,
+        156
+      ]
+    },
+    {
+      "ficheiro": "documento-en-1024-precos-locais.png",
+      "dimensoes": [
+        864,
+        131
+      ]
+    },
+    {
+      "ficheiro": "documento-en-1024-lei.png",
+      "dimensoes": [
+        864,
+        234
+      ]
+    },
+    {
+      "ficheiro": "documento-en-1024-rua.png",
+      "dimensoes": [
+        864,
+        208
+      ]
+    },
+    {
+      "ficheiro": "documento-en-1280.png",
+      "dimensoes": [
+        1280,
+        7712
+      ]
+    },
+    {
+      "ficheiro": "documento-en-1280-titulo.png",
+      "dimensoes": [
+        864,
+        39
+      ]
+    },
+    {
+      "ficheiro": "documento-en-1280-resumo.png",
+      "dimensoes": [
+        864,
+        156
+      ]
+    },
+    {
+      "ficheiro": "documento-en-1280-precos-locais.png",
+      "dimensoes": [
+        864,
+        131
+      ]
+    },
+    {
+      "ficheiro": "documento-en-1280-lei.png",
+      "dimensoes": [
+        864,
+        234
+      ]
+    },
+    {
+      "ficheiro": "documento-en-1280-rua.png",
+      "dimensoes": [
+        864,
+        208
+      ]
+    },
+    {
+      "ficheiro": "documento-en-1600.png",
+      "dimensoes": [
+        1600,
+        7712
+      ]
+    },
+    {
+      "ficheiro": "documento-en-1600-titulo.png",
+      "dimensoes": [
+        864,
+        39
+      ]
+    },
+    {
+      "ficheiro": "documento-en-1600-resumo.png",
+      "dimensoes": [
+        864,
+        156
+      ]
+    },
+    {
+      "ficheiro": "documento-en-1600-precos-locais.png",
+      "dimensoes": [
+        864,
+        131
+      ]
+    },
+    {
+      "ficheiro": "documento-en-1600-lei.png",
+      "dimensoes": [
+        864,
+        234
+      ]
+    },
+    {
+      "ficheiro": "documento-en-1600-rua.png",
+      "dimensoes": [
+        864,
+        208
+      ]
+    }
+  ]
+}

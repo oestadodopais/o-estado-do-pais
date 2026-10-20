@@ -1,20 +1,60 @@
 # HB1: A casa em Portugal e na Europa
 
-## Estado da entrega
+## Estado da entrega HB1-c
 
-As edições portuguesa e inglesa estão compostas e commitadas no motor, em `content/28 Habitacao Estudo/`. O escrivão aceitou o commit `980a964ea9eee20f2765580b2b1efae1e4e0bd75` com `GATE: PASS`. O resumo completo é conferido em `commit-motor.json`; a identificação abreviada é `980a964e`.
+A corrida final do sítio passou na cabeça `4531f0c11cb29ea1bdf21db399ef4b3f14aaa0d3`, com árvore limpa no início e no fim. O motor passou na cabeça `980a964ea9eee20f2765580b2b1efae1e4e0bd75`, também com árvore limpa. A prova do motor vem da primeira corrida HB1-c; a repetição do sítio alterou apenas a conferência EX3, sem mudança no motor. Os códigos foram lidos dos ficheiros e estão reunidos em [verificacao-final/resumo.json](verificacao-final/resumo.json).
 
-No sítio estão integrados o arquivo, as leituras, as perguntas, as portas da habitação e das três séries, os documentos, os registos e os recibos. A travessia dos documentos e registos passou, incluindo a comparação dos bytes com o commit de origem. A conferência do renderizador encontrou, em cada edição, cinquenta e quatro blocos, trinta e sete portas por parágrafo e cento e setenta e seis selos.
+As duas edições estão compostas no motor, em `content/28 Habitacao Estudo/`, e integradas no sítio: arquivo, leituras, perguntas, portas da habitação e das três séries, documentos, registos e recibos. As capturas da página do estudo e do documento nas duas edições e nas cinco larguras estão feitas. Este fecho acrescenta as provas e o relatório depois da cabeça de código conferida; não representa publicação em produção.
 
-A entrega do sítio não está concluída. O escrivão recusou os portões com código 9: «portoes: árvore suja; registe as mudanças antes de conferir a cabeça do código». Não foram produzidos `build.codigo`, `verify.codigo` ou `typecheck.codigo`. O commit do sítio exige a linha `Claude-Session` que o mandato diz vir no prompt e não veio; foi pedida, sem inventar ou reutilizar um identificador. Não há capturas HB1, validação visual, publicação nem envio. As verificações dirigidas não substituem os três portões.
+## §0. Medição inicial e reprodução da selagem
 
-## Medição inicial e selagem
+Antes de alterar os livros, `python3 design/especime-v3/medicoes/hb1-2026-10-21/medir.py <motor>`, por `curto.sh`, terminou com código 0, inscrito em `partida.log`. `partida.json` conserva a medição da cabeça inicial do motor `6b1a8201dcf1d428252d7a5008e00a95fb8bcb39`: 2 189 linhas de HB, 1 126 de PM e 1 374 de AN, além das três séries do sítio. Guarda valores, unidades, períodos, bandeiras, localizadores e excertos; o guião recusa identificadores obrigatórios ausentes. Inclui as observações europeias usadas para conferir as posições, não apenas as citadas no documento.
 
-Antes de alterar os livros, correu-se `python3 design/especime-v3/medicoes/hb1-2026-10-21/medir.py <motor>`, por `curto.sh`, com código 0. `partida.json` conserva a cabeça inicial, os livros HB, PM e AN, os valores, as unidades, os períodos, as bandeiras, os localizadores e os excertos. O guião recusa identificadores obrigatórios ausentes. Mede um conjunto mais amplo do que os identificadores usados no documento, incluindo todas as observações europeias disponíveis para conferir as posições.
+Depois da geração, `python3 design/especime-v3/medicoes/hb1-2026-10-21/selar.py <motor>`, por `curto.sh`, terminou com código 0 (`testes.json`, entrada `selagem`). Na HB1-c, o mesmo guião e uma cópia de `partida.json` foram colocados em `<temporario>/hb1c-selagem/`; `python3 <temporario>/hb1c-selagem/selar.py <motor>`, por `curto.sh`, terminou com código 0, lido de `verificacao-final/selagem.codigo`. Assim a reprodução não substituiu a medição inicial. Os dois JSON reproduzidos são idênticos byte a byte aos originais: os resumos estão em `verificacao-final/resumo.json`.
 
-Depois da geração, `python3 design/especime-v3/medicoes/hb1-2026-10-21/selar.py <motor>`, também por `curto.sh`, terminou com código 0. `selagem.json` guarda as provas dos novos excertos no texto extraído dos corpos, os resumos dos corpos e recibos, as contas refeitas das componentes por um avaliador das quatro operações e as comparações de medidas. `partida.json` referencia o ficheiro de selagem pelo seu resumo, sem substituir a medição inicial.
+A selagem contém 11 provas de excertos novos nos corpos alojados, 77 linhas novas e 16 contas refeitas por um avaliador independente das quatro operações. Os recibos e os resumos dos corpos estão em `selagem.json`; `partida.json` prende esse ficheiro pelo SHA-256. Todas as diferenças entre o resultado recalculado e o livro são zero.
 
-A reprodução dos documentos e registos faz-se no motor por `python3 -m publisher.hb1_build`, depois da recolha por `python3 -m publisher.habitacao_fetch 'content/23 Habitacao/pedidos-hb1.json'`. O gerador continua a ser `publisher/habitacao.py`; `publisher/habitacao_derivadas.py` contém apenas as contas pelas componentes identificadas. A composição passa por `core/compor.py`.
+As comparações de medidas ficam em `selagem.json`, campo `comparacoes`: a sobrecarga total difere entre os conjuntos publicados, apesar da mesma atualização; a variação homóloga dos preços coincide no INE e no Eurostat; os alojamentos vagos dos Censos não medem a habitabilidade alegada pelo PS; os feridos ficam separados por fonte, sem soma. As razões e os limites entram no documento e nas decisões HB1-2, HB1-7 e HB1-11.
+
+A reprodução dos documentos e registos faz-se no motor por `python3 -m publisher.hb1_build`, depois da recolha por `python3 -m publisher.habitacao_fetch 'content/23 Habitacao/pedidos-hb1.json'`. O gerador é `publisher/habitacao.py`; `publisher/habitacao_derivadas.py` contém as contas pelas componentes identificadas. A composição passa por `core/compor.py`.
+
+## Secção 1b: linhas seladas e ausências
+
+| Pedido | Identificadores e resultado |
+| --- | --- |
+| 1. Sobrecarga dos inquilinos | `hab-ilc-lvho07c-a-pc-rent-mkt-<geo>-<ano>`: Portugal e União de 2015 a 2025 e os 27 países em 2025, pelas células de `ilc_lvho07c`. As linhas completas, bandeiras, coordenadas e recibos estão em `selagem.json`, campo `linhas_novas`. |
+| 2. População | `hab-demo-pjan-pt-2025` e `hab-demo-pjan-eu27_2020-2025`, pelas células de `demo_pjan`. |
+| 3. Estimativa de 2026 | Não selada. A página PDF 243 do relatório alojado contém o quadro 5.24, com a coluna «Orçamento», sem a coluna de estimativa de 2026 pedida. O texto extraído está em `selagem.json`, campo `quadro_orcamento_2027`. Não existem `hab-oe-habitacao-orcamento-2026` nem a derivada condicionada `der-hab-habitacao-orcamento-variacao-pct`. Saiu a frase condicional; a afirmação do PCP não foi validada com um perímetro diferente. |
+| 4. Dedução das rendas | `hab-dl97-deducao-2027`, com excerto provado no corpo `dr-97-2026.pdf`. A redação do limite e a norma transitória ficam ao lado da proposta do PS. |
+| 5. Preços locais do INE | Pendente para sexta-feira, 23.10.2026, conforme o mandato. `hab-ine-preco-mediano`, `hab-ine-preco-lisboa` e `hab-ine-preco-porto` conservam `2026-Q1`; não há selagem de `2026-Q2` nesta entrega. |
+| 6. Manifestações e plataforma | `hab-imprensa-manif-rtp`, `hab-imprensa-manif-euronews`, `hab-imprensa-manif-lisboa`, `hab-imprensa-manif-lusa`, `hab-imprensa-manif-lusa-organizacoes`, `hab-imprensa-renda-metade` e `hab-plataforma-reivindicacoes`. A reprodução pelo Postal é identificada como tal; não é apresentada como corpo primário da Lusa. |
+| 7. Calendário do INE | `hab-ine-calendario-precos-locais` e `hab-ine-calendario-juro`, com os excertos do calendário alojado. |
+| 8. Retirada das tendas | `hab-imprensa-tendas`, com o excerto comprovado no corpo alojado da RTP. |
+
+As fontes novas que não estavam alojadas foram recolhidas com recibos e direitos na HB1. A atualização do juro implícito também não foi antecipada: conserva-se agosto de 2026. A data futura indicada pelo calendário não é apresentada como divulgação já ocorrida.
+
+## Derivadas refeitas
+
+As componentes por identificador, as fórmulas, o arredondamento, o valor do livro e a diferença estão em `selagem.json`, campo `contas`. A tabela transcreve o campo `calculado`; não recalcula valores por redação.
+
+| Identificador | Resultado recalculado | Diferença para o livro |
+| --- | ---: | ---: |
+| `der-hab-proprietarios-pt-2025` | 71.2 | 0.0 |
+| `der-hab-inquilinos-pt-2025` | 28.8 | 0.0 |
+| `der-hab-proprietarios-eu-2025` | 68.5 | 0.0 |
+| `der-hab-inquilinos-eu-2025` | 31.5 | 0.0 |
+| `der-hab-precos-reais-pt-vs-eu-2025` | 81.7 | 0.0 |
+| `der-hab-preco-rendimento-pt-vs-eu-2024` | 38.6 | 0.0 |
+| `der-hab-sobrecarga-inquilinos-pt-vs-eu-2025` | 8.6 | 0.0 |
+| `der-hab-sobrecarga-inquilinos-pt-2020-2025` | 7.5 | 0.0 |
+| `der-hab-jovens-com-pais-pt-vs-eu-2025` | 12.0 | 0.0 |
+| `der-hab-saida-pt-vs-eu-2025` | 2.5 | 0.0 |
+| `der-hab-licencas-por-mil-pt-2025` | 3.8 | 0.0 |
+| `der-hab-licencas-por-mil-eu-2025` | 3.6 | 0.0 |
+| `der-hab-vagos-pct-2021` | 12.1 | 0.0 |
+| `der-hab-fiscal-2027` | -303 | 0 |
+| `der-hab-renda-lisboa-vs-portugal` | 1.7 | 0.0 |
+| `der-hab-preco-lisboa-vs-portugal` | 2.3 | 0.0 |
 
 ## Decisões e diferenças face ao mandato
 
@@ -37,32 +77,81 @@ A reprodução dos documentos e registos faz-se no motor por `python3 -m publish
 - HB1-17. A conferência etária lia um filtro de pedido que pode conter várias idades. Passou a ler a coordenada da célula e a verificar que pertence ao pedido. A família da linha fornece a definição quando não existe cartão nacional. As plantas recusam uma coordenada fora do pedido e distinguem o total dos jovens.
 - HB1-18. As contas arredondadas escrevem `round` na expressão verificada. A primeira tentativa de commit foi recusada por omitir esse arredondamento explícito; corrigiu-se a expressão, sem alterar as componentes ou os resultados.
 
+- HB1-19. As correções HB1-b antecedem a cabeça conferida: travessia e superfícies, rótulos e unidades, definição das edições, datas medidas no Git e tipagem. A corrida HB1-c conserva essa cabeça e fecha as provas; não altera números nem prosa pública. As datas das duas edições em `src/data/datas-de-publicacao.json` vêm do commit `8944f25675b9dad2a4d166b1fbf22f6b412bd15f`, de 20.10.2026; esta data de entrada no Git não prova publicação em produção.
+
+- HB1-20. A corrida HB1-c encontrou a asserção antiga da EX3 que exigia identidade textual mesmo nas datas do calendário. A correção `4531f0c11` conserva a identidade e a precisão dos valores e confere dia, mês, ano e a grafia com pontos nas datas, nas duas edições. Não altera o formatador nem a página. Dez alterações plantadas foram recusadas; os dois controlos intactos passaram.
+
+## Frases tal como renderizam nas duas edições
+
+[frases-do-sitio.json](frases-do-sitio.json) foi extraído do HTML de `dist/` por `extrair-frases.mjs`. O comando é `sh scripts/leituras/curto.sh <temporario>/extracao.log node design/especime-v3/medicoes/hb1-2026-10-21/extrair-frases.mjs <temporario>/frases-do-sitio.json`; código 0 em `verificacao-final/extracao.codigo`. Guarda as rotas, a cabeça construída, os resumos dos quatro HTML e o texto de todos os blocos, incluindo a versão da página com os selos de fonte.
+
+Cada edição tem 54 blocos no estudo e no documento. A comparação da prosa, retirando apenas os selos e o texto oculto de acessibilidade e normalizando os espaços, encontrou zero diferenças. Os textos guardados não são normalizados. `frases-renderizadas.json` conserva a extração anterior do HTML do motor; a prosa coincide com a do documento construído após a mesma normalização dos espaços. Os períodos, citações e frases condicionais podem assim ser lidos na forma efetivamente construída, sem paráfrase no relatório.
+
+## Siglas e primeiro uso
+
+A localização é o número de `data-registo-bloco` da página do estudo, contado a partir de zero. `frases-do-sitio.json` conserva o seletor e o excerto de cada primeiro uso. O guião comprovou que a expansão antecede a sigla no mesmo bloco em ambas as edições; as siglas portuguesas mantêm-se nas citações. CDS aparece na forma CDS-PP.
+
+| Sigla | Expansão portuguesa | Expansão inglesa | Bloco PT / EN |
+| --- | --- | --- | --- |
+| INE | Instituto Nacional de Estatística | National Statistics Institute | 1 / 1 |
+| IVA | imposto sobre o valor acrescentado | value added tax | 5 / 5 |
+| IRS | imposto sobre o rendimento das pessoas singulares | personal income tax | 5 / 5 |
+| PSP | Polícia de Segurança Pública | Public Security Police | 12 / 12 |
+| IGAI | Inspeção-Geral da Administração Interna | Inspectorate-General of Home Affairs | 12 / 12 |
+| CGTP | Confederação Geral dos Trabalhadores Portugueses | General Confederation of Portuguese Workers | 46 / 46 |
+| PS | Partido Socialista | Socialist Party | 10 / 10 |
+| PCP | Partido Comunista Português | Portuguese Communist Party | 38 / 38 |
+| BE | Bloco de Esquerda | Left Bloc | 13 / 13 |
+| PAN | Pessoas-Animais-Natureza | People-Animals-Nature | 38 / 38 |
+| IL | Iniciativa Liberal | Liberal Initiative | 38 / 38 |
+| PSD | Partido Social Democrata | Social Democratic Party | 38 / 38 |
+| CDS | Centro Democrático Social, Partido Popular | Democratic and Social Centre, People’s Party | 38 / 38 |
+| FEH | Fundo de Emergência para a Habitação | Housing Emergency Fund | 38 / 38 |
+
+## Plantas e códigos
+
+`plantas.json` conserva as três classes de estrago exigidas, em cópias das duas edições. O guião global terminou com código 0; cada alteração foi recusada com código 1. A alteração do período numa cópia também foi conferida nas duas línguas. Nenhum ficheiro de produção foi alterado pelas plantas.
+
+| Estrago | Português | Inglês | Recusa registada |
+| --- | ---: | ---: | --- |
+| Valor alterado no registo | 1 | 1 | Valor sem correspondência nas formas do livro |
+| Excerto cortado | 1 | 1 | Texto alterado no bloco 12 |
+| Literal sem linha | 1 | 1 | Literal sem prova no gabarito |
+
+`plantas-datas.json` acrescenta a prova da correção HB1-c: `plantar-datas.mjs` executa o trecho real da EX3 em processos isolados. As alterações ao dia, mês, ano, separador e precisão numérica saíram com código 1 nas duas línguas; os dois controlos saíram com código 0. O guião terminou com código 0 em `verificacao-final/plantas-datas.codigo`. O teste dirigido `node tests/explicacoes/ex3.mjs`, por `curto.sh`, terminou com código 0 em `verificacao-final/ex3.codigo`.
+
+## Corrida completa e capturas
+
+Os comandos do sítio correram pelo escrivão, sem perfil reduzido, sobre a cabeça acima. `verify.json` comprova a união inteira de `npm run verify`, a cabeça e a imutabilidade da construção. Os códigos abaixo são os inteiros lidos dos ficheiros; a primeira corrida recusada está separada em `verificacao-anterior/`.
+
+| Verificação | Código | Ficheiro |
+| --- | ---: | --- |
+| Build pelo escrivão | 0 | [verificacao-final/build.codigo](verificacao-final/build.codigo) |
+| Verify inteiro, pela união depois do build | 0 | [verificacao-final/verify.codigo](verificacao-final/verify.codigo) |
+| Typecheck pelo escrivão | 0 | [verificacao-final/typecheck.codigo](verificacao-final/typecheck.codigo) |
+| `RESEARCHHUB_DIR=<motor> npm run check:series` | 0 | [verificacao-final/series.codigo](verificacao-final/series.codigo) |
+| `RESEARCHHUB_DIR=<motor> npm run check:cruzamento -- --with-origin` | 0 | [verificacao-final/cruzamento.codigo](verificacao-final/cruzamento.codigo) |
+| `python3 -m core.gate` do motor, pelo escrivão | 0 | [verificacao-final/motor.codigo](verificacao-final/motor.codigo) |
+| Capturas pelo escrivão | 0 | [verificacao-final/capturas.codigo](verificacao-final/capturas.codigo) |
+| Resumos dos PNG e geometria | 0 | [verificacao-final/validacao-capturas.codigo](verificacao-final/validacao-capturas.codigo) |
+
+A célula U confirmou 48 passos: 21 cobertos pelo build e 27 corridos depois dele. As células D e C passaram, com zero diferenças nos ficheiros conferidos e a mesma cabeça do início ao fim. `check:series` leu o motor, além do sítio; o cruzamento confirmou cada linha e ficheiro byte a byte. Os dois avisos de resumo global dos livros `20 Orcamento do Estado` e `24 Orcamento 2027 Analise` não são diferenças nas linhas exportadas e ficam no registo.
+
+O pedido [pedido-capturas.json](pedido-capturas.json) prende as quatro rotas e a cabeça completa de `dist/version.json`. Correu por `sh scripts/leituras/capturar-pelo-escrivao.sh <temporario>/hb1c-fecho/pedido-capturas.json <temporario>/hb1c-capturas-final-20261020`. O manifesto [capturas.json](capturas.json) regista 20 capturas completas, nas larguras 390, 768, 1 024, 1 280 e 1 600 px, e 100 recortes do título, resumo, preços locais, lei e rua. Os 120 PNG tiveram o SHA-256 conferido; os recursos servidos também estão presos pelo manifesto. Zero transbordos horizontais, recursos em falta, pedidos externos ou erros do navegador.
+
+A inspeção visual abrangeu os resumos das duas páginas e edições nas cinco larguras, quatro capturas completas para a organização geral e amostras dos preços locais, da lei e da rua. Não foram observados cortes ou sobreposições nessas imagens. [revisao-visual.json](revisao-visual.json) enumera os ficheiros vistos e as dimensões medidas; esta inspeção não substitui a leitura a frio do conteúdo. Os PNG permanecem em `<temporario>/hb1c-capturas-final-20261020/`; só os manifestos e as provas textuais entram no repositório.
+
+
 ## Fontes, direitos e limites
 
-Os corpos permanecem no motor. A avaliação de direitos mantém `publicar_corpos: false`; as páginas do sítio não receberam corpos integrais. As citações de imprensa continuam identificadas como imprensa, sem converter a reprodução numa fonte primária da pessoa ou entidade citada. Não há conteúdo sobre vida privada acrescentado ao documento.
+Os corpos permanecem no motor. A avaliação de direitos mantém `publicar_corpos: false`; as páginas não receberam corpos integrais. As citações de imprensa continuam identificadas como imprensa, sem converter uma reprodução em fonte primária da pessoa ou entidade citada. Não foi acrescentado conteúdo sobre vida privada.
 
-## Verificação
+## Histórico dos bloqueios e passagem seguinte
 
-`testes.json` e os registos ao lado guardam os códigos das verificações dirigidas. `plantas.json` contém as três classes de estrago nas duas edições: valor, excerto e literal sem apoio. Cada uma foi recusada com a falha esperada; os ficheiros de produção não foram alterados pelas plantas. O teste também muda o período de uma linha numa cópia e confere as duas línguas.
+A primeira tentativa dos portões foi recusada com código 9 por árvore suja e sem produzir os três ficheiros de código. O relatório inicial aguardava o trailer de sessão. A HB1-b integrou e comitou as correções; esses impedimentos não descrevem o estado da corrida HB1-c. `portoes.json` e `testes.json` conservam o histórico, separado da prova final.
 
-A corrida completa do motor passou no hook do commit. `commit-motor.json` conserva o resultado do escrivão. Os testes dirigidos do sítio conferiram o livro, as afirmações, as famílias, os documentos, a travessia e as portas do renderizador. Os portões completos e as capturas não correram, pela recusa descrita acima.
+Na primeira corrida HB1-c, sobre `516ac586ffba0fa229dc14ae530333f80a319524`, o build e a tipagem passaram; `check:explicacoes` falhou pela diferença entre `21/10/2026` e `21.10.2026`. A alteração do teste foi preparada depois de terminarem as conferências do sítio, enquanto o motor corria; por isso `verificacao-anterior/estado.fim` regista esse ficheiro modificado. Esta corrida recusada não é apresentada como prova final do sítio. O motor terminou com código 0 e árvore limpa. A correção foi comitada pelo escrivão antes da repetição completa do sítio.
 
-## Siglas
+A corrida dirigida antiga de `scripts/check-leituras.py` terminou com código 1: `tests/leituras/ferramentas.py` tentou abrir Chromium dentro da sandbox e recebeu `bootstrap_check_in org.chromium.Chromium.MachPortRendezvousServer.66817: Permission denied (1100)`. Essa chamada indireta não foi repetida dentro da sandbox. O código histórico permanece em `testes.json` e o registo em `leituras.log`; a conferência completa final correu pelo escrivão.
 
-As expansões introduzidas são INE, IVA, IRS, PSP, IGAI, CGTP, PS, PCP, BE, PAN, IL, PSD, CDS e FEH, com equivalentes na edição inglesa e as siglas portuguesas conservadas nas citações. O primeiro uso no documento composto foi relido nas duas edições; as expansões antecedem as citações posteriores. A revisão visual das portas continua pendente.
-
-## Frases compostas
-
-`frases-renderizadas.json` conserva os parágrafos das duas edições lidos do HTML do motor, sem os reescrever no relatório. São os documentos compostos; a conferência do renderizador correu separadamente, sem os apresentar como páginas já construídas ou fotografadas.
-
-
-## Continuação necessária
-
-Recebida a linha `Claude-Session`, pedir o commit do sítio ao escrivão com os ficheiros explícitos. Correr `sh scripts/leituras/portoes-pelo-escrivao.sh <temporario>/hb1-portoes-novos`, ler os três códigos e corrigir as falhas antes de repetir. Depois preparar o pedido de capturas com a cabeça completa de `dist/version.json`, as rotas de estudo e documento nas duas edições e as cinco larguras do mandato, e correr `capturar-pelo-escrivao.sh`. As capturas ainda não foram pedidas, porque não há `dist/` construído.
-
-A passagem do INE continua reservada às divulgações efetivas. A leitura a frio e a aterragem pertencem às passagens seguintes, sem `push` nesta construção.
-
-
-## Falha adicional de ambiente
-
-A corrida dirigida de `scripts/check-leituras.py` terminou com código 1. O guião `tests/leituras/ferramentas.py` tentou abrir Chromium dentro da sandbox, numa prova sintética, e recebeu `bootstrap_check_in org.chromium.Chromium.MachPortRendezvousServer.66817: Permission denied (1100)`. Essa chamada indireta não devia ter sido feita dentro da sandbox e não foi repetida. Os restantes guiões dessa corrida terminaram com código 0. O registo está em `leituras.log`; esta falha não foi ocultada nem contada como passe. A conferência completa pertence aos portões pelo escrivão.
+Fica pendente a passagem curta de sexta-feira, 23.10.2026: conferir a divulgação efetiva dos preços locais do INE, alojar o destaque e o anexo trimestral, selar novamente os três identificadores com `2026-Q2`, refazer a razão Lisboa/Portugal se os valores mudarem, recompor as duas edições, correr as células e capturas e entregar as frases dos preços ao lugar de direção. Não se tomou o calendário por prova de publicação. A leitura a frio e a aterragem pertencem às passagens seguintes; não houve `push`, publicação nem envio nesta construção.
