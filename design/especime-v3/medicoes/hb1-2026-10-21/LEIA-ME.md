@@ -244,3 +244,5 @@ Os campos que continuam por verificar são `document.edition` de `hab-ine-calend
 ### Corridas recusadas e correções de integração
 
 A primeira corrida sobre `34e51c59` teve build 1, verify 125 (não executado), typecheck 0 e motor 0. Faltavam declarações de lugar das duas correções textuais. Durante a corrida do motor, essas dependências foram corrigidas no sítio; por isso o estado final dessa corrida está sujo e não é apresentado como prova final do sítio. A segunda corrida, sobre `f8f4a4d9`, teve build 1, verify 125 e typecheck 0: a incorporação de uma das novas contas derivadas exigiu a declaração de lugar. Os registos completos ficam em [portoes-diagnostico-1](correcao-hb1b/portoes-diagnostico-1/) e [portoes-diagnostico-2](correcao-hb1b/portoes-diagnostico-2/). O motor permaneceu em `e8d6f79e`, com árvore limpa e código zero.
+
+A terceira corrida, sobre `600767a3`, teve build 1, verify 125 e typecheck 0. A página inglesa encontrou uma linha da série de sobrecarga sem nome no catálogo das portas do estudo. O registo fica em [portoes-diagnostico-3](correcao-hb1b/portoes-diagnostico-3/).

@@ -1,4 +1,4 @@
-import { hasSerie, getSerie } from './series.mjs';
+import { hasSerie, getSerie, allSeries } from './series.mjs';
 import rotulosDasSeries from '../data/rotulos-das-series.json' with { type: 'json' };
 import { nomeDoProjeto } from '../data/nomes-das-medidas.mjs';
 import { routePath } from './routes.mjs';
@@ -600,12 +600,16 @@ export function pecasDoCorpo({
           const nome = nomeDoProjeto(id)?.[lang];
           let label;
           if (nome) label = `<span data-nome="projeto" data-de-linha="${escapaAtributo(id)}">${escapaTexto(nome)}</span>`;
-          else if (hasSerie(id)) {
-            const serie = getSerie(id);
-            const rotulo = rotulosDasSeries.rotulos.find(r => r.serie === id)?.documento;
-            if (!rotulo || rotulo !== /** @type {{title: string}} */ (serie.document).title) throw new FalhaDoRegisto(`série citada sem rótulo conferido: ${id}`);
-            label = `<span lang="en" data-serie="${escapaAtributo(id)}" data-serie-campo="document.title">${escapaTexto(rotulo)}</span>`;
-          } else throw new FalhaDoRegisto(`linha citada sem nome: ${id}`);
+          else {
+            // Uma citação silenciosa pode apontar para a linha nacional ou da
+            // União. A relação com a série é declarada, nunca deduzida do id.
+            const candidatas = hasSerie(id) ? [getSerie(id)] : allSeries().filter(s => s.linha_de_portugal === id || s.linha_da_uniao === id);
+            if(candidatas.length !== 1)throw new FalhaDoRegisto(`linha citada sem série unívoca para o rótulo: ${id}`);
+            const serie = candidatas[0];
+            const rotulo = rotulosDasSeries.rotulos.find(r => r.serie === serie.id)?.documento;
+            if (!rotulo || rotulo !== /** @type {{title: string}} */ (serie.document).title) throw new FalhaDoRegisto(`série citada sem rótulo conferido: ${serie.id}`);
+            label = `<span lang="en" data-serie="${escapaAtributo(serie.id)}" data-serie-campo="document.title">${escapaTexto(rotulo)}</span>`;
+          }
           saida.html(`<li><a href="${escapaAtributo(routePath('linha', lang, { slug: id }))}">${label}</a></li>`);
         }
         saida.html('</ul></details>');
