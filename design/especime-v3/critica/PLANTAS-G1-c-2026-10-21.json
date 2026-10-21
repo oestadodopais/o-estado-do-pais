@@ -1,0 +1,46 @@
+{
+ "registado_em": "2026-10-21T11:25:36+00:00",
+ "copia": "<pacotes>/pacote-g1-c-2026-10-21",
+ "plantas": [
+  {
+   "id": "J1",
+   "ficheiro": "public/js/interacao-dos-graficos.js",
+   "descricao": "a função que confina a etiqueta do svg muda de nome na cópia e deixa de ser chamada; a referência é o diff",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "c5e42b905d26d12581e292acfec8957fbbf20604e674bee321f4aa1b39ebd989",
+   "sha256_depois": "147de9cb04dee7fd8b82d184f28dc3f6c1f0049d93108f5f18d1cd3d50f493ca",
+   "contexto_antes": "dentro do `<svg>` fica dentro do viewBox nos dois\n     eixos; quando sairia por um lado, o `text` desloca-se para dentro, ao acender e ao mudar a largura. */\n  function confina(p) {\n    var t = p.querySelector('text');\n    var svg = p.ownerSVGElement;\n    if (!t || !svg || !svg.viewBox || !svg.viewBox.baseVal || !svg.viewBox.baseVal.width)",
+   "contexto_depois": "dentro do `<svg>` fica dentro do viewBox nos dois\n     eixos; quando sairia por um lado, o `text` desloca-se para dentro, ao acender e ao mudar a largura. */\n  function confinaNao(p) {\n    var t = p.querySelector('text');\n    var svg = p.ownerSVGElement;\n    if (!t || !svg || !svg.viewBox || !svg.viewBox.baseVal || !svg.viewBox.baseVal.width)"
+  },
+  {
+   "id": "J2",
+   "ficheiro": "design/especime-v3/medicoes/g1-2026-10-21/capturas-390-c.json",
+   "descricao": "o desempate plantado passa a ter acendido o primeiro ponto na cópia do manifesto; a referência são as posições e a regra do x estrito",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "2cd79c70d45748a240e3ce029a02a62530f299c3083774b02728f7dfa7e3ce07",
+   "sha256_depois": "372211ff4f38dd7fd81bcd31c9cadb49da9246798db928032927c6d31d3c5cef",
+   "contexto_antes": "      \"x\": 313.713,\n          \"y\": 71.803\n        },\n        \"dxAoPrimeiro\": 0.759,\n        \"dxAoSegundo\": 0.658,\n        \"dyAoPrimeiro\": 0,\n        \"dyAoSegundo\": 27.255,\n        \"ativoPeriodo\": \"maio de 2023\",\n        \"acendeuOSegundo\": true\n      },\n      \"toque\": {\n        \"encontrado\": true,\n        \"ultimo\": true,\n        \"ativo\": \"janeiro de 1992: 9,41 %\",\n        \"etiqueta\": \"9,41 %janeiro de",
+   "contexto_depois": "      \"x\": 313.713,\n          \"y\": 71.803\n        },\n        \"dxAoPrimeiro\": 0.759,\n        \"dxAoSegundo\": 0.658,\n        \"dyAoPrimeiro\": 0,\n        \"dyAoSegundo\": 27.255,\n        \"ativoPeriodo\": \"maio de 2023\",\n        \"acendeuOSegundo\": false\n      },\n      \"toque\": {\n        \"encontrado\": true,\n        \"ultimo\": true,\n        \"ativo\": \"janeiro de 1992: 9,41 %\",\n        \"etiqueta\": \"9,41 %janeiro de"
+  },
+  {
+   "id": "J4",
+   "ficheiro": "scripts/leituras/captar.mjs",
+   "descricao": "a opção do toque no primeiro ponto do captar.mjs alterada na cópia; a referência é o diff",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "0befc596ce06466e936573ac45841b8cc16391fb39efc0cc3a54001bc156d812",
+   "sha256_depois": "5361d55747739dbb69b0a43a07fd371fe1fa0ae315839c26554c8a51ef844b7d",
+   "contexto_antes": "centro dele) antes da captura; recusa a captura se nenhum ponto acender, e guarda\n *   nas medidas o `aria-label` do ponto aceso e o texto da etiqueta aberta.\n * G1-c (21.10.2026): `toqueNoPrimeiro` toca o primeiro ponto; a etiqueta do `<svg>` mede-se também contra a caixa do\n *   `<svg>` (a recusa quando sai por um eixo); `desempate` toca entre dois meses vizinhos, mais perto do segundo em x\n *   por cinco centésimos de unidade do ",
+   "contexto_depois": "centro dele) antes da captura; recusa a captura se nenhum ponto acender, e guarda\n *   nas medidas o `aria-label` do ponto aceso e o texto da etiqueta aberta.\n * G1-c (21.10.2026): `toqueNoPrimeir0` toca o primeiro ponto; a etiqueta do `<svg>` mede-se também contra a caixa do\n *   `<svg>` (a recusa quando sai por um eixo); `desempate` toca entre dois meses vizinhos, mais perto do segundo em x\n *   por cinco centésimos de unidade do "
+  },
+  {
+   "id": "J5",
+   "ficheiro": "design/especime-v3/medicoes/g1-2026-10-21/inventario-c.json",
+   "descricao": "a contagem dos desenhos com valores escondidos passa de 124 a 125 na cópia do inventário; a referência é a tabela do relatório",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "0bb92243f3eca06add40180effdf634980b86ea795228d506e29ad81e47ec20b",
+   "sha256_depois": "a4a1bc6bfca01d9b9083c945ebd31cfef661e34c5b253aa3d0baf9d068c933e0",
+   "contexto_antes": "{\n \"dist\": \"dist\",\n \"paginasComGraficos\": 757,\n \"graficos\": 2863,\n \"semToque\": 2641,\n \"semToqueComValoresEscondidos\": 0,\n \"porCategoria\": {\n  \"erro\": 6,\n  \"valores-escondidos\": 124,\n  \"sem-algarismos\": 68,\n  \"escondido\": 2510,\n  \"valores-escritos\": 96,\n  \"com-camada\": 2,\n  \"documento\": 57\n },\n \"componentes\": {\n  \"svg.fc-tapete\": {\n   \"cat",
+   "contexto_depois": "{\n \"dist\": \"dist\",\n \"paginasComGraficos\": 757,\n \"graficos\": 2863,\n \"semToque\": 2641,\n \"semToqueComValoresEscondidos\": 0,\n \"porCategoria\": {\n  \"erro\": 6,\n  \"valores-escondidos\": 125,\n  \"sem-algarismos\": 68,\n  \"escondido\": 2510,\n  \"valores-escritos\": 96,\n  \"com-camada\": 2,\n  \"documento\": 57\n },\n \"componentes\": {\n  \"svg.fc-tapete\": {\n   \"cat"
+  }
+ ]
+}

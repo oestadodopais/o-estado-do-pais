@@ -1,0 +1,46 @@
+{
+ "registado_em": "2026-10-21T10:43:14+00:00",
+ "copia": "<pacotes>/pacote-g1-b-2026-10-21",
+ "plantas": [
+  {
+   "id": "H1",
+   "ficheiro": "public/js/interacao-dos-graficos.js",
+   "descricao": "o ponto mais próximo volta a medir-se ao grupo e não ao círculo na cópia do guião; a referência é o diff e o registo das capturas",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "bbc935a13e614a512da07a71382cc2a0f865777b935229775af01101f42c8ed1",
+   "sha256_depois": "c2d158bac40de4f1679b9e5e730b93b0c5bb3ad24c85ad57e7a631a9c1e08a55",
+   "contexto_antes": "p);\n    }\n  }\n\n  /* O ponto desenhado de cada grupo: o círculo marcado; sem ele, a zona de toque; sem nenhum, o próprio ponto (as\n     marcas das faixas). */\n  function desenhoDe(p) { return p.querySelector('circle') || p.querySelector('rect') || p; }\n\n  function maisProximo(g, x, y) {\n    var melhor = null;\n    var dist = Infinity;\n    pontosDe(g).forEach(function (p) {\n      var r = desenhoDe(p).getBoundin",
+   "contexto_depois": "p);\n    }\n  }\n\n  /* O ponto desenhado de cada grupo: o círculo marcado; sem ele, a zona de toque; sem nenhum, o próprio ponto (as\n     marcas das faixas). */\n  function desenhoDe(p) { return p.querySelector('circle-nao') || p.querySelector('rect') || p; }\n\n  function maisProximo(g, x, y) {\n    var melhor = null;\n    var dist = Infinity;\n    pontosDe(g).forEach(function (p) {\n      var r = desenhoDe(p).getBoundin"
+  },
+  {
+   "id": "H2",
+   "ficheiro": "design/especime-v3/medicoes/g1-2026-10-21/capturas-390-b.json",
+   "descricao": "o ponto aceso pelo toque no centro passa de julho de 2007 a janeiro de 2022 na cópia do manifesto; a referência são as posições dos pontos no viewBox",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "1702961b969bc3b364c8eda3a61d8da6e8f1593f110c321a01abe2f4a1617e91",
+   "sha256_depois": "b9c469c4d5914ea5435f171a1c8b8d0aba07f8492b804760c513afc9d6cfffc1",
+   "contexto_antes": "rgura\": 390,\n            \"altura\": 900\n          }\n        },\n        \"geometria\": {\n          \"xDoToqueNoViewBox\": 180,\n          \"maisProximo\": {\n            \"periodo\": \"julho de 2007\",\n            \"cx\": 179.769\n          },\n          \"ativoPeriodo\": \"julho de 2007\",\n          \"bate\": true\n        }\n      },\n      \"sha256\": \"37fb6d8642dfdf462",
+   "contexto_depois": "rgura\": 390,\n            \"altura\": 900\n          }\n        },\n        \"geometria\": {\n          \"xDoToqueNoViewBox\": 180,\n          \"maisProximo\": {\n            \"periodo\": \"janeiro de 2022\",\n            \"cx\": 179.769\n          },\n          \"ativoPeriodo\": \"julho de 2007\",\n          \"bate\": true\n        }\n      },\n      \"sha256\": \"37fb6d8642dfdf462"
+  },
+  {
+   "id": "H5",
+   "ficheiro": "scripts/leituras/captar.mjs",
+   "descricao": "a conferência da etiqueta dentro do ecrã deixa de exigir o eixo vertical na cópia do captar.mjs; a referência é o diff e o mandato",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "1e0dbcce5e6663847f20d383110241668a76579540b2dd387f2e39fd3fa91dbb",
+   "sha256_depois": "86a5352651ab1cf9bd004faf71aaea4fd287dc54159e5b25e75f4a410cba760c",
+   "contexto_antes": " ?? null, etiqueta: (comum ?? daSvg)?.textContent ?? null, etiquetaDentro, geometria };\n        }, { sel: p.toque, ultimo: Boolean(p.toqueNoUltimo) });\n        if (medidas.toque.encontrado && (!medidas.toque.etiquetaDentro?.horizontal || !medidas.toque.etiquetaDentro?.vertical)) throw new Error(`${prefixo}: a etiqueta do toque em ${p.toque} sai da janela`);\n        if (medidas.toque.geometria && !medidas.toque.geometria.bate) throw new Error(`${prefixo}: o ponto aceso não é o mais próximo do x do toque`);\n        ",
+   "contexto_depois": " ?? null, etiqueta: (comum ?? daSvg)?.textContent ?? null, etiquetaDentro, geometria };\n        }, { sel: p.toque, ultimo: Boolean(p.toqueNoUltimo) });\n        if (medidas.toque.encontrado && (!medidas.toque.etiquetaDentro?.horizontal)) throw new Error(`${prefixo}: a etiqueta do toque em ${p.toque} sai da janela`);\n        if (medidas.toque.geometria && !medidas.toque.geometria.bate) throw new Error(`${prefixo}: o ponto aceso não é o mais próximo do x do toque`);\n        "
+  },
+  {
+   "id": "H3",
+   "ficheiro": "design/especime-v3/medicoes/g1-2026-10-21/inventario-depois.json",
+   "descricao": "a contagem dos desenhos sem toque que escondem valores passa de 0 a 1 na cópia do inventário depois; a referência são as medidas e o relatório",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "9b2b4f0d956701a8826db4e04884a5ced90b49140cd186147a9df0d8538dacab",
+   "sha256_depois": "cb2db95512037a42b54bf732a98e8934bf5be175307f73b9569edfa64f5c6c11",
+   "contexto_antes": "{\n \"dist\": \"dist\",\n \"paginasComGraficos\": 757,\n \"graficos\": 2863,\n \"semToque\": 2645,\n \"semToqueComValoresEscondidos\": 0,\n \"porCategoria\": {\n  \"algarismos-de-escala\": 8,\n  \"valores-escondidos\": 122,\n  \"sem-algarismos\": 68,\n  \"escondido\": 2510,\n  \"valores-escritos\": 96,\n  \"decorat",
+   "contexto_depois": "{\n \"dist\": \"dist\",\n \"paginasComGraficos\": 757,\n \"graficos\": 2863,\n \"semToque\": 2645,\n \"semToqueComValoresEscondidos\": 1,\n \"porCategoria\": {\n  \"algarismos-de-escala\": 8,\n  \"valores-escondidos\": 122,\n  \"sem-algarismos\": 68,\n  \"escondido\": 2510,\n  \"valores-escritos\": 96,\n  \"decorat"
+  }
+ ]
+}

@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-21T10:06:28+00:00",
+ "copia": "<pacotes>/pacote-g1-2026-10-21",
+ "plantas": [
+  {
+   "id": "G4",
+   "ficheiro": "design/especime-v3/medicoes/g1-2026-10-21/medidas.json",
+   "descricao": "a contagem dos desenhos sem toque antes do bloco passa de 70 a 60 na cópia das medidas; a referência é o inventário antes e o relatório",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "51c0baf63ddba78fa4341163d70611ac583cd9f6992c8c0ecfe68cdbc78651f8",
+   "sha256_depois": "7565753da41838b6a945be86d12f21564b9410adf132e30386ec3f1677203b21",
+   "contexto_antes": "\"cabeca_do_dist\": \"a743d51be59c4190c656e17ef0841252608741c2\",\n \"medidas\": [\n  {\n   \"nome\": \"gráficos que escondem valores e não os mostram ao toque, antes\",\n   \"valor\": 70,\n   \"comando\": \"node scripts/graficos-inventario.mjs --json inventario-antes.json (dist de a39afdc3b)\",\n   \"conhecido_positivo\": \"o gráfico da inflação da prim",
+   "contexto_depois": "\"cabeca_do_dist\": \"a743d51be59c4190c656e17ef0841252608741c2\",\n \"medidas\": [\n  {\n   \"nome\": \"gráficos que escondem valores e não os mostram ao toque, antes\",\n   \"valor\": 60,\n   \"comando\": \"node scripts/graficos-inventario.mjs --json inventario-antes.json (dist de a39afdc3b)\",\n   \"conhecido_positivo\": \"o gráfico da inflação da prim"
+  },
+  {
+   "id": "G1",
+   "ficheiro": "public/js/interacao-dos-graficos.js",
+   "descricao": "o toque («pointerdown») deixa de abrir a etiqueta na cópia do guião de cliente; a referência é o diff e o mandato",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "0d70dae90593dd7d12ec271a644661cb27028c3ba27eb184f6deb7b5fdea170a",
+   "sha256_depois": "5bb07cf0d13448c14db8a421d4995a1ef3bef14f8064d8e40819f675c9824697",
+   "contexto_antes": "  });\n    g.addEventListener('pointerleave', function (ev) {\n      if (ev.pointerType === 'mouse' && !g.contains(document.activeElement)) apaga(g);\n    });\n    g.addEventListener('pointerdown', function (ev) {\n      if (ev.pointerType === 'mouse') return;\n      g._apoiado = true;\n      if (ev.target.releasePointerCapture && ev.target.hasPointerCapture && ev.target.ha",
+   "contexto_depois": "  });\n    g.addEventListener('pointerleave', function (ev) {\n      if (ev.pointerType === 'mouse' && !g.contains(document.activeElement)) apaga(g);\n    });\n    g.addEventListener('pointerupcancel', function (ev) {\n      if (ev.pointerType === 'mouse') return;\n      g._apoiado = true;\n      if (ev.target.releasePointerCapture && ev.target.hasPointerCapture && ev.target.ha"
+  },
+  {
+   "id": "G3",
+   "ficheiro": "built/en/employment/index.html",
+   "descricao": "a leitura da França passa de 75,4 a 75,5 no atributo da página inglesa do emprego construída; a referência é a linha selada",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "17c789c4344e0264a891816e8f6b204e3dec9d8c749da6ffa32e6198fcd06a28",
+   "sha256_depois": "dc786eaadf91553d9c27aaed8976029ec7b4c314f5245b447ae59469ecffda2e",
+   "contexto_antes": "differs) 75,4\" data-grafico-ponto data-grafico-periodo=\"2025\" data-grafico-valor=\"75,4\" data-grafico-unidade=\"\" data-grafico-nome=\"France (definition differs)\" data-grafico-leitura=\"France (definition differs), 2025: 75,4\" role=\"img\" aria-label=\"France (definition differs), 2025: 75,4\" tabindex=\"-1\"></span><span class=\"faixa-ue-marca faixa-ue-pais\" data-faixa-marca=\"taxa-de-empre",
+   "contexto_depois": "differs) 75,4\" data-grafico-ponto data-grafico-periodo=\"2025\" data-grafico-valor=\"75,4\" data-grafico-unidade=\"\" data-grafico-nome=\"France (definition differs)\" data-grafico-leitura=\"France (definition differs), 2025: 75,5\" role=\"img\" aria-label=\"France (definition differs), 2025: 75,4\" tabindex=\"-1\"></span><span class=\"faixa-ue-marca faixa-ue-pais\" data-faixa-marca=\"taxa-de-empre"
+  },
+  {
+   "id": "G2",
+   "ficheiro": "built/index.html",
+   "descricao": "a leitura do ponto da inflação de janeiro de 2022 passa de 3,34 a 3,43 no atributo da primeira página construída; a referência é a linha selada e a etiqueta",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "494371994578712976cb0a4c6cadecb6876f2fb5d4f6ba8d19fed11806f40e63",
+   "sha256_depois": "44da10d39609216f4a0883cde9ea9fd3a1a0704191bc3e663abebe07bf961502",
+   "contexto_antes": " de 2021</tspan></text></g><g data-grafico-ponto data-grafico-periodo=\"janeiro de 2022\" data-grafico-valor=\"3,34\" data-grafico-unidade=\"%\" data-grafico-nome=\"\" data-grafico-leitura=\"janeiro de 2022: 3,34 %\" role=\"img\" aria-label=\"janeiro de 2022: 3,34 %\" tabindex=\"-1\"><rect x=\"302.325\" y=\"12\" width=\"1.017\" height=\"158\"></rect><line x1=\"303.036\" x2=\"303.036\" y1=\"12",
+   "contexto_depois": " de 2021</tspan></text></g><g data-grafico-ponto data-grafico-periodo=\"janeiro de 2022\" data-grafico-valor=\"3,34\" data-grafico-unidade=\"%\" data-grafico-nome=\"\" data-grafico-leitura=\"janeiro de 2022: 3,43 %\" role=\"img\" aria-label=\"janeiro de 2022: 3,34 %\" tabindex=\"-1\"><rect x=\"302.325\" y=\"12\" width=\"1.017\" height=\"158\"></rect><line x1=\"303.036\" x2=\"303.036\" y1=\"12"
+  },
+  {
+   "id": "G5",
+   "ficheiro": "design/especime-v3/medicoes/g1-2026-10-21/capturas-390.json",
+   "descricao": "a etiqueta registada da captura da primeira página passa de 3,34 a 3,43 na cópia do manifesto; a referência é a página construída e a captura",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "967b3559010db4c58ca033155a120c7ecf39410a1faa82f55619970eeaa1b9f2",
+   "sha256_depois": "659a5dbd9dc19871642a7edb6f740bb7397d56256ee9fd0e665d819cd963b92c",
+   "contexto_antes": "o-inflacao-pt-390.png\",\n   \"rota\": \"/\",\n   \"lingua\": \"pt\",\n   \"largura\": 390,\n   \"documento\": 390,\n   \"altura\": 8363,\n   \"toque\": {\n    \"encontrado\": true,\n    \"ativo\": \"janeiro de 2022: 3,34 %\",\n    \"etiqueta\": null,\n    \"etiquetaDentro\": null\n   },\n   \"sha256\": \"0a4d4646842d73b01a3f538458a2286eb2bf29bab5fae523ba06a205750298ed\",\n   \"recortes\": [\n    {",
+   "contexto_depois": "o-inflacao-pt-390.png\",\n   \"rota\": \"/\",\n   \"lingua\": \"pt\",\n   \"largura\": 390,\n   \"documento\": 390,\n   \"altura\": 8363,\n   \"toque\": {\n    \"encontrado\": true,\n    \"ativo\": \"janeiro de 2022: 3,43 %\",\n    \"etiqueta\": null,\n    \"etiquetaDentro\": null\n   },\n   \"sha256\": \"0a4d4646842d73b01a3f538458a2286eb2bf29bab5fae523ba06a205750298ed\",\n   \"recortes\": [\n    {"
+  }
+ ]
+}

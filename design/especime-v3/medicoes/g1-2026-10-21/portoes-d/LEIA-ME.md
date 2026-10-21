@@ -1,0 +1,1 @@
+A corrida inteira na cabeça 53f000069 (a G1-d, com main e2f3bd811 fundido), pelo portoes.sh e pelo lugar de direção, 11:50 a 12:02 UTC: build 0, verify 0, typecheck 0; os registos grandes fora do repositório.
