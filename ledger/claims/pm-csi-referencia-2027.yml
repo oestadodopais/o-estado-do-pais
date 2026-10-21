@@ -13,6 +13,7 @@ unit: "texto"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "Valor de referência e despesa do CSI"
 name_source: "p. 102 PDF (86 impressa)"
+status: "conferido"
 name_en: "CSI reference amount and expenditure"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.

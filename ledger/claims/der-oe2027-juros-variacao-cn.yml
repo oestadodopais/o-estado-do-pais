@@ -13,6 +13,7 @@ unit: "milhões de euros"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "Juros: variação em contabilidade nacional"
 name_source: "Cálculo sobre as linhas identificadas"
+status: "derivado"
 name_en: "Interest: national accounts change"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
@@ -26,8 +27,8 @@ reference_date: "2027"
 excerpt: null
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
-derivation: "8 217 (Juros) − 6 669 (Juros) = 1548. O sinal indica a direção da variação ou do resultado da conta."
-derivation_en: "8 217 (Interest) − 6 669 (Interest) = 1548. The sign indicates the direction of the change or calculation result."
+derivation: "8 217 (Juros, 2027, contabilidade nacional) − 6 669 (Juros, 2026, contabilidade nacional) = 1 548. O sinal indica a direção da variação ou do resultado da conta."
+derivation_en: "8,217 (Interest, 2027, national accounts) − 6,669 (Interest, 2026, national accounts) = 1,548. The sign indicates the direction of the change or calculation result."
 derived_from:
   - "pm-q3-1-r36-c2"
   - "pm-q3-1-r36-c1"

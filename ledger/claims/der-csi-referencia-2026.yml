@@ -13,6 +13,7 @@ unit: "euros"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "CSI: referência mensal de 2026"
 name_source: "Cálculo sobre as linhas identificadas"
+status: "derivado"
 name_en: "Solidarity supplement: 2026 monthly reference"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
@@ -26,8 +27,8 @@ reference_date: "2026"
 excerpt: null
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
-derivation: "720 (CSI: valor de referência mensal) − 50 (CSI: aumento mensal do valor de referência) = 670. O sinal indica a direção da variação ou do resultado da conta."
-derivation_en: "720 (Solidarity supplement: monthly reference amount) − 50 (Solidarity supplement: monthly increase) = 670. The sign indicates the direction of the change or calculation result."
+derivation: "720 (CSI: valor de referência mensal, 2027) − 50 (CSI: aumento mensal do valor de referência, 2027) = 670. O sinal indica a direção da variação ou do resultado da conta."
+derivation_en: "720 (Solidarity supplement: monthly reference amount, 2027) − 50 (Solidarity supplement: monthly increase, 2027) = 670. The sign indicates the direction of the change or calculation result."
 derived_from:
   - "oe-2027-csi-referencia-2027"
   - "oe-2027-csi-aumento-2027"

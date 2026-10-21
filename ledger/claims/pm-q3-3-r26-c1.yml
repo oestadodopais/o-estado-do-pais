@@ -13,6 +13,7 @@ unit: "milhões de euros"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "Segurança Social; 2027; orçamento; milhões de euros"
 name_source: "Quadro 3.3. Passagem de saldos de contabilidade pública a contabilidade nacional; Segurança Social; coluna 2: 2027; orçamento; milhões de euros; p. 61 PDF (45 impressa)"
+status: "conferido"
 name_en: "Social security (1. General government balance in public accounts); 2027; budget; million euros"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.

@@ -13,6 +13,7 @@ unit: "afirmação"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "IRS: reembolsos e rendimento disponível"
 name_source: "p. 14 PDF"
+status: "conferido"
 name_en: "Personal income tax: refunds and disposable income"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.

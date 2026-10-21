@@ -35,7 +35,7 @@ for (const c of claims.values()) {
  if(c.study!==slug) continue;
  assert(c.name && c.name_en,'linha sem nome bilingue: '+c.id);
  assert(localizadorEo1Confere(c.name_source,c),'nome, período ou localizador sem prova: '+c.id); localizadores++;
- const alteracoes=[x=>x.name+=' alterado',x=>x.name_en+=' altered',x=>x.reference_date='1900'];
+ const alteracoes=[x=>x.name+=' alterado',x=>x.name_en+=' altered',x=>x.reference_date='1900',x=>x.status='estado alterado'];
  if(c.document)alteracoes.push(x=>x.document.page++,x=>x.document.source_sha256='0'.repeat(64),x=>x.document.locator+=' alterado');
  for(const altera of alteracoes) {
   const x=structuredClone(c);altera(x);assert(!localizadorEo1Confere(x.name_source,x),'nome, período ou localizador alterado aceite: '+c.id);

@@ -13,6 +13,7 @@ unit: "milhões de euros"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "Medidas novas: impacto no saldo"
 name_source: "Cálculo sobre as linhas identificadas"
+status: "derivado"
 name_en: "New measures: balance impact"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
@@ -26,8 +27,8 @@ reference_date: "2027"
 excerpt: null
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
-derivation: "300 (Combate à fraude no setor dos combustíveis) − 121 (Atualização do limite do mínimo de existência) − 100 (Reforço Complemento Solidário para Idosos (CSI)) = 79. Um resultado negativo reduz o saldo; um resultado positivo aumenta-o."
-derivation_en: "300 (Combating fraud in the fuel sector) − 121 (Updating the minimum subsistence threshold) − 100 (Increase in the solidarity supplement for older people) = 79. A negative result reduces the balance; a positive result increases it."
+derivation: "300 (Combate à fraude no setor dos combustíveis, 2027, contabilidade nacional) − 121 (Atualização do limite do mínimo de existência, 2027, contabilidade nacional) − 100 (Reforço Complemento Solidário para Idosos (CSI), 2027, contabilidade nacional) = 79. Um resultado negativo reduz o saldo; um resultado positivo aumenta-o."
+derivation_en: "300 (Combating fraud in the fuel sector, 2027, national accounts) − 121 (Updating the minimum subsistence threshold, 2027, national accounts) − 100 (Increase in the solidarity supplement for older people, 2027, national accounts) = 79. A negative result reduces the balance; a positive result increases it."
 derived_from:
   - "pm-q3-2-r8-c0"
   - "pm-q3-2-r13-c0"

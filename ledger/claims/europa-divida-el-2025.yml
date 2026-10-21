@@ -13,6 +13,7 @@ unit: "% do PIB"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "Dívida pública bruta consolidada, em percentagem do PIB"
 name_source: "freq=A; unit=PC_GDP; sector=S13; na_item=GD; geo=EL; time=2025; value[71]"
+status: "conferido"
 name_en: "General government consolidated gross debt, as a percentage of GDP"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.

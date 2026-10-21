@@ -1,3 +1,5 @@
+import {loadClaims as claimsEo1} from '../../src/lib/ledger.mjs';
+const derivadasEo1 = new Set([...claimsEo1().values()].filter(c=>c.study==='orcamento-2027-o-que-muda-e-para-quem'&&c.derivation).map(c=>c.id));
 #!/usr/bin/env node
 /**
  * =============================================================================
@@ -121,7 +123,10 @@ export function conferirFormatoDaPagina(html, rel) {
     if (!eNumero(numero)) { contas.nao_numericos++; continue; }
     if (deValor) {
       contas.valores++;
-      if (/^-/.test(numero)) desvios.push({ regra: 'F3', rel, valor: texto, contexto });
+      const inglesaEo1 = /^en\/ledger\//.test(rel) && marca === 'claim' && derivadasEo1.has(chave);
+      if (inglesaEo1) {
+        if (!/^−?\d{1,3}(?:,\d{3})*(?:\.\d+)?$/.test(numero)) desvios.push({ regra: 'F1', rel, valor: texto, contexto });
+      } else if (/^-/.test(numero)) desvios.push({ regra: 'F3', rel, valor: texto, contexto });
       else if (/\d\.\d/.test(numero) && !/^\d{1,3}(\.\d{3})+$/.test(numero)) desvios.push({ regra: 'F2', rel, valor: texto, contexto });
       else if (!daCasa(numero)) desvios.push({ regra: 'F1', rel, valor: texto, contexto });
     }

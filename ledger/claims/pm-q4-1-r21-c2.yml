@@ -13,6 +13,7 @@ unit: "%"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "Juros e outros encargos; 2027/2026; variação; %"
 name_source: "Quadro 4.1. Conta das Administrações Públicas em contabilidade pública; Juros e outros encargos; coluna 3: 2027/2026; variação; %; p. 68 PDF (52 impressa)"
+status: "conferido"
 name_en: "Interest and other charges; 2027/2026; change; %"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.

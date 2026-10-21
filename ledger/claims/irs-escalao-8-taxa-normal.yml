@@ -13,6 +13,7 @@ unit: "%"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "De mais de 48 373 até 89 995; Normal (A), taxa em percentagem, 2027 proposta"
 name_source: "Artigo 68.º; De mais de 48 373 até 89 995; coluna 1: Normal (A), taxa em percentagem, 2027 proposta; p. 75 PDF (75 impressa)"
+status: "conferido"
 name_en: "Personal income tax: normal rate for bracket 8; Normal (A), rate as a percentage, 2027 proposal"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.

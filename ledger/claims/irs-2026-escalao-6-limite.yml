@@ -13,6 +13,7 @@ unit: "euros"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "IRS: limite superior do escalão 6 em 2026"
 name_source: "Artigo 68.º; tabela da redação da Lei n.º 73-A/2025, de 30/12"
+status: "conferido"
 name_en: "Income tax: upper limit of bracket 6 in 2026"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.

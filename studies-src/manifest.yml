@@ -389,21 +389,21 @@ edicoes:
     lang: "pt"
     title: "O Orçamento de 2027: o que muda e para quem"
     origin: "researchhub"
-    origin_ref: "content/27 Orcamento 2027 O que muda/O Orçamento de 2027, o que muda e para quem (pt-PT).html @ c9a26f0201c6b7182c24b799f9ab668280b54ed0"
+    origin_ref: "content/27 Orcamento 2027 O que muda/O Orçamento de 2027, o que muda e para quem (pt-PT).html @ 08138bfa12ec672ccdbafec9216eaa33507014ef"
     raw_file: "_raw/orcamento-2027-o-que-muda-e-para-quem.pt.html"
-    fetched_utc: "2026-10-20T21:19:12Z"
-    bytes_raw: 46220
-    bytes_normalized: 46220
-    sha256_raw: "b711b9f70aa12af83cf5e5a6579a6a65759aa9eecfe3f3f6fb4452dba1829bcc"
-    sha256_normalized: "b711b9f70aa12af83cf5e5a6579a6a65759aa9eecfe3f3f6fb4452dba1829bcc"
+    fetched_utc: "2026-10-21T04:00:51Z"
+    bytes_raw: 47155
+    bytes_normalized: 47155
+    sha256_raw: "6caacec78749a0cab567f96b5ed3bffa0a130ca459a5841ecaef072916e04839"
+    sha256_normalized: "6caacec78749a0cab567f96b5ed3bffa0a130ca459a5841ecaef072916e04839"
   - slug: orcamento-2027-o-que-muda-e-para-quem
     lang: "en"
     title: "The 2027 Budget: what changes, and for whom"
     origin: "researchhub"
-    origin_ref: "content/27 Orcamento 2027 O que muda/The 2027 Budget, what changes, and for whom.html @ c9a26f0201c6b7182c24b799f9ab668280b54ed0"
+    origin_ref: "content/27 Orcamento 2027 O que muda/The 2027 Budget, what changes, and for whom.html @ 08138bfa12ec672ccdbafec9216eaa33507014ef"
     raw_file: "_raw/orcamento-2027-o-que-muda-e-para-quem.en.html"
-    fetched_utc: "2026-10-20T21:19:12Z"
-    bytes_raw: 45552
-    bytes_normalized: 45552
-    sha256_raw: "1e71a996336b127ca69d28f7354b5c71be0c27b0dfebbcceaf2e6366b48904d5"
-    sha256_normalized: "1e71a996336b127ca69d28f7354b5c71be0c27b0dfebbcceaf2e6366b48904d5"
+    fetched_utc: "2026-10-21T04:00:51Z"
+    bytes_raw: 46607
+    bytes_normalized: 46607
+    sha256_raw: "f6cc715aef64e538b0772dc07b6f1db3e30f3ccdf5d9663220660dfd9078fdee"
+    sha256_normalized: "f6cc715aef64e538b0772dc07b6f1db3e30f3ccdf5d9663220660dfd9078fdee"

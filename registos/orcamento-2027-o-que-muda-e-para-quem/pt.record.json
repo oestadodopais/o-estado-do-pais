@@ -76,39 +76,39 @@
      "value": "-1210"
     },
     {
-     "end": 985,
+     "end": 1186,
      "printed": "1 350",
      "row": "der-oe2027-juros-variacao-cp",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 980,
+     "start": 1181,
      "value": "1350"
     },
     {
-     "end": 1039,
+     "end": 1240,
      "printed": "8 575",
      "row": "pm-q4-1-r21-c1",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 1034,
+     "start": 1235,
      "value": "8 575"
     },
     {
-     "end": 1077,
+     "end": 1278,
      "printed": "2 347",
      "row": "der-oe2027-investimento-variacao-cp",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 1072,
+     "start": 1273,
      "value": "-2347"
     },
     {
-     "end": 1098,
+     "end": 1299,
      "printed": "10 417",
      "row": "pm-q4-1-r27-c1",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 1092,
+     "start": 1293,
      "value": "10 417"
     }
    ],
@@ -130,32 +130,54 @@
      "inicio": 386,
      "livro": "PM",
      "modificador": "abs",
-     "sha256_linha": "7456ad25bba6614c6e95e83ef27e3430a21a22b2e10aa5a825915c7ed6670492",
+     "sha256_linha": "8e78bc3136e025951e1fbd3b8f0cc189d6d3296e1221a245b29a6c6ff31ccb13",
      "texto": "1 210",
      "tipo": "valor"
     },
     {
-     "fim": 985,
+     "apoios": [
+      {
+       "campo": "excerpt",
+       "id": "oe-2027-quadro-3-2-nota-i",
+       "livro": "PM"
+      }
+     ],
+     "fim": 471,
+     "inicio": 461,
+     "texto": "invariante",
+     "tipo": "literal"
+    },
+    {
+     "fim": 526,
+     "id": "oe-2027-quadro-3-2-nota-i",
+     "inicio": 505,
+     "livro": "PM",
+     "sha256_linha": "0b9e73760a239977d753302ec25ea5eed13750f8ea251ced91fb6d8419abe6a2",
+     "texto": "Nota: (i) invariante.",
+     "tipo": "excerto"
+    },
+    {
+     "fim": 1186,
      "id": "der-oe2027-juros-variacao-cp",
-     "inicio": 980,
+     "inicio": 1181,
      "livro": "PM",
      "sha256_linha": "e57e1a341beeba575dc649d8ff6066d2aba9adb064d301737fd3a31b8e2b0e4c",
      "texto": "1 350",
      "tipo": "valor"
     },
     {
-     "fim": 1039,
+     "fim": 1240,
      "id": "pm-q4-1-r21-c1",
-     "inicio": 1034,
+     "inicio": 1235,
      "livro": "PM",
      "sha256_linha": "43a8d83aa35e302eae81b204aa18fd76c55ad59e8b6fd49c910dfe7095176348",
      "texto": "8 575",
      "tipo": "valor"
     },
     {
-     "fim": 1077,
+     "fim": 1278,
      "id": "der-oe2027-investimento-variacao-cp",
-     "inicio": 1072,
+     "inicio": 1273,
      "livro": "PM",
      "modificador": "abs",
      "sha256_linha": "da4e0c8500ad95b77581b3392620c282d5aa10f9625434a6e56625fdc4022775",
@@ -163,9 +185,9 @@
      "tipo": "valor"
     },
     {
-     "fim": 1098,
+     "fim": 1299,
      "id": "pm-q4-1-r27-c1",
-     "inicio": 1092,
+     "inicio": 1293,
      "livro": "PM",
      "sha256_linha": "74d27f0912cc20641b4041a48c656b9ede90f87461e6c25e15e883cace380694",
      "texto": "10 417",
@@ -179,12 +201,13 @@
     "utao-novas-medidas",
     "der-oe2027-medidas-novas-saldo",
     "der-oe2027-medidas-anteriores-saldo",
+    "oe-2027-quadro-3-2-nota-i",
     "der-oe2027-juros-variacao-cp",
     "pm-q4-1-r21-c1",
     "der-oe2027-investimento-variacao-cp",
     "pm-q4-1-r27-c1"
    ],
-   "text": "O Orçamento para 2027 muda pouco por si próprio. As três medidas novas que o relatório identifica, a receita esperada do combate à fraude nos combustíveis, a atualização do mínimo de existência no Imposto sobre o Rendimento das Pessoas Singulares (o IRS) e o reforço do Complemento Solidário para Idosos (o CSI), somam 79 milhões de euros a favor do saldo. O que pesa no saldo de 2027, 1 210 milhões de euros, são as dez linhas que o próprio quadro marca como «invariante»: a atualização dos escalões e da dedução específica do IRS, o IRS das rendas moderadas e o Imposto sobre o Valor Acrescentado (o IVA) da construção de habitação, a descida de um ponto do Imposto sobre o Rendimento das Pessoas Coletivas (o IRC) e a reversão do SIFIDE, a receita que o aumento dos salários traz em IRS e em contribuições, o acordo de rendimentos, o salário mínimo e os acordos salariais da função pública. E o que mais muda nas contas não está no quadro das medidas: os juros da dívida sobem 1 350 milhões de euros em contabilidade pública, para 8 575 milhões, e o investimento desce 2 347 milhões, para 10 417 milhões, porque o Plano de Recuperação e Resiliência (o PRR, o dinheiro europeu de recuperação pós-pandemia) acaba em 2026."
+   "text": "O Orçamento para 2027 muda pouco por si próprio. As três medidas novas que o relatório identifica, a receita esperada do combate à fraude nos combustíveis, a atualização do mínimo de existência no Imposto sobre o Rendimento das Pessoas Singulares (o IRS) e o reforço do Complemento Solidário para Idosos (o CSI), somam 79 milhões de euros a favor do saldo. O que pesa no saldo de 2027, 1 210 milhões de euros, são as dez linhas que o próprio quadro marca como «invariante» (a nota do quadro diz só isso, «Nota: (i) invariante.»; o que o relatório e a UTAO contam nelas está na secção das medidas): a atualização dos escalões e da dedução específica do IRS, o IRS das rendas moderadas e o Imposto sobre o Valor Acrescentado (o IVA) da construção de habitação, a descida de um ponto do Imposto sobre o Rendimento das Pessoas Coletivas (o IRC) e a reversão do SIFIDE (Sistema de Incentivos Fiscais à Investigação e Desenvolvimento Empresarial), a receita que o aumento dos salários traz em IRS e em contribuições, o acordo de rendimentos, o salário mínimo e os acordos salariais da função pública. E o que mais muda nas contas não está no quadro das medidas: os juros da dívida sobem 1 350 milhões de euros em contabilidade pública, para 8 575 milhões, e o investimento desce 2 347 milhões, para 10 417 milhões, porque o Plano de Recuperação e Resiliência (o PRR, o dinheiro europeu de recuperação pós-pandemia) acaba em 2026."
   },
   {
    "figures": [
@@ -352,75 +375,75 @@
      "value": "84,5"
     },
     {
-     "end": 234,
+     "end": 353,
      "printed": "3,0",
      "row": "pm-q3-6-r43-c3",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 231,
+     "start": 350,
      "value": "-3,0"
     },
     {
-     "end": 371,
+     "end": 595,
      "printed": "3,1",
      "row": "pm-q3-6-r50-c2",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 368,
+     "start": 592,
      "value": "3,1"
     },
     {
-     "end": 387,
+     "end": 611,
      "printed": "0,9",
      "row": "pm-q3-6-r50-c3",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 384,
+     "start": 608,
      "value": "0,9"
     },
     {
-     "end": 445,
+     "end": 702,
      "printed": "2,5",
      "row": "pm-q3-6-r44-c3",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 442,
+     "start": 699,
      "value": "-2,5"
     },
     {
-     "end": 463,
+     "end": 720,
      "printed": "2,1",
      "row": "pm-q3-6-r44-c2",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 460,
+     "start": 717,
      "value": "-2,1"
     },
     {
-     "end": 521,
+     "end": 847,
      "printed": "1,5",
      "row": "pm-q3-6-r45-c3",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 518,
+     "start": 844,
      "value": "-1,5"
     },
     {
-     "end": 532,
+     "end": 858,
      "printed": "2,6",
      "row": "pm-q3-6-r45-c2",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 529,
+     "start": 855,
      "value": "-2,6"
     },
     {
-     "end": 600,
+     "end": 926,
      "printed": "86,0",
      "row": "ce-primavera-2026-divida-2027",
      "source_body": "content/25 Orcamento 2027 Medidas/source/europa/ce-primavera-2026.pdf",
      "source_sha256": "6d6dac3c4f1cecfa7c1b8e518eef22828a55f64d41264500026cbc0bb77da4e5",
-     "start": 596,
+     "start": 922,
      "value": "86.0"
     }
    ],
@@ -446,9 +469,36 @@
      "tipo": "valor"
     },
     {
-     "fim": 234,
+     "fim": 280,
+     "id": "posicao-governo-divida85",
+     "inicio": 179,
+     "livro": "PM",
+     "sha256_linha": "3c017dc7a2e25369638c8519f8e7df33e40aa9c6b1e10692b09147a5882c3a05",
+     "texto": "Miranda Sarmento: dívida pública abaixo dos 85% do PIB em 2027 é a \"principal preocupação\" do Governo",
+     "tipo": "documento"
+    },
+    {
+     "apoios": [
+      {
+       "campo": "excerpt",
+       "id": "posicao-governo-divida85-citacao",
+       "livro": "PM"
+      },
+      {
+       "campo": "excerpt",
+       "id": "posicao-governo-divida85",
+       "livro": "PM"
+      }
+     ],
+     "fim": 334,
+     "inicio": 313,
+     "texto": "principal preocupação",
+     "tipo": "literal"
+    },
+    {
+     "fim": 353,
      "id": "pm-q3-6-r43-c3",
-     "inicio": 231,
+     "inicio": 350,
      "livro": "PM",
      "modificador": "abs",
      "sha256_linha": "8417f16e29100542cd2c203fd27a7491944018646d41a519ecb5502ff1348d04",
@@ -456,27 +506,27 @@
      "tipo": "valor"
     },
     {
-     "fim": 371,
+     "fim": 595,
      "id": "pm-q3-6-r50-c2",
-     "inicio": 368,
+     "inicio": 592,
      "livro": "PM",
      "sha256_linha": "9ed7ae1f87e01590455c1967c620051e93321db673f0c1877e4110eef393f660",
      "texto": "3,1",
      "tipo": "valor"
     },
     {
-     "fim": 387,
+     "fim": 611,
      "id": "pm-q3-6-r50-c3",
-     "inicio": 384,
+     "inicio": 608,
      "livro": "PM",
      "sha256_linha": "c0391fa6581a0c3bae7a20129912be075b1ec34625efe30a4ea321ba7ebf3c76",
      "texto": "0,9",
      "tipo": "valor"
     },
     {
-     "fim": 445,
+     "fim": 702,
      "id": "pm-q3-6-r44-c3",
-     "inicio": 442,
+     "inicio": 699,
      "livro": "PM",
      "modificador": "abs",
      "sha256_linha": "470b4f8abd8267f1146eb818c8f56bc147a1ebea1502056de89c54ae39389ba1",
@@ -484,9 +534,9 @@
      "tipo": "valor"
     },
     {
-     "fim": 463,
+     "fim": 720,
      "id": "pm-q3-6-r44-c2",
-     "inicio": 460,
+     "inicio": 717,
      "livro": "PM",
      "modificador": "abs",
      "sha256_linha": "7933282db11c599c7cc111e05b5bb1f205f646fa75356e1a11c7d2e6df29b0c3",
@@ -494,9 +544,9 @@
      "tipo": "valor"
     },
     {
-     "fim": 521,
+     "fim": 847,
      "id": "pm-q3-6-r45-c3",
-     "inicio": 518,
+     "inicio": 844,
      "livro": "PM",
      "modificador": "abs",
      "sha256_linha": "1dd33a73f138ffb6215ea10fcc21936d95605586cce08e1581e280fa435537c1",
@@ -504,9 +554,9 @@
      "tipo": "valor"
     },
     {
-     "fim": 532,
+     "fim": 858,
      "id": "pm-q3-6-r45-c2",
-     "inicio": 529,
+     "inicio": 855,
      "livro": "PM",
      "modificador": "abs",
      "sha256_linha": "5ce10eb5463638c4c4ed6761abdabf424400ffc9cc105087f0485ce69dbee143",
@@ -514,9 +564,9 @@
      "tipo": "valor"
     },
     {
-     "fim": 600,
+     "fim": 926,
      "id": "ce-primavera-2026-divida-2027",
-     "inicio": 596,
+     "inicio": 922,
      "livro": "PM",
      "sha256_linha": "cf973cf18b1062202c5075787058cc2982369d140156795b77bcec8bd095478a",
      "texto": "86,0",
@@ -528,6 +578,7 @@
     "utao-divida-ajustamento",
     "pm-q3-6-r42-c2",
     "pm-q3-6-r42-c3",
+    "posicao-governo-divida85",
     "pm-q3-6-r43-c3",
     "pm-q3-6-r50-c2",
     "pm-q3-6-r50-c3",
@@ -537,7 +588,7 @@
     "pm-q3-6-r45-c2",
     "ce-primavera-2026-divida-2027"
    ],
-   "text": "A dívida pública deve descer de 87,5 % do produto interno bruto (o PIB) em 2026 para 84,5 % em 2027, abaixo do nível que o ministro das Finanças anunciou para 2027 ao chamar à dívida pública a «principal preocupação». A descida de 3,0 pontos é maior do que a de 2026 sobretudo porque o Estado compra menos ativos financeiros, com o ajustamento défice-dívida a cair de 3,1 pontos para 0,9 pontos; o excedente primário contribui um pouco mais (2,5 pontos contra 2,1 em 2026) e o efeito do crescimento e dos juros menos (1,5 contra 2,6). A Comissão Europeia, na primavera, antes da proposta, previa 86,0 % para 2027."
+   "text": "A dívida pública deve descer de 87,5 % do produto interno bruto (o PIB) em 2026 para 84,5 % em 2027, abaixo do nível que o ministro das Finanças anunciou para 2027, pela notícia «Miranda Sarmento: dívida pública abaixo dos 85% do PIB em 2027 é a \"principal preocupação\" do Governo», ao chamar à dívida pública a «principal preocupação». A descida de 3,0 pontos é maior do que a de 2026 sobretudo porque o Estado compra menos ativos financeiros, com o ajustamento défice-dívida (a parte da variação da dívida que o défice não explica, como a compra ou a venda de ativos financeiros) a cair de 3,1 pontos para 0,9 pontos do PIB; o excedente primário (o saldo antes dos juros) contribui um pouco mais (2,5 pontos contra 2,1 em 2026) e o efeito do crescimento e dos juros (o que o crescimento nominal do PIB e os juros pagos fazem ao rácio) menos (1,5 contra 2,6). A Comissão Europeia, na primavera, antes da proposta, previa 86,0 % para 2027."
   },
   {
    "figures": [],
@@ -567,12 +618,12 @@
      "value": "79"
     },
     {
-     "end": 225,
+     "end": 226,
      "printed": "1 210",
      "row": "der-oe2027-medidas-anteriores-saldo",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 220,
+     "start": 221,
      "value": "-1210"
     }
    ],
@@ -589,12 +640,25 @@
      "tipo": "valor"
     },
     {
-     "fim": 225,
+     "apoios": [
+      {
+       "campo": "excerpt",
+       "id": "oe-2027-quadro-3-2-nota-i",
+       "livro": "PM"
+      }
+     ],
+     "fim": 213,
+     "inicio": 203,
+     "texto": "invariante",
+     "tipo": "literal"
+    },
+    {
+     "fim": 226,
      "id": "der-oe2027-medidas-anteriores-saldo",
-     "inicio": 220,
+     "inicio": 221,
      "livro": "PM",
      "modificador": "abs",
-     "sha256_linha": "7456ad25bba6614c6e95e83ef27e3430a21a22b2e10aa5a825915c7ed6670492",
+     "sha256_linha": "8e78bc3136e025951e1fbd3b8f0cc189d6d3296e1221a245b29a6c6ff31ccb13",
      "texto": "1 210",
      "tipo": "valor"
     }
@@ -603,9 +667,10 @@
     "utao-novas-medidas",
     "utao-novas-saldo",
     "der-oe2027-medidas-novas-saldo",
-    "der-oe2027-medidas-anteriores-saldo"
+    "der-oe2027-medidas-anteriores-saldo",
+    "oe-2027-quadro-3-2-nota-i"
    ],
-   "text": "O Orçamento de 2027 é um orçamento de continuação. As medidas novas valem 79 milhões de euros a favor do saldo, segundo o quadro das medidas do relatório e a UTAO; as dez linhas que o quadro marca como invariantes pesam 1 210 milhões. A UTAO escreve que esta é a terceira proposta consecutiva com poucas medidas novas e lê isso como uma estratégia de decidir as medidas fora do Orçamento, antes da sua apresentação."
+   "text": "O Orçamento de 2027 é um orçamento de continuação. As medidas novas valem 79 milhões de euros a favor do saldo, segundo o quadro das medidas do relatório e a UTAO; as dez linhas que o quadro marca como «invariante» pesam 1 210 milhões. A UTAO escreve que esta é a terceira proposta consecutiva com poucas medidas novas e lê isso como uma estratégia de decidir as medidas fora do Orçamento, antes da sua apresentação."
   },
   {
    "emphasis": [
@@ -957,21 +1022,21 @@
      "value": "23,2"
     },
     {
-     "end": 373,
+     "end": 412,
      "printed": "2,4",
      "row": "utao-taxa-implicita-2026",
      "source_body": "content/24 Orcamento 2027 Analise/source/debate/utao-oe2027-preliminar.pdf",
      "source_sha256": "b42daf2a3b7d3a955fc28f379b60744719771212f167facafba41178c9d58083",
-     "start": 370,
+     "start": 409,
      "value": "2,4"
     },
     {
-     "end": 384,
+     "end": 423,
      "printed": "2,9",
      "row": "utao-taxa-implicita-2027",
      "source_body": "content/24 Orcamento 2027 Analise/source/debate/utao-oe2027-preliminar.pdf",
      "source_sha256": "b42daf2a3b7d3a955fc28f379b60744719771212f167facafba41178c9d58083",
-     "start": 381,
+     "start": 420,
      "value": "2,9"
     }
    ],
@@ -1034,18 +1099,18 @@
      "tipo": "valor"
     },
     {
-     "fim": 373,
+     "fim": 412,
      "id": "utao-taxa-implicita-2026",
-     "inicio": 370,
+     "inicio": 409,
      "livro": "PM",
      "sha256_linha": "3099b13622cc4f362f93eb27dbd0724cbe263b1c0367a1fdba45929f663276c0",
      "texto": "2,4",
      "tipo": "valor"
     },
     {
-     "fim": 384,
+     "fim": 423,
      "id": "utao-taxa-implicita-2027",
-     "inicio": 381,
+     "inicio": 420,
      "livro": "PM",
      "sha256_linha": "da2b53fbc0ddb6815a1c75a0744a8e9133f4cd8ddcde0d3c5775fd7081658870",
      "texto": "2,9",
@@ -1062,7 +1127,7 @@
     "utao-taxa-implicita-2026",
     "utao-taxa-implicita-2027"
    ],
-   "text": "Os juros sobem mais depressa do que a despesa. Crescem 18,7 % em contabilidade pública, contra 2,8 % da despesa total e 5,4 % das despesas com pessoal; em contabilidade nacional sobem 1 548 milhões de euros, mais do que o custo de todas as medidas de 2027 para o saldo no mesmo perímetro, 1 132 milhões, e 23,2 % segundo a UTAO, com a taxa de juro implícita a passar de 2,4 % para 2,9 %."
+   "text": "Os juros sobem mais depressa do que a despesa. Crescem 18,7 % em contabilidade pública, contra 2,8 % da despesa total e 5,4 % das despesas com pessoal; em contabilidade nacional sobem 1 548 milhões de euros, mais do que o custo de todas as medidas de 2027 para o saldo no mesmo perímetro, 1 132 milhões, e 23,2 % segundo a UTAO, com a taxa de juro implícita (os juros pagos a dividir pela dívida) a passar de 2,4 % para 2,9 %."
   },
   {
    "emphasis": [
@@ -1135,6 +1200,15 @@
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
      "start": 622,
      "value": "5,4"
+    },
+    {
+     "end": 699,
+     "printed": "5,3",
+     "row": "utao-pessoal-variacao-cn",
+     "source_body": "content/24 Orcamento 2027 Analise/source/debate/utao-oe2027-preliminar.pdf",
+     "source_sha256": "b42daf2a3b7d3a955fc28f379b60744719771212f167facafba41178c9d58083",
+     "start": 696,
+     "value": "5,3"
     }
    ],
    "i": 11,
@@ -1202,6 +1276,33 @@
      "sha256_linha": "ae854056f49e19de58737b54b62a94b951bb49881df206c06aec2d903daaf5d6",
      "texto": "5,4",
      "tipo": "valor"
+    },
+    {
+     "apoios": [
+      {
+       "campo": "excerpt",
+       "id": "pm-q4-1-r19-c2",
+       "livro": "PM"
+      },
+      {
+       "campo": "locator",
+       "id": "pm-q4-1-r19-c2",
+       "livro": "PM"
+      }
+     ],
+     "fim": 679,
+     "inicio": 676,
+     "texto": "4.1",
+     "tipo": "literal"
+    },
+    {
+     "fim": 699,
+     "id": "utao-pessoal-variacao-cn",
+     "inicio": 696,
+     "livro": "PM",
+     "sha256_linha": "977a35bcdbcb1de6f17813c3e51422208b19f6ba9c056d7e83b09c9981366dd7",
+     "texto": "5,3",
+     "tipo": "valor"
     }
    ],
    "source_rows": [
@@ -1214,80 +1315,81 @@
     "utao-salarios-irs",
     "utao-salarios-cs",
     "der-salarios-publicos-retorno-pct",
-    "pm-q4-1-r19-c2"
+    "pm-q4-1-r19-c2",
+    "utao-pessoal-variacao-cn"
    ],
-   "text": "Para os trabalhadores do Estado, a atualização geral de 2027 iguala a inflação prevista. A atualização é de 2,3 %, pelo relatório; a inflação prevista pelo mesmo relatório para 2027 é de 2,3 %; o Conselho das Finanças Públicas vê o risco de a inflação estar subestimada em 2026 e em 2027. O que sobe acima da atualização geral vem das progressões, das promoções e dos acordos de carreira, que a UTAO conta dentro dos 1 231 milhões de euros da atualização salarial, de que 590 milhões voltam ao Estado em IRS e 471 milhões em contribuições, 86,2 % do total; com o emprego público estabilizado, a despesa com pessoal cresce 5,4 %."
+   "text": "Para os trabalhadores do Estado, a atualização geral de 2027 iguala a inflação prevista. A atualização é de 2,3 %, pelo relatório; a inflação prevista pelo mesmo relatório para 2027 é de 2,3 %; o Conselho das Finanças Públicas vê o risco de a inflação estar subestimada em 2026 e em 2027. O que sobe acima da atualização geral vem das progressões, das promoções e dos acordos de carreira, que a UTAO conta dentro dos 1 231 milhões de euros da atualização salarial, de que 590 milhões voltam ao Estado em IRS e 471 milhões em contribuições, 86,2 % do total; com o emprego público estabilizado, a despesa com pessoal cresce 5,4 % em contabilidade pública, o perímetro do Quadro 4.1 do relatório, e 5,3 % em contabilidade nacional, pela UTAO."
   },
   {
    "emphasis": [
     {
-     "end": 457,
+     "end": 107,
      "kind": "strong",
      "start": 0
     }
    ],
    "figures": [
     {
-     "end": 496,
+     "end": 512,
      "printed": "2,5",
      "row": "pm-q3-6-r44-c3",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 493,
+     "start": 509,
      "value": "-2,5"
     },
     {
-     "end": 563,
+     "end": 579,
      "printed": "1,5",
      "row": "pm-q3-6-r45-c3",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 560,
+     "start": 576,
      "value": "-1,5"
     },
     {
-     "end": 597,
+     "end": 613,
      "printed": "2,6",
      "row": "pm-q3-6-r45-c2",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 594,
+     "start": 610,
      "value": "-2,6"
     },
     {
-     "end": 678,
+     "end": 694,
      "printed": "3,1",
      "row": "pm-q3-6-r50-c2",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 675,
+     "start": 691,
      "value": "3,1"
     },
     {
-     "end": 694,
+     "end": 710,
      "printed": "0,9",
      "row": "pm-q3-6-r50-c3",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 691,
+     "start": 707,
      "value": "0,9"
     },
     {
-     "end": 871,
+     "end": 887,
      "printed": "2,1",
      "row": "pm-q2-3-r8-c2",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 868,
+     "start": 884,
      "value": "2,1"
     },
     {
-     "end": 974,
+     "end": 990,
      "printed": "300",
      "row": "pm-q3-2-r8-c0",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 971,
+     "start": 987,
      "value": "300"
     }
    ],
@@ -1295,27 +1397,27 @@
    "kind": "paragraph",
    "proofs": [
     {
-     "fim": 283,
-     "id": "posicao-governo-divida85-citacao",
-     "inicio": 56,
-     "livro": "PM",
-     "sha256_linha": "398cbbec761a0a45496c7b30f63967a2018d86f2cf55f6459274b33e3aab91c9",
-     "texto": "A dívida pública deve continuar a ser a nossa principal preocupação nas contas públicas. Temos uma redução de cerca de quatro pontos percentuais nos últimos anos e estaremos abaixo dos 85% do PIB [Produto Interno Bruto] em 2027",
-     "tipo": "excerto"
-    },
-    {
-     "fim": 401,
+     "fim": 241,
      "id": "posicao-governo-divida85",
-     "inicio": 300,
+     "inicio": 140,
      "livro": "PM",
      "sha256_linha": "3c017dc7a2e25369638c8519f8e7df33e40aa9c6b1e10692b09147a5882c3a05",
      "texto": "Miranda Sarmento: dívida pública abaixo dos 85% do PIB em 2027 é a \"principal preocupação\" do Governo",
      "tipo": "documento"
     },
     {
-     "fim": 496,
+     "fim": 472,
+     "id": "posicao-governo-divida85-citacao",
+     "inicio": 245,
+     "livro": "PM",
+     "sha256_linha": "398cbbec761a0a45496c7b30f63967a2018d86f2cf55f6459274b33e3aab91c9",
+     "texto": "A dívida pública deve continuar a ser a nossa principal preocupação nas contas públicas. Temos uma redução de cerca de quatro pontos percentuais nos últimos anos e estaremos abaixo dos 85% do PIB [Produto Interno Bruto] em 2027",
+     "tipo": "excerto"
+    },
+    {
+     "fim": 512,
      "id": "pm-q3-6-r44-c3",
-     "inicio": 493,
+     "inicio": 509,
      "livro": "PM",
      "modificador": "abs",
      "sha256_linha": "470b4f8abd8267f1146eb818c8f56bc147a1ebea1502056de89c54ae39389ba1",
@@ -1323,9 +1425,9 @@
      "tipo": "valor"
     },
     {
-     "fim": 563,
+     "fim": 579,
      "id": "pm-q3-6-r45-c3",
-     "inicio": 560,
+     "inicio": 576,
      "livro": "PM",
      "modificador": "abs",
      "sha256_linha": "1dd33a73f138ffb6215ea10fcc21936d95605586cce08e1581e280fa435537c1",
@@ -1333,9 +1435,9 @@
      "tipo": "valor"
     },
     {
-     "fim": 597,
+     "fim": 613,
      "id": "pm-q3-6-r45-c2",
-     "inicio": 594,
+     "inicio": 610,
      "livro": "PM",
      "modificador": "abs",
      "sha256_linha": "5ce10eb5463638c4c4ed6761abdabf424400ffc9cc105087f0485ce69dbee143",
@@ -1343,36 +1445,36 @@
      "tipo": "valor"
     },
     {
-     "fim": 678,
+     "fim": 694,
      "id": "pm-q3-6-r50-c2",
-     "inicio": 675,
+     "inicio": 691,
      "livro": "PM",
      "sha256_linha": "9ed7ae1f87e01590455c1967c620051e93321db673f0c1877e4110eef393f660",
      "texto": "3,1",
      "tipo": "valor"
     },
     {
-     "fim": 694,
+     "fim": 710,
      "id": "pm-q3-6-r50-c3",
-     "inicio": 691,
+     "inicio": 707,
      "livro": "PM",
      "sha256_linha": "c0391fa6581a0c3bae7a20129912be075b1ec34625efe30a4ea321ba7ebf3c76",
      "texto": "0,9",
      "tipo": "valor"
     },
     {
-     "fim": 871,
+     "fim": 887,
      "id": "pm-q2-3-r8-c2",
-     "inicio": 868,
+     "inicio": 884,
      "livro": "PM",
      "sha256_linha": "ca8c2ea4bdfed58cf9f3e0288f6870cfdaf03fad89d7488122ea6f5696148860",
      "texto": "2,1",
      "tipo": "valor"
     },
     {
-     "fim": 974,
+     "fim": 990,
      "id": "pm-q3-2-r8-c0",
-     "inicio": 971,
+     "inicio": 987,
      "livro": "PM",
      "sha256_linha": "be853ea41f752eb75342bb145e4957fc7e2d36d03b598ca50c018abe4bb57e1c",
      "texto": "300",
@@ -1383,8 +1485,8 @@
     "utao-divida-ajustamento",
     "utao-risco-pib",
     "utao-risco-fraude",
-    "posicao-governo-divida85-citacao",
     "posicao-governo-divida85",
+    "posicao-governo-divida85-citacao",
     "pm-q3-6-r44-c3",
     "pm-q3-6-r45-c3",
     "pm-q3-6-r45-c2",
@@ -1393,7 +1495,7 @@
     "pm-q2-3-r8-c2",
     "pm-q3-2-r8-c0"
    ],
-   "text": "A meta da dívida que o ministro das Finanças anunciou («A dívida pública deve continuar a ser a nossa principal preocupação nas contas públicas. Temos uma redução de cerca de quatro pontos percentuais nos últimos anos e estaremos abaixo dos 85% do PIB [Produto Interno Bruto] em 2027», pela notícia «Miranda Sarmento: dívida pública abaixo dos 85% do PIB em 2027 é a \"principal preocupação\" do Governo») é alcançável, e a razão está sobretudo na tesouraria. O excedente primário contribui com 2,5 pontos para a descida, o efeito do crescimento e dos juros com 1,5 pontos (menos do que em 2026, 2,6), e o que faz a descida acelerar é o ajustamento défice-dívida, que passa de 3,1 pontos para 0,9 pontos, sobretudo por menor aquisição de ativos financeiros, segundo a UTAO. É um movimento de tesouraria, não do orçamento do ano. A meta assenta também num crescimento de 2,1 % que, segundo a UTAO, está acima das previsões de todas as outras instituições que ela cita, e em 300 milhões de euros de receita do combate à fraude nos combustíveis para os quais o relatório não apresenta fundamento."
+   "text": "A meta da dívida que o ministro das Finanças anunciou é alcançável, e a razão está sobretudo na tesouraria. O ministro disse, pela notícia «Miranda Sarmento: dívida pública abaixo dos 85% do PIB em 2027 é a \"principal preocupação\" do Governo»: «A dívida pública deve continuar a ser a nossa principal preocupação nas contas públicas. Temos uma redução de cerca de quatro pontos percentuais nos últimos anos e estaremos abaixo dos 85% do PIB [Produto Interno Bruto] em 2027» O excedente primário contribui com 2,5 pontos para a descida, o efeito do crescimento e dos juros com 1,5 pontos (menos do que em 2026, 2,6), e o que faz a descida acelerar é o ajustamento défice-dívida, que passa de 3,1 pontos para 0,9 pontos, sobretudo por menor aquisição de ativos financeiros, segundo a UTAO. É um movimento de tesouraria, não do orçamento do ano. A meta assenta também num crescimento de 2,1 % que, segundo a UTAO, está acima das previsões de todas as outras instituições que ela cita, e em 300 milhões de euros de receita do combate à fraude nos combustíveis para os quais o relatório não apresenta fundamento."
   },
   {
    "emphasis": [
@@ -3034,7 +3136,7 @@
    "level": 2,
    "proofs": [],
    "source_rows": [],
-   "text": "As medidas: o que é novo e o que já vinha de trás"
+   "text": "As medidas: o que é novo e o que o quadro marca como invariante"
   },
   {
    "figures": [
@@ -3165,66 +3267,66 @@
      "value": "124"
     },
     {
-     "end": 949,
+     "end": 860,
      "printed": "363",
      "row": "pm-q3-2-r17-c0",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 946,
+     "start": 857,
      "value": "363"
     },
     {
-     "end": 1007,
+     "end": 918,
      "printed": "948",
      "row": "pm-q3-2-r20-c0",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 1004,
+     "start": 915,
      "value": "948"
     },
     {
-     "end": 1044,
+     "end": 955,
      "printed": "587",
      "row": "pm-q3-2-r21-c0",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 1041,
+     "start": 952,
      "value": "587"
     },
     {
-     "end": 1085,
+     "end": 996,
      "printed": "116",
      "row": "pm-q3-2-r22-c0",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 1082,
+     "start": 993,
      "value": "116"
     },
     {
-     "end": 1119,
+     "end": 1030,
      "printed": "244",
      "row": "pm-q3-2-r23-c0",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 1116,
+     "start": 1027,
      "value": "244"
     },
     {
-     "end": 1156,
+     "end": 1067,
      "printed": "100",
      "row": "pm-q3-2-r24-c0",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 1153,
+     "start": 1064,
      "value": "100"
     },
     {
-     "end": 1225,
+     "end": 1136,
      "printed": "100",
      "row": "pm-q3-2-r25-c0",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 1222,
+     "start": 1133,
      "value": "100"
     }
    ],
@@ -3639,63 +3741,63 @@
      "tipo": "valor"
     },
     {
-     "fim": 949,
+     "fim": 860,
      "id": "pm-q3-2-r17-c0",
-     "inicio": 946,
+     "inicio": 857,
      "livro": "PM",
      "sha256_linha": "70d8ef31cd506ecea5fff6bb8da0d36a6155cf985e6ffb143f094ee272e7c2f0",
      "texto": "363",
      "tipo": "valor"
     },
     {
-     "fim": 1007,
+     "fim": 918,
      "id": "pm-q3-2-r20-c0",
-     "inicio": 1004,
+     "inicio": 915,
      "livro": "PM",
      "sha256_linha": "d17ce95a9414de1823bc5a739214515d7e8e87365589c384dfcb2d3ea7b6aa54",
      "texto": "948",
      "tipo": "valor"
     },
     {
-     "fim": 1044,
+     "fim": 955,
      "id": "pm-q3-2-r21-c0",
-     "inicio": 1041,
+     "inicio": 952,
      "livro": "PM",
      "sha256_linha": "0d137c081e3fc078f4bd5bb8c439659fb27641e669ad3f3b82faa03e0f8a8071",
      "texto": "587",
      "tipo": "valor"
     },
     {
-     "fim": 1085,
+     "fim": 996,
      "id": "pm-q3-2-r22-c0",
-     "inicio": 1082,
+     "inicio": 993,
      "livro": "PM",
      "sha256_linha": "31637b30d9c5d80fa7d88a076da8e8b4851c5bfe0a78fca359cb1db4bca089f3",
      "texto": "116",
      "tipo": "valor"
     },
     {
-     "fim": 1119,
+     "fim": 1030,
      "id": "pm-q3-2-r23-c0",
-     "inicio": 1116,
+     "inicio": 1027,
      "livro": "PM",
      "sha256_linha": "3a36dd760a6d218d7cf461d8bdef2d8eb271f2175d5c1ba216caef7524876b0b",
      "texto": "244",
      "tipo": "valor"
     },
     {
-     "fim": 1156,
+     "fim": 1067,
      "id": "pm-q3-2-r24-c0",
-     "inicio": 1153,
+     "inicio": 1064,
      "livro": "PM",
      "sha256_linha": "ccec65092fc2eccec9ba7233d4d0a221d05af2cfe57cfec7efafb3040109a7a5",
      "texto": "100",
      "tipo": "valor"
     },
     {
-     "fim": 1225,
+     "fim": 1136,
      "id": "pm-q3-2-r25-c0",
-     "inicio": 1222,
+     "inicio": 1133,
      "livro": "PM",
      "sha256_linha": "3f0adc05c649407913fc5d92566440430e5559de2e19993bd72fd7cca0679288",
      "texto": "100",
@@ -3725,7 +3827,7 @@
     "pm-q3-2-r24-c0",
     "pm-q3-2-r25-c0"
    ],
-   "text": "O quadro das principais medidas com impacto em 2027 (o Quadro 3.2 do relatório) soma −1 132 milhões de euros de impacto no saldo: −84 milhões do lado da receita e 1 048 milhões do lado da despesa. Do lado da receita: o IVA 206 milhões, que junta «Habitação - redução IVA construção de 23% para 6% (i)» (−94 milhões) e «Combate à fraude no setor dos combustíveis» (300 milhões); o IRS −477 milhões, que junta «Habitação - redução IRS rendas moderadas de 25% para 10% (i)» (−209 milhões), «Atualização dedução específica e escalões (i)» (−431 milhões), «Atualização do limite do mínimo de existência» (−121 milhões) e a receita que o aumento dos salários traz (284 milhões); o IRC −176 milhões, que junta «Redução taxa em 1 p.p. (i)» (−300 milhões) e «SIFIDE indireto (reversão) (i)» (124 milhões; o SIFIDE é o Sistema de Incentivos Fiscais à Investigação e Desenvolvimento Empresarial); e as contribuições sociais que o aumento dos salários traz (363 milhões). Do lado da despesa: as despesas com pessoal 948 milhões (o acordo de rendimentos 587 milhões, o aumento do salário mínimo 116 milhões, os acordos salariais 244 milhões) e as prestações sociais 100 milhões, que são o reforço do Complemento Solidário para Idosos (100 milhões)."
+   "text": "O quadro das principais medidas com impacto em 2027 (o Quadro 3.2 do relatório) soma −1 132 milhões de euros de impacto no saldo: −84 milhões do lado da receita e 1 048 milhões do lado da despesa. Do lado da receita: o IVA 206 milhões, que junta «Habitação - redução IVA construção de 23% para 6% (i)» (−94 milhões) e «Combate à fraude no setor dos combustíveis» (300 milhões); o IRS −477 milhões, que junta «Habitação - redução IRS rendas moderadas de 25% para 10% (i)» (−209 milhões), «Atualização dedução específica e escalões (i)» (−431 milhões), «Atualização do limite do mínimo de existência» (−121 milhões) e a receita que o aumento dos salários traz (284 milhões); o IRC −176 milhões, que junta «Redução taxa em 1 p.p. (i)» (−300 milhões) e «SIFIDE indireto (reversão) (i)» (124 milhões); e as contribuições sociais que o aumento dos salários traz (363 milhões). Do lado da despesa: as despesas com pessoal 948 milhões (o acordo de rendimentos 587 milhões, o aumento do salário mínimo 116 milhões, os acordos salariais 244 milhões) e as prestações sociais 100 milhões, que são o reforço do Complemento Solidário para Idosos (100 milhões)."
   },
   {
    "figures": [
@@ -3819,7 +3921,7 @@
      "id": "der-oe2027-medidas-anteriores-receita",
      "inicio": 181,
      "livro": "PM",
-     "sha256_linha": "4d5aa4df6724ff7bab13883b2bc04f67631a9fa2f8cc7deab823e3319a106a91",
+     "sha256_linha": "db30f1192aae5bd26dc5437bfb8b1589e709424e4ce8966d64b783a8b1192053",
      "texto": "−263",
      "tipo": "valor"
     },
@@ -3828,7 +3930,7 @@
      "id": "der-oe2027-medidas-anteriores-despesa",
      "inicio": 216,
      "livro": "PM",
-     "sha256_linha": "a110e7cad45fd62b5ef6e9e3fc9429261b7c748643f7d37f2158f3fbb0faa3d9",
+     "sha256_linha": "bd9fd70453da62d5fca9d955298004e91cbcb4cf96f879395853b4fdee61442a",
      "texto": "947",
      "tipo": "valor"
     },
@@ -3837,7 +3939,7 @@
      "id": "der-oe2027-medidas-anteriores-saldo",
      "inicio": 240,
      "livro": "PM",
-     "sha256_linha": "7456ad25bba6614c6e95e83ef27e3430a21a22b2e10aa5a825915c7ed6670492",
+     "sha256_linha": "8e78bc3136e025951e1fbd3b8f0cc189d6d3296e1221a245b29a6c6ff31ccb13",
      "texto": "−1 210",
      "tipo": "valor"
     },
@@ -3873,7 +3975,7 @@
      "id": "der-oe2027-medidas-anteriores-despesa",
      "inicio": 558,
      "livro": "PM",
-     "sha256_linha": "a110e7cad45fd62b5ef6e9e3fc9429261b7c748643f7d37f2158f3fbb0faa3d9",
+     "sha256_linha": "bd9fd70453da62d5fca9d955298004e91cbcb4cf96f879395853b4fdee61442a",
      "texto": "947",
      "tipo": "valor"
     },
@@ -4829,27 +4931,27 @@
      "tipo": "excerto"
     },
     {
-     "fim": 262,
+     "fim": 263,
      "id": "posicao-be-rendimentos",
-     "inicio": 178,
+     "inicio": 179,
      "livro": "PM",
      "sha256_linha": "8153db2f250b911728188d86029f4a1b9b3cedc367a1bac07ea59bfdaaf87b1b",
      "texto": "OE2027: BE diz que Orçamento “dá migalhas a quem trabalha” e beneficia os mais ricos",
      "tipo": "documento"
     },
     {
-     "fim": 409,
+     "fim": 410,
      "id": "posicao-be-rendimentos",
-     "inicio": 266,
+     "inicio": 267,
      "livro": "PM",
      "sha256_linha": "8153db2f250b911728188d86029f4a1b9b3cedc367a1bac07ea59bfdaaf87b1b",
      "texto": "José Manuel Pureza considera que o Orçamento para 2027 “dá migalhas” aos trabalhadores, beneficia os mais ricos e ignora problemas estruturais.",
      "tipo": "excerto"
     },
     {
-     "fim": 477,
+     "fim": 478,
      "id": "posicao-pcp-irs-rendas",
-     "inicio": 465,
+     "inicio": 466,
      "livro": "PM",
      "sha256_linha": "3c3d08de11cc532209d8076233961771993ad573f1e0ca144d0e6fae8e53ab50",
      "texto": "Paula Santos",
@@ -4863,15 +4965,15 @@
        "livro": "PM"
       }
      ],
-     "fim": 494,
-     "inicio": 481,
+     "fim": 495,
+     "inicio": 482,
      "texto": "12 de outubro",
      "tipo": "literal"
     },
     {
-     "fim": 848,
+     "fim": 849,
      "id": "posicao-pcp-irs-rendas",
-     "inicio": 497,
+     "inicio": 498,
      "livro": "PM",
      "sha256_linha": "3c3d08de11cc532209d8076233961771993ad573f1e0ca144d0e6fae8e53ab50",
      "texto": "Acrescem ainda outros benefícios fiscais contrários ao interesse nacional, como os 2228 milhões de euros atribuídos ao regime dos residentes não habituais; os 1067 milhões de euros associados ao IRS jovem (que favorece quem tem rendimentos mais elevados), ou os 209 milhões de euros de rendimentos prediais dos senhorios que apliquem rendas até 2300€.",
@@ -4883,7 +4985,7 @@
     "posicao-be-rendimentos",
     "posicao-pcp-irs-rendas"
    ],
-   "text": "As posições: o Juntos pelo Povo (JPP), pelo título da notícia: «JPP pede maior protecção das famílias não abrangidas pela descida de IRS» O Bloco de Esquerda (BE), pela notícia «OE2027: BE diz que Orçamento “dá migalhas a quem trabalha” e beneficia os mais ricos»: «José Manuel Pureza considera que o Orçamento para 2027 “dá migalhas” aos trabalhadores, beneficia os mais ricos e ignora problemas estruturais.» O Partido Comunista Português (PCP), na declaração de Paula Santos de 12 de outubro: «Acrescem ainda outros benefícios fiscais contrários ao interesse nacional, como os 2228 milhões de euros atribuídos ao regime dos residentes não habituais; os 1067 milhões de euros associados ao IRS jovem (que favorece quem tem rendimentos mais elevados), ou os 209 milhões de euros de rendimentos prediais dos senhorios que apliquem rendas até 2300€.» Os números que o PCP cita (os benefícios do regime dos residentes não habituais, do IRS Jovem e das rendas) são do PCP; este estudo não os conferiu na fonte e por isso não os repete como seus. Da Iniciativa Liberal (IL) e do Pessoas-Animais-Natureza (PAN) não há, nos documentos deste estudo, uma posição datada depois da entrega da proposta; a pesquisa não a encontrou nas fontes primárias, o que não quer dizer que não exista."
+   "text": "As posições: o Juntos pelo Povo (JPP), pelo título da notícia: «JPP pede maior protecção das famílias não abrangidas pela descida de IRS». O Bloco de Esquerda (BE), pela notícia «OE2027: BE diz que Orçamento “dá migalhas a quem trabalha” e beneficia os mais ricos»: «José Manuel Pureza considera que o Orçamento para 2027 “dá migalhas” aos trabalhadores, beneficia os mais ricos e ignora problemas estruturais.» O Partido Comunista Português (PCP), na declaração de Paula Santos de 12 de outubro: «Acrescem ainda outros benefícios fiscais contrários ao interesse nacional, como os 2228 milhões de euros atribuídos ao regime dos residentes não habituais; os 1067 milhões de euros associados ao IRS jovem (que favorece quem tem rendimentos mais elevados), ou os 209 milhões de euros de rendimentos prediais dos senhorios que apliquem rendas até 2300€.» Os números que o PCP cita (os benefícios do regime dos residentes não habituais, do IRS Jovem e das rendas) são do PCP; este estudo não os conferiu na fonte e por isso não os repete como seus. Da Iniciativa Liberal (IL) e do Pessoas-Animais-Natureza (PAN) não há, nos documentos deste estudo, uma posição datada depois da entrega da proposta; a pesquisa não a encontrou nas fontes primárias, o que não quer dizer que não exista."
   },
   {
    "figures": [],
@@ -4977,7 +5079,7 @@
      "id": "rmmg-2026",
      "inicio": 442,
      "livro": "PM",
-     "sha256_linha": "2d0e581758bbec8afac26a70bae8c6467bb7af5514449775a0e66da4d1764342",
+     "sha256_linha": "307620f070934ebeede6688a7468116c1898509e1ea4c294a184ad5e178b8ca0",
      "texto": "920,00",
      "tipo": "valor"
     },
@@ -5661,57 +5763,57 @@
      "value": "-300"
     },
     {
-     "end": 1027,
+     "end": 948,
      "printed": "124",
      "row": "pm-q3-2-r16-c0",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 1024,
+     "start": 945,
      "value": "124"
     },
     {
-     "end": 1053,
+     "end": 974,
      "printed": "176",
      "row": "pm-q3-2-r14-c0",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 1050,
+     "start": 971,
      "value": "-176"
     },
     {
-     "end": 2287,
+     "end": 2275,
      "printed": "300",
      "row": "pm-q3-2-r8-c0",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 2284,
+     "start": 2272,
      "value": "300"
     },
     {
-     "end": 2351,
+     "end": 2339,
      "printed": "284",
      "row": "pm-q3-2-r12-c0",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 2348,
+     "start": 2336,
      "value": "284"
     },
     {
-     "end": 2384,
+     "end": 2372,
      "printed": "363",
      "row": "pm-q3-2-r18-c0",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 2381,
+     "start": 2369,
      "value": "363"
     },
     {
-     "end": 2422,
+     "end": 2410,
      "printed": "124",
      "row": "pm-q3-2-r16-c0",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 2419,
+     "start": 2407,
      "value": "124"
     }
    ],
@@ -5765,18 +5867,18 @@
      "tipo": "valor"
     },
     {
-     "fim": 1027,
+     "fim": 948,
      "id": "pm-q3-2-r16-c0",
-     "inicio": 1024,
+     "inicio": 945,
      "livro": "PM",
      "sha256_linha": "486b1ff0a47d6b69f87375df81b3bd815fa5397c1f5e87ff7321d6555a6cc0e3",
      "texto": "124",
      "tipo": "valor"
     },
     {
-     "fim": 1053,
+     "fim": 974,
      "id": "pm-q3-2-r14-c0",
-     "inicio": 1050,
+     "inicio": 971,
      "livro": "PM",
      "modificador": "abs",
      "sha256_linha": "3dca330fdf7eb79d5f11edb6a55edc807dc56fbd769f9e16a81d247921651ecb",
@@ -5784,99 +5886,99 @@
      "tipo": "valor"
     },
     {
-     "fim": 1223,
+     "fim": 1144,
      "id": "posicao-governo-irc",
-     "inicio": 1085,
+     "inicio": 1006,
      "livro": "PM",
      "sha256_linha": "6d0dd4d4434b5424d856f596d99aeb3af6b5fabaa3133622465037f9670f664d",
      "texto": "Referiu também a redução do IRC e sublinhou que, nos 920 dias desde a primeira tomada de posse do Governo, não houve aumentos de impostos.",
      "tipo": "excerto"
     },
     {
-     "fim": 1364,
+     "fim": 1351,
      "id": "posicao-psd-impostos",
-     "inicio": 1296,
+     "inicio": 1283,
      "livro": "PM",
      "sha256_linha": "111baa9385216a4ef21653c3de4f1230eaf744d8bdb291a7279941527d78f0a6",
      "texto": "\"Baile\" na AR com OE em destaque: A \"dança\" de Montenegro e oposição",
      "tipo": "documento"
     },
     {
-     "fim": 1510,
+     "fim": 1497,
      "id": "posicao-psd-impostos",
-     "inicio": 1368,
+     "inicio": 1355,
      "livro": "PM",
      "sha256_linha": "111baa9385216a4ef21653c3de4f1230eaf744d8bdb291a7279941527d78f0a6",
      "texto": "Enquanto o Governo do PS aumentava impostos, defendeu Hugo Soares, \"este Governo não aumentou um único imposto nos orçamentos que apresentou\".",
      "tipo": "excerto"
     },
     {
-     "fim": 1540,
+     "fim": 1527,
      "id": "posicao-ps-irc",
-     "inicio": 1522,
+     "inicio": 1509,
      "livro": "PM",
      "sha256_linha": "e799cebb8981051d1aa149f303cfeec049b5424ec33bcee13d37590df9f52ff4",
      "texto": "José Luís Carneiro",
      "tipo": "atribuicao"
     },
     {
-     "fim": 1676,
+     "fim": 1663,
      "id": "posicao-ps-irc",
-     "inicio": 1543,
+     "inicio": 1530,
      "livro": "PM",
      "sha256_linha": "e799cebb8981051d1aa149f303cfeec049b5424ec33bcee13d37590df9f52ff4",
      "texto": "Para o líder do PS, a redução deste imposto deve ser “dirigida a prioridades de política económica e não para todos e de forma cega”.",
      "tipo": "excerto"
     },
     {
-     "fim": 2035,
+     "fim": 2022,
      "id": "posicao-pcp-irc",
-     "inicio": 1686,
+     "inicio": 1673,
      "livro": "PM",
      "sha256_linha": "568d1dcfc99b15122172c12c0a5ee8d6f32f73fcd6b2cdb10d0e897441b61a71",
      "texto": "O Governo fala em descida de impostos, mas a realidade é esta: o único imposto cuja receita diminuiu foi o IRC (imposto que incide sobre os rendimentos de capital), no próximo ano – com uma taxa de 18% - voltará a descer e a que se somam os benefícios fiscais de 1868 milhões de euros (apenas 1% das empresas absorvem mais de 50% destes benefícios).",
      "tipo": "excerto"
     },
     {
-     "fim": 2143,
+     "fim": 2130,
      "id": "posicao-cds-orcamento",
-     "inicio": 2091,
+     "inicio": 2078,
      "livro": "PM",
      "sha256_linha": "8ba4d7a046f9d493c5d583bbbc1192a43728b61077211ee217ea0e50075543b6",
      "texto": "\"Temos um bom Orçamento para 2027\", garante o CDS-PP",
      "tipo": "excerto"
     },
     {
-     "fim": 2287,
+     "fim": 2275,
      "id": "pm-q3-2-r8-c0",
-     "inicio": 2284,
+     "inicio": 2272,
      "livro": "PM",
      "sha256_linha": "be853ea41f752eb75342bb145e4957fc7e2d36d03b598ca50c018abe4bb57e1c",
      "texto": "300",
      "tipo": "valor"
     },
     {
-     "fim": 2351,
+     "fim": 2339,
      "id": "pm-q3-2-r12-c0",
-     "inicio": 2348,
+     "inicio": 2336,
      "livro": "PM",
      "sha256_linha": "9967c79d52acef9fb77bd862dba6c818e25865b56157ff41a788563a5c1cebe2",
      "texto": "284",
      "tipo": "valor"
     },
     {
-     "fim": 2384,
+     "fim": 2372,
      "id": "pm-q3-2-r18-c0",
-     "inicio": 2381,
+     "inicio": 2369,
      "livro": "PM",
      "sha256_linha": "f4bb472f00bbc10ac91c4a820df70fd2d3ee4580bf15377b0245f49b0ad226d2",
      "texto": "363",
      "tipo": "valor"
     },
     {
-     "fim": 2422,
+     "fim": 2410,
      "id": "pm-q3-2-r16-c0",
-     "inicio": 2419,
+     "inicio": 2407,
      "livro": "PM",
      "sha256_linha": "486b1ff0a47d6b69f87375df81b3bd815fa5397c1f5e87ff7321d6555a6cc0e3",
      "texto": "124",
@@ -5899,7 +6001,7 @@
     "pm-q3-2-r12-c0",
     "pm-q3-2-r18-c0"
    ],
-   "text": "A taxa do IRC desce para 18 % em 2027, depois de 19 % em 2026, pela lei de novembro de 2025 (Lei n.º 64/2025, de 7 de novembro): «Artigo 3.º Norma transitória 1 — A taxa prevista nos n.os 1 e 5 do artigo 87.º do Código do IRC, na redação conferida pela presente lei, aplica-se aos períodos de tributação que se iniciem em ou após 1 de janeiro de 2028. 2 — Nos períodos de tributação que se iniciem durante o ano de 2026, a taxa prevista nos n.os 1 e 5 do artigo 87.º do Código do IRC é de 19 %. 3 — Nos períodos de tributação que se iniciem durante o ano de 2027, a taxa prevista nos n.os 1 e 5 do artigo 87.º do Código do IRC é de 18 %. 4 — A taxa prevista no n.º 2 do artigo 87.º do Código do IRC, na redação conferida pela presente lei, aplica-se aos períodos de tributação que se iniciem em ou após 1 de janeiro de 2026.» O custo de 2027 no quadro das medidas é de 300 milhões de euros, em parte compensado pela reversão do Sistema de Incentivos Fiscais à Investigação e Desenvolvimento Empresarial (o SIFIDE) indireto, 124 milhões, num total de 176 milhões. O primeiro-ministro: «Referiu também a redução do IRC e sublinhou que, nos 920 dias desde a primeira tomada de posse do Governo, não houve aumentos de impostos.» O líder do Partido Social Democrata (PSD) no Parlamento, pela notícia «\"Baile\" na AR com OE em destaque: A \"dança\" de Montenegro e oposição»: «Enquanto o Governo do PS aumentava impostos, defendeu Hugo Soares, \"este Governo não aumentou um único imposto nos orçamentos que apresentou\".» O PS, por José Luís Carneiro: «Para o líder do PS, a redução deste imposto deve ser “dirigida a prioridades de política económica e não para todos e de forma cega”.» O PCP: «O Governo fala em descida de impostos, mas a realidade é esta: o único imposto cuja receita diminuiu foi o IRC (imposto que incide sobre os rendimentos de capital), no próximo ano – com uma taxa de 18% - voltará a descer e a que se somam os benefícios fiscais de 1868 milhões de euros (apenas 1% das empresas absorvem mais de 50% destes benefícios).» O CDS-Partido Popular (CDS), pelo título da notícia: «\"Temos um bom Orçamento para 2027\", garante o CDS-PP» Sobre a frase «não houve aumentos de impostos»: no quadro das medidas, as linhas de receita que crescem são a receita do combate à fraude (300 milhões), a receita que o aumento dos salários traz em IRS (284 milhões) e em contribuições (363 milhões), e a reversão do SIFIDE (124 milhões); nenhuma é uma subida de taxa."
+   "text": "A taxa do IRC desce para 18 % em 2027, depois de 19 % em 2026, pela lei de novembro de 2025 (Lei n.º 64/2025, de 7 de novembro): «Artigo 3.º Norma transitória 1 — A taxa prevista nos n.os 1 e 5 do artigo 87.º do Código do IRC, na redação conferida pela presente lei, aplica-se aos períodos de tributação que se iniciem em ou após 1 de janeiro de 2028. 2 — Nos períodos de tributação que se iniciem durante o ano de 2026, a taxa prevista nos n.os 1 e 5 do artigo 87.º do Código do IRC é de 19 %. 3 — Nos períodos de tributação que se iniciem durante o ano de 2027, a taxa prevista nos n.os 1 e 5 do artigo 87.º do Código do IRC é de 18 %. 4 — A taxa prevista no n.º 2 do artigo 87.º do Código do IRC, na redação conferida pela presente lei, aplica-se aos períodos de tributação que se iniciem em ou após 1 de janeiro de 2026.» O custo de 2027 no quadro das medidas é de 300 milhões de euros, em parte compensado pela reversão do SIFIDE indireto, 124 milhões, num total de 176 milhões. O primeiro-ministro: «Referiu também a redução do IRC e sublinhou que, nos 920 dias desde a primeira tomada de posse do Governo, não houve aumentos de impostos.» O líder do Partido Social Democrata (PSD) no Parlamento, pela notícia sobre o Orçamento do Estado (OE) na Assembleia da República (AR), «\"Baile\" na AR com OE em destaque: A \"dança\" de Montenegro e oposição»: «Enquanto o Governo do PS aumentava impostos, defendeu Hugo Soares, \"este Governo não aumentou um único imposto nos orçamentos que apresentou\".» O PS, por José Luís Carneiro: «Para o líder do PS, a redução deste imposto deve ser “dirigida a prioridades de política económica e não para todos e de forma cega”.» O PCP: «O Governo fala em descida de impostos, mas a realidade é esta: o único imposto cuja receita diminuiu foi o IRC (imposto que incide sobre os rendimentos de capital), no próximo ano – com uma taxa de 18% - voltará a descer e a que se somam os benefícios fiscais de 1868 milhões de euros (apenas 1% das empresas absorvem mais de 50% destes benefícios).» O CDS-Partido Popular (CDS), pelo título da notícia: «\"Temos um bom Orçamento para 2027\", garante o CDS-PP». Sobre a frase «não houve aumentos de impostos»: no quadro das medidas, as linhas de receita que crescem são a receita do combate à fraude (300 milhões), a receita que o aumento dos salários traz em IRS (284 milhões) e em contribuições (363 milhões), e a reversão do SIFIDE (124 milhões); nenhuma é uma subida de taxa."
   },
   {
    "figures": [],
@@ -5913,40 +6015,67 @@
   {
    "figures": [
     {
-     "end": 704,
+     "end": 705,
      "printed": "89,2",
      "row": "pm-q3-6-r42-c1",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 700,
+     "start": 701,
      "value": "89,2"
     },
     {
-     "end": 724,
+     "end": 725,
      "printed": "1,6",
      "row": "pm-q3-6-r43-c2",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 721,
+     "start": 722,
      "value": "-1,6"
     },
     {
-     "end": 745,
+     "end": 746,
      "printed": "3,0",
      "row": "pm-q3-6-r43-c3",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 742,
+     "start": 743,
      "value": "-3,0"
     },
     {
-     "end": 771,
+     "end": 772,
      "printed": "84,5",
      "row": "pm-q3-6-r42-c3",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 767,
+     "start": 768,
      "value": "84,5"
+    },
+    {
+     "end": 830,
+     "printed": "89,2",
+     "row": "pm-q3-6-r42-c1",
+     "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
+     "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+     "start": 826,
+     "value": "89,2"
+    },
+    {
+     "end": 840,
+     "printed": "1,6",
+     "row": "pm-q3-6-r43-c2",
+     "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
+     "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+     "start": 837,
+     "value": "-1,6"
+    },
+    {
+     "end": 863,
+     "printed": "87,5",
+     "row": "pm-q3-6-r42-c2",
+     "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
+     "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+     "start": 859,
+     "value": "87,5"
     }
    ],
    "i": 44,
@@ -6012,18 +6141,18 @@
      "tipo": "excerto"
     },
     {
-     "fim": 704,
+     "fim": 705,
      "id": "pm-q3-6-r42-c1",
-     "inicio": 700,
+     "inicio": 701,
      "livro": "PM",
      "sha256_linha": "780faeb7ceafbd961b40a050eaafa7e1564c7a39ec8041e2c37720bb0a1ffcda",
      "texto": "89,2",
      "tipo": "valor"
     },
     {
-     "fim": 724,
+     "fim": 725,
      "id": "pm-q3-6-r43-c2",
-     "inicio": 721,
+     "inicio": 722,
      "livro": "PM",
      "modificador": "abs",
      "sha256_linha": "e968588507e222820dcc50ecb0fbdafda09136986c58c336f1dffe3fff303515",
@@ -6031,9 +6160,9 @@
      "tipo": "valor"
     },
     {
-     "fim": 745,
+     "fim": 746,
      "id": "pm-q3-6-r43-c3",
-     "inicio": 742,
+     "inicio": 743,
      "livro": "PM",
      "modificador": "abs",
      "sha256_linha": "8417f16e29100542cd2c203fd27a7491944018646d41a519ecb5502ff1348d04",
@@ -6041,12 +6170,40 @@
      "tipo": "valor"
     },
     {
-     "fim": 771,
+     "fim": 772,
      "id": "pm-q3-6-r42-c3",
-     "inicio": 767,
+     "inicio": 768,
      "livro": "PM",
      "sha256_linha": "8402fca039e483a6c9a5db43fb033b2f1af1b323f9649cfe8456ebc1ca70a29d",
      "texto": "84,5",
+     "tipo": "valor"
+    },
+    {
+     "fim": 830,
+     "id": "pm-q3-6-r42-c1",
+     "inicio": 826,
+     "livro": "PM",
+     "sha256_linha": "780faeb7ceafbd961b40a050eaafa7e1564c7a39ec8041e2c37720bb0a1ffcda",
+     "texto": "89,2",
+     "tipo": "valor"
+    },
+    {
+     "fim": 840,
+     "id": "pm-q3-6-r43-c2",
+     "inicio": 837,
+     "livro": "PM",
+     "modificador": "abs",
+     "sha256_linha": "e968588507e222820dcc50ecb0fbdafda09136986c58c336f1dffe3fff303515",
+     "texto": "1,6",
+     "tipo": "valor"
+    },
+    {
+     "fim": 863,
+     "id": "pm-q3-6-r42-c2",
+     "inicio": 859,
+     "livro": "PM",
+     "sha256_linha": "e7121e54f33788696def088ad2a31ae38f40410ea20dc75761c6063531f9fd59",
+     "texto": "87,5",
      "tipo": "valor"
     }
    ],
@@ -6058,9 +6215,10 @@
     "pm-q3-6-r42-c1",
     "pm-q3-6-r43-c2",
     "pm-q3-6-r43-c3",
-    "pm-q3-6-r42-c3"
+    "pm-q3-6-r42-c3",
+    "pm-q3-6-r42-c2"
    ],
-   "text": "O relatório: «A dívida pública, em percentagem do PIB, deverá manter assim a trajetória decrescente, passando de 87,5% em 2026 para 84,5% em 2027.» E o objetivo: «A dívida pública continuará a reduzir-se, visando ficar abaixo dos 80% do produto interno bruto (PIB) no final da década.» O ministro das Finanças, a 13 de outubro, pela notícia «Miranda Sarmento: dívida pública abaixo dos 85% do PIB em 2027 é a \"principal preocupação\" do Governo»: «A dívida pública deve continuar a ser a nossa principal preocupação nas contas públicas. Temos uma redução de cerca de quatro pontos percentuais nos últimos anos e estaremos abaixo dos 85% do PIB [Produto Interno Bruto] em 2027» Em 2025 a dívida foi de 89,2 % do PIB; desce 1,6 pontos em 2026 e 3,0 pontos em 2027, para 84,5 %."
+   "text": "O relatório: «A dívida pública, em percentagem do PIB, deverá manter assim a trajetória decrescente, passando de 87,5% em 2026 para 84,5% em 2027.» E o objetivo: «A dívida pública continuará a reduzir-se, visando ficar abaixo dos 80% do produto interno bruto (PIB) no final da década.» O ministro das Finanças, a 13 de outubro, pela notícia «Miranda Sarmento: dívida pública abaixo dos 85% do PIB em 2027 é a \"principal preocupação\" do Governo»: «A dívida pública deve continuar a ser a nossa principal preocupação nas contas públicas. Temos uma redução de cerca de quatro pontos percentuais nos últimos anos e estaremos abaixo dos 85% do PIB [Produto Interno Bruto] em 2027». Em 2025 a dívida foi de 89,2 % do PIB; desce 1,6 pontos em 2026 e 3,0 pontos em 2027, para 84,5 % (os valores do quadro estão arredondados à décima: 89,2 menos 1,6 não dá exatamente 87,5)."
   },
   {
    "figures": [
@@ -6137,39 +6295,39 @@
      "value": "3,1"
     },
     {
-     "end": 2431,
+     "end": 2447,
      "printed": "284,8",
      "row": "utao-divida-stock-2026",
      "source_body": "content/24 Orcamento 2027 Analise/source/debate/utao-oe2027-preliminar.pdf",
      "source_sha256": "b42daf2a3b7d3a955fc28f379b60744719771212f167facafba41178c9d58083",
-     "start": 2426,
+     "start": 2442,
      "value": "284,8"
     },
     {
-     "end": 2469,
+     "end": 2485,
      "printed": "287,8",
      "row": "utao-divida-stock-2027",
      "source_body": "content/24 Orcamento 2027 Analise/source/debate/utao-oe2027-preliminar.pdf",
      "source_sha256": "b42daf2a3b7d3a955fc28f379b60744719771212f167facafba41178c9d58083",
-     "start": 2464,
+     "start": 2480,
      "value": "287,8"
     },
     {
-     "end": 2512,
+     "end": 2537,
      "printed": "9,7",
      "row": "utao-divida-acrescimo-2026",
      "source_body": "content/24 Orcamento 2027 Analise/source/debate/utao-oe2027-preliminar.pdf",
      "source_sha256": "b42daf2a3b7d3a955fc28f379b60744719771212f167facafba41178c9d58083",
-     "start": 2509,
+     "start": 2534,
      "value": "9,7"
     },
     {
-     "end": 2518,
+     "end": 2543,
      "printed": "2,9",
      "row": "utao-divida-acrescimo-2027",
      "source_body": "content/24 Orcamento 2027 Analise/source/debate/utao-oe2027-preliminar.pdf",
      "source_sha256": "b42daf2a3b7d3a955fc28f379b60744719771212f167facafba41178c9d58083",
-     "start": 2515,
+     "start": 2540,
      "value": "2,9"
     }
    ],
@@ -6268,38 +6426,99 @@
      "tipo": "excerto"
     },
     {
-     "fim": 2431,
-     "id": "utao-divida-stock-2026",
+     "apoios": [
+      {
+       "campo": "excerpt",
+       "id": "utao-divida-stock-2026",
+       "livro": "PM"
+      },
+      {
+       "campo": "excerpt",
+       "id": "utao-divida-stock-2027",
+       "livro": "PM"
+      },
+      {
+       "campo": "excerpt",
+       "id": "utao-divida-acrescimo-2026",
+       "livro": "PM"
+      },
+      {
+       "campo": "excerpt",
+       "id": "utao-divida-acrescimo-2027",
+       "livro": "PM"
+      }
+     ],
+     "fim": 2441,
      "inicio": 2426,
+     "texto": "aproximadamente",
+     "tipo": "literal"
+    },
+    {
+     "fim": 2447,
+     "id": "utao-divida-stock-2026",
+     "inicio": 2442,
      "livro": "PM",
-     "sha256_linha": "e28f1e46b083fdb8c97e3ef1c9479d099474e6a16a727bc1349d3c7c2c430f33",
+     "sha256_linha": "351eeb8c3777c76e30f1fb4f4c5ba72903ea788082ee8402f81c298a64dea6cf",
      "texto": "284,8",
      "tipo": "valor"
     },
     {
-     "fim": 2469,
+     "fim": 2485,
      "id": "utao-divida-stock-2027",
-     "inicio": 2464,
+     "inicio": 2480,
      "livro": "PM",
-     "sha256_linha": "223dc5b95e1cdfc31007c077c447eb026bdfadd3e820b630c2ba212912c43f47",
+     "sha256_linha": "1e91a5aac5ce1b6f15a388462e28123d47c8b589f10fec779360a1551ecdb181",
      "texto": "287,8",
      "tipo": "valor"
     },
     {
-     "fim": 2512,
+     "apoios": [
+      {
+       "campo": "excerpt",
+       "id": "utao-divida-efeitos",
+       "livro": "PM"
+      },
+      {
+       "campo": "excerpt",
+       "id": "utao-divida-stock-2026",
+       "livro": "PM"
+      },
+      {
+       "campo": "excerpt",
+       "id": "utao-divida-stock-2027",
+       "livro": "PM"
+      },
+      {
+       "campo": "excerpt",
+       "id": "utao-divida-acrescimo-2026",
+       "livro": "PM"
+      },
+      {
+       "campo": "excerpt",
+       "id": "utao-divida-acrescimo-2027",
+       "livro": "PM"
+      }
+     ],
+     "fim": 2533,
+     "inicio": 2525,
+     "texto": "cerca de",
+     "tipo": "literal"
+    },
+    {
+     "fim": 2537,
      "id": "utao-divida-acrescimo-2026",
-     "inicio": 2509,
+     "inicio": 2534,
      "livro": "PM",
-     "sha256_linha": "3ba820787f95b4942dbd3dd06a0d35d80365ea7ba2c34fbd179ca9dd9491e52e",
+     "sha256_linha": "38be9cbeebcda30ff401e10c4b4ffd95beafc059318b0d3b26055b52c427eac4",
      "texto": "9,7",
      "tipo": "valor"
     },
     {
-     "fim": 2518,
+     "fim": 2543,
      "id": "utao-divida-acrescimo-2027",
-     "inicio": 2515,
+     "inicio": 2540,
      "livro": "PM",
-     "sha256_linha": "719dc4be89f35be175a18b0e5d4694e29bb613f46dd9e83c0f77fb366be242a5",
+     "sha256_linha": "e968fb1ea20faaf1c6cdfe574ab9fff0b962d55323509debbf5fdd083a8b9891",
      "texto": "2,9",
      "tipo": "valor"
     }
@@ -6320,7 +6539,7 @@
     "utao-divida-acrescimo-2026",
     "utao-divida-acrescimo-2027"
    ],
-   "text": "O quadro da dívida do relatório decompõe a descida de 2027: o saldo primário contribui com −2,5 pontos, o efeito dinâmico (o crescimento nominal menos os juros) com −1,5 pontos, de que o efeito dos juros são 2,4 pontos para cima e o efeito do PIB 3,9 pontos para baixo, e o ajustamento défice-dívida com 0,9 pontos para cima. Em 2026 o saldo primário contribuía com −2,1 pontos, o efeito dinâmico com −2,6 pontos e o ajustamento com 3,1 pontos. A UTAO explica: «O reforço do excedente primário em 2027 não será suficiente para compensar a menor redução do rácio da dívida proporcionada pelo efeito dinâmico. Segundo a POE/2027 (Tabela 16), o saldo primário contribuirá para uma redução de 2,5 p.p., face a 2,1 p.p. em 2026. Em contrapartida, o abrandamento do PIB nominal e o aumento do custo médio da dívida limitarão a redução proporcionada pelo efeito dinâmico a 1,5 p.p., face a 2,6 p.p. no ano anterior. O contributo do crescimento nominal para a descida do rácio passará de 4,6 p.p. para 3,9 p.p., sobretudo devido à desaceleração do deflator do PIB e, em menor medida, do crescimento real, enquanto os juros, em sentido contrário, aumentarão o rácio em 2,4 p.p., face a 2,0 p.p. O contributo do crescimento nominal continuará, assim, a superar o dos juros, mas com uma diferença menor, tornando a redução do rácio mais dependente do excedente primário. Em conjunto, estas duas componentes deverão reduzir o rácio em cerca de 4,0 p.p. em 2027, face a 4,7 p.p. em 2026, antes de considerado o ajustamento défice-dívida.» E: «Apesar do menor contributo redutor do efeito dinâmico, a descida do rácio deverá acelerar em 2027, sobretudo devido à redução do ajustamento défice-dívida, que inclui operações financeiras que alteram a dívida sem afetarem na mesma medida o saldo orçamental. Segundo a POE/2027, este ajustamento deverá acrescentar 0,9 p.p. ao rácio, face a 3,1 p.p. em 2026. Esta diminuição reflete sobretudo a redução da aquisição líquida de ativos financeiros, de 9,3 mil M€ para 0,9 mil M€, em particular as menores aplicações em numerário e depósitos e a ausência de aquisições líquidas de títulos exceto ações em 2027. O aumento dos restantes contributos para o ajustamento compensa parcialmente esta redução. Este ajustamento permanece positivo e superior ao excedente orçamental previsto (0,1% do PIB), pelo que o stock nominal da dívida continuará a aumentar.» Em euros, segundo a UTAO, o stock passa de 284,8 mil milhões no fim de 2026 para 287,8 mil milhões em 2027, com acréscimos de 9,7 e 2,9 mil milhões: a dívida continua a subir em euros, e desce em percentagem porque o PIB sobe mais."
+   "text": "O quadro da dívida do relatório decompõe a descida de 2027: o saldo primário contribui com −2,5 pontos, o efeito dinâmico (o crescimento nominal menos os juros) com −1,5 pontos, de que o efeito dos juros são 2,4 pontos para cima e o efeito do PIB 3,9 pontos para baixo, e o ajustamento défice-dívida com 0,9 pontos para cima. Em 2026 o saldo primário contribuía com −2,1 pontos, o efeito dinâmico com −2,6 pontos e o ajustamento com 3,1 pontos. A UTAO explica: «O reforço do excedente primário em 2027 não será suficiente para compensar a menor redução do rácio da dívida proporcionada pelo efeito dinâmico. Segundo a POE/2027 (Tabela 16), o saldo primário contribuirá para uma redução de 2,5 p.p., face a 2,1 p.p. em 2026. Em contrapartida, o abrandamento do PIB nominal e o aumento do custo médio da dívida limitarão a redução proporcionada pelo efeito dinâmico a 1,5 p.p., face a 2,6 p.p. no ano anterior. O contributo do crescimento nominal para a descida do rácio passará de 4,6 p.p. para 3,9 p.p., sobretudo devido à desaceleração do deflator do PIB e, em menor medida, do crescimento real, enquanto os juros, em sentido contrário, aumentarão o rácio em 2,4 p.p., face a 2,0 p.p. O contributo do crescimento nominal continuará, assim, a superar o dos juros, mas com uma diferença menor, tornando a redução do rácio mais dependente do excedente primário. Em conjunto, estas duas componentes deverão reduzir o rácio em cerca de 4,0 p.p. em 2027, face a 4,7 p.p. em 2026, antes de considerado o ajustamento défice-dívida.» E: «Apesar do menor contributo redutor do efeito dinâmico, a descida do rácio deverá acelerar em 2027, sobretudo devido à redução do ajustamento défice-dívida, que inclui operações financeiras que alteram a dívida sem afetarem na mesma medida o saldo orçamental. Segundo a POE/2027, este ajustamento deverá acrescentar 0,9 p.p. ao rácio, face a 3,1 p.p. em 2026. Esta diminuição reflete sobretudo a redução da aquisição líquida de ativos financeiros, de 9,3 mil M€ para 0,9 mil M€, em particular as menores aplicações em numerário e depósitos e a ausência de aquisições líquidas de títulos exceto ações em 2027. O aumento dos restantes contributos para o ajustamento compensa parcialmente esta redução. Este ajustamento permanece positivo e superior ao excedente orçamental previsto (0,1% do PIB), pelo que o stock nominal da dívida continuará a aumentar.» Em euros, segundo a UTAO, o stock passa de aproximadamente 284,8 mil milhões no fim de 2026 para 287,8 mil milhões em 2027, com acréscimos de cerca de 9,7 e 2,9 mil milhões, nos números arredondados da UTAO: a dívida continua a subir em euros, e desce em percentagem porque o PIB sobe mais."
   },
   {
    "figures": [
@@ -6744,63 +6963,63 @@
      "tipo": "excerto"
     },
     {
-     "fim": 2666,
+     "fim": 2700,
      "id": "utao-risco-sns",
-     "inicio": 1986,
+     "inicio": 2020,
      "livro": "PM",
      "sha256_linha": "03f7cb8feed8e14278f3ce5d2bb8cfa9239db150de4baf5b47f54fe02d766daa",
      "texto": "Existe um risco de pressão orçamental associado à execução do Serviço Nacional de Saúde (SNS). A persistência de défices na execução financeira do SNS, apesar dos sucessivos reforços das dotações orçamentais e das recorrentes injeções de capital destinadas a regularizar pagamentos em atraso, evidencia a manutenção de pressões sobre a despesa que poderão não estar integralmente acomodadas no financiamento previsto para 2027. Estas pressões incidem, designadamente, sobre as despesas com pessoal e os consumos intermédios (Tabela 15), podendo traduzir-se em necessidades adicionais de financiamento durante o ano e constituir um risco descendente para o saldo orçamental das AP.",
      "tipo": "excerto"
     },
     {
-     "fim": 2946,
+     "fim": 2980,
      "id": "utao-risco-juros",
-     "inicio": 2685,
+     "inicio": 2719,
      "livro": "PM",
      "sha256_linha": "06a403c8c316b29957648a6dec88af7b2d2c81bf0584ea91c76b2771417ae734",
      "texto": "A despesa com juros cresce 23,2% em contabilidade nacional em 2027 (18,7% em contabilidade pública, Tabela 13). Persiste o risco de encargos superiores aos projetados, que depende do volume de dívida a refinanciar em 2027 e das taxas de juro das novas emissões.",
      "tipo": "excerto"
     },
     {
-     "fim": 3619,
+     "fim": 3653,
      "id": "utao-risco-contingencias",
-     "inicio": 3122,
+     "inicio": 3156,
      "livro": "PM",
      "sha256_linha": "02cf3c3bd6f3382401b6588fb0131e94b6be89717a193ef75366dd743e056655",
      "texto": "As responsabilidades contingentes constituem outro risco: decisões arbitrais desfavoráveis no âmbito das PPP e garantias às linhas de crédito criadas na sequência das tempestades (2000 M€ de crédito e 571 M€ de encargos plurianuais potenciais, Caixa 3). A prorrogação até ao final de 2027 da garantia pessoal do Estado ao crédito à habitação de jovens agrava-o: o stock de garantias ao abrigo do regime mais do que duplicou entre dezembro de 2025 e maio de 2026, de 449 M€ para 926 M€ (Tabela 19).",
      "tipo": "excerto"
     },
     {
-     "fim": 4230,
+     "fim": 4264,
      "id": "utao-risco-mercados",
-     "inicio": 3641,
+     "inicio": 3675,
      "livro": "PM",
      "sha256_linha": "dbe5c137b283ce6c68f175214b0651fd52dc957f33a8634157dd52338a8cbc51",
      "texto": "A instabilidade política e a deterioração das finanças públicas francesas (défice de 5,1% do PIB em 2025 e de 5,4% previsto pelo Governo francês para 2026) poderão intensificar as tensões no mercado europeu de dívida soberana e elevar os prémios de risco e os custos de financiamento de Portugal. Acresce o risco quanto à trajetória da despesa líquida: a Comissão Europeia estima um desvio de 2,1% do PIB no final de 2027, acima do limiar de 0,6% (capítulo 3), e, na análise de sustentabilidade do MF, a probabilidade de o rácio da dívida em 2033 exceder o de 2028 é de 22,9% (capítulo 5).",
      "tipo": "excerto"
     },
     {
-     "fim": 4722,
+     "fim": 4756,
      "id": "utao-risco-fenomenos",
-     "inicio": 4262,
+     "inicio": 4296,
      "livro": "PM",
      "sha256_linha": "d1ff5b09f05ec8cb5595b15c87d20a72a02fde63d49a16711718bf434d43add9",
      "texto": "A ocorrência de novos fenómenos naturais extremos em 2027 poderá exigir a adoção de medidas extraordinárias de apoio público destinadas a mitigar os danos causados e a assegurar a recuperação dos setores e das infraestruturas afetados. A eventual necessidade de financiar estas medidas constituiria uma pressão adicional sobre a despesa pública, configurando um risco orçamental. A Caixa 3 apresenta os apoios já aprovados na sequência das tempestades de 2026.",
      "tipo": "excerto"
     },
     {
-     "fim": 5340,
+     "fim": 5374,
      "id": "cfp-emprego-receita",
-     "inicio": 4788,
+     "inicio": 4822,
      "livro": "PM",
      "sha256_linha": "9eff3d24da34e9791d243e72379134352629d976ed377319a2d6f738b2b53143",
      "texto": "A previsão para o emprego (1,4%) é a mais elevada de entre as instituições de referência e situa-se no limite superior do intervalo de confiança a 30%. Assenta num crescimento da população ativa (1,3%) superior ao da população em idade ativa (0,6%), o que pressupõe um aumento expressivo da taxa de participação. Também para as remunerações por trabalhador, a previsão do MF é a mais elevada de entre as instituições de referência. O efeito conjugado destes dois elementos pode resultar em riscos acrescidos para a receita decorrente da massa salarial.",
      "tipo": "excerto"
     },
     {
-     "fim": 5544,
+     "fim": 5578,
      "id": "cfp-medidas",
-     "inicio": 5363,
+     "inicio": 5397,
      "livro": "PM",
      "sha256_linha": "ab8d1f00e6fc0298f565ca5e21267332f792eee375ea4c4cd9bb90e50d82bf3a",
      "texto": "O MF estima um impacto macroeconómico reduzido das medidas de apoio ao rendimento das famílias com efeito no final de 2026. As medidas previstas para 2027 terão um impacto reduzido.",
@@ -6818,7 +7037,7 @@
     "cfp-emprego-receita",
     "cfp-medidas"
    ],
-   "text": "A UTAO, sobre o crescimento, compara as previsões com as do Banco de Portugal (o BdP), da Comissão Europeia (a CE), do CFP, da OCDE, a Organização para a Cooperação e Desenvolvimento Económico, e do Fundo Monetário Internacional (o FMI), e aponta a dependência da execução do Portugal 2030 (PT2030): «Um crescimento económico inferior ao projetado constitui um risco para a concretização do saldo orçamental, em particular num cenário para 2027 em que a despesa corrente cresce 6,6% e a receita corrente 4,5% (Tabela 13). A POE/2027 assenta num crescimento real do PIB de 2,1%, acima das previsões do BdP, da CE e do CFP (1,8%), da OCDE (1,7%) e do FMI (1,6%) (capítulo 2), num enquadramento marcado pela incerteza geopolítica e pelos riscos associados à evolução dos preços da energia. Um abrandamento da atividade económica superior ao implícito no cenário orçamental traduzir-se-ia numa arrecadação inferior à prevista de impostos sobre o rendimento e o consumo, bem como de contribuições sociais, condicionando a execução da receita e colocando pressão sobre o saldo orçamental. O cenário depende ainda da execução do PT2030, cujos recebimentos se prevê que aumentem 65% em 2027 (+1948 M€) quando, a 31 de agosto de 2026, a execução financeira era de 21,7% da dotação, e da conclusão do PRR, cujo último pedido de pagamento (96 marcos e metas) estava em avaliação (Caixa 1).» Sobre a receita da fraude: «Subexecução da medida de combate à fraude no setor dos combustíveis. A POE/2027 prevê uma receita adicional de 300 M€ associada a esta medida, sem, contudo, apresentar informação que permita fundamentar a estimativa ou avaliar a sua exequibilidade. Subsiste, assim, um risco de concretização inferior ao previsto, atendendo aos antecedentes de medidas de combate à fraude cuja execução efetiva se revelou menor, ou relativamente às quais a Conta Geral do Estado não disponibilizou informação suficiente para aferir os resultados alcançados.» Sobre o Serviço Nacional de Saúde: «Existe um risco de pressão orçamental associado à execução do Serviço Nacional de Saúde (SNS). A persistência de défices na execução financeira do SNS, apesar dos sucessivos reforços das dotações orçamentais e das recorrentes injeções de capital destinadas a regularizar pagamentos em atraso, evidencia a manutenção de pressões sobre a despesa que poderão não estar integralmente acomodadas no financiamento previsto para 2027. Estas pressões incidem, designadamente, sobre as despesas com pessoal e os consumos intermédios (Tabela 15), podendo traduzir-se em necessidades adicionais de financiamento durante o ano e constituir um risco descendente para o saldo orçamental das AP.» Sobre os juros: «A despesa com juros cresce 23,2% em contabilidade nacional em 2027 (18,7% em contabilidade pública, Tabela 13). Persiste o risco de encargos superiores aos projetados, que depende do volume de dívida a refinanciar em 2027 e das taxas de juro das novas emissões.» Sobre as responsabilidades contingentes, onde entram as parcerias público-privadas (as PPP), incluindo as parcerias rodoviárias do item das parcerias de «O que se discute»: «As responsabilidades contingentes constituem outro risco: decisões arbitrais desfavoráveis no âmbito das PPP e garantias às linhas de crédito criadas na sequência das tempestades (2000 M€ de crédito e 571 M€ de encargos plurianuais potenciais, Caixa 3). A prorrogação até ao final de 2027 da garantia pessoal do Estado ao crédito à habitação de jovens agrava-o: o stock de garantias ao abrigo do regime mais do que duplicou entre dezembro de 2025 e maio de 2026, de 449 M€ para 926 M€ (Tabela 19).» Sobre os mercados: «A instabilidade política e a deterioração das finanças públicas francesas (défice de 5,1% do PIB em 2025 e de 5,4% previsto pelo Governo francês para 2026) poderão intensificar as tensões no mercado europeu de dívida soberana e elevar os prémios de risco e os custos de financiamento de Portugal. Acresce o risco quanto à trajetória da despesa líquida: a Comissão Europeia estima um desvio de 2,1% do PIB no final de 2027, acima do limiar de 0,6% (capítulo 3), e, na análise de sustentabilidade do MF, a probabilidade de o rácio da dívida em 2033 exceder o de 2028 é de 22,9% (capítulo 5).» Sobre os fenómenos naturais: «A ocorrência de novos fenómenos naturais extremos em 2027 poderá exigir a adoção de medidas extraordinárias de apoio público destinadas a mitigar os danos causados e a assegurar a recuperação dos setores e das infraestruturas afetados. A eventual necessidade de financiar estas medidas constituiria uma pressão adicional sobre a despesa pública, configurando um risco orçamental. A Caixa 3 apresenta os apoios já aprovados na sequência das tempestades de 2026.» O Conselho das Finanças Públicas, sobre o emprego e a receita: «A previsão para o emprego (1,4%) é a mais elevada de entre as instituições de referência e situa-se no limite superior do intervalo de confiança a 30%. Assenta num crescimento da população ativa (1,3%) superior ao da população em idade ativa (0,6%), o que pressupõe um aumento expressivo da taxa de participação. Também para as remunerações por trabalhador, a previsão do MF é a mais elevada de entre as instituições de referência. O efeito conjugado destes dois elementos pode resultar em riscos acrescidos para a receita decorrente da massa salarial.» E sobre as medidas: «O MF estima um impacto macroeconómico reduzido das medidas de apoio ao rendimento das famílias com efeito no final de 2026. As medidas previstas para 2027 terão um impacto reduzido.»"
+   "text": "A UTAO, sobre o crescimento, compara as previsões com as do Banco de Portugal (o BdP), da Comissão Europeia (a CE), do CFP, da OCDE, a Organização para a Cooperação e Desenvolvimento Económico, e do Fundo Monetário Internacional (o FMI), e aponta a dependência da execução do Portugal 2030 (PT2030): «Um crescimento económico inferior ao projetado constitui um risco para a concretização do saldo orçamental, em particular num cenário para 2027 em que a despesa corrente cresce 6,6% e a receita corrente 4,5% (Tabela 13). A POE/2027 assenta num crescimento real do PIB de 2,1%, acima das previsões do BdP, da CE e do CFP (1,8%), da OCDE (1,7%) e do FMI (1,6%) (capítulo 2), num enquadramento marcado pela incerteza geopolítica e pelos riscos associados à evolução dos preços da energia. Um abrandamento da atividade económica superior ao implícito no cenário orçamental traduzir-se-ia numa arrecadação inferior à prevista de impostos sobre o rendimento e o consumo, bem como de contribuições sociais, condicionando a execução da receita e colocando pressão sobre o saldo orçamental. O cenário depende ainda da execução do PT2030, cujos recebimentos se prevê que aumentem 65% em 2027 (+1948 M€) quando, a 31 de agosto de 2026, a execução financeira era de 21,7% da dotação, e da conclusão do PRR, cujo último pedido de pagamento (96 marcos e metas) estava em avaliação (Caixa 1).» Sobre a receita da fraude: «Subexecução da medida de combate à fraude no setor dos combustíveis. A POE/2027 prevê uma receita adicional de 300 M€ associada a esta medida, sem, contudo, apresentar informação que permita fundamentar a estimativa ou avaliar a sua exequibilidade. Subsiste, assim, um risco de concretização inferior ao previsto, atendendo aos antecedentes de medidas de combate à fraude cuja execução efetiva se revelou menor, ou relativamente às quais a Conta Geral do Estado não disponibilizou informação suficiente para aferir os resultados alcançados.» Sobre o Serviço Nacional de Saúde e as Administrações Públicas (AP): «Existe um risco de pressão orçamental associado à execução do Serviço Nacional de Saúde (SNS). A persistência de défices na execução financeira do SNS, apesar dos sucessivos reforços das dotações orçamentais e das recorrentes injeções de capital destinadas a regularizar pagamentos em atraso, evidencia a manutenção de pressões sobre a despesa que poderão não estar integralmente acomodadas no financiamento previsto para 2027. Estas pressões incidem, designadamente, sobre as despesas com pessoal e os consumos intermédios (Tabela 15), podendo traduzir-se em necessidades adicionais de financiamento durante o ano e constituir um risco descendente para o saldo orçamental das AP.» Sobre os juros: «A despesa com juros cresce 23,2% em contabilidade nacional em 2027 (18,7% em contabilidade pública, Tabela 13). Persiste o risco de encargos superiores aos projetados, que depende do volume de dívida a refinanciar em 2027 e das taxas de juro das novas emissões.» Sobre as responsabilidades contingentes, onde entram as parcerias público-privadas (as PPP), incluindo as parcerias rodoviárias do item das parcerias de «O que se discute»: «As responsabilidades contingentes constituem outro risco: decisões arbitrais desfavoráveis no âmbito das PPP e garantias às linhas de crédito criadas na sequência das tempestades (2000 M€ de crédito e 571 M€ de encargos plurianuais potenciais, Caixa 3). A prorrogação até ao final de 2027 da garantia pessoal do Estado ao crédito à habitação de jovens agrava-o: o stock de garantias ao abrigo do regime mais do que duplicou entre dezembro de 2025 e maio de 2026, de 449 M€ para 926 M€ (Tabela 19).» Sobre os mercados: «A instabilidade política e a deterioração das finanças públicas francesas (défice de 5,1% do PIB em 2025 e de 5,4% previsto pelo Governo francês para 2026) poderão intensificar as tensões no mercado europeu de dívida soberana e elevar os prémios de risco e os custos de financiamento de Portugal. Acresce o risco quanto à trajetória da despesa líquida: a Comissão Europeia estima um desvio de 2,1% do PIB no final de 2027, acima do limiar de 0,6% (capítulo 3), e, na análise de sustentabilidade do MF, a probabilidade de o rácio da dívida em 2033 exceder o de 2028 é de 22,9% (capítulo 5).» Sobre os fenómenos naturais: «A ocorrência de novos fenómenos naturais extremos em 2027 poderá exigir a adoção de medidas extraordinárias de apoio público destinadas a mitigar os danos causados e a assegurar a recuperação dos setores e das infraestruturas afetados. A eventual necessidade de financiar estas medidas constituiria uma pressão adicional sobre a despesa pública, configurando um risco orçamental. A Caixa 3 apresenta os apoios já aprovados na sequência das tempestades de 2026.» O Conselho das Finanças Públicas, sobre o emprego e a receita: «A previsão para o emprego (1,4%) é a mais elevada de entre as instituições de referência e situa-se no limite superior do intervalo de confiança a 30%. Assenta num crescimento da população ativa (1,3%) superior ao da população em idade ativa (0,6%), o que pressupõe um aumento expressivo da taxa de participação. Também para as remunerações por trabalhador, a previsão do MF é a mais elevada de entre as instituições de referência. O efeito conjugado destes dois elementos pode resultar em riscos acrescidos para a receita decorrente da massa salarial.» E sobre as medidas: «O MF estima um impacto macroeconómico reduzido das medidas de apoio ao rendimento das famílias com efeito no final de 2026. As medidas previstas para 2027 terão um impacto reduzido.»"
   },
   {
    "figures": [],
@@ -6841,66 +7060,66 @@
      "value": "-477"
     },
     {
-     "end": 269,
+     "end": 371,
      "printed": "121",
      "row": "pm-q3-2-r13-c0",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 266,
+     "start": 368,
      "value": "-121"
     },
     {
-     "end": 331,
+     "end": 433,
      "printed": "100",
      "row": "pm-q3-2-r25-c0",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 328,
+     "start": 430,
      "value": "100"
     },
     {
-     "end": 392,
+     "end": 494,
      "printed": "947",
      "row": "der-oe2027-medidas-anteriores-despesa",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 389,
+     "start": 491,
      "value": "947"
     },
     {
-     "end": 516,
+     "end": 618,
      "printed": "176",
      "row": "pm-q3-2-r14-c0",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 513,
+     "start": 615,
      "value": "-176"
     },
     {
-     "end": 544,
+     "end": 646,
      "printed": "477",
      "row": "pm-q3-2-r9-c0",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 541,
+     "start": 643,
      "value": "-477"
     },
     {
-     "end": 611,
+     "end": 713,
      "printed": "1,7",
      "row": "pm-q4-1-r11-c2",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 608,
+     "start": 710,
      "value": "1,7"
     },
     {
-     "end": 691,
+     "end": 793,
      "printed": "1 548",
      "row": "der-oe2027-juros-variacao-cn",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 686,
+     "start": 788,
      "value": "1548"
     }
    ],
@@ -6918,6 +7137,15 @@
      "tipo": "valor"
     },
     {
+     "fim": 265,
+     "id": "posicao-be-rendimentos",
+     "inicio": 181,
+     "livro": "PM",
+     "sha256_linha": "8153db2f250b911728188d86029f4a1b9b3cedc367a1bac07ea59bfdaaf87b1b",
+     "texto": "OE2027: BE diz que Orçamento “dá migalhas a quem trabalha” e beneficia os mais ricos",
+     "tipo": "documento"
+    },
+    {
      "apoios": [
       {
        "campo": "excerpt",
@@ -6925,15 +7153,15 @@
        "livro": "PM"
       }
      ],
-     "fim": 199,
-     "inicio": 186,
+     "fim": 301,
+     "inicio": 288,
      "texto": "“dá migalhas”",
      "tipo": "literal"
     },
     {
-     "fim": 269,
+     "fim": 371,
      "id": "pm-q3-2-r13-c0",
-     "inicio": 266,
+     "inicio": 368,
      "livro": "PM",
      "modificador": "abs",
      "sha256_linha": "ce20b407b0af9617f44643eb83229f23ab7f4cde9781ac9f1b6468c7916e1076",
@@ -6941,27 +7169,27 @@
      "tipo": "valor"
     },
     {
-     "fim": 331,
+     "fim": 433,
      "id": "pm-q3-2-r25-c0",
-     "inicio": 328,
+     "inicio": 430,
      "livro": "PM",
      "sha256_linha": "3f0adc05c649407913fc5d92566440430e5559de2e19993bd72fd7cca0679288",
      "texto": "100",
      "tipo": "valor"
     },
     {
-     "fim": 392,
+     "fim": 494,
      "id": "der-oe2027-medidas-anteriores-despesa",
-     "inicio": 389,
+     "inicio": 491,
      "livro": "PM",
-     "sha256_linha": "a110e7cad45fd62b5ef6e9e3fc9429261b7c748643f7d37f2158f3fbb0faa3d9",
+     "sha256_linha": "bd9fd70453da62d5fca9d955298004e91cbcb4cf96f879395853b4fdee61442a",
      "texto": "947",
      "tipo": "valor"
     },
     {
-     "fim": 516,
+     "fim": 618,
      "id": "pm-q3-2-r14-c0",
-     "inicio": 513,
+     "inicio": 615,
      "livro": "PM",
      "modificador": "abs",
      "sha256_linha": "3dca330fdf7eb79d5f11edb6a55edc807dc56fbd769f9e16a81d247921651ecb",
@@ -6969,9 +7197,9 @@
      "tipo": "valor"
     },
     {
-     "fim": 544,
+     "fim": 646,
      "id": "pm-q3-2-r9-c0",
-     "inicio": 541,
+     "inicio": 643,
      "livro": "PM",
      "modificador": "abs",
      "sha256_linha": "4b9df836ca146bf20674572fc84f9644740ab3f304b0050181ef7985abc49359",
@@ -6979,18 +7207,18 @@
      "tipo": "valor"
     },
     {
-     "fim": 611,
+     "fim": 713,
      "id": "pm-q4-1-r11-c2",
-     "inicio": 608,
+     "inicio": 710,
      "livro": "PM",
      "sha256_linha": "51c5088608fde56d4ef336a1281a8d13174bf520ead05635ab97c65f38a2983d",
      "texto": "1,7",
      "tipo": "valor"
     },
     {
-     "fim": 691,
+     "fim": 793,
      "id": "der-oe2027-juros-variacao-cn",
-     "inicio": 686,
+     "inicio": 788,
      "livro": "PM",
      "sha256_linha": "958c5b4bed6ca55660042daf403866dd414b7fceaa6f00d96e3bc11173133316",
      "texto": "1 548",
@@ -7009,7 +7237,7 @@
     "pm-q4-1-r11-c2",
     "der-oe2027-juros-variacao-cn"
    ],
-   "text": "As «seis descidas consecutivas do IRS» da comunicação do Governo incluem as que o relatório situa antes de 2027: o IRS perde 477 milhões em 2027. O Bloco de Esquerda diz que o Orçamento “dá migalhas”: a frase não tem número, e as medidas novas para as pessoas valem 121 milhões de euros de IRS a menos no mínimo de existência e 100 milhões no Complemento Solidário para Idosos, ao lado de 947 milhões já contados nos salários. «O único imposto cuja receita diminuiu foi o IRC»: no quadro das medidas, o IRC perde 176 milhões em 2027 e o IRS 477 milhões; na conta, os impostos diretos no seu conjunto crescem 1,7 %. Nenhum partido, nos documentos deste estudo, fala dos juros, que sobem 1 548 milhões de euros em 2027 em contabilidade nacional, mais do que todas as medidas juntas custam ao saldo no mesmo perímetro."
+   "text": "As «seis descidas consecutivas do IRS» da comunicação do Governo incluem as que o relatório situa antes de 2027: o IRS perde 477 milhões em 2027. O Bloco de Esquerda, pela notícia «OE2027: BE diz que Orçamento “dá migalhas a quem trabalha” e beneficia os mais ricos», diz que o Orçamento “dá migalhas”: a frase não tem número, e as medidas novas para as pessoas valem 121 milhões de euros de IRS a menos no mínimo de existência e 100 milhões no Complemento Solidário para Idosos, ao lado de 947 milhões já contados nos salários. «O único imposto cuja receita diminuiu foi o IRC»: no quadro das medidas, o IRC perde 176 milhões em 2027 e o IRS 477 milhões; na conta, os impostos diretos no seu conjunto crescem 1,7 %. Nenhum partido, nos documentos deste estudo, fala dos juros, que sobem 1 548 milhões de euros em 2027 em contabilidade nacional, mais do que todas as medidas juntas custam ao saldo no mesmo perímetro."
   },
   {
    "figures": [],
@@ -7869,12 +8097,12 @@
    "excerpt": "pm-q3-2-r21-c0 + pm-q3-2-r22-c0 + pm-q3-2-r23-c0 = 947",
    "id": "der-oe2027-medidas-anteriores-despesa",
    "locator": "Cálculo sobre as linhas identificadas",
-   "measure": "Medidas anteriores: despesa",
-   "measure_en": "Earlier measures: expenditure",
-   "medida": "Medidas anteriores: despesa",
-   "medida_en": "Earlier measures: expenditure",
-   "name": "Medidas anteriores: despesa",
-   "name_en": "Earlier measures: expenditure",
+   "measure": "Medidas invariantes: despesa",
+   "measure_en": "Invariant measures: expenditure",
+   "medida": "Medidas invariantes: despesa",
+   "medida_en": "Invariant measures: expenditure",
+   "name": "Medidas invariantes: despesa",
+   "name_en": "Invariant measures: expenditure",
    "name_source": "Cálculo sobre as linhas identificadas",
    "note": "",
    "period": "2027",
@@ -7904,12 +8132,12 @@
    "excerpt": "pm-q3-2-r7-c0 + pm-q3-2-r10-c0 + pm-q3-2-r11-c0 + pm-q3-2-r12-c0 + pm-q3-2-r15-c0 + pm-q3-2-r16-c0 + pm-q3-2-r18-c0 = -263",
    "id": "der-oe2027-medidas-anteriores-receita",
    "locator": "Cálculo sobre as linhas identificadas",
-   "measure": "Medidas anteriores: receita",
-   "measure_en": "Earlier measures: revenue",
-   "medida": "Medidas anteriores: receita",
-   "medida_en": "Earlier measures: revenue",
-   "name": "Medidas anteriores: receita",
-   "name_en": "Earlier measures: revenue",
+   "measure": "Medidas invariantes: receita",
+   "measure_en": "Invariant measures: revenue",
+   "medida": "Medidas invariantes: receita",
+   "medida_en": "Invariant measures: revenue",
+   "name": "Medidas invariantes: receita",
+   "name_en": "Invariant measures: revenue",
    "name_source": "Cálculo sobre as linhas identificadas",
    "note": "",
    "period": "2027",
@@ -7934,12 +8162,12 @@
    "excerpt": "der-oe2027-medidas-anteriores-receita - der-oe2027-medidas-anteriores-despesa = -1210",
    "id": "der-oe2027-medidas-anteriores-saldo",
    "locator": "Cálculo sobre as linhas identificadas",
-   "measure": "Medidas anteriores: impacto no saldo",
-   "measure_en": "Earlier measures: balance impact",
-   "medida": "Medidas anteriores: impacto no saldo",
-   "medida_en": "Earlier measures: balance impact",
-   "name": "Medidas anteriores: impacto no saldo",
-   "name_en": "Earlier measures: balance impact",
+   "measure": "Medidas invariantes: impacto no saldo",
+   "measure_en": "Invariant measures: balance impact",
+   "medida": "Medidas invariantes: impacto no saldo",
+   "medida_en": "Invariant measures: balance impact",
+   "name": "Medidas invariantes: impacto no saldo",
+   "name_en": "Invariant measures: balance impact",
    "name_source": "Cálculo sobre as linhas identificadas",
    "note": "A soma das linhas é -1210 + 79 = -1131 milhões; difere do total publicado -1132 em um milhão, por arredondamento das linhas do quadro.",
    "period": "2027",
@@ -17591,6 +17819,7 @@
    "name_source": "Decreto-Lei n.º 139/2025; artigo 3.º; p. 2 PDF",
    "note": "Aplicável ao território continental, pelo artigo 2.º. Efeitos em 2026, pelo artigo 7.º.",
    "period": "2026",
+   "published_at": "2025-12-29",
    "reference_date": "2026",
    "selection": {
     "end": 170,
@@ -17671,12 +17900,12 @@
    "group": "leituras-utao",
    "id": "utao-divida-acrescimo-2026",
    "locator": "§77; p. 44 PDF (43 impressa)",
-   "measure": "UTAO: dívida, acrescimo-2026",
-   "measure_en": "UTAO: debt, acrescimo-2026",
-   "medida": "UTAO: dívida, acrescimo-2026",
-   "medida_en": "UTAO: debt, acrescimo-2026",
-   "name": "UTAO: dívida, acrescimo-2026",
-   "name_en": "UTAO: debt, acrescimo-2026",
+   "measure": "UTAO: acréscimo anual da dívida pública, 2026",
+   "measure_en": "UTAO: annual increase in public debt, 2026",
+   "medida": "UTAO: acréscimo anual da dívida pública, 2026",
+   "medida_en": "UTAO: annual increase in public debt, 2026",
+   "name": "UTAO: acréscimo anual da dívida pública, 2026",
+   "name_en": "UTAO: annual increase in public debt, 2026",
    "name_source": "§77; p. 44 PDF (43 impressa)",
    "note": "",
    "period": "2026",
@@ -17717,12 +17946,12 @@
    "group": "leituras-utao",
    "id": "utao-divida-acrescimo-2027",
    "locator": "§77; p. 44 PDF (43 impressa)",
-   "measure": "UTAO: dívida, acrescimo-2027",
-   "measure_en": "UTAO: debt, acrescimo-2027",
-   "medida": "UTAO: dívida, acrescimo-2027",
-   "medida_en": "UTAO: debt, acrescimo-2027",
-   "name": "UTAO: dívida, acrescimo-2027",
-   "name_en": "UTAO: debt, acrescimo-2027",
+   "measure": "UTAO: acréscimo anual da dívida pública, 2027",
+   "measure_en": "UTAO: annual increase in public debt, 2027",
+   "medida": "UTAO: acréscimo anual da dívida pública, 2027",
+   "medida_en": "UTAO: annual increase in public debt, 2027",
+   "name": "UTAO: acréscimo anual da dívida pública, 2027",
+   "name_en": "UTAO: annual increase in public debt, 2027",
    "name_source": "§77; p. 44 PDF (43 impressa)",
    "note": "",
    "period": "2027",
@@ -17867,12 +18096,12 @@
    "group": "leituras-utao",
    "id": "utao-divida-stock-2026",
    "locator": "§77; p. 44 PDF (43 impressa)",
-   "measure": "UTAO: dívida, stock-2026",
-   "measure_en": "UTAO: debt, stock-2026",
-   "medida": "UTAO: dívida, stock-2026",
-   "medida_en": "UTAO: debt, stock-2026",
-   "name": "UTAO: dívida, stock-2026",
-   "name_en": "UTAO: debt, stock-2026",
+   "measure": "UTAO: dívida pública em euros, fim de 2026",
+   "measure_en": "UTAO: public debt in euros, end of 2026",
+   "medida": "UTAO: dívida pública em euros, fim de 2026",
+   "medida_en": "UTAO: public debt in euros, end of 2026",
+   "name": "UTAO: dívida pública em euros, fim de 2026",
+   "name_en": "UTAO: public debt in euros, end of 2026",
    "name_source": "§77; p. 44 PDF (43 impressa)",
    "note": "",
    "period": "2026",
@@ -17913,12 +18142,12 @@
    "group": "leituras-utao",
    "id": "utao-divida-stock-2027",
    "locator": "§77; p. 44 PDF (43 impressa)",
-   "measure": "UTAO: dívida, stock-2027",
-   "measure_en": "UTAO: debt, stock-2027",
-   "medida": "UTAO: dívida, stock-2027",
-   "medida_en": "UTAO: debt, stock-2027",
-   "name": "UTAO: dívida, stock-2027",
-   "name_en": "UTAO: debt, stock-2027",
+   "measure": "UTAO: dívida pública em euros, fim de 2027",
+   "measure_en": "UTAO: public debt in euros, end of 2027",
+   "medida": "UTAO: dívida pública em euros, fim de 2027",
+   "medida_en": "UTAO: public debt in euros, end of 2027",
+   "name": "UTAO: dívida pública em euros, fim de 2027",
+   "name_en": "UTAO: public debt in euros, end of 2027",
    "name_source": "§77; p. 44 PDF (43 impressa)",
    "note": "",
    "period": "2027",
@@ -18105,6 +18334,52 @@
    "unit": "afirmação",
    "value": "O MF prevê que em 2027 as novas medidas de política orçamental tenham um impacto residual no saldo orçamental avaliado em +79 M€ (+0,02% do PIB). Na receita, estas medidas terão um impacto positivo no saldo de +179 M€ (+0,05% do PIB); na despesa, o impacto das medidas, é negativo em 100 M€ (0,03% do PIB). Estes dados estão compilados na Tabela 9.",
    "value_not_numeric": true
+  },
+  "utao-pessoal-variacao-cn": {
+   "document": {
+    "file": "content/24 Orcamento 2027 Analise/source/debate/utao-oe2027-preliminar.pdf",
+    "locator": "§102; p. 53 PDF (52 impressa); Tabela 7, Despesas com pessoal, coluna Variação anual (em %), 2027; p. 20 PDF (19 impressa)",
+    "page": 53,
+    "printed_page": 52,
+    "source_sha256": "b42daf2a3b7d3a955fc28f379b60744719771212f167facafba41178c9d58083",
+    "title": "Relatório UTAO n.º 17/2026 Apreciação preliminar da Proposta de Orçamento do Estado para 2027"
+   },
+   "entity_aliases": {
+    "Unidade Técnica de Apoio Orçamental": []
+   },
+   "evidence": {
+    "file": "content/24 Orcamento 2027 Analise/source/debate/utao-oe2027-preliminar.pdf",
+    "locator": "§102; p. 53 PDF (52 impressa); Tabela 7, Despesas com pessoal, coluna Variação anual (em %), 2027; p. 20 PDF (19 impressa)",
+    "sha256": "b42daf2a3b7d3a955fc28f379b60744719771212f167facafba41178c9d58083"
+   },
+   "excerpt": "O MF propõe estabilizar o emprego público em 2027 em 768,4 mil trabalhadores (Relatório do MF, Quadro 4.42), nível idêntico ao de junho de 2026 (768 378, DGAEP), o que equivale a não haver crescimento líquido do emprego a partir de junho. Segundo dados provisórios da DGAEP, o nível de junho de 2026 está 1,0% (+7390) acima de junho de 2025 e 0,3% (+2100) acima de dezembro de 2025. A estabilização do emprego contém a massa salarial; entradas superiores às saídas aumentariam o emprego e a despesa com pessoal, que a POE/2027 já prevê crescer 5,3% (Tabela 7).",
+   "fetched_at": "2026-10-19T22:23:48.082039+00:00",
+   "group": "leituras-utao",
+   "id": "utao-pessoal-variacao-cn",
+   "locator": "§102; p. 53 PDF (52 impressa); Tabela 7, Despesas com pessoal, coluna Variação anual (em %), 2027; p. 20 PDF (19 impressa)",
+   "measure": "UTAO: variação das despesas com pessoal em contabilidade nacional, 2027",
+   "measure_en": "UTAO: change in staff costs in national accounts, 2027",
+   "medida": "UTAO: variação das despesas com pessoal em contabilidade nacional, 2027",
+   "medida_en": "UTAO: change in staff costs in national accounts, 2027",
+   "name": "UTAO: variação das despesas com pessoal em contabilidade nacional, 2027",
+   "name_en": "UTAO: change in staff costs in national accounts, 2027",
+   "name_source": "§102; p. 53 PDF (52 impressa); Tabela 7, Despesas com pessoal, coluna Variação anual (em %), 2027; p. 20 PDF (19 impressa)",
+   "note": "",
+   "period": "2027",
+   "published_at": "2026-10-19",
+   "reference_date": "2027",
+   "selection": {
+    "end": 547,
+    "pattern": "crescer (?P<value>5,3)%",
+    "source_value": "5,3",
+    "start": 544
+   },
+   "source_excerpt": "O MF propõe estabilizar o emprego público em 2027 em 768,4 mil trabalhadores (Relatório do MF, Quadro 4.42), nível idêntico ao de junho de 2026 (768 378, DGAEP), o que equivale a não haver crescimento líquido do emprego a partir de junho. Segundo dados provisórios da DGAEP, o nível de junho de 2026 está 1,0% (+7390) acima de junho de 2025 e 0,3% (+2100) acima de dezembro de 2025. A estabilização do emprego contém a massa salarial; entradas superiores às saídas aumentariam o emprego e a despesa com pessoal, que a POE/2027 já prevê crescer 5,3% (Tabela 7).",
+   "source_type": "government",
+   "source_url": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=jXG0%2bDjqO%2fp24sKDn5FOWu7PztWEWehzpjBISfq%2bHBtO6CBEhPZcSa90e7P%2fEmuAirgdFc3uJ4AGHFGQz2ubmRHqIldswZvo4iG1rB8JkFdli%2bE%2b5pF7oAwuJr8C7utVPOh60GxHq8Dubj%2bAdy%2bfyHAcsqPX1u5E8MfUhNBiJZ3RXzFuyvv2o42Tg6o2xFCYvAHMzy%2fUJ6tdI8QCvqt13kcfQpd5lggsIcipfZ634nqHaBBebtywj7T9%2fatfLzpF%2f23WTlGF27nnlPWdE6EX%2fuXRp0W01R2qnbhElWeTDfJpVM2OwqoVmUrHDWhwdYoYgsbC0ZiVEkty%2bSS4oorZGF7d36ELrrmQzWsXI4671ROkNVrsg3EYXrY2YcUFP%2bDR0BSMGe3cyGx1BV%2bdxPbSwDriMMnzyX9Gma1KrrYmjsC0FEk%2fX1GL9Ns4N1JLVZOUSHzYhkXb7UtLAlhSpTP1tRutoSrfJqmMLBk6poYIIVQ5SHLnPIxaJMun7gsC0gMHgRLAGq3C%2fUjGEu0U%2bELEMg%3d%3d&fich=UTAO-Rel-17-2026-OE2027_preliminar.pdf&Inline=true",
+   "status": "conferido",
+   "unit": "%",
+   "value": "5,3"
   },
   "utao-politicas-revisao": {
    "document": {

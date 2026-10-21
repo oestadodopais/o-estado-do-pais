@@ -13,6 +13,7 @@ unit: "euros"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "CSI: objetivo do valor de referência mensal"
 name_source: "p. 102 PDF (86 impressa)"
+status: "conferido"
 name_en: "Solidarity supplement: target monthly reference amount"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.

@@ -13,6 +13,7 @@ unit: "milhões de euros"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "Investimentos; 2027; orçamento; milhões de euros"
 name_source: "Quadro 4.1. Conta das Administrações Públicas em contabilidade pública; Investimentos; coluna 2: 2027; orçamento; milhões de euros; p. 68 PDF (52 impressa)"
+status: "conferido"
 name_en: "Investment; 2027; budget; million euros"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.

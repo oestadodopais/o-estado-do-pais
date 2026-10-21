@@ -13,6 +13,7 @@ unit: "milhões de euros"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "3. Saldo das AP em contabilidade nacional (1+2); 2026; estimativa; milhões de euros"
 name_source: "Quadro 3.3. Passagem de saldos de contabilidade pública a contabilidade nacional; 3. Saldo das AP em contabilidade nacional (1+2); coluna 1: 2026; estimativa; milhões de euros; p. 61 PDF (45 impressa)"
+status: "conferido"
 name_en: "3. General government balance in national accounts (1+2); 2026; estimate; million euros"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.

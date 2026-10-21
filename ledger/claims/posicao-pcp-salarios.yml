@@ -13,6 +13,7 @@ unit: "afirmação"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "Salários públicos e subsídio de alimentação"
 name_source: "Corpo da página; frase integral identificada pelo excerto; data editorial no documento"
+status: "conferido"
 name_en: "Public wages and meal allowance"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.

@@ -248,6 +248,7 @@ export const LINHAS_SEM_AREA_EO1 = [
   "utao-risco-mercados",
   "utao-risco-pib",
   "utao-risco-sns",
+  "utao-pessoal-variacao-cn",
   "utao-salarios",
   "utao-salarios-cs",
   "utao-salarios-irs",

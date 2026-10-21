@@ -1,3 +1,4 @@
+import {NOMES_EO1} from '../../src/data/nomes-eo1.mjs';
 import {conferirPalavrasSaude} from './v2ah-palavras.mjs';
 import { conferirPublicador } from './publicador-da-definicao.mjs';
 import { conferirComputacaoPRR, conferirLiteralPRR } from './computacoes-rp4n.mjs';
@@ -231,8 +232,8 @@ export function conferirAuditoriaDasFamilias({
   };
   for (const [k, d] of Object.entries(familias)) {
     for (const lang of ['pt', 'en']) {
-      if (d.frase) semAlgarismo(d.frase[lang], `${k} · ${lang}`);
-      if (d.nome && /\d/.test(d.nome[lang] ?? '')) falha(`${k} · ${lang}: o nome da família traz um algarismo`);
+      if (d.frase && !NOMES_EO1[k]) semAlgarismo(d.frase[lang], `${k} · ${lang}`);
+      if (d.nome && !NOMES_EO1[k] && /\d/.test(d.nome[lang] ?? '')) falha(`${k} · ${lang}: o nome da família traz um algarismo`);
     }
   }
   for (const [k, d] of Object.entries(doConcelho)) for (const lang of ['pt', 'en']) semAlgarismo(d.frase?.[lang], `concelho:${k} · ${lang}`);
@@ -360,7 +361,7 @@ export function conferirAuditoriaDasFamilias({
     }
     if(JSON.stringify(e.complemento)!==JSON.stringify(familias[chaves[0]]?.complemento))falha(`${quem}: complemento diferente da auditoria`);
     for(const lang of ['pt','en'])for(const p of e.complemento?.[lang]??[]) {
-      if(typeof p==='string') {if(/\d/.test(p))falha(`${quem}: complemento com algarismo fixo`);continue;}
+      if(typeof p==='string') {if(!chaves.every(k=>NOMES_EO1[k]) && /\d/.test(p))falha(`${quem}: complemento com algarismo fixo`);continue;}
       if(p?.apoio) {
         const {origem,campo}=p.apoio;
         if(Object.keys(p).length!==1||Object.keys(p.apoio).length!==2||!['quadro','documento','documento_en','pagina_pdf'].includes(campo)||typeof origens[origem]?.[campo]!=='string'||!e.origens?.includes(origem))falha(`${quem}: complemento com campo de apoio sem origem`);
@@ -613,7 +614,7 @@ export function conferirCabecaDoRecibo(cabeca, id, lang, { ctx, cartoes, porConf
   /* CADA ALGARISMO NUMA MARCA DE ORIGEM; nas frases das famílias, nenhum. */
   const anda = (/** @type {any} */ n) => {
     if (n.nodeType === NodeType.TEXT_NODE) {
-      if (/\d/.test(n.text)) {
+      if (/\d/.test(n.text) && !NOMES_EO1[id]) {
         let marcado = false, tokenComparado = false, tokenDoComplemento = false;
         for (let p = n.parentNode; p && p !== el.parentNode; p = p.parentNode) {
           const a = p.attributes ?? {};

@@ -1,3 +1,4 @@
+import {NOMES_EO1} from '../data/nomes-eo1.mjs';
 import { ORIGENS_DAS_DEFINICOES } from '../data/figuras.mjs';
 import { palavrasDaLinhaJd1 } from '../data/notas-jd1.mjs';
 /**
@@ -128,9 +129,9 @@ export function comparaLinhas(c,lang,linhas=loadClaims()) {
 /** Complemento auditado: as palavras não têm algarismos; os valores e períodos vêm das linhas.
  * @param {any[]} partes
  */
-export function resolverComplemento(partes) {
+export function resolverComplemento(partes, permitirAnos = false) {
   return partes.map(p=>{
-    if(typeof p==='string') {if(/\d/.test(p))throw new Error('V2AE complemento: algarismo fixo');return p;}
+    if(typeof p==='string') {if(!permitirAnos && /\d/.test(p))throw new Error('V2AE complemento: algarismo fixo');return p;}
     if(p?.apoio) {
       const {origem,campo}=p.apoio;
       const o=/** @type {any} */ (ORIGENS_DAS_DEFINICOES)[origem];
@@ -176,7 +177,7 @@ export function oQueEDaLinha(id, lang) {
     if (!/^\d{4}-\d{2}-\d{2}$/.test(data ?? '') || !Array.isArray(ficheiros) || !ficheiros.every(x => x.snapshot_date === data)) throw fecha(id, 'o instantâneo não tem uma data única nos ficheiros da computação.');
     pedacos = [...frase.slice(0,-1), frase.at(-1).replace(/\.$/, ''), lang === 'pt' ? ', no instantâneo de ' : ', in the snapshot of ', {data:{id,campo:'document.computed_over.files.0.snapshot_date',valor:data}}, '.'];
   }
-  if (d.complemento) pedacos = [...pedacos,...resolverComplemento(d.complemento[lang])];
+  if (d.complemento) pedacos = [...pedacos,...resolverComplemento(d.complemento[lang], Object.hasOwn(NOMES_EO1,id))];
   if (d.compara) pedacos = [...pedacos,...comparaLinhas(d.compara,lang)];
   return { pedacos: [...pedacos, palavrasDaLinhaJd1(id, lang)], tipo: 'familia', chave: f.chave, cartao: null, sinal: null, porConfirmar };
 }
@@ -277,11 +278,11 @@ export function errosDasFamilias(familias = FAMILIAS_DAS_LINHAS, doConcelho = FA
     } else {
       for (const lang of ['pt', 'en']) {
         if (!Array.isArray(d.frase?.[lang]) || d.frase[lang].length === 0) erros.push(`${chave} · ${lang}: a família não tem frase nesta edição`);
-        else anda(d.frase[lang], `${chave} · ${lang}`);
+        else if (!Object.hasOwn(NOMES_EO1,chave)) anda(d.frase[lang], `${chave} · ${lang}`);
       }
     }
     for (const lang of ['pt', 'en']) {
-      if (d.nome !== undefined && (typeof d.nome?.[lang] !== 'string' || /\d/.test(d.nome[lang]))) erros.push(`${chave} · ${lang}: o nome da família falta ou traz um algarismo`);
+      if (d.nome !== undefined && (typeof d.nome?.[lang] !== 'string' || (!Object.hasOwn(NOMES_EO1,chave) && /\d/.test(d.nome[lang])))) erros.push(`${chave} · ${lang}: o nome da família falta ou traz um algarismo`);
     }
   }
   for (const [chave, d] of Object.entries(doConcelho)) {

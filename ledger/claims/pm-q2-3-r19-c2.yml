@@ -13,6 +13,7 @@ unit: "%"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "IHPC; 2027; previsão; %"
 name_source: "Quadro 2.3. Cenário macroeconómico; IHPC; coluna 3: 2027; previsão; %; p. 41 PDF (25 impressa)"
+status: "conferido"
 name_en: "Harmonised index of consumer prices; 2027; forecast; %"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.

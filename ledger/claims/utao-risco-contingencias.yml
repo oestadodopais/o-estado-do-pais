@@ -13,6 +13,7 @@ unit: "afirmação"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "Riscos: responsabilidades contingentes"
 name_source: "§106; p. 53 PDF (52 impressa)"
+status: "conferido"
 name_en: "Risks: contingent liabilities"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.

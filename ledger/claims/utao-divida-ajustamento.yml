@@ -13,6 +13,7 @@ unit: "afirmação"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "Dívida: ajustamento défice-dívida"
 name_source: "§79; p. 45 PDF (44 impressa)"
+status: "conferido"
 name_en: "Debt: deficit-debt adjustment"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.

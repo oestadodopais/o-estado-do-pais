@@ -225,11 +225,14 @@ def indice_dos_corpos(repo, cabeca, motor, cabeca_motor, estudos, precisos):
     pelas fontes dos estudos (content/<estudo>/source/**), cada candidato conferido pelo sha256 dos bytes na cabeça do motor."""
     indice, precisos = {}, set(precisos)
 
+    def tem_recibo(caminho):
+        return subprocess.run(['git', '-C', str(motor), 'cat-file', '-e', f'{cabeca_motor}:{caminho}.pedido.json'], capture_output=True).returncode == 0
+
     def confirmar(caminho, origem):
         r = subprocess.run(['git', '-C', str(motor), '-c', 'core.quotepath=off', 'show', f'{cabeca_motor}:{caminho}'], capture_output=True)
         if r.returncode == 0:
             s = sha256_de(r.stdout)
-            if s in precisos and s not in indice:
+            if s in precisos and (s not in indice or (tem_recibo(caminho) and not tem_recibo(indice[s][0]))):
                 indice[s] = (caminho, origem)
 
     def arvore(repositorio, cab, pasta):
@@ -243,12 +246,10 @@ def indice_dos_corpos(repo, cabeca, motor, cabeca_motor, estudos, precisos):
         except ValueError:
             continue
         for linha in (provas.get('rows') or {}).values():
-            if isinstance(linha, dict) and linha.get('sha256') in precisos and linha['sha256'] not in indice and linha.get('motor_path'):
+            if isinstance(linha, dict) and linha.get('sha256') in precisos and linha.get('motor_path'):
                 confirmar(linha['motor_path'], f'recibos do sítio ({f})')
     for estudo in sorted(e for e in estudos if e):
         for nome in arvore(motor, cabeca_motor, f'{estudo}/source'):
-            if precisos <= set(indice):
-                break
             if nome.endswith('.pedido.json') or '/direitos/' in nome:
                 continue
             confirmar(nome, f'fontes do estudo ({estudo})')

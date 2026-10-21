@@ -13,6 +13,7 @@ unit: "afirmação"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "Medidas: novas e anteriormente adotadas"
 name_source: "§39; p. 22 PDF (21 impressa)"
+status: "conferido"
 name_en: "Measures: new and previously adopted"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.

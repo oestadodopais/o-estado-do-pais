@@ -1,0 +1,123 @@
+{
+  "diploma": {
+    "copia_com_recibo": "content/25 Orcamento 2027 Medidas/source/diplomas/rmmg-2026.pdf",
+    "copias_iguais": [
+      "content/13 Dominios/source/dre/decreto-lei-139-2025.pdf"
+    ],
+    "sha256": "e9e6da9ad45ffb70cb0a19a755fd31e4da9934174a3885edaacf7523c842c64f",
+    "recibo": true,
+    "direitos": [
+      "at-privacidade.html",
+      "at-privacidade.html.pedido.json",
+      "at-robots.txt",
+      "at-robots.txt.pedido.json",
+      "dr-files-robots.txt",
+      "dr-files-robots.txt.pedido.json",
+      "governo-robots.txt",
+      "governo-robots.txt.pedido.json"
+    ]
+  },
+  "quadro_3_6": {
+    "pm-q3-6-r42-c1": {
+      "value": "89,2",
+      "period": "2025",
+      "column_label": "2025; observado; % do PIB",
+      "locator": "Quadro 3.6. Dívida pública; Dívida pública consolidada (%); coluna 2: 2025; observado; % do PIB; p. 65 PDF (49 impressa)",
+      "excerpt": "                                                    Quadro 3.6. Dívida pública\n                                          (percentagem e pontos percentuais do PIB)\n                                                                                                          2027\n                                                              2024            2025         2026\n                                                                                                       Orçamento\nDívida pública consolidada (%)                    93,0         89,2            87,5       84,5\nSeleção: 2025; observado; % do PIB"
+    },
+    "pm-q3-6-r42-c2": {
+      "value": "87,5",
+      "period": "2026",
+      "column_label": "2026; estimativa; % do PIB",
+      "locator": "Quadro 3.6. Dívida pública; Dívida pública consolidada (%); coluna 3: 2026; estimativa; % do PIB; p. 65 PDF (49 impressa)",
+      "excerpt": "                                                    Quadro 3.6. Dívida pública\n                                          (percentagem e pontos percentuais do PIB)\n                                                                                                          2027\n                                                              2024            2025         2026\n                                                                                                       Orçamento\nDívida pública consolidada (%)                    93,0         89,2            87,5       84,5\nSeleção: 2026; estimativa; % do PIB"
+    },
+    "pm-q3-6-r43-c2": {
+      "value": "-1,6",
+      "period": "2026",
+      "column_label": "2026; estimativa; pontos percentuais do PIB",
+      "locator": "Quadro 3.6. Dívida pública; Variação (p.p.); coluna 3: 2026; estimativa; pontos percentuais do PIB; p. 65 PDF (49 impressa)",
+      "excerpt": "                                                    Quadro 3.6. Dívida pública\n                                          (percentagem e pontos percentuais do PIB)\n                                                                                                          2027\n                                                              2024            2025         2026\n                                                                                                       Orçamento\nVariação (p.p.)                                 -3,8         -3,9            -1,6        -3,0\nSeleção: 2026; estimativa; pontos percentuais do PIB"
+    }
+  },
+  "juros": {
+    "pm-q3-1-r36-c1": {
+      "value": "6 669",
+      "period": "2026",
+      "column_label": "2026; estimativa; milhões de euros",
+      "locator": "Quadro 3.1. Conta das Administrações Públicas: 2026-2027; Juros; coluna 2: 2026; estimativa; milhões de euros; p. 54 PDF (38 impressa)",
+      "excerpt": "                           Quadro 3.1. Conta das Administrações Públicas: 2026-2027\n                                             (milhões de euros; percentagem do PIB)\n                                                                                2027                              2027\n                                                        2025        2026                    2025     2026                2027/2026\n                                                               milhões de euros                     % do PIB              t.v.h (%)\nJuros                                              6 028       6 669          8 217     2,0        2,0        2,4       23,2\nSeleção: 2026; estimativa; milhões de euros"
+    },
+    "pm-q3-1-r36-c2": {
+      "value": "8 217",
+      "period": "2027",
+      "column_label": "2027; orçamento; milhões de euros",
+      "locator": "Quadro 3.1. Conta das Administrações Públicas: 2026-2027; Juros; coluna 3: 2027; orçamento; milhões de euros; p. 54 PDF (38 impressa)",
+      "excerpt": "                           Quadro 3.1. Conta das Administrações Públicas: 2026-2027\n                                             (milhões de euros; percentagem do PIB)\n                                                                                2027                              2027\n                                                        2025        2026                    2025     2026                2027/2026\n                                                               milhões de euros                     % do PIB              t.v.h (%)\nJuros                                              6 028       6 669          8 217     2,0        2,0        2,4       23,2\nSeleção: 2027; orçamento; milhões de euros"
+    },
+    "pm-q4-1-r21-c0": {
+      "value": "7 225",
+      "period": "2026",
+      "column_label": "2026; estimativa; milhões de euros",
+      "locator": "Quadro 4.1. Conta das Administrações Públicas em contabilidade pública; Juros e outros encargos; coluna 1: 2026; estimativa; milhões de euros; p. 68 PDF (52 impressa)",
+      "excerpt": "                        Quadro 4.1. Conta das Administrações Públicas em contabilidade pública\n                                                               (milhões de euros)\n                                               2026                   2027            tvh (%)                       % do PIB\n                                             Estimativa            Orçamento         2027/2026             2026                2027\nJuros e outros encargos                             7 225                  8 575              18,7               2,2                 2,5\nSeleção: 2026; estimativa; milhões de euros"
+    },
+    "pm-q4-1-r21-c1": {
+      "value": "8 575",
+      "period": "2027",
+      "column_label": "2027; orçamento; milhões de euros",
+      "locator": "Quadro 4.1. Conta das Administrações Públicas em contabilidade pública; Juros e outros encargos; coluna 2: 2027; orçamento; milhões de euros; p. 68 PDF (52 impressa)",
+      "excerpt": "                        Quadro 4.1. Conta das Administrações Públicas em contabilidade pública\n                                                               (milhões de euros)\n                                               2026                   2027            tvh (%)                       % do PIB\n                                             Estimativa            Orçamento         2027/2026             2026                2027\nJuros e outros encargos                             7 225                  8 575              18,7               2,2                 2,5\nSeleção: 2027; orçamento; milhões de euros"
+    }
+  },
+  "utao_pessoal": {
+    "kind": "quote_number",
+    "id": "utao-pessoal-variacao-cn",
+    "file": "content/24 Orcamento 2027 Analise/source/debate/utao-oe2027-preliminar.pdf",
+    "title": "Relatório UTAO n.º 17/2026 Apreciação preliminar da Proposta de Orçamento do Estado para 2027",
+    "page": 53,
+    "printed_page": 52,
+    "period": "2027",
+    "published_at": "2026-10-19",
+    "quote": "O MF propõe estabilizar o emprego público em 2027 em 768,4 mil trabalhadores (Relatório do MF, Quadro 4.42), nível idêntico ao de junho de 2026 (768 378, DGAEP), o que equivale a não haver crescimento líquido do emprego a partir de junho. Segundo dados provisórios da DGAEP, o nível de junho de 2026 está 1,0% (+7390) acima de junho de 2025 e 0,3% (+2100) acima de dezembro de 2025. A estabilização do emprego contém a massa salarial; entradas superiores às saídas aumentariam o emprego e a despesa com pessoal, que a POE/2027 já prevê crescer 5,3% (Tabela 7).",
+    "value": "5,3",
+    "unit": "%",
+    "measure": "UTAO: variação das despesas com pessoal em contabilidade nacional, 2027",
+    "measure_en": "UTAO: change in staff costs in national accounts, 2027",
+    "group": "leituras-utao",
+    "source_type": "government",
+    "locator": "§102; p. 53 PDF (52 impressa); Tabela 7, Despesas com pessoal, coluna Variação anual (em %), 2027; p. 20 PDF (19 impressa)",
+    "publication_anchor": "19 de outubro de 2026",
+    "publication_page": 1,
+    "entity_anchor": "Unidade Técnica de Apoio Orçamental",
+    "entity_aliases": {
+      "Unidade Técnica de Apoio Orçamental": []
+    },
+    "pattern": "crescer (?P<value>5,3)%",
+    "table_evidence": {
+      "page": 20,
+      "printed_page": 19,
+      "header": [
+        "Tabela 7 – Conta das Administrações Públicas em contas nacionais, ajustada de medidas temporárias",
+        "                                       ou não-recorrentes",
+        "                                   (em milhões de euros, percentagem, p.p. ou percentagem do PIB)",
+        "                                           Em milhões de euros                             Em % do PIB                                       V ariação anual",
+        "",
+        "                                                  2026                                           2026",
+        "                                                                                                                                 (p.p.PIB)                       (em %)",
+        "                                 2025                                 2027         2025                          2027",
+        "                                                          Est                                            Est                       Est                             Est",
+        "                                            RAP                                            RAP                           RAP                  2027     RAP                  2027",
+        "                                                         2026                                           2026                      2026                            2026"
+      ],
+      "raw_line": "   Despesas com pessoal           32 631     34 293       34 171       35 983       10,6    10,7          10,5    10,6     0,1       -0,1        0,1      5,1       4,7        5,3",
+      "span": [
+        175,
+        178
+      ],
+      "period": "2027",
+      "unit": "%",
+      "column_label": "Variação anual, em %, 2027"
+    }
+  }
+}

@@ -13,6 +13,7 @@ unit: "texto"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "Trajetória da dívida pública"
 name_source: "p. 65 PDF (49 impressa)"
+status: "conferido"
 name_en: "Public debt path"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.

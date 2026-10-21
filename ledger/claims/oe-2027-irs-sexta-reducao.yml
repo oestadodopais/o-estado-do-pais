@@ -13,6 +13,7 @@ unit: "texto"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "IRS: sexta redução segundo o relatório"
 name_source: "p. 55 PDF (39 impressa)"
+status: "conferido"
 name_en: "Income tax: sixth cut according to the report"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.

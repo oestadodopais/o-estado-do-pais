@@ -13,6 +13,7 @@ unit: "% do PIB"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "Receita total; 2026; estimativa; % do PIB"
 name_source: "Quadro 3.1. Conta das Administrações Públicas: 2026-2027; Receita total; coluna 5: 2026; estimativa; % do PIB; p. 54 PDF (38 impressa)"
+status: "conferido"
 name_en: "Total revenue; 2026; estimate; % of GDP"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.

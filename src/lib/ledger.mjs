@@ -267,6 +267,7 @@ export const CAMPOS = /** @type {const} */ ([
    */
   'name',
   'name_en',
+  'status',
   'name_source',
   'name_source_en',
   'source',

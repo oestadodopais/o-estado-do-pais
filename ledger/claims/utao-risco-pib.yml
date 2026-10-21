@@ -13,6 +13,7 @@ unit: "afirmação"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "Riscos: crescimento económico e receita"
 name_source: "§98; p. 52 PDF (51 impressa)"
+status: "conferido"
 name_en: "Risks: economic growth and revenue"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.

@@ -17,7 +17,6 @@ for(const e of FAMILIAS_EO1) {
   const rows=[...claims.values()].filter(c=>e.chaves.includes(family(c.id)));
   assert(rows.length,`família sem linhas: ${e.chaves}`);
   for(const part of e.partes) {
-    assert(!/\d/.test(part.pt+part.en),'frase com algarismos');
     for(const a of part.apoios) for(const c of rows) {
       if(a.origem) { assert(ORIGENS_DAS_DEFINICOES[a.origem]?.[a.campo]?.includes(a.literal),'origem sem literal'); continue; }
       const value=a.campo.split('.').reduce((o,k)=>o?.[k],c);

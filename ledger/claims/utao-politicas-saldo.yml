@@ -13,6 +13,7 @@ unit: "afirmação"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "Medidas: impacto das políticas invariantes"
 name_source: "§35; p. 21 PDF (20 impressa)"
+status: "conferido"
 name_en: "Measures: unchanged-policy impact"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.

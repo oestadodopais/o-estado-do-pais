@@ -13,6 +13,7 @@ unit: "pontos percentuais do PIB"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "Efeito saldo primário; 2026; estimativa; pontos percentuais do PIB"
 name_source: "Quadro 3.6. Dívida pública; Efeito saldo primário; coluna 3: 2026; estimativa; pontos percentuais do PIB; p. 65 PDF (49 impressa)"
+status: "conferido"
 name_en: "Primary balance effect; 2026; estimate; percentage points of GDP"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.

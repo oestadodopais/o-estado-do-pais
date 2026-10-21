@@ -5,15 +5,15 @@
     "provas.json": {
       "destino": "ledger/provas/eo1",
       "origin_path": "publisher/recortes/eo1/provas.json",
-      "origin_sha256": "56768a05898995985f562ed78638bfdaa00c52c63f7b56b855c0437729ba0cff",
-      "exported_sha256": "56768a05898995985f562ed78638bfdaa00c52c63f7b56b855c0437729ba0cff",
+      "origin_sha256": "6b9df49b4ecfefb1a4fc4b0449e164aca4a0301a23862737976f252d1a96c397",
+      "exported_sha256": "6b9df49b4ecfefb1a4fc4b0449e164aca4a0301a23862737976f252d1a96c397",
       "exporter": "publisher/export_site_rows.py"
     },
     "nomes-eo1.mjs": {
       "destino": "src/data",
       "origin_path": "publisher/recortes/eo1/nomes-eo1.mjs",
-      "origin_sha256": "9b69919bdde395ebab4d28d58cc0f2851c37497a891bfe9f4d234e4f3f882305",
-      "exported_sha256": "9b69919bdde395ebab4d28d58cc0f2851c37497a891bfe9f4d234e4f3f882305",
+      "origin_sha256": "538a4d858085d045c17c0450ba489db3f8b9ef9be821253fce83bb637426e2ed",
+      "exported_sha256": "538a4d858085d045c17c0450ba489db3f8b9ef9be821253fce83bb637426e2ed",
       "exporter": "publisher/export_site_rows.py"
     }
   }

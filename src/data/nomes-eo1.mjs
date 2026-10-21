@@ -37,12 +37,12 @@ export const NOMES_EO1 = {
     "en": "Increase in the solidarity supplement for older people"
   },
   "der-oe2027-medidas-anteriores-saldo": {
-    "pt": "Medidas anteriores: impacto no saldo",
-    "en": "Earlier measures: balance impact"
+    "pt": "Medidas invariantes: impacto no saldo",
+    "en": "Invariant measures: balance impact"
   },
   "der-oe2027-medidas-anteriores-receita": {
-    "pt": "Medidas anteriores: receita",
-    "en": "Earlier measures: revenue"
+    "pt": "Medidas invariantes: receita",
+    "en": "Invariant measures: revenue"
   },
   "pm-q3-2-r7-c0": {
     "pt": "Habitação - redução IVA construção de 23% para 6% (i)",
@@ -73,8 +73,8 @@ export const NOMES_EO1 = {
     "en": "Revenue arising from wage increases (i) (Social contributions)"
   },
   "der-oe2027-medidas-anteriores-despesa": {
-    "pt": "Medidas anteriores: despesa",
-    "en": "Earlier measures: expenditure"
+    "pt": "Medidas invariantes: despesa",
+    "en": "Invariant measures: expenditure"
   },
   "pm-q3-2-r21-c0": {
     "pt": "Aumento acordo de rendimentos (i)",
@@ -87,6 +87,10 @@ export const NOMES_EO1 = {
   "pm-q3-2-r23-c0": {
     "pt": "Acordos salariais (i)",
     "en": "Wage agreements (i)"
+  },
+  "oe-2027-quadro-3-2-nota-i": {
+    "pt": "Quadro das medidas: definição da marca (i)",
+    "en": "Measures table: definition of mark (i)"
   },
   "der-oe2027-juros-variacao-cp": {
     "pt": "Juros: variação em contabilidade pública",
@@ -159,6 +163,10 @@ export const NOMES_EO1 = {
   "pm-q3-6-r42-c3": {
     "pt": "Dívida pública consolidada (%)",
     "en": "Consolidated public debt (%)"
+  },
+  "posicao-governo-divida85": {
+    "pt": "Dívida pública abaixo de 85% do PIB em 2027",
+    "en": "Public debt below 85% of GDP in 2027"
   },
   "pm-q3-6-r43-c3": {
     "pt": "Variação (p.p.)",
@@ -336,6 +344,10 @@ export const NOMES_EO1 = {
     "pt": "Salários públicos: receita fiscal e contributiva sobre a atualização",
     "en": "Public wages: tax and contributions as a share of the update"
   },
+  "utao-pessoal-variacao-cn": {
+    "pt": "UTAO: variação das despesas com pessoal em contabilidade nacional, 2027",
+    "en": "UTAO: change in staff costs in national accounts, 2027"
+  },
   "utao-risco-pib": {
     "pt": "Riscos: crescimento económico e receita",
     "en": "Risks: economic growth and revenue"
@@ -343,10 +355,6 @@ export const NOMES_EO1 = {
   "utao-risco-fraude": {
     "pt": "Riscos: combate à fraude nos combustíveis",
     "en": "Risks: fuel fraud measures"
-  },
-  "posicao-governo-divida85": {
-    "pt": "Dívida pública abaixo de 85% do PIB em 2027",
-    "en": "Public debt below 85% of GDP in 2027"
   },
   "pm-q2-3-r8-c2": {
     "pt": "PIB",
@@ -583,10 +591,6 @@ export const NOMES_EO1 = {
   "pm-q3-2-r24-c0": {
     "pt": "Prestações sociais",
     "en": "Social benefits"
-  },
-  "oe-2027-quadro-3-2-nota-i": {
-    "pt": "Quadro das medidas: definição da marca (i)",
-    "en": "Measures table: definition of mark (i)"
   },
   "der-oe2027-medidas-soma-derivadas": {
     "pt": "Soma dos impactos das linhas invariantes e das medidas novas no saldo",

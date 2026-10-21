@@ -11,9 +11,10 @@ unit: "milhões de euros"
 
 # O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
-name: "Medidas anteriores: despesa"
+name: "Medidas invariantes: despesa"
 name_source: "Cálculo sobre as linhas identificadas"
-name_en: "Earlier measures: expenditure"
+status: "derivado"
+name_en: "Invariant measures: expenditure"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: null
@@ -26,8 +27,8 @@ reference_date: "2027"
 excerpt: null
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
-derivation: "587 (Aumento acordo de rendimentos (i)) + 116 (Aumento RMMG (i)) + 244 (Acordos salariais (i)) = 947. O sinal indica a direção da variação ou do resultado da conta."
-derivation_en: "587 (Increase under the incomes agreement (i)) + 116 (Minimum wage increase (i)) + 244 (Wage agreements (i)) = 947. The sign indicates the direction of the change or calculation result."
+derivation: "587 (Aumento acordo de rendimentos (i), 2027, contabilidade nacional) + 116 (Aumento RMMG (i), 2027, contabilidade nacional) + 244 (Acordos salariais (i), 2027, contabilidade nacional) = 947. O sinal indica a direção da variação ou do resultado da conta."
+derivation_en: "587 (Increase under the incomes agreement (i), 2027, national accounts) + 116 (Minimum wage increase (i), 2027, national accounts) + 244 (Wage agreements (i), 2027, national accounts) = 947. The sign indicates the direction of the change or calculation result."
 derived_from:
   - "pm-q3-2-r21-c0"
   - "pm-q3-2-r22-c0"

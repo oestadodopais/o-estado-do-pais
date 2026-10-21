@@ -9705,15 +9705,15 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "cfp-pensoes-irs": {
     "nome": {
-      "pt": "Pensões e IRS: o suplemento extraordinário e a descida das taxas, pelo CFP",
-      "en": "Pensions and income tax: the extraordinary supplement and the rate reduction, according to the CFP"
+      "pt": "Pensões e IRS: as medidas de 2026 (o suplemento extraordinário e a descida das taxas), pelo CFP",
+      "en": "Pensions and income tax: the 2026 measures (the extraordinary supplement and the rate reduction), according to the CFP"
     },
     "frase": {
       "pt": [
-        "É a passagem do documento sobre «Pensões e IRS: o suplemento extraordinário e a descida das taxas, pelo CFP», conservada no excerto. Referência: "
+        "É a passagem do documento sobre «Pensões e IRS: as medidas de 2026 (o suplemento extraordinário e a descida das taxas), pelo CFP», conservada no excerto. Referência: "
       ],
       "en": [
-        "It is the document's passage on «Pensions and income tax: the extraordinary supplement and the rate reduction, according to the CFP», preserved in the excerpt. Reference: "
+        "It is the document's passage on «Pensions and income tax: the 2026 measures (the extraordinary supplement and the rate reduction), according to the CFP», preserved in the excerpt. Reference: "
       ]
     },
     "complemento": {
@@ -9789,15 +9789,15 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "der-csi-referencia-2026": {
     "nome": {
-      "pt": "CSI: referência mensal de dois mil e vinte e seis",
-      "en": "Solidarity supplement: two thousand and twenty-six monthly reference"
+      "pt": "CSI: referência mensal de 2026",
+      "en": "Solidarity supplement: 2026 monthly reference"
     },
     "frase": {
       "pt": [
-        "É o resultado da conta para «CSI: referência mensal de dois mil e vinte e seis», feita com as componentes identificadas neste recibo. Referência: "
+        "É o resultado da conta para «CSI: referência mensal de 2026», feita com as componentes identificadas neste recibo. Referência: "
       ],
       "en": [
-        "It is the result of the calculation for «Solidarity supplement: two thousand and twenty-six monthly reference», using the components identified in this receipt. Reference: "
+        "It is the result of the calculation for «Solidarity supplement: 2026 monthly reference», using the components identified in this receipt. Reference: "
       ]
     },
     "complemento": {
@@ -9873,15 +9873,15 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "der-divida-pt-vs-ue-2025": {
     "nome": {
-      "pt": "Dívida: Portugal face à União em dois mil e vinte e cinco",
-      "en": "Debt: Portugal against the Union in two thousand and twenty-five"
+      "pt": "Dívida: Portugal face à União em 2025",
+      "en": "Debt: Portugal against the Union in 2025"
     },
     "frase": {
       "pt": [
-        "É o resultado da conta para «Dívida: Portugal face à União em dois mil e vinte e cinco», feita com as componentes identificadas neste recibo. Referência: "
+        "É o resultado da conta para «Dívida: Portugal face à União em 2025», feita com as componentes identificadas neste recibo. Referência: "
       ],
       "en": [
-        "It is the result of the calculation for «Debt: Portugal against the Union in two thousand and twenty-five», using the components identified in this receipt. Reference: "
+        "It is the result of the calculation for «Debt: Portugal against the Union in 2025», using the components identified in this receipt. Reference: "
       ]
     },
     "complemento": {
@@ -9901,15 +9901,15 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "der-irs-escalao-1-atualizacao-pct": {
     "nome": {
-      "pt": "IRS: atualização do limite do escalão um",
-      "en": "Income tax: bracket one limit update"
+      "pt": "IRS: atualização do limite do escalão 1",
+      "en": "Income tax: bracket 1 limit update"
     },
     "frase": {
       "pt": [
-        "É o resultado da conta para «IRS: atualização do limite do escalão um», feita com as componentes identificadas neste recibo. Referência: "
+        "É o resultado da conta para «IRS: atualização do limite do escalão 1», feita com as componentes identificadas neste recibo. Referência: "
       ],
       "en": [
-        "It is the result of the calculation for «Income tax: bracket one limit update», using the components identified in this receipt. Reference: "
+        "It is the result of the calculation for «Income tax: bracket 1 limit update», using the components identified in this receipt. Reference: "
       ]
     },
     "complemento": {
@@ -10041,15 +10041,15 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "der-oe2027-medidas-anteriores-despesa": {
     "nome": {
-      "pt": "Medidas anteriores: despesa",
-      "en": "Earlier measures: expenditure"
+      "pt": "Medidas invariantes: despesa",
+      "en": "Invariant measures: expenditure"
     },
     "frase": {
       "pt": [
-        "É o resultado da conta para «Medidas anteriores: despesa», feita com as componentes identificadas neste recibo. Referência: "
+        "É a soma, na despesa de 2027, das dez linhas que o quadro 3.2 do relatório marca com (i), invariante. Referência: "
       ],
       "en": [
-        "It is the result of the calculation for «Earlier measures: expenditure», using the components identified in this receipt. Reference: "
+        "It is the sum, in expenditure for 2027, of the ten lines that table 3.2 of the report marks with (i), invariante. Reference: "
       ]
     },
     "complemento": {
@@ -10069,15 +10069,15 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "der-oe2027-medidas-anteriores-receita": {
     "nome": {
-      "pt": "Medidas anteriores: receita",
-      "en": "Earlier measures: revenue"
+      "pt": "Medidas invariantes: receita",
+      "en": "Invariant measures: revenue"
     },
     "frase": {
       "pt": [
-        "É o resultado da conta para «Medidas anteriores: receita», feita com as componentes identificadas neste recibo. Referência: "
+        "É a soma, na receita de 2027, das dez linhas que o quadro 3.2 do relatório marca com (i), invariante. Referência: "
       ],
       "en": [
-        "It is the result of the calculation for «Earlier measures: revenue», using the components identified in this receipt. Reference: "
+        "It is the sum, in revenue for 2027, of the ten lines that table 3.2 of the report marks with (i), invariante. Reference: "
       ]
     },
     "complemento": {
@@ -10097,15 +10097,15 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "der-oe2027-medidas-anteriores-saldo": {
     "nome": {
-      "pt": "Medidas anteriores: impacto no saldo",
-      "en": "Earlier measures: balance impact"
+      "pt": "Medidas invariantes: impacto no saldo",
+      "en": "Invariant measures: balance impact"
     },
     "frase": {
       "pt": [
-        "É o resultado da conta para «Medidas anteriores: impacto no saldo», feita com as componentes identificadas neste recibo. Referência: "
+        "É a soma, no impacto no saldo de 2027, das dez linhas que o quadro 3.2 do relatório marca com (i), invariante. Referência: "
       ],
       "en": [
-        "It is the result of the calculation for «Earlier measures: balance impact», using the components identified in this receipt. Reference: "
+        "It is the sum, in the 2027 balance impact, of the ten lines that table 3.2 of the report marks with (i), invariante. Reference: "
       ]
     },
     "complemento": {
@@ -10181,15 +10181,15 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "der-oe2027-prr-peso-despesa-2026": {
     "nome": {
-      "pt": "PRR: peso na despesa de dois mil e vinte e seis",
-      "en": "Recovery plan: share of two thousand and twenty-six expenditure"
+      "pt": "PRR: peso na despesa de 2026",
+      "en": "Recovery plan: share of 2026 expenditure"
     },
     "frase": {
       "pt": [
-        "É o resultado da conta para «PRR: peso na despesa de dois mil e vinte e seis», feita com as componentes identificadas neste recibo. Referência: "
+        "É o resultado da conta para «PRR: peso na despesa de 2026», feita com as componentes identificadas neste recibo. Referência: "
       ],
       "en": [
-        "It is the result of the calculation for «Recovery plan: share of two thousand and twenty-six expenditure», using the components identified in this receipt. Reference: "
+        "It is the result of the calculation for «Recovery plan: share of 2026 expenditure», using the components identified in this receipt. Reference: "
       ]
     },
     "complemento": {
@@ -10265,15 +10265,15 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "der-rmmg-2024-2027-abs": {
     "nome": {
-      "pt": "Salário mínimo: aumento face a dois mil e vinte e quatro",
-      "en": "Minimum wage: increase against two thousand and twenty-four"
+      "pt": "Salário mínimo: aumento face a 2024",
+      "en": "Minimum wage: increase against 2024"
     },
     "frase": {
       "pt": [
-        "É o resultado da conta para «Salário mínimo: aumento face a dois mil e vinte e quatro», feita com as componentes identificadas neste recibo. Referência: "
+        "É o resultado da conta para «Salário mínimo: aumento face a 2024», feita com as componentes identificadas neste recibo. Referência: "
       ],
       "en": [
-        "It is the result of the calculation for «Minimum wage: increase against two thousand and twenty-four», using the components identified in this receipt. Reference: "
+        "It is the result of the calculation for «Minimum wage: increase against 2024», using the components identified in this receipt. Reference: "
       ]
     },
     "complemento": {
@@ -10293,15 +10293,15 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "der-rmmg-2026-2027-abs": {
     "nome": {
-      "pt": "Salário mínimo: aumento face a dois mil e vinte e seis",
-      "en": "Minimum wage: increase against two thousand and twenty-six"
+      "pt": "Salário mínimo: aumento face a 2026",
+      "en": "Minimum wage: increase against 2026"
     },
     "frase": {
       "pt": [
-        "É o resultado da conta para «Salário mínimo: aumento face a dois mil e vinte e seis», feita com as componentes identificadas neste recibo. Referência: "
+        "É o resultado da conta para «Salário mínimo: aumento face a 2026», feita com as componentes identificadas neste recibo. Referência: "
       ],
       "en": [
-        "It is the result of the calculation for «Minimum wage: increase against two thousand and twenty-six», using the components identified in this receipt. Reference: "
+        "It is the result of the calculation for «Minimum wage: increase against 2026», using the components identified in this receipt. Reference: "
       ]
     },
     "complemento": {
@@ -10321,15 +10321,15 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "der-rmmg-2026-2027-pct": {
     "nome": {
-      "pt": "Salário mínimo: aumento percentual face a dois mil e vinte e seis",
-      "en": "Minimum wage: percentage increase against two thousand and twenty-six"
+      "pt": "Salário mínimo: aumento percentual face a 2026",
+      "en": "Minimum wage: percentage increase against 2026"
     },
     "frase": {
       "pt": [
-        "É o resultado da conta para «Salário mínimo: aumento percentual face a dois mil e vinte e seis», feita com as componentes identificadas neste recibo. Referência: "
+        "É o resultado da conta para «Salário mínimo: aumento percentual face a 2026», feita com as componentes identificadas neste recibo. Referência: "
       ],
       "en": [
-        "It is the result of the calculation for «Minimum wage: percentage increase against two thousand and twenty-six», using the components identified in this receipt. Reference: "
+        "It is the result of the calculation for «Minimum wage: percentage increase against 2026», using the components identified in this receipt. Reference: "
       ]
     },
     "complemento": {
@@ -10769,8 +10769,8 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "irc-taxa-2026": {
     "nome": {
-      "pt": "IRC: taxa geral em dois mil e vinte e seis",
-      "en": "Corporate tax: general rate in two thousand and twenty-six"
+      "pt": "IRC: taxa geral em 2026",
+      "en": "Corporate tax: general rate in 2026"
     },
     "frase": {
       "pt": [
@@ -10785,20 +10785,20 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
         {
           "periodo": "irc-taxa-2026"
         },
-        ", pela lei de novembro de dois mil e vinte e cinco."
+        ", pela lei de novembro de 2025."
       ],
       "en": [
         {
           "periodo": "irc-taxa-2026"
         },
-        ", under the law of November two thousand and twenty-five."
+        ", under the law of November 2025."
       ]
     }
   },
   "irc-taxa-2027": {
     "nome": {
-      "pt": "IRC: taxa geral em dois mil e vinte e sete",
-      "en": "Corporate tax: general rate in two thousand and twenty-seven"
+      "pt": "IRC: taxa geral em 2027",
+      "en": "Corporate tax: general rate in 2027"
     },
     "frase": {
       "pt": [
@@ -10813,27 +10813,27 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
         {
           "periodo": "irc-taxa-2027"
         },
-        ", pela lei de novembro de dois mil e vinte e cinco."
+        ", pela lei de novembro de 2025."
       ],
       "en": [
         {
           "periodo": "irc-taxa-2027"
         },
-        ", under the law of November two thousand and twenty-five."
+        ", under the law of November 2025."
       ]
     }
   },
   "irs-2026-escalao-1-limite": {
     "nome": {
-      "pt": "IRS: limite superior do escalão um em dois mil e vinte e seis",
-      "en": "Income tax: upper limit of bracket one in two thousand and twenty-six"
+      "pt": "IRS: limite superior do escalão 1 em 2026",
+      "en": "Income tax: upper limit of bracket 1 in 2026"
     },
     "frase": {
       "pt": [
-        "É o valor de «IRS: limite superior do escalão um em dois mil e vinte e seis» no documento citado, para o período e na unidade indicados. Referência: "
+        "É o valor de «IRS: limite superior do escalão 1 em 2026» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Income tax: upper limit of bracket one in two thousand and twenty-six» in the cited document, for the stated period and unit. Reference: "
+        "It is the value of «Income tax: upper limit of bracket 1 in 2026» in the cited document, for the stated period and unit. Reference: "
       ]
     },
     "complemento": {
@@ -10853,15 +10853,15 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "irs-2026-escalao-1-taxa-normal": {
     "nome": {
-      "pt": "IRS: taxa normal do escalão um na tabela anterior a setembro de dois mil e vinte e seis",
-      "en": "Income tax: normal rate of bracket one in the table preceding September two thousand and twenty-six"
+      "pt": "IRS: taxa normal do escalão 1 na tabela anterior a setembro de 2026",
+      "en": "Income tax: normal rate of bracket 1 in the table preceding September 2026"
     },
     "frase": {
       "pt": [
-        "É o valor de «IRS: taxa normal do escalão um na tabela anterior a setembro de dois mil e vinte e seis» no documento citado, para o período e na unidade indicados. Referência: "
+        "É o valor de «IRS: taxa normal do escalão 1 na tabela anterior a setembro de 2026» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Income tax: normal rate of bracket one in the table preceding September two thousand and twenty-six» in the cited document, for the stated period and unit. Reference: "
+        "It is the value of «Income tax: normal rate of bracket 1 in the table preceding September 2026» in the cited document, for the stated period and unit. Reference: "
       ]
     },
     "complemento": {
@@ -10881,15 +10881,15 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "irs-2026-escalao-2-limite": {
     "nome": {
-      "pt": "IRS: limite superior do escalão dois em dois mil e vinte e seis",
-      "en": "Income tax: upper limit of bracket two in two thousand and twenty-six"
+      "pt": "IRS: limite superior do escalão 2 em 2026",
+      "en": "Income tax: upper limit of bracket 2 in 2026"
     },
     "frase": {
       "pt": [
-        "É o valor de «IRS: limite superior do escalão dois em dois mil e vinte e seis» no documento citado, para o período e na unidade indicados. Referência: "
+        "É o valor de «IRS: limite superior do escalão 2 em 2026» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Income tax: upper limit of bracket two in two thousand and twenty-six» in the cited document, for the stated period and unit. Reference: "
+        "It is the value of «Income tax: upper limit of bracket 2 in 2026» in the cited document, for the stated period and unit. Reference: "
       ]
     },
     "complemento": {
@@ -10909,15 +10909,15 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "irs-2026-escalao-2-taxa-normal": {
     "nome": {
-      "pt": "IRS: taxa normal do escalão dois na tabela anterior a setembro de dois mil e vinte e seis",
-      "en": "Income tax: normal rate of bracket two in the table preceding September two thousand and twenty-six"
+      "pt": "IRS: taxa normal do escalão 2 na tabela anterior a setembro de 2026",
+      "en": "Income tax: normal rate of bracket 2 in the table preceding September 2026"
     },
     "frase": {
       "pt": [
-        "É o valor de «IRS: taxa normal do escalão dois na tabela anterior a setembro de dois mil e vinte e seis» no documento citado, para o período e na unidade indicados. Referência: "
+        "É o valor de «IRS: taxa normal do escalão 2 na tabela anterior a setembro de 2026» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Income tax: normal rate of bracket two in the table preceding September two thousand and twenty-six» in the cited document, for the stated period and unit. Reference: "
+        "It is the value of «Income tax: normal rate of bracket 2 in the table preceding September 2026» in the cited document, for the stated period and unit. Reference: "
       ]
     },
     "complemento": {
@@ -10937,15 +10937,15 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "irs-2026-escalao-3-limite": {
     "nome": {
-      "pt": "IRS: limite superior do escalão três em dois mil e vinte e seis",
-      "en": "Income tax: upper limit of bracket three in two thousand and twenty-six"
+      "pt": "IRS: limite superior do escalão 3 em 2026",
+      "en": "Income tax: upper limit of bracket 3 in 2026"
     },
     "frase": {
       "pt": [
-        "É o valor de «IRS: limite superior do escalão três em dois mil e vinte e seis» no documento citado, para o período e na unidade indicados. Referência: "
+        "É o valor de «IRS: limite superior do escalão 3 em 2026» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Income tax: upper limit of bracket three in two thousand and twenty-six» in the cited document, for the stated period and unit. Reference: "
+        "It is the value of «Income tax: upper limit of bracket 3 in 2026» in the cited document, for the stated period and unit. Reference: "
       ]
     },
     "complemento": {
@@ -10965,15 +10965,15 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "irs-2026-escalao-3-taxa-normal": {
     "nome": {
-      "pt": "IRS: taxa normal do escalão três na tabela anterior a setembro de dois mil e vinte e seis",
-      "en": "Income tax: normal rate of bracket three in the table preceding September two thousand and twenty-six"
+      "pt": "IRS: taxa normal do escalão 3 na tabela anterior a setembro de 2026",
+      "en": "Income tax: normal rate of bracket 3 in the table preceding September 2026"
     },
     "frase": {
       "pt": [
-        "É o valor de «IRS: taxa normal do escalão três na tabela anterior a setembro de dois mil e vinte e seis» no documento citado, para o período e na unidade indicados. Referência: "
+        "É o valor de «IRS: taxa normal do escalão 3 na tabela anterior a setembro de 2026» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Income tax: normal rate of bracket three in the table preceding September two thousand and twenty-six» in the cited document, for the stated period and unit. Reference: "
+        "It is the value of «Income tax: normal rate of bracket 3 in the table preceding September 2026» in the cited document, for the stated period and unit. Reference: "
       ]
     },
     "complemento": {
@@ -10993,15 +10993,15 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "irs-2026-escalao-4-limite": {
     "nome": {
-      "pt": "IRS: limite superior do escalão quatro em dois mil e vinte e seis",
-      "en": "Income tax: upper limit of bracket four in two thousand and twenty-six"
+      "pt": "IRS: limite superior do escalão 4 em 2026",
+      "en": "Income tax: upper limit of bracket 4 in 2026"
     },
     "frase": {
       "pt": [
-        "É o valor de «IRS: limite superior do escalão quatro em dois mil e vinte e seis» no documento citado, para o período e na unidade indicados. Referência: "
+        "É o valor de «IRS: limite superior do escalão 4 em 2026» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Income tax: upper limit of bracket four in two thousand and twenty-six» in the cited document, for the stated period and unit. Reference: "
+        "It is the value of «Income tax: upper limit of bracket 4 in 2026» in the cited document, for the stated period and unit. Reference: "
       ]
     },
     "complemento": {
@@ -11021,15 +11021,15 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "irs-2026-escalao-4-taxa-normal": {
     "nome": {
-      "pt": "IRS: taxa normal do escalão quatro na tabela anterior a setembro de dois mil e vinte e seis",
-      "en": "Income tax: normal rate of bracket four in the table preceding September two thousand and twenty-six"
+      "pt": "IRS: taxa normal do escalão 4 na tabela anterior a setembro de 2026",
+      "en": "Income tax: normal rate of bracket 4 in the table preceding September 2026"
     },
     "frase": {
       "pt": [
-        "É o valor de «IRS: taxa normal do escalão quatro na tabela anterior a setembro de dois mil e vinte e seis» no documento citado, para o período e na unidade indicados. Referência: "
+        "É o valor de «IRS: taxa normal do escalão 4 na tabela anterior a setembro de 2026» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Income tax: normal rate of bracket four in the table preceding September two thousand and twenty-six» in the cited document, for the stated period and unit. Reference: "
+        "It is the value of «Income tax: normal rate of bracket 4 in the table preceding September 2026» in the cited document, for the stated period and unit. Reference: "
       ]
     },
     "complemento": {
@@ -11049,15 +11049,15 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "irs-2026-escalao-5-limite": {
     "nome": {
-      "pt": "IRS: limite superior do escalão cinco em dois mil e vinte e seis",
-      "en": "Income tax: upper limit of bracket five in two thousand and twenty-six"
+      "pt": "IRS: limite superior do escalão 5 em 2026",
+      "en": "Income tax: upper limit of bracket 5 in 2026"
     },
     "frase": {
       "pt": [
-        "É o valor de «IRS: limite superior do escalão cinco em dois mil e vinte e seis» no documento citado, para o período e na unidade indicados. Referência: "
+        "É o valor de «IRS: limite superior do escalão 5 em 2026» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Income tax: upper limit of bracket five in two thousand and twenty-six» in the cited document, for the stated period and unit. Reference: "
+        "It is the value of «Income tax: upper limit of bracket 5 in 2026» in the cited document, for the stated period and unit. Reference: "
       ]
     },
     "complemento": {
@@ -11077,15 +11077,15 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "irs-2026-escalao-5-taxa-normal": {
     "nome": {
-      "pt": "IRS: taxa normal do escalão cinco na tabela anterior a setembro de dois mil e vinte e seis",
-      "en": "Income tax: normal rate of bracket five in the table preceding September two thousand and twenty-six"
+      "pt": "IRS: taxa normal do escalão 5 na tabela anterior a setembro de 2026",
+      "en": "Income tax: normal rate of bracket 5 in the table preceding September 2026"
     },
     "frase": {
       "pt": [
-        "É o valor de «IRS: taxa normal do escalão cinco na tabela anterior a setembro de dois mil e vinte e seis» no documento citado, para o período e na unidade indicados. Referência: "
+        "É o valor de «IRS: taxa normal do escalão 5 na tabela anterior a setembro de 2026» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Income tax: normal rate of bracket five in the table preceding September two thousand and twenty-six» in the cited document, for the stated period and unit. Reference: "
+        "It is the value of «Income tax: normal rate of bracket 5 in the table preceding September 2026» in the cited document, for the stated period and unit. Reference: "
       ]
     },
     "complemento": {
@@ -11105,15 +11105,15 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "irs-2026-escalao-6-limite": {
     "nome": {
-      "pt": "IRS: limite superior do escalão seis em dois mil e vinte e seis",
-      "en": "Income tax: upper limit of bracket six in two thousand and twenty-six"
+      "pt": "IRS: limite superior do escalão 6 em 2026",
+      "en": "Income tax: upper limit of bracket 6 in 2026"
     },
     "frase": {
       "pt": [
-        "É o valor de «IRS: limite superior do escalão seis em dois mil e vinte e seis» no documento citado, para o período e na unidade indicados. Referência: "
+        "É o valor de «IRS: limite superior do escalão 6 em 2026» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Income tax: upper limit of bracket six in two thousand and twenty-six» in the cited document, for the stated period and unit. Reference: "
+        "It is the value of «Income tax: upper limit of bracket 6 in 2026» in the cited document, for the stated period and unit. Reference: "
       ]
     },
     "complemento": {
@@ -11133,15 +11133,15 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "irs-2026-escalao-6-taxa-normal": {
     "nome": {
-      "pt": "IRS: taxa normal do escalão seis na tabela anterior a setembro de dois mil e vinte e seis",
-      "en": "Income tax: normal rate of bracket six in the table preceding September two thousand and twenty-six"
+      "pt": "IRS: taxa normal do escalão 6 na tabela anterior a setembro de 2026",
+      "en": "Income tax: normal rate of bracket 6 in the table preceding September 2026"
     },
     "frase": {
       "pt": [
-        "É o valor de «IRS: taxa normal do escalão seis na tabela anterior a setembro de dois mil e vinte e seis» no documento citado, para o período e na unidade indicados. Referência: "
+        "É o valor de «IRS: taxa normal do escalão 6 na tabela anterior a setembro de 2026» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Income tax: normal rate of bracket six in the table preceding September two thousand and twenty-six» in the cited document, for the stated period and unit. Reference: "
+        "It is the value of «Income tax: normal rate of bracket 6 in the table preceding September 2026» in the cited document, for the stated period and unit. Reference: "
       ]
     },
     "complemento": {
@@ -11161,15 +11161,15 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "irs-2026-escalao-7-limite": {
     "nome": {
-      "pt": "IRS: limite superior do escalão sete em dois mil e vinte e seis",
-      "en": "Income tax: upper limit of bracket seven in two thousand and twenty-six"
+      "pt": "IRS: limite superior do escalão 7 em 2026",
+      "en": "Income tax: upper limit of bracket 7 in 2026"
     },
     "frase": {
       "pt": [
-        "É o valor de «IRS: limite superior do escalão sete em dois mil e vinte e seis» no documento citado, para o período e na unidade indicados. Referência: "
+        "É o valor de «IRS: limite superior do escalão 7 em 2026» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Income tax: upper limit of bracket seven in two thousand and twenty-six» in the cited document, for the stated period and unit. Reference: "
+        "It is the value of «Income tax: upper limit of bracket 7 in 2026» in the cited document, for the stated period and unit. Reference: "
       ]
     },
     "complemento": {
@@ -11189,15 +11189,15 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "irs-2026-escalao-8-limite": {
     "nome": {
-      "pt": "IRS: limite superior do escalão oito em dois mil e vinte e seis",
-      "en": "Income tax: upper limit of bracket eight in two thousand and twenty-six"
+      "pt": "IRS: limite superior do escalão 8 em 2026",
+      "en": "Income tax: upper limit of bracket 8 in 2026"
     },
     "frase": {
       "pt": [
-        "É o valor de «IRS: limite superior do escalão oito em dois mil e vinte e seis» no documento citado, para o período e na unidade indicados. Referência: "
+        "É o valor de «IRS: limite superior do escalão 8 em 2026» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Income tax: upper limit of bracket eight in two thousand and twenty-six» in the cited document, for the stated period and unit. Reference: "
+        "It is the value of «Income tax: upper limit of bracket 8 in 2026» in the cited document, for the stated period and unit. Reference: "
       ]
     },
     "complemento": {
@@ -11217,15 +11217,15 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "irs-2027-escalao-1-limite": {
     "nome": {
-      "pt": "IRS: limite superior do escalão um em dois mil e vinte e sete",
-      "en": "Income tax: upper limit of bracket one in two thousand and twenty-seven"
+      "pt": "IRS: limite superior do escalão 1 em 2027",
+      "en": "Income tax: upper limit of bracket 1 in 2027"
     },
     "frase": {
       "pt": [
-        "É o valor de «IRS: limite superior do escalão um em dois mil e vinte e sete» no documento citado, para o período e na unidade indicados. Referência: "
+        "É o valor de «IRS: limite superior do escalão 1 em 2027» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Income tax: upper limit of bracket one in two thousand and twenty-seven» in the cited document, for the stated period and unit. Reference: "
+        "It is the value of «Income tax: upper limit of bracket 1 in 2027» in the cited document, for the stated period and unit. Reference: "
       ]
     },
     "complemento": {
@@ -11245,15 +11245,15 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "irs-2027-escalao-2-limite": {
     "nome": {
-      "pt": "IRS: limite superior do escalão dois em dois mil e vinte e sete",
-      "en": "Income tax: upper limit of bracket two in two thousand and twenty-seven"
+      "pt": "IRS: limite superior do escalão 2 em 2027",
+      "en": "Income tax: upper limit of bracket 2 in 2027"
     },
     "frase": {
       "pt": [
-        "É o valor de «IRS: limite superior do escalão dois em dois mil e vinte e sete» no documento citado, para o período e na unidade indicados. Referência: "
+        "É o valor de «IRS: limite superior do escalão 2 em 2027» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Income tax: upper limit of bracket two in two thousand and twenty-seven» in the cited document, for the stated period and unit. Reference: "
+        "It is the value of «Income tax: upper limit of bracket 2 in 2027» in the cited document, for the stated period and unit. Reference: "
       ]
     },
     "complemento": {
@@ -11273,15 +11273,15 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "irs-2027-escalao-3-limite": {
     "nome": {
-      "pt": "IRS: limite superior do escalão três em dois mil e vinte e sete",
-      "en": "Income tax: upper limit of bracket three in two thousand and twenty-seven"
+      "pt": "IRS: limite superior do escalão 3 em 2027",
+      "en": "Income tax: upper limit of bracket 3 in 2027"
     },
     "frase": {
       "pt": [
-        "É o valor de «IRS: limite superior do escalão três em dois mil e vinte e sete» no documento citado, para o período e na unidade indicados. Referência: "
+        "É o valor de «IRS: limite superior do escalão 3 em 2027» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Income tax: upper limit of bracket three in two thousand and twenty-seven» in the cited document, for the stated period and unit. Reference: "
+        "It is the value of «Income tax: upper limit of bracket 3 in 2027» in the cited document, for the stated period and unit. Reference: "
       ]
     },
     "complemento": {
@@ -11301,15 +11301,15 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "irs-2027-escalao-4-limite": {
     "nome": {
-      "pt": "IRS: limite superior do escalão quatro em dois mil e vinte e sete",
-      "en": "Income tax: upper limit of bracket four in two thousand and twenty-seven"
+      "pt": "IRS: limite superior do escalão 4 em 2027",
+      "en": "Income tax: upper limit of bracket 4 in 2027"
     },
     "frase": {
       "pt": [
-        "É o valor de «IRS: limite superior do escalão quatro em dois mil e vinte e sete» no documento citado, para o período e na unidade indicados. Referência: "
+        "É o valor de «IRS: limite superior do escalão 4 em 2027» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Income tax: upper limit of bracket four in two thousand and twenty-seven» in the cited document, for the stated period and unit. Reference: "
+        "It is the value of «Income tax: upper limit of bracket 4 in 2027» in the cited document, for the stated period and unit. Reference: "
       ]
     },
     "complemento": {
@@ -11329,15 +11329,15 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "irs-2027-escalao-5-limite": {
     "nome": {
-      "pt": "IRS: limite superior do escalão cinco em dois mil e vinte e sete",
-      "en": "Income tax: upper limit of bracket five in two thousand and twenty-seven"
+      "pt": "IRS: limite superior do escalão 5 em 2027",
+      "en": "Income tax: upper limit of bracket 5 in 2027"
     },
     "frase": {
       "pt": [
-        "É o valor de «IRS: limite superior do escalão cinco em dois mil e vinte e sete» no documento citado, para o período e na unidade indicados. Referência: "
+        "É o valor de «IRS: limite superior do escalão 5 em 2027» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Income tax: upper limit of bracket five in two thousand and twenty-seven» in the cited document, for the stated period and unit. Reference: "
+        "It is the value of «Income tax: upper limit of bracket 5 in 2027» in the cited document, for the stated period and unit. Reference: "
       ]
     },
     "complemento": {
@@ -11357,15 +11357,15 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "irs-2027-escalao-6-limite": {
     "nome": {
-      "pt": "IRS: limite superior do escalão seis em dois mil e vinte e sete",
-      "en": "Income tax: upper limit of bracket six in two thousand and twenty-seven"
+      "pt": "IRS: limite superior do escalão 6 em 2027",
+      "en": "Income tax: upper limit of bracket 6 in 2027"
     },
     "frase": {
       "pt": [
-        "É o valor de «IRS: limite superior do escalão seis em dois mil e vinte e sete» no documento citado, para o período e na unidade indicados. Referência: "
+        "É o valor de «IRS: limite superior do escalão 6 em 2027» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Income tax: upper limit of bracket six in two thousand and twenty-seven» in the cited document, for the stated period and unit. Reference: "
+        "It is the value of «Income tax: upper limit of bracket 6 in 2027» in the cited document, for the stated period and unit. Reference: "
       ]
     },
     "complemento": {
@@ -11385,15 +11385,15 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "irs-2027-escalao-7-limite": {
     "nome": {
-      "pt": "IRS: limite superior do escalão sete em dois mil e vinte e sete",
-      "en": "Income tax: upper limit of bracket seven in two thousand and twenty-seven"
+      "pt": "IRS: limite superior do escalão 7 em 2027",
+      "en": "Income tax: upper limit of bracket 7 in 2027"
     },
     "frase": {
       "pt": [
-        "É o valor de «IRS: limite superior do escalão sete em dois mil e vinte e sete» no documento citado, para o período e na unidade indicados. Referência: "
+        "É o valor de «IRS: limite superior do escalão 7 em 2027» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Income tax: upper limit of bracket seven in two thousand and twenty-seven» in the cited document, for the stated period and unit. Reference: "
+        "It is the value of «Income tax: upper limit of bracket 7 in 2027» in the cited document, for the stated period and unit. Reference: "
       ]
     },
     "complemento": {
@@ -11413,15 +11413,15 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "irs-2027-escalao-8-limite": {
     "nome": {
-      "pt": "IRS: limite superior do escalão oito em dois mil e vinte e sete",
-      "en": "Income tax: upper limit of bracket eight in two thousand and twenty-seven"
+      "pt": "IRS: limite superior do escalão 8 em 2027",
+      "en": "Income tax: upper limit of bracket 8 in 2027"
     },
     "frase": {
       "pt": [
-        "É o valor de «IRS: limite superior do escalão oito em dois mil e vinte e sete» no documento citado, para o período e na unidade indicados. Referência: "
+        "É o valor de «IRS: limite superior do escalão 8 em 2027» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Income tax: upper limit of bracket eight in two thousand and twenty-seven» in the cited document, for the stated period and unit. Reference: "
+        "It is the value of «Income tax: upper limit of bracket 8 in 2027» in the cited document, for the stated period and unit. Reference: "
       ]
     },
     "complemento": {
@@ -11441,15 +11441,15 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "irs-escalao-1-taxa-normal": {
     "nome": {
-      "pt": "IRS: taxa normal do escalão um",
-      "en": "Personal income tax: normal rate for bracket one"
+      "pt": "IRS: taxa normal do escalão 1",
+      "en": "Personal income tax: normal rate for bracket 1"
     },
     "frase": {
       "pt": [
-        "É o valor de «IRS: taxa normal do escalão um» no documento citado, para o período e na unidade indicados. Referência: "
+        "É o valor de «IRS: taxa normal do escalão 1» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Personal income tax: normal rate for bracket one» in the cited document, for the stated period and unit. Reference: "
+        "It is the value of «Personal income tax: normal rate for bracket 1» in the cited document, for the stated period and unit. Reference: "
       ]
     },
     "complemento": {
@@ -11469,15 +11469,15 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "irs-escalao-2-taxa-normal": {
     "nome": {
-      "pt": "IRS: taxa normal do escalão dois",
-      "en": "Personal income tax: normal rate for bracket two"
+      "pt": "IRS: taxa normal do escalão 2",
+      "en": "Personal income tax: normal rate for bracket 2"
     },
     "frase": {
       "pt": [
-        "É o valor de «IRS: taxa normal do escalão dois» no documento citado, para o período e na unidade indicados. Referência: "
+        "É o valor de «IRS: taxa normal do escalão 2» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Personal income tax: normal rate for bracket two» in the cited document, for the stated period and unit. Reference: "
+        "It is the value of «Personal income tax: normal rate for bracket 2» in the cited document, for the stated period and unit. Reference: "
       ]
     },
     "complemento": {
@@ -11497,15 +11497,15 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "irs-escalao-3-taxa-normal": {
     "nome": {
-      "pt": "IRS: taxa normal do escalão três",
-      "en": "Personal income tax: normal rate for bracket three"
+      "pt": "IRS: taxa normal do escalão 3",
+      "en": "Personal income tax: normal rate for bracket 3"
     },
     "frase": {
       "pt": [
-        "É o valor de «IRS: taxa normal do escalão três» no documento citado, para o período e na unidade indicados. Referência: "
+        "É o valor de «IRS: taxa normal do escalão 3» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Personal income tax: normal rate for bracket three» in the cited document, for the stated period and unit. Reference: "
+        "It is the value of «Personal income tax: normal rate for bracket 3» in the cited document, for the stated period and unit. Reference: "
       ]
     },
     "complemento": {
@@ -11525,15 +11525,15 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "irs-escalao-4-taxa-normal": {
     "nome": {
-      "pt": "IRS: taxa normal do escalão quatro",
-      "en": "Personal income tax: normal rate for bracket four"
+      "pt": "IRS: taxa normal do escalão 4",
+      "en": "Personal income tax: normal rate for bracket 4"
     },
     "frase": {
       "pt": [
-        "É o valor de «IRS: taxa normal do escalão quatro» no documento citado, para o período e na unidade indicados. Referência: "
+        "É o valor de «IRS: taxa normal do escalão 4» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Personal income tax: normal rate for bracket four» in the cited document, for the stated period and unit. Reference: "
+        "It is the value of «Personal income tax: normal rate for bracket 4» in the cited document, for the stated period and unit. Reference: "
       ]
     },
     "complemento": {
@@ -11553,15 +11553,15 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "irs-escalao-5-taxa-normal": {
     "nome": {
-      "pt": "IRS: taxa normal do escalão cinco",
-      "en": "Personal income tax: normal rate for bracket five"
+      "pt": "IRS: taxa normal do escalão 5",
+      "en": "Personal income tax: normal rate for bracket 5"
     },
     "frase": {
       "pt": [
-        "É o valor de «IRS: taxa normal do escalão cinco» no documento citado, para o período e na unidade indicados. Referência: "
+        "É o valor de «IRS: taxa normal do escalão 5» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Personal income tax: normal rate for bracket five» in the cited document, for the stated period and unit. Reference: "
+        "It is the value of «Personal income tax: normal rate for bracket 5» in the cited document, for the stated period and unit. Reference: "
       ]
     },
     "complemento": {
@@ -11581,15 +11581,15 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "irs-escalao-6-taxa-normal": {
     "nome": {
-      "pt": "IRS: taxa normal do escalão seis",
-      "en": "Personal income tax: normal rate for bracket six"
+      "pt": "IRS: taxa normal do escalão 6",
+      "en": "Personal income tax: normal rate for bracket 6"
     },
     "frase": {
       "pt": [
-        "É o valor de «IRS: taxa normal do escalão seis» no documento citado, para o período e na unidade indicados. Referência: "
+        "É o valor de «IRS: taxa normal do escalão 6» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Personal income tax: normal rate for bracket six» in the cited document, for the stated period and unit. Reference: "
+        "It is the value of «Personal income tax: normal rate for bracket 6» in the cited document, for the stated period and unit. Reference: "
       ]
     },
     "complemento": {
@@ -11609,15 +11609,15 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "irs-escalao-7-taxa-normal": {
     "nome": {
-      "pt": "IRS: taxa normal do escalão sete",
-      "en": "Personal income tax: normal rate for bracket seven"
+      "pt": "IRS: taxa normal do escalão 7",
+      "en": "Personal income tax: normal rate for bracket 7"
     },
     "frase": {
       "pt": [
-        "É o valor de «IRS: taxa normal do escalão sete» no documento citado, para o período e na unidade indicados. Referência: "
+        "É o valor de «IRS: taxa normal do escalão 7» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Personal income tax: normal rate for bracket seven» in the cited document, for the stated period and unit. Reference: "
+        "It is the value of «Personal income tax: normal rate for bracket 7» in the cited document, for the stated period and unit. Reference: "
       ]
     },
     "complemento": {
@@ -11637,15 +11637,15 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "irs-escalao-8-taxa-normal": {
     "nome": {
-      "pt": "IRS: taxa normal do escalão oito",
-      "en": "Personal income tax: normal rate for bracket eight"
+      "pt": "IRS: taxa normal do escalão 8",
+      "en": "Personal income tax: normal rate for bracket 8"
     },
     "frase": {
       "pt": [
-        "É o valor de «IRS: taxa normal do escalão oito» no documento citado, para o período e na unidade indicados. Referência: "
+        "É o valor de «IRS: taxa normal do escalão 8» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Personal income tax: normal rate for bracket eight» in the cited document, for the stated period and unit. Reference: "
+        "It is the value of «Personal income tax: normal rate for bracket 8» in the cited document, for the stated period and unit. Reference: "
       ]
     },
     "complemento": {
@@ -11665,15 +11665,15 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "irs-escalao-9-taxa-normal": {
     "nome": {
-      "pt": "IRS: taxa normal do escalão nove",
-      "en": "Personal income tax: normal rate for bracket nine"
+      "pt": "IRS: taxa normal do escalão 9",
+      "en": "Personal income tax: normal rate for bracket 9"
     },
     "frase": {
       "pt": [
-        "É o valor de «IRS: taxa normal do escalão nove» no documento citado, para o período e na unidade indicados. Referência: "
+        "É o valor de «IRS: taxa normal do escalão 9» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Personal income tax: normal rate for bracket nine» in the cited document, for the stated period and unit. Reference: "
+        "It is the value of «Personal income tax: normal rate for bracket 9» in the cited document, for the stated period and unit. Reference: "
       ]
     },
     "complemento": {
@@ -12001,15 +12001,15 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "oe-2027-rmmg-2024": {
     "nome": {
-      "pt": "Remuneração mínima mensal garantida: dois mil e vinte e quatro",
-      "en": "Minimum monthly wage: two thousand and twenty-four"
+      "pt": "Remuneração mínima mensal garantida: 2024",
+      "en": "Minimum monthly wage: 2024"
     },
     "frase": {
       "pt": [
-        "É o valor de «Remuneração mínima mensal garantida: dois mil e vinte e quatro» no documento citado, para o período e na unidade indicados. Referência: "
+        "É o valor de «Remuneração mínima mensal garantida: 2024» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Minimum monthly wage: two thousand and twenty-four» in the cited document, for the stated period and unit. Reference: "
+        "It is the value of «Minimum monthly wage: 2024» in the cited document, for the stated period and unit. Reference: "
       ]
     },
     "complemento": {
@@ -12029,15 +12029,15 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "oe-2027-rmmg-2027": {
     "nome": {
-      "pt": "Remuneração mínima mensal garantida: dois mil e vinte e sete",
-      "en": "Minimum monthly wage: two thousand and twenty-seven"
+      "pt": "Remuneração mínima mensal garantida: 2027",
+      "en": "Minimum monthly wage: 2027"
     },
     "frase": {
       "pt": [
-        "É o valor de «Remuneração mínima mensal garantida: dois mil e vinte e sete» no documento citado, para o período e na unidade indicados. Referência: "
+        "É o valor de «Remuneração mínima mensal garantida: 2027» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Minimum monthly wage: two thousand and twenty-seven» in the cited document, for the stated period and unit. Reference: "
+        "It is the value of «Minimum monthly wage: 2027» in the cited document, for the stated period and unit. Reference: "
       ]
     },
     "complemento": {
@@ -13261,15 +13261,15 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "pm-q3-2-r15-c0": {
     "nome": {
-      "pt": "Redução taxa em um p.p. (i)",
-      "en": "Rate cut by one percentage point (i)"
+      "pt": "Redução taxa em 1 p.p. (i)",
+      "en": "Rate cut by 1 percentage point (i)"
     },
     "frase": {
       "pt": [
-        "É o valor de «Redução taxa em um p.p. (i)» no quadro das medidas com impacto orçamental, para o período e na unidade indicados. Referência: "
+        "É o valor de «Redução taxa em 1 p.p. (i)» no quadro das medidas com impacto orçamental, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Rate cut by one percentage point (i)» in the table of measures with a budgetary impact, for the stated period and unit. Reference: "
+        "It is the value of «Rate cut by 1 percentage point (i)» in the table of measures with a budgetary impact, for the stated period and unit. Reference: "
       ]
     },
     "complemento": {
@@ -15249,15 +15249,15 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "posicao-cds-orcamento": {
     "nome": {
-      "pt": "Posição sobre o Orçamento do Estado de dois mil e vinte e sete",
-      "en": "Position on the two thousand and twenty-seven State Budget"
+      "pt": "Posição sobre o Orçamento do Estado de 2027",
+      "en": "Position on the 2027 State Budget"
     },
     "frase": {
       "pt": [
-        "É a posição atribuída no documento sobre «Posição sobre o Orçamento do Estado de dois mil e vinte e sete», transcrita no excerto. Referência: "
+        "É a posição atribuída no documento sobre «Posição sobre o Orçamento do Estado de 2027», transcrita no excerto. Referência: "
       ],
       "en": [
-        "It is the position attributed in the document on «Position on the two thousand and twenty-seven State Budget», transcribed in the excerpt. Reference: "
+        "It is the position attributed in the document on «Position on the 2027 State Budget», transcribed in the excerpt. Reference: "
       ]
     },
     "complemento": {
@@ -15781,8 +15781,8 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "rmmg-2026": {
     "nome": {
-      "pt": "Remuneração mínima mensal garantida em dois mil e vinte e seis",
-      "en": "Minimum monthly wage in two thousand and twenty-six"
+      "pt": "Remuneração mínima mensal garantida em 2026",
+      "en": "Minimum monthly wage in 2026"
     },
     "frase": {
       "pt": [
@@ -15809,8 +15809,8 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "smi-espanha-2026": {
     "nome": {
-      "pt": "Espanha: salário mínimo mensal em dois mil e vinte e seis",
-      "en": "Spain: monthly minimum wage in two thousand and twenty-six"
+      "pt": "Espanha: salário mínimo mensal em 2026",
+      "en": "Spain: monthly minimum wage in 2026"
     },
     "frase": {
       "pt": [
@@ -16110,6 +16110,34 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
       "en": [
         {
           "periodo": "utao-novas-saldo"
+        },
+        "."
+      ]
+    }
+  },
+  "utao-pessoal-variacao-cn": {
+    "nome": {
+      "pt": "UTAO: variação das despesas com pessoal em contabilidade nacional, 2027",
+      "en": "UTAO: change in staff costs in national accounts, 2027"
+    },
+    "frase": {
+      "pt": [
+        "É o valor de «UTAO: variação das despesas com pessoal em contabilidade nacional, 2027» no documento citado, para o período e na unidade indicados. Referência: "
+      ],
+      "en": [
+        "It is the value of «UTAO: change in staff costs in national accounts, 2027» in the cited document, for the stated period and unit. Reference: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        {
+          "periodo": "utao-pessoal-variacao-cn"
+        },
+        "."
+      ],
+      "en": [
+        {
+          "periodo": "utao-pessoal-variacao-cn"
         },
         "."
       ]

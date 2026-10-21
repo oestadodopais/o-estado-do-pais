@@ -13,6 +13,7 @@ unit: "afirmação"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "Dívida pública abaixo de 85% do PIB em 2027"
 name_source: "Título h1 integral da notícia; publicação no metadado 2026-10-13T21:22:56+01:00"
+status: "por confirmar na fonte primária"
 name_en: "Public debt below 85% of GDP in 2027"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.

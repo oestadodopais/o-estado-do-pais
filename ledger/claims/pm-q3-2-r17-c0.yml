@@ -13,6 +13,7 @@ unit: "milhões de euros"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "Contribuições sociais; 2027; impacto incremental; milhões de euros"
 name_source: "Quadro 3.2. Principais medidas de política orçamental com impacto em 2027; Contribuições sociais; coluna 1: 2027; impacto incremental; milhões de euros; p. 59 PDF (43 impressa)"
+status: "conferido"
 name_en: "Social contributions; 2027; incremental impact; million euros"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.

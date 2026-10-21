@@ -200,6 +200,7 @@ interface Linha {
   unit: unknown;
   name?: unknown;
   name_en?: unknown;
+  status?: unknown;
   name_source?: unknown;
   name_source_en?: string;
   source: unknown;

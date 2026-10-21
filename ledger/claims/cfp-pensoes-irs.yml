@@ -13,6 +13,7 @@ unit: "afirmação"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "Pensões e IRS: as medidas de 2026 (o suplemento extraordinário e a descida das taxas), pelo CFP"
 name_source: "p. 13 PDF"
+status: "conferido"
 name_en: "Pensions and income tax: the 2026 measures (the extraordinary supplement and the rate reduction), according to the CFP"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.

@@ -13,6 +13,7 @@ unit: "euros"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "Remuneração mínima mensal garantida: 2024"
 name_source: "p. 20 PDF (4 impressa)"
+status: "conferido"
 name_en: "Minimum monthly wage: 2024"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.

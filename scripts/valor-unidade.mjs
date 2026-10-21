@@ -28,6 +28,10 @@ export function conferirValorUnidade(root, linhas = loadClaims()) {
       if (valor.textContent !== claim.value) erros.push('V2E recibo: valor impresso diferente da prova selada');
       continue;
     }
+    if (tipo === 'titulos' && claim?.unit === 'data') {
+      if (!valor || unidade) erros.push('EO1 data: falta o valor ou repete a unidade');
+      continue;
+    }
     const marca = el.querySelector('.cartao-medida-marca');
     if (marca) {
       if (valor || unidade) erros.push('I143/I158: uma marca sem valor publicado traz valor ou unidade');

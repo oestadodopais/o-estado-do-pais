@@ -13,6 +13,7 @@ unit: "%"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "Administração Pública: atualização das remunerações"
 name_source: "p. 58 PDF (42 impressa)"
+status: "conferido"
 name_en: "Public administration: wage update"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.

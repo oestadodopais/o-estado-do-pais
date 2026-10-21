@@ -13,6 +13,7 @@ unit: "% do PIB"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "Dívida pública consolidada (%); 2027; orçamento; % do PIB"
 name_source: "Quadro 3.6. Dívida pública; Dívida pública consolidada (%); coluna 4: 2027; orçamento; % do PIB; p. 65 PDF (49 impressa)"
+status: "conferido"
 name_en: "Consolidated public debt (%); 2027; budget; % of GDP"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.

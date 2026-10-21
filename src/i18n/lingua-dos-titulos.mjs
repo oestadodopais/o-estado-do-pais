@@ -291,6 +291,23 @@ export function linguaDoTituloDoDocumento(titulo, lang = 'pt') {
  * da medida; source_label conserva o rótulo original no motor e na prova exportada. */
 // EO1-b: lista explícita das línguas dos nomes PT e das traduções EN, conferida com as linhas.
 export const LINGUA_DOS_ROTULOS = {
+  // EO1-d: nomes conferidos das medidas invariantes e da UTAO.
+  "Medidas invariantes: impacto no saldo": "pt",
+  "Invariant measures: balance impact": "en",
+  "Medidas invariantes: receita": "pt",
+  "Invariant measures: revenue": "en",
+  "Medidas invariantes: despesa": "pt",
+  "Invariant measures: expenditure": "en",
+  "UTAO: variação das despesas com pessoal em contabilidade nacional, 2027": "pt",
+  "UTAO: change in staff costs in national accounts, 2027": "en",
+  "UTAO: dívida pública em euros, fim de 2026": "pt",
+  "UTAO: public debt in euros, end of 2026": "en",
+  "UTAO: dívida pública em euros, fim de 2027": "pt",
+  "UTAO: public debt in euros, end of 2027": "en",
+  "UTAO: acréscimo anual da dívida pública, 2026": "pt",
+  "UTAO: annual increase in public debt, 2026": "en",
+  "UTAO: acréscimo anual da dívida pública, 2027": "pt",
+  "UTAO: annual increase in public debt, 2027": "en",
   // V2-e: cadeias lidas nos documentos e nas respostas das fontes.
   "Regularização de dívidas vencidas a fornecedores por parte de entidades do Serviço Nacional de Saúde, com contrapartida em reforços dos respetivos capitais pelo Estado (a)": "pt",
   "Health personnel": "en",

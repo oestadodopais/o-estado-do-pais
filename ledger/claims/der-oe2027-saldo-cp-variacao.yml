@@ -13,6 +13,7 @@ unit: "milhões de euros"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "Saldo: variação em contabilidade pública"
 name_source: "Cálculo sobre as linhas identificadas"
+status: "derivado"
 name_en: "Balance: public accounting change"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
@@ -26,8 +27,8 @@ reference_date: "2027"
 excerpt: null
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
-derivation: "−401 (Saldo Global) − 171 (Saldo Global) = −572. Um resultado negativo reduz o saldo; um resultado positivo aumenta-o."
-derivation_en: "−401 (Overall balance) − 171 (Overall balance) = −572. A negative result reduces the balance; a positive result increases it."
+derivation: "−401 (Saldo Global, 2027, contabilidade pública) − 171 (Saldo Global, 2026, contabilidade pública) = −572. Um resultado negativo reduz o saldo; um resultado positivo aumenta-o."
+derivation_en: "−401 (Overall balance, 2027, public accounting) − 171 (Overall balance, 2026, public accounting) = −572. A negative result reduces the balance; a positive result increases it."
 derived_from:
   - "pm-q4-1-r32-c1"
   - "pm-q4-1-r32-c0"

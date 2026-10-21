@@ -13,6 +13,7 @@ unit: "%"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "Investimento (FBCF); 2027; previsão; %"
 name_source: "Quadro 2.3. Cenário macroeconómico; Investimento (FBCF); coluna 3: 2027; previsão; %; p. 41 PDF (25 impressa)"
+status: "conferido"
 name_en: "Investment (gross fixed capital formation); 2027; forecast; %"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.

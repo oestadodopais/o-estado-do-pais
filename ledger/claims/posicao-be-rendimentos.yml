@@ -13,6 +13,7 @@ unit: "afirmação"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "Rendimentos dos trabalhadores"
 name_source: "Abertura editorial integral; data editorial 09/10/2026 - 10:09"
+status: "por confirmar na fonte primária"
 name_en: "Workers income"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.

@@ -13,6 +13,7 @@ unit: "afirmação"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "IVA: taxa de 6 % e rendimentos prediais"
 name_source: "Preâmbulo; p. 1 PDF"
+status: "conferido"
 name_en: "VAT: 6% rate and rental income"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.

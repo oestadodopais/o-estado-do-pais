@@ -13,6 +13,7 @@ unit: "euros"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "Salário mínimo: aumento face a 2026"
 name_source: "Cálculo sobre as linhas identificadas"
+status: "derivado"
 name_en: "Minimum wage: increase against 2026"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.

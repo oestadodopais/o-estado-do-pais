@@ -21,7 +21,7 @@ export const temProvaEo1 = id => Object.hasOwn(provas, id);
 /** Todas as linhas conferem nome bilingue e período; documentos conferem ainda excerto e recibo do corpo. */
 export function localizadorEo1Confere(onde, linha) {
   const p = provas[linha?.id], d = linha?.document;
-  if (!seladas || !p || linha.study !== estudo || !linha.name || !linha.name_en || linha.name !== p.name || linha.name_en !== p.name_en ||
+  if (!seladas || !p || linha.status !== p.status || linha.study !== estudo || !linha.name || !linha.name_en || linha.name !== p.name || linha.name_en !== p.name_en ||
       onde !== p.name_source || linha.reference_date !== (p.publication ? p.published_at : data(p.period))) return false;
   if (!p.document) return !d && Boolean(linha.derivation) && linha.check === p.derivation?.formula &&
     JSON.stringify(linha.derived_from) === JSON.stringify(p.derivation?.components);

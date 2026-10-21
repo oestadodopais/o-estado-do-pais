@@ -13,6 +13,7 @@ unit: "afirmação"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "Saldo orçamental"
 name_source: "§24; p. 15 PDF (14 impressa)"
+status: "conferido"
 name_en: "Budget balance"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.

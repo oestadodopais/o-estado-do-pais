@@ -1,3 +1,4 @@
+import { FAMILIAS_DAS_LINHAS as FAMILIAS_EO1_GATE } from '../src/data/o-que-e-das-familias.mjs';
 #!/usr/bin/env node
 import { conferirAberturaB1 } from './abertura-b1-do-portao.mjs';
 import {conferirCaminhoFinal} from './caminho-final.mjs';
@@ -5934,6 +5935,14 @@ for (const file of ficheirosHtml(DIST)) {
   }
 
   const aRemover = [];
+  // EO1-d: anos e escalões são metadados da definição. Confere a frase inteira.
+  for (const el of body.querySelectorAll('[data-eo1-definicao]')) {
+    const id = el.getAttribute('data-eo1-definicao'), c = claims.get(id), f = FAMILIAS_EO1_GATE[id];
+    const esperado = f?.frase?.[rota.lang]?.join('') + (f?.complemento?.[rota.lang] ?? []).map(p => typeof p === 'string' ? p : p.periodo === id ? dataDaCasaGate(String(c?.reference_date)) : '').join('');
+    if (!paginaDoLivro || rota.params.slug !== id || !NOMES_EO1[id] || normalizeWhitespace(el.textContent).trim() !== normalizeWhitespace(esperado).trim()) err('EO1 definição: frase ou rota divergente: ' + id);
+    else aRemover.push(el);
+  }
+
   /* Códigos e períodos no nome V2-e só passam com o nome bilingue da prova. */
   for (const el of body.querySelectorAll('[data-nome="projeto"][data-de-linha]')) {
     const id=el.getAttribute('data-de-linha');
@@ -6014,7 +6023,11 @@ for (const file of ficheirosHtml(DIST)) {
     const valorNumerico = /^[+−-]?[\d\s\u00a0\u202f]+(?:,\d+)?$/.test(String(claim.value));
     if (modificador !== undefined && (modificador !== 'abs' || !valorNumerico || paginaDoLivro))
       err(`a afirmação "${id}" tem modificador inválido.`);
-    const esperado = modificador === 'abs' && valorNumerico ? String(claim.value).replace(/^[+−-]/, '') : claim.value;
+    let esperado = modificador === 'abs' && valorNumerico ? String(claim.value).replace(/^[+−-]/, '') : claim.value;
+    if (rota.lang === 'en' && claim.study === 'orcamento-2027-o-que-muda-e-para-quem' && claim.derivation && valorNumerico) {
+      const [whole, fraction] = String(esperado).replace(/\s/g, '').split(',');
+      esperado = whole.replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,') + (fraction === undefined ? '' : '.' + fraction);
+    }
     const renderizado = decodeEntities(textoDe(el));
     if (digitsOf(renderizado) !== digitsOf(esperado)) {
       err(

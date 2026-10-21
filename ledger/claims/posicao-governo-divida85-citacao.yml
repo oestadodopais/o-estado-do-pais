@@ -13,6 +13,7 @@ unit: "afirmação"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "Miranda Sarmento: dívida, citação pela notícia"
 name_source: "Citação direta no corpo da notícia; 13 de outubro de 2026"
+status: "por confirmar na fonte primária"
 name_en: "Miranda Sarmento: debt, quotation in the news report"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
