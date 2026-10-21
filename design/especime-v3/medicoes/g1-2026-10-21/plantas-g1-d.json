@@ -1,0 +1,56 @@
+[
+  {
+    "nome": "rp4cb-indice-sem-ponto",
+    "cabeca": "9bea1386f1b5abb33c7ae006a76a29732301c36f",
+    "estado": " M src/components/formas/SerieDoPais.astro\n M src/lib/formas/serie-do-pais.mjs\n M tests/formas/serie-do-pais.mjs\n M tests/pais/portoes.mjs\n",
+    "comando": "node scripts/check-formas.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "F21 · pontos do índice diferentes da recomposição"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/livro-razao/series/serie-remuneracao-bruta-mensal-media-real/index.html",
+        "antes": "7a7ad9591b08b3580b895bba90719e90d5ce198bc50121568cd009a36415c169",
+        "reposto": "7a7ad9591b08b3580b895bba90719e90d5ce198bc50121568cd009a36415c169"
+      }
+    ]
+  },
+  {
+    "nome": "rp4cb-indice-circulo-de-outra-serie",
+    "cabeca": "9bea1386f1b5abb33c7ae006a76a29732301c36f",
+    "estado": " M src/components/formas/SerieDoPais.astro\n M src/lib/formas/serie-do-pais.mjs\n M tests/formas/serie-do-pais.mjs\n M tests/pais/portoes.mjs\n",
+    "comando": "node scripts/check-formas.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "F21 · pontos do índice diferentes da recomposição"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/livro-razao/series/serie-remuneracao-bruta-mensal-media-real/index.html",
+        "antes": "7a7ad9591b08b3580b895bba90719e90d5ce198bc50121568cd009a36415c169",
+        "reposto": "7a7ad9591b08b3580b895bba90719e90d5ce198bc50121568cd009a36415c169"
+      }
+    ]
+  },
+  {
+    "nome": "rp4cb-zonas-num-indexado",
+    "cabeca": "9bea1386f1b5abb33c7ae006a76a29732301c36f",
+    "estado": " M src/components/formas/SerieDoPais.astro\n M src/lib/formas/serie-do-pais.mjs\n M tests/formas/serie-do-pais.mjs\n M tests/pais/portoes.mjs\n",
+    "comando": "node scripts/check-formas.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "F21 · leitura dos pontos difere da recomposição"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/livro-razao/series/serie-remuneracao-bruta-mensal-media-real/index.html",
+        "antes": "7a7ad9591b08b3580b895bba90719e90d5ce198bc50121568cd009a36415c169",
+        "reposto": "7a7ad9591b08b3580b895bba90719e90d5ce198bc50121568cd009a36415c169"
+      }
+    ]
+  }
+]

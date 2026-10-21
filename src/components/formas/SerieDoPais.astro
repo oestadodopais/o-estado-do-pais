@@ -48,13 +48,15 @@ const valorDoPonto = (periodo) => String(pontoDaSerie(getSerie(daLeitura), perio
 const ultimaLeitura = desenho.leituras.length - 1;
 /* A CORREÇÃO G1-c (o achado 4): o desenho indexado do recibo leva a camada comum, um ponto por linha e por período,
    com a leitura «nome, período: valor (índice, base cem em <base>)»; a etiqueta é a comum do guião, porque o ponto
-   não tem etiqueta própria no desenho. A régua dos gráficos refaz cada valor a partir do livro. */
-const indice = desenho.pontosDoIndice.map((q) => {
+   não tem etiqueta própria no desenho. A régua dos gráficos refaz cada valor a partir do livro.
+   A CORREÇÃO G1-d: os pontos de cada linha desenham-se logo a seguir aos traços dela, e o círculo de cada ponto leva
+   `data-serie-linha`, para a série do recibo, a última da lista, ser também a última desenhada (a regra S6). */
+const indice = desenho.pontosDoIndice.map((q, ordem) => {
   const periodo = dataDaCasa(q.periodo, lang);
   const valor = valorDoIndice(q.indice, lang);
   const unidadeDoPonto = unidadeDoIndice(dataDaCasa(q.base, lang), lang);
   const nome = nomeDaSerie(q.id, lang);
-  return { ...q, periodo, chave: q.periodo, valor, unidadeDoPonto, nome, leitura: `${nome}, ${periodo}: ${valor} (${unidadeDoPonto})` };
+  return { ...q, ordem, periodo, chave: q.periodo, valor, unidadeDoPonto, nome, leitura: `${nome}, ${periodo}: ${valor} (${unidadeDoPonto})` };
 });
 const marca = daLeitura ? 'serie' : indice.length ? 'indice' : undefined;
 const unidade = desenho.legenda ? unidadeDaLinha(String(getSerie(ids[0]).unit), lang) : null;
@@ -69,14 +71,13 @@ const unidade = desenho.legenda ? unidadeDaLinha(String(getSerie(ids[0]).unit), 
     <line class="serie-do-pais-guia" x1={m.x} x2={m.x} y1={g.fundo} y2={g.fundo + 4} />
     <text data-nonledger="escala-de-instrumento" x={m.x} y={m.y} text-anchor={m.ancora}>{m.texto}</text>
   </g>)}
-  {desenho.linhas.map(l => l.segmentos.map(pontos => {
+  {desenho.linhas.map(l => [l.segmentos.map(pontos => {
     const segmento = segmentoVisivel(pontos);
     return segmento.tipo === 'ponto'
       ? <circle class="serie-do-pais-linha" data-serie-linha={l.id} cx={segmento.cx} cy={segmento.cy} r={segmento.r} />
       : <polyline class="serie-do-pais-linha" data-serie-linha={l.id} points={segmento.pontos} />;
-  }))}
+  }), indice.filter((q) => q.id === l.id).map((q) => <g data-grafico-ponto data-grafico-indice={q.base} data-grafico-serie={q.id} data-grafico-chave={q.chave} data-grafico-periodo={q.periodo} data-grafico-valor={q.valor} data-grafico-unidade={q.unidadeDoPonto} data-grafico-nome={q.nome} data-grafico-leitura={q.leitura} role="img" aria-label={q.leitura} tabindex={q.ordem === indice.length - 1 ? '0' : '-1'}><circle data-serie-linha={q.id} cx={q.cx} cy={q.cy} r="3" /></g>)])}
   {daLeitura && desenho.leituras.map((l, i) => <g data-grafico-ponto data-grafico-periodo={dataDaCasa(l.periodo, lang)} data-grafico-valor={valorDoPonto(l.periodo)} data-grafico-unidade={desenho.simbolo ?? ''} data-grafico-nome="" data-grafico-leitura={`${dataDaCasa(l.periodo, lang)}: ${valorDoPonto(l.periodo)}${sufixo}`} role="img" aria-label={`${dataDaCasa(l.periodo, lang)}: ${valorDoPonto(l.periodo)}${sufixo}`} tabindex={i === ultimaLeitura ? '0' : '-1'}><rect x={l.zona.x} y={l.zona.y} width={l.zona.largura} height={l.zona.altura} /><line x1={l.mira.x} x2={l.mira.x} y1={l.mira.y1} y2={l.mira.y2} /><circle cx={l.marca.cx} cy={l.marca.cy} r={l.marca.r} /><text x={l.etiqueta.x} y={l.etiqueta.y} text-anchor={l.etiqueta.ancora}><PontoDaSerie serie={daLeitura} chave={l.periodo} as="tspan" />{sufixo}<tspan x={l.etiqueta.x} dy={l.etiqueta.dy} data-ponto-periodo={`${daLeitura}#${l.periodo}`}>{dataDaCasa(l.periodo, lang)}</tspan></text></g>)}
-  {indice.map((q, i) => <g data-grafico-ponto data-grafico-indice={q.base} data-grafico-serie={q.id} data-grafico-chave={q.chave} data-grafico-periodo={q.periodo} data-grafico-valor={q.valor} data-grafico-unidade={q.unidadeDoPonto} data-grafico-nome={q.nome} data-grafico-leitura={q.leitura} role="img" aria-label={q.leitura} tabindex={i === indice.length - 1 ? '0' : '-1'}><circle cx={q.cx} cy={q.cy} r="3" /></g>)}
 </svg>
 
 {unidade && <span class="serie-do-pais-unidade" data-serie-unidade-legenda={ids[0]}><CampoDaSerie serie={ids[0]} campo="unit" valor={unidade.texto} lingua={unidade.lingua} /></span>}

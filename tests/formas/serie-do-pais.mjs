@@ -151,7 +151,10 @@ export function conferirSerie(svg, lang, lerSerie = getSerie, leitura = leituraD
   const esperadosDoIndice = (svg.getAttribute('data-grafico') === 'indice' ? g.pontosDoIndice ?? [] : []).map((q) => [q.id, q.periodo, q.base, q.cx, q.cy]);
   const lidosDoIndice = doIndice.map((n) => {
     const f = n.childNodes.filter((c) => c.rawTagName);
-    return f.length === 1 && f[0].rawTagName === 'circle' && f[0].getAttribute('r') === '3' && Object.keys(f[0].attributes).length === 3
+    /* G1-d: o círculo leva também `data-serie-linha`, igual à série do grupo, para a regra S6 ler a última série
+       desenhada; nenhum outro atributo. */
+    return f.length === 1 && f[0].rawTagName === 'circle' && f[0].getAttribute('r') === '3' && Object.keys(f[0].attributes).length === 4
+      && f[0].getAttribute('data-serie-linha') === n.getAttribute('data-grafico-serie')
       ? [n.getAttribute('data-grafico-serie'), n.getAttribute('data-grafico-chave'), n.getAttribute('data-grafico-indice'), f[0].getAttribute('cx'), f[0].getAttribute('cy')] : null;
   });
   if (JSON.stringify(lidosDoIndice) !== JSON.stringify(esperadosDoIndice)) falha('pontos do índice diferentes da recomposição');

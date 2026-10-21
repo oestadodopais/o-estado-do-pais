@@ -728,6 +728,10 @@ planta('rp4c-formato-euro-numa-marca','tests/inicio/formato-dos-numeros.mjs',[
 planta('rp4cb-indice-sem-ponto','scripts/check-formas.mjs',[
  ['livro-razao/series/serie-remuneracao-bruta-mensal-media-real/index.html',r=>r.querySelector('svg[data-forma="serie-do-pais"][data-modo="indice"] g[data-grafico-indice]').remove()]
 ],[/F21 · pontos do índice diferentes da recomposição/]);
+/* G1-d (21.10.2026): o círculo de um ponto do índice com a série de outra linha tem de ser recusado pela F21. */
+planta('rp4cb-indice-circulo-de-outra-serie','scripts/check-formas.mjs',[
+ ['livro-razao/series/serie-remuneracao-bruta-mensal-media-real/index.html',r=>r.querySelector('svg[data-forma="serie-do-pais"][data-modo="indice"] g[data-grafico-indice] circle').setAttribute('data-serie-linha','serie-que-nao-e-a-do-grupo')]
+],[/F21 · pontos do índice diferentes da recomposição/]);
 planta('rp4cb-zonas-num-indexado','scripts/check-formas.mjs',[
  ['livro-razao/series/serie-remuneracao-bruta-mensal-media-real/index.html',r=>r.querySelector('svg[data-forma="serie-do-pais"][data-modo="indice"]').insertAdjacentHTML('beforeend','<g><rect x="48" y="12" width="1" height="118"></rect><line x1="48" x2="48" y1="12" y2="130"></line><circle cx="48" cy="40" r="3"></circle><text x="222" y="22" text-anchor="end"><tspan data-ponto="serie-ipc-variacao-homologa#1992-01">9,41</tspan>\u00a0%<tspan x="222" dy="14" data-ponto-periodo="serie-ipc-variacao-homologa#1992-01">janeiro de 1992</tspan></text></g>')]
 ],[/F21 · leitura dos pontos difere da recomposição/]);

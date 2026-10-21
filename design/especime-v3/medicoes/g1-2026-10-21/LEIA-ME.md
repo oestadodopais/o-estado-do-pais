@@ -175,3 +175,8 @@ A construção desta cabeça (que corre a F21, a voz e as outras conferências d
 ### O custo
 
 Quarenta e uma chamadas de ferramenta pela minha contagem, uma acima do orçamento (esta correção do relatório; duas gastas a esperar a cadeia em fundo); o total de símbolos é o que a ferramenta reporta para o agente.
+
+### A correção G1-d (21.10.2026, os dois defeitos da corrida dos portões da direção na cabeça `9bea1386f`)
+
+1. O `typecheck` (seis TS7006 em `src/lib/formas/serie-do-pais.mjs`): a G1-c pôs `valorDoIndice` e `unidadeDoIndice` entre o comentário dos tipos de `serieDoPais` e a função, que ficou sem tipos; as duas funções passaram para antes desse comentário, que voltou a estar colado a `serieDoPais`, sem tipos novos.
+2. A regra S6 do `check:series` no recibo `serie-remuneracao-bruta-mensal-media-real`, nas duas edições: os pontos do índice desenham-se agora logo a seguir aos traços da sua linha, e o círculo de cada ponto leva `data-serie-linha`, por isso a série do recibo, a última da lista, é também a última desenhada; a regra não mudou. A F21 do `check:formas` passou a exigir esse atributo, igual a `data-grafico-serie` do grupo, e nenhum outro além de `cx`, `cy` e `r`; a planta nova `rp4cb-indice-circulo-de-outra-serie` prova que morde (`plantas-g1-d.json`, com as duas plantas do índice que já havia, as três com código 1). Os códigos, lidos de ficheiros: `typecheck` 0, `build` 0, `check:series` 0, `check:graficos` 0, `node --test tests/formas/serie-do-pais.mjs` 0, `check:formas` 0, a corrida das três plantas (`portoes.mjs --lista`) 0.

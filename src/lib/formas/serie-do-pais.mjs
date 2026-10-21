@@ -97,16 +97,6 @@ function passoRedondo(alvo) {
 }
 
 /**
- * `lerSerie` é a dependência que as plantas substituem por uma cópia em memória.
- * @param {string[]} ids
- * @param {'unidade'|'indice'} [modo]
- * @param {number} [largura]
- * @param {number} [altura]
- * @param {(id: string) => Serie} [lerSerie]
- * @param {{ leitura?: boolean }} [opcoes] `leitura`: o desenho leva as zonas da leitura de cada ponto (a primeira página
- *   e os recibos; um cartão não as leva, porque é a porta para o recibo, onde a leitura vive)
- */
-/**
  * O valor indexado de um ponto, como a leitura o escreve: uma casa decimal, a vírgula na edição portuguesa e o ponto
  * na inglesa (a correção G1-c). A régua dos gráficos refaz a conta a partir do livro e compara com esta cadeia.
  * @param {number} n
@@ -126,6 +116,16 @@ export function unidadeDoIndice(periodoDaBase, lang) {
   return lang === 'en' ? `index, base one hundred in ${periodoDaBase}` : `índice, base cem em ${periodoDaBase}`;
 }
 
+/**
+ * `lerSerie` é a dependência que as plantas substituem por uma cópia em memória.
+ * @param {string[]} ids
+ * @param {'unidade'|'indice'} [modo]
+ * @param {number} [largura]
+ * @param {number} [altura]
+ * @param {(id: string) => Serie} [lerSerie]
+ * @param {{ leitura?: boolean }} [opcoes] `leitura`: o desenho leva as zonas da leitura de cada ponto (a primeira página
+ *   e os recibos; um cartão não as leva, porque é a porta para o recibo, onde a leitura vive)
+ */
 export function serieDoPais(ids, modo = 'unidade', largura = 360, altura = 200, lerSerie = getSerie, opcoes = {}) {
   if (!ids.length || new Set(ids).size !== ids.length) throw new Error('serie-do-pais: a lista de séries está vazia ou repete uma série.');
   if (!['unidade', 'indice'].includes(modo)) throw new Error('serie-do-pais: modo desconhecido.');
