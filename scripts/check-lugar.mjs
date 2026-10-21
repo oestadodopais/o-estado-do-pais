@@ -301,6 +301,12 @@ const TETOS = {
      enumera os três destinos repetidos em cada página nova e prova quatro plantas.
      O conjunto anterior de páginas mantém-se; as multiplicidades históricas não
      são declaradas iguais. A regra de contar os destinos permanece intacta. */
+  /* EX4 (21.10.2026): de 2782 para 2950, pelas 166 páginas de linha das 83 linhas do Mapa 2
+     da proposta de 2027 e da lei de 2026 (duas edições, a forma já contada: a porta da releitura
+     e a do rodapé para o Método) e as duas páginas da explicação de 2027 (as portas da prosa e
+     das figuras para as mesmas linhas, como na de 2026); medido com AMOSTRA=5000 sobre o dist/
+     da cabeça 81eade95f. ex4-2026-10-21/medir-l1-ex4.mjs confere que as 2782 páginas do V2-b
+     ficam todas e que só estas 168 entram, com quatro plantas; o registo é l1-ex4.json. */
   l1_paginas: TETO_B1.l1_paginas, // B1: o teto medido está escrito uma só vez no registo.
   /* L2a · páginas, fora de `/municipios`, que ligam a mais de `L2_LIMITE_NOMES`
      concelhos fora de uma lista fechada.

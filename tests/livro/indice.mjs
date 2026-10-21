@@ -288,6 +288,15 @@ const LOCALIZADORES_CONHECIDOS = [
     forma: /^p\. 72 do ficheiro, página impressa 68, (?:programa (?:00[1-9]|01\d|020)|Subtotal despesa efetiva consolidada dos Programas Orçamentais \(1\)|Fluxos para outros Programas Orçamentais \(2\)|Diferenças de consolidação \(3\)), Execução Acumulada 2026$/,
     onde: 'publisher/oe1_pdf.py: rótulo dos programas e dos totais na síntese mensal',
   },
+  // EX4 (21.10.2026): as 26 linhas lidas do Mapa 2 da proposta de 2027 e da lei de 2026 (as dez
+  // funções, a subfunção 01.7 e os dois totais, em cada ano) escrevem o localizador nestas três
+  // formas, lidas por guião das 26 linhas em `ledger/claims/*-mapa.yml`. Só os dois anos, as dez
+  // funções, as duas páginas e as colunas e linhas como o localizador as escreve; nada mais.
+  {
+    nome: 'Mapa 2, ano económico, função, subfunção 01.7 ou total, e página do PDF',
+    forma: /^MAPA 2, ano económico de 202[67], (?:função (?:0[1-9]|10), coluna «POR FUNÇÕES»|subfunção 01\.7, coluna «POR SUBFUNÇÕES»|linha «DESPESA TOTAL(?: CONSOLIDADA)?»), p\. [12] do PDF$/,
+    onde: 'publisher/oe2027_funcoes.py: rótulo da função, da subfunção 01.7 e dos totais no Mapa 2 em PDF (PF1)',
+  },
   { nome: 'IndicadorDsg', forma: /^IndicadorDsg$/, onde: 'a resposta do json_indicador do INE' },
   { nome: 'label', forma: /^label$/, onde: 'a resposta JSON-stat do Eurostat' },
   {
