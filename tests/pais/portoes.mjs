@@ -723,9 +723,14 @@ planta('rp4c-formato-euro-numa-marca','tests/inicio/formato-dos-numeros.mjs',[
    achado 5 da leitura do Codex): os cartões levam a leitura, e só o desenho decorativo explícito não a leva. Uma zona
    posta num desenho decorativo, um cartão sem as suas zonas e um recibo sem as suas têm de ser recusados pela F21 do
    `check:formas`, que lê a regra da marca do desenho. Correm com as do RP4-c, por `--prefixo rp4c`. */
-planta('rp4cb-zonas-num-decorativo','scripts/check-formas.mjs',[
- ['livro-razao/series/serie-remuneracao-bruta-mensal-media-real/index.html',r=>r.querySelector('svg[data-forma="serie-do-pais"][data-grafico-decorativo]').insertAdjacentHTML('beforeend','<g><rect x="48" y="12" width="1" height="118"></rect><line x1="48" x2="48" y1="12" y2="130"></line><circle cx="48" cy="40" r="3"></circle><text x="222" y="22" text-anchor="end"><tspan data-ponto="serie-ipc-variacao-homologa#1992-01">9,41</tspan>\u00a0%<tspan x="222" dy="14" data-ponto-periodo="serie-ipc-variacao-homologa#1992-01">janeiro de 1992</tspan></text></g>')]
-],[/F21 · zonas de leitura num desenho que não as leva/]);
+/* G1-c (21.10.2026, o achado 4): o desenho indexado do recibo deixou de ser decorativo e leva os pontos do índice; uma
+   zona da leitura da unidade posta nele e um ponto do índice retirado têm de ser recusados pela F21. */
+planta('rp4cb-indice-sem-ponto','scripts/check-formas.mjs',[
+ ['livro-razao/series/serie-remuneracao-bruta-mensal-media-real/index.html',r=>r.querySelector('svg[data-forma="serie-do-pais"][data-modo="indice"] g[data-grafico-indice]').remove()]
+],[/F21 · pontos do índice diferentes da recomposição/]);
+planta('rp4cb-zonas-num-indexado','scripts/check-formas.mjs',[
+ ['livro-razao/series/serie-remuneracao-bruta-mensal-media-real/index.html',r=>r.querySelector('svg[data-forma="serie-do-pais"][data-modo="indice"]').insertAdjacentHTML('beforeend','<g><rect x="48" y="12" width="1" height="118"></rect><line x1="48" x2="48" y1="12" y2="130"></line><circle cx="48" cy="40" r="3"></circle><text x="222" y="22" text-anchor="end"><tspan data-ponto="serie-ipc-variacao-homologa#1992-01">9,41</tspan>\u00a0%<tspan x="222" dy="14" data-ponto-periodo="serie-ipc-variacao-homologa#1992-01">janeiro de 1992</tspan></text></g>')]
+],[/F21 · leitura dos pontos difere da recomposição/]);
 /* G1-b (21.10.2026): o desenho de um cartão leva as zonas da leitura; um cartão sem elas é recusado. */
 planta('rp4cb-cartao-sem-zonas','scripts/check-formas.mjs',[
  ['precos/index.html',r=>{for(const g of r.querySelector('[data-cartao-serie="serie-ipc-variacao-homologa"] svg[data-forma="serie-do-pais"]').childNodes.filter(n=>n.rawTagName==='g'&&n.getAttribute('data-eixo')===undefined))g.remove();}]

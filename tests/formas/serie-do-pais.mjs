@@ -69,7 +69,8 @@ export function conferirSerie(svg, lang, lerSerie = getSerie, leitura = leituraD
   const falha = (m) => erros.push(`F21 · ${m}`);
   /* G1 (21.10.2026): o desenho com leitura é um grupo (os pontos focáveis não podem ser filhos apresentacionais de
      uma imagem) e leva a marca da camada comum; sem leitura continua uma imagem. */
-  const papel = svg.getAttribute('data-grafico') === 'serie' ? 'group' : 'img';
+  /* G1-c (21.10.2026): o desenho indexado do recibo leva a camada comum com a marca «indice». */
+  const papel = ['serie', 'indice'].includes(svg.getAttribute('data-grafico') ?? '') ? 'group' : 'img';
   if (svg.rawTagName !== 'svg' || svg.getAttribute('role') !== papel) falha('a forma não é um SVG com papel de imagem');
   if (svg.querySelector('script, animate, animateTransform, animateMotion, set, foreignObject')) falha('guião ou animação no desenho estático');
   let g;
@@ -125,7 +126,7 @@ export function conferirSerie(svg, lang, lerSerie = getSerie, leitura = leituraD
     /* G1-b (21.10.2026): a marca decorativa explícita (`aria-hidden` com `data-grafico-decorativo`, que o check:graficos
        exige juntas) e o `id` do título, que dá nome à porta de um cartão; nenhum muda a forma estática. */
     svg: ['class', 'data-forma', 'data-series', 'data-modo', 'viewBox', 'role', 'style', 'data-titulo', 'data-grafico', 'aria-hidden', 'data-grafico-decorativo'],
-    title: ['id'], g: ['data-eixo', 'data-grafico-ponto', 'data-grafico-periodo', 'data-grafico-valor', 'data-grafico-unidade', 'data-grafico-nome', 'data-grafico-leitura', 'role', 'aria-label', 'tabindex'],
+    title: ['id'], g: ['data-eixo', 'data-grafico-ponto', 'data-grafico-periodo', 'data-grafico-valor', 'data-grafico-unidade', 'data-grafico-nome', 'data-grafico-leitura', 'role', 'aria-label', 'tabindex', 'data-grafico-indice', 'data-grafico-serie', 'data-grafico-chave'],
     line: ['class', 'x1', 'x2', 'y1', 'y2'],
     text: ['data-nonledger', 'x', 'y', 'text-anchor', 'dominant-baseline'],
     polyline: ['class', 'data-serie-linha', 'points'],
@@ -143,7 +144,17 @@ export function conferirSerie(svg, lang, lerSerie = getSerie, leitura = leituraD
   /* A LEITURA DE CADA PONTO (RP4-c, o ponto 4): os grupos sem `data-eixo`, um por zona e pela ordem dos pontos, cada
      um com a zona, a linha vertical, o ponto marcado e a etiqueta, carácter a carácter, e nada mais; sem classes nem
      outros atributos (a lista dos permitidos, acima), porque a folha os acende pela estrutura do desenho. */
-  const grupos = svg.childNodes.filter((n) => n.rawTagName === 'g' && n.getAttribute('data-eixo') === undefined);
+  const grupos = svg.childNodes.filter((n) => n.rawTagName === 'g' && n.getAttribute('data-eixo') === undefined && n.getAttribute('data-grafico-indice') === undefined);
+  /* G1-c (21.10.2026, o achado 4 da leitura do Codex da G1-b): os pontos do desenho indexado, um por linha e por
+     período, cada um só com o seu círculo, no sítio que a recomposição dá; nenhum fora dela e nenhum em falta. */
+  const doIndice = svg.childNodes.filter((n) => n.rawTagName === 'g' && n.getAttribute('data-grafico-indice') !== undefined);
+  const esperadosDoIndice = (svg.getAttribute('data-grafico') === 'indice' ? g.pontosDoIndice ?? [] : []).map((q) => [q.id, q.periodo, q.base, q.cx, q.cy]);
+  const lidosDoIndice = doIndice.map((n) => {
+    const f = n.childNodes.filter((c) => c.rawTagName);
+    return f.length === 1 && f[0].rawTagName === 'circle' && f[0].getAttribute('r') === '3' && Object.keys(f[0].attributes).length === 3
+      ? [n.getAttribute('data-grafico-serie'), n.getAttribute('data-grafico-chave'), n.getAttribute('data-grafico-indice'), f[0].getAttribute('cx'), f[0].getAttribute('cy')] : null;
+  });
+  if (JSON.stringify(lidosDoIndice) !== JSON.stringify(esperadosDoIndice)) falha('pontos do índice diferentes da recomposição');
   /* RP4-c-b: as zonas só onde a leitura vive. */
   if (!leitura && grupos.length) falha('zonas de leitura num desenho que não as leva (um desenho decorativo)');
   if (leitura && g.leituras.length && !grupos.length) falha('desenho sem as zonas de leitura (um desenho que não é decorativo)');
@@ -179,9 +190,9 @@ export function conferirSerie(svg, lang, lerSerie = getSerie, leitura = leituraD
   }
   const marcas = g.marcasX.length + g.marcasY.length;
   const zonas = g.leituras.length;
-  if (svg.querySelectorAll('line').length !== marcas + zonas || svg.querySelectorAll('text').length !== marcas + zonas || svg.querySelectorAll('g').length !== marcas + zonas
+  if (svg.querySelectorAll('line').length !== marcas + zonas || svg.querySelectorAll('text').length !== marcas + zonas || svg.querySelectorAll('g').length !== marcas + zonas + doIndice.length
     || svg.querySelectorAll('rect').length !== zonas || svg.querySelectorAll('tspan').length !== 2 * zonas
-    || svg.querySelectorAll('circle').length !== tracos.filter((t) => t.rawTagName === 'circle').length + zonas) falha('geometria ou texto acrescentado fora da escala e da leitura');
+    || svg.querySelectorAll('circle').length !== tracos.filter((t) => t.rawTagName === 'circle').length + zonas + doIndice.length) falha('geometria ou texto acrescentado fora da escala e da leitura');
   return erros;
 }
 

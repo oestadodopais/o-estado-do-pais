@@ -21,7 +21,10 @@
  *   · `valores-escritos`: com os valores escritos como valores no próprio desenho (`[data-claim]` ou `[data-ponto]` fora
  *     de uma zona de leitura), à vista; um algarismo de eixo (a escala) não conta (a correção G1-b, o achado 5 da
  *     leitura do Codex: a primeira forma contava qualquer `text` com algarismos e escondia as 34 séries sem leitura);
- *   · `algarismos-de-escala`: com algarismos só na escala, sem valores escritos;
+ *   · `com-camada`: com a camada comum (`data-grafico`) e sem valores escondidos fora dela;
+ *   · `erro`: com algarismos e sem camada, sem marca decorativa confirmada e sem valores escritos (a correção G1-c, o
+ *     achado 8: a categoria `algarismos-de-escala` saiu; um desenho assim é um erro da régua), ou com a marca
+ *     decorativa e um valor desenhado que a página não escreve fora dele;
  *   · `sem-algarismos`: o resto (um mapa pintado com a legenda fora, o sinal do país).
  * Duas contagens de «sem toque»: a estrita (todo o desenho sem leitura ao toque, como o mandato a pede) e a que o
  * leitor sente (`semToqueComValoresEscondidos`: um desenho que esconde valores e não os mostra ao toque, a I230).
@@ -65,6 +68,41 @@ export function componente(el) {
   return 'svg sem classe';
 }
 
+const normaliza = (t) => String(t ?? '').replace(/[\s\u00a0\u202f\u2009]+/g, ' ').trim();
+const raiz = (el) => { let r = el; while (r.parentNode) r = r.parentNode; return r; };
+const escapa = (t) => t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+function textosDe(no, dentroDaEscala, saida) {
+  for (const c of no.childNodes) {
+    if (c.nodeType === 3) { const t = normaliza(c.text); if (t && !dentroDaEscala) saida.push(t); continue; }
+    if (!c.rawTagName || ['title', 'desc'].includes(c.rawTagName)) continue;
+    textosDe(c, dentroDaEscala || c.getAttribute('data-nonledger') === 'escala-de-instrumento', saida);
+  }
+  return saida;
+}
+/**
+ * A correção G1-c (o achado 4): os valores que um desenho decorativo traça e a página não escreve fora dele. Cada texto
+ * do desenho (fora da escala, `data-nonledger="escala-de-instrumento"`, e fora do título) tem de estar escrito no texto
+ * da página fora do desenho, com os algarismos inteiros (nenhum algarismo antes nem depois); e cada `[data-claim]` do
+ * desenho tem de estar escrito fora dele, com o mesmo id e o mesmo texto. Uma lista vazia confirma a marca.
+ * @returns {string[]}
+ */
+export function valoresEmFalta(el) {
+  const r = raiz(el);
+  let fora = r.textContent;
+  for (const s of r.querySelectorAll('script, style')) fora = fora.replace(s.textContent, ' ');
+  fora = normaliza(fora.replace(el.textContent, ' '));
+  const falta = [];
+  for (const t of new Set(textosDe(el, el.getAttribute('data-nonledger') === 'escala-de-instrumento', []))) {
+    if (!new RegExp(`(?<!\\d)${escapa(t)}(?!\\d)`).test(fora)) falta.push(t);
+  }
+  for (const c of el.querySelectorAll('[data-claim]')) {
+    const id = c.getAttribute('data-claim');
+    const pares = r.querySelectorAll(`[data-claim="${id}"]`).filter((o) => !el.querySelectorAll('[data-claim]').includes(o));
+    if (!pares.some((o) => normaliza(o.text) === normaliza(c.text))) falta.push(`${id} (${normaliza(c.text)})`);
+  }
+  return falta;
+}
+
 /** A marca decorativa explícita: as duas marcas juntas, nunca uma só. */
 export const decorativo = (el) => el.hasAttribute('data-grafico-decorativo') && el.getAttribute('aria-hidden') === 'true';
 
@@ -81,11 +119,12 @@ export function estado(el) {
   const serie = (el.getAttribute('class') ?? '').split(/\s+/).includes('serie-do-pais');
   const escondidos = decorativo(el) ? 0 : zonas + el.querySelectorAll('[data-faixa-marca]').length + (serie && !zonas ? 1 : 0);
   const algarismos = el.querySelectorAll('text, tspan').some((n) => /\d/.test(n.textContent));
-  const categoria = decorativo(el) ? 'decorativo'
+  const categoria = decorativo(el) ? (valoresEmFalta(el).length ? 'erro' : 'decorativo-confirmado')
     : escondidos > 0 ? 'valores-escondidos'
+    : el.hasAttribute('data-grafico') ? 'com-camada'
     : el.getAttribute('aria-hidden') === 'true' || el.closest?.('[aria-hidden="true"]') ? 'escondido'
     : escritos > 0 ? 'valores-escritos'
-    : algarismos ? 'algarismos-de-escala' : 'sem-algarismos';
+    : algarismos ? 'erro' : 'sem-algarismos';
   return {
     categoria,
     rato: marcado || zonas > 0 || titulos > 1 || toquesProprios,

@@ -106,6 +106,26 @@ function passoRedondo(alvo) {
  * @param {{ leitura?: boolean }} [opcoes] `leitura`: o desenho leva as zonas da leitura de cada ponto (a primeira página
  *   e os recibos; um cartão não as leva, porque é a porta para o recibo, onde a leitura vive)
  */
+/**
+ * O valor indexado de um ponto, como a leitura o escreve: uma casa decimal, a vírgula na edição portuguesa e o ponto
+ * na inglesa (a correção G1-c). A régua dos gráficos refaz a conta a partir do livro e compara com esta cadeia.
+ * @param {number} n
+ * @param {'pt'|'en'} lang
+ */
+export function valorDoIndice(n, lang) {
+  const [inteiro, fracao] = (Math.round(n * 10) / 10).toFixed(1).replace('-', '−').split('.');
+  return inteiro.replace(/\B(?=(\d{3})+(?!\d))/g, lang === 'en' ? ',' : '\u00a0') + (lang === 'en' ? '.' : ',') + fracao;
+}
+
+/**
+ * A unidade da leitura de um ponto indexado (a correção G1-c): o índice e o período em que vale cem.
+ * @param {string} periodoDaBase o período de base, já escrito na notação da casa
+ * @param {'pt'|'en'} lang
+ */
+export function unidadeDoIndice(periodoDaBase, lang) {
+  return lang === 'en' ? `index, base one hundred in ${periodoDaBase}` : `índice, base cem em ${periodoDaBase}`;
+}
+
 export function serieDoPais(ids, modo = 'unidade', largura = 360, altura = 200, lerSerie = getSerie, opcoes = {}) {
   if (!ids.length || new Set(ids).size !== ids.length) throw new Error('serie-do-pais: a lista de séries está vazia ou repete uma série.');
   if (!['unidade', 'indice'].includes(modo)) throw new Error('serie-do-pais: modo desconhecido.');
@@ -261,8 +281,15 @@ export function serieDoPais(ids, modo = 'unidade', largura = 360, altura = 200, 
     });
     k = fim + 1;
   }
+  /* A CORREÇÃO G1-c (21.10.2026, o achado 4 da leitura do Codex da G1-b): no desenho indexado que pede a leitura (o
+     recibo de uma série derivada), um ponto por linha e por período, onde o traço passa, com o valor indexado que o
+     desenho traça. Esse valor não é uma linha do livro: é a conta deste módulo sobre duas linhas do livro (o ponto e o
+     ponto de base), e a leitura di-lo como índice e com a base. */
+  const pontosDoIndice = opcoes.leitura && modo === 'indice'
+    ? linhas.flatMap((l) => l.dados.map((p) => ({ id: l.id, periodo: p.periodo, base: String(l.base), indice: p.valor, cx: x(p.x), cy: y(p.valor) })))
+    : [];
   return {
-    modo, largura, altura, campo, marcasX, marcasY, excluidas, simbolo, leituras, colunas,
+    modo, largura, altura, campo, marcasX, marcasY, excluidas, simbolo, leituras, colunas, pontosDoIndice,
     /* A LEGENDA DA UNIDADE (RP4-c, o ponto 1): um desenho no modo da unidade sem símbolo nas marcas diz a unidade por
        extenso por baixo; o indexado tem a legenda da figura. */
     legenda: modo === 'unidade' && simbolo === null,

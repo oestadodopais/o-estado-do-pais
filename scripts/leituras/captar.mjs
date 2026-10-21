@@ -11,6 +11,11 @@
  * `toque` (G1, 21.10.2026), por página: o seletor de um gráfico em que se simula um toque (`pointerdown` e
  *   `pointerup` de tipo `touch` no centro dele) antes da captura; recusa a captura se nenhum ponto acender, e guarda
  *   nas medidas o `aria-label` do ponto aceso e o texto da etiqueta aberta.
+ * G1-c (21.10.2026): `toqueNoPrimeiro` toca o primeiro ponto; a etiqueta do `<svg>` mede-se também contra a caixa do
+ *   `<svg>` (a recusa quando sai por um eixo); `desempate` toca entre dois meses vizinhos, mais perto do segundo em x
+ *   por cinco centésimos de unidade do viewBox e à altura do primeiro, e recusa se não acender o segundo; `cartao`, o
+ *   seletor da caixa de um cartão com série, toca (com o toque do navegador, que passa pelo teste de alvo) num ponto e
+ *   fora dos pontos da mesma caixa, depois da captura, e guarda o que cada toque fez (a etiqueta e a navegação).
  * Não altera dist/. Cada bloco acrescenta as suas réguas de conteúdo; estas
  * capturas comuns não substituem as células nem a leitura visual do bloco.
  */
@@ -70,7 +75,7 @@ let navegador;
 try {
   navegador = await chromium.launch({headless:true});
   for (const p of config.paginas) for (const lingua of ['pt','en']) for (const largura of larguras) {
-    const contexto = await navegador.newContext({viewport:{width:largura,height:900},deviceScaleFactor:1,colorScheme:'light',reducedMotion:'reduce'});
+    const contexto = await navegador.newContext({viewport:{width:largura,height:900},deviceScaleFactor:1,colorScheme:'light',reducedMotion:'reduce',hasTouch:Boolean(p.cartao)});
     const externos = [], erros = [], recusados = [];
     await contexto.route('**/*', r => {
       if (new URL(r.request().url()).origin === origem) return r.continue();
@@ -85,6 +90,22 @@ try {
       if (resposta?.status() !== 200) throw new Error(`${prefixo}: a página não respondeu a 200`);
       await pagina.evaluate(async () => { await document.fonts.ready; await new Promise(r => requestAnimationFrame(r)); });
       const medidas = await pagina.evaluate(() => ({janela:innerWidth,documento:document.documentElement.scrollWidth,corpo:document.body.scrollWidth,altura:document.documentElement.scrollHeight}));
+      if (p.toque && p.desempate) {
+        medidas.desempate = await pagina.evaluate((sel) => {
+          const el = document.querySelector(sel);
+          el.scrollIntoView({ block: 'center' });
+          const ps = [...el.querySelectorAll('[data-grafico-ponto]')].map((p) => ({ periodo: p.getAttribute('data-grafico-periodo'), cx: Number(p.querySelector('circle').getAttribute('cx')), cy: Number(p.querySelector('circle').getAttribute('cy')) }));
+          let k = 0;
+          for (let i = 1; i < ps.length - 1; i++) if (Math.abs(ps[i + 1].cy - ps[i].cy) > Math.abs(ps[k + 1].cy - ps[k].cy)) k = i;
+          const [a, b] = [ps[k], ps[k + 1]];
+          const vx = (a.cx + b.cx) / 2 + 0.05, vy = a.cy;
+          const pt = new DOMPoint(vx, vy).matrixTransform(el.getScreenCTM());
+          for (const tipo of ['pointerdown', 'pointerup']) el.dispatchEvent(new PointerEvent(tipo, { bubbles: true, pointerType: 'touch', isPrimary: true, clientX: pt.x, clientY: pt.y }));
+          const ativo = el.querySelector('[data-grafico-ponto][data-ativo]')?.getAttribute('data-grafico-periodo') ?? null;
+          return { primeiro: a, segundo: b, toqueNoViewBox: { x: Number(vx.toFixed(3)), y: vy }, dxAoPrimeiro: Number((vx - a.cx).toFixed(3)), dxAoSegundo: Number((b.cx - vx).toFixed(3)), dyAoPrimeiro: 0, dyAoSegundo: Number(Math.abs(b.cy - vy).toFixed(3)), ativoPeriodo: ativo, acendeuOSegundo: ativo === b.periodo };
+        }, p.toque);
+        if (!medidas.desempate.acendeuOSegundo) throw new Error(`${prefixo}: o desempate pelo y venceu um x mais perto`);
+      }
       if (p.toque) {
         /* G1-b (21.10.2026, os achados 3 e 4 da leitura do Codex): o toque cai no centro do desenho, ou no ponto mais à
            direita (`toqueNoUltimo`); o registo guarda o período do ponto mais próximo do x do toque, conferido contra as
@@ -95,7 +116,8 @@ try {
           if (!el) return { encontrado: false };
           el.scrollIntoView({ block: 'center' });
           const pontos = [...el.querySelectorAll('[data-grafico-ponto]')];
-          const alvo = ultimo ? (pontos.at(-1)?.querySelector('circle') ?? pontos.at(-1)) : el;
+          const escolhido = ultimo === 'primeiro' ? pontos[0] : ultimo ? pontos.at(-1) : null;
+          const alvo = escolhido ? (escolhido.querySelector('circle') ?? escolhido) : el;
           const r = alvo.getBoundingClientRect(), x = r.left + r.width / 2, y = r.top + r.height / 2;
           for (const tipo of ['pointerdown', 'pointerup']) el.dispatchEvent(new PointerEvent(tipo, { bubbles: true, pointerType: 'touch', isPrimary: true, clientX: x, clientY: y }));
           const ativo = document.querySelector('[data-grafico-ponto][data-ativo]');
@@ -111,7 +133,15 @@ try {
           const daSvg = ativo?.querySelector('text');
           const caixa = (comum ?? daSvg)?.getBoundingClientRect();
           const W = document.documentElement.clientWidth, H = document.documentElement.clientHeight;
+          const sv = !comum && daSvg ? daSvg.ownerSVGElement.getBoundingClientRect() : null;
+          const dentroDoSvg = sv ? {
+            horizontal: caixa.left >= sv.left - 0.5 && caixa.right <= sv.right + 0.5,
+            vertical: caixa.top >= sv.top - 0.5 && caixa.bottom <= sv.bottom + 0.5,
+            svg: { left: Number(sv.left.toFixed(2)), right: Number(sv.right.toFixed(2)), top: Number(sv.top.toFixed(2)), bottom: Number(sv.bottom.toFixed(2)) },
+            transform: daSvg.getAttribute('transform'),
+          } : null;
           const etiquetaDentro = caixa ? {
+            dentroDoSvg,
             forma: comum ? 'comum' : 'svg',
             horizontal: caixa.left >= 0 && caixa.right <= W,
             vertical: caixa.top >= 0 && caixa.bottom <= H,
@@ -119,7 +149,9 @@ try {
             janela: { largura: W, altura: H },
           } : null;
           return { encontrado: true, ultimo: Boolean(ultimo), ativo: ativo?.getAttribute('aria-label') ?? null, etiqueta: (comum ?? daSvg)?.textContent ?? null, etiquetaDentro, geometria };
-        }, { sel: p.toque, ultimo: Boolean(p.toqueNoUltimo) });
+        }, { sel: p.toque, ultimo: p.toqueNoPrimeiro ? 'primeiro' : Boolean(p.toqueNoUltimo) });
+        const ds = medidas.toque.etiquetaDentro?.dentroDoSvg;
+        if (ds && (!ds.horizontal || !ds.vertical)) throw new Error(`${prefixo}: a etiqueta do toque em ${p.toque} sai do <svg>`);
         if (medidas.toque.encontrado && (!medidas.toque.etiquetaDentro?.horizontal || !medidas.toque.etiquetaDentro?.vertical)) throw new Error(`${prefixo}: a etiqueta do toque em ${p.toque} sai da janela`);
         if (medidas.toque.geometria && !medidas.toque.geometria.bate) throw new Error(`${prefixo}: o ponto aceso não é o mais próximo do x do toque`);
         if (!medidas.toque.ativo) throw new Error(`${prefixo}: o toque em ${p.toque} não acendeu ponto nenhum`);
@@ -150,6 +182,27 @@ try {
         const recorte = await sharp(bytes).extract(caixa).png().toBuffer();
         await fs.writeFile(path.join(pasta,nome),recorte);
         recortes.push({ficheiro:nome,seletor:r.seletor,origem:ficheiro,caixa,sha256:sha(recorte)});
+      }
+      if (p.cartao) {
+        /* Os dois toques no cartão, com o toque do navegador (o teste de alvo decide quem o recebe). */
+        const caixaDoCartao = pagina.locator(p.cartao).first();
+        await caixaDoCartao.scrollIntoViewIfNeeded();
+        const alvos = await caixaDoCartao.evaluate((c) => {
+          const z = [...c.querySelectorAll('[data-grafico-ponto] rect')].at(-1).getBoundingClientRect();
+          const s = c.querySelector('svg').getBoundingClientRect();
+          return { ponto: { x: z.left + z.width / 2, y: z.top + z.height / 2 }, fora: { x: s.left + 4, y: s.top + s.height / 2 } };
+        });
+        const antes = pagina.url();
+        await pagina.touchscreen.tap(alvos.ponto.x, alvos.ponto.y);
+        await pagina.waitForTimeout(300);
+        const noPonto = await caixaDoCartao.evaluate((c) => { const a = c.querySelector('[data-grafico-ponto][data-ativo]'); return { ativo: a?.getAttribute('aria-label') ?? null, etiqueta: a?.querySelector('text')?.textContent ?? null }; });
+        noPonto.navegou = pagina.url() !== antes;
+        noPonto.toque = alvos.ponto;
+        const quem = await pagina.evaluate(({ x, y }) => { const e = document.elementFromPoint(x, y); return e ? `${e.tagName.toLowerCase()}${e.getAttribute('class') ? '.' + e.getAttribute('class').split(' ')[0] : ''}` : null; }, alvos.fora);
+        await Promise.all([pagina.waitForLoadState('load').catch(() => null), pagina.touchscreen.tap(alvos.fora.x, alvos.fora.y)]);
+        await pagina.waitForTimeout(800);
+        const fora = { toque: alvos.fora, alvoDoToque: quem, navegou: pagina.url() !== antes, destino: pagina.url().replace(origem, '') };
+        medidas.cartao = { seletor: p.cartao, rota: antes.replace(origem, ''), noPonto, fora };
       }
       resultados.push({ficheiro,rota,lingua,largura,...medidas,sha256:sha(bytes),recortes,externos,erros,recusados});
       if (externos.length || erros.length || recusados.length) falhas.push(`${prefixo}: pedidos externos, recursos em falta ou erros do navegador`);

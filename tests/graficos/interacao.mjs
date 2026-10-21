@@ -26,7 +26,12 @@
 import { readdirSync, readFileSync, statSync } from 'node:fs';
 import { join, relative } from 'node:path';
 import { parse } from 'node-html-parser';
-import { componente, zonasDeLeitura, decorativo } from '../../scripts/graficos-inventario.mjs';
+import { componente, zonasDeLeitura, decorativo, estado, valoresEmFalta } from '../../scripts/graficos-inventario.mjs';
+import { getSerie, pontoDaSerie } from '../../src/lib/series.mjs';
+import { parsePtNumber } from '../../src/lib/ledger.mjs';
+import { valorDoIndice, unidadeDoIndice } from '../../src/lib/formas/serie-do-pais.mjs';
+import { nomeDaSerie } from '../../src/lib/formas/palavras-da-serie.mjs';
+import { dataDaCasa } from '../../src/lib/datas.mjs';
 
 const DIST = process.env.OEDP_DIST || join(process.cwd(), 'dist');
 const GUIAO = '/js/interacao-dos-graficos.js';
@@ -34,6 +39,13 @@ const GUIAO = '/js/interacao-dos-graficos.js';
 /** Os componentes que desenham sem a camada comum, cada um com a razão (a dívida do G1, no relatório do bloco). */
 export const DIVIDA = new Map([
   ['FaixaDosPaises', 'a página dos países tem os seus toques (paises.js), ao rato e ao toque, e a lista dobrada para o teclado'],
+  /* A correção G1-c (o achado 8): os três desenhos que o mandato mandava marcar decorativos com os valores escritos ao
+     lado; a G5 mediu, com a marca posta, que cada um traça valores que a página não escreve fora dele (o eixo da agenda,
+     uma data; a banda dos mandatos, «em funções»; a régua da convergência, os nomes das regiões). Ficam como estavam,
+     com o papel de imagem e o nome, até as frases que faltam serem escritas pelo lugar de direção. */
+  ['svg.agenda-eixo-svg', 'G1-c: traça uma data de janela que a página não escreve fora do desenho (a G5 com a marca posta)'],
+  ['svg.mun-banda-svg', 'G1-c: traça «em funções» sem o escrever fora do desenho (a G5 com a marca posta)'],
+  ['svg.rule-svg', 'G1-c: traça os nomes das regiões, que a lista ao lado não escreve na mesma forma (a G5 com a marca posta)'],
 ]);
 
 function* paginas(dir) {
@@ -72,13 +84,21 @@ export function conferePagina(html, rota) {
        na regra comum abaixo (a dívida declarada, ou erro). */
     if (el.hasAttribute('data-grafico-decorativo')) {
       if (!decorativo(el) || el.hasAttribute('data-grafico')) erros.push(`G1 ${rota}: um desenho de «${componente(el)}» com a marca decorativa sem aria-hidden, ou com data-grafico.`);
-      else divida.decorativos = (divida.decorativos ?? 0) + 1;
+      else {
+        /* G5 (a correção G1-c, o achado 4): a marca só vale com cada valor do desenho escrito na mesma página. */
+        const falta = valoresEmFalta(el);
+        if (falta.length) erros.push(`G5 ${rota}: um desenho decorativo de «${componente(el)}» traça ${falta.map((t) => `«${t}»`).join(', ')}, que a página não escreve fora dele.`);
+        else divida.decorativos = (divida.decorativos ?? 0) + 1;
+      }
       continue;
     }
     if (el.hasAttribute('data-grafico')) continue;
     const c = componente(el);
     if (DIVIDA.has(c)) { divida[c] = (divida[c] ?? 0) + 1; continue; }
     if (escondeValores(el)) erros.push(`G1 ${rota}: um desenho de «${c}» esconde valores e não tem data-grafico.`);
+    /* A correção G1-c (o achado 8): um desenho com algarismos sem camada, sem marca decorativa e sem valores escritos é
+       um erro; a categoria dos «algarismos de escala» saiu. */
+    else if (estado(el).categoria === 'erro') erros.push(`G1 ${rota}: um desenho de «${c}» tem algarismos sem camada nem marca decorativa confirmada.`);
   }
   const graficos = root.querySelectorAll('[data-grafico]');
   let pontos = 0;
@@ -99,7 +119,29 @@ export function conferePagina(html, rota) {
       }
       if (p.getAttribute('role') !== 'img' || !p.hasAttribute('tabindex')) erros.push(`G2 ${rota}: o ponto «${periodo} ${valor}» não é focável com role="img".`);
       const vp = p.querySelector('[data-ponto]');
-      if (vp) {
+      const lang = rota.startsWith('/en/') ? 'en' : 'pt';
+      const indice = attr(p, 'data-grafico-indice');
+      const claim = p.querySelector('[data-claim]');
+      let esperado = `${nome ? `${nome}, ` : ''}${periodo}: ${valor}${unidade ? `\u00a0${unidade}` : ''}`;
+      if (indice !== null) {
+        /* G3 do índice (a correção G1-c, o achado 4): o valor indexado não é uma linha do livro, e a régua refá-lo das
+           duas linhas do livro (o ponto e a base), com a unidade, o período e o nome da série. */
+        const id = attr(p, 'data-grafico-serie'); const chave = attr(p, 'data-grafico-chave');
+        let certo = null;
+        try {
+          const s = getSerie(String(id));
+          certo = { valor: valorDoIndice(parsePtNumber(pontoDaSerie(s, chave).valor) / parsePtNumber(pontoDaSerie(s, indice).valor) * 100, lang), periodo: dataDaCasa(String(chave), lang), unidade: unidadeDoIndice(dataDaCasa(indice, lang), lang), nome: nomeDaSerie(String(id), lang) };
+        } catch (e) { erros.push(`G3 ${rota}: o ponto do índice ${id}#${chave} não se refaz do livro (${e.message}).`); }
+        if (certo && (certo.valor !== valor || certo.periodo !== periodo || certo.unidade !== unidade || certo.nome !== nome)) erros.push(`G3 ${rota}: o ponto do índice ${id}#${chave} diz «${nome}, ${periodo}: ${valor} (${unidade})» e o livro dá «${certo.nome}, ${certo.periodo}: ${certo.valor} (${certo.unidade})».`);
+        esperado = `${nome}, ${periodo}: ${valor} (${unidade})`;
+      } else if (claim && !vp) {
+        /* G3 de um ponto com o valor escrito por um `Claim` (a série municipal, G1-c): o valor é o texto do `Claim`, que o
+           portão de HTML confere, e o período o texto marcado `data-grafico-periodo-texto`. */
+        const texto = decode(limpa(claim.textContent));
+        if (texto !== valor) erros.push(`G3 ${rota}: o ponto diz «${valor}» e o texto do ponto diz «${texto}».`);
+        const pp = p.querySelector('[data-grafico-periodo-texto]');
+        if (!pp || decode(limpa(pp.textContent)) !== periodo) erros.push(`G3 ${rota}: o ponto diz o período «${periodo}» e o texto diz «${pp ? limpa(pp.textContent) : 'nada'}».`);
+      } else if (vp) {
         const texto = decode(limpa(vp.textContent));
         if (texto !== valor) erros.push(`G3 ${rota}: o ponto diz «${valor}» e o texto do ponto diz «${texto}».`);
         const pp = p.querySelector('[data-ponto-periodo]');
@@ -110,7 +152,6 @@ export function conferePagina(html, rota) {
       } else {
         erros.push(`G3 ${rota}: o ponto «${periodo} ${valor}» não tem texto conferido com que se compare.`);
       }
-      const esperado = `${nome ? `${nome}, ` : ''}${periodo}: ${valor}${unidade ? `\u00a0${unidade}` : ''}`;
       const aria = attr(p, 'aria-label');
       if (aria !== esperado) erros.push(`G3 ${rota}: o aria-label diz «${aria}» e o ponto diz «${esperado}».`);
       /* A leitura que o guião mostra é a mesma cadeia: a etiqueta e o leitor de ecrã dizem o mesmo, e o check:voz trata o
@@ -131,10 +172,15 @@ const PLANTAS = {
   'sem-guiao': [(h) => h.replace(/<script src="\/js\/interacao-dos-graficos\.js"[^>]*><\/script>/, ''), /^G4 /],
   'serie-sem-camada': [(h) => h.replace(/ data-grafico="serie"/, '').replace(/<g data-grafico-ponto[\s\S]*?<\/g>/g, ''), /^G1 .*SerieDoPais/],
   'decorativo-sem-aria': [(h) => h.replace(/ data-grafico="serie"/, ' data-grafico-decorativo'), /^G1 .*decorativa sem aria-hidden/],
+  /* As plantas da correção G1-c, cada uma na página que a planta diz. */
+  'decorativo-sem-valores': [(h) => h.replace(/ role="group" data-grafico="serie"/, ' aria-hidden="true" data-grafico-decorativo'), /^G5 /],
+  'escala-sem-classe': [(h) => h.replace(/(class="mun-serie-svg"[^>]*?) data-grafico="serie"/, '$1'), /^G1 .*sem camada nem marca decorativa/, 'municipios/evora/index.html'],
+  'indice-trocado': [(h) => h.replace(/(data-grafico-indice="[^"]*"[^>]*?data-grafico-valor=")(\d)/, (m, a, d) => `${a}${(Number(d) + 1) % 10}`), /^G3 .*ponto do índice/, 'livro-razao/series/serie-remuneracao-bruta-mensal-media-real/index.html'],
+  'claim-trocado': [(h) => h.replace(/(class="mun-serie-svg"[\s\S]*?data-grafico-valor=")(\d)/, (m, a, d) => `${a}${(Number(d) + 1) % 10}`), /^G3 /, 'municipios/evora/index.html'],
 };
 
 export function corre(dist = DIST, planta = null) {
-  const alvo = join(dist, 'index.html');
+  const alvo = join(dist, (planta && PLANTAS[planta][2]) || 'index.html');
   const todos = [];
   let paginasLidas = 0; let marcados = 0; let pontos = 0; const divida = {};
   for (const f of paginas(dist)) {

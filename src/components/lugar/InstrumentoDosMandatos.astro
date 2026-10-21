@@ -202,6 +202,11 @@ const pontosDaSerie = serieAnos.map((r) => ({
   x: xDoAno(Number(r.ref) + 1),
   y: alturaDe(parsePtNumber(getClaim(r.indice).value)),
 }));
+/* G1-c (21.10.2026, o achado 8): a série do índice da dívida leva a camada comum dos gráficos; o valor de cada ponto é,
+   carácter a carácter, o que o `Claim` escreve no desenho (o separador dos milhares em U+00A0), e a régua dos gráficos
+   compara-os. A banda dos mandatos fica como estava, na dívida declarada da régua (a G5 mediu que traça «em funções»
+   sem o escrever fora dela). */
+const valorMun = (id) => String(getClaim(id).value).replace(/(?<=\d)[\u2009\u202F\u0020](?=\d)/g, '\u00A0');
 /** A âncora de um mandato: o seu período, e mais nada. */
 const ancoraDoMandato = (periodo) => `mandato-${String(periodo).replace(/[–-]+$/, '').replace(/[–-]/g, '-')}`;
 const banda = (temTempo ? m.tempo.mandatos : []).map((mandato, i) => {
@@ -268,7 +273,8 @@ const banda = (temTempo ? m.tempo.mandatos : []).map((mandato, i) => {
         <svg
           class="mun-serie-svg"
           viewBox={`0 0 ${SERIE.W} ${SERIE.H}`}
-          role="img"
+          role="group"
+          data-grafico="serie"
           aria-label={s.municipio.tempoRelanceK}
         >
           {/* A MESMA GRAMÁTICA (Emenda 4): o tecto legal é a referência, a
@@ -279,7 +285,7 @@ const banda = (temTempo ? m.tempo.mandatos : []).map((mandato, i) => {
           <line class="mun-serie-eixo" x1={SERIE.L} y1={SERIE.base} x2={SERIE.R} y2={SERIE.base} stroke="var(--axis)" stroke-width="1" />
           {
             pontosDaSerie.map((pt) => (
-              <g data-serie-ponto={pt.indice} data-serie-ano={pt.ref}>
+              <g data-serie-ponto={pt.indice} data-serie-ano={pt.ref} data-grafico-ponto data-grafico-periodo={pt.ref} data-grafico-valor={valorMun(pt.indice)} data-grafico-unidade="" data-grafico-nome="" data-grafico-leitura={`${pt.ref}: ${valorMun(pt.indice)}`} role="img" aria-label={`${pt.ref}: ${valorMun(pt.indice)}`} tabindex={pt === pontosDaSerie[pontosDaSerie.length - 1] ? '0' : '-1'}>
                 <rect
                   class="mun-serie-barra"
                   x={pt.x - 16}
@@ -309,7 +315,7 @@ const banda = (temTempo ? m.tempo.mandatos : []).map((mandato, i) => {
                   text-anchor="middle"
                   data-rotulo-lado={ladoDoRotulo(pt.y)}
                 />
-                <text class="tk" x={pt.x} y={SERIE.base + 14} text-anchor="middle" data-nonledger="escala-de-instrumento">
+                <text class="tk" x={pt.x} y={SERIE.base + 14} text-anchor="middle" data-nonledger="escala-de-instrumento" data-grafico-periodo-texto>
                   {pt.ref}
                 </text>
               </g>

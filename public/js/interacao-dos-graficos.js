@@ -80,7 +80,8 @@
     apaga(g);
     g._ativo = p;
     p.setAttribute('data-ativo', '');
-    if (!temEtiquetaPropria(p)) {
+    if (temEtiquetaPropria(p)) confina(p);
+    else {
       var e = etiquetaDe(g);
       e.textContent = textoDe(p);
       e.hidden = false;
@@ -92,16 +93,37 @@
      marcas das faixas). */
   function desenhoDe(p) { return p.querySelector('circle') || p.querySelector('rect') || p; }
 
+  /* A correção G1-c (o achado 2 da leitura do Codex): o x do dedo decide sozinho, pelo |dx| estrito; o y entra só
+     entre os pontos no mesmo x que o vencedor (o mesmo centro, com a tolerância de um milésimo da largura do desenho,
+     que é um milésimo do viewBox), nunca como peso. */
   function maisProximo(g, x, y) {
-    var melhor = null;
-    var dist = Infinity;
-    pontosDe(g).forEach(function (p) {
+    var cs = pontosDe(g).map(function (p) {
       var r = desenhoDe(p).getBoundingClientRect();
-      /* O x do dedo decide; o y só desempata dois pontos no mesmo x. */
-      var d = Math.abs(r.left + r.width / 2 - x) + Math.abs(r.top + r.height / 2 - y) / 1000;
-      if (d < dist) { dist = d; melhor = p; }
+      return { p: p, cx: r.left + r.width / 2, cy: r.top + r.height / 2 };
     });
-    return melhor;
+    if (!cs.length) return null;
+    var melhor = cs[0];
+    cs.forEach(function (c) { if (Math.abs(c.cx - x) < Math.abs(melhor.cx - x)) melhor = c; });
+    var tol = g.getBoundingClientRect().width / 1000;
+    var base = melhor.cx;
+    cs.forEach(function (c) {
+      if (Math.abs(c.cx - base) <= tol && Math.abs(c.cy - y) < Math.abs(melhor.cy - y)) melhor = c;
+    });
+    return melhor.p;
+  }
+
+  /* A correção G1-c (o achado 3): a etiqueta própria de um ponto dentro do `<svg>` fica dentro do viewBox nos dois
+     eixos; quando sairia por um lado, o `text` desloca-se para dentro, ao acender e ao mudar a largura. */
+  function confina(p) {
+    var t = p.querySelector('text');
+    var svg = p.ownerSVGElement;
+    if (!t || !svg || !svg.viewBox || !svg.viewBox.baseVal || !svg.viewBox.baseVal.width) return;
+    t.removeAttribute('transform');
+    var vb = svg.viewBox.baseVal;
+    var b = t.getBBox();
+    var dx = b.x < vb.x ? vb.x - b.x : (b.x + b.width > vb.x + vb.width ? vb.x + vb.width - b.x - b.width : 0);
+    var dy = b.y < vb.y ? vb.y - b.y : (b.y + b.height > vb.y + vb.height ? vb.y + vb.height - b.y - b.height : 0);
+    if (dx || dy) t.setAttribute('transform', 'translate(' + dx + ' ' + dy + ')');
   }
 
   function foca(g, p) {
@@ -110,6 +132,8 @@
   }
 
   Array.prototype.forEach.call(graficos, function (g) {
+    /* O desenho indexado (G1-c) não tem zonas de leitura: ao rato, o ponto mais próximo do cursor. */
+    var proximidade = g.getAttribute('data-grafico') === 'indice';
     var porta = g.parentElement && g.parentElement.querySelector('a[data-grafico-porta]');
     if (porta) {
       g.addEventListener('click', function (ev) {
@@ -134,7 +158,8 @@
       acende(g, maisProximo(g, ev.clientX, ev.clientY));
     });
     g.addEventListener('pointermove', function (ev) {
-      if (ev.pointerType === 'mouse' || !g._apoiado) return;
+      if (ev.pointerType === 'mouse') { if (proximidade) acende(g, maisProximo(g, ev.clientX, ev.clientY)); return; }
+      if (!g._apoiado) return;
       acende(g, maisProximo(g, ev.clientX, ev.clientY));
     });
     ['pointerup', 'pointercancel'].forEach(function (tipo) {
@@ -174,7 +199,8 @@
   });
   window.addEventListener('resize', function () {
     Array.prototype.forEach.call(graficos, function (g) {
-      if (g._ativo && g._etiqueta && !g._etiqueta.hidden) poe(g._etiqueta, g._ativo);
+      if (g._ativo && temEtiquetaPropria(g._ativo)) confina(g._ativo);
+      else if (g._ativo && g._etiqueta && !g._etiqueta.hidden) poe(g._etiqueta, g._ativo);
     });
   });
 })();
