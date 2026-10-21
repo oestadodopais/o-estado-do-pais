@@ -102,6 +102,7 @@ const periodoDaFaixa = f ? dataDaCasa(f.periodo, lang) : '';
               data-grafico-valor={toqueDe.get(m.geo)?.valor}
               data-grafico-unidade=""
               data-grafico-nome={toqueDe.get(m.geo)?.nomes}
+              data-grafico-leitura={`${toqueDe.get(m.geo)?.nomes}, ${periodoDaFaixa}: ${toqueDe.get(m.geo)?.valor}`}
               role="img"
               aria-label={`${toqueDe.get(m.geo)?.nomes}, ${periodoDaFaixa}: ${toqueDe.get(m.geo)?.valor}`}
               tabindex={m.papel === 'portugal' ? '0' : '-1'}

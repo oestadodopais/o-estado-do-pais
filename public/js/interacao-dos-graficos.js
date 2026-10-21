@@ -36,6 +36,8 @@
   }
 
   function textoDe(p) {
+    var leitura = p.getAttribute('data-grafico-leitura');
+    if (leitura) return leitura;
     var nome = p.getAttribute('data-grafico-nome') || '';
     var periodo = p.getAttribute('data-grafico-periodo') || '';
     var valor = p.getAttribute('data-grafico-valor') || '';

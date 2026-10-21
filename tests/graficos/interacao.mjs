@@ -11,7 +11,7 @@
  *        um só ponto de cada gráfico na ordem do tabulador;
  *   G3 · o valor e o período de cada ponto são o texto que o portão de HTML confere: o `[data-ponto]` e o
  *        `[data-ponto-periodo]` dentro do ponto, ou o `title` da marca («nomes valor»); e o `aria-label` diz o mesmo
- *        período e o mesmo valor, na forma que o guião escreve na etiqueta;
+ *        período e o mesmo valor, e a `data-grafico-leitura` (o texto que o guião põe na etiqueta) é essa mesma cadeia;
  *   G4 · a página que tem um gráfico marcado carrega o guião comum uma vez.
  * É portão: sai com 1 ao primeiro erro de qualquer célula.
  *
@@ -102,6 +102,9 @@ export function conferePagina(html, rota) {
       const esperado = `${nome ? `${nome}, ` : ''}${periodo}: ${valor}${unidade ? `\u00a0${unidade}` : ''}`;
       const aria = attr(p, 'aria-label');
       if (aria !== esperado) erros.push(`G3 ${rota}: o aria-label diz «${aria}» e o ponto diz «${esperado}».`);
+      /* A leitura que o guião mostra é a mesma cadeia: a etiqueta e o leitor de ecrã dizem o mesmo, e o check:voz trata o
+         `aria-label` como a repetição de um dado do próprio elemento, composto do período e do valor conferidos aqui. */
+      if (attr(p, 'data-grafico-leitura') !== esperado) erros.push(`G3 ${rota}: a leitura do guião diz «${attr(p, 'data-grafico-leitura')}» e o ponto diz «${esperado}».`);
     }
   }
   if (graficos.length) {

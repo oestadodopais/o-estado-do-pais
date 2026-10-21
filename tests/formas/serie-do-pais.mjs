@@ -121,7 +121,7 @@ export function conferirSerie(svg, lang, lerSerie = getSerie, leitura = leituraD
        atributos do ponto (os dados, o papel, o nome acessível e o lugar no tabulador), que o `check:graficos` confere
        contra o texto do ponto; nenhum deles muda a forma estática, e qualquer outro atributo continua a falhar aqui. */
     svg: ['class', 'data-forma', 'data-series', 'data-modo', 'viewBox', 'role', 'style', 'data-titulo', 'data-grafico'],
-    title: [], g: ['data-eixo', 'data-grafico-ponto', 'data-grafico-periodo', 'data-grafico-valor', 'data-grafico-unidade', 'data-grafico-nome', 'role', 'aria-label', 'tabindex'],
+    title: [], g: ['data-eixo', 'data-grafico-ponto', 'data-grafico-periodo', 'data-grafico-valor', 'data-grafico-unidade', 'data-grafico-nome', 'data-grafico-leitura', 'role', 'aria-label', 'tabindex'],
     line: ['class', 'x1', 'x2', 'y1', 'y2'],
     text: ['data-nonledger', 'x', 'y', 'text-anchor', 'dominant-baseline'],
     polyline: ['class', 'data-serie-linha', 'points'],
