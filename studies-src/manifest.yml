@@ -389,21 +389,21 @@ edicoes:
     lang: "pt"
     title: "O Orçamento de 2027: o que muda e para quem"
     origin: "researchhub"
-    origin_ref: "content/27 Orcamento 2027 O que muda/O Orçamento de 2027, o que muda e para quem (pt-PT).html @ 08138bfa12ec672ccdbafec9216eaa33507014ef"
+    origin_ref: "content/27 Orcamento 2027 O que muda/O Orçamento de 2027, o que muda e para quem (pt-PT).html @ be7f2bd698ebfcab37916e2f6b797a5d2abcc4e1"
     raw_file: "_raw/orcamento-2027-o-que-muda-e-para-quem.pt.html"
-    fetched_utc: "2026-10-21T04:00:51Z"
-    bytes_raw: 47155
-    bytes_normalized: 47155
-    sha256_raw: "6caacec78749a0cab567f96b5ed3bffa0a130ca459a5841ecaef072916e04839"
-    sha256_normalized: "6caacec78749a0cab567f96b5ed3bffa0a130ca459a5841ecaef072916e04839"
+    fetched_utc: "2026-10-21T04:20:02Z"
+    bytes_raw: 47175
+    bytes_normalized: 47175
+    sha256_raw: "1e0d5491b25113309e96bf81d4765bd19589c497f547aababc6c7684da83082b"
+    sha256_normalized: "1e0d5491b25113309e96bf81d4765bd19589c497f547aababc6c7684da83082b"
   - slug: orcamento-2027-o-que-muda-e-para-quem
     lang: "en"
     title: "The 2027 Budget: what changes, and for whom"
     origin: "researchhub"
-    origin_ref: "content/27 Orcamento 2027 O que muda/The 2027 Budget, what changes, and for whom.html @ 08138bfa12ec672ccdbafec9216eaa33507014ef"
+    origin_ref: "content/27 Orcamento 2027 O que muda/The 2027 Budget, what changes, and for whom.html @ be7f2bd698ebfcab37916e2f6b797a5d2abcc4e1"
     raw_file: "_raw/orcamento-2027-o-que-muda-e-para-quem.en.html"
-    fetched_utc: "2026-10-21T04:00:51Z"
-    bytes_raw: 46607
-    bytes_normalized: 46607
-    sha256_raw: "f6cc715aef64e538b0772dc07b6f1db3e30f3ccdf5d9663220660dfd9078fdee"
-    sha256_normalized: "f6cc715aef64e538b0772dc07b6f1db3e30f3ccdf5d9663220660dfd9078fdee"
+    fetched_utc: "2026-10-21T04:20:02Z"
+    bytes_raw: 46622
+    bytes_normalized: 46622
+    sha256_raw: "051559e9625bb2de1e8c8228f0d58bb7499beeb2ad5f8168dc27eb4d8f36459f"
+    sha256_normalized: "051559e9625bb2de1e8c8228f0d58bb7499beeb2ad5f8168dc27eb4d8f36459f"

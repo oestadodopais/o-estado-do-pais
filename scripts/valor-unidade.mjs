@@ -28,7 +28,7 @@ export function conferirValorUnidade(root, linhas = loadClaims()) {
       if (valor.textContent !== claim.value) erros.push('V2E recibo: valor impresso diferente da prova selada');
       continue;
     }
-    if (tipo === 'titulos' && claim?.unit === 'data') {
+    if (tipo === 'titulos' && claim?.study === 'orcamento-2027-o-que-muda-e-para-quem' && claim.unit === 'data') {
       if (!valor || unidade) erros.push('EO1 data: falta o valor ou repete a unidade');
       continue;
     }

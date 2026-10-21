@@ -4931,27 +4931,27 @@
      "tipo": "excerto"
     },
     {
-     "fim": 263,
+     "fim": 297,
      "id": "posicao-be-rendimentos",
-     "inicio": 179,
+     "inicio": 213,
      "livro": "PM",
      "sha256_linha": "8153db2f250b911728188d86029f4a1b9b3cedc367a1bac07ea59bfdaaf87b1b",
      "texto": "OE2027: BE diz que Orçamento “dá migalhas a quem trabalha” e beneficia os mais ricos",
      "tipo": "documento"
     },
     {
-     "fim": 410,
+     "fim": 444,
      "id": "posicao-be-rendimentos",
-     "inicio": 267,
+     "inicio": 301,
      "livro": "PM",
      "sha256_linha": "8153db2f250b911728188d86029f4a1b9b3cedc367a1bac07ea59bfdaaf87b1b",
      "texto": "José Manuel Pureza considera que o Orçamento para 2027 “dá migalhas” aos trabalhadores, beneficia os mais ricos e ignora problemas estruturais.",
      "tipo": "excerto"
     },
     {
-     "fim": 478,
+     "fim": 512,
      "id": "posicao-pcp-irs-rendas",
-     "inicio": 466,
+     "inicio": 500,
      "livro": "PM",
      "sha256_linha": "3c3d08de11cc532209d8076233961771993ad573f1e0ca144d0e6fae8e53ab50",
      "texto": "Paula Santos",
@@ -4965,15 +4965,15 @@
        "livro": "PM"
       }
      ],
-     "fim": 495,
-     "inicio": 482,
+     "fim": 529,
+     "inicio": 516,
      "texto": "12 de outubro",
      "tipo": "literal"
     },
     {
-     "fim": 849,
+     "fim": 883,
      "id": "posicao-pcp-irs-rendas",
-     "inicio": 498,
+     "inicio": 532,
      "livro": "PM",
      "sha256_linha": "3c3d08de11cc532209d8076233961771993ad573f1e0ca144d0e6fae8e53ab50",
      "texto": "Acrescem ainda outros benefícios fiscais contrários ao interesse nacional, como os 2228 milhões de euros atribuídos ao regime dos residentes não habituais; os 1067 milhões de euros associados ao IRS jovem (que favorece quem tem rendimentos mais elevados), ou os 209 milhões de euros de rendimentos prediais dos senhorios que apliquem rendas até 2300€.",
@@ -4985,7 +4985,7 @@
     "posicao-be-rendimentos",
     "posicao-pcp-irs-rendas"
    ],
-   "text": "As posições: o Juntos pelo Povo (JPP), pelo título da notícia: «JPP pede maior protecção das famílias não abrangidas pela descida de IRS». O Bloco de Esquerda (BE), pela notícia «OE2027: BE diz que Orçamento “dá migalhas a quem trabalha” e beneficia os mais ricos»: «José Manuel Pureza considera que o Orçamento para 2027 “dá migalhas” aos trabalhadores, beneficia os mais ricos e ignora problemas estruturais.» O Partido Comunista Português (PCP), na declaração de Paula Santos de 12 de outubro: «Acrescem ainda outros benefícios fiscais contrários ao interesse nacional, como os 2228 milhões de euros atribuídos ao regime dos residentes não habituais; os 1067 milhões de euros associados ao IRS jovem (que favorece quem tem rendimentos mais elevados), ou os 209 milhões de euros de rendimentos prediais dos senhorios que apliquem rendas até 2300€.» Os números que o PCP cita (os benefícios do regime dos residentes não habituais, do IRS Jovem e das rendas) são do PCP; este estudo não os conferiu na fonte e por isso não os repete como seus. Da Iniciativa Liberal (IL) e do Pessoas-Animais-Natureza (PAN) não há, nos documentos deste estudo, uma posição datada depois da entrega da proposta; a pesquisa não a encontrou nas fontes primárias, o que não quer dizer que não exista."
+   "text": "As posições: o Juntos pelo Povo (JPP), pelo título da notícia: «JPP pede maior protecção das famílias não abrangidas pela descida de IRS». O Bloco de Esquerda (BE), pela notícia sobre o Orçamento do Estado (OE), «OE2027: BE diz que Orçamento “dá migalhas a quem trabalha” e beneficia os mais ricos»: «José Manuel Pureza considera que o Orçamento para 2027 “dá migalhas” aos trabalhadores, beneficia os mais ricos e ignora problemas estruturais.» O Partido Comunista Português (PCP), na declaração de Paula Santos de 12 de outubro: «Acrescem ainda outros benefícios fiscais contrários ao interesse nacional, como os 2228 milhões de euros atribuídos ao regime dos residentes não habituais; os 1067 milhões de euros associados ao IRS jovem (que favorece quem tem rendimentos mais elevados), ou os 209 milhões de euros de rendimentos prediais dos senhorios que apliquem rendas até 2300€.» Os números que o PCP cita (os benefícios do regime dos residentes não habituais, do IRS Jovem e das rendas) são do PCP; este estudo não os conferiu na fonte e por isso não os repete como seus. Da Iniciativa Liberal (IL) e do Pessoas-Animais-Natureza (PAN) não há, nos documentos deste estudo, uma posição datada depois da entrega da proposta; a pesquisa não a encontrou nas fontes primárias, o que não quer dizer que não exista."
   },
   {
    "figures": [],
@@ -5781,39 +5781,39 @@
      "value": "-176"
     },
     {
-     "end": 2275,
+     "end": 2260,
      "printed": "300",
      "row": "pm-q3-2-r8-c0",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 2272,
+     "start": 2257,
      "value": "300"
     },
     {
-     "end": 2339,
+     "end": 2324,
      "printed": "284",
      "row": "pm-q3-2-r12-c0",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 2336,
+     "start": 2321,
      "value": "284"
     },
     {
-     "end": 2372,
+     "end": 2357,
      "printed": "363",
      "row": "pm-q3-2-r18-c0",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 2369,
+     "start": 2354,
      "value": "363"
     },
     {
-     "end": 2410,
+     "end": 2395,
      "printed": "124",
      "row": "pm-q3-2-r16-c0",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 2407,
+     "start": 2392,
      "value": "124"
     }
    ],
@@ -5895,90 +5895,90 @@
      "tipo": "excerto"
     },
     {
-     "fim": 1351,
+     "fim": 1336,
      "id": "posicao-psd-impostos",
-     "inicio": 1283,
+     "inicio": 1268,
      "livro": "PM",
      "sha256_linha": "111baa9385216a4ef21653c3de4f1230eaf744d8bdb291a7279941527d78f0a6",
      "texto": "\"Baile\" na AR com OE em destaque: A \"dança\" de Montenegro e oposição",
      "tipo": "documento"
     },
     {
-     "fim": 1497,
+     "fim": 1482,
      "id": "posicao-psd-impostos",
-     "inicio": 1355,
+     "inicio": 1340,
      "livro": "PM",
      "sha256_linha": "111baa9385216a4ef21653c3de4f1230eaf744d8bdb291a7279941527d78f0a6",
      "texto": "Enquanto o Governo do PS aumentava impostos, defendeu Hugo Soares, \"este Governo não aumentou um único imposto nos orçamentos que apresentou\".",
      "tipo": "excerto"
     },
     {
-     "fim": 1527,
+     "fim": 1512,
      "id": "posicao-ps-irc",
-     "inicio": 1509,
+     "inicio": 1494,
      "livro": "PM",
      "sha256_linha": "e799cebb8981051d1aa149f303cfeec049b5424ec33bcee13d37590df9f52ff4",
      "texto": "José Luís Carneiro",
      "tipo": "atribuicao"
     },
     {
-     "fim": 1663,
+     "fim": 1648,
      "id": "posicao-ps-irc",
-     "inicio": 1530,
+     "inicio": 1515,
      "livro": "PM",
      "sha256_linha": "e799cebb8981051d1aa149f303cfeec049b5424ec33bcee13d37590df9f52ff4",
      "texto": "Para o líder do PS, a redução deste imposto deve ser “dirigida a prioridades de política económica e não para todos e de forma cega”.",
      "tipo": "excerto"
     },
     {
-     "fim": 2022,
+     "fim": 2007,
      "id": "posicao-pcp-irc",
-     "inicio": 1673,
+     "inicio": 1658,
      "livro": "PM",
      "sha256_linha": "568d1dcfc99b15122172c12c0a5ee8d6f32f73fcd6b2cdb10d0e897441b61a71",
      "texto": "O Governo fala em descida de impostos, mas a realidade é esta: o único imposto cuja receita diminuiu foi o IRC (imposto que incide sobre os rendimentos de capital), no próximo ano – com uma taxa de 18% - voltará a descer e a que se somam os benefícios fiscais de 1868 milhões de euros (apenas 1% das empresas absorvem mais de 50% destes benefícios).",
      "tipo": "excerto"
     },
     {
-     "fim": 2130,
+     "fim": 2115,
      "id": "posicao-cds-orcamento",
-     "inicio": 2078,
+     "inicio": 2063,
      "livro": "PM",
      "sha256_linha": "8ba4d7a046f9d493c5d583bbbc1192a43728b61077211ee217ea0e50075543b6",
      "texto": "\"Temos um bom Orçamento para 2027\", garante o CDS-PP",
      "tipo": "excerto"
     },
     {
-     "fim": 2275,
+     "fim": 2260,
      "id": "pm-q3-2-r8-c0",
-     "inicio": 2272,
+     "inicio": 2257,
      "livro": "PM",
      "sha256_linha": "be853ea41f752eb75342bb145e4957fc7e2d36d03b598ca50c018abe4bb57e1c",
      "texto": "300",
      "tipo": "valor"
     },
     {
-     "fim": 2339,
+     "fim": 2324,
      "id": "pm-q3-2-r12-c0",
-     "inicio": 2336,
+     "inicio": 2321,
      "livro": "PM",
      "sha256_linha": "9967c79d52acef9fb77bd862dba6c818e25865b56157ff41a788563a5c1cebe2",
      "texto": "284",
      "tipo": "valor"
     },
     {
-     "fim": 2372,
+     "fim": 2357,
      "id": "pm-q3-2-r18-c0",
-     "inicio": 2369,
+     "inicio": 2354,
      "livro": "PM",
      "sha256_linha": "f4bb472f00bbc10ac91c4a820df70fd2d3ee4580bf15377b0245f49b0ad226d2",
      "texto": "363",
      "tipo": "valor"
     },
     {
-     "fim": 2410,
+     "fim": 2395,
      "id": "pm-q3-2-r16-c0",
-     "inicio": 2407,
+     "inicio": 2392,
      "livro": "PM",
      "sha256_linha": "486b1ff0a47d6b69f87375df81b3bd815fa5397c1f5e87ff7321d6555a6cc0e3",
      "texto": "124",
@@ -6001,7 +6001,7 @@
     "pm-q3-2-r12-c0",
     "pm-q3-2-r18-c0"
    ],
-   "text": "A taxa do IRC desce para 18 % em 2027, depois de 19 % em 2026, pela lei de novembro de 2025 (Lei n.º 64/2025, de 7 de novembro): «Artigo 3.º Norma transitória 1 — A taxa prevista nos n.os 1 e 5 do artigo 87.º do Código do IRC, na redação conferida pela presente lei, aplica-se aos períodos de tributação que se iniciem em ou após 1 de janeiro de 2028. 2 — Nos períodos de tributação que se iniciem durante o ano de 2026, a taxa prevista nos n.os 1 e 5 do artigo 87.º do Código do IRC é de 19 %. 3 — Nos períodos de tributação que se iniciem durante o ano de 2027, a taxa prevista nos n.os 1 e 5 do artigo 87.º do Código do IRC é de 18 %. 4 — A taxa prevista no n.º 2 do artigo 87.º do Código do IRC, na redação conferida pela presente lei, aplica-se aos períodos de tributação que se iniciem em ou após 1 de janeiro de 2026.» O custo de 2027 no quadro das medidas é de 300 milhões de euros, em parte compensado pela reversão do SIFIDE indireto, 124 milhões, num total de 176 milhões. O primeiro-ministro: «Referiu também a redução do IRC e sublinhou que, nos 920 dias desde a primeira tomada de posse do Governo, não houve aumentos de impostos.» O líder do Partido Social Democrata (PSD) no Parlamento, pela notícia sobre o Orçamento do Estado (OE) na Assembleia da República (AR), «\"Baile\" na AR com OE em destaque: A \"dança\" de Montenegro e oposição»: «Enquanto o Governo do PS aumentava impostos, defendeu Hugo Soares, \"este Governo não aumentou um único imposto nos orçamentos que apresentou\".» O PS, por José Luís Carneiro: «Para o líder do PS, a redução deste imposto deve ser “dirigida a prioridades de política económica e não para todos e de forma cega”.» O PCP: «O Governo fala em descida de impostos, mas a realidade é esta: o único imposto cuja receita diminuiu foi o IRC (imposto que incide sobre os rendimentos de capital), no próximo ano – com uma taxa de 18% - voltará a descer e a que se somam os benefícios fiscais de 1868 milhões de euros (apenas 1% das empresas absorvem mais de 50% destes benefícios).» O CDS-Partido Popular (CDS), pelo título da notícia: «\"Temos um bom Orçamento para 2027\", garante o CDS-PP». Sobre a frase «não houve aumentos de impostos»: no quadro das medidas, as linhas de receita que crescem são a receita do combate à fraude (300 milhões), a receita que o aumento dos salários traz em IRS (284 milhões) e em contribuições (363 milhões), e a reversão do SIFIDE (124 milhões); nenhuma é uma subida de taxa."
+   "text": "A taxa do IRC desce para 18 % em 2027, depois de 19 % em 2026, pela lei de novembro de 2025 (Lei n.º 64/2025, de 7 de novembro): «Artigo 3.º Norma transitória 1 — A taxa prevista nos n.os 1 e 5 do artigo 87.º do Código do IRC, na redação conferida pela presente lei, aplica-se aos períodos de tributação que se iniciem em ou após 1 de janeiro de 2028. 2 — Nos períodos de tributação que se iniciem durante o ano de 2026, a taxa prevista nos n.os 1 e 5 do artigo 87.º do Código do IRC é de 19 %. 3 — Nos períodos de tributação que se iniciem durante o ano de 2027, a taxa prevista nos n.os 1 e 5 do artigo 87.º do Código do IRC é de 18 %. 4 — A taxa prevista no n.º 2 do artigo 87.º do Código do IRC, na redação conferida pela presente lei, aplica-se aos períodos de tributação que se iniciem em ou após 1 de janeiro de 2026.» O custo de 2027 no quadro das medidas é de 300 milhões de euros, em parte compensado pela reversão do SIFIDE indireto, 124 milhões, num total de 176 milhões. O primeiro-ministro: «Referiu também a redução do IRC e sublinhou que, nos 920 dias desde a primeira tomada de posse do Governo, não houve aumentos de impostos.» O líder do Partido Social Democrata (PSD) no Parlamento, pela notícia sobre o Orçamento na Assembleia da República (AR), «\"Baile\" na AR com OE em destaque: A \"dança\" de Montenegro e oposição»: «Enquanto o Governo do PS aumentava impostos, defendeu Hugo Soares, \"este Governo não aumentou um único imposto nos orçamentos que apresentou\".» O PS, por José Luís Carneiro: «Para o líder do PS, a redução deste imposto deve ser “dirigida a prioridades de política económica e não para todos e de forma cega”.» O PCP: «O Governo fala em descida de impostos, mas a realidade é esta: o único imposto cuja receita diminuiu foi o IRC (imposto que incide sobre os rendimentos de capital), no próximo ano – com uma taxa de 18% - voltará a descer e a que se somam os benefícios fiscais de 1868 milhões de euros (apenas 1% das empresas absorvem mais de 50% destes benefícios).» O CDS-Partido Popular (CDS), pelo título da notícia: «\"Temos um bom Orçamento para 2027\", garante o CDS-PP». Sobre a frase «não houve aumentos de impostos»: no quadro das medidas, as linhas de receita que crescem são a receita do combate à fraude (300 milhões), a receita que o aumento dos salários traz em IRS (284 milhões) e em contribuições (363 milhões), e a reversão do SIFIDE (124 milhões); nenhuma é uma subida de taxa."
   },
   {
    "figures": [],

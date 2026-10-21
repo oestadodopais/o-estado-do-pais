@@ -17,6 +17,7 @@ for(const lang of ['pt','en']){
   const el=study.querySelector(`[data-registo-unidade="${slug}/${lang}#${b.i}"]`);assert(el);
   el.querySelectorAll('[data-selo-etiqueta]').forEach(x=>x.remove());
   const text=norm(el.textContent);assert.equal(text,norm(b.text));
+  if(![3,5,7,10,11,12,25,26,33,42,44,45,50,52].includes(b.i)) assert.equal(b.text,before.blocks.find(x=>x.i===b.i)?.text,'parágrafo fora do mandato alterado');
   assert(norm(document.querySelector('[data-oedp-moldura]').textContent).includes(text),`documento ${lang} unidade ${b.i}`);
   return {unidade:b.i,alterada:norm(before.blocks.find(x=>x.i===b.i)?.text??'')!==text,texto:text,fontes:b.source_rows,literais:b.proofs.filter(p=>p.tipo==='literal')};
  });

@@ -1,5 +1,5 @@
-import { FAMILIAS_DAS_LINHAS as FAMILIAS_EO1_GATE } from '../src/data/o-que-e-das-familias.mjs';
 #!/usr/bin/env node
+import { FAMILIAS_DAS_LINHAS as FAMILIAS_EO1_GATE } from '../src/data/o-que-e-das-familias.mjs';
 import { conferirAberturaB1 } from './abertura-b1-do-portao.mjs';
 import {conferirCaminhoFinal} from './caminho-final.mjs';
 import { tirarCodigoConferido, lerPaginaComCodigo } from './incorporar-do-portao.mjs';

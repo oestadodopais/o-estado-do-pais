@@ -1,0 +1,42 @@
+
+> o-estado-do-pais@0.1.0 check:eo1
+> node tests/eo1/maquinaria.mjs && node tests/eo1/documento.mjs && node tests/eo1/lingua-nomes.mjs && node tests/eo1/recibos.mjs
+
+EO1 portas o-que-se-discute: 2/2
+EO1 portas explicacoes/dinheiro-do-estado-2026: 1/1
+EO1 portas en/under-discussion: 2/2
+EO1 portas en/explainers/dinheiro-do-estado-2026: 1/1
+B1 estudos/orcamento-2027-o-que-muda-e-para-quem: primeiro H2 conferido e planta recusada.
+B1 en/studies/orcamento-2027-o-que-muda-e-para-quem: primeiro H2 conferido e planta recusada.
+B1 estudos/evora-contas-da-camara-2010-2025: primeiro H2 conferido e planta recusada.
+B1 en/studies/evora-contas-da-camara-2010-2025: primeiro H2 conferido e planta recusada.
+B1 estudos/evora-quem-governou-a-camara-2009-2025: primeiro H2 conferido e planta recusada.
+B1 estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara: primeiro H2 conferido e planta recusada.
+B1 en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara: primeiro H2 conferido e planta recusada.
+B1 estudos/evora-2027-capital-europeia-da-cultura: primeiro H2 conferido e planta recusada.
+B1 en/studies/evora-2027-capital-europeia-da-cultura: primeiro H2 conferido e planta recusada.
+B1 estudos/evora-2027-prometido-painel-dinheiro: primeiro H2 conferido e planta recusada.
+B1 en/studies/evora-2027-prometido-painel-dinheiro: primeiro H2 conferido e planta recusada.
+EO1-b maquinaria: PASS; 40 plantas recusadas.
+EO1: 256 localizadores, nomes e períodos conferidos em todas as linhas, com alterações rejeitadas.
+EO1 pt: plantas valor, excerto e literal recusadas (código de recusa 1).
+EO1 en: plantas valor, excerto e literal recusadas (código de recusa 1).
+EO1: PASS 114 unidades do HTML, provas e três plantas por edição.
+
+[31m  PORTÃO DA LÍNGUA · 14 problema(s)
+[0m
+[31m    · [0ma declaração de língua nomeia o rótulo «Medidas anteriores: despesa», que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+[31m    · [0ma declaração de língua nomeia o rótulo «Earlier measures: expenditure», que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+[31m    · [0ma declaração de língua nomeia o rótulo «Medidas anteriores: receita», que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+[31m    · [0ma declaração de língua nomeia o rótulo «Earlier measures: revenue», que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+[31m    · [0ma declaração de língua nomeia o rótulo «Medidas anteriores: impacto no saldo», que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+[31m    · [0ma declaração de língua nomeia o rótulo «Earlier measures: balance impact», que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+[31m    · [0ma declaração de língua nomeia o rótulo «UTAO: dívida, acrescimo-2026», que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+[31m    · [0ma declaração de língua nomeia o rótulo «UTAO: debt, acrescimo-2026», que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+[31m    · [0ma declaração de língua nomeia o rótulo «UTAO: dívida, acrescimo-2027», que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+[31m    · [0ma declaração de língua nomeia o rótulo «UTAO: debt, acrescimo-2027», que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+[31m    · [0ma declaração de língua nomeia o rótulo «UTAO: dívida, stock-2026», que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+[31m    · [0ma declaração de língua nomeia o rótulo «UTAO: debt, stock-2026», que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+[31m    · [0ma declaração de língua nomeia o rótulo «UTAO: dívida, stock-2027», que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+[31m    · [0ma declaração de língua nomeia o rótulo «UTAO: debt, stock-2027», que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+

@@ -15837,15 +15837,15 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "utao-divida-acrescimo-2026": {
     "nome": {
-      "pt": "UTAO: acréscimo anual da dívida pública",
-      "en": "UTAO: annual increase in public debt"
+      "pt": "UTAO: acréscimo anual da dívida pública, 2026",
+      "en": "UTAO: annual increase in public debt, 2026"
     },
     "frase": {
       "pt": [
-        "É o valor de «UTAO: acréscimo anual da dívida pública» no documento citado, para o período e na unidade indicados. Referência: "
+        "É o valor de «UTAO: acréscimo anual da dívida pública, 2026» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «UTAO: annual increase in public debt» in the cited document, for the stated period and unit. Reference: "
+        "It is the value of «UTAO: annual increase in public debt, 2026» in the cited document, for the stated period and unit. Reference: "
       ]
     },
     "complemento": {
@@ -15865,15 +15865,15 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "utao-divida-acrescimo-2027": {
     "nome": {
-      "pt": "UTAO: acréscimo anual da dívida pública",
-      "en": "UTAO: annual increase in public debt"
+      "pt": "UTAO: acréscimo anual da dívida pública, 2027",
+      "en": "UTAO: annual increase in public debt, 2027"
     },
     "frase": {
       "pt": [
-        "É o valor de «UTAO: acréscimo anual da dívida pública» no documento citado, para o período e na unidade indicados. Referência: "
+        "É o valor de «UTAO: acréscimo anual da dívida pública, 2027» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «UTAO: annual increase in public debt» in the cited document, for the stated period and unit. Reference: "
+        "It is the value of «UTAO: annual increase in public debt, 2027» in the cited document, for the stated period and unit. Reference: "
       ]
     },
     "complemento": {
@@ -15949,15 +15949,15 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "utao-divida-stock-2026": {
     "nome": {
-      "pt": "UTAO: dívida pública em euros",
-      "en": "UTAO: public debt in euros"
+      "pt": "UTAO: dívida pública em euros, fim de 2026",
+      "en": "UTAO: public debt in euros, end of 2026"
     },
     "frase": {
       "pt": [
-        "É o valor de «UTAO: dívida pública em euros» no documento citado, para o período e na unidade indicados. Referência: "
+        "É o valor de «UTAO: dívida pública em euros, fim de 2026» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «UTAO: public debt in euros» in the cited document, for the stated period and unit. Reference: "
+        "It is the value of «UTAO: public debt in euros, end of 2026» in the cited document, for the stated period and unit. Reference: "
       ]
     },
     "complemento": {
@@ -15977,15 +15977,15 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "utao-divida-stock-2027": {
     "nome": {
-      "pt": "UTAO: dívida pública em euros",
-      "en": "UTAO: public debt in euros"
+      "pt": "UTAO: dívida pública em euros, fim de 2027",
+      "en": "UTAO: public debt in euros, end of 2027"
     },
     "frase": {
       "pt": [
-        "É o valor de «UTAO: dívida pública em euros» no documento citado, para o período e na unidade indicados. Referência: "
+        "É o valor de «UTAO: dívida pública em euros, fim de 2027» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «UTAO: public debt in euros» in the cited document, for the stated period and unit. Reference: "
+        "It is the value of «UTAO: public debt in euros, end of 2027» in the cited document, for the stated period and unit. Reference: "
       ]
     },
     "complemento": {

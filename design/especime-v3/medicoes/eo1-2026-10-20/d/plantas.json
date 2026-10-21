@@ -1,0 +1,30 @@
+[
+  {
+    "ensaio": "estado-planta",
+    "comando": "node tests/eo1/recibos.mjs --planta-estado",
+    "codigo": 1,
+    "esperado": 1,
+    "passou": true
+  },
+  {
+    "ensaio": "cita-planta",
+    "comando": "python3 -m core.compor_livros_test --plant cita",
+    "codigo": 1,
+    "esperado": 1,
+    "passou": true
+  },
+  {
+    "ensaio": "compositor-controlo",
+    "comando": "python3 -m core.compor_livros_test",
+    "codigo": 0,
+    "esperado": 0,
+    "passou": true
+  },
+  {
+    "ensaio": "pacote-controlo",
+    "comando": "python3 tests/leituras/pacote-recibo.py",
+    "codigo": 0,
+    "esperado": 0,
+    "passou": true
+  }
+]

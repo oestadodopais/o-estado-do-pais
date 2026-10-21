@@ -12,8 +12,8 @@
     "nomes-eo1.mjs": {
       "destino": "src/data",
       "origin_path": "publisher/recortes/eo1/nomes-eo1.mjs",
-      "origin_sha256": "538a4d858085d045c17c0450ba489db3f8b9ef9be821253fce83bb637426e2ed",
-      "exported_sha256": "538a4d858085d045c17c0450ba489db3f8b9ef9be821253fce83bb637426e2ed",
+      "origin_sha256": "1e22625bb637bf68f6bc5f985271ba97af63e733f1123fee7abc264c0846289f",
+      "exported_sha256": "1e22625bb637bf68f6bc5f985271ba97af63e733f1123fee7abc264c0846289f",
       "exporter": "publisher/export_site_rows.py"
     }
   }

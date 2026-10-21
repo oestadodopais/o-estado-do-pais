@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "<motor>/core/compor_livros_test.py", line 120, in <module>
+    if args.plant:machinery_tests(args.plant)
+                  ~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "<motor>/core/compor_livros_test.py", line 36, in machinery_tests
+    try:compose(path)
+        ~~~~~~~^^^^^^
+  File "<motor>/core/compor_livros.py", line 106, in compose
+    if not evidence:raise Recusa(where+': literal sem linha: '+m[2])
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+core.compor.Recusa: documento.pt.md.tmpl:3: literal sem linha: 18.º

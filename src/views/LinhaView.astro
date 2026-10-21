@@ -630,7 +630,7 @@ const unidadeNoValor = valorImpressoDoPainelConferido(id, claim.value);
  * legível. Cada peça que sobra é um `CampoDaLinha`, e por isso é conferida
  * contra o livro-razão carácter a carácter.
  */
-const publicacaoV2aEn = claim.study !== 'orcamento-2027-o-que-muda-e-para-quem' && lang === 'en' && id.startsWith('oe-2027-') && claim.source === 'Ministério das Finanças';
+const publicacaoV2aEn = lang === 'en' && id.startsWith('oe-2027-') && claim.source === 'Ministério das Finanças';
 const apoioPublicacaoV2a = id.startsWith('oe-2027-saude-') ? 'v2a-saude-consolidada' : 'v2a-ppp-setores';
 const atribuicaoPecas = [
   presente(claim.source)
@@ -758,7 +758,7 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
     </h1>
     {nomeDaFonte && (
       <p class="linha-nome-da-fonte">
-        <span class="linha-campo-k">{nomeDaMedidaV2e ? (lang === 'pt' ? 'A medida e o documento na fonte' : 'The measure and the source document') : claim.derivation ? (lang === 'pt' ? 'Linha derivada deste projeto' : 'Derived row of this project') : s.livro.linha.nomeNaFonteK}</span>{' '}
+        <span class="linha-campo-k">{nomeDaMedidaV2e ? (lang === 'pt' ? 'A medida e o documento na fonte' : 'The measure and the source document') : claim.study === 'orcamento-2027-o-que-muda-e-para-quem' && claim.derivation ? (lang === 'pt' ? 'Linha derivada deste projeto' : 'Derived row of this project') : s.livro.linha.nomeNaFonteK}</span>{' '}
         {nomeDaMedidaV2e && <><span data-nome="projeto" data-de-linha={id}>{nomeDaMedidaV2e}</span>{' · '}</>}
         {'«'}
         {/* O TÍTULO ABRE O DOCUMENTO QUANDO A LINHA DIZ ONDE ELE ESTÁ (a regra do F1.4, Major 9): o mesmo nome não fica
@@ -809,7 +809,7 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
           texto do título era «175pessoas»: um leitor de ecrã e quem copia o
           título liam uma palavra só. O espaço escreve-se aqui, e a célula do
           `gate:html` exige-o em todas as páginas de linha. */}
-      <Fragment slot="sufixo">{!unidadeNoValor && claim.unit !== 'data' && !textoDocumentalConferido(claim) && <>{' '}
+      <Fragment slot="sufixo">{!unidadeNoValor && !(claim.study === 'orcamento-2027-o-que-muda-e-para-quem' && claim.unit === 'data') && !textoDocumentalConferido(claim) && <>{' '}
       <CampoDaLinha
         id={id}
         campo="unit"
@@ -934,9 +934,9 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
         temFraseDeAtribuicao && (
           <p class="linha-atribuicao">
             {publicacaoV2aEn ? <>
-              {'Published by the '}<Frase partes={[{verbatim:`origem-${apoioPublicacaoV2a}-publicador_en`}]} lang={lang} />{', in «'}
+              {'Published by the '}<Frase partes={[{verbatim:`origem-${apoioPublicacaoV2a}-publicador_en`}]} lang={lang} />{claim.study !== 'orcamento-2027-o-que-muda-e-para-quem' && <>{', in «'}
               <a class="ligacao-externa" href={claim.document.url} rel="noopener noreferrer external"><CampoDaLinha id={id} campo="document.title" valor={claim.document.title} lang={lang} lingua="pt-PT" /></a>
-              {'» (the '}<Frase partes={[{verbatim:`origem-${apoioPublicacaoV2a}-documento_en`}]} lang={lang} />{')'}
+              {'» (the '}<Frase partes={[{verbatim:`origem-${apoioPublicacaoV2a}-documento_en`}]} lang={lang} />{')'}</>}
             </> : atribuicaoPecas.map((peca, i) => (
               <>
                 {i > 0 && (peca.apos ? ' · ' : peca.entreParenteses ? ' ' : ', ')}

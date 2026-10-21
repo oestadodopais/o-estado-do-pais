@@ -905,20 +905,20 @@ export const NOMES_EO1 = {
     "en": "Debt: primary balance and dynamic effect"
   },
   "utao-divida-stock-2026": {
-    "pt": "UTAO: dívida pública em euros",
-    "en": "UTAO: public debt in euros"
+    "pt": "UTAO: dívida pública em euros, fim de 2026",
+    "en": "UTAO: public debt in euros, end of 2026"
   },
   "utao-divida-stock-2027": {
-    "pt": "UTAO: dívida pública em euros",
-    "en": "UTAO: public debt in euros"
+    "pt": "UTAO: dívida pública em euros, fim de 2027",
+    "en": "UTAO: public debt in euros, end of 2027"
   },
   "utao-divida-acrescimo-2026": {
-    "pt": "UTAO: acréscimo anual da dívida pública",
-    "en": "UTAO: annual increase in public debt"
+    "pt": "UTAO: acréscimo anual da dívida pública, 2026",
+    "en": "UTAO: annual increase in public debt, 2026"
   },
   "utao-divida-acrescimo-2027": {
-    "pt": "UTAO: acréscimo anual da dívida pública",
-    "en": "UTAO: annual increase in public debt"
+    "pt": "UTAO: acréscimo anual da dívida pública, 2027",
+    "en": "UTAO: annual increase in public debt, 2027"
   },
   "ce-primavera-2026-divida-2026": {
     "pt": "Dívida pública bruta",
