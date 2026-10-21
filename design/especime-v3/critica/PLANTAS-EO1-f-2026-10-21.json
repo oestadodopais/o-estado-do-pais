@@ -1,0 +1,46 @@
+{
+ "registado_em": "2026-10-21T08:27:04+00:00",
+ "copia": "<pacotes>/pacote-eo1-f-2026-10-21",
+ "plantas": [
+  {
+   "id": "F1",
+   "ficheiro": "built/estudos/orcamento-2027-o-que-muda-e-para-quem/documento/index.html",
+   "descricao": "«Somadas, as linhas marcadas valem» passa a «Somadas, as dez linhas marcadas valem» na página portuguesa construída; a referência é o gabarito e o registo",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "55750927b18950fbf9ebd0c2fe02b06aec5fa077c25ccc999be23a39d1725268",
+   "sha256_depois": "bb3ea96936e2cb8b52059d88047fdf53e5efddf88d023a3492283bd5d10b148e",
+   "contexto_antes": "mento Solidário para Idosos (100 milhões).</p>\n<p>O quadro marca dez das suas linhas com «(i)», e a nota do quadro diz o que a marca é: «Nota: (i) invariante.» Somadas, as linhas marcadas valem −263 milhões de euros na receita e 947 milhões na despesa, −1 210 milhões no saldo. As três linhas sem marca, o combate à fraude nos combustíveis, o mínimo de ",
+   "contexto_depois": "mento Solidário para Idosos (100 milhões).</p>\n<p>O quadro marca dez das suas linhas com «(i)», e a nota do quadro diz o que a marca é: «Nota: (i) invariante.» Somadas, as dez linhas marcadas valem −263 milhões de euros na receita e 947 milhões na despesa, −1 210 milhões no saldo. As três linhas sem marca, o combate à fraude nos combustíveis, o mínimo de "
+  },
+  {
+   "id": "F2",
+   "ficheiro": "built/en/studies/orcamento-2027-o-que-muda-e-para-quem/document/index.html",
+   "descricao": "«Added up, the marked lines are worth» passa a «Added up, the marked lines are worth about» na página inglesa construída; a referência é o gabarito e o registo",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "d3c2e4617c5d9308a99e2fe9013c02673a763b109a6340fc583113186ec66b82",
+   "sha256_depois": "116c6d52f999d73d2da5e297b7942fcf36266885520544c69180b43bdaf95f28",
+   "contexto_antes": "pplement for the Elderly (100 million).</p>\n<p>The table marks ten of its lines with «(i)», and the table's note says what the mark is: «Nota: (i) invariante.» Added up, the marked lines are worth −263 million euros in revenue and 947 million in expenditure, −1,210 million on the balance. The three unmarked lines, the fight against fuel fraud, the exempt",
+   "contexto_depois": "pplement for the Elderly (100 million).</p>\n<p>The table marks ten of its lines with «(i)», and the table's note says what the mark is: «Nota: (i) invariante.» Added up, the marked lines are worth about −263 million euros in revenue and 947 million in expenditure, −1,210 million on the balance. The three unmarked lines, the fight against fuel fraud, the exempt"
+  },
+  {
+   "id": "F3",
+   "ficheiro": "motor/content/27 Orcamento 2027 O que muda/Technical Source/documento.pt.md.tmpl",
+   "descricao": "a frase retirada volta ao gabarito português na cópia; a referência é o diff do motor",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "c5edf33680c75204b1298adf103e9e57718075b304d4ab194a065a5b6e062ff4",
+   "sha256_depois": "6a00cf0064d2564ef64b7f50730b3aade822577349ef74d4da07dd879cdbf8db",
+   "contexto_antes": "pm-q3-2-r24-c0⟧ milhões, que são o reforço do Complemento Solidário para Idosos (⟦PM:pm-q3-2-r25-c0⟧ milhões).\n\nO quadro marca dez das suas linhas com «(i)», e a nota do quadro diz o que a marca é: «⟦PM:oe-2027-quadro-3-2-nota-i|excerto⟧» Somadas, as linhas marcadas valem ⟦PM:der-oe2027-medidas-anteriores-receita⟧ milhões de euros na receita e ⟦PM:der-oe2027-medidas-anteriores-despesa⟧ milhões na despes",
+   "contexto_depois": "pm-q3-2-r24-c0⟧ milhões, que são o reforço do Complemento Solidário para Idosos (⟦PM:pm-q3-2-r25-c0⟧ milhões).\n\nO quadro marca dez das suas linhas com «(i)», e a nota do quadro diz o que a marca é: «⟦PM:oe-2027-quadro-3-2-nota-i|excerto⟧» A UTAO descreve esse cenário abaixo. Somadas, as linhas marcadas valem ⟦PM:der-oe2027-medidas-anteriores-receita⟧ milhões de euros na receita e ⟦PM:der-oe2027-medidas-anteriores-despesa⟧ milhões na despes"
+  },
+  {
+   "id": "F4",
+   "ficheiro": "studies-src/orcamento-2027-o-que-muda-e-para-quem/en.html",
+   "descricao": "a frase retirada volta à edição inglesa alojada na cópia; a referência é o registo e o diff",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "eb77d5f73016b45c939a17f0502dd074ffc5740f8a3173ef0debe36d32093979",
+   "sha256_depois": "718e20d647544c907cc9b5823e22229c9f83d1c57685fe9864f6601f5d566ebb",
+   "contexto_antes": "stado 2027, de forma progressiva\".» It is a proposal outside the table of measures, and the title of the news report states the Prime Minister's answer.</p>\n<p>The UTAO uses the word «invariantes» (unchanged) for a larger set than the table's ten lines: the unchanged-policy scenario, the measures already in force, whose additional impact in 2027 it puts ",
+   "contexto_depois": "stado 2027, de forma progressiva\".» It is a proposal outside the table of measures, and the title of the news report states the Prime Minister's answer.</p>\n<p>The UTAO describes that scenario below. The UTAO uses the word «invariantes» (unchanged) for a larger set than the table's ten lines: the unchanged-policy scenario, the measures already in force, whose additional impact in 2027 it puts "
+  }
+ ]
+}

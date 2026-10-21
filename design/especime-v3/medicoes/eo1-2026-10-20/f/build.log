@@ -1,0 +1,6 @@
+  mordeu · o passo da cadeia do build com um resolvedor que recusa tudo (código 1)
+
+> o-estado-do-pais@0.1.0 check:discussao
+> node tests/discussao/itens.mjs
+
+V2B · 0 erro(s), 724 de 724 plantas, 604 portas de integração.
