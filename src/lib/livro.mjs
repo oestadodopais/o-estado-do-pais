@@ -20,6 +20,7 @@ import { unidadeDaLinha } from '../i18n/unidades.mjs';
 import { textoDocumentalConferido } from './prova-efeitos.mjs';
 import { FAMILIAS_DAS_LINHAS } from '../data/o-que-e-das-familias.mjs';
 import { NOMES_EO1 } from '../data/nomes-eo1.mjs';
+import { NOMES_HB1 } from '../data/nomes-hb1.mjs';
 import { SITE_NAME } from '../../site.config.mjs';
 
 /**
@@ -100,7 +101,7 @@ function mancheteDaLinha(claim, lang) {
  * @param {Lingua} lang
  */
 function nomeTextual(claim, lang) {
-  return ['texto', 'afirmação'].includes(String(claim.unit)) && claim.value === claim.excerpt ? Object.entries(NOMES_EO1).find(([id]) => id === claim.id)?.[1][lang] : null;
+  return ['texto', 'afirmação'].includes(String(claim.unit)) && claim.value === claim.excerpt ? Object.entries({ ...NOMES_EO1, ...NOMES_HB1 }).find(([id]) => id === claim.id)?.[1][lang] : null;
 }
 
 /** @param {Linha} claim @param {Lingua} lang */

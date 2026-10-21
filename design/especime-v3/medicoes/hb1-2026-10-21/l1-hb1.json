@@ -1,0 +1,48 @@
+{
+  "construcao": "7cc3543914edd0e9172f6409b12298e02bdd2a64",
+  "codigo": 0,
+  "contagens": {
+    "estudos": 3170,
+    "anteriores": 2782,
+    "novas": 388,
+    "recibos_novos": 380,
+    "outras_paginas": 8
+  },
+  "contrato": "l1-contrato.json",
+  "medicao": "l1-destinos.json",
+  "plantas": [
+    {
+      "nome": "recibo do cruzamento omitido",
+      "mordeu": true
+    },
+    {
+      "nome": "recibo fora do cruzamento",
+      "mordeu": true
+    },
+    {
+      "nome": "multiplicidade nova numa página anterior",
+      "mordeu": true
+    },
+    {
+      "nome": "porta adicional num recibo novo",
+      "mordeu": true
+    },
+    {
+      "nome": "página fora da integração",
+      "mordeu": true
+    },
+    {
+      "nome": "recibo da integração em falta",
+      "mordeu": true
+    },
+    {
+      "nome": "contagem que diverge da régua",
+      "mordeu": true
+    },
+    {
+      "nome": "porta de edição ausente omitida no calendário",
+      "mordeu": true
+    }
+  ],
+  "limite": "A fotografia de partida antecede HB1. As páginas antigas cujas multiplicidades diferem estão enumeradas. A lista de recibos corresponde exatamente ao cruzamento HB1; as portas de datas por confirmar são derivadas dos campos atuais das linhas. A regra de contagem não mudou."
+}

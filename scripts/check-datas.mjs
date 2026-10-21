@@ -47,6 +47,7 @@
  * Uso:  node scripts/check-datas.mjs
  */
 
+import { conferirDataDeclarada } from './publicacao-declarada.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
@@ -101,7 +102,15 @@ if (edicoes.length === 0) {
 }
 const chave = (slug, lang) => `${slug}/${lang}`;
 const porEdicao = new Map(edicoes.map((e) => [chave(e.slug, e.lang), e]));
-const datasDeclaradas = new Set(edicoes.map((e) => naFormaDaCasa(e.data)));
+// HB1-30: a entrada no repositório não publica uma edição em preparação.
+const publicacoes = new Map(edicoes.map(e => {
+  const w = WORKS.find(w => w.slug === e.slug);
+  const edicao = w?.editions.find(x => x.lang === e.lang);
+  if (w?.publication !== 'declared') return [chave(e.slug, e.lang), e.data];
+  for (const erro of conferirDataDeclarada(w, edicao, e.data)) falhas.push(`${e.slug}/${e.lang}: ${erro}.`);
+  return [chave(e.slug, e.lang), edicao?.date ?? null];
+}));
+const datasDeclaradas = new Set([...publicacoes.values()].filter(Boolean).map(naFormaDaCasa));
 
 /* ================================================= as páginas construídas */
 
@@ -264,7 +273,8 @@ function prende(rota, slug, lang, impressa, onde) {
   const k = chave(slug, lang);
   presas.set(k, (presas.get(k) ?? 0) + 1);
   const declarada = porEdicao.get(k) ?? null;
-  const esperada = declarada ? naFormaDaCasa(declarada.data) : null;
+  const dataPublica = publicacoes.get(k);
+  const esperada = dataPublica ? naFormaDaCasa(dataPublica) : null;
   if (esperada === null) {
     if (impressa !== null) {
       falhas.push(
@@ -352,7 +362,13 @@ function prendeEdicoesB1(rota, doc, slugDaPagina = null, esperadas = null) {
       : (linguaDaPagina === 'pt' ? `/estudos/${slug}` : `/en/studies/${slug}`);
     if (porta.replace(/\/$/, '') !== esperada) falhas.push(`${rota}: a data de ${slug}/${lang} está junto da porta errada: ${porta}.`);
     const marcas = marcasDeData(bloco);
-    if (marcas.length !== 1) falhas.push(`${rota}: ${slug}/${lang} tem ${marcas.length} datas, esperada uma.`);
+    const numeroEsperado = publicacoes.get(chave(slug, lang)) ? 1 : 0;
+    if (marcas.length !== numeroEsperado) falhas.push(`${rota}: ${slug}/${lang} tem ${marcas.length} datas, esperadas ${numeroEsperado}.`);
+    if (!numeroEsperado && slugDaPagina) {
+      for (const ld of doc.querySelectorAll('script[type="application/ld+json"]')) {
+        if (JSON.parse(ld.textContent).creativeWorkStatus === 'Published') falhas.push(`${rota}: edição sem data declarada diz Published.`);
+      }
+    }
     const marca = marcas[0];
     if (marca) presasAqui.add(marca);
     prende(rota, slug, lang, marca?.textContent.trim() ?? null, `a edição ${slug}/${lang}`);

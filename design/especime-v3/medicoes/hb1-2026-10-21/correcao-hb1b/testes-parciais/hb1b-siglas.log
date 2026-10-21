@@ -1,0 +1,367 @@
+{
+  "codigo": 0,
+  "edicoes": {
+    "pt": [
+      {
+        "sigla": "INE",
+        "expansao": "Instituto Nacional de Estatística",
+        "bloco": 1,
+        "seletor": "[data-registo-bloco=\"1\"]",
+        "contexto": "Instituto Nacional de Estatística (o INE",
+        "expansoes_na_prosa": 1
+      },
+      {
+        "sigla": "IVA",
+        "expansao": "imposto sobre o valor acrescentado",
+        "bloco": 5,
+        "seletor": "[data-registo-bloco=\"5\"]",
+        "contexto": "imposto sobre o valor acrescentado (o IVA",
+        "expansoes_na_prosa": 1
+      },
+      {
+        "sigla": "IRS",
+        "expansao": "imposto sobre o rendimento das pessoas singulares",
+        "bloco": 5,
+        "seletor": "[data-registo-bloco=\"5\"]",
+        "contexto": "imposto sobre o rendimento das pessoas singulares (o IRS",
+        "expansoes_na_prosa": 1
+      },
+      {
+        "sigla": "PSP",
+        "expansao": "Polícia de Segurança Pública",
+        "bloco": 12,
+        "seletor": "[data-registo-bloco=\"12\"]",
+        "contexto": "Polícia de Segurança Pública (a PSP",
+        "expansoes_na_prosa": 1
+      },
+      {
+        "sigla": "IGAI",
+        "expansao": "Inspeção-Geral da Administração Interna",
+        "bloco": 12,
+        "seletor": "[data-registo-bloco=\"12\"]",
+        "contexto": "Inspeção-Geral da Administração Interna (a IGAI",
+        "expansoes_na_prosa": 1
+      },
+      {
+        "sigla": "CGTP",
+        "expansao": "Confederação Geral dos Trabalhadores Portugueses",
+        "bloco": 46,
+        "seletor": "[data-registo-bloco=\"46\"]",
+        "contexto": "Confederação Geral dos Trabalhadores Portugueses (a CGTP",
+        "expansoes_na_prosa": 1
+      },
+      {
+        "sigla": "PS",
+        "expansao": "Partido Socialista",
+        "bloco": 30,
+        "seletor": "[data-registo-bloco=\"30\"]",
+        "contexto": "Partido Socialista (o PS",
+        "expansoes_na_prosa": 1
+      },
+      {
+        "sigla": "PCP",
+        "expansao": "Partido Comunista Português",
+        "bloco": 38,
+        "seletor": "[data-registo-bloco=\"38\"]",
+        "contexto": "Partido Comunista Português (o PCP",
+        "expansoes_na_prosa": 1
+      },
+      {
+        "sigla": "BE",
+        "expansao": "Bloco de Esquerda",
+        "bloco": 12,
+        "seletor": "[data-registo-bloco=\"12\"]",
+        "contexto": "Bloco de Esquerda (o BE",
+        "expansoes_na_prosa": 1
+      },
+      {
+        "sigla": "PAN",
+        "expansao": "Pessoas-Animais-Natureza",
+        "bloco": 38,
+        "seletor": "[data-registo-bloco=\"38\"]",
+        "contexto": "Pessoas-Animais-Natureza (o PAN",
+        "expansoes_na_prosa": 1
+      },
+      {
+        "sigla": "JPP",
+        "expansao": "Juntos pelo Povo",
+        "bloco": 38,
+        "seletor": "[data-registo-bloco=\"38\"]",
+        "contexto": "Juntos pelo Povo (o JPP",
+        "expansoes_na_prosa": 1
+      },
+      {
+        "sigla": "IL",
+        "expansao": "Iniciativa Liberal",
+        "bloco": 5,
+        "seletor": "[data-registo-bloco=\"5\"]",
+        "contexto": "Iniciativa Liberal (a IL",
+        "expansoes_na_prosa": 1
+      },
+      {
+        "sigla": "PSD",
+        "expansao": "Partido Social Democrata",
+        "bloco": 5,
+        "seletor": "[data-registo-bloco=\"5\"]",
+        "contexto": "Partido Social Democrata (o PSD",
+        "expansoes_na_prosa": 1
+      },
+      {
+        "sigla": "CDS-PP",
+        "expansao": "CDS-Partido Popular",
+        "bloco": 5,
+        "seletor": "[data-registo-bloco=\"5\"]",
+        "contexto": "CDS-Partido Popular (o CDS-PP",
+        "expansoes_na_prosa": 1
+      },
+      {
+        "sigla": "FEH",
+        "expansao": "Fundo de Emergência para a Habitação",
+        "bloco": 38,
+        "seletor": "[data-registo-bloco=\"38\"]",
+        "contexto": "Fundo de Emergência para a Habitação (o FEH",
+        "expansoes_na_prosa": 1
+      },
+      {
+        "sigla": "IMT",
+        "expansao": "imposto municipal sobre as transmissões onerosas de imóveis",
+        "bloco": 35,
+        "seletor": "[data-registo-bloco=\"35\"]",
+        "contexto": "imposto municipal sobre as transmissões onerosas de imóveis (o IMT",
+        "expansoes_na_prosa": 1
+      },
+      {
+        "sigla": "IS",
+        "expansao": "imposto do selo",
+        "bloco": 35,
+        "seletor": "[data-registo-bloco=\"35\"]",
+        "contexto": "imposto do selo (o IS",
+        "expansoes_na_prosa": 1
+      },
+      {
+        "sigla": "PRR",
+        "expansao": "Plano de Recuperação e Resiliência",
+        "bloco": 35,
+        "seletor": "[data-registo-bloco=\"35\"]",
+        "contexto": "Plano de Recuperação e Resiliência (o PRR",
+        "expansoes_na_prosa": 1
+      },
+      {
+        "sigla": "CIRS",
+        "expansao": "Código do IRS",
+        "bloco": 43,
+        "seletor": "[data-registo-bloco=\"43\"]",
+        "contexto": "Código do IRS (o CIRS",
+        "expansoes_na_prosa": 1
+      },
+      {
+        "sigla": "RTP",
+        "expansao": "Rádio e Televisão de Portugal",
+        "bloco": 46,
+        "seletor": "[data-registo-bloco=\"46\"]",
+        "contexto": "Rádio e Televisão de Portugal (a RTP",
+        "expansoes_na_prosa": 1
+      }
+    ],
+    "en": [
+      {
+        "sigla": "INE",
+        "expansao": "National Statistics Institute",
+        "bloco": 1,
+        "seletor": "[data-registo-bloco=\"1\"]",
+        "contexto": "National Statistics Institute's (the INE",
+        "expansoes_na_prosa": 1
+      },
+      {
+        "sigla": "IVA",
+        "expansao": "value added tax",
+        "bloco": 5,
+        "seletor": "[data-registo-bloco=\"5\"]",
+        "contexto": "value added tax (VAT, IVA",
+        "expansoes_na_prosa": 1
+      },
+      {
+        "sigla": "VAT",
+        "expansao": "value added tax",
+        "bloco": 5,
+        "seletor": "[data-registo-bloco=\"5\"]",
+        "contexto": "value added tax (VAT",
+        "expansoes_na_prosa": 1
+      },
+      {
+        "sigla": "IRS",
+        "expansao": "personal income tax",
+        "bloco": 5,
+        "seletor": "[data-registo-bloco=\"5\"]",
+        "contexto": "personal income tax (IRS",
+        "expansoes_na_prosa": 1
+      },
+      {
+        "sigla": "PSP",
+        "expansao": "Public Security Police",
+        "bloco": 12,
+        "seletor": "[data-registo-bloco=\"12\"]",
+        "contexto": "Public Security Police (PSP",
+        "expansoes_na_prosa": 1
+      },
+      {
+        "sigla": "IGAI",
+        "expansao": "Inspectorate-General of Home Affairs",
+        "bloco": 12,
+        "seletor": "[data-registo-bloco=\"12\"]",
+        "contexto": "Inspectorate-General of Home Affairs (IGAI",
+        "expansoes_na_prosa": 1
+      },
+      {
+        "sigla": "CGTP",
+        "expansao": "General Confederation of Portuguese Workers",
+        "bloco": 46,
+        "seletor": "[data-registo-bloco=\"46\"]",
+        "contexto": "General Confederation of Portuguese Workers (CGTP",
+        "expansoes_na_prosa": 1
+      },
+      {
+        "sigla": "PS",
+        "expansao": "Socialist Party",
+        "bloco": 30,
+        "seletor": "[data-registo-bloco=\"30\"]",
+        "contexto": "Socialist Party (PS",
+        "expansoes_na_prosa": 1
+      },
+      {
+        "sigla": "PCP",
+        "expansao": "Portuguese Communist Party",
+        "bloco": 38,
+        "seletor": "[data-registo-bloco=\"38\"]",
+        "contexto": "Portuguese Communist Party (PCP",
+        "expansoes_na_prosa": 1
+      },
+      {
+        "sigla": "BE",
+        "expansao": "Left Bloc",
+        "bloco": 13,
+        "seletor": "[data-registo-bloco=\"13\"]",
+        "contexto": "Left Bloc, BE",
+        "expansoes_na_prosa": 1
+      },
+      {
+        "sigla": "PAN",
+        "expansao": "People-Animals-Nature",
+        "bloco": 38,
+        "seletor": "[data-registo-bloco=\"38\"]",
+        "contexto": "People-Animals-Nature (PAN",
+        "expansoes_na_prosa": 1
+      },
+      {
+        "sigla": "JPP",
+        "expansao": "Juntos pelo Povo",
+        "bloco": 38,
+        "seletor": "[data-registo-bloco=\"38\"]",
+        "contexto": "Juntos pelo Povo (JPP",
+        "expansoes_na_prosa": 1
+      },
+      {
+        "sigla": "IL",
+        "expansao": "Iniciativa Liberal",
+        "bloco": 5,
+        "seletor": "[data-registo-bloco=\"5\"]",
+        "contexto": "Iniciativa Liberal (IL",
+        "expansoes_na_prosa": 1
+      },
+      {
+        "sigla": "PSD",
+        "expansao": "Social Democratic Party",
+        "bloco": 5,
+        "seletor": "[data-registo-bloco=\"5\"]",
+        "contexto": "Social Democratic Party (PSD",
+        "expansoes_na_prosa": 1
+      },
+      {
+        "sigla": "CDS-PP",
+        "expansao": "CDS-Partido Popular",
+        "bloco": 5,
+        "seletor": "[data-registo-bloco=\"5\"]",
+        "contexto": "CDS-Partido Popular (CDS-PP",
+        "expansoes_na_prosa": 1
+      },
+      {
+        "sigla": "FEH",
+        "expansao": "Housing Emergency Fund",
+        "bloco": 38,
+        "seletor": "[data-registo-bloco=\"38\"]",
+        "contexto": "Housing Emergency Fund (FEH",
+        "expansoes_na_prosa": 1
+      },
+      {
+        "sigla": "IMT",
+        "expansao": "municipal property transfer tax",
+        "bloco": 35,
+        "seletor": "[data-registo-bloco=\"35\"]",
+        "contexto": "municipal property transfer tax (IMT",
+        "expansoes_na_prosa": 1
+      },
+      {
+        "sigla": "IS",
+        "expansao": "stamp duty",
+        "bloco": 35,
+        "seletor": "[data-registo-bloco=\"35\"]",
+        "contexto": "stamp duty (IS",
+        "expansoes_na_prosa": 1
+      },
+      {
+        "sigla": "PRR",
+        "expansao": "Recovery and Resilience Plan",
+        "bloco": 35,
+        "seletor": "[data-registo-bloco=\"35\"]",
+        "contexto": "Recovery and Resilience Plan (PRR",
+        "expansoes_na_prosa": 1
+      },
+      {
+        "sigla": "CIRS",
+        "expansao": "income tax code",
+        "bloco": 43,
+        "seletor": "[data-registo-bloco=\"43\"]",
+        "contexto": "income tax code (CIRS",
+        "expansoes_na_prosa": 1
+      },
+      {
+        "sigla": "RTP",
+        "expansao": "Rádio e Televisão de Portugal",
+        "bloco": 46,
+        "seletor": "[data-registo-bloco=\"46\"]",
+        "contexto": "Rádio e Televisão de Portugal (RTP",
+        "expansoes_na_prosa": 1
+      }
+    ]
+  },
+  "plantas": [
+    {
+      "lingua": "pt",
+      "planta": "expansão omitida",
+      "vermelho": 1,
+      "verde": 0,
+      "mordida": "pt: INE não expandida ao primeiro uso"
+    },
+    {
+      "lingua": "pt",
+      "planta": "expansão repetida",
+      "vermelho": 1,
+      "verde": 0,
+      "mordida": "pt: expansão INE repetida ou sem a forma declarada"
+    },
+    {
+      "lingua": "en",
+      "planta": "expansão omitida",
+      "vermelho": 1,
+      "verde": 0,
+      "mordida": "en: INE não expandida ao primeiro uso"
+    },
+    {
+      "lingua": "en",
+      "planta": "expansão repetida",
+      "vermelho": 1,
+      "verde": 0,
+      "mordida": "en: expansão INE repetida ou sem a forma declarada"
+    }
+  ]
+}

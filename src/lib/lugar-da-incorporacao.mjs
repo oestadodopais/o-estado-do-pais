@@ -7,6 +7,7 @@ import { WORKS } from '../data/studies.mjs';
 import { municipioPorSlug } from '../data/municipios.mjs';
 import { LUGAR_DECLARADO_DAS_LINHAS } from '../data/lugar-das-linhas.mjs';
 import { nomeDoPais } from './series.mjs';
+import { LUGARES_HB1 } from '../data/lugares-hb1.mjs';
 
 /** @param {string} slug */
 function nomeDaRegiao(slug) {
@@ -35,6 +36,7 @@ const EXCECOES = {
 
   'smi-espanha-2026': { pt: 'Espanha', en: 'Spain' },
   'rmmg-2026': { pt: 'Continente', en: 'Mainland Portugal' },
+  ...LUGARES_HB1,
   'alentejo-central-poder-de-compra-2023': { pt: 'Alentejo Central', en: 'Alentejo Central' },
   'municipios-acores-caop-2025': nomeDaRegiao('acores'),
   'municipios-madeira-caop-2025': nomeDaRegiao('madeira'),
@@ -70,6 +72,17 @@ export function lugarDaIncorporacao(c, lang) {
   let url;
   try { url = new URL(c.source_url); } catch { /* Uma fórmula não tem URL. */ }
   const geos = url?.searchParams.getAll('geo') ?? [];
+  // HB1: o pedido contém vários países; a célula selada identifica o observado.
+  if (url?.hostname === 'ec.europa.eu' && url.pathname.includes('/eurostat/')) {
+    let geo;
+    try { geo = JSON.parse(c.excerpt).coordinates?.geo; } catch { /* Não é uma célula JSON. */ }
+    if (geo) {
+      const localizada = c.document?.locator?.match(/(?:^|;\s*)geo=([^;]+)(?:;|$)/)?.[1];
+      if (localizada !== geo || (geos.length && !geos.includes(geo)))
+        throw Error(`ER1 lugar: a coordenada de ${c.id} diverge do localizador ou do pedido.`);
+      return { nome: geo === 'EU27_2020' ? (lang === 'pt' ? 'União Europeia' : 'European Union') : nomeDoPais(geo, lang) };
+    }
+  }
   if (geos.length === 1) {
     if (geos[0] === 'EU27_2020') return { nome: lang === 'pt' ? 'União Europeia' : 'European Union' };
     return { nome: nomeDoPais(geos[0], lang) };

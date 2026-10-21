@@ -60,7 +60,15 @@ for(let i=1;i<=10;i++){
 }
 assert.equal(valorNaLingua(linhas.get('nato-defesa-portugal-pib-2026'),'en'),'2,10');
 assert.equal(valorNaLingua(linhas.get('nato-defesa-portugal-pib-2026'),'pt'),'2,10');
-for(const [id,r] of linhas)assert.equal(valorNaLingua(r,'en'),String(r.value));
+for(const [id,r] of linhas)for(const lang of ['pt','en']){
+ const original=String(r.value),rendido=valorNaLingua(r,lang);
+ // O calendário usa a grafia da casa, conservando dia, mês e ano.
+ // Os restantes valores mantêm a identidade textual, incluindo a precisão.
+ if(r.unit==='data'&&/^\d{2}\/\d{2}\/\d{4}$/.test(original)){
+  assert.match(rendido,/^\d{2}\.\d{2}\.\d{4}$/,`${id}: grafia da data em ${lang}`);
+  assert.deepEqual(rendido.split('.'),original.split('/'),`${id}: campos da data em ${lang}`);
+ }else assert.equal(rendido,original,`${id}: valor em ${lang}`);
+}
 if(!process.argv.includes('--declaracao')){
  for(const lang of ['pt','en']){
   const p=path.join(dist,lang==='pt'?'explicacoes':'en/explainers',e.slug,'index.html'),root=parse(fs.readFileSync(p,'utf8'));

@@ -1,0 +1,38 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "der-hab-preco-rendimento-pt-vs-eu-2024"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "38,6"
+unit: "pontos de índice"
+measure: "Diferença: Rácio padronizado entre preços da habitação e rendimento, índice, 2015 igual a cem, Portugal, 2024"
+measure_en: "Difference: Rácio padronizado entre preços da habitação e rendimento, índice, 2015 igual a cem, Portugal, 2024"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: null
+document: null
+source_url: null
+access_date: null
+reference_date: "2024"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: null
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: "Rácio padronizado entre preços da habitação e rendimento, índice, 2015 igual a cem, Portugal, 2024 (144,34 índice do rácio preço-rendimento, 2015 igual a cem; Eurostat, tipsho60) menos Rácio padronizado entre preços da habitação e rendimento, índice, 2015 igual a cem, União Europeia, 2024 (105,72 índice do rácio preço-rendimento, 2015 igual a cem; Eurostat, tipsho60), arredondado a uma casa decimal: 38,6."
+derivation_en: "Standardised house price-to-income ratio, Price-to-income ratio, index 2015=100, Portugal, 2024 (144.34 price-to-income ratio index, 2015 equal to one hundred; Eurostat, tipsho60) minus Standardised house price-to-income ratio, Price-to-income ratio, index 2015=100, European Union - 27 countries (from 2020), 2024 (105.72 price-to-income ratio index, 2015 equal to one hundred; Eurostat, tipsho60), rounded to one decimal place: 38.6."
+derived_from:
+  - "hab-tipsho60-a-ptir-i15-pt-2024"
+  - "hab-tipsho60-a-ptir-i15-eu27_2020-2024"
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: "round ( hab-tipsho60-a-ptir-i15-pt-2024 - hab-tipsho60-a-ptir-i15-eu27_2020-2024 , 1 )"
+
+study: "a-casa-em-portugal-e-na-europa"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[derivation do motor] {'components': ['hab-tipsho60-a-ptir-i15-pt-2024', 'hab-tipsho60-a-ptir-i15-eu27_2020-2024'], 'formula': 'hab-tipsho60-a-ptir-i15-pt-2024 - hab-tipsho60-a-ptir-i15-eu27_2020-2024', 'calculation': 'hab-tipsho60-a-ptir-i15-pt-2024 = 144.34; hab-tipsho60-a-ptir-i15-eu27_2020-2024 = 105.72; resultado = 38.62', 'rounding_places': 1} · Cruzado de ResearchHub content/23 Habitacao · der-hab-preco-rendimento-pt-vs-eu-2024."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

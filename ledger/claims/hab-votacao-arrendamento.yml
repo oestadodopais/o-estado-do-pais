@@ -1,0 +1,50 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "hab-votacao-arrendamento"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "2026-09-30 | Votação na generalidade Votação em 2026-09-30 na Reunião Plenária n.º 7 Aprovado Contra:PS, L, PCP, BE, PAN, JPP Abstenção:CH A Favor: PSD, IL, CDS-PP"
+unit: "texto"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Proposta de Lei 103/XVII/1 Autoriza o Governo a alterar o Novo Regime do Arrendamento Urbano, aprovado pela Lei n.º 6/2006, de 27 de fevereiro, o Código Civil, o Código de Processo Civil, o Decreto-Lei n.º 157/2006, de 8 de agosto, que aprova o regime jurídico das obras em prédios arrendados, e legislação conexa"
+name_source: "Histórico da iniciativa; votação na generalidade, reunião, resultado e votos por partido"
+measure: "Proposta de Lei 103/XVII/1 Autoriza o Governo a alterar o Novo Regime do Arrendamento Urbano, aprovado pela Lei n.º 6/2006, de 27 de fevereiro, o Código Civil, o Código de Processo Civil, o Decreto-Lei n.º 157/2006, de 8 de agosto, que aprova o regime jurídico das obras em prédios arrendados, e legislação conexa"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Assembleia da República"
+document:
+  title: "Proposta de Lei 103/XVII/1 Autoriza o Governo a alterar o Novo Regime do Arrendamento Urbano, aprovado pela Lei n.º 6/2006, de 27 de fevereiro, o Código Civil, o Código de Processo Civil, o Decreto-Lei n.º 157/2006, de 8 de agosto, que aprova o regime jurídico das obras em prédios arrendados, e legislação conexa"
+  edition: "2026-09-30"
+  locator: "Histórico da iniciativa; votação na generalidade, reunião, resultado e votos por partido"
+  source_sha256: "f45c11ca5b327ba931433166a6a739dd9d0cadb039344d78b581cc08be8afba9"
+  kind: "html"
+source_url: "https://www.parlamento.pt/ActividadeParlamentar/Paginas/DetalheIniciativa.aspx?BID=377135"
+access_date: "2026-10-19"
+published_at: "2026-09-30"
+reference_date: "2026-09-30"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "2026-09-30 | Votação na generalidade Votação em 2026-09-30 na Reunião Plenária n.º 7 Aprovado Contra:PS, L, PCP, BE, PAN, JPP Abstenção:CH A Favor: PSD, IL, CDS-PP"
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+# A quem o valor é creditado. Lista de entidades, ou campo nenhum.
+attributed_to:
+  - "Assembleia da República"
+
+study: "a-casa-em-portugal-e-na-europa"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Registo parlamentar; não se atribui a decisão coletiva a uma pessoa. · Cruzado de ResearchHub content/23 Habitacao · hab-votacao-arrendamento."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

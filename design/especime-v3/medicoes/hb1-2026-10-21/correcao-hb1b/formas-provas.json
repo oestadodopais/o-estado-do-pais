@@ -1,0 +1,112 @@
+{
+  "hab-imprensa-manif-euronews": {
+    "excerpt": "Cinco cidades de Portugal vão acolher, este sábado, uma manifestação contra a crise na habitação, organizada por uma plataforma que reúne cerca de 40 organizações da sociedade civil.",
+    "reference_date": "2026-10-10",
+    "document": {
+      "title": "Plataforma “Não dá mais” organiza protestos por todo o país devido à crise na habitação",
+      "edition": "2026-10-10",
+      "kind": "html",
+      "locator": "HTML; início literal único",
+      "source_sha256": "2d64b9e9cd6983b0bdd12c971154583773825299cca67672966ce73277049ef6",
+      "file": "content/23 Habitacao/source/hb1-euronews.html"
+    },
+    "document_checks": {
+      "title": {
+        "status": "conferido",
+        "text": "Plataforma “Não dá mais” organiza protestos por todo o país devido à crise na habitação",
+        "locator": null
+      },
+      "published_at": {
+        "status": "conferido",
+        "text": "10/10/2026",
+        "locator": null
+      },
+      "reference_date": {
+        "status": "conferido",
+        "text": "10/10/2026",
+        "locator": null
+      }
+    }
+  },
+  "hab-imprensa-tendas": {
+    "excerpt": "Foram retiradas, ao início da manhã desta segunda-feira, as tendas de dezenas de pessoas que permaneciam acampadas na Praça D. João I, no centro do Porto, em protesto contra o aumento do custo de vida e a crise da habitação.O acampamento foi promovido pelo movimento \"Não consegues pagar renda? Traz tenda\". O acampamento mantinha-se no local desde sábado, dia em que cerca de 1.500 pessoas se manifestaram no Porto contra o agravamento do custo de vida.",
+    "reference_date": "2026-10-12",
+    "document": {
+      "title": "\"Não consegues pagar renda? Traz tenda\". Polícia desmonta acampamento no Porto",
+      "edition": "2026-10-12",
+      "kind": "html",
+      "locator": "HTML; início literal único",
+      "source_sha256": "c67d11f5413d705e61f63614ad523cf7103800551e9a02c75735ba2409955b81",
+      "file": "content/23 Habitacao/source/hb1-rtp-tendas.html"
+    },
+    "document_checks": {
+      "title": {
+        "status": "conferido",
+        "text": "\"Não consegues pagar renda? Traz tenda\". Polícia desmonta acampamento no Porto",
+        "locator": null
+      },
+      "published_at": {
+        "status": "conferido",
+        "text": "2026-10-12T12:40:44Z"
+      },
+      "reference_date": {
+        "status": "conferido",
+        "text": "2026-10-12T12:40:44Z"
+      }
+    }
+  },
+  "hab-eurostat-privacao-severa-definicao": {
+    "excerpt": "Severe housing deprivation rate is defined as the percentage of population living in the dwelling which is considered as overcrowded, while also exhibiting at least one of the housing deprivation measures. Housing deprivation is a measure of poor amenities and is calculated by referring to those households with a leaking roof, no bath/shower and no indoor toilet, or a dwelling considered too dark.",
+    "reference_date": "2021-04-13",
+    "document": {
+      "title": "Glossary:Severe housing deprivation rate",
+      "edition": "2021-04-13",
+      "kind": "html",
+      "locator": "Glossário, dois parágrafos da definição",
+      "source_sha256": "bf8da5fc3936c9dbee32f1a2aa32cc3c924385f42c295bd6f4fa2993a867e9de",
+      "file": "content/23 Habitacao/source/eurostat/hb1b-severe-housing-deprivation.html"
+    },
+    "document_checks": {
+      "title": {
+        "status": "conferido",
+        "text": "Glossary:Severe housing deprivation rate",
+        "locator": null
+      },
+      "published_at": {
+        "status": "conferido",
+        "text": "2021-04-13T20:01:11+00:00"
+      },
+      "reference_date": {
+        "status": "conferido",
+        "text": "2021-04-13T20:01:11+00:00"
+      }
+    }
+  },
+  "hab-votacao-arrendamento": {
+    "excerpt": "2026-09-30 | Votação na generalidade Votação em 2026-09-30 na Reunião Plenária n.º 7 Aprovado Contra:PS, L, PCP, BE, PAN, JPP Abstenção:CH A Favor: PSD, IL, CDS-PP",
+    "reference_date": "2026-09-30",
+    "document": {
+      "title": "Proposta de Lei 103/XVII/1 Autoriza o Governo a alterar o Novo Regime do Arrendamento Urbano, aprovado pela Lei n.º 6/2006, de 27 de fevereiro, o Código Civil, o Código de Processo Civil, o Decreto-Lei n.º 157/2006, de 8 de agosto, que aprova o regime jurídico das obras em prédios arrendados, e legislação conexa",
+      "edition": "2026-09-30",
+      "kind": "html",
+      "locator": "Histórico da iniciativa; votação na generalidade, reunião, resultado e votos por partido",
+      "source_sha256": "f45c11ca5b327ba931433166a6a739dd9d0cadb039344d78b581cc08be8afba9",
+      "file": "content/23 Habitacao/source/parlamento-pt-7.html"
+    },
+    "document_checks": {
+      "title": {
+        "status": "conferido",
+        "text": "Proposta de Lei 103/XVII/1 Autoriza o Governo a alterar o Novo Regime do Arrendamento Urbano, aprovado pela Lei n.º 6/2006, de 27 de fevereiro, o Código Civil, o Código de Processo Civil, o Decreto-Lei n.º 157/2006, de 8 de agosto, que aprova o regime jurídico das obras em prédios arrendados, e legislação conexa",
+        "locator": null
+      },
+      "published_at": {
+        "status": "conferido",
+        "text": "Votação em 2026-09-30 na Reunião Plenária n.º 7"
+      },
+      "reference_date": {
+        "status": "conferido",
+        "text": "Votação em 2026-09-30 na Reunião Plenária n.º 7"
+      }
+    }
+  }
+}

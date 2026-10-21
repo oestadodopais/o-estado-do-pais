@@ -1,0 +1,38 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "der-hab-preco-lisboa-vs-portugal"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "2,3"
+unit: "vezes"
+measure: "Lisboa face a Portugal"
+measure_en: "Lisbon relative to Portugal"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: null
+document: null
+source_url: null
+access_date: null
+reference_date: "2026-T1"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: null
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: "preços da habitação, Lisboa, 1.º trimestre de 2026 (5 292 euros por metro quadrado; INE) a dividir por preço mediano dos 35 953 alojamentos familiares transacionados em Portugal, 1.º trimestre de 2026 (2 337 euros por metro quadrado; INE), arredondado a uma casa decimal: 2,3."
+derivation_en: "house prices, Lisbon, quarter 1 of 2026 (5292 euros per square metre; INE) divided by median price of the 35 953 family dwellings transacted in Portugal, quarter 1 of 2026 (2337 euros per square metre; INE), rounded to one decimal place: 2.3."
+derived_from:
+  - "hab-ine-preco-lisboa"
+  - "hab-ine-preco-mediano"
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: "round ( hab-ine-preco-lisboa / hab-ine-preco-mediano , 1 )"
+
+study: "a-casa-em-portugal-e-na-europa"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[derivation do motor] {'components': ['hab-ine-preco-lisboa', 'hab-ine-preco-mediano'], 'formula': 'hab-ine-preco-lisboa / hab-ine-preco-mediano', 'calculation': 'hab-ine-preco-lisboa = 5292; hab-ine-preco-mediano = 2337; resultado = 2.264441591784338896020539153', 'rounding_places': 1} · Cruzado de ResearchHub content/23 Habitacao · der-hab-preco-lisboa-vs-portugal."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

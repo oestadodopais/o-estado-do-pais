@@ -1,0 +1,16 @@
+[
+  {
+    "id": "hab-ine-calendario-juro",
+    "campos": [
+      "document.edition"
+    ],
+    "razao": "A página do calendário não declara a data da própria edição; as datas no corpo são as divulgações previstas."
+  },
+  {
+    "id": "hab-ine-calendario-precos-locais",
+    "campos": [
+      "document.edition"
+    ],
+    "razao": "A página do calendário não declara a data da própria edição; as datas no corpo são as divulgações previstas."
+  }
+]

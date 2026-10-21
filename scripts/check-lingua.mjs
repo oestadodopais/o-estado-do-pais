@@ -137,6 +137,7 @@ import {
 import { WORKS, linguaDoTitulo } from '../src/data/studies.mjs';
 import { matchPath } from '../src/lib/routes.mjs';
 import { conferirLinguaDasOrigens } from './lingua-das-origens.mjs';
+import { conferirRotulosDaLingua } from './rotulos-da-lingua.mjs';
 import { feitioDeLei } from '../src/i18n/nomes-de-lei.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -252,33 +253,14 @@ for (const t of Object.keys(LINGUA_DOS_TITULOS)) {
 /* ==================================================================== L2b · */
 /* os rótulos da fonte do livro-razão, contra a declaração de língua          */
 
-const rotulosDoLivro = new Map();
+const {rotulos:rotulosDoLivro,erros:errosDosRotulos}=conferirRotulosDaLingua(claims,LINGUA_DOS_ROTULOS);
+erros.push(...errosDosRotulos);
+/* EO1: name nomeia a medida e name_en guarda o nome paralelo inglês; source_label
+   conserva o rótulo original no motor e na prova. A língua de name_en é inglesa. */
 for (const c of claims) {
-  for (const campo of ['name', 'name_en']) {
-    const n = c[campo];
-    if (n === null || n === undefined || String(n) === '') continue;
-    const r = String(n);
-    rotulosDoLivro.set(r, (rotulosDoLivro.get(r) ?? 0) + 1);
-    if (campo === 'name_en' && LINGUA_DOS_ROTULOS[r] !== 'en') erros.push(`${c.id}: name_en não tem língua inglesa declarada.`);
-  }
-}
-for (const [r] of rotulosDoLivro) {
-  if (!Object.prototype.hasOwnProperty.call(LINGUA_DOS_ROTULOS, r)) {
-    erros.push(
-      `o rótulo da fonte «${r.slice(0, 90)}» (${rotulosDoLivro.get(r)} linha(s)) não tem língua ` +
-        `declarada em src/i18n/lingua-dos-titulos.mjs.\n` +
-        `      A língua de cada cadeia é explícita. No EO1, name nomeia a medida e name_en ` +
-        `guarda o nome paralelo inglês; source_label conserva o rótulo original no motor e na prova.`,
-    );
-  }
-}
-for (const r of Object.keys(LINGUA_DOS_ROTULOS)) {
-  if (!rotulosDoLivro.has(r)) {
-    erros.push(
-      `a declaração de língua nomeia o rótulo «${r.slice(0, 90)}», que nenhuma linha do ` +
-        `livro-razão traz. A tabela declara o que existe.`,
-    );
-  }
+  const n = c.name_en;
+  if (n === null || n === undefined || String(n) === '') continue;
+  if (LINGUA_DOS_ROTULOS[String(n)] !== 'en') erros.push(`${c.id}: name_en não tem língua inglesa declarada.`);
 }
 
 /* ==================================================================== L2c · */

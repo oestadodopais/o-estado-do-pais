@@ -1,0 +1,51 @@
+
+> o-estado-do-pais@0.1.0 check:lingua
+> node scripts/check-lingua.mjs
+
+
+[31m  PORTÃO DA LÍNGUA · 99 problema(s)
+[0m
+[31m    · [0ma unidade «pontos percentuais do índice» (4 linha(s)) não tem entrada em src/i18n/unidades.mjs.
+      Ou entra no dicionário, com o facto de dicionário ou o inglês que a casa já escreve para a mesma coisa,
+      ou entra em UNIDADES_EM_PORTUGUES com a razão pela qual fica em português. Uma unidade nova não se traduz sozinha.
+[31m    · [0ma declaração de língua nomeia o rótulo «House price index, deflated, Annual average index, 2015=100, Portugal, 2025», que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+[31m    · [0ma declaração de língua nomeia o rótulo «House price index, deflated, Annual average index, 2015=100, European Union - 27 countries», que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+[31m    · [0ma declaração de língua nomeia o rótulo «House price index, Annual rate of change, Portugal, quarter 2 of 2026», que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+[31m    · [0ma declaração de língua nomeia o rótulo «House price index, Annual rate of change, European Union - 27 countries (from 2020), quart», que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+[31m    · [0ma declaração de língua nomeia o rótulo «Standardised house price-to-income ratio, Price-to-income ratio, index 2015=100, Portugal,», que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+[31m    · [0ma declaração de língua nomeia o rótulo «Standardised house price-to-income ratio, Price-to-income ratio, index 2015=100, European », que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+[31m    · [0ma declaração de língua nomeia o rótulo «Share of housing costs in disposable household income, Portugal, 2025», que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+[31m    · [0ma declaração de língua nomeia o rótulo «Share of housing costs in disposable household income, European Union - 27 countries (from», que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+[31m    · [0ma declaração de língua nomeia o rótulo «Housing cost overburden rate, Total, Portugal, 2025», que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+[31m    · [0ma declaração de língua nomeia o rótulo «Housing cost overburden rate, Total, European Union - 27 countries (from 2020), 2025», que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+[31m    · [0ma declaração de língua nomeia o rótulo «Distribution of population by tenure status, Owner, with mortgage or loan, Portugal, 2025», que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+[31m    · [0ma declaração de língua nomeia o rótulo «Distribution of population by tenure status, Owner, no outstanding mortgage or housing loa», que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+[31m    · [0ma declaração de língua nomeia o rótulo «Housing cost overburden rate, Tenant, rent at market price, Portugal, 2020», que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+[31m    · [0ma declaração de língua nomeia o rótulo «Estimated average age of leaving the parental household, Portugal, 2025», que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+[31m    · [0ma declaração de língua nomeia o rótulo «Estimated average age of leaving the parental household, European Union - 27 countries (fr», que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+[31m    · [0ma declaração de língua nomeia o rótulo «Persons living with their parents or contributing/benefiting from the household income, Fr», que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+[31m    · [0ma declaração de língua nomeia o rótulo «Persons living with their parents or contributing/benefiting from the household income, Fr», que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+[31m    · [0ma declaração de língua nomeia o rótulo «Harmonised index of consumer prices, actual rentals for housing, Annual rate of change, Po», que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+[31m    · [0ma declaração de língua nomeia o rótulo «Harmonised index of consumer prices, actual rentals for housing, Annual rate of change, Eu», que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+[31m    · [0ma declaração de língua nomeia o rótulo «Housing cost overburden rate, Total, Portugal, 2015», que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+[31m    · [0ma declaração de língua nomeia o rótulo «Housing cost overburden rate, Tenant, rent at market price, Portugal, 2025», que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+[31m    · [0ma declaração de língua nomeia o rótulo «Distribution of population by tenure status, Tenant, rent at market price, Portugal, 2025», que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+[31m    · [0ma declaração de língua nomeia o rótulo «Estimated average age of leaving the parental household, Portugal, 2015», que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+[31m    · [0ma declaração de língua nomeia o rótulo «Dwellings permitted, Thousand, Portugal, 2025», que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+[31m    · [0ma declaração de língua nomeia o rótulo «Population on one January, Number, Portugal, 2025», que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+[31m    · [0ma declaração de língua nomeia o rótulo «Dwellings permitted, Thousand, European Union - 27 countries (from 2020), 2025», que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+[31m    · [0ma declaração de língua nomeia o rótulo «Population on one January, Number, European Union - 27 countries (from 2020), 2025», que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+[31m    · [0ma declaração de língua nomeia o rótulo «House price index, Quarterly index, 2015=100, Portugal, quarter 2 of 2026», que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+[31m    · [0ma declaração de língua nomeia o rótulo «House price index, Quarterly index, 2015=100, European Union - 27 countries (from 2020), q», que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+[31m    · [0ma declaração de língua nomeia o rótulo «House price index, Quarterly index, 2015=100, Finland, quarter 2 of 2026», que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+[31m    · [0ma declaração de língua nomeia o rótulo «House price index, Quarterly index, 2015=100, Hungary, quarter 2 of 2026», que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+[31m    · [0ma declaração de língua nomeia o rótulo «House price index, Annual rate of change, Finland, quarter 2 of 2026», que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+[31m    · [0ma declaração de língua nomeia o rótulo «House price index, deflated, Annual average index, 2015=100, Finland, 2025», que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+[31m    · [0ma declaração de língua nomeia o rótulo «House price index, deflated, Annual average index, 2015=100, Portugal, 2020», que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+[31m    · [0ma declaração de língua nomeia o rótulo «House price index, deflated, Annual average rate of change, Portugal, 2025», que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+[31m    · [0ma declaração de língua nomeia o rótulo «House price index, deflated, Annual average rate of change, European Union - 27 countries », que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+[31m    · [0ma declaração de língua nomeia o rótulo «Standardised house price-to-income ratio, Price-to-income ratio, index 2015=100, Romania, », que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+[31m    · [0ma declaração de língua nomeia o rótulo «Standardised house price-to-income ratio, Price-to-income ratio, index 2015=100, Portugal,», que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+[31m    · [0ma declaração de língua nomeia o rótulo «Standardised house price-to-income ratio, Price-to-income ratio relative to long-term aver», que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+[90m    … e mais 59[0m
+

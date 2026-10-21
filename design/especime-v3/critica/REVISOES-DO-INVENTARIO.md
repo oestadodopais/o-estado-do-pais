@@ -878,3 +878,14 @@ Seis declarações substituídas: comparação e opinião da Saúde nas duas edi
 | bloco | mudança | estado | nota |
 |---|---|---|---|
 | eo1-e | Uma declaração inglesa substituída; a forma anterior fica retirada com razão | por ler | Codex gpt-6-astra, 21.10.2026: a sinopse usa as palavras da conclusão. A conferência contra o HTML pertence aos portões desta passagem; a leitura cruzada pertence à direção. |
+## HB1: estudo da habitação
+
+| bloco | mudança | estado | nota |
+|---|---|---|---|
+| hb1 | Sinopse com os índices citados, rótulos do estudo e da área, contagens do livro e retirada das cadeias substituídas | por ler | Construção conferida nos tokens e no HTML; a leitura a frio pertence à passagem seguinte. |
+
+HB1-b, continuação de 20.10.2026: a construção com o estudo ligado à área retirou os três rótulos reativados a partir da construção anterior. Voltaram a retirados, com a razão. A sinopse inglesa diz «the index of housing prices» para distinguir a medida da autorreferência proibida. Estado da leitura a frio: por ler.
+
+HB1-b, correção do diagnóstico: os três textos não eram rótulos rendidos; apareciam dentro das duas definições completas de edições. Restabeleceram-se as retiradas e razões originais. A sentinela admite apenas essas definições exatas, com plantas que distinguem as frases intactas, os rótulos isolados e as definições alteradas. A mudança de estado anterior foi um diagnóstico errado.
+
+| hb1b | Frases mandatadas da habitação, contagens medidas, estado em preparação e reposição das edições legadas de Évora | por ler | Extração do HTML da cabeça 7cc3543914edd0e9172f6409b12298e02bdd2a64; revisão do diff antes da aterragem. |

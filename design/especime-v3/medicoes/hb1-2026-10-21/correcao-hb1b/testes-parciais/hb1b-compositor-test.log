@@ -1,0 +1,44 @@
+COMPOR LIVROS en 2 unidades, 4 provas
+COMPOR LIVROS 2 linhas copiadas ESCRITO
+{
+  "codigo": 0,
+  "plantas": [
+    {
+      "planta": "dia inglês",
+      "vermelho": 1,
+      "verde": 0,
+      "mordida": "documento.en.md.tmpl:4: literal sem linha: 29 September 2026"
+    },
+    {
+      "planta": "mês inglês",
+      "vermelho": 1,
+      "verde": 0,
+      "mordida": "documento.en.md.tmpl:4: literal sem linha: 19 September"
+    },
+    {
+      "planta": "intervalo inglês",
+      "vermelho": 1,
+      "verde": 0,
+      "mordida": "documento.en.md.tmpl:4: literal sem linha: 27 and 28 and 29 October"
+    },
+    {
+      "planta": "data SITE published_at",
+      "vermelho": 1,
+      "verde": 0,
+      "mordida": "documento.en.md.tmpl:4: literal sem linha: 21 October"
+    },
+    {
+      "planta": "atribuição inglesa alterada",
+      "vermelho": 1,
+      "verde": 0,
+      "mordida": "linha de origem alterada: voto"
+    }
+  ],
+  "positivos": [
+    "cita silenciosa com prova",
+    "numeração e negrito",
+    "data do calendário PT/EN",
+    "atribuição inglesa e fallback"
+  ]
+}
+COMPOR HB1-b: PASS 20 conferências

@@ -1,0 +1,38 @@
+{
+  "codigo": 0,
+  "por_edicao": {
+    "regex_anterior": 185,
+    "referencias_numericas": 183,
+    "datas_documentais": 2
+  },
+  "plantas": [
+    {
+      "lingua": "pt",
+      "planta": "dia adulterado",
+      "vermelho": 1,
+      "verde": 0,
+      "mordida": "data HB1 divergente da origem"
+    },
+    {
+      "lingua": "en",
+      "planta": "dia adulterado",
+      "vermelho": 1,
+      "verde": 0,
+      "mordida": "data HB1 divergente da origem"
+    }
+  ],
+  "diagnostico": "A regex de referências aceita algarismos e pontos sem limitar o número de separadores. A formatação DD.MM.YYYY fez as duas datas serem contadas como figuras nos testes, apesar de o exportador corretamente não as contar. Não foi uma perda de números na prosa.",
+  "datas": [
+    {
+      "id": "hab-ine-calendario-juro",
+      "valor_origem": "21/10/2026",
+      "impresso": "21.10.2026"
+    },
+    {
+      "id": "hab-ine-calendario-precos-locais",
+      "valor_origem": "23/10/2026",
+      "impresso": "23.10.2026"
+    }
+  ],
+  "correcao": "Contagem esperada partilhada pelos dois testes; apenas as duas linhas documentais HB1 são dispensadas, após validar a data da origem e a igualdade do impresso. Todas as outras referências continuam sujeitas à contagem anterior."
+}

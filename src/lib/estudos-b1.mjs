@@ -1,14 +1,14 @@
 import { WORKS, subjectLabel } from '../data/studies.mjs';
 import { leituraDe } from '../data/leituras.mjs';
 import { DOMINIOS } from '../data/dominios.mjs';
-import { dataDaEdicaoNoRepositorio } from './datas-do-repositorio.mjs';
+import { dataPublicacao } from './publicacao.mjs';
 import { routePath } from './routes.mjs';
 import { getClaim } from './ledger.mjs';
 
 /** @param {typeof WORKS[number]} work @param {'pt'|'en'} lang */
 export function fichaDoEstudo(work, lang) {
   const edicao = work.editions.find(e => e.lang === lang) ?? work.editions[0];
-  const data = dataDaEdicaoNoRepositorio(work.slug, edicao.lang);
+  const data = dataPublicacao(work, edicao);
   const tema = DOMINIOS.find(d => d.slug === work.tema);
   if (!tema) throw new Error(`B1 tema em falta ou desconhecido: ${work.slug}`);
   const leitura = leituraDe(work.id);

@@ -24,7 +24,7 @@
 export const ROTULOS_B1 = {
   pt: { valor: 'Valor', medida: 'Medida', fonte: 'Fonte', verificacao: 'Verificado a', estudos: 'Estudos', fontes: 'Fontes e verificação',
     fontesDoParagrafo: 'Fontes deste parágrafo',
-    edicao: 'Edição tal como foi publicada', publicado: 'publicado a', estudoPublicado: 'Estudo publicado',
+    edicao: 'Edição tal como foi publicada', edicaoPreparacao: 'Edição em preparação', publicado: 'publicado a', estudoPublicado: 'Estudo publicado',
     pais: 'Portugal', outraLingua: '(em inglês)', indice: 'Nesta página',
     temas: 'Temas', estudosDoLugar: 'Estudos sobre este lugar', estudosRecentes: 'Estudos recentes', mudou: 'O que mudou',
     lugares: 'Lugares', regioes: 'Regiões', distritos: 'Distritos e ilhas',
@@ -42,7 +42,7 @@ export const ROTULOS_B1 = {
     sucedeA: 'Sucede a', e: 'e' },
   en: { valor: 'Value', medida: 'Measure', fonte: 'Source', verificacao: 'Verified on', estudos: 'Studies', fontes: 'Sources and verification',
     fontesDoParagrafo: 'Sources for this paragraph',
-    edicao: 'Edition as published', publicado: 'published on', estudoPublicado: 'Study published',
+    edicao: 'Edition as published', edicaoPreparacao: 'Edition in preparation', publicado: 'published on', estudoPublicado: 'Study published',
     pais: 'Portugal', outraLingua: '(in Portuguese)', indice: 'On this page',
     temas: 'Themes', estudosDoLugar: 'Studies about this place', estudosRecentes: 'Recent studies', mudou: 'What changed',
     lugares: 'Places', regioes: 'Regions', distritos: 'Districts and islands',

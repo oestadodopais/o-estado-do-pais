@@ -1,6 +1,7 @@
 import {temAlgarismoLivreEo1,origemDaDefinicaoConfere,errosDaDefinicaoEo1} from '../../src/lib/definicoes-eo1.mjs';
 import {temAlgarismoLivre} from '../../src/lib/algarismos-definicoes.mjs';
 import {NOMES_EO1} from '../../src/data/nomes-eo1.mjs';
+import { periodoDoRecibo } from '../hb1/periodo-do-recibo.mjs';
 import {conferirPalavrasSaude} from './v2ah-palavras.mjs';
 import { conferirPublicador } from './publicador-da-definicao.mjs';
 import { conferirComputacaoPRR, conferirLiteralPRR } from './computacoes-rp4n.mjs';
@@ -588,7 +589,7 @@ export function conferirCabecaDoRecibo(cabeca, id, lang, { ctx, cartoes, porConf
           if(typeof p==='string')return p;
           if(p.apoio) {const {origem,campo}=p.apoio;tokens.push(['apoio',`origem-${origem}-${campo}`]);return ORIGENS_DAS_DEFINICOES[origem][campo];}
           const tipo=Object.keys(p)[0],c=ctx.linhas.get(p[tipo]);tokens.push([tipo,p[tipo]]);
-          return tipo==='periodo'?String(c.reference_date).split('-').reverse().join('.'):tipo==='excerto'?c.excerpt:c.value;
+          return tipo==='periodo'?periodoDoRecibo(c.reference_date, lang):tipo==='excerto'?c.excerpt:c.value;
         }).join(''));
         const rendidos=oQueE.querySelectorAll('[data-claim], [data-nonledger="data-da-linha"], [data-linha-campo="excerpt"], [data-verbatim]').map(x=>x.hasAttribute('data-verbatim')?['apoio',x.getAttribute('data-verbatim')]:x.hasAttribute('data-claim')?['claim',x.getAttribute('data-claim')]:x.hasAttribute('data-linha-campo')?['excerto',x.getAttribute('data-linha-claim')]:[x.getAttribute('data-de-campo')==='reference_date'?'periodo':'campo-errado',x.getAttribute('data-de-linha')]);
         if(JSON.stringify(rendidos)!==JSON.stringify(tokens))falha('o complemento não cita os campos pelos tokens auditados');

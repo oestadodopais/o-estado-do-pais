@@ -201,6 +201,8 @@ interface Linha {
   name?: unknown;
   name_en?: unknown;
   status?: unknown;
+  measure?: unknown;
+  measure_en?: unknown;
   name_source?: unknown;
   name_source_en?: string;
   source: unknown;
@@ -224,6 +226,7 @@ interface Linha {
   derived_from: unknown;
   check: unknown;
   attributed_to?: unknown;
+  attributed_to_en?: unknown;
   study: unknown;
   note?: unknown;
   corrections: unknown;

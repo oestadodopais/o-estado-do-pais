@@ -3016,6 +3016,8 @@ compõe-o do registo do motor, e a régua tira da superfície a região `data-re
 | conteudo | The State’s money is what arrived; the council’s is what is missing. The documents show three different totals for the cost of the event and no document that reconciles them, because the protocol that divides the money between the parties is not published. | e1b | viva | ver a razão na gémea portuguesa |
 | conteudo | Évora Governo e democracia publicado a | eo1 | retirada | Texto composto do lugar, do tema e da data de um estudo (bloco E1, o estudo de quem governou na primeira página), conferido pela lista fechada do país. EO1: deixou de se render com a entrada do estudo e a atualização das contagens medidas. |
 | conteudo | Évora Government and democracy published on | eo1 | retirada | Texto composto do lugar, do tema e da data de um estudo (bloco E1, o estudo de quem governou na primeira página), conferido pela lista fechada do país. EO1: deixou de se render com a entrada do estudo e a atualização das contagens medidas. |
+| conteudo | Évora Governo e democracia publicado a | hb1b | viva | HB1-b: corrigida a retirada indevida do HB1. A edição legada de Évora continua publicada; a ausência de data declarada do novo estudo não a retira do arquivo. |
+| conteudo | Évora Government and democracy published on | hb1b | viva | HB1-b: corrigida a retirada indevida do HB1. A edição legada de Évora continua publicada; a ausência de data declarada do novo estudo não a retira do arquivo. |
 | conteudo | O orçamento, a cobrança, a dívida e a certificação das contas da Câmara de Évora. | e1 | viva | A descrição de um dos quatro estudos de Évora (bloco E1): uma reformulação do título, sem números. |
 | conteudo | The budget, what was collected, the debt and the certification of the accounts of the Câmara de Évora. | e1 | viva | A descrição de um dos quatro estudos de Évora (bloco E1): uma reformulação do título, sem números. |
 | conteudo | As eleições, os executivos, os pelouros e as decisões da Câmara de Évora. | e1 | viva | A descrição de um dos quatro estudos de Évora (bloco E1): uma reformulação do título, sem números. |
@@ -4880,3 +4882,34 @@ ainda por explicar (o achado 7), fica aqui como retirada.*
 | classe | texto | bloco | estado | razão |
 | --- | --- | --- | --- | --- |
 | conteudo | The new measures of the Budget are worth million euros to the balance, the ten lines the table marks as «invariante» (invariant) weigh million, and interest rises million: what changes most in the accounts is not in the table of measures. | eo1-e | viva | Recolhida do HTML construído e conferida pelo portão da voz. Leitura cruzada pendente. |
+| conteudo | 3 376 afirmações · 408 de 3 376 calculadas · 2 767 de 3 376 linhas de concelhos | v2d | retirada | HB1: a nova entrada e as contagens medidas substituem esta cadeia na construção. |
+| conteudo | 3 376 claims · 408 of 3 376 calculated · 2 767 of 3 376 municipality rows | v2d | retirada | HB1: a nova entrada e as contagens medidas substituem esta cadeia na construção. |
+
+## HB1: o estudo da habitação
+
+| classe | texto | bloco | estado | razão |
+|---|---|---|---|---|
+| conteudo | 3 557 afirmações · 423 de 3 557 calculadas · 2 767 de 3 557 linhas de concelhos | hb1b | retirada | HB1-b: as novas linhas seladas alteram as contagens do livro, medidas no HTML. |
+| conteudo | 3 557 claims · 423 of 3 557 calculated · 2 767 of 3 557 municipality rows | hb1b | retirada | HB1-b: as novas linhas seladas alteram as contagens do livro, medidas no HTML. |
+| conteudo | Descontada a inflação, o índice dos preços da habitação em é de em Portugal e na União, com igual a cem. Entre os inquilinos a preços de mercado, % estão em sobrecarga; os jovens saem de casa dos pais aos anos. | hb1b | retirada | HB1-b: substituída pela frase do mandato, com os valores conferidos nos tokens. |
+| navegacao | Fontes deste parágrafo | hb1 | viva | Cadeia medida no HTML ou composta dos tokens HB1; os valores e os nomes continuam sujeitos às conferências próprias. |
+| conteudo | Net of inflation, the index of housing prices in is in Portugal and in the Union, with equal to one hundred. Among tenants at market rents, % are overburdened; the young leave their parents’ home at years. | hb1b | retirada | HB1-b: substituída pela frase do mandato, com os valores conferidos nos tokens. |
+| conteudo | Portugal Habitação publicado a | hb1b | retirada | HB1-b: a edição ainda sem data declarada fica em preparação; a publicação será declarada na aterragem. |
+| conteudo | Portugal Housing published on | hb1b | retirada | HB1-b: a edição ainda sem data declarada fica em preparação; a publicação será declarada na aterragem. |
+| conteudo | Quanto custa uma casa, quem a paga e quem fica de fora, ao lado da União Europeia. | hb1 | viva | Cadeia medida no HTML ou composta dos tokens HB1; os valores e os nomes continuam sujeitos às conferências próprias. |
+| navegacao | Sources for this paragraph | hb1 | viva | Cadeia medida no HTML ou composta dos tokens HB1; os valores e os nomes continuam sujeitos às conferências próprias. |
+| conteudo | What a home costs, who pays for it and who is left out, next to the European Union. | hb1 | viva | Cadeia medida no HTML ou composta dos tokens HB1; os valores e os nomes continuam sujeitos às conferências próprias. |
+
+
+## HB1-b: correção das frases e do estado de publicação
+
+Cadeias extraídas por `scripts/medir-defeitos.mjs` do HTML da cabeça `7cc3543914edd0e9172f6409b12298e02bdd2a64`. A extração diagnóstica usou o dicionário de unidades exato dessa cabeça, obtido por `git show`; o portão final volta a conferir a construção e os módulos da mesma versão.
+
+| classe | texto | bloco | estado | razão |
+|---|---|---|---|---|
+| conteudo | House prices in Portugal rose more than in any country of the Union since , and the average household spends less on housing than the European average: the weight falls on those renting at market prices, % of whom are overburdened, and on the young, who leave their parents&#39; home at years. | hb1b | viva | Extraída do HTML em /en/housing; os campos de origem continuam sujeitos às conferências próprias. |
+| conteudo | Portugal Housing Edition in preparation | hb1b | viva | Extraída do HTML em /en/housing; os campos de origem continuam sujeitos às conferências próprias. |
+| conteudo | 3 566 claims · 427 of 3 566 calculated · 2 767 of 3 566 municipality rows | hb1b | viva | Extraída do HTML em /en/ledger; os campos de origem continuam sujeitos às conferências próprias. |
+| conteudo | Os preços das casas em Portugal subiram mais do que em qualquer país da União desde , e a família média gasta na casa menos do que a média europeia: o peso cai sobre quem arrenda a preços de mercado, % dos quais estão em sobrecarga, e sobre os jovens, que saem de casa dos pais aos anos. | hb1b | viva | Extraída do HTML em /habitacao; os campos de origem continuam sujeitos às conferências próprias. |
+| conteudo | Portugal Habitação Edição em preparação | hb1b | viva | Extraída do HTML em /habitacao; os campos de origem continuam sujeitos às conferências próprias. |
+| conteudo | 3 566 afirmações · 427 de 3 566 calculadas · 2 767 de 3 566 linhas de concelhos | hb1b | viva | Extraída do HTML em /livro-razao; os campos de origem continuam sujeitos às conferências próprias. |

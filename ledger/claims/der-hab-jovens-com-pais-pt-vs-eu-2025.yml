@@ -1,0 +1,38 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "der-hab-jovens-com-pais-pt-vs-eu-2025"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "12,0"
+unit: "pontos percentuais"
+measure: "Diferença: Pessoas que vivem com os pais ou contribuem para o rendimento do agregado ou dele beneficiam, vinte e cinco a trinta e quatro anos, Portugal, 2025"
+measure_en: "Difference: Pessoas que vivem com os pais ou contribuem para o rendimento do agregado ou dele beneficiam, vinte e cinco a trinta e quatro anos, Portugal, 2025"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: null
+document: null
+source_url: null
+access_date: null
+reference_date: "2025"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: null
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: "Pessoas que vivem com os pais ou contribuem para o rendimento do agregado ou dele beneficiam, vinte e cinco a trinta e quatro anos, Portugal, 2025 (42,1 %; Eurostat, ilc_lvps08) menos Pessoas que vivem com os pais ou contribuem para o rendimento do agregado ou dele beneficiam, vinte e cinco a trinta e quatro anos, União Europeia, 2025 (30,1 %; Eurostat, ilc_lvps08), arredondado a uma casa decimal: 12,0."
+derivation_en: "Persons living with their parents or contributing/benefiting from the household income, From 25 to 34 years, Portugal, 2025 (42.1 %; Eurostat, ilc_lvps08) minus Persons living with their parents or contributing/benefiting from the household income, From 25 to 34 years, European Union - 27 countries (from 2020), 2025 (30.1 %; Eurostat, ilc_lvps08), rounded to one decimal place: 12.0."
+derived_from:
+  - "hab-ilc-lvps08-a-y25-34-t-pc-pt-2025"
+  - "hab-ilc-lvps08-a-y25-34-t-pc-eu27_2020-2025"
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: "round ( hab-ilc-lvps08-a-y25-34-t-pc-pt-2025 - hab-ilc-lvps08-a-y25-34-t-pc-eu27_2020-2025 , 1 )"
+
+study: "a-casa-em-portugal-e-na-europa"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[derivation do motor] {'components': ['hab-ilc-lvps08-a-y25-34-t-pc-pt-2025', 'hab-ilc-lvps08-a-y25-34-t-pc-eu27_2020-2025'], 'formula': 'hab-ilc-lvps08-a-y25-34-t-pc-pt-2025 - hab-ilc-lvps08-a-y25-34-t-pc-eu27_2020-2025', 'calculation': 'hab-ilc-lvps08-a-y25-34-t-pc-pt-2025 = 42.1; hab-ilc-lvps08-a-y25-34-t-pc-eu27_2020-2025 = 30.1; resultado = 12.0', 'rounding_places': 1} · Cruzado de ResearchHub content/23 Habitacao · der-hab-jovens-com-pais-pt-vs-eu-2025."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

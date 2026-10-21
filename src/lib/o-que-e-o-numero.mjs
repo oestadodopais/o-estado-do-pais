@@ -235,16 +235,18 @@ export function lugarNoRecibo(id, lang) {
  * tem, o rótulo que a fonte imprime por cima da figura. Uma linha calculada não tem nem um nem outro.
  *
  * @param {string} id
+ * @param {'pt'|'en'} [lang]
  * @returns {{ campo: 'document.title'|'name'|'name_en', valor: string } | null}
  */
 export function nomeDaFonteNoRecibo(id, lang = 'pt') {
   const c = /** @type {any} */ (getClaim(id));
   const util = (/** @type {unknown} */ v) => typeof v === 'string' && v.trim() !== '' && v !== '[a verificar]';
+  // As traduções são campos atravessados do motor, com os mesmos controlos de origem.
+  if (lang === 'en' && util(c.name_en)) return { campo: /** @type {const} */ ('name_en'), valor: /** @type {string} */ (c.name_en) };
   // O rótulo da medida tem precedência sobre o título do documento, em todas as famílias.
   if (lang === 'en' && util(c.name_en)) return { campo: 'name_en', valor: c.name_en };
   if (util(c.name)) return { campo: /** @type {const} */ ('name'), valor: /** @type {string} */ (c.name) };
   if (util(c.document?.title)) return { campo: /** @type {const} */ ('document.title'), valor: /** @type {string} */ (c.document.title) };
-  if (util(c.name)) return { campo: /** @type {const} */ ('name'), valor: /** @type {string} */ (c.name) };
   return null;
 }
 

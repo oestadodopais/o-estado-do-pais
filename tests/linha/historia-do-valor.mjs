@@ -63,6 +63,20 @@ for(const [nome,muda,falha] of [
  const c=structuredClone(entrega),erros=[];muda(c);conferirHistoriaDoValor(c,historiaData,'ensaio',erros);
  assert(erros.some(e=>e.includes(falha)),nome);plantas.push({nome,falha,erros,mordeu:true});
 }
+for(const id of ['hab-imprensa-manif-euronews','hab-imprensa-tendas']) {
+ const original=linhas.get(id), seladas=entradasDoValor(original).map(assinaturaDoValor), limpas=[];
+ assert.equal(original.unit,'texto');
+ conferirHistoriaDoValor(original,seladas,id,limpas);assert.deepEqual(limpas,[]);
+ for(const [nome,muda,falha] of [
+  ['excerto textual alterado',c=>{c.value+=' ';},'não coincide com o excerto'],
+  ['história textual adulterada',c=>{c.corrections[0].old_value+=' ';},'retirada ou alterada'],
+  ['texto final da cadeia alterado',c=>{c.corrections[0].new_value+=' ';},'último "new_value"'],
+  ['excerto textual vazio',c=>{c.corrections[0].new_value='';},'texto não vazio'],
+ ]) {
+  const c=structuredClone(original),erros=[];muda(c);conferirHistoriaDoValor(c,seladas,id,erros);
+  assert.ok(erros.some(e=>e.includes(falha)),`${id}: ${nome}`);plantas.push({nome:`${id}: ${nome}`,falha,erros,mordeu:true});
+ }
+}
 const r = { controlos: 4, plantas };
 const i = process.argv.indexOf('--json');
 if (i >= 0) fs.writeFileSync(process.argv[i+1], JSON.stringify(r, null, 2)+'\n');

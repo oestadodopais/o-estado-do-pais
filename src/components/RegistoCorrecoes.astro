@@ -84,6 +84,7 @@ import { entradasDoRegisto, getClaim } from '../lib/ledger.mjs';
 import { mudancasDoRegisto } from '../lib/mudancas.mjs';
 import { dataDaCasa } from '../lib/datas.mjs';
 import { textoDocumentalConferido } from '../lib/prova-efeitos.mjs';
+import { textoDaHabitacao } from '../lib/historia-do-valor.mjs';
 import { KIND_LABELS } from '../data/correcoes.mjs';
 import { ROTULOS_B1 } from '../data/rotulos-b1.mjs';
 import { prova } from '../lib/prova.mjs';
@@ -123,7 +124,7 @@ primeiraPorLinha.sort((a, b) => a.claimId.localeCompare(b.claimId));
 const rotulo = (kind) => KIND_LABELS[kind]?.[lang] ?? kind;
 const linguaDaCorrecaoTextual = (id) => {
   const linha = getClaim(id);
-  return ((linha.afirmacao === true && linha.unit === 'afirmação') || textoDocumentalConferido(linha)) ? linguaDoTituloDoDocumento(linha.document?.title, lang) : undefined;
+  return ((linha.afirmacao === true && linha.unit === 'afirmação') || textoDocumentalConferido(linha) || textoDaHabitacao(linha)) ? linguaDoTituloDoDocumento(linha.document?.title, lang) : undefined;
 };
 
 // Concordância: «1 correção publicada», «2 correções publicadas». O número em
