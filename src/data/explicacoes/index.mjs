@@ -11,12 +11,13 @@
  * esse segmento por nome, e uma que o tivesse fecha a construção aqui.
  */
 import { DINHEIRO_DO_ESTADO_2026 } from './dinheiro-do-estado-2026.mjs';
+import { DINHEIRO_DO_ESTADO_2027 } from './dinheiro-do-estado-2027.mjs';
 
 /** O segmento da página da leitura da semana, em cada edição (`src/lib/routes.mjs`, `leituraDaSemana`). */
 export const SEGMENTO_DA_SEMANA = /** @type {const} */ ({ pt: 'leitura-da-semana', en: 'weekly-reading' });
 
 /** As explicações, da escrita mais recente para a mais antiga. */
-export const EXPLICACOES = [DINHEIRO_DO_ESTADO_2026].sort((a, b) => b.escrita.localeCompare(a.escrita) || a.slug.localeCompare(b.slug));
+export const EXPLICACOES = [DINHEIRO_DO_ESTADO_2026, DINHEIRO_DO_ESTADO_2027].sort((a, b) => b.escrita.localeCompare(a.escrita) || a.slug.localeCompare(b.slug));
 
 for (const e of EXPLICACOES) {
   if (!/^[a-z0-9]+(-[a-z0-9]+)*$/.test(e.slug)) throw new Error(`explicações: o slug «${e.slug}» não é minúsculas, algarismos e hífenes.`);

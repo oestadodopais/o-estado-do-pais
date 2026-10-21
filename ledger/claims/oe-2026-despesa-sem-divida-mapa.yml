@@ -1,0 +1,37 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "oe-2026-despesa-sem-divida-mapa"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "177 454 923 960"
+unit: "euros"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: null
+document: null
+source_url: null
+access_date: null
+reference_date: "2026"
+period: "2026"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: null
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: "A despesa total do Mapa 2 menos a subfunção 01.7, como o mapa as imprime."
+derivation_en: "Mapa 2 total expenditure (DESPESA TOTAL) minus subfunction 01.7, as the map prints them."
+derived_from:
+  - "oe-2026-despesa-total-mapa"
+  - "oe-2026-despesa-subfuncao-01-7-mapa"
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: "oe-2026-despesa-total-mapa - oe-2026-despesa-subfuncao-01-7-mapa"
+
+study: "oe-2027-funcoes"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[derivation do motor] A despesa total do Mapa 2 menos a subfunção 01.7, como o mapa as imprime. · [note do motor] Derivada declarada: a despesa total do Mapa 2 menos a subfunção 01.7, «OPERAÇÕES RELACIONADAS COM A DÍVIDA PÚBLICA», como o mapa as imprime. Sem consolidação, em euros; não é a despesa efetiva consolidada. Lei aprovada, orçamento inicial. · Cruzado de ResearchHub content/29 Orcamento 2027 Funcoes · oe-2026-despesa-sem-divida-mapa."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

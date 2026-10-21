@@ -1,0 +1,37 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "der-oe2027-despesa-total-consolidada-mapa-variacao-pct"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "5,9"
+unit: "%"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: null
+document: null
+source_url: null
+access_date: null
+reference_date: "2027"
+period: "2026/2027"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: null
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: "Variação da proposta de 2027 sobre a lei aprovada de 2026, no mesmo Mapa 2 (mesmo título, mesmo subsetor, mesma unidade): (2027 menos 2026) a dividir por 2026, vezes cem, arredondado a uma casa decimal, metades para fora de zero."
+derivation_en: "Change of the 2027 proposal over the approved 2026 law in the same Mapa 2 (same title, same subsector, same unit): (2027 minus 2026) divided by 2026, times one hundred, rounded to one decimal place, halves away from zero."
+derived_from:
+  - "oe-2026-despesa-total-consolidada-mapa"
+  - "oe-2027-despesa-total-consolidada-mapa"
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: "round ( ( oe-2027-despesa-total-consolidada-mapa - oe-2026-despesa-total-consolidada-mapa ) / oe-2026-despesa-total-consolidada-mapa * 100 , 1 )"
+
+study: "oe-2027-funcoes"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[derivation do motor] Variação da proposta de 2027 sobre a lei aprovada de 2026, no mesmo Mapa 2 (mesmo título, mesmo subsetor, mesma unidade): (2027 menos 2026) a dividir por 2026, vezes cem, arredondado a uma casa decimal, metades para fora de zero. · [note do motor] Compara a proposta de 2027 com a lei aprovada de 2026 (orçamento inicial), não com a execução nem com a estimativa de 2026. Despesa sem consolidação, com as operações da dívida pública. · Cruzado de ResearchHub content/29 Orcamento 2027 Funcoes · der-oe2027-despesa-total-consolidada-mapa-variacao-pct."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

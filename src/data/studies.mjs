@@ -604,6 +604,12 @@ export const INTERNAL_SOURCES = [
     label: { pt: 'Orçamento do Estado para 2027', en: 'State Budget for 2027' },
   },
   {
+    // EX4 (21.10.2026): as linhas do Mapa 2 da lei de 2026 e da proposta de 2027, exportadas do motor pelo
+    // manifesto pf1 para a explicação de 2027. Este registo não cria um trabalho em WORKS, uma página ou uma rota.
+    id: 'oe-2027-funcoes',
+    label: { pt: 'A despesa do Estado por função, na lei e na proposta de Orçamento', en: "The State's expenditure by function, in the Budget law and proposal" },
+  },
+  {
     // OE1-b: estas linhas aguardam a página do governo, que é um bloco seguinte.
     // Este registo não cria um trabalho em WORKS, uma página ou uma rota.
     id: 'oe-2026',

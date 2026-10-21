@@ -1,0 +1,37 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "oe-2026-cem-euros-funcao-02-sem-divida-mapa"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "2,82"
+unit: "%"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: null
+document: null
+source_url: null
+access_date: null
+reference_date: "2026"
+period: "2026"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: null
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: "Dividir a despesa desta função (na função 01, a função menos a subfunção 01.7) pela despesa total do Mapa 2 menos a subfunção 01.7, multiplicar por cem e arredondar a duas casas decimais, metades para fora de zero."
+derivation_en: "Divide this function's expenditure (for function 01, the function minus subfunction 01.7) by Mapa 2 total expenditure minus subfunction 01.7, multiply by one hundred and round to two decimal places, halves away from zero."
+derived_from:
+  - "oe-2026-despesa-funcao-02-mapa"
+  - "oe-2026-despesa-sem-divida-mapa"
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: "round ( oe-2026-despesa-funcao-02-mapa / oe-2026-despesa-sem-divida-mapa * 100 , 2 )"
+
+study: "oe-2027-funcoes"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[derivation do motor] Dividir a despesa desta função (na função 01, a função menos a subfunção 01.7) pela despesa total do Mapa 2 menos a subfunção 01.7, multiplicar por cem e arredondar a duas casas decimais, metades para fora de zero. · [note do motor] Euros de cada 100 euros da despesa do Mapa 2 sem as operações relacionadas com a dívida pública (a DESPESA TOTAL menos a subfunção 01.7, sem consolidação); na função 01, o numerador é a função 01 menos a subfunção 01.7. Arredondamento a duas casas decimais, metades para fora de zero. O somatório das parcelas arredondadas pode não ser 100. Derivada declarada; não é comparável com as linhas oe-2026-cem-euros-funcao-nn de content/20, cujo denominador é a despesa efetiva consolidada. Lei aprovada, orçamento inicial. · Cruzado de ResearchHub content/29 Orcamento 2027 Funcoes · oe-2026-cem-euros-funcao-02-sem-divida-mapa."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

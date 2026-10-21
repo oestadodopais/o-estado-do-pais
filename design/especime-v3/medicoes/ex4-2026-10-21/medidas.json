@@ -1,0 +1,229 @@
+{
+  "bloco": "EX4",
+  "data": "2026-10-21",
+  "medidas": [
+    {
+      "nome": "linhas_do_pf1_no_livro",
+      "valor": 83,
+      "comando": "contar ledger/claims/*.yml com study: \"oe-2027-funcoes\"",
+      "conhecido_positivo": {
+        "o_que": "o registo ledger/cruzamentos/pf1.json nomeia as mesmas linhas",
+        "valor": 83
+      }
+    },
+    {
+      "nome": "linhas_do_pf1_com_period",
+      "valor": 83,
+      "comando": "das linhas do PF1, as que têm o campo period",
+      "conhecido_positivo": {
+        "o_que": "as linhas do livro fora do PF1 com period trimestral, que a regra 7 aceita",
+        "valor": 5
+      }
+    },
+    {
+      "nome": "valores_de_period_do_pf1",
+      "valor": {
+        "2026": 35,
+        "2027": 35,
+        "2026/2027": 13
+      },
+      "comando": "agrupar o campo period das linhas do PF1",
+      "conhecido_positivo": null
+    },
+    {
+      "nome": "acertos",
+      "valor": {
+        "frases_do_mandato": 28,
+        "frases_da_pagina": 25,
+        "iguais": 25,
+        "fora": 3,
+        "acertos": [
+          "EX4-A1",
+          "EX4-A2",
+          "EX4-A3",
+          "EX4-A4",
+          "EX4-A5"
+        ],
+        "linhas": [
+          {
+            "frase": "titulo",
+            "estado": "igual"
+          },
+          {
+            "frase": "abertura-1",
+            "estado": "igual"
+          },
+          {
+            "frase": "abertura-2",
+            "estado": "igual"
+          },
+          {
+            "frase": "abertura-3",
+            "estado": "igual"
+          },
+          {
+            "frase": "abertura-4",
+            "estado": "igual"
+          },
+          {
+            "frase": "abertura-5",
+            "estado": "igual"
+          },
+          {
+            "frase": "secao-1",
+            "estado": "igual"
+          },
+          {
+            "frase": "figura-1",
+            "estado": "fora",
+            "acerto": "EX4-A1"
+          },
+          {
+            "frase": "secao-1-1",
+            "estado": "igual"
+          },
+          {
+            "frase": "secao-1-2",
+            "estado": "igual"
+          },
+          {
+            "frase": "secao-2",
+            "estado": "igual"
+          },
+          {
+            "frase": "figura-2",
+            "estado": "fora",
+            "acerto": "EX4-A1"
+          },
+          {
+            "frase": "secao-2-1",
+            "estado": "igual"
+          },
+          {
+            "frase": "secao-2-2",
+            "estado": "igual"
+          },
+          {
+            "frase": "secao-3",
+            "estado": "igual"
+          },
+          {
+            "frase": "secao-3-1",
+            "estado": "igual"
+          },
+          {
+            "frase": "secao-3-2",
+            "estado": "igual"
+          },
+          {
+            "frase": "secao-3-3",
+            "estado": "igual"
+          },
+          {
+            "frase": "secao-3-4",
+            "estado": "igual"
+          },
+          {
+            "frase": "secao-3-5",
+            "estado": "igual"
+          },
+          {
+            "frase": "secao-4",
+            "estado": "igual"
+          },
+          {
+            "frase": "secao-4-1",
+            "estado": "igual"
+          },
+          {
+            "frase": "secao-4-2",
+            "estado": "igual"
+          },
+          {
+            "frase": "naoDiz-1",
+            "estado": "igual"
+          },
+          {
+            "frase": "naoDiz-2",
+            "estado": "fora",
+            "acerto": "EX4-A2"
+          },
+          {
+            "frase": "naoDiz-3",
+            "estado": "igual"
+          },
+          {
+            "frase": "naoDiz-4",
+            "estado": "igual"
+          },
+          {
+            "frase": "naoDiz-5",
+            "estado": "igual"
+          }
+        ],
+        "erros": []
+      },
+      "comando": "node design/especime-v3/medicoes/ex4-2026-10-21/acertos-ex4.mjs --json acertos-ex4.json",
+      "conhecido_positivo": "as frases fora (figura-1, figura-2, naoDiz-2) só passam porque um acerto as declara"
+    },
+    {
+      "nome": "plantas",
+      "valor": {
+        "controlo": true,
+        "plantas": [
+          {
+            "nome": "uma porta para um estudo que não existe",
+            "mordeu": true,
+            "queixa": "explicação · portas[1]: o estudo «estudo-que-nao-existe» não está em WORKS (src/data/studies.mjs) com título na edição «pt». Um defeito da declaração fecha a construção; uma condição falsa tira as pal"
+          },
+          {
+            "nome": "uma porta para uma explicação que não existe",
+            "mordeu": true,
+            "queixa": "explicação · portas[1]: a explicação «explicacao-que-nao-existe» não está declarada em src/data/explicacoes/index.mjs, ou é esta. Um defeito da declaração fecha a construção; uma condição falsa tira a"
+          },
+          {
+            "nome": "o número do mapa registado não é o do campo selado",
+            "mordeu": true,
+            "queixa": "explicação · abertura[0][5]: o identificador «pf1-mapa-2027-numero» regista «3» e o campo document.locator da linha «oe-2027-despesa-total-mapa» dá «2». Um defeito da declaração fecha a construção; um"
+          },
+          {
+            "nome": "o identificador lê uma linha que saiu do livro",
+            "mordeu": true,
+            "queixa": "explicação · seccoes[1].conteudo[0].paragrafo[1]: o identificador «pf1-subfuncao-01-7-codigo» lê a linha «linha-que-saiu-do-livro», que não está no livro-razão. Um defeito da declaração fecha a constr"
+          },
+          {
+            "nome": "um algarismo escrito à mão num título de secção em pedaços",
+            "mordeu": true,
+            "queixa": "explicação · seccoes[2].titulo[0]: a palavra fixa «O que muda de 2026 para a proposta de » traz um algarismo; os algarismos entram por { claim } ou { periodo }. Um defeito da declaração fecha a constr"
+          }
+        ],
+        "todas": true
+      },
+      "comando": "node design/especime-v3/medicoes/ex4-2026-10-21/plantas-ex4.mjs --json plantas-ex4.json",
+      "conhecido_positivo": "o controlo sem estrago passa"
+    },
+    {
+      "nome": "codigos",
+      "valor": {
+        "a-build": 1,
+        "a-check-cartao": 0,
+        "a-check-cruzamento": 0,
+        "a-check-explicacoes": 0,
+        "a-check-graficos": 0,
+        "a-explicacao": 0,
+        "a-ledger-check": 0,
+        "a-typecheck": 0,
+        "acertos-ex4": 0,
+        "check-cartao": 1,
+        "check-cruzamento": 0,
+        "explicacao": 1,
+        "frases-ex4": 0,
+        "ledger-check": 1,
+        "plantas-ex4": 0,
+        "typecheck": 0
+      },
+      "comando": "cada código escrito pelo comando do portão em codigos/<nome>.code",
+      "conhecido_positivo": null
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "oe-2027-cem-euros-funcao-05-mapa"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "0,76"
+unit: "%"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: null
+document: null
+source_url: null
+access_date: null
+reference_date: "2027"
+period: "2027"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: null
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: "Dividir a despesa desta função pela DESPESA TOTAL do mesmo Mapa 2, multiplicar por cem e arredondar a duas casas decimais, metades para fora de zero."
+derivation_en: "Divide this function's expenditure by DESPESA TOTAL in the same Mapa 2, multiply by one hundred and round to two decimal places, halves away from zero."
+derived_from:
+  - "oe-2027-despesa-funcao-05-mapa"
+  - "oe-2027-despesa-total-mapa"
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: "round ( oe-2027-despesa-funcao-05-mapa / oe-2027-despesa-total-mapa * 100 , 2 )"
+
+study: "oe-2027-funcoes"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[derivation do motor] Dividir a despesa desta função pela DESPESA TOTAL do mesmo Mapa 2, multiplicar por cem e arredondar a duas casas decimais, metades para fora de zero. · [note do motor] Euros de cada 100 euros da despesa total do Mapa 2 (sem consolidação, com as operações da dívida pública). Arredondamento a duas casas decimais, metades para fora de zero. O somatório das parcelas arredondadas pode não ser 100. Não é comparável com as linhas oe-2026-cem-euros-funcao-nn de content/20, cujo denominador é a despesa efetiva consolidada. · Cruzado de ResearchHub content/29 Orcamento 2027 Funcoes · oe-2027-cem-euros-funcao-05-mapa."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

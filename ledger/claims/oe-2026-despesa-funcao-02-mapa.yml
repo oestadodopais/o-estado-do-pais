@@ -1,0 +1,46 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "oe-2026-despesa-funcao-02-mapa"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "5 006 088 148"
+unit: "euros"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "DEFESA"
+name_source: "MAPA 2, ano económico de 2026, função 02, coluna «POR FUNÇÕES», p. 1 do PDF"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Ministério das Finanças / Entidade Orçamental (MF/EO)"
+document:
+  title: "Mapa relativo à classificação funcional das despesas do subsetor da Administração Central"
+  edition: "Lei n.º 73-A/2025"
+  locator: "MAPA 2, ano económico de 2026, função 02, coluna «POR FUNÇÕES», p. 1 do PDF"
+  source_sha256: "e16e49c3a7e886eca2a7465e2b2f5e055eec31de58c4ea43d5f8e8fbbb253b85"
+  page: 1
+  kind: "pdf"
+source_url: "https://www.eo.gov.pt/politicaorcamental/OrcamentodeEstado/2026/OrcamentoEstadoAprovado/MapasContabilisticos/OE2026_doc03_Mapa02.pdf#page=1"
+access_date: "2026-10-21"
+reference_date: "2026"
+period: "2026"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "02 DEFESA 5 006 088 148"
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "oe-2027-funcoes"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Despesa por funções sem consolidação, em euros, como o Mapa 2 a imprime; inclui as operações da dívida pública e os ativos e passivos financeiros classificados na função. Não é a despesa efetiva consolidada das linhas oe-2026-despesa-funcao-nn de content/20 (outro perímetro e outra unidade). Lei aprovada, orçamento inicial. · Cruzado de ResearchHub content/29 Orcamento 2027 Funcoes · oe-2026-despesa-funcao-02-mapa."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

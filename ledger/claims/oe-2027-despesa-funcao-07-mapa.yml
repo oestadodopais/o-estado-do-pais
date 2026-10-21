@@ -1,0 +1,46 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "oe-2027-despesa-funcao-07-mapa"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "49 259 868 205"
+unit: "euros"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "SAÚDE"
+name_source: "MAPA 2, ano económico de 2027, função 07, coluna «POR FUNÇÕES», p. 1 do PDF"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Ministério das Finanças / Entidade Orçamental (MF/EO)"
+document:
+  title: "Mapa relativo à classificação funcional das despesas do subsetor da Administração Central"
+  edition: "Proposta de Lei n.º 110/XVII/2.ª"
+  locator: "MAPA 2, ano económico de 2027, função 07, coluna «POR FUNÇÕES», p. 1 do PDF"
+  source_sha256: "5d6853048813df323e3326ab3bb59fcdf8d89f61424351273d8d1d8bc38cc5f2"
+  page: 1
+  kind: "pdf"
+source_url: "https://app.parlamento.pt/webutils/docs/doc.pdf?path=nT3vhg4SKWNPL33bwkW4HhRLnWCNxAB4PpJ2xpU3GT41%252bf4ZBK%252b1EoAv8YPe9IKKqh0KGCoDE%252fKbN6YvCB%252budcWjSIYlEWHAydhdrb8cAatzk7HplaoaVcRrMCiLfxJk5FNVpnW%252bAZs0tSGApWAbfTUrfpiFtQhF5PTNP1mM7TGf6IBYYVNYvdzLYJaVa1B8ZbUjW%252flRdZSDPyBXVCPAqkTMKVtsIJOPC7pvKde%252fXE2yonmdpSkaP%252fbOGye%252f4LoeSgyuxBot0oAmC%252fHQQUlbmqo79vt2jKgU%252bRKnbgkcXLIO6hsks9Ue%252f0dL8RBsfl0l%252fWB9XifDFUbYgBXMzrE4Jn%252br0wRey%252fiJU76kUVO1aex97ql10g9Y%252f%252bJxNiwCmsPb&fich=7416a095-c17a-4c9c-90ac-084cc19560b0.pdf&Inline=true"
+access_date: "2026-10-21"
+reference_date: "2027"
+period: "2027"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "07 SAÚDE 49 259 868 205"
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "oe-2027-funcoes"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Despesa por funções sem consolidação, em euros, como o Mapa 2 a imprime; inclui as operações da dívida pública e os ativos e passivos financeiros classificados na função. Não é a despesa efetiva consolidada das linhas oe-2026-despesa-funcao-nn de content/20 (outro perímetro e outra unidade). Proposta, não lei aprovada. · Cruzado de ResearchHub content/29 Orcamento 2027 Funcoes · oe-2027-despesa-funcao-07-mapa."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

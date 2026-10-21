@@ -42409,6 +42409,2083 @@
         "quando": "2026-10-12",
         "o_que": "Os apoios da comparação entre a classificação funcional e a orgânica passam às palavras das fontes. O texto da explicação não mudou. A leitura cruzada desta emenda fica pendente."
       }
+    },
+    {
+      "slug": "dinheiro-do-estado-2027",
+      "quem": "Claude Opus 5.5, construtor do EX4 (por ler a frio)",
+      "quando": "2026-10-21",
+      "o_que": "as folhas da declaração dinheiro-do-estado-2027, nas duas edições, escritas pelo guião design/especime-v3/medicoes/ex4-2026-10-21/auditoria-ex4.mjs",
+      "origens": [
+        "rp4n-consolidada-ministerios",
+        "dados-gov-oe-despesa-funcional"
+      ],
+      "folhas": [
+        {
+          "caminho": "titulo[0]",
+          "pt": "Para onde vai o dinheiro do Estado em ",
+          "en": "Where the State’s money goes in ",
+          "partes": [
+            {
+              "pt": "Para onde vai o dinheiro do Estado em ",
+              "en": "Where the State’s money goes in ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2027-despesa-total-mapa",
+                  "campo": "document.title",
+                  "literal": "classificação funcional das despesas"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "titulo[2]",
+          "pt": ", pela proposta de Orçamento",
+          "en": ", by the Budget proposal",
+          "partes": [
+            {
+              "pt": ", pela proposta de Orçamento",
+              "en": ", by the Budget proposal",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2027-calendario-entrega",
+                  "campo": "excerpt",
+                  "literal": "Proposta de Lei"
+                },
+                {
+                  "linha": "oe-2027-calendario-entrega",
+                  "campo": "excerpt",
+                  "literal": "que aprova o Orçamento do Estado para"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "abertura[0][0]",
+          "pt": "A proposta de Orçamento do Estado para ",
+          "en": "The State Budget proposal for ",
+          "partes": [
+            {
+              "pt": "A proposta de Orçamento do Estado para ",
+              "en": "The State Budget proposal for ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2027-calendario-entrega",
+                  "campo": "excerpt",
+                  "literal": "Proposta de Lei"
+                },
+                {
+                  "linha": "oe-2027-calendario-entrega",
+                  "campo": "excerpt",
+                  "literal": "Orçamento do Estado para"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "abertura[0][2]",
+          "pt": ", entregue ao Parlamento a ",
+          "en": ", delivered to Parliament on ",
+          "partes": [
+            {
+              "pt": ", entregue ao Parlamento a ",
+              "en": ", delivered to Parliament on ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2027-calendario-entrega",
+                  "campo": "excerpt",
+                  "literal": "foi entregue ao Presidente da Assembleia da República"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "abertura[0][4]",
+          "pt": ", traz um mapa da despesa da Administração Central por função, o Mapa ",
+          "en": ", carries a map of central administration expenditure by function, Map ",
+          "partes": [
+            {
+              "pt": ", traz um mapa da despesa da Administração Central por função, o Mapa ",
+              "en": ", carries a map of central administration expenditure by function, Map ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2027-despesa-total-mapa",
+                  "campo": "document.title",
+                  "literal": "Mapa relativo à classificação funcional das despesas do subsetor da Administração Central"
+                },
+                {
+                  "linha": "oe-2027-despesa-total-mapa",
+                  "campo": "document.locator",
+                  "literal": "MAPA 2, ano económico de 2027"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "abertura[0][6]",
+          "pt": ". Esse mapa soma ",
+          "en": ". That map adds up to ",
+          "partes": [
+            {
+              "pt": ". Esse mapa soma ",
+              "en": ". That map adds up to ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2027-despesa-total-mapa",
+                  "campo": "name",
+                  "literal": "DESPESA TOTAL"
+                },
+                {
+                  "linha": "oe-2027-despesa-total-mapa",
+                  "campo": "document.locator",
+                  "literal": "linha «DESPESA TOTAL»"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "abertura[0][7].sufixo",
+          "pt": " euros",
+          "en": " euros",
+          "partes": [
+            {
+              "pt": " euros",
+              "en": " euros",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2027-despesa-total-mapa",
+                  "campo": "unit",
+                  "literal": "euros"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "abertura[0][8]",
+          "pt": ", e ",
+          "en": ", and ",
+          "partes": [
+            {
+              "pt": ", e ",
+              "en": ", and ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "abertura[0][9].maior[0]",
+          "pt": "mais de metade desse total",
+          "en": "more than half of that total",
+          "partes": [
+            {
+              "pt": "mais de metade desse total",
+              "en": "more than half of that total",
+              "classe": "conta"
+            }
+          ]
+        },
+        {
+          "caminho": "abertura[0][9].menor[0]",
+          "pt": "menos de metade desse total",
+          "en": "less than half of that total",
+          "partes": [
+            {
+              "pt": "menos de metade desse total",
+              "en": "less than half of that total",
+              "classe": "conta"
+            }
+          ]
+        },
+        {
+          "caminho": "abertura[0][9].igual[0]",
+          "pt": "metade desse total",
+          "en": "half of that total",
+          "partes": [
+            {
+              "pt": "metade desse total",
+              "en": "half of that total",
+              "classe": "conta"
+            }
+          ]
+        },
+        {
+          "caminho": "abertura[0][10]",
+          "pt": ", ",
+          "en": ", ",
+          "partes": [
+            {
+              "pt": ", ",
+              "en": ", ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "abertura[0][11].sufixo",
+          "pt": " euros",
+          "en": " euros",
+          "partes": [
+            {
+              "pt": " euros",
+              "en": " euros",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2027-despesa-subfuncao-01-7-mapa",
+                  "campo": "unit",
+                  "literal": "euros"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "abertura[0][12]",
+          "pt": ", é a subfunção a que o mapa chama «operações relacionadas com a dívida pública». Tirando essa subfunção, sobram ",
+          "en": ", is the subfunction the map calls «operations related to public debt». Taking that subfunction out, ",
+          "partes": [
+            {
+              "pt": ", é a subfunção a que o mapa chama «operações relacionadas com a dívida pública».",
+              "en": ", is the subfunction the map calls «operations related to public debt».",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2027-despesa-subfuncao-01-7-mapa",
+                  "campo": "document.locator",
+                  "literal": "coluna «POR SUBFUNÇÕES»"
+                },
+                {
+                  "linha": "oe-2027-despesa-subfuncao-01-7-mapa",
+                  "campo": "name",
+                  "literal": "OPERAÇÕES RELACIONADAS COM A DÍVIDA PÚBLICA"
+                }
+              ]
+            },
+            {
+              "pt": " Tirando essa subfunção, sobram ",
+              "en": " Taking that subfunction out, ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2027-despesa-sem-divida-mapa",
+                  "campo": "derivation",
+                  "literal": "A despesa total do Mapa 2 menos a subfunção 01.7"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "abertura[0][13].sufixo",
+          "pt": " euros",
+          "en": " euros",
+          "partes": [
+            {
+              "pt": " euros",
+              "en": " euros",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2027-despesa-sem-divida-mapa",
+                  "campo": "unit",
+                  "literal": "euros"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "abertura[0][14]",
+          "pt": ". De cada cem euros desses, ",
+          "en": " remain. Of every hundred euros of those, ",
+          "partes": [
+            {
+              "pt": ". De cada cem euros desses, ",
+              "en": " remain. Of every hundred euros of those, ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2027-cem-euros-funcao-07-sem-divida-mapa",
+                  "campo": "derivation",
+                  "literal": "pela despesa total do Mapa 2 menos a subfunção 01.7, multiplicar por cem"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "abertura[0][16]",
+          "pt": " vão para a ",
+          "en": " go to ",
+          "partes": [
+            {
+              "pt": " vão para a ",
+              "en": " go to ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2027-cem-euros-funcao-07-sem-divida-mapa",
+                  "campo": "derivation",
+                  "literal": "Dividir a despesa desta função"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "abertura[0][18]",
+          "pt": ", ",
+          "en": ", ",
+          "partes": [
+            {
+              "pt": ", ",
+              "en": ", ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "abertura[0][20]",
+          "pt": " para os ",
+          "en": " to ",
+          "partes": [
+            {
+              "pt": " para os ",
+              "en": " to ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "abertura[0][22]",
+          "pt": ", ",
+          "en": ", ",
+          "partes": [
+            {
+              "pt": ", ",
+              "en": ", ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "abertura[0][24]",
+          "pt": " para os ",
+          "en": " to ",
+          "partes": [
+            {
+              "pt": " para os ",
+              "en": " to ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "abertura[0][26]",
+          "pt": ", ",
+          "en": ", ",
+          "partes": [
+            {
+              "pt": ", ",
+              "en": ", ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "abertura[0][28]",
+          "pt": " para a ",
+          "en": " to ",
+          "partes": [
+            {
+              "pt": " para a ",
+              "en": " to ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "abertura[0][30]",
+          "pt": " e ",
+          "en": " and ",
+          "partes": [
+            {
+              "pt": " e ",
+              "en": " and ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "abertura[0][32]",
+          "pt": " para a ",
+          "en": " to ",
+          "partes": [
+            {
+              "pt": " para a ",
+              "en": " to ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "abertura[0][34]",
+          "pt": ".",
+          "en": ".",
+          "partes": [
+            {
+              "pt": ".",
+              "en": ".",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "abertura[0][35].se[0]",
+          "pt": " A maior fatia é a da ",
+          "en": " The largest share is ",
+          "partes": [
+            {
+              "pt": " A maior fatia é a da ",
+              "en": " The largest share is ",
+              "classe": "conta"
+            }
+          ]
+        },
+        {
+          "caminho": "abertura[0][35].se[2]",
+          "pt": ".",
+          "en": ".",
+          "partes": [
+            {
+              "pt": ".",
+              "en": ".",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].titulo",
+          "pt": "Por função, como o mapa a escreve",
+          "en": "By function, as the map writes it",
+          "partes": [
+            {
+              "pt": "Por função, como o mapa a escreve",
+              "en": "By function, as the map writes it",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2027-despesa-funcao-07-mapa",
+                  "campo": "document.locator",
+                  "literal": "coluna «POR FUNÇÕES»"
+                },
+                {
+                  "linha": "oe-2027-cem-euros-funcao-07-mapa",
+                  "campo": "derivation",
+                  "literal": "pela DESPESA TOTAL do mesmo Mapa 2"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[0].paragrafo[0]",
+          "pt": "Lido como o mapa o escreve, ",
+          "en": "Read as the map writes it, ",
+          "partes": [
+            {
+              "pt": "Lido como o mapa o escreve, ",
+              "en": "Read as the map writes it, ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2027-cem-euros-funcao-01-mapa",
+                  "campo": "derivation",
+                  "literal": "pela DESPESA TOTAL do mesmo Mapa 2"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[0].paragrafo[2]",
+          "pt": " de cada cem euros vão para os ",
+          "en": " of every hundred euros go to ",
+          "partes": [
+            {
+              "pt": " de cada cem euros vão para os ",
+              "en": " of every hundred euros go to ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2027-cem-euros-funcao-01-mapa",
+                  "campo": "derivation",
+                  "literal": "multiplicar por cem"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[0].paragrafo[4]",
+          "pt": ", porque a subfunção das operações relacionadas com a dívida pública está dentro dessa função; a ",
+          "en": ", because the subfunction of the operations related to public debt sits inside that function; ",
+          "partes": [
+            {
+              "pt": ", porque a subfunção das operações relacionadas com a dívida pública está dentro dessa função; a ",
+              "en": ", because the subfunction of the operations related to public debt sits inside that function; ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2027-despesa-subfuncao-01-7-mapa",
+                  "campo": "excerpt",
+                  "literal": "01.7 OPERAÇÕES RELACIONADAS COM A DÍVIDA PÚBLICA"
+                },
+                {
+                  "linha": "oe-2027-cem-euros-funcao-01-sem-divida-mapa",
+                  "campo": "derivation",
+                  "literal": "na função 01, a função menos a subfunção 01.7"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[0].paragrafo[6]",
+          "pt": " leva ",
+          "en": " takes ",
+          "partes": [
+            {
+              "pt": " leva ",
+              "en": " takes ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2027-cem-euros-funcao-07-mapa",
+                  "campo": "derivation",
+                  "literal": "Dividir a despesa desta função"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[0].paragrafo[8]",
+          "pt": ", os ",
+          "en": ", ",
+          "partes": [
+            {
+              "pt": ", os ",
+              "en": ", ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[0].paragrafo[10]",
+          "pt": " ",
+          "en": " ",
+          "partes": [
+            {
+              "pt": " ",
+              "en": " ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[0].paragrafo[12]",
+          "pt": ", a ",
+          "en": ", ",
+          "partes": [
+            {
+              "pt": ", a ",
+              "en": ", ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[0].paragrafo[14]",
+          "pt": " ",
+          "en": " ",
+          "partes": [
+            {
+              "pt": " ",
+              "en": " ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[0].paragrafo[16]",
+          "pt": " e a ",
+          "en": " and ",
+          "partes": [
+            {
+              "pt": " e a ",
+              "en": " and ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[0].paragrafo[18]",
+          "pt": " ",
+          "en": " ",
+          "partes": [
+            {
+              "pt": " ",
+              "en": " ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[0].paragrafo[20]",
+          "pt": ". A ",
+          "en": ". ",
+          "partes": [
+            {
+              "pt": ". A ",
+              "en": ". ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[0].paragrafo[22]",
+          "pt": " leva ",
+          "en": " takes ",
+          "partes": [
+            {
+              "pt": " leva ",
+              "en": " takes ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2027-cem-euros-funcao-07-mapa",
+                  "campo": "derivation",
+                  "literal": "Dividir a despesa desta função"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[0].paragrafo[24]",
+          "pt": ", a ",
+          "en": ", ",
+          "partes": [
+            {
+              "pt": ", a ",
+              "en": ", ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[0].paragrafo[26]",
+          "pt": " ",
+          "en": " ",
+          "partes": [
+            {
+              "pt": " ",
+              "en": " ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[0].paragrafo[28]",
+          "pt": ", a ",
+          "en": ", ",
+          "partes": [
+            {
+              "pt": ", a ",
+              "en": ", ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[0].paragrafo[30]",
+          "pt": " ",
+          "en": " ",
+          "partes": [
+            {
+              "pt": " ",
+              "en": " ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[0].paragrafo[32]",
+          "pt": ", a ",
+          "en": ", ",
+          "partes": [
+            {
+              "pt": ", a ",
+              "en": ", ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[0].paragrafo[34]",
+          "pt": " ",
+          "en": " ",
+          "partes": [
+            {
+              "pt": " ",
+              "en": " ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[0].paragrafo[36]",
+          "pt": " e o ",
+          "en": " and ",
+          "partes": [
+            {
+              "pt": " e o ",
+              "en": " and ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[0].paragrafo[38]",
+          "pt": " ",
+          "en": " ",
+          "partes": [
+            {
+              "pt": " ",
+              "en": " ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[0].paragrafo[40]",
+          "pt": ".",
+          "en": ".",
+          "partes": [
+            {
+              "pt": ".",
+              "en": ".",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[1].titulo",
+          "pt": "Sem as operações relacionadas com a dívida pública",
+          "en": "Without the operations related to public debt",
+          "partes": [
+            {
+              "pt": "Sem as operações relacionadas com a dívida pública",
+              "en": "Without the operations related to public debt",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2027-despesa-sem-divida-mapa",
+                  "campo": "derivation",
+                  "literal": "menos a subfunção 01.7"
+                },
+                {
+                  "linha": "oe-2027-despesa-subfuncao-01-7-mapa",
+                  "campo": "name",
+                  "literal": "OPERAÇÕES RELACIONADAS COM A DÍVIDA PÚBLICA"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[1].conteudo[0].paragrafo[0]",
+          "pt": "Esta conta é deste projeto: a despesa total do mapa menos a subfunção ",
+          "en": "This calculation is this project’s: the map’s total expenditure minus subfunction ",
+          "partes": [
+            {
+              "pt": "Esta conta é deste projeto: a despesa total do mapa menos a subfunção ",
+              "en": "This calculation is this project’s: the map’s total expenditure minus subfunction ",
+              "classe": "leitura",
+              "sobre": "que a despesa sem a subfunção 01.7 é uma conta derivada pelo projeto, e não um valor que o mapa imprime",
+              "apoios": [
+                {
+                  "linha": "oe-2027-despesa-sem-divida-mapa",
+                  "campo": "derivation",
+                  "literal": "A despesa total do Mapa 2 menos a subfunção 01.7, como o mapa as imprime"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[1].conteudo[0].paragrafo[2]",
+          "pt": ", e cada função a dividir por esse resto; o recibo de cada linha mostra a conta. A ",
+          "en": ", and each function divided by that remainder; each row’s receipt shows the calculation. ",
+          "partes": [
+            {
+              "pt": ", e cada função a dividir por esse resto;",
+              "en": ", and each function divided by that remainder;",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2027-cem-euros-funcao-03-sem-divida-mapa",
+                  "campo": "derivation",
+                  "literal": "Dividir a despesa desta função"
+                }
+              ]
+            },
+            {
+              "pt": " o recibo de cada linha mostra a conta. A ",
+              "en": " each row’s receipt shows the calculation. ",
+              "classe": "aponta",
+              "alvo": "selos"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[1].conteudo[0].paragrafo[4]",
+          "pt": " leva ",
+          "en": " takes ",
+          "partes": [
+            {
+              "pt": " leva ",
+              "en": " takes ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2027-cem-euros-funcao-03-sem-divida-mapa",
+                  "campo": "derivation",
+                  "literal": "Dividir a despesa desta função"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[1].conteudo[0].paragrafo[6]",
+          "pt": " de cada cem euros, a ",
+          "en": " of every hundred euros, ",
+          "partes": [
+            {
+              "pt": " de cada cem euros, a ",
+              "en": " of every hundred euros, ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2027-cem-euros-funcao-03-sem-divida-mapa",
+                  "campo": "derivation",
+                  "literal": "multiplicar por cem"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[1].conteudo[0].paragrafo[8]",
+          "pt": " ",
+          "en": " ",
+          "partes": [
+            {
+              "pt": " ",
+              "en": " ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[1].conteudo[0].paragrafo[10]",
+          "pt": ", a ",
+          "en": ", ",
+          "partes": [
+            {
+              "pt": ", a ",
+              "en": ", ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[1].conteudo[0].paragrafo[12]",
+          "pt": " ",
+          "en": " ",
+          "partes": [
+            {
+              "pt": " ",
+              "en": " ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[1].conteudo[0].paragrafo[14]",
+          "pt": ", a ",
+          "en": ", ",
+          "partes": [
+            {
+              "pt": ", a ",
+              "en": ", ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[1].conteudo[0].paragrafo[16]",
+          "pt": " ",
+          "en": " ",
+          "partes": [
+            {
+              "pt": " ",
+              "en": " ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[1].conteudo[0].paragrafo[18]",
+          "pt": " e o ",
+          "en": " and ",
+          "partes": [
+            {
+              "pt": " e o ",
+              "en": " and ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[1].conteudo[0].paragrafo[20]",
+          "pt": " ",
+          "en": " ",
+          "partes": [
+            {
+              "pt": " ",
+              "en": " ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[1].conteudo[0].paragrafo[22]",
+          "pt": ".",
+          "en": ".",
+          "partes": [
+            {
+              "pt": ".",
+              "en": ".",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].titulo[0]",
+          "pt": "O que muda da lei de ",
+          "en": "What changes from the ",
+          "partes": [
+            {
+              "pt": "O que muda da lei de ",
+              "en": "What changes from the ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "der-oe2027-despesa-total-mapa-variacao-pct",
+                  "campo": "derivation",
+                  "literal": "Variação da proposta de 2027 sobre a lei aprovada de 2026"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].titulo[2]",
+          "pt": " para a proposta de ",
+          "en": " law to the ",
+          "partes": [
+            {
+              "pt": " para a proposta de ",
+              "en": " law to the ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "der-oe2027-despesa-total-mapa-variacao-pct",
+                  "campo": "derivation",
+                  "literal": "proposta de 2027 sobre a lei aprovada"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].titulo[4]",
+          "pt": "",
+          "en": " proposal",
+          "partes": [
+            {
+              "pt": "",
+              "en": " proposal",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2027-calendario-entrega",
+                  "campo": "excerpt",
+                  "literal": "Proposta de Lei"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[0].paragrafo[0]",
+          "pt": "A comparação certa é o Mapa ",
+          "en": "The right comparison is Map ",
+          "partes": [
+            {
+              "pt": "A comparação certa é o Mapa ",
+              "en": "The right comparison is Map ",
+              "classe": "leitura",
+              "sobre": "qual é a comparação certa para os valores do Mapa 2 da proposta",
+              "apoios": [
+                {
+                  "linha": "der-oe2027-despesa-total-mapa-variacao-pct",
+                  "campo": "derivation",
+                  "literal": "no mesmo Mapa 2 (mesmo título, mesmo subsetor, mesma unidade)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[0].paragrafo[2]",
+          "pt": " da Lei do Orçamento para ",
+          "en": " of the Budget Law for ",
+          "partes": [
+            {
+              "pt": " da Lei do Orçamento para ",
+              "en": " of the Budget Law for ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "der-oe2027-despesa-total-mapa-variacao-pct",
+                  "campo": "derivation",
+                  "literal": "lei aprovada de 2026"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[0].paragrafo[4]",
+          "pt": ": o mesmo mapa, o mesmo perímetro, a mesma unidade. A despesa total do mapa passa de ",
+          "en": ": the same map, the same perimeter, the same unit. The map’s total expenditure goes from ",
+          "partes": [
+            {
+              "pt": ": o mesmo mapa, o mesmo perímetro, a mesma unidade. A despesa total do mapa passa de ",
+              "en": ": the same map, the same perimeter, the same unit. The map’s total expenditure goes from ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "der-oe2027-despesa-total-mapa-variacao-pct",
+                  "campo": "derivation",
+                  "literal": "mesmo título, mesmo subsetor, mesma unidade"
+                },
+                {
+                  "linha": "oe-2026-despesa-total-mapa",
+                  "campo": "name",
+                  "literal": "DESPESA TOTAL"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[0].paragrafo[5].sufixo",
+          "pt": " euros",
+          "en": " euros",
+          "partes": [
+            {
+              "pt": " euros",
+              "en": " euros",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2026-despesa-total-mapa",
+                  "campo": "unit",
+                  "literal": "euros"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[0].paragrafo[6]",
+          "pt": " para ",
+          "en": " to ",
+          "partes": [
+            {
+              "pt": " para ",
+              "en": " to ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[0].paragrafo[7].sufixo",
+          "pt": " euros",
+          "en": " euros",
+          "partes": [
+            {
+              "pt": " euros",
+              "en": " euros",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2027-despesa-total-mapa",
+                  "campo": "unit",
+                  "literal": "euros"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[0].paragrafo[8]",
+          "pt": ", uma variação de ",
+          "en": ", a change of ",
+          "partes": [
+            {
+              "pt": ", uma variação de ",
+              "en": ", a change of ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "der-oe2027-despesa-total-mapa-variacao-pct",
+                  "campo": "derivation",
+                  "literal": "Variação da proposta"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[0].paragrafo[9].sufixo",
+          "pt": " %",
+          "en": " %",
+          "partes": [
+            {
+              "pt": " %",
+              "en": " %",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "der-oe2027-despesa-total-mapa-variacao-pct",
+                  "campo": "derivation",
+                  "literal": "vezes cem"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[0].paragrafo[10]",
+          "pt": "; sem as operações relacionadas com a dívida pública, passa de ",
+          "en": "; without the operations related to public debt, it goes from ",
+          "partes": [
+            {
+              "pt": "; sem as operações relacionadas com a dívida pública, passa de ",
+              "en": "; without the operations related to public debt, it goes from ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2026-despesa-sem-divida-mapa",
+                  "campo": "derivation",
+                  "literal": "menos a subfunção 01.7"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[0].paragrafo[11].sufixo",
+          "pt": " euros",
+          "en": " euros",
+          "partes": [
+            {
+              "pt": " euros",
+              "en": " euros",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2026-despesa-sem-divida-mapa",
+                  "campo": "unit",
+                  "literal": "euros"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[0].paragrafo[12]",
+          "pt": " para ",
+          "en": " to ",
+          "partes": [
+            {
+              "pt": " para ",
+              "en": " to ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[0].paragrafo[13].sufixo",
+          "pt": " euros",
+          "en": " euros",
+          "partes": [
+            {
+              "pt": " euros",
+              "en": " euros",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2027-despesa-sem-divida-mapa",
+                  "campo": "unit",
+                  "literal": "euros"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[0].paragrafo[14]",
+          "pt": ", ",
+          "en": ", ",
+          "partes": [
+            {
+              "pt": ", ",
+              "en": ", ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[0].paragrafo[15].sufixo",
+          "pt": " %",
+          "en": " %",
+          "partes": [
+            {
+              "pt": " %",
+              "en": " %",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "der-oe2027-despesa-sem-divida-variacao-pct",
+                  "campo": "derivation",
+                  "literal": "vezes cem"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[0].paragrafo[16]",
+          "pt": ". Por função, em euros: os ",
+          "en": ". By function, in euros: ",
+          "partes": [
+            {
+              "pt": ". Por função, em euros: os ",
+              "en": ". By function, in euros: ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "der-oe2027-funcao-04-variacao-pct",
+                  "campo": "derivation",
+                  "literal": "Variação da proposta de 2027 sobre a lei aprovada de 2026"
+                },
+                {
+                  "linha": "oe-2027-despesa-funcao-07-mapa",
+                  "campo": "unit",
+                  "literal": "euros"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[0].paragrafo[18]",
+          "pt": " variam ",
+          "en": " change by ",
+          "partes": [
+            {
+              "pt": " variam ",
+              "en": " change by ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "der-oe2027-funcao-04-variacao-pct",
+                  "campo": "derivation",
+                  "literal": "Variação"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[0].paragrafo[19].sufixo",
+          "pt": " %",
+          "en": " %",
+          "partes": [
+            {
+              "pt": " %",
+              "en": " %",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "der-oe2027-funcao-04-variacao-pct",
+                  "campo": "derivation",
+                  "literal": "vezes cem"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[0].paragrafo[20]",
+          "pt": ", a ",
+          "en": ", ",
+          "partes": [
+            {
+              "pt": ", a ",
+              "en": ", ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[0].paragrafo[22]",
+          "pt": " ",
+          "en": " by ",
+          "partes": [
+            {
+              "pt": " ",
+              "en": " by ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[0].paragrafo[23].sufixo",
+          "pt": " %",
+          "en": " %",
+          "partes": [
+            {
+              "pt": " %",
+              "en": " %",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "der-oe2027-funcao-07-variacao-pct",
+                  "campo": "derivation",
+                  "literal": "vezes cem"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[0].paragrafo[24]",
+          "pt": ", a ",
+          "en": ", ",
+          "partes": [
+            {
+              "pt": ", a ",
+              "en": ", ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[0].paragrafo[26]",
+          "pt": " ",
+          "en": " by ",
+          "partes": [
+            {
+              "pt": " ",
+              "en": " by ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[0].paragrafo[27].sufixo",
+          "pt": " %",
+          "en": " %",
+          "partes": [
+            {
+              "pt": " %",
+              "en": " %",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "der-oe2027-funcao-10-variacao-pct",
+                  "campo": "derivation",
+                  "literal": "vezes cem"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[0].paragrafo[28]",
+          "pt": ", a ",
+          "en": ", ",
+          "partes": [
+            {
+              "pt": ", a ",
+              "en": ", ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[0].paragrafo[30]",
+          "pt": " ",
+          "en": " by ",
+          "partes": [
+            {
+              "pt": " ",
+              "en": " by ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[0].paragrafo[31].sufixo",
+          "pt": " %",
+          "en": " %",
+          "partes": [
+            {
+              "pt": " %",
+              "en": " %",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "der-oe2027-funcao-09-variacao-pct",
+                  "campo": "derivation",
+                  "literal": "vezes cem"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[0].paragrafo[32]",
+          "pt": ", a ",
+          "en": ", ",
+          "partes": [
+            {
+              "pt": ", a ",
+              "en": ", ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[0].paragrafo[34]",
+          "pt": " ",
+          "en": " by ",
+          "partes": [
+            {
+              "pt": " ",
+              "en": " by ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[0].paragrafo[35].sufixo",
+          "pt": " %",
+          "en": " %",
+          "partes": [
+            {
+              "pt": " %",
+              "en": " %",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "der-oe2027-funcao-02-variacao-pct",
+                  "campo": "derivation",
+                  "literal": "vezes cem"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[0].paragrafo[36]",
+          "pt": ", a ",
+          "en": ", ",
+          "partes": [
+            {
+              "pt": ", a ",
+              "en": ", ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[0].paragrafo[38]",
+          "pt": " ",
+          "en": " by ",
+          "partes": [
+            {
+              "pt": " ",
+              "en": " by ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[0].paragrafo[39].sufixo",
+          "pt": " %",
+          "en": " %",
+          "partes": [
+            {
+              "pt": " %",
+              "en": " %",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "der-oe2027-funcao-05-variacao-pct",
+                  "campo": "derivation",
+                  "literal": "vezes cem"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[0].paragrafo[40]",
+          "pt": " e o ",
+          "en": " and ",
+          "partes": [
+            {
+              "pt": " e o ",
+              "en": " and ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[0].paragrafo[42]",
+          "pt": " ",
+          "en": " by ",
+          "partes": [
+            {
+              "pt": " ",
+              "en": " by ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[0].paragrafo[43].sufixo",
+          "pt": " %",
+          "en": " %",
+          "partes": [
+            {
+              "pt": " %",
+              "en": " %",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "der-oe2027-funcao-08-variacao-pct",
+                  "campo": "derivation",
+                  "literal": "vezes cem"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[0].paragrafo[44]",
+          "pt": ".",
+          "en": ".",
+          "partes": [
+            {
+              "pt": ".",
+              "en": ".",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[0].paragrafo[45].se[0]",
+          "pt": " A função que mais cresce é a dos ",
+          "en": " The function that grows most is ",
+          "partes": [
+            {
+              "pt": " A função que mais cresce é a dos ",
+              "en": " The function that grows most is ",
+              "classe": "conta"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[0].paragrafo[45].se[2]",
+          "pt": ".",
+          "en": ".",
+          "partes": [
+            {
+              "pt": ".",
+              "en": ".",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[0].paragrafo[46]",
+          "pt": " O que está dentro de cada função, medida a medida, lê-se no estudo do Orçamento.",
+          "en": " What sits inside each function, measure by measure, is read in the Budget study.",
+          "partes": [
+            {
+              "pt": " O que está dentro de cada função, medida a medida, lê-se no estudo do Orçamento.",
+              "en": " What sits inside each function, measure by measure, is read in the Budget study.",
+              "classe": "aponta",
+              "porta": "estudo"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[3].titulo",
+          "pt": "A Saúde: a função e o programa",
+          "en": "Health: the function and the programme",
+          "partes": [
+            {
+              "pt": "A Saúde: a função e o programa",
+              "en": "Health: the function and the programme",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2027-despesa-funcao-07-mapa",
+                  "campo": "name",
+                  "literal": "SAÚDE"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-total-consolidada-2027",
+                  "campo": "document.locator",
+                  "literal": "Saúde (PL15)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[3].conteudo[0].paragrafo[0]",
+          "pt": "A função ",
+          "en": "The map’s ",
+          "partes": [
+            {
+              "pt": "A função ",
+              "en": "The map’s ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2027-despesa-funcao-07-mapa",
+                  "campo": "document.locator",
+                  "literal": "função 07"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[3].conteudo[0].paragrafo[2]",
+          "pt": " do mapa, ",
+          "en": " function, ",
+          "partes": [
+            {
+              "pt": " do mapa, ",
+              "en": " function, ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2027-despesa-funcao-07-mapa",
+                  "campo": "document.title",
+                  "literal": "Mapa relativo à classificação funcional"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[3].conteudo[0].paragrafo[3].sufixo",
+          "pt": " euros",
+          "en": " euros",
+          "partes": [
+            {
+              "pt": " euros",
+              "en": " euros",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2027-despesa-funcao-07-mapa",
+                  "campo": "unit",
+                  "literal": "euros"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[3].conteudo[0].paragrafo[4]",
+          "pt": ", não é o programa Saúde do Orçamento, ",
+          "en": ", is not the Budget’s Health programme, ",
+          "partes": [
+            {
+              "pt": ", não é o programa Saúde do Orçamento, ",
+              "en": ", is not the Budget’s Health programme, ",
+              "classe": "leitura",
+              "sobre": "que a função 07 do mapa e o programa Saúde do relatório da proposta são contas diferentes",
+              "apoios": [
+                {
+                  "linha": "oe-2027-saude-despesa-total-consolidada-2027",
+                  "campo": "document.locator",
+                  "literal": "Saúde (PL15), Conta do Pograma Legado"
+                },
+                {
+                  "linha": "oe-2027-despesa-funcao-07-mapa",
+                  "campo": "document.locator",
+                  "literal": "função 07, coluna «POR FUNÇÕES»"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[3].conteudo[0].paragrafo[5].sufixo",
+          "pt": " milhões de euros",
+          "en": " million euros",
+          "partes": [
+            {
+              "pt": " milhões de euros",
+              "en": " million euros",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2027-saude-despesa-total-consolidada-2027",
+                  "campo": "unit",
+                  "literal": "milhões de euros"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[3].conteudo[0].paragrafo[6]",
+          "pt": " em ",
+          "en": " in ",
+          "partes": [
+            {
+              "pt": " em ",
+              "en": " in ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[3].conteudo[0].paragrafo[8]",
+          "pt": ": o programa é consolidado e é um programa orçamental; a função é uma classificação da despesa, não consolidada, que conta as transferências entre serviços. As duas contas medem coisas diferentes, e nenhuma está errada.",
+          "en": ": the programme is consolidated and is a budget programme; the function is a classification of expenditure, unconsolidated, which counts the transfers between services. The two accounts measure different things, and neither is wrong.",
+          "partes": [
+            {
+              "pt": ": o programa é consolidado e é um programa orçamental;",
+              "en": ": the programme is consolidated and is a budget programme;",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2027-saude-despesa-total-consolidada-2027",
+                  "campo": "name",
+                  "literal": "Despesa total consolidada"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-total-consolidada-2027",
+                  "campo": "document.locator",
+                  "literal": "Conta do Pograma Legado"
+                }
+              ]
+            },
+            {
+              "pt": " a função é uma classificação da despesa, não consolidada, que conta as transferências entre serviços.",
+              "en": " the function is a classification of expenditure, unconsolidated, which counts the transfers between services.",
+              "classe": "leitura",
+              "sobre": "o que a coluna «POR FUNÇÕES» do mapa conta, ao lado da despesa total consolidada",
+              "apoios": [
+                {
+                  "linha": "oe-2027-despesa-funcao-07-mapa",
+                  "campo": "document.title",
+                  "literal": "classificação funcional das despesas"
+                },
+                {
+                  "linha": "oe-2027-despesa-total-consolidada-mapa",
+                  "campo": "name",
+                  "literal": "DESPESA TOTAL CONSOLIDADA"
+                },
+                {
+                  "origem": "rp4n-consolidada-ministerios",
+                  "campo": "excerto",
+                  "literal": "exclui os fluxos intrasetoriais e intersetoriais de juros, subsídios, transferências correntes e de capital"
+                }
+              ]
+            },
+            {
+              "pt": " As duas contas medem coisas diferentes, e nenhuma está errada.",
+              "en": " The two accounts measure different things, and neither is wrong.",
+              "classe": "leitura",
+              "sobre": "a diferença entre o programa consolidado e a função não consolidada",
+              "apoios": [
+                {
+                  "linha": "oe-2027-saude-despesa-total-consolidada-2027",
+                  "campo": "name",
+                  "literal": "Despesa total consolidada"
+                },
+                {
+                  "linha": "oe-2027-despesa-funcao-07-mapa",
+                  "campo": "document.locator",
+                  "literal": "coluna «POR FUNÇÕES»"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "naoDiz[0][0]",
+          "pt": "Esta explicação lê o Mapa ",
+          "en": "This explainer reads Map ",
+          "partes": [
+            {
+              "pt": "Esta explicação lê o Mapa ",
+              "en": "This explainer reads Map ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2027-despesa-total-mapa",
+                  "campo": "document.locator",
+                  "literal": "MAPA 2, ano económico de 2027"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "naoDiz[0][2]",
+          "pt": " de uma proposta: o que o Parlamento aprovar pode ser diferente, e o que se gasta de facto lê-se depois, na execução.",
+          "en": " of a proposal: what Parliament approves may differ, and what is actually spent is read afterwards, in the budget execution.",
+          "partes": [
+            {
+              "pt": " de uma proposta: o que o Parlamento aprovar pode ser diferente, e o que se gasta de facto lê-se depois, na execução.",
+              "en": " of a proposal: what Parliament approves may differ, and what is actually spent is read afterwards, in the budget execution.",
+              "classe": "leitura",
+              "sobre": "que a proposta não é a lei aprovada nem a despesa executada",
+              "apoios": [
+                {
+                  "linha": "oe-2027-calendario-entrega",
+                  "campo": "excerpt",
+                  "literal": "Proposta de Lei"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-total-consolidada-2027",
+                  "campo": "ressalva",
+                  "literal": "Previsão, não execução."
+                },
+                {
+                  "linha": "der-oe2027-despesa-total-mapa-variacao-pct",
+                  "campo": "derivation",
+                  "literal": "proposta de 2027 sobre a lei aprovada de 2026"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "naoDiz[0][3].se[0]",
+          "pt": " Os valores não são consolidados, contam as transferências entre serviços, e por isso a despesa total do mapa é maior do que a despesa total consolidada, ",
+          "en": " The values are unconsolidated, they count the transfers between services, and so the map’s total expenditure is larger than the consolidated total expenditure, ",
+          "partes": [
+            {
+              "pt": " Os valores não são consolidados, contam as transferências entre serviços, e por isso a despesa total do mapa é maior do que a despesa total consolidada, ",
+              "en": " The values are unconsolidated, they count the transfers between services, and so the map’s total expenditure is larger than the consolidated total expenditure, ",
+              "classe": "leitura",
+              "sobre": "porque a despesa total do mapa é maior do que a consolidada",
+              "apoios": [
+                {
+                  "linha": "oe-2027-despesa-total-mapa",
+                  "campo": "name",
+                  "literal": "DESPESA TOTAL"
+                },
+                {
+                  "linha": "oe-2027-despesa-total-consolidada-mapa",
+                  "campo": "name",
+                  "literal": "DESPESA TOTAL CONSOLIDADA"
+                },
+                {
+                  "origem": "rp4n-consolidada-ministerios",
+                  "campo": "excerto",
+                  "literal": "exclui os fluxos intrasetoriais e intersetoriais de juros, subsídios, transferências correntes e de capital"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "naoDiz[0][3].se[1].sufixo",
+          "pt": " euros",
+          "en": " euros",
+          "partes": [
+            {
+              "pt": " euros",
+              "en": " euros",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2027-despesa-total-consolidada-mapa",
+                  "campo": "unit",
+                  "literal": "euros"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "naoDiz[0][3].se[2]",
+          "pt": " em ",
+          "en": " in ",
+          "partes": [
+            {
+              "pt": " em ",
+              "en": " in ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "naoDiz[0][3].se[4]",
+          "pt": ".",
+          "en": ".",
+          "partes": [
+            {
+              "pt": ".",
+              "en": ".",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "naoDiz[0][4]",
+          "pt": " A conta «sem as operações relacionadas com a dívida pública» é deste projeto, declarada no recibo de cada linha; o mapa só dá o nome a essa subfunção, e esta explicação não diz o que entra nela. A base da explicação de ",
+          "en": " The calculation «without the operations related to public debt» is this project’s, declared in each row’s receipt; the map only names that subfunction, and this explainer does not say what goes into it. The basis of the ",
+          "partes": [
+            {
+              "pt": " A conta «sem as operações relacionadas com a dívida pública» é deste projeto, declarada no recibo de cada linha;",
+              "en": " The calculation «without the operations related to public debt» is this project’s, declared in each row’s receipt;",
+              "classe": "leitura",
+              "sobre": "que as linhas sem a subfunção 01.7 são derivadas pelo projeto",
+              "apoios": [
+                {
+                  "linha": "oe-2027-despesa-sem-divida-mapa",
+                  "campo": "derivation",
+                  "literal": "A despesa total do Mapa 2 menos a subfunção 01.7"
+                }
+              ]
+            },
+            {
+              "pt": " o mapa só dá o nome a essa subfunção, e esta explicação não diz o que entra nela.",
+              "en": " the map only names that subfunction, and this explainer does not say what goes into it.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2027-despesa-subfuncao-01-7-mapa",
+                  "campo": "excerpt",
+                  "literal": "01.7 OPERAÇÕES RELACIONADAS COM A DÍVIDA PÚBLICA"
+                }
+              ]
+            },
+            {
+              "pt": " A base da explicação de ",
+              "en": " The basis of the ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2026-cem-euros-funcao-01",
+                  "campo": "derivation",
+                  "literal": "despesa efetiva consolidada desta função"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "naoDiz[0][6]",
+          "pt": ", a despesa efetiva consolidada por função dos dados abertos, ainda não existe para ",
+          "en": " explainer, consolidated effective expenditure by function from the open data, does not yet exist for ",
+          "partes": [
+            {
+              "pt": ", a despesa efetiva consolidada por função dos dados abertos, ainda não existe para ",
+              "en": " explainer, consolidated effective expenditure by function from the open data, does not yet exist for ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2026-cem-euros-funcao-01",
+                  "campo": "derivation",
+                  "literal": "despesa efetiva consolidada"
+                },
+                {
+                  "origem": "dados-gov-oe-despesa-funcional",
+                  "campo": "excerto",
+                  "literal": "disponibilizados uma vez por ano após a aprovação do OE"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "naoDiz[0][8]",
+          "pt": "; quando existir, esta explicação passa a essa base.",
+          "en": "; when it does, this explainer moves to that basis.",
+          "partes": [
+            {
+              "pt": "; quando existir, esta explicação passa a essa base.",
+              "en": "; when it does, this explainer moves to that basis.",
+              "classe": "leitura",
+              "sobre": "quando a base dos dados abertos de 2027 pode existir",
+              "apoios": [
+                {
+                  "origem": "dados-gov-oe-despesa-funcional",
+                  "campo": "excerto",
+                  "literal": "após a aprovação do OE na Assembleia da República"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ]
 }

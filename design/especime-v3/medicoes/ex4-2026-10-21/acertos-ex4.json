@@ -1,0 +1,131 @@
+{
+  "frases_do_mandato": 28,
+  "frases_da_pagina": 25,
+  "iguais": 25,
+  "fora": 3,
+  "acertos": [
+    "EX4-A1",
+    "EX4-A2",
+    "EX4-A3",
+    "EX4-A4",
+    "EX4-A5"
+  ],
+  "linhas": [
+    {
+      "frase": "titulo",
+      "estado": "igual"
+    },
+    {
+      "frase": "abertura-1",
+      "estado": "igual"
+    },
+    {
+      "frase": "abertura-2",
+      "estado": "igual"
+    },
+    {
+      "frase": "abertura-3",
+      "estado": "igual"
+    },
+    {
+      "frase": "abertura-4",
+      "estado": "igual"
+    },
+    {
+      "frase": "abertura-5",
+      "estado": "igual"
+    },
+    {
+      "frase": "secao-1",
+      "estado": "igual"
+    },
+    {
+      "frase": "figura-1",
+      "estado": "fora",
+      "acerto": "EX4-A1"
+    },
+    {
+      "frase": "secao-1-1",
+      "estado": "igual"
+    },
+    {
+      "frase": "secao-1-2",
+      "estado": "igual"
+    },
+    {
+      "frase": "secao-2",
+      "estado": "igual"
+    },
+    {
+      "frase": "figura-2",
+      "estado": "fora",
+      "acerto": "EX4-A1"
+    },
+    {
+      "frase": "secao-2-1",
+      "estado": "igual"
+    },
+    {
+      "frase": "secao-2-2",
+      "estado": "igual"
+    },
+    {
+      "frase": "secao-3",
+      "estado": "igual"
+    },
+    {
+      "frase": "secao-3-1",
+      "estado": "igual"
+    },
+    {
+      "frase": "secao-3-2",
+      "estado": "igual"
+    },
+    {
+      "frase": "secao-3-3",
+      "estado": "igual"
+    },
+    {
+      "frase": "secao-3-4",
+      "estado": "igual"
+    },
+    {
+      "frase": "secao-3-5",
+      "estado": "igual"
+    },
+    {
+      "frase": "secao-4",
+      "estado": "igual"
+    },
+    {
+      "frase": "secao-4-1",
+      "estado": "igual"
+    },
+    {
+      "frase": "secao-4-2",
+      "estado": "igual"
+    },
+    {
+      "frase": "naoDiz-1",
+      "estado": "igual"
+    },
+    {
+      "frase": "naoDiz-2",
+      "estado": "fora",
+      "acerto": "EX4-A2"
+    },
+    {
+      "frase": "naoDiz-3",
+      "estado": "igual"
+    },
+    {
+      "frase": "naoDiz-4",
+      "estado": "igual"
+    },
+    {
+      "frase": "naoDiz-5",
+      "estado": "igual"
+    }
+  ],
+  "erros": []
+}

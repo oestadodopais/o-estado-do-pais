@@ -1,0 +1,31 @@
+{
+  "controlo": true,
+  "plantas": [
+    {
+      "nome": "uma porta para um estudo que não existe",
+      "mordeu": true,
+      "queixa": "explicação · portas[1]: o estudo «estudo-que-nao-existe» não está em WORKS (src/data/studies.mjs) com título na edição «pt». Um defeito da declaração fecha a construção; uma condição falsa tira as pal"
+    },
+    {
+      "nome": "uma porta para uma explicação que não existe",
+      "mordeu": true,
+      "queixa": "explicação · portas[1]: a explicação «explicacao-que-nao-existe» não está declarada em src/data/explicacoes/index.mjs, ou é esta. Um defeito da declaração fecha a construção; uma condição falsa tira a"
+    },
+    {
+      "nome": "o número do mapa registado não é o do campo selado",
+      "mordeu": true,
+      "queixa": "explicação · abertura[0][5]: o identificador «pf1-mapa-2027-numero» regista «3» e o campo document.locator da linha «oe-2027-despesa-total-mapa» dá «2». Um defeito da declaração fecha a construção; um"
+    },
+    {
+      "nome": "o identificador lê uma linha que saiu do livro",
+      "mordeu": true,
+      "queixa": "explicação · seccoes[1].conteudo[0].paragrafo[1]: o identificador «pf1-subfuncao-01-7-codigo» lê a linha «linha-que-saiu-do-livro», que não está no livro-razão. Um defeito da declaração fecha a constr"
+    },
+    {
+      "nome": "um algarismo escrito à mão num título de secção em pedaços",
+      "mordeu": true,
+      "queixa": "explicação · seccoes[2].titulo[0]: a palavra fixa «O que muda de 2026 para a proposta de » traz um algarismo; os algarismos entram por { claim } ou { periodo }. Um defeito da declaração fecha a constr"
+    }
+  ],
+  "todas": true
+}
