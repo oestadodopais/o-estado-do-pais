@@ -95,4 +95,6 @@ trap - EXIT INT TERM
 echo "FIM exit=$codigo $fim"
 sleep 2
 python3 "$aqui/pontos.py" --inicio "$inicio" --fim "$fim" --worktree "$worktree" --json "$base.pontos.json"
+# O FICHEIRO DE CUSTO (21.10.2026, §1.202): fica em $base.pontos.json, fora das pastas de relatórios (o pré-voo
+# exige-o), e o lugar de direção comita-o como custo-<data>.json ao lado do relatório com a leitura do bloco.
 exit "$codigo"

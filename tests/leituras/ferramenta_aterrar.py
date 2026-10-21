@@ -153,6 +153,26 @@ print('1m https://example.invalid/lancamento ● '+('Error' if modo=='vercel-fal
                 if modo in ('series-falha', 'cruzamento-falha'):
                     self.assertFalse(any(c[1:2] == ['merge'] for c in chamadas))
 
+    def test_preparacao_da_worktree(self):
+        # Sem node_modules nem dist, a aterragem prepara-os antes das conferências (I250).
+        r, recibo, chamadas = self.correr()
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+        self.assertIn(['npm', 'ci', '--no-audit', '--no-fund'], chamadas)
+        self.assertIn(['npm', 'run', 'build'], chamadas)
+        passos = [p['passo'] for p in recibo['passos']]
+        self.assertLess(passos.index('github'), passos.index('preparar-dependencias'))
+        self.assertLess(passos.index('preparar-dist'), passos.index('series'))
+
+    def test_preparacao_dispensada_quando_existe(self):
+        (self.main / '.git' / 'info' / 'exclude').write_text('node_modules\ndist\n')
+        (self.w / 'node_modules').mkdir()
+        (self.w / 'dist').mkdir()
+        (self.w / 'dist' / 'version.json').write_text('{}')
+        r, recibo, chamadas = self.correr()
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+        self.assertNotIn(['npm', 'ci', '--no-audit', '--no-fund'], chamadas)
+        self.assertNotIn(['npm', 'run', 'build'], chamadas)
+
     def test_verde_ordem_codigos_e_limpeza(self):
         r, recibo, chamadas = self.correr()
         self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
