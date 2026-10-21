@@ -4872,11 +4872,15 @@ ainda por explicar (o achado 7), fica aqui como retirada.*
 
 | classe | texto | bloco | estado | razão |
 | --- | --- | --- | --- | --- |
-| conteudo | 3 809 afirmações · 444 de 3 809 calculadas · 2 767 de 3 809 linhas de concelhos | eo1-d | viva | Recolhida do HTML construído, com a nova linha de variação das despesas com pessoal em contabilidade nacional. Leitura cruzada pendente. |
-| conteudo | 3 809 claims · 444 of 3 809 calculated · 2 767 of 3 809 municipality rows | eo1-d | viva | Recolhida do HTML construído, com a nova linha de variação das despesas com pessoal em contabilidade nacional. Leitura cruzada pendente. |
+| conteudo | 3 809 afirmações · 444 de 3 809 calculadas · 2 767 de 3 809 linhas de concelhos | eo1-d | retirada | EX4: a contagem do livro-razão subiu para 3 892 com as 83 linhas do Mapa 2 da proposta de 2027 e da lei de 2026 |
+| conteudo | 3 809 claims · 444 of 3 809 calculated · 2 767 of 3 809 municipality rows | eo1-d | retirada | EX4: a contagem do livro-razão subiu para 3 892 com as 83 linhas do Mapa 2 da proposta de 2027 e da lei de 2026 |
 
 ## EO1-e: sinopse inglesa
 
 | classe | texto | bloco | estado | razão |
 | --- | --- | --- | --- | --- |
 | conteudo | The new measures of the Budget are worth million euros to the balance, the ten lines the table marks as «invariante» (invariant) weigh million, and interest rises million: what changes most in the accounts is not in the table of measures. | eo1-e | viva | Recolhida do HTML construído e conferida pelo portão da voz. Leitura cruzada pendente. |
+| conteudo | Para onde vai o dinheiro do Estado em 2027, pela proposta de Orçamento | ex4 | viva | Recolhida do HTML construído pela conferência da voz, na correção EX4-c (a explicação de 2027 e a contagem do livro-razão com as 83 linhas do PF1). Leitura cruzada pendente. |
+| conteudo | Where the State’s money goes in 2027, by the Budget proposal | ex4 | viva | Recolhida do HTML construído pela conferência da voz, na correção EX4-c (a explicação de 2027 e a contagem do livro-razão com as 83 linhas do PF1). Leitura cruzada pendente. |
+| conteudo | 3 892 afirmações · 501 de 3 892 calculadas · 2 767 de 3 892 linhas de concelhos | ex4 | viva | Recolhida do HTML construído pela conferência da voz, na correção EX4-c (a explicação de 2027 e a contagem do livro-razão com as 83 linhas do PF1). Leitura cruzada pendente. |
+| conteudo | 3 892 claims · 501 of 3 892 calculated · 2 767 of 3 892 municipality rows | ex4 | viva | Recolhida do HTML construído pela conferência da voz, na correção EX4-c (a explicação de 2027 e a contagem do livro-razão com as 83 linhas do PF1). Leitura cruzada pendente. |

@@ -134,6 +134,8 @@ export const LINGUA_DOS_TITULOS = {
   "Síntese da Execução Orçamental | agosto 2026": "pt",
   "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor": 'pt',
   "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data": 'en',
+  /* PF1 (EX4-c, 21.10.2026): o título dos dois documentos do mapa, o da proposta de 2027 e o da Lei de 2026, como as linhas o escrevem. */
+  "Mapa relativo à classificação funcional das despesas do subsetor da Administração Central": "pt",
   /* RP1: línguas lidas nas respostas e na metainformação. */
   "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica (NUTS II - 2024) e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor": 'pt',
   "Índice de preços no consumidor (Taxa de variação média dos últimos 12 meses - Base 2025 - %) por Localização geográfica (NUTS II - 2024) e Agregados especiais; Mensal - INE, Índice de preços no consumidor": 'pt',
@@ -943,7 +945,9 @@ export const LINGUA_DOS_ROTULOS = {
   "Saldo orçamental": "pt",
   "Budget balance": "en",
   "UTAO: taxa de juro implícita": "pt",
-  "UTAO: implicit interest rate": "en"
+  "UTAO: implicit interest rate": "en",
+  /* EX4-c (21.10.2026): o rótulo da subfunção no mapa do PF1, como o mapa o escreve. */
+  "OPERAÇÕES RELACIONADAS COM A DÍVIDA PÚBLICA": "pt",
 };
 
 /**
@@ -1060,6 +1064,8 @@ export const LINGUA_DAS_FONTES = {
 
   /* --- o organismo de nome inglês --------------------------------------- */
   Eurostat: 'en',
+  /* EX4-c (21.10.2026): o organismo dos documentos do mapa do PF1. */
+  "Ministério das Finanças / Entidade Orçamental (MF/EO)": "pt",
 };
 
 /**
@@ -1275,6 +1281,9 @@ export const LINGUA_DAS_EDICOES = {
   tipsst10: null,
   tipsun20: null,
   une_rt_a: null,
+  /* EX4-c (21.10.2026): as edições dos dois documentos do mapa do PF1, a Lei de 2026 e a proposta de 2027. */
+  "Lei n.º 73-A/2025": "pt",
+  "Proposta de Lei n.º 110/XVII/2.ª": "pt",
 };
 
 /**
