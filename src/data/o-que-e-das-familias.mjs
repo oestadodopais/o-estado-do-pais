@@ -17020,7 +17020,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
         "O resultado é a diferença, em pontos do índice, entre Portugal e a União no índice dos preços das casas descontada a inflação"
       ],
       "en": [
-        "The result is the gap, in index points, between Portugal and the Union in the house price index net of inflation"
+        "The result is the gap, in index points, between Portugal and the Union in the index of house prices net of inflation"
       ]
     },
     "complemento": {
@@ -17592,7 +17592,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A parte da população que vive neste regime de ocupação da casa"
+        "A parte da população que vive neste regime de ocupação da habitação"
       ],
       "en": [
         "The share of the population living under this tenure status"
@@ -17622,7 +17622,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A parte da população que vive neste regime de ocupação da casa"
+        "A parte da população que vive neste regime de ocupação da habitação"
       ],
       "en": [
         "The share of the population living under this tenure status"
@@ -17652,7 +17652,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A parte da população que vive neste regime de ocupação da casa"
+        "A parte da população que vive neste regime de ocupação da habitação"
       ],
       "en": [
         "The share of the population living under this tenure status"
@@ -17682,7 +17682,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A parte da população que vive neste regime de ocupação da casa"
+        "A parte da população que vive neste regime de ocupação da habitação"
       ],
       "en": [
         "The share of the population living under this tenure status"
@@ -17712,7 +17712,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A parte da população que vive neste regime de ocupação da casa"
+        "A parte da população que vive neste regime de ocupação da habitação"
       ],
       "en": [
         "The share of the population living under this tenure status"
@@ -17742,7 +17742,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A parte da população que vive neste regime de ocupação da casa"
+        "A parte da população que vive neste regime de ocupação da habitação"
       ],
       "en": [
         "The share of the population living under this tenure status"
@@ -17772,7 +17772,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A parte da população que vive neste regime de ocupação da casa"
+        "A parte da população que vive neste regime de ocupação da habitação"
       ],
       "en": [
         "The share of the population living under this tenure status"
@@ -17802,7 +17802,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A parte da população que vive neste regime de ocupação da casa"
+        "A parte da população que vive neste regime de ocupação da habitação"
       ],
       "en": [
         "The share of the population living under this tenure status"
@@ -17832,7 +17832,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A parte da população que vive neste regime de ocupação da casa"
+        "A parte da população que vive neste regime de ocupação da habitação"
       ],
       "en": [
         "The share of the population living under this tenure status"
@@ -17862,7 +17862,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A parte da população que vive neste regime de ocupação da casa"
+        "A parte da população que vive neste regime de ocupação da habitação"
       ],
       "en": [
         "The share of the population living under this tenure status"
@@ -17892,7 +17892,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A parte da população que vive neste regime de ocupação da casa"
+        "A parte da população que vive neste regime de ocupação da habitação"
       ],
       "en": [
         "The share of the population living under this tenure status"
@@ -17922,7 +17922,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A parte da população que vive neste regime de ocupação da casa"
+        "A parte da população que vive neste regime de ocupação da habitação"
       ],
       "en": [
         "The share of the population living under this tenure status"
@@ -17952,7 +17952,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A parte da população que vive neste regime de ocupação da casa"
+        "A parte da população que vive neste regime de ocupação da habitação"
       ],
       "en": [
         "The share of the population living under this tenure status"
@@ -18180,7 +18180,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a casa, descontados os subsídios, passa de quarenta por cento do rendimento disponível"
+        "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios, passa de quarenta por cento do rendimento disponível"
       ],
       "en": [
         "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income"
@@ -18213,7 +18213,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a casa, descontados os subsídios, passa de quarenta por cento do rendimento disponível"
+        "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios, passa de quarenta por cento do rendimento disponível"
       ],
       "en": [
         "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income"
@@ -18246,7 +18246,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a casa, descontados os subsídios, passa de quarenta por cento do rendimento disponível"
+        "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios, passa de quarenta por cento do rendimento disponível"
       ],
       "en": [
         "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income"
@@ -18279,7 +18279,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a casa, descontados os subsídios, passa de quarenta por cento do rendimento disponível"
+        "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios, passa de quarenta por cento do rendimento disponível"
       ],
       "en": [
         "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income"
@@ -18312,7 +18312,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a casa, descontados os subsídios, passa de quarenta por cento do rendimento disponível"
+        "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios, passa de quarenta por cento do rendimento disponível"
       ],
       "en": [
         "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income"
@@ -18345,7 +18345,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a casa, descontados os subsídios, passa de quarenta por cento do rendimento disponível"
+        "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios, passa de quarenta por cento do rendimento disponível"
       ],
       "en": [
         "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income"
@@ -18378,7 +18378,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a casa, descontados os subsídios, passa de quarenta por cento do rendimento disponível"
+        "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios, passa de quarenta por cento do rendimento disponível"
       ],
       "en": [
         "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income"
@@ -18411,7 +18411,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a casa, descontados os subsídios, passa de quarenta por cento do rendimento disponível"
+        "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios, passa de quarenta por cento do rendimento disponível"
       ],
       "en": [
         "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income"
@@ -18444,7 +18444,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a casa, descontados os subsídios, passa de quarenta por cento do rendimento disponível"
+        "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios, passa de quarenta por cento do rendimento disponível"
       ],
       "en": [
         "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income"
@@ -18477,7 +18477,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a casa, descontados os subsídios, passa de quarenta por cento do rendimento disponível"
+        "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios, passa de quarenta por cento do rendimento disponível"
       ],
       "en": [
         "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income"
@@ -18510,7 +18510,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a casa, descontados os subsídios, passa de quarenta por cento do rendimento disponível"
+        "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios, passa de quarenta por cento do rendimento disponível"
       ],
       "en": [
         "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income"
@@ -18543,7 +18543,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a casa, descontados os subsídios, passa de quarenta por cento do rendimento disponível"
+        "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios, passa de quarenta por cento do rendimento disponível"
       ],
       "en": [
         "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income"
@@ -18576,7 +18576,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a casa, descontados os subsídios, passa de quarenta por cento do rendimento disponível"
+        "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios, passa de quarenta por cento do rendimento disponível"
       ],
       "en": [
         "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income"
@@ -18609,7 +18609,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a casa, descontados os subsídios, passa de quarenta por cento do rendimento disponível"
+        "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios, passa de quarenta por cento do rendimento disponível"
       ],
       "en": [
         "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income"
@@ -18642,7 +18642,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a casa, descontados os subsídios, passa de quarenta por cento do rendimento disponível"
+        "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios, passa de quarenta por cento do rendimento disponível"
       ],
       "en": [
         "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income"
@@ -18675,7 +18675,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a casa, descontados os subsídios, passa de quarenta por cento do rendimento disponível"
+        "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios, passa de quarenta por cento do rendimento disponível"
       ],
       "en": [
         "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income"
@@ -18708,7 +18708,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a casa, descontados os subsídios, passa de quarenta por cento do rendimento disponível"
+        "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios, passa de quarenta por cento do rendimento disponível"
       ],
       "en": [
         "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income"
@@ -18741,7 +18741,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a casa, descontados os subsídios, passa de quarenta por cento do rendimento disponível"
+        "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios, passa de quarenta por cento do rendimento disponível"
       ],
       "en": [
         "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income"
@@ -18774,7 +18774,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a casa, descontados os subsídios, passa de quarenta por cento do rendimento disponível"
+        "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios, passa de quarenta por cento do rendimento disponível"
       ],
       "en": [
         "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income"
@@ -18807,7 +18807,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a casa, descontados os subsídios, passa de quarenta por cento do rendimento disponível"
+        "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios, passa de quarenta por cento do rendimento disponível"
       ],
       "en": [
         "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income"
@@ -18840,7 +18840,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a casa, descontados os subsídios, passa de quarenta por cento do rendimento disponível"
+        "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios, passa de quarenta por cento do rendimento disponível"
       ],
       "en": [
         "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income"
@@ -19113,7 +19113,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A parte do rendimento disponível do agregado que vai para a despesa com a casa, que o Eurostat define como os gastos mensais ligados ao direito de viver numa casa"
+        "A parte do rendimento disponível do agregado que vai para a despesa com a habitação, que o Eurostat define como os gastos mensais ligados ao direito de viver numa casa"
       ],
       "en": [
         "The share of disposable household income that goes on housing costs, which Eurostat defines as the monthly expenses associated with the right to live in a dwelling"
@@ -19146,7 +19146,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A parte do rendimento disponível do agregado que vai para a despesa com a casa, que o Eurostat define como os gastos mensais ligados ao direito de viver numa casa"
+        "A parte do rendimento disponível do agregado que vai para a despesa com a habitação, que o Eurostat define como os gastos mensais ligados ao direito de viver numa casa"
       ],
       "en": [
         "The share of disposable household income that goes on housing costs, which Eurostat defines as the monthly expenses associated with the right to live in a dwelling"
@@ -19179,7 +19179,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A parte do rendimento disponível do agregado que vai para a despesa com a casa, que o Eurostat define como os gastos mensais ligados ao direito de viver numa casa"
+        "A parte do rendimento disponível do agregado que vai para a despesa com a habitação, que o Eurostat define como os gastos mensais ligados ao direito de viver numa casa"
       ],
       "en": [
         "The share of disposable household income that goes on housing costs, which Eurostat defines as the monthly expenses associated with the right to live in a dwelling"
@@ -19212,7 +19212,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A parte do rendimento disponível do agregado que vai para a despesa com a casa, que o Eurostat define como os gastos mensais ligados ao direito de viver numa casa"
+        "A parte do rendimento disponível do agregado que vai para a despesa com a habitação, que o Eurostat define como os gastos mensais ligados ao direito de viver numa casa"
       ],
       "en": [
         "The share of disposable household income that goes on housing costs, which Eurostat defines as the monthly expenses associated with the right to live in a dwelling"
@@ -19245,7 +19245,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A parte do rendimento disponível do agregado que vai para a despesa com a casa, que o Eurostat define como os gastos mensais ligados ao direito de viver numa casa"
+        "A parte do rendimento disponível do agregado que vai para a despesa com a habitação, que o Eurostat define como os gastos mensais ligados ao direito de viver numa casa"
       ],
       "en": [
         "The share of disposable household income that goes on housing costs, which Eurostat defines as the monthly expenses associated with the right to live in a dwelling"
@@ -21033,7 +21033,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a casa, descontados os subsídios, passa de quarenta por cento do rendimento disponível"
+        "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios, passa de quarenta por cento do rendimento disponível"
       ],
       "en": [
         "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income"
@@ -21066,7 +21066,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a casa, descontados os subsídios, passa de quarenta por cento do rendimento disponível"
+        "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios, passa de quarenta por cento do rendimento disponível"
       ],
       "en": [
         "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income"
@@ -21102,7 +21102,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
         "O índice dos preços das casas descontada a inflação, que é o índice dos preços da habitação dividido pelo deflator do consumo privado das contas nacionais, com o ano base igual a cem"
       ],
       "en": [
-        "The house price index net of inflation, which is the house price index divided by the national accounts deflator for private consumption, with the base year equal to one hundred"
+        "The index of house prices net of inflation, which is the index of house prices divided by the national accounts deflator for private consumption, with the base year equal to one hundred"
       ]
     },
     "complemento": {
@@ -21135,7 +21135,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
         "O índice dos preços das casas descontada a inflação, que é o índice dos preços da habitação dividido pelo deflator do consumo privado das contas nacionais, com o ano base igual a cem"
       ],
       "en": [
-        "The house price index net of inflation, which is the house price index divided by the national accounts deflator for private consumption, with the base year equal to one hundred"
+        "The index of house prices net of inflation, which is the index of house prices divided by the national accounts deflator for private consumption, with the base year equal to one hundred"
       ]
     },
     "complemento": {
@@ -21168,7 +21168,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
         "O índice dos preços das casas descontada a inflação, que é o índice dos preços da habitação dividido pelo deflator do consumo privado das contas nacionais, com o ano base igual a cem"
       ],
       "en": [
-        "The house price index net of inflation, which is the house price index divided by the national accounts deflator for private consumption, with the base year equal to one hundred"
+        "The index of house prices net of inflation, which is the index of house prices divided by the national accounts deflator for private consumption, with the base year equal to one hundred"
       ]
     },
     "complemento": {
@@ -21201,7 +21201,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
         "O índice dos preços das casas descontada a inflação, que é o índice dos preços da habitação dividido pelo deflator do consumo privado das contas nacionais, com o ano base igual a cem"
       ],
       "en": [
-        "The house price index net of inflation, which is the house price index divided by the national accounts deflator for private consumption, with the base year equal to one hundred"
+        "The index of house prices net of inflation, which is the index of house prices divided by the national accounts deflator for private consumption, with the base year equal to one hundred"
       ]
     },
     "complemento": {
@@ -21234,7 +21234,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
         "A variação num ano do índice dos preços das casas descontada a inflação, que é o índice dos preços da habitação dividido pelo deflator do consumo privado das contas nacionais"
       ],
       "en": [
-        "The change over one year in the house price index net of inflation, which is the house price index divided by the national accounts deflator for private consumption"
+        "The change over one year in the index of house prices net of inflation, which is the index of house prices divided by the national accounts deflator for private consumption"
       ]
     },
     "complemento": {
@@ -21267,7 +21267,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
         "A variação num ano do índice dos preços das casas descontada a inflação, que é o índice dos preços da habitação dividido pelo deflator do consumo privado das contas nacionais"
       ],
       "en": [
-        "The change over one year in the house price index net of inflation, which is the house price index divided by the national accounts deflator for private consumption"
+        "The change over one year in the index of house prices net of inflation, which is the index of house prices divided by the national accounts deflator for private consumption"
       ]
     },
     "complemento": {
