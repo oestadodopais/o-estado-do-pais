@@ -5,7 +5,8 @@
 [data-grafico] { touch-action: pan-y; }
 [data-grafico-ponto]:focus { outline: none; }
 [data-grafico-ponto]:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
-.serie-do-pais > g[data-ativo] > * { visibility: visible; }
+/* A especificidade tem de passar a da regra que esconde as peças da leitura (`serie-do-pais.css`). */
+.serie-do-pais > g[data-ativo]:not([data-eixo]) > * { visibility: visible; }
 .faixa-ue-marca[data-ativo] { outline: 2px solid var(--ink); outline-offset: 1px; }
 .grafico-etiqueta {
   position: absolute;

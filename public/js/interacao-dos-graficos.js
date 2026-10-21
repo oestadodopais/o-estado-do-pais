@@ -146,14 +146,16 @@
     });
   });
 
-  /* Um toque fora de um gráfico fecha a etiqueta dele; mudar a largura também, porque a etiqueta comum foi posta
-     contra a largura de antes. */
+  /* Um toque fora de um gráfico fecha a etiqueta dele; mudar a largura repõe a etiqueta comum junto ao ponto, porque
+     foi posta contra a largura de antes. */
   document.addEventListener('pointerdown', function (ev) {
     Array.prototype.forEach.call(graficos, function (g) {
       if (!g.contains(ev.target)) apaga(g);
     });
   });
   window.addEventListener('resize', function () {
-    Array.prototype.forEach.call(graficos, function (g) { if (g._etiqueta) apaga(g); });
+    Array.prototype.forEach.call(graficos, function (g) {
+      if (g._ativo && g._etiqueta && !g._etiqueta.hidden) poe(g._etiqueta, g._ativo);
+    });
   });
 })();
