@@ -19,6 +19,8 @@
  */
 /** @type {Record<string, string>} */
 export const LUGAR_DECLARADO_DAS_LINHAS = {
+  /* EO1-e: a entrega da proposta pertence ao calendário do Orçamento nacional. */
+  'oe-2027-calendario-entrega': 'portugal',
   /* V2-e-b: os excertos corrigidos do relatório do orçamento nacional
      tratam os encargos das parcerias e as pretensões das concessionárias
      perante o Estado, incluindo a negociação da Beira Interior. */
