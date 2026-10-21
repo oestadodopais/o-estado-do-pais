@@ -76,6 +76,7 @@ import { parse } from 'node-html-parser';
 import {load as yaml} from 'js-yaml';
 import { LANGS, matchPath, normalizePath, routePath } from '../../src/lib/routes.mjs';
 import { MEDIDA_REUNIDA } from '../../src/lib/pais.mjs';
+import {dataDeCalendarioConferida} from '../../src/lib/historia-do-valor.mjs';
 import { textoDocumentalConferido } from '../../src/lib/prova-efeitos.mjs';
 
 const DIST = process.env.OEDP_DIST ?? 'dist';
@@ -83,7 +84,7 @@ const DIST = process.env.OEDP_DIST ?? 'dist';
 const tiposDasLinhas=new Map();
 /** O marcador sozinho não dispensa uma linha: o texto documental tem de conservar a prova. */
 export function textoForaDoResumo(linha){
-  return !!linha&&((linha.afirmacao===true&&linha.unit==='afirmação')||textoDocumentalConferido(linha));
+  return !!linha&&((linha.afirmacao===true&&linha.unit==='afirmação')||textoDocumentalConferido(linha)||dataDeCalendarioConferida(linha));
 }
 function afirmacaoTextual(id){
   if(!/^[a-z0-9_-]+$/.test(String(id??'')))return false;
