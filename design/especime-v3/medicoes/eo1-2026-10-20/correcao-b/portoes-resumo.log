@@ -1,0 +1,23 @@
+build: código 0
+  mordeu · uma condição falsa numa cópia das declarações (código 0)
+  mordeu · um resolvedor que recusa tudo (código 1)
+  mordeu · o passo da cadeia do build com um resolvedor que recusa tudo (código 1)
+
+> o-estado-do-pais@0.1.0 check:discussao
+> node tests/discussao/itens.mjs
+
+V2B · 0 erro(s), 138 de 138 plantas, 310 portas de integração.
+verify: código 0
+    ✓ npm run check:sugestoes                      0.2 s  código 0
+    ✓ npm run provar:guardas                       0.2 s  código 0
+    ✓ npm run mapa:unidades -- --verifica          0.1 s  código 0
+  U ✓ 49 passos no verify: 21 corridos pelo build, 28 corridos aqui e verdes
+  D ✓ nenhuma escrita durante as conferências nos 19471 ficheiros do dist/ (bytes, hora de escrita e inode) nem nos 31831 ficheiros que o git segue (hora de escrita, inode e tamanho)
+  C ✓ a construção é da cabeça ab1d00262134b4593fa2020e11e11e8c9aaccced, carimbada a 2026-10-20T21:33:11.522Z; prova.json escrito a 2026-10-20T21:34:50.909Z, cadeia.json a 2026-10-20T21:34:53.486Z
+  387.9 s ao todo
+
+typecheck: código 0
+
+> o-estado-do-pais@0.1.0 typecheck
+> tsc -p tsconfig.check.json
+

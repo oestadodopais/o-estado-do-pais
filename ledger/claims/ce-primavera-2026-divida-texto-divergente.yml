@@ -1,0 +1,46 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "ce-primavera-2026-divida-texto-divergente"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "It is forecast to reach 86.7% of GDP in 2026 and 86.0% of GDP in 2027 on the back of persisting primary balance surpluses and favourable growth-interest rate differentials."
+unit: "texto"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Trajetória da dívida no texto da Comissão Europeia"
+name_source: "p. 143 PDF (127 impressa)"
+name_en: "Debt trajectory in the European Commission text"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "European Commission"
+document:
+  title: "European Economic Forecast Spring 2026"
+  edition: "2026"
+  locator: "p. 143 PDF (127 impressa)"
+  source_sha256: "6d6dac3c4f1cecfa7c1b8e518eef22828a55f64d41264500026cbc0bb77da4e5"
+  page: 143
+  kind: "ficheiro"
+source_url: "https://economy-finance.ec.europa.eu/document/download/3360898c-cd40-46c0-b170-7adfcb993add_en?filename=ip341_en.pdf#page=143"
+access_date: "2026-10-20"
+reference_date: "2027"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "It is forecast to reach 86.7% of GDP in 2026 and 86.0% of GDP in 2027 on the back of persisting primary balance surpluses and favourable growth-interest rate differentials."
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "orcamento-2027-o-que-muda-e-para-quem"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "Período completo da fonte: 2026/2027. · [note do motor] A tabela III.18.1 da mesma página imprime 87.6 para 2026. A divergência de 86.7 no texto é da fonte e não foi resolvida na recolha. · Cruzado de ResearchHub content/25 Orcamento 2027 Medidas · ce-primavera-2026-divida-texto-divergente."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

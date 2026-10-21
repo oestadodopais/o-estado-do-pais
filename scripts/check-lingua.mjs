@@ -31,8 +31,10 @@ import { tirarCodigoConferido, lerPaginaComCodigo } from './incorporar-do-portao
  *        fecha a construção em vez de se render em português por omissão;
  *   L2 · todo o `document.title` do livro-razão tem língua declarada. Um título
  *        novo fecha a construção em vez de ficar sem marca em silêncio;
- *   L2b · todo o `name` (o rótulo com que a fonte imprime a figura) tem língua
- *        declarada;
+ *   L2b · todos os nomes `name` e `name_en` têm língua declarada. No EO1, o nome
+ *        identifica a medida e a tradução é um campo paralelo; o rótulo literal
+ *        permanece em `source_label` na origem e na prova. Um `name_en` tem
+ *        declaração inglesa e só rende na edição inglesa;
  *   L2c · todo o `source` (o nome do organismo que publica) tem língua
  *        declarada, e declarada «pt» ou «en» e mais nada. São dezassete valores
  *        e um deles é o marcador, que não entra: 930 linhas só na DGAL, e um
@@ -150,6 +152,7 @@ const erros = [];
 /* as unidades do livro-razão, contra as duas tabelas                         */
 
 const claims = [...loadClaims().values()];
+const claimPorId = new Map(claims.map(c => [c.id, c]));
 
 const unidadesDoLivro = new Map();
 for (const c of claims) {
@@ -251,18 +254,21 @@ for (const t of Object.keys(LINGUA_DOS_TITULOS)) {
 
 const rotulosDoLivro = new Map();
 for (const c of claims) {
-  const n = c.name;
-  if (n === null || n === undefined || String(n) === '') continue;
-  const r = String(n);
-  rotulosDoLivro.set(r, (rotulosDoLivro.get(r) ?? 0) + 1);
+  for (const campo of ['name', 'name_en']) {
+    const n = c[campo];
+    if (n === null || n === undefined || String(n) === '') continue;
+    const r = String(n);
+    rotulosDoLivro.set(r, (rotulosDoLivro.get(r) ?? 0) + 1);
+    if (campo === 'name_en' && LINGUA_DOS_ROTULOS[r] !== 'en') erros.push(`${c.id}: name_en não tem língua inglesa declarada.`);
+  }
 }
 for (const [r] of rotulosDoLivro) {
   if (!Object.prototype.hasOwnProperty.call(LINGUA_DOS_ROTULOS, r)) {
     erros.push(
       `o rótulo da fonte «${r.slice(0, 90)}» (${rotulosDoLivro.get(r)} linha(s)) não tem língua ` +
         `declarada em src/i18n/lingua-dos-titulos.mjs.\n` +
-        `      Um rótulo é um nome: não se traduz, e diz em que língua está. «Total» é a palavra ` +
-        `que o IEFP imprime na folha portuguesa dele, e adivinhá-la pelo aspecto dava inglês.`,
+        `      A língua de cada cadeia é explícita. No EO1, name nomeia a medida e name_en ` +
+        `guarda o nome paralelo inglês; source_label conserva o rótulo original no motor e na prova.`,
     );
   }
 }
@@ -309,10 +315,10 @@ for (const f of Object.keys(LINGUA_DAS_FONTES)) {
      já não importa desde 03.09.2026) como uma marca inventada, ou não sai de
      todo: nos dois casos a página fica errada e a régua ficava calada. */
   const v = LINGUA_DAS_FONTES[f];
-  if (v !== 'pt' && v !== 'en') {
+  if (v !== 'pt' && v !== 'en' && v !== 'es') {
     erros.push(
       `o organismo «${f.slice(0, 90)}» está declarado «${String(v)}», e um organismo só pode ` +
-        `estar declarado «pt» ou «en». Um nome de organismo está sempre numa língua: não há aqui ` +
+        `estar declarado «pt», «en» ou «es». Um nome de organismo está sempre numa língua: não há aqui ` +
         `o «sem língua» que as edições têm.`,
     );
   }
@@ -462,7 +468,7 @@ const norm = (s) => decodeEntities(String(s)).replace(/\s+/g, ' ').trim();
  */
 function efetivaEsperada(declarada, linguaDaPagina) {
   if (declarada === 'pt') return 'pt-PT';
-  if (declarada === 'en') return 'en';
+  if (declarada === 'en' || declarada === 'es') return declarada;
   return linguaDaPagina;
 }
 
@@ -493,6 +499,17 @@ function langDe(no) {
     n = n.parentNode;
   }
   return null;
+}
+
+/** Confere a tradução declarada contra a linha, a edição e a língua efetiva do HTML. */
+export function conferirEdicaoDoNome(el, lang, linha) {
+  const erros = [], campo = el.getAttribute('data-linha-campo'), texto = norm(el.text);
+  if (campo === 'name_en' && (!linha?.name_en || texto !== norm(linha.name_en) ||
+      LINGUA_DOS_ROTULOS[linha.name_en] !== 'en' || lang !== 'en' || langDe(el) !== 'en'))
+    erros.push('nome inglês sem declaração, fora da edição, com língua errada ou diferente da linha');
+  if (lang === 'en' && linha?.name_en && campo === 'name' && el.closest('.linha-nome-da-fonte'))
+    erros.push('o nome da fonte não usa a tradução inglesa da linha');
+  return erros;
 }
 
 /**
@@ -706,8 +723,10 @@ for (const ficheiro of paginasDe(DIST)) {
   }
 
   /* --- L4c · o rótulo da fonte, nas duas edições --- */
-  for (const el of root.querySelectorAll('[data-linha-campo="name"]')) {
+  for (const el of root.querySelectorAll('[data-linha-campo="name"], [data-linha-campo="name_en"]')) {
     const texto = norm(el.text);
+    const linha = claimPorId.get(el.getAttribute('data-linha-claim'));
+    erros.push(...conferirEdicaoDoNome(el, lang, linha).map(e => `${rel}: ${e}.`));
     contas.rotulos++;
     const esperada = linguaDoRotuloDaFonte(texto, lang);
     if (esperada === null) continue;

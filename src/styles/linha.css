@@ -631,3 +631,11 @@
 .aparelho-ficha [data-linha-campo="document.source_sha256"] {
   overflow-wrap: anywhere;
 }
+
+/* EO1: uma afirmação textual lê-se na forma do excerto, sem a escala de um algarismo. */
+.linha-valor-textual .linha-valor-num {
+  font-family: var(--f-instr);
+  font-size: 14.5px;
+  line-height: 1.62;
+  letter-spacing: normal;
+}

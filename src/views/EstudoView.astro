@@ -22,6 +22,7 @@ import { FONTE_DIGITAL_GERADA_POR_IA } from '../data/politica-ia.mjs';
 import { leituraDe, indexavel } from '../data/leituras.mjs';
 import { t } from '../i18n/strings.mjs';
 import { ROTULOS_B1, TITULOS_DA_LEITURA } from '../data/rotulos-b1.mjs';
+import '../styles/discussao.css';
 import '../styles/texto.css';
 import '../styles/estudos-b1.css';
 const { lang = 'pt', slug } = Astro.props;
@@ -69,7 +70,7 @@ function separar(partes, marca, depois = false) {
 const [titulo, conteudo] = separar(pecas, '</h1>', true);
 const titulosDaLeitura = TITULOS_DA_LEITURA[lang];
 const principais = titulos.filter(t => t.nivel === 2);
-const primeiroConteudo = registo?.blocks.find(b => b.i > 0);
+const primeiroConteudo = registo?.blocks.find(b => b.i > 0 && b.kind === 'heading' && Number(b.level) === 2);
 const temAbertura = primeiroConteudo?.kind === 'heading' && Number(primeiroConteudo.level) === 2 && primeiroConteudo.text === titulosDaLeitura[0];
 const naLeitura = temAbertura ? principais.filter(t => titulosDaLeitura.includes(t.texto)) : [];
 if (temAbertura && (naLeitura.length !== titulosDaLeitura.length ||

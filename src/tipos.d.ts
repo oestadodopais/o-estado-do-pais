@@ -199,6 +199,7 @@ interface Linha {
   value: unknown;
   unit: unknown;
   name?: unknown;
+  name_en?: unknown;
   name_source?: unknown;
   name_source_en?: string;
   source: unknown;
@@ -363,6 +364,8 @@ interface LigacaoDoRegisto {
 
 /** Uma unidade de texto do registo: um parágrafo, um item, uma célula. */
 interface UnidadeDoRegisto {
+  source_rows?: string[];
+  proofs?: Record<string, unknown>[];
   text?: string | null;
   figures?: FiguraDoRegisto[] | null;
   emphasis?: EnfaseDoRegisto[] | null;

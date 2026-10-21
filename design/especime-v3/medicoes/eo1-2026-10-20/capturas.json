@@ -1,0 +1,816 @@
+{
+  "cabeca": "95b63548da76384cb77741802b872d8702fc19f0",
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "resultados": [
+    {
+      "ficheiro": "estudo-pt-390.png",
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 34634,
+      "sha256": "582f165b58a30ebb0d15d5eba842bd9441eb88cb2320ebe1992a41f8fb9a249c",
+      "recortes": [
+        {
+          "ficheiro": "estudo-pt-390-titulo.png",
+          "seletor": "[data-registo-unidade$=\"#0\"]",
+          "sha256": "5199bee68c2fb39c6b4e772eefe05ee467feeec26e081cdc4f14caab2656d6a4"
+        },
+        {
+          "ficheiro": "estudo-pt-390-resumo.png",
+          "seletor": "[data-registo-unidade$=\"#3\"]",
+          "sha256": "84a150ea4a9727493f55ccea27ff6224df7cc034511e840b5fb299c2c555176f"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "estudo-pt-768.png",
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 27543,
+      "sha256": "b4f6aa0c9817a4b3531df2b184a514e0f8dd1a105ceaedb2247eea5e14ae62e5",
+      "recortes": [
+        {
+          "ficheiro": "estudo-pt-768-titulo.png",
+          "seletor": "[data-registo-unidade$=\"#0\"]",
+          "sha256": "1e214376a4092aad3600e0d51b4c9c90b1ee22f6bb0572672be674ef49e6a76e"
+        },
+        {
+          "ficheiro": "estudo-pt-768-resumo.png",
+          "seletor": "[data-registo-unidade$=\"#3\"]",
+          "sha256": "54233805c3e5d015fcfbc386c2b5da5880948b324f4b4d0f7a8d81722dc941bb"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "estudo-pt-1024.png",
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 26784,
+      "sha256": "ff03a06b9b43af29db51ed995a745df5086cd7cd75b9ad0cf65f09c8c558f4bc",
+      "recortes": [
+        {
+          "ficheiro": "estudo-pt-1024-titulo.png",
+          "seletor": "[data-registo-unidade$=\"#0\"]",
+          "sha256": "643ccb06c77c4b0d7d8929f8266cfb8af8d57b6f7c93137e6f9e402bf2b218d9"
+        },
+        {
+          "ficheiro": "estudo-pt-1024-resumo.png",
+          "seletor": "[data-registo-unidade$=\"#3\"]",
+          "sha256": "f3e699d7e09c152ce202398dc393a2c363ac7464d1f884a2f465bc566e36d098"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "estudo-pt-1280.png",
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 26950,
+      "sha256": "cb2c87191e74e697a12cc6c248f5644e6b477a63a61118c11e227bc6374e4b69",
+      "recortes": [
+        {
+          "ficheiro": "estudo-pt-1280-titulo.png",
+          "seletor": "[data-registo-unidade$=\"#0\"]",
+          "sha256": "a3390b0c537c2b480ad7a6e3f51ea2ad41814bff2e1c58d628ae699739d6b5f5"
+        },
+        {
+          "ficheiro": "estudo-pt-1280-resumo.png",
+          "seletor": "[data-registo-unidade$=\"#3\"]",
+          "sha256": "efaf6e41f6f9e44322ca5b9e8b759198ccd318a847225f6e06c8d037ff25b4cd"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "estudo-pt-1600.png",
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 26956,
+      "sha256": "65db8cf77da23197a700092ca7dc2239bad7eb9b2ae7413c5ce608d01c59657f",
+      "recortes": [
+        {
+          "ficheiro": "estudo-pt-1600-titulo.png",
+          "seletor": "[data-registo-unidade$=\"#0\"]",
+          "sha256": "a3390b0c537c2b480ad7a6e3f51ea2ad41814bff2e1c58d628ae699739d6b5f5"
+        },
+        {
+          "ficheiro": "estudo-pt-1600-resumo.png",
+          "seletor": "[data-registo-unidade$=\"#3\"]",
+          "sha256": "efaf6e41f6f9e44322ca5b9e8b759198ccd318a847225f6e06c8d037ff25b4cd"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "estudo-en-390.png",
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 34508,
+      "sha256": "d35192ab7afe8843a619f042c4b641c6ad173fe93879124a5c2a74fff43b2e23",
+      "recortes": [
+        {
+          "ficheiro": "estudo-en-390-titulo.png",
+          "seletor": "[data-registo-unidade$=\"#0\"]",
+          "sha256": "86600d1f72fa0b4e1b0121c306af33e0136559f6a7635080abae8241c293265f"
+        },
+        {
+          "ficheiro": "estudo-en-390-resumo.png",
+          "seletor": "[data-registo-unidade$=\"#3\"]",
+          "sha256": "9c9a8d012d7707eb23de0eb4068acfd5c947a3bdb7f5150dbdab3d8d32fc76ee"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "estudo-en-768.png",
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 27671,
+      "sha256": "f4a516951e1c2a6f36bb4bc35323e1e0bbac9f7b42da27c699789c9eb1ee0739",
+      "recortes": [
+        {
+          "ficheiro": "estudo-en-768-titulo.png",
+          "seletor": "[data-registo-unidade$=\"#0\"]",
+          "sha256": "f8f018b0e98da723286f88fc21b0d9f9f5edefc1c8065d06e96145eac9c6d8a9"
+        },
+        {
+          "ficheiro": "estudo-en-768-resumo.png",
+          "seletor": "[data-registo-unidade$=\"#3\"]",
+          "sha256": "71e4dc977bad67087df0da85765fb1c2aefa96eeaf6fab1512dc08718d83e8cf"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "estudo-en-1024.png",
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 26939,
+      "sha256": "240b062c45ef050bc31d5da98e94644d5a73191744fc2fe0a2aa3a8ef616b8f9",
+      "recortes": [
+        {
+          "ficheiro": "estudo-en-1024-titulo.png",
+          "seletor": "[data-registo-unidade$=\"#0\"]",
+          "sha256": "1bd2f164d891fb4d7ba0e79cd7d1c9b40bec9d56e8da8b24f17056faf691efd1"
+        },
+        {
+          "ficheiro": "estudo-en-1024-resumo.png",
+          "seletor": "[data-registo-unidade$=\"#3\"]",
+          "sha256": "5c678120d4c62d9f6a6c1f2a912fc3d337bc61e024acf4bfde19914861c40df4"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "estudo-en-1280.png",
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 27077,
+      "sha256": "b73ad9f69de1cc9bf860b2bfcdfea4ef594cccc95c66c0672af20dbebf47b7ff",
+      "recortes": [
+        {
+          "ficheiro": "estudo-en-1280-titulo.png",
+          "seletor": "[data-registo-unidade$=\"#0\"]",
+          "sha256": "f8ea99b71658ba8be0ef476cded62ddcec1ea1dd52f376b4a6b56876250ec396"
+        },
+        {
+          "ficheiro": "estudo-en-1280-resumo.png",
+          "seletor": "[data-registo-unidade$=\"#3\"]",
+          "sha256": "1f1ab2e2885d8eb946143a03d5bdd4384b85f3cb76332b95161de27502b41671"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "estudo-en-1600.png",
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 27083,
+      "sha256": "a33433f5d84a55eff332f0c842e4d91576c13ff5cbd82eb7dd580a9715553c5f",
+      "recortes": [
+        {
+          "ficheiro": "estudo-en-1600-titulo.png",
+          "seletor": "[data-registo-unidade$=\"#0\"]",
+          "sha256": "f8ea99b71658ba8be0ef476cded62ddcec1ea1dd52f376b4a6b56876250ec396"
+        },
+        {
+          "ficheiro": "estudo-en-1600-resumo.png",
+          "seletor": "[data-registo-unidade$=\"#3\"]",
+          "sha256": "1f1ab2e2885d8eb946143a03d5bdd4384b85f3cb76332b95161de27502b41671"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-citacao-pt-390.png",
+      "rota": "/livro-razao/utao-risco-mercados/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3667,
+      "sha256": "0f22286b71678977a7aa0a674cf6dc8e2e9e9b055c2e3ab89710fcf7aecdf3be",
+      "recortes": [
+        {
+          "ficheiro": "recibo-citacao-pt-390-titulo.png",
+          "seletor": ".linha-titulo",
+          "sha256": "771182bafb3cc3ca2765ce7705ed35a72d27cf0804a2854eab8a9aea687797eb"
+        },
+        {
+          "ficheiro": "recibo-citacao-pt-390-excerto.png",
+          "seletor": ".linha-valor-textual",
+          "sha256": "f8e2cfd780db70e26df1ea3caa194527c286e41a1c8cb2c320bcf5388fb5ee60"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-citacao-pt-768.png",
+      "rota": "/livro-razao/utao-risco-mercados/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3025,
+      "sha256": "3a3a6a8091a349779b99bfec1222860acdc6b2cebf228897630dce7d16bd6c35",
+      "recortes": [
+        {
+          "ficheiro": "recibo-citacao-pt-768-titulo.png",
+          "seletor": ".linha-titulo",
+          "sha256": "3ba6522188763cedc9fc1ed47eef4598f1166ba51025a591627f672163c88afe"
+        },
+        {
+          "ficheiro": "recibo-citacao-pt-768-excerto.png",
+          "seletor": ".linha-valor-textual",
+          "sha256": "8dfc9140c1d447d7e717d960d798a3acde90c68e611359e4d0e515aa419cb8ed"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-citacao-pt-1024.png",
+      "rota": "/livro-razao/utao-risco-mercados/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2153,
+      "sha256": "e8552c1f43aa5a1398e66e77887cfa06e661088f5e45df5fd765868c65b4f2ba",
+      "recortes": [
+        {
+          "ficheiro": "recibo-citacao-pt-1024-titulo.png",
+          "seletor": ".linha-titulo",
+          "sha256": "5e5a8f7cb18e949cd0c66cfe8c2602fe00b6888f914c2e0b5eafdf68b9926c7f"
+        },
+        {
+          "ficheiro": "recibo-citacao-pt-1024-excerto.png",
+          "seletor": ".linha-valor-textual",
+          "sha256": "b03bcdab33733ef1e6c783269a6f100fddda62b2ad35e00af2cc1157e7d595cc"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-citacao-pt-1280.png",
+      "rota": "/livro-razao/utao-risco-mercados/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2180,
+      "sha256": "d0b2b77e6b3e4ebf000c55d1f6a35d68e7dbbff2104279da2c5fc3c9baa6c25a",
+      "recortes": [
+        {
+          "ficheiro": "recibo-citacao-pt-1280-titulo.png",
+          "seletor": ".linha-titulo",
+          "sha256": "021101d7a11a845476722a4ec0f91d42b9dede2a00dbcecf27523c408f706bb0"
+        },
+        {
+          "ficheiro": "recibo-citacao-pt-1280-excerto.png",
+          "seletor": ".linha-valor-textual",
+          "sha256": "3647921a04feb637915e9421637ce4ccfb5a5fee36079cc502f13ae0b2e231d5"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-citacao-pt-1600.png",
+      "rota": "/livro-razao/utao-risco-mercados/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2186,
+      "sha256": "d46a5b180b0611331d841a21a2455c39649ee703fa89fa2a43ee825a5cc2e5dd",
+      "recortes": [
+        {
+          "ficheiro": "recibo-citacao-pt-1600-titulo.png",
+          "seletor": ".linha-titulo",
+          "sha256": "021101d7a11a845476722a4ec0f91d42b9dede2a00dbcecf27523c408f706bb0"
+        },
+        {
+          "ficheiro": "recibo-citacao-pt-1600-excerto.png",
+          "seletor": ".linha-valor-textual",
+          "sha256": "3647921a04feb637915e9421637ce4ccfb5a5fee36079cc502f13ae0b2e231d5"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-citacao-en-390.png",
+      "rota": "/en/ledger/utao-risco-mercados/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3642,
+      "sha256": "28bed33aa635bd3303236a1c9ab445c4992d001c8f7022889197bc4eaa33c218",
+      "recortes": [
+        {
+          "ficheiro": "recibo-citacao-en-390-titulo.png",
+          "seletor": ".linha-titulo",
+          "sha256": "31239970d362a144a9d68cbdf17b4a87c4525faef533fd2c80fce0e0abf1898d"
+        },
+        {
+          "ficheiro": "recibo-citacao-en-390-excerto.png",
+          "seletor": ".linha-valor-textual",
+          "sha256": "14986f9d95f3fb48fc497daad210880ee9f231373ad1ced00770bb46f549859f"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-citacao-en-768.png",
+      "rota": "/en/ledger/utao-risco-mercados/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3025,
+      "sha256": "2e0455ecb969ec40071c0d4b41595e037b06fffde928bd433148ea9a51e3d3ca",
+      "recortes": [
+        {
+          "ficheiro": "recibo-citacao-en-768-titulo.png",
+          "seletor": ".linha-titulo",
+          "sha256": "38c495c06cbe3c8bedf4c74527c6f3419331235b77700063def94796bf2001a2"
+        },
+        {
+          "ficheiro": "recibo-citacao-en-768-excerto.png",
+          "seletor": ".linha-valor-textual",
+          "sha256": "9eb0ab25e16747bd1e53e7e26094ea995f1baa2918bac22c328bac9ab31d6729"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-citacao-en-1024.png",
+      "rota": "/en/ledger/utao-risco-mercados/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2109,
+      "sha256": "c2d8e5d77a12c89b565d24b1f4d09ab2a50f0e335460182c96f7658a0b7b44e2",
+      "recortes": [
+        {
+          "ficheiro": "recibo-citacao-en-1024-titulo.png",
+          "seletor": ".linha-titulo",
+          "sha256": "9a19059c51b7a04b017d620ad37ef4d7d5aaebcbfdb8b986b4c47b6306f38d48"
+        },
+        {
+          "ficheiro": "recibo-citacao-en-1024-excerto.png",
+          "seletor": ".linha-valor-textual",
+          "sha256": "8152cbec9ad7b73fce0a126ab56aa573e100ac19e4a0894683993db55034d906"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-citacao-en-1280.png",
+      "rota": "/en/ledger/utao-risco-mercados/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2136,
+      "sha256": "ef8a73863c79b69481b277fce0dcc8c496451e14023706475ae6bf11125ca207",
+      "recortes": [
+        {
+          "ficheiro": "recibo-citacao-en-1280-titulo.png",
+          "seletor": ".linha-titulo",
+          "sha256": "a1fad7eb7222f595956af972858f32cae8e62cd1bdc16b446f0b35bd7bd9a1fe"
+        },
+        {
+          "ficheiro": "recibo-citacao-en-1280-excerto.png",
+          "seletor": ".linha-valor-textual",
+          "sha256": "4d4ce6108535892a2e51007d2732e2df41bd2313f810a210af05a3fff03a3c95"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-citacao-en-1600.png",
+      "rota": "/en/ledger/utao-risco-mercados/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2143,
+      "sha256": "367b97ad1f020bab09df709199a059902989be72b76808590a794b9a101a08ce",
+      "recortes": [
+        {
+          "ficheiro": "recibo-citacao-en-1600-titulo.png",
+          "seletor": ".linha-titulo",
+          "sha256": "a1fad7eb7222f595956af972858f32cae8e62cd1bdc16b446f0b35bd7bd9a1fe"
+        },
+        {
+          "ficheiro": "recibo-citacao-en-1600-excerto.png",
+          "seletor": ".linha-valor-textual",
+          "sha256": "4d4ce6108535892a2e51007d2732e2df41bd2313f810a210af05a3fff03a3c95"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "documento-pt-390.png",
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/documento/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 25911,
+      "sha256": "b0681f92c7b19dbe12ac2ff55c24fab08f0fd96055dcb93201b13cfbe8fcbc56",
+      "recortes": [
+        {
+          "ficheiro": "documento-pt-390-titulo.png",
+          "seletor": "[data-oedp-moldura] h1",
+          "sha256": "634e81091ed8558670b5ed0319c79980c983b9bcc7a77ea2b455b6ba3d2a2acd"
+        },
+        {
+          "ficheiro": "documento-pt-390-resumo.png",
+          "seletor": "[data-oedp-moldura] p:nth-of-type(2)",
+          "sha256": "4f67d6217ba6b7133c9acef74afc6eba5aac3afc50135fee334a2f2a55ae9944"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "documento-pt-768.png",
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/documento/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 13268,
+      "sha256": "9e28e2678ca7b4a3a5822a0ed0d8a31efc2f6f930c2f0a081742a17e7bf9d33f",
+      "recortes": [
+        {
+          "ficheiro": "documento-pt-768-titulo.png",
+          "seletor": "[data-oedp-moldura] h1",
+          "sha256": "330e2063de48ead83e1c94693c60989884d97c60e8804660a0d2c5f567bdd250"
+        },
+        {
+          "ficheiro": "documento-pt-768-resumo.png",
+          "seletor": "[data-oedp-moldura] p:nth-of-type(2)",
+          "sha256": "fb9a59a994c0048c2bf7513f8656c3f6835bd6bd37172691a14c788f2f08e14b"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "documento-pt-1024.png",
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/documento/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 904,
+      "altura": 11502,
+      "sha256": "74f328efee60f2cfbf6e4f7a90f9c2bd2f2e00a2c8a6a9f06977f468e9e946d0",
+      "recortes": [
+        {
+          "ficheiro": "documento-pt-1024-titulo.png",
+          "seletor": "[data-oedp-moldura] h1",
+          "sha256": "a5dc886c2dcadd74a64cb49a1e1175f341776b9a668b69c209090e59ab5e3386"
+        },
+        {
+          "ficheiro": "documento-pt-1024-resumo.png",
+          "seletor": "[data-oedp-moldura] p:nth-of-type(2)",
+          "sha256": "a2d59d747f8038508e50b4a9abdca8c10420ffc6958b620265a9d6e74e74d434"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "documento-pt-1280.png",
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/documento/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 904,
+      "altura": 11502,
+      "sha256": "34c657fa9ff411c402c8635554161f3ed7028582ba0b045457b11232bfffc8a2",
+      "recortes": [
+        {
+          "ficheiro": "documento-pt-1280-titulo.png",
+          "seletor": "[data-oedp-moldura] h1",
+          "sha256": "a5dc886c2dcadd74a64cb49a1e1175f341776b9a668b69c209090e59ab5e3386"
+        },
+        {
+          "ficheiro": "documento-pt-1280-resumo.png",
+          "seletor": "[data-oedp-moldura] p:nth-of-type(2)",
+          "sha256": "a2d59d747f8038508e50b4a9abdca8c10420ffc6958b620265a9d6e74e74d434"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "documento-pt-1600.png",
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/documento/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 904,
+      "altura": 11502,
+      "sha256": "4c3fd5003f027521fedeed39100fd8b736aae806d55b0e8b2845984538bb6884",
+      "recortes": [
+        {
+          "ficheiro": "documento-pt-1600-titulo.png",
+          "seletor": "[data-oedp-moldura] h1",
+          "sha256": "a5dc886c2dcadd74a64cb49a1e1175f341776b9a668b69c209090e59ab5e3386"
+        },
+        {
+          "ficheiro": "documento-pt-1600-resumo.png",
+          "seletor": "[data-oedp-moldura] p:nth-of-type(2)",
+          "sha256": "a2d59d747f8038508e50b4a9abdca8c10420ffc6958b620265a9d6e74e74d434"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "documento-en-390.png",
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/document/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 25640,
+      "sha256": "26e4a2cb482b362a842838fd9a4cf97e353cdb59856a4d82f0215bbb84ddc91c",
+      "recortes": [
+        {
+          "ficheiro": "documento-en-390-titulo.png",
+          "seletor": "[data-oedp-moldura] h1",
+          "sha256": "7cd0c023f04818dadf55602447abad56a1b1fce17fe2bd689fd0ce11e32e3d76"
+        },
+        {
+          "ficheiro": "documento-en-390-resumo.png",
+          "seletor": "[data-oedp-moldura] p:nth-of-type(2)",
+          "sha256": "bc4fd60aaeceb18414c5113b446a1e96bfc022c9deebf815e1e373828ffa0bbb"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "documento-en-768.png",
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/document/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 13126,
+      "sha256": "445585fc220124d5b8a95e73dfb15f0aa603ce5cc1398e8b8ee31106fb584d0f",
+      "recortes": [
+        {
+          "ficheiro": "documento-en-768-titulo.png",
+          "seletor": "[data-oedp-moldura] h1",
+          "sha256": "ebce574836142628af711aeaa39344a800e7748d84058c0ad6e12f0c2b1e583d"
+        },
+        {
+          "ficheiro": "documento-en-768-resumo.png",
+          "seletor": "[data-oedp-moldura] p:nth-of-type(2)",
+          "sha256": "2a8d9cca77675498c8b8a1ba15e1d6e09398cfe28f0df8c8d907d2f6f7b27b43"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "documento-en-1024.png",
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/document/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 904,
+      "altura": 11476,
+      "sha256": "b5fb418aa0ed0eb725ccb9957a956fbde1b5d744a0ff0cbc792e0355a74e7d5f",
+      "recortes": [
+        {
+          "ficheiro": "documento-en-1024-titulo.png",
+          "seletor": "[data-oedp-moldura] h1",
+          "sha256": "596684894d5129f1a07dd0cc2ef80850938deccf307cd7ea59f61b18e4170ec0"
+        },
+        {
+          "ficheiro": "documento-en-1024-resumo.png",
+          "seletor": "[data-oedp-moldura] p:nth-of-type(2)",
+          "sha256": "6667f57aeb95321abf3d1a9f9187d727c3c5c82cf0622545de9ae510f2c096fa"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "documento-en-1280.png",
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/document/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 904,
+      "altura": 11476,
+      "sha256": "58e9bea992d986dce9cec41d44ae3c9fae4f4d04957b920feb3aa082ab79cc88",
+      "recortes": [
+        {
+          "ficheiro": "documento-en-1280-titulo.png",
+          "seletor": "[data-oedp-moldura] h1",
+          "sha256": "596684894d5129f1a07dd0cc2ef80850938deccf307cd7ea59f61b18e4170ec0"
+        },
+        {
+          "ficheiro": "documento-en-1280-resumo.png",
+          "seletor": "[data-oedp-moldura] p:nth-of-type(2)",
+          "sha256": "6667f57aeb95321abf3d1a9f9187d727c3c5c82cf0622545de9ae510f2c096fa"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "documento-en-1600.png",
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/document/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 904,
+      "altura": 11476,
+      "sha256": "2aae547f28fbf238a460acbb26fa822c1ea9f8822f93557382367682bcf2c4ff",
+      "recortes": [
+        {
+          "ficheiro": "documento-en-1600-titulo.png",
+          "seletor": "[data-oedp-moldura] h1",
+          "sha256": "596684894d5129f1a07dd0cc2ef80850938deccf307cd7ea59f61b18e4170ec0"
+        },
+        {
+          "ficheiro": "documento-en-1600-resumo.png",
+          "seletor": "[data-oedp-moldura] p:nth-of-type(2)",
+          "sha256": "6667f57aeb95321abf3d1a9f9187d727c3c5c82cf0622545de9ae510f2c096fa"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    }
+  ],
+  "recursos": {
+    "version.json": "0d90d80157648c60da9fd6d05987be79e5cf1bd2f81d0af3f1d199d5113f543a",
+    "estudos/orcamento-2027-o-que-muda-e-para-quem/index.html": "be0467c43cdce7bf205612868b163c520c467c61ebc760607a6eca6e8978e7ac",
+    "tipos/spectral/Spectral-Regular.woff2": "3c846b032ad614e02ebc439087bbcbb7371cfbdea6c8a4b568efa859537e9c43",
+    "tipos/bitter/Bitter[wght].woff2": "b4ad17520d0ce8bd1aa98af06e07ca94145522f868b5a010732eb5eee3ba2ea0",
+    "_astro/Base.BHrCWcnd.css": "e131823b7f26169af951b3b7b4df44c7e5e864b5c4f84e7d35862e0ba4714548",
+    "_astro/EstudoView.CoBVk9FU.css": "da148598ea8f28d5309b1d77050569c250d0e02d507a3fe978e79c0387c3fd95",
+    "js/tema.js": "855bcee3ec1223b43e0f3e9a94c1fbdf1451e53830dcc022962b48e8d3340757",
+    "tipos/spectral/Spectral-Medium.woff2": "34f0ba222c28bc0ea816c693d05c528be4a5ee10c4b1765cdea774c6fb2502c2",
+    "tipos/spectral/Spectral-SemiBold.woff2": "91eef1143e31196ec762c00b566b9f628a851db348eb524cbfb36bfba9b22f2d",
+    "tipos/spectral-sc/SpectralSC-SemiBold.woff2": "b847fe8f1fe1a862ce15e288958d132940a8204951ef0dbe2c9ad8fd997f29e2",
+    "tipos/spectral/Spectral-Italic.woff2": "4ba15b4bda78df3e8b755f0f12168c23c562707c921f74944e8ce638ee5ac7f1",
+    "tipos/spectral-sc/SpectralSC-Regular.woff2": "afa69dd2e7aaca2733883133745fd84c18dfac6a08d5999e69705ea7277240b8",
+    "tipos/spectral/Spectral-Bold.woff2": "8710bb6e834a4ec2aa7a7b24a76e63ead0ba6649c81881aedf615cf37724664f",
+    "en/studies/orcamento-2027-o-que-muda-e-para-quem/index.html": "7cc83cb4fc90fa3768f326e60065d0bbcdb929da9b4fe8d153a0362e1c854830",
+    "livro-razao/utao-risco-mercados/index.html": "d2bf62bfd58fbd9f9e9b92bf7636a5d2967e8ee1ffabb1bbb553ffbfbd047210",
+    "_astro/linha.Dd7n1KyQ.css": "583639d016c39485e899ae4fffc401e64d1489306f153b3670a730698057d772",
+    "js/copiar-incorporacao.js": "b75e5f90efcd85ea94274191e44a48594932638df67377c0b91ff367df97ca13",
+    "en/ledger/utao-risco-mercados/index.html": "944c8d0bef6733222c7981af9d60023dbe29373aa20a97cbfe963f53b7d3e8ed",
+    "estudos/orcamento-2027-o-que-muda-e-para-quem/documento/index.html": "8a352808784be1824a1920c09a3f19c7a671ffd44315938c25ad5823525b51e1",
+    "en/studies/orcamento-2027-o-que-muda-e-para-quem/document/index.html": "38589de901922bdc06d5491ec9ad0a312a2d8aaca6f9f090a05c3974b66b286b"
+  },
+  "falhas": [],
+  "ok": true
+}

@@ -312,6 +312,20 @@
       }
     },
     {
+      "src": "/estudos/orcamento-2027-o-que-muda-e-para-quem/texto/?",
+      "status": 301,
+      "headers": {
+        "Location": "/estudos/orcamento-2027-o-que-muda-e-para-quem/"
+      }
+    },
+    {
+      "src": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/text/?",
+      "status": 301,
+      "headers": {
+        "Location": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/"
+      }
+    },
+    {
       "handle": "filesystem"
     },
     {

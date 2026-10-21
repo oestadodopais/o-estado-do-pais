@@ -1,0 +1,43 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "der-salarios-publicos-retorno-pct"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "86,2"
+unit: "%"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Salários públicos: receita fiscal e contributiva sobre a atualização"
+name_source: "Cálculo sobre as linhas identificadas"
+name_en: "Public wages: tax and contributions as a share of the update"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: null
+document: null
+source_url: null
+access_date: null
+reference_date: "2027"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: null
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: "round ( ( 590 (UTAO: receita de IRS da atualização salarial) + 471 (UTAO: contribuições da atualização salarial) ) ÷ 1231 (UTAO: atualização salarial) × 100 , 1 ) = 86,2. O sinal indica a direção da variação ou do resultado da conta."
+derivation_en: "round ( ( 590 (UTAO: income tax from the wage update) + 471 (UTAO: contributions from the wage update) ) ÷ 1231 (UTAO: wage update) × 100 , 1 ) = 86.2. The sign indicates the direction of the change or calculation result."
+derived_from:
+  - "utao-salarios-irs"
+  - "utao-salarios-cs"
+  - "utao-salarios-valor"
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: "round ( ( utao-salarios-irs + utao-salarios-cs ) / utao-salarios-valor * 100 , 1 )"
+
+study: "orcamento-2027-o-que-muda-e-para-quem"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[derivation do motor] {'components': ['utao-salarios-irs', 'utao-salarios-cs', 'utao-salarios-valor'], 'formula': 'round ( ( utao-salarios-irs + utao-salarios-cs ) / utao-salarios-valor * 100 , 1 )', 'calculation': '86.2', 'rounding_places': 1} · Cruzado de ResearchHub content/25 Orcamento 2027 Medidas · der-salarios-publicos-retorno-pct."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

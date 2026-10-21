@@ -1,0 +1,22 @@
+{
+  "comando": "python3 -m core.gate",
+  "execucao": "pre-commit pelo escrivão",
+  "codigo_do_commit": 0,
+  "core_gate": "PASS",
+  "cabeca": "6b1a8201dcf1d428252d7a5008e00a95fb8bcb39",
+  "quando": "2026-10-20T18:43:22Z",
+  "linhas_finais": [
+    "GATE  editions evora-2027-pt-en ok",
+    "GATE  editions evora-contas-camara-pt-en ok",
+    "GATE  editions evora-contas-camara-pt-md-html ok",
+    "GATE  editions evora-contas-camara-en-md-html ok",
+    "GATE  editions evora-quem-governou-pt-md-html ok",
+    "GATE  editions evora-economia-dinheiro-de-fora-pt-en ok",
+    "GATE  editions evora-economia-dinheiro-de-fora-pt-md-html ok",
+    "GATE  editions evora-economia-dinheiro-de-fora-en-md-html ok",
+    "GATE  editions evora-2027-capital-europeia-da-cultura-pt-en ok",
+    "GATE  editions evora-2027-capital-europeia-da-cultura-pt-md-html ok",
+    "GATE  editions evora-2027-capital-europeia-da-cultura-en-md-html ok",
+    "GATE: PASS"
+  ]
+}

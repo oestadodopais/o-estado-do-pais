@@ -1,0 +1,51 @@
+{
+  "corridas": [
+    {
+      "corrida": 1,
+      "cabeca": "70a4fc591a476001b84c21eb92a4bbd0c26df15a",
+      "codigos": {
+        "build": 1,
+        "verify": 125,
+        "typecheck": 0
+      }
+    },
+    {
+      "corrida": 2,
+      "cabeca": "18ca35f45ddced2d47e0a135f9504adeeb909f22",
+      "codigos": {
+        "build": 1,
+        "verify": 125,
+        "typecheck": 0
+      }
+    },
+    {
+      "corrida": 3,
+      "cabeca": "9d5508e937aa6f0c1ab29790dea0fb5d82427f6c",
+      "codigos": {
+        "build": 1,
+        "verify": 125,
+        "typecheck": 0
+      }
+    },
+    {
+      "corrida": 4,
+      "cabeca": "ebf7827d367d71e8209edb6f48464cafe2305595",
+      "codigos": {
+        "build": 0,
+        "verify": 1,
+        "typecheck": 0
+      }
+    },
+    {
+      "corrida": 5,
+      "cabeca": "95b63548da76384cb77741802b872d8702fc19f0",
+      "codigos": {
+        "build": 0,
+        "verify": 0,
+        "typecheck": 0
+      }
+    }
+  ],
+  "motor": "motor-commit.json",
+  "capturas": "capturas.json"
+}

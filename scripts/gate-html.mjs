@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { conferirAberturaB1 } from './abertura-b1-do-portao.mjs';
 import {conferirCaminhoFinal} from './caminho-final.mjs';
 import { tirarCodigoConferido, lerPaginaComCodigo } from './incorporar-do-portao.mjs';
 
@@ -281,6 +282,8 @@ import { LEITURAS } from '../src/data/leituras.mjs';
 import { MEDIDAS_DO_DOMINIO_1 } from '../src/data/dominios.mjs';
 import { NOMES_DO_PROJETO } from '../src/data/nomes-das-medidas.mjs';
 import {textoDocumentalConferido,temProvaDeEfeito,nomeDoEfeitoConferido} from '../src/lib/prova-efeitos.mjs';
+import { NOMES_EO1 } from '../src/data/nomes-eo1.mjs';
+import { conferirNomeEo1 } from './nomes-eo1-do-portao.mjs';
 import { MUNICIPIOS_COM_PAGINA } from '../src/data/municipios.mjs';
 import { MEDIDAS_DO_CONCELHO } from '../src/data/concelhos.mjs';
 /* A LISTA DA CARTA, PARA RECONTAR AS 29 UNIDADES E OS SEUS CONCELHOS (Emenda 20).
@@ -1259,6 +1262,8 @@ function eCitado(no) {
   }
   if ('data-verbatim' in attrs) return true;
   if ('data-linha-campo' in attrs) return true;
+  const citacao = claims.get(attrs['data-claim']);
+  if (citacao && ['texto', 'afirmação'].includes(citacao.unit) && citacao.value === citacao.excerpt) return true;
   /* UE1 (29.09.2026): um campo de uma linha de série e o nome de um país são
      transcritos (da resposta da fonte e da tabela de autoridade dos países), e
      o portão compara-os carácter a carácter, como a um `data-linha-campo`. A
@@ -2541,36 +2546,7 @@ function verificaTexto({ rota, root, err }) {
       err(`L6 ${chave}: marcador técnico não é fonte nem verificação.`);
   }
 
-  // B1: a fronteira é a sequência fechada de secções, não um ordinal.
-  {
-    const nomes = lang === 'pt'
-      ? ['Em resumo', 'O que este projeto conclui', 'O que podia funcionar melhor']
-      : ['In brief', 'What this project concludes', 'What could work better'];
-    const principais = registo.blocks.filter(b => b.kind === 'heading' && Number(b.level) === 2);
-    const leituras = root.querySelectorAll('.estudo-leitura');
-    const textos = root.querySelectorAll('.estudo-texto');
-    if (textos.length !== 1) err(`B1 leitura ${chave}: deve existir um corpo de texto.`);
-    const primeiroConteudo = registo.blocks.find(b => b.i > 0);
-    if (primeiroConteudo?.kind !== 'heading' || Number(primeiroConteudo.level) !== 2 || primeiroConteudo.text !== nomes[0]) {
-      if (leituras.length) err(`B1 leitura ${chave}: registo sem abertura não pode ter leitura.`);
-      console.log(`  B1 leitura ${chave}: sem leitura, o registo não começa por ${nomes[0]}.`);
-    } else {
-      if (nomes.some((nome, i) => principais[i]?.text !== nome) || principais.filter(b => nomes.includes(b.text)).length !== nomes.length)
-        err(`B1 leitura ${chave}: os três títulos não estão presentes pela ordem aprovada.`);
-      const primeiroDoTexto = principais.find(b => !nomes.includes(b.text));
-      const rendidos = leituras[0]?.querySelectorAll('h2[data-registo-unidade]').map(h => textoTranscrito(h)) ?? [];
-      if (leituras.length !== 1 || JSON.stringify(rendidos) !== JSON.stringify(nomes))
-        err(`B1 leitura ${chave}: a leitura rendida não contém exatamente as três secções.`);
-      if (!primeiroDoTexto || textos[0]?.querySelector('[data-registo-bloco]')?.getAttribute('data-registo-bloco') !== String(primeiroDoTexto.i))
-        err(`B1 leitura ${chave}: o texto não começa a seguir à terceira secção da leitura.`);
-      // Todas as unidades pertencem ao lado certo da fronteira, não só os títulos.
-      if (primeiroDoTexto) for (const b of registo.blocks.filter(b => b.i > 0)) {
-        const contentor = b.i < primeiroDoTexto.i ? leituras[0] : textos[0];
-        if (!contentor?.querySelector(`[data-registo-bloco="${b.i}"]`))
-          err(`B1 leitura ${chave}: bloco ${b.i} no lado errado da fronteira.`);
-      }
-    }
-  }
+  for (const falta of conferirAberturaB1(root, registo, chave, lang)) err(falta);
 
   /* ------------------------------------------------------------------ L8 ---
      «Nesta página»: o índice do documento (bloco B, item B4).
@@ -2794,6 +2770,7 @@ const CAMPOS_DA_LINHA = new Set([
    * língua que o embrulha, e essa é de `scripts/check-lingua.mjs`.
    */
   'name',
+  'name_en',
   'name_source',
   'name_source_en',
   'document.title',
@@ -5965,6 +5942,15 @@ for (const file of ficheirosHtml(DIST)) {
       err(`V2E nome: o nome de ${id} difere da prova selada nesta edição.`);
     else aRemover.push(el);
   }
+
+  for (const el of body.querySelectorAll('[data-nome][data-de-linha]')) {
+    const id = el.getAttribute('data-de-linha');
+    if (!NOMES_EO1[id]) continue;
+    const falta = conferirNomeEo1(id, rota?.lang, textoTranscrito(el),
+      registoDoPortao('orcamento-2027-o-que-muda-e-para-quem', 'pt')?.proof_rows);
+    if (falta) err(`EO1 nome ${id}: ${falta}.`);
+    else aRemover.push(el);
+  }
   /* H2-b: o ano do acompanhamento vem da ficha, não do livro de medições.
      Só sai do varrimento depois de conferir a composição inteira e a rota. */
   for (const el of body.querySelectorAll('[data-estudo-em-curso]')) {
@@ -6024,13 +6010,18 @@ for (const file of ficheirosHtml(DIST)) {
       aRemover.push(el);
       continue;
     }
+    const modificador = el.getAttribute('data-claim-modificador');
+    const valorNumerico = /^[+−-]?[\d\s\u00a0\u202f]+(?:,\d+)?$/.test(String(claim.value));
+    if (modificador !== undefined && (modificador !== 'abs' || !valorNumerico || paginaDoLivro))
+      err(`a afirmação "${id}" tem modificador inválido.`);
+    const esperado = modificador === 'abs' && valorNumerico ? String(claim.value).replace(/^[+−-]/, '') : claim.value;
     const renderizado = decodeEntities(textoDe(el));
-    if (digitsOf(renderizado) !== digitsOf(claim.value)) {
+    if (digitsOf(renderizado) !== digitsOf(esperado)) {
       err(
         `a afirmação "${id}" foi renderizada como "${renderizado.trim()}" mas o ` +
           `livro-razão diz "${claim.value}".`,
       );
-    } else if (formaDoValor(textoTranscrito(el)) !== formaDoValor(claim.value)) {
+    } else if (formaDoValor(textoTranscrito(el)) !== formaDoValor(esperado)) {
       /* Os algarismos batem e a escrita não: o sinal, a vírgula ou um símbolo
          metido dentro do elemento. Ver formaDoValor(), que diz o que é a mesma
          escrita e o que é outro número. */
@@ -8924,6 +8915,10 @@ for (const [nomePng, registo] of REGISTOS_DOS_CARTOES) {
             `"${v.linha}" tem "${claim.reference_date ?? '(nenhum)'}".`,
         );
       }
+    } else if (v.origem === 'nome-eo1') {
+      const falta = conferirNomeEo1(v.linha, registo.edicao, v.texto,
+        registoDoPortao('orcamento-2027-o-que-muda-e-para-quem', 'pt')?.proof_rows);
+      if (falta) errC(`EO1 nome ${v.linha}: ${falta}.`);
     } else if (v.origem === 'prova') {
       const contado = CONTAS[v.chave];
       if (contado === undefined) {

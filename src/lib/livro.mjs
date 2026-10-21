@@ -19,6 +19,7 @@ import { t } from '../i18n/strings.mjs';
 import { unidadeDaLinha } from '../i18n/unidades.mjs';
 import { textoDocumentalConferido } from './prova-efeitos.mjs';
 import { FAMILIAS_DAS_LINHAS } from '../data/o-que-e-das-familias.mjs';
+import { NOMES_EO1 } from '../data/nomes-eo1.mjs';
 import { SITE_NAME } from '../../site.config.mjs';
 
 /**
@@ -84,11 +85,22 @@ export function valorComUnidade(claim, lang = null) {
 /** Os textos documentais têm nome curto no cabeçalho e transcrição no corpo.
  * @param {Linha} claim @param {Lingua} lang */
 function mancheteDaLinha(claim, lang) {
-  if (!textoDocumentalConferido(claim)) return valorComUnidade(claim, lang);
+  if (!textoDocumentalConferido(claim)) return nomeTextual(claim, lang) ?? valorComUnidade(claim, lang);
   const familias = /** @type {Record<string,{nome?:{pt:string,en:string}}>} */ (FAMILIAS_DAS_LINHAS);
   const nome = familias[claim.id]?.nome?.[lang];
   if (!nome || /\d/.test(nome)) throw new Error(`Falta o nome documental de ${claim.id}`);
   return nome;
+}
+
+/**
+ * O título de uma página de linha: o valor, a unidade, a secção e a marca.
+ * Sem prosa — é a linha a dizer o que é.
+ *
+ * @param {Linha} claim
+ * @param {Lingua} lang
+ */
+function nomeTextual(claim, lang) {
+  return ['texto', 'afirmação'].includes(String(claim.unit)) && claim.value === claim.excerpt ? Object.entries(NOMES_EO1).find(([id]) => id === claim.id)?.[1][lang] : null;
 }
 
 /** @param {Linha} claim @param {Lingua} lang */

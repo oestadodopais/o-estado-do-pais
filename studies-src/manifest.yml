@@ -385,3 +385,25 @@ edicoes:
     bytes_normalized: 69408
     sha256_raw: 515ef8adfbc8585de4f4d0ae4e41f3f82963d87ff011836e12216298ba1aa291
     sha256_normalized: 515ef8adfbc8585de4f4d0ae4e41f3f82963d87ff011836e12216298ba1aa291
+  - slug: orcamento-2027-o-que-muda-e-para-quem
+    lang: "pt"
+    title: "O Orçamento de 2027: o que muda e para quem"
+    origin: "researchhub"
+    origin_ref: "content/27 Orcamento 2027 O que muda/O Orçamento de 2027, o que muda e para quem (pt-PT).html @ c9a26f0201c6b7182c24b799f9ab668280b54ed0"
+    raw_file: "_raw/orcamento-2027-o-que-muda-e-para-quem.pt.html"
+    fetched_utc: "2026-10-20T21:19:12Z"
+    bytes_raw: 46220
+    bytes_normalized: 46220
+    sha256_raw: "b711b9f70aa12af83cf5e5a6579a6a65759aa9eecfe3f3f6fb4452dba1829bcc"
+    sha256_normalized: "b711b9f70aa12af83cf5e5a6579a6a65759aa9eecfe3f3f6fb4452dba1829bcc"
+  - slug: orcamento-2027-o-que-muda-e-para-quem
+    lang: "en"
+    title: "The 2027 Budget: what changes, and for whom"
+    origin: "researchhub"
+    origin_ref: "content/27 Orcamento 2027 O que muda/The 2027 Budget, what changes, and for whom.html @ c9a26f0201c6b7182c24b799f9ab668280b54ed0"
+    raw_file: "_raw/orcamento-2027-o-que-muda-e-para-quem.en.html"
+    fetched_utc: "2026-10-20T21:19:12Z"
+    bytes_raw: 45552
+    bytes_normalized: 45552
+    sha256_raw: "1e71a996336b127ca69d28f7354b5c71be0c27b0dfebbcceaf2e6366b48904d5"
+    sha256_normalized: "1e71a996336b127ca69d28f7354b5c71be0c27b0dfebbcceaf2e6366b48904d5"

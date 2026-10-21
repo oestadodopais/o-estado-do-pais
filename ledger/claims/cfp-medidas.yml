@@ -1,0 +1,46 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "cfp-medidas"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "O MF estima um impacto macroeconómico reduzido das medidas de apoio ao rendimento das famílias com efeito no final de 2026. As medidas previstas para 2027 terão um impacto reduzido."
+unit: "afirmação"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Medidas: impacto macroeconómico"
+name_source: "p. 13 PDF"
+name_en: "Measures: macroeconomic impact"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Conselho das Finanças Públicas"
+document:
+  title: "Previsões macroeconómicas subjacentes à Proposta de Orçamento do Estado para 2027"
+  edition: "2027"
+  locator: "p. 13 PDF"
+  source_sha256: "b4ec1e5dbac4157d5ef0d111fefa135e693ee4158cf851e9623ec0314636c2cb"
+  page: 13
+  kind: "ficheiro"
+source_url: "https://www.cfp.pt/uploads/publicacoes_ficheiros/cfp-parecer-05-2026.pdf#page=13"
+access_date: "2026-10-13"
+reference_date: "2027"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "O MF estima um impacto macroeconómico reduzido das medidas de apoio ao rendimento das famílias com efeito no final de 2026. As medidas previstas para 2027 terão um impacto reduzido."
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "orcamento-2027-o-que-muda-e-para-quem"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "Cruzado de ResearchHub content/25 Orcamento 2027 Medidas · cfp-medidas."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

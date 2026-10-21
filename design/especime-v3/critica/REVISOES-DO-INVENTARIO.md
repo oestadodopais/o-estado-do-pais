@@ -848,3 +848,21 @@ Seis declarações substituídas: comparação e opinião da Saúde nas duas edi
 | v2e-d | Duas declarações da comparação dos médicos atualizadas, nas duas edições | por ler | A redação identifica os Estados-membros como o grupo da comparação. As declarações coincidem com o HTML construído; a leitura cruzada continua pendente. |
 
 | v2e-e | Contagem dos médicos corrigida e corte editorial do período dos pedidos, nas duas edições | por ler | Declarações anteriores conservadas como retiradas. Contagem apoiada na conferência do corpo alojado. Leitura cruzada pendente. |
+
+## EO1: o estudo do Orçamento de 2027
+
+| bloco | linhas | leitura | quem, quando |
+| --- | --- | --- | --- |
+| eo1 | 8 novas; 4 retiradas | por ler | Codex gpt-6-astra, 20.10.2026: frases e contagens extraídas da construção. A leitura cruzada do diff fica pendente antes da fusão. |
+
+## EO1-b: correção das invariantes e contagens
+
+| bloco | linhas | leitura | quem, quando |
+| --- | --- | --- | --- |
+| eo1-b | 4 novas; 4 retiradas | por ler | Codex gpt-6-astra, 20.10.2026: frases e contagens recolhidas do HTML corrigido. A leitura cruzada pertence à direção. |
+
+## eo1-c: contagens do livro após a fusão
+
+| bloco | mudança | estado | nota |
+|---|---|---|---|
+| eo1-c | 2 cadeias novas recolhidas do HTML nas duas edições; 4 declarações anteriores retiradas | por ler | Codex, 21.10.2026: contagens recolhidas do HTML da fusão pelo gerador do inventário, adaptado ao âmbito EO1-c; declarações dos dois lados conservadas. A leitura cruzada pertence à direção. |

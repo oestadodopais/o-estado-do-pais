@@ -17,7 +17,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { load } from 'js-yaml';
 import { DOCUMENT_FUNCTIONS, documentCall } from './document-checks.mjs';
-import {textoDocumentalConferido,acumuladoConferido,fragmentosAuxiliaresConferidos,tituloAuxiliarConferido} from './prova-efeitos.mjs';
+import {textoDocumentalConferido,valorImpressoDoPainelConferido,acumuladoConferido,fragmentosAuxiliaresConferidos,tituloAuxiliarConferido} from './prova-efeitos.mjs';
 
 import { STUDY_IDS, COUNTS } from '../data/studies.mjs';
 import { KINDS, CAMPOS_DE_PROVENIENCIA } from '../data/correcoes.mjs';
@@ -266,6 +266,7 @@ export const CAMPOS = /** @type {const} */ ([
    * isto», e a diferença não pode viver só num comentário.
    */
   'name',
+  'name_en',
   'name_source',
   'name_source_en',
   'source',
@@ -1614,7 +1615,7 @@ export function validateLedger() {
       errors.push(`${onde} o nome do ficheiro tem de ser o id: esperado "${esperado}".`);
     }
     if (!/^[a-z0-9]+(-[a-z0-9]+)*$/.test(String(id)) &&
-        !/^eurostat-[a-z0-9]+(?:[-_][a-z0-9]+)*$/.test(String(id))) {
+        !/^(?:eurostat|europa)-[a-z0-9]+(?:[-_][a-z0-9]+)*$/.test(String(id))) {
       errors.push(`${onde} id inválido "${id}": só minúsculas, algarismos e hífenes.`);
     }
 
@@ -1626,11 +1627,21 @@ export function validateLedger() {
       }
     }
 
+    // EO1-b: um algarismo dentro de uma frase não a transforma num número.
+    const unidadeTextual = ['texto', 'afirmação'].includes(String(c.unit));
+    const textoSelado = textoDocumentalConferido(c) || (unidadeTextual && typeof c.value === 'string' && c.value === c.excerpt &&
+      /^[a-f0-9]{64}$/.test(String(doc?.source_sha256 ?? '')));
+    if (unidadeTextual && !textoSelado)
+      errors.push(`${onde} valor em prosa exige texto ou afirmação, excerto integral e corpo selado.`);
+    if (!unidadeTextual && !valorImpressoDoPainelConferido(c.id, String(c.value)) &&
+        !['data', 'cimeira'].includes(String(c.unit)) &&
+        /\p{L}/u.test(String(c.value)) && marcaDoValor(c.value) === null)
+      errors.push(`${onde} valor em prosa numa linha numérica: a unidade tem de ser texto ou afirmação com corpo selado.`);
     // 3 — valor e unidade
     if (typeof c.value !== 'string' || c.value.trim() === '') {
       errors.push(`${onde} "value" tem de ser uma string não vazia, com o valor tal como publicado.`);
     } else if (!/\d/.test(c.value) && marcaDoValor(c.value) === null &&
-        !(c.afirmacao === true && c.unit === 'afirmação' && c.value === c.excerpt) && !textoDocumentalConferido(c)) {
+        !textoSelado) {
       /* A PORTA TEM A LARGURA DE UMA MARCA (28.08.2026, regra 2). A regra era
          «um valor sem algarismos não é um valor», e existe para recusar prosa no
          lugar de um número. Continua a valer para tudo o que não seja uma das
@@ -1671,6 +1682,8 @@ export function validateLedger() {
     {
       const temNome = !ausente(c.name);
       const temOnde = !ausente(c.name_source);
+      if (c.name_en !== undefined && (typeof c.name_en !== 'string' || !c.name_en.trim())) errors.push(`${onde} name_en precisa de tradução não vazia.`);
+      if (c.study === 'orcamento-2027-o-que-muda-e-para-quem' && (!temNome || ausente(c.name_en))) errors.push(`${onde} EO1: linha sem nome nas duas línguas.`);
       if (c.access_date_kind !== undefined && !['hosted-copy', 'source-read'].includes(c.access_date_kind)) errors.push(`${onde} access_date_kind inválido.`);
       if (c.name_source_en !== undefined && (typeof c.name_source_en !== 'string' || !c.name_source_en.trim() || !temOnde)) errors.push(`${onde} name_source_en precisa de localizador original e tradução não vazia.`);
       if (temNome) comRotulo++;

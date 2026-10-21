@@ -1,0 +1,46 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "diploma-habitacao-preambulo"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "Do conjunto de alterações, destaca-se a aplicação, com carácter temporário, da taxa reduzida de IVA de 6 % às empreitadas de construção e reabilitação de imóveis para habitação, a redução das taxas de imposto sobre o rendimento das pessoas singulares (IRS) e de imposto sobre o rendimento das pessoas coletivas (IRC) aplicáveis a rendimentos prediais decorrentes de contratos de arrendamento destinados exclusivamente ao arrendamento para habitação, incluindo contratos de arrendamento já em curso, bem como a exclusão de tributação, em sede de IRS, das mais-valias imobiliárias quando haja reinvestimento em imóveis destinados ao arrendamento para habitação, com vista a reforçar o investimento e a disponibilização de oferta habitacional."
+unit: "afirmação"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "IVA: taxa de 6 % e rendimentos prediais"
+name_source: "Preâmbulo; p. 1 PDF"
+name_en: "VAT: 6% rate and rental income"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "PRESIDÊNCIA DO CONSELHO DE MINISTROS"
+document:
+  title: "Decreto-Lei n.º 97/2026, de 20 de maio"
+  edition: "2026"
+  locator: "Preâmbulo; p. 1 PDF"
+  source_sha256: "a8ce8d796015f06ec247113a4184af61280940b473eda8f367cbff9666b5e32a"
+  page: 1
+  kind: "ficheiro"
+source_url: "https://files.diariodarepublica.pt/1s/2026/05/09700/0001400040.pdf#page=1"
+access_date: "2026-10-20"
+reference_date: "2027"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "Do conjunto de alterações, destaca-se a aplicação, com carácter temporário, da taxa reduzida de IVA de 6 % às empreitadas de construção e reabilitação de imóveis para habitação, a redução das taxas de imposto sobre o rendimento das pessoas singulares (IRS) e de imposto sobre o rendimento das pessoas coletivas (IRC) aplicáveis a rendimentos prediais decorrentes de contratos de arrendamento destinados exclusivamente ao arrendamento para habitação, incluindo contratos de arrendamento já em curso, bem como a exclusão de tributação, em sede de IRS, das mais-valias imobiliárias quando haja reinvestimento em imóveis destinados ao arrendamento para habitação, com vista a reforçar o investimento e a disponibilização de oferta habitacional."
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "orcamento-2027-o-que-muda-e-para-quem"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "Cruzado de ResearchHub content/25 Orcamento 2027 Medidas · diploma-habitacao-preambulo."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

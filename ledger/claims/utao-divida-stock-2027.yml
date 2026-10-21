@@ -1,0 +1,46 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "utao-divida-stock-2027"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "287,8"
+unit: "mil milhões de euros"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "UTAO: dívida, stock-2027"
+name_source: "§77; p. 44 PDF (43 impressa)"
+name_en: "UTAO: debt, stock-2027"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Unidade Técnica de Apoio Orçamental"
+document:
+  title: "Relatório UTAO n.º 17/2026 Apreciação preliminar da Proposta de Orçamento do Estado para 2027"
+  edition: "2027"
+  locator: "§77; p. 44 PDF (43 impressa)"
+  source_sha256: "b42daf2a3b7d3a955fc28f379b60744719771212f167facafba41178c9d58083"
+  page: 44
+  kind: "ficheiro"
+source_url: "https://app.parlamento.pt/webutils/docs/doc.pdf?path=jXG0%2bDjqO%2fp24sKDn5FOWu7PztWEWehzpjBISfq%2bHBtO6CBEhPZcSa90e7P%2fEmuAirgdFc3uJ4AGHFGQz2ubmRHqIldswZvo4iG1rB8JkFdli%2bE%2b5pF7oAwuJr8C7utVPOh60GxHq8Dubj%2bAdy%2bfyHAcsqPX1u5E8MfUhNBiJZ3RXzFuyvv2o42Tg6o2xFCYvAHMzy%2fUJ6tdI8QCvqt13kcfQpd5lggsIcipfZ634nqHaBBebtywj7T9%2fatfLzpF%2f23WTlGF27nnlPWdE6EX%2fuXRp0W01R2qnbhElWeTDfJpVM2OwqoVmUrHDWhwdYoYgsbC0ZiVEkty%2bSS4oorZGF7d36ELrrmQzWsXI4671ROkNVrsg3EYXrY2YcUFP%2bDR0BSMGe3cyGx1BV%2bdxPbSwDriMMnzyX9Gma1KrrYmjsC0FEk%2fX1GL9Ns4N1JLVZOUSHzYhkXb7UtLAlhSpTP1tRutoSrfJqmMLBk6poYIIVQ5SHLnPIxaJMun7gsC0gMHgRLAGq3C%2fUjGEu0U%2bELEMg%3d%3d&fich=UTAO-Rel-17-2026-OE2027_preliminar.pdf&Inline=true"
+access_date: "2026-10-19"
+reference_date: "2027"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "A redução mais acentuada do rácio em 2027 deverá ocorrer apesar do abrandamento do crescimento do PIB nominal, refletindo sobretudo o menor crescimento do stock de dívida. Os rácios e os valores do PIB apresentados na proposta apontam para um stock de aproximadamente 284,8 mil M€ no final de 2026 e 287,8 mil M€ em 2027, com acréscimos anuais de cerca de 9,7 mil M€ e 2,9 mil M€, respetivamente. O crescimento nominal da dívida deverá, assim, abrandar de aproximadamente 3,5% para 1,0%, enquanto o PIB nominal deverá aumentar 5,5% e 4,6%. Em ambos os anos (Gráfico 18 e Gráfico 19), o rácio diminui porque o PIB nominal cresce mais rapidamente do que o stock de dívida."
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "orcamento-2027-o-que-muda-e-para-quem"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "Cruzado de ResearchHub content/25 Orcamento 2027 Medidas · utao-divida-stock-2027."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

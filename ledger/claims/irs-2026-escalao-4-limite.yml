@@ -1,0 +1,46 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "irs-2026-escalao-4-limite"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "23 089"
+unit: "euros"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "IRS: limite superior do escalão 4 em 2026"
+name_source: "Artigo 68.º; tabela da redação da Lei n.º 73-A/2025, de 30/12"
+name_en: "Income tax: upper limit of bracket 4 in 2026"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "AT"
+document:
+  title: "Artigo 68.º Taxas gerais"
+  edition: "2026"
+  locator: "Artigo 68.º; tabela da redação da Lei n.º 73-A/2025, de 30/12"
+  source_sha256: "7093cbd6c3364fb695032cb8674804163d844cc8eddc1b504a36ae3da32fe738"
+  page: 1
+  kind: "html"
+source_url: "https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs68.aspx"
+access_date: "2026-10-20"
+reference_date: "2026"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "De mais de 17 838 até 23 089 24,10 17,705"
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "orcamento-2027-o-que-muda-e-para-quem"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Tabela consolidada alojada no Portal das Finanças. A redação identifica a Lei n.º 73-A/2025, de 30/12; não é a tabela da proposta de 2027. · Cruzado de ResearchHub content/25 Orcamento 2027 Medidas · irs-2026-escalao-4-limite."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

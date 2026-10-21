@@ -1,0 +1,42 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "der-oe2027-prr-peso-despesa-2026"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "7,6"
+unit: "%"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "PRR: peso na despesa de 2026"
+name_source: "Cálculo sobre as linhas identificadas"
+name_en: "Recovery plan: share of 2026 expenditure"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: null
+document: null
+source_url: null
+access_date: null
+reference_date: "2026"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: null
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: "round ( 11 106 (PRR (Despesa total)) ÷ 146 472 (Despesa total) × 100 , 1 ) = 7,6. O sinal indica a direção da variação ou do resultado da conta."
+derivation_en: "round ( 11 106 (Recovery and Resilience Plan (Total expenditure)) ÷ 146 472 (Total expenditure) × 100 , 1 ) = 7.6. The sign indicates the direction of the change or calculation result."
+derived_from:
+  - "pm-q3-1-r51-c1"
+  - "pm-q3-1-r50-c1"
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: "round ( pm-q3-1-r51-c1 / pm-q3-1-r50-c1 * 100 , 1 )"
+
+study: "orcamento-2027-o-que-muda-e-para-quem"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[derivation do motor] {'components': ['pm-q3-1-r51-c1', 'pm-q3-1-r50-c1'], 'formula': 'round ( pm-q3-1-r51-c1 / pm-q3-1-r50-c1 * 100 , 1 )', 'calculation': '7.6', 'rounding_places': 1} · Cruzado de ResearchHub content/25 Orcamento 2027 Medidas · der-oe2027-prr-peso-despesa-2026."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

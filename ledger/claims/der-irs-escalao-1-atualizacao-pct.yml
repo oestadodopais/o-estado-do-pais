@@ -1,0 +1,42 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "der-irs-escalao-1-atualizacao-pct"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "3,9"
+unit: "%"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "IRS: atualização do limite do escalão 1"
+name_source: "Cálculo sobre as linhas identificadas"
+name_en: "Income tax: bracket 1 limit update"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: null
+document: null
+source_url: null
+access_date: null
+reference_date: "2027"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: null
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: "round ( ( 8 666 (IRS: limite superior do escalão 1 em 2027) ÷ 8 342 (IRS: limite superior do escalão 1 em 2026) − 1 ) × 100 , 1 ) = 3,9. O sinal indica a direção da variação ou do resultado da conta."
+derivation_en: "round ( ( 8 666 (Income tax: upper limit of bracket 1 in 2027) ÷ 8 342 (Income tax: upper limit of bracket 1 in 2026) − 1 ) × 100 , 1 ) = 3.9. The sign indicates the direction of the change or calculation result."
+derived_from:
+  - "irs-2027-escalao-1-limite"
+  - "irs-2026-escalao-1-limite"
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: "round ( ( irs-2027-escalao-1-limite / irs-2026-escalao-1-limite - 1 ) * 100 , 1 )"
+
+study: "orcamento-2027-o-que-muda-e-para-quem"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[derivation do motor] {'components': ['irs-2027-escalao-1-limite', 'irs-2026-escalao-1-limite'], 'formula': 'round ( ( irs-2027-escalao-1-limite / irs-2026-escalao-1-limite - 1 ) * 100 , 1 )', 'calculation': '3.9', 'rounding_places': 1} · Cruzado de ResearchHub content/25 Orcamento 2027 Medidas · der-irs-escalao-1-atualizacao-pct."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

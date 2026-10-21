@@ -85,6 +85,7 @@
  */
 import { valorNaLingua } from '../lib/valor-na-lingua.mjs';
 import { notaDaBandeira } from '../lib/bandeira-da-fonte.mjs';
+import { linguaDoTituloDoDocumento } from '../i18n/lingua-dos-titulos.mjs';
 import { getClaim } from '../lib/ledger.mjs';
 import {textoDocumentalConferido} from '../lib/prova-efeitos.mjs';
 import Provenance from './Provenance.astro';
@@ -127,6 +128,7 @@ const {
   class: klass = '',
   as = 'span',
   escala = false,
+  abs = false,
   sufixo = '',
   // C1: a unidade do cartão conserva um separador no texto da página.
   separarUnidade = false,
@@ -161,6 +163,7 @@ if (!lang) {
 const claim = getClaim(id);
 // Os textos documentais V2-e foram transcritos de fontes portuguesas.
 if (lang === 'en' && textoDocumentalConferido(claim)) rest.lang = 'pt-PT';
+const linguaDoValor = ['texto','afirmação'].includes(claim.unit) && claim.value === claim.excerpt ? linguaDoTituloDoDocumento(claim.document?.title, lang) : null;
 const Tag = as;
 /* A etiqueta do VALOR, que é a única que a porta muda, e só no modo plano. */
 const TagDoValor = porta && plano && !chip ? 'a' : Tag;
@@ -197,7 +200,10 @@ const TagDoValor = porta && plano && !chip ? 'a' : Tag;
 /* B1, achado 19: entre algarismos, também o espaço comum e o espaço fino
    passam a U+00A0. O valor mantém os mesmos algarismos e posições; apenas o
    separador dos milhares deixa de admitir uma quebra. */
-const valor = valorNaLingua(claim, lang).replace(/(?<=\d)[ \u2009\u202F](?=\d)/g, '\u00A0');
+if (abs && !/^[+−-]?[\d\s\u00a0\u202f]+(?:,\d+)?$/.test(String(claim.value)))
+  throw new Error(`Claim ${id}: abs exige valor numérico.`);
+const valorComSinal = valorNaLingua(claim, lang);
+const valor = (abs ? valorComSinal.replace(/^[+−-]/, '') : valorComSinal).replace(/(?<=\d)[ \u2009\u202F](?=\d)/g, '\u00A0');
 
 /** As etiquetas de texto de SVG, onde um `<span>` não pode entrar. */
 const TAGS_DE_SVG = new Set(['text', 'tspan', 'textPath']);
@@ -239,7 +245,7 @@ const estilo = escala
         class:list={['claim-value', klass, porta && 'claim-porta']}
         id={elemId ?? undefined}
         href={porta ?? undefined}
-        data-claim={id}
+        data-claim={id} data-claim-modificador={abs ? 'abs' : undefined} lang={linguaDoValor}
         style={estilo}
         {...rest}
       >
@@ -253,7 +259,7 @@ const estilo = escala
     </>
   ) : chip ? (
     <span class:list={['claim', 'claim-com-chip', provisorio && 'claim-com-provisorio']}>
-      <Tag class:list={['claim-value', klass]} data-claim={id} style={estilo} {...rest}>
+      <Tag class:list={['claim-value', klass]} data-claim={id} data-claim-modificador={abs ? 'abs' : undefined} lang={linguaDoValor} style={estilo} {...rest}>
         {valor}
       </Tag>
       {sufixo && <span class="claim-sufixo" set:text={sufixo} />}
@@ -262,7 +268,7 @@ const estilo = escala
     </span>
   ) : sufixo ? (
     <span class:list={['claim', provisorio && 'claim-com-provisorio']}>
-      <Tag class:list={['claim-value', klass]} data-claim={id} style={estilo} {...rest}>
+      <Tag class:list={['claim-value', klass]} data-claim={id} data-claim-modificador={abs ? 'abs' : undefined} lang={linguaDoValor} style={estilo} {...rest}>
         {valor}
       </Tag>
       <span class="claim-sufixo" set:text={sufixo} />
@@ -275,13 +281,13 @@ const estilo = escala
        posto ao lado, e cinco valores da primeira página passavam a aparecer «sem
        selo para a sua própria linha». Um fragmento deixa o pai como estava. */
     <>
-      <Tag class:list={['claim-value', klass]} data-claim={id} style={estilo} {...rest}>
+      <Tag class:list={['claim-value', klass]} data-claim={id} data-claim-modificador={abs ? 'abs' : undefined} lang={linguaDoValor} style={estilo} {...rest}>
         {valor}
       </Tag>
       <span class="claim-provisorio">{' ('}{notaDaFonte}{')'}</span>
     </>
   ) : (
-    <Tag class:list={['claim-value', klass]} data-claim={id} style={estilo} {...rest}>
+    <Tag class:list={['claim-value', klass]} data-claim={id} data-claim-modificador={abs ? 'abs' : undefined} lang={linguaDoValor} style={estilo} {...rest}>
       {valor}
     </Tag>
   )

@@ -1,4 +1,5 @@
 ---
+import PortaDoEstudoEO1 from '../components/PortaDoEstudoEO1.astro';
 /**
  * UMA EXPLICAÇÃO, em `/explicacoes/<slug>` e `/en/explainers/<slug>` (bloco EX1, 05.10.2026, o ponto 3 do mandato).
  *
@@ -60,5 +61,6 @@ const path = routePath('explicacao', lang, { slug });
     <p class="regra-portas explicacao-portas" data-explicacao-portas>
       {e.portas.map((p, i) => <>{i > 0 && ' '}<a href={p.href} data-explicacao-porta-do-fim={p.entrada ?? p.rota}>{p.texto} →</a></>)}
     </p>
+    {slug === 'dinheiro-do-estado-2026' && <PortaDoEstudoEO1 lang={lang} />}
   </article>
 </Base>

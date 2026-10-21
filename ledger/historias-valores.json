@@ -179,6 +179,12 @@
       "kind": "atualizacao",
       "old_value": "13",
       "new_value": "17"
+    },
+    {
+      "date": "2026-10-20",
+      "kind": "atualizacao",
+      "old_value": "17",
+      "new_value": "18"
     }
   ],
   "edicoes-publicadas": [
@@ -187,6 +193,12 @@
       "kind": "atualizacao",
       "old_value": "18",
       "new_value": "25"
+    },
+    {
+      "date": "2026-10-20",
+      "kind": "atualizacao",
+      "old_value": "25",
+      "new_value": "27"
     }
   ],
   "jovens-nem-2025": [

@@ -1,0 +1,46 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "irs-2027-escalao-7-limite"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "48 373"
+unit: "euros"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "IRS: limite superior do escalão 7 em 2027"
+name_source: "Artigo 68.º; p. 75 PDF"
+name_en: "Income tax: upper limit of bracket 7 in 2027"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Presidência do Conselho de Ministros"
+document:
+  title: "Proposta de Lei n.º 110/XVII/2.ª Orçamento do Estado para 2027"
+  edition: "2027"
+  locator: "Artigo 68.º; p. 75 PDF"
+  source_sha256: "36ca176bb1da31981fa0b5968cb16123817c4a6622711ca9776574d0f16a9ddf"
+  page: 75
+  kind: "ficheiro"
+source_url: "https://app.parlamento.pt/webutils/docs/doc.pdf?path=KDlw1Jsr0M2KCE53Cyqt55iWdA9aUQ6zoXsHh1coKqUdFWpiOlsrtYkciq3oH3vbZx58K5MWyhyOsJ507OUPF1%252bt7vse5McVlueuY02f4%252bQSmcHB%252bESiXJj6IYlF%252fASuXTUqcKte4AmJOhIpKBDEs3CbXPF2POrJvWfjcZSCZvl3FmFqc32W4nlcrFtphyN4GYvN4jtHgVHEmdzIg4NlicfkxJV2HalKo6o6%252f6s5aOnw6inlTXcQTTfOX%252bx%252fsHp4Go1rb1ySCOp4uE3z6zKcsmGWAUUh6DY2PmPuYf%252fnzPwUh7SXAv6ACfxUoUxuO2Lpe2EFq0bKtYr0x6FICq%252b9DmUa70MKgO6%252bUcUsevnJxos%253d&fich=a4964881-2005-4b3c-8691-2fb725dd2ba9.docx&Inline=true"
+access_date: "2026-10-20"
+reference_date: "2027"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "De mais de 44 762 até 48 373 43,10 26,104"
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "orcamento-2027-o-que-muda-e-para-quem"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Artigo 60.º da proposta, alteração ao artigo 68.º do CIRS. O intervalo do rendimento coletável é o rótulo impresso. A tabela não repete o ano; a âncora temporal é o título do diploma na p. 1. · Cruzado de ResearchHub content/25 Orcamento 2027 Medidas · irs-2027-escalao-7-limite."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

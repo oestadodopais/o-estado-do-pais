@@ -1,0 +1,13 @@
+---
+import { WORKS } from '../data/studies.mjs';
+import { routePath } from '../lib/routes.mjs';
+interface Props { lang: 'pt' | 'en'; }
+const { lang } = Astro.props;
+const slug = 'orcamento-2027-o-que-muda-e-para-quem';
+const work = WORKS.find(w => w.slug === slug);
+const edition = work?.editions.find(e => e.lang === lang);
+if (!edition) throw new Error('EO1: edição ausente');
+---
+<p class="regra-portas discussao-porta" data-eo1-porta>
+  <a href={routePath('estudo', lang, { slug })}>{lang === 'pt' ? 'O estudo: ' : 'The study: '}<span data-verbatim={`estudo-eo1-titulo-${lang}`}>{edition.title}</span> →</a>
+</p>

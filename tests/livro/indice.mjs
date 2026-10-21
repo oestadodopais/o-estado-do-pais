@@ -81,6 +81,7 @@
  * mesma função que a escreve confirma a função, não o sítio. Uma cadeia que mude
  * do outro lado tem de fazer esta régua falhar, e não acompanhá-la em silêncio.
  */
+import { localizadorEo1Confere, temProvaEo1, selagemProvasEo1Confere } from '../../scripts/localizadores-eo1-do-portao.mjs';
 import fs from 'node:fs';
 import http from 'node:http';
 import path from 'node:path';
@@ -245,7 +246,7 @@ const LINHAS_DA_REGUA = loadClaims();
  * coordenadas de página, 278 `Quadro_I, linha 4, coluna 13`, 7 `label`). Uma
  * forma nova entra aqui à mão, com o leitor que a escreve nomeado ao lado.
  *
- * @typedef {{id?: unknown, name?: unknown, name_source_en?: unknown, reference_date?: unknown, document?: {locator?: unknown, locator_en?: unknown, page?: unknown, title?: unknown, edition?: unknown, kind?: unknown, crop?: {page?: unknown}}|null}} ContextoDoLocalizador
+ * @typedef {{id?: unknown, study?: unknown, name?: unknown, name_en?: unknown, name_source_en?: unknown, reference_date?: unknown, document?: {locator?: unknown, locator_en?: unknown, page?: unknown, title?: unknown, edition?: unknown, kind?: unknown, crop?: {page?: unknown}}|null}} ContextoDoLocalizador
  * @type {{ nome: string, forma: RegExp, onde: string, confere?: (onde: string, linha?: ContextoDoLocalizador) => boolean }[]}
  */
 const LOCALIZADORES_CONHECIDOS = [
@@ -527,6 +528,10 @@ function localizadorV2eConfere(onde, linha) {
 
 /** @param {unknown} onde @param {ContextoDoLocalizador} [linha] @returns {boolean} */
 function localizadorConhecido(onde, linha) {
+  // A pertença é a lista de identificadores da prova selada, não a forma textual do localizador.
+  // Uma linha EO1 inválida não pode cair numa forma genérica que dispense a sua prova.
+  if (linha?.study === 'orcamento-2027-o-que-muda-e-para-quem' || temProvaEo1(linha?.id))
+    return localizadorEo1Confere(onde, linha);
   return (
     typeof onde === 'string' &&
     onde.trim() !== '' &&
@@ -763,6 +768,10 @@ celula('I1', 'o nome de uma medida não é o identificador', (falhas) => {
       comLocalizador++;
       continue;
     }
+    if (linha.study === 'orcamento-2027-o-que-muda-e-para-quem' || temProvaEo1(id)) {
+      falhas.push(`ledger/claims/${id}.yml: o nome, período, localizador ou corpo não corresponde à prova EO1 selada e ao seu recibo de origem.`);
+      continue;
+    }
     falhas.push(
       `ledger/claims/${id}.yml: traz o rótulo "${rotulo.slice(0, 40)}" e o localizador ` +
         `${JSON.stringify(onde ?? null)}, que não é nenhuma das ${LOCALIZADORES_CONHECIDOS.length} ` +
@@ -796,7 +805,7 @@ celula('I1', 'o nome de uma medida não é o identificador', (falhas) => {
     `livro-razão, por edição (${total} linhas): ${e.cartao} pelo nome do cartão · ${e.name} pelo ` +
     `rótulo da fonte · ${e['document.title']} pelo TÍTULO DO DOCUMENTO, que é o nome do papel e ` +
     `não o da medida · ${e.nenhum} sem nome\n        ${comLocalizador} rótulo(s) do livro-razão ` +
-    `inteiro com um localizador de uma das ${LOCALIZADORES_CONHECIDOS.length} formas conhecidas`
+    `inteiro com um localizador de uma das ${LOCALIZADORES_CONHECIDOS.length} formas conhecidas ou da prova EO1 selada`
   );
 });
 
@@ -1967,6 +1976,34 @@ function provaLocalizadores() {
       if (localizadorV2dConfere(l.name_source, l)) falhas.push(`V2D: planta de ${campo} passou em ${l.id}`);
     }
     console.log(`V2D: ${v2d.length} rótulos com cinco plantas de origem por linha`);
+    const eo1 = [...LINHAS_DA_REGUA.values()].filter(l => l.study === 'orcamento-2027-o-que-muda-e-para-quem');
+    let plantasEo1 = 0;
+    if (!eo1.length) falhas.push('EO1: nenhuma linha para conferir');
+    for (const original of eo1) {
+      if (!localizadorConhecido(original.name_source, original)) falhas.push(`EO1: controlo positivo falhou em ${original.id}`);
+      const danos = [
+        ['nome', l => l.name += ' alterado'], ['nome inglês', l => l.name_en += ' altered'],
+        ['identificador', l => l.id += '-inexistente'], ['estudo', l => l.study = 'outro'],
+        ['localizador', l => l.name_source += ' alterado'], ['período', l => l.reference_date = '1900'],
+      ];
+      if (original.document) danos.push(
+        ['coordenada', l => l.document.locator += ' alterado'], ['página', l => l.document.page = (l.document.page ?? 0) + 1],
+        ['título', l => l.document.title += ' alterado'], ['corpo selado', l => l.document.source_sha256 = '0'.repeat(64)],
+        ['excerto', l => l.excerpt += ' alterado']);
+      else danos.push(['conta', l => l.check += ' + 1'], ['componentes', l => l.derived_from = []]);
+      for (const [campo, mudar] of danos) {
+        const l = structuredClone(original); mudar(l); plantasEo1++;
+        if (localizadorConhecido(l.name_source, l)) falhas.push(`EO1: planta de ${campo} passou em ${original.id}`);
+      }
+    }
+    const corpoEo1 = fs.readFileSync(path.join(RAIZ, 'ledger/provas/eo1/provas.json'));
+    const travessiaEo1 = JSON.parse(fs.readFileSync(path.join(RAIZ, 'ledger/cruzamentos/eo1-provas.json'), 'utf8'));
+    if (!selagemProvasEo1Confere(corpoEo1, travessiaEo1)) falhas.push('EO1: prova não corresponde à travessia');
+    if (selagemProvasEo1Confere(Buffer.concat([corpoEo1, Buffer.from(' ')]), travessiaEo1)) falhas.push('EO1: bytes da prova alterados passaram');
+    const travessiaAlterada = structuredClone(travessiaEo1); travessiaAlterada.files['provas.json'].origin_sha256 = '0'.repeat(64);
+    if (selagemProvasEo1Confere(corpoEo1, travessiaAlterada)) falhas.push('EO1: resumo da origem alterado passou');
+    console.log(`EO1: ${eo1.length} linhas, ${plantasEo1} plantas de origem e duas plantas da selagem da prova`);
+
     if (['I1', 'I3'].some((id) => !celulas.find((c) => c.id === id)?.passa)) {
       falhas.push('As plantas dos localizadores exigem I1 e I3 limpas antes do estrago.');
       return '';

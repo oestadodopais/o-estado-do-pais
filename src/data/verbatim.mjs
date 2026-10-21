@@ -72,6 +72,20 @@ const totalMinisterios = ORIGENS_DAS_DEFINICOES['rp4n-total-ministerios'].excert
 if (!totalMinisterios) throw new Error('EX3: o total dos ministérios não se lê no excerto selado');
 
 export const VERBATIM = {
+  'estudo-eo1-titulo-pt': { lang: 'pt', origem: 'Título de studies-src/orcamento-2027-o-que-muda-e-para-quem/pt.html.', text: 'O Orçamento de 2027: o que muda e para quem' },
+  'estudo-eo1-titulo-en': { lang: 'en', origem: 'Título de studies-src/orcamento-2027-o-que-muda-e-para-quem/en.html.', text: 'The 2027 Budget: what changes, and for whom' },
+
+  "estudo-eo1-pergunta-pt": {
+    "lang": "pt",
+    "origem": "Mandato EO1 de 20.10.2026, secção 5, pergunta do estudo.",
+    "text": "O que muda com o Orçamento de 2027, e para quem?"
+  },
+  "estudo-eo1-pergunta-en": {
+    "lang": "en",
+    "origem": "Mandato EO1 de 20.10.2026, secção 5, pergunta do estudo.",
+    "text": "What changes with the 2027 Budget, and for whom?"
+  }
+,
   'origem-rp4n-total-ministerios-montante': {lang: null, origem: 'rp4n-total-ministerios, campo excerto', text: totalMinisterios},
   'estudo-agua-abertura-pt': {
     lang: 'pt', origem: 'studies-src/onde-esta-a-agua/pt.html:215, primeira frase de p.standfirst.',

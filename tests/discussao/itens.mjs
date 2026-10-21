@@ -1,6 +1,7 @@
 /** V2-d: leitor independente dos itens, das contas e das portas, com estragos em memória. */
 import fs from 'node:fs';
 import { routePath } from '../../src/lib/routes.mjs';
+import { ESTUDO_EO1, PORTAS_EO1 } from '../../src/data/portas-eo1.mjs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {parse} from 'node-html-parser';
@@ -238,12 +239,18 @@ export function conferirIntegracao(root,lang,pagina,linhas=loadClaims(),{dist=pr
   }
  }
  const tematica=pagina===`explicacoes/dinheiro-do-estado-2026/index.html`||pagina===`en/explainers/dinheiro-do-estado-2026/index.html`;
- const esperados=ITENS.filter(e=>[...linhasImpressasOuDerivadas(e,linhas)].some(id=>ids.has(id))||(tematica&&e.slug==='saude-no-orcamento'));
+ const estudoEo1=pagina===`${lang==='pt'?'estudos':'en/studies'}/${ESTUDO_EO1}/index.html`;
+ const esperados=ITENS.filter(e=>[...linhasImpressasOuDerivadas(e,linhas)].some(id=>ids.has(id))||(tematica&&e.slug==='saude-no-orcamento')||(estudoEo1&&PORTAS_EO1[e.slug]));
  const portas=main.querySelectorAll('[data-discussao-integracao]');
  for(const a of main.querySelectorAll('a'))if(ITENS.some(e=>a.getAttribute('href')===destino(e.slug,lang))&&!a.closest('[data-discussao-integracao],[data-discussao-inicio]'))erros.push('V2B integração: porta sem condição declarada');
  if(portas.length!==esperados.length)erros.push(`V2B integração: presença ou ausência errada em ${pagina}`);
  for(const e of esperados){
   const p=portas.find(p=>p.getAttribute('data-discussao-integracao')===e.slug),a=p?.querySelector('a');
+  if(estudoEo1){
+   if(p?.getAttribute('data-discussao-condicao')!=='estudo-eo1'||a?.getAttribute('href')!==destino(e.slug,lang)||normal(a?.text)!==PORTAS_EO1[e.slug]?.[lang])
+    erros.push(`EO1 integração: porta temática diferente do documento em ${pagina}`);
+   continue;
+  }
   erros.push(...conferirMarcasDoTitulo(a,e,lang,linhas));
   if(a?.getAttribute('href')!==destino(e.slug,lang)||normal(a?.text)!==normal(DISCUSSAO.porta[lang]+' '+explicacaoPelaCelula(e,lang,linhas).titulo))erros.push(`V2B integração: destino ou título errado em ${pagina}`);
   if(tematica&&(p?.getAttribute('data-discussao-condicao')!=='tematica'||p?.closest('[data-explicacao-secao]')?.getAttribute('data-explicacao-secao')!=='por-funcao'))erros.push('V2B integração: porta temática fora da secção');
@@ -325,6 +332,18 @@ export function conferirTudo(dist=path.join(raiz,'dist')){
  const intacta=`<main><section><span data-claim="${id}"></span><p data-discussao-integracao="${demo.slug}" data-discussao-condicao="linhas"><a href="${destino(demo.slug,'pt')}">${DISCUSSAO.porta.pt} ${tituloDeEnsaio(demo,'pt',loadClaims())}</a></p></section></main>`;
  if(conferirIntegracao(parse(intacta),'pt','exemplo').length)erros.push('V2B integração: conhecido positivo recusado');
  for(const [nome,html] of [['porta por coincidência ausente',intacta.replace(/<p .*<\/p>/,'')],['porta sem coincidência',intacta.replace(/<span .*?<\/span>/,'')],['destino de outro item',intacta.replace(destino(demo.slug,'pt'),'#outra')]])provas.push({nome,mordeu:conferirIntegracao(parse(html),'pt','exemplo').length>0});
+ for(const lang of ['pt','en']){
+  const pagina=`${lang==='pt'?'estudos':'en/studies'}/${ESTUDO_EO1}/index.html`;
+  const html='<main>'+Object.entries(PORTAS_EO1).map(([id,n])=>`<p data-discussao-integracao="${id}" data-discussao-condicao="estudo-eo1"><a href="${destino(id,lang)}">${n[lang]}</a></p>`).join('')+'</main>';
+  if(conferirIntegracao(parse(html),lang,pagina).length)erros.push('EO1 integração: controlo íntegro recusado');
+  for(const [nome,mut] of [
+   ['nome trocado',r=>r.querySelector('a').set_content('Outro item')],
+   ['destino trocado',r=>r.querySelector('a').setAttribute('href','#outro')],
+   ['porta ausente',r=>r.querySelector('p').remove()],
+   ['condição ausente',r=>r.querySelector('p').removeAttribute('data-discussao-condicao')],
+  ]){const r=parse(html);mut(r);provas.push({nome:'EO1 '+nome,lang,mordeu:conferirIntegracao(r,lang,pagina).length>0});}
+  provas.push({nome:'EO1 condição fora do estudo',lang,mordeu:conferirIntegracao(parse(html),lang,'exemplo').length>0});
+ }
  // Nas áreas, cada cartão chega ao item pelo seu recibo, sem uma porta repetida para a página inteira.
  for(const lang of ['pt','en'])for(const forma of ['cartao','linha','regua','registo']){
   const dono=forma==='regua'?'oe-2027-saude-pessoal-2027':id;

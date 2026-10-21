@@ -1,0 +1,46 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "oe-2027-calendario-especialidade"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "18 a 23 de novembro"
+unit: "data"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Debate e votação na especialidade"
+name_source: "Página parlamentar, calendário da proposta"
+name_en: "Committee debate and vote"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Assembleia da República"
+document:
+  title: "Orçamento do Estado para 2027"
+  edition: "2027"
+  locator: "Página parlamentar, calendário da proposta"
+  source_sha256: "0d8ea877b233fd8743997a221b1117ab14fa6bb48dad864c4c69eeb2fffb4e0d"
+  page: 1
+  kind: "html"
+source_url: "https://www.parlamento.pt/Paginas/2026/outubro/Orcamento-do-Estado-para-2026.aspx?n=10"
+access_date: "2026-10-19"
+reference_date: "2026-11-23"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "Orçamento do Estado 2027 | Debate e votação na especialidade | 18 a 23 de novembro ​"
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "orcamento-2027-o-que-muda-e-para-quem"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "Período completo da fonte: 2026-11-18/2026-11-23. · [note do motor] Datas marcadas, não registo de votações já realizadas. Fonte alojada em investigação anterior, reutilizada pelo sha256. A página agrupa debate e votação na generalidade nos dois dias; não fixa aqui um dia isolado da votação. · Cruzado de ResearchHub content/24 Orcamento 2027 Analise · oe-2027-calendario-especialidade."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

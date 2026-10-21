@@ -1536,8 +1536,14 @@ function varreLeis() {
       continue;
     }
     const root = lerPaginaComCodigo(s);
+    const rotaDoFicheiro = matchPath('/' + path.relative(DIST, f).replace(/index\.html$/, ''));
+    if (root.querySelector('[data-incorporar-codigo]')) {
+      const canonica = root.querySelector('link[rel="canonical"]')?.getAttribute('href');
+      if (!canonica) throw Error('H9: código sem página canónica');
+      assert.deepEqual(matchPath(new URL(canonica).pathname), rotaDoFicheiro, 'H9: página canónica diferente da rota do ficheiro');
+    }
     // Código literal só sai da prosa depois da conferência integral dos bytes.
-    tirarCodigoConferido(root, matchPath('/' + path.relative(DIST, f).replace(/index\.html$/, '')));
+    tirarCodigoConferido(root, rotaDoFicheiro);
     const daFonte = new Set();
     for (const el of root.querySelectorAll(TRANSCRICAO_DA_FONTE)) {
       daFonte.add(el);

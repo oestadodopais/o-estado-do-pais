@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-20T21:49:22+00:00",
+ "copia": "<pacotes>/pacote-eo1-b-2026-10-20",
+ "plantas": [
+  {
+   "id": "R1",
+   "ficheiro": "built/estudos/orcamento-2027-o-que-muda-e-para-quem/documento/index.html",
+   "descricao": "a descida da dívida passa de 3,0 para 3,5 pontos na página construída em português; a referência é a linha pm-q3-6-r43-c3 e o Quadro 3.6 alojado",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "a42729bb58808cd735fe880233d50179f9641313ebd37d070680296f6a5f6e6c",
+   "sha256_depois": "6df700e6cbdeb9f6cc333d7cbb4f8046d49f8f87326bda9aefa6206e44454e47",
+   "contexto_antes": "bruto (o PIB) em 2026 para 84,5 % em 2027, abaixo do nível que o ministro das Finanças anunciou para 2027 ao chamar à dívida pública a «principal preocupação». A descida de 3,0 pontos é maior do que a de 2026 sobretudo porque o Estado compra menos ativos financeiros, com o ajustamento défice-dívida a cair de 3,1 pontos para 0,9 pontos; o excedente p",
+   "contexto_depois": "bruto (o PIB) em 2026 para 84,5 % em 2027, abaixo do nível que o ministro das Finanças anunciou para 2027 ao chamar à dívida pública a «principal preocupação». A descida de 3,5 pontos é maior do que a de 2026 sobretudo porque o Estado compra menos ativos financeiros, com o ajustamento défice-dívida a cair de 3,1 pontos para 0,9 pontos; o excedente p"
+  },
+  {
+   "id": "R2",
+   "ficheiro": "built/en/studies/orcamento-2027-o-que-muda-e-para-quem/document/index.html",
+   "descricao": "a subida dos juros em contabilidade nacional passa de 1 548 para 1 584 milhões na página construída em inglês; a referência é a derivada der-oe2027-juros-variacao-cn e o Quadro 3.1 alojado",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "e50ef3620e888a184dbcf8f22feedfcca379940f4fa8d697b22314a82c949db9",
+   "sha256_depois": "d1bb1ee8a7ad68d502eba9b286b49e21347eb12185127e2c2204ca57260806f3",
+   "contexto_antes": "ses faster than expenditure.</strong> It grows 18.7 % in public accounting, against 2.8 % for total expenditure and 5.4 % for staff costs; in national accounts it rises 1,548 million euros, more than the cost of all the 2027 measures to the balance within the same perimeter, 1,132 million, and 23.2 % according to the UTAO, with the implicit inter",
+   "contexto_depois": "ses faster than expenditure.</strong> It grows 18.7 % in public accounting, against 2.8 % for total expenditure and 5.4 % for staff costs; in national accounts it rises 1,584 million euros, more than the cost of all the 2027 measures to the balance within the same perimeter, 1,132 million, and 23.2 % according to the UTAO, with the implicit inter"
+  },
+  {
+   "id": "R3",
+   "ficheiro": "built/estudos/orcamento-2027-o-que-muda-e-para-quem/documento/index.html",
+   "descricao": "a soma das derivadas passa de −1 131 para −1 113 na página construída em português; a referência é a derivada der-oe2027-medidas-soma-derivadas e as suas componentes",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "6df700e6cbdeb9f6cc333d7cbb4f8046d49f8f87326bda9aefa6206e44454e47",
+   "sha256_depois": "c44874e7ddaaae8e08796ece032acfa6392b723a0b283aaa0d6b596a737afd9d",
+   "contexto_antes": "aude nos combustíveis, o mínimo de existência e o Complemento Solidário para Idosos, somam 79 milhões a favor do saldo. As linhas do quadro estão arredondadas: as duas somas dão −1 131 milhões contra os −1 132 do quadro, e as três linhas do pessoal dão 947 contra os 948 impressos. A UTAO chega ao mesmo número: «O MF prevê que em 2027 as novas medidas",
+   "contexto_depois": "aude nos combustíveis, o mínimo de existência e o Complemento Solidário para Idosos, somam 79 milhões a favor do saldo. As linhas do quadro estão arredondadas: as duas somas dão −1 113 milhões contra os −1 132 do quadro, e as três linhas do pessoal dão 947 contra os 948 impressos. A UTAO chega ao mesmo número: «O MF prevê que em 2027 as novas medidas"
+  },
+  {
+   "id": "R4",
+   "ficheiro": "ledger/claims/der-oe2027-juros-variacao-cn.yml",
+   "descricao": "o valor da linha der-oe2027-juros-variacao-cn.yml passa de 1 548 a 1 549 na cópia exportada; a referência é a linha do motor no motor/diff.patch e o corpo alojado",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "b8fe4280a76ffae6410d77d65d8e3a883877946b267b973847c8f09d8b395701",
+   "sha256_depois": "f268960c5af2f8ff96b4816043f9cc6fb1c46e89ef88511bff94d0e70bfbf920",
+   "contexto_antes": " aqui parte scripts/check-cruzamento.mjs.\n\nid: \"der-oe2027-juros-variacao-cn\"\n\n# O valor tal como é publicado, com formatação portuguesa. String, nunca número.\nvalue: \"1 548\"\nunit: \"milhões de euros\"\n\n# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,\n# e onde nele foi lido. Escrito pelo motor, nunca à mão.",
+   "contexto_depois": " aqui parte scripts/check-cruzamento.mjs.\n\nid: \"der-oe2027-juros-variacao-cn\"\n\n# O valor tal como é publicado, com formatação portuguesa. String, nunca número.\nvalue: \"1 549\"\nunit: \"milhões de euros\"\n\n# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,\n# e onde nele foi lido. Escrito pelo motor, nunca à mão."
+  },
+  {
+   "id": "R5",
+   "ficheiro": "motor/content/25 Orcamento 2027 Medidas/ledger.json",
+   "descricao": "um excerto novo do livro do motor alterado (nove caracteres trocados) na cópia do pacote; a referência é o corpo alojado da linha",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "194bf72c96d82415c17c5f75a67de5ae0f7d03c6ee121cea5222442dee72b738",
+   "sha256_depois": "745ed484f3768f6627311ca484afcb336f205f597971146ae897073c8f4f3a08",
+   "contexto_antes": "\"derivado\",\n      \"note\": \"As componentes conservam o sinal publicado.\",\n      \"check\": \"der-oe2027-medidas-anteriores-saldo + der-oe2027-medidas-novas-saldo\",\n      \"excerpt\": \"der-oe2027-medidas-anteriores-saldo + der-oe2027-medidas-novas-saldo = -1131\",\n      \"derivation\": {\n        \"components\": [\n          \"der-oe2027-medidas-anteriores-saldo\",\n          \"der-oe2027-medidas-novas-saldo\"\n        ],\n        \"f",
+   "contexto_depois": "\"derivado\",\n      \"note\": \"As componentes conservam o sinal publicado.\",\n      \"check\": \"der-oe2027-medidas-anteriores-saldo + der-oe2027-medidas-novas-saldo\",\n      \"excerpt\": \"der-oe2027-medidas-anteriores-saldo + der-oe2027-medidas-novas-sal311- = od1\",\n      \"derivation\": {\n        \"components\": [\n          \"der-oe2027-medidas-anteriores-saldo\",\n          \"der-oe2027-medidas-novas-saldo\"\n        ],\n        \"f"
+  }
+ ]
+}

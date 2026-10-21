@@ -91,6 +91,37 @@ export function subjectLabel(subject, lang = 'pt') {
 }
 
 export const WORKS = [
+{
+  id: "orcamento-2027-o-que-muda-e-para-quem",
+  slug: 'orcamento-2027-o-que-muda-e-para-quem',
+  tema: "economia-e-financas-publicas",
+  editions: [
+    {
+      lang: 'pt',
+      title: "O Orçamento de 2027: o que muda e para quem",
+      date: null,
+      updated: null
+    },
+    {
+      lang: 'en',
+      title: "The 2027 Budget: what changes, and for whom",
+      date: null,
+      updated: null
+    }
+  ],
+  pergunta: {
+    pt: "O que muda com o Orçamento de 2027, e para quem?",
+    en: "What changes with the 2027 Budget, and for whom?"
+  },
+  verbatimDaPergunta: {
+    pt: "estudo-eo1-pergunta-pt",
+    en: "estudo-eo1-pergunta-en"
+  },
+  description: {
+    pt: "A proposta de Orçamento lida pelo que faz a quem trabalha, a quem recebe pensão, a quem tem casa para pagar, às empresas e à dívida.",
+    en: "The Budget proposal read by what it does to those who work, to pensioners, to those paying for a home, to companies and to the debt."
+  }
+},
   /* OS QUATRO ESTUDOS DE ÉVORA DE 01.10.2026 (bloco E1, DECISIONS.md §1.145).
      Os seis estudos de Évora de agosto e setembro passaram a quatro, compostos no
      motor a partir dos registos dos antigos (content/16 a 19 do ResearchHub). O

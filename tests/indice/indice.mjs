@@ -414,6 +414,7 @@ export function plantasDoIndice(base) {
      de distrito): `comPaginas` dá à célula um leitor que devolve as cópias estragadas e lê o resto do disco. */
   const comPaginas = (extra, trocadas) => ({ ...base, ...extra, lerPagina: (c) => trocadas.get(normalizePath(c)) ?? ler(c) });
   const docPt = parse(base.indice.pt ?? '');
+  const estudosEn = parse(base.indice.en ?? '').querySelectorAll('main [data-estudo-edicao]').length;
   /* A primeira linha de «O que mudou» do índice português, e o número da sua entrada. */
   const primeiraMudanca = docPt.querySelector('main [data-mudou-ambito="indice"] li');
   const linhaDaPrimeira = primeiraMudanca?.getAttribute('data-correcao-entrada') ?? '';
@@ -434,7 +435,7 @@ export function plantasDoIndice(base) {
     ['r3-celula-pagina-do-resultado', () => comPt((d) => d.querySelector('main [data-indice-seccao="projeto"] ul')?.insertAdjacentHTML('beforeend', `<li><a href="${routePath('sugestoesObrigado', 'pt')}">Obrigado</a></li>`)), [/I3 pt: a página do resultado \/sugestoes\/obrigado está no índice/]],
     ['r3-celula-mapa-com-pagina-sem-porta', () => ({ ...base, mapa: new Set([...base.mapa, normalizePath(routePath('sugestoesVazia', 'en'))]) }), [/I2 en: \/en\/suggestions\/empty está no mapa do sítio e não tem porta no índice/]],
     ['r3-celula-indice-fora-do-mapa', () => ({ ...base, mapa: new Set([...base.mapa].filter((c) => c !== normalizePath(routePath('indice', 'pt')))) }), [/I2 pt: a página do índice \/indice não está no mapa do sítio/]],
-    ['r3-celula-estudo-em-falta', () => comEn((d) => d.querySelector('main [data-estudo-edicao]')?.remove()), [/I5 en: o índice tem 10 estudo\(s\) e a lista dos estudos 11/]],
+    ['r3-celula-estudo-em-falta', () => comEn((d) => d.querySelector('main [data-estudo-edicao]')?.remove()), [new RegExp(`I5 en: o índice tem ${estudosEn - 1} estudo\\(s\\) e a lista dos estudos ${estudosEn}`)]],
     ['r3-celula-concelho-noutra-gaveta', () => comPt((d) => {
       const gavetas = d.querySelectorAll('main details');
       const li = gavetas[0]?.querySelector('a[href]')?.parentNode;

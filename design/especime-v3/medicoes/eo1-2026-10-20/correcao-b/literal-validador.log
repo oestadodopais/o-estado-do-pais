@@ -1,0 +1,14 @@
+PLANTA literal 8.º/18.º compositor pt: código 1 (recusada)
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "<motor>/core/compor_livros_test.py", line 109, in <module>
+    if args.plant:machinery_tests(args.plant)
+                  ~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "<motor>/core/compor_livros_test.py", line 45, in machinery_tests
+    try:validate(folder,lang,entries)
+        ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "<motor>/core/provas_livros.py", line 38, in validate
+    if support['id'] not in [r['id'] for r in p['linhas']] or not literal_supported(origin,by[support['id']],support['campo']):raise Recusa('literal sem prova')
+                                                                                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+core.compor.Recusa: literal sem prova

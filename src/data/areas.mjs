@@ -1,4 +1,5 @@
 import {SEM_AREA_V2E} from './areas-v2e.mjs';
+import { LINHAS_SEM_AREA_EO1 } from './areas-eo1.mjs';
 import { SEM_AREA_V2D, EXCLUSAO_UE_V2D, EXCLUSAO_V2A_SEM_V2D } from './areas-v2d.mjs';
 /**
  * ===========================================================================
@@ -705,6 +706,12 @@ export const AREAS = [
  */
 export const SEM_AREA = [
   ...SEM_AREA_V2E,
+  {
+    estudos: ['orcamento-2027-o-que-muda-e-para-quem'],
+    id: new RegExp(`^(?:${LINHAS_SEM_AREA_EO1.join('|')})$`),
+    assunto: 'Medidas, contas, previsões e posições do estudo sobre o Orçamento',
+    motivo: 'Estas linhas sustentam o documento do estudo e os seus recibos. O estudo compara perímetros contabilísticos e efeitos nas pessoas; não distribui estes agregados e posições por cartões ministeriais.',
+  },
   ...SEM_AREA_V2D,
   EXCLUSAO_UE_V2D,
   {

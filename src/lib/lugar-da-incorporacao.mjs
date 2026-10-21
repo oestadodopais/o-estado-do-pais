@@ -24,6 +24,17 @@ const EXCECOES = {
   'eurostat-el-phys': {pt:'Grécia',en:'Greece'},
   'eurostat-ro-nrs': {pt:'Roménia',en:'Romania'},
   'eurostat-lu-nrs': {pt:'Luxemburgo',en:'Luxembourg'},
+  // EO1: as coordenadas territoriais estão nos localizadores do Eurostat.
+  'europa-divida-eu27_2020-2025': { pt: 'União Europeia', en: 'European Union' },
+  'europa-saldo-eu27_2020-2025': { pt: 'União Europeia', en: 'European Union' },
+  'europa-divida-ee-2025': { pt: nomeDoPais('EE', 'pt'), en: nomeDoPais('EE', 'en') },
+  'europa-divida-el-2025': { pt: nomeDoPais('EL', 'pt'), en: nomeDoPais('EL', 'en') },
+  'europa-divida-es-2025': { pt: nomeDoPais('ES', 'pt'), en: nomeDoPais('ES', 'en') },
+  'europa-saldo-ro-2025': { pt: nomeDoPais('RO', 'pt'), en: nomeDoPais('RO', 'en') },
+  'europa-saldo-cy-2025': { pt: nomeDoPais('CY', 'pt'), en: nomeDoPais('CY', 'en') },
+
+  'smi-espanha-2026': { pt: 'Espanha', en: 'Spain' },
+  'rmmg-2026': { pt: 'Continente', en: 'Mainland Portugal' },
   'alentejo-central-poder-de-compra-2023': { pt: 'Alentejo Central', en: 'Alentejo Central' },
   'municipios-acores-caop-2025': nomeDaRegiao('acores'),
   'municipios-madeira-caop-2025': nomeDaRegiao('madeira'),
@@ -38,6 +49,7 @@ const ESTUDOS_DO_PAIS = new Set([
   'quadro-institucional', 'dominios-2026', 'oe-2026', 'oe-2027', 'agua-nao-faturada',
   'which-door-is-yours', 'penalizacoes-por-reforma-antecipada-2026',
   'evolucao-de-portugal-desde-1981', 'concelhos-2026',
+  'orcamento-2027-o-que-muda-e-para-quem',
 ]);
 const APURAMENTOS_DO_PAIS = new Set(['municipios-portugal-caop-2025',
   'municipios-com-estudo-aprofundado', 'municipios-sem-estudo-aprofundado']);

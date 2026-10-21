@@ -43,6 +43,7 @@
  * algarismos, e nenhum entra por dispensa.
  */
 import Base from '../layouts/Base.astro';
+import { NOMES_EO1 } from '../data/nomes-eo1.mjs';
 import travessiaV2d from '../../ledger/cruzamentos/v2d.json';
 import travessiaV2e from '../../ledger/cruzamentos/v2e.json';
 import PortasDaDiscussao from '../components/discussao/PortasDaDiscussao.astro';
@@ -92,7 +93,7 @@ import OrigemDaDefinicao from '../components/OrigemDaDefinicao.astro';
 import { DEFINICOES_DAS_MEDIDAS, FIGURAS, ORIGENS_DAS_DEFINICOES, origensDaDefinicao } from '../data/figuras.mjs';
 import { ressalvaDaLinha } from '../data/dominios.mjs';
 import {
-  linguaDoTituloDoDocumento,
+  linguaDoLocalizador, linguaDoTituloDoDocumento,
   linguaDoRotuloDaFonte,
   linguaDaFonte,
   linguaDaEdicao,
@@ -121,7 +122,7 @@ const claim = getClaim(id);
 const familiaRecibo = familiaDaLinha(id);
 const nomeRecibo = nomeNoRecibo(id, lang);
 const lugarRecibo = lugarNoRecibo(id, lang);
-const nomeDaFonte = nomeDaFonteNoRecibo(id);
+const nomeDaFonte = nomeDaFonteNoRecibo(id, lang);
 const nomeDaMedidaV2e = nomeDaFonte?.campo === 'document.title'
   ? NOMES_V2E[id]?.[lang] : null;
 const oQueE = oQueEDaLinha(id, lang);
@@ -564,7 +565,7 @@ const ficha = [
      * As cadeias estão declaradas na tabela de línguas; a L7 e a L4b
      * conferem a declaração e a língua efetiva nas duas edições.
      */
-    lingua: lang === 'en' && claim.document?.locator_en ? null : linguaDoTituloDoDocumento(claim.document?.title ?? null, lang),
+    lingua: lang === 'en' && claim.document?.locator_en ? null : linguaDoLocalizador(claim.document?.locator, claim.document?.title ?? null, lang),
   },
   /* O RÓTULO COM QUE A FONTE PUBLICA ESTA FIGURA, e onde no ficheiro alojado
      ele foi lido (29.08.2026). Vem a seguir ao localizador porque é o par dele
@@ -574,9 +575,9 @@ const ficha = [
      forma dos outros localizadores e leva a marca do documento. */
   {
     k: s.prov.rotuloDaFonte,
-    campo: 'name',
-    valor: claim.name ?? null,
-    lingua: linguaDoRotuloDaFonte(claim.name ?? null, lang),
+    campo: lang === 'en' && claim.name_en ? 'name_en' : 'name',
+    valor: (lang === 'en' && claim.name_en) || claim.name || null,
+    lingua: claim.name_en ? null : linguaDoRotuloDaFonte(claim.name ?? null, lang),
   },
   {
     k: s.prov.rotuloOnde,
@@ -645,7 +646,7 @@ const atribuicaoPecas = [
      mesmo sítio no mesmo ecrã (o recibo do PIB passou de três a quatro), que é o que a L1 do `check:lugar` conta. Onde
      a cabeça diz o título, a frase diz quem publicou e a edição; onde a cabeça diz o rótulo da fonte (uma linha sem
      título de documento), não há título para tirar. */
-  presente(claim.document?.title) && nomeDaFonte?.campo !== 'document.title'
+  presente(claim.document?.title) && nomeDaFonte?.campo !== 'document.title' && claim.study !== 'orcamento-2027-o-que-muda-e-para-quem'
     ? {
         k: s.livro.linha.publicadoEm,
         campo: 'document.title',
@@ -776,9 +777,10 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
             campo={nomeDaFonte.campo}
             valor={nomeDaFonte.valor}
             lang={lang}
-            lingua={nomeDaFonte.campo === 'name' ? linguaDoRotuloDaFonte(nomeDaFonte.valor, lang) : linguaDoTituloDoDocumento(nomeDaFonte.valor, lang)}
+            lingua={claim.name_en ? null : nomeDaFonte.campo === 'name' ? linguaDoRotuloDaFonte(nomeDaFonte.valor, lang) : linguaDoTituloDoDocumento(nomeDaFonte.valor, lang)}
           />
         )}{'»'}
+        {claim.study === 'orcamento-2027-o-que-muda-e-para-quem' && claim.document?.title && nomeDaFonte.campo !== 'document.title' && (<>{' · '}{claim.document.url ? <a class="ligacao-externa" href={claim.document.url} rel="noopener noreferrer external"><CampoDaLinha id={id} campo="document.title" valor={claim.document.title} lang={lang} lingua={linguaDoTituloDoDocumento(claim.document.title, lang)} /></a> : <CampoDaLinha id={id} campo="document.title" valor={claim.document.title} lang={lang} lingua={linguaDoTituloDoDocumento(claim.document.title, lang)} />}</>)}
       </p>
     )}
     <div class="linha-o-que-e" data-o-que-e={id} data-o-que-e-tipo={oQueE.tipo} data-o-que-e-familia={oQueE.chave}>
@@ -800,7 +802,7 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
     {contaV2a(id,lang).length > 0 && <div class="linha-o-que-e" data-v2a-conta><p class="linha-o-que-e-frase"><Frase partes={resolverPeriodosV2a(contaV2a(id,lang))} lang={lang} selos={false} /></p></div>}
     {fontesDaDefinicao.length > 0 && <OrigemDaDefinicao origens={origensDaDefinicao({origens:fontesDaDefinicao}, lang)} s={s} lang={lang} />}
     {parcelaFinanciamento && <div class="linha-o-que-e"><p class="linha-o-que-e-frase" data-jd1-parcela><Frase partes={parcelaFinanciamento} lang={lang} selos={false} /></p></div>}
-    <p class="linha-valor">
+    <p class:list={["linha-valor", {"linha-valor-textual": claim.value === claim.excerpt && ["texto", "afirmação"].includes(claim.unit)}]}>
       <Claim id={id} lang={lang} as="span" class={`linha-valor-num${claim.texto_documental ? ' linha-valor-texto' : ''}`} plano>
       {/* O ESPAÇO ENTRE O VALOR E A UNIDADE É TEXTO DA PÁGINA (bloco R1,
           23.09.2026, I143). A folha separava-os com o `gap` de um `flex`, e o
@@ -1300,7 +1302,7 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
                linha». A marca do campo continua no marcador, e por isso a
                conferência de transcrição do portão lê exactamente o mesmo. */
             <p class="linha-nota">
-              <CampoDaLinha id={id} campo="excerpt" valor={claim.excerpt} lang={lang} />{' '}
+              <CampoDaLinha id={id} campo="excerpt" valor={claim.excerpt} lang={lang} lingua={claim.value === claim.excerpt && ['texto','afirmação'].includes(claim.unit) ? linguaDoTituloDoDocumento(claim.document?.title, lang) : null} />{' '}
               {s.livro.linha.excertoPorConfirmar}
             </p>
           ) : (
@@ -1309,7 +1311,7 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
                 <QuadroFinanciamentoJd1 id={id} excerto={claim.excerpt} />
               ) : (
                 <blockquote class:list={["linha-excerto", { "linha-excerto-grafico": eCustoJd1 }]} tabindex={eCustoJd1 ? "0" : undefined}>
-                  <CampoDaLinha id={id} campo="excerpt" valor={claim.excerpt} lang={lang} />
+                  <CampoDaLinha id={id} campo="excerpt" valor={claim.excerpt} lang={lang} lingua={claim.value === claim.excerpt && ['texto','afirmação'].includes(claim.unit) ? linguaDoTituloDoDocumento(claim.document?.title, lang) : null} />
                 </blockquote>
               )}
               {/* O RECIBO DIZ O QUE O EXCERTO É (achado 5 da leitura a frio de
@@ -1939,8 +1941,8 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
 
       <p class="rodape-nav aparelho-saidas">
         <a href={caminhoDoLivro(lang)}>{s.livro.linha.voltar}</a>
-        {/* EX3 e V2-d: a porta da releitura já abre o Método nestes recibos. */}
-        {!((id.startsWith('nato-defesa-portugal-') || id.startsWith('nato-compromisso-') || id === 'nato-cimeira-haia-2025' || Object.hasOwn(travessiaV2d.rows, id) || Object.hasOwn(travessiaV2e.rows, id)) && verificacoes.length === 0) && <a href={`${routePath('metodo', lang)}#livro-razao`}>{s.livro.metodoLink}</a>}
+        {/* EX3, V2-d, V2-e e EO1: a porta da releitura já abre o Método nestes recibos. */}
+        {!((id.startsWith('nato-defesa-portugal-') || id.startsWith('nato-compromisso-') || id === 'nato-cimeira-haia-2025' || Object.hasOwn(travessiaV2d.rows, id) || Object.hasOwn(travessiaV2e.rows, id) || Object.hasOwn(NOMES_EO1, id)) && verificacoes.length === 0) && <a href={`${routePath('metodo', lang)}#livro-razao`}>{s.livro.metodoLink}</a>}
       </p>
     </aside>
   </div>

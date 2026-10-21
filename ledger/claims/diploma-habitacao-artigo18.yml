@@ -1,0 +1,46 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "diploma-habitacao-artigo18"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "Artigo 18.º Produção de efeitos 1 — Produzem efeitos a 1 de setembro de 2026: a) A revogação dos decretos-leis referidos no artigo anterior; b) O regime dos CIA, aprovado no anexo i ao presente decreto-lei; c) O RSAA, aprovado no anexo iii ao presente decreto-lei. 2 — As alterações ao Código do IRS, introduzidas pelo artigo 5.º, a alteração ao artigo 24.º-A do EBF, introduzida pelo artigo 7.º, e o artigo 45.º-C do EBF, aditado pelo artigo 9.º, produzem efeitos a partir de 1 de janeiro de 2026. 3 — O disposto nos n.os 7 a 9 do artigo 10.º do Código do IRS aplica-se às transmissões realizadas entre 1 de janeiro de 2026 e 31 de dezembro de 2029. 4 — As alterações ao Código do IVA, introduzidas pelo artigo 4.º, a verba 2.42.1 da lista I anexa ao Código do IVA, aditada pelo artigo 8.º, o regime previsto nos artigos 10.º e 11.º, bem como o regime aprovado como anexo ii ao presente decreto-lei produzem efeitos a partir do trimestre seguinte à entrada em vigor do presente decreto-lei, sem prejuízo do disposto nos números seguintes. 5 — A verba 2.42.1 da lista I anexa ao Código do IVA e o respetivo regime previsto nos artigos 10.º e 11.º, bem como o regime aprovado como anexo ii ao presente decreto-lei, aplicam-se às empreitadas de construção ou reabilitação relativas a operações urbanísticas cuja iniciativa procedimental se inicie no período compreendido entre 25 de setembro de 2025 e 31 de dezembro de 2029 e cuja exigibilidade do imposto ocorra a partir de 1 de janeiro de 2026. 6 — Para efeitos do número anterior, entende-se por iniciativa procedimental, designadamente: a) Nos casos de obras sujeitas a licenciamento, a apresentação do pedido de licenciamento; b) No caso de obras objeto de comunicação prévia, a apresentação da comunicação prévia; c) No caso de obras isentas de controlo prévio: i) A apresentação do parecer prévio previsto no n.º 2 do artigo 7.º do RJUE, nos casos previstos nesse artigo; ou ii) A apresentação da informação sobre o início dos trabalhos, nos restantes casos. 7 — Sem prejuízo do disposto no n.º 4, a alteração à alínea j) do n.º 1 do artigo 2.º do Código do IVA, introduzida pelo artigo 4.º, a verba 2.42.1 da lista I anexa ao Código do IVA, aditada pelo artigo 8.º, bem como o regime previsto nos artigos 10.º e 11.º, aplicam-se desde 1 de janeiro de 2026, havendo opção conjunta do prestador e do adquirente. 8 — Os pedidos a que se refere o n.º 1 do artigo 4.º do regime aprovado como anexo ii ao presente decreto-lei, relativos aos três primeiros trimestres de 2026, são entregues a partir de 1 de outubro de 2026, contando-se o prazo de 12 meses desde essa data."
+unit: "afirmação"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Habitação: datas e condições de produção de efeitos"
+name_source: "Artigo 18.º; pp. 15, 16 PDF"
+name_en: "Housing: dates and conditions for legal effects"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "PRESIDÊNCIA DO CONSELHO DE MINISTROS"
+document:
+  title: "Decreto-Lei n.º 97/2026, de 20 de maio"
+  edition: "2026"
+  locator: "Artigo 18.º; pp. 15, 16 PDF"
+  source_sha256: "a8ce8d796015f06ec247113a4184af61280940b473eda8f367cbff9666b5e32a"
+  page: 15
+  kind: "ficheiro"
+source_url: "https://files.diariodarepublica.pt/1s/2026/05/09700/0001400040.pdf#page=15"
+access_date: "2026-10-20"
+reference_date: "2027"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "Artigo 18.º Produção de efeitos 1 — Produzem efeitos a 1 de setembro de 2026: a) A revogação dos decretos-leis referidos no artigo anterior; b) O regime dos CIA, aprovado no anexo i ao presente decreto-lei; c) O RSAA, aprovado no anexo iii ao presente decreto-lei. 2 — As alterações ao Código do IRS, introduzidas pelo artigo 5.º, a alteração ao artigo 24.º-A do EBF, introduzida pelo artigo 7.º, e o artigo 45.º-C do EBF, aditado pelo artigo 9.º, produzem efeitos a partir de 1 de janeiro de 2026. 3 — O disposto nos n.os 7 a 9 do artigo 10.º do Código do IRS aplica-se às transmissões realizadas entre 1 de janeiro de 2026 e 31 de dezembro de 2029. 4 — As alterações ao Código do IVA, introduzidas pelo artigo 4.º, a verba 2.42.1 da lista I anexa ao Código do IVA, aditada pelo artigo 8.º, o regime previsto nos artigos 10.º e 11.º, bem como o regime aprovado como anexo ii ao presente decreto-lei produzem efeitos a partir do trimestre seguinte à entrada em vigor do presente decreto-lei, sem prejuízo do disposto nos números seguintes. 5 — A verba 2.42.1 da lista I anexa ao Código do IVA e o respetivo regime previsto nos artigos 10.º e 11.º, bem como o regime aprovado como anexo ii ao presente decreto-lei, aplicam-se às empreitadas de construção ou reabilitação relativas a operações urbanísticas cuja iniciativa procedimental se inicie no período compreendido entre 25 de setembro de 2025 e 31 de dezembro de 2029 e cuja exigibilidade do imposto ocorra a partir de 1 de janeiro de 2026. 6 — Para efeitos do número anterior, entende-se por iniciativa procedimental, designadamente: a) Nos casos de obras sujeitas a licenciamento, a apresentação do pedido de licenciamento; b) No caso de obras objeto de comunicação prévia, a apresentação da comunicação prévia; c) No caso de obras isentas de controlo prévio: i) A apresentação do parecer prévio previsto no n.º 2 do artigo 7.º do RJUE, nos casos previstos nesse artigo; ou ii) A apresentação da informação sobre o início dos trabalhos, nos restantes casos. 7 — Sem prejuízo do disposto no n.º 4, a alteração à alínea j) do n.º 1 do artigo 2.º do Código do IVA, introduzida pelo artigo 4.º, a verba 2.42.1 da lista I anexa ao Código do IVA, aditada pelo artigo 8.º, bem como o regime previsto nos artigos 10.º e 11.º, aplicam-se desde 1 de janeiro de 2026, havendo opção conjunta do prestador e do adquirente. 8 — Os pedidos a que se refere o n.º 1 do artigo 4.º do regime aprovado como anexo ii ao presente decreto-lei, relativos aos três primeiros trimestres de 2026, são entregues a partir de 1 de outubro de 2026, contando-se o prazo de 12 meses desde essa data."
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "orcamento-2027-o-que-muda-e-para-quem"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Texto integral do artigo 18.º na publicação original. As datas de efeitos são conservadas integralmente; o período 2027 identifica o orçamento estudado, não a data de início de cada medida. · Cruzado de ResearchHub content/25 Orcamento 2027 Medidas · diploma-habitacao-artigo18."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []
