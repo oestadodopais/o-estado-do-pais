@@ -1774,6 +1774,9 @@ if (PROVA) {
         { origens: { ...origensReais, 'eurostat-tesem130-denominador': { ...origensReais['eurostat-tesem130-denominador'], selo: undefined } } }],
       ['o sha256 tirado', 'origem «eurostat-tipspd30»', 'o selo não diz o sha256',
         { origens: { ...origensReais, 'eurostat-tipspd30': { ...origensReais['eurostat-tipspd30'], selo: { ...origensReais['eurostat-tipspd30'].selo, sha256: '' } } } }],
+      /* HB1-c4 (21.10.2026): o selo de uma origem alojada na pasta de fontes da habitação com o ficheiro fora do motor. */
+      ['o ficheiro fora do motor', 'origem «hb1c-eurostat-sobrecarga»', 'o selo não diz o ficheiro no motor',
+        { origens: { ...origensReais, 'hb1c-eurostat-sobrecarga': { ...origensReais['hb1c-eurostat-sobrecarga'], selo: { ...origensReais['hb1c-eurostat-sobrecarga'].selo, motor: '/tmp/fora.html' } } } }],
       /* K2-c: a unidade da casa fora da pergunta, e as coordenadas de uma origem que a resposta não escreve. Desde o
          bloco R2 (03.10.2026) a unidade da casa declara-se em `UNIDADES_DOS_CARTOES`, e é aí que a planta a estraga. */
       ['a unidade da casa fora da pergunta', 'disparidade-de-emprego-entre-sexos-2025', 'não é um pedaço da pergunta declarada',

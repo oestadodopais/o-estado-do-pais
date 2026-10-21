@@ -108,5 +108,5 @@ export function conferirAfirmacoes(claims,{plantar=true,motor=process.env.RESEAR
     assert(mensagem);plantas.push({nome:'âncora trocada por texto ausente',mensagem});
   }
   for(const [id,p] of Object.entries(prova.rows)) if(p.kind==='html' && !claims.get(id)?.afirmacao) errors.push(`${id}: V2A afirmação selada ausente do livro`);
-  return {errors,checked,bodies,plantas:[...plantas,...v2d.plantas,...eo1.plantas,...hb1.plantas]};
+  return {errors,checked,bodies,origens:hb1.origens,plantas:[...plantas,...v2d.plantas,...eo1.plantas,...hb1.plantas]};
 }

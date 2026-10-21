@@ -4,6 +4,7 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import {execFileSync} from 'node:child_process';
 import {parse} from 'node-html-parser';
+import {ORIGENS_HB1C} from '../src/data/figuras.mjs';
 const normal=s=>String(s??'').replace(/\s+/g,' ').trim();
 const sha=b=>crypto.createHash('sha256').update(b).digest('hex');
 const safe=f=>typeof f==='string'&&/^content\/(23 Habitacao|24 Orcamento 2027 Analise|25 Orcamento 2027 Medidas)\/source\//.test(f)&&!f.split('/').includes('..');
@@ -60,8 +61,41 @@ export function conferirHb1(c,p,raw,body,reference={}){
  }
  return errors;
 }
+/* HB1-c4 (21.10.2026): o selo de cada origem das definições da habitação
+   (ORIGENS_HB1C) contra o ficheiro no motor: o ficheiro existe, o sha256 é o do
+   selo e o excerto está no corpo (HTML sem etiquetas e com os espaços
+   normalizados; JSON na cadeia do campo). Só com o motor; sem ele não conta. */
+const seguroNoMotor=(/** @type {unknown} */ f)=>typeof f==='string'&&/^content\/[^/]+\/source\/[^\\]+$/.test(f)&&!f.split('/').includes('..');
+/** @param {string} ficheiro @param {Buffer} raw @param {string} campo */
+export function textoDaOrigemHb1c(ficheiro,raw,campo){
+ if(ficheiro.endsWith('.json')){/** @type {any} */ let v=JSON.parse(raw.toString('utf8'));for(const k of String(campo).split('.'))v=v?.[k];return typeof v==='string'?normal(v):'';}
+ const t=parse(raw.toString('utf8'));t.querySelectorAll('head,script,style').forEach(e=>e.remove());return normal(t.textContent);
+}
+/** @param {any} o @param {Buffer|undefined} raw */
+export function conferirOrigemHb1c(o,raw){
+ const s=o?.selo;if(!seguroNoMotor(s?.motor))return ['HB1-c origem: o ficheiro do selo não está no motor'];
+ if(!raw)return ['HB1-c origem: corpo indisponível no motor'];
+ const errors=[];if(sha(raw)!==s.sha256)errors.push('HB1-c origem: o sha256 do selo não é o do ficheiro no motor');
+ let t='';try{t=textoDaOrigemHb1c(s.motor,raw,s.campo);}catch{errors.push('HB1-c origem: corpo ilegível');}
+ if(!normal(o.excerto)||!t.includes(normal(o.excerto)))errors.push('HB1-c origem: o excerto não está no corpo');
+ return errors;
+}
+/** @param {string|undefined} motor @param {boolean} plantar */
+function conferirOrigensHb1c(motor,plantar){
+ const errors=[],plantas=[];let origens=0;if(!motor)return {errors,plantas,origens};
+ for(const [chave,o] of Object.entries(ORIGENS_HB1C)){
+  let raw;try{if(seguroNoMotor(o.selo?.motor))raw=fs.readFileSync(path.join(motor,o.selo.motor));}catch{}
+  errors.push(...conferirOrigemHb1c(o,raw).map(e=>chave+': '+e));origens++;
+  if(plantar&&raw&&!plantas.length){
+   for(const [nome,mudar] of [['o sha256 trocado',(/** @type {any} */ x)=>{x.selo.sha256='0'.repeat(64);}],['o excerto alterado',(/** @type {any} */ x)=>{x.excerto+=' Alterado na planta HB1-c4.';}]]){
+    const bad=structuredClone(o);mudar(bad);const mensagem=conferirOrigemHb1c(bad,raw)[0];plantas.push({nome:'HB1-c origem: '+nome,mensagem});if(!mensagem)errors.push('HB1-c planta de origem sem recusa: '+nome);
+   }
+  }
+ }
+ return {errors,plantas,origens};
+}
 export function conferirAfirmacoesHb1(claims,{motor,plantar=true}={}){
- const file='ledger/provas/hb1/provas.json';if(!fs.existsSync(file))return {errors:[],plantas:[],ids:new Set(),checked:0,bodies:0};
+ const file='ledger/provas/hb1/provas.json';if(!fs.existsSync(file)){const o=conferirOrigensHb1c(motor,plantar);return {errors:o.errors,plantas:o.plantas,ids:new Set(),checked:0,bodies:0,origens:o.origens};}
  const proofs=JSON.parse(fs.readFileSync(file,'utf8')).rows;const errors=[],plantas=[],ids=new Set();let checked=0,bodies=0;
  for(const [id,p] of Object.entries(proofs)){
   ids.add(id);const c=claims.get(id);let raw,body;const reference={};
@@ -105,5 +139,6 @@ export function conferirAfirmacoesHb1(claims,{motor,plantar=true}={}){
    }
   }
  }
- return {errors,plantas,ids,checked,bodies};
+ const o=conferirOrigensHb1c(motor,plantar);errors.push(...o.errors);plantas.push(...o.plantas);
+ return {errors,plantas,ids,checked,bodies,origens:o.origens};
 }

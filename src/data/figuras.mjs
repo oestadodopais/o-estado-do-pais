@@ -696,7 +696,7 @@ const LISTA_SOCIAL = [
    Statistics Explained, a metainformação ESMS dos Censos ou a descrição do
    conjunto), com o selo do pedido; escritas por
    `design/especime-v3/medicoes/hb1-2026-10-21/correcao-hb1c/origens-hb1c2.py`. */
-const ORIGENS_HB1C = {
+export const ORIGENS_HB1C = {
   "hb1c-eurostat-sobrecarga": {
     "publicador": "Eurostat",
     "documento": "Glossary:Housing cost overburden rate",
