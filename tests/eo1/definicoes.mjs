@@ -1,3 +1,5 @@
+import {leituraDaSemana} from '../../src/lib/leitura-da-semana.mjs';
+import {loadClaims} from '../../src/lib/ledger.mjs';
 /** EO1-e: a mesma planta, um valor livre, contra as três conferências. */
 import fs from 'node:fs';
 import assert from 'node:assert/strict';
@@ -19,6 +21,9 @@ for(const html of ['<p>820 euros</p>','<p><span data-eo1-origem="nome" data-de-l
 const numbered=Object.entries(NOMES_EO1).filter(([key,n])=>/^\d+\. |\(1\+2\)|\(1\. /.test(n.pt));
 assert.equal(numbered.length,7);
 for(const [key,n] of numbered)for(const lang of ['pt','en'])assert(FAMILIAS_DAS_LINHAS[key].frase[lang].join('').includes('«'+n[lang]+'»'),key+': nome truncado');
+const weekly=leituraDaSemana({fim:'2026-10-21',linhas:[loadClaims().get('oe-2027-calendario-entrega')]});
+assert.equal(weekly.mudancas.length,0,'data contada como movimento numérico');
+assert.equal(weekly.formas.length,0,'data contada como reformatação numérica');
 const mode=process.argv[2];
 if(mode==='compositor'||mode==='compositor-complemento'){
  const {FAMILIAS_EO1}=await import('../../design/especime-v3/medicoes/eo1-2026-10-20/familias.mjs');

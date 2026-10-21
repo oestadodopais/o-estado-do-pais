@@ -1,3 +1,4 @@
+import {dataDeCalendarioConferida} from '../../src/lib/historia-do-valor.mjs';
 /**
  * =============================================================================
  * W · A LEITURA DA SEMANA, PROVADA CONTRA O REGISTO (bloco EX1, 05.10.2026, o ponto 2 do mandato)
@@ -84,7 +85,7 @@ export function semanaPelaCelula(linhas, fim) {
     const doDia = (l.corrections ?? []).map((/** @type {any} */ c, /** @type {number} */ n) => ({ c, n })).filter((/** @type {any} */ x) => dentro(x.c?.date));
     if (doDia.some((/** @type {any} */ x) => x.c.kind === 'proveniencia')) proveniencia += 1;
     // A secção compara números; a correção textual permanece no registo.
-    if ((l.afirmacao === true && l.unit === 'afirmação') || textoDocumentalConferido(l)) continue;
+    if ((l.afirmacao === true && l.unit === 'afirmação') || textoDocumentalConferido(l) || dataDeCalendarioConferida(l)) continue;
     const deValor = doDia.filter((/** @type {any} */ x) => x.c.kind === 'correcao' || x.c.kind === 'atualizacao').sort((/** @type {any} */ a, /** @type {any} */ b) => a.c.date.localeCompare(b.c.date) || a.n - b.n);
     if (!deValor.length) continue;
     const p = deValor[0], u = deValor[deValor.length - 1];

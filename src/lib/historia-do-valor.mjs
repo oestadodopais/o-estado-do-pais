@@ -17,6 +17,17 @@ export function numeroDaCasa(valor) {
   return s === '-0' ? '0' : s;
 }
 
+/** Uma data completa é calendário, não uma quantidade que sobe ou desce.
+ * @param {Record<string, any>} linha */
+export function dataDeCalendarioConferida(linha) {
+  if(linha.unit!=='data'||!/^(?:19|20)\d{2}-\d{2}-\d{2}$/.test(linha.reference_date??''))return false;
+  const date=new Date(linha.reference_date+'T00:00:00Z');
+  if(!Number.isFinite(date.getTime())||date.toISOString().slice(0,10)!==linha.reference_date)return false;
+  const meses=['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'];
+  const esperado=date.getUTCDate()+' de '+meses[date.getUTCMonth()];
+  return linha.value===esperado&&String(linha.excerpt).includes(esperado);
+}
+
 /** @param {Record<string, any>} linha @param {Array<Record<string, any>> | undefined} seladas
  * @param {string} onde @param {string[]} erros */
 export function conferirHistoriaDoValor(linha, seladas, onde, erros) {
@@ -32,9 +43,7 @@ export function conferirHistoriaDoValor(linha, seladas, onde, erros) {
   };
   const forma = data ? formaData : textual ? ((/** @type {unknown} */ v) => typeof v === 'string' && v.trim() ? v : null) : numeroDaCasa;
   if(data && entradas.length){
-    const [,mes,dia]=linha.reference_date.split('-');
-    const esperado=Number(dia)+' de '+meses[Number(mes)-1];
-    if(linha.value!==esperado || !String(linha.excerpt).includes(esperado)) erros.push(`${onde} história do valor: a data completa não coincide com a referência e o excerto.`);
+    if(!dataDeCalendarioConferida(linha)) erros.push(`${onde} história do valor: a data completa não coincide com a referência e o excerto.`);
   }
   if (linha.afirmacao === true && linha.unit === 'afirmação' && linha.value !== linha.excerpt) erros.push(`${onde} história do valor: a afirmação textual não coincide com o excerto.`);
   if (seladas && JSON.stringify(entradas.slice(0, seladas.length).map(assinaturaDoValor)) !== JSON.stringify(seladas)) {
