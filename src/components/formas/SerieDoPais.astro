@@ -10,10 +10,17 @@
  *
  * A PASSAGEM RP4-c-b (05.10.2026, a decisão do lugar de direção sobre o peso, a I208): as zonas só onde a leitura vive,
  * a primeira página e os recibos, que as pedem com `comLeitura`; um cartão não as pede, porque é a porta para o recibo.
- * E uma zona por coluna de píxel do campo, com a leitura do ponto mais próximo (o módulo do desenho diz a regra). */
+ * E uma zona por coluna de píxel do campo, com a leitura do ponto mais próximo (o módulo do desenho diz a regra).
+ *
+ * O BLOCO G1 (21.10.2026, a I230): cada grupo da leitura é um ponto da camada comum dos gráficos (`data-grafico-ponto`,
+ * com o período na forma da casa, o valor como `PontoDaSerie` o escreve, o símbolo da unidade e o nome vazio, porque o
+ * nome de uma série é o título do desenho), focável pelo teclado (só o último na ordem do tabulador; as setas andam
+ * pelos outros) e com um `aria-label` que diz o período e o valor. O desenho com leitura deixa de ser `role="img"`,
+ * que faria dos pontos focáveis filhos apresentacionais, e passa a `role="group"`. O guião comum acende o grupo ao
+ * rato, ao toque, ao dedo que arrasta e ao foco; a folha acende-o também ao rato sem guião, como antes. */
 import { serieDoPais, segmentoVisivel } from '../../lib/formas/serie-do-pais.mjs';
 import { tituloDaSerie, legendasDasExclusoes } from '../../lib/formas/palavras-da-serie.mjs';
-import { getSerie } from '../../lib/series.mjs';
+import { getSerie, pontoDaSerie } from '../../lib/series.mjs';
 import { unidadeDaLinha } from '../../i18n/unidades.mjs';
 import { dataDaCasa } from '../../lib/datas.mjs';
 import PontoDaSerie from '../serie/PontoDaSerie.astro';
@@ -29,9 +36,13 @@ const exclusoes = legendasDasExclusoes(desenho.excluidas, lang);
 /* A série das zonas de leitura: há zonas só num desenho de uma série no modo da unidade. */
 const daLeitura = desenho.leituras.length ? desenho.linhas[0].id : null;
 const sufixo = desenho.simbolo ? ` ${desenho.simbolo}` : '';
+/* G1: o valor de cada ponto da leitura, carácter a carácter o que `PontoDaSerie` escreve (o separador dos milhares em
+   U+00A0), para o atributo e o `aria-label`; a régua dos gráficos compara-os com o texto do ponto. */
+const valorDoPonto = (periodo) => String(pontoDaSerie(getSerie(daLeitura), periodo).valor).replace(/(?<=\d)[\u2009\u202F\u0020](?=\d)/g, '\u00A0');
+const ultimaLeitura = desenho.leituras.length - 1;
 const unidade = desenho.legenda ? unidadeDaLinha(String(getSerie(ids[0]).unit), lang) : null;
 ---
-<svg class="serie-do-pais" style={`max-width: ${largura}px;`} data-titulo={nomeVisivel ? 'periodo-unidade' : 'nome-periodo'} data-forma="serie-do-pais" data-series={ids.join(',')} data-modo={modo} viewBox={`0 0 ${largura} ${altura}`} role="img">
+<svg class="serie-do-pais" style={`max-width: ${largura}px;`} data-titulo={nomeVisivel ? 'periodo-unidade' : 'nome-periodo'} data-forma="serie-do-pais" data-series={ids.join(',')} data-modo={modo} viewBox={`0 0 ${largura} ${altura}`} role={daLeitura ? 'group' : 'img'} data-grafico={daLeitura ? 'serie' : undefined}>
   <title>{titulo}</title>
   {desenho.marcasY.map((m) => <g data-eixo="valor">
     <line class:list={['serie-do-pais-guia', m.valor === 0 && 'serie-do-pais-zero']} x1={g.esquerda} x2={g.direita} y1={m.y} y2={m.y} />
@@ -47,7 +58,7 @@ const unidade = desenho.legenda ? unidadeDaLinha(String(getSerie(ids[0]).unit), 
       ? <circle class="serie-do-pais-linha" data-serie-linha={l.id} cx={segmento.cx} cy={segmento.cy} r={segmento.r} />
       : <polyline class="serie-do-pais-linha" data-serie-linha={l.id} points={segmento.pontos} />;
   }))}
-  {daLeitura && desenho.leituras.map((l) => <g><rect x={l.zona.x} y={l.zona.y} width={l.zona.largura} height={l.zona.altura} /><line x1={l.mira.x} x2={l.mira.x} y1={l.mira.y1} y2={l.mira.y2} /><circle cx={l.marca.cx} cy={l.marca.cy} r={l.marca.r} /><text x={l.etiqueta.x} y={l.etiqueta.y} text-anchor={l.etiqueta.ancora}><PontoDaSerie serie={daLeitura} chave={l.periodo} as="tspan" />{sufixo}<tspan x={l.etiqueta.x} dy={l.etiqueta.dy} data-ponto-periodo={`${daLeitura}#${l.periodo}`}>{dataDaCasa(l.periodo, lang)}</tspan></text></g>)}
+  {daLeitura && desenho.leituras.map((l, i) => <g data-grafico-ponto data-grafico-periodo={dataDaCasa(l.periodo, lang)} data-grafico-valor={valorDoPonto(l.periodo)} data-grafico-unidade={desenho.simbolo ?? ''} data-grafico-nome="" role="img" aria-label={`${dataDaCasa(l.periodo, lang)}: ${valorDoPonto(l.periodo)}${sufixo}`} tabindex={i === ultimaLeitura ? '0' : '-1'}><rect x={l.zona.x} y={l.zona.y} width={l.zona.largura} height={l.zona.altura} /><line x1={l.mira.x} x2={l.mira.x} y1={l.mira.y1} y2={l.mira.y2} /><circle cx={l.marca.cx} cy={l.marca.cy} r={l.marca.r} /><text x={l.etiqueta.x} y={l.etiqueta.y} text-anchor={l.etiqueta.ancora}><PontoDaSerie serie={daLeitura} chave={l.periodo} as="tspan" />{sufixo}<tspan x={l.etiqueta.x} dy={l.etiqueta.dy} data-ponto-periodo={`${daLeitura}#${l.periodo}`}>{dataDaCasa(l.periodo, lang)}</tspan></text></g>)}
 </svg>
 
 {unidade && <span class="serie-do-pais-unidade" data-serie-unidade-legenda={ids[0]}><CampoDaSerie serie={ids[0]} campo="unit" valor={unidade.texto} lingua={unidade.lingua} /></span>}

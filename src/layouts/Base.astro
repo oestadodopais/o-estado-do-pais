@@ -29,6 +29,7 @@ import RotuloDeIA from '../components/RotuloDeIA.astro';
 // A ordem importa: primeiro os tokens, depois a folha que os usa.
 import '../styles/tokens.css';
 import '../styles/site.css';
+import '../styles/graficos.css';
 
 const {
   lang = 'pt',
@@ -318,5 +319,6 @@ const cartaoTwitter = urlDoCartao({ ...cartao, ...DIM_TWITTER });
          antes de o leitor ver a página. */
     }
     <script src="/js/tema.js" defer is:inline></script>
+    <script src="/js/interacao-dos-graficos.js" defer is:inline data-grafico-guiao></script>
   </body>
 </html>

@@ -15,14 +15,17 @@ export function conferirSerieDoBloco(root, lang) {
   }
   const s = desenhos[0];
   if (desenhos.length !== 1 || s?.getAttribute('data-series') !== 'serie-ipc-variacao-homologa') erros.push('RP4 · falta a série da inflação no bloco dos preços');
-  const porta = s?.closest('a');
+  /* G1 (21.10.2026): o desenho e a porta do recibo partilham a caixa `[data-bloco-serie]`; a porta é a ligação dentro
+     dela, já não um antepassado do desenho, para que um toque no desenho leia o ponto. */
+  const caixa = s?.closest('[data-bloco-serie]');
+  const porta = caixa?.querySelector('a[href]');
   if (porta?.getAttribute('href') !== routePath('serie', lang, { slug: esperado.serie })) erros.push('RP4 · porta do bloco para outro recibo');
   const unidade = porta?.querySelector('[data-bloco-serie-unidade]');
   if (porta?.querySelectorAll('[data-bloco-serie-unidade]').length !== 1 || unidade?.getAttribute('data-bloco-serie-unidade') !== esperado.serie || unidade?.textContent.trim() !== unidadeDoCartao('ipc-variacao-homologa', lang).join('')) erros.push('RP4 · falta a unidade declarada da série no bloco');
   if (s?.getAttribute('data-titulo') !== 'periodo-unidade') erros.push('RP4 · título da série repete o nome visível');
   const barra = b?.querySelector('[data-forma="barras"]');
-  if (!barra?.closest('.pp-ilustracao') || porta?.parentNode !== barra?.closest('.pp-ilustracao')) erros.push('RP4 · barras e série fora do mesmo contentor');
-  if (!barra || b.innerHTML.indexOf(porta?.outerHTML ?? '') < b.innerHTML.indexOf(barra.outerHTML)) erros.push('RP4 · a série não fica depois das barras');
+  if (!barra?.closest('.pp-ilustracao') || caixa?.parentNode !== barra?.closest('.pp-ilustracao')) erros.push('RP4 · barras e série fora do mesmo contentor');
+  if (!barra || b.innerHTML.indexOf(caixa?.outerHTML ?? '') < b.innerHTML.indexOf(barra.outerHTML)) erros.push('RP4 · a série não fica depois das barras');
   return erros;
 }
 

@@ -65,7 +65,10 @@ export function leituraDoSitio(svg) {
 export function conferirSerie(svg, lang, lerSerie = getSerie, leitura = leituraDoSitio(svg)) {
   const erros = [];
   const falha = (m) => erros.push(`F21 · ${m}`);
-  if (svg.rawTagName !== 'svg' || svg.getAttribute('role') !== 'img') falha('a forma não é um SVG com papel de imagem');
+  /* G1 (21.10.2026): o desenho com leitura é um grupo (os pontos focáveis não podem ser filhos apresentacionais de
+     uma imagem) e leva a marca da camada comum; sem leitura continua uma imagem. */
+  const papel = svg.getAttribute('data-grafico') === 'serie' ? 'group' : 'img';
+  if (svg.rawTagName !== 'svg' || svg.getAttribute('role') !== papel) falha('a forma não é um SVG com papel de imagem');
   if (svg.querySelector('script, animate, animateTransform, animateMotion, set, foreignObject')) falha('guião ou animação no desenho estático');
   let g;
   try {
@@ -114,8 +117,11 @@ export function conferirSerie(svg, lang, lerSerie = getSerie, leitura = leituraD
     if (titulos.length !== 1 || titulos[0].textContent !== tituloDaSerie(g.linhas, lang, svg.getAttribute('data-titulo') === 'periodo-unidade') || /\d/.test(titulos[0]?.textContent ?? '')) falha('título não é o nome e os períodos por extenso');
   } catch (e) { falha(`título não recompõe: ${e.message}`); }
   const permitidos = {
-    svg: ['class', 'data-forma', 'data-series', 'data-modo', 'viewBox', 'role', 'style', 'data-titulo'],
-    title: [], g: ['data-eixo'],
+    /* G1 (21.10.2026): a marca da camada comum dos gráficos no desenho com leitura, e em cada grupo da leitura os
+       atributos do ponto (os dados, o papel, o nome acessível e o lugar no tabulador), que o `check:graficos` confere
+       contra o texto do ponto; nenhum deles muda a forma estática, e qualquer outro atributo continua a falhar aqui. */
+    svg: ['class', 'data-forma', 'data-series', 'data-modo', 'viewBox', 'role', 'style', 'data-titulo', 'data-grafico'],
+    title: [], g: ['data-eixo', 'data-grafico-ponto', 'data-grafico-periodo', 'data-grafico-valor', 'data-grafico-unidade', 'data-grafico-nome', 'role', 'aria-label', 'tabindex'],
     line: ['class', 'x1', 'x2', 'y1', 'y2'],
     text: ['data-nonledger', 'x', 'y', 'text-anchor', 'dominant-baseline'],
     polyline: ['class', 'data-serie-linha', 'points'],

@@ -61,20 +61,29 @@ import PontoDaSerie from './serie/PontoDaSerie.astro';
 import NomeDoPais from './serie/NomeDoPais.astro';
 import DataDaSerie from './serie/DataDaSerie.astro';
 import { faixaDaMedida } from '../lib/faixa-da-uniao.mjs';
+import { dataDaCasa } from '../lib/datas.mjs';
 
 const { id, lang } = Astro.props;
 const f = faixaDaMedida(id, lang);
 /** A etiqueta de cada marca, pelo país: o texto do `title` (H3). */
 const etiquetaDe = new Map((f?.toques ?? []).map((t) => [t.geo, t.etiqueta]));
+/* G1 (21.10.2026, a I230): cada marca é um ponto da camada comum dos gráficos, com o nome do grupo e o valor que o
+   `title` já diz (o portão de HTML confere o `title`, e a régua dos gráficos confere que os atributos dizem o mesmo),
+   o período da série na forma da casa e a unidade vazia, porque o cartão a diz por cima. A marca de Portugal é a
+   entrada do teclado; as setas andam pelas outras. Por isso o desenho deixa de estar escondido aos leitores de ecrã,
+   e escondem-se só os dois rótulos, que a etiqueta de cada marca já diz. */
+const toqueDe = new Map((f?.toques ?? []).map((t) => [t.geo, t]));
+const periodoDaFaixa = f ? dataDaCasa(f.periodo, lang) : '';
 ---
 
 {
   f && (
     <div class="cartao-medida-faixa" data-faixa-ue={f.serie}>
-      <div class="faixa-ue-desenho" aria-hidden="true" data-faixa-desenho={f.serie}>
+      <div class="faixa-ue-desenho" data-faixa-desenho={f.serie} data-grafico="faixa">
         <span
           class="faixa-ue-rotulo faixa-ue-rotulo-portugal"
           data-faixa-rotulo="portugal"
+          aria-hidden="true"
           data-ancora={f.rotulos.portugal.ancora}
           style={`left:${f.rotulos.portugal.esquerda}%`}
         >
@@ -88,12 +97,21 @@ const etiquetaDe = new Map((f?.toques ?? []).map((t) => [t.geo, t.etiqueta]));
               style={m.noGrupo > 1 ? `left:${m.esquerda}%;top:${m.altura}px` : `left:${m.esquerda}%`}
               title={etiquetaDe.get(m.geo)}
               data-faixa-etiqueta={etiquetaDe.get(m.geo)}
+              data-grafico-ponto
+              data-grafico-periodo={periodoDaFaixa}
+              data-grafico-valor={toqueDe.get(m.geo)?.valor}
+              data-grafico-unidade=""
+              data-grafico-nome={toqueDe.get(m.geo)?.nomes}
+              role="img"
+              aria-label={`${toqueDe.get(m.geo)?.nomes}, ${periodoDaFaixa}: ${toqueDe.get(m.geo)?.valor}`}
+              tabindex={m.papel === 'portugal' ? '0' : '-1'}
             />
           ))}
         </span>
         <span
           class="faixa-ue-rotulo faixa-ue-rotulo-uniao"
           data-faixa-rotulo="uniao"
+          aria-hidden="true"
           data-ancora={f.rotulos.uniao.ancora}
           style={`left:${f.rotulos.uniao.esquerda}%`}
         >

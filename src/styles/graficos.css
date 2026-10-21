@@ -1,0 +1,21 @@
+/* A INTERAÇÃO DOS GRÁFICOS (bloco G1, 21.10.2026): a folha comum de todos os gráficos marcados `data-grafico`, ao lado
+   do guião `public/js/interacao-dos-graficos.js`. O dedo que arrasta na horizontal lê o gráfico; na vertical, a página
+   continua a deslizar. O ponto aceso diz-se por `data-ativo`; a etiqueta comum vive no fim do corpo, posta pelo guião
+   junto ao ponto e dentro do ecrã. */
+[data-grafico] { touch-action: pan-y; }
+[data-grafico-ponto]:focus { outline: none; }
+[data-grafico-ponto]:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.serie-do-pais > g[data-ativo] > * { visibility: visible; }
+.faixa-ue-marca[data-ativo] { outline: 2px solid var(--ink); outline-offset: 1px; }
+.grafico-etiqueta {
+  position: absolute;
+  z-index: 30;
+  max-width: min(20rem, calc(100vw - 16px));
+  padding: 4px 8px;
+  font: 13px/1.35 var(--f-instr);
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--ink);
+  pointer-events: none;
+}
+.grafico-etiqueta[hidden] { display: none; }

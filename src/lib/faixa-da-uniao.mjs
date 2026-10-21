@@ -238,6 +238,8 @@ export function faixaDaMedida(idDaLinha, lang) {
 
   return {
     serie: serie.id,
+    /* G1 (21.10.2026): o período da série, para a leitura de cada marca na camada comum dos gráficos. */
+    periodo: String(serie.periodo),
     /* Quantos países a série tem (UE2: o resumo da lista dobrada di-lo); o portão reconta-o dos pontos. */
     conta: paises.length,
     pedacos,
@@ -275,7 +277,7 @@ export function faixaDaMedida(idDaLinha, lang) {
           return `${entre}${nome}${p.ressalva ? ` (${p.ressalva})` : ''}`;
         })
         .join('');
-      return { geo: m.geo, papel: m.papel, esquerda: m.esquerda, ancora: ancora(m.esquerda), grupo, etiqueta: `${nomes} ${valor}` };
+      return { geo: m.geo, papel: m.papel, esquerda: m.esquerda, ancora: ancora(m.esquerda), grupo, etiqueta: `${nomes} ${valor}`, nomes, valor };
     }),
     porta: routePath('serie', lang, { slug: serie.id }),
     palavras: { uniao: palavras.uniao, porta: palavras.porta, lista: palavras.lista },
