@@ -1,0 +1,224 @@
+{
+  "frases": {
+    "pt": [
+      {
+        "procura": "segundo José Soeiro",
+        "encontrada": true,
+        "texto": "es graves» segundo a organização e «35 feridos, pelo menos» segundo José Soeiro, dirigente nacional do BE (o Bloco de Esquerda, o BE), com «um polícia ficou ferido» segundo a Polícia de Segurança Pública (a PSP), tudo pela imprensa; a Inspeção-Geral da Administração Interna (a IGAI) abriu um processo. Este estudo não s"
+      },
+      {
+        "procura": "Nenhuma destas contagens",
+        "encontrada": true,
+        "texto": "essoas foram encaminhadas para o hospital.», segundo a RTP. Nenhuma destas contagens vem de um comunicado da PSP, da IGAI ou dos acampados: todas vêm dos jornais citados. A 16 de outubro, «a IGAI abriu um processo administrativo, com solicitação de informações à PSP», pela notícia «IGAI abre processo sobre carga polici"
+      },
+      {
+        "procura": "avisou que",
+        "encontrada": true,
+        "texto": "os que vêm da rua\"» de 16 de outubro, da Lusa no DNotícias, avisou que o Governo \"não vai ceder aos gritos que vêm da rua\". No debate parlamentar de 9 de outubro, o primeiro-ministro disse que «Os aumentos com os custos na habitação foram superiores a 100 por cento na esmagadora maioria das cidades» e que as medidas «v"
+      },
+      {
+        "procura": "o relatório não define a palavra",
+        "encontrada": true,
+        "texto": "tório para as medidas que ele classifica como «invariante»; o relatório não define a palavra além dessa nota); −303 milhões no conjunto. O Conselho de Ministros anunciou a primeira assim em setembro de 2025: «Redução da taxa de IVA para 6% na construção de habitações para venda até 648 mil euros ou, no caso de arrendam"
+      },
+      {
+        "procura": "o documento não diz como chegou",
+        "encontrada": true,
+        "texto": " são uma estimativa do Governo sobre os dados dos Censos, e o documento não diz como chegou a esse número a partir dos Censos. 6. O crédito Em agosto de 2026 os bancos emprestaram 2 553,0 milhões de euros em novas operações de crédito à habitação, a uma taxa de 3,0 %, segundo o Banco de Portugal; o stock de crédito à h"
+      }
+    ],
+    "en": [
+      {
+        "procura": "according to José Soeiro",
+        "encontrada": true,
+        "texto": "s» according to the organisers and «35 feridos, pelo menos» according to José Soeiro, of the Left Bloc's national leadership (the Left Bloc, BE), with «um polícia ficou ferido» according to the Public Security Police (PSP), all through the press; the Inspectorate-General of Home Affairs (IGAI) opened a case. This study"
+      },
+      {
+        "procura": "None of these counts",
+        "encontrada": true,
+        "texto": "oas foram encaminhadas para o hospital.», according to RTP. None of these counts comes from a statement by the PSP, the IGAI or the campers: all come from the newspapers cited. On 16 October, «a IGAI abriu um processo administrativo, com solicitação de informações à PSP», by the report «IGAI abre processo sobre carga p"
+      },
+      {
+        "procura": "warned that",
+        "encontrada": true,
+        "texto": "tos que vêm da rua\"» of 16 October, from Lusa in DNotícias, warned that «o Governo \"não vai ceder aos gritos que vêm da rua\".» (the Government \"will not give in to the shouting from the street\"). In the parliamentary debate of 9 October, the Prime Minister said that «Os aumentos com os custos na habitação foram superio"
+      },
+      {
+        "procura": "the report does not define the word",
+        "encontrada": true,
+        "texto": "ives to the measures it classes as «invariante», unchanged; the report does not define the word beyond that note); −303 million together. The Council of Ministers announced the first thus in September 2025: «Redução da taxa de IVA para 6% na construção de habitações para venda até 648 mil euros ou, no caso de arrendame"
+      },
+      {
+        "procura": "the document does not say how it reached",
+        "encontrada": true,
+        "texto": "ondition) are a Government estimate on the Census data, and the document does not say how it reached that number from the Census. 6. Credit In August 2026 the banks lent 2,553.0 million euros in new housing loans, at a rate of 3.0 %, according to the Bank of Portugal; the stock of households' housing credit was 119,061"
+      }
+    ]
+  },
+  "definicoes": {
+    "hab-ilc-lvho07c-a-pc-total-pt-2025": {
+      "pt": "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a casa, descontados os subsídios, passa de quarenta por cento do rendimento disponível",
+      "en": "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income",
+      "origens": [
+        "hb1c-eurostat-sobrecarga"
+      ],
+      "complemento": {
+        "pt": [
+          "; aqui, Portugal, em ",
+          {
+            "periodo": "hab-ilc-lvho07c-a-pc-total-pt-2025"
+          },
+          "."
+        ],
+        "en": [
+          "; here, Portugal, in ",
+          {
+            "periodo": "hab-ilc-lvho07c-a-pc-total-pt-2025"
+          },
+          "."
+        ]
+      }
+    },
+    "hab-prc-hpi-q-q-total-i15-q-pt-2026-q2": {
+      "pt": "O índice dos preços das transações de casas compradas pelas famílias, com o ano base igual a cem",
+      "en": "The index of the transaction prices of dwellings purchased by households, with the base year equal to one hundred",
+      "origens": [
+        "hb1c-eurostat-ipH"
+      ],
+      "complemento": {
+        "pt": [
+          "; aqui, Portugal, no ",
+          {
+            "periodo": "hab-prc-hpi-q-q-total-i15-q-pt-2026-q2"
+          },
+          "."
+        ],
+        "en": [
+          "; here, Portugal, in ",
+          {
+            "periodo": "hab-prc-hpi-q-q-total-i15-q-pt-2026-q2"
+          },
+          "."
+        ]
+      }
+    },
+    "hab-tipsho60-a-ptir-i15-pt-2024": {
+      "pt": "O rácio entre os preços das casas e o rendimento disponível bruto ajustado das famílias por habitante, em índice com o ano base igual a cem",
+      "en": "The ratio of house prices to adjusted gross disposable household income per head, as an index with the base year equal to one hundred",
+      "origens": [
+        "hb1c-eurostat-preco-rendimento"
+      ],
+      "complemento": {
+        "pt": [
+          "; aqui, Portugal, em ",
+          {
+            "periodo": "hab-tipsho60-a-ptir-i15-pt-2024"
+          },
+          "."
+        ],
+        "en": [
+          "; here, Portugal, in ",
+          {
+            "periodo": "hab-tipsho60-a-ptir-i15-pt-2024"
+          },
+          "."
+        ]
+      }
+    },
+    "hab-yth-demo-030-a-avg-t-pt-2025": {
+      "pt": "A idade em que metade da população já não vive num agregado com os pais, estimada pelo inquérito ao emprego",
+      "en": "The age at which half of the population no longer lives in a household with their parents, estimated from the Labour Force Survey",
+      "origens": [
+        "hb1c-eurostat-saida"
+      ],
+      "complemento": {
+        "pt": [
+          "; aqui, Portugal, em ",
+          {
+            "periodo": "hab-yth-demo-030-a-avg-t-pt-2025"
+          },
+          "."
+        ],
+        "en": [
+          "; here, Portugal, in ",
+          {
+            "periodo": "hab-yth-demo-030-a-avg-t-pt-2025"
+          },
+          "."
+        ]
+      }
+    },
+    "hab-ilc-mdho06a-a-pc-total-t-total-pt-2023": {
+      "pt": "A parte da população que vive numa casa sobrelotada e, ao mesmo tempo, com pelo menos um destes problemas: um telhado que mete água, sem banheira ou duche e sem retrete dentro de casa, ou uma casa considerada demasiado escura",
+      "en": "The share of the population living in an overcrowded dwelling that also has at least one of these problems: a leaking roof, no bath or shower and no indoor toilet, or a dwelling considered too dark",
+      "origens": [
+        "hb1c-eurostat-privacao-severa"
+      ],
+      "complemento": {
+        "pt": [
+          "; aqui, Portugal, em ",
+          {
+            "periodo": "hab-ilc-mdho06a-a-pc-total-t-total-pt-2023"
+          },
+          "."
+        ],
+        "en": [
+          "; here, Portugal, in ",
+          {
+            "periodo": "hab-ilc-mdho06a-a-pc-total-t-total-pt-2023"
+          },
+          "."
+        ]
+      }
+    },
+    "der-hab-licencas-por-mil-pt-2025": {
+      "pt": "O resultado é o número de alojamentos licenciados por cada mil habitantes",
+      "en": "The result is the number of dwellings permitted per thousand inhabitants",
+      "origens": [],
+      "complemento": {
+        "pt": [
+          "; aqui, Portugal, em ",
+          {
+            "periodo": "der-hab-licencas-por-mil-pt-2025"
+          },
+          "."
+        ],
+        "en": [
+          "; here, Portugal, in ",
+          {
+            "periodo": "der-hab-licencas-por-mil-pt-2025"
+          },
+          "."
+        ]
+      }
+    }
+  },
+  "ainda_com_o_rotulo": {
+    "contagem": 23,
+    "linhas": [
+      "hab-bpstat-12533724",
+      "hab-bpstat-12533735",
+      "hab-bpstat-12557378",
+      "hab-ine-calendario-juro",
+      "hab-ine-calendario-precos-locais",
+      "hab-ine-censos-0012501-40",
+      "hab-ine-censos-0012501-41",
+      "hab-ine-censos-0012517-0",
+      "hab-ine-iphab-homologa",
+      "hab-ine-juro-implicito",
+      "hab-ine-preco-lisboa",
+      "hab-ine-preco-mediano",
+      "hab-ine-preco-porto",
+      "hab-ine-renda-lisboa",
+      "hab-ine-renda-porto",
+      "hab-ine-renda-portugal",
+      "hab-ine-vagos-total",
+      "hab-oe-apoio-arrendamento",
+      "hab-oe-habitacao-orcamento",
+      "hab-oe-irs-rendas-impacto",
+      "hab-oe-iva-impacto",
+      "hab-oe-licenciamento",
+      "hab-oe-oferta-publica"
+    ]
+  }
+}
