@@ -232,3 +232,13 @@ Pelo mandato `CORRECAO-EX4-d-2026-10-21.md`, o Major 6 da leitura do Codex: a fr
 3. **O Minor do bloco «Para perceber»** fica como está, por decisão do lugar de direção.
 
 **Os códigos, lidos de `codigos/d-*.code`:** `d-acertos-ex4` 0, `d-auditoria-ex4` 0, `d-build` 0 (uma corrida de `npm run build`, com a cadeia inteira), `d-check-voz` 0 (sem mudar o inventário), `d-frases-ex4` 0.
+
+## A correção EX4-e (21.10.2026, Claude Opus 5.5, `construtor`)
+
+Pelo mandato `CORRECAO-EX4-e-2026-10-21.md`, as duas conferências do `verify` em que a corrida `portão` do GitHub fechou. Nada muda para o leitor: nenhuma página muda, só a régua e o índice aprendem o que o bloco trouxe.
+
+1. **A L1 de `check:lugar`**: o teto passa de 2782 para 2950 no registo `scripts/lugar-tetos-b1.json`, com o comentário da EX4 em `scripts/check-lugar.mjs`. O registo aponta agora para `l1-ex4.json`, escrito por `medir-l1-ex4.mjs`, que corre a régua com `AMOSTRA=5000` sobre o `dist/` da cabeça 81eade95f e exige que as 2782 páginas do V2-b fiquem todas, que entrem só as 83 páginas de linha em cada edição (as mesmas linhas nas duas) e as duas edições da explicação de 2027, e que a lista tenha o número que a régua imprime; quatro plantas mordem (página anterior retirada, página alheia acrescentada, edição inglesa de uma linha em falta, contagem diferente da régua). A conferência da linha 117 aceita o registo (`contagens.estudos` 2950).
+2. **O índice**: `LOCALIZADORES_CONHECIDOS` em `tests/livro/indice.mjs` ganha uma entrada para as três formas do localizador do Mapa 2 (função 01 a 10 na coluna «POR FUNÇÕES», subfunção 01.7 na coluna «POR SUBFUNÇÕES», as linhas «DESPESA TOTAL» e «DESPESA TOTAL CONSOLIDADA»; o ano 2026 ou 2027; a página 1 ou 2), com o leitor `publisher/oe2027_funcoes.py` nomeado. A expressão aceita os 26 localizadores lidos das linhas `*-mapa.yml` e recusa o ano 2025, a função 11, a página 3, a subfunção 01.8, a linha «RECEITA TOTAL» e a função na coluna das subfunções.
+3. **A primeira corrida do `verify`** (`e-verify-1.code`, 1, em 317 s) fechou no `gate:html` porque o `dist/` da worktree não tinha `dist/cartoes/`: os cartões de partilha não estavam construídos, sem relação com as duas mudanças. Correu-se o passo `npm run cartoes` da cadeia do `build` sobre o mesmo `dist/` (`e-cartoes.code`, 0) e o `verify` inteiro outra vez.
+
+**Os códigos, lidos dos `e-*.code` desta pasta:** `e-check-lugar` 0 (L1 2950, teto 2950), `e-check-indice` 0, `e-typecheck` 0, `e-cartoes` 0, `e-verify` 0 (a corrida inteira, em 1529 s, com `RESEARCHHUB_DIR` na worktree do motor em 7110e86).
