@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-20T23:45:07+00:00",
+ "copia": "<pacotes>/pacote-v2e-d-2026-10-20",
+ "plantas": [
+  {
+   "id": "U1",
+   "ficheiro": "built/o-que-se-discute/index.html",
+   "descricao": "o grupo da comparação dos médicos passa de «vinte e sete» a «vinte e seis» na página construída em português; a referência é o corpo do Eurostat (os 27 Estados-membros) e o mandato",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "5d23c077ad7ccaffb107476da5a369196bccb0e294333292843940c9d5e5f594",
+   "sha256_depois": "af831f9d01866b10638fcb34980c9fba88dda2dfc36cd762668884aa4b4284ea",
+   "contexto_antes": "an class=\"data-da-linha\" data-nonledger=\"data-da-linha\" data-de-linha=\"eurostat-pt-phys\" data-de-campo=\"reference_date\">2024</span></a>, entre a Bélgica, com o valor mais baixo dos vinte e sete Estados-membros com dados (<span class=\"claim claim-com-chip\"><span data-claim=\"eurostat-be-phys\" class=\"claim-value\">334,25</span><a class=\"src-chip\" href=\"/livro-razao/eurostat-be-phy",
+   "contexto_depois": "an class=\"data-da-linha\" data-nonledger=\"data-da-linha\" data-de-linha=\"eurostat-pt-phys\" data-de-campo=\"reference_date\">2024</span></a>, entre a Bélgica, com o valor mais baixo dos vinte e seis Estados-membros com dados (<span class=\"claim claim-com-chip\"><span data-claim=\"eurostat-be-phys\" class=\"claim-value\">334,25</span><a class=\"src-chip\" href=\"/livro-razao/eurostat-be-phy"
+  },
+  {
+   "id": "U2",
+   "ficheiro": "built/en/under-discussion/index.html",
+   "descricao": "a Grécia deixa de ser «the highest» e passa a «the second highest» na página construída em inglês; a referência é o corpo do Eurostat",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "d902a333668aaf35a84715b2bfefe7f9a7fccc288b7f037ac681968eab6a83c1",
+   "sha256_depois": "74a4a0cf38c1e16ddaee261afd553ba2113b4f48ea0f1f9659653332659dbca3",
+   "contexto_antes": "niencia\" data-selo-etiqueta=\"Eurostat\" title=\"Eurostat\"><span class=\"src-chip-texto\">source</span><span class=\"vh\"> · <span>Eurostat</span></span></a></span>), and Greece, with the highest (<span class=\"claim claim-com-chip\"><span data-claim=\"eurostat-el-phys\" class=\"claim-value\">626,89</span><a class=\"src-chip\" href=\"/en/ledger/eurostat-el-phys\" d",
+   "contexto_depois": "niencia\" data-selo-etiqueta=\"Eurostat\" title=\"Eurostat\"><span class=\"src-chip-texto\">source</span><span class=\"vh\"> · <span>Eurostat</span></span></a></span>), and Greece, with the second highest (<span class=\"claim claim-com-chip\"><span data-claim=\"eurostat-el-phys\" class=\"claim-value\">626,89</span><a class=\"src-chip\" href=\"/en/ledger/eurostat-el-phys\" d"
+  },
+  {
+   "id": "U4",
+   "ficheiro": "tests/discussao/itens.mjs",
+   "descricao": "a chamada da régua dos selos na célula alterada (um carácter) na cópia do pacote; a referência é a definição da régua e o registo do portão",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "852033a468cf515fed00f066da78c3e1400c67620d286373b61cf4210dacba47",
+   "sha256_depois": "83ba4e633f18abe1352319d04295faf020e216221bfa19e4ac3f76886c128a7c",
+   "contexto_antes": "rocess.env.OEDP_DIST??path.join(raiz,'dist'));\n if(!process.argv.includes('--dados')){\n  const {plantasDosSelosConstruidos}=await import('./planta-selos.mjs');\n  const selos=await plantasDosSelosConstruidos(undefined,unidadesDepoisDoSelo);r.plantas.push(...selos.plantas);\n }\n const out=process.argv.indexOf('--json');if(out>=0)fs.writeFileSync(process.argv[out+1],JSON.stringify(r,null,2)+'\\n');\n console.log(`V2B · ${r.erros.lengt",
+   "contexto_depois": "rocess.env.OEDP_DIST??path.join(raiz,'dist'));\n if(!process.argv.includes('--dados')){\n  const {plantasDosSelosConstruidos}=await import('./planta-selos.mjs');\n  const selos=await plantasDosSelosConstruidos(undefined,unidadesDepoisDoSel0);r.plantas.push(...selos.plantas);\n }\n const out=process.argv.indexOf('--json');if(out>=0)fs.writeFileSync(process.argv[out+1],JSON.stringify(r,null,2)+'\\n');\n console.log(`V2B · ${r.erros.lengt"
+  },
+  {
+   "id": "U5",
+   "ficheiro": "motor/publisher/v2e_export.py",
+   "descricao": "o ano da comparação dos médicos na ressalva do exportador do motor passa de 2024 a 2023 na cópia do pacote; a referência é o corpo do Eurostat e o manifesto",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "e7f42edc444ff4b5021d10740123f277f3eccd21ed39c16db816dea76beefba5",
+   "sha256_depois": "13d7279420e4e5fc7c623b10af4da23ea3ee8fa50f2745803baf13f028870838",
+   "contexto_antes": "ot the latest published month. \")+f\"The NHS catalogue, {ev['dataset']}, says: «{ev['quote']}»\")\n        if id.startswith(\"eurostat-\") and id.endswith(\"-phys\"):\n            spec.update(ressalva=\"A comparação entre os Estados-membros da União Europeia usa médicos em exercício em 2024. O conjunto alojado inclui também países que não são Estados-membros. Na União Europeia, a Eslováquia não tem valor para esta categoria e ano; não se substituem por médicos profissionalmente ativos ou habilitados.\",\n                        ressalva_en=\"The comparison between European Union member states uses practising physicians in 2024. The hosted dataset also includes c",
+   "contexto_depois": "ot the latest published month. \")+f\"The NHS catalogue, {ev['dataset']}, says: «{ev['quote']}»\")\n        if id.startswith(\"eurostat-\") and id.endswith(\"-phys\"):\n            spec.update(ressalva=\"A comparação entre os Estados-membros da União Europeia usa médicos em exercício em 2023. O conjunto alojado inclui também países que não são Estados-membros. Na União Europeia, a Eslováquia não tem valor para esta categoria e ano; não se substituem por médicos profissionalmente ativos ou habilitados.\",\n                        ressalva_en=\"The comparison between European Union member states uses practising physicians in 2024. The hosted dataset also includes c"
+  },
+  {
+   "id": "U3",
+   "ficheiro": "design/especime-v3/medicoes/v2e-2026-10-20/d/entrega/cruzamento.codigo",
+   "descricao": "o registo do código do portão do cruzamento na entrega passa de 0 a 1 na cópia do pacote; a referência é o relatório do construtor e o registo portoes-*.json",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+   "sha256_depois": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865",
+   "contexto_antes": "0\n",
+   "contexto_depois": "1\n"
+  }
+ ]
+}
