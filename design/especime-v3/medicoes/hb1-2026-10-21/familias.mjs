@@ -770,13 +770,13 @@ export const FAMILIAS_HB1 = [
     "partes": [
       {
         "classe": "diz",
-        "pt": "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios, passa de quarenta por cento do rendimento disponível",
-        "en": "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income",
+        "pt": "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios à habitação, passa de quarenta por cento do rendimento disponível, também descontados esses subsídios",
+        "en": "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income, also net of housing allowances",
         "apoios": [
           {
             "origem": "hb1c-eurostat-sobrecarga",
             "campo": "excerto",
-            "literal": "is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income"
+            "literal": "is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income ('net' of housing allowances)"
           }
         ]
       }
@@ -812,13 +812,13 @@ export const FAMILIAS_HB1 = [
     "partes": [
       {
         "classe": "diz",
-        "pt": "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios, passa de quarenta por cento do rendimento disponível",
-        "en": "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income",
+        "pt": "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios à habitação, passa de quarenta por cento do rendimento disponível, também descontados esses subsídios",
+        "en": "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income, also net of housing allowances",
         "apoios": [
           {
             "origem": "hb1c-eurostat-sobrecarga",
             "campo": "excerto",
-            "literal": "is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income"
+            "literal": "is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income ('net' of housing allowances)"
           }
         ]
       }
@@ -934,13 +934,13 @@ export const FAMILIAS_HB1 = [
     "partes": [
       {
         "classe": "diz",
-        "pt": "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios, passa de quarenta por cento do rendimento disponível",
-        "en": "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income",
+        "pt": "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios à habitação, passa de quarenta por cento do rendimento disponível, também descontados esses subsídios",
+        "en": "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income, also net of housing allowances",
         "apoios": [
           {
             "origem": "hb1c-eurostat-sobrecarga",
             "campo": "excerto",
-            "literal": "is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income"
+            "literal": "is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income ('net' of housing allowances)"
           }
         ]
       }
@@ -1016,13 +1016,13 @@ export const FAMILIAS_HB1 = [
     "partes": [
       {
         "classe": "diz",
-        "pt": "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios, passa de quarenta por cento do rendimento disponível",
-        "en": "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income",
+        "pt": "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios à habitação, passa de quarenta por cento do rendimento disponível, também descontados esses subsídios",
+        "en": "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income, also net of housing allowances",
         "apoios": [
           {
             "origem": "hb1c-eurostat-sobrecarga",
             "campo": "excerto",
-            "literal": "is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income"
+            "literal": "is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income ('net' of housing allowances)"
           }
         ]
       }
@@ -1620,13 +1620,13 @@ export const FAMILIAS_HB1 = [
     "partes": [
       {
         "classe": "diz",
-        "pt": "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios, passa de quarenta por cento do rendimento disponível",
-        "en": "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income",
+        "pt": "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios à habitação, passa de quarenta por cento do rendimento disponível, também descontados esses subsídios",
+        "en": "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income, also net of housing allowances",
         "apoios": [
           {
             "origem": "hb1c-eurostat-sobrecarga",
             "campo": "excerto",
-            "literal": "is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income"
+            "literal": "is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income ('net' of housing allowances)"
           }
         ]
       }
@@ -1702,13 +1702,13 @@ export const FAMILIAS_HB1 = [
     "partes": [
       {
         "classe": "diz",
-        "pt": "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios, passa de quarenta por cento do rendimento disponível",
-        "en": "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income",
+        "pt": "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios à habitação, passa de quarenta por cento do rendimento disponível, também descontados esses subsídios",
+        "en": "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income, also net of housing allowances",
         "apoios": [
           {
             "origem": "hb1c-eurostat-sobrecarga",
             "campo": "excerto",
-            "literal": "is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income"
+            "literal": "is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income ('net' of housing allowances)"
           }
         ]
       }
@@ -1744,13 +1744,13 @@ export const FAMILIAS_HB1 = [
     "partes": [
       {
         "classe": "diz",
-        "pt": "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios, passa de quarenta por cento do rendimento disponível",
-        "en": "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income",
+        "pt": "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios à habitação, passa de quarenta por cento do rendimento disponível, também descontados esses subsídios",
+        "en": "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income, also net of housing allowances",
         "apoios": [
           {
             "origem": "hb1c-eurostat-sobrecarga",
             "campo": "excerto",
-            "literal": "is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income"
+            "literal": "is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income ('net' of housing allowances)"
           }
         ]
       }
@@ -4012,13 +4012,13 @@ export const FAMILIAS_HB1 = [
     "partes": [
       {
         "classe": "diz",
-        "pt": "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios, passa de quarenta por cento do rendimento disponível",
-        "en": "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income",
+        "pt": "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios à habitação, passa de quarenta por cento do rendimento disponível, também descontados esses subsídios",
+        "en": "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income, also net of housing allowances",
         "apoios": [
           {
             "origem": "hb1c-eurostat-sobrecarga",
             "campo": "excerto",
-            "literal": "is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income"
+            "literal": "is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income ('net' of housing allowances)"
           }
         ]
       }
@@ -4054,13 +4054,13 @@ export const FAMILIAS_HB1 = [
     "partes": [
       {
         "classe": "diz",
-        "pt": "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios, passa de quarenta por cento do rendimento disponível",
-        "en": "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income",
+        "pt": "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios à habitação, passa de quarenta por cento do rendimento disponível, também descontados esses subsídios",
+        "en": "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income, also net of housing allowances",
         "apoios": [
           {
             "origem": "hb1c-eurostat-sobrecarga",
             "campo": "excerto",
-            "literal": "is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income"
+            "literal": "is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income ('net' of housing allowances)"
           }
         ]
       }
@@ -4222,13 +4222,13 @@ export const FAMILIAS_HB1 = [
     "partes": [
       {
         "classe": "diz",
-        "pt": "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios, passa de quarenta por cento do rendimento disponível",
-        "en": "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income",
+        "pt": "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios à habitação, passa de quarenta por cento do rendimento disponível, também descontados esses subsídios",
+        "en": "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income, also net of housing allowances",
         "apoios": [
           {
             "origem": "hb1c-eurostat-sobrecarga",
             "campo": "excerto",
-            "literal": "is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income"
+            "literal": "is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income ('net' of housing allowances)"
           }
         ]
       }
@@ -4264,13 +4264,13 @@ export const FAMILIAS_HB1 = [
     "partes": [
       {
         "classe": "diz",
-        "pt": "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios, passa de quarenta por cento do rendimento disponível",
-        "en": "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income",
+        "pt": "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios à habitação, passa de quarenta por cento do rendimento disponível, também descontados esses subsídios",
+        "en": "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income, also net of housing allowances",
         "apoios": [
           {
             "origem": "hb1c-eurostat-sobrecarga",
             "campo": "excerto",
-            "literal": "is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income"
+            "literal": "is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income ('net' of housing allowances)"
           }
         ]
       }
@@ -4306,13 +4306,13 @@ export const FAMILIAS_HB1 = [
     "partes": [
       {
         "classe": "diz",
-        "pt": "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios, passa de quarenta por cento do rendimento disponível",
-        "en": "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income",
+        "pt": "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios à habitação, passa de quarenta por cento do rendimento disponível, também descontados esses subsídios",
+        "en": "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income, also net of housing allowances",
         "apoios": [
           {
             "origem": "hb1c-eurostat-sobrecarga",
             "campo": "excerto",
-            "literal": "is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income"
+            "literal": "is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income ('net' of housing allowances)"
           }
         ]
       }
@@ -4348,13 +4348,13 @@ export const FAMILIAS_HB1 = [
     "partes": [
       {
         "classe": "diz",
-        "pt": "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios, passa de quarenta por cento do rendimento disponível",
-        "en": "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income",
+        "pt": "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios à habitação, passa de quarenta por cento do rendimento disponível, também descontados esses subsídios",
+        "en": "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income, also net of housing allowances",
         "apoios": [
           {
             "origem": "hb1c-eurostat-sobrecarga",
             "campo": "excerto",
-            "literal": "is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income"
+            "literal": "is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income ('net' of housing allowances)"
           }
         ]
       }
@@ -4390,13 +4390,13 @@ export const FAMILIAS_HB1 = [
     "partes": [
       {
         "classe": "diz",
-        "pt": "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios, passa de quarenta por cento do rendimento disponível",
-        "en": "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income",
+        "pt": "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios à habitação, passa de quarenta por cento do rendimento disponível, também descontados esses subsídios",
+        "en": "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income, also net of housing allowances",
         "apoios": [
           {
             "origem": "hb1c-eurostat-sobrecarga",
             "campo": "excerto",
-            "literal": "is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income"
+            "literal": "is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income ('net' of housing allowances)"
           }
         ]
       }
@@ -4432,13 +4432,13 @@ export const FAMILIAS_HB1 = [
     "partes": [
       {
         "classe": "diz",
-        "pt": "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios, passa de quarenta por cento do rendimento disponível",
-        "en": "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income",
+        "pt": "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios à habitação, passa de quarenta por cento do rendimento disponível, também descontados esses subsídios",
+        "en": "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income, also net of housing allowances",
         "apoios": [
           {
             "origem": "hb1c-eurostat-sobrecarga",
             "campo": "excerto",
-            "literal": "is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income"
+            "literal": "is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income ('net' of housing allowances)"
           }
         ]
       }
@@ -4474,13 +4474,13 @@ export const FAMILIAS_HB1 = [
     "partes": [
       {
         "classe": "diz",
-        "pt": "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios, passa de quarenta por cento do rendimento disponível",
-        "en": "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income",
+        "pt": "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios à habitação, passa de quarenta por cento do rendimento disponível, também descontados esses subsídios",
+        "en": "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income, also net of housing allowances",
         "apoios": [
           {
             "origem": "hb1c-eurostat-sobrecarga",
             "campo": "excerto",
-            "literal": "is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income"
+            "literal": "is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income ('net' of housing allowances)"
           }
         ]
       }
@@ -4556,13 +4556,13 @@ export const FAMILIAS_HB1 = [
     "partes": [
       {
         "classe": "diz",
-        "pt": "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios, passa de quarenta por cento do rendimento disponível",
-        "en": "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income",
+        "pt": "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios à habitação, passa de quarenta por cento do rendimento disponível, também descontados esses subsídios",
+        "en": "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income, also net of housing allowances",
         "apoios": [
           {
             "origem": "hb1c-eurostat-sobrecarga",
             "campo": "excerto",
-            "literal": "is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income"
+            "literal": "is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income ('net' of housing allowances)"
           }
         ]
       }
@@ -4598,13 +4598,13 @@ export const FAMILIAS_HB1 = [
     "partes": [
       {
         "classe": "diz",
-        "pt": "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios, passa de quarenta por cento do rendimento disponível",
-        "en": "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income",
+        "pt": "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios à habitação, passa de quarenta por cento do rendimento disponível, também descontados esses subsídios",
+        "en": "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income, also net of housing allowances",
         "apoios": [
           {
             "origem": "hb1c-eurostat-sobrecarga",
             "campo": "excerto",
-            "literal": "is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income"
+            "literal": "is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income ('net' of housing allowances)"
           }
         ]
       }
@@ -4640,13 +4640,13 @@ export const FAMILIAS_HB1 = [
     "partes": [
       {
         "classe": "diz",
-        "pt": "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios, passa de quarenta por cento do rendimento disponível",
-        "en": "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income",
+        "pt": "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios à habitação, passa de quarenta por cento do rendimento disponível, também descontados esses subsídios",
+        "en": "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income, also net of housing allowances",
         "apoios": [
           {
             "origem": "hb1c-eurostat-sobrecarga",
             "campo": "excerto",
-            "literal": "is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income"
+            "literal": "is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income ('net' of housing allowances)"
           }
         ]
       }
@@ -4682,13 +4682,13 @@ export const FAMILIAS_HB1 = [
     "partes": [
       {
         "classe": "diz",
-        "pt": "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios, passa de quarenta por cento do rendimento disponível",
-        "en": "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income",
+        "pt": "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios à habitação, passa de quarenta por cento do rendimento disponível, também descontados esses subsídios",
+        "en": "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income, also net of housing allowances",
         "apoios": [
           {
             "origem": "hb1c-eurostat-sobrecarga",
             "campo": "excerto",
-            "literal": "is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income"
+            "literal": "is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income ('net' of housing allowances)"
           }
         ]
       }
@@ -4724,13 +4724,13 @@ export const FAMILIAS_HB1 = [
     "partes": [
       {
         "classe": "diz",
-        "pt": "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios, passa de quarenta por cento do rendimento disponível",
-        "en": "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income",
+        "pt": "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios à habitação, passa de quarenta por cento do rendimento disponível, também descontados esses subsídios",
+        "en": "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income, also net of housing allowances",
         "apoios": [
           {
             "origem": "hb1c-eurostat-sobrecarga",
             "campo": "excerto",
-            "literal": "is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income"
+            "literal": "is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income ('net' of housing allowances)"
           }
         ]
       }
@@ -4766,13 +4766,13 @@ export const FAMILIAS_HB1 = [
     "partes": [
       {
         "classe": "diz",
-        "pt": "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios, passa de quarenta por cento do rendimento disponível",
-        "en": "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income",
+        "pt": "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios à habitação, passa de quarenta por cento do rendimento disponível, também descontados esses subsídios",
+        "en": "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income, also net of housing allowances",
         "apoios": [
           {
             "origem": "hb1c-eurostat-sobrecarga",
             "campo": "excerto",
-            "literal": "is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income"
+            "literal": "is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income ('net' of housing allowances)"
           }
         ]
       }
@@ -4808,13 +4808,13 @@ export const FAMILIAS_HB1 = [
     "partes": [
       {
         "classe": "diz",
-        "pt": "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios, passa de quarenta por cento do rendimento disponível",
-        "en": "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income",
+        "pt": "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios à habitação, passa de quarenta por cento do rendimento disponível, também descontados esses subsídios",
+        "en": "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income, also net of housing allowances",
         "apoios": [
           {
             "origem": "hb1c-eurostat-sobrecarga",
             "campo": "excerto",
-            "literal": "is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income"
+            "literal": "is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income ('net' of housing allowances)"
           }
         ]
       }
