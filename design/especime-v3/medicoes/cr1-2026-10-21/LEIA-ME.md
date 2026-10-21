@@ -132,3 +132,14 @@ Node.js v22.23.1
 ## O custo
 
 Chamadas de ferramenta desta passagem, pelo meu registo: 55 (orçamento 60). Símbolos: o total cumulativo lê-o o lançador do agente; não está num ficheiro a que esta passagem chegue.
+
+## A correção CR1-c (21.10.2026, construtor Claude Opus 5.5)
+
+O que mudou para o leitor: no item da Saúde, a oração do PRR de 2027 passou a estar inteira dentro da guarda da igualdade das duas linhas (`compara` entre `oe-2027-saude-despesa-efetiva-consolidada-2027` e `oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027`): o ramo `igual` tem a oração toda, com a unidade dentro do token do valor (a forma da linha 68 de `src/data/discussao.mjs`), e os ramos `maior` e `menor` têm a frase curta. Na edição inglesa, «PRR» passou a «RRP» (a decisão CR1-2). A auditoria das palavras (`tests/discussao/palavras.json`) tem as oito folhas novas em `seccoes[1].conteudo[1].paragrafo[23]` (as cinco antigas saíram), com a classe, o «sobre» e os apoios das folhas que substituem; o inventário das frases (`INVENTARIO-FRASES.md`, as duas linhas `cr1`) segue o texto construído.
+
+A oração como o `dist/` a imprime (o texto do selo colado ao valor é o do selo):
+
+- PT (`/o-que-se-discute`): «Em 2027 o quadro tem o mesmo valor com e sem o PRR, 17 803,1 milhões de euros[fonte · Ministério das Finanças]: a coluna sem o PRR não retira nada nesse ano.»
+- EN (`/en/under-discussion`): «In 2027 the table has the same value with and without the RRP, 17 803,1 million euros[source · Ministério das Finanças]: the column without the RRP takes nothing out in that year.»
+
+Os códigos, lidos dos ficheiros em `codigos/`: `c-build` 0, `c-discussao` 0, `c-voz` 0, `c-explicacoes` 0, `c-typecheck` 0. A primeira corrida do `npm run build` saiu com 1 no `check:voz` (as duas linhas `cr1` do inventário ainda com o texto antigo, e a oração nova por classificar); o inventário corrigiu-se e a segunda corrida saiu a zero, e é esse o código no ficheiro. Os outros quarenta e nove passos do `verify` passaram na cabeça anterior e a mudança não os toca (só o texto de uma oração, a sua auditoria e o inventário).
