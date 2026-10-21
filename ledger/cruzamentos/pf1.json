@@ -12,7 +12,7 @@
     "der-oe2027-despesa-sem-divida-variacao-pct": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "7097f15f9a427fd91c510bf2a66d235d42596fef812e1babe00c7cae482870f6",
+      "exported_row_sha256": "a761027b87a9398249aae0b2db7a44d2d04e718a18ebbeee2b0d8494effff7fa",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "6bdf76ba4b745d4a385be067b8ee26be4948f6cee4a85c2711da36704cde830a",
       "rh_id": "der-oe2027-despesa-sem-divida-variacao-pct",
@@ -23,7 +23,7 @@
     "der-oe2027-despesa-total-consolidada-mapa-variacao-pct": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "c935b5389947a868d563f33b7fd5338464ea48632329d03e798a33dbf61e227c",
+      "exported_row_sha256": "bb2ba7b58b064d8339e6dd690a9108f80a7e72e5fc7d02c5aee0935e950acf7c",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "a0f57c468e357d051112000e558bb2b970546657ce33f51c1503f69c9850de44",
       "rh_id": "der-oe2027-despesa-total-consolidada-mapa-variacao-pct",
@@ -34,7 +34,7 @@
     "der-oe2027-despesa-total-mapa-variacao-pct": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "c290c0d1f80a729f7591a511a16602b9a2ca45b1edf3cc8ed4d30b8197827ad5",
+      "exported_row_sha256": "cee616026bc7e026acef97600a78da889c9fdc79acf2f95fe58dc86942d438bb",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "5cf1f5f08564533db81e80c32886a3fe844a9f6f29f277733df6efa0eb7950c4",
       "rh_id": "der-oe2027-despesa-total-mapa-variacao-pct",
@@ -45,7 +45,7 @@
     "der-oe2027-funcao-01-variacao-pct": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "9db62f44aa886ea97001a0d7beac36db5368f01d04d8f864045208ad132a7904",
+      "exported_row_sha256": "5f90985af4a1aa4ead81811d13849fd6e87962a81463fa1f934176ca5d10b178",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "3b25fb8904c3204b1c28534857da98e0ed9f92959ce24efc9321450c11157e61",
       "rh_id": "der-oe2027-funcao-01-variacao-pct",
@@ -56,7 +56,7 @@
     "der-oe2027-funcao-02-variacao-pct": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "0c706b1e7427a0d21b6089454cf252a98f698e67642c90f95e511c502a53ba39",
+      "exported_row_sha256": "50b2d0e49724edfad7a35bb67e20bf390b837400299e8a38bcbf819f44a96310",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "2683b9ea10e42b598f10c9fdad8df1e6920733dfd80be851b9052380d64eb455",
       "rh_id": "der-oe2027-funcao-02-variacao-pct",
@@ -67,7 +67,7 @@
     "der-oe2027-funcao-03-variacao-pct": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "bd12ce6ce022c36fea3d5d6458b01013df55aa186327590ee6b8493ddae445ff",
+      "exported_row_sha256": "7db7347102ac990e57c478038e2193bb0e61c16ae5b6561c94c5072f97e4b6fe",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "87d53a818a834dd5117e09d1205fdabb7e0b18a1131e9181e7acf7d827715bc6",
       "rh_id": "der-oe2027-funcao-03-variacao-pct",
@@ -78,7 +78,7 @@
     "der-oe2027-funcao-04-variacao-pct": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "2c8746b64640eba6809af4aab1d99d544d1fe66679cb8077305c8c0ba57e23ce",
+      "exported_row_sha256": "f87dac206f807308d2d3f1f6d96b6cab227d54e6dcf942aaa5971eb4d3755654",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "3bfea0a99980505f2f9e744f1b5b53dd2216c61e1a4dc53a6db1dbeaeef1b99d",
       "rh_id": "der-oe2027-funcao-04-variacao-pct",
@@ -89,7 +89,7 @@
     "der-oe2027-funcao-05-variacao-pct": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "15bf04ddcc00a18e22e4938db8241c83ea83e52e552056523b2c180d487f3ccc",
+      "exported_row_sha256": "9741f5ef61e84f64547db4cd2db8ea13bb4bde03e92b6886a64b759c9a25c10b",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "debafd3a14342d519f9c9b302e6ed4a05c45050f6fb4aafeddab87db18eb9133",
       "rh_id": "der-oe2027-funcao-05-variacao-pct",
@@ -100,7 +100,7 @@
     "der-oe2027-funcao-06-variacao-pct": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "336729ca144422f4dd61076c8ec81ca0bd425725bad7f84aa8672b7ba0fc4f00",
+      "exported_row_sha256": "a1ecf35f37fdff763df6663967cc6328732ff5639894ba1d3bd2e88bd0ce6ad9",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "2e7adde8f6ea9b0217e55018b19f48815bf0a587492a9bc6298e3e3e124c7242",
       "rh_id": "der-oe2027-funcao-06-variacao-pct",
@@ -111,7 +111,7 @@
     "der-oe2027-funcao-07-variacao-pct": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "b887d4b25e18035a2d908c5df02df7a44e13c4ba1d99488b29cc5d15f38d2644",
+      "exported_row_sha256": "676e3d138328c4c2ee9d785e2a8f7b79887c509bca156849dfb959b22fddd516",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "86444aad66dd8650897e2f892c80ba3519161f9dc68df2c440a488f907238140",
       "rh_id": "der-oe2027-funcao-07-variacao-pct",
@@ -122,7 +122,7 @@
     "der-oe2027-funcao-08-variacao-pct": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "0372765521349ac79d0bd104e34d37c83aff6cc9c6fa3aec526f6cca98474849",
+      "exported_row_sha256": "88c884c31b93f7e847ab82791f2b5546982a3807267c66d3abae6b3997ccab59",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "0bceb416c5f4f7f9a757d7d4a80f419e6392413b7c7d3882f7dfa36a2b4a04df",
       "rh_id": "der-oe2027-funcao-08-variacao-pct",
@@ -133,7 +133,7 @@
     "der-oe2027-funcao-09-variacao-pct": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "2e8b3afda5208d723d753aaa89da489e74e95b2f0170ad79997fa7845450a879",
+      "exported_row_sha256": "1f0b3e245a159068abea9ffd39c4170e7047457b2168488d3708e915984c6014",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "221db39e9a78bfe39c7acfdf52aee0773e7db45f136cf5fef354bcfbdb87fb39",
       "rh_id": "der-oe2027-funcao-09-variacao-pct",
@@ -144,7 +144,7 @@
     "der-oe2027-funcao-10-variacao-pct": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "6512a376df8785138af001bca269d367c6ae4bcf618f96a1cc0de3a3fa3122cc",
+      "exported_row_sha256": "cbf139b2cb1471270258dce5a9c69fae72f08c539d6fc0037166e2a2ca3ebc21",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "47b484ba1d1d27e387860d50358eed1ec72d254eafe91f654491e26cad0de9de",
       "rh_id": "der-oe2027-funcao-10-variacao-pct",
@@ -155,7 +155,7 @@
     "oe-2026-cem-euros-funcao-01-mapa": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "48eda4f6e42130ce644b05ecc8f2c216bef77c33240c12485a9b9ec22504ab47",
+      "exported_row_sha256": "274c7052a9846b6a4959fbf4a7fccbd31b9a01c6a9ef4e72ba0e4a924714f167",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "74158dcb5075bb61dd37c54b30e38bd5474e989dc038774991d132764ffecf22",
       "rh_id": "oe-2026-cem-euros-funcao-01-mapa",
@@ -166,7 +166,7 @@
     "oe-2026-cem-euros-funcao-01-sem-divida-mapa": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "fa851981bc2a40ddda4564b24a1e9093d5c321569a0e2ec787f7d39a8f1b0b91",
+      "exported_row_sha256": "e8f12c3824d1ea3705c68675c103f93c1a4a81a5f45ba3dd07f3aece7ce9886f",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "d86927e8315646df0481456431a84198bfbb1e10ec33aa985580ca6643fd1ac9",
       "rh_id": "oe-2026-cem-euros-funcao-01-sem-divida-mapa",
@@ -177,7 +177,7 @@
     "oe-2026-cem-euros-funcao-02-mapa": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "a237d7c79edafc00c99547bd76345ddad3924bba5b02701606cc0557cce4d4e6",
+      "exported_row_sha256": "4c457826ff3b494c7f5add07b66f34a1f621c7f15b1898ed7174a570a12102ce",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "d6b371ba2425f81bc1112ab5430f3a7e0dcf625b9bb2cd2f49f2cd68015ff956",
       "rh_id": "oe-2026-cem-euros-funcao-02-mapa",
@@ -188,7 +188,7 @@
     "oe-2026-cem-euros-funcao-02-sem-divida-mapa": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "452ef21f0fd03d87db8a3d103092e53c507499b539d2b7a76c76a6725a98998b",
+      "exported_row_sha256": "06417bbee06519d0c1f91a5f1e836d2fd487b74710341556d6b3e60d272e0496",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "f22cf6415216a5c188b2988e1f244dcb05e315ae7976cea24b297ac31249e89b",
       "rh_id": "oe-2026-cem-euros-funcao-02-sem-divida-mapa",
@@ -199,7 +199,7 @@
     "oe-2026-cem-euros-funcao-03-mapa": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "2015a95499a8f3e3cb61ee25737eac25824ae1e83cdbc36ac9df506157d513b5",
+      "exported_row_sha256": "b6722ae9a97a0c015cb870c837a59a8bff63334bcf9343ec0d543ac3cd1135cc",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "b395c6e83e76c1ec7d64f9b9aee43485f08c7aae73198a81ed0ba19f60a53474",
       "rh_id": "oe-2026-cem-euros-funcao-03-mapa",
@@ -210,7 +210,7 @@
     "oe-2026-cem-euros-funcao-03-sem-divida-mapa": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "1ad8f993195a911d1838ad888922dc3f772a697edd86f42049c265b5a58566fa",
+      "exported_row_sha256": "002a3a20c1c8125c567211473d76ddf3cb0a4507ee04b82627243b39acf2128c",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "aaa2aced98dc32af8f1767672612f30fefbf7a689cbb6c8ec231459b1685ed2b",
       "rh_id": "oe-2026-cem-euros-funcao-03-sem-divida-mapa",
@@ -221,7 +221,7 @@
     "oe-2026-cem-euros-funcao-04-mapa": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "7883ca5548766e907bf1de938d47543c7b056c18583bc88ad6183e9c45c0aa3e",
+      "exported_row_sha256": "dac21f5f536039a70153b764dd77aa32d7246226df89f743df3323728eac843e",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "b666f82d7dbd9df179d243f58760fe4289991c83b4462bf977de27ededc64570",
       "rh_id": "oe-2026-cem-euros-funcao-04-mapa",
@@ -232,7 +232,7 @@
     "oe-2026-cem-euros-funcao-04-sem-divida-mapa": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "fd33ca6e5ac9c8ce0a10c422c647d52e2696c9224e93cbd94858b72c800341a1",
+      "exported_row_sha256": "253115e48860f0b9a63ce00c4572489a9f86971cb9b663af88d16e1b969727c4",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "1442795116d231c9563b3a525c6e9f5fd834465d1ba670cbd220b450a4a35e4d",
       "rh_id": "oe-2026-cem-euros-funcao-04-sem-divida-mapa",
@@ -243,7 +243,7 @@
     "oe-2026-cem-euros-funcao-05-mapa": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "7ede246125ba728a5c1b0a4fbfb12e74a1e211dd34fdd03f6587beccbfb9cc58",
+      "exported_row_sha256": "5bf234bec84e3a829540e26484da958a17bf7ae7b3a22127b130bbb688d8eef7",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "5348c57231f61b26d038216c08505b260e3069f2083a061a5931df6e3818ba0d",
       "rh_id": "oe-2026-cem-euros-funcao-05-mapa",
@@ -254,7 +254,7 @@
     "oe-2026-cem-euros-funcao-05-sem-divida-mapa": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "2ccb977878d32806ccb5ad00bad483fc84b447ccf32697801d780f75ea1301f9",
+      "exported_row_sha256": "f2d029bb49b4bfa52a283710bfdbd70b8e544b27fcde643f8c2b935a3b4a781c",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "30c1de45e7da3380f2a71bed40fbdcb11354003f94e26e525a8fa713dabd5529",
       "rh_id": "oe-2026-cem-euros-funcao-05-sem-divida-mapa",
@@ -265,7 +265,7 @@
     "oe-2026-cem-euros-funcao-06-mapa": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "711e06d7df23b60f91ca4e7be8e5629b4a85e91802615a06b1a4e3ded70c5606",
+      "exported_row_sha256": "36ce851491a284dc665e89ff065fef94750f99415ddfa385dd52b90e3322720c",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "fca4d12da247483ec0158668a391c90fb6a199f941b28f8fb9b4ed0885f371ca",
       "rh_id": "oe-2026-cem-euros-funcao-06-mapa",
@@ -276,7 +276,7 @@
     "oe-2026-cem-euros-funcao-06-sem-divida-mapa": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "f5f3f68097aff70294531a90745dc8a323d175634f073d92f04145895bb454d5",
+      "exported_row_sha256": "1d64ec3e5505ba6daedbc0fb40e2733971f3adc7ef0b19abe5bb52fb5e8e507b",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "dba2777679c3476fea2029e5ee798d1c9334289e0ef49e2694e57e3f01b97757",
       "rh_id": "oe-2026-cem-euros-funcao-06-sem-divida-mapa",
@@ -287,7 +287,7 @@
     "oe-2026-cem-euros-funcao-07-mapa": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "56263e4962e74bff324051af88b7487861c089a9ccab8a0920eb2b2a8dcf35a2",
+      "exported_row_sha256": "675c053f92c1f164996e55ff4f3d740f1cb8485e668c7cb3042b57c42e79fe58",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "17fe90d4c79ba686530ae54fd9c450306736eb34d1732ad0d2fd2fdacc662906",
       "rh_id": "oe-2026-cem-euros-funcao-07-mapa",
@@ -298,7 +298,7 @@
     "oe-2026-cem-euros-funcao-07-sem-divida-mapa": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "2361fe6d53a69d954238bab02b584a4b7fb7125b0bfb8ecd35cf1e5ed4551c25",
+      "exported_row_sha256": "76b1178cf4d395f5aa7f0489ad02962d8710d71956f17d9295671c38b74bb582",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "545a3a884ea1d02cfad50118dd5437d33e76269d1e59c113a42d90020d65891e",
       "rh_id": "oe-2026-cem-euros-funcao-07-sem-divida-mapa",
@@ -309,7 +309,7 @@
     "oe-2026-cem-euros-funcao-08-mapa": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "248c4e1e7c0d39518b99e481e9fcaffe11134bcb9cc7f188a7a72c6e2bdc97b0",
+      "exported_row_sha256": "1f4452ee01adf3441156ecf94e1656ecde926ad74157d0a1ecb874b405565b05",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "75b2313bba5547a027cbf6c38fe1b73f2cf5eaed928fe6402d98cd292483f76f",
       "rh_id": "oe-2026-cem-euros-funcao-08-mapa",
@@ -320,7 +320,7 @@
     "oe-2026-cem-euros-funcao-08-sem-divida-mapa": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "1cd4808036f5818cf9ba20fdc20680a61f229e4a43ed11751fba8c66014b8f12",
+      "exported_row_sha256": "3b1f2b7f73833021bedf5e0a0dfdb3096303a1943f583e36dc00599091983f88",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "955b998e74ce6bde7f9998f6198cb0b08e9cc82e8cf1f146528f14952b9f4d18",
       "rh_id": "oe-2026-cem-euros-funcao-08-sem-divida-mapa",
@@ -331,7 +331,7 @@
     "oe-2026-cem-euros-funcao-09-mapa": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "678750a1cf274a9bf3b4c096147b5123c5e6ec42b2b2254ec7c5362773f2238b",
+      "exported_row_sha256": "4ce3baa5086efe85503884b2a63992372443ce3a3f4e235a72db2c89eca6f1da",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "a555221bd57140d2fb6e667038ce7807cd875619925de9699c3e0f45b003eb18",
       "rh_id": "oe-2026-cem-euros-funcao-09-mapa",
@@ -342,7 +342,7 @@
     "oe-2026-cem-euros-funcao-09-sem-divida-mapa": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "a9d7d2150722cb5525341886e583528abad2febe5cd58e490fb3b16dffec3383",
+      "exported_row_sha256": "8578353b3b7efe34110e9fcccd6bae40a1c4fdc251a25e52830f0bcf63d8e7c0",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "471dc914f6aceb74bca367cbaf060ed1befe7acc9cd788b1cd767f660e18aab4",
       "rh_id": "oe-2026-cem-euros-funcao-09-sem-divida-mapa",
@@ -353,7 +353,7 @@
     "oe-2026-cem-euros-funcao-10-mapa": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "8a284d519da17915ef1c90e612ba394ad805046b1631988162724073d670c7af",
+      "exported_row_sha256": "441cc6108ecd3d3751e168c689a7538f7ad95e4b379b1efc65f83754c66fc543",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "0e8fe40d99fc9fe8c8bc2704602958e2b48725da63e4c34b67996201b2f158df",
       "rh_id": "oe-2026-cem-euros-funcao-10-mapa",
@@ -364,7 +364,7 @@
     "oe-2026-cem-euros-funcao-10-sem-divida-mapa": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "0c48549d9085b21850ec45b2cbef0a4c0f102924cbe5f8a8cee4ff75d25c59cd",
+      "exported_row_sha256": "98ede4dc866fcdf5ba01e23d1f8350be56fba9353d9cc0e68fbda6256f521cc2",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "aa5ffb8ecd6fead5ab32cb2cf1102670e0bd5f294b083ce41214b2f3751a10e8",
       "rh_id": "oe-2026-cem-euros-funcao-10-sem-divida-mapa",
@@ -375,7 +375,7 @@
     "oe-2026-despesa-funcao-01-mapa": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "bf1c7990e97381a402a6efeb17e42577735287a8a8df6ddb90094b0e956d0695",
+      "exported_row_sha256": "c5cfcb34733dc4aaeebc8f6c0b1565364898ba84ac8813afa0ebf8f90b6cd5d6",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "7e71d78346924ad3f594c0a047c05960f5601bf49e105ffa91a9ceb3a20cc12b",
       "rh_id": "oe-2026-despesa-funcao-01-mapa",
@@ -386,7 +386,7 @@
     "oe-2026-despesa-funcao-01-sem-divida-mapa": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "ef3324ec69c83e0877b848709e4d238e418bc57b97d814c20c2bf8ec33368075",
+      "exported_row_sha256": "34c174156e8515518f404561a5d3b500a8002dc5df303c7f4c0fa5f9cbe6c495",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "2a239459e39b0e8106eb05dad1677e0e0d399b7d7120114ef20449aa8671ec37",
       "rh_id": "oe-2026-despesa-funcao-01-sem-divida-mapa",
@@ -397,7 +397,7 @@
     "oe-2026-despesa-funcao-02-mapa": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "da89b718f5e3791dfbfa28d09cbd4f9acff199c4f148382249c9b02911e14719",
+      "exported_row_sha256": "9dd0e578edf5c0f423b33135ad80bfa375deab629a04abd30ea246701c6596cc",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "59726695169903d66ba6bfb50a863c447c7e0cee4120352c4a908a001bb48853",
       "rh_id": "oe-2026-despesa-funcao-02-mapa",
@@ -408,7 +408,7 @@
     "oe-2026-despesa-funcao-03-mapa": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "fe0f62736305529ca1fd9f7e3dee205e720fa3cb963e79c0dd301bb8c4425327",
+      "exported_row_sha256": "ef9df13fa1be5bad7c955a4bc596be703488afe2c628074c1efe8de811e3e0b9",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "79ef6f3ae9fb1a3fae1432b5f5cc014d7631c81584b8cb8865bea9a6181365aa",
       "rh_id": "oe-2026-despesa-funcao-03-mapa",
@@ -419,7 +419,7 @@
     "oe-2026-despesa-funcao-04-mapa": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "a24e32e8d0266920227bed899ef0c0cbd0ca0e8cf0fdac72ba0e21c32fe48782",
+      "exported_row_sha256": "084207e8279c07b1c3bd26223fa88c07044d8aaa1f9c5b8599f7fc1d9a3ade26",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "46183eef8cce115f0ee078cd16a616fef2c0428440630ae17928e7b401636cd2",
       "rh_id": "oe-2026-despesa-funcao-04-mapa",
@@ -430,7 +430,7 @@
     "oe-2026-despesa-funcao-05-mapa": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "916f76e5b299054a3449c782e11275d550ac7f13fc0c6f854cf0ea526d7f6204",
+      "exported_row_sha256": "4e4c816e2a76654bba079b69c4bea948905b3bb9f645f3706ed9b91abb20c4b5",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "1eebcae8e600f6078ff2ad92f32bab6738fe9d3b23c426b20e66043d0d048b4f",
       "rh_id": "oe-2026-despesa-funcao-05-mapa",
@@ -441,7 +441,7 @@
     "oe-2026-despesa-funcao-06-mapa": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "71f6b826e4a818a4d6a3229200732ef1266743312811c6e537cf1c53cd10aa8b",
+      "exported_row_sha256": "860dfc77becdd0f6ddc6d43206664b2a00a5ad367889e3513fd924d7bed9fb71",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "1562d3f9e545833958aa6aea8ae17c9eda223087de43ea979dfba696c3e999fc",
       "rh_id": "oe-2026-despesa-funcao-06-mapa",
@@ -452,7 +452,7 @@
     "oe-2026-despesa-funcao-07-mapa": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "a61540c9d6fb231391d9232ad572e0dff538fe2279db90f9260e0baed86384e4",
+      "exported_row_sha256": "ae26f34822ce2eec6122fd7c2aa27df3b8f99401e2ae5ed6e3f75e48add7aca1",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "fa68e4d099afff92041eb8a2a849f49aa852910978a13811aab049d1bc703725",
       "rh_id": "oe-2026-despesa-funcao-07-mapa",
@@ -463,7 +463,7 @@
     "oe-2026-despesa-funcao-08-mapa": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "599151f86a8751855346bc36567b2e63f25f066a1d29bc5f9bccfc41b2e99d7e",
+      "exported_row_sha256": "0fa23988879f1b7ea77bb251dd78a19d355aae320287efe337627cd650f39654",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "01f9dadea955c40e710ddfb627410dba9178ea646975b7b42465a246e1af7fef",
       "rh_id": "oe-2026-despesa-funcao-08-mapa",
@@ -474,7 +474,7 @@
     "oe-2026-despesa-funcao-09-mapa": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "17d3fcb5f659f09af4d14edf7cc2a49353329102467d39eff915d4c23679f0c9",
+      "exported_row_sha256": "6697db9aa4f7b069c627691db24defdf220789f76a522417c9c072ed04ef7ee9",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "161cce7f217c19003b29efa1c83f53d89b5d8d51bc05132a272e26179eb54ab3",
       "rh_id": "oe-2026-despesa-funcao-09-mapa",
@@ -485,7 +485,7 @@
     "oe-2026-despesa-funcao-10-mapa": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "92f058871ad83a49cae36671f99a9c9d5f66df9b55bf62521a951f74c0f0dbeb",
+      "exported_row_sha256": "9731e8072f5b07d45f91702d9833ddae4f822b5c20ca95b961dc49e27e0a3795",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "13b5b74577ae0edba3144ed2b0c661c0b55270adff3a64b0882af8de13daf541",
       "rh_id": "oe-2026-despesa-funcao-10-mapa",
@@ -496,7 +496,7 @@
     "oe-2026-despesa-sem-divida-mapa": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "99a0ca7aaadf4d7728ea73eaa70cd966a7ee45c4f2763c79f0e5b6c2b600b0f6",
+      "exported_row_sha256": "fbede6e1e9841a2c0761fa4cc1cac9de4c8a7f91072307e9dda820b31fe6f44d",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ff7e3f064ffa0b338b7e0e46e946e60dd6dd18da256d8516fd3b2cdaee212eed",
       "rh_id": "oe-2026-despesa-sem-divida-mapa",
@@ -507,7 +507,7 @@
     "oe-2026-despesa-subfuncao-01-7-mapa": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "8bd6fe775d57bf4253b6714c6488d6526d7f2b15de4dab10f5329b91b06c6592",
+      "exported_row_sha256": "ad7d4fddeacd51c3a7b52b030479309e48ca0518212ffa3561d5f2da03276a57",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "740b97a543f236c8ba89d5336233b00cd6330a8c43fb05bbc45ace85ea3f5cf6",
       "rh_id": "oe-2026-despesa-subfuncao-01-7-mapa",
@@ -518,7 +518,7 @@
     "oe-2026-despesa-total-consolidada-mapa": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "3e74d6a5447a951e151bf26ced050f0854fcf6dd46895c70d42de1cd19454daf",
+      "exported_row_sha256": "a22075af85cb52ba7a94b20feeaaf0fda0c0a7185b13a2e0d0a231360fe5c40b",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "b16e1ba7ffa98df08ca7049585d42ba64a76bad1911173a4039ebcd8fdbbff22",
       "rh_id": "oe-2026-despesa-total-consolidada-mapa",
@@ -529,7 +529,7 @@
     "oe-2026-despesa-total-mapa": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "f9c87ac6c144ad0505de3a267fad5f08091deb4c17ac0d4f64d5dcef25630296",
+      "exported_row_sha256": "44d2f7313b5ab89699a705f5e0291e173b23a78242efe48d3b2cd986d40a1f1c",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "f6a46e328ae887aeba45df9b2fd627955d622573c90fee4f61223ef6aa7d3850",
       "rh_id": "oe-2026-despesa-total-mapa",
@@ -540,7 +540,7 @@
     "oe-2027-cem-euros-funcao-01-mapa": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "51a8e83df17d7e5ffd01f0c432da6eaff783b13ee825fe89caae564efb8811b1",
+      "exported_row_sha256": "ff3c8423fe8a3982c081edb83faf2cd693f0f4a6b206fc507f41c2b888047c28",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "961b7773d8c97772ca0a1eca18cb46e495ee05b81ba00b8023f7586be12ce883",
       "rh_id": "oe-2027-cem-euros-funcao-01-mapa",
@@ -551,7 +551,7 @@
     "oe-2027-cem-euros-funcao-01-sem-divida-mapa": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "11c47c75af6dadac9ae43465b78776e7a111337ff498c7094c2981b669f09796",
+      "exported_row_sha256": "6bc7519721ceab2866c8ebe78cb4b9d71805ef584234d1709861e7966fecd7b7",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "6eaeaf111790180a5f94fec5abc7421e7abd3fa9cb8c7bb26e12eccea1b80f37",
       "rh_id": "oe-2027-cem-euros-funcao-01-sem-divida-mapa",
@@ -562,7 +562,7 @@
     "oe-2027-cem-euros-funcao-02-mapa": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "9dc8c13d97ed15eae1551f29e9f7ab01fd50bc0477db1a903d5c397b2378c5b7",
+      "exported_row_sha256": "85876a2b90b1d5a10580117c027991cf5db73574917416fc2c3205d2e537ba4b",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "cca9f0ef8ef7082c7d0b6c76d6a04cb45b57de25c23e4a03720dee355555038c",
       "rh_id": "oe-2027-cem-euros-funcao-02-mapa",
@@ -573,7 +573,7 @@
     "oe-2027-cem-euros-funcao-02-sem-divida-mapa": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "76d42f7611d4b163f0ce8534a99bcd00c1ba05c80e79d340588c7c8e7f6388d4",
+      "exported_row_sha256": "fcc4793e6f996166fde0569e584943a21b914fad8cd126e406c05d5aecb37641",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "904714150741c037ba31677654e8f22788f9c7e7690815dbf804c69f57128657",
       "rh_id": "oe-2027-cem-euros-funcao-02-sem-divida-mapa",
@@ -584,7 +584,7 @@
     "oe-2027-cem-euros-funcao-03-mapa": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "41e84d9c91b3658e3d2f6ae8e956dcc4068746a5c1a6a35a8f14772305ffc4b5",
+      "exported_row_sha256": "633b078f9ea110bfdafd4b69c690101067cd269d5042dbe2738a5b80b6e93221",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "a9681b18fb702a73e1817c33d0b1d125581eb5ae7fb753dad74a46c2dd56bc6d",
       "rh_id": "oe-2027-cem-euros-funcao-03-mapa",
@@ -595,7 +595,7 @@
     "oe-2027-cem-euros-funcao-03-sem-divida-mapa": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "3e106e82bacb528cc877f3dd45bb6876721f69b679751d4c8e0b3060bcd4af7a",
+      "exported_row_sha256": "0914b73cfe22377dbc3ff7b1d63c3141f890bea77376e7f86f3e57c6984e5516",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "d059b64f1cf9c5856a06ec761e856299cf1364d6807fd8929d03560221a76146",
       "rh_id": "oe-2027-cem-euros-funcao-03-sem-divida-mapa",
@@ -606,7 +606,7 @@
     "oe-2027-cem-euros-funcao-04-mapa": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "c3434241425e4fc1167c5c5ac87898ac73b346ab712feea389137f2547a69d00",
+      "exported_row_sha256": "dcba1ed2f5951a14863b29dc68f4f4b981536266c23c556ee8333dabe236e5fc",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "a544a7d007ec566e96e1b2779d5f95947c51d5351eade2fa908d50dbc6945e34",
       "rh_id": "oe-2027-cem-euros-funcao-04-mapa",
@@ -617,7 +617,7 @@
     "oe-2027-cem-euros-funcao-04-sem-divida-mapa": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "f9654b30c55c1d10dadde441ae3ef1821e0fb38f6fe63d25ee0c8322e9492d72",
+      "exported_row_sha256": "05e61d64144788c8680f2272b4a57c541607e2045c2fa2f750701709124dd37e",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "2e5ac1f6c02b4d621eee7dede190c36ca6c3860d7228b32081534160fe8d24af",
       "rh_id": "oe-2027-cem-euros-funcao-04-sem-divida-mapa",
@@ -628,7 +628,7 @@
     "oe-2027-cem-euros-funcao-05-mapa": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "fb928336f27b1dd751d76bcd65731aac9db67e4f6067096e671810b2ff293020",
+      "exported_row_sha256": "58a475aa7cec2060384921cac52a0e47108f6c34977931ecde00e6ef73feba1c",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ca6e783f6472afbaf81e4f9fdc57dcaea89a182bd54827294acefd4483d7b2ac",
       "rh_id": "oe-2027-cem-euros-funcao-05-mapa",
@@ -639,7 +639,7 @@
     "oe-2027-cem-euros-funcao-05-sem-divida-mapa": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "67d6b9c609090f6c80f7d81bb518c5c6f4f0020660123c5e1475bf8aaf24b8de",
+      "exported_row_sha256": "b6702f2fd6f603b1159aee98e149b42fb7f21141e7ba116b325d6c76d30a79ec",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "fea02eee23947ae1d8079b455e41e85ff2890cb070eaa168921385d0044d90af",
       "rh_id": "oe-2027-cem-euros-funcao-05-sem-divida-mapa",
@@ -650,7 +650,7 @@
     "oe-2027-cem-euros-funcao-06-mapa": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "abdcd0b7b4127485db5ea12427feca9d3c63744524fff8158b6787eb49781ec4",
+      "exported_row_sha256": "26c1bcf893fb63891fc423637c833832abd8939ff03478f47ccdcef962c6f5b4",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "9944075be6408aabf308f3c8fa99a780cb4e397c54bbd9012e9654415b7ec362",
       "rh_id": "oe-2027-cem-euros-funcao-06-mapa",
@@ -661,7 +661,7 @@
     "oe-2027-cem-euros-funcao-06-sem-divida-mapa": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "ffd85d140e9c8cf79590e5aedc5fbe8f04ecb0fbfb2c004700cf9baf70f9495c",
+      "exported_row_sha256": "3a90768a39e3a45027442c17013d0f91154e6acfe65ef1f091f9b9836ddd6b39",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "75edd91256e67af3fec31569cc5b46a33b2be1f9ee2a05afece074aea09d9522",
       "rh_id": "oe-2027-cem-euros-funcao-06-sem-divida-mapa",
@@ -672,7 +672,7 @@
     "oe-2027-cem-euros-funcao-07-mapa": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "8c15cf892780f2166843bcbcf00f0997be0b2b7f1b358a84c1d0c321a075263a",
+      "exported_row_sha256": "7498093e18b3c79151b3163fbde393ef64615cdc5e1f2d0d05088d18710c1193",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "f292e6310ae42274a680488545986570d6f17c67096a09238bb6055156d05216",
       "rh_id": "oe-2027-cem-euros-funcao-07-mapa",
@@ -683,7 +683,7 @@
     "oe-2027-cem-euros-funcao-07-sem-divida-mapa": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "e79e677ab8f220c20c87722c5e137edc8e90a28ece01fc5c7d9524958aa21bd7",
+      "exported_row_sha256": "70681acc0119374e16a5febdf6191f7bf2a1c96782cd7381915c2bb604c34667",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "c7a3098d6ab3a4bca15cb5b643f624de8aa6c4deea349e0314005f0410c96a56",
       "rh_id": "oe-2027-cem-euros-funcao-07-sem-divida-mapa",
@@ -694,7 +694,7 @@
     "oe-2027-cem-euros-funcao-08-mapa": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "4137d7fa260a858718af5c668bcdc63be850b73e2f9a90a085e96ff3940eab3c",
+      "exported_row_sha256": "7d806d200895267425c5d5d5502e1345b9511327482ab51b973a7522772141b8",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "142cf66a214517f520b3a6c85d10108acc7954ba653ffc815b78143e064231cb",
       "rh_id": "oe-2027-cem-euros-funcao-08-mapa",
@@ -705,7 +705,7 @@
     "oe-2027-cem-euros-funcao-08-sem-divida-mapa": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "d171b0a7cebf3bd28f9abf2f882623c3326e10d2134a0eca103816a1c6e5d5fc",
+      "exported_row_sha256": "4f8724b4e5a69c93f718ab41012977289fba0b75c4f5871653d078b3e0ad2fa8",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "aee013d39846f0a04fde3eb92e7381f899b7797b7a75cd5a65f9489a80902fd4",
       "rh_id": "oe-2027-cem-euros-funcao-08-sem-divida-mapa",
@@ -716,7 +716,7 @@
     "oe-2027-cem-euros-funcao-09-mapa": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "e4c80f2ea660e7b56d02b57497fd18684eeb3c1a780b369aa9a0421fe8b9442f",
+      "exported_row_sha256": "c9c73e531969208e75ec0d44270782cbeac55dbe6b202d16507e483b06808847",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "0a548640862ddb340b177a9a13d26911747954481d51a5517ce6b3208d71ca78",
       "rh_id": "oe-2027-cem-euros-funcao-09-mapa",
@@ -727,7 +727,7 @@
     "oe-2027-cem-euros-funcao-09-sem-divida-mapa": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "0d16f39815d67b8ca6b7cadb19981006f691db7a44622679571f933fe8257875",
+      "exported_row_sha256": "91adbbb97246b3e3da5d711146df82679c05f7380d63150a39014690ee17bd47",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "9780425cafe5afe38b2a93791010e8d36ad5ca41fff1f79a88d2525bda2b608a",
       "rh_id": "oe-2027-cem-euros-funcao-09-sem-divida-mapa",
@@ -738,7 +738,7 @@
     "oe-2027-cem-euros-funcao-10-mapa": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "dafed778447a17a47b0a4ee84c93d056807023a5fca4b1a823d7e7b9e9d60697",
+      "exported_row_sha256": "70ad22ce53c0a3fd7c238d2f6930b2ee1304ddcc39086e7fda5f27114b2131cd",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "28a4b7fab53cee567c09261f68faa96aec22baaa97e7328286cf4c2fbd68be2e",
       "rh_id": "oe-2027-cem-euros-funcao-10-mapa",
@@ -749,7 +749,7 @@
     "oe-2027-cem-euros-funcao-10-sem-divida-mapa": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "26df6d5ba95f3d30e688ac84c5e0d437c31279a870cbbb012aeea7c1e634d86d",
+      "exported_row_sha256": "d533d55e5511e074150ca49aadeefbce6fc86c3f1e8f2b5bdd0cfd873d71eb98",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "b89d5504fb382c0c0f57d14c419f81a7d34f808821f2534508cf971dee7cbfbb",
       "rh_id": "oe-2027-cem-euros-funcao-10-sem-divida-mapa",
@@ -760,7 +760,7 @@
     "oe-2027-despesa-funcao-01-mapa": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "3f2041690f01b68dc92b35a56e972f677e79c98faf7745379687f8ce3779c988",
+      "exported_row_sha256": "717b297ffae073536316286166fc94b3fbfca1f902d32c0711d61779ff1f72ac",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "82721b43a4fad9bfe33f178f7a54ad5e912367401bec26f61636c8545975952a",
       "rh_id": "oe-2027-despesa-funcao-01-mapa",
@@ -771,7 +771,7 @@
     "oe-2027-despesa-funcao-01-sem-divida-mapa": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "d18372633c90575fe59b7a99027901213670ba2aad570098e6673dac8b4900e3",
+      "exported_row_sha256": "4aebfb317fa4c5b59afc45a483349cfbf95b59a69d264d01871e79c2df6e40a6",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "7b982cd4b9d42ea96af2c45d65edb45f5fddafd25408bbbc79b3ea4c4c5a15b2",
       "rh_id": "oe-2027-despesa-funcao-01-sem-divida-mapa",
@@ -782,7 +782,7 @@
     "oe-2027-despesa-funcao-02-mapa": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "3709cd0c752bf6d615e5f8465f018ff65a9eff95be390b377f456b26f12efdc4",
+      "exported_row_sha256": "094d546523cfa3b47bffd969721ab6d5f66e31387aa6ffdd3fcb6d101d89ea0e",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "13e7cd06f59ac57617944dab8bbde785b307a651b0a07f0a684b90e65f9510be",
       "rh_id": "oe-2027-despesa-funcao-02-mapa",
@@ -793,7 +793,7 @@
     "oe-2027-despesa-funcao-03-mapa": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "2a3ef8dbc67d31b61d898f8e509b64c7ec77f2051da269201735511e84810b13",
+      "exported_row_sha256": "bca4e862f302b0ead71d95f058a32c7cb07531e21555400457e082fe06a87557",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "a82541ba73703f5e73e60ed98f2897e87db83361ca4767b04e43295c2ef2d036",
       "rh_id": "oe-2027-despesa-funcao-03-mapa",
@@ -804,7 +804,7 @@
     "oe-2027-despesa-funcao-04-mapa": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "2610ff0fc5429babeacd37c4d1630b5633c0157d73f201ddace862671b94b3b4",
+      "exported_row_sha256": "e41438d6ab6f7824035c46fd042a8942319eb379e9c9fb133790e57ce838c102",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "abadca2686dd1f332cfd79ad031c86c63d46a4125db70cb3ed370c06db71d3a3",
       "rh_id": "oe-2027-despesa-funcao-04-mapa",
@@ -815,7 +815,7 @@
     "oe-2027-despesa-funcao-05-mapa": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "b0e34829063b491b7cd463593c30ac77052b2048c2fcbe2ae14754428052a5cd",
+      "exported_row_sha256": "0668acb0b4c70b7d0d0ff6a0142f2f4f46133b505b99cfeaa91adf319c9695f6",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "acfd2ca0faae9f6633c800559adb549414dc407c4d57e7a0b8c45d3e398adf2b",
       "rh_id": "oe-2027-despesa-funcao-05-mapa",
@@ -826,7 +826,7 @@
     "oe-2027-despesa-funcao-06-mapa": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "24460677b3d05462fb50121fa84ba2b7a54be604ca92d4bfea04d221be1f983c",
+      "exported_row_sha256": "18fa547c40bf3f299e345f72a0b9dbcb21c524d9a4d7277f7c4a265512152dde",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "7f19deec8331a29dc1ecd7c9be0d52c85c0e48299643d905d686a72c0aff7cb6",
       "rh_id": "oe-2027-despesa-funcao-06-mapa",
@@ -837,7 +837,7 @@
     "oe-2027-despesa-funcao-07-mapa": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "4747f439e800f40bbfd169e95cc0ee01c219198c2c57130e13bfaf32258af97c",
+      "exported_row_sha256": "032f796e97426133b22e86ff37c9346854c4dfa9db37ab3b03274b5bc2b3c0e0",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "c9c5f75db36ab88d887b55298f841cda4e6a6cc9271163801c487ea1840495ca",
       "rh_id": "oe-2027-despesa-funcao-07-mapa",
@@ -848,7 +848,7 @@
     "oe-2027-despesa-funcao-08-mapa": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "7345080bc0c625918ab6376ca764065dea10925b105cc87e37a3a7c72a7ff8c2",
+      "exported_row_sha256": "1c12be00f33f7e739d78218fb4789ae0e75e88f9f2136dbde9bcd6cd2a56e0c7",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "044f8673449652189148bcee2a0a175bad6a981143b730c9f7e85cfaeb9bbaec",
       "rh_id": "oe-2027-despesa-funcao-08-mapa",
@@ -859,7 +859,7 @@
     "oe-2027-despesa-funcao-09-mapa": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "33e62d53eeec3724e8dce252bd64fa06e273a98a28ecbfa625089fe138348d38",
+      "exported_row_sha256": "5cee51759152dcdc175910d7a48b9c4e237c0c8ce9772497cf4e2bffa792006e",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "c6afae2b163e40bcd66a093bc8e4b5f5ad8dd8b305c43431fc1af44d18bde6d6",
       "rh_id": "oe-2027-despesa-funcao-09-mapa",
@@ -870,7 +870,7 @@
     "oe-2027-despesa-funcao-10-mapa": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "544a225be7deab5eee10764d0c26e1c5bf55a0135690ac8d311b39034ad86226",
+      "exported_row_sha256": "3c93712b886c781771c78bd79f6abe55a32ade468ffd902a32e2d14ee2ced3ad",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "76e80395c7a55717a4197d489bd84ee7ca3b79f0d60aa800fb034cc4640e8509",
       "rh_id": "oe-2027-despesa-funcao-10-mapa",
@@ -881,7 +881,7 @@
     "oe-2027-despesa-sem-divida-mapa": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "d4b55207f861c132a5a54768240684e51582fb8a06818b7d9cb42631c83fdac9",
+      "exported_row_sha256": "179aa781fccf184665c4de0cac9e8562f4b970a9fce4fc8ca10b63f0df2f412e",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "fbf332263aaf97b6cde0cc419d3c0da266373d2d057b5c7b6a800e744670875d",
       "rh_id": "oe-2027-despesa-sem-divida-mapa",
@@ -892,7 +892,7 @@
     "oe-2027-despesa-subfuncao-01-7-mapa": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "e61c3346caf8014c049d2971df4ab874310ce537ad7346d90360d9e50352de4d",
+      "exported_row_sha256": "2e9d3022fcbc4a21e01815b1ee40a6814f29dae9fdc23c8dcf548059fc9433bc",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "614b96044425c5fc14d662176a27d59db116fdb1442116a76faef256d92d1f1f",
       "rh_id": "oe-2027-despesa-subfuncao-01-7-mapa",
@@ -903,7 +903,7 @@
     "oe-2027-despesa-total-consolidada-mapa": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "c1c475b0480b77b58960a81a1b265919ed2562d8a9aed932281343741ff075cf",
+      "exported_row_sha256": "2568f6fbee9d5393bb41e6e5dd5498096cd819f34115e44f212dd66dd02b6c99",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "8fdd33a5cec74cb04d7f15c54787a81b81a46c7a04c3bd7ccbcebae9d402f4ab",
       "rh_id": "oe-2027-despesa-total-consolidada-mapa",
@@ -914,7 +914,7 @@
     "oe-2027-despesa-total-mapa": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "3d50420bdb8b2e0c940205023e46c34e0d4d287a5adb327041b653cda1d89ff9",
+      "exported_row_sha256": "b4f3427e1830176a660fd3b8c92a5e984ba1a8e3022c8dd9f3b4bc37b750efdc",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "40ac3c1839f69ebe8adbb6eb7a623e13bd05141996c51938ca6a2b529a96b9cc",
       "rh_id": "oe-2027-despesa-total-mapa",
