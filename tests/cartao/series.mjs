@@ -27,7 +27,9 @@ export function conferirSeriesDosCartoes(root, lang, claims = loadClaims()) {
       if (porta?.getAttribute('data-cartao-serie-linha') !== linha || porta?.getAttribute('data-cartao-serie') !== serie || svg?.getAttribute('data-series') !== serie || porta?.querySelectorAll('[data-forma="serie-do-pais"]').length !== 1) {
         erros.push(`K20 · ${id}/${linha}: falta o desenho da série da linha`);
       } else vistos.push(linha);
-      if (porta?.rawTagName !== 'a' || porta?.getAttribute('href') !== routePath('serie', lang, { slug: serie })) erros.push(`K20 · ${id}/${linha}: porta para outro recibo ou edição`);
+      /* G1-b: a porta é a caixa do desenho, e a ligação para o recibo é a filha `a[data-grafico-porta]` dela. */
+      const ligacao = porta?.childNodes.find(n => n.rawTagName === 'a');
+      if (porta?.rawTagName !== 'div' || !ligacao?.hasAttribute('data-grafico-porta') || ligacao?.getAttribute('href') !== routePath('serie', lang, { slug: serie })) erros.push(`K20 · ${id}/${linha}: porta para outro recibo ou edição`);
       if (valor < 0 || filhos.indexOf(porta) !== valor + 1 + i) erros.push(`K20 · ${id}/${linha}: gráfico fora do lugar depois do valor`);
       const legendas = porta?.querySelectorAll('[data-cartao-serie-legenda]') ?? [];
       if (linha !== id && (legendas.length !== 1 || legendas[0].textContent.trim() !== t(lang).cartao.uniaoEuropeia || !legendas[0].hasAttribute('data-voz'))) erros.push(`K20 · ${id}/${linha}: falta a legenda da comparação ou não é a da casa`);
@@ -50,8 +52,8 @@ export function plantasDosCartoesComSerie(html, lang) {
     }],
     ['gráfico próprio retirado', /falta o desenho/, r => r.querySelector('[data-cartao-medida="ipc-variacao-homologa"] [data-cartao-serie]').remove()],
     ['gráfico da comparação retirado', /falta o desenho/, r => r.querySelector(ue).remove()],
-    ['porta noutra edição', /porta para outro/, r => r.querySelector(ue).setAttribute('href', routePath('serie', lang === 'pt' ? 'en' : 'pt', { slug: 'serie-ihpc-variacao-homologa-ue' }))],
-    ['porta da comparação para o recibo de outra série', /porta para outro/, r => r.querySelector(ue).setAttribute('href', routePath('serie', lang, { slug: 'serie-ipc-variacao-homologa' }))],
+    ['porta noutra edição', /porta para outro/, r => r.querySelector(`${ue} > a`).setAttribute('href', routePath('serie', lang === 'pt' ? 'en' : 'pt', { slug: 'serie-ihpc-variacao-homologa-ue' }))],
+    ['porta da comparação para o recibo de outra série', /porta para outro/, r => r.querySelector(`${ue} > a`).setAttribute('href', routePath('serie', lang, { slug: 'serie-ipc-variacao-homologa' }))],
     ['série da comparação trocada', /falta o desenho/, r => r.querySelector(`${ue} svg`).setAttribute('data-series', 'serie-ipc-variacao-homologa')],
     ['legenda da comparação retirada', /falta a legenda/, r => r.querySelector(`${ue} [data-cartao-serie-legenda]`).remove()],
     ['legenda da comparação trocada', /falta a legenda/, r => r.querySelector(`${ue} [data-cartao-serie-legenda]`).set_content('Portugal')],

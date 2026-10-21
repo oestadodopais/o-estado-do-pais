@@ -59,7 +59,9 @@ function irmaosDepois(/** @type {import('node-html-parser').HTMLElement} */ svg)
  * @param {import('node-html-parser').HTMLElement} svg
  */
 export function leituraDoSitio(svg) {
-  return !svg.closest?.('[data-cartao-serie]');
+  /* G1-b (21.10.2026, o achado 5 da leitura do Codex): os cartões passam a levar a leitura; só o desenho com a marca
+     decorativa explícita não a leva. */
+  return !svg.hasAttribute?.('data-grafico-decorativo');
 }
 
 export function conferirSerie(svg, lang, lerSerie = getSerie, leitura = leituraDoSitio(svg)) {
@@ -141,8 +143,8 @@ export function conferirSerie(svg, lang, lerSerie = getSerie, leitura = leituraD
      outros atributos (a lista dos permitidos, acima), porque a folha os acende pela estrutura do desenho. */
   const grupos = svg.childNodes.filter((n) => n.rawTagName === 'g' && n.getAttribute('data-eixo') === undefined);
   /* RP4-c-b: as zonas só onde a leitura vive. */
-  if (!leitura && grupos.length) falha('zonas de leitura num desenho que não as leva (o desenho de um cartão é a porta para o recibo)');
-  if (leitura && g.leituras.length && !grupos.length) falha('desenho sem as zonas de leitura fora da porta de um cartão');
+  if (!leitura && grupos.length) falha('zonas de leitura num desenho que não as leva (um desenho decorativo)');
+  if (leitura && g.leituras.length && !grupos.length) falha('desenho sem as zonas de leitura (um desenho que não é decorativo)');
   let esperadas = [];
   try { esperadas = leiturasEsperadas(g, lang, lerSerie); } catch (e) { falha(`a leitura não recompõe: ${e.message}`); }
   const lidasDaLeitura = grupos.map((grupo) => {

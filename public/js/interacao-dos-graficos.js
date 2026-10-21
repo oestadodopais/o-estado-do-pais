@@ -12,7 +12,13 @@
  *
  * Duas formas de etiqueta, uma por gráfico: o ponto que já tem a sua etiqueta desenhada dentro do `<svg>` (as séries
  * no tempo, cujo valor e período o portão de HTML confere ali) acende-se com `data-ativo`; o ponto que não a tem (as
- * marcas das faixas dos países) mostra uma etiqueta comum ao gráfico, posta junto ao ponto e sempre dentro do ecrã.
+ * marcas das faixas dos países) mostra uma etiqueta comum ao gráfico, posta junto ao ponto e confinada à janela nos
+ * dois eixos, ao abrir e ao mudar a largura.
+ *
+ * A correção G1-b (21.10.2026): o ponto mais próximo do dedo mede-se ao ponto desenhado (o círculo, ou a zona estreita
+ * de toque quando não há círculo), e não ao grupo inteiro, que inclui a etiqueta deslocada. E um gráfico dentro de uma
+ * porta (um irmão `a[data-grafico-porta]`, os cartões): o toque num ponto abre a etiqueta e o toque fora dos pontos
+ * segue a ligação; ao rato, o clique num ponto segue a ligação; ao teclado, Enter num ponto também.
  * Sem guião, o `aria-label` e o `<title>` de cada ponto continuam a dizer o período e o valor.
  */
 (function () {
@@ -55,8 +61,10 @@
     var h = e.offsetHeight;
     var x = r.left + r.width / 2 - w / 2;
     x = Math.max(MARGEM, Math.min(x, largura - w - MARGEM));
+    var altura = document.documentElement.clientHeight;
     var y = r.top - h - 6;
     if (y < MARGEM) y = r.bottom + 6;
+    y = Math.max(MARGEM, Math.min(y, altura - h - MARGEM));
     e.style.left = Math.round(x + window.scrollX) + 'px';
     e.style.top = Math.round(y + window.scrollY) + 'px';
   }
@@ -80,14 +88,17 @@
     }
   }
 
+  /* O ponto desenhado de cada grupo: o círculo marcado; sem ele, a zona de toque; sem nenhum, o próprio ponto (as
+     marcas das faixas). */
+  function desenhoDe(p) { return p.querySelector('circle') || p.querySelector('rect') || p; }
+
   function maisProximo(g, x, y) {
     var melhor = null;
     var dist = Infinity;
     pontosDe(g).forEach(function (p) {
-      var r = p.getBoundingClientRect();
-      var dx = r.left + r.width / 2 - x;
-      var dy = x >= r.left && x <= r.right ? 0 : (r.top + r.height / 2 - y) / 4;
-      var d = dx * dx + dy * dy;
+      var r = desenhoDe(p).getBoundingClientRect();
+      /* O x do dedo decide; o y só desempata dois pontos no mesmo x. */
+      var d = Math.abs(r.left + r.width / 2 - x) + Math.abs(r.top + r.height / 2 - y) / 1000;
       if (d < dist) { dist = d; melhor = p; }
     });
     return melhor;
@@ -99,6 +110,12 @@
   }
 
   Array.prototype.forEach.call(graficos, function (g) {
+    var porta = g.parentElement && g.parentElement.querySelector('a[data-grafico-porta]');
+    if (porta) {
+      g.addEventListener('click', function (ev) {
+        if (g._tipo === 'mouse' && ev.target.closest && ev.target.closest('[data-grafico-ponto]')) porta.click();
+      });
+    }
     g.addEventListener('pointerover', function (ev) {
       if (ev.pointerType !== 'mouse') return;
       var p = ev.target.closest && ev.target.closest('[data-grafico-ponto]');
@@ -108,6 +125,7 @@
       if (ev.pointerType === 'mouse' && !g.contains(document.activeElement)) apaga(g);
     });
     g.addEventListener('pointerdown', function (ev) {
+      g._tipo = ev.pointerType;
       if (ev.pointerType === 'mouse') return;
       g._apoiado = true;
       if (ev.target.releasePointerCapture && ev.target.hasPointerCapture && ev.target.hasPointerCapture(ev.pointerId)) {
@@ -140,6 +158,7 @@
       else if (ev.key === 'Home') j = 0;
       else if (ev.key === 'End') j = todos.length - 1;
       else if (ev.key === 'Escape') { apaga(g); return; }
+      else if (ev.key === 'Enter' && porta) { porta.click(); return; }
       else return;
       ev.preventDefault();
       if (j !== i) foca(g, todos[j]);

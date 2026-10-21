@@ -328,12 +328,15 @@ if (nomeDerivado !== null && !eNomeDeMedida(nomeDerivado)) {
         <Provenance id={c.id} lang={lang} />
       </p>
 
-      {/* RP4-b: as séries inteiras das linhas mostradas, depois do valor. */}
+      {/* RP4-b: as séries inteiras das linhas mostradas, depois do valor. G1-b (21.10.2026): o desenho leva a leitura de
+          cada ponto e sai de dentro da ligação (um ponto focável não pode viver dentro de um `a`); a ligação fica irmã
+          dele, com o nome do título do desenho, e cobre a caixa inteira por baixo das zonas de leitura, para que um toque
+          num ponto o leia e um toque fora dos pontos siga para o recibo. */}
       {linhasComSerie.map(linha => (
-        <a class="cartao-medida-serie" data-cartao-serie={linha.serie} data-cartao-serie-linha={linha.id} href={routePath('serie', lang, { slug: linha.serie })}>
-          {linha.id !== c.id && <span class="cartao-medida-serie-legenda" data-cartao-serie-legenda data-voz>{s.cartao.uniaoEuropeia}</span>}
-          <SerieDoPais ids={[linha.serie]} lang={lang} largura={240} altura={160} />
-        </a>
+        <div class="cartao-medida-serie" data-cartao-serie={linha.serie} data-cartao-serie-linha={linha.id}>
+          <a class="cartao-medida-serie-porta" data-grafico-porta href={routePath('serie', lang, { slug: linha.serie })} aria-labelledby={`titulo-${c.id}-${linha.id}`}>{linha.id !== c.id && <span class="cartao-medida-serie-legenda" data-cartao-serie-legenda data-voz>{s.cartao.uniaoEuropeia}</span>}</a>
+          <SerieDoPais ids={[linha.serie]} lang={lang} largura={240} altura={160} comLeitura idDoTitulo={`titulo-${c.id}-${linha.id}`} />
+        </div>
       ))}
 
       {/* (d) A RÉGUA. Rende-se só onde houver linha selada ou valor de referência

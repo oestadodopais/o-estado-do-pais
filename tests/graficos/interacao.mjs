@@ -3,9 +3,11 @@
  * check:graficos, a régua da interação dos gráficos (bloco G1, 21.10.2026, o §2 do mandato dos gráficos; a I230).
  *
  * Sobre o `dist/` construído (ou `OEDP_DIST`), em cada página das duas edições:
- *   G1 · cada desenho com valores escondidos (uma série no tempo com zonas de leitura, a faixa dos países de um
- *        cartão) tem `data-grafico`; um desenho de um componente que não está na dívida declarada abaixo e não tem a
- *        marca é um erro, com o caminho da página e o componente;
+ *   G1 · cada desenho com valores escondidos (toda a série no tempo, com zonas de leitura ou sem elas; a faixa dos
+ *        países de um cartão) tem `data-grafico`; um desenho de um componente que não está na dívida declarada abaixo e
+ *        não tem a marca é um erro, com o caminho da página e o componente. A única isenção é a marca decorativa
+ *        explícita (`data-grafico-decorativo` com `aria-hidden="true"`; uma sem a outra é erro), nunca os algarismos
+ *        (a correção G1-b, o achado 5 da leitura do Codex);
  *   G2 · cada ponto (`data-grafico-ponto`) tem os quatro atributos (`data-grafico-periodo`, `data-grafico-valor`,
  *        `data-grafico-unidade`, `data-grafico-nome`; o período e o valor não vazios), `role="img"`, um `tabindex`, e
  *        um só ponto de cada gráfico na ordem do tabulador;
@@ -17,12 +19,14 @@
  *
  * As plantas (`--plantar <nome>`): troca, em memória, a primeira página da edição portuguesa por uma cópia estragada e
  * corre a régua inteira; a planta morde quando a régua sai com 1 pela célula certa. `sem-marca` tira o `data-grafico`
- * do gráfico da inflação; `aria-label` troca o valor no `aria-label` de um ponto; `sem-guiao` tira o guião da página.
+ * do gráfico da inflação; `aria-label` troca o valor no `aria-label` de um ponto; `sem-guiao` tira o guião da página;
+ * `serie-sem-camada` tira a marca e os pontos do gráfico da inflação (a série sem leitura que a primeira forma não via);
+ * `decorativo-sem-aria` troca a marca pela decorativa sem `aria-hidden`.
  */
 import { readdirSync, readFileSync, statSync } from 'node:fs';
 import { join, relative } from 'node:path';
 import { parse } from 'node-html-parser';
-import { componente, zonasDeLeitura } from '../../scripts/graficos-inventario.mjs';
+import { componente, zonasDeLeitura, decorativo } from '../../scripts/graficos-inventario.mjs';
 
 const DIST = process.env.OEDP_DIST || join(process.cwd(), 'dist');
 const GUIAO = '/js/interacao-dos-graficos.js';
@@ -55,8 +59,8 @@ function desenhos(root) {
   });
 }
 
-/** Um desenho tem valores escondidos quando tem zonas de leitura ou marcas de faixa. */
-const escondeValores = (el) => zonasDeLeitura(el) > 0 || el.querySelectorAll('[data-faixa-marca]').length > 0;
+/** Um desenho tem valores escondidos quando é uma série no tempo ou tem zonas de leitura ou marcas de faixa. */
+const escondeValores = (el) => (el.getAttribute('class') ?? '').split(/\s+/).includes('serie-do-pais') || zonasDeLeitura(el) > 0 || el.querySelectorAll('[data-faixa-marca]').length > 0;
 
 export function conferePagina(html, rota) {
   const erros = [];
@@ -64,6 +68,11 @@ export function conferePagina(html, rota) {
   const root = parse(html);
   const divida = {};
   for (const el of desenhos(root)) {
+    if (el.hasAttribute('data-grafico-decorativo') || el.getAttribute('aria-hidden') === 'true' && escondeValores(el) && !el.hasAttribute('data-grafico')) {
+      if (!decorativo(el) || el.hasAttribute('data-grafico')) erros.push(`G1 ${rota}: um desenho de «${componente(el)}» com a marca decorativa sem aria-hidden, aria-hidden sem a marca decorativa, ou as duas com data-grafico.`);
+      else divida.decorativos = (divida.decorativos ?? 0) + 1;
+      continue;
+    }
     if (el.hasAttribute('data-grafico')) continue;
     const c = componente(el);
     if (DIVIDA.has(c)) { divida[c] = (divida[c] ?? 0) + 1; continue; }
@@ -118,6 +127,8 @@ const PLANTAS = {
   'sem-marca': [(h) => h.replace(/ data-grafico="serie"/, ''), /^G1 /],
   'aria-label': [(h) => h.replace(/(data-grafico-ponto[^>]*?aria-label="[^"]*?)(\d)([^"\d]*")/, (m, a, d, b) => `${a}${(Number(d) + 1) % 10}${b}`), /^G3 .*aria-label/],
   'sem-guiao': [(h) => h.replace(/<script src="\/js\/interacao-dos-graficos\.js"[^>]*><\/script>/, ''), /^G4 /],
+  'serie-sem-camada': [(h) => h.replace(/ data-grafico="serie"/, '').replace(/<g data-grafico-ponto[\s\S]*?<\/g>/g, ''), /^G1 .*SerieDoPais/],
+  'decorativo-sem-aria': [(h) => h.replace(/ data-grafico="serie"/, ' data-grafico-decorativo'), /^G1 .*decorativa sem aria-hidden/],
 };
 
 export function corre(dist = DIST, planta = null) {

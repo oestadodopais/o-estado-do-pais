@@ -86,17 +86,42 @@ try {
       await pagina.evaluate(async () => { await document.fonts.ready; await new Promise(r => requestAnimationFrame(r)); });
       const medidas = await pagina.evaluate(() => ({janela:innerWidth,documento:document.documentElement.scrollWidth,corpo:document.body.scrollWidth,altura:document.documentElement.scrollHeight}));
       if (p.toque) {
-        medidas.toque = await pagina.evaluate((sel) => {
+        /* G1-b (21.10.2026, os achados 3 e 4 da leitura do Codex): o toque cai no centro do desenho, ou no ponto mais à
+           direita (`toqueNoUltimo`); o registo guarda o período do ponto mais próximo do x do toque, conferido contra as
+           posições dos círculos no `viewBox`, e o retângulo da etiqueta (a comum ou a do `<svg>`) contra a janela, nos
+           dois eixos. */
+        medidas.toque = await pagina.evaluate(({ sel, ultimo }) => {
           const el = document.querySelector(sel);
           if (!el) return { encontrado: false };
           el.scrollIntoView({ block: 'center' });
-          const r = el.getBoundingClientRect(), x = r.left + r.width / 2, y = r.top + r.height / 2;
+          const pontos = [...el.querySelectorAll('[data-grafico-ponto]')];
+          const alvo = ultimo ? (pontos.at(-1)?.querySelector('circle') ?? pontos.at(-1)) : el;
+          const r = alvo.getBoundingClientRect(), x = r.left + r.width / 2, y = r.top + r.height / 2;
           for (const tipo of ['pointerdown', 'pointerup']) el.dispatchEvent(new PointerEvent(tipo, { bubbles: true, pointerType: 'touch', isPrimary: true, clientX: x, clientY: y }));
           const ativo = document.querySelector('[data-grafico-ponto][data-ativo]');
-          const etiqueta = [...document.querySelectorAll('.grafico-etiqueta')].find((e) => !e.hidden);
-          const caixa = etiqueta?.getBoundingClientRect();
-          return { encontrado: true, ativo: ativo?.getAttribute('aria-label') ?? null, etiqueta: etiqueta?.textContent ?? null, etiquetaDentro: caixa ? caixa.left >= 0 && caixa.right <= document.documentElement.clientWidth : null };
-        }, p.toque);
+          let geometria = null;
+          if (el instanceof SVGSVGElement) {
+            const pt = new DOMPoint(x, y).matrixTransform(el.getScreenCTM().inverse());
+            const cs = pontos.map((p) => ({ periodo: p.getAttribute('data-grafico-periodo'), cx: Number(p.querySelector('circle')?.getAttribute('cx')) }));
+            const perto = cs.reduce((a, b) => (Math.abs(b.cx - pt.x) < Math.abs(a.cx - pt.x) ? b : a));
+            const ativoPeriodo = ativo?.getAttribute('data-grafico-periodo') ?? null;
+            geometria = { xDoToqueNoViewBox: Number(pt.x.toFixed(3)), maisProximo: perto, ativoPeriodo, bate: perto.periodo === ativoPeriodo };
+          }
+          const comum = [...document.querySelectorAll('.grafico-etiqueta')].find((e) => !e.hidden);
+          const daSvg = ativo?.querySelector('text');
+          const caixa = (comum ?? daSvg)?.getBoundingClientRect();
+          const W = document.documentElement.clientWidth, H = document.documentElement.clientHeight;
+          const etiquetaDentro = caixa ? {
+            forma: comum ? 'comum' : 'svg',
+            horizontal: caixa.left >= 0 && caixa.right <= W,
+            vertical: caixa.top >= 0 && caixa.bottom <= H,
+            caixa: { left: Number(caixa.left.toFixed(2)), right: Number(caixa.right.toFixed(2)), top: Number(caixa.top.toFixed(2)), bottom: Number(caixa.bottom.toFixed(2)) },
+            janela: { largura: W, altura: H },
+          } : null;
+          return { encontrado: true, ultimo: Boolean(ultimo), ativo: ativo?.getAttribute('aria-label') ?? null, etiqueta: (comum ?? daSvg)?.textContent ?? null, etiquetaDentro, geometria };
+        }, { sel: p.toque, ultimo: Boolean(p.toqueNoUltimo) });
+        if (medidas.toque.encontrado && (!medidas.toque.etiquetaDentro?.horizontal || !medidas.toque.etiquetaDentro?.vertical)) throw new Error(`${prefixo}: a etiqueta do toque em ${p.toque} sai da janela`);
+        if (medidas.toque.geometria && !medidas.toque.geometria.bate) throw new Error(`${prefixo}: o ponto aceso não é o mais próximo do x do toque`);
         if (!medidas.toque.ativo) throw new Error(`${prefixo}: o toque em ${p.toque} não acendeu ponto nenhum`);
       }
       if (config.medirMenu) {

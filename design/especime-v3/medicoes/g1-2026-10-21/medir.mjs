@@ -17,7 +17,7 @@ const inv = corre(['scripts/graficos-inventario.mjs', '--json', join(AQUI, 'inve
 const antes = JSON.parse(readFileSync(join(AQUI, 'inventario-antes.json'), 'utf8'));
 const depois = JSON.parse(readFileSync(join(AQUI, 'inventario-depois.json'), 'utf8'));
 const regua = corre(['tests/graficos/interacao.mjs']);
-const plantas = Object.fromEntries(['sem-marca', 'aria-label', 'sem-guiao'].map((n) => [n, corre(['tests/graficos/interacao.mjs', '--plantar', n])]));
+const plantas = Object.fromEntries(['sem-marca', 'aria-label', 'sem-guiao', 'serie-sem-camada', 'decorativo-sem-aria'].map((n) => [n, corre(['tests/graficos/interacao.mjs', '--plantar', n])]));
 /* A contagem estrita recomposta das categorias, com a mesma regra para os dois inventários: um desenho sem leitura ao
    toque e sem os valores escritos nele. O campo `semToque` do inventário de antes foi escrito por uma primeira forma
    da regra (sem os valores escritos fora de um grupo), antes de o guião ganhar as categorias; por isso não se lê. */
@@ -31,7 +31,8 @@ const medidas = {
     { nome: 'desenhos sem leitura ao toque e sem valores escritos (contagem estrita), depois', valor: estrita(depois), campo_semToque_do_guiao: depois.semToque, comando: 'recomposta de inventario-depois.json', conhecido_positivo: 'idem' },
     { nome: 'desenhos por categoria, antes e depois', valor: [antes.porCategoria, depois.porCategoria], comando: 'campo porCategoria', conhecido_positivo: 'o gráfico da inflação de / está em valores-escondidos' },
     { nome: 'desenhos no dist, antes e depois', valor: [antes.graficos, depois.graficos], comando: 'idem, campo graficos', conhecido_positivo: 'idem' },
-    { nome: 'check:graficos na cabeça', valor: regua.codigo, cauda: regua.cauda, comando: 'node tests/graficos/interacao.mjs', conhecido_positivo: 'as três plantas abaixo saem com 1' },
+    { nome: 'séries no tempo por sítio e forma, depois (a correção G1-b)', valor: Object.fromEntries(Object.entries(depois.componentes).filter(([c]) => c.startsWith('SerieDoPais')).map(([c, k]) => [c, k.graficos])), comando: 'campo componentes de inventario-depois.json', conhecido_positivo: 'pela mesma classificação, o dist de a743d51be dá 32 séries de cartão e 2 de página sem leitura (inventario-a743d51be-corrigido.json)' },
+    { nome: 'check:graficos na cabeça', valor: regua.codigo, cauda: regua.cauda, comando: 'node tests/graficos/interacao.mjs', conhecido_positivo: 'as cinco plantas abaixo saem com 1' },
     ...Object.entries(plantas).map(([n, r]) => ({ nome: `planta ${n}`, valor: r.codigo, cauda: r.cauda, comando: `node tests/graficos/interacao.mjs --plantar ${n}`, conhecido_positivo: 'morde quando sai com 1 e a cauda diz «mordeu»' })),
   ],
 };

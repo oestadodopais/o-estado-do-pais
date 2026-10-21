@@ -13,11 +13,16 @@
  *     `[data-ponto]` fora de uma zona de leitura), que é o caso em que o desenho não esconde número nenhum.
  * E põe cada desenho numa categoria, pela primeira que lhe sirva:
  *   · `documento`: dentro do corpo de um documento de estudo alojado, que é obra publicada e não um desenho do sítio;
+ *   · `decorativo`: com a marca explícita `data-grafico-decorativo` e `aria-hidden="true"`, um desenho cujos valores
+ *     estão escritos ao lado na página (a correção G1-b: a única isenção, e nunca adivinhada);
+ *   · `valores-escondidos`: uma série no tempo (`svg.serie-do-pais`, que mostra os seus pontos), ou um desenho com zonas
+ *     de leitura ou marcas de faixa, cujos valores só se leem ao interagir;
  *   · `escondido`: com `aria-hidden` nele ou num antepassado, um desenho que acompanha valores ditos no texto ao lado;
- *   · `valores-escondidos`: com zonas de leitura ou marcas de faixa, cujos valores só se leem ao interagir;
- *   · `valores-escritos`: com algarismos escritos no próprio desenho, à vista;
- *   · `sem-algarismos`: o resto (um mapa pintado com a legenda fora, o sinal do país, a miniatura de uma série num
- *     cartão, que é a porta para o recibo).
+ *   · `valores-escritos`: com os valores escritos como valores no próprio desenho (`[data-claim]` ou `[data-ponto]` fora
+ *     de uma zona de leitura), à vista; um algarismo de eixo (a escala) não conta (a correção G1-b, o achado 5 da
+ *     leitura do Codex: a primeira forma contava qualquer `text` com algarismos e escondia as 34 séries sem leitura);
+ *   · `algarismos-de-escala`: com algarismos só na escala, sem valores escritos;
+ *   · `sem-algarismos`: o resto (um mapa pintado com a legenda fora, o sinal do país).
  * Duas contagens de «sem toque»: a estrita (todo o desenho sem leitura ao toque, como o mandato a pede) e a que o
  * leitor sente (`semToqueComValoresEscondidos`: um desenho que esconde valores e não os mostra ao toque, a I230).
  *
@@ -44,7 +49,11 @@ function* paginas(dir) {
 export function componente(el) {
   const cls = (el.getAttribute('class') ?? '').split(/\s+/).filter(Boolean);
   if (el.hasAttribute('data-faixa-desenho')) return el.hasAttribute('data-toques') ? 'FaixaDosPaises' : 'FaixaDaUniao';
-  if (cls.includes('serie-do-pais')) return zonasDeLeitura(el) ? 'SerieDoPais (com leitura)' : 'SerieDoPais (porta)';
+  if (cls.includes('serie-do-pais')) {
+    const onde = el.closest?.('[data-cartao-serie]') ? 'cartão' : 'página';
+    if (decorativo(el)) return `SerieDoPais (${onde}, decorativo)`;
+    return zonasDeLeitura(el) ? `SerieDoPais (${onde}, com leitura)` : `SerieDoPais (${onde}, sem leitura)`;
+  }
   const forma = el.getAttribute('data-forma');
   if (forma) return `data-forma=${forma}`;
   if (cls.length) return `svg.${cls[0]}`;
@@ -56,6 +65,9 @@ export function componente(el) {
   return 'svg sem classe';
 }
 
+/** A marca decorativa explícita: as duas marcas juntas, nunca uma só. */
+export const decorativo = (el) => el.hasAttribute('data-grafico-decorativo') && el.getAttribute('aria-hidden') === 'true';
+
 export const zonasDeLeitura = (el) => el.querySelectorAll('g:not([data-eixo])').filter((g) => g.querySelector('rect') && g.querySelector('[data-ponto]')).length;
 
 export function estado(el) {
@@ -66,11 +78,14 @@ export function estado(el) {
   const toquesProprios = el.hasAttribute('data-toques');
   const focaveis = el.querySelectorAll('[tabindex]').filter((n) => n.getAttribute('tabindex') !== '-1' || n.hasAttribute('data-grafico-ponto')).length;
   const escritos = el.querySelectorAll('[data-claim], [data-ponto]').filter((n) => !n.closest('g:not([data-eixo])') || n.closest('g[data-eixo]')).length;
-  const escondidos = zonas + el.querySelectorAll('[data-faixa-marca]').length;
+  const serie = (el.getAttribute('class') ?? '').split(/\s+/).includes('serie-do-pais');
+  const escondidos = decorativo(el) ? 0 : zonas + el.querySelectorAll('[data-faixa-marca]').length + (serie && !zonas ? 1 : 0);
   const algarismos = el.querySelectorAll('text, tspan').some((n) => /\d/.test(n.textContent));
-  const categoria = escondidos > 0 ? 'valores-escondidos'
+  const categoria = decorativo(el) ? 'decorativo'
+    : escondidos > 0 ? 'valores-escondidos'
     : el.getAttribute('aria-hidden') === 'true' || el.closest?.('[aria-hidden="true"]') ? 'escondido'
-    : algarismos ? 'valores-escritos' : 'sem-algarismos';
+    : escritos > 0 ? 'valores-escritos'
+    : algarismos ? 'algarismos-de-escala' : 'sem-algarismos';
   return {
     categoria,
     rato: marcado || zonas > 0 || titulos > 1 || toquesProprios,

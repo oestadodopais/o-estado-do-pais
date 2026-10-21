@@ -719,15 +719,20 @@ planta('rp4c-formato-euro-numa-marca','tests/inicio/formato-dos-numeros.mjs',[
  ['salarios-pensoes-e-apoios/index.html',r=>{const t=r.querySelectorAll('svg[data-forma="serie-do-pais"] [data-eixo="valor"] text').find(x=>/\d\d/.test(x.textContent));t.set_content(`${t.textContent} €`);}]
 ],[/F5 · salarios-pensoes-e-apoios\/index\.html/]);
 
-/* RP4-c-b (05.10.2026, a decisão do lugar de direção sobre o peso, a I208): as zonas só onde a leitura vive. Uma zona
-   posta no desenho de um cartão (a porta para o recibo) e um recibo sem as suas zonas têm de ser recusados pela F21 do
-   `check:formas`, que lê a regra do sítio do desenho na página. Correm com as do RP4-c, por `--prefixo rp4c`. */
-planta('rp4cb-zonas-num-cartao','scripts/check-formas.mjs',[
- ['precos/index.html',r=>r.querySelector('[data-cartao-serie="serie-ipc-variacao-homologa"] svg[data-forma="serie-do-pais"]').insertAdjacentHTML('beforeend','<g><rect x="48" y="12" width="1" height="118"></rect><line x1="48" x2="48" y1="12" y2="130"></line><circle cx="48" cy="40" r="3"></circle><text x="222" y="22" text-anchor="end"><tspan data-ponto="serie-ipc-variacao-homologa#1992-01">9,41</tspan>\u00a0%<tspan x="222" dy="14" data-ponto-periodo="serie-ipc-variacao-homologa#1992-01">janeiro de 1992</tspan></text></g>')]
+/* RP4-c-b (05.10.2026, a decisão do lugar de direção sobre o peso, a I208), mudada pela correção G1-b (21.10.2026, o
+   achado 5 da leitura do Codex): os cartões levam a leitura, e só o desenho decorativo explícito não a leva. Uma zona
+   posta num desenho decorativo, um cartão sem as suas zonas e um recibo sem as suas têm de ser recusados pela F21 do
+   `check:formas`, que lê a regra da marca do desenho. Correm com as do RP4-c, por `--prefixo rp4c`. */
+planta('rp4cb-zonas-num-decorativo','scripts/check-formas.mjs',[
+ ['livro-razao/series/serie-remuneracao-bruta-mensal-media-real/index.html',r=>r.querySelector('svg[data-forma="serie-do-pais"][data-grafico-decorativo]').insertAdjacentHTML('beforeend','<g><rect x="48" y="12" width="1" height="118"></rect><line x1="48" x2="48" y1="12" y2="130"></line><circle cx="48" cy="40" r="3"></circle><text x="222" y="22" text-anchor="end"><tspan data-ponto="serie-ipc-variacao-homologa#1992-01">9,41</tspan>\u00a0%<tspan x="222" dy="14" data-ponto-periodo="serie-ipc-variacao-homologa#1992-01">janeiro de 1992</tspan></text></g>')]
 ],[/F21 · zonas de leitura num desenho que não as leva/]);
+/* G1-b (21.10.2026): o desenho de um cartão leva as zonas da leitura; um cartão sem elas é recusado. */
+planta('rp4cb-cartao-sem-zonas','scripts/check-formas.mjs',[
+ ['precos/index.html',r=>{for(const g of r.querySelector('[data-cartao-serie="serie-ipc-variacao-homologa"] svg[data-forma="serie-do-pais"]').childNodes.filter(n=>n.rawTagName==='g'&&n.getAttribute('data-eixo')===undefined))g.remove();}]
+],[/F21 · desenho sem as zonas de leitura/]);
 planta('rp4cb-recibo-sem-zonas','scripts/check-formas.mjs',[
  ['livro-razao/series/serie-ipc-variacao-homologa/index.html',r=>{for(const g of r.querySelector('svg[data-forma="serie-do-pais"]').childNodes.filter(n=>n.rawTagName==='g'&&n.getAttribute('data-eixo')===undefined))g.remove();}]
-],[/F21 · desenho sem as zonas de leitura fora da porta de um cartão/]);
+],[/F21 · desenho sem as zonas de leitura/]);
 /* R4 (05.10.2026): o recibo de cada linha abre com o nome do recibo e a frase «O que é este número». O portão de HTML
    conta a frase em cada recibo e a régua da voz confere o nome de uma família contra a declaração; as palavras da
    frase confere-as a K17 do `check:cartao`, com as suas plantas em memória. */

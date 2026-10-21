@@ -17,7 +17,13 @@
  * nome de uma série é o título do desenho), focável pelo teclado (só o último na ordem do tabulador; as setas andam
  * pelos outros) e com um `aria-label` que diz o período e o valor. O desenho com leitura deixa de ser `role="img"`,
  * que faria dos pontos focáveis filhos apresentacionais, e passa a `role="group"`. O guião comum acende o grupo ao
- * rato, ao toque, ao dedo que arrasta e ao foco; a folha acende-o também ao rato sem guião, como antes. */
+ * rato, ao toque, ao dedo que arrasta e ao foco; a folha acende-o também ao rato sem guião, como antes.
+ *
+ * A CORREÇÃO G1-b (21.10.2026, o achado 5 da leitura do Codex): os cartões pedem a leitura como os recibos (a porta
+ * passa a irmã do desenho, `CartaoDaMedida`), e o título pode levar um `id` (`idDoTitulo`) para dar nome à porta. Um
+ * desenho cujos valores estão escritos ao lado na página e não se podem ler ponto a ponto (o índice de duas séries de um
+ * recibo, cujos valores indexados não são linhas do livro-razão) pede `decorativo`: sai da árvore da acessibilidade
+ * (`aria-hidden`) com a marca explícita `data-grafico-decorativo`, que é a única isenção da régua dos gráficos. */
 import { serieDoPais, segmentoVisivel } from '../../lib/formas/serie-do-pais.mjs';
 import { tituloDaSerie, legendasDasExclusoes } from '../../lib/formas/palavras-da-serie.mjs';
 import { getSerie, pontoDaSerie } from '../../lib/series.mjs';
@@ -27,7 +33,7 @@ import PontoDaSerie from '../serie/PontoDaSerie.astro';
 import CampoDaSerie from '../serie/CampoDaSerie.astro';
 import '../../styles/serie-do-pais.css';
 
-const { ids, lang, modo = 'unidade', largura = 360, altura = 200, nomeVisivel = false, comLeitura = false } = Astro.props;
+const { ids, lang, modo = 'unidade', largura = 360, altura = 200, nomeVisivel = false, comLeitura = false, decorativo = false, idDoTitulo } = Astro.props;
 const desenho = serieDoPais(ids, modo, largura, altura, undefined, { leitura: comLeitura });
 const titulo = tituloDaSerie(desenho.linhas, lang, nomeVisivel);
 if (/\d/.test(titulo)) throw new Error('RP4: o título do desenho tem algarismos fora da escala.');
@@ -42,8 +48,8 @@ const valorDoPonto = (periodo) => String(pontoDaSerie(getSerie(daLeitura), perio
 const ultimaLeitura = desenho.leituras.length - 1;
 const unidade = desenho.legenda ? unidadeDaLinha(String(getSerie(ids[0]).unit), lang) : null;
 ---
-<svg class="serie-do-pais" style={`max-width: ${largura}px;`} data-titulo={nomeVisivel ? 'periodo-unidade' : 'nome-periodo'} data-forma="serie-do-pais" data-series={ids.join(',')} data-modo={modo} viewBox={`0 0 ${largura} ${altura}`} role={daLeitura ? 'group' : 'img'} data-grafico={daLeitura ? 'serie' : undefined}>
-  <title>{titulo}</title>
+<svg class="serie-do-pais" style={`max-width: ${largura}px;`} data-titulo={nomeVisivel ? 'periodo-unidade' : 'nome-periodo'} data-forma="serie-do-pais" data-series={ids.join(',')} data-modo={modo} viewBox={`0 0 ${largura} ${altura}`} role={daLeitura ? 'group' : 'img'} data-grafico={daLeitura ? 'serie' : undefined} aria-hidden={decorativo ? 'true' : undefined} data-grafico-decorativo={decorativo ? '' : undefined}>
+  <title id={idDoTitulo}>{titulo}</title>
   {desenho.marcasY.map((m) => <g data-eixo="valor">
     <line class:list={['serie-do-pais-guia', m.valor === 0 && 'serie-do-pais-zero']} x1={g.esquerda} x2={g.direita} y1={m.y} y2={m.y} />
     <text data-nonledger="escala-de-instrumento" x={m.x} y={m.y} text-anchor="end" dominant-baseline="middle">{m.texto}</text>
