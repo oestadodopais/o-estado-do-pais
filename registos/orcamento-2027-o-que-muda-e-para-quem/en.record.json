@@ -3823,75 +3823,75 @@
   {
    "figures": [
     {
-     "end": 194,
+     "end": 154,
      "printed": "−263",
      "row": "der-oe2027-medidas-anteriores-receita",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 190,
+     "start": 150,
      "value": "-263"
     },
     {
-     "end": 227,
+     "end": 187,
      "printed": "947",
      "row": "der-oe2027-medidas-anteriores-despesa",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 224,
+     "start": 184,
      "value": "947"
     },
     {
-     "end": 258,
+     "end": 218,
      "printed": "−1,210",
      "row": "der-oe2027-medidas-anteriores-saldo",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 252,
+     "start": 212,
      "value": "-1210"
     },
     {
-     "end": 416,
+     "end": 376,
      "printed": "79",
      "row": "der-oe2027-medidas-novas-saldo",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 414,
+     "start": 374,
      "value": "79"
     },
     {
-     "end": 496,
+     "end": 456,
      "printed": "−1,131",
      "row": "der-oe2027-medidas-soma-derivadas",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 490,
+     "start": 450,
      "value": "-1131"
     },
     {
-     "end": 531,
+     "end": 491,
      "printed": "−1,132",
      "row": "pm-q3-2-r26-c0",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 525,
+     "start": 485,
      "value": "-1 132"
     },
     {
-     "end": 567,
+     "end": 527,
      "printed": "947",
      "row": "der-oe2027-medidas-anteriores-despesa",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 564,
+     "start": 524,
      "value": "947"
     },
     {
-     "end": 591,
+     "end": 551,
      "printed": "948",
      "row": "pm-q3-2-r20-c0",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 588,
+     "start": 548,
      "value": "948"
     }
    ],
@@ -3908,90 +3908,90 @@
      "tipo": "excerto"
     },
     {
-     "fim": 194,
+     "fim": 154,
      "id": "der-oe2027-medidas-anteriores-receita",
-     "inicio": 190,
+     "inicio": 150,
      "livro": "PM",
      "sha256_linha": "db30f1192aae5bd26dc5437bfb8b1589e709424e4ce8966d64b783a8b1192053",
      "texto": "−263",
      "tipo": "valor"
     },
     {
-     "fim": 227,
+     "fim": 187,
      "id": "der-oe2027-medidas-anteriores-despesa",
-     "inicio": 224,
+     "inicio": 184,
      "livro": "PM",
      "sha256_linha": "bd9fd70453da62d5fca9d955298004e91cbcb4cf96f879395853b4fdee61442a",
      "texto": "947",
      "tipo": "valor"
     },
     {
-     "fim": 258,
+     "fim": 218,
      "id": "der-oe2027-medidas-anteriores-saldo",
-     "inicio": 252,
+     "inicio": 212,
      "livro": "PM",
      "sha256_linha": "8e78bc3136e025951e1fbd3b8f0cc189d6d3296e1221a245b29a6c6ff31ccb13",
      "texto": "−1,210",
      "tipo": "valor"
     },
     {
-     "fim": 416,
+     "fim": 376,
      "id": "der-oe2027-medidas-novas-saldo",
-     "inicio": 414,
+     "inicio": 374,
      "livro": "PM",
      "sha256_linha": "41e77955995db5ba5531e8d3be8bff1f88e4797eb0269e015912c8eba77c13a0",
      "texto": "79",
      "tipo": "valor"
     },
     {
-     "fim": 496,
+     "fim": 456,
      "id": "der-oe2027-medidas-soma-derivadas",
-     "inicio": 490,
+     "inicio": 450,
      "livro": "PM",
      "sha256_linha": "33d6c63e7b9684933d4c3c10ebac576cb7205a38e82a0a80bc7772c08428ebe8",
      "texto": "−1,131",
      "tipo": "valor"
     },
     {
-     "fim": 531,
+     "fim": 491,
      "id": "pm-q3-2-r26-c0",
-     "inicio": 525,
+     "inicio": 485,
      "livro": "PM",
      "sha256_linha": "22824bcdd679d6a176f9bc2528118a60f75e10c4d1901dda5a251d6c9dcde4dc",
      "texto": "−1,132",
      "tipo": "valor"
     },
     {
-     "fim": 567,
+     "fim": 527,
      "id": "der-oe2027-medidas-anteriores-despesa",
-     "inicio": 564,
+     "inicio": 524,
      "livro": "PM",
      "sha256_linha": "bd9fd70453da62d5fca9d955298004e91cbcb4cf96f879395853b4fdee61442a",
      "texto": "947",
      "tipo": "valor"
     },
     {
-     "fim": 591,
+     "fim": 551,
      "id": "pm-q3-2-r20-c0",
-     "inicio": 588,
+     "inicio": 548,
      "livro": "PM",
      "sha256_linha": "d17ce95a9414de1823bc5a739214515d7e8e87365589c384dfcb2d3ea7b6aa54",
      "texto": "948",
      "tipo": "valor"
     },
     {
-     "fim": 976,
+     "fim": 936,
      "id": "utao-novas-saldo",
-     "inicio": 628,
+     "inicio": 588,
      "livro": "PM",
      "sha256_linha": "0ac3f3fbb603b2b4f1fe6dcb3e8a4aa81eace904211c9055bdf7248fa883497e",
      "texto": "O MF prevê que em 2027 as novas medidas de política orçamental tenham um impacto residual no saldo orçamental avaliado em +79 M€ (+0,02% do PIB). Na receita, estas medidas terão um impacto positivo no saldo de +179 M€ (+0,05% do PIB); na despesa, o impacto das medidas, é negativo em 100 M€ (0,03% do PIB). Estes dados estão compilados na Tabela 9.",
      "tipo": "excerto"
     },
     {
-     "fim": 1895,
+     "fim": 1855,
      "id": "utao-novas-medidas",
-     "inicio": 1038,
+     "inicio": 998,
      "livro": "PM",
      "sha256_linha": "a7fafa8b66936163227f5325337daa4dc4bfc98487a7a9e71fbf9c73d46a41d5",
      "texto": "À semelhança do observado nas Propostas de Orçamento do Estado dos dois anos anteriores, a POE/2027 apresenta um número reduzido de novas medidas e um impacto agregado limitado sobre o saldo orçamental. O Quadro 3.2 do relatório da POE/2027 identifica apenas três novas medidas. Uma das justificações prende-se com a estratégia do Governo de adotar medidas de política orçamental fora do âmbito do Orçamento do Estado e previamente à sua apresentação, como sucedeu, por exemplo, com a redução em 1 p.p. da taxa de IRC e da taxa de IRS sobre rendas moderadas (de 25% para 10%). Após a sua adoção, estas medidas passam a integrar o cenário de políticas invariantes. Neste contexto, o reduzido impacto orçamental das novas medidas indica que o cenário orçamental para 2027 assenta essencialmente nos efeitos das medidas permanentes adotadas em anos anteriores.",
@@ -4010,7 +4010,7 @@
     "utao-novas-saldo",
     "utao-novas-medidas"
    ],
-   "text": "The table marks ten of its lines with «(i)», and the table's note says what the mark is: «Nota: (i) invariante.» The UTAO describes that scenario below. Added up, the marked lines are worth −263 million euros in revenue and 947 million in expenditure, −1,210 million on the balance. The three unmarked lines, the fight against fuel fraud, the exemption threshold and the Solidarity Supplement for the Elderly, add 79 million to the balance. The table's lines are rounded: the two sums give −1,131 million against the table's −1,132, and the three staff lines give 947 against the printed 948. The UTAO reaches the same number: «O MF prevê que em 2027 as novas medidas de política orçamental tenham um impacto residual no saldo orçamental avaliado em +79 M€ (+0,02% do PIB). Na receita, estas medidas terão um impacto positivo no saldo de +179 M€ (+0,05% do PIB); na despesa, o impacto das medidas, é negativo em 100 M€ (0,03% do PIB). Estes dados estão compilados na Tabela 9.» And says why, in its reading of the Budget proposal (POE): «À semelhança do observado nas Propostas de Orçamento do Estado dos dois anos anteriores, a POE/2027 apresenta um número reduzido de novas medidas e um impacto agregado limitado sobre o saldo orçamental. O Quadro 3.2 do relatório da POE/2027 identifica apenas três novas medidas. Uma das justificações prende-se com a estratégia do Governo de adotar medidas de política orçamental fora do âmbito do Orçamento do Estado e previamente à sua apresentação, como sucedeu, por exemplo, com a redução em 1 p.p. da taxa de IRC e da taxa de IRS sobre rendas moderadas (de 25% para 10%). Após a sua adoção, estas medidas passam a integrar o cenário de políticas invariantes. Neste contexto, o reduzido impacto orçamental das novas medidas indica que o cenário orçamental para 2027 assenta essencialmente nos efeitos das medidas permanentes adotadas em anos anteriores.»"
+   "text": "The table marks ten of its lines with «(i)», and the table's note says what the mark is: «Nota: (i) invariante.» Added up, the marked lines are worth −263 million euros in revenue and 947 million in expenditure, −1,210 million on the balance. The three unmarked lines, the fight against fuel fraud, the exemption threshold and the Solidarity Supplement for the Elderly, add 79 million to the balance. The table's lines are rounded: the two sums give −1,131 million against the table's −1,132, and the three staff lines give 947 against the printed 948. The UTAO reaches the same number: «O MF prevê que em 2027 as novas medidas de política orçamental tenham um impacto residual no saldo orçamental avaliado em +79 M€ (+0,02% do PIB). Na receita, estas medidas terão um impacto positivo no saldo de +179 M€ (+0,05% do PIB); na despesa, o impacto das medidas, é negativo em 100 M€ (0,03% do PIB). Estes dados estão compilados na Tabela 9.» And says why, in its reading of the Budget proposal (POE): «À semelhança do observado nas Propostas de Orçamento do Estado dos dois anos anteriores, a POE/2027 apresenta um número reduzido de novas medidas e um impacto agregado limitado sobre o saldo orçamental. O Quadro 3.2 do relatório da POE/2027 identifica apenas três novas medidas. Uma das justificações prende-se com a estratégia do Governo de adotar medidas de política orçamental fora do âmbito do Orçamento do Estado e previamente à sua apresentação, como sucedeu, por exemplo, com a redução em 1 p.p. da taxa de IRC e da taxa de IRS sobre rendas moderadas (de 25% para 10%). Após a sua adoção, estas medidas passam a integrar o cenário de políticas invariantes. Neste contexto, o reduzido impacto orçamental das novas medidas indica que o cenário orçamental para 2027 assenta essencialmente nos efeitos das medidas permanentes adotadas em anos anteriores.»"
   },
   {
    "figures": [],

@@ -389,21 +389,21 @@ edicoes:
     lang: "pt"
     title: "O Orçamento de 2027: o que muda e para quem"
     origin: "researchhub"
-    origin_ref: "content/27 Orcamento 2027 O que muda/O Orçamento de 2027, o que muda e para quem (pt-PT).html @ 42813f9dbcca2814c51c5b234b5d7e619366d10b"
+    origin_ref: "content/27 Orcamento 2027 O que muda/O Orçamento de 2027, o que muda e para quem (pt-PT).html @ 56628b4193ad04db434581e69ced564c3fa3aa0e"
     raw_file: "_raw/orcamento-2027-o-que-muda-e-para-quem.pt.html"
-    fetched_utc: "2026-10-21T06:27:54Z"
-    bytes_raw: 47364
-    bytes_normalized: 47364
-    sha256_raw: "dd27011d97cc7e0f3ebfb86d888106df1bb8a6ac83499a00136882b4765b03a2"
-    sha256_normalized: "dd27011d97cc7e0f3ebfb86d888106df1bb8a6ac83499a00136882b4765b03a2"
+    fetched_utc: "2026-10-21T08:18:39Z"
+    bytes_raw: 47326
+    bytes_normalized: 47326
+    sha256_raw: "97fb771c2f8bed4193f2bcd6633967203ad6f68fc41cdafb7035af370f102a2a"
+    sha256_normalized: "97fb771c2f8bed4193f2bcd6633967203ad6f68fc41cdafb7035af370f102a2a"
   - slug: orcamento-2027-o-que-muda-e-para-quem
     lang: "en"
     title: "The 2027 Budget: what changes, and for whom"
     origin: "researchhub"
-    origin_ref: "content/27 Orcamento 2027 O que muda/The 2027 Budget, what changes, and for whom.html @ 42813f9dbcca2814c51c5b234b5d7e619366d10b"
+    origin_ref: "content/27 Orcamento 2027 O que muda/The 2027 Budget, what changes, and for whom.html @ b7da85cc843d3ce00f69ff43bd666fda100992ce"
     raw_file: "_raw/orcamento-2027-o-que-muda-e-para-quem.en.html"
-    fetched_utc: "2026-10-21T06:27:54Z"
-    bytes_raw: 46803
-    bytes_normalized: 46803
-    sha256_raw: "031c2ff27b466c194b0d0f0d6928219d8625296e167bc7caf419ae2deefc5315"
-    sha256_normalized: "031c2ff27b466c194b0d0f0d6928219d8625296e167bc7caf419ae2deefc5315"
+    fetched_utc: "2026-10-21T08:18:39Z"
+    bytes_raw: 46763
+    bytes_normalized: 46763
+    sha256_raw: "eb77d5f73016b45c939a17f0502dd074ffc5740f8a3173ef0debe36d32093979"
+    sha256_normalized: "eb77d5f73016b45c939a17f0502dd074ffc5740f8a3173ef0debe36d32093979"
