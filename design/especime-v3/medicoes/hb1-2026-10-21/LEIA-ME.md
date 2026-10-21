@@ -268,3 +268,52 @@ A sétima corrida, sobre `6bd0f865`, teve build 0, verify 1 e typecheck 0. Resto
 A causa de I9 foi a passagem de uma árvore só com o corpo, da qual já tinham sido retirados todos os scripts. A régua recebe agora o HTML bruto da página e analisa também o cabeçalho. O teste dirigido usa o mesmo argumento da chamada real: as duas edições passaram, e as duas cópias sem scripts foram recusadas; os dois controlos e as sete adulterações de publicação continuam a passar. O registo é [hb1b-i9-integracao-html.log](correcao-hb1b/testes-parciais/hb1b-i9-integracao-html.log).
 
 O pedido seguinte foi recusado antes de construir, com código 9: a ligação dos testes de HTML real a `check:datas` chegou depois do commit `47a03262`. A alteração foi comitada antes de repetir os portões; não houve corrida parcial nessa tentativa. O comando integrado passou em [hb1b-i9-integracao-datas.log](correcao-hb1b/testes-parciais/hb1b-i9-integracao-datas.log).
+
+### Provas da correção entregue
+
+A cabeça de código do sítio é `3474743dc3d1b3241a584c58141f3fa53f5bc08e`; o motor é `e8d6f79ebbcb1bf4ed65f889d073d354f9e6603e`. Os portões do sítio começaram e acabaram com a árvore limpa e a mesma cabeça. O motor não mudou depois da corrida integral verde conservada em `portoes-diagnostico-1`. O commit que acrescenta este fecho contém apenas o relatório e os seus registos; a reconferência desse commit é separada, conforme HB1-34.
+
+| Conferência | Código | Prova |
+| --- | ---: | --- |
+| Build | 0 | [portoes-finais/build.codigo](correcao-hb1b/portoes-finais/build.codigo) |
+| npm run verify inteiro | 0 | [portoes-finais/verify.codigo](correcao-hb1b/portoes-finais/verify.codigo) |
+| Typecheck | 0 | [portoes-finais/typecheck.codigo](correcao-hb1b/portoes-finais/typecheck.codigo) |
+| check:series com RESEARCHHUB_DIR | 0 | [extracoes-finais/series.codigo](correcao-hb1b/extracoes-finais/series.codigo) |
+| check:cruzamento --with-origin | 0 | [extracoes-finais/cruzamento.codigo](correcao-hb1b/extracoes-finais/cruzamento.codigo) |
+| Plantas do inventário | 0 | [extracoes-finais/inventario-prova.codigo](correcao-hb1b/extracoes-finais/inventario-prova.codigo) |
+| Inventário do HTML | 0 | [extracoes-finais/inventario.codigo](correcao-hb1b/extracoes-finais/inventario.codigo) |
+| Extração das frases | 0 | [extracoes-finais/frases.codigo](correcao-hb1b/extracoes-finais/frases.codigo) |
+| Extração dos recibos | 0 | [extracoes-finais/recibos.codigo](correcao-hb1b/extracoes-finais/recibos.codigo) |
+| core.gate do motor | 0 | [motor.codigo](correcao-hb1b/portoes-diagnostico-1/motor.codigo) |
+| Capturas e conferência de resumos e geometria | 0 | [validacao.json](correcao-hb1b/capturas-finais/validacao.json) |
+
+As frases desta passagem, nas duas edições, estão em [frases-e-recibos.md](correcao-hb1b/extracoes-finais/frases-e-recibos.md), extraídas do HTML, e no [JSON das frases](correcao-hb1b/extracoes-finais/frases-do-sitio.json). O mesmo anexo inclui três recibos Eurostat, três INE e três derivados, tal como renderizam nas duas línguas; o [JSON dos recibos](correcao-hb1b/extracoes-finais/recibos.json) conserva os campos separadamente. A conferência exige a mesma cabeça nas duas extrações.
+
+O [inventário final](correcao-hb1b/extracoes-finais/inventario-rotulos.json) e a [sua prova](correcao-hb1b/extracoes-finais/inventario-rotulos-prova.json) foram refeitos deste HTML. [publicacao-html.json](correcao-hb1b/extracoes-finais/publicacao-html.json) confirma as duas edições em preparação, sem data publicada e com `Draft`. Os avisos globais do cruzamento relativos aos livros 20 e 24 continuam registados; não representam diferença nas linhas exportadas.
+
+### Plantas novas
+
+| Alteração deliberada | Vermelho | Controlo verde |
+| --- | ---: | ---: |
+| dia inglês | 1 | 0 |
+| mês inglês | 1 | 0 |
+| intervalo inglês | 1 | 0 |
+| data SITE published_at | 1 | 0 |
+| atribuição inglesa alterada | 1 | 0 |
+| partido trocado de grupo (pt) | 1 | 0 |
+| partido omitido (pt) | 1 | 0 |
+| partido trocado de grupo (en) | 1 | 0 |
+| partido omitido (en) | 1 | 0 |
+| Publicação declarada anterior ao commit de entrada | 1 | 0 |
+
+Os resultados e as mensagens de recusa estão em [plantas.json](correcao-hb1b/plantas.json). Os testes integrados acrescentam as sete adulterações de publicação e as duas cópias das páginas reais sem JSON-LD. As alterações deliberadas foram feitas em cópias, sem deixar estragos na produção.
+
+### Capturas e limites do fecho
+
+O [pedido](correcao-hb1b/capturas-finais/pedido.json) e o [manifesto](correcao-hb1b/capturas-finais/capturas.json) cobrem as quatro rotas, as duas edições e as cinco larguras. Foram medidas 20 capturas completas e 120 PNG no total. Todos os resumos dos PNG e dos recursos servidos foram conferidos; não houve transbordos horizontais, pedidos externos nem erros do navegador. Nenhum PNG entra no commit.
+
+A [revisão visual](correcao-hb1b/capturas-finais/revisao-visual.json) enumera apenas as imagens efetivamente vistas e separa essa amostra da conferência automática de todos os ficheiros. As frases mandatadas com objeções factuais continuam assinaladas em HB1-29; portões verdes não as tornam conclusões demonstradas.
+
+A HB1-c de 23.10.2026 continua por fazer: preços locais e rendas, razão Lisboa/país, juro implícito novo, calendário no passado, data declarada, contador de edições, portões, capturas e leitura curta antes da aterragem. Esta passagem não publicou nem enviou commits para o remoto.
+
+A sessão não expôs uma contagem de símbolos ou de tokens usados. Não foi estimada nem inventada; o custo em pontos fica a cargo do lançador.

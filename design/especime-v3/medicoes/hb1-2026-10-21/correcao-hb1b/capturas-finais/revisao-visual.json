@@ -1,0 +1,384 @@
+{
+  "cabeca": "3474743dc3d1b3241a584c58141f3fa53f5bc08e",
+  "codigo": 0,
+  "imagens_vistas": 34,
+  "ficheiros": [
+    {
+      "ficheiro": "estudo-pt-390-titulo.png",
+      "largura": 334,
+      "altura": 61,
+      "sha256": "3a9b5b6d9f948788f48bc84afa922e9227ec69ecb031535051c4f5fbdde012ca"
+    },
+    {
+      "ficheiro": "estudo-en-1600-titulo.png",
+      "largura": 494,
+      "altura": 90,
+      "sha256": "8acb10255a5218f9633443faa896e04d5008bb03023690c7d00fe9aac251e4f5"
+    },
+    {
+      "ficheiro": "documento-pt-390-titulo.png",
+      "largura": 350,
+      "altura": 77,
+      "sha256": "5b6784bfb56a74521544da99a32402a621dc9024301a49214ab062f6e257a743"
+    },
+    {
+      "ficheiro": "documento-en-1600-titulo.png",
+      "largura": 864,
+      "altura": 39,
+      "sha256": "e85d44e2ca36430f0de08067fa7ec886792d4d9eb18e5fbcd5051cae464f8885"
+    },
+    {
+      "ficheiro": "documento-en-390-lei.png",
+      "largura": 350,
+      "altura": 623,
+      "sha256": "1ab34a20c2a4082e7a5de7cf3c1408f063768b802c8534b446085627ad64495a"
+    },
+    {
+      "ficheiro": "documento-pt-1600-lei.png",
+      "largura": 864,
+      "altura": 261,
+      "sha256": "c79af653f4d81e240748d6796c4e5699debfaccc1cc6314eec547f97deb9a50c"
+    },
+    {
+      "ficheiro": "estudo-pt-390-rua.png",
+      "largura": 354,
+      "altura": 1877,
+      "sha256": "a4b73273c1170ce338a88f6529272b479cfa25414663d375541a1ad0cecb8575"
+    },
+    {
+      "ficheiro": "estudo-en-1600-precos-locais.png",
+      "largura": 544,
+      "altura": 344,
+      "sha256": "d2fd5f47effcf552033ed6542a4b0bcfbab28539a656d51f66c40cb02ce7aeb8"
+    },
+    {
+      "ficheiro": "estudo-pt-1600.png",
+      "largura": 1600,
+      "altura": 20875,
+      "sha256": "7e74ca59d93e5584648da35cb6a7537fe9dfabb9d8a03720bc07b519a5e6f42a"
+    },
+    {
+      "ficheiro": "documento-en-390.png",
+      "largura": 390,
+      "altura": 19276,
+      "sha256": "93666a6213b9f821ab18e67af4c2f66e44c69c0ea3aebd0813c79ffd3b55acae"
+    },
+    {
+      "ficheiro": "estudo-pt-390-resumo.png",
+      "largura": 354,
+      "altura": 701,
+      "sha256": "629b7c70445c60f8db2e3ac84414ee07ff6ebfe40afa5f261d44cb49e2022909"
+    },
+    {
+      "ficheiro": "estudo-pt-768-resumo.png",
+      "largura": 545,
+      "altura": 530,
+      "sha256": "dcdc63487164bd7a55cd3bd6844c8cdfe8b6b9dad765bef20e7996d780080ade"
+    },
+    {
+      "ficheiro": "estudo-pt-1024-resumo.png",
+      "largura": 545,
+      "altura": 530,
+      "sha256": "ea9e454a36c8fcba53d55f004d90e8006b3bac55916ca0228d7bbfa2d9046a33"
+    },
+    {
+      "ficheiro": "estudo-pt-1280-resumo.png",
+      "largura": 544,
+      "altura": 530,
+      "sha256": "c863cc49d7da4217f7a5c477488611c32d99cf71d826dcc8bbccb1938d9be097"
+    },
+    {
+      "ficheiro": "estudo-pt-1600-resumo.png",
+      "largura": 544,
+      "altura": 530,
+      "sha256": "c863cc49d7da4217f7a5c477488611c32d99cf71d826dcc8bbccb1938d9be097"
+    },
+    {
+      "ficheiro": "estudo-pt-390-lei.png",
+      "largura": 354,
+      "altura": 729,
+      "sha256": "d108e007c3d740dc2a70694ae8e07af7ce5896c6305a200c5032b39e21899db7"
+    },
+    {
+      "ficheiro": "estudo-pt-1600-lei.png",
+      "largura": 544,
+      "altura": 548,
+      "sha256": "c9b702ec7f513517a01792878696ff6817566458494bff8b3201f917db4a448a"
+    },
+    {
+      "ficheiro": "estudo-en-390-resumo.png",
+      "largura": 354,
+      "altura": 673,
+      "sha256": "8c9ef78d105d62c1e75d8e4f11ecb6bae2fddc8e6950e1c60fd9efbcb1256c0f"
+    },
+    {
+      "ficheiro": "estudo-en-768-resumo.png",
+      "largura": 545,
+      "altura": 498,
+      "sha256": "98503ba0512a2dba316af14929ccdca6d3e5ba9c505d8982cdcf29bd3e1b6384"
+    },
+    {
+      "ficheiro": "estudo-en-1024-resumo.png",
+      "largura": 545,
+      "altura": 498,
+      "sha256": "1a68de07ed76d2b77d2ae309217d5fb0a1c258db52d9029331ab12d7f86f2ee6"
+    },
+    {
+      "ficheiro": "estudo-en-1280-resumo.png",
+      "largura": 544,
+      "altura": 498,
+      "sha256": "e24fb93e95a9898c96a2e056514f112fc9ec201ae17ce6785d635f3a6e3770c7"
+    },
+    {
+      "ficheiro": "estudo-en-1600-resumo.png",
+      "largura": 544,
+      "altura": 498,
+      "sha256": "e24fb93e95a9898c96a2e056514f112fc9ec201ae17ce6785d635f3a6e3770c7"
+    },
+    {
+      "ficheiro": "estudo-en-390-rua.png",
+      "largura": 354,
+      "altura": 1961,
+      "sha256": "2750dc4517b8a1d0074076a546f1e9ec54a1a8daa500f7e0811f4979cc10fa54"
+    },
+    {
+      "ficheiro": "estudo-en-1600-rua.png",
+      "largura": 544,
+      "altura": 1460,
+      "sha256": "ea7e12e5d7998ad253bff45f508cb8c8997d14c38b7d0e614c45d4d1d6dd38a7"
+    },
+    {
+      "ficheiro": "documento-pt-390-resumo.png",
+      "largura": 350,
+      "altura": 519,
+      "sha256": "51cef4775e58ca65062264439886bd33dd2bd09d0806dae0faf23420c7d2f4e4"
+    },
+    {
+      "ficheiro": "documento-en-390-resumo.png",
+      "largura": 350,
+      "altura": 493,
+      "sha256": "709184947bb402316d332f5b250932cdee2f280c75a259a2c94c917922fcc5f4"
+    },
+    {
+      "ficheiro": "documento-pt-768-resumo.png",
+      "largura": 728,
+      "altura": 260,
+      "sha256": "1f802de8c64792e8fa797fd3d00ef542097ce8dd16de200cd18a278f513f203d"
+    },
+    {
+      "ficheiro": "documento-en-768-resumo.png",
+      "largura": 728,
+      "altura": 234,
+      "sha256": "825b27111a3612048ac686e404656ee406b07da908cb742769d5973829081cbb"
+    },
+    {
+      "ficheiro": "documento-pt-1024-resumo.png",
+      "largura": 864,
+      "altura": 208,
+      "sha256": "d1ceba91266bf459fc48c81e6698aed6aba28bdc334dc43035cf3643fc8deee6"
+    },
+    {
+      "ficheiro": "documento-en-1024-resumo.png",
+      "largura": 864,
+      "altura": 208,
+      "sha256": "b659807e64641888fbf58afc6a065fe523a219ed9287404983a0d8f9412c9d32"
+    },
+    {
+      "ficheiro": "documento-pt-1280-resumo.png",
+      "largura": 864,
+      "altura": 208,
+      "sha256": "d1ceba91266bf459fc48c81e6698aed6aba28bdc334dc43035cf3643fc8deee6"
+    },
+    {
+      "ficheiro": "documento-en-1280-resumo.png",
+      "largura": 864,
+      "altura": 208,
+      "sha256": "b659807e64641888fbf58afc6a065fe523a219ed9287404983a0d8f9412c9d32"
+    },
+    {
+      "ficheiro": "documento-pt-1600-resumo.png",
+      "largura": 864,
+      "altura": 208,
+      "sha256": "d1ceba91266bf459fc48c81e6698aed6aba28bdc334dc43035cf3643fc8deee6"
+    },
+    {
+      "ficheiro": "documento-en-1600-resumo.png",
+      "largura": 864,
+      "altura": 208,
+      "sha256": "b659807e64641888fbf58afc6a065fe523a219ed9287404983a0d8f9412c9d32"
+    }
+  ],
+  "revisoes": [
+    {
+      "revisor": "root",
+      "cabeca": "3474743dc3d1b3241a584c58141f3fa53f5bc08e",
+      "ficheiros": [
+        {
+          "ficheiro": "estudo-pt-390-titulo.png",
+          "largura": 334,
+          "altura": 61,
+          "sha256": "3a9b5b6d9f948788f48bc84afa922e9227ec69ecb031535051c4f5fbdde012ca"
+        },
+        {
+          "ficheiro": "estudo-en-1600-titulo.png",
+          "largura": 494,
+          "altura": 90,
+          "sha256": "8acb10255a5218f9633443faa896e04d5008bb03023690c7d00fe9aac251e4f5"
+        },
+        {
+          "ficheiro": "documento-pt-390-titulo.png",
+          "largura": 350,
+          "altura": 77,
+          "sha256": "5b6784bfb56a74521544da99a32402a621dc9024301a49214ab062f6e257a743"
+        },
+        {
+          "ficheiro": "documento-en-1600-titulo.png",
+          "largura": 864,
+          "altura": 39,
+          "sha256": "e85d44e2ca36430f0de08067fa7ec886792d4d9eb18e5fbcd5051cae464f8885"
+        },
+        {
+          "ficheiro": "documento-en-390-lei.png",
+          "largura": 350,
+          "altura": 623,
+          "sha256": "1ab34a20c2a4082e7a5de7cf3c1408f063768b802c8534b446085627ad64495a"
+        },
+        {
+          "ficheiro": "documento-pt-1600-lei.png",
+          "largura": 864,
+          "altura": 261,
+          "sha256": "c79af653f4d81e240748d6796c4e5699debfaccc1cc6314eec547f97deb9a50c"
+        },
+        {
+          "ficheiro": "estudo-pt-390-rua.png",
+          "largura": 354,
+          "altura": 1877,
+          "sha256": "a4b73273c1170ce338a88f6529272b479cfa25414663d375541a1ad0cecb8575"
+        },
+        {
+          "ficheiro": "estudo-en-1600-precos-locais.png",
+          "largura": 544,
+          "altura": 344,
+          "sha256": "d2fd5f47effcf552033ed6542a4b0bcfbab28539a656d51f66c40cb02ce7aeb8"
+        },
+        {
+          "ficheiro": "estudo-pt-1600.png",
+          "largura": 1600,
+          "altura": 20875,
+          "sha256": "7e74ca59d93e5584648da35cb6a7537fe9dfabb9d8a03720bc07b519a5e6f42a"
+        },
+        {
+          "ficheiro": "documento-en-390.png",
+          "largura": 390,
+          "altura": 19276,
+          "sha256": "93666a6213b9f821ab18e67af4c2f66e44c69c0ea3aebd0813c79ffd3b55acae"
+        }
+      ],
+      "observacoes": [
+        "Os oito recortes foram vistos e permitem ler o título e os parágrafos sem cortes laterais, sobreposições ou caracteres tapados.",
+        "A secção da rua é longa no telemóvel, mas mantém a ordem e as linhas legíveis.",
+        "As duas imagens completas serviram apenas para observar a distribuição geral dos blocos e margens; a escala reduzida não permite conferir nelas todas as palavras."
+      ],
+      "falhas": []
+    },
+    {
+      "revisor": "compositor",
+      "cabeca": "3474743dc3d1b3241a584c58141f3fa53f5bc08e",
+      "metodo": "Inspeção visual dos sete PNG abertos por view_image, sem inferência sobre ficheiros não vistos.",
+      "ficheiros_vistos": [
+        "estudo-pt-390-resumo.png",
+        "estudo-pt-768-resumo.png",
+        "estudo-pt-1024-resumo.png",
+        "estudo-pt-1280-resumo.png",
+        "estudo-pt-1600-resumo.png",
+        "estudo-pt-390-lei.png",
+        "estudo-pt-1600-lei.png"
+      ],
+      "observacoes": [
+        {
+          "ficheiros": [
+            "estudo-pt-390-resumo.png",
+            "estudo-pt-768-resumo.png",
+            "estudo-pt-1024-resumo.png",
+            "estudo-pt-1280-resumo.png",
+            "estudo-pt-1600-resumo.png"
+          ],
+          "texto": "O parágrafo do resumo está completo nos cinco recortes, com texto e valores legíveis. As quebras adaptam-se à largura estreita; as marcas de fonte, menores que a prosa, não se sobrepõem às letras ou aos valores. Não observei linhas cortadas nem texto fora do recorte."
+        },
+        {
+          "ficheiros": [
+            "estudo-pt-390-lei.png",
+            "estudo-pt-1600-lei.png"
+          ],
+          "texto": "O parágrafo da lei está completo nas duas larguras vistas. Citações, números de artigos, valores e frase final do PS permanecem legíveis, sem sobreposição ou truncamento visível."
+        }
+      ],
+      "falhas": [],
+      "limites": [
+        "A inspeção cobre apenas os sete recortes portugueses enumerados, não páginas completas, outras larguras da lei, edições inglesas ou navegação.",
+        "A inspeção visual não mede contraste nem tamanho de alvos de interação e não certifica acessibilidade."
+      ]
+    },
+    {
+      "revisor": "fontes",
+      "cabeca": "3474743dc3d1b3241a584c58141f3fa53f5bc08e",
+      "ficheiros_vistos": [
+        "estudo-en-390-resumo.png",
+        "estudo-en-768-resumo.png",
+        "estudo-en-1024-resumo.png",
+        "estudo-en-1280-resumo.png",
+        "estudo-en-1600-resumo.png",
+        "estudo-en-390-rua.png",
+        "estudo-en-1600-rua.png"
+      ],
+      "metodo": "Inspeção visual dos sete recortes, abertos individualmente com view_image.",
+      "observacoes": [
+        {
+          "ficheiros": [
+            "estudo-en-390-resumo.png",
+            "estudo-en-768-resumo.png",
+            "estudo-en-1024-resumo.png",
+            "estudo-en-1280-resumo.png",
+            "estudo-en-1600-resumo.png"
+          ],
+          "texto": "O parágrafo inicial mantém texto e valores legíveis em todas as larguras observadas. As quebras de linha acomodam a coluna; não observei palavras cortadas nas margens, linhas sobrepostas ou elementos a cobrir o texto. As portas SOURCE têm corpo menor e contraste inferior ao texto principal, mas continuam legíveis nos recortes."
+        },
+        {
+          "ficheiros": [
+            "estudo-en-390-rua.png",
+            "estudo-en-1600-rua.png"
+          ],
+          "texto": "O parágrafo da rua é longo e denso, sobretudo na largura estreita, mas as linhas e as citações permanecem separadas e legíveis até ao fim do recorte. Não observei cortes laterais, sobreposições ou conteúdo oculto. Os nomes e cargos em inglês integram-se no fluxo do texto."
+        }
+      ],
+      "falhas": [],
+      "limites": "Esta inspeção cobre apenas os sete recortes enumerados. Não verifica cabeçalhos, restantes parágrafos, navegação, funcionamento das portas ou capturas integrais."
+    },
+    {
+      "revisor": "sitio",
+      "cabeca": "3474743dc3d1b3241a584c58141f3fa53f5bc08e",
+      "ficheiros_vistos": [
+        "documento-pt-390-resumo.png",
+        "documento-en-390-resumo.png",
+        "documento-pt-768-resumo.png",
+        "documento-en-768-resumo.png",
+        "documento-pt-1024-resumo.png",
+        "documento-en-1024-resumo.png",
+        "documento-pt-1280-resumo.png",
+        "documento-en-1280-resumo.png",
+        "documento-pt-1600-resumo.png",
+        "documento-en-1600-resumo.png"
+      ],
+      "metodo": "Cada imagem foi aberta e vista por view_image. Inspeção visual dos recortes fornecidos, sem navegador.",
+      "observacoes": [
+        "O primeiro parágrafo do resumo está legível nas duas edições e nas cinco larguras inspecionadas.",
+        "Não observei caracteres cortados nas margens, linhas sobrepostas ou perda do final do parágrafo nos recortes vistos.",
+        "Na largura estreita, o texto recompõe-se em linhas mais curtas; nas larguras maiores, a coluna mantém uma largura limitada.",
+        "Os recortes mostram apenas o primeiro parágrafo do resumo. Esta inspeção não cobre o restante documento nem a sua posição na página inteira."
+      ],
+      "falhas": []
+    }
+  ],
+  "falhas": [],
+  "limite": "Inspeção visual apenas das imagens enumeradas. A conferência automática abrange todos os PNG; não foi feita leitura visual de todos eles."
+}
