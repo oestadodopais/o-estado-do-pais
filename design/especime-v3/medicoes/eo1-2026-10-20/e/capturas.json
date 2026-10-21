@@ -1,0 +1,2203 @@
+{
+  "cabeca": "c0fafc555e11a896ea8c13f080d5dacd707826f3",
+  "capturador_sha256": "909d23e15ab7fcb8bf855152503900aaeff0579b8b62da7aa1f1311b1268ecb1",
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "resultados": [
+    {
+      "ficheiro": "estudo-pt-390.png",
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 36342,
+      "sha256": "37fa40a2cbe0c21ca39ba21fdfafb5e2f692c4617a10e8dd6ea22dd67e4eabd7",
+      "recortes": [
+        {
+          "ficheiro": "estudo-pt-390-titulo.png",
+          "seletor": "[data-registo-unidade$=\"#0\"]",
+          "origem": "estudo-pt-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 299,
+            "width": 334,
+            "height": 61
+          },
+          "sha256": "d6425d81794bac9503e247f58f2ea58b51e8590ab9c687b7a74df72cfd9df194"
+        },
+        {
+          "ficheiro": "estudo-pt-390-resumo.png",
+          "seletor": "[data-registo-unidade$=\"#3\"]",
+          "origem": "estudo-pt-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 999,
+            "width": 354,
+            "height": 1009
+          },
+          "sha256": "4eaecead2b0b2dad24e3798ce88ae3d9165791bb12cd30e03472f3ac63233ddb"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "estudo-pt-768.png",
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 28885,
+      "sha256": "6860657bb4b039d64d3085762d27cb3e53ea037644c998b1445d8224b06d0885",
+      "recortes": [
+        {
+          "ficheiro": "estudo-pt-768-titulo.png",
+          "seletor": "[data-registo-unidade$=\"#0\"]",
+          "origem": "estudo-pt-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 267,
+            "width": 380,
+            "height": 70
+          },
+          "sha256": "6cf18b9ba815f0c70458e06c85f435f2c92fa070bf0af361f01b243d6b22765e"
+        },
+        {
+          "ficheiro": "estudo-pt-768-resumo.png",
+          "seletor": "[data-registo-unidade$=\"#3\"]",
+          "origem": "estudo-pt-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 898,
+            "width": 545,
+            "height": 766
+          },
+          "sha256": "fcbc94c12fb3b7af3c94be8c8c96c6d94a35ebd855b9fc933db2c920d23b0c0e"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "estudo-pt-1024.png",
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 28128,
+      "sha256": "9ffba1ac06dfc1a90c825682b817aa9f93be32792d40ec5f2497cebb10922d71",
+      "recortes": [
+        {
+          "ficheiro": "estudo-pt-1024-titulo.png",
+          "seletor": "[data-registo-unidade$=\"#0\"]",
+          "origem": "estudo-pt-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 239,
+            "width": 495,
+            "height": 91
+          },
+          "sha256": "47b260889cff0b9f65e9a5d3a727b85ef8bc401f416e69e63224b9b6b7e8bf69"
+        },
+        {
+          "ficheiro": "estudo-pt-1024-resumo.png",
+          "seletor": "[data-registo-unidade$=\"#3\"]",
+          "origem": "estudo-pt-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 915,
+            "width": 545,
+            "height": 767
+          },
+          "sha256": "c11febe2c0ef5d49ee8128fe7c1c58cab29dff57e95444d5083ff133ad327396"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "estudo-pt-1280.png",
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 28296,
+      "sha256": "b4e41052cc7f5fd9c07bcb8189f0b07bcf500c8b4ec4d042179ce333f46addcc",
+      "recortes": [
+        {
+          "ficheiro": "estudo-pt-1280-titulo.png",
+          "seletor": "[data-registo-unidade$=\"#0\"]",
+          "origem": "estudo-pt-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 240,
+            "width": 494,
+            "height": 90
+          },
+          "sha256": "31575d943ea6ce6e1167b2b85f364e606d820e48c5e60d1ef6a0ffde546e971b"
+        },
+        {
+          "ficheiro": "estudo-pt-1280-resumo.png",
+          "seletor": "[data-registo-unidade$=\"#3\"]",
+          "origem": "estudo-pt-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 921,
+            "width": 544,
+            "height": 767
+          },
+          "sha256": "308866e1e54d9be2c785c94d34d8fb17a302cd507c4dd59a9b1f7852b64f7421"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "estudo-pt-1600.png",
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 28303,
+      "sha256": "8d05b7f8ca04e91d3e4197ff8613dfc42b8e10cbb8a07ddba9eb80728a10bf73",
+      "recortes": [
+        {
+          "ficheiro": "estudo-pt-1600-titulo.png",
+          "seletor": "[data-registo-unidade$=\"#0\"]",
+          "origem": "estudo-pt-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 240,
+            "width": 494,
+            "height": 90
+          },
+          "sha256": "31575d943ea6ce6e1167b2b85f364e606d820e48c5e60d1ef6a0ffde546e971b"
+        },
+        {
+          "ficheiro": "estudo-pt-1600-resumo.png",
+          "seletor": "[data-registo-unidade$=\"#3\"]",
+          "origem": "estudo-pt-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 921,
+            "width": 544,
+            "height": 767
+          },
+          "sha256": "308866e1e54d9be2c785c94d34d8fb17a302cd507c4dd59a9b1f7852b64f7421"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "estudo-en-390.png",
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 36580,
+      "sha256": "bdb69c83651a3338e25deafbaf0812e9843099147c6c41fbf03c3be2eccde0b1",
+      "recortes": [
+        {
+          "ficheiro": "estudo-en-390-titulo.png",
+          "seletor": "[data-registo-unidade$=\"#0\"]",
+          "origem": "estudo-en-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 299,
+            "width": 334,
+            "height": 61
+          },
+          "sha256": "ef20c6fdfb32bb24f1e643aa7909e1ba7ec4bbc30b17c308ed3f9893f0956fa6"
+        },
+        {
+          "ficheiro": "estudo-en-390-resumo.png",
+          "seletor": "[data-registo-unidade$=\"#3\"]",
+          "origem": "estudo-en-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 999,
+            "width": 354,
+            "height": 1009
+          },
+          "sha256": "f0319a29b2c1f7d05200ead174db97d6a477c96b4247c6a6b8a57baa65fb3fb6"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "estudo-en-768.png",
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 29072,
+      "sha256": "e58787d14bd9a39d4423c71700fbe563502eba7286c50ee44029279cd13d8a63",
+      "recortes": [
+        {
+          "ficheiro": "estudo-en-768-titulo.png",
+          "seletor": "[data-registo-unidade$=\"#0\"]",
+          "origem": "estudo-en-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 267,
+            "width": 380,
+            "height": 70
+          },
+          "sha256": "aebafd1baecd97811b7e4eabf7ab59da7af99b0c9d86ca3a268d4cf9ea4cba85"
+        },
+        {
+          "ficheiro": "estudo-en-768-resumo.png",
+          "seletor": "[data-registo-unidade$=\"#3\"]",
+          "origem": "estudo-en-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 867,
+            "width": 545,
+            "height": 736
+          },
+          "sha256": "594827962f91e86983a893cf54fcd0435476264c3fd6bb6b9693730d38b9ceb9"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "estudo-en-1024.png",
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 28315,
+      "sha256": "59cd7e7a01fc1ca30e16af1541e481d7e460875f786292ed4c2f36fe3bb37af4",
+      "recortes": [
+        {
+          "ficheiro": "estudo-en-1024-titulo.png",
+          "seletor": "[data-registo-unidade$=\"#0\"]",
+          "origem": "estudo-en-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 239,
+            "width": 495,
+            "height": 91
+          },
+          "sha256": "49886b76cff2138cf3f0d7f8d7d606b15999f4e5bd735d9a0289fe65b2b473fe"
+        },
+        {
+          "ficheiro": "estudo-en-1024-resumo.png",
+          "seletor": "[data-registo-unidade$=\"#3\"]",
+          "origem": "estudo-en-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 885,
+            "width": 545,
+            "height": 735
+          },
+          "sha256": "9cae0d8cfa321b759709defd9fa76965e4b418790c0d923c688dc4ec9b8e6f78"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "estudo-en-1280.png",
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 28453,
+      "sha256": "544d6dfca7f213db80eb2067c9c0aa2c411047f08bf60fc3d6de556cc4b8e9c9",
+      "recortes": [
+        {
+          "ficheiro": "estudo-en-1280-titulo.png",
+          "seletor": "[data-registo-unidade$=\"#0\"]",
+          "origem": "estudo-en-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 240,
+            "width": 494,
+            "height": 90
+          },
+          "sha256": "d4c21f5973f23baa3ba7c380d8189e3b4d92986c120899de04811cf7aaa348ba"
+        },
+        {
+          "ficheiro": "estudo-en-1280-resumo.png",
+          "seletor": "[data-registo-unidade$=\"#3\"]",
+          "origem": "estudo-en-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 891,
+            "width": 544,
+            "height": 735
+          },
+          "sha256": "0dfdb93652a1b2a9d6aa577e9c72b323623f2e7f30877265b5312667fa0cdff5"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "estudo-en-1600.png",
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 28459,
+      "sha256": "4a37780e6ed7d7889e606846150b44290ebde363fd6d5d9741a2ed3fffe72576",
+      "recortes": [
+        {
+          "ficheiro": "estudo-en-1600-titulo.png",
+          "seletor": "[data-registo-unidade$=\"#0\"]",
+          "origem": "estudo-en-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 240,
+            "width": 494,
+            "height": 90
+          },
+          "sha256": "d4c21f5973f23baa3ba7c380d8189e3b4d92986c120899de04811cf7aaa348ba"
+        },
+        {
+          "ficheiro": "estudo-en-1600-resumo.png",
+          "seletor": "[data-registo-unidade$=\"#3\"]",
+          "origem": "estudo-en-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 891,
+            "width": 544,
+            "height": 735
+          },
+          "sha256": "0dfdb93652a1b2a9d6aa577e9c72b323623f2e7f30877265b5312667fa0cdff5"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "documento-pt-390.png",
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/documento/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 27319,
+      "sha256": "9ec43a84fc7db7ca3dc543d63314c72045448a8d9f89bb759a6b1ae51ef38385",
+      "recortes": [
+        {
+          "ficheiro": "documento-pt-390-titulo.png",
+          "seletor": "[data-oedp-moldura] h1",
+          "origem": "documento-pt-390.png",
+          "caixa": {
+            "left": 20,
+            "top": 216,
+            "width": 350,
+            "height": 115
+          },
+          "sha256": "f737692de5744af4659a2fb569b17347d8782a518e166a56dcc21e8d3a4a4766"
+        },
+        {
+          "ficheiro": "documento-pt-390-resumo.png",
+          "seletor": "[data-oedp-moldura] p:nth-of-type(2)",
+          "origem": "documento-pt-390.png",
+          "caixa": {
+            "left": 20,
+            "top": 810,
+            "width": 350,
+            "height": 856
+          },
+          "sha256": "d64044343df9463bc193b6ce000524ae1cd53e791b4513e07fac5784ff322e1b"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "documento-pt-768.png",
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/documento/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 13976,
+      "sha256": "9eb781b0f975eebf2de89c26c45ac14e80464660f4bedcbad7d4dd6c0786a0e1",
+      "recortes": [
+        {
+          "ficheiro": "documento-pt-768-titulo.png",
+          "seletor": "[data-oedp-moldura] h1",
+          "origem": "documento-pt-768.png",
+          "caixa": {
+            "left": 20,
+            "top": 110,
+            "width": 728,
+            "height": 76
+          },
+          "sha256": "8e5a884285555b8fb8eaa2f0e27380709802d4900aec19e962a8618aa4ca0937"
+        },
+        {
+          "ficheiro": "documento-pt-768-resumo.png",
+          "seletor": "[data-oedp-moldura] p:nth-of-type(2)",
+          "origem": "documento-pt-768.png",
+          "caixa": {
+            "left": 20,
+            "top": 483,
+            "width": 728,
+            "height": 390
+          },
+          "sha256": "3c864e97c01ea96bbe697a7b891d7461fcfb496d5a0ba62d61240fd7a963318a"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "documento-pt-1024.png",
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/documento/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 904,
+      "altura": 12098,
+      "sha256": "d8b2cc8a65979e97035bee9283775fbe71c720808e16c1f48879e317a87abbd9",
+      "recortes": [
+        {
+          "ficheiro": "documento-pt-1024-titulo.png",
+          "seletor": "[data-oedp-moldura] h1",
+          "origem": "documento-pt-1024.png",
+          "caixa": {
+            "left": 80,
+            "top": 117,
+            "width": 864,
+            "height": 39
+          },
+          "sha256": "c4d69ee69afd242469bb2c500fda7c3bcc63fe8345657a6623b2582b886d1210"
+        },
+        {
+          "ficheiro": "documento-pt-1024-resumo.png",
+          "seletor": "[data-oedp-moldura] p:nth-of-type(2)",
+          "origem": "documento-pt-1024.png",
+          "caixa": {
+            "left": 80,
+            "top": 427,
+            "width": 864,
+            "height": 338
+          },
+          "sha256": "85346dda023421652a5fa3c955a7b32db0427d6c969fcf4c412c8083cda99ce6"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "documento-pt-1280.png",
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/documento/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 904,
+      "altura": 12098,
+      "sha256": "949727c6bec62ce53c434394c723bec86fb2f7f71f40554817919d891f24c6c3",
+      "recortes": [
+        {
+          "ficheiro": "documento-pt-1280-titulo.png",
+          "seletor": "[data-oedp-moldura] h1",
+          "origem": "documento-pt-1280.png",
+          "caixa": {
+            "left": 208,
+            "top": 117,
+            "width": 864,
+            "height": 39
+          },
+          "sha256": "c4d69ee69afd242469bb2c500fda7c3bcc63fe8345657a6623b2582b886d1210"
+        },
+        {
+          "ficheiro": "documento-pt-1280-resumo.png",
+          "seletor": "[data-oedp-moldura] p:nth-of-type(2)",
+          "origem": "documento-pt-1280.png",
+          "caixa": {
+            "left": 208,
+            "top": 427,
+            "width": 864,
+            "height": 338
+          },
+          "sha256": "85346dda023421652a5fa3c955a7b32db0427d6c969fcf4c412c8083cda99ce6"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "documento-pt-1600.png",
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/documento/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 904,
+      "altura": 12098,
+      "sha256": "40e30d16d1d4dd6e9db6ed98c8fad7b61b4b37a2914e3367bc256cb5de9c027b",
+      "recortes": [
+        {
+          "ficheiro": "documento-pt-1600-titulo.png",
+          "seletor": "[data-oedp-moldura] h1",
+          "origem": "documento-pt-1600.png",
+          "caixa": {
+            "left": 368,
+            "top": 117,
+            "width": 864,
+            "height": 39
+          },
+          "sha256": "c4d69ee69afd242469bb2c500fda7c3bcc63fe8345657a6623b2582b886d1210"
+        },
+        {
+          "ficheiro": "documento-pt-1600-resumo.png",
+          "seletor": "[data-oedp-moldura] p:nth-of-type(2)",
+          "origem": "documento-pt-1600.png",
+          "caixa": {
+            "left": 368,
+            "top": 427,
+            "width": 864,
+            "height": 338
+          },
+          "sha256": "85346dda023421652a5fa3c955a7b32db0427d6c969fcf4c412c8083cda99ce6"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "documento-en-390.png",
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/document/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 27074,
+      "sha256": "3eff1a93582cd5abb27b537078de72cf8d5fb4a8299e8442f939c2f8950e915f",
+      "recortes": [
+        {
+          "ficheiro": "documento-en-390-titulo.png",
+          "seletor": "[data-oedp-moldura] h1",
+          "origem": "documento-en-390.png",
+          "caixa": {
+            "left": 20,
+            "top": 197,
+            "width": 350,
+            "height": 115
+          },
+          "sha256": "32e0aac5bfd5bd80b16e6e0319b57bb27af434caf2d8213c2d28eca361386bd5"
+        },
+        {
+          "ficheiro": "documento-en-390-resumo.png",
+          "seletor": "[data-oedp-moldura] p:nth-of-type(2)",
+          "origem": "documento-en-390.png",
+          "caixa": {
+            "left": 20,
+            "top": 790,
+            "width": 350,
+            "height": 804
+          },
+          "sha256": "a871448d778110b6e3c2b52f6e22d88566b4975995f5dccdc62a813d5d791c5b"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "documento-en-768.png",
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/document/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 13903,
+      "sha256": "74f1a086300afca7c5b6f695a71dbcd89a22c32f4fd6cbdf8caef559c51c50df",
+      "recortes": [
+        {
+          "ficheiro": "documento-en-768-titulo.png",
+          "seletor": "[data-oedp-moldura] h1",
+          "origem": "documento-en-768.png",
+          "caixa": {
+            "left": 20,
+            "top": 110,
+            "width": 728,
+            "height": 38
+          },
+          "sha256": "c788c632515eb5467c2f6c132e80bd4fc74d643b337683495cfc6239031f191d"
+        },
+        {
+          "ficheiro": "documento-en-768-resumo.png",
+          "seletor": "[data-oedp-moldura] p:nth-of-type(2)",
+          "origem": "documento-en-768.png",
+          "caixa": {
+            "left": 20,
+            "top": 445,
+            "width": 728,
+            "height": 390
+          },
+          "sha256": "7148da437c8960ae031ed4cba79378b8d6f1e48038eb87c9915d509870e6fa50"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "documento-en-1024.png",
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/document/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 904,
+      "altura": 12098,
+      "sha256": "343bbf23f7d693e1f4188dbd1cc871b26945a00a0dc331c0f73788e78b93124a",
+      "recortes": [
+        {
+          "ficheiro": "documento-en-1024-titulo.png",
+          "seletor": "[data-oedp-moldura] h1",
+          "origem": "documento-en-1024.png",
+          "caixa": {
+            "left": 80,
+            "top": 117,
+            "width": 864,
+            "height": 39
+          },
+          "sha256": "7402773cc59509b0f61d8a588ecedb533be4d0baf46bade114852302acfab9e8"
+        },
+        {
+          "ficheiro": "documento-en-1024-resumo.png",
+          "seletor": "[data-oedp-moldura] p:nth-of-type(2)",
+          "origem": "documento-en-1024.png",
+          "caixa": {
+            "left": 80,
+            "top": 427,
+            "width": 864,
+            "height": 312
+          },
+          "sha256": "80bc8fcd81b7b038eae4a827bc3918936a8a7062697c50cab4b0b4a7a04d9daa"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "documento-en-1280.png",
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/document/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 904,
+      "altura": 12098,
+      "sha256": "719a7b258b36e51580a27b02e2f9ab807c85f0e7c91843623ef57ba0d9101642",
+      "recortes": [
+        {
+          "ficheiro": "documento-en-1280-titulo.png",
+          "seletor": "[data-oedp-moldura] h1",
+          "origem": "documento-en-1280.png",
+          "caixa": {
+            "left": 208,
+            "top": 117,
+            "width": 864,
+            "height": 39
+          },
+          "sha256": "7402773cc59509b0f61d8a588ecedb533be4d0baf46bade114852302acfab9e8"
+        },
+        {
+          "ficheiro": "documento-en-1280-resumo.png",
+          "seletor": "[data-oedp-moldura] p:nth-of-type(2)",
+          "origem": "documento-en-1280.png",
+          "caixa": {
+            "left": 208,
+            "top": 427,
+            "width": 864,
+            "height": 312
+          },
+          "sha256": "80bc8fcd81b7b038eae4a827bc3918936a8a7062697c50cab4b0b4a7a04d9daa"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "documento-en-1600.png",
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/document/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 904,
+      "altura": 12098,
+      "sha256": "99d5f88c03384023725531fd73dc30e08d3ce07044955ac201e089ad7e2ed788",
+      "recortes": [
+        {
+          "ficheiro": "documento-en-1600-titulo.png",
+          "seletor": "[data-oedp-moldura] h1",
+          "origem": "documento-en-1600.png",
+          "caixa": {
+            "left": 368,
+            "top": 117,
+            "width": 864,
+            "height": 39
+          },
+          "sha256": "7402773cc59509b0f61d8a588ecedb533be4d0baf46bade114852302acfab9e8"
+        },
+        {
+          "ficheiro": "documento-en-1600-resumo.png",
+          "seletor": "[data-oedp-moldura] p:nth-of-type(2)",
+          "origem": "documento-en-1600.png",
+          "caixa": {
+            "left": 368,
+            "top": 427,
+            "width": 864,
+            "height": 312
+          },
+          "sha256": "80bc8fcd81b7b038eae4a827bc3918936a8a7062697c50cab4b0b4a7a04d9daa"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "derivada-pt-390.png",
+      "rota": "/livro-razao/der-rmmg-2026-2027-pct/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 2734,
+      "sha256": "a49f511237b0ab61df1116d06a248cebc82f8ff15a8ae036b5210e438ae087a1",
+      "recortes": [
+        {
+          "ficheiro": "derivada-pt-390-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "origem": "derivada-pt-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 295,
+            "width": 354,
+            "height": 358
+          },
+          "sha256": "5a78ffb93870916a58fc6457679df85e96d69c1173522a2b67dc9bb159da8200"
+        },
+        {
+          "ficheiro": "derivada-pt-390-conta.png",
+          "seletor": "[data-linha-campo=\"derivation\"]",
+          "origem": "derivada-pt-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 873,
+            "width": 350,
+            "height": 70
+          },
+          "sha256": "3d7e2f9e836755d8b76516b0b2ed4f6efae5d6ab922ace3acf14c92a376b97d0"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "derivada-pt-768.png",
+      "rota": "/livro-razao/der-rmmg-2026-2027-pct/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 2498,
+      "sha256": "09643ae1765b92d7f68358c9ef79f5807662c80f8e27d1102327ca17308295ea",
+      "recortes": [
+        {
+          "ficheiro": "derivada-pt-768-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "origem": "derivada-pt-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 260,
+            "width": 545,
+            "height": 366
+          },
+          "sha256": "166320578072365c3c7e82d8230a81bc1ffc0909c7a5083ae86b549c2ffc84dd"
+        },
+        {
+          "ficheiro": "derivada-pt-768-conta.png",
+          "seletor": "[data-linha-campo=\"derivation\"]",
+          "origem": "derivada-pt-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 844,
+            "width": 698,
+            "height": 49
+          },
+          "sha256": "84774fb22c34a27bc6d0fb574fe447bc504b5b2b9c4628239465f7f9333a380c"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "derivada-pt-1024.png",
+      "rota": "/livro-razao/der-rmmg-2026-2027-pct/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 1747,
+      "sha256": "e1f1f6e49f603e59221c6d355743f20b361488fee1fc2ed9a15923d976b972d3",
+      "recortes": [
+        {
+          "ficheiro": "derivada-pt-1024-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "origem": "derivada-pt-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 229,
+            "width": 545,
+            "height": 403
+          },
+          "sha256": "7e22879af1110cbeba3423e85a329f7ee0a005f1288c854910809ffe476f607d"
+        },
+        {
+          "ficheiro": "derivada-pt-1024-conta.png",
+          "seletor": "[data-linha-campo=\"derivation\"]",
+          "origem": "derivada-pt-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 867,
+            "width": 543,
+            "height": 74
+          },
+          "sha256": "c5b28d2f36d184d501ecd30e74dbb3be2c67011d18ddd9380b6395c6466f0ab7"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "derivada-pt-1280.png",
+      "rota": "/livro-razao/der-rmmg-2026-2027-pct/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 1782,
+      "sha256": "06a5ec7fb7616d15cb6d5d6ba904ccd5fea65d3fc56a07ebe84f0234e6b3d121",
+      "recortes": [
+        {
+          "ficheiro": "derivada-pt-1280-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "origem": "derivada-pt-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 230,
+            "width": 544,
+            "height": 414
+          },
+          "sha256": "88a1c2fd69937c23fb855344a9e8ecfdbd9a11505133704bc5c9bd552b1d3aa9"
+        },
+        {
+          "ficheiro": "derivada-pt-1280-conta.png",
+          "seletor": "[data-linha-campo=\"derivation\"]",
+          "origem": "derivada-pt-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 887,
+            "width": 542,
+            "height": 74
+          },
+          "sha256": "a98a9e84e234a77ddb9cd1beaf804d069afd5ed47e648f5f6f05879810b59cb9"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "derivada-pt-1600.png",
+      "rota": "/livro-razao/der-rmmg-2026-2027-pct/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 1788,
+      "sha256": "2db9aaa9eb28246e5f5952619ccccf8fae97745e229a0e8d656b622a28c068b1",
+      "recortes": [
+        {
+          "ficheiro": "derivada-pt-1600-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "origem": "derivada-pt-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 230,
+            "width": 544,
+            "height": 414
+          },
+          "sha256": "88a1c2fd69937c23fb855344a9e8ecfdbd9a11505133704bc5c9bd552b1d3aa9"
+        },
+        {
+          "ficheiro": "derivada-pt-1600-conta.png",
+          "seletor": "[data-linha-campo=\"derivation\"]",
+          "origem": "derivada-pt-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 887,
+            "width": 542,
+            "height": 74
+          },
+          "sha256": "a98a9e84e234a77ddb9cd1beaf804d069afd5ed47e648f5f6f05879810b59cb9"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "derivada-en-390.png",
+      "rota": "/en/ledger/der-rmmg-2026-2027-pct/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 2782,
+      "sha256": "84b729028ca3332148ab6c036d0d04de80c713b0af0795abcb99d1861f42a98d",
+      "recortes": [
+        {
+          "ficheiro": "derivada-en-390-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "origem": "derivada-en-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 295,
+            "width": 354,
+            "height": 358
+          },
+          "sha256": "03c5ee4bd95c569242e6396833d2ce6a1e885476c3c3c4f451e0c3fb1e87b895"
+        },
+        {
+          "ficheiro": "derivada-en-390-conta.png",
+          "seletor": "[data-linha-campo=\"derivation\"]",
+          "origem": "derivada-en-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 873,
+            "width": 348,
+            "height": 70
+          },
+          "sha256": "8f03b6beb770fbfd3c487443600485bb655918c984427625673d7536490214e9"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "derivada-en-768.png",
+      "rota": "/en/ledger/der-rmmg-2026-2027-pct/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 2498,
+      "sha256": "1f8d26109e92183d6e1765301d14baea352dfc0500c0328693e0e93e05be1bea",
+      "recortes": [
+        {
+          "ficheiro": "derivada-en-768-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "origem": "derivada-en-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 260,
+            "width": 545,
+            "height": 366
+          },
+          "sha256": "1c517208325634cca005e38c8e8bf946fe730c5dfa54baf9b80d44e6191edb29"
+        },
+        {
+          "ficheiro": "derivada-en-768-conta.png",
+          "seletor": "[data-linha-campo=\"derivation\"]",
+          "origem": "derivada-en-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 844,
+            "width": 706,
+            "height": 49
+          },
+          "sha256": "116d2aab4b2380c015cd03672901d508c3b0084070a53f34093b230d98213fed"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "derivada-en-1024.png",
+      "rota": "/en/ledger/der-rmmg-2026-2027-pct/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 1747,
+      "sha256": "4773df36daccd18ce3feccdfc480701ef40636122a0769dfafa220dfde680faf",
+      "recortes": [
+        {
+          "ficheiro": "derivada-en-1024-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "origem": "derivada-en-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 229,
+            "width": 545,
+            "height": 403
+          },
+          "sha256": "829a7be18b80be26a477da9a95ece3b8475ee4e3610404cf61cd6ea049ab4116"
+        },
+        {
+          "ficheiro": "derivada-en-1024-conta.png",
+          "seletor": "[data-linha-campo=\"derivation\"]",
+          "origem": "derivada-en-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 867,
+            "width": 540,
+            "height": 74
+          },
+          "sha256": "a6dc665bb7bca36114cb5305c23f84a23eb12e00bbfa4a4ff8a24a57279c4557"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "derivada-en-1280.png",
+      "rota": "/en/ledger/der-rmmg-2026-2027-pct/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 1782,
+      "sha256": "7bad94cc9c9a72874ded9d45f77b61386533e26dab4c8847ad3d3abaca97b44a",
+      "recortes": [
+        {
+          "ficheiro": "derivada-en-1280-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "origem": "derivada-en-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 230,
+            "width": 544,
+            "height": 414
+          },
+          "sha256": "0e62a4a2b7dcfc23a38c21314f3cd40383eb8c18ec45bd90bd258d1ad9b5a27c"
+        },
+        {
+          "ficheiro": "derivada-en-1280-conta.png",
+          "seletor": "[data-linha-campo=\"derivation\"]",
+          "origem": "derivada-en-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 887,
+            "width": 539,
+            "height": 74
+          },
+          "sha256": "ec829b3949432e27c39aac2d6f1aefdc994c8a558436d5929bc88a781d8a10bc"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "derivada-en-1600.png",
+      "rota": "/en/ledger/der-rmmg-2026-2027-pct/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 1788,
+      "sha256": "23df6b9732a175e1d6fbdca14d0cfb553864ebee6eb23c345399fc963e6732a7",
+      "recortes": [
+        {
+          "ficheiro": "derivada-en-1600-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "origem": "derivada-en-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 230,
+            "width": 544,
+            "height": 414
+          },
+          "sha256": "0e62a4a2b7dcfc23a38c21314f3cd40383eb8c18ec45bd90bd258d1ad9b5a27c"
+        },
+        {
+          "ficheiro": "derivada-en-1600-conta.png",
+          "seletor": "[data-linha-campo=\"derivation\"]",
+          "origem": "derivada-en-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 887,
+            "width": 539,
+            "height": 74
+          },
+          "sha256": "ec829b3949432e27c39aac2d6f1aefdc994c8a558436d5929bc88a781d8a10bc"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "imprensa-pt-390.png",
+      "rota": "/livro-razao/posicao-be-rendimentos/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3308,
+      "sha256": "366a7d44cb987f8494ca81000eb18e1443622446c2cb141bb3ca6ae680ca6f15",
+      "recortes": [
+        {
+          "ficheiro": "imprensa-pt-390-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "origem": "imprensa-pt-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 277,
+            "width": 354,
+            "height": 451
+          },
+          "sha256": "32e39cd4dfdb5904faaa5c7e0a1c3b0555e414c2062e5c27b65dd2b1711dc8ff"
+        },
+        {
+          "ficheiro": "imprensa-pt-390-estado.png",
+          "seletor": ".aparelho-estado",
+          "origem": "imprensa-pt-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 2339,
+            "width": 354,
+            "height": 99
+          },
+          "sha256": "f0f82d4ee9e875627c9aead02c8d8e88e6207f6aa15489c6b870f1da352cd8a3"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "imprensa-pt-768.png",
+      "rota": "/livro-razao/posicao-be-rendimentos/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 2894,
+      "sha256": "ae6bf28fc63b28f972771464ed7253a8c26de6213d7b60942aea85de2825ebd8",
+      "recortes": [
+        {
+          "ficheiro": "imprensa-pt-768-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "origem": "imprensa-pt-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 260,
+            "width": 545,
+            "height": 362
+          },
+          "sha256": "f8160c1aa6246d60fc887ae49ea8aae58f8894d9a59cf3a253e836d495e0f4ee"
+        },
+        {
+          "ficheiro": "imprensa-pt-768-estado.png",
+          "seletor": ".aparelho-estado",
+          "origem": "imprensa-pt-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 2041,
+            "width": 708,
+            "height": 79
+          },
+          "sha256": "3cfd526b827a089e5fc87458749a07355c82757ea7d02547817fef6a64dddfd6"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "imprensa-pt-1024.png",
+      "rota": "/livro-razao/posicao-be-rendimentos/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2256,
+      "sha256": "6f62e3d48f4bd8f0e2336302902e35aac87bce52a8b294c09055c140ed1e051a",
+      "recortes": [
+        {
+          "ficheiro": "imprensa-pt-1024-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "origem": "imprensa-pt-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 229,
+            "width": 545,
+            "height": 379
+          },
+          "sha256": "32290922bb7511f801dbec7deeb8957f6d39e3151f38644ae51d61f683f90993"
+        },
+        {
+          "ficheiro": "imprensa-pt-1024-estado.png",
+          "seletor": ".aparelho-estado",
+          "origem": "imprensa-pt-1024.png",
+          "caixa": {
+            "left": 625,
+            "top": 1439,
+            "width": 301,
+            "height": 99
+          },
+          "sha256": "28ddbbefe91daf05d4ac1eed24d30b3974c653bfcdb7fdd1ed64dcb22f7bab06"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "imprensa-pt-1280.png",
+      "rota": "/livro-razao/posicao-be-rendimentos/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2283,
+      "sha256": "14ccd5a276693d94601f784ec08c2f2faac56700675450892804c6f6b37b6296",
+      "recortes": [
+        {
+          "ficheiro": "imprensa-pt-1280-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "origem": "imprensa-pt-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 230,
+            "width": 544,
+            "height": 382
+          },
+          "sha256": "cc47870f025890e68fc023e7b2cafa670aec8e482d49cab63075a311bd639cf9"
+        },
+        {
+          "ficheiro": "imprensa-pt-1280-estado.png",
+          "seletor": ".aparelho-estado",
+          "origem": "imprensa-pt-1280.png",
+          "caixa": {
+            "left": 689,
+            "top": 1448,
+            "width": 301,
+            "height": 99
+          },
+          "sha256": "a5a44cd2ff9844495afa3a85bf70b6b8c565d74e22a43bdd5a1f397a6a52e67e"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "imprensa-pt-1600.png",
+      "rota": "/livro-razao/posicao-be-rendimentos/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2289,
+      "sha256": "717800de7475e07fd2aac69cf374f6e244e51384613837714b7230cc64186390",
+      "recortes": [
+        {
+          "ficheiro": "imprensa-pt-1600-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "origem": "imprensa-pt-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 230,
+            "width": 544,
+            "height": 382
+          },
+          "sha256": "cc47870f025890e68fc023e7b2cafa670aec8e482d49cab63075a311bd639cf9"
+        },
+        {
+          "ficheiro": "imprensa-pt-1600-estado.png",
+          "seletor": ".aparelho-estado",
+          "origem": "imprensa-pt-1600.png",
+          "caixa": {
+            "left": 850,
+            "top": 1448,
+            "width": 300,
+            "height": 99
+          },
+          "sha256": "a32fbffebc1aa771749d0f308d7a76148a6b079e5247907a851965239f6d01eb"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "imprensa-en-390.png",
+      "rota": "/en/ledger/posicao-be-rendimentos/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3306,
+      "sha256": "b97d59a15d46451353fef935fb1177dbf6e0b9b77bfc32456144accab002facf",
+      "recortes": [
+        {
+          "ficheiro": "imprensa-en-390-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "origem": "imprensa-en-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 277,
+            "width": 354,
+            "height": 402
+          },
+          "sha256": "005d48fed0f0e1069696bf23d8c4a307838096bc0f60152da053d42bdc4d237a"
+        },
+        {
+          "ficheiro": "imprensa-en-390-estado.png",
+          "seletor": ".aparelho-estado",
+          "origem": "imprensa-en-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 2289,
+            "width": 354,
+            "height": 99
+          },
+          "sha256": "3a4e970d442aa78b1e362020d4df402783667c2759b34045140cf6edbea5024f"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "imprensa-en-768.png",
+      "rota": "/en/ledger/posicao-be-rendimentos/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 2894,
+      "sha256": "758d70530ecf3b99f108780e44ebda4338f06c6736ed2ff745c558864ffaf6aa",
+      "recortes": [
+        {
+          "ficheiro": "imprensa-en-768-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "origem": "imprensa-en-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 260,
+            "width": 545,
+            "height": 362
+          },
+          "sha256": "5fae4e00c938ee61d694925052c806fbcb25a01b550ec366ed2d4f8cc877575a"
+        },
+        {
+          "ficheiro": "imprensa-en-768-estado.png",
+          "seletor": ".aparelho-estado",
+          "origem": "imprensa-en-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 2041,
+            "width": 708,
+            "height": 79
+          },
+          "sha256": "a75f8374eb82efdcee95f502c8844bfdf19fdf7b3f11e44ffbdbd79796dfbbd5"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "imprensa-en-1024.png",
+      "rota": "/en/ledger/posicao-be-rendimentos/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2256,
+      "sha256": "fc373a22f4dea392fbac5dbbe1d91e396d2cd6c9a535ff0d66ab000bad7d1eb9",
+      "recortes": [
+        {
+          "ficheiro": "imprensa-en-1024-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "origem": "imprensa-en-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 229,
+            "width": 545,
+            "height": 379
+          },
+          "sha256": "1351cd77970a4fc6f7983e9a7b4820e15bf958a5eab6cb0108b2edc4ce83fad4"
+        },
+        {
+          "ficheiro": "imprensa-en-1024-estado.png",
+          "seletor": ".aparelho-estado",
+          "origem": "imprensa-en-1024.png",
+          "caixa": {
+            "left": 625,
+            "top": 1439,
+            "width": 301,
+            "height": 99
+          },
+          "sha256": "29b34885dc65e38296ccd337ac733a40a80f6474d203cebd94b2cfccb3447b58"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "imprensa-en-1280.png",
+      "rota": "/en/ledger/posicao-be-rendimentos/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2283,
+      "sha256": "a336c3ed26eb8954802773a87b6d32c55525a0343eb4736f03263eaaa18d70cc",
+      "recortes": [
+        {
+          "ficheiro": "imprensa-en-1280-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "origem": "imprensa-en-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 230,
+            "width": 544,
+            "height": 382
+          },
+          "sha256": "9aac036cc41e8536af38bf2ff06a9fe620b58d967e35bfe5b5bff3378a89bf16"
+        },
+        {
+          "ficheiro": "imprensa-en-1280-estado.png",
+          "seletor": ".aparelho-estado",
+          "origem": "imprensa-en-1280.png",
+          "caixa": {
+            "left": 689,
+            "top": 1448,
+            "width": 301,
+            "height": 99
+          },
+          "sha256": "baeef4dfd69c56cbbb9e0b5d50781d3475ce22f8160140752d4ae72600445072"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "imprensa-en-1600.png",
+      "rota": "/en/ledger/posicao-be-rendimentos/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2289,
+      "sha256": "2e42e1bc6eb18f1670786416350149a438fd8e2bac02f05b241692c07347fb86",
+      "recortes": [
+        {
+          "ficheiro": "imprensa-en-1600-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "origem": "imprensa-en-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 230,
+            "width": 544,
+            "height": 382
+          },
+          "sha256": "9aac036cc41e8536af38bf2ff06a9fe620b58d967e35bfe5b5bff3378a89bf16"
+        },
+        {
+          "ficheiro": "imprensa-en-1600-estado.png",
+          "seletor": ".aparelho-estado",
+          "origem": "imprensa-en-1600.png",
+          "caixa": {
+            "left": 850,
+            "top": 1448,
+            "width": 300,
+            "height": 99
+          },
+          "sha256": "87b504ea5134a1223ed6502c3ff4a3128bf57a0e0901652ef7e774e65e86b1ce"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "discussao-pt-390.png",
+      "rota": "/o-que-se-discute/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 16749,
+      "sha256": "ea1dd47b1a03138f1e756d3fb4c6321828d9c72563b5e5fa43338f9d52a96a17",
+      "recortes": [
+        {
+          "ficheiro": "discussao-pt-390-porta.png",
+          "seletor": "[data-discussao=\"saude-no-orcamento\"] [data-eo1-porta]",
+          "origem": "discussao-pt-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 9661,
+            "width": 354,
+            "height": 53
+          },
+          "sha256": "b63f9856c90cce0343571740bd2517b8a0614159fbf8b58a8a8e667f862fcad2"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "discussao-pt-768.png",
+      "rota": "/o-que-se-discute/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 11825,
+      "sha256": "be3161c5af51f2670f9f3f1a7dcd25cb8483024ff9122527669b87adbe82e142",
+      "recortes": [
+        {
+          "ficheiro": "discussao-pt-768-porta.png",
+          "seletor": "[data-discussao=\"saude-no-orcamento\"] [data-eo1-porta]",
+          "origem": "discussao-pt-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 6811,
+            "width": 443,
+            "height": 45
+          },
+          "sha256": "3ebd478b5ea78b5eac6b8788ec75aa98e94a043d29c49b1c778a106a47e5bfb3"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "discussao-pt-1024.png",
+      "rota": "/o-que-se-discute/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 11912,
+      "sha256": "988e446125ccc4461b4ea919ca23d27aab9893e00e250053ed1b77121a934e96",
+      "recortes": [
+        {
+          "ficheiro": "discussao-pt-1024-porta.png",
+          "seletor": "[data-discussao=\"saude-no-orcamento\"] [data-eo1-porta]",
+          "origem": "discussao-pt-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 6882,
+            "width": 443,
+            "height": 45
+          },
+          "sha256": "19b24d419c36d01fb0aee596f5c3fb1fc874d0fc22161c4d69c763c74320e5ac"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "discussao-pt-1280.png",
+      "rota": "/o-que-se-discute/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 12014,
+      "sha256": "c9067a85a2942a6d6b931a3462cd2c3813d9f4127a4c90a9755d9c0eb9aaaca7",
+      "recortes": [
+        {
+          "ficheiro": "discussao-pt-1280-porta.png",
+          "seletor": "[data-discussao=\"saude-no-orcamento\"] [data-eo1-porta]",
+          "origem": "discussao-pt-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 6925,
+            "width": 442,
+            "height": 45
+          },
+          "sha256": "5ea17b29eb92cda650eb90e6fad711c96ca3cc7cad721ea902eba4dac12e90eb"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "discussao-pt-1600.png",
+      "rota": "/o-que-se-discute/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 12050,
+      "sha256": "f607276e6b3a18a83b7b34ed748f0c92cffa5c40b528ce1bd5e7b592663cb6f1",
+      "recortes": [
+        {
+          "ficheiro": "discussao-pt-1600-porta.png",
+          "seletor": "[data-discussao=\"saude-no-orcamento\"] [data-eo1-porta]",
+          "origem": "discussao-pt-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 6940,
+            "width": 442,
+            "height": 45
+          },
+          "sha256": "ff72480080ed558dfc3b01b4e1e1726363ec4346d5e627a2bc8b3dbfddd32ee7"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "discussao-en-390.png",
+      "rota": "/en/under-discussion/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 16501,
+      "sha256": "f6fa0d87222cd84b954b491e0edc84cc9c739cd9b753e432320e7ef5b21302b2",
+      "recortes": [
+        {
+          "ficheiro": "discussao-en-390-porta.png",
+          "seletor": "[data-discussao=\"saude-no-orcamento\"] [data-eo1-porta]",
+          "origem": "discussao-en-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 9697,
+            "width": 354,
+            "height": 53
+          },
+          "sha256": "99ff3b3551d74afb209373636b87fe214b740aa33d0d1a48dfa34c023e01f5f5"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "discussao-en-768.png",
+      "rota": "/en/under-discussion/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 11604,
+      "sha256": "d07ee1e1ae2659a795f9754e85f5b978a2d42d93f95890c64189d93801948dbf",
+      "recortes": [
+        {
+          "ficheiro": "discussao-en-768-porta.png",
+          "seletor": "[data-discussao=\"saude-no-orcamento\"] [data-eo1-porta]",
+          "origem": "discussao-en-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 6756,
+            "width": 443,
+            "height": 45
+          },
+          "sha256": "d7f617f1dbc6446486d073cefad937e8de365bd42db7fe47eedd2c2188dc2c43"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "discussao-en-1024.png",
+      "rota": "/en/under-discussion/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 11693,
+      "sha256": "61f8a8d31c7affc402632ac6ac81497541be9847bde89a565b1de2f4e18aa0a1",
+      "recortes": [
+        {
+          "ficheiro": "discussao-en-1024-porta.png",
+          "seletor": "[data-discussao=\"saude-no-orcamento\"] [data-eo1-porta]",
+          "origem": "discussao-en-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 6829,
+            "width": 443,
+            "height": 45
+          },
+          "sha256": "98336d91d722985a3f68f5288050e9493656e101acecafb9c62bc2e284f18926"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "discussao-en-1280.png",
+      "rota": "/en/under-discussion/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 11794,
+      "sha256": "70ae85f7e0ea317353673c14db0e0524838c9e553bc0b3e079aab65b0480471e",
+      "recortes": [
+        {
+          "ficheiro": "discussao-en-1280-porta.png",
+          "seletor": "[data-discussao=\"saude-no-orcamento\"] [data-eo1-porta]",
+          "origem": "discussao-en-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 6871,
+            "width": 442,
+            "height": 45
+          },
+          "sha256": "dae1e74b135556ba2f6fd6f1e64c52c934b503adecbf650cdfabc075730ccf69"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "discussao-en-1600.png",
+      "rota": "/en/under-discussion/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 11831,
+      "sha256": "e3c8b0de161431dec07334b1293974f4c74abf91e7a1c5b3f725e7c25829bd77",
+      "recortes": [
+        {
+          "ficheiro": "discussao-en-1600-porta.png",
+          "seletor": "[data-discussao=\"saude-no-orcamento\"] [data-eo1-porta]",
+          "origem": "discussao-en-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 6887,
+            "width": 442,
+            "height": 45
+          },
+          "sha256": "9f8281653bd3f17021710accdf3ab8127817f92d5cd5d3a0e1052e2561878f1a"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "explicador-pt-390.png",
+      "rota": "/explicacoes/dinheiro-do-estado-2026/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 6861,
+      "sha256": "156ce69ee9e0e5f7f634590579f279bee2c06d5d6a8b2605a9361396702a03e6",
+      "recortes": [
+        {
+          "ficheiro": "explicador-pt-390-porta.png",
+          "seletor": "[data-eo1-porta]",
+          "origem": "explicador-pt-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 6455,
+            "width": 354,
+            "height": 53
+          },
+          "sha256": "557e35ac88bf5d1e883b186aefd2d726c215e0a672c477a3e6ac80ac765f3a0b"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "explicador-pt-768.png",
+      "rota": "/explicacoes/dinheiro-do-estado-2026/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 4858,
+      "sha256": "c517251cd81c7993150a00909573be5bfcd5dda4755c72c812ccea31442ac924",
+      "recortes": [
+        {
+          "ficheiro": "explicador-pt-768-porta.png",
+          "seletor": "[data-eo1-porta]",
+          "origem": "explicador-pt-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 4555,
+            "width": 443,
+            "height": 45
+          },
+          "sha256": "3ebd478b5ea78b5eac6b8788ec75aa98e94a043d29c49b1c778a106a47e5bfb3"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "explicador-pt-1024.png",
+      "rota": "/explicacoes/dinheiro-do-estado-2026/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 4862,
+      "sha256": "b85ec9145ea361de724f6aebe4879240317f7e73d9582a7e7319a9336ccf8894",
+      "recortes": [
+        {
+          "ficheiro": "explicador-pt-1024-porta.png",
+          "seletor": "[data-eo1-porta]",
+          "origem": "explicador-pt-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 4616,
+            "width": 443,
+            "height": 45
+          },
+          "sha256": "19b24d419c36d01fb0aee596f5c3fb1fc874d0fc22161c4d69c763c74320e5ac"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "explicador-pt-1280.png",
+      "rota": "/explicacoes/dinheiro-do-estado-2026/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 4958,
+      "sha256": "1265d8c6ea0751069557c475fe810996739b5d3549b7b6a0501f11e90ce79143",
+      "recortes": [
+        {
+          "ficheiro": "explicador-pt-1280-porta.png",
+          "seletor": "[data-eo1-porta]",
+          "origem": "explicador-pt-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 4694,
+            "width": 442,
+            "height": 45
+          },
+          "sha256": "ff72480080ed558dfc3b01b4e1e1726363ec4346d5e627a2bc8b3dbfddd32ee7"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "explicador-pt-1600.png",
+      "rota": "/explicacoes/dinheiro-do-estado-2026/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 4980,
+      "sha256": "68ff9203969ba91e98a9971d226c0c4757e0ace430fe3ecafe6e5a5a4e74fa61",
+      "recortes": [
+        {
+          "ficheiro": "explicador-pt-1600-porta.png",
+          "seletor": "[data-eo1-porta]",
+          "origem": "explicador-pt-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 4709,
+            "width": 442,
+            "height": 45
+          },
+          "sha256": "ff72480080ed558dfc3b01b4e1e1726363ec4346d5e627a2bc8b3dbfddd32ee7"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "explicador-en-390.png",
+      "rota": "/en/explainers/dinheiro-do-estado-2026/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 6869,
+      "sha256": "128a4cad83682ecfc8e6ad2874e4013ac996e38033b2fe71df8de105801e819b",
+      "recortes": [
+        {
+          "ficheiro": "explicador-en-390-porta.png",
+          "seletor": "[data-eo1-porta]",
+          "origem": "explicador-en-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 6415,
+            "width": 354,
+            "height": 53
+          },
+          "sha256": "99ff3b3551d74afb209373636b87fe214b740aa33d0d1a48dfa34c023e01f5f5"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "explicador-en-768.png",
+      "rota": "/en/explainers/dinheiro-do-estado-2026/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 4791,
+      "sha256": "77c2d0ac66e1af6da9ba25d7bf396aaac4e3d0b8240e28250bcbde82cffb6747",
+      "recortes": [
+        {
+          "ficheiro": "explicador-en-768-porta.png",
+          "seletor": "[data-eo1-porta]",
+          "origem": "explicador-en-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 4489,
+            "width": 443,
+            "height": 45
+          },
+          "sha256": "d7f617f1dbc6446486d073cefad937e8de365bd42db7fe47eedd2c2188dc2c43"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "explicador-en-1024.png",
+      "rota": "/en/explainers/dinheiro-do-estado-2026/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 4796,
+      "sha256": "4fcd8f4ff72166a442d90556ea42f50f670069c24825881d0784fa216efcf6e3",
+      "recortes": [
+        {
+          "ficheiro": "explicador-en-1024-porta.png",
+          "seletor": "[data-eo1-porta]",
+          "origem": "explicador-en-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 4549,
+            "width": 443,
+            "height": 45
+          },
+          "sha256": "1feffbaffea09bc44a790e186ae0df88875017f181cd0bdad5a51483a92a8828"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "explicador-en-1280.png",
+      "rota": "/en/explainers/dinheiro-do-estado-2026/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 4891,
+      "sha256": "7f99b0834a13684feac7120729aec2b986c0afa0ec01826076986a0afbdd3f44",
+      "recortes": [
+        {
+          "ficheiro": "explicador-en-1280-porta.png",
+          "seletor": "[data-eo1-porta]",
+          "origem": "explicador-en-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 4627,
+            "width": 442,
+            "height": 45
+          },
+          "sha256": "dae1e74b135556ba2f6fd6f1e64c52c934b503adecbf650cdfabc075730ccf69"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "explicador-en-1600.png",
+      "rota": "/en/explainers/dinheiro-do-estado-2026/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 4913,
+      "sha256": "c8e3b4f80ae05171e3017f2d6e9a53e9c8865416966028d111836152582495cd",
+      "recortes": [
+        {
+          "ficheiro": "explicador-en-1600-porta.png",
+          "seletor": "[data-eo1-porta]",
+          "origem": "explicador-en-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 4643,
+            "width": 442,
+            "height": 45
+          },
+          "sha256": "9f8281653bd3f17021710accdf3ab8127817f92d5cd5d3a0e1052e2561878f1a"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    }
+  ],
+  "recursos": {
+    "version.json": "321f7e95ec4853c8418bd29ba25bcef018fa1f52b030c0aae3eb1e8bdfa49468",
+    "estudos/orcamento-2027-o-que-muda-e-para-quem/index.html": "d0f49b4a03e32be480963ac7df7df4ee0222b0edd275b2ae9bf5dc0a814f79d7",
+    "tipos/spectral/Spectral-Regular.woff2": "3c846b032ad614e02ebc439087bbcbb7371cfbdea6c8a4b568efa859537e9c43",
+    "tipos/bitter/Bitter[wght].woff2": "b4ad17520d0ce8bd1aa98af06e07ca94145522f868b5a010732eb5eee3ba2ea0",
+    "_astro/Base.BQy_YmNS.css": "06b4c86e257c2b983d86f36cc39344cbd00581cdc5d4a92bb431772efbdb2220",
+    "_astro/EstudoView.CoBVk9FU.css": "da148598ea8f28d5309b1d77050569c250d0e02d507a3fe978e79c0387c3fd95",
+    "js/tema.js": "855bcee3ec1223b43e0f3e9a94c1fbdf1451e53830dcc022962b48e8d3340757",
+    "tipos/spectral/Spectral-Medium.woff2": "34f0ba222c28bc0ea816c693d05c528be4a5ee10c4b1765cdea774c6fb2502c2",
+    "tipos/spectral/Spectral-Italic.woff2": "4ba15b4bda78df3e8b755f0f12168c23c562707c921f74944e8ce638ee5ac7f1",
+    "tipos/spectral-sc/SpectralSC-Regular.woff2": "afa69dd2e7aaca2733883133745fd84c18dfac6a08d5999e69705ea7277240b8",
+    "tipos/spectral-sc/SpectralSC-SemiBold.woff2": "b847fe8f1fe1a862ce15e288958d132940a8204951ef0dbe2c9ad8fd997f29e2",
+    "tipos/spectral/Spectral-SemiBold.woff2": "91eef1143e31196ec762c00b566b9f628a851db348eb524cbfb36bfba9b22f2d",
+    "tipos/spectral/Spectral-Bold.woff2": "8710bb6e834a4ec2aa7a7b24a76e63ead0ba6649c81881aedf615cf37724664f",
+    "en/studies/orcamento-2027-o-que-muda-e-para-quem/index.html": "a235a198a0bca54b503e2e24e9a5acddc015f97f7c2c41ae6a6709f146ef6ed2",
+    "estudos/orcamento-2027-o-que-muda-e-para-quem/documento/index.html": "2db01e0f037826f607f582b83dc97ad9c5e661209b72b92f7a560dd40ee80df0",
+    "en/studies/orcamento-2027-o-que-muda-e-para-quem/document/index.html": "3d3fbb4086eac571d2bad189286f8e753ed6ac936b926b9d3f9ad108d9c92ae0",
+    "livro-razao/der-rmmg-2026-2027-pct/index.html": "91af10c79f10dc24483f879980e890d9996a280ac8ce2e00bf0a276aa66c171c",
+    "_astro/linha.Dd7n1KyQ.css": "583639d016c39485e899ae4fffc401e64d1489306f153b3670a730698057d772",
+    "js/copiar-incorporacao.js": "b75e5f90efcd85ea94274191e44a48594932638df67377c0b91ff367df97ca13",
+    "en/ledger/der-rmmg-2026-2027-pct/index.html": "04315be0ed85db50c729de6c2c92f4e3bbff50033b4f4d2de1debc93d1134b95",
+    "livro-razao/posicao-be-rendimentos/index.html": "280256dd95a02dd034bef45cd5b4fc75a4affad7d85e0ca59dee5069639db21b",
+    "en/ledger/posicao-be-rendimentos/index.html": "a8d4e48686f946d2feed89e7df789f677eb51beead7cbdead1531ff93d18cd26",
+    "o-que-se-discute/index.html": "96cb8575925ac335df99c8feac3f654778b6bb26469c3e059d426560f51f81f4",
+    "en/under-discussion/index.html": "181a668898012f1c5698329926e0ffa0e9a0aa531621dbe1baa5457995dd1727",
+    "explicacoes/dinheiro-do-estado-2026/index.html": "141c96ab21fe4e480e6f3d2bf6a0cbb5767230e34926f5787a1079a11c3b096e",
+    "en/explainers/dinheiro-do-estado-2026/index.html": "25267f0201e622852c015f0e2dd8748d197def6ec2dda31c7c9465d6b467daf7"
+  },
+  "falhas": [],
+  "ok": true
+}

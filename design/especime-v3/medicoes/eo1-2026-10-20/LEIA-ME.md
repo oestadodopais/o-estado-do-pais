@@ -1333,3 +1333,230 @@ definicao: It is the position attributed in the document on «Miranda Sarmento: 
 valor: A dívida pública deve continuar a ser a nossa principal preocupação nas contas públicas. Temos uma redução de cerca de quatro pontos percentuais nos últimos anos e estaremos abaixo dos 85% do PIB [Produto Interno Bruto] em 2027 statement
 
 proveniencia: To be confirmed at the primary source: what is here is what the news report wrote
+
+## A correção EO1-e
+
+A base é a leitura EO1-d recebida no sítio em `3b22a12d7` e o motor em `be7f2bd`. Esta passagem trata os achados reais 5 a 8 e 10 a 18. As alterações plantadas no pacote não são alterações desta worktree. Os textos e recibos desta secção são extraídos por `e/extrair.mjs`, com comparação dos blocos das duas rotas de cada edição com os registos e com a base recebida.
+
+### Decisões
+
+- **EO1-e-1.** A receita conta sete linhas e a despesa três. No saldo, o guião desdobra as duas contas intermédias e encontra dez linhas distintas. Compara as referências da aritmética com `derived_from` e a contagem com as palavras das definições. A planta troca «sete» por «dez» e tem de ser recusada.
+- **EO1-e-2.** A prosa livre das definições volta a ser percorrida integralmente: só admite a expressão regular dos anos entre 1900 e 2099 e dos escalões de um a nove. A regra também alcança os complementos e recusa peças de tipos desconhecidos. Os nomes com algarismos e «quadro 3.2» não recebem uma dispensa de família: são trechos transcritos, separados em elementos com origem conferida. O nome tem de coincidir com o nome da edição; o quadro tem de constar do localizador das componentes da conta. O portão confere cada marca e cada nó de texto, além da igualdade da definição completa. Esta separação resolve a tensão entre conservar os nomes e o localizador exigidos e proibir algarismos livres. Uma marca com outro texto não passa. «820 euros» na prosa livre é a mesma planta nas três conferências.
+- **EO1-e-3.** Os sete nomes anteriormente truncados conservam os algarismos. O diploma escreve «retribuição mínima mensal garantida», no artigo 3.º, página 2 do PDF. O relatório escreve «salário mínimo (RMMG)», na página 20 do PDF, lugar citado pelas duas linhas. Não se usou a lista de siglas de outra página para reconstruir o nome.
+- **EO1-e-4.** O recibo derivado identifica uma linha deste projeto. O bloco de proveniência deixa de apresentar um nome como se tivesse sido publicado pela fonte e escreve o localizador do cálculo na língua da edição. A forma numérica conserva a que os recibos de origem usam, nas duas edições. A aritmética conserva o sinal, os períodos e os perímetros; a unidade do Eurostat aparece uma vez. A conferência abrange todos os 21 recibos derivados encontrados, nas duas edições, incluindo os quinze pedidos.
+- **EO1-e-5.** A entrega passa de um dia isolado para a data completa que o corpo parlamentar publica. A extração confere primeiro o excerto original e remove caracteres de largura zero nas datas. Os dois gabaritos deixam de acrescentar um mês que já vem do token: a introdução e o calendário conservam exatamente o texto renderizado anterior. A mudança de valor tem uma correção tipada e selada no recibo; a reexportação conserva-a sem a duplicar. A contagem pública de correções, refeita pelo validador, passa de 11 para 12, com atualização própria e conservação do histórico. Uma data completa conferida fica no registo de correções e não entra como uma subida ou descida de uma quantidade na leitura da semana. A notícia do CDS usa o ano da publicação, 2026.
+- **EO1-e-6.** As frases mandatadas entram nas duas edições sem afirmar que as dez linhas do quadro pertencem ao conjunto maior da UTAO. O compositor aceitou os literais e os excertos. A comparação dos registos exige que apenas os blocos 3, 12 e 29 mudem em cada edição. A sinopse inglesa usa a marca «invariante» (invariant).
+- **EO1-e-7.** O achado 8 permanece no âmbito do pacote preparado pela direção com o `pacote.sh` de `main`, sem a alteração desta worktree. Não se apresenta esta passagem como correção desse pacote. A medição dos símbolos gastos não está exposta nesta sessão; não se inventa uma contagem. As portas da discussão e do explicador entram nesta conferência e nas capturas.
+
+### Resposta aos achados da EO1-d
+
+| Achado | Estado | Razão |
+| --- | --- | --- |
+| 5 | Corrigido | Sete linhas de receita, três de despesa e dez no saldo, conferidas pela aritmética e por planta. |
+| 6 | Corrigido | A abertura e a secção das medidas distinguem a marca do quadro do conjunto maior da UTAO e declaram a ausência de uma relação expressa entre os conjuntos. |
+| 7 | Corrigido com a decisão EO1-e-2 | Voltaram o passeio integral das definições, a regra dos algarismos livres e a conferência das marcas de origem; a planta é exercida nas três camadas. |
+| 8 | Mantido | O pacote foi montado pela direção com o `pacote.sh` de `main`, sem a mudança desta worktree. |
+| 9 | Planta do pacote | O algarismo do código das capturas foi adulterado no pacote da leitura. Esta passagem guarda os seus próprios códigos medidos. |
+| 10 | Corrigido | Ponto final depois da citação do ministro na conclusão, nas duas edições. |
+| 11 | Corrigido | Proveniência própria das derivadas, localizador na língua da edição e unidade do Eurostat sem repetição. |
+| 12 | Corrigido | Os números das contas derivadas são comparados com os recibos das componentes, em ambas as edições. |
+| 13 | Corrigido | Sinopse inglesa com «the ten lines the table marks as «invariante» (invariant) weigh … million». |
+| 14 | Corrigido | Os sete nomes conservam os algarismos e são citados integralmente nas definições. |
+| 15 | Corrigido | Nomes conferidos no corpo e na página do localizador, com provas em `e/fontes-conferidas.json`. |
+| 16 | Corrigido | Data completa da entrega, com histórico, e edição 2026 da notícia do CDS. |
+| 17 | Portas conferidas; símbolos não expostos | A discussão e o explicador são lidos no HTML construído, extraídos e capturados nas duas edições. A contagem de símbolos depende da medição do lançador. |
+| 18 | Corrigido o impedimento identificado | A abertura já não remete para uma frase que coloca fora do quadro o que ela própria acaba de contar dentro dele. A nova leitura editorial pertence à direção. |
+
+### Cabeças, portões e inventário
+
+As páginas e as capturas são da cabeça de código `c0fafc555e11a896ea8c13f080d5dacd707826f3`. O motor conferido é `42813f9dbcca2814c51c5b234b5d7e619366d10b`; permaneceu limpo e na mesma cabeça durante o `core.gate`. O commit posterior desta secção acrescenta apenas o relatório e as provas. Não houve envio para o remoto.
+
+| Conferência | Código | Registo |
+| --- | --- | --- |
+| build | 0 | `e/portoes-finais/build.log` |
+| verify | 0 | `e/portoes-finais/verify.log` |
+| typecheck | 0 | `e/portoes-finais/typecheck.log` |
+| core.gate | 0 | `e/motor/motor.log` |
+| series | 0 | `e/controlos-finais/series.log` |
+| cruzamento | 0 | `e/controlos-finais/cruzamento.log` |
+| eo1 | 0 | `e/controlos-finais/eo1.log` |
+| extracao | 0 | `e/controlos-finais/extracao.log` |
+| portas | 0 | `e/controlos-finais/portas.log` |
+
+O `verify` executado pelo escrivão confere a união integral dos passos de `npm run verify`: reutiliza os passos pagos pela construção verde e executa os restantes, com prova da cabeça e da imutabilidade em `verify.json`. A corrida das séries recebe `RESEARCHHUB_DIR`; o cruzamento recebe também `--with-origin`. Os dois avisos de resumos globais dos livros reconstruídos permanecem no cruzamento; a conferência das linhas e dos ficheiros contra a origem passa.
+
+As seis tentativas anteriores estão em `e/tentativas/`, com cabeça, código e registo da construção: a primeira encontrou a declaração de lugar em falta; a segunda tentou interpretar a data como movimento numérico; a terceira encontrou os leitores independentes ainda com a exceção inglesa e com a classificação antiga da data; a quarta confirmou que o registo de correções exige o lugar mesmo quando não há movimento numérico. A correção final conserva a declaração de Portugal e confere-a contra a prova selada da página parlamentar, com plantas dos campos da origem. A quinta encontrou a edição datada da contagem de correções sem declaração de língua; passou a estar declarada como data sem língua. A sexta passou a construção e encontrou apenas o leitor independente do índice ainda a contar a data como quantidade; a correção passou as 25 plantas do índice antes da repetição integral. Os resultados recusados não são apresentados como portões verdes.
+
+O inventário mantém a sinopse anterior retirada com razão e a nova sinopse inglesa viva. A revisão EO1-e continua «por ler», pois a leitura cruzada pertence à direção. Em cada edição, o extrator confrontou os 57 blocos nas duas rotas; só mudaram os blocos 3, 12 e 29. O inventário integral dos textos, fontes e literais está em `e/html-extraido.json`.
+
+### Plantas nas conferências reais
+
+| Ensaio | Código observado | Código esperado |
+| --- | --- | --- |
+| controlo-antes | 0 | 0 |
+| metades-planta | 1 | 1 |
+| definicoes-compositor-planta | 1 | 1 |
+| definicoes-cartao-planta | 1 | 1 |
+| definicoes-html-planta | 1 | 1 |
+| html-reposto | 0 | 0 |
+| controlo-reposto | 0 | 0 |
+
+A planta «820 euros» foi recusada pelo compositor, pela célula dos cartões e pelo portão do HTML, todos com código 1. O diagnóstico do HTML identifica o algarismo livre. A planta das metades também foi recusada. Os resumos antes e depois comprovam a reposição exata dos ficheiros; o HTML reposto passou com código 0. Os registos completos estão em `e/plantas-finais/`.
+
+### Portas, capturas e inspeção
+
+Foram capturadas as quatro famílias pedidas (estudo, documento, recibo derivado e recibo de imprensa) e, adicionalmente, a discussão e o explicador: duas edições, larguras 390, 768, 1024, 1280 e 1600. O manifesto regista 60 páginas e 100 recortes. A conferência refez os resumos de cada PNG e comparou os recortes com os píxeis das páginas: não encontrou excesso de largura, pedidos externos nem erros de navegador. O pedido, o manifesto e a prova estão em `e/capturas-pedido.json`, `e/capturas.json` e `e/capturas-conferencia.json`. Os PNG ficam na pasta ignorada de capturas, fora do diff.
+
+As quatro páginas construídas com as portas foram guardadas em `e/paginas-das-portas/`, com os resumos em `e/paginas-das-portas.json`. O texto, o HTML de cada porta e os destinos estão em `e/portas-renderizadas.json`.
+
+**pt, discussao.**
+
+O estudo: O Orçamento de 2027: o que muda e para quem →
+
+O estudo: O Orçamento de 2027: o que muda e para quem →
+
+**pt, explicacao.**
+
+O estudo: O Orçamento de 2027: o que muda e para quem →
+
+**en, discussao.**
+
+The study: The 2027 Budget: what changes, and for whom →
+
+The study: The 2027 Budget: what changes, and for whom →
+
+**en, explicacao.**
+
+The study: The 2027 Budget: what changes, and for whom →
+
+### Sinopses tal como renderizam
+
+**pt.** As medidas novas do Orçamento de 2027 valem 79 milhões de euros a favor do saldo, as dez linhas marcadas como invariantes pesam 1 210 milhões, e os juros sobem 1 350 milhões: o que mais muda nas contas de 2027 não está no quadro das medidas.
+
+**en.** The new measures of the 2027 Budget are worth 79 million euros to the balance, the ten lines the table marks as «invariante» (invariant) weigh 1 210 million, and interest rises 1 350 million: what changes most in the 2027 accounts is not in the table of measures.
+
+
+### Frases desta passagem, extraídas das quatro rotas
+
+#### pt
+
+**Unidade 3.** O Orçamento para 2027 muda pouco por si próprio. As três medidas novas que o relatório identifica, a receita esperada do combate à fraude nos combustíveis, a atualização do mínimo de existência no Imposto sobre o Rendimento das Pessoas Singulares (o IRS) e o reforço do Complemento Solidário para Idosos (o CSI), somam 79 milhões de euros a favor do saldo. O que pesa no saldo de 2027, 1 210 milhões de euros, são as dez linhas que o próprio quadro marca como «invariante» (a nota do quadro diz só isso, «Nota: (i) invariante.»; a UTAO usa a mesma palavra para um conjunto maior, na secção das medidas): a atualização dos escalões e da dedução específica do IRS, o IRS das rendas moderadas e o Imposto sobre o Valor Acrescentado (o IVA) da construção de habitação, a descida de um ponto do Imposto sobre o Rendimento das Pessoas Coletivas (o IRC) e a reversão do SIFIDE (Sistema de Incentivos Fiscais à Investigação e Desenvolvimento Empresarial), a receita que o aumento dos salários traz em IRS e em contribuições, o acordo de rendimentos, o salário mínimo e os acordos salariais da função pública. E o que mais muda nas contas não está no quadro das medidas: os juros da dívida sobem 1 350 milhões de euros em contabilidade pública, para 8 575 milhões, e o investimento desce 2 347 milhões, para 10 417 milhões, porque o Plano de Recuperação e Resiliência (o PRR, o dinheiro europeu de recuperação pós-pandemia) acaba em 2026.
+
+**Unidade 12.** A meta da dívida que o ministro das Finanças anunciou é alcançável, e a razão está sobretudo na tesouraria. O ministro disse, pela notícia «Miranda Sarmento: dívida pública abaixo dos 85% do PIB em 2027 é a "principal preocupação" do Governo»: «A dívida pública deve continuar a ser a nossa principal preocupação nas contas públicas. Temos uma redução de cerca de quatro pontos percentuais nos últimos anos e estaremos abaixo dos 85% do PIB [Produto Interno Bruto] em 2027». O excedente primário contribui com 2,5 pontos para a descida, o efeito do crescimento e dos juros com 1,5 pontos (menos do que em 2026, 2,6), e o que faz a descida acelerar é o ajustamento défice-dívida, que passa de 3,1 pontos para 0,9 pontos, sobretudo por menor aquisição de ativos financeiros, segundo a UTAO. É um movimento de tesouraria, não do orçamento do ano. A meta assenta também num crescimento de 2,1 % que, segundo a UTAO, está acima das previsões de todas as outras instituições que ela cita, e em 300 milhões de euros de receita do combate à fraude nos combustíveis para os quais o relatório não apresenta fundamento.
+
+**Unidade 29.** A UTAO usa a palavra «invariantes» para um conjunto maior do que as dez linhas do quadro: o cenário de políticas invariantes, as medidas já em vigor, cujo impacto adicional em 2027 ela calcula em «5411 M€»: «No contexto das alterações introduzidas pelo MF no relatório da POE/2027, as medidas em vigor, incluídas no cenário de políticas invariantes, têm um impacto adicional líquido para o saldo orçamental de 2027 negativo em 5411 M€ (1,6% do PIB). Este resultado decorre, essencialmente, do acréscimo de medidas com impacto bruto no lado da despesa (5562 M€) visto que as medidas do lado da receita (Tabela 8), apesar de apresentarem valores absolutos elevados, apresentam no seu conjunto um montante significativamente inferior (151 M€).» Se as dez linhas do quadro estão dentro desse conjunto, nem o relatório nem a UTAO o dizem. E sobre a revisão do quadro de políticas invariantes (o QPI) entre agosto e outubro: «O relatório da POE/2027 divulgou um quadro de políticas invariantes revisto face ao apresentado em final de agosto. Com efeito, o impacto orçamental das políticas invariantes passou de 4783 M€ para 5411 M€. Para esta deterioração adicional, destaca-se a despesa com juros (de 776 M€ para 1548 M€) e o investimento público excluído de PRR (de 433 M€ para 617 M€). Em sentido oposto, evidencia-se a revisão da despesa com pensões (de 1993 M€ para 1475 M€) e a passagem do reforço do complemento solidário para idosos (CSI; 100 M€) do QPI para as novas medidas (Tabela 9).»
+
+#### en
+
+**Unidade 3.** The 2027 Budget changes little by itself. The three new measures the report identifies, the expected revenue from fighting fraud in the fuel sector, the update of the personal income-tax (IRS) exemption threshold (the «mínimo de existência») and the increase of the Solidarity Supplement for the Elderly (CSI), add 79 million euros to the balance. What weighs on the 2027 balance, 1,210 million euros, are the ten lines the table itself marks as «invariante» (invariant; the table's note says only that, «Nota: (i) invariante.»; the UTAO uses the same word for a larger set, in the measures section): the update of the income-tax brackets and of the specific deduction, the reduced income tax on moderate rents and the reduced value added tax (VAT, IVA in Portuguese) on housing construction, the one-point cut in corporate income tax (IRC) and the reversal of the SIFIDE (the Portuguese system of tax incentives for business research and development), the revenue that wage growth brings in income tax and in contributions, the incomes agreement, the minimum wage and the public-sector wage agreements. And what changes most in the accounts is not in the table of measures: interest on the debt rises by 1,350 million euros in public accounting, to 8,575 million, and investment falls by 2,347 million, to 10,417 million, because the Recovery and Resilience Plan (the PRR, the European post-pandemic recovery money) ends in 2026.
+
+**Unidade 12.** The debt target the finance minister stated is reachable, and the reason lies mainly in treasury operations. The minister said, by the news report «Miranda Sarmento: dívida pública abaixo dos 85% do PIB em 2027 é a "principal preocupação" do Governo»: «A dívida pública deve continuar a ser a nossa principal preocupação nas contas públicas. Temos uma redução de cerca de quatro pontos percentuais nos últimos anos e estaremos abaixo dos 85% do PIB [Produto Interno Bruto] em 2027». The primary surplus contributes 2.5 points to the fall, the effect of growth and interest 1.5 points (less than in 2026, 2.6), and what makes the fall accelerate is the deficit-debt adjustment, which goes from 3.1 points to 0.9 points, mostly through lower acquisition of financial assets, according to the UTAO. It is a treasury movement, not the year's budget. The target also rests on growth of 2.1 % which, according to the UTAO, is above the forecasts of every other institution it cites, and on 300 million euros of revenue from fighting fuel fraud for which the report gives no basis.
+
+**Unidade 29.** The UTAO uses the word «invariantes» (unchanged) for a larger set than the table's ten lines: the unchanged-policy scenario, the measures already in force, whose additional impact in 2027 it puts at «5411 M€»: «No contexto das alterações introduzidas pelo MF no relatório da POE/2027, as medidas em vigor, incluídas no cenário de políticas invariantes, têm um impacto adicional líquido para o saldo orçamental de 2027 negativo em 5411 M€ (1,6% do PIB). Este resultado decorre, essencialmente, do acréscimo de medidas com impacto bruto no lado da despesa (5562 M€) visto que as medidas do lado da receita (Tabela 8), apesar de apresentarem valores absolutos elevados, apresentam no seu conjunto um montante significativamente inferior (151 M€).» Whether the table's ten lines are inside that set, neither the report nor the UTAO says. And on the revision of the unchanged-policy framework (QPI) between August and October: «O relatório da POE/2027 divulgou um quadro de políticas invariantes revisto face ao apresentado em final de agosto. Com efeito, o impacto orçamental das políticas invariantes passou de 4783 M€ para 5411 M€. Para esta deterioração adicional, destaca-se a despesa com juros (de 776 M€ para 1548 M€) e o investimento público excluído de PRR (de 433 M€ para 617 M€). Em sentido oposto, evidencia-se a revisão da despesa com pensões (de 1993 M€ para 1475 M€) e a passagem do reforço do complemento solidário para idosos (CSI; 100 M€) do QPI para as novas medidas (Tabela 9).»
+
+### Recibos tal como renderizam
+
+#### pt: der-oe2027-medidas-anteriores-receita
+
+titulo: Medidas invariantes: receita
+
+nome: Linha derivada deste projeto «Medidas invariantes: receita»
+
+definicao: É a soma, no impacto no saldo de 2027, das sete linhas de receita que o quadro 3.2 do relatório marca com (i), invariante. Referência: 2027.
+
+valor: −263 milhões de euros
+
+aritmetica: −94 (Habitação - redução IVA construção de 23% para 6% (i), 2027, contabilidade nacional) − 209 (Habitação - redução IRS rendas moderadas de 25% para 10% (i), 2027, contabilidade nacional) − 431 (Atualização dedução específica e escalões (i), 2027, contabilidade nacional) + 284 (Receita decorrente do aumento de salários (i) (IRS), 2027, contabilidade nacional) − 300 (Redução taxa em 1 p.p. (i), 2027, contabilidade nacional) + 124 (SIFIDE indireto (reversão) (i), 2027, contabilidade nacional) + 363 (Receita decorrente do aumento de salários (i) (Contribuições sociais), 2027, contabilidade nacional) = −263. O sinal indica a direção da variação ou do resultado da conta.
+
+ficha: Onde no ficheiro | cálculo sobre as linhas identificadas | Dados de | 2027 | Estudo | O Orçamento de 2027: o que muda e para quem
+
+proveniencia: Completa.
+
+#### pt: der-oe2027-medidas-anteriores-despesa
+
+titulo: Medidas invariantes: despesa
+
+nome: Linha derivada deste projeto «Medidas invariantes: despesa»
+
+definicao: É a soma, no impacto no saldo de 2027, das três linhas de despesa que o quadro 3.2 do relatório marca com (i), invariante. Referência: 2027.
+
+valor: 947 milhões de euros
+
+aritmetica: 587 (Aumento acordo de rendimentos (i), 2027, contabilidade nacional) + 116 (Aumento RMMG (i), 2027, contabilidade nacional) + 244 (Acordos salariais (i), 2027, contabilidade nacional) = 947. O sinal indica a direção da variação ou do resultado da conta.
+
+ficha: Onde no ficheiro | cálculo sobre as linhas identificadas | Dados de | 2027 | Estudo | O Orçamento de 2027: o que muda e para quem
+
+proveniencia: Completa.
+
+#### pt: der-oe2027-medidas-anteriores-saldo
+
+titulo: Medidas invariantes: impacto no saldo
+
+nome: Linha derivada deste projeto «Medidas invariantes: impacto no saldo»
+
+definicao: É a soma, no impacto no saldo de 2027, das dez linhas que o quadro 3.2 do relatório marca com (i), invariante. Referência: 2027.
+
+valor: −1 210 milhões de euros
+
+aritmetica: −263 (Medidas invariantes: receita, 2027) − 947 (Medidas invariantes: despesa, 2027) = −1 210. Um resultado negativo reduz o saldo; um resultado positivo aumenta-o.
+
+ficha: Onde no ficheiro | cálculo sobre as linhas identificadas | Dados de | 2027 | Estudo | O Orçamento de 2027: o que muda e para quem
+
+proveniencia: Completa.
+
+#### en: der-oe2027-medidas-anteriores-receita
+
+titulo: Invariant measures: revenue
+
+nome: Derived row of this project «Invariant measures: revenue»
+
+definicao: It is the sum, in the 2027 balance impact, of the seven revenue lines that table 3.2 of the report marks with (i), invariante. Reference: 2027.
+
+valor: −263 million euros
+
+aritmetica: −94 (Housing: construction VAT cut from 23% to 6% (i), 2027, national accounts) − 209 (Housing: personal income tax on moderate rents cut from 25% to 10% (i), 2027, national accounts) − 431 (Updating the specific deduction and tax brackets (i), 2027, national accounts) + 284 (Revenue arising from wage increases (i) (personal income tax), 2027, national accounts) − 300 (Rate cut by 1 percentage point (i), 2027, national accounts) + 124 (Indirect SIFIDE (reversal) (i), 2027, national accounts) + 363 (Revenue arising from wage increases (i) (Social contributions), 2027, national accounts) = −263. The sign indicates the direction of the change or calculation result.
+
+ficha: Where in the file | computed from the identified rows | Data for | 2027 | Study | The 2027 Budget: what changes, and for whom
+
+proveniencia: Complete.
+
+#### en: der-oe2027-medidas-anteriores-despesa
+
+titulo: Invariant measures: expenditure
+
+nome: Derived row of this project «Invariant measures: expenditure»
+
+definicao: It is the sum, in the 2027 balance impact, of the three expenditure lines that table 3.2 of the report marks with (i), invariante. Reference: 2027.
+
+valor: 947 million euros
+
+aritmetica: 587 (Increase under the incomes agreement (i), 2027, national accounts) + 116 (Minimum wage increase (i), 2027, national accounts) + 244 (Wage agreements (i), 2027, national accounts) = 947. The sign indicates the direction of the change or calculation result.
+
+ficha: Where in the file | computed from the identified rows | Data for | 2027 | Study | The 2027 Budget: what changes, and for whom
+
+proveniencia: Complete.
+
+#### en: der-oe2027-medidas-anteriores-saldo
+
+titulo: Invariant measures: balance impact
+
+nome: Derived row of this project «Invariant measures: balance impact»
+
+definicao: It is the sum, in the 2027 balance impact, of the ten lines that table 3.2 of the report marks with (i), invariante. Reference: 2027.
+
+valor: −1 210 million euros
+
+aritmetica: −263 (Invariant measures: revenue, 2027) − 947 (Invariant measures: expenditure, 2027) = −1 210. A negative result reduces the balance; a positive result increases it.
+
+ficha: Where in the file | computed from the identified rows | Data for | 2027 | Study | The 2027 Budget: what changes, and for whom
+
+proveniencia: Complete.
+
+
+### Recortes inspecionados e mostrados
+
+Foram inspecionados e mostrados os doze recortes enumerados em `e/inspecao-visual.json`, com amostras de todas as famílias e das duas edições, a 390 e 1600. Nestas amostras, o texto está legível, as contas conservam a forma das origens, o estado da notícia é explícito e as portas identificam o estudo. A conferência automática abrange as cinco larguras; não se apresenta a inspeção visual da amostra como inspeção manual de todos os recortes.
+
+[Discussão, português, 390](../../capturas/eo1-e-2026-10-21/discussao-pt-390-porta.png) · [Discussão, inglês, 1600](../../capturas/eo1-e-2026-10-21/discussao-en-1600-porta.png) · [Explicador, português, 1600](../../capturas/eo1-e-2026-10-21/explicador-pt-1600-porta.png) · [Explicador, inglês, 390](../../capturas/eo1-e-2026-10-21/explicador-en-390-porta.png)
+
+A conferência de privacidade do conjunto documental passou com código 0 (`e/privacidade-final.log`). `git diff --check` passou; os ficheiros a comitar não incluem PNG.

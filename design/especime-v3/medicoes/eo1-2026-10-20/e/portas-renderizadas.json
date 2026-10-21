@@ -1,0 +1,90 @@
+[
+  {
+    "lang": "pt",
+    "key": "discussao",
+    "route": "o-que-se-discute",
+    "portas": [
+      {
+        "texto": "O estudo: O Orçamento de 2027: o que muda e para quem →",
+        "html": "<p class=\"regra-portas discussao-porta\" data-eo1-porta><a href=\"/estudos/orcamento-2027-o-que-muda-e-para-quem\">O estudo: <span data-verbatim=\"estudo-eo1-titulo-pt\">O Orçamento de 2027: o que muda e para quem</span> →</a></p>",
+        "ligacoes": [
+          {
+            "texto": "O estudo: O Orçamento de 2027: o que muda e para quem →",
+            "href": "/estudos/orcamento-2027-o-que-muda-e-para-quem"
+          }
+        ]
+      },
+      {
+        "texto": "O estudo: O Orçamento de 2027: o que muda e para quem →",
+        "html": "<p class=\"regra-portas discussao-porta\" data-eo1-porta><a href=\"/estudos/orcamento-2027-o-que-muda-e-para-quem\">O estudo: <span data-verbatim=\"estudo-eo1-titulo-pt\">O Orçamento de 2027: o que muda e para quem</span> →</a></p>",
+        "ligacoes": [
+          {
+            "texto": "O estudo: O Orçamento de 2027: o que muda e para quem →",
+            "href": "/estudos/orcamento-2027-o-que-muda-e-para-quem"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "lang": "pt",
+    "key": "explicacao",
+    "route": "explicacoes/dinheiro-do-estado-2026",
+    "portas": [
+      {
+        "texto": "O estudo: O Orçamento de 2027: o que muda e para quem →",
+        "html": "<p class=\"regra-portas discussao-porta\" data-eo1-porta><a href=\"/estudos/orcamento-2027-o-que-muda-e-para-quem\">O estudo: <span data-verbatim=\"estudo-eo1-titulo-pt\">O Orçamento de 2027: o que muda e para quem</span> →</a></p>",
+        "ligacoes": [
+          {
+            "texto": "O estudo: O Orçamento de 2027: o que muda e para quem →",
+            "href": "/estudos/orcamento-2027-o-que-muda-e-para-quem"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "lang": "en",
+    "key": "discussao",
+    "route": "en/under-discussion",
+    "portas": [
+      {
+        "texto": "The study: The 2027 Budget: what changes, and for whom →",
+        "html": "<p class=\"regra-portas discussao-porta\" data-eo1-porta><a href=\"/en/studies/orcamento-2027-o-que-muda-e-para-quem\">The study: <span data-verbatim=\"estudo-eo1-titulo-en\">The 2027 Budget: what changes, and for whom</span> →</a></p>",
+        "ligacoes": [
+          {
+            "texto": "The study: The 2027 Budget: what changes, and for whom →",
+            "href": "/en/studies/orcamento-2027-o-que-muda-e-para-quem"
+          }
+        ]
+      },
+      {
+        "texto": "The study: The 2027 Budget: what changes, and for whom →",
+        "html": "<p class=\"regra-portas discussao-porta\" data-eo1-porta><a href=\"/en/studies/orcamento-2027-o-que-muda-e-para-quem\">The study: <span data-verbatim=\"estudo-eo1-titulo-en\">The 2027 Budget: what changes, and for whom</span> →</a></p>",
+        "ligacoes": [
+          {
+            "texto": "The study: The 2027 Budget: what changes, and for whom →",
+            "href": "/en/studies/orcamento-2027-o-que-muda-e-para-quem"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "lang": "en",
+    "key": "explicacao",
+    "route": "en/explainers/dinheiro-do-estado-2026",
+    "portas": [
+      {
+        "texto": "The study: The 2027 Budget: what changes, and for whom →",
+        "html": "<p class=\"regra-portas discussao-porta\" data-eo1-porta><a href=\"/en/studies/orcamento-2027-o-que-muda-e-para-quem\">The study: <span data-verbatim=\"estudo-eo1-titulo-en\">The 2027 Budget: what changes, and for whom</span> →</a></p>",
+        "ligacoes": [
+          {
+            "texto": "The study: The 2027 Budget: what changes, and for whom →",
+            "href": "/en/studies/orcamento-2027-o-que-muda-e-para-quem"
+          }
+        ]
+      }
+    ]
+  }
+]

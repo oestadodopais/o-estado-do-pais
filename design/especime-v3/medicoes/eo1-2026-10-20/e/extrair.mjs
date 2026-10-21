@@ -31,7 +31,7 @@ for(const sample of samples){
  for(const [key,selector] of Object.entries({titulo:'.linha-titulo',nome:'.linha-nome-da-fonte',definicao:'[data-o-que-e-parte="o-que-e"]',valor:'.linha-valor',aritmetica:'[data-linha-campo="derivation"]'})){
   const el=page.querySelector(selector);if(el)sections[key]=withoutSeals(el);
  }
- sections.ficha=page.querySelector('.aparelho-ficha') ? norm(page.querySelector('.aparelho-ficha').textContent) : '';
+ sections.ficha=page.querySelectorAll('.aparelho-ficha dt, .aparelho-ficha dd').map(el=>norm(el.textContent)).join(' | ');
  sections.proveniencia=page.querySelectorAll('.aparelho-nota').map(el=>norm(el.textContent)).filter(t=>/^(Por confirmar|To be confirmed|Completa\.|Complete\.)/.test(t));
  result.recibos.push({...sample,...sections});
 }

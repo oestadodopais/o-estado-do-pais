@@ -1,0 +1,17 @@
+{
+  "cabeca": "c0fafc555e11a896ea8c13f080d5dacd707826f3",
+  "paginas": 60,
+  "recortes": 100,
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "resumos_conferidos": true,
+  "recortes_iguais_aos_pixeis_da_pagina": true,
+  "excesso_de_largura": false,
+  "pedidos_externos": false,
+  "erros_navegador": false
+}

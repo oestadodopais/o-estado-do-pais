@@ -1,0 +1,56 @@
+{
+  "cabeca": "c0fafc555e11a896ea8c13f080d5dacd707826f3",
+  "motor": "42813f9dbcca2814c51c5b234b5d7e619366d10b",
+  "resultados": [
+    {
+      "nome": "series",
+      "comando": [
+        "npm",
+        "run",
+        "check:series"
+      ],
+      "codigo": 0,
+      "duracao_s": 3.298
+    },
+    {
+      "nome": "cruzamento",
+      "comando": [
+        "npm",
+        "run",
+        "check:cruzamento",
+        "--",
+        "--with-origin"
+      ],
+      "codigo": 0,
+      "duracao_s": 0.59
+    },
+    {
+      "nome": "eo1",
+      "comando": [
+        "npm",
+        "run",
+        "check:eo1"
+      ],
+      "codigo": 0,
+      "duracao_s": 9.358
+    },
+    {
+      "nome": "extracao",
+      "comando": [
+        "node",
+        "design/especime-v3/medicoes/eo1-2026-10-20/e/extrair.mjs"
+      ],
+      "codigo": 0,
+      "duracao_s": 0.131
+    },
+    {
+      "nome": "portas",
+      "comando": [
+        "node",
+        "design/especime-v3/medicoes/eo1-2026-10-20/e/portas.mjs"
+      ],
+      "codigo": 0,
+      "duracao_s": 0.08
+    }
+  ]
+}

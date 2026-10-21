@@ -3,7 +3,9 @@ from hashlib import sha256
 from PIL import Image
 import json,sys
 folder=Path(sys.argv[1]);dest=Path('design/especime-v3/medicoes/eo1-2026-10-20/e')
-r=json.loads((folder/'capturas.json').read_text())
+manifesto=folder/'capturas.json'
+if not manifesto.exists():manifesto=dest/'capturas.json'
+r=json.loads(manifesto.read_text())
 assert r['ok'] and not r['falhas']
 assert r['cabeca']==json.loads(Path('dist/version.json').read_text())['commit']
 assert r['larguras']==[390,768,1024,1280,1600]

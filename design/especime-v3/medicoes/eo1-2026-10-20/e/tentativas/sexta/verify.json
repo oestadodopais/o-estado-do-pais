@@ -1,0 +1,355 @@
+{
+ "cabeca": "849b7ed7e11d097238729eb5c77a76699129978b",
+ "paralelo": 4,
+ "segundos": 384.92,
+ "ok": false,
+ "plantas": [
+  {
+   "falhas": [],
+   "planta": "a cadeia limpa passa, e o que o build já correu não corre outra vez",
+   "mordeu": true
+  },
+  {
+   "falhas": [],
+   "planta": "uma conferência nova só no verify corre sozinha",
+   "mordeu": true
+  },
+  {
+   "falhas": [
+    "U: «\"<casa>/.nvm/versions/node/v22.23.1/bin/node\" -e \"require('fs').writeFileSync(require('path').join('marcas','v2'),'')\"» está no verify, não é um passo do build e não correu aqui"
+   ],
+   "planta": "uma conferência tirada da escolha fecha a célula U",
+   "mordeu": true
+  },
+  {
+   "falhas": [
+    "U: «\"<casa>/.nvm/versions/node/v22.23.1/bin/node\" -e \"process.exit(3)\"» correu e não saiu com 0"
+   ],
+   "planta": "uma conferência vermelha fecha a corrida, e as outras acabam",
+   "mordeu": true
+  },
+  {
+   "falhas": [
+    "D: dist/x/index.html mudou de bytes durante as conferências"
+   ],
+   "planta": "uma conferência que escreve no dist/ fecha a célula D",
+   "mordeu": true
+  },
+  {
+   "falhas": [
+    "C: dist/version.json é de dddddddddddddddddddddddddddddddddddddddd e a árvore está em cccccccccccccccccccccccccccccccccccccccc",
+    "C: dist/prova.json é de dddddddddddddddddddddddddddddddddddddddd e a árvore está em cccccccccccccccccccccccccccccccccccccccc"
+   ],
+   "planta": "um dist/ de outra cabeça fecha a célula C",
+   "mordeu": true
+  },
+  {
+   "falhas": [
+    "U: o verify tem 5 passos pelos &&, e o leitor leu 4"
+   ],
+   "planta": "um passo vazio na cadeia não passa despercebido à contagem",
+   "mordeu": true
+  },
+  {
+   "falhas": [
+    "D: dist/x/index.html foi escrito durante as conferências (os bytes podem ter voltado, a hora de escrita não)"
+   ],
+   "planta": "uma conferência que escreve no dist/ e repõe os bytes fecha a célula D",
+   "mordeu": true
+  },
+  {
+   "planta": "uma conferência que troca um ficheiro do dist/ por uma cópia com os mesmos bytes e a mesma hora de escrita fecha a célula D",
+   "antes": {
+    "escrito": "1792562663417999000",
+    "inode": "270250837",
+    "tamanho": "19",
+    "resumo": "adbad8d628608be43ecbe916fd8e99b732fc607603e0150316a8d17dffa57b12"
+   },
+   "depois": {
+    "escrito": "1792562663417999000",
+    "inode": "270250844",
+    "tamanho": "19",
+    "resumo": "adbad8d628608be43ecbe916fd8e99b732fc607603e0150316a8d17dffa57b12"
+   },
+   "passos_da_troca": 1,
+   "codigo_da_troca": 0,
+   "falhas": [
+    "D: dist/x/index.html foi substituído por outro ficheiro durante as conferências (o inode mudou)"
+   ],
+   "mordeu": true
+  },
+  {
+   "falhas": [
+    "D: fonte.txt foi escrito durante as conferências (os bytes podem ter voltado, a hora de escrita não)"
+   ],
+   "planta": "uma conferência que escreve um ficheiro seguido da árvore e o repõe fecha a célula D",
+   "mordeu": true
+  },
+  {
+   "falhas": [
+    "C: dist/cadeia.json foi escrito a 2026-10-21T06:04:23.507Z, antes do carimbo desta construção (2026-10-21T07:03:23.507Z): é de outra construção"
+   ],
+   "planta": "um cadeia.json de outra construção fecha a célula C",
+   "mordeu": true
+  },
+  {
+   "falhas": [],
+   "planta": "uma conferência que escreve na árvore corre sozinha, depois do grupo",
+   "mordeu": true
+  }
+ ],
+ "corridos": [
+  {
+   "passo": "npm run check:alvos",
+   "fase": "grupo",
+   "codigo": 0,
+   "segundos": 263.54,
+   "inicio_s": 0,
+   "fim_s": 263.54
+  },
+  {
+   "passo": "npm run check:palavras",
+   "fase": "grupo",
+   "codigo": 0,
+   "segundos": 242.054,
+   "inicio_s": 0.001,
+   "fim_s": 242.055
+  },
+  {
+   "passo": "npm run check:moldura",
+   "fase": "grupo",
+   "codigo": 0,
+   "segundos": 147.114,
+   "inicio_s": 0.001,
+   "fim_s": 147.115
+  },
+  {
+   "passo": "npm run check:lugar",
+   "fase": "grupo",
+   "codigo": 0,
+   "segundos": 49.283,
+   "inicio_s": 0.002,
+   "fim_s": 49.285
+  },
+  {
+   "passo": "npm run check:indice",
+   "fase": "grupo",
+   "codigo": 0,
+   "segundos": 29.145,
+   "inicio_s": 49.285,
+   "fim_s": 78.43
+  },
+  {
+   "passo": "npm run check:cartao",
+   "fase": "grupo",
+   "codigo": 0,
+   "segundos": 31.532,
+   "inicio_s": 78.431,
+   "fim_s": 109.963
+  },
+  {
+   "passo": "npm run check:cabeca",
+   "fase": "grupo",
+   "codigo": 0,
+   "segundos": 6.272,
+   "inicio_s": 109.964,
+   "fim_s": 116.236
+  },
+  {
+   "passo": "npm run check:css",
+   "fase": "grupo",
+   "codigo": 0,
+   "segundos": 7.232,
+   "inicio_s": 116.236,
+   "fim_s": 123.468
+  },
+  {
+   "passo": "npm run check:alcance",
+   "fase": "grupo",
+   "codigo": 0,
+   "segundos": 5.646,
+   "inicio_s": 123.468,
+   "fim_s": 129.114
+  },
+  {
+   "passo": "npm run check:briefs",
+   "fase": "grupo",
+   "codigo": 0,
+   "segundos": 247.597,
+   "inicio_s": 129.115,
+   "fim_s": 376.712
+  },
+  {
+   "passo": "npm run check:leituras",
+   "fase": "grupo",
+   "codigo": 0,
+   "segundos": 106.817,
+   "inicio_s": 147.115,
+   "fim_s": 253.932
+  },
+  {
+   "passo": "npm run check:fontes",
+   "fase": "grupo",
+   "codigo": 0,
+   "segundos": 1.515,
+   "inicio_s": 242.055,
+   "fim_s": 243.57
+  },
+  {
+   "passo": "npm run mapa:unidades -- --verifica",
+   "fase": "grupo",
+   "codigo": 0,
+   "segundos": 0.147,
+   "inicio_s": 243.57,
+   "fim_s": 243.717
+  },
+  {
+   "passo": "npm run check:pais:auto-teste",
+   "fase": "grupo",
+   "codigo": 0,
+   "segundos": 1.557,
+   "inicio_s": 243.717,
+   "fim_s": 245.274
+  },
+  {
+   "passo": "npm run provar:eyetext",
+   "fase": "grupo",
+   "codigo": 0,
+   "segundos": 0.371,
+   "inicio_s": 245.274,
+   "fim_s": 245.645
+  },
+  {
+   "passo": "npm run provar:guardas",
+   "fase": "grupo",
+   "codigo": 0,
+   "segundos": 0.2,
+   "inicio_s": 245.645,
+   "fim_s": 245.845
+  },
+  {
+   "passo": "npm run check:mortos",
+   "fase": "grupo",
+   "codigo": 0,
+   "segundos": 1.965,
+   "inicio_s": 245.846,
+   "fim_s": 247.811
+  },
+  {
+   "passo": "npm run check:primeira",
+   "fase": "grupo",
+   "codigo": 0,
+   "segundos": 130.942,
+   "inicio_s": 247.811,
+   "fim_s": 378.753
+  },
+  {
+   "passo": "npm run check:privacidade",
+   "fase": "grupo",
+   "codigo": 0,
+   "segundos": 81.679,
+   "inicio_s": 253.932,
+   "fim_s": 335.611
+  },
+  {
+   "passo": "npm run check:sugestoes",
+   "fase": "grupo",
+   "codigo": 0,
+   "segundos": 0.163,
+   "inicio_s": 263.54,
+   "fim_s": 263.703
+  },
+  {
+   "passo": "npm run check:rotulos",
+   "fase": "grupo",
+   "codigo": 0,
+   "segundos": 5.024,
+   "inicio_s": 263.704,
+   "fim_s": 268.728
+  },
+  {
+   "passo": "npm run check:series",
+   "fase": "grupo",
+   "codigo": 0,
+   "segundos": 3.825,
+   "inicio_s": 268.728,
+   "fim_s": 272.553
+  },
+  {
+   "passo": "npm run check:indice-do-sitio",
+   "fase": "grupo",
+   "codigo": 1,
+   "segundos": 20.49,
+   "inicio_s": 272.553,
+   "fim_s": 293.043
+  },
+  {
+   "passo": "npm run check:explicacoes",
+   "fase": "grupo",
+   "codigo": 0,
+   "segundos": 6.826,
+   "inicio_s": 293.043,
+   "fim_s": 299.869
+  },
+  {
+   "passo": "npm run check:frases-compostas",
+   "fase": "grupo",
+   "codigo": 0,
+   "segundos": 59.336,
+   "inicio_s": 299.869,
+   "fim_s": 359.205
+  },
+  {
+   "passo": "npm run check:incorporar",
+   "fase": "grupo",
+   "codigo": 0,
+   "segundos": 27.038,
+   "inicio_s": 335.611,
+   "fim_s": 362.649
+  },
+  {
+   "passo": "npm run check:eo1",
+   "fase": "grupo",
+   "codigo": 0,
+   "segundos": 11.738,
+   "inicio_s": 359.205,
+   "fim_s": 370.943
+  },
+  {
+   "passo": "npm run design:feixe",
+   "fase": "depois",
+   "codigo": 0,
+   "segundos": 2.368,
+   "inicio_s": 378.753,
+   "fim_s": 381.121
+  }
+ ],
+ "celulas": {
+  "U": {
+   "ok": false,
+   "falhas": [
+    "U: «npm run check:indice-do-sitio» correu e não saiu com 0"
+   ],
+   "passos_do_verify": 49,
+   "cobertos_pelo_build": 21,
+   "corridos_aqui": 27
+  },
+  "D": {
+   "ok": true,
+   "falhas": [],
+   "diferencas": 0,
+   "ficheiros": 21429,
+   "ficheiros_da_arvore": 32573
+  },
+  "C": {
+   "ok": true,
+   "falhas": [],
+   "cabeca": "849b7ed7e11d097238729eb5c77a76699129978b",
+   "carimbo": "2026-10-21T06:59:48.293Z",
+   "escritos": {
+    "prova.json": "2026-10-21T07:01:38.591Z",
+    "cadeia.json": "2026-10-21T07:01:41.078Z"
+   }
+  }
+ }
+}

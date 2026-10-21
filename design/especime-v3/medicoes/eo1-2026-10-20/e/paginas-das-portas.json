@@ -1,0 +1,25 @@
+{
+  "cabeca": "c0fafc555e11a896ea8c13f080d5dacd707826f3",
+  "paginas": [
+    {
+      "rota": "o-que-se-discute",
+      "ficheiro": "paginas-das-portas/o-que-se-discute/index.html",
+      "sha256": "96cb8575925ac335df99c8feac3f654778b6bb26469c3e059d426560f51f81f4"
+    },
+    {
+      "rota": "explicacoes/dinheiro-do-estado-2026",
+      "ficheiro": "paginas-das-portas/explicacoes/dinheiro-do-estado-2026/index.html",
+      "sha256": "141c96ab21fe4e480e6f3d2bf6a0cbb5767230e34926f5787a1079a11c3b096e"
+    },
+    {
+      "rota": "en/under-discussion",
+      "ficheiro": "paginas-das-portas/en/under-discussion/index.html",
+      "sha256": "181a668898012f1c5698329926e0ffa0e9a0aa531621dbe1baa5457995dd1727"
+    },
+    {
+      "rota": "en/explainers/dinheiro-do-estado-2026",
+      "ficheiro": "paginas-das-portas/en/explainers/dinheiro-do-estado-2026/index.html",
+      "sha256": "25267f0201e622852c015f0e2dd8748d197def6ec2dda31c7c9465d6b467daf7"
+    }
+  ]
+}

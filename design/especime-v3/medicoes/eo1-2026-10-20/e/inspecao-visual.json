@@ -1,0 +1,24 @@
+{
+  "cabeca": "c0fafc555e11a896ea8c13f080d5dacd707826f3",
+  "recortes_inspecionados_e_mostrados": [
+    "estudo-pt-390-resumo.png",
+    "estudo-en-390-resumo.png",
+    "discussao-pt-390-porta.png",
+    "explicador-en-390-porta.png",
+    "documento-pt-1600-resumo.png",
+    "documento-en-390-resumo.png",
+    "derivada-pt-390-conta.png",
+    "derivada-en-1600-conta.png",
+    "imprensa-pt-390-estado.png",
+    "imprensa-en-1600-estado.png",
+    "discussao-en-1600-porta.png",
+    "explicador-pt-1600-porta.png"
+  ],
+  "observacoes": [
+    "Abertura legível nas duas edições, sem corte ou sobreposição nos recortes inspecionados.",
+    "A conta derivada conserva a forma dos números das origens nas duas edições.",
+    "O estado da notícia permanece por confirmar na fonte primária.",
+    "As portas da discussão e do explicador identificam o estudo nas duas edições."
+  ],
+  "limite": "Inspeção visual dos recortes listados; a conferência automática cobre as 60 páginas e os 100 recortes."
+}

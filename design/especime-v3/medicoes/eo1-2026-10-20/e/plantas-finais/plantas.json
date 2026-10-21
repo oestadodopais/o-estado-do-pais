@@ -1,0 +1,125 @@
+{
+  "cabeca": "c0fafc555e11a896ea8c13f080d5dacd707826f3",
+  "plantas": [
+    {
+      "nome": "controlo-antes",
+      "codigo": 0,
+      "esperado": 0,
+      "duracao_s": 0.361,
+      "antes": {
+        "src/data/o-que-e-das-familias.mjs": "eed7265e25768f28f386df11534cc64f120ba58b564957309dbb1c6414a8b670",
+        "tests/cartao/leituras-provadas.json": "1d7305770d760f46aa12761e366433090f810f5015c26f81225a10eb87c70579",
+        "dist/livro-razao/der-csi-referencia-2026/index.html": "e47f4b55661149ebfabb75b311e0e6da6698c8020fdd014e97d5bc399287356f"
+      },
+      "reposto": {
+        "src/data/o-que-e-das-familias.mjs": "eed7265e25768f28f386df11534cc64f120ba58b564957309dbb1c6414a8b670",
+        "tests/cartao/leituras-provadas.json": "1d7305770d760f46aa12761e366433090f810f5015c26f81225a10eb87c70579",
+        "dist/livro-razao/der-csi-referencia-2026/index.html": "e47f4b55661149ebfabb75b311e0e6da6698c8020fdd014e97d5bc399287356f"
+      },
+      "passou": true
+    },
+    {
+      "nome": "metades-planta",
+      "codigo": 1,
+      "esperado": 1,
+      "duracao_s": 0.195,
+      "antes": {
+        "src/data/o-que-e-das-familias.mjs": "eed7265e25768f28f386df11534cc64f120ba58b564957309dbb1c6414a8b670",
+        "tests/cartao/leituras-provadas.json": "1d7305770d760f46aa12761e366433090f810f5015c26f81225a10eb87c70579",
+        "dist/livro-razao/der-csi-referencia-2026/index.html": "e47f4b55661149ebfabb75b311e0e6da6698c8020fdd014e97d5bc399287356f"
+      },
+      "reposto": {
+        "src/data/o-que-e-das-familias.mjs": "eed7265e25768f28f386df11534cc64f120ba58b564957309dbb1c6414a8b670",
+        "tests/cartao/leituras-provadas.json": "1d7305770d760f46aa12761e366433090f810f5015c26f81225a10eb87c70579",
+        "dist/livro-razao/der-csi-referencia-2026/index.html": "e47f4b55661149ebfabb75b311e0e6da6698c8020fdd014e97d5bc399287356f"
+      },
+      "passou": true
+    },
+    {
+      "nome": "definicoes-compositor-planta",
+      "codigo": 1,
+      "esperado": 1,
+      "duracao_s": 0.331,
+      "antes": {
+        "src/data/o-que-e-das-familias.mjs": "eed7265e25768f28f386df11534cc64f120ba58b564957309dbb1c6414a8b670",
+        "tests/cartao/leituras-provadas.json": "1d7305770d760f46aa12761e366433090f810f5015c26f81225a10eb87c70579",
+        "dist/livro-razao/der-csi-referencia-2026/index.html": "e47f4b55661149ebfabb75b311e0e6da6698c8020fdd014e97d5bc399287356f"
+      },
+      "reposto": {
+        "src/data/o-que-e-das-familias.mjs": "eed7265e25768f28f386df11534cc64f120ba58b564957309dbb1c6414a8b670",
+        "tests/cartao/leituras-provadas.json": "1d7305770d760f46aa12761e366433090f810f5015c26f81225a10eb87c70579",
+        "dist/livro-razao/der-csi-referencia-2026/index.html": "e47f4b55661149ebfabb75b311e0e6da6698c8020fdd014e97d5bc399287356f"
+      },
+      "passou": true
+    },
+    {
+      "nome": "definicoes-cartao-planta",
+      "codigo": 1,
+      "esperado": 1,
+      "duracao_s": 0.349,
+      "antes": {
+        "src/data/o-que-e-das-familias.mjs": "eed7265e25768f28f386df11534cc64f120ba58b564957309dbb1c6414a8b670",
+        "tests/cartao/leituras-provadas.json": "1d7305770d760f46aa12761e366433090f810f5015c26f81225a10eb87c70579",
+        "dist/livro-razao/der-csi-referencia-2026/index.html": "e47f4b55661149ebfabb75b311e0e6da6698c8020fdd014e97d5bc399287356f"
+      },
+      "reposto": {
+        "src/data/o-que-e-das-familias.mjs": "eed7265e25768f28f386df11534cc64f120ba58b564957309dbb1c6414a8b670",
+        "tests/cartao/leituras-provadas.json": "1d7305770d760f46aa12761e366433090f810f5015c26f81225a10eb87c70579",
+        "dist/livro-razao/der-csi-referencia-2026/index.html": "e47f4b55661149ebfabb75b311e0e6da6698c8020fdd014e97d5bc399287356f"
+      },
+      "passou": true
+    },
+    {
+      "nome": "definicoes-html-planta",
+      "codigo": 1,
+      "esperado": 1,
+      "duracao_s": 41.87,
+      "antes": {
+        "src/data/o-que-e-das-familias.mjs": "eed7265e25768f28f386df11534cc64f120ba58b564957309dbb1c6414a8b670",
+        "tests/cartao/leituras-provadas.json": "1d7305770d760f46aa12761e366433090f810f5015c26f81225a10eb87c70579",
+        "dist/livro-razao/der-csi-referencia-2026/index.html": "e47f4b55661149ebfabb75b311e0e6da6698c8020fdd014e97d5bc399287356f"
+      },
+      "reposto": {
+        "src/data/o-que-e-das-familias.mjs": "eed7265e25768f28f386df11534cc64f120ba58b564957309dbb1c6414a8b670",
+        "tests/cartao/leituras-provadas.json": "1d7305770d760f46aa12761e366433090f810f5015c26f81225a10eb87c70579",
+        "dist/livro-razao/der-csi-referencia-2026/index.html": "e47f4b55661149ebfabb75b311e0e6da6698c8020fdd014e97d5bc399287356f"
+      },
+      "passou": true
+    },
+    {
+      "nome": "html-reposto",
+      "codigo": 0,
+      "esperado": 0,
+      "duracao_s": 41.769,
+      "antes": {
+        "src/data/o-que-e-das-familias.mjs": "eed7265e25768f28f386df11534cc64f120ba58b564957309dbb1c6414a8b670",
+        "tests/cartao/leituras-provadas.json": "1d7305770d760f46aa12761e366433090f810f5015c26f81225a10eb87c70579",
+        "dist/livro-razao/der-csi-referencia-2026/index.html": "e47f4b55661149ebfabb75b311e0e6da6698c8020fdd014e97d5bc399287356f"
+      },
+      "reposto": {
+        "src/data/o-que-e-das-familias.mjs": "eed7265e25768f28f386df11534cc64f120ba58b564957309dbb1c6414a8b670",
+        "tests/cartao/leituras-provadas.json": "1d7305770d760f46aa12761e366433090f810f5015c26f81225a10eb87c70579",
+        "dist/livro-razao/der-csi-referencia-2026/index.html": "e47f4b55661149ebfabb75b311e0e6da6698c8020fdd014e97d5bc399287356f"
+      },
+      "passou": true
+    },
+    {
+      "nome": "controlo-reposto",
+      "codigo": 0,
+      "esperado": 0,
+      "duracao_s": 0.362,
+      "antes": {
+        "src/data/o-que-e-das-familias.mjs": "eed7265e25768f28f386df11534cc64f120ba58b564957309dbb1c6414a8b670",
+        "tests/cartao/leituras-provadas.json": "1d7305770d760f46aa12761e366433090f810f5015c26f81225a10eb87c70579",
+        "dist/livro-razao/der-csi-referencia-2026/index.html": "e47f4b55661149ebfabb75b311e0e6da6698c8020fdd014e97d5bc399287356f"
+      },
+      "reposto": {
+        "src/data/o-que-e-das-familias.mjs": "eed7265e25768f28f386df11534cc64f120ba58b564957309dbb1c6414a8b670",
+        "tests/cartao/leituras-provadas.json": "1d7305770d760f46aa12761e366433090f810f5015c26f81225a10eb87c70579",
+        "dist/livro-razao/der-csi-referencia-2026/index.html": "e47f4b55661149ebfabb75b311e0e6da6698c8020fdd014e97d5bc399287356f"
+      },
+      "passou": true
+    }
+  ],
+  "passou": true
+}
