@@ -997,8 +997,53 @@ A primeira exportação falhou por `ModuleNotFoundError`; a repetição pelo mó
 - **V2E-66.** O item das parcerias passa a «com dados reportados a» e «with data referenced to», conservando o token do período e o selo. As declarações anteriores ficam retiradas no inventário, com a razão, e as novas entram em `v2e-e | viva`. A leitura cruzada fica por fazer.
 - **V2E-67.** A numeração começa em V2E-65 porque V2E-62 a V2E-64 já constam da V2-e-d; não se renumera o histórico. A cabeça dos portões será o último commit que altera código, dados ou inventário. O commit posterior incorpora só relatório e provas; `e/conferir-identidade.mjs` confere a igualdade do código entregue.
 
-As frases renderizadas, os códigos e as capturas serão registados depois da corrida da cabeça comitada.
 
-- **V2E-68.** A primeira construção recusou o ano literal exigido pela frase (`build=1`, `verify=125`, `typecheck=0`, em `e/portoes-recusa-ano/`). O resolvedor admite só a frase exata nas duas línguas, com os três recibos no contexto, todos com período de 2024, e com o token de período português no próprio parágrafo. Plantas retiram o token, trocam o ano e acrescentam outro algarismo.
+- **V2E-68.** A primeira construção recusou o ano literal exigido pela frase (`build=1`, `verify=125`, `typecheck=0`, em `e/portoes-recusa-ano/`). O resolvedor admite só a frase exata nas duas línguas, com os três recibos no contexto, todos com período de 2024, e com o token de período da linha portuguesa no próprio parágrafo. Plantas retiram o token, trocam o ano e acrescentam outro algarismo.
 
 A segunda corrida construiu as páginas, mas o portão do HTML recusou o ano sem marcação (`build=1`, `verify=125`, `typecheck=0`, em `e/portoes-recusa-marcacao/`). O resolvedor apresenta esse ano pela célula de data da linha portuguesa, conservando a frase e os tokens da declaração. A prova do período fica assim também no HTML. O guião de medição corrigiu ainda um seletor que esperava uma barra final inexistente no endereço do recibo.
+
+### As duas frases nas duas edições
+
+Extraídas do HTML construído por [e/medir-entrega.mjs](e/medir-entrega.mjs). Os selos são retirados apenas da transcrição e os espaços tipográficos normalizados; os períodos ficam no texto. O [registo da extração](e/final/frases-renderizadas.json) conserva o HTML e os seus resumos SHA-256, iguais aos recursos lidos nas capturas.
+
+**Médicos, PT:** Portugal tinha 431,35 médicos em exercício por cem mil habitantes em 2024, entre a Bélgica, com o valor mais baixo (334,25), e a Grécia, com o mais alto (626,89), nos vinte e seis Estados-membros com dados de 2024; a Eslováquia não os tem.
+
+**Pedidos, PT:** Fora do quadro, no capítulo dos riscos, o relatório conta 2 388,2 milhões de euros em pedidos de reequilíbrio financeiro e litígios das concessionárias e subconcessionárias rodoviárias, com dados reportados a 1.º trimestre de 2026, 1 140 acima do relatório anterior, dos quais 1 122,5 da Brisa, na negociação em curso, e 445 da ação principal da Rotas do Algarve Litoral, em que a Infraestruturas de Portugal paga, por decisão provisória, cerca de 1,3 milhões por mês, mais IVA. A UTAO distingue os pedidos dos encargos efetivos: «São pretensões dos parceiros privados, e não encargos já reconhecidos; a sua concretização, total ou parcial, oneraria o saldo orçamental de anos futuros.»
+
+**Médicos, EN:** Portugal had 431,35 practising physicians per hundred thousand inhabitants in 2024, between Belgium, with the lowest value (334,25), and Greece, with the highest (626,89), among the twenty-six member states with 2024 data; Slovakia has none.
+
+**Pedidos, EN:** Outside the table, in the risks chapter, the report counts 2 388,2 million euros in financial rebalancing claims and litigation by road concessionaires and subconcessionaires, with data referenced to 1st quarter of 2026, 1 140 above the previous report, including 1 122,5 from Brisa, in the ongoing negotiation, and 445 in the main action by Rotas do Algarve Litoral, in which Infraestruturas de Portugal pays, by provisional decision, around 1,3 million a month, plus VAT. The UTAO distinguishes claims from actual charges: «São pretensões dos parceiros privados, e não encargos já reconhecidos; a sua concretização, total ou parcial, oneraria o saldo orçamental de anos futuros.»
+
+### A contagem e a sua planta
+
+A [conferência repetida do corpo alojado](e/final/medicos.json) coincide com `d/final/medicos.json`: 26 Estados-membros com valor de 2024, `ausentes: ["SK"]`. A parte própria em `tests/discussao/palavras.json` declara o ficheiro, a contagem e a ausência. A auditoria reconta os valores e confere essa parte nas duas línguas.
+
+[contagem-medicos.mjs](../../../../tests/discussao/contagem-medicos.mjs) usa `structuredClone(ITENS)` e troca «vinte e seis» por «vinte e sete», e «twenty-six» por «twenty-seven», apenas na cópia. A auditoria recusa-a com código **1**. O controlo limpo dá **0**; a adulteração da contagem do próprio apoio também dá **1**. As plantas da contagem e da marcação do ano integram a corrida habitual da discussão, que passou 714 plantas em 714.
+
+### Portões e entrega
+
+Cabeça do código: `dc787d81fb5903732bf401c98153d441b522e063`. Motor: `8f88bfea65f4017c782f8160fc4b508f2dceb369`, sem alterações nesta passagem. As cabeças de início e fim dos portões e da recolha coincidem.
+
+| Conferência | Código | Registo |
+| --- | ---: | --- |
+| build | 0 | [código](e/portoes-final/build.codigo), [registo](e/portoes-final/build.log) |
+| npm run verify, cadeia integral | 0 | [código](e/portoes-final/verify.codigo), [registo](e/portoes-final/verify.log) |
+| typecheck | 0 | [código](e/portoes-final/typecheck.codigo), [registo](e/portoes-final/typecheck.log) |
+| check:series, com RESEARCHHUB_DIR da worktree do motor | 0 | [código](e/final/series.codigo), [registo](e/final/series.log) |
+| check:cruzamento --with-origin | 0 | [código](e/final/cruzamento.codigo), [registo](e/final/cruzamento.log) |
+| Conferência do corpo dos médicos | 0 | [código](e/final/medicos.codigo), [registo](e/final/medicos.log) |
+| Auditoria da cabeça limpa | 0 | [código](e/final/cabeca-contagem.codigo), [registo](e/final/cabeca-contagem.log) |
+| Planta da contagem nos dados | 1 | [código](e/final/planta-contagem.codigo), [registo](e/final/planta-contagem.log) |
+| Planta da contagem no apoio | 1 | [código](e/final/planta-apoio.codigo), [registo](e/final/planta-apoio.log) |
+| Inventário da prosa | 0 | [código](e/final/inventario.codigo), [registo](e/final/inventario.log) |
+| Capturas pelo escrivão | 0 | [código](e/final/capturas.codigo), [registo](e/final/capturas.log) |
+| Identidade dos recortes | 0 | [código](e/final/recortes.codigo), [registo](e/final/recortes.log) |
+| Identidade do código entregue | 0 | [código](e/final/identidade.codigo), [registo](e/final/identidade.log) |
+
+O `verify` usa a união conferida dos passos do build e dos restantes passos da cadeia integral, com a prova da cabeça e da imutabilidade em [verify.json](e/portoes-final/verify.json). O inventário tem zero frases sem classe e zero declarações vivas ausentes, com as quatro declarações anteriores retiradas e as quatro novas vivas. O cruzamento conserva o aviso sobre a reconstrução do livro do Orçamento, mas confirma cada linha e cada ficheiro atravessado contra o motor. Os [registos de preparação](e/preparacao/) conservam a falha do seletor e a recusa de tipo corrigidas antes da entrega.
+
+As capturas cobrem o início e a discussão, nas duas edições, a 390, 768, 1024, 1280 e 1600 píxeis: 20 páginas completas e 30 recortes, sem transbordo horizontal, erros de navegador, recursos em falta ou pedidos externos. O [manifesto](e/final/capturas/capturas.json) guarda dimensões e SHA-256. Os [30 recortes](e/final/recortes-prova.json) coincidem píxel a píxel com as páginas completas. Foram inspecionados visualmente [dez recortes](e/final/inspecao-visual.json), com os parágrafos dos médicos e dos pedidos nas duas línguas a 390 e 1600 píxeis e as duas entradas do início a 390 píxeis. Os PNG ficam locais e não entram nos commits.
+
+O [resumo](e/final/resumo.json) reúne os códigos lidos. O commit de provas só acrescenta ou corrige ficheiros nesta pasta de relatório; [e/conferir-identidade.mjs](e/conferir-identidade.mjs) verifica também depois desse commit que o código é o da cabeça conferida. Não houve push.
+
+Símbolos gastos: contador não exposto nesta sessão; não se inventa um total. O custo em pontos fica a cargo do lançador.

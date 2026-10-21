@@ -1,0 +1,16 @@
+{
+  "cabeca": "dc787d81fb5903732bf401c98153d441b522e063",
+  "nao_classificados": 0,
+  "declaracoes": {
+    "total": 2186,
+    "vivas": 1105,
+    "retiradas": 1081,
+    "rendidas": 3482,
+    "sem_estado": [],
+    "retiradas_sem_razao": [],
+    "rendidas_nas_isentas": 1550,
+    "vivas_que_nao_rendem": [],
+    "retiradas_que_rendem": []
+  },
+  "sha256_medicao": "e07745ece16114d590bf7bfdf8d2fe53c20b2a6ca7e306acdc34453d9cad4bb7"
+}

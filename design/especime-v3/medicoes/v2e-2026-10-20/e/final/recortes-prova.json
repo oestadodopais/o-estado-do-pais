@@ -1,0 +1,186 @@
+{
+  "cabeca": "dc787d81fb5903732bf401c98153d441b522e063",
+  "capturas": 20,
+  "recortes": [
+    {
+      "ficheiro": "inicio-pt-390-discussao.png",
+      "origem": "inicio-pt-390.png",
+      "sha256": "90091d1f563fc2e18cde88f60324354eef2c30e561259ddbfa7415dce63e7a96",
+      "pixeis_iguais": true
+    },
+    {
+      "ficheiro": "inicio-pt-768-discussao.png",
+      "origem": "inicio-pt-768.png",
+      "sha256": "69c13f9b78885d4aabf3d37e45cb02c15be620c8c854248a22d84585c5b09508",
+      "pixeis_iguais": true
+    },
+    {
+      "ficheiro": "inicio-pt-1024-discussao.png",
+      "origem": "inicio-pt-1024.png",
+      "sha256": "5ac8671abc8da0d725452e8966eacde4b80a209c4cc31d04e280bbd224802be5",
+      "pixeis_iguais": true
+    },
+    {
+      "ficheiro": "inicio-pt-1280-discussao.png",
+      "origem": "inicio-pt-1280.png",
+      "sha256": "119e1b9a393ad13be96bc68611907e3f827ea30d01a948a752ec13f4025608fa",
+      "pixeis_iguais": true
+    },
+    {
+      "ficheiro": "inicio-pt-1600-discussao.png",
+      "origem": "inicio-pt-1600.png",
+      "sha256": "119e1b9a393ad13be96bc68611907e3f827ea30d01a948a752ec13f4025608fa",
+      "pixeis_iguais": true
+    },
+    {
+      "ficheiro": "inicio-en-390-discussao.png",
+      "origem": "inicio-en-390.png",
+      "sha256": "a9e67607a9295247290e473ab8e9665a549682e674a92b62f79df1abd9167a9e",
+      "pixeis_iguais": true
+    },
+    {
+      "ficheiro": "inicio-en-768-discussao.png",
+      "origem": "inicio-en-768.png",
+      "sha256": "8ef0488fca6643de785a2056b2b547c50eed9585d2a8ef8936d77b43af3cb741",
+      "pixeis_iguais": true
+    },
+    {
+      "ficheiro": "inicio-en-1024-discussao.png",
+      "origem": "inicio-en-1024.png",
+      "sha256": "cca7a06ab6022d515922a063fb7f5bce0ff4b00956ace352272c149af0df4f24",
+      "pixeis_iguais": true
+    },
+    {
+      "ficheiro": "inicio-en-1280-discussao.png",
+      "origem": "inicio-en-1280.png",
+      "sha256": "662cc6ed420b3173fa992203090b9197c192bf64846e44645f97d483ac13b170",
+      "pixeis_iguais": true
+    },
+    {
+      "ficheiro": "inicio-en-1600-discussao.png",
+      "origem": "inicio-en-1600.png",
+      "sha256": "662cc6ed420b3173fa992203090b9197c192bf64846e44645f97d483ac13b170",
+      "pixeis_iguais": true
+    },
+    {
+      "ficheiro": "discussao-pt-390-medicos.png",
+      "origem": "discussao-pt-390.png",
+      "sha256": "96d0f354ac4059980bc9f3c4bd30ff31cd9ba7d82fef09cbac0035fc4f120e1f",
+      "pixeis_iguais": true
+    },
+    {
+      "ficheiro": "discussao-pt-390-pedidos.png",
+      "origem": "discussao-pt-390.png",
+      "sha256": "966f3ed6482002e831e2b90f48c75c07dfc8b26d9229228f979e545d6ae4ac93",
+      "pixeis_iguais": true
+    },
+    {
+      "ficheiro": "discussao-pt-768-medicos.png",
+      "origem": "discussao-pt-768.png",
+      "sha256": "722827a3bab4320e46a99fb404a7db0749515573dbe405d025b867a8a2749bb4",
+      "pixeis_iguais": true
+    },
+    {
+      "ficheiro": "discussao-pt-768-pedidos.png",
+      "origem": "discussao-pt-768.png",
+      "sha256": "d1e040a7034aaa9f31e81d0e23dbed75f43bd93da50e7b17d07e2243f5ce8430",
+      "pixeis_iguais": true
+    },
+    {
+      "ficheiro": "discussao-pt-1024-medicos.png",
+      "origem": "discussao-pt-1024.png",
+      "sha256": "dcadcd230c4970cb46de4d7f7b6e804ae125a3ee25c02f452916d5b893898b4d",
+      "pixeis_iguais": true
+    },
+    {
+      "ficheiro": "discussao-pt-1024-pedidos.png",
+      "origem": "discussao-pt-1024.png",
+      "sha256": "b8a9b8e01973549b13d436eb19870c69cdaf2d377db6a9f9e3d15d4464871f04",
+      "pixeis_iguais": true
+    },
+    {
+      "ficheiro": "discussao-pt-1280-medicos.png",
+      "origem": "discussao-pt-1280.png",
+      "sha256": "0d30c7da6130f6c239711b3864fad83638731903adfe95369c1e9f326fd8d73e",
+      "pixeis_iguais": true
+    },
+    {
+      "ficheiro": "discussao-pt-1280-pedidos.png",
+      "origem": "discussao-pt-1280.png",
+      "sha256": "0da20dd53a7b966e6e6db11c0da63aff4611e0c658e7ca99178cbe06b3164866",
+      "pixeis_iguais": true
+    },
+    {
+      "ficheiro": "discussao-pt-1600-medicos.png",
+      "origem": "discussao-pt-1600.png",
+      "sha256": "0d30c7da6130f6c239711b3864fad83638731903adfe95369c1e9f326fd8d73e",
+      "pixeis_iguais": true
+    },
+    {
+      "ficheiro": "discussao-pt-1600-pedidos.png",
+      "origem": "discussao-pt-1600.png",
+      "sha256": "91a8f4fbffa8841364234a2ffbdda288577363f174e7eabe9c91ebd5fe348576",
+      "pixeis_iguais": true
+    },
+    {
+      "ficheiro": "discussao-en-390-medicos.png",
+      "origem": "discussao-en-390.png",
+      "sha256": "c440e563155c8b680efa8fdd29008f3ea84b262a8378f1689da8fd3d8c21f0b1",
+      "pixeis_iguais": true
+    },
+    {
+      "ficheiro": "discussao-en-390-pedidos.png",
+      "origem": "discussao-en-390.png",
+      "sha256": "6eba66f493cc099341ea63f90cd29c6291186cb22ae19c4a25fdd8f441e7eced",
+      "pixeis_iguais": true
+    },
+    {
+      "ficheiro": "discussao-en-768-medicos.png",
+      "origem": "discussao-en-768.png",
+      "sha256": "486c2da54ee634f7231a015401b99d3ece5e403707856eac63c18bda3e20922a",
+      "pixeis_iguais": true
+    },
+    {
+      "ficheiro": "discussao-en-768-pedidos.png",
+      "origem": "discussao-en-768.png",
+      "sha256": "d94ba4def4e1d315e058bc1530a588bd3a965f16fa59286e0e1f8470bee1d2a3",
+      "pixeis_iguais": true
+    },
+    {
+      "ficheiro": "discussao-en-1024-medicos.png",
+      "origem": "discussao-en-1024.png",
+      "sha256": "f88af05b7ac7c21a537a0ce8b943046bb4c797ad92464efaccc0443061942651",
+      "pixeis_iguais": true
+    },
+    {
+      "ficheiro": "discussao-en-1024-pedidos.png",
+      "origem": "discussao-en-1024.png",
+      "sha256": "0068a65b206645737ff14ba01c2abe457eb4a09cc7d8efbe0c7aa38faa44410b",
+      "pixeis_iguais": true
+    },
+    {
+      "ficheiro": "discussao-en-1280-medicos.png",
+      "origem": "discussao-en-1280.png",
+      "sha256": "62fdeb4df7a95c16943a833e667954c1e7ddc6f53570f8b3720c2e112cbe87a3",
+      "pixeis_iguais": true
+    },
+    {
+      "ficheiro": "discussao-en-1280-pedidos.png",
+      "origem": "discussao-en-1280.png",
+      "sha256": "b07edddf7e13187e639defdb009f9e2d4e52456f5b1c43d020244d8cc9c7e5d4",
+      "pixeis_iguais": true
+    },
+    {
+      "ficheiro": "discussao-en-1600-medicos.png",
+      "origem": "discussao-en-1600.png",
+      "sha256": "62fdeb4df7a95c16943a833e667954c1e7ddc6f53570f8b3720c2e112cbe87a3",
+      "pixeis_iguais": true
+    },
+    {
+      "ficheiro": "discussao-en-1600-pedidos.png",
+      "origem": "discussao-en-1600.png",
+      "sha256": "3f653f0cf0fc860addca33bccc6a96689554bf51e041761070df7260e22c5fb2",
+      "pixeis_iguais": true
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "cabeca": "dc787d81fb5903732bf401c98153d441b522e063",
+  "recortes_inspecionados": [
+    {
+      "ficheiro": "discussao-pt-390-medicos.png",
+      "sha256": "96d0f354ac4059980bc9f3c4bd30ff31cd9ba7d82fef09cbac0035fc4f120e1f",
+      "leitura": "Texto legível, sem cortes ou sobreposição; período e portas de proveniência visíveis."
+    },
+    {
+      "ficheiro": "discussao-pt-390-pedidos.png",
+      "sha256": "966f3ed6482002e831e2b90f48c75c07dfc8b26d9229228f979e545d6ae4ac93",
+      "leitura": "Texto legível, sem cortes ou sobreposição; período e portas de proveniência visíveis."
+    },
+    {
+      "ficheiro": "discussao-en-390-medicos.png",
+      "sha256": "c440e563155c8b680efa8fdd29008f3ea84b262a8378f1689da8fd3d8c21f0b1",
+      "leitura": "Texto legível, sem cortes ou sobreposição; período e portas de proveniência visíveis."
+    },
+    {
+      "ficheiro": "discussao-en-390-pedidos.png",
+      "sha256": "6eba66f493cc099341ea63f90cd29c6291186cb22ae19c4a25fdd8f441e7eced",
+      "leitura": "Texto legível, sem cortes ou sobreposição; período e portas de proveniência visíveis."
+    },
+    {
+      "ficheiro": "discussao-pt-1600-medicos.png",
+      "sha256": "0d30c7da6130f6c239711b3864fad83638731903adfe95369c1e9f326fd8d73e",
+      "leitura": "Texto legível, sem cortes ou sobreposição; período e portas de proveniência visíveis."
+    },
+    {
+      "ficheiro": "discussao-pt-1600-pedidos.png",
+      "sha256": "91a8f4fbffa8841364234a2ffbdda288577363f174e7eabe9c91ebd5fe348576",
+      "leitura": "Texto legível, sem cortes ou sobreposição; período e portas de proveniência visíveis."
+    },
+    {
+      "ficheiro": "discussao-en-1600-medicos.png",
+      "sha256": "62fdeb4df7a95c16943a833e667954c1e7ddc6f53570f8b3720c2e112cbe87a3",
+      "leitura": "Texto legível, sem cortes ou sobreposição; período e portas de proveniência visíveis."
+    },
+    {
+      "ficheiro": "discussao-en-1600-pedidos.png",
+      "sha256": "3f653f0cf0fc860addca33bccc6a96689554bf51e041761070df7260e22c5fb2",
+      "leitura": "Texto legível, sem cortes ou sobreposição; período e portas de proveniência visíveis."
+    },
+    {
+      "ficheiro": "inicio-pt-390-discussao.png",
+      "sha256": "90091d1f563fc2e18cde88f60324354eef2c30e561259ddbfa7415dce63e7a96",
+      "leitura": "Texto legível, sem cortes ou sobreposição; período e portas de proveniência visíveis."
+    },
+    {
+      "ficheiro": "inicio-en-390-discussao.png",
+      "sha256": "a9e67607a9295247290e473ab8e9665a549682e674a92b62f79df1abd9167a9e",
+      "leitura": "Texto legível, sem cortes ou sobreposição; período e portas de proveniência visíveis."
+    }
+  ],
+  "paginas_completas": 20,
+  "recortes_totais": 30,
+  "sem_transbordo": true,
+  "falhas": []
+}

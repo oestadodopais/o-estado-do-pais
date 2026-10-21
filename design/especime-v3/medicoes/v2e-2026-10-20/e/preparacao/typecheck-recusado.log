@@ -1,0 +1,5 @@
+
+> o-estado-do-pais@0.1.0 typecheck
+> tsc -p tsconfig.check.json
+
+src/lib/explicacoes.mjs(257,77): error TS2322: Type 'unknown' is not assignable to type 'string'.

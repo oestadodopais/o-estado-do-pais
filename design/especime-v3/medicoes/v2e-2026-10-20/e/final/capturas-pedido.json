@@ -1,0 +1,31 @@
+{
+  "cabeca": "dc787d81fb5903732bf401c98153d441b522e063",
+  "paginas": [
+    {
+      "nome": "inicio",
+      "pt": "/",
+      "en": "/en/",
+      "recortes": [
+        {
+          "nome": "discussao",
+          "seletor": "[data-discussao-inicio]"
+        }
+      ]
+    },
+    {
+      "nome": "discussao",
+      "pt": "/o-que-se-discute/",
+      "en": "/en/under-discussion/",
+      "recortes": [
+        {
+          "nome": "medicos",
+          "seletor": "#saude-no-orcamento [data-discussao-paragrafo=\"seccoes[1].conteudo[6].paragrafo\"]"
+        },
+        {
+          "nome": "pedidos",
+          "seletor": "#parcerias-rodoviarias [data-discussao-paragrafo=\"seccoes[1].conteudo[5].paragrafo\"]"
+        }
+      ]
+    }
+  ]
+}

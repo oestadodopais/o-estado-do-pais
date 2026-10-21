@@ -1,0 +1,31 @@
+{
+  "cabeca": "dc787d81fb5903732bf401c98153d441b522e063",
+  "motor": "8f88bfea65f4017c782f8160fc4b508f2dceb369",
+  "codigos": {
+    "portoes-final/verify": 0,
+    "portoes-final/typecheck": 0,
+    "portoes-final/build": 0,
+    "final/planta-contagem": 1,
+    "final/medicos": 0,
+    "final/inventario": 0,
+    "final/cruzamento": 0,
+    "final/series": 0,
+    "final/identidade": 0,
+    "final/planta-apoio": 1,
+    "final/cabeca-contagem": 0,
+    "final/capturas": 0,
+    "final/recortes": 0
+  },
+  "capturas": 20,
+  "recortes": 30,
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "recortes_inspecionados": 10,
+  "simbolos_gastos": null,
+  "razao_simbolos": "Contador não exposto nesta sessão."
+}
