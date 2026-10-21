@@ -13,6 +13,7 @@ unit: "afirmação"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "Espero que os partidos políticos, movimentos associativos, organizações portuguesas, não caiam na tentação, por razões meramente egoísticas da sua própria ação, importarem para Portugal climas de instabilidade, de contestação, que não tenham de facto respaldo na sociedade portuguesa."
 name_source: "HTML; início literal único"
+measure: "Espero que os partidos políticos, movimentos associativos, organizações portuguesas, não caiam na tentação, por razões meramente egoísticas da sua própria ação, importarem para Portugal climas de instabilidade, de contestação, que não tenham de facto respaldo na sociedade portuguesa."
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Luís Montenegro"

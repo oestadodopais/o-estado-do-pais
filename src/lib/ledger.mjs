@@ -266,6 +266,10 @@ export const CAMPOS = /** @type {const} */ ([
   'name',
   'name_source',
   'name_source_en',
+  'name_en',
+  'measure',
+  'measure_en',
+  'attributed_to_en',
   'source',
   'document',
   'source_url',
@@ -677,9 +681,10 @@ export const SEPARADOR_ATRIBUICAO = ' · ';
  * de direcção de 2026-08-15.
  *
  * @param {Linha | null | undefined} claim
+ * @param {'pt'|'en'} [lang]
  */
-export function atribuicaoDaLinha(claim) {
-  const lista = claim?.attributed_to;
+export function atribuicaoDaLinha(claim, lang = 'pt') {
+  const lista = lang === 'en' && claim?.attributed_to_en ? claim.attributed_to_en : claim?.attributed_to;
   if (!Array.isArray(lista) || lista.length === 0) return null;
   return lista.join(SEPARADOR_ATRIBUICAO);
 }
@@ -1560,6 +1565,8 @@ function ausente(v) {
 export function validateLedger() {
   const claims = loadClaims({ includeWithdrawn: true });
   const historiasSeladas = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'ledger', 'historias-valores.json'), 'utf8'));
+  const provasHb1Path=path.join(process.cwd(),'ledger','provas','hb1','provas.json');
+  const provasHb1=fs.existsSync(provasHb1Path)?JSON.parse(fs.readFileSync(provasHb1Path,'utf8')).rows:{};
   // As expressões `check` também podem contar o próprio registo de correções.
   const env = { ...COUNTS, ...contagensDoRegisto(claims) };
   const errors = [];
@@ -1583,7 +1590,18 @@ export function validateLedger() {
       if (!Array.isArray(c.attributed_to) || !c.attributed_to.length) errors.push(`${onde} V2A atribuição: falta attributed_to`);
       if (!['html', 'pdf'].includes(String(doc?.kind))) errors.push(`${onde} V2A documento: exige html ou pdf`);
       const textoDoOrcamento = doc?.title === 'Orçamento do Estado 2027 · Relatório' && c.unit === 'afirmação';
-      const semDataHB1 = id === 'hab-il-proposta' && c.published_at == null && c.reference_date === POR_VERIFICAR && doc?.source_sha256 === '83424c50610cbac84b6cb675ff8a46547b10413fb0c8597f371a516adab2105c';
+      // A atualização declarada não permite preencher a publicação inicial desconhecida.
+      const provaHb1=provasHb1[id],linhaHb1=provaHb1?.row,refHb1=linhaHb1?.document_checks?.reference_date,fonteHb1=provaHb1?.reference_source;
+      const dataAtualizada=typeof refHb1?.text==='string'?refHb1.text.match(/^property="article:modified_time" content="(\d{4}-\d{2}-\d{2})T[^"\s]+"$/)?.[1]:null;
+      const semDataHB1 = id === 'hab-il-proposta' && c.published_at == null && linhaHb1?.published_at === null
+        && linhaHb1?.document_checks?.published_at?.status === 'por confirmar' && Boolean(linhaHb1.document_checks.published_at.reason)
+        && refHb1?.status === 'conferido' && Boolean(dataAtualizada) && dataAtualizada === c.reference_date
+        && refHb1.date === c.reference_date && linhaHb1.reference_date === c.reference_date && doc?.edition === c.reference_date
+        && refHb1.file === 'source/iniciativaliberal-pt-26.html' && fonteHb1?.file === 'content/23 Habitacao/'+refHb1.file
+        && linhaHb1.document?.file === fonteHb1.file && fonteHb1.receipt?.estado === 200 && fonteHb1.receipt?.ficheiro === path.posix.basename(fonteHb1.file)
+        && doc?.source_sha256 === '83424c50610cbac84b6cb675ff8a46547b10413fb0c8597f371a516adab2105c'
+        && [linhaHb1.document?.source_sha256,refHb1.sha256,fonteHb1.sha256,fonteHb1.receipt?.sha256].every(hash=>hash===doc.source_sha256);
+      if(id === 'hab-il-proposta' && linhaHb1?.published_at === null && c.published_at != null)errors.push(`${onde} V2A data: atualização não prova a publicação inicial`);
       if (!semDataHB1 && !/^\d{4}-\d{2}-\d{2}$/.test(String(c.published_at ?? ''))) errors.push(`${onde} V2A data: falta a data de publicação do documento`);
       const propostaHB1 = ['posicao-ps-rendas','posicao-chega-habitacao'].includes(id) && c.study === 'a-casa-em-portugal-e-na-europa';
       if (!semDataHB1 && !propostaHB1 && c.reference_date !== (textoDoOrcamento ? '2027' : c.published_at)) errors.push(`${onde} V2A data: período contrário ao documento`);
@@ -1662,6 +1680,13 @@ export function validateLedger() {
       const temOnde = !ausente(c.name_source);
       if (c.access_date_kind !== undefined && !['hosted-copy', 'source-read'].includes(c.access_date_kind)) errors.push(`${onde} access_date_kind inválido.`);
       if (c.name_source_en !== undefined && (typeof c.name_source_en !== 'string' || !c.name_source_en.trim() || !temOnde)) errors.push(`${onde} name_source_en precisa de localizador original e tradução não vazia.`);
+      for (const campo of /** @type {const} */ (['name_en', 'measure', 'measure_en'])) {
+        const valor = c[campo];
+        if (valor === undefined) continue;
+        if (typeof valor !== 'string' || !valor.trim() || valor !== valor.trim() || /\s{2,}|[\r\n]/.test(valor) || valor === POR_VERIFICAR || !/\p{L}/u.test(valor)) errors.push(`${onde} ${campo} precisa de texto não vazio, numa linha e sem marcador.`);
+        if (campo === 'name_en' && !temNome) errors.push(`${onde} name_en precisa do rótulo original name.`);
+        if (campo === 'measure_en' && ausente(c.measure)) errors.push(`${onde} measure_en precisa da medida original measure.`);
+      }
       if (temNome) comRotulo++;
       if (c.name !== null && c.name !== undefined && typeof c.name !== 'string') {
         errors.push(
@@ -2497,6 +2522,11 @@ export function validateLedger() {
           }
         });
       }
+    }
+
+    if (c.attributed_to_en !== undefined) {
+      if (!Array.isArray(c.attributed_to_en) || !Array.isArray(c.attributed_to) || c.attributed_to_en.length === 0 || c.attributed_to_en.length !== c.attributed_to.length || c.attributed_to_en.some(quem => typeof quem !== 'string' || !quem.trim() || quem.includes(SEPARADOR_ATRIBUICAO.trim())))
+        errors.push(`${onde} attributed_to_en precisa da lista original e de uma tradução não vazia por entidade.`);
     }
 
     /* A data a que os dados se referem é obrigatória numa linha publicada.

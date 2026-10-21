@@ -13,9 +13,11 @@ unit: "afirmação"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "35 feridos, pelo menos"
 name_source: "HTML; início literal único"
+measure: "Feridos segundo um dirigente do BE, pela imprensa"
+measure_en: "Injured according to a BE leader, via the press"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
-source: "José Soeiro"
+source: "José Soeiro, dirigente nacional do BE"
 document:
   title: "Confrontos nos protestos pela habitação no Porto. Manifestantes denunciam 37 feridos"
   edition: "2026-10-15"
@@ -40,7 +42,9 @@ check: null
 
 # A quem o valor é creditado. Lista de entidades, ou campo nenhum.
 attributed_to:
-  - "José Soeiro"
+  - "José Soeiro, dirigente nacional do BE"
+attributed_to_en:
+  - "José Soeiro, of the Left Bloc's national leadership"
 
 study: "a-casa-em-portugal-e-na-europa"
 # Nota interna. NÃO é publicada: ver DECISIONS §1.24.

@@ -13,6 +13,7 @@ unit: "afirmação"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "centenas de milhares de casas vazias em condições de serem habitadas. Para as trazer para o mercado, o PS vai propor um regime excecional, válido durante três anos:"
 name_source: "HTML; início literal único"
+measure: "centenas de milhares de casas vazias em condições de serem habitadas. Para as trazer para o mercado, o PS vai propor um regime excecional, válido durante três anos:"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "José Luís Carneiro"

@@ -8,6 +8,8 @@ id: "der-hab-inquilinos-eu-2025"
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
 value: "31,5"
 unit: "%"
+measure: "Inquilinos"
+measure_en: "Tenants"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: null
@@ -20,8 +22,8 @@ reference_date: "2025"
 excerpt: null
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
-derivation: "round ( hab-ilc-lvho02-a-total-total-rent-mkt-pc-eu27_2020-2025 + hab-ilc-lvho02-a-total-total-rent-fr-pc-eu27_2020-2025 , 1 ) = 31.5"
-derivation_en: "round ( hab-ilc-lvho02-a-total-total-rent-mkt-pc-eu27_2020-2025 + hab-ilc-lvho02-a-total-total-rent-fr-pc-eu27_2020-2025 , 1 ) = 31.5"
+derivation: "Distribuição da população por regime de ocupação, inquilinos a preços de mercado, União Europeia, 2025 (20,8 %; Eurostat, ilc_lvho02) mais Distribuição da população por regime de ocupação, inquilinos com renda reduzida ou gratuita, União Europeia, 2025 (10,7 %; Eurostat, ilc_lvho02), arredondado a uma casa decimal: 31,5."
+derivation_en: "Distribution of population by tenure status, Tenant, rent at market price, European Union - 27 countries (from 2020), 2025 (20.8 %; Eurostat, ilc_lvho02) plus Distribution of population by tenure status, Tenant, rent at reduced price or free, European Union - 27 countries (from 2020), 2025 (10.7 %; Eurostat, ilc_lvho02), rounded to one decimal place: 31.5."
 derived_from:
   - "hab-ilc-lvho02-a-total-total-rent-mkt-pc-eu27_2020-2025"
   - "hab-ilc-lvho02-a-total-total-rent-fr-pc-eu27_2020-2025"

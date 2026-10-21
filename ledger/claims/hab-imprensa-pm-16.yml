@@ -13,6 +13,7 @@ unit: "afirmação"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "Eu dirigi-me a partidos políticos, a movimentos associativos e organizações no desenvolvimento da sua ação, dessas organizações."
 name_source: "HTML; início literal único"
+measure: "Eu dirigi-me a partidos políticos, a movimentos associativos e organizações no desenvolvimento da sua ação, dessas organizações."
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Luís Montenegro"

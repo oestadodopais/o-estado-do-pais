@@ -165,6 +165,18 @@
       "kind": "atualizacao",
       "old_value": "9",
       "new_value": "10"
+    },
+    {
+      "date": "2026-10-21",
+      "kind": "atualizacao",
+      "old_value": "10",
+      "new_value": "12"
+    },
+    {
+      "date": "2026-10-21",
+      "kind": "atualizacao",
+      "old_value": "12",
+      "new_value": "14"
     }
   ],
   "estudos-publicados": [
@@ -179,6 +191,12 @@
       "kind": "atualizacao",
       "old_value": "17",
       "new_value": "18"
+    },
+    {
+      "date": "2026-10-21",
+      "kind": "correcao",
+      "old_value": "18",
+      "new_value": "17"
     }
   ],
   "edicoes-publicadas": [
@@ -193,6 +211,12 @@
       "kind": "atualizacao",
       "old_value": "25",
       "new_value": "27"
+    },
+    {
+      "date": "2026-10-21",
+      "kind": "correcao",
+      "old_value": "27",
+      "new_value": "25"
     }
   ],
   "jovens-nem-2025": [
@@ -305,6 +329,22 @@
       "kind": "correcao",
       "old_value": "Neste montante incluem-se as verbas do contrato-programa a celebrar entre a Administração Central do Sistema de Saúde, IP (ACSS) e as entidades do Serviço Nacional de Saúde (SNS), destinadas ao financiamento centralizado da Rede Nacional de Cuidados Continuados, das parcerias público-privadas, entre outros.",
       "new_value": "Do total da despesa consolidada afeta ao Programa Legado, a maior parte é financiada por receitas de impostos (15 452,2 milhões de euros). Neste montante incluem-se as verbas do contrato-programa a celebrar entre a Administração Central do Sistema de Saúde, IP (ACSS) e as entidades do Serviço Nacional de Saúde (SNS), destinadas ao financiamento centralizado da Rede Nacional de Cuidados Continuados, das parcerias público-privadas, entre outros."
+    }
+  ],
+  "hab-imprensa-manif-euronews": [
+    {
+      "date": "2026-10-21",
+      "kind": "correcao",
+      "old_value": "organizada por uma plataforma que reúne cerca de 40 organizações da sociedade civil.",
+      "new_value": "Cinco cidades de Portugal vão acolher, este sábado, uma manifestação contra a crise na habitação, organizada por uma plataforma que reúne cerca de 40 organizações da sociedade civil."
+    }
+  ],
+  "hab-imprensa-tendas": [
+    {
+      "date": "2026-10-21",
+      "kind": "correcao",
+      "old_value": "Foram retiradas, ao início da manhã desta segunda-feira, as tendas",
+      "new_value": "Foram retiradas, ao início da manhã desta segunda-feira, as tendas de dezenas de pessoas que permaneciam acampadas na Praça D. João I, no centro do Porto, em protesto contra o aumento do custo de vida e a crise da habitação.O acampamento foi promovido pelo movimento \"Não consegues pagar renda? Traz tenda\". O acampamento mantinha-se no local desde sábado, dia em que cerca de 1.500 pessoas se manifestaram no Porto contra o agravamento do custo de vida."
     }
   ]
 }

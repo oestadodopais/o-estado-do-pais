@@ -8,7 +8,8 @@ for r in b:
  if r.get('derivation'):continue
  d=r.get('document') or {};en='ec.europa.eu/eurostat/' in r.get('source_url','')
  if d.get('title'):titles[d['title']]='en' if en else 'pt'
- if r.get('name'):labels[r['name']]='en' if en else 'pt'
+ if r.get('name'):labels[r['name']]='pt' if r.get('name_en') else ('en' if en else 'pt')
+ if r.get('name_en'):labels[r['name_en']]='en'
  if d.get('edition'):editions[d['edition']]=None
  # A edição exportada pode ser o período quando a fonte não tem edição própria.
  exported=Path('ledger/claims')/(r['id']+'.yml')

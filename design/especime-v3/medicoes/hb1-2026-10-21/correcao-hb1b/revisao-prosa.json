@@ -1,0 +1,78 @@
+{
+  "estado": "leitura final; sem alterações",
+  "base": "980a964",
+  "edicoes": {
+    "pt": {
+      "titulo": {
+        "igual_a_cabeca_entregue": true
+      },
+      "subtitulo": {
+        "igual_a_cabeca_entregue": true
+      },
+      "precos_locais": {
+        "igual_a_cabeca_entregue": true
+      },
+      "ocupacao": {
+        "igual_a_cabeca_entregue": true
+      },
+      "credito": {
+        "igual_a_cabeca_entregue": true
+      },
+      "programa_habitacao": {
+        "igual_a_cabeca_entregue": true
+      },
+      "avaliacao_iva": {
+        "igual_a_cabeca_entregue": true
+      },
+      "conclusoes": {
+        "quantas": 7,
+        "sequencia": [
+          "1. ",
+          "2. ",
+          "3. ",
+          "4. ",
+          "5. ",
+          "6. ",
+          "7. "
+        ],
+        "cabecas_negrito": true
+      }
+    },
+    "en": {
+      "titulo": {
+        "igual_a_cabeca_entregue": true
+      },
+      "subtitulo": {
+        "igual_a_cabeca_entregue": true
+      },
+      "precos_locais": {
+        "igual_a_cabeca_entregue": true
+      },
+      "ocupacao": {
+        "igual_a_cabeca_entregue": true
+      },
+      "credito": {
+        "igual_a_cabeca_entregue": true
+      },
+      "programa_habitacao": {
+        "igual_a_cabeca_entregue": true
+      },
+      "avaliacao_iva": {
+        "igual_a_cabeca_entregue": true
+      },
+      "conclusoes": {
+        "quantas": 7,
+        "sequencia": [
+          "1. ",
+          "2. ",
+          "3. ",
+          "4. ",
+          "5. ",
+          "6. ",
+          "7. "
+        ],
+        "cabecas_negrito": true
+      }
+    }
+  }
+}

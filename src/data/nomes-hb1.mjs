@@ -24,6 +24,14 @@ export const NOMES_HB1 = {
     "pt": "Preços das casas em relação ao rendimento, União Europeia",
     "en": "House prices relative to income, European Union"
   },
+  "der-hab-preco-rendimento-acima-2015-pt-2024": {
+    "pt": "Aumento dos preços face ao rendimento desde o ano base",
+    "en": "Increase in prices relative to income since the base year"
+  },
+  "der-hab-preco-rendimento-acima-2015-eu-2024": {
+    "pt": "Aumento dos preços face ao rendimento desde o ano base",
+    "en": "Increase in prices relative to income since the base year"
+  },
   "hab-ine-preco-mediano": {
     "pt": "Preço mediano das vendas em Portugal",
     "en": "Median sale price in Portugal"
@@ -55,6 +63,14 @@ export const NOMES_HB1 = {
   "hab-ilc-mded01-a-total-total-pc-eu27_2020-2025": {
     "pt": "Parte do rendimento gasta na habitação, União Europeia",
     "en": "Share of income spent on housing, European Union"
+  },
+  "hab-ilc-lvho07c-a-pc-total-pt-2025": {
+    "pt": "Sobrecarga do custo da habitação, Portugal",
+    "en": "Housing cost overburden, Portugal"
+  },
+  "hab-ilc-lvho07c-a-pc-total-eu27_2020-2025": {
+    "pt": "Sobrecarga do custo da habitação, União Europeia",
+    "en": "Housing cost overburden, European Union"
   },
   "der-hab-proprietarios-pt-2025": {
     "pt": "População em casa própria, Portugal",
@@ -109,8 +125,8 @@ export const NOMES_HB1 = {
     "en": "Injured people according to the organisation, reported by the press"
   },
   "hab-imprensa-feridos35": {
-    "pt": "Feridos segundo um deputado, pela imprensa",
-    "en": "Injured people according to a member of parliament, reported by the press"
+    "pt": "Feridos segundo um dirigente do BE, pela imprensa",
+    "en": "Injured according to a BE leader, via the press"
   },
   "hab-oe-habitacao-orcamento": {
     "pt": "Orçamento do programa Habitação",
@@ -137,10 +153,6 @@ export const NOMES_HB1 = {
     "en": "Change in rents paid, European Union"
   },
   "hab-ilc-lvho07c-a-pc-total-pt-2015": {
-    "pt": "Sobrecarga do custo da habitação, Portugal",
-    "en": "Housing cost overburden, Portugal"
-  },
-  "hab-ilc-lvho07c-a-pc-total-pt-2025": {
     "pt": "Sobrecarga do custo da habitação, Portugal",
     "en": "Housing cost overburden, Portugal"
   },
@@ -196,6 +208,10 @@ export const NOMES_HB1 = {
     "pt": "Proporção de alojamentos vagos nos Censos",
     "en": "Share of vacant dwellings in the Census"
   },
+  "hab-arrendamento-exposicao-vagos": {
+    "pt": "Estimativa do Governo de alojamentos vagos em boas condições",
+    "en": "Government estimate of vacant dwellings in good condition"
+  },
   "hab-governo-arrendamento": {
     "pt": "Anúncio da reforma do arrendamento",
     "en": "Announcement of rental reform"
@@ -203,6 +219,10 @@ export const NOMES_HB1 = {
   "hab-imprensa-igai": {
     "pt": "Processo da inspeção, pela imprensa",
     "en": "Inspectorate case, reported by the press"
+  },
+  "hab-imprensa-renda-metade": {
+    "pt": "Afirmação da plataforma sobre renda e salário, pela imprensa",
+    "en": "Platform statement on rent and pay, reported by the press"
   },
   "hab-imprensa-psp-ferido": {
     "pt": "Polícia ferido, segundo a PSP, pela imprensa",
@@ -276,9 +296,21 @@ export const NOMES_HB1 = {
     "pt": "Rácio preço-rendimento face à média de longo prazo, Portugal",
     "en": "Price-to-income ratio relative to the long-term average, Portugal"
   },
+  "der-hab-preco-rendimento-lt-pt-2024": {
+    "pt": "Distância do rácio preço-rendimento à média de longo prazo",
+    "en": "Distance of the price-to-income ratio from the long-term average"
+  },
   "hab-tipsho60-a-ptir-lt-avg-eu27_2020-2024": {
     "pt": "Rácio preço-rendimento face à média de longo prazo, União Europeia",
     "en": "Price-to-income ratio relative to the long-term average, European Union"
+  },
+  "der-hab-preco-rendimento-lt-eu-2024": {
+    "pt": "Distância do rácio preço-rendimento à média de longo prazo",
+    "en": "Distance of the price-to-income ratio from the long-term average"
+  },
+  "hab-tipsho60-a-ptir-lt-avg-ro-2024": {
+    "pt": "Rácio preço-rendimento face à média de longo prazo, Roménia",
+    "en": "Price-to-income ratio relative to the long-term average, Romania"
   },
   "der-hab-preco-lisboa-vs-portugal": {
     "pt": "Preço mediano em Lisboa em relação ao país",
@@ -356,6 +388,14 @@ export const NOMES_HB1 = {
     "pt": "População por regime de ocupação, inquilinos a preços de mercado, Portugal",
     "en": "Population by tenure status, tenants at market rents, Portugal"
   },
+  "hab-ilc-lvho07c-a-pc-total-cy-2025": {
+    "pt": "Sobrecarga do custo da habitação, Chipre",
+    "en": "Housing cost overburden, Cyprus"
+  },
+  "hab-ilc-lvho07c-a-pc-total-el-2025": {
+    "pt": "Sobrecarga do custo da habitação, Grécia",
+    "en": "Housing cost overburden, Greece"
+  },
   "hab-ilc-mded01-a-total-total-pc-cy-2025": {
     "pt": "Parte do rendimento gasta na habitação, Chipre",
     "en": "Share of income spent on housing, Cyprus"
@@ -371,14 +411,6 @@ export const NOMES_HB1 = {
   "hab-ilc-lvho07c-a-pc-total-eu27_2020-2015": {
     "pt": "Sobrecarga do custo da habitação, União Europeia",
     "en": "Housing cost overburden, European Union"
-  },
-  "hab-ilc-lvho07c-a-pc-total-cy-2025": {
-    "pt": "Sobrecarga do custo da habitação, Chipre",
-    "en": "Housing cost overburden, Cyprus"
-  },
-  "hab-ilc-lvho07c-a-pc-total-el-2025": {
-    "pt": "Sobrecarga do custo da habitação, Grécia",
-    "en": "Housing cost overburden, Greece"
   },
   "hab-ilc-lvho07c-a-pc-own-l-pt-2025": {
     "pt": "Sobrecarga do custo da habitação, proprietários com empréstimo, Portugal",
@@ -459,6 +491,10 @@ export const NOMES_HB1 = {
   "hab-ilc-lvho05a-a-pc-total-y16-29-t-eu27_2020-2025": {
     "pt": "População em habitações sobrelotadas, dezasseis a vinte e nove anos, União Europeia",
     "en": "Population in overcrowded homes, sixteen to twenty-nine years, European Union"
+  },
+  "hab-eurostat-privacao-severa-definicao": {
+    "pt": "Definição de privação severa da habitação",
+    "en": "Definition of severe housing deprivation"
   },
   "hab-ilc-mdho06a-a-pc-total-t-total-pt-2023": {
     "pt": "Privação severa da habitação, Portugal",
@@ -576,6 +612,10 @@ export const NOMES_HB1 = {
     "pt": "Oferta de habitação no Orçamento",
     "en": "Housing supply in the Budget"
   },
+  "hab-oe-legenda-invariante": {
+    "pt": "Legenda das medidas invariantes do Orçamento",
+    "en": "Budget table legend for unchanged measures"
+  },
   "hab-dl97-irs": {
     "pt": "Taxa de IRS das rendas",
     "en": "Income tax rate on rents"
@@ -668,10 +708,6 @@ export const NOMES_HB1 = {
     "pt": "Reivindicações da plataforma",
     "en": "Platform demands"
   },
-  "hab-imprensa-renda-metade": {
-    "pt": "Afirmação da plataforma sobre renda e salário, pela imprensa",
-    "en": "Platform statement on rent and pay, reported by the press"
-  },
   "hab-imprensa-tendas": {
     "pt": "Retirada das tendas, pela RTP",
     "en": "Removal of tents, reported by RTP"
@@ -712,13 +748,13 @@ export const NOMES_HB1 = {
     "pt": "Afirmação do primeiro-ministro sobre a proteção dos inquilinos, pela imprensa",
     "en": "Prime Minister's statement on tenant protection, reported by the press"
   },
-  "hab-ine-calendario-precos-locais": {
-    "pt": "Divulgação dos preços locais da habitação",
-    "en": "Release of local house prices"
-  },
   "hab-ine-calendario-juro": {
     "pt": "Divulgação do juro implícito na habitação",
     "en": "Release of the implicit housing interest rate"
+  },
+  "hab-ine-calendario-precos-locais": {
+    "pt": "Divulgação dos preços locais da habitação",
+    "en": "Release of local house prices"
   },
   "oe-2027-calendario-generalidade": {
     "pt": "Votação do Orçamento na generalidade",

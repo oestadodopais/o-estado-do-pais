@@ -118,7 +118,7 @@ const claim = getClaim(id);
 const familiaRecibo = familiaDaLinha(id);
 const nomeRecibo = nomeNoRecibo(id, lang);
 const lugarRecibo = lugarNoRecibo(id, lang);
-const nomeDaFonte = nomeDaFonteNoRecibo(id);
+const nomeDaFonte = nomeDaFonteNoRecibo(id, lang);
 const oQueE = oQueEDaLinha(id, lang);
 const fontesSecundariasDaDefinicao = (claim.definition_sources ?? []).map(fonte => Object.entries(ORIGENS_DAS_DEFINICOES)
   .find(([chave, origem]) => origem.publicador === fonte.publisher && origem.url === fonte.url)?.[0]).filter(Boolean);
@@ -187,7 +187,8 @@ const portugalDoConcelho = linhaDePortugalDaLinha(id);
    organismos, e o formato não tem campo que marque um. Ver DECISIONS §1.31,
    «Nenhum rótulo partidário atravessou». A frase falava de uma coisa que não
    estava na página. Volta com o campo, não com uma adivinha. */
-const atribuicao = atribuicaoDaLinha(claim);
+const atribuicao = atribuicaoDaLinha(claim, lang);
+const campoDaAtribuicao = lang === 'en' && claim.attributed_to_en ? 'attributed_to_en' : 'attributed_to';
 /* A RESSALVA DE ALCANCE DESTA LINHA, se ela tiver uma (F1.10, §9.2,
    08.09.2026). Declarada na medida do domínio a que a linha pertence, e lida
    aqui pelo identificador: a razão do lugar está ao pé de onde ela se rende. */
@@ -569,9 +570,9 @@ const ficha = [
      forma dos outros localizadores e leva a marca do documento. */
   {
     k: s.prov.rotuloDaFonte,
-    campo: 'name',
-    valor: claim.name ?? null,
-    lingua: linguaDoRotuloDaFonte(claim.name ?? null, lang),
+    campo: lang === 'en' && claim.name_en ? 'name_en' : 'name',
+    valor: (lang === 'en' && claim.name_en) || claim.name || null,
+    lingua: lang === 'en' && claim.name_en ? null : linguaDoRotuloDaFonte(claim.name ?? null, lang),
   },
   {
     k: s.prov.rotuloOnde,
@@ -768,7 +769,7 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
             campo={nomeDaFonte.campo}
             valor={nomeDaFonte.valor}
             lang={lang}
-            lingua={nomeDaFonte.campo === 'name' ? linguaDoRotuloDaFonte(nomeDaFonte.valor, lang) : linguaDoTituloDoDocumento(nomeDaFonte.valor, lang)}
+            lingua={nomeDaFonte.campo === 'name_en' ? null : nomeDaFonte.campo === 'name' ? linguaDoRotuloDaFonte(nomeDaFonte.valor, lang) : linguaDoTituloDoDocumento(nomeDaFonte.valor, lang)}
           />
         )}{'»'}
       </p>
@@ -1820,7 +1821,7 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
                 {/* A lista vai numa cadeia só, com o separador da casa. É o
                     portão que a confere carácter a carácter, com a sua própria
                     cópia do separador — ver DECISIONS §1.31. */}
-                <CampoDaLinha id={id} campo="attributed_to" valor={atribuicao} lang={lang} />
+                <CampoDaLinha id={id} campo={campoDaAtribuicao} valor={atribuicao} lang={lang} />
               </dd>
             </>
           )

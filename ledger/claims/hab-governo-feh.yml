@@ -13,6 +13,7 @@ unit: "afirmação"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "2. Aprovou um Decreto-Lei que cria o Fundo de Emergência para a Habitação (FEH) destinado a apoiar pessoas e famílias em situação de emergência habitacional, tais como despejos motivados por carência económica ou situações de violência doméstica. O FEH introduz um apoio financeiro direto, não reembolsável, para garantir um realojamento rápido, temporário ou permanente, permitindo que ninguém fique sem solução imediata em caso de perda de casa. O FEH visa assegurar que é o Estado, e não os proprietários, a assumir os custos sociais das situações de emergência habitacional."
 name_source: "HTML; início literal único"
+measure: "2. Aprovou um Decreto-Lei que cria o Fundo de Emergência para a Habitação (FEH) destinado a apoiar pessoas e famílias em situação de emergência habitacional, tais como despejos motivados por carência económica ou situações de violência doméstica. O FEH introduz um apoio financeiro direto, não reembolsável, para garantir um realojamento rápido, temporário ou permanente, permitindo que ninguém fique sem solução imediata em caso de perda de casa. O FEH visa assegurar que é o Estado, e não os proprietários, a assumir os custos sociais das situações de emergência habitacional."
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Conselho de Ministros"

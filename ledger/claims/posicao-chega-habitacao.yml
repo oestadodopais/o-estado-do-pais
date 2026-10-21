@@ -8,6 +8,8 @@ id: "posicao-chega-habitacao"
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
 value: "André Ventura defende um pacote de emergência com benefícios fiscais, apoios às rendas e menos burocracia."
 unit: "texto"
+measure: "Pacote fiscal e apoios à habitação"
+measure_en: "Housing tax package and rent support"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "André Ventura"

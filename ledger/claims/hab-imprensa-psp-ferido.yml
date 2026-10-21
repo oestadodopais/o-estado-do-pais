@@ -13,6 +13,7 @@ unit: "afirmação"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "um polícia ficou ferido"
 name_source: "HTML; início literal único"
+measure: "um polícia ficou ferido"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "PSP"
@@ -41,6 +42,8 @@ check: null
 # A quem o valor é creditado. Lista de entidades, ou campo nenhum.
 attributed_to:
   - "PSP"
+attributed_to_en:
+  - "the PSP"
 
 study: "a-casa-em-portugal-e-na-europa"
 # Nota interna. NÃO é publicada: ver DECISIONS §1.24.

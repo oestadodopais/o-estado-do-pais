@@ -13,6 +13,7 @@ unit: "afirmação"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "A reforma assenta em quatro eixos principais: maior liberdade contratual, reforço da segurança e do cumprimento dos contratos, simplificação e aceleração dos mecanismos de despejo e resolução de litígios, e reforço da responsabilidade social do Estado na proteção das situações de maior vulnerabilidade."
 name_source: "HTML; início literal único"
+measure: "A reforma assenta em quatro eixos principais: maior liberdade contratual, reforço da segurança e do cumprimento dos contratos, simplificação e aceleração dos mecanismos de despejo e resolução de litígios, e reforço da responsabilidade social do Estado na proteção das situações de maior vulnerabilidade."
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Conselho de Ministros"

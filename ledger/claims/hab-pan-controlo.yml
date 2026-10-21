@@ -13,6 +13,7 @@ unit: "afirmação"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "Em primeiro lugar, é urgente manter e estudar o alargamento do controlo de rendas para novos contratos. A incerteza na situação política internacional tem levado ao aumento generalizado do custo de vida, ao aumento das taxas de juro e dos custos de arrendamento. Face a este contexto, é necessário garantir previsibilidade para quem tem e procura casa para arrendar."
 name_source: "PDF p. 3; parágrafo identificado pelo início; área física declarada"
+measure: "Em primeiro lugar, é urgente manter e estudar o alargamento do controlo de rendas para novos contratos. A incerteza na situação política internacional tem levado ao aumento generalizado do custo de vida, ao aumento das taxas de juro e dos custos de arrendamento. Face a este contexto, é necessário garantir previsibilidade para quem tem e procura casa para arrendar."
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Inês de Sousa Real"

@@ -8,6 +8,8 @@ id: "der-hab-fiscal-2027"
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
 value: "−303"
 unit: "milhões de euros"
+measure: "Impacto das medidas fiscais da habitação"
+measure_en: "Impact of housing tax measures"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: null
@@ -20,8 +22,8 @@ reference_date: "2027"
 excerpt: null
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
-derivation: "round ( hab-oe-iva-impacto + hab-oe-irs-rendas-impacto , 0 ) = -303"
-derivation_en: "round ( hab-oe-iva-impacto + hab-oe-irs-rendas-impacto , 0 ) = -303"
+derivation: "Habitação - redução IVA construção de 23% para 6% (i) (-94 milhões de euros; Governo) mais Habitação - redução IRS rendas moderadas de 25% para 10% (i) (-209 milhões de euros; Governo), arredondado à unidade: -303."
+derivation_en: "Housing: construction VAT reduction from 23% to 6% (i) (-94 million euros; Government) plus Housing: personal income tax reduction on moderate rents from 25% to 10% (i) (-209 million euros; Government), rounded to the nearest integer: -303."
 derived_from:
   - "hab-oe-iva-impacto"
   - "hab-oe-irs-rendas-impacto"

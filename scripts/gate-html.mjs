@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { aberturaDoEstudo } from '../src/lib/abertura-do-estudo.mjs';
 import {conferirCaminhoFinal} from './caminho-final.mjs';
 import { tirarCodigoConferido, lerPaginaComCodigo } from './incorporar-do-portao.mjs';
 
@@ -276,7 +277,7 @@ import {
 import { VERBATIM, normalizeWhitespace } from '../src/data/verbatim.mjs';
 import { FIGURAS, FIGURAS_PDM, FIGURAS_SOCIAL, DEFINICOES_DAS_MEDIDAS, ORIGENS_DAS_DEFINICOES } from '../src/data/figuras.mjs';
 import { UNIDADES_DOS_CARTOES } from '../src/data/unidades-dos-cartoes.mjs';
-import { EDITIONS, workById, studyLabel } from '../src/data/studies.mjs';
+import { PUBLISHED_EDITIONS, EDITIONS, workById, studyLabel } from '../src/data/studies.mjs';
 import { LEITURAS } from '../src/data/leituras.mjs';
 import { MEDIDAS_DO_DOMINIO_1 } from '../src/data/dominios.mjs';
 import { NOMES_DO_PROJETO } from '../src/data/nomes-das-medidas.mjs';
@@ -855,6 +856,7 @@ const agendaRenderizada = new Map();
  * próprio ponto de observação — páginas, e não os módulos de onde elas saíram.
  */
 const paginasPorRota = new Map();
+let estudosComDataPublicada = 0;
 /**
  * AS PEÇAS QUE CADA PÁGINA DE ÁREA RENDEU, por «língua:slug».
  *
@@ -2555,16 +2557,11 @@ function verificaTexto({ rota, root, err }) {
 
   // B1: a fronteira é a sequência fechada de secções, não um ordinal.
   {
-    const nomes = lang === 'pt'
-      ? ['Em resumo', 'O que este projeto conclui', 'O que podia funcionar melhor']
-      : [slug === 'a-casa-em-portugal-e-na-europa' ? 'In short' : 'In brief', 'What this project concludes', 'What could work better'];
+    const { titulos: nomes, primeiro: primeiroConteudo } = aberturaDoEstudo(registo, lang);
     const principais = registo.blocks.filter(b => b.kind === 'heading' && Number(b.level) === 2);
     const leituras = root.querySelectorAll('.estudo-leitura');
     const textos = root.querySelectorAll('.estudo-texto');
     if (textos.length !== 1) err(`B1 leitura ${chave}: deve existir um corpo de texto.`);
-    const primeiroConteudo = slug === 'a-casa-em-portugal-e-na-europa'
-      ? registo.blocks.find(b => b.i > 0 && b.kind === 'heading' && Number(b.level) === 2)
-      : registo.blocks.find(b => b.i > 0);
     if (primeiroConteudo?.kind !== 'heading' || Number(primeiroConteudo.level) !== 2 || primeiroConteudo.text !== nomes[0]) {
       if (leituras.length) err(`B1 leitura ${chave}: registo sem abertura não pode ter leitura.`);
       console.log(`  B1 leitura ${chave}: sem leitura, o registo não começa por ${nomes[0]}.`);
@@ -2810,6 +2807,7 @@ const CAMPOS_DA_LINHA = new Set([
   'name',
   'name_source',
   'name_source_en',
+  'name_en',
   'document.title',
   'document.edition',
   'document.locator',
@@ -2881,6 +2879,7 @@ const CAMPOS_DA_LINHA = new Set([
   'derivation',
   'derived_from',
   'attributed_to',
+  'attributed_to_en',
   'check',
   'id',
 ]);
@@ -3074,10 +3073,11 @@ function campoDaLinha(claim, campo, lang) {
       return m ? m[1] : null;
     }
     case 'attributed_to':
+    case 'attributed_to_en':
       /* Uma lista escrita numa cadeia só, com a cópia local do separador.
          Não passa por atribuicaoDaLinha() de propósito — ver acima. */
-      return Array.isArray(claim.attributed_to) && claim.attributed_to.length
-        ? claim.attributed_to.join(SEPARADOR_ATRIBUICAO)
+      return Array.isArray(claim[campo]) && claim[campo].length
+        ? claim[campo].join(SEPARADOR_ATRIBUICAO)
         : null;
     case 'unit':
       /* A MESMA FUNÇÃO QUE O GABARITO CHAMA, e é a mesma escolha que a
@@ -4213,8 +4213,8 @@ function contasDoPortao(claims) {
        mais fraca das duas parcelas: a contagem das páginas é do `dist`, a do
        registo é uma segunda leitura dos mesmos ficheiros, e é essa que manda. */
     conta('linhas_anteriores_ao_tubo', paginasDeLinhaPt - cruzadas, 'ledger'),
-    conta('estudos', (paginasPorRota.get('pt:estudo') ?? 0), 'dist'),
-    conta('edicoes', EDITIONS.length, 'modulo'),
+    conta('estudos', estudosComDataPublicada, 'dist'),
+    conta('edicoes', PUBLISHED_EDITIONS.length, 'modulo'),
     conta('leituras', leiturasNoMapa, 'dist'),
     conta('municipios_com_pagina', (paginasPorRota.get('pt:municipio') ?? 0), 'dist'),
     conta('municipios_total', municipiosNoCsv, 'dist'),
@@ -4690,6 +4690,7 @@ for (const file of ficheirosHtml(DIST)) {
     const chaveDaRota = `${rota.lang}:${rota.key}`;
     paginasPorRota.set(chaveDaRota, (paginasPorRota.get(chaveDaRota) ?? 0) + 1);
   }
+  if (rota?.key === 'estudo' && rota.lang === 'pt' && root.querySelector('.estudo-publicado time[datetime]')) estudosComDataPublicada++;
   if (rota?.key === 'area') {
     pecasDeArea.set(
       `${rota.lang}:${rota.params.slug}`,
@@ -5999,7 +6000,10 @@ for (const file of ficheirosHtml(DIST)) {
       const chave = el.getAttribute('data-publicacao-estudo');
       const registo = JSON.parse(fs.readFileSync(path.join(ROOT, 'src/data/datas-de-publicacao.json'), 'utf8'));
       const edicao = registo.edicoes.find(e => `${e.slug}/${e.lang}` === chave);
-      esperado = edicao && dataDaCasaGate(edicao.data);
+      const trabalho = edicao && workById(edicao.slug);
+      const declarada = trabalho?.editions.find(e => e.lang === edicao.lang);
+      const dataPublica = trabalho?.publication === 'declared' ? declarada?.date : edicao?.data;
+      esperado = dataPublica ? dataDaCasaGate(dataPublica) : null;
     } else {
       const pai = el.closest('[data-mudanca-id]');
       const entrada = MUDANCAS_DO_PROJETO.find(e => e.id === pai?.getAttribute('data-mudanca-id'));

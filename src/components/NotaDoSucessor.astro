@@ -18,7 +18,7 @@
  */
 import TituloDeTrabalho from './TituloDeTrabalho.astro';
 import { workById } from '../data/studies.mjs';
-import { dataDaEdicaoNoRepositorio } from '../lib/datas-do-repositorio.mjs';
+import { dataPublicacao } from '../lib/publicacao.mjs';
 import { dataDaCasa } from '../lib/datas.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { ROTULOS_B1 } from '../data/rotulos-b1.mjs';
@@ -29,8 +29,8 @@ const sucessores = (work.sucedidoPor ?? []).map((s) => {
   const sucessor = workById(s.slug);
   if (!sucessor) throw new Error(`NotaDoSucessor: ${work.slug} nomeia o sucessor desconhecido ${s.slug}.`);
   const edicao = sucessor.editions.find((e) => e.lang === lang) ?? sucessor.editions[0];
-  const data = dataDaEdicaoNoRepositorio(sucessor.slug, edicao.lang);
-  if (!data) throw new Error(`NotaDoSucessor: ${sucessor.slug}/${edicao.lang} não tem data em datas-de-publicacao.json.`);
+  const data = dataPublicacao(sucessor, edicao);
+  if (!data) throw new Error(`NotaDoSucessor: ${sucessor.slug}/${edicao.lang} não tem data de publicação confirmada.`);
   return { edicao, data, parte: s.parte?.[lang] ?? null, rota: routePath('estudo', lang, { slug: sucessor.slug }) };
 });
 const data = sucessores[0]?.data;

@@ -13,6 +13,7 @@ unit: "afirmação"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "Em segundo lugar, o PAN propõe o estabelecimento de tetos às cauções, que devem estar ajustados à realidade económica das famílias. Estes devem ter em conta os rendimentos familiares e respetiva taxa de esforço dos arrendatários, evitando abusos por parte dos senhorios e garantindo que a caução não exceda o que é comportável pelos respectivos orçamentos familiares."
 name_source: "PDF p. 3; parágrafo identificado pelo início; área física declarada"
+measure: "Em segundo lugar, o PAN propõe o estabelecimento de tetos às cauções, que devem estar ajustados à realidade económica das famílias. Estes devem ter em conta os rendimentos familiares e respetiva taxa de esforço dos arrendatários, evitando abusos por parte dos senhorios e garantindo que a caução não exceda o que é comportável pelos respectivos orçamentos familiares."
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Inês de Sousa Real"

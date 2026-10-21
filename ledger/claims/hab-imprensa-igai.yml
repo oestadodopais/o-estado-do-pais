@@ -13,6 +13,7 @@ unit: "afirmação"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "a IGAI abriu um processo administrativo, com solicitação de informações à PSP"
 name_source: "HTML; início literal único"
+measure: "a IGAI abriu um processo administrativo, com solicitação de informações à PSP"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "IGAI"

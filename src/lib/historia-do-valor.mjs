@@ -20,8 +20,8 @@ export function numeroDaCasa(valor) {
  * @param {string} onde @param {string[]} erros */
 export function conferirHistoriaDoValor(linha, seladas, onde, erros) {
   const entradas = entradasDoValor(linha);
-  // Uma afirmação textual tem história literal, sem passar pelo normalizador numérico.
-  const textual = linha.afirmacao === true && linha.unit === 'afirmação';
+  // Afirmações e excertos textuais têm história literal, sem normalização de números ou espaços.
+  const textual = linha.unit === 'texto' || (linha.afirmacao === true && linha.unit === 'afirmação');
   const forma = textual ? ((/** @type {unknown} */ v) => typeof v === 'string' && v.trim() ? v : null) : numeroDaCasa;
   if (textual && linha.value !== linha.excerpt) erros.push(`${onde} história do valor: a afirmação textual não coincide com o excerto.`);
   if (seladas && JSON.stringify(entradas.slice(0, seladas.length).map(assinaturaDoValor)) !== JSON.stringify(seladas)) {

@@ -13,6 +13,7 @@ unit: "afirmação"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "Isenção de mais-valias na venda de casas já existentes, até 300 mil euros, para habitação própria, e tributação reduzida entre 300 e 500 mil euros."
 name_source: "HTML; início literal único"
+measure: "Isenção de mais-valias na venda de casas já existentes, até 300 mil euros, para habitação própria, e tributação reduzida entre 300 e 500 mil euros."
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "José Luís Carneiro"

@@ -186,7 +186,7 @@ function mudancasDeclaradas(lang) {
  * sem objeto é sobre o país.
  * @param {'pt'|'en'} lang */
 function publicacoes(lang) {
-  return estudosRecentes(lang).map((e) => {
+  return estudosRecentes(lang).filter(e => e.data !== null).map((e) => {
     if (!e.data) throw new Error(`Publicação sem data: ${e.work.slug}.`);
     return {
       tipo: /** @type {const} */ ('publicacao'),

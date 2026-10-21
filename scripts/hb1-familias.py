@@ -6,14 +6,17 @@ pairs={}
 def pairs_add(text):
  for line in text.strip().splitlines():
   k,pt,en=line.split('|');pairs[k]=(pt,en)
-pairs_add('''hab-imprensa-manif-lusa|Manifestantes em Lisboa, pela notícia que cita a Lusa|Demonstrators in Lisbon, reported in an article citing Lusa
+pairs_add('''hab-arrendamento-exposicao-vagos|Estimativa do Governo de alojamentos vagos em boas condições|Government estimate of vacant dwellings in good condition
+hab-eurostat-privacao-severa-definicao|Definição de privação severa da habitação|Definition of severe housing deprivation
+hab-oe-legenda-invariante|Legenda das medidas invariantes do Orçamento|Budget table legend for unchanged measures
+hab-imprensa-manif-lusa|Manifestantes em Lisboa, pela notícia que cita a Lusa|Demonstrators in Lisbon, reported in an article citing Lusa
 hab-imprensa-manif-lusa-organizacoes|Organizações da plataforma, pela notícia que cita a Lusa|Platform organisations, reported in an article citing Lusa
 hab-votacao-arrendamento|Votação da reforma do arrendamento|Vote on rental reform
 hab-governo-feh|Anúncio do fundo de emergência para a habitação|Announcement of the housing emergency fund
 hab-imprensa-manif-euronews|Organizações da plataforma, pela Euronews|Platform organisations, reported by Euronews
 hab-imprensa-feridos37|Feridos segundo o movimento, pela imprensa|Injured people according to the movement, reported by the press
 hab-imprensa-feridos39|Feridos segundo a organização, pela imprensa|Injured people according to the organisation, reported by the press
-hab-imprensa-feridos35|Feridos segundo um deputado, pela imprensa|Injured people according to a member of parliament, reported by the press
+hab-imprensa-feridos35|Feridos segundo um dirigente do BE, pela imprensa|Injured according to a BE leader, via the press
 hab-governo-arrendamento|Anúncio da reforma do arrendamento|Announcement of rental reform
 hab-imprensa-igai|Processo da inspeção, pela imprensa|Inspectorate case, reported by the press
 hab-imprensa-psp-ferido|Polícia ferido, segundo a PSP, pela imprensa|Police officer injured, according to the PSP, reported by the press
@@ -104,6 +107,8 @@ der={
  'jovens-com-pais':('Diferença face à União nos jovens que vivem com os pais','Gap from the Union in young people living with parents'),
  'licencas-por-mil':('Alojamentos licenciados por mil habitantes','Dwellings permitted per thousand inhabitants'),
  'precos-reais':('Diferença face à União no índice dos preços reais','Gap from the Union in the real price index'),
+ 'preco-rendimento-acima-2015':('Aumento dos preços face ao rendimento desde o ano base','Increase in prices relative to income since the base year'),
+ 'preco-rendimento-lt':('Distância do rácio preço-rendimento à média de longo prazo','Distance of the price-to-income ratio from the long-term average'),
  'preco-rendimento':('Diferença face à União no índice preço-rendimento','Gap from the Union in the price-to-income index'),
  'preco-lisboa':('Preço mediano em Lisboa em relação ao país','Median price in Lisbon relative to the country'),
  'renda-lisboa':('Renda mediana em Lisboa em relação ao país','Median rent in Lisbon relative to the country'),
@@ -138,14 +143,18 @@ for r in b:
  if r.get('unit') in ['texto','afirmação']:
   pt='O excerto reproduz o documento indicado sobre '+pair[0][0].lower()+pair[0][1:]+'.';en='The excerpt reproduces the indicated document about '+pair[1][0].lower()+pair[1][1:]+'.'
  elif r.get('derivation'):
-  pt='A conta calcula '+pair[0][0].lower()+pair[0][1:]+' pelas componentes identificadas.';en='The calculation gives '+pair[1][0].lower()+pair[1][1:]+' from the identified components.'
+  pt='A conta calcula '+pair[0][0].lower()+pair[0][1:]+' pelas componentes identificadas';en='The calculation gives '+pair[1][0].lower()+pair[1][1:]+' from the identified components'
  else:
-  pt='A medida mostra '+pair[0][0].lower()+pair[0][1:]+', no período indicado.';en='The measure shows '+pair[1][0].lower()+pair[1][1:]+', for the indicated period.'
- if r.get('derivation'):field='derivation';literal=r['check']
+  pt='A medida mostra '+pair[0][0].lower()+pair[0][1:];en='The measure shows '+pair[1][0].lower()+pair[1][1:]
+ if r.get('derivation'):field='derivation';literal=r.get('derivation_text',r['check'])
  elif r.get('unit') in ['texto','afirmação'] or (len(r.get('excerpt',''))>15 and any(c.isalpha() for c in r['excerpt'])):field='excerpt';literal=r[field]
  elif len(r.get('name',''))>=4:field='name';literal=r[field]
  else:field='document.title';literal=r['document']['title']
- families.append(dict(chaves=[id],nome=names[id],origens=[],partes=[dict(classe='diz',pt=pt,en=en,apoios=[dict(linha='propria',campo=field,literal=literal)])]))
+ complemento={}
+ if r.get('unit') not in ['texto','afirmação']:
+  pre=' no ' if '-Q' in str(r.get('reference_date','')) else ' em '
+  complemento={'complemento':{'pt':[pre,{'periodo':id},'.'],'en':[' in ',{'periodo':id},'.']}}
+ families.append(dict(**complemento,chaves=[id],nome=names[id],origens=[],partes=[dict(classe='diz',pt=pt,en=en,apoios=[dict(linha='propria',campo=field,literal=literal)])]))
 (site/'src/data/nomes-hb1.mjs').write_text('/** Nomes correntes das medidas e documentos do estudo HB1. */\nexport const NOMES_HB1 = '+json.dumps(names,ensure_ascii=False,indent=2)+';\n')
 (report/'familias.mjs').write_text('/** HB1: frases apoiadas nos excertos e contas das linhas. */\nexport const FAMILIAS_HB1 = '+json.dumps(families,ensure_ascii=False,indent=2)+';\n')
 print(len(names),'nomes e famílias preparados')

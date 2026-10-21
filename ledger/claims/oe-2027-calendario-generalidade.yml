@@ -8,6 +8,8 @@ id: "oe-2027-calendario-generalidade"
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
 value: "27 e 28 de outubro"
 unit: "data"
+measure: "Debate e votação na generalidade"
+measure_en: "General debate and vote"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Assembleia da República"

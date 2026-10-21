@@ -8,20 +8,44 @@
         "name_source": "PDF p. 3; parágrafo identificado pelo início; área física declarada",
         "document": {
           "title": "Proposta de Lei n.º 103/XVII",
-          "edition": "[a verificar]",
+          "edition": "2026-08-12",
           "locator": "PDF p. 3; parágrafo identificado pelo início; área física declarada",
           "source_sha256": "505b9d5fbeed485dd107377bbae07003f9f7fa4cd3f949534f6154f3b854d7bf",
           "page": 3,
           "kind": "pdf"
         },
         "excerpt": "Nomeadamente, propõe-se que a resolução do contrato possa ocorrer quando haja mora igual ou superior a dois meses no pagamento da renda ou quando exista atraso superior a oito dias no pagamento de rendas, por mais de três vezes, seguidas ou interpoladas, num período de 12 meses, ou por mais de quatro vezes num período de 18 meses.",
-        "reference_date": "[a verificar]"
+        "reference_date": "2026-08-12"
       },
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-arrendamento-exposicao",
-        "origin_row_sha256": "f3fff63da2562cef080a76ff98f048929629b0bc46cc30c9ac8baedc767a872a",
-        "exported_row_sha256": "a63de75609b4da462556ab88594e9bb78ee8d30dbd3b10cd29abfa7406e7b40d"
+        "origin_row_sha256": "754d5db29330fb11febd210a771851d72379a733a245b308d9154d9e1083bd1c",
+        "exported_row_sha256": "13c316e69c5853e7a9851514f2e25a7ea11a3d3717d342c0b508dab31e71d7c0"
+      }
+    },
+    "hab-arrendamento-exposicao-vagos": {
+      "linha": {
+        "id": "hab-arrendamento-exposicao-vagos",
+        "study": "a-casa-em-portugal-e-na-europa",
+        "name": "Proposta de Lei n.º 103/XVII",
+        "name_source": "PDF p. 1; Exposição de Motivos; estimativa pelos Censos de 2021; autoria na folha de rosto; data da proposta na página do Parlamento",
+        "document": {
+          "title": "Proposta de Lei n.º 103/XVII",
+          "edition": "2026-08-12",
+          "locator": "PDF p. 1; Exposição de Motivos; estimativa pelos Censos de 2021; autoria na folha de rosto; data da proposta na página do Parlamento",
+          "source_sha256": "505b9d5fbeed485dd107377bbae07003f9f7fa4cd3f949534f6154f3b854d7bf",
+          "page": 1,
+          "kind": "pdf"
+        },
+        "excerpt": "Considerando os dados dos Censos 2021, estima-se que cerca de 375 mil alojamentos familiares clássicos, dos quais quase 250 mil em boas condições, estejam vagos sem intenção de venda ou arrendamento.",
+        "reference_date": "2026-08-12"
+      },
+      "origem": {
+        "rh_study": "23 Habitacao",
+        "rh_id": "hab-arrendamento-exposicao-vagos",
+        "origin_row_sha256": "a811e6bd44b6d597830fc5e5705681072eb0e3c3fc3b9fee3a8a2509fe1b070e",
+        "exported_row_sha256": "b4748dbdd8d1b056cd1e81c336eef46a0d1ef1642d8f09d8c908aed3ad3fa259"
       }
     },
     "hab-be-despejos": {
@@ -44,8 +68,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-be-despejos",
-        "origin_row_sha256": "e4d264c8730e0c5cbb80b5a1472e8a79002719cc7e8693e4dc8eb76d3176b9e1",
-        "exported_row_sha256": "1b346d49bae70150314b8c21ed6d9722de429d8a6d1c002efcb76b9d4b8f178b"
+        "origin_row_sha256": "6adfd620520f4367b7c5e349b72d03d5c4ac6f8625d190e96fac8979c6b8804d",
+        "exported_row_sha256": "1882ba334c707afa0c0c1c3040f36d49db5e4794087e6bb9287cf634cdfac8c6"
       }
     },
     "hab-bpstat-12533724": {
@@ -53,7 +77,7 @@
         "id": "hab-bpstat-12533724",
         "study": "a-casa-em-portugal-e-na-europa",
         "name": "Montante de novas operações de empréstimos à habitação",
-        "name_source": "label; dimension.age.category.label",
+        "name_source": "label",
         "document": {
           "title": "Montante de novas operações de empréstimos à habitação",
           "edition": "2026-08-31",
@@ -67,8 +91,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-bpstat-12533724",
-        "origin_row_sha256": "05c924292d0c7925064b3d471783974b6b66a2268504ee93ca7498d467156b6e",
-        "exported_row_sha256": "07dd2bff1d8376e9ea28afd00ccb42316f18ad12aa18b44fe332b13e4cf4ca1e"
+        "origin_row_sha256": "b786c2f11d7486d07d3f769e8da81c923cfec3277f1ab9675980c61778f1ace3",
+        "exported_row_sha256": "795c5d2c6faa05f1b6b8c675cc1feb542e44c1bf6bd4c0b44eab51e908d757d0"
       }
     },
     "hab-bpstat-12533735": {
@@ -76,7 +100,7 @@
         "id": "hab-bpstat-12533735",
         "study": "a-casa-em-portugal-e-na-europa",
         "name": "Taxa de juro (TAA) de novas operações de empréstimos à habitação",
-        "name_source": "label; dimension.age.category.label",
+        "name_source": "label",
         "document": {
           "title": "Taxa de juro (TAA) de novas operações de empréstimos à habitação",
           "edition": "2026-08-31",
@@ -90,8 +114,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-bpstat-12533735",
-        "origin_row_sha256": "b351975bc528ecd65ed9586086a87a568d54df56e8606d4783b3c83a71d8e150",
-        "exported_row_sha256": "8f5018be8c48829e2570c80886296be4a46bca4e4b74d7198ce36b215f900636"
+        "origin_row_sha256": "41e045a81144691dd0f972e787c79ba0b7ed5a1397ff447d339a46b861252df6",
+        "exported_row_sha256": "19a2481bff27b903fd599be2ec93caaff331cd0c11b55173c97356492351e6cd"
       }
     },
     "hab-bpstat-12557378": {
@@ -99,7 +123,7 @@
         "id": "hab-bpstat-12557378",
         "study": "a-casa-em-portugal-e-na-europa",
         "name": "Empréstimos-Particulares-PRT-Habitação-M€ (OIFM)",
-        "name_source": "label; dimension.age.category.label",
+        "name_source": "label",
         "document": {
           "title": "Empréstimos-Particulares-PRT-Habitação-M€ (OIFM)",
           "edition": "2026-08-31",
@@ -113,16 +137,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-bpstat-12557378",
-        "origin_row_sha256": "ee93c5c3676723a089e50b8762ee3a0cec3b60ab529fd4dd6af3f4b78ab15792",
-        "exported_row_sha256": "539d9915353b347e5c338097415b561c87b4f716d6acd97f71115bd79363768c"
+        "origin_row_sha256": "41160f06d606fe35ad8c8d8dfbfd067418d0a5f65368bdd28f2753c3372f9570",
+        "exported_row_sha256": "69c06696725fb55e42c17a740ef1855d5ababfb5abdec1e9b382aac5c03d9360"
       }
     },
     "hab-cens-21dwob-r3-a-dw-total-nr-pt-2021": {
       "linha": {
         "id": "hab-cens-21dwob-r3-a-dw-total-nr-pt-2021",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Conventional dwellings by occupancy status, type of building and NUTS 3 region",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Alojamentos familiares clássicos, número, Portugal, 2021",
+        "name_source": "label; dimension.unit.category.label.NR; dimension.geo.category.label.PT; dimension.time.category.label.2021",
         "document": {
           "title": "Conventional dwellings by occupancy status, type of building and NUTS 3 region",
           "edition": "2021",
@@ -136,8 +160,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-cens-21dwob-r3-a-dw-total-nr-pt-2021",
-        "origin_row_sha256": "6a132e588e78f8576e1ac8b2adad7c1192d2daa1412da10cc4fcd461ecd13f00",
-        "exported_row_sha256": "3c29f0c8d08b01472e9f205f79be91756cbbcc175cebeb702288e32df9d51f42"
+        "origin_row_sha256": "f79e742dbe606aa5e8f44dee5c97fed1dedae27446dc56a8128219d905159ccd",
+        "exported_row_sha256": "4c051b09683827c8d3d628146ee58fb9086cc317421fd1573456860bd1aae207"
       }
     },
     "hab-cgtp-convocatoria": {
@@ -159,8 +183,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-cgtp-convocatoria",
-        "origin_row_sha256": "403bbaf4a97ed23a8e0c8c314315012d00408b267afe95cef478c210f870d751",
-        "exported_row_sha256": "28680c46e1894296713700eaadd8c2d5e832553dc48aa320cefe81bb5717acd9"
+        "origin_row_sha256": "d43cc8b3956bbd0e8bafffc42131cf2ab94e941f91a84d9323aeb03faa93a460",
+        "exported_row_sha256": "21d882abacbb470d48691e41ea77d1e9d189bf6e9dcbab5b41a296159771d778"
       }
     },
     "hab-chega-reinvestimento": {
@@ -183,16 +207,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-chega-reinvestimento",
-        "origin_row_sha256": "142df384737f63e0b7b0412c582e1954715ac0627feb1dd5ca1b3e1d93299f8b",
-        "exported_row_sha256": "89e1f5c1ad14a92ed033d383d0a9914a9817665d8bcc3e69098965cddb7c633e"
+        "origin_row_sha256": "8ad58464ec9ab1a9422617a5535841ec8abe7d7ffd9a8d1f6168f3fcd796a87f",
+        "exported_row_sha256": "f3eaf8f29876d25bd523e682d1323816dc153a8cf1cb8bf3022096f83f3bc45c"
       }
     },
     "hab-demo-pjan-eu27_2020-2025": {
       "linha": {
         "id": "hab-demo-pjan-eu27_2020-2025",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Population on 1 January by age and sex",
-        "name_source": "label; dimension.age.category.label",
+        "name": "População residente a um de janeiro, número, União Europeia, 2025",
+        "name_source": "label; dimension.unit.category.label.NR; dimension.geo.category.label.EU27_2020; dimension.time.category.label.2025",
         "document": {
           "title": "Population on 1 January by age and sex",
           "edition": "2025",
@@ -206,16 +230,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-demo-pjan-eu27_2020-2025",
-        "origin_row_sha256": "106a0502e7db92d3f2ba19a48d7906c85ff15ffa827872c5a07af30e4f50e2f5",
-        "exported_row_sha256": "6a645fc1eebd17c301a025062c48696781ec244ff5a991cd57ca32f629bc8328"
+        "origin_row_sha256": "69781ed66d0a09415cc73515a34cb5a2cab6d926d676cf64d417002560460a78",
+        "exported_row_sha256": "23ea22658c40e055ee92c7b3c6e9eb555b2e73ea700ec4009b254e38aff9523b"
       }
     },
     "hab-demo-pjan-pt-2025": {
       "linha": {
         "id": "hab-demo-pjan-pt-2025",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Population on 1 January by age and sex",
-        "name_source": "label; dimension.age.category.label",
+        "name": "População residente a um de janeiro, número, Portugal, 2025",
+        "name_source": "label; dimension.unit.category.label.NR; dimension.geo.category.label.PT; dimension.time.category.label.2025",
         "document": {
           "title": "Population on 1 January by age and sex",
           "edition": "2025",
@@ -229,8 +253,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-demo-pjan-pt-2025",
-        "origin_row_sha256": "0271350e1d6fe34de9ce09941ed8a32f9c98331a7e76aa86e6035ca8d670127f",
-        "exported_row_sha256": "c43b37c67f52f950701a8746ead0249ae4805060f3a03521bd0febff5b469c49"
+        "origin_row_sha256": "3ba8905adf8c99922ba7a4bb69d5793a7f788de6bf50bc19139a1cbf450fd0b7",
+        "exported_row_sha256": "3979347a08cfc03f774378ed8ba35f66978ef43aaecc8975838eeef429a59e26"
       }
     },
     "hab-dl97-deducao": {
@@ -253,8 +277,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-dl97-deducao",
-        "origin_row_sha256": "84f9310c0aee310488940a9763360996b25779cae5ad2cb84cdcc942f8c847cc",
-        "exported_row_sha256": "ce6bac9aa6e66be84a919968da6b4b9695aea6ab7d62626e129ad3c1d5a877ac"
+        "origin_row_sha256": "b13cb09e626b17b0f0c06283b3dda404f28715d8f816753d8d8953c4f8f786d0",
+        "exported_row_sha256": "20e06f5071a97006abd94467f2de0ccfb19da3c2bb2f36e94ce60676ae5826a1"
       }
     },
     "hab-dl97-deducao-2027": {
@@ -277,8 +301,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-dl97-deducao-2027",
-        "origin_row_sha256": "02d3e5480dd02bbeaf89173f354eb319573522d62796823e8017f16edbbf442b",
-        "exported_row_sha256": "e14576a6a734b893e895142f62eda883fae79ea3c0a77197b051294cc727340f"
+        "origin_row_sha256": "c5cc164df430e6f8e94283445259f0473c5f0876596a733dbde2ec467554b8c4",
+        "exported_row_sha256": "82f02060a4709327b97c78f10a063bfa97d5d52855f4b7050affcd3c7ddbf2cf"
       }
     },
     "hab-dl97-irs": {
@@ -301,8 +325,31 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-dl97-irs",
-        "origin_row_sha256": "13af546fddeb3545a6868610a06da3f81f04d680ed145e080b0c43e3c671d668",
-        "exported_row_sha256": "b1d67a0047a8258aa085e8ac7ac9dd72487a923ea12e4dfe0052a1cd63d284fc"
+        "origin_row_sha256": "bfbe574bcf42476c20387ad8086219a33a1a9453a08693afce489e5afbad018a",
+        "exported_row_sha256": "9c8106331961a3e471c3050b99ed4ddbaaaddea03e0f695e2270684ab03dc876"
+      }
+    },
+    "hab-eurostat-privacao-severa-definicao": {
+      "linha": {
+        "id": "hab-eurostat-privacao-severa-definicao",
+        "study": "a-casa-em-portugal-e-na-europa",
+        "name": "Glossary:Severe housing deprivation rate",
+        "name_source": "Glossário, dois parágrafos da definição",
+        "document": {
+          "title": "Glossary:Severe housing deprivation rate",
+          "edition": "2021-04-13",
+          "locator": "Glossário, dois parágrafos da definição",
+          "source_sha256": "bf8da5fc3936c9dbee32f1a2aa32cc3c924385f42c295bd6f4fa2993a867e9de",
+          "kind": "html"
+        },
+        "excerpt": "Severe housing deprivation rate is defined as the percentage of population living in the dwelling which is considered as overcrowded, while also exhibiting at least one of the housing deprivation measures. Housing deprivation is a measure of poor amenities and is calculated by referring to those households with a leaking roof, no bath/shower and no indoor toilet, or a dwelling considered too dark.",
+        "reference_date": "2021-04-13"
+      },
+      "origem": {
+        "rh_study": "23 Habitacao",
+        "rh_id": "hab-eurostat-privacao-severa-definicao",
+        "origin_row_sha256": "fae80eb32f777060d593119bbfd89b4e5e4107ef34381395c9380b6b11918ed0",
+        "exported_row_sha256": "5c9e0e572257359166991094c99f6b7326dc401e383acf554c22105dc09ba52f"
       }
     },
     "hab-governo-arrendamento": {
@@ -324,8 +371,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-governo-arrendamento",
-        "origin_row_sha256": "bf011707513e64d331e17cafead61c83d20b5ef1b5910e2e0f136f19931f532b",
-        "exported_row_sha256": "965b14b0f005701bc79b8938ee996e874a59ff2b188c6c3813c4049f30bf6a1d"
+        "origin_row_sha256": "900786295af0e6657f7dcd209037a3742def62cb56a7d36e9d7815e674817f82",
+        "exported_row_sha256": "e39eb19e3b72c05c32e6d78e6484d29a0d8b570c053ed46471a7a4794d819048"
       }
     },
     "hab-governo-construir": {
@@ -347,8 +394,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-governo-construir",
-        "origin_row_sha256": "e6cde4dd1ffaf784dd8666380570c3963405ef80d0a6c5df2e31c5641101ba38",
-        "exported_row_sha256": "64fc20c7f43d343cd50ec5d47edc82c0c6867bc6785c0d1d434fb217d7671cf8"
+        "origin_row_sha256": "7f0b5d23924e43bad037d2aa53e968f015a06f5b152ef1425145a7e49700b186",
+        "exported_row_sha256": "7a90e7bbfc7c0d1d58624bd221291ccfce579e97cd49f3927319650366e6a7a1"
       }
     },
     "hab-governo-feh": {
@@ -370,8 +417,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-governo-feh",
-        "origin_row_sha256": "222222787ca674320d0f696c2aa608dafb23ec79b7164ea9f4aef708469a6b95",
-        "exported_row_sha256": "a6bd5723d9af188d52db58e1bc469b588d2274cd796198c670b508ec6d129426"
+        "origin_row_sha256": "e2789c3a3122c3232e96fdefc47851027317e23067aa30d690300ca47eb5a2ca",
+        "exported_row_sha256": "194d18ab33bb1f005291eea565757bb5a4ea3a001c62b30d93c945fd4d467cf9"
       }
     },
     "hab-il-proposta": {
@@ -382,27 +429,27 @@
         "name_source": "HTML; início literal único",
         "document": {
           "title": "Habitação Já",
-          "edition": "[a verificar]",
+          "edition": "2026-06-08",
           "locator": "HTML; início literal único",
           "source_sha256": "83424c50610cbac84b6cb675ff8a46547b10413fb0c8597f371a516adab2105c",
           "kind": "html"
         },
         "excerpt": "propõe ao Governo medidas para colocar mais casas no mercado, desbloquear imóveis parados em heranças e tornar o arrendamento mais simples, seguro e funcional, tanto para inquilinos como para proprietários.",
-        "reference_date": "[a verificar]"
+        "reference_date": "2026-06-08"
       },
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-il-proposta",
-        "origin_row_sha256": "6d367a8e5a9c6bcada27168d811e0afe5907a1a51faaf00cc8bc0f0ba3487500",
-        "exported_row_sha256": "96e9aee2520d1692a950c701b3407259198150f5e1eeb8b7d79d08564f189501"
+        "origin_row_sha256": "8770b31a94668641a2359c4a06d132150a802e11f3be06f816e7b3682914398c",
+        "exported_row_sha256": "d64df398bb96f0de2cf0f344dc89271d4d8f81043d722a83ff61a6b24271d07e"
       }
     },
     "hab-ilc-lvho02-a-total-total-own-l-pc-eu27_2020-2025": {
       "linha": {
         "id": "hab-ilc-lvho02-a-total-total-own-l-pc-eu27_2020-2025",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Distribution of population by tenure status, type of household and income group",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Distribuição da população por regime de ocupação, proprietários com empréstimo, União Europeia, 2025",
+        "name_source": "label; dimension.tenure.category.label.OWN_L; dimension.geo.category.label.EU27_2020; dimension.time.category.label.2025",
         "document": {
           "title": "Distribution of population by tenure status, type of household and income group",
           "edition": "2025",
@@ -416,16 +463,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ilc-lvho02-a-total-total-own-l-pc-eu27_2020-2025",
-        "origin_row_sha256": "02d1a9949d02fe8629a29fa31b189f78b62d346fa19f2218fb6286763cc9f560",
-        "exported_row_sha256": "74fc7a9ba45104192668ea58810f5427497d1df1e08b0e2e85b07b4d0ba3619a"
+        "origin_row_sha256": "cecde3540db0d9b3475ffd4e5ff7f02f1cb299c3164baa8a7b179f8ec7620d6a",
+        "exported_row_sha256": "e6194cf9c583976334c5808c17660807cae459c955829de5a22f682353937bc9"
       }
     },
     "hab-ilc-lvho02-a-total-total-own-l-pc-nl-2025": {
       "linha": {
         "id": "hab-ilc-lvho02-a-total-total-own-l-pc-nl-2025",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Distribution of population by tenure status, type of household and income group",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Distribuição da população por regime de ocupação, proprietários com empréstimo, Países Baixos, 2025",
+        "name_source": "label; dimension.tenure.category.label.OWN_L; dimension.geo.category.label.NL; dimension.time.category.label.2025",
         "document": {
           "title": "Distribution of population by tenure status, type of household and income group",
           "edition": "2025",
@@ -439,16 +486,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ilc-lvho02-a-total-total-own-l-pc-nl-2025",
-        "origin_row_sha256": "3a2add2d0ffb57888a282d018616804144aea1f64da1069e2aeba089979c7cd5",
-        "exported_row_sha256": "7799ad9601dafdc28ba0e04dc95452e4cc5d21bb17f068aaeec22f75fcee5555"
+        "origin_row_sha256": "66b740cc9e2d2879b6e0ca4c69b92424d5374c98b8471c0b00e691330f89f3ef",
+        "exported_row_sha256": "7b2dbdf037db66f0108a80b59c757f871fa8b58b3fad0fe7f38bc2c322f9e6df"
       }
     },
     "hab-ilc-lvho02-a-total-total-own-l-pc-pt-2020": {
       "linha": {
         "id": "hab-ilc-lvho02-a-total-total-own-l-pc-pt-2020",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Distribution of population by tenure status, type of household and income group",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Distribuição da população por regime de ocupação, proprietários com empréstimo, Portugal, 2020",
+        "name_source": "label; dimension.tenure.category.label.OWN_L; dimension.geo.category.label.PT; dimension.time.category.label.2020",
         "document": {
           "title": "Distribution of population by tenure status, type of household and income group",
           "edition": "2020",
@@ -462,16 +509,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ilc-lvho02-a-total-total-own-l-pc-pt-2020",
-        "origin_row_sha256": "82685860edf5c105be3223897029f4aa697a2d4a7ea4125bea493fa6ec91d8e4",
-        "exported_row_sha256": "1393348a6148b7ff027ffdfd223af7e118cda59b5d3fa98538049234d3100fef"
+        "origin_row_sha256": "1d69b9a94bcc1e448962708c29c7aac60519bc28994160b8b8b7f2d8e31fc383",
+        "exported_row_sha256": "b5e5039e728a2c983b6ae658bde5f146fe1f43d03901f05452747cc59f98ca87"
       }
     },
     "hab-ilc-lvho02-a-total-total-own-l-pc-pt-2025": {
       "linha": {
         "id": "hab-ilc-lvho02-a-total-total-own-l-pc-pt-2025",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Distribution of population by tenure status, type of household and income group",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Distribuição da população por regime de ocupação, proprietários com empréstimo, Portugal, 2025",
+        "name_source": "label; dimension.tenure.category.label.OWN_L; dimension.geo.category.label.PT; dimension.time.category.label.2025",
         "document": {
           "title": "Distribution of population by tenure status, type of household and income group",
           "edition": "2025",
@@ -485,16 +532,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ilc-lvho02-a-total-total-own-l-pc-pt-2025",
-        "origin_row_sha256": "863eee51c7bf5332b1a23cffa181a7611669872d3ab1f884aa37981a85b94874",
-        "exported_row_sha256": "c41c54f98059aef3da831c0bbce585244b17b32ec36c27156d7deb686f4aeb5b"
+        "origin_row_sha256": "6cc6203fa2636b252be6cf2c8830a217ef16bf397d0c3afe741f72ab53505dac",
+        "exported_row_sha256": "092dcfe25d1a98fa6dfe11a227b2f5e68c8694e0b6743334aa4e685c39e77bb8"
       }
     },
     "hab-ilc-lvho02-a-total-total-own-l-pc-ro-2025": {
       "linha": {
         "id": "hab-ilc-lvho02-a-total-total-own-l-pc-ro-2025",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Distribution of population by tenure status, type of household and income group",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Distribuição da população por regime de ocupação, proprietários com empréstimo, Roménia, 2025",
+        "name_source": "label; dimension.tenure.category.label.OWN_L; dimension.geo.category.label.RO; dimension.time.category.label.2025",
         "document": {
           "title": "Distribution of population by tenure status, type of household and income group",
           "edition": "2025",
@@ -508,16 +555,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ilc-lvho02-a-total-total-own-l-pc-ro-2025",
-        "origin_row_sha256": "a8928402bdab7a0460aa20ebde688847357f85feef8f1d344fc1afb730c09611",
-        "exported_row_sha256": "2fac7064aa00d171a7ac04cdf5f64e8c9ba15b02566a0697c826b9d9c0f8d812"
+        "origin_row_sha256": "cf5d0aa5ffd9b0c303e002c22394dbf3b642c842913444bd1415d7426c14141d",
+        "exported_row_sha256": "b520e6c829e805b7ba1c447a03d0aaa7378ec15ec81eaea96c8e1c8db4346695"
       }
     },
     "hab-ilc-lvho02-a-total-total-own-nl-pc-eu27_2020-2025": {
       "linha": {
         "id": "hab-ilc-lvho02-a-total-total-own-nl-pc-eu27_2020-2025",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Distribution of population by tenure status, type of household and income group",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Distribuição da população por regime de ocupação, proprietários sem empréstimo, União Europeia, 2025",
+        "name_source": "label; dimension.tenure.category.label.OWN_NL; dimension.geo.category.label.EU27_2020; dimension.time.category.label.2025",
         "document": {
           "title": "Distribution of population by tenure status, type of household and income group",
           "edition": "2025",
@@ -531,16 +578,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ilc-lvho02-a-total-total-own-nl-pc-eu27_2020-2025",
-        "origin_row_sha256": "77c6a989be5de85f9b080764c357088300933c269cb20b25a620f97426a98a78",
-        "exported_row_sha256": "263fa7e8882b9b8d02ea6f186d90ce4a22373994de1d9b5e7aa407319b4de775"
+        "origin_row_sha256": "bf39692635217a96e1d735e856e191534d41b9c6707f686c77c9d6cf973d47ee",
+        "exported_row_sha256": "b876404640928b07c27525e35149e66663eac5f4400a47168df993aac89cc5df"
       }
     },
     "hab-ilc-lvho02-a-total-total-own-nl-pc-pt-2025": {
       "linha": {
         "id": "hab-ilc-lvho02-a-total-total-own-nl-pc-pt-2025",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Distribution of population by tenure status, type of household and income group",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Distribuição da população por regime de ocupação, proprietários sem empréstimo, Portugal, 2025",
+        "name_source": "label; dimension.tenure.category.label.OWN_NL; dimension.geo.category.label.PT; dimension.time.category.label.2025",
         "document": {
           "title": "Distribution of population by tenure status, type of household and income group",
           "edition": "2025",
@@ -554,16 +601,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ilc-lvho02-a-total-total-own-nl-pc-pt-2025",
-        "origin_row_sha256": "904ec59167eac7f5047cf0089cecd69784e5adb2dba0f9d5274f46096fee3646",
-        "exported_row_sha256": "36dcf1e871faa360ddf9baedec6ff8b370a194324c4c107abad0c8fcbac6188d"
+        "origin_row_sha256": "4a5c65c8c5a3ca30dd6c1243e4d12628a5e73598a57da12d0fc5151e08bb568e",
+        "exported_row_sha256": "4b78408cb7255054a44a96545c33c9aab967bf0535958c54caef7aa944681ea8"
       }
     },
     "hab-ilc-lvho02-a-total-total-rent-fr-pc-eu27_2020-2025": {
       "linha": {
         "id": "hab-ilc-lvho02-a-total-total-rent-fr-pc-eu27_2020-2025",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Distribution of population by tenure status, type of household and income group",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Distribuição da população por regime de ocupação, inquilinos com renda reduzida ou gratuita, União Europeia, 2025",
+        "name_source": "label; dimension.tenure.category.label.RENT_FR; dimension.geo.category.label.EU27_2020; dimension.time.category.label.2025",
         "document": {
           "title": "Distribution of population by tenure status, type of household and income group",
           "edition": "2025",
@@ -577,16 +624,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ilc-lvho02-a-total-total-rent-fr-pc-eu27_2020-2025",
-        "origin_row_sha256": "508e2185a1f36445ab27635fd3a719a730ff2dc090d984e2df0270628a72b8cf",
-        "exported_row_sha256": "e448c5feebafa8c9d95cb1aa5c3ae81fb616f059ac1a1fe368fb287b86eb3bbb"
+        "origin_row_sha256": "0d63d9472f906a011114ea246161cf17753d14d8d2d8f592a9c5e915a6d411c9",
+        "exported_row_sha256": "ba3a8d2d179c11cbffdaf39f698bc38275492873130ade43b12c64fb8dd7eeda"
       }
     },
     "hab-ilc-lvho02-a-total-total-rent-fr-pc-pt-2025": {
       "linha": {
         "id": "hab-ilc-lvho02-a-total-total-rent-fr-pc-pt-2025",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Distribution of population by tenure status, type of household and income group",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Distribuição da população por regime de ocupação, inquilinos com renda reduzida ou gratuita, Portugal, 2025",
+        "name_source": "label; dimension.tenure.category.label.RENT_FR; dimension.geo.category.label.PT; dimension.time.category.label.2025",
         "document": {
           "title": "Distribution of population by tenure status, type of household and income group",
           "edition": "2025",
@@ -600,16 +647,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ilc-lvho02-a-total-total-rent-fr-pc-pt-2025",
-        "origin_row_sha256": "a2bb6a18254ad09561f7b3328eb2fd0246301bbd3a533dcf80d4f61b675e0051",
-        "exported_row_sha256": "657c913c2c840ba94a26a965fb8fc8c39bc5e87a29e0d8c5639bce9877a22852"
+        "origin_row_sha256": "818abdb299dc9963a31e32f38b9089e900cff22a6cd0dbf7f4eaba9af77f5ac6",
+        "exported_row_sha256": "c4a396676542fb7bc57479d68f8f4d233d53baf98bd93e0ddc835182cca888f3"
       }
     },
     "hab-ilc-lvho02-a-total-total-rent-mkt-pc-de-2025": {
       "linha": {
         "id": "hab-ilc-lvho02-a-total-total-rent-mkt-pc-de-2025",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Distribution of population by tenure status, type of household and income group",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Distribuição da população por regime de ocupação, inquilinos a preços de mercado, Alemanha, 2025",
+        "name_source": "label; dimension.tenure.category.label.RENT_MKT; dimension.geo.category.label.DE; dimension.time.category.label.2025",
         "document": {
           "title": "Distribution of population by tenure status, type of household and income group",
           "edition": "2025",
@@ -623,16 +670,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ilc-lvho02-a-total-total-rent-mkt-pc-de-2025",
-        "origin_row_sha256": "10b027e87544239549f027b4f92505f9f2da07fbcbc17fa24b4c074be455a946",
-        "exported_row_sha256": "f374b7b42ee33cefc164ec5586985d533e56321265a1384ee24689e4189c5f31"
+        "origin_row_sha256": "c53a027df58d4d5f1b94a8c741faeb180c4c8a687ae169daa686eed5bf860222",
+        "exported_row_sha256": "fa37d52579cb2596205574f24dd8fb0a332cc20f04a04decb162806bc339b255"
       }
     },
     "hab-ilc-lvho02-a-total-total-rent-mkt-pc-eu27_2020-2025": {
       "linha": {
         "id": "hab-ilc-lvho02-a-total-total-rent-mkt-pc-eu27_2020-2025",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Distribution of population by tenure status, type of household and income group",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Distribuição da população por regime de ocupação, inquilinos a preços de mercado, União Europeia, 2025",
+        "name_source": "label; dimension.tenure.category.label.RENT_MKT; dimension.geo.category.label.EU27_2020; dimension.time.category.label.2025",
         "document": {
           "title": "Distribution of population by tenure status, type of household and income group",
           "edition": "2025",
@@ -646,16 +693,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ilc-lvho02-a-total-total-rent-mkt-pc-eu27_2020-2025",
-        "origin_row_sha256": "f6265e64616bfc044a7d50117e7c0b8905f8513ce759cb9467a417379bc5112f",
-        "exported_row_sha256": "d32db95f206f62f0f14a5eeecdc9b225d2321d8424da1d247e6beecfd3cf43b6"
+        "origin_row_sha256": "ada7a0cfa4e7a6539d0bb26ee9bbc1b84ead8c2392901a1ff90a7e871fa64e8c",
+        "exported_row_sha256": "bc16183f96b752f193aca47bf3e5f2660cbef9f6a78d44497bc48204bc2bbbfa"
       }
     },
     "hab-ilc-lvho02-a-total-total-rent-mkt-pc-pt-2020": {
       "linha": {
         "id": "hab-ilc-lvho02-a-total-total-rent-mkt-pc-pt-2020",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Distribution of population by tenure status, type of household and income group",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Distribuição da população por regime de ocupação, inquilinos a preços de mercado, Portugal, 2020",
+        "name_source": "label; dimension.tenure.category.label.RENT_MKT; dimension.geo.category.label.PT; dimension.time.category.label.2020",
         "document": {
           "title": "Distribution of population by tenure status, type of household and income group",
           "edition": "2020",
@@ -669,16 +716,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ilc-lvho02-a-total-total-rent-mkt-pc-pt-2020",
-        "origin_row_sha256": "c2aa255738d6a52852f6c237d8e9a09f9bff7a7dad46ee6e89daed1abac90999",
-        "exported_row_sha256": "75568b8fef76a78dda6d47b1e6b632bcf0102b05b141b68e2c6f4350abd96b6a"
+        "origin_row_sha256": "c3bf3b302add15c564781cb14acd912aa82665b2509c60ba00ab7c4dd3fec559",
+        "exported_row_sha256": "e3cf59695e945d9e7bb56e20ce078d15414e8576ff32e51f89265f18145d8f1d"
       }
     },
     "hab-ilc-lvho02-a-total-total-rent-mkt-pc-pt-2025": {
       "linha": {
         "id": "hab-ilc-lvho02-a-total-total-rent-mkt-pc-pt-2025",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Distribution of population by tenure status, type of household and income group",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Distribuição da população por regime de ocupação, inquilinos a preços de mercado, Portugal, 2025",
+        "name_source": "label; dimension.tenure.category.label.RENT_MKT; dimension.geo.category.label.PT; dimension.time.category.label.2025",
         "document": {
           "title": "Distribution of population by tenure status, type of household and income group",
           "edition": "2025",
@@ -692,16 +739,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ilc-lvho02-a-total-total-rent-mkt-pc-pt-2025",
-        "origin_row_sha256": "87aa21b34c94e8e90a2b8161ed167123bb0131faa82be2eec1d9a7e5be733793",
-        "exported_row_sha256": "e25180322afc7c0a3dd7ac2bb9b9aa7e7ae862919ccb1f18979f261bb8668154"
+        "origin_row_sha256": "cf60b8d6b5cc23c0a802032f3f4796684d1c1aeee660ef093e7942996d99f635",
+        "exported_row_sha256": "ab901746bfae26b5cd5800666679b5763ed99e75f5aeadf5d952c351a6ce0577"
       }
     },
     "hab-ilc-lvho05a-a-pc-total-total-t-cy-2025": {
       "linha": {
         "id": "hab-ilc-lvho05a-a-pc-total-total-t-cy-2025",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Overcrowding rate by age, sex and poverty status - total population",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Taxa de sobrelotação da habitação, Chipre, 2025",
+        "name_source": "label; dimension.geo.category.label.CY; dimension.time.category.label.2025",
         "document": {
           "title": "Overcrowding rate by age, sex and poverty status - total population",
           "edition": "2025",
@@ -715,16 +762,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ilc-lvho05a-a-pc-total-total-t-cy-2025",
-        "origin_row_sha256": "51fb2c28c314147004ac08bb144c5e56645467c258fcd6a6fbdc770544eb15e3",
-        "exported_row_sha256": "9a6588703ef1c9476baf94662a1ab24db6ab6613315ed024202a41045229aa11"
+        "origin_row_sha256": "c7f72d7cc024bf629a748c79ded9ac6b79679f66f1b844e7ec6743ce4db70169",
+        "exported_row_sha256": "dd6052948741bc85e18ec8d682c4ff060079b8324815c1e7b193a67ff705e155"
       }
     },
     "hab-ilc-lvho05a-a-pc-total-total-t-eu27_2020-2025": {
       "linha": {
         "id": "hab-ilc-lvho05a-a-pc-total-total-t-eu27_2020-2025",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Overcrowding rate by age, sex and poverty status - total population",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Taxa de sobrelotação da habitação, União Europeia, 2025",
+        "name_source": "label; dimension.geo.category.label.EU27_2020; dimension.time.category.label.2025",
         "document": {
           "title": "Overcrowding rate by age, sex and poverty status - total population",
           "edition": "2025",
@@ -738,16 +785,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ilc-lvho05a-a-pc-total-total-t-eu27_2020-2025",
-        "origin_row_sha256": "b16a9d6ad956dd5254ffa030fba83ac01f939d80158b7a457328c3db0e7f121a",
-        "exported_row_sha256": "df225bef023a2000a90fefedf2ccf28dcc0483405de7233b8fd8036e3579cbba"
+        "origin_row_sha256": "fad4c9ee771a23847642e70851fe11cd04bfea316aa78200fdbba4d3bad0cf4d",
+        "exported_row_sha256": "64b0ad2972602f1e9846ea4aab1d33df866d6fe6e8edca54b25a4350dfebf34d"
       }
     },
     "hab-ilc-lvho05a-a-pc-total-total-t-pt-2025": {
       "linha": {
         "id": "hab-ilc-lvho05a-a-pc-total-total-t-pt-2025",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Overcrowding rate by age, sex and poverty status - total population",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Taxa de sobrelotação da habitação, Portugal, 2025",
+        "name_source": "label; dimension.geo.category.label.PT; dimension.time.category.label.2025",
         "document": {
           "title": "Overcrowding rate by age, sex and poverty status - total population",
           "edition": "2025",
@@ -761,16 +808,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ilc-lvho05a-a-pc-total-total-t-pt-2025",
-        "origin_row_sha256": "f3ada9765d4a1cceff2a5fde32d562c52c199a5731ba5d5ff3be4c82dda727e0",
-        "exported_row_sha256": "f224929fcb28ce256fce2f3363331d67f7a6a31dfef666e43c072a7f65b0db4e"
+        "origin_row_sha256": "d96957b3b889117599d02ef24c7d1ee2fa2ecda68e2dfdb0efafbc2ef0606063",
+        "exported_row_sha256": "9e96703b1fb947f40f23753779bfcc249ab89a951ec6a15a1df8c5600ab899f3"
       }
     },
     "hab-ilc-lvho05a-a-pc-total-total-t-ro-2025": {
       "linha": {
         "id": "hab-ilc-lvho05a-a-pc-total-total-t-ro-2025",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Overcrowding rate by age, sex and poverty status - total population",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Taxa de sobrelotação da habitação, Roménia, 2025",
+        "name_source": "label; dimension.geo.category.label.RO; dimension.time.category.label.2025",
         "document": {
           "title": "Overcrowding rate by age, sex and poverty status - total population",
           "edition": "2025",
@@ -784,16 +831,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ilc-lvho05a-a-pc-total-total-t-ro-2025",
-        "origin_row_sha256": "84051c948746c1537341fa36a9978eca643023042eb42c3af162b8baf9ac5666",
-        "exported_row_sha256": "5c1f0ecbd45911b29e9922692ce507653b4c366a806a87d911510fd7bee45d41"
+        "origin_row_sha256": "f89196ae1d86690de83901b0574e40de1f03326fdd33c022ec0c70f5dc0b9900",
+        "exported_row_sha256": "61745af9558299b5947744e22897613fc76433a27a1d66947a6383a1a2383632"
       }
     },
     "hab-ilc-lvho05a-a-pc-total-y16-29-t-eu27_2020-2025": {
       "linha": {
         "id": "hab-ilc-lvho05a-a-pc-total-y16-29-t-eu27_2020-2025",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Overcrowding rate by age, sex and poverty status - total population",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Taxa de sobrelotação da habitação, dezasseis a vinte e nove anos, União Europeia, 2025",
+        "name_source": "label; dimension.age.category.label.Y16-29; dimension.geo.category.label.EU27_2020; dimension.time.category.label.2025",
         "document": {
           "title": "Overcrowding rate by age, sex and poverty status - total population",
           "edition": "2025",
@@ -807,16 +854,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ilc-lvho05a-a-pc-total-y16-29-t-eu27_2020-2025",
-        "origin_row_sha256": "b879b2002b51d9f36d747f1e07328827c93f61433c3625f1e9e26c62a6faabe0",
-        "exported_row_sha256": "c0a206ede23cbd4041d43eb55b9b32612c59979d76372db544395771ffde9da4"
+        "origin_row_sha256": "38a421086fed8b97f8be15b6b8ceee80d7745b06b33dd710d51ab7d88a8ae941",
+        "exported_row_sha256": "ec50b4f97d17d17529dcb95064980258d9db577fd2c2f03b5399e10a7c64f3bf"
       }
     },
     "hab-ilc-lvho05a-a-pc-total-y16-29-t-pt-2025": {
       "linha": {
         "id": "hab-ilc-lvho05a-a-pc-total-y16-29-t-pt-2025",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Overcrowding rate by age, sex and poverty status - total population",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Taxa de sobrelotação da habitação, dezasseis a vinte e nove anos, Portugal, 2025",
+        "name_source": "label; dimension.age.category.label.Y16-29; dimension.geo.category.label.PT; dimension.time.category.label.2025",
         "document": {
           "title": "Overcrowding rate by age, sex and poverty status - total population",
           "edition": "2025",
@@ -830,16 +877,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ilc-lvho05a-a-pc-total-y16-29-t-pt-2025",
-        "origin_row_sha256": "907826c7d9e0c916accce4405aa86e1c1f2413e52a1c59a530478f0e78cde298",
-        "exported_row_sha256": "e73e59c1db2950c3c7d5c2348fae808b1331e2eb7a219c7f019da35a824c8a0b"
+        "origin_row_sha256": "f86900bcede7e6e84420ca9219ed7acb6ba50beb87921386679a6aea7ca66009",
+        "exported_row_sha256": "2bb32dec55651ee733001e8c4ef94ff4d8e9d7b1181e9a92d441bd81d3fbe564"
       }
     },
     "hab-ilc-lvho07a-a-pc-total-y16-29-t-el-2025": {
       "linha": {
         "id": "hab-ilc-lvho07a-a-pc-total-y16-29-t-el-2025",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Housing cost overburden rate by age, sex and poverty status",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Taxa de sobrecarga dos custos da habitação, dezasseis a vinte e nove anos, Grécia, 2025",
+        "name_source": "label; dimension.age.category.label.Y16-29; dimension.geo.category.label.EL; dimension.time.category.label.2025",
         "document": {
           "title": "Housing cost overburden rate by age, sex and poverty status",
           "edition": "2025",
@@ -853,16 +900,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ilc-lvho07a-a-pc-total-y16-29-t-el-2025",
-        "origin_row_sha256": "a4ddc35b308218c4e1ed2b030e79e085090f672cb3b1290cb19eaa66f1e37c64",
-        "exported_row_sha256": "f4fa39ebd62a5c20f06ef5872b2bc2a20b638210e5a805eb7696bb819cf79631"
+        "origin_row_sha256": "782fcda91b3f3005e0f0137e2f41f75cae2841a71187462185f6049c68a4cffc",
+        "exported_row_sha256": "1b2e3e4ff2a3fb48dd61b2a39f31a1acc7970918185018246a9ed7cf2b2d79c0"
       }
     },
     "hab-ilc-lvho07a-a-pc-total-y16-29-t-eu27_2020-2025": {
       "linha": {
         "id": "hab-ilc-lvho07a-a-pc-total-y16-29-t-eu27_2020-2025",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Housing cost overburden rate by age, sex and poverty status",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Taxa de sobrecarga dos custos da habitação, dezasseis a vinte e nove anos, União Europeia, 2025",
+        "name_source": "label; dimension.age.category.label.Y16-29; dimension.geo.category.label.EU27_2020; dimension.time.category.label.2025",
         "document": {
           "title": "Housing cost overburden rate by age, sex and poverty status",
           "edition": "2025",
@@ -876,16 +923,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ilc-lvho07a-a-pc-total-y16-29-t-eu27_2020-2025",
-        "origin_row_sha256": "d4dbca71808730a71231b752f4f501eac336389483ab1725ca545e518f2a28bc",
-        "exported_row_sha256": "fb89c7b8437f2e7d838bc82791b85f75e744222239a20faad79527916237724f"
+        "origin_row_sha256": "a64c09ecc15429cb4d14ce53ca67e5cd869d4d93a362debbda4b51ac2c687a80",
+        "exported_row_sha256": "5d8263ca4e96ae69d2752a232a36cf16e22622d52b4cfe1456a267024bed349d"
       }
     },
     "hab-ilc-lvho07a-a-pc-total-y16-29-t-pt-2025": {
       "linha": {
         "id": "hab-ilc-lvho07a-a-pc-total-y16-29-t-pt-2025",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Housing cost overburden rate by age, sex and poverty status",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Taxa de sobrecarga dos custos da habitação, dezasseis a vinte e nove anos, Portugal, 2025",
+        "name_source": "label; dimension.age.category.label.Y16-29; dimension.geo.category.label.PT; dimension.time.category.label.2025",
         "document": {
           "title": "Housing cost overburden rate by age, sex and poverty status",
           "edition": "2025",
@@ -899,21 +946,21 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ilc-lvho07a-a-pc-total-y16-29-t-pt-2025",
-        "origin_row_sha256": "d8869d3034b5ea24793959ba68ec46140fb4bd6eb0b06291884aed94776d33a4",
-        "exported_row_sha256": "e5561148f2fa87425b4acb060da6fee49e4dc1790484614ca6aaec9d1264a6dd"
+        "origin_row_sha256": "5c3bf583e1e0eb40c12fc5ec8515b185cffb21a5106bc170a9bee91a08e86552",
+        "exported_row_sha256": "135efed3e99415bfc6400d12c43b59bdfe79a6ac32506d5d25349c02db9de231"
       }
     },
     "hab-ilc-lvho07c-a-pc-own-l-eu27_2020-2025": {
       "linha": {
         "id": "hab-ilc-lvho07c-a-pc-own-l-eu27_2020-2025",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Housing cost overburden rate by tenure status",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Taxa de sobrecarga dos custos da habitação, proprietários com empréstimo, União Europeia, 2025",
+        "name_source": "label; dimension.tenure.category.label.OWN_L; dimension.geo.category.label.EU27_2020; dimension.time.category.label.2025",
         "document": {
           "title": "Housing cost overburden rate by tenure status",
           "edition": "2025",
           "locator": "freq=A; unit=PC; tenure=OWN_L; geo=EU27_2020; time=2025; value[318]",
-          "source_sha256": "57a1d9bd9178264c7588ef2a8360f9ddb7052cb3dab65f860c4290f94a33e367",
+          "source_sha256": "7310cd96ce090cd8e488c715c0e5c43ae7d7d0833763e4bc4a9fd91c602c7f64",
           "kind": "serie"
         },
         "excerpt": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"tenure\": \"OWN_L\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"5.0\", \"status\": null}",
@@ -922,21 +969,21 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ilc-lvho07c-a-pc-own-l-eu27_2020-2025",
-        "origin_row_sha256": "39d8b3868b51329a0550bafdec220df2fd96214b5b00d0be45d99fb7f0c0774d",
-        "exported_row_sha256": "ff9f56fb1f64ba8f2d7ebac6ab996c7ff01850662bdd1a060cae4018433d1e6e"
+        "origin_row_sha256": "b5befa1c48445fd78ffa2fd660c8ba70f352308b0fed4807f8d5320c58760798",
+        "exported_row_sha256": "03b6f26823129c3b426f41ab15b0c4539c6a92e9f3537cba9e06bc79cb9a990d"
       }
     },
     "hab-ilc-lvho07c-a-pc-own-l-pt-2025": {
       "linha": {
         "id": "hab-ilc-lvho07c-a-pc-own-l-pt-2025",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Housing cost overburden rate by tenure status",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Taxa de sobrecarga dos custos da habitação, proprietários com empréstimo, Portugal, 2025",
+        "name_source": "label; dimension.tenure.category.label.OWN_L; dimension.geo.category.label.PT; dimension.time.category.label.2025",
         "document": {
           "title": "Housing cost overburden rate by tenure status",
           "edition": "2025",
           "locator": "freq=A; unit=PC; tenure=OWN_L; geo=PT; time=2025; value[560]",
-          "source_sha256": "57a1d9bd9178264c7588ef2a8360f9ddb7052cb3dab65f860c4290f94a33e367",
+          "source_sha256": "7310cd96ce090cd8e488c715c0e5c43ae7d7d0833763e4bc4a9fd91c602c7f64",
           "kind": "serie"
         },
         "excerpt": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"tenure\": \"OWN_L\", \"geo\": \"PT\", \"time\": \"2025\"}, \"value\": \"3.0\", \"status\": null}",
@@ -945,21 +992,21 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ilc-lvho07c-a-pc-own-l-pt-2025",
-        "origin_row_sha256": "39d7789fb6c208344463992df85d8bd4020224aea6d28b79fc048a646323ce8a",
-        "exported_row_sha256": "1cdee621ac217244b629a3517dafb1472257c5f6e3c2a3e29ad681d3bc2679c8"
+        "origin_row_sha256": "262c2f4e5489c7524b53bc9c4a2e574bbd2f19f8b6b5ed49c36dbd2cfd218caa",
+        "exported_row_sha256": "b4c0e002617d2cf141f313eebe8b15875ddc51997430581d3cc5eb5d51b33407"
       }
     },
     "hab-ilc-lvho07c-a-pc-own-nl-eu27_2020-2025": {
       "linha": {
         "id": "hab-ilc-lvho07c-a-pc-own-nl-eu27_2020-2025",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Housing cost overburden rate by tenure status",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Taxa de sobrecarga dos custos da habitação, proprietários sem empréstimo, União Europeia, 2025",
+        "name_source": "label; dimension.tenure.category.label.OWN_NL; dimension.geo.category.label.EU27_2020; dimension.time.category.label.2025",
         "document": {
           "title": "Housing cost overburden rate by tenure status",
           "edition": "2025",
           "locator": "freq=A; unit=PC; tenure=OWN_NL; geo=EU27_2020; time=2025; value[626]",
-          "source_sha256": "57a1d9bd9178264c7588ef2a8360f9ddb7052cb3dab65f860c4290f94a33e367",
+          "source_sha256": "7310cd96ce090cd8e488c715c0e5c43ae7d7d0833763e4bc4a9fd91c602c7f64",
           "kind": "serie"
         },
         "excerpt": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"tenure\": \"OWN_NL\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"3.8\", \"status\": null}",
@@ -968,21 +1015,21 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ilc-lvho07c-a-pc-own-nl-eu27_2020-2025",
-        "origin_row_sha256": "fcb65e65eae5e438bcc8a24d771c872fc882f940454ff08fbb31a485fad7b8cc",
-        "exported_row_sha256": "338b10d2f1aa00ed2879f8cc85bf8b0a1fbca239b63cf5211536941be36eefe0"
+        "origin_row_sha256": "4cdc87e7d7db2dc88a6a1b3905aa706a66132210327ec300ada8c965f2ea265b",
+        "exported_row_sha256": "eeed2b22b9210574cf78411bfc512dfdab291c3ad0eb04d1bcd933dac2bb7a20"
       }
     },
     "hab-ilc-lvho07c-a-pc-own-nl-pt-2025": {
       "linha": {
         "id": "hab-ilc-lvho07c-a-pc-own-nl-pt-2025",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Housing cost overburden rate by tenure status",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Taxa de sobrecarga dos custos da habitação, proprietários sem empréstimo, Portugal, 2025",
+        "name_source": "label; dimension.tenure.category.label.OWN_NL; dimension.geo.category.label.PT; dimension.time.category.label.2025",
         "document": {
           "title": "Housing cost overburden rate by tenure status",
           "edition": "2025",
           "locator": "freq=A; unit=PC; tenure=OWN_NL; geo=PT; time=2025; value[868]",
-          "source_sha256": "57a1d9bd9178264c7588ef2a8360f9ddb7052cb3dab65f860c4290f94a33e367",
+          "source_sha256": "7310cd96ce090cd8e488c715c0e5c43ae7d7d0833763e4bc4a9fd91c602c7f64",
           "kind": "serie"
         },
         "excerpt": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"tenure\": \"OWN_NL\", \"geo\": \"PT\", \"time\": \"2025\"}, \"value\": \"1.3\", \"status\": null}",
@@ -991,21 +1038,21 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ilc-lvho07c-a-pc-own-nl-pt-2025",
-        "origin_row_sha256": "33e09676f8c1e6d135d4e5226d8cbfd526ef0d90756fbe631b1f6939e90ca94b",
-        "exported_row_sha256": "24e24c4ce5b6b277092ebcb309ba073f33b536a087b182b9b7655c2586865633"
+        "origin_row_sha256": "4fb111f4a3981d6ff09ed92ab356d4f2ad91d98efb89d94422fa34db7d9137b3",
+        "exported_row_sha256": "114b5113c50e2acfba71ca061d61d4065772ad4e2450a675ed26dedbd0015147"
       }
     },
     "hab-ilc-lvho07c-a-pc-rent-fr-eu27_2020-2025": {
       "linha": {
         "id": "hab-ilc-lvho07c-a-pc-rent-fr-eu27_2020-2025",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Housing cost overburden rate by tenure status",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Taxa de sobrecarga dos custos da habitação, inquilinos com renda reduzida ou gratuita, União Europeia, 2025",
+        "name_source": "label; dimension.tenure.category.label.RENT_FR; dimension.geo.category.label.EU27_2020; dimension.time.category.label.2025",
         "document": {
           "title": "Housing cost overburden rate by tenure status",
           "edition": "2025",
-          "locator": "freq=A; unit=PC; tenure=RENT_FR; geo=EU27_2020; time=2025; value[934]",
-          "source_sha256": "57a1d9bd9178264c7588ef2a8360f9ddb7052cb3dab65f860c4290f94a33e367",
+          "locator": "freq=A; unit=PC; tenure=RENT_FR; geo=EU27_2020; time=2025; value[1242]",
+          "source_sha256": "7310cd96ce090cd8e488c715c0e5c43ae7d7d0833763e4bc4a9fd91c602c7f64",
           "kind": "serie"
         },
         "excerpt": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"tenure\": \"RENT_FR\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"9.2\", \"status\": null}",
@@ -1014,21 +1061,21 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ilc-lvho07c-a-pc-rent-fr-eu27_2020-2025",
-        "origin_row_sha256": "dfef16d51edec3947534d750df4461af8f9e74c99e601c36373ef01ea846ba4a",
-        "exported_row_sha256": "23ec3a10c6ecf0150ae9aabf8dfbeb86ac35c7c527190ca5ec6a3c12ae2b20d5"
+        "origin_row_sha256": "5e64a5cc66fc033447b7e402db0e5f51890d6110b11b936968612282186ef4d3",
+        "exported_row_sha256": "3c1956553908ee7b8a83423ee0993bc002bffbb1a5878cf8aefa5ba3b79ec052"
       }
     },
     "hab-ilc-lvho07c-a-pc-rent-fr-pt-2025": {
       "linha": {
         "id": "hab-ilc-lvho07c-a-pc-rent-fr-pt-2025",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Housing cost overburden rate by tenure status",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Taxa de sobrecarga dos custos da habitação, inquilinos com renda reduzida ou gratuita, Portugal, 2025",
+        "name_source": "label; dimension.tenure.category.label.RENT_FR; dimension.geo.category.label.PT; dimension.time.category.label.2025",
         "document": {
           "title": "Housing cost overburden rate by tenure status",
           "edition": "2025",
-          "locator": "freq=A; unit=PC; tenure=RENT_FR; geo=PT; time=2025; value[1176]",
-          "source_sha256": "57a1d9bd9178264c7588ef2a8360f9ddb7052cb3dab65f860c4290f94a33e367",
+          "locator": "freq=A; unit=PC; tenure=RENT_FR; geo=PT; time=2025; value[1484]",
+          "source_sha256": "7310cd96ce090cd8e488c715c0e5c43ae7d7d0833763e4bc4a9fd91c602c7f64",
           "kind": "serie"
         },
         "excerpt": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"tenure\": \"RENT_FR\", \"geo\": \"PT\", \"time\": \"2025\"}, \"value\": \"2.8\", \"status\": null}",
@@ -1037,21 +1084,21 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ilc-lvho07c-a-pc-rent-fr-pt-2025",
-        "origin_row_sha256": "c634fe93ea4dd1c728173066d16d8a08fc1cdf3e35eb7770e6c5ca637ef3fe93",
-        "exported_row_sha256": "e778a0c9be54433c5e0c089d15177df16b9dc3d5413e37298afad12ba669ef45"
+        "origin_row_sha256": "d21a4faecefd8dfa91ecc4ebdf1da821f5462312715fca024f21e1e78265e607",
+        "exported_row_sha256": "bb497c5155489aefa594219e2d43608b3640ee22482230b1ec1048548862db24"
       }
     },
     "hab-ilc-lvho07c-a-pc-rent-mkt-eu27_2020-2025": {
       "linha": {
         "id": "hab-ilc-lvho07c-a-pc-rent-mkt-eu27_2020-2025",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Housing cost overburden rate by tenure status",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Taxa de sobrecarga dos custos da habitação, inquilinos a preços de mercado, União Europeia, 2025",
+        "name_source": "label; dimension.tenure.category.label.RENT_MKT; dimension.geo.category.label.EU27_2020; dimension.time.category.label.2025",
         "document": {
           "title": "Housing cost overburden rate by tenure status",
           "edition": "2025",
-          "locator": "freq=A; unit=PC; tenure=RENT_MKT; geo=EU27_2020; time=2025; value[21]",
-          "source_sha256": "9f0dfe142296f5e7aff87b477ce57ec4d0aeeca1ce05082d6da8b3de7ce2cf4a",
+          "locator": "freq=A; unit=PC; tenure=RENT_MKT; geo=EU27_2020; time=2025; value[934]",
+          "source_sha256": "7310cd96ce090cd8e488c715c0e5c43ae7d7d0833763e4bc4a9fd91c602c7f64",
           "kind": "serie"
         },
         "excerpt": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"tenure\": \"RENT_MKT\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"18.6\", \"status\": null}",
@@ -1060,21 +1107,21 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ilc-lvho07c-a-pc-rent-mkt-eu27_2020-2025",
-        "origin_row_sha256": "54aa529c5b45fef43b45554a5eabad691c043285f6341f3a5eaca060c6676ff1",
-        "exported_row_sha256": "e4aeb2e386444ce148161895999c69de960a28519bf9d723f0bf6ca4296c6db4"
+        "origin_row_sha256": "38f752bad540aac4780357d0d64259ec7a8f0b114aca54d021c910cb4a60e96d",
+        "exported_row_sha256": "4578ccdaf6397adad4972a32e4f24292729dca33eee598941ee9e411d802019c"
       }
     },
     "hab-ilc-lvho07c-a-pc-rent-mkt-fi-2025": {
       "linha": {
         "id": "hab-ilc-lvho07c-a-pc-rent-mkt-fi-2025",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Housing cost overburden rate by tenure status",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Taxa de sobrecarga dos custos da habitação, inquilinos a preços de mercado, Finlândia, 2025",
+        "name_source": "label; dimension.tenure.category.label.RENT_MKT; dimension.geo.category.label.FI; dimension.time.category.label.2025",
         "document": {
           "title": "Housing cost overburden rate by tenure status",
           "edition": "2025",
-          "locator": "freq=A; unit=PC; tenure=RENT_MKT; geo=FI; time=2025; value[384]",
-          "source_sha256": "9f0dfe142296f5e7aff87b477ce57ec4d0aeeca1ce05082d6da8b3de7ce2cf4a",
+          "locator": "freq=A; unit=PC; tenure=RENT_MKT; geo=FI; time=2025; value[1220]",
+          "source_sha256": "7310cd96ce090cd8e488c715c0e5c43ae7d7d0833763e4bc4a9fd91c602c7f64",
           "kind": "serie"
         },
         "excerpt": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"tenure\": \"RENT_MKT\", \"geo\": \"FI\", \"time\": \"2025\"}, \"value\": \"12.3\", \"status\": null}",
@@ -1083,21 +1130,21 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ilc-lvho07c-a-pc-rent-mkt-fi-2025",
-        "origin_row_sha256": "93afe60ee4cb6fee0760da1e48ea4df409b921e976c475e515debb6d0ebb983e",
-        "exported_row_sha256": "b1e48347038fb95ce80eeb118843e6683bd6e676ba8be0c7a94ca4dc65a7988d"
+        "origin_row_sha256": "6968a9d2f217914ec08ed6107e5e0da1d7e23a32d69bbf22fae8cc771c58a548",
+        "exported_row_sha256": "2fa2350d4a0626664ec695bc181e1da47276164865bb4531feacd979b8a39629"
       }
     },
     "hab-ilc-lvho07c-a-pc-rent-mkt-pt-2015": {
       "linha": {
         "id": "hab-ilc-lvho07c-a-pc-rent-mkt-pt-2015",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Housing cost overburden rate by tenure status",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Taxa de sobrecarga dos custos da habitação, inquilinos a preços de mercado, Portugal, 2015",
+        "name_source": "label; dimension.tenure.category.label.RENT_MKT; dimension.geo.category.label.PT; dimension.time.category.label.2015",
         "document": {
           "title": "Housing cost overburden rate by tenure status",
           "edition": "2015",
-          "locator": "freq=A; unit=PC; tenure=RENT_MKT; geo=PT; time=2015; value[330]",
-          "source_sha256": "9f0dfe142296f5e7aff87b477ce57ec4d0aeeca1ce05082d6da8b3de7ce2cf4a",
+          "locator": "freq=A; unit=PC; tenure=RENT_MKT; geo=PT; time=2015; value[1166]",
+          "source_sha256": "7310cd96ce090cd8e488c715c0e5c43ae7d7d0833763e4bc4a9fd91c602c7f64",
           "kind": "serie"
         },
         "excerpt": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"tenure\": \"RENT_MKT\", \"geo\": \"PT\", \"time\": \"2015\"}, \"value\": \"35.4\", \"status\": null}",
@@ -1106,21 +1153,21 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ilc-lvho07c-a-pc-rent-mkt-pt-2015",
-        "origin_row_sha256": "f81ca705684f6ad0a339ef1bf8bacc5eee159d0450843fa19fd5495a4b4fc847",
-        "exported_row_sha256": "3269f00f50516cf90c8e51f44b26dff1ade0af57410d1a004889e3e7bb3fd38c"
+        "origin_row_sha256": "2e7197ec09fc82fa34c94a25cef396552330d2be537cc568a0a5f2e83219dfda",
+        "exported_row_sha256": "a18cf8c4529d4485cecd6c7bb1be4246dcc056a8fb325a5ce2ae47041167a635"
       }
     },
     "hab-ilc-lvho07c-a-pc-rent-mkt-pt-2020": {
       "linha": {
         "id": "hab-ilc-lvho07c-a-pc-rent-mkt-pt-2020",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Housing cost overburden rate by tenure status",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Taxa de sobrecarga dos custos da habitação, inquilinos a preços de mercado, Portugal, 2020",
+        "name_source": "label; dimension.tenure.category.label.RENT_MKT; dimension.geo.category.label.PT; dimension.time.category.label.2020",
         "document": {
           "title": "Housing cost overburden rate by tenure status",
           "edition": "2020",
-          "locator": "freq=A; unit=PC; tenure=RENT_MKT; geo=PT; time=2020; value[335]",
-          "source_sha256": "9f0dfe142296f5e7aff87b477ce57ec4d0aeeca1ce05082d6da8b3de7ce2cf4a",
+          "locator": "freq=A; unit=PC; tenure=RENT_MKT; geo=PT; time=2020; value[1171]",
+          "source_sha256": "7310cd96ce090cd8e488c715c0e5c43ae7d7d0833763e4bc4a9fd91c602c7f64",
           "kind": "serie"
         },
         "excerpt": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"tenure\": \"RENT_MKT\", \"geo\": \"PT\", \"time\": \"2020\"}, \"value\": \"19.7\", \"status\": null}",
@@ -1129,21 +1176,21 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ilc-lvho07c-a-pc-rent-mkt-pt-2020",
-        "origin_row_sha256": "85d25f16ab472e35068b9dacbf53789a99c9d8a9a1042600e0b85720f92400f7",
-        "exported_row_sha256": "38292eeae60215c1a6121aaaa930766ab32fcf9091cbe26030eb13c249178698"
+        "origin_row_sha256": "dfc5aeaf9094f20d84c0f21a23e495219f6c73fadbf7f3b2e86218d80753ad1a",
+        "exported_row_sha256": "87791612322c5b788765c5ac4540cf1e6d977a9cb29300f36def5d9cec5b37f4"
       }
     },
     "hab-ilc-lvho07c-a-pc-rent-mkt-pt-2025": {
       "linha": {
         "id": "hab-ilc-lvho07c-a-pc-rent-mkt-pt-2025",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Housing cost overburden rate by tenure status",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Taxa de sobrecarga dos custos da habitação, inquilinos a preços de mercado, Portugal, 2025",
+        "name_source": "label; dimension.tenure.category.label.RENT_MKT; dimension.geo.category.label.PT; dimension.time.category.label.2025",
         "document": {
           "title": "Housing cost overburden rate by tenure status",
           "edition": "2025",
-          "locator": "freq=A; unit=PC; tenure=RENT_MKT; geo=PT; time=2025; value[340]",
-          "source_sha256": "9f0dfe142296f5e7aff87b477ce57ec4d0aeeca1ce05082d6da8b3de7ce2cf4a",
+          "locator": "freq=A; unit=PC; tenure=RENT_MKT; geo=PT; time=2025; value[1176]",
+          "source_sha256": "7310cd96ce090cd8e488c715c0e5c43ae7d7d0833763e4bc4a9fd91c602c7f64",
           "kind": "serie"
         },
         "excerpt": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"tenure\": \"RENT_MKT\", \"geo\": \"PT\", \"time\": \"2025\"}, \"value\": \"27.2\", \"status\": null}",
@@ -1152,21 +1199,21 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ilc-lvho07c-a-pc-rent-mkt-pt-2025",
-        "origin_row_sha256": "cc066bd2028ced38024d122b53ad13f85da8496e42709447ad0a208d1ea17926",
-        "exported_row_sha256": "c2d55b558ca3ce5a63d27b0834237ed4d74b1190cc606f382fad0c6a13dba6a1"
+        "origin_row_sha256": "16dc75a937fb285718816d22ff887152c7f5f580fe8578b468acae15c18bc6cb",
+        "exported_row_sha256": "8431fad073a76b9be5797f764e234e722243b5bf0466dff9258effd77c3151ee"
       }
     },
     "hab-ilc-lvho07c-a-pc-rent-mkt-ro-2025": {
       "linha": {
         "id": "hab-ilc-lvho07c-a-pc-rent-mkt-ro-2025",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Housing cost overburden rate by tenure status",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Taxa de sobrecarga dos custos da habitação, inquilinos a preços de mercado, Roménia, 2025",
+        "name_source": "label; dimension.tenure.category.label.RENT_MKT; dimension.geo.category.label.RO; dimension.time.category.label.2025",
         "document": {
           "title": "Housing cost overburden rate by tenure status",
           "edition": "2025",
-          "locator": "freq=A; unit=PC; tenure=RENT_MKT; geo=RO; time=2025; value[351]",
-          "source_sha256": "9f0dfe142296f5e7aff87b477ce57ec4d0aeeca1ce05082d6da8b3de7ce2cf4a",
+          "locator": "freq=A; unit=PC; tenure=RENT_MKT; geo=RO; time=2025; value[1187]",
+          "source_sha256": "7310cd96ce090cd8e488c715c0e5c43ae7d7d0833763e4bc4a9fd91c602c7f64",
           "kind": "serie"
         },
         "excerpt": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"tenure\": \"RENT_MKT\", \"geo\": \"RO\", \"time\": \"2025\"}, \"value\": \"56.0\", \"status\": null}",
@@ -1175,21 +1222,21 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ilc-lvho07c-a-pc-rent-mkt-ro-2025",
-        "origin_row_sha256": "9b32e565e84ff3402021ce60d602273dca47a3b640f9d741fb58008ed16c9dca",
-        "exported_row_sha256": "8cd98a20222c370a4cad78b7ac9e2b41552975a95b47585deb8935c78b5a9fb0"
+        "origin_row_sha256": "c64506ebc29230ff28ac4545464de2d725c1ab332940e7c7e189d696394f716d",
+        "exported_row_sha256": "0c2250302743fd6585585fa22f94f4bfcb8c0341ddf41d910a043f48cb8c13a8"
       }
     },
     "hab-ilc-lvho07c-a-pc-total-cy-2025": {
       "linha": {
         "id": "hab-ilc-lvho07c-a-pc-total-cy-2025",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Housing cost overburden rate by tenure status",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Taxa de sobrecarga dos custos da habitação, total, Chipre, 2025",
+        "name_source": "label; dimension.tenure.category.label.TOTAL; dimension.geo.category.label.CY; dimension.time.category.label.2025",
         "document": {
           "title": "Housing cost overburden rate by tenure status",
           "edition": "2025",
           "locator": "freq=A; unit=PC; tenure=TOTAL; geo=CY; time=2025; value[153]",
-          "source_sha256": "57a1d9bd9178264c7588ef2a8360f9ddb7052cb3dab65f860c4290f94a33e367",
+          "source_sha256": "7310cd96ce090cd8e488c715c0e5c43ae7d7d0833763e4bc4a9fd91c602c7f64",
           "kind": "serie"
         },
         "excerpt": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"tenure\": \"TOTAL\", \"geo\": \"CY\", \"time\": \"2025\"}, \"value\": \"2.4\", \"status\": null}",
@@ -1198,21 +1245,21 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ilc-lvho07c-a-pc-total-cy-2025",
-        "origin_row_sha256": "0984f11003e5949d888b0c28524e52f2423b02b5cb385c6b09c7323094504b55",
-        "exported_row_sha256": "24a1575e9a5dc8779391b4b8aab697a27b771fe387ac1b30b5f0afd941b4d493"
+        "origin_row_sha256": "ffea74e4c53b472bb4fa1e6a3e528818f3ff4f7092647d2aff800f10cb98f44d",
+        "exported_row_sha256": "621a49b5bb2750fc5d6b11416f08b3c6054b3a21a411bcad804e920717ba9bf4"
       }
     },
     "hab-ilc-lvho07c-a-pc-total-el-2025": {
       "linha": {
         "id": "hab-ilc-lvho07c-a-pc-total-el-2025",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Housing cost overburden rate by tenure status",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Taxa de sobrecarga dos custos da habitação, total, Grécia, 2025",
+        "name_source": "label; dimension.tenure.category.label.TOTAL; dimension.geo.category.label.EL; dimension.time.category.label.2025",
         "document": {
           "title": "Housing cost overburden rate by tenure status",
           "edition": "2025",
           "locator": "freq=A; unit=PC; tenure=TOTAL; geo=EL; time=2025; value[98]",
-          "source_sha256": "57a1d9bd9178264c7588ef2a8360f9ddb7052cb3dab65f860c4290f94a33e367",
+          "source_sha256": "7310cd96ce090cd8e488c715c0e5c43ae7d7d0833763e4bc4a9fd91c602c7f64",
           "kind": "serie"
         },
         "excerpt": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"tenure\": \"TOTAL\", \"geo\": \"EL\", \"time\": \"2025\"}, \"value\": \"26.4\", \"status\": null}",
@@ -1221,21 +1268,21 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ilc-lvho07c-a-pc-total-el-2025",
-        "origin_row_sha256": "0e591d6e5f5daae326a1849546e8fea7c1050bacf83023bc2ea38d6bdee16baf",
-        "exported_row_sha256": "5593210784f2ab03352eb3e63f32144652a424abc99ac63ad0e4b3170afa71c9"
+        "origin_row_sha256": "5b57edb0e10c816a2cd9b973876c64cd5454bb510828b29ff9c3213a7788e542",
+        "exported_row_sha256": "9d82dd7b6578240861c3b2b6500999dd55774ae19c2a9cb763f7d971704e6923"
       }
     },
     "hab-ilc-lvho07c-a-pc-total-eu27_2020-2015": {
       "linha": {
         "id": "hab-ilc-lvho07c-a-pc-total-eu27_2020-2015",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Housing cost overburden rate by tenure status",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Taxa de sobrecarga dos custos da habitação, total, União Europeia, 2015",
+        "name_source": "label; dimension.tenure.category.label.TOTAL; dimension.geo.category.label.EU27_2020; dimension.time.category.label.2015",
         "document": {
           "title": "Housing cost overburden rate by tenure status",
           "edition": "2015",
           "locator": "freq=A; unit=PC; tenure=TOTAL; geo=EU27_2020; time=2015; value[0]",
-          "source_sha256": "57a1d9bd9178264c7588ef2a8360f9ddb7052cb3dab65f860c4290f94a33e367",
+          "source_sha256": "7310cd96ce090cd8e488c715c0e5c43ae7d7d0833763e4bc4a9fd91c602c7f64",
           "kind": "serie"
         },
         "excerpt": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"tenure\": \"TOTAL\", \"geo\": \"EU27_2020\", \"time\": \"2015\"}, \"value\": \"11.2\", \"status\": \"e\"}",
@@ -1244,21 +1291,44 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ilc-lvho07c-a-pc-total-eu27_2020-2015",
-        "origin_row_sha256": "33a6bf8d02b10d26bdbdb340ddbdf3cfaab9dee31d743ebab0b2e32585c1f897",
-        "exported_row_sha256": "9ade188fdf42068d1ba887d3297c10f99cdd0e598ff57ac371f47ea5ac496e42"
+        "origin_row_sha256": "9dbd3683119d14d542080a800549fc602ac620eb1438716dae4941f0de4b3b5c",
+        "exported_row_sha256": "7169f2ac84acbe6cc30b81fecf93b674b6d4928bf35ba3f36c2a2774f0d7da44"
+      }
+    },
+    "hab-ilc-lvho07c-a-pc-total-eu27_2020-2025": {
+      "linha": {
+        "id": "hab-ilc-lvho07c-a-pc-total-eu27_2020-2025",
+        "study": "a-casa-em-portugal-e-na-europa",
+        "name": "Taxa de sobrecarga dos custos da habitação, total, União Europeia, 2025",
+        "name_source": "label; dimension.tenure.category.label.TOTAL; dimension.geo.category.label.EU27_2020; dimension.time.category.label.2025",
+        "document": {
+          "title": "Housing cost overburden rate by tenure status",
+          "edition": "2025",
+          "locator": "freq=A; unit=PC; tenure=TOTAL; geo=EU27_2020; time=2025; value[10]",
+          "source_sha256": "7310cd96ce090cd8e488c715c0e5c43ae7d7d0833763e4bc4a9fd91c602c7f64",
+          "kind": "serie"
+        },
+        "excerpt": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"tenure\": \"TOTAL\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"7.7\", \"status\": null}",
+        "reference_date": "2025"
+      },
+      "origem": {
+        "rh_study": "23 Habitacao",
+        "rh_id": "hab-ilc-lvho07c-a-pc-total-eu27_2020-2025",
+        "origin_row_sha256": "7f62b91a504f917585d44948825e051cfa50d1b62aac46eb6cb699bbfe23cdba",
+        "exported_row_sha256": "7c6b8e5d7e9d921a50cd178e97b58ca25fe0be2ef28143f3901135a2c23f526b"
       }
     },
     "hab-ilc-lvho07c-a-pc-total-pt-2015": {
       "linha": {
         "id": "hab-ilc-lvho07c-a-pc-total-pt-2015",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Housing cost overburden rate by tenure status",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Taxa de sobrecarga dos custos da habitação, total, Portugal, 2015",
+        "name_source": "label; dimension.tenure.category.label.TOTAL; dimension.geo.category.label.PT; dimension.time.category.label.2015",
         "document": {
           "title": "Housing cost overburden rate by tenure status",
           "edition": "2015",
           "locator": "freq=A; unit=PC; tenure=TOTAL; geo=PT; time=2015; value[242]",
-          "source_sha256": "57a1d9bd9178264c7588ef2a8360f9ddb7052cb3dab65f860c4290f94a33e367",
+          "source_sha256": "7310cd96ce090cd8e488c715c0e5c43ae7d7d0833763e4bc4a9fd91c602c7f64",
           "kind": "serie"
         },
         "excerpt": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"tenure\": \"TOTAL\", \"geo\": \"PT\", \"time\": \"2015\"}, \"value\": \"9.1\", \"status\": null}",
@@ -1267,21 +1337,21 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ilc-lvho07c-a-pc-total-pt-2015",
-        "origin_row_sha256": "f5fab7a8f0f45dcf7ef4bf41020b4bb856d5fc0050c0e4a4ea90c5eb0eaf0f8b",
-        "exported_row_sha256": "46cc1a07d304a103c8ecbdb6c5bf1b9bb37089045ca66f725840d4d2c832ec33"
+        "origin_row_sha256": "345a1b1fb4cba50e558a31b4be021d6c197d698411a80fbcdb3a6af8973e57ad",
+        "exported_row_sha256": "fa102d2f12c26ff9de840a359a2e38e50b07eaebb9490d7df4b5b682daa3a10a"
       }
     },
     "hab-ilc-lvho07c-a-pc-total-pt-2025": {
       "linha": {
         "id": "hab-ilc-lvho07c-a-pc-total-pt-2025",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Housing cost overburden rate by tenure status",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Taxa de sobrecarga dos custos da habitação, total, Portugal, 2025",
+        "name_source": "label; dimension.tenure.category.label.TOTAL; dimension.geo.category.label.PT; dimension.time.category.label.2025",
         "document": {
           "title": "Housing cost overburden rate by tenure status",
           "edition": "2025",
           "locator": "freq=A; unit=PC; tenure=TOTAL; geo=PT; time=2025; value[252]",
-          "source_sha256": "57a1d9bd9178264c7588ef2a8360f9ddb7052cb3dab65f860c4290f94a33e367",
+          "source_sha256": "7310cd96ce090cd8e488c715c0e5c43ae7d7d0833763e4bc4a9fd91c602c7f64",
           "kind": "serie"
         },
         "excerpt": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"tenure\": \"TOTAL\", \"geo\": \"PT\", \"time\": \"2025\"}, \"value\": \"6.2\", \"status\": null}",
@@ -1290,16 +1360,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ilc-lvho07c-a-pc-total-pt-2025",
-        "origin_row_sha256": "aaa115f82fbe3f68972c18db47923c80456e35f271f1123ad739f354b23b9ae8",
-        "exported_row_sha256": "de0e35225e973000f2b87c4fe862fe9e68cb35564d01716157105977f98888e3"
+        "origin_row_sha256": "49e75eb8b4641626b679424eb4f124749aba0bd73691af72f747a6dbff276b0d",
+        "exported_row_sha256": "ba52e64bc472bf5711ed192fd2ba6bc34b6563b6f7270e99c4fe655ae8683af8"
       }
     },
     "hab-ilc-lvps08-a-y18-34-t-pc-eu27_2020-2025": {
       "linha": {
         "id": "hab-ilc-lvps08-a-y18-34-t-pc-eu27_2020-2025",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Persons living with their parents or contributing/benefiting from the household income (population aged 18 to 34 years)",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Pessoas que vivem com os pais ou contribuem para o rendimento do agregado ou dele beneficiam, dezoito a trinta e quatro anos, União Europeia, 2025",
+        "name_source": "label; dimension.age.category.label.Y18-34; dimension.geo.category.label.EU27_2020; dimension.time.category.label.2025",
         "document": {
           "title": "Persons living with their parents or contributing/benefiting from the household income (population aged 18 to 34 years)",
           "edition": "2025",
@@ -1313,16 +1383,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ilc-lvps08-a-y18-34-t-pc-eu27_2020-2025",
-        "origin_row_sha256": "139ea849b8e3d0f181c7e6003fac7c924449d5dfdf1b6be76a71c675d348d1eb",
-        "exported_row_sha256": "b6790172f8371c8e357236ad9fcdeb5f6dd3652a49267b23f000324dbeb809e4"
+        "origin_row_sha256": "86d8fbd39136747a1467f83514a132a59f575a085dfa61991bc3bda63b9232b4",
+        "exported_row_sha256": "3fdffb12b3a2e6b1f70c5a5f055265f0c2a3f9c2bef8d7917abd13ea7252856c"
       }
     },
     "hab-ilc-lvps08-a-y18-34-t-pc-pt-2025": {
       "linha": {
         "id": "hab-ilc-lvps08-a-y18-34-t-pc-pt-2025",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Persons living with their parents or contributing/benefiting from the household income (population aged 18 to 34 years)",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Pessoas que vivem com os pais ou contribuem para o rendimento do agregado ou dele beneficiam, dezoito a trinta e quatro anos, Portugal, 2025",
+        "name_source": "label; dimension.age.category.label.Y18-34; dimension.geo.category.label.PT; dimension.time.category.label.2025",
         "document": {
           "title": "Persons living with their parents or contributing/benefiting from the household income (population aged 18 to 34 years)",
           "edition": "2025",
@@ -1336,16 +1406,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ilc-lvps08-a-y18-34-t-pc-pt-2025",
-        "origin_row_sha256": "eb5be6e393c20cc36dae6f2cf3a8069dc60d51fed98f76ce59a4f14da4de1840",
-        "exported_row_sha256": "12a26efb033c24ac0262585c82f78b6156beb653a1ecd529be2fc85ae4d221c2"
+        "origin_row_sha256": "3f71b5c1d23b22654f8bab85c43764845815f132b95b62d8c56625584d9e07eb",
+        "exported_row_sha256": "a9175e65d66d72daf9f3786f666d0c61a4aaa252450985c09e1fdbb99efb9310"
       }
     },
     "hab-ilc-lvps08-a-y25-34-t-pc-dk-2025": {
       "linha": {
         "id": "hab-ilc-lvps08-a-y25-34-t-pc-dk-2025",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Persons living with their parents or contributing/benefiting from the household income (From 25 to 34 years)",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Pessoas que vivem com os pais ou contribuem para o rendimento do agregado ou dele beneficiam, vinte e cinco a trinta e quatro anos, Dinamarca, 2025",
+        "name_source": "label; dimension.age.category.label.Y25-34; dimension.geo.category.label.DK; dimension.time.category.label.2025",
         "document": {
           "title": "Persons living with their parents or contributing/benefiting from the household income (population aged 18 to 34 years)",
           "edition": "2025",
@@ -1359,16 +1429,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ilc-lvps08-a-y25-34-t-pc-dk-2025",
-        "origin_row_sha256": "d0189f03ef409e37128aeacb38a19290dcacbf85e65eed2e82b49cd834063c5f",
-        "exported_row_sha256": "3374ebd33fa0a7776a3ee65fab12adcb8b4d1cec34555c68a47e9b04bde22657"
+        "origin_row_sha256": "fcdad3e0f0e2c24d083b063b8672f68132c512bba8df3eea8f7d457757db45fa",
+        "exported_row_sha256": "7c13633ccb5a883a00684474fc8e19f28c225bb98d329ff8da664e61a4434995"
       }
     },
     "hab-ilc-lvps08-a-y25-34-t-pc-eu27_2020-2025": {
       "linha": {
         "id": "hab-ilc-lvps08-a-y25-34-t-pc-eu27_2020-2025",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Persons living with their parents or contributing/benefiting from the household income (From 25 to 34 years)",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Pessoas que vivem com os pais ou contribuem para o rendimento do agregado ou dele beneficiam, vinte e cinco a trinta e quatro anos, União Europeia, 2025",
+        "name_source": "label; dimension.age.category.label.Y25-34; dimension.geo.category.label.EU27_2020; dimension.time.category.label.2025",
         "document": {
           "title": "Persons living with their parents or contributing/benefiting from the household income (population aged 18 to 34 years)",
           "edition": "2025",
@@ -1382,16 +1452,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ilc-lvps08-a-y25-34-t-pc-eu27_2020-2025",
-        "origin_row_sha256": "b380fc13a5ecd24b4acdeebd7529911e2ae3287f61616c27b540abab027dc331",
-        "exported_row_sha256": "24997caf05564faffe6185d0a37f105e278f8ec480eb5c587555d57cd7337105"
+        "origin_row_sha256": "7731eb75f0820b3bdc2847fffe659ed5bd1aeb9c0f17c95e0dd515e134aca008",
+        "exported_row_sha256": "ee616f01c40526fdb772a2933bafe82a6e33b61a2c6318c0bf96cc546e57329e"
       }
     },
     "hab-ilc-lvps08-a-y25-34-t-pc-hr-2025": {
       "linha": {
         "id": "hab-ilc-lvps08-a-y25-34-t-pc-hr-2025",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Persons living with their parents or contributing/benefiting from the household income (From 25 to 34 years)",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Pessoas que vivem com os pais ou contribuem para o rendimento do agregado ou dele beneficiam, vinte e cinco a trinta e quatro anos, Croácia, 2025",
+        "name_source": "label; dimension.age.category.label.Y25-34; dimension.geo.category.label.HR; dimension.time.category.label.2025",
         "document": {
           "title": "Persons living with their parents or contributing/benefiting from the household income (population aged 18 to 34 years)",
           "edition": "2025",
@@ -1405,16 +1475,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ilc-lvps08-a-y25-34-t-pc-hr-2025",
-        "origin_row_sha256": "5644729bda62d5195bda8276ae057536e027f9ab57e91f6ed6d9715daf2846a2",
-        "exported_row_sha256": "ec2bd16073d574aef7446a6e81f93640b5988442a7c48b3cd518ecadda3faa87"
+        "origin_row_sha256": "464e57cb6a8fbc9afaf8feb439e3f002b36de6c526c974a05a622fec33e0664e",
+        "exported_row_sha256": "4e9ea8ed44ae6a2f5953d4c216d82ff91aea58ae5157f7c6b2a4d4fae978efbb"
       }
     },
     "hab-ilc-lvps08-a-y25-34-t-pc-pt-2015": {
       "linha": {
         "id": "hab-ilc-lvps08-a-y25-34-t-pc-pt-2015",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Persons living with their parents or contributing/benefiting from the household income (From 25 to 34 years)",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Pessoas que vivem com os pais ou contribuem para o rendimento do agregado ou dele beneficiam, vinte e cinco a trinta e quatro anos, Portugal, 2015",
+        "name_source": "label; dimension.age.category.label.Y25-34; dimension.geo.category.label.PT; dimension.time.category.label.2015",
         "document": {
           "title": "Persons living with their parents or contributing/benefiting from the household income (population aged 18 to 34 years)",
           "edition": "2015",
@@ -1428,16 +1498,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ilc-lvps08-a-y25-34-t-pc-pt-2015",
-        "origin_row_sha256": "8e7a56f6acf5d31eca63b2e53f99463d5f2a211fb78ccec854636513b43b5ecb",
-        "exported_row_sha256": "070d5c653e87c523c2b920fe01ca766bb3e543c347dfd4041b84f81b7182fcd3"
+        "origin_row_sha256": "ec7a0963f7a51c06c88a9dbb16873f71893db088f54d23046f6ac5b5d333576c",
+        "exported_row_sha256": "4e8f0f389e45838b4be46422fa47530b8a5d66344fc5b1d9c87686e037da5e3d"
       }
     },
     "hab-ilc-lvps08-a-y25-34-t-pc-pt-2020": {
       "linha": {
         "id": "hab-ilc-lvps08-a-y25-34-t-pc-pt-2020",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Persons living with their parents or contributing/benefiting from the household income (From 25 to 34 years)",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Pessoas que vivem com os pais ou contribuem para o rendimento do agregado ou dele beneficiam, vinte e cinco a trinta e quatro anos, Portugal, 2020",
+        "name_source": "label; dimension.age.category.label.Y25-34; dimension.geo.category.label.PT; dimension.time.category.label.2020",
         "document": {
           "title": "Persons living with their parents or contributing/benefiting from the household income (population aged 18 to 34 years)",
           "edition": "2020",
@@ -1451,16 +1521,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ilc-lvps08-a-y25-34-t-pc-pt-2020",
-        "origin_row_sha256": "dd640e02f5aa82eadcf5ada462eaba9345887c870b6fbd6601712ddbe3bb7b63",
-        "exported_row_sha256": "cbd2afdc3c78ad0187745dd90393fe067f908c868d0daf324308df50235f018e"
+        "origin_row_sha256": "fbb0343e704dfc3465c7f40d2998d635ea5114308afc647f9aad39fea8b829ce",
+        "exported_row_sha256": "aab03e899002483920cc2e36c59d934cab682ff9876a9f49e07e67aff1fa9472"
       }
     },
     "hab-ilc-lvps08-a-y25-34-t-pc-pt-2025": {
       "linha": {
         "id": "hab-ilc-lvps08-a-y25-34-t-pc-pt-2025",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Persons living with their parents or contributing/benefiting from the household income (From 25 to 34 years)",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Pessoas que vivem com os pais ou contribuem para o rendimento do agregado ou dele beneficiam, vinte e cinco a trinta e quatro anos, Portugal, 2025",
+        "name_source": "label; dimension.age.category.label.Y25-34; dimension.geo.category.label.PT; dimension.time.category.label.2025",
         "document": {
           "title": "Persons living with their parents or contributing/benefiting from the household income (population aged 18 to 34 years)",
           "edition": "2025",
@@ -1474,16 +1544,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ilc-lvps08-a-y25-34-t-pc-pt-2025",
-        "origin_row_sha256": "53da302357d456c116aee3dbc5c1e2f8d9e85df9d843e5ea7e9647e88bfac860",
-        "exported_row_sha256": "6c63c3452f2909c2736bc0ca723a4372da01f1bc003d87c3c47531d1abeb6e35"
+        "origin_row_sha256": "f69041412c1990e44dca09f5fe26ec0caa2b087d7e8233c1ca808978b21f9f98",
+        "exported_row_sha256": "0b7a28a56e759540985c5fb632238be44c5715ce198bf7f79ba92b1ad3f17ebc"
       }
     },
     "hab-ilc-mded01-a-total-total-pc-cy-2025": {
       "linha": {
         "id": "hab-ilc-mded01-a-total-total-pc-cy-2025",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Share of housing costs in disposable household income, by type of household and income group",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Peso dos custos da habitação no rendimento disponível do agregado, Chipre, 2025",
+        "name_source": "label; dimension.geo.category.label.CY; dimension.time.category.label.2025",
         "document": {
           "title": "Share of housing costs in disposable household income, by type of household and income group",
           "edition": "2025",
@@ -1497,16 +1567,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ilc-mded01-a-total-total-pc-cy-2025",
-        "origin_row_sha256": "ad8f62d86cd15b8dc87292bb328a927a85b6f521fa314080593e105eace9f4d1",
-        "exported_row_sha256": "b96c6e3482a3a22159062dfc9c041f30ddfb953073be91516f90521edb912d6f"
+        "origin_row_sha256": "2c0abe8600900333fdcbeae3effdb3d717fe6777ffd8170ecfb64d374a21aeaa",
+        "exported_row_sha256": "9dd6c28911f6c15b32873a1bbacd14fc5710513d348c8b7c5d061f149490624f"
       }
     },
     "hab-ilc-mded01-a-total-total-pc-el-2025": {
       "linha": {
         "id": "hab-ilc-mded01-a-total-total-pc-el-2025",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Share of housing costs in disposable household income, by type of household and income group",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Peso dos custos da habitação no rendimento disponível do agregado, Grécia, 2025",
+        "name_source": "label; dimension.geo.category.label.EL; dimension.time.category.label.2025",
         "document": {
           "title": "Share of housing costs in disposable household income, by type of household and income group",
           "edition": "2025",
@@ -1520,16 +1590,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ilc-mded01-a-total-total-pc-el-2025",
-        "origin_row_sha256": "20f1d931054f68809fd64d6da33ba699e800cbe22abf77b098f1d35c0b1b0f7d",
-        "exported_row_sha256": "6b58603dd88104d2556c947c82ca5800e0a1010611810bf456c139fd9a57493a"
+        "origin_row_sha256": "4646fdcd03e2297b43ae41f6171d413469dfa55a467d719b004e7091687c6dd0",
+        "exported_row_sha256": "8a1f69a33972a31a10841bda1296aa1ce14d98846c49c88854671ea307ab898a"
       }
     },
     "hab-ilc-mded01-a-total-total-pc-eu27_2020-2025": {
       "linha": {
         "id": "hab-ilc-mded01-a-total-total-pc-eu27_2020-2025",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Share of housing costs in disposable household income, by type of household and income group",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Peso dos custos da habitação no rendimento disponível do agregado, União Europeia, 2025",
+        "name_source": "label; dimension.geo.category.label.EU27_2020; dimension.time.category.label.2025",
         "document": {
           "title": "Share of housing costs in disposable household income, by type of household and income group",
           "edition": "2025",
@@ -1543,16 +1613,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ilc-mded01-a-total-total-pc-eu27_2020-2025",
-        "origin_row_sha256": "b7a043eb06fe4d47db2fe553cf48be7c35340f5265734e4974b9d5efc77e4665",
-        "exported_row_sha256": "d0019d894ee5b587a554ade4ae9f368adc43cb3f3feee55e87c2a042bd45b229"
+        "origin_row_sha256": "880c4d4103dc40aa1ab68a0fc6cf90c27ba01a24a3905a90dddbb22cc988693d",
+        "exported_row_sha256": "53b65fac7586baaaac655deadda26b04c93f44d8cfee993fce4874f3c265892f"
       }
     },
     "hab-ilc-mded01-a-total-total-pc-pt-2015": {
       "linha": {
         "id": "hab-ilc-mded01-a-total-total-pc-pt-2015",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Share of housing costs in disposable household income, by type of household and income group",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Peso dos custos da habitação no rendimento disponível do agregado, Portugal, 2015",
+        "name_source": "label; dimension.geo.category.label.PT; dimension.time.category.label.2015",
         "document": {
           "title": "Share of housing costs in disposable household income, by type of household and income group",
           "edition": "2015",
@@ -1566,16 +1636,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ilc-mded01-a-total-total-pc-pt-2015",
-        "origin_row_sha256": "479744ec7bec663d832a5b4782cabbcc513fa83478b8e43630c50ae1bc9b954b",
-        "exported_row_sha256": "97486106ef7857e4cfe3f61a9710619704ae7cc37098c4c0338017fe01c29c47"
+        "origin_row_sha256": "9054e36dc589689dc3c31b495a105231154b26df4e0c1e92c6775c74efeae8d8",
+        "exported_row_sha256": "74f5c77de187e03f55c6332953ce1d411c5f8c9939d2e4039fe6b650b08766f8"
       }
     },
     "hab-ilc-mded01-a-total-total-pc-pt-2025": {
       "linha": {
         "id": "hab-ilc-mded01-a-total-total-pc-pt-2025",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Share of housing costs in disposable household income, by type of household and income group",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Peso dos custos da habitação no rendimento disponível do agregado, Portugal, 2025",
+        "name_source": "label; dimension.geo.category.label.PT; dimension.time.category.label.2025",
         "document": {
           "title": "Share of housing costs in disposable household income, by type of household and income group",
           "edition": "2025",
@@ -1589,16 +1659,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ilc-mded01-a-total-total-pc-pt-2025",
-        "origin_row_sha256": "e1551bf8f4d9b1e3095839c94bf003ccf557f4dd80c851aaa88f1d53d0f556b9",
-        "exported_row_sha256": "938efc722eb02140c1d79e82489e79344a11d073b637e420defc4e496783bd1f"
+        "origin_row_sha256": "f2059ab93bd6edf9b3a81f74fe899b8ce7dbb7350fc94c25b518dbf5e7cc80c2",
+        "exported_row_sha256": "338217e47f0c02eb89d8bdc86e64622a873e4f7d06ba79eb7c57978af5065170"
       }
     },
     "hab-ilc-mdho06a-a-pc-total-t-total-eu27_2020-2023": {
       "linha": {
         "id": "hab-ilc-mdho06a-a-pc-total-t-total-eu27_2020-2023",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Severe housing deprivation rate by age, sex and poverty status",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Taxa de privação severa das condições da habitação, União Europeia, 2023",
+        "name_source": "label; dimension.geo.category.label.EU27_2020; dimension.time.category.label.2023",
         "document": {
           "title": "Severe housing deprivation rate by age, sex and poverty status",
           "edition": "2023",
@@ -1612,16 +1682,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ilc-mdho06a-a-pc-total-t-total-eu27_2020-2023",
-        "origin_row_sha256": "4b83471e0ac184180206ecd2801535782a6ac76280906117ed4a0b362e1c555c",
-        "exported_row_sha256": "954b2b8464ea3611d8c9db48c3d0b28c1ad1ca539b8a12df9c5978f068e10588"
+        "origin_row_sha256": "173f30e34a0cc9d92e60b7cb0e04380e024839bbe3abc86c0b0d4e222a45f784",
+        "exported_row_sha256": "03cdd775babf7a5047b7c55a928c6d502d85f8454f2f7e1fd8e6f1447f53392c"
       }
     },
     "hab-ilc-mdho06a-a-pc-total-t-total-lv-2023": {
       "linha": {
         "id": "hab-ilc-mdho06a-a-pc-total-t-total-lv-2023",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Severe housing deprivation rate by age, sex and poverty status",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Taxa de privação severa das condições da habitação, Letónia, 2023",
+        "name_source": "label; dimension.geo.category.label.LV; dimension.time.category.label.2023",
         "document": {
           "title": "Severe housing deprivation rate by age, sex and poverty status",
           "edition": "2023",
@@ -1635,16 +1705,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ilc-mdho06a-a-pc-total-t-total-lv-2023",
-        "origin_row_sha256": "b756faa58f0a0e4b6b16e4531f029680911adb39965ed24ec757e4a40b7115f3",
-        "exported_row_sha256": "f7491e2ac6183b45a9cea95b4a927b205709b9ade6c04791ff803af5b5827a5f"
+        "origin_row_sha256": "b255d4360cf7edce9d94b1d547a7b409b2e0ce583b914e6802224aef4792050d",
+        "exported_row_sha256": "be5cc64fc031b2ece6e11fce6c5079017ce966c8c55404085e84fadf5f2833c0"
       }
     },
     "hab-ilc-mdho06a-a-pc-total-t-total-mt-2023": {
       "linha": {
         "id": "hab-ilc-mdho06a-a-pc-total-t-total-mt-2023",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Severe housing deprivation rate by age, sex and poverty status",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Taxa de privação severa das condições da habitação, Malta, 2023",
+        "name_source": "label; dimension.geo.category.label.MT; dimension.time.category.label.2023",
         "document": {
           "title": "Severe housing deprivation rate by age, sex and poverty status",
           "edition": "2023",
@@ -1658,16 +1728,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ilc-mdho06a-a-pc-total-t-total-mt-2023",
-        "origin_row_sha256": "851c871c9252f6d4a0b0dfd1001e9ad987cdcf236dcf0b5ad0f1fcc3292016c2",
-        "exported_row_sha256": "984988409e5b8519bc1b9e4ae81be81d6355c54fec840543994590f91a13d8ac"
+        "origin_row_sha256": "14e5e38c49914d820d3b1f3bfad6ffb97f4d77e7e99faa7321793174700f7faa",
+        "exported_row_sha256": "b0b4f3d82892cb15a60fbc34c4ba7bf879e3c8f09e2a5a9ca8f227eb4d75b4bf"
       }
     },
     "hab-ilc-mdho06a-a-pc-total-t-total-pt-2023": {
       "linha": {
         "id": "hab-ilc-mdho06a-a-pc-total-t-total-pt-2023",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Severe housing deprivation rate by age, sex and poverty status",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Taxa de privação severa das condições da habitação, Portugal, 2023",
+        "name_source": "label; dimension.geo.category.label.PT; dimension.time.category.label.2023",
         "document": {
           "title": "Severe housing deprivation rate by age, sex and poverty status",
           "edition": "2023",
@@ -1681,16 +1751,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ilc-mdho06a-a-pc-total-t-total-pt-2023",
-        "origin_row_sha256": "92e74a08f3df31da295fca72e8ba7ea7e7119d37ddca2ca703497ef5642c689a",
-        "exported_row_sha256": "e9341d7ed7c63a57c10903fdfa08062bfb54b560d919dbbe68240684e6700fd3"
+        "origin_row_sha256": "42f87e4756774eb29c6cd7dcc7051bc5793785376885358a104c1ee9086c9b51",
+        "exported_row_sha256": "68163edf12e5a4fa98c2bc97a5328a0bf0504088221d6b1715d7e7418f9df0bc"
       }
     },
     "hab-ilc-mdho06a-a-pc-total-t-y16-29-eu27_2020-2023": {
       "linha": {
         "id": "hab-ilc-mdho06a-a-pc-total-t-y16-29-eu27_2020-2023",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Severe housing deprivation rate by age, sex and poverty status",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Taxa de privação severa das condições da habitação, dezasseis a vinte e nove anos, União Europeia, 2023",
+        "name_source": "label; dimension.age.category.label.Y16-29; dimension.geo.category.label.EU27_2020; dimension.time.category.label.2023",
         "document": {
           "title": "Severe housing deprivation rate by age, sex and poverty status",
           "edition": "2023",
@@ -1704,16 +1774,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ilc-mdho06a-a-pc-total-t-y16-29-eu27_2020-2023",
-        "origin_row_sha256": "0c988f7a0f4ffac8b44aca450f920eb776e04bfef81d308aff1cb0577aba89ca",
-        "exported_row_sha256": "b18259c7453faf5cb114c991ed9478239004739c53b5c8894630a2cf5d060c96"
+        "origin_row_sha256": "1c487019028ec450f95ceb478f4ca812038c4d20fdc38efca0789dc296b17f50",
+        "exported_row_sha256": "bd73d423b8065675484270056bc08e0133c08a90893913b390102fa542e5a962"
       }
     },
     "hab-ilc-mdho06a-a-pc-total-t-y16-29-pt-2023": {
       "linha": {
         "id": "hab-ilc-mdho06a-a-pc-total-t-y16-29-pt-2023",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Severe housing deprivation rate by age, sex and poverty status",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Taxa de privação severa das condições da habitação, dezasseis a vinte e nove anos, Portugal, 2023",
+        "name_source": "label; dimension.age.category.label.Y16-29; dimension.geo.category.label.PT; dimension.time.category.label.2023",
         "document": {
           "title": "Severe housing deprivation rate by age, sex and poverty status",
           "edition": "2023",
@@ -1727,8 +1797,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ilc-mdho06a-a-pc-total-t-y16-29-pt-2023",
-        "origin_row_sha256": "ffd5fa9b2dd3e0c69d1901b60a98240e1a539e1c32554425de8da54c830bf292",
-        "exported_row_sha256": "e25d3341caaf5abcfe6eac467e677bca274f1fb9851cb7ebe47cffd0291a86e0"
+        "origin_row_sha256": "e023d3e71bcd5254e9eb10c6bb60d7241bd6d02c039a0b1773cfc85cce89e53e",
+        "exported_row_sha256": "6709aa638f06bf16435fb73063aeeebc2f07f3d3bbe4c3a512b1d85f1b0c19d0"
       }
     },
     "hab-imprensa-acampados": {
@@ -1750,8 +1820,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-imprensa-acampados",
-        "origin_row_sha256": "4580965ed73b5745a3d2a67d6a200f0ff8c7c21dff8b7899787bd641a1dde04e",
-        "exported_row_sha256": "df0a3edad723a2b6aa22c9dcdf3bf446c5514886345c6c1b3a73ed827a25cc29"
+        "origin_row_sha256": "3cba17a054af3c36d0d0139f3aeb2015eca84456067b0689972941fc57eaccba",
+        "exported_row_sha256": "fa9567ed7fd740cceae8d0598ef1fdddd1428da03072865c7377bb07c24f67fc"
       }
     },
     "hab-imprensa-amorim": {
@@ -1773,8 +1843,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-imprensa-amorim",
-        "origin_row_sha256": "4db857f311c777b547946877f3354b9bf809dd9cdb920c1ee8a1a9e98d6f176f",
-        "exported_row_sha256": "d0532542d70585edc7114f0d60829191880f7defc8226ad2a591070cff64161b"
+        "origin_row_sha256": "cb0138eeb9ad3a6a33800d25d461d4b182a04be7c330442dac2aced663fea69e",
+        "exported_row_sha256": "090dc91840dd35a98957b81bed9ba9cb0c6922f4ae8f88ac838a27202b6a253f"
       }
     },
     "hab-imprensa-assistidos": {
@@ -1796,8 +1866,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-imprensa-assistidos",
-        "origin_row_sha256": "4fbf8f9265b47e8bcf39316d525989093c3a0d94f57772651dbcf56837aa2300",
-        "exported_row_sha256": "40fdec213e1d45da7ff988f662748e8c2a7a551d58de118dc82f97c11235f6ca"
+        "origin_row_sha256": "1dbc88395420b5cdb47b687973df1dd2888497214a591c4f92d5d5ab2fced012",
+        "exported_row_sha256": "ac174d9c8ca98d595595ce12ba32cff825b2cbeaba78c88ab286db220478edae"
       }
     },
     "hab-imprensa-debate-custos": {
@@ -1819,8 +1889,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-imprensa-debate-custos",
-        "origin_row_sha256": "51dd1171819c270d04f10fbad09bb939cb32d02bdb131a0f5ca674fef4acc4a0",
-        "exported_row_sha256": "bfead7e0675fa83ced5fa3e8aa1806992b4d37a5af8c483a121b92e79846829c"
+        "origin_row_sha256": "f8ec9f2abffe0a64c956688aa889f3087c275f213ea183fc316c1cff5e1ef9a6",
+        "exported_row_sha256": "e505ba54112c69227e1079b10b9c18c92a09f5611bdf889e7106c305d568a108"
       }
     },
     "hab-imprensa-debate-protecao": {
@@ -1842,8 +1912,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-imprensa-debate-protecao",
-        "origin_row_sha256": "633b9ca4a8428d44306942c095743656bd51b94433498acb827f54dccb1e8bcd",
-        "exported_row_sha256": "73728e63ab28f060dbd0f93376ad7c9b09126ea42223f389651b0bb8081fdbe4"
+        "origin_row_sha256": "7c158cdf31aad80dbad95ccc8927a4598328f6773fc5114f0d9069fd3de08573",
+        "exported_row_sha256": "09a076c10798fbf7ce551d4cf4cd1d9a86abc89eac7db8e9bf3fcfc5d4c83f48"
       }
     },
     "hab-imprensa-feridos35": {
@@ -1865,8 +1935,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-imprensa-feridos35",
-        "origin_row_sha256": "bc2cda9003e7b6015d734d74a822518d1b9e02da50debb0e7c40e5666fba9f48",
-        "exported_row_sha256": "8ec6d622c46f0301981683cc87400c0ab4f3848a62137fdb4dfb1cbc5e989543"
+        "origin_row_sha256": "26da9aa44a0f36039e1afad2e75be3c88f7ac47092c2cca1d6746ffb9d1e6ce2",
+        "exported_row_sha256": "15d053591948a91c3962eb0a6a570f63af58dfa33788f9580e77938d824cfad2"
       }
     },
     "hab-imprensa-feridos37": {
@@ -1888,8 +1958,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-imprensa-feridos37",
-        "origin_row_sha256": "02414fb90024468391e65237e90e4f4a447ff365b07439f0196e41ae805a31f8",
-        "exported_row_sha256": "869d00cace939c4df1f027c359345221a989a8f0c20080969d668533ee1db3f9"
+        "origin_row_sha256": "92de92ef35ee2792043a57f726143360f4b5f3415a007f099e0957a598ef3995",
+        "exported_row_sha256": "b791572027a8c1f1d62b0eee332f51c4be3becbcc86282d1d33f685473141ef0"
       }
     },
     "hab-imprensa-feridos39": {
@@ -1911,8 +1981,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-imprensa-feridos39",
-        "origin_row_sha256": "314c047c1a9d8042fc1f8194c9b2bb4eeccdf25823ec7a6b36deb62d1e7e3f8b",
-        "exported_row_sha256": "c3af052589b5f105be4f70197905553c2c565acb52c82605841336c5de404c43"
+        "origin_row_sha256": "fcc3408d26aaa193d8805759f6a7a3447dad39e0da5159943ea0a9f77ae167bb",
+        "exported_row_sha256": "56eb38caafc98728bad1dbf23aeaf8c7d46549e74b478b14d5f8496d495a4a03"
       }
     },
     "hab-imprensa-hospital": {
@@ -1934,8 +2004,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-imprensa-hospital",
-        "origin_row_sha256": "f4e26d2ddb74fbff401c32e63bf4f1241a1922596775c6056b48ada4d94e1cf6",
-        "exported_row_sha256": "c84d842182668fc765a0754e2a10116bd639c34c024954b5146f492715f0eb2e"
+        "origin_row_sha256": "369452af95b248b1816a951a9c54508d30d0fc51a772bf7928eb1f89c9035f09",
+        "exported_row_sha256": "6f500610a847582a421342ade4d6ebe03a6b389da2b6d2678ea100f928d71ac5"
       }
     },
     "hab-imprensa-igai": {
@@ -1957,8 +2027,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-imprensa-igai",
-        "origin_row_sha256": "e87a6af36c472a90076da58dbd347875635134234d2c86f79fdbbb4ae9beca21",
-        "exported_row_sha256": "6b1b8f86fcedc25948c68fefe28cb255b3d05ffe49d58d240cc78b3f70931848"
+        "origin_row_sha256": "5c4f0cf1a0521eb08c063dd37dbddc0cec37502ef2ec21b4aba6a6a79d43e2be",
+        "exported_row_sha256": "3a2fec16b5b66ae8d6b738ac24e4e6297f449c508e6f68a0f3907788885fbb65"
       }
     },
     "hab-imprensa-mai": {
@@ -1980,8 +2050,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-imprensa-mai",
-        "origin_row_sha256": "53fee64dac96b889872755bea4f627aecb4dd275281c39e78473ff01674dbfd2",
-        "exported_row_sha256": "2336048a5bdfaa33705061da51e48154819b91a39e3ebff130725e25629b9cc2"
+        "origin_row_sha256": "624adb7255f0325932bf06a65e0047ecd5f75a9cacd9627bf0e37ad2df0e4a55",
+        "exported_row_sha256": "d94c9e5d79f48ebbcf824902aa1ab0209779fee59be118d113d7d0b0958ebb12"
       }
     },
     "hab-imprensa-manif-euronews": {
@@ -1997,14 +2067,14 @@
           "source_sha256": "2d64b9e9cd6983b0bdd12c971154583773825299cca67672966ce73277049ef6",
           "kind": "html"
         },
-        "excerpt": "organizada por uma plataforma que reúne cerca de 40 organizações da sociedade civil.",
+        "excerpt": "Cinco cidades de Portugal vão acolher, este sábado, uma manifestação contra a crise na habitação, organizada por uma plataforma que reúne cerca de 40 organizações da sociedade civil.",
         "reference_date": "2026-10-10"
       },
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-imprensa-manif-euronews",
-        "origin_row_sha256": "851611cb8b452072f347657a1e7daa3728eb283cf70160b4f3778039aee4bc0a",
-        "exported_row_sha256": "8705ad20e7ed3af1e17600886f932df66c6aac5360afc692fbb431caf5a88691"
+        "origin_row_sha256": "1b6411dcd29b5c116f72fe0fc5d48a45833dc2f74854010c157b2de959b56777",
+        "exported_row_sha256": "136698b662f4a6b1c6ed99292e1770afe9ddfda1b005687c0b9edce941168218"
       }
     },
     "hab-imprensa-manif-lusa": {
@@ -2026,8 +2096,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-imprensa-manif-lusa",
-        "origin_row_sha256": "4a9600e2499b592a99379c6ae41421e2468671360ac95600fc54a00b747cb47e",
-        "exported_row_sha256": "24b74cfb18250fcbe6a69de234c768290ae60fb796986b14d3a50e3582c46fa9"
+        "origin_row_sha256": "33db37057c0c12bddf2955d7916441f27b49d5a3e3f2d305c10f77c0b195cac8",
+        "exported_row_sha256": "8e96c16b21410ada7c7e958431eb6bbe486fd9beff5ddb082cb9abd867e6d2d2"
       }
     },
     "hab-imprensa-manif-lusa-organizacoes": {
@@ -2049,8 +2119,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-imprensa-manif-lusa-organizacoes",
-        "origin_row_sha256": "71cb7edfd87511b8c39f8a8b08d69b4746ee1fe1f23299ec7c84f8b1a7f7cdae",
-        "exported_row_sha256": "6b58f1d0afc5542f430aea46bcc3c92e24625e488ff00c3e53c9f852ea3945c4"
+        "origin_row_sha256": "edb01bf54bfd2ef2ed600c5727db64f06f4d108105c8e76c85430b2b484176fd",
+        "exported_row_sha256": "fe08f71172bfe155acec8d8ce3f0f79fc90ca5a3d33fb670a27c943d665f5338"
       }
     },
     "hab-imprensa-manif-rtp": {
@@ -2061,19 +2131,19 @@
         "name_source": "HTML; início literal único",
         "document": {
           "title": "\"Não consegues pagar renda? Traz tenda\". Polícia desmonta acampamento no Porto",
-          "edition": "[a verificar]",
+          "edition": "2026-10-12",
           "locator": "HTML; início literal único",
           "source_sha256": "c67d11f5413d705e61f63614ad523cf7103800551e9a02c75735ba2409955b81",
           "kind": "html"
         },
         "excerpt": "cerca de 1.500 pessoas",
-        "reference_date": "[a verificar]"
+        "reference_date": "2026-10-12"
       },
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-imprensa-manif-rtp",
-        "origin_row_sha256": "319152631ed47d74e53c14777eafe9811847372d015326510044093d81f05a39",
-        "exported_row_sha256": "84d00c4ab8d97cbb9d44e172d851497a00f1081159f82db9da4b4b057f8865cc"
+        "origin_row_sha256": "d7efad4e1bca818b04e2a1cb5c0a9237c8d33b776cb6979e01132d23394450e3",
+        "exported_row_sha256": "5fdb92d4f1dd39fcaed71326e14bc7bd4992ec1b5e1b369ad035138ed4b6e4fa"
       }
     },
     "hab-imprensa-pm-15": {
@@ -2095,8 +2165,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-imprensa-pm-15",
-        "origin_row_sha256": "7d09667af149d1029ba3a14fa946f824102068fba236855591d434e26c6cd0d4",
-        "exported_row_sha256": "dc34970bf1b0dbed5025aa767214d6f47cf5a7e9c01d0532eedc8ede15a8eccb"
+        "origin_row_sha256": "08eaee941ad15e25245e9d02e8dcdf679b532c2cb782c5d755c5f1c4b23ac0ef",
+        "exported_row_sha256": "6b6dd1df9691713193c28cd8e42556a71c4f2e8a5458de31d9e514a766e3279e"
       }
     },
     "hab-imprensa-pm-16": {
@@ -2118,8 +2188,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-imprensa-pm-16",
-        "origin_row_sha256": "89d0741fc149f9cf72a7496015f3a9e9f2bb16eb39fee1907e8f2b5c144b7ba2",
-        "exported_row_sha256": "8676fd618f3f48a1dcb81c75d828ae5b396af0c97256ed9db8d5766881f70e44"
+        "origin_row_sha256": "ec7991af2d83c379775378290bfe610d3254288bb6019253bcaf8043ae1e9c4a",
+        "exported_row_sha256": "79c184fcb843f0a9f73e6e70febd671377a5eb77288e7c1d1b81cec1cff2d03c"
       }
     },
     "hab-imprensa-psp-ferido": {
@@ -2141,8 +2211,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-imprensa-psp-ferido",
-        "origin_row_sha256": "a1c4d2eeb5b375be453d49c82f1a1ba36f404b82ed5ed810c43f598b40aa7f56",
-        "exported_row_sha256": "0fb4cc21e58a8c7c4635e0f184feff8a6261b558e298912b60e72aca4c74bf36"
+        "origin_row_sha256": "f239d545183a6b052a4fe2e77f87a579d01bc091b0fed2d8fbe4b6cfb0fb3df1",
+        "exported_row_sha256": "51369853f044115cdcbacf6395e5c6d5125c090052ccfbf9790315a6f505c9ec"
       }
     },
     "hab-imprensa-renda-metade": {
@@ -2164,8 +2234,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-imprensa-renda-metade",
-        "origin_row_sha256": "c969fba5f76722f68fe598c227b2c65405a7378249287b95d9188d4226284620",
-        "exported_row_sha256": "de70e62f307751954acfbd78a68e0931ba7d9ff8bb235d26155142301847842f"
+        "origin_row_sha256": "7d710a753054fbd474244b83f692851ff68a61e0f9a55e182e90f00d832f136b",
+        "exported_row_sha256": "70bde4bdd29223ac6e24041202304468ea32035a719c8ac3c40c3c0d0376a4d3"
       }
     },
     "hab-imprensa-tendas": {
@@ -2176,19 +2246,19 @@
         "name_source": "HTML; início literal único",
         "document": {
           "title": "\"Não consegues pagar renda? Traz tenda\". Polícia desmonta acampamento no Porto",
-          "edition": "[a verificar]",
+          "edition": "2026-10-12",
           "locator": "HTML; início literal único",
           "source_sha256": "c67d11f5413d705e61f63614ad523cf7103800551e9a02c75735ba2409955b81",
           "kind": "html"
         },
-        "excerpt": "Foram retiradas, ao início da manhã desta segunda-feira, as tendas",
-        "reference_date": "[a verificar]"
+        "excerpt": "Foram retiradas, ao início da manhã desta segunda-feira, as tendas de dezenas de pessoas que permaneciam acampadas na Praça D. João I, no centro do Porto, em protesto contra o aumento do custo de vida e a crise da habitação.O acampamento foi promovido pelo movimento \"Não consegues pagar renda? Traz tenda\". O acampamento mantinha-se no local desde sábado, dia em que cerca de 1.500 pessoas se manifestaram no Porto contra o agravamento do custo de vida.",
+        "reference_date": "2026-10-12"
       },
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-imprensa-tendas",
-        "origin_row_sha256": "c9b53aed09c0464ad5b786257e15a1d4b54c6ade1674417611309cadf00fd16d",
-        "exported_row_sha256": "b5595b9cba2c0167a203c297237c1c6b399fa16b426a9ac3e56de2f669e9a235"
+        "origin_row_sha256": "bca283c62d386d31364281a3877998aa849bb247dd08280ce5aed5519d90fabb",
+        "exported_row_sha256": "1872d56ddebc8af4b1dbfc7f78d7eea778c187aa762b3fca161052cab21c8954"
       }
     },
     "hab-ine-calendario-juro": {
@@ -2205,13 +2275,13 @@
           "kind": "html"
         },
         "excerpt": "INDICADOR DE TAXAS DE JURO IMPLÍCITAS NO CRÉDITO À HABITAÇÃO setembro de 2026 21/10/2026",
-        "reference_date": "[a verificar]"
+        "reference_date": "2026-10-21"
       },
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ine-calendario-juro",
-        "origin_row_sha256": "42a525f8649c9a7de32f398e3945acfe89c77735beca360f64908ded455cc893",
-        "exported_row_sha256": "0c173be2cbb7f8d3de78bf8940b0379379dfa3b47356f02aaa8cdaf59f76a85d"
+        "origin_row_sha256": "be1f6c88124df98c39cfb9b7e2a9f37364ab94c0c35b1244da9cdac15102ed42",
+        "exported_row_sha256": "a50d9470c007b7a5a163f596c80d4037eee80374df99fc351d2d462cfd6b1859"
       }
     },
     "hab-ine-calendario-precos-locais": {
@@ -2228,13 +2298,13 @@
           "kind": "html"
         },
         "excerpt": "ESTATÍSTICAS DE PREÇOS NA HABITAÇÃO AO NÍVEL LOCAL 2.º trimestre de 2026 23/10/2026",
-        "reference_date": "[a verificar]"
+        "reference_date": "2026-10-23"
       },
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ine-calendario-precos-locais",
-        "origin_row_sha256": "55c3f7cbf069d3bd07ad92909f49ee8257dc11cf213e9f04de1a0766e8ea5766",
-        "exported_row_sha256": "49d91146bc9e12a58d329a0e80edaed74956a5e8324ce091ded52077b993dfb0"
+        "origin_row_sha256": "4a7cbd3b0bedfffe4d96273e5eb3ff388c4cfc87171915ea5c41dbe24bf312f6",
+        "exported_row_sha256": "35650f98a9f52febb65b21648d5ddacb5d6626dec04e7ed9a161628e3f5741e7"
       }
     },
     "hab-ine-censos-0012501-40": {
@@ -2257,7 +2327,7 @@
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ine-censos-0012501-40",
         "origin_row_sha256": "72a4e3dc9b228b6e25a6f82207457ae108678663832341c6a399e399c5f5a0c2",
-        "exported_row_sha256": "52e7887aa99176dc795be3ef1047f52554877b988509e515fdc886d8a94bab21"
+        "exported_row_sha256": "9c88a695402eb3debd2df99ab3af3236f61b4f77f866bd083663d70c96800278"
       }
     },
     "hab-ine-censos-0012501-41": {
@@ -2280,7 +2350,7 @@
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ine-censos-0012501-41",
         "origin_row_sha256": "4f16babdfb520b45edc447e363a58894497a2d3d876f6a3e1b170d6e8c814118",
-        "exported_row_sha256": "32287d3a7bbf839416ad733c85acc7ee2a631f6399fd8b5583360586d3ff41c0"
+        "exported_row_sha256": "de3fe78f3461c7aae4f7849b950648846ec851f1fd58a05e7b1ae5d316f771d3"
       }
     },
     "hab-ine-censos-0012517-0": {
@@ -2303,7 +2373,7 @@
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ine-censos-0012517-0",
         "origin_row_sha256": "0bab914bef0cfac374c9fc41f242ade77367c0c9990d2969dc4575025f30b99a",
-        "exported_row_sha256": "4067fc9218aa109a34d1290ae14d76b9f1b2c849ba5d6135808ee9feef822235"
+        "exported_row_sha256": "40ff1b7ba59dc6caa1bbdab86338e80898b79edd5a2ea5b8cfb633712d09b61d"
       }
     },
     "hab-ine-iphab-homologa": {
@@ -2327,7 +2397,7 @@
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ine-iphab-homologa",
         "origin_row_sha256": "ad59ff77d7148c0e1e368cf7f89f4d60bf95a2de87999a2080684ce0d36e9b02",
-        "exported_row_sha256": "0bea19f02d962509a4e5d9009f573997211f99a10a304e5f726ee3544232362d"
+        "exported_row_sha256": "85f14d6e42212e01f7d90ec0cbd02f75ec9298613802e4e806e083bf353caf00"
       }
     },
     "hab-ine-juro-implicito": {
@@ -2351,7 +2421,7 @@
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ine-juro-implicito",
         "origin_row_sha256": "2cc97cb8e1617ae0a3d8616b3e70193dd8844761a7e336d880ab9331451f78ee",
-        "exported_row_sha256": "bc5b8ceb2ab9c60fa416a7a4178b440066256e6c1287c42151f4bd32a0203a41"
+        "exported_row_sha256": "a0fa902941ff8c9c9f9f93a15979f411a32f80e7bf2ffd6c457d2ac5be42118e"
       }
     },
     "hab-ine-preco-lisboa": {
@@ -2375,7 +2445,7 @@
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ine-preco-lisboa",
         "origin_row_sha256": "cdae2c9a8ca43ef08dc841c509a002969efbec425615d78fae5177f75602a742",
-        "exported_row_sha256": "05263ea0ec817c8a0768d02f4fef59984f5304d19319d10a1668a6c8fae54926"
+        "exported_row_sha256": "ed551a1de2233b52acf01db3e2569eb06b7eb912dac57efd0e113ece85172616"
       }
     },
     "hab-ine-preco-mediano": {
@@ -2399,7 +2469,7 @@
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ine-preco-mediano",
         "origin_row_sha256": "08a71ad9530691ae40e75b92da8895077ef2a3da3ee15ec38f14dad0ae93dfee",
-        "exported_row_sha256": "48cd23aec803f80a58c96ca0141d4a845729f659131222c46a7939899b68510e"
+        "exported_row_sha256": "239b8f01a93dd4ff3fc1af89d08cab6e7b34356c0c099cedcaef5628faafd0ff"
       }
     },
     "hab-ine-preco-porto": {
@@ -2422,7 +2492,7 @@
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ine-preco-porto",
         "origin_row_sha256": "45e9aa8eb616cedaf751ea5e5a4ca0214574c672eff51c884085bda98c31e315",
-        "exported_row_sha256": "972e35e4586398bc79effe0d15ce1a22dff04b3ca305bbb291b833f2e791ee98"
+        "exported_row_sha256": "7631144062653102bee1b6a5c210c2ea311053513c0d3017544de204cd15562d"
       }
     },
     "hab-ine-renda-lisboa": {
@@ -2446,7 +2516,7 @@
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ine-renda-lisboa",
         "origin_row_sha256": "caab068548bbcfa9bf3e6e289e3b95fdd8d5db5bff840bc7b15ebf9f4be2a4ff",
-        "exported_row_sha256": "c7ebff340f51744f89cd3eaea78b7efe1ddfb867ca698a91765c3d65ccccac65"
+        "exported_row_sha256": "7c5cba58e6d5ead6b4c58c440be25a0c9ac7686a7ef0074da0f1254a90ce4e30"
       }
     },
     "hab-ine-renda-porto": {
@@ -2469,7 +2539,7 @@
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ine-renda-porto",
         "origin_row_sha256": "4195c2722bdf5b2473388b751dceae4bc67e0b26ea7f15278e234741861c718c",
-        "exported_row_sha256": "ebd12a03b36c4a76b2167540ca6a0b6ce7bc9f1f586a2d5641f61920ca99864e"
+        "exported_row_sha256": "b6485fcae4c068b2540d73419f250e6ecbb6dc75e8a71100aebc865e2ec7dcb9"
       }
     },
     "hab-ine-renda-portugal": {
@@ -2493,7 +2563,7 @@
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ine-renda-portugal",
         "origin_row_sha256": "741e36eb1976f1704abd4e7d4b15cd6745869dfdf19db58ca89e75e6abdbf286",
-        "exported_row_sha256": "d638fe05a774768c46fbc684da6d49aaa12955edcc33ab9b93623a5223972dbb"
+        "exported_row_sha256": "6a30923ed95863eaff28f364767e476f34e115d854243a24e69f7d1aa1232700"
       }
     },
     "hab-ine-vagos-total": {
@@ -2516,7 +2586,7 @@
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ine-vagos-total",
         "origin_row_sha256": "9aaa49f93ddf48ffead156131eebf9695147a4aac9a465d06f354162fc5acebf",
-        "exported_row_sha256": "c7b80cd4bc9dab208e0b121df7ddeb3fc67b8637a310fedf5f2d135c2f839d89"
+        "exported_row_sha256": "1366548228774fd6aefe0deda8828e765edb3a73ebc3f4b566f7a66f9ba7ea2e"
       }
     },
     "hab-livre-reinvestimento": {
@@ -2539,8 +2609,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-livre-reinvestimento",
-        "origin_row_sha256": "f9f07be59186f32d077617272eb42bdc09eea7f8690eb40ce59fb41d5d755810",
-        "exported_row_sha256": "234e44ba00dddef3a86a231914fb193b82ff593b891a32935e9b801f78517588"
+        "origin_row_sha256": "bacbe58e2669059cf5f42c411b37d1ac4e003b234500209d13e6f536417a640b",
+        "exported_row_sha256": "a0c213679c0e147ca2415e9610d90dc15bb124d5ed6a93b1fea9972360f5ae08"
       }
     },
     "hab-oe-apoio-arrendamento": {
@@ -2557,14 +2627,14 @@
           "page": 243,
           "kind": "pdf"
         },
-        "excerpt": "917",
+        "excerpt": "Ação 1.3 Promoção do acesso à habitação e apoio ao arrendamento 917",
         "reference_date": "2027"
       },
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-oe-apoio-arrendamento",
-        "origin_row_sha256": "127ef1ebc3b9781451dbe189d7611a9a4081def927b09ff152b2f74f2a129ed7",
-        "exported_row_sha256": "07fdbbfa2c7d73c9caa7d4d5665bb9774f43554ea347ab1b471c247e1c1cea47"
+        "origin_row_sha256": "92ae4f3d7376890c2959d8443e99be7bedd5ad12a4e43d3f7aa5b1a8a0705768",
+        "exported_row_sha256": "02c5333479f5798cf06196bd090dfafed5183ec4f524c1082d6c9707ce1b9cce"
       }
     },
     "hab-oe-apoios-jovens": {
@@ -2588,7 +2658,7 @@
         "rh_study": "23 Habitacao",
         "rh_id": "hab-oe-apoios-jovens",
         "origin_row_sha256": "cf44d6a0860c155ae4024da9b81f8d37c6f06b317072f4197a9719f116a064ff",
-        "exported_row_sha256": "36e71c7e61a34d32168d9d0823b566245a75f5469418f92a34ca0963d04ef129"
+        "exported_row_sha256": "ea0d4935f3dc5745a2109c42d5906d5ac25daa4d036bc98cf9d5619730ed32bf"
       }
     },
     "hab-oe-fiscal": {
@@ -2612,7 +2682,7 @@
         "rh_study": "23 Habitacao",
         "rh_id": "hab-oe-fiscal",
         "origin_row_sha256": "f35ae5d2320fdf439a6f3a8f02df11b7b95c19cd32c0bfe6eb26a33924844c3a",
-        "exported_row_sha256": "fdeddb0da4187e2c930f3ca5a4d1ba4b5f5beebe1823d1bf28d519779f23cb3b"
+        "exported_row_sha256": "8f10e4dcff510d80bcd3b30acda4c3b8fac782e048298713b3b0676ab18311b4"
       }
     },
     "hab-oe-habitacao-orcamento": {
@@ -2636,7 +2706,7 @@
         "rh_study": "23 Habitacao",
         "rh_id": "hab-oe-habitacao-orcamento",
         "origin_row_sha256": "952b4769e6685476003c6a94323735d3e166f0319c8bdcab55cbcba1afe3dec8",
-        "exported_row_sha256": "7be81a511fe6682ba90dde09dd37a7a0bf6093e7b07850ca4b842201a62006f7"
+        "exported_row_sha256": "ba261aa0d19bdf36344bf48faa6ec88ae227252cccf3ec92d23ee4df3b594544"
       }
     },
     "hab-oe-irs-rendas-impacto": {
@@ -2660,7 +2730,7 @@
         "rh_study": "23 Habitacao",
         "rh_id": "hab-oe-irs-rendas-impacto",
         "origin_row_sha256": "49a137bcacea68316e3793ad0162a4f16d563942f8d611576e0e664610b8b9ee",
-        "exported_row_sha256": "930d3ddc8faeec6e7f8ce72d0610c152f5683ae5c14c261bcd5ff90320b5cae0"
+        "exported_row_sha256": "31421235888db1d6408be5d98545b7a38fa756c1b8145a4d481471e14ace44ef"
       }
     },
     "hab-oe-iva-impacto": {
@@ -2684,7 +2754,31 @@
         "rh_study": "23 Habitacao",
         "rh_id": "hab-oe-iva-impacto",
         "origin_row_sha256": "960ea39f41dfcb9c874cadd2d5d82062240d7b053d32fa39876a795e89ba3a03",
-        "exported_row_sha256": "6531280d3775f195927b953e17b1d7edfa6b5d503310a2526f2fdcdead149fd7"
+        "exported_row_sha256": "9fb45c95cdd64f8faf5fabf55eabe51ef9cc09c4700a18dafd193fc635309b08"
+      }
+    },
+    "hab-oe-legenda-invariante": {
+      "linha": {
+        "id": "hab-oe-legenda-invariante",
+        "study": "a-casa-em-portugal-e-na-europa",
+        "name": "RELATÓRIO",
+        "name_source": "PDF p. 59; Quadro 3.2; nota da legenda; página impressa 43",
+        "document": {
+          "title": "RELATÓRIO",
+          "edition": "2027",
+          "locator": "PDF p. 59; Quadro 3.2; nota da legenda; página impressa 43",
+          "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+          "page": 59,
+          "kind": "pdf"
+        },
+        "excerpt": "Nota: (i) invariante.",
+        "reference_date": "2027"
+      },
+      "origem": {
+        "rh_study": "23 Habitacao",
+        "rh_id": "hab-oe-legenda-invariante",
+        "origin_row_sha256": "43753528f61ebd6321531c71d2510d90cbc8f592dfbe15b1c57b7c83d33057a6",
+        "exported_row_sha256": "f24bf46d34741999165aee98b7d5db589738a35c63cd523e1cfbd44c2eb9228e"
       }
     },
     "hab-oe-licenciamento": {
@@ -2701,14 +2795,14 @@
           "page": 243,
           "kind": "pdf"
         },
-        "excerpt": "15",
+        "excerpt": "Ação 1.2 Gestão urbanística e qualidade do edificiado 15",
         "reference_date": "2027"
       },
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-oe-licenciamento",
-        "origin_row_sha256": "203086fbf761ce3120dca20e4e9fcd101d0cc5c925a526a5f78a2aa455677c8f",
-        "exported_row_sha256": "c3ba47f5942a1133b055f1c435760f183b9826e91555a86403c6ca4c4778667c"
+        "origin_row_sha256": "7d55b389734d3cb38326ac12f1448e470da582773d18d62baae5ca4bf60c92c7",
+        "exported_row_sha256": "21e7ffe57c20ac5e2225f18fe3d242c22a03354ec7020a0ce02b5f7d97ed07f6"
       }
     },
     "hab-oe-oferta": {
@@ -2732,7 +2826,7 @@
         "rh_study": "23 Habitacao",
         "rh_id": "hab-oe-oferta",
         "origin_row_sha256": "cba7808beba204694f72bcf80388bf1fdf8c86e79203348468a8a8fc5268c860",
-        "exported_row_sha256": "dec9873789338b67ee20dbc310d22836b9975818ccac4a7d9ca25cd9842ff92e"
+        "exported_row_sha256": "31417f0edac6629d1427185a2fddd93a1282cb3bfa9359484afd26a17b4794e3"
       }
     },
     "hab-oe-oferta-publica": {
@@ -2749,14 +2843,14 @@
           "page": 243,
           "kind": "pdf"
         },
-        "excerpt": "1 071",
+        "excerpt": "Ação 1.1 Promoção da oferta e reabilitação habitacional 1 071",
         "reference_date": "2027"
       },
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-oe-oferta-publica",
-        "origin_row_sha256": "c0cb50d81f648cdd93dab3fccfb553e2fee4a6d60b5f256bfdd01600421dc464",
-        "exported_row_sha256": "be6ae9d06a16f42c8c2e62bc62449f5d8cc6516c10ed95772395bb834c4a0367"
+        "origin_row_sha256": "c5f829a65b76bde0549fbc1afd5f96bfa8dfc3deac58e467a36ea3630b907c84",
+        "exported_row_sha256": "7208737e1793d6c60cf48e94cf19bb50822d96fca4e793342295073ff5eacff1"
       }
     },
     "hab-pan-caucoes": {
@@ -2779,8 +2873,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-pan-caucoes",
-        "origin_row_sha256": "b3b14e39750ac96283620fcbe6dfe60267d102ee4f06369b69430eff431786a8",
-        "exported_row_sha256": "0e168832ff088c96d5f817602ac43c3e275ef2ba107f7d0b79de3749a13b6636"
+        "origin_row_sha256": "e4cacc6343ce5107aac9e5f47cb98975ffb4a04ae54e884cacc1f9296765e82a",
+        "exported_row_sha256": "ad281161ca8d4f41c7daec2c2a9ab7033b488a4cf3badf08220270747cb4039d"
       }
     },
     "hab-pan-controlo": {
@@ -2803,8 +2897,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-pan-controlo",
-        "origin_row_sha256": "7d8e835e1480aeba0a155b5f6eecc9940bef1e236031d6145633992acc2b1802",
-        "exported_row_sha256": "45b4ee27608a46d74be313a28cdeeb3674af724446d2cad762af73df8d00d09f"
+        "origin_row_sha256": "4453c8eda0c3a402fdaf1b1eabbc5eb1d36d4da9de8f70603299aab4db0e52bf",
+        "exported_row_sha256": "37e8de618bedf23aaa2b60fd4b59c48ab018734ef8bf4db9b68df4447d7e07fd"
       }
     },
     "hab-pan-tetos": {
@@ -2827,8 +2921,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-pan-tetos",
-        "origin_row_sha256": "2bbb585d2d4b98c651c320af5c2a9e1e376b55cf94eceb210325f20b20fc2cc5",
-        "exported_row_sha256": "f36f563c18c686e1f4dd81488f7003476fa24998b4012fc7567d9d7465eb45b2"
+        "origin_row_sha256": "241d1ba13f4d67ed08f79136947f07d2a717f8d38a6f2a000d51e705c08de704",
+        "exported_row_sha256": "424fc32229f3464c49eae3dbb91c573b0ec0414b97bc177ee77cb328c791e833"
       }
     },
     "hab-pcp-rendas": {
@@ -2850,8 +2944,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-pcp-rendas",
-        "origin_row_sha256": "e84190943441060d208d74cb5875a9052c86495902cf1d4fc6dd253c54a6d1e2",
-        "exported_row_sha256": "b2f36caa839263de5090f71e193b08278bd1cad9e4cee9648eea088ded28f4cb"
+        "origin_row_sha256": "c2a8a06499c9826f9b2ab0d8c28426fb07341b256445173a6b9c0ed3d6b3d0b9",
+        "exported_row_sha256": "1818a5d921f69015d981c84a779401622b523f5f2d82b9a5371ba00352592592"
       }
     },
     "hab-plataforma-reivindicacoes": {
@@ -2862,27 +2956,27 @@
         "name_source": "HTML; início literal único",
         "document": {
           "title": "Manifestação - Já não dá mais para viver assim!",
-          "edition": "[a verificar]",
+          "edition": "2026-10-10",
           "locator": "HTML; início literal único",
           "source_sha256": "bc347ecd05d35ec837e29569f4371bbdf942e5711b7bfb3a8d6a801e16c2f127",
           "kind": "html"
         },
         "excerpt": "Precisamos de tectos às rendas e limites ao aumento das prestações, de mais habitação pública e do fim dos benefícios fiscais para especulação financeira.",
-        "reference_date": "[a verificar]"
+        "reference_date": "2026-10-10"
       },
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-plataforma-reivindicacoes",
-        "origin_row_sha256": "0f86b400d68f66c34ab230740b6f50fa81854dca2d6c3ab03178dea46c8ec243",
-        "exported_row_sha256": "e0d9a915ff36d272ad58d6f912427163976a759ad24af74220ea32bf900c9c5b"
+        "origin_row_sha256": "c23831518b750011097f031421cebd3176f9a6690e7d1f15aefdd5678c59f893",
+        "exported_row_sha256": "5f48fd3b7fac4f7cf1e168c1edb5ff2e68fc66ddc368cf5f41af3e2e3e2e0abb"
       }
     },
     "hab-prc-hicp-ainr-a-rch-a-avg-cp041-eu27_2020-2025": {
       "linha": {
         "id": "hab-prc-hicp-ainr-a-rch-a-avg-cp041-eu27_2020-2025",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, annual data",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Índice harmonizado de preços no consumidor, rendas efetivas da habitação, variação da média anual, União Europeia, 2025",
+        "name_source": "label; dimension.unit.category.label.RCH_A_AVG; dimension.geo.category.label.EU27_2020; dimension.time.category.label.2025",
         "document": {
           "title": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, annual data",
           "edition": "2025",
@@ -2896,16 +2990,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-prc-hicp-ainr-a-rch-a-avg-cp041-eu27_2020-2025",
-        "origin_row_sha256": "b05d193995a39ed63a62ab0347efccb7e8dbfaf86e2b94e7b3bd6f6d43fe8b53",
-        "exported_row_sha256": "b19ee3bbf5df638836196109b6473742f27259e5585723dd2024357b3ba09f64"
+        "origin_row_sha256": "055c6d67a3eb78906f2f3367379bdf9ac6f64fd4d7fb901a7b84dda9304c3fab",
+        "exported_row_sha256": "7a180bac4f0fdc6f5e686b01fbb00d1a8a9361828220e3ae5f77bdb18a2cc022"
       }
     },
     "hab-prc-hicp-ainr-a-rch-a-avg-cp041-fi-2025": {
       "linha": {
         "id": "hab-prc-hicp-ainr-a-rch-a-avg-cp041-fi-2025",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, annual data",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Índice harmonizado de preços no consumidor, rendas efetivas da habitação, variação da média anual, Finlândia, 2025",
+        "name_source": "label; dimension.unit.category.label.RCH_A_AVG; dimension.geo.category.label.FI; dimension.time.category.label.2025",
         "document": {
           "title": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, annual data",
           "edition": "2025",
@@ -2919,16 +3013,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-prc-hicp-ainr-a-rch-a-avg-cp041-fi-2025",
-        "origin_row_sha256": "17508840bf9202ba5a501f7dff6efc7282657966e32bba15216000c66bf9d48b",
-        "exported_row_sha256": "590195a687f7563c96d16b5d762e7c05ecfb8deccb0ddccb7c42ad93f631489f"
+        "origin_row_sha256": "878fe10253cf4f191d02d4ccccbd7a2d3c0332a66f0c376db7cb5acce0e9e5fd",
+        "exported_row_sha256": "622ecad496f4faebad101e7588e4a76c83cc337933bc12deca40d393e2bbbe01"
       }
     },
     "hab-prc-hicp-ainr-a-rch-a-avg-cp041-hr-2025": {
       "linha": {
         "id": "hab-prc-hicp-ainr-a-rch-a-avg-cp041-hr-2025",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, annual data",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Índice harmonizado de preços no consumidor, rendas efetivas da habitação, variação da média anual, Croácia, 2025",
+        "name_source": "label; dimension.unit.category.label.RCH_A_AVG; dimension.geo.category.label.HR; dimension.time.category.label.2025",
         "document": {
           "title": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, annual data",
           "edition": "2025",
@@ -2942,16 +3036,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-prc-hicp-ainr-a-rch-a-avg-cp041-hr-2025",
-        "origin_row_sha256": "449328437b79cc37b3afa83e1a653328b003ef13de75105b1472d2489cfec505",
-        "exported_row_sha256": "b54ae320a4eb3804e81c8a5e744b63d73ba251c6ba3ff6d2f48cb28453970dd5"
+        "origin_row_sha256": "823ae7d3a838f369a7c6d01611f45aaa0214bfb0d05d7d421b2b080c8d6d1f0a",
+        "exported_row_sha256": "c07b17e0db8330c329b0e974fb1e2bdd1e9f2f57179a3c40a69dac7efda6c6e7"
       }
     },
     "hab-prc-hicp-ainr-a-rch-a-avg-cp041-pt-2025": {
       "linha": {
         "id": "hab-prc-hicp-ainr-a-rch-a-avg-cp041-pt-2025",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, annual data",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Índice harmonizado de preços no consumidor, rendas efetivas da habitação, variação da média anual, Portugal, 2025",
+        "name_source": "label; dimension.unit.category.label.RCH_A_AVG; dimension.geo.category.label.PT; dimension.time.category.label.2025",
         "document": {
           "title": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, annual data",
           "edition": "2025",
@@ -2965,16 +3059,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-prc-hicp-ainr-a-rch-a-avg-cp041-pt-2025",
-        "origin_row_sha256": "0d8da4f4117fad72eb871650331ef65ef0fb2a4aaad36a2b3b9ec09106c2b6cc",
-        "exported_row_sha256": "9b81ae79fb6aa40d48b139f6875eeb0eb397487f6348bf37ba23fabc97ac73a7"
+        "origin_row_sha256": "b69241c5f3527dec50cbbabbfae014508a540c91e2dce317ae71ee8e86022252",
+        "exported_row_sha256": "73289ff4aa9103a93a3f7859b1e736dadfe033b8f03b81db1d25a283bdde9180"
       }
     },
     "hab-prc-hicp-minr-m-rch-a-cp041-eu27_2020-2026-09": {
       "linha": {
         "id": "hab-prc-hicp-minr-m-rch-a-cp041-eu27_2020-2026-09",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Índice harmonizado de preços no consumidor, rendas efetivas da habitação, variação homóloga, União Europeia, setembro de 2026",
+        "name_source": "label; dimension.unit.category.label.RCH_A; dimension.geo.category.label.EU27_2020; dimension.time.category.label.2026-09",
         "document": {
           "title": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",
           "edition": "2026-09",
@@ -2988,16 +3082,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-prc-hicp-minr-m-rch-a-cp041-eu27_2020-2026-09",
-        "origin_row_sha256": "d52082d7235763637ccfea7d3d83d49e7cc490d5fe93c0b9e52e4d5f669d32b7",
-        "exported_row_sha256": "839c2736de6d5a58cdc82a6dba30b2329222f37c1c8aa508ef0df1e9efc2809a"
+        "origin_row_sha256": "57c8dec0c5853f49d1bc552528c6b3a3c14de87bd605a62b85f1d8de1862d890",
+        "exported_row_sha256": "2e30e79586888a4e4dd36c3705f2daeb720ec2d9f5c434c6db4fa22d4793a145"
       }
     },
     "hab-prc-hicp-minr-m-rch-a-cp041-pt-2026-09": {
       "linha": {
         "id": "hab-prc-hicp-minr-m-rch-a-cp041-pt-2026-09",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Índice harmonizado de preços no consumidor, rendas efetivas da habitação, variação homóloga, Portugal, setembro de 2026",
+        "name_source": "label; dimension.unit.category.label.RCH_A; dimension.geo.category.label.PT; dimension.time.category.label.2026-09",
         "document": {
           "title": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",
           "edition": "2026-09",
@@ -3011,16 +3105,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-prc-hicp-minr-m-rch-a-cp041-pt-2026-09",
-        "origin_row_sha256": "ed526aaa2521b89b812c5dd54609218af18d751c73c1578ad3d85d51b8ceb373",
-        "exported_row_sha256": "a350926a8f89d8c52b2f1eb7950da2f4d4e0627dc06a9ebc58daef47d3eef3c2"
+        "origin_row_sha256": "6f43d5730e5a505b417253502111b6992327ce08e7757f982d4c0c8cee8cfd68",
+        "exported_row_sha256": "69e3832055410fa3673e867e73338f7d6df38ce4f9529abf840ae411ee3c922e"
       }
     },
     "hab-prc-hpi-q-q-total-i15-q-eu27_2020-2026-q2": {
       "linha": {
         "id": "hab-prc-hpi-q-q-total-i15-q-eu27_2020-2026-q2",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "House price index - quarterly data",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Índice de preços da habitação, índice trimestral, 2015 igual a cem, União Europeia, 2.º trimestre de 2026",
+        "name_source": "label; dimension.unit.category.label.I15_Q; dimension.geo.category.label.EU27_2020; dimension.time.category.label.2026-Q2",
         "document": {
           "title": "House price index - quarterly data",
           "edition": "2026-Q2",
@@ -3034,16 +3128,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-prc-hpi-q-q-total-i15-q-eu27_2020-2026-q2",
-        "origin_row_sha256": "dcc0023260b5820f45bbe88e984777bbe9f98a2502d2c35ddeb7006e5de26f42",
-        "exported_row_sha256": "4777d62df0472de5ac7bafa4120d0212158667ea7f7e4f9ab55ed99255417ab6"
+        "origin_row_sha256": "9978a12bc92ef1fb07e90009642d863fcf6aad029fb9c7f8dfc1720cbd6525c2",
+        "exported_row_sha256": "cbcd03a72a5ebc0f40c7b912f328be8143e457a5b8765cbc66a66597928eaf0d"
       }
     },
     "hab-prc-hpi-q-q-total-i15-q-fi-2026-q2": {
       "linha": {
         "id": "hab-prc-hpi-q-q-total-i15-q-fi-2026-q2",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "House price index - quarterly data",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Índice de preços da habitação, índice trimestral, 2015 igual a cem, Finlândia, 2.º trimestre de 2026",
+        "name_source": "label; dimension.unit.category.label.I15_Q; dimension.geo.category.label.FI; dimension.time.category.label.2026-Q2",
         "document": {
           "title": "House price index - quarterly data",
           "edition": "2026-Q2",
@@ -3057,16 +3151,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-prc-hpi-q-q-total-i15-q-fi-2026-q2",
-        "origin_row_sha256": "cea05cc20a6fced39f46049d06aacc1ae098645b632bf690c5b3d95c74260227",
-        "exported_row_sha256": "17183bec752787adfd254cd7ecc2003cacce315df621d3a76409fd61776b02f6"
+        "origin_row_sha256": "31062edb8aaeb5a52687b322b47fd985b8d761c54b542d7f299cf73d2188dce0",
+        "exported_row_sha256": "1e79039f57afaf953a92aa6fa987f52e13fd4c6bc1d1d02a89b73a9908b3c915"
       }
     },
     "hab-prc-hpi-q-q-total-i15-q-hu-2026-q2": {
       "linha": {
         "id": "hab-prc-hpi-q-q-total-i15-q-hu-2026-q2",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "House price index - quarterly data",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Índice de preços da habitação, índice trimestral, 2015 igual a cem, Hungria, 2.º trimestre de 2026",
+        "name_source": "label; dimension.unit.category.label.I15_Q; dimension.geo.category.label.HU; dimension.time.category.label.2026-Q2",
         "document": {
           "title": "House price index - quarterly data",
           "edition": "2026-Q2",
@@ -3080,16 +3174,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-prc-hpi-q-q-total-i15-q-hu-2026-q2",
-        "origin_row_sha256": "985c26d7cb3effd371ba768f7fbe831eebae0c18fba4886195d03940ea0e2493",
-        "exported_row_sha256": "2bbfad70cbab3ca946b675e21e1294396a67fdb7b2229b349425629137a443f2"
+        "origin_row_sha256": "27cd2ee51703a6d2069bc3207992d5734ed6722809b82861870b815979e130c9",
+        "exported_row_sha256": "95d420a58567c120a27a8f51a76d13f6172a654d0e9bb89b24f46ce2933e9bc8"
       }
     },
     "hab-prc-hpi-q-q-total-i15-q-pt-2026-q2": {
       "linha": {
         "id": "hab-prc-hpi-q-q-total-i15-q-pt-2026-q2",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "House price index - quarterly data",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Índice de preços da habitação, índice trimestral, 2015 igual a cem, Portugal, 2.º trimestre de 2026",
+        "name_source": "label; dimension.unit.category.label.I15_Q; dimension.geo.category.label.PT; dimension.time.category.label.2026-Q2",
         "document": {
           "title": "House price index - quarterly data",
           "edition": "2026-Q2",
@@ -3103,16 +3197,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-prc-hpi-q-q-total-i15-q-pt-2026-q2",
-        "origin_row_sha256": "ca1d6da87bc3be78299c7d4b8669c004b4fb78bd891bf3e10e8af0dd99d527e2",
-        "exported_row_sha256": "a0230fb74b9777668c4bbc650b911fac32a43e5a5e35a832087e966a1171614e"
+        "origin_row_sha256": "7e5f7d9e1a72889fcec564c2142b20f585cad8a66824cfbd490d638c077f1c8e",
+        "exported_row_sha256": "c74cb9cf1c87112c48813085d4b5105251e5e7ddcc22210dad84b297a6b6d126"
       }
     },
     "hab-prc-hpi-q-q-total-rch-a-eu27_2020-2026-q2": {
       "linha": {
         "id": "hab-prc-hpi-q-q-total-rch-a-eu27_2020-2026-q2",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "House price index - quarterly data",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Índice de preços da habitação, variação homóloga, União Europeia, 2.º trimestre de 2026",
+        "name_source": "label; dimension.unit.category.label.RCH_A; dimension.geo.category.label.EU27_2020; dimension.time.category.label.2026-Q2",
         "document": {
           "title": "House price index - quarterly data",
           "edition": "2026-Q2",
@@ -3126,16 +3220,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-prc-hpi-q-q-total-rch-a-eu27_2020-2026-q2",
-        "origin_row_sha256": "bcd566640015200ae37c23dd5133f1cb91e0702d41836a88381fa856b9f8bad7",
-        "exported_row_sha256": "30bc37832b0e27552d6e0f093c5e91cfb9ab2767e0ce1983c3a9702434d88b22"
+        "origin_row_sha256": "0bb37483a6019a9cc689e9dc4887588716c6281e15ed3c40c4280050d9fcea7e",
+        "exported_row_sha256": "db4f34d4a8539b47066186010286e5c821b667573cfe5d8c00ccc47137b4ab97"
       }
     },
     "hab-prc-hpi-q-q-total-rch-a-fi-2026-q2": {
       "linha": {
         "id": "hab-prc-hpi-q-q-total-rch-a-fi-2026-q2",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "House price index - quarterly data",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Índice de preços da habitação, variação homóloga, Finlândia, 2.º trimestre de 2026",
+        "name_source": "label; dimension.unit.category.label.RCH_A; dimension.geo.category.label.FI; dimension.time.category.label.2026-Q2",
         "document": {
           "title": "House price index - quarterly data",
           "edition": "2026-Q2",
@@ -3149,16 +3243,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-prc-hpi-q-q-total-rch-a-fi-2026-q2",
-        "origin_row_sha256": "a7b47decab5e8e53a53d4d663d17b1a4e09b9f2478cc2d336ea11f34883a04dc",
-        "exported_row_sha256": "64dac00f4bc3d849e6dc93db7aaba00a524f53c26115ec7acff730cbb855525d"
+        "origin_row_sha256": "fb06229a4cf93b93c676bf3ea102565cd52c4f7d7847e60f77aa8457da8843e1",
+        "exported_row_sha256": "bfcaed1bc628b0b73557053d8b7a0fcbf4f48a79e2198a4711d4129d9485b61b"
       }
     },
     "hab-prc-hpi-q-q-total-rch-a-pt-2026-q2": {
       "linha": {
         "id": "hab-prc-hpi-q-q-total-rch-a-pt-2026-q2",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "House price index - quarterly data",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Índice de preços da habitação, variação homóloga, Portugal, 2.º trimestre de 2026",
+        "name_source": "label; dimension.unit.category.label.RCH_A; dimension.geo.category.label.PT; dimension.time.category.label.2026-Q2",
         "document": {
           "title": "House price index - quarterly data",
           "edition": "2026-Q2",
@@ -3172,8 +3266,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-prc-hpi-q-q-total-rch-a-pt-2026-q2",
-        "origin_row_sha256": "f078eb267c114e3ffc8aca77f0a76eacd5e637e1d68d0cc39dbe1af32385e15f",
-        "exported_row_sha256": "8eb230bb88273632daf77d02dbd7283c35e93bfd975e871b5778717279d3a5ee"
+        "origin_row_sha256": "75ca3c1830a96d7ffc8fe7251da704bc8a7a7cbb8d1b10c88de21d17700f6687",
+        "exported_row_sha256": "04e294621ab6c3ca84fd3c1da337bfc6191decb2c35639dd453b2511dbefcc75"
       }
     },
     "hab-ps-mais-valias": {
@@ -3195,8 +3289,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ps-mais-valias",
-        "origin_row_sha256": "6c25ab2189107fd0388ba6090f57fba47a9a1559aeabe21e9647752a28bcdcc4",
-        "exported_row_sha256": "31db9207191f11817962830c8f6c8c26e279d8eb404c710273f3e8bd965b219e"
+        "origin_row_sha256": "716187edb6bc8911b072f19663cf6d9110b29d6dfd533179e1e9e47cc90e6502",
+        "exported_row_sha256": "9f51c6154d38031112838d0813580af7cb5b54bd775e3d31dadcdf0ec0394ae5"
       }
     },
     "hab-ps-rendas": {
@@ -3218,8 +3312,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ps-rendas",
-        "origin_row_sha256": "ed54cdcf52a50bf36797f9e963243a25fe1093ce09ea55f1ac3efb89f0a29567",
-        "exported_row_sha256": "ae057a727c50b6d9b9489a42963ff4d21160cc2764f2c0a74120d998ca48b434"
+        "origin_row_sha256": "8e07a6ae26e88674c0de1f1e7848b4e7aa13374c7ae42e1149b98055673cd25e",
+        "exported_row_sha256": "f81345aeb1527117d1252902355881061b7e62a816b123ed15fc76c51d186fba"
       }
     },
     "hab-ps-vazias": {
@@ -3241,16 +3335,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ps-vazias",
-        "origin_row_sha256": "54c352c94e404cb1c6562d3e41d014d5b74674a310f033ec4008ccaaa7be678d",
-        "exported_row_sha256": "b3447947b85d11124704e53f3336f2e0a2854d9e5c3773d6cfa06b9dec61effa"
+        "origin_row_sha256": "440141ea2c05d99c424df73040c80407e6966d0bcedd12d78f8f8e749cb38b55",
+        "exported_row_sha256": "661c547c2b4d55989e4825e5eca5b5d1077ed16425a24cc5e6dee736754f4fc2"
       }
     },
     "hab-sts-cobp-a-a-bprm-dw-cpa-f41001-x-410014-nsa-ths-eu27_2020-2025": {
       "linha": {
         "id": "hab-sts-cobp-a-a-bprm-dw-cpa-f41001-x-410014-nsa-ths-eu27_2020-2025",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Building permits by type of building - annual data",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Alojamentos licenciados, milhares, União Europeia, 2025",
+        "name_source": "label; dimension.unit.category.label.THS; dimension.geo.category.label.EU27_2020; dimension.time.category.label.2025",
         "document": {
           "title": "Building permits by type of building - annual data",
           "edition": "2025",
@@ -3264,16 +3358,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-sts-cobp-a-a-bprm-dw-cpa-f41001-x-410014-nsa-ths-eu27_2020-2025",
-        "origin_row_sha256": "82e31c94a1790f2435f498b3d1a74da22c41c7962e01ab50a79a0f0935199d7b",
-        "exported_row_sha256": "c289a80f2a27bcc8d953d8784b667303c7a8375e3effaa3ecfe89ab28b428512"
+        "origin_row_sha256": "7813bac6a74b45352c1625c4c2e93cd25af011cc657322f3009d64e885f72500",
+        "exported_row_sha256": "e8f87d3f6ac76b00b82d7b256bf6ba8388b3d56839e24ace8c189314610c32f0"
       }
     },
     "hab-sts-cobp-a-a-bprm-dw-cpa-f41001-x-410014-nsa-ths-pt-2025": {
       "linha": {
         "id": "hab-sts-cobp-a-a-bprm-dw-cpa-f41001-x-410014-nsa-ths-pt-2025",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Building permits by type of building - annual data",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Alojamentos licenciados, milhares, Portugal, 2025",
+        "name_source": "label; dimension.unit.category.label.THS; dimension.geo.category.label.PT; dimension.time.category.label.2025",
         "document": {
           "title": "Building permits by type of building - annual data",
           "edition": "2025",
@@ -3287,16 +3381,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-sts-cobp-a-a-bprm-dw-cpa-f41001-x-410014-nsa-ths-pt-2025",
-        "origin_row_sha256": "d80849a7f47b852dae111945d6a06706abf185296f25373f1cb19e316e1fcfde",
-        "exported_row_sha256": "63542b9144b0f096d376b1326c8030921cf7672016e94564e48f45f1047ab1cd"
+        "origin_row_sha256": "a7f6e10ecd550f03ba02fbda31adaca0e6a799ef1914512dc249ff43eeec452e",
+        "exported_row_sha256": "15e9310bc20de2ad0a7c1db8037eb10121910a16024ac361578fc14ef88b28e8"
       }
     },
     "hab-tipsho10-a-i15-a-avg-eu27_2020-2025": {
       "linha": {
         "id": "hab-tipsho10-a-i15-a-avg-eu27_2020-2025",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "House price index, deflated - annual data",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Índice de preços da habitação, descontada a inflação, índice, média de 2015 igual a cem, União Europeia, 2025",
+        "name_source": "label; dimension.unit.category.label.I15_A_AVG; dimension.geo.category.label.EU27_2020; dimension.time.category.label.2025",
         "document": {
           "title": "House price index, deflated - annual data",
           "edition": "2025",
@@ -3310,16 +3404,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-tipsho10-a-i15-a-avg-eu27_2020-2025",
-        "origin_row_sha256": "e9b9a259cc3ee0b463d0fafded888d32ad359ff0b5113725e23db26ffd565014",
-        "exported_row_sha256": "215de96dbf5eecb17f1df13220c1673592a8730133208891320306c9122d88e8"
+        "origin_row_sha256": "7e9be06e47a4277acdd86373bbbcd65592e6766473793951a0a6c42e0356df94",
+        "exported_row_sha256": "141244476fbd7e2f7dcaf0e684d0e9708ab392329ae5cef53b080fe4d735a372"
       }
     },
     "hab-tipsho10-a-i15-a-avg-fi-2025": {
       "linha": {
         "id": "hab-tipsho10-a-i15-a-avg-fi-2025",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "House price index, deflated - annual data",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Índice de preços da habitação, descontada a inflação, índice, média de 2015 igual a cem, Finlândia, 2025",
+        "name_source": "label; dimension.unit.category.label.I15_A_AVG; dimension.geo.category.label.FI; dimension.time.category.label.2025",
         "document": {
           "title": "House price index, deflated - annual data",
           "edition": "2025",
@@ -3333,16 +3427,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-tipsho10-a-i15-a-avg-fi-2025",
-        "origin_row_sha256": "936c1baac09eb9b700c8b1061551f43b445b3f63028785b18ab8320d59dd52d1",
-        "exported_row_sha256": "2c525aac6c1bc451f7fab88398f3c85d62f3eca0b4e5ce8eeee32d897d6e475f"
+        "origin_row_sha256": "a2c791013b1b23755de1e2fb0c59d0e7924814b18f7bbc737083beecdd208e22",
+        "exported_row_sha256": "867cd3c0109fdadd3bfce1e56c96edd90bb5de3216c76ad04f14c58fa4e97e70"
       }
     },
     "hab-tipsho10-a-i15-a-avg-pt-2020": {
       "linha": {
         "id": "hab-tipsho10-a-i15-a-avg-pt-2020",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "House price index, deflated - annual data",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Índice de preços da habitação, descontada a inflação, índice, média de 2015 igual a cem, Portugal, 2020",
+        "name_source": "label; dimension.unit.category.label.I15_A_AVG; dimension.geo.category.label.PT; dimension.time.category.label.2020",
         "document": {
           "title": "House price index, deflated - annual data",
           "edition": "2020",
@@ -3356,16 +3450,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-tipsho10-a-i15-a-avg-pt-2020",
-        "origin_row_sha256": "5735279f8f97db2d20886a3d1fa07dfbd54cb6a9bd59bc15bbb3a7a9c97206c1",
-        "exported_row_sha256": "6c1c4378cd651ef75b9f75ab40687331963b9d64db3e6541742b6a16a93b8847"
+        "origin_row_sha256": "58a4dd3ab17231080a306424d15a93214ad5f89140e11dc7e82794edee1eb762",
+        "exported_row_sha256": "b5e0c498be5c7aad7ca0b74cca3a606a26d890e24397d2e894623eab7eb70f05"
       }
     },
     "hab-tipsho10-a-i15-a-avg-pt-2025": {
       "linha": {
         "id": "hab-tipsho10-a-i15-a-avg-pt-2025",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "House price index, deflated - annual data",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Índice de preços da habitação, descontada a inflação, índice, média de 2015 igual a cem, Portugal, 2025",
+        "name_source": "label; dimension.unit.category.label.I15_A_AVG; dimension.geo.category.label.PT; dimension.time.category.label.2025",
         "document": {
           "title": "House price index, deflated - annual data",
           "edition": "2025",
@@ -3379,16 +3473,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-tipsho10-a-i15-a-avg-pt-2025",
-        "origin_row_sha256": "f56a344d996f039e7bde6f90f427d4d5e8d6c3116fcd57b331ab5a8a46e12c7c",
-        "exported_row_sha256": "9c175b964fd5028f6117213d56caad3e8bbaf1669b8264a956fcef14b6685ff1"
+        "origin_row_sha256": "f30a9a2f75e18b36e94d47895b0e71dbbf04050326f60e0428d050db63cb8fc7",
+        "exported_row_sha256": "cf88bd3c5d06bce76b5f800172b00f7a9568c501f871e4be87fb2ebe48596e8f"
       }
     },
     "hab-tipsho10-a-rch-a-avg-eu27_2020-2025": {
       "linha": {
         "id": "hab-tipsho10-a-rch-a-avg-eu27_2020-2025",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "House price index, deflated - annual data",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Índice de preços da habitação, descontada a inflação, variação da média anual, União Europeia, 2025",
+        "name_source": "label; dimension.unit.category.label.RCH_A_AVG; dimension.geo.category.label.EU27_2020; dimension.time.category.label.2025",
         "document": {
           "title": "House price index, deflated - annual data",
           "edition": "2025",
@@ -3402,16 +3496,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-tipsho10-a-rch-a-avg-eu27_2020-2025",
-        "origin_row_sha256": "b2572edeb2a0bc7f0241a3c3e8afe7072d2c1191254ec2f53774fa7dadeda371",
-        "exported_row_sha256": "90798579d5225f3c5a2339a3af0ab5e35acd5ce04ab6968361bc0b211a7cddd1"
+        "origin_row_sha256": "af38e12d097a7111fd883290030019d1df354e914bbce170c96dfcf6a3525f33",
+        "exported_row_sha256": "e9cbf1f0dd8137c5a9143e59b8e2be1202472b448433f6ae2777464be14dfa60"
       }
     },
     "hab-tipsho10-a-rch-a-avg-pt-2025": {
       "linha": {
         "id": "hab-tipsho10-a-rch-a-avg-pt-2025",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "House price index, deflated - annual data",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Índice de preços da habitação, descontada a inflação, variação da média anual, Portugal, 2025",
+        "name_source": "label; dimension.unit.category.label.RCH_A_AVG; dimension.geo.category.label.PT; dimension.time.category.label.2025",
         "document": {
           "title": "House price index, deflated - annual data",
           "edition": "2025",
@@ -3425,16 +3519,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-tipsho10-a-rch-a-avg-pt-2025",
-        "origin_row_sha256": "3283f6dc1ed44de9195cbf53157633d9194d4554eec77d2432b595a1f89faf75",
-        "exported_row_sha256": "a84deea7b9eb46e64f413a8bd9018c23ea591bec4cc9e714f70aecabeeb00147"
+        "origin_row_sha256": "89d3c7e027441acb7a2e8f9412e9208feb03998c08ebcb41a1a56f00984c1934",
+        "exported_row_sha256": "dfe2ebc068e71e5a7c2e7f82dc22856d6c966fe73e40af83fd396e6c26b97b99"
       }
     },
     "hab-tipsho60-a-ptir-i15-eu27_2020-2024": {
       "linha": {
         "id": "hab-tipsho60-a-ptir-i15-eu27_2020-2024",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Standardised house price-to-income ratio - annual data",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Rácio padronizado entre preços da habitação e rendimento, índice, 2015 igual a cem, União Europeia, 2024",
+        "name_source": "label; dimension.unit.category.label.PTIR_I15; dimension.geo.category.label.EU27_2020; dimension.time.category.label.2024",
         "document": {
           "title": "Standardised house price-to-income ratio - annual data",
           "edition": "2024",
@@ -3448,16 +3542,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-tipsho60-a-ptir-i15-eu27_2020-2024",
-        "origin_row_sha256": "b20f1fc65991a2dc0edb1c266abe06311ab4ab47cec47d489e8e2ff51e44d325",
-        "exported_row_sha256": "4bef228e466fccab6f27b3a03821810887547fe5ca0bdcef68aad6527aacf779"
+        "origin_row_sha256": "e53e400bc4f9290e1378567dcc265246da3231eaa7ab272a3e256f40076ac663",
+        "exported_row_sha256": "cc9d7221f4934c641ecd74229b6afe8d6c689da0ca343e44eaeb2af516514671"
       }
     },
     "hab-tipsho60-a-ptir-i15-pt-2019": {
       "linha": {
         "id": "hab-tipsho60-a-ptir-i15-pt-2019",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Standardised house price-to-income ratio - annual data",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Rácio padronizado entre preços da habitação e rendimento, índice, 2015 igual a cem, Portugal, 2019",
+        "name_source": "label; dimension.unit.category.label.PTIR_I15; dimension.geo.category.label.PT; dimension.time.category.label.2019",
         "document": {
           "title": "Standardised house price-to-income ratio - annual data",
           "edition": "2019",
@@ -3471,16 +3565,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-tipsho60-a-ptir-i15-pt-2019",
-        "origin_row_sha256": "8133b4a80296192bb8d67d36a68f3797fe804c7c2f7502d9964e4a31403a3fb4",
-        "exported_row_sha256": "7e56fed77a0e469f0a0ff62e46601797bbded59976cae303a5a963fbb7667d2d"
+        "origin_row_sha256": "c10d08c22fb95a49677df1461395ddeef4e3ed977ea3e0b6a0078f8684805381",
+        "exported_row_sha256": "89ec8907321c9bdcda948fe2bc315a53ed2c7b4cf7468132fa83ce7a65e07f93"
       }
     },
     "hab-tipsho60-a-ptir-i15-pt-2024": {
       "linha": {
         "id": "hab-tipsho60-a-ptir-i15-pt-2024",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Standardised house price-to-income ratio - annual data",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Rácio padronizado entre preços da habitação e rendimento, índice, 2015 igual a cem, Portugal, 2024",
+        "name_source": "label; dimension.unit.category.label.PTIR_I15; dimension.geo.category.label.PT; dimension.time.category.label.2024",
         "document": {
           "title": "Standardised house price-to-income ratio - annual data",
           "edition": "2024",
@@ -3494,16 +3588,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-tipsho60-a-ptir-i15-pt-2024",
-        "origin_row_sha256": "ca61e708737fbbb016839769e87cb5c39b48f6859db712f662d1bc249e8f7378",
-        "exported_row_sha256": "c68a1ca70d655884233df06117105c76cef2e4b1dab35ca9571c6dcc74ba8a64"
+        "origin_row_sha256": "8c4c11a3fca5f9be1e6147b5f3a347c372d82bfa8d2b294213ea94001bfa8239",
+        "exported_row_sha256": "0ca38b704e49ae18720dbbed084a4b37fac78eb11ba1d2ee1f280a3773bae4e9"
       }
     },
     "hab-tipsho60-a-ptir-i15-ro-2024": {
       "linha": {
         "id": "hab-tipsho60-a-ptir-i15-ro-2024",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Standardised house price-to-income ratio - annual data",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Rácio padronizado entre preços da habitação e rendimento, índice, 2015 igual a cem, Roménia, 2024",
+        "name_source": "label; dimension.unit.category.label.PTIR_I15; dimension.geo.category.label.RO; dimension.time.category.label.2024",
         "document": {
           "title": "Standardised house price-to-income ratio - annual data",
           "edition": "2024",
@@ -3517,16 +3611,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-tipsho60-a-ptir-i15-ro-2024",
-        "origin_row_sha256": "6546844b48af61a276a31460a9157287db2e02977e8b1a884c59176eb31391ad",
-        "exported_row_sha256": "1e6332253d2108a04f3841c4729bfe1bb09bc48a4a319131244eed549a03c687"
+        "origin_row_sha256": "ad4484feaa8e3bbc32a8c75e9b1193d5838c2ace82b8f485932a0fbbb03925a0",
+        "exported_row_sha256": "eabee89504be48b6b5daf4d906986e3f90b83168df717e0a792d03cd0b827252"
       }
     },
     "hab-tipsho60-a-ptir-lt-avg-eu27_2020-2024": {
       "linha": {
         "id": "hab-tipsho60-a-ptir-lt-avg-eu27_2020-2024",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Standardised house price-to-income ratio - annual data",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Rácio padronizado entre preços da habitação e rendimento, índice, média de longo prazo igual a cem, União Europeia, 2024",
+        "name_source": "label; dimension.unit.category.label.PTIR_LT_AVG; dimension.geo.category.label.EU27_2020; dimension.time.category.label.2024",
         "document": {
           "title": "Standardised house price-to-income ratio - annual data",
           "edition": "2024",
@@ -3540,16 +3634,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-tipsho60-a-ptir-lt-avg-eu27_2020-2024",
-        "origin_row_sha256": "4784a0bd0c1c1b8b288a914e1a267b721748376568a73f3111f61b87db9fe4f2",
-        "exported_row_sha256": "5ca04964f63300e5e8e0d425d611e0deaf2f30256dc89fd7d0b66bf5cfcad1b4"
+        "origin_row_sha256": "f44c0fe744a32e39f24a950ada4558ad9dd0d3c337b25ca6a9d7ffeb16b8a2e1",
+        "exported_row_sha256": "8d7f1e62f98ca86b89e16448e8723c9f5d5aee74a340ede18cbb50262d14ab32"
       }
     },
     "hab-tipsho60-a-ptir-lt-avg-pt-2024": {
       "linha": {
         "id": "hab-tipsho60-a-ptir-lt-avg-pt-2024",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Standardised house price-to-income ratio - annual data",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Rácio padronizado entre preços da habitação e rendimento, índice, média de longo prazo igual a cem, Portugal, 2024",
+        "name_source": "label; dimension.unit.category.label.PTIR_LT_AVG; dimension.geo.category.label.PT; dimension.time.category.label.2024",
         "document": {
           "title": "Standardised house price-to-income ratio - annual data",
           "edition": "2024",
@@ -3563,8 +3657,31 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-tipsho60-a-ptir-lt-avg-pt-2024",
-        "origin_row_sha256": "adc30cb97c28b20698be454a7a644a8eb22b523c091c947c39c121fd9c5c5760",
-        "exported_row_sha256": "daae78df9f148c87f65f584c08d097fd4141ca89f93209db951ceeeb38f71fe0"
+        "origin_row_sha256": "21cc23df15833b8275882aa7820157748def862a166706c245f89f52131ca481",
+        "exported_row_sha256": "6f92ccd3aeab0a8f940ce0e0bc79a9540e88daf2a5d0cd48453590ebef6eb5e7"
+      }
+    },
+    "hab-tipsho60-a-ptir-lt-avg-ro-2024": {
+      "linha": {
+        "id": "hab-tipsho60-a-ptir-lt-avg-ro-2024",
+        "study": "a-casa-em-portugal-e-na-europa",
+        "name": "Rácio padronizado entre preços da habitação e rendimento, índice, média de longo prazo igual a cem, Roménia, 2024",
+        "name_source": "label; dimension.unit.category.label.PTIR_LT_AVG; dimension.geo.category.label.RO; dimension.time.category.label.2024",
+        "document": {
+          "title": "Standardised house price-to-income ratio - annual data",
+          "edition": "2024",
+          "locator": "freq=A; unit=PTIR_LT_AVG; geo=RO; time=2024; value[799]",
+          "source_sha256": "85a9de42aa41ef015150da57af82802ea164b3bbde1f706ddb241204dc5cb1e6",
+          "kind": "serie"
+        },
+        "excerpt": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PTIR_LT_AVG\", \"geo\": \"RO\", \"time\": \"2024\"}, \"value\": \"48.23\", \"status\": null}",
+        "reference_date": "2024"
+      },
+      "origem": {
+        "rh_study": "23 Habitacao",
+        "rh_id": "hab-tipsho60-a-ptir-lt-avg-ro-2024",
+        "origin_row_sha256": "7889084e63446fe58bb6538a90229b9241a043287efe66812cb568c222109786",
+        "exported_row_sha256": "2af823a3908e4cf947ca599b82d1c14b7bab0ac7e6628dd3ac0f970757de419e"
       }
     },
     "hab-votacao-arrendamento": {
@@ -3586,8 +3703,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-votacao-arrendamento",
-        "origin_row_sha256": "04914ad6f3259a10e9aa35a708970f445f4527b6846cdbc5872e8045b5a132e7",
-        "exported_row_sha256": "26fa00f450879fed965191de0824fd5bc31dd208f6eba5b61f1814cb2702c40b"
+        "origin_row_sha256": "dcb3f726d84a38772d97cbb902fcdb11e1b997acd8cf461f91af68940f70dc14",
+        "exported_row_sha256": "0af683f00276c82098fb4e7bf4c6db1e5aff7327b6276d417b22b9ddfed5b641"
       }
     },
     "hab-votacao-chega": {
@@ -3609,8 +3726,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-votacao-chega",
-        "origin_row_sha256": "0eed67d1c00834387afe8f8a79dd1f5579f41d55f76a099ecd6f323ec7794527",
-        "exported_row_sha256": "7a9621493f870a8ca3d94739c6090ff009446ae835767ab04500e59638ed6210"
+        "origin_row_sha256": "333e6fd452c63206dc193fae81f7afc72f1bdcbfcf942ee681a02264f86b9563",
+        "exported_row_sha256": "13bd1b0c0b4675335383549a678dd6c235b21089ba5735c9b4a8ef46da18dea6"
       }
     },
     "hab-votacao-livre": {
@@ -3632,8 +3749,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-votacao-livre",
-        "origin_row_sha256": "34197169bac94108e1e4ec2f18d123b7babf5545f48f2a5e658ff41c1f7eebc1",
-        "exported_row_sha256": "0d4001f6062783c3e18de1004184b35dd7881f11e46bc39f4a40100bbe8547f5"
+        "origin_row_sha256": "0d1eb23231960e8bdeade0ed1e3fcd70f6f5db9824f8cb21c4ffa696ffc4f792",
+        "exported_row_sha256": "4e09df7d36975540bc7dfdfb425a92bd5aa1a2ed71848e467baa626b03276bed"
       }
     },
     "hab-votacao-pan": {
@@ -3655,16 +3772,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-votacao-pan",
-        "origin_row_sha256": "29632132512fef3b74779b977279272b2ebdd3d97349b0fbcd8b533804e67faf",
-        "exported_row_sha256": "af649dd488210b101aaf312e3ea3507a1c98e4e6ab5d5546bfc5d1155b8b92f1"
+        "origin_row_sha256": "da3f504e548ceb24b9ed1b7fd55e30bea3e7afdbd8221b89184b3fe5de9855ce",
+        "exported_row_sha256": "4b68bcd2224cbac4e1e224e86f4b1c4919da63e3f0e03224436ccb41f1d6734b"
       }
     },
     "hab-yth-demo-030-a-avg-t-eu27_2020-2025": {
       "linha": {
         "id": "hab-yth-demo-030-a-avg-t-eu27_2020-2025",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Estimated average age of young persons leaving the parental household",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Idade média estimada de saída de casa dos pais, União Europeia, 2025",
+        "name_source": "label; dimension.geo.category.label.EU27_2020; dimension.time.category.label.2025",
         "document": {
           "title": "Estimated average age of young persons leaving the parental household",
           "edition": "2025",
@@ -3678,16 +3795,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-yth-demo-030-a-avg-t-eu27_2020-2025",
-        "origin_row_sha256": "439176d9f5ee54ed4ea93a3217347c06032fcafaa1c59f0f80487169bd91a382",
-        "exported_row_sha256": "e779ca75617a7bf39799b08e20581b4a2337981039e2f7048a949cda9ff03f89"
+        "origin_row_sha256": "b6927eedbc3fde607ddb2208a0630e649a3fe3a5b491cfcb896b570d6f7338ac",
+        "exported_row_sha256": "18d09ec36402d92e02d456743501075fb15c86faadf7908b4832913a893a5e11"
       }
     },
     "hab-yth-demo-030-a-avg-t-fi-2025": {
       "linha": {
         "id": "hab-yth-demo-030-a-avg-t-fi-2025",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Estimated average age of young persons leaving the parental household",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Idade média estimada de saída de casa dos pais, Finlândia, 2025",
+        "name_source": "label; dimension.geo.category.label.FI; dimension.time.category.label.2025",
         "document": {
           "title": "Estimated average age of young persons leaving the parental household",
           "edition": "2025",
@@ -3701,16 +3818,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-yth-demo-030-a-avg-t-fi-2025",
-        "origin_row_sha256": "60a14d7d049949fe63379dfaeff3b62e4fdd0c15f154c2c59fe3e502d971f7dd",
-        "exported_row_sha256": "c4d0d40a34a726c9ac641403f8562ffb590cd5ba52e304b443858aac5c4184b7"
+        "origin_row_sha256": "4ee332e08576561ee50ccf4224f9204a5b17e3178270735aca645b6918de8d2b",
+        "exported_row_sha256": "2f54d0ecaab9212f8785e911a4404a3cafabd22f80bdeb893b538bf477a7a66f"
       }
     },
     "hab-yth-demo-030-a-avg-t-hr-2025": {
       "linha": {
         "id": "hab-yth-demo-030-a-avg-t-hr-2025",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Estimated average age of young persons leaving the parental household",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Idade média estimada de saída de casa dos pais, Croácia, 2025",
+        "name_source": "label; dimension.geo.category.label.HR; dimension.time.category.label.2025",
         "document": {
           "title": "Estimated average age of young persons leaving the parental household",
           "edition": "2025",
@@ -3724,16 +3841,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-yth-demo-030-a-avg-t-hr-2025",
-        "origin_row_sha256": "6abbbb87b335fc064bb6b6d189174d5fe4adc282b8acf303362f14fe245e98fc",
-        "exported_row_sha256": "0d1d53e91aaa12fde87c335cd2e186fb63c99228fed5f27f964e9af4262e3c36"
+        "origin_row_sha256": "6d6f07a767a9ce47a217a64be03676d45f2a44292abb7861a9aab08a2060c9e6",
+        "exported_row_sha256": "6f444dcc2fad690469bb4b77ee29f4f734731ef3646d366ed00510f99d86225e"
       }
     },
     "hab-yth-demo-030-a-avg-t-pt-2015": {
       "linha": {
         "id": "hab-yth-demo-030-a-avg-t-pt-2015",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Estimated average age of young persons leaving the parental household",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Idade média estimada de saída de casa dos pais, Portugal, 2015",
+        "name_source": "label; dimension.geo.category.label.PT; dimension.time.category.label.2015",
         "document": {
           "title": "Estimated average age of young persons leaving the parental household",
           "edition": "2015",
@@ -3747,16 +3864,16 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-yth-demo-030-a-avg-t-pt-2015",
-        "origin_row_sha256": "9fff037af9fa6207fa7e8274552c366c58dc8d243046a66f8199c8496715fb4b",
-        "exported_row_sha256": "9a0abffb16be86613607aa704003fbee6a4443c7ebe0e8748773c100b831092e"
+        "origin_row_sha256": "ce4a3cee33c4c614d7d7709cc42b0b531cf9e075adf622714267ccb4cf688514",
+        "exported_row_sha256": "a8ff78ee7ca96f1ca717a0cd8e4c5cd977cf6c740a20c8213829f4148d6e3b12"
       }
     },
     "hab-yth-demo-030-a-avg-t-pt-2025": {
       "linha": {
         "id": "hab-yth-demo-030-a-avg-t-pt-2025",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "Estimated average age of young persons leaving the parental household",
-        "name_source": "label; dimension.age.category.label",
+        "name": "Idade média estimada de saída de casa dos pais, Portugal, 2025",
+        "name_source": "label; dimension.geo.category.label.PT; dimension.time.category.label.2025",
         "document": {
           "title": "Estimated average age of young persons leaving the parental household",
           "edition": "2025",
@@ -3770,8 +3887,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-yth-demo-030-a-avg-t-pt-2025",
-        "origin_row_sha256": "568d7dab0e7f43fd4c80ee1c3361d9f30c0ddba536d5b298675a793211e176c5",
-        "exported_row_sha256": "bad7adb745320a7549165286d982845353a51334fe825125a678334bc3e20098"
+        "origin_row_sha256": "9c93b011feb9d608c61356901667d11e775af27a2d63efcd67d84a7b47ea5237",
+        "exported_row_sha256": "5be435096ac413bbe04539af5bdbc8edad4361bf789da3c216051c04995e6b49"
       }
     }
   }

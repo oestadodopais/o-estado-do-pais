@@ -13,9 +13,10 @@ unit: "afirmação"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "oito pessoas foram assistidas no seu quartel"
 name_source: "HTML; início literal único"
+measure: "oito pessoas foram assistidas no seu quartel"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
-source: "Luís Silva"
+source: "Luís Silva, comandante dos Bombeiros Voluntários do Porto"
 document:
   title: "Montenegro afasta \"país em turbulência\". Dezenas de feridos em investida da polícia contra manifestantes no Porto"
   edition: "2026-10-15"
@@ -40,7 +41,9 @@ check: null
 
 # A quem o valor é creditado. Lista de entidades, ou campo nenhum.
 attributed_to:
-  - "Luís Silva"
+  - "Luís Silva, comandante dos Bombeiros Voluntários do Porto"
+attributed_to_en:
+  - "Luís Silva, commander of the Porto volunteer firefighters"
 
 study: "a-casa-em-portugal-e-na-europa"
 # Nota interna. NÃO é publicada: ver DECISIONS §1.24.

@@ -13,6 +13,7 @@ unit: "afirmação"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "5. A crise na habitação continua a agravar-se e os seus efeitos agudizam-se. Os despejos aumentaram 40% em 2025, e o Governo avança com medidas para os facilitar ainda mais."
 name_source: "PDF p. 2; parágrafo identificado pelo início; área física declarada"
+measure: "5. A crise na habitação continua a agravar-se e os seus efeitos agudizam-se. Os despejos aumentaram 40% em 2025, e o Governo avança com medidas para os facilitar ainda mais."
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Bloco de Esquerda"

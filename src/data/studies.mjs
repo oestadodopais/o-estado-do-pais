@@ -10,18 +10,16 @@
  * seu título em inglês não é conhecido aqui — fica o título original, com o
  * emblema EN. Inventar um título inglês seria inventar conteúdo.
  *
- * DATAS: o campo `date` desta lista fica `null` em todas as edições, e é o que
- * ele diz: nenhuma data de publicação DE ORIGEM está confirmada. Isso não quer
- * dizer que o sítio não date os estudos. O «publicado a» que o leitor vê é,
- * desde o bloco F1.4b de 04.09.2026 (`DECISIONS.md` §1.99), **o dia em que o
- * ficheiro daquela edição entrou NESTE repositório**, medido uma vez numa
- * árvore com a história completa e escrito em `src/data/datas-de-publicacao.json`
- * com o slug, a língua, a data, o commit e o caminho; a construção lê o ficheiro
- * e nunca chama o `git` (`src/lib/datas-do-repositorio.mjs`), e o portão
- * `check:datas` recusa uma página que discorde dele. É a mesma data em toda a
- * parte: no arquivo, na primeira página, na página de um lugar e no registo de
- * `/correcoes`. O que o JSON declara no seu cabeçalho é o que ela é e o que não
- * é, e esta lista não a repete para não haver duas afirmações do mesmo facto.
+ * DATAS: os trabalhos com `publication: 'declared'` publicam cada edição no
+ * dia declarado em `date`. `null` significa preparação: não há data pública,
+ * estado Published nem entrada nos contadores de publicação. A data declarada
+ * não pode anteceder a entrada do ficheiro no repositório, que continua medida
+ * em `src/data/datas-de-publicacao.json` com o commit e o caminho da edição.
+ * As edições anteriores a este contrato conservam a publicação pela data de
+ * entrada do ficheiro, conforme a decisão §1.99, sem reinterpretar os seus
+ * campos `date` antigos como datas de aterragem. A vista e as listas usam
+ * `src/lib/publicacao.mjs`; o portão `check:datas` confere as páginas e o limite
+ * inferior imposto pela entrada. Decisão HB1-30.
  * `updated` é a data da última revisão de uma edição: `null` significa que não
  * se sabe, e a página mostra-o como tal. Não se escreve a data de publicação no
  * lugar dela — seriam duas afirmações diferentes com o mesmo valor por acaso.
@@ -95,6 +93,7 @@ export const WORKS = [
   id: 'a-casa-em-portugal-e-na-europa',
   slug: 'a-casa-em-portugal-e-na-europa',
   tema: 'habitacao',
+  publication: 'declared',
   editions: [
     {
       lang: 'pt',
@@ -850,10 +849,18 @@ export function studyTitle(id, lang = 'pt') {
   return { titulo: id, lingua: null };
 }
 
+/** HB1-30: novas publicações declaram o dia de aterragem; as antigas mantêm o contrato do arquivo. */
+/** @param {{publication?: string}|undefined} work @param {{date: string|null}} edition */
+export function edicaoPublicada(work, edition) {
+  return work?.publication !== 'declared' || typeof edition.date === 'string';
+}
+export const PUBLISHED_WORKS = WORKS.filter(w => w.editions.some(e => edicaoPublicada(w, e)));
+export const PUBLISHED_EDITIONS = EDITIONS.filter(e => edicaoPublicada(WORKS.find(w => w.id === e.workId), e));
+
 /** Contagens usadas pelas expressões `check:` do livro-razão. */
 export const COUNTS = {
-  estudos_no_arquivo: WORKS.length,
-  edicoes_no_arquivo: EDITIONS.length,
+  estudos_no_arquivo: PUBLISHED_WORKS.length,
+  edicoes_no_arquivo: PUBLISHED_EDITIONS.length,
   /**
    * Trabalhos cujo objecto é o município de Évora. Trabalhos, não edições:
    * uma tradução não é um estudo novo. É esta a contagem que reconcilia a

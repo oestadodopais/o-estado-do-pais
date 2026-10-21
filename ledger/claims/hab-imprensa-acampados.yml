@@ -13,6 +13,7 @@ unit: "afirmação"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "não como uma escolha de lazer, ou de campismo, mas como ato de desespero político"
 name_source: "HTML; início literal único"
+measure: "não como uma escolha de lazer, ou de campismo, mas como ato de desespero político"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "manifestantes"

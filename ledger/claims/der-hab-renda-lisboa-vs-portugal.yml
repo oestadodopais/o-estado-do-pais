@@ -8,6 +8,8 @@ id: "der-hab-renda-lisboa-vs-portugal"
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
 value: "1,7"
 unit: "vezes"
+measure: "Lisboa face a Portugal"
+measure_en: "Lisbon relative to Portugal"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: null
@@ -20,8 +22,8 @@ reference_date: "2026-T2"
 excerpt: null
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
-derivation: "round ( hab-ine-renda-lisboa / hab-ine-renda-portugal , 1 ) = 1.7"
-derivation_en: "round ( hab-ine-renda-lisboa / hab-ine-renda-portugal , 1 ) = 1.7"
+derivation: "renda mediana, Lisboa, 2.º trimestre de 2026 (17,79 euros por metro quadrado; INE) a dividir por renda mediana dos 35 407 novos contratos de arrendamento em Portugal, 2.º trimestre de 2026 (10,17 euros por metro quadrado; INE), arredondado a uma casa decimal: 1,7."
+derivation_en: "median rent, Lisbon, quarter 2 of 2026 (17.79 euros per square metre; INE) divided by median rent of the 35 407 new rental contracts in Portugal, quarter 2 of 2026 (10.17 euros per square metre; INE), rounded to one decimal place: 1.7."
 derived_from:
   - "hab-ine-renda-lisboa"
   - "hab-ine-renda-portugal"

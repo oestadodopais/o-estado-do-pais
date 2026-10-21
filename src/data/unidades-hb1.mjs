@@ -14,7 +14,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "derivation",
-        "literal": "round ( hab-oe-iva-impacto + hab-oe-irs-rendas-impacto , 0 ) = -303"
+        "literal": "Habitação - redução IVA construção de 23% para 6% (i) (-94 milhões de euros; Governo) mais Habitação - redução IRS rendas moderadas de 25% para 10% (i) (-209 milhões de euros; Governo), arredondado à unidade: -303."
       }
     ],
     "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
@@ -29,7 +29,7 @@ export const UNIDADES_HB1 = {
     "apoio": [
       {
         "campo": "derivation",
-        "literal": "round ( hab-ilc-lvho02-a-total-total-rent-mkt-pc-eu27_2020-2025 + hab-ilc-lvho02-a-total-total-rent-fr-pc-eu27_2020-2025 , 1 ) = 31.5"
+        "literal": "Distribuição da população por regime de ocupação, inquilinos a preços de mercado, União Europeia, 2025 (20,8 %; Eurostat, ilc_lvho02) mais Distribuição da população por regime de ocupação, inquilinos com renda reduzida ou gratuita, União Europeia, 2025 (10,7 %; Eurostat, ilc_lvho02), arredondado a uma casa decimal: 31,5."
       }
     ],
     "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
@@ -44,7 +44,7 @@ export const UNIDADES_HB1 = {
     "apoio": [
       {
         "campo": "derivation",
-        "literal": "round ( hab-ilc-lvho02-a-total-total-rent-mkt-pc-pt-2025 + hab-ilc-lvho02-a-total-total-rent-fr-pc-pt-2025 , 1 ) = 28.8"
+        "literal": "Distribuição da população por regime de ocupação, inquilinos a preços de mercado, Portugal, 2025 (16,3 %; Eurostat, ilc_lvho02) mais Distribuição da população por regime de ocupação, inquilinos com renda reduzida ou gratuita, Portugal, 2025 (12,5 %; Eurostat, ilc_lvho02), arredondado a uma casa decimal: 28,8."
       }
     ],
     "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
@@ -63,7 +63,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "derivation",
-        "literal": "round ( hab-ilc-lvps08-a-y25-34-t-pc-pt-2025 - hab-ilc-lvps08-a-y25-34-t-pc-eu27_2020-2025 , 1 ) = 12.0"
+        "literal": "Pessoas que vivem com os pais ou contribuem para o rendimento do agregado ou dele beneficiam, vinte e cinco a trinta e quatro anos, Portugal, 2025 (42,1 %; Eurostat, ilc_lvps08) menos Pessoas que vivem com os pais ou contribuem para o rendimento do agregado ou dele beneficiam, vinte e cinco a trinta e quatro anos, União Europeia, 2025 (30,1 %; Eurostat, ilc_lvps08), arredondado a uma casa decimal: 12,0."
       }
     ],
     "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
@@ -82,7 +82,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "derivation",
-        "literal": "round ( hab-sts-cobp-a-a-bprm-dw-cpa-f41001-x-410014-nsa-ths-eu27_2020-2025 * 1000000 / hab-demo-pjan-eu27_2020-2025 , 1 ) = 3.6"
+        "literal": "Alojamentos licenciados, milhares, União Europeia, 2025 (1 623,2 mil; Eurostat, sts_cobp_a) a dividir por População residente a um de janeiro, número, União Europeia, 2025 (450 646 971 habitantes; Eurostat, demo_pjan, provisório, estimado), convertendo as licenças de milhares para unidades e multiplicando por mil, arredondado a uma casa decimal: 3,6."
       }
     ],
     "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
@@ -101,7 +101,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "derivation",
-        "literal": "round ( hab-sts-cobp-a-a-bprm-dw-cpa-f41001-x-410014-nsa-ths-pt-2025 * 1000000 / hab-demo-pjan-pt-2025 , 1 ) = 3.8"
+        "literal": "Alojamentos licenciados, milhares, Portugal, 2025 (40,9 mil; Eurostat, sts_cobp_a, provisório) a dividir por População residente a um de janeiro, número, Portugal, 2025 (10 749 635 habitantes; Eurostat, demo_pjan), convertendo as licenças de milhares para unidades e multiplicando por mil, arredondado a uma casa decimal: 3,8."
       }
     ],
     "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
@@ -120,7 +120,83 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "derivation",
-        "literal": "round ( hab-ine-preco-lisboa / hab-ine-preco-mediano , 1 ) = 2.3"
+        "literal": "preços da habitação, Lisboa, 1.º trimestre de 2026 (5 292 euros por metro quadrado; INE) a dividir por preço mediano dos 35 953 alojamentos familiares transacionados em Portugal, 1.º trimestre de 2026 (2 337 euros por metro quadrado; INE), arredondado a uma casa decimal: 2,3."
+      }
+    ],
+    "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
+  },
+  "der-hab-preco-rendimento-acima-2015-eu-2024": {
+    "pt": [
+      "pontos percentuais do índice"
+    ],
+    "en": [
+      "percentage points of the index"
+    ],
+    "apoio": [
+      {
+        "campo": "unit",
+        "literal": "pontos percentuais do índice"
+      },
+      {
+        "campo": "derivation",
+        "literal": "Rácio padronizado entre preços da habitação e rendimento, índice, 2015 igual a cem, União Europeia, 2024 (105,72 índice do rácio preço-rendimento, 2015 igual a cem; Eurostat, tipsho60) menos cem, arredondado a uma casa decimal: 5,7."
+      }
+    ],
+    "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
+  },
+  "der-hab-preco-rendimento-acima-2015-pt-2024": {
+    "pt": [
+      "pontos percentuais do índice"
+    ],
+    "en": [
+      "percentage points of the index"
+    ],
+    "apoio": [
+      {
+        "campo": "unit",
+        "literal": "pontos percentuais do índice"
+      },
+      {
+        "campo": "derivation",
+        "literal": "Rácio padronizado entre preços da habitação e rendimento, índice, 2015 igual a cem, Portugal, 2024 (144,34 índice do rácio preço-rendimento, 2015 igual a cem; Eurostat, tipsho60) menos cem, arredondado a uma casa decimal: 44,3."
+      }
+    ],
+    "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
+  },
+  "der-hab-preco-rendimento-lt-eu-2024": {
+    "pt": [
+      "pontos percentuais do índice"
+    ],
+    "en": [
+      "percentage points of the index"
+    ],
+    "apoio": [
+      {
+        "campo": "unit",
+        "literal": "pontos percentuais do índice"
+      },
+      {
+        "campo": "derivation",
+        "literal": "Cem menos Rácio padronizado entre preços da habitação e rendimento, índice, média de longo prazo igual a cem, União Europeia, 2024 (98,94 índice do rácio preço-rendimento face à média de longo prazo; Eurostat, tipsho60), arredondado a uma casa decimal: 1,1."
+      }
+    ],
+    "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
+  },
+  "der-hab-preco-rendimento-lt-pt-2024": {
+    "pt": [
+      "pontos percentuais do índice"
+    ],
+    "en": [
+      "percentage points of the index"
+    ],
+    "apoio": [
+      {
+        "campo": "unit",
+        "literal": "pontos percentuais do índice"
+      },
+      {
+        "campo": "derivation",
+        "literal": "Rácio padronizado entre preços da habitação e rendimento, índice, média de longo prazo igual a cem, Portugal, 2024 (122,92 índice do rácio preço-rendimento face à média de longo prazo; Eurostat, tipsho60) menos cem, arredondado a uma casa decimal: 22,9."
       }
     ],
     "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
@@ -139,7 +215,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "derivation",
-        "literal": "round ( hab-tipsho60-a-ptir-i15-pt-2024 - hab-tipsho60-a-ptir-i15-eu27_2020-2024 , 1 ) = 38.6"
+        "literal": "Rácio padronizado entre preços da habitação e rendimento, índice, 2015 igual a cem, Portugal, 2024 (144,34 índice do rácio preço-rendimento, 2015 igual a cem; Eurostat, tipsho60) menos Rácio padronizado entre preços da habitação e rendimento, índice, 2015 igual a cem, União Europeia, 2024 (105,72 índice do rácio preço-rendimento, 2015 igual a cem; Eurostat, tipsho60), arredondado a uma casa decimal: 38,6."
       }
     ],
     "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
@@ -158,7 +234,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "derivation",
-        "literal": "round ( hab-tipsho10-a-i15-a-avg-pt-2025 - hab-tipsho10-a-i15-a-avg-eu27_2020-2025 , 1 ) = 81.7"
+        "literal": "Índice de preços da habitação, descontada a inflação, índice, média de 2015 igual a cem, Portugal, 2025 (206,41 índice médio anual, 2015 igual a cem; Eurostat, tipsho10) menos Índice de preços da habitação, descontada a inflação, índice, média de 2015 igual a cem, União Europeia, 2025 (124,75 índice médio anual, 2015 igual a cem; Eurostat, tipsho10), arredondado a uma casa decimal: 81,7."
       }
     ],
     "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
@@ -173,7 +249,7 @@ export const UNIDADES_HB1 = {
     "apoio": [
       {
         "campo": "derivation",
-        "literal": "round ( hab-ilc-lvho02-a-total-total-own-l-pc-eu27_2020-2025 + hab-ilc-lvho02-a-total-total-own-nl-pc-eu27_2020-2025 , 1 ) = 68.5"
+        "literal": "Distribuição da população por regime de ocupação, proprietários com empréstimo, União Europeia, 2025 (24,8 %; Eurostat, ilc_lvho02) mais Distribuição da população por regime de ocupação, proprietários sem empréstimo, União Europeia, 2025 (43,7 %; Eurostat, ilc_lvho02), arredondado a uma casa decimal: 68,5."
       }
     ],
     "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
@@ -188,7 +264,7 @@ export const UNIDADES_HB1 = {
     "apoio": [
       {
         "campo": "derivation",
-        "literal": "round ( hab-ilc-lvho02-a-total-total-own-l-pc-pt-2025 + hab-ilc-lvho02-a-total-total-own-nl-pc-pt-2025 , 1 ) = 71.2"
+        "literal": "Distribuição da população por regime de ocupação, proprietários com empréstimo, Portugal, 2025 (31,5 %; Eurostat, ilc_lvho02) mais Distribuição da população por regime de ocupação, proprietários sem empréstimo, Portugal, 2025 (39,7 %; Eurostat, ilc_lvho02), arredondado a uma casa decimal: 71,2."
       }
     ],
     "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
@@ -207,7 +283,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "derivation",
-        "literal": "round ( hab-ine-renda-lisboa / hab-ine-renda-portugal , 1 ) = 1.7"
+        "literal": "renda mediana, Lisboa, 2.º trimestre de 2026 (17,79 euros por metro quadrado; INE) a dividir por renda mediana dos 35 407 novos contratos de arrendamento em Portugal, 2.º trimestre de 2026 (10,17 euros por metro quadrado; INE), arredondado a uma casa decimal: 1,7."
       }
     ],
     "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
@@ -226,7 +302,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "derivation",
-        "literal": "round ( hab-yth-demo-030-a-avg-t-pt-2025 - hab-yth-demo-030-a-avg-t-eu27_2020-2025 , 1 ) = 2.5"
+        "literal": "Idade média estimada de saída de casa dos pais, Portugal, 2025 (28,8 anos; Eurostat, yth_demo_030) menos Idade média estimada de saída de casa dos pais, União Europeia, 2025 (26,3 anos; Eurostat, yth_demo_030), arredondado a uma casa decimal: 2,5."
       }
     ],
     "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
@@ -245,7 +321,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "derivation",
-        "literal": "round ( hab-ilc-lvho07c-a-pc-rent-mkt-pt-2025 - hab-ilc-lvho07c-a-pc-rent-mkt-pt-2020 , 1 ) = 7.5"
+        "literal": "Taxa de sobrecarga dos custos da habitação, inquilinos a preços de mercado, Portugal, 2025 (27,2 %; Eurostat, ilc_lvho07c) menos Taxa de sobrecarga dos custos da habitação, inquilinos a preços de mercado, Portugal, 2020 (19,7 %; Eurostat, ilc_lvho07c), arredondado a uma casa decimal: 7,5."
       }
     ],
     "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
@@ -264,7 +340,30 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "derivation",
-        "literal": "round ( hab-ilc-lvho07c-a-pc-rent-mkt-pt-2025 - hab-ilc-lvho07c-a-pc-rent-mkt-eu27_2020-2025 , 1 ) = 8.6"
+        "literal": "Taxa de sobrecarga dos custos da habitação, inquilinos a preços de mercado, Portugal, 2025 (27,2 %; Eurostat, ilc_lvho07c) menos Taxa de sobrecarga dos custos da habitação, inquilinos a preços de mercado, União Europeia, 2025 (18,6 %; Eurostat, ilc_lvho07c), arredondado a uma casa decimal: 8,6."
+      }
+    ],
+    "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
+  },
+  "hab-arrendamento-exposicao-vagos": {
+    "pt": [
+      "texto da fonte"
+    ],
+    "en": [
+      "source text"
+    ],
+    "apoio": [
+      {
+        "campo": "unit",
+        "literal": "texto"
+      },
+      {
+        "campo": "name",
+        "literal": "Proposta de Lei n.º 103/XVII"
+      },
+      {
+        "campo": "excerpt",
+        "literal": "Considerando os dados dos Censos 2021, estima-se que cerca de 375 mil alojamentos familiares clássicos, dos quais quase 250 mil em boas condições, estejam vagos sem intenção de venda ou arrendamento."
       }
     ],
     "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
@@ -398,7 +497,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Conventional dwellings by occupancy status, type of building and NUTS 3 region"
+        "literal": "Alojamentos familiares clássicos, número, Portugal, 2021"
       },
       {
         "campo": "excerpt",
@@ -467,7 +566,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Population on 1 January by age and sex"
+        "literal": "População residente a um de janeiro, número, União Europeia, 2025"
       },
       {
         "campo": "excerpt",
@@ -490,7 +589,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Population on 1 January by age and sex"
+        "literal": "População residente a um de janeiro, número, Portugal, 2025"
       },
       {
         "campo": "excerpt",
@@ -564,6 +663,29 @@ export const UNIDADES_HB1 = {
       {
         "campo": "excerpt",
         "literal": "1 — A taxa de tributação autónoma aplicável aos rendimentos prediais decorrentes de contratos de arrendamento destinados exclusivamente ao arrendamento para habitação cujo valor de renda mensal não exceda os limites a que se referem os n.os 2 e 3 do artigo 2.º do Decreto-Lei n.º 97/2026, de 20 de maio, auferidos até 31 de dezembro de 2029, é de 10 %, salvo quando seja aplicável uma taxa mais favorável."
+      }
+    ],
+    "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
+  },
+  "hab-eurostat-privacao-severa-definicao": {
+    "pt": [
+      "texto da fonte"
+    ],
+    "en": [
+      "source text"
+    ],
+    "apoio": [
+      {
+        "campo": "unit",
+        "literal": "texto"
+      },
+      {
+        "campo": "name",
+        "literal": "Glossary:Severe housing deprivation rate"
+      },
+      {
+        "campo": "excerpt",
+        "literal": "Severe housing deprivation rate is defined as the percentage of population living in the dwelling which is considered as overcrowded, while also exhibiting at least one of the housing deprivation measures. Housing deprivation is a measure of poor amenities and is calculated by referring to those households with a leaking roof, no bath/shower and no indoor toilet, or a dwelling considered too dark."
       }
     ],
     "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
@@ -674,7 +796,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Distribution of population by tenure status, type of household and income group"
+        "literal": "Distribuição da população por regime de ocupação, proprietários com empréstimo, União Europeia, 2025"
       },
       {
         "campo": "excerpt",
@@ -697,7 +819,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Distribution of population by tenure status, type of household and income group"
+        "literal": "Distribuição da população por regime de ocupação, proprietários com empréstimo, Países Baixos, 2025"
       },
       {
         "campo": "excerpt",
@@ -720,7 +842,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Distribution of population by tenure status, type of household and income group"
+        "literal": "Distribuição da população por regime de ocupação, proprietários com empréstimo, Portugal, 2020"
       },
       {
         "campo": "excerpt",
@@ -743,7 +865,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Distribution of population by tenure status, type of household and income group"
+        "literal": "Distribuição da população por regime de ocupação, proprietários com empréstimo, Portugal, 2025"
       },
       {
         "campo": "excerpt",
@@ -766,7 +888,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Distribution of population by tenure status, type of household and income group"
+        "literal": "Distribuição da população por regime de ocupação, proprietários com empréstimo, Roménia, 2025"
       },
       {
         "campo": "excerpt",
@@ -789,7 +911,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Distribution of population by tenure status, type of household and income group"
+        "literal": "Distribuição da população por regime de ocupação, proprietários sem empréstimo, União Europeia, 2025"
       },
       {
         "campo": "excerpt",
@@ -812,7 +934,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Distribution of population by tenure status, type of household and income group"
+        "literal": "Distribuição da população por regime de ocupação, proprietários sem empréstimo, Portugal, 2025"
       },
       {
         "campo": "excerpt",
@@ -835,7 +957,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Distribution of population by tenure status, type of household and income group"
+        "literal": "Distribuição da população por regime de ocupação, inquilinos com renda reduzida ou gratuita, União Europeia, 2025"
       },
       {
         "campo": "excerpt",
@@ -858,7 +980,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Distribution of population by tenure status, type of household and income group"
+        "literal": "Distribuição da população por regime de ocupação, inquilinos com renda reduzida ou gratuita, Portugal, 2025"
       },
       {
         "campo": "excerpt",
@@ -881,7 +1003,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Distribution of population by tenure status, type of household and income group"
+        "literal": "Distribuição da população por regime de ocupação, inquilinos a preços de mercado, Alemanha, 2025"
       },
       {
         "campo": "excerpt",
@@ -904,7 +1026,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Distribution of population by tenure status, type of household and income group"
+        "literal": "Distribuição da população por regime de ocupação, inquilinos a preços de mercado, União Europeia, 2025"
       },
       {
         "campo": "excerpt",
@@ -927,7 +1049,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Distribution of population by tenure status, type of household and income group"
+        "literal": "Distribuição da população por regime de ocupação, inquilinos a preços de mercado, Portugal, 2020"
       },
       {
         "campo": "excerpt",
@@ -950,7 +1072,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Distribution of population by tenure status, type of household and income group"
+        "literal": "Distribuição da população por regime de ocupação, inquilinos a preços de mercado, Portugal, 2025"
       },
       {
         "campo": "excerpt",
@@ -973,7 +1095,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Overcrowding rate by age, sex and poverty status - total population"
+        "literal": "Taxa de sobrelotação da habitação, Chipre, 2025"
       },
       {
         "campo": "excerpt",
@@ -996,7 +1118,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Overcrowding rate by age, sex and poverty status - total population"
+        "literal": "Taxa de sobrelotação da habitação, União Europeia, 2025"
       },
       {
         "campo": "excerpt",
@@ -1019,7 +1141,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Overcrowding rate by age, sex and poverty status - total population"
+        "literal": "Taxa de sobrelotação da habitação, Portugal, 2025"
       },
       {
         "campo": "excerpt",
@@ -1042,7 +1164,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Overcrowding rate by age, sex and poverty status - total population"
+        "literal": "Taxa de sobrelotação da habitação, Roménia, 2025"
       },
       {
         "campo": "excerpt",
@@ -1084,7 +1206,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Overcrowding rate by age, sex and poverty status - total population"
+        "literal": "Taxa de sobrelotação da habitação, dezasseis a vinte e nove anos, União Europeia, 2025"
       },
       {
         "campo": "excerpt",
@@ -1126,7 +1248,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Overcrowding rate by age, sex and poverty status - total population"
+        "literal": "Taxa de sobrelotação da habitação, dezasseis a vinte e nove anos, Portugal, 2025"
       },
       {
         "campo": "excerpt",
@@ -1168,7 +1290,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Housing cost overburden rate by age, sex and poverty status"
+        "literal": "Taxa de sobrecarga dos custos da habitação, dezasseis a vinte e nove anos, Grécia, 2025"
       },
       {
         "campo": "excerpt",
@@ -1210,7 +1332,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Housing cost overburden rate by age, sex and poverty status"
+        "literal": "Taxa de sobrecarga dos custos da habitação, dezasseis a vinte e nove anos, União Europeia, 2025"
       },
       {
         "campo": "excerpt",
@@ -1252,7 +1374,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Housing cost overburden rate by age, sex and poverty status"
+        "literal": "Taxa de sobrecarga dos custos da habitação, dezasseis a vinte e nove anos, Portugal, 2025"
       },
       {
         "campo": "excerpt",
@@ -1275,7 +1397,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Housing cost overburden rate by tenure status"
+        "literal": "Taxa de sobrecarga dos custos da habitação, proprietários com empréstimo, União Europeia, 2025"
       },
       {
         "campo": "excerpt",
@@ -1298,7 +1420,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Housing cost overburden rate by tenure status"
+        "literal": "Taxa de sobrecarga dos custos da habitação, proprietários com empréstimo, Portugal, 2025"
       },
       {
         "campo": "excerpt",
@@ -1321,7 +1443,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Housing cost overburden rate by tenure status"
+        "literal": "Taxa de sobrecarga dos custos da habitação, proprietários sem empréstimo, União Europeia, 2025"
       },
       {
         "campo": "excerpt",
@@ -1344,7 +1466,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Housing cost overburden rate by tenure status"
+        "literal": "Taxa de sobrecarga dos custos da habitação, proprietários sem empréstimo, Portugal, 2025"
       },
       {
         "campo": "excerpt",
@@ -1367,7 +1489,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Housing cost overburden rate by tenure status"
+        "literal": "Taxa de sobrecarga dos custos da habitação, inquilinos com renda reduzida ou gratuita, União Europeia, 2025"
       },
       {
         "campo": "excerpt",
@@ -1390,7 +1512,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Housing cost overburden rate by tenure status"
+        "literal": "Taxa de sobrecarga dos custos da habitação, inquilinos com renda reduzida ou gratuita, Portugal, 2025"
       },
       {
         "campo": "excerpt",
@@ -1413,7 +1535,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Housing cost overburden rate by tenure status"
+        "literal": "Taxa de sobrecarga dos custos da habitação, inquilinos a preços de mercado, União Europeia, 2025"
       },
       {
         "campo": "excerpt",
@@ -1436,7 +1558,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Housing cost overburden rate by tenure status"
+        "literal": "Taxa de sobrecarga dos custos da habitação, inquilinos a preços de mercado, Finlândia, 2025"
       },
       {
         "campo": "excerpt",
@@ -1459,7 +1581,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Housing cost overburden rate by tenure status"
+        "literal": "Taxa de sobrecarga dos custos da habitação, inquilinos a preços de mercado, Portugal, 2015"
       },
       {
         "campo": "excerpt",
@@ -1482,7 +1604,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Housing cost overburden rate by tenure status"
+        "literal": "Taxa de sobrecarga dos custos da habitação, inquilinos a preços de mercado, Portugal, 2020"
       },
       {
         "campo": "excerpt",
@@ -1505,7 +1627,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Housing cost overburden rate by tenure status"
+        "literal": "Taxa de sobrecarga dos custos da habitação, inquilinos a preços de mercado, Portugal, 2025"
       },
       {
         "campo": "excerpt",
@@ -1528,7 +1650,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Housing cost overburden rate by tenure status"
+        "literal": "Taxa de sobrecarga dos custos da habitação, inquilinos a preços de mercado, Roménia, 2025"
       },
       {
         "campo": "excerpt",
@@ -1551,7 +1673,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Housing cost overburden rate by tenure status"
+        "literal": "Taxa de sobrecarga dos custos da habitação, total, Chipre, 2025"
       },
       {
         "campo": "excerpt",
@@ -1574,7 +1696,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Housing cost overburden rate by tenure status"
+        "literal": "Taxa de sobrecarga dos custos da habitação, total, Grécia, 2025"
       },
       {
         "campo": "excerpt",
@@ -1597,11 +1719,34 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Housing cost overburden rate by tenure status"
+        "literal": "Taxa de sobrecarga dos custos da habitação, total, União Europeia, 2015"
       },
       {
         "campo": "excerpt",
         "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"tenure\": \"TOTAL\", \"geo\": \"EU27_2020\", \"time\": \"2015\"}, \"value\": \"11.2\", \"status\": \"e\"}"
+      }
+    ],
+    "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
+  },
+  "hab-ilc-lvho07c-a-pc-total-eu27_2020-2025": {
+    "pt": [
+      "% da população"
+    ],
+    "en": [
+      "% of the population"
+    ],
+    "apoio": [
+      {
+        "campo": "unit",
+        "literal": "Percentage"
+      },
+      {
+        "campo": "name",
+        "literal": "Taxa de sobrecarga dos custos da habitação, total, União Europeia, 2025"
+      },
+      {
+        "campo": "excerpt",
+        "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"tenure\": \"TOTAL\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"7.7\", \"status\": null}"
       }
     ],
     "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
@@ -1620,7 +1765,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Housing cost overburden rate by tenure status"
+        "literal": "Taxa de sobrecarga dos custos da habitação, total, Portugal, 2015"
       },
       {
         "campo": "excerpt",
@@ -1643,7 +1788,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Housing cost overburden rate by tenure status"
+        "literal": "Taxa de sobrecarga dos custos da habitação, total, Portugal, 2025"
       },
       {
         "campo": "excerpt",
@@ -1685,7 +1830,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Persons living with their parents or contributing/benefiting from the household income (population aged 18 to 34 years)"
+        "literal": "Pessoas que vivem com os pais ou contribuem para o rendimento do agregado ou dele beneficiam, dezoito a trinta e quatro anos, União Europeia, 2025"
       },
       {
         "campo": "excerpt",
@@ -1727,7 +1872,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Persons living with their parents or contributing/benefiting from the household income (population aged 18 to 34 years)"
+        "literal": "Pessoas que vivem com os pais ou contribuem para o rendimento do agregado ou dele beneficiam, dezoito a trinta e quatro anos, Portugal, 2025"
       },
       {
         "campo": "excerpt",
@@ -1769,7 +1914,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Persons living with their parents or contributing/benefiting from the household income (From 25 to 34 years)"
+        "literal": "Pessoas que vivem com os pais ou contribuem para o rendimento do agregado ou dele beneficiam, vinte e cinco a trinta e quatro anos, Dinamarca, 2025"
       },
       {
         "campo": "excerpt",
@@ -1811,7 +1956,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Persons living with their parents or contributing/benefiting from the household income (From 25 to 34 years)"
+        "literal": "Pessoas que vivem com os pais ou contribuem para o rendimento do agregado ou dele beneficiam, vinte e cinco a trinta e quatro anos, União Europeia, 2025"
       },
       {
         "campo": "excerpt",
@@ -1853,7 +1998,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Persons living with their parents or contributing/benefiting from the household income (From 25 to 34 years)"
+        "literal": "Pessoas que vivem com os pais ou contribuem para o rendimento do agregado ou dele beneficiam, vinte e cinco a trinta e quatro anos, Croácia, 2025"
       },
       {
         "campo": "excerpt",
@@ -1895,7 +2040,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Persons living with their parents or contributing/benefiting from the household income (From 25 to 34 years)"
+        "literal": "Pessoas que vivem com os pais ou contribuem para o rendimento do agregado ou dele beneficiam, vinte e cinco a trinta e quatro anos, Portugal, 2015"
       },
       {
         "campo": "excerpt",
@@ -1937,7 +2082,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Persons living with their parents or contributing/benefiting from the household income (From 25 to 34 years)"
+        "literal": "Pessoas que vivem com os pais ou contribuem para o rendimento do agregado ou dele beneficiam, vinte e cinco a trinta e quatro anos, Portugal, 2020"
       },
       {
         "campo": "excerpt",
@@ -1979,7 +2124,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Persons living with their parents or contributing/benefiting from the household income (From 25 to 34 years)"
+        "literal": "Pessoas que vivem com os pais ou contribuem para o rendimento do agregado ou dele beneficiam, vinte e cinco a trinta e quatro anos, Portugal, 2025"
       },
       {
         "campo": "excerpt",
@@ -2002,7 +2147,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Share of housing costs in disposable household income, by type of household and income group"
+        "literal": "Peso dos custos da habitação no rendimento disponível do agregado, Chipre, 2025"
       },
       {
         "campo": "excerpt",
@@ -2025,7 +2170,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Share of housing costs in disposable household income, by type of household and income group"
+        "literal": "Peso dos custos da habitação no rendimento disponível do agregado, Grécia, 2025"
       },
       {
         "campo": "excerpt",
@@ -2048,7 +2193,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Share of housing costs in disposable household income, by type of household and income group"
+        "literal": "Peso dos custos da habitação no rendimento disponível do agregado, União Europeia, 2025"
       },
       {
         "campo": "excerpt",
@@ -2071,7 +2216,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Share of housing costs in disposable household income, by type of household and income group"
+        "literal": "Peso dos custos da habitação no rendimento disponível do agregado, Portugal, 2015"
       },
       {
         "campo": "excerpt",
@@ -2094,7 +2239,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Share of housing costs in disposable household income, by type of household and income group"
+        "literal": "Peso dos custos da habitação no rendimento disponível do agregado, Portugal, 2025"
       },
       {
         "campo": "excerpt",
@@ -2117,7 +2262,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Severe housing deprivation rate by age, sex and poverty status"
+        "literal": "Taxa de privação severa das condições da habitação, União Europeia, 2023"
       },
       {
         "campo": "excerpt",
@@ -2140,7 +2285,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Severe housing deprivation rate by age, sex and poverty status"
+        "literal": "Taxa de privação severa das condições da habitação, Letónia, 2023"
       },
       {
         "campo": "excerpt",
@@ -2163,7 +2308,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Severe housing deprivation rate by age, sex and poverty status"
+        "literal": "Taxa de privação severa das condições da habitação, Malta, 2023"
       },
       {
         "campo": "excerpt",
@@ -2186,7 +2331,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Severe housing deprivation rate by age, sex and poverty status"
+        "literal": "Taxa de privação severa das condições da habitação, Portugal, 2023"
       },
       {
         "campo": "excerpt",
@@ -2228,7 +2373,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Severe housing deprivation rate by age, sex and poverty status"
+        "literal": "Taxa de privação severa das condições da habitação, dezasseis a vinte e nove anos, União Europeia, 2023"
       },
       {
         "campo": "excerpt",
@@ -2270,7 +2415,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Severe housing deprivation rate by age, sex and poverty status"
+        "literal": "Taxa de privação severa das condições da habitação, dezasseis a vinte e nove anos, Portugal, 2023"
       },
       {
         "campo": "excerpt",
@@ -2550,7 +2695,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "excerpt",
-        "literal": "organizada por uma plataforma que reúne cerca de 40 organizações da sociedade civil."
+        "literal": "Cinco cidades de Portugal vão acolher, este sábado, uma manifestação contra a crise na habitação, organizada por uma plataforma que reúne cerca de 40 organizações da sociedade civil."
       }
     ],
     "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
@@ -2734,7 +2879,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "excerpt",
-        "literal": "Foram retiradas, ao início da manhã desta segunda-feira, as tendas"
+        "literal": "Foram retiradas, ao início da manhã desta segunda-feira, as tendas de dezenas de pessoas que permaneciam acampadas na Praça D. João I, no centro do Porto, em protesto contra o aumento do custo de vida e a crise da habitação.O acampamento foi promovido pelo movimento \"Não consegues pagar renda? Traz tenda\". O acampamento mantinha-se no local desde sábado, dia em que cerca de 1.500 pessoas se manifestaram no Porto contra o agravamento do custo de vida."
       }
     ],
     "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
@@ -3079,6 +3224,10 @@ export const UNIDADES_HB1 = {
       {
         "campo": "name",
         "literal": "Ação 1.3 Promoção do acesso à habitação e apoio ao arrendamento"
+      },
+      {
+        "campo": "excerpt",
+        "literal": "Ação 1.3 Promoção do acesso à habitação e apoio ao arrendamento 917"
       }
     ],
     "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
@@ -3198,6 +3347,29 @@ export const UNIDADES_HB1 = {
     ],
     "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
   },
+  "hab-oe-legenda-invariante": {
+    "pt": [
+      "texto da fonte"
+    ],
+    "en": [
+      "source text"
+    ],
+    "apoio": [
+      {
+        "campo": "unit",
+        "literal": "texto"
+      },
+      {
+        "campo": "name",
+        "literal": "RELATÓRIO"
+      },
+      {
+        "campo": "excerpt",
+        "literal": "Nota: (i) invariante."
+      }
+    ],
+    "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
+  },
   "hab-oe-licenciamento": {
     "pt": [
       "milhões de euros"
@@ -3213,6 +3385,10 @@ export const UNIDADES_HB1 = {
       {
         "campo": "name",
         "literal": "Ação 1.2 Gestão urbanística e qualidade do edificiado"
+      },
+      {
+        "campo": "excerpt",
+        "literal": "Ação 1.2 Gestão urbanística e qualidade do edificiado 15"
       }
     ],
     "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
@@ -3235,7 +3411,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "excerpt",
-        "literal": "1 071"
+        "literal": "Ação 1.1 Promoção da oferta e reabilitação habitacional 1 071"
       }
     ],
     "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
@@ -3392,7 +3568,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, annual data"
+        "literal": "Índice harmonizado de preços no consumidor, rendas efetivas da habitação, variação da média anual, União Europeia, 2025"
       },
       {
         "campo": "excerpt",
@@ -3415,7 +3591,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, annual data"
+        "literal": "Índice harmonizado de preços no consumidor, rendas efetivas da habitação, variação da média anual, Finlândia, 2025"
       },
       {
         "campo": "excerpt",
@@ -3438,7 +3614,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, annual data"
+        "literal": "Índice harmonizado de preços no consumidor, rendas efetivas da habitação, variação da média anual, Croácia, 2025"
       },
       {
         "campo": "excerpt",
@@ -3461,7 +3637,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, annual data"
+        "literal": "Índice harmonizado de preços no consumidor, rendas efetivas da habitação, variação da média anual, Portugal, 2025"
       },
       {
         "campo": "excerpt",
@@ -3484,7 +3660,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data"
+        "literal": "Índice harmonizado de preços no consumidor, rendas efetivas da habitação, variação homóloga, União Europeia, setembro de 2026"
       },
       {
         "campo": "excerpt",
@@ -3507,7 +3683,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data"
+        "literal": "Índice harmonizado de preços no consumidor, rendas efetivas da habitação, variação homóloga, Portugal, setembro de 2026"
       },
       {
         "campo": "excerpt",
@@ -3548,7 +3724,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "House price index - quarterly data"
+        "literal": "Índice de preços da habitação, índice trimestral, 2015 igual a cem, União Europeia, 2.º trimestre de 2026"
       },
       {
         "campo": "excerpt",
@@ -3589,7 +3765,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "House price index - quarterly data"
+        "literal": "Índice de preços da habitação, índice trimestral, 2015 igual a cem, Finlândia, 2.º trimestre de 2026"
       },
       {
         "campo": "excerpt",
@@ -3630,7 +3806,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "House price index - quarterly data"
+        "literal": "Índice de preços da habitação, índice trimestral, 2015 igual a cem, Hungria, 2.º trimestre de 2026"
       },
       {
         "campo": "excerpt",
@@ -3671,7 +3847,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "House price index - quarterly data"
+        "literal": "Índice de preços da habitação, índice trimestral, 2015 igual a cem, Portugal, 2.º trimestre de 2026"
       },
       {
         "campo": "excerpt",
@@ -3694,7 +3870,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "House price index - quarterly data"
+        "literal": "Índice de preços da habitação, variação homóloga, União Europeia, 2.º trimestre de 2026"
       },
       {
         "campo": "excerpt",
@@ -3717,7 +3893,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "House price index - quarterly data"
+        "literal": "Índice de preços da habitação, variação homóloga, Finlândia, 2.º trimestre de 2026"
       },
       {
         "campo": "excerpt",
@@ -3740,7 +3916,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "House price index - quarterly data"
+        "literal": "Índice de preços da habitação, variação homóloga, Portugal, 2.º trimestre de 2026"
       },
       {
         "campo": "excerpt",
@@ -3832,7 +4008,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Building permits by type of building - annual data"
+        "literal": "Alojamentos licenciados, milhares, União Europeia, 2025"
       },
       {
         "campo": "excerpt",
@@ -3855,7 +4031,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Building permits by type of building - annual data"
+        "literal": "Alojamentos licenciados, milhares, Portugal, 2025"
       },
       {
         "campo": "excerpt",
@@ -3896,7 +4072,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "House price index, deflated - annual data"
+        "literal": "Índice de preços da habitação, descontada a inflação, índice, média de 2015 igual a cem, União Europeia, 2025"
       },
       {
         "campo": "excerpt",
@@ -3937,7 +4113,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "House price index, deflated - annual data"
+        "literal": "Índice de preços da habitação, descontada a inflação, índice, média de 2015 igual a cem, Finlândia, 2025"
       },
       {
         "campo": "excerpt",
@@ -3978,7 +4154,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "House price index, deflated - annual data"
+        "literal": "Índice de preços da habitação, descontada a inflação, índice, média de 2015 igual a cem, Portugal, 2020"
       },
       {
         "campo": "excerpt",
@@ -4019,7 +4195,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "House price index, deflated - annual data"
+        "literal": "Índice de preços da habitação, descontada a inflação, índice, média de 2015 igual a cem, Portugal, 2025"
       },
       {
         "campo": "excerpt",
@@ -4042,7 +4218,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "House price index, deflated - annual data"
+        "literal": "Índice de preços da habitação, descontada a inflação, variação da média anual, União Europeia, 2025"
       },
       {
         "campo": "excerpt",
@@ -4065,7 +4241,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "House price index, deflated - annual data"
+        "literal": "Índice de preços da habitação, descontada a inflação, variação da média anual, Portugal, 2025"
       },
       {
         "campo": "excerpt",
@@ -4106,7 +4282,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Standardised house price-to-income ratio - annual data"
+        "literal": "Rácio padronizado entre preços da habitação e rendimento, índice, 2015 igual a cem, União Europeia, 2024"
       },
       {
         "campo": "excerpt",
@@ -4147,7 +4323,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Standardised house price-to-income ratio - annual data"
+        "literal": "Rácio padronizado entre preços da habitação e rendimento, índice, 2015 igual a cem, Portugal, 2019"
       },
       {
         "campo": "excerpt",
@@ -4188,7 +4364,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Standardised house price-to-income ratio - annual data"
+        "literal": "Rácio padronizado entre preços da habitação e rendimento, índice, 2015 igual a cem, Portugal, 2024"
       },
       {
         "campo": "excerpt",
@@ -4229,7 +4405,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Standardised house price-to-income ratio - annual data"
+        "literal": "Rácio padronizado entre preços da habitação e rendimento, índice, 2015 igual a cem, Roménia, 2024"
       },
       {
         "campo": "excerpt",
@@ -4252,7 +4428,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Standardised house price-to-income ratio - annual data"
+        "literal": "Rácio padronizado entre preços da habitação e rendimento, índice, média de longo prazo igual a cem, União Europeia, 2024"
       },
       {
         "campo": "excerpt",
@@ -4275,11 +4451,34 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Standardised house price-to-income ratio - annual data"
+        "literal": "Rácio padronizado entre preços da habitação e rendimento, índice, média de longo prazo igual a cem, Portugal, 2024"
       },
       {
         "campo": "excerpt",
         "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PTIR_LT_AVG\", \"geo\": \"PT\", \"time\": \"2024\"}, \"value\": \"122.92\", \"status\": null}"
+      }
+    ],
+    "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
+  },
+  "hab-tipsho60-a-ptir-lt-avg-ro-2024": {
+    "pt": [
+      "rácio preços/rendimento face à média de longo prazo"
+    ],
+    "en": [
+      "price-to-income ratio relative to its long-term average"
+    ],
+    "apoio": [
+      {
+        "campo": "unit",
+        "literal": "Price-to-income ratio relative to long-term average"
+      },
+      {
+        "campo": "name",
+        "literal": "Rácio padronizado entre preços da habitação e rendimento, índice, média de longo prazo igual a cem, Roménia, 2024"
+      },
+      {
+        "campo": "excerpt",
+        "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PTIR_LT_AVG\", \"geo\": \"RO\", \"time\": \"2024\"}, \"value\": \"48.23\", \"status\": null}"
       }
     ],
     "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
@@ -4390,7 +4589,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Estimated average age of young persons leaving the parental household"
+        "literal": "Idade média estimada de saída de casa dos pais, União Europeia, 2025"
       },
       {
         "campo": "excerpt",
@@ -4413,7 +4612,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Estimated average age of young persons leaving the parental household"
+        "literal": "Idade média estimada de saída de casa dos pais, Finlândia, 2025"
       },
       {
         "campo": "excerpt",
@@ -4436,7 +4635,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Estimated average age of young persons leaving the parental household"
+        "literal": "Idade média estimada de saída de casa dos pais, Croácia, 2025"
       },
       {
         "campo": "excerpt",
@@ -4459,7 +4658,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Estimated average age of young persons leaving the parental household"
+        "literal": "Idade média estimada de saída de casa dos pais, Portugal, 2015"
       },
       {
         "campo": "excerpt",
@@ -4482,7 +4681,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "Estimated average age of young persons leaving the parental household"
+        "literal": "Idade média estimada de saída de casa dos pais, Portugal, 2025"
       },
       {
         "campo": "excerpt",

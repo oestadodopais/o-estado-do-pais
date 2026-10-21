@@ -13,6 +13,7 @@ unit: "afirmação"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "o Governo \"não vai ceder aos gritos que vêm da rua\"."
 name_source: "HTML; início literal único"
+measure: "o Governo \"não vai ceder aos gritos que vêm da rua\"."
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Carlos Abreu Amorim"

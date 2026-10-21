@@ -13,6 +13,7 @@ unit: "afirmação"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "Propomos critérios para a limitação dos valores de renda dos novos contratos, nomeadamente a possibilidade de aumento até 2% do valor de renda do novo contrato, ou caso tenha tido mais de um contrato nos últimos cinco anos, o aumento até 2% aplica-se ao valor de renda mais baixo nesse período."
 name_source: "HTML; início literal único"
+measure: "Propomos critérios para a limitação dos valores de renda dos novos contratos, nomeadamente a possibilidade de aumento até 2% do valor de renda do novo contrato, ou caso tenha tido mais de um contrato nos últimos cinco anos, o aumento até 2% aplica-se ao valor de renda mais baixo nesse período."
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Paula Santos"

@@ -8,6 +8,8 @@ id: "der-hab-proprietarios-pt-2025"
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
 value: "71,2"
 unit: "%"
+measure: "Proprietários"
+measure_en: "Owners"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: null
@@ -20,8 +22,8 @@ reference_date: "2025"
 excerpt: null
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
-derivation: "round ( hab-ilc-lvho02-a-total-total-own-l-pc-pt-2025 + hab-ilc-lvho02-a-total-total-own-nl-pc-pt-2025 , 1 ) = 71.2"
-derivation_en: "round ( hab-ilc-lvho02-a-total-total-own-l-pc-pt-2025 + hab-ilc-lvho02-a-total-total-own-nl-pc-pt-2025 , 1 ) = 71.2"
+derivation: "Distribuição da população por regime de ocupação, proprietários com empréstimo, Portugal, 2025 (31,5 %; Eurostat, ilc_lvho02) mais Distribuição da população por regime de ocupação, proprietários sem empréstimo, Portugal, 2025 (39,7 %; Eurostat, ilc_lvho02), arredondado a uma casa decimal: 71,2."
+derivation_en: "Distribution of population by tenure status, Owner, with mortgage or loan, Portugal, 2025 (31.5 %; Eurostat, ilc_lvho02) plus Distribution of population by tenure status, Owner, no outstanding mortgage or housing loan, Portugal, 2025 (39.7 %; Eurostat, ilc_lvho02), rounded to one decimal place: 71.2."
 derived_from:
   - "hab-ilc-lvho02-a-total-total-own-l-pc-pt-2025"
   - "hab-ilc-lvho02-a-total-total-own-nl-pc-pt-2025"

@@ -11,8 +11,12 @@ unit: "Annual average index, 2015=100"
 
 # O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
-name: "House price index, deflated - annual data"
-name_source: "label; dimension.age.category.label"
+name: "Índice de preços da habitação, descontada a inflação, índice, média de 2015 igual a cem, Portugal, 2025"
+name_source: "label; dimension.unit.category.label.I15_A_AVG; dimension.geo.category.label.PT; dimension.time.category.label.2025"
+name_en: "House price index, deflated, Annual average index, 2015=100, Portugal, 2025"
+name_source_en: "label; dimension.unit.category.label.I15_A_AVG; dimension.geo.category.label.PT; dimension.time.category.label.2025"
+measure: "Índice de preços da habitação, descontada a inflação, índice, média de 2015 igual a cem, Portugal, 2025"
+measure_en: "House price index, deflated, Annual average index, 2015=100, Portugal, 2025"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Eurostat"
@@ -35,6 +39,10 @@ derivation_en: null
 derived_from: []
 # Expressão verificada no build: tem de dar exactamente o valor acima.
 check: null
+
+# A quem o valor é creditado. Lista de entidades, ou campo nenhum.
+attributed_to:
+  - "Eurostat"
 
 study: "a-casa-em-portugal-e-na-europa"
 # Nota interna. NÃO é publicada: ver DECISIONS §1.24.

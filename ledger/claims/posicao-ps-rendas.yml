@@ -8,6 +8,8 @@ id: "posicao-ps-rendas"
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
 value: "Arrendatários: dedução das rendas no IRS aumentada para 1.000 euros a partir de 2027."
 unit: "texto"
+measure: "Dedução das rendas no IRS"
+measure_en: "Income tax deduction for rents"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "José Luís Carneiro"

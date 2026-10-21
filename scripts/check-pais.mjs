@@ -8,7 +8,7 @@ import { load } from 'js-yaml';
 import { DOMINIOS, DOMINIO_DAS_MEDIDAS } from '../src/data/dominios.mjs';
 import { MUDANCAS_DO_PROJETO } from '../src/data/mudancas-do-projeto.mjs';
 import { REFERENCIAS_DAS_MEDIDAS } from '../src/data/referencias-das-medidas.mjs';
-import { WORKS, SUBJECTS, linguaDoTitulo } from '../src/data/studies.mjs';
+import { PUBLISHED_WORKS, WORKS, SUBJECTS, linguaDoTitulo } from '../src/data/studies.mjs';
 import { REGIOES } from '../src/data/regioes.mjs';
 import { MUNICIPIOS_COM_PAGINA } from '../src/data/municipios.mjs';
 import { LUGAR_DECLARADO_DAS_LINHAS } from '../src/data/lugar-das-linhas.mjs';
@@ -324,7 +324,7 @@ function chaveDaMudanca(li) {
 }
 const chavesDoRegisto = new Set([
   ...chavesDoLivro,
-  ...WORKS.map(w => `publicacao|${w.slug}`),
+  ...PUBLISHED_WORKS.map(w => `publicacao|${w.slug}`),
   ...MUDANCAS_DO_PROJETO.map(m => `projeto|${m.id}`),
 ]);
 let listasMedidas = 0;
@@ -412,7 +412,7 @@ for (const lang of ['pt', 'en']) {
   }
   const recentes = WORKS.map((w,i) => {
     const e = w.editions.find(e => e.lang === lang) ?? w.editions[0];
-    return { slug: w.slug, i, emCurso: Boolean(w.emCurso), data: datas.find(d => d.slug === w.slug && d.lang === e.lang)?.data ?? '' };
+    return { slug: w.slug, i, emCurso: Boolean(w.emCurso), data: (w.publication === 'declared' ? e.date : datas.find(d => d.slug === w.slug && d.lang === e.lang)?.data) ?? '' };
   }).sort((a,b) => Number(b.emCurso) - Number(a.emCurso) || b.data.localeCompare(a.data) || a.i-b.i).slice(0,3).map(e=>e.slug);
   const rendidos = home.querySelectorAll('#trabalhos [data-estudo]').map(e => e.getAttribute('data-estudo'));
   if (JSON.stringify(recentes) !== JSON.stringify(rendidos)) erros.push(`E1 ${lang}: os três estudos não têm os em curso à cabeça, seguidos dos mais recentes.`);
@@ -434,7 +434,7 @@ for (const lang of ['pt', 'en']) {
      são edições datadas, e quem os lista são os estudos que lhes sucedem. */
   const todos = WORKS.map((w,i) => ({ w, i })).filter(({ w }) => !w.sucedidoPor).map(({ w, i }) => {
     const e = w.editions.find(e => e.lang === lang) ?? w.editions[0];
-    return { w, i, data: datas.find(d => d.slug === w.slug && d.lang === e.lang)?.data ?? '' };
+    return { w, i, data: (w.publication === 'declared' ? e.date : datas.find(d => d.slug === w.slug && d.lang === e.lang)?.data) ?? '' };
   }).sort((a,b) => b.data.localeCompare(a.data) || a.i-b.i);
   const entradas = listaDosEstudos.querySelectorAll('main [data-estudo]');
   if (JSON.stringify(entradas.map(e => e.getAttribute('data-estudo'))) !== JSON.stringify(todos.map(e => e.w.slug)))

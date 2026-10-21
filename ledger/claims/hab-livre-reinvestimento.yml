@@ -13,6 +13,7 @@ unit: "afirmação"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "[NOVO] g) Sem prejuízo do disposto nas alíneas b) a e) do número anterior, são igualmente excluídos da tributação os ganhos provenientes da transmissão onerosa de imóveis destinados a habitação própria e permanente do sujeito passivo ou do seu agregado familiar, quando o valor de realização, deduzido da amortização de eventual empréstimo contraído para a aquisição do imóvel, seja reinvestido na aquisição do direito de habitação em fogo que pertença a cooperativa em regime de propriedade coletiva e que se destine à sua habitação própria e permanente."
 name_source: "PDF p. 4; parágrafo identificado pelo início; área física declarada"
+measure: "[NOVO] g) Sem prejuízo do disposto nas alíneas b) a e) do número anterior, são igualmente excluídos da tributação os ganhos provenientes da transmissão onerosa de imóveis destinados a habitação própria e permanente do sujeito passivo ou do seu agregado familiar, quando o valor de realização, deduzido da amortização de eventual empréstimo contraído para a aquisição do imóvel, seja reinvestido na aquisição do direito de habitação em fogo que pertença a cooperativa em regime de propriedade coletiva e que se destine à sua habitação própria e permanente."
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "LIVRE"

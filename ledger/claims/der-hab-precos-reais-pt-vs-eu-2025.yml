@@ -8,6 +8,8 @@ id: "der-hab-precos-reais-pt-vs-eu-2025"
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
 value: "81,7"
 unit: "pontos de índice"
+measure: "Diferença: Índice de preços da habitação, descontada a inflação, índice, média de 2015 igual a cem, Portugal, 2025"
+measure_en: "Difference: Índice de preços da habitação, descontada a inflação, índice, média de 2015 igual a cem, Portugal, 2025"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: null
@@ -20,8 +22,8 @@ reference_date: "2025"
 excerpt: null
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
-derivation: "round ( hab-tipsho10-a-i15-a-avg-pt-2025 - hab-tipsho10-a-i15-a-avg-eu27_2020-2025 , 1 ) = 81.7"
-derivation_en: "round ( hab-tipsho10-a-i15-a-avg-pt-2025 - hab-tipsho10-a-i15-a-avg-eu27_2020-2025 , 1 ) = 81.7"
+derivation: "Índice de preços da habitação, descontada a inflação, índice, média de 2015 igual a cem, Portugal, 2025 (206,41 índice médio anual, 2015 igual a cem; Eurostat, tipsho10) menos Índice de preços da habitação, descontada a inflação, índice, média de 2015 igual a cem, União Europeia, 2025 (124,75 índice médio anual, 2015 igual a cem; Eurostat, tipsho10), arredondado a uma casa decimal: 81,7."
+derivation_en: "House price index, deflated, Annual average index, 2015=100, Portugal, 2025 (206.41 annual average index, 2015 equal to one hundred; Eurostat, tipsho10) minus House price index, deflated, Annual average index, 2015=100, European Union - 27 countries (from 2020), 2025 (124.75 annual average index, 2015 equal to one hundred; Eurostat, tipsho10), rounded to one decimal place: 81.7."
 derived_from:
   - "hab-tipsho10-a-i15-a-avg-pt-2025"
   - "hab-tipsho10-a-i15-a-avg-eu27_2020-2025"

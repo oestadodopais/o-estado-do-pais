@@ -13,6 +13,7 @@ unit: "afirmação"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "Um contrato de arrendamento de cinco anos, por opção das partes, com as rendas tributadas a uma taxa de 5% e com garantia pública para o senhorio em caso de falta de pagamento."
 name_source: "HTML; início literal único"
+measure: "Um contrato de arrendamento de cinco anos, por opção das partes, com as rendas tributadas a uma taxa de 5% e com garantia pública para o senhorio em caso de falta de pagamento."
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "José Luís Carneiro"

@@ -13,6 +13,7 @@ unit: "afirmação"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "Os aumentos com os custos na habitação foram superiores a 100 por cento na esmagadora maioria das cidades"
 name_source: "HTML; cobertura do debate quinzenal; início literal único"
+measure: "Os aumentos com os custos na habitação foram superiores a 100 por cento na esmagadora maioria das cidades"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Luís Montenegro"

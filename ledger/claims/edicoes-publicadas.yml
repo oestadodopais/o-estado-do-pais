@@ -4,17 +4,17 @@
 id: "edicoes-publicadas"
 
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
-value: "27"
+value: "25"
 unit: "edições"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "O Estado do País"
 document:
   title: "Arquivo de estudos"
-  edition: "20.10.2026"
+  edition: "21.10.2026"
 source_url: null
-access_date: "2026-10-20"
-reference_date: "2026-10-20"
+access_date: "2026-10-21"
+reference_date: "2026-10-21"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
 excerpt: null
@@ -43,3 +43,10 @@ corrections:
     new_value: "27"
     reason: "Entraram no arquivo as duas edições do estudo da habitação em Portugal e na Europa."
     reason_en: "The two editions of Housing in Portugal and in Europe entered the archive."
+
+  - date: "2026-10-21"
+    kind: "correcao"
+    old_value: "27"
+    new_value: "25"
+    reason: "O estudo da habitação foi contado antes da publicação. As edições em preparação deixam de entrar nesta contagem."
+    reason_en: "The housing study was counted before publication. Editions in preparation no longer enter this count."

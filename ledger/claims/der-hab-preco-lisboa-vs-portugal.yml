@@ -8,6 +8,8 @@ id: "der-hab-preco-lisboa-vs-portugal"
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
 value: "2,3"
 unit: "vezes"
+measure: "Lisboa face a Portugal"
+measure_en: "Lisbon relative to Portugal"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: null
@@ -20,8 +22,8 @@ reference_date: "2026-T1"
 excerpt: null
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
-derivation: "round ( hab-ine-preco-lisboa / hab-ine-preco-mediano , 1 ) = 2.3"
-derivation_en: "round ( hab-ine-preco-lisboa / hab-ine-preco-mediano , 1 ) = 2.3"
+derivation: "preços da habitação, Lisboa, 1.º trimestre de 2026 (5 292 euros por metro quadrado; INE) a dividir por preço mediano dos 35 953 alojamentos familiares transacionados em Portugal, 1.º trimestre de 2026 (2 337 euros por metro quadrado; INE), arredondado a uma casa decimal: 2,3."
+derivation_en: "house prices, Lisbon, quarter 1 of 2026 (5292 euros per square metre; INE) divided by median price of the 35 953 family dwellings transacted in Portugal, quarter 1 of 2026 (2337 euros per square metre; INE), rounded to one decimal place: 2.3."
 derived_from:
   - "hab-ine-preco-lisboa"
   - "hab-ine-preco-mediano"

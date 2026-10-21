@@ -1,3 +1,5 @@
+import { hasSerie, getSerie } from './series.mjs';
+import rotulosDasSeries from '../data/rotulos-das-series.json' with { type: 'json' };
 import { nomeDoProjeto } from '../data/nomes-das-medidas.mjs';
 import { routePath } from './routes.mjs';
 import { ROTULOS_B1 } from '../data/rotulos-b1.mjs';
@@ -596,7 +598,14 @@ export function pecasDoCorpo({
           const id = linhaDoSitio(row);
           if (!id) throw new FalhaDoRegisto(`linha citada sem recibo: ${row}`);
           const nome = nomeDoProjeto(id)?.[lang];
-          const label = nome ? `<span data-nome="projeto" data-de-linha="${escapaAtributo(id)}">${escapaTexto(nome)}</span>` : (lang === 'pt' ? 'Fonte' : 'Source');
+          let label;
+          if (nome) label = `<span data-nome="projeto" data-de-linha="${escapaAtributo(id)}">${escapaTexto(nome)}</span>`;
+          else if (hasSerie(id)) {
+            const serie = getSerie(id);
+            const rotulo = rotulosDasSeries.rotulos.find(r => r.serie === id)?.documento;
+            if (!rotulo || rotulo !== /** @type {{title: string}} */ (serie.document).title) throw new FalhaDoRegisto(`série citada sem rótulo conferido: ${id}`);
+            label = `<span lang="en" data-serie="${escapaAtributo(id)}" data-serie-campo="document.title">${escapaTexto(rotulo)}</span>`;
+          } else throw new FalhaDoRegisto(`linha citada sem nome: ${id}`);
           saida.html(`<li><a href="${escapaAtributo(routePath('linha', lang, { slug: id }))}">${label}</a></li>`);
         }
         saida.html('</ul></details>');

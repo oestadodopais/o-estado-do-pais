@@ -13,6 +13,7 @@ unit: "afirmação"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "O propósito da presente iniciativa é o de tornar essa norma de isenção temporária em norma definitiva, inserindo-a no próprio CIRS, pela importância de que se pode revestir."
 name_source: "PDF p. 2; parágrafo identificado pelo início; área física declarada"
+measure: "O propósito da presente iniciativa é o de tornar essa norma de isenção temporária em norma definitiva, inserindo-a no próprio CIRS, pela importância de que se pode revestir."
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Chega"

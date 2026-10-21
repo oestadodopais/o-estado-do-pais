@@ -13,6 +13,7 @@ unit: "afirmação"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "39 feridos, dois deles graves"
 name_source: "HTML; início literal único"
+measure: "39 feridos, dois deles graves"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "organização"
@@ -41,6 +42,8 @@ check: null
 # A quem o valor é creditado. Lista de entidades, ou campo nenhum.
 attributed_to:
   - "organização"
+attributed_to_en:
+  - "the organisers"
 
 study: "a-casa-em-portugal-e-na-europa"
 # Nota interna. NÃO é publicada: ver DECISIONS §1.24.

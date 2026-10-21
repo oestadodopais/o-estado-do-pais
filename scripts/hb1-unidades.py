@@ -11,6 +11,7 @@ simples={
  'Price-to-income ratio, index 2015=100':('índice do rácio preços/rendimento, 2015 igual a 100','price-to-income ratio index, 2015 equals 100'),
  'Price-to-income ratio relative to long-term average':('rácio preços/rendimento face à média de longo prazo','price-to-income ratio relative to its long-term average'),
  'Average':('idade média em anos','average age in years'),'Annual rate of change':('% de variação anual','% annual change'),
+ 'pontos percentuais do índice':('pontos percentuais do índice','percentage points of the index'),
  'pontos de índice':('pontos de índice','index points'),'milhões de euros':('milhões de euros','million euros'),'Milhões de euros':('milhões de euros','million euros'),
  '€/m2':('euros por metro quadrado','euros per square metre'),'pontos percentuais':('pontos percentuais','percentage points'),
  'por mil habitantes':('alojamentos licenciados por mil habitantes','permitted dwellings per thousand inhabitants'),

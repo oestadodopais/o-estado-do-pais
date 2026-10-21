@@ -83,66 +83,42 @@ export const LEITURAS = {
     ],
     "frase": {
       "pt": [
-        "Descontada a inflação, o índice dos preços da habitação em ",
-        {
-          "ref": "2025"
-        },
-        " é de ",
-        {
-          "claim": "hab-tipsho10-a-i15-a-avg-pt-2025"
-        },
-        " em Portugal e ",
-        {
-          "claim": "hab-tipsho10-a-i15-a-avg-eu27_2020-2025"
-        },
-        " na União, com ",
-        {
-          "ref": "2015"
-        },
-        " igual a cem. Entre os inquilinos a preços de mercado, ",
-        {
-          "claim": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
-          "sufixo": " %"
-        },
-        " estão em sobrecarga; os jovens saem de casa dos pais aos ",
-        {
-          "claim": "hab-yth-demo-030-a-avg-t-pt-2025"
-        },
-        " anos."
+            "Os preços das casas em Portugal subiram mais do que em qualquer país da União desde ",
+            {
+                  "ref": "2015"
+            },
+            ", e a família média gasta na casa menos do que a média europeia: o peso cai sobre quem arrenda a preços de mercado, ",
+            {
+                  "claim": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
+                  "sufixo": " %"
+            },
+            " dos quais estão em sobrecarga, e sobre os jovens, que saem de casa dos pais aos ",
+            {
+                  "claim": "hab-yth-demo-030-a-avg-t-pt-2025"
+            },
+            " anos."
       ],
       "en": [
-        "Net of inflation, the index of housing prices in ",
-        {
-          "ref": "2025"
-        },
-        " is ",
-        {
-          "claim": "hab-tipsho10-a-i15-a-avg-pt-2025"
-        },
-        " in Portugal and ",
-        {
-          "claim": "hab-tipsho10-a-i15-a-avg-eu27_2020-2025"
-        },
-        " in the Union, with ",
-        {
-          "ref": "2015"
-        },
-        " equal to one hundred. Among tenants at market rents, ",
-        {
-          "claim": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
-          "sufixo": " %"
-        },
-        " are overburdened; the young leave their parents’ home at ",
-        {
-          "claim": "hab-yth-demo-030-a-avg-t-pt-2025"
-        },
-        " years."
+            "House prices in Portugal rose more than in any country of the Union since ",
+            {
+                  "ref": "2015"
+            },
+            ", and the average household spends less on housing than the European average: the weight falls on those renting at market prices, ",
+            {
+                  "claim": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
+                  "sufixo": " %"
+            },
+            " of whom are overburdened, and on the young, who leave their parents' home at ",
+            {
+                  "claim": "hab-yth-demo-030-a-avg-t-pt-2025"
+            },
+            " years."
       ]
-    },
+},
     "origem": {
       "onde": "content/28 Habitacao Estudo/, abertura das duas edições",
-      "pt": "Descontada a inflação, o índice dos preços",
-      "en": "Net of inflation, the price index"
+      "pt": "Os preços das casas em Portugal subiram",
+      "en": "House prices in Portugal rose"
     }
   }
 ,

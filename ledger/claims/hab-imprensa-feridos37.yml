@@ -13,6 +13,7 @@ unit: "afirmação"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "37 feridos, dois em estado grave"
 name_source: "HTML; início literal único"
+measure: "37 feridos, dois em estado grave"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Movimento pela Habitação"

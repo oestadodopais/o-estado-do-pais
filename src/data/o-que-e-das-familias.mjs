@@ -7004,10 +7004,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A conta calcula impacto conjunto das medidas fiscais da habitação pelas componentes identificadas."
+        "A conta calcula impacto conjunto das medidas fiscais da habitação pelas componentes identificadas"
       ],
       "en": [
-        "The calculation gives combined impact of housing tax measures from the identified components."
+        "The calculation gives combined impact of housing tax measures from the identified components"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "der-hab-fiscal-2027"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "der-hab-fiscal-2027"
+        },
+        "."
       ]
     }
   },
@@ -7018,10 +7034,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A conta calcula população em casa arrendada, União Europeia pelas componentes identificadas."
+        "A conta calcula população em casa arrendada, União Europeia pelas componentes identificadas"
       ],
       "en": [
-        "The calculation gives population in rented homes, European Union from the identified components."
+        "The calculation gives population in rented homes, European Union from the identified components"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "der-hab-inquilinos-eu-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "der-hab-inquilinos-eu-2025"
+        },
+        "."
       ]
     }
   },
@@ -7032,10 +7064,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A conta calcula população em casa arrendada, Portugal pelas componentes identificadas."
+        "A conta calcula população em casa arrendada, Portugal pelas componentes identificadas"
       ],
       "en": [
-        "The calculation gives population in rented homes, Portugal from the identified components."
+        "The calculation gives population in rented homes, Portugal from the identified components"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "der-hab-inquilinos-pt-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "der-hab-inquilinos-pt-2025"
+        },
+        "."
       ]
     }
   },
@@ -7046,10 +7094,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A conta calcula diferença face à União nos jovens que vivem com os pais pelas componentes identificadas."
+        "A conta calcula diferença face à União nos jovens que vivem com os pais pelas componentes identificadas"
       ],
       "en": [
-        "The calculation gives gap from the Union in young people living with parents from the identified components."
+        "The calculation gives gap from the Union in young people living with parents from the identified components"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "der-hab-jovens-com-pais-pt-vs-eu-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "der-hab-jovens-com-pais-pt-vs-eu-2025"
+        },
+        "."
       ]
     }
   },
@@ -7060,10 +7124,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A conta calcula alojamentos licenciados por mil habitantes, União Europeia pelas componentes identificadas."
+        "A conta calcula alojamentos licenciados por mil habitantes, União Europeia pelas componentes identificadas"
       ],
       "en": [
-        "The calculation gives dwellings permitted per thousand inhabitants, European Union from the identified components."
+        "The calculation gives dwellings permitted per thousand inhabitants, European Union from the identified components"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "der-hab-licencas-por-mil-eu-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "der-hab-licencas-por-mil-eu-2025"
+        },
+        "."
       ]
     }
   },
@@ -7074,10 +7154,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A conta calcula alojamentos licenciados por mil habitantes, Portugal pelas componentes identificadas."
+        "A conta calcula alojamentos licenciados por mil habitantes, Portugal pelas componentes identificadas"
       ],
       "en": [
-        "The calculation gives dwellings permitted per thousand inhabitants, Portugal from the identified components."
+        "The calculation gives dwellings permitted per thousand inhabitants, Portugal from the identified components"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "der-hab-licencas-por-mil-pt-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "der-hab-licencas-por-mil-pt-2025"
+        },
+        "."
       ]
     }
   },
@@ -7088,10 +7184,146 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A conta calcula preço mediano em Lisboa em relação ao país pelas componentes identificadas."
+        "A conta calcula preço mediano em Lisboa em relação ao país pelas componentes identificadas"
       ],
       "en": [
-        "The calculation gives median price in Lisbon relative to the country from the identified components."
+        "The calculation gives median price in Lisbon relative to the country from the identified components"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " no ",
+        {
+          "periodo": "der-hab-preco-lisboa-vs-portugal"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "der-hab-preco-lisboa-vs-portugal"
+        },
+        "."
+      ]
+    }
+  },
+  "der-hab-preco-rendimento-acima-2015-eu-2024": {
+    "nome": {
+      "pt": "Aumento dos preços face ao rendimento desde o ano base",
+      "en": "Increase in prices relative to income since the base year"
+    },
+    "frase": {
+      "pt": [
+        "A conta calcula aumento dos preços face ao rendimento desde o ano base pelas componentes identificadas"
+      ],
+      "en": [
+        "The calculation gives increase in prices relative to income since the base year from the identified components"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "der-hab-preco-rendimento-acima-2015-eu-2024"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "der-hab-preco-rendimento-acima-2015-eu-2024"
+        },
+        "."
+      ]
+    }
+  },
+  "der-hab-preco-rendimento-acima-2015-pt-2024": {
+    "nome": {
+      "pt": "Aumento dos preços face ao rendimento desde o ano base",
+      "en": "Increase in prices relative to income since the base year"
+    },
+    "frase": {
+      "pt": [
+        "A conta calcula aumento dos preços face ao rendimento desde o ano base pelas componentes identificadas"
+      ],
+      "en": [
+        "The calculation gives increase in prices relative to income since the base year from the identified components"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "der-hab-preco-rendimento-acima-2015-pt-2024"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "der-hab-preco-rendimento-acima-2015-pt-2024"
+        },
+        "."
+      ]
+    }
+  },
+  "der-hab-preco-rendimento-lt-eu-2024": {
+    "nome": {
+      "pt": "Distância do rácio preço-rendimento à média de longo prazo",
+      "en": "Distance of the price-to-income ratio from the long-term average"
+    },
+    "frase": {
+      "pt": [
+        "A conta calcula distância do rácio preço-rendimento à média de longo prazo pelas componentes identificadas"
+      ],
+      "en": [
+        "The calculation gives distance of the price-to-income ratio from the long-term average from the identified components"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "der-hab-preco-rendimento-lt-eu-2024"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "der-hab-preco-rendimento-lt-eu-2024"
+        },
+        "."
+      ]
+    }
+  },
+  "der-hab-preco-rendimento-lt-pt-2024": {
+    "nome": {
+      "pt": "Distância do rácio preço-rendimento à média de longo prazo",
+      "en": "Distance of the price-to-income ratio from the long-term average"
+    },
+    "frase": {
+      "pt": [
+        "A conta calcula distância do rácio preço-rendimento à média de longo prazo pelas componentes identificadas"
+      ],
+      "en": [
+        "The calculation gives distance of the price-to-income ratio from the long-term average from the identified components"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "der-hab-preco-rendimento-lt-pt-2024"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "der-hab-preco-rendimento-lt-pt-2024"
+        },
+        "."
       ]
     }
   },
@@ -7102,10 +7334,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A conta calcula diferença face à União no índice preço-rendimento pelas componentes identificadas."
+        "A conta calcula diferença face à União no índice preço-rendimento pelas componentes identificadas"
       ],
       "en": [
-        "The calculation gives gap from the Union in the price-to-income index from the identified components."
+        "The calculation gives gap from the Union in the price-to-income index from the identified components"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "der-hab-preco-rendimento-pt-vs-eu-2024"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "der-hab-preco-rendimento-pt-vs-eu-2024"
+        },
+        "."
       ]
     }
   },
@@ -7116,10 +7364,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A conta calcula diferença face à União no índice dos preços reais pelas componentes identificadas."
+        "A conta calcula diferença face à União no índice dos preços reais pelas componentes identificadas"
       ],
       "en": [
-        "The calculation gives gap from the Union in the real price index from the identified components."
+        "The calculation gives gap from the Union in the real price index from the identified components"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "der-hab-precos-reais-pt-vs-eu-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "der-hab-precos-reais-pt-vs-eu-2025"
+        },
+        "."
       ]
     }
   },
@@ -7130,10 +7394,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A conta calcula população em casa própria, União Europeia pelas componentes identificadas."
+        "A conta calcula população em casa própria, União Europeia pelas componentes identificadas"
       ],
       "en": [
-        "The calculation gives population in owner-occupied homes, European Union from the identified components."
+        "The calculation gives population in owner-occupied homes, European Union from the identified components"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "der-hab-proprietarios-eu-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "der-hab-proprietarios-eu-2025"
+        },
+        "."
       ]
     }
   },
@@ -7144,10 +7424,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A conta calcula população em casa própria, Portugal pelas componentes identificadas."
+        "A conta calcula população em casa própria, Portugal pelas componentes identificadas"
       ],
       "en": [
-        "The calculation gives population in owner-occupied homes, Portugal from the identified components."
+        "The calculation gives population in owner-occupied homes, Portugal from the identified components"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "der-hab-proprietarios-pt-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "der-hab-proprietarios-pt-2025"
+        },
+        "."
       ]
     }
   },
@@ -7158,10 +7454,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A conta calcula renda mediana em Lisboa em relação ao país pelas componentes identificadas."
+        "A conta calcula renda mediana em Lisboa em relação ao país pelas componentes identificadas"
       ],
       "en": [
-        "The calculation gives median rent in Lisbon relative to the country from the identified components."
+        "The calculation gives median rent in Lisbon relative to the country from the identified components"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " no ",
+        {
+          "periodo": "der-hab-renda-lisboa-vs-portugal"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "der-hab-renda-lisboa-vs-portugal"
+        },
+        "."
       ]
     }
   },
@@ -7172,10 +7484,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A conta calcula diferença face à União na idade de saída de casa dos pais pelas componentes identificadas."
+        "A conta calcula diferença face à União na idade de saída de casa dos pais pelas componentes identificadas"
       ],
       "en": [
-        "The calculation gives gap from the Union in the age of leaving the parental home from the identified components."
+        "The calculation gives gap from the Union in the age of leaving the parental home from the identified components"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "der-hab-saida-pt-vs-eu-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "der-hab-saida-pt-vs-eu-2025"
+        },
+        "."
       ]
     }
   },
@@ -7186,10 +7514,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A conta calcula variação da sobrecarga dos inquilinos em Portugal desde o início da década pelas componentes identificadas."
+        "A conta calcula variação da sobrecarga dos inquilinos em Portugal desde o início da década pelas componentes identificadas"
       ],
       "en": [
-        "The calculation gives change in tenant overburden in Portugal since the start of the decade from the identified components."
+        "The calculation gives change in tenant overburden in Portugal since the start of the decade from the identified components"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "der-hab-sobrecarga-inquilinos-pt-2020-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "der-hab-sobrecarga-inquilinos-pt-2020-2025"
+        },
+        "."
       ]
     }
   },
@@ -7200,10 +7544,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A conta calcula diferença face à União na sobrecarga dos inquilinos pelas componentes identificadas."
+        "A conta calcula diferença face à União na sobrecarga dos inquilinos pelas componentes identificadas"
       ],
       "en": [
-        "The calculation gives gap from the Union in tenant overburden from the identified components."
+        "The calculation gives gap from the Union in tenant overburden from the identified components"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "der-hab-sobrecarga-inquilinos-pt-vs-eu-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "der-hab-sobrecarga-inquilinos-pt-vs-eu-2025"
+        },
+        "."
       ]
     }
   },
@@ -7218,6 +7578,20 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
       ],
       "en": [
         "The excerpt reproduces the indicated document about explanatory memorandum of rental reform."
+      ]
+    }
+  },
+  "hab-arrendamento-exposicao-vagos": {
+    "nome": {
+      "pt": "Estimativa do Governo de alojamentos vagos em boas condições",
+      "en": "Government estimate of vacant dwellings in good condition"
+    },
+    "frase": {
+      "pt": [
+        "O excerto reproduz o documento indicado sobre estimativa do Governo de alojamentos vagos em boas condições."
+      ],
+      "en": [
+        "The excerpt reproduces the indicated document about government estimate of vacant dwellings in good condition."
       ]
     }
   },
@@ -7242,10 +7616,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra novas operações de crédito à habitação, no período indicado."
+        "A medida mostra novas operações de crédito à habitação"
       ],
       "en": [
-        "The measure shows new housing loans, for the indicated period."
+        "The measure shows new housing loans"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-bpstat-12533724"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-bpstat-12533724"
+        },
+        "."
       ]
     }
   },
@@ -7256,10 +7646,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra taxa de juro das novas operações de crédito à habitação, no período indicado."
+        "A medida mostra taxa de juro das novas operações de crédito à habitação"
       ],
       "en": [
-        "The measure shows interest rate on new housing loans, for the indicated period."
+        "The measure shows interest rate on new housing loans"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-bpstat-12533735"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-bpstat-12533735"
+        },
+        "."
       ]
     }
   },
@@ -7270,10 +7676,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra crédito à habitação das famílias em dívida, no período indicado."
+        "A medida mostra crédito à habitação das famílias em dívida"
       ],
       "en": [
-        "The measure shows outstanding household housing loans, for the indicated period."
+        "The measure shows outstanding household housing loans"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-bpstat-12557378"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-bpstat-12557378"
+        },
+        "."
       ]
     }
   },
@@ -7284,10 +7706,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra alojamentos nos Censos, Portugal, no período indicado."
+        "A medida mostra alojamentos nos Censos, Portugal"
       ],
       "en": [
-        "The measure shows dwellings in the Census, Portugal, for the indicated period."
+        "The measure shows dwellings in the Census, Portugal"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-cens-21dwob-r3-a-dw-total-nr-pt-2021"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-cens-21dwob-r3-a-dw-total-nr-pt-2021"
+        },
+        "."
       ]
     }
   },
@@ -7326,10 +7764,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra população no início do ano, União Europeia, no período indicado."
+        "A medida mostra população no início do ano, União Europeia"
       ],
       "en": [
-        "The measure shows population at the start of the year, European Union, for the indicated period."
+        "The measure shows population at the start of the year, European Union"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-demo-pjan-eu27_2020-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-demo-pjan-eu27_2020-2025"
+        },
+        "."
       ]
     }
   },
@@ -7340,10 +7794,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra população no início do ano, Portugal, no período indicado."
+        "A medida mostra população no início do ano, Portugal"
       ],
       "en": [
-        "The measure shows population at the start of the year, Portugal, for the indicated period."
+        "The measure shows population at the start of the year, Portugal"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-demo-pjan-pt-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-demo-pjan-pt-2025"
+        },
+        "."
       ]
     }
   },
@@ -7386,6 +7856,20 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
       ],
       "en": [
         "The excerpt reproduces the indicated document about income tax rate on rents."
+      ]
+    }
+  },
+  "hab-eurostat-privacao-severa-definicao": {
+    "nome": {
+      "pt": "Definição de privação severa da habitação",
+      "en": "Definition of severe housing deprivation"
+    },
+    "frase": {
+      "pt": [
+        "O excerto reproduz o documento indicado sobre definição de privação severa da habitação."
+      ],
+      "en": [
+        "The excerpt reproduces the indicated document about definition of severe housing deprivation."
       ]
     }
   },
@@ -7452,10 +7936,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra população por regime de ocupação, proprietários com empréstimo, União Europeia, no período indicado."
+        "A medida mostra população por regime de ocupação, proprietários com empréstimo, União Europeia"
       ],
       "en": [
-        "The measure shows population by tenure status, owners with a loan, European Union, for the indicated period."
+        "The measure shows population by tenure status, owners with a loan, European Union"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ilc-lvho02-a-total-total-own-l-pc-eu27_2020-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ilc-lvho02-a-total-total-own-l-pc-eu27_2020-2025"
+        },
+        "."
       ]
     }
   },
@@ -7466,10 +7966,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra população por regime de ocupação, proprietários com empréstimo, Países Baixos, no período indicado."
+        "A medida mostra população por regime de ocupação, proprietários com empréstimo, Países Baixos"
       ],
       "en": [
-        "The measure shows population by tenure status, owners with a loan, Netherlands, for the indicated period."
+        "The measure shows population by tenure status, owners with a loan, Netherlands"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ilc-lvho02-a-total-total-own-l-pc-nl-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ilc-lvho02-a-total-total-own-l-pc-nl-2025"
+        },
+        "."
       ]
     }
   },
@@ -7480,10 +7996,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra população por regime de ocupação, proprietários com empréstimo, Portugal, no período indicado."
+        "A medida mostra população por regime de ocupação, proprietários com empréstimo, Portugal"
       ],
       "en": [
-        "The measure shows population by tenure status, owners with a loan, Portugal, for the indicated period."
+        "The measure shows population by tenure status, owners with a loan, Portugal"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ilc-lvho02-a-total-total-own-l-pc-pt-2020"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ilc-lvho02-a-total-total-own-l-pc-pt-2020"
+        },
+        "."
       ]
     }
   },
@@ -7494,10 +8026,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra população por regime de ocupação, proprietários com empréstimo, Portugal, no período indicado."
+        "A medida mostra população por regime de ocupação, proprietários com empréstimo, Portugal"
       ],
       "en": [
-        "The measure shows population by tenure status, owners with a loan, Portugal, for the indicated period."
+        "The measure shows population by tenure status, owners with a loan, Portugal"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ilc-lvho02-a-total-total-own-l-pc-pt-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ilc-lvho02-a-total-total-own-l-pc-pt-2025"
+        },
+        "."
       ]
     }
   },
@@ -7508,10 +8056,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra população por regime de ocupação, proprietários com empréstimo, Roménia, no período indicado."
+        "A medida mostra população por regime de ocupação, proprietários com empréstimo, Roménia"
       ],
       "en": [
-        "The measure shows population by tenure status, owners with a loan, Romania, for the indicated period."
+        "The measure shows population by tenure status, owners with a loan, Romania"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ilc-lvho02-a-total-total-own-l-pc-ro-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ilc-lvho02-a-total-total-own-l-pc-ro-2025"
+        },
+        "."
       ]
     }
   },
@@ -7522,10 +8086,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra população por regime de ocupação, proprietários sem empréstimo, União Europeia, no período indicado."
+        "A medida mostra população por regime de ocupação, proprietários sem empréstimo, União Europeia"
       ],
       "en": [
-        "The measure shows population by tenure status, owners without a loan, European Union, for the indicated period."
+        "The measure shows population by tenure status, owners without a loan, European Union"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ilc-lvho02-a-total-total-own-nl-pc-eu27_2020-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ilc-lvho02-a-total-total-own-nl-pc-eu27_2020-2025"
+        },
+        "."
       ]
     }
   },
@@ -7536,10 +8116,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra população por regime de ocupação, proprietários sem empréstimo, Portugal, no período indicado."
+        "A medida mostra população por regime de ocupação, proprietários sem empréstimo, Portugal"
       ],
       "en": [
-        "The measure shows population by tenure status, owners without a loan, Portugal, for the indicated period."
+        "The measure shows population by tenure status, owners without a loan, Portugal"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ilc-lvho02-a-total-total-own-nl-pc-pt-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ilc-lvho02-a-total-total-own-nl-pc-pt-2025"
+        },
+        "."
       ]
     }
   },
@@ -7550,10 +8146,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra população por regime de ocupação, inquilinos a renda reduzida ou gratuita, União Europeia, no período indicado."
+        "A medida mostra população por regime de ocupação, inquilinos a renda reduzida ou gratuita, União Europeia"
       ],
       "en": [
-        "The measure shows population by tenure status, tenants at reduced or free rent, European Union, for the indicated period."
+        "The measure shows population by tenure status, tenants at reduced or free rent, European Union"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ilc-lvho02-a-total-total-rent-fr-pc-eu27_2020-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ilc-lvho02-a-total-total-rent-fr-pc-eu27_2020-2025"
+        },
+        "."
       ]
     }
   },
@@ -7564,10 +8176,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra população por regime de ocupação, inquilinos a renda reduzida ou gratuita, Portugal, no período indicado."
+        "A medida mostra população por regime de ocupação, inquilinos a renda reduzida ou gratuita, Portugal"
       ],
       "en": [
-        "The measure shows population by tenure status, tenants at reduced or free rent, Portugal, for the indicated period."
+        "The measure shows population by tenure status, tenants at reduced or free rent, Portugal"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ilc-lvho02-a-total-total-rent-fr-pc-pt-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ilc-lvho02-a-total-total-rent-fr-pc-pt-2025"
+        },
+        "."
       ]
     }
   },
@@ -7578,10 +8206,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra população por regime de ocupação, inquilinos a preços de mercado, Alemanha, no período indicado."
+        "A medida mostra população por regime de ocupação, inquilinos a preços de mercado, Alemanha"
       ],
       "en": [
-        "The measure shows population by tenure status, tenants at market rents, Germany, for the indicated period."
+        "The measure shows population by tenure status, tenants at market rents, Germany"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ilc-lvho02-a-total-total-rent-mkt-pc-de-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ilc-lvho02-a-total-total-rent-mkt-pc-de-2025"
+        },
+        "."
       ]
     }
   },
@@ -7592,10 +8236,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra população por regime de ocupação, inquilinos a preços de mercado, União Europeia, no período indicado."
+        "A medida mostra população por regime de ocupação, inquilinos a preços de mercado, União Europeia"
       ],
       "en": [
-        "The measure shows population by tenure status, tenants at market rents, European Union, for the indicated period."
+        "The measure shows population by tenure status, tenants at market rents, European Union"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ilc-lvho02-a-total-total-rent-mkt-pc-eu27_2020-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ilc-lvho02-a-total-total-rent-mkt-pc-eu27_2020-2025"
+        },
+        "."
       ]
     }
   },
@@ -7606,10 +8266,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra população por regime de ocupação, inquilinos a preços de mercado, Portugal, no período indicado."
+        "A medida mostra população por regime de ocupação, inquilinos a preços de mercado, Portugal"
       ],
       "en": [
-        "The measure shows population by tenure status, tenants at market rents, Portugal, for the indicated period."
+        "The measure shows population by tenure status, tenants at market rents, Portugal"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ilc-lvho02-a-total-total-rent-mkt-pc-pt-2020"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ilc-lvho02-a-total-total-rent-mkt-pc-pt-2020"
+        },
+        "."
       ]
     }
   },
@@ -7620,10 +8296,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra população por regime de ocupação, inquilinos a preços de mercado, Portugal, no período indicado."
+        "A medida mostra população por regime de ocupação, inquilinos a preços de mercado, Portugal"
       ],
       "en": [
-        "The measure shows population by tenure status, tenants at market rents, Portugal, for the indicated period."
+        "The measure shows population by tenure status, tenants at market rents, Portugal"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ilc-lvho02-a-total-total-rent-mkt-pc-pt-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ilc-lvho02-a-total-total-rent-mkt-pc-pt-2025"
+        },
+        "."
       ]
     }
   },
@@ -7634,10 +8326,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra população em habitações sobrelotadas, Chipre, no período indicado."
+        "A medida mostra população em habitações sobrelotadas, Chipre"
       ],
       "en": [
-        "The measure shows population in overcrowded homes, Cyprus, for the indicated period."
+        "The measure shows population in overcrowded homes, Cyprus"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ilc-lvho05a-a-pc-total-total-t-cy-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ilc-lvho05a-a-pc-total-total-t-cy-2025"
+        },
+        "."
       ]
     }
   },
@@ -7648,10 +8356,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra população em habitações sobrelotadas, União Europeia, no período indicado."
+        "A medida mostra população em habitações sobrelotadas, União Europeia"
       ],
       "en": [
-        "The measure shows population in overcrowded homes, European Union, for the indicated period."
+        "The measure shows population in overcrowded homes, European Union"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ilc-lvho05a-a-pc-total-total-t-eu27_2020-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ilc-lvho05a-a-pc-total-total-t-eu27_2020-2025"
+        },
+        "."
       ]
     }
   },
@@ -7662,10 +8386,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra população em habitações sobrelotadas, Portugal, no período indicado."
+        "A medida mostra população em habitações sobrelotadas, Portugal"
       ],
       "en": [
-        "The measure shows population in overcrowded homes, Portugal, for the indicated period."
+        "The measure shows population in overcrowded homes, Portugal"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ilc-lvho05a-a-pc-total-total-t-pt-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ilc-lvho05a-a-pc-total-total-t-pt-2025"
+        },
+        "."
       ]
     }
   },
@@ -7676,10 +8416,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra população em habitações sobrelotadas, Roménia, no período indicado."
+        "A medida mostra população em habitações sobrelotadas, Roménia"
       ],
       "en": [
-        "The measure shows population in overcrowded homes, Romania, for the indicated period."
+        "The measure shows population in overcrowded homes, Romania"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ilc-lvho05a-a-pc-total-total-t-ro-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ilc-lvho05a-a-pc-total-total-t-ro-2025"
+        },
+        "."
       ]
     }
   },
@@ -7690,10 +8446,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra população em habitações sobrelotadas, dezasseis a vinte e nove anos, União Europeia, no período indicado."
+        "A medida mostra população em habitações sobrelotadas, dezasseis a vinte e nove anos, União Europeia"
       ],
       "en": [
-        "The measure shows population in overcrowded homes, sixteen to twenty-nine years, European Union, for the indicated period."
+        "The measure shows population in overcrowded homes, sixteen to twenty-nine years, European Union"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ilc-lvho05a-a-pc-total-y16-29-t-eu27_2020-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ilc-lvho05a-a-pc-total-y16-29-t-eu27_2020-2025"
+        },
+        "."
       ]
     }
   },
@@ -7704,10 +8476,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra população em habitações sobrelotadas, dezasseis a vinte e nove anos, Portugal, no período indicado."
+        "A medida mostra população em habitações sobrelotadas, dezasseis a vinte e nove anos, Portugal"
       ],
       "en": [
-        "The measure shows population in overcrowded homes, sixteen to twenty-nine years, Portugal, for the indicated period."
+        "The measure shows population in overcrowded homes, sixteen to twenty-nine years, Portugal"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ilc-lvho05a-a-pc-total-y16-29-t-pt-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ilc-lvho05a-a-pc-total-y16-29-t-pt-2025"
+        },
+        "."
       ]
     }
   },
@@ -7718,10 +8506,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra sobrecarga do custo da habitação, dezasseis a vinte e nove anos, Grécia, no período indicado."
+        "A medida mostra sobrecarga do custo da habitação, dezasseis a vinte e nove anos, Grécia"
       ],
       "en": [
-        "The measure shows housing cost overburden, sixteen to twenty-nine years, Greece, for the indicated period."
+        "The measure shows housing cost overburden, sixteen to twenty-nine years, Greece"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ilc-lvho07a-a-pc-total-y16-29-t-el-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ilc-lvho07a-a-pc-total-y16-29-t-el-2025"
+        },
+        "."
       ]
     }
   },
@@ -7732,10 +8536,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra sobrecarga do custo da habitação, dezasseis a vinte e nove anos, União Europeia, no período indicado."
+        "A medida mostra sobrecarga do custo da habitação, dezasseis a vinte e nove anos, União Europeia"
       ],
       "en": [
-        "The measure shows housing cost overburden, sixteen to twenty-nine years, European Union, for the indicated period."
+        "The measure shows housing cost overburden, sixteen to twenty-nine years, European Union"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ilc-lvho07a-a-pc-total-y16-29-t-eu27_2020-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ilc-lvho07a-a-pc-total-y16-29-t-eu27_2020-2025"
+        },
+        "."
       ]
     }
   },
@@ -7746,10 +8566,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra sobrecarga do custo da habitação, dezasseis a vinte e nove anos, Portugal, no período indicado."
+        "A medida mostra sobrecarga do custo da habitação, dezasseis a vinte e nove anos, Portugal"
       ],
       "en": [
-        "The measure shows housing cost overburden, sixteen to twenty-nine years, Portugal, for the indicated period."
+        "The measure shows housing cost overburden, sixteen to twenty-nine years, Portugal"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ilc-lvho07a-a-pc-total-y16-29-t-pt-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ilc-lvho07a-a-pc-total-y16-29-t-pt-2025"
+        },
+        "."
       ]
     }
   },
@@ -7760,10 +8596,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra sobrecarga do custo da habitação, proprietários com empréstimo, União Europeia, no período indicado."
+        "A medida mostra sobrecarga do custo da habitação, proprietários com empréstimo, União Europeia"
       ],
       "en": [
-        "The measure shows housing cost overburden, owners with a loan, European Union, for the indicated period."
+        "The measure shows housing cost overburden, owners with a loan, European Union"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-own-l-eu27_2020-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-own-l-eu27_2020-2025"
+        },
+        "."
       ]
     }
   },
@@ -7774,10 +8626,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra sobrecarga do custo da habitação, proprietários com empréstimo, Portugal, no período indicado."
+        "A medida mostra sobrecarga do custo da habitação, proprietários com empréstimo, Portugal"
       ],
       "en": [
-        "The measure shows housing cost overburden, owners with a loan, Portugal, for the indicated period."
+        "The measure shows housing cost overburden, owners with a loan, Portugal"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-own-l-pt-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-own-l-pt-2025"
+        },
+        "."
       ]
     }
   },
@@ -7788,10 +8656,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra sobrecarga do custo da habitação, proprietários sem empréstimo, União Europeia, no período indicado."
+        "A medida mostra sobrecarga do custo da habitação, proprietários sem empréstimo, União Europeia"
       ],
       "en": [
-        "The measure shows housing cost overburden, owners without a loan, European Union, for the indicated period."
+        "The measure shows housing cost overburden, owners without a loan, European Union"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-own-nl-eu27_2020-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-own-nl-eu27_2020-2025"
+        },
+        "."
       ]
     }
   },
@@ -7802,10 +8686,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra sobrecarga do custo da habitação, proprietários sem empréstimo, Portugal, no período indicado."
+        "A medida mostra sobrecarga do custo da habitação, proprietários sem empréstimo, Portugal"
       ],
       "en": [
-        "The measure shows housing cost overburden, owners without a loan, Portugal, for the indicated period."
+        "The measure shows housing cost overburden, owners without a loan, Portugal"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-own-nl-pt-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-own-nl-pt-2025"
+        },
+        "."
       ]
     }
   },
@@ -7816,10 +8716,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra sobrecarga do custo da habitação, inquilinos a renda reduzida ou gratuita, União Europeia, no período indicado."
+        "A medida mostra sobrecarga do custo da habitação, inquilinos a renda reduzida ou gratuita, União Europeia"
       ],
       "en": [
-        "The measure shows housing cost overburden, tenants at reduced or free rent, European Union, for the indicated period."
+        "The measure shows housing cost overburden, tenants at reduced or free rent, European Union"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-rent-fr-eu27_2020-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-rent-fr-eu27_2020-2025"
+        },
+        "."
       ]
     }
   },
@@ -7830,10 +8746,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra sobrecarga do custo da habitação, inquilinos a renda reduzida ou gratuita, Portugal, no período indicado."
+        "A medida mostra sobrecarga do custo da habitação, inquilinos a renda reduzida ou gratuita, Portugal"
       ],
       "en": [
-        "The measure shows housing cost overburden, tenants at reduced or free rent, Portugal, for the indicated period."
+        "The measure shows housing cost overburden, tenants at reduced or free rent, Portugal"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-rent-fr-pt-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-rent-fr-pt-2025"
+        },
+        "."
       ]
     }
   },
@@ -7844,10 +8776,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra sobrecarga do custo da habitação, inquilinos a preços de mercado, União Europeia, no período indicado."
+        "A medida mostra sobrecarga do custo da habitação, inquilinos a preços de mercado, União Europeia"
       ],
       "en": [
-        "The measure shows housing cost overburden, tenants at market rents, European Union, for the indicated period."
+        "The measure shows housing cost overburden, tenants at market rents, European Union"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-rent-mkt-eu27_2020-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-rent-mkt-eu27_2020-2025"
+        },
+        "."
       ]
     }
   },
@@ -7858,10 +8806,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra sobrecarga do custo da habitação, inquilinos a preços de mercado, Finlândia, no período indicado."
+        "A medida mostra sobrecarga do custo da habitação, inquilinos a preços de mercado, Finlândia"
       ],
       "en": [
-        "The measure shows housing cost overburden, tenants at market rents, Finland, for the indicated period."
+        "The measure shows housing cost overburden, tenants at market rents, Finland"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-rent-mkt-fi-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-rent-mkt-fi-2025"
+        },
+        "."
       ]
     }
   },
@@ -7872,10 +8836,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra sobrecarga do custo da habitação, inquilinos a preços de mercado, Portugal, no período indicado."
+        "A medida mostra sobrecarga do custo da habitação, inquilinos a preços de mercado, Portugal"
       ],
       "en": [
-        "The measure shows housing cost overburden, tenants at market rents, Portugal, for the indicated period."
+        "The measure shows housing cost overburden, tenants at market rents, Portugal"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-rent-mkt-pt-2015"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-rent-mkt-pt-2015"
+        },
+        "."
       ]
     }
   },
@@ -7886,10 +8866,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra sobrecarga do custo da habitação, inquilinos a preços de mercado, Portugal, no período indicado."
+        "A medida mostra sobrecarga do custo da habitação, inquilinos a preços de mercado, Portugal"
       ],
       "en": [
-        "The measure shows housing cost overburden, tenants at market rents, Portugal, for the indicated period."
+        "The measure shows housing cost overburden, tenants at market rents, Portugal"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-rent-mkt-pt-2020"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-rent-mkt-pt-2020"
+        },
+        "."
       ]
     }
   },
@@ -7900,10 +8896,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra sobrecarga do custo da habitação, inquilinos a preços de mercado, Portugal, no período indicado."
+        "A medida mostra sobrecarga do custo da habitação, inquilinos a preços de mercado, Portugal"
       ],
       "en": [
-        "The measure shows housing cost overburden, tenants at market rents, Portugal, for the indicated period."
+        "The measure shows housing cost overburden, tenants at market rents, Portugal"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-rent-mkt-pt-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-rent-mkt-pt-2025"
+        },
+        "."
       ]
     }
   },
@@ -7914,10 +8926,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra sobrecarga do custo da habitação, inquilinos a preços de mercado, Roménia, no período indicado."
+        "A medida mostra sobrecarga do custo da habitação, inquilinos a preços de mercado, Roménia"
       ],
       "en": [
-        "The measure shows housing cost overburden, tenants at market rents, Romania, for the indicated period."
+        "The measure shows housing cost overburden, tenants at market rents, Romania"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-rent-mkt-ro-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-rent-mkt-ro-2025"
+        },
+        "."
       ]
     }
   },
@@ -7928,10 +8956,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra sobrecarga do custo da habitação, Chipre, no período indicado."
+        "A medida mostra sobrecarga do custo da habitação, Chipre"
       ],
       "en": [
-        "The measure shows housing cost overburden, Cyprus, for the indicated period."
+        "The measure shows housing cost overburden, Cyprus"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-total-cy-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-total-cy-2025"
+        },
+        "."
       ]
     }
   },
@@ -7942,10 +8986,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra sobrecarga do custo da habitação, Grécia, no período indicado."
+        "A medida mostra sobrecarga do custo da habitação, Grécia"
       ],
       "en": [
-        "The measure shows housing cost overburden, Greece, for the indicated period."
+        "The measure shows housing cost overburden, Greece"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-total-el-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-total-el-2025"
+        },
+        "."
       ]
     }
   },
@@ -7956,10 +9016,56 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra sobrecarga do custo da habitação, União Europeia, no período indicado."
+        "A medida mostra sobrecarga do custo da habitação, União Europeia"
       ],
       "en": [
-        "The measure shows housing cost overburden, European Union, for the indicated period."
+        "The measure shows housing cost overburden, European Union"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-total-eu27_2020-2015"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-total-eu27_2020-2015"
+        },
+        "."
+      ]
+    }
+  },
+  "hab-ilc-lvho07c-a-pc-total-eu27_2020-2025": {
+    "nome": {
+      "pt": "Sobrecarga do custo da habitação, União Europeia",
+      "en": "Housing cost overburden, European Union"
+    },
+    "frase": {
+      "pt": [
+        "A medida mostra sobrecarga do custo da habitação, União Europeia"
+      ],
+      "en": [
+        "The measure shows housing cost overburden, European Union"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-total-eu27_2020-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-total-eu27_2020-2025"
+        },
+        "."
       ]
     }
   },
@@ -7970,10 +9076,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra sobrecarga do custo da habitação, Portugal, no período indicado."
+        "A medida mostra sobrecarga do custo da habitação, Portugal"
       ],
       "en": [
-        "The measure shows housing cost overburden, Portugal, for the indicated period."
+        "The measure shows housing cost overburden, Portugal"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-total-pt-2015"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-total-pt-2015"
+        },
+        "."
       ]
     }
   },
@@ -7984,10 +9106,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra sobrecarga do custo da habitação, Portugal, no período indicado."
+        "A medida mostra sobrecarga do custo da habitação, Portugal"
       ],
       "en": [
-        "The measure shows housing cost overburden, Portugal, for the indicated period."
+        "The measure shows housing cost overburden, Portugal"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-total-pt-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-total-pt-2025"
+        },
+        "."
       ]
     }
   },
@@ -7998,10 +9136,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra jovens que vivem com os pais ou partilham o rendimento do agregado, dezoito a trinta e quatro anos, União Europeia, no período indicado."
+        "A medida mostra jovens que vivem com os pais ou partilham o rendimento do agregado, dezoito a trinta e quatro anos, União Europeia"
       ],
       "en": [
-        "The measure shows young people living with parents or sharing household income, eighteen to thirty-four years, European Union, for the indicated period."
+        "The measure shows young people living with parents or sharing household income, eighteen to thirty-four years, European Union"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ilc-lvps08-a-y18-34-t-pc-eu27_2020-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ilc-lvps08-a-y18-34-t-pc-eu27_2020-2025"
+        },
+        "."
       ]
     }
   },
@@ -8012,10 +9166,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra jovens que vivem com os pais ou partilham o rendimento do agregado, dezoito a trinta e quatro anos, Portugal, no período indicado."
+        "A medida mostra jovens que vivem com os pais ou partilham o rendimento do agregado, dezoito a trinta e quatro anos, Portugal"
       ],
       "en": [
-        "The measure shows young people living with parents or sharing household income, eighteen to thirty-four years, Portugal, for the indicated period."
+        "The measure shows young people living with parents or sharing household income, eighteen to thirty-four years, Portugal"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ilc-lvps08-a-y18-34-t-pc-pt-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ilc-lvps08-a-y18-34-t-pc-pt-2025"
+        },
+        "."
       ]
     }
   },
@@ -8026,10 +9196,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra jovens que vivem com os pais ou partilham o rendimento do agregado, vinte e cinco a trinta e quatro anos, Dinamarca, no período indicado."
+        "A medida mostra jovens que vivem com os pais ou partilham o rendimento do agregado, vinte e cinco a trinta e quatro anos, Dinamarca"
       ],
       "en": [
-        "The measure shows young people living with parents or sharing household income, twenty-five to thirty-four years, Denmark, for the indicated period."
+        "The measure shows young people living with parents or sharing household income, twenty-five to thirty-four years, Denmark"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ilc-lvps08-a-y25-34-t-pc-dk-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ilc-lvps08-a-y25-34-t-pc-dk-2025"
+        },
+        "."
       ]
     }
   },
@@ -8040,10 +9226,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra jovens que vivem com os pais ou partilham o rendimento do agregado, vinte e cinco a trinta e quatro anos, União Europeia, no período indicado."
+        "A medida mostra jovens que vivem com os pais ou partilham o rendimento do agregado, vinte e cinco a trinta e quatro anos, União Europeia"
       ],
       "en": [
-        "The measure shows young people living with parents or sharing household income, twenty-five to thirty-four years, European Union, for the indicated period."
+        "The measure shows young people living with parents or sharing household income, twenty-five to thirty-four years, European Union"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ilc-lvps08-a-y25-34-t-pc-eu27_2020-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ilc-lvps08-a-y25-34-t-pc-eu27_2020-2025"
+        },
+        "."
       ]
     }
   },
@@ -8054,10 +9256,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra jovens que vivem com os pais ou partilham o rendimento do agregado, vinte e cinco a trinta e quatro anos, Croácia, no período indicado."
+        "A medida mostra jovens que vivem com os pais ou partilham o rendimento do agregado, vinte e cinco a trinta e quatro anos, Croácia"
       ],
       "en": [
-        "The measure shows young people living with parents or sharing household income, twenty-five to thirty-four years, Croatia, for the indicated period."
+        "The measure shows young people living with parents or sharing household income, twenty-five to thirty-four years, Croatia"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ilc-lvps08-a-y25-34-t-pc-hr-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ilc-lvps08-a-y25-34-t-pc-hr-2025"
+        },
+        "."
       ]
     }
   },
@@ -8068,10 +9286,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra jovens que vivem com os pais ou partilham o rendimento do agregado, vinte e cinco a trinta e quatro anos, Portugal, no período indicado."
+        "A medida mostra jovens que vivem com os pais ou partilham o rendimento do agregado, vinte e cinco a trinta e quatro anos, Portugal"
       ],
       "en": [
-        "The measure shows young people living with parents or sharing household income, twenty-five to thirty-four years, Portugal, for the indicated period."
+        "The measure shows young people living with parents or sharing household income, twenty-five to thirty-four years, Portugal"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ilc-lvps08-a-y25-34-t-pc-pt-2015"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ilc-lvps08-a-y25-34-t-pc-pt-2015"
+        },
+        "."
       ]
     }
   },
@@ -8082,10 +9316,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra jovens que vivem com os pais ou partilham o rendimento do agregado, vinte e cinco a trinta e quatro anos, Portugal, no período indicado."
+        "A medida mostra jovens que vivem com os pais ou partilham o rendimento do agregado, vinte e cinco a trinta e quatro anos, Portugal"
       ],
       "en": [
-        "The measure shows young people living with parents or sharing household income, twenty-five to thirty-four years, Portugal, for the indicated period."
+        "The measure shows young people living with parents or sharing household income, twenty-five to thirty-four years, Portugal"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ilc-lvps08-a-y25-34-t-pc-pt-2020"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ilc-lvps08-a-y25-34-t-pc-pt-2020"
+        },
+        "."
       ]
     }
   },
@@ -8096,10 +9346,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra jovens que vivem com os pais ou partilham o rendimento do agregado, vinte e cinco a trinta e quatro anos, Portugal, no período indicado."
+        "A medida mostra jovens que vivem com os pais ou partilham o rendimento do agregado, vinte e cinco a trinta e quatro anos, Portugal"
       ],
       "en": [
-        "The measure shows young people living with parents or sharing household income, twenty-five to thirty-four years, Portugal, for the indicated period."
+        "The measure shows young people living with parents or sharing household income, twenty-five to thirty-four years, Portugal"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ilc-lvps08-a-y25-34-t-pc-pt-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ilc-lvps08-a-y25-34-t-pc-pt-2025"
+        },
+        "."
       ]
     }
   },
@@ -8110,10 +9376,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra parte do rendimento gasta na habitação, Chipre, no período indicado."
+        "A medida mostra parte do rendimento gasta na habitação, Chipre"
       ],
       "en": [
-        "The measure shows share of income spent on housing, Cyprus, for the indicated period."
+        "The measure shows share of income spent on housing, Cyprus"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ilc-mded01-a-total-total-pc-cy-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ilc-mded01-a-total-total-pc-cy-2025"
+        },
+        "."
       ]
     }
   },
@@ -8124,10 +9406,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra parte do rendimento gasta na habitação, Grécia, no período indicado."
+        "A medida mostra parte do rendimento gasta na habitação, Grécia"
       ],
       "en": [
-        "The measure shows share of income spent on housing, Greece, for the indicated period."
+        "The measure shows share of income spent on housing, Greece"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ilc-mded01-a-total-total-pc-el-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ilc-mded01-a-total-total-pc-el-2025"
+        },
+        "."
       ]
     }
   },
@@ -8138,10 +9436,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra parte do rendimento gasta na habitação, União Europeia, no período indicado."
+        "A medida mostra parte do rendimento gasta na habitação, União Europeia"
       ],
       "en": [
-        "The measure shows share of income spent on housing, European Union, for the indicated period."
+        "The measure shows share of income spent on housing, European Union"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ilc-mded01-a-total-total-pc-eu27_2020-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ilc-mded01-a-total-total-pc-eu27_2020-2025"
+        },
+        "."
       ]
     }
   },
@@ -8152,10 +9466,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra parte do rendimento gasta na habitação, Portugal, no período indicado."
+        "A medida mostra parte do rendimento gasta na habitação, Portugal"
       ],
       "en": [
-        "The measure shows share of income spent on housing, Portugal, for the indicated period."
+        "The measure shows share of income spent on housing, Portugal"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ilc-mded01-a-total-total-pc-pt-2015"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ilc-mded01-a-total-total-pc-pt-2015"
+        },
+        "."
       ]
     }
   },
@@ -8166,10 +9496,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra parte do rendimento gasta na habitação, Portugal, no período indicado."
+        "A medida mostra parte do rendimento gasta na habitação, Portugal"
       ],
       "en": [
-        "The measure shows share of income spent on housing, Portugal, for the indicated period."
+        "The measure shows share of income spent on housing, Portugal"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ilc-mded01-a-total-total-pc-pt-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ilc-mded01-a-total-total-pc-pt-2025"
+        },
+        "."
       ]
     }
   },
@@ -8180,10 +9526,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra privação severa da habitação, União Europeia, no período indicado."
+        "A medida mostra privação severa da habitação, União Europeia"
       ],
       "en": [
-        "The measure shows severe housing deprivation, European Union, for the indicated period."
+        "The measure shows severe housing deprivation, European Union"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ilc-mdho06a-a-pc-total-t-total-eu27_2020-2023"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ilc-mdho06a-a-pc-total-t-total-eu27_2020-2023"
+        },
+        "."
       ]
     }
   },
@@ -8194,10 +9556,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra privação severa da habitação, Letónia, no período indicado."
+        "A medida mostra privação severa da habitação, Letónia"
       ],
       "en": [
-        "The measure shows severe housing deprivation, Latvia, for the indicated period."
+        "The measure shows severe housing deprivation, Latvia"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ilc-mdho06a-a-pc-total-t-total-lv-2023"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ilc-mdho06a-a-pc-total-t-total-lv-2023"
+        },
+        "."
       ]
     }
   },
@@ -8208,10 +9586,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra privação severa da habitação, Malta, no período indicado."
+        "A medida mostra privação severa da habitação, Malta"
       ],
       "en": [
-        "The measure shows severe housing deprivation, Malta, for the indicated period."
+        "The measure shows severe housing deprivation, Malta"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ilc-mdho06a-a-pc-total-t-total-mt-2023"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ilc-mdho06a-a-pc-total-t-total-mt-2023"
+        },
+        "."
       ]
     }
   },
@@ -8222,10 +9616,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra privação severa da habitação, Portugal, no período indicado."
+        "A medida mostra privação severa da habitação, Portugal"
       ],
       "en": [
-        "The measure shows severe housing deprivation, Portugal, for the indicated period."
+        "The measure shows severe housing deprivation, Portugal"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ilc-mdho06a-a-pc-total-t-total-pt-2023"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ilc-mdho06a-a-pc-total-t-total-pt-2023"
+        },
+        "."
       ]
     }
   },
@@ -8236,10 +9646,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra privação severa da habitação, dezasseis a vinte e nove anos, União Europeia, no período indicado."
+        "A medida mostra privação severa da habitação, dezasseis a vinte e nove anos, União Europeia"
       ],
       "en": [
-        "The measure shows severe housing deprivation, sixteen to twenty-nine years, European Union, for the indicated period."
+        "The measure shows severe housing deprivation, sixteen to twenty-nine years, European Union"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ilc-mdho06a-a-pc-total-t-y16-29-eu27_2020-2023"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ilc-mdho06a-a-pc-total-t-y16-29-eu27_2020-2023"
+        },
+        "."
       ]
     }
   },
@@ -8250,10 +9676,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra privação severa da habitação, dezasseis a vinte e nove anos, Portugal, no período indicado."
+        "A medida mostra privação severa da habitação, dezasseis a vinte e nove anos, Portugal"
       ],
       "en": [
-        "The measure shows severe housing deprivation, sixteen to twenty-nine years, Portugal, for the indicated period."
+        "The measure shows severe housing deprivation, sixteen to twenty-nine years, Portugal"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ilc-mdho06a-a-pc-total-t-y16-29-pt-2023"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ilc-mdho06a-a-pc-total-t-y16-29-pt-2023"
+        },
+        "."
       ]
     }
   },
@@ -8329,15 +9771,15 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "hab-imprensa-feridos35": {
     "nome": {
-      "pt": "Feridos segundo um deputado, pela imprensa",
-      "en": "Injured people according to a member of parliament, reported by the press"
+      "pt": "Feridos segundo um dirigente do BE, pela imprensa",
+      "en": "Injured according to a BE leader, via the press"
     },
     "frase": {
       "pt": [
-        "O excerto reproduz o documento indicado sobre feridos segundo um deputado, pela imprensa."
+        "O excerto reproduz o documento indicado sobre feridos segundo um dirigente do BE, pela imprensa."
       ],
       "en": [
-        "The excerpt reproduces the indicated document about injured people according to a member of parliament, reported by the press."
+        "The excerpt reproduces the indicated document about injured according to a BE leader, via the press."
       ]
     }
   },
@@ -8544,10 +9986,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra divulgação do juro implícito na habitação, no período indicado."
+        "A medida mostra divulgação do juro implícito na habitação"
       ],
       "en": [
-        "The measure shows release of the implicit housing interest rate, for the indicated period."
+        "The measure shows release of the implicit housing interest rate"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ine-calendario-juro"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ine-calendario-juro"
+        },
+        "."
       ]
     }
   },
@@ -8558,10 +10016,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra divulgação dos preços locais da habitação, no período indicado."
+        "A medida mostra divulgação dos preços locais da habitação"
       ],
       "en": [
-        "The measure shows release of local house prices, for the indicated period."
+        "The measure shows release of local house prices"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ine-calendario-precos-locais"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ine-calendario-precos-locais"
+        },
+        "."
       ]
     }
   },
@@ -8572,10 +10046,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra alojamentos vagos para venda ou arrendamento, no período indicado."
+        "A medida mostra alojamentos vagos para venda ou arrendamento"
       ],
       "en": [
-        "The measure shows dwellings vacant for sale or rent, for the indicated period."
+        "The measure shows dwellings vacant for sale or rent"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ine-censos-0012501-40"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ine-censos-0012501-40"
+        },
+        "."
       ]
     }
   },
@@ -8586,10 +10076,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra alojamentos vagos por outros motivos, no período indicado."
+        "A medida mostra alojamentos vagos por outros motivos"
       ],
       "en": [
-        "The measure shows dwellings vacant for other reasons, for the indicated period."
+        "The measure shows dwellings vacant for other reasons"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ine-censos-0012501-41"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ine-censos-0012501-41"
+        },
+        "."
       ]
     }
   },
@@ -8600,10 +10106,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra proporção de alojamentos vagos nos Censos, no período indicado."
+        "A medida mostra proporção de alojamentos vagos nos Censos"
       ],
       "en": [
-        "The measure shows share of vacant dwellings in the Census, for the indicated period."
+        "The measure shows share of vacant dwellings in the Census"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ine-censos-0012517-0"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ine-censos-0012517-0"
+        },
+        "."
       ]
     }
   },
@@ -8614,10 +10136,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra variação homóloga dos preços da habitação, no período indicado."
+        "A medida mostra variação homóloga dos preços da habitação"
       ],
       "en": [
-        "The measure shows annual change in house prices, for the indicated period."
+        "The measure shows annual change in house prices"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " no ",
+        {
+          "periodo": "hab-ine-iphab-homologa"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ine-iphab-homologa"
+        },
+        "."
       ]
     }
   },
@@ -8628,10 +10166,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra taxa de juro implícita no crédito à habitação, no período indicado."
+        "A medida mostra taxa de juro implícita no crédito à habitação"
       ],
       "en": [
-        "The measure shows implicit interest rate on housing loans, for the indicated period."
+        "The measure shows implicit interest rate on housing loans"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ine-juro-implicito"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ine-juro-implicito"
+        },
+        "."
       ]
     }
   },
@@ -8642,10 +10196,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra preço mediano das vendas em Lisboa, no período indicado."
+        "A medida mostra preço mediano das vendas em Lisboa"
       ],
       "en": [
-        "The measure shows median sale price in Lisbon, for the indicated period."
+        "The measure shows median sale price in Lisbon"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " no ",
+        {
+          "periodo": "hab-ine-preco-lisboa"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ine-preco-lisboa"
+        },
+        "."
       ]
     }
   },
@@ -8656,10 +10226,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra preço mediano das vendas em Portugal, no período indicado."
+        "A medida mostra preço mediano das vendas em Portugal"
       ],
       "en": [
-        "The measure shows median sale price in Portugal, for the indicated period."
+        "The measure shows median sale price in Portugal"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " no ",
+        {
+          "periodo": "hab-ine-preco-mediano"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ine-preco-mediano"
+        },
+        "."
       ]
     }
   },
@@ -8670,10 +10256,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra preço mediano das vendas no Porto, no período indicado."
+        "A medida mostra preço mediano das vendas no Porto"
       ],
       "en": [
-        "The measure shows median sale price in Porto, for the indicated period."
+        "The measure shows median sale price in Porto"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " no ",
+        {
+          "periodo": "hab-ine-preco-porto"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ine-preco-porto"
+        },
+        "."
       ]
     }
   },
@@ -8684,10 +10286,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra renda mediana dos novos contratos em Lisboa, no período indicado."
+        "A medida mostra renda mediana dos novos contratos em Lisboa"
       ],
       "en": [
-        "The measure shows median rent of new contracts in Lisbon, for the indicated period."
+        "The measure shows median rent of new contracts in Lisbon"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " no ",
+        {
+          "periodo": "hab-ine-renda-lisboa"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ine-renda-lisboa"
+        },
+        "."
       ]
     }
   },
@@ -8698,10 +10316,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra renda mediana dos novos contratos no Porto, no período indicado."
+        "A medida mostra renda mediana dos novos contratos no Porto"
       ],
       "en": [
-        "The measure shows median rent of new contracts in Porto, for the indicated period."
+        "The measure shows median rent of new contracts in Porto"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " no ",
+        {
+          "periodo": "hab-ine-renda-porto"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ine-renda-porto"
+        },
+        "."
       ]
     }
   },
@@ -8712,10 +10346,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra renda mediana dos novos contratos em Portugal, no período indicado."
+        "A medida mostra renda mediana dos novos contratos em Portugal"
       ],
       "en": [
-        "The measure shows median rent of new contracts in Portugal, for the indicated period."
+        "The measure shows median rent of new contracts in Portugal"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " no ",
+        {
+          "periodo": "hab-ine-renda-portugal"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ine-renda-portugal"
+        },
+        "."
       ]
     }
   },
@@ -8726,10 +10376,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra alojamentos vagos nos Censos, no período indicado."
+        "A medida mostra alojamentos vagos nos Censos"
       ],
       "en": [
-        "The measure shows vacant dwellings in the Census, for the indicated period."
+        "The measure shows vacant dwellings in the Census"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ine-vagos-total"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ine-vagos-total"
+        },
+        "."
       ]
     }
   },
@@ -8754,10 +10420,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra orçamento do acesso à habitação e apoio ao arrendamento, no período indicado."
+        "A medida mostra orçamento do acesso à habitação e apoio ao arrendamento"
       ],
       "en": [
-        "The measure shows budget for housing access and rental support, for the indicated period."
+        "The measure shows budget for housing access and rental support"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-oe-apoio-arrendamento"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-oe-apoio-arrendamento"
+        },
+        "."
       ]
     }
   },
@@ -8796,10 +10478,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra orçamento do programa Habitação, no período indicado."
+        "A medida mostra orçamento do programa Habitação"
       ],
       "en": [
-        "The measure shows housing programme budget, for the indicated period."
+        "The measure shows housing programme budget"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-oe-habitacao-orcamento"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-oe-habitacao-orcamento"
+        },
+        "."
       ]
     }
   },
@@ -8810,10 +10508,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra impacto na receita da redução do IRS nas rendas, no período indicado."
+        "A medida mostra impacto na receita da redução do IRS nas rendas"
       ],
       "en": [
-        "The measure shows revenue impact of reduced income tax on rents, for the indicated period."
+        "The measure shows revenue impact of reduced income tax on rents"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-oe-irs-rendas-impacto"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-oe-irs-rendas-impacto"
+        },
+        "."
       ]
     }
   },
@@ -8824,10 +10538,40 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra impacto na receita da redução do IVA na construção, no período indicado."
+        "A medida mostra impacto na receita da redução do IVA na construção"
       ],
       "en": [
-        "The measure shows revenue impact of reduced VAT on construction, for the indicated period."
+        "The measure shows revenue impact of reduced VAT on construction"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-oe-iva-impacto"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-oe-iva-impacto"
+        },
+        "."
+      ]
+    }
+  },
+  "hab-oe-legenda-invariante": {
+    "nome": {
+      "pt": "Legenda das medidas invariantes do Orçamento",
+      "en": "Budget table legend for unchanged measures"
+    },
+    "frase": {
+      "pt": [
+        "O excerto reproduz o documento indicado sobre legenda das medidas invariantes do Orçamento."
+      ],
+      "en": [
+        "The excerpt reproduces the indicated document about budget table legend for unchanged measures."
       ]
     }
   },
@@ -8838,10 +10582,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra orçamento da gestão urbanística e qualidade do edificado, no período indicado."
+        "A medida mostra orçamento da gestão urbanística e qualidade do edificado"
       ],
       "en": [
-        "The measure shows budget for urban management and building quality, for the indicated period."
+        "The measure shows budget for urban management and building quality"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-oe-licenciamento"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-oe-licenciamento"
+        },
+        "."
       ]
     }
   },
@@ -8866,10 +10626,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra orçamento da oferta e reabilitação habitacional, no período indicado."
+        "A medida mostra orçamento da oferta e reabilitação habitacional"
       ],
       "en": [
-        "The measure shows budget for housing supply and rehabilitation, for the indicated period."
+        "The measure shows budget for housing supply and rehabilitation"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-oe-oferta-publica"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-oe-oferta-publica"
+        },
+        "."
       ]
     }
   },
@@ -8950,10 +10726,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra variação das rendas pagas, União Europeia, no período indicado."
+        "A medida mostra variação das rendas pagas, União Europeia"
       ],
       "en": [
-        "The measure shows change in rents paid, European Union, for the indicated period."
+        "The measure shows change in rents paid, European Union"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-prc-hicp-ainr-a-rch-a-avg-cp041-eu27_2020-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-prc-hicp-ainr-a-rch-a-avg-cp041-eu27_2020-2025"
+        },
+        "."
       ]
     }
   },
@@ -8964,10 +10756,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra variação das rendas pagas, Finlândia, no período indicado."
+        "A medida mostra variação das rendas pagas, Finlândia"
       ],
       "en": [
-        "The measure shows change in rents paid, Finland, for the indicated period."
+        "The measure shows change in rents paid, Finland"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-prc-hicp-ainr-a-rch-a-avg-cp041-fi-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-prc-hicp-ainr-a-rch-a-avg-cp041-fi-2025"
+        },
+        "."
       ]
     }
   },
@@ -8978,10 +10786,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra variação das rendas pagas, Croácia, no período indicado."
+        "A medida mostra variação das rendas pagas, Croácia"
       ],
       "en": [
-        "The measure shows change in rents paid, Croatia, for the indicated period."
+        "The measure shows change in rents paid, Croatia"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-prc-hicp-ainr-a-rch-a-avg-cp041-hr-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-prc-hicp-ainr-a-rch-a-avg-cp041-hr-2025"
+        },
+        "."
       ]
     }
   },
@@ -8992,10 +10816,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra variação das rendas pagas, Portugal, no período indicado."
+        "A medida mostra variação das rendas pagas, Portugal"
       ],
       "en": [
-        "The measure shows change in rents paid, Portugal, for the indicated period."
+        "The measure shows change in rents paid, Portugal"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-prc-hicp-ainr-a-rch-a-avg-cp041-pt-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-prc-hicp-ainr-a-rch-a-avg-cp041-pt-2025"
+        },
+        "."
       ]
     }
   },
@@ -9006,10 +10846,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra variação das rendas pagas, União Europeia, no período indicado."
+        "A medida mostra variação das rendas pagas, União Europeia"
       ],
       "en": [
-        "The measure shows change in rents paid, European Union, for the indicated period."
+        "The measure shows change in rents paid, European Union"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-prc-hicp-minr-m-rch-a-cp041-eu27_2020-2026-09"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-prc-hicp-minr-m-rch-a-cp041-eu27_2020-2026-09"
+        },
+        "."
       ]
     }
   },
@@ -9020,10 +10876,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra variação das rendas pagas, Portugal, no período indicado."
+        "A medida mostra variação das rendas pagas, Portugal"
       ],
       "en": [
-        "The measure shows change in rents paid, Portugal, for the indicated period."
+        "The measure shows change in rents paid, Portugal"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-prc-hicp-minr-m-rch-a-cp041-pt-2026-09"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-prc-hicp-minr-m-rch-a-cp041-pt-2026-09"
+        },
+        "."
       ]
     }
   },
@@ -9034,10 +10906,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra índice dos preços da habitação, União Europeia, no período indicado."
+        "A medida mostra índice dos preços da habitação, União Europeia"
       ],
       "en": [
-        "The measure shows index of house prices, European Union, for the indicated period."
+        "The measure shows index of house prices, European Union"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " no ",
+        {
+          "periodo": "hab-prc-hpi-q-q-total-i15-q-eu27_2020-2026-q2"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-prc-hpi-q-q-total-i15-q-eu27_2020-2026-q2"
+        },
+        "."
       ]
     }
   },
@@ -9048,10 +10936,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra índice dos preços da habitação, Finlândia, no período indicado."
+        "A medida mostra índice dos preços da habitação, Finlândia"
       ],
       "en": [
-        "The measure shows index of house prices, Finland, for the indicated period."
+        "The measure shows index of house prices, Finland"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " no ",
+        {
+          "periodo": "hab-prc-hpi-q-q-total-i15-q-fi-2026-q2"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-prc-hpi-q-q-total-i15-q-fi-2026-q2"
+        },
+        "."
       ]
     }
   },
@@ -9062,10 +10966,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra índice dos preços da habitação, Hungria, no período indicado."
+        "A medida mostra índice dos preços da habitação, Hungria"
       ],
       "en": [
-        "The measure shows index of house prices, Hungary, for the indicated period."
+        "The measure shows index of house prices, Hungary"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " no ",
+        {
+          "periodo": "hab-prc-hpi-q-q-total-i15-q-hu-2026-q2"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-prc-hpi-q-q-total-i15-q-hu-2026-q2"
+        },
+        "."
       ]
     }
   },
@@ -9076,10 +10996,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra índice dos preços da habitação, Portugal, no período indicado."
+        "A medida mostra índice dos preços da habitação, Portugal"
       ],
       "en": [
-        "The measure shows index of house prices, Portugal, for the indicated period."
+        "The measure shows index of house prices, Portugal"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " no ",
+        {
+          "periodo": "hab-prc-hpi-q-q-total-i15-q-pt-2026-q2"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-prc-hpi-q-q-total-i15-q-pt-2026-q2"
+        },
+        "."
       ]
     }
   },
@@ -9090,10 +11026,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra variação anual dos preços da habitação, União Europeia, no período indicado."
+        "A medida mostra variação anual dos preços da habitação, União Europeia"
       ],
       "en": [
-        "The measure shows annual change in house prices, European Union, for the indicated period."
+        "The measure shows annual change in house prices, European Union"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " no ",
+        {
+          "periodo": "hab-prc-hpi-q-q-total-rch-a-eu27_2020-2026-q2"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-prc-hpi-q-q-total-rch-a-eu27_2020-2026-q2"
+        },
+        "."
       ]
     }
   },
@@ -9104,10 +11056,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra variação anual dos preços da habitação, Finlândia, no período indicado."
+        "A medida mostra variação anual dos preços da habitação, Finlândia"
       ],
       "en": [
-        "The measure shows annual change in house prices, Finland, for the indicated period."
+        "The measure shows annual change in house prices, Finland"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " no ",
+        {
+          "periodo": "hab-prc-hpi-q-q-total-rch-a-fi-2026-q2"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-prc-hpi-q-q-total-rch-a-fi-2026-q2"
+        },
+        "."
       ]
     }
   },
@@ -9118,10 +11086,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra variação anual dos preços da habitação, Portugal, no período indicado."
+        "A medida mostra variação anual dos preços da habitação, Portugal"
       ],
       "en": [
-        "The measure shows annual change in house prices, Portugal, for the indicated period."
+        "The measure shows annual change in house prices, Portugal"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " no ",
+        {
+          "periodo": "hab-prc-hpi-q-q-total-rch-a-pt-2026-q2"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-prc-hpi-q-q-total-rch-a-pt-2026-q2"
+        },
+        "."
       ]
     }
   },
@@ -9174,10 +11158,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra alojamentos licenciados, União Europeia, no período indicado."
+        "A medida mostra alojamentos licenciados, União Europeia"
       ],
       "en": [
-        "The measure shows dwellings permitted, European Union, for the indicated period."
+        "The measure shows dwellings permitted, European Union"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-sts-cobp-a-a-bprm-dw-cpa-f41001-x-410014-nsa-ths-eu27_2020-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-sts-cobp-a-a-bprm-dw-cpa-f41001-x-410014-nsa-ths-eu27_2020-2025"
+        },
+        "."
       ]
     }
   },
@@ -9188,10 +11188,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra alojamentos licenciados, Portugal, no período indicado."
+        "A medida mostra alojamentos licenciados, Portugal"
       ],
       "en": [
-        "The measure shows dwellings permitted, Portugal, for the indicated period."
+        "The measure shows dwellings permitted, Portugal"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-sts-cobp-a-a-bprm-dw-cpa-f41001-x-410014-nsa-ths-pt-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-sts-cobp-a-a-bprm-dw-cpa-f41001-x-410014-nsa-ths-pt-2025"
+        },
+        "."
       ]
     }
   },
@@ -9202,10 +11218,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra índice dos preços da habitação descontada a inflação, União Europeia, no período indicado."
+        "A medida mostra índice dos preços da habitação descontada a inflação, União Europeia"
       ],
       "en": [
-        "The measure shows index of house prices net of inflation, European Union, for the indicated period."
+        "The measure shows index of house prices net of inflation, European Union"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-tipsho10-a-i15-a-avg-eu27_2020-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-tipsho10-a-i15-a-avg-eu27_2020-2025"
+        },
+        "."
       ]
     }
   },
@@ -9216,10 +11248,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra índice dos preços da habitação descontada a inflação, Finlândia, no período indicado."
+        "A medida mostra índice dos preços da habitação descontada a inflação, Finlândia"
       ],
       "en": [
-        "The measure shows index of house prices net of inflation, Finland, for the indicated period."
+        "The measure shows index of house prices net of inflation, Finland"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-tipsho10-a-i15-a-avg-fi-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-tipsho10-a-i15-a-avg-fi-2025"
+        },
+        "."
       ]
     }
   },
@@ -9230,10 +11278,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra índice dos preços da habitação descontada a inflação, Portugal, no período indicado."
+        "A medida mostra índice dos preços da habitação descontada a inflação, Portugal"
       ],
       "en": [
-        "The measure shows index of house prices net of inflation, Portugal, for the indicated period."
+        "The measure shows index of house prices net of inflation, Portugal"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-tipsho10-a-i15-a-avg-pt-2020"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-tipsho10-a-i15-a-avg-pt-2020"
+        },
+        "."
       ]
     }
   },
@@ -9244,10 +11308,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra índice dos preços da habitação descontada a inflação, Portugal, no período indicado."
+        "A medida mostra índice dos preços da habitação descontada a inflação, Portugal"
       ],
       "en": [
-        "The measure shows index of house prices net of inflation, Portugal, for the indicated period."
+        "The measure shows index of house prices net of inflation, Portugal"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-tipsho10-a-i15-a-avg-pt-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-tipsho10-a-i15-a-avg-pt-2025"
+        },
+        "."
       ]
     }
   },
@@ -9258,10 +11338,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra variação anual dos preços da habitação descontada a inflação, União Europeia, no período indicado."
+        "A medida mostra variação anual dos preços da habitação descontada a inflação, União Europeia"
       ],
       "en": [
-        "The measure shows annual change in house prices net of inflation, European Union, for the indicated period."
+        "The measure shows annual change in house prices net of inflation, European Union"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-tipsho10-a-rch-a-avg-eu27_2020-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-tipsho10-a-rch-a-avg-eu27_2020-2025"
+        },
+        "."
       ]
     }
   },
@@ -9272,10 +11368,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra variação anual dos preços da habitação descontada a inflação, Portugal, no período indicado."
+        "A medida mostra variação anual dos preços da habitação descontada a inflação, Portugal"
       ],
       "en": [
-        "The measure shows annual change in house prices net of inflation, Portugal, for the indicated period."
+        "The measure shows annual change in house prices net of inflation, Portugal"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-tipsho10-a-rch-a-avg-pt-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-tipsho10-a-rch-a-avg-pt-2025"
+        },
+        "."
       ]
     }
   },
@@ -9286,10 +11398,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra preços das casas em relação ao rendimento, União Europeia, no período indicado."
+        "A medida mostra preços das casas em relação ao rendimento, União Europeia"
       ],
       "en": [
-        "The measure shows house prices relative to income, European Union, for the indicated period."
+        "The measure shows house prices relative to income, European Union"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-tipsho60-a-ptir-i15-eu27_2020-2024"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-tipsho60-a-ptir-i15-eu27_2020-2024"
+        },
+        "."
       ]
     }
   },
@@ -9300,10 +11428,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra preços das casas em relação ao rendimento, Portugal, no período indicado."
+        "A medida mostra preços das casas em relação ao rendimento, Portugal"
       ],
       "en": [
-        "The measure shows house prices relative to income, Portugal, for the indicated period."
+        "The measure shows house prices relative to income, Portugal"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-tipsho60-a-ptir-i15-pt-2019"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-tipsho60-a-ptir-i15-pt-2019"
+        },
+        "."
       ]
     }
   },
@@ -9314,10 +11458,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra preços das casas em relação ao rendimento, Portugal, no período indicado."
+        "A medida mostra preços das casas em relação ao rendimento, Portugal"
       ],
       "en": [
-        "The measure shows house prices relative to income, Portugal, for the indicated period."
+        "The measure shows house prices relative to income, Portugal"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-tipsho60-a-ptir-i15-pt-2024"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-tipsho60-a-ptir-i15-pt-2024"
+        },
+        "."
       ]
     }
   },
@@ -9328,10 +11488,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra preços das casas em relação ao rendimento, Roménia, no período indicado."
+        "A medida mostra preços das casas em relação ao rendimento, Roménia"
       ],
       "en": [
-        "The measure shows house prices relative to income, Romania, for the indicated period."
+        "The measure shows house prices relative to income, Romania"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-tipsho60-a-ptir-i15-ro-2024"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-tipsho60-a-ptir-i15-ro-2024"
+        },
+        "."
       ]
     }
   },
@@ -9342,10 +11518,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra rácio preço-rendimento face à média de longo prazo, União Europeia, no período indicado."
+        "A medida mostra rácio preço-rendimento face à média de longo prazo, União Europeia"
       ],
       "en": [
-        "The measure shows price-to-income ratio relative to the long-term average, European Union, for the indicated period."
+        "The measure shows price-to-income ratio relative to the long-term average, European Union"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-tipsho60-a-ptir-lt-avg-eu27_2020-2024"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-tipsho60-a-ptir-lt-avg-eu27_2020-2024"
+        },
+        "."
       ]
     }
   },
@@ -9356,10 +11548,56 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra rácio preço-rendimento face à média de longo prazo, Portugal, no período indicado."
+        "A medida mostra rácio preço-rendimento face à média de longo prazo, Portugal"
       ],
       "en": [
-        "The measure shows price-to-income ratio relative to the long-term average, Portugal, for the indicated period."
+        "The measure shows price-to-income ratio relative to the long-term average, Portugal"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-tipsho60-a-ptir-lt-avg-pt-2024"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-tipsho60-a-ptir-lt-avg-pt-2024"
+        },
+        "."
+      ]
+    }
+  },
+  "hab-tipsho60-a-ptir-lt-avg-ro-2024": {
+    "nome": {
+      "pt": "Rácio preço-rendimento face à média de longo prazo, Roménia",
+      "en": "Price-to-income ratio relative to the long-term average, Romania"
+    },
+    "frase": {
+      "pt": [
+        "A medida mostra rácio preço-rendimento face à média de longo prazo, Roménia"
+      ],
+      "en": [
+        "The measure shows price-to-income ratio relative to the long-term average, Romania"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-tipsho60-a-ptir-lt-avg-ro-2024"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-tipsho60-a-ptir-lt-avg-ro-2024"
+        },
+        "."
       ]
     }
   },
@@ -9426,10 +11664,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra idade média de saída de casa dos pais, União Europeia, no período indicado."
+        "A medida mostra idade média de saída de casa dos pais, União Europeia"
       ],
       "en": [
-        "The measure shows average age of leaving the parental home, European Union, for the indicated period."
+        "The measure shows average age of leaving the parental home, European Union"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-yth-demo-030-a-avg-t-eu27_2020-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-yth-demo-030-a-avg-t-eu27_2020-2025"
+        },
+        "."
       ]
     }
   },
@@ -9440,10 +11694,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra idade média de saída de casa dos pais, Finlândia, no período indicado."
+        "A medida mostra idade média de saída de casa dos pais, Finlândia"
       ],
       "en": [
-        "The measure shows average age of leaving the parental home, Finland, for the indicated period."
+        "The measure shows average age of leaving the parental home, Finland"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-yth-demo-030-a-avg-t-fi-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-yth-demo-030-a-avg-t-fi-2025"
+        },
+        "."
       ]
     }
   },
@@ -9454,10 +11724,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra idade média de saída de casa dos pais, Croácia, no período indicado."
+        "A medida mostra idade média de saída de casa dos pais, Croácia"
       ],
       "en": [
-        "The measure shows average age of leaving the parental home, Croatia, for the indicated period."
+        "The measure shows average age of leaving the parental home, Croatia"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-yth-demo-030-a-avg-t-hr-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-yth-demo-030-a-avg-t-hr-2025"
+        },
+        "."
       ]
     }
   },
@@ -9468,10 +11754,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra idade média de saída de casa dos pais, Portugal, no período indicado."
+        "A medida mostra idade média de saída de casa dos pais, Portugal"
       ],
       "en": [
-        "The measure shows average age of leaving the parental home, Portugal, for the indicated period."
+        "The measure shows average age of leaving the parental home, Portugal"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-yth-demo-030-a-avg-t-pt-2015"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-yth-demo-030-a-avg-t-pt-2015"
+        },
+        "."
       ]
     }
   },
@@ -9482,10 +11784,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra idade média de saída de casa dos pais, Portugal, no período indicado."
+        "A medida mostra idade média de saída de casa dos pais, Portugal"
       ],
       "en": [
-        "The measure shows average age of leaving the parental home, Portugal, for the indicated period."
+        "The measure shows average age of leaving the parental home, Portugal"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-yth-demo-030-a-avg-t-pt-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-yth-demo-030-a-avg-t-pt-2025"
+        },
+        "."
       ]
     }
   },
@@ -9496,10 +11814,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra votação do Orçamento na generalidade, no período indicado."
+        "A medida mostra votação do Orçamento na generalidade"
       ],
       "en": [
-        "The measure shows budget first-reading vote, for the indicated period."
+        "The measure shows budget first-reading vote"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "oe-2027-calendario-generalidade"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "oe-2027-calendario-generalidade"
+        },
+        "."
       ]
     }
   },

@@ -1,0 +1,27 @@
+{
+  "codigo": 0,
+  "linhas": 20,
+  "criterio": "Valores, check e componentes iguais ao commit anterior; nenhuma frase derivada PT/EN contém identificadores internos.",
+  "linhas_verificadas": [
+    "der-hab-proprietarios-pt-2025",
+    "der-hab-inquilinos-pt-2025",
+    "der-hab-proprietarios-eu-2025",
+    "der-hab-inquilinos-eu-2025",
+    "der-hab-precos-reais-pt-vs-eu-2025",
+    "der-hab-preco-rendimento-pt-vs-eu-2024",
+    "der-hab-sobrecarga-inquilinos-pt-vs-eu-2025",
+    "der-hab-sobrecarga-inquilinos-pt-2020-2025",
+    "der-hab-jovens-com-pais-pt-vs-eu-2025",
+    "der-hab-saida-pt-vs-eu-2025",
+    "der-hab-licencas-por-mil-pt-2025",
+    "der-hab-licencas-por-mil-eu-2025",
+    "der-hab-vagos-pct-2021",
+    "der-hab-fiscal-2027",
+    "der-hab-renda-lisboa-vs-portugal",
+    "der-hab-preco-lisboa-vs-portugal",
+    "der-hab-preco-rendimento-acima-2015-pt-2024",
+    "der-hab-preco-rendimento-acima-2015-eu-2024",
+    "der-hab-preco-rendimento-lt-pt-2024",
+    "der-hab-preco-rendimento-lt-eu-2024"
+  ]
+}
