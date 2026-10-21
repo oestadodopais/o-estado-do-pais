@@ -122,8 +122,10 @@ export function conferirSerie(svg, lang, lerSerie = getSerie, leitura = leituraD
     /* G1 (21.10.2026): a marca da camada comum dos gráficos no desenho com leitura, e em cada grupo da leitura os
        atributos do ponto (os dados, o papel, o nome acessível e o lugar no tabulador), que o `check:graficos` confere
        contra o texto do ponto; nenhum deles muda a forma estática, e qualquer outro atributo continua a falhar aqui. */
-    svg: ['class', 'data-forma', 'data-series', 'data-modo', 'viewBox', 'role', 'style', 'data-titulo', 'data-grafico'],
-    title: [], g: ['data-eixo', 'data-grafico-ponto', 'data-grafico-periodo', 'data-grafico-valor', 'data-grafico-unidade', 'data-grafico-nome', 'data-grafico-leitura', 'role', 'aria-label', 'tabindex'],
+    /* G1-b (21.10.2026): a marca decorativa explícita (`aria-hidden` com `data-grafico-decorativo`, que o check:graficos
+       exige juntas) e o `id` do título, que dá nome à porta de um cartão; nenhum muda a forma estática. */
+    svg: ['class', 'data-forma', 'data-series', 'data-modo', 'viewBox', 'role', 'style', 'data-titulo', 'data-grafico', 'aria-hidden', 'data-grafico-decorativo'],
+    title: ['id'], g: ['data-eixo', 'data-grafico-ponto', 'data-grafico-periodo', 'data-grafico-valor', 'data-grafico-unidade', 'data-grafico-nome', 'data-grafico-leitura', 'role', 'aria-label', 'tabindex'],
     line: ['class', 'x1', 'x2', 'y1', 'y2'],
     text: ['data-nonledger', 'x', 'y', 'text-anchor', 'dominant-baseline'],
     polyline: ['class', 'data-serie-linha', 'points'],

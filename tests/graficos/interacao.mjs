@@ -68,8 +68,10 @@ export function conferePagina(html, rota) {
   const root = parse(html);
   const divida = {};
   for (const el of desenhos(root)) {
-    if (el.hasAttribute('data-grafico-decorativo') || el.getAttribute('aria-hidden') === 'true' && escondeValores(el) && !el.hasAttribute('data-grafico')) {
-      if (!decorativo(el) || el.hasAttribute('data-grafico')) erros.push(`G1 ${rota}: um desenho de «${componente(el)}» com a marca decorativa sem aria-hidden, aria-hidden sem a marca decorativa, ou as duas com data-grafico.`);
+    /* A marca decorativa só isenta com `aria-hidden="true"` e sem `data-grafico`; um desenho escondido sem a marca cai
+       na regra comum abaixo (a dívida declarada, ou erro). */
+    if (el.hasAttribute('data-grafico-decorativo')) {
+      if (!decorativo(el) || el.hasAttribute('data-grafico')) erros.push(`G1 ${rota}: um desenho de «${componente(el)}» com a marca decorativa sem aria-hidden, ou com data-grafico.`);
       else divida.decorativos = (divida.decorativos ?? 0) + 1;
       continue;
     }
