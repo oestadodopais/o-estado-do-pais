@@ -452,3 +452,28 @@ A medição: o primeiro uso de «BE» na edição portuguesa não é a parêntes
 **O que fica para a HB1-d:** o `check:voz` inteiro (o inventário das frases, os quatro blocos por classificar, a lista fechada da B1 e a decisão sobre «a casa» e «the house» nas páginas da habitação); o lugar de direção confirma se a contagem das portas pela marca fica, dado que as linhas citadas não são linhas de série.
 
 **Chamadas:** 32 das 40, contadas pelo construtor no seu registo (as chamadas de ferramenta desta conversa, esta incluída, mais a da entrega).
+
+## A correção HB1-c (quinta passagem)
+
+*Construída a 21.10.2026 pelo Claude Opus 5.5 (a definição `construtor`), sobre o mandato `CORRECAO-HB1-c5-2026-10-21.md` do lugar de direção, com o orçamento de 40 chamadas. Os códigos estão em `correcao-hb1c/codigos/c5-*.code`, cada um escrito pelo próprio comando; os registos ficam fora dos commits. As frases impressas, por página, estão em `correcao-hb1c/codigos/c5-frases-impressas.txt`, escrito por um guião que procura cada frase no `dist/` construído nesta passagem.*
+
+**1. «a casa» e «the house»: feito.** Em `scripts/hb1-familias.py` mudaram só as seis frases do mandato; a régua não mudou e não entrou exceção. Regenerados `design/especime-v3/medicoes/hb1-2026-10-21/familias.mjs`, `src/data/o-que-e-das-familias.mjs` (pelo compositor, `c5-compor-familias.code` 0, «192 famílias compostas e conferidas») e `tests/cartao/leituras-provadas.json`; um guião confirmou que as linhas mudadas nos três ficheiros (48, 96 e 48) são exatamente estas trocas. `src/data/nomes-hb1.mjs` não mudou. Como as duas edições imprimem (o `dist/` desta passagem):
+
+- «… vive em agregados onde a despesa total com a habitação, descontados os subsídios, passa de quarenta por cento do rendimento disponível» (23 páginas);
+- «A parte do rendimento disponível do agregado que vai para a despesa com a habitação, que o Eurostat define como os gastos mensais ligados ao direito de viver numa casa» (5 páginas);
+- «A parte da população que vive neste regime de ocupação da habitação» (13 páginas);
+- «The change over one year in the index of house prices net of inflation, which is the index of house prices divided by the national accounts deflator for private consumption» (2 páginas);
+- «The index of house prices net of inflation, which is the index of house prices divided by the national accounts deflator for private consumption, with the base year equal to one hundred» (4 páginas);
+- «The result is the gap, in index points, between Portugal and the Union in the index of house prices net of inflation in 2025.» (1 página, `/en/ledger/der-hab-precos-reais-pt-vs-eu-2025/`).
+
+As formas antigas («a despesa total com a casa», «ocupação da casa», «in the house price index net of inflation», «which is the house price index») estão em zero páginas. O `check:voz` mordia «a casa» em 41 páginas e «the house» em 7 (`c4-build.log`); agora em nenhuma (`c5-check-voz.log`, zero linhas «PALAVRA PROIBIDA»). O excerto do glossário do Eurostat («The house price index, abbreviated as HPI…») já saía num `blockquote` com `data-verbatim` em `OrigemDaDefinicao.astro`; não foi preciso tocar o componente.
+
+**2. A lista fechada da B1: feito.** `ROTULOS_B1` ganhou `estudoDoOrcamento` («O estudo do Orçamento» / «The Budget study»), com o comentário da razão, e a vista usa `ROTULOS_B1[lang].estudoDoOrcamento`. A porta imprime «O estudo do Orçamento» em `/estudos/a-casa-em-portugal-e-na-europa/` e «The Budget study» em `/en/studies/a-casa-em-portugal-e-na-europa/`; as duas recusas da B1 saíram.
+
+**3. O inventário das frases: feito.** Saíram as linhas 3019 e 3020 (os duplicados `hb1b` de Évora); passaram a `retirada`, com a razão do mandato acrescentada à anterior, as linhas das contagens 3 809 (`eo1-d`) e 3 566 (`hb1b`) e as duas aberturas antigas da habitação (`hb1b`); entraram quatro linhas `viva` `hb1c` com os textos copiados da saída do `check:voz` (as aberturas de `/habitacao` e de `/en/housing`, e as contagens «3 998 afirmações · 463 de 3 998 calculadas · 2 767 de 3 998 linhas de concelhos» e «3 998 claims · 463 of 3 998 calculated · 2 767 of 3 998 municipality rows»). `REVISOES-DO-INVENTARIO.md` ganhou a linha `hb1c`, por ler, com a extração da cabeça 23be73060.
+
+**Os códigos (lidos dos ficheiros):** `c5-hb1-familias` 0; `c5-compor-familias` 0; `check:cartao` 0 (corrido depois do build; antes dele dava 1 na K17 porque o `dist/` antigo ainda tinha as frases antigas); `typecheck` 0; `npm run build` 0 (a cadeia inteira, com o `check:voz` dentro, das 14:27:17 às 14:33:02 UTC); `check:voz` 0. Não correram `npm run verify`, `portoes.sh` nem capturas.
+
+**O que fica:** o corpo do estudo, que vem do motor, ainda diz «toda a despesa com a casa» na frase sobre «a renda consome metade do salário» (2 páginas, a primeira `/estudos/a-casa-em-portugal-e-na-europa/`); a régua aceita-a e esta passagem não toca o motor, mas o lugar de direção decide se o estudo a acerta com a palavra da medida. A revisão `hb1c` do inventário está por ler. O português das frases do `tipsho10` («O índice dos preços das casas descontada a inflação») fica como estava, pelo mandato.
+
+**Chamadas:** 24 das 40 até este relatório, contadas pelo construtor no seu registo (as chamadas de ferramenta desta conversa).
