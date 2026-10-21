@@ -155,3 +155,88 @@ Na primeira corrida HB1-c, sobre `516ac586ffba0fa229dc14ae530333f80a319524`, o b
 A corrida dirigida antiga de `scripts/check-leituras.py` terminou com código 1: `tests/leituras/ferramentas.py` tentou abrir Chromium dentro da sandbox e recebeu `bootstrap_check_in org.chromium.Chromium.MachPortRendezvousServer.66817: Permission denied (1100)`. Essa chamada indireta não foi repetida dentro da sandbox. O código histórico permanece em `testes.json` e o registo em `leituras.log`; a conferência completa final correu pelo escrivão.
 
 Fica pendente a passagem curta de sexta-feira, 23.10.2026: conferir a divulgação efetiva dos preços locais do INE, alojar o destaque e o anexo trimestral, selar novamente os três identificadores com `2026-Q2`, refazer a razão Lisboa/Portugal se os valores mudarem, recompor as duas edições, correr as células e capturas e entregar as frases dos preços ao lugar de direção. Não se tomou o calendário por prova de publicação. A leitura a frio e a aterragem pertencem às passagens seguintes; não houve `push`, publicação nem envio nesta construção.
+
+## A correção HB1-b
+
+Esta passagem prepara o estudo e não o publica. A data continua por declarar. O próximo passo editorial permanece a HB1-c de 23.10.2026: novas medianas e rendas do INE, razão Lisboa/país, juro implícito de setembro, calendário no passado, data declarada e contagens do dia.
+
+### Decisões desta correção
+
+- **HB1-21.** A exposição de motivos do Governo contém a estimativa de alojamentos vagos em boas condições. A linha `hab-arrendamento-exposicao-vagos` sela o excerto da página um; as frases distinguem estimativa do Governo e contagem dos Censos. A atribuição é Presidência do Conselho de Ministros, como a folha de rosto.
+- **HB1-22.** Todas as linhas `hab-ilc-lvho07c-*` passaram ao corpo novo. Os dois corpos anteriores ficam catalogados como tentativas substituídas e já não sustentam essas linhas. A forma B é a escolhida pela diferença no total de Portugal. As duas atualizações têm o mesmo dia, a horas distintas; a redação mandatada «datas de atualização diferentes» conserva uma ambiguidade que os recibos completos e a tabela abaixo explicitam.
+- **HB1-23.** O corpo novo já contém a Dinamarca no total de 2025. A frase inteira «Chipre tem a mais baixa (…) entre os vinte e seis (…) a Dinamarca não os tem» e a correspondente inglesa foram devolvidas, sem frase substituta. A ressalva de ausência só se aplica às coordenadas onde se confirmou. O conjunto dos jovens e a privação severa mantêm as ausências medidas. A contagem é refeita por guião, por recorte, e não inferida do número de geografias pedidas.
+- **HB1-24.** As atribuições seguem os documentos; Soeiro é dirigente nacional do BE e Luís Silva é comandante dos Bombeiros Voluntários do Porto. As atribuições inglesas são campos do livro, atravessados e conferidos, e as contagens continuam separadas.
+- **HB1-25.** Datas da RTP, plataforma, proposta de lei e calendário corrigidas onde há âncora documental. A página do calendário alojada não declara data de edição: `document.edition` conserva `[a verificar]` nas duas linhas, com a razão. Uma data de acesso não foi apresentada como edição. O glossário declara 13.04.2021; a página da IL declara atualização em 08.06.2026, mas não a publicação inicial. A frase mandatada «sem data documental» ficou demasiado ampla e é devolvida como objeção, sem substituição editorial.
+- **HB1-26.** O gerador compõe os nomes das células Eurostat com dimensões e período, enumera apenas caminhos presentes no corpo e escreve as contas derivadas em palavras. O `check` continua a expressão da máquina. As frases dos recibos acrescentam o período a partir da própria linha. Os recibos derivados passaram também pela conferência de nomes, unidades e contexto geográfico nas duas línguas. O nome genérico dos recibos de preços locais do INE não foi convertido num rótulo que o documento não dá nessa forma.
+- **HB1-27.** O compositor normaliza datas portuguesas e inglesas, admite citações silenciosas e escolhe a atribuição inglesa. Datas de calendário saem com pontos. Os números das conclusões são texto do parágrafo, preservados nas provas e no HTML.
+- **HB1-28.** As quatro votações saem em prosa, com grupos conferidos contra os excertos parlamentares. Trocar um partido de grupo ou omiti-lo fecha a régua.
+- **HB1-29.** A redação fornecida nesta passagem foi restaurada, sem reescrita editorial silenciosa, salvo a frase devolvida em HB1-23 e as mudanças expressamente autorizadas de siglas e de tokens que não mudam o texto. A auditoria [divergencias-da-redacao.json](correcao-hb1b/divergencias-da-redacao.json) conserva as objeções factuais anteriores à redação: Portugal é nono, não segundo, na proporção dos jovens com os pais; a população sem empréstimo não é uma maioria; sobrecarga acima de quarenta por cento do rendimento não prova renda igual a metade do salário; licenças não medem toda a oferta; índices desde uma base não medem níveis absolutos de preços; os documentos não sustentam uma afirmação universal de que ninguém avaliou medidas. Estas frases permanecem redação mandatada em preparação, não conclusões verificadas. Não devem ser confundidas com um resultado verde dos testes de transcrição.
+- **HB1-30.** O contrato genérico `publication: 'declared'` distingue a aterragem declarada do legado, onde `date` podia ser nula ou uma data de origem anterior ao commit. Nesse contrato, `date: null` significa preparação, sem data pública, sem estado Published e sem contagem no arquivo. Uma data declarada prevalece sobre a entrada no Git, mas não pode antecedê-la. As edições históricas não foram reclassificadas retroativamente.
+- **HB1-31.** As linhas de imprensa e plataforma entram na conferência das palavras, datas, atribuições e portas, mesmo quando são excertos textuais sem a antiga marca `afirmacao`. As provas referem também os corpos suplementares que ancoram a data.
+- **HB1-32.** As expansões foram deslocadas para o primeiro uso real: PSD, IL e CDS-PP na abertura; BE português antes da atribuição a Soeiro; PS antes da citação na oferta; IMT, IS e PRR na prosa anterior às citações. A tabela inclui CIRS e FEH e distingue a atribuição inglesa, que não imprime a sigla BE nesse ponto. O extrator confere expansão única na prosa, sem alterar citações.
+- **HB1-33.** O achado do ficheiro binário não se reproduz nesta cabeça: `src/lib/cruzamento.mjs` já é UTF-8, sem NUL nem outros controlos fora de tabulação e quebras de linha. Nenhum byte foi retirado por suposição.
+- **HB1-34.** As verificações distinguem a cabeça de código, o commit dos registos e a última reconferência. Um registo que contém o hash do próprio commit não pode ser comitado nesse mesmo hash. As cabeças e os códigos reais ficam identificados, sem declarar identidade entre commits diferentes.
+- **HB1-35.** Os excertos das três ações do Orçamento contêm o rótulo e o número da coluna de 2027, conferidos por posição na página. A legenda de «invariante» e a definição Eurostat têm linhas e corpos próprios.
+- **HB1-36.** A atualização do INE prevista para HB1-c não foi antecipada. O calendário continua a anunciar as divulgações, e a lista da passagem seguinte inclui expressamente a taxa de juro de setembro.
+
+A revisão posterior dos recibos encontrou nomes internos em três contas inglesas e unidades não traduzidas. O gerador passou a exigir nomes e unidades conferidos, a contextualizar Lisboa e o período pelo excerto e a distinguir alojamentos de habitantes. As vinte contas conservaram os mesmos valores, componentes e expressões.
+
+### Achados da leitura
+
+| Achado | Estado | Resultado e limite |
+| --- | --- | --- |
+| 1 | corrigido | Estimativa do Governo selada e integrada nas passagens afetadas, HB1-21. |
+| 7 | corrigido | A convocatória da CGTP é independente e tem título e data próprios. |
+| 8 | corrigido | Soeiro identificado como dirigente nacional, HB1-24. |
+| 9 | corrigido | A dedução do PS é apresentada entre o que já propôs no Parlamento. |
+| 10 | corrigido | Preços trimestrais comparados entre os países com dados; falta da Grécia expressa. |
+| 11 | corrigido | Notícias, datas e atribuições acompanham as declarações; o título do desmentido identifica o contexto. |
+| 12 | corrigido | Datas e atribuições inglesas compostas e provadas. |
+| 13 | corrigido em parte | Corpo único novo e comparação refeita; frase mandatada distingue datas que têm o mesmo dia e horas diferentes, HB1-22. |
+| 14 | corrigido | Retirada das tendas datada e sequência desde sábado comprovada. |
+| 15 | corrigido | Edição em preparação sem data pública nem Published; contadores excluem-na, HB1-30. |
+| 16 | mantido com a decisão HB1-36 | Juro novo e calendário no passado pertencem à HB1-c, agora expressamente incluídos. |
+| 17 | corrigido em parte | Nomes Eurostat dimensionados e caminhos corrigidos; rótulo genérico INE conservado com o limite HB1-26. |
+| 18 | corrigido | Frases dos recibos terminam no período da linha. |
+| 19 | corrigido | Derivações em palavras nas duas línguas, vírgula decimal portuguesa. |
+| 20 | corrigido em parte | Redação autorizada restaurada e exceções identificadas em HB1-23, HB1-29 e HB1-32; as objeções factuais não foram escondidas. |
+| 21 | corrigido | Base cem, distâncias e Roménia explicitadas pelas quatro novas contas e pela célula selada. |
+| 22 | corrigido | Conclusões numeradas, votações em prosa e contagens entre aspas com atribuição. |
+| 23 | corrigido | Bandeiras da Finlândia, licenças e população da União expressas. |
+| 24 | corrigido em parte | Coberturas medidas; oração de ausência da Dinamarca devolvida porque o corpo novo a contradiz, HB1-23. |
+| 25 | corrigido | Preços de venda e rendas novas têm períodos próprios na abertura. |
+| 26 | corrigido | Pais ou rendimento do agregado, com o título exato da medida no corpo. |
+| 27 | corrigido | Portas de séries usam o título conferido no catálogo de rótulos. |
+| 28 | corrigido | Datas de calendário formatadas com pontos. |
+| 29 | corrigido em parte | Campos preenchidos quando há fonte; a edição do calendário não está declarada no corpo, HB1-25. |
+| 30 | corrigido | Excerto contíguo da Euronews inclui as cinco cidades. |
+| 31 | corrigido em parte | Substituídas as frases indicadas; «cada notícia a um toque» permanece por mandato, embora o percurso passe primeiro pelo recibo. |
+| 32 | corrigido | Conferência ampliada às linhas textuais de imprensa e plataforma, com plantas. |
+| 33 | mantido com a decisão HB1-33 | O defeito binário não está presente na cabeça recebida. |
+| 34 | corrigido | In brief e deteção comum na vista e no portão. |
+| 35 | corrigido em parte | Cabeças e registos separados explicitamente, HB1-34; não se atribuem a uma cabeça os testes de outra. |
+| 36 | corrigido | Expansões únicas na primeira ocorrência, com tabela e régua. |
+| 37 | corrigido | Anúncio da primeira medida e duas orações exatas do Conselho de Ministros. |
+| 38 | corrigido | Linhas completas do Quadro 5.24 e régua da coluna. |
+| 39 | corrigido | Definição do glossário Eurostat alojada e selada. |
+
+Os achados 2 a 6 são as plantas da leitura e não foram corrigidos como se fossem defeitos da produção.
+
+### Verificações durante a construção
+
+O primeiro pedido de commit foi recusado. As suites novas não imprimiam a contagem de verificações exigida pelo portão; passaram a contar os controlos efetivamente executados. Os testes de registos e de voz também confundiam as duas datas do calendário, agora formatadas com pontos, com figuras numéricas. A correção distingue datas ancoradas no valor da linha, sem alterar os números do texto nem relaxar o limite das figuras. Na travessia, a atribuição do comandante estava separada em nome e cargo, e duas linhas RTP perdiam a atribuição portuguesa; o gerador foi corrigido. As correções de valores textuais passaram a conservar a cadeia literal dos excertos anteriores, com uma planta de adulteração.
+
+### Escolhas, valores e cobertura
+
+As formas A da Euronews, das tendas e da definição têm os excertos e selos em [formas-provas.json](correcao-hb1b/formas-provas.json): a oração das cinco cidades é contígua à da plataforma; as duas orações da retirada e de «desde sábado» pertencem ao mesmo excerto; a definição vem do glossário alojado. A forma A da especialidade é sustentada por «2026-09-30 | Baixa comissão especialidade» na página parlamentar, conservado em [especialidade-prova.json](correcao-hb1b/especialidade-prova.json). A forma B da sobrecarga resulta da comparação abaixo; a sua última frase foi devolvida pela cobertura nova. Os identificadores reais da Lusa são `hab-imprensa-manif-lusa` e `hab-imprensa-manif-lusa-organizacoes`; o da plataforma é `hab-plataforma-reivindicacoes`.
+
+| Publicação | Portugal, total de 2025 | União, total de 2025 | Atualização declarada no corpo |
+| --- | ---: | ---: | --- |
+| ilc_lvho07c | 6,2 | 7,7 | 2026-10-20T23:00:00+0200 |
+| tespm140 | 6,3 | 7,7 | 2026-10-20T11:00:00+0200 |
+
+[fontes-factos.json](correcao-hb1b/fontes-factos.json) guarda os valores, momentos de atualização, resumos SHA-256, coordenadas e contagens de cada recorte. `prc_hpi_q` tem 26 Estados-membros, sem EL; `ilc_lvho07a` em 2025 tem 26, sem DK; `ilc_mdho06a` em 2023 tem 26, sem IE. No corpo novo `ilc_lvho07c`, total, proprietários com e sem empréstimo e inquilinos a preços de mercado têm 27; renda reduzida ou gratuita tem 26, sem valor DK. A Dinamarca no total tem 14,7 com bandeira `b`. Não se aplicou a todos os regimes a ausência observada num deles.
+
+O motor tem 20 derivadas depois das quatro novas, das quais 19 atravessam para o sítio; a percentagem derivada de vagos fica só no motor, porque o estudo usa a percentagem oficial do INE. O pedido referia quinze recibos. Todas as derivadas usadas nesta edição passaram pelo mesmo gerador de palavras e pela conta independente do `check`.
+
+Os campos que continuam por verificar são `document.edition` de `hab-ine-calendario-juro` e `hab-ine-calendario-precos-locais`. [ausencias.json](correcao-hb1b/ausencias.json) dá a razão, e [datas-ancoradas.json](correcao-hb1b/datas-ancoradas.json) mostra as datas efetivamente preenchidas e as suas âncoras.

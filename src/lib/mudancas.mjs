@@ -348,7 +348,7 @@ export function mudancasDoIndice(lang) {
     // O resumo do índice compara valores numéricos. As frases corrigidas
     // conservam a entrada completa no registo e a história no recibo.
     const linha = getClaim(m.claim);
-    if (linha.afirmacao === true && linha.unit === 'afirmação') continue;
+    if (linha.unit === 'texto' || (linha.afirmacao === true && linha.unit === 'afirmação')) continue;
     const atual = maisRecente.get(m.claim);
     if (!atual || m.data > atual.data || (m.data === atual.data && m.n > atual.n)) maisRecente.set(m.claim, m);
   }

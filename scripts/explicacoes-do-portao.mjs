@@ -94,7 +94,7 @@ export function contasDaSemanaNoPortao(claims, inicio, fim) {
     (l.corrections ?? []).forEach((/** @type {any} */ c, /** @type {number} */ n) => {
       if (!dentro(c?.date)) return;
       if (c.kind === 'proveniencia') proveniencia.add(id);
-      if (NATUREZAS_DE_VALOR.has(c.kind) && !(l.afirmacao === true && l.unit === 'afirmação')) deValor.push({ c, n });
+      if (NATUREZAS_DE_VALOR.has(c.kind) && !(l.unit === 'texto' || (l.afirmacao === true && l.unit === 'afirmação'))) deValor.push({ c, n });
     });
     if (!deValor.length) continue;
     deValor.sort((a, b) => String(a.c.date).localeCompare(String(b.c.date)) || a.n - b.n);
