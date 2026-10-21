@@ -39,6 +39,12 @@ for pasta in "$@"; do
 done
 modelo="${CODEX_CONSTRUTOR:-gpt-6-astra}"
 raciocinio="${CODEX_RACIOCINIO:-xhigh}"
+# O TETO DE RELÓGIO DE PAREDE (21.10.2026, a decisão do financiador sobre o custo): uma passagem corre no
+# máximo CODEX_TETO_SEGUNDOS (por omissão 4 500 s, setenta e cinco minutos); ao chegar, com-teto.sh interrompe o
+# Codex e a saída é 124, que fica no FIM e no registo dos pontos. Uma passagem que precisa de mais do que isto
+# está mal cortada: parte-se o mandato, não se sobe o teto sem decisão escrita.
+teto="${CODEX_TETO_SEGUNDOS:-4500}"
+case "$teto" in ''|*[!0-9]*) echo "CODEX_TETO_SEGUNDOS tem de ser um inteiro de segundos (recebi: ${teto})" >&2; exit 9;; esac
 case "$raciocinio" in low|medium|high|xhigh) ;; *) echo "CODEX_RACIOCINIO tem de ser low, medium, high ou xhigh (recebi: ${raciocinio})" >&2; exit 9;; esac
 aqui="$(cd "$(dirname "$0")" && pwd -P)" || exit 9
 comum="$aqui/PROMPT-construtor-comum.md"
@@ -79,12 +85,13 @@ sleep 1
 kill -0 "$escrivao" 2>/dev/null || { echo "o escrivão não arrancou: $(tail -3 "$base.escrivao.log")" >&2; exit 9; }
 echo "INICIO $inicio modelo=$modelo raciocínio=$raciocinio pastas_com_escrita=[$worktree$(for p in "$@"; do printf ' %s' "$p"; done)] escrivao=pid $escrivao"
 # shellcheck disable=SC2086
-cat "$comum" "$prompt" | codex exec -m "$modelo" -c "model_reasoning_effort=\"$raciocinio\"" -c 'approval_policy="never"' -s workspace-write $rede -C "$worktree" $extras --skip-git-repo-check --color never -o "$relatorio" -
+cat "$comum" "$prompt" | sh "$aqui/com-teto.sh" "$teto" codex exec -m "$modelo" -c "model_reasoning_effort=\"$raciocinio\"" -c 'approval_policy="never"' -s workspace-write $rede -C "$worktree" $extras --skip-git-repo-check --color never -o "$relatorio" -
 codigo=$?
 fim="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
 kill "$escrivao" 2>/dev/null
 wait "$escrivao" 2>/dev/null
 trap - EXIT INT TERM
+[ "$codigo" -eq 124 ] && echo "TETO: a passagem passou de ${teto} s e foi interrompida"
 echo "FIM exit=$codigo $fim"
 sleep 2
 python3 "$aqui/pontos.py" --inicio "$inicio" --fim "$fim" --worktree "$worktree" --json "$base.pontos.json"
