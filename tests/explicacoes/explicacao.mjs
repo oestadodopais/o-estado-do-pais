@@ -68,12 +68,6 @@ import { NOMES_PF1 } from '../../src/data/medidas-pf1.mjs';
 import { WORKS } from '../../src/data/studies.mjs';
 /* EX4 (21.10.2026): os nomes do projeto gerados pelo motor e os declarados no sítio para as linhas do Mapa 2. */
 const NOMES = /** @type {Record<string, { pt: string, en: string }>} */ ({ ...NOMES_OE1, ...NOMES_PF1 });
-/* EX4: o número do mapa e o código da subfunção, lidos por esta célula no ficheiro selado de cada linha. */
-const IDENTIFICADORES_AQUI = /** @type {Record<string, [string, RegExp]>} */ ({
-  'pf1-mapa-2027-numero': ['oe-2027-despesa-total-mapa', /^  locator: "MAPA (\d+), ano económico de /m],
-  'pf1-mapa-2026-numero': ['oe-2026-despesa-total-mapa', /^  locator: "MAPA (\d+), ano económico de /m],
-  'pf1-subfuncao-01-7-codigo': ['oe-2027-despesa-subfuncao-01-7-mapa', /^excerpt: "(\d{2}\.\d) OPERAÇÕES RELACIONADAS COM A DÍVIDA PÚBLICA /m],
-});
 /** A porta do fim de uma explicação, pela conta desta célula (EX4: o estudo e outra explicação). @param {any} d @param {'pt'|'en'} lang @param {Map<string, any>} linhas */
 function portaAqui(d, lang, linhas) {
   if (d.rota === 'estudo') return [routePath('estudo', lang, { slug: d.slug }), `${/** @type {any[]} */ (WORKS).find((w) => w.slug === d.slug)?.editions?.find((/** @type {any} */ x) => x.lang === lang)?.title} →`];
@@ -693,12 +687,6 @@ function textoAqui(partes, lang, linhas) {
       if (['origem-v2a-saude-consolidada-quadro', 'origem-v2a-ppp-setores-quadro'].includes(p.verbatim)) {
         const origem = p.verbatim.slice(7, -7);
         return JSON.parse(fs.readFileSync(path.join(RAIZ,'src/data/origens-v2a.json'),'utf8'))[origem].quadro;
-      }
-      if (p.verbatim in IDENTIFICADORES_AQUI) {
-        const [id, re] = IDENTIFICADORES_AQUI[p.verbatim];
-        const m = re.exec(fs.readFileSync(path.join(RAIZ, 'ledger', 'claims', `${id}.yml`), 'utf8'));
-        if (!m) throw new Error(`X6 · o identificador «${p.verbatim}» não se lê no campo selado da linha «${id}»`);
-        return m[1];
       }
       if (p.verbatim !== 'origem-rp4n-total-ministerios-montante') throw new Error('X6 · transcrição desconhecida');
       const excerto = ORIGENS_DAS_DEFINICOES['rp4n-total-ministerios'].excerto;

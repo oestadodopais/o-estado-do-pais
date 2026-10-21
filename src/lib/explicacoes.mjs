@@ -71,19 +71,6 @@ import { ENTRADAS } from '../data/primeira-pagina.mjs';
  */
 export const NOMES_DAS_EXPLICACOES = { ...NOMES_OE1, ...NOMES_PF1 };
 for (const id of Object.keys(NOMES_PF1)) if (id in NOMES_OE1) throw new Error(`explicações: a linha «${id}» tem nome nos dois módulos.`);
-/**
- * OS IDENTIFICADORES TRANSCRITOS DE UM CAMPO SELADO (bloco EX4, 21.10.2026). O número de um mapa («Mapa 2») e o código de
- * uma subfunção («01.7») não são quantidades, mas são algarismos, e nenhum algarismo se escreve à mão numa palavra fixa.
- * Entram pelo pedaço `{ verbatim: chave }`: o texto registado em `VERBATIM` tem de ser, carácter a carácter, o que o
- * padrão declarado lê no campo selado da linha declarada, e a linha tem de estar no livro; senão a construção fecha.
- * @type {Record<string, { linha: string, campo: 'document.locator'|'excerpt', padrao: RegExp }>}
- */
-export const IDENTIFICADORES_SELADOS = {
-  'pf1-mapa-2027-numero': { linha: 'oe-2027-despesa-total-mapa', campo: 'document.locator', padrao: /^MAPA (\d+), ano económico de / },
-  'pf1-mapa-2026-numero': { linha: 'oe-2026-despesa-total-mapa', campo: 'document.locator', padrao: /^MAPA (\d+), ano económico de / },
-  'pf1-subfuncao-01-7-codigo': { linha: 'oe-2027-despesa-subfuncao-01-7-mapa', campo: 'excerpt', padrao: /^(\d{2}\.\d) OPERAÇÕES RELACIONADAS COM A DÍVIDA PÚBLICA / },
-};
-
 /** Os pedaços calculados que a gramática das explicações conhece, e mais nenhum. */
 export const CHAVES_DA_EXPLICACAO = /** @type {const} */ (['claim', 'selo', 'literal', 'verbatim', 'termo', 'periodo', 'nome', 'sinal', 'se', 'maiores', 'compara', 'comparaSaldos']);
 /** O prefixo que separa, no nome do projeto de uma linha, a família do nome da função ou do ministério. */
@@ -287,18 +274,6 @@ function resolver(partes, lang, onde, ctx) {
     const o = /** @type {Record<string, any>} */ (p ?? {});
     const chave = CHAVES_DA_EXPLICACAO.find((k) => k in o);
     if (!chave) throw defeito(aqui, `um pedaço de tipo desconhecido (${Object.keys(o).join(', ')}).`);
-    if (chave === 'verbatim' && o.verbatim in IDENTIFICADORES_SELADOS) {
-      const d = IDENTIFICADORES_SELADOS[/** @type {keyof typeof IDENTIFICADORES_SELADOS} */ (o.verbatim)];
-      if (!hasClaim(d.linha)) throw defeito(aqui, `o identificador «${o.verbatim}» lê a linha «${d.linha}», que não está no livro-razão.`);
-      const linha = /** @type {any} */ (getClaim(d.linha));
-      const campo = d.campo === 'document.locator' ? linha.document?.locator : linha.excerpt;
-      const lido = typeof campo === 'string' ? d.padrao.exec(campo)?.[1] : undefined;
-      const registado = /** @type {any} */ (VERBATIM)[o.verbatim]?.text;
-      if (!lido || lido !== registado) throw defeito(aqui, `o identificador «${o.verbatim}» regista «${registado}» e o campo ${d.campo} da linha «${d.linha}» dá «${lido ?? 'nada'}».`);
-      ctx.linhas.add(d.linha);
-      out.push({ verbatim: o.verbatim, texto: registado });
-      return;
-    }
     if (chave === 'verbatim') {
       if (!['origem-rp4n-total-ministerios-montante', 'origem-v2a-saude-consolidada-quadro', 'origem-v2a-ppp-setores-quadro'].includes(o.verbatim)) throw defeito(aqui, 'transcrição de origem não autorizada.');
       out.push({verbatim: o.verbatim, texto: VERBATIM[/** @type {keyof typeof VERBATIM} */ (o.verbatim)].text});

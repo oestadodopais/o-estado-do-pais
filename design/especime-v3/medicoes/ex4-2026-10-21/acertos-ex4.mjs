@@ -61,24 +61,24 @@ function rende(t) {
     return `${campo(i, 'value')}${suf ?? ''}`;
   });
 }
-/** O §2 do mandato, em português, frase a frase, à letra (os títulos das figuras incluídos). */
+/** O §2 do mandato, em português, frase a frase, à letra (os títulos das figuras incluídos), na revisão de 21.10.2026 às 16:3x (a correção EX4-b). */
 const MANDATO = [
   ['titulo', "Para onde vai o dinheiro do Estado em [periodo: F27('01')], pela proposta de Orçamento"],
-  ['abertura-1', "A proposta de Orçamento do Estado para [periodo: F27('01')], entregue ao Parlamento a [periodo: ENTREGA], traz um mapa da despesa da Administração Central por função, o Mapa 2."],
-  ['abertura-2', "Esse mapa soma [claim: TOTAL27, sufixo ' euros'], e [compara: [DIV27, SEMDIV27], maior: 'mais de metade desse total', menor: 'menos de metade desse total', igual: 'metade desse total'], [claim: DIV27, sufixo ' euros'], é a subfunção a que o mapa chama «operações relacionadas com a dívida pública»."],
+  ['abertura-1', "A proposta de Orçamento do Estado para [periodo: F27('01')], entregue ao Parlamento a [periodo: ENTREGA], traz, entre os seus mapas, o da classificação funcional das despesas da Administração Central."],
+  ['abertura-2', "Esse mapa soma [claim: TOTAL27, sufixo ' euros'], e [claim: DIV27, sufixo ' euros'] desse total são a subfunção a que o mapa chama «operações relacionadas com a dívida pública»."],
   ['abertura-3', "Tirando essa subfunção, sobram [claim: SEMDIV27, sufixo ' euros']."],
   ['abertura-4', "De cada cem euros desses, [claim: S27('07')] vão para a [nome: S27('07')], [claim: S27('04')] para os [nome: S27('04')], [claim: S27('01')] para os [nome: S27('01')], [claim: S27('10')] para a [nome: S27('10')] e [claim: S27('09')] para a [nome: S27('09')]."],
   ['abertura-5', "[se: primeiros S27('07') de S27(01..10): «A maior fatia é a da [nome: S27('07')].»]"],
   ['secao-1', 'Por função, como o mapa a escreve'],
-  ['figura-1', "As dez funções, de cada cem euros da despesa total do Mapa 2 da proposta para [periodo: F27('01')] (a Administração Central, não consolidada, com as operações relacionadas com a dívida pública)"],
+  ['figura-1', 'As dez funções, de cada cem euros da despesa total do mapa funcional da proposta (a Administração Central, não consolidada, com as operações relacionadas com a dívida pública)'],
   ['secao-1-1', "Lido como o mapa o escreve, [claim: F27('01')] de cada cem euros vão para os [nome: F27('01')], porque a subfunção das operações relacionadas com a dívida pública está dentro dessa função; a [nome: F27('07')] leva [claim: F27('07')], os [nome: F27('04')] [claim: F27('04')], a [nome: F27('10')] [claim: F27('10')] e a [nome: F27('09')] [claim: F27('09')]."],
   ['secao-1-2', "A [nome: F27('03')] leva [claim: F27('03')], a [nome: F27('02')] [claim: F27('02')], a [nome: F27('06')] [claim: F27('06')], a [nome: F27('05')] [claim: F27('05')] e o [nome: F27('08')] [claim: F27('08')]."],
   ['secao-2', 'Sem as operações relacionadas com a dívida pública'],
-  ['figura-2', 'As dez funções, de cada cem euros da despesa do Mapa 2 sem a subfunção 01.7 (a conta deste projeto, declarada no recibo de cada linha)'],
-  ['secao-2-1', 'Esta conta é deste projeto: a despesa total do mapa menos a subfunção 01.7, e cada função a dividir por esse resto; o recibo de cada linha mostra a conta.'],
+  ['figura-2', 'As dez funções, de cada cem euros da despesa do mapa sem a subfunção das operações relacionadas com a dívida pública (a conta deste projeto, declarada no recibo de cada linha)'],
+  ['secao-2-1', 'Esta conta é deste projeto: a despesa total do mapa menos a subfunção das operações relacionadas com a dívida pública, e cada função a dividir por esse resto; o recibo de cada linha mostra a conta.'],
   ['secao-2-2', "A [nome: S27('03')] leva [claim: S27('03')] de cada cem euros, a [nome: S27('02')] [claim: S27('02')], a [nome: S27('06')] [claim: S27('06')], a [nome: S27('05')] [claim: S27('05')] e o [nome: S27('08')] [claim: S27('08')]."],
   ['secao-3', "O que muda da lei de [periodo: F26('01')] para a proposta de [periodo: F27('01')]"],
-  ['secao-3-1', "A comparação certa é o Mapa 2 da Lei do Orçamento para [periodo: F26('01')]: o mesmo mapa, o mesmo perímetro, a mesma unidade."],
+  ['secao-3-1', "A comparação certa é o mesmo mapa da Lei do Orçamento para [periodo: F26('01')]: o mesmo perímetro, a mesma unidade."],
   ['secao-3-2', "A despesa total do mapa passa de [claim: TOTAL26, sufixo ' euros'] para [claim: TOTAL27, sufixo ' euros'], uma variação de [claim: VTOTAL, sufixo ' %']; sem as operações relacionadas com a dívida pública, passa de [claim: SEMDIV26, sufixo ' euros'] para [claim: SEMDIV27, sufixo ' euros'], [claim: VSEM, sufixo ' %']."],
   ['secao-3-3', "Por função, em euros: os [nome: V('04')] variam [claim: V('04'), sufixo ' %'], a [nome: V('07')] [claim: V('07'), sufixo ' %'], a [nome: V('10')] [claim: V('10'), sufixo ' %'], a [nome: V('09')] [claim: V('09'), sufixo ' %'], a [nome: V('02')] [claim: V('02'), sufixo ' %'], a [nome: V('05')] [claim: V('05'), sufixo ' %'] e o [nome: V('08')] [claim: V('08'), sufixo ' %']."],
   ['secao-3-4', "[se: primeiros V('04') de V(01..10): «A função que mais cresce é a dos [nome: V('04')].»]"],
@@ -86,8 +86,8 @@ const MANDATO = [
   ['secao-4', 'A Saúde: a função e o programa'],
   ['secao-4-1', "A função [nome: F27('07')] do mapa, [claim: E27('07'), sufixo ' euros'], não é o programa Saúde do Orçamento, [claim: PROGRAMA_SAUDE, sufixo ' milhões de euros'] em [periodo: PROGRAMA_SAUDE]: o programa é consolidado e é um programa orçamental; a função é uma classificação da despesa, não consolidada, que conta as transferências entre serviços."],
   ['secao-4-2', 'As duas contas medem coisas diferentes, e nenhuma está errada.'],
-  ['naoDiz-1', 'Esta explicação lê o Mapa 2 de uma proposta: o que o Parlamento aprovar pode ser diferente, e o que se gasta de facto lê-se depois, na execução.'],
-  ['naoDiz-2', 'O mapa é só o subsetor da Administração Central: a Segurança Social, com as pensões, tem o seu mapa, o Mapa 7, que não está aqui.'],
+  ['naoDiz-1', 'Esta explicação lê o mapa de uma proposta: o que o Parlamento aprovar pode ser diferente, e o que se gasta de facto lê-se depois, na execução.'],
+  ['naoDiz-2', 'O mapa é só o subsetor da Administração Central: a Segurança Social, com as pensões, tem o seu próprio mapa funcional, que não está aqui.'],
   ['naoDiz-3', "Os valores não são consolidados, contam as transferências entre serviços, e por isso a despesa total do mapa é maior do que a despesa total consolidada, [claim: CONS27, sufixo ' euros'] em [periodo: CONS27]."],
   ['naoDiz-4', 'A conta «sem as operações relacionadas com a dívida pública» é deste projeto, declarada no recibo de cada linha; o mapa só dá o nome a essa subfunção, e esta explicação não diz o que entra nela.'],
   ['naoDiz-5', "A base da explicação de [periodo: 'oe-2026-cem-euros-funcao-01'], a despesa efetiva consolidada por função dos dados abertos, ainda não existe para [periodo: F27('01')]; quando existir, esta explicação passa a essa base."],

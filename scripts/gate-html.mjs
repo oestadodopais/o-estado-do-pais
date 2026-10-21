@@ -646,12 +646,20 @@ const TITULOS_DOS_REGISTOS = (() => {
   return saida;
 })();
 
+/* A correção EX4-b (21.10.2026): uma cadeia só de algarismos (o «2» do número de um mapa, o «6» de uma página) nunca é
+   uma cadeia reconhecida da cabeça: retirada antes da conta, apagava os algarismos que encontrasse noutro número (o «2»
+   de «UE-27» deixava o «7»). Saem da lista; o resto da cadeia conta-se como algarismos. A planta prova que morde. */
+const soDeAlgarismos = (/** @type {unknown} */ c) => typeof c === 'string' && /\d/.test(c) && /^[\s\d.,]+$/.test(c);
+if (['2', '01.7', '352 472 389 960'].some((c) => !soDeAlgarismos(c)) || ['UE-27', 'Mapa 2', SITE_NAME].some(soDeAlgarismos)) {
+  console.error('gate:html · a planta das cadeias só de algarismos na cabeça não mordeu.');
+  process.exit(1);
+}
 const CADEIAS_HEAD = [
   ...EDITIONS.map((e) => e.title),
   ...TITULOS_DOS_REGISTOS,
   ...Object.values(VERBATIM).map((v) => v.text),
   SITE_NAME,
-].sort(
+].filter((c) => !soDeAlgarismos(c)).sort(
   (a, b) => b.length - a.length,
 );
 

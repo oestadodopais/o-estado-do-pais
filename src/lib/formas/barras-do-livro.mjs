@@ -20,6 +20,8 @@
  */
 import { getClaim, hasClaim, parsePtNumber } from '../ledger.mjs';
 import { NOMES_OE1 } from '../../data/medidas-oe1.mjs';
+/* A correção EX4-b (21.10.2026): os nomes das linhas do Mapa 2 declarados no sítio (`NOMES_PF1`), para as figuras da explicação de 2027. */
+import { NOMES_PF1 } from '../../data/medidas-pf1.mjs';
 
 /** O prefixo que separa a família do nome no nome do projeto (a cópia desta forma, para não importar o resolvedor). */
 const PREFIXO = { pt: ' que vai para ', en: ' going to ' };
@@ -40,7 +42,7 @@ export function modeloDasBarrasDoLivro(figura, lang) {
     const l = getClaim(id);
     const valor = parsePtNumber(l.value);
     if (valor === null || !(valor >= 0)) throw new Error(`barras-do-livro · ${figura.id}: o valor de «${id}» («${l.value}») não é um número igual ou maior do que zero.`);
-    const nome = /** @type {Record<string, { pt: string, en: string }>} */ (NOMES_OE1)[id]?.[lang];
+    const nome = /** @type {Record<string, { pt: string, en: string }>} */ ({ ...NOMES_OE1, ...NOMES_PF1 })[id]?.[lang];
     const i = typeof nome === 'string' ? nome.indexOf(PREFIXO[lang]) : -1;
     if (i < 0) throw new Error(`barras-do-livro · ${figura.id}: o nome do projeto de «${id}» não tem o prefixo «${PREFIXO[lang].trim()}».`);
     const rotulo = /** @type {string} */ (nome).slice(i + PREFIXO[lang].length).replace(ARTIGO[lang], '');

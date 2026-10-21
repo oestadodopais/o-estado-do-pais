@@ -1,11 +1,9 @@
 {
   "frases_do_mandato": 28,
-  "frases_da_pagina": 25,
-  "iguais": 25,
-  "fora": 3,
+  "frases_da_pagina": 28,
+  "iguais": 28,
+  "fora": 0,
   "acertos": [
-    "EX4-A1",
-    "EX4-A2",
     "EX4-A3",
     "EX4-A4",
     "EX4-A5"
@@ -41,8 +39,7 @@
     },
     {
       "frase": "figura-1",
-      "estado": "fora",
-      "acerto": "EX4-A1"
+      "estado": "igual"
     },
     {
       "frase": "secao-1-1",
@@ -58,8 +55,7 @@
     },
     {
       "frase": "figura-2",
-      "estado": "fora",
-      "acerto": "EX4-A1"
+      "estado": "igual"
     },
     {
       "frase": "secao-2-1",
@@ -111,8 +107,7 @@
     },
     {
       "frase": "naoDiz-2",
-      "estado": "fora",
-      "acerto": "EX4-A2"
+      "estado": "igual"
     },
     {
       "frase": "naoDiz-3",

@@ -28,6 +28,7 @@
 import { parse } from 'node-html-parser';
 import { EXPLICACOES } from '../../src/data/explicacoes/index.mjs';
 import { NOMES_OE1 } from '../../src/data/medidas-oe1.mjs';
+import { NOMES_PF1 } from '../../src/data/medidas-pf1.mjs';
 import { loadClaims } from '../../src/lib/ledger.mjs';
 
 const FAIXA = 72;
@@ -81,7 +82,7 @@ export function plantasDasFigurasDeclaradas(html, slug) {
 
 /** O rótulo de uma linha, pela regra desta célula. @param {string} id @param {'pt'|'en'} lang */
 export function rotuloPelaCelula(id, lang) {
-  const nome = /** @type {Record<string, { pt: string, en: string }>} */ (NOMES_OE1)[id]?.[lang];
+  const nome = /** @type {Record<string, { pt: string, en: string }>} */ ({ ...NOMES_OE1, ...NOMES_PF1 })[id]?.[lang];
   if (typeof nome !== 'string' || !nome.includes(PREFIXO[lang])) return null;
   return nome.slice(nome.indexOf(PREFIXO[lang]) + PREFIXO[lang].length).replace(ARTIGO[lang], '');
 }
