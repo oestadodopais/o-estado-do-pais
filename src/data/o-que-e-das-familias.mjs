@@ -16648,3 +16648,2461 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     }
   }
 });
+
+// PF1: declarações acrescentadas pelo compositor próprio.
+Object.assign(FAMILIAS_DAS_LINHAS, {
+  "der-oe2027-despesa-sem-divida-variacao-pct": {
+    "nome": {
+      "pt": "Variação da lei para a proposta, no mapa funcional",
+      "en": "Change from the law to the proposal, in the functional map"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é a variação, em percentagem, da Lei do Orçamento para"
+      ],
+      "en": [
+        "The result is the change, in percent, from the Budget Law for"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " ",
+        {
+          "periodo": "oe-2026-despesa-sem-divida-mapa"
+        },
+        " para a proposta de Orçamento para ",
+        {
+          "periodo": "oe-2027-despesa-sem-divida-mapa"
+        },
+        ", com uma casa decimal; aqui, a despesa do mapa sem a subfunção das operações relacionadas com a dívida pública"
+      ],
+      "en": [
+        " ",
+        {
+          "periodo": "oe-2026-despesa-sem-divida-mapa"
+        },
+        " to the Budget proposal for ",
+        {
+          "periodo": "oe-2027-despesa-sem-divida-mapa"
+        },
+        ", to one decimal place; here, the map’s expenditure without the subfunction of the operations related to public debt"
+      ]
+    }
+  },
+  "der-oe2027-despesa-total-consolidada-mapa-variacao-pct": {
+    "nome": {
+      "pt": "Variação da lei para a proposta, no mapa funcional",
+      "en": "Change from the law to the proposal, in the functional map"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é a variação, em percentagem, da Lei do Orçamento para"
+      ],
+      "en": [
+        "The result is the change, in percent, from the Budget Law for"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " ",
+        {
+          "periodo": "oe-2026-despesa-total-consolidada-mapa"
+        },
+        " para a proposta de Orçamento para ",
+        {
+          "periodo": "oe-2027-despesa-total-consolidada-mapa"
+        },
+        ", com uma casa decimal; aqui, a despesa total consolidada"
+      ],
+      "en": [
+        " ",
+        {
+          "periodo": "oe-2026-despesa-total-consolidada-mapa"
+        },
+        " to the Budget proposal for ",
+        {
+          "periodo": "oe-2027-despesa-total-consolidada-mapa"
+        },
+        ", to one decimal place; here, consolidated total expenditure"
+      ]
+    }
+  },
+  "der-oe2027-despesa-total-mapa-variacao-pct": {
+    "nome": {
+      "pt": "Variação da lei para a proposta, no mapa funcional",
+      "en": "Change from the law to the proposal, in the functional map"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é a variação, em percentagem, da Lei do Orçamento para"
+      ],
+      "en": [
+        "The result is the change, in percent, from the Budget Law for"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " ",
+        {
+          "periodo": "oe-2026-despesa-total-mapa"
+        },
+        " para a proposta de Orçamento para ",
+        {
+          "periodo": "oe-2027-despesa-total-mapa"
+        },
+        ", com uma casa decimal; aqui, a despesa total do mapa"
+      ],
+      "en": [
+        " ",
+        {
+          "periodo": "oe-2026-despesa-total-mapa"
+        },
+        " to the Budget proposal for ",
+        {
+          "periodo": "oe-2027-despesa-total-mapa"
+        },
+        ", to one decimal place; here, the map’s total expenditure"
+      ]
+    }
+  },
+  "der-oe2027-funcao-01-variacao-pct": {
+    "nome": {
+      "pt": "Variação da lei para a proposta, no mapa funcional",
+      "en": "Change from the law to the proposal, in the functional map"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é a variação, em percentagem, da Lei do Orçamento para"
+      ],
+      "en": [
+        "The result is the change, in percent, from the Budget Law for"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " ",
+        {
+          "periodo": "oe-2026-despesa-funcao-01-mapa"
+        },
+        " para a proposta de Orçamento para ",
+        {
+          "periodo": "oe-2027-despesa-funcao-01-mapa"
+        },
+        ", com uma casa decimal; aqui, serviços gerais das administrações públicas"
+      ],
+      "en": [
+        " ",
+        {
+          "periodo": "oe-2026-despesa-funcao-01-mapa"
+        },
+        " to the Budget proposal for ",
+        {
+          "periodo": "oe-2027-despesa-funcao-01-mapa"
+        },
+        ", to one decimal place; here, general public services"
+      ]
+    }
+  },
+  "der-oe2027-funcao-02-variacao-pct": {
+    "nome": {
+      "pt": "Variação da lei para a proposta, no mapa funcional",
+      "en": "Change from the law to the proposal, in the functional map"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é a variação, em percentagem, da Lei do Orçamento para"
+      ],
+      "en": [
+        "The result is the change, in percent, from the Budget Law for"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " ",
+        {
+          "periodo": "oe-2026-despesa-funcao-02-mapa"
+        },
+        " para a proposta de Orçamento para ",
+        {
+          "periodo": "oe-2027-despesa-funcao-02-mapa"
+        },
+        ", com uma casa decimal; aqui, defesa"
+      ],
+      "en": [
+        " ",
+        {
+          "periodo": "oe-2026-despesa-funcao-02-mapa"
+        },
+        " to the Budget proposal for ",
+        {
+          "periodo": "oe-2027-despesa-funcao-02-mapa"
+        },
+        ", to one decimal place; here, defence"
+      ]
+    }
+  },
+  "der-oe2027-funcao-03-variacao-pct": {
+    "nome": {
+      "pt": "Variação da lei para a proposta, no mapa funcional",
+      "en": "Change from the law to the proposal, in the functional map"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é a variação, em percentagem, da Lei do Orçamento para"
+      ],
+      "en": [
+        "The result is the change, in percent, from the Budget Law for"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " ",
+        {
+          "periodo": "oe-2026-despesa-funcao-03-mapa"
+        },
+        " para a proposta de Orçamento para ",
+        {
+          "periodo": "oe-2027-despesa-funcao-03-mapa"
+        },
+        ", com uma casa decimal; aqui, segurança e ordem pública"
+      ],
+      "en": [
+        " ",
+        {
+          "periodo": "oe-2026-despesa-funcao-03-mapa"
+        },
+        " to the Budget proposal for ",
+        {
+          "periodo": "oe-2027-despesa-funcao-03-mapa"
+        },
+        ", to one decimal place; here, public order and safety"
+      ]
+    }
+  },
+  "der-oe2027-funcao-04-variacao-pct": {
+    "nome": {
+      "pt": "Variação da lei para a proposta, no mapa funcional",
+      "en": "Change from the law to the proposal, in the functional map"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é a variação, em percentagem, da Lei do Orçamento para"
+      ],
+      "en": [
+        "The result is the change, in percent, from the Budget Law for"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " ",
+        {
+          "periodo": "oe-2026-despesa-funcao-04-mapa"
+        },
+        " para a proposta de Orçamento para ",
+        {
+          "periodo": "oe-2027-despesa-funcao-04-mapa"
+        },
+        ", com uma casa decimal; aqui, assuntos económicos"
+      ],
+      "en": [
+        " ",
+        {
+          "periodo": "oe-2026-despesa-funcao-04-mapa"
+        },
+        " to the Budget proposal for ",
+        {
+          "periodo": "oe-2027-despesa-funcao-04-mapa"
+        },
+        ", to one decimal place; here, economic affairs"
+      ]
+    }
+  },
+  "der-oe2027-funcao-05-variacao-pct": {
+    "nome": {
+      "pt": "Variação da lei para a proposta, no mapa funcional",
+      "en": "Change from the law to the proposal, in the functional map"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é a variação, em percentagem, da Lei do Orçamento para"
+      ],
+      "en": [
+        "The result is the change, in percent, from the Budget Law for"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " ",
+        {
+          "periodo": "oe-2026-despesa-funcao-05-mapa"
+        },
+        " para a proposta de Orçamento para ",
+        {
+          "periodo": "oe-2027-despesa-funcao-05-mapa"
+        },
+        ", com uma casa decimal; aqui, proteção do ambiente"
+      ],
+      "en": [
+        " ",
+        {
+          "periodo": "oe-2026-despesa-funcao-05-mapa"
+        },
+        " to the Budget proposal for ",
+        {
+          "periodo": "oe-2027-despesa-funcao-05-mapa"
+        },
+        ", to one decimal place; here, environmental protection"
+      ]
+    }
+  },
+  "der-oe2027-funcao-06-variacao-pct": {
+    "nome": {
+      "pt": "Variação da lei para a proposta, no mapa funcional",
+      "en": "Change from the law to the proposal, in the functional map"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é a variação, em percentagem, da Lei do Orçamento para"
+      ],
+      "en": [
+        "The result is the change, in percent, from the Budget Law for"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " ",
+        {
+          "periodo": "oe-2026-despesa-funcao-06-mapa"
+        },
+        " para a proposta de Orçamento para ",
+        {
+          "periodo": "oe-2027-despesa-funcao-06-mapa"
+        },
+        ", com uma casa decimal; aqui, habitação e infraestruturas coletivas"
+      ],
+      "en": [
+        " ",
+        {
+          "periodo": "oe-2026-despesa-funcao-06-mapa"
+        },
+        " to the Budget proposal for ",
+        {
+          "periodo": "oe-2027-despesa-funcao-06-mapa"
+        },
+        ", to one decimal place; here, housing and community amenities"
+      ]
+    }
+  },
+  "der-oe2027-funcao-07-variacao-pct": {
+    "nome": {
+      "pt": "Variação da lei para a proposta, no mapa funcional",
+      "en": "Change from the law to the proposal, in the functional map"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é a variação, em percentagem, da Lei do Orçamento para"
+      ],
+      "en": [
+        "The result is the change, in percent, from the Budget Law for"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " ",
+        {
+          "periodo": "oe-2026-despesa-funcao-07-mapa"
+        },
+        " para a proposta de Orçamento para ",
+        {
+          "periodo": "oe-2027-despesa-funcao-07-mapa"
+        },
+        ", com uma casa decimal; aqui, saúde"
+      ],
+      "en": [
+        " ",
+        {
+          "periodo": "oe-2026-despesa-funcao-07-mapa"
+        },
+        " to the Budget proposal for ",
+        {
+          "periodo": "oe-2027-despesa-funcao-07-mapa"
+        },
+        ", to one decimal place; here, health"
+      ]
+    }
+  },
+  "der-oe2027-funcao-08-variacao-pct": {
+    "nome": {
+      "pt": "Variação da lei para a proposta, no mapa funcional",
+      "en": "Change from the law to the proposal, in the functional map"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é a variação, em percentagem, da Lei do Orçamento para"
+      ],
+      "en": [
+        "The result is the change, in percent, from the Budget Law for"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " ",
+        {
+          "periodo": "oe-2026-despesa-funcao-08-mapa"
+        },
+        " para a proposta de Orçamento para ",
+        {
+          "periodo": "oe-2027-despesa-funcao-08-mapa"
+        },
+        ", com uma casa decimal; aqui, desporto, recreação, cultura e religião"
+      ],
+      "en": [
+        " ",
+        {
+          "periodo": "oe-2026-despesa-funcao-08-mapa"
+        },
+        " to the Budget proposal for ",
+        {
+          "periodo": "oe-2027-despesa-funcao-08-mapa"
+        },
+        ", to one decimal place; here, recreation, culture and religion"
+      ]
+    }
+  },
+  "der-oe2027-funcao-09-variacao-pct": {
+    "nome": {
+      "pt": "Variação da lei para a proposta, no mapa funcional",
+      "en": "Change from the law to the proposal, in the functional map"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é a variação, em percentagem, da Lei do Orçamento para"
+      ],
+      "en": [
+        "The result is the change, in percent, from the Budget Law for"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " ",
+        {
+          "periodo": "oe-2026-despesa-funcao-09-mapa"
+        },
+        " para a proposta de Orçamento para ",
+        {
+          "periodo": "oe-2027-despesa-funcao-09-mapa"
+        },
+        ", com uma casa decimal; aqui, educação"
+      ],
+      "en": [
+        " ",
+        {
+          "periodo": "oe-2026-despesa-funcao-09-mapa"
+        },
+        " to the Budget proposal for ",
+        {
+          "periodo": "oe-2027-despesa-funcao-09-mapa"
+        },
+        ", to one decimal place; here, education"
+      ]
+    }
+  },
+  "der-oe2027-funcao-10-variacao-pct": {
+    "nome": {
+      "pt": "Variação da lei para a proposta, no mapa funcional",
+      "en": "Change from the law to the proposal, in the functional map"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é a variação, em percentagem, da Lei do Orçamento para"
+      ],
+      "en": [
+        "The result is the change, in percent, from the Budget Law for"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " ",
+        {
+          "periodo": "oe-2026-despesa-funcao-10-mapa"
+        },
+        " para a proposta de Orçamento para ",
+        {
+          "periodo": "oe-2027-despesa-funcao-10-mapa"
+        },
+        ", com uma casa decimal; aqui, proteção social"
+      ],
+      "en": [
+        " ",
+        {
+          "periodo": "oe-2026-despesa-funcao-10-mapa"
+        },
+        " to the Budget proposal for ",
+        {
+          "periodo": "oe-2027-despesa-funcao-10-mapa"
+        },
+        ", to one decimal place; here, social protection"
+      ]
+    }
+  },
+  "oe-2026-cem-euros-funcao-01-mapa": {
+    "nome": {
+      "pt": "Parte de cada cem euros da despesa total do mapa funcional",
+      "en": "Share of every hundred euros of the functional map’s total expenditure"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é a parte desta função em cada cem euros da despesa total do mapa, com duas casas decimais"
+      ],
+      "en": [
+        "The result is this function’s share of every hundred euros of the map’s total expenditure, to two decimal places"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, serviços gerais das administrações públicas, ",
+        {
+          "periodo": "oe-2026-cem-euros-funcao-01-mapa"
+        }
+      ],
+      "en": [
+        "; here, general public services, ",
+        {
+          "periodo": "oe-2026-cem-euros-funcao-01-mapa"
+        }
+      ]
+    }
+  },
+  "oe-2026-cem-euros-funcao-01-sem-divida-mapa": {
+    "nome": {
+      "pt": "Parte de cada cem euros da despesa do mapa funcional sem as operações relacionadas com a dívida pública",
+      "en": "Share of every hundred euros of the functional map’s expenditure without the operations related to public debt"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é a parte desta função em cada cem euros da despesa do mapa sem a subfunção das operações relacionadas com a dívida pública, com duas casas decimais"
+      ],
+      "en": [
+        "The result is this function’s share of every hundred euros of the map’s expenditure without the subfunction of the operations related to public debt, to two decimal places"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, serviços gerais das administrações públicas, ",
+        {
+          "periodo": "oe-2026-cem-euros-funcao-01-sem-divida-mapa"
+        }
+      ],
+      "en": [
+        "; here, general public services, ",
+        {
+          "periodo": "oe-2026-cem-euros-funcao-01-sem-divida-mapa"
+        }
+      ]
+    }
+  },
+  "oe-2026-cem-euros-funcao-02-mapa": {
+    "nome": {
+      "pt": "Parte de cada cem euros da despesa total do mapa funcional",
+      "en": "Share of every hundred euros of the functional map’s total expenditure"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é a parte desta função em cada cem euros da despesa total do mapa, com duas casas decimais"
+      ],
+      "en": [
+        "The result is this function’s share of every hundred euros of the map’s total expenditure, to two decimal places"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, defesa, ",
+        {
+          "periodo": "oe-2026-cem-euros-funcao-02-mapa"
+        }
+      ],
+      "en": [
+        "; here, defence, ",
+        {
+          "periodo": "oe-2026-cem-euros-funcao-02-mapa"
+        }
+      ]
+    }
+  },
+  "oe-2026-cem-euros-funcao-02-sem-divida-mapa": {
+    "nome": {
+      "pt": "Parte de cada cem euros da despesa do mapa funcional sem as operações relacionadas com a dívida pública",
+      "en": "Share of every hundred euros of the functional map’s expenditure without the operations related to public debt"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é a parte desta função em cada cem euros da despesa do mapa sem a subfunção das operações relacionadas com a dívida pública, com duas casas decimais"
+      ],
+      "en": [
+        "The result is this function’s share of every hundred euros of the map’s expenditure without the subfunction of the operations related to public debt, to two decimal places"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, defesa, ",
+        {
+          "periodo": "oe-2026-cem-euros-funcao-02-sem-divida-mapa"
+        }
+      ],
+      "en": [
+        "; here, defence, ",
+        {
+          "periodo": "oe-2026-cem-euros-funcao-02-sem-divida-mapa"
+        }
+      ]
+    }
+  },
+  "oe-2026-cem-euros-funcao-03-mapa": {
+    "nome": {
+      "pt": "Parte de cada cem euros da despesa total do mapa funcional",
+      "en": "Share of every hundred euros of the functional map’s total expenditure"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é a parte desta função em cada cem euros da despesa total do mapa, com duas casas decimais"
+      ],
+      "en": [
+        "The result is this function’s share of every hundred euros of the map’s total expenditure, to two decimal places"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, segurança e ordem pública, ",
+        {
+          "periodo": "oe-2026-cem-euros-funcao-03-mapa"
+        }
+      ],
+      "en": [
+        "; here, public order and safety, ",
+        {
+          "periodo": "oe-2026-cem-euros-funcao-03-mapa"
+        }
+      ]
+    }
+  },
+  "oe-2026-cem-euros-funcao-03-sem-divida-mapa": {
+    "nome": {
+      "pt": "Parte de cada cem euros da despesa do mapa funcional sem as operações relacionadas com a dívida pública",
+      "en": "Share of every hundred euros of the functional map’s expenditure without the operations related to public debt"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é a parte desta função em cada cem euros da despesa do mapa sem a subfunção das operações relacionadas com a dívida pública, com duas casas decimais"
+      ],
+      "en": [
+        "The result is this function’s share of every hundred euros of the map’s expenditure without the subfunction of the operations related to public debt, to two decimal places"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, segurança e ordem pública, ",
+        {
+          "periodo": "oe-2026-cem-euros-funcao-03-sem-divida-mapa"
+        }
+      ],
+      "en": [
+        "; here, public order and safety, ",
+        {
+          "periodo": "oe-2026-cem-euros-funcao-03-sem-divida-mapa"
+        }
+      ]
+    }
+  },
+  "oe-2026-cem-euros-funcao-04-mapa": {
+    "nome": {
+      "pt": "Parte de cada cem euros da despesa total do mapa funcional",
+      "en": "Share of every hundred euros of the functional map’s total expenditure"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é a parte desta função em cada cem euros da despesa total do mapa, com duas casas decimais"
+      ],
+      "en": [
+        "The result is this function’s share of every hundred euros of the map’s total expenditure, to two decimal places"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, assuntos económicos, ",
+        {
+          "periodo": "oe-2026-cem-euros-funcao-04-mapa"
+        }
+      ],
+      "en": [
+        "; here, economic affairs, ",
+        {
+          "periodo": "oe-2026-cem-euros-funcao-04-mapa"
+        }
+      ]
+    }
+  },
+  "oe-2026-cem-euros-funcao-04-sem-divida-mapa": {
+    "nome": {
+      "pt": "Parte de cada cem euros da despesa do mapa funcional sem as operações relacionadas com a dívida pública",
+      "en": "Share of every hundred euros of the functional map’s expenditure without the operations related to public debt"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é a parte desta função em cada cem euros da despesa do mapa sem a subfunção das operações relacionadas com a dívida pública, com duas casas decimais"
+      ],
+      "en": [
+        "The result is this function’s share of every hundred euros of the map’s expenditure without the subfunction of the operations related to public debt, to two decimal places"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, assuntos económicos, ",
+        {
+          "periodo": "oe-2026-cem-euros-funcao-04-sem-divida-mapa"
+        }
+      ],
+      "en": [
+        "; here, economic affairs, ",
+        {
+          "periodo": "oe-2026-cem-euros-funcao-04-sem-divida-mapa"
+        }
+      ]
+    }
+  },
+  "oe-2026-cem-euros-funcao-05-mapa": {
+    "nome": {
+      "pt": "Parte de cada cem euros da despesa total do mapa funcional",
+      "en": "Share of every hundred euros of the functional map’s total expenditure"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é a parte desta função em cada cem euros da despesa total do mapa, com duas casas decimais"
+      ],
+      "en": [
+        "The result is this function’s share of every hundred euros of the map’s total expenditure, to two decimal places"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, proteção do ambiente, ",
+        {
+          "periodo": "oe-2026-cem-euros-funcao-05-mapa"
+        }
+      ],
+      "en": [
+        "; here, environmental protection, ",
+        {
+          "periodo": "oe-2026-cem-euros-funcao-05-mapa"
+        }
+      ]
+    }
+  },
+  "oe-2026-cem-euros-funcao-05-sem-divida-mapa": {
+    "nome": {
+      "pt": "Parte de cada cem euros da despesa do mapa funcional sem as operações relacionadas com a dívida pública",
+      "en": "Share of every hundred euros of the functional map’s expenditure without the operations related to public debt"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é a parte desta função em cada cem euros da despesa do mapa sem a subfunção das operações relacionadas com a dívida pública, com duas casas decimais"
+      ],
+      "en": [
+        "The result is this function’s share of every hundred euros of the map’s expenditure without the subfunction of the operations related to public debt, to two decimal places"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, proteção do ambiente, ",
+        {
+          "periodo": "oe-2026-cem-euros-funcao-05-sem-divida-mapa"
+        }
+      ],
+      "en": [
+        "; here, environmental protection, ",
+        {
+          "periodo": "oe-2026-cem-euros-funcao-05-sem-divida-mapa"
+        }
+      ]
+    }
+  },
+  "oe-2026-cem-euros-funcao-06-mapa": {
+    "nome": {
+      "pt": "Parte de cada cem euros da despesa total do mapa funcional",
+      "en": "Share of every hundred euros of the functional map’s total expenditure"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é a parte desta função em cada cem euros da despesa total do mapa, com duas casas decimais"
+      ],
+      "en": [
+        "The result is this function’s share of every hundred euros of the map’s total expenditure, to two decimal places"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, habitação e infraestruturas coletivas, ",
+        {
+          "periodo": "oe-2026-cem-euros-funcao-06-mapa"
+        }
+      ],
+      "en": [
+        "; here, housing and community amenities, ",
+        {
+          "periodo": "oe-2026-cem-euros-funcao-06-mapa"
+        }
+      ]
+    }
+  },
+  "oe-2026-cem-euros-funcao-06-sem-divida-mapa": {
+    "nome": {
+      "pt": "Parte de cada cem euros da despesa do mapa funcional sem as operações relacionadas com a dívida pública",
+      "en": "Share of every hundred euros of the functional map’s expenditure without the operations related to public debt"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é a parte desta função em cada cem euros da despesa do mapa sem a subfunção das operações relacionadas com a dívida pública, com duas casas decimais"
+      ],
+      "en": [
+        "The result is this function’s share of every hundred euros of the map’s expenditure without the subfunction of the operations related to public debt, to two decimal places"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, habitação e infraestruturas coletivas, ",
+        {
+          "periodo": "oe-2026-cem-euros-funcao-06-sem-divida-mapa"
+        }
+      ],
+      "en": [
+        "; here, housing and community amenities, ",
+        {
+          "periodo": "oe-2026-cem-euros-funcao-06-sem-divida-mapa"
+        }
+      ]
+    }
+  },
+  "oe-2026-cem-euros-funcao-07-mapa": {
+    "nome": {
+      "pt": "Parte de cada cem euros da despesa total do mapa funcional",
+      "en": "Share of every hundred euros of the functional map’s total expenditure"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é a parte desta função em cada cem euros da despesa total do mapa, com duas casas decimais"
+      ],
+      "en": [
+        "The result is this function’s share of every hundred euros of the map’s total expenditure, to two decimal places"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, saúde, ",
+        {
+          "periodo": "oe-2026-cem-euros-funcao-07-mapa"
+        }
+      ],
+      "en": [
+        "; here, health, ",
+        {
+          "periodo": "oe-2026-cem-euros-funcao-07-mapa"
+        }
+      ]
+    }
+  },
+  "oe-2026-cem-euros-funcao-07-sem-divida-mapa": {
+    "nome": {
+      "pt": "Parte de cada cem euros da despesa do mapa funcional sem as operações relacionadas com a dívida pública",
+      "en": "Share of every hundred euros of the functional map’s expenditure without the operations related to public debt"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é a parte desta função em cada cem euros da despesa do mapa sem a subfunção das operações relacionadas com a dívida pública, com duas casas decimais"
+      ],
+      "en": [
+        "The result is this function’s share of every hundred euros of the map’s expenditure without the subfunction of the operations related to public debt, to two decimal places"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, saúde, ",
+        {
+          "periodo": "oe-2026-cem-euros-funcao-07-sem-divida-mapa"
+        }
+      ],
+      "en": [
+        "; here, health, ",
+        {
+          "periodo": "oe-2026-cem-euros-funcao-07-sem-divida-mapa"
+        }
+      ]
+    }
+  },
+  "oe-2026-cem-euros-funcao-08-mapa": {
+    "nome": {
+      "pt": "Parte de cada cem euros da despesa total do mapa funcional",
+      "en": "Share of every hundred euros of the functional map’s total expenditure"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é a parte desta função em cada cem euros da despesa total do mapa, com duas casas decimais"
+      ],
+      "en": [
+        "The result is this function’s share of every hundred euros of the map’s total expenditure, to two decimal places"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, desporto, recreação, cultura e religião, ",
+        {
+          "periodo": "oe-2026-cem-euros-funcao-08-mapa"
+        }
+      ],
+      "en": [
+        "; here, recreation, culture and religion, ",
+        {
+          "periodo": "oe-2026-cem-euros-funcao-08-mapa"
+        }
+      ]
+    }
+  },
+  "oe-2026-cem-euros-funcao-08-sem-divida-mapa": {
+    "nome": {
+      "pt": "Parte de cada cem euros da despesa do mapa funcional sem as operações relacionadas com a dívida pública",
+      "en": "Share of every hundred euros of the functional map’s expenditure without the operations related to public debt"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é a parte desta função em cada cem euros da despesa do mapa sem a subfunção das operações relacionadas com a dívida pública, com duas casas decimais"
+      ],
+      "en": [
+        "The result is this function’s share of every hundred euros of the map’s expenditure without the subfunction of the operations related to public debt, to two decimal places"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, desporto, recreação, cultura e religião, ",
+        {
+          "periodo": "oe-2026-cem-euros-funcao-08-sem-divida-mapa"
+        }
+      ],
+      "en": [
+        "; here, recreation, culture and religion, ",
+        {
+          "periodo": "oe-2026-cem-euros-funcao-08-sem-divida-mapa"
+        }
+      ]
+    }
+  },
+  "oe-2026-cem-euros-funcao-09-mapa": {
+    "nome": {
+      "pt": "Parte de cada cem euros da despesa total do mapa funcional",
+      "en": "Share of every hundred euros of the functional map’s total expenditure"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é a parte desta função em cada cem euros da despesa total do mapa, com duas casas decimais"
+      ],
+      "en": [
+        "The result is this function’s share of every hundred euros of the map’s total expenditure, to two decimal places"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, educação, ",
+        {
+          "periodo": "oe-2026-cem-euros-funcao-09-mapa"
+        }
+      ],
+      "en": [
+        "; here, education, ",
+        {
+          "periodo": "oe-2026-cem-euros-funcao-09-mapa"
+        }
+      ]
+    }
+  },
+  "oe-2026-cem-euros-funcao-09-sem-divida-mapa": {
+    "nome": {
+      "pt": "Parte de cada cem euros da despesa do mapa funcional sem as operações relacionadas com a dívida pública",
+      "en": "Share of every hundred euros of the functional map’s expenditure without the operations related to public debt"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é a parte desta função em cada cem euros da despesa do mapa sem a subfunção das operações relacionadas com a dívida pública, com duas casas decimais"
+      ],
+      "en": [
+        "The result is this function’s share of every hundred euros of the map’s expenditure without the subfunction of the operations related to public debt, to two decimal places"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, educação, ",
+        {
+          "periodo": "oe-2026-cem-euros-funcao-09-sem-divida-mapa"
+        }
+      ],
+      "en": [
+        "; here, education, ",
+        {
+          "periodo": "oe-2026-cem-euros-funcao-09-sem-divida-mapa"
+        }
+      ]
+    }
+  },
+  "oe-2026-cem-euros-funcao-10-mapa": {
+    "nome": {
+      "pt": "Parte de cada cem euros da despesa total do mapa funcional",
+      "en": "Share of every hundred euros of the functional map’s total expenditure"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é a parte desta função em cada cem euros da despesa total do mapa, com duas casas decimais"
+      ],
+      "en": [
+        "The result is this function’s share of every hundred euros of the map’s total expenditure, to two decimal places"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, proteção social, ",
+        {
+          "periodo": "oe-2026-cem-euros-funcao-10-mapa"
+        }
+      ],
+      "en": [
+        "; here, social protection, ",
+        {
+          "periodo": "oe-2026-cem-euros-funcao-10-mapa"
+        }
+      ]
+    }
+  },
+  "oe-2026-cem-euros-funcao-10-sem-divida-mapa": {
+    "nome": {
+      "pt": "Parte de cada cem euros da despesa do mapa funcional sem as operações relacionadas com a dívida pública",
+      "en": "Share of every hundred euros of the functional map’s expenditure without the operations related to public debt"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é a parte desta função em cada cem euros da despesa do mapa sem a subfunção das operações relacionadas com a dívida pública, com duas casas decimais"
+      ],
+      "en": [
+        "The result is this function’s share of every hundred euros of the map’s expenditure without the subfunction of the operations related to public debt, to two decimal places"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, proteção social, ",
+        {
+          "periodo": "oe-2026-cem-euros-funcao-10-sem-divida-mapa"
+        }
+      ],
+      "en": [
+        "; here, social protection, ",
+        {
+          "periodo": "oe-2026-cem-euros-funcao-10-sem-divida-mapa"
+        }
+      ]
+    }
+  },
+  "oe-2026-despesa-funcao-01-mapa": {
+    "nome": {
+      "pt": "Despesa da Administração Central por função, não consolidada",
+      "en": "Central administration expenditure by function, unconsolidated"
+    },
+    "frase": {
+      "pt": [
+        "A despesa do subsetor da Administração Central nesta função, como o mapa da classificação funcional a imprime, em euros, não consolidada"
+      ],
+      "en": [
+        "Central administration subsector expenditure in this function, as the functional classification map prints it, in euros, unconsolidated"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, serviços gerais das administrações públicas, a Lei do Orçamento, ",
+        {
+          "periodo": "oe-2026-despesa-funcao-01-mapa"
+        }
+      ],
+      "en": [
+        "; here, general public services, the Budget Law, ",
+        {
+          "periodo": "oe-2026-despesa-funcao-01-mapa"
+        }
+      ]
+    }
+  },
+  "oe-2026-despesa-funcao-01-sem-divida-mapa": {
+    "nome": {
+      "pt": "Serviços gerais das administrações públicas sem as operações relacionadas com a dívida pública",
+      "en": "General public services without the operations related to public debt"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é a função dos serviços gerais das administrações públicas menos a subfunção das operações relacionadas com a dívida pública, em euros"
+      ],
+      "en": [
+        "The result is the general public services function minus the subfunction of the operations related to public debt, in euros"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, ",
+        {
+          "periodo": "oe-2026-despesa-funcao-01-sem-divida-mapa"
+        }
+      ],
+      "en": [
+        "; here, ",
+        {
+          "periodo": "oe-2026-despesa-funcao-01-sem-divida-mapa"
+        }
+      ]
+    }
+  },
+  "oe-2026-despesa-funcao-02-mapa": {
+    "nome": {
+      "pt": "Despesa da Administração Central por função, não consolidada",
+      "en": "Central administration expenditure by function, unconsolidated"
+    },
+    "frase": {
+      "pt": [
+        "A despesa do subsetor da Administração Central nesta função, como o mapa da classificação funcional a imprime, em euros, não consolidada"
+      ],
+      "en": [
+        "Central administration subsector expenditure in this function, as the functional classification map prints it, in euros, unconsolidated"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, defesa, a Lei do Orçamento, ",
+        {
+          "periodo": "oe-2026-despesa-funcao-02-mapa"
+        }
+      ],
+      "en": [
+        "; here, defence, the Budget Law, ",
+        {
+          "periodo": "oe-2026-despesa-funcao-02-mapa"
+        }
+      ]
+    }
+  },
+  "oe-2026-despesa-funcao-03-mapa": {
+    "nome": {
+      "pt": "Despesa da Administração Central por função, não consolidada",
+      "en": "Central administration expenditure by function, unconsolidated"
+    },
+    "frase": {
+      "pt": [
+        "A despesa do subsetor da Administração Central nesta função, como o mapa da classificação funcional a imprime, em euros, não consolidada"
+      ],
+      "en": [
+        "Central administration subsector expenditure in this function, as the functional classification map prints it, in euros, unconsolidated"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, segurança e ordem pública, a Lei do Orçamento, ",
+        {
+          "periodo": "oe-2026-despesa-funcao-03-mapa"
+        }
+      ],
+      "en": [
+        "; here, public order and safety, the Budget Law, ",
+        {
+          "periodo": "oe-2026-despesa-funcao-03-mapa"
+        }
+      ]
+    }
+  },
+  "oe-2026-despesa-funcao-04-mapa": {
+    "nome": {
+      "pt": "Despesa da Administração Central por função, não consolidada",
+      "en": "Central administration expenditure by function, unconsolidated"
+    },
+    "frase": {
+      "pt": [
+        "A despesa do subsetor da Administração Central nesta função, como o mapa da classificação funcional a imprime, em euros, não consolidada"
+      ],
+      "en": [
+        "Central administration subsector expenditure in this function, as the functional classification map prints it, in euros, unconsolidated"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, assuntos económicos, a Lei do Orçamento, ",
+        {
+          "periodo": "oe-2026-despesa-funcao-04-mapa"
+        }
+      ],
+      "en": [
+        "; here, economic affairs, the Budget Law, ",
+        {
+          "periodo": "oe-2026-despesa-funcao-04-mapa"
+        }
+      ]
+    }
+  },
+  "oe-2026-despesa-funcao-05-mapa": {
+    "nome": {
+      "pt": "Despesa da Administração Central por função, não consolidada",
+      "en": "Central administration expenditure by function, unconsolidated"
+    },
+    "frase": {
+      "pt": [
+        "A despesa do subsetor da Administração Central nesta função, como o mapa da classificação funcional a imprime, em euros, não consolidada"
+      ],
+      "en": [
+        "Central administration subsector expenditure in this function, as the functional classification map prints it, in euros, unconsolidated"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, proteção do ambiente, a Lei do Orçamento, ",
+        {
+          "periodo": "oe-2026-despesa-funcao-05-mapa"
+        }
+      ],
+      "en": [
+        "; here, environmental protection, the Budget Law, ",
+        {
+          "periodo": "oe-2026-despesa-funcao-05-mapa"
+        }
+      ]
+    }
+  },
+  "oe-2026-despesa-funcao-06-mapa": {
+    "nome": {
+      "pt": "Despesa da Administração Central por função, não consolidada",
+      "en": "Central administration expenditure by function, unconsolidated"
+    },
+    "frase": {
+      "pt": [
+        "A despesa do subsetor da Administração Central nesta função, como o mapa da classificação funcional a imprime, em euros, não consolidada"
+      ],
+      "en": [
+        "Central administration subsector expenditure in this function, as the functional classification map prints it, in euros, unconsolidated"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, habitação e infraestruturas coletivas, a Lei do Orçamento, ",
+        {
+          "periodo": "oe-2026-despesa-funcao-06-mapa"
+        }
+      ],
+      "en": [
+        "; here, housing and community amenities, the Budget Law, ",
+        {
+          "periodo": "oe-2026-despesa-funcao-06-mapa"
+        }
+      ]
+    }
+  },
+  "oe-2026-despesa-funcao-07-mapa": {
+    "nome": {
+      "pt": "Despesa da Administração Central por função, não consolidada",
+      "en": "Central administration expenditure by function, unconsolidated"
+    },
+    "frase": {
+      "pt": [
+        "A despesa do subsetor da Administração Central nesta função, como o mapa da classificação funcional a imprime, em euros, não consolidada"
+      ],
+      "en": [
+        "Central administration subsector expenditure in this function, as the functional classification map prints it, in euros, unconsolidated"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, saúde, a Lei do Orçamento, ",
+        {
+          "periodo": "oe-2026-despesa-funcao-07-mapa"
+        }
+      ],
+      "en": [
+        "; here, health, the Budget Law, ",
+        {
+          "periodo": "oe-2026-despesa-funcao-07-mapa"
+        }
+      ]
+    }
+  },
+  "oe-2026-despesa-funcao-08-mapa": {
+    "nome": {
+      "pt": "Despesa da Administração Central por função, não consolidada",
+      "en": "Central administration expenditure by function, unconsolidated"
+    },
+    "frase": {
+      "pt": [
+        "A despesa do subsetor da Administração Central nesta função, como o mapa da classificação funcional a imprime, em euros, não consolidada"
+      ],
+      "en": [
+        "Central administration subsector expenditure in this function, as the functional classification map prints it, in euros, unconsolidated"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, desporto, recreação, cultura e religião, a Lei do Orçamento, ",
+        {
+          "periodo": "oe-2026-despesa-funcao-08-mapa"
+        }
+      ],
+      "en": [
+        "; here, recreation, culture and religion, the Budget Law, ",
+        {
+          "periodo": "oe-2026-despesa-funcao-08-mapa"
+        }
+      ]
+    }
+  },
+  "oe-2026-despesa-funcao-09-mapa": {
+    "nome": {
+      "pt": "Despesa da Administração Central por função, não consolidada",
+      "en": "Central administration expenditure by function, unconsolidated"
+    },
+    "frase": {
+      "pt": [
+        "A despesa do subsetor da Administração Central nesta função, como o mapa da classificação funcional a imprime, em euros, não consolidada"
+      ],
+      "en": [
+        "Central administration subsector expenditure in this function, as the functional classification map prints it, in euros, unconsolidated"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, educação, a Lei do Orçamento, ",
+        {
+          "periodo": "oe-2026-despesa-funcao-09-mapa"
+        }
+      ],
+      "en": [
+        "; here, education, the Budget Law, ",
+        {
+          "periodo": "oe-2026-despesa-funcao-09-mapa"
+        }
+      ]
+    }
+  },
+  "oe-2026-despesa-funcao-10-mapa": {
+    "nome": {
+      "pt": "Despesa da Administração Central por função, não consolidada",
+      "en": "Central administration expenditure by function, unconsolidated"
+    },
+    "frase": {
+      "pt": [
+        "A despesa do subsetor da Administração Central nesta função, como o mapa da classificação funcional a imprime, em euros, não consolidada"
+      ],
+      "en": [
+        "Central administration subsector expenditure in this function, as the functional classification map prints it, in euros, unconsolidated"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, proteção social, a Lei do Orçamento, ",
+        {
+          "periodo": "oe-2026-despesa-funcao-10-mapa"
+        }
+      ],
+      "en": [
+        "; here, social protection, the Budget Law, ",
+        {
+          "periodo": "oe-2026-despesa-funcao-10-mapa"
+        }
+      ]
+    }
+  },
+  "oe-2026-despesa-sem-divida-mapa": {
+    "nome": {
+      "pt": "Despesa do mapa funcional sem as operações relacionadas com a dívida pública",
+      "en": "Functional map expenditure without the operations related to public debt"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é a despesa total do mapa menos a subfunção das operações relacionadas com a dívida pública, em euros"
+      ],
+      "en": [
+        "The result is the map’s total expenditure minus the subfunction of the operations related to public debt, in euros"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, ",
+        {
+          "periodo": "oe-2026-despesa-sem-divida-mapa"
+        }
+      ],
+      "en": [
+        "; here, ",
+        {
+          "periodo": "oe-2026-despesa-sem-divida-mapa"
+        }
+      ]
+    }
+  },
+  "oe-2026-despesa-subfuncao-01-7-mapa": {
+    "nome": {
+      "pt": "Despesa da Administração Central nas operações relacionadas com a dívida pública, não consolidada",
+      "en": "Central administration expenditure on operations related to public debt, unconsolidated"
+    },
+    "frase": {
+      "pt": [
+        "A despesa do subsetor da Administração Central na subfunção das operações relacionadas com a dívida pública, como o mapa a imprime, em euros, não consolidada"
+      ],
+      "en": [
+        "Central administration subsector expenditure in the subfunction of the operations related to public debt, as the map prints it, in euros, unconsolidated"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, a Lei do Orçamento, ",
+        {
+          "periodo": "oe-2026-despesa-subfuncao-01-7-mapa"
+        }
+      ],
+      "en": [
+        "; here, the Budget Law, ",
+        {
+          "periodo": "oe-2026-despesa-subfuncao-01-7-mapa"
+        }
+      ]
+    }
+  },
+  "oe-2026-despesa-total-consolidada-mapa": {
+    "nome": {
+      "pt": "Despesa total consolidada do mapa da classificação funcional",
+      "en": "Consolidated total expenditure of the functional classification map"
+    },
+    "frase": {
+      "pt": [
+        "A despesa total consolidada, como o mapa da classificação funcional a imprime, em euros"
+      ],
+      "en": [
+        "Consolidated total expenditure, as the functional classification map prints it, in euros"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, a Lei do Orçamento, ",
+        {
+          "periodo": "oe-2026-despesa-total-consolidada-mapa"
+        }
+      ],
+      "en": [
+        "; here, the Budget Law, ",
+        {
+          "periodo": "oe-2026-despesa-total-consolidada-mapa"
+        }
+      ]
+    }
+  },
+  "oe-2026-despesa-total-mapa": {
+    "nome": {
+      "pt": "Despesa total do mapa da classificação funcional, não consolidada",
+      "en": "Total expenditure of the functional classification map, unconsolidated"
+    },
+    "frase": {
+      "pt": [
+        "A despesa total do mapa da classificação funcional, a soma das dez funções, como o mapa a imprime, em euros, não consolidada"
+      ],
+      "en": [
+        "The total expenditure of the functional classification map, the sum of the ten functions, as the map prints it, in euros, unconsolidated"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, a Lei do Orçamento, ",
+        {
+          "periodo": "oe-2026-despesa-total-mapa"
+        }
+      ],
+      "en": [
+        "; here, the Budget Law, ",
+        {
+          "periodo": "oe-2026-despesa-total-mapa"
+        }
+      ]
+    }
+  },
+  "oe-2027-cem-euros-funcao-01-mapa": {
+    "nome": {
+      "pt": "Parte de cada cem euros da despesa total do mapa funcional",
+      "en": "Share of every hundred euros of the functional map’s total expenditure"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é a parte desta função em cada cem euros da despesa total do mapa, com duas casas decimais"
+      ],
+      "en": [
+        "The result is this function’s share of every hundred euros of the map’s total expenditure, to two decimal places"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, serviços gerais das administrações públicas, ",
+        {
+          "periodo": "oe-2027-cem-euros-funcao-01-mapa"
+        }
+      ],
+      "en": [
+        "; here, general public services, ",
+        {
+          "periodo": "oe-2027-cem-euros-funcao-01-mapa"
+        }
+      ]
+    }
+  },
+  "oe-2027-cem-euros-funcao-01-sem-divida-mapa": {
+    "nome": {
+      "pt": "Parte de cada cem euros da despesa do mapa funcional sem as operações relacionadas com a dívida pública",
+      "en": "Share of every hundred euros of the functional map’s expenditure without the operations related to public debt"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é a parte desta função em cada cem euros da despesa do mapa sem a subfunção das operações relacionadas com a dívida pública, com duas casas decimais"
+      ],
+      "en": [
+        "The result is this function’s share of every hundred euros of the map’s expenditure without the subfunction of the operations related to public debt, to two decimal places"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, serviços gerais das administrações públicas, ",
+        {
+          "periodo": "oe-2027-cem-euros-funcao-01-sem-divida-mapa"
+        }
+      ],
+      "en": [
+        "; here, general public services, ",
+        {
+          "periodo": "oe-2027-cem-euros-funcao-01-sem-divida-mapa"
+        }
+      ]
+    }
+  },
+  "oe-2027-cem-euros-funcao-02-mapa": {
+    "nome": {
+      "pt": "Parte de cada cem euros da despesa total do mapa funcional",
+      "en": "Share of every hundred euros of the functional map’s total expenditure"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é a parte desta função em cada cem euros da despesa total do mapa, com duas casas decimais"
+      ],
+      "en": [
+        "The result is this function’s share of every hundred euros of the map’s total expenditure, to two decimal places"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, defesa, ",
+        {
+          "periodo": "oe-2027-cem-euros-funcao-02-mapa"
+        }
+      ],
+      "en": [
+        "; here, defence, ",
+        {
+          "periodo": "oe-2027-cem-euros-funcao-02-mapa"
+        }
+      ]
+    }
+  },
+  "oe-2027-cem-euros-funcao-02-sem-divida-mapa": {
+    "nome": {
+      "pt": "Parte de cada cem euros da despesa do mapa funcional sem as operações relacionadas com a dívida pública",
+      "en": "Share of every hundred euros of the functional map’s expenditure without the operations related to public debt"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é a parte desta função em cada cem euros da despesa do mapa sem a subfunção das operações relacionadas com a dívida pública, com duas casas decimais"
+      ],
+      "en": [
+        "The result is this function’s share of every hundred euros of the map’s expenditure without the subfunction of the operations related to public debt, to two decimal places"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, defesa, ",
+        {
+          "periodo": "oe-2027-cem-euros-funcao-02-sem-divida-mapa"
+        }
+      ],
+      "en": [
+        "; here, defence, ",
+        {
+          "periodo": "oe-2027-cem-euros-funcao-02-sem-divida-mapa"
+        }
+      ]
+    }
+  },
+  "oe-2027-cem-euros-funcao-03-mapa": {
+    "nome": {
+      "pt": "Parte de cada cem euros da despesa total do mapa funcional",
+      "en": "Share of every hundred euros of the functional map’s total expenditure"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é a parte desta função em cada cem euros da despesa total do mapa, com duas casas decimais"
+      ],
+      "en": [
+        "The result is this function’s share of every hundred euros of the map’s total expenditure, to two decimal places"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, segurança e ordem pública, ",
+        {
+          "periodo": "oe-2027-cem-euros-funcao-03-mapa"
+        }
+      ],
+      "en": [
+        "; here, public order and safety, ",
+        {
+          "periodo": "oe-2027-cem-euros-funcao-03-mapa"
+        }
+      ]
+    }
+  },
+  "oe-2027-cem-euros-funcao-03-sem-divida-mapa": {
+    "nome": {
+      "pt": "Parte de cada cem euros da despesa do mapa funcional sem as operações relacionadas com a dívida pública",
+      "en": "Share of every hundred euros of the functional map’s expenditure without the operations related to public debt"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é a parte desta função em cada cem euros da despesa do mapa sem a subfunção das operações relacionadas com a dívida pública, com duas casas decimais"
+      ],
+      "en": [
+        "The result is this function’s share of every hundred euros of the map’s expenditure without the subfunction of the operations related to public debt, to two decimal places"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, segurança e ordem pública, ",
+        {
+          "periodo": "oe-2027-cem-euros-funcao-03-sem-divida-mapa"
+        }
+      ],
+      "en": [
+        "; here, public order and safety, ",
+        {
+          "periodo": "oe-2027-cem-euros-funcao-03-sem-divida-mapa"
+        }
+      ]
+    }
+  },
+  "oe-2027-cem-euros-funcao-04-mapa": {
+    "nome": {
+      "pt": "Parte de cada cem euros da despesa total do mapa funcional",
+      "en": "Share of every hundred euros of the functional map’s total expenditure"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é a parte desta função em cada cem euros da despesa total do mapa, com duas casas decimais"
+      ],
+      "en": [
+        "The result is this function’s share of every hundred euros of the map’s total expenditure, to two decimal places"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, assuntos económicos, ",
+        {
+          "periodo": "oe-2027-cem-euros-funcao-04-mapa"
+        }
+      ],
+      "en": [
+        "; here, economic affairs, ",
+        {
+          "periodo": "oe-2027-cem-euros-funcao-04-mapa"
+        }
+      ]
+    }
+  },
+  "oe-2027-cem-euros-funcao-04-sem-divida-mapa": {
+    "nome": {
+      "pt": "Parte de cada cem euros da despesa do mapa funcional sem as operações relacionadas com a dívida pública",
+      "en": "Share of every hundred euros of the functional map’s expenditure without the operations related to public debt"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é a parte desta função em cada cem euros da despesa do mapa sem a subfunção das operações relacionadas com a dívida pública, com duas casas decimais"
+      ],
+      "en": [
+        "The result is this function’s share of every hundred euros of the map’s expenditure without the subfunction of the operations related to public debt, to two decimal places"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, assuntos económicos, ",
+        {
+          "periodo": "oe-2027-cem-euros-funcao-04-sem-divida-mapa"
+        }
+      ],
+      "en": [
+        "; here, economic affairs, ",
+        {
+          "periodo": "oe-2027-cem-euros-funcao-04-sem-divida-mapa"
+        }
+      ]
+    }
+  },
+  "oe-2027-cem-euros-funcao-05-mapa": {
+    "nome": {
+      "pt": "Parte de cada cem euros da despesa total do mapa funcional",
+      "en": "Share of every hundred euros of the functional map’s total expenditure"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é a parte desta função em cada cem euros da despesa total do mapa, com duas casas decimais"
+      ],
+      "en": [
+        "The result is this function’s share of every hundred euros of the map’s total expenditure, to two decimal places"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, proteção do ambiente, ",
+        {
+          "periodo": "oe-2027-cem-euros-funcao-05-mapa"
+        }
+      ],
+      "en": [
+        "; here, environmental protection, ",
+        {
+          "periodo": "oe-2027-cem-euros-funcao-05-mapa"
+        }
+      ]
+    }
+  },
+  "oe-2027-cem-euros-funcao-05-sem-divida-mapa": {
+    "nome": {
+      "pt": "Parte de cada cem euros da despesa do mapa funcional sem as operações relacionadas com a dívida pública",
+      "en": "Share of every hundred euros of the functional map’s expenditure without the operations related to public debt"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é a parte desta função em cada cem euros da despesa do mapa sem a subfunção das operações relacionadas com a dívida pública, com duas casas decimais"
+      ],
+      "en": [
+        "The result is this function’s share of every hundred euros of the map’s expenditure without the subfunction of the operations related to public debt, to two decimal places"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, proteção do ambiente, ",
+        {
+          "periodo": "oe-2027-cem-euros-funcao-05-sem-divida-mapa"
+        }
+      ],
+      "en": [
+        "; here, environmental protection, ",
+        {
+          "periodo": "oe-2027-cem-euros-funcao-05-sem-divida-mapa"
+        }
+      ]
+    }
+  },
+  "oe-2027-cem-euros-funcao-06-mapa": {
+    "nome": {
+      "pt": "Parte de cada cem euros da despesa total do mapa funcional",
+      "en": "Share of every hundred euros of the functional map’s total expenditure"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é a parte desta função em cada cem euros da despesa total do mapa, com duas casas decimais"
+      ],
+      "en": [
+        "The result is this function’s share of every hundred euros of the map’s total expenditure, to two decimal places"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, habitação e infraestruturas coletivas, ",
+        {
+          "periodo": "oe-2027-cem-euros-funcao-06-mapa"
+        }
+      ],
+      "en": [
+        "; here, housing and community amenities, ",
+        {
+          "periodo": "oe-2027-cem-euros-funcao-06-mapa"
+        }
+      ]
+    }
+  },
+  "oe-2027-cem-euros-funcao-06-sem-divida-mapa": {
+    "nome": {
+      "pt": "Parte de cada cem euros da despesa do mapa funcional sem as operações relacionadas com a dívida pública",
+      "en": "Share of every hundred euros of the functional map’s expenditure without the operations related to public debt"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é a parte desta função em cada cem euros da despesa do mapa sem a subfunção das operações relacionadas com a dívida pública, com duas casas decimais"
+      ],
+      "en": [
+        "The result is this function’s share of every hundred euros of the map’s expenditure without the subfunction of the operations related to public debt, to two decimal places"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, habitação e infraestruturas coletivas, ",
+        {
+          "periodo": "oe-2027-cem-euros-funcao-06-sem-divida-mapa"
+        }
+      ],
+      "en": [
+        "; here, housing and community amenities, ",
+        {
+          "periodo": "oe-2027-cem-euros-funcao-06-sem-divida-mapa"
+        }
+      ]
+    }
+  },
+  "oe-2027-cem-euros-funcao-07-mapa": {
+    "nome": {
+      "pt": "Parte de cada cem euros da despesa total do mapa funcional",
+      "en": "Share of every hundred euros of the functional map’s total expenditure"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é a parte desta função em cada cem euros da despesa total do mapa, com duas casas decimais"
+      ],
+      "en": [
+        "The result is this function’s share of every hundred euros of the map’s total expenditure, to two decimal places"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, saúde, ",
+        {
+          "periodo": "oe-2027-cem-euros-funcao-07-mapa"
+        }
+      ],
+      "en": [
+        "; here, health, ",
+        {
+          "periodo": "oe-2027-cem-euros-funcao-07-mapa"
+        }
+      ]
+    }
+  },
+  "oe-2027-cem-euros-funcao-07-sem-divida-mapa": {
+    "nome": {
+      "pt": "Parte de cada cem euros da despesa do mapa funcional sem as operações relacionadas com a dívida pública",
+      "en": "Share of every hundred euros of the functional map’s expenditure without the operations related to public debt"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é a parte desta função em cada cem euros da despesa do mapa sem a subfunção das operações relacionadas com a dívida pública, com duas casas decimais"
+      ],
+      "en": [
+        "The result is this function’s share of every hundred euros of the map’s expenditure without the subfunction of the operations related to public debt, to two decimal places"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, saúde, ",
+        {
+          "periodo": "oe-2027-cem-euros-funcao-07-sem-divida-mapa"
+        }
+      ],
+      "en": [
+        "; here, health, ",
+        {
+          "periodo": "oe-2027-cem-euros-funcao-07-sem-divida-mapa"
+        }
+      ]
+    }
+  },
+  "oe-2027-cem-euros-funcao-08-mapa": {
+    "nome": {
+      "pt": "Parte de cada cem euros da despesa total do mapa funcional",
+      "en": "Share of every hundred euros of the functional map’s total expenditure"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é a parte desta função em cada cem euros da despesa total do mapa, com duas casas decimais"
+      ],
+      "en": [
+        "The result is this function’s share of every hundred euros of the map’s total expenditure, to two decimal places"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, desporto, recreação, cultura e religião, ",
+        {
+          "periodo": "oe-2027-cem-euros-funcao-08-mapa"
+        }
+      ],
+      "en": [
+        "; here, recreation, culture and religion, ",
+        {
+          "periodo": "oe-2027-cem-euros-funcao-08-mapa"
+        }
+      ]
+    }
+  },
+  "oe-2027-cem-euros-funcao-08-sem-divida-mapa": {
+    "nome": {
+      "pt": "Parte de cada cem euros da despesa do mapa funcional sem as operações relacionadas com a dívida pública",
+      "en": "Share of every hundred euros of the functional map’s expenditure without the operations related to public debt"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é a parte desta função em cada cem euros da despesa do mapa sem a subfunção das operações relacionadas com a dívida pública, com duas casas decimais"
+      ],
+      "en": [
+        "The result is this function’s share of every hundred euros of the map’s expenditure without the subfunction of the operations related to public debt, to two decimal places"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, desporto, recreação, cultura e religião, ",
+        {
+          "periodo": "oe-2027-cem-euros-funcao-08-sem-divida-mapa"
+        }
+      ],
+      "en": [
+        "; here, recreation, culture and religion, ",
+        {
+          "periodo": "oe-2027-cem-euros-funcao-08-sem-divida-mapa"
+        }
+      ]
+    }
+  },
+  "oe-2027-cem-euros-funcao-09-mapa": {
+    "nome": {
+      "pt": "Parte de cada cem euros da despesa total do mapa funcional",
+      "en": "Share of every hundred euros of the functional map’s total expenditure"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é a parte desta função em cada cem euros da despesa total do mapa, com duas casas decimais"
+      ],
+      "en": [
+        "The result is this function’s share of every hundred euros of the map’s total expenditure, to two decimal places"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, educação, ",
+        {
+          "periodo": "oe-2027-cem-euros-funcao-09-mapa"
+        }
+      ],
+      "en": [
+        "; here, education, ",
+        {
+          "periodo": "oe-2027-cem-euros-funcao-09-mapa"
+        }
+      ]
+    }
+  },
+  "oe-2027-cem-euros-funcao-09-sem-divida-mapa": {
+    "nome": {
+      "pt": "Parte de cada cem euros da despesa do mapa funcional sem as operações relacionadas com a dívida pública",
+      "en": "Share of every hundred euros of the functional map’s expenditure without the operations related to public debt"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é a parte desta função em cada cem euros da despesa do mapa sem a subfunção das operações relacionadas com a dívida pública, com duas casas decimais"
+      ],
+      "en": [
+        "The result is this function’s share of every hundred euros of the map’s expenditure without the subfunction of the operations related to public debt, to two decimal places"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, educação, ",
+        {
+          "periodo": "oe-2027-cem-euros-funcao-09-sem-divida-mapa"
+        }
+      ],
+      "en": [
+        "; here, education, ",
+        {
+          "periodo": "oe-2027-cem-euros-funcao-09-sem-divida-mapa"
+        }
+      ]
+    }
+  },
+  "oe-2027-cem-euros-funcao-10-mapa": {
+    "nome": {
+      "pt": "Parte de cada cem euros da despesa total do mapa funcional",
+      "en": "Share of every hundred euros of the functional map’s total expenditure"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é a parte desta função em cada cem euros da despesa total do mapa, com duas casas decimais"
+      ],
+      "en": [
+        "The result is this function’s share of every hundred euros of the map’s total expenditure, to two decimal places"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, proteção social, ",
+        {
+          "periodo": "oe-2027-cem-euros-funcao-10-mapa"
+        }
+      ],
+      "en": [
+        "; here, social protection, ",
+        {
+          "periodo": "oe-2027-cem-euros-funcao-10-mapa"
+        }
+      ]
+    }
+  },
+  "oe-2027-cem-euros-funcao-10-sem-divida-mapa": {
+    "nome": {
+      "pt": "Parte de cada cem euros da despesa do mapa funcional sem as operações relacionadas com a dívida pública",
+      "en": "Share of every hundred euros of the functional map’s expenditure without the operations related to public debt"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é a parte desta função em cada cem euros da despesa do mapa sem a subfunção das operações relacionadas com a dívida pública, com duas casas decimais"
+      ],
+      "en": [
+        "The result is this function’s share of every hundred euros of the map’s expenditure without the subfunction of the operations related to public debt, to two decimal places"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, proteção social, ",
+        {
+          "periodo": "oe-2027-cem-euros-funcao-10-sem-divida-mapa"
+        }
+      ],
+      "en": [
+        "; here, social protection, ",
+        {
+          "periodo": "oe-2027-cem-euros-funcao-10-sem-divida-mapa"
+        }
+      ]
+    }
+  },
+  "oe-2027-despesa-funcao-01-mapa": {
+    "nome": {
+      "pt": "Despesa da Administração Central por função, não consolidada",
+      "en": "Central administration expenditure by function, unconsolidated"
+    },
+    "frase": {
+      "pt": [
+        "A despesa do subsetor da Administração Central nesta função, como o mapa da classificação funcional a imprime, em euros, não consolidada"
+      ],
+      "en": [
+        "Central administration subsector expenditure in this function, as the functional classification map prints it, in euros, unconsolidated"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, serviços gerais das administrações públicas, a proposta de Orçamento, ",
+        {
+          "periodo": "oe-2027-despesa-funcao-01-mapa"
+        }
+      ],
+      "en": [
+        "; here, general public services, the Budget proposal, ",
+        {
+          "periodo": "oe-2027-despesa-funcao-01-mapa"
+        }
+      ]
+    }
+  },
+  "oe-2027-despesa-funcao-01-sem-divida-mapa": {
+    "nome": {
+      "pt": "Serviços gerais das administrações públicas sem as operações relacionadas com a dívida pública",
+      "en": "General public services without the operations related to public debt"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é a função dos serviços gerais das administrações públicas menos a subfunção das operações relacionadas com a dívida pública, em euros"
+      ],
+      "en": [
+        "The result is the general public services function minus the subfunction of the operations related to public debt, in euros"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, ",
+        {
+          "periodo": "oe-2027-despesa-funcao-01-sem-divida-mapa"
+        }
+      ],
+      "en": [
+        "; here, ",
+        {
+          "periodo": "oe-2027-despesa-funcao-01-sem-divida-mapa"
+        }
+      ]
+    }
+  },
+  "oe-2027-despesa-funcao-02-mapa": {
+    "nome": {
+      "pt": "Despesa da Administração Central por função, não consolidada",
+      "en": "Central administration expenditure by function, unconsolidated"
+    },
+    "frase": {
+      "pt": [
+        "A despesa do subsetor da Administração Central nesta função, como o mapa da classificação funcional a imprime, em euros, não consolidada"
+      ],
+      "en": [
+        "Central administration subsector expenditure in this function, as the functional classification map prints it, in euros, unconsolidated"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, defesa, a proposta de Orçamento, ",
+        {
+          "periodo": "oe-2027-despesa-funcao-02-mapa"
+        }
+      ],
+      "en": [
+        "; here, defence, the Budget proposal, ",
+        {
+          "periodo": "oe-2027-despesa-funcao-02-mapa"
+        }
+      ]
+    }
+  },
+  "oe-2027-despesa-funcao-03-mapa": {
+    "nome": {
+      "pt": "Despesa da Administração Central por função, não consolidada",
+      "en": "Central administration expenditure by function, unconsolidated"
+    },
+    "frase": {
+      "pt": [
+        "A despesa do subsetor da Administração Central nesta função, como o mapa da classificação funcional a imprime, em euros, não consolidada"
+      ],
+      "en": [
+        "Central administration subsector expenditure in this function, as the functional classification map prints it, in euros, unconsolidated"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, segurança e ordem pública, a proposta de Orçamento, ",
+        {
+          "periodo": "oe-2027-despesa-funcao-03-mapa"
+        }
+      ],
+      "en": [
+        "; here, public order and safety, the Budget proposal, ",
+        {
+          "periodo": "oe-2027-despesa-funcao-03-mapa"
+        }
+      ]
+    }
+  },
+  "oe-2027-despesa-funcao-04-mapa": {
+    "nome": {
+      "pt": "Despesa da Administração Central por função, não consolidada",
+      "en": "Central administration expenditure by function, unconsolidated"
+    },
+    "frase": {
+      "pt": [
+        "A despesa do subsetor da Administração Central nesta função, como o mapa da classificação funcional a imprime, em euros, não consolidada"
+      ],
+      "en": [
+        "Central administration subsector expenditure in this function, as the functional classification map prints it, in euros, unconsolidated"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, assuntos económicos, a proposta de Orçamento, ",
+        {
+          "periodo": "oe-2027-despesa-funcao-04-mapa"
+        }
+      ],
+      "en": [
+        "; here, economic affairs, the Budget proposal, ",
+        {
+          "periodo": "oe-2027-despesa-funcao-04-mapa"
+        }
+      ]
+    }
+  },
+  "oe-2027-despesa-funcao-05-mapa": {
+    "nome": {
+      "pt": "Despesa da Administração Central por função, não consolidada",
+      "en": "Central administration expenditure by function, unconsolidated"
+    },
+    "frase": {
+      "pt": [
+        "A despesa do subsetor da Administração Central nesta função, como o mapa da classificação funcional a imprime, em euros, não consolidada"
+      ],
+      "en": [
+        "Central administration subsector expenditure in this function, as the functional classification map prints it, in euros, unconsolidated"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, proteção do ambiente, a proposta de Orçamento, ",
+        {
+          "periodo": "oe-2027-despesa-funcao-05-mapa"
+        }
+      ],
+      "en": [
+        "; here, environmental protection, the Budget proposal, ",
+        {
+          "periodo": "oe-2027-despesa-funcao-05-mapa"
+        }
+      ]
+    }
+  },
+  "oe-2027-despesa-funcao-06-mapa": {
+    "nome": {
+      "pt": "Despesa da Administração Central por função, não consolidada",
+      "en": "Central administration expenditure by function, unconsolidated"
+    },
+    "frase": {
+      "pt": [
+        "A despesa do subsetor da Administração Central nesta função, como o mapa da classificação funcional a imprime, em euros, não consolidada"
+      ],
+      "en": [
+        "Central administration subsector expenditure in this function, as the functional classification map prints it, in euros, unconsolidated"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, habitação e infraestruturas coletivas, a proposta de Orçamento, ",
+        {
+          "periodo": "oe-2027-despesa-funcao-06-mapa"
+        }
+      ],
+      "en": [
+        "; here, housing and community amenities, the Budget proposal, ",
+        {
+          "periodo": "oe-2027-despesa-funcao-06-mapa"
+        }
+      ]
+    }
+  },
+  "oe-2027-despesa-funcao-07-mapa": {
+    "nome": {
+      "pt": "Despesa da Administração Central por função, não consolidada",
+      "en": "Central administration expenditure by function, unconsolidated"
+    },
+    "frase": {
+      "pt": [
+        "A despesa do subsetor da Administração Central nesta função, como o mapa da classificação funcional a imprime, em euros, não consolidada"
+      ],
+      "en": [
+        "Central administration subsector expenditure in this function, as the functional classification map prints it, in euros, unconsolidated"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, saúde, a proposta de Orçamento, ",
+        {
+          "periodo": "oe-2027-despesa-funcao-07-mapa"
+        }
+      ],
+      "en": [
+        "; here, health, the Budget proposal, ",
+        {
+          "periodo": "oe-2027-despesa-funcao-07-mapa"
+        }
+      ]
+    }
+  },
+  "oe-2027-despesa-funcao-08-mapa": {
+    "nome": {
+      "pt": "Despesa da Administração Central por função, não consolidada",
+      "en": "Central administration expenditure by function, unconsolidated"
+    },
+    "frase": {
+      "pt": [
+        "A despesa do subsetor da Administração Central nesta função, como o mapa da classificação funcional a imprime, em euros, não consolidada"
+      ],
+      "en": [
+        "Central administration subsector expenditure in this function, as the functional classification map prints it, in euros, unconsolidated"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, desporto, recreação, cultura e religião, a proposta de Orçamento, ",
+        {
+          "periodo": "oe-2027-despesa-funcao-08-mapa"
+        }
+      ],
+      "en": [
+        "; here, recreation, culture and religion, the Budget proposal, ",
+        {
+          "periodo": "oe-2027-despesa-funcao-08-mapa"
+        }
+      ]
+    }
+  },
+  "oe-2027-despesa-funcao-09-mapa": {
+    "nome": {
+      "pt": "Despesa da Administração Central por função, não consolidada",
+      "en": "Central administration expenditure by function, unconsolidated"
+    },
+    "frase": {
+      "pt": [
+        "A despesa do subsetor da Administração Central nesta função, como o mapa da classificação funcional a imprime, em euros, não consolidada"
+      ],
+      "en": [
+        "Central administration subsector expenditure in this function, as the functional classification map prints it, in euros, unconsolidated"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, educação, a proposta de Orçamento, ",
+        {
+          "periodo": "oe-2027-despesa-funcao-09-mapa"
+        }
+      ],
+      "en": [
+        "; here, education, the Budget proposal, ",
+        {
+          "periodo": "oe-2027-despesa-funcao-09-mapa"
+        }
+      ]
+    }
+  },
+  "oe-2027-despesa-funcao-10-mapa": {
+    "nome": {
+      "pt": "Despesa da Administração Central por função, não consolidada",
+      "en": "Central administration expenditure by function, unconsolidated"
+    },
+    "frase": {
+      "pt": [
+        "A despesa do subsetor da Administração Central nesta função, como o mapa da classificação funcional a imprime, em euros, não consolidada"
+      ],
+      "en": [
+        "Central administration subsector expenditure in this function, as the functional classification map prints it, in euros, unconsolidated"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, proteção social, a proposta de Orçamento, ",
+        {
+          "periodo": "oe-2027-despesa-funcao-10-mapa"
+        }
+      ],
+      "en": [
+        "; here, social protection, the Budget proposal, ",
+        {
+          "periodo": "oe-2027-despesa-funcao-10-mapa"
+        }
+      ]
+    }
+  },
+  "oe-2027-despesa-sem-divida-mapa": {
+    "nome": {
+      "pt": "Despesa do mapa funcional sem as operações relacionadas com a dívida pública",
+      "en": "Functional map expenditure without the operations related to public debt"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é a despesa total do mapa menos a subfunção das operações relacionadas com a dívida pública, em euros"
+      ],
+      "en": [
+        "The result is the map’s total expenditure minus the subfunction of the operations related to public debt, in euros"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, ",
+        {
+          "periodo": "oe-2027-despesa-sem-divida-mapa"
+        }
+      ],
+      "en": [
+        "; here, ",
+        {
+          "periodo": "oe-2027-despesa-sem-divida-mapa"
+        }
+      ]
+    }
+  },
+  "oe-2027-despesa-subfuncao-01-7-mapa": {
+    "nome": {
+      "pt": "Despesa da Administração Central nas operações relacionadas com a dívida pública, não consolidada",
+      "en": "Central administration expenditure on operations related to public debt, unconsolidated"
+    },
+    "frase": {
+      "pt": [
+        "A despesa do subsetor da Administração Central na subfunção das operações relacionadas com a dívida pública, como o mapa a imprime, em euros, não consolidada"
+      ],
+      "en": [
+        "Central administration subsector expenditure in the subfunction of the operations related to public debt, as the map prints it, in euros, unconsolidated"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, a proposta de Orçamento, ",
+        {
+          "periodo": "oe-2027-despesa-subfuncao-01-7-mapa"
+        }
+      ],
+      "en": [
+        "; here, the Budget proposal, ",
+        {
+          "periodo": "oe-2027-despesa-subfuncao-01-7-mapa"
+        }
+      ]
+    }
+  },
+  "oe-2027-despesa-total-consolidada-mapa": {
+    "nome": {
+      "pt": "Despesa total consolidada do mapa da classificação funcional",
+      "en": "Consolidated total expenditure of the functional classification map"
+    },
+    "frase": {
+      "pt": [
+        "A despesa total consolidada, como o mapa da classificação funcional a imprime, em euros"
+      ],
+      "en": [
+        "Consolidated total expenditure, as the functional classification map prints it, in euros"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, a proposta de Orçamento, ",
+        {
+          "periodo": "oe-2027-despesa-total-consolidada-mapa"
+        }
+      ],
+      "en": [
+        "; here, the Budget proposal, ",
+        {
+          "periodo": "oe-2027-despesa-total-consolidada-mapa"
+        }
+      ]
+    }
+  },
+  "oe-2027-despesa-total-mapa": {
+    "nome": {
+      "pt": "Despesa total do mapa da classificação funcional, não consolidada",
+      "en": "Total expenditure of the functional classification map, unconsolidated"
+    },
+    "frase": {
+      "pt": [
+        "A despesa total do mapa da classificação funcional, a soma das dez funções, como o mapa a imprime, em euros, não consolidada"
+      ],
+      "en": [
+        "The total expenditure of the functional classification map, the sum of the ten functions, as the map prints it, in euros, unconsolidated"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, a proposta de Orçamento, ",
+        {
+          "periodo": "oe-2027-despesa-total-mapa"
+        }
+      ],
+      "en": [
+        "; here, the Budget proposal, ",
+        {
+          "periodo": "oe-2027-despesa-total-mapa"
+        }
+      ]
+    }
+  }
+});
