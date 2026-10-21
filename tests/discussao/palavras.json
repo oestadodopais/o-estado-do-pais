@@ -1729,6 +1729,223 @@
           ]
         },
         {
+          "caminho": "seccoes[1].conteudo[1].paragrafo[23]",
+          "pt": " Em ",
+          "en": " In ",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": " Em ",
+              "en": " In ",
+              "classe": "leitura",
+              "sobre": "A igualdade das duas colunas de 2027 do quadro, com e sem o PRR, na despesa efetiva consolidada.",
+              "apoios": [
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027",
+                  "campo": "reference_date",
+                  "literal": "2027"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-2027",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[1].conteudo[1].paragrafo[25]",
+          "pt": " o quadro tem ",
+          "en": " the table has ",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": " o quadro tem ",
+              "en": " the table has ",
+              "classe": "leitura",
+              "sobre": "A igualdade das duas colunas de 2027 do quadro, com e sem o PRR, na despesa efetiva consolidada.",
+              "apoios": [
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027",
+                  "campo": "reference_date",
+                  "literal": "2027"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-2027",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[1].conteudo[1].paragrafo[26].maior[0]",
+          "pt": "um valor diferente",
+          "en": "a different value",
+          "ramo": "compara",
+          "partes": [
+            {
+              "pt": "um valor diferente",
+              "en": "a different value",
+              "classe": "leitura",
+              "sobre": "A igualdade das duas colunas de 2027 do quadro, com e sem o PRR, na despesa efetiva consolidada.",
+              "apoios": [
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027",
+                  "campo": "reference_date",
+                  "literal": "2027"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-2027",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[1].conteudo[1].paragrafo[26].menor[0]",
+          "pt": "um valor diferente",
+          "en": "a different value",
+          "ramo": "compara",
+          "partes": [
+            {
+              "pt": "um valor diferente",
+              "en": "a different value",
+              "classe": "leitura",
+              "sobre": "A igualdade das duas colunas de 2027 do quadro, com e sem o PRR, na despesa efetiva consolidada.",
+              "apoios": [
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027",
+                  "campo": "reference_date",
+                  "literal": "2027"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-2027",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[1].conteudo[1].paragrafo[26].igual[0]",
+          "pt": "o mesmo valor",
+          "en": "the same value",
+          "ramo": "compara",
+          "partes": [
+            {
+              "pt": "o mesmo valor",
+              "en": "the same value",
+              "classe": "leitura",
+              "sobre": "A igualdade das duas colunas de 2027 do quadro, com e sem o PRR, na despesa efetiva consolidada.",
+              "apoios": [
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027",
+                  "campo": "reference_date",
+                  "literal": "2027"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-2027",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[1].conteudo[1].paragrafo[27]",
+          "pt": " com e sem o PRR, ",
+          "en": " with and without the PRR, ",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": " com e sem o PRR, ",
+              "en": " with and without the PRR, ",
+              "classe": "leitura",
+              "sobre": "A igualdade das duas colunas de 2027 do quadro, com e sem o PRR, na despesa efetiva consolidada.",
+              "apoios": [
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027",
+                  "campo": "reference_date",
+                  "literal": "2027"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-2027",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[1].conteudo[1].paragrafo[29]",
+          "pt": " milhões de euros: a coluna sem o PRR não retira nada nesse ano.",
+          "en": " million euros: the column without the PRR takes nothing out in that year.",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": " milhões de euros: a coluna sem o PRR não retira nada nesse ano.",
+              "en": " million euros: the column without the PRR takes nothing out in that year.",
+              "classe": "leitura",
+              "sobre": "A igualdade das duas colunas de 2027 do quadro, com e sem o PRR, na despesa efetiva consolidada.",
+              "apoios": [
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027",
+                  "campo": "reference_date",
+                  "literal": "2027"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-2027",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                }
+              ]
+            }
+          ]
+        },
+        {
           "caminho": "seccoes[1].conteudo[2].paragrafo[0]",
           "pt": "Por dentro, a despesa com o pessoal passa de ",
           "en": "Inside it, personnel expenditure goes from ",
