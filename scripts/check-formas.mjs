@@ -353,7 +353,10 @@ function paginasDe(dir) {
  * @returns {string|null}
  */
 function campoDaData(linha, campo) {
-  if (campo === 'period') return typeof linha.period === 'string' && (/^\d{4}-T[1-4]$/.test(linha.period)||acumuladoConferido(linha)) ? linha.period : null;
+  // HB1-c3: o ano dos dados de um documento, pela mesma regra do livro-razão
+  // (`src/lib/ledger.mjs`): referência com dia completo, ano não posterior, escrito no excerto.
+  const anoDosDados = typeof linha.period === 'string' && /^\d{4}$/.test(linha.period) && /^\d{4}-\d{2}-\d{2}$/.test(String(linha.reference_date ?? '')) && linha.period <= String(linha.reference_date).slice(0, 4) && new RegExp(`(?<!\\d)${linha.period}(?!\\d)`).test(String(linha.excerpt ?? ''));
+  if (campo === 'period') return typeof linha.period === 'string' && (/^\d{4}-T[1-4]$/.test(linha.period)||acumuladoConferido(linha)||anoDosDados) ? linha.period : null;
   if (campo === 'reference_date') return typeof linha.reference_date === 'string' ? linha.reference_date : null;
   if (campo === 'access_date') return typeof linha.access_date === 'string' ? linha.access_date : null;
   if (campo === 'published_at') return typeof linha.published_at === 'string' ? linha.published_at : null;
