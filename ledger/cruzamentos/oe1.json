@@ -11,331 +11,331 @@
   "rows": {
     "despesa-por-funcao-2024-gf01-es": {
       "corrections_at_export": 0,
-      "exported_at": "2026-10-04",
-      "exported_row_sha256": "6c99825abca504ab9fec37a741a375687993bf72aed5b8b09d26bba5a7cc6932",
+      "exported_at": "2026-10-21",
+      "exported_row_sha256": "03d26a1083f44811d0de2dcd9823242d3e5e66f8360105515de2992d9fe9224b",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
-      "origin_row_sha256": "c4358c661ea7eb5cec5168954648cb8532b8e69c5d71469623fd8f5275356020",
+      "origin_row_sha256": "b8572c536407e7b9bbc746db4ca8a26aec648442c7be52674ae082d7ca5cc367",
       "rh_id": "despesa-por-funcao-2024-gf01-es",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
     "despesa-por-funcao-2024-gf01-pt": {
       "corrections_at_export": 0,
-      "exported_at": "2026-10-04",
-      "exported_row_sha256": "020e2a1723ab522c73a1ff384158ce935830858321ef61d8873ab2baea2d78c2",
+      "exported_at": "2026-10-21",
+      "exported_row_sha256": "1c937aeb1c196ac51bcc39eb49f9fa962e336a9824c51dcc6ac0e073098a74c3",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
-      "origin_row_sha256": "e86a618e19e05861fce86dafaa727360f59ea4c7acb0859febc7b343f3365deb",
+      "origin_row_sha256": "4ee3ec70b3bee92e8ccad02561115608d846a3ff039403f6aa4a64165a0f8563",
       "rh_id": "despesa-por-funcao-2024-gf01-pt",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
     "despesa-por-funcao-2024-gf01-ue": {
-      "corrections_at_export": 0,
-      "exported_at": "2026-10-04",
-      "exported_row_sha256": "e18806d13e775a1f83b45688338a63bc193396d1d8007b87187a5ec0da200242",
+      "corrections_at_export": 1,
+      "exported_at": "2026-10-21",
+      "exported_row_sha256": "1808b53bef227e9fc58383db3b59c28474f87cd19e2aad6e9a20d2c930a89ee9",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
-      "origin_row_sha256": "698c5ca00273f991c66d90bb0d3776b43078544a5c9d9ca87f34b5030db223d2",
+      "origin_row_sha256": "4d583a70a0f71a6c7302d807da3b8f63b896170d54d901cd199146b0e8926721",
       "rh_id": "despesa-por-funcao-2024-gf01-ue",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
     "despesa-por-funcao-2024-gf02-es": {
       "corrections_at_export": 0,
-      "exported_at": "2026-10-04",
-      "exported_row_sha256": "d382d86a6cd7de28f2038f07e0d5dfed774928cfec6c8013c90fb14a05fd721b",
+      "exported_at": "2026-10-21",
+      "exported_row_sha256": "cfb2792a8a48c2e1b6c7adf6380bd2d50882965bbc723ee18cdca612f03e6740",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
-      "origin_row_sha256": "b10c9ea70a89d3d478d411eab56a01a55e4d244b49ddc1f80bfdd830d8d68536",
+      "origin_row_sha256": "ff3559c65b73311c0d126cff4af4e52e1a11371b5f42b5c0570d25edbaf59e04",
       "rh_id": "despesa-por-funcao-2024-gf02-es",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
     "despesa-por-funcao-2024-gf02-pt": {
       "corrections_at_export": 0,
-      "exported_at": "2026-10-04",
-      "exported_row_sha256": "a49e6cfd4de29794c1ac12177f5f6ef94c7d0470946505b23789d67d123a7f9e",
+      "exported_at": "2026-10-21",
+      "exported_row_sha256": "7fb2272a96bf328b79b0b70e25bba2111aeb317aa2c356bc70f0e8ab823e6c10",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
-      "origin_row_sha256": "37ba26f95ebab5556bada157ea98d571eb228c495f38673d82efaec7e2a9aae0",
+      "origin_row_sha256": "f0795b4408313ca233e92aff62c350ba196a1beb7d69f9967592ba16652cf0b1",
       "rh_id": "despesa-por-funcao-2024-gf02-pt",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
     "despesa-por-funcao-2024-gf02-ue": {
       "corrections_at_export": 0,
-      "exported_at": "2026-10-04",
-      "exported_row_sha256": "15be427588b38d43b1990c115c8e5a328d7f1d32b28af39e67847d0f4aad8d0b",
+      "exported_at": "2026-10-21",
+      "exported_row_sha256": "d33ebd8ce49b05325287eda4da184564ca6ec42d1b13d0162226aeca568d2218",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
-      "origin_row_sha256": "75b145bb8d2c28dad13194bd0cec62f5bc8d4ef1bb5592ecc423bd7fd37f3100",
+      "origin_row_sha256": "7fabef44b51804c02194f89cc9ce50ec9d796f04a3d74719e0ac88c24fbce141",
       "rh_id": "despesa-por-funcao-2024-gf02-ue",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
     "despesa-por-funcao-2024-gf03-es": {
       "corrections_at_export": 0,
-      "exported_at": "2026-10-04",
-      "exported_row_sha256": "4f806f4adec1f3bb2bdc7ba3175b1a8c16d048f796778b2dd7314f77a96af775",
+      "exported_at": "2026-10-21",
+      "exported_row_sha256": "3e686e10d80e13dd490a6384d268098e0026b500bf7b083211679d71bc14cf78",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
-      "origin_row_sha256": "0fa065629d62b6f140a401653485faa9024308bf993457edae46a185d1a9e9d9",
+      "origin_row_sha256": "3c4ac2029e95ae5d08c47c85a1636aa9a59b22533d8a197da24e1a6800c10b0c",
       "rh_id": "despesa-por-funcao-2024-gf03-es",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
     "despesa-por-funcao-2024-gf03-pt": {
       "corrections_at_export": 0,
-      "exported_at": "2026-10-04",
-      "exported_row_sha256": "08cc97892e4546dea8815cc11cf15d8166d8f67272dc331278f3082674777f80",
+      "exported_at": "2026-10-21",
+      "exported_row_sha256": "ef58d00195d7dbd5302fe6d7320011eed0a23704a40ca0d77c79ca9626e496e2",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
-      "origin_row_sha256": "f18c1d2b4828eaecdb1d77013de9efaab09aa24f1c85e4380fd051fc8cac486c",
+      "origin_row_sha256": "08d6928d8a4fb6472ee59f68f68830722c8660ce6b08a36ec2bbe8d7308fdf5a",
       "rh_id": "despesa-por-funcao-2024-gf03-pt",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
     "despesa-por-funcao-2024-gf03-ue": {
       "corrections_at_export": 0,
-      "exported_at": "2026-10-04",
-      "exported_row_sha256": "90854528fe21947047992b6492a545d92e3de051be281d46aaf9bf63f9e4ac12",
+      "exported_at": "2026-10-21",
+      "exported_row_sha256": "14eace29980ca639c377a83c0b2483e3b5ad68b8908137dbc4444c865e5b7572",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
-      "origin_row_sha256": "21c53f6573528c02b1885e296475885a7986e0017059579ae35ff8559b3deadf",
+      "origin_row_sha256": "1aeeecf7d25526cfc873359ec1ae9baefefe63fbca7d755c1d05ac969683c3c9",
       "rh_id": "despesa-por-funcao-2024-gf03-ue",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
     "despesa-por-funcao-2024-gf04-es": {
       "corrections_at_export": 0,
-      "exported_at": "2026-10-04",
-      "exported_row_sha256": "658bf4b5b861a31b8ec836654b5613f82c19f2a24eaede4c816c8c08655a3e06",
+      "exported_at": "2026-10-21",
+      "exported_row_sha256": "6c4c19531699cc8fccbaea058674d13326ec42d8d0494f878bcd55be60d6184a",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
-      "origin_row_sha256": "84b27862dc06a4e3ca5c14b9087fec561d76b121d451867a5d43c093bf4e196e",
+      "origin_row_sha256": "d68acf3cec9f9712c30864e2fe652ccc9a6401cfdbf1e386185e60bd941ed5fe",
       "rh_id": "despesa-por-funcao-2024-gf04-es",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
     "despesa-por-funcao-2024-gf04-pt": {
       "corrections_at_export": 0,
-      "exported_at": "2026-10-04",
-      "exported_row_sha256": "78d3c3037c33aa787915b20b90e98e7963a6d887acc0593e0b7edd5f719ac613",
+      "exported_at": "2026-10-21",
+      "exported_row_sha256": "8955f98b2a71c5336cfe3319bed08e7d95839aa30742cad05b42ca3a31451485",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
-      "origin_row_sha256": "ae4c58b7ea30daffa35313395cf5cd8367b100d34ec4a0ee5637741de4aede7b",
+      "origin_row_sha256": "8cc26fa13d65445a895a47de9bac7eb690c549df0dd385deea94b4f2f0df43d8",
       "rh_id": "despesa-por-funcao-2024-gf04-pt",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
     "despesa-por-funcao-2024-gf04-ue": {
       "corrections_at_export": 0,
-      "exported_at": "2026-10-04",
-      "exported_row_sha256": "f1d618b0cced4ad59ce99850723a7446327f38da41e85dd41454b8d985935a54",
+      "exported_at": "2026-10-21",
+      "exported_row_sha256": "038ab173ee3bc27b33f500df3c14a3f258d36fb5f3cdcd3850b1348b7f50e97f",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
-      "origin_row_sha256": "14f51e0adf663a4731f241eba466f000c624067416027f22ff490c3d2707af03",
+      "origin_row_sha256": "d72860e9af0f911ea39401b7ce36d38fc3344858610e64e95cee7bcbe1ffb351",
       "rh_id": "despesa-por-funcao-2024-gf04-ue",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
     "despesa-por-funcao-2024-gf05-es": {
       "corrections_at_export": 0,
-      "exported_at": "2026-10-04",
-      "exported_row_sha256": "e3df71935ec7dccdfe57597422f4ec1d5b0c3f29240a2a322ef48ac129f7f4bb",
+      "exported_at": "2026-10-21",
+      "exported_row_sha256": "ae32fe315d55db70f170d98fe5483e6053f7ced0aea0a258d0b187303fdc5eba",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
-      "origin_row_sha256": "ee96c9561508b1e9105af582c03b1df220dfbfe2f72b9aa0a4fe6427e1c59e39",
+      "origin_row_sha256": "1eb69696aebddc02340c6d9219c1dfbb9a0275814151b70dfbc0888113d6ede9",
       "rh_id": "despesa-por-funcao-2024-gf05-es",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
     "despesa-por-funcao-2024-gf05-pt": {
       "corrections_at_export": 0,
-      "exported_at": "2026-10-04",
-      "exported_row_sha256": "5566ee01fdcab155d6e1004b12c0b7c70b5c0896afe62f14a7fa96c9192c1a41",
+      "exported_at": "2026-10-21",
+      "exported_row_sha256": "ef20529aac68d317215bcd0a01301e0c05c0b473ea8a1dbb30476996c966536b",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
-      "origin_row_sha256": "9e1596605b5f071fcd1a535751474e354484f9f8a6f54c45714a2f0664a197b5",
+      "origin_row_sha256": "a8ac9cca6a3a773f1a7c2ef66701747106a1175d6e0096fa2cb133681f5a7a7d",
       "rh_id": "despesa-por-funcao-2024-gf05-pt",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
     "despesa-por-funcao-2024-gf05-ue": {
       "corrections_at_export": 0,
-      "exported_at": "2026-10-04",
-      "exported_row_sha256": "2bc4bfc22b29e7e2d0d664b3687a4d97b7f72591373330778c09688574c58db0",
+      "exported_at": "2026-10-21",
+      "exported_row_sha256": "043f33f4b5b40c014c4a4413595f244f3bc98d00ac318f380bf8517fe365c2f7",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
-      "origin_row_sha256": "566b25ecd752350534d5d080b5b6e3c85e390ddb35620b9a3dae39d84644bc57",
+      "origin_row_sha256": "6763b133241ade80b209bd6a1930ad74457315ddf1726155d492092e162cb124",
       "rh_id": "despesa-por-funcao-2024-gf05-ue",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
     "despesa-por-funcao-2024-gf06-es": {
       "corrections_at_export": 0,
-      "exported_at": "2026-10-04",
-      "exported_row_sha256": "2c617546c862dc9578bea4b7691574ac4311253ca9f4fb24f3fafe6c9c62d0fc",
+      "exported_at": "2026-10-21",
+      "exported_row_sha256": "9e2f9df5260db1ac7afaa685abc7a1d597ba298e4c543fed2009bf4382030d99",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
-      "origin_row_sha256": "2db6662fc218df13b1e89356c3b0d942a0f99e00a49a8074088be60ddedc2299",
+      "origin_row_sha256": "7d1ad40322b83f27e7c05687111a45809cfdf49b4c99dc764add7fdba94eee62",
       "rh_id": "despesa-por-funcao-2024-gf06-es",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
     "despesa-por-funcao-2024-gf06-pt": {
       "corrections_at_export": 0,
-      "exported_at": "2026-10-04",
-      "exported_row_sha256": "c3df46f500a76df89a599c68b7be3bf290d308616c7186c17f07068db246bac4",
+      "exported_at": "2026-10-21",
+      "exported_row_sha256": "0102c9ee36ce743a606a8e015e163a3dc9496eac6183eb8ed35c967a0c7fb9de",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
-      "origin_row_sha256": "f2c9baf4baea8c37075457743d3cb2708118ccdc548b113d0742c6cce543bc4d",
+      "origin_row_sha256": "fb229c75779ba8c7c78677d1fd502f3e699f4a1df389b651bbaf8cd9751292dc",
       "rh_id": "despesa-por-funcao-2024-gf06-pt",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
     "despesa-por-funcao-2024-gf06-ue": {
       "corrections_at_export": 0,
-      "exported_at": "2026-10-04",
-      "exported_row_sha256": "88ba3de7eca46a7812abb941cbb77e0166c1820ae304c6d3ec06ad8f00fb766a",
+      "exported_at": "2026-10-21",
+      "exported_row_sha256": "d586dc2fd5b80e459f65340311e5f2c435b9dcc5133c9ae7d89630134103d2e8",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
-      "origin_row_sha256": "18d15b686a5084bd4cfa09612c0ac4945ff58145d87a454a30fd2fedf81586d1",
+      "origin_row_sha256": "44be28e24788731b3927d1eb744092e2fdf631f2d5e90b2124cce7333f583bda",
       "rh_id": "despesa-por-funcao-2024-gf06-ue",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
     "despesa-por-funcao-2024-gf07-es": {
       "corrections_at_export": 0,
-      "exported_at": "2026-10-04",
-      "exported_row_sha256": "2750ed3ec577c061d54bbaf672fc93d2dd55b2efc20da917e6bff655dba019e5",
+      "exported_at": "2026-10-21",
+      "exported_row_sha256": "ac379155027a41903357b3d04cb305cc3846ef8c244fa612156de8e22b939a38",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
-      "origin_row_sha256": "207e047849d56eabac8bd4dde858975190a2bde3a372fab434399d4b55a668ff",
+      "origin_row_sha256": "080402f242a434b5fce5b5a0c45fdfda11e47c967e1cb5d050453031f1b0787a",
       "rh_id": "despesa-por-funcao-2024-gf07-es",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
     "despesa-por-funcao-2024-gf07-pt": {
       "corrections_at_export": 0,
-      "exported_at": "2026-10-04",
-      "exported_row_sha256": "f7f8a24048cbdf56cad510a0385be7bcdb9f44512596aa4085c029adc7ac253e",
+      "exported_at": "2026-10-21",
+      "exported_row_sha256": "efa08b52b7bf3ed8b58e7046b67c34dc02c8f14fef305e9b712dea39e4a3ae0e",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
-      "origin_row_sha256": "9c291d668dd78d484030cb6ec3d3a51e72bf74d539906630af16fb698766b88b",
+      "origin_row_sha256": "b8f59a77aa13f1bfa14740e9e5988fd0ee25825b4321b48cb5af0183a139442c",
       "rh_id": "despesa-por-funcao-2024-gf07-pt",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
     "despesa-por-funcao-2024-gf07-ue": {
       "corrections_at_export": 0,
-      "exported_at": "2026-10-04",
-      "exported_row_sha256": "2ab2b3590f04f8a2e1bfe4c28cbd4be943671dce6f2a6cb0dae7304435dea6ee",
+      "exported_at": "2026-10-21",
+      "exported_row_sha256": "7bad13193bcd72fecab45ce931620a05a5d21f755e9df9e8b1cc77e73fb9d28b",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
-      "origin_row_sha256": "2e78bc71c128433e2acfb7ea75af8c32a4bc271e409404ddb01825d65c66521c",
+      "origin_row_sha256": "2fa8749d2bb8221eb091a3a62ac63e67a02b238266de2560e93bb9b0e48dbdf5",
       "rh_id": "despesa-por-funcao-2024-gf07-ue",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
     "despesa-por-funcao-2024-gf08-es": {
       "corrections_at_export": 0,
-      "exported_at": "2026-10-04",
-      "exported_row_sha256": "cfb803e99c3751003b97ce35ffc3523fa6185a3c736090b76d544cdbc45eefa9",
+      "exported_at": "2026-10-21",
+      "exported_row_sha256": "d9dd3fa81102ddb829718c3b135b5081de6a5febcc4d21f61356210cc8645193",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
-      "origin_row_sha256": "1b8b9df799b1f70e5cb96e06d83dc263237c998ca928f3f866aa63bf2d3a1247",
+      "origin_row_sha256": "1c759ebf72721f49a570d5c422b67b99c0d89f7326066d8257e3ddfd9246ab69",
       "rh_id": "despesa-por-funcao-2024-gf08-es",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
     "despesa-por-funcao-2024-gf08-pt": {
       "corrections_at_export": 0,
-      "exported_at": "2026-10-04",
-      "exported_row_sha256": "9e71eb8b2dc78078cd02097c7e6d474a59e57882ad191a344ab83a0f5c23dbf5",
+      "exported_at": "2026-10-21",
+      "exported_row_sha256": "0780357f9227fb9be3bfba46c5d2e8f2111126984c1cfea26868de9a8f4f3f20",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
-      "origin_row_sha256": "f7ba768c6cc3d88fa9b10a63f39860e1a781d0cc3ff10df013a5ebf07a01e182",
+      "origin_row_sha256": "b524f0e2baf477195bfeb998d0275006c61f131bc64bb802039b21c08fe16432",
       "rh_id": "despesa-por-funcao-2024-gf08-pt",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
     "despesa-por-funcao-2024-gf08-ue": {
       "corrections_at_export": 0,
-      "exported_at": "2026-10-04",
-      "exported_row_sha256": "a39c6547dca5a49d31e0476d8aeb40b0641f9950909afbaf873d7d1fa20724f0",
+      "exported_at": "2026-10-21",
+      "exported_row_sha256": "7b8aaf76df73e355efee372601d0553f081b402445b6620ac2f6112710a10044",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
-      "origin_row_sha256": "20bf0d188528ead4576123923db0d0e48e78f61ac8adb4f0347bc19dde6b01d8",
+      "origin_row_sha256": "ba87598213b787df3fd682c657a75262497e6b888609748c60585f6f15ec660d",
       "rh_id": "despesa-por-funcao-2024-gf08-ue",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
     "despesa-por-funcao-2024-gf09-es": {
       "corrections_at_export": 0,
-      "exported_at": "2026-10-04",
-      "exported_row_sha256": "55205ca546c3cd4bd2a640180608214f064f91e8cafb803bcd24f739f91d0def",
+      "exported_at": "2026-10-21",
+      "exported_row_sha256": "c15a64491e8d7db3d955d813d47e2945b5300e824aae9e7c84a7a47b86535c89",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
-      "origin_row_sha256": "1e89eb1ffa0ccd0025f46972f93e5e1eb7e1e30e42e0c552025bbdabbe5ae0b4",
+      "origin_row_sha256": "59adca7ddb886b0b5e9d19cb8f1155d1442bfd466eac1b2dd6eed02cda986a5e",
       "rh_id": "despesa-por-funcao-2024-gf09-es",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
     "despesa-por-funcao-2024-gf09-pt": {
       "corrections_at_export": 0,
-      "exported_at": "2026-10-04",
-      "exported_row_sha256": "25cb489c15ceed715234fd7bf30c3b34bbd66b60c2da59f7a16e74331453e6d2",
+      "exported_at": "2026-10-21",
+      "exported_row_sha256": "a4cac4fde29cfb630633c77474ecbfa0cbed9e398cb3e3d3c56602193215e018",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
-      "origin_row_sha256": "9a2bde6e7b31cce617012c498598e1df671f29bc789f496014093d38eacdd95f",
+      "origin_row_sha256": "686c7e74f238db8147d57a68fcc857542e037fbb197b0666ebadf6ec4b03fc7a",
       "rh_id": "despesa-por-funcao-2024-gf09-pt",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
     "despesa-por-funcao-2024-gf09-ue": {
       "corrections_at_export": 0,
-      "exported_at": "2026-10-04",
-      "exported_row_sha256": "abc33de6b731acf459d3bff746b292da4e89c27230acb97255fdddd634dd22de",
+      "exported_at": "2026-10-21",
+      "exported_row_sha256": "8480f47b924e9939aa1c02c7297feacacc0d3a086baeaa7c743896f915c6356b",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
-      "origin_row_sha256": "c3ab20c197c184511f24aea99432f3c75917d77d2ccb3e8c5588d1299852b2ad",
+      "origin_row_sha256": "6807413776034a81909ac570af999b2c3c38a4ae05956bb7a058fee5b1629e9e",
       "rh_id": "despesa-por-funcao-2024-gf09-ue",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
     "despesa-por-funcao-2024-gf10-es": {
       "corrections_at_export": 0,
-      "exported_at": "2026-10-04",
-      "exported_row_sha256": "b9e510ad151690e1ef386c6a49822adc286491f5fffc5458865e742f1af3b112",
+      "exported_at": "2026-10-21",
+      "exported_row_sha256": "417a862c1e8d290aca271d4e33c6131c886bbd78b6caeff14e838693c19ff664",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
-      "origin_row_sha256": "1470230158109f0a8a2e077766c7c2e61c3ef53953f9d57e51ed5071a5530381",
+      "origin_row_sha256": "e5500aff988f246a674409973b3c8240a2513fd245ae4ff3793ff724f069223a",
       "rh_id": "despesa-por-funcao-2024-gf10-es",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
     "despesa-por-funcao-2024-gf10-pt": {
       "corrections_at_export": 0,
-      "exported_at": "2026-10-04",
-      "exported_row_sha256": "2c842050d369a3bf94afd09286cbe810254a2d1ad78e902ce89d6a5324b22e62",
+      "exported_at": "2026-10-21",
+      "exported_row_sha256": "664b59b5e0fc6f63d1ed5190c652919ed5571cd77bd04dc1051c486c8a698d8e",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
-      "origin_row_sha256": "1dbe6ad1f8ee80d5cf1587a811af434ca6ce9705cc01da9ae4588dac6b3c76bf",
+      "origin_row_sha256": "8b0501732cd8ba2c9c098cd94d3da95bf9b7dc8deab9a5422e2860ec3d086384",
       "rh_id": "despesa-por-funcao-2024-gf10-pt",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
     "despesa-por-funcao-2024-gf10-ue": {
-      "corrections_at_export": 0,
-      "exported_at": "2026-10-04",
-      "exported_row_sha256": "04a64fa3d84c58f84460a3ee9b92e618a3906c452d2918c1dab281bfd118d817",
+      "corrections_at_export": 1,
+      "exported_at": "2026-10-21",
+      "exported_row_sha256": "fff2d13c91aa5d651f1df736431d57da27a7e201e6ae27d6f5ed742c5187d641",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
-      "origin_row_sha256": "566d3b2c381ce76015bc674d99e2af19c489833bd4be4dc7264abb61cf045afe",
+      "origin_row_sha256": "3d6f432a17c6d0c39307b236ea23c8af8051c0ad1ed9e897b2cb35f5588f3f25",
       "rh_id": "despesa-por-funcao-2024-gf10-ue",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -346,7 +346,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "2ce8390f782e3822ff9c5a29f51b1994b9093b7a3aefa00987617939fb5558a1",
       "rh_id": "execucao-2026-07-ativos-e-passivos-da-despesa-administracao-central",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -357,7 +357,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "3826fe0a4d921ada112732e75b0e899c3df5e98556468fc0552a6baf48cd3a5f",
       "rh_id": "execucao-2026-07-ativos-e-passivos-da-receita-administracao-central",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -368,7 +368,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "e3f6aee1233520b16acb930ab7919baf207ac893fda75055ffef0edc3d425564",
       "rh_id": "execucao-2026-07-cem-euros-funcao-01",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -379,7 +379,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "a540ddd095841fc93009dfbc5ec4e66795d27c0e52c3547771f96b9b83780923",
       "rh_id": "execucao-2026-07-cem-euros-funcao-02",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -390,7 +390,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "79bf31d51dada603bb211017019db95e0c7ef9a3e9fbcabd5182ce9a88bf0d87",
       "rh_id": "execucao-2026-07-cem-euros-funcao-03",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -401,7 +401,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "f6585363e53d614c8f20d5b1502cf4e2a12578ed9966f8ffd2b4244596522e71",
       "rh_id": "execucao-2026-07-cem-euros-funcao-04",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -412,7 +412,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "35c6fa0dbd9aad3a4469cc48b2b1668061bc0747a356689a92ff94e293547c22",
       "rh_id": "execucao-2026-07-cem-euros-funcao-05",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -423,7 +423,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "b27f781435c6441b6f9444422c5d2933bd066a364828f026cb246b15274c4f4e",
       "rh_id": "execucao-2026-07-cem-euros-funcao-06",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -434,7 +434,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "eeea18905f571fbbaf57b829f92422a0b5f754c401822564eeaf16fb3f53f2a7",
       "rh_id": "execucao-2026-07-cem-euros-funcao-07",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -445,7 +445,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "90bdaa86dcb69a6ec94140985736618b814fe05f792b4dd3f1596d00ac7d94c1",
       "rh_id": "execucao-2026-07-cem-euros-funcao-08",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -456,7 +456,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "58de89b98d42a57333dc84ef1a47c9691ffe8de01359cd3f3d3f167e79e54643",
       "rh_id": "execucao-2026-07-cem-euros-funcao-09",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -467,7 +467,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "361d325001a8ec913e7e481cc0f75ca6829c5e06f648e346fbd7bf02335dd4d3",
       "rh_id": "execucao-2026-07-cem-euros-funcao-10",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -478,7 +478,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "342c5d3ae0674af8b01728c14cef632c9e265bc073a4536930b9858b01146f9a",
       "rh_id": "execucao-2026-07-despesa-efetiva-administracao-central",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -489,7 +489,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "25d02a2d187f090b0fec11c191dabe8891955d85f0bccfedb96f9b2d2b46431f",
       "rh_id": "execucao-2026-07-despesa-funcao-01",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -500,7 +500,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "4f9c1024bbb99501a3171690cc75ff30d14a8ce1727baa69b8539a6839bc6ec6",
       "rh_id": "execucao-2026-07-despesa-funcao-02",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -511,7 +511,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "cf207b7d3fff0e8ff5aa5d055725e7faec961d21a7a6d8e35f19ee6aeca02098",
       "rh_id": "execucao-2026-07-despesa-funcao-03",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -522,7 +522,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "e521a3c57f2a09f0fd6f45dd12219c4699450b25aa23a2d0ebf3cb77f9455020",
       "rh_id": "execucao-2026-07-despesa-funcao-04",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -533,7 +533,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "f0ffea18c44d9baa2e789eef37a4b35ca617e3e8a358bb6534a78971a6cfa0a6",
       "rh_id": "execucao-2026-07-despesa-funcao-05",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -544,7 +544,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "685721f1a9f6debcf857d1950d32aa5bf74150d2ba7af7b68848d90c96bdf9e6",
       "rh_id": "execucao-2026-07-despesa-funcao-06",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -555,7 +555,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "d09445b91bd9b6530dae62f2c62b31a180b358319e57861f4269381359eec7a2",
       "rh_id": "execucao-2026-07-despesa-funcao-07",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -566,7 +566,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "26e713c39373f9a24fe8426f7e2370ea9e56a93f52631fb1fdb031ae261d07c9",
       "rh_id": "execucao-2026-07-despesa-funcao-08",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -577,7 +577,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "db697e9a742055e275c9b1a2783cf9cc9c9a245ef49bf5e4688ce57807bebdfb",
       "rh_id": "execucao-2026-07-despesa-funcao-09",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -588,7 +588,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "20ec1f64fe1763d4d926fa01ab6fd922e1be2ede098cc25273a66cdb6a67147b",
       "rh_id": "execucao-2026-07-despesa-funcao-10",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -599,7 +599,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "5c13d8329d199902a840c379fd177b4b71392a608ee270796fd6f4c6697c4915",
       "rh_id": "execucao-2026-07-despesa-orcamental-administracao-central",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -610,7 +610,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "3d3c6e94dfa3edc35d0749b76c2589adb31354b38415ddedd94767a380d26579",
       "rh_id": "execucao-2026-07-despesa-primaria-administracao-central",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -621,7 +621,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "84ae70967bc53564fc0c69d04382270ad4c5b47a92a8638038f90ad567c1f4ae",
       "rh_id": "execucao-2026-07-diferencas-consolidacao-funcional",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -632,7 +632,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "1d121c64d1902ed5c4cd81527448b2f27a45d04153a30fc982a1a24bf6bc33b1",
       "rh_id": "execucao-2026-07-receita-efetiva-administracao-central",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -643,7 +643,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "f6fdf4cded7adc309460360aa126ea5546d31bd9e0318139fb1f6097b4ab972a",
       "rh_id": "execucao-2026-07-receita-orcamental-administracao-central",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -654,7 +654,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "1d590625dc2fc275e963c388867a6d541497968444e2757d07327ba74f0462e6",
       "rh_id": "execucao-2026-07-saldo-global-administracao-central",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -665,7 +665,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "52f3dc8f0c1590d043e94f24094746d389e5a1d072b1daf4b5cd72e8c3edceb7",
       "rh_id": "execucao-2026-07-saldo-global-administracoes-publicas-contabilidade-publica",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -676,7 +676,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "588254cb349e094f569deba2511bb5984f069795838a3210ce9d105ee2615c7c",
       "rh_id": "execucao-2026-07-saldo-primario-administracao-central",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -687,7 +687,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "059d28bc9e86b37c8952614ff05963ff4887a4aa3897634099428cd7b6631dec",
       "rh_id": "execucao-2026-08-ativos-financeiros-liquidos-administracao-central-seguranca-social",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -698,7 +698,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ada012e0ee37802401ac9907693f21f2ac664bcb3ae7dfca7816d2a5a01ab9a2",
       "rh_id": "execucao-2026-08-despesa-efetiva-administracao-central",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -709,7 +709,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "45463c4c450886fa6e976e733856c80fd89bf93af8561f461a05366f2dfa0807",
       "rh_id": "execucao-2026-08-despesa-efetiva-administracao-central-seguranca-social",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -720,7 +720,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "7d87d0aaf250c744706e789be0305877c2b43adb54e8db3c96a915aab8824aa7",
       "rh_id": "execucao-2026-08-despesa-programa-001",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -731,7 +731,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "e73fc36d79e93f601817288f789359f49733feab23cf166415050d922c490630",
       "rh_id": "execucao-2026-08-despesa-programa-002",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -742,7 +742,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "c97f9622e51348b8ccff572421c7dd78777dad5453bcb68aa26225097663d145",
       "rh_id": "execucao-2026-08-despesa-programa-003",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -753,7 +753,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "8e8484de3f89b1fa4a938f624f409474ab2584051b462b9934be8e690a27f012",
       "rh_id": "execucao-2026-08-despesa-programa-004",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -764,7 +764,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "33cecdb5a99eff8c192fa71cb5e7e3afc1b6cb84185cae0ccfae1efa471cd353",
       "rh_id": "execucao-2026-08-despesa-programa-005",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -775,7 +775,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "e3ebcdb11c7c6679356f718205325101b7390bbd736c5237c307015f4265b191",
       "rh_id": "execucao-2026-08-despesa-programa-006",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -786,7 +786,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "1ea5ca931648a2a6749f3990fcf78288f7b6e1dba4effd17018e8a189df5f89d",
       "rh_id": "execucao-2026-08-despesa-programa-007",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -797,7 +797,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "0358237036082a9e27462fc4b9835e19e3aa7167cbe9f28a8394e753bb2e4506",
       "rh_id": "execucao-2026-08-despesa-programa-008",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -808,7 +808,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "2a5832576b04dc7868335b9a006d3282adf996f938520a98459e7a5791c25b70",
       "rh_id": "execucao-2026-08-despesa-programa-009",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -819,7 +819,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "582d01f68a4833ed9ea5a8ffff18dfd266ff24912b7a2330bfeb821e6395c8b7",
       "rh_id": "execucao-2026-08-despesa-programa-010",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -830,7 +830,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "cede6885ba050b41ce0b3cba011003d75e5db5b6ca0fc816d7f9ef0a54580d1e",
       "rh_id": "execucao-2026-08-despesa-programa-011",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -841,7 +841,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "550366c513ded4152e6985daccf0ed7d0669b2d0a13c60da2794c8583c7f6e38",
       "rh_id": "execucao-2026-08-despesa-programa-012",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -852,7 +852,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ec6f0b72e899deb6223d2e3b3d4ead67e9bd61038941956b5f48de2164e9aa2b",
       "rh_id": "execucao-2026-08-despesa-programa-013",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -863,7 +863,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "5adc19573b7188b4218ce662740cab901aa83be1e1a529c035ee17345d9bd339",
       "rh_id": "execucao-2026-08-despesa-programa-014",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -874,7 +874,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "56195beacb5f8a150c3333fb17c01bc9e402fb69dd8eea8eb48ced330dba3607",
       "rh_id": "execucao-2026-08-despesa-programa-015",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -885,7 +885,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "f5de053eaefa48d209ad9de267ce98d9d5cd5a8bad096ddec6e606a9192be5ad",
       "rh_id": "execucao-2026-08-despesa-programa-016",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -896,7 +896,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "45f94035b4b8c4e5f4e5e6762f643660688aa1afdde0ef75a5069635c2af2adb",
       "rh_id": "execucao-2026-08-despesa-programa-017",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -907,7 +907,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "c020854e72214316d34079d0ade761433941a98d95a1381f206af0040cbebedf",
       "rh_id": "execucao-2026-08-despesa-programa-018",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -918,7 +918,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "c8077b3c24a5f1fb4ba861c15e47d8068511e3d8fa71e9028c75a300b7509b69",
       "rh_id": "execucao-2026-08-despesa-programa-019",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -929,7 +929,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ca41bec5491ba23361c948a86258ca11ea0b10fe6073257d115fecdc2d6dea39",
       "rh_id": "execucao-2026-08-despesa-programa-020",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -940,7 +940,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "9b7ddd79c25dc570a7da262a9cdfffa7eaea562ce387ec88148616c5cec01896",
       "rh_id": "execucao-2026-08-diferencas-consolidacao-programas",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -951,7 +951,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "4db455c67e164425f09c424360d14fd243dc6f41a40f9038cc16e68f00199833",
       "rh_id": "execucao-2026-08-fluxos-entre-programas",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -962,7 +962,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "56dd2eebeadbc166f74d87681b927f4cba9fcb491598f62788a0e16b2e8c6184",
       "rh_id": "execucao-2026-08-passivos-financeiros-liquidos-administracao-central-seguranca-social",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -973,7 +973,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "d43dd851d1ef6d89263341dd3ef7c159c6f494348fa9a1b5be7fbae09ef4269c",
       "rh_id": "execucao-2026-08-receita-efetiva-administracao-central",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -984,7 +984,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "858e178fc909a9f09588fb436424fae523e463ab90688b7570b7391f890557df",
       "rh_id": "execucao-2026-08-receita-efetiva-administracao-central-seguranca-social",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -995,7 +995,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "fd40dfed0173ceba9a962176aa1967d2a0a74510d5ade850c103b9bb3530401d",
       "rh_id": "execucao-2026-08-saldo-global-administracao-central",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1006,7 +1006,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "1862f08c9afec3c8d7e24430616f9b4c055b888287c8ad65161753827befac99",
       "rh_id": "execucao-2026-08-saldo-global-administracao-central-seguranca-social",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1017,7 +1017,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "9987a7b495e652b2bdaf7f73827f355ac81ffd66fea52ed8a97a1e3c191aefa7",
       "rh_id": "execucao-2026-08-subtotal-programas",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1028,7 +1028,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "149103ee673cbe3e3529190e57cc60fb4d52792db3b0fb2910cccde6a2f3bfab",
       "rh_id": "oe-2026-ativos-e-passivos-da-despesa-administracao-central",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1039,7 +1039,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "de0c5e7cae9c80583f76128c8d4af1845b854d05fa20722dff4fa20941ebd01b",
       "rh_id": "oe-2026-ativos-e-passivos-da-receita-administracao-central",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1050,7 +1050,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "069cc9c07295830efd713997af71acedc223f8f703bc26de987e0e8a373088ad",
       "rh_id": "oe-2026-ativos-financeiros-liquidos-administracao-central-seguranca-social",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1061,7 +1061,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "d74d5107a4e83ca865769d8db5e6b703a06aa50b9d347b53bc57bef82319c273",
       "rh_id": "oe-2026-cem-euros-funcao-01",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1072,7 +1072,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "8e0427a8989ba597cee48dfeccb140301b141ba91c8483a213b97c0f04dbfeeb",
       "rh_id": "oe-2026-cem-euros-funcao-02",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1083,7 +1083,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "3edd5aef5fdb2f8afa0a7b191027bd88d26413523c7a65df209436ca35390bc7",
       "rh_id": "oe-2026-cem-euros-funcao-03",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1094,7 +1094,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "4428de2feab4c39672a291aec430d77dbb85fdc57a0793ae9dfcfbdac5669ea5",
       "rh_id": "oe-2026-cem-euros-funcao-04",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1105,7 +1105,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "df1b758221d88927228cd5872c9636f3d75ddf50534614b17368770aafd38b4e",
       "rh_id": "oe-2026-cem-euros-funcao-05",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1116,7 +1116,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "e91aaf28535878f70318df574376d112b6b43f297e6726428dea5528d2563a8e",
       "rh_id": "oe-2026-cem-euros-funcao-06",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1127,7 +1127,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "67320ee279add6c61b5a5711bc5158cd2cfb53c0d672fc995851f5b8b409c1be",
       "rh_id": "oe-2026-cem-euros-funcao-07",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1138,7 +1138,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "b102661492bb62d68ec0074efbe8b6a43282e0344bd9dc9be8f9ba9c0015f404",
       "rh_id": "oe-2026-cem-euros-funcao-08",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1149,7 +1149,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "2dd830da20cb0aa91baf43db4de7c44c8774c1f896d290fc65212133123e76c5",
       "rh_id": "oe-2026-cem-euros-funcao-09",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1160,7 +1160,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "94f97abc1195fdcd87edbbc3cf17e843bea7b3ec23f09584ec718713530c09ff",
       "rh_id": "oe-2026-cem-euros-funcao-10",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1171,7 +1171,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "0c04e581531cf4c8513b5b9a730daeb1f0eee09b4282dd24731f46380db92989",
       "rh_id": "oe-2026-cem-euros-ministerio-administracao-interna",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1182,7 +1182,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "d9f51014739661ace3acdd512dcb5c3ffc618a00693290657495f5adb3da0641",
       "rh_id": "oe-2026-cem-euros-ministerio-agricultura-e-mar",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1193,7 +1193,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "496a9cb63a814181d3557a8887162801bb17f1272f07ee9e778719c1efa5f6f6",
       "rh_id": "oe-2026-cem-euros-ministerio-ambiente-e-energia",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1204,7 +1204,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "3727c761406f370a71e43758530b2fa13834b9cdc217d9234a22cbb09ea9ec51",
       "rh_id": "oe-2026-cem-euros-ministerio-cultura-juventude-e-desporto",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1215,7 +1215,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "d7dc6be0eb6d3cba43744864b9be24d2ecc48d198559c95f8f9327ca8e52f35d",
       "rh_id": "oe-2026-cem-euros-ministerio-defesa-nacional",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1226,7 +1226,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "b9677d8c791302b8239a32a86f071a607cba52e87cec67eb2fc3686110074a6d",
       "rh_id": "oe-2026-cem-euros-ministerio-economia-e-coesao-territorial",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1237,7 +1237,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "2dd2fff23ac0dec23ad9afce9cff73f3e8d5d540deb4143cab51bb1314df4113",
       "rh_id": "oe-2026-cem-euros-ministerio-educacao-ciencia-e-inovacao",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1248,7 +1248,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "d7273262b7416ac883a484004beb3125dd39f191025dfe4f495ffd9611fbff21",
       "rh_id": "oe-2026-cem-euros-ministerio-encargos-gerais-do-estado",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1259,7 +1259,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "6f7837a6a95651a1609d5df20673eeee62f145a6c15d504083c82558fe39cb7c",
       "rh_id": "oe-2026-cem-euros-ministerio-financas",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1270,7 +1270,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "2452d35bf0c26bbc7f3bf8cac101fe15bb06ff2ebd06a9f15e7eebfa62235e60",
       "rh_id": "oe-2026-cem-euros-ministerio-infraestruturas-e-habitacao",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1281,7 +1281,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "8bb43f462ec4bfb2a89715f2e5d3253c5bf2ab6e03d539025df7f405237201b4",
       "rh_id": "oe-2026-cem-euros-ministerio-justica",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1292,7 +1292,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "b310f2e2baa174d6eddd9a2c3ea331926260d3e0c5f63bc39c2e0b4be5f692e6",
       "rh_id": "oe-2026-cem-euros-ministerio-negocios-estrangeiros",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1303,7 +1303,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "9ac36031c26410f7017de009bcad22f14cb48c8f1932bf321202a095a2acfb0a",
       "rh_id": "oe-2026-cem-euros-ministerio-presidencia-do-conselho-de-ministros",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1314,7 +1314,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "e0dc181b34dabad290eb24af45a9d24a9e3485853aa370e0e0d038528a4abe61",
       "rh_id": "oe-2026-cem-euros-ministerio-reforma-do-estado",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1325,7 +1325,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ace1e67eca4cc8a9ec749fcd5111ed15c3fe5700dc1cc1e4769f6e423ff4fc68",
       "rh_id": "oe-2026-cem-euros-ministerio-saude",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1336,7 +1336,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "887517b7499286e9683566c1522aa1b50bc70fd0178a1402a804f266593bd4c6",
       "rh_id": "oe-2026-cem-euros-ministerio-trabalho-solidariedade-e-seguranca-social",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1347,7 +1347,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "baa71d626810576785967a68d6347f3577b352b468da8fc91183a1c00e3ac931",
       "rh_id": "oe-2026-despesa-bruta-administracao-central",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1358,7 +1358,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "c0f9310803a662f7a3fc7ea2eb39e4966dec8dae2e0d5a4fe314e1a6a41fd15a",
       "rh_id": "oe-2026-despesa-consolidada-administracao-central",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1369,7 +1369,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "f48993a0fc6f535d0e0e261f6cbae04db5e54204f4f13408952fe8fa987d6dfc",
       "rh_id": "oe-2026-despesa-consolidada-seguranca-social",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1380,7 +1380,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "55163b2e4ee4dac63995fbcc87804b94a236451383bcfdd11efe3005671338f0",
       "rh_id": "oe-2026-despesa-efetiva-administracao-central",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1391,7 +1391,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "0d00130e383695f4b127d22b2bc3672c0ce9e44c99743be4cfc91edaf7fed023",
       "rh_id": "oe-2026-despesa-efetiva-administracao-central-seguranca-social",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1402,7 +1402,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "03e2454d365100c4fb71f27f58e0534909272b7944309ee5a253552f4efc5af6",
       "rh_id": "oe-2026-despesa-funcao-01",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1413,7 +1413,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "b4dd72d0ba429b39ab3e9be045893f78795c83117feddcb910e47e234e11de33",
       "rh_id": "oe-2026-despesa-funcao-02",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1424,7 +1424,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "9e30c5fff084f0f4a8c0eff27ca24ecb9c4b47bec460868737de10291bc52d14",
       "rh_id": "oe-2026-despesa-funcao-03",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1435,7 +1435,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "87232b4f2a3ebac3feeced8600c4474d450ece919ab040f37b992200ef9b05c4",
       "rh_id": "oe-2026-despesa-funcao-04",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1446,7 +1446,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "f46094497f75882ca38d55e8c838ec589c0cba1de4bb435dcd8b1a0892401f9e",
       "rh_id": "oe-2026-despesa-funcao-05",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1457,7 +1457,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "20103a8af6577831e5c2f34c29543a232ae6055e1a937ba02fb5cc21b9ae3b06",
       "rh_id": "oe-2026-despesa-funcao-06",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1468,7 +1468,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "907280c445a6f6a724b5429e8e180e99aa3164e250e0ad3f221648261819e189",
       "rh_id": "oe-2026-despesa-funcao-07",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1479,7 +1479,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "cff5ac45b785823e76c4bf4b5e376894202ef7c155cb7476e8e29a74ee042d74",
       "rh_id": "oe-2026-despesa-funcao-08",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1490,7 +1490,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "b7f35fe857f87cc5039daceab7e61308eedd15463e59d2b1487ad2b3dcc25205",
       "rh_id": "oe-2026-despesa-funcao-09",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1501,7 +1501,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "1100dc04f5de304848e2002b02a0c505f913e1fe4eaafe2d22452780ada6c263",
       "rh_id": "oe-2026-despesa-funcao-10",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1512,7 +1512,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "c538a5202019fd8cf46046141acd990ef3f52dc95de4de2779ff447f15feb301",
       "rh_id": "oe-2026-despesa-ministerio-administracao-interna",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1523,7 +1523,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "9671ff5678ae79202e50740b9b17d4a93e23a66d94ad1efbab17a5f02d8014f1",
       "rh_id": "oe-2026-despesa-ministerio-agricultura-e-mar",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1534,7 +1534,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "f64d9192d9b4c9bb895e4db2bfb624bf07fc14608f83c2d1a060096cd11d2273",
       "rh_id": "oe-2026-despesa-ministerio-ambiente-e-energia",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1545,7 +1545,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "539fd9651e126255e5f5e3941966e2106ab6cab983b44a1c4701b7c3236869f6",
       "rh_id": "oe-2026-despesa-ministerio-cultura-juventude-e-desporto",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1556,7 +1556,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "bd83268985e1c7bb370063a46830e765cd56aef9b26cf38d9da08f078bfc35db",
       "rh_id": "oe-2026-despesa-ministerio-defesa-nacional",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1567,7 +1567,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "0a6cb55b731865b72eff5a780033fc950648d3df1201926086e6076cc7677a2b",
       "rh_id": "oe-2026-despesa-ministerio-economia-e-coesao-territorial",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1578,7 +1578,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "cfa481d73c21e71ab8f62ced199af689e267b967bef452016f43545bb3a1216e",
       "rh_id": "oe-2026-despesa-ministerio-educacao-ciencia-e-inovacao",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1589,7 +1589,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "d109df2ea6d3f69fce54a88eb134ab0e90e9a4f8ccc08ffee7a1909dc17fbd9e",
       "rh_id": "oe-2026-despesa-ministerio-encargos-gerais-do-estado",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1600,7 +1600,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "8868c36f9bf82c04b1bb3a507d938a2855c8da1d2559d03014ad97a694f403bd",
       "rh_id": "oe-2026-despesa-ministerio-financas",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1611,7 +1611,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "cf5e00c4e6ebba37714c2f95c66fd7d00df4ee46cb5e24480b8f06b8cb394f7c",
       "rh_id": "oe-2026-despesa-ministerio-infraestruturas-e-habitacao",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1622,7 +1622,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "1ae82bed89d24e062e26a0e64917b32f07904948517209b24c2532886a3b9b9c",
       "rh_id": "oe-2026-despesa-ministerio-justica",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1633,7 +1633,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "42b8aa175e961cef90f703c912a320a1f9da289e9f95385e9cca6240a3246570",
       "rh_id": "oe-2026-despesa-ministerio-negocios-estrangeiros",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1644,7 +1644,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "c086b772137f4c78751821e0eeb75f088e208a1b21f2fab94a91550ec62bd85d",
       "rh_id": "oe-2026-despesa-ministerio-presidencia-do-conselho-de-ministros",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1655,7 +1655,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "edb288de05e9a413c9a07baa5b1f530c7b2efd4f66d23b381c9df18c975d9446",
       "rh_id": "oe-2026-despesa-ministerio-reforma-do-estado",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1666,7 +1666,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "72b082cd145df18a3855de09eb9c1dddd3cb62e381f133fb51e61c51c8eb7b52",
       "rh_id": "oe-2026-despesa-ministerio-saude",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1677,7 +1677,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "61ac6750b280b433191d0c96baa412b78a9cf198c6fbb8f4a1677567598f7054",
       "rh_id": "oe-2026-despesa-ministerio-trabalho-solidariedade-e-seguranca-social",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1688,7 +1688,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "1ff4a3cfe13dcd03d1c6bbe12af9b82c847305e5aaa44ea460e0d7945ce7903c",
       "rh_id": "oe-2026-despesa-orcamental-administracao-central",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1699,7 +1699,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "5802017a8cb88d08fff91c36eca5e36dc1fc7276fd1d3b90bd10cebe68c435de",
       "rh_id": "oe-2026-despesa-primaria-administracao-central",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1710,7 +1710,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "cf00e19939269f8780d60e0aa2f86bc33e147c187b4247a94e236ba9951a9e73",
       "rh_id": "oe-2026-despesa-programa-001",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1721,7 +1721,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "cfeb064b8c4ac1d0151c0ac3502c40a768edef38f5f3d2ed8e09bdd328686e32",
       "rh_id": "oe-2026-despesa-programa-002",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1732,7 +1732,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "fb0431e677c97592dff3e7e98cf4e57fc05726f1cba936a178f7d7197aa4a9dd",
       "rh_id": "oe-2026-despesa-programa-003",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1743,7 +1743,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "c907e8d48dcec12870747bb2a469c404be993a0dec82d0f583add65b829ba9ea",
       "rh_id": "oe-2026-despesa-programa-004",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1754,7 +1754,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ce255eb030cdc166241a6b772e4c88ad63f603f76585cb9ddafbf464e570599f",
       "rh_id": "oe-2026-despesa-programa-005",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1765,7 +1765,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "3cfaf5494cc4be4fbd44e6be162fc56ab4d27e339c3ba56fdd2998f110b5acd6",
       "rh_id": "oe-2026-despesa-programa-006",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1776,7 +1776,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "a910c6ce7da4900a87709355bda20bbd8eafd22876690b6ceca8d7bb477206ad",
       "rh_id": "oe-2026-despesa-programa-007",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1787,7 +1787,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "a87bcfe0cc8cc91f6ddcfa0dd7bcf5378f7b7f4468d03a45fd646dbc90c16342",
       "rh_id": "oe-2026-despesa-programa-008",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1798,7 +1798,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "73bca35a3b9b52ab34b733b8ef4523b4c4de0a8e97bc62b8d6b0fa86c9d816c0",
       "rh_id": "oe-2026-despesa-programa-009",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1809,7 +1809,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "39c8b422dd3fdf6f02b06a7e9371e99d36eb6aa8d33dfc7d12bcf10f442108a7",
       "rh_id": "oe-2026-despesa-programa-010",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1820,7 +1820,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "79f91e7fc2cac772eef24bd7416aea23ce47278e7b7e8a9184eb85b170ec028c",
       "rh_id": "oe-2026-despesa-programa-011",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1831,7 +1831,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "2cdfd1626328af5f373863789662511c4617da6966b05b572c141cd91038539f",
       "rh_id": "oe-2026-despesa-programa-012",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1842,7 +1842,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "93b4ddec214d730a87f0033dd192abb44db81266e3ba9714e341976e711d4ccb",
       "rh_id": "oe-2026-despesa-programa-013",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1853,7 +1853,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "938c69b60a8353380605240cd9a51dc7f8719639cde9736386c7ebfdbb95f822",
       "rh_id": "oe-2026-despesa-programa-014",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1864,7 +1864,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "4fa3c04706cc0530a2ab69e66978392bc702bba33784530923f055457ca844f4",
       "rh_id": "oe-2026-despesa-programa-015",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1875,7 +1875,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "f8d45fd8db86067b39df3f62dfc62471a4a69864db65c3745a2357f24eb49d4c",
       "rh_id": "oe-2026-despesa-programa-016",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1886,7 +1886,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "5bf402261689ec1a228ee07a931d53bf107cc7a109d64839d2fed0df59e47ddb",
       "rh_id": "oe-2026-despesa-programa-017",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1897,7 +1897,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "38f2b4b033b3f8761c6675fc7b65e2cc9d95b84905fe2e084f87299943d47b2d",
       "rh_id": "oe-2026-despesa-programa-018",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1908,7 +1908,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "f18a9b7ff85ae7f29851597555bf732d68dd4d039540095cf8d6a10d9b990e96",
       "rh_id": "oe-2026-despesa-programa-019",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1919,7 +1919,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "f7f5600057439112d9932050e491617b173a9a968692a1a142d0a30c08bab325",
       "rh_id": "oe-2026-despesa-programa-020",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1930,7 +1930,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "9384697d7595b7c939bfb0980f60f4d6a96e2c8c0501eea00445be0d18b4bcb2",
       "rh_id": "oe-2026-despesa-total",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1941,7 +1941,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "2303d252aa4e564cfac7b808666f04a8213d4247658c4414d986144ee77a2e34",
       "rh_id": "oe-2026-diferencas-consolidacao-funcional",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1952,7 +1952,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "06eb5cfa9a092b33e583e3f7e8061cef83661291778d7940cb806689ea162307",
       "rh_id": "oe-2026-passivos-financeiros-liquidos-administracao-central-seguranca-social",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1963,7 +1963,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "e3ef332017382c9d58980dd164f7b1d2d838b55f38e7ab74d5f2f43d27e6a4a0",
       "rh_id": "oe-2026-receita-bruta-administracao-central",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1974,7 +1974,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "f6d129f8b9385e6ba38a5358871d2e0d728c5058db03506b8885decb69f77c52",
       "rh_id": "oe-2026-receita-consolidada-administracao-central",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1985,7 +1985,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "3eb22c0f4060152a77f94c36c5751a449c62e3294c841622c472aa3666bcc257",
       "rh_id": "oe-2026-receita-consolidada-seguranca-social",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -1996,7 +1996,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "df39603ca5c50d6e5682c518281c8234706f7bfd26cf452a71b96815273afd96",
       "rh_id": "oe-2026-receita-efetiva-administracao-central",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -2007,7 +2007,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "f4768a9fda785c94d45475d0ce94a4f9286c07b320b2efb9b5a2e7def952e60a",
       "rh_id": "oe-2026-receita-efetiva-administracao-central-seguranca-social",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -2018,7 +2018,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "59bcd0ef631d34bd4006beaa49150617b32a91471d856cf292a198ff2a1c796a",
       "rh_id": "oe-2026-receita-orcamental-administracao-central",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -2029,7 +2029,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "7f0cb7ea003519a71cd4171796aad29588f9a11aed9dcba7ef0c20769e1bd4b7",
       "rh_id": "oe-2026-saldo-global-administracao-central",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -2040,7 +2040,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "7cce7b505d4b26741d078a38b0f03022baa1046184a03d9eaae937c94b5f9754",
       "rh_id": "oe-2026-saldo-global-administracao-central-seguranca-social",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -2051,7 +2051,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "273fc6cd06af4b1699995c022a5d16c87d83aea0ce70d5a72016fe708f9bfb85",
       "rh_id": "oe-2026-saldo-primario-administracao-central",
-      "rh_ledger_sha256": "afa51b32fad0747d5f17a4ab7badfdab4af7683c46d15a9dfbdc39270772d0f8",
+      "rh_ledger_sha256": "ea812d6ac5b31287e6d9d1d3a259b53dd5484a0d981a32b5d650902b669abf7c",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     }

@@ -33,6 +33,11 @@ export const LUGAR_DECLARADO_DAS_LINHAS = {
   /* V2-d-f: o excerto corrigido identifica receitas de impostos e verbas
      do contrato-programa da ACSS no orçamento nacional da Saúde. */
   'oe-2027-saude-contrato-programa-acss': 'portugal',
+  /* CR1, 21.10.2026: o Eurostat reviu o valor de 2024 destas duas linhas na
+     atualização do conjunto gov_10a_exp; medem o agregado da União Europeia
+     que a explicação de 2026 cita, e não Portugal. */
+  'despesa-por-funcao-2024-gf01-ue': 'uniao-europeia',
+  'despesa-por-funcao-2024-gf10-ue': 'uniao-europeia',
   /* E0, §1.146: a linha conta as confissões do próprio projeto. O seu lugar
      é O Estado do País, com a porta para o registo das correções. Não mede
      Portugal, uma região nem um concelho. */

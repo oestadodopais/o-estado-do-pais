@@ -335,5 +335,21 @@
       "old_value": "8",
       "new_value": "8 de outubro"
     }
+  ],
+  "despesa-por-funcao-2024-gf01-ue": [
+    {
+      "date": "2026-10-21",
+      "kind": "atualizacao",
+      "old_value": "6,1",
+      "new_value": "6,0"
+    }
+  ],
+  "despesa-por-funcao-2024-gf10-ue": [
+    {
+      "date": "2026-10-21",
+      "kind": "atualizacao",
+      "old_value": "19,6",
+      "new_value": "19,5"
+    }
   ]
 }
