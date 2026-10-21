@@ -217,6 +217,16 @@ class Aterragem:
                 raise Parar(1, 'o lançamento desta cabeça falhou na Vercel')
         raise Parar(124, 'a Vercel não mostrou esta cabeça pronta em 45 consultas')
 
+    def preparar(self):
+        # A PREPARAÇÃO DA WORKTREE (21.10.2026, I250): as conferências locais precisam do `node_modules` e do `dist/`
+        # da própria worktree; uma worktree nova não os tem, e três aterragens caíram por isso. Os dois são ignorados
+        # pelo git, pelo que a árvore continua limpa. Prepara-se, não se recusa; corre dentro da tranca, depois da
+        # corrida do GitHub verde, para não construir o que o GitHub recusou.
+        if not (Path(self.sitio) / 'node_modules').is_dir():
+            self.correr('preparar-dependencias', ['npm', 'ci', '--no-audit', '--no-fund'])
+        if not (Path(self.sitio) / 'dist' / 'version.json').is_file():
+            self.correr('preparar-dist', ['npm', 'run', 'build'])
+
     def executar(self):
         codigo = 9
         try:
@@ -228,6 +238,7 @@ class Aterragem:
             self.github()
             self.tomar_tranca()
             self.conferir_arvores()
+            self.preparar()
             self.correr('series', ['npm', 'run', 'check:series'])
             self.correr('cruzamento', ['npm', 'run', 'check:cruzamento', '--', '--with-origin'])
             self.conferir_arvores()

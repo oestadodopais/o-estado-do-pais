@@ -95,4 +95,19 @@ trap - EXIT INT TERM
 echo "FIM exit=$codigo $fim"
 sleep 2
 python3 "$aqui/pontos.py" --inicio "$inicio" --fim "$fim" --worktree "$worktree" --json "$base.pontos.json"
+# O FICHEIRO DE CUSTO AO LADO DO RELATÓRIO (21.10.2026, §1.202): os pontos, os turnos, os símbolos e o tempo de parede
+# de cada passagem ficam em custo-<início>.json na pasta do relatório, para o lugar de direção comitar com a leitura;
+# a aterragem recusa um bloco sem o seu custo. O código do lançador vai no ficheiro, para o teto (124) contar.
+pasta_relatorio="$(dirname "$relatorio")"
+if [ -f "$base.pontos.json" ] && [ -d "$pasta_relatorio" ]; then
+  carimbo="$(printf '%s' "$inicio" | tr -d ':-')"
+  python3 - "$base.pontos.json" "$pasta_relatorio/custo-$carimbo.json" "$codigo" "$inicio" "$fim" <<'PYEOF'
+import json, sys
+p, destino, codigo, inicio, fim = sys.argv[1:6]
+d = json.load(open(p, encoding='utf-8'))
+d.update({'lancador_codigo': int(codigo), 'inicio': inicio, 'fim': fim})
+open(destino, 'w', encoding='utf-8').write(json.dumps(d, ensure_ascii=False, indent=1) + '\n')
+print('custo escrito: ' + destino.rsplit('/', 1)[-1])
+PYEOF
+fi
 exit "$codigo"
