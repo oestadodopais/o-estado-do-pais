@@ -44,12 +44,13 @@
  *   I5 · os estudos do índice são os da lista dos estudos da mesma edição, pela mesma ordem, cada um
  *        com a mesma porta e a mesma data;
  *   I6 · «O que mudou» do índice é o começo do registo: as primeiras oito linhas distintas entre as
- *        correções e as atualizações do registo construído, cada uma com a sua entrada mais recente
+ *        correções e as atualizações numéricas do registo construído, cada uma com a sua entrada mais recente
  *        (escolhida aqui pela data e, no mesmo dia, pelo número da entrada, e não pela posição no
  *        registo, desde a passagem R3-b),
  *        a mesma data, os mesmos dois valores e o mesmo lugar escrito, e com a marca da fonte para o
  *        recibo da sua linha; uma linha reunida noutra (`MEDIDA_REUNIDA`) não entra, porque a medida
- *        entra pela linha que fica; e nenhuma linha da lista se lê igual a outra (a passagem final do
+ *        entra pela linha que fica; as linhas de unidade «texto» ou de afirmação textual ficam no registo,
+ *        sem entrar nesta comparação numérica; e nenhuma linha da lista se lê igual a outra (a passagem final do
  *        R3: as duas taxas de desemprego de 2025, uma por baixo da outra, eram duas linhas iguais
  *        para quem lê);
  *   I7 · nenhum destino se repete no corpo do índice (a regra da L1 do `check:lugar`, com as mesmas
@@ -83,7 +84,7 @@ function afirmacaoTextual(id){
   if(!/^[a-z0-9_-]+$/.test(String(id??'')))return false;
   if(!tiposDasLinhas.has(id)){
     const f=path.join('ledger','claims',id+'.yml'),l=fs.existsSync(f)?yaml(fs.readFileSync(f,'utf8')):null;
-    tiposDasLinhas.set(id,l?.afirmacao===true&&l?.unit==='afirmação');
+    tiposDasLinhas.set(id,l?.unit==='texto'||(l?.afirmacao===true&&l?.unit==='afirmação'));
   }
   return tiposDasLinhas.get(id);
 }
@@ -421,7 +422,15 @@ export function plantasDoIndice(base) {
   const nomeDaGaveta = texto(primeiraGaveta?.querySelector('summary'));
   const distritoDaGaveta = base.paginas.filter((c) => matchPath(c)?.key === 'distrito' && matchPath(c)?.lang === 'pt')
     .find((c) => texto(parse(ler(c) ?? '').querySelector('main h1')) === nomeDaGaveta) ?? '';
+  const correcaoTextual = parse(ler(routePath('correcoes', 'pt')) ?? '')
+    .querySelectorAll('[data-mudou-registo] li[data-mudanca="correcao"]')
+    .find((li) => afirmacaoTextual(li.getAttribute('data-correcao-entrada')));
   const casos = [
+    ['hb1b-celula-correcao-textual-no-indice', () => comPt((d) => {
+      const primeira = d.querySelector('main [data-mudou-ambito="indice"] li');
+      if (!correcaoTextual || !primeira) throw new Error('A planta HB1-b precisa de uma correção textual no registo e de uma linha no índice.');
+      primeira.setAttribute('data-correcao-entrada', correcaoTextual.getAttribute('data-correcao-entrada'));
+    }), [/I6 pt: «O que mudou» do índice tem 8 linha\(s\) em 1 lista\(s\), e o começo do registo dá 8; a primeira que difere:/]],
     ['r3-celula-rota-tirada', () => comPt((d) => porta(d, routePath('agenda', 'pt'))?.parentNode?.remove()), [/I2 pt: \/agenda está no mapa do sítio e não tem porta no índice/, /I3 pt: a página \/agenda \(rota «agenda»\)/]],
     ['r3-celula-concelho-a-menos', () => comPt((d) => d.querySelector('main details a[href]')?.parentNode?.remove()), [/I4 pt: a gaveta «Aveiro» tem 18 concelho\(s\)/, /I4 pt: o índice tem 307 porta\(s\) de concelho/]],
     ['r3-celula-porta-que-nao-resolve', () => comEn((d) => porta(d, routePath('agenda', 'en'))?.setAttribute('href', '/en/agenda-que-nao-existe')), [/I1 en: a porta «Agenda» para \/en\/agenda-que-nao-existe não resolve/]],

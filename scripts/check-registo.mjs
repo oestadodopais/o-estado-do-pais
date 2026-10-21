@@ -171,7 +171,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { loadClaims, contagensDoRegisto } from '../src/lib/ledger.mjs';
-import { PUBLISHED_WORKS, PUBLISHED_EDITIONS, WORKS, EDITIONS } from '../src/data/studies.mjs';
+import { PUBLISHED_WORKS, PUBLISHED_EDITIONS } from '../src/data/studies.mjs';
 import { MUNICIPIOS_COM_PAGINA } from '../src/data/municipios.mjs';
 import { todosOsDocumentos } from '../src/lib/documentos.mjs';
 import { VERIFICACAO } from '../src/data/verificacao.mjs';

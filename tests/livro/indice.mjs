@@ -104,6 +104,8 @@ import { loadClaims } from '../../src/lib/ledger.mjs';
 import { FIGURAS } from '../../src/data/figuras.mjs';
 import { MEDIDAS_DO_DOMINIO_1 } from '../../src/data/dominios.mjs';
 import { NOMES_DO_PROJETO } from '../../src/data/nomes-das-medidas.mjs';
+import { WORKS } from '../../src/data/studies.mjs';
+import { conferirPublicacaoDeclaradaNoHtml } from '../../scripts/publicacao-declarada.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const DIST = process.env.OEDP_DIST ?? path.join(RAIZ, 'dist');
@@ -1270,8 +1272,10 @@ celula('I9', 'as datas dos trabalhos, e o marcador que resta', (falhas) => {
   /**
    * A DATA DE CADA EDIÇÃO, REFEITA DO `git` (decisão de 04.09.2026).
    *
-   * A página escreve «publicado a dd.mm.aaaa», e a data é o dia em que o
-   * ficheiro da edição entrou neste repositório. A régua não pergunta ao sítio
+   * Nas edições legadas, a página escreve como publicação o dia em que o
+   * ficheiro entrou no repositório. No contrato de publicação declarada, esse
+   * dia continua a provar a entrada e a limitar a data declarada; null exige
+   * preparação, sem data publicada e com estado Draft. A régua não pergunta ao sítio
    * qual foi: corre o `git log` por conta própria e exige que a página mostre
    * essa data. É a segunda conta do mesmo facto, e é ela que apanha a cópia rasa
    * (sem história, o sítio volta ao marcador e o `git` daqui também: as duas
@@ -1368,6 +1372,12 @@ celula('I9', 'as datas dos trabalhos, e o marcador que resta', (falhas) => {
       const rota = edicao === 'pt' ? `/estudos/${slug}` : `/en/studies/${slug}`;
       const pag = paginas.find((p) => p.rota === rota);
       if (!pag) continue;
+      const work=WORKS.find(w=>w.slug===slug),edition=work?.editions.find(e=>e.lang===edicao);
+      if(work?.publication==='declared') {
+        if(!edition)falhas.push(`${rota}: falta a edição na declaração de publicação.`);
+        else for(const erro of conferirPublicacaoDeclaradaNoHtml(work,edition,data,dom(pag)))falhas.push(`${rota}: ${erro}.`);
+        continue;
+      }
       const t = texto(dom(pag));
       if (!t.includes(naForma)) {
         falhas.push(

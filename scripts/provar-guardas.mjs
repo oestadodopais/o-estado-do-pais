@@ -866,7 +866,16 @@ caso(
    igualdade passou de 24 a 25: a corrida com a lista nova e a igualdade velha
    recusou o caso, que é a prova de que ele morde num campo a mais como num a
    menos. */
-caso('CAMPOS/tamanho', true, CAMPOS.length === 33, 'os campos anteriores, a afirmação e o período declarado pela fonte.');
+/* HB1-b acrescenta os nomes e as medidas nas duas línguas e a atribuição inglesa.
+   O conjunto é explícito: trocar um campo sem alterar o tamanho também falha. */
+const CAMPOS_ESPERADOS = ["id", "value", "unit", "name", "name_source", "name_source_en", "name_en", "measure", "measure_en", "attributed_to_en", "source", "document", "source_url", "access_date", "access_date_kind", "published_at", "reference_date", "serie", "period", "excerpt", "source_flag", "source_flag_note", "source_flag_note_en", "ressalva", "ressalva_en", "derivation", "derivation_en", "derived_from", "check", "attributed_to", "afirmacao", "study", "note", "publication", "definition_sources", "corrections", "verifications"];
+/** @param {readonly string[]} campos */
+function camposConferidos(campos) {
+  return campos.length === CAMPOS_ESPERADOS.length && CAMPOS_ESPERADOS.every(campo => campos.includes(campo));
+}
+caso('CAMPOS/conjunto', true, camposConferidos(CAMPOS), 'o conjunto completo inclui name_en, measure, measure_en e attributed_to_en.');
+caso('CAMPOS/planta-campo-omitido', false, camposConferidos(CAMPOS.filter(campo => campo !== 'name_en')), 'a ausência do nome inglês é recusada.');
+caso('CAMPOS/planta-campo-trocado', false, camposConferidos(CAMPOS.map(campo => campo === 'attributed_to_en' ? 'campo_inventado' : campo)), 'um campo trocado é recusado mesmo conservando o tamanho.');
 caso('CAMPOS/periodo', true, CAMPOS.includes('period') && new Set(CAMPOS).size === CAMPOS.length, 'o período existe uma vez, sem duplicar campos.');
 caso('CAMPOS/rp4n-h', true, CAMPOS.includes('access_date_kind') && CAMPOS.includes('name_source_en'), 'A data distingue alojamento de leitura e o localizador tem tradução própria.');
 caso('CAMPOS/rp4n-e', true, CAMPOS.includes('publication') && CAMPOS.includes('definition_sources'),
