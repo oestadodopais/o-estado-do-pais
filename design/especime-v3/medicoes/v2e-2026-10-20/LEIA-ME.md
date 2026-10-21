@@ -990,3 +990,11 @@ tokens.splice(i + 1, 0, ' ' + unidade + '; ');
 Provas: [HTML construído](d/final/planta-selos.html), [casos e controlos](d/final/planta-selos.json), [planta-regua.codigo](d/final/planta-regua.codigo), [planta-regua.log](d/final/planta-regua.log), [cabeca-regua.codigo](d/final/cabeca-regua.codigo) e [cabeca-regua.log](d/final/cabeca-regua.log). O [resumo](d/final/resumo.json) reúne os códigos efetivamente lidos.
 
 A primeira exportação falhou por `ModuleNotFoundError`; a repetição pelo módulo Python passou. O primeiro guião de inventário falhou por importar diretamente um caminho interno inexistente do pacote; passou a importar a entrada pública. Esses erros de preparação ficam registados e não são apresentados como provas verdes. Não houve push.
+
+## A correção V2-e-e
+
+- **V2E-65.** A contagem passa a vinte e seis Estados-membros com dados de 2024 e declara a ausência da Eslováquia, nas duas edições. A parte própria da auditoria lê `d/final/medicos.json`, reconta os valores e confere a ausência. A planta troca a contagem numa cópia dos itens; outra adultera o apoio.
+- **V2E-66.** O item das parcerias passa a «com dados reportados a» e «with data referenced to», conservando o token do período e o selo. As declarações anteriores ficam retiradas no inventário, com a razão, e as novas entram em `v2e-e | viva`. A leitura cruzada fica por fazer.
+- **V2E-67.** A numeração começa em V2E-65 porque V2E-62 a V2E-64 já constam da V2-e-d; não se renumera o histórico. A cabeça dos portões será o último commit que altera código, dados ou inventário. O commit posterior incorpora só relatório e provas; `e/conferir-identidade.mjs` confere a igualdade do código entregue.
+
+As frases renderizadas, os códigos e as capturas serão registados depois da corrida da cabeça comitada.

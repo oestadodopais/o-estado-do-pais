@@ -7255,13 +7255,13 @@
         },
         {
           "caminho": "seccoes[1].conteudo[6].paragrafo[19]",
-          "pt": ", entre a Bélgica, com o valor mais baixo dos vinte e sete Estados-membros com dados (",
-          "en": ", between Belgium, with the lowest value among the twenty-seven member states with data (",
+          "pt": ", entre a Bélgica, com o valor mais baixo (",
+          "en": ", between Belgium, with the lowest value (",
           "ramo": null,
           "partes": [
             {
-              "pt": ", entre a Bélgica, com o valor mais baixo dos vinte e sete Estados-membros com dados (",
-              "en": ", between Belgium, with the lowest value among the twenty-seven member states with data (",
+              "pt": ", entre a Bélgica, com o valor mais baixo (",
+              "en": ", between Belgium, with the lowest value (",
               "classe": "leitura",
               "sobre": "Comparação europeia pelas mesmas unidades, ano e regimes de financiamento.",
               "apoios": [
@@ -7397,13 +7397,13 @@
         },
         {
           "caminho": "seccoes[1].conteudo[6].paragrafo[23]",
-          "pt": ").",
-          "en": ").",
+          "pt": "), nos vinte e seis Estados-membros com dados de 2024; a Eslováquia não os tem.",
+          "en": "), among the twenty-six member states with 2024 data; Slovakia has none.",
           "ramo": null,
           "partes": [
             {
-              "pt": ").",
-              "en": ").",
+              "pt": "), ",
+              "en": "), ",
               "classe": "leitura",
               "sobre": "Comparação europeia pelas mesmas unidades, ano e regimes de financiamento.",
               "apoios": [
@@ -7461,6 +7461,22 @@
                   "linha": "eurostat-el-phys",
                   "campo": "excerpt",
                   "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"P_HTHAB\", \"wstatus\": \"PRACT\", \"med_spec\": \"PHYS\", \"geo\": \"EL\", \"time\": \"2024\"}, \"value\": \"626.89\", \"status\": null}"
+                }
+              ]
+            },
+            {
+              "pt": "nos vinte e seis Estados-membros com dados de 2024; a Eslováquia não os tem.",
+              "en": "among the twenty-six member states with 2024 data; Slovakia has none.",
+              "classe": "leitura",
+              "sobre": "Contagem dos valores numéricos e identificação do membro sem valor na conferência do corpo alojado.",
+              "apoios": [
+                {
+                  "forma": "contagem-medicos-2024",
+                  "ficheiro": "design/especime-v3/medicoes/v2e-2026-10-20/d/final/medicos.json",
+                  "com_valor": 26,
+                  "ausentes": [
+                    "SK"
+                  ]
                 }
               ]
             }
@@ -26348,13 +26364,13 @@
         },
         {
           "caminho": "seccoes[1].conteudo[5].paragrafo[2]",
-          "pt": " em pedidos de reequilíbrio financeiro e litígios das concessionárias e subconcessionárias rodoviárias, com dados do primeiro trimestre, reportados a ",
-          "en": " in financial rebalancing claims and litigation by road concessionaires and subconcessionaires, with first-quarter data referenced to ",
+          "pt": " em pedidos de reequilíbrio financeiro e litígios das concessionárias e subconcessionárias rodoviárias, com dados reportados a ",
+          "en": " in financial rebalancing claims and litigation by road concessionaires and subconcessionaires, with data referenced to ",
           "ramo": null,
           "partes": [
             {
-              "pt": " em pedidos de reequilíbrio financeiro e litígios das concessionárias e subconcessionárias rodoviárias, com dados do primeiro trimestre, reportados a ",
-              "en": " in financial rebalancing claims and litigation by road concessionaires and subconcessionaires, with first-quarter data referenced to ",
+              "pt": " em pedidos de reequilíbrio financeiro e litígios das concessionárias e subconcessionárias rodoviárias, com dados reportados a ",
+              "en": " in financial rebalancing claims and litigation by road concessionaires and subconcessionaires, with data referenced to ",
               "classe": "leitura",
               "sobre": "Pedidos e litígios fora da previsão de encargos, com a natureza contingente explicitada pela UTAO.",
               "apoios": [

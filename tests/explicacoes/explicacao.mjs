@@ -329,6 +329,18 @@ export function conferirAuditoriaDasExplicacoes({
           if (!Array.isArray(p.apoios) || !p.apoios.length) { falha(`X2 · ${qp} ${p.classe === 'diz' ? 'diz o que uma coisa é' : 'é uma leitura do projeto'} e não tem apoio nenhum`); continue; }
           for (const ap of p.apoios) {
             contas.apoios++;
+            if (ap?.forma === 'contagem-medicos-2024') {
+              const ficheiro = 'design/especime-v3/medicoes/v2e-2026-10-20/d/final/medicos.json';
+              const prova = JSON.parse(fs.readFileSync(ficheiro, 'utf8'));
+              const presentes = Object.values(prova.valores).filter(v => typeof v === 'number').length;
+              const ausentes = Object.entries(prova.valores).filter(([,v]) => v === null).map(([g]) => g);
+              if (ap.ficheiro !== ficheiro || presentes !== prova.com_valor || presentes !== ap.com_valor || presentes !== 26 ||
+                  prova.ano !== '2024' || prova.categoria !== 'PRACT' || JSON.stringify(ausentes) !== '["SK"]' ||
+                  JSON.stringify(prova.ausentes) !== JSON.stringify(ausentes) || JSON.stringify(ap.ausentes) !== JSON.stringify(ausentes) ||
+                  p.pt !== 'nos vinte e seis Estados-membros com dados de 2024; a Eslováquia não os tem.' ||
+                  p.en !== 'among the twenty-six member states with 2024 data; Slovakia has none.') falha(`X2 · ${qp}: contagem ou ausência dos médicos sem apoio conferido`);
+              continue;
+            }
             if (ap?.forma === 'ano') {
               const r = String(linhas.get(ap.linha)?.reference_date ?? '');
               if (!permitidas.has(ap.linha) || ap.campo !== 'reference_date' || !/^\d{4}$/.test(r)) falha(`X2 · ${qp} diz que o período é um ano, e a linha «${ap.linha}» não o prova`);

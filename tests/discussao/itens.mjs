@@ -6,6 +6,7 @@ import {fileURLToPath} from 'node:url';
 import {parse} from 'node-html-parser';
 import {ITENS, DISCUSSAO, PCP} from '../../src/data/discussao.mjs';
 import {loadClaims} from '../../src/lib/ledger.mjs';
+import {plantasDaContagem} from './contagem-medicos.mjs';
 import {conferirDerivacoes, plantasDasDerivacoes} from './derivacoes.mjs';
 import {conferirPortasDoMetodo} from './metodo.mjs';
 import {conferirMarcasDoTitulo,plantasDosTitulos,tituloDeEnsaio} from './titulos.mjs';
@@ -296,7 +297,7 @@ export function conferirTudo(dist=path.join(raiz,'dist')){
  const efeitos=conferirRecibosDosEfeitos(dist,ITENS,loadClaims());
  const apoios=plantasDosApoios(JSON.parse(fs.readFileSync(path.join(raiz,'tests/discussao/palavras.json'),'utf8')));
  const erros=[...conferirDeclaracoes(),...metodo.erros,...recibosCorrigidos.erros],provas=[...plantasDasDerivacoes(loadClaims()),...plantasDosTitulos(loadClaims()),...metodo.plantas,...recibosCorrigidos.plantas],integracoes=[];
- provas.push(...apoios);
+ provas.push(...apoios,...plantasDaContagem());
  erros.push(...efeitos.erros);provas.push(...efeitos.plantas,...plantasDosEfeitos(loadClaims(),ITENS));
  for(const lang of ['pt','en']){
   const file=path.join(dist,lang==='pt'?'o-que-se-discute/index.html':'en/under-discussion/index.html');

@@ -846,3 +846,5 @@ Seis declarações substituídas: comparação e opinião da Saúde nas duas edi
 | bloco | mudança | estado | nota |
 |---|---|---|---|
 | v2e-d | Duas declarações da comparação dos médicos atualizadas, nas duas edições | por ler | A redação identifica os Estados-membros como o grupo da comparação. As declarações coincidem com o HTML construído; a leitura cruzada continua pendente. |
+
+| v2e-e | Contagem dos médicos corrigida e corte editorial do período dos pedidos, nas duas edições | por ler | Declarações anteriores conservadas como retiradas. Contagem apoiada na conferência do corpo alojado. Leitura cruzada pendente. |

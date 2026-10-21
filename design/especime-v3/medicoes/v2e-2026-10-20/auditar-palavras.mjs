@@ -84,6 +84,15 @@ const auditoria={explicacoes:ITENS.map(e=>{
   const unicas=new Map();for(const r of refs){if(!permitidas.has(r.id))throw new Error('Apoio fora do inventário: '+r.id);const a=apoio(r.id,r.campo);unicas.set(a.linha+'.'+a.campo,a);}
   const sobre=sec===null?'Leitura editorial dos valores e dos perímetros que o título anuncia.':descricoes[e.slug][sec][par??0];
   const parte={pt:f.pt,en:f.en,classe:'leitura',sobre,apoios:[...unicas.values()]};
+  if(e.slug==='saude-no-orcamento'&&chave==='1.6'&&f.pt.includes('nos vinte e seis')){
+   const ficheiro='design/especime-v3/medicoes/v2e-2026-10-20/d/final/medicos.json';
+   const prova=JSON.parse(fs.readFileSync(ficheiro,'utf8'));
+   const pt='nos vinte e seis Estados-membros com dados de 2024; a Eslováquia não os tem.';
+   const en='among the twenty-six member states with 2024 data; Slovakia has none.';
+   return {...f,partes:[{...parte,pt:f.pt.slice(0,-pt.length),en:f.en.slice(0,-en.length)},
+    {pt,en,classe:'leitura',sobre:'Contagem dos valores numéricos e identificação do membro sem valor na conferência do corpo alojado.',
+     apoios:[{forma:'contagem-medicos-2024',ficheiro,com_valor:prova.com_valor,ausentes:prova.ausentes}]}]};
+  }
   if(e.slug==='parcerias-rodoviarias'&&chave==='1.7'&&f.pt.includes('sete autoestradas')){
    const literal=linhas.get('pe-scut-trocos').excerpt;
    const alineas=[...literal.matchAll(/(?:^|\s)([a-g])\)/g)].map(m=>m[1]);
