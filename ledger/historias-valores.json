@@ -335,21 +335,5 @@
       "old_value": "8",
       "new_value": "8 de outubro"
     }
-  ],
-  "hab-imprensa-manif-euronews": [
-    {
-      "date": "2026-10-21",
-      "kind": "correcao",
-      "old_value": "organizada por uma plataforma que reúne cerca de 40 organizações da sociedade civil.",
-      "new_value": "Cinco cidades de Portugal vão acolher, este sábado, uma manifestação contra a crise na habitação, organizada por uma plataforma que reúne cerca de 40 organizações da sociedade civil."
-    }
-  ],
-  "hab-imprensa-tendas": [
-    {
-      "date": "2026-10-21",
-      "kind": "correcao",
-      "old_value": "Foram retiradas, ao início da manhã desta segunda-feira, as tendas",
-      "new_value": "Foram retiradas, ao início da manhã desta segunda-feira, as tendas de dezenas de pessoas que permaneciam acampadas na Praça D. João I, no centro do Porto, em protesto contra o aumento do custo de vida e a crise da habitação.O acampamento foi promovido pelo movimento \"Não consegues pagar renda? Traz tenda\". O acampamento mantinha-se no local desde sábado, dia em que cerca de 1.500 pessoas se manifestaram no Porto contra o agravamento do custo de vida."
-    }
   ]
 }

@@ -13,6 +13,7 @@ unit: "Percentage"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "Peso dos custos da habitação no rendimento disponível do agregado, Chipre, 2025"
 name_source: "label; dimension.geo.category.label.CY; dimension.time.category.label.2025"
+status: "conferido"
 name_en: "Share of housing costs in disposable household income, Cyprus, 2025"
 name_source_en: "label; dimension.geo.category.label.CY; dimension.time.category.label.2025"
 measure: "Peso dos custos da habitação no rendimento disponível do agregado, Chipre, 2025"

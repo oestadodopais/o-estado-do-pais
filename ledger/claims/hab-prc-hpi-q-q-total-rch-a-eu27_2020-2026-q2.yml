@@ -13,10 +13,11 @@ unit: "Annual rate of change"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "Índice de preços da habitação, variação homóloga, União Europeia, 2.º trimestre de 2026"
 name_source: "label; dimension.unit.category.label.RCH_A; dimension.geo.category.label.EU27_2020; dimension.time.category.label.2026-Q2"
-name_en: "House price index, Annual rate of change, European Union - 27 countries (from 2020), quarter 2 of 2026"
+status: "conferido"
+name_en: "House price index, Annual rate of change, European Union - 27 countries (from 2020), 2026-Q2"
 name_source_en: "label; dimension.unit.category.label.RCH_A; dimension.geo.category.label.EU27_2020; dimension.time.category.label.2026-Q2"
 measure: "Índice de preços da habitação, variação homóloga, União Europeia, 2.º trimestre de 2026"
-measure_en: "House price index, Annual rate of change, European Union - 27 countries (from 2020), quarter 2 of 2026"
+measure_en: "House price index, Annual rate of change, European Union - 27 countries (from 2020), 2026-Q2"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Eurostat"

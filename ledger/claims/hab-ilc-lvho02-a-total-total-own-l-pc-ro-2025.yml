@@ -13,6 +13,7 @@ unit: "Percentage"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "Distribuição da população por regime de ocupação, proprietários com empréstimo, Roménia, 2025"
 name_source: "label; dimension.tenure.category.label.OWN_L; dimension.geo.category.label.RO; dimension.time.category.label.2025"
+status: "conferido"
 name_en: "Distribution of population by tenure status, Owner, with mortgage or loan, Romania, 2025"
 name_source_en: "label; dimension.tenure.category.label.OWN_L; dimension.geo.category.label.RO; dimension.time.category.label.2025"
 measure: "Distribuição da população por regime de ocupação, proprietários com empréstimo, Roménia, 2025"

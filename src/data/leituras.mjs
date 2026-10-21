@@ -146,11 +146,11 @@ export const LEITURAS = {
     ],
     "frase": {
       "pt": [
-            "Os preços das casas em Portugal subiram mais do que em qualquer país da União desde ",
+            "Descontada a inflação, os preços das casas em Portugal subiram desde ",
             {
                   "ref": "2015"
             },
-            ", e a família média gasta na casa menos do que a média europeia: o peso cai sobre quem arrenda a preços de mercado, ",
+            " mais do que em qualquer outro país da União, e a família média gasta na casa menos do que a média europeia: o peso cai sobre quem arrenda a preços de mercado, ",
             {
                   "claim": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
                   "sufixo": " %"
@@ -162,11 +162,11 @@ export const LEITURAS = {
             " anos."
       ],
       "en": [
-            "House prices in Portugal rose more than in any country of the Union since ",
+            "Net of inflation, house prices in Portugal have risen since ",
             {
                   "ref": "2015"
             },
-            ", and the average household spends less on housing than the European average: the weight falls on those renting at market prices, ",
+            " more than in any other country of the Union, and the average household spends less on housing than the European average: the weight falls on those renting at market prices, ",
             {
                   "claim": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
                   "sufixo": " %"
@@ -180,8 +180,8 @@ export const LEITURAS = {
 },
     "origem": {
       "onde": "content/28 Habitacao Estudo/, abertura das duas edições",
-      "pt": "Os preços das casas em Portugal subiram",
-      "en": "House prices in Portugal rose"
+      "pt": "Descontada a inflação, os preços das casas em Portugal subiram desde 2015",
+      "en": "Net of inflation, house prices in Portugal have risen since 2015"
     }
   }
 ,

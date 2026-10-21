@@ -13,6 +13,7 @@ unit: "Percentage"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "Taxa de privação severa das condições da habitação, União Europeia, 2023"
 name_source: "label; dimension.geo.category.label.EU27_2020; dimension.time.category.label.2023"
+status: "conferido"
 name_en: "Severe housing deprivation rate, European Union - 27 countries (from 2020), 2023"
 name_source_en: "label; dimension.geo.category.label.EU27_2020; dimension.time.category.label.2023"
 measure: "Taxa de privação severa das condições da habitação, União Europeia, 2023"

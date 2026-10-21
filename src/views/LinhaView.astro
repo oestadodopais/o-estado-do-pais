@@ -106,7 +106,7 @@ import { CONJUNTO } from '../lib/conjunto.mjs';
 import { LANGS } from '../lib/routes.mjs';
 import { FAMILIAS_DAS_LINHAS } from '../data/o-que-e-das-familias.mjs';
 import { parcelaDoFinanciamento } from '../lib/frases-jd1.mjs';
-import { familiaDaLinha, oQueEDaLinha, nomeNoRecibo, lugarNoRecibo, nomeDaFonteNoRecibo } from '../lib/o-que-e-o-numero.mjs';
+import { familiaDaLinha, oQueEDaLinha, nomeNoRecibo, lugarNoRecibo, nomeDaFonteNoRecibo, nomeDoCuboEmIngles } from '../lib/o-que-e-o-numero.mjs';
 import Marcador from '../components/Marcador.astro';
 import { partesDaLeitura } from '../lib/leitura-da-medida.mjs';
 import '../styles/linha.css';
@@ -577,9 +577,9 @@ const ficha = [
      forma dos outros localizadores e leva a marca do documento. */
   {
     k: s.prov.rotuloDaFonte,
-    campo: lang === 'en' && claim.name_en ? 'name_en' : 'name',
-    valor: claim.study === 'orcamento-2027-o-que-muda-e-para-quem' && claim.derivation ? null : (lang === 'en' && claim.name_en) || claim.name || null,
-    lingua: lang === 'en' && claim.name_en ? null : linguaDoRotuloDaFonte(claim.name ?? null, lang),
+    campo: (lang === 'en' || nomeDoCuboEmIngles(claim)) && claim.name_en ? 'name_en' : 'name',
+    valor: claim.study === 'orcamento-2027-o-que-muda-e-para-quem' && claim.derivation ? null : ((lang === 'en' || nomeDoCuboEmIngles(claim)) && claim.name_en) || claim.name || null,
+    lingua: lang === 'en' && claim.name_en ? null : nomeDoCuboEmIngles(claim) ? linguaDoRotuloDaFonte(claim.name_en, lang) : linguaDoRotuloDaFonte(claim.name ?? null, lang),
   },
   {
     k: s.prov.rotuloOnde,
@@ -779,7 +779,7 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
             campo={nomeDaFonte.campo}
             valor={nomeDaFonte.valor}
             lang={lang}
-            lingua={nomeDaFonte.campo === 'name_en' ? null : nomeDaFonte.campo === 'name' ? linguaDoRotuloDaFonte(nomeDaFonte.valor, lang) : linguaDoTituloDoDocumento(nomeDaFonte.valor, lang)}
+            lingua={nomeDaFonte.campo === 'name_en' ? (lang === 'en' ? null : linguaDoRotuloDaFonte(nomeDaFonte.valor, lang)) : nomeDaFonte.campo === 'name' ? linguaDoRotuloDaFonte(nomeDaFonte.valor, lang) : linguaDoTituloDoDocumento(nomeDaFonte.valor, lang)}
           />
         )}{'»'}
         {claim.study === 'orcamento-2027-o-que-muda-e-para-quem' && claim.document?.title && nomeDaFonte.campo !== 'document.title' && (<>{' · '}{claim.document.url ? <a class="ligacao-externa" href={claim.document.url} rel="noopener noreferrer external"><CampoDaLinha id={id} campo="document.title" valor={claim.document.title} lang={lang} lingua={linguaDoTituloDoDocumento(claim.document.title, lang)} /></a> : <CampoDaLinha id={id} campo="document.title" valor={claim.document.title} lang={lang} lingua={linguaDoTituloDoDocumento(claim.document.title, lang)} />}</>)}

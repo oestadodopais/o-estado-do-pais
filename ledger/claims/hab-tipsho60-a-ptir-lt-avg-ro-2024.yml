@@ -13,6 +13,7 @@ unit: "Price-to-income ratio relative to long-term average"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "Rácio padronizado entre preços da habitação e rendimento, índice, média de longo prazo igual a cem, Roménia, 2024"
 name_source: "label; dimension.unit.category.label.PTIR_LT_AVG; dimension.geo.category.label.RO; dimension.time.category.label.2024"
+status: "conferido"
 name_en: "Standardised house price-to-income ratio, Price-to-income ratio relative to long-term average, Romania, 2024"
 name_source_en: "label; dimension.unit.category.label.PTIR_LT_AVG; dimension.geo.category.label.RO; dimension.time.category.label.2024"
 measure: "Rácio padronizado entre preços da habitação e rendimento, índice, média de longo prazo igual a cem, Roménia, 2024"

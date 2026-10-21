@@ -13,10 +13,11 @@ unit: "Percentage"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "Pessoas que vivem com os pais ou contribuem para o rendimento do agregado ou dele beneficiam, vinte e cinco a trinta e quatro anos, Dinamarca, 2025"
 name_source: "label; dimension.age.category.label.Y25-34; dimension.geo.category.label.DK; dimension.time.category.label.2025"
+status: "conferido"
 name_en: "Persons living with their parents or contributing/benefiting from the household income, From 25 to 34 years, Denmark, 2025"
 name_source_en: "label; dimension.age.category.label.Y25-34; dimension.geo.category.label.DK; dimension.time.category.label.2025"
-measure: "Persons living with their parents or contributing/benefiting from the household income (population aged 18 to 34 years)"
-measure_en: "Persons living with their parents or contributing/benefiting from the household income (population aged 18 to 34 years)"
+measure: "Persons living with their parents or contributing/benefiting from the household income, From 25 to 34 years"
+measure_en: "Persons living with their parents or contributing/benefiting from the household income, From 25 to 34 years"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Eurostat"

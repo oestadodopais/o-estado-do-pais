@@ -85,6 +85,86 @@ export const FAMILIAS_HB1 = [
       "pt": [
         " no ",
         {
+          "periodo": "hab-prc-hpi-q-q-total-i15-q-pt-2026-q2"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-prc-hpi-q-q-total-i15-q-pt-2026-q2"
+        },
+        "."
+      ]
+    },
+    "chaves": [
+      "hab-prc-hpi-q-q-total-i15-q-pt-2026-q2"
+    ],
+    "nome": {
+      "pt": "Índice dos preços da habitação, Portugal",
+      "en": "Index of house prices, Portugal"
+    },
+    "origens": [],
+    "partes": [
+      {
+        "classe": "diz",
+        "pt": "A medida mostra índice dos preços da habitação, Portugal",
+        "en": "The measure shows index of house prices, Portugal",
+        "apoios": [
+          {
+            "linha": "propria",
+            "campo": "excerpt",
+            "literal": "{\"coordinates\": {\"freq\": \"Q\", \"purchase\": \"TOTAL\", \"unit\": \"I15_Q\", \"geo\": \"PT\", \"time\": \"2026-Q2\"}, \"value\": \"301.43\", \"status\": null}"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "complemento": {
+      "pt": [
+        " no ",
+        {
+          "periodo": "hab-prc-hpi-q-q-total-i15-q-hu-2026-q2"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-prc-hpi-q-q-total-i15-q-hu-2026-q2"
+        },
+        "."
+      ]
+    },
+    "chaves": [
+      "hab-prc-hpi-q-q-total-i15-q-hu-2026-q2"
+    ],
+    "nome": {
+      "pt": "Índice dos preços da habitação, Hungria",
+      "en": "Index of house prices, Hungary"
+    },
+    "origens": [],
+    "partes": [
+      {
+        "classe": "diz",
+        "pt": "A medida mostra índice dos preços da habitação, Hungria",
+        "en": "The measure shows index of house prices, Hungary",
+        "apoios": [
+          {
+            "linha": "propria",
+            "campo": "excerpt",
+            "literal": "{\"coordinates\": {\"freq\": \"Q\", \"purchase\": \"TOTAL\", \"unit\": \"I15_Q\", \"geo\": \"HU\", \"time\": \"2026-Q2\"}, \"value\": \"389.61\", \"status\": \"p\"}"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "complemento": {
+      "pt": [
+        " no ",
+        {
           "periodo": "hab-prc-hpi-q-q-total-rch-a-pt-2026-q2"
         },
         "."
@@ -725,36 +805,36 @@ export const FAMILIAS_HB1 = [
       "pt": [
         " em ",
         {
-          "periodo": "der-hab-proprietarios-pt-2025"
+          "periodo": "hab-ilc-lvho02-a-total-total-rent-mkt-pc-pt-2025"
         },
         "."
       ],
       "en": [
         " in ",
         {
-          "periodo": "der-hab-proprietarios-pt-2025"
+          "periodo": "hab-ilc-lvho02-a-total-total-rent-mkt-pc-pt-2025"
         },
         "."
       ]
     },
     "chaves": [
-      "der-hab-proprietarios-pt-2025"
+      "hab-ilc-lvho02-a-total-total-rent-mkt-pc-pt-2025"
     ],
     "nome": {
-      "pt": "População em casa própria, Portugal",
-      "en": "Population in owner-occupied homes, Portugal"
+      "pt": "População por regime de ocupação, inquilinos a preços de mercado, Portugal",
+      "en": "Population by tenure status, tenants at market rents, Portugal"
     },
     "origens": [],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A conta calcula população em casa própria, Portugal pelas componentes identificadas",
-        "en": "The calculation gives population in owner-occupied homes, Portugal from the identified components",
+        "pt": "A medida mostra população por regime de ocupação, inquilinos a preços de mercado, Portugal",
+        "en": "The measure shows population by tenure status, tenants at market rents, Portugal",
         "apoios": [
           {
             "linha": "propria",
-            "campo": "derivation",
-            "literal": "Distribuição da população por regime de ocupação, proprietários com empréstimo, Portugal, 2025 (31,5 %; Eurostat, ilc_lvho02) mais Distribuição da população por regime de ocupação, proprietários sem empréstimo, Portugal, 2025 (39,7 %; Eurostat, ilc_lvho02), arredondado a uma casa decimal: 71,2."
+            "campo": "excerpt",
+            "literal": "{\"coordinates\": {\"freq\": \"A\", \"rskpovth\": \"TOTAL\", \"hhcomp\": \"TOTAL\", \"tenure\": \"RENT_MKT\", \"unit\": \"PC\", \"geo\": \"PT\", \"time\": \"2025\"}, \"value\": \"16.3\", \"status\": null}"
           }
         ]
       }
@@ -765,36 +845,76 @@ export const FAMILIAS_HB1 = [
       "pt": [
         " em ",
         {
-          "periodo": "hab-ilc-lvho02-a-total-total-own-l-pc-pt-2025"
+          "periodo": "hab-ilc-lvho02-a-total-total-rent-mkt-pc-eu27_2020-2025"
         },
         "."
       ],
       "en": [
         " in ",
         {
-          "periodo": "hab-ilc-lvho02-a-total-total-own-l-pc-pt-2025"
+          "periodo": "hab-ilc-lvho02-a-total-total-rent-mkt-pc-eu27_2020-2025"
         },
         "."
       ]
     },
     "chaves": [
-      "hab-ilc-lvho02-a-total-total-own-l-pc-pt-2025"
+      "hab-ilc-lvho02-a-total-total-rent-mkt-pc-eu27_2020-2025"
     ],
     "nome": {
-      "pt": "População por regime de ocupação, proprietários com empréstimo, Portugal",
-      "en": "Population by tenure status, owners with a loan, Portugal"
+      "pt": "População por regime de ocupação, inquilinos a preços de mercado, União Europeia",
+      "en": "Population by tenure status, tenants at market rents, European Union"
     },
     "origens": [],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra população por regime de ocupação, proprietários com empréstimo, Portugal",
-        "en": "The measure shows population by tenure status, owners with a loan, Portugal",
+        "pt": "A medida mostra população por regime de ocupação, inquilinos a preços de mercado, União Europeia",
+        "en": "The measure shows population by tenure status, tenants at market rents, European Union",
         "apoios": [
           {
             "linha": "propria",
             "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"rskpovth\": \"TOTAL\", \"hhcomp\": \"TOTAL\", \"tenure\": \"OWN_L\", \"unit\": \"PC\", \"geo\": \"PT\", \"time\": \"2025\"}, \"value\": \"31.5\", \"status\": null}"
+            "literal": "{\"coordinates\": {\"freq\": \"A\", \"rskpovth\": \"TOTAL\", \"hhcomp\": \"TOTAL\", \"tenure\": \"RENT_MKT\", \"unit\": \"PC\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"20.8\", \"status\": null}"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-rent-mkt-pt-2020"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-rent-mkt-pt-2020"
+        },
+        "."
+      ]
+    },
+    "chaves": [
+      "hab-ilc-lvho07c-a-pc-rent-mkt-pt-2020"
+    ],
+    "nome": {
+      "pt": "Sobrecarga do custo da habitação, inquilinos a preços de mercado, Portugal",
+      "en": "Housing cost overburden, tenants at market rents, Portugal"
+    },
+    "origens": [],
+    "partes": [
+      {
+        "classe": "diz",
+        "pt": "A medida mostra sobrecarga do custo da habitação, inquilinos a preços de mercado, Portugal",
+        "en": "The measure shows housing cost overburden, tenants at market rents, Portugal",
+        "apoios": [
+          {
+            "linha": "propria",
+            "campo": "excerpt",
+            "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"tenure\": \"RENT_MKT\", \"geo\": \"PT\", \"time\": \"2020\"}, \"value\": \"19.7\", \"status\": null}"
           }
         ]
       }
@@ -845,36 +965,36 @@ export const FAMILIAS_HB1 = [
       "pt": [
         " em ",
         {
-          "periodo": "hab-ilc-lvho07c-a-pc-rent-mkt-pt-2020"
+          "periodo": "hab-ilc-lvho07c-a-pc-own-nl-pt-2025"
         },
         "."
       ],
       "en": [
         " in ",
         {
-          "periodo": "hab-ilc-lvho07c-a-pc-rent-mkt-pt-2020"
+          "periodo": "hab-ilc-lvho07c-a-pc-own-nl-pt-2025"
         },
         "."
       ]
     },
     "chaves": [
-      "hab-ilc-lvho07c-a-pc-rent-mkt-pt-2020"
+      "hab-ilc-lvho07c-a-pc-own-nl-pt-2025"
     ],
     "nome": {
-      "pt": "Sobrecarga do custo da habitação, inquilinos a preços de mercado, Portugal",
-      "en": "Housing cost overburden, tenants at market rents, Portugal"
+      "pt": "Sobrecarga do custo da habitação, proprietários sem empréstimo, Portugal",
+      "en": "Housing cost overburden, owners without a loan, Portugal"
     },
     "origens": [],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra sobrecarga do custo da habitação, inquilinos a preços de mercado, Portugal",
-        "en": "The measure shows housing cost overburden, tenants at market rents, Portugal",
+        "pt": "A medida mostra sobrecarga do custo da habitação, proprietários sem empréstimo, Portugal",
+        "en": "The measure shows housing cost overburden, owners without a loan, Portugal",
         "apoios": [
           {
             "linha": "propria",
             "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"tenure\": \"RENT_MKT\", \"geo\": \"PT\", \"time\": \"2020\"}, \"value\": \"19.7\", \"status\": null}"
+            "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"tenure\": \"OWN_NL\", \"geo\": \"PT\", \"time\": \"2025\"}, \"value\": \"1.3\", \"status\": null}"
           }
         ]
       }
@@ -1549,36 +1669,36 @@ export const FAMILIAS_HB1 = [
       "pt": [
         " em ",
         {
-          "periodo": "hab-ilc-lvho02-a-total-total-rent-mkt-pc-pt-2025"
+          "periodo": "hab-ilc-lvho07c-a-pc-own-l-pt-2025"
         },
         "."
       ],
       "en": [
         " in ",
         {
-          "periodo": "hab-ilc-lvho02-a-total-total-rent-mkt-pc-pt-2025"
+          "periodo": "hab-ilc-lvho07c-a-pc-own-l-pt-2025"
         },
         "."
       ]
     },
     "chaves": [
-      "hab-ilc-lvho02-a-total-total-rent-mkt-pc-pt-2025"
+      "hab-ilc-lvho07c-a-pc-own-l-pt-2025"
     ],
     "nome": {
-      "pt": "População por regime de ocupação, inquilinos a preços de mercado, Portugal",
-      "en": "Population by tenure status, tenants at market rents, Portugal"
+      "pt": "Sobrecarga do custo da habitação, proprietários com empréstimo, Portugal",
+      "en": "Housing cost overburden, owners with a loan, Portugal"
     },
     "origens": [],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra população por regime de ocupação, inquilinos a preços de mercado, Portugal",
-        "en": "The measure shows population by tenure status, tenants at market rents, Portugal",
+        "pt": "A medida mostra sobrecarga do custo da habitação, proprietários com empréstimo, Portugal",
+        "en": "The measure shows housing cost overburden, owners with a loan, Portugal",
         "apoios": [
           {
             "linha": "propria",
             "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"rskpovth\": \"TOTAL\", \"hhcomp\": \"TOTAL\", \"tenure\": \"RENT_MKT\", \"unit\": \"PC\", \"geo\": \"PT\", \"time\": \"2025\"}, \"value\": \"16.3\", \"status\": null}"
+            "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"tenure\": \"OWN_L\", \"geo\": \"PT\", \"time\": \"2025\"}, \"value\": \"3.0\", \"status\": null}"
           }
         ]
       }
@@ -1629,6 +1749,126 @@ export const FAMILIAS_HB1 = [
       "pt": [
         " em ",
         {
+          "periodo": "hab-ilc-lvps08-a-y25-34-t-pc-hr-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ilc-lvps08-a-y25-34-t-pc-hr-2025"
+        },
+        "."
+      ]
+    },
+    "chaves": [
+      "hab-ilc-lvps08-a-y25-34-t-pc-hr-2025"
+    ],
+    "nome": {
+      "pt": "Jovens que vivem com os pais ou partilham o rendimento do agregado, vinte e cinco a trinta e quatro anos, Croácia",
+      "en": "Young people living with parents or sharing household income, twenty-five to thirty-four years, Croatia"
+    },
+    "origens": [],
+    "partes": [
+      {
+        "classe": "diz",
+        "pt": "A medida mostra jovens que vivem com os pais ou partilham o rendimento do agregado, vinte e cinco a trinta e quatro anos, Croácia",
+        "en": "The measure shows young people living with parents or sharing household income, twenty-five to thirty-four years, Croatia",
+        "apoios": [
+          {
+            "linha": "propria",
+            "campo": "excerpt",
+            "literal": "{\"coordinates\": {\"freq\": \"A\", \"age\": \"Y25-34\", \"sex\": \"T\", \"unit\": \"PC\", \"geo\": \"HR\", \"time\": \"2025\"}, \"value\": \"62.3\", \"status\": null}"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ilc-lvps08-a-y25-34-t-pc-pt-2020"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ilc-lvps08-a-y25-34-t-pc-pt-2020"
+        },
+        "."
+      ]
+    },
+    "chaves": [
+      "hab-ilc-lvps08-a-y25-34-t-pc-pt-2020"
+    ],
+    "nome": {
+      "pt": "Jovens que vivem com os pais ou partilham o rendimento do agregado, vinte e cinco a trinta e quatro anos, Portugal",
+      "en": "Young people living with parents or sharing household income, twenty-five to thirty-four years, Portugal"
+    },
+    "origens": [],
+    "partes": [
+      {
+        "classe": "diz",
+        "pt": "A medida mostra jovens que vivem com os pais ou partilham o rendimento do agregado, vinte e cinco a trinta e quatro anos, Portugal",
+        "en": "The measure shows young people living with parents or sharing household income, twenty-five to thirty-four years, Portugal",
+        "apoios": [
+          {
+            "linha": "propria",
+            "campo": "excerpt",
+            "literal": "{\"coordinates\": {\"freq\": \"A\", \"age\": \"Y25-34\", \"sex\": \"T\", \"unit\": \"PC\", \"geo\": \"PT\", \"time\": \"2020\"}, \"value\": \"52.3\", \"status\": null}"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "der-hab-saida-pt-vs-eu-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "der-hab-saida-pt-vs-eu-2025"
+        },
+        "."
+      ]
+    },
+    "chaves": [
+      "der-hab-saida-pt-vs-eu-2025"
+    ],
+    "nome": {
+      "pt": "Diferença face à União na idade de saída de casa dos pais",
+      "en": "Gap from the Union in the age of leaving the parental home"
+    },
+    "origens": [],
+    "partes": [
+      {
+        "classe": "diz",
+        "pt": "A conta calcula diferença face à União na idade de saída de casa dos pais pelas componentes identificadas",
+        "en": "The calculation gives gap from the Union in the age of leaving the parental home from the identified components",
+        "apoios": [
+          {
+            "linha": "propria",
+            "campo": "derivation",
+            "literal": "Idade média estimada de saída de casa dos pais, Portugal, 2025 (28,8 anos; Eurostat, yth_demo_030) menos Idade média estimada de saída de casa dos pais, União Europeia, 2025 (26,3 anos; Eurostat, yth_demo_030), arredondado a uma casa decimal: 2,5."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "complemento": {
+      "pt": [
+        " em ",
+        {
           "periodo": "hab-yth-demo-030-a-avg-t-pt-2015"
         },
         "."
@@ -1659,6 +1899,46 @@ export const FAMILIAS_HB1 = [
             "linha": "propria",
             "campo": "excerpt",
             "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"AVG\", \"sex\": \"T\", \"geo\": \"PT\", \"time\": \"2015\"}, \"value\": \"28.9\", \"status\": null}"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ine-censos-0012517-0"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ine-censos-0012517-0"
+        },
+        "."
+      ]
+    },
+    "chaves": [
+      "hab-ine-censos-0012517-0"
+    ],
+    "nome": {
+      "pt": "Proporção de alojamentos vagos nos Censos",
+      "en": "Share of vacant dwellings in the Census"
+    },
+    "origens": [],
+    "partes": [
+      {
+        "classe": "diz",
+        "pt": "A medida mostra proporção de alojamentos vagos nos Censos",
+        "en": "The measure shows share of vacant dwellings in the Census",
+        "apoios": [
+          {
+            "linha": "propria",
+            "campo": "excerpt",
+            "literal": "{\"geocod\": \"PT\", \"geodsg\": \"Portugal\", \"ind_string\": \"12,1\", \"valor\": \"12.1\"}"
           }
         ]
       }
@@ -1945,46 +2225,6 @@ export const FAMILIAS_HB1 = [
     ]
   },
   {
-    "complemento": {
-      "pt": [
-        " em ",
-        {
-          "periodo": "hab-ine-censos-0012517-0"
-        },
-        "."
-      ],
-      "en": [
-        " in ",
-        {
-          "periodo": "hab-ine-censos-0012517-0"
-        },
-        "."
-      ]
-    },
-    "chaves": [
-      "hab-ine-censos-0012517-0"
-    ],
-    "nome": {
-      "pt": "Proporção de alojamentos vagos nos Censos",
-      "en": "Share of vacant dwellings in the Census"
-    },
-    "origens": [],
-    "partes": [
-      {
-        "classe": "diz",
-        "pt": "A medida mostra proporção de alojamentos vagos nos Censos",
-        "en": "The measure shows share of vacant dwellings in the Census",
-        "apoios": [
-          {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"geocod\": \"PT\", \"geodsg\": \"Portugal\", \"ind_string\": \"12,1\", \"valor\": \"12.1\"}"
-          }
-        ]
-      }
-    ]
-  },
-  {
     "chaves": [
       "hab-arrendamento-exposicao-vagos"
     ],
@@ -2157,46 +2397,6 @@ export const FAMILIAS_HB1 = [
       "pt": [
         " no ",
         {
-          "periodo": "hab-prc-hpi-q-q-total-i15-q-pt-2026-q2"
-        },
-        "."
-      ],
-      "en": [
-        " in ",
-        {
-          "periodo": "hab-prc-hpi-q-q-total-i15-q-pt-2026-q2"
-        },
-        "."
-      ]
-    },
-    "chaves": [
-      "hab-prc-hpi-q-q-total-i15-q-pt-2026-q2"
-    ],
-    "nome": {
-      "pt": "Índice dos preços da habitação, Portugal",
-      "en": "Index of house prices, Portugal"
-    },
-    "origens": [],
-    "partes": [
-      {
-        "classe": "diz",
-        "pt": "A medida mostra índice dos preços da habitação, Portugal",
-        "en": "The measure shows index of house prices, Portugal",
-        "apoios": [
-          {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"Q\", \"purchase\": \"TOTAL\", \"unit\": \"I15_Q\", \"geo\": \"PT\", \"time\": \"2026-Q2\"}, \"value\": \"301.43\", \"status\": null}"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "complemento": {
-      "pt": [
-        " no ",
-        {
           "periodo": "hab-prc-hpi-q-q-total-i15-q-eu27_2020-2026-q2"
         },
         "."
@@ -2267,46 +2467,6 @@ export const FAMILIAS_HB1 = [
             "linha": "propria",
             "campo": "excerpt",
             "literal": "{\"coordinates\": {\"freq\": \"Q\", \"purchase\": \"TOTAL\", \"unit\": \"I15_Q\", \"geo\": \"FI\", \"time\": \"2026-Q2\"}, \"value\": \"97.50\", \"status\": \"p\"}"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "complemento": {
-      "pt": [
-        " no ",
-        {
-          "periodo": "hab-prc-hpi-q-q-total-i15-q-hu-2026-q2"
-        },
-        "."
-      ],
-      "en": [
-        " in ",
-        {
-          "periodo": "hab-prc-hpi-q-q-total-i15-q-hu-2026-q2"
-        },
-        "."
-      ]
-    },
-    "chaves": [
-      "hab-prc-hpi-q-q-total-i15-q-hu-2026-q2"
-    ],
-    "nome": {
-      "pt": "Índice dos preços da habitação, Hungria",
-      "en": "Index of house prices, Hungary"
-    },
-    "origens": [],
-    "partes": [
-      {
-        "classe": "diz",
-        "pt": "A medida mostra índice dos preços da habitação, Hungria",
-        "en": "The measure shows index of house prices, Hungary",
-        "apoios": [
-          {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"Q\", \"purchase\": \"TOTAL\", \"unit\": \"I15_Q\", \"geo\": \"HU\", \"time\": \"2026-Q2\"}, \"value\": \"389.61\", \"status\": \"p\"}"
           }
         ]
       }
@@ -3157,6 +3317,86 @@ export const FAMILIAS_HB1 = [
       "pt": [
         " em ",
         {
+          "periodo": "der-hab-proprietarios-pt-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "der-hab-proprietarios-pt-2025"
+        },
+        "."
+      ]
+    },
+    "chaves": [
+      "der-hab-proprietarios-pt-2025"
+    ],
+    "nome": {
+      "pt": "População em casa própria, Portugal",
+      "en": "Population in owner-occupied homes, Portugal"
+    },
+    "origens": [],
+    "partes": [
+      {
+        "classe": "diz",
+        "pt": "A conta calcula população em casa própria, Portugal pelas componentes identificadas",
+        "en": "The calculation gives population in owner-occupied homes, Portugal from the identified components",
+        "apoios": [
+          {
+            "linha": "propria",
+            "campo": "derivation",
+            "literal": "Distribuição da população por regime de ocupação, proprietários com empréstimo, Portugal, 2025 (31,5 %; Eurostat, ilc_lvho02) mais Distribuição da população por regime de ocupação, proprietários sem empréstimo, Portugal, 2025 (39,7 %; Eurostat, ilc_lvho02), arredondado a uma casa decimal: 71,2."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-ilc-lvho02-a-total-total-own-l-pc-pt-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-ilc-lvho02-a-total-total-own-l-pc-pt-2025"
+        },
+        "."
+      ]
+    },
+    "chaves": [
+      "hab-ilc-lvho02-a-total-total-own-l-pc-pt-2025"
+    ],
+    "nome": {
+      "pt": "População por regime de ocupação, proprietários com empréstimo, Portugal",
+      "en": "Population by tenure status, owners with a loan, Portugal"
+    },
+    "origens": [],
+    "partes": [
+      {
+        "classe": "diz",
+        "pt": "A medida mostra população por regime de ocupação, proprietários com empréstimo, Portugal",
+        "en": "The measure shows population by tenure status, owners with a loan, Portugal",
+        "apoios": [
+          {
+            "linha": "propria",
+            "campo": "excerpt",
+            "literal": "{\"coordinates\": {\"freq\": \"A\", \"rskpovth\": \"TOTAL\", \"hhcomp\": \"TOTAL\", \"tenure\": \"OWN_L\", \"unit\": \"PC\", \"geo\": \"PT\", \"time\": \"2025\"}, \"value\": \"31.5\", \"status\": null}"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "complemento": {
+      "pt": [
+        " em ",
+        {
           "periodo": "der-hab-proprietarios-eu-2025"
         },
         "."
@@ -3467,46 +3707,6 @@ export const FAMILIAS_HB1 = [
             "linha": "propria",
             "campo": "derivation",
             "literal": "Distribuição da população por regime de ocupação, inquilinos a preços de mercado, União Europeia, 2025 (20,8 %; Eurostat, ilc_lvho02) mais Distribuição da população por regime de ocupação, inquilinos com renda reduzida ou gratuita, União Europeia, 2025 (10,7 %; Eurostat, ilc_lvho02), arredondado a uma casa decimal: 31,5."
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "complemento": {
-      "pt": [
-        " em ",
-        {
-          "periodo": "hab-ilc-lvho02-a-total-total-rent-mkt-pc-eu27_2020-2025"
-        },
-        "."
-      ],
-      "en": [
-        " in ",
-        {
-          "periodo": "hab-ilc-lvho02-a-total-total-rent-mkt-pc-eu27_2020-2025"
-        },
-        "."
-      ]
-    },
-    "chaves": [
-      "hab-ilc-lvho02-a-total-total-rent-mkt-pc-eu27_2020-2025"
-    ],
-    "nome": {
-      "pt": "População por regime de ocupação, inquilinos a preços de mercado, União Europeia",
-      "en": "Population by tenure status, tenants at market rents, European Union"
-    },
-    "origens": [],
-    "partes": [
-      {
-        "classe": "diz",
-        "pt": "A medida mostra população por regime de ocupação, inquilinos a preços de mercado, União Europeia",
-        "en": "The measure shows population by tenure status, tenants at market rents, European Union",
-        "apoios": [
-          {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"rskpovth\": \"TOTAL\", \"hhcomp\": \"TOTAL\", \"tenure\": \"RENT_MKT\", \"unit\": \"PC\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"20.8\", \"status\": null}"
           }
         ]
       }
@@ -3877,6 +4077,86 @@ export const FAMILIAS_HB1 = [
       "pt": [
         " em ",
         {
+          "periodo": "hab-tespm140-a-pc-pt-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-tespm140-a-pc-pt-2025"
+        },
+        "."
+      ]
+    },
+    "chaves": [
+      "hab-tespm140-a-pc-pt-2025"
+    ],
+    "nome": {
+      "pt": "Sobrecarga do custo da habitação, Portugal",
+      "en": "Housing cost overburden, Portugal"
+    },
+    "origens": [],
+    "partes": [
+      {
+        "classe": "diz",
+        "pt": "A medida mostra sobrecarga do custo da habitação, Portugal",
+        "en": "The measure shows housing cost overburden, Portugal",
+        "apoios": [
+          {
+            "linha": "propria",
+            "campo": "excerpt",
+            "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"rskpovth\": \"TOTAL\", \"age\": \"TOTAL\", \"sex\": \"T\", \"geo\": \"PT\", \"time\": \"2025\"}, \"value\": \"6.3\", \"status\": null}"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-tespm140-a-pc-eu27_2020-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-tespm140-a-pc-eu27_2020-2025"
+        },
+        "."
+      ]
+    },
+    "chaves": [
+      "hab-tespm140-a-pc-eu27_2020-2025"
+    ],
+    "nome": {
+      "pt": "Sobrecarga do custo da habitação, União Europeia",
+      "en": "Housing cost overburden, European Union"
+    },
+    "origens": [],
+    "partes": [
+      {
+        "classe": "diz",
+        "pt": "A medida mostra sobrecarga do custo da habitação, União Europeia",
+        "en": "The measure shows housing cost overburden, European Union",
+        "apoios": [
+          {
+            "linha": "propria",
+            "campo": "excerpt",
+            "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"rskpovth\": \"TOTAL\", \"age\": \"TOTAL\", \"sex\": \"T\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"7.7\", \"status\": null}"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "complemento": {
+      "pt": [
+        " em ",
+        {
           "periodo": "hab-ilc-lvho07c-a-pc-total-eu27_2020-2015"
         },
         "."
@@ -3917,46 +4197,6 @@ export const FAMILIAS_HB1 = [
       "pt": [
         " em ",
         {
-          "periodo": "hab-ilc-lvho07c-a-pc-own-l-pt-2025"
-        },
-        "."
-      ],
-      "en": [
-        " in ",
-        {
-          "periodo": "hab-ilc-lvho07c-a-pc-own-l-pt-2025"
-        },
-        "."
-      ]
-    },
-    "chaves": [
-      "hab-ilc-lvho07c-a-pc-own-l-pt-2025"
-    ],
-    "nome": {
-      "pt": "Sobrecarga do custo da habitação, proprietários com empréstimo, Portugal",
-      "en": "Housing cost overburden, owners with a loan, Portugal"
-    },
-    "origens": [],
-    "partes": [
-      {
-        "classe": "diz",
-        "pt": "A medida mostra sobrecarga do custo da habitação, proprietários com empréstimo, Portugal",
-        "en": "The measure shows housing cost overburden, owners with a loan, Portugal",
-        "apoios": [
-          {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"tenure\": \"OWN_L\", \"geo\": \"PT\", \"time\": \"2025\"}, \"value\": \"3.0\", \"status\": null}"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "complemento": {
-      "pt": [
-        " em ",
-        {
           "periodo": "hab-ilc-lvho07c-a-pc-own-l-eu27_2020-2025"
         },
         "."
@@ -3987,46 +4227,6 @@ export const FAMILIAS_HB1 = [
             "linha": "propria",
             "campo": "excerpt",
             "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"tenure\": \"OWN_L\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"5.0\", \"status\": null}"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "complemento": {
-      "pt": [
-        " em ",
-        {
-          "periodo": "hab-ilc-lvho07c-a-pc-own-nl-pt-2025"
-        },
-        "."
-      ],
-      "en": [
-        " in ",
-        {
-          "periodo": "hab-ilc-lvho07c-a-pc-own-nl-pt-2025"
-        },
-        "."
-      ]
-    },
-    "chaves": [
-      "hab-ilc-lvho07c-a-pc-own-nl-pt-2025"
-    ],
-    "nome": {
-      "pt": "Sobrecarga do custo da habitação, proprietários sem empréstimo, Portugal",
-      "en": "Housing cost overburden, owners without a loan, Portugal"
-    },
-    "origens": [],
-    "partes": [
-      {
-        "classe": "diz",
-        "pt": "A medida mostra sobrecarga do custo da habitação, proprietários sem empréstimo, Portugal",
-        "en": "The measure shows housing cost overburden, owners without a loan, Portugal",
-        "apoios": [
-          {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"tenure\": \"OWN_NL\", \"geo\": \"PT\", \"time\": \"2025\"}, \"value\": \"1.3\", \"status\": null}"
           }
         ]
       }
@@ -4981,46 +5181,6 @@ export const FAMILIAS_HB1 = [
       "pt": [
         " em ",
         {
-          "periodo": "der-hab-saida-pt-vs-eu-2025"
-        },
-        "."
-      ],
-      "en": [
-        " in ",
-        {
-          "periodo": "der-hab-saida-pt-vs-eu-2025"
-        },
-        "."
-      ]
-    },
-    "chaves": [
-      "der-hab-saida-pt-vs-eu-2025"
-    ],
-    "nome": {
-      "pt": "Diferença face à União na idade de saída de casa dos pais",
-      "en": "Gap from the Union in the age of leaving the parental home"
-    },
-    "origens": [],
-    "partes": [
-      {
-        "classe": "diz",
-        "pt": "A conta calcula diferença face à União na idade de saída de casa dos pais pelas componentes identificadas",
-        "en": "The calculation gives gap from the Union in the age of leaving the parental home from the identified components",
-        "apoios": [
-          {
-            "linha": "propria",
-            "campo": "derivation",
-            "literal": "Idade média estimada de saída de casa dos pais, Portugal, 2025 (28,8 anos; Eurostat, yth_demo_030) menos Idade média estimada de saída de casa dos pais, União Europeia, 2025 (26,3 anos; Eurostat, yth_demo_030), arredondado a uma casa decimal: 2,5."
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "complemento": {
-      "pt": [
-        " em ",
-        {
           "periodo": "hab-yth-demo-030-a-avg-t-fi-2025"
         },
         "."
@@ -5131,86 +5291,6 @@ export const FAMILIAS_HB1 = [
             "linha": "propria",
             "campo": "excerpt",
             "literal": "{\"coordinates\": {\"freq\": \"A\", \"age\": \"Y25-34\", \"sex\": \"T\", \"unit\": \"PC\", \"geo\": \"DK\", \"time\": \"2025\"}, \"value\": \"3.9\", \"status\": null}"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "complemento": {
-      "pt": [
-        " em ",
-        {
-          "periodo": "hab-ilc-lvps08-a-y25-34-t-pc-hr-2025"
-        },
-        "."
-      ],
-      "en": [
-        " in ",
-        {
-          "periodo": "hab-ilc-lvps08-a-y25-34-t-pc-hr-2025"
-        },
-        "."
-      ]
-    },
-    "chaves": [
-      "hab-ilc-lvps08-a-y25-34-t-pc-hr-2025"
-    ],
-    "nome": {
-      "pt": "Jovens que vivem com os pais ou partilham o rendimento do agregado, vinte e cinco a trinta e quatro anos, Croácia",
-      "en": "Young people living with parents or sharing household income, twenty-five to thirty-four years, Croatia"
-    },
-    "origens": [],
-    "partes": [
-      {
-        "classe": "diz",
-        "pt": "A medida mostra jovens que vivem com os pais ou partilham o rendimento do agregado, vinte e cinco a trinta e quatro anos, Croácia",
-        "en": "The measure shows young people living with parents or sharing household income, twenty-five to thirty-four years, Croatia",
-        "apoios": [
-          {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"age\": \"Y25-34\", \"sex\": \"T\", \"unit\": \"PC\", \"geo\": \"HR\", \"time\": \"2025\"}, \"value\": \"62.3\", \"status\": null}"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "complemento": {
-      "pt": [
-        " em ",
-        {
-          "periodo": "hab-ilc-lvps08-a-y25-34-t-pc-pt-2020"
-        },
-        "."
-      ],
-      "en": [
-        " in ",
-        {
-          "periodo": "hab-ilc-lvps08-a-y25-34-t-pc-pt-2020"
-        },
-        "."
-      ]
-    },
-    "chaves": [
-      "hab-ilc-lvps08-a-y25-34-t-pc-pt-2020"
-    ],
-    "nome": {
-      "pt": "Jovens que vivem com os pais ou partilham o rendimento do agregado, vinte e cinco a trinta e quatro anos, Portugal",
-      "en": "Young people living with parents or sharing household income, twenty-five to thirty-four years, Portugal"
-    },
-    "origens": [],
-    "partes": [
-      {
-        "classe": "diz",
-        "pt": "A medida mostra jovens que vivem com os pais ou partilham o rendimento do agregado, vinte e cinco a trinta e quatro anos, Portugal",
-        "en": "The measure shows young people living with parents or sharing household income, twenty-five to thirty-four years, Portugal",
-        "apoios": [
-          {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"age\": \"Y25-34\", \"sex\": \"T\", \"unit\": \"PC\", \"geo\": \"PT\", \"time\": \"2020\"}, \"value\": \"52.3\", \"status\": null}"
           }
         ]
       }
@@ -6762,7 +6842,7 @@ export const FAMILIAS_HB1 = [
           {
             "linha": "propria",
             "campo": "excerpt",
-            "literal": "Debate e votação na generali​d​ade do ​​O​rçamento ​do Estado para 2027​ | 27 e 28 de outubro​ ​"
+            "literal": "Debate e votação na generalidade do Orçamento do Estado para 2027 | 27 e 28 de outubro "
           }
         ]
       }

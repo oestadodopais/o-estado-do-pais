@@ -13,10 +13,11 @@ unit: "Annual rate of change"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "Índice harmonizado de preços no consumidor, rendas efetivas da habitação, variação homóloga, Portugal, setembro de 2026"
 name_source: "label; dimension.unit.category.label.RCH_A; dimension.geo.category.label.PT; dimension.time.category.label.2026-09"
-name_en: "Harmonised index of consumer prices, actual rentals for housing, Annual rate of change, Portugal, September 2026"
+status: "conferido"
+name_en: "Harmonised index of consumer prices, actual rentals for housing, Annual rate of change, Portugal, 2026-09"
 name_source_en: "label; dimension.unit.category.label.RCH_A; dimension.geo.category.label.PT; dimension.time.category.label.2026-09"
 measure: "Índice harmonizado de preços no consumidor, rendas efetivas da habitação, variação homóloga, Portugal, setembro de 2026"
-measure_en: "Harmonised index of consumer prices, actual rentals for housing, Annual rate of change, Portugal, September 2026"
+measure_en: "Harmonised index of consumer prices, actual rentals for housing, Annual rate of change, Portugal, 2026-09"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Eurostat"

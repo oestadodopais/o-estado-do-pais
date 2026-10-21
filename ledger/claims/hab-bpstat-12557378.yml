@@ -13,6 +13,7 @@ unit: "Milhões de euros"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "Empréstimos-Particulares-PRT-Habitação-M€ (OIFM)"
 name_source: "label"
+status: "conferido"
 measure: "Empréstimos-Particulares-PRT-Habitação-M€ (OIFM)"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.

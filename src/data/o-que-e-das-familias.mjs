@@ -20864,6 +20864,66 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
       ]
     }
   },
+  "hab-tespm140-a-pc-eu27_2020-2025": {
+    "nome": {
+      "pt": "Sobrecarga do custo da habitação, União Europeia",
+      "en": "Housing cost overburden, European Union"
+    },
+    "frase": {
+      "pt": [
+        "A medida mostra sobrecarga do custo da habitação, União Europeia"
+      ],
+      "en": [
+        "The measure shows housing cost overburden, European Union"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-tespm140-a-pc-eu27_2020-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-tespm140-a-pc-eu27_2020-2025"
+        },
+        "."
+      ]
+    }
+  },
+  "hab-tespm140-a-pc-pt-2025": {
+    "nome": {
+      "pt": "Sobrecarga do custo da habitação, Portugal",
+      "en": "Housing cost overburden, Portugal"
+    },
+    "frase": {
+      "pt": [
+        "A medida mostra sobrecarga do custo da habitação, Portugal"
+      ],
+      "en": [
+        "The measure shows housing cost overburden, Portugal"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "hab-tespm140-a-pc-pt-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "hab-tespm140-a-pc-pt-2025"
+        },
+        "."
+      ]
+    }
+  },
   "hab-tipsho10-a-i15-a-avg-eu27_2020-2025": {
     "nome": {
       "pt": "Índice dos preços da habitação descontada a inflação, União Europeia",
@@ -21457,6 +21517,64 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
           "periodo": "hab-yth-demo-030-a-avg-t-pt-2025"
         },
         "."
+      ]
+    }
+  },
+  "oe-2027-calendario-generalidade": {
+    "nome": {
+      "pt": "Votação do Orçamento na generalidade",
+      "en": "Budget first-reading vote"
+    },
+    "frase": {
+      "pt": [
+        "A medida mostra votação do Orçamento na generalidade"
+      ],
+      "en": [
+        "The measure shows budget first-reading vote"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "oe-2027-calendario-generalidade"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "oe-2027-calendario-generalidade"
+        },
+        "."
+      ]
+    }
+  },
+  "posicao-chega-habitacao": {
+    "nome": {
+      "pt": "Pacote do Chega para a habitação, pela imprensa",
+      "en": "Chega housing package, reported by the press"
+    },
+    "frase": {
+      "pt": [
+        "O excerto reproduz o documento indicado sobre pacote do Chega para a habitação, pela imprensa."
+      ],
+      "en": [
+        "The excerpt reproduces the indicated document about chega housing package, reported by the press."
+      ]
+    }
+  },
+  "posicao-ps-rendas": {
+    "nome": {
+      "pt": "Proposta do PS para a dedução das rendas",
+      "en": "PS proposal for the rent deduction"
+    },
+    "frase": {
+      "pt": [
+        "O excerto reproduz o documento indicado sobre proposta do PS para a dedução das rendas."
+      ],
+      "en": [
+        "The excerpt reproduces the indicated document about pS proposal for the rent deduction."
       ]
     }
   }

@@ -13,6 +13,7 @@ unit: "Percentage"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "Taxa de sobrecarga dos custos da habitação, proprietários sem empréstimo, União Europeia, 2025"
 name_source: "label; dimension.tenure.category.label.OWN_NL; dimension.geo.category.label.EU27_2020; dimension.time.category.label.2025"
+status: "conferido"
 name_en: "Housing cost overburden rate, Owner, no outstanding mortgage or housing loan, European Union - 27 countries (from 2020), 2025"
 name_source_en: "label; dimension.tenure.category.label.OWN_NL; dimension.geo.category.label.EU27_2020; dimension.time.category.label.2025"
 measure: "Taxa de sobrecarga dos custos da habitação, proprietários sem empréstimo, União Europeia, 2025"

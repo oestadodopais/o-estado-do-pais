@@ -4040,6 +4040,52 @@ export const UNIDADES_HB1 = {
     ],
     "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
   },
+  "hab-tespm140-a-pc-eu27_2020-2025": {
+    "pt": [
+      "% da população"
+    ],
+    "en": [
+      "% of the population"
+    ],
+    "apoio": [
+      {
+        "campo": "unit",
+        "literal": "Percentage"
+      },
+      {
+        "campo": "name",
+        "literal": "Taxa de sobrecarga dos custos da habitação, União Europeia, 2025"
+      },
+      {
+        "campo": "excerpt",
+        "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"rskpovth\": \"TOTAL\", \"age\": \"TOTAL\", \"sex\": \"T\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"7.7\", \"status\": null}"
+      }
+    ],
+    "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
+  },
+  "hab-tespm140-a-pc-pt-2025": {
+    "pt": [
+      "% da população"
+    ],
+    "en": [
+      "% of the population"
+    ],
+    "apoio": [
+      {
+        "campo": "unit",
+        "literal": "Percentage"
+      },
+      {
+        "campo": "name",
+        "literal": "Taxa de sobrecarga dos custos da habitação, Portugal, 2025"
+      },
+      {
+        "campo": "excerpt",
+        "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"rskpovth\": \"TOTAL\", \"age\": \"TOTAL\", \"sex\": \"T\", \"geo\": \"PT\", \"time\": \"2025\"}, \"value\": \"6.3\", \"status\": null}"
+      }
+    ],
+    "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
+  },
   "hab-tipsho10-a-i15-a-avg-eu27_2020-2025": {
     "pt": [
       "índice médio anual, ",

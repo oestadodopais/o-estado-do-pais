@@ -19,7 +19,7 @@ import { load } from 'js-yaml';
 import { DOCUMENT_FUNCTIONS, documentCall } from './document-checks.mjs';
 import {textoDocumentalConferido,valorImpressoDoPainelConferido,acumuladoConferido,fragmentosAuxiliaresConferidos,tituloAuxiliarConferido} from './prova-efeitos.mjs';
 
-import { STUDY_IDS, COUNTS } from '../data/studies.mjs';
+import { STUDY_IDS, COUNTS, WORKS, edicaoPublicada } from '../data/studies.mjs';
 import { KINDS, CAMPOS_DE_PROVENIENCIA } from '../data/correcoes.mjs';
 import { historiaDaProveniencia } from './historia-da-proveniencia.mjs';
 import { conferirHistoriaDoValor } from './historia-do-valor.mjs';
@@ -2644,6 +2644,18 @@ export function validateLedger() {
     }
 
     if (Array.isArray(c.corrections)) conferirHistoriaDoValor(c, historiasSeladas[id], onde, errors);
+
+    /* HB1-c (o achado 15 da leitura da HB1-b, 21.10.2026): uma edição em
+       preparação (`publication: 'declared'` com `date: null`, `edicaoPublicada`
+       em `src/data/studies.mjs`) nunca escreve no registo das correções nem nos
+       contadores do arquivo; uma mudança a uma linha que nunca chegou ao sítio
+       não é uma correção pública. Uma linha de um estudo sem edição publicada
+       não traz entradas em `corrections` nem na história selada. */
+    const obraDaLinha = c.study ? WORKS.find((w) => w.id === c.study) : undefined;
+    if (obraDaLinha && !obraDaLinha.editions.some((e) => edicaoPublicada(obraDaLinha, e))) {
+      if (Array.isArray(c.corrections) && c.corrections.length) errors.push(`${onde} uma linha de um estudo em preparação (date: null) não tem correção pública: "corrections" tem ${c.corrections.length} entrada(s).`);
+      if (historiasSeladas[id]?.length) errors.push(`${onde} uma linha de um estudo em preparação (date: null) não tem história selada em ledger/historias-valores.json.`);
+    }
 
     const acessos = historiaDaProveniencia(c, 'access_date', onde, errors);
     /** @type {string[]} */

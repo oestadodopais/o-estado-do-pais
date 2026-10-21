@@ -230,6 +230,12 @@ export function lugarNoRecibo(id, lang) {
   return f.tipo === 'concelho' ? { slug: f.concelho.slug, nome: f.concelho.nome[lang] ?? f.concelho.nome.pt } : null;
 }
 
+/** HB1-c: a linha de um cubo do Eurostat cujo nome inglês é a concatenação dos `label` do corpo. @param {any} c */
+export function nomeDoCuboEmIngles(c) {
+  return Boolean(c) && c.source === 'Eurostat' && typeof c.name_en === 'string' && c.name_en.trim() !== ''
+    && typeof c.name_source_en === 'string' && /^label;/.test(c.name_source_en) && c.study === 'a-casa-em-portugal-e-na-europa';
+}
+
 /**
  * O nome com que a fonte publica a medida, para o recibo: o título do documento ou da série, e, onde a linha não o
  * tem, o rótulo que a fonte imprime por cima da figura. Uma linha calculada não tem nem um nem outro.
@@ -245,6 +251,9 @@ export function nomeDaFonteNoRecibo(id, lang = 'pt') {
   if (lang === 'en' && util(c.name_en)) return { campo: /** @type {const} */ ('name_en'), valor: /** @type {string} */ (c.name_en) };
   // O rótulo da medida tem precedência sobre o título do documento, em todas as famílias.
   if (lang === 'en' && util(c.name_en)) return { campo: 'name_en', valor: c.name_en };
+  // HB1-c (o achado 13): nas linhas dos cubos do Eurostat, o nome na fonte é o nome como a
+  // fonte o escreve, em inglês, nas duas edições; o nome português fica no título do recibo.
+  if (nomeDoCuboEmIngles(c)) return { campo: /** @type {const} */ ('name_en'), valor: /** @type {string} */ (c.name_en) };
   if (util(c.name)) return { campo: /** @type {const} */ ('name'), valor: /** @type {string} */ (c.name) };
   if (util(c.document?.title)) return { campo: /** @type {const} */ ('document.title'), valor: /** @type {string} */ (c.document.title) };
   return null;

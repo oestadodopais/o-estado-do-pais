@@ -13,6 +13,7 @@ unit: "Percentage"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "Taxa de privação severa das condições da habitação, Portugal, 2023"
 name_source: "label; dimension.geo.category.label.PT; dimension.time.category.label.2023"
+status: "conferido"
 name_en: "Severe housing deprivation rate, Portugal, 2023"
 name_source_en: "label; dimension.geo.category.label.PT; dimension.time.category.label.2023"
 measure: "Taxa de privação severa das condições da habitação, Portugal, 2023"

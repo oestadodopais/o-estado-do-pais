@@ -36,129 +36,147 @@
   {
    "figures": [
     {
-     "end": 155,
+     "end": 150,
      "printed": "206.41",
      "row": "hab-tipsho10-a-i15-a-avg-pt-2025",
      "source_body": "content/23 Habitacao/source/eurostat/tipsho10.json",
      "source_sha256": "8170b1e60e84453724a4630d5b7136c93ff37b1bcf92853a4e149bb6a8f6b3db",
-     "start": 149,
+     "start": 144,
      "value": "206.41"
     },
     {
-     "end": 211,
+     "end": 206,
      "printed": "124.75",
      "row": "hab-tipsho10-a-i15-a-avg-eu27_2020-2025",
      "source_body": "content/23 Habitacao/source/eurostat/tipsho10.json",
      "source_sha256": "8170b1e60e84453724a4630d5b7136c93ff37b1bcf92853a4e149bb6a8f6b3db",
-     "start": 205,
+     "start": 200,
      "value": "124.75"
     },
     {
-     "end": 317,
+     "end": 302,
+     "printed": "301.43",
+     "row": "hab-prc-hpi-q-q-total-i15-q-pt-2026-q2",
+     "source_body": "content/23 Habitacao/source/eurostat/prc_hpi_q.json",
+     "source_sha256": "139967be9abc6524df81b488dbf675ed6f717552e798e0113f758a0fb805083e",
+     "start": 296,
+     "value": "301.43"
+    },
+    {
+     "end": 434,
+     "printed": "389.61",
+     "row": "hab-prc-hpi-q-q-total-i15-q-hu-2026-q2",
+     "source_body": "content/23 Habitacao/source/eurostat/prc_hpi_q.json",
+     "source_sha256": "139967be9abc6524df81b488dbf675ed6f717552e798e0113f758a0fb805083e",
+     "start": 428,
+     "value": "389.61"
+    },
+    {
+     "end": 483,
      "printed": "16.5",
      "row": "hab-prc-hpi-q-q-total-rch-a-pt-2026-q2",
      "source_body": "content/23 Habitacao/source/eurostat/prc_hpi_q.json",
      "source_sha256": "139967be9abc6524df81b488dbf675ed6f717552e798e0113f758a0fb805083e",
-     "start": 313,
+     "start": 479,
      "value": "16.5"
     },
     {
-     "end": 342,
+     "end": 508,
      "printed": "4.7",
      "row": "hab-prc-hpi-q-q-total-rch-a-eu27_2020-2026-q2",
      "source_body": "content/23 Habitacao/source/eurostat/prc_hpi_q.json",
      "source_sha256": "139967be9abc6524df81b488dbf675ed6f717552e798e0113f758a0fb805083e",
-     "start": 339,
+     "start": 505,
      "value": "4.7"
     },
     {
-     "end": 487,
+     "end": 680,
      "printed": "144.34",
      "row": "hab-tipsho60-a-ptir-i15-pt-2024",
      "source_body": "content/23 Habitacao/source/eurostat/tipsho60.json",
      "source_sha256": "85a9de42aa41ef015150da57af82802ea164b3bbde1f706ddb241204dc5cb1e6",
-     "start": 481,
+     "start": 674,
      "value": "144.34"
     },
     {
-     "end": 530,
+     "end": 723,
      "printed": "105.72",
      "row": "hab-tipsho60-a-ptir-i15-eu27_2020-2024",
      "source_body": "content/23 Habitacao/source/eurostat/tipsho60.json",
      "source_sha256": "85a9de42aa41ef015150da57af82802ea164b3bbde1f706ddb241204dc5cb1e6",
-     "start": 524,
+     "start": 717,
      "value": "105.72"
     },
     {
-     "end": 603,
+     "end": 786,
      "printed": "44.3",
      "row": "der-hab-preco-rendimento-acima-2015-pt-2024",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 599,
+     "start": 782,
      "value": "44.3"
     },
     {
-     "end": 643,
+     "end": 819,
      "printed": "5.7",
      "row": "der-hab-preco-rendimento-acima-2015-eu-2024",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 640,
+     "start": 816,
      "value": "5.7"
     },
     {
-     "end": 699,
+     "end": 870,
      "printed": "2,337",
      "row": "hab-ine-preco-mediano",
      "source_body": "content/23 Habitacao/source/ine-retoma-pt-32-2.pdf",
      "source_sha256": "edad0e60dfc15f44ad3116dfe3506f23ef054f473aaaf60e97dae4224067c917",
-     "start": 694,
+     "start": 865,
      "value": "2 337"
     },
     {
-     "end": 750,
+     "end": 921,
      "printed": "5,292",
      "row": "hab-ine-preco-lisboa",
      "source_body": "content/23 Habitacao/source/ine-retoma-pt-32-2.pdf",
      "source_sha256": "edad0e60dfc15f44ad3116dfe3506f23ef054f473aaaf60e97dae4224067c917",
-     "start": 745,
+     "start": 916,
      "value": "5 292"
     },
     {
-     "end": 769,
+     "end": 940,
      "printed": "3,729",
      "row": "hab-ine-preco-porto",
      "source_body": "content/23 Habitacao/source/ine-retoma-pt-32-6.zip",
      "source_sha256": "e7ab81e756a3f838bb008e414c1b35b2ba1fb7a57a235c9ada05e6ee3a63aa8c",
-     "start": 764,
+     "start": 935,
      "value": "3 729"
     },
     {
-     "end": 800,
+     "end": 971,
      "printed": "10.17",
      "row": "hab-ine-renda-portugal",
      "source_body": "content/23 Habitacao/source/ine-retoma-pt-30-2.pdf",
      "source_sha256": "8be6b068ef8c95a55f1269e20f19b2cfbea864c9e0838872d0b70758d91c9b84",
-     "start": 795,
+     "start": 966,
      "value": "10,17"
     },
     {
-     "end": 845,
+     "end": 1016,
      "printed": "17.79",
      "row": "hab-ine-renda-lisboa",
      "source_body": "content/23 Habitacao/source/ine-retoma-pt-30-2.pdf",
      "source_sha256": "8be6b068ef8c95a55f1269e20f19b2cfbea864c9e0838872d0b70758d91c9b84",
-     "start": 840,
+     "start": 1011,
      "value": "17,79"
     },
     {
-     "end": 862,
+     "end": 1033,
      "printed": "14.66",
      "row": "hab-ine-renda-porto",
      "source_body": "content/23 Habitacao/source/ine-retoma-pt-30-6.zip",
      "source_sha256": "0d0f452c8fadef57404d12f2723435b1566d190f3f5ac547e3f0fb4605eb8cea",
-     "start": 857,
+     "start": 1028,
      "value": "14,66"
     }
    ],
@@ -166,144 +184,162 @@
    "kind": "paragraph",
    "proofs": [
     {
-     "fim": 155,
+     "fim": 150,
      "id": "hab-tipsho10-a-i15-a-avg-pt-2025",
-     "inicio": 149,
+     "inicio": 144,
      "livro": "HB",
      "sha256_linha": "f30a9a2f75e18b36e94d47895b0e71dbbf04050326f60e0428d050db63cb8fc7",
      "texto": "206.41",
      "tipo": "valor"
     },
     {
-     "fim": 211,
+     "fim": 206,
      "id": "hab-tipsho10-a-i15-a-avg-eu27_2020-2025",
-     "inicio": 205,
+     "inicio": 200,
      "livro": "HB",
      "sha256_linha": "7e9be06e47a4277acdd86373bbbcd65592e6766473793951a0a6c42e0356df94",
      "texto": "124.75",
      "tipo": "valor"
     },
     {
-     "fim": 317,
-     "id": "hab-prc-hpi-q-q-total-rch-a-pt-2026-q2",
-     "inicio": 313,
+     "fim": 302,
+     "id": "hab-prc-hpi-q-q-total-i15-q-pt-2026-q2",
+     "inicio": 296,
      "livro": "HB",
-     "sha256_linha": "75ca3c1830a96d7ffc8fe7251da704bc8a7a7cbb8d1b10c88de21d17700f6687",
+     "sha256_linha": "479979bb2935008f971c9c9c44dd2d9c3682a1c3d38ae6d140d6ba2606f200d6",
+     "texto": "301.43",
+     "tipo": "valor"
+    },
+    {
+     "fim": 434,
+     "id": "hab-prc-hpi-q-q-total-i15-q-hu-2026-q2",
+     "inicio": 428,
+     "livro": "HB",
+     "sha256_linha": "e142af5a214502240fcf0841b5b2a561eca027686855ed23103244b7e92fc21b",
+     "texto": "389.61",
+     "tipo": "valor"
+    },
+    {
+     "fim": 483,
+     "id": "hab-prc-hpi-q-q-total-rch-a-pt-2026-q2",
+     "inicio": 479,
+     "livro": "HB",
+     "sha256_linha": "4800aaec62d84613f2053b67c12376cfc94ecde6a3ebbcbec69e2fd3aa6bc928",
      "texto": "16.5",
      "tipo": "valor"
     },
     {
-     "fim": 342,
+     "fim": 508,
      "id": "hab-prc-hpi-q-q-total-rch-a-eu27_2020-2026-q2",
-     "inicio": 339,
+     "inicio": 505,
      "livro": "HB",
-     "sha256_linha": "0bb37483a6019a9cc689e9dc4887588716c6281e15ed3c40c4280050d9fcea7e",
+     "sha256_linha": "ad277e9bbcc6814a5bfd2201800bd5bcebb0680d8f537d02cf7b8729ffd72ec0",
      "texto": "4.7",
      "tipo": "valor"
     },
     {
-     "fim": 487,
+     "fim": 680,
      "id": "hab-tipsho60-a-ptir-i15-pt-2024",
-     "inicio": 481,
+     "inicio": 674,
      "livro": "HB",
      "sha256_linha": "8c4c11a3fca5f9be1e6147b5f3a347c372d82bfa8d2b294213ea94001bfa8239",
      "texto": "144.34",
      "tipo": "valor"
     },
     {
-     "fim": 530,
+     "fim": 723,
      "id": "hab-tipsho60-a-ptir-i15-eu27_2020-2024",
-     "inicio": 524,
+     "inicio": 717,
      "livro": "HB",
      "sha256_linha": "e53e400bc4f9290e1378567dcc265246da3231eaa7ab272a3e256f40076ac663",
      "texto": "105.72",
      "tipo": "valor"
     },
     {
-     "fim": 603,
+     "fim": 786,
      "id": "der-hab-preco-rendimento-acima-2015-pt-2024",
-     "inicio": 599,
+     "inicio": 782,
      "livro": "HB",
      "sha256_linha": "a7b69b1cd6f1746aeb19ac041411e3142ebecb4c1a6ea6f65bec7d50ab087f68",
      "texto": "44.3",
      "tipo": "valor"
     },
     {
-     "fim": 643,
+     "fim": 819,
      "id": "der-hab-preco-rendimento-acima-2015-eu-2024",
-     "inicio": 640,
+     "inicio": 816,
      "livro": "HB",
      "sha256_linha": "6d97ac3841b7f9bcb927612453912b120fd4bb340cf4abe08ab3a9bfd9a0d56b",
      "texto": "5.7",
      "tipo": "valor"
     },
     {
-     "fim": 699,
+     "fim": 870,
      "id": "hab-ine-preco-mediano",
-     "inicio": 694,
+     "inicio": 865,
      "livro": "HB",
      "sha256_linha": "08a71ad9530691ae40e75b92da8895077ef2a3da3ee15ec38f14dad0ae93dfee",
      "texto": "2,337",
      "tipo": "valor"
     },
     {
-     "fim": 733,
+     "fim": 904,
      "id": "hab-ine-preco-mediano",
-     "inicio": 726,
+     "inicio": 897,
      "livro": "HB",
      "sha256_linha": "08a71ad9530691ae40e75b92da8895077ef2a3da3ee15ec38f14dad0ae93dfee",
      "texto": "Q1 2026",
      "tipo": "periodo"
     },
     {
-     "fim": 750,
+     "fim": 921,
      "id": "hab-ine-preco-lisboa",
-     "inicio": 745,
+     "inicio": 916,
      "livro": "HB",
      "sha256_linha": "cdae2c9a8ca43ef08dc841c509a002969efbec425615d78fae5177f75602a742",
      "texto": "5,292",
      "tipo": "valor"
     },
     {
-     "fim": 769,
+     "fim": 940,
      "id": "hab-ine-preco-porto",
-     "inicio": 764,
+     "inicio": 935,
      "livro": "HB",
      "sha256_linha": "45e9aa8eb616cedaf751ea5e5a4ca0214574c672eff51c884085bda98c31e315",
      "texto": "3,729",
      "tipo": "valor"
     },
     {
-     "fim": 793,
+     "fim": 964,
      "id": "hab-ine-renda-portugal",
-     "inicio": 786,
+     "inicio": 957,
      "livro": "HB",
      "sha256_linha": "741e36eb1976f1704abd4e7d4b15cd6745869dfdf19db58ca89e75e6abdbf286",
      "texto": "Q2 2026",
      "tipo": "periodo"
     },
     {
-     "fim": 800,
+     "fim": 971,
      "id": "hab-ine-renda-portugal",
-     "inicio": 795,
+     "inicio": 966,
      "livro": "HB",
      "sha256_linha": "741e36eb1976f1704abd4e7d4b15cd6745869dfdf19db58ca89e75e6abdbf286",
      "texto": "10.17",
      "tipo": "valor"
     },
     {
-     "fim": 845,
+     "fim": 1016,
      "id": "hab-ine-renda-lisboa",
-     "inicio": 840,
+     "inicio": 1011,
      "livro": "HB",
      "sha256_linha": "caab068548bbcfa9bf3e6e289e3b95fdd8d5db5bff840bc7b15ebf9f4be2a4ff",
      "texto": "17.79",
      "tipo": "valor"
     },
     {
-     "fim": 862,
+     "fim": 1033,
      "id": "hab-ine-renda-porto",
-     "inicio": 857,
+     "inicio": 1028,
      "livro": "HB",
      "sha256_linha": "4195c2722bdf5b2473388b751dceae4bc67e0b26ea7f15278e234741861c718c",
      "texto": "14.66",
@@ -313,6 +349,8 @@
    "source_rows": [
     "hab-tipsho10-a-i15-a-avg-pt-2025",
     "hab-tipsho10-a-i15-a-avg-eu27_2020-2025",
+    "hab-prc-hpi-q-q-total-i15-q-pt-2026-q2",
+    "hab-prc-hpi-q-q-total-i15-q-hu-2026-q2",
     "hab-prc-hpi-q-q-total-rch-a-pt-2026-q2",
     "hab-prc-hpi-q-q-total-rch-a-eu27_2020-2026-q2",
     "hab-tipsho60-a-ptir-i15-pt-2024",
@@ -326,7 +364,7 @@
     "hab-ine-renda-lisboa",
     "hab-ine-renda-porto"
    ],
-   "text": "House prices in Portugal rose more than in any other country of the European Union over the last decade. Net of inflation, the price index stands at 206.41 in 2025, with 2015 equal to one hundred, against 124.75 in the Union; it is the highest value of the twenty-seven. In the second quarter of 2026 prices rose 16.5 % in a year, against 4.7 % in the Union, again the highest rise, among the twenty-six member states with quarterly data. Against household income, prices stand at 144.34 (2015 equal to one hundred) against 105.72 in the Union, also the highest value: since 2015, prices have risen 44.3 % more than income in Portugal, and 5.7 % more in the Union. A home sold in Portugal cost 2,337 euros per square metre in Q1 2026, in Lisbon 5,292 and in Porto 3,729; a new rent, in Q2 2026, 10.17 euros per square metre in the country, 17.79 in Lisbon, 14.66 in Porto."
+   "text": "Net of inflation, house prices in Portugal have risen since 2015 more than in any other country of the European Union: the real index stands at 206.41 in 2025, with 2015 equal to one hundred, against 124.75 in the Union, the highest value of the twenty-seven. In nominal terms, Portugal's index, 301.43 in the second quarter of 2026, is the second highest among the twenty-six member states with quarterly data, behind Hungary (389.61). In the second quarter of 2026 prices rose 16.5 % in a year, against 4.7 % in the Union, again the highest rise, among the twenty-six member states with quarterly data. Against household income, Eurostat's price-to-income ratio stands at 144.34 (2015 equal to one hundred) against 105.72 in the Union, also the highest value: the ratio has risen 44.3 % since 2015 in Portugal and 5.7 % in the Union. A home sold in Portugal cost 2,337 euros per square metre in Q1 2026, in Lisbon 5,292 and in Porto 3,729; a new rent, in Q2 2026, 10.17 euros per square metre in the country, 17.79 in Lisbon, 14.66 in Porto."
   },
   {
    "figures": [
@@ -367,84 +405,102 @@
      "value": "7.7"
     },
     {
-     "end": 295,
-     "printed": "71.2",
-     "row": "der-hab-proprietarios-pt-2025",
-     "source_digest_kind": "derivado",
-     "source_sha256": null,
-     "start": 291,
-     "value": "71.2"
-    },
-    {
-     "end": 348,
-     "printed": "39.7",
-     "row": "hab-ilc-lvho02-a-total-total-own-nl-pc-pt-2025",
+     "end": 333,
+     "printed": "16.3",
+     "row": "hab-ilc-lvho02-a-total-total-rent-mkt-pc-pt-2025",
      "source_body": "content/23 Habitacao/source/eurostat/ilc_lvho02.json",
      "source_sha256": "ea4dcaa450b9a2b599d456b0bcbb6c5ebd0c6faaf90116762aaa74f59d0b3894",
-     "start": 344,
-     "value": "39.7"
+     "start": 329,
+     "value": "16.3"
     },
     {
-     "end": 502,
+     "end": 371,
+     "printed": "20.8",
+     "row": "hab-ilc-lvho02-a-total-total-rent-mkt-pc-eu27_2020-2025",
+     "source_body": "content/23 Habitacao/source/eurostat/ilc_lvho02.json",
+     "source_sha256": "ea4dcaa450b9a2b599d456b0bcbb6c5ebd0c6faaf90116762aaa74f59d0b3894",
+     "start": 367,
+     "value": "20.8"
+    },
+    {
+     "end": 408,
      "printed": "27.2",
      "row": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
      "source_digest_kind": "api-viva",
      "source_sha256": null,
-     "start": 498,
+     "start": 404,
      "value": "27,2"
     },
     {
-     "end": 535,
+     "end": 441,
      "printed": "18.6",
      "row": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue",
      "source_digest_kind": "api-viva",
      "source_sha256": null,
-     "start": 531,
+     "start": 437,
      "value": "18,6"
     },
     {
-     "end": 570,
+     "end": 465,
      "printed": "19.7",
      "row": "hab-ilc-lvho07c-a-pc-rent-mkt-pt-2020",
      "source_body": "content/23 Habitacao/source/eurostat/hb1b-ilc_lvho07c.json",
      "source_sha256": "7310cd96ce090cd8e488c715c0e5c43ae7d7d0833763e4bc4a9fd91c602c7f64",
-     "start": 566,
+     "start": 461,
      "value": "19.7"
     },
     {
-     "end": 629,
+     "end": 508,
+     "printed": "39.7",
+     "row": "hab-ilc-lvho02-a-total-total-own-nl-pc-pt-2025",
+     "source_body": "content/23 Habitacao/source/eurostat/ilc_lvho02.json",
+     "source_sha256": "ea4dcaa450b9a2b599d456b0bcbb6c5ebd0c6faaf90116762aaa74f59d0b3894",
+     "start": 504,
+     "value": "39.7"
+    },
+    {
+     "end": 551,
+     "printed": "1.3",
+     "row": "hab-ilc-lvho07c-a-pc-own-nl-pt-2025",
+     "source_body": "content/23 Habitacao/source/eurostat/hb1b-ilc_lvho07c.json",
+     "source_sha256": "7310cd96ce090cd8e488c715c0e5c43ae7d7d0833763e4bc4a9fd91c602c7f64",
+     "start": 548,
+     "value": "1.3"
+    },
+    {
+     "end": 598,
      "printed": "28.8",
      "row": "hab-yth-demo-030-a-avg-t-pt-2025",
      "source_body": "content/23 Habitacao/source/eurostat/yth_demo_030.json",
      "source_sha256": "0e73a05402f94eace4fa33981b9f2e770a27d289fb0af7b91ef68c9e2bec244b",
-     "start": 625,
+     "start": 594,
      "value": "28.8"
     },
     {
-     "end": 660,
+     "end": 629,
      "printed": "26.3",
      "row": "hab-yth-demo-030-a-avg-t-eu27_2020-2025",
      "source_body": "content/23 Habitacao/source/eurostat/yth_demo_030.json",
      "source_sha256": "0e73a05402f94eace4fa33981b9f2e770a27d289fb0af7b91ef68c9e2bec244b",
-     "start": 656,
+     "start": 625,
      "value": "26.3"
     },
     {
-     "end": 684,
+     "end": 653,
      "printed": "42.1",
      "row": "hab-ilc-lvps08-a-y25-34-t-pc-pt-2025",
      "source_body": "content/23 Habitacao/source/eurostat/ilc_lvps08.json",
      "source_sha256": "678b2197d76cdd853c335e29795f4e8095c1f979f6f52573132c531c9e643f8d",
-     "start": 680,
+     "start": 649,
      "value": "42.1"
     },
     {
-     "end": 801,
+     "end": 770,
      "printed": "30.1",
      "row": "hab-ilc-lvps08-a-y25-34-t-pc-eu27_2020-2025",
      "source_body": "content/23 Habitacao/source/eurostat/ilc_lvps08.json",
      "source_sha256": "678b2197d76cdd853c335e29795f4e8095c1f979f6f52573132c531c9e643f8d",
-     "start": 797,
+     "start": 766,
      "value": "30.1"
     }
    ],
@@ -488,83 +544,101 @@
      "tipo": "valor"
     },
     {
-     "fim": 295,
-     "id": "der-hab-proprietarios-pt-2025",
-     "inicio": 291,
+     "fim": 333,
+     "id": "hab-ilc-lvho02-a-total-total-rent-mkt-pc-pt-2025",
+     "inicio": 329,
      "livro": "HB",
-     "sha256_linha": "7f0a1625f85554289bb376df012711af2d7f983c40fce8b2ad35b08cc8b067bd",
-     "texto": "71.2",
+     "sha256_linha": "cf60b8d6b5cc23c0a802032f3f4796684d1c1aeee660ef093e7942996d99f635",
+     "texto": "16.3",
      "tipo": "valor"
     },
     {
-     "fim": 348,
-     "id": "hab-ilc-lvho02-a-total-total-own-nl-pc-pt-2025",
-     "inicio": 344,
+     "fim": 371,
+     "id": "hab-ilc-lvho02-a-total-total-rent-mkt-pc-eu27_2020-2025",
+     "inicio": 367,
      "livro": "HB",
-     "sha256_linha": "4a5c65c8c5a3ca30dd6c1243e4d12628a5e73598a57da12d0fc5151e08bb568e",
-     "texto": "39.7",
+     "sha256_linha": "ada7a0cfa4e7a6539d0bb26ee9bbc1b84ead8c2392901a1ff90a7e871fa64e8c",
+     "texto": "20.8",
      "tipo": "valor"
     },
     {
-     "fim": 502,
+     "fim": 408,
      "id": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
-     "inicio": 498,
+     "inicio": 404,
      "livro": "SITE",
      "sha256_linha": "cca85ac5aeeef0904bfd7b0100d9f541f8d3b7b44d561b68c934f17242e841b4",
      "texto": "27.2",
      "tipo": "valor"
     },
     {
-     "fim": 535,
+     "fim": 441,
      "id": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue",
-     "inicio": 531,
+     "inicio": 437,
      "livro": "SITE",
      "sha256_linha": "944557ab4c6a0dafdb5a9ef2a5108c4ff6858e41e92abe848d3f42f94323cbab",
      "texto": "18.6",
      "tipo": "valor"
     },
     {
-     "fim": 570,
+     "fim": 465,
      "id": "hab-ilc-lvho07c-a-pc-rent-mkt-pt-2020",
-     "inicio": 566,
+     "inicio": 461,
      "livro": "HB",
      "sha256_linha": "dfc5aeaf9094f20d84c0f21a23e495219f6c73fadbf7f3b2e86218d80753ad1a",
      "texto": "19.7",
      "tipo": "valor"
     },
     {
-     "fim": 629,
+     "fim": 508,
+     "id": "hab-ilc-lvho02-a-total-total-own-nl-pc-pt-2025",
+     "inicio": 504,
+     "livro": "HB",
+     "sha256_linha": "4a5c65c8c5a3ca30dd6c1243e4d12628a5e73598a57da12d0fc5151e08bb568e",
+     "texto": "39.7",
+     "tipo": "valor"
+    },
+    {
+     "fim": 551,
+     "id": "hab-ilc-lvho07c-a-pc-own-nl-pt-2025",
+     "inicio": 548,
+     "livro": "HB",
+     "sha256_linha": "4fb111f4a3981d6ff09ed92ab356d4f2ad91d98efb89d94422fa34db7d9137b3",
+     "texto": "1.3",
+     "tipo": "valor"
+    },
+    {
+     "fim": 598,
      "id": "hab-yth-demo-030-a-avg-t-pt-2025",
-     "inicio": 625,
+     "inicio": 594,
      "livro": "HB",
      "sha256_linha": "9c93b011feb9d608c61356901667d11e775af27a2d63efcd67d84a7b47ea5237",
      "texto": "28.8",
      "tipo": "valor"
     },
     {
-     "fim": 660,
+     "fim": 629,
      "id": "hab-yth-demo-030-a-avg-t-eu27_2020-2025",
-     "inicio": 656,
+     "inicio": 625,
      "livro": "HB",
      "sha256_linha": "b6927eedbc3fde607ddb2208a0630e649a3fe3a5b491cfcb896b570d6f7338ac",
      "texto": "26.3",
      "tipo": "valor"
     },
     {
-     "fim": 684,
+     "fim": 653,
      "id": "hab-ilc-lvps08-a-y25-34-t-pc-pt-2025",
-     "inicio": 680,
+     "inicio": 649,
      "livro": "HB",
-     "sha256_linha": "f69041412c1990e44dca09f5fe26ec0caa2b087d7e8233c1ca808978b21f9f98",
+     "sha256_linha": "27372bb9ba4945692b24bc5873c4f7a498ea4733e25916d25043d6238fa8f3f6",
      "texto": "42.1",
      "tipo": "valor"
     },
     {
-     "fim": 801,
+     "fim": 770,
      "id": "hab-ilc-lvps08-a-y25-34-t-pc-eu27_2020-2025",
-     "inicio": 797,
+     "inicio": 766,
      "livro": "HB",
-     "sha256_linha": "7731eb75f0820b3bdc2847fffe659ed5bd1aeb9c0f17c95e0dd515e134aca008",
+     "sha256_linha": "99b8f877b5bb9683fa6429108caf8de235d1f7475daabacb7afb485c6bce6167",
      "texto": "30.1",
      "tipo": "valor"
     }
@@ -574,17 +648,19 @@
     "hab-ilc-mded01-a-total-total-pc-eu27_2020-2025",
     "hab-ilc-lvho07c-a-pc-total-pt-2025",
     "hab-ilc-lvho07c-a-pc-total-eu27_2020-2025",
-    "der-hab-proprietarios-pt-2025",
-    "hab-ilc-lvho02-a-total-total-own-nl-pc-pt-2025",
+    "hab-ilc-lvho02-a-total-total-rent-mkt-pc-pt-2025",
+    "hab-ilc-lvho02-a-total-total-rent-mkt-pc-eu27_2020-2025",
     "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
     "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue",
     "hab-ilc-lvho07c-a-pc-rent-mkt-pt-2020",
+    "hab-ilc-lvho02-a-total-total-own-nl-pc-pt-2025",
+    "hab-ilc-lvho07c-a-pc-own-nl-pt-2025",
     "hab-yth-demo-030-a-avg-t-pt-2025",
     "hab-yth-demo-030-a-avg-t-eu27_2020-2025",
     "hab-ilc-lvps08-a-y25-34-t-pc-pt-2025",
     "hab-ilc-lvps08-a-y25-34-t-pc-eu27_2020-2025"
    ],
-   "text": "And yet the average Portuguese household spends on housing a smaller share of its income than the Union average (16.3 % against 18.9 %) and the share of the population overburdened, more than forty percent of income on housing, is smaller (6.2 % against 7.7 %). The reason lies in who owns: 71.2 % of the Portuguese live in their own home, and 39.7 % in their own home with no loan, bought or inherited before the rise. The weight falls on those who need a home now: among tenants at market rents, 27.2 % are overburdened, against 18.6 % in the Union, and they were 19.7 % in 2020; and the young leave their parents' home at 28.8 years on average, against 26.3 in the Union, with 42.1 % of those aged twenty-five to thirty-four living with their parents or sharing the household's income, against 30.1 %."
+   "text": "And yet the average Portuguese household spends on housing a smaller share of its income than the Union average (16.3 % against 18.9 %) and the share of the population overburdened, more than forty percent of income on housing, is smaller (6.2 % against 7.7 %). The difference lies with those who rent at market prices: they are 16.3 % of the population in Portugal (20.8 % in the Union), and among them 27.2 % are overburdened, against 18.6 % in the Union and 19.7 % in 2020; among owners with no loan, 39.7 % of the population, the overburden is 1.3 %. The young leave their parents' home at 28.8 years on average, against 26.3 in the Union, with 42.1 % of those aged twenty-five to thirty-four living with their parents or sharing the household's income, against 30.1 %."
   },
   {
    "figures": [
@@ -653,37 +729,37 @@
   {
    "emphasis": [
     {
-     "end": 58,
+     "end": 92,
      "kind": "strong",
      "start": 3
     }
    ],
    "figures": [
     {
-     "end": 216,
+     "end": 250,
      "printed": "16.5",
      "row": "hab-prc-hpi-q-q-total-rch-a-pt-2026-q2",
      "source_body": "content/23 Habitacao/source/eurostat/prc_hpi_q.json",
      "source_sha256": "139967be9abc6524df81b488dbf675ed6f717552e798e0113f758a0fb805083e",
-     "start": 212,
+     "start": 246,
      "value": "16.5"
     },
     {
-     "end": 334,
+     "end": 368,
      "printed": "5.2",
      "row": "hab-prc-hicp-minr-m-rch-a-cp041-pt-2026-09",
      "source_body": "content/23 Habitacao/source/eurostat/prc_hicp_minr.json",
      "source_sha256": "bd654062c2749aec3ad455ed1eab8ea3a1234caa73f45dd5a51890e883d68c70",
-     "start": 331,
+     "start": 365,
      "value": "5.2"
     },
     {
-     "end": 374,
+     "end": 408,
      "printed": "2.9",
      "row": "hab-prc-hicp-minr-m-rch-a-cp041-eu27_2020-2026-09",
      "source_body": "content/23 Habitacao/source/eurostat/prc_hicp_minr.json",
      "source_sha256": "bd654062c2749aec3ad455ed1eab8ea3a1234caa73f45dd5a51890e883d68c70",
-     "start": 371,
+     "start": 405,
      "value": "2.9"
     }
    ],
@@ -691,38 +767,38 @@
    "kind": "paragraph",
    "proofs": [
     {
-     "fim": 216,
+     "fim": 250,
      "id": "hab-prc-hpi-q-q-total-rch-a-pt-2026-q2",
-     "inicio": 212,
+     "inicio": 246,
      "livro": "HB",
-     "sha256_linha": "75ca3c1830a96d7ffc8fe7251da704bc8a7a7cbb8d1b10c88de21d17700f6687",
+     "sha256_linha": "4800aaec62d84613f2053b67c12376cfc94ecde6a3ebbcbec69e2fd3aa6bc928",
      "texto": "16.5",
      "tipo": "valor"
     },
     {
-     "fim": 334,
+     "fim": 368,
      "id": "hab-prc-hicp-minr-m-rch-a-cp041-pt-2026-09",
-     "inicio": 331,
+     "inicio": 365,
      "livro": "HB",
-     "sha256_linha": "6f43d5730e5a505b417253502111b6992327ce08e7757f982d4c0c8cee8cfd68",
+     "sha256_linha": "aba5d202c3f59742f536617951fb04fc3f00395f54a1a931222d76d24f5d3354",
      "texto": "5.2",
      "tipo": "valor"
     },
     {
-     "fim": 361,
+     "fim": 395,
      "id": "hab-prc-hicp-minr-m-rch-a-cp041-pt-2026-09",
-     "inicio": 347,
+     "inicio": 381,
      "livro": "HB",
-     "sha256_linha": "6f43d5730e5a505b417253502111b6992327ce08e7757f982d4c0c8cee8cfd68",
+     "sha256_linha": "aba5d202c3f59742f536617951fb04fc3f00395f54a1a931222d76d24f5d3354",
      "texto": "September 2026",
      "tipo": "periodo"
     },
     {
-     "fim": 374,
+     "fim": 408,
      "id": "hab-prc-hicp-minr-m-rch-a-cp041-eu27_2020-2026-09",
-     "inicio": 371,
+     "inicio": 405,
      "livro": "HB",
-     "sha256_linha": "57c8dec0c5853f49d1bc552528c6b3a3c14de87bd605a62b85f1d8de1862d890",
+     "sha256_linha": "b86461e703ee6e8ee19fc849426558667903b04481e6fb69ea6562104a498025",
      "texto": "2.9",
      "tipo": "valor"
     }
@@ -732,7 +808,7 @@
     "hab-prc-hicp-minr-m-rch-a-cp041-pt-2026-09",
     "hab-prc-hicp-minr-m-rch-a-cp041-eu27_2020-2026-09"
    ],
-   "text": "1. The problem is price, and it is the worst in the Union. In the two Eurostat indices that compare the twenty-seven, real prices since 2015 and prices against income, Portugal is in first place, and the rise of 16.5 % in the second quarter of 2026 is the largest among the twenty-six member states with quarterly data. Rents rise 5.2 % a year in September 2026, against 2.9 % in the Union."
+   "text": "1. The problem is the rise in prices: net of inflation, the largest in the Union since 2015. In the two Eurostat indices that compare the twenty-seven since 2015, real prices and prices against income, Portugal is in first place, and the rise of 16.5 % in the second quarter of 2026 is the largest among the twenty-six member states with quarterly data. Rents rise 5.2 % a year in September 2026, against 2.9 % in the Union."
   },
   {
    "emphasis": [
@@ -762,31 +838,49 @@
      "value": "6.2"
     },
     {
-     "end": 235,
-     "printed": "27.2",
-     "row": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
-     "source_digest_kind": "api-viva",
-     "source_sha256": null,
-     "start": 231,
-     "value": "27,2"
-    },
-    {
-     "end": 242,
-     "printed": "7.5",
-     "row": "der-hab-sobrecarga-inquilinos-pt-2020-2025",
-     "source_digest_kind": "derivado",
-     "source_sha256": null,
-     "start": 239,
-     "value": "7.5"
-    },
-    {
-     "end": 279,
+     "end": 189,
      "printed": "16.3",
      "row": "hab-ilc-lvho02-a-total-total-rent-mkt-pc-pt-2025",
      "source_body": "content/23 Habitacao/source/eurostat/ilc_lvho02.json",
      "source_sha256": "ea4dcaa450b9a2b599d456b0bcbb6c5ebd0c6faaf90116762aaa74f59d0b3894",
-     "start": 275,
+     "start": 185,
      "value": "16.3"
+    },
+    {
+     "end": 215,
+     "printed": "27.2",
+     "row": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 211,
+     "value": "27,2"
+    },
+    {
+     "end": 247,
+     "printed": "7.5",
+     "row": "der-hab-sobrecarga-inquilinos-pt-2020-2025",
+     "source_digest_kind": "derivado",
+     "source_sha256": null,
+     "start": 244,
+     "value": "7.5"
+    },
+    {
+     "end": 302,
+     "printed": "1.3",
+     "row": "hab-ilc-lvho07c-a-pc-own-nl-pt-2025",
+     "source_body": "content/23 Habitacao/source/eurostat/hb1b-ilc_lvho07c.json",
+     "source_sha256": "7310cd96ce090cd8e488c715c0e5c43ae7d7d0833763e4bc4a9fd91c602c7f64",
+     "start": 299,
+     "value": "1.3"
+    },
+    {
+     "end": 337,
+     "printed": "3.0",
+     "row": "hab-ilc-lvho07c-a-pc-own-l-pt-2025",
+     "source_body": "content/23 Habitacao/source/eurostat/hb1b-ilc_lvho07c.json",
+     "source_sha256": "7310cd96ce090cd8e488c715c0e5c43ae7d7d0833763e4bc4a9fd91c602c7f64",
+     "start": 334,
+     "value": "3.0"
     }
    ],
    "i": 8,
@@ -811,85 +905,132 @@
      "tipo": "valor"
     },
     {
-     "fim": 235,
+     "fim": 189,
+     "id": "hab-ilc-lvho02-a-total-total-rent-mkt-pc-pt-2025",
+     "inicio": 185,
+     "livro": "HB",
+     "sha256_linha": "cf60b8d6b5cc23c0a802032f3f4796684d1c1aeee660ef093e7942996d99f635",
+     "texto": "16.3",
+     "tipo": "valor"
+    },
+    {
+     "fim": 215,
      "id": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
-     "inicio": 231,
+     "inicio": 211,
      "livro": "SITE",
      "sha256_linha": "cca85ac5aeeef0904bfd7b0100d9f541f8d3b7b44d561b68c934f17242e841b4",
      "texto": "27.2",
      "tipo": "valor"
     },
     {
-     "fim": 242,
+     "fim": 247,
      "id": "der-hab-sobrecarga-inquilinos-pt-2020-2025",
-     "inicio": 239,
+     "inicio": 244,
      "livro": "HB",
      "sha256_linha": "5239add39724ec06c5748bb603804e337ca4915364d481028e4db1e15fd9e060",
      "texto": "7.5",
      "tipo": "valor"
     },
     {
-     "fim": 279,
-     "id": "hab-ilc-lvho02-a-total-total-rent-mkt-pc-pt-2025",
-     "inicio": 275,
+     "fim": 302,
+     "id": "hab-ilc-lvho07c-a-pc-own-nl-pt-2025",
+     "inicio": 299,
      "livro": "HB",
-     "sha256_linha": "cf60b8d6b5cc23c0a802032f3f4796684d1c1aeee660ef093e7942996d99f635",
-     "texto": "16.3",
+     "sha256_linha": "4fb111f4a3981d6ff09ed92ab356d4f2ad91d98efb89d94422fa34db7d9137b3",
+     "texto": "1.3",
+     "tipo": "valor"
+    },
+    {
+     "fim": 337,
+     "id": "hab-ilc-lvho07c-a-pc-own-l-pt-2025",
+     "inicio": 334,
+     "livro": "HB",
+     "sha256_linha": "262c2f4e5489c7524b53bc9c4a2e574bbd2f19f8b6b5ed49c36dbd2cfd218caa",
+     "texto": "3.0",
      "tipo": "valor"
     }
    ],
    "source_rows": [
     "hab-ilc-lvho07c-a-pc-total-pt-2015",
     "hab-ilc-lvho07c-a-pc-total-pt-2025",
+    "hab-ilc-lvho02-a-total-total-rent-mkt-pc-pt-2025",
     "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
     "der-hab-sobrecarga-inquilinos-pt-2020-2025",
-    "hab-ilc-lvho02-a-total-total-rent-mkt-pc-pt-2025"
+    "hab-ilc-lvho07c-a-pc-own-nl-pt-2025",
+    "hab-ilc-lvho07c-a-pc-own-l-pt-2025"
    ],
-   "text": "2. The average hides who pays. Total overburden is lower than in the Union and has fallen since 2015 (from 9.1 % to 6.2 %), because most of the country owns its home and has no loan. Among tenants at market rents the overburden is 27.2 %, 7.5 points above 2020, and they are 16.3 % of the population. Portugal's housing problem is the problem of those entering the market: the young, those who change city, those who arrive."
+   "text": "2. The average hides who pays. Total overburden is lower than in the Union and has fallen since 2015 (from 9.1 % to 6.2 %). Those who bear it are above all the tenants at market rents, 16.3 % of the population: 27.2 % of them are overburdened, 7.5 points above 2020; among owners with no loan it is 1.3 % and among owners with a loan 3.0 %. Portugal's housing problem is that of those entering the market now: the young, those who change city, those who arrive."
   },
   {
    "emphasis": [
     {
-     "end": 75,
+     "end": 130,
      "kind": "strong",
      "start": 3
     }
    ],
    "figures": [
     {
-     "end": 80,
+     "end": 135,
      "printed": "42.1",
      "row": "hab-ilc-lvps08-a-y25-34-t-pc-pt-2025",
      "source_body": "content/23 Habitacao/source/eurostat/ilc_lvps08.json",
      "source_sha256": "678b2197d76cdd853c335e29795f4e8095c1f979f6f52573132c531c9e643f8d",
-     "start": 76,
+     "start": 131,
      "value": "42.1"
     },
     {
-     "end": 194,
+     "end": 249,
      "printed": "12.0",
      "row": "der-hab-jovens-com-pais-pt-vs-eu-2025",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 190,
+     "start": 245,
      "value": "12.0"
     },
     {
-     "end": 266,
+     "end": 351,
+     "printed": "62.3",
+     "row": "hab-ilc-lvps08-a-y25-34-t-pc-hr-2025",
+     "source_body": "content/23 Habitacao/source/eurostat/ilc_lvps08.json",
+     "source_sha256": "678b2197d76cdd853c335e29795f4e8095c1f979f6f52573132c531c9e643f8d",
+     "start": 347,
+     "value": "62.3"
+    },
+    {
+     "end": 370,
+     "printed": "52.3",
+     "row": "hab-ilc-lvps08-a-y25-34-t-pc-pt-2020",
+     "source_body": "content/23 Habitacao/source/eurostat/ilc_lvps08.json",
+     "source_sha256": "678b2197d76cdd853c335e29795f4e8095c1f979f6f52573132c531c9e643f8d",
+     "start": 366,
+     "value": "52.3"
+    },
+    {
+     "end": 414,
      "printed": "28.8",
      "row": "hab-yth-demo-030-a-avg-t-pt-2025",
      "source_body": "content/23 Habitacao/source/eurostat/yth_demo_030.json",
      "source_sha256": "0e73a05402f94eace4fa33981b9f2e770a27d289fb0af7b91ef68c9e2bec244b",
-     "start": 262,
+     "start": 410,
      "value": "28.8"
     },
     {
-     "end": 303,
+     "end": 487,
+     "printed": "2.5",
+     "row": "der-hab-saida-pt-vs-eu-2025",
+     "source_digest_kind": "derivado",
+     "source_sha256": null,
+     "start": 484,
+     "value": "2.5"
+    },
+    {
+     "end": 552,
      "printed": "28.9",
      "row": "hab-yth-demo-030-a-avg-t-pt-2015",
      "source_body": "content/23 Habitacao/source/eurostat/yth_demo_030.json",
      "source_sha256": "0e73a05402f94eace4fa33981b9f2e770a27d289fb0af7b91ef68c9e2bec244b",
-     "start": 299,
+     "start": 548,
      "value": "28.9"
     }
    ],
@@ -897,36 +1038,63 @@
    "kind": "paragraph",
    "proofs": [
     {
-     "fim": 80,
+     "fim": 135,
      "id": "hab-ilc-lvps08-a-y25-34-t-pc-pt-2025",
-     "inicio": 76,
+     "inicio": 131,
      "livro": "HB",
-     "sha256_linha": "f69041412c1990e44dca09f5fe26ec0caa2b087d7e8233c1ca808978b21f9f98",
+     "sha256_linha": "27372bb9ba4945692b24bc5873c4f7a498ea4733e25916d25043d6238fa8f3f6",
      "texto": "42.1",
      "tipo": "valor"
     },
     {
-     "fim": 194,
+     "fim": 249,
      "id": "der-hab-jovens-com-pais-pt-vs-eu-2025",
-     "inicio": 190,
+     "inicio": 245,
      "livro": "HB",
      "sha256_linha": "5523b540c6135ab72d4629478af2be1e4d601d5b2f499e39cfd6f06bd5f1eb1a",
      "texto": "12.0",
      "tipo": "valor"
     },
     {
-     "fim": 266,
+     "fim": 351,
+     "id": "hab-ilc-lvps08-a-y25-34-t-pc-hr-2025",
+     "inicio": 347,
+     "livro": "HB",
+     "sha256_linha": "85f58c843049e259385a15b146344819c7c4612ef6ee7f7e5af57f05750b6052",
+     "texto": "62.3",
+     "tipo": "valor"
+    },
+    {
+     "fim": 370,
+     "id": "hab-ilc-lvps08-a-y25-34-t-pc-pt-2020",
+     "inicio": 366,
+     "livro": "HB",
+     "sha256_linha": "722aec897072d52e1e9b89592912d27a57efc112da81b611ca618b7a8f0bb59c",
+     "texto": "52.3",
+     "tipo": "valor"
+    },
+    {
+     "fim": 414,
      "id": "hab-yth-demo-030-a-avg-t-pt-2025",
-     "inicio": 262,
+     "inicio": 410,
      "livro": "HB",
      "sha256_linha": "9c93b011feb9d608c61356901667d11e775af27a2d63efcd67d84a7b47ea5237",
      "texto": "28.8",
      "tipo": "valor"
     },
     {
-     "fim": 303,
+     "fim": 487,
+     "id": "der-hab-saida-pt-vs-eu-2025",
+     "inicio": 484,
+     "livro": "HB",
+     "sha256_linha": "ac587822561897313d702496db70a236b20b0657aa422859cabf9a2f572f6c18",
+     "texto": "2.5",
+     "tipo": "valor"
+    },
+    {
+     "fim": 552,
      "id": "hab-yth-demo-030-a-avg-t-pt-2015",
-     "inicio": 299,
+     "inicio": 548,
      "livro": "HB",
      "sha256_linha": "ce4a3cee33c4c614d7d7709cc42b0b531cf9e075adf622714267ccb4cf688514",
      "texto": "28.9",
@@ -936,54 +1104,66 @@
    "source_rows": [
     "hab-ilc-lvps08-a-y25-34-t-pc-pt-2025",
     "der-hab-jovens-com-pais-pt-vs-eu-2025",
+    "hab-ilc-lvps08-a-y25-34-t-pc-hr-2025",
+    "hab-ilc-lvps08-a-y25-34-t-pc-pt-2020",
     "hab-yth-demo-030-a-avg-t-pt-2025",
+    "der-hab-saida-pt-vs-eu-2025",
     "hab-yth-demo-030-a-avg-t-pt-2015"
    ],
-   "text": "3. The young stay in their parents' home longer than almost every European. 42.1 % of the Portuguese aged twenty-five to thirty-four live with their parents or share the household's income, 12.0 points above the Union; only Croatia has more. The age of leaving, 28.8 years, is where it was in 2015 (28.9)."
+   "text": "3. The young leave home late: the ninth highest share in the Union living with their parents, and the sixth latest age of leaving. 42.1 % of the Portuguese aged twenty-five to thirty-four live with their parents or share the household's income, 12.0 points above the Union and the ninth highest value of the twenty-seven (Croatia has the highest, 62.3 %); they were 52.3 % in 2020. The average age of leaving, 28.8 years, is the sixth latest of the twenty-seven, level with Slovenia, 2.5 years after the Union average, and is where it was in 2015 (28.9)."
   },
   {
    "emphasis": [
     {
-     "end": 56,
+     "end": 103,
      "kind": "strong",
      "start": 3
     }
    ],
    "figures": [
     {
-     "end": 68,
-     "printed": "3.8",
-     "row": "der-hab-licencas-por-mil-pt-2025",
-     "source_digest_kind": "derivado",
-     "source_sha256": null,
-     "start": 65,
-     "value": "3.8"
-    },
-    {
-     "end": 164,
-     "printed": "3.6",
-     "row": "der-hab-licencas-por-mil-eu-2025",
-     "source_digest_kind": "derivado",
-     "source_sha256": null,
-     "start": 161,
-     "value": "3.6"
-    },
-    {
-     "end": 214,
-     "printed": "723,215",
-     "row": "hab-ine-vagos-total",
-     "source_body": "content/23 Habitacao/source/ine-casas-vagas.html",
-     "source_sha256": "59195c01c07d9c46fdd79176c1be00c2b63e4395a81bd98df63938b530e3e69d",
-     "start": 207,
-     "value": "723 215"
-    },
-    {
-     "end": 237,
+     "end": 77,
      "printed": "12.1",
      "row": "hab-ine-censos-0012517-0",
      "source_body": "content/23 Habitacao/source/ine-retoma-0012517.json",
      "source_sha256": "9b4a971bfa569a02314680134b0be2d3c87c30948f29a3066178fabe140d0393",
-     "start": 233,
+     "start": 73,
+     "value": "12,1"
+    },
+    {
+     "end": 115,
+     "printed": "3.8",
+     "row": "der-hab-licencas-por-mil-pt-2025",
+     "source_digest_kind": "derivado",
+     "source_sha256": null,
+     "start": 112,
+     "value": "3.8"
+    },
+    {
+     "end": 211,
+     "printed": "3.6",
+     "row": "der-hab-licencas-por-mil-eu-2025",
+     "source_digest_kind": "derivado",
+     "source_sha256": null,
+     "start": 208,
+     "value": "3.6"
+    },
+    {
+     "end": 261,
+     "printed": "723,215",
+     "row": "hab-ine-vagos-total",
+     "source_body": "content/23 Habitacao/source/ine-casas-vagas.html",
+     "source_sha256": "59195c01c07d9c46fdd79176c1be00c2b63e4395a81bd98df63938b530e3e69d",
+     "start": 254,
+     "value": "723 215"
+    },
+    {
+     "end": 284,
+     "printed": "12.1",
+     "row": "hab-ine-censos-0012517-0",
+     "source_body": "content/23 Habitacao/source/ine-retoma-0012517.json",
+     "source_sha256": "9b4a971bfa569a02314680134b0be2d3c87c30948f29a3066178fabe140d0393",
+     "start": 280,
      "value": "12,1"
     }
    ],
@@ -991,36 +1171,45 @@
    "kind": "paragraph",
    "proofs": [
     {
-     "fim": 68,
+     "fim": 77,
+     "id": "hab-ine-censos-0012517-0",
+     "inicio": 73,
+     "livro": "HB",
+     "sha256_linha": "0bab914bef0cfac374c9fc41f242ade77367c0c9990d2969dc4575025f30b99a",
+     "texto": "12.1",
+     "tipo": "valor"
+    },
+    {
+     "fim": 115,
      "id": "der-hab-licencas-por-mil-pt-2025",
-     "inicio": 65,
+     "inicio": 112,
      "livro": "HB",
      "sha256_linha": "66533e9c398f875d9ab1ae3acc83ad3b0e4765b78131f50593f7b683d22dda5c",
      "texto": "3.8",
      "tipo": "valor"
     },
     {
-     "fim": 164,
+     "fim": 211,
      "id": "der-hab-licencas-por-mil-eu-2025",
-     "inicio": 161,
+     "inicio": 208,
      "livro": "HB",
      "sha256_linha": "4d28ed7b80e9f3dd1085d0eefbc84a1d78b85bdf5fe3c9bd4a8ab2a78cae7490",
      "texto": "3.6",
      "tipo": "valor"
     },
     {
-     "fim": 214,
+     "fim": 261,
      "id": "hab-ine-vagos-total",
-     "inicio": 207,
+     "inicio": 254,
      "livro": "HB",
      "sha256_linha": "9aaa49f93ddf48ffead156131eebf9695147a4aac9a465d06f354162fc5acebf",
      "texto": "723,215",
      "tipo": "valor"
     },
     {
-     "fim": 237,
+     "fim": 284,
      "id": "hab-ine-censos-0012517-0",
-     "inicio": 233,
+     "inicio": 280,
      "livro": "HB",
      "sha256_linha": "0bab914bef0cfac374c9fc41f242ade77367c0c9990d2969dc4575025f30b99a",
      "texto": "12.1",
@@ -1034,8 +1223,8 @@
        "livro": "HB"
       }
      ],
-     "fim": 557,
-     "inicio": 465,
+     "fim": 604,
+     "inicio": 512,
      "texto": "cerca de 375 mil alojamentos familiares clássicos, dos quais quase 250 mil em boas condições",
      "tipo": "literal"
     },
@@ -1047,8 +1236,8 @@
        "livro": "HB"
       }
      ],
-     "fim": 604,
-     "inicio": 567,
+     "fim": 651,
+     "inicio": 614,
      "texto": "sem intenção de venda ou arrendamento",
      "tipo": "literal"
     },
@@ -1060,8 +1249,8 @@
        "livro": "HB"
       }
      ],
-     "fim": 616,
-     "inicio": 613,
+     "fim": 663,
+     "inicio": 660,
      "texto": "375",
      "tipo": "literal"
     },
@@ -1073,55 +1262,46 @@
        "livro": "HB"
       }
      ],
-     "fim": 656,
-     "inicio": 653,
+     "fim": 703,
+     "inicio": 700,
      "texto": "250",
      "tipo": "literal"
-    },
-    {
-     "fim": 729,
-     "id": "hab-arrendamento-exposicao-vagos",
-     "inicio": 729,
-     "livro": "HB",
-     "sha256_linha": "a811e6bd44b6d597830fc5e5705681072eb0e3c3fc3b9fee3a8a2509fe1b070e",
-     "texto": "",
-     "tipo": "cita"
     }
    ],
    "source_rows": [
+    "hab-ine-censos-0012517-0",
     "der-hab-licencas-por-mil-pt-2025",
     "der-hab-licencas-por-mil-eu-2025",
     "hab-ine-vagos-total",
-    "hab-ine-censos-0012517-0",
     "hab-arrendamento-exposicao-vagos"
    ],
-   "text": "4. Supply is not smaller than in Europe, per inhabitant. In 2025 3.8 dwellings per thousand inhabitants were licensed in Portugal (a provisional value), against 3.6 in the Union; and the 2021 Census counted 723,215 vacant dwellings, 12.1 % of the stock. How many of those are fit to live in, no published statistic in this study's documents says; the only estimate is the Government's own, in the explanatory memorandum of the rental reform, from the 2021 Census: «cerca de 375 mil alojamentos familiares clássicos, dos quais quase 250 mil em boas condições» vacant «sem intenção de venda ou arrendamento» (about 375 thousand dwellings, of which almost 250 thousand in good condition, vacant with no intention of sale or rental)."
+   "text": "4. Building permits per inhabitant are not behind the Union average, and 12.1 % of the stock is vacant. In 2025 3.8 dwellings per thousand inhabitants were licensed in Portugal (a provisional value), against 3.6 in the Union; and the 2021 Census counted 723,215 vacant dwellings, 12.1 % of the stock. How many of those are fit to live in, no published statistic in this study's documents says; the only estimate is the Government's own, in the explanatory memorandum of the rental reform, from the 2021 Census: «cerca de 375 mil alojamentos familiares clássicos, dos quais quase 250 mil em boas condições» vacant «sem intenção de venda ou arrendamento» (about 375 thousand dwellings, of which almost 250 thousand in good condition, vacant with no intention of sale or rental)."
   },
   {
    "emphasis": [
     {
-     "end": 90,
+     "end": 101,
      "kind": "strong",
      "start": 3
     }
    ],
    "figures": [
     {
-     "end": 122,
+     "end": 133,
      "printed": "2,003",
      "row": "hab-oe-habitacao-orcamento",
      "source_body": "content/23 Habitacao/source/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 117,
+     "start": 128,
      "value": "2 003"
     },
     {
-     "end": 189,
+     "end": 200,
      "printed": "−303",
      "row": "der-hab-fiscal-2027",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 185,
+     "start": 196,
      "value": "-303"
     }
    ],
@@ -1129,18 +1309,18 @@
    "kind": "paragraph",
    "proofs": [
     {
-     "fim": 122,
+     "fim": 133,
      "id": "hab-oe-habitacao-orcamento",
-     "inicio": 117,
+     "inicio": 128,
      "livro": "HB",
      "sha256_linha": "952b4769e6685476003c6a94323735d3e166f0319c8bdcab55cbcba1afe3dec8",
      "texto": "2,003",
      "tipo": "valor"
     },
     {
-     "fim": 189,
+     "fim": 200,
      "id": "der-hab-fiscal-2027",
-     "inicio": 185,
+     "inicio": 196,
      "livro": "HB",
      "sha256_linha": "337a3506ef55ac89f83ef99ed2ce0f2758b8beef0d3c883117aaf3947656bb23",
      "texto": "−303",
@@ -1154,8 +1334,8 @@
        "livro": "HB"
       }
      ],
-     "fim": 264,
-     "inicio": 238,
+     "fim": 275,
+     "inicio": 249,
      "texto": "maior liberdade contratual",
      "tipo": "literal"
     },
@@ -1167,19 +1347,10 @@
        "livro": "HB"
       }
      ],
-     "fim": 350,
-     "inicio": 298,
+     "fim": 361,
+     "inicio": 309,
      "texto": "simplificação e aceleração dos mecanismos de despejo",
      "tipo": "literal"
-    },
-    {
-     "fim": 429,
-     "id": "hab-governo-arrendamento",
-     "inicio": 429,
-     "livro": "HB",
-     "sha256_linha": "900786295af0e6657f7dcd209037a3742def62cb56a7d36e9d7815e674817f82",
-     "texto": "",
-     "tipo": "cita"
     }
    ],
    "source_rows": [
@@ -1187,7 +1358,7 @@
     "der-hab-fiscal-2027",
     "hab-governo-arrendamento"
    ],
-   "text": "5. What the State does is small next to the problem, and nobody has measured what it does. The housing programme has 2,003 million euros in 2027; the two tax measures have an impact of −303 million on revenue; the rental reform promises «maior liberdade contratual» (more contractual freedom) and «simplificação e aceleração dos mecanismos de despejo» (simpler and faster eviction mechanisms), in the Council of Ministers' words. None of the documents assesses the effect on prices or rents."
+   "text": "5. What the State does is small next to the problem, and none of its documents measures what it does. The housing programme has 2,003 million euros in 2027; the two tax measures have an impact of −303 million on revenue; the rental reform promises «maior liberdade contratual» (more contractual freedom) and «simplificação e aceleração dos mecanismos de despejo» (simpler and faster eviction mechanisms), in the Council of Ministers' words. None of the documents assesses the effect on prices or rents."
   },
   {
    "emphasis": [
@@ -1199,67 +1370,85 @@
    ],
    "figures": [
     {
-     "end": 236,
+     "end": 324,
      "printed": "27.2",
      "row": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
      "source_digest_kind": "api-viva",
      "source_sha256": null,
-     "start": 232,
+     "start": 320,
      "value": "27,2"
+    },
+    {
+     "end": 366,
+     "printed": "6.2",
+     "row": "hab-ilc-lvho07c-a-pc-total-pt-2025",
+     "source_body": "content/23 Habitacao/source/eurostat/hb1b-ilc_lvho07c.json",
+     "source_sha256": "7310cd96ce090cd8e488c715c0e5c43ae7d7d0833763e4bc4a9fd91c602c7f64",
+     "start": 363,
+     "value": "6.2"
     }
    ],
    "i": 12,
    "kind": "paragraph",
    "proofs": [
     {
-     "fim": 236,
+     "fim": 324,
      "id": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
-     "inicio": 232,
+     "inicio": 320,
      "livro": "SITE",
      "sha256_linha": "cca85ac5aeeef0904bfd7b0100d9f541f8d3b7b44d561b68c934f17242e841b4",
      "texto": "27.2",
      "tipo": "valor"
     },
     {
-     "fim": 403,
+     "fim": 366,
+     "id": "hab-ilc-lvho07c-a-pc-total-pt-2025",
+     "inicio": 363,
+     "livro": "HB",
+     "sha256_linha": "49e75eb8b4641626b679424eb4f124749aba0bd73691af72f747a6dbff276b0d",
+     "texto": "6.2",
+     "tipo": "valor"
+    },
+    {
+     "fim": 479,
      "id": "hab-imprensa-feridos37",
-     "inicio": 371,
+     "inicio": 447,
      "livro": "HB",
      "sha256_linha": "92de92ef35ee2792043a57f726143360f4b5f3415a007f099e0957a598ef3995",
      "texto": "37 feridos, dois em estado grave",
      "tipo": "excerto"
     },
     {
-     "fim": 462,
+     "fim": 538,
      "id": "hab-imprensa-feridos39",
-     "inicio": 433,
+     "inicio": 509,
      "livro": "HB",
      "sha256_linha": "fcc3408d26aaa193d8805759f6a7a3447dad39e0da5159943ea0a9f77ae167bb",
      "texto": "39 feridos, dois deles graves",
      "tipo": "excerto"
     },
     {
-     "fim": 519,
+     "fim": 595,
      "id": "hab-imprensa-feridos35",
-     "inicio": 497,
+     "inicio": 573,
      "livro": "HB",
      "sha256_linha": "26da9aa44a0f36039e1afad2e75be3c88f7ac47092c2cca1d6746ffb9d1e6ce2",
      "texto": "35 feridos, pelo menos",
      "tipo": "excerto"
     },
     {
-     "fim": 585,
+     "fim": 661,
      "id": "hab-imprensa-feridos35",
-     "inicio": 534,
+     "inicio": 610,
      "livro": "HB",
      "sha256_linha": "26da9aa44a0f36039e1afad2e75be3c88f7ac47092c2cca1d6746ffb9d1e6ce2",
      "texto": "José Soeiro, of the Left Bloc's national leadership",
      "tipo": "atribuicao"
     },
     {
-     "fim": 616,
+     "fim": 708,
      "id": "hab-imprensa-psp-ferido",
-     "inicio": 593,
+     "inicio": 685,
      "livro": "HB",
      "sha256_linha": "f239d545183a6b052a4fe2e77f87a579d01bc091b0fed2d8fbe4b6cfb0fb3df1",
      "texto": "um polícia ficou ferido",
@@ -1270,12 +1459,13 @@
     "hab-imprensa-igai",
     "hab-imprensa-renda-metade",
     "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
+    "hab-ilc-lvho07c-a-pc-total-pt-2025",
     "hab-imprensa-feridos37",
     "hab-imprensa-feridos39",
     "hab-imprensa-feridos35",
     "hab-imprensa-psp-ferido"
    ],
-   "text": "6. The street and the numbers. The platform that called the October demonstrations says that «a renda consome metade do salário» (rent eats half the wage); the numbers say that is true for a part of the tenants at market rents (the 27.2 % overburdened spend more than forty percent) and not for the country's average. The injured of the police intervention in Porto are «37 feridos, dois em estado grave» according to the movement, «39 feridos, dois deles graves» according to the organisers and «35 feridos, pelo menos» according to José Soeiro, of the Left Bloc's national leadership, with «um polícia ficou ferido» according to the Public Security Police (PSP), all through the press; the Inspectorate-General of Home Affairs (IGAI) opened a case. This study neither adds nor chooses a count."
+   "text": "6. The street and the numbers. The platform that called the October demonstrations says that «a renda consome metade do salário» (rent eats half the wage); this study's numbers do not measure rent against wages: they measure how many spend more than forty percent of household income on all housing costs, and those are 27.2 % of tenants at market rents, against 6.2 % of the whole population. The injured of the police intervention in Porto are «37 feridos, dois em estado grave» according to the movement, «39 feridos, dois deles graves» according to the organisers and «35 feridos, pelo menos» according to José Soeiro, of the Left Bloc's national leadership (the Left Bloc), with «um polícia ficou ferido» according to the Public Security Police (PSP), all through the press; the Inspectorate-General of Home Affairs (IGAI) opened a case. This study neither adds nor chooses a count."
   },
   {
    "emphasis": [
@@ -1292,7 +1482,7 @@
    "source_rows": [
     "hab-be-despejos"
    ],
-   "text": "7. What nobody can know from the documents. How many vacant homes are habitable, beyond the Government's estimate from the 2021 Census; whether evictions rose (the Left Bloc, BE, says forty percent in 2025; there is no statistical series among this study's sources); how much income each tenth of the population spends on housing; what the 2026 and 2027 measures have done so far."
+   "text": "7. What nobody can know from the documents. How many vacant homes are habitable, beyond the Government's estimate from the 2021 Census; whether evictions rose (the BE says forty percent in 2025; there is no statistical series among this study's sources); how much income each tenth of the population spends on housing; what the 2026 and 2027 measures have done so far."
   },
   {
    "figures": [],
@@ -1307,17 +1497,7 @@
    "figures": [],
    "i": 15,
    "kind": "paragraph",
-   "proofs": [
-    {
-     "fim": 183,
-     "id": "hab-arrendamento-exposicao-vagos",
-     "inicio": 183,
-     "livro": "HB",
-     "sha256_linha": "a811e6bd44b6d597830fc5e5705681072eb0e3c3fc3b9fee3a8a2509fe1b070e",
-     "texto": "",
-     "tipo": "cita"
-    }
-   ],
+   "proofs": [],
    "source_rows": [
     "hab-arrendamento-exposicao-vagos"
    ],
@@ -1488,7 +1668,7 @@
      "id": "hab-prc-hpi-q-q-total-i15-q-pt-2026-q2",
      "inicio": 72,
      "livro": "HB",
-     "sha256_linha": "7e5f7d9e1a72889fcec564c2142b20f585cad8a66824cfbd490d638c077f1c8e",
+     "sha256_linha": "479979bb2935008f971c9c9c44dd2d9c3682a1c3d38ae6d140d6ba2606f200d6",
      "texto": "301.43",
      "tipo": "valor"
     },
@@ -1497,7 +1677,7 @@
      "id": "hab-prc-hpi-q-q-total-i15-q-eu27_2020-2026-q2",
      "inicio": 128,
      "livro": "HB",
-     "sha256_linha": "9978a12bc92ef1fb07e90009642d863fcf6aad029fb9c7f8dfc1720cbd6525c2",
+     "sha256_linha": "30f1099b0f7b93ace9e2ebf3d9bc0b04dbd5f3f568632d70c30165f79e142eac",
      "texto": "168.56",
      "tipo": "valor"
     },
@@ -1506,7 +1686,7 @@
      "id": "hab-prc-hpi-q-q-total-i15-q-fi-2026-q2",
      "inicio": 167,
      "livro": "HB",
-     "sha256_linha": "31062edb8aaeb5a52687b322b47fd985b8d761c54b542d7f299cf73d2188dce0",
+     "sha256_linha": "5a6b8a3abd656b39b410afcd9371c2a17d1faf8f5ffc18a708756145adfa0aed",
      "texto": "97.50",
      "tipo": "valor"
     },
@@ -1515,7 +1695,7 @@
      "id": "hab-prc-hpi-q-q-total-i15-q-hu-2026-q2",
      "inicio": 188,
      "livro": "HB",
-     "sha256_linha": "27cd2ee51703a6d2069bc3207992d5734ed6722809b82861870b815979e130c9",
+     "sha256_linha": "e142af5a214502240fcf0841b5b2a561eca027686855ed23103244b7e92fc21b",
      "texto": "389.61",
      "tipo": "valor"
     },
@@ -1524,7 +1704,7 @@
      "id": "hab-prc-hpi-q-q-total-rch-a-pt-2026-q2",
      "inicio": 237,
      "livro": "HB",
-     "sha256_linha": "75ca3c1830a96d7ffc8fe7251da704bc8a7a7cbb8d1b10c88de21d17700f6687",
+     "sha256_linha": "4800aaec62d84613f2053b67c12376cfc94ecde6a3ebbcbec69e2fd3aa6bc928",
      "texto": "16.5",
      "tipo": "valor"
     },
@@ -1533,7 +1713,7 @@
      "id": "hab-prc-hpi-q-q-total-rch-a-eu27_2020-2026-q2",
      "inicio": 386,
      "livro": "HB",
-     "sha256_linha": "0bb37483a6019a9cc689e9dc4887588716c6281e15ed3c40c4280050d9fcea7e",
+     "sha256_linha": "ad277e9bbcc6814a5bfd2201800bd5bcebb0680d8f537d02cf7b8729ffd72ec0",
      "texto": "4.7",
      "tipo": "valor"
     },
@@ -1542,7 +1722,7 @@
      "id": "hab-prc-hpi-q-q-total-rch-a-fi-2026-q2",
      "inicio": 409,
      "livro": "HB",
-     "sha256_linha": "fb06229a4cf93b93c676bf3ea102565cd52c4f7d7847e60f77aa8457da8843e1",
+     "sha256_linha": "d20929c49b21a588fed4d7cf569b1364e00ef83bca767d09e688225e8fcd1bf3",
      "texto": "−2.7",
      "tipo": "valor"
     },
@@ -2102,7 +2282,7 @@
      "id": "hab-prc-hicp-minr-m-rch-a-cp041-pt-2026-09",
      "inicio": 463,
      "livro": "HB",
-     "sha256_linha": "6f43d5730e5a505b417253502111b6992327ce08e7757f982d4c0c8cee8cfd68",
+     "sha256_linha": "aba5d202c3f59742f536617951fb04fc3f00395f54a1a931222d76d24f5d3354",
      "texto": "September 2026",
      "tipo": "periodo"
     },
@@ -2111,7 +2291,7 @@
      "id": "hab-prc-hicp-minr-m-rch-a-cp041-pt-2026-09",
      "inicio": 488,
      "livro": "HB",
-     "sha256_linha": "6f43d5730e5a505b417253502111b6992327ce08e7757f982d4c0c8cee8cfd68",
+     "sha256_linha": "aba5d202c3f59742f536617951fb04fc3f00395f54a1a931222d76d24f5d3354",
      "texto": "5.2",
      "tipo": "valor"
     },
@@ -2120,7 +2300,7 @@
      "id": "hab-prc-hicp-minr-m-rch-a-cp041-eu27_2020-2026-09",
      "inicio": 509,
      "livro": "HB",
-     "sha256_linha": "57c8dec0c5853f49d1bc552528c6b3a3c14de87bd605a62b85f1d8de1862d890",
+     "sha256_linha": "b86461e703ee6e8ee19fc849426558667903b04481e6fb69ea6562104a498025",
      "texto": "2.9",
      "tipo": "valor"
     }
@@ -2552,40 +2732,58 @@
      "value": "7.7"
     },
     {
-     "end": 447,
+     "end": 428,
      "printed": "6.3",
-     "row": "sobrecarga-do-custo-da-habitacao-2025",
-     "source_digest_kind": "api-viva",
-     "source_sha256": null,
-     "start": 444,
-     "value": "6,3"
+     "row": "hab-tespm140-a-pc-pt-2025",
+     "source_body": "content/23 Habitacao/source/eurostat/hb1b-tespm140.json",
+     "source_sha256": "1a6506dbefe39efa0d97ce2fa561bc40e31e7e387a042ba3263a2cee5b6a0a4d",
+     "start": 425,
+     "value": "6.3"
     },
     {
-     "end": 470,
+     "end": 451,
      "printed": "7.7",
-     "row": "sobrecarga-do-custo-da-habitacao-2025-ue",
-     "source_digest_kind": "api-viva",
-     "source_sha256": null,
-     "start": 467,
-     "value": "7,7"
+     "row": "hab-tespm140-a-pc-eu27_2020-2025",
+     "source_body": "content/23 Habitacao/source/eurostat/hb1b-tespm140.json",
+     "source_sha256": "1a6506dbefe39efa0d97ce2fa561bc40e31e7e387a042ba3263a2cee5b6a0a4d",
+     "start": 448,
+     "value": "7.7"
     },
     {
-     "end": 645,
+     "end": 651,
      "printed": "9.1",
      "row": "hab-ilc-lvho07c-a-pc-total-pt-2015",
      "source_body": "content/23 Habitacao/source/eurostat/hb1b-ilc_lvho07c.json",
      "source_sha256": "7310cd96ce090cd8e488c715c0e5c43ae7d7d0833763e4bc4a9fd91c602c7f64",
-     "start": 642,
+     "start": 648,
      "value": "9.1"
     },
     {
-     "end": 668,
+     "end": 674,
      "printed": "11.2",
      "row": "hab-ilc-lvho07c-a-pc-total-eu27_2020-2015",
      "source_body": "content/23 Habitacao/source/eurostat/hb1b-ilc_lvho07c.json",
      "source_sha256": "7310cd96ce090cd8e488c715c0e5c43ae7d7d0833763e4bc4a9fd91c602c7f64",
-     "start": 664,
+     "start": 670,
      "value": "11.2"
+    },
+    {
+     "end": 737,
+     "printed": "2.4",
+     "row": "hab-ilc-lvho07c-a-pc-total-cy-2025",
+     "source_body": "content/23 Habitacao/source/eurostat/hb1b-ilc_lvho07c.json",
+     "source_sha256": "7310cd96ce090cd8e488c715c0e5c43ae7d7d0833763e4bc4a9fd91c602c7f64",
+     "start": 734,
+     "value": "2.4"
+    },
+    {
+     "end": 769,
+     "printed": "26.4",
+     "row": "hab-ilc-lvho07c-a-pc-total-el-2025",
+     "source_body": "content/23 Habitacao/source/eurostat/hb1b-ilc_lvho07c.json",
+     "source_sha256": "7310cd96ce090cd8e488c715c0e5c43ae7d7d0833763e4bc4a9fd91c602c7f64",
+     "start": 765,
+     "value": "26.4"
     }
    ],
    "i": 23,
@@ -2655,135 +2853,71 @@
      "tipo": "valor"
     },
     {
-     "apoios": [
-      {
-       "campo": "published_at",
-       "id": "hab-ilc-lvho07c-a-pc-total-cy-2025",
-       "livro": "HB"
-      },
-      {
-       "campo": "published_at",
-       "id": "hab-ilc-lvho07c-a-pc-total-el-2025",
-       "livro": "HB"
-      },
-      {
-       "campo": "published_at",
-       "id": "hab-ilc-lvho07c-a-pc-total-pt-2025",
-       "livro": "HB"
-      },
-      {
-       "campo": "published_at",
-       "id": "hab-ilc-lvho07c-a-pc-total-eu27_2020-2025",
-       "livro": "HB"
-      },
-      {
-       "campo": "published_at",
-       "id": "sobrecarga-do-custo-da-habitacao-2025",
-       "livro": "SITE"
-      },
-      {
-       "campo": "published_at",
-       "id": "sobrecarga-do-custo-da-habitacao-2025-ue",
-       "livro": "SITE"
-      },
-      {
-       "campo": "published_at",
-       "id": "hab-ilc-lvho07c-a-pc-total-pt-2015",
-       "livro": "HB"
-      },
-      {
-       "campo": "published_at",
-       "id": "hab-ilc-lvho07c-a-pc-total-eu27_2020-2015",
-       "livro": "HB"
-      }
-     ],
-     "fim": 353,
-     "inicio": 343,
-     "texto": "20 October",
-     "tipo": "literal"
-    },
-    {
-     "apoios": [
-      {
-       "campo": "published_at",
-       "id": "hab-ilc-lvho07c-a-pc-total-cy-2025",
-       "livro": "HB"
-      },
-      {
-       "campo": "published_at",
-       "id": "hab-ilc-lvho07c-a-pc-total-el-2025",
-       "livro": "HB"
-      },
-      {
-       "campo": "published_at",
-       "id": "hab-ilc-lvho07c-a-pc-total-pt-2025",
-       "livro": "HB"
-      },
-      {
-       "campo": "published_at",
-       "id": "hab-ilc-lvho07c-a-pc-total-eu27_2020-2025",
-       "livro": "HB"
-      },
-      {
-       "campo": "published_at",
-       "id": "sobrecarga-do-custo-da-habitacao-2025",
-       "livro": "SITE"
-      },
-      {
-       "campo": "published_at",
-       "id": "sobrecarga-do-custo-da-habitacao-2025-ue",
-       "livro": "SITE"
-      },
-      {
-       "campo": "published_at",
-       "id": "hab-ilc-lvho07c-a-pc-total-pt-2015",
-       "livro": "HB"
-      },
-      {
-       "campo": "published_at",
-       "id": "hab-ilc-lvho07c-a-pc-total-eu27_2020-2015",
-       "livro": "HB"
-      }
-     ],
-     "fim": 436,
-     "inicio": 426,
-     "texto": "20 October",
-     "tipo": "literal"
-    },
-    {
-     "fim": 447,
-     "id": "sobrecarga-do-custo-da-habitacao-2025",
-     "inicio": 444,
-     "livro": "SITE",
-     "sha256_linha": "ebd7ece2d3077ab2142139d45e281bbeb701fb5ecd6d921c7dc8a4a79e86675b",
+     "fim": 428,
+     "id": "hab-tespm140-a-pc-pt-2025",
+     "inicio": 425,
+     "livro": "HB",
+     "sha256_linha": "8606d291074038f29d413d30568529d5fb86c276ac36148695aa120c30bdec57",
      "texto": "6.3",
      "tipo": "valor"
     },
     {
-     "fim": 470,
-     "id": "sobrecarga-do-custo-da-habitacao-2025-ue",
-     "inicio": 467,
-     "livro": "SITE",
-     "sha256_linha": "4aafe186047b469321b52a5b611c3260721a2ae9fd1eb7604ad7bbb3da1a7236",
+     "fim": 451,
+     "id": "hab-tespm140-a-pc-eu27_2020-2025",
+     "inicio": 448,
+     "livro": "HB",
+     "sha256_linha": "c4076ba7d0d71e5087fec05fa4df94d980297d02ba028fdbfce763899f09055c",
      "texto": "7.7",
      "tipo": "valor"
     },
     {
-     "fim": 645,
+     "apoios": [
+      {
+       "campo": "published_at",
+       "id": "hab-tespm140-a-pc-pt-2025",
+       "livro": "HB"
+      }
+     ],
+     "fim": 517,
+     "inicio": 507,
+     "linha_nomeada": "hab-tespm140-a-pc-pt-2025",
+     "texto": "20 October",
+     "tipo": "literal"
+    },
+    {
+     "fim": 651,
      "id": "hab-ilc-lvho07c-a-pc-total-pt-2015",
-     "inicio": 642,
+     "inicio": 648,
      "livro": "HB",
      "sha256_linha": "345a1b1fb4cba50e558a31b4be021d6c197d698411a80fbcdb3a6af8973e57ad",
      "texto": "9.1",
      "tipo": "valor"
     },
     {
-     "fim": 668,
+     "fim": 674,
      "id": "hab-ilc-lvho07c-a-pc-total-eu27_2020-2015",
-     "inicio": 664,
+     "inicio": 670,
      "livro": "HB",
      "sha256_linha": "9dbd3683119d14d542080a800549fc602ac620eb1438716dae4941f0de4b3b5c",
      "texto": "11.2",
+     "tipo": "valor"
+    },
+    {
+     "fim": 737,
+     "id": "hab-ilc-lvho07c-a-pc-total-cy-2025",
+     "inicio": 734,
+     "livro": "HB",
+     "sha256_linha": "ffea74e4c53b472bb4fa1e6a3e528818f3ff4f7092647d2aff800f10cb98f44d",
+     "texto": "2.4",
+     "tipo": "valor"
+    },
+    {
+     "fim": 769,
+     "id": "hab-ilc-lvho07c-a-pc-total-el-2025",
+     "inicio": 765,
+     "livro": "HB",
+     "sha256_linha": "5b57edb0e10c816a2cd9b973876c64cd5454bb510828b29ff9c3213a7788e542",
+     "texto": "26.4",
      "tipo": "valor"
     }
    ],
@@ -2797,12 +2931,12 @@
     "hab-ilc-mded01-a-total-total-pc-pt-2015",
     "hab-ilc-lvho07c-a-pc-total-pt-2025",
     "hab-ilc-lvho07c-a-pc-total-eu27_2020-2025",
-    "sobrecarga-do-custo-da-habitacao-2025",
-    "sobrecarga-do-custo-da-habitacao-2025-ue",
+    "hab-tespm140-a-pc-pt-2025",
+    "hab-tespm140-a-pc-eu27_2020-2025",
     "hab-ilc-lvho07c-a-pc-total-pt-2015",
     "hab-ilc-lvho07c-a-pc-total-eu27_2020-2015"
    ],
-   "text": "Housing absorbs 16.3 % of Portuguese households' disposable income in 2025 (18.9 % in the Union; Cyprus 10.9 %, Greece 34.6 %), less than in 2015 (18.9 %). Overburden, the share of the population spending more than forty percent of its income on housing, is 6.2 % in Portugal and 7.7 % in the Union, by Eurostat's dataset by tenure updated on 20 October; this site's series, sealed from Eurostat's main publication updated on 20 October, gives 6.3 % for Portugal and 7.7 % for the Union: two Eurostat publications of the same measure, with different update dates, and the numbers on this page are those of the more recent one. In 2015 it was 9.1 % in Portugal and 11.2 % in the Union, an estimated value."
+   "text": "Housing absorbs 16.3 % of Portuguese households' disposable income in 2025 (18.9 % in the Union; Cyprus 10.9 %, Greece 34.6 %), less than in 2015 (18.9 %). Overburden, the share of the population spending more than forty percent of its income on housing, is 6.2 % in Portugal and 7.7 % in the Union, by Eurostat's dataset by tenure; Eurostat's main publication of the same measure, from which this site's series comes, gives 6.3 % for Portugal and 7.7 % for the Union: the two were updated on the same day, 20 October 2026, at different hours, and the numbers on this page are those of the more recent update, the dataset by tenure. In 2015 it was 9.1 % in Portugal and 11.2 % in the Union, an estimated value. Cyprus has the lowest (2.4 %) and Greece the highest (26.4 %) of the twenty-seven with 2025 data."
   },
   {
    "figures": [
@@ -3452,66 +3586,66 @@
      "value": "42.1"
     },
     {
-     "end": 460,
+     "end": 448,
      "printed": "30.1",
      "row": "hab-ilc-lvps08-a-y25-34-t-pc-eu27_2020-2025",
      "source_body": "content/23 Habitacao/source/eurostat/ilc_lvps08.json",
      "source_sha256": "678b2197d76cdd853c335e29795f4e8095c1f979f6f52573132c531c9e643f8d",
-     "start": 456,
+     "start": 444,
      "value": "30.1"
     },
     {
-     "end": 488,
+     "end": 476,
      "printed": "3.9",
      "row": "hab-ilc-lvps08-a-y25-34-t-pc-dk-2025",
      "source_body": "content/23 Habitacao/source/eurostat/ilc_lvps08.json",
      "source_sha256": "678b2197d76cdd853c335e29795f4e8095c1f979f6f52573132c531c9e643f8d",
-     "start": 485,
+     "start": 473,
      "value": "3.9"
     },
     {
-     "end": 504,
+     "end": 492,
      "printed": "62.3",
      "row": "hab-ilc-lvps08-a-y25-34-t-pc-hr-2025",
      "source_body": "content/23 Habitacao/source/eurostat/ilc_lvps08.json",
      "source_sha256": "678b2197d76cdd853c335e29795f4e8095c1f979f6f52573132c531c9e643f8d",
-     "start": 500,
+     "start": 488,
      "value": "62.3"
     },
     {
-     "end": 523,
+     "end": 511,
      "printed": "52.3",
      "row": "hab-ilc-lvps08-a-y25-34-t-pc-pt-2020",
      "source_body": "content/23 Habitacao/source/eurostat/ilc_lvps08.json",
      "source_sha256": "678b2197d76cdd853c335e29795f4e8095c1f979f6f52573132c531c9e643f8d",
-     "start": 519,
+     "start": 507,
      "value": "52.3"
     },
     {
-     "end": 542,
+     "end": 530,
      "printed": "45.7",
      "row": "hab-ilc-lvps08-a-y25-34-t-pc-pt-2015",
      "source_body": "content/23 Habitacao/source/eurostat/ilc_lvps08.json",
      "source_sha256": "678b2197d76cdd853c335e29795f4e8095c1f979f6f52573132c531c9e643f8d",
-     "start": 538,
+     "start": 526,
      "value": "45.7"
     },
     {
-     "end": 592,
+     "end": 580,
      "printed": "61.0",
      "row": "hab-ilc-lvps08-a-y18-34-t-pc-pt-2025",
      "source_body": "content/23 Habitacao/source/eurostat/ilc_lvps08.json",
      "source_sha256": "678b2197d76cdd853c335e29795f4e8095c1f979f6f52573132c531c9e643f8d",
-     "start": 588,
+     "start": 576,
      "value": "61.0"
     },
     {
-     "end": 607,
+     "end": 595,
      "printed": "49.8",
      "row": "hab-ilc-lvps08-a-y18-34-t-pc-eu27_2020-2025",
      "source_body": "content/23 Habitacao/source/eurostat/ilc_lvps08.json",
      "source_sha256": "678b2197d76cdd853c335e29795f4e8095c1f979f6f52573132c531c9e643f8d",
-     "start": 603,
+     "start": 591,
      "value": "49.8"
     }
    ],
@@ -3577,79 +3711,79 @@
      "id": "hab-ilc-lvps08-a-y25-34-t-pc-pt-2025",
      "inicio": 240,
      "livro": "HB",
-     "sha256_linha": "f69041412c1990e44dca09f5fe26ec0caa2b087d7e8233c1ca808978b21f9f98",
+     "sha256_linha": "27372bb9ba4945692b24bc5873c4f7a498ea4733e25916d25043d6238fa8f3f6",
      "texto": "42.1",
      "tipo": "valor"
     },
     {
-     "fim": 453,
+     "fim": 441,
      "id": "hab-ilc-lvps08-a-y25-34-t-pc-pt-2025",
      "inicio": 334,
      "livro": "HB",
-     "sha256_linha": "f69041412c1990e44dca09f5fe26ec0caa2b087d7e8233c1ca808978b21f9f98",
-     "texto": "Persons living with their parents or contributing/benefiting from the household income (population aged 18 to 34 years)",
+     "sha256_linha": "27372bb9ba4945692b24bc5873c4f7a498ea4733e25916d25043d6238fa8f3f6",
+     "texto": "Persons living with their parents or contributing/benefiting from the household income, From 25 to 34 years",
      "tipo": "medida"
     },
     {
-     "fim": 460,
+     "fim": 448,
      "id": "hab-ilc-lvps08-a-y25-34-t-pc-eu27_2020-2025",
-     "inicio": 456,
+     "inicio": 444,
      "livro": "HB",
-     "sha256_linha": "7731eb75f0820b3bdc2847fffe659ed5bd1aeb9c0f17c95e0dd515e134aca008",
+     "sha256_linha": "99b8f877b5bb9683fa6429108caf8de235d1f7475daabacb7afb485c6bce6167",
      "texto": "30.1",
      "tipo": "valor"
     },
     {
-     "fim": 488,
+     "fim": 476,
      "id": "hab-ilc-lvps08-a-y25-34-t-pc-dk-2025",
-     "inicio": 485,
+     "inicio": 473,
      "livro": "HB",
-     "sha256_linha": "fcdad3e0f0e2c24d083b063b8672f68132c512bba8df3eea8f7d457757db45fa",
+     "sha256_linha": "43d597d18b1417ea5fe2ef16e16151368c24464a568e69c1a56294c471255aa8",
      "texto": "3.9",
      "tipo": "valor"
     },
     {
-     "fim": 504,
+     "fim": 492,
      "id": "hab-ilc-lvps08-a-y25-34-t-pc-hr-2025",
-     "inicio": 500,
+     "inicio": 488,
      "livro": "HB",
-     "sha256_linha": "464e57cb6a8fbc9afaf8feb439e3f002b36de6c526c974a05a622fec33e0664e",
+     "sha256_linha": "85f58c843049e259385a15b146344819c7c4612ef6ee7f7e5af57f05750b6052",
      "texto": "62.3",
      "tipo": "valor"
     },
     {
-     "fim": 523,
+     "fim": 511,
      "id": "hab-ilc-lvps08-a-y25-34-t-pc-pt-2020",
-     "inicio": 519,
+     "inicio": 507,
      "livro": "HB",
-     "sha256_linha": "fbb0343e704dfc3465c7f40d2998d635ea5114308afc647f9aad39fea8b829ce",
+     "sha256_linha": "722aec897072d52e1e9b89592912d27a57efc112da81b611ca618b7a8f0bb59c",
      "texto": "52.3",
      "tipo": "valor"
     },
     {
-     "fim": 542,
+     "fim": 530,
      "id": "hab-ilc-lvps08-a-y25-34-t-pc-pt-2015",
-     "inicio": 538,
+     "inicio": 526,
      "livro": "HB",
-     "sha256_linha": "ec7a0963f7a51c06c88a9dbb16873f71893db088f54d23046f6ac5b5d333576c",
+     "sha256_linha": "e41b61c260903deb9238410b3dd9c183055492906bbfacd114881c6d3fd25246",
      "texto": "45.7",
      "tipo": "valor"
     },
     {
-     "fim": 592,
+     "fim": 580,
      "id": "hab-ilc-lvps08-a-y18-34-t-pc-pt-2025",
-     "inicio": 588,
+     "inicio": 576,
      "livro": "HB",
-     "sha256_linha": "3f71b5c1d23b22654f8bab85c43764845815f132b95b62d8c56625584d9e07eb",
+     "sha256_linha": "51f96d02b5960dcfb3f0647c3c636e15705b7db19b9ca85b955750afb437c450",
      "texto": "61.0",
      "tipo": "valor"
     },
     {
-     "fim": 607,
+     "fim": 595,
      "id": "hab-ilc-lvps08-a-y18-34-t-pc-eu27_2020-2025",
-     "inicio": 603,
+     "inicio": 591,
      "livro": "HB",
-     "sha256_linha": "86d8fbd39136747a1467f83514a132a59f575a085dfa61991bc3bda63b9232b4",
+     "sha256_linha": "502ed4a52c5e9f83268dad68beae4f44714081735e6009560f1bb43f2562632c",
      "texto": "49.8",
      "tipo": "valor"
     }
@@ -3670,7 +3804,7 @@
     "hab-ilc-lvps08-a-y18-34-t-pc-pt-2025",
     "hab-ilc-lvps08-a-y18-34-t-pc-eu27_2020-2025"
    ],
-   "text": "The Portuguese leave their parents' home, on average, at 28.8 years, 2.5 years after the Union average (26.3); Finland has the earliest leaving (21.3) and Croatia the latest (31.5). In 2015 it was 28.9. Between twenty-five and thirty-four, 42.1 % live with their parents or share the household's income (Eurostat's measure is called «Persons living with their parents or contributing/benefiting from the household income (population aged 18 to 34 years)»; 30.1 % in the Union; Denmark 3.9 %, Croatia 62.3 %); they were 52.3 % in 2020 and 45.7 % in 2015. Between eighteen and thirty-four, 61.0 % against 49.8 %."
+   "text": "The Portuguese leave their parents' home, on average, at 28.8 years, 2.5 years after the Union average (26.3); Finland has the earliest leaving (21.3) and Croatia the latest (31.5). In 2015 it was 28.9. Between twenty-five and thirty-four, 42.1 % live with their parents or share the household's income (Eurostat's measure is called «Persons living with their parents or contributing/benefiting from the household income, From 25 to 34 years»; 30.1 % in the Union; Denmark 3.9 %, Croatia 62.3 %); they were 52.3 % in 2020 and 45.7 % in 2015. Between eighteen and thirty-four, 61.0 % against 49.8 %."
   },
   {
    "figures": [],
@@ -3881,15 +4015,6 @@
      "tipo": "literal"
     },
     {
-     "fim": 622,
-     "id": "hab-ps-vazias",
-     "inicio": 622,
-     "livro": "HB",
-     "sha256_linha": "440141ea2c05d99c424df73040c80407e6966d0bcedd12d78f8f8e749cb38b55",
-     "texto": "",
-     "tipo": "cita"
-    },
-    {
      "fim": 921,
      "id": "hab-arrendamento-exposicao-vagos",
      "inicio": 722,
@@ -3969,7 +4094,7 @@
     "hab-ps-vazias",
     "hab-arrendamento-exposicao-vagos"
    ],
-   "text": "In 2025, 40.9 thousand dwellings were licensed in Portugal (a provisional value), against 1,623.2 thousand in the Union: per thousand inhabitants, 3.8 in Portugal and 3.6 in the Union (the Union's 2025 population is an estimated and provisional value). The stock counted by the 2021 Census has 5,970,677 dwellings, of which 723,215 were vacant, 12.1 %; the INE splits them into «Vago para venda ou arrendamento», 348,097, and «Vago por outros motivos», 375,118. The Socialist Party (PS) speaks of «centenas de milhares de casas vazias em condições de serem habitadas» (hundreds of thousands of empty homes fit to live in); the Government, in the explanatory memorandum of the rental bill, estimates from the 2021 Census: «Considerando os dados dos Censos 2021, estima-se que cerca de 375 mil alojamentos familiares clássicos, dos quais quase 250 mil em boas condições, estejam vagos sem intenção de venda ou arrendamento.» The «cerca de 375 mil» (about 375 thousand) are the order of magnitude of the INE's «Vago por outros motivos» (vacant for other reasons); the «quase 250 mil em boas condições» (almost 250 thousand in good condition) are a Government estimate on the Census data, and the INE table it comes from is not among this study's documents."
+   "text": "In 2025, 40.9 thousand dwellings were licensed in Portugal (a provisional value), against 1,623.2 thousand in the Union: per thousand inhabitants, 3.8 in Portugal and 3.6 in the Union (the Union's 2025 population is an estimated and provisional value). The stock counted by the 2021 Census has 5,970,677 dwellings, of which 723,215 were vacant, 12.1 %; the INE splits them into «Vago para venda ou arrendamento», 348,097, and «Vago por outros motivos», 375,118. The Socialist Party (PS) speaks of «centenas de milhares de casas vazias em condições de serem habitadas» (hundreds of thousands of empty homes fit to live in); the Government, in the explanatory memorandum of the rental bill, estimates from the 2021 Census: «Considerando os dados dos Censos 2021, estima-se que cerca de 375 mil alojamentos familiares clássicos, dos quais quase 250 mil em boas condições, estejam vagos sem intenção de venda ou arrendamento.» The «cerca de 375 mil» (about 375 thousand) are the order of magnitude of the INE's «Vago por outros motivos» (vacant for other reasons); the «quase 250 mil em boas condições» (almost 250 thousand in good condition) are a Government estimate on the Census data, and the document does not say how it reached that number from the Census."
   },
   {
    "figures": [],
@@ -4260,12 +4385,12 @@
      "value": "-209"
     },
     {
-     "end": 380,
+     "end": 434,
      "printed": "−303",
      "row": "der-hab-fiscal-2027",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 376,
+     "start": 430,
      "value": "-303"
     }
    ],
@@ -4309,27 +4434,18 @@
      "tipo": "valor"
     },
     {
-     "fim": 374,
-     "id": "hab-oe-legenda-invariante",
-     "inicio": 374,
-     "livro": "HB",
-     "sha256_linha": "43753528f61ebd6321531c71d2510d90cbc8f592dfbe15b1c57b7c83d33057a6",
-     "texto": "",
-     "tipo": "cita"
-    },
-    {
-     "fim": 380,
+     "fim": 434,
      "id": "der-hab-fiscal-2027",
-     "inicio": 376,
+     "inicio": 430,
      "livro": "HB",
      "sha256_linha": "337a3506ef55ac89f83ef99ed2ce0f2758b8beef0d3c883117aaf3947656bb23",
      "texto": "−303",
      "tipo": "valor"
     },
     {
-     "fim": 650,
+     "fim": 704,
      "id": "hab-governo-construir",
-     "inicio": 469,
+     "inicio": 523,
      "livro": "HB",
      "sha256_linha": "7f0b5d23924e43bad037d2aa53e968f015a06f5b152ef1425145a7e49700b186",
      "texto": "Redução da taxa de IVA para 6% na construção de habitações para venda até 648 mil euros ou, no caso de arrendamento, para rendas até 2.300 euros. Este regime fiscal vigora até 2029.",
@@ -4343,7 +4459,7 @@
     "der-hab-fiscal-2027",
     "hab-governo-construir"
    ],
-   "text": "The two tax measures with an impact in 2027 come from the decree-law of May 2026: «Habitação - redução IVA construção de 23% para 6% (i)», −94 million euros of impact on revenue in 2027, and «Habitação - redução IRS rendas moderadas de 25% para 10% (i)», −209 million (the mark «(i)» is the one the report's table gives to the measures it classes as «invariante», unchanged); −303 million together. The Council of Ministers announced the first thus in September 2025: «Redução da taxa de IVA para 6% na construção de habitações para venda até 648 mil euros ou, no caso de arrendamento, para rendas até 2.300 euros. Este regime fiscal vigora até 2029.»"
+   "text": "The two tax measures with an impact in 2027 come from the decree-law of May 2026: «Habitação - redução IVA construção de 23% para 6% (i)», −94 million euros of impact on revenue in 2027, and «Habitação - redução IRS rendas moderadas de 25% para 10% (i)», −209 million (the mark «(i)» is the one the report's table gives to the measures it classes as «invariante», unchanged; the report does not define the word beyond that note); −303 million together. The Council of Ministers announced the first thus in September 2025: «Redução da taxa de IVA para 6% na construção de habitações para venda até 648 mil euros ou, no caso de arrendamento, para rendas até 2.300 euros. Este regime fiscal vigora até 2029.»"
   },
   {
    "figures": [],
@@ -4382,7 +4498,7 @@
      "id": "posicao-ps-rendas",
      "inicio": 981,
      "livro": "PM",
-     "sha256_linha": "7ec50f4be629d3576aac2625af5abfd6bc2a48047b0af0f05834901de8969bc9",
+     "sha256_linha": "e92635b7f82b3b6c4d45a7cdf7d052862857b6d6dac347265eb697aa891ada17",
      "texto": "Arrendatários: dedução das rendas no IRS aumentada para 1.000 euros a partir de 2027.",
      "tipo": "excerto"
     }
@@ -4449,15 +4565,6 @@
      "inicio": 1441,
      "texto": "30 September 2026",
      "tipo": "literal"
-    },
-    {
-     "fim": 1682,
-     "id": "hab-votacao-arrendamento",
-     "inicio": 1682,
-     "livro": "HB",
-     "sha256_linha": "dcb3f726d84a38772d97cbb902fcdb11e1b997acd8cf461f91af68940f70dc14",
-     "texto": "",
-     "tipo": "cita"
     }
    ],
    "source_rows": [
@@ -4666,15 +4773,6 @@
      "inicio": 1336,
      "texto": "30 September",
      "tipo": "literal"
-    },
-    {
-     "fim": 1506,
-     "id": "hab-votacao-pan",
-     "inicio": 1506,
-     "livro": "HB",
-     "sha256_linha": "da3f504e548ceb24b9ed1b7fd55e30bea3e7afdbd8221b89184b3fe5de9855ce",
-     "texto": "",
-     "tipo": "cita"
     }
    ],
    "source_rows": [
@@ -4738,15 +4836,6 @@
      "tipo": "literal"
     },
     {
-     "fim": 770,
-     "id": "hab-votacao-livre",
-     "inicio": 770,
-     "livro": "HB",
-     "sha256_linha": "0d1eb23231960e8bdeade0ed1e3fcd70f6f5db9824f8cb21c4ffa696ffc4f792",
-     "texto": "",
-     "tipo": "cita"
-    },
-    {
      "fim": 1025,
      "id": "hab-chega-reinvestimento",
      "inicio": 852,
@@ -4794,20 +4883,11 @@
      "tipo": "literal"
     },
     {
-     "fim": 1207,
-     "id": "hab-votacao-chega",
-     "inicio": 1207,
-     "livro": "HB",
-     "sha256_linha": "333e6fd452c63206dc193fae81f7afc72f1bdcbfcf942ee681a02264f86b9563",
-     "texto": "",
-     "tipo": "cita"
-    },
-    {
      "fim": 1392,
      "id": "posicao-chega-habitacao",
      "inicio": 1283,
      "livro": "PM",
-     "sha256_linha": "cb2c64b1ba484d2e2aa965b487e93d67d0ecb3eb3ed801f33ae2b8ef77b9095c",
+     "sha256_linha": "cfa948691b678508eedb0188935f9c1ed08461e80797468bfc6adfdafff75302",
      "texto": "Ventura acusa PS de hipocrisia na habitação: “Montenegro falhou brutalmente, mas os socialistas fizeram pior”",
      "tipo": "documento"
     },
@@ -4816,7 +4896,7 @@
      "id": "posicao-chega-habitacao",
      "inicio": 1396,
      "livro": "PM",
-     "sha256_linha": "cb2c64b1ba484d2e2aa965b487e93d67d0ecb3eb3ed801f33ae2b8ef77b9095c",
+     "sha256_linha": "cfa948691b678508eedb0188935f9c1ed08461e80797468bfc6adfdafff75302",
      "texto": "André Ventura defende um pacote de emergência com benefícios fiscais, apoios às rendas e menos burocracia.",
      "tipo": "excerto"
     }
@@ -4836,9 +4916,22 @@
    "kind": "paragraph",
    "proofs": [
     {
-     "fim": 255,
+     "apoios": [
+      {
+       "campo": "reference_date",
+       "id": "hab-il-proposta",
+       "livro": "HB"
+      }
+     ],
+     "fim": 63,
+     "inicio": 57,
+     "texto": "8 June",
+     "tipo": "literal"
+    },
+    {
+     "fim": 323,
      "id": "hab-il-proposta",
-     "inicio": 49,
+     "inicio": 117,
      "livro": "HB",
      "sha256_linha": "8770b31a94668641a2359c4a06d132150a802e11f3be06f816e7b3682914398c",
      "texto": "propõe ao Governo medidas para colocar mais casas no mercado, desbloquear imóveis parados em heranças e tornar o arrendamento mais simples, seguro e funcional, tanto para inquilinos como para proprietários.",
@@ -4848,7 +4941,7 @@
    "source_rows": [
     "hab-il-proposta"
    ],
-   "text": "IL, on its housing page, with no document date: «propõe ao Governo medidas para colocar mais casas no mercado, desbloquear imóveis parados em heranças e tornar o arrendamento mais simples, seguro e funcional, tanto para inquilinos como para proprietários.» From the PSD and the CDS-PP there is, in this study's documents, no own document dated from this debate."
+   "text": "Iniciativa Liberal (IL), on its housing page, updated on 8 June 2026 (the page does not say when it was published): «propõe ao Governo medidas para colocar mais casas no mercado, desbloquear imóveis parados em heranças e tornar o arrendamento mais simples, seguro e funcional, tanto para inquilinos como para proprietários.» From the PSD and the CDS-PP there is, in this study's documents, no own document dated from this debate."
   },
   {
    "figures": [],
@@ -4862,21 +4955,21 @@
   {
    "figures": [
     {
-     "end": 1368,
+     "end": 1369,
      "printed": "27.2",
      "row": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
      "source_digest_kind": "api-viva",
      "source_sha256": null,
-     "start": 1364,
+     "start": 1365,
      "value": "27,2"
     },
     {
-     "end": 1493,
+     "end": 1494,
      "printed": "16.3",
      "row": "hab-ilc-mded01-a-total-total-pc-pt-2025",
      "source_body": "content/23 Habitacao/source/eurostat/ilc_mded01.json",
      "source_sha256": "a865dd0b743d2d6e037f1d56977583cbad9288fc155d8dacea06e512b2a0e44b",
-     "start": 1489,
+     "start": 1490,
      "value": "16.3"
     }
    ],
@@ -5045,27 +5138,27 @@
      "tipo": "excerto"
     },
     {
-     "fim": 1262,
+     "fim": 1263,
      "id": "hab-plataforma-reivindicacoes",
-     "inicio": 1108,
+     "inicio": 1109,
      "livro": "HB",
      "sha256_linha": "c23831518b750011097f031421cebd3176f9a6690e7d1f15aefdd5678c59f893",
      "texto": "Precisamos de tectos às rendas e limites ao aumento das prestações, de mais habitação pública e do fim dos benefícios fiscais para especulação financeira.",
      "tipo": "excerto"
     },
     {
-     "fim": 1368,
+     "fim": 1369,
      "id": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
-     "inicio": 1364,
+     "inicio": 1365,
      "livro": "SITE",
      "sha256_linha": "cca85ac5aeeef0904bfd7b0100d9f541f8d3b7b44d561b68c934f17242e841b4",
      "texto": "27.2",
      "tipo": "valor"
     },
     {
-     "fim": 1493,
+     "fim": 1494,
      "id": "hab-ilc-mded01-a-total-total-pc-pt-2025",
-     "inicio": 1489,
+     "inicio": 1490,
      "livro": "HB",
      "sha256_linha": "f2059ab93bd6edf9b3a81f74fe899b8ce7dbb7350fc94c25b518dbf5e7cc80c2",
      "texto": "16.3",
@@ -5083,7 +5176,7 @@
     "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
     "hab-ilc-mded01-a-total-total-pc-pt-2025"
    ],
-   "text": "On 10 October 2026, the platform «Não dá mais para viver assim» (we can't live like this any more) called demonstrations in five cities: «Cinco cidades de Portugal vão acolher, este sábado, uma manifestação contra a crise na habitação, organizada por uma plataforma que reúne cerca de 40 organizações da sociedade civil.», by the Euronews report «Plataforma “Não dá mais” organiza protestos por todo o país devido à crise na habitação» of that day; in Porto, «cerca de 1.500 pessoas», by the Rádio e Televisão de Portugal (RTP) report of 12 October. In Lisbon, «Vários milhares de pessoas»; the platform gathers «mais de 30 organizações», by the Postal report «Milhares saem à rua em Lisboa contra o custo de vida: “Não dá mais para viver assim”», which cites Lusa. Separately, the General Confederation of Portuguese Workers (CGTP) had called its own national demonstration, «MANIFESTAÇÃO NACIONAL DIA 17 DE OUTUBRO», by the call its southern hotel workers' union published on 15 September: «CONTRA O AUMENTO DO CUSTO DE VIDA! DIVULGA E PARTICIPA! LISBOA- 14H30 CAIS SODRÉ/ROSSIO» The platform writes that «Precisamos de tectos às rendas e limites ao aumento das prestações, de mais habitação pública e do fim dos benefícios fiscais para especulação financeira.». The sentence «a renda consome metade do salário» is quoted by the Euronews report; in the numbers, 27.2 % of tenants at market rents spend more than forty percent of their income on housing, and the country's average spends 16.3 %."
+   "text": "On 10 October 2026, the platform «Não dá mais para viver assim» (we can't live like this any more) called demonstrations in five cities: «Cinco cidades de Portugal vão acolher, este sábado, uma manifestação contra a crise na habitação, organizada por uma plataforma que reúne cerca de 40 organizações da sociedade civil.», by the Euronews report «Plataforma “Não dá mais” organiza protestos por todo o país devido à crise na habitação» of that day; in Porto, «cerca de 1.500 pessoas», by the Rádio e Televisão de Portugal (RTP) report of 12 October. In Lisbon, «Vários milhares de pessoas»; the platform gathers «mais de 30 organizações», by the Postal report «Milhares saem à rua em Lisboa contra o custo de vida: “Não dá mais para viver assim”», which cites Lusa. Separately, the General Confederation of Portuguese Workers (CGTP) had called its own national demonstration, «MANIFESTAÇÃO NACIONAL DIA 17 DE OUTUBRO», by the call its southern hotel workers' union published on 15 September: «CONTRA O AUMENTO DO CUSTO DE VIDA! DIVULGA E PARTICIPA! LISBOA- 14H30 CAIS SODRÉ/ROSSIO». The platform writes that «Precisamos de tectos às rendas e limites ao aumento das prestações, de mais habitação pública e do fim dos benefícios fiscais para especulação financeira.». The sentence «a renda consome metade do salário» is quoted by the Euronews report; in the numbers, 27.2 % of tenants at market rents spend more than forty percent of their income on housing, and the country's average spends 16.3 %."
   },
   {
    "figures": [],
@@ -5399,24 +5492,24 @@
        "livro": "HB"
       }
      ],
-     "fim": 1194,
-     "inicio": 1184,
+     "fim": 1168,
+     "inicio": 1158,
      "texto": "16 October",
      "tipo": "literal"
     },
     {
-     "fim": 1274,
+     "fim": 1248,
      "id": "hab-imprensa-igai",
-     "inicio": 1197,
+     "inicio": 1171,
      "livro": "HB",
      "sha256_linha": "5c4f0cf1a0521eb08c063dd37dbddc0cec37502ef2ec21b4aba6a6a79d43e2be",
      "texto": "a IGAI abriu um processo administrativo, com solicitação de informações à PSP",
      "tipo": "excerto"
     },
     {
-     "fim": 1371,
+     "fim": 1345,
      "id": "hab-imprensa-igai",
-     "inicio": 1292,
+     "inicio": 1266,
      "livro": "HB",
      "sha256_linha": "5c4f0cf1a0521eb08c063dd37dbddc0cec37502ef2ec21b4aba6a6a79d43e2be",
      "texto": "IGAI abre processo sobre carga policial contra protesto pela habitação no Porto",
@@ -5505,60 +5598,60 @@
        "livro": "HB"
       }
      ],
-     "fim": 1407,
-     "inicio": 1397,
+     "fim": 1381,
+     "inicio": 1371,
      "texto": "15 October",
      "tipo": "literal"
     },
     {
-     "fim": 1505,
+     "fim": 1479,
      "id": "hab-imprensa-pm-15",
-     "inicio": 1424,
+     "inicio": 1398,
      "livro": "HB",
      "sha256_linha": "08eaee941ad15e25245e9d02e8dcdf679b532c2cb782c5d755c5f1c4b23ac0ef",
      "texto": "Montenegro defende forças policiais e pede a manifestantes que não sejam egoístas",
      "tipo": "documento"
     },
     {
-     "fim": 1793,
+     "fim": 1767,
      "id": "hab-imprensa-pm-15",
-     "inicio": 1509,
+     "inicio": 1483,
      "livro": "HB",
      "sha256_linha": "08eaee941ad15e25245e9d02e8dcdf679b532c2cb782c5d755c5f1c4b23ac0ef",
      "texto": "Espero que os partidos políticos, movimentos associativos, organizações portuguesas, não caiam na tentação, por razões meramente egoísticas da sua própria ação, importarem para Portugal climas de instabilidade, de contestação, que não tenham de facto respaldo na sociedade portuguesa.",
      "tipo": "excerto"
     },
     {
-     "fim": 1922,
+     "fim": 1896,
      "id": "hab-imprensa-pm-16",
-     "inicio": 1824,
+     "inicio": 1798,
      "livro": "HB",
      "sha256_linha": "ec7991af2d83c379775378290bfe610d3254288bb6019253bcaf8043ae1e9c4a",
      "texto": "Montenegro nega ter acusado manifestantes de egoísmo e revela que ameaçaram a sua casa (com vídeo)",
      "tipo": "documento"
     },
     {
-     "fim": 2054,
+     "fim": 2028,
      "id": "hab-imprensa-pm-16",
-     "inicio": 1926,
+     "inicio": 1900,
      "livro": "HB",
      "sha256_linha": "ec7991af2d83c379775378290bfe610d3254288bb6019253bcaf8043ae1e9c4a",
      "texto": "Eu dirigi-me a partidos políticos, a movimentos associativos e organizações no desenvolvimento da sua ação, dessas organizações.",
      "tipo": "excerto"
     },
     {
-     "fim": 2096,
+     "fim": 2070,
      "id": "hab-imprensa-mai",
-     "inicio": 2086,
+     "inicio": 2060,
      "livro": "HB",
      "sha256_linha": "624adb7255f0325932bf06a65e0047ecd5f75a9cacd9627bf0e37ad2df0e4a55",
      "texto": "Luís Neves",
      "tipo": "atribuicao"
     },
     {
-     "fim": 2197,
+     "fim": 2171,
      "id": "hab-imprensa-mai",
-     "inicio": 2113,
+     "inicio": 2087,
      "livro": "HB",
      "sha256_linha": "624adb7255f0325932bf06a65e0047ecd5f75a9cacd9627bf0e37ad2df0e4a55",
      "texto": "Ministro da Administração Interna diz que intervenção policial no Porto foi legítima",
@@ -5647,33 +5740,33 @@
        "livro": "HB"
       }
      ],
-     "fim": 2212,
-     "inicio": 2202,
+     "fim": 2186,
+     "inicio": 2176,
      "texto": "15 October",
      "tipo": "literal"
     },
     {
-     "fim": 2254,
+     "fim": 2228,
      "id": "hab-imprensa-mai",
-     "inicio": 2215,
+     "inicio": 2189,
      "livro": "HB",
      "sha256_linha": "624adb7255f0325932bf06a65e0047ecd5f75a9cacd9627bf0e37ad2df0e4a55",
      "texto": "há lei e ordem que têm de ser cumpridas",
      "tipo": "excerto"
     },
     {
-     "fim": 2315,
+     "fim": 2290,
      "id": "hab-imprensa-amorim",
-     "inicio": 2296,
+     "inicio": 2271,
      "livro": "HB",
      "sha256_linha": "cb0138eeb9ad3a6a33800d25d461d4b182a04be7c330442dac2aced663fea69e",
      "texto": "Carlos Abreu Amorim",
      "tipo": "atribuicao"
     },
     {
-     "fim": 2402,
+     "fim": 2377,
      "id": "hab-imprensa-amorim",
-     "inicio": 2332,
+     "inicio": 2307,
      "livro": "HB",
      "sha256_linha": "cb0138eeb9ad3a6a33800d25d461d4b182a04be7c330442dac2aced663fea69e",
      "texto": "Habitação: Governo avisa que \"não vai ceder aos gritos que vêm da rua\"",
@@ -5712,15 +5805,15 @@
        "livro": "HB"
       }
      ],
-     "fim": 2417,
-     "inicio": 2407,
+     "fim": 2392,
+     "inicio": 2382,
      "texto": "16 October",
      "tipo": "literal"
     },
     {
-     "fim": 2507,
+     "fim": 2483,
      "id": "hab-imprensa-amorim",
-     "inicio": 2455,
+     "inicio": 2431,
      "livro": "HB",
      "sha256_linha": "cb0138eeb9ad3a6a33800d25d461d4b182a04be7c330442dac2aced663fea69e",
      "texto": "o Governo \"não vai ceder aos gritos que vêm da rua\".",
@@ -5749,33 +5842,33 @@
        "livro": "HB"
       }
      ],
-     "fim": 2617,
-     "inicio": 2608,
+     "fim": 2594,
+     "inicio": 2585,
      "texto": "9 October",
      "tipo": "literal"
     },
     {
-     "fim": 2754,
+     "fim": 2731,
      "id": "hab-imprensa-debate-custos",
-     "inicio": 2649,
+     "inicio": 2626,
      "livro": "HB",
      "sha256_linha": "f8ec9f2abffe0a64c956688aa889f3087c275f213ea183fc316c1cff5e1ef9a6",
      "texto": "Os aumentos com os custos na habitação foram superiores a 100 por cento na esmagadora maioria das cidades",
      "tipo": "excerto"
     },
     {
-     "fim": 2802,
+     "fim": 2779,
      "id": "hab-imprensa-debate-protecao",
-     "inicio": 2779,
+     "inicio": 2756,
      "livro": "HB",
      "sha256_linha": "7c158cdf31aad80dbad95ccc8927a4598328f6773fc5114f0d9069fd3de08573",
      "texto": "vão proteger as pessoas",
      "tipo": "excerto"
     },
     {
-     "fim": 2913,
+     "fim": 2890,
      "id": "hab-imprensa-debate-custos",
-     "inicio": 2820,
+     "inicio": 2797,
      "livro": "HB",
      "sha256_linha": "f8ec9f2abffe0a64c956688aa889f3087c275f213ea183fc316c1cff5e1ef9a6",
      "texto": "Governo \"de parabéns\" ou em \"bolha\"? Habitação e Orçamento do Estado dominam debate quinzenal",
@@ -5799,7 +5892,7 @@
     "hab-imprensa-debate-custos",
     "hab-imprensa-debate-protecao"
    ],
-   "text": "In Porto, the encampment in Praça de D. João I had stood «desde sábado» (since Saturday), the day of the demonstrations, and «Foram retiradas, ao início da manhã desta segunda-feira, as tendas» (the tents were removed early on Monday morning), 12 October, by the RTP report «\"Não consegues pagar renda? Traz tenda\". Polícia desmonta acampamento no Porto» of that day; the campers wrote on 14 October that they were there «não como uma escolha de lazer, ou de campismo, mas como ato de desespero político»; on 15 October, the police intervention left injured people: «37 feridos, dois em estado grave», according to the Movimento pela Habitação; «39 feridos, dois deles graves», according to the organisers; «35 feridos, pelo menos», according to José Soeiro, of the Left Bloc's national leadership; «um polícia ficou ferido», according to the PSP; «oito pessoas foram assistidas no seu quartel», according to Luís Silva, commander of the Porto volunteer firefighters; «Duas pessoas foram encaminhadas para o hospital.», according to RTP. None of these counts comes from a statement by the PSP, the IGAI or the campers: all come from the newspapers cited, each report one tap away. On 16 October, «a IGAI abriu um processo administrativo, com solicitação de informações à PSP», by the report «IGAI abre processo sobre carga policial contra protesto pela habitação no Porto». The Prime Minister, on 15 October, by the report «Montenegro defende forças policiais e pede a manifestantes que não sejam egoístas»: «Espero que os partidos políticos, movimentos associativos, organizações portuguesas, não caiam na tentação, por razões meramente egoísticas da sua própria ação, importarem para Portugal climas de instabilidade, de contestação, que não tenham de facto respaldo na sociedade portuguesa.» The next day, by the report «Montenegro nega ter acusado manifestantes de egoísmo e revela que ameaçaram a sua casa (com vídeo)»: «Eu dirigi-me a partidos políticos, a movimentos associativos e organizações no desenvolvimento da sua ação, dessas organizações.» The Minister of Home Affairs, Luís Neves, by the report «Ministro da Administração Interna diz que intervenção policial no Porto foi legítima» of 15 October: «há lei e ordem que têm de ser cumpridas» The Minister for Parliamentary Affairs, Carlos Abreu Amorim, by the report «Habitação: Governo avisa que \"não vai ceder aos gritos que vêm da rua\"» of 16 October, from Lusa in DNotícias, warned that o Governo \"não vai ceder aos gritos que vêm da rua\". (the Government «will not give in to the shouting from the street»). In the parliamentary debate of 9 October, the Prime Minister said that «Os aumentos com os custos na habitação foram superiores a 100 por cento na esmagadora maioria das cidades» and that the measures «vão proteger as pessoas», by the report «Governo \"de parabéns\" ou em \"bolha\"? Habitação e Orçamento do Estado dominam debate quinzenal»."
+   "text": "In Porto, the encampment in Praça de D. João I had stood «desde sábado» (since Saturday), the day of the demonstrations, and «Foram retiradas, ao início da manhã desta segunda-feira, as tendas» (the tents were removed early on Monday morning), 12 October, by the RTP report «\"Não consegues pagar renda? Traz tenda\". Polícia desmonta acampamento no Porto» of that day; the campers wrote on 14 October that they were there «não como uma escolha de lazer, ou de campismo, mas como ato de desespero político»; on 15 October, the police intervention left injured people: «37 feridos, dois em estado grave», according to the Movimento pela Habitação; «39 feridos, dois deles graves», according to the organisers; «35 feridos, pelo menos», according to José Soeiro, of the Left Bloc's national leadership; «um polícia ficou ferido», according to the PSP; «oito pessoas foram assistidas no seu quartel», according to Luís Silva, commander of the Porto volunteer firefighters; «Duas pessoas foram encaminhadas para o hospital.», according to RTP. None of these counts comes from a statement by the PSP, the IGAI or the campers: all come from the newspapers cited. On 16 October, «a IGAI abriu um processo administrativo, com solicitação de informações à PSP», by the report «IGAI abre processo sobre carga policial contra protesto pela habitação no Porto». The Prime Minister, on 15 October, by the report «Montenegro defende forças policiais e pede a manifestantes que não sejam egoístas»: «Espero que os partidos políticos, movimentos associativos, organizações portuguesas, não caiam na tentação, por razões meramente egoísticas da sua própria ação, importarem para Portugal climas de instabilidade, de contestação, que não tenham de facto respaldo na sociedade portuguesa.» The next day, by the report «Montenegro nega ter acusado manifestantes de egoísmo e revela que ameaçaram a sua casa (com vídeo)»: «Eu dirigi-me a partidos políticos, a movimentos associativos e organizações no desenvolvimento da sua ação, dessas organizações.» The Minister of Home Affairs, Luís Neves, by the report «Ministro da Administração Interna diz que intervenção policial no Porto foi legítima» of 15 October: «há lei e ordem que têm de ser cumpridas». The Minister for Parliamentary Affairs, Carlos Abreu Amorim, by the report «Habitação: Governo avisa que \"não vai ceder aos gritos que vêm da rua\"» of 16 October, from Lusa in DNotícias, warned that «o Governo \"não vai ceder aos gritos que vêm da rua\".» (the Government \"will not give in to the shouting from the street\"). In the parliamentary debate of 9 October, the Prime Minister said that «Os aumentos com os custos na habitação foram superiores a 100 por cento na esmagadora maioria das cidades» and that the measures «vão proteger as pessoas», by the report «Governo \"de parabéns\" ou em \"bolha\"? Habitação e Orçamento do Estado dominam debate quinzenal»."
   },
   {
    "figures": [],
@@ -5813,39 +5906,39 @@
   {
    "figures": [
     {
-     "end": 93,
+     "end": 149,
      "printed": "27.2",
      "row": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
      "source_digest_kind": "api-viva",
      "source_sha256": null,
-     "start": 89,
+     "start": 145,
      "value": "27,2"
     },
     {
-     "end": 187,
+     "end": 293,
      "printed": "16.3",
      "row": "hab-ilc-mded01-a-total-total-pc-pt-2025",
      "source_body": "content/23 Habitacao/source/eurostat/ilc_mded01.json",
      "source_sha256": "a865dd0b743d2d6e037f1d56977583cbad9288fc155d8dacea06e512b2a0e44b",
-     "start": 183,
+     "start": 289,
      "value": "16.3"
     },
     {
-     "end": 341,
+     "end": 447,
      "printed": "301.43",
      "row": "hab-prc-hpi-q-q-total-i15-q-pt-2026-q2",
      "source_body": "content/23 Habitacao/source/eurostat/prc_hpi_q.json",
      "source_sha256": "139967be9abc6524df81b488dbf675ed6f717552e798e0113f758a0fb805083e",
-     "start": 335,
+     "start": 441,
      "value": "301.43"
     },
     {
-     "end": 606,
+     "end": 712,
      "printed": "723,215",
      "row": "hab-ine-vagos-total",
      "source_body": "content/23 Habitacao/source/ine-casas-vagas.html",
      "source_sha256": "59195c01c07d9c46fdd79176c1be00c2b63e4395a81bd98df63938b530e3e69d",
-     "start": 599,
+     "start": 705,
      "value": "723 215"
     }
    ],
@@ -5853,38 +5946,38 @@
    "kind": "paragraph",
    "proofs": [
     {
-     "fim": 93,
+     "fim": 149,
      "id": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
-     "inicio": 89,
+     "inicio": 145,
      "livro": "SITE",
      "sha256_linha": "cca85ac5aeeef0904bfd7b0100d9f541f8d3b7b44d561b68c934f17242e841b4",
      "texto": "27.2",
      "tipo": "valor"
     },
     {
-     "fim": 187,
+     "fim": 293,
      "id": "hab-ilc-mded01-a-total-total-pc-pt-2025",
-     "inicio": 183,
+     "inicio": 289,
      "livro": "HB",
      "sha256_linha": "f2059ab93bd6edf9b3a81f74fe899b8ce7dbb7350fc94c25b518dbf5e7cc80c2",
      "texto": "16.3",
      "tipo": "valor"
     },
     {
-     "fim": 297,
+     "fim": 403,
      "id": "hab-imprensa-debate-custos",
-     "inicio": 192,
+     "inicio": 298,
      "livro": "HB",
      "sha256_linha": "f8ec9f2abffe0a64c956688aa889f3087c275f213ea183fc316c1cff5e1ef9a6",
      "texto": "Os aumentos com os custos na habitação foram superiores a 100 por cento na esmagadora maioria das cidades",
      "tipo": "excerto"
     },
     {
-     "fim": 341,
+     "fim": 447,
      "id": "hab-prc-hpi-q-q-total-i15-q-pt-2026-q2",
-     "inicio": 335,
+     "inicio": 441,
      "livro": "HB",
-     "sha256_linha": "7e5f7d9e1a72889fcec564c2142b20f585cad8a66824cfbd490d638c077f1c8e",
+     "sha256_linha": "479979bb2935008f971c9c9c44dd2d9c3682a1c3d38ae6d140d6ba2606f200d6",
      "texto": "301.43",
      "tipo": "valor"
     },
@@ -5896,24 +5989,15 @@
        "livro": "HB"
       }
      ],
-     "fim": 560,
-     "inicio": 492,
+     "fim": 666,
+     "inicio": 598,
      "texto": "centenas de milhares de casas vazias em condições de serem habitadas",
      "tipo": "literal"
     },
     {
-     "fim": 575,
-     "id": "hab-ps-vazias",
-     "inicio": 575,
-     "livro": "HB",
-     "sha256_linha": "440141ea2c05d99c424df73040c80407e6966d0bcedd12d78f8f8e749cb38b55",
-     "texto": "",
-     "tipo": "cita"
-    },
-    {
-     "fim": 606,
+     "fim": 712,
      "id": "hab-ine-vagos-total",
-     "inicio": 599,
+     "inicio": 705,
      "livro": "HB",
      "sha256_linha": "9aaa49f93ddf48ffead156131eebf9695147a4aac9a465d06f354162fc5acebf",
      "texto": "723,215",
@@ -5927,8 +6011,8 @@
        "livro": "HB"
       }
      ],
-     "fim": 695,
-     "inicio": 664,
+     "fim": 801,
+     "inicio": 770,
      "texto": "quase 250 mil em boas condições",
      "tipo": "literal"
     },
@@ -5940,24 +6024,15 @@
        "livro": "HB"
       }
      ],
-     "fim": 720,
-     "inicio": 704,
+     "fim": 826,
+     "inicio": 810,
      "texto": "cerca de 375 mil",
      "tipo": "literal"
     },
     {
-     "fim": 765,
-     "id": "hab-arrendamento-exposicao-vagos",
-     "inicio": 765,
-     "livro": "HB",
-     "sha256_linha": "a811e6bd44b6d597830fc5e5705681072eb0e3c3fc3b9fee3a8a2509fe1b070e",
-     "texto": "",
-     "tipo": "cita"
-    },
-    {
-     "fim": 1094,
+     "fim": 1200,
      "id": "hab-be-despejos",
-     "inicio": 921,
+     "inicio": 1027,
      "livro": "HB",
      "sha256_linha": "6adfd620520f4367b7c5e349b72d03d5c4ac6f8625d190e96fac8979c6b8804d",
      "texto": "5. A crise na habitação continua a agravar-se e os seus efeitos agudizam-se. Os despejos aumentaram 40% em 2025, e o Governo avança com medidas para os facilitar ainda mais.",
@@ -5971,8 +6046,8 @@
        "livro": "HB"
       }
      ],
-     "fim": 1331,
-     "inicio": 1279,
+     "fim": 1437,
+     "inicio": 1385,
      "texto": "simplificação e aceleração dos mecanismos de despejo",
      "tipo": "literal"
     },
@@ -5984,19 +6059,10 @@
        "livro": "HB"
       }
      ],
-     "fim": 1433,
-     "inicio": 1338,
+     "fim": 1539,
+     "inicio": 1444,
      "texto": "reforço da responsabilidade social do Estado na proteção das situações de maior vulnerabilidade",
      "tipo": "literal"
-    },
-    {
-     "fim": 1435,
-     "id": "hab-governo-arrendamento",
-     "inicio": 1435,
-     "livro": "HB",
-     "sha256_linha": "900786295af0e6657f7dcd209037a3742def62cb56a7d36e9d7815e674817f82",
-     "texto": "",
-     "tipo": "cita"
     }
    ],
    "source_rows": [
@@ -6010,7 +6076,7 @@
     "hab-be-despejos",
     "hab-governo-arrendamento"
    ],
-   "text": "«A renda consome metade do salário»: it is true for part of the tenants at market rents, 27.2 % of whom spend more than forty percent, and not for the country's average, which spends 16.3 %. «Os aumentos com os custos na habitação foram superiores a 100 por cento na esmagadora maioria das cidades»: the national price index stands at 301.43 with 2015 equal to one hundred, which is more than double; the sentence does not say the period, and no source in this study gives the rise by city. «centenas de milhares de casas vazias em condições de serem habitadas», says the PS: the 2021 Census counts 723,215 vacant; the Government estimates, from the same Census, «quase 250 mil em boas condições» among «cerca de 375 mil» vacant with no intention of sale or rental. The PS's claim and the Government's estimate are of the same order of magnitude; neither is a count, and the estimate is the Government's, not the INE's. «5. A crise na habitação continua a agravar-se e os seus efeitos agudizam-se. Os despejos aumentaram 40% em 2025, e o Governo avança com medidas para os facilitar ainda mais.»: the rise in evictions has no public series in this study's documents. «Vão proteger as pessoas» (they will protect people): the reform promises, in the Council of Ministers' words, «simplificação e aceleração dos mecanismos de despejo» and «reforço da responsabilidade social do Estado na proteção das situações de maior vulnerabilidade»; whether the whole protects those who rent, no document in this study measures."
+   "text": "«A renda consome metade do salário» (rent eats half the wage): no statistic in this study measures rent against wages; the closest one says that 27.2 % of tenants at market rents spend more than forty percent of household income on all housing costs, and that the country's average spends 16.3 %. «Os aumentos com os custos na habitação foram superiores a 100 por cento na esmagadora maioria das cidades»: the national price index stands at 301.43 with 2015 equal to one hundred, which is more than double; the sentence does not say the period, and no source in this study gives the rise by city. «centenas de milhares de casas vazias em condições de serem habitadas», says the PS: the 2021 Census counts 723,215 vacant; the Government estimates, from the same Census, «quase 250 mil em boas condições» among «cerca de 375 mil» vacant with no intention of sale or rental. The PS's claim and the Government's estimate are of the same order of magnitude; neither is a count, and the estimate is the Government's, not the INE's. «5. A crise na habitação continua a agravar-se e os seus efeitos agudizam-se. Os despejos aumentaram 40% em 2025, e o Governo avança com medidas para os facilitar ainda mais.»: the rise in evictions has no public series in this study's documents. «Vão proteger as pessoas» (they will protect people): the reform promises, in the Council of Ministers' words, «simplificação e aceleração dos mecanismos de despejo» and «reforço da responsabilidade social do Estado na proteção das situações de maior vulnerabilidade»; whether the whole protects those who rent, no document in this study measures."
   },
   {
    "figures": [],
@@ -6056,15 +6122,6 @@
      "inicio": 241,
      "texto": "27 and 28 October",
      "tipo": "literal"
-    },
-    {
-     "fim": 350,
-     "id": "oe-2027-calendario-generalidade",
-     "inicio": 350,
-     "livro": "AN",
-     "sha256_linha": "c25cbac9813811a18913bac189e9d9c2dab03b6a3294669289de4ed4cb7af3b0",
-     "texto": "",
-     "tipo": "cita"
     }
    ],
    "source_rows": [
@@ -9915,8 +9972,8 @@
    "fetched_at": "2026-10-19T13:38:52.773542+00:00",
    "group": "ilc_lvps08-A-Y18-34-T-PC",
    "id": "hab-ilc-lvps08-a-y18-34-t-pc-eu27_2020-2025",
-   "measure": "Persons living with their parents or contributing/benefiting from the household income (population aged 18 to 34 years)",
-   "measure_en": "Persons living with their parents or contributing/benefiting from the household income (population aged 18 to 34 years)",
+   "measure": "Persons living with their parents or contributing/benefiting from the household income, From 18 to 34 years",
+   "measure_en": "Persons living with their parents or contributing/benefiting from the household income, From 18 to 34 years",
    "name": "Pessoas que vivem com os pais ou contribuem para o rendimento do agregado ou dele beneficiam, dezoito a trinta e quatro anos, União Europeia, 2025",
    "name_en": "Persons living with their parents or contributing/benefiting from the household income, From 18 to 34 years, European Union - 27 countries (from 2020), 2025",
    "name_source": "label; dimension.age.category.label.Y18-34; dimension.geo.category.label.EU27_2020; dimension.time.category.label.2025",
@@ -9967,8 +10024,8 @@
    "fetched_at": "2026-10-19T13:38:52.773542+00:00",
    "group": "ilc_lvps08-A-Y18-34-T-PC",
    "id": "hab-ilc-lvps08-a-y18-34-t-pc-pt-2025",
-   "measure": "Persons living with their parents or contributing/benefiting from the household income (population aged 18 to 34 years)",
-   "measure_en": "Persons living with their parents or contributing/benefiting from the household income (population aged 18 to 34 years)",
+   "measure": "Persons living with their parents or contributing/benefiting from the household income, From 18 to 34 years",
+   "measure_en": "Persons living with their parents or contributing/benefiting from the household income, From 18 to 34 years",
    "name": "Pessoas que vivem com os pais ou contribuem para o rendimento do agregado ou dele beneficiam, dezoito a trinta e quatro anos, Portugal, 2025",
    "name_en": "Persons living with their parents or contributing/benefiting from the household income, From 18 to 34 years, Portugal, 2025",
    "name_source": "label; dimension.age.category.label.Y18-34; dimension.geo.category.label.PT; dimension.time.category.label.2025",
@@ -10019,8 +10076,8 @@
    "fetched_at": "2026-10-19T13:38:52.773542+00:00",
    "group": "ilc_lvps08-A-Y25-34-T-PC",
    "id": "hab-ilc-lvps08-a-y25-34-t-pc-dk-2025",
-   "measure": "Persons living with their parents or contributing/benefiting from the household income (population aged 18 to 34 years)",
-   "measure_en": "Persons living with their parents or contributing/benefiting from the household income (population aged 18 to 34 years)",
+   "measure": "Persons living with their parents or contributing/benefiting from the household income, From 25 to 34 years",
+   "measure_en": "Persons living with their parents or contributing/benefiting from the household income, From 25 to 34 years",
    "name": "Pessoas que vivem com os pais ou contribuem para o rendimento do agregado ou dele beneficiam, vinte e cinco a trinta e quatro anos, Dinamarca, 2025",
    "name_en": "Persons living with their parents or contributing/benefiting from the household income, From 25 to 34 years, Denmark, 2025",
    "name_source": "label; dimension.age.category.label.Y25-34; dimension.geo.category.label.DK; dimension.time.category.label.2025",
@@ -10071,8 +10128,8 @@
    "fetched_at": "2026-10-19T13:38:52.773542+00:00",
    "group": "ilc_lvps08-A-Y25-34-T-PC",
    "id": "hab-ilc-lvps08-a-y25-34-t-pc-eu27_2020-2025",
-   "measure": "Persons living with their parents or contributing/benefiting from the household income (population aged 18 to 34 years)",
-   "measure_en": "Persons living with their parents or contributing/benefiting from the household income (population aged 18 to 34 years)",
+   "measure": "Persons living with their parents or contributing/benefiting from the household income, From 25 to 34 years",
+   "measure_en": "Persons living with their parents or contributing/benefiting from the household income, From 25 to 34 years",
    "name": "Pessoas que vivem com os pais ou contribuem para o rendimento do agregado ou dele beneficiam, vinte e cinco a trinta e quatro anos, União Europeia, 2025",
    "name_en": "Persons living with their parents or contributing/benefiting from the household income, From 25 to 34 years, European Union - 27 countries (from 2020), 2025",
    "name_source": "label; dimension.age.category.label.Y25-34; dimension.geo.category.label.EU27_2020; dimension.time.category.label.2025",
@@ -10123,8 +10180,8 @@
    "fetched_at": "2026-10-19T13:38:52.773542+00:00",
    "group": "ilc_lvps08-A-Y25-34-T-PC",
    "id": "hab-ilc-lvps08-a-y25-34-t-pc-hr-2025",
-   "measure": "Persons living with their parents or contributing/benefiting from the household income (population aged 18 to 34 years)",
-   "measure_en": "Persons living with their parents or contributing/benefiting from the household income (population aged 18 to 34 years)",
+   "measure": "Persons living with their parents or contributing/benefiting from the household income, From 25 to 34 years",
+   "measure_en": "Persons living with their parents or contributing/benefiting from the household income, From 25 to 34 years",
    "name": "Pessoas que vivem com os pais ou contribuem para o rendimento do agregado ou dele beneficiam, vinte e cinco a trinta e quatro anos, Croácia, 2025",
    "name_en": "Persons living with their parents or contributing/benefiting from the household income, From 25 to 34 years, Croatia, 2025",
    "name_source": "label; dimension.age.category.label.Y25-34; dimension.geo.category.label.HR; dimension.time.category.label.2025",
@@ -10175,8 +10232,8 @@
    "fetched_at": "2026-10-19T13:38:52.773542+00:00",
    "group": "ilc_lvps08-A-Y25-34-T-PC",
    "id": "hab-ilc-lvps08-a-y25-34-t-pc-pt-2015",
-   "measure": "Persons living with their parents or contributing/benefiting from the household income (population aged 18 to 34 years)",
-   "measure_en": "Persons living with their parents or contributing/benefiting from the household income (population aged 18 to 34 years)",
+   "measure": "Persons living with their parents or contributing/benefiting from the household income, From 25 to 34 years",
+   "measure_en": "Persons living with their parents or contributing/benefiting from the household income, From 25 to 34 years",
    "name": "Pessoas que vivem com os pais ou contribuem para o rendimento do agregado ou dele beneficiam, vinte e cinco a trinta e quatro anos, Portugal, 2015",
    "name_en": "Persons living with their parents or contributing/benefiting from the household income, From 25 to 34 years, Portugal, 2015",
    "name_source": "label; dimension.age.category.label.Y25-34; dimension.geo.category.label.PT; dimension.time.category.label.2015",
@@ -10227,8 +10284,8 @@
    "fetched_at": "2026-10-19T13:38:52.773542+00:00",
    "group": "ilc_lvps08-A-Y25-34-T-PC",
    "id": "hab-ilc-lvps08-a-y25-34-t-pc-pt-2020",
-   "measure": "Persons living with their parents or contributing/benefiting from the household income (population aged 18 to 34 years)",
-   "measure_en": "Persons living with their parents or contributing/benefiting from the household income (population aged 18 to 34 years)",
+   "measure": "Persons living with their parents or contributing/benefiting from the household income, From 25 to 34 years",
+   "measure_en": "Persons living with their parents or contributing/benefiting from the household income, From 25 to 34 years",
    "name": "Pessoas que vivem com os pais ou contribuem para o rendimento do agregado ou dele beneficiam, vinte e cinco a trinta e quatro anos, Portugal, 2020",
    "name_en": "Persons living with their parents or contributing/benefiting from the household income, From 25 to 34 years, Portugal, 2020",
    "name_source": "label; dimension.age.category.label.Y25-34; dimension.geo.category.label.PT; dimension.time.category.label.2020",
@@ -10279,8 +10336,8 @@
    "fetched_at": "2026-10-19T13:38:52.773542+00:00",
    "group": "ilc_lvps08-A-Y25-34-T-PC",
    "id": "hab-ilc-lvps08-a-y25-34-t-pc-pt-2025",
-   "measure": "Persons living with their parents or contributing/benefiting from the household income (population aged 18 to 34 years)",
-   "measure_en": "Persons living with their parents or contributing/benefiting from the household income (population aged 18 to 34 years)",
+   "measure": "Persons living with their parents or contributing/benefiting from the household income, From 25 to 34 years",
+   "measure_en": "Persons living with their parents or contributing/benefiting from the household income, From 25 to 34 years",
    "name": "Pessoas que vivem com os pais ou contribuem para o rendimento do agregado ou dele beneficiam, vinte e cinco a trinta e quatro anos, Portugal, 2025",
    "name_en": "Persons living with their parents or contributing/benefiting from the household income, From 25 to 34 years, Portugal, 2025",
    "name_source": "label; dimension.age.category.label.Y25-34; dimension.geo.category.label.PT; dimension.time.category.label.2025",
@@ -14409,9 +14466,9 @@
    "group": "prc_hicp_minr-M-RCH_A-CP041",
    "id": "hab-prc-hicp-minr-m-rch-a-cp041-eu27_2020-2026-09",
    "measure": "Índice harmonizado de preços no consumidor, rendas efetivas da habitação, variação homóloga, União Europeia, setembro de 2026",
-   "measure_en": "Harmonised index of consumer prices, actual rentals for housing, Annual rate of change, European Union - 27 countries (from 2020), September 2026",
+   "measure_en": "Harmonised index of consumer prices, actual rentals for housing, Annual rate of change, European Union - 27 countries (from 2020), 2026-09",
    "name": "Índice harmonizado de preços no consumidor, rendas efetivas da habitação, variação homóloga, União Europeia, setembro de 2026",
-   "name_en": "Harmonised index of consumer prices, actual rentals for housing, Annual rate of change, European Union - 27 countries (from 2020), September 2026",
+   "name_en": "Harmonised index of consumer prices, actual rentals for housing, Annual rate of change, European Union - 27 countries (from 2020), 2026-09",
    "name_source": "label; dimension.unit.category.label.RCH_A; dimension.geo.category.label.EU27_2020; dimension.time.category.label.2026-09",
    "name_source_en": "label; dimension.unit.category.label.RCH_A; dimension.geo.category.label.EU27_2020; dimension.time.category.label.2026-09",
    "note": "A União é o agregado publicado, nunca a média simples dos países. A bandeira pertence à célula. ECOICOP ver.2. O conjunto prc_hicp_aind está descontinuado; aviso alojado separadamente. Índice base 2025=100. ",
@@ -14460,9 +14517,9 @@
    "group": "prc_hicp_minr-M-RCH_A-CP041",
    "id": "hab-prc-hicp-minr-m-rch-a-cp041-pt-2026-09",
    "measure": "Índice harmonizado de preços no consumidor, rendas efetivas da habitação, variação homóloga, Portugal, setembro de 2026",
-   "measure_en": "Harmonised index of consumer prices, actual rentals for housing, Annual rate of change, Portugal, September 2026",
+   "measure_en": "Harmonised index of consumer prices, actual rentals for housing, Annual rate of change, Portugal, 2026-09",
    "name": "Índice harmonizado de preços no consumidor, rendas efetivas da habitação, variação homóloga, Portugal, setembro de 2026",
-   "name_en": "Harmonised index of consumer prices, actual rentals for housing, Annual rate of change, Portugal, September 2026",
+   "name_en": "Harmonised index of consumer prices, actual rentals for housing, Annual rate of change, Portugal, 2026-09",
    "name_source": "label; dimension.unit.category.label.RCH_A; dimension.geo.category.label.PT; dimension.time.category.label.2026-09",
    "name_source_en": "label; dimension.unit.category.label.RCH_A; dimension.geo.category.label.PT; dimension.time.category.label.2026-09",
    "note": "A União é o agregado publicado, nunca a média simples dos países. A bandeira pertence à célula. ECOICOP ver.2. O conjunto prc_hicp_aind está descontinuado; aviso alojado separadamente. Índice base 2025=100. ",
@@ -14511,9 +14568,9 @@
    "group": "prc_hpi_q-Q-TOTAL-I15_Q",
    "id": "hab-prc-hpi-q-q-total-i15-q-eu27_2020-2026-q2",
    "measure": "Índice de preços da habitação, índice trimestral, 2015 igual a cem, União Europeia, 2.º trimestre de 2026",
-   "measure_en": "House price index, Quarterly index, 2015=100, European Union - 27 countries (from 2020), quarter 2 of 2026",
+   "measure_en": "House price index, Quarterly index, 2015=100, European Union - 27 countries (from 2020), 2026-Q2",
    "name": "Índice de preços da habitação, índice trimestral, 2015 igual a cem, União Europeia, 2.º trimestre de 2026",
-   "name_en": "House price index, Quarterly index, 2015=100, European Union - 27 countries (from 2020), quarter 2 of 2026",
+   "name_en": "House price index, Quarterly index, 2015=100, European Union - 27 countries (from 2020), 2026-Q2",
    "name_source": "label; dimension.unit.category.label.I15_Q; dimension.geo.category.label.EU27_2020; dimension.time.category.label.2026-Q2",
    "name_source_en": "label; dimension.unit.category.label.I15_Q; dimension.geo.category.label.EU27_2020; dimension.time.category.label.2026-Q2",
    "note": "A União é o agregado publicado, nunca a média simples dos países. A bandeira pertence à célula. ",
@@ -14564,9 +14621,9 @@
    "group": "prc_hpi_q-Q-TOTAL-I15_Q",
    "id": "hab-prc-hpi-q-q-total-i15-q-fi-2026-q2",
    "measure": "Índice de preços da habitação, índice trimestral, 2015 igual a cem, Finlândia, 2.º trimestre de 2026",
-   "measure_en": "House price index, Quarterly index, 2015=100, Finland, quarter 2 of 2026",
+   "measure_en": "House price index, Quarterly index, 2015=100, Finland, 2026-Q2",
    "name": "Índice de preços da habitação, índice trimestral, 2015 igual a cem, Finlândia, 2.º trimestre de 2026",
-   "name_en": "House price index, Quarterly index, 2015=100, Finland, quarter 2 of 2026",
+   "name_en": "House price index, Quarterly index, 2015=100, Finland, 2026-Q2",
    "name_source": "label; dimension.unit.category.label.I15_Q; dimension.geo.category.label.FI; dimension.time.category.label.2026-Q2",
    "name_source_en": "label; dimension.unit.category.label.I15_Q; dimension.geo.category.label.FI; dimension.time.category.label.2026-Q2",
    "note": "A União é o agregado publicado, nunca a média simples dos países. A bandeira pertence à célula. ",
@@ -14617,9 +14674,9 @@
    "group": "prc_hpi_q-Q-TOTAL-I15_Q",
    "id": "hab-prc-hpi-q-q-total-i15-q-hu-2026-q2",
    "measure": "Índice de preços da habitação, índice trimestral, 2015 igual a cem, Hungria, 2.º trimestre de 2026",
-   "measure_en": "House price index, Quarterly index, 2015=100, Hungary, quarter 2 of 2026",
+   "measure_en": "House price index, Quarterly index, 2015=100, Hungary, 2026-Q2",
    "name": "Índice de preços da habitação, índice trimestral, 2015 igual a cem, Hungria, 2.º trimestre de 2026",
-   "name_en": "House price index, Quarterly index, 2015=100, Hungary, quarter 2 of 2026",
+   "name_en": "House price index, Quarterly index, 2015=100, Hungary, 2026-Q2",
    "name_source": "label; dimension.unit.category.label.I15_Q; dimension.geo.category.label.HU; dimension.time.category.label.2026-Q2",
    "name_source_en": "label; dimension.unit.category.label.I15_Q; dimension.geo.category.label.HU; dimension.time.category.label.2026-Q2",
    "note": "A União é o agregado publicado, nunca a média simples dos países. A bandeira pertence à célula. ",
@@ -14670,9 +14727,9 @@
    "group": "prc_hpi_q-Q-TOTAL-I15_Q",
    "id": "hab-prc-hpi-q-q-total-i15-q-pt-2026-q2",
    "measure": "Índice de preços da habitação, índice trimestral, 2015 igual a cem, Portugal, 2.º trimestre de 2026",
-   "measure_en": "House price index, Quarterly index, 2015=100, Portugal, quarter 2 of 2026",
+   "measure_en": "House price index, Quarterly index, 2015=100, Portugal, 2026-Q2",
    "name": "Índice de preços da habitação, índice trimestral, 2015 igual a cem, Portugal, 2.º trimestre de 2026",
-   "name_en": "House price index, Quarterly index, 2015=100, Portugal, quarter 2 of 2026",
+   "name_en": "House price index, Quarterly index, 2015=100, Portugal, 2026-Q2",
    "name_source": "label; dimension.unit.category.label.I15_Q; dimension.geo.category.label.PT; dimension.time.category.label.2026-Q2",
    "name_source_en": "label; dimension.unit.category.label.I15_Q; dimension.geo.category.label.PT; dimension.time.category.label.2026-Q2",
    "note": "A União é o agregado publicado, nunca a média simples dos países. A bandeira pertence à célula. ",
@@ -14723,9 +14780,9 @@
    "group": "prc_hpi_q-Q-TOTAL-RCH_A",
    "id": "hab-prc-hpi-q-q-total-rch-a-eu27_2020-2026-q2",
    "measure": "Índice de preços da habitação, variação homóloga, União Europeia, 2.º trimestre de 2026",
-   "measure_en": "House price index, Annual rate of change, European Union - 27 countries (from 2020), quarter 2 of 2026",
+   "measure_en": "House price index, Annual rate of change, European Union - 27 countries (from 2020), 2026-Q2",
    "name": "Índice de preços da habitação, variação homóloga, União Europeia, 2.º trimestre de 2026",
-   "name_en": "House price index, Annual rate of change, European Union - 27 countries (from 2020), quarter 2 of 2026",
+   "name_en": "House price index, Annual rate of change, European Union - 27 countries (from 2020), 2026-Q2",
    "name_source": "label; dimension.unit.category.label.RCH_A; dimension.geo.category.label.EU27_2020; dimension.time.category.label.2026-Q2",
    "name_source_en": "label; dimension.unit.category.label.RCH_A; dimension.geo.category.label.EU27_2020; dimension.time.category.label.2026-Q2",
    "note": "A União é o agregado publicado, nunca a média simples dos países. A bandeira pertence à célula. ",
@@ -14776,9 +14833,9 @@
    "group": "prc_hpi_q-Q-TOTAL-RCH_A",
    "id": "hab-prc-hpi-q-q-total-rch-a-fi-2026-q2",
    "measure": "Índice de preços da habitação, variação homóloga, Finlândia, 2.º trimestre de 2026",
-   "measure_en": "House price index, Annual rate of change, Finland, quarter 2 of 2026",
+   "measure_en": "House price index, Annual rate of change, Finland, 2026-Q2",
    "name": "Índice de preços da habitação, variação homóloga, Finlândia, 2.º trimestre de 2026",
-   "name_en": "House price index, Annual rate of change, Finland, quarter 2 of 2026",
+   "name_en": "House price index, Annual rate of change, Finland, 2026-Q2",
    "name_source": "label; dimension.unit.category.label.RCH_A; dimension.geo.category.label.FI; dimension.time.category.label.2026-Q2",
    "name_source_en": "label; dimension.unit.category.label.RCH_A; dimension.geo.category.label.FI; dimension.time.category.label.2026-Q2",
    "note": "A União é o agregado publicado, nunca a média simples dos países. A bandeira pertence à célula. ",
@@ -14829,9 +14886,9 @@
    "group": "prc_hpi_q-Q-TOTAL-RCH_A",
    "id": "hab-prc-hpi-q-q-total-rch-a-pt-2026-q2",
    "measure": "Índice de preços da habitação, variação homóloga, Portugal, 2.º trimestre de 2026",
-   "measure_en": "House price index, Annual rate of change, Portugal, quarter 2 of 2026",
+   "measure_en": "House price index, Annual rate of change, Portugal, 2026-Q2",
    "name": "Índice de preços da habitação, variação homóloga, Portugal, 2.º trimestre de 2026",
-   "name_en": "House price index, Annual rate of change, Portugal, quarter 2 of 2026",
+   "name_en": "House price index, Annual rate of change, Portugal, 2026-Q2",
    "name_source": "label; dimension.unit.category.label.RCH_A; dimension.geo.category.label.PT; dimension.time.category.label.2026-Q2",
    "name_source_en": "label; dimension.unit.category.label.RCH_A; dimension.geo.category.label.PT; dimension.time.category.label.2026-Q2",
    "note": "A União é o agregado publicado, nunca a média simples dos países. A bandeira pertence à célula. ",
@@ -15158,6 +15215,112 @@
    "status": "conferido",
    "unit": "Thousand",
    "value": "40.9"
+  },
+  "hab-tespm140-a-pc-eu27_2020-2025": {
+   "access_date": "2026-10-21",
+   "afirmacao": false,
+   "attributed_to": [
+    "Eurostat"
+   ],
+   "coords": {
+    "age": "TOTAL",
+    "freq": "A",
+    "geo": "EU27_2020",
+    "rskpovth": "TOTAL",
+    "sex": "T",
+    "time": "2025",
+    "unit": "PC"
+   },
+   "dataset": "tespm140",
+   "dataset_updated_at": "2026-10-20T11:00:00+0200",
+   "document": {
+    "file": "content/23 Habitacao/source/eurostat/hb1b-tespm140.json",
+    "kind": "serie",
+    "locator": "freq=A; unit=PC; rskpovth=TOTAL; age=TOTAL; sex=T; geo=EU27_2020; time=2025; value[10]",
+    "source_sha256": "1a6506dbefe39efa0d97ce2fa561bc40e31e7e387a042ba3263a2cee5b6a0a4d",
+    "title": "Housing cost overburden rate"
+   },
+   "evidence": {
+    "file": "source/eurostat/hb1b-tespm140.json",
+    "locator": "freq=A; unit=PC; rskpovth=TOTAL; age=TOTAL; sex=T; geo=EU27_2020; time=2025; value[10]",
+    "sha256": "1a6506dbefe39efa0d97ce2fa561bc40e31e7e387a042ba3263a2cee5b6a0a4d"
+   },
+   "excerpt": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"rskpovth\": \"TOTAL\", \"age\": \"TOTAL\", \"sex\": \"T\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"7.7\", \"status\": null}",
+   "excerpt_kind": "célula e coordenadas JSON, transcrição estruturada",
+   "fetched_at": "2026-10-21T00:08:07.935699+00:00",
+   "group": "tespm140-A-PC-TOTAL",
+   "id": "hab-tespm140-a-pc-eu27_2020-2025",
+   "measure": "Taxa de sobrecarga dos custos da habitação, União Europeia, 2025",
+   "measure_en": "Housing cost overburden rate, European Union - 27 countries (from 2020), 2025",
+   "name": "Taxa de sobrecarga dos custos da habitação, União Europeia, 2025",
+   "name_en": "Housing cost overburden rate, European Union - 27 countries (from 2020), 2025",
+   "name_source": "label; dimension.geo.category.label.EU27_2020; dimension.time.category.label.2025",
+   "name_source_en": "label; dimension.geo.category.label.EU27_2020; dimension.time.category.label.2025",
+   "note": "A publicação principal do Eurostat da sobrecarga, de que vem a série deste sítio; a União é o agregado publicado. HB1-c: selada do corpo alojado para a comparação da secção 2.",
+   "period": "2025",
+   "published_at": "2026-10-20",
+   "reference_date": "2025",
+   "source_excerpt": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"rskpovth\": \"TOTAL\", \"age\": \"TOTAL\", \"sex\": \"T\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"7.7\", \"status\": null}",
+   "source_flag": null,
+   "source_type": "government",
+   "source_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm140?format=JSON&lang=EN&geo=AT&geo=BE&geo=BG&geo=CY&geo=CZ&geo=DE&geo=DK&geo=EE&geo=EL&geo=ES&geo=FI&geo=FR&geo=HR&geo=HU&geo=IE&geo=IT&geo=LT&geo=LU&geo=LV&geo=MT&geo=NL&geo=PL&geo=PT&geo=RO&geo=SE&geo=SI&geo=SK&geo=EU27_2020&sinceTimePeriod=2015&untilTimePeriod=2025",
+   "source_value": "7.7",
+   "status": "conferido",
+   "unit": "Percentage",
+   "value": "7.7"
+  },
+  "hab-tespm140-a-pc-pt-2025": {
+   "access_date": "2026-10-21",
+   "afirmacao": false,
+   "attributed_to": [
+    "Eurostat"
+   ],
+   "coords": {
+    "age": "TOTAL",
+    "freq": "A",
+    "geo": "PT",
+    "rskpovth": "TOTAL",
+    "sex": "T",
+    "time": "2025",
+    "unit": "PC"
+   },
+   "dataset": "tespm140",
+   "dataset_updated_at": "2026-10-20T11:00:00+0200",
+   "document": {
+    "file": "content/23 Habitacao/source/eurostat/hb1b-tespm140.json",
+    "kind": "serie",
+    "locator": "freq=A; unit=PC; rskpovth=TOTAL; age=TOTAL; sex=T; geo=PT; time=2025; value[252]",
+    "source_sha256": "1a6506dbefe39efa0d97ce2fa561bc40e31e7e387a042ba3263a2cee5b6a0a4d",
+    "title": "Housing cost overburden rate"
+   },
+   "evidence": {
+    "file": "source/eurostat/hb1b-tespm140.json",
+    "locator": "freq=A; unit=PC; rskpovth=TOTAL; age=TOTAL; sex=T; geo=PT; time=2025; value[252]",
+    "sha256": "1a6506dbefe39efa0d97ce2fa561bc40e31e7e387a042ba3263a2cee5b6a0a4d"
+   },
+   "excerpt": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"rskpovth\": \"TOTAL\", \"age\": \"TOTAL\", \"sex\": \"T\", \"geo\": \"PT\", \"time\": \"2025\"}, \"value\": \"6.3\", \"status\": null}",
+   "excerpt_kind": "célula e coordenadas JSON, transcrição estruturada",
+   "fetched_at": "2026-10-21T00:08:07.935699+00:00",
+   "group": "tespm140-A-PC-TOTAL",
+   "id": "hab-tespm140-a-pc-pt-2025",
+   "measure": "Taxa de sobrecarga dos custos da habitação, Portugal, 2025",
+   "measure_en": "Housing cost overburden rate, Portugal, 2025",
+   "name": "Taxa de sobrecarga dos custos da habitação, Portugal, 2025",
+   "name_en": "Housing cost overburden rate, Portugal, 2025",
+   "name_source": "label; dimension.geo.category.label.PT; dimension.time.category.label.2025",
+   "name_source_en": "label; dimension.geo.category.label.PT; dimension.time.category.label.2025",
+   "note": "A publicação principal do Eurostat da sobrecarga, de que vem a série deste sítio; a União é o agregado publicado. HB1-c: selada do corpo alojado para a comparação da secção 2.",
+   "period": "2025",
+   "published_at": "2026-10-20",
+   "reference_date": "2025",
+   "source_excerpt": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"rskpovth\": \"TOTAL\", \"age\": \"TOTAL\", \"sex\": \"T\", \"geo\": \"PT\", \"time\": \"2025\"}, \"value\": \"6.3\", \"status\": null}",
+   "source_flag": null,
+   "source_type": "government",
+   "source_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm140?format=JSON&lang=EN&geo=AT&geo=BE&geo=BG&geo=CY&geo=CZ&geo=DE&geo=DK&geo=EE&geo=EL&geo=ES&geo=FI&geo=FR&geo=HR&geo=HU&geo=IE&geo=IT&geo=LT&geo=LU&geo=LV&geo=MT&geo=NL&geo=PL&geo=PT&geo=RO&geo=SE&geo=SI&geo=SK&geo=EU27_2020&sinceTimePeriod=2015&untilTimePeriod=2025",
+   "source_value": "6.3",
+   "status": "conferido",
+   "unit": "Percentage",
+   "value": "6.3"
   },
   "hab-tipsho10-a-i15-a-avg-eu27_2020-2025": {
    "access_date": "2026-10-19",
@@ -16325,17 +16488,20 @@
     "locator": "Página parlamentar, calendário da proposta",
     "sha256": "0d8ea877b233fd8743997a221b1117ab14fa6bb48dad864c4c69eeb2fffb4e0d"
    },
-   "excerpt": "Debate e votação na generali​d​ade do ​​O​rçamento ​do Estado para 2027​ | 27 e 28 de outubro​ ​",
+   "excerpt": "Debate e votação na generalidade do Orçamento do Estado para 2027 | 27 e 28 de outubro ",
    "fetched_at": "2026-10-19T13:40:07.222623+00:00",
    "group": "calendario",
    "id": "oe-2027-calendario-generalidade",
    "locator": "Página parlamentar, calendário da proposta",
    "measure": "Debate e votação na generalidade",
    "measure_en": "General debate and vote",
+   "name": "Debate e votação na generalidade",
+   "name_en": "General debate and vote",
+   "name_source": "Página parlamentar, calendário da proposta",
    "note": "Datas marcadas, não registo de votações já realizadas. Fonte alojada em investigação anterior, reutilizada pelo sha256. A página agrupa debate e votação na generalidade nos dois dias; não fixa aqui um dia isolado da votação.",
    "period": "2026-10-27/2026-10-28",
    "reference_date": "2026-10-27/2026-10-28",
-   "source_excerpt": "Debate e votação na generali​d​ade do ​​O​rçamento ​do Estado para 2027​ | 27 e 28 de outubro​ ​",
+   "source_excerpt": "Debate e votação na generalidade do Orçamento do Estado para 2027 | 27 e 28 de outubro ",
    "source_type": "government",
    "source_url": "https://www.parlamento.pt/Paginas/2026/outubro/Orcamento-do-Estado-para-2026.aspx?n=10",
    "status": "conferido",
@@ -16372,6 +16538,9 @@
    "measure_en": "Housing tax package and rent support",
    "medida": "Pacote fiscal e apoios à habitação",
    "medida_en": "Housing tax package and rent support",
+   "name": "Pacote fiscal e apoios à habitação",
+   "name_en": "Housing tax package and rent support",
+   "name_source": "Corpo da página; frase integral identificada pelo excerto; data editorial no documento",
    "note": "Posição atribuída. Os números da afirmação não constituem medição validada. Frase integral da abertura editorial da Folha Nacional. A atribuição é explícita; não se dispõe aqui da transcrição integral da conferência.",
    "party": "Chega",
    "period": "2027",
@@ -16423,6 +16592,9 @@
    "measure_en": "Income tax deduction for rents",
    "medida": "Dedução das rendas no IRS",
    "medida_en": "Income tax deduction for rents",
+   "name": "Dedução das rendas no IRS",
+   "name_en": "Income tax deduction for rents",
+   "name_source": "Corpo da página; frase integral identificada pelo excerto; data editorial no documento",
    "note": "Retirado o espaço de extração HTML antes dos dois pontos; o corpo e a transformação ficam selados.",
    "party": "PS",
    "period": "2027",
@@ -16434,116 +16606,6 @@
    "status": "conferido",
    "unit": "texto",
    "value": "Arrendatários: dedução das rendas no IRS aumentada para 1.000 euros a partir de 2027."
-  },
-  "sobrecarga-do-custo-da-habitacao-2025": {
-   "access_date": "2026-08-12",
-   "check": null,
-   "corrections": [],
-   "derivation": null,
-   "derived_from": [],
-   "document": {
-    "edition": "tespm140",
-    "kind": "serie",
-    "title": "Housing cost overburden rate",
-    "url": "https://ec.europa.eu/eurostat/databrowser/view/tespm140/default/table?lang=en"
-   },
-   "excerpt": "Housing cost overburden rate — Percentage — Portugal — 2025: 6.3",
-   "id": "sobrecarga-do-custo-da-habitacao-2025",
-   "note": "Valor confirmado contra a Comissão Europeia, SWD(2026) 222 (Relatório por País 2026 — Portugal): 6.3. Excerto composto a partir das etiquetas da própria resposta do Eurostat; o endereço em source_url devolve o mesmo valor. HB1-b: valor e data de atualização reconferidos no corpo tespm140 alojado em content/23 Habitacao/source/eurostat/hb1b-tespm140.json; SHA-256 1a6506dbefe39efa0d97ce2fa561bc40e31e7e387a042ba3263a2cee5b6a0a4d.",
-   "published_at": "2026-10-20",
-   "reference_date": "2025",
-   "source": "Eurostat",
-   "source_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm140?format=JSON&lang=EN&geo=PT&sex=T",
-   "study": "quadro-institucional",
-   "unit": "%",
-   "value": "6,3",
-   "verifications": [
-    {
-     "by": "painel-semanal",
-     "date": "2026-09-21",
-     "path": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm140?format=JSON&lang=EN&geo=PT&sex=T",
-     "result": "igual"
-    },
-    {
-     "by": "painel-semanal",
-     "date": "2026-09-28",
-     "path": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm140?format=JSON&lang=EN&geo=PT&sex=T",
-     "result": "igual"
-    },
-    {
-     "by": "painel-semanal",
-     "date": "2026-10-05",
-     "path": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm140?format=JSON&lang=EN&geo=PT&sex=T",
-     "result": "igual"
-    },
-    {
-     "by": "painel-semanal",
-     "date": "2026-10-12",
-     "path": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm140?format=JSON&lang=EN&geo=PT&sex=T",
-     "result": "igual"
-    },
-    {
-     "by": "painel-semanal",
-     "date": "2026-10-19",
-     "path": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm140?format=JSON&lang=EN&geo=PT&sex=T",
-     "result": "igual"
-    }
-   ]
-  },
-  "sobrecarga-do-custo-da-habitacao-2025-ue": {
-   "access_date": "2026-09-15",
-   "check": null,
-   "corrections": [],
-   "derivation": null,
-   "derived_from": [],
-   "document": {
-    "edition": "tespm140",
-    "kind": "serie",
-    "title": "Housing cost overburden rate",
-    "url": "https://ec.europa.eu/eurostat/databrowser/view/tespm140/default/table?lang=en"
-   },
-   "excerpt": "Housing cost overburden rate — Percentage — European Union - 27 countries (from 2020) — 2025: 7.7",
-   "id": "sobrecarga-do-custo-da-habitacao-2025-ue",
-   "note": "Agregado da União Europeia (EU27_2020) da medida «sobrecarga-do-custo-da-habitacao-2025», no mesmo período e na mesma unidade, pelo mesmo pedido com outra geografia. Excerto composto a partir das etiquetas da própria resposta do Eurostat; o endereço em source_url devolve o mesmo valor. HB1-b: valor e data de atualização reconferidos no corpo tespm140 alojado em content/23 Habitacao/source/eurostat/hb1b-tespm140.json; SHA-256 1a6506dbefe39efa0d97ce2fa561bc40e31e7e387a042ba3263a2cee5b6a0a4d.",
-   "published_at": "2026-10-20",
-   "reference_date": "2025",
-   "source": "Eurostat",
-   "source_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm140?format=JSON&lang=EN&geo=EU27_2020&sex=T",
-   "study": "quadro-institucional",
-   "unit": "%",
-   "value": "7,7",
-   "verifications": [
-    {
-     "by": "painel-semanal",
-     "date": "2026-09-21",
-     "path": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm140?format=JSON&lang=EN&geo=EU27_2020&sex=T",
-     "result": "igual"
-    },
-    {
-     "by": "painel-semanal",
-     "date": "2026-09-28",
-     "path": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm140?format=JSON&lang=EN&geo=EU27_2020&sex=T",
-     "result": "igual"
-    },
-    {
-     "by": "painel-semanal",
-     "date": "2026-10-05",
-     "path": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm140?format=JSON&lang=EN&geo=EU27_2020&sex=T",
-     "result": "igual"
-    },
-    {
-     "by": "painel-semanal",
-     "date": "2026-10-12",
-     "path": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm140?format=JSON&lang=EN&geo=EU27_2020&sex=T",
-     "result": "igual"
-    },
-    {
-     "by": "painel-semanal",
-     "date": "2026-10-19",
-     "path": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm140?format=JSON&lang=EN&geo=EU27_2020&sex=T",
-     "result": "igual"
-    }
-   ]
   },
   "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025": {
    "access_date": "2026-09-23",

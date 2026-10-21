@@ -13,6 +13,7 @@ unit: "Thousand"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "Alojamentos licenciados, milhares, Portugal, 2025"
 name_source: "label; dimension.unit.category.label.THS; dimension.geo.category.label.PT; dimension.time.category.label.2025"
+status: "conferido"
 name_en: "Dwellings permitted, Thousand, Portugal, 2025"
 name_source_en: "label; dimension.unit.category.label.THS; dimension.geo.category.label.PT; dimension.time.category.label.2025"
 measure: "Alojamentos licenciados, milhares, Portugal, 2025"

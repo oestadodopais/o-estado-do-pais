@@ -47,10 +47,4 @@ study: "a-casa-em-portugal-e-na-europa"
 note: "Cruzado de ResearchHub content/23 Habitacao · hab-imprensa-manif-euronews."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
-corrections:
-  - date: "2026-10-21"
-    kind: "correcao"
-    old_value: "organizada por uma plataforma que reúne cerca de 40 organizações da sociedade civil."
-    new_value: "Cinco cidades de Portugal vão acolher, este sábado, uma manifestação contra a crise na habitação, organizada por uma plataforma que reúne cerca de 40 organizações da sociedade civil."
-    reason: "HB1-b: excerto ampliado às orações contíguas do corpo alojado, com o rótulo e a coluna quando se trata de um quadro."
-    reason_en: "HB1-b: excerpt extended to contiguous clauses of the hosted body, including the label and column for a table."
+corrections: []

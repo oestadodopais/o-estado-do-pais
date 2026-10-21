@@ -1,4 +1,5 @@
 import {temAlgarismoLivreEo1,origemDaDefinicaoConfere,errosDaDefinicaoEo1} from '../../src/lib/definicoes-eo1.mjs';
+import { nomeDoCuboEmIngles } from '../../src/lib/o-que-e-o-numero.mjs';
 import {temAlgarismoLivre} from '../../src/lib/algarismos-definicoes.mjs';
 import {NOMES_EO1} from '../../src/data/nomes-eo1.mjs';
 import { periodoDoRecibo } from '../hb1/periodo-do-recibo.mjs';
@@ -507,7 +508,8 @@ export function conferirCabecaDoRecibo(cabeca, id, lang, { ctx, cartoes, porConf
   const falha = (/** @type {string} */ m) => erros.push(`K17 · recibo · ${lang} · ${id}: ${m}`);
   for(const m of conferirPalavrasSaude(cabeca,id,lang))falha(m);
   if (ctx.linhas.get(id)?.name && ctx.linhas.get(id)?.name_source) {
-    const campo = lang === 'en' && ctx.linhas.get(id)?.name_en ? 'name_en' : 'name';
+    // HB1-c (o achado 13): nos cubos do Eurostat do estudo da habitação o nome na fonte é o inglês, nas duas edições.
+    const campo = (lang === 'en' || nomeDoCuboEmIngles(ctx.linhas.get(id))) && ctx.linhas.get(id)?.name_en ? 'name_en' : 'name';
     const rotulo = cabeca.querySelector(`.linha-nome-da-fonte [data-linha-campo="${campo}"]`);
     if (!rotulo || normal(rotulo.textContent) !== normal(ctx.linhas.get(id)?.[campo])) falha('o nome na fonte não é o rótulo da medida conferido');
   }

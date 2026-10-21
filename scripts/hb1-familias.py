@@ -87,6 +87,7 @@ stat={
  'prc-hpi-q':('Preços da habitação','House prices'),
  'tipsho10':('Preços da habitação descontada a inflação','House prices net of inflation'),
  'tipsho60':('Preços das casas em relação ao rendimento','House prices relative to income'),
+ 'tespm140':('Sobrecarga do custo da habitação','Housing cost overburden'),
  'prc-hicp':('Variação das rendas pagas','Change in rents paid'),
  'ilc-lvho02':('População por regime de ocupação','Population by tenure status'),
  'ilc-mded01':('Parte do rendimento gasta na habitação','Share of income spent on housing'),

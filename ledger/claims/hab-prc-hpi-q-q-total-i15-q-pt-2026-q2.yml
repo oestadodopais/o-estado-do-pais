@@ -13,10 +13,11 @@ unit: "Quarterly index, 2015=100"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "Índice de preços da habitação, índice trimestral, 2015 igual a cem, Portugal, 2.º trimestre de 2026"
 name_source: "label; dimension.unit.category.label.I15_Q; dimension.geo.category.label.PT; dimension.time.category.label.2026-Q2"
-name_en: "House price index, Quarterly index, 2015=100, Portugal, quarter 2 of 2026"
+status: "conferido"
+name_en: "House price index, Quarterly index, 2015=100, Portugal, 2026-Q2"
 name_source_en: "label; dimension.unit.category.label.I15_Q; dimension.geo.category.label.PT; dimension.time.category.label.2026-Q2"
 measure: "Índice de preços da habitação, índice trimestral, 2015 igual a cem, Portugal, 2.º trimestre de 2026"
-measure_en: "House price index, Quarterly index, 2015=100, Portugal, quarter 2 of 2026"
+measure_en: "House price index, Quarterly index, 2015=100, Portugal, 2026-Q2"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Eurostat"

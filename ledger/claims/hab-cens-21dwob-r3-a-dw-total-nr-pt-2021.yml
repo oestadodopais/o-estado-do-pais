@@ -13,6 +13,7 @@ unit: "Number"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "Alojamentos familiares clássicos, número, Portugal, 2021"
 name_source: "label; dimension.unit.category.label.NR; dimension.geo.category.label.PT; dimension.time.category.label.2021"
+status: "conferido"
 name_en: "Conventional dwellings, Number, Portugal, 2021"
 name_source_en: "label; dimension.unit.category.label.NR; dimension.geo.category.label.PT; dimension.time.category.label.2021"
 measure: "Alojamentos familiares clássicos, número, Portugal, 2021"

@@ -13,6 +13,7 @@ unit: "Percentage"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "Distribuição da população por regime de ocupação, inquilinos com renda reduzida ou gratuita, União Europeia, 2025"
 name_source: "label; dimension.tenure.category.label.RENT_FR; dimension.geo.category.label.EU27_2020; dimension.time.category.label.2025"
+status: "conferido"
 name_en: "Distribution of population by tenure status, Tenant, rent at reduced price or free, European Union - 27 countries (from 2020), 2025"
 name_source_en: "label; dimension.tenure.category.label.RENT_FR; dimension.geo.category.label.EU27_2020; dimension.time.category.label.2025"
 measure: "Distribuição da população por regime de ocupação, inquilinos com renda reduzida ou gratuita, União Europeia, 2025"

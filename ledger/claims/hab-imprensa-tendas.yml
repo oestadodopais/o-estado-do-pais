@@ -49,10 +49,4 @@ study: "a-casa-em-portugal-e-na-europa"
 note: "Cruzado de ResearchHub content/23 Habitacao · hab-imprensa-tendas."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
-corrections:
-  - date: "2026-10-21"
-    kind: "correcao"
-    old_value: "Foram retiradas, ao início da manhã desta segunda-feira, as tendas"
-    new_value: "Foram retiradas, ao início da manhã desta segunda-feira, as tendas de dezenas de pessoas que permaneciam acampadas na Praça D. João I, no centro do Porto, em protesto contra o aumento do custo de vida e a crise da habitação.O acampamento foi promovido pelo movimento \"Não consegues pagar renda? Traz tenda\". O acampamento mantinha-se no local desde sábado, dia em que cerca de 1.500 pessoas se manifestaram no Porto contra o agravamento do custo de vida."
-    reason: "HB1-b: excerto ampliado às orações contíguas do corpo alojado, com o rótulo e a coluna quando se trata de um quadro."
-    reason_en: "HB1-b: excerpt extended to contiguous clauses of the hosted body, including the label and column for a table."
+corrections: []

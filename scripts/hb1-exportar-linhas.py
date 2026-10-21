@@ -10,16 +10,29 @@ for r in b['rows']:
   r['reference_date']=period.rsplit('/',1)[1];r['note_extra']='Período completo da fonte: '+period+'.'
  elif not period:r['reference_date']='[a verificar]'
  if r.get('document') is not None and not r['document'].get('edition'):r['document']['edition']='[a verificar]'
-# HB1-b: os excertos ampliados são valores textuais. A correção conserva o
-# valor anteriormente exportado, sem o copiar à mão para o manifesto.
-book={r['id']:r for r in json.loads((a.motor/'content/28 Habitacao Estudo/ledger.json').read_text())['claims']}
-for spec in b['rows']:
- f=site/'ledger/claims'/(spec['site_id']+'.yml')
- if not f.exists():continue
- old=yaml.safe_load(f.read_text());new=book[spec['rh_id']]
- reason='HB1-b: excerto ampliado às orações contíguas do corpo alojado, com o rótulo e a coluna quando se trata de um quadro.'
- if old.get('unit') in ['texto','afirmação'] and (old['value']!=new['value'] or any(c.get('reason')==reason for c in old.get('corrections',[]))):
-  spec['corrections']=[dict(date='2026-10-21',kind='correcao',old_value='__valor_anterior__',new_value='__valor__',reason=reason,reason_en='HB1-b: excerpt extended to contiguous clauses of the hosted body, including the label and column for a table.')]
+# HB1-c (o achado 15 da leitura da HB1-b): uma linha que nunca chegou ao sítio
+# não tem correção pública. O estudo está em preparação (`date: null` em
+# `src/data/datas-de-publicacao.json`), e a exportação não escreve entradas
+# `kind: "correcao"`; o contrato confere-o `tests/hb1/preparacao-sem-correcoes.mjs`.
+# HB1-c (a recomposição sobre as três linhas partilhadas): uma linha que outra
+# travessia do sítio já prende (o estudo do Orçamento, `ledger/cruzamentos/eo1.json`)
+# fica na versão dessa travessia; a do HB1 não a reescreve.
+outras=set()
+for f in sorted((site/'ledger/cruzamentos').glob('*.json')):
+ if f.name=='hb1.json':continue
+ d=json.loads(f.read_text())
+ if isinstance(d.get('rows'),dict):outras|=set(d['rows'])
+partilhadas=[r['site_id'] for r in b['rows'] if r['site_id'] in outras]
+b['rows']=[r for r in b['rows'] if r['site_id'] not in outras]
+# A guarda dos órfãos do exportador lê `hb1.json`: uma linha que outra travessia
+# prende não fica órfã quando sai deste registo, porque a guarda dela continua
+# no registo dessa travessia; sai daqui antes da exportação.
+reg=site/'ledger/cruzamentos/hb1.json'
+if reg.exists():
+ d=json.loads(reg.read_text())
+ if any(k in outras for k in d.get('rows',{})):
+  d['rows']={k:v for k,v in d['rows'].items() if k not in outras};reg.write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n')
+if partilhadas:print('HB1: linhas prendidas por outra travessia, deixadas na versão dela: '+', '.join(sorted(partilhadas)))
 cache=a.motor/'publisher/recortes/manifest.hb1.json';had_cache=cache.exists()
 with tempfile.TemporaryDirectory() as tmp:
  f=Path(tmp)/'manifest.hb1.json';f.write_text(json.dumps(b,ensure_ascii=False,indent=2)+'\n')

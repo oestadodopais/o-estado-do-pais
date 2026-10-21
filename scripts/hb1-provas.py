@@ -3,6 +3,15 @@ import argparse,json,hashlib
 from pathlib import Path
 p=argparse.ArgumentParser();p.add_argument('motor',type=Path);a=p.parse_args()
 b=json.loads((a.motor/'content/28 Habitacao Estudo/ledger.json').read_text())['claims'];rows={}
+# HB1-c: uma linha que outra travessia do sítio prende (as três linhas partilhadas
+# com o estudo do Orçamento) prova-se pela conferência dessa travessia, na versão
+# dela; as provas HB1 ficam com as linhas que só o HB1 exporta.
+outras=set()
+for f in sorted(Path('ledger/cruzamentos').glob('*.json')):
+ if f.name=='hb1.json':continue
+ d=json.loads(f.read_text())
+ if isinstance(d.get('rows'),dict):outras|=set(d['rows'])
+b=[r for r in b if r['id'] not in outras]
 for r in b:
  if not (r.get('afirmacao') or r.get('unit') == 'texto' and (r['id'].startswith(('hab-imprensa-', 'hab-arrendamento-exposicao')) or r['id'] == 'hab-plataforma-reivindicacoes')):continue
  f=a.motor/r['document']['file'];receipt=json.loads(Path(str(f)+'.pedido.json').read_text())

@@ -3,6 +3,14 @@ import argparse,json,re,yaml
 from pathlib import Path
 p=argparse.ArgumentParser();p.add_argument('motor',type=Path);a=p.parse_args()
 b=json.loads((a.motor/'content/28 Habitacao Estudo/ledger.json').read_text())['claims']
+# HB1-c: as linhas que outra travessia do sítio prende (as três partilhadas com o estudo do
+# Orçamento) declaram-se pela declaração dessa travessia, na versão dela.
+outras=set()
+for f in sorted(Path('ledger/cruzamentos').glob('*.json')):
+ if f.name=='hb1.json':continue
+ d=json.loads(f.read_text())
+ if isinstance(d.get('rows'),dict):outras|=set(d['rows'])
+b=[r for r in b if r['id'] not in outras]
 titles={};labels={};sources={};editions={};locators={}
 for r in b:
  if r.get('derivation'):continue

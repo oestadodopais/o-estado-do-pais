@@ -796,46 +796,6 @@
         "sha256": "e07a1aa4ec2c0ffb3a202ace8166dc62d29b2e94ad3888c6f50e84b658f56f0d"
       }
     },
-    "posicao-ps-rendas": {
-      "row": {
-        "id": "posicao-ps-rendas",
-        "value": "Arrendatários: dedução das rendas no IRS aumentada para 1.000 euros a partir de 2027.",
-        "excerpt": "Arrendatários: dedução das rendas no IRS aumentada para 1.000 euros a partir de 2027.",
-        "unit": "texto",
-        "reference_date": "2027",
-        "published_at": "2026-10-19",
-        "attributed_to": [
-          "José Luís Carneiro"
-        ],
-        "attributed_to_en": null,
-        "afirmacao": true,
-        "source_url": "https://ps.pt/habitacao-o-que-propusemos-e-o-que-vamos-propor/",
-        "document": {
-          "title": "Habitação: o que propusemos e o que vamos propor",
-          "file": "content/25 Orcamento 2027 Medidas/source/posicoes/ps-habitacao19.html",
-          "source_sha256": "9d5a4c543d4c6264ad453691a14593f1f07c401fe2d8f4cd4f966f270afec06e",
-          "locator": "Corpo da página; frase integral identificada pelo excerto; data editorial no documento",
-          "page": 1,
-          "printed_page": null
-        },
-        "document_checks": null
-      },
-      "receipt": {
-        "pedido": "https://ps.pt/habitacao-o-que-propusemos-e-o-que-vamos-propor/",
-        "endereco_final": "https://ps.pt/habitacao-o-que-propusemos-e-o-que-vamos-propor/",
-        "acedido_em": "2026-10-20T13:13:00.287694+00:00",
-        "cliente": "core.http.HttpClient.condicional",
-        "user_agent": "OEstadoDoPais/corredor",
-        "ficheiro": "ps-habitacao19.html",
-        "estado": 200,
-        "tipo": "text/html; charset=UTF-8",
-        "segundos": 0.339,
-        "erro": null,
-        "redirecionamentos": [],
-        "bytes": 148992,
-        "sha256": "9d5a4c543d4c6264ad453691a14593f1f07c401fe2d8f4cd4f966f270afec06e"
-      }
-    },
     "hab-arrendamento-exposicao": {
       "row": {
         "id": "hab-arrendamento-exposicao",
@@ -1404,46 +1364,6 @@
         "ficheiro": "parlamento-pt-16-texto.pdf",
         "bytes": 109924,
         "sha256": "41407449c007c49095ed5845ab5961acc9ec01f0f668dbb2225f099d9f52aae9"
-      }
-    },
-    "posicao-chega-habitacao": {
-      "row": {
-        "id": "posicao-chega-habitacao",
-        "value": "André Ventura defende um pacote de emergência com benefícios fiscais, apoios às rendas e menos burocracia.",
-        "excerpt": "André Ventura defende um pacote de emergência com benefícios fiscais, apoios às rendas e menos burocracia.",
-        "unit": "texto",
-        "reference_date": "2027",
-        "published_at": "2026-10-19",
-        "attributed_to": [
-          "André Ventura"
-        ],
-        "attributed_to_en": null,
-        "afirmacao": true,
-        "source_url": "https://folhanacional.pt/2026/10/19/ventura-acusa-ps-de-hipocrisia-na-habitacao-montenegro-falhou-brutalmente-mas-os-socialistas-fizeram-pior/",
-        "document": {
-          "title": "Ventura acusa PS de hipocrisia na habitação: “Montenegro falhou brutalmente, mas os socialistas fizeram pior”",
-          "file": "content/25 Orcamento 2027 Medidas/source/posicoes/chega-habitacao19.html",
-          "source_sha256": "eb89d16a5837c718866280139fdf6695b4eb6271ccf644694a4732793ec00dea",
-          "locator": "Corpo da página; frase integral identificada pelo excerto; data editorial no documento",
-          "page": 1,
-          "printed_page": null
-        },
-        "document_checks": null
-      },
-      "receipt": {
-        "pedido": "https://folhanacional.pt/2026/10/19/ventura-acusa-ps-de-hipocrisia-na-habitacao-montenegro-falhou-brutalmente-mas-os-socialistas-fizeram-pior/",
-        "endereco_final": "https://folhanacional.pt/2026/10/19/ventura-acusa-ps-de-hipocrisia-na-habitacao-montenegro-falhou-brutalmente-mas-os-socialistas-fizeram-pior/",
-        "acedido_em": "2026-10-20T13:14:09.568925+00:00",
-        "cliente": "core.http.HttpClient.condicional",
-        "user_agent": "OEstadoDoPais/corredor",
-        "ficheiro": "chega-habitacao19.html",
-        "estado": 200,
-        "tipo": "text/html; charset=UTF-8",
-        "segundos": 0.823,
-        "erro": null,
-        "redirecionamentos": [],
-        "bytes": 210311,
-        "sha256": "eb89d16a5837c718866280139fdf6695b4eb6271ccf644694a4732793ec00dea"
       }
     },
     "hab-il-proposta": {

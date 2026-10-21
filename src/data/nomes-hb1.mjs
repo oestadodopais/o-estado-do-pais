@@ -8,6 +8,14 @@ export const NOMES_HB1 = {
     "pt": "Índice dos preços da habitação descontada a inflação, União Europeia",
     "en": "Index of house prices net of inflation, European Union"
   },
+  "hab-prc-hpi-q-q-total-i15-q-pt-2026-q2": {
+    "pt": "Índice dos preços da habitação, Portugal",
+    "en": "Index of house prices, Portugal"
+  },
+  "hab-prc-hpi-q-q-total-i15-q-hu-2026-q2": {
+    "pt": "Índice dos preços da habitação, Hungria",
+    "en": "Index of house prices, Hungary"
+  },
   "hab-prc-hpi-q-q-total-rch-a-pt-2026-q2": {
     "pt": "Variação anual dos preços da habitação, Portugal",
     "en": "Annual change in house prices, Portugal"
@@ -72,21 +80,25 @@ export const NOMES_HB1 = {
     "pt": "Sobrecarga do custo da habitação, União Europeia",
     "en": "Housing cost overburden, European Union"
   },
-  "der-hab-proprietarios-pt-2025": {
-    "pt": "População em casa própria, Portugal",
-    "en": "Population in owner-occupied homes, Portugal"
+  "hab-ilc-lvho02-a-total-total-rent-mkt-pc-pt-2025": {
+    "pt": "População por regime de ocupação, inquilinos a preços de mercado, Portugal",
+    "en": "Population by tenure status, tenants at market rents, Portugal"
   },
-  "hab-ilc-lvho02-a-total-total-own-l-pc-pt-2025": {
-    "pt": "População por regime de ocupação, proprietários com empréstimo, Portugal",
-    "en": "Population by tenure status, owners with a loan, Portugal"
+  "hab-ilc-lvho02-a-total-total-rent-mkt-pc-eu27_2020-2025": {
+    "pt": "População por regime de ocupação, inquilinos a preços de mercado, União Europeia",
+    "en": "Population by tenure status, tenants at market rents, European Union"
+  },
+  "hab-ilc-lvho07c-a-pc-rent-mkt-pt-2020": {
+    "pt": "Sobrecarga do custo da habitação, inquilinos a preços de mercado, Portugal",
+    "en": "Housing cost overburden, tenants at market rents, Portugal"
   },
   "hab-ilc-lvho02-a-total-total-own-nl-pc-pt-2025": {
     "pt": "População por regime de ocupação, proprietários sem empréstimo, Portugal",
     "en": "Population by tenure status, owners without a loan, Portugal"
   },
-  "hab-ilc-lvho07c-a-pc-rent-mkt-pt-2020": {
-    "pt": "Sobrecarga do custo da habitação, inquilinos a preços de mercado, Portugal",
-    "en": "Housing cost overburden, tenants at market rents, Portugal"
+  "hab-ilc-lvho07c-a-pc-own-nl-pt-2025": {
+    "pt": "Sobrecarga do custo da habitação, proprietários sem empréstimo, Portugal",
+    "en": "Housing cost overburden, owners without a loan, Portugal"
   },
   "hab-yth-demo-030-a-avg-t-pt-2025": {
     "pt": "Idade média de saída de casa dos pais, Portugal",
@@ -164,17 +176,33 @@ export const NOMES_HB1 = {
     "pt": "Sobrecarga do custo da habitação, inquilinos a preços de mercado, Portugal",
     "en": "Housing cost overburden, tenants at market rents, Portugal"
   },
-  "hab-ilc-lvho02-a-total-total-rent-mkt-pc-pt-2025": {
-    "pt": "População por regime de ocupação, inquilinos a preços de mercado, Portugal",
-    "en": "Population by tenure status, tenants at market rents, Portugal"
+  "hab-ilc-lvho07c-a-pc-own-l-pt-2025": {
+    "pt": "Sobrecarga do custo da habitação, proprietários com empréstimo, Portugal",
+    "en": "Housing cost overburden, owners with a loan, Portugal"
   },
   "der-hab-jovens-com-pais-pt-vs-eu-2025": {
     "pt": "Diferença face à União nos jovens que vivem com os pais",
     "en": "Gap from the Union in young people living with parents"
   },
+  "hab-ilc-lvps08-a-y25-34-t-pc-hr-2025": {
+    "pt": "Jovens que vivem com os pais ou partilham o rendimento do agregado, vinte e cinco a trinta e quatro anos, Croácia",
+    "en": "Young people living with parents or sharing household income, twenty-five to thirty-four years, Croatia"
+  },
+  "hab-ilc-lvps08-a-y25-34-t-pc-pt-2020": {
+    "pt": "Jovens que vivem com os pais ou partilham o rendimento do agregado, vinte e cinco a trinta e quatro anos, Portugal",
+    "en": "Young people living with parents or sharing household income, twenty-five to thirty-four years, Portugal"
+  },
+  "der-hab-saida-pt-vs-eu-2025": {
+    "pt": "Diferença face à União na idade de saída de casa dos pais",
+    "en": "Gap from the Union in the age of leaving the parental home"
+  },
   "hab-yth-demo-030-a-avg-t-pt-2015": {
     "pt": "Idade média de saída de casa dos pais, Portugal",
     "en": "Average age of leaving the parental home, Portugal"
+  },
+  "hab-ine-censos-0012517-0": {
+    "pt": "Proporção de alojamentos vagos nos Censos",
+    "en": "Share of vacant dwellings in the Census"
   },
   "der-hab-licencas-por-mil-pt-2025": {
     "pt": "Alojamentos licenciados por mil habitantes, Portugal",
@@ -204,10 +232,6 @@ export const NOMES_HB1 = {
     "pt": "Alojamentos vagos nos Censos",
     "en": "Vacant dwellings in the Census"
   },
-  "hab-ine-censos-0012517-0": {
-    "pt": "Proporção de alojamentos vagos nos Censos",
-    "en": "Share of vacant dwellings in the Census"
-  },
   "hab-arrendamento-exposicao-vagos": {
     "pt": "Estimativa do Governo de alojamentos vagos em boas condições",
     "en": "Government estimate of vacant dwellings in good condition"
@@ -236,10 +260,6 @@ export const NOMES_HB1 = {
     "pt": "Anúncio dos incentivos à construção",
     "en": "Announcement of construction incentives"
   },
-  "hab-prc-hpi-q-q-total-i15-q-pt-2026-q2": {
-    "pt": "Índice dos preços da habitação, Portugal",
-    "en": "Index of house prices, Portugal"
-  },
   "hab-prc-hpi-q-q-total-i15-q-eu27_2020-2026-q2": {
     "pt": "Índice dos preços da habitação, União Europeia",
     "en": "Index of house prices, European Union"
@@ -247,10 +267,6 @@ export const NOMES_HB1 = {
   "hab-prc-hpi-q-q-total-i15-q-fi-2026-q2": {
     "pt": "Índice dos preços da habitação, Finlândia",
     "en": "Index of house prices, Finland"
-  },
-  "hab-prc-hpi-q-q-total-i15-q-hu-2026-q2": {
-    "pt": "Índice dos preços da habitação, Hungria",
-    "en": "Index of house prices, Hungary"
   },
   "hab-prc-hpi-q-q-total-rch-a-fi-2026-q2": {
     "pt": "Variação anual dos preços da habitação, Finlândia",
@@ -336,6 +352,14 @@ export const NOMES_HB1 = {
     "pt": "Variação das rendas pagas, Croácia",
     "en": "Change in rents paid, Croatia"
   },
+  "der-hab-proprietarios-pt-2025": {
+    "pt": "População em casa própria, Portugal",
+    "en": "Population in owner-occupied homes, Portugal"
+  },
+  "hab-ilc-lvho02-a-total-total-own-l-pc-pt-2025": {
+    "pt": "População por regime de ocupação, proprietários com empréstimo, Portugal",
+    "en": "Population by tenure status, owners with a loan, Portugal"
+  },
   "der-hab-proprietarios-eu-2025": {
     "pt": "População em casa própria, União Europeia",
     "en": "Population in owner-occupied homes, European Union"
@@ -367,10 +391,6 @@ export const NOMES_HB1 = {
   "der-hab-inquilinos-eu-2025": {
     "pt": "População em casa arrendada, União Europeia",
     "en": "Population in rented homes, European Union"
-  },
-  "hab-ilc-lvho02-a-total-total-rent-mkt-pc-eu27_2020-2025": {
-    "pt": "População por regime de ocupação, inquilinos a preços de mercado, União Europeia",
-    "en": "Population by tenure status, tenants at market rents, European Union"
   },
   "hab-ilc-lvho02-a-total-total-rent-fr-pc-eu27_2020-2025": {
     "pt": "População por regime de ocupação, inquilinos a renda reduzida ou gratuita, União Europeia",
@@ -408,21 +428,21 @@ export const NOMES_HB1 = {
     "pt": "Parte do rendimento gasta na habitação, Portugal",
     "en": "Share of income spent on housing, Portugal"
   },
+  "hab-tespm140-a-pc-pt-2025": {
+    "pt": "Sobrecarga do custo da habitação, Portugal",
+    "en": "Housing cost overburden, Portugal"
+  },
+  "hab-tespm140-a-pc-eu27_2020-2025": {
+    "pt": "Sobrecarga do custo da habitação, União Europeia",
+    "en": "Housing cost overburden, European Union"
+  },
   "hab-ilc-lvho07c-a-pc-total-eu27_2020-2015": {
     "pt": "Sobrecarga do custo da habitação, União Europeia",
     "en": "Housing cost overburden, European Union"
   },
-  "hab-ilc-lvho07c-a-pc-own-l-pt-2025": {
-    "pt": "Sobrecarga do custo da habitação, proprietários com empréstimo, Portugal",
-    "en": "Housing cost overburden, owners with a loan, Portugal"
-  },
   "hab-ilc-lvho07c-a-pc-own-l-eu27_2020-2025": {
     "pt": "Sobrecarga do custo da habitação, proprietários com empréstimo, União Europeia",
     "en": "Housing cost overburden, owners with a loan, European Union"
-  },
-  "hab-ilc-lvho07c-a-pc-own-nl-pt-2025": {
-    "pt": "Sobrecarga do custo da habitação, proprietários sem empréstimo, Portugal",
-    "en": "Housing cost overburden, owners without a loan, Portugal"
   },
   "hab-ilc-lvho07c-a-pc-own-nl-eu27_2020-2025": {
     "pt": "Sobrecarga do custo da habitação, proprietários sem empréstimo, União Europeia",
@@ -520,10 +540,6 @@ export const NOMES_HB1 = {
     "pt": "Privação severa da habitação, dezasseis a vinte e nove anos, União Europeia",
     "en": "Severe housing deprivation, sixteen to twenty-nine years, European Union"
   },
-  "der-hab-saida-pt-vs-eu-2025": {
-    "pt": "Diferença face à União na idade de saída de casa dos pais",
-    "en": "Gap from the Union in the age of leaving the parental home"
-  },
   "hab-yth-demo-030-a-avg-t-fi-2025": {
     "pt": "Idade média de saída de casa dos pais, Finlândia",
     "en": "Average age of leaving the parental home, Finland"
@@ -535,14 +551,6 @@ export const NOMES_HB1 = {
   "hab-ilc-lvps08-a-y25-34-t-pc-dk-2025": {
     "pt": "Jovens que vivem com os pais ou partilham o rendimento do agregado, vinte e cinco a trinta e quatro anos, Dinamarca",
     "en": "Young people living with parents or sharing household income, twenty-five to thirty-four years, Denmark"
-  },
-  "hab-ilc-lvps08-a-y25-34-t-pc-hr-2025": {
-    "pt": "Jovens que vivem com os pais ou partilham o rendimento do agregado, vinte e cinco a trinta e quatro anos, Croácia",
-    "en": "Young people living with parents or sharing household income, twenty-five to thirty-four years, Croatia"
-  },
-  "hab-ilc-lvps08-a-y25-34-t-pc-pt-2020": {
-    "pt": "Jovens que vivem com os pais ou partilham o rendimento do agregado, vinte e cinco a trinta e quatro anos, Portugal",
-    "en": "Young people living with parents or sharing household income, twenty-five to thirty-four years, Portugal"
   },
   "hab-ilc-lvps08-a-y25-34-t-pc-pt-2015": {
     "pt": "Jovens que vivem com os pais ou partilham o rendimento do agregado, vinte e cinco a trinta e quatro anos, Portugal",

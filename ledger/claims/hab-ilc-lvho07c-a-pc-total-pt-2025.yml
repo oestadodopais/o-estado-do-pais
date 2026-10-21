@@ -13,6 +13,7 @@ unit: "Percentage"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "Taxa de sobrecarga dos custos da habitação, total, Portugal, 2025"
 name_source: "label; dimension.tenure.category.label.TOTAL; dimension.geo.category.label.PT; dimension.time.category.label.2025"
+status: "conferido"
 name_en: "Housing cost overburden rate, Total, Portugal, 2025"
 name_source_en: "label; dimension.tenure.category.label.TOTAL; dimension.geo.category.label.PT; dimension.time.category.label.2025"
 measure: "Taxa de sobrecarga dos custos da habitação, total, Portugal, 2025"

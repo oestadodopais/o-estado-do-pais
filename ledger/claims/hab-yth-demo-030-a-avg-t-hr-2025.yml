@@ -13,6 +13,7 @@ unit: "Average"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "Idade média estimada de saída de casa dos pais, Croácia, 2025"
 name_source: "label; dimension.geo.category.label.HR; dimension.time.category.label.2025"
+status: "conferido"
 name_en: "Estimated average age of leaving the parental household, Croatia, 2025"
 name_source_en: "label; dimension.geo.category.label.HR; dimension.time.category.label.2025"
 measure: "Idade média estimada de saída de casa dos pais, Croácia, 2025"

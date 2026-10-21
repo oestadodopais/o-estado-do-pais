@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { nomeDoCuboEmIngles } from '../src/lib/o-que-e-o-numero.mjs';
 import { tirarCodigoConferido, lerPaginaComCodigo } from './incorporar-do-portao.mjs';
 /**
  * ---------------------------------------------------------------------------
@@ -487,7 +488,7 @@ function langDe(no) {
 export function conferirEdicaoDoNome(el, lang, linha) {
   const erros = [], campo = el.getAttribute('data-linha-campo'), texto = norm(el.text);
   if (campo === 'name_en' && (!linha?.name_en || texto !== norm(linha.name_en) ||
-      LINGUA_DOS_ROTULOS[linha.name_en] !== 'en' || lang !== 'en' || langDe(el) !== 'en'))
+      LINGUA_DOS_ROTULOS[linha.name_en] !== 'en' || (lang !== 'en' && !nomeDoCuboEmIngles(linha)) || langDe(el) !== 'en'))
     erros.push('nome inglês sem declaração, fora da edição, com língua errada ou diferente da linha');
   if (lang === 'en' && linha?.name_en && campo === 'name' && el.closest('.linha-nome-da-fonte'))
     erros.push('o nome da fonte não usa a tradução inglesa da linha');

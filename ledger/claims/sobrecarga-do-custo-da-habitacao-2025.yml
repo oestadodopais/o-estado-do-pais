@@ -1,41 +1,59 @@
-id: sobrecarga-do-custo-da-habitacao-2025
-value: 6,3
-unit: '%'
-source: Eurostat
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# Gerado por ResearchHub/indicators/generate_claims.py a partir da verificação
+# de disponibilidade. Escolha do indicador: indicators/convergence.md.
+
+id: "sobrecarga-do-custo-da-habitacao-2025"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "6,3"
+unit: "%"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Eurostat"
 document:
-  title: Housing cost overburden rate
-  edition: tespm140
-  kind: serie
-  url: https://ec.europa.eu/eurostat/databrowser/view/tespm140/default/table?lang=en
-source_url: https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm140?format=JSON&lang=EN&geo=PT&sex=T
-access_date: '2026-08-12'
-reference_date: '2025'
-excerpt: 'Housing cost overburden rate — Percentage — Portugal — 2025: 6.3'
+  title: "Housing cost overburden rate"
+  edition: "tespm140"
+  kind: "serie"
+  url: "https://ec.europa.eu/eurostat/databrowser/view/tespm140/default/table?lang=en"
+source_url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm140?format=JSON&lang=EN&geo=PT&sex=T"
+access_date: "2026-08-12"
+reference_date: "2025"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "Housing cost overburden rate — Percentage — Portugal — 2025: 6.3"
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null
 derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
 check: null
-study: quadro-institucional
-note: 'Valor confirmado contra a Comissão Europeia, SWD(2026) 222 (Relatório por País 2026 — Portugal): 6.3. Excerto composto a partir das etiquetas da própria resposta do Eurostat; o endereço em source_url devolve o mesmo valor. HB1-b: valor e data de atualização reconferidos no corpo tespm140 alojado em content/23 Habitacao/source/eurostat/hb1b-tespm140.json; SHA-256 1a6506dbefe39efa0d97ce2fa561bc40e31e7e387a042ba3263a2cee5b6a0a4d.'
+
+study: "quadro-institucional"
+note: "Valor confirmado contra a Comissão Europeia, SWD(2026) 222 (Relatório por País 2026 — Portugal): 6.3. Excerto composto a partir das etiquetas da própria resposta do Eurostat; o endereço em source_url devolve o mesmo valor."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []
+
+# Reconferências. Escritas por indicators/refresh.py, nunca à mão.
 verifications:
-- date: '2026-09-21'
-  path: https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm140?format=JSON&lang=EN&geo=PT&sex=T
-  result: igual
-  by: painel-semanal
-- date: '2026-09-28'
-  path: https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm140?format=JSON&lang=EN&geo=PT&sex=T
-  result: igual
-  by: painel-semanal
-- date: '2026-10-05'
-  path: https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm140?format=JSON&lang=EN&geo=PT&sex=T
-  result: igual
-  by: painel-semanal
-- date: '2026-10-12'
-  path: https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm140?format=JSON&lang=EN&geo=PT&sex=T
-  result: igual
-  by: painel-semanal
-- date: '2026-10-19'
-  path: https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm140?format=JSON&lang=EN&geo=PT&sex=T
-  result: igual
-  by: painel-semanal
-published_at: '2026-10-20'
+  - date: "2026-09-21"
+    path: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm140?format=JSON&lang=EN&geo=PT&sex=T"
+    result: "igual"
+    by: "painel-semanal"
+  - date: "2026-09-28"
+    path: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm140?format=JSON&lang=EN&geo=PT&sex=T"
+    result: "igual"
+    by: "painel-semanal"
+  - date: "2026-10-05"
+    path: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm140?format=JSON&lang=EN&geo=PT&sex=T"
+    result: "igual"
+    by: "painel-semanal"
+  - date: "2026-10-12"
+    path: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm140?format=JSON&lang=EN&geo=PT&sex=T"
+    result: "igual"
+    by: "painel-semanal"
+  - date: "2026-10-19"
+    path: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm140?format=JSON&lang=EN&geo=PT&sex=T"
+    result: "igual"
+    by: "painel-semanal"
