@@ -15,6 +15,9 @@
 | O contexto do lugar de direção | uma sessão de mais de 24 horas, com todos os mandatos e leituras tirados dela | sessões curtas com o estado em ficheiros (`estado.py`, o prompt da sessão seguinte); os factos medidos por guião, não lidos para o contexto | regra no CLAUDE.md |
 | Os dois lançamentos de leitura parados em pedidos de permissão | 2 h e 2 h perdidas (20.10 à noite, I247) | as regras «sem cd, caminhos absolutos, um único ficheiro» no prompt comum das leituras | em uso; o prompt comum por mudar |
 
+| As passagens de correção largas que entregam vermelho | HB1-c: três passagens de 115, 112 e 99 chamadas (≈700 k símbolos) ainda vermelhas; EX4: a construção e duas correções (74, 69 e 40 chamadas) com causas escondidas pela cadeia do `build`, que pára na primeira vermelha (21.10) | o lugar de direção corre a lista do `verify` uma a uma sobre o `dist/` da cabeça, lê as causas nos registos e escreve uma passagem com todas (a HB1-c4 a c6: 32, 25 e 16 chamadas; a EX4-c a e: 40, 12 e 27); o guião M99 | regra em vigor à mão desde 21.10; o guião por escrever |
+| As aterragens perdidas por preparação da worktree | 21.10: três de manhã (I250) e uma à noite (os `.log` por registar, I253); trinta minutos de corrida do GitHub perdidos no EX4 por uma lista de conferências errada (a do `build` em vez da do `verify`) | o pré-voo da aterragem lista e limpa os `.log` do relatório; a lista do `verify` antes de publicar (M99) | I253 aberta |
+
 ## Fechados
 
 (nenhum ainda)
