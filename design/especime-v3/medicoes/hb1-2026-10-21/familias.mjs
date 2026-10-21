@@ -1125,14 +1125,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        "; aqui, vinte e cinco a trinta e quatro anos, Portugal, em ",
+        "; aqui, dos vinte e cinco aos trinta e quatro anos, Portugal, em ",
         {
           "periodo": "hab-ilc-lvps08-a-y25-34-t-pc-pt-2025"
         },
         "."
       ],
       "en": [
-        "; here, twenty-five to thirty-four years, Portugal, in ",
+        "; here, aged twenty-five to thirty-four, Portugal, in ",
         {
           "periodo": "hab-ilc-lvps08-a-y25-34-t-pc-pt-2025"
         },
@@ -1143,8 +1143,8 @@ export const FAMILIAS_HB1 = [
       "hab-ilc-lvps08-a-y25-34-t-pc-pt-2025"
     ],
     "nome": {
-      "pt": "Jovens que vivem com os pais ou partilham o rendimento do agregado, vinte e cinco a trinta e quatro anos, Portugal",
-      "en": "Young people living with parents or sharing household income, twenty-five to thirty-four years, Portugal"
+      "pt": "Jovens que vivem com os pais ou partilham o rendimento do agregado, dos vinte e cinco aos trinta e quatro anos, Portugal",
+      "en": "Young people living with parents or sharing household income, aged twenty-five to thirty-four, Portugal"
     },
     "origens": [],
     "partes": [
@@ -1165,14 +1165,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        "; aqui, vinte e cinco a trinta e quatro anos, União Europeia, em ",
+        "; aqui, dos vinte e cinco aos trinta e quatro anos, União Europeia, em ",
         {
           "periodo": "hab-ilc-lvps08-a-y25-34-t-pc-eu27_2020-2025"
         },
         "."
       ],
       "en": [
-        "; here, twenty-five to thirty-four years, European Union, in ",
+        "; here, aged twenty-five to thirty-four, European Union, in ",
         {
           "periodo": "hab-ilc-lvps08-a-y25-34-t-pc-eu27_2020-2025"
         },
@@ -1183,8 +1183,8 @@ export const FAMILIAS_HB1 = [
       "hab-ilc-lvps08-a-y25-34-t-pc-eu27_2020-2025"
     ],
     "nome": {
-      "pt": "Jovens que vivem com os pais ou partilham o rendimento do agregado, vinte e cinco a trinta e quatro anos, União Europeia",
-      "en": "Young people living with parents or sharing household income, twenty-five to thirty-four years, European Union"
+      "pt": "Jovens que vivem com os pais ou partilham o rendimento do agregado, dos vinte e cinco aos trinta e quatro anos, União Europeia",
+      "en": "Young people living with parents or sharing household income, aged twenty-five to thirty-four, European Union"
     },
     "origens": [],
     "partes": [
@@ -1799,14 +1799,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        "; aqui, vinte e cinco a trinta e quatro anos, Croácia, em ",
+        "; aqui, dos vinte e cinco aos trinta e quatro anos, Croácia, em ",
         {
           "periodo": "hab-ilc-lvps08-a-y25-34-t-pc-hr-2025"
         },
         "."
       ],
       "en": [
-        "; here, twenty-five to thirty-four years, Croatia, in ",
+        "; here, aged twenty-five to thirty-four, Croatia, in ",
         {
           "periodo": "hab-ilc-lvps08-a-y25-34-t-pc-hr-2025"
         },
@@ -1817,8 +1817,8 @@ export const FAMILIAS_HB1 = [
       "hab-ilc-lvps08-a-y25-34-t-pc-hr-2025"
     ],
     "nome": {
-      "pt": "Jovens que vivem com os pais ou partilham o rendimento do agregado, vinte e cinco a trinta e quatro anos, Croácia",
-      "en": "Young people living with parents or sharing household income, twenty-five to thirty-four years, Croatia"
+      "pt": "Jovens que vivem com os pais ou partilham o rendimento do agregado, dos vinte e cinco aos trinta e quatro anos, Croácia",
+      "en": "Young people living with parents or sharing household income, aged twenty-five to thirty-four, Croatia"
     },
     "origens": [],
     "partes": [
@@ -1839,14 +1839,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        "; aqui, vinte e cinco a trinta e quatro anos, Portugal, em ",
+        "; aqui, dos vinte e cinco aos trinta e quatro anos, Portugal, em ",
         {
           "periodo": "hab-ilc-lvps08-a-y25-34-t-pc-pt-2020"
         },
         "."
       ],
       "en": [
-        "; here, twenty-five to thirty-four years, Portugal, in ",
+        "; here, aged twenty-five to thirty-four, Portugal, in ",
         {
           "periodo": "hab-ilc-lvps08-a-y25-34-t-pc-pt-2020"
         },
@@ -1857,8 +1857,8 @@ export const FAMILIAS_HB1 = [
       "hab-ilc-lvps08-a-y25-34-t-pc-pt-2020"
     ],
     "nome": {
-      "pt": "Jovens que vivem com os pais ou partilham o rendimento do agregado, vinte e cinco a trinta e quatro anos, Portugal",
-      "en": "Young people living with parents or sharing household income, twenty-five to thirty-four years, Portugal"
+      "pt": "Jovens que vivem com os pais ou partilham o rendimento do agregado, dos vinte e cinco aos trinta e quatro anos, Portugal",
+      "en": "Young people living with parents or sharing household income, aged twenty-five to thirty-four, Portugal"
     },
     "origens": [],
     "partes": [
@@ -4697,14 +4697,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        "; aqui, dezasseis a vinte e nove anos, Portugal, em ",
+        "; aqui, dos dezasseis aos vinte e nove anos, Portugal, em ",
         {
           "periodo": "hab-ilc-lvho07a-a-pc-total-y16-29-t-pt-2025"
         },
         "."
       ],
       "en": [
-        "; here, sixteen to twenty-nine years, Portugal, in ",
+        "; here, aged sixteen to twenty-nine, Portugal, in ",
         {
           "periodo": "hab-ilc-lvho07a-a-pc-total-y16-29-t-pt-2025"
         },
@@ -4715,8 +4715,8 @@ export const FAMILIAS_HB1 = [
       "hab-ilc-lvho07a-a-pc-total-y16-29-t-pt-2025"
     ],
     "nome": {
-      "pt": "Sobrecarga do custo da habitação, dezasseis a vinte e nove anos, Portugal",
-      "en": "Housing cost overburden, sixteen to twenty-nine years, Portugal"
+      "pt": "Sobrecarga do custo da habitação, dos dezasseis aos vinte e nove anos, Portugal",
+      "en": "Housing cost overburden, aged sixteen to twenty-nine, Portugal"
     },
     "origens": [
       "hb1c-eurostat-sobrecarga"
@@ -4739,14 +4739,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        "; aqui, dezasseis a vinte e nove anos, União Europeia, em ",
+        "; aqui, dos dezasseis aos vinte e nove anos, União Europeia, em ",
         {
           "periodo": "hab-ilc-lvho07a-a-pc-total-y16-29-t-eu27_2020-2025"
         },
         "."
       ],
       "en": [
-        "; here, sixteen to twenty-nine years, European Union, in ",
+        "; here, aged sixteen to twenty-nine, European Union, in ",
         {
           "periodo": "hab-ilc-lvho07a-a-pc-total-y16-29-t-eu27_2020-2025"
         },
@@ -4757,8 +4757,8 @@ export const FAMILIAS_HB1 = [
       "hab-ilc-lvho07a-a-pc-total-y16-29-t-eu27_2020-2025"
     ],
     "nome": {
-      "pt": "Sobrecarga do custo da habitação, dezasseis a vinte e nove anos, União Europeia",
-      "en": "Housing cost overburden, sixteen to twenty-nine years, European Union"
+      "pt": "Sobrecarga do custo da habitação, dos dezasseis aos vinte e nove anos, União Europeia",
+      "en": "Housing cost overburden, aged sixteen to twenty-nine, European Union"
     },
     "origens": [
       "hb1c-eurostat-sobrecarga"
@@ -4781,14 +4781,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        "; aqui, dezasseis a vinte e nove anos, Grécia, em ",
+        "; aqui, dos dezasseis aos vinte e nove anos, Grécia, em ",
         {
           "periodo": "hab-ilc-lvho07a-a-pc-total-y16-29-t-el-2025"
         },
         "."
       ],
       "en": [
-        "; here, sixteen to twenty-nine years, Greece, in ",
+        "; here, aged sixteen to twenty-nine, Greece, in ",
         {
           "periodo": "hab-ilc-lvho07a-a-pc-total-y16-29-t-el-2025"
         },
@@ -4799,8 +4799,8 @@ export const FAMILIAS_HB1 = [
       "hab-ilc-lvho07a-a-pc-total-y16-29-t-el-2025"
     ],
     "nome": {
-      "pt": "Sobrecarga do custo da habitação, dezasseis a vinte e nove anos, Grécia",
-      "en": "Housing cost overburden, sixteen to twenty-nine years, Greece"
+      "pt": "Sobrecarga do custo da habitação, dos dezasseis aos vinte e nove anos, Grécia",
+      "en": "Housing cost overburden, aged sixteen to twenty-nine, Greece"
     },
     "origens": [
       "hb1c-eurostat-sobrecarga"
@@ -5011,14 +5011,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        "; aqui, dezasseis a vinte e nove anos, Portugal, em ",
+        "; aqui, dos dezasseis aos vinte e nove anos, Portugal, em ",
         {
           "periodo": "hab-ilc-lvho05a-a-pc-total-y16-29-t-pt-2025"
         },
         "."
       ],
       "en": [
-        "; here, sixteen to twenty-nine years, Portugal, in ",
+        "; here, aged sixteen to twenty-nine, Portugal, in ",
         {
           "periodo": "hab-ilc-lvho05a-a-pc-total-y16-29-t-pt-2025"
         },
@@ -5029,8 +5029,8 @@ export const FAMILIAS_HB1 = [
       "hab-ilc-lvho05a-a-pc-total-y16-29-t-pt-2025"
     ],
     "nome": {
-      "pt": "População em habitações sobrelotadas, dezasseis a vinte e nove anos, Portugal",
-      "en": "Population in overcrowded homes, sixteen to twenty-nine years, Portugal"
+      "pt": "População em habitações sobrelotadas, dos dezasseis aos vinte e nove anos, Portugal",
+      "en": "Population in overcrowded homes, aged sixteen to twenty-nine, Portugal"
     },
     "origens": [
       "hb1c-eurostat-sobrelotacao"
@@ -5058,14 +5058,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        "; aqui, dezasseis a vinte e nove anos, União Europeia, em ",
+        "; aqui, dos dezasseis aos vinte e nove anos, União Europeia, em ",
         {
           "periodo": "hab-ilc-lvho05a-a-pc-total-y16-29-t-eu27_2020-2025"
         },
         "."
       ],
       "en": [
-        "; here, sixteen to twenty-nine years, European Union, in ",
+        "; here, aged sixteen to twenty-nine, European Union, in ",
         {
           "periodo": "hab-ilc-lvho05a-a-pc-total-y16-29-t-eu27_2020-2025"
         },
@@ -5076,8 +5076,8 @@ export const FAMILIAS_HB1 = [
       "hab-ilc-lvho05a-a-pc-total-y16-29-t-eu27_2020-2025"
     ],
     "nome": {
-      "pt": "População em habitações sobrelotadas, dezasseis a vinte e nove anos, União Europeia",
-      "en": "Population in overcrowded homes, sixteen to twenty-nine years, European Union"
+      "pt": "População em habitações sobrelotadas, dos dezasseis aos vinte e nove anos, União Europeia",
+      "en": "Population in overcrowded homes, aged sixteen to twenty-nine, European Union"
     },
     "origens": [
       "hb1c-eurostat-sobrelotacao"
@@ -5317,14 +5317,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        "; aqui, dezasseis a vinte e nove anos, Portugal, em ",
+        "; aqui, dos dezasseis aos vinte e nove anos, Portugal, em ",
         {
           "periodo": "hab-ilc-mdho06a-a-pc-total-t-y16-29-pt-2023"
         },
         "."
       ],
       "en": [
-        "; here, sixteen to twenty-nine years, Portugal, in ",
+        "; here, aged sixteen to twenty-nine, Portugal, in ",
         {
           "periodo": "hab-ilc-mdho06a-a-pc-total-t-y16-29-pt-2023"
         },
@@ -5335,8 +5335,8 @@ export const FAMILIAS_HB1 = [
       "hab-ilc-mdho06a-a-pc-total-t-y16-29-pt-2023"
     ],
     "nome": {
-      "pt": "Privação severa da habitação, dezasseis a vinte e nove anos, Portugal",
-      "en": "Severe housing deprivation, sixteen to twenty-nine years, Portugal"
+      "pt": "Privação severa da habitação, dos dezasseis aos vinte e nove anos, Portugal",
+      "en": "Severe housing deprivation, aged sixteen to twenty-nine, Portugal"
     },
     "origens": [
       "hb1c-eurostat-privacao-severa"
@@ -5364,14 +5364,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        "; aqui, dezasseis a vinte e nove anos, União Europeia, em ",
+        "; aqui, dos dezasseis aos vinte e nove anos, União Europeia, em ",
         {
           "periodo": "hab-ilc-mdho06a-a-pc-total-t-y16-29-eu27_2020-2023"
         },
         "."
       ],
       "en": [
-        "; here, sixteen to twenty-nine years, European Union, in ",
+        "; here, aged sixteen to twenty-nine, European Union, in ",
         {
           "periodo": "hab-ilc-mdho06a-a-pc-total-t-y16-29-eu27_2020-2023"
         },
@@ -5382,8 +5382,8 @@ export const FAMILIAS_HB1 = [
       "hab-ilc-mdho06a-a-pc-total-t-y16-29-eu27_2020-2023"
     ],
     "nome": {
-      "pt": "Privação severa da habitação, dezasseis a vinte e nove anos, União Europeia",
-      "en": "Severe housing deprivation, sixteen to twenty-nine years, European Union"
+      "pt": "Privação severa da habitação, dos dezasseis aos vinte e nove anos, União Europeia",
+      "en": "Severe housing deprivation, aged sixteen to twenty-nine, European Union"
     },
     "origens": [
       "hb1c-eurostat-privacao-severa"
@@ -5505,14 +5505,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        "; aqui, vinte e cinco a trinta e quatro anos, Dinamarca, em ",
+        "; aqui, dos vinte e cinco aos trinta e quatro anos, Dinamarca, em ",
         {
           "periodo": "hab-ilc-lvps08-a-y25-34-t-pc-dk-2025"
         },
         "."
       ],
       "en": [
-        "; here, twenty-five to thirty-four years, Denmark, in ",
+        "; here, aged twenty-five to thirty-four, Denmark, in ",
         {
           "periodo": "hab-ilc-lvps08-a-y25-34-t-pc-dk-2025"
         },
@@ -5523,8 +5523,8 @@ export const FAMILIAS_HB1 = [
       "hab-ilc-lvps08-a-y25-34-t-pc-dk-2025"
     ],
     "nome": {
-      "pt": "Jovens que vivem com os pais ou partilham o rendimento do agregado, vinte e cinco a trinta e quatro anos, Dinamarca",
-      "en": "Young people living with parents or sharing household income, twenty-five to thirty-four years, Denmark"
+      "pt": "Jovens que vivem com os pais ou partilham o rendimento do agregado, dos vinte e cinco aos trinta e quatro anos, Dinamarca",
+      "en": "Young people living with parents or sharing household income, aged twenty-five to thirty-four, Denmark"
     },
     "origens": [],
     "partes": [
@@ -5545,14 +5545,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        "; aqui, vinte e cinco a trinta e quatro anos, Portugal, em ",
+        "; aqui, dos vinte e cinco aos trinta e quatro anos, Portugal, em ",
         {
           "periodo": "hab-ilc-lvps08-a-y25-34-t-pc-pt-2015"
         },
         "."
       ],
       "en": [
-        "; here, twenty-five to thirty-four years, Portugal, in ",
+        "; here, aged twenty-five to thirty-four, Portugal, in ",
         {
           "periodo": "hab-ilc-lvps08-a-y25-34-t-pc-pt-2015"
         },
@@ -5563,8 +5563,8 @@ export const FAMILIAS_HB1 = [
       "hab-ilc-lvps08-a-y25-34-t-pc-pt-2015"
     ],
     "nome": {
-      "pt": "Jovens que vivem com os pais ou partilham o rendimento do agregado, vinte e cinco a trinta e quatro anos, Portugal",
-      "en": "Young people living with parents or sharing household income, twenty-five to thirty-four years, Portugal"
+      "pt": "Jovens que vivem com os pais ou partilham o rendimento do agregado, dos vinte e cinco aos trinta e quatro anos, Portugal",
+      "en": "Young people living with parents or sharing household income, aged twenty-five to thirty-four, Portugal"
     },
     "origens": [],
     "partes": [
@@ -5585,14 +5585,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        "; aqui, dezoito a trinta e quatro anos, Portugal, em ",
+        "; aqui, dos dezoito aos trinta e quatro anos, Portugal, em ",
         {
           "periodo": "hab-ilc-lvps08-a-y18-34-t-pc-pt-2025"
         },
         "."
       ],
       "en": [
-        "; here, eighteen to thirty-four years, Portugal, in ",
+        "; here, aged eighteen to thirty-four, Portugal, in ",
         {
           "periodo": "hab-ilc-lvps08-a-y18-34-t-pc-pt-2025"
         },
@@ -5603,8 +5603,8 @@ export const FAMILIAS_HB1 = [
       "hab-ilc-lvps08-a-y18-34-t-pc-pt-2025"
     ],
     "nome": {
-      "pt": "Jovens que vivem com os pais ou partilham o rendimento do agregado, dezoito a trinta e quatro anos, Portugal",
-      "en": "Young people living with parents or sharing household income, eighteen to thirty-four years, Portugal"
+      "pt": "Jovens que vivem com os pais ou partilham o rendimento do agregado, dos dezoito aos trinta e quatro anos, Portugal",
+      "en": "Young people living with parents or sharing household income, aged eighteen to thirty-four, Portugal"
     },
     "origens": [],
     "partes": [
@@ -5625,14 +5625,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        "; aqui, dezoito a trinta e quatro anos, União Europeia, em ",
+        "; aqui, dos dezoito aos trinta e quatro anos, União Europeia, em ",
         {
           "periodo": "hab-ilc-lvps08-a-y18-34-t-pc-eu27_2020-2025"
         },
         "."
       ],
       "en": [
-        "; here, eighteen to thirty-four years, European Union, in ",
+        "; here, aged eighteen to thirty-four, European Union, in ",
         {
           "periodo": "hab-ilc-lvps08-a-y18-34-t-pc-eu27_2020-2025"
         },
@@ -5643,8 +5643,8 @@ export const FAMILIAS_HB1 = [
       "hab-ilc-lvps08-a-y18-34-t-pc-eu27_2020-2025"
     ],
     "nome": {
-      "pt": "Jovens que vivem com os pais ou partilham o rendimento do agregado, dezoito a trinta e quatro anos, União Europeia",
-      "en": "Young people living with parents or sharing household income, eighteen to thirty-four years, European Union"
+      "pt": "Jovens que vivem com os pais ou partilham o rendimento do agregado, dos dezoito aos trinta e quatro anos, União Europeia",
+      "en": "Young people living with parents or sharing household income, aged eighteen to thirty-four, European Union"
     },
     "origens": [],
     "partes": [

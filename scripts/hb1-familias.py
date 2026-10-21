@@ -182,7 +182,7 @@ for r in b:
   if coords.get('tenure') in tenure:pair=tuple(pair[i]+', '+tenure[coords['tenure']][i] for i in range(2))
   age=coords.get('age')
   if age and age!='TOTAL':
-   ages={'Y16-29':('dezasseis a vinte e nove anos','sixteen to twenty-nine years'),'Y25-34':('vinte e cinco a trinta e quatro anos','twenty-five to thirty-four years'),'Y18-34':('dezoito a trinta e quatro anos','eighteen to thirty-four years')}
+   ages={'Y16-29':('dos dezasseis aos vinte e nove anos','aged sixteen to twenty-nine'),'Y25-34':('dos vinte e cinco aos trinta e quatro anos','aged twenty-five to thirty-four'),'Y18-34':('dos dezoito aos trinta e quatro anos','aged eighteen to thirty-four')}
    pair=tuple(pair[i]+', '+ages[age][i] for i in range(2))
   if coords.get('geo'):pair=tuple(pair[i]+', '+geo[coords['geo']][i] for i in range(2))
  assert pair and not re.search(r'\d',''.join(pair)),id

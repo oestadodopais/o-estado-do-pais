@@ -109,12 +109,12 @@ export const NOMES_HB1 = {
     "en": "Average age of leaving the parental home, European Union"
   },
   "hab-ilc-lvps08-a-y25-34-t-pc-pt-2025": {
-    "pt": "Jovens que vivem com os pais ou partilham o rendimento do agregado, vinte e cinco a trinta e quatro anos, Portugal",
-    "en": "Young people living with parents or sharing household income, twenty-five to thirty-four years, Portugal"
+    "pt": "Jovens que vivem com os pais ou partilham o rendimento do agregado, dos vinte e cinco aos trinta e quatro anos, Portugal",
+    "en": "Young people living with parents or sharing household income, aged twenty-five to thirty-four, Portugal"
   },
   "hab-ilc-lvps08-a-y25-34-t-pc-eu27_2020-2025": {
-    "pt": "Jovens que vivem com os pais ou partilham o rendimento do agregado, vinte e cinco a trinta e quatro anos, União Europeia",
-    "en": "Young people living with parents or sharing household income, twenty-five to thirty-four years, European Union"
+    "pt": "Jovens que vivem com os pais ou partilham o rendimento do agregado, dos vinte e cinco aos trinta e quatro anos, União Europeia",
+    "en": "Young people living with parents or sharing household income, aged twenty-five to thirty-four, European Union"
   },
   "hab-votacao-arrendamento": {
     "pt": "Votação da reforma do arrendamento",
@@ -185,12 +185,12 @@ export const NOMES_HB1 = {
     "en": "Gap from the Union in young people living with parents"
   },
   "hab-ilc-lvps08-a-y25-34-t-pc-hr-2025": {
-    "pt": "Jovens que vivem com os pais ou partilham o rendimento do agregado, vinte e cinco a trinta e quatro anos, Croácia",
-    "en": "Young people living with parents or sharing household income, twenty-five to thirty-four years, Croatia"
+    "pt": "Jovens que vivem com os pais ou partilham o rendimento do agregado, dos vinte e cinco aos trinta e quatro anos, Croácia",
+    "en": "Young people living with parents or sharing household income, aged twenty-five to thirty-four, Croatia"
   },
   "hab-ilc-lvps08-a-y25-34-t-pc-pt-2020": {
-    "pt": "Jovens que vivem com os pais ou partilham o rendimento do agregado, vinte e cinco a trinta e quatro anos, Portugal",
-    "en": "Young people living with parents or sharing household income, twenty-five to thirty-four years, Portugal"
+    "pt": "Jovens que vivem com os pais ou partilham o rendimento do agregado, dos vinte e cinco aos trinta e quatro anos, Portugal",
+    "en": "Young people living with parents or sharing household income, aged twenty-five to thirty-four, Portugal"
   },
   "der-hab-saida-pt-vs-eu-2025": {
     "pt": "Diferença face à União na idade de saída de casa dos pais",
@@ -477,16 +477,16 @@ export const NOMES_HB1 = {
     "en": "Housing cost overburden, tenants at market rents, Romania"
   },
   "hab-ilc-lvho07a-a-pc-total-y16-29-t-pt-2025": {
-    "pt": "Sobrecarga do custo da habitação, dezasseis a vinte e nove anos, Portugal",
-    "en": "Housing cost overburden, sixteen to twenty-nine years, Portugal"
+    "pt": "Sobrecarga do custo da habitação, dos dezasseis aos vinte e nove anos, Portugal",
+    "en": "Housing cost overburden, aged sixteen to twenty-nine, Portugal"
   },
   "hab-ilc-lvho07a-a-pc-total-y16-29-t-eu27_2020-2025": {
-    "pt": "Sobrecarga do custo da habitação, dezasseis a vinte e nove anos, União Europeia",
-    "en": "Housing cost overburden, sixteen to twenty-nine years, European Union"
+    "pt": "Sobrecarga do custo da habitação, dos dezasseis aos vinte e nove anos, União Europeia",
+    "en": "Housing cost overburden, aged sixteen to twenty-nine, European Union"
   },
   "hab-ilc-lvho07a-a-pc-total-y16-29-t-el-2025": {
-    "pt": "Sobrecarga do custo da habitação, dezasseis a vinte e nove anos, Grécia",
-    "en": "Housing cost overburden, sixteen to twenty-nine years, Greece"
+    "pt": "Sobrecarga do custo da habitação, dos dezasseis aos vinte e nove anos, Grécia",
+    "en": "Housing cost overburden, aged sixteen to twenty-nine, Greece"
   },
   "hab-ilc-lvho05a-a-pc-total-total-t-pt-2025": {
     "pt": "População em habitações sobrelotadas, Portugal",
@@ -505,12 +505,12 @@ export const NOMES_HB1 = {
     "en": "Population in overcrowded homes, Romania"
   },
   "hab-ilc-lvho05a-a-pc-total-y16-29-t-pt-2025": {
-    "pt": "População em habitações sobrelotadas, dezasseis a vinte e nove anos, Portugal",
-    "en": "Population in overcrowded homes, sixteen to twenty-nine years, Portugal"
+    "pt": "População em habitações sobrelotadas, dos dezasseis aos vinte e nove anos, Portugal",
+    "en": "Population in overcrowded homes, aged sixteen to twenty-nine, Portugal"
   },
   "hab-ilc-lvho05a-a-pc-total-y16-29-t-eu27_2020-2025": {
-    "pt": "População em habitações sobrelotadas, dezasseis a vinte e nove anos, União Europeia",
-    "en": "Population in overcrowded homes, sixteen to twenty-nine years, European Union"
+    "pt": "População em habitações sobrelotadas, dos dezasseis aos vinte e nove anos, União Europeia",
+    "en": "Population in overcrowded homes, aged sixteen to twenty-nine, European Union"
   },
   "hab-eurostat-privacao-severa-definicao": {
     "pt": "Definição de privação severa da habitação",
@@ -533,12 +533,12 @@ export const NOMES_HB1 = {
     "en": "Severe housing deprivation, Latvia"
   },
   "hab-ilc-mdho06a-a-pc-total-t-y16-29-pt-2023": {
-    "pt": "Privação severa da habitação, dezasseis a vinte e nove anos, Portugal",
-    "en": "Severe housing deprivation, sixteen to twenty-nine years, Portugal"
+    "pt": "Privação severa da habitação, dos dezasseis aos vinte e nove anos, Portugal",
+    "en": "Severe housing deprivation, aged sixteen to twenty-nine, Portugal"
   },
   "hab-ilc-mdho06a-a-pc-total-t-y16-29-eu27_2020-2023": {
-    "pt": "Privação severa da habitação, dezasseis a vinte e nove anos, União Europeia",
-    "en": "Severe housing deprivation, sixteen to twenty-nine years, European Union"
+    "pt": "Privação severa da habitação, dos dezasseis aos vinte e nove anos, União Europeia",
+    "en": "Severe housing deprivation, aged sixteen to twenty-nine, European Union"
   },
   "hab-yth-demo-030-a-avg-t-fi-2025": {
     "pt": "Idade média de saída de casa dos pais, Finlândia",
@@ -549,20 +549,20 @@ export const NOMES_HB1 = {
     "en": "Average age of leaving the parental home, Croatia"
   },
   "hab-ilc-lvps08-a-y25-34-t-pc-dk-2025": {
-    "pt": "Jovens que vivem com os pais ou partilham o rendimento do agregado, vinte e cinco a trinta e quatro anos, Dinamarca",
-    "en": "Young people living with parents or sharing household income, twenty-five to thirty-four years, Denmark"
+    "pt": "Jovens que vivem com os pais ou partilham o rendimento do agregado, dos vinte e cinco aos trinta e quatro anos, Dinamarca",
+    "en": "Young people living with parents or sharing household income, aged twenty-five to thirty-four, Denmark"
   },
   "hab-ilc-lvps08-a-y25-34-t-pc-pt-2015": {
-    "pt": "Jovens que vivem com os pais ou partilham o rendimento do agregado, vinte e cinco a trinta e quatro anos, Portugal",
-    "en": "Young people living with parents or sharing household income, twenty-five to thirty-four years, Portugal"
+    "pt": "Jovens que vivem com os pais ou partilham o rendimento do agregado, dos vinte e cinco aos trinta e quatro anos, Portugal",
+    "en": "Young people living with parents or sharing household income, aged twenty-five to thirty-four, Portugal"
   },
   "hab-ilc-lvps08-a-y18-34-t-pc-pt-2025": {
-    "pt": "Jovens que vivem com os pais ou partilham o rendimento do agregado, dezoito a trinta e quatro anos, Portugal",
-    "en": "Young people living with parents or sharing household income, eighteen to thirty-four years, Portugal"
+    "pt": "Jovens que vivem com os pais ou partilham o rendimento do agregado, dos dezoito aos trinta e quatro anos, Portugal",
+    "en": "Young people living with parents or sharing household income, aged eighteen to thirty-four, Portugal"
   },
   "hab-ilc-lvps08-a-y18-34-t-pc-eu27_2020-2025": {
-    "pt": "Jovens que vivem com os pais ou partilham o rendimento do agregado, dezoito a trinta e quatro anos, União Europeia",
-    "en": "Young people living with parents or sharing household income, eighteen to thirty-four years, European Union"
+    "pt": "Jovens que vivem com os pais ou partilham o rendimento do agregado, dos dezoito aos trinta e quatro anos, União Europeia",
+    "en": "Young people living with parents or sharing household income, aged eighteen to thirty-four, European Union"
   },
   "hab-cens-21dwob-r3-a-dw-total-nr-pt-2021": {
     "pt": "Alojamentos nos Censos, Portugal",

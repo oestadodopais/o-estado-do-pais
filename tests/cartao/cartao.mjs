@@ -1066,7 +1066,7 @@ function grupoEtarioDaLinha(linha) {
  * @returns {{ erros: string[], medidas: number, linhas: number }}
  */
 function celulaK13(
-  definicoes = /** @type {any} */ ({...Object.fromEntries(Object.entries(FAMILIAS_DAS_LINHAS).map(([id,f])=>[id,f.frase])),...DEFINICOES_DAS_MEDIDAS}),
+  definicoes = /** @type {any} */ ({...Object.fromEntries(Object.entries(FAMILIAS_DAS_LINHAS).map(([id,f])=>[id,f.complemento?{pt:[...f.frase.pt,...f.complemento.pt],en:[...f.frase.en,...f.complemento.en]}:f.frase])),...DEFINICOES_DAS_MEDIDAS}), // HB1-c3: a frase com o complemento, como «O que é este número» a imprime
   catraca = CATRACA_DO_GRUPO_ETARIO,
   linhas = [...loadClaims().values()],
 ) {
