@@ -411,21 +411,21 @@ edicoes:
     lang: "pt"
     title: "A casa em Portugal e na Europa"
     origin: "researchhub"
-    origin_ref: "content/28 Habitacao Estudo/A casa em Portugal e na Europa.html @ 6ab583e6a6a9237d81796ff083e8a8a2cffd96a7"
+    origin_ref: "content/28 Habitacao Estudo/A casa em Portugal e na Europa.html @ ccd45ba21658f0a0d114027e1de17e34e8b0a198"
     raw_file: "_raw/a-casa-em-portugal-e-na-europa.pt.html"
-    fetched_utc: "2026-10-21T13:10:40Z"
-    bytes_raw: 33968
-    bytes_normalized: 33968
-    sha256_raw: "370d564cb019a768d8f5a94f9daf60169d748d32125ada1512a9d0c1b95b730c"
-    sha256_normalized: "370d564cb019a768d8f5a94f9daf60169d748d32125ada1512a9d0c1b95b730c"
+    fetched_utc: "2026-10-21T13:36:10Z"
+    bytes_raw: 33961
+    bytes_normalized: 33961
+    sha256_raw: "18afa7ced1c196ccdda7722a942472b7bce1ca9bbddef9117129a4dacc54d540"
+    sha256_normalized: "18afa7ced1c196ccdda7722a942472b7bce1ca9bbddef9117129a4dacc54d540"
   - slug: a-casa-em-portugal-e-na-europa
     lang: "en"
     title: "Housing in Portugal and in Europe"
     origin: "researchhub"
-    origin_ref: "content/28 Habitacao Estudo/Housing in Portugal and in Europe.html @ 6ab583e6a6a9237d81796ff083e8a8a2cffd96a7"
+    origin_ref: "content/28 Habitacao Estudo/Housing in Portugal and in Europe.html @ ccd45ba21658f0a0d114027e1de17e34e8b0a198"
     raw_file: "_raw/a-casa-em-portugal-e-na-europa.en.html"
-    fetched_utc: "2026-10-21T13:10:40Z"
-    bytes_raw: 33685
-    bytes_normalized: 33685
-    sha256_raw: "74ce97c5ce30e0c0a8ec46b3112729abf58d591b77cedd56aff502eda705cbe9"
-    sha256_normalized: "74ce97c5ce30e0c0a8ec46b3112729abf58d591b77cedd56aff502eda705cbe9"
+    fetched_utc: "2026-10-21T13:36:10Z"
+    bytes_raw: 33680
+    bytes_normalized: 33680
+    sha256_raw: "130ec358b81c684f4653e5a84e15866543ff0b6aa84f36ae2a1a6f0c257465c6"
+    sha256_normalized: "130ec358b81c684f4653e5a84e15866543ff0b6aa84f36ae2a1a6f0c257465c6"

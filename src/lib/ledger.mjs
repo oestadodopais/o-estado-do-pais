@@ -2821,7 +2821,12 @@ export function validateLedger() {
     if (c.period !== undefined) {
       const trimestre = /^(\d{4})-T([1-4])$/.exec(String(c.period));
       const fim = trimestre ? `${trimestre[1]}-${['03-31','06-30','09-30','12-31'][Number(trimestre[2])-1]}` : null;
-      if ((!trimestre || c.reference_date !== fim) && !acumuladoConferido(c)) errors.push(`${onde} "period": exige um trimestre com o último dia ou um acumulado selado com o mês final.`);
+      // HB1-c3: o ano dos dados que um documento diz usar (os Censos 2021 numa
+      // proposta de 12.08.2026) é um período anual; só passa com a data completa do
+      // documento na referência, o ano não posterior a ela e escrito no excerto selado.
+      const ano = /^\d{4}$/.test(String(c.period)) ? String(c.period) : null;
+      const anoDosDados = !!ano && /^\d{4}-\d{2}-\d{2}$/.test(String(c.reference_date ?? '')) && ano <= String(c.reference_date).slice(0, 4) && new RegExp(`(?<!\\d)${ano}(?!\\d)`).test(String(c.excerpt ?? ''));
+      if ((!trimestre || c.reference_date !== fim) && !acumuladoConferido(c) && !anoDosDados) errors.push(`${onde} "period": exige um trimestre com o último dia ou um acumulado selado com o mês final.`);
     }
     for (const campo of /** @type {const} */ (['access_date', 'reference_date'])) {
       const v = c[campo];

@@ -39,13 +39,13 @@
           "kind": "pdf"
         },
         "excerpt": "Considerando os dados dos Censos 2021, estima-se que cerca de 375 mil alojamentos familiares clássicos, dos quais quase 250 mil em boas condições, estejam vagos sem intenção de venda ou arrendamento.",
-        "reference_date": "2021"
+        "reference_date": "2026-08-12"
       },
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-arrendamento-exposicao-vagos",
-        "origin_row_sha256": "ae744810c322c6faed98a7f764295839febe23c3e275b52a34e42086aa65d4c5",
-        "exported_row_sha256": "1c7878f67d23e28b5e98d70ebcfbfdf6904833281587e3f1b0f7aefe71235486"
+        "origin_row_sha256": "6d1d20e617c3b4c643aa5132a67057f66b369b95363bea3f8cad902c4025fe43",
+        "exported_row_sha256": "52070eef6cda3871a2a2e93594274484fb26e501c4cfb228978d95ae9304efbf"
       }
     },
     "hab-be-despejos": {

@@ -590,7 +590,7 @@ const ficha = [
   /* A DATA DE LEITURA NÃO ENTRA NA FICHA (09.09.2026, decisão 17): vive uma vez
      só, no bloco das verificações. O período de referência fica, porque é uma
      propriedade do número e não uma data da casa. */
-  { k: claim.period && lang === 'pt' ? (claim.period.includes('/') ? 'Dados de' : 'Dados do') : s.prov.referencia, campo: claim.period ? 'period' : 'reference_date', valor: claim.period ?? claim.reference_date },
+  { k: claim.period && lang === 'pt' ? (claim.period.includes('/') || /^\d{4}$/.test(claim.period) ? 'Dados de' : 'Dados do') : s.prov.referencia, campo: claim.period ? 'period' : 'reference_date', valor: claim.period ?? claim.reference_date },
 ].filter((l) => l.valor !== null && l.valor !== undefined);
 
 /**

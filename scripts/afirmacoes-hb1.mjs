@@ -37,6 +37,8 @@ export function conferirHb1(c,p,raw,body,reference={}){
  if(JSON.stringify(c?.attributed_to)!==JSON.stringify(r.attributed_to)||JSON.stringify(c?.attributed_to_en??null)!==JSON.stringify(r.attributed_to_en??null))errors.push('HB1 atribuição: nome divergente');
  if((c?.published_at??null)!==r.published_at||c.reference_date!==(r.reference_date??'[a verificar]')||c.document?.edition!==(d.edition??r.reference_date??'[a verificar]'))errors.push('HB1 data: publicação ou período divergente');
  if(r.published_at===null && !(r.document_checks?.published_at?.status==='por confirmar'&&r.document_checks.published_at.reason))errors.push('HB1 data: ausência não documentada');
+ if((c?.period??null)!==(r.period??null))errors.push('HB1 data: período dos dados divergente');
+ if(r.period&&!(r.document_checks?.period?.status==='conferido'&&r.document_checks.period.date===r.period&&r.excerpt.includes(r.document_checks.period.text)&&new RegExp(`(?<!\\d)${r.period}(?!\\d)`).test(r.document_checks.period.text)))errors.push('HB1 data: período dos dados sem âncora no excerto');
  const expectedUrl=r.source_url.split('#')[0].toLowerCase().endsWith('.pdf')&&d.page?r.source_url.split('#')[0]+'#page='+d.page:r.source_url;
  if(c?.source_url!==expectedUrl||![p.receipt?.pedido,p.receipt?.endereco_final].includes(r.source_url))errors.push('HB1 porta: endereço divergente');
  if(raw){
@@ -89,6 +91,12 @@ export function conferirAfirmacoesHb1(claims,{motor,plantar=true}={}){
     if(!x.proof){errors.push(id+': HB1 referência suplementar: falta a prova para plantar');break;}
     change(x);const mensagem=conferirCorpoReferencia(x.ref,x.proof,x.raw,x.body,x.referenceDate)[0];
     plantas.push({nome:'HB1 referência suplementar: '+nome,mensagem});if(!mensagem)errors.push('HB1 planta suplementar sem recusa: '+nome);
+   }
+  }
+  if(plantar&&c&&p?.row?.document_checks?.period){
+   // HB1-c3: o ano dos dados de uma estimativa; o controlo é a própria linha, sem erro.
+   for(const [nome,mudar] of [['período do sítio trocado',(/** @type {any} */ y,/** @type {any} */ q)=>{y.period='2020';}],['período sem âncora',(/** @type {any} */ y,/** @type {any} */ q)=>{q.row.document_checks.period.text='Proposta de Lei';}],['período do motor e do sítio trocados juntos',(/** @type {any} */ y,/** @type {any} */ q)=>{y.period='2011';q.row.period='2011';}]]){
+    const bad=structuredClone(c),q=structuredClone(p);mudar(bad,q);const mensagem=conferirHb1(bad,q,raw,body,reference).find(e=>e.startsWith('HB1 data: período'));plantas.push({nome:'HB1 '+nome,mensagem});if(!mensagem)errors.push('HB1 planta sem recusa: '+nome);
    }
   }
   if(plantar&&!plantas.some(p=>p.nome==='HB1 excerto')&&c){

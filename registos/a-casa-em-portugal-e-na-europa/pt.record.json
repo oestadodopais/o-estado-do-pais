@@ -3984,7 +3984,7 @@
      "id": "hab-arrendamento-exposicao-vagos",
      "inicio": 641,
      "livro": "HB",
-     "sha256_linha": "ae744810c322c6faed98a7f764295839febe23c3e275b52a34e42086aa65d4c5",
+     "sha256_linha": "6d1d20e617c3b4c643aa5132a67057f66b369b95363bea3f8cad902c4025fe43",
      "texto": "Considerando os dados dos Censos 2021, estima-se que cerca de 375 mil alojamentos familiares clássicos, dos quais quase 250 mil em boas condições, estejam vagos sem intenção de venda ou arrendamento.",
      "tipo": "excerto"
     },
@@ -4857,15 +4857,15 @@
        "livro": "HB"
       }
      ],
-     "fim": 85,
-     "inicio": 75,
+     "fim": 78,
+     "inicio": 68,
      "texto": "8 de junho",
      "tipo": "literal"
     },
     {
-     "fim": 342,
+     "fim": 335,
      "id": "hab-il-proposta",
-     "inicio": 136,
+     "inicio": 129,
      "livro": "HB",
      "sha256_linha": "8770b31a94668641a2359c4a06d132150a802e11f3be06f816e7b3682914398c",
      "texto": "propõe ao Governo medidas para colocar mais casas no mercado, desbloquear imóveis parados em heranças e tornar o arrendamento mais simples, seguro e funcional, tanto para inquilinos como para proprietários.",
@@ -4875,7 +4875,7 @@
    "source_rows": [
     "hab-il-proposta"
    ],
-   "text": "A Iniciativa Liberal (a IL), na sua página sobre a habitação, atualizada a 8 de junho de 2026 (a página não diz quando foi publicada): «propõe ao Governo medidas para colocar mais casas no mercado, desbloquear imóveis parados em heranças e tornar o arrendamento mais simples, seguro e funcional, tanto para inquilinos como para proprietários.» Do PSD e do CDS-PP não há, nos documentos deste estudo, um documento próprio datado deste debate."
+   "text": "A Iniciativa Liberal, na sua página sobre a habitação, atualizada a 8 de junho de 2026 (a página não diz quando foi publicada): «propõe ao Governo medidas para colocar mais casas no mercado, desbloquear imóveis parados em heranças e tornar o arrendamento mais simples, seguro e funcional, tanto para inquilinos como para proprietários.» Do PSD e do CDS-PP não há, nos documentos deste estudo, um documento próprio datado deste debate."
   },
   {
    "figures": [],
@@ -6642,23 +6642,23 @@
     "title": "Proposta de Lei n.º 103/XVII"
    },
    "document_checks": {
-    "edition": {
-     "date": "2026-08-12",
-     "file": "source/parlamento-pt-7.html",
-     "sha256": "f45c11ca5b327ba931433166a6a739dd9d0cadb039344d78b581cc08be8afba9",
+    "period": {
+     "date": "2021",
+     "file": "source/parlamento-pt-7-texto.pdf",
+     "sha256": "505b9d5fbeed485dd107377bbae07003f9f7fa4cd3f949534f6154f3b854d7bf",
      "status": "conferido",
-     "text": "2026-08-12 | Entrada"
+     "text": "Considerando os dados dos Censos 2021,"
     },
     "published_at": {
      "reason": "Sem data de publicação ancorada no documento; o período de referência e o acesso não provam a publicação.",
      "status": "por confirmar"
     },
     "reference_date": {
-     "date": "2021",
-     "file": "source/parlamento-pt-7-texto.pdf",
-     "sha256": "505b9d5fbeed485dd107377bbae07003f9f7fa4cd3f949534f6154f3b854d7bf",
+     "date": "2026-08-12",
+     "file": "source/parlamento-pt-7.html",
+     "sha256": "f45c11ca5b327ba931433166a6a739dd9d0cadb039344d78b581cc08be8afba9",
      "status": "conferido",
-     "text": "Considerando os dados dos Censos 2021,"
+     "text": "2026-08-12 | Entrada"
     },
     "title": {
      "locator": 1,
@@ -6695,7 +6695,7 @@
    "note": "Exposição de motivos de proposta; o articulado integral está alojado. Frase ou parágrafo completo, conferido por duas extrações.",
    "period": "2021",
    "published_at": null,
-   "reference_date": "2021",
+   "reference_date": "2026-08-12",
    "source_excerpt": "Considerando os dados dos Censos 2021, estima-se que cerca de 375 mil alojamentos familiares clássicos, dos quais quase 250 mil em boas condições, estejam vagos sem intenção de venda ou arrendamento.",
    "source_type": "government",
    "source_url": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=PGqkJsL2G6lw3G9uygQPf1N1JH%252f%252b39M7GvgOIuNn9FNOwLO2SXVEvaHNII0zNl6xllstU3XfW8EfQWjgG%252buXWe1twkFNl7yALPxVM6Oml0ddQcK1qlunYed5let%252frSf5xjXbX4x3l2s1Z5Pvfiuu97KvT7AuI9IaGBhl3R1hzcZy7OvFxWrW6bWmDRQxr305vP52XJEjNNWGIbewa93ACJFq0UY%252fRon1UT94WBH%252fetlGKnHQOaVjs1V5brjBOhOzv%252f4HGHzYfSHk6w1cBu3faH2cgkTbVJLe%252f8rW%252fs4RtACxzeZ%252bgfFaWH74JS526shFMH5GuLqS8UlNBDDhmAvPvzOVHjFDu1B2p8lnJVx8PG0gA7MGYhCwpx0ajx8ooMJ%252b&fich=c0c6e27a-3ce4-49b8-a2e7-412f0a38f7ec.docx&Inline=true",
