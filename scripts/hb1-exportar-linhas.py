@@ -10,6 +10,8 @@ for r in b['rows']:
   r['reference_date']=period.rsplit('/',1)[1];r['note_extra']='Período completo da fonte: '+period+'.'
  elif not period:r['reference_date']='[a verificar]'
  if r.get('document') is not None and not r['document'].get('edition'):r['document']['edition']='[a verificar]'
+ # HB1-c2 (o achado 25): o glossário só declara a data da última edição da página.
+ if r['site_id']=='hab-eurostat-privacao-severa-definicao':r['published_at_kind']='last-edited'
 # HB1-c (o achado 15 da leitura da HB1-b): uma linha que nunca chegou ao sítio
 # não tem correção pública. O estudo está em preparação (`date: null` em
 # `src/data/datas-de-publicacao.json`), e a exportação não escreve entradas

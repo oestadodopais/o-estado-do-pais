@@ -306,7 +306,7 @@
         "value": "Considerando os dados dos Censos 2021, estima-se que cerca de 375 mil alojamentos familiares clássicos, dos quais quase 250 mil em boas condições, estejam vagos sem intenção de venda ou arrendamento.",
         "excerpt": "Considerando os dados dos Censos 2021, estima-se que cerca de 375 mil alojamentos familiares clássicos, dos quais quase 250 mil em boas condições, estejam vagos sem intenção de venda ou arrendamento.",
         "unit": "texto",
-        "reference_date": "2026-08-12",
+        "reference_date": "2021",
         "published_at": null,
         "attributed_to": [
           "Presidência do Conselho de Ministros"
@@ -335,6 +335,13 @@
           },
           "reference_date": {
             "status": "conferido",
+            "text": "Considerando os dados dos Censos 2021,",
+            "file": "source/parlamento-pt-7-texto.pdf",
+            "sha256": "505b9d5fbeed485dd107377bbae07003f9f7fa4cd3f949534f6154f3b854d7bf",
+            "date": "2021"
+          },
+          "edition": {
+            "status": "conferido",
             "text": "2026-08-12 | Entrada",
             "file": "source/parlamento-pt-7.html",
             "sha256": "f45c11ca5b327ba931433166a6a739dd9d0cadb039344d78b581cc08be8afba9",
@@ -358,22 +365,22 @@
         "sha256": "505b9d5fbeed485dd107377bbae07003f9f7fa4cd3f949534f6154f3b854d7bf"
       },
       "reference_source": {
-        "file": "content/23 Habitacao/source/parlamento-pt-7.html",
-        "sha256": "f45c11ca5b327ba931433166a6a739dd9d0cadb039344d78b581cc08be8afba9",
+        "file": "content/23 Habitacao/source/parlamento-pt-7-texto.pdf",
+        "sha256": "505b9d5fbeed485dd107377bbae07003f9f7fa4cd3f949534f6154f3b854d7bf",
         "receipt": {
-          "pedido": "https://www.parlamento.pt/ActividadeParlamentar/Paginas/DetalheIniciativa.aspx?BID=377135",
-          "endereco_final": "https://www.parlamento.pt/ActividadeParlamentar/Paginas/DetalheIniciativa.aspx?BID=377135",
-          "acedido_em": "2026-10-19T13:38:51.069873+00:00",
+          "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=PGqkJsL2G6lw3G9uygQPf1N1JH%252f%252b39M7GvgOIuNn9FNOwLO2SXVEvaHNII0zNl6xllstU3XfW8EfQWjgG%252buXWe1twkFNl7yALPxVM6Oml0ddQcK1qlunYed5let%252frSf5xjXbX4x3l2s1Z5Pvfiuu97KvT7AuI9IaGBhl3R1hzcZy7OvFxWrW6bWmDRQxr305vP52XJEjNNWGIbewa93ACJFq0UY%252fRon1UT94WBH%252fetlGKnHQOaVjs1V5brjBOhOzv%252f4HGHzYfSHk6w1cBu3faH2cgkTbVJLe%252f8rW%252fs4RtACxzeZ%252bgfFaWH74JS526shFMH5GuLqS8UlNBDDhmAvPvzOVHjFDu1B2p8lnJVx8PG0gA7MGYhCwpx0ajx8ooMJ%252b&fich=c0c6e27a-3ce4-49b8-a2e7-412f0a38f7ec.docx&Inline=true",
+          "endereco_final": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=PGqkJsL2G6lw3G9uygQPf1N1JH%252f%252b39M7GvgOIuNn9FNOwLO2SXVEvaHNII0zNl6xllstU3XfW8EfQWjgG%252buXWe1twkFNl7yALPxVM6Oml0ddQcK1qlunYed5let%252frSf5xjXbX4x3l2s1Z5Pvfiuu97KvT7AuI9IaGBhl3R1hzcZy7OvFxWrW6bWmDRQxr305vP52XJEjNNWGIbewa93ACJFq0UY%252fRon1UT94WBH%252fetlGKnHQOaVjs1V5brjBOhOzv%252f4HGHzYfSHk6w1cBu3faH2cgkTbVJLe%252f8rW%252fs4RtACxzeZ%252bgfFaWH74JS526shFMH5GuLqS8UlNBDDhmAvPvzOVHjFDu1B2p8lnJVx8PG0gA7MGYhCwpx0ajx8ooMJ%252b&fich=c0c6e27a-3ce4-49b8-a2e7-412f0a38f7ec.docx&Inline=true",
+          "acedido_em": "2026-10-19T13:42:38.925409+00:00",
           "cliente": "core.http.HttpClient.condicional",
           "user_agent": "OEstadoDoPais/corredor",
           "estado": 200,
-          "tipo": "text/html; charset=utf-8",
-          "segundos": 9.466,
+          "tipo": "application/pdf",
+          "segundos": 10.931,
           "erro": null,
           "redirecionamentos": [],
-          "ficheiro": "parlamento-pt-7.html",
-          "bytes": 389349,
-          "sha256": "f45c11ca5b327ba931433166a6a739dd9d0cadb039344d78b581cc08be8afba9"
+          "ficheiro": "parlamento-pt-7-texto.pdf",
+          "bytes": 286641,
+          "sha256": "505b9d5fbeed485dd107377bbae07003f9f7fa4cd3f949534f6154f3b854d7bf"
         }
       }
     },

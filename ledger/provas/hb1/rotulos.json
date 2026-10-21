@@ -39,13 +39,13 @@
           "kind": "pdf"
         },
         "excerpt": "Considerando os dados dos Censos 2021, estima-se que cerca de 375 mil alojamentos familiares clássicos, dos quais quase 250 mil em boas condições, estejam vagos sem intenção de venda ou arrendamento.",
-        "reference_date": "2026-08-12"
+        "reference_date": "2021"
       },
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-arrendamento-exposicao-vagos",
-        "origin_row_sha256": "a811e6bd44b6d597830fc5e5705681072eb0e3c3fc3b9fee3a8a2509fe1b070e",
-        "exported_row_sha256": "b4748dbdd8d1b056cd1e81c336eef46a0d1ef1642d8f09d8c908aed3ad3fa259"
+        "origin_row_sha256": "ae744810c322c6faed98a7f764295839febe23c3e275b52a34e42086aa65d4c5",
+        "exported_row_sha256": "1c7878f67d23e28b5e98d70ebcfbfdf6904833281587e3f1b0f7aefe71235486"
       }
     },
     "hab-be-despejos": {
@@ -230,8 +230,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-demo-pjan-eu27_2020-2025",
-        "origin_row_sha256": "69781ed66d0a09415cc73515a34cb5a2cab6d926d676cf64d417002560460a78",
-        "exported_row_sha256": "afa5640bdccf16e452473b430a17fd65473c026353a850be53dead9978938198"
+        "origin_row_sha256": "ee0fc3abc0f8c8b98cd0e80b62cf41acbbaf49da09ac403d96ea9cd3e4711d19",
+        "exported_row_sha256": "d9ac363020300c676896933beaef634bdcff711cad7cd167737350cfabd589be"
       }
     },
     "hab-demo-pjan-pt-2025": {
@@ -253,8 +253,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-demo-pjan-pt-2025",
-        "origin_row_sha256": "3ba8905adf8c99922ba7a4bb69d5793a7f788de6bf50bc19139a1cbf450fd0b7",
-        "exported_row_sha256": "81ad5bf67526a171aada4c75eb077d736052d3ec008c709094341115b5d94266"
+        "origin_row_sha256": "67a69e84dc7d6fbe41b642a166a3665d3015a7466c073fe60eb21b25e1e781a3",
+        "exported_row_sha256": "131ccb4aeee68d3bd42282d1df5181cded8cf9e143d9bf9643c4ed0a74253d95"
       }
     },
     "hab-dl97-deducao": {
@@ -349,7 +349,7 @@
         "rh_study": "23 Habitacao",
         "rh_id": "hab-eurostat-privacao-severa-definicao",
         "origin_row_sha256": "fae80eb32f777060d593119bbfd89b4e5e4107ef34381395c9380b6b11918ed0",
-        "exported_row_sha256": "5c9e0e572257359166991094c99f6b7326dc401e383acf554c22105dc09ba52f"
+        "exported_row_sha256": "d529fa9a9c285252e2a401f6c4a2a1065f4c2face7ec5fb58dec3def8b228f20"
       }
     },
     "hab-governo-arrendamento": {

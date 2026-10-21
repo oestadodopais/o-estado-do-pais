@@ -23,7 +23,7 @@ excerpt: null
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: "Alojamentos licenciados, milhares, União Europeia, 2025 (1 623,2 mil; Eurostat, sts_cobp_a) a dividir por População residente a um de janeiro, número, União Europeia, 2025 (450 646 971 habitantes; Eurostat, demo_pjan, provisório, estimado), convertendo as licenças de milhares para unidades e multiplicando por mil, arredondado a uma casa decimal: 3,6."
-derivation_en: "Dwellings permitted, Thousand, European Union - 27 countries (from 2020), 2025 (1623.2 thousand; Eurostat, sts_cobp_a) divided by Population on one January, Number, European Union - 27 countries (from 2020), 2025 (450646971 inhabitants; Eurostat, demo_pjan, provisional, estimated), converting permits from thousands to units and multiplying by one thousand, rounded to one decimal place: 3.6."
+derivation_en: "Dwellings permitted, Thousand, European Union - 27 countries (from 2020), 2025 (1 623.2 thousand; Eurostat, sts_cobp_a) divided by Population on 1 January, Number, European Union - 27 countries (from 2020), 2025 (450 646 971 inhabitants; Eurostat, demo_pjan, provisional, estimated), converting permits from thousands to units and multiplying by one thousand, rounded to one decimal place: 3.6."
 derived_from:
   - "hab-sts-cobp-a-a-bprm-dw-cpa-f41001-x-410014-nsa-ths-eu27_2020-2025"
   - "hab-demo-pjan-eu27_2020-2025"

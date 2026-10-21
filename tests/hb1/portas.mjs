@@ -8,7 +8,7 @@ import {loadClaims} from '../../src/lib/ledger.mjs';
 import {hasSerie,getSerie} from '../../src/lib/series.mjs';
 import {routePath} from '../../src/lib/routes.mjs';
 import rotulos from '../../src/data/rotulos-das-series.json' with {type:'json'};
-const claims=loadClaims();let editions=0,blocks=0,doors=0,catalogue=0;
+const claims=loadClaims();let editions=0,blocks=0,doors=0,catalogue=0,geografias=0;
 for(const [key,entry] of Object.entries(manifestoDosRegistos().registos)) {
  const [slug,lang]=key.split('/'),registo=registoDaEdicao(slug,lang),resolve=linhaDoSitioDoEstudo(entry.rh_study,entry.rh_origens??{});
  const pieces=pecasDoCorpo({registo,chave:key,linhaDoSitio:resolve,rotuloDaPorta:lang==='pt'?'Fonte':'Source'});
@@ -25,10 +25,14 @@ for(const [key,entry] of Object.entries(manifestoDosRegistos().registos)) {
    if(marked) {
     const sid=marked.getAttribute('data-serie'),series=getSerie(sid);
     assert(id===sid||series.linha_de_portugal===id||series.linha_da_uniao===id,'rótulo de outra série');
-    assert.equal(label,rotulos.rotulos.find(r=>r.serie===sid)?.documento,'rótulo fora do catálogo');catalogue++;
+    const rotulo=rotulos.rotulos.find(r=>r.serie===sid)?.documento;
+    assert.equal(marked.textContent.trim(),rotulo,'rótulo fora do catálogo');
+    // HB1-c2 (o achado 23): a geografia da linha citada segue o rótulo do catálogo.
+    const geo=id===series.linha_de_portugal?'Portugal':id===series.linha_da_uniao?(lang==='pt'?'União Europeia':'European Union'):'';
+    assert.equal(label,geo?`${rotulo}, ${geo}`:rotulo,'porta sem a geografia da linha');if(geo)geografias++;catalogue++;
    }
   }
  }
 }
-assert(doors&&catalogue,'nenhuma porta de catálogo conferida');
-console.log(JSON.stringify({edicoes:editions,blocos:blocks,portas:doors,rotulos_do_catalogo:catalogue,erros:0}));
+assert(doors&&catalogue&&geografias,'nenhuma porta de catálogo conferida');
+console.log(JSON.stringify({edicoes:editions,blocos:blocks,portas:doors,rotulos_do_catalogo:catalogue,geografias,erros:0}));

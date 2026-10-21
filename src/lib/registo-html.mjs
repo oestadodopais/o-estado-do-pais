@@ -617,7 +617,10 @@ export function pecasDoCorpo({
               const serie = candidatas[0];
               const rotulo = rotulosDasSeries.rotulos.find(r => r.serie === serie.id)?.documento;
               if (!rotulo || rotulo !== /** @type {{title: string}} */ (serie.document).title) throw new FalhaDoRegisto(`série citada sem rótulo conferido: ${serie.id}`);
-              label = `<span lang="en" data-serie="${escapaAtributo(serie.id)}" data-serie-campo="document.title">${escapaTexto(rotulo)}</span>`;
+              // HB1-c2 (o achado 23): a porta diz a geografia da linha citada, para
+              // que as portas de Portugal e da União da mesma série se distingam.
+              const geografia = id === serie.linha_de_portugal ? 'Portugal' : id === serie.linha_da_uniao ? (lang === 'pt' ? 'União Europeia' : 'European Union') : '';
+              label = `<span lang="en" data-serie="${escapaAtributo(serie.id)}" data-serie-campo="document.title">${escapaTexto(rotulo)}</span>${geografia ? `, <span data-geografia-da-porta>${escapaTexto(geografia)}</span>` : ''}`;
             }
           }
           saida.html(`<li><a href="${escapaAtributo(routePath('linha', lang, { slug: id }))}">${label}</a></li>`);

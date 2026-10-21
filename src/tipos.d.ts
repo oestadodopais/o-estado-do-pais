@@ -211,6 +211,8 @@ interface Linha {
   access_date_kind?: 'hosted-copy' | 'source-read';
   access_date: unknown;
   published_at?: unknown;
+  /** HB1-c2: a data de `published_at` é a da última edição da página. */
+  published_at_kind?: 'last-edited';
   reference_date: unknown;
   period?: string;
   /** A série no tempo de que a linha é o ponto do seu período (bloco RP3); opcional. */

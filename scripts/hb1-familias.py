@@ -116,6 +116,52 @@ der={
  'sobrecarga-inquilinos':('Diferença face à União na sobrecarga dos inquilinos','Gap from the Union in tenant overburden'),
  'saida':('Diferença face à União na idade de saída de casa dos pais','Gap from the Union in the age of leaving the parental home'),
  'vagos':('Proporção calculada de alojamentos vagos','Calculated share of vacant dwellings')}
+SOB=('A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a casa, descontados os subsídios, passa de quarenta por cento do rendimento disponível','The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income',['is the percentage of the population living in households where the total housing costs (\'net\' of housing allowances) represent more than 40 % of disposable income'])
+HPI=['measures the changes in the transaction prices of dwellings purchased by households']
+REAL=['is the ratio between the house price index (HPI) and the national accounts deflator for private final consumption expenditure']
+# HB1-c2 (o achado 16): o que cada número é, traduzido da definição alojada (a origem) ou,
+# onde o Eurostat não publica uma página de definição, do rótulo do corpo na linha própria.
+DEFS=[
+ ('prc-hpi-q',['RCH_A'],'hb1c-eurostat-ipH','A variação num ano do índice dos preços das transações de casas compradas pelas famílias','The change over one year in the index of the transaction prices of dwellings purchased by households',HPI),
+ ('prc-hpi-q',None,'hb1c-eurostat-ipH','O índice dos preços das transações de casas compradas pelas famílias, com o ano base igual a cem','The index of the transaction prices of dwellings purchased by households, with the base year equal to one hundred',HPI),
+ ('tipsho10',['RCH_A','RCH_A_AVG'],'hb1c-eurostat-precos-reais','A variação num ano do índice dos preços das casas descontada a inflação, que é o índice dos preços da habitação dividido pelo deflator do consumo privado das contas nacionais','The change over one year in the house price index net of inflation, which is the house price index divided by the national accounts deflator for private consumption',REAL),
+ ('tipsho10',None,'hb1c-eurostat-precos-reais','O índice dos preços das casas descontada a inflação, que é o índice dos preços da habitação dividido pelo deflator do consumo privado das contas nacionais, com o ano base igual a cem','The house price index net of inflation, which is the house price index divided by the national accounts deflator for private consumption, with the base year equal to one hundred',REAL),
+ ('tipsho60',['PTIR_LT_AVG'],'hb1c-eurostat-preco-rendimento','O rácio entre os preços das casas e o rendimento das famílias face à sua média de longo prazo, que vale cem quando o rácio está nessa média','The ratio of house prices to household income relative to its long-term average, which equals one hundred when the ratio is at that average',['is defined as the ratio of the current price to income ratio relative to the long-term average price-to-income ratio','If the ratio equals 100']),
+ ('tipsho60',None,'hb1c-eurostat-preco-rendimento','O rácio entre os preços das casas e o rendimento disponível bruto ajustado das famílias por habitante, em índice com o ano base igual a cem','The ratio of house prices to adjusted gross disposable household income per head, as an index with the base year equal to one hundred',['income is calculated as adjusted household gross disposable income (B7G) per head of population']),
+ ('tespm140',None,'hb1c-eurostat-sobrecarga')+SOB,
+ ('ilc-lvho07',None,'hb1c-eurostat-sobrecarga')+SOB,
+ ('prc-hicp',None,'hb1c-eurostat-ihpc','A variação dos preços das rendas pagas pelos inquilinos no índice harmonizado de preços no consumidor, o índice de preços no consumidor calculado na União Europeia com um método e definições comuns','The change in the prices of rents paid by tenants in the harmonised index of consumer prices, the consumer price index calculated in the European Union with a common method and definitions',['is the consumer price index as it is calculated in the European Union (EU), according to a harmonised approach and a single set of definitions']),
+ ('ilc-mded01',None,'hb1c-eurostat-custos-habitacao','A parte do rendimento disponível do agregado que vai para a despesa com a casa, que o Eurostat define como os gastos mensais ligados ao direito de viver numa casa','The share of disposable household income that goes on housing costs, which Eurostat defines as the monthly expenses associated with the right to live in a dwelling',['Housing costs refer to the monthly expenses associated with the right to live in a dwelling.']),
+ ('ilc-lvho05a',None,'hb1c-eurostat-sobrelotacao','A taxa de sobrelotação é a parte da população que vive num agregado sobrelotado, que não tem o número mínimo de divisões que o Eurostat fixa para a sua composição','The overcrowding rate is the share of the population living in an overcrowded household, one without the minimum number of rooms Eurostat sets for its composition',['is defined as the percentage of the population living in an overcrowded household','does not have at its disposal a minimum number of rooms']),
+ ('ilc-mdho06a',None,'hb1c-eurostat-privacao-severa','A parte da população que vive numa casa sobrelotada e, ao mesmo tempo, com pelo menos um destes problemas: um telhado que mete água, sem banheira ou duche e sem retrete dentro de casa, ou uma casa considerada demasiado escura','The share of the population living in an overcrowded dwelling that also has at least one of these problems: a leaking roof, no bath or shower and no indoor toilet, or a dwelling considered too dark',['is considered as overcrowded, while also exhibiting at least one of the housing deprivation measures','with a leaking roof, no bath/shower and no indoor toilet, or a dwelling considered too dark']),
+ ('yth-demo-030',None,'hb1c-eurostat-saida','A idade em que metade da população já não vive num agregado com os pais, estimada pelo inquérito ao emprego','The age at which half of the population no longer lives in a household with their parents, estimated from the Labour Force Survey',['represents the age at which 50 % of the population no longer live in a household with their parent(s)','(Source: EU-LFS)']),
+ ('ilc-lvps08',None,None,'A parte das pessoas desta idade que vivem com os pais ou contribuem para o rendimento do agregado ou dele beneficiam','The share of people of this age who live with their parents or contribute to or benefit from the household income',['Persons living with their parents or contributing/benefiting from the household income']),
+ ('ilc-lvho02',None,None,'A parte da população que vive neste regime de ocupação da casa','The share of the population living under this tenure status',['Distribution of population by tenure status']),
+ ('sts-cobp',None,'hb1c-eurostat-licenca','O número de alojamentos com licença de construção, a autorização final para começar a obra','The number of dwellings with a building permit, the final authorisation to start work',['A building permit is the final authorisation to start work on a building project.']),
+ ('cens-21dwob',None,'hb1c-eurostat-censos-ocupacao','O número de alojamentos familiares clássicos recenseados, os ocupados, que são a residência habitual de uma ou mais pessoas à data dos Censos, e os não ocupados','The number of conventional dwellings counted, the occupied ones, which are the usual residence of one or more persons at the time of the census, and the unoccupied ones',['are conventional dwellings which are the usual residence of one or more persons at the time of the census','are conventional dwellings which are not the usual residence of any person']),
+ ('demo-pjan',None,None,'O número de pessoas que residem no território a um de janeiro do ano','The number of people resident in the territory on the first of January of the year',['Population on 1 January'])]
+DER_WHAT={
+ 'proprietarios':('O resultado é a parte da população que vive em casa própria, com ou sem empréstimo','The result is the share of the population living in an owner-occupied home, with or without a loan'),
+ 'inquilinos':('O resultado é a parte da população que vive em casa arrendada, a preços de mercado ou a renda reduzida ou gratuita','The result is the share of the population living in a rented home, at market rent or at reduced or free rent'),
+ 'fiscal':('O resultado é o impacto conjunto na receita, em milhões de euros, das duas medidas fiscais da habitação do Orçamento','The result is the combined impact on revenue, in million euros, of the two housing tax measures in the Budget'),
+ 'sobrecarga-inquilinos-pt-2020-2025':('O resultado é quanto mudou, em pontos percentuais, a parte dos inquilinos a preços de mercado em sobrecarga em Portugal','The result is how much the share of tenants at market rents in overburden changed in Portugal, in percentage points'),
+ 'jovens-com-pais':('O resultado é a diferença, em pontos percentuais, entre Portugal e a União na parte dos jovens que vivem com os pais ou partilham o rendimento do agregado','The result is the gap, in percentage points, between Portugal and the Union in the share of young people living with their parents or sharing household income'),
+ 'licencas-por-mil':('O resultado é o número de alojamentos licenciados por cada mil habitantes','The result is the number of dwellings permitted per thousand inhabitants'),
+ 'precos-reais':('O resultado é a diferença, em pontos do índice, entre Portugal e a União no índice dos preços das casas descontada a inflação','The result is the gap, in index points, between Portugal and the Union in the house price index net of inflation'),
+ 'preco-rendimento-acima-2015':('O resultado é quanto o rácio preço-rendimento está acima do valor do ano base, em pontos do índice, que é a subida em percentagem desde esse ano','The result is how far the price-to-income ratio is above its base-year value, in index points, which is the rise in percent since that year'),
+ 'preco-rendimento-lt':('O resultado é a distância, em pontos do índice, entre o rácio preço-rendimento e a sua média de longo prazo, positiva quando o rácio está acima dela','The result is the distance, in index points, between the price-to-income ratio and its long-term average, positive when the ratio is above it'),
+ 'preco-rendimento':('O resultado é a diferença, em pontos do índice, entre Portugal e a União no índice do rácio preço-rendimento','The result is the gap, in index points, between Portugal and the Union in the price-to-income ratio index'),
+ 'preco-lisboa':('O resultado é quantas vezes o preço mediano das vendas em Lisboa é o do país','The result is how many times the median sale price in Lisbon is that of the country'),
+ 'renda-lisboa':('O resultado é quantas vezes a renda mediana dos novos contratos em Lisboa é a do país','The result is how many times the median rent of new contracts in Lisbon is that of the country'),
+ 'sobrecarga-inquilinos':('O resultado é a diferença, em pontos percentuais, entre Portugal e a União na parte dos inquilinos a preços de mercado em sobrecarga','The result is the gap, in percentage points, between Portugal and the Union in the share of tenants at market rents in overburden'),
+ 'saida':('O resultado é a diferença, em anos, entre Portugal e a União na idade média de saída de casa dos pais','The result is the gap, in years, between Portugal and the Union in the average age of leaving the parental home'),
+ 'vagos':('O resultado é a parte, em percentagem, dos alojamentos do parque que estavam vagos nos Censos','The result is the share, in percent, of the dwellings in the stock that were vacant in the Census')}
+def definicao(id,r):
+ u=(r.get('coords') or {}).get('unit')
+ for pref,units,orig,pt,en,lits in DEFS:
+  if id.startswith('hab-'+pref) and (units is None or u in units):
+   return pt,en,[dict(origem=orig,campo='excerto',literal=l) if orig else dict(linha='propria',campo='document.title',literal=l) for l in lits],([orig] if orig else [])
+ return None
 names={};families=[]
 for r in b:
  id=r['id']
@@ -141,10 +187,14 @@ for r in b:
   if coords.get('geo'):pair=tuple(pair[i]+', '+geo[coords['geo']][i] for i in range(2))
  assert pair and not re.search(r'\d',''.join(pair)),id
  names[id]=dict(zip(['pt','en'],pair))
+ origens=[];d=None
  if r.get('unit') in ['texto','afirmação']:
   pt='O excerto reproduz o documento indicado sobre '+pair[0][0].lower()+pair[0][1:]+'.';en='The excerpt reproduces the indicated document about '+pair[1][0].lower()+pair[1][1:]+'.'
  elif r.get('derivation'):
-  pt='A conta calcula '+pair[0][0].lower()+pair[0][1:]+' pelas componentes identificadas';en='The calculation gives '+pair[1][0].lower()+pair[1][1:]+' from the identified components'
+  what=next((v for k,v in DER_WHAT.items() if id.startswith('der-hab-'+k)),None);assert what,id
+  pt,en=what
+ elif (d:=definicao(id,r)):
+  pt,en,apoios_def,origens=d
  else:
   pt='A medida mostra '+pair[0][0].lower()+pair[0][1:];en='The measure shows '+pair[1][0].lower()+pair[1][1:]
  if r.get('derivation'):field='derivation';literal=r.get('derivation_text',r['check'])
@@ -154,8 +204,11 @@ for r in b:
  complemento={}
  if r.get('unit') not in ['texto','afirmação']:
   pre=' no ' if '-Q' in str(r.get('reference_date','')) else ' em '
-  complemento={'complemento':{'pt':[pre,{'periodo':id},'.'],'en':[' in ',{'periodo':id},'.']}}
- families.append(dict(**complemento,chaves=[id],nome=names[id],origens=[],partes=[dict(classe='diz',pt=pt,en=en,apoios=[dict(linha='propria',campo=field,literal=literal)])]))
+  qual=[x.split(', ',1)[1] if ', ' in x else '' for x in pair]
+  if d or r.get('derivation'):complemento={'complemento':{'pt':[('; aqui, '+qual[0]+',' if qual[0] else '')+pre,{'periodo':id},'.'],'en':[('; here, '+qual[1]+',' if qual[1] else '')+' in ',{'periodo':id},'.']}}
+  else:complemento={'complemento':{'pt':[pre,{'periodo':id},'.'],'en':[' in ',{'periodo':id},'.']}}
+ apoios=apoios_def if d else [dict(linha='propria',campo=field,literal=literal)]
+ families.append(dict(**complemento,chaves=[id],nome=names[id],origens=origens,partes=[dict(classe='diz',pt=pt,en=en,apoios=apoios)]))
 (site/'src/data/nomes-hb1.mjs').write_text('/** Nomes correntes das medidas e documentos do estudo HB1. */\nexport const NOMES_HB1 = '+json.dumps(names,ensure_ascii=False,indent=2)+';\n')
 (report/'familias.mjs').write_text('/** HB1: frases apoiadas nos excertos e contas das linhas. */\nexport const FAMILIAS_HB1 = '+json.dumps(families,ensure_ascii=False,indent=2)+';\n')
 print(len(names),'nomes e famílias preparados')

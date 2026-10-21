@@ -1538,7 +1538,7 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
               ------------------------------------------------------------ */}
           {claim.published_at && (
             <>
-              <dt>{s.livro.linha.publicadoEmK}</dt>
+              <dt>{/** @type {any} */ (claim).published_at_kind === 'last-edited' ? s.livro.linha.editadoEmK : s.livro.linha.publicadoEmK}</dt>
               <dd>
                 <CampoDaLinha
                   id={id}

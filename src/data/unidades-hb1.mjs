@@ -14,7 +14,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "derivation",
-        "literal": "Habitação - redução IVA construção de 23% para 6% (i) (-94 milhões de euros; Governo) mais Habitação - redução IRS rendas moderadas de 25% para 10% (i) (-209 milhões de euros; Governo), arredondado à unidade: -303."
+        "literal": "Habitação - redução IVA construção de 23% para 6% (i) (−94 milhões de euros; Governo) mais Habitação - redução IRS rendas moderadas de 25% para 10% (i) (−209 milhões de euros; Governo), arredondado à unidade: −303."
       }
     ],
     "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."

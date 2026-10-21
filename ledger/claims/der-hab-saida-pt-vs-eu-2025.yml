@@ -9,7 +9,7 @@ id: "der-hab-saida-pt-vs-eu-2025"
 value: "2,5"
 unit: "anos"
 measure: "Diferença: Idade média estimada de saída de casa dos pais, Portugal, 2025"
-measure_en: "Difference: Idade média estimada de saída de casa dos pais, Portugal, 2025"
+measure_en: "Difference: Estimated average age of leaving the parental household, Portugal, 2025"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: null

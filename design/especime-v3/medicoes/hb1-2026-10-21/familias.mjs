@@ -3,14 +3,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, Portugal, em ",
         {
           "periodo": "hab-tipsho10-a-i15-a-avg-pt-2025"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, Portugal, in ",
         {
           "periodo": "hab-tipsho10-a-i15-a-avg-pt-2025"
         },
@@ -24,17 +24,19 @@ export const FAMILIAS_HB1 = [
       "pt": "Índice dos preços da habitação descontada a inflação, Portugal",
       "en": "Index of house prices net of inflation, Portugal"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-precos-reais"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra índice dos preços da habitação descontada a inflação, Portugal",
-        "en": "The measure shows index of house prices net of inflation, Portugal",
+        "pt": "O índice dos preços das casas descontada a inflação, que é o índice dos preços da habitação dividido pelo deflator do consumo privado das contas nacionais, com o ano base igual a cem",
+        "en": "The house price index net of inflation, which is the house price index divided by the national accounts deflator for private consumption, with the base year equal to one hundred",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"I15_A_AVG\", \"geo\": \"PT\", \"time\": \"2025\"}, \"value\": \"206.41\", \"status\": null}"
+            "origem": "hb1c-eurostat-precos-reais",
+            "campo": "excerto",
+            "literal": "is the ratio between the house price index (HPI) and the national accounts deflator for private final consumption expenditure"
           }
         ]
       }
@@ -43,14 +45,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, União Europeia, em ",
         {
           "periodo": "hab-tipsho10-a-i15-a-avg-eu27_2020-2025"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, European Union, in ",
         {
           "periodo": "hab-tipsho10-a-i15-a-avg-eu27_2020-2025"
         },
@@ -64,17 +66,19 @@ export const FAMILIAS_HB1 = [
       "pt": "Índice dos preços da habitação descontada a inflação, União Europeia",
       "en": "Index of house prices net of inflation, European Union"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-precos-reais"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra índice dos preços da habitação descontada a inflação, União Europeia",
-        "en": "The measure shows index of house prices net of inflation, European Union",
+        "pt": "O índice dos preços das casas descontada a inflação, que é o índice dos preços da habitação dividido pelo deflator do consumo privado das contas nacionais, com o ano base igual a cem",
+        "en": "The house price index net of inflation, which is the house price index divided by the national accounts deflator for private consumption, with the base year equal to one hundred",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"I15_A_AVG\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"124.75\", \"status\": null}"
+            "origem": "hb1c-eurostat-precos-reais",
+            "campo": "excerto",
+            "literal": "is the ratio between the house price index (HPI) and the national accounts deflator for private final consumption expenditure"
           }
         ]
       }
@@ -83,14 +87,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " no ",
+        "; aqui, Portugal, no ",
         {
           "periodo": "hab-prc-hpi-q-q-total-i15-q-pt-2026-q2"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, Portugal, in ",
         {
           "periodo": "hab-prc-hpi-q-q-total-i15-q-pt-2026-q2"
         },
@@ -104,17 +108,19 @@ export const FAMILIAS_HB1 = [
       "pt": "Índice dos preços da habitação, Portugal",
       "en": "Index of house prices, Portugal"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-ipH"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra índice dos preços da habitação, Portugal",
-        "en": "The measure shows index of house prices, Portugal",
+        "pt": "O índice dos preços das transações de casas compradas pelas famílias, com o ano base igual a cem",
+        "en": "The index of the transaction prices of dwellings purchased by households, with the base year equal to one hundred",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"Q\", \"purchase\": \"TOTAL\", \"unit\": \"I15_Q\", \"geo\": \"PT\", \"time\": \"2026-Q2\"}, \"value\": \"301.43\", \"status\": null}"
+            "origem": "hb1c-eurostat-ipH",
+            "campo": "excerto",
+            "literal": "measures the changes in the transaction prices of dwellings purchased by households"
           }
         ]
       }
@@ -123,14 +129,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " no ",
+        "; aqui, Hungria, no ",
         {
           "periodo": "hab-prc-hpi-q-q-total-i15-q-hu-2026-q2"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, Hungary, in ",
         {
           "periodo": "hab-prc-hpi-q-q-total-i15-q-hu-2026-q2"
         },
@@ -144,17 +150,19 @@ export const FAMILIAS_HB1 = [
       "pt": "Índice dos preços da habitação, Hungria",
       "en": "Index of house prices, Hungary"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-ipH"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra índice dos preços da habitação, Hungria",
-        "en": "The measure shows index of house prices, Hungary",
+        "pt": "O índice dos preços das transações de casas compradas pelas famílias, com o ano base igual a cem",
+        "en": "The index of the transaction prices of dwellings purchased by households, with the base year equal to one hundred",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"Q\", \"purchase\": \"TOTAL\", \"unit\": \"I15_Q\", \"geo\": \"HU\", \"time\": \"2026-Q2\"}, \"value\": \"389.61\", \"status\": \"p\"}"
+            "origem": "hb1c-eurostat-ipH",
+            "campo": "excerto",
+            "literal": "measures the changes in the transaction prices of dwellings purchased by households"
           }
         ]
       }
@@ -163,14 +171,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " no ",
+        "; aqui, Portugal, no ",
         {
           "periodo": "hab-prc-hpi-q-q-total-rch-a-pt-2026-q2"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, Portugal, in ",
         {
           "periodo": "hab-prc-hpi-q-q-total-rch-a-pt-2026-q2"
         },
@@ -184,17 +192,19 @@ export const FAMILIAS_HB1 = [
       "pt": "Variação anual dos preços da habitação, Portugal",
       "en": "Annual change in house prices, Portugal"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-ipH"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra variação anual dos preços da habitação, Portugal",
-        "en": "The measure shows annual change in house prices, Portugal",
+        "pt": "A variação num ano do índice dos preços das transações de casas compradas pelas famílias",
+        "en": "The change over one year in the index of the transaction prices of dwellings purchased by households",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"Q\", \"purchase\": \"TOTAL\", \"unit\": \"RCH_A\", \"geo\": \"PT\", \"time\": \"2026-Q2\"}, \"value\": \"16.5\", \"status\": null}"
+            "origem": "hb1c-eurostat-ipH",
+            "campo": "excerto",
+            "literal": "measures the changes in the transaction prices of dwellings purchased by households"
           }
         ]
       }
@@ -203,14 +213,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " no ",
+        "; aqui, União Europeia, no ",
         {
           "periodo": "hab-prc-hpi-q-q-total-rch-a-eu27_2020-2026-q2"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, European Union, in ",
         {
           "periodo": "hab-prc-hpi-q-q-total-rch-a-eu27_2020-2026-q2"
         },
@@ -224,17 +234,19 @@ export const FAMILIAS_HB1 = [
       "pt": "Variação anual dos preços da habitação, União Europeia",
       "en": "Annual change in house prices, European Union"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-ipH"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra variação anual dos preços da habitação, União Europeia",
-        "en": "The measure shows annual change in house prices, European Union",
+        "pt": "A variação num ano do índice dos preços das transações de casas compradas pelas famílias",
+        "en": "The change over one year in the index of the transaction prices of dwellings purchased by households",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"Q\", \"purchase\": \"TOTAL\", \"unit\": \"RCH_A\", \"geo\": \"EU27_2020\", \"time\": \"2026-Q2\"}, \"value\": \"4.7\", \"status\": null}"
+            "origem": "hb1c-eurostat-ipH",
+            "campo": "excerto",
+            "literal": "measures the changes in the transaction prices of dwellings purchased by households"
           }
         ]
       }
@@ -243,14 +255,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, Portugal, em ",
         {
           "periodo": "hab-tipsho60-a-ptir-i15-pt-2024"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, Portugal, in ",
         {
           "periodo": "hab-tipsho60-a-ptir-i15-pt-2024"
         },
@@ -264,17 +276,19 @@ export const FAMILIAS_HB1 = [
       "pt": "Preços das casas em relação ao rendimento, Portugal",
       "en": "House prices relative to income, Portugal"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-preco-rendimento"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra preços das casas em relação ao rendimento, Portugal",
-        "en": "The measure shows house prices relative to income, Portugal",
+        "pt": "O rácio entre os preços das casas e o rendimento disponível bruto ajustado das famílias por habitante, em índice com o ano base igual a cem",
+        "en": "The ratio of house prices to adjusted gross disposable household income per head, as an index with the base year equal to one hundred",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PTIR_I15\", \"geo\": \"PT\", \"time\": \"2024\"}, \"value\": \"144.34\", \"status\": null}"
+            "origem": "hb1c-eurostat-preco-rendimento",
+            "campo": "excerto",
+            "literal": "income is calculated as adjusted household gross disposable income (B7G) per head of population"
           }
         ]
       }
@@ -283,14 +297,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, União Europeia, em ",
         {
           "periodo": "hab-tipsho60-a-ptir-i15-eu27_2020-2024"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, European Union, in ",
         {
           "periodo": "hab-tipsho60-a-ptir-i15-eu27_2020-2024"
         },
@@ -304,17 +318,19 @@ export const FAMILIAS_HB1 = [
       "pt": "Preços das casas em relação ao rendimento, União Europeia",
       "en": "House prices relative to income, European Union"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-preco-rendimento"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra preços das casas em relação ao rendimento, União Europeia",
-        "en": "The measure shows house prices relative to income, European Union",
+        "pt": "O rácio entre os preços das casas e o rendimento disponível bruto ajustado das famílias por habitante, em índice com o ano base igual a cem",
+        "en": "The ratio of house prices to adjusted gross disposable household income per head, as an index with the base year equal to one hundred",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PTIR_I15\", \"geo\": \"EU27_2020\", \"time\": \"2024\"}, \"value\": \"105.72\", \"status\": null}"
+            "origem": "hb1c-eurostat-preco-rendimento",
+            "campo": "excerto",
+            "literal": "income is calculated as adjusted household gross disposable income (B7G) per head of population"
           }
         ]
       }
@@ -348,8 +364,8 @@ export const FAMILIAS_HB1 = [
     "partes": [
       {
         "classe": "diz",
-        "pt": "A conta calcula aumento dos preços face ao rendimento desde o ano base pelas componentes identificadas",
-        "en": "The calculation gives increase in prices relative to income since the base year from the identified components",
+        "pt": "O resultado é quanto o rácio preço-rendimento está acima do valor do ano base, em pontos do índice, que é a subida em percentagem desde esse ano",
+        "en": "The result is how far the price-to-income ratio is above its base-year value, in index points, which is the rise in percent since that year",
         "apoios": [
           {
             "linha": "propria",
@@ -388,8 +404,8 @@ export const FAMILIAS_HB1 = [
     "partes": [
       {
         "classe": "diz",
-        "pt": "A conta calcula aumento dos preços face ao rendimento desde o ano base pelas componentes identificadas",
-        "en": "The calculation gives increase in prices relative to income since the base year from the identified components",
+        "pt": "O resultado é quanto o rácio preço-rendimento está acima do valor do ano base, em pontos do índice, que é a subida em percentagem desde esse ano",
+        "en": "The result is how far the price-to-income ratio is above its base-year value, in index points, which is the rise in percent since that year",
         "apoios": [
           {
             "linha": "propria",
@@ -643,14 +659,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, Portugal, em ",
         {
           "periodo": "hab-ilc-mded01-a-total-total-pc-pt-2025"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, Portugal, in ",
         {
           "periodo": "hab-ilc-mded01-a-total-total-pc-pt-2025"
         },
@@ -664,17 +680,19 @@ export const FAMILIAS_HB1 = [
       "pt": "Parte do rendimento gasta na habitação, Portugal",
       "en": "Share of income spent on housing, Portugal"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-custos-habitacao"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra parte do rendimento gasta na habitação, Portugal",
-        "en": "The measure shows share of income spent on housing, Portugal",
+        "pt": "A parte do rendimento disponível do agregado que vai para a despesa com a casa, que o Eurostat define como os gastos mensais ligados ao direito de viver numa casa",
+        "en": "The share of disposable household income that goes on housing costs, which Eurostat defines as the monthly expenses associated with the right to live in a dwelling",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"hhcomp\": \"TOTAL\", \"rskpovth\": \"TOTAL\", \"unit\": \"PC\", \"geo\": \"PT\", \"time\": \"2025\"}, \"value\": \"16.3\", \"status\": null}"
+            "origem": "hb1c-eurostat-custos-habitacao",
+            "campo": "excerto",
+            "literal": "Housing costs refer to the monthly expenses associated with the right to live in a dwelling."
           }
         ]
       }
@@ -683,14 +701,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, União Europeia, em ",
         {
           "periodo": "hab-ilc-mded01-a-total-total-pc-eu27_2020-2025"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, European Union, in ",
         {
           "periodo": "hab-ilc-mded01-a-total-total-pc-eu27_2020-2025"
         },
@@ -704,17 +722,19 @@ export const FAMILIAS_HB1 = [
       "pt": "Parte do rendimento gasta na habitação, União Europeia",
       "en": "Share of income spent on housing, European Union"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-custos-habitacao"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra parte do rendimento gasta na habitação, União Europeia",
-        "en": "The measure shows share of income spent on housing, European Union",
+        "pt": "A parte do rendimento disponível do agregado que vai para a despesa com a casa, que o Eurostat define como os gastos mensais ligados ao direito de viver numa casa",
+        "en": "The share of disposable household income that goes on housing costs, which Eurostat defines as the monthly expenses associated with the right to live in a dwelling",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"hhcomp\": \"TOTAL\", \"rskpovth\": \"TOTAL\", \"unit\": \"PC\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"18.9\", \"status\": null}"
+            "origem": "hb1c-eurostat-custos-habitacao",
+            "campo": "excerto",
+            "literal": "Housing costs refer to the monthly expenses associated with the right to live in a dwelling."
           }
         ]
       }
@@ -723,14 +743,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, Portugal, em ",
         {
           "periodo": "hab-ilc-lvho07c-a-pc-total-pt-2025"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, Portugal, in ",
         {
           "periodo": "hab-ilc-lvho07c-a-pc-total-pt-2025"
         },
@@ -744,17 +764,19 @@ export const FAMILIAS_HB1 = [
       "pt": "Sobrecarga do custo da habitação, Portugal",
       "en": "Housing cost overburden, Portugal"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-sobrecarga"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra sobrecarga do custo da habitação, Portugal",
-        "en": "The measure shows housing cost overburden, Portugal",
+        "pt": "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a casa, descontados os subsídios, passa de quarenta por cento do rendimento disponível",
+        "en": "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"tenure\": \"TOTAL\", \"geo\": \"PT\", \"time\": \"2025\"}, \"value\": \"6.2\", \"status\": null}"
+            "origem": "hb1c-eurostat-sobrecarga",
+            "campo": "excerto",
+            "literal": "is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income"
           }
         ]
       }
@@ -763,14 +785,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, União Europeia, em ",
         {
           "periodo": "hab-ilc-lvho07c-a-pc-total-eu27_2020-2025"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, European Union, in ",
         {
           "periodo": "hab-ilc-lvho07c-a-pc-total-eu27_2020-2025"
         },
@@ -784,17 +806,19 @@ export const FAMILIAS_HB1 = [
       "pt": "Sobrecarga do custo da habitação, União Europeia",
       "en": "Housing cost overburden, European Union"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-sobrecarga"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra sobrecarga do custo da habitação, União Europeia",
-        "en": "The measure shows housing cost overburden, European Union",
+        "pt": "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a casa, descontados os subsídios, passa de quarenta por cento do rendimento disponível",
+        "en": "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"tenure\": \"TOTAL\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"7.7\", \"status\": null}"
+            "origem": "hb1c-eurostat-sobrecarga",
+            "campo": "excerto",
+            "literal": "is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income"
           }
         ]
       }
@@ -803,14 +827,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, inquilinos a preços de mercado, Portugal, em ",
         {
           "periodo": "hab-ilc-lvho02-a-total-total-rent-mkt-pc-pt-2025"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, tenants at market rents, Portugal, in ",
         {
           "periodo": "hab-ilc-lvho02-a-total-total-rent-mkt-pc-pt-2025"
         },
@@ -828,13 +852,13 @@ export const FAMILIAS_HB1 = [
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra população por regime de ocupação, inquilinos a preços de mercado, Portugal",
-        "en": "The measure shows population by tenure status, tenants at market rents, Portugal",
+        "pt": "A parte da população que vive neste regime de ocupação da casa",
+        "en": "The share of the population living under this tenure status",
         "apoios": [
           {
             "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"rskpovth\": \"TOTAL\", \"hhcomp\": \"TOTAL\", \"tenure\": \"RENT_MKT\", \"unit\": \"PC\", \"geo\": \"PT\", \"time\": \"2025\"}, \"value\": \"16.3\", \"status\": null}"
+            "campo": "document.title",
+            "literal": "Distribution of population by tenure status"
           }
         ]
       }
@@ -843,14 +867,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, inquilinos a preços de mercado, União Europeia, em ",
         {
           "periodo": "hab-ilc-lvho02-a-total-total-rent-mkt-pc-eu27_2020-2025"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, tenants at market rents, European Union, in ",
         {
           "periodo": "hab-ilc-lvho02-a-total-total-rent-mkt-pc-eu27_2020-2025"
         },
@@ -868,13 +892,13 @@ export const FAMILIAS_HB1 = [
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra população por regime de ocupação, inquilinos a preços de mercado, União Europeia",
-        "en": "The measure shows population by tenure status, tenants at market rents, European Union",
+        "pt": "A parte da população que vive neste regime de ocupação da casa",
+        "en": "The share of the population living under this tenure status",
         "apoios": [
           {
             "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"rskpovth\": \"TOTAL\", \"hhcomp\": \"TOTAL\", \"tenure\": \"RENT_MKT\", \"unit\": \"PC\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"20.8\", \"status\": null}"
+            "campo": "document.title",
+            "literal": "Distribution of population by tenure status"
           }
         ]
       }
@@ -883,14 +907,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, inquilinos a preços de mercado, Portugal, em ",
         {
           "periodo": "hab-ilc-lvho07c-a-pc-rent-mkt-pt-2020"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, tenants at market rents, Portugal, in ",
         {
           "periodo": "hab-ilc-lvho07c-a-pc-rent-mkt-pt-2020"
         },
@@ -904,17 +928,19 @@ export const FAMILIAS_HB1 = [
       "pt": "Sobrecarga do custo da habitação, inquilinos a preços de mercado, Portugal",
       "en": "Housing cost overburden, tenants at market rents, Portugal"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-sobrecarga"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra sobrecarga do custo da habitação, inquilinos a preços de mercado, Portugal",
-        "en": "The measure shows housing cost overburden, tenants at market rents, Portugal",
+        "pt": "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a casa, descontados os subsídios, passa de quarenta por cento do rendimento disponível",
+        "en": "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"tenure\": \"RENT_MKT\", \"geo\": \"PT\", \"time\": \"2020\"}, \"value\": \"19.7\", \"status\": null}"
+            "origem": "hb1c-eurostat-sobrecarga",
+            "campo": "excerto",
+            "literal": "is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income"
           }
         ]
       }
@@ -923,14 +949,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, proprietários sem empréstimo, Portugal, em ",
         {
           "periodo": "hab-ilc-lvho02-a-total-total-own-nl-pc-pt-2025"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, owners without a loan, Portugal, in ",
         {
           "periodo": "hab-ilc-lvho02-a-total-total-own-nl-pc-pt-2025"
         },
@@ -948,13 +974,13 @@ export const FAMILIAS_HB1 = [
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra população por regime de ocupação, proprietários sem empréstimo, Portugal",
-        "en": "The measure shows population by tenure status, owners without a loan, Portugal",
+        "pt": "A parte da população que vive neste regime de ocupação da casa",
+        "en": "The share of the population living under this tenure status",
         "apoios": [
           {
             "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"rskpovth\": \"TOTAL\", \"hhcomp\": \"TOTAL\", \"tenure\": \"OWN_NL\", \"unit\": \"PC\", \"geo\": \"PT\", \"time\": \"2025\"}, \"value\": \"39.7\", \"status\": null}"
+            "campo": "document.title",
+            "literal": "Distribution of population by tenure status"
           }
         ]
       }
@@ -963,14 +989,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, proprietários sem empréstimo, Portugal, em ",
         {
           "periodo": "hab-ilc-lvho07c-a-pc-own-nl-pt-2025"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, owners without a loan, Portugal, in ",
         {
           "periodo": "hab-ilc-lvho07c-a-pc-own-nl-pt-2025"
         },
@@ -984,17 +1010,19 @@ export const FAMILIAS_HB1 = [
       "pt": "Sobrecarga do custo da habitação, proprietários sem empréstimo, Portugal",
       "en": "Housing cost overburden, owners without a loan, Portugal"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-sobrecarga"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra sobrecarga do custo da habitação, proprietários sem empréstimo, Portugal",
-        "en": "The measure shows housing cost overburden, owners without a loan, Portugal",
+        "pt": "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a casa, descontados os subsídios, passa de quarenta por cento do rendimento disponível",
+        "en": "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"tenure\": \"OWN_NL\", \"geo\": \"PT\", \"time\": \"2025\"}, \"value\": \"1.3\", \"status\": null}"
+            "origem": "hb1c-eurostat-sobrecarga",
+            "campo": "excerto",
+            "literal": "is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income"
           }
         ]
       }
@@ -1003,14 +1031,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, Portugal, em ",
         {
           "periodo": "hab-yth-demo-030-a-avg-t-pt-2025"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, Portugal, in ",
         {
           "periodo": "hab-yth-demo-030-a-avg-t-pt-2025"
         },
@@ -1024,17 +1052,24 @@ export const FAMILIAS_HB1 = [
       "pt": "Idade média de saída de casa dos pais, Portugal",
       "en": "Average age of leaving the parental home, Portugal"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-saida"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra idade média de saída de casa dos pais, Portugal",
-        "en": "The measure shows average age of leaving the parental home, Portugal",
+        "pt": "A idade em que metade da população já não vive num agregado com os pais, estimada pelo inquérito ao emprego",
+        "en": "The age at which half of the population no longer lives in a household with their parents, estimated from the Labour Force Survey",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"AVG\", \"sex\": \"T\", \"geo\": \"PT\", \"time\": \"2025\"}, \"value\": \"28.8\", \"status\": null}"
+            "origem": "hb1c-eurostat-saida",
+            "campo": "excerto",
+            "literal": "represents the age at which 50 % of the population no longer live in a household with their parent(s)"
+          },
+          {
+            "origem": "hb1c-eurostat-saida",
+            "campo": "excerto",
+            "literal": "(Source: EU-LFS)"
           }
         ]
       }
@@ -1043,14 +1078,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, União Europeia, em ",
         {
           "periodo": "hab-yth-demo-030-a-avg-t-eu27_2020-2025"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, European Union, in ",
         {
           "periodo": "hab-yth-demo-030-a-avg-t-eu27_2020-2025"
         },
@@ -1064,17 +1099,24 @@ export const FAMILIAS_HB1 = [
       "pt": "Idade média de saída de casa dos pais, União Europeia",
       "en": "Average age of leaving the parental home, European Union"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-saida"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra idade média de saída de casa dos pais, União Europeia",
-        "en": "The measure shows average age of leaving the parental home, European Union",
+        "pt": "A idade em que metade da população já não vive num agregado com os pais, estimada pelo inquérito ao emprego",
+        "en": "The age at which half of the population no longer lives in a household with their parents, estimated from the Labour Force Survey",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"AVG\", \"sex\": \"T\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"26.3\", \"status\": null}"
+            "origem": "hb1c-eurostat-saida",
+            "campo": "excerto",
+            "literal": "represents the age at which 50 % of the population no longer live in a household with their parent(s)"
+          },
+          {
+            "origem": "hb1c-eurostat-saida",
+            "campo": "excerto",
+            "literal": "(Source: EU-LFS)"
           }
         ]
       }
@@ -1083,14 +1125,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, vinte e cinco a trinta e quatro anos, Portugal, em ",
         {
           "periodo": "hab-ilc-lvps08-a-y25-34-t-pc-pt-2025"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, twenty-five to thirty-four years, Portugal, in ",
         {
           "periodo": "hab-ilc-lvps08-a-y25-34-t-pc-pt-2025"
         },
@@ -1108,13 +1150,13 @@ export const FAMILIAS_HB1 = [
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra jovens que vivem com os pais ou partilham o rendimento do agregado, vinte e cinco a trinta e quatro anos, Portugal",
-        "en": "The measure shows young people living with parents or sharing household income, twenty-five to thirty-four years, Portugal",
+        "pt": "A parte das pessoas desta idade que vivem com os pais ou contribuem para o rendimento do agregado ou dele beneficiam",
+        "en": "The share of people of this age who live with their parents or contribute to or benefit from the household income",
         "apoios": [
           {
             "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"age\": \"Y25-34\", \"sex\": \"T\", \"unit\": \"PC\", \"geo\": \"PT\", \"time\": \"2025\"}, \"value\": \"42.1\", \"status\": null}"
+            "campo": "document.title",
+            "literal": "Persons living with their parents or contributing/benefiting from the household income"
           }
         ]
       }
@@ -1123,14 +1165,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, vinte e cinco a trinta e quatro anos, União Europeia, em ",
         {
           "periodo": "hab-ilc-lvps08-a-y25-34-t-pc-eu27_2020-2025"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, twenty-five to thirty-four years, European Union, in ",
         {
           "periodo": "hab-ilc-lvps08-a-y25-34-t-pc-eu27_2020-2025"
         },
@@ -1148,13 +1190,13 @@ export const FAMILIAS_HB1 = [
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra jovens que vivem com os pais ou partilham o rendimento do agregado, vinte e cinco a trinta e quatro anos, União Europeia",
-        "en": "The measure shows young people living with parents or sharing household income, twenty-five to thirty-four years, European Union",
+        "pt": "A parte das pessoas desta idade que vivem com os pais ou contribuem para o rendimento do agregado ou dele beneficiam",
+        "en": "The share of people of this age who live with their parents or contribute to or benefit from the household income",
         "apoios": [
           {
             "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"age\": \"Y25-34\", \"sex\": \"T\", \"unit\": \"PC\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"30.1\", \"status\": null}"
+            "campo": "document.title",
+            "literal": "Persons living with their parents or contributing/benefiting from the household income"
           }
         ]
       }
@@ -1372,13 +1414,13 @@ export const FAMILIAS_HB1 = [
     "partes": [
       {
         "classe": "diz",
-        "pt": "A conta calcula impacto conjunto das medidas fiscais da habitação pelas componentes identificadas",
-        "en": "The calculation gives combined impact of housing tax measures from the identified components",
+        "pt": "O resultado é o impacto conjunto na receita, em milhões de euros, das duas medidas fiscais da habitação do Orçamento",
+        "en": "The result is the combined impact on revenue, in million euros, of the two housing tax measures in the Budget",
         "apoios": [
           {
             "linha": "propria",
             "campo": "derivation",
-            "literal": "Habitação - redução IVA construção de 23% para 6% (i) (-94 milhões de euros; Governo) mais Habitação - redução IRS rendas moderadas de 25% para 10% (i) (-209 milhões de euros; Governo), arredondado à unidade: -303."
+            "literal": "Habitação - redução IVA construção de 23% para 6% (i) (−94 milhões de euros; Governo) mais Habitação - redução IRS rendas moderadas de 25% para 10% (i) (−209 milhões de euros; Governo), arredondado à unidade: −303."
           }
         ]
       }
@@ -1467,14 +1509,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, Portugal, em ",
         {
           "periodo": "hab-prc-hicp-minr-m-rch-a-cp041-pt-2026-09"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, Portugal, in ",
         {
           "periodo": "hab-prc-hicp-minr-m-rch-a-cp041-pt-2026-09"
         },
@@ -1488,17 +1530,19 @@ export const FAMILIAS_HB1 = [
       "pt": "Variação das rendas pagas, Portugal",
       "en": "Change in rents paid, Portugal"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-ihpc"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra variação das rendas pagas, Portugal",
-        "en": "The measure shows change in rents paid, Portugal",
+        "pt": "A variação dos preços das rendas pagas pelos inquilinos no índice harmonizado de preços no consumidor, o índice de preços no consumidor calculado na União Europeia com um método e definições comuns",
+        "en": "The change in the prices of rents paid by tenants in the harmonised index of consumer prices, the consumer price index calculated in the European Union with a common method and definitions",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"M\", \"unit\": \"RCH_A\", \"coicop18\": \"CP041\", \"geo\": \"PT\", \"time\": \"2026-09\"}, \"value\": \"5.2\", \"status\": null}"
+            "origem": "hb1c-eurostat-ihpc",
+            "campo": "excerto",
+            "literal": "is the consumer price index as it is calculated in the European Union (EU), according to a harmonised approach and a single set of definitions"
           }
         ]
       }
@@ -1507,14 +1551,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, União Europeia, em ",
         {
           "periodo": "hab-prc-hicp-minr-m-rch-a-cp041-eu27_2020-2026-09"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, European Union, in ",
         {
           "periodo": "hab-prc-hicp-minr-m-rch-a-cp041-eu27_2020-2026-09"
         },
@@ -1528,17 +1572,19 @@ export const FAMILIAS_HB1 = [
       "pt": "Variação das rendas pagas, União Europeia",
       "en": "Change in rents paid, European Union"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-ihpc"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra variação das rendas pagas, União Europeia",
-        "en": "The measure shows change in rents paid, European Union",
+        "pt": "A variação dos preços das rendas pagas pelos inquilinos no índice harmonizado de preços no consumidor, o índice de preços no consumidor calculado na União Europeia com um método e definições comuns",
+        "en": "The change in the prices of rents paid by tenants in the harmonised index of consumer prices, the consumer price index calculated in the European Union with a common method and definitions",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"M\", \"unit\": \"RCH_A\", \"coicop18\": \"CP041\", \"geo\": \"EU27_2020\", \"time\": \"2026-09\"}, \"value\": \"2.9\", \"status\": null}"
+            "origem": "hb1c-eurostat-ihpc",
+            "campo": "excerto",
+            "literal": "is the consumer price index as it is calculated in the European Union (EU), according to a harmonised approach and a single set of definitions"
           }
         ]
       }
@@ -1547,14 +1593,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, Portugal, em ",
         {
           "periodo": "hab-ilc-lvho07c-a-pc-total-pt-2015"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, Portugal, in ",
         {
           "periodo": "hab-ilc-lvho07c-a-pc-total-pt-2015"
         },
@@ -1568,17 +1614,19 @@ export const FAMILIAS_HB1 = [
       "pt": "Sobrecarga do custo da habitação, Portugal",
       "en": "Housing cost overburden, Portugal"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-sobrecarga"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra sobrecarga do custo da habitação, Portugal",
-        "en": "The measure shows housing cost overburden, Portugal",
+        "pt": "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a casa, descontados os subsídios, passa de quarenta por cento do rendimento disponível",
+        "en": "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"tenure\": \"TOTAL\", \"geo\": \"PT\", \"time\": \"2015\"}, \"value\": \"9.1\", \"status\": null}"
+            "origem": "hb1c-eurostat-sobrecarga",
+            "campo": "excerto",
+            "literal": "is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income"
           }
         ]
       }
@@ -1612,8 +1660,8 @@ export const FAMILIAS_HB1 = [
     "partes": [
       {
         "classe": "diz",
-        "pt": "A conta calcula variação da sobrecarga dos inquilinos em Portugal desde o início da década pelas componentes identificadas",
-        "en": "The calculation gives change in tenant overburden in Portugal since the start of the decade from the identified components",
+        "pt": "O resultado é quanto mudou, em pontos percentuais, a parte dos inquilinos a preços de mercado em sobrecarga em Portugal",
+        "en": "The result is how much the share of tenants at market rents in overburden changed in Portugal, in percentage points",
         "apoios": [
           {
             "linha": "propria",
@@ -1627,14 +1675,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, inquilinos a preços de mercado, Portugal, em ",
         {
           "periodo": "hab-ilc-lvho07c-a-pc-rent-mkt-pt-2025"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, tenants at market rents, Portugal, in ",
         {
           "periodo": "hab-ilc-lvho07c-a-pc-rent-mkt-pt-2025"
         },
@@ -1648,17 +1696,19 @@ export const FAMILIAS_HB1 = [
       "pt": "Sobrecarga do custo da habitação, inquilinos a preços de mercado, Portugal",
       "en": "Housing cost overburden, tenants at market rents, Portugal"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-sobrecarga"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra sobrecarga do custo da habitação, inquilinos a preços de mercado, Portugal",
-        "en": "The measure shows housing cost overburden, tenants at market rents, Portugal",
+        "pt": "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a casa, descontados os subsídios, passa de quarenta por cento do rendimento disponível",
+        "en": "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"tenure\": \"RENT_MKT\", \"geo\": \"PT\", \"time\": \"2025\"}, \"value\": \"27.2\", \"status\": null}"
+            "origem": "hb1c-eurostat-sobrecarga",
+            "campo": "excerto",
+            "literal": "is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income"
           }
         ]
       }
@@ -1667,14 +1717,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, proprietários com empréstimo, Portugal, em ",
         {
           "periodo": "hab-ilc-lvho07c-a-pc-own-l-pt-2025"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, owners with a loan, Portugal, in ",
         {
           "periodo": "hab-ilc-lvho07c-a-pc-own-l-pt-2025"
         },
@@ -1688,17 +1738,19 @@ export const FAMILIAS_HB1 = [
       "pt": "Sobrecarga do custo da habitação, proprietários com empréstimo, Portugal",
       "en": "Housing cost overburden, owners with a loan, Portugal"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-sobrecarga"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra sobrecarga do custo da habitação, proprietários com empréstimo, Portugal",
-        "en": "The measure shows housing cost overburden, owners with a loan, Portugal",
+        "pt": "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a casa, descontados os subsídios, passa de quarenta por cento do rendimento disponível",
+        "en": "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"tenure\": \"OWN_L\", \"geo\": \"PT\", \"time\": \"2025\"}, \"value\": \"3.0\", \"status\": null}"
+            "origem": "hb1c-eurostat-sobrecarga",
+            "campo": "excerto",
+            "literal": "is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income"
           }
         ]
       }
@@ -1732,8 +1784,8 @@ export const FAMILIAS_HB1 = [
     "partes": [
       {
         "classe": "diz",
-        "pt": "A conta calcula diferença face à União nos jovens que vivem com os pais pelas componentes identificadas",
-        "en": "The calculation gives gap from the Union in young people living with parents from the identified components",
+        "pt": "O resultado é a diferença, em pontos percentuais, entre Portugal e a União na parte dos jovens que vivem com os pais ou partilham o rendimento do agregado",
+        "en": "The result is the gap, in percentage points, between Portugal and the Union in the share of young people living with their parents or sharing household income",
         "apoios": [
           {
             "linha": "propria",
@@ -1747,14 +1799,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, vinte e cinco a trinta e quatro anos, Croácia, em ",
         {
           "periodo": "hab-ilc-lvps08-a-y25-34-t-pc-hr-2025"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, twenty-five to thirty-four years, Croatia, in ",
         {
           "periodo": "hab-ilc-lvps08-a-y25-34-t-pc-hr-2025"
         },
@@ -1772,13 +1824,13 @@ export const FAMILIAS_HB1 = [
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra jovens que vivem com os pais ou partilham o rendimento do agregado, vinte e cinco a trinta e quatro anos, Croácia",
-        "en": "The measure shows young people living with parents or sharing household income, twenty-five to thirty-four years, Croatia",
+        "pt": "A parte das pessoas desta idade que vivem com os pais ou contribuem para o rendimento do agregado ou dele beneficiam",
+        "en": "The share of people of this age who live with their parents or contribute to or benefit from the household income",
         "apoios": [
           {
             "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"age\": \"Y25-34\", \"sex\": \"T\", \"unit\": \"PC\", \"geo\": \"HR\", \"time\": \"2025\"}, \"value\": \"62.3\", \"status\": null}"
+            "campo": "document.title",
+            "literal": "Persons living with their parents or contributing/benefiting from the household income"
           }
         ]
       }
@@ -1787,14 +1839,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, vinte e cinco a trinta e quatro anos, Portugal, em ",
         {
           "periodo": "hab-ilc-lvps08-a-y25-34-t-pc-pt-2020"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, twenty-five to thirty-four years, Portugal, in ",
         {
           "periodo": "hab-ilc-lvps08-a-y25-34-t-pc-pt-2020"
         },
@@ -1812,13 +1864,13 @@ export const FAMILIAS_HB1 = [
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra jovens que vivem com os pais ou partilham o rendimento do agregado, vinte e cinco a trinta e quatro anos, Portugal",
-        "en": "The measure shows young people living with parents or sharing household income, twenty-five to thirty-four years, Portugal",
+        "pt": "A parte das pessoas desta idade que vivem com os pais ou contribuem para o rendimento do agregado ou dele beneficiam",
+        "en": "The share of people of this age who live with their parents or contribute to or benefit from the household income",
         "apoios": [
           {
             "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"age\": \"Y25-34\", \"sex\": \"T\", \"unit\": \"PC\", \"geo\": \"PT\", \"time\": \"2020\"}, \"value\": \"52.3\", \"status\": null}"
+            "campo": "document.title",
+            "literal": "Persons living with their parents or contributing/benefiting from the household income"
           }
         ]
       }
@@ -1852,8 +1904,8 @@ export const FAMILIAS_HB1 = [
     "partes": [
       {
         "classe": "diz",
-        "pt": "A conta calcula diferença face à União na idade de saída de casa dos pais pelas componentes identificadas",
-        "en": "The calculation gives gap from the Union in the age of leaving the parental home from the identified components",
+        "pt": "O resultado é a diferença, em anos, entre Portugal e a União na idade média de saída de casa dos pais",
+        "en": "The result is the gap, in years, between Portugal and the Union in the average age of leaving the parental home",
         "apoios": [
           {
             "linha": "propria",
@@ -1867,14 +1919,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, Portugal, em ",
         {
           "periodo": "hab-yth-demo-030-a-avg-t-pt-2015"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, Portugal, in ",
         {
           "periodo": "hab-yth-demo-030-a-avg-t-pt-2015"
         },
@@ -1888,17 +1940,24 @@ export const FAMILIAS_HB1 = [
       "pt": "Idade média de saída de casa dos pais, Portugal",
       "en": "Average age of leaving the parental home, Portugal"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-saida"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra idade média de saída de casa dos pais, Portugal",
-        "en": "The measure shows average age of leaving the parental home, Portugal",
+        "pt": "A idade em que metade da população já não vive num agregado com os pais, estimada pelo inquérito ao emprego",
+        "en": "The age at which half of the population no longer lives in a household with their parents, estimated from the Labour Force Survey",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"AVG\", \"sex\": \"T\", \"geo\": \"PT\", \"time\": \"2015\"}, \"value\": \"28.9\", \"status\": null}"
+            "origem": "hb1c-eurostat-saida",
+            "campo": "excerto",
+            "literal": "represents the age at which 50 % of the population no longer live in a household with their parent(s)"
+          },
+          {
+            "origem": "hb1c-eurostat-saida",
+            "campo": "excerto",
+            "literal": "(Source: EU-LFS)"
           }
         ]
       }
@@ -1947,14 +2006,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, Portugal, em ",
         {
           "periodo": "der-hab-licencas-por-mil-pt-2025"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, Portugal, in ",
         {
           "periodo": "der-hab-licencas-por-mil-pt-2025"
         },
@@ -1972,8 +2031,8 @@ export const FAMILIAS_HB1 = [
     "partes": [
       {
         "classe": "diz",
-        "pt": "A conta calcula alojamentos licenciados por mil habitantes, Portugal pelas componentes identificadas",
-        "en": "The calculation gives dwellings permitted per thousand inhabitants, Portugal from the identified components",
+        "pt": "O resultado é o número de alojamentos licenciados por cada mil habitantes",
+        "en": "The result is the number of dwellings permitted per thousand inhabitants",
         "apoios": [
           {
             "linha": "propria",
@@ -1987,14 +2046,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, Portugal, em ",
         {
           "periodo": "hab-sts-cobp-a-a-bprm-dw-cpa-f41001-x-410014-nsa-ths-pt-2025"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, Portugal, in ",
         {
           "periodo": "hab-sts-cobp-a-a-bprm-dw-cpa-f41001-x-410014-nsa-ths-pt-2025"
         },
@@ -2008,17 +2067,19 @@ export const FAMILIAS_HB1 = [
       "pt": "Alojamentos licenciados, Portugal",
       "en": "Dwellings permitted, Portugal"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-licenca"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra alojamentos licenciados, Portugal",
-        "en": "The measure shows dwellings permitted, Portugal",
+        "pt": "O número de alojamentos com licença de construção, a autorização final para começar a obra",
+        "en": "The number of dwellings with a building permit, the final authorisation to start work",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"indic_bt\": \"BPRM_DW\", \"cpa2_1\": \"CPA_F41001_X_410014\", \"s_adj\": \"NSA\", \"unit\": \"THS\", \"geo\": \"PT\", \"time\": \"2025\"}, \"value\": \"40.9\", \"status\": \"p\"}"
+            "origem": "hb1c-eurostat-licenca",
+            "campo": "excerto",
+            "literal": "A building permit is the final authorisation to start work on a building project."
           }
         ]
       }
@@ -2027,14 +2088,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, Portugal, em ",
         {
           "periodo": "hab-demo-pjan-pt-2025"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, Portugal, in ",
         {
           "periodo": "hab-demo-pjan-pt-2025"
         },
@@ -2052,13 +2113,13 @@ export const FAMILIAS_HB1 = [
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra população no início do ano, Portugal",
-        "en": "The measure shows population at the start of the year, Portugal",
+        "pt": "O número de pessoas que residem no território a um de janeiro do ano",
+        "en": "The number of people resident in the territory on the first of January of the year",
         "apoios": [
           {
             "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"NR\", \"age\": \"TOTAL\", \"sex\": \"T\", \"geo\": \"PT\", \"time\": \"2025\"}, \"value\": \"10749635\", \"status\": null}"
+            "campo": "document.title",
+            "literal": "Population on 1 January"
           }
         ]
       }
@@ -2067,14 +2128,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, União Europeia, em ",
         {
           "periodo": "der-hab-licencas-por-mil-eu-2025"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, European Union, in ",
         {
           "periodo": "der-hab-licencas-por-mil-eu-2025"
         },
@@ -2092,8 +2153,8 @@ export const FAMILIAS_HB1 = [
     "partes": [
       {
         "classe": "diz",
-        "pt": "A conta calcula alojamentos licenciados por mil habitantes, União Europeia pelas componentes identificadas",
-        "en": "The calculation gives dwellings permitted per thousand inhabitants, European Union from the identified components",
+        "pt": "O resultado é o número de alojamentos licenciados por cada mil habitantes",
+        "en": "The result is the number of dwellings permitted per thousand inhabitants",
         "apoios": [
           {
             "linha": "propria",
@@ -2107,14 +2168,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, União Europeia, em ",
         {
           "periodo": "hab-sts-cobp-a-a-bprm-dw-cpa-f41001-x-410014-nsa-ths-eu27_2020-2025"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, European Union, in ",
         {
           "periodo": "hab-sts-cobp-a-a-bprm-dw-cpa-f41001-x-410014-nsa-ths-eu27_2020-2025"
         },
@@ -2128,17 +2189,19 @@ export const FAMILIAS_HB1 = [
       "pt": "Alojamentos licenciados, União Europeia",
       "en": "Dwellings permitted, European Union"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-licenca"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra alojamentos licenciados, União Europeia",
-        "en": "The measure shows dwellings permitted, European Union",
+        "pt": "O número de alojamentos com licença de construção, a autorização final para começar a obra",
+        "en": "The number of dwellings with a building permit, the final authorisation to start work",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"indic_bt\": \"BPRM_DW\", \"cpa2_1\": \"CPA_F41001_X_410014\", \"s_adj\": \"NSA\", \"unit\": \"THS\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"1623.2\", \"status\": null}"
+            "origem": "hb1c-eurostat-licenca",
+            "campo": "excerto",
+            "literal": "A building permit is the final authorisation to start work on a building project."
           }
         ]
       }
@@ -2147,14 +2210,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, União Europeia, em ",
         {
           "periodo": "hab-demo-pjan-eu27_2020-2025"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, European Union, in ",
         {
           "periodo": "hab-demo-pjan-eu27_2020-2025"
         },
@@ -2172,13 +2235,13 @@ export const FAMILIAS_HB1 = [
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra população no início do ano, União Europeia",
-        "en": "The measure shows population at the start of the year, European Union",
+        "pt": "O número de pessoas que residem no território a um de janeiro do ano",
+        "en": "The number of people resident in the territory on the first of January of the year",
         "apoios": [
           {
             "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"NR\", \"age\": \"TOTAL\", \"sex\": \"T\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"450646971\", \"status\": \"ep\"}"
+            "campo": "document.title",
+            "literal": "Population on 1 January"
           }
         ]
       }
@@ -2395,14 +2458,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " no ",
+        "; aqui, União Europeia, no ",
         {
           "periodo": "hab-prc-hpi-q-q-total-i15-q-eu27_2020-2026-q2"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, European Union, in ",
         {
           "periodo": "hab-prc-hpi-q-q-total-i15-q-eu27_2020-2026-q2"
         },
@@ -2416,17 +2479,19 @@ export const FAMILIAS_HB1 = [
       "pt": "Índice dos preços da habitação, União Europeia",
       "en": "Index of house prices, European Union"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-ipH"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra índice dos preços da habitação, União Europeia",
-        "en": "The measure shows index of house prices, European Union",
+        "pt": "O índice dos preços das transações de casas compradas pelas famílias, com o ano base igual a cem",
+        "en": "The index of the transaction prices of dwellings purchased by households, with the base year equal to one hundred",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"Q\", \"purchase\": \"TOTAL\", \"unit\": \"I15_Q\", \"geo\": \"EU27_2020\", \"time\": \"2026-Q2\"}, \"value\": \"168.56\", \"status\": null}"
+            "origem": "hb1c-eurostat-ipH",
+            "campo": "excerto",
+            "literal": "measures the changes in the transaction prices of dwellings purchased by households"
           }
         ]
       }
@@ -2435,14 +2500,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " no ",
+        "; aqui, Finlândia, no ",
         {
           "periodo": "hab-prc-hpi-q-q-total-i15-q-fi-2026-q2"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, Finland, in ",
         {
           "periodo": "hab-prc-hpi-q-q-total-i15-q-fi-2026-q2"
         },
@@ -2456,17 +2521,19 @@ export const FAMILIAS_HB1 = [
       "pt": "Índice dos preços da habitação, Finlândia",
       "en": "Index of house prices, Finland"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-ipH"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra índice dos preços da habitação, Finlândia",
-        "en": "The measure shows index of house prices, Finland",
+        "pt": "O índice dos preços das transações de casas compradas pelas famílias, com o ano base igual a cem",
+        "en": "The index of the transaction prices of dwellings purchased by households, with the base year equal to one hundred",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"Q\", \"purchase\": \"TOTAL\", \"unit\": \"I15_Q\", \"geo\": \"FI\", \"time\": \"2026-Q2\"}, \"value\": \"97.50\", \"status\": \"p\"}"
+            "origem": "hb1c-eurostat-ipH",
+            "campo": "excerto",
+            "literal": "measures the changes in the transaction prices of dwellings purchased by households"
           }
         ]
       }
@@ -2475,14 +2542,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " no ",
+        "; aqui, Finlândia, no ",
         {
           "periodo": "hab-prc-hpi-q-q-total-rch-a-fi-2026-q2"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, Finland, in ",
         {
           "periodo": "hab-prc-hpi-q-q-total-rch-a-fi-2026-q2"
         },
@@ -2496,17 +2563,19 @@ export const FAMILIAS_HB1 = [
       "pt": "Variação anual dos preços da habitação, Finlândia",
       "en": "Annual change in house prices, Finland"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-ipH"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra variação anual dos preços da habitação, Finlândia",
-        "en": "The measure shows annual change in house prices, Finland",
+        "pt": "A variação num ano do índice dos preços das transações de casas compradas pelas famílias",
+        "en": "The change over one year in the index of the transaction prices of dwellings purchased by households",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"Q\", \"purchase\": \"TOTAL\", \"unit\": \"RCH_A\", \"geo\": \"FI\", \"time\": \"2026-Q2\"}, \"value\": \"-2.7\", \"status\": \"p\"}"
+            "origem": "hb1c-eurostat-ipH",
+            "campo": "excerto",
+            "literal": "measures the changes in the transaction prices of dwellings purchased by households"
           }
         ]
       }
@@ -2580,8 +2649,8 @@ export const FAMILIAS_HB1 = [
     "partes": [
       {
         "classe": "diz",
-        "pt": "A conta calcula diferença face à União no índice dos preços reais pelas componentes identificadas",
-        "en": "The calculation gives gap from the Union in the real price index from the identified components",
+        "pt": "O resultado é a diferença, em pontos do índice, entre Portugal e a União no índice dos preços das casas descontada a inflação",
+        "en": "The result is the gap, in index points, between Portugal and the Union in the house price index net of inflation",
         "apoios": [
           {
             "linha": "propria",
@@ -2595,14 +2664,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, Finlândia, em ",
         {
           "periodo": "hab-tipsho10-a-i15-a-avg-fi-2025"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, Finland, in ",
         {
           "periodo": "hab-tipsho10-a-i15-a-avg-fi-2025"
         },
@@ -2616,17 +2685,19 @@ export const FAMILIAS_HB1 = [
       "pt": "Índice dos preços da habitação descontada a inflação, Finlândia",
       "en": "Index of house prices net of inflation, Finland"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-precos-reais"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra índice dos preços da habitação descontada a inflação, Finlândia",
-        "en": "The measure shows index of house prices net of inflation, Finland",
+        "pt": "O índice dos preços das casas descontada a inflação, que é o índice dos preços da habitação dividido pelo deflator do consumo privado das contas nacionais, com o ano base igual a cem",
+        "en": "The house price index net of inflation, which is the house price index divided by the national accounts deflator for private consumption, with the base year equal to one hundred",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"I15_A_AVG\", \"geo\": \"FI\", \"time\": \"2025\"}, \"value\": \"81.90\", \"status\": null}"
+            "origem": "hb1c-eurostat-precos-reais",
+            "campo": "excerto",
+            "literal": "is the ratio between the house price index (HPI) and the national accounts deflator for private final consumption expenditure"
           }
         ]
       }
@@ -2635,14 +2706,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, Portugal, em ",
         {
           "periodo": "hab-tipsho10-a-i15-a-avg-pt-2020"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, Portugal, in ",
         {
           "periodo": "hab-tipsho10-a-i15-a-avg-pt-2020"
         },
@@ -2656,17 +2727,19 @@ export const FAMILIAS_HB1 = [
       "pt": "Índice dos preços da habitação descontada a inflação, Portugal",
       "en": "Index of house prices net of inflation, Portugal"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-precos-reais"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra índice dos preços da habitação descontada a inflação, Portugal",
-        "en": "The measure shows index of house prices net of inflation, Portugal",
+        "pt": "O índice dos preços das casas descontada a inflação, que é o índice dos preços da habitação dividido pelo deflator do consumo privado das contas nacionais, com o ano base igual a cem",
+        "en": "The house price index net of inflation, which is the house price index divided by the national accounts deflator for private consumption, with the base year equal to one hundred",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"I15_A_AVG\", \"geo\": \"PT\", \"time\": \"2020\"}, \"value\": \"145.91\", \"status\": null}"
+            "origem": "hb1c-eurostat-precos-reais",
+            "campo": "excerto",
+            "literal": "is the ratio between the house price index (HPI) and the national accounts deflator for private final consumption expenditure"
           }
         ]
       }
@@ -2675,14 +2748,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, Portugal, em ",
         {
           "periodo": "hab-tipsho10-a-rch-a-avg-pt-2025"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, Portugal, in ",
         {
           "periodo": "hab-tipsho10-a-rch-a-avg-pt-2025"
         },
@@ -2696,17 +2769,19 @@ export const FAMILIAS_HB1 = [
       "pt": "Variação anual dos preços da habitação descontada a inflação, Portugal",
       "en": "Annual change in house prices net of inflation, Portugal"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-precos-reais"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra variação anual dos preços da habitação descontada a inflação, Portugal",
-        "en": "The measure shows annual change in house prices net of inflation, Portugal",
+        "pt": "A variação num ano do índice dos preços das casas descontada a inflação, que é o índice dos preços da habitação dividido pelo deflator do consumo privado das contas nacionais",
+        "en": "The change over one year in the house price index net of inflation, which is the house price index divided by the national accounts deflator for private consumption",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"RCH_A_AVG\", \"geo\": \"PT\", \"time\": \"2025\"}, \"value\": \"14.7\", \"status\": null}"
+            "origem": "hb1c-eurostat-precos-reais",
+            "campo": "excerto",
+            "literal": "is the ratio between the house price index (HPI) and the national accounts deflator for private final consumption expenditure"
           }
         ]
       }
@@ -2715,14 +2790,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, União Europeia, em ",
         {
           "periodo": "hab-tipsho10-a-rch-a-avg-eu27_2020-2025"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, European Union, in ",
         {
           "periodo": "hab-tipsho10-a-rch-a-avg-eu27_2020-2025"
         },
@@ -2736,17 +2811,19 @@ export const FAMILIAS_HB1 = [
       "pt": "Variação anual dos preços da habitação descontada a inflação, União Europeia",
       "en": "Annual change in house prices net of inflation, European Union"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-precos-reais"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra variação anual dos preços da habitação descontada a inflação, União Europeia",
-        "en": "The measure shows annual change in house prices net of inflation, European Union",
+        "pt": "A variação num ano do índice dos preços das casas descontada a inflação, que é o índice dos preços da habitação dividido pelo deflator do consumo privado das contas nacionais",
+        "en": "The change over one year in the house price index net of inflation, which is the house price index divided by the national accounts deflator for private consumption",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"RCH_A_AVG\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"2.9\", \"status\": null}"
+            "origem": "hb1c-eurostat-precos-reais",
+            "campo": "excerto",
+            "literal": "is the ratio between the house price index (HPI) and the national accounts deflator for private final consumption expenditure"
           }
         ]
       }
@@ -2780,8 +2857,8 @@ export const FAMILIAS_HB1 = [
     "partes": [
       {
         "classe": "diz",
-        "pt": "A conta calcula diferença face à União no índice preço-rendimento pelas componentes identificadas",
-        "en": "The calculation gives gap from the Union in the price-to-income index from the identified components",
+        "pt": "O resultado é a diferença, em pontos do índice, entre Portugal e a União no índice do rácio preço-rendimento",
+        "en": "The result is the gap, in index points, between Portugal and the Union in the price-to-income ratio index",
         "apoios": [
           {
             "linha": "propria",
@@ -2795,14 +2872,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, Roménia, em ",
         {
           "periodo": "hab-tipsho60-a-ptir-i15-ro-2024"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, Romania, in ",
         {
           "periodo": "hab-tipsho60-a-ptir-i15-ro-2024"
         },
@@ -2816,17 +2893,19 @@ export const FAMILIAS_HB1 = [
       "pt": "Preços das casas em relação ao rendimento, Roménia",
       "en": "House prices relative to income, Romania"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-preco-rendimento"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra preços das casas em relação ao rendimento, Roménia",
-        "en": "The measure shows house prices relative to income, Romania",
+        "pt": "O rácio entre os preços das casas e o rendimento disponível bruto ajustado das famílias por habitante, em índice com o ano base igual a cem",
+        "en": "The ratio of house prices to adjusted gross disposable household income per head, as an index with the base year equal to one hundred",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PTIR_I15\", \"geo\": \"RO\", \"time\": \"2024\"}, \"value\": \"55.88\", \"status\": null}"
+            "origem": "hb1c-eurostat-preco-rendimento",
+            "campo": "excerto",
+            "literal": "income is calculated as adjusted household gross disposable income (B7G) per head of population"
           }
         ]
       }
@@ -2835,14 +2914,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, Portugal, em ",
         {
           "periodo": "hab-tipsho60-a-ptir-i15-pt-2019"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, Portugal, in ",
         {
           "periodo": "hab-tipsho60-a-ptir-i15-pt-2019"
         },
@@ -2856,17 +2935,19 @@ export const FAMILIAS_HB1 = [
       "pt": "Preços das casas em relação ao rendimento, Portugal",
       "en": "House prices relative to income, Portugal"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-preco-rendimento"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra preços das casas em relação ao rendimento, Portugal",
-        "en": "The measure shows house prices relative to income, Portugal",
+        "pt": "O rácio entre os preços das casas e o rendimento disponível bruto ajustado das famílias por habitante, em índice com o ano base igual a cem",
+        "en": "The ratio of house prices to adjusted gross disposable household income per head, as an index with the base year equal to one hundred",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PTIR_I15\", \"geo\": \"PT\", \"time\": \"2019\"}, \"value\": \"121.65\", \"status\": null}"
+            "origem": "hb1c-eurostat-preco-rendimento",
+            "campo": "excerto",
+            "literal": "income is calculated as adjusted household gross disposable income (B7G) per head of population"
           }
         ]
       }
@@ -2875,14 +2956,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, Portugal, em ",
         {
           "periodo": "hab-tipsho60-a-ptir-lt-avg-pt-2024"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, Portugal, in ",
         {
           "periodo": "hab-tipsho60-a-ptir-lt-avg-pt-2024"
         },
@@ -2896,17 +2977,24 @@ export const FAMILIAS_HB1 = [
       "pt": "Rácio preço-rendimento face à média de longo prazo, Portugal",
       "en": "Price-to-income ratio relative to the long-term average, Portugal"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-preco-rendimento"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra rácio preço-rendimento face à média de longo prazo, Portugal",
-        "en": "The measure shows price-to-income ratio relative to the long-term average, Portugal",
+        "pt": "O rácio entre os preços das casas e o rendimento das famílias face à sua média de longo prazo, que vale cem quando o rácio está nessa média",
+        "en": "The ratio of house prices to household income relative to its long-term average, which equals one hundred when the ratio is at that average",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PTIR_LT_AVG\", \"geo\": \"PT\", \"time\": \"2024\"}, \"value\": \"122.92\", \"status\": null}"
+            "origem": "hb1c-eurostat-preco-rendimento",
+            "campo": "excerto",
+            "literal": "is defined as the ratio of the current price to income ratio relative to the long-term average price-to-income ratio"
+          },
+          {
+            "origem": "hb1c-eurostat-preco-rendimento",
+            "campo": "excerto",
+            "literal": "If the ratio equals 100"
           }
         ]
       }
@@ -2940,8 +3028,8 @@ export const FAMILIAS_HB1 = [
     "partes": [
       {
         "classe": "diz",
-        "pt": "A conta calcula distância do rácio preço-rendimento à média de longo prazo pelas componentes identificadas",
-        "en": "The calculation gives distance of the price-to-income ratio from the long-term average from the identified components",
+        "pt": "O resultado é a distância, em pontos do índice, entre o rácio preço-rendimento e a sua média de longo prazo, positiva quando o rácio está acima dela",
+        "en": "The result is the distance, in index points, between the price-to-income ratio and its long-term average, positive when the ratio is above it",
         "apoios": [
           {
             "linha": "propria",
@@ -2955,14 +3043,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, União Europeia, em ",
         {
           "periodo": "hab-tipsho60-a-ptir-lt-avg-eu27_2020-2024"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, European Union, in ",
         {
           "periodo": "hab-tipsho60-a-ptir-lt-avg-eu27_2020-2024"
         },
@@ -2976,17 +3064,24 @@ export const FAMILIAS_HB1 = [
       "pt": "Rácio preço-rendimento face à média de longo prazo, União Europeia",
       "en": "Price-to-income ratio relative to the long-term average, European Union"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-preco-rendimento"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra rácio preço-rendimento face à média de longo prazo, União Europeia",
-        "en": "The measure shows price-to-income ratio relative to the long-term average, European Union",
+        "pt": "O rácio entre os preços das casas e o rendimento das famílias face à sua média de longo prazo, que vale cem quando o rácio está nessa média",
+        "en": "The ratio of house prices to household income relative to its long-term average, which equals one hundred when the ratio is at that average",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PTIR_LT_AVG\", \"geo\": \"EU27_2020\", \"time\": \"2024\"}, \"value\": \"98.94\", \"status\": null}"
+            "origem": "hb1c-eurostat-preco-rendimento",
+            "campo": "excerto",
+            "literal": "is defined as the ratio of the current price to income ratio relative to the long-term average price-to-income ratio"
+          },
+          {
+            "origem": "hb1c-eurostat-preco-rendimento",
+            "campo": "excerto",
+            "literal": "If the ratio equals 100"
           }
         ]
       }
@@ -3020,8 +3115,8 @@ export const FAMILIAS_HB1 = [
     "partes": [
       {
         "classe": "diz",
-        "pt": "A conta calcula distância do rácio preço-rendimento à média de longo prazo pelas componentes identificadas",
-        "en": "The calculation gives distance of the price-to-income ratio from the long-term average from the identified components",
+        "pt": "O resultado é a distância, em pontos do índice, entre o rácio preço-rendimento e a sua média de longo prazo, positiva quando o rácio está acima dela",
+        "en": "The result is the distance, in index points, between the price-to-income ratio and its long-term average, positive when the ratio is above it",
         "apoios": [
           {
             "linha": "propria",
@@ -3035,14 +3130,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, Roménia, em ",
         {
           "periodo": "hab-tipsho60-a-ptir-lt-avg-ro-2024"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, Romania, in ",
         {
           "periodo": "hab-tipsho60-a-ptir-lt-avg-ro-2024"
         },
@@ -3056,17 +3151,24 @@ export const FAMILIAS_HB1 = [
       "pt": "Rácio preço-rendimento face à média de longo prazo, Roménia",
       "en": "Price-to-income ratio relative to the long-term average, Romania"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-preco-rendimento"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra rácio preço-rendimento face à média de longo prazo, Roménia",
-        "en": "The measure shows price-to-income ratio relative to the long-term average, Romania",
+        "pt": "O rácio entre os preços das casas e o rendimento das famílias face à sua média de longo prazo, que vale cem quando o rácio está nessa média",
+        "en": "The ratio of house prices to household income relative to its long-term average, which equals one hundred when the ratio is at that average",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PTIR_LT_AVG\", \"geo\": \"RO\", \"time\": \"2024\"}, \"value\": \"48.23\", \"status\": null}"
+            "origem": "hb1c-eurostat-preco-rendimento",
+            "campo": "excerto",
+            "literal": "is defined as the ratio of the current price to income ratio relative to the long-term average price-to-income ratio"
+          },
+          {
+            "origem": "hb1c-eurostat-preco-rendimento",
+            "campo": "excerto",
+            "literal": "If the ratio equals 100"
           }
         ]
       }
@@ -3100,8 +3202,8 @@ export const FAMILIAS_HB1 = [
     "partes": [
       {
         "classe": "diz",
-        "pt": "A conta calcula preço mediano em Lisboa em relação ao país pelas componentes identificadas",
-        "en": "The calculation gives median price in Lisbon relative to the country from the identified components",
+        "pt": "O resultado é quantas vezes o preço mediano das vendas em Lisboa é o do país",
+        "en": "The result is how many times the median sale price in Lisbon is that of the country",
         "apoios": [
           {
             "linha": "propria",
@@ -3140,8 +3242,8 @@ export const FAMILIAS_HB1 = [
     "partes": [
       {
         "classe": "diz",
-        "pt": "A conta calcula renda mediana em Lisboa em relação ao país pelas componentes identificadas",
-        "en": "The calculation gives median rent in Lisbon relative to the country from the identified components",
+        "pt": "O resultado é quantas vezes a renda mediana dos novos contratos em Lisboa é a do país",
+        "en": "The result is how many times the median rent of new contracts in Lisbon is that of the country",
         "apoios": [
           {
             "linha": "propria",
@@ -3155,14 +3257,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, Portugal, em ",
         {
           "periodo": "hab-prc-hicp-ainr-a-rch-a-avg-cp041-pt-2025"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, Portugal, in ",
         {
           "periodo": "hab-prc-hicp-ainr-a-rch-a-avg-cp041-pt-2025"
         },
@@ -3176,17 +3278,19 @@ export const FAMILIAS_HB1 = [
       "pt": "Variação das rendas pagas, Portugal",
       "en": "Change in rents paid, Portugal"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-ihpc"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra variação das rendas pagas, Portugal",
-        "en": "The measure shows change in rents paid, Portugal",
+        "pt": "A variação dos preços das rendas pagas pelos inquilinos no índice harmonizado de preços no consumidor, o índice de preços no consumidor calculado na União Europeia com um método e definições comuns",
+        "en": "The change in the prices of rents paid by tenants in the harmonised index of consumer prices, the consumer price index calculated in the European Union with a common method and definitions",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"RCH_A_AVG\", \"coicop18\": \"CP041\", \"geo\": \"PT\", \"time\": \"2025\"}, \"value\": \"5.3\", \"status\": null}"
+            "origem": "hb1c-eurostat-ihpc",
+            "campo": "excerto",
+            "literal": "is the consumer price index as it is calculated in the European Union (EU), according to a harmonised approach and a single set of definitions"
           }
         ]
       }
@@ -3195,14 +3299,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, União Europeia, em ",
         {
           "periodo": "hab-prc-hicp-ainr-a-rch-a-avg-cp041-eu27_2020-2025"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, European Union, in ",
         {
           "periodo": "hab-prc-hicp-ainr-a-rch-a-avg-cp041-eu27_2020-2025"
         },
@@ -3216,17 +3320,19 @@ export const FAMILIAS_HB1 = [
       "pt": "Variação das rendas pagas, União Europeia",
       "en": "Change in rents paid, European Union"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-ihpc"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra variação das rendas pagas, União Europeia",
-        "en": "The measure shows change in rents paid, European Union",
+        "pt": "A variação dos preços das rendas pagas pelos inquilinos no índice harmonizado de preços no consumidor, o índice de preços no consumidor calculado na União Europeia com um método e definições comuns",
+        "en": "The change in the prices of rents paid by tenants in the harmonised index of consumer prices, the consumer price index calculated in the European Union with a common method and definitions",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"RCH_A_AVG\", \"coicop18\": \"CP041\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"3.2\", \"status\": null}"
+            "origem": "hb1c-eurostat-ihpc",
+            "campo": "excerto",
+            "literal": "is the consumer price index as it is calculated in the European Union (EU), according to a harmonised approach and a single set of definitions"
           }
         ]
       }
@@ -3235,14 +3341,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, Finlândia, em ",
         {
           "periodo": "hab-prc-hicp-ainr-a-rch-a-avg-cp041-fi-2025"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, Finland, in ",
         {
           "periodo": "hab-prc-hicp-ainr-a-rch-a-avg-cp041-fi-2025"
         },
@@ -3256,17 +3362,19 @@ export const FAMILIAS_HB1 = [
       "pt": "Variação das rendas pagas, Finlândia",
       "en": "Change in rents paid, Finland"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-ihpc"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra variação das rendas pagas, Finlândia",
-        "en": "The measure shows change in rents paid, Finland",
+        "pt": "A variação dos preços das rendas pagas pelos inquilinos no índice harmonizado de preços no consumidor, o índice de preços no consumidor calculado na União Europeia com um método e definições comuns",
+        "en": "The change in the prices of rents paid by tenants in the harmonised index of consumer prices, the consumer price index calculated in the European Union with a common method and definitions",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"RCH_A_AVG\", \"coicop18\": \"CP041\", \"geo\": \"FI\", \"time\": \"2025\"}, \"value\": \"1.0\", \"status\": null}"
+            "origem": "hb1c-eurostat-ihpc",
+            "campo": "excerto",
+            "literal": "is the consumer price index as it is calculated in the European Union (EU), according to a harmonised approach and a single set of definitions"
           }
         ]
       }
@@ -3275,14 +3383,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, Croácia, em ",
         {
           "periodo": "hab-prc-hicp-ainr-a-rch-a-avg-cp041-hr-2025"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, Croatia, in ",
         {
           "periodo": "hab-prc-hicp-ainr-a-rch-a-avg-cp041-hr-2025"
         },
@@ -3296,17 +3404,19 @@ export const FAMILIAS_HB1 = [
       "pt": "Variação das rendas pagas, Croácia",
       "en": "Change in rents paid, Croatia"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-ihpc"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra variação das rendas pagas, Croácia",
-        "en": "The measure shows change in rents paid, Croatia",
+        "pt": "A variação dos preços das rendas pagas pelos inquilinos no índice harmonizado de preços no consumidor, o índice de preços no consumidor calculado na União Europeia com um método e definições comuns",
+        "en": "The change in the prices of rents paid by tenants in the harmonised index of consumer prices, the consumer price index calculated in the European Union with a common method and definitions",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"RCH_A_AVG\", \"coicop18\": \"CP041\", \"geo\": \"HR\", \"time\": \"2025\"}, \"value\": \"17.6\", \"status\": null}"
+            "origem": "hb1c-eurostat-ihpc",
+            "campo": "excerto",
+            "literal": "is the consumer price index as it is calculated in the European Union (EU), according to a harmonised approach and a single set of definitions"
           }
         ]
       }
@@ -3315,14 +3425,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, Portugal, em ",
         {
           "periodo": "der-hab-proprietarios-pt-2025"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, Portugal, in ",
         {
           "periodo": "der-hab-proprietarios-pt-2025"
         },
@@ -3340,8 +3450,8 @@ export const FAMILIAS_HB1 = [
     "partes": [
       {
         "classe": "diz",
-        "pt": "A conta calcula população em casa própria, Portugal pelas componentes identificadas",
-        "en": "The calculation gives population in owner-occupied homes, Portugal from the identified components",
+        "pt": "O resultado é a parte da população que vive em casa própria, com ou sem empréstimo",
+        "en": "The result is the share of the population living in an owner-occupied home, with or without a loan",
         "apoios": [
           {
             "linha": "propria",
@@ -3355,14 +3465,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, proprietários com empréstimo, Portugal, em ",
         {
           "periodo": "hab-ilc-lvho02-a-total-total-own-l-pc-pt-2025"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, owners with a loan, Portugal, in ",
         {
           "periodo": "hab-ilc-lvho02-a-total-total-own-l-pc-pt-2025"
         },
@@ -3380,13 +3490,13 @@ export const FAMILIAS_HB1 = [
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra população por regime de ocupação, proprietários com empréstimo, Portugal",
-        "en": "The measure shows population by tenure status, owners with a loan, Portugal",
+        "pt": "A parte da população que vive neste regime de ocupação da casa",
+        "en": "The share of the population living under this tenure status",
         "apoios": [
           {
             "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"rskpovth\": \"TOTAL\", \"hhcomp\": \"TOTAL\", \"tenure\": \"OWN_L\", \"unit\": \"PC\", \"geo\": \"PT\", \"time\": \"2025\"}, \"value\": \"31.5\", \"status\": null}"
+            "campo": "document.title",
+            "literal": "Distribution of population by tenure status"
           }
         ]
       }
@@ -3395,14 +3505,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, União Europeia, em ",
         {
           "periodo": "der-hab-proprietarios-eu-2025"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, European Union, in ",
         {
           "periodo": "der-hab-proprietarios-eu-2025"
         },
@@ -3420,8 +3530,8 @@ export const FAMILIAS_HB1 = [
     "partes": [
       {
         "classe": "diz",
-        "pt": "A conta calcula população em casa própria, União Europeia pelas componentes identificadas",
-        "en": "The calculation gives population in owner-occupied homes, European Union from the identified components",
+        "pt": "O resultado é a parte da população que vive em casa própria, com ou sem empréstimo",
+        "en": "The result is the share of the population living in an owner-occupied home, with or without a loan",
         "apoios": [
           {
             "linha": "propria",
@@ -3435,14 +3545,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, proprietários com empréstimo, União Europeia, em ",
         {
           "periodo": "hab-ilc-lvho02-a-total-total-own-l-pc-eu27_2020-2025"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, owners with a loan, European Union, in ",
         {
           "periodo": "hab-ilc-lvho02-a-total-total-own-l-pc-eu27_2020-2025"
         },
@@ -3460,13 +3570,13 @@ export const FAMILIAS_HB1 = [
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra população por regime de ocupação, proprietários com empréstimo, União Europeia",
-        "en": "The measure shows population by tenure status, owners with a loan, European Union",
+        "pt": "A parte da população que vive neste regime de ocupação da casa",
+        "en": "The share of the population living under this tenure status",
         "apoios": [
           {
             "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"rskpovth\": \"TOTAL\", \"hhcomp\": \"TOTAL\", \"tenure\": \"OWN_L\", \"unit\": \"PC\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"24.8\", \"status\": null}"
+            "campo": "document.title",
+            "literal": "Distribution of population by tenure status"
           }
         ]
       }
@@ -3475,14 +3585,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, proprietários sem empréstimo, União Europeia, em ",
         {
           "periodo": "hab-ilc-lvho02-a-total-total-own-nl-pc-eu27_2020-2025"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, owners without a loan, European Union, in ",
         {
           "periodo": "hab-ilc-lvho02-a-total-total-own-nl-pc-eu27_2020-2025"
         },
@@ -3500,13 +3610,13 @@ export const FAMILIAS_HB1 = [
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra população por regime de ocupação, proprietários sem empréstimo, União Europeia",
-        "en": "The measure shows population by tenure status, owners without a loan, European Union",
+        "pt": "A parte da população que vive neste regime de ocupação da casa",
+        "en": "The share of the population living under this tenure status",
         "apoios": [
           {
             "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"rskpovth\": \"TOTAL\", \"hhcomp\": \"TOTAL\", \"tenure\": \"OWN_NL\", \"unit\": \"PC\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"43.7\", \"status\": null}"
+            "campo": "document.title",
+            "literal": "Distribution of population by tenure status"
           }
         ]
       }
@@ -3515,14 +3625,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, proprietários com empréstimo, Roménia, em ",
         {
           "periodo": "hab-ilc-lvho02-a-total-total-own-l-pc-ro-2025"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, owners with a loan, Romania, in ",
         {
           "periodo": "hab-ilc-lvho02-a-total-total-own-l-pc-ro-2025"
         },
@@ -3540,13 +3650,13 @@ export const FAMILIAS_HB1 = [
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra população por regime de ocupação, proprietários com empréstimo, Roménia",
-        "en": "The measure shows population by tenure status, owners with a loan, Romania",
+        "pt": "A parte da população que vive neste regime de ocupação da casa",
+        "en": "The share of the population living under this tenure status",
         "apoios": [
           {
             "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"rskpovth\": \"TOTAL\", \"hhcomp\": \"TOTAL\", \"tenure\": \"OWN_L\", \"unit\": \"PC\", \"geo\": \"RO\", \"time\": \"2025\"}, \"value\": \"1.1\", \"status\": null}"
+            "campo": "document.title",
+            "literal": "Distribution of population by tenure status"
           }
         ]
       }
@@ -3555,14 +3665,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, proprietários com empréstimo, Países Baixos, em ",
         {
           "periodo": "hab-ilc-lvho02-a-total-total-own-l-pc-nl-2025"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, owners with a loan, Netherlands, in ",
         {
           "periodo": "hab-ilc-lvho02-a-total-total-own-l-pc-nl-2025"
         },
@@ -3580,13 +3690,13 @@ export const FAMILIAS_HB1 = [
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra população por regime de ocupação, proprietários com empréstimo, Países Baixos",
-        "en": "The measure shows population by tenure status, owners with a loan, Netherlands",
+        "pt": "A parte da população que vive neste regime de ocupação da casa",
+        "en": "The share of the population living under this tenure status",
         "apoios": [
           {
             "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"rskpovth\": \"TOTAL\", \"hhcomp\": \"TOTAL\", \"tenure\": \"OWN_L\", \"unit\": \"PC\", \"geo\": \"NL\", \"time\": \"2025\"}, \"value\": \"57.9\", \"status\": null}"
+            "campo": "document.title",
+            "literal": "Distribution of population by tenure status"
           }
         ]
       }
@@ -3595,14 +3705,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, Portugal, em ",
         {
           "periodo": "der-hab-inquilinos-pt-2025"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, Portugal, in ",
         {
           "periodo": "der-hab-inquilinos-pt-2025"
         },
@@ -3620,8 +3730,8 @@ export const FAMILIAS_HB1 = [
     "partes": [
       {
         "classe": "diz",
-        "pt": "A conta calcula população em casa arrendada, Portugal pelas componentes identificadas",
-        "en": "The calculation gives population in rented homes, Portugal from the identified components",
+        "pt": "O resultado é a parte da população que vive em casa arrendada, a preços de mercado ou a renda reduzida ou gratuita",
+        "en": "The result is the share of the population living in a rented home, at market rent or at reduced or free rent",
         "apoios": [
           {
             "linha": "propria",
@@ -3635,14 +3745,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, inquilinos a renda reduzida ou gratuita, Portugal, em ",
         {
           "periodo": "hab-ilc-lvho02-a-total-total-rent-fr-pc-pt-2025"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, tenants at reduced or free rent, Portugal, in ",
         {
           "periodo": "hab-ilc-lvho02-a-total-total-rent-fr-pc-pt-2025"
         },
@@ -3660,13 +3770,13 @@ export const FAMILIAS_HB1 = [
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra população por regime de ocupação, inquilinos a renda reduzida ou gratuita, Portugal",
-        "en": "The measure shows population by tenure status, tenants at reduced or free rent, Portugal",
+        "pt": "A parte da população que vive neste regime de ocupação da casa",
+        "en": "The share of the population living under this tenure status",
         "apoios": [
           {
             "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"rskpovth\": \"TOTAL\", \"hhcomp\": \"TOTAL\", \"tenure\": \"RENT_FR\", \"unit\": \"PC\", \"geo\": \"PT\", \"time\": \"2025\"}, \"value\": \"12.5\", \"status\": null}"
+            "campo": "document.title",
+            "literal": "Distribution of population by tenure status"
           }
         ]
       }
@@ -3675,14 +3785,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, União Europeia, em ",
         {
           "periodo": "der-hab-inquilinos-eu-2025"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, European Union, in ",
         {
           "periodo": "der-hab-inquilinos-eu-2025"
         },
@@ -3700,8 +3810,8 @@ export const FAMILIAS_HB1 = [
     "partes": [
       {
         "classe": "diz",
-        "pt": "A conta calcula população em casa arrendada, União Europeia pelas componentes identificadas",
-        "en": "The calculation gives population in rented homes, European Union from the identified components",
+        "pt": "O resultado é a parte da população que vive em casa arrendada, a preços de mercado ou a renda reduzida ou gratuita",
+        "en": "The result is the share of the population living in a rented home, at market rent or at reduced or free rent",
         "apoios": [
           {
             "linha": "propria",
@@ -3715,14 +3825,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, inquilinos a renda reduzida ou gratuita, União Europeia, em ",
         {
           "periodo": "hab-ilc-lvho02-a-total-total-rent-fr-pc-eu27_2020-2025"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, tenants at reduced or free rent, European Union, in ",
         {
           "periodo": "hab-ilc-lvho02-a-total-total-rent-fr-pc-eu27_2020-2025"
         },
@@ -3740,13 +3850,13 @@ export const FAMILIAS_HB1 = [
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra população por regime de ocupação, inquilinos a renda reduzida ou gratuita, União Europeia",
-        "en": "The measure shows population by tenure status, tenants at reduced or free rent, European Union",
+        "pt": "A parte da população que vive neste regime de ocupação da casa",
+        "en": "The share of the population living under this tenure status",
         "apoios": [
           {
             "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"rskpovth\": \"TOTAL\", \"hhcomp\": \"TOTAL\", \"tenure\": \"RENT_FR\", \"unit\": \"PC\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"10.7\", \"status\": null}"
+            "campo": "document.title",
+            "literal": "Distribution of population by tenure status"
           }
         ]
       }
@@ -3755,14 +3865,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, inquilinos a preços de mercado, Alemanha, em ",
         {
           "periodo": "hab-ilc-lvho02-a-total-total-rent-mkt-pc-de-2025"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, tenants at market rents, Germany, in ",
         {
           "periodo": "hab-ilc-lvho02-a-total-total-rent-mkt-pc-de-2025"
         },
@@ -3780,13 +3890,13 @@ export const FAMILIAS_HB1 = [
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra população por regime de ocupação, inquilinos a preços de mercado, Alemanha",
-        "en": "The measure shows population by tenure status, tenants at market rents, Germany",
+        "pt": "A parte da população que vive neste regime de ocupação da casa",
+        "en": "The share of the population living under this tenure status",
         "apoios": [
           {
             "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"rskpovth\": \"TOTAL\", \"hhcomp\": \"TOTAL\", \"tenure\": \"RENT_MKT\", \"unit\": \"PC\", \"geo\": \"DE\", \"time\": \"2025\"}, \"value\": \"46.8\", \"status\": null}"
+            "campo": "document.title",
+            "literal": "Distribution of population by tenure status"
           }
         ]
       }
@@ -3795,14 +3905,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, proprietários com empréstimo, Portugal, em ",
         {
           "periodo": "hab-ilc-lvho02-a-total-total-own-l-pc-pt-2020"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, owners with a loan, Portugal, in ",
         {
           "periodo": "hab-ilc-lvho02-a-total-total-own-l-pc-pt-2020"
         },
@@ -3820,13 +3930,13 @@ export const FAMILIAS_HB1 = [
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra população por regime de ocupação, proprietários com empréstimo, Portugal",
-        "en": "The measure shows population by tenure status, owners with a loan, Portugal",
+        "pt": "A parte da população que vive neste regime de ocupação da casa",
+        "en": "The share of the population living under this tenure status",
         "apoios": [
           {
             "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"rskpovth\": \"TOTAL\", \"hhcomp\": \"TOTAL\", \"tenure\": \"OWN_L\", \"unit\": \"PC\", \"geo\": \"PT\", \"time\": \"2020\"}, \"value\": \"38.9\", \"status\": null}"
+            "campo": "document.title",
+            "literal": "Distribution of population by tenure status"
           }
         ]
       }
@@ -3835,14 +3945,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, inquilinos a preços de mercado, Portugal, em ",
         {
           "periodo": "hab-ilc-lvho02-a-total-total-rent-mkt-pc-pt-2020"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, tenants at market rents, Portugal, in ",
         {
           "periodo": "hab-ilc-lvho02-a-total-total-rent-mkt-pc-pt-2020"
         },
@@ -3860,13 +3970,13 @@ export const FAMILIAS_HB1 = [
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra população por regime de ocupação, inquilinos a preços de mercado, Portugal",
-        "en": "The measure shows population by tenure status, tenants at market rents, Portugal",
+        "pt": "A parte da população que vive neste regime de ocupação da casa",
+        "en": "The share of the population living under this tenure status",
         "apoios": [
           {
             "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"rskpovth\": \"TOTAL\", \"hhcomp\": \"TOTAL\", \"tenure\": \"RENT_MKT\", \"unit\": \"PC\", \"geo\": \"PT\", \"time\": \"2020\"}, \"value\": \"11.5\", \"status\": null}"
+            "campo": "document.title",
+            "literal": "Distribution of population by tenure status"
           }
         ]
       }
@@ -3875,14 +3985,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, Chipre, em ",
         {
           "periodo": "hab-ilc-lvho07c-a-pc-total-cy-2025"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, Cyprus, in ",
         {
           "periodo": "hab-ilc-lvho07c-a-pc-total-cy-2025"
         },
@@ -3896,17 +4006,19 @@ export const FAMILIAS_HB1 = [
       "pt": "Sobrecarga do custo da habitação, Chipre",
       "en": "Housing cost overburden, Cyprus"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-sobrecarga"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra sobrecarga do custo da habitação, Chipre",
-        "en": "The measure shows housing cost overburden, Cyprus",
+        "pt": "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a casa, descontados os subsídios, passa de quarenta por cento do rendimento disponível",
+        "en": "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"tenure\": \"TOTAL\", \"geo\": \"CY\", \"time\": \"2025\"}, \"value\": \"2.4\", \"status\": null}"
+            "origem": "hb1c-eurostat-sobrecarga",
+            "campo": "excerto",
+            "literal": "is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income"
           }
         ]
       }
@@ -3915,14 +4027,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, Grécia, em ",
         {
           "periodo": "hab-ilc-lvho07c-a-pc-total-el-2025"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, Greece, in ",
         {
           "periodo": "hab-ilc-lvho07c-a-pc-total-el-2025"
         },
@@ -3936,17 +4048,19 @@ export const FAMILIAS_HB1 = [
       "pt": "Sobrecarga do custo da habitação, Grécia",
       "en": "Housing cost overburden, Greece"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-sobrecarga"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra sobrecarga do custo da habitação, Grécia",
-        "en": "The measure shows housing cost overburden, Greece",
+        "pt": "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a casa, descontados os subsídios, passa de quarenta por cento do rendimento disponível",
+        "en": "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"tenure\": \"TOTAL\", \"geo\": \"EL\", \"time\": \"2025\"}, \"value\": \"26.4\", \"status\": null}"
+            "origem": "hb1c-eurostat-sobrecarga",
+            "campo": "excerto",
+            "literal": "is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income"
           }
         ]
       }
@@ -3955,14 +4069,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, Chipre, em ",
         {
           "periodo": "hab-ilc-mded01-a-total-total-pc-cy-2025"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, Cyprus, in ",
         {
           "periodo": "hab-ilc-mded01-a-total-total-pc-cy-2025"
         },
@@ -3976,17 +4090,19 @@ export const FAMILIAS_HB1 = [
       "pt": "Parte do rendimento gasta na habitação, Chipre",
       "en": "Share of income spent on housing, Cyprus"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-custos-habitacao"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra parte do rendimento gasta na habitação, Chipre",
-        "en": "The measure shows share of income spent on housing, Cyprus",
+        "pt": "A parte do rendimento disponível do agregado que vai para a despesa com a casa, que o Eurostat define como os gastos mensais ligados ao direito de viver numa casa",
+        "en": "The share of disposable household income that goes on housing costs, which Eurostat defines as the monthly expenses associated with the right to live in a dwelling",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"hhcomp\": \"TOTAL\", \"rskpovth\": \"TOTAL\", \"unit\": \"PC\", \"geo\": \"CY\", \"time\": \"2025\"}, \"value\": \"10.9\", \"status\": null}"
+            "origem": "hb1c-eurostat-custos-habitacao",
+            "campo": "excerto",
+            "literal": "Housing costs refer to the monthly expenses associated with the right to live in a dwelling."
           }
         ]
       }
@@ -3995,14 +4111,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, Grécia, em ",
         {
           "periodo": "hab-ilc-mded01-a-total-total-pc-el-2025"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, Greece, in ",
         {
           "periodo": "hab-ilc-mded01-a-total-total-pc-el-2025"
         },
@@ -4016,17 +4132,19 @@ export const FAMILIAS_HB1 = [
       "pt": "Parte do rendimento gasta na habitação, Grécia",
       "en": "Share of income spent on housing, Greece"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-custos-habitacao"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra parte do rendimento gasta na habitação, Grécia",
-        "en": "The measure shows share of income spent on housing, Greece",
+        "pt": "A parte do rendimento disponível do agregado que vai para a despesa com a casa, que o Eurostat define como os gastos mensais ligados ao direito de viver numa casa",
+        "en": "The share of disposable household income that goes on housing costs, which Eurostat defines as the monthly expenses associated with the right to live in a dwelling",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"hhcomp\": \"TOTAL\", \"rskpovth\": \"TOTAL\", \"unit\": \"PC\", \"geo\": \"EL\", \"time\": \"2025\"}, \"value\": \"34.6\", \"status\": null}"
+            "origem": "hb1c-eurostat-custos-habitacao",
+            "campo": "excerto",
+            "literal": "Housing costs refer to the monthly expenses associated with the right to live in a dwelling."
           }
         ]
       }
@@ -4035,14 +4153,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, Portugal, em ",
         {
           "periodo": "hab-ilc-mded01-a-total-total-pc-pt-2015"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, Portugal, in ",
         {
           "periodo": "hab-ilc-mded01-a-total-total-pc-pt-2015"
         },
@@ -4056,17 +4174,19 @@ export const FAMILIAS_HB1 = [
       "pt": "Parte do rendimento gasta na habitação, Portugal",
       "en": "Share of income spent on housing, Portugal"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-custos-habitacao"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra parte do rendimento gasta na habitação, Portugal",
-        "en": "The measure shows share of income spent on housing, Portugal",
+        "pt": "A parte do rendimento disponível do agregado que vai para a despesa com a casa, que o Eurostat define como os gastos mensais ligados ao direito de viver numa casa",
+        "en": "The share of disposable household income that goes on housing costs, which Eurostat defines as the monthly expenses associated with the right to live in a dwelling",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"hhcomp\": \"TOTAL\", \"rskpovth\": \"TOTAL\", \"unit\": \"PC\", \"geo\": \"PT\", \"time\": \"2015\"}, \"value\": \"18.9\", \"status\": null}"
+            "origem": "hb1c-eurostat-custos-habitacao",
+            "campo": "excerto",
+            "literal": "Housing costs refer to the monthly expenses associated with the right to live in a dwelling."
           }
         ]
       }
@@ -4075,14 +4195,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, Portugal, em ",
         {
           "periodo": "hab-tespm140-a-pc-pt-2025"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, Portugal, in ",
         {
           "periodo": "hab-tespm140-a-pc-pt-2025"
         },
@@ -4096,17 +4216,19 @@ export const FAMILIAS_HB1 = [
       "pt": "Sobrecarga do custo da habitação, Portugal",
       "en": "Housing cost overburden, Portugal"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-sobrecarga"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra sobrecarga do custo da habitação, Portugal",
-        "en": "The measure shows housing cost overburden, Portugal",
+        "pt": "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a casa, descontados os subsídios, passa de quarenta por cento do rendimento disponível",
+        "en": "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"rskpovth\": \"TOTAL\", \"age\": \"TOTAL\", \"sex\": \"T\", \"geo\": \"PT\", \"time\": \"2025\"}, \"value\": \"6.3\", \"status\": null}"
+            "origem": "hb1c-eurostat-sobrecarga",
+            "campo": "excerto",
+            "literal": "is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income"
           }
         ]
       }
@@ -4115,14 +4237,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, União Europeia, em ",
         {
           "periodo": "hab-tespm140-a-pc-eu27_2020-2025"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, European Union, in ",
         {
           "periodo": "hab-tespm140-a-pc-eu27_2020-2025"
         },
@@ -4136,17 +4258,19 @@ export const FAMILIAS_HB1 = [
       "pt": "Sobrecarga do custo da habitação, União Europeia",
       "en": "Housing cost overburden, European Union"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-sobrecarga"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra sobrecarga do custo da habitação, União Europeia",
-        "en": "The measure shows housing cost overburden, European Union",
+        "pt": "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a casa, descontados os subsídios, passa de quarenta por cento do rendimento disponível",
+        "en": "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"rskpovth\": \"TOTAL\", \"age\": \"TOTAL\", \"sex\": \"T\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"7.7\", \"status\": null}"
+            "origem": "hb1c-eurostat-sobrecarga",
+            "campo": "excerto",
+            "literal": "is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income"
           }
         ]
       }
@@ -4155,14 +4279,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, União Europeia, em ",
         {
           "periodo": "hab-ilc-lvho07c-a-pc-total-eu27_2020-2015"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, European Union, in ",
         {
           "periodo": "hab-ilc-lvho07c-a-pc-total-eu27_2020-2015"
         },
@@ -4176,17 +4300,19 @@ export const FAMILIAS_HB1 = [
       "pt": "Sobrecarga do custo da habitação, União Europeia",
       "en": "Housing cost overburden, European Union"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-sobrecarga"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra sobrecarga do custo da habitação, União Europeia",
-        "en": "The measure shows housing cost overburden, European Union",
+        "pt": "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a casa, descontados os subsídios, passa de quarenta por cento do rendimento disponível",
+        "en": "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"tenure\": \"TOTAL\", \"geo\": \"EU27_2020\", \"time\": \"2015\"}, \"value\": \"11.2\", \"status\": \"e\"}"
+            "origem": "hb1c-eurostat-sobrecarga",
+            "campo": "excerto",
+            "literal": "is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income"
           }
         ]
       }
@@ -4195,14 +4321,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, proprietários com empréstimo, União Europeia, em ",
         {
           "periodo": "hab-ilc-lvho07c-a-pc-own-l-eu27_2020-2025"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, owners with a loan, European Union, in ",
         {
           "periodo": "hab-ilc-lvho07c-a-pc-own-l-eu27_2020-2025"
         },
@@ -4216,17 +4342,19 @@ export const FAMILIAS_HB1 = [
       "pt": "Sobrecarga do custo da habitação, proprietários com empréstimo, União Europeia",
       "en": "Housing cost overburden, owners with a loan, European Union"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-sobrecarga"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra sobrecarga do custo da habitação, proprietários com empréstimo, União Europeia",
-        "en": "The measure shows housing cost overburden, owners with a loan, European Union",
+        "pt": "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a casa, descontados os subsídios, passa de quarenta por cento do rendimento disponível",
+        "en": "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"tenure\": \"OWN_L\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"5.0\", \"status\": null}"
+            "origem": "hb1c-eurostat-sobrecarga",
+            "campo": "excerto",
+            "literal": "is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income"
           }
         ]
       }
@@ -4235,14 +4363,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, proprietários sem empréstimo, União Europeia, em ",
         {
           "periodo": "hab-ilc-lvho07c-a-pc-own-nl-eu27_2020-2025"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, owners without a loan, European Union, in ",
         {
           "periodo": "hab-ilc-lvho07c-a-pc-own-nl-eu27_2020-2025"
         },
@@ -4256,17 +4384,19 @@ export const FAMILIAS_HB1 = [
       "pt": "Sobrecarga do custo da habitação, proprietários sem empréstimo, União Europeia",
       "en": "Housing cost overburden, owners without a loan, European Union"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-sobrecarga"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra sobrecarga do custo da habitação, proprietários sem empréstimo, União Europeia",
-        "en": "The measure shows housing cost overburden, owners without a loan, European Union",
+        "pt": "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a casa, descontados os subsídios, passa de quarenta por cento do rendimento disponível",
+        "en": "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"tenure\": \"OWN_NL\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"3.8\", \"status\": null}"
+            "origem": "hb1c-eurostat-sobrecarga",
+            "campo": "excerto",
+            "literal": "is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income"
           }
         ]
       }
@@ -4275,14 +4405,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, inquilinos a renda reduzida ou gratuita, Portugal, em ",
         {
           "periodo": "hab-ilc-lvho07c-a-pc-rent-fr-pt-2025"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, tenants at reduced or free rent, Portugal, in ",
         {
           "periodo": "hab-ilc-lvho07c-a-pc-rent-fr-pt-2025"
         },
@@ -4296,17 +4426,19 @@ export const FAMILIAS_HB1 = [
       "pt": "Sobrecarga do custo da habitação, inquilinos a renda reduzida ou gratuita, Portugal",
       "en": "Housing cost overburden, tenants at reduced or free rent, Portugal"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-sobrecarga"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra sobrecarga do custo da habitação, inquilinos a renda reduzida ou gratuita, Portugal",
-        "en": "The measure shows housing cost overburden, tenants at reduced or free rent, Portugal",
+        "pt": "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a casa, descontados os subsídios, passa de quarenta por cento do rendimento disponível",
+        "en": "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"tenure\": \"RENT_FR\", \"geo\": \"PT\", \"time\": \"2025\"}, \"value\": \"2.8\", \"status\": null}"
+            "origem": "hb1c-eurostat-sobrecarga",
+            "campo": "excerto",
+            "literal": "is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income"
           }
         ]
       }
@@ -4315,14 +4447,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, inquilinos a renda reduzida ou gratuita, União Europeia, em ",
         {
           "periodo": "hab-ilc-lvho07c-a-pc-rent-fr-eu27_2020-2025"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, tenants at reduced or free rent, European Union, in ",
         {
           "periodo": "hab-ilc-lvho07c-a-pc-rent-fr-eu27_2020-2025"
         },
@@ -4336,17 +4468,19 @@ export const FAMILIAS_HB1 = [
       "pt": "Sobrecarga do custo da habitação, inquilinos a renda reduzida ou gratuita, União Europeia",
       "en": "Housing cost overburden, tenants at reduced or free rent, European Union"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-sobrecarga"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra sobrecarga do custo da habitação, inquilinos a renda reduzida ou gratuita, União Europeia",
-        "en": "The measure shows housing cost overburden, tenants at reduced or free rent, European Union",
+        "pt": "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a casa, descontados os subsídios, passa de quarenta por cento do rendimento disponível",
+        "en": "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"tenure\": \"RENT_FR\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"9.2\", \"status\": null}"
+            "origem": "hb1c-eurostat-sobrecarga",
+            "campo": "excerto",
+            "literal": "is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income"
           }
         ]
       }
@@ -4380,8 +4514,8 @@ export const FAMILIAS_HB1 = [
     "partes": [
       {
         "classe": "diz",
-        "pt": "A conta calcula diferença face à União na sobrecarga dos inquilinos pelas componentes identificadas",
-        "en": "The calculation gives gap from the Union in tenant overburden from the identified components",
+        "pt": "O resultado é a diferença, em pontos percentuais, entre Portugal e a União na parte dos inquilinos a preços de mercado em sobrecarga",
+        "en": "The result is the gap, in percentage points, between Portugal and the Union in the share of tenants at market rents in overburden",
         "apoios": [
           {
             "linha": "propria",
@@ -4395,14 +4529,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, inquilinos a preços de mercado, União Europeia, em ",
         {
           "periodo": "hab-ilc-lvho07c-a-pc-rent-mkt-eu27_2020-2025"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, tenants at market rents, European Union, in ",
         {
           "periodo": "hab-ilc-lvho07c-a-pc-rent-mkt-eu27_2020-2025"
         },
@@ -4416,17 +4550,19 @@ export const FAMILIAS_HB1 = [
       "pt": "Sobrecarga do custo da habitação, inquilinos a preços de mercado, União Europeia",
       "en": "Housing cost overburden, tenants at market rents, European Union"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-sobrecarga"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra sobrecarga do custo da habitação, inquilinos a preços de mercado, União Europeia",
-        "en": "The measure shows housing cost overburden, tenants at market rents, European Union",
+        "pt": "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a casa, descontados os subsídios, passa de quarenta por cento do rendimento disponível",
+        "en": "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"tenure\": \"RENT_MKT\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"18.6\", \"status\": null}"
+            "origem": "hb1c-eurostat-sobrecarga",
+            "campo": "excerto",
+            "literal": "is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income"
           }
         ]
       }
@@ -4435,14 +4571,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, inquilinos a preços de mercado, Portugal, em ",
         {
           "periodo": "hab-ilc-lvho07c-a-pc-rent-mkt-pt-2015"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, tenants at market rents, Portugal, in ",
         {
           "periodo": "hab-ilc-lvho07c-a-pc-rent-mkt-pt-2015"
         },
@@ -4456,17 +4592,19 @@ export const FAMILIAS_HB1 = [
       "pt": "Sobrecarga do custo da habitação, inquilinos a preços de mercado, Portugal",
       "en": "Housing cost overburden, tenants at market rents, Portugal"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-sobrecarga"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra sobrecarga do custo da habitação, inquilinos a preços de mercado, Portugal",
-        "en": "The measure shows housing cost overburden, tenants at market rents, Portugal",
+        "pt": "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a casa, descontados os subsídios, passa de quarenta por cento do rendimento disponível",
+        "en": "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"tenure\": \"RENT_MKT\", \"geo\": \"PT\", \"time\": \"2015\"}, \"value\": \"35.4\", \"status\": null}"
+            "origem": "hb1c-eurostat-sobrecarga",
+            "campo": "excerto",
+            "literal": "is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income"
           }
         ]
       }
@@ -4475,14 +4613,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, inquilinos a preços de mercado, Finlândia, em ",
         {
           "periodo": "hab-ilc-lvho07c-a-pc-rent-mkt-fi-2025"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, tenants at market rents, Finland, in ",
         {
           "periodo": "hab-ilc-lvho07c-a-pc-rent-mkt-fi-2025"
         },
@@ -4496,17 +4634,19 @@ export const FAMILIAS_HB1 = [
       "pt": "Sobrecarga do custo da habitação, inquilinos a preços de mercado, Finlândia",
       "en": "Housing cost overburden, tenants at market rents, Finland"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-sobrecarga"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra sobrecarga do custo da habitação, inquilinos a preços de mercado, Finlândia",
-        "en": "The measure shows housing cost overburden, tenants at market rents, Finland",
+        "pt": "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a casa, descontados os subsídios, passa de quarenta por cento do rendimento disponível",
+        "en": "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"tenure\": \"RENT_MKT\", \"geo\": \"FI\", \"time\": \"2025\"}, \"value\": \"12.3\", \"status\": null}"
+            "origem": "hb1c-eurostat-sobrecarga",
+            "campo": "excerto",
+            "literal": "is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income"
           }
         ]
       }
@@ -4515,14 +4655,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, inquilinos a preços de mercado, Roménia, em ",
         {
           "periodo": "hab-ilc-lvho07c-a-pc-rent-mkt-ro-2025"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, tenants at market rents, Romania, in ",
         {
           "periodo": "hab-ilc-lvho07c-a-pc-rent-mkt-ro-2025"
         },
@@ -4536,17 +4676,19 @@ export const FAMILIAS_HB1 = [
       "pt": "Sobrecarga do custo da habitação, inquilinos a preços de mercado, Roménia",
       "en": "Housing cost overburden, tenants at market rents, Romania"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-sobrecarga"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra sobrecarga do custo da habitação, inquilinos a preços de mercado, Roménia",
-        "en": "The measure shows housing cost overburden, tenants at market rents, Romania",
+        "pt": "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a casa, descontados os subsídios, passa de quarenta por cento do rendimento disponível",
+        "en": "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"tenure\": \"RENT_MKT\", \"geo\": \"RO\", \"time\": \"2025\"}, \"value\": \"56.0\", \"status\": null}"
+            "origem": "hb1c-eurostat-sobrecarga",
+            "campo": "excerto",
+            "literal": "is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income"
           }
         ]
       }
@@ -4555,14 +4697,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, dezasseis a vinte e nove anos, Portugal, em ",
         {
           "periodo": "hab-ilc-lvho07a-a-pc-total-y16-29-t-pt-2025"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, sixteen to twenty-nine years, Portugal, in ",
         {
           "periodo": "hab-ilc-lvho07a-a-pc-total-y16-29-t-pt-2025"
         },
@@ -4576,17 +4718,19 @@ export const FAMILIAS_HB1 = [
       "pt": "Sobrecarga do custo da habitação, dezasseis a vinte e nove anos, Portugal",
       "en": "Housing cost overburden, sixteen to twenty-nine years, Portugal"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-sobrecarga"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra sobrecarga do custo da habitação, dezasseis a vinte e nove anos, Portugal",
-        "en": "The measure shows housing cost overburden, sixteen to twenty-nine years, Portugal",
+        "pt": "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a casa, descontados os subsídios, passa de quarenta por cento do rendimento disponível",
+        "en": "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"rskpovth\": \"TOTAL\", \"age\": \"Y16-29\", \"sex\": \"T\", \"geo\": \"PT\", \"time\": \"2025\"}, \"value\": \"7.5\", \"status\": null}"
+            "origem": "hb1c-eurostat-sobrecarga",
+            "campo": "excerto",
+            "literal": "is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income"
           }
         ]
       }
@@ -4595,14 +4739,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, dezasseis a vinte e nove anos, União Europeia, em ",
         {
           "periodo": "hab-ilc-lvho07a-a-pc-total-y16-29-t-eu27_2020-2025"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, sixteen to twenty-nine years, European Union, in ",
         {
           "periodo": "hab-ilc-lvho07a-a-pc-total-y16-29-t-eu27_2020-2025"
         },
@@ -4616,17 +4760,19 @@ export const FAMILIAS_HB1 = [
       "pt": "Sobrecarga do custo da habitação, dezasseis a vinte e nove anos, União Europeia",
       "en": "Housing cost overburden, sixteen to twenty-nine years, European Union"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-sobrecarga"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra sobrecarga do custo da habitação, dezasseis a vinte e nove anos, União Europeia",
-        "en": "The measure shows housing cost overburden, sixteen to twenty-nine years, European Union",
+        "pt": "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a casa, descontados os subsídios, passa de quarenta por cento do rendimento disponível",
+        "en": "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"rskpovth\": \"TOTAL\", \"age\": \"Y16-29\", \"sex\": \"T\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"9.3\", \"status\": null}"
+            "origem": "hb1c-eurostat-sobrecarga",
+            "campo": "excerto",
+            "literal": "is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income"
           }
         ]
       }
@@ -4635,14 +4781,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, dezasseis a vinte e nove anos, Grécia, em ",
         {
           "periodo": "hab-ilc-lvho07a-a-pc-total-y16-29-t-el-2025"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, sixteen to twenty-nine years, Greece, in ",
         {
           "periodo": "hab-ilc-lvho07a-a-pc-total-y16-29-t-el-2025"
         },
@@ -4656,17 +4802,19 @@ export const FAMILIAS_HB1 = [
       "pt": "Sobrecarga do custo da habitação, dezasseis a vinte e nove anos, Grécia",
       "en": "Housing cost overburden, sixteen to twenty-nine years, Greece"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-sobrecarga"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra sobrecarga do custo da habitação, dezasseis a vinte e nove anos, Grécia",
-        "en": "The measure shows housing cost overburden, sixteen to twenty-nine years, Greece",
+        "pt": "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a casa, descontados os subsídios, passa de quarenta por cento do rendimento disponível",
+        "en": "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"rskpovth\": \"TOTAL\", \"age\": \"Y16-29\", \"sex\": \"T\", \"geo\": \"EL\", \"time\": \"2025\"}, \"value\": \"25.5\", \"status\": null}"
+            "origem": "hb1c-eurostat-sobrecarga",
+            "campo": "excerto",
+            "literal": "is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income"
           }
         ]
       }
@@ -4675,14 +4823,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, Portugal, em ",
         {
           "periodo": "hab-ilc-lvho05a-a-pc-total-total-t-pt-2025"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, Portugal, in ",
         {
           "periodo": "hab-ilc-lvho05a-a-pc-total-total-t-pt-2025"
         },
@@ -4696,17 +4844,24 @@ export const FAMILIAS_HB1 = [
       "pt": "População em habitações sobrelotadas, Portugal",
       "en": "Population in overcrowded homes, Portugal"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-sobrelotacao"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra população em habitações sobrelotadas, Portugal",
-        "en": "The measure shows population in overcrowded homes, Portugal",
+        "pt": "A taxa de sobrelotação é a parte da população que vive num agregado sobrelotado, que não tem o número mínimo de divisões que o Eurostat fixa para a sua composição",
+        "en": "The overcrowding rate is the share of the population living in an overcrowded household, one without the minimum number of rooms Eurostat sets for its composition",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"rskpovth\": \"TOTAL\", \"age\": \"TOTAL\", \"sex\": \"T\", \"geo\": \"PT\", \"time\": \"2025\"}, \"value\": \"12.7\", \"status\": null}"
+            "origem": "hb1c-eurostat-sobrelotacao",
+            "campo": "excerto",
+            "literal": "is defined as the percentage of the population living in an overcrowded household"
+          },
+          {
+            "origem": "hb1c-eurostat-sobrelotacao",
+            "campo": "excerto",
+            "literal": "does not have at its disposal a minimum number of rooms"
           }
         ]
       }
@@ -4715,14 +4870,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, União Europeia, em ",
         {
           "periodo": "hab-ilc-lvho05a-a-pc-total-total-t-eu27_2020-2025"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, European Union, in ",
         {
           "periodo": "hab-ilc-lvho05a-a-pc-total-total-t-eu27_2020-2025"
         },
@@ -4736,17 +4891,24 @@ export const FAMILIAS_HB1 = [
       "pt": "População em habitações sobrelotadas, União Europeia",
       "en": "Population in overcrowded homes, European Union"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-sobrelotacao"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra população em habitações sobrelotadas, União Europeia",
-        "en": "The measure shows population in overcrowded homes, European Union",
+        "pt": "A taxa de sobrelotação é a parte da população que vive num agregado sobrelotado, que não tem o número mínimo de divisões que o Eurostat fixa para a sua composição",
+        "en": "The overcrowding rate is the share of the population living in an overcrowded household, one without the minimum number of rooms Eurostat sets for its composition",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"rskpovth\": \"TOTAL\", \"age\": \"TOTAL\", \"sex\": \"T\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"16.8\", \"status\": null}"
+            "origem": "hb1c-eurostat-sobrelotacao",
+            "campo": "excerto",
+            "literal": "is defined as the percentage of the population living in an overcrowded household"
+          },
+          {
+            "origem": "hb1c-eurostat-sobrelotacao",
+            "campo": "excerto",
+            "literal": "does not have at its disposal a minimum number of rooms"
           }
         ]
       }
@@ -4755,14 +4917,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, Chipre, em ",
         {
           "periodo": "hab-ilc-lvho05a-a-pc-total-total-t-cy-2025"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, Cyprus, in ",
         {
           "periodo": "hab-ilc-lvho05a-a-pc-total-total-t-cy-2025"
         },
@@ -4776,17 +4938,24 @@ export const FAMILIAS_HB1 = [
       "pt": "População em habitações sobrelotadas, Chipre",
       "en": "Population in overcrowded homes, Cyprus"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-sobrelotacao"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra população em habitações sobrelotadas, Chipre",
-        "en": "The measure shows population in overcrowded homes, Cyprus",
+        "pt": "A taxa de sobrelotação é a parte da população que vive num agregado sobrelotado, que não tem o número mínimo de divisões que o Eurostat fixa para a sua composição",
+        "en": "The overcrowding rate is the share of the population living in an overcrowded household, one without the minimum number of rooms Eurostat sets for its composition",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"rskpovth\": \"TOTAL\", \"age\": \"TOTAL\", \"sex\": \"T\", \"geo\": \"CY\", \"time\": \"2025\"}, \"value\": \"2.2\", \"status\": null}"
+            "origem": "hb1c-eurostat-sobrelotacao",
+            "campo": "excerto",
+            "literal": "is defined as the percentage of the population living in an overcrowded household"
+          },
+          {
+            "origem": "hb1c-eurostat-sobrelotacao",
+            "campo": "excerto",
+            "literal": "does not have at its disposal a minimum number of rooms"
           }
         ]
       }
@@ -4795,14 +4964,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, Roménia, em ",
         {
           "periodo": "hab-ilc-lvho05a-a-pc-total-total-t-ro-2025"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, Romania, in ",
         {
           "periodo": "hab-ilc-lvho05a-a-pc-total-total-t-ro-2025"
         },
@@ -4816,17 +4985,24 @@ export const FAMILIAS_HB1 = [
       "pt": "População em habitações sobrelotadas, Roménia",
       "en": "Population in overcrowded homes, Romania"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-sobrelotacao"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra população em habitações sobrelotadas, Roménia",
-        "en": "The measure shows population in overcrowded homes, Romania",
+        "pt": "A taxa de sobrelotação é a parte da população que vive num agregado sobrelotado, que não tem o número mínimo de divisões que o Eurostat fixa para a sua composição",
+        "en": "The overcrowding rate is the share of the population living in an overcrowded household, one without the minimum number of rooms Eurostat sets for its composition",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"rskpovth\": \"TOTAL\", \"age\": \"TOTAL\", \"sex\": \"T\", \"geo\": \"RO\", \"time\": \"2025\"}, \"value\": \"40.4\", \"status\": null}"
+            "origem": "hb1c-eurostat-sobrelotacao",
+            "campo": "excerto",
+            "literal": "is defined as the percentage of the population living in an overcrowded household"
+          },
+          {
+            "origem": "hb1c-eurostat-sobrelotacao",
+            "campo": "excerto",
+            "literal": "does not have at its disposal a minimum number of rooms"
           }
         ]
       }
@@ -4835,14 +5011,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, dezasseis a vinte e nove anos, Portugal, em ",
         {
           "periodo": "hab-ilc-lvho05a-a-pc-total-y16-29-t-pt-2025"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, sixteen to twenty-nine years, Portugal, in ",
         {
           "periodo": "hab-ilc-lvho05a-a-pc-total-y16-29-t-pt-2025"
         },
@@ -4856,17 +5032,24 @@ export const FAMILIAS_HB1 = [
       "pt": "População em habitações sobrelotadas, dezasseis a vinte e nove anos, Portugal",
       "en": "Population in overcrowded homes, sixteen to twenty-nine years, Portugal"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-sobrelotacao"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra população em habitações sobrelotadas, dezasseis a vinte e nove anos, Portugal",
-        "en": "The measure shows population in overcrowded homes, sixteen to twenty-nine years, Portugal",
+        "pt": "A taxa de sobrelotação é a parte da população que vive num agregado sobrelotado, que não tem o número mínimo de divisões que o Eurostat fixa para a sua composição",
+        "en": "The overcrowding rate is the share of the population living in an overcrowded household, one without the minimum number of rooms Eurostat sets for its composition",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"rskpovth\": \"TOTAL\", \"age\": \"Y16-29\", \"sex\": \"T\", \"geo\": \"PT\", \"time\": \"2025\"}, \"value\": \"21.2\", \"status\": null}"
+            "origem": "hb1c-eurostat-sobrelotacao",
+            "campo": "excerto",
+            "literal": "is defined as the percentage of the population living in an overcrowded household"
+          },
+          {
+            "origem": "hb1c-eurostat-sobrelotacao",
+            "campo": "excerto",
+            "literal": "does not have at its disposal a minimum number of rooms"
           }
         ]
       }
@@ -4875,14 +5058,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, dezasseis a vinte e nove anos, União Europeia, em ",
         {
           "periodo": "hab-ilc-lvho05a-a-pc-total-y16-29-t-eu27_2020-2025"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, sixteen to twenty-nine years, European Union, in ",
         {
           "periodo": "hab-ilc-lvho05a-a-pc-total-y16-29-t-eu27_2020-2025"
         },
@@ -4896,17 +5079,24 @@ export const FAMILIAS_HB1 = [
       "pt": "População em habitações sobrelotadas, dezasseis a vinte e nove anos, União Europeia",
       "en": "Population in overcrowded homes, sixteen to twenty-nine years, European Union"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-sobrelotacao"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra população em habitações sobrelotadas, dezasseis a vinte e nove anos, União Europeia",
-        "en": "The measure shows population in overcrowded homes, sixteen to twenty-nine years, European Union",
+        "pt": "A taxa de sobrelotação é a parte da população que vive num agregado sobrelotado, que não tem o número mínimo de divisões que o Eurostat fixa para a sua composição",
+        "en": "The overcrowding rate is the share of the population living in an overcrowded household, one without the minimum number of rooms Eurostat sets for its composition",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"rskpovth\": \"TOTAL\", \"age\": \"Y16-29\", \"sex\": \"T\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"26.6\", \"status\": null}"
+            "origem": "hb1c-eurostat-sobrelotacao",
+            "campo": "excerto",
+            "literal": "is defined as the percentage of the population living in an overcrowded household"
+          },
+          {
+            "origem": "hb1c-eurostat-sobrelotacao",
+            "campo": "excerto",
+            "literal": "does not have at its disposal a minimum number of rooms"
           }
         ]
       }
@@ -4939,14 +5129,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, Portugal, em ",
         {
           "periodo": "hab-ilc-mdho06a-a-pc-total-t-total-pt-2023"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, Portugal, in ",
         {
           "periodo": "hab-ilc-mdho06a-a-pc-total-t-total-pt-2023"
         },
@@ -4960,17 +5150,24 @@ export const FAMILIAS_HB1 = [
       "pt": "Privação severa da habitação, Portugal",
       "en": "Severe housing deprivation, Portugal"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-privacao-severa"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra privação severa da habitação, Portugal",
-        "en": "The measure shows severe housing deprivation, Portugal",
+        "pt": "A parte da população que vive numa casa sobrelotada e, ao mesmo tempo, com pelo menos um destes problemas: um telhado que mete água, sem banheira ou duche e sem retrete dentro de casa, ou uma casa considerada demasiado escura",
+        "en": "The share of the population living in an overcrowded dwelling that also has at least one of these problems: a leaking roof, no bath or shower and no indoor toilet, or a dwelling considered too dark",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"rskpovth\": \"TOTAL\", \"sex\": \"T\", \"age\": \"TOTAL\", \"geo\": \"PT\", \"time\": \"2023\"}, \"value\": \"6.0\", \"status\": null}"
+            "origem": "hb1c-eurostat-privacao-severa",
+            "campo": "excerto",
+            "literal": "is considered as overcrowded, while also exhibiting at least one of the housing deprivation measures"
+          },
+          {
+            "origem": "hb1c-eurostat-privacao-severa",
+            "campo": "excerto",
+            "literal": "with a leaking roof, no bath/shower and no indoor toilet, or a dwelling considered too dark"
           }
         ]
       }
@@ -4979,14 +5176,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, União Europeia, em ",
         {
           "periodo": "hab-ilc-mdho06a-a-pc-total-t-total-eu27_2020-2023"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, European Union, in ",
         {
           "periodo": "hab-ilc-mdho06a-a-pc-total-t-total-eu27_2020-2023"
         },
@@ -5000,17 +5197,24 @@ export const FAMILIAS_HB1 = [
       "pt": "Privação severa da habitação, União Europeia",
       "en": "Severe housing deprivation, European Union"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-privacao-severa"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra privação severa da habitação, União Europeia",
-        "en": "The measure shows severe housing deprivation, European Union",
+        "pt": "A parte da população que vive numa casa sobrelotada e, ao mesmo tempo, com pelo menos um destes problemas: um telhado que mete água, sem banheira ou duche e sem retrete dentro de casa, ou uma casa considerada demasiado escura",
+        "en": "The share of the population living in an overcrowded dwelling that also has at least one of these problems: a leaking roof, no bath or shower and no indoor toilet, or a dwelling considered too dark",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"rskpovth\": \"TOTAL\", \"sex\": \"T\", \"age\": \"TOTAL\", \"geo\": \"EU27_2020\", \"time\": \"2023\"}, \"value\": \"4.0\", \"status\": null}"
+            "origem": "hb1c-eurostat-privacao-severa",
+            "campo": "excerto",
+            "literal": "is considered as overcrowded, while also exhibiting at least one of the housing deprivation measures"
+          },
+          {
+            "origem": "hb1c-eurostat-privacao-severa",
+            "campo": "excerto",
+            "literal": "with a leaking roof, no bath/shower and no indoor toilet, or a dwelling considered too dark"
           }
         ]
       }
@@ -5019,14 +5223,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, Malta, em ",
         {
           "periodo": "hab-ilc-mdho06a-a-pc-total-t-total-mt-2023"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, Malta, in ",
         {
           "periodo": "hab-ilc-mdho06a-a-pc-total-t-total-mt-2023"
         },
@@ -5040,17 +5244,24 @@ export const FAMILIAS_HB1 = [
       "pt": "Privação severa da habitação, Malta",
       "en": "Severe housing deprivation, Malta"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-privacao-severa"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra privação severa da habitação, Malta",
-        "en": "The measure shows severe housing deprivation, Malta",
+        "pt": "A parte da população que vive numa casa sobrelotada e, ao mesmo tempo, com pelo menos um destes problemas: um telhado que mete água, sem banheira ou duche e sem retrete dentro de casa, ou uma casa considerada demasiado escura",
+        "en": "The share of the population living in an overcrowded dwelling that also has at least one of these problems: a leaking roof, no bath or shower and no indoor toilet, or a dwelling considered too dark",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"rskpovth\": \"TOTAL\", \"sex\": \"T\", \"age\": \"TOTAL\", \"geo\": \"MT\", \"time\": \"2023\"}, \"value\": \"0.5\", \"status\": null}"
+            "origem": "hb1c-eurostat-privacao-severa",
+            "campo": "excerto",
+            "literal": "is considered as overcrowded, while also exhibiting at least one of the housing deprivation measures"
+          },
+          {
+            "origem": "hb1c-eurostat-privacao-severa",
+            "campo": "excerto",
+            "literal": "with a leaking roof, no bath/shower and no indoor toilet, or a dwelling considered too dark"
           }
         ]
       }
@@ -5059,14 +5270,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, Letónia, em ",
         {
           "periodo": "hab-ilc-mdho06a-a-pc-total-t-total-lv-2023"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, Latvia, in ",
         {
           "periodo": "hab-ilc-mdho06a-a-pc-total-t-total-lv-2023"
         },
@@ -5080,17 +5291,24 @@ export const FAMILIAS_HB1 = [
       "pt": "Privação severa da habitação, Letónia",
       "en": "Severe housing deprivation, Latvia"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-privacao-severa"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra privação severa da habitação, Letónia",
-        "en": "The measure shows severe housing deprivation, Latvia",
+        "pt": "A parte da população que vive numa casa sobrelotada e, ao mesmo tempo, com pelo menos um destes problemas: um telhado que mete água, sem banheira ou duche e sem retrete dentro de casa, ou uma casa considerada demasiado escura",
+        "en": "The share of the population living in an overcrowded dwelling that also has at least one of these problems: a leaking roof, no bath or shower and no indoor toilet, or a dwelling considered too dark",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"rskpovth\": \"TOTAL\", \"sex\": \"T\", \"age\": \"TOTAL\", \"geo\": \"LV\", \"time\": \"2023\"}, \"value\": \"11.6\", \"status\": null}"
+            "origem": "hb1c-eurostat-privacao-severa",
+            "campo": "excerto",
+            "literal": "is considered as overcrowded, while also exhibiting at least one of the housing deprivation measures"
+          },
+          {
+            "origem": "hb1c-eurostat-privacao-severa",
+            "campo": "excerto",
+            "literal": "with a leaking roof, no bath/shower and no indoor toilet, or a dwelling considered too dark"
           }
         ]
       }
@@ -5099,14 +5317,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, dezasseis a vinte e nove anos, Portugal, em ",
         {
           "periodo": "hab-ilc-mdho06a-a-pc-total-t-y16-29-pt-2023"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, sixteen to twenty-nine years, Portugal, in ",
         {
           "periodo": "hab-ilc-mdho06a-a-pc-total-t-y16-29-pt-2023"
         },
@@ -5120,17 +5338,24 @@ export const FAMILIAS_HB1 = [
       "pt": "Privação severa da habitação, dezasseis a vinte e nove anos, Portugal",
       "en": "Severe housing deprivation, sixteen to twenty-nine years, Portugal"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-privacao-severa"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra privação severa da habitação, dezasseis a vinte e nove anos, Portugal",
-        "en": "The measure shows severe housing deprivation, sixteen to twenty-nine years, Portugal",
+        "pt": "A parte da população que vive numa casa sobrelotada e, ao mesmo tempo, com pelo menos um destes problemas: um telhado que mete água, sem banheira ou duche e sem retrete dentro de casa, ou uma casa considerada demasiado escura",
+        "en": "The share of the population living in an overcrowded dwelling that also has at least one of these problems: a leaking roof, no bath or shower and no indoor toilet, or a dwelling considered too dark",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"rskpovth\": \"TOTAL\", \"sex\": \"T\", \"age\": \"Y16-29\", \"geo\": \"PT\", \"time\": \"2023\"}, \"value\": \"9.5\", \"status\": null}"
+            "origem": "hb1c-eurostat-privacao-severa",
+            "campo": "excerto",
+            "literal": "is considered as overcrowded, while also exhibiting at least one of the housing deprivation measures"
+          },
+          {
+            "origem": "hb1c-eurostat-privacao-severa",
+            "campo": "excerto",
+            "literal": "with a leaking roof, no bath/shower and no indoor toilet, or a dwelling considered too dark"
           }
         ]
       }
@@ -5139,14 +5364,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, dezasseis a vinte e nove anos, União Europeia, em ",
         {
           "periodo": "hab-ilc-mdho06a-a-pc-total-t-y16-29-eu27_2020-2023"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, sixteen to twenty-nine years, European Union, in ",
         {
           "periodo": "hab-ilc-mdho06a-a-pc-total-t-y16-29-eu27_2020-2023"
         },
@@ -5160,17 +5385,24 @@ export const FAMILIAS_HB1 = [
       "pt": "Privação severa da habitação, dezasseis a vinte e nove anos, União Europeia",
       "en": "Severe housing deprivation, sixteen to twenty-nine years, European Union"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-privacao-severa"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra privação severa da habitação, dezasseis a vinte e nove anos, União Europeia",
-        "en": "The measure shows severe housing deprivation, sixteen to twenty-nine years, European Union",
+        "pt": "A parte da população que vive numa casa sobrelotada e, ao mesmo tempo, com pelo menos um destes problemas: um telhado que mete água, sem banheira ou duche e sem retrete dentro de casa, ou uma casa considerada demasiado escura",
+        "en": "The share of the population living in an overcrowded dwelling that also has at least one of these problems: a leaking roof, no bath or shower and no indoor toilet, or a dwelling considered too dark",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"rskpovth\": \"TOTAL\", \"sex\": \"T\", \"age\": \"Y16-29\", \"geo\": \"EU27_2020\", \"time\": \"2023\"}, \"value\": \"6.4\", \"status\": null}"
+            "origem": "hb1c-eurostat-privacao-severa",
+            "campo": "excerto",
+            "literal": "is considered as overcrowded, while also exhibiting at least one of the housing deprivation measures"
+          },
+          {
+            "origem": "hb1c-eurostat-privacao-severa",
+            "campo": "excerto",
+            "literal": "with a leaking roof, no bath/shower and no indoor toilet, or a dwelling considered too dark"
           }
         ]
       }
@@ -5179,14 +5411,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, Finlândia, em ",
         {
           "periodo": "hab-yth-demo-030-a-avg-t-fi-2025"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, Finland, in ",
         {
           "periodo": "hab-yth-demo-030-a-avg-t-fi-2025"
         },
@@ -5200,17 +5432,24 @@ export const FAMILIAS_HB1 = [
       "pt": "Idade média de saída de casa dos pais, Finlândia",
       "en": "Average age of leaving the parental home, Finland"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-saida"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra idade média de saída de casa dos pais, Finlândia",
-        "en": "The measure shows average age of leaving the parental home, Finland",
+        "pt": "A idade em que metade da população já não vive num agregado com os pais, estimada pelo inquérito ao emprego",
+        "en": "The age at which half of the population no longer lives in a household with their parents, estimated from the Labour Force Survey",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"AVG\", \"sex\": \"T\", \"geo\": \"FI\", \"time\": \"2025\"}, \"value\": \"21.3\", \"status\": null}"
+            "origem": "hb1c-eurostat-saida",
+            "campo": "excerto",
+            "literal": "represents the age at which 50 % of the population no longer live in a household with their parent(s)"
+          },
+          {
+            "origem": "hb1c-eurostat-saida",
+            "campo": "excerto",
+            "literal": "(Source: EU-LFS)"
           }
         ]
       }
@@ -5219,14 +5458,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, Croácia, em ",
         {
           "periodo": "hab-yth-demo-030-a-avg-t-hr-2025"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, Croatia, in ",
         {
           "periodo": "hab-yth-demo-030-a-avg-t-hr-2025"
         },
@@ -5240,17 +5479,24 @@ export const FAMILIAS_HB1 = [
       "pt": "Idade média de saída de casa dos pais, Croácia",
       "en": "Average age of leaving the parental home, Croatia"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-saida"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra idade média de saída de casa dos pais, Croácia",
-        "en": "The measure shows average age of leaving the parental home, Croatia",
+        "pt": "A idade em que metade da população já não vive num agregado com os pais, estimada pelo inquérito ao emprego",
+        "en": "The age at which half of the population no longer lives in a household with their parents, estimated from the Labour Force Survey",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"AVG\", \"sex\": \"T\", \"geo\": \"HR\", \"time\": \"2025\"}, \"value\": \"31.5\", \"status\": null}"
+            "origem": "hb1c-eurostat-saida",
+            "campo": "excerto",
+            "literal": "represents the age at which 50 % of the population no longer live in a household with their parent(s)"
+          },
+          {
+            "origem": "hb1c-eurostat-saida",
+            "campo": "excerto",
+            "literal": "(Source: EU-LFS)"
           }
         ]
       }
@@ -5259,14 +5505,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, vinte e cinco a trinta e quatro anos, Dinamarca, em ",
         {
           "periodo": "hab-ilc-lvps08-a-y25-34-t-pc-dk-2025"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, twenty-five to thirty-four years, Denmark, in ",
         {
           "periodo": "hab-ilc-lvps08-a-y25-34-t-pc-dk-2025"
         },
@@ -5284,13 +5530,13 @@ export const FAMILIAS_HB1 = [
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra jovens que vivem com os pais ou partilham o rendimento do agregado, vinte e cinco a trinta e quatro anos, Dinamarca",
-        "en": "The measure shows young people living with parents or sharing household income, twenty-five to thirty-four years, Denmark",
+        "pt": "A parte das pessoas desta idade que vivem com os pais ou contribuem para o rendimento do agregado ou dele beneficiam",
+        "en": "The share of people of this age who live with their parents or contribute to or benefit from the household income",
         "apoios": [
           {
             "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"age\": \"Y25-34\", \"sex\": \"T\", \"unit\": \"PC\", \"geo\": \"DK\", \"time\": \"2025\"}, \"value\": \"3.9\", \"status\": null}"
+            "campo": "document.title",
+            "literal": "Persons living with their parents or contributing/benefiting from the household income"
           }
         ]
       }
@@ -5299,14 +5545,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, vinte e cinco a trinta e quatro anos, Portugal, em ",
         {
           "periodo": "hab-ilc-lvps08-a-y25-34-t-pc-pt-2015"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, twenty-five to thirty-four years, Portugal, in ",
         {
           "periodo": "hab-ilc-lvps08-a-y25-34-t-pc-pt-2015"
         },
@@ -5324,13 +5570,13 @@ export const FAMILIAS_HB1 = [
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra jovens que vivem com os pais ou partilham o rendimento do agregado, vinte e cinco a trinta e quatro anos, Portugal",
-        "en": "The measure shows young people living with parents or sharing household income, twenty-five to thirty-four years, Portugal",
+        "pt": "A parte das pessoas desta idade que vivem com os pais ou contribuem para o rendimento do agregado ou dele beneficiam",
+        "en": "The share of people of this age who live with their parents or contribute to or benefit from the household income",
         "apoios": [
           {
             "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"age\": \"Y25-34\", \"sex\": \"T\", \"unit\": \"PC\", \"geo\": \"PT\", \"time\": \"2015\"}, \"value\": \"45.7\", \"status\": null}"
+            "campo": "document.title",
+            "literal": "Persons living with their parents or contributing/benefiting from the household income"
           }
         ]
       }
@@ -5339,14 +5585,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, dezoito a trinta e quatro anos, Portugal, em ",
         {
           "periodo": "hab-ilc-lvps08-a-y18-34-t-pc-pt-2025"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, eighteen to thirty-four years, Portugal, in ",
         {
           "periodo": "hab-ilc-lvps08-a-y18-34-t-pc-pt-2025"
         },
@@ -5364,13 +5610,13 @@ export const FAMILIAS_HB1 = [
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra jovens que vivem com os pais ou partilham o rendimento do agregado, dezoito a trinta e quatro anos, Portugal",
-        "en": "The measure shows young people living with parents or sharing household income, eighteen to thirty-four years, Portugal",
+        "pt": "A parte das pessoas desta idade que vivem com os pais ou contribuem para o rendimento do agregado ou dele beneficiam",
+        "en": "The share of people of this age who live with their parents or contribute to or benefit from the household income",
         "apoios": [
           {
             "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"age\": \"Y18-34\", \"sex\": \"T\", \"unit\": \"PC\", \"geo\": \"PT\", \"time\": \"2025\"}, \"value\": \"61.0\", \"status\": null}"
+            "campo": "document.title",
+            "literal": "Persons living with their parents or contributing/benefiting from the household income"
           }
         ]
       }
@@ -5379,14 +5625,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, dezoito a trinta e quatro anos, União Europeia, em ",
         {
           "periodo": "hab-ilc-lvps08-a-y18-34-t-pc-eu27_2020-2025"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, eighteen to thirty-four years, European Union, in ",
         {
           "periodo": "hab-ilc-lvps08-a-y18-34-t-pc-eu27_2020-2025"
         },
@@ -5404,13 +5650,13 @@ export const FAMILIAS_HB1 = [
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra jovens que vivem com os pais ou partilham o rendimento do agregado, dezoito a trinta e quatro anos, União Europeia",
-        "en": "The measure shows young people living with parents or sharing household income, eighteen to thirty-four years, European Union",
+        "pt": "A parte das pessoas desta idade que vivem com os pais ou contribuem para o rendimento do agregado ou dele beneficiam",
+        "en": "The share of people of this age who live with their parents or contribute to or benefit from the household income",
         "apoios": [
           {
             "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"age\": \"Y18-34\", \"sex\": \"T\", \"unit\": \"PC\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"49.8\", \"status\": null}"
+            "campo": "document.title",
+            "literal": "Persons living with their parents or contributing/benefiting from the household income"
           }
         ]
       }
@@ -5419,14 +5665,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, Portugal, em ",
         {
           "periodo": "hab-cens-21dwob-r3-a-dw-total-nr-pt-2021"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, Portugal, in ",
         {
           "periodo": "hab-cens-21dwob-r3-a-dw-total-nr-pt-2021"
         },
@@ -5440,17 +5686,24 @@ export const FAMILIAS_HB1 = [
       "pt": "Alojamentos nos Censos, Portugal",
       "en": "Dwellings in the Census, Portugal"
     },
-    "origens": [],
+    "origens": [
+      "hb1c-eurostat-censos-ocupacao"
+    ],
     "partes": [
       {
         "classe": "diz",
-        "pt": "A medida mostra alojamentos nos Censos, Portugal",
-        "en": "The measure shows dwellings in the Census, Portugal",
+        "pt": "O número de alojamentos familiares clássicos recenseados, os ocupados, que são a residência habitual de uma ou mais pessoas à data dos Censos, e os não ocupados",
+        "en": "The number of conventional dwellings counted, the occupied ones, which are the usual residence of one or more persons at the time of the census, and the unoccupied ones",
         "apoios": [
           {
-            "linha": "propria",
-            "campo": "excerpt",
-            "literal": "{\"coordinates\": {\"freq\": \"A\", \"housing\": \"DW\", \"building\": \"TOTAL\", \"unit\": \"NR\", \"geo\": \"PT\", \"time\": \"2021\"}, \"value\": \"5970677\", \"status\": null}"
+            "origem": "hb1c-eurostat-censos-ocupacao",
+            "campo": "excerto",
+            "literal": "are conventional dwellings which are the usual residence of one or more persons at the time of the census"
+          },
+          {
+            "origem": "hb1c-eurostat-censos-ocupacao",
+            "campo": "excerto",
+            "literal": "are conventional dwellings which are not the usual residence of any person"
           }
         ]
       }

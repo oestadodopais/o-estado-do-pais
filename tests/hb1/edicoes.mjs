@@ -13,6 +13,15 @@ for(const lang of ['pt','en']) {
  const votes=conferirRegisto(registo,claims);votacoes+=votes.length;
  const phrases=registo.blocks.map(b=>b.text??'');
  const expansions=conferirSiglasHb1(phrases,lang);siglas+=expansions.length;
+ // HB1-c2: a glosa logo a seguir ao primeiro uso vale (a atribuição copiada da fonte diz «do BE»);
+ // sem a glosa, ou com ela afastada do primeiro uso, a sigla continua recusada.
+ if(lang==='pt') {
+  const g='(o Bloco de Esquerda, o BE)';assert(phrases.some(x=>x.includes(g)),'a glosa do BE não está na edição');
+  for(const [nome,f] of [['sem a glosa',phrases.map(x=>x.replace(' '+g,''))],['glosa afastada',phrases.map(x=>x.includes(g)?x.replace(' '+g,'')+' '+g:x)]]) {
+   let erro=null;try{conferirSiglasHb1(f,'pt');}catch(e){erro=String(e.message);}
+   assert(erro&&erro.includes('BE não expandida ao primeiro uso'),'planta da sigla ('+nome+') passou');plantas++;
+  }
+ }
  if(motor) {
   const rows=JSON.parse(fs.readFileSync(path.join(motor,'content/23 Habitacao/ledger.json'),'utf8')).claims;
   const template=fs.readFileSync(path.join(motor,`content/28 Habitacao Estudo/Technical Source/documento.${lang}.md.tmpl`),'utf8');

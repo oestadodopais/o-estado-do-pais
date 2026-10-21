@@ -23,7 +23,7 @@ excerpt: null
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: "preços da habitação, Lisboa, 1.º trimestre de 2026 (5 292 euros por metro quadrado; INE) a dividir por preço mediano dos 35 953 alojamentos familiares transacionados em Portugal, 1.º trimestre de 2026 (2 337 euros por metro quadrado; INE), arredondado a uma casa decimal: 2,3."
-derivation_en: "house prices, Lisbon, quarter 1 of 2026 (5292 euros per square metre; INE) divided by median price of the 35 953 family dwellings transacted in Portugal, quarter 1 of 2026 (2337 euros per square metre; INE), rounded to one decimal place: 2.3."
+derivation_en: "house prices, Lisbon, quarter 1 of 2026 (5 292 euros per square metre; INE) divided by median price of the 35 953 family dwellings transacted in Portugal, quarter 1 of 2026 (2 337 euros per square metre; INE), rounded to one decimal place: 2.3."
 derived_from:
   - "hab-ine-preco-lisboa"
   - "hab-ine-preco-mediano"

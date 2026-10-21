@@ -2455,6 +2455,7 @@ export const STRINGS = {
         /* A TERCEIRA DATA (01.09.2026). O recibo mostrava duas: o período, no
            bloco de cima, e as leituras da casa. Esta é a do publicador. */
         publicadoEmK: 'Publicado pela fonte a',
+        editadoEmK: 'Página editada pela última vez a',
         /* ----------------------------------------------------------------
            A SEGUNDA DATA (bloco P2, item 2, 15.09.2026)
            ----------------------------------------------------------------
@@ -4251,6 +4252,7 @@ export const STRINGS = {
         reconferidoK: 'Verified on',
         releituraPorta: 'The re-reading rule',
         publicadoEmK: 'Published by the source on',
+        editadoEmK: 'Page last edited on',
         /** Ver a razão na edição portuguesa (bloco P2, item 2, 15.09.2026). */
         proximaConferenciaK: 'Next check',
         /** Ver a razão na edição portuguesa (bloco P2, item 2, 15.09.2026). */

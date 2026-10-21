@@ -310,6 +310,13 @@ export const CAMPOS = /** @type {const} */ ([
    * um campo que não existe.
    */
   'published_at',
+  /**
+   * O QUE A DATA DE `published_at` É, quando não é a da publicação (HB1-c2, o
+   * achado 25 da leitura da HB1-b): `last-edited` diz que a fonte só declara a
+   * data da última edição da página (o rodapé «This page was last edited on» do
+   * glossário Statistics Explained), e o recibo imprime-a como tal. Opcional.
+   */
+  'published_at_kind',
   'reference_date',
   /**
    * A SÉRIE NO TEMPO DE QUE A LINHA É O PONTO DO SEU PERÍODO (bloco RP3, 04.10.2026).
@@ -1705,6 +1712,7 @@ export function validateLedger() {
       if (c.name_en !== undefined && (typeof c.name_en !== 'string' || !c.name_en.trim())) errors.push(`${onde} name_en precisa de tradução não vazia.`);
       if (c.study === 'orcamento-2027-o-que-muda-e-para-quem' && (!temNome || ausente(c.name_en))) errors.push(`${onde} EO1: linha sem nome nas duas línguas.`);
       if (c.access_date_kind !== undefined && !['hosted-copy', 'source-read'].includes(c.access_date_kind)) errors.push(`${onde} access_date_kind inválido.`);
+      if (c.published_at_kind !== undefined && (c.published_at_kind !== 'last-edited' || !c.published_at)) errors.push(`${onde} published_at_kind inválido.`);
       if (c.name_source_en !== undefined && (typeof c.name_source_en !== 'string' || !c.name_source_en.trim() || !temOnde)) errors.push(`${onde} name_source_en precisa de localizador original e tradução não vazia.`);
       for (const campo of /** @type {const} */ (['name_en', 'measure', 'measure_en'])) {
         const valor = c[campo];

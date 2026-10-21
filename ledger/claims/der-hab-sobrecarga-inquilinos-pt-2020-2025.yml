@@ -9,7 +9,7 @@ id: "der-hab-sobrecarga-inquilinos-pt-2020-2025"
 value: "7,5"
 unit: "pontos percentuais"
 measure: "Diferença: Taxa de sobrecarga dos custos da habitação, inquilinos a preços de mercado, Portugal, 2025"
-measure_en: "Difference: Taxa de sobrecarga dos custos da habitação, inquilinos a preços de mercado, Portugal, 2025"
+measure_en: "Difference: Housing cost overburden rate, Tenant, rent at market price, Portugal, 2025"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: null

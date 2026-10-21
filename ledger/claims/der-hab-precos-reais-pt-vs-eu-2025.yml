@@ -9,7 +9,7 @@ id: "der-hab-precos-reais-pt-vs-eu-2025"
 value: "81,7"
 unit: "pontos de índice"
 measure: "Diferença: Índice de preços da habitação, descontada a inflação, índice, média de 2015 igual a cem, Portugal, 2025"
-measure_en: "Difference: Índice de preços da habitação, descontada a inflação, índice, média de 2015 igual a cem, Portugal, 2025"
+measure_en: "Difference: House price index, deflated, Annual average index, 2015=100, Portugal, 2025"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: null

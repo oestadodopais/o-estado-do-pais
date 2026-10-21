@@ -700,7 +700,7 @@
      "id": "der-hab-fiscal-2027",
      "inicio": 244,
      "livro": "HB",
-     "sha256_linha": "337a3506ef55ac89f83ef99ed2ce0f2758b8beef0d3c883117aaf3947656bb23",
+     "sha256_linha": "6ef000f8b16c77dc7449f1ca7638644c378b7c5f79400e4bc72b2a0d7e27d27d",
      "texto": "−303",
      "tipo": "valor"
     }
@@ -927,7 +927,7 @@
      "id": "der-hab-sobrecarga-inquilinos-pt-2020-2025",
      "inicio": 233,
      "livro": "HB",
-     "sha256_linha": "5239add39724ec06c5748bb603804e337ca4915364d481028e4db1e15fd9e060",
+     "sha256_linha": "37435a3068a8c729a3ef5fb6f4165d40188a6f54a8936720231abfcc8a90fc8f",
      "texto": "7,5",
      "tipo": "valor"
     },
@@ -1051,7 +1051,7 @@
      "id": "der-hab-jovens-com-pais-pt-vs-eu-2025",
      "inicio": 251,
      "livro": "HB",
-     "sha256_linha": "5523b540c6135ab72d4629478af2be1e4d601d5b2f499e39cfd6f06bd5f1eb1a",
+     "sha256_linha": "74001dde08a927bfebbb95a166a8958db4274c45926aca5c662d7c14d4c635a0",
      "texto": "12,0",
      "tipo": "valor"
     },
@@ -1087,7 +1087,7 @@
      "id": "der-hab-saida-pt-vs-eu-2025",
      "inicio": 473,
      "livro": "HB",
-     "sha256_linha": "ac587822561897313d702496db70a236b20b0657aa422859cabf9a2f572f6c18",
+     "sha256_linha": "bc27466e984154bcfbf7fd7e0e47e439a7f757066ace8ca18576feda526176e1",
      "texto": "2,5",
      "tipo": "valor"
     },
@@ -1184,7 +1184,7 @@
      "id": "der-hab-licencas-por-mil-pt-2025",
      "inicio": 131,
      "livro": "HB",
-     "sha256_linha": "66533e9c398f875d9ab1ae3acc83ad3b0e4765b78131f50593f7b683d22dda5c",
+     "sha256_linha": "44b4e9d42d2df571e1755054a0d803605d1087e3453b5578cec136b557d35354",
      "texto": "3,8",
      "tipo": "valor"
     },
@@ -1193,7 +1193,7 @@
      "id": "der-hab-licencas-por-mil-eu-2025",
      "inicio": 208,
      "livro": "HB",
-     "sha256_linha": "4d28ed7b80e9f3dd1085d0eefbc84a1d78b85bdf5fe3c9bd4a8ab2a78cae7490",
+     "sha256_linha": "aaca859888818cc2b24600574efd504ec9690ae3a6faaf2393a95e124afb208d",
      "texto": "3,6",
      "tipo": "valor"
     },
@@ -1296,7 +1296,7 @@
      "id": "der-hab-fiscal-2027",
      "inicio": 198,
      "livro": "HB",
-     "sha256_linha": "337a3506ef55ac89f83ef99ed2ce0f2758b8beef0d3c883117aaf3947656bb23",
+     "sha256_linha": "6ef000f8b16c77dc7449f1ca7638644c378b7c5f79400e4bc72b2a0d7e27d27d",
      "texto": "−303",
      "tipo": "valor"
     },
@@ -1420,9 +1420,9 @@
      "tipo": "atribuicao"
     },
     {
-     "fim": 648,
+     "fim": 654,
      "id": "hab-imprensa-psp-ferido",
-     "inicio": 625,
+     "inicio": 631,
      "livro": "HB",
      "sha256_linha": "f239d545183a6b052a4fe2e77f87a579d01bc091b0fed2d8fbe4b6cfb0fb3df1",
      "texto": "um polícia ficou ferido",
@@ -1439,7 +1439,7 @@
     "hab-imprensa-feridos35",
     "hab-imprensa-psp-ferido"
    ],
-   "text": "6. A rua e os números. A plataforma que convocou as manifestações de outubro diz que «a renda consome metade do salário»; os números deste estudo não medem a renda face ao salário: medem quantos gastam mais de quarenta por cento do rendimento do agregado em toda a despesa com a casa, e são 27,2 % dos inquilinos a preços de mercado, contra 6,2 % da população toda. Os feridos da intervenção policial no Porto são «37 feridos, dois em estado grave» segundo o movimento, «39 feridos, dois deles graves» segundo a organização e «35 feridos, pelo menos» segundo José Soeiro, dirigente nacional do BE (o Bloco de Esquerda), com «um polícia ficou ferido» segundo a Polícia de Segurança Pública (a PSP), tudo pela imprensa; a Inspeção-Geral da Administração Interna (a IGAI) abriu um processo. Este estudo não soma nem escolhe uma contagem."
+   "text": "6. A rua e os números. A plataforma que convocou as manifestações de outubro diz que «a renda consome metade do salário»; os números deste estudo não medem a renda face ao salário: medem quantos gastam mais de quarenta por cento do rendimento do agregado em toda a despesa com a casa, e são 27,2 % dos inquilinos a preços de mercado, contra 6,2 % da população toda. Os feridos da intervenção policial no Porto são «37 feridos, dois em estado grave» segundo o movimento, «39 feridos, dois deles graves» segundo a organização e «35 feridos, pelo menos» segundo José Soeiro, dirigente nacional do BE (o Bloco de Esquerda, o BE), com «um polícia ficou ferido» segundo a Polícia de Segurança Pública (a PSP), tudo pela imprensa; a Inspeção-Geral da Administração Interna (a IGAI) abriu um processo. Este estudo não soma nem escolhe uma contagem."
   },
   {
    "emphasis": [
@@ -1732,7 +1732,7 @@
      "id": "der-hab-precos-reais-pt-vs-eu-2025",
      "inicio": 619,
      "livro": "HB",
-     "sha256_linha": "4a8e66a7c74f8874c43226b3d147ee07fa94900bbb72143cb7ae5984c5a1d32c",
+     "sha256_linha": "9001087658f29f2cdae55e9997d5850987392f9809e26a4b42f877f159ede4be",
      "texto": "81,7",
      "tipo": "valor"
     },
@@ -1911,7 +1911,7 @@
      "id": "der-hab-preco-rendimento-pt-vs-eu-2024",
      "inicio": 148,
      "livro": "HB",
-     "sha256_linha": "53eab641a0ca78ed99fc2138e2128205ef04ee4c1bc4edcf647f6cec19a2436c",
+     "sha256_linha": "b080a64d2e162175acfc8b8e629f2b56d0dd4c5a1ad51a73d5850d72975c282e",
      "texto": "38,6",
      "tipo": "valor"
     },
@@ -2166,7 +2166,7 @@
      "id": "der-hab-preco-lisboa-vs-portugal",
      "inicio": 159,
      "livro": "HB",
-     "sha256_linha": "476734416094ea7fb7936b2ee832300de188a6c37ee897c73ba600b96e4ee867",
+     "sha256_linha": "0689b227dc49b39106bc67a6f0a8ef4506c92fb63f6f5f38d14584b0d260e06e",
      "texto": "2,3",
      "tipo": "valor"
     },
@@ -3130,7 +3130,7 @@
      "id": "der-hab-sobrecarga-inquilinos-pt-vs-eu-2025",
      "inicio": 301,
      "livro": "HB",
-     "sha256_linha": "e7fbbf9e92df30cf5d9f521f866940f3d600024945842ec0a9e22ba644c96d6a",
+     "sha256_linha": "1197969949cfe6f0d1d810ff5f94bc59c1babe75f526ed0b92e32d546db3fc83",
      "texto": "8,6",
      "tipo": "valor"
     },
@@ -3631,7 +3631,7 @@
      "id": "der-hab-saida-pt-vs-eu-2025",
      "inicio": 63,
      "livro": "HB",
-     "sha256_linha": "ac587822561897313d702496db70a236b20b0657aa422859cabf9a2f572f6c18",
+     "sha256_linha": "bc27466e984154bcfbf7fd7e0e47e439a7f757066ace8ca18576feda526176e1",
      "texto": "2,5",
      "tipo": "valor"
     },
@@ -3890,7 +3890,7 @@
      "id": "der-hab-licencas-por-mil-pt-2025",
      "inicio": 128,
      "livro": "HB",
-     "sha256_linha": "66533e9c398f875d9ab1ae3acc83ad3b0e4765b78131f50593f7b683d22dda5c",
+     "sha256_linha": "44b4e9d42d2df571e1755054a0d803605d1087e3453b5578cec136b557d35354",
      "texto": "3,8",
      "tipo": "valor"
     },
@@ -3899,7 +3899,7 @@
      "id": "der-hab-licencas-por-mil-eu-2025",
      "inicio": 146,
      "livro": "HB",
-     "sha256_linha": "4d28ed7b80e9f3dd1085d0eefbc84a1d78b85bdf5fe3c9bd4a8ab2a78cae7490",
+     "sha256_linha": "aaca859888818cc2b24600574efd504ec9690ae3a6faaf2393a95e124afb208d",
      "texto": "3,6",
      "tipo": "valor"
     },
@@ -3984,7 +3984,7 @@
      "id": "hab-arrendamento-exposicao-vagos",
      "inicio": 641,
      "livro": "HB",
-     "sha256_linha": "a811e6bd44b6d597830fc5e5705681072eb0e3c3fc3b9fee3a8a2509fe1b070e",
+     "sha256_linha": "ae744810c322c6faed98a7f764295839febe23c3e275b52a34e42086aa65d4c5",
      "texto": "Considerando os dados dos Censos 2021, estima-se que cerca de 375 mil alojamentos familiares clássicos, dos quais quase 250 mil em boas condições, estejam vagos sem intenção de venda ou arrendamento.",
      "tipo": "excerto"
     },
@@ -4372,7 +4372,7 @@
      "id": "der-hab-fiscal-2027",
      "inicio": 415,
      "livro": "HB",
-     "sha256_linha": "337a3506ef55ac89f83ef99ed2ce0f2758b8beef0d3c883117aaf3947656bb23",
+     "sha256_linha": "6ef000f8b16c77dc7449f1ca7638644c378b7c5f79400e4bc72b2a0d7e27d27d",
      "texto": "−303",
      "tipo": "valor"
     },
@@ -6077,8 +6077,8 @@
     "formula": "hab-oe-iva-impacto + hab-oe-irs-rendas-impacto",
     "rounding_places": 0
    },
-   "derivation_en": "Housing: construction VAT reduction from 23% to 6% (i) (-94 million euros; Government) plus Housing: personal income tax reduction on moderate rents from 25% to 10% (i) (-209 million euros; Government), rounded to the nearest integer: -303.",
-   "derivation_text": "Habitação - redução IVA construção de 23% para 6% (i) (-94 milhões de euros; Governo) mais Habitação - redução IRS rendas moderadas de 25% para 10% (i) (-209 milhões de euros; Governo), arredondado à unidade: -303.",
+   "derivation_en": "Housing: construction VAT reduction from 23% to 6% (i) (−94 million euros; Government) plus Housing: personal income tax reduction on moderate rents from 25% to 10% (i) (−209 million euros; Government), rounded to the nearest integer: −303.",
+   "derivation_text": "Habitação - redução IVA construção de 23% para 6% (i) (−94 milhões de euros; Governo) mais Habitação - redução IRS rendas moderadas de 25% para 10% (i) (−209 milhões de euros; Governo), arredondado à unidade: −303.",
    "document": null,
    "excerpt": "round ( hab-oe-iva-impacto + hab-oe-irs-rendas-impacto , 0 ) = -303",
    "id": "der-hab-fiscal-2027",
@@ -6162,7 +6162,7 @@
    "id": "der-hab-jovens-com-pais-pt-vs-eu-2025",
    "locator": "Cálculo sobre as linhas identificadas",
    "measure": "Diferença: Pessoas que vivem com os pais ou contribuem para o rendimento do agregado ou dele beneficiam, vinte e cinco a trinta e quatro anos, Portugal, 2025",
-   "measure_en": "Difference: Pessoas que vivem com os pais ou contribuem para o rendimento do agregado ou dele beneficiam, vinte e cinco a trinta e quatro anos, Portugal, 2025",
+   "measure_en": "Difference: Persons living with their parents or contributing/benefiting from the household income, From 25 to 34 years, Portugal, 2025",
    "period": "2025",
    "reference_date": "2025",
    "stage": "derivada",
@@ -6181,7 +6181,7 @@
     "formula": "hab-sts-cobp-a-a-bprm-dw-cpa-f41001-x-410014-nsa-ths-eu27_2020-2025 * 1000000 / hab-demo-pjan-eu27_2020-2025",
     "rounding_places": 1
    },
-   "derivation_en": "Dwellings permitted, Thousand, European Union - 27 countries (from 2020), 2025 (1623.2 thousand; Eurostat, sts_cobp_a) divided by Population on one January, Number, European Union - 27 countries (from 2020), 2025 (450646971 inhabitants; Eurostat, demo_pjan, provisional, estimated), converting permits from thousands to units and multiplying by one thousand, rounded to one decimal place: 3.6.",
+   "derivation_en": "Dwellings permitted, Thousand, European Union - 27 countries (from 2020), 2025 (1 623.2 thousand; Eurostat, sts_cobp_a) divided by Population on 1 January, Number, European Union - 27 countries (from 2020), 2025 (450 646 971 inhabitants; Eurostat, demo_pjan, provisional, estimated), converting permits from thousands to units and multiplying by one thousand, rounded to one decimal place: 3.6.",
    "derivation_text": "Alojamentos licenciados, milhares, União Europeia, 2025 (1 623,2 mil; Eurostat, sts_cobp_a) a dividir por População residente a um de janeiro, número, União Europeia, 2025 (450 646 971 habitantes; Eurostat, demo_pjan, provisório, estimado), convertendo as licenças de milhares para unidades e multiplicando por mil, arredondado a uma casa decimal: 3,6.",
    "document": null,
    "excerpt": "round ( hab-sts-cobp-a-a-bprm-dw-cpa-f41001-x-410014-nsa-ths-eu27_2020-2025 * 1000000 / hab-demo-pjan-eu27_2020-2025 , 1 ) = 3.6",
@@ -6207,7 +6207,7 @@
     "formula": "hab-sts-cobp-a-a-bprm-dw-cpa-f41001-x-410014-nsa-ths-pt-2025 * 1000000 / hab-demo-pjan-pt-2025",
     "rounding_places": 1
    },
-   "derivation_en": "Dwellings permitted, Thousand, Portugal, 2025 (40.9 thousand; Eurostat, sts_cobp_a, provisional) divided by Population on one January, Number, Portugal, 2025 (10749635 inhabitants; Eurostat, demo_pjan), converting permits from thousands to units and multiplying by one thousand, rounded to one decimal place: 3.8.",
+   "derivation_en": "Dwellings permitted, Thousand, Portugal, 2025 (40.9 thousand; Eurostat, sts_cobp_a, provisional) divided by Population on 1 January, Number, Portugal, 2025 (10 749 635 inhabitants; Eurostat, demo_pjan), converting permits from thousands to units and multiplying by one thousand, rounded to one decimal place: 3.8.",
    "derivation_text": "Alojamentos licenciados, milhares, Portugal, 2025 (40,9 mil; Eurostat, sts_cobp_a, provisório) a dividir por População residente a um de janeiro, número, Portugal, 2025 (10 749 635 habitantes; Eurostat, demo_pjan), convertendo as licenças de milhares para unidades e multiplicando por mil, arredondado a uma casa decimal: 3,8.",
    "document": null,
    "excerpt": "round ( hab-sts-cobp-a-a-bprm-dw-cpa-f41001-x-410014-nsa-ths-pt-2025 * 1000000 / hab-demo-pjan-pt-2025 , 1 ) = 3.8",
@@ -6233,7 +6233,7 @@
     "formula": "hab-ine-preco-lisboa / hab-ine-preco-mediano",
     "rounding_places": 1
    },
-   "derivation_en": "house prices, Lisbon, quarter 1 of 2026 (5292 euros per square metre; INE) divided by median price of the 35 953 family dwellings transacted in Portugal, quarter 1 of 2026 (2337 euros per square metre; INE), rounded to one decimal place: 2.3.",
+   "derivation_en": "house prices, Lisbon, quarter 1 of 2026 (5 292 euros per square metre; INE) divided by median price of the 35 953 family dwellings transacted in Portugal, quarter 1 of 2026 (2 337 euros per square metre; INE), rounded to one decimal place: 2.3.",
    "derivation_text": "preços da habitação, Lisboa, 1.º trimestre de 2026 (5 292 euros por metro quadrado; INE) a dividir por preço mediano dos 35 953 alojamentos familiares transacionados em Portugal, 1.º trimestre de 2026 (2 337 euros por metro quadrado; INE), arredondado a uma casa decimal: 2,3.",
    "document": null,
    "excerpt": "round ( hab-ine-preco-lisboa / hab-ine-preco-mediano , 1 ) = 2.3",
@@ -6366,7 +6366,7 @@
    "id": "der-hab-preco-rendimento-pt-vs-eu-2024",
    "locator": "Cálculo sobre as linhas identificadas",
    "measure": "Diferença: Rácio padronizado entre preços da habitação e rendimento, índice, 2015 igual a cem, Portugal, 2024",
-   "measure_en": "Difference: Rácio padronizado entre preços da habitação e rendimento, índice, 2015 igual a cem, Portugal, 2024",
+   "measure_en": "Difference: Standardised house price-to-income ratio, Price-to-income ratio, index 2015=100, Portugal, 2024",
    "period": "2024",
    "reference_date": "2024",
    "stage": "derivada",
@@ -6392,7 +6392,7 @@
    "id": "der-hab-precos-reais-pt-vs-eu-2025",
    "locator": "Cálculo sobre as linhas identificadas",
    "measure": "Diferença: Índice de preços da habitação, descontada a inflação, índice, média de 2015 igual a cem, Portugal, 2025",
-   "measure_en": "Difference: Índice de preços da habitação, descontada a inflação, índice, média de 2015 igual a cem, Portugal, 2025",
+   "measure_en": "Difference: House price index, deflated, Annual average index, 2015=100, Portugal, 2025",
    "period": "2025",
    "reference_date": "2025",
    "stage": "derivada",
@@ -6496,7 +6496,7 @@
    "id": "der-hab-saida-pt-vs-eu-2025",
    "locator": "Cálculo sobre as linhas identificadas",
    "measure": "Diferença: Idade média estimada de saída de casa dos pais, Portugal, 2025",
-   "measure_en": "Difference: Idade média estimada de saída de casa dos pais, Portugal, 2025",
+   "measure_en": "Difference: Estimated average age of leaving the parental household, Portugal, 2025",
    "period": "2025",
    "reference_date": "2025",
    "stage": "derivada",
@@ -6522,7 +6522,7 @@
    "id": "der-hab-sobrecarga-inquilinos-pt-2020-2025",
    "locator": "Cálculo sobre as linhas identificadas",
    "measure": "Diferença: Taxa de sobrecarga dos custos da habitação, inquilinos a preços de mercado, Portugal, 2025",
-   "measure_en": "Difference: Taxa de sobrecarga dos custos da habitação, inquilinos a preços de mercado, Portugal, 2025",
+   "measure_en": "Difference: Housing cost overburden rate, Tenant, rent at market price, Portugal, 2025",
    "period": "2025",
    "reference_date": "2025",
    "stage": "derivada",
@@ -6548,7 +6548,7 @@
    "id": "der-hab-sobrecarga-inquilinos-pt-vs-eu-2025",
    "locator": "Cálculo sobre as linhas identificadas",
    "measure": "Diferença: Taxa de sobrecarga dos custos da habitação, inquilinos a preços de mercado, Portugal, 2025",
-   "measure_en": "Difference: Taxa de sobrecarga dos custos da habitação, inquilinos a preços de mercado, Portugal, 2025",
+   "measure_en": "Difference: Housing cost overburden rate, Tenant, rent at market price, Portugal, 2025",
    "period": "2025",
    "reference_date": "2025",
    "stage": "derivada",
@@ -6642,16 +6642,23 @@
     "title": "Proposta de Lei n.º 103/XVII"
    },
    "document_checks": {
-    "published_at": {
-     "reason": "Sem data de publicação ancorada no documento; o período de referência e o acesso não provam a publicação.",
-     "status": "por confirmar"
-    },
-    "reference_date": {
+    "edition": {
      "date": "2026-08-12",
      "file": "source/parlamento-pt-7.html",
      "sha256": "f45c11ca5b327ba931433166a6a739dd9d0cadb039344d78b581cc08be8afba9",
      "status": "conferido",
      "text": "2026-08-12 | Entrada"
+    },
+    "published_at": {
+     "reason": "Sem data de publicação ancorada no documento; o período de referência e o acesso não provam a publicação.",
+     "status": "por confirmar"
+    },
+    "reference_date": {
+     "date": "2021",
+     "file": "source/parlamento-pt-7-texto.pdf",
+     "sha256": "505b9d5fbeed485dd107377bbae07003f9f7fa4cd3f949534f6154f3b854d7bf",
+     "status": "conferido",
+     "text": "Considerando os dados dos Censos 2021,"
     },
     "title": {
      "locator": 1,
@@ -6686,9 +6693,9 @@
    "name": "Proposta de Lei n.º 103/XVII",
    "name_source": "PDF p. 1; Exposição de Motivos; estimativa pelos Censos de 2021; autoria na folha de rosto; data da proposta na página do Parlamento",
    "note": "Exposição de motivos de proposta; o articulado integral está alojado. Frase ou parágrafo completo, conferido por duas extrações.",
-   "period": "2026-08-12",
+   "period": "2021",
    "published_at": null,
-   "reference_date": "2026-08-12",
+   "reference_date": "2021",
    "source_excerpt": "Considerando os dados dos Censos 2021, estima-se que cerca de 375 mil alojamentos familiares clássicos, dos quais quase 250 mil em boas condições, estejam vagos sem intenção de venda ou arrendamento.",
    "source_type": "government",
    "source_url": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=PGqkJsL2G6lw3G9uygQPf1N1JH%252f%252b39M7GvgOIuNn9FNOwLO2SXVEvaHNII0zNl6xllstU3XfW8EfQWjgG%252buXWe1twkFNl7yALPxVM6Oml0ddQcK1qlunYed5let%252frSf5xjXbX4x3l2s1Z5Pvfiuu97KvT7AuI9IaGBhl3R1hzcZy7OvFxWrW6bWmDRQxr305vP52XJEjNNWGIbewa93ACJFq0UY%252fRon1UT94WBH%252fetlGKnHQOaVjs1V5brjBOhOzv%252f4HGHzYfSHk6w1cBu3faH2cgkTbVJLe%252f8rW%252fs4RtACxzeZ%252bgfFaWH74JS526shFMH5GuLqS8UlNBDDhmAvPvzOVHjFDu1B2p8lnJVx8PG0gA7MGYhCwpx0ajx8ooMJ%252b&fich=c0c6e27a-3ce4-49b8-a2e7-412f0a38f7ec.docx&Inline=true",
@@ -7170,9 +7177,9 @@
    "group": "demo_pjan; age=TOTAL,sex=T",
    "id": "hab-demo-pjan-eu27_2020-2025",
    "measure": "População residente a um de janeiro, número, União Europeia, 2025",
-   "measure_en": "Population on one January, Number, European Union - 27 countries (from 2020), 2025",
+   "measure_en": "Population on 1 January, Number, European Union - 27 countries (from 2020), 2025",
    "name": "População residente a um de janeiro, número, União Europeia, 2025",
-   "name_en": "Population on one January, Number, European Union - 27 countries (from 2020), 2025",
+   "name_en": "Population on 1 January, Number, European Union - 27 countries (from 2020), 2025",
    "name_source": "label; dimension.unit.category.label.NR; dimension.geo.category.label.EU27_2020; dimension.time.category.label.2025",
    "name_source_en": "label; dimension.unit.category.label.NR; dimension.geo.category.label.EU27_2020; dimension.time.category.label.2025",
    "note": "",
@@ -7222,9 +7229,9 @@
    "group": "demo_pjan; age=TOTAL,sex=T",
    "id": "hab-demo-pjan-pt-2025",
    "measure": "População residente a um de janeiro, número, Portugal, 2025",
-   "measure_en": "Population on one January, Number, Portugal, 2025",
+   "measure_en": "Population on 1 January, Number, Portugal, 2025",
    "name": "População residente a um de janeiro, número, Portugal, 2025",
-   "name_en": "Population on one January, Number, Portugal, 2025",
+   "name_en": "Population on 1 January, Number, Portugal, 2025",
    "name_source": "label; dimension.unit.category.label.NR; dimension.geo.category.label.PT; dimension.time.category.label.2025",
    "name_source_en": "label; dimension.unit.category.label.NR; dimension.geo.category.label.PT; dimension.time.category.label.2025",
    "note": "",

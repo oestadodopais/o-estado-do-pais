@@ -9,7 +9,7 @@ id: "der-hab-jovens-com-pais-pt-vs-eu-2025"
 value: "12,0"
 unit: "pontos percentuais"
 measure: "Diferença: Pessoas que vivem com os pais ou contribuem para o rendimento do agregado ou dele beneficiam, vinte e cinco a trinta e quatro anos, Portugal, 2025"
-measure_en: "Difference: Pessoas que vivem com os pais ou contribuem para o rendimento do agregado ou dele beneficiam, vinte e cinco a trinta e quatro anos, Portugal, 2025"
+measure_en: "Difference: Persons living with their parents or contributing/benefiting from the household income, From 25 to 34 years, Portugal, 2025"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: null
