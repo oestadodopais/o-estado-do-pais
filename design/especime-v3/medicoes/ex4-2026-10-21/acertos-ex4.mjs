@@ -87,7 +87,7 @@ const MANDATO = [
   ['secao-4-1', "A função [nome: F27('07')] do mapa, [claim: E27('07'), sufixo ' euros'], não é o programa Saúde do Orçamento, [claim: PROGRAMA_SAUDE, sufixo ' milhões de euros'] em [periodo: PROGRAMA_SAUDE]: o programa é consolidado e é um programa orçamental; a função é uma classificação da despesa, não consolidada, que conta as transferências entre serviços."],
   ['secao-4-2', 'As duas contas medem coisas diferentes, e nenhuma está errada.'],
   ['naoDiz-1', 'Esta explicação lê o mapa de uma proposta: o que o Parlamento aprovar pode ser diferente, e o que se gasta de facto lê-se depois, na execução.'],
-  ['naoDiz-2', 'O mapa é só o subsetor da Administração Central: a Segurança Social, com as pensões, tem o seu próprio mapa funcional, que não está aqui.'],
+  ['naoDiz-2', 'O mapa é só o subsetor da Administração Central: a Segurança Social, com as pensões, não está nele.'],
   ['naoDiz-3', "Os valores não são consolidados, contam as transferências entre serviços, e por isso a despesa total do mapa é maior do que a despesa total consolidada, [claim: CONS27, sufixo ' euros'] em [periodo: CONS27]."],
   ['naoDiz-4', 'A conta «sem as operações relacionadas com a dívida pública» é deste projeto, declarada no recibo de cada linha; o mapa só dá o nome a essa subfunção, e esta explicação não diz o que entra nela.'],
   ['naoDiz-5', "A base da explicação de [periodo: 'oe-2026-cem-euros-funcao-01'], a despesa efetiva consolidada por função dos dados abertos, ainda não existe para [periodo: F27('01')]; quando existir, esta explicação passa a essa base."],

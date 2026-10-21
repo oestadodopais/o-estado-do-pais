@@ -48901,8 +48901,8 @@
         },
         {
           "caminho": "naoDiz[0][1]",
-          "pt": " O mapa é só o subsetor da Administração Central: a Segurança Social, com as pensões, tem o seu próprio mapa funcional, que não está aqui.",
-          "en": " The map is only the central administration subsector: Social Security, with pensions, has its own functional map, which is not here.",
+          "pt": " O mapa é só o subsetor da Administração Central: a Segurança Social, com as pensões, não está nele.",
+          "en": " The map is only the central administration subsector: Social Security, with pensions, is not in it.",
           "partes": [
             {
               "pt": " O mapa é só o subsetor da Administração Central:",
@@ -48917,8 +48917,8 @@
               ]
             },
             {
-              "pt": " a Segurança Social, com as pensões, tem o seu próprio mapa funcional, que não está aqui.",
-              "en": " Social Security, with pensions, has its own functional map, which is not here.",
+              "pt": " a Segurança Social, com as pensões, não está nele.",
+              "en": " Social Security, with pensions, is not in it.",
               "classe": "leitura",
               "sobre": "que a Segurança Social fica fora do mapa, que é só o subsetor da Administração Central",
               "apoios": [

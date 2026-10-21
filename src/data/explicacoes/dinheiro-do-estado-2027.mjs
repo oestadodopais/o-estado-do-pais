@@ -93,7 +93,7 @@ export const DINHEIRO_DO_ESTADO_2027 = {
             ],
             en: [
               'Read as the map writes it, ', { claim: F27('01') }, ' of every hundred euros go to ', { nome: F27('01') },
-              ', because the subfunction of the operations related to public debt sits inside that function; ', { nome: F27('07'), inicial: true }, ' takes ', { claim: F27('07') },
+              ', because the subfunction of the operations related to public debt sits inside that function; ', { nome: F27('07') }, ' takes ', { claim: F27('07') },
               ', ', { nome: F27('04') }, ' ', { claim: F27('04') }, ', ', { nome: F27('10') }, ' ', { claim: F27('10') }, ' and ', { nome: F27('09') }, ' ', { claim: F27('09') },
               '. ', { nome: F27('03'), inicial: true }, ' takes ', { claim: F27('03') }, ', ', { nome: F27('02') }, ' ', { claim: F27('02') }, ', ', { nome: F27('06') }, ' ', { claim: F27('06') },
               ', ', { nome: F27('05') }, ' ', { claim: F27('05') }, ' and ', { nome: F27('08') }, ' ', { claim: F27('08') }, '.',
@@ -181,7 +181,7 @@ export const DINHEIRO_DO_ESTADO_2027 = {
     {
       pt: [
         'Esta explicação lê o mapa de uma proposta: o que o Parlamento aprovar pode ser diferente, e o que se gasta de facto lê-se depois, na execução.',
-        ' O mapa é só o subsetor da Administração Central: a Segurança Social, com as pensões, tem o seu próprio mapa funcional, que não está aqui.',
+        ' O mapa é só o subsetor da Administração Central: a Segurança Social, com as pensões, não está nele.',
         { se: [O_TOTAL_ACIMA_DO_CONSOLIDADO], partes: [
           ' Os valores não são consolidados, contam as transferências entre serviços, e por isso a despesa total do mapa é maior do que a despesa total consolidada, ',
           { claim: CONS27, sufixo: EUR }, ' em ', { periodo: CONS27 }, '.',
@@ -191,7 +191,7 @@ export const DINHEIRO_DO_ESTADO_2027 = {
       ],
       en: [
         'This explainer reads the map of a proposal: what Parliament approves may differ, and what is actually spent is read afterwards, in the budget execution.',
-        ' The map is only the central administration subsector: Social Security, with pensions, has its own functional map, which is not here.',
+        ' The map is only the central administration subsector: Social Security, with pensions, is not in it.',
         { se: [O_TOTAL_ACIMA_DO_CONSOLIDADO], partes: [
           ' The values are unconsolidated, they count the transfers between services, and so the map’s total expenditure is larger than the consolidated total expenditure, ',
           { claim: CONS27, sufixo: EUR }, ' in ', { periodo: CONS27 }, '.',

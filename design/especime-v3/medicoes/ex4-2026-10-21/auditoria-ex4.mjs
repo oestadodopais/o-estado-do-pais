@@ -84,7 +84,7 @@ const REGRAS = {
   'naoDiz[0][0]': (f) => [leitura(f.pt, f.en, 'que a proposta não é a lei aprovada nem a despesa executada', [L(T27, 'document.locator', 'MAPA 2, ano económico de 2027'), L(ENT, 'excerpt', 'Proposta de Lei'), L(PS, 'ressalva', 'Previsão, não execução.'), L(VT, 'derivation', 'proposta de 2027 sobre a lei aprovada de 2026')])],
   'naoDiz[0][1]': () => [
     diz(' O mapa é só o subsetor da Administração Central:', ' The map is only the central administration subsector:', [L(T27, 'document.title', 'das despesas do subsetor da Administração Central')]),
-    leitura(' a Segurança Social, com as pensões, tem o seu próprio mapa funcional, que não está aqui.', ' Social Security, with pensions, has its own functional map, which is not here.', 'que a Segurança Social fica fora do mapa, que é só o subsetor da Administração Central', [L(T27, 'document.title', 'Mapa relativo à classificação funcional das despesas do subsetor da Administração Central')]),
+    leitura(' a Segurança Social, com as pensões, não está nele.', ' Social Security, with pensions, is not in it.', 'que a Segurança Social fica fora do mapa, que é só o subsetor da Administração Central', [L(T27, 'document.title', 'Mapa relativo à classificação funcional das despesas do subsetor da Administração Central')]),
   ],
   'naoDiz[0][2].se[0]': (f) => [leitura(f.pt, f.en, 'porque a despesa total do mapa é maior do que a consolidada', [L(T27, 'name', 'DESPESA TOTAL'), L(CONS27, 'name', 'DESPESA TOTAL CONSOLIDADA'), O('rp4n-consolidada-ministerios', 'excerto', 'exclui os fluxos intrasetoriais e intersetoriais de juros, subsídios, transferências correntes e de capital')])],
   'naoDiz[0][3]': () => [
