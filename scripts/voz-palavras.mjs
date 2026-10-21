@@ -85,8 +85,10 @@ export const PALAVRAS_PROIBIDAS = [
        sítio falava de si. Não apanha «casas» (a habitação, que o sítio mede) nem
        «casa decimal» (a posição de um algarismo), e as duas estão medidas: a
        página da área da habitação diz «casas compradas pelas famílias» e a das
-       correções diz «uma casa decimal que a fonte não sustenta». */
-    marca: /\b(?:a|da|à|na|pela|desta|nesta|esta)\s+casa\b(?!\s+decimal)/i,
+       correções diz «uma casa decimal que a fonte não sustenta». «Gasta na
+       casa» descreve despesa com habitação; esta fronteira local não dispensa
+       o resto da frase nem a autorreferência «a casa verifica tudo». */
+    marca: /\b(?:a|da|à|pela|desta|nesta|esta)\s+casa\b(?!\s+decimal)|(?<!\bgasta\s)\bna\s+casa\b(?!\s+decimal)/i,
     em_vez: '«este projeto» ou «O Estado do País»',
     porque:
       'em português «casa» é a habitação, que é uma das coisas que este projeto mede ' +

@@ -182,6 +182,38 @@ const CONTAGENS_DO_PROJETO = new Set(['correcoes_publicadas', 'estudos_no_arquiv
    técnica do Parlamento português. A origem selada fornece a segunda via,
    sem consultar a declaração de lugar nem o nome editorial da linha. */
 const provasOrcamentais = JSON.parse(fs.readFileSync('ledger/provas/v2d/provas.json', 'utf8')).rows;
+const provasHb1 = JSON.parse(fs.readFileSync('ledger/provas/hb1/provas.json','utf8')).rows;
+/* As notícias corrigidas nomeiam o âmbito no excerto selado. Esta segunda
+   leitura não consulta nenhuma das tabelas que declaram os lugares. */
+function lugarDaNoticiaHb1(c) {
+  const proof=provasHb1[c?.id],p=proof?.row;
+  if(!p||c?.unit!=='texto'||p.unit!=='texto'||c.study!=='a-casa-em-portugal-e-na-europa'
+    ||Boolean(c.afirmacao)!==Boolean(p.afirmacao)||c.value!==c.excerpt||c.excerpt!==p.excerpt||c.value!==p.value
+    ||c.document?.title!==p.document?.title||c.document?.kind!=='html'||c.document?.source_sha256!==p.document?.source_sha256
+    ||!/^[a-f0-9]{64}$/.test(p.document?.source_sha256??'')||proof.receipt?.sha256!==p.document.source_sha256||proof.receipt?.estado!==200
+    ||c.source_url!==p.source_url||![proof.receipt?.pedido,proof.receipt?.endereco_final].includes(p.source_url)
+    ||JSON.stringify(c.attributed_to)!==JSON.stringify(p.attributed_to))return null;
+  let url;try{url=new URL(c.source_url);}catch{return null;}
+  if(url.protocol!=='https:')return null;
+  if(c.source==='Euronews'&&url.hostname==='pt.euronews.com'&&p.document.file==='content/23 Habitacao/source/hb1-euronews.html'
+    &&JSON.stringify(p.attributed_to)===JSON.stringify(['Euronews'])&&c.excerpt.startsWith('Cinco cidades de Portugal vão acolher,'))return PAIS;
+  if(c.source==='RTP'&&url.hostname==='www.rtp.pt'&&p.document.file==='content/23 Habitacao/source/hb1-rtp-tendas.html'
+    &&JSON.stringify(p.attributed_to)===JSON.stringify(['RTP'])&&c.excerpt.includes('acampadas na Praça D. João I, no centro do Porto,'))return 'porto';
+  return null;
+}
+for(const [id,lugar] of [['hab-imprensa-manif-euronews',PAIS],['hab-imprensa-tendas','porto']]) {
+  const c=linha(id);
+  if(lugarDaNoticiaHb1(c)!==lugar)erros.push(`A1: notícia selada ${id} não prova o seu lugar.`);
+  for(const [campo,altera] of [
+    ['unidade',x=>{x.unit='%';}],['estudo',x=>{x.study='outro';}],['fonte',x=>{x.source='Outra';}],
+    ['atribuição',x=>{x.attributed_to=['Outra'];}],['corpo',x=>{x.document.source_sha256='0'.repeat(64);}],
+    ['título',x=>{x.document.title='Outro documento';}],['endereço',x=>{x.source_url='https://example.invalid/';}],
+    ['excerto',x=>{x.excerpt=x.excerpt.replace(/Portugal|Porto/,'Outro lugar');x.value=x.excerpt;}],
+  ]) {
+    const bad=structuredClone(c);altera(bad);
+    if(lugarDaNoticiaHb1(bad)!==null)erros.push(`A1: planta da notícia (${campo}) não fechou para ${id}.`);
+  }
+}
 function lugarDaAfirmacaoOrcamental(c) {
   const p = provasOrcamentais[c?.id];
   const autor = p?.document?.file === 'content/24 Orcamento 2027 Analise/source/debate/utao-oe2027-preliminar.pdf' ? 'UTAO'
@@ -248,7 +280,7 @@ function lugarDerivado(id) {
   let geos = [];
   try { geos = c.source_url ? new URL(c.source_url).searchParams.getAll('geo') : []; } catch { geos = []; }
   const doPais = geos.length === 1 && geos[0] === 'PT' ? PAIS : undefined;
-  const d = [...new Set([doEstudo, doId, doPais, lugarDaAfirmacaoOrcamental(c)].filter(x => typeof x === 'string'))];
+  const d = [...new Set([doEstudo, doId, doPais, lugarDaAfirmacaoOrcamental(c), lugarDaNoticiaHb1(c)].filter(x => typeof x === 'string'))];
   if (d.length > 1) {
     erros.push(`A1: a linha ${id} deriva dois lugares diferentes (${d.join(', ')}).`);
     return null;

@@ -39,13 +39,13 @@ for(const [tipo,ids] of Object.entries(exemplos)) {
     else if(n.tagName==='DD'){assert(label,'valor da ficha sem rótulo');proveniencia.push({rotulo:label,texto:n.textContent});label=null;}
    }
    const nome=texto(doc,'.linha-nome-da-fonte [data-linha-campo]');
-   const aritmetica=field('derivation');
+   const aritmetica=(field('derivation_en')??field('derivation'));
    if(tipo==='derivado'){
     assert(aritmetica,'recibo derivado sem aritmética');
     assert(!/\b(?:der-)?hab-[a-z0-9]/.test(aritmetica),`${lingua}: aritmética ainda imprime identificadores de componentes: ${id}`);
    }
-   else {assert(nome,'recibo documental sem nome na fonte');assert(field('name_source'),'recibo documental sem localização do nome');}
-   edicoes[lingua]={rota,html_sha256:sha(bytes),titulo:texto(doc,'h1.linha-titulo',true),valor:texto(doc,'.linha-valor-num',true),unidade:field('unit'),nome_na_fonte:nome,publicado_por:field('source'),documento:field('document.title'),edicao:field('document.edition')??datas['document.edition']??null,onde_no_ficheiro:field('name_source'),onde_no_documento:field('document.locator'),o_que_e_este_numero:texto(doc,'[data-o-que-e-parte="o-que-e"]',true),datas,aritmetica,expressao_conferida:field('check'),excerto:field('excerpt'),ressalva:field('ressalva'),proveniencia};
+   else {assert(nome,'recibo documental sem nome na fonte');assert((field('name_source_en')??field('name_source')),'recibo documental sem localização do nome');}
+   edicoes[lingua]={rota,html_sha256:sha(bytes),titulo:texto(doc,'h1.linha-titulo',true),valor:texto(doc,'.linha-valor-num',true),unidade:field('unit'),nome_na_fonte:nome,publicado_por:field('source'),documento:field('document.title'),edicao:field('document.edition')??datas['document.edition']??null,onde_no_ficheiro:(field('name_source_en')??field('name_source')),onde_no_documento:field('document.locator'),o_que_e_este_numero:texto(doc,'[data-o-que-e-parte="o-que-e"]',true),datas,aritmetica,expressao_conferida:field('check'),excerto:field('excerpt'),ressalva:(field('ressalva_en')??field('ressalva')),proveniencia};
   }
   saida.tipos[tipo].push({id,edicoes});
  }

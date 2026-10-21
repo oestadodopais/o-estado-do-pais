@@ -194,12 +194,10 @@
   ],
   "outras_paginas": {
     "/areas/infraestruturas-e-habitacao": {
-      "/estudos/a-casa-em-portugal-e-na-europa": 4,
-      "/a-verificar": 7
+      "/estudos/a-casa-em-portugal-e-na-europa": 4
     },
     "/en/areas/infraestruturas-e-habitacao": {
-      "/en/studies/a-casa-em-portugal-e-na-europa": 4,
-      "/en/to-verify": 7
+      "/en/studies/a-casa-em-portugal-e-na-europa": 4
     },
     "/en/housing": {
       "/en/ledger/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025": 2,
@@ -218,13 +216,13 @@
       "/en/ledger/hab-ine-renda-portugal": 2,
       "/en/ledger/hab-ine-renda-lisboa": 2,
       "/en/ledger/hab-ine-renda-porto": 2,
-      "/en/ledger/hab-ilc-mded01-a-total-total-pc-pt-2025": 3,
+      "/en/ledger/hab-ilc-mded01-a-total-total-pc-pt-2025": 4,
       "/en/ledger/hab-ilc-mded01-a-total-total-pc-eu27_2020-2025": 2,
-      "/en/ledger/sobrecarga-do-custo-da-habitacao-2025": 3,
-      "/en/ledger/sobrecarga-do-custo-da-habitacao-2025-ue": 2,
+      "/en/ledger/hab-ilc-lvho07c-a-pc-total-pt-2025": 3,
+      "/en/ledger/hab-ilc-lvho07c-a-pc-total-eu27_2020-2025": 2,
       "/en/ledger/der-hab-proprietarios-pt-2025": 2,
       "/en/ledger/hab-ilc-lvho02-a-total-total-own-nl-pc-pt-2025": 2,
-      "/en/ledger/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025": 4,
+      "/en/ledger/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025": 6,
       "/en/ledger/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue": 2,
       "/en/ledger/hab-ilc-lvho07c-a-pc-rent-mkt-pt-2020": 2,
       "/en/ledger/hab-yth-demo-030-a-avg-t-pt-2025": 3,
@@ -242,19 +240,21 @@
       "/en/ledger/hab-prc-hicp-minr-m-rch-a-cp041-pt-2026-09": 2,
       "/en/ledger/hab-prc-hicp-minr-m-rch-a-cp041-eu27_2020-2026-09": 2,
       "/en/ledger/hab-ilc-lvho07c-a-pc-total-pt-2015": 2,
-      "/en/ledger/hab-ilc-lvho07c-a-pc-total-pt-2025": 2,
       "/en/ledger/hab-ilc-lvho02-a-total-total-rent-mkt-pc-pt-2025": 2,
       "/en/ledger/hab-yth-demo-030-a-avg-t-pt-2015": 2,
       "/en/ledger/der-hab-licencas-por-mil-pt-2025": 2,
       "/en/ledger/der-hab-licencas-por-mil-eu-2025": 2,
       "/en/ledger/hab-ine-vagos-total": 3,
       "/en/ledger/hab-ine-censos-0012517-0": 2,
-      "/en/ledger/hab-governo-arrendamento": 2,
+      "/en/ledger/hab-arrendamento-exposicao-vagos": 4,
+      "/en/ledger/hab-governo-arrendamento": 3,
       "/en/ledger/hab-imprensa-igai": 2,
+      "/en/ledger/hab-imprensa-renda-metade": 2,
       "/en/ledger/hab-imprensa-psp-ferido": 2,
       "/en/ledger/hab-be-despejos": 3,
       "/en/ledger/hab-governo-construir": 2,
       "/en/ledger/hab-prc-hpi-q-q-total-i15-q-pt-2026-q2": 2,
+      "/en/ledger/sobrecarga-do-custo-da-habitacao-2025": 2,
       "/en/ledger/hab-ps-vazias": 3,
       "/en/ledger/hab-imprensa-debate-custos": 2
     },
@@ -274,13 +274,13 @@
       "/livro-razao/hab-ine-renda-portugal": 2,
       "/livro-razao/hab-ine-renda-lisboa": 2,
       "/livro-razao/hab-ine-renda-porto": 2,
-      "/livro-razao/hab-ilc-mded01-a-total-total-pc-pt-2025": 3,
+      "/livro-razao/hab-ilc-mded01-a-total-total-pc-pt-2025": 4,
       "/livro-razao/hab-ilc-mded01-a-total-total-pc-eu27_2020-2025": 2,
-      "/livro-razao/sobrecarga-do-custo-da-habitacao-2025": 3,
-      "/livro-razao/sobrecarga-do-custo-da-habitacao-2025-ue": 2,
+      "/livro-razao/hab-ilc-lvho07c-a-pc-total-pt-2025": 3,
+      "/livro-razao/hab-ilc-lvho07c-a-pc-total-eu27_2020-2025": 2,
       "/livro-razao/der-hab-proprietarios-pt-2025": 2,
       "/livro-razao/hab-ilc-lvho02-a-total-total-own-nl-pc-pt-2025": 2,
-      "/livro-razao/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025": 4,
+      "/livro-razao/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025": 6,
       "/livro-razao/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue": 2,
       "/livro-razao/hab-ilc-lvho07c-a-pc-rent-mkt-pt-2020": 2,
       "/livro-razao/hab-yth-demo-030-a-avg-t-pt-2025": 3,
@@ -298,19 +298,21 @@
       "/livro-razao/hab-prc-hicp-minr-m-rch-a-cp041-pt-2026-09": 2,
       "/livro-razao/hab-prc-hicp-minr-m-rch-a-cp041-eu27_2020-2026-09": 2,
       "/livro-razao/hab-ilc-lvho07c-a-pc-total-pt-2015": 2,
-      "/livro-razao/hab-ilc-lvho07c-a-pc-total-pt-2025": 2,
       "/livro-razao/hab-ilc-lvho02-a-total-total-rent-mkt-pc-pt-2025": 2,
       "/livro-razao/hab-yth-demo-030-a-avg-t-pt-2015": 2,
       "/livro-razao/der-hab-licencas-por-mil-pt-2025": 2,
       "/livro-razao/der-hab-licencas-por-mil-eu-2025": 2,
       "/livro-razao/hab-ine-vagos-total": 3,
       "/livro-razao/hab-ine-censos-0012517-0": 2,
-      "/livro-razao/hab-governo-arrendamento": 2,
+      "/livro-razao/hab-arrendamento-exposicao-vagos": 4,
+      "/livro-razao/hab-governo-arrendamento": 3,
       "/livro-razao/hab-imprensa-igai": 2,
+      "/livro-razao/hab-imprensa-renda-metade": 2,
       "/livro-razao/hab-imprensa-psp-ferido": 2,
       "/livro-razao/hab-be-despejos": 3,
       "/livro-razao/hab-governo-construir": 2,
       "/livro-razao/hab-prc-hpi-q-q-total-i15-q-pt-2026-q2": 2,
+      "/livro-razao/sobrecarga-do-custo-da-habitacao-2025": 2,
       "/livro-razao/hab-ps-vazias": 3,
       "/livro-razao/hab-imprensa-debate-custos": 2
     },
@@ -354,7 +356,6 @@
         "/en/ledger/precos-da-habitacao-2025": 2,
         "/en/ledger/precos-da-habitacao-2025-ue": 2,
         "/en/ledger/ipc-sem-habitacao-variacao-media-12-meses": 2,
-        "/en/ledger/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025": 2,
         "/en/housing": 2,
         "/en/ledger/remuneracao-bruta-mensal-media-periodo-anterior": 2,
         "/en/ledger/remuneracao-bruta-mensal-media": 2,
@@ -392,11 +393,11 @@
         "/en/regions/alentejo": 3
       },
       "depois": {
-        "/en/ledger/correcoes-publicadas": 5,
+        "/en/ledger/correcoes-publicadas": 7,
+        "/en/corrections": 13,
+        "/en/ledger/edicoes-publicadas": 3,
+        "/en/ledger/estudos-publicados": 3,
         "/en": 26,
-        "/en/corrections": 9,
-        "/en/ledger/edicoes-publicadas": 2,
-        "/en/ledger/estudos-publicados": 2,
         "/en/ledger/custo-unitario-do-trabalho-2024": 2,
         "/en/themes": 2,
         "/en/ledger/despesa-em-id-2024-ue": 2,
@@ -449,7 +450,6 @@
         "/livro-razao/precos-da-habitacao-2025": 2,
         "/livro-razao/precos-da-habitacao-2025-ue": 2,
         "/livro-razao/ipc-sem-habitacao-variacao-media-12-meses": 2,
-        "/livro-razao/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025": 2,
         "/habitacao": 2,
         "/livro-razao/remuneracao-bruta-mensal-media-periodo-anterior": 2,
         "/livro-razao/remuneracao-bruta-mensal-media": 2,
@@ -471,7 +471,7 @@
       "depois": {
         "/livro-razao": 4,
         "/livro-razao/concelhos": 2,
-        "/a-verificar": 10,
+        "/a-verificar": 3,
         "/o-que-se-discute": 2
       }
     },
@@ -485,7 +485,7 @@
       "depois": {
         "/en/ledger": 4,
         "/en/ledger/municipalities": 2,
-        "/en/to-verify": 10,
+        "/en/to-verify": 3,
         "/en/under-discussion": 2
       }
     },
@@ -577,11 +577,11 @@
         "/regioes/alentejo": 3
       },
       "depois": {
-        "/livro-razao/correcoes-publicadas": 5,
+        "/livro-razao/correcoes-publicadas": 7,
+        "/correcoes": 13,
+        "/livro-razao/edicoes-publicadas": 3,
+        "/livro-razao/estudos-publicados": 3,
         "/": 26,
-        "/correcoes": 9,
-        "/livro-razao/edicoes-publicadas": 2,
-        "/livro-razao/estudos-publicados": 2,
         "/livro-razao/custo-unitario-do-trabalho-2024": 2,
         "/temas": 2,
         "/livro-razao/despesa-em-id-2024-ue": 2,
@@ -679,6 +679,316 @@
       "hab-oe-legenda-invariante",
       "hab-tipsho60-a-ptir-lt-avg-ro-2024"
     ],
-    "criterio": "Lista exata dos recibos exportados; contagem de páginas e multiplicidades por medir no dist da correção."
+    "criterio": "Lista exata dos recibos exportados; régua e contagem independente concordam. O acréscimo de páginas corresponde exclusivamente aos novos recibos nas duas edições. Destinos e multiplicidades conferidos individualmente.",
+    "construcao": "7cc3543914edd0e9172f6409b12298e02bdd2a64",
+    "paginas_antes": 3152,
+    "paginas_depois": 3170,
+    "delta_paginas": 18,
+    "paginas_com_multiplicidade_alterada": {
+      "/": {
+        "razao": "A leitura corrigida deixa uma única porta para o recibo de sobrecarga dos inquilinos; essa porta deixa de ser repetida.",
+        "destinos": {
+          "/livro-razao/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025": {
+            "antes": 2,
+            "depois": null
+          }
+        }
+      },
+      "/areas/infraestruturas-e-habitacao": {
+        "razao": "As datas resolvidas retiram as portas de verificação na área.",
+        "destinos": {
+          "/a-verificar": {
+            "antes": 7,
+            "depois": null
+          }
+        }
+      },
+      "/correcoes": {
+        "razao": "O histórico inclui os novos eventos de correção dos contadores de estudos e edições publicados; as portas para esses recibos e para as correções repetem-se nos eventos.",
+        "destinos": {
+          "/correcoes": {
+            "antes": 9,
+            "depois": 13
+          },
+          "/livro-razao/correcoes-publicadas": {
+            "antes": 5,
+            "depois": 7
+          },
+          "/livro-razao/edicoes-publicadas": {
+            "antes": 2,
+            "depois": 3
+          },
+          "/livro-razao/estudos-publicados": {
+            "antes": 2,
+            "depois": 3
+          }
+        }
+      },
+      "/en": {
+        "razao": "A leitura corrigida deixa uma única porta para o recibo de sobrecarga dos inquilinos; essa porta deixa de ser repetida.",
+        "destinos": {
+          "/en/ledger/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025": {
+            "antes": 2,
+            "depois": null
+          }
+        }
+      },
+      "/en/areas/infraestruturas-e-habitacao": {
+        "razao": "As datas resolvidas retiram as portas de verificação na área.",
+        "destinos": {
+          "/en/to-verify": {
+            "antes": 7,
+            "depois": null
+          }
+        }
+      },
+      "/en/corrections": {
+        "razao": "O histórico inclui os novos eventos de correção dos contadores de estudos e edições publicados; as portas para esses recibos e para as correções repetem-se nos eventos.",
+        "destinos": {
+          "/en/corrections": {
+            "antes": 9,
+            "depois": 13
+          },
+          "/en/ledger/correcoes-publicadas": {
+            "antes": 5,
+            "depois": 7
+          },
+          "/en/ledger/edicoes-publicadas": {
+            "antes": 2,
+            "depois": 3
+          },
+          "/en/ledger/estudos-publicados": {
+            "antes": 2,
+            "depois": 3
+          }
+        }
+      },
+      "/en/ledger": {
+        "razao": "As datas de referência resolvidas retiram as portas para verificação dos recibos no índice do livro-razão.",
+        "destinos": {
+          "/en/to-verify": {
+            "antes": 10,
+            "depois": 3
+          }
+        }
+      },
+      "/en/ledger/hab-arrendamento-exposicao": {
+        "razao": "A data de referência foi resolvida. Nos calendários, a edição da página continua ausente e conserva as suas duas portas de verificação; nos outros recibos, a edição também foi resolvida.",
+        "destinos": {
+          "/en/to-verify": {
+            "antes": 3,
+            "depois": null
+          }
+        }
+      },
+      "/en/ledger/hab-il-proposta": {
+        "razao": "A data de referência foi resolvida. Nos calendários, a edição da página continua ausente e conserva as suas duas portas de verificação; nos outros recibos, a edição também foi resolvida.",
+        "destinos": {
+          "/en/to-verify": {
+            "antes": 3,
+            "depois": null
+          }
+        }
+      },
+      "/en/ledger/hab-imprensa-manif-rtp": {
+        "razao": "A data de referência foi resolvida. Nos calendários, a edição da página continua ausente e conserva as suas duas portas de verificação; nos outros recibos, a edição também foi resolvida.",
+        "destinos": {
+          "/en/to-verify": {
+            "antes": 3,
+            "depois": null
+          }
+        }
+      },
+      "/en/ledger/hab-imprensa-tendas": {
+        "razao": "A data de referência foi resolvida. Nos calendários, a edição da página continua ausente e conserva as suas duas portas de verificação; nos outros recibos, a edição também foi resolvida.",
+        "destinos": {
+          "/en/to-verify": {
+            "antes": 3,
+            "depois": null
+          }
+        }
+      },
+      "/en/ledger/hab-ine-calendario-juro": {
+        "razao": "A data de referência foi resolvida. Nos calendários, a edição da página continua ausente e conserva as suas duas portas de verificação; nos outros recibos, a edição também foi resolvida.",
+        "destinos": {
+          "/en/to-verify": {
+            "antes": 3,
+            "depois": 2
+          }
+        }
+      },
+      "/en/ledger/hab-ine-calendario-precos-locais": {
+        "razao": "A data de referência foi resolvida. Nos calendários, a edição da página continua ausente e conserva as suas duas portas de verificação; nos outros recibos, a edição também foi resolvida.",
+        "destinos": {
+          "/en/to-verify": {
+            "antes": 3,
+            "depois": 2
+          }
+        }
+      },
+      "/en/ledger/hab-plataforma-reivindicacoes": {
+        "razao": "A data de referência foi resolvida. Nos calendários, a edição da página continua ausente e conserva as suas duas portas de verificação; nos outros recibos, a edição também foi resolvida.",
+        "destinos": {
+          "/en/to-verify": {
+            "antes": 3,
+            "depois": null
+          }
+        }
+      },
+      "/en/studies/a-casa-em-portugal-e-na-europa": {
+        "razao": "As citações do texto mandatado incluem a estimativa do Governo, a renda segundo a Euronews e o total por regime da União; as multiplicidades seguem as fontes de cada parágrafo corrigido.",
+        "destinos": {
+          "/en/ledger/hab-arrendamento-exposicao-vagos": {
+            "antes": null,
+            "depois": 4
+          },
+          "/en/ledger/hab-governo-arrendamento": {
+            "antes": 2,
+            "depois": 3
+          },
+          "/en/ledger/hab-ilc-lvho07c-a-pc-total-eu27_2020-2025": {
+            "antes": null,
+            "depois": 2
+          },
+          "/en/ledger/hab-ilc-lvho07c-a-pc-total-pt-2025": {
+            "antes": 2,
+            "depois": 3
+          },
+          "/en/ledger/hab-ilc-mded01-a-total-total-pc-pt-2025": {
+            "antes": 3,
+            "depois": 4
+          },
+          "/en/ledger/hab-imprensa-renda-metade": {
+            "antes": null,
+            "depois": 2
+          },
+          "/en/ledger/sobrecarga-do-custo-da-habitacao-2025": {
+            "antes": 3,
+            "depois": 2
+          },
+          "/en/ledger/sobrecarga-do-custo-da-habitacao-2025-ue": {
+            "antes": 2,
+            "depois": null
+          },
+          "/en/ledger/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025": {
+            "antes": 4,
+            "depois": 6
+          }
+        }
+      },
+      "/estudos/a-casa-em-portugal-e-na-europa": {
+        "razao": "As citações do texto mandatado incluem a estimativa do Governo, a renda segundo a Euronews e o total por regime da União; as multiplicidades seguem as fontes de cada parágrafo corrigido.",
+        "destinos": {
+          "/livro-razao/hab-arrendamento-exposicao-vagos": {
+            "antes": null,
+            "depois": 4
+          },
+          "/livro-razao/hab-governo-arrendamento": {
+            "antes": 2,
+            "depois": 3
+          },
+          "/livro-razao/hab-ilc-lvho07c-a-pc-total-eu27_2020-2025": {
+            "antes": null,
+            "depois": 2
+          },
+          "/livro-razao/hab-ilc-lvho07c-a-pc-total-pt-2025": {
+            "antes": 2,
+            "depois": 3
+          },
+          "/livro-razao/hab-ilc-mded01-a-total-total-pc-pt-2025": {
+            "antes": 3,
+            "depois": 4
+          },
+          "/livro-razao/hab-imprensa-renda-metade": {
+            "antes": null,
+            "depois": 2
+          },
+          "/livro-razao/sobrecarga-do-custo-da-habitacao-2025": {
+            "antes": 3,
+            "depois": 2
+          },
+          "/livro-razao/sobrecarga-do-custo-da-habitacao-2025-ue": {
+            "antes": 2,
+            "depois": null
+          },
+          "/livro-razao/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025": {
+            "antes": 4,
+            "depois": 6
+          }
+        }
+      },
+      "/livro-razao": {
+        "razao": "As datas de referência resolvidas retiram as portas para verificação dos recibos no índice do livro-razão.",
+        "destinos": {
+          "/a-verificar": {
+            "antes": 10,
+            "depois": 3
+          }
+        }
+      },
+      "/livro-razao/hab-arrendamento-exposicao": {
+        "razao": "A data de referência foi resolvida. Nos calendários, a edição da página continua ausente e conserva as suas duas portas de verificação; nos outros recibos, a edição também foi resolvida.",
+        "destinos": {
+          "/a-verificar": {
+            "antes": 3,
+            "depois": null
+          }
+        }
+      },
+      "/livro-razao/hab-il-proposta": {
+        "razao": "A data de referência foi resolvida. Nos calendários, a edição da página continua ausente e conserva as suas duas portas de verificação; nos outros recibos, a edição também foi resolvida.",
+        "destinos": {
+          "/a-verificar": {
+            "antes": 3,
+            "depois": null
+          }
+        }
+      },
+      "/livro-razao/hab-imprensa-manif-rtp": {
+        "razao": "A data de referência foi resolvida. Nos calendários, a edição da página continua ausente e conserva as suas duas portas de verificação; nos outros recibos, a edição também foi resolvida.",
+        "destinos": {
+          "/a-verificar": {
+            "antes": 3,
+            "depois": null
+          }
+        }
+      },
+      "/livro-razao/hab-imprensa-tendas": {
+        "razao": "A data de referência foi resolvida. Nos calendários, a edição da página continua ausente e conserva as suas duas portas de verificação; nos outros recibos, a edição também foi resolvida.",
+        "destinos": {
+          "/a-verificar": {
+            "antes": 3,
+            "depois": null
+          }
+        }
+      },
+      "/livro-razao/hab-ine-calendario-juro": {
+        "razao": "A data de referência foi resolvida. Nos calendários, a edição da página continua ausente e conserva as suas duas portas de verificação; nos outros recibos, a edição também foi resolvida.",
+        "destinos": {
+          "/a-verificar": {
+            "antes": 3,
+            "depois": 2
+          }
+        }
+      },
+      "/livro-razao/hab-ine-calendario-precos-locais": {
+        "razao": "A data de referência foi resolvida. Nos calendários, a edição da página continua ausente e conserva as suas duas portas de verificação; nos outros recibos, a edição também foi resolvida.",
+        "destinos": {
+          "/a-verificar": {
+            "antes": 3,
+            "depois": 2
+          }
+        }
+      },
+      "/livro-razao/hab-plataforma-reivindicacoes": {
+        "razao": "A data de referência foi resolvida. Nos calendários, a edição da página continua ausente e conserva as suas duas portas de verificação; nos outros recibos, a edição também foi resolvida.",
+        "destinos": {
+          "/a-verificar": {
+            "antes": 3,
+            "depois": null
+          }
+        }
+      }
+    }
   }
 }

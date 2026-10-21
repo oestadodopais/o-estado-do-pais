@@ -135,6 +135,7 @@ import {
 import { WORKS, linguaDoTitulo } from '../src/data/studies.mjs';
 import { matchPath } from '../src/lib/routes.mjs';
 import { conferirLinguaDasOrigens } from './lingua-das-origens.mjs';
+import { conferirRotulosDaLingua } from './rotulos-da-lingua.mjs';
 import { feitioDeLei } from '../src/i18n/nomes-de-lei.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -249,31 +250,8 @@ for (const t of Object.keys(LINGUA_DOS_TITULOS)) {
 /* ==================================================================== L2b · */
 /* os rótulos da fonte do livro-razão, contra a declaração de língua          */
 
-const rotulosDoLivro = new Map();
-for (const c of claims) {
-  const n = c.name;
-  if (n === null || n === undefined || String(n) === '') continue;
-  const r = String(n);
-  rotulosDoLivro.set(r, (rotulosDoLivro.get(r) ?? 0) + 1);
-}
-for (const [r] of rotulosDoLivro) {
-  if (!Object.prototype.hasOwnProperty.call(LINGUA_DOS_ROTULOS, r)) {
-    erros.push(
-      `o rótulo da fonte «${r.slice(0, 90)}» (${rotulosDoLivro.get(r)} linha(s)) não tem língua ` +
-        `declarada em src/i18n/lingua-dos-titulos.mjs.\n` +
-        `      Um rótulo é um nome: não se traduz, e diz em que língua está. «Total» é a palavra ` +
-        `que o IEFP imprime na folha portuguesa dele, e adivinhá-la pelo aspecto dava inglês.`,
-    );
-  }
-}
-for (const r of Object.keys(LINGUA_DOS_ROTULOS)) {
-  if (!rotulosDoLivro.has(r)) {
-    erros.push(
-      `a declaração de língua nomeia o rótulo «${r.slice(0, 90)}», que nenhuma linha do ` +
-        `livro-razão traz. A tabela declara o que existe.`,
-    );
-  }
-}
+const {rotulos:rotulosDoLivro,erros:errosDosRotulos}=conferirRotulosDaLingua(claims,LINGUA_DOS_ROTULOS);
+erros.push(...errosDosRotulos);
 
 /* ==================================================================== L2c · */
 /* os nomes de organismo do livro-razão, contra a declaração de língua        */

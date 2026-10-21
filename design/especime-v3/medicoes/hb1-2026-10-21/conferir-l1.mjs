@@ -12,7 +12,9 @@ for(const [p,v] of Object.entries(contrato.paginas_anteriores_com_multiplicidade
 for(const id of contrato.ids_novos)for(const l of ['pt','en']){
  const linha=linhas.get(id);assert(linha);const p=(l==='pt'?'/livro-razao/':'/en/ledger/')+id;
  assert(!base[p]);const d={[(l==='pt'?'/metodo':'/en/method')]:2};
- if(linha.reference_date==='[a verificar]')d[l==='pt'?'/a-verificar':'/en/to-verify']=3;
+ // A referência aparece na ficha; a edição aparece na ficha e na abertura do recibo.
+ const verificar=Number((linha.period??linha.reference_date)==='[a verificar]')+2*Number(linha.document?.edition==='[a verificar]');
+ if(verificar>1)d[l==='pt'?'/a-verificar':'/en/to-verify']=verificar;
  esperados[p]=d;
 }
 for(const [p,d] of Object.entries(contrato.outras_paginas)){assert(!base[p]);esperados[p]=d;}
@@ -30,6 +32,7 @@ planta('porta adicional num recibo novo',c=>c.repetidos_por_pagina[novo]['/metod
 planta('página fora da integração',c=>{c.repetidos_por_pagina['/planta-hb1']={'/metodo':2};c.paginas++;c.regua++;});
 planta('recibo da integração em falta',c=>{delete c.repetidos_por_pagina[novo];c.paginas--;c.regua--;});
 planta('contagem que diverge da régua',c=>c.regua++);
+planta('porta de edição ausente omitida no calendário',c=>delete c.repetidos_por_pagina['/livro-razao/hab-ine-calendario-juro']['/a-verificar']);
 const resultado={construcao:JSON.parse(fs.readFileSync('dist/version.json')).commit,codigo:0,contagens:{estudos:atual.paginas,anteriores:Object.keys(base).length,novas:Object.keys(esperados).length-Object.keys(base).length,recibos_novos:contrato.ids_novos.length*2,outras_paginas:Object.keys(contrato.outras_paginas).length},contrato:'l1-contrato.json',medicao:'l1-destinos.json',plantas,limite:'A fotografia de partida antecede HB1. As páginas antigas cujas multiplicidades diferem estão enumeradas. A lista de recibos corresponde exatamente ao cruzamento HB1; as portas de datas por confirmar são derivadas dos campos atuais das linhas. A regra de contagem não mudou.'};
 fs.writeFileSync(pasta+'/l1-hb1.json',JSON.stringify(resultado,null,2)+'\n');
 if(process.argv.includes('--teto'))fs.writeFileSync('scripts/lugar-tetos-b1.json',JSON.stringify({l1_paginas:atual.paginas,medicao:pasta+'/l1-hb1.json'},null,2)+'\n');

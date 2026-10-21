@@ -1,6 +1,6 @@
 {
-  "paginas": 3152,
-  "regua": 3152,
+  "paginas": 3170,
+  "regua": 3170,
   "repetidos_por_pagina": {
     "/agenda": {
       "/agenda": 4,
@@ -13,15 +13,14 @@
       "/livro-razao/taxa-de-emprego-2025": 2
     },
     "/areas/infraestruturas-e-habitacao": {
-      "/estudos/a-casa-em-portugal-e-na-europa": 4,
-      "/a-verificar": 7
+      "/estudos/a-casa-em-portugal-e-na-europa": 4
     },
     "/correcoes": {
-      "/livro-razao/correcoes-publicadas": 5,
+      "/livro-razao/correcoes-publicadas": 7,
       "/": 26,
-      "/correcoes": 9,
-      "/livro-razao/edicoes-publicadas": 2,
-      "/livro-razao/estudos-publicados": 2,
+      "/correcoes": 13,
+      "/livro-razao/edicoes-publicadas": 3,
+      "/livro-razao/estudos-publicados": 3,
       "/livro-razao/custo-unitario-do-trabalho-2024": 2,
       "/temas": 2,
       "/livro-razao/despesa-em-id-2024-ue": 2,
@@ -422,15 +421,14 @@
       "/en/ledger/taxa-de-emprego-2025": 2
     },
     "/en/areas/infraestruturas-e-habitacao": {
-      "/en/studies/a-casa-em-portugal-e-na-europa": 4,
-      "/en/to-verify": 7
+      "/en/studies/a-casa-em-portugal-e-na-europa": 4
     },
     "/en/corrections": {
-      "/en/ledger/correcoes-publicadas": 5,
+      "/en/ledger/correcoes-publicadas": 7,
       "/en": 26,
-      "/en/corrections": 9,
-      "/en/ledger/edicoes-publicadas": 2,
-      "/en/ledger/estudos-publicados": 2,
+      "/en/corrections": 13,
+      "/en/ledger/edicoes-publicadas": 3,
+      "/en/ledger/estudos-publicados": 3,
       "/en/ledger/custo-unitario-do-trabalho-2024": 2,
       "/en/themes": 2,
       "/en/ledger/despesa-em-id-2024-ue": 2,
@@ -884,7 +882,6 @@
       "/en/ledger/precos-da-habitacao-2025": 2,
       "/en/ledger/precos-da-habitacao-2025-ue": 2,
       "/en/ledger/ipc-sem-habitacao-variacao-media-12-meses": 2,
-      "/en/ledger/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025": 2,
       "/en/housing": 2,
       "/en/ledger/remuneracao-bruta-mensal-media-periodo-anterior": 2,
       "/en/ledger/remuneracao-bruta-mensal-media": 2,
@@ -2204,8 +2201,7 @@
       "/en/method": 2
     },
     "/en/ledger/hab-arrendamento-exposicao": {
-      "/en/method": 2,
-      "/en/to-verify": 3
+      "/en/method": 2
     },
     "/en/ledger/hab-be-despejos": {
       "/en/method": 2
@@ -2253,8 +2249,7 @@
       "/en/method": 2
     },
     "/en/ledger/hab-il-proposta": {
-      "/en/method": 2,
-      "/en/to-verify": 3
+      "/en/method": 2
     },
     "/en/ledger/hab-ilc-lvho02-a-total-total-own-l-pc-eu27_2020-2025": {
       "/en/method": 2
@@ -2473,8 +2468,7 @@
       "/en/method": 2
     },
     "/en/ledger/hab-imprensa-manif-rtp": {
-      "/en/method": 2,
-      "/en/to-verify": 3
+      "/en/method": 2
     },
     "/en/ledger/hab-imprensa-pm-15": {
       "/en/method": 2
@@ -2489,16 +2483,15 @@
       "/en/method": 2
     },
     "/en/ledger/hab-imprensa-tendas": {
-      "/en/method": 2,
-      "/en/to-verify": 3
+      "/en/method": 2
     },
     "/en/ledger/hab-ine-calendario-juro": {
       "/en/method": 2,
-      "/en/to-verify": 3
+      "/en/to-verify": 2
     },
     "/en/ledger/hab-ine-calendario-precos-locais": {
       "/en/method": 2,
-      "/en/to-verify": 3
+      "/en/to-verify": 2
     },
     "/en/ledger/hab-ine-censos-0012501-40": {
       "/en/method": 2
@@ -2579,8 +2572,7 @@
       "/en/method": 2
     },
     "/en/ledger/hab-plataforma-reivindicacoes": {
-      "/en/method": 2,
-      "/en/to-verify": 3
+      "/en/method": 2
     },
     "/en/ledger/hab-prc-hicp-ainr-a-rch-a-avg-cp041-eu27_2020-2025": {
       "/en/method": 2
@@ -2741,7 +2733,7 @@
     "/en/ledger": {
       "/en/ledger": 4,
       "/en/ledger/municipalities": 2,
-      "/en/to-verify": 10,
+      "/en/to-verify": 3,
       "/en/under-discussion": 2
     },
     "/en/ledger/indice-de-percepcao-da-corrupcao-2024": {
@@ -6828,13 +6820,12 @@
       "/en/ledger/hab-ine-renda-portugal": 2,
       "/en/ledger/hab-ine-renda-lisboa": 2,
       "/en/ledger/hab-ine-renda-porto": 2,
-      "/en/ledger/hab-ilc-mded01-a-total-total-pc-pt-2025": 3,
+      "/en/ledger/hab-ilc-mded01-a-total-total-pc-pt-2025": 4,
       "/en/ledger/hab-ilc-mded01-a-total-total-pc-eu27_2020-2025": 2,
-      "/en/ledger/sobrecarga-do-custo-da-habitacao-2025": 3,
-      "/en/ledger/sobrecarga-do-custo-da-habitacao-2025-ue": 2,
+      "/en/ledger/sobrecarga-do-custo-da-habitacao-2025": 2,
       "/en/ledger/der-hab-proprietarios-pt-2025": 2,
       "/en/ledger/hab-ilc-lvho02-a-total-total-own-nl-pc-pt-2025": 2,
-      "/en/ledger/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025": 4,
+      "/en/ledger/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025": 6,
       "/en/ledger/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue": 2,
       "/en/ledger/hab-ilc-lvho07c-a-pc-rent-mkt-pt-2020": 2,
       "/en/ledger/hab-yth-demo-030-a-avg-t-pt-2025": 3,
@@ -6852,21 +6843,24 @@
       "/en/ledger/hab-prc-hicp-minr-m-rch-a-cp041-pt-2026-09": 2,
       "/en/ledger/hab-prc-hicp-minr-m-rch-a-cp041-eu27_2020-2026-09": 2,
       "/en/ledger/hab-ilc-lvho07c-a-pc-total-pt-2015": 2,
-      "/en/ledger/hab-ilc-lvho07c-a-pc-total-pt-2025": 2,
+      "/en/ledger/hab-ilc-lvho07c-a-pc-total-pt-2025": 3,
       "/en/ledger/hab-ilc-lvho02-a-total-total-rent-mkt-pc-pt-2025": 2,
       "/en/ledger/hab-yth-demo-030-a-avg-t-pt-2015": 2,
       "/en/ledger/der-hab-licencas-por-mil-pt-2025": 2,
       "/en/ledger/der-hab-licencas-por-mil-eu-2025": 2,
       "/en/ledger/hab-ine-vagos-total": 3,
       "/en/ledger/hab-ine-censos-0012517-0": 2,
-      "/en/ledger/hab-governo-arrendamento": 2,
+      "/en/ledger/hab-governo-arrendamento": 3,
       "/en/ledger/hab-imprensa-igai": 2,
       "/en/ledger/hab-imprensa-psp-ferido": 2,
       "/en/ledger/hab-be-despejos": 3,
       "/en/ledger/hab-governo-construir": 2,
       "/en/ledger/hab-prc-hpi-q-q-total-i15-q-pt-2026-q2": 2,
       "/en/ledger/hab-ps-vazias": 3,
-      "/en/ledger/hab-imprensa-debate-custos": 2
+      "/en/ledger/hab-imprensa-debate-custos": 2,
+      "/en/ledger/hab-arrendamento-exposicao-vagos": 4,
+      "/en/ledger/hab-ilc-lvho07c-a-pc-total-eu27_2020-2025": 2,
+      "/en/ledger/hab-imprensa-renda-metade": 2
     },
     "/en/studies/agua-nao-faturada/document": {
       "/en/studies/agua-nao-faturada": 2
@@ -6975,13 +6969,12 @@
       "/livro-razao/hab-ine-renda-portugal": 2,
       "/livro-razao/hab-ine-renda-lisboa": 2,
       "/livro-razao/hab-ine-renda-porto": 2,
-      "/livro-razao/hab-ilc-mded01-a-total-total-pc-pt-2025": 3,
+      "/livro-razao/hab-ilc-mded01-a-total-total-pc-pt-2025": 4,
       "/livro-razao/hab-ilc-mded01-a-total-total-pc-eu27_2020-2025": 2,
-      "/livro-razao/sobrecarga-do-custo-da-habitacao-2025": 3,
-      "/livro-razao/sobrecarga-do-custo-da-habitacao-2025-ue": 2,
+      "/livro-razao/sobrecarga-do-custo-da-habitacao-2025": 2,
       "/livro-razao/der-hab-proprietarios-pt-2025": 2,
       "/livro-razao/hab-ilc-lvho02-a-total-total-own-nl-pc-pt-2025": 2,
-      "/livro-razao/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025": 4,
+      "/livro-razao/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025": 6,
       "/livro-razao/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue": 2,
       "/livro-razao/hab-ilc-lvho07c-a-pc-rent-mkt-pt-2020": 2,
       "/livro-razao/hab-yth-demo-030-a-avg-t-pt-2025": 3,
@@ -6999,21 +6992,24 @@
       "/livro-razao/hab-prc-hicp-minr-m-rch-a-cp041-pt-2026-09": 2,
       "/livro-razao/hab-prc-hicp-minr-m-rch-a-cp041-eu27_2020-2026-09": 2,
       "/livro-razao/hab-ilc-lvho07c-a-pc-total-pt-2015": 2,
-      "/livro-razao/hab-ilc-lvho07c-a-pc-total-pt-2025": 2,
+      "/livro-razao/hab-ilc-lvho07c-a-pc-total-pt-2025": 3,
       "/livro-razao/hab-ilc-lvho02-a-total-total-rent-mkt-pc-pt-2025": 2,
       "/livro-razao/hab-yth-demo-030-a-avg-t-pt-2015": 2,
       "/livro-razao/der-hab-licencas-por-mil-pt-2025": 2,
       "/livro-razao/der-hab-licencas-por-mil-eu-2025": 2,
       "/livro-razao/hab-ine-vagos-total": 3,
       "/livro-razao/hab-ine-censos-0012517-0": 2,
-      "/livro-razao/hab-governo-arrendamento": 2,
+      "/livro-razao/hab-governo-arrendamento": 3,
       "/livro-razao/hab-imprensa-igai": 2,
       "/livro-razao/hab-imprensa-psp-ferido": 2,
       "/livro-razao/hab-be-despejos": 3,
       "/livro-razao/hab-governo-construir": 2,
       "/livro-razao/hab-prc-hpi-q-q-total-i15-q-pt-2026-q2": 2,
       "/livro-razao/hab-ps-vazias": 3,
-      "/livro-razao/hab-imprensa-debate-custos": 2
+      "/livro-razao/hab-imprensa-debate-custos": 2,
+      "/livro-razao/hab-arrendamento-exposicao-vagos": 4,
+      "/livro-razao/hab-ilc-lvho07c-a-pc-total-eu27_2020-2025": 2,
+      "/livro-razao/hab-imprensa-renda-metade": 2
     },
     "/estudos/agua-nao-faturada/documento": {
       "/estudos/agua-nao-faturada": 2
@@ -7096,7 +7092,6 @@
       "/livro-razao/precos-da-habitacao-2025": 2,
       "/livro-razao/precos-da-habitacao-2025-ue": 2,
       "/livro-razao/ipc-sem-habitacao-variacao-media-12-meses": 2,
-      "/livro-razao/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025": 2,
       "/habitacao": 2,
       "/livro-razao/remuneracao-bruta-mensal-media-periodo-anterior": 2,
       "/livro-razao/remuneracao-bruta-mensal-media": 2,
@@ -8727,8 +8722,7 @@
       "/metodo": 2
     },
     "/livro-razao/hab-arrendamento-exposicao": {
-      "/metodo": 2,
-      "/a-verificar": 3
+      "/metodo": 2
     },
     "/livro-razao/hab-be-despejos": {
       "/metodo": 2
@@ -8776,8 +8770,7 @@
       "/metodo": 2
     },
     "/livro-razao/hab-il-proposta": {
-      "/metodo": 2,
-      "/a-verificar": 3
+      "/metodo": 2
     },
     "/livro-razao/hab-ilc-lvho02-a-total-total-own-l-pc-eu27_2020-2025": {
       "/metodo": 2
@@ -8996,8 +8989,7 @@
       "/metodo": 2
     },
     "/livro-razao/hab-imprensa-manif-rtp": {
-      "/metodo": 2,
-      "/a-verificar": 3
+      "/metodo": 2
     },
     "/livro-razao/hab-imprensa-pm-15": {
       "/metodo": 2
@@ -9012,16 +9004,15 @@
       "/metodo": 2
     },
     "/livro-razao/hab-imprensa-tendas": {
-      "/metodo": 2,
-      "/a-verificar": 3
+      "/metodo": 2
     },
     "/livro-razao/hab-ine-calendario-juro": {
       "/metodo": 2,
-      "/a-verificar": 3
+      "/a-verificar": 2
     },
     "/livro-razao/hab-ine-calendario-precos-locais": {
       "/metodo": 2,
-      "/a-verificar": 3
+      "/a-verificar": 2
     },
     "/livro-razao/hab-ine-censos-0012501-40": {
       "/metodo": 2
@@ -9102,8 +9093,7 @@
       "/metodo": 2
     },
     "/livro-razao/hab-plataforma-reivindicacoes": {
-      "/metodo": 2,
-      "/a-verificar": 3
+      "/metodo": 2
     },
     "/livro-razao/hab-prc-hicp-ainr-a-rch-a-avg-cp041-eu27_2020-2025": {
       "/metodo": 2
@@ -9264,7 +9254,7 @@
     "/livro-razao": {
       "/livro-razao": 4,
       "/livro-razao/concelhos": 2,
-      "/a-verificar": 10,
+      "/a-verificar": 3,
       "/o-que-se-discute": 2
     },
     "/livro-razao/indice-de-percepcao-da-corrupcao-2024": {
@@ -13116,6 +13106,60 @@
       "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:Unemployment_rate": 2,
       "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsun20?format=JSON&lang=EN&geo=PT&age=Y15-74": 2,
       "/emprego": 2
+    },
+    "/en/ledger/der-hab-preco-rendimento-acima-2015-eu-2024": {
+      "/en/method": 2
+    },
+    "/en/ledger/der-hab-preco-rendimento-acima-2015-pt-2024": {
+      "/en/method": 2
+    },
+    "/en/ledger/der-hab-preco-rendimento-lt-eu-2024": {
+      "/en/method": 2
+    },
+    "/en/ledger/der-hab-preco-rendimento-lt-pt-2024": {
+      "/en/method": 2
+    },
+    "/en/ledger/hab-arrendamento-exposicao-vagos": {
+      "/en/method": 2
+    },
+    "/en/ledger/hab-eurostat-privacao-severa-definicao": {
+      "/en/method": 2
+    },
+    "/en/ledger/hab-ilc-lvho07c-a-pc-total-eu27_2020-2025": {
+      "/en/method": 2
+    },
+    "/en/ledger/hab-oe-legenda-invariante": {
+      "/en/method": 2
+    },
+    "/en/ledger/hab-tipsho60-a-ptir-lt-avg-ro-2024": {
+      "/en/method": 2
+    },
+    "/livro-razao/der-hab-preco-rendimento-acima-2015-eu-2024": {
+      "/metodo": 2
+    },
+    "/livro-razao/der-hab-preco-rendimento-acima-2015-pt-2024": {
+      "/metodo": 2
+    },
+    "/livro-razao/der-hab-preco-rendimento-lt-eu-2024": {
+      "/metodo": 2
+    },
+    "/livro-razao/der-hab-preco-rendimento-lt-pt-2024": {
+      "/metodo": 2
+    },
+    "/livro-razao/hab-arrendamento-exposicao-vagos": {
+      "/metodo": 2
+    },
+    "/livro-razao/hab-eurostat-privacao-severa-definicao": {
+      "/metodo": 2
+    },
+    "/livro-razao/hab-ilc-lvho07c-a-pc-total-eu27_2020-2025": {
+      "/metodo": 2
+    },
+    "/livro-razao/hab-oe-legenda-invariante": {
+      "/metodo": 2
+    },
+    "/livro-razao/hab-tipsho60-a-ptir-lt-avg-ro-2024": {
+      "/metodo": 2
     }
   }
 }

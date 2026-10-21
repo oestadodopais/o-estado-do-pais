@@ -17,7 +17,17 @@ import { VERBATIM } from '../src/data/verbatim.mjs';
 import { getClaim } from '../src/lib/ledger.mjs';
 import { POR_VERIFICAR } from '../src/data/marcador.mjs';
 import { sinopseEsperada, textoSemSelos } from './voz-pais.mjs';
+import {hasSerie,getSerie} from '../src/lib/series.mjs';
+import {routePath} from '../src/lib/routes.mjs';
+import rotulosDasSeries from '../src/data/rotulos-das-series.json' with {type:'json'};
 const normal = s => s.replace(/\s+/g, ' ').trim();
+export function rotuloDaPortaDaSerieConferido(el,lang) {
+  const sid=el.getAttribute('data-serie');
+  if(!sid||!hasSerie(sid)||el.getAttribute('data-serie-campo')!=='document.title'||!el.closest('.texto-fontes[data-fontes-da-unidade]'))return false;
+  const serie=getSerie(sid),rotulo=rotulosDasSeries.rotulos.find(r=>r.serie===sid)?.documento,porta=el.closest('a');
+  if(!rotulo||rotulo!==serie.document?.title||el.textContent!==rotulo||!porta||normal(porta.textContent)!==rotulo)return false;
+  return [sid,serie.linha_de_portugal,serie.linha_da_uniao].filter(Boolean).some(id=>porta.getAttribute('href')===routePath('linha',lang,{slug:id}));
+}
 export function verificaB1(raiz) {
   const erros = [];
   const temas = new Set(DOMINIOS.map(d => d.slug));
@@ -88,6 +98,10 @@ export function verificaB1(raiz) {
       // Os nomes das portas HB1 são comparados à declaração por medir-defeitos.
       const verificados = '[data-rotulo-ia="topo"], [data-registo-unidade], [data-registo-indice], [data-registo-posicao], [data-registo-linha], [data-claim], .src-chip, [data-prova], [data-verbatim], .texto-fontes [data-nome]';
       const dispensados = new Set(main.querySelectorAll(verificados));
+      for(const el of main.querySelectorAll('.texto-fontes [data-serie][data-serie-campo]')) {
+        if(rotuloDaPortaDaSerieConferido(el,lang))dispensados.add(el);
+        else erros.push(`B1 fonte: ${rota}: rótulo da série sem correspondência no catálogo, no campo ou na porta.`);
+      }
       for (const el of main.querySelectorAll('[data-nonledger]')) {
         const motivo = el.getAttribute('data-nonledger');
         if (motivo === 'data-do-repositorio' && (el.closest('[data-estudo-edicao]') || el.closest('[data-sucessor-edicao]'))) dispensados.add(el);

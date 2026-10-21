@@ -92,6 +92,8 @@ export const UNIDADES = {
   // OE1: tradução de dicionário da unidade monetária.
   '% de queda': '% decrease',
   'milhões de euros': 'million euros',
+  // HB1-b: a diferença dos índices usa a unidade declarada na derivação bilingue.
+  'pontos percentuais do índice': 'percentage points of the index',
   // OE1-d: factos de dicionário, incluindo o período acumulado da linha.
   'milhões de euros, acumulados de janeiro a julho': 'million euros, cumulative January to July',
   'milhões de euros, acumulados de janeiro a agosto': 'million euros, cumulative January to August',

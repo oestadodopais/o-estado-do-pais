@@ -179,6 +179,9 @@ Esta passagem prepara o estudo e não o publica. A data continua por declarar. O
 - **HB1-35.** Os excertos das três ações do Orçamento contêm o rótulo e o número da coluna de 2027, conferidos por posição na página. A legenda de «invariante» e a definição Eurostat têm linhas e corpos próprios.
 - **HB1-36.** A atualização do INE prevista para HB1-c não foi antecipada. O calendário continua a anunciar as divulgações, e a lista da passagem seguinte inclui expressamente a taxa de juro de setembro.
 
+- **HB1-37.** O teto L1 passa apenas pelo aumento medido dos recibos novos. As mudanças de multiplicidade têm destinos e razões no contrato, e a ausência de edição do calendário continua a contar como ausência documental mesmo com a data de referência preenchida.
+- **HB1-38.** Os portões passam a conferir os campos bilingues e os valores textuais como tais: nomes ingleses continuam declarados, uma atualização conhecida não se torna publicação inicial, e os excertos corrigidos não entram em comparações numéricas. As réguas das votações, siglas, portas e incorporações ficaram ligadas aos portões regulares.
+
 A revisão posterior dos recibos encontrou nomes internos em três contas inglesas e unidades não traduzidas. O gerador passou a exigir nomes e unidades conferidos, a contextualizar Lisboa e o período pelo excerto e a distinguir alojamentos de habitantes. As vinte contas conservaram os mesmos valores, componentes e expressões.
 
 ### Achados da leitura
@@ -246,3 +249,9 @@ Os campos que continuam por verificar são `document.edition` de `hab-ine-calend
 A primeira corrida sobre `34e51c59` teve build 1, verify 125 (não executado), typecheck 0 e motor 0. Faltavam declarações de lugar das duas correções textuais. Durante a corrida do motor, essas dependências foram corrigidas no sítio; por isso o estado final dessa corrida está sujo e não é apresentado como prova final do sítio. A segunda corrida, sobre `f8f4a4d9`, teve build 1, verify 125 e typecheck 0: a incorporação de uma das novas contas derivadas exigiu a declaração de lugar. Os registos completos ficam em [portoes-diagnostico-1](correcao-hb1b/portoes-diagnostico-1/) e [portoes-diagnostico-2](correcao-hb1b/portoes-diagnostico-2/). O motor permaneceu em `e8d6f79e`, com árvore limpa e código zero.
 
 A terceira corrida, sobre `600767a3`, teve build 1, verify 125 e typecheck 0. A página inglesa encontrou uma linha da série de sobrecarga sem nome no catálogo das portas do estudo. O registo fica em [portoes-diagnostico-3](correcao-hb1b/portoes-diagnostico-3/).
+
+A quarta corrida, sobre `7cc35439`, construiu o HTML e chegou ao portão de país, que recusou as duas declarações de lugar das correções textuais. Build 1, verify 125 e typecheck 0, conservados em [portoes-diagnostico-4](correcao-hb1b/portoes-diagnostico-4/). A extração desse HTML confirmou os cinquenta e dois blocos de cada edição e permitiu corrigir o extrator dos recibos ingleses, que procurava o nome do campo português em vez do campo traduzido.
+
+A medição posterior do HTML encontrou cinquenta diferenças no inventário declarado: dezoito chaves novas, vinte e oito mudanças de forma por datas preenchidas e quatro pela atribuição de Soeiro. A comparação revê todas antes de atualizar a declaração. Na língua, os nomes ingleses não estavam obsoletos: a guarda só recolhia `name` e passou a considerar também `name_en`. A unidade nova dos quatro desvios do índice entrou no dicionário com a tradução correspondente.
+
+A L1 foi medida em 3170 páginas por dois guiões independentes. O aumento de dezoito corresponde aos nove recibos novos, em duas línguas; o contrato discrimina também as vinte e quatro mudanças de multiplicidade de destinos. A régua do contrato e as oito plantas passaram. Uma reconferência feita antes de reconstruir os códigos incorporáveis foi recusada pela ER1, sem chegar à L1; o seu registo conserva essa recusa, não um falso verde.

@@ -1,25 +1,25 @@
 {
  "o_que": "O inventário declarado dos rótulos dos cartões de medida (bloco R2, 03.10.2026): por família, edição e chave, as formas distintas de cada campo e quantas vezes cada uma se rende, com os algarismos do período, do estado e da faixa apagados. Escrito por `node scripts/inventario-rotulos.mjs --escrever` sobre uma construção; a régua do `verify` compara o nome, a unidade e a dobra de cada construção com estas formas.",
- "cabeca": "1da5f645d45866e5a7b1e7e615979f0e3975c59b",
+ "cabeca": "7cc3543914edd0e9172f6409b12298e02bdd2a64",
  "contas": {
-  "paginas": 8638,
+  "paginas": 8656,
   "paginas_com_cartoes": 706,
-  "cartoes": 5654,
+  "cartoes": 5672,
   "familias": {
-   "nacional": 682,
+   "nacional": 700,
    "uniao": 42,
    "concelho": 4928,
    "camaras": 2
   },
   "nomes": {
-   "projeto": 578,
+   "projeto": 596,
    "medidas": 24,
    "figuras": 66,
    "cartao": 14
   },
   "estados": 688,
   "unidades": {
-   "declaradas": 1144,
+   "declaradas": 1162,
    "da_linha": 4442,
    "em_divida": 2,
    "na_faixa_dos_paises": 18
@@ -1015,6 +1015,50 @@
     "times": 1
    }
   },
+  "nacional|en|der-hab-preco-rendimento-acima-2015-eu-2024": {
+   "nome": {
+    "Increase in prices relative to income since the base year": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "percentage points of the index": 1
+   }
+  },
+  "nacional|en|der-hab-preco-rendimento-acima-2015-pt-2024": {
+   "nome": {
+    "Increase in prices relative to income since the base year": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "percentage points of the index": 1
+   }
+  },
+  "nacional|en|der-hab-preco-rendimento-lt-eu-2024": {
+   "nome": {
+    "Distance of the price-to-income ratio from the long-term average": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "percentage points of the index": 1
+   }
+  },
+  "nacional|en|der-hab-preco-rendimento-lt-pt-2024": {
+   "nome": {
+    "Distance of the price-to-income ratio from the long-term average": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "percentage points of the index": 1
+   }
+  },
   "nacional|en|der-hab-preco-rendimento-pt-vs-eu-2024": {
    "nome": {
     "Gap from the Union in the price-to-income index": 1
@@ -1970,7 +2014,18 @@
     "Explanatory memorandum of rental reform": 1
    },
    "periodo": {
-    "in [to verify]": 1
+    "in #": 1
+   },
+   "unidade": {
+    "source text": 1
+   }
+  },
+  "nacional|en|hab-arrendamento-exposicao-vagos": {
+   "nome": {
+    "Government estimate of vacant dwellings in good condition": 1
+   },
+   "periodo": {
+    "in #": 1
    },
    "unidade": {
     "source text": 1
@@ -2108,6 +2163,17 @@
     "source text": 1
    }
   },
+  "nacional|en|hab-eurostat-privacao-severa-definicao": {
+   "nome": {
+    "Definition of severe housing deprivation": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "source text": 1
+   }
+  },
   "nacional|en|hab-governo-arrendamento": {
    "nome": {
     "Announcement of rental reform": 1
@@ -2146,7 +2212,7 @@
     "Iniciativa Liberal housing proposal": 1
    },
    "periodo": {
-    "in [to verify]": 1
+    "in #": 1
    },
    "unidade": {
     "quotation": 1
@@ -2559,6 +2625,17 @@
     "% of the population": 1
    }
   },
+  "nacional|en|hab-ilc-lvho07c-a-pc-total-eu27_2020-2025": {
+   "nome": {
+    "Housing cost overburden, European Union": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of the population": 1
+   }
+  },
   "nacional|en|hab-ilc-lvho07c-a-pc-total-pt-2015": {
    "nome": {
     "Housing cost overburden, Portugal": 1
@@ -2847,7 +2924,7 @@
   },
   "nacional|en|hab-imprensa-feridos35": {
    "nome": {
-    "Injured people according to a member of parliament, reported by the press": 1
+    "Injured according to a BE leader, via the press": 1
    },
    "periodo": {
     "in #": 1
@@ -2949,7 +3026,7 @@
     "Demonstrators in Porto, reported by RTP": 1
    },
    "periodo": {
-    "in [to verify]": 1
+    "in #": 1
    },
    "unidade": {
     "source text": 1
@@ -3004,7 +3081,7 @@
     "Removal of tents, reported by RTP": 1
    },
    "periodo": {
-    "in [to verify]": 1
+    "in #": 1
    },
    "unidade": {
     "source text": 1
@@ -3015,7 +3092,7 @@
     "Release of the implicit housing interest rate": 1
    },
    "periodo": {
-    "in [to verify]": 1
+    "in #": 1
    },
    "unidade": {
     "announced date": 1
@@ -3026,7 +3103,7 @@
     "Release of local house prices": 1
    },
    "periodo": {
-    "in [to verify]": 1
+    "in #": 1
    },
    "unidade": {
     "announced date": 1
@@ -3241,6 +3318,17 @@
     "million euros": 1
    }
   },
+  "nacional|en|hab-oe-legenda-invariante": {
+   "nome": {
+    "Budget table legend for unchanged measures": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "source text": 1
+   }
+  },
   "nacional|en|hab-oe-licenciamento": {
    "nome": {
     "Budget for urban management and building quality": 1
@@ -3323,7 +3411,7 @@
     "Platform demands": 1
    },
    "periodo": {
-    "in [to verify]": 1
+    "in #": 1
    },
    "unidade": {
     "source text": 1
@@ -3651,6 +3739,17 @@
   "nacional|en|hab-tipsho60-a-ptir-lt-avg-pt-2024": {
    "nome": {
     "Price-to-income ratio relative to the long-term average, Portugal": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "price-to-income ratio relative to its long-term average": 1
+   }
+  },
+  "nacional|en|hab-tipsho60-a-ptir-lt-avg-ro-2024": {
+   "nome": {
+    "Price-to-income ratio relative to the long-term average, Romania": 1
    },
    "periodo": {
     "in #": 1
@@ -4790,6 +4889,50 @@
     "vezes": 1
    }
   },
+  "nacional|pt|der-hab-preco-rendimento-acima-2015-eu-2024": {
+   "nome": {
+    "Aumento dos preços face ao rendimento desde o ano base": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "pontos percentuais do índice": 1
+   }
+  },
+  "nacional|pt|der-hab-preco-rendimento-acima-2015-pt-2024": {
+   "nome": {
+    "Aumento dos preços face ao rendimento desde o ano base": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "pontos percentuais do índice": 1
+   }
+  },
+  "nacional|pt|der-hab-preco-rendimento-lt-eu-2024": {
+   "nome": {
+    "Distância do rácio preço-rendimento à média de longo prazo": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "pontos percentuais do índice": 1
+   }
+  },
+  "nacional|pt|der-hab-preco-rendimento-lt-pt-2024": {
+   "nome": {
+    "Distância do rácio preço-rendimento à média de longo prazo": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "pontos percentuais do índice": 1
+   }
+  },
   "nacional|pt|der-hab-preco-rendimento-pt-vs-eu-2024": {
    "nome": {
     "Diferença face à União no índice preço-rendimento": 1
@@ -5745,7 +5888,18 @@
     "Exposição de motivos da reforma do arrendamento": 1
    },
    "periodo": {
-    "em [a verificar]": 1
+    "em #": 1
+   },
+   "unidade": {
+    "texto da fonte": 1
+   }
+  },
+  "nacional|pt|hab-arrendamento-exposicao-vagos": {
+   "nome": {
+    "Estimativa do Governo de alojamentos vagos em boas condições": 1
+   },
+   "periodo": {
+    "em #": 1
    },
    "unidade": {
     "texto da fonte": 1
@@ -5883,6 +6037,17 @@
     "texto da fonte": 1
    }
   },
+  "nacional|pt|hab-eurostat-privacao-severa-definicao": {
+   "nome": {
+    "Definição de privação severa da habitação": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "texto da fonte": 1
+   }
+  },
   "nacional|pt|hab-governo-arrendamento": {
    "nome": {
     "Anúncio da reforma do arrendamento": 1
@@ -5921,7 +6086,7 @@
     "Proposta da Iniciativa Liberal sobre habitação": 1
    },
    "periodo": {
-    "em [a verificar]": 1
+    "em #": 1
    },
    "unidade": {
     "citação": 1
@@ -6334,6 +6499,17 @@
     "% da população": 1
    }
   },
+  "nacional|pt|hab-ilc-lvho07c-a-pc-total-eu27_2020-2025": {
+   "nome": {
+    "Sobrecarga do custo da habitação, União Europeia": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% da população": 1
+   }
+  },
   "nacional|pt|hab-ilc-lvho07c-a-pc-total-pt-2015": {
    "nome": {
     "Sobrecarga do custo da habitação, Portugal": 1
@@ -6622,7 +6798,7 @@
   },
   "nacional|pt|hab-imprensa-feridos35": {
    "nome": {
-    "Feridos segundo um deputado, pela imprensa": 1
+    "Feridos segundo um dirigente do BE, pela imprensa": 1
    },
    "periodo": {
     "em #": 1
@@ -6724,7 +6900,7 @@
     "Manifestantes no Porto, pela RTP": 1
    },
    "periodo": {
-    "em [a verificar]": 1
+    "em #": 1
    },
    "unidade": {
     "texto da fonte": 1
@@ -6779,7 +6955,7 @@
     "Retirada das tendas, pela RTP": 1
    },
    "periodo": {
-    "em [a verificar]": 1
+    "em #": 1
    },
    "unidade": {
     "texto da fonte": 1
@@ -6790,7 +6966,7 @@
     "Divulgação do juro implícito na habitação": 1
    },
    "periodo": {
-    "em [a verificar]": 1
+    "em #": 1
    },
    "unidade": {
     "data anunciada": 1
@@ -6801,7 +6977,7 @@
     "Divulgação dos preços locais da habitação": 1
    },
    "periodo": {
-    "em [a verificar]": 1
+    "em #": 1
    },
    "unidade": {
     "data anunciada": 1
@@ -7016,6 +7192,17 @@
     "milhões de euros": 1
    }
   },
+  "nacional|pt|hab-oe-legenda-invariante": {
+   "nome": {
+    "Legenda das medidas invariantes do Orçamento": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "texto da fonte": 1
+   }
+  },
   "nacional|pt|hab-oe-licenciamento": {
    "nome": {
     "Orçamento da gestão urbanística e qualidade do edificado": 1
@@ -7098,7 +7285,7 @@
     "Reivindicações da plataforma": 1
    },
    "periodo": {
-    "em [a verificar]": 1
+    "em #": 1
    },
    "unidade": {
     "texto da fonte": 1
@@ -7426,6 +7613,17 @@
   "nacional|pt|hab-tipsho60-a-ptir-lt-avg-pt-2024": {
    "nome": {
     "Rácio preço-rendimento face à média de longo prazo, Portugal": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "rácio preços/rendimento face à média de longo prazo": 1
+   }
+  },
+  "nacional|pt|hab-tipsho60-a-ptir-lt-avg-ro-2024": {
+   "nome": {
+    "Rácio preço-rendimento face à média de longo prazo, Roménia": 1
    },
    "periodo": {
     "em #": 1
@@ -9002,6 +9200,5 @@
     "Percentagem da população dos # aos # anos · #": 1
    }
   }
- },
- "nota_da_cabeca": "Cabeça da construção de base. O inventário HB1 foi composto numa cópia de ensaio com as unidades declaradas; a corrida integral posterior confere as mesmas formas no HTML reconstruído."
+ }
 }
