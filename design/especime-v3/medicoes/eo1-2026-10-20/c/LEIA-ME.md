@@ -1,0 +1,1 @@
+A corrida inteira na cabeça da fusão EO1-c (6ec741c2d), pelo portoes.sh, com RESEARCHHUB_DIR na worktree do motor eo1-c-2026-10-21 (a2e46ee), 03:26 a 03:38 UTC: build 0, verify 0, typecheck 0. Os logs (build, verify, typecheck) ficaram fora do repositório pelo tamanho.
