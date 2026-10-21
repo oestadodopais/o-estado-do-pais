@@ -185,6 +185,28 @@ const CONTAGENS_DO_PROJETO = new Set(['correcoes_publicadas', 'estudos_no_arquiv
    sem consultar a declaração de lugar nem o nome editorial da linha. */
 const provasOrcamentais = JSON.parse(fs.readFileSync('ledger/provas/v2d/provas.json', 'utf8')).rows;
 const provasEfeitos = JSON.parse(fs.readFileSync('ledger/provas/v2e/provas.json', 'utf8')).rows;
+const provasEo1 = JSON.parse(fs.readFileSync('ledger/provas/eo1/provas.json', 'utf8')).rows;
+function lugarDoCalendarioParlamentar(c) {
+  const p = provasEo1[c?.id];
+  if (!p || !dataDeCalendarioConferida(c) || c.source !== 'Assembleia da República' ||
+      p.document?.file !== 'content/23 Habitacao/source/ar-oe2027.html' ||
+      p.document.title !== 'Orçamento do Estado para 2027' ||
+      c.document?.source_sha256 !== p.document.source_sha256 ||
+      c.document?.title !== p.document.title || c.document?.locator !== p.document.locator ||
+      c.document?.page !== p.document.page || c.value !== p.value || c.excerpt !== p.excerpt ||
+      c.reference_date !== p.reference_date || c.source_url !== p.receipt?.endereco_final ||
+      c.access_date !== p.receipt?.acedido_em?.slice(0,10)) return null;
+  try {
+    const url = new URL(c.source_url);
+    return url.protocol === 'https:' && url.hostname === 'www.parlamento.pt' ? PAIS : null;
+  } catch { return null; }
+}
+const entregaParlamentar = linha('oe-2027-calendario-entrega');
+if (lugarDoCalendarioParlamentar(entregaParlamentar) !== PAIS) erros.push('A1: calendário parlamentar selado recusado.');
+for (const campo of ['source_url','excerpt','reference_date','value']) {
+  const copia = structuredClone(entregaParlamentar); copia[campo] += ' adulterado';
+  if (lugarDoCalendarioParlamentar(copia) !== null) erros.push(`A1: planta do calendário (${campo}) não fechou.`);
+}
 function lugarDoTextoOrcamental(c) {
   const p = provasEfeitos[c?.id];
   if (!p || c.texto_documental !== true || c.unit !== 'texto' || p.unit !== 'texto' ||
@@ -282,7 +304,7 @@ function lugarDerivado(id) {
   let geos = [];
   try { geos = c.source_url ? new URL(c.source_url).searchParams.getAll('geo') : []; } catch { geos = []; }
   const doPais = geos.length === 1 && geos[0] === 'PT' ? PAIS : undefined;
-  const d = [...new Set([doEstudo, doId, doPais, lugarDaAfirmacaoOrcamental(c), lugarDoTextoOrcamental(c)].filter(x => typeof x === 'string'))];
+  const d = [...new Set([doEstudo, doId, doPais, lugarDaAfirmacaoOrcamental(c), lugarDoTextoOrcamental(c), lugarDoCalendarioParlamentar(c)].filter(x => typeof x === 'string'))];
   if (d.length > 1) {
     erros.push(`A1: a linha ${id} deriva dois lugares diferentes (${d.join(', ')}).`);
     return null;
