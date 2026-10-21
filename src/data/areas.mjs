@@ -745,6 +745,15 @@ export const SEM_AREA = [
     motivo: 'O OE1 sela os dados para a futura página do governo. Não atribui a despesa por função a ministérios, nem apresenta o orçamento bruto como despesa efetiva. A sua integração nas áreas e a página do governo pertencem ao bloco seguinte. O agregado europeu mantém a regra própria já declarada.',
   },
   {
+    /* EX4-c (21.10.2026): as 83 linhas do PF1 ficam fora pela mesma razão das linhas do OE1 (`oe-2026-cem-euros-funcao-nn`
+       e `oe-2026-despesa-funcao-nn`, na entrada acima): são a despesa por função de um mapa do Orçamento, não a despesa
+       de um ministério. */
+    estudos: ['oe-2027-funcoes'],
+    id: /^(?:oe-202[67]-|der-oe2027-)/,
+    assunto: 'O mapa da classificação funcional da despesa da Administração Central, da proposta de 2027 e da lei de 2026, base do bloco PF1',
+    motivo: 'A mesma razão das linhas do OE1: o PF1 sela os dados da explicação EX4. Não atribui a despesa por função a ministérios, nem apresenta a despesa não consolidada do mapa como despesa efetiva.',
+  },
+  {
     assunto: 'A variação dos preços no consumidor',
     id: /^(?:ipc-(?:variacao-homologa|variacao-media-12-meses|alimentacao-variacao-homologa|energia-em-casa-variacao-homologa|combustiveis-variacao-homologa|rendas-variacao-homologa|sem-habitacao-variacao-media-12-meses)|ihpc-variacao-homologa)(?:-periodo-anterior)?$/,
     motivo: 'Estas séries medem a variação dos preços no consumidor. As matérias transcritas não nomeiam a inflação nem o nível geral dos preços. A utilização da média sem habitação como referência das rendas não a transforma numa medida dos preços da habitação. As linhas continuam nos temas nacionais; não se atribui uma matéria ministerial que a declaração não nomeia.',
