@@ -1,6 +1,8 @@
 # HB1: A casa em Portugal e na Europa
 
-## Estado da entrega HB1-c
+O estado atual está em [A correção HB1-b](#a-correção-hb1-b). As secções anteriores a essa correção conservam o histórico da construção entregue antes da leitura a frio. As designações HB1-b e HB1-c usadas nesse histórico não são as passagens de correção agora mandatadas; a aterragem de 23.10.2026 continua pendente.
+
+## Histórico da construção anterior à leitura a frio
 
 A corrida final do sítio passou na cabeça `4531f0c11cb29ea1bdf21db399ef4b3f14aaa0d3`, com árvore limpa no início e no fim. O motor passou na cabeça `980a964ea9eee20f2765580b2b1efae1e4e0bd75`, também com árvore limpa. A prova do motor vem da primeira corrida HB1-c; a repetição do sítio alterou apenas a conferência EX3, sem mudança no motor. Os códigos foram lidos dos ficheiros e estão reunidos em [verificacao-final/resumo.json](verificacao-final/resumo.json).
 
@@ -259,3 +261,8 @@ A L1 foi medida em 3170 páginas por dois guiões independentes. O aumento de de
 A quinta corrida, sobre `3555f985`, passou voz e nomes, mas o portão da língua encontrou três declarações de edição por reconciliar: a data nova dos contadores, a data anterior já sem linha e o marcador de edição desconhecida. Build 1, verify 125 e typecheck 0, em [portoes-diagnostico-5](correcao-hb1b/portoes-diagnostico-5/). As verificações adicionais dessa cabeça passaram: séries, cruzamento com origem, inventário e extrações de frases e recibos.
 
 A sexta corrida, sobre `79044b62`, teve build 0, verify 1 e typecheck 0. Os quatro grupos recusados foram I9 (data de entrada confundida com publicação declarada), a contagem antiga dos campos, três importações sem uso e a régua de mudanças do índice, que ainda incluía correções textuais na comparação numérica. A corrida integral está em [portoes-diagnostico-6](correcao-hb1b/portoes-diagnostico-6/); não se substituiu o seu código vermelho por resultados parciais.
+
+
+A sétima corrida, sobre `6bd0f865`, teve build 0, verify 1 e typecheck 0. Restou apenas I9: a chamada da régua não encontrou o `Article` que existe no JSON-LD das duas páginas. A extração independente confirmou `Draft`, sem `datePublished` nem data de publicação à vista. A recusa integral está em [portoes-diagnostico-7](correcao-hb1b/portoes-diagnostico-7/).
+
+A causa de I9 foi a passagem de uma árvore só com o corpo, da qual já tinham sido retirados todos os scripts. A régua recebe agora o HTML bruto da página e analisa também o cabeçalho. O teste dirigido usa o mesmo argumento da chamada real: as duas edições passaram, e as duas cópias sem scripts foram recusadas; os dois controlos e as sete adulterações de publicação continuam a passar. O registo é [hb1b-i9-integracao-html.log](correcao-hb1b/testes-parciais/hb1b-i9-integracao-html.log).

@@ -1,4 +1,5 @@
 /** Régua independente do resolvedor da vista. */
+import { parse } from 'node-html-parser';
 export function conferirDataDeclarada(work, edition, entrada) {
   if (work?.publication !== 'declared' || edition?.date === null) return [];
   if (!/^\d{4}-\d{2}-\d{2}$/.test(edition?.date ?? '') || !entrada || edition.date < entrada || !diaValido(edition.date))
@@ -13,8 +14,12 @@ function diaValido(iso) {
 }
 
 /** I9: o HTML deve respeitar a declaração, sem confundir entrada com publicação. */
-export function conferirPublicacaoDeclaradaNoHtml(work, edition, entrada, root) {
+export function conferirPublicacaoDeclaradaNoHtml(work, edition, entrada, html) {
   if (work?.publication !== 'declared') return [];
+  // I9 também lê árvores sem head nem scripts para medir a prosa. Aqui é
+  // obrigatório o HTML bruto: a publicação é provada no corpo e no JSON-LD.
+  if(typeof html!=='string')return ['a publicação exige o HTML bruto da página'];
+  const root=parse(html);
   const erros=conferirDataDeclarada(work,edition,entrada);
   if(erros.length)return erros;
   const faixa=root.querySelector(`[data-estudo-edicao="${work.slug}/${edition.lang}"]`);

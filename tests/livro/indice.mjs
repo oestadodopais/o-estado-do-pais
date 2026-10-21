@@ -1375,7 +1375,7 @@ celula('I9', 'as datas dos trabalhos, e o marcador que resta', (falhas) => {
       const work=WORKS.find(w=>w.slug===slug),edition=work?.editions.find(e=>e.lang===edicao);
       if(work?.publication==='declared') {
         if(!edition)falhas.push(`${rota}: falta a edição na declaração de publicação.`);
-        else for(const erro of conferirPublicacaoDeclaradaNoHtml(work,edition,data,dom(pag)))falhas.push(`${rota}: ${erro}.`);
+        else for(const erro of conferirPublicacaoDeclaradaNoHtml(work,edition,data,pag.html))falhas.push(`${rota}: ${erro}.`);
         continue;
       }
       const t = texto(dom(pag));
