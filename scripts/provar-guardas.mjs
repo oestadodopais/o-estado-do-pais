@@ -866,8 +866,13 @@ caso(
    igualdade passou de 24 a 25: a corrida com a lista nova e a igualdade velha
    recusou o caso, que é a prova de que ele morde num campo a mais como num a
    menos. */
-caso('CAMPOS/tamanho', true, CAMPOS.length === 35, 'os campos anteriores, o texto documental selado e o nome inglês da medida.');
+caso('CAMPOS/tamanho', true, CAMPOS.length === 36, 'os campos anteriores e o estado da proveniência.');
 caso('CAMPOS/texto-documental', true, CAMPOS.includes('texto_documental'), 'O texto documental pertence ao formato conferido.');
+/** @param {readonly string[]} campos */
+const estadoNoFormato = campos => campos.filter(c => c === 'status').length === 1;
+caso('CAMPOS/estado', true, estadoNoFormato(CAMPOS), 'O estado da proveniência atravessa o formato uma vez.');
+caso('CAMPOS/estado-retirado', false, estadoNoFormato(CAMPOS.filter(c => c !== 'status')), 'Retirar o estado da cópia da lista é recusado.');
+caso('CAMPOS/estado-duplicado', false, estadoNoFormato([...CAMPOS, 'status']), 'Duplicar o estado da cópia da lista é recusado.');
 /** @param {readonly string[]} campos */
 const nomeInglesNoFormato = campos => campos.filter(c => c === 'name_en').length === 1 &&
   campos.indexOf('name_en') === campos.indexOf('name') + 1;
