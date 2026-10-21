@@ -47824,8 +47824,8 @@
         },
         {
           "caminho": "seccoes[1].conteudo[1].paragrafo[0]",
-          "pt": "Esta conta é deste projeto: a despesa total do mapa menos a subfunção das operações relacionadas com a dívida pública, e cada função a dividir por esse resto; o recibo de cada linha mostra a conta. A ",
-          "en": "This calculation is this project’s: the map’s total expenditure minus the subfunction of the operations related to public debt, and each function divided by that remainder; each row’s receipt shows the calculation. ",
+          "pt": "Esta conta é deste projeto: a despesa total do mapa menos a subfunção das operações relacionadas com a dívida pública, e cada função a dividir por esse resto, tirando também essa subfunção à função onde ela está; o recibo de cada linha mostra a conta. A ",
+          "en": "This calculation is this project’s: the map’s total expenditure minus the subfunction of the operations related to public debt, and each function divided by that remainder, with that subfunction also taken out of the function that holds it; each row’s receipt shows the calculation. ",
           "partes": [
             {
               "pt": "Esta conta é deste projeto: a despesa total do mapa menos a subfunção das operações relacionadas com a dívida pública",
@@ -47846,14 +47846,19 @@
               ]
             },
             {
-              "pt": ", e cada função a dividir por esse resto;",
-              "en": ", and each function divided by that remainder;",
+              "pt": ", e cada função a dividir por esse resto, tirando também essa subfunção à função onde ela está;",
+              "en": ", and each function divided by that remainder, with that subfunction also taken out of the function that holds it;",
               "classe": "diz",
               "apoios": [
                 {
                   "linha": "oe-2027-cem-euros-funcao-03-sem-divida-mapa",
                   "campo": "derivation",
                   "literal": "Dividir a despesa desta função"
+                },
+                {
+                  "linha": "oe-2027-cem-euros-funcao-01-sem-divida-mapa",
+                  "campo": "derivation",
+                  "literal": "na função 01, a função menos a subfunção 01.7"
                 }
               ]
             },

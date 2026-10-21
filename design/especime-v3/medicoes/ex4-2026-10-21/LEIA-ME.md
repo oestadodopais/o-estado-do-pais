@@ -222,3 +222,13 @@ Pelo mandato `CORRECAO-EX4-c-2026-10-21.md`, os quatro vermelhos que restavam e 
 **As listas:** `dist/explicacoes/index.html` e `dist/en/explainers/index.html` têm a explicação de 2027 à cabeça e a de 2026 a seguir. O bloco «Para perceber» da primeira página (`dist/index.html`, `dist/en/index.html`) tem a de 2027 e a leitura da semana, e não a de 2026: o bloco está declarado com duas portas, `explicacao-mais-recente` e `leitura-da-semana` (`BLOCO_PARA_PERCEBER` em `src/data/primeira-pagina.mjs`), e esta correção não o mudou. Fica para o lugar de direção decidir se o bloco passa a levar as duas explicações.
 
 **O que fica:** a decisão sobre o bloco «Para perceber»; a porta para a explicação de 2026 sem a marca (acima); os valores da edição inglesa saem com vírgula decimal («13,23», «58,17»), como já saíam antes desta correção, para o lugar de direção conferir se é a forma da casa; a leitura cruzada das linhas `ex4` do inventário.
+
+## A correção EX4-d (21.10.2026, Claude Opus 5.5, `construtor`)
+
+Pelo mandato `CORRECAO-EX4-d-2026-10-21.md`, o Major 6 da leitura do Codex: a frase da secção 2 dizia «cada função a dividir por esse resto» sem dizer que a subfunção 01.7 também se tira à função 01, como a derivada `oe-2027-cem-euros-funcao-01-sem-divida-mapa` faz.
+
+1. **A declaração** (`src/data/explicacoes/dinheiro-do-estado-2027.mjs`) mudou só nas duas cadeias do §2 em vigor: PT «…e cada função a dividir por esse resto, tirando também essa subfunção à função onde ela está; o recibo de cada linha mostra a conta.», EN «…and each function divided by that remainder, with that subfunction also taken out of the function that holds it; each row’s receipt shows the calculation.».
+2. **As conferências**: a cópia do §2 em `acertos-ex4.mjs` segue o texto em vigor (28 de 28 frases iguais); em `auditoria-ex4.mjs` a parte nova apoia-se também no campo `derivation` da linha `oe-2027-cem-euros-funcao-01-sem-divida-mapa` («na função 01, a função menos a subfunção 01.7»), e `tests/cartao/leituras-provadas.json` foi regenerado pela auditoria. `frases-ex4.json` regenerado do `dist/` novo.
+3. **O Minor do bloco «Para perceber»** fica como está, por decisão do lugar de direção.
+
+**Os códigos, lidos de `codigos/d-*.code`:** `d-acertos-ex4` 0, `d-auditoria-ex4` 0, `d-build` 0 (uma corrida de `npm run build`, com a cadeia inteira), `d-check-voz` 0 (sem mudar o inventário), `d-frases-ex4` 0.

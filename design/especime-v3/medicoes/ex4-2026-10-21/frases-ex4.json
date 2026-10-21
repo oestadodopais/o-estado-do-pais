@@ -36,7 +36,7 @@
       },
       {
         "tag": "p",
-        "texto": "Esta conta é deste projeto: a despesa total do mapa menos a subfunção das operações relacionadas com a dívida pública, e cada função a dividir por esse resto; o recibo de cada linha mostra a conta. A segurança e ordem pública leva 3,30fonte · calculado de cada cem euros, a defesa 2,35fonte · calculado, a habitação e infraestruturas coletivas 2,24fonte · calculado, a proteção do ambiente 1,45fonte · calculado e o desporto, recreação, cultura e religião 0,77fonte · calculado."
+        "texto": "Esta conta é deste projeto: a despesa total do mapa menos a subfunção das operações relacionadas com a dívida pública, e cada função a dividir por esse resto, tirando também essa subfunção à função onde ela está; o recibo de cada linha mostra a conta. A segurança e ordem pública leva 3,30fonte · calculado de cada cem euros, a defesa 2,35fonte · calculado, a habitação e infraestruturas coletivas 2,24fonte · calculado, a proteção do ambiente 1,45fonte · calculado e o desporto, recreação, cultura e religião 0,77fonte · calculado."
       },
       {
         "tag": "h2",
@@ -79,7 +79,7 @@
       "Lido como o mapa o escreve, 58,17 de cada cem euros vão para os serviços gerais das administrações públicas, porque a subfunção das operações relacionadas com a dívida pública está dentro dessa função; a saúde leva 13,23, os assuntos económicos 12,93, a proteção social 6,59 e a educação 3,77. A segurança e ordem pública leva 1,73, a defesa 1,24, a habitação e infraestruturas coletivas 1,18, a proteção do ambiente 0,76 e o desporto, recreação, cultura e religião 0,41.",
       "Sem as operações relacionadas com a dívida pública",
       "As dez funções, de cada cem euros da despesa do mapa sem a subfunção das operações relacionadas com a dívida pública (a conta deste projeto, declarada no recibo de cada linha)",
-      "Esta conta é deste projeto: a despesa total do mapa menos a subfunção das operações relacionadas com a dívida pública, e cada função a dividir por esse resto; o recibo de cada linha mostra a conta. A segurança e ordem pública leva 3,30 de cada cem euros, a defesa 2,35, a habitação e infraestruturas coletivas 2,24, a proteção do ambiente 1,45 e o desporto, recreação, cultura e religião 0,77.",
+      "Esta conta é deste projeto: a despesa total do mapa menos a subfunção das operações relacionadas com a dívida pública, e cada função a dividir por esse resto, tirando também essa subfunção à função onde ela está; o recibo de cada linha mostra a conta. A segurança e ordem pública leva 3,30 de cada cem euros, a defesa 2,35, a habitação e infraestruturas coletivas 2,24, a proteção do ambiente 1,45 e o desporto, recreação, cultura e religião 0,77.",
       "O que muda da lei de 2026 para a proposta de 2027",
       "A comparação certa é o mesmo mapa da Lei do Orçamento para 2026: o mesmo perímetro, a mesma unidade. A despesa total do mapa passa de 352 472 389 960 euros para 372 293 363 352 euros, uma variação de 5,6 %; sem as operações relacionadas com a dívida pública, passa de 177 454 923 960 euros para 195 763 054 352 euros, 10,3 %. Por função, em euros: os assuntos económicos variam 32,2 %, a saúde 3,6 %, a proteção social 4,7 %, a educação −0,2 %, a defesa −8,0 %, a proteção do ambiente −10,2 % e o desporto, recreação, cultura e religião −6,4 %. A função que mais cresce é a dos assuntos económicos. O que está dentro de cada função, medida a medida, lê-se no estudo do Orçamento.",
       "A Saúde: a função e o programa",
@@ -124,7 +124,7 @@
       },
       {
         "tag": "p",
-        "texto": "This calculation is this project’s: the map’s total expenditure minus the subfunction of the operations related to public debt, and each function divided by that remainder; each row’s receipt shows the calculation. Public order and safety takes 3,30source · calculated of every hundred euros, defence 2,35source · calculated, housing and community amenities 2,24source · calculated, environmental protection 1,45source · calculated and recreation, culture and religion 0,77source · calculated."
+        "texto": "This calculation is this project’s: the map’s total expenditure minus the subfunction of the operations related to public debt, and each function divided by that remainder, with that subfunction also taken out of the function that holds it; each row’s receipt shows the calculation. Public order and safety takes 3,30source · calculated of every hundred euros, defence 2,35source · calculated, housing and community amenities 2,24source · calculated, environmental protection 1,45source · calculated and recreation, culture and religion 0,77source · calculated."
       },
       {
         "tag": "h2",
@@ -167,7 +167,7 @@
       "Read as the map writes it, 58,17 of every hundred euros go to general public services, because the subfunction of the operations related to public debt sits inside that function; health takes 13,23, economic affairs 12,93, social protection 6,59 and education 3,77. Public order and safety takes 1,73, defence 1,24, housing and community amenities 1,18, environmental protection 0,76 and recreation, culture and religion 0,41.",
       "Without the operations related to public debt",
       "The ten functions, of every hundred euros of the map’s expenditure without the subfunction of the operations related to public debt (this project’s calculation, declared in each row’s receipt)",
-      "This calculation is this project’s: the map’s total expenditure minus the subfunction of the operations related to public debt, and each function divided by that remainder; each row’s receipt shows the calculation. Public order and safety takes 3,30 of every hundred euros, defence 2,35, housing and community amenities 2,24, environmental protection 1,45 and recreation, culture and religion 0,77.",
+      "This calculation is this project’s: the map’s total expenditure minus the subfunction of the operations related to public debt, and each function divided by that remainder, with that subfunction also taken out of the function that holds it; each row’s receipt shows the calculation. Public order and safety takes 3,30 of every hundred euros, defence 2,35, housing and community amenities 2,24, environmental protection 1,45 and recreation, culture and religion 0,77.",
       "What changes from the 2026 law to the 2027 proposal",
       "The right comparison is the same map of the Budget Law for 2026: the same perimeter, the same unit. The map’s total expenditure goes from 352 472 389 960 euros to 372 293 363 352 euros, a change of 5,6 %; without the operations related to public debt, it goes from 177 454 923 960 euros to 195 763 054 352 euros, 10,3 %. By function, in euros: Economic affairs change by 32,2 %, health by 3,6 %, social protection by 4,7 %, education by −0,2 %, defence by −8,0 %, environmental protection by −10,2 % and recreation, culture and religion by −6,4 %. The function that grows most is economic affairs. What sits inside each function, measure by measure, is read in the Budget study.",
       "Health: the function and the programme",

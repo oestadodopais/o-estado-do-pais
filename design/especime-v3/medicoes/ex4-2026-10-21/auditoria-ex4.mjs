@@ -57,7 +57,7 @@ const REGRAS = {
   'seccoes[1].conteudo[0].figura.titulo': (f) => [diz(f.pt, f.en, [L(SD27, 'derivation', 'A despesa total do Mapa 2 menos a subfunção 01.7'), L(S('03'), 'derivation', 'Dividir a despesa desta função'), L(DIV27, 'name', 'OPERAÇÕES RELACIONADAS COM A DÍVIDA PÚBLICA')])],
   'seccoes[1].conteudo[1].paragrafo[0]': () => [
     leitura('Esta conta é deste projeto: a despesa total do mapa menos a subfunção das operações relacionadas com a dívida pública', 'This calculation is this project’s: the map’s total expenditure minus the subfunction of the operations related to public debt', 'que a despesa sem a subfunção das operações relacionadas com a dívida pública é uma conta derivada pelo projeto, e não um valor que o mapa imprime', [L(SD27, 'derivation', 'A despesa total do Mapa 2 menos a subfunção 01.7, como o mapa as imprime'), L(DIV27, 'name', 'OPERAÇÕES RELACIONADAS COM A DÍVIDA PÚBLICA')]),
-    diz(', e cada função a dividir por esse resto;', ', and each function divided by that remainder;', [L(S('03'), 'derivation', 'Dividir a despesa desta função')]),
+    diz(', e cada função a dividir por esse resto, tirando também essa subfunção à função onde ela está;', ', and each function divided by that remainder, with that subfunction also taken out of the function that holds it;', [L(S('03'), 'derivation', 'Dividir a despesa desta função'), L('oe-2027-cem-euros-funcao-01-sem-divida-mapa', 'derivation', 'na função 01, a função menos a subfunção 01.7')]),
     { pt: ' o recibo de cada linha mostra a conta. A ', en: ' each row’s receipt shows the calculation. ', classe: 'aponta', alvo: 'selos' },
   ],
   'seccoes[1].conteudo[1].paragrafo[2]': (f) => [diz(f.pt, f.en, [L(S('03'), 'derivation', 'Dividir a despesa desta função')])],

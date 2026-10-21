@@ -75,7 +75,7 @@ const MANDATO = [
   ['secao-1-2', "A [nome: F27('03')] leva [claim: F27('03')], a [nome: F27('02')] [claim: F27('02')], a [nome: F27('06')] [claim: F27('06')], a [nome: F27('05')] [claim: F27('05')] e o [nome: F27('08')] [claim: F27('08')]."],
   ['secao-2', 'Sem as operações relacionadas com a dívida pública'],
   ['figura-2', 'As dez funções, de cada cem euros da despesa do mapa sem a subfunção das operações relacionadas com a dívida pública (a conta deste projeto, declarada no recibo de cada linha)'],
-  ['secao-2-1', 'Esta conta é deste projeto: a despesa total do mapa menos a subfunção das operações relacionadas com a dívida pública, e cada função a dividir por esse resto; o recibo de cada linha mostra a conta.'],
+  ['secao-2-1', 'Esta conta é deste projeto: a despesa total do mapa menos a subfunção das operações relacionadas com a dívida pública, e cada função a dividir por esse resto, tirando também essa subfunção à função onde ela está; o recibo de cada linha mostra a conta.'],
   ['secao-2-2', "A [nome: S27('03')] leva [claim: S27('03')] de cada cem euros, a [nome: S27('02')] [claim: S27('02')], a [nome: S27('06')] [claim: S27('06')], a [nome: S27('05')] [claim: S27('05')] e o [nome: S27('08')] [claim: S27('08')]."],
   ['secao-3', "O que muda da lei de [periodo: F26('01')] para a proposta de [periodo: F27('01')]"],
   ['secao-3-1', "A comparação certa é o mesmo mapa da Lei do Orçamento para [periodo: F26('01')]: o mesmo perímetro, a mesma unidade."],

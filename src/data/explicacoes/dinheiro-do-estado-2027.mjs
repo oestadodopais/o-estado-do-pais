@@ -110,12 +110,12 @@ export const DINHEIRO_DO_ESTADO_2027 = {
         {
           paragrafo: {
             pt: [
-              'Esta conta é deste projeto: a despesa total do mapa menos a subfunção das operações relacionadas com a dívida pública, e cada função a dividir por esse resto; o recibo de cada linha mostra a conta. A ',
+              'Esta conta é deste projeto: a despesa total do mapa menos a subfunção das operações relacionadas com a dívida pública, e cada função a dividir por esse resto, tirando também essa subfunção à função onde ela está; o recibo de cada linha mostra a conta. A ',
               { nome: S27('03') }, ' leva ', { claim: S27('03') }, ' de cada cem euros, a ', { nome: S27('02') }, ' ', { claim: S27('02') }, ', a ', { nome: S27('06') }, ' ', { claim: S27('06') },
               ', a ', { nome: S27('05') }, ' ', { claim: S27('05') }, ' e o ', { nome: S27('08') }, ' ', { claim: S27('08') }, '.',
             ],
             en: [
-              'This calculation is this project’s: the map’s total expenditure minus the subfunction of the operations related to public debt, and each function divided by that remainder; each row’s receipt shows the calculation. ',
+              'This calculation is this project’s: the map’s total expenditure minus the subfunction of the operations related to public debt, and each function divided by that remainder, with that subfunction also taken out of the function that holds it; each row’s receipt shows the calculation. ',
               { nome: S27('03'), inicial: true }, ' takes ', { claim: S27('03') }, ' of every hundred euros, ', { nome: S27('02') }, ' ', { claim: S27('02') }, ', ', { nome: S27('06') }, ' ', { claim: S27('06') },
               ', ', { nome: S27('05') }, ' ', { claim: S27('05') }, ' and ', { nome: S27('08') }, ' ', { claim: S27('08') }, '.',
             ],
