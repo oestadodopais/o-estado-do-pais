@@ -164,7 +164,7 @@ const jsonld = {
           </ul>
         </section>
       </details>}
-      {work.id === 'a-casa-em-portugal-e-na-europa' && workById('orcamento-2027-o-que-muda-e-para-quem') && <p class="regra-portas" data-hb1-porta="orcamento"><a href={routePath('estudo', lang, {slug: 'orcamento-2027-o-que-muda-e-para-quem'})}>{lang === 'pt' ? 'O estudo do Orçamento' : 'The Budget study'}</a></p>}
+      {work.id === 'a-casa-em-portugal-e-na-europa' && workById('orcamento-2027-o-que-muda-e-para-quem') && <p class="regra-portas" data-hb1-porta="orcamento"><a href={routePath('estudo', lang, {slug: 'orcamento-2027-o-que-muda-e-para-quem'})}>{ROTULOS_B1[lang].estudoDoOrcamento}</a></p>}
       <NotaDosAntecessores work={work} lang={lang} />
       <EdicaoPublicada work={work} lang={lang} />
     </div>
