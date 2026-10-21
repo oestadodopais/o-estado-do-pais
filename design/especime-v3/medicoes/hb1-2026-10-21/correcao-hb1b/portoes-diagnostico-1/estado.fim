@@ -1,0 +1,11 @@
+ M design/especime-v3/medicoes/hb1-2026-10-21/LEIA-ME.md
+ M scripts/check-pais.mjs
+ M scripts/explicacoes-do-portao.mjs
+ M src/components/HistoricoDaLinha.astro
+ M src/components/RegistoCorrecoes.astro
+ M src/data/lugar-das-linhas.mjs
+ M src/lib/leitura-da-semana.mjs
+ M src/lib/mudancas.mjs
+ M tests/explicacoes/semana.mjs
+?? design/especime-v3/medicoes/hb1-2026-10-21/correcao-hb1b/especialidade-prova.json
+?? design/especime-v3/medicoes/hb1-2026-10-21/correcao-hb1b/formas-provas.json

@@ -6,6 +6,22 @@
  * As observações Eurostat leem a coordenada selada em lugar-da-incorporacao.
  */
 export const LUGARES_HB1 = {
+  /* HB1-b: cada diferença conserva a geografia da única componente Eurostat.
+     A definição é metainformação do Eurostat, não uma observação territorial. */
+  "der-hab-preco-rendimento-acima-2015-eu-2024": {"pt": "União Europeia", "en": "European Union"},
+  "der-hab-preco-rendimento-acima-2015-pt-2024": {"pt": "Portugal", "en": "Portugal"},
+  "der-hab-preco-rendimento-lt-eu-2024": {"pt": "União Europeia", "en": "European Union"},
+  "der-hab-preco-rendimento-lt-pt-2024": {"pt": "Portugal", "en": "Portugal"},
+  "hab-eurostat-privacao-severa-definicao": {"pt": "Eurostat (definição)", "en": "Eurostat (definition)"},
+  /* A proposta do Governo, a proposta da IL, as reivindicações da plataforma
+     e a legenda do Orçamento dizem respeito à política nacional. A RTP
+     localiza a contagem dos manifestantes no Porto. */
+  "hab-arrendamento-exposicao": {"pt": "Portugal", "en": "Portugal"},
+  "hab-arrendamento-exposicao-vagos": {"pt": "Portugal", "en": "Portugal"},
+  "hab-il-proposta": {"pt": "Portugal", "en": "Portugal"},
+  "hab-imprensa-manif-rtp": {"pt": "Porto", "en": "Porto"},
+  "hab-oe-legenda-invariante": {"pt": "Portugal", "en": "Portugal"},
+  "hab-plataforma-reivindicacoes": {"pt": "Portugal", "en": "Portugal"},
   "der-hab-fiscal-2027": {"pt": "Portugal", "en": "Portugal"},
   "der-hab-inquilinos-eu-2025": {"pt": "União Europeia", "en": "European Union"},
   "der-hab-inquilinos-pt-2025": {"pt": "Portugal", "en": "Portugal"},

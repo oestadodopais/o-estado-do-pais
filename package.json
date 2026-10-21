@@ -14,7 +14,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "ledger:check": "node tests/linha/cadeias-proveniencia.mjs && node scripts/check-ledger.mjs && node tests/hb1/bilingue.mjs && node tests/hb1/data-sem-publicacao.mjs && node tests/linha/historia-da-proveniencia.mjs && node tests/linha/historia-do-valor.mjs && node scripts/check-afirmacoes.mjs",
-    "check:registo": "node scripts/check-registo.mjs && node tests/hb1/edicoes.mjs",
+    "check:registo": "node scripts/check-registo.mjs && node tests/hb1/edicoes.mjs && node tests/incorporar/dados.mjs",
     "cartoes": "node scripts/cartoes.mjs",
     "gate:html": "node scripts/gate-html.mjs",
     "check:datas": "node tests/hb1/publicacao.mjs && node tests/hb1/periodos.mjs && node scripts/check-datas.mjs",

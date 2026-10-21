@@ -240,3 +240,7 @@ As formas A da Euronews, das tendas e da definição têm os excertos e selos em
 O motor tem 20 derivadas depois das quatro novas, das quais 19 atravessam para o sítio; a percentagem derivada de vagos fica só no motor, porque o estudo usa a percentagem oficial do INE. O pedido referia quinze recibos. Todas as derivadas usadas nesta edição passaram pelo mesmo gerador de palavras e pela conta independente do `check`.
 
 Os campos que continuam por verificar são `document.edition` de `hab-ine-calendario-juro` e `hab-ine-calendario-precos-locais`. [ausencias.json](correcao-hb1b/ausencias.json) dá a razão, e [datas-ancoradas.json](correcao-hb1b/datas-ancoradas.json) mostra as datas efetivamente preenchidas e as suas âncoras.
+
+### Corridas recusadas e correções de integração
+
+A primeira corrida sobre `34e51c59` teve build 1, verify 125 (não executado), typecheck 0 e motor 0. Faltavam declarações de lugar das duas correções textuais. Durante a corrida do motor, essas dependências foram corrigidas no sítio; por isso o estado final dessa corrida está sujo e não é apresentado como prova final do sítio. A segunda corrida, sobre `f8f4a4d9`, teve build 1, verify 125 e typecheck 0: a incorporação de uma das novas contas derivadas exigiu a declaração de lugar. Os registos completos ficam em [portoes-diagnostico-1](correcao-hb1b/portoes-diagnostico-1/) e [portoes-diagnostico-2](correcao-hb1b/portoes-diagnostico-2/). O motor permaneceu em `e8d6f79e`, com árvore limpa e código zero.
