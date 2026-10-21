@@ -1,0 +1,123 @@
+{
+ "cabeca": "a743d51be59c4190c656e17ef0841252608741c2",
+ "capturador_sha256": "69f52ac19ec559a65e1f611b96107caa8f9d40d855354b59a9c364b8a02c16d3",
+ "larguras": [
+  390
+ ],
+ "ok": true,
+ "falhas": [],
+ "capturas": [
+  {
+   "ficheiro": "inicio-inflacao-pt-390.png",
+   "rota": "/",
+   "lingua": "pt",
+   "largura": 390,
+   "documento": 390,
+   "altura": 8363,
+   "toque": {
+    "encontrado": true,
+    "ativo": "janeiro de 2022: 3,34 %",
+    "etiqueta": null,
+    "etiquetaDentro": null
+   },
+   "sha256": "0a4d4646842d73b01a3f538458a2286eb2bf29bab5fae523ba06a205750298ed",
+   "recortes": [
+    {
+     "ficheiro": "inicio-inflacao-pt-390-grafico.png",
+     "seletor": "[data-bloco-serie]",
+     "caixa": {
+      "left": 18,
+      "top": 1009,
+      "width": 354,
+      "height": 246
+     },
+     "sha256": "995ed424901aaf38bc1d10fa50ed4184983f05edc4d1e9da7d044af58f2984c5"
+    }
+   ]
+  },
+  {
+   "ficheiro": "inicio-inflacao-en-390.png",
+   "rota": "/en/",
+   "lingua": "en",
+   "largura": 390,
+   "documento": 390,
+   "altura": 8242,
+   "toque": {
+    "encontrado": true,
+    "ativo": "January 2022: 3,34 %",
+    "etiqueta": null,
+    "etiquetaDentro": null
+   },
+   "sha256": "22c78c1ed32fdbfb0cab15391c2d6e52e8813663b91f7e0ca7b5840febb196d0",
+   "recortes": [
+    {
+     "ficheiro": "inicio-inflacao-en-390-grafico.png",
+     "seletor": "[data-bloco-serie]",
+     "caixa": {
+      "left": 18,
+      "top": 984,
+      "width": 354,
+      "height": 246
+     },
+     "sha256": "4b4603f565fc8bfacb69f4e01542f6cfcc8e78aaf6172bc26582aa8513eb93b9"
+    }
+   ]
+  },
+  {
+   "ficheiro": "tema-faixa-pt-390.png",
+   "rota": "/emprego/",
+   "lingua": "pt",
+   "largura": 390,
+   "documento": 390,
+   "altura": 3589,
+   "toque": {
+    "encontrado": true,
+    "ativo": "França (definição diferente), 2025: 75,4",
+    "etiqueta": "França (definição diferente), 2025: 75,4",
+    "etiquetaDentro": true
+   },
+   "sha256": "80ea962d4f0c97af0167063b653f4c6775681220dc6d9a8551465637dc5c7ae7",
+   "recortes": [
+    {
+     "ficheiro": "tema-faixa-pt-390-faixa.png",
+     "seletor": "[data-faixa-ue=\"taxa-de-emprego-2025-paises\"]",
+     "caixa": {
+      "left": 18,
+      "top": 597,
+      "width": 354,
+      "height": 183
+     },
+     "sha256": "daa8b34c0484e5b952022cd62d7c5b785cd3a0c891bb3d984d201e98771acd7e"
+    }
+   ]
+  },
+  {
+   "ficheiro": "tema-faixa-en-390.png",
+   "rota": "/en/employment/",
+   "lingua": "en",
+   "largura": 390,
+   "documento": 390,
+   "altura": 3454,
+   "toque": {
+    "encontrado": true,
+    "ativo": "France (definition differs), 2025: 75,4",
+    "etiqueta": "France (definition differs), 2025: 75,4",
+    "etiquetaDentro": true
+   },
+   "sha256": "e0cf7c73956a8ef6a42a4dcf3c0389f521352a9aaa1c32a9d472f5b12fc58995",
+   "recortes": [
+    {
+     "ficheiro": "tema-faixa-en-390-faixa.png",
+     "seletor": "[data-faixa-ue=\"taxa-de-emprego-2025-paises\"]",
+     "caixa": {
+      "left": 18,
+      "top": 556,
+      "width": 354,
+      "height": 183
+     },
+     "sha256": "7c8d1c8d96330e60faff32cef9aeb8336e0e27765539007ce4c80fc0a3cfb477"
+    }
+   ]
+  }
+ ]
+}
