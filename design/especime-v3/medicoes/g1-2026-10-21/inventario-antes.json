@@ -1,0 +1,420 @@
+{
+ "dist": "dist",
+ "paginasComGraficos": 757,
+ "graficos": 2863,
+ "semToque": 2747,
+ "semToqueComValoresEscondidos": 70,
+ "porCategoria": {
+  "valores-escritos": 138,
+  "sem-algarismos": 68,
+  "valores-escondidos": 90,
+  "escondido": 2510,
+  "documento": 57
+ },
+ "componentes": {
+  "svg.fc-tapete": {
+   "categorias": {
+    "escondido": 2464
+   },
+   "graficos": 2464,
+   "paginas": 616,
+   "edicoes": [
+    "en",
+    "pt"
+   ],
+   "rato": 0,
+   "toque": 0,
+   "teclado": 0,
+   "escrito": 0,
+   "semToque": 2464
+  },
+  "svg.mapa-svg": {
+   "categorias": {
+    "sem-algarismos": 60
+   },
+   "graficos": 60,
+   "paginas": 60,
+   "edicoes": [
+    "en",
+    "pt"
+   ],
+   "rato": 50,
+   "toque": 0,
+   "teclado": 0,
+   "escrito": 0,
+   "semToque": 60
+  },
+  "svg.exp-valor": {
+   "categorias": {
+    "valores-escritos": 52
+   },
+   "graficos": 52,
+   "paginas": 2,
+   "edicoes": [
+    "en",
+    "pt"
+   ],
+   "rato": 0,
+   "toque": 0,
+   "teclado": 0,
+   "escrito": 52,
+   "semToque": 0
+  },
+  "SerieDoPais (com leitura)": {
+   "categorias": {
+    "valores-escondidos": 50
+   },
+   "graficos": 50,
+   "paginas": 50,
+   "edicoes": [
+    "en",
+    "pt"
+   ],
+   "rato": 50,
+   "toque": 0,
+   "teclado": 0,
+   "escrito": 0,
+   "semToque": 50
+  },
+  "svg em .scrollx": {
+   "categorias": {
+    "documento": 48
+   },
+   "graficos": 48,
+   "paginas": 4,
+   "edicoes": [
+    "en",
+    "pt"
+   ],
+   "rato": 0,
+   "toque": 0,
+   "teclado": 0,
+   "escrito": 0,
+   "semToque": 48
+  },
+  "svg.pp-valor": {
+   "categorias": {
+    "valores-escritos": 38
+   },
+   "graficos": 38,
+   "paginas": 2,
+   "edicoes": [
+    "en",
+    "pt"
+   ],
+   "rato": 0,
+   "toque": 0,
+   "teclado": 0,
+   "escrito": 38,
+   "semToque": 0
+  },
+  "SerieDoPais (porta)": {
+   "categorias": {
+    "valores-escritos": 34
+   },
+   "graficos": 34,
+   "paginas": 10,
+   "edicoes": [
+    "en",
+    "pt"
+   ],
+   "rato": 0,
+   "toque": 0,
+   "teclado": 0,
+   "escrito": 0,
+   "semToque": 34
+  },
+  "svg.regua-svg": {
+   "categorias": {
+    "escondido": 26
+   },
+   "graficos": 26,
+   "paginas": 2,
+   "edicoes": [
+    "en",
+    "pt"
+   ],
+   "rato": 0,
+   "toque": 0,
+   "teclado": 0,
+   "escrito": 0,
+   "semToque": 26
+  },
+  "FaixaDaUniao": {
+   "categorias": {
+    "valores-escondidos": 20
+   },
+   "graficos": 20,
+   "paginas": 10,
+   "edicoes": [
+    "en",
+    "pt"
+   ],
+   "rato": 20,
+   "toque": 0,
+   "teclado": 0,
+   "escrito": 0,
+   "semToque": 20
+  },
+  "FaixaDosPaises": {
+   "categorias": {
+    "valores-escondidos": 20
+   },
+   "graficos": 20,
+   "paginas": 2,
+   "edicoes": [
+    "en",
+    "pt"
+   ],
+   "rato": 20,
+   "toque": 20,
+   "teclado": 0,
+   "escrito": 0,
+   "semToque": 0
+  },
+  "svg.conv-barra": {
+   "categorias": {
+    "escondido": 20
+   },
+   "graficos": 20,
+   "paginas": 2,
+   "edicoes": [
+    "en",
+    "pt"
+   ],
+   "rato": 0,
+   "toque": 0,
+   "teclado": 0,
+   "escrito": 0,
+   "semToque": 20
+  },
+  "svg.pp-col-valor": {
+   "categorias": {
+    "valores-escritos": 6
+   },
+   "graficos": 6,
+   "paginas": 2,
+   "edicoes": [
+    "en",
+    "pt"
+   ],
+   "rato": 0,
+   "toque": 0,
+   "teclado": 0,
+   "escrito": 6,
+   "semToque": 0
+  },
+  "svg em .mapbox": {
+   "categorias": {
+    "documento": 6
+   },
+   "graficos": 6,
+   "paginas": 4,
+   "edicoes": [
+    "en",
+    "pt"
+   ],
+   "rato": 0,
+   "toque": 0,
+   "teclado": 0,
+   "escrito": 0,
+   "semToque": 6
+  },
+  "svg.pp-sinal": {
+   "categorias": {
+    "sem-algarismos": 4
+   },
+   "graficos": 4,
+   "paginas": 4,
+   "edicoes": [
+    "en",
+    "pt"
+   ],
+   "rato": 0,
+   "toque": 0,
+   "teclado": 0,
+   "escrito": 0,
+   "semToque": 4
+  },
+  "svg.forma-mapa-svg": {
+   "categorias": {
+    "sem-algarismos": 4
+   },
+   "graficos": 4,
+   "paginas": 2,
+   "edicoes": [
+    "en",
+    "pt"
+   ],
+   "rato": 0,
+   "toque": 0,
+   "teclado": 0,
+   "escrito": 0,
+   "semToque": 4
+  },
+  "svg.agenda-eixo-svg": {
+   "categorias": {
+    "valores-escritos": 2
+   },
+   "graficos": 2,
+   "paginas": 2,
+   "edicoes": [
+    "en",
+    "pt"
+   ],
+   "rato": 0,
+   "toque": 0,
+   "teclado": 0,
+   "escrito": 0,
+   "semToque": 2
+  },
+  "svg.mun-serie-svg": {
+   "categorias": {
+    "valores-escritos": 2
+   },
+   "graficos": 2,
+   "paginas": 2,
+   "edicoes": [
+    "en",
+    "pt"
+   ],
+   "rato": 0,
+   "toque": 0,
+   "teclado": 0,
+   "escrito": 0,
+   "semToque": 2
+  },
+  "svg.mun-banda-svg": {
+   "categorias": {
+    "valores-escritos": 2
+   },
+   "graficos": 2,
+   "paginas": 2,
+   "edicoes": [
+    "en",
+    "pt"
+   ],
+   "rato": 0,
+   "toque": 0,
+   "teclado": 0,
+   "escrito": 0,
+   "semToque": 2
+  },
+  "svg.rule-svg": {
+   "categorias": {
+    "valores-escritos": 2
+   },
+   "graficos": 2,
+   "paginas": 2,
+   "edicoes": [
+    "en",
+    "pt"
+   ],
+   "rato": 0,
+   "toque": 0,
+   "teclado": 0,
+   "escrito": 0,
+   "semToque": 2
+  },
+  "svg em .search": {
+   "categorias": {
+    "documento": 2
+   },
+   "graficos": 2,
+   "paginas": 1,
+   "edicoes": [
+    "pt"
+   ],
+   "rato": 0,
+   "toque": 0,
+   "teclado": 0,
+   "escrito": 0,
+   "semToque": 2
+  },
+  "svg em .palin": {
+   "categorias": {
+    "documento": 1
+   },
+   "graficos": 1,
+   "paginas": 1,
+   "edicoes": [
+    "pt"
+   ],
+   "rato": 0,
+   "toque": 0,
+   "teclado": 0,
+   "escrito": 0,
+   "semToque": 1
+  }
+ },
+ "semToquePorComponente": {
+  "svg.agenda-eixo-svg": {
+   "graficos": 2,
+   "exemplo": "/agenda/"
+  },
+  "SerieDoPais (porta)": {
+   "graficos": 34,
+   "exemplo": "/areas/trabalho-solidariedade-e-seguranca-social/"
+  },
+  "svg.mapa-svg": {
+   "graficos": 60,
+   "exemplo": "/distritos/aveiro/"
+  },
+  "FaixaDaUniao": {
+   "graficos": 20,
+   "exemplo": "/emprego/"
+  },
+  "svg.regua-svg": {
+   "graficos": 26,
+   "exemplo": "/en/european-union/"
+  },
+  "SerieDoPais (com leitura)": {
+   "graficos": 50,
+   "exemplo": "/en/"
+  },
+  "svg.pp-sinal": {
+   "graficos": 4,
+   "exemplo": "/en/"
+  },
+  "svg.fc-tapete": {
+   "graficos": 2464,
+   "exemplo": "/en/municipalities/abrantes/"
+  },
+  "svg.mun-serie-svg": {
+   "graficos": 2,
+   "exemplo": "/en/municipalities/evora/"
+  },
+  "svg.mun-banda-svg": {
+   "graficos": 2,
+   "exemplo": "/en/municipalities/evora/"
+  },
+  "svg.forma-mapa-svg": {
+   "graficos": 4,
+   "exemplo": "/en/places/"
+  },
+  "svg.rule-svg": {
+   "graficos": 2,
+   "exemplo": "/en/regions/"
+  },
+  "svg.conv-barra": {
+   "graficos": 20,
+   "exemplo": "/en/regions/"
+  },
+  "svg em .scrollx": {
+   "graficos": 48,
+   "exemplo": "/en/studies/agua-nao-faturada/document/"
+  },
+  "svg em .mapbox": {
+   "graficos": 6,
+   "exemplo": "/en/studies/agua-nao-faturada/document/"
+  },
+  "svg em .search": {
+   "graficos": 2,
+   "exemplo": "/estudos/evolucao-de-portugal-desde-1981/documento/"
+  },
+  "svg em .palin": {
+   "graficos": 1,
+   "exemplo": "/estudos/evolucao-de-portugal-desde-1981/documento/"
+  }
+ }
+}

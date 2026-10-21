@@ -1,0 +1,103 @@
+{
+ "cabeca_do_dist": "a39afdc3b97d9d4f850dbaeeb73bc001e0f838ce",
+ "medidas": [
+  {
+   "nome": "gráficos que escondem valores e não os mostram ao toque, antes",
+   "valor": 70,
+   "comando": "node scripts/graficos-inventario.mjs --json inventario-antes.json (dist de a39afdc3b)",
+   "conhecido_positivo": "o gráfico da inflação da primeira página (/), a I230"
+  },
+  {
+   "nome": "gráficos que escondem valores e não os mostram ao toque, depois",
+   "valor": 0,
+   "comando": "node scripts/graficos-inventario.mjs --json inventario-depois.json",
+   "conhecido_positivo": "a contagem de antes, com o mesmo guião, deu mais de zero",
+   "codigo": 0
+  },
+  {
+   "nome": "desenhos sem leitura ao toque e sem valores escritos (contagem estrita), antes",
+   "valor": 2705,
+   "comando": "recomposta de inventario-antes.json: Σ graficos − valores-escritos − toque",
+   "conhecido_positivo": "o campo semToque de depois, escrito pelo guião, é igual à recomposta de depois"
+  },
+  {
+   "nome": "desenhos sem leitura ao toque e sem valores escritos (contagem estrita), depois",
+   "valor": 2635,
+   "campo_semToque_do_guiao": 2635,
+   "comando": "recomposta de inventario-depois.json",
+   "conhecido_positivo": "idem"
+  },
+  {
+   "nome": "desenhos por categoria, antes e depois",
+   "valor": [
+    {
+     "valores-escritos": 138,
+     "sem-algarismos": 68,
+     "valores-escondidos": 90,
+     "escondido": 2510,
+     "documento": 57
+    },
+    {
+     "valores-escritos": 138,
+     "sem-algarismos": 68,
+     "valores-escondidos": 90,
+     "escondido": 2510,
+     "documento": 57
+    }
+   ],
+   "comando": "campo porCategoria",
+   "conhecido_positivo": "o gráfico da inflação de / está em valores-escondidos"
+  },
+  {
+   "nome": "desenhos no dist, antes e depois",
+   "valor": [
+    2863,
+    2863
+   ],
+   "comando": "idem, campo graficos",
+   "conhecido_positivo": "idem"
+  },
+  {
+   "nome": "check:graficos na cabeça",
+   "valor": 0,
+   "cauda": [
+    "check:graficos: 9143 páginas, 70 gráficos marcados, 10612 pontos; na dívida declarada: {\"FaixaDosPaises\":20}."
+   ],
+   "comando": "node tests/graficos/interacao.mjs",
+   "conhecido_positivo": "as três plantas abaixo saem com 1"
+  },
+  {
+   "nome": "planta sem-marca",
+   "valor": 1,
+   "cauda": [
+    "check:graficos: 9143 páginas, 69 gráficos marcados, 10323 pontos; na dívida declarada: {\"FaixaDosPaises\":20}.",
+    "planta «sem-marca»: mordeu (1 erros).",
+    "G1 /index.html: um desenho de «SerieDoPais (com leitura)» esconde valores e não tem data-grafico."
+   ],
+   "comando": "node tests/graficos/interacao.mjs --plantar sem-marca",
+   "conhecido_positivo": "morde quando sai com 1 e a cauda diz «mordeu»"
+  },
+  {
+   "nome": "planta aria-label",
+   "valor": 1,
+   "cauda": [
+    "check:graficos: 9143 páginas, 70 gráficos marcados, 10612 pontos; na dívida declarada: {\"FaixaDosPaises\":20}.",
+    "planta «aria-label»: mordeu (1 erros).",
+    "G3 /index.html: o aria-label diz «janeiro de 1992: 9,42 %» e o ponto diz «janeiro de 1992: 9,41 %»."
+   ],
+   "comando": "node tests/graficos/interacao.mjs --plantar aria-label",
+   "conhecido_positivo": "morde quando sai com 1 e a cauda diz «mordeu»"
+  },
+  {
+   "nome": "planta sem-guiao",
+   "valor": 1,
+   "cauda": [
+    "check:graficos: 9143 páginas, 70 gráficos marcados, 10612 pontos; na dívida declarada: {\"FaixaDosPaises\":20}.",
+    "planta «sem-guiao»: mordeu (1 erros).",
+    "G4 /index.html: a página tem 1 gráficos marcados e carrega o guião 0 vezes."
+   ],
+   "comando": "node tests/graficos/interacao.mjs --plantar sem-guiao",
+   "conhecido_positivo": "morde quando sai com 1 e a cauda diz «mordeu»"
+  }
+ ]
+}

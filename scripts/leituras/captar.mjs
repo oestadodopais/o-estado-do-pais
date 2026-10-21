@@ -8,6 +8,9 @@
  * erros do navegador, rotas em falta e recortes ausentes ou duplicados.
  * Tema claro, movimento reduzido, escala 1; 390, 768, 1024, 1280 e 1600 px por omissão.
  * `larguras` permite a régua dos telefones; `medirMenu` acrescenta as caixas da H4 e do bloco inicial.
+ * `toque` (G1, 21.10.2026), por página: o seletor de um gráfico em que se simula um toque (`pointerdown` e
+ *   `pointerup` de tipo `touch` no centro dele) antes da captura; recusa a captura se nenhum ponto acender, e guarda
+ *   nas medidas o `aria-label` do ponto aceso e o texto da etiqueta aberta.
  * Não altera dist/. Cada bloco acrescenta as suas réguas de conteúdo; estas
  * capturas comuns não substituem as células nem a leitura visual do bloco.
  */
@@ -82,6 +85,20 @@ try {
       if (resposta?.status() !== 200) throw new Error(`${prefixo}: a página não respondeu a 200`);
       await pagina.evaluate(async () => { await document.fonts.ready; await new Promise(r => requestAnimationFrame(r)); });
       const medidas = await pagina.evaluate(() => ({janela:innerWidth,documento:document.documentElement.scrollWidth,corpo:document.body.scrollWidth,altura:document.documentElement.scrollHeight}));
+      if (p.toque) {
+        medidas.toque = await pagina.evaluate((sel) => {
+          const el = document.querySelector(sel);
+          if (!el) return { encontrado: false };
+          el.scrollIntoView({ block: 'center' });
+          const r = el.getBoundingClientRect(), x = r.left + r.width / 2, y = r.top + r.height / 2;
+          for (const tipo of ['pointerdown', 'pointerup']) el.dispatchEvent(new PointerEvent(tipo, { bubbles: true, pointerType: 'touch', isPrimary: true, clientX: x, clientY: y }));
+          const ativo = document.querySelector('[data-grafico-ponto][data-ativo]');
+          const etiqueta = [...document.querySelectorAll('.grafico-etiqueta')].find((e) => !e.hidden);
+          const caixa = etiqueta?.getBoundingClientRect();
+          return { encontrado: true, ativo: ativo?.getAttribute('aria-label') ?? null, etiqueta: etiqueta?.textContent ?? null, etiquetaDentro: caixa ? caixa.left >= 0 && caixa.right <= document.documentElement.clientWidth : null };
+        }, p.toque);
+        if (!medidas.toque.ativo) throw new Error(`${prefixo}: o toque em ${p.toque} não acendeu ponto nenhum`);
+      }
       if (config.medirMenu) {
         medidas.menu = await pagina.evaluate(medirMenu);
         medidas.discussao = await pagina.locator('[data-discussao-inicio]').boundingBox();
