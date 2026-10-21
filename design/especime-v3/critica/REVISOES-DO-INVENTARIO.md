@@ -866,3 +866,9 @@ Seis declarações substituídas: comparação e opinião da Saúde nas duas edi
 | bloco | mudança | estado | nota |
 |---|---|---|---|
 | eo1-c | 2 cadeias novas recolhidas do HTML nas duas edições; 4 declarações anteriores retiradas | por ler | Codex, 21.10.2026: contagens recolhidas do HTML da fusão pelo gerador do inventário, adaptado ao âmbito EO1-c; declarações dos dois lados conservadas. A leitura cruzada pertence à direção. |
+
+## EO1-d: contagens com a linha de pessoal da UTAO
+
+| bloco | mudança | estado | nota |
+|---|---|---|---|
+| eo1-d | Duas contagens recolhidas do HTML nas duas edições; duas declarações anteriores retiradas | por ler | Codex gpt-6-astra, 21.10.2026: a nova linha da UTAO altera o total do livro. A leitura cruzada pertence à direção. |

@@ -11,6 +11,7 @@ import { DOMINIOS } from '../src/data/dominios.mjs';
 import { leituraDe } from '../src/data/leituras.mjs';
 import { primeirasFrases } from '../src/lib/estudos-b1.mjs';
 import { getClaim } from '../src/lib/ledger.mjs';
+import { valorNaLingua } from '../src/lib/valor-na-lingua.mjs';
 import { POR_VERIFICAR } from '../src/data/marcador.mjs';
 import { verificaVeredictoDoPais, verificaExplicacoesDoVeredicto } from './pais-veredicto.mjs';
 import { conferirBlocosDaPagina, idsDosBlocos } from '../tests/inicio/blocos.mjs';
@@ -47,7 +48,12 @@ export function sinopseEsperada(w, lang) {
   const partes = primeirasFrases(leituraDe(w.id)?.frase[lang] ?? [w.description[lang]]);
   /* K2 (02.10.2026, item 5 do brief): o «%» que a ficha acrescenta a uma linha em percentagem leva o espaço antes dele,
      como em todos os valores do sítio (`src/lib/estudos-b1.mjs`); esta é a cópia da regra, e compara carácter a carácter. */
-  return normal(partes.map(p=>typeof p==='string' ? p : p.claim ? (p.abs === true ? String(getClaim(p.claim).value).replace(/^[+−-]/, '') : getClaim(p.claim).value)+(p.sufixo ?? (getClaim(p.claim).unit === '%' ? ' %' : '')) : p.ref ?? '').join(''));
+  return normal(partes.map(p => {
+    if (typeof p === 'string') return p;
+    if (!p.claim) return p.ref ?? '';
+    const linha = getClaim(p.claim), valor = valorNaLingua(linha, lang);
+    return (p.abs === true ? valor.replace(/^[+−-]/, '') : valor) + (p.sufixo ?? (linha.unit === '%' ? ' %' : ''));
+  }).join(''));
 }
 export function conferirSinopse(resumo, w, lang) {
   const esperado = w && sinopseEsperada(w, lang);
