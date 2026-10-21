@@ -1,0 +1,72 @@
+{
+  "cabeca": "86b16562a849e6c68e0d4dbb5b36b6c277f5173d",
+  "inicio": "2026-10-21T00:16:56.987Z",
+  "fim": "2026-10-21T00:17:09.793Z",
+  "segundos": 12.806,
+  "passos": [
+    {
+      "passo": "cadeia:build",
+      "cadeia": "build",
+      "inicio": "2026-10-21T00:16:56.987+00:00",
+      "fim": "2026-10-21T00:17:09.473+00:00",
+      "segundos": 12.485840040957555,
+      "codigo": 1
+    },
+    {
+      "passo": "npm run mapa:unidades",
+      "cadeia": "build",
+      "inicio": "2026-10-21T00:16:56.987+00:00",
+      "fim": "2026-10-21T00:16:57.124+00:00",
+      "segundos": 0.13632924994453788,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run ledger:check",
+      "cadeia": "build",
+      "inicio": "2026-10-21T00:16:57.124+00:00",
+      "fim": "2026-10-21T00:17:04.504+00:00",
+      "segundos": 7.3802345000440255,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:registo",
+      "cadeia": "build",
+      "inicio": "2026-10-21T00:17:04.504+00:00",
+      "fim": "2026-10-21T00:17:04.834+00:00",
+      "segundos": 0.32954362500458956,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:cruzamento",
+      "cadeia": "build",
+      "inicio": "2026-10-21T00:17:04.834+00:00",
+      "fim": "2026-10-21T00:17:05.280+00:00",
+      "segundos": 0.44636562501545995,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:documentos",
+      "cadeia": "build",
+      "inicio": "2026-10-21T00:17:05.281+00:00",
+      "fim": "2026-10-21T00:17:05.441+00:00",
+      "segundos": 0.15989816701039672,
+      "codigo": 0
+    },
+    {
+      "passo": "astro build",
+      "cadeia": "build",
+      "inicio": "2026-10-21T00:17:05.441+00:00",
+      "fim": "2026-10-21T00:17:09.473+00:00",
+      "segundos": 4.032427874975838,
+      "codigo": 1
+    },
+    {
+      "passo": "npm run typecheck",
+      "cadeia": "typecheck",
+      "inicio": "2026-10-21T00:17:09.633+00:00",
+      "fim": "2026-10-21T00:17:09.793+00:00",
+      "segundos": 0.16001016704831272,
+      "codigo": 0
+    }
+  ]
+}

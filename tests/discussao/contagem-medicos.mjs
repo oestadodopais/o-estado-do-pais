@@ -2,6 +2,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
+import {resolverExplicacao} from '../../src/lib/explicacoes.mjs';
 import {ITENS} from '../../src/data/discussao.mjs';
 import {conferirAuditoriaDasExplicacoes} from '../explicacoes/explicacao.mjs';
 export function auditarContagem(modo='limpa'){
@@ -21,10 +22,24 @@ export function auditarContagem(modo='limpa'){
 }
 export function plantasDaContagem(){
  if(auditarContagem().length)throw new Error('Controlo limpo da contagem recusado');
- return ['dados','apoio'].map(modo=>{
+ const plantas=['dados','apoio'].map(modo=>{
   const erros=auditarContagem(modo);
   return {nome:'contagem dos médicos adulterada: '+modo,mordeu:erros.length>0,queixa:erros[0]??null};
  });
+ for(const lang of ['pt','en']){
+  resolverExplicacao(ITENS[0],lang);
+  for(const [nome,alterar] of [
+   ['ano literal trocado',p=>p.map(t=>typeof t==='string'?t.replace('2024','2025'):t)],
+   ['algarismo acrescentado',p=>[...p,' 27']],
+   ['período selado retirado',p=>p.filter(t=>t?.periodo!=='eurostat-pt-phys')],
+  ]){
+   const copia=structuredClone(ITENS[0]);
+   copia.seccoes[1].conteudo[6].paragrafo[lang]=alterar(copia.seccoes[1].conteudo[6].paragrafo[lang]);
+   let mordeu=false;try{resolverExplicacao(copia,lang);}catch{mordeu=true;}
+   plantas.push({nome:nome+' '+lang,mordeu});
+  }
+ }
+ return plantas;
 }
 if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url)){
  const modo=process.argv[2]??'limpa',erros=auditarContagem(modo);

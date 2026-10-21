@@ -998,3 +998,5 @@ A primeira exportação falhou por `ModuleNotFoundError`; a repetição pelo mó
 - **V2E-67.** A numeração começa em V2E-65 porque V2E-62 a V2E-64 já constam da V2-e-d; não se renumera o histórico. A cabeça dos portões será o último commit que altera código, dados ou inventário. O commit posterior incorpora só relatório e provas; `e/conferir-identidade.mjs` confere a igualdade do código entregue.
 
 As frases renderizadas, os códigos e as capturas serão registados depois da corrida da cabeça comitada.
+
+- **V2E-68.** A primeira construção recusou o ano literal exigido pela frase (`build=1`, `verify=125`, `typecheck=0`, em `e/portoes-recusa-ano/`). O resolvedor admite só a frase exata nas duas línguas, com os três recibos no contexto, todos com período de 2024, e com o token de período português no próprio parágrafo. Plantas retiram o token, trocam o ano e acrescentam outro algarismo.

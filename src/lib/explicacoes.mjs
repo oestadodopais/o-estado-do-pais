@@ -245,7 +245,14 @@ function resolver(partes, lang, onde, ctx) {
   lista.forEach((p, i) => {
     const aqui = `${onde}[${i}]`;
     if (typeof p === 'string') {
-      if (/\d/.test(p)) throw defeito(aqui, `a palavra fixa «${p}» traz um algarismo; os algarismos entram por { claim } ou { periodo }.`);
+      // V2-e-e: o ano literal desta contagem já tem o período selado no mesmo parágrafo.
+      const contagemMedicos = p === (lang === 'pt'
+        ? '), nos vinte e seis Estados-membros com dados de 2024; a Eslováquia não os tem.'
+        : '), among the twenty-six member states with 2024 data; Slovakia has none.') &&
+        ['eurostat-pt-phys','eurostat-be-phys','eurostat-el-phys'].every(id =>
+          ctx.linhas.has(id) && getClaim(id).reference_date === '2024') &&
+        lista.some(t => t && typeof t === 'object' && 'periodo' in t && t.periodo === 'eurostat-pt-phys');
+      if (/\d/.test(p) && !contagemMedicos) throw defeito(aqui, `a palavra fixa «${p}» traz um algarismo; os algarismos entram por { claim } ou { periodo }.`);
       out.push(p);
       return;
     }
