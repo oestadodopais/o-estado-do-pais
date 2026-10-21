@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-21T00:43:04+00:00",
+ "copia": "<pacotes>/pacote-v2e-e-2026-10-21",
+ "plantas": [
+  {
+   "id": "W2",
+   "ficheiro": "built/en/under-discussion/index.html",
+   "descricao": "o país sem valor passa de Slovakia a Slovenia na página construída em inglês; a referência é a conferência medicos.json (ausentes SK)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "2ae038f56b2e10c87a15557035ca489c16b7fbbbf3ec2e99d34141eb58d64838",
+   "sha256_depois": "c2ce1ef1ac22ce89e7342d750407ace775be699f06a6e3c5b40515ef8544cf37",
+   "contexto_antes": "ostat-pt-phys\"><span class=\"data-da-linha\" data-nonledger=\"data-da-linha\" data-de-linha=\"eurostat-pt-phys\" data-de-campo=\"reference_date\">2024</span></a> data; Slovakia has none.</p><p class=\"explicacao-p\" data-discussao-paragrafo=\"seccoes[1].conteudo[7].paragrafo\" data-astro-cid-i65nnz7s>In the service, by the National Health Service&",
+   "contexto_depois": "ostat-pt-phys\"><span class=\"data-da-linha\" data-nonledger=\"data-da-linha\" data-de-linha=\"eurostat-pt-phys\" data-de-campo=\"reference_date\">2024</span></a> data; Slovenia has none.</p><p class=\"explicacao-p\" data-discussao-paragrafo=\"seccoes[1].conteudo[7].paragrafo\" data-astro-cid-i65nnz7s>In the service, by the National Health Service&"
+  },
+  {
+   "id": "W3",
+   "ficheiro": "design/especime-v3/medicoes/v2e-2026-10-20/auditar-palavras.mjs",
+   "descricao": "o ano da forma inglesa da contagem na auditoria passa de 2024 a 2023 na cópia; a referência é o diff e a frase construída",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "7f6dc55ddd8c7a8e93a58a6fe4c5c81cc9c778e0090e9354bf66d61c3d431dbb",
+   "sha256_depois": "8049356e6e74e5d82674d9577ff3545da6140a203e22b5b7c9cdb15afa5e182a",
+   "contexto_antes": "n';\n   const prova=JSON.parse(fs.readFileSync(ficheiro,'utf8'));\n   const pt='nos vinte e seis Estados-membros com dados de 2024; a Eslováquia não os tem.';\n   const en='among the twenty-six member states with 2024 data; Slovakia has none.';\n   return {...f,partes:[{...parte,pt:f.pt.slice(0,-pt.length),en:f.en.slice(0,-en.length)},\n    {pt,en,classe:'leitura',sobre:'Contagem dos valores numéricos e",
+   "contexto_depois": "n';\n   const prova=JSON.parse(fs.readFileSync(ficheiro,'utf8'));\n   const pt='nos vinte e seis Estados-membros com dados de 2024; a Eslováquia não os tem.';\n   const en='among the twenty-six member states with 2023 data; Slovakia has none.';\n   return {...f,partes:[{...parte,pt:f.pt.slice(0,-pt.length),en:f.en.slice(0,-en.length)},\n    {pt,en,classe:'leitura',sobre:'Contagem dos valores numéricos e"
+  },
+  {
+   "id": "W4",
+   "ficheiro": "design/especime-v3/medicoes/v2e-2026-10-20/e/final/planta-contagem.codigo",
+   "descricao": "o código da planta da contagem passa de 1 (vermelha) a 0 na cópia; a referência é o log ao lado e o relatório",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865",
+   "sha256_depois": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+   "contexto_antes": "1\n",
+   "contexto_depois": "0\n"
+  },
+  {
+   "id": "W5",
+   "ficheiro": "src/data/discussao.mjs",
+   "descricao": "a redundância do período volta à oração do item 2 na cópia dos dados; a referência é o mandato, o diff e a página construída",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "bec925385fa2341f70610822a5ad48f9302332bb868e6b43392d337ae253ca88",
+   "sha256_depois": "8de58257b2ccb28f5c2e51bf0e93a6b1a0a9992fd18977c3e101f124bc903376",
+   "contexto_antes": "2027-riscos-pedidos-rodoviarios',' milhões de euros'), ' em pedidos de reequilíbrio financeiro e litígios das concessionárias e subconcessionárias rodoviárias, com dados reportados a ', periodo('ppp-oe2027-riscos-pedidos-rodoviarios'), ', ', valor('ppp-oe2027-riscos-acrescimo'), ' acima do relatório anterior, dos quais ', valor('ppp-oe2027-riscos-brisa'), ' da Brisa, na negociação em curso, e",
+   "contexto_depois": "2027-riscos-pedidos-rodoviarios',' milhões de euros'), ' em pedidos de reequilíbrio financeiro e litígios das concessionárias e subconcessionárias rodoviárias, com dados do primeiro trimestre, reportados a ', periodo('ppp-oe2027-riscos-pedidos-rodoviarios'), ', ', valor('ppp-oe2027-riscos-acrescimo'), ' acima do relatório anterior, dos quais ', valor('ppp-oe2027-riscos-brisa'), ' da Brisa, na negociação em curso, e"
+  },
+  {
+   "id": "W1",
+   "ficheiro": "built/o-que-se-discute/index.html",
+   "descricao": "a contagem dos Estados-membros com dados passa de «vinte e seis» a «vinte e cinco» na página construída em português; a referência é a conferência medicos.json e o recibo da Bélgica",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "8475950b9ee74527b6760ace8175c01c37f14da694c65acc4585ff3bc0e53b50",
+   "sha256_depois": "78f1ed052e98bd6f6d863eccb3c2443436c6d839bc67b7ffe8365b183e43ca76",
+   "contexto_antes": "data-selo-etiqueta=\"Eurostat\" title=\"Eurostat\"><span class=\"src-chip-texto\">fonte</span><span class=\"vh\"> · <span lang=\"en\">Eurostat</span></span></a></span>), nos vinte e seis Estados-membros com dados de <a class=\"discussao-periodo\" data-discussao-periodo=\"eurostat-pt-phys\" href=\"/livro-razao/eurostat-pt-phys\"><span class=\"data-da-linha\" data-nonle",
+   "contexto_depois": "data-selo-etiqueta=\"Eurostat\" title=\"Eurostat\"><span class=\"src-chip-texto\">fonte</span><span class=\"vh\"> · <span lang=\"en\">Eurostat</span></span></a></span>), nos vinte e cinco Estados-membros com dados de <a class=\"discussao-periodo\" data-discussao-periodo=\"eurostat-pt-phys\" href=\"/livro-razao/eurostat-pt-phys\"><span class=\"data-da-linha\" data-nonle"
+  }
+ ]
+}
