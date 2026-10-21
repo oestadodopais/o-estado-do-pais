@@ -64,6 +64,22 @@ import { EXPLICACOES } from '../../src/data/explicacoes/index.mjs';
 import { ORIGENS_DAS_EXPLICACOES } from '../../src/data/explicacoes/origens.mjs';
 import { ORIGENS_DAS_DEFINICOES } from '../../src/data/figuras.mjs';
 import { NOMES_OE1 } from '../../src/data/medidas-oe1.mjs';
+import { NOMES_PF1 } from '../../src/data/medidas-pf1.mjs';
+import { WORKS } from '../../src/data/studies.mjs';
+/* EX4 (21.10.2026): os nomes do projeto gerados pelo motor e os declarados no sítio para as linhas do Mapa 2. */
+const NOMES = /** @type {Record<string, { pt: string, en: string }>} */ ({ ...NOMES_OE1, ...NOMES_PF1 });
+/* EX4: o número do mapa e o código da subfunção, lidos por esta célula no ficheiro selado de cada linha. */
+const IDENTIFICADORES_AQUI = /** @type {Record<string, [string, RegExp]>} */ ({
+  'pf1-mapa-2027-numero': ['oe-2027-despesa-total-mapa', /^  locator: "MAPA (\d+), ano económico de /m],
+  'pf1-mapa-2026-numero': ['oe-2026-despesa-total-mapa', /^  locator: "MAPA (\d+), ano económico de /m],
+  'pf1-subfuncao-01-7-codigo': ['oe-2027-despesa-subfuncao-01-7-mapa', /^excerpt: "(\d{2}\.\d) OPERAÇÕES RELACIONADAS COM A DÍVIDA PÚBLICA /m],
+});
+/** A porta do fim de uma explicação, pela conta desta célula (EX4: o estudo e outra explicação). @param {any} d @param {'pt'|'en'} lang @param {Map<string, any>} linhas */
+function portaAqui(d, lang, linhas) {
+  if (d.rota === 'estudo') return [routePath('estudo', lang, { slug: d.slug }), `${/** @type {any[]} */ (WORKS).find((w) => w.slug === d.slug)?.editions?.find((/** @type {any} */ x) => x.lang === lang)?.title} →`];
+  const x = /** @type {any} */ (EXPLICACOES.find((y) => y.slug === d.slug));
+  return [routePath('explicacao', lang, { slug: d.slug }), `${x ? textoAqui(x.titulo[lang], lang, linhas) : '?'} →`];
+}
 import { ENTRADAS } from '../../src/data/primeira-pagina.mjs';
 import { routePath } from '../../src/lib/routes.mjs';
 import { loadClaims } from '../../src/lib/ledger.mjs';
@@ -127,7 +143,7 @@ const numero = (v) => {
 };
 /** O nome da função ou do ministério de uma linha, pela regra desta célula. @param {string} id @param {'pt'|'en'} lang */
 function nomeAqui(id, lang) {
-  const n = /** @type {Record<string, { pt: string, en: string }>} */ (NOMES_OE1)[id]?.[lang];
+  const n = NOMES[id]?.[lang];
   if (typeof n !== 'string') return null;
   if (n.includes(PREFIXO[lang])) return n.slice(n.indexOf(PREFIXO[lang]) + PREFIXO[lang].length);
   const [comeca, acaba] = PROGRAMA[lang];
@@ -210,7 +226,8 @@ export function folhasDaExplicacao(e) {
   anda(e.titulo.pt, e.titulo.en, 'titulo', null);
   e.abertura.forEach((/** @type {any} */ p, /** @type {number} */ i) => anda(p.pt, p.en, `abertura[${i}]`, null));
   e.seccoes.forEach((/** @type {any} */ s, /** @type {number} */ i) => {
-    out.push({ caminho: `seccoes[${i}].titulo`, pt: s.titulo.pt, en: s.titulo.en, ramo: null });
+    if (Array.isArray(s.titulo.pt)) anda(s.titulo.pt, s.titulo.en, `seccoes[${i}].titulo`, null);
+    else out.push({ caminho: `seccoes[${i}].titulo`, pt: s.titulo.pt, en: s.titulo.en, ramo: null });
     s.conteudo.forEach((/** @type {any} */ b, /** @type {number} */ j) => {
       if (b.figura) out.push({ caminho: `seccoes[${i}].conteudo[${j}].figura.titulo`, pt: b.figura.titulo.pt, en: b.figura.titulo.en, ramo: null });
       else anda(b.paragrafo.pt, b.paragrafo.en, `seccoes[${i}].conteudo[${j}].paragrafo`, null);
@@ -253,7 +270,7 @@ function campoDaLinha(linha, campo, id) {
   if (campo === 'document.title') return linha?.document?.title;
   if (campo === 'document.locator') return linha?.document?.locator;
   if (campo === 'nome') {
-    const n = /** @type {Record<string, { pt: string, en: string }>} */ (NOMES_OE1)[id];
+    const n = NOMES[id];
     return n ? `${n.pt}\n${n.en}` : undefined;
   }
   return linha?.[campo];
@@ -677,6 +694,12 @@ function textoAqui(partes, lang, linhas) {
         const origem = p.verbatim.slice(7, -7);
         return JSON.parse(fs.readFileSync(path.join(RAIZ,'src/data/origens-v2a.json'),'utf8'))[origem].quadro;
       }
+      if (p.verbatim in IDENTIFICADORES_AQUI) {
+        const [id, re] = IDENTIFICADORES_AQUI[p.verbatim];
+        const m = re.exec(fs.readFileSync(path.join(RAIZ, 'ledger', 'claims', `${id}.yml`), 'utf8'));
+        if (!m) throw new Error(`X6 · o identificador «${p.verbatim}» não se lê no campo selado da linha «${id}»`);
+        return m[1];
+      }
       if (p.verbatim !== 'origem-rp4n-total-ministerios-montante') throw new Error('X6 · transcrição desconhecida');
       const excerto = ORIGENS_DAS_DEFINICOES['rp4n-total-ministerios'].excerto;
       const linhas = excerto.split('\n').map(x => x.trim()).filter(Boolean);
@@ -849,11 +872,12 @@ export function conferirPaginaDaExplicacao(root, lang, slug, linhas = loadClaims
   }
   erros.push(...conferirContabilidadeDosRamos(main, e, lang, linhas));
   const titulos = main.querySelectorAll('[data-explicacao-secao] > h2').map((/** @type {any} */ h) => normal(h.textContent));
-  const deveTitulos = [...e.seccoes.map((/** @type {any} */ x) => x.titulo[lang]), ...(esperado.paragrafos.some((p) => p.caminho.startsWith('naoDiz')) ? [s.explicacoes.oQueIstoNaoDiz] : [])];
+  const deveTitulos = [...e.seccoes.map((/** @type {any} */ x) => (typeof x.titulo[lang] === 'string' ? x.titulo[lang] : textoAqui(x.titulo[lang], lang, linhas))), ...(esperado.paragrafos.some((p) => p.caminho.startsWith('naoDiz')) ? [s.explicacoes.oQueIstoNaoDiz] : [])];
   if (JSON.stringify(titulos) !== JSON.stringify(deveTitulos)) erros.push(`X7 · os títulos das secções (${titulos.join(' | ')}) não são os declarados (${deveTitulos.join(' | ')})`);
   /* As portas do fim (EX1-b): as declaradas, pela ordem, com o destino e o nome de cada uma; a dos números sempre. */
   const declaradas = Array.isArray(e.portas) ? e.portas : [{ rota: 'livro' }];
   const esperadas = declaradas.map((/** @type {any} */ d) => {
+    if ((d.rota === 'estudo' || d.rota === 'explicacao') && !d.entrada) return portaAqui(d, lang, linhas);
     const entrada = d.entrada ? /** @type {any[]} */ (ENTRADAS).find((x) => x.id === d.entrada) : null;
     return [routePath(d.rota, lang), `${d.entrada ? entrada?.nome?.[lang] : s.nav.livro} →`];
   });
@@ -941,7 +965,8 @@ export function plantasDaExplicacao(dist) {
   const linhas = loadClaims();
   /** @type {{ nome: string, mordeu: boolean, queixa: string, aplica?: boolean }[]} */
   const out = [];
-  const e = EXPLICACOES[0];
+  /* EX4 (21.10.2026): as plantas são as da primeira explicação, pelo slug; a mais recente é outra. */
+  const e = /** @type {any} */ (EXPLICACOES.find((x) => x.slug === 'dinheiro-do-estado-2026'));
   const ficheiro = path.join(dist, 'explicacoes', e.slug, 'index.html');
   const html = fs.readFileSync(ficheiro, 'utf8');
   const controlo = conferirPaginaDaExplicacao(parse(html), 'pt', e.slug, linhas);
@@ -1057,7 +1082,7 @@ export function plantasDaExplicacao(dist) {
   /* As plantas da declaração (X9): sobre uma cópia em memória. */
   /** @param {string} nome @param {(d: any) => void} estraga @param {RegExp} mordida */
   const naDeclaracao = (nome, estraga, mordida) => {
-    const d = structuredClone(EXPLICACOES[0]);
+    const d = structuredClone(EXPLICACOES.find((x) => x.slug === 'dinheiro-do-estado-2026'));
     estraga(d);
     const q = conferirMaioresDasExplicacoes({ explicacoes: [d] }).erros;
     out.push({ nome, mordeu: q.some((x) => mordida.test(x)), queixa: q.join(' | ') || 'nenhuma' });
@@ -1085,7 +1110,7 @@ export function plantasDaExplicacao(dist) {
   }
   {
     /* X10: o ramo «zero» tirado do sinal do saldo. */
-    const d = structuredClone(EXPLICACOES[0]);
+    const d = structuredClone(EXPLICACOES.find((x) => x.slug === 'dinheiro-do-estado-2026'));
     /** @param {any} x */
     const tira = (x) => { if (Array.isArray(x)) x.forEach(tira); else if (x && typeof x === 'object') { if ('sinal' in x) delete x.zero; Object.values(x).forEach(tira); } };
     tira(d);
@@ -1102,19 +1127,19 @@ export function plantasDaExplicacao(dist) {
     const q = conferirAuditoriaDasExplicacoes({ auditoria: a, linhas }).erros;
     out.push({ nome, mordeu: q.some((x) => mordida.test(x)), queixa: q.join(' | ') || 'nenhuma' });
   };
-  const folhaDiz = (/** @type {any} */ a) => a.explicacoes[0].folhas.find((/** @type {any} */ f) => f.partes.some((/** @type {any} */ p) => p.classe === 'diz' && p.apoios?.some((/** @type {any} */ x) => x.literal)));
+  const folhaDiz = (/** @type {any} */ a) => a.explicacoes.find((/** @type {any} */ x) => x.slug === 'dinheiro-do-estado-2026').folhas.find((/** @type {any} */ f) => f.partes.some((/** @type {any} */ p) => p.classe === 'diz' && p.apoios?.some((/** @type {any} */ x) => x.literal)));
   naAuditoria('EX1-f: a referência aponta para o parágrafo anterior', (a) => {
-    const f = a.explicacoes[0].folhas.find(f => f.caminho === 'seccoes[2].conteudo[1].paragrafo[10]');
+    const f = a.explicacoes.find((/** @type {any} */ x) => x.slug === 'dinheiro-do-estado-2026').folhas.find(f => f.caminho === 'seccoes[2].conteudo[1].paragrafo[10]');
     f.partes = [{ pt: f.pt, en: f.en, classe: 'aponta', paragrafo: 'seccoes[3].conteudo[0].paragrafo', posicao: 'anterior' }];
   }, /X2 · .* não aponta para o parágrafo anterior declarado/);
   naAuditoria('um literal que não está no campo que cita', (a) => { const p = folhaDiz(a).partes.find((/** @type {any} */ x) => x.classe === 'diz'); p.apoios.find((/** @type {any} */ x) => x.literal).literal = 'uma frase que nenhuma fonte escreveu'; }, /X2 · .* não está no campo/);
-  naAuditoria('uma conta fora de um ramo e de uma condição', (a) => { const f = a.explicacoes[0].folhas.find((/** @type {any} */ x) => x.caminho === 'abertura[0][2]'); f.partes[0].classe = 'conta'; delete f.partes[0].apoios; }, /X2 · .* marcada como conta/);
-  naAuditoria('uma folha sem auditoria', (a) => { a.explicacoes[0].folhas = a.explicacoes[0].folhas.filter((/** @type {any} */ x) => x.caminho !== 'titulo[0]'); }, /X1 · .* não tem auditoria/);
-  naAuditoria('uma ligação com uma palavra que diz alguma coisa', (a) => { const f = a.explicacoes[0].folhas.find((/** @type {any} */ x) => x.caminho === 'abertura[0][14]'); f.partes[0].pt = ' e só '; f.pt = ' e só '; }, /X1 ·|X2 ·/);
+  naAuditoria('uma conta fora de um ramo e de uma condição', (a) => { const f = a.explicacoes.find((/** @type {any} */ x) => x.slug === 'dinheiro-do-estado-2026').folhas.find((/** @type {any} */ x) => x.caminho === 'abertura[0][2]'); f.partes[0].classe = 'conta'; delete f.partes[0].apoios; }, /X2 · .* marcada como conta/);
+  naAuditoria('uma folha sem auditoria', (a) => { a.explicacoes.find((/** @type {any} */ x) => x.slug === 'dinheiro-do-estado-2026').folhas = a.explicacoes.find((/** @type {any} */ x) => x.slug === 'dinheiro-do-estado-2026').folhas.filter((/** @type {any} */ x) => x.caminho !== 'titulo[0]'); }, /X1 · .* não tem auditoria/);
+  naAuditoria('uma ligação com uma palavra que diz alguma coisa', (a) => { const f = a.explicacoes.find((/** @type {any} */ x) => x.slug === 'dinheiro-do-estado-2026').folhas.find((/** @type {any} */ x) => x.caminho === 'abertura[0][14]'); f.partes[0].pt = ' e só '; f.pt = ' e só '; }, /X1 ·|X2 ·/);
   /* EX1-c: a auditoria já não tem partes de leitura nem de porta; as duas plantas fazem uma (uma «diz» passada a leitura
      sem `sobre`; o destino «selos» trocado por uma porta que a explicação não declara). */
-  naAuditoria('uma leitura do projeto sem dizer sobre o que é', (a) => { const p = a.explicacoes[0].folhas.flatMap((/** @type {any} */ x) => x.partes).find((/** @type {any} */ x) => x.classe === 'diz'); p.classe = 'leitura'; delete p.sobre; }, /X2 · .* não diz sobre o que é/);
-  naAuditoria('uma porta do fim que a explicação não declara', (a) => { const p = a.explicacoes[0].folhas.flatMap((/** @type {any} */ x) => x.partes).find((/** @type {any} */ x) => x.classe === 'aponta' && x.alvo === 'selos'); delete p.alvo; p.porta = 'estudo-oe-2026'; }, /X2 · .* que a explicação não declara/);
+  naAuditoria('uma leitura do projeto sem dizer sobre o que é', (a) => { const p = a.explicacoes.find((/** @type {any} */ x) => x.slug === 'dinheiro-do-estado-2026').folhas.flatMap((/** @type {any} */ x) => x.partes).find((/** @type {any} */ x) => x.classe === 'diz'); p.classe = 'leitura'; delete p.sobre; }, /X2 · .* não diz sobre o que é/);
+  naAuditoria('uma porta do fim que a explicação não declara', (a) => { const p = a.explicacoes.find((/** @type {any} */ x) => x.slug === 'dinheiro-do-estado-2026').folhas.flatMap((/** @type {any} */ x) => x.partes).find((/** @type {any} */ x) => x.classe === 'aponta' && x.alvo === 'selos'); delete p.alvo; p.porta = 'estudo-oe-2026'; }, /X2 · .* que a explicação não declara/);
   /* A planta das origens: um sha256 de outro ficheiro, com o motor ao lado; sem ele, uma hora fora da forma. */
   const o = JSON.parse(JSON.stringify(ORIGENS_DAS_EXPLICACOES));
   const chave = Object.keys(o)[0];

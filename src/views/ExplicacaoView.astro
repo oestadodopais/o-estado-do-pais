@@ -41,7 +41,7 @@ const path = routePath('explicacao', lang, { slug });
     ))}
     {e.seccoes.map((sec) => (
       <section class="explicacao-secao" data-explicacao-secao={sec.id} aria-labelledby={`explicacao-${sec.id}`}>
-        <h2 class="explicacao-secao-titulo" id={`explicacao-${sec.id}`} data-explicacao-declarado>{sec.titulo}</h2>
+        <h2 class="explicacao-secao-titulo" id={`explicacao-${sec.id}`} data-explicacao-declarado><FraseDaExplicacao partes={sec.tituloPedacos} lang={lang} selos={false} /></h2>
         {sec.blocos.map((b) => b.tipo === 'figura'
           ? <BarrasDoLivro modelo={b.modelo} lang={lang} explicacao={slug} />
           : <p class="explicacao-p" data-explicacao-paragrafo={b.caminho} data-explicacao-declarado><FraseDaExplicacao partes={b.pedacos} lang={lang} /></p>)}
@@ -59,7 +59,7 @@ const path = routePath('explicacao', lang, { slug });
     {/* AS PORTAS DO FIM (EX1-b, 06.10.2026): as que a explicação declara, pela ordem dela; os números e as fontes sempre, e,
         nesta, a página do tema «Estado e economia» (a decisão do lugar de direção sobre a I212). */}
     <p class="regra-portas explicacao-portas" data-explicacao-portas>
-      {e.portas.map((p, i) => <>{i > 0 && ' '}<a href={p.href} data-explicacao-porta-do-fim={p.entrada ?? p.rota}>{p.texto} →</a></>)}
+      {e.portas.map((p, i) => <>{i > 0 && ' '}<a href={p.href} data-explicacao-porta-do-fim={p.entrada ?? p.rota}>{p.partes ? <FraseDaExplicacao partes={p.partes} lang={lang} selos={false} /> : p.texto} →</a></>)}
     </p>
     {slug === 'dinheiro-do-estado-2026' && <PortaDoEstudoEO1 lang={lang} />}
   </article>

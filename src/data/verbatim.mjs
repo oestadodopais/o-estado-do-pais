@@ -87,6 +87,11 @@ export const VERBATIM = {
   }
 ,
   'origem-rp4n-total-ministerios-montante': {lang: null, origem: 'rp4n-total-ministerios, campo excerto', text: totalMinisterios},
+  /* EX4 (21.10.2026): o número do mapa e o código da subfunção, lidos nos campos selados das linhas do Mapa 2; o
+     resolvedor das explicações (`IDENTIFICADORES_SELADOS`) relê-os em cada construção e fecha-a se não forem estes. */
+  'pf1-mapa-2027-numero': {lang: null, origem: 'oe-2027-despesa-total-mapa, campo document.locator («MAPA 2, ano económico de 2027, …»)', text: '2'},
+  'pf1-mapa-2026-numero': {lang: null, origem: 'oe-2026-despesa-total-mapa, campo document.locator («MAPA 2, ano económico de 2026, …»)', text: '2'},
+  'pf1-subfuncao-01-7-codigo': {lang: null, origem: 'oe-2027-despesa-subfuncao-01-7-mapa, campo excerpt («01.7 OPERAÇÕES RELACIONADAS COM A DÍVIDA PÚBLICA …»)', text: '01.7'},
   'estudo-agua-abertura-pt': {
     lang: 'pt', origem: 'studies-src/onde-esta-a-agua/pt.html:215, primeira frase de p.standfirst.',
     text: 'A água de Portugal: onde está, de onde vem e o que a autonomia exigiria de facto.',

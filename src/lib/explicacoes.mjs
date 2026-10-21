@@ -46,7 +46,8 @@ import {textoDocumentalConferido} from './prova-efeitos.mjs';
  * programa da execução («Despesa executada do programa … (», «Executed expenditure of the … programme (»).
  *
  * AS PORTAS DO FIM (`portas`, desde o EX1-b): `{ rota: 'livro' }`, os números e as fontes, e
- * `{ rota, entrada }`, a página de um assunto, com o nome que `ENTRADAS` lhe dá.
+ * `{ rota, entrada }`, a página de um assunto, com o nome que `ENTRADAS` lhe dá; desde o EX4 (21.10.2026),
+ * `{ rota: 'estudo', slug }`, com o título do estudo na edição, e `{ rota: 'explicacao', slug }`, com o título declarado.
  *
  * OS NÚMEROS COMPARAM-SE COMO NÚMEROS, por `parsePtNumber()`, que lê «211 891 565 579» e «−58,3».
  */
@@ -54,12 +55,34 @@ import {textoDocumentalConferido} from './prova-efeitos.mjs';
 import { VERBATIM } from '../data/verbatim.mjs';
 import { EXPLICACOES } from '../data/explicacoes/index.mjs';
 import { NOMES_OE1 } from '../data/medidas-oe1.mjs';
+import { NOMES_PF1 } from '../data/medidas-pf1.mjs';
+import { WORKS } from '../data/studies.mjs';
 import { hasClaim, getClaim, parsePtNumber, allClaims, atribuicaoDaLinha } from './ledger.mjs';
 import { dataDaCasa } from './datas.mjs';
 import { modeloDasBarrasDoLivro } from './formas/barras-do-livro.mjs';
 import { routePath } from './routes.mjs';
 import { t } from '../i18n/strings.mjs';
 import { ENTRADAS } from '../data/primeira-pagina.mjs';
+
+/**
+ * OS NOMES DO PROJETO QUE `{ nome }` LÊ (bloco EX4, 21.10.2026): os gerados pelo motor (`NOMES_OE1`) e os das linhas do
+ * Mapa 2 que a explicação de 2027 nomeia, declarados no sítio (`NOMES_PF1`). Uma linha nos dois fecha a construção.
+ * @type {Record<string, { pt: string, en: string }>}
+ */
+export const NOMES_DAS_EXPLICACOES = { ...NOMES_OE1, ...NOMES_PF1 };
+for (const id of Object.keys(NOMES_PF1)) if (id in NOMES_OE1) throw new Error(`explicações: a linha «${id}» tem nome nos dois módulos.`);
+/**
+ * OS IDENTIFICADORES TRANSCRITOS DE UM CAMPO SELADO (bloco EX4, 21.10.2026). O número de um mapa («Mapa 2») e o código de
+ * uma subfunção («01.7») não são quantidades, mas são algarismos, e nenhum algarismo se escreve à mão numa palavra fixa.
+ * Entram pelo pedaço `{ verbatim: chave }`: o texto registado em `VERBATIM` tem de ser, carácter a carácter, o que o
+ * padrão declarado lê no campo selado da linha declarada, e a linha tem de estar no livro; senão a construção fecha.
+ * @type {Record<string, { linha: string, campo: 'document.locator'|'excerpt', padrao: RegExp }>}
+ */
+export const IDENTIFICADORES_SELADOS = {
+  'pf1-mapa-2027-numero': { linha: 'oe-2027-despesa-total-mapa', campo: 'document.locator', padrao: /^MAPA (\d+), ano económico de / },
+  'pf1-mapa-2026-numero': { linha: 'oe-2026-despesa-total-mapa', campo: 'document.locator', padrao: /^MAPA (\d+), ano económico de / },
+  'pf1-subfuncao-01-7-codigo': { linha: 'oe-2027-despesa-subfuncao-01-7-mapa', campo: 'excerpt', padrao: /^(\d{2}\.\d) OPERAÇÕES RELACIONADAS COM A DÍVIDA PÚBLICA / },
+};
 
 /** Os pedaços calculados que a gramática das explicações conhece, e mais nenhum. */
 export const CHAVES_DA_EXPLICACAO = /** @type {const} */ (['claim', 'selo', 'literal', 'verbatim', 'termo', 'periodo', 'nome', 'sinal', 'se', 'maiores', 'compara', 'comparaSaldos']);
@@ -124,7 +147,7 @@ export function explicacaoMaisRecente() {
  * @param {string} id @param {'pt'|'en'} lang
  */
 export function nomeDaLinhaNaExplicacao(id, lang) {
-  const nome = /** @type {Record<string, { pt: string, en: string }>} */ (NOMES_OE1)[id]?.[lang];
+  const nome = NOMES_DAS_EXPLICACOES[id]?.[lang];
   if (typeof nome !== 'string') throw defeito(id, `a linha não tem nome do projeto em «${lang}» (src/data/medidas-oe1.mjs).`);
   /** @type {string|null} */
   let resto = null;
@@ -264,6 +287,18 @@ function resolver(partes, lang, onde, ctx) {
     const o = /** @type {Record<string, any>} */ (p ?? {});
     const chave = CHAVES_DA_EXPLICACAO.find((k) => k in o);
     if (!chave) throw defeito(aqui, `um pedaço de tipo desconhecido (${Object.keys(o).join(', ')}).`);
+    if (chave === 'verbatim' && o.verbatim in IDENTIFICADORES_SELADOS) {
+      const d = IDENTIFICADORES_SELADOS[/** @type {keyof typeof IDENTIFICADORES_SELADOS} */ (o.verbatim)];
+      if (!hasClaim(d.linha)) throw defeito(aqui, `o identificador «${o.verbatim}» lê a linha «${d.linha}», que não está no livro-razão.`);
+      const linha = /** @type {any} */ (getClaim(d.linha));
+      const campo = d.campo === 'document.locator' ? linha.document?.locator : linha.excerpt;
+      const lido = typeof campo === 'string' ? d.padrao.exec(campo)?.[1] : undefined;
+      const registado = /** @type {any} */ (VERBATIM)[o.verbatim]?.text;
+      if (!lido || lido !== registado) throw defeito(aqui, `o identificador «${o.verbatim}» regista «${registado}» e o campo ${d.campo} da linha «${d.linha}» dá «${lido ?? 'nada'}».`);
+      ctx.linhas.add(d.linha);
+      out.push({ verbatim: o.verbatim, texto: registado });
+      return;
+    }
     if (chave === 'verbatim') {
       if (!['origem-rp4n-total-ministerios-montante', 'origem-v2a-saude-consolidada-quadro', 'origem-v2a-ppp-setores-quadro'].includes(o.verbatim)) throw defeito(aqui, 'transcrição de origem não autorizada.');
       out.push({verbatim: o.verbatim, texto: VERBATIM[/** @type {keyof typeof VERBATIM} */ (o.verbatim)].text});
@@ -376,7 +411,7 @@ function resolver(partes, lang, onde, ctx) {
  * AS PORTAS DO FIM DE UMA EXPLICAÇÃO, numa edição: o destino e o nome de cada uma (EX1-b). Sem `portas` declaradas, a
  * porta dos números e das fontes, que todas levam.
  * @param {any} e @param {'pt'|'en'} lang
- * @returns {{ rota: string, href: string, texto: string, entrada?: string }[]}
+ * @returns {{ rota: string, href: string, texto: string, entrada?: string, slug?: string, partes?: PedacoDaExplicacao[] }[]}
  */
 export function portasDaExplicacao(e, lang) {
   const s = t(lang);
@@ -384,6 +419,20 @@ export function portasDaExplicacao(e, lang) {
   if (!declaradas.some((/** @type {any} */ p) => p?.rota === 'livro' && !p.entrada)) throw defeito('portas', 'uma explicação leva sempre a porta dos números e das fontes (`{ rota: \'livro\' }`).');
   return declaradas.map((/** @type {any} */ p, /** @type {number} */ i) => {
     if (p?.rota === 'livro' && !p.entrada) return { rota: 'livro', href: routePath('livro', lang), texto: s.nav.livro };
+    /* EX4 (21.10.2026): a página de um estudo, com o título da edição em `WORKS`, e a de outra explicação, com o título
+       declarado dela, recomposto como a lista o rende. Um slug que não existe fecha a construção. */
+    if (p?.rota === 'estudo' && typeof p.slug === 'string' && !p.entrada) {
+      const w = /** @type {any[]} */ (WORKS).find((x) => x.slug === p.slug);
+      const titulo = w?.editions?.find((/** @type {any} */ x) => x.lang === lang)?.title;
+      if (typeof titulo !== 'string' || !titulo) throw defeito(`portas[${i}]`, `o estudo «${p.slug}» não está em WORKS (src/data/studies.mjs) com título na edição «${lang}».`);
+      return { rota: 'estudo', slug: p.slug, href: routePath('estudo', lang, { slug: p.slug }), texto: titulo };
+    }
+    if (p?.rota === 'explicacao' && typeof p.slug === 'string' && !p.entrada) {
+      const x = EXPLICACOES.find((y) => y.slug === p.slug);
+      if (!x || x.slug === e.slug) throw defeito(`portas[${i}]`, `a explicação «${p.slug}» não está declarada em src/data/explicacoes/index.mjs, ou é esta.`);
+      const partes = resolver(x.titulo[lang], lang, `portas[${i}]`, { linhas: new Set(), sinais: [] });
+      return { rota: 'explicacao', slug: p.slug, href: routePath('explicacao', lang, { slug: p.slug }), texto: textoDosPedacosDaExplicacao(partes, lang), partes };
+    }
     if (typeof p?.rota === 'string' && typeof p?.entrada === 'string') {
       const entrada = /** @type {any[]} */ (ENTRADAS).find((x) => x.id === p.entrada);
       if (!entrada || typeof entrada.nome?.[lang] !== 'string') throw defeito(`portas[${i}]`, `o assunto «${p.entrada}» não está em ENTRADAS (src/data/primeira-pagina.mjs).`);
@@ -412,7 +461,10 @@ export function resolverExplicacao(e, lang) {
   };
   const abertura = e.abertura.map((/** @type {any} */ p, /** @type {number} */ i) => paragrafo(p, `abertura[${i}]`)).filter((/** @type {ParagrafoResolvido} */ p) => p.pedacos.length);
   const seccoes = e.seccoes.map((/** @type {any} */ s, /** @type {number} */ i) => {
-    if (typeof s.titulo?.[lang] !== 'string' || /\d/.test(s.titulo[lang])) throw defeito(`seccoes[${i}]`, 'o título da secção falta ou traz um algarismo.');
+    /* EX4 (21.10.2026): o título de uma secção pode ser uma lista de pedaços (os anos por `{ periodo }`), resolvida como
+       um parágrafo; uma cadeia continua sem algarismos. */
+    const tituloPedacos = Array.isArray(s.titulo?.[lang]) ? resolver(s.titulo[lang], lang, `seccoes[${i}].titulo`, ctx) : null;
+    if (!tituloPedacos && (typeof s.titulo?.[lang] !== 'string' || /\d/.test(s.titulo[lang]))) throw defeito(`seccoes[${i}]`, 'o título da secção falta ou traz um algarismo.');
     /** @type {BlocoDaSeccao[]} */
     const blocos = s.conteudo.map((/** @type {any} */ b, /** @type {number} */ j) => {
       const caminho = `seccoes[${i}].conteudo[${j}]`;
@@ -424,7 +476,7 @@ export function resolverExplicacao(e, lang) {
       }
       return { tipo: 'paragrafo', ...paragrafo(b.paragrafo, `${caminho}.paragrafo`) };
     }).filter((/** @type {BlocoDaSeccao} */ b) => b.tipo === 'figura' || b.pedacos.length);
-    return { id: String(s.id), titulo: s.titulo[lang], blocos };
+    return { id: String(s.id), titulo: tituloPedacos ? textoDosPedacosDaExplicacao(tituloPedacos, lang) : String(s.titulo[lang]), tituloPedacos: tituloPedacos ?? [String(s.titulo[lang])], blocos };
   });
   const naoDiz = e.naoDiz.map((/** @type {any} */ p, /** @type {number} */ i) => paragrafo(p, `naoDiz[${i}]`)).filter((/** @type {ParagrafoResolvido} */ p) => p.pedacos.length);
   return {
