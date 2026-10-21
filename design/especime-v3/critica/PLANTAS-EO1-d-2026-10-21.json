@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-21T05:13:43+00:00",
+ "copia": "<pacotes>/pacote-eo1-d-2026-10-21",
+ "plantas": [
+  {
+   "id": "Y1",
+   "ficheiro": "built/estudos/orcamento-2027-o-que-muda-e-para-quem/documento/index.html",
+   "descricao": "a descida da dívida em 2027 passa de 3,0 a 3,5 pontos na abertura do documento português construído; a referência é o quadro 3.6 alojado e a linha pm-q3-6-r43-c3",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "0e89534cd3573fa535ca6caff45a42e40f4aea49de72ee598ec836c066cc6e89",
+   "sha256_depois": "a1249cfe13035062c94a5ff773245c9bc39f1ba2521ffd700db84ae2914dc3d1",
+   "contexto_antes": " «Miranda Sarmento: dívida pública abaixo dos 85% do PIB em 2027 é a \"principal preocupação\" do Governo», ao chamar à dívida pública a «principal preocupação». A descida de 3,0 pontos é maior do que a de 2026 sobretudo porque o Estado compra menos ativos financeiros, com o ajustamento défice-dívida (a parte da variação da dívida que o défice não exp",
+   "contexto_depois": " «Miranda Sarmento: dívida pública abaixo dos 85% do PIB em 2027 é a \"principal preocupação\" do Governo», ao chamar à dívida pública a «principal preocupação». A descida de 3,5 pontos é maior do que a de 2026 sobretudo porque o Estado compra menos ativos financeiros, com o ajustamento défice-dívida (a parte da variação da dívida que o défice não exp"
+  },
+  {
+   "id": "Y2",
+   "ficheiro": "built/en/studies/orcamento-2027-o-que-muda-e-para-quem/document/index.html",
+   "descricao": "o rácio da dívida de 2027 passa de 84.5 a 84.6 na abertura do documento inglês construído; a referência é a linha pm-q3-6-r42-c3 e o quadro alojado",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "9d5cbaf179e5dbad6e95bcf19da996ccc023103d00f464bbbb78f6ac70d7c0d9",
+   "sha256_depois": "9c99eb0cf4d193ff7a22f095befcaa2fccb2a900719c2f54cf8a341391d00f48",
+   "contexto_antes": "he exemption threshold; the 2027 table runs from 12.20 % to 48.00 %.</p>\n<p>Public debt is expected to fall from 87.5 % of gross domestic product (GDP) in 2026 to 84.5 % in 2027, below the level the finance minister announced for 2027, by the news report «Miranda Sarmento: dívida pública abaixo dos 85% do PIB em 2027 é a \"principal preocupação\" do Gove",
+   "contexto_depois": "he exemption threshold; the 2027 table runs from 12.20 % to 48.00 %.</p>\n<p>Public debt is expected to fall from 87.5 % of gross domestic product (GDP) in 2026 to 84.6 % in 2027, below the level the finance minister announced for 2027, by the news report «Miranda Sarmento: dívida pública abaixo dos 85% do PIB em 2027 é a \"principal preocupação\" do Gove"
+  },
+  {
+   "id": "Y3",
+   "ficheiro": "ledger/claims/der-oe2027-medidas-anteriores-saldo.yml",
+   "descricao": "o nome novo da linha das medidas invariantes volta a «Medidas anteriores» na cópia; a referência é o mandato e o diff",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "0e02ff9397390a69eb93275e3157042a45d8b9dbc7fa8e9f479ecee36af5b494",
+   "sha256_depois": "b456a86e174d9a8d5a1b33c4ee839b1dbe4d9108cf0c137429844c3a892aee6d",
+   "contexto_antes": "unit: \"milhões de euros\"\n\n# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,\n# e onde nele foi lido. Escrito pelo motor, nunca à mão.\nname: \"Medidas invariantes: impacto no saldo\"\nname_source: \"Cálculo sobre as linhas identificadas\"\nstatus: \"derivado\"\nname_en: \"Invariant measures: balance impact\"\n\n# Proveniência. Em linhas derivadas fica",
+   "contexto_depois": "unit: \"milhões de euros\"\n\n# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,\n# e onde nele foi lido. Escrito pelo motor, nunca à mão.\nname: \"Medidas anteriores: impacto no saldo\"\nname_source: \"Cálculo sobre as linhas identificadas\"\nstatus: \"derivado\"\nname_en: \"Invariant measures: balance impact\"\n\n# Proveniência. Em linhas derivadas fica"
+  },
+  {
+   "id": "Y4",
+   "ficheiro": "motor/content/27 Orcamento 2027 O que muda/Technical Source/documento.pt.md.tmpl",
+   "descricao": "a glosa do excedente primário passa de «antes dos juros» a «depois dos juros» na cópia do gabarito do motor; a referência é o diff do motor e o documento alojado",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "520fdea28cce6b70f33532ed5c84308594149b3ee9a434877180a35980decff9",
+   "sha256_depois": "2c0e2e09f6a2097da3dcf942e3cbc31f9d9af49707410d6650526617a5c30bd7",
+   "contexto_antes": "a dívida que o défice não explica, como a compra ou a venda de ativos financeiros) a cair de ⟦PM:pm-q3-6-r50-c2⟧ pontos para ⟦PM:pm-q3-6-r50-c3⟧ pontos do PIB; o excedente primário (o saldo antes dos juros) contribui um pouco mais (⟦PM:pm-q3-6-r44-c3|abs⟧ pontos contra ⟦PM:pm-q3-6-r44-c2|abs⟧ em 2026) e o efeito do crescimento e dos juros (o que o crescimento nomi",
+   "contexto_depois": "a dívida que o défice não explica, como a compra ou a venda de ativos financeiros) a cair de ⟦PM:pm-q3-6-r50-c2⟧ pontos para ⟦PM:pm-q3-6-r50-c3⟧ pontos do PIB; o excedente primário (o saldo depois dos juros) contribui um pouco mais (⟦PM:pm-q3-6-r44-c3|abs⟧ pontos contra ⟦PM:pm-q3-6-r44-c2|abs⟧ em 2026) e o efeito do crescimento e dos juros (o que o crescimento nomi"
+  },
+  {
+   "id": "Y5",
+   "ficheiro": "design/especime-v3/medicoes/eo1-2026-10-20/d/capturas.codigo",
+   "descricao": "o código de um portão da corrida final da EO1-d passa de 0 a 1 na cópia; a referência é o log ao lado e o relatório",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+   "sha256_depois": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865",
+   "contexto_antes": "0\n",
+   "contexto_depois": "1\n"
+  }
+ ]
+}
