@@ -14166,7 +14166,7 @@ Tudo aterrou dormente, sem nenhum interruptor.
 
 ### 1.203 A tarde e a noite de 21.10.2026: o G1 no ar (os gráficos ao toque), a HB1-c em seis passagens e lida, a pesquisa da despesa de 2027 por função no motor, a explicação «O dinheiro do Estado 2027» construída, lida e aterrada, e a forma de trabalhar que saiu disto: o diagnóstico por guião antes de cada passagem de correção
 
-**Afecta:** o `CLAUDE.md` (a secção «O custo, antes de tudo», o ponto 7: a lista a correr antes de publicar um ramo é a do `verify`), `design/observatorio/GARGALOS.md`, `design/observatorio/REGISTO-DE-MELHORIAS.md` (M99, M100), `design/especime-v3/ISSUES.md` (I252, I253), `scripts/leituras/PROMPT-comum.md` (a leitura inteira na resposta final nas leituras do Codex, no ramo `hb1-c-2026-10-21`, por aterrar sexta-feira)
+**Afecta:** nenhum (os ficheiros que esta entrada toca, sem mudar de rumo: o `CLAUDE.md`, a secção «O custo, antes de tudo», o ponto 7; `design/observatorio/GARGALOS.md`; `design/observatorio/REGISTO-DE-MELHORIAS.md`, M99 e M100; `design/especime-v3/ISSUES.md`, I252 e I253; `scripts/leituras/PROMPT-comum.md`, no ramo `hb1-c-2026-10-21`, por aterrar sexta-feira)
 
 **Data:** 21.10.2026, das 09:4x às 19:36 UTC, a mesma sessão do lugar de direção (Claude Fable 5.1), em continuação da §1.202.
 
