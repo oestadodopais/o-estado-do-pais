@@ -1,0 +1,7 @@
+{
+  "codigo": 9,
+  "mensagem": "portoes: árvore suja; registe as mudanças antes de conferir a cabeça do código",
+  "cabeca": "47a03262",
+  "build_executado": false,
+  "motivo": "A ligação do teste de HTML real a check:datas chegou depois do commit dos três ficheiros da régua."
+}
