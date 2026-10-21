@@ -489,10 +489,10 @@ As formas antigas («a despesa total com a casa», «ocupação da casa», «in 
 
 A forma portuguesa antiga («descontados os subsídios, passa de quarenta por cento do rendimento disponível») está em zero páginas. A procura da forma inglesa antiga só reconhece a frase seguida de um `<` e não tem conhecido-positivo nesta passagem: o zero que dá não prova a ausência; a prova é o diff dos ficheiros gerados acima. O excerto selado inteiro, com o segundo «('net' of housing allowances)», imprime-se em 50 páginas.
 
-**2. A leitura comitada: feito.** `design/especime-v3/critica/LEITURA-HB1-c-2026-10-21.md` entrou num commit só com esse caminho; `grep -c '/Users/'` deu 0.
+**2. A leitura comitada: feito.** `design/especime-v3/critica/LEITURA-HB1-c-2026-10-21.md` entrou num commit só com esse caminho; a procura de caminhos da máquina, pelo comando do mandato, deu 0.
 
 **3. A linha no prompt comum: feito.** Acrescentada a frase do mandato a seguir à regra do ficheiro único `LEITURA.md` em `scripts/leituras/PROMPT-comum.md`; nada mais mudou. Nenhuma conferência prende a forma desse ficheiro de modo a mudar o resultado: `check:leituras` deu 0 depois da mudança.
 
 **Os códigos (lidos dos ficheiros):** `c6-hb1-familias` 0; `c6-compor-familias` 0 («192 famílias compostas e conferidas»); `npm run build` 0 (das 14:55:28 às 15:01:22 UTC, corrido antes do `check:cartao` porque a K17 lê o `dist/`); `check:cartao` 0; `check:voz` 0 (zero linhas «PALAVRA PROIBIDA»; o conhecido-positivo é `c4-build.log`, com 2); `typecheck` 0; `check:leituras` 0. Não correram `npm run verify`, `portoes.sh` nem capturas.
 
-**Chamadas:** 13 das 25 até este relatório, contadas pelo construtor no seu registo (as chamadas de ferramenta desta conversa).
+**Chamadas:** 16 das 25 até este relatório, contadas pelo construtor no seu registo (as chamadas de ferramenta desta conversa).
