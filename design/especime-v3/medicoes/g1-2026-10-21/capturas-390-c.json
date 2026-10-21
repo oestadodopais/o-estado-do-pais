@@ -1,0 +1,376 @@
+{
+  "cabeca": "a556d3d6cb304da78bca7bdd0bc29d24136da98d",
+  "capturador_sha256": "0befc596ce06466e936573ac45841b8cc16391fb39efc0cc3a54001bc156d812",
+  "larguras": [
+    390
+  ],
+  "resultados": [
+    {
+      "ficheiro": "inflacao-primeiro-pt-390.png",
+      "rota": "/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 8363,
+      "desempate": {
+        "primeiro": {
+          "periodo": "março de 2023",
+          "cx": 312.954,
+          "cy": 71.803
+        },
+        "segundo": {
+          "periodo": "maio de 2023",
+          "cx": 314.371,
+          "cy": 99.058
+        },
+        "toqueNoViewBox": {
+          "x": 313.713,
+          "y": 71.803
+        },
+        "dxAoPrimeiro": 0.759,
+        "dxAoSegundo": 0.658,
+        "dyAoPrimeiro": 0,
+        "dyAoSegundo": 27.255,
+        "ativoPeriodo": "maio de 2023",
+        "acendeuOSegundo": true
+      },
+      "toque": {
+        "encontrado": true,
+        "ultimo": true,
+        "ativo": "janeiro de 1992: 9,41 %",
+        "etiqueta": "9,41 %janeiro de 1992",
+        "etiquetaDentro": {
+          "dentroDoSvg": {
+            "horizontal": true,
+            "vertical": true,
+            "svg": {
+              "left": 18,
+              "right": 372,
+              "top": 351.95,
+              "bottom": 548.61
+            },
+            "transform": null
+          },
+          "forma": "svg",
+          "horizontal": true,
+          "vertical": true,
+          "caixa": {
+            "left": 267.15,
+            "right": 354.29,
+            "top": 362.59,
+            "bottom": 390.35
+          },
+          "janela": {
+            "largura": 390,
+            "altura": 900
+          }
+        },
+        "geometria": {
+          "xDoToqueNoViewBox": 48,
+          "maisProximo": {
+            "periodo": "janeiro de 1992",
+            "cx": 48
+          },
+          "ativoPeriodo": "janeiro de 1992",
+          "bate": true
+        }
+      },
+      "sha256": "71106f626769a23ed199d4d70a94a4ac17a909b21a1563d454f7608e4e3181e5",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "inflacao-primeiro-en-390.png",
+      "rota": "/en/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 8242,
+      "desempate": {
+        "primeiro": {
+          "periodo": "March 2023",
+          "cx": 312.954,
+          "cy": 71.803
+        },
+        "segundo": {
+          "periodo": "May 2023",
+          "cx": 314.371,
+          "cy": 99.058
+        },
+        "toqueNoViewBox": {
+          "x": 313.713,
+          "y": 71.803
+        },
+        "dxAoPrimeiro": 0.759,
+        "dxAoSegundo": 0.658,
+        "dyAoPrimeiro": 0,
+        "dyAoSegundo": 27.255,
+        "ativoPeriodo": "May 2023",
+        "acendeuOSegundo": true
+      },
+      "toque": {
+        "encontrado": true,
+        "ultimo": true,
+        "ativo": "January 1992: 9,41 %",
+        "etiqueta": "9,41 %January 1992",
+        "etiquetaDentro": {
+          "dentroDoSvg": {
+            "horizontal": true,
+            "vertical": true,
+            "svg": {
+              "left": 18,
+              "right": 372,
+              "top": 351.38,
+              "bottom": 548.03
+            },
+            "transform": null
+          },
+          "forma": "svg",
+          "horizontal": true,
+          "vertical": true,
+          "caixa": {
+            "left": 279.04,
+            "right": 354.29,
+            "top": 362.01,
+            "bottom": 389.77
+          },
+          "janela": {
+            "largura": 390,
+            "altura": 900
+          }
+        },
+        "geometria": {
+          "xDoToqueNoViewBox": 48,
+          "maisProximo": {
+            "periodo": "January 1992",
+            "cx": 48
+          },
+          "ativoPeriodo": "January 1992",
+          "bate": true
+        }
+      },
+      "sha256": "3703b9afbcc01df7bb4386b1af5e9c376ef55f654504dc7df843fb9eec984821",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "inflacao-ultimo-pt-390.png",
+      "rota": "/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 8363,
+      "toque": {
+        "encontrado": true,
+        "ultimo": true,
+        "ativo": "agosto de 2026: 3,30 %",
+        "etiqueta": "3,30 %agosto de 2026",
+        "etiquetaDentro": {
+          "dentroDoSvg": {
+            "horizontal": true,
+            "vertical": true,
+            "svg": {
+              "left": 18,
+              "right": 372,
+              "top": 351.95,
+              "bottom": 548.61
+            },
+            "transform": null
+          },
+          "forma": "svg",
+          "horizontal": true,
+          "vertical": true,
+          "caixa": {
+            "left": 71.11,
+            "right": 155.17,
+            "top": 362.59,
+            "bottom": 390.35
+          },
+          "janela": {
+            "largura": 390,
+            "altura": 900
+          }
+        },
+        "geometria": {
+          "xDoToqueNoViewBox": 342,
+          "maisProximo": {
+            "periodo": "agosto de 2026",
+            "cx": 342
+          },
+          "ativoPeriodo": "agosto de 2026",
+          "bate": true
+        }
+      },
+      "sha256": "82b0329c0e893272fc5baf4763dfd5a1424628d41010647cc69788b436fd0fd3",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "inflacao-ultimo-en-390.png",
+      "rota": "/en/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 8242,
+      "toque": {
+        "encontrado": true,
+        "ultimo": true,
+        "ativo": "August 2026: 3,30 %",
+        "etiqueta": "3,30 %August 2026",
+        "etiquetaDentro": {
+          "dentroDoSvg": {
+            "horizontal": true,
+            "vertical": true,
+            "svg": {
+              "left": 18,
+              "right": 372,
+              "top": 351.38,
+              "bottom": 548.03
+            },
+            "transform": null
+          },
+          "forma": "svg",
+          "horizontal": true,
+          "vertical": true,
+          "caixa": {
+            "left": 71.11,
+            "right": 142.31,
+            "top": 362.01,
+            "bottom": 389.77
+          },
+          "janela": {
+            "largura": 390,
+            "altura": 900
+          }
+        },
+        "geometria": {
+          "xDoToqueNoViewBox": 342,
+          "maisProximo": {
+            "periodo": "August 2026",
+            "cx": 342
+          },
+          "ativoPeriodo": "August 2026",
+          "bate": true
+        }
+      },
+      "sha256": "dbfe236f0337f630fa186ea4ee2d8d57cb57a33fa6d30f0f5361e89253f91db1",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "cartoes-pt-390.png",
+      "rota": "/precos/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3756,
+      "cartao": {
+        "seletor": "[data-cartao-serie=\"serie-ipc-variacao-homologa\"]",
+        "rota": "/precos/",
+        "noPonto": {
+          "ativo": "agosto de 2026: 3,30 %",
+          "etiqueta": "3,30 %agosto de 2026",
+          "navegou": false,
+          "toque": {
+            "x": 239.5,
+            "y": 599.734375
+          }
+        },
+        "fora": {
+          "toque": {
+            "x": 22,
+            "y": 608.734375
+          },
+          "alvoDoToque": "a.cartao-medida-serie-porta",
+          "navegou": true,
+          "destino": "/livro-razao/series/serie-ipc-variacao-homologa"
+        }
+      },
+      "sha256": "fec7ebb913795cb24523e2f90575c58cfa113b11ef4a48cf90856dbf8f5c5773",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "cartoes-en-390.png",
+      "rota": "/en/prices/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3804,
+      "cartao": {
+        "seletor": "[data-cartao-serie=\"serie-ipc-variacao-homologa\"]",
+        "rota": "/en/prices/",
+        "noPonto": {
+          "ativo": "August 2026: 3,30 %",
+          "etiqueta": "3,30 %August 2026",
+          "navegou": false,
+          "toque": {
+            "x": 239.5,
+            "y": 599.734375
+          }
+        },
+        "fora": {
+          "toque": {
+            "x": 22,
+            "y": 608.734375
+          },
+          "alvoDoToque": "a.cartao-medida-serie-porta",
+          "navegou": true,
+          "destino": "/en/ledger/series/serie-ipc-variacao-homologa"
+        }
+      },
+      "sha256": "c4b066e3c41222b9ad67944af12fbe0ceabf2d4b015dfbfb16937235e74654f4",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    }
+  ],
+  "recursos": {
+    "version.json": "db0a9bb7cf55be1be1722c05161f863f412e9a6e21510fafabbc7b1cebbf008c",
+    "index.html": "4cfc361b3e59d7a05a82d4b103b31ba98b1d5a3439b35ac73e9f596b7f570065",
+    "tipos/spectral/Spectral-Regular.woff2": "3c846b032ad614e02ebc439087bbcbb7371cfbdea6c8a4b568efa859537e9c43",
+    "tipos/bitter/Bitter[wght].woff2": "b4ad17520d0ce8bd1aa98af06e07ca94145522f868b5a010732eb5eee3ba2ea0",
+    "_astro/primeira-pagina.sUQIxm-E.css": "1d6224df77b82eec35063368cea406822f23ca540f819c078dee626d5cfadff2",
+    "_astro/Base.CQ2WVYKH.css": "413aa149b5d8f4c49fbedde1b385476bf7766e5886b0731be4e0dc5fada4667b",
+    "_astro/inicio.DYisJLJ2.css": "1887d09fd2f5e2597bbe8b9ce00ee29695cd096d2db1486ff34d9b9013da3be9",
+    "_astro/lugar.bxF38FjU.css": "ca5ecb9c51f88f1c0f5c59652689ed2ca642ad4dee9eaf4fbc51328d9dd957fd",
+    "js/tema.js": "855bcee3ec1223b43e0f3e9a94c1fbdf1451e53830dcc022962b48e8d3340757",
+    "js/interacao-dos-graficos.js": "c5e42b905d26d12581e292acfec8957fbbf20604e674bee321f4aa1b39ebd989",
+    "tipos/spectral/Spectral-Medium.woff2": "34f0ba222c28bc0ea816c693d05c528be4a5ee10c4b1765cdea774c6fb2502c2",
+    "tipos/spectral/Spectral-SemiBold.woff2": "91eef1143e31196ec762c00b566b9f628a851db348eb524cbfb36bfba9b22f2d",
+    "tipos/spectral-sc/SpectralSC-SemiBold.woff2": "b847fe8f1fe1a862ce15e288958d132940a8204951ef0dbe2c9ad8fd997f29e2",
+    "tipos/spectral-sc/SpectralSC-Regular.woff2": "afa69dd2e7aaca2733883133745fd84c18dfac6a08d5999e69705ea7277240b8",
+    "en/index.html": "cb635af2c894ec50771f5e00aebb5945b1ca0e8251f685cacac2e3515d8a8c6f",
+    "precos/index.html": "62ea1913d136cd25df071a739911f2af0d1b58889602ad5c025fdbca8a178752",
+    "_astro/cartao-medida.DfTv6Oc1.css": "979cfb4fcb2cc4fe4cf2128ec4fa5e1bf71fc56fbaf091639cd7c17ab4d361d1",
+    "livro-razao/series/serie-ipc-variacao-homologa/index.html": "dfb4c55368e0b8323b937d6a15e3a764f957f518bd94114c022f2a964617a5ff",
+    "_astro/linha.Dd7n1KyQ.css": "583639d016c39485e899ae4fffc401e64d1489306f153b3670a730698057d772",
+    "en/prices/index.html": "ac465d4eede330c7e1cadd230bb326a66e1425da411cbbee7ff07dfd23f71946",
+    "en/ledger/series/serie-ipc-variacao-homologa/index.html": "9870eb72959e1a4c2b634d63d7b74ab68fd9663bee5b3df9e9eecefbebb78755"
+  },
+  "falhas": [],
+  "ok": true
+}

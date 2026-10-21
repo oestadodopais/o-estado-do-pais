@@ -116,3 +116,60 @@ Portões que mudaram de forma, conservando o que protegem: a F21 (`tests/formas/
 Na correção G1-b: 32 chamadas de ferramentas até à escrita desta linha, contadas pelas linhas `tool_use` do registo da sessão do construtor (`grep -c '"type":"tool_use"'` sobre o ficheiro do agente), mais o commit deste relatório e a entrega. Corridas: duas `portoes.sh`, uma `check:formas`, três `check:graficos` à mão e três das suas plantas, uma `tests/cartao/series.mjs`, uma do inventário sobre o `dist/` antigo, uma `captar.mjs` (quatro capturas) e uma `medir.mjs`.
 
 No bloco G1: Chamadas de ferramentas: cerca de noventa e cinco nesta passagem, contadas por mim e não por guião. Corridas: três `portoes.sh`, duas `npm run build`, duas `typecheck`, uma de `check:formas` e `check:graficos` à mão, cinco de `medir.mjs` e quatro do `captar.mjs` (duas recusadas pelo recorte repetido, uma com a etiqueta escondida, que levou à correção a743d51be). Os símbolos lê-os o lugar de direção da ferramenta.
+
+## A correção G1-c (21.10.2026, a leitura do Codex da G1-b, os achados 2, 3, 4, 8 e 9)
+
+*Os achados 1, 5, 6 e 7 dessa leitura eram as plantas das cópias do pacote. A cabeça do código é `a556d3d6c`; os números abaixo leem-se dos ficheiros desta pasta (`inventario-c.json`, `plantas-c.txt`, `capturas-390-c.json`, `portoes-c/`).*
+
+- **Achado 2 (o y como peso).** `maisProximo` escolhe pelo |dx| estrito; o y só decide entre os pontos com o mesmo centro que o vencedor, com a tolerância de um milésimo da largura do desenho no ecrã (um milésimo do viewBox). O caso plantado está no registo da captura (o `desempate`, abaixo), e o `captar.mjs` recusa se o segundo ponto não acender.
+- **Achado 3 (a etiqueta do svg).** O guião confina a etiqueta própria de um ponto ao viewBox nos dois eixos (`confina`, um `translate` no `text`), ao acender e ao mudar a largura. O `captar.mjs` mede a caixa do `text` contra a do `<svg>` e contra a janela e recusa quando um eixo sai; toca agora o primeiro ponto (`toqueNoPrimeiro`) e o último.
+- **Achado 4 (a isenção decorativa).** Os dois desenhos indexados do recibo da remuneração (as duas edições) deixaram a marca decorativa e levam a camada comum (`data-grafico="indice"`), um ponto por linha e por período, com a leitura «nome, período: valor (índice, base cem em <base>)», e na edição inglesa «(index, base one hundred in <base>)»; o valor tem uma casa decimal e é o que o desenho traça. A régua (G3 do índice) refaz cada valor das duas linhas do livro (o ponto e a base) e confere o nome, o período e a unidade; a F21 confere o sítio de cada ponto contra a recomposição. A marca decorativa só vale agora com cada valor do desenho escrito fora dele na mesma página (G5); nesta cabeça nenhum desenho a leva.
+- **Achado 8 (os oito desenhos dos algarismos de escala).** A categoria saiu: o inventário diz `com-camada`, `decorativo-confirmado` ou `erro`, e a régua recusa um desenho com algarismos sem camada nem marca confirmada (G1), salvo a dívida declarada. A série municipal (`mun-serie-svg`, Évora, as duas edições) leva a camada, com o valor de cada ponto conferido contra o texto do `Claim` e o ano contra o texto marcado. Os outros três (o eixo da agenda, a banda dos mandatos e a régua da convergência) foram marcados decorativos e a G5 recusou-os, cada um com valores que a página não escreve fora do desenho (no registo desta passagem: uma data de janela da agenda, «em funções» na banda, os nomes das regiões na régua; as contagens no ficheiro construído: em-funcoes-evora=       2 grande-lisboa-regioes=       2 data-agenda-04.11.2026=       3). O mandato pressupunha os valores escritos ao lado; a medida mostrou que não estão, e parei nesse ponto: os três ficam como estavam (papel de imagem e nome), na dívida declarada da régua com a razão, até o lugar de direção escrever as frases que faltam ou decidir a camada.
+- **Achado 9 (a K20 e os cartões).** A K20 confere que o `aria-labelledby` da ligação irmã resolve para o `id` do `<title>` do desenho, com duas plantas (o atributo retirado; apontado a outro título). A página com cartões de série para o pacote da próxima leitura é `dist/precos/index.html` (e `dist/en/prices/index.html`), o cartão `[data-cartao-serie="serie-ipc-variacao-homologa"]`. A captura toca, com o toque do navegador, num ponto do cartão e fora dos pontos do mesmo cartão (registo abaixo).
+
+### As contagens por classe (o inventário, cabeça `a556d3d6c`)
+
+{"erro": 6, "valores-escondidos": 124, "sem-algarismos": 68, "escondido": 2510, "valores-escritos": 96, "com-camada": 2, "documento": 57}; desenhos ao todo 2863; que escondem valores sem toque 0. Dos oito antigos: `com-camada` 2 (a série municipal), `erro` 6 (os três na dívida declarada da régua), `decorativo-confirmado` 0.
+
+### As plantas da régua dos gráficos (`plantas-c.txt`, o nome e o código)
+
+- sem-marca 1 planta «sem-marca»: mordeu (1 erros).
+- aria-label 1 planta «aria-label»: mordeu (1 erros).
+- sem-guiao 1 planta «sem-guiao»: mordeu (1 erros).
+- serie-sem-camada 1 planta «serie-sem-camada»: mordeu (1 erros).
+- decorativo-sem-aria 1 planta «decorativo-sem-aria»: mordeu (1 erros).
+- decorativo-sem-valores 1 planta «decorativo-sem-valores»: mordeu (1 erros).
+- escala-sem-classe 1 planta «escala-sem-classe»: mordeu (1 erros).
+- indice-trocado 1 planta «indice-trocado»: mordeu (3 erros).
+- claim-trocado 1 planta «claim-trocado»: mordeu (3 erros).
+
+As da F21 pelo `tests/pais/portoes.mjs --prefixo rp4cb`: código 0 (as quatro, duas novas: o ponto do índice retirado, a zona da unidade no desenho indexado).
+
+### As capturas a 390 px (`capturas-390-c.json`; as imagens ficam fora do repositório)
+
+- `inflacao-primeiro-pt-390.png`: desempate: março de 2023 (cx 312.954) e maio de 2023 (cx 314.371), toque no x 313.713 e no y do primeiro, aceso maio de 2023; toque: aceso «janeiro de 1992: 9,41 %», etiqueta svg, janela True/True, svg True/True, transform None
+- `inflacao-primeiro-en-390.png`: desempate: March 2023 (cx 312.954) e May 2023 (cx 314.371), toque no x 313.713 e no y do primeiro, aceso May 2023; toque: aceso «January 1992: 9,41 %», etiqueta svg, janela True/True, svg True/True, transform None
+- `inflacao-ultimo-pt-390.png`: toque: aceso «agosto de 2026: 3,30 %», etiqueta svg, janela True/True, svg True/True, transform None
+- `inflacao-ultimo-en-390.png`: toque: aceso «August 2026: 3,30 %», etiqueta svg, janela True/True, svg True/True, transform None
+- `cartoes-pt-390.png`: cartão: toque num ponto, aceso «agosto de 2026: 3,30 %», navegou False; toque fora dos pontos, alvo a.cartao-medida-serie-porta, navegou True, destino /livro-razao/series/serie-ipc-variacao-homologa
+- `cartoes-en-390.png`: cartão: toque num ponto, aceso «August 2026: 3,30 %», navegou False; toque fora dos pontos, alvo a.cartao-medida-serie-porta, navegou True, destino /en/ledger/series/serie-ipc-variacao-homologa
+
+### Os portões, lidos dos ficheiros
+
+A construção desta cabeça: 0; `check:graficos`: 0; o captar: 0; a corrida inteira por `portoes.sh` (o código do guião): 9; os códigos e o `tempos.json` da corrida em `portoes-c/`: {}.
+
+### As decisões
+
+- **G1-13.** A tolerância do mesmo x é um milésimo da largura do desenho no ecrã, medida no `getBoundingClientRect` do gráfico.
+- **G1-14.** A unidade da leitura do índice escreve «cem» por extenso, como a frase da figura indexada; uma casa decimal; a ordem do teclado no desenho indexado vai linha a linha.
+- **G1-15.** Os três desenhos sem valores escritos ao lado ficam na dívida declarada e não decorativos (o achado da G5, acima), em vez de os esconder do leitor de ecrã.
+- **G1-16.** O ponto da série municipal confere-se contra o texto do `Claim` e do ano marcado `data-grafico-periodo-texto`.
+
+### O que ficou aberto
+
+- **G1-j.** As frases que faltam para o eixo da agenda, a banda dos mandatos e a régua da convergência (ou a camada nelas): decisão do lugar de direção.
+- **G1-k.** O desenho indexado tem a etiqueta comum e não a própria; ao rato acende o ponto mais próximo do cursor.
+
+### O custo
+
+Quarenta chamadas de ferramenta pela minha contagem (duas gastas a esperar a cadeia em fundo); o total de símbolos é o que a ferramenta reporta para o agente.

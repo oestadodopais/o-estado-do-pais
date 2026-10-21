@@ -1,0 +1,9 @@
+sem-marca 1 planta «sem-marca»: mordeu (1 erros).
+aria-label 1 planta «aria-label»: mordeu (1 erros).
+sem-guiao 1 planta «sem-guiao»: mordeu (1 erros).
+serie-sem-camada 1 planta «serie-sem-camada»: mordeu (1 erros).
+decorativo-sem-aria 1 planta «decorativo-sem-aria»: mordeu (1 erros).
+decorativo-sem-valores 1 planta «decorativo-sem-valores»: mordeu (1 erros).
+escala-sem-classe 1 planta «escala-sem-classe»: mordeu (1 erros).
+indice-trocado 1 planta «indice-trocado»: mordeu (3 erros).
+claim-trocado 1 planta «claim-trocado»: mordeu (3 erros).
