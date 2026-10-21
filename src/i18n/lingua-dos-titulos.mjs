@@ -668,9 +668,8 @@ export const LINGUA_DAS_EDICOES = {
      dos estudos de Évora, e a passagem E1b para as duas contagens do arquivo),
      e a de 16.09.2026 saiu. */
   '12.08.2026': null,
-  /* A recontagem de Correções publicadas usa a data da edição, sem língua.
-     A edição passou de 02.10.2026 para 20.10.2026 na correção V2-d-b. */
-  '20.10.2026': null,
+  /* As datas dos contadores são declaradas pelo gerador, a partir das edições
+     atuais do livro, sem conservar datas que já nenhuma linha traz. */
   '01.10.2026': null,
 
   /* --- os nomes de ficheiro do publicador -------------------------------- */
@@ -1153,8 +1152,10 @@ Object.assign(LINGUA_DAS_EDICOES, {
   "2026-09-15": null,
   "2026-10-14": null,
   "2026-10-09": null,
-  "[a verificar]": null,
-  "2026-10-27/2026-10-28": null
+  "2026-10-27/2026-10-28": null,
+  "21.10.2026": null,
+  "01.10.2026": null,
+  "12.08.2026": null
 });
 
 // HB1: cadeias lidas nos documentos e linhas de origem.
