@@ -1,0 +1,260 @@
+{
+  "cabeca": "b65ff8927449f066c191d4c6c3a1a059c2b6ec3c",
+  "capturador_sha256": "1e0dbcce5e6663847f20d383110241668a76579540b2dd387f2e39fd3fa91dbb",
+  "larguras": [
+    390
+  ],
+  "resultados": [
+    {
+      "ficheiro": "inicio-inflacao-centro-pt-390.png",
+      "rota": "/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 8363,
+      "toque": {
+        "encontrado": true,
+        "ultimo": false,
+        "ativo": "julho de 2007: 2,38 %",
+        "etiqueta": "2,38 %julho de 2007",
+        "etiquetaDentro": {
+          "forma": "svg",
+          "horizontal": true,
+          "vertical": true,
+          "caixa": {
+            "left": 277.92,
+            "right": 354.29,
+            "top": 362.59,
+            "bottom": 390.35
+          },
+          "janela": {
+            "largura": 390,
+            "altura": 900
+          }
+        },
+        "geometria": {
+          "xDoToqueNoViewBox": 180,
+          "maisProximo": {
+            "periodo": "julho de 2007",
+            "cx": 179.769
+          },
+          "ativoPeriodo": "julho de 2007",
+          "bate": true
+        }
+      },
+      "sha256": "37fb6d8642dfdf46297f45ec0839a4a13d5ddabe5a1a1925c8ea920f21c6bdeb",
+      "recortes": [
+        {
+          "ficheiro": "inicio-inflacao-centro-pt-390-grafico.png",
+          "seletor": "[data-bloco-serie]",
+          "origem": "inicio-inflacao-centro-pt-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 1009,
+            "width": 354,
+            "height": 246
+          },
+          "sha256": "60ea4d7134fe16b8c6a9716bf4ce189f61ce8707d67b89e823ce16a31a2e1262"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "inicio-inflacao-centro-en-390.png",
+      "rota": "/en/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 8242,
+      "toque": {
+        "encontrado": true,
+        "ultimo": false,
+        "ativo": "July 2007: 2,38 %",
+        "etiqueta": "2,38 %July 2007",
+        "etiquetaDentro": {
+          "forma": "svg",
+          "horizontal": true,
+          "vertical": true,
+          "caixa": {
+            "left": 301.45,
+            "right": 354.29,
+            "top": 362.01,
+            "bottom": 389.77
+          },
+          "janela": {
+            "largura": 390,
+            "altura": 900
+          }
+        },
+        "geometria": {
+          "xDoToqueNoViewBox": 180,
+          "maisProximo": {
+            "periodo": "July 2007",
+            "cx": 179.769
+          },
+          "ativoPeriodo": "July 2007",
+          "bate": true
+        }
+      },
+      "sha256": "46b59eb3ae720bcb00fa58ef5288abbd9e91cb4d6eebe1b896d1e5437a50d0e8",
+      "recortes": [
+        {
+          "ficheiro": "inicio-inflacao-centro-en-390-grafico.png",
+          "seletor": "[data-bloco-serie]",
+          "origem": "inicio-inflacao-centro-en-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 984,
+            "width": 354,
+            "height": 246
+          },
+          "sha256": "2f51e13add1975cd1ec20f61647fcaf5e8190d545af7327d63ff010ec396ea66"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "inicio-inflacao-ultimo-pt-390.png",
+      "rota": "/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 8363,
+      "toque": {
+        "encontrado": true,
+        "ultimo": true,
+        "ativo": "agosto de 2026: 3,30 %",
+        "etiqueta": "3,30 %agosto de 2026",
+        "etiquetaDentro": {
+          "forma": "svg",
+          "horizontal": true,
+          "vertical": true,
+          "caixa": {
+            "left": 71.11,
+            "right": 155.17,
+            "top": 362.59,
+            "bottom": 390.35
+          },
+          "janela": {
+            "largura": 390,
+            "altura": 900
+          }
+        },
+        "geometria": {
+          "xDoToqueNoViewBox": 342,
+          "maisProximo": {
+            "periodo": "agosto de 2026",
+            "cx": 342
+          },
+          "ativoPeriodo": "agosto de 2026",
+          "bate": true
+        }
+      },
+      "sha256": "82b0329c0e893272fc5baf4763dfd5a1424628d41010647cc69788b436fd0fd3",
+      "recortes": [
+        {
+          "ficheiro": "inicio-inflacao-ultimo-pt-390-grafico.png",
+          "seletor": "[data-bloco-serie]",
+          "origem": "inicio-inflacao-ultimo-pt-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 1009,
+            "width": 354,
+            "height": 246
+          },
+          "sha256": "0a237817f2d10900919c2a56727080ea45d011ab0d61f3fe0769cd2ec0ccc220"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "inicio-inflacao-ultimo-en-390.png",
+      "rota": "/en/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 8242,
+      "toque": {
+        "encontrado": true,
+        "ultimo": true,
+        "ativo": "August 2026: 3,30 %",
+        "etiqueta": "3,30 %August 2026",
+        "etiquetaDentro": {
+          "forma": "svg",
+          "horizontal": true,
+          "vertical": true,
+          "caixa": {
+            "left": 71.11,
+            "right": 142.31,
+            "top": 362.01,
+            "bottom": 389.77
+          },
+          "janela": {
+            "largura": 390,
+            "altura": 900
+          }
+        },
+        "geometria": {
+          "xDoToqueNoViewBox": 342,
+          "maisProximo": {
+            "periodo": "August 2026",
+            "cx": 342
+          },
+          "ativoPeriodo": "August 2026",
+          "bate": true
+        }
+      },
+      "sha256": "dbfe236f0337f630fa186ea4ee2d8d57cb57a33fa6d30f0f5361e89253f91db1",
+      "recortes": [
+        {
+          "ficheiro": "inicio-inflacao-ultimo-en-390-grafico.png",
+          "seletor": "[data-bloco-serie]",
+          "origem": "inicio-inflacao-ultimo-en-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 984,
+            "width": 354,
+            "height": 246
+          },
+          "sha256": "d4631f986f2c1a63036151501f60e08d8d888f30c6a6a3f83428c6bef1bdd18c"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    }
+  ],
+  "recursos": {
+    "version.json": "14be67a4b07cd682d50e149f2aff7597a3c977ac55dcaf2f865093951114b5ad",
+    "index.html": "4cfc361b3e59d7a05a82d4b103b31ba98b1d5a3439b35ac73e9f596b7f570065",
+    "tipos/spectral/Spectral-Regular.woff2": "3c846b032ad614e02ebc439087bbcbb7371cfbdea6c8a4b568efa859537e9c43",
+    "_astro/primeira-pagina.sUQIxm-E.css": "1d6224df77b82eec35063368cea406822f23ca540f819c078dee626d5cfadff2",
+    "tipos/bitter/Bitter[wght].woff2": "b4ad17520d0ce8bd1aa98af06e07ca94145522f868b5a010732eb5eee3ba2ea0",
+    "_astro/Base.CQ2WVYKH.css": "413aa149b5d8f4c49fbedde1b385476bf7766e5886b0731be4e0dc5fada4667b",
+    "_astro/inicio.DYisJLJ2.css": "1887d09fd2f5e2597bbe8b9ce00ee29695cd096d2db1486ff34d9b9013da3be9",
+    "_astro/lugar.bxF38FjU.css": "ca5ecb9c51f88f1c0f5c59652689ed2ca642ad4dee9eaf4fbc51328d9dd957fd",
+    "js/tema.js": "855bcee3ec1223b43e0f3e9a94c1fbdf1451e53830dcc022962b48e8d3340757",
+    "js/interacao-dos-graficos.js": "bbc935a13e614a512da07a71382cc2a0f865777b935229775af01101f42c8ed1",
+    "tipos/spectral/Spectral-Medium.woff2": "34f0ba222c28bc0ea816c693d05c528be4a5ee10c4b1765cdea774c6fb2502c2",
+    "tipos/spectral-sc/SpectralSC-SemiBold.woff2": "b847fe8f1fe1a862ce15e288958d132940a8204951ef0dbe2c9ad8fd997f29e2",
+    "tipos/spectral-sc/SpectralSC-Regular.woff2": "afa69dd2e7aaca2733883133745fd84c18dfac6a08d5999e69705ea7277240b8",
+    "tipos/spectral/Spectral-SemiBold.woff2": "91eef1143e31196ec762c00b566b9f628a851db348eb524cbfb36bfba9b22f2d",
+    "en/index.html": "cb635af2c894ec50771f5e00aebb5945b1ca0e8251f685cacac2e3515d8a8c6f"
+  },
+  "falhas": [],
+  "ok": true
+}

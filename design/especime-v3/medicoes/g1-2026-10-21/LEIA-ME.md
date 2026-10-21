@@ -6,7 +6,7 @@
 
 - O gráfico da inflação da primeira página e as séries dos recibos (os desenhos com leitura, 50 nas duas edições) acendem o ponto ao toque, ao arrastar do dedo (o ponto mais próximo) e ao teclado (um só ponto na ordem do tabulador, o último; as setas, Início e Fim andam pelos outros; Escape fecha), além do rato, como antes. Um toque fora fecha a leitura.
 - Na primeira página, o desenho da inflação saiu de dentro da ligação ao recibo: a ligação fica no nome e na unidade, e um toque no desenho lê o ponto em vez de abrir o recibo (G1-4).
-- A faixa dos países de cada cartão (20 nas duas edições) mostra, ao toque, ao arrastar, ao rato e ao teclado, uma etiqueta com o nome, o período e o valor da marca mais próxima, posta junto à marca e sempre dentro do ecrã. Antes só havia o `title` ao rato.
+- A faixa dos países de cada cartão (20 nas duas edições) mostra, ao toque, ao arrastar, ao rato e ao teclado, uma etiqueta com o nome, o período e o valor da marca mais próxima, posta junto à marca e confinada à janela nos dois eixos (desde a correção G1-b; antes só na horizontal). Antes só havia o `title` ao rato.
 - Sem guião, cada ponto continua a dizer o período e o valor pelo `aria-label` (e, na série, pela etiqueta desenhada e pelo `<title>` do desenho).
 
 ## §0 · A medida de partida e a de chegada
@@ -54,6 +54,10 @@ Portões que mudaram de forma, conservando o que protegem: o `check:formas` (F21
 | `portoes.sh` 1 | 6ca4b2566 | 1 (o `check:voz`: mais de mil `aria-label` dos pontos por classificar; o portão listou uma parte e disse «e mais 1033») | 125 (não correu) | 0 |
 | `portoes.sh` 2 | b853edb2f | 0 | 0 | 0 |
 | `portoes.sh` 3 | a743d51be | 0 | 0 | 0 |
+| `portoes.sh` G1-b 1 | 1abbd0745 | 1 (o F21 do `check:formas`: o `id` do título e a marca decorativa fora da lista dos atributos, 38 linhas no registo) | 125 (não correu) | 0 |
+| `portoes.sh` G1-b 2 | b65ff8927 | 0 | 0 | 0 |
+
+Os códigos e o `tempos.json` de cada corrida, sem os registos grandes: a terceira em `portoes/` (`cabeca`, `build.codigo`, `verify.codigo`, `typecheck.codigo`, `portoes.sh.codigo`, `tempos.json`), e as duas da correção G1-b em `portoes-b/corrida-1/` e `portoes-b/corrida-2/`, com os mesmos ficheiros. As corridas 1 e 2 do bloco não guardaram os seus ficheiros no repositório; os seus códigos acima ficam como relatados.
 
 Na corrida 3, `check:graficos` deu código 0 dentro do `verify`. Antes das corridas inteiras: `npm run build` duas vezes (a de antes, para o inventário, código 0; a segunda parou no F21 do `check:formas`, código 1), `typecheck` duas vezes (0 e 0), `check:formas` e `check:graficos` uma vez à mão, e `medir.mjs` cinco vezes (cada uma corre a régua e as três plantas).
 
@@ -83,6 +87,32 @@ Duas páginas a 390 px nas duas edições pelo `captar.mjs`, que ganhou o campo 
 - **G1-d.** O toque simulado das capturas é um evento sintético; um toque num telefone verdadeiro e o arrastar do dedo não foram provados num aparelho.
 - **G1-e.** A mensagem do commit b853edb2f diz «1 051» blocos por classificar; o número não foi medido (o registo dá «e mais 1033» depois de uma lista parcial). O valor certo é «mais de mil».
 
+## A correção G1-b (21.10.2026, a leitura do Codex, os achados 3, 4, 5 e 8)
+
+Mandato: `.claude/sessao-2026-10-19/CORRECAO-G1-b-2026-10-21.md`. Os achados 1, 2, 6 e 7 da leitura eram as plantas nas cópias do pacote.
+
+- **O ponto mais próximo (o achado 3).** `maisProximo` mede ao ponto desenhado de cada grupo (o círculo; sem ele, a zona estreita; sem nenhum, a marca da faixa) e não ao retângulo do grupo, que incluía a etiqueta deslocada; o x do dedo decide e o y só desempata. O registo `capturas-390-b.json` guarda, para o toque no centro do gráfico da inflação da primeira página, o x do toque no `viewBox` (180), o círculo mais próximo pelo `cx` (179,769, julho de 2007) e o ponto aceso (julho de 2007, nas duas edições, `bate: true`); o `captar.mjs` recusa a captura quando não batem. Antes, o mesmo toque acendia janeiro de 2022.
+- **A etiqueta dentro da janela (o achado 4).** `poe` confina também o rebordo inferior contra a altura da janela, ao abrir e ao redimensionar. O `captar.mjs` regista `etiquetaDentro` nos dois eixos, para a etiqueta comum e para a do `<svg>` (o retângulo do `text` contra a janela), e recusa a captura quando um eixo falha. A captura a 390 px com o toque no último ponto da série (agosto de 2026): a etiqueta do `<svg>` de 71,11 a 155,17 px na horizontal (pt; 71,11 a 142,31 em inglês) e de 362,59 a 390,35 px na vertical (pt; 362,01 a 389,77 em inglês), numa janela de 390 por 900; os dois eixos dentro. As imagens ficam fora do repositório; o manifesto (nomes, medidas e sha256) é `capturas-390-b.json`.
+- **A isenção dos valores escritos (o achado 5).** Das 34 séries que a primeira classificação punha em «valores escritos» por terem algarismos no eixo, 32 são as séries dos cartões e 2 o índice de duas séries do recibo da remuneração (pt e en). As 32 dos cartões levam a camada comum (G1-9); as 2 do índice ficam decorativas pela marca explícita (G1-10). O inventário e a régua classificam pelos valores escritos como valores (`[data-claim]`, `[data-ponto]` fora de uma zona) e pela marca decorativa, nunca pelos algarismos de um `text`; toda a série no tempo conta como desenho que esconde valores. O conhecido-positivo: a classificação corrigida sobre o `dist/` de a743d51be (`inventario-a743d51be-corrigido.json`) dá 34 desenhos que escondem valores sem toque, e a régua nova sobre esse `dist/` sai com 1; depois (b65ff8927), 0 e 0. Pelo `medidas.json`: 50 séries de página com leitura, 32 de cartão com leitura, 2 decorativas; 102 gráficos marcados; as cinco plantas da régua a 1. A contagem estrita passa de 2 635 a 2 645 pela classificação corrigida (menos 42 desenhos em «valores escritos»: as 34 séries e 8 com algarismos só na escala; menos 32 sem toque, os cartões).
+- **Os registos dos portões (o achado 8).** Na secção §3: os ficheiros de cada corrida, comitados.
+
+Portões que mudaram de forma, conservando o que protegem: a F21 (`tests/formas/serie-do-pais.mjs`) passa a exigir as zonas em todo o desenho que não seja decorativo, aceita `aria-hidden`, `data-grafico-decorativo` e o `id` do título, e as plantas do `tests/pais/portoes.mjs` mudam com ela (`rp4cb-zonas-num-decorativo`, `rp4cb-cartao-sem-zonas`, `rp4cb-recibo-sem-zonas`); a K20 (`tests/cartao/series.mjs`) confere a porta como a caixa do desenho com a ligação filha `a[data-grafico-porta]` para o recibo certo, e as duas plantas do `href` passam para essa ligação. A régua dos gráficos ganha as plantas `serie-sem-camada` e `decorativo-sem-aria`, as duas a 1.
+
+### As decisões
+
+- **G1-9.** No cartão, o desenho sai de dentro do `a` (um ponto focável dentro de uma ligação não é HTML válido) e a ligação fica irmã dele na mesma caixa (`div.cartao-medida-serie`), com o nome dado pelo título do desenho (`aria-labelledby`, sem frase nova) e um `::after` que cobre a caixa por baixo do desenho; o desenho deixa passar o toque, menos nas zonas de leitura. Um toque no campo lê o ponto da coluna; um toque fora do campo (o eixo, as margens, a legenda) segue para o recibo. Ao rato, o clique num ponto segue a ligação (a passagem já mostra a leitura); ao teclado, Enter num ponto também.
+- **G1-10.** O índice de duas séries do recibo da remuneração fica decorativo: os seus valores indexados não são linhas do livro-razão (a regra 1 impede escrevê-los numa etiqueta), e os valores das séries estão escritos na tabela «Os pontos» da mesma página.
+- **G1-11.** O ponto mais próximo decide-se pelo x do dedo; o y só desempata dois pontos no mesmo x. Com o peso de um quarto no y, dois pontos vizinhos de uma série mensal (a menos de um píxel no x) podiam trocar pelo y.
+
+### O que ficou aberto
+
+- **G1-f.** Oito desenhos (2 em cada edição de `svg.agenda-eixo-svg`, `svg.mun-serie-svg`, `svg.mun-banda-svg` e `svg.rule-svg`) têm algarismos só na escala e nenhum valor escrito; a classificação corrigida põe-nos em `algarismos-de-escala`, fora da régua. Não provei que não escondem valores.
+- **G1-g.** O peso que as zonas de leitura acrescentam às dez páginas com cartões (a razão da I208) não foi medido nesta passagem.
+- **G1-h.** A porta do cartão (o toque no ponto contra o toque fora dele) não foi capturada nem provada num aparelho; o mandato pediu só a captura da primeira página.
+- **G1-i.** A orçamentação: o mandato pediu uma corrida inteira; foram duas, porque a primeira parou no F21 (acima).
+
 ## O custo
 
-Chamadas de ferramentas: cerca de noventa e cinco nesta passagem, contadas por mim e não por guião. Corridas: três `portoes.sh`, duas `npm run build`, duas `typecheck`, uma de `check:formas` e `check:graficos` à mão, cinco de `medir.mjs` e quatro do `captar.mjs` (duas recusadas pelo recorte repetido, uma com a etiqueta escondida, que levou à correção a743d51be). Os símbolos lê-os o lugar de direção da ferramenta.
+Na correção G1-b: 32 chamadas de ferramentas até à escrita desta linha, contadas pelas linhas `tool_use` do registo da sessão do construtor (`grep -c '"type":"tool_use"'` sobre o ficheiro do agente), mais o commit deste relatório e a entrega. Corridas: duas `portoes.sh`, uma `check:formas`, três `check:graficos` à mão e três das suas plantas, uma `tests/cartao/series.mjs`, uma do inventário sobre o `dist/` antigo, uma `captar.mjs` (quatro capturas) e uma `medir.mjs`.
+
+No bloco G1: Chamadas de ferramentas: cerca de noventa e cinco nesta passagem, contadas por mim e não por guião. Corridas: três `portoes.sh`, duas `npm run build`, duas `typecheck`, uma de `check:formas` e `check:graficos` à mão, cinco de `medir.mjs` e quatro do `captar.mjs` (duas recusadas pelo recorte repetido, uma com a etiqueta escondida, que levou à correção a743d51be). Os símbolos lê-os o lugar de direção da ferramenta.

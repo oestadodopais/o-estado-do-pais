@@ -1,5 +1,5 @@
 {
- "cabeca_do_dist": "a743d51be59c4190c656e17ef0841252608741c2",
+ "cabeca_do_dist": "b65ff8927449f066c191d4c6c3a1a059c2b6ec3c",
  "medidas": [
   {
    "nome": "gráficos que escondem valores e não os mostram ao toque, antes",
@@ -22,8 +22,8 @@
   },
   {
    "nome": "desenhos sem leitura ao toque e sem valores escritos (contagem estrita), depois",
-   "valor": 2635,
-   "campo_semToque_do_guiao": 2635,
+   "valor": 2645,
+   "campo_semToque_do_guiao": 2645,
    "comando": "recomposta de inventario-depois.json",
    "conhecido_positivo": "idem"
   },
@@ -38,10 +38,12 @@
      "documento": 57
     },
     {
-     "valores-escritos": 138,
+     "algarismos-de-escala": 8,
+     "valores-escondidos": 122,
      "sem-algarismos": 68,
-     "valores-escondidos": 90,
      "escondido": 2510,
+     "valores-escritos": 96,
+     "decorativo": 2,
      "documento": 57
     }
    ],
@@ -58,21 +60,31 @@
    "conhecido_positivo": "idem"
   },
   {
+   "nome": "séries no tempo por sítio e forma, depois (a correção G1-b)",
+   "valor": {
+    "SerieDoPais (página, com leitura)": 50,
+    "SerieDoPais (cartão, com leitura)": 32,
+    "SerieDoPais (página, decorativo)": 2
+   },
+   "comando": "campo componentes de inventario-depois.json",
+   "conhecido_positivo": "pela mesma classificação, o dist de a743d51be dá 32 séries de cartão e 2 de página sem leitura (inventario-a743d51be-corrigido.json)"
+  },
+  {
    "nome": "check:graficos na cabeça",
    "valor": 0,
    "cauda": [
-    "check:graficos: 9143 páginas, 70 gráficos marcados, 10612 pontos; na dívida declarada: {\"FaixaDosPaises\":20}."
+    "check:graficos: 9143 páginas, 102 gráficos marcados, 13580 pontos; na dívida declarada: {\"FaixaDosPaises\":20,\"decorativos\":2}."
    ],
    "comando": "node tests/graficos/interacao.mjs",
-   "conhecido_positivo": "as três plantas abaixo saem com 1"
+   "conhecido_positivo": "as cinco plantas abaixo saem com 1"
   },
   {
    "nome": "planta sem-marca",
    "valor": 1,
    "cauda": [
-    "check:graficos: 9143 páginas, 69 gráficos marcados, 10323 pontos; na dívida declarada: {\"FaixaDosPaises\":20}.",
+    "check:graficos: 9143 páginas, 101 gráficos marcados, 13291 pontos; na dívida declarada: {\"FaixaDosPaises\":20,\"decorativos\":2}.",
     "planta «sem-marca»: mordeu (1 erros).",
-    "G1 /index.html: um desenho de «SerieDoPais (com leitura)» esconde valores e não tem data-grafico."
+    "G1 /index.html: um desenho de «SerieDoPais (página, com leitura)» esconde valores e não tem data-grafico."
    ],
    "comando": "node tests/graficos/interacao.mjs --plantar sem-marca",
    "conhecido_positivo": "morde quando sai com 1 e a cauda diz «mordeu»"
@@ -81,7 +93,7 @@
    "nome": "planta aria-label",
    "valor": 1,
    "cauda": [
-    "check:graficos: 9143 páginas, 70 gráficos marcados, 10612 pontos; na dívida declarada: {\"FaixaDosPaises\":20}.",
+    "check:graficos: 9143 páginas, 102 gráficos marcados, 13580 pontos; na dívida declarada: {\"FaixaDosPaises\":20,\"decorativos\":2}.",
     "planta «aria-label»: mordeu (1 erros).",
     "G3 /index.html: o aria-label diz «janeiro de 1992: 9,42 %» e o ponto diz «janeiro de 1992: 9,41 %»."
    ],
@@ -92,11 +104,33 @@
    "nome": "planta sem-guiao",
    "valor": 1,
    "cauda": [
-    "check:graficos: 9143 páginas, 70 gráficos marcados, 10612 pontos; na dívida declarada: {\"FaixaDosPaises\":20}.",
+    "check:graficos: 9143 páginas, 102 gráficos marcados, 13580 pontos; na dívida declarada: {\"FaixaDosPaises\":20,\"decorativos\":2}.",
     "planta «sem-guiao»: mordeu (1 erros).",
     "G4 /index.html: a página tem 1 gráficos marcados e carrega o guião 0 vezes."
    ],
    "comando": "node tests/graficos/interacao.mjs --plantar sem-guiao",
+   "conhecido_positivo": "morde quando sai com 1 e a cauda diz «mordeu»"
+  },
+  {
+   "nome": "planta serie-sem-camada",
+   "valor": 1,
+   "cauda": [
+    "check:graficos: 9143 páginas, 101 gráficos marcados, 13291 pontos; na dívida declarada: {\"FaixaDosPaises\":20,\"decorativos\":2}.",
+    "planta «serie-sem-camada»: mordeu (1 erros).",
+    "G1 /index.html: um desenho de «SerieDoPais (página, sem leitura)» esconde valores e não tem data-grafico."
+   ],
+   "comando": "node tests/graficos/interacao.mjs --plantar serie-sem-camada",
+   "conhecido_positivo": "morde quando sai com 1 e a cauda diz «mordeu»"
+  },
+  {
+   "nome": "planta decorativo-sem-aria",
+   "valor": 1,
+   "cauda": [
+    "check:graficos: 9143 páginas, 101 gráficos marcados, 13291 pontos; na dívida declarada: {\"FaixaDosPaises\":20,\"decorativos\":2}.",
+    "planta «decorativo-sem-aria»: mordeu (1 erros).",
+    "G1 /index.html: um desenho de «SerieDoPais (página, com leitura)» com a marca decorativa sem aria-hidden, ou com data-grafico."
+   ],
+   "comando": "node tests/graficos/interacao.mjs --plantar decorativo-sem-aria",
    "conhecido_positivo": "morde quando sai com 1 e a cauda diz «mordeu»"
   }
  ]
