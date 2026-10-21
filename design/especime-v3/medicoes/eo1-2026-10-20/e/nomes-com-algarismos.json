@@ -1,0 +1,93 @@
+[
+  {
+    "id": "pm-q3-3-r24-c1",
+    "nome": {
+      "pt": "Administração Central (1. Saldo das AP em contabilidade pública)",
+      "en": "Central government (1. General government balance in public accounts)"
+    },
+    "definicao": [
+      {
+        "pt": "É o valor de «Administração Central (1. Saldo das AP em contabilidade pública)» na passagem entre contabilidade pública e contabilidade nacional, para o período e na unidade indicados. Referência: ",
+        "en": "It is the value of «Central government (1. General government balance in public accounts)» in the passage between public accounting and national accounts, for the stated period and unit. Reference: "
+      }
+    ]
+  },
+  {
+    "id": "pm-q3-3-r25-c1",
+    "nome": {
+      "pt": "Administração Regional e Local (1. Saldo das AP em contabilidade pública)",
+      "en": "Regional and local government (1. General government balance in public accounts)"
+    },
+    "definicao": [
+      {
+        "pt": "É o valor de «Administração Regional e Local (1. Saldo das AP em contabilidade pública)» na passagem entre contabilidade pública e contabilidade nacional, para o período e na unidade indicados. Referência: ",
+        "en": "It is the value of «Regional and local government (1. General government balance in public accounts)» in the passage between public accounting and national accounts, for the stated period and unit. Reference: "
+      }
+    ]
+  },
+  {
+    "id": "pm-q3-3-r26-c1",
+    "nome": {
+      "pt": "Segurança Social (1. Saldo das AP em contabilidade pública)",
+      "en": "Social security (1. General government balance in public accounts)"
+    },
+    "definicao": [
+      {
+        "pt": "É o valor de «Segurança Social (1. Saldo das AP em contabilidade pública)» na passagem entre contabilidade pública e contabilidade nacional, para o período e na unidade indicados. Referência: ",
+        "en": "It is the value of «Social security (1. General government balance in public accounts)» in the passage between public accounting and national accounts, for the stated period and unit. Reference: "
+      }
+    ]
+  },
+  {
+    "id": "pm-q3-3-r27-c1",
+    "nome": {
+      "pt": "2. Ajustamentos em Contas Nacionais",
+      "en": "2. National accounts adjustments"
+    },
+    "definicao": [
+      {
+        "pt": "É o valor de «2. Ajustamentos em Contas Nacionais» na passagem entre contabilidade pública e contabilidade nacional, para o período e na unidade indicados. Referência: ",
+        "en": "It is the value of «2. National accounts adjustments» in the passage between public accounting and national accounts, for the stated period and unit. Reference: "
+      }
+    ]
+  },
+  {
+    "id": "pm-q3-3-r37-c0",
+    "nome": {
+      "pt": "3. Saldo das AP em contabilidade nacional (1+2)",
+      "en": "3. General government balance in national accounts (1+2)"
+    },
+    "definicao": [
+      {
+        "pt": "É o valor de «3. Saldo das AP em contabilidade nacional (1+2)» na passagem entre contabilidade pública e contabilidade nacional, para o período e na unidade indicados. Referência: ",
+        "en": "It is the value of «3. General government balance in national accounts (1+2)» in the passage between public accounting and national accounts, for the stated period and unit. Reference: "
+      }
+    ]
+  },
+  {
+    "id": "pm-q3-3-r37-c1",
+    "nome": {
+      "pt": "3. Saldo das AP em contabilidade nacional (1+2)",
+      "en": "3. General government balance in national accounts (1+2)"
+    },
+    "definicao": [
+      {
+        "pt": "É o valor de «3. Saldo das AP em contabilidade nacional (1+2)» na passagem entre contabilidade pública e contabilidade nacional, para o período e na unidade indicados. Referência: ",
+        "en": "It is the value of «3. General government balance in national accounts (1+2)» in the passage between public accounting and national accounts, for the stated period and unit. Reference: "
+      }
+    ]
+  },
+  {
+    "id": "pm-q3-3-r37-c3",
+    "nome": {
+      "pt": "3. Saldo das AP em contabilidade nacional (1+2)",
+      "en": "3. General government balance in national accounts (1+2)"
+    },
+    "definicao": [
+      {
+        "pt": "É o valor de «3. Saldo das AP em contabilidade nacional (1+2)» na passagem entre contabilidade pública e contabilidade nacional, para o período e na unidade indicados. Referência: ",
+        "en": "It is the value of «3. General government balance in national accounts (1+2)» in the passage between public accounting and national accounts, for the stated period and unit. Reference: "
+      }
+    ]
+  }
+]

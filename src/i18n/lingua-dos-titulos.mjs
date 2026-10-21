@@ -291,6 +291,11 @@ export function linguaDoTituloDoDocumento(titulo, lang = 'pt') {
  * da medida; source_label conserva o rótulo original no motor e na prova exportada. */
 // EO1-b: lista explícita das línguas dos nomes PT e das traduções EN, conferida com as linhas.
 export const LINGUA_DOS_ROTULOS = {
+  // EO1-e: nomes conferidos na página citada do decreto e do relatório.
+  "salário mínimo (RMMG)": "pt",
+  "minimum wage (RMMG)": "en",
+  "retribuição mínima mensal garantida": "pt",
+  "guaranteed minimum monthly wage": "en",
   // EO1-d: nomes conferidos das medidas invariantes e da UTAO.
   "Medidas invariantes: impacto no saldo": "pt",
   "Invariant measures: balance impact": "en",
@@ -635,10 +640,6 @@ export const LINGUA_DOS_ROTULOS = {
   "Measures table: definition of mark (i)": "en",
   "Administração Pública: atualização das remunerações": "pt",
   "Public administration: wage update": "en",
-  "Remuneração mínima mensal garantida: 2024": "pt",
-  "Minimum monthly wage: 2024": "en",
-  "Remuneração mínima mensal garantida: 2027": "pt",
-  "Minimum monthly wage: 2027": "en",
   "Valor de referência e despesa do CSI": "pt",
   "CSI reference amount and expenditure": "en",
   "Trajetória da dívida pública (POENMP)": "pt",
@@ -896,8 +897,6 @@ export const LINGUA_DOS_ROTULOS = {
   "Income tax deduction for rents": "en",
   "Política fiscal e impostos": "pt",
   "Fiscal policy and taxes": "en",
-  "Remuneração mínima mensal garantida em 2026": "pt",
-  "Minimum monthly wage in 2026": "en",
   "Espanha: salário mínimo mensal em 2026": "pt",
   "Spain: monthly minimum wage in 2026": "en",
   "Dívida: ajustamento défice-dívida": "pt",

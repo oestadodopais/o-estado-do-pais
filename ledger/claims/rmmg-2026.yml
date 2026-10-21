@@ -11,10 +11,10 @@ unit: "euros"
 
 # O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
-name: "Remuneração mínima mensal garantida em 2026"
+name: "retribuição mínima mensal garantida"
 name_source: "Decreto-Lei n.º 139/2025; artigo 3.º; p. 2 PDF"
 status: "conferido"
-name_en: "Minimum monthly wage in 2026"
+name_en: "guaranteed minimum monthly wage"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "PRESIDÊNCIA DO CONSELHO DE MINISTROS"

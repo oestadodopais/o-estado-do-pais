@@ -28,7 +28,7 @@ excerpt: null
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: "round ( 11 106 (PRR (Despesa total), 2026, contabilidade nacional) ÷ 146 472 (Despesa total, 2026, contabilidade nacional) × 100 , 1 ) = 7,6. O sinal indica a direção da variação ou do resultado da conta."
-derivation_en: "round ( 11,106 (Recovery and Resilience Plan (Total expenditure), 2026, national accounts) ÷ 146,472 (Total expenditure, 2026, national accounts) × 100 , 1 ) = 7.6. The sign indicates the direction of the change or calculation result."
+derivation_en: "round ( 11 106 (Recovery and Resilience Plan (Total expenditure), 2026, national accounts) ÷ 146 472 (Total expenditure, 2026, national accounts) × 100 , 1 ) = 7,6. The sign indicates the direction of the change or calculation result."
 derived_from:
   - "pm-q3-1-r51-c1"
   - "pm-q3-1-r50-c1"

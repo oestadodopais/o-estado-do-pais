@@ -389,21 +389,21 @@ edicoes:
     lang: "pt"
     title: "O Orçamento de 2027: o que muda e para quem"
     origin: "researchhub"
-    origin_ref: "content/27 Orcamento 2027 O que muda/O Orçamento de 2027, o que muda e para quem (pt-PT).html @ be7f2bd698ebfcab37916e2f6b797a5d2abcc4e1"
+    origin_ref: "content/27 Orcamento 2027 O que muda/O Orçamento de 2027, o que muda e para quem (pt-PT).html @ 42813f9dbcca2814c51c5b234b5d7e619366d10b"
     raw_file: "_raw/orcamento-2027-o-que-muda-e-para-quem.pt.html"
-    fetched_utc: "2026-10-21T04:20:02Z"
-    bytes_raw: 47175
-    bytes_normalized: 47175
-    sha256_raw: "1e0d5491b25113309e96bf81d4765bd19589c497f547aababc6c7684da83082b"
-    sha256_normalized: "1e0d5491b25113309e96bf81d4765bd19589c497f547aababc6c7684da83082b"
+    fetched_utc: "2026-10-21T06:27:54Z"
+    bytes_raw: 47364
+    bytes_normalized: 47364
+    sha256_raw: "dd27011d97cc7e0f3ebfb86d888106df1bb8a6ac83499a00136882b4765b03a2"
+    sha256_normalized: "dd27011d97cc7e0f3ebfb86d888106df1bb8a6ac83499a00136882b4765b03a2"
   - slug: orcamento-2027-o-que-muda-e-para-quem
     lang: "en"
     title: "The 2027 Budget: what changes, and for whom"
     origin: "researchhub"
-    origin_ref: "content/27 Orcamento 2027 O que muda/The 2027 Budget, what changes, and for whom.html @ be7f2bd698ebfcab37916e2f6b797a5d2abcc4e1"
+    origin_ref: "content/27 Orcamento 2027 O que muda/The 2027 Budget, what changes, and for whom.html @ 42813f9dbcca2814c51c5b234b5d7e619366d10b"
     raw_file: "_raw/orcamento-2027-o-que-muda-e-para-quem.en.html"
-    fetched_utc: "2026-10-21T04:20:02Z"
-    bytes_raw: 46622
-    bytes_normalized: 46622
-    sha256_raw: "051559e9625bb2de1e8c8228f0d58bb7499beeb2ad5f8168dc27eb4d8f36459f"
-    sha256_normalized: "051559e9625bb2de1e8c8228f0d58bb7499beeb2ad5f8168dc27eb4d8f36459f"
+    fetched_utc: "2026-10-21T06:27:54Z"
+    bytes_raw: 46803
+    bytes_normalized: 46803
+    sha256_raw: "031c2ff27b466c194b0d0f0d6928219d8625296e167bc7caf419ae2deefc5315"
+    sha256_normalized: "031c2ff27b466c194b0d0f0d6928219d8625296e167bc7caf419ae2deefc5315"

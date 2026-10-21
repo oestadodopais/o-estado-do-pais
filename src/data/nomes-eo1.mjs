@@ -129,8 +129,8 @@ export const NOMES_EO1 = {
     "en": "Harmonised index of consumer prices"
   },
   "oe-2027-rmmg-2027": {
-    "pt": "Remuneração mínima mensal garantida: 2027",
-    "en": "Minimum monthly wage: 2027"
+    "pt": "salário mínimo (RMMG)",
+    "en": "minimum wage (RMMG)"
   },
   "oe-2027-csi-aumento-2027": {
     "pt": "CSI: aumento mensal do valor de referência",
@@ -761,12 +761,12 @@ export const NOMES_EO1 = {
     "en": "Minimum wage: increase against 2024"
   },
   "oe-2027-rmmg-2024": {
-    "pt": "Remuneração mínima mensal garantida: 2024",
-    "en": "Minimum monthly wage: 2024"
+    "pt": "salário mínimo (RMMG)",
+    "en": "minimum wage (RMMG)"
   },
   "rmmg-2026": {
-    "pt": "Remuneração mínima mensal garantida em 2026",
-    "en": "Minimum monthly wage in 2026"
+    "pt": "retribuição mínima mensal garantida",
+    "en": "guaranteed minimum monthly wage"
   },
   "der-rmmg-2026-2027-abs": {
     "pt": "Salário mínimo: aumento face a 2026",

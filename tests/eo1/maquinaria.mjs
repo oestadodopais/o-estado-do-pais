@@ -58,9 +58,9 @@ for(const lang of ['pt','en']) {
  assert.deepEqual(conferirSinopse(parse('<p>'+sinopse+'</p>'),work,lang),[]);
  assert(conferirSinopse(parse('<p>'+sinopse.replace(absoluto,assinado)+'</p>'),work,lang).length,'sinopse aceitou o sinal retirado por abs');plantas++;
  if(lang==='en') {
-  const formaPortuguesa=String(getClaim('der-oe2027-medidas-anteriores-saldo').value).replace(/^[−-]/,'').replace(/\s+/g,' ');
-  assert.notEqual(absoluto,formaPortuguesa);
-  assert(conferirSinopse(parse('<p>'+sinopse.replace(absoluto,formaPortuguesa)+'</p>'),work,lang).length,'sinopse inglesa aceitou o separador português');plantas++;
+  const formaDivergente=absoluto.replace(/ /g,',');
+  assert.notEqual(absoluto,formaDivergente);
+  assert(conferirSinopse(parse('<p>'+sinopse.replace(absoluto,formaDivergente)+'</p>'),work,lang).length,'sinopse inglesa aceitou um separador diferente do recibo de origem');plantas++;
  }
  const rota={key:'discussao',lang,params:{}};
  const titulo=WORKS.find(w=>w.slug===slug).editions.find(e=>e.lang===lang).title;

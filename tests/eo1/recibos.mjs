@@ -31,8 +31,26 @@ for(const c of rows.filter(c=>c.derivation))for(const lang of ['pt','en']){
  const page=parse(fs.readFileSync(`${dist}/${lang==='pt'?'livro-razao':'en/ledger'}/${c.id}/index.html`,'utf8'));
  const name=page.querySelector('.linha-nome-da-fonte .linha-campo-k').text;
  assert.equal(name,lang==='pt'?'Linha derivada deste projeto':'Derived row of this project');
- const raw=String(c.value).replace(/\s/g,''),[whole,frac]=raw.split(',');
- const expected=lang==='pt'?norm(String(c.value)):whole.replace(/(\d)(?=(\d{3})+(?!\d))/g,'$1,')+(frac===undefined?'':'.'+frac);
+ const expected=norm(String(c.value));
  assert.equal(norm(page.querySelector('.linha-valor [data-claim]').text),expected);receipts++;
+ const labels=page.querySelectorAll('.aparelho-ficha dt').map(e=>norm(e.text));
+ assert(!labels.includes(lang==='pt'?'Nome na fonte':'Name at the source'),c.id+': derivada apresentada como nome na fonte');
+ assert(page.querySelectorAll('.aparelho-ficha dd').some(e=>norm(e.text)===(lang==='pt'?'cálculo sobre as linhas identificadas':'computed from the identified rows')),c.id+': localizador da derivada');
+ const arithmetic=norm(page.querySelector('[data-linha-campo="derivation"]').text);
+ for(const origin of c.derived_from){
+  const source=parse(fs.readFileSync(`${dist}/${lang==='pt'?'livro-razao':'en/ledger'}/${origin}/index.html`,'utf8'));
+  const value=norm(source.querySelector('.linha-valor [data-claim]').text).replace(/^[−+-]\s*/, '');
+  assert(arithmetic.includes(value+' ('),c.id+': formato diferente do recibo '+origin+' ('+value+')');
+ }
+ assert(!/percentagem do PIB[^)]*% do PIB|percentage of GDP[^)]*% of GDP/.test(arithmetic),c.id+': unidade duplicada');
+
 }
 console.log(`EO1-d recibos: ${receipts} conferidos; ${plants} plantas de estado recusadas; controlo código 0.`);
+
+for(const lang of ['pt','en']){
+ const prefix=lang==='pt'?'livro-razao':'en/ledger';
+ const page=parse(fs.readFileSync(`${dist}/${prefix}/oe-2027-calendario-entrega/index.html`,'utf8'));
+ assert.equal(norm(page.querySelector('.linha-valor [data-claim]').text),'8 de outubro');
+ const cds=parse(fs.readFileSync(`${dist}/${prefix}/posicao-cds-orcamento/index.html`,'utf8'));
+ assert.equal(norm(cds.querySelector('[data-linha-campo="document.edition"]').text),'2026');
+}

@@ -11,10 +11,10 @@ unit: "euros"
 
 # O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
-name: "Remuneração mínima mensal garantida: 2027"
+name: "salário mínimo (RMMG)"
 name_source: "p. 20 PDF (4 impressa)"
 status: "conferido"
-name_en: "Minimum monthly wage: 2027"
+name_en: "minimum wage (RMMG)"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Ministério das Finanças"

@@ -872,3 +872,9 @@ Seis declarações substituídas: comparação e opinião da Saúde nas duas edi
 | bloco | mudança | estado | nota |
 |---|---|---|---|
 | eo1-d | Duas contagens recolhidas do HTML nas duas edições; duas declarações anteriores retiradas | por ler | Codex gpt-6-astra, 21.10.2026: a nova linha da UTAO altera o total do livro. A leitura cruzada pertence à direção. |
+
+## EO1-e: marca do quadro na sinopse inglesa
+
+| bloco | mudança | estado | nota |
+|---|---|---|---|
+| eo1-e | Uma declaração inglesa substituída; a forma anterior fica retirada com razão | por ler | Codex gpt-6-astra, 21.10.2026: a sinopse usa as palavras da conclusão. A conferência contra o HTML pertence aos portões desta passagem; a leitura cruzada pertence à direção. |

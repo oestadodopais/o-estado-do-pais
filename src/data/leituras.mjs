@@ -93,7 +93,7 @@ export const LEITURAS = {
       {
         "claim": "der-oe2027-medidas-novas-saldo"
       },
-      " million euros to the balance, the ten lines marked as unchanged policies weigh ",
+      " million euros to the balance, the ten lines the table marks as «invariante» (invariant) weigh ",
       {
         "claim": "der-oe2027-medidas-anteriores-saldo", "abs": true
       },

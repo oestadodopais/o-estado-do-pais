@@ -10046,10 +10046,10 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a soma, na despesa de 2027, das dez linhas que o quadro 3.2 do relatório marca com (i), invariante. Referência: "
+        "É a soma, no impacto no saldo de 2027, das três linhas de despesa que o quadro 3.2 do relatório marca com (i), invariante. Referência: "
       ],
       "en": [
-        "It is the sum, in expenditure for 2027, of the ten lines that table 3.2 of the report marks with (i), invariante. Reference: "
+        "It is the sum, in the 2027 balance impact, of the three expenditure lines that table 3.2 of the report marks with (i), invariante. Reference: "
       ]
     },
     "complemento": {
@@ -10074,10 +10074,10 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a soma, na receita de 2027, das dez linhas que o quadro 3.2 do relatório marca com (i), invariante. Referência: "
+        "É a soma, no impacto no saldo de 2027, das sete linhas de receita que o quadro 3.2 do relatório marca com (i), invariante. Referência: "
       ],
       "en": [
-        "It is the sum, in revenue for 2027, of the ten lines that table 3.2 of the report marks with (i), invariante. Reference: "
+        "It is the sum, in the 2027 balance impact, of the seven revenue lines that table 3.2 of the report marks with (i), invariante. Reference: "
       ]
     },
     "complemento": {
@@ -12001,15 +12001,15 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "oe-2027-rmmg-2024": {
     "nome": {
-      "pt": "Remuneração mínima mensal garantida: 2024",
-      "en": "Minimum monthly wage: 2024"
+      "pt": "salário mínimo (RMMG)",
+      "en": "minimum wage (RMMG)"
     },
     "frase": {
       "pt": [
-        "É o valor de «Remuneração mínima mensal garantida: 2024» no documento citado, para o período e na unidade indicados. Referência: "
+        "É o valor de «salário mínimo (RMMG)» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Minimum monthly wage: 2024» in the cited document, for the stated period and unit. Reference: "
+        "It is the value of «minimum wage (RMMG)» in the cited document, for the stated period and unit. Reference: "
       ]
     },
     "complemento": {
@@ -12029,15 +12029,15 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "oe-2027-rmmg-2027": {
     "nome": {
-      "pt": "Remuneração mínima mensal garantida: 2027",
-      "en": "Minimum monthly wage: 2027"
+      "pt": "salário mínimo (RMMG)",
+      "en": "minimum wage (RMMG)"
     },
     "frase": {
       "pt": [
-        "É o valor de «Remuneração mínima mensal garantida: 2027» no documento citado, para o período e na unidade indicados. Referência: "
+        "É o valor de «salário mínimo (RMMG)» no documento citado, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Minimum monthly wage: 2027» in the cited document, for the stated period and unit. Reference: "
+        "It is the value of «minimum wage (RMMG)» in the cited document, for the stated period and unit. Reference: "
       ]
     },
     "complemento": {
@@ -13737,15 +13737,15 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "pm-q3-3-r24-c1": {
     "nome": {
-      "pt": "Administração Central (Saldo das AP em contabilidade pública)",
-      "en": "Central government (General government balance in public accounts)"
+      "pt": "Administração Central (1. Saldo das AP em contabilidade pública)",
+      "en": "Central government (1. General government balance in public accounts)"
     },
     "frase": {
       "pt": [
-        "É o valor de «Administração Central (Saldo das AP em contabilidade pública)» na passagem entre contabilidade pública e contabilidade nacional, para o período e na unidade indicados. Referência: "
+        "É o valor de «Administração Central (1. Saldo das AP em contabilidade pública)» na passagem entre contabilidade pública e contabilidade nacional, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Central government (General government balance in public accounts)» in the passage between public accounting and national accounts, for the stated period and unit. Reference: "
+        "It is the value of «Central government (1. General government balance in public accounts)» in the passage between public accounting and national accounts, for the stated period and unit. Reference: "
       ]
     },
     "complemento": {
@@ -13765,15 +13765,15 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "pm-q3-3-r25-c1": {
     "nome": {
-      "pt": "Administração Regional e Local (Saldo das AP em contabilidade pública)",
-      "en": "Regional and local government (General government balance in public accounts)"
+      "pt": "Administração Regional e Local (1. Saldo das AP em contabilidade pública)",
+      "en": "Regional and local government (1. General government balance in public accounts)"
     },
     "frase": {
       "pt": [
-        "É o valor de «Administração Regional e Local (Saldo das AP em contabilidade pública)» na passagem entre contabilidade pública e contabilidade nacional, para o período e na unidade indicados. Referência: "
+        "É o valor de «Administração Regional e Local (1. Saldo das AP em contabilidade pública)» na passagem entre contabilidade pública e contabilidade nacional, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Regional and local government (General government balance in public accounts)» in the passage between public accounting and national accounts, for the stated period and unit. Reference: "
+        "It is the value of «Regional and local government (1. General government balance in public accounts)» in the passage between public accounting and national accounts, for the stated period and unit. Reference: "
       ]
     },
     "complemento": {
@@ -13793,15 +13793,15 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "pm-q3-3-r26-c1": {
     "nome": {
-      "pt": "Segurança Social (Saldo das AP em contabilidade pública)",
-      "en": "Social security (General government balance in public accounts)"
+      "pt": "Segurança Social (1. Saldo das AP em contabilidade pública)",
+      "en": "Social security (1. General government balance in public accounts)"
     },
     "frase": {
       "pt": [
-        "É o valor de «Segurança Social (Saldo das AP em contabilidade pública)» na passagem entre contabilidade pública e contabilidade nacional, para o período e na unidade indicados. Referência: "
+        "É o valor de «Segurança Social (1. Saldo das AP em contabilidade pública)» na passagem entre contabilidade pública e contabilidade nacional, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «Social security (General government balance in public accounts)» in the passage between public accounting and national accounts, for the stated period and unit. Reference: "
+        "It is the value of «Social security (1. General government balance in public accounts)» in the passage between public accounting and national accounts, for the stated period and unit. Reference: "
       ]
     },
     "complemento": {
@@ -13821,15 +13821,15 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "pm-q3-3-r27-c1": {
     "nome": {
-      "pt": "Ajustamentos em Contas Nacionais",
-      "en": "National accounts adjustments"
+      "pt": "2. Ajustamentos em Contas Nacionais",
+      "en": "2. National accounts adjustments"
     },
     "frase": {
       "pt": [
-        "É o valor de «Ajustamentos em Contas Nacionais» na passagem entre contabilidade pública e contabilidade nacional, para o período e na unidade indicados. Referência: "
+        "É o valor de «2. Ajustamentos em Contas Nacionais» na passagem entre contabilidade pública e contabilidade nacional, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «National accounts adjustments» in the passage between public accounting and national accounts, for the stated period and unit. Reference: "
+        "It is the value of «2. National accounts adjustments» in the passage between public accounting and national accounts, for the stated period and unit. Reference: "
       ]
     },
     "complemento": {
@@ -13933,15 +13933,15 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "pm-q3-3-r37-c0": {
     "nome": {
-      "pt": "Saldo das AP em contabilidade nacional",
-      "en": "General government balance in national accounts"
+      "pt": "3. Saldo das AP em contabilidade nacional (1+2)",
+      "en": "3. General government balance in national accounts (1+2)"
     },
     "frase": {
       "pt": [
-        "É o valor de «Saldo das AP em contabilidade nacional» na passagem entre contabilidade pública e contabilidade nacional, para o período e na unidade indicados. Referência: "
+        "É o valor de «3. Saldo das AP em contabilidade nacional (1+2)» na passagem entre contabilidade pública e contabilidade nacional, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «General government balance in national accounts» in the passage between public accounting and national accounts, for the stated period and unit. Reference: "
+        "It is the value of «3. General government balance in national accounts (1+2)» in the passage between public accounting and national accounts, for the stated period and unit. Reference: "
       ]
     },
     "complemento": {
@@ -13961,15 +13961,15 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "pm-q3-3-r37-c1": {
     "nome": {
-      "pt": "Saldo das AP em contabilidade nacional",
-      "en": "General government balance in national accounts"
+      "pt": "3. Saldo das AP em contabilidade nacional (1+2)",
+      "en": "3. General government balance in national accounts (1+2)"
     },
     "frase": {
       "pt": [
-        "É o valor de «Saldo das AP em contabilidade nacional» na passagem entre contabilidade pública e contabilidade nacional, para o período e na unidade indicados. Referência: "
+        "É o valor de «3. Saldo das AP em contabilidade nacional (1+2)» na passagem entre contabilidade pública e contabilidade nacional, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «General government balance in national accounts» in the passage between public accounting and national accounts, for the stated period and unit. Reference: "
+        "It is the value of «3. General government balance in national accounts (1+2)» in the passage between public accounting and national accounts, for the stated period and unit. Reference: "
       ]
     },
     "complemento": {
@@ -13989,15 +13989,15 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "pm-q3-3-r37-c3": {
     "nome": {
-      "pt": "Saldo das AP em contabilidade nacional",
-      "en": "General government balance in national accounts"
+      "pt": "3. Saldo das AP em contabilidade nacional (1+2)",
+      "en": "3. General government balance in national accounts (1+2)"
     },
     "frase": {
       "pt": [
-        "É o valor de «Saldo das AP em contabilidade nacional» na passagem entre contabilidade pública e contabilidade nacional, para o período e na unidade indicados. Referência: "
+        "É o valor de «3. Saldo das AP em contabilidade nacional (1+2)» na passagem entre contabilidade pública e contabilidade nacional, para o período e na unidade indicados. Referência: "
       ],
       "en": [
-        "It is the value of «General government balance in national accounts» in the passage between public accounting and national accounts, for the stated period and unit. Reference: "
+        "It is the value of «3. General government balance in national accounts (1+2)» in the passage between public accounting and national accounts, for the stated period and unit. Reference: "
       ]
     },
     "complemento": {
@@ -15781,12 +15781,12 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "rmmg-2026": {
     "nome": {
-      "pt": "Remuneração mínima mensal garantida em 2026",
-      "en": "Minimum monthly wage in 2026"
+      "pt": "retribuição mínima mensal garantida",
+      "en": "guaranteed minimum monthly wage"
     },
     "frase": {
       "pt": [
-        "É a remuneração mínima mensal garantida em "
+        "É a retribuição mínima mensal garantida em "
       ],
       "en": [
         "It is the guaranteed minimum monthly wage in "

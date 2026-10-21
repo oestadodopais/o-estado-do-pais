@@ -28,7 +28,7 @@ excerpt: null
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: "86,0 (Dívida pública bruta, 2027) − 84,5 (Dívida pública consolidada (%), 2027) = 1,5. O sinal indica a direção da variação ou do resultado da conta."
-derivation_en: "86.0 (General government gross debt, 2027) − 84.5 (Consolidated public debt (%), 2027) = 1.5. The sign indicates the direction of the change or calculation result."
+derivation_en: "86,0 (General government gross debt, 2027) − 84,5 (Consolidated public debt (%), 2027) = 1,5. The sign indicates the direction of the change or calculation result."
 derived_from:
   - "ce-primavera-2026-divida-2027"
   - "pm-q3-6-r42-c3"

@@ -27,8 +27,8 @@ reference_date: "2025"
 excerpt: null
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
-derivation: "89,7 (Dívida pública bruta consolidada, em percentagem do PIB, Portugal, 2025, % do PIB) − 81,7 (Dívida pública bruta consolidada, em percentagem do PIB, União Europeia, 2025, % do PIB) = 8,0. O sinal indica a direção da variação ou do resultado da conta."
-derivation_en: "89.7 (General government consolidated gross debt, as a percentage of GDP, Portugal, 2025, % of GDP) − 81.7 (General government consolidated gross debt, as a percentage of GDP, European Union, 2025, % of GDP) = 8.0. The sign indicates the direction of the change or calculation result."
+derivation: "89,7 (Dívida pública bruta consolidada, em percentagem do PIB, Portugal, 2025) − 81,7 (Dívida pública bruta consolidada, em percentagem do PIB, União Europeia, 2025) = 8,0. O sinal indica a direção da variação ou do resultado da conta."
+derivation_en: "89,7 (General government consolidated gross debt, as a percentage of GDP, Portugal, 2025) − 81,7 (General government consolidated gross debt, as a percentage of GDP, European Union, 2025) = 8,0. The sign indicates the direction of the change or calculation result."
 derived_from:
   - "europa-divida-pt-2025"
   - "europa-divida-eu27_2020-2025"

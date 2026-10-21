@@ -1,0 +1,6 @@
+---
+import Frase from './Frase.astro';
+import {partesDaDefinicaoEo1} from '../lib/definicoes-eo1.mjs';
+const {partes,id,lang}=Astro.props;
+---
+{partes.map(parte=>typeof parte==='string' ? partesDaDefinicaoEo1(parte,id,lang).map(p=>p.tipo ? <span data-eo1-origem={p.tipo} data-de-linha={p.linha}>{p.texto}</span> : <Fragment set:text={p.texto} />) : <Frase partes={[parte]} lang={lang} selos={false} />)}

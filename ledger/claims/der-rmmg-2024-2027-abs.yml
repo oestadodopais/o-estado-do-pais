@@ -27,8 +27,8 @@ reference_date: "2027"
 excerpt: null
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
-derivation: "970 (Remuneração mínima mensal garantida: 2027) − 820 (Remuneração mínima mensal garantida: 2024) = 150. O sinal indica a direção da variação ou do resultado da conta."
-derivation_en: "970 (Minimum monthly wage: 2027) − 820 (Minimum monthly wage: 2024) = 150. The sign indicates the direction of the change or calculation result."
+derivation: "970 (salário mínimo (RMMG), 2027) − 820 (salário mínimo (RMMG), 2024) = 150. O sinal indica a direção da variação ou do resultado da conta."
+derivation_en: "970 (minimum wage (RMMG), 2027) − 820 (minimum wage (RMMG), 2024) = 150. The sign indicates the direction of the change or calculation result."
 derived_from:
   - "oe-2027-rmmg-2027"
   - "oe-2027-rmmg-2024"

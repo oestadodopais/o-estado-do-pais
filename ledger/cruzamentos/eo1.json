@@ -16,7 +16,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "31876f62033c6a0a472d8e88e79d09002afe6c5f1c99ffcb2fd10d5be44799cd",
       "rh_id": "ce-primavera-2026-divida-2026",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -27,7 +27,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "cf973cf18b1062202c5075787058cc2982369d140156795b77bcec8bd095478a",
       "rh_id": "ce-primavera-2026-divida-2027",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -38,7 +38,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "78f87d2780d1a07b03b79327fc0471c0d579bb73d963b3ad5044e5a0c7835780",
       "rh_id": "ce-primavera-2026-divida-texto-divergente",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -49,7 +49,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "56fc6f6a7aafd8c71f8f2fe19811da88f6a4c6cb37e377530aa3d0795fea2918",
       "rh_id": "ce-primavera-2026-pib-2027",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -60,7 +60,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "d4ec456a989e882dbe96205041fe892bfb5b693065caccd8609fbad9c4f199fb",
       "rh_id": "ce-primavera-2026-saldo-2027",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -71,7 +71,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "1d20a058f95e53db5c94f94abd2b41de744e2d15178f18a090b4a7947d708c7b",
       "rh_id": "cfp-comparabilidade",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -82,7 +82,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "9eff3d24da34e9791d243e72379134352629d976ed377319a2d6f738b2b53143",
       "rh_id": "cfp-emprego-receita",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -93,7 +93,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ab8d1f00e6fc0298f565ca5e21267332f792eee375ea4c4cd9bb90e50d82bf3a",
       "rh_id": "cfp-medidas",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -104,7 +104,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "670ecc9c358391b7c38f223bbfd4ccee851bab135bdf06e8fb8a497d75aaa491",
       "rh_id": "cfp-pensoes-irs",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -115,7 +115,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "a013ce2f2ba279bcaff8a9e86b61bb7473810cc680aec1c637362fd523223566",
       "rh_id": "cfp-reembolsos",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -126,7 +126,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "3db3eb9766b91a1d1511c8207be3aef4ec9c04816a9559b12e4c4f08cab13777",
       "rh_id": "cfp-riscos",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -137,95 +137,95 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "4cd04218bfca0d777c1015780f8f29569a685a679305884f87cb8050e025abc1",
       "rh_id": "der-csi-referencia-2026",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
     "der-divida-2027-oe-vs-ce": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "5097f639db8ab191aa40e5f6a8a0a981010fd5058a06688810c4e70d92509c9b",
+      "exported_row_sha256": "36b1fd1c68b275e4016fd212c2dde69957a2cbf52d09f70e01af3c121051c3a8",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "01dec84a85721cd0324dfed4e0ed307bd53387be61381a8b41a03398f52ef7a8",
       "rh_id": "der-divida-2027-oe-vs-ce",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
     "der-divida-2027-oe-vs-poenmp": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "87badf77e43ee6c6b524e8cfa0430535c797417a350aa651eece637f93956473",
+      "exported_row_sha256": "fb5b97e0704585dff42beb0cac359813fe4662f3b6be5940cb3e5951549ba481",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "de298e66ed9d11c25602779274af379d461dfb71b9d5f3a170de79982d10b685",
       "rh_id": "der-divida-2027-oe-vs-poenmp",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
     "der-divida-pt-vs-ue-2025": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "53eaad7f0ad901ca3bb6fb05fb829822a8ca7d7336cd673029a64b2287ff31c8",
+      "exported_row_sha256": "0805fa2194f61874f0d39878232e591d82817da610f72f6a73f7206a52ef9b6b",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "c028ca90bcf3de2d5c58453cc54966a380455df43d74e30be6c601b1f009f8f1",
       "rh_id": "der-divida-pt-vs-ue-2025",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
     "der-irs-escalao-1-atualizacao-pct": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "9513376f49aae957a04ec59772e681ffbdc71ba63a68d19366a1ea0ae75009f8",
+      "exported_row_sha256": "5251d7f2ed7d0150bdc6efe502a1a34ea970b2d80f0c17e181cd3122c749988e",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "6b258ddb8146ceaca55fb2c033d331f6397cb25794072fae0ce8fb9329373837",
       "rh_id": "der-irs-escalao-1-atualizacao-pct",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
     "der-oe2027-despesa-sem-prr-variacao-pct": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "a6f7c24919e03498b197ce67902c1da48e78ab10b46734681087615d8838acfa",
+      "exported_row_sha256": "e722b53c5115cee7f83de64f28ec722f598747cc5562d8c8a99bd1cefac94c37",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "71b14ad53f1d8099a9c09bf46724aa4d707147fa355e72791f12715c0e0ad5c1",
       "rh_id": "der-oe2027-despesa-sem-prr-variacao-pct",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
     "der-oe2027-investimento-variacao-cp": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "7b02673019ccabf4073dc8abd2c6684b84ea269094dc7d7ef7895202a5968978",
+      "exported_row_sha256": "39fd6c06ab466ec52c4e1a6ebc7a3a4f806f017edeedb2fbc5ec9197f843aeff",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "da4e0c8500ad95b77581b3392620c282d5aa10f9625434a6e56625fdc4022775",
       "rh_id": "der-oe2027-investimento-variacao-cp",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
     "der-oe2027-juros-variacao-cn": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "c25fc6be7ac581885ec7bf2320aa53c77e671e81f7e516c818d10914fbe635c4",
+      "exported_row_sha256": "5897b5bf981a37376638ed923addedb979a8fb7669356c76c9a05f68de63df7d",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "958c5b4bed6ca55660042daf403866dd414b7fceaa6f00d96e3bc11173133316",
       "rh_id": "der-oe2027-juros-variacao-cn",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
     "der-oe2027-juros-variacao-cp": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "ad36c0bfef853678c88ca0341edb70409d69277b732097ac9700ba490e3e2b60",
+      "exported_row_sha256": "0965ff92e210cebd3a83ff62acbaee6a2c2bda0a01e8d820a76431182668a0a3",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "e57e1a341beeba575dc649d8ff6066d2aba9adb064d301737fd3a31b8e2b0e4c",
       "rh_id": "der-oe2027-juros-variacao-cp",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -236,7 +236,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "bd9fd70453da62d5fca9d955298004e91cbcb4cf96f879395853b4fdee61442a",
       "rh_id": "der-oe2027-medidas-anteriores-despesa",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -247,18 +247,18 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "db30f1192aae5bd26dc5437bfb8b1589e709424e4ce8966d64b783a8b1192053",
       "rh_id": "der-oe2027-medidas-anteriores-receita",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
     "der-oe2027-medidas-anteriores-saldo": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "0e02ff9397390a69eb93275e3157042a45d8b9dbc7fa8e9f479ecee36af5b494",
+      "exported_row_sha256": "c952fe2825298361307aa848fe6038948c50ebb856864cb33b34489a8a5e12ac",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "8e78bc3136e025951e1fbd3b8f0cc189d6d3296e1221a245b29a6c6ff31ccb13",
       "rh_id": "der-oe2027-medidas-anteriores-saldo",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -269,40 +269,40 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "41e77955995db5ba5531e8d3be8bff1f88e4797eb0269e015912c8eba77c13a0",
       "rh_id": "der-oe2027-medidas-novas-saldo",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
     "der-oe2027-medidas-soma-derivadas": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "4582c9fc4080b18553769e15b6f811439d1b8ad54fa51def1777d59dbf349a50",
+      "exported_row_sha256": "b34a198f00d16578a9dc48147c986ba58ca04e314389b1adc3e084e7af5bcfb5",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "33d6c63e7b9684933d4c3c10ebac576cb7205a38e82a0a80bc7772c08428ebe8",
       "rh_id": "der-oe2027-medidas-soma-derivadas",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
     "der-oe2027-prr-peso-despesa-2026": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "e24a0f130a3bc487281c3b9c35fa3c9e9b3108c5e42f6aac6bf79912ff1e29f6",
+      "exported_row_sha256": "4240951915a1e15590790efe3fc9d9e3be275c3f57d383b4c3a1b23cf5bbdbf7",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "09d92e49cf5cdb52ad2e2206f7f68a054601736df74889eb42cf40d882d585e0",
       "rh_id": "der-oe2027-prr-peso-despesa-2026",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
     "der-oe2027-receita-sem-prr-variacao-pct": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "2c4ef7f2299d853e1c34ddf66035101002fdbe837719e157807e175f2c51122f",
+      "exported_row_sha256": "71d1c4421b0b937c1867f7fb34bb4a60ddf14711bb8ed3dc9f43f3b20c7aae93",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "9117791bec7bc4dedb04b4a66a3cb1cb2b835f90acd25e69374cba3eb89832e1",
       "rh_id": "der-oe2027-receita-sem-prr-variacao-pct",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -313,51 +313,51 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "9c2455e188e416bfba7c2d788cbc7413cb4eb019cfadd52fe60be1af6cc3d509",
       "rh_id": "der-oe2027-saldo-cp-variacao",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
     "der-rmmg-2024-2027-abs": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "2bb1d53291d1cc545cadc70814251535d57cba2e6af67492c4689a6a50619b09",
+      "exported_row_sha256": "6a793198e39780c9679e2eef6fe22f89e09a726e44c4fe0e66cf1327f113bf7b",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "e545cb66c84c908da126c42130f1ceec82654d560232261227eea54fd312e80d",
       "rh_id": "der-rmmg-2024-2027-abs",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
     "der-rmmg-2026-2027-abs": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "a296d67e7352413ae73b6ca34ebbd2263592b999f252add3fb797839f412cd72",
+      "exported_row_sha256": "9a69ab67a3f64cc7f42f8d2de98ff904f4360fb67038592b6fe9b44eed0c9c3e",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "8f6417106b45107077fae5b368f7697a28dc5c2f2ce358eedf5ae043033cc420",
       "rh_id": "der-rmmg-2026-2027-abs",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
     "der-rmmg-2026-2027-pct": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "6a93c0f8a3ff343e98ca6b3b121f538787928b6a7fd8130a70be150ce488ef69",
+      "exported_row_sha256": "00ed092acc0370a218516a466f17fee7dae6c1a4e526a898fc68d3243db3fabb",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "0e5fe0c928d1cb07c0fb74ba014b197bbe87061dc8fe73f7d3ba90142761f6a3",
       "rh_id": "der-rmmg-2026-2027-pct",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
     "der-salarios-publicos-retorno-pct": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "8210bfdc9b2256a548d9bba0e1ea7dfde3dea766db8db62b7660cd5b97cb5d79",
+      "exported_row_sha256": "88e13961fc95c10f96b2573f5388c3c70ab536bd57c26b83d1e25181a5348ed1",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "666185122283756ee9debc308d8d9c9401c4422c0119e97a099228ba50f9dbd5",
       "rh_id": "der-salarios-publicos-retorno-pct",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -368,7 +368,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "f61a5b5bda65b0e0836d987eb64da465459abe59ceb72068fa0d3deb9f1dcbac",
       "rh_id": "diploma-habitacao-artigo10",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -379,7 +379,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "0c6e1bf316394405d01a69b30335d433d8af7d73009ea5cc4dad4a690afc862d",
       "rh_id": "diploma-habitacao-artigo18",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -390,7 +390,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "52008e576408ad3e3ddd9a53b4fa8f37d8c845d07dc5a06d738c7727c5a9fb54",
       "rh_id": "diploma-habitacao-artigo8",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -401,7 +401,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "9db81122e578290f6520242c3b043da6baab73519842c6ed4a8404e15568fff4",
       "rh_id": "diploma-habitacao-preambulo",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -412,7 +412,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "7a024fbdc3f551a280f96b041e79b6abe47bae510b96f49c87c029d7e6797c12",
       "rh_id": "diploma-irc-artigo3",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -423,7 +423,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "8c5f51ad724ebe16403151bf1ce12dda71e281afa16212323c3eadd9506dbf3e",
       "rh_id": "europa-divida-ee-2025",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -434,7 +434,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "a7d085ecaea42b99319d4aacd18c401277936e08f5a2ab65e159b0d5466bbe23",
       "rh_id": "europa-divida-el-2025",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -445,7 +445,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ea30045c04a945f6cc219ea01fc729c2a9d75904471916857b51d8edb96b9ac2",
       "rh_id": "europa-divida-es-2025",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -456,7 +456,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "455b73990a2a3b580de605cd37662d7a9f73ad335453bbf3c55cb36be708840c",
       "rh_id": "europa-divida-eu27_2020-2025",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -467,7 +467,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "a69fe6daa1fd2a558f3b9a7dae7a6c9b9b8b43038f6aaf30ee88dc82d4d72da0",
       "rh_id": "europa-divida-pt-2025",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -478,7 +478,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "c2d61f3bff1d1f2e729aaf0b3ecef4b7801beca3443bd7fa13a5956238e728c0",
       "rh_id": "europa-saldo-cy-2025",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -489,7 +489,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "6d7b8d0832936027f222e609055316cabee8289d97ed7921898718da559e4e5b",
       "rh_id": "europa-saldo-eu27_2020-2025",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -500,7 +500,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "36e3c4bd03a247c0915fbb9905fb7d0542bcd8ec90cbf2cc334e804b774ee030",
       "rh_id": "europa-saldo-pt-2025",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -511,7 +511,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "e6f2aeabc6e0fe78b8536cd6d7a889eaf1957e3d96bf3d29a8e8531026eb9c45",
       "rh_id": "europa-saldo-ro-2025",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -522,7 +522,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "149ea5da94487a75d4b6b139368d4b74a475048f9a625c4cb51f154e70965b45",
       "rh_id": "irc-taxa-2026",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -533,7 +533,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "95ec73eca666024762efc0d554e299382baaf2e8b6ad2a51f2dc4401f6c956fb",
       "rh_id": "irc-taxa-2027",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -544,7 +544,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "5012b884029d77d593cc356e16e1edcb7a7a1cd3474c2db706f5bc600b3c9884",
       "rh_id": "irs-2026-escalao-1-limite",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -555,7 +555,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "77b7bbfb4ad14143bd11c44bdc5e17af26504bffc9f790625370ad728da3f504",
       "rh_id": "irs-2026-escalao-1-taxa-normal",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -566,7 +566,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "731de8e128ed113fddc68d7edce730cdfc1ccc5854f1524c794bbe41bfe7c7f2",
       "rh_id": "irs-2026-escalao-2-limite",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -577,7 +577,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "da4cf1fdd4d641388ba38ba686f8fff9dcfdb60d991d12880bdbb4f9eaf1ef70",
       "rh_id": "irs-2026-escalao-2-taxa-normal",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -588,7 +588,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "c25aef12b18771d5e01406b0053698b4c0073e7e79ad29ad3761f247f6497d4e",
       "rh_id": "irs-2026-escalao-3-limite",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -599,7 +599,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "db0d131c9127fff18d54babec22872d712800b616c75aeb9247f31415d6e0388",
       "rh_id": "irs-2026-escalao-3-taxa-normal",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -610,7 +610,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "0884acf67666c1f503943cc37dac05e9af2ca929092da74e03a9e7b888546788",
       "rh_id": "irs-2026-escalao-4-limite",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -621,7 +621,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "2a2f99f43a5aefb2c6279ec42adba18de58e60d6dc5eb2ab1bb684ce40515eea",
       "rh_id": "irs-2026-escalao-4-taxa-normal",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -632,7 +632,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "fee9176890721cfc5fd543b737665f2f2ac8cadc7708b58bc16ac5f29001b80d",
       "rh_id": "irs-2026-escalao-5-limite",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -643,7 +643,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "3f41fa1d0c38016346ee9c7c7fda67f8cee0c0b86b8b2f71dbf1023606f31d28",
       "rh_id": "irs-2026-escalao-5-taxa-normal",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -654,7 +654,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "3dfd977d59f9d0bb5066974feb640c326378b13308ef660d037d9249a297c4fb",
       "rh_id": "irs-2026-escalao-6-limite",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -665,7 +665,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "39f58a5eb195ebf4e916534cb1b9eeba0f3c4483e22bc1beef988782be9836a1",
       "rh_id": "irs-2026-escalao-6-taxa-normal",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -676,7 +676,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "b32e160e3bc4ac2af09d9adc7e2cb095c7b5ea793820480a13294a235c2881ef",
       "rh_id": "irs-2026-escalao-7-limite",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -687,7 +687,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "dac638bfa1f1ef142d40021bc5572c5bbf5456d0288bcfa0ff899ec1b63ea577",
       "rh_id": "irs-2026-escalao-8-limite",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -698,7 +698,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "3e8bcbd621a1cd56cb3279c3b170773db8c8f799184ff9a6ef7ef1848582d8c3",
       "rh_id": "irs-2027-escalao-1-limite",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -709,7 +709,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "21f4d8af47cc82b26505b36f90a0c31818230b50cf2599331e16e22eaa3785e1",
       "rh_id": "irs-2027-escalao-2-limite",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -720,7 +720,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "14b44979d106450c5bc499d25833062c8f0cf72c4d67b1fa7d02ae089c98c630",
       "rh_id": "irs-2027-escalao-3-limite",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -731,7 +731,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "fd8820772f0d6fb93cf0fee9b7df03f94c61d8dab5a01b5279e687813b90fd8e",
       "rh_id": "irs-2027-escalao-4-limite",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -742,7 +742,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "dac560bf7060686b66a939d051430c6c63ee01a607b6269e31a8be2316e1571b",
       "rh_id": "irs-2027-escalao-5-limite",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -753,7 +753,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "3c7800d0cede0dd46fe5a5f2f64f1737b14cd169a1422c04fd4d8c86e9725ddb",
       "rh_id": "irs-2027-escalao-6-limite",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -764,7 +764,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "30daf4e9599b214e2f299ba8824da599a850a8bda7dc120d4dbd7f1da45d6a83",
       "rh_id": "irs-2027-escalao-7-limite",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -775,7 +775,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "6c973d055569354082a9337e88578d89a239f2f6382c895e95071dd857bd8d51",
       "rh_id": "irs-2027-escalao-8-limite",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -786,7 +786,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "d82da7b8c929088b2270feb8cff1c8fd0a8e799712b7f5c2d5cad7091048dc0c",
       "rh_id": "irs-escalao-1-taxa-normal",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -797,7 +797,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "61bfb0628ff7a076eed48257a1d84f0a9053d72edf1c58a0d14076594ed5fdc4",
       "rh_id": "irs-escalao-2-taxa-normal",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -808,7 +808,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "9808e0fad6e084aa3e837a8794aec871d1f59f9c71afcba294bb1137655b012f",
       "rh_id": "irs-escalao-3-taxa-normal",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -819,7 +819,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "7bfc731e8a486bc3e63ed7a003dbf587c6f43dd77e53029384c98de74770ac6c",
       "rh_id": "irs-escalao-4-taxa-normal",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -830,7 +830,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "79eaeec0d028dd972527817672e2c6f1aeb8f335896bcc8ad7261e3b528ffca5",
       "rh_id": "irs-escalao-5-taxa-normal",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -841,7 +841,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "0430579ee6ed047d179d04dd3b06ac8ba42611780c741ffd1ba83279baee5274",
       "rh_id": "irs-escalao-6-taxa-normal",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -852,7 +852,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "33bd61430c4ee2aee73abfb49cb867782e0b8fd9a5ae8db5581d030cc31ed1a0",
       "rh_id": "irs-escalao-7-taxa-normal",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -863,7 +863,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "910fcfbe891e8df1d2625df6f912cf20559bbd210372a45d23e9b558f5c40fa2",
       "rh_id": "irs-escalao-8-taxa-normal",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -874,51 +874,51 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "8614acd233f7a060ab340f0493a03a1cd279a04e04544c1e8b55da770d75ba18",
       "rh_id": "irs-escalao-9-taxa-normal",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
     "oe-2027-calendario-entrega": {
-      "corrections_at_export": 0,
+      "corrections_at_export": 1,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "a7c026782dd8a3a522d01397cbaa67856b80eb3da5be0afc8b0f952504b913a7",
+      "exported_row_sha256": "019a7e6f0a6cfbd17384fe8e0f3975aa4bd290afd2632be861144cff262bd89c",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
-      "origin_row_sha256": "7be65783278336c751222ce0b16477856e4f5cb200793dddd659f8a9f45aca21",
+      "origin_row_sha256": "562a9f43ef7c1f21daa617cf996c526b869095ee9d20b79459278d1af2523fe8",
       "rh_id": "oe-2027-calendario-entrega",
-      "rh_ledger_sha256": "1cf9dd186c668f7550797b3be9af210157ab1ed5eeb4401ef1f1ddcde77e6e8c",
+      "rh_ledger_sha256": "c4b12e4dbaa854f59b9325713ffd2b4b633abd32425d5b37844aecd16535f031",
       "rh_study": "24 Orcamento 2027 Analise",
       "verifications_at_export": 0
     },
     "oe-2027-calendario-especialidade": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "69382e8ef59050fadbe9e6a92d761879da7d59d00136dbdd8d0d65b51310a117",
+      "exported_row_sha256": "84ea09200f81e6cf7a50c81d988670c9d65f3c5bbb1ce66710ed1418feb57784",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
-      "origin_row_sha256": "a97aa394bc5238c5e64a462a96c96d6d07b7de9e977b44cb78eacb5371464dd6",
+      "origin_row_sha256": "cbe3de8930a46400f2a665ef2796f4bdf5b35198483066100ebbeb385f502b4d",
       "rh_id": "oe-2027-calendario-especialidade",
-      "rh_ledger_sha256": "1cf9dd186c668f7550797b3be9af210157ab1ed5eeb4401ef1f1ddcde77e6e8c",
+      "rh_ledger_sha256": "c4b12e4dbaa854f59b9325713ffd2b4b633abd32425d5b37844aecd16535f031",
       "rh_study": "24 Orcamento 2027 Analise",
       "verifications_at_export": 0
     },
     "oe-2027-calendario-final-global": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "dead23d9f8d20be353719a98bbb83e4f34a57b65086e8fbf12fe67381d7cb35d",
+      "exported_row_sha256": "d31fb1cdd0b2a7d1499f0b1272330f7806481600179104b233d0bddfc27c8074",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
-      "origin_row_sha256": "156f253e82971b3c7f021bbc151359346f873ce2ee0cd2ae91d2f4d77ca8e5a4",
+      "origin_row_sha256": "6e72544b20007465cab6e727d5e0916bee2fed6c47ce71230738f7f10616a406",
       "rh_id": "oe-2027-calendario-final-global",
-      "rh_ledger_sha256": "1cf9dd186c668f7550797b3be9af210157ab1ed5eeb4401ef1f1ddcde77e6e8c",
+      "rh_ledger_sha256": "c4b12e4dbaa854f59b9325713ffd2b4b633abd32425d5b37844aecd16535f031",
       "rh_study": "24 Orcamento 2027 Analise",
       "verifications_at_export": 0
     },
     "oe-2027-calendario-generalidade": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "22d7d1d09509cbea6039206662fc84c06c3fff2f9869a8fca6d625b877d7e137",
+      "exported_row_sha256": "7694e7399378662ab43a73497b796def19300826daeeff4b87b9a11aed03715f",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
-      "origin_row_sha256": "ce630a2ffa62b49ce8e65c5ee7fb01bf1a105431324c692dad1999603a1cbb9d",
+      "origin_row_sha256": "0d05886d85314eed2c5b80e9b41efb8c1c5b5e3779b7d7815604b98242595c31",
       "rh_id": "oe-2027-calendario-generalidade",
-      "rh_ledger_sha256": "1cf9dd186c668f7550797b3be9af210157ab1ed5eeb4401ef1f1ddcde77e6e8c",
+      "rh_ledger_sha256": "c4b12e4dbaa854f59b9325713ffd2b4b633abd32425d5b37844aecd16535f031",
       "rh_study": "24 Orcamento 2027 Analise",
       "verifications_at_export": 0
     },
@@ -929,7 +929,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "e2e16e0303be866c3913a22b785e610227dd5a68d7098e0e56ec2179bb9fe5cd",
       "rh_id": "oe-2027-csi-aumento-2027",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -940,7 +940,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "99319b208518a288f72f34304128421393d1311ce3a26a6fff420c03dd4df334",
       "rh_id": "oe-2027-csi-referencia-2027",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -951,7 +951,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "1a37b6427c5c4f7c2415be94bc170af158e7413e3248770a209fa78dd6d6fe09",
       "rh_id": "oe-2027-csi-referencia-2029",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -962,7 +962,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "8bc0f2a13e45b6927d21c3cd41a3287bbbd69c8d4552a2bc5e0ad4d983946881",
       "rh_id": "oe-2027-irs-sexta-reducao",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -973,7 +973,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "808a773495c71dce8edd6f3f89c231875c8f0bcf08a38ce8100a3dd6d8b3efa8",
       "rh_id": "oe-2027-prr-fim-investimento",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -984,7 +984,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "0b9e73760a239977d753302ec25ea5eed13750f8ea251ced91fb6d8419abe6a2",
       "rh_id": "oe-2027-quadro-3-2-nota-i",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -995,29 +995,29 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "28ddf32d6217fae4a4a852ade72fd1f89ca4f3ba0fa90ebfbaff3746b450afeb",
       "rh_id": "oe-2027-remuneracoes-atualizacao-pct",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
     "oe-2027-rmmg-2024": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "3314e70f82a398dbd5b9aedaed9294171834efc51b945369ca78a87acc908e99",
+      "exported_row_sha256": "338dd16f3348c5266f1cb4e305d2f99005314db35967c6c8a3ee38611663821f",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
-      "origin_row_sha256": "12e3f9c62879248f8a328688e7ec6c1958783d90ba172142399b56fb6004ac8c",
+      "origin_row_sha256": "5a72a40e1f21981c8d1dc587066536cb40fd0a664a7bd44422bb631ffee0ab66",
       "rh_id": "oe-2027-rmmg-2024",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
     "oe-2027-rmmg-2027": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "c4e0aa8af96cbfd787485b469c167a5e346fa23ad560e6bb401adb8306569191",
+      "exported_row_sha256": "b61e3f3922350e9f60139f8b45642c83dc85149d7f7c8e42e7e738ef1c38a8c3",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
-      "origin_row_sha256": "7434869ea16497fc472bf24e86317890240d72d52c471c408be784b4a5118af1",
+      "origin_row_sha256": "118b978a6c9dbc7044e3fbd0c4690f497c60d4e18cd1b26355ca28f9a3c85f9c",
       "rh_id": "oe-2027-rmmg-2027",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1028,7 +1028,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "b317a8f78c24b0dde5df73a6a84406745e99b3997289736f600a4766b5a3abbf",
       "rh_id": "pm-csi-referencia-2027",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1039,7 +1039,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "c880b00ac115b8a5023cafcdd5230800b8b105cc2bb1cfab400e8b368ce662aa",
       "rh_id": "pm-grafico-3-5-poenmp-2027",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1050,7 +1050,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "3de26484a01651fac247b2a56d8955c0edafc696b4a3da062b21167f3e65f69c",
       "rh_id": "pm-objetivo-divida-final-decada",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1061,7 +1061,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "3a493afaad896f361fd95435c4db416b274ee54780ec18ec92a85f95b7985eeb",
       "rh_id": "pm-pensoes-atualizacao",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1072,7 +1072,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "60194eec6a9403267f3ccda57eef37f1b952ac07415ea6b5da5867a94978b52b",
       "rh_id": "pm-pensoes-capitulo3",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1083,7 +1083,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "c9d8acac886d713bc8b52b94d2fa7655f70c02f5d14588baac0397e16c1c3c13",
       "rh_id": "pm-q2-3-r11-c1",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1094,7 +1094,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "6ed28aa3b5e80671a7f44400b6b1134674538ff88bd187c1d6a3914250f13328",
       "rh_id": "pm-q2-3-r11-c2",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1105,7 +1105,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "da40a802197aeb08f3e9022d64e2bc706ea872e3cac25ad8012e1e30f37bf736",
       "rh_id": "pm-q2-3-r19-c1",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1116,7 +1116,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "10d9315eaa8b067dcb3bf93b7080ed226eb4c8baecf30cde510a680467c6bbc5",
       "rh_id": "pm-q2-3-r19-c2",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1127,7 +1127,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "e828605e8b054e69bea10fef92979f4da8e90df46480b00243b7f9c4bb9b4ece",
       "rh_id": "pm-q2-3-r21-c2",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1138,7 +1138,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "1ed1d99f7b965b321fccd180a587b6ff6441926a35187474cc0936ff7f71110d",
       "rh_id": "pm-q2-3-r22-c2",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1149,7 +1149,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "82c260b8b0d11fdf8d67934d7c599c3da4da0726baada37f389fe355cd7d09f5",
       "rh_id": "pm-q2-3-r24-c2",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1160,7 +1160,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "660e2366aa78ed0738e7123ce8a622320462ed534542a1477c30f4652aed5715",
       "rh_id": "pm-q2-3-r8-c1",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1171,7 +1171,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ca8c2ea4bdfed58cf9f3e0288f6870cfdaf03fad89d7488122ea6f5696148860",
       "rh_id": "pm-q2-3-r8-c2",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1182,7 +1182,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "d063a494730916d74ecc3f527ac64c2c5a7b56448499b804af43dcc4dc5c61f5",
       "rh_id": "pm-q2-3-r9-c2",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1193,7 +1193,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "6ba1eda124c77e77e9373f4e528a383b57e750b56124a9bda98ca30e63c59d2f",
       "rh_id": "pm-q3-1-r21-c1",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1204,7 +1204,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "11c61aa8b8d96d0e4038e6ed3d4dea58ef30fbf7dc54b8c08453f6de4073e610",
       "rh_id": "pm-q3-1-r21-c2",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1215,7 +1215,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "03e9a3502cb8ea928512fe8c65e0289f37e72fee000c6a834fa929622e1836e1",
       "rh_id": "pm-q3-1-r21-c4",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1226,7 +1226,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "6170701905f64523ec50230dcee3e65d0b37650cb06ec0100fdebc3557050e29",
       "rh_id": "pm-q3-1-r21-c5",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1237,7 +1237,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "eda080e49c5dc1ad47c24764c7b1fe404a12ea1d61478090cddadda3ea239808",
       "rh_id": "pm-q3-1-r22-c1",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1248,7 +1248,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "6ebe4210ae5a6808ea2739c3828b76dcf9de5ba873cd603fc07274c296319a9c",
       "rh_id": "pm-q3-1-r22-c2",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1259,7 +1259,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ab59baa3f6d7c25d414669c87399b6f369b152fce9beedd93d4b819745939423",
       "rh_id": "pm-q3-1-r23-c1",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1270,7 +1270,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "0b0708aaf0a0e6e1df3d2f5750dc65cf5415d2d71a359c4ce96af61729ff46f5",
       "rh_id": "pm-q3-1-r23-c2",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1281,7 +1281,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "3431f1128ac58bdadc16780667cd888a70852abb607988e75d06c137f09edc9f",
       "rh_id": "pm-q3-1-r36-c1",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1292,7 +1292,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "b613869e32fdef8055363c60924043c942857835f659744c45ea59b93bf6988e",
       "rh_id": "pm-q3-1-r36-c2",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1303,7 +1303,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "b4371bf6c408ccbbd69f9539aa2d6fc21ff61690c1f7c662d9ca90556ecd005d",
       "rh_id": "pm-q3-1-r36-c5",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1314,7 +1314,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "0c7260e6c6951cd2551b2af016de349d01c1919d30bda447e776cc06f8660f02",
       "rh_id": "pm-q3-1-r50-c1",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1325,7 +1325,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "bebd274ff5021c5f9e00f78d406c8e8d5fbd8fbf9a0f3bd1e3092a99c98eaa34",
       "rh_id": "pm-q3-1-r50-c2",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1336,7 +1336,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "cd7723c25aaf929ab2cc75bc0a04514f2b89597a42bdfa0ed6cc63bf2df90203",
       "rh_id": "pm-q3-1-r50-c4",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1347,7 +1347,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "cfb5e2c70f75edee4e964c8fb8a1c6ee81de80c66d4a7dd5c4ca08411e3a2b1e",
       "rh_id": "pm-q3-1-r50-c5",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1358,7 +1358,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "0943efef08311e911128c93f86c91ddbf38e9fa9837cc39a2a18c8d77de4ce63",
       "rh_id": "pm-q3-1-r51-c1",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1369,7 +1369,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "0a160a07a2a8320a88107f52b49cee41dc9d575a26559899d2d11cadc01f1fba",
       "rh_id": "pm-q3-1-r51-c2",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1380,7 +1380,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "a993d751c55e40e3c1342983253cd24d5ccbe5211b800a6884162e3e9b68711f",
       "rh_id": "pm-q3-1-r52-c1",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1391,7 +1391,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "440039b89dc1bed0331d5f12a483f90d6e92b1a0f594e851c5f80da6aea3cff2",
       "rh_id": "pm-q3-1-r52-c2",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1402,7 +1402,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "a7b9d9f5942e690cb16dcf481c3ee5177df546b625fcdacbd0f890ffc8fc4424",
       "rh_id": "pm-q3-1-r54-c1",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1413,7 +1413,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ba8cefb53dc6c4e3dae6e96973416791a9731ad4134523c266d07c3f1adbc74f",
       "rh_id": "pm-q3-1-r54-c2",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1424,7 +1424,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "70764b56b782e125af5d8e7b64dc004f8589728053be842436f168b3476e447c",
       "rh_id": "pm-q3-1-r54-c4",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1435,7 +1435,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ea16086ac67e195f4a6e746283bdba9255ed1eccdcee77aa19b2c9b07e9779a6",
       "rh_id": "pm-q3-1-r54-c5",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1446,7 +1446,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "df3f8687345752ecb3dd1c95ffc8a2eb9d521b94a39126ee8ba8ce5084200b2b",
       "rh_id": "pm-q3-2-r10-c0",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1457,7 +1457,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "41e0cb1fae20674b62fce9839e92dd604855983c991e0bbcf40cb586374abb9c",
       "rh_id": "pm-q3-2-r11-c0",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1468,7 +1468,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "9967c79d52acef9fb77bd862dba6c818e25865b56157ff41a788563a5c1cebe2",
       "rh_id": "pm-q3-2-r12-c0",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1479,7 +1479,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ce20b407b0af9617f44643eb83229f23ab7f4cde9781ac9f1b6468c7916e1076",
       "rh_id": "pm-q3-2-r13-c0",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1490,7 +1490,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "3dca330fdf7eb79d5f11edb6a55edc807dc56fbd769f9e16a81d247921651ecb",
       "rh_id": "pm-q3-2-r14-c0",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1501,7 +1501,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "35bc4482c905b88ad261c4b745cf2f335dbee497674042bba378f78fb1611570",
       "rh_id": "pm-q3-2-r15-c0",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1512,7 +1512,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "486b1ff0a47d6b69f87375df81b3bd815fa5397c1f5e87ff7321d6555a6cc0e3",
       "rh_id": "pm-q3-2-r16-c0",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1523,7 +1523,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "70d8ef31cd506ecea5fff6bb8da0d36a6155cf985e6ffb143f094ee272e7c2f0",
       "rh_id": "pm-q3-2-r17-c0",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1534,7 +1534,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "f4bb472f00bbc10ac91c4a820df70fd2d3ee4580bf15377b0245f49b0ad226d2",
       "rh_id": "pm-q3-2-r18-c0",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1545,7 +1545,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "78e90d58490fdfceb8ee5b67eadaf0250b110a0066e68d8f9de56448963930b3",
       "rh_id": "pm-q3-2-r19-c0",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1556,7 +1556,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "d17ce95a9414de1823bc5a739214515d7e8e87365589c384dfcb2d3ea7b6aa54",
       "rh_id": "pm-q3-2-r20-c0",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1567,7 +1567,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "0d137c081e3fc078f4bd5bb8c439659fb27641e669ad3f3b82faa03e0f8a8071",
       "rh_id": "pm-q3-2-r21-c0",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1578,7 +1578,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "31637b30d9c5d80fa7d88a076da8e8b4851c5bfe0a78fca359cb1db4bca089f3",
       "rh_id": "pm-q3-2-r22-c0",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1589,7 +1589,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "3a36dd760a6d218d7cf461d8bdef2d8eb271f2175d5c1ba216caef7524876b0b",
       "rh_id": "pm-q3-2-r23-c0",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1600,7 +1600,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ccec65092fc2eccec9ba7233d4d0a221d05af2cfe57cfec7efafb3040109a7a5",
       "rh_id": "pm-q3-2-r24-c0",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1611,7 +1611,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "3f0adc05c649407913fc5d92566440430e5559de2e19993bd72fd7cca0679288",
       "rh_id": "pm-q3-2-r25-c0",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1622,7 +1622,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "22824bcdd679d6a176f9bc2528118a60f75e10c4d1901dda5a251d6c9dcde4dc",
       "rh_id": "pm-q3-2-r26-c0",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1633,7 +1633,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "a996eb43d65420188c26bb0e7d37a85e4e2fa20c98b92a4e52e96ced12a92da8",
       "rh_id": "pm-q3-2-r5-c0",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1644,7 +1644,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "a9a4efa3aea4965e0714d93902dda98c13589e18853de938aa841289ee884ece",
       "rh_id": "pm-q3-2-r6-c0",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1655,7 +1655,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "75091225cc3753bca14acef843eabbd0ad1e93df6f099956fa9ef3429e2150c2",
       "rh_id": "pm-q3-2-r7-c0",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1666,7 +1666,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "be853ea41f752eb75342bb145e4957fc7e2d36d03b598ca50c018abe4bb57e1c",
       "rh_id": "pm-q3-2-r8-c0",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1677,7 +1677,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "4b9df836ca146bf20674572fc84f9644740ab3f304b0050181ef7985abc49359",
       "rh_id": "pm-q3-2-r9-c0",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1688,7 +1688,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "1697b49dce5ce9b9b1d05323126d8d95f0925c60c304addfe6ac1ff1182e4b33",
       "rh_id": "pm-q3-3-r24-c1",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1699,7 +1699,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "5667e72f9951daf9dd95497b7c1e1222088c60312110341568c8ea9da6d22a60",
       "rh_id": "pm-q3-3-r25-c1",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1710,7 +1710,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "9f98a193dc5684d41ef17a5fc577691073d07c782171d5f0c45f6fb55eb4a1cb",
       "rh_id": "pm-q3-3-r26-c1",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1721,7 +1721,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ca1072418bf90cb83d639c17c32bf3832937b6996239a2f8c9c1c2f640a663a1",
       "rh_id": "pm-q3-3-r27-c1",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1732,7 +1732,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "302c2f264cd33101ead2c4451a60339eb8c82cad6db537f69e98857416ff77e0",
       "rh_id": "pm-q3-3-r31-c1",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1743,7 +1743,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "fa88d036c08d90ffbbd652abd0ce7e2d5d3689060ea5dedf90e77e72f6964dbe",
       "rh_id": "pm-q3-3-r33-c1",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1754,7 +1754,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "b253ad3e94ec1018b0c44b03f6724bf5e4be381c2d3ba3280932b6da6b6a26a9",
       "rh_id": "pm-q3-3-r34-c1",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1765,7 +1765,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "728fb56589036ad6014f03b2241583134617218034723a02e3d877fe0daa0209",
       "rh_id": "pm-q3-3-r37-c0",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1776,7 +1776,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "02ea04340d90e8eaad0f21433bb97228bc4a46256d2e727b430e26cbef2d3768",
       "rh_id": "pm-q3-3-r37-c1",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1787,7 +1787,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "655fabc47a86425a058f83d4e41a3af9648a1ebb6bd5bfc8d14eb91451e78406",
       "rh_id": "pm-q3-3-r37-c3",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1798,7 +1798,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "780faeb7ceafbd961b40a050eaafa7e1564c7a39ec8041e2c37720bb0a1ffcda",
       "rh_id": "pm-q3-6-r42-c1",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1809,7 +1809,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "e7121e54f33788696def088ad2a31ae38f40410ea20dc75761c6063531f9fd59",
       "rh_id": "pm-q3-6-r42-c2",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1820,7 +1820,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "8402fca039e483a6c9a5db43fb033b2f1af1b323f9649cfe8456ebc1ca70a29d",
       "rh_id": "pm-q3-6-r42-c3",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1831,7 +1831,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "e968588507e222820dcc50ecb0fbdafda09136986c58c336f1dffe3fff303515",
       "rh_id": "pm-q3-6-r43-c2",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1842,7 +1842,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "8417f16e29100542cd2c203fd27a7491944018646d41a519ecb5502ff1348d04",
       "rh_id": "pm-q3-6-r43-c3",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1853,7 +1853,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "7933282db11c599c7cc111e05b5bb1f205f646fa75356e1a11c7d2e6df29b0c3",
       "rh_id": "pm-q3-6-r44-c2",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1864,7 +1864,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "470b4f8abd8267f1146eb818c8f56bc147a1ebea1502056de89c54ae39389ba1",
       "rh_id": "pm-q3-6-r44-c3",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1875,7 +1875,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "5ce10eb5463638c4c4ed6761abdabf424400ffc9cc105087f0485ce69dbee143",
       "rh_id": "pm-q3-6-r45-c2",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1886,7 +1886,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "1dd33a73f138ffb6215ea10fcc21936d95605586cce08e1581e280fa435537c1",
       "rh_id": "pm-q3-6-r45-c3",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1897,7 +1897,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "a530bc7423800495f9648541ffd7c5f3a6ae718b742043dee3994e11c5feb529",
       "rh_id": "pm-q3-6-r46-c3",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1908,7 +1908,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "c6ca09c763739ea48cfb7ed45340ddc772a7e7be478ec59d95d7d59388815376",
       "rh_id": "pm-q3-6-r47-c3",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1919,7 +1919,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "9ed7ae1f87e01590455c1967c620051e93321db673f0c1877e4110eef393f660",
       "rh_id": "pm-q3-6-r50-c2",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1930,7 +1930,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "c0391fa6581a0c3bae7a20129912be075b1ec34625efe30a4ea321ba7ebf3c76",
       "rh_id": "pm-q3-6-r50-c3",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1941,7 +1941,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "d7224d2a2b39e086bf18c61744ce1a2d3709c2e7c408391876043f6c1a12ab8b",
       "rh_id": "pm-q4-1-r11-c1",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1952,7 +1952,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "51c5088608fde56d4ef336a1281a8d13174bf520ead05635ab97c65f38a2983d",
       "rh_id": "pm-q4-1-r11-c2",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1963,7 +1963,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "af0d36d6a108d19b8772ef8af230df8dbb510c57bf057af11b69891c73ce40e3",
       "rh_id": "pm-q4-1-r12-c1",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1974,7 +1974,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "a358b1656a7de201a7546dad1bf684988437d3a3761cb617bfdddcbfc91610db",
       "rh_id": "pm-q4-1-r12-c2",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1985,7 +1985,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "6b5031cbcb4d09beeba0282959200ed802f840134bde7e799958d5be77f1448d",
       "rh_id": "pm-q4-1-r13-c1",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -1996,7 +1996,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "39ce674c9c6c5f012eef10eaf8780a5a6c36afce2b3ed2690a1238e83286208a",
       "rh_id": "pm-q4-1-r13-c2",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -2007,7 +2007,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "00007389c4fb699a57e78ea130234a449905f6994e2286064d3bd032f37bf3d8",
       "rh_id": "pm-q4-1-r17-c0",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -2018,7 +2018,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "8dc37690bea06d13702d94f9f77716f3e52d472116db414500fa7bc3685816bf",
       "rh_id": "pm-q4-1-r17-c1",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -2029,7 +2029,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ed3ea9f820538c63d3afa9ab6f75850f3f1cd2ccdc45a36e410c9664059fffda",
       "rh_id": "pm-q4-1-r17-c2",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -2040,7 +2040,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "33b60b2d40ecc734bd77c8b4583078e7119bc55713fd74c8936addb78b7da7a5",
       "rh_id": "pm-q4-1-r19-c0",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -2051,7 +2051,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "be4f3cc75d0cdde8937a18313b8d22807b4b67815e33cd83d54a0f1e74117208",
       "rh_id": "pm-q4-1-r19-c1",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -2062,7 +2062,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ae854056f49e19de58737b54b62a94b951bb49881df206c06aec2d903daaf5d6",
       "rh_id": "pm-q4-1-r19-c2",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -2073,7 +2073,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "6269cbe9a39915c5df7b406cd450b61c192e9dd8cc5c2204b9d88dc851d6fd8e",
       "rh_id": "pm-q4-1-r21-c0",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -2084,7 +2084,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "43a8d83aa35e302eae81b204aa18fd76c55ad59e8b6fd49c910dfe7095176348",
       "rh_id": "pm-q4-1-r21-c1",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -2095,7 +2095,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "b28a4deddaa9c382a4897f3ea96adf6cd04366403090b30fd484efe087f567ad",
       "rh_id": "pm-q4-1-r21-c2",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -2106,7 +2106,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "01868bbdd4ea0e376faa42ffda7ed7a920d5f295261fff924492ebfce615ab5b",
       "rh_id": "pm-q4-1-r22-c1",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -2117,7 +2117,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "63f26ef90ccda20de36dc1d961953353be2bad96ec59b58436b2b3206ffef6ff",
       "rh_id": "pm-q4-1-r22-c2",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -2128,7 +2128,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "013d116a8007fa488f49f057e870f5ddbb519b750f508082c88cdf299f289bfa",
       "rh_id": "pm-q4-1-r27-c0",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -2139,7 +2139,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "74d27f0912cc20641b4041a48c656b9ede90f87461e6c25e15e883cace380694",
       "rh_id": "pm-q4-1-r27-c1",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -2150,7 +2150,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ad581fdb60a39e9bfe5fbfe824477a51421e418561f63290bd583d678aa38e45",
       "rh_id": "pm-q4-1-r27-c2",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -2161,7 +2161,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "370248a31172b5d9fe0dbeb00aea62197f2b49b0593c3d4c2c04fb13ca2be8b0",
       "rh_id": "pm-q4-1-r31-c0",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -2172,7 +2172,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "89fed242d49a88ab0f72a227afa0334cf3c962aac168240ceebe609b03994594",
       "rh_id": "pm-q4-1-r31-c1",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -2183,7 +2183,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "5976ed3cfbb369eb671d8dee548344b845158f1d1b8fc95d9dc4e614c477518a",
       "rh_id": "pm-q4-1-r31-c2",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -2194,7 +2194,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "760f0f18577cddca97424c58a7d595bf028b40c2dd76107e5d22ad358a8e4763",
       "rh_id": "pm-q4-1-r32-c0",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -2205,7 +2205,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "4bf156fbc844f3ddb558f9a8419ca6ed5f3e754fd929901047ba0b8379f183b2",
       "rh_id": "pm-q4-1-r32-c1",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -2216,7 +2216,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "a47c9b7a623d0b5c89db09b31aff2d9a3936f729d61de586cc1f7dbcb20af407",
       "rh_id": "pm-q4-1-r32-c3",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -2227,7 +2227,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "c3fcd3708d8f09249045eb04dafdf58d7ae8acaf2865d6fd3df25ebb1e5aa29a",
       "rh_id": "pm-q4-1-r32-c4",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -2238,7 +2238,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "5c3e918d212ee13cb6056c78da948d77e36ccc23978218163ed2067ca89a2a2e",
       "rh_id": "pm-remuneracoes-atualizacao",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -2249,7 +2249,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "f39732d5addb15400f5b9ced8af104d92f050c67ca60aecce11f17282deb2f8b",
       "rh_id": "pm-salario-minimo",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -2260,7 +2260,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "c0cde7e4a7f9a1d069590f2c63638222ac884869db36be3d2e1485af29fc0f1e",
       "rh_id": "pm-trajetoria-divida-2026-2027",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -2271,18 +2271,18 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "8153db2f250b911728188d86029f4a1b9b3cedc367a1bac07ea59bfdaaf87b1b",
       "rh_id": "posicao-be-rendimentos",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
     "posicao-cds-orcamento": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "d483602e1f6320a016badd1acaf5965d29a9ff2bc77069ab1a3db7f067187d48",
+      "exported_row_sha256": "3873f21c26af3dc721ba0ac50a93408f654dc9b9ff4b0c1a8858f5fc338b48b9",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "8ba4d7a046f9d493c5d583bbbc1192a43728b61077211ee217ea0e50075543b6",
       "rh_id": "posicao-cds-orcamento",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -2293,7 +2293,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "cfa948691b678508eedb0188935f9c1ed08461e80797468bfc6adfdafff75302",
       "rh_id": "posicao-chega-habitacao",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -2304,7 +2304,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "6fc7484ae9136b300ae302f4ffe144e453f923b93d9b3b5e1e60cb351cce8b66",
       "rh_id": "posicao-governo-csi-pensoes",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -2315,7 +2315,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "3c017dc7a2e25369638c8519f8e7df33e40aa9c6b1e10692b09147a5882c3a05",
       "rh_id": "posicao-governo-divida85",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -2326,7 +2326,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "398cbbec761a0a45496c7b30f63967a2018d86f2cf55f6459274b33e3aab91c9",
       "rh_id": "posicao-governo-divida85-citacao",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -2337,7 +2337,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "6d0dd4d4434b5424d856f596d99aeb3af6b5fabaa3133622465037f9670f664d",
       "rh_id": "posicao-governo-irc",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -2348,7 +2348,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "f5035936d19cb80a248a2dc579c8b7537cdd120039f4071193685b9a815d16b8",
       "rh_id": "posicao-governo-irs",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -2359,7 +2359,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "5b5c15c8a97dead46e263ffa0374d309c787076f4cdda4a7681cbc110411db8b",
       "rh_id": "posicao-jpp-irs",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -2370,73 +2370,73 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "bcf427a6553ce9e448f8a78756adfcbca97c1f8b36f3b2bbe0b84d139eb8d0c8",
       "rh_id": "posicao-livre-iva",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
     "posicao-pcp-habitacao": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "3a22d9fe52d362765ab474c9acc777dad0e2325a5f512cf32ed7e02bddfb48bc",
+      "exported_row_sha256": "3e9c47ddc76062a491f6b0f5dbd47ffcfd130144bc7efa72d64f5b7994bbb850",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "63b148edfc0e4437f39749ce27b7e04b47a1f58e39cb47ad331c0baab00b0f58",
       "rh_id": "posicao-pcp-habitacao",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
     "posicao-pcp-irc": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "700f523a706295e6c8f148068d0f34be2ab3a52b4881b9a04cda9a4df4d669bf",
+      "exported_row_sha256": "45027ce3aec13d17c0161a8f0c33c44da82ebf915d5679536b2744e78b2cc8a1",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "568d1dcfc99b15122172c12c0a5ee8d6f32f73fcd6b2cdb10d0e897441b61a71",
       "rh_id": "posicao-pcp-irc",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
     "posicao-pcp-irs-rendas": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "718ca52115545abfed087d3269029e94ee325b597c1a8826dd84229ace46c624",
+      "exported_row_sha256": "5ee5e5a40d3ba1b6ff24a9e33af7a1c7d16ca69fc5eec2a22c0faa9ad10d4890",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "3c3d08de11cc532209d8076233961771993ad573f1e0ca144d0e6fae8e53ab50",
       "rh_id": "posicao-pcp-irs-rendas",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
     "posicao-pcp-pensoes": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "de27e6472fc6702acacc44d86004058f601083c05f0e1c472b518d87b90aeb04",
+      "exported_row_sha256": "68eea7094943c6c521dcbf6f375a961cd0abbfecfeefa653c92ae063bb8c9121",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "04f4dfe2b783ea34e06468045326c45f1dd3b1580c28ac3187837915edc719bb",
       "rh_id": "posicao-pcp-pensoes",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
     "posicao-pcp-salarios": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "7e1c1bec08c01fac7033d4e55d6aced51a6bd0cdb3221bfbd416d48f6ff76dea",
+      "exported_row_sha256": "952f0b23f08671edefa08c4bec694b3b7b50b3f494e164e5123c1e73fa8b0dde",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "e365316883360ad4eb8ef1e14ecd74f42d2ecb0df6d0e80f0c76845d3defea2b",
       "rh_id": "posicao-pcp-salarios",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
     "posicao-pcp-smn": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "c1ac3aab85e12ac63b9b663455c6d6de3cd67251643f4a66c2b1a4a3c918f8df",
+      "exported_row_sha256": "cb44b81ca3eca0dec0d02b47fd3847aaa6628608d4c7360e6f0e73962ee5d9a0",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "6c7068d99fa79da3e3b7aac38a8e1f479dcc98e1bef84a71d8decf55fd188816",
       "rh_id": "posicao-pcp-smn",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -2447,7 +2447,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "e799cebb8981051d1aa149f303cfeec049b5424ec33bcee13d37590df9f52ff4",
       "rh_id": "posicao-ps-irc",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -2458,7 +2458,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "1cf35a359f9c82138cc7955b73f43be15c63abc14def7e2af0eab015e3f97a6c",
       "rh_id": "posicao-ps-pensoes",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -2469,7 +2469,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "e92635b7f82b3b6c4d45a7cdf7d052862857b6d6dac347265eb697aa891ada17",
       "rh_id": "posicao-ps-rendas",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -2480,18 +2480,18 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "111baa9385216a4ef21653c3de4f1230eaf744d8bdb291a7279941527d78f0a6",
       "rh_id": "posicao-psd-impostos",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
     "rmmg-2026": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-21",
-      "exported_row_sha256": "52779273708e821c265f619e6f62c09a6b086b3a025bdc63020bd36f601897a0",
+      "exported_row_sha256": "5cb1c1500af56aed78d0cc1ed5869210c9424101194689674e53d6445c45e630",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
-      "origin_row_sha256": "307620f070934ebeede6688a7468116c1898509e1ea4c294a184ad5e178b8ca0",
+      "origin_row_sha256": "1b1f92cb05651fa3a617c7e95099af4cfe93a15ed9e42e7a47f59f7e60582dfe",
       "rh_id": "rmmg-2026",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -2502,7 +2502,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ddfe3ca9eb11cf9711714bcf4f90432e6df1bf482dce3ed6fe4d0f2c4850e100",
       "rh_id": "smi-espanha-2026",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -2513,7 +2513,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "38be9cbeebcda30ff401e10c4b4ffd95beafc059318b0d3b26055b52c427eac4",
       "rh_id": "utao-divida-acrescimo-2026",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -2524,7 +2524,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "e968fb1ea20faaf1c6cdfe574ab9fff0b962d55323509debbf5fdd083a8b9891",
       "rh_id": "utao-divida-acrescimo-2027",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -2535,7 +2535,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "58b479fe6abb95e6f4050314d8a486356b73e4cd6124a0bc45a5efa87cbcae3e",
       "rh_id": "utao-divida-ajustamento",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -2546,7 +2546,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "0509fc14b65391c9e8d3518b544768d0ef118bed17e3c54b36d7b04ad9352805",
       "rh_id": "utao-divida-efeitos",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -2557,7 +2557,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "351eeb8c3777c76e30f1fb4f4c5ba72903ea788082ee8402f81c298a64dea6cf",
       "rh_id": "utao-divida-stock-2026",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -2568,7 +2568,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "1e91a5aac5ce1b6f15a388462e28123d47c8b589f10fec779360a1551ecdb181",
       "rh_id": "utao-divida-stock-2027",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -2579,7 +2579,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "dd5bccc0313d57fa8f4bfc0f840d0864541ee0222a5621c67b344a9e030cd520",
       "rh_id": "utao-juros",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -2590,7 +2590,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "4a07f774ef4a521dfba52bc345f83fabd10b07c028cfe7b9f32ef2a3775bef7a",
       "rh_id": "utao-juros-variacao-pct",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -2601,7 +2601,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "a7fafa8b66936163227f5325337daa4dc4bfc98487a7a9e71fbf9c73d46a41d5",
       "rh_id": "utao-novas-medidas",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -2612,7 +2612,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "0ac3f3fbb603b2b4f1fe6dcb3e8a4aa81eace904211c9055bdf7248fa883497e",
       "rh_id": "utao-novas-saldo",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -2623,7 +2623,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "977a35bcdbcb1de6f17813c3e51422208b19f6ba9c056d7e83b09c9981366dd7",
       "rh_id": "utao-pessoal-variacao-cn",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -2634,7 +2634,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "9c959afc851462953492ae61d139693e0a9c8c16c1900ff226b7802bb793ac1f",
       "rh_id": "utao-politicas-revisao",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -2645,7 +2645,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "8d5ee0fc9961c5f2ff386c443dafb118682fab3dee3cd52fb1bfd069c471046e",
       "rh_id": "utao-politicas-saldo",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -2656,7 +2656,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "061e07887a93b896d48b09ce246e2ecc67f06451c418ff42eee73961f4c7cfb3",
       "rh_id": "utao-revisao-saldo",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -2667,7 +2667,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "02cf3c3bd6f3382401b6588fb0131e94b6be89717a193ef75366dd743e056655",
       "rh_id": "utao-risco-contingencias",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -2678,7 +2678,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "c71b678307d9dbe51d99898da8e7e781456d3b5893efe4b645399ce8e84195cf",
       "rh_id": "utao-risco-emprego",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -2689,7 +2689,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "d1ff5b09f05ec8cb5595b15c87d20a72a02fde63d49a16711718bf434d43add9",
       "rh_id": "utao-risco-fenomenos",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -2700,7 +2700,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "dcda8666f1380e6d7ebc04d04ffd825b04e0ba021f01b71b9bfe057a36a80867",
       "rh_id": "utao-risco-fraude",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -2711,7 +2711,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "06a403c8c316b29957648a6dec88af7b2d2c81bf0584ea91c76b2771417ae734",
       "rh_id": "utao-risco-juros",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -2722,7 +2722,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "dbe5c137b283ce6c68f175214b0651fd52dc957f33a8634157dd52338a8cbc51",
       "rh_id": "utao-risco-mercados",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -2733,7 +2733,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "8654d3a4553c5ea1d20eb620b698383a6f2ca3bff9fdea8a4ebc4743a2319432",
       "rh_id": "utao-risco-pib",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -2744,7 +2744,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "03f7cb8feed8e14278f3ce5d2bb8cfa9239db150de4baf5b47f54fe02d766daa",
       "rh_id": "utao-risco-sns",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -2755,7 +2755,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "252b5c762f80f7798e41289260123d78964797c79cd57040aeb2b2d91e4efb46",
       "rh_id": "utao-salarios",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -2766,7 +2766,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "1541d100d98a0b583a86873a00605e33311c260dac268eb73821b1c10c8dc065",
       "rh_id": "utao-salarios-cs",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -2777,7 +2777,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "239d9131641df0a85502e69753574bdb5d48741d9d98a08b151337842798baa2",
       "rh_id": "utao-salarios-irs",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -2788,7 +2788,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "09ce0feada9aa9ee0d7c2f97b5f679774697b41353a6c7ec9bbe9e252c199f60",
       "rh_id": "utao-salarios-valor",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -2799,7 +2799,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "067e70ffccebe586781deb95495af362c7c46ce0cfd1003bc1a55d94f2197b39",
       "rh_id": "utao-saldo",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -2810,7 +2810,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "3099b13622cc4f362f93eb27dbd0724cbe263b1c0367a1fdba45929f663276c0",
       "rh_id": "utao-taxa-implicita-2026",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     },
@@ -2821,7 +2821,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "da2b53fbc0ddb6815a1c75a0744a8e9133f4cd8ddcde0d3c5775fd7081658870",
       "rh_id": "utao-taxa-implicita-2027",
-      "rh_ledger_sha256": "5753a5a952fce4c4c3347c3fe5e4f9027c75f2c26989b219a2a6d396976094e8",
+      "rh_ledger_sha256": "51836f39fac13bcc1fffd0d281050b4d186d2d9974a99a8e15e81a052810a141",
       "rh_study": "25 Orcamento 2027 Medidas",
       "verifications_at_export": 0
     }

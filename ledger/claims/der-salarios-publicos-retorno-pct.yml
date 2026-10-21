@@ -28,7 +28,7 @@ excerpt: null
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: "round ( ( 590 (UTAO: receita de IRS da atualização salarial, 2027) + 471 (UTAO: contribuições da atualização salarial, 2027) ) ÷ 1 231 (UTAO: atualização salarial, 2027) × 100 , 1 ) = 86,2. O sinal indica a direção da variação ou do resultado da conta."
-derivation_en: "round ( ( 590 (UTAO: income tax from the wage update, 2027) + 471 (UTAO: contributions from the wage update, 2027) ) ÷ 1,231 (UTAO: wage update, 2027) × 100 , 1 ) = 86.2. The sign indicates the direction of the change or calculation result."
+derivation_en: "round ( ( 590 (UTAO: income tax from the wage update, 2027) + 471 (UTAO: contributions from the wage update, 2027) ) ÷ 1 231 (UTAO: wage update, 2027) × 100 , 1 ) = 86,2. The sign indicates the direction of the change or calculation result."
 derived_from:
   - "utao-salarios-irs"
   - "utao-salarios-cs"

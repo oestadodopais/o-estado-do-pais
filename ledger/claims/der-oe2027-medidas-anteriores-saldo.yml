@@ -28,7 +28,7 @@ excerpt: null
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: "−263 (Medidas invariantes: receita, 2027) − 947 (Medidas invariantes: despesa, 2027) = −1 210. Um resultado negativo reduz o saldo; um resultado positivo aumenta-o."
-derivation_en: "−263 (Invariant measures: revenue, 2027) − 947 (Invariant measures: expenditure, 2027) = −1,210. A negative result reduces the balance; a positive result increases it."
+derivation_en: "−263 (Invariant measures: revenue, 2027) − 947 (Invariant measures: expenditure, 2027) = −1 210. A negative result reduces the balance; a positive result increases it."
 derived_from:
   - "der-oe2027-medidas-anteriores-receita"
   - "der-oe2027-medidas-anteriores-despesa"

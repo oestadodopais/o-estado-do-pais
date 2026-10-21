@@ -23,7 +23,19 @@ export function conferirHistoriaDoValor(linha, seladas, onde, erros) {
   const entradas = entradasDoValor(linha);
   // Uma afirmação textual tem história literal, sem passar pelo normalizador numérico.
   const textual = (linha.afirmacao === true && linha.unit === 'afirmação') || textoDocumentalConferido(linha);
-  const forma = textual ? ((/** @type {unknown} */ v) => typeof v === 'string' && v.trim() ? v : null) : numeroDaCasa;
+  const meses = ['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'];
+  const data = linha.unit === 'data' && /^(?:19|20)\d{2}-\d{2}-\d{2}$/.test(linha.reference_date ?? '');
+  const formaData = (/** @type {unknown} */ v) => {
+    if(typeof v !== 'string') return null;
+    const m=v.match(/^(\d{1,2})(?: de ([a-zç]+))?$/);
+    return m && +m[1]>=1 && +m[1]<=31 && (!m[2] || meses.includes(m[2])) ? v : null;
+  };
+  const forma = data ? formaData : textual ? ((/** @type {unknown} */ v) => typeof v === 'string' && v.trim() ? v : null) : numeroDaCasa;
+  if(data && entradas.length){
+    const [,mes,dia]=linha.reference_date.split('-');
+    const esperado=Number(dia)+' de '+meses[Number(mes)-1];
+    if(linha.value!==esperado || !String(linha.excerpt).includes(esperado)) erros.push(`${onde} história do valor: a data completa não coincide com a referência e o excerto.`);
+  }
   if (linha.afirmacao === true && linha.unit === 'afirmação' && linha.value !== linha.excerpt) erros.push(`${onde} história do valor: a afirmação textual não coincide com o excerto.`);
   if (seladas && JSON.stringify(entradas.slice(0, seladas.length).map(assinaturaDoValor)) !== JSON.stringify(seladas)) {
     erros.push(`${onde} história do valor: uma entrada selada foi retirada ou alterada.`);
@@ -37,7 +49,7 @@ export function conferirHistoriaDoValor(linha, seladas, onde, erros) {
     if (String(c.date) < dia) erros.push(`${onde} história do valor: as entradas não estão por ordem cronológica.`);
     dia = String(c.date);
     if (forma(c.old_value) === null || forma(c.new_value) === null) {
-      erros.push(`${onde} história do valor: ${textual ? 'as afirmações têm de conservar texto não vazio' : 'os valores escrevem-se na forma de número da casa'}.`);
+      erros.push(`${onde} história do valor: ${data ? 'a data tem de conservar uma forma de calendário' : textual ? 'as afirmações têm de conservar texto não vazio' : 'os valores escrevem-se na forma de número da casa'}.`);
     }
     if (forma(c.old_value) !== forma(anterior)) {
       erros.push(`${onde} história do valor: "old_value" é ${c.old_value}, mas antes vigorava ${anterior}.`);

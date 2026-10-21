@@ -4,17 +4,17 @@
 id: "correcoes-publicadas"
 
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
-value: "11"
+value: "12"
 unit: "correções"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "O Estado do País"
 document:
   title: "Registo de correções"
-  edition: "20.10.2026"
+  edition: "21.10.2026"
 source_url: null
-access_date: "2026-10-20"
-reference_date: "2026-10-20"
+access_date: "2026-10-21"
+reference_date: "2026-10-21"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
 excerpt: null
@@ -27,9 +27,9 @@ derived_from: []
 check: "correcoes_publicadas"
 
 study: "o-estado-do-pais"
-note: "Esta edição corresponde à recontagem de 20.10.2026, que incluiu as duas correções dos valores textuais da UTAO e a inclusão do antecedente no excerto do contrato-programa da ACSS. As datas de referência e de leitura são as dessa recontagem do próprio livro-razão. O valor é reavaliado a cada construção: se entrar uma correção e o contador não mudar, a conferência falha. Os campos que só um documento externo poderia preencher ficam a null, pois a proveniência desta contagem é a sua derivação."
+note: "Recontagem de 21.10.2026, com a correção da data da entrega da proposta. O valor é reavaliado a cada construção; a recontagem não é uma correção adicional."
 
-# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+# Correções datadas. As entradas anteriores conservam-se.
 corrections:
   - date: "2026-09-30"
     kind: "atualizacao"
@@ -61,3 +61,9 @@ corrections:
     new_value: "11"
     reason: "A correção do excerto sobre a negociação da Beira Interior entra na contagem. O corte editorial da citação sobre o não reconhecimento não é um erro. A recontagem não é uma correção adicional."
     reason_en: "The correction to the Beira Interior negotiation excerpt enters the count. The editorial cut of the non-recognition quotation is not an error. The recount is not an additional correction."
+  - date: "2026-10-21"
+    kind: "atualizacao"
+    old_value: "11"
+    new_value: "12"
+    reason: "A correção da data no recibo da entrega da proposta passa a incluir o mês. A contagem inclui essa correção; a recontagem não é uma correção adicional."
+    reason_en: "The correction to the delivery receipt date adds the month. The count includes that correction; the recount is not an additional correction."

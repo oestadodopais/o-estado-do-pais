@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import {errosDaDefinicaoEo1} from '../src/lib/definicoes-eo1.mjs';
 import { FAMILIAS_DAS_LINHAS as FAMILIAS_EO1_GATE } from '../src/data/o-que-e-das-familias.mjs';
 import { conferirAberturaB1 } from './abertura-b1-do-portao.mjs';
 import {conferirCaminhoFinal} from './caminho-final.mjs';
@@ -5939,8 +5940,10 @@ for (const file of ficheirosHtml(DIST)) {
   for (const el of body.querySelectorAll('[data-eo1-definicao]')) {
     const id = el.getAttribute('data-eo1-definicao'), c = claims.get(id), f = FAMILIAS_EO1_GATE[id];
     const esperado = f?.frase?.[rota.lang]?.join('') + (f?.complemento?.[rota.lang] ?? []).map(p => typeof p === 'string' ? p : p.periodo === id ? dataDaCasaGate(String(c?.reference_date)) : '').join('');
+    const falhas=errosDaDefinicaoEo1(el,id,rota.lang);
+    for(const falha of falhas)err('EO1 definição: '+id+': '+falha);
     if (!paginaDoLivro || rota.params.slug !== id || !NOMES_EO1[id] || normalizeWhitespace(el.textContent).trim() !== normalizeWhitespace(esperado).trim()) err('EO1 definição: frase ou rota divergente: ' + id);
-    else aRemover.push(el);
+    else if(!falhas.length)aRemover.push(el);
   }
 
   /* Códigos e períodos no nome V2-e só passam com o nome bilingue da prova. */

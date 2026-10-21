@@ -1,0 +1,32 @@
+[
+  {
+    "id": "rmmg-2026",
+    "nome": "retribuição mínima mensal garantida",
+    "ficheiro": "content/25 Orcamento 2027 Medidas/source/diplomas/rmmg-2026.pdf",
+    "pagina": 2,
+    "localizador": "Decreto-Lei n.º 139/2025; artigo 3.º; p. 2 PDF",
+    "sha256": "e9e6da9ad45ffb70cb0a19a755fd31e4da9934174a3885edaacf7523c842c64f",
+    "inicio": 363,
+    "excerto": "ede à atualização do valor da retribuição mínima mensal garantida (RMMG) a partir de 1 de janeiro de 2026; b) Estabelece um regime excecional de atualização extraord"
+  },
+  {
+    "id": "oe-2027-rmmg-2024",
+    "nome": "salário mínimo (RMMG)",
+    "ficheiro": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
+    "pagina": 20,
+    "localizador": "p. 20 PDF (4 impressa)",
+    "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+    "inicio": 770,
+    "excerto": "27, o Governo da AD elevará o salário mínimo (RMMG) para os 970 euros, concretizando o terceiro aumento consecutivo desde que tomou posse o XXIV Govern"
+  },
+  {
+    "id": "oe-2027-rmmg-2027",
+    "nome": "salário mínimo (RMMG)",
+    "ficheiro": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
+    "pagina": 20,
+    "localizador": "p. 20 PDF (4 impressa)",
+    "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+    "inicio": 770,
+    "excerto": "27, o Governo da AD elevará o salário mínimo (RMMG) para os 970 euros, concretizando o terceiro aumento consecutivo desde que tomou posse o XXIV Govern"
+  }
+]

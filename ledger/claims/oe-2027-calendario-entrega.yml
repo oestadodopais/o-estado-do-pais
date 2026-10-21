@@ -6,7 +6,7 @@
 id: "oe-2027-calendario-entrega"
 
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
-value: "8"
+value: "8 de outubro"
 unit: "data"
 
 # O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
@@ -30,7 +30,7 @@ access_date: "2026-10-19"
 reference_date: "2026-10-08"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "A Proposta de Lei n .º 110/XVII/2.ª​ , que aprova o Orçamento do Estado para 2027, foi entregue ao Presidente da Assembleia da República, José Pedro Aguiar-Branco, pelo Ministro de Estado e das Finanças, Joaquim Miranda Sarmento, no dia 8​ de outubro​."
+excerpt: "A Proposta de Lei n .º 110/XVII/2.ª , que aprova o Orçamento do Estado para 2027, foi entregue ao Presidente da Assembleia da República, José Pedro Aguiar-Branco, pelo Ministro de Estado e das Finanças, Joaquim Miranda Sarmento, no dia 8 de outubro."
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null
@@ -44,4 +44,10 @@ study: "orcamento-2027-o-que-muda-e-para-quem"
 note: "[note do motor] Datas marcadas, não registo de votações já realizadas. Fonte alojada em investigação anterior, reutilizada pelo sha256. A página agrupa debate e votação na generalidade nos dois dias; não fixa aqui um dia isolado da votação. · Cruzado de ResearchHub content/24 Orcamento 2027 Analise · oe-2027-calendario-entrega."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
-corrections: []
+corrections:
+  - date: "2026-10-21"
+    kind: "correcao"
+    old_value: "8"
+    new_value: "8 de outubro"
+    reason: "O recibo mostrava apenas o dia. A data completa inclui o mês, como consta do excerto parlamentar."
+    reason_en: "The receipt showed only the day. The complete date includes the month, as stated in the parliamentary excerpt."

@@ -27,8 +27,8 @@ reference_date: "2027"
 excerpt: null
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
-derivation: "round ( ( 970 (Remuneração mínima mensal garantida: 2027) ÷ 920,00 (Remuneração mínima mensal garantida em 2026) − 1 ) × 100 , 1 ) = 5,4. O sinal indica a direção da variação ou do resultado da conta."
-derivation_en: "round ( ( 970 (Minimum monthly wage: 2027) ÷ 920.00 (Minimum monthly wage in 2026) − 1 ) × 100 , 1 ) = 5.4. The sign indicates the direction of the change or calculation result."
+derivation: "round ( ( 970 (salário mínimo (RMMG), 2027) ÷ 920,00 (retribuição mínima mensal garantida, 2026) − 1 ) × 100 , 1 ) = 5,4. O sinal indica a direção da variação ou do resultado da conta."
+derivation_en: "round ( ( 970 (minimum wage (RMMG), 2027) ÷ 920,00 (guaranteed minimum monthly wage, 2026) − 1 ) × 100 , 1 ) = 5,4. The sign indicates the direction of the change or calculation result."
 derived_from:
   - "oe-2027-rmmg-2027"
   - "rmmg-2026"

@@ -17,27 +17,17 @@
      "start": 0
     }
    ],
-   "figures": [
-    {
-     "end": 71,
-     "printed": "8",
-     "row": "oe-2027-calendario-entrega",
-     "source_body": "content/23 Habitacao/source/ar-oe2027.html",
-     "source_sha256": "0d8ea877b233fd8743997a221b1117ab14fa6bb48dad864c4c69eeb2fffb4e0d",
-     "start": 70,
-     "value": "8"
-    }
-   ],
+   "figures": [],
    "i": 1,
    "kind": "paragraph",
    "proofs": [
     {
-     "fim": 71,
+     "fim": 82,
      "id": "oe-2027-calendario-entrega",
      "inicio": 70,
      "livro": "AN",
-     "sha256_linha": "7be65783278336c751222ce0b16477856e4f5cb200793dddd659f8a9f45aca21",
-     "texto": "8",
+     "sha256_linha": "562a9f43ef7c1f21daa617cf996c526b869095ee9d20b79459278d1af2523fe8",
+     "texto": "8 de outubro",
      "tipo": "valor"
     }
    ],
@@ -76,39 +66,39 @@
      "value": "-1210"
     },
     {
-     "end": 1186,
+     "end": 1192,
      "printed": "1 350",
      "row": "der-oe2027-juros-variacao-cp",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 1181,
+     "start": 1187,
      "value": "1350"
     },
     {
-     "end": 1240,
+     "end": 1246,
      "printed": "8 575",
      "row": "pm-q4-1-r21-c1",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 1235,
+     "start": 1241,
      "value": "8 575"
     },
     {
-     "end": 1278,
+     "end": 1284,
      "printed": "2 347",
      "row": "der-oe2027-investimento-variacao-cp",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 1273,
+     "start": 1279,
      "value": "-2347"
     },
     {
-     "end": 1299,
+     "end": 1305,
      "printed": "10 417",
      "row": "pm-q4-1-r27-c1",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 1293,
+     "start": 1299,
      "value": "10 417"
     }
    ],
@@ -157,27 +147,27 @@
      "tipo": "excerto"
     },
     {
-     "fim": 1186,
+     "fim": 1192,
      "id": "der-oe2027-juros-variacao-cp",
-     "inicio": 1181,
+     "inicio": 1187,
      "livro": "PM",
      "sha256_linha": "e57e1a341beeba575dc649d8ff6066d2aba9adb064d301737fd3a31b8e2b0e4c",
      "texto": "1 350",
      "tipo": "valor"
     },
     {
-     "fim": 1240,
+     "fim": 1246,
      "id": "pm-q4-1-r21-c1",
-     "inicio": 1235,
+     "inicio": 1241,
      "livro": "PM",
      "sha256_linha": "43a8d83aa35e302eae81b204aa18fd76c55ad59e8b6fd49c910dfe7095176348",
      "texto": "8 575",
      "tipo": "valor"
     },
     {
-     "fim": 1278,
+     "fim": 1284,
      "id": "der-oe2027-investimento-variacao-cp",
-     "inicio": 1273,
+     "inicio": 1279,
      "livro": "PM",
      "modificador": "abs",
      "sha256_linha": "da4e0c8500ad95b77581b3392620c282d5aa10f9625434a6e56625fdc4022775",
@@ -185,9 +175,9 @@
      "tipo": "valor"
     },
     {
-     "fim": 1299,
+     "fim": 1305,
      "id": "pm-q4-1-r27-c1",
-     "inicio": 1293,
+     "inicio": 1299,
      "livro": "PM",
      "sha256_linha": "74d27f0912cc20641b4041a48c656b9ede90f87461e6c25e15e883cace380694",
      "texto": "10 417",
@@ -207,7 +197,7 @@
     "der-oe2027-investimento-variacao-cp",
     "pm-q4-1-r27-c1"
    ],
-   "text": "O Orçamento para 2027 muda pouco por si próprio. As três medidas novas que o relatório identifica, a receita esperada do combate à fraude nos combustíveis, a atualização do mínimo de existência no Imposto sobre o Rendimento das Pessoas Singulares (o IRS) e o reforço do Complemento Solidário para Idosos (o CSI), somam 79 milhões de euros a favor do saldo. O que pesa no saldo de 2027, 1 210 milhões de euros, são as dez linhas que o próprio quadro marca como «invariante» (a nota do quadro diz só isso, «Nota: (i) invariante.»; o que o relatório e a UTAO contam nelas está na secção das medidas): a atualização dos escalões e da dedução específica do IRS, o IRS das rendas moderadas e o Imposto sobre o Valor Acrescentado (o IVA) da construção de habitação, a descida de um ponto do Imposto sobre o Rendimento das Pessoas Coletivas (o IRC) e a reversão do SIFIDE (Sistema de Incentivos Fiscais à Investigação e Desenvolvimento Empresarial), a receita que o aumento dos salários traz em IRS e em contribuições, o acordo de rendimentos, o salário mínimo e os acordos salariais da função pública. E o que mais muda nas contas não está no quadro das medidas: os juros da dívida sobem 1 350 milhões de euros em contabilidade pública, para 8 575 milhões, e o investimento desce 2 347 milhões, para 10 417 milhões, porque o Plano de Recuperação e Resiliência (o PRR, o dinheiro europeu de recuperação pós-pandemia) acaba em 2026."
+   "text": "O Orçamento para 2027 muda pouco por si próprio. As três medidas novas que o relatório identifica, a receita esperada do combate à fraude nos combustíveis, a atualização do mínimo de existência no Imposto sobre o Rendimento das Pessoas Singulares (o IRS) e o reforço do Complemento Solidário para Idosos (o CSI), somam 79 milhões de euros a favor do saldo. O que pesa no saldo de 2027, 1 210 milhões de euros, são as dez linhas que o próprio quadro marca como «invariante» (a nota do quadro diz só isso, «Nota: (i) invariante.»; a UTAO usa a mesma palavra para um conjunto maior, na secção das medidas): a atualização dos escalões e da dedução específica do IRS, o IRS das rendas moderadas e o Imposto sobre o Valor Acrescentado (o IVA) da construção de habitação, a descida de um ponto do Imposto sobre o Rendimento das Pessoas Coletivas (o IRC) e a reversão do SIFIDE (Sistema de Incentivos Fiscais à Investigação e Desenvolvimento Empresarial), a receita que o aumento dos salários traz em IRS e em contribuições, o acordo de rendimentos, o salário mínimo e os acordos salariais da função pública. E o que mais muda nas contas não está no quadro das medidas: os juros da dívida sobem 1 350 milhões de euros em contabilidade pública, para 8 575 milhões, e o investimento desce 2 347 milhões, para 10 417 milhões, porque o Plano de Recuperação e Resiliência (o PRR, o dinheiro europeu de recuperação pós-pandemia) acaba em 2026."
   },
   {
    "figures": [
@@ -301,7 +291,7 @@
      "id": "oe-2027-rmmg-2027",
      "inicio": 304,
      "livro": "PM",
-     "sha256_linha": "7434869ea16497fc472bf24e86317890240d72d52c471c408be784b4a5118af1",
+     "sha256_linha": "118b978a6c9dbc7044e3fbd0c4690f497c60d4e18cd1b26355ca28f9a3c85f9c",
      "texto": "970",
      "tipo": "valor"
     },
@@ -1330,66 +1320,66 @@
    ],
    "figures": [
     {
-     "end": 512,
+     "end": 513,
      "printed": "2,5",
      "row": "pm-q3-6-r44-c3",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 509,
+     "start": 510,
      "value": "-2,5"
     },
     {
-     "end": 579,
+     "end": 580,
      "printed": "1,5",
      "row": "pm-q3-6-r45-c3",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 576,
+     "start": 577,
      "value": "-1,5"
     },
     {
-     "end": 613,
+     "end": 614,
      "printed": "2,6",
      "row": "pm-q3-6-r45-c2",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 610,
+     "start": 611,
      "value": "-2,6"
     },
     {
-     "end": 694,
+     "end": 695,
      "printed": "3,1",
      "row": "pm-q3-6-r50-c2",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 691,
+     "start": 692,
      "value": "3,1"
     },
     {
-     "end": 710,
+     "end": 711,
      "printed": "0,9",
      "row": "pm-q3-6-r50-c3",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 707,
+     "start": 708,
      "value": "0,9"
     },
     {
-     "end": 887,
+     "end": 888,
      "printed": "2,1",
      "row": "pm-q2-3-r8-c2",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 884,
+     "start": 885,
      "value": "2,1"
     },
     {
-     "end": 990,
+     "end": 991,
      "printed": "300",
      "row": "pm-q3-2-r8-c0",
      "source_body": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
      "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-     "start": 987,
+     "start": 988,
      "value": "300"
     }
    ],
@@ -1415,9 +1405,9 @@
      "tipo": "excerto"
     },
     {
-     "fim": 512,
+     "fim": 513,
      "id": "pm-q3-6-r44-c3",
-     "inicio": 509,
+     "inicio": 510,
      "livro": "PM",
      "modificador": "abs",
      "sha256_linha": "470b4f8abd8267f1146eb818c8f56bc147a1ebea1502056de89c54ae39389ba1",
@@ -1425,9 +1415,9 @@
      "tipo": "valor"
     },
     {
-     "fim": 579,
+     "fim": 580,
      "id": "pm-q3-6-r45-c3",
-     "inicio": 576,
+     "inicio": 577,
      "livro": "PM",
      "modificador": "abs",
      "sha256_linha": "1dd33a73f138ffb6215ea10fcc21936d95605586cce08e1581e280fa435537c1",
@@ -1435,9 +1425,9 @@
      "tipo": "valor"
     },
     {
-     "fim": 613,
+     "fim": 614,
      "id": "pm-q3-6-r45-c2",
-     "inicio": 610,
+     "inicio": 611,
      "livro": "PM",
      "modificador": "abs",
      "sha256_linha": "5ce10eb5463638c4c4ed6761abdabf424400ffc9cc105087f0485ce69dbee143",
@@ -1445,36 +1435,36 @@
      "tipo": "valor"
     },
     {
-     "fim": 694,
+     "fim": 695,
      "id": "pm-q3-6-r50-c2",
-     "inicio": 691,
+     "inicio": 692,
      "livro": "PM",
      "sha256_linha": "9ed7ae1f87e01590455c1967c620051e93321db673f0c1877e4110eef393f660",
      "texto": "3,1",
      "tipo": "valor"
     },
     {
-     "fim": 710,
+     "fim": 711,
      "id": "pm-q3-6-r50-c3",
-     "inicio": 707,
+     "inicio": 708,
      "livro": "PM",
      "sha256_linha": "c0391fa6581a0c3bae7a20129912be075b1ec34625efe30a4ea321ba7ebf3c76",
      "texto": "0,9",
      "tipo": "valor"
     },
     {
-     "fim": 887,
+     "fim": 888,
      "id": "pm-q2-3-r8-c2",
-     "inicio": 884,
+     "inicio": 885,
      "livro": "PM",
      "sha256_linha": "ca8c2ea4bdfed58cf9f3e0288f6870cfdaf03fad89d7488122ea6f5696148860",
      "texto": "2,1",
      "tipo": "valor"
     },
     {
-     "fim": 990,
+     "fim": 991,
      "id": "pm-q3-2-r8-c0",
-     "inicio": 987,
+     "inicio": 988,
      "livro": "PM",
      "sha256_linha": "be853ea41f752eb75342bb145e4957fc7e2d36d03b598ca50c018abe4bb57e1c",
      "texto": "300",
@@ -1495,7 +1485,7 @@
     "pm-q2-3-r8-c2",
     "pm-q3-2-r8-c0"
    ],
-   "text": "A meta da dívida que o ministro das Finanças anunciou é alcançável, e a razão está sobretudo na tesouraria. O ministro disse, pela notícia «Miranda Sarmento: dívida pública abaixo dos 85% do PIB em 2027 é a \"principal preocupação\" do Governo»: «A dívida pública deve continuar a ser a nossa principal preocupação nas contas públicas. Temos uma redução de cerca de quatro pontos percentuais nos últimos anos e estaremos abaixo dos 85% do PIB [Produto Interno Bruto] em 2027» O excedente primário contribui com 2,5 pontos para a descida, o efeito do crescimento e dos juros com 1,5 pontos (menos do que em 2026, 2,6), e o que faz a descida acelerar é o ajustamento défice-dívida, que passa de 3,1 pontos para 0,9 pontos, sobretudo por menor aquisição de ativos financeiros, segundo a UTAO. É um movimento de tesouraria, não do orçamento do ano. A meta assenta também num crescimento de 2,1 % que, segundo a UTAO, está acima das previsões de todas as outras instituições que ela cita, e em 300 milhões de euros de receita do combate à fraude nos combustíveis para os quais o relatório não apresenta fundamento."
+   "text": "A meta da dívida que o ministro das Finanças anunciou é alcançável, e a razão está sobretudo na tesouraria. O ministro disse, pela notícia «Miranda Sarmento: dívida pública abaixo dos 85% do PIB em 2027 é a \"principal preocupação\" do Governo»: «A dívida pública deve continuar a ser a nossa principal preocupação nas contas públicas. Temos uma redução de cerca de quatro pontos percentuais nos últimos anos e estaremos abaixo dos 85% do PIB [Produto Interno Bruto] em 2027». O excedente primário contribui com 2,5 pontos para a descida, o efeito do crescimento e dos juros com 1,5 pontos (menos do que em 2026, 2,6), e o que faz a descida acelerar é o ajustamento défice-dívida, que passa de 3,1 pontos para 0,9 pontos, sobretudo por menor aquisição de ativos financeiros, segundo a UTAO. É um movimento de tesouraria, não do orçamento do ano. A meta assenta também num crescimento de 2,1 % que, segundo a UTAO, está acima das previsões de todas as outras instituições que ela cita, e em 300 milhões de euros de receita do combate à fraude nos combustíveis para os quais o relatório não apresenta fundamento."
   },
   {
    "emphasis": [
@@ -4056,18 +4046,36 @@
    "kind": "paragraph",
    "proofs": [
     {
-     "fim": 655,
+     "apoios": [
+      {
+       "campo": "excerpt",
+       "id": "utao-politicas-saldo",
+       "livro": "PM"
+      },
+      {
+       "campo": "excerpt",
+       "id": "utao-politicas-revisao",
+       "livro": "PM"
+      }
+     ],
+     "fim": 204,
+     "inicio": 197,
+     "texto": "5411 M€",
+     "tipo": "literal"
+    },
+    {
+     "fim": 740,
      "id": "utao-politicas-saldo",
-     "inicio": 123,
+     "inicio": 208,
      "livro": "PM",
      "sha256_linha": "8d5ee0fc9961c5f2ff386c443dafb118682fab3dee3cd52fb1bfd069c471046e",
      "texto": "No contexto das alterações introduzidas pelo MF no relatório da POE/2027, as medidas em vigor, incluídas no cenário de políticas invariantes, têm um impacto adicional líquido para o saldo orçamental de 2027 negativo em 5411 M€ (1,6% do PIB). Este resultado decorre, essencialmente, do acréscimo de medidas com impacto bruto no lado da despesa (5562 M€) visto que as medidas do lado da receita (Tabela 8), apesar de apresentarem valores absolutos elevados, apresentam no seu conjunto um montante significativamente inferior (151 M€).",
      "tipo": "excerto"
     },
     {
-     "fim": 1312,
+     "fim": 1489,
      "id": "utao-politicas-revisao",
-     "inicio": 743,
+     "inicio": 920,
      "livro": "PM",
      "sha256_linha": "9c959afc851462953492ae61d139693e0a9c8c16c1900ff226b7802bb793ac1f",
      "texto": "O relatório da POE/2027 divulgou um quadro de políticas invariantes revisto face ao apresentado em final de agosto. Com efeito, o impacto orçamental das políticas invariantes passou de 4783 M€ para 5411 M€. Para esta deterioração adicional, destaca-se a despesa com juros (de 776 M€ para 1548 M€) e o investimento público excluído de PRR (de 433 M€ para 617 M€). Em sentido oposto, evidencia-se a revisão da despesa com pensões (de 1993 M€ para 1475 M€) e a passagem do reforço do complemento solidário para idosos (CSI; 100 M€) do QPI para as novas medidas (Tabela 9).",
@@ -4078,7 +4086,7 @@
     "utao-politicas-saldo",
     "utao-politicas-revisao"
    ],
-   "text": "Fora do quadro das medidas estão as políticas invariantes, as decisões já em vigor cujo custo continua a crescer. A UTAO: «No contexto das alterações introduzidas pelo MF no relatório da POE/2027, as medidas em vigor, incluídas no cenário de políticas invariantes, têm um impacto adicional líquido para o saldo orçamental de 2027 negativo em 5411 M€ (1,6% do PIB). Este resultado decorre, essencialmente, do acréscimo de medidas com impacto bruto no lado da despesa (5562 M€) visto que as medidas do lado da receita (Tabela 8), apesar de apresentarem valores absolutos elevados, apresentam no seu conjunto um montante significativamente inferior (151 M€).» E sobre a revisão do quadro de políticas invariantes (o QPI) entre agosto e outubro: «O relatório da POE/2027 divulgou um quadro de políticas invariantes revisto face ao apresentado em final de agosto. Com efeito, o impacto orçamental das políticas invariantes passou de 4783 M€ para 5411 M€. Para esta deterioração adicional, destaca-se a despesa com juros (de 776 M€ para 1548 M€) e o investimento público excluído de PRR (de 433 M€ para 617 M€). Em sentido oposto, evidencia-se a revisão da despesa com pensões (de 1993 M€ para 1475 M€) e a passagem do reforço do complemento solidário para idosos (CSI; 100 M€) do QPI para as novas medidas (Tabela 9).»"
+   "text": "A UTAO usa a palavra «invariantes» para um conjunto maior do que as dez linhas do quadro: o cenário de políticas invariantes, as medidas já em vigor, cujo impacto adicional em 2027 ela calcula em «5411 M€»: «No contexto das alterações introduzidas pelo MF no relatório da POE/2027, as medidas em vigor, incluídas no cenário de políticas invariantes, têm um impacto adicional líquido para o saldo orçamental de 2027 negativo em 5411 M€ (1,6% do PIB). Este resultado decorre, essencialmente, do acréscimo de medidas com impacto bruto no lado da despesa (5562 M€) visto que as medidas do lado da receita (Tabela 8), apesar de apresentarem valores absolutos elevados, apresentam no seu conjunto um montante significativamente inferior (151 M€).» Se as dez linhas do quadro estão dentro desse conjunto, nem o relatório nem a UTAO o dizem. E sobre a revisão do quadro de políticas invariantes (o QPI) entre agosto e outubro: «O relatório da POE/2027 divulgou um quadro de políticas invariantes revisto face ao apresentado em final de agosto. Com efeito, o impacto orçamental das políticas invariantes passou de 4783 M€ para 5411 M€. Para esta deterioração adicional, destaca-se a despesa com juros (de 776 M€ para 1548 M€) e o investimento público excluído de PRR (de 433 M€ para 617 M€). Em sentido oposto, evidencia-se a revisão da despesa com pensões (de 1993 M€ para 1475 M€) e a passagem do reforço do complemento solidário para idosos (CSI; 100 M€) do QPI para as novas medidas (Tabela 9).»"
   },
   {
    "figures": [],
@@ -5079,7 +5087,7 @@
      "id": "rmmg-2026",
      "inicio": 442,
      "livro": "PM",
-     "sha256_linha": "307620f070934ebeede6688a7468116c1898509e1ea4c294a184ad5e178b8ca0",
+     "sha256_linha": "1b1f92cb05651fa3a617c7e95099af4cfe93a15ed9e42e7a47f59f7e60582dfe",
      "texto": "920,00",
      "tipo": "valor"
     },
@@ -7249,27 +7257,17 @@
    "text": "O calendário"
   },
   {
-   "figures": [
-    {
-     "end": 27,
-     "printed": "8",
-     "row": "oe-2027-calendario-entrega",
-     "source_body": "content/23 Habitacao/source/ar-oe2027.html",
-     "source_sha256": "0d8ea877b233fd8743997a221b1117ab14fa6bb48dad864c4c69eeb2fffb4e0d",
-     "start": 26,
-     "value": "8"
-    }
-   ],
+   "figures": [],
    "i": 54,
    "kind": "paragraph",
    "proofs": [
     {
-     "fim": 27,
+     "fim": 38,
      "id": "oe-2027-calendario-entrega",
      "inicio": 26,
      "livro": "AN",
-     "sha256_linha": "7be65783278336c751222ce0b16477856e4f5cb200793dddd659f8a9f45aca21",
-     "texto": "8",
+     "sha256_linha": "562a9f43ef7c1f21daa617cf996c526b869095ee9d20b79459278d1af2523fe8",
+     "texto": "8 de outubro",
      "tipo": "valor"
     },
     {
@@ -7277,7 +7275,7 @@
      "id": "oe-2027-calendario-generalidade",
      "inicio": 69,
      "livro": "AN",
-     "sha256_linha": "ce630a2ffa62b49ce8e65c5ee7fb01bf1a105431324c692dad1999603a1cbb9d",
+     "sha256_linha": "0d05886d85314eed2c5b80e9b41efb8c1c5b5e3779b7d7815604b98242595c31",
      "texto": "27 e 28 de outubro",
      "tipo": "valor"
     },
@@ -7286,7 +7284,7 @@
      "id": "oe-2027-calendario-especialidade",
      "inicio": 108,
      "livro": "AN",
-     "sha256_linha": "a97aa394bc5238c5e64a462a96c96d6d07b7de9e977b44cb78eacb5371464dd6",
+     "sha256_linha": "cbe3de8930a46400f2a665ef2796f4bdf5b35198483066100ebbeb385f502b4d",
      "texto": "18 a 23 de novembro",
      "tipo": "valor"
     },
@@ -7295,7 +7293,7 @@
      "id": "oe-2027-calendario-final-global",
      "inicio": 154,
      "livro": "AN",
-     "sha256_linha": "156f253e82971b3c7f021bbc151359346f873ce2ee0cd2ae91d2f4d77ca8e5a4",
+     "sha256_linha": "6e72544b20007465cab6e727d5e0916bee2fed6c47ce71230738f7f10616a406",
      "texto": "24 de novembro",
      "tipo": "valor"
     }
@@ -10678,7 +10676,7 @@
     "locator": "Página parlamentar, calendário da proposta",
     "sha256": "0d8ea877b233fd8743997a221b1117ab14fa6bb48dad864c4c69eeb2fffb4e0d"
    },
-   "excerpt": "A Proposta de Lei n .º 110/XVII/2.ª​ , que aprova o Orçamento do Estado para 2027, foi entregue ao Presidente da Assembleia da República, José Pedro Aguiar-Branco, pelo Ministro de Estado e das Finanças, Joaquim Miranda Sarmento, no dia 8​ de outubro​.",
+   "excerpt": "A Proposta de Lei n .º 110/XVII/2.ª , que aprova o Orçamento do Estado para 2027, foi entregue ao Presidente da Assembleia da República, José Pedro Aguiar-Branco, pelo Ministro de Estado e das Finanças, Joaquim Miranda Sarmento, no dia 8 de outubro.",
    "fetched_at": "2026-10-19T13:40:07.222623+00:00",
    "group": "calendario",
    "id": "oe-2027-calendario-entrega",
@@ -10691,12 +10689,12 @@
    "note": "Datas marcadas, não registo de votações já realizadas. Fonte alojada em investigação anterior, reutilizada pelo sha256. A página agrupa debate e votação na generalidade nos dois dias; não fixa aqui um dia isolado da votação.",
    "period": "2026-10-08",
    "reference_date": "2026-10-08",
-   "source_excerpt": "A Proposta de Lei n .º 110/XVII/2.ª​ , que aprova o Orçamento do Estado para 2027, foi entregue ao Presidente da Assembleia da República, José Pedro Aguiar-Branco, pelo Ministro de Estado e das Finanças, Joaquim Miranda Sarmento, no dia 8​ de outubro​.",
+   "source_excerpt": "A Proposta de Lei n .º 110/XVII/2.ª , que aprova o Orçamento do Estado para 2027, foi entregue ao Presidente da Assembleia da República, José Pedro Aguiar-Branco, pelo Ministro de Estado e das Finanças, Joaquim Miranda Sarmento, no dia 8 de outubro.",
    "source_type": "government",
    "source_url": "https://www.parlamento.pt/Paginas/2026/outubro/Orcamento-do-Estado-para-2026.aspx?n=10",
    "status": "conferido",
    "unit": "data",
-   "value": "8"
+   "value": "8 de outubro"
   },
   "oe-2027-calendario-especialidade": {
    "document": {
@@ -10715,7 +10713,7 @@
     "locator": "Página parlamentar, calendário da proposta",
     "sha256": "0d8ea877b233fd8743997a221b1117ab14fa6bb48dad864c4c69eeb2fffb4e0d"
    },
-   "excerpt": "Orçamento do Estado 2027 | Debate e votação na especialidade | 18 a 23 de novembro ​",
+   "excerpt": "Orçamento do Estado 2027 | Debate e votação na especialidade | 18 a 23 de novembro ",
    "fetched_at": "2026-10-19T13:40:07.222623+00:00",
    "group": "calendario",
    "id": "oe-2027-calendario-especialidade",
@@ -10728,7 +10726,7 @@
    "note": "Datas marcadas, não registo de votações já realizadas. Fonte alojada em investigação anterior, reutilizada pelo sha256. A página agrupa debate e votação na generalidade nos dois dias; não fixa aqui um dia isolado da votação.",
    "period": "2026-11-18/2026-11-23",
    "reference_date": "2026-11-18/2026-11-23",
-   "source_excerpt": "Orçamento do Estado 2027 | Debate e votação na especialidade | 18 a 23 de novembro ​",
+   "source_excerpt": "Orçamento do Estado 2027 | Debate e votação na especialidade | 18 a 23 de novembro ",
    "source_type": "government",
    "source_url": "https://www.parlamento.pt/Paginas/2026/outubro/Orcamento-do-Estado-para-2026.aspx?n=10",
    "status": "conferido",
@@ -10752,7 +10750,7 @@
     "locator": "Página parlamentar, calendário da proposta",
     "sha256": "0d8ea877b233fd8743997a221b1117ab14fa6bb48dad864c4c69eeb2fffb4e0d"
    },
-   "excerpt": "Orçamento do Estado 2027 | Debate, votação na especialidad​e e votação final global | 24 de novembro",
+   "excerpt": "Orçamento do Estado 2027 | Debate, votação na especialidade e votação final global | 24 de novembro",
    "fetched_at": "2026-10-19T13:40:07.222623+00:00",
    "group": "calendario",
    "id": "oe-2027-calendario-final-global",
@@ -10765,7 +10763,7 @@
    "note": "Datas marcadas, não registo de votações já realizadas. Fonte alojada em investigação anterior, reutilizada pelo sha256. A página agrupa debate e votação na generalidade nos dois dias; não fixa aqui um dia isolado da votação.",
    "period": "2026-11-24",
    "reference_date": "2026-11-24",
-   "source_excerpt": "Orçamento do Estado 2027 | Debate, votação na especialidad​e e votação final global | 24 de novembro",
+   "source_excerpt": "Orçamento do Estado 2027 | Debate, votação na especialidade e votação final global | 24 de novembro",
    "source_type": "government",
    "source_url": "https://www.parlamento.pt/Paginas/2026/outubro/Orcamento-do-Estado-para-2026.aspx?n=10",
    "status": "conferido",
@@ -10789,7 +10787,7 @@
     "locator": "Página parlamentar, calendário da proposta",
     "sha256": "0d8ea877b233fd8743997a221b1117ab14fa6bb48dad864c4c69eeb2fffb4e0d"
    },
-   "excerpt": "Debate e votação na generali​d​ade do ​​O​rçamento ​do Estado para 2027​ | 27 e 28 de outubro​ ​",
+   "excerpt": "Debate e votação na generalidade do Orçamento do Estado para 2027 | 27 e 28 de outubro ",
    "fetched_at": "2026-10-19T13:40:07.222623+00:00",
    "group": "calendario",
    "id": "oe-2027-calendario-generalidade",
@@ -10802,7 +10800,7 @@
    "note": "Datas marcadas, não registo de votações já realizadas. Fonte alojada em investigação anterior, reutilizada pelo sha256. A página agrupa debate e votação na generalidade nos dois dias; não fixa aqui um dia isolado da votação.",
    "period": "2026-10-27/2026-10-28",
    "reference_date": "2026-10-27/2026-10-28",
-   "source_excerpt": "Debate e votação na generali​d​ade do ​​O​rçamento ​do Estado para 2027​ | 27 e 28 de outubro​ ​",
+   "source_excerpt": "Debate e votação na generalidade do Orçamento do Estado para 2027 | 27 e 28 de outubro ",
    "source_type": "government",
    "source_url": "https://www.parlamento.pt/Paginas/2026/outubro/Orcamento-do-Estado-para-2026.aspx?n=10",
    "status": "conferido",
@@ -11163,12 +11161,12 @@
    "group": "texto_relatorio",
    "id": "oe-2027-rmmg-2024",
    "locator": "p. 20 PDF (4 impressa)",
-   "measure": "Remuneração mínima mensal garantida: 2024",
-   "measure_en": "Minimum monthly wage: 2024",
-   "medida": "Remuneração mínima mensal garantida: 2024",
-   "medida_en": "Minimum monthly wage: 2024",
-   "name": "Remuneração mínima mensal garantida: 2024",
-   "name_en": "Minimum monthly wage: 2024",
+   "measure": "salário mínimo (RMMG)",
+   "measure_en": "minimum wage (RMMG)",
+   "medida": "salário mínimo (RMMG)",
+   "medida_en": "minimum wage (RMMG)",
+   "name": "salário mínimo (RMMG)",
+   "name_en": "minimum wage (RMMG)",
    "name_source": "p. 20 PDF (4 impressa)",
    "note": "Afirmação do relatório, não facto executado.",
    "period": "2024",
@@ -11213,12 +11211,12 @@
    "group": "texto_relatorio",
    "id": "oe-2027-rmmg-2027",
    "locator": "p. 20 PDF (4 impressa)",
-   "measure": "Remuneração mínima mensal garantida: 2027",
-   "measure_en": "Minimum monthly wage: 2027",
-   "medida": "Remuneração mínima mensal garantida: 2027",
-   "medida_en": "Minimum monthly wage: 2027",
-   "name": "Remuneração mínima mensal garantida: 2027",
-   "name_en": "Minimum monthly wage: 2027",
+   "measure": "salário mínimo (RMMG)",
+   "measure_en": "minimum wage (RMMG)",
+   "medida": "salário mínimo (RMMG)",
+   "medida_en": "minimum wage (RMMG)",
+   "name": "salário mínimo (RMMG)",
+   "name_en": "minimum wage (RMMG)",
    "name_source": "p. 20 PDF (4 impressa)",
    "note": "Afirmação do relatório, não facto executado.",
    "period": "2027",
@@ -17810,12 +17808,12 @@
    "fetched_at": "2026-10-20T15:51:51.856012+00:00",
    "id": "rmmg-2026",
    "locator": "Decreto-Lei n.º 139/2025; artigo 3.º; p. 2 PDF",
-   "measure": "Remuneração mínima mensal garantida em 2026",
-   "measure_en": "Minimum monthly wage in 2026",
-   "medida": "Remuneração mínima mensal garantida em 2026",
-   "medida_en": "Minimum monthly wage in 2026",
-   "name": "Remuneração mínima mensal garantida em 2026",
-   "name_en": "Minimum monthly wage in 2026",
+   "measure": "retribuição mínima mensal garantida",
+   "measure_en": "guaranteed minimum monthly wage",
+   "medida": "retribuição mínima mensal garantida",
+   "medida_en": "guaranteed minimum monthly wage",
+   "name": "retribuição mínima mensal garantida",
+   "name_en": "guaranteed minimum monthly wage",
    "name_source": "Decreto-Lei n.º 139/2025; artigo 3.º; p. 2 PDF",
    "note": "Aplicável ao território continental, pelo artigo 2.º. Efeitos em 2026, pelo artigo 7.º.",
    "period": "2026",

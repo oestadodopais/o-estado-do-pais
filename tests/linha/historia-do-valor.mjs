@@ -36,7 +36,7 @@ for(const [nome,muda,falha] of [
 }
 // O corte editorial do não reconhecimento não conta como correção de erro.
 assert.deepEqual(entradasDoValor(linhas.get('pe-oe-riscos-nao-reconhecimento')),[]);
-assert.equal(linhas.get('correcoes-publicadas').value,'11');
+assert.equal(linhas.get('correcoes-publicadas').value,'12');
 for(const id of ['pe-oe-beira-abolicao']){
  const original=linhas.get(id),seladas=JSON.parse(fs.readFileSync('ledger/historias-valores.json','utf8'))[id],erros=[];
  conferirHistoriaDoValor(original,seladas,'ensaio',erros);assert.deepEqual(erros,[]);
@@ -50,6 +50,17 @@ for(const id of ['pe-oe-beira-abolicao']){
   const c=structuredClone(original),erros=[];muda(c);conferirHistoriaDoValor(c,seladas,'ensaio',erros);
   assert.ok(erros.some(e=>e.includes(falha)),`${id}: ${nome}`);plantas.push({nome:`${id}: ${nome}`,falha,erros,mordeu:true});
  }
+}
+
+const entrega=linhas.get('oe-2027-calendario-entrega');
+const historiaData=entradasDoValor(entrega).map(assinaturaDoValor);
+for(const [nome,muda,falha] of [
+ ['mês trocado',c=>{c.value='8 de novembro';c.corrections.at(-1).new_value=c.value;},'data completa não coincide'],
+ ['texto medido disfarçado de data',c=>{c.value='820 euros';c.corrections.at(-1).new_value=c.value;},'forma de calendário'],
+ ['história da data retirada',c=>{c.corrections=[];},'retirada ou alterada'],
+]){
+ const c=structuredClone(entrega),erros=[];muda(c);conferirHistoriaDoValor(c,historiaData,'ensaio',erros);
+ assert(erros.some(e=>e.includes(falha)),nome);plantas.push({nome,falha,erros,mordeu:true});
 }
 const r = { controlos: 4, plantas };
 const i = process.argv.indexOf('--json');

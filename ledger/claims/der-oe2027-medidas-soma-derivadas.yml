@@ -28,7 +28,7 @@ excerpt: null
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: "−1 210 (Medidas invariantes: impacto no saldo, 2027) + 79 (Medidas novas: impacto no saldo, 2027) = −1 131. O sinal indica a direção da variação ou do resultado da conta."
-derivation_en: "−1,210 (Invariant measures: balance impact, 2027) + 79 (New measures: balance impact, 2027) = −1,131. The sign indicates the direction of the change or calculation result."
+derivation_en: "−1 210 (Invariant measures: balance impact, 2027) + 79 (New measures: balance impact, 2027) = −1 131. The sign indicates the direction of the change or calculation result."
 derived_from:
   - "der-oe2027-medidas-anteriores-saldo"
   - "der-oe2027-medidas-novas-saldo"

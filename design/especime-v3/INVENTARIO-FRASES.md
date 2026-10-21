@@ -4863,7 +4863,7 @@ ainda por explicar (o achado 7), fica aqui como retirada.*
 | conteudo | 3 631 afirmações · 429 de 3 631 calculadas · 2 767 de 3 631 linhas de concelhos | eo1-b | retirada | Recolhida do HTML construído e conferida pelo portão da voz. Leitura cruzada pendente. Substituída na fusão EO1-c pela contagem conjunta do livro; declaração anterior conservada. |
 | conteudo | 3 631 claims · 429 of 3 631 calculated · 2 767 of 3 631 municipality rows | eo1-b | retirada | Recolhida do HTML construído e conferida pelo portão da voz. Leitura cruzada pendente. Substituída na fusão EO1-c pela contagem conjunta do livro; declaração anterior conservada. |
 | conteudo | As medidas novas do Orçamento de valem milhões de euros a favor do saldo, as dez linhas marcadas como invariantes pesam milhões, e os juros sobem milhões: o que mais muda nas contas de não está no quadro das medidas. | eo1-b | viva | Recolhida do HTML construído e conferida pelo portão da voz. Leitura cruzada pendente. |
-| conteudo | The new measures of the Budget are worth million euros to the balance, the ten lines marked as unchanged policies weigh million, and interest rises million: what changes most in the accounts is not in the table of measures. | eo1-b | viva | Recolhida do HTML construído e conferida pelo portão da voz. Leitura cruzada pendente. |
+| conteudo | The new measures of the Budget are worth million euros to the balance, the ten lines marked as unchanged policies weigh million, and interest rises million: what changes most in the accounts is not in the table of measures. | eo1-b | retirada | Recolhida do HTML construído e conferida pelo portão da voz. EO1-e: a sinopse distingue a marca do quadro do cenário de políticas invariantes. Leitura cruzada pendente. |
 
 | conteudo | 3 808 afirmações · 444 de 3 808 calculadas · 2 767 de 3 808 linhas de concelhos | eo1-c | retirada | Recolhida do HTML construído. Tokens conferidos pela célula dos itens e pela auditoria das palavras. Leitura cruzada pendente. Substituída na EO1-d pela contagem que inclui a nova linha da UTAO. |
 | conteudo | 3 808 claims · 444 of 3 808 calculated · 2 767 of 3 808 municipality rows | eo1-c | retirada | Recolhida do HTML construído. Tokens conferidos pela célula dos itens e pela auditoria das palavras. Leitura cruzada pendente. Substituída na EO1-d pela contagem que inclui a nova linha da UTAO. |
@@ -4874,3 +4874,9 @@ ainda por explicar (o achado 7), fica aqui como retirada.*
 | --- | --- | --- | --- | --- |
 | conteudo | 3 809 afirmações · 444 de 3 809 calculadas · 2 767 de 3 809 linhas de concelhos | eo1-d | viva | Recolhida do HTML construído, com a nova linha de variação das despesas com pessoal em contabilidade nacional. Leitura cruzada pendente. |
 | conteudo | 3 809 claims · 444 of 3 809 calculated · 2 767 of 3 809 municipality rows | eo1-d | viva | Recolhida do HTML construído, com a nova linha de variação das despesas com pessoal em contabilidade nacional. Leitura cruzada pendente. |
+
+## EO1-e: sinopse inglesa
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | The new measures of the Budget are worth million euros to the balance, the ten lines the table marks as «invariante» (invariant) weigh million, and interest rises million: what changes most in the accounts is not in the table of measures. | eo1-e | viva | Recolhida do HTML construído e conferida pelo portão da voz. Leitura cruzada pendente. |

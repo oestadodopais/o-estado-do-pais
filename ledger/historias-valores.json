@@ -171,6 +171,12 @@
       "kind": "atualizacao",
       "old_value": "10",
       "new_value": "11"
+    },
+    {
+      "date": "2026-10-21",
+      "kind": "atualizacao",
+      "old_value": "11",
+      "new_value": "12"
     }
   ],
   "estudos-publicados": [
@@ -321,5 +327,13 @@
       "new_value": "Salienta-se ainda o desenvolvimento dos trabalhos de negociação no âmbito do contrato de concessão da Beira Interior, na sequência do pedido apresentado pela concessionária no contexto da abolição das portagens, tendo em vista verificar se estão reunidas as condições para a reposição do equilíbrio financeiro do contrato e para negociar os respetivos termos, abrangendo ainda a renegociação de outros aspetos contratuais relevantes e a avaliação de eventuais novos investimentos a realizar."
     }
   ],
-  "pe-oe-riscos-nao-reconhecimento": []
+  "pe-oe-riscos-nao-reconhecimento": [],
+  "oe-2027-calendario-entrega": [
+    {
+      "date": "2026-10-21",
+      "kind": "correcao",
+      "old_value": "8",
+      "new_value": "8 de outubro"
+    }
+  ]
 }

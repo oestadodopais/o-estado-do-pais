@@ -16,7 +16,7 @@ const especiais={
 };
 function nome(id,lang){
  let n=especiais[id]?.[lang==='pt'?0:1]??NOMES_EO1[id][lang];
- return n.replace(/^\d+\. /,'').replace(/\(1\+2\)/,'').replace(/\(1\. /,'(').replace(/\s+/g,' ').trim();
+ return n.replace(/\s+/g,' ').trim();
 }
 export const FAMILIAS_EO1=Object.keys(cross.rows).sort().map(id=>{
  const c=claims.get(id),pt=nome(id,'pt'),en=nome(id,'en');let frase,phrase,complemento;
@@ -33,12 +33,12 @@ export const FAMILIAS_EO1=Object.keys(cross.rows).sort().map(id=>{
   frase=`É o valor de «${pt}» ${context[0]}, para o período e na unidade indicados.`;phrase=`It is the value of «${en}» ${context[1]}, for the stated period and unit.`;
  }
  if(id.startsWith('der-oe2027-medidas-anteriores-')) {
-  const k=id.split('-').at(-1),termos={saldo:['no impacto no saldo','in the balance impact'],receita:['na receita','in revenue'],despesa:['na despesa','in expenditure']};
-  frase=`É a soma, ${termos[k][0]} de 2027, das dez linhas que o quadro 3.2 do relatório marca com (i), invariante.`;
-  phrase=`It is the sum, ${k === 'saldo' ? 'in the 2027 balance impact' : termos[k][1] + ' for 2027'}, of the ten lines that table 3.2 of the report marks with (i), invariante.`;
+  const k=id.split('-').at(-1),termos={saldo:['dez linhas','ten lines'],receita:['sete linhas de receita','seven revenue lines'],despesa:['três linhas de despesa','three expenditure lines']};
+  frase=`É a soma, no impacto no saldo de 2027, das ${termos[k][0]} que o quadro 3.2 do relatório marca com (i), invariante.`;
+  phrase=`It is the sum, in the 2027 balance impact, of the ${termos[k][1]} that table 3.2 of the report marks with (i), invariante.`;
  }
  const textosLegais={
-  'rmmg-2026':['É a remuneração mínima mensal garantida em ','It is the guaranteed minimum monthly wage in ',' pelo decreto-lei que a fixou.',' under the decree-law that set it.'],
+  'rmmg-2026':['É a retribuição mínima mensal garantida em ','It is the guaranteed minimum monthly wage in ',' pelo decreto-lei que a fixou.',' under the decree-law that set it.'],
   'irc-taxa-2026':['É a taxa geral do IRC em ','It is the general corporate income tax rate in ',' pela lei de novembro de 2025.',' under the law of November 2025.'],
   'irc-taxa-2027':['É a taxa geral do IRC em ','It is the general corporate income tax rate in ',' pela lei de novembro de 2025.',' under the law of November 2025.'],
   'smi-espanha-2026':['É o salário mínimo mensal de Espanha em ','It is Spain’s monthly minimum wage in ',' pelo real decreto.',' under the royal decree.'],

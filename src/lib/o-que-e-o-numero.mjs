@@ -1,3 +1,5 @@
+import {temAlgarismoLivreEo1} from './definicoes-eo1.mjs';
+import {temAlgarismoLivre} from './algarismos-definicoes.mjs';
 import {NOMES_EO1} from '../data/nomes-eo1.mjs';
 import { ORIGENS_DAS_DEFINICOES } from '../data/figuras.mjs';
 import { palavrasDaLinhaJd1 } from '../data/notas-jd1.mjs';
@@ -131,7 +133,7 @@ export function comparaLinhas(c,lang,linhas=loadClaims()) {
  */
 export function resolverComplemento(partes, permitirAnos = false) {
   return partes.map(p=>{
-    if(typeof p==='string') {if(!permitirAnos && /\d/.test(p))throw new Error('V2AE complemento: algarismo fixo');return p;}
+    if(typeof p==='string') {if(permitirAnos ? temAlgarismoLivre(p) : /\d/.test(p))throw new Error('V2AE complemento: algarismo fixo');return p;}
     if(p?.apoio) {
       const {origem,campo}=p.apoio;
       const o=/** @type {any} */ (ORIGENS_DAS_DEFINICOES)[origem];
@@ -258,15 +260,15 @@ export function errosDasFamilias(familias = FAMILIAS_DAS_LINHAS, doConcelho = FA
   /** @type {string[]} */
   const erros = [];
   /** @param {unknown} parte @param {string} onde */
-  const anda = (parte, onde) => {
-    if (Array.isArray(parte)) return parte.forEach((p, i) => anda(p, `${onde}[${i}]`));
+  const anda = (parte, onde, eo1 = false) => {
+    if (Array.isArray(parte)) return parte.forEach((p, i) => anda(p, `${onde}[${i}]`, eo1));
     if (typeof parte === 'string') {
-      if (/\d/.test(parte)) erros.push(`${onde}: a palavra fixa «${parte}» traz um algarismo`);
+      if (eo1 ? temAlgarismoLivreEo1(parte, onde.split(' · ')[0], onde.includes(' · en') ? 'en' : 'pt') : /\d/.test(parte)) erros.push(`${onde}: a palavra fixa «${parte}» traz um algarismo`);
       return;
     }
     const o = /** @type {Record<string, any>} */ (parte);
     if (o && typeof o === 'object' && typeof o.termo === 'string' && typeof o.lingua === 'string') {
-      if (/\d/.test(o.termo)) erros.push(`${onde}: o termo «${o.termo}» traz um algarismo`);
+      if (eo1 ? temAlgarismoLivreEo1(o.termo, onde.split(' · ')[0], onde.includes(' · en') ? 'en' : 'pt') : /\d/.test(o.termo)) erros.push(`${onde}: o termo «${o.termo}» traz um algarismo`);
       return;
     }
     erros.push(`${onde}: um pedaço que não é texto nem um termo de outra língua (uma frase de família não cita números)`);
@@ -278,10 +280,12 @@ export function errosDasFamilias(familias = FAMILIAS_DAS_LINHAS, doConcelho = FA
     } else {
       for (const lang of ['pt', 'en']) {
         if (!Array.isArray(d.frase?.[lang]) || d.frase[lang].length === 0) erros.push(`${chave} · ${lang}: a família não tem frase nesta edição`);
-        else if (!Object.hasOwn(NOMES_EO1,chave)) anda(d.frase[lang], `${chave} · ${lang}`);
+        else anda(d.frase[lang], `${chave} · ${lang}`, Object.hasOwn(NOMES_EO1,chave));
       }
     }
     for (const lang of ['pt', 'en']) {
+      if(d.complemento)try{resolverComplemento(d.complemento[lang],Object.hasOwn(NOMES_EO1,chave));}catch(e){erros.push(`${chave} · ${lang}: ${String(e)}`);}
+      if (Object.hasOwn(NOMES_EO1,chave) && /\d/.test(d.nome?.[lang] ?? '') && d.nome[lang] !== (/** @type {Record<string,Record<string,string>>} */(NOMES_EO1))[chave][lang]) erros.push(`${chave} · ${lang}: nome com algarismos diferente da origem`);
       if (d.nome !== undefined && (typeof d.nome?.[lang] !== 'string' || (!Object.hasOwn(NOMES_EO1,chave) && /\d/.test(d.nome[lang])))) erros.push(`${chave} · ${lang}: o nome da família falta ou traz um algarismo`);
     }
   }

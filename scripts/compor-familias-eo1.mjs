@@ -1,3 +1,5 @@
+import {temAlgarismoLivre} from '../src/lib/algarismos-definicoes.mjs';
+import {temAlgarismoLivreEo1} from '../src/lib/definicoes-eo1.mjs';
 /** Acrescenta só as famílias EO1, preservando as declarações das outras corridas. */
 import fs from 'node:fs';
 import assert from 'node:assert/strict';
@@ -17,12 +19,14 @@ for(const e of FAMILIAS_EO1) {
   const rows=[...claims.values()].filter(c=>e.chaves.includes(family(c.id)));
   assert(rows.length,`família sem linhas: ${e.chaves}`);
   for(const part of e.partes) {
+    for(const lang of ['pt','en']) assert(!temAlgarismoLivreEo1(part[lang],e.chaves[0],lang),`${e.chaves} ${lang}: algarismo livre na definição`);
     for(const a of part.apoios) for(const c of rows) {
       if(a.origem) { assert(ORIGENS_DAS_DEFINICOES[a.origem]?.[a.campo]?.includes(a.literal),'origem sem literal'); continue; }
       const value=a.campo.split('.').reduce((o,k)=>o?.[k],c);
       assert(a.literal.trim().length>=4 && typeof value==='string' && value.includes(a.literal),`${c.id}: apoio ausente ${a.campo} ${a.literal}`);
     }
   }
+  for(const lang of ['pt','en']) for(const p of e.complemento?.[lang]??[]) if(typeof p==='string') assert(!temAlgarismoLivre(p),`${e.chaves} ${lang}: algarismo livre no complemento`);
   const frase={pt:[e.partes.map(p=>p.pt).join('')],en:[e.partes.map(p=>p.en).join('')]};
   for(const k of e.chaves) declared[k]={nome:e.nome,frase,...(e.complemento?{complemento:e.complemento}:{}),...(e.origens.length?{origens:e.origens}:{})};
 }

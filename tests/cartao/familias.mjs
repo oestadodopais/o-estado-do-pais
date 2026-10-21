@@ -1,3 +1,5 @@
+import {temAlgarismoLivreEo1,origemDaDefinicaoConfere,errosDaDefinicaoEo1} from '../../src/lib/definicoes-eo1.mjs';
+import {temAlgarismoLivre} from '../../src/lib/algarismos-definicoes.mjs';
 import {NOMES_EO1} from '../../src/data/nomes-eo1.mjs';
 import {conferirPalavrasSaude} from './v2ah-palavras.mjs';
 import { conferirPublicador } from './publicador-da-definicao.mjs';
@@ -223,16 +225,17 @@ export function conferirAuditoriaDasFamilias({
   for (const k of Object.keys(doConcelho)) if (!linhasDe.has(`concelho:${k}`)) falha(`a declaração tem a medida dos concelhos «${k}», que nenhuma linha tem`);
 
   /* NENHUM ALGARISMO NAS FRASES DAS FAMÍLIAS: a declaração inteira, e as notas das medidas dos concelhos. */
-  const semAlgarismo = (/** @type {unknown} */ x, /** @type {string} */ onde) => {
+  const semAlgarismo = (/** @type {unknown} */ x, /** @type {string} */ onde, eo1 = false) => {
     for (const p of Array.isArray(x) ? x : [x]) {
       const t = typeof p === 'string' ? p : /** @type {any} */ (p)?.termo;
       if (typeof t !== 'string') { falha(`${onde}: um pedaço que não é texto nem termo de outra língua`); continue; }
-      if (/\d/.test(t)) falha(`${onde}: a palavra fixa «${curto(t)}» traz um algarismo`);
+      if (eo1 ? temAlgarismoLivreEo1(t, onde.split(' · ')[0], onde.endsWith(' · en') ? 'en' : 'pt') : /\d/.test(t)) falha(`${onde}: a palavra fixa «${curto(t)}» traz um algarismo`);
     }
   };
   for (const [k, d] of Object.entries(familias)) {
     for (const lang of ['pt', 'en']) {
-      if (d.frase && !NOMES_EO1[k]) semAlgarismo(d.frase[lang], `${k} · ${lang}`);
+      if (d.frase) semAlgarismo(d.frase[lang], `${k} · ${lang}`, Boolean(NOMES_EO1[k]));
+      if (NOMES_EO1[k] && /\d/.test(d.nome?.[lang] ?? '') && d.nome[lang] !== NOMES_EO1[k][lang]) falha(`${k} · ${lang}: nome com algarismos diferente da origem`);
       if (d.nome && !NOMES_EO1[k] && /\d/.test(d.nome[lang] ?? '')) falha(`${k} · ${lang}: o nome da família traz um algarismo`);
     }
   }
@@ -361,7 +364,7 @@ export function conferirAuditoriaDasFamilias({
     }
     if(JSON.stringify(e.complemento)!==JSON.stringify(familias[chaves[0]]?.complemento))falha(`${quem}: complemento diferente da auditoria`);
     for(const lang of ['pt','en'])for(const p of e.complemento?.[lang]??[]) {
-      if(typeof p==='string') {if(!chaves.every(k=>NOMES_EO1[k]) && /\d/.test(p))falha(`${quem}: complemento com algarismo fixo`);continue;}
+      if(typeof p==='string') {if(chaves.every(k=>NOMES_EO1[k]) ? temAlgarismoLivre(p) : /\d/.test(p))falha(`${quem}: complemento com algarismo fixo`);continue;}
       if(p?.apoio) {
         const {origem,campo}=p.apoio;
         if(Object.keys(p).length!==1||Object.keys(p.apoio).length!==2||!['quadro','documento','documento_en','pagina_pdf'].includes(campo)||typeof origens[origem]?.[campo]!=='string'||!e.origens?.includes(origem))falha(`${quem}: complemento com campo de apoio sem origem`);
@@ -614,10 +617,11 @@ export function conferirCabecaDoRecibo(cabeca, id, lang, { ctx, cartoes, porConf
   /* CADA ALGARISMO NUMA MARCA DE ORIGEM; nas frases das famílias, nenhum. */
   const anda = (/** @type {any} */ n) => {
     if (n.nodeType === NodeType.TEXT_NODE) {
-      if (/\d/.test(n.text) && !NOMES_EO1[id]) {
+      if (NOMES_EO1[id] ? temAlgarismoLivre(n.text) : /\d/.test(n.text)) {
         let marcado = false, tokenComparado = false, tokenDoComplemento = false;
         for (let p = n.parentNode; p && p !== el.parentNode; p = p.parentNode) {
           const a = p.attributes ?? {};
+          if (NOMES_EO1[id] && origemDaDefinicaoConfere(p,id,lang)) {marcado=true;tokenDoComplemento=true;break;}
           if ('data-claim' in a || 'data-nonledger' in a || 'data-linha-campo' in a || 'data-verbatim' in a) { marcado = true; const c=ctx.familias[f.chave]?.compara; tokenComparado=Boolean(c && [c.a,c.b].includes(a['data-claim'])); tokenDoComplemento=(ctx.familias[f.chave]?.complemento?.[lang]??[]).some(t=>typeof t==='object'&&((t.apoio&&`origem-${t.apoio.origem}-${t.apoio.campo}`===a['data-verbatim'])||(t.claim&&t.claim===a['data-claim'])||(t.periodo&&t.periodo===a['data-de-linha']&&a['data-de-campo']==='reference_date')||(t.excerto&&t.excerto===a['data-linha-claim']&&a['data-linha-campo']==='excerpt'))); break; }
         }
         const dataDoInstantaneo = ctx.familias[f.chave]?.instantaneo && n.parentNode?.matches?.('[data-nonledger="data-da-linha"][data-de-campo="document.computed_over.files.0.snapshot_date"]') && n.parentNode.getAttribute('data-de-linha') === id;
@@ -628,6 +632,7 @@ export function conferirCabecaDoRecibo(cabeca, id, lang, { ctx, cartoes, porConf
     for (const x of n.childNodes ?? []) anda(x);
   };
   anda(el);
+  if(NOMES_EO1[id]) for(const erro of errosDaDefinicaoEo1(oQueE,id,lang)) falha(erro);
   /* O TÍTULO: o nome do recibo e, numa medida dos 308, o concelho. */
   const nome = ctx.nomeDoRecibo(id, lang);
   const h1 = cabeca.querySelector('h1');
