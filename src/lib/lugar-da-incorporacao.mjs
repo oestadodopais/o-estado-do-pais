@@ -50,6 +50,9 @@ const ESTUDOS_DO_PAIS = new Set([
   'which-door-is-yours', 'penalizacoes-por-reforma-antecipada-2026',
   'evolucao-de-portugal-desde-1981', 'concelhos-2026',
   'orcamento-2027-o-que-muda-e-para-quem',
+  // A correção EX4-b (21.10.2026): o estudo interno das 83 linhas do Mapa 2 (o manifesto pf1 do motor), o subsetor da
+  // Administração Central do Estado português.
+  'oe-2027-funcoes',
 ]);
 const APURAMENTOS_DO_PAIS = new Set(['municipios-portugal-caop-2025',
   'municipios-com-estudo-aprofundado', 'municipios-sem-estudo-aprofundado']);

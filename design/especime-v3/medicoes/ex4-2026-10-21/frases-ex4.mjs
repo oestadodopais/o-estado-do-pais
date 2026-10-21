@@ -1,27 +1,38 @@
 /**
- * AS FRASES DA EXPLICAÇÃO DE 2027 COMO O RESOLVEDOR AS RENDE (bloco EX4, 21.10.2026), nas duas edições, com as linhas
- * que cada parágrafo cita. Não são lidas de `dist/`: a construção não corre com as linhas do PF1 no livro (o
- * `ledger:check` recusa o campo `period` das 83 linhas, a regra 7 de `src/lib/ledger.mjs`), e por isso a página não
- * existe; isto é o que o resolvedor que a página usaria devolve. Corre-se da raiz:
+ * AS FRASES DA EXPLICAÇÃO DE 2027 COMO O `dist/` AS IMPRIME (bloco EX4, 21.10.2026; lidas do `dist/` desde a correção
+ * EX4-b), nas duas edições: o título, os títulos das secções, os parágrafos, os títulos das figuras e as portas do fim,
+ * pela ordem da página, tirados de dentro de `<main>`. Uma página que o `dist/` não tem fica `ausente` (sai com 1), e ao
+ * lado vai, para as duas edições, o texto que o resolvedor devolve (`resolvedor`), que é o que a página imprime quando
+ * existe. Corre-se da raiz, depois da construção:
  * `node design/especime-v3/medicoes/ex4-2026-10-21/frases-ex4.mjs [--json <ficheiro>]`.
  */
 import fs from 'node:fs';
 import { explicacaoResolvida, textoDosPedacosDaExplicacao } from '../../../../src/lib/explicacoes.mjs';
 
-const ids = (/** @type {any[]} */ pedacos) => [...new Set(pedacos.flatMap((p) => (typeof p === 'string' ? [] : 'claim' in p ? [p.claim] : 'data' in p ? [p.data.id] : 'nome' in p ? [p.nome.id] : 'verbatim' in p ? [`verbatim:${p.verbatim}`] : [])))];
-const out = {};
-for (const lang of /** @type {const} */ (['pt', 'en'])) {
-  const e = explicacaoResolvida('dinheiro-do-estado-2027', lang);
-  const blocos = [{ onde: 'titulo', texto: e.tituloTexto, linhas: ids(e.titulo) }];
-  for (const p of e.abertura) blocos.push({ onde: p.caminho, texto: textoDosPedacosDaExplicacao(p.pedacos, lang), linhas: ids(p.pedacos) });
-  for (const s of e.seccoes) {
-    blocos.push({ onde: `secao:${s.id}`, texto: s.titulo, linhas: ids(s.tituloPedacos) });
-    for (const b of s.blocos) if (b.tipo === 'paragrafo') blocos.push({ onde: b.caminho, texto: textoDosPedacosDaExplicacao(b.pedacos, lang), linhas: ids(b.pedacos) });
-  }
-  for (const p of e.naoDiz) blocos.push({ onde: p.caminho, texto: textoDosPedacosDaExplicacao(p.pedacos, lang), linhas: ids(p.pedacos) });
-  for (const p of e.portas) blocos.push({ onde: `porta:${p.rota}`, texto: `${p.texto} → ${p.href}`, linhas: [] });
-  /** @type {any} */ (out)[lang] = { blocos, sinais: e.sinais };
+const PAGINAS = { pt: 'dist/explicacoes/dinheiro-do-estado-2027/index.html', en: 'dist/en/explainers/dinheiro-do-estado-2027/index.html' };
+const ENT = { '&amp;': '&', '&lt;': '<', '&gt;': '>', '&quot;': '"', '&#39;': "'", '&#x27;': "'", '&nbsp;': ' ' };
+const texto = (/** @type {string} */ h) => h.replace(/<[^>]+>/g, '').replace(/&(?:amp|lt|gt|quot|nbsp|#39|#x27);/g, (m) => /** @type {any} */ (ENT)[m]).replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(Number(n))).replace(/\s+/g, ' ').trim();
+/** @param {string} html */
+function blocos(html) {
+  const main = /<main\b[\s\S]*?<\/main>/.exec(html)?.[0];
+  if (!main) throw new Error('a página não tem <main>');
+  const sem = main.replace(/<(script|style|svg)\b[\s\S]*?<\/\1>/g, '');
+  const out = [];
+  for (const m of sem.matchAll(/<(h1|h2|p|figcaption|caption)\b[^>]*>([\s\S]*?)<\/\1>/g)) { const t = texto(m[2]); if (t) out.push({ tag: m[1], texto: t }); }
+  return out;
+}
+const out = /** @type {Record<string, any>} */ ({});
+for (const [lang, rel] of Object.entries(PAGINAS)) {
+  const e = explicacaoResolvida('dinheiro-do-estado-2027', /** @type {'pt'|'en'} */ (lang));
+  const resolvedor = [e.tituloTexto, ...e.abertura.map((/** @type {any} */ p) => textoDosPedacosDaExplicacao(p.pedacos, lang))];
+  for (const s of e.seccoes) { resolvedor.push(s.titulo); for (const b of s.blocos) resolvedor.push(b.tipo === 'figura' ? String(b.modelo.titulo) : textoDosPedacosDaExplicacao(b.pedacos, lang)); }
+  resolvedor.push(...e.naoDiz.map((/** @type {any} */ p) => textoDosPedacosDaExplicacao(p.pedacos, lang)));
+  out[lang] = fs.existsSync(rel) ? { pagina: rel, blocos: blocos(fs.readFileSync(rel, 'utf8')), resolvedor } : { pagina: rel, ausente: true, resolvedor };
 }
 const j = process.argv.indexOf('--json');
 if (j > 0) fs.writeFileSync(process.argv[j + 1], JSON.stringify(out, null, 2) + '\n');
-for (const lang of ['pt', 'en']) for (const b of /** @type {any} */ (out)[lang].blocos) console.log(`[${lang}] ${b.onde}: ${b.texto}`);
+for (const lang of Object.keys(out)) {
+  if (out[lang].ausente) { console.log(`[${lang}] ${out[lang].pagina}: ausente do dist/; o resolvedor:`); for (const t of out[lang].resolvedor) console.log(`[${lang}] resolvedor: ${t}`); }
+  else for (const b of out[lang].blocos) console.log(`[${lang}] ${b.tag}: ${b.texto}`);
+}
+if (Object.values(out).some((x) => x.ausente)) process.exit(1);

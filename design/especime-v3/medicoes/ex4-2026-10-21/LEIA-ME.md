@@ -1,5 +1,7 @@
 # EX4 · a explicação «Para onde vai o dinheiro do Estado em 2027, pela proposta de Orçamento» (21.10.2026)
 
+*A correção EX4-b (21.10.2026) está na secção do mesmo nome, no fim.*
+
 *Construtor: Claude Opus 5.5 (`construtor`), ramo `ex4-2026-10-21`, cortado de `main` em `2fe7cc24c`; motor em `pf1-2026-10-21`, cabeça `1777833`. Por ler a frio.*
 
 ## Onde parou, e porquê
@@ -105,3 +107,102 @@ Os `a-*` são da cabeça do primeiro commit (a gramática, sem a explicação no
 ## O custo
 
 Setenta chamadas de ferramentas até este commit, contadas pelo construtor no seu registo (o orçamento era cem); uma construção do sítio, de 16:05:01 a 16:07:17 UTC, pela hora escrita antes e depois dela.
+
+## A correção EX4-b (21.10.2026, Claude Opus 5.5, `construtor`)
+
+*O mandato é `CORRECAO-EX4-b-2026-10-21.md` do lugar de direção, com o §2 revisto do mandato EX4 como texto em vigor.*
+
+### O que mudou para o leitor
+
+- As 83 linhas do PF1 foram reexportadas do motor (`7110e86`, o manifesto sem `period`): o ano é o `reference_date` («2026» ou «2027»). `ledger:check` e `check:cruzamento --with-origin` a zero.
+- O texto da explicação é o do §2 revisto, nas duas edições: o mapa chama-se «o mapa da classificação funcional», a subfunção tem o nome que o mapa lhe dá, a abertura diz só os dois números (sem o comparativo «mais de metade»), a frase da Segurança Social voltou sem o número, e as duas figuras `barras-do-livro` voltaram com os títulos do §2 (dez linhas `F27` na secção 1, dez `S27` na secção 2). Os acertos EX4-A1 e EX4-A2 saíram; ficam EX4-A3 (só os anos por `{ periodo }`), EX4-A4 e EX4-A5. `acertos-ex4.mjs`: 28 frases do mandato, 28 iguais na página, nenhuma fora.
+- Saíram as três entradas de `src/data/verbatim.mjs` («2», «2», «01.7»), o mecanismo `IDENTIFICADORES_SELADOS` de `src/lib/explicacoes.mjs`, o ramo dos identificadores da célula X e as duas plantas deles em `plantas-ex4.mjs`.
+- `scripts/gate-html.mjs`: uma cadeia só de algarismos deixa de ser cadeia reconhecida da cabeça (sai de `CADEIAS_HEAD` antes da conta), com uma planta em memória que fecha o portão se a regra deixar de reconhecer «2», «01.7» e «352 472 389 960» ou passar a reconhecer «UE-27», «Mapa 2» ou o nome do sítio. Não recusa a entrada em `verbatim.mjs` porque `VERBATIM` tem hoje dezoito outras cadeias só de algarismos pela mesma regra (contadas por `node -e` sobre `src/data/verbatim.mjs` com a expressão do portão: as páginas «6», «106», «268» e outras, o total «352 472 389 960», os quadros «5.37» e «4.25»), que a construção usa; tirá-las da cabeça é o que protege a conta dos algarismos sem as partir. Efeito por provar no `dist/`: um algarismo que estas cadeias apagavam em silêncio numa cabeça passa a contar.
+- `src/lib/formas/barras-do-livro.mjs` (e a F22 em `tests/formas/barras-do-livro.mjs`) leem também os nomes do PF1 (`NOMES_PF1`), sem o que as figuras novas fechavam a construção.
+- As famílias de «o que é cada número» das 83 linhas, pelo compositor `scripts/compor-familias-pf1.mjs`, com a auditoria em `tests/cartao/leituras-provadas.json`. A função entra pelo código que o `excerpt` da linha lida imprime (nas derivadas, pela linha lida de `derived_from`), com o nome do projeto da função de 2026 (`NOMES_OE1`), e o compositor confere que é o nome da fonte em minúsculas (as dez conferem); o documento pela `document.edition` («Proposta de Lei …» ou «Lei n.º …»); o ano por `{ periodo }`; nas variações, os dois anos pelas duas linhas de `derived_from`.
+- `src/lib/lugar-da-incorporacao.mjs`: o estudo interno `oe-2027-funcoes` entra em `ESTUDOS_DO_PAIS` (lugar «Portugal»); as 83 linhas resolvem o lugar nas duas edições (166 de 166, `codigos/b-lugar-pf1.code`).
+
+### Onde parou, e porquê
+
+A única corrida de `npm run build` saiu com 1: o pré-desenho do Astro parou no recibo `/en/ledger/der-oe2027-despesa-sem-divida-variacao-pct` com «ER1 lugar: a linha der-oe2027-despesa-sem-divida-variacao-pct não tem lugar declarado», uma causa que o diagnóstico da correção não previa e que não é o inventário das frases. Corrigi a causa na fonte (acima) e provei-a por guião sobre as 83 linhas, mas não corri a construção outra vez: o lançamento só permite uma segunda corrida quando a causa única é o inventário. Por isso não há prova no `dist/` de `gate:html`, `check:graficos`, `check:voz` (e o inventário, se o pedir), da célula X5 (as duas páginas construídas), dos 166 recibos da K17 em `check:cartao` (os únicos 166 defeitos que restam são «o recibo não está construído»), nem do bloco «Para perceber». O `dist/` ficou parcial: tem a página inglesa da explicação e não a portuguesa.
+
+### As frases
+
+A edição portuguesa não está no `dist/`; é o que o resolvedor devolve (o que a página imprime quando existe), por `frases-ex4.mjs`:
+
+- Para onde vai o dinheiro do Estado em 2027, pela proposta de Orçamento
+- A proposta de Orçamento do Estado para 2027, entregue ao Parlamento a 08.10.2026, traz, entre os seus mapas, o da classificação funcional das despesas da Administração Central. Esse mapa soma 372 293 363 352 euros, e 176 530 309 000 euros desse total são a subfunção a que o mapa chama «operações relacionadas com a dívida pública». Tirando essa subfunção, sobram 195 763 054 352 euros. De cada cem euros desses, 25,16 vão para a saúde, 24,58 para os assuntos económicos, 20,44 para os serviços gerais das administrações públicas, sem as operações relacionadas com a dívida pública, 12,54 para a proteção social e 7,17 para a educação. A maior fatia é a da saúde.
+- Por função, como o mapa a escreve
+- As dez funções, de cada cem euros da despesa total do mapa funcional da proposta (a Administração Central, não consolidada, com as operações relacionadas com a dívida pública)
+- Lido como o mapa o escreve, 58,17 de cada cem euros vão para os serviços gerais das administrações públicas, porque a subfunção das operações relacionadas com a dívida pública está dentro dessa função; a saúde leva 13,23, os assuntos económicos 12,93, a proteção social 6,59 e a educação 3,77. A segurança e ordem pública leva 1,73, a defesa 1,24, a habitação e infraestruturas coletivas 1,18, a proteção do ambiente 0,76 e o desporto, recreação, cultura e religião 0,41.
+- Sem as operações relacionadas com a dívida pública
+- As dez funções, de cada cem euros da despesa do mapa sem a subfunção das operações relacionadas com a dívida pública (a conta deste projeto, declarada no recibo de cada linha)
+- Esta conta é deste projeto: a despesa total do mapa menos a subfunção das operações relacionadas com a dívida pública, e cada função a dividir por esse resto; o recibo de cada linha mostra a conta. A segurança e ordem pública leva 3,30 de cada cem euros, a defesa 2,35, a habitação e infraestruturas coletivas 2,24, a proteção do ambiente 1,45 e o desporto, recreação, cultura e religião 0,77.
+- O que muda da lei de 2026 para a proposta de 2027
+- A comparação certa é o mesmo mapa da Lei do Orçamento para 2026: o mesmo perímetro, a mesma unidade. A despesa total do mapa passa de 352 472 389 960 euros para 372 293 363 352 euros, uma variação de 5,6 %; sem as operações relacionadas com a dívida pública, passa de 177 454 923 960 euros para 195 763 054 352 euros, 10,3 %. Por função, em euros: os assuntos económicos variam 32,2 %, a saúde 3,6 %, a proteção social 4,7 %, a educação −0,2 %, a defesa −8,0 %, a proteção do ambiente −10,2 % e o desporto, recreação, cultura e religião −6,4 %. A função que mais cresce é a dos assuntos económicos. O que está dentro de cada função, medida a medida, lê-se no estudo do Orçamento.
+- A Saúde: a função e o programa
+- A função saúde do mapa, 49 259 868 205 euros, não é o programa Saúde do Orçamento, 17 858,4 milhões de euros em 2027: o programa é consolidado e é um programa orçamental; a função é uma classificação da despesa, não consolidada, que conta as transferências entre serviços. As duas contas medem coisas diferentes, e nenhuma está errada.
+- Esta explicação lê o mapa de uma proposta: o que o Parlamento aprovar pode ser diferente, e o que se gasta de facto lê-se depois, na execução. O mapa é só o subsetor da Administração Central: a Segurança Social, com as pensões, tem o seu próprio mapa funcional, que não está aqui. Os valores não são consolidados, contam as transferências entre serviços, e por isso a despesa total do mapa é maior do que a despesa total consolidada, 259 633 860 562 euros em 2027. A conta «sem as operações relacionadas com a dívida pública» é deste projeto, declarada no recibo de cada linha; o mapa só dá o nome a essa subfunção, e esta explicação não diz o que entra nela. A base da explicação de 2026, a despesa efetiva consolidada por função dos dados abertos, ainda não existe para 2027; quando existir, esta explicação passa a essa base.
+
+A edição inglesa, lida do `dist/` parcial por `frases-ex4.mjs` (o texto «source · …» colado aos números é o rótulo do selo, que o guião não separa):
+
+- (p) Text generated by artificial intelligence, according to the Method.
+- (h1) Where the State’s money goes in 2027, by the Budget proposal
+- (p) The State Budget proposal for 2027, delivered to Parliament on 08.10.2026, carries, among its maps, the one of the functional classification of central administration expenditure. That map adds up to 372 293 363 352 eurossource · Ministério das Finanças / Entidade Orçamental (MF/EO), and 176 530 309 000 eurossource · Ministério das Finanças / Entidade Orçamental (MF/EO) of that total are the subfunction the map calls «operations related to public debt». Taking that subfunction out, 195 763 054 352 eurossource · calculated remain. Of every hundred euros of those, 25,16source · calculated go to health, 24,58source · calculated to economic affairs, 20,44source · calculated to general public services, without the operations related to public debt, 12,54source · calculated to social protection and 7,17source · calculated to education. The largest share is health.
+- (h2) By function, as the map writes it
+- (figcaption) The ten functions, of every hundred euros of the total expenditure in the proposal’s functional map (central administration, unconsolidated, with the operations related to public debt)
+- (p) Read as the map writes it, 58,17source · calculated of every hundred euros go to general public services, because the subfunction of the operations related to public debt sits inside that function; Health takes 13,23source · calculated, economic affairs 12,93source · calculated, social protection 6,59source · calculated and education 3,77source · calculated. Public order and safety takes 1,73source · calculated, defence 1,24source · calculated, housing and community amenities 1,18source · calculated, environmental protection 0,76source · calculated and recreation, culture and religion 0,41source · calculated.
+- (h2) Without the operations related to public debt
+- (figcaption) The ten functions, of every hundred euros of the map’s expenditure without the subfunction of the operations related to public debt (this project’s calculation, declared in each row’s receipt)
+- (p) This calculation is this project’s: the map’s total expenditure minus the subfunction of the operations related to public debt, and each function divided by that remainder; each row’s receipt shows the calculation. Public order and safety takes 3,30source · calculated of every hundred euros, defence 2,35source · calculated, housing and community amenities 2,24source · calculated, environmental protection 1,45source · calculated and recreation, culture and religion 0,77source · calculated.
+- (h2) What changes from the 2026 law to the 2027 proposal
+- (p) The right comparison is the same map of the Budget Law for 2026: the same perimeter, the same unit. The map’s total expenditure goes from 352 472 389 960 eurossource · Ministério das Finanças / Entidade Orçamental (MF/EO) to 372 293 363 352 eurossource · Ministério das Finanças / Entidade Orçamental (MF/EO), a change of 5,6 %source · calculated; without the operations related to public debt, it goes from 177 454 923 960 eurossource · calculated to 195 763 054 352 eurossource · calculated, 10,3 %source · calculated. By function, in euros: Economic affairs change by 32,2 %source · calculated, health by 3,6 %source · calculated, social protection by 4,7 %source · calculated, education by −0,2 %source · calculated, defence by −8,0 %source · calculated, environmental protection by −10,2 %source · calculated and recreation, culture and religion by −6,4 %source · calculated. The function that grows most is economic affairs. What sits inside each function, measure by measure, is read in the Budget study.
+- (h2) Health: the function and the programme
+- (p) The map’s health function, 49 259 868 205 eurossource · Ministério das Finanças / Entidade Orçamental (MF/EO), is not the Budget’s Health programme, 17 858,4 million eurossource · Ministério das Finanças in 2027: the programme is consolidated and is a budget programme; the function is a classification of expenditure, unconsolidated, which counts the transfers between services. The two accounts measure different things, and neither is wrong.
+- (p) What is being discussed about this → The Health budget for 2027: 3,0 % without the RRP or −1,5 % in total? Both counts, what changes inside it, and what went unsaid
+- (h2) What this does not say
+- (p) This explainer reads the map of a proposal: what Parliament approves may differ, and what is actually spent is read afterwards, in the budget execution. The map is only the central administration subsector: Social Security, with pensions, has its own functional map, which is not here. The values are unconsolidated, they count the transfers between services, and so the map’s total expenditure is larger than the consolidated total expenditure, 259 633 860 562 eurossource · Ministério das Finanças / Entidade Orçamental (MF/EO) in 2027. The calculation «without the operations related to public debt» is this project’s, declared in each row’s receipt; the map only names that subfunction, and this explainer does not say what goes into it. The basis of the 2026 explainer, consolidated effective expenditure by function from the open data, does not yet exist for 2027; when it does, this explainer moves to that basis.
+- (p) Numbers and sources → The 2027 Budget: what changes, and for whom → Where the State’s money goes in 2026 →
+
+### A frase «o que é» de uma linha de cada família (por `familias-ex4b.mjs`, pelo resolvedor, não do `dist/`)
+
+- `oe-2027-despesa-funcao-07-mapa`: PT «A despesa do subsetor da Administração Central nesta função, como o mapa da classificação funcional a imprime, em euros, não consolidada; aqui, saúde, a proposta de Orçamento, 2027»; EN «Central administration subsector expenditure in this function, as the functional classification map prints it, in euros, unconsolidated; here, health, the Budget proposal, 2027»
+- `oe-2026-despesa-funcao-07-mapa`: PT «A despesa do subsetor da Administração Central nesta função, como o mapa da classificação funcional a imprime, em euros, não consolidada; aqui, saúde, a Lei do Orçamento, 2026»; EN «Central administration subsector expenditure in this function, as the functional classification map prints it, in euros, unconsolidated; here, health, the Budget Law, 2026»
+- `oe-2027-despesa-subfuncao-01-7-mapa`: PT «A despesa do subsetor da Administração Central na subfunção das operações relacionadas com a dívida pública, como o mapa a imprime, em euros, não consolidada; aqui, a proposta de Orçamento, 2027»; EN «Central administration subsector expenditure in the subfunction of the operations related to public debt, as the map prints it, in euros, unconsolidated; here, the Budget proposal, 2027»
+- `oe-2027-despesa-total-mapa`: PT «A despesa total do mapa da classificação funcional, a soma das dez funções, como o mapa a imprime, em euros, não consolidada; aqui, a proposta de Orçamento, 2027»; EN «The total expenditure of the functional classification map, the sum of the ten functions, as the map prints it, in euros, unconsolidated; here, the Budget proposal, 2027»
+- `oe-2027-despesa-total-consolidada-mapa`: PT «A despesa total consolidada, como o mapa da classificação funcional a imprime, em euros; aqui, a proposta de Orçamento, 2027»; EN «Consolidated total expenditure, as the functional classification map prints it, in euros; here, the Budget proposal, 2027»
+- `oe-2027-cem-euros-funcao-07-mapa`: PT «O resultado é a parte desta função em cada cem euros da despesa total do mapa, com duas casas decimais; aqui, saúde, 2027»; EN «The result is this function’s share of every hundred euros of the map’s total expenditure, to two decimal places; here, health, 2027»
+- `oe-2027-cem-euros-funcao-07-sem-divida-mapa`: PT «O resultado é a parte desta função em cada cem euros da despesa do mapa sem a subfunção das operações relacionadas com a dívida pública, com duas casas decimais; aqui, saúde, 2027»; EN «The result is this function’s share of every hundred euros of the map’s expenditure without the subfunction of the operations related to public debt, to two decimal places; here, health, 2027»
+- `oe-2027-despesa-sem-divida-mapa`: PT «O resultado é a despesa total do mapa menos a subfunção das operações relacionadas com a dívida pública, em euros; aqui, 2027»; EN «The result is the map’s total expenditure minus the subfunction of the operations related to public debt, in euros; here, 2027»
+- `oe-2027-despesa-funcao-01-sem-divida-mapa`: PT «O resultado é a função dos serviços gerais das administrações públicas menos a subfunção das operações relacionadas com a dívida pública, em euros; aqui, 2027»; EN «The result is the general public services function minus the subfunction of the operations related to public debt, in euros; here, 2027»
+- `der-oe2027-funcao-07-variacao-pct`: PT «O resultado é a variação, em percentagem, da Lei do Orçamento para 2026 para a proposta de Orçamento para 2027, com uma casa decimal; aqui, saúde»; EN «The result is the change, in percent, from the Budget Law for 2026 to the Budget proposal for 2027, to one decimal place; here, health»
+- `der-oe2027-despesa-total-mapa-variacao-pct`: PT «O resultado é a variação, em percentagem, da Lei do Orçamento para 2026 para a proposta de Orçamento para 2027, com uma casa decimal; aqui, a despesa total do mapa»; EN «The result is the change, in percent, from the Budget Law for 2026 to the Budget proposal for 2027, to one decimal place; here, the map’s total expenditure»
+
+### Decisões pequenas do construtor (EX4-b)
+
+- As frases das famílias seguem o mandato da correção à letra, sem ponto final (o mandato não o escreve); «[documento], [ano]» rende-se «a proposta de Orçamento, 2027» e «a Lei do Orçamento, 2026», porque o documento com o ano por extenso repetia o ano.
+- A segunda frase de «O que isto não diz» tem na auditoria duas partes: «O mapa é só o subsetor da Administração Central:» é «diz», apoiada no título do documento; «a Segurança Social, com as pensões, tem o seu próprio mapa funcional, que não está aqui.» é «leitura», apoiada só no mesmo título. Nenhum campo selado das linhas que a explicação nomeia diz que a Segurança Social tem o seu mapa (o Mapa 7 está medido no LEIA-ME do PF1, não numa linha); é uma dívida para o lugar de direção.
+- Nas famílias das linhas lidas, «não consolidada» não está em nenhum campo da própria linha (está na estrutura do mapa, a linha «DESPESA TOTAL CONSOLIDADA» ao lado da «DESPESA TOTAL»); os apoios são o título do documento, o localizador da coluna e a unidade.
+- Na edição inglesa, «[nome: F27('07'), inicial] takes» depois de ponto e vírgula imprime «; Health takes», como o §2 pede; e os valores levam a vírgula decimal da fonte, como na explicação de 2026.
+
+### Os códigos da correção (lidos de `codigos/b-*.code`)
+
+| ficheiro | código |
+|---|---|
+| `codigos/b-acertos-ex4.code` | 0 |
+| `codigos/b-barras-do-livro.code` | 0 |
+| `codigos/b-build.code` | 1 |
+| `codigos/b-check-cartao.code` | 1 |
+| `codigos/b-check-cruzamento.code` | 0 |
+| `codigos/b-explicacao.code` | 1 |
+| `codigos/b-familias-ex4b.code` | 0 |
+| `codigos/b-frases-ex4.code` | 1 |
+| `codigos/b-ledger-check.code` | 0 |
+| `codigos/b-lugar-pf1.code` | 0 |
+| `codigos/b-plantas-ex4.code` | 0 |
+| `codigos/b-typecheck.code` | 0 |
+
+### O que fica
+
+- Uma segunda corrida de `npm run build`, decidida pelo lugar de direção, e depois sobre o `dist/`: `gate:html` (com a regra nova das cadeias só de algarismos), `check:graficos`, `check:voz` (com o inventário e a linha `ex4` em `REVISOES-DO-INVENTARIO.md` se os pedir), a célula X, `check:cartao`, o bloco «Para perceber» e a lista das explicações por `grep`, e `frases-ex4.mjs` nas duas edições.
+- A leitura a frio do bloco.

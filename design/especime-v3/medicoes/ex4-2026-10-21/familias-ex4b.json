@@ -1,0 +1,57 @@
+[
+  {
+    "id": "oe-2027-despesa-funcao-07-mapa",
+    "pt": "A despesa do subsetor da Administração Central nesta função, como o mapa da classificação funcional a imprime, em euros, não consolidada; aqui, saúde, a proposta de Orçamento, 2027",
+    "en": "Central administration subsector expenditure in this function, as the functional classification map prints it, in euros, unconsolidated; here, health, the Budget proposal, 2027"
+  },
+  {
+    "id": "oe-2026-despesa-funcao-07-mapa",
+    "pt": "A despesa do subsetor da Administração Central nesta função, como o mapa da classificação funcional a imprime, em euros, não consolidada; aqui, saúde, a Lei do Orçamento, 2026",
+    "en": "Central administration subsector expenditure in this function, as the functional classification map prints it, in euros, unconsolidated; here, health, the Budget Law, 2026"
+  },
+  {
+    "id": "oe-2027-despesa-subfuncao-01-7-mapa",
+    "pt": "A despesa do subsetor da Administração Central na subfunção das operações relacionadas com a dívida pública, como o mapa a imprime, em euros, não consolidada; aqui, a proposta de Orçamento, 2027",
+    "en": "Central administration subsector expenditure in the subfunction of the operations related to public debt, as the map prints it, in euros, unconsolidated; here, the Budget proposal, 2027"
+  },
+  {
+    "id": "oe-2027-despesa-total-mapa",
+    "pt": "A despesa total do mapa da classificação funcional, a soma das dez funções, como o mapa a imprime, em euros, não consolidada; aqui, a proposta de Orçamento, 2027",
+    "en": "The total expenditure of the functional classification map, the sum of the ten functions, as the map prints it, in euros, unconsolidated; here, the Budget proposal, 2027"
+  },
+  {
+    "id": "oe-2027-despesa-total-consolidada-mapa",
+    "pt": "A despesa total consolidada, como o mapa da classificação funcional a imprime, em euros; aqui, a proposta de Orçamento, 2027",
+    "en": "Consolidated total expenditure, as the functional classification map prints it, in euros; here, the Budget proposal, 2027"
+  },
+  {
+    "id": "oe-2027-cem-euros-funcao-07-mapa",
+    "pt": "O resultado é a parte desta função em cada cem euros da despesa total do mapa, com duas casas decimais; aqui, saúde, 2027",
+    "en": "The result is this function’s share of every hundred euros of the map’s total expenditure, to two decimal places; here, health, 2027"
+  },
+  {
+    "id": "oe-2027-cem-euros-funcao-07-sem-divida-mapa",
+    "pt": "O resultado é a parte desta função em cada cem euros da despesa do mapa sem a subfunção das operações relacionadas com a dívida pública, com duas casas decimais; aqui, saúde, 2027",
+    "en": "The result is this function’s share of every hundred euros of the map’s expenditure without the subfunction of the operations related to public debt, to two decimal places; here, health, 2027"
+  },
+  {
+    "id": "oe-2027-despesa-sem-divida-mapa",
+    "pt": "O resultado é a despesa total do mapa menos a subfunção das operações relacionadas com a dívida pública, em euros; aqui, 2027",
+    "en": "The result is the map’s total expenditure minus the subfunction of the operations related to public debt, in euros; here, 2027"
+  },
+  {
+    "id": "oe-2027-despesa-funcao-01-sem-divida-mapa",
+    "pt": "O resultado é a função dos serviços gerais das administrações públicas menos a subfunção das operações relacionadas com a dívida pública, em euros; aqui, 2027",
+    "en": "The result is the general public services function minus the subfunction of the operations related to public debt, in euros; here, 2027"
+  },
+  {
+    "id": "der-oe2027-funcao-07-variacao-pct",
+    "pt": "O resultado é a variação, em percentagem, da Lei do Orçamento para 2026 para a proposta de Orçamento para 2027, com uma casa decimal; aqui, saúde",
+    "en": "The result is the change, in percent, from the Budget Law for 2026 to the Budget proposal for 2027, to one decimal place; here, health"
+  },
+  {
+    "id": "der-oe2027-despesa-total-mapa-variacao-pct",
+    "pt": "O resultado é a variação, em percentagem, da Lei do Orçamento para 2026 para a proposta de Orçamento para 2027, com uma casa decimal; aqui, a despesa total do mapa",
+    "en": "The result is the change, in percent, from the Budget Law for 2026 to the Budget proposal for 2027, to one decimal place; here, the map’s total expenditure"
+  }
+]

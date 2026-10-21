@@ -1,272 +1,109 @@
 {
   "pt": {
-    "blocos": [
-      {
-        "onde": "titulo",
-        "texto": "Para onde vai o dinheiro do Estado em 2027, pela proposta de Orçamento",
-        "linhas": [
-          "oe-2027-cem-euros-funcao-01-mapa"
-        ]
-      },
-      {
-        "onde": "abertura[0]",
-        "texto": "A proposta de Orçamento do Estado para 2027, entregue ao Parlamento a 08.10.2026, traz um mapa da despesa da Administração Central por função, o Mapa 2. Esse mapa soma 372 293 363 352 euros, e menos de metade desse total, 176 530 309 000 euros, é a subfunção a que o mapa chama «operações relacionadas com a dívida pública». Tirando essa subfunção, sobram 195 763 054 352 euros. De cada cem euros desses, 25,16 vão para a saúde, 24,58 para os assuntos económicos, 20,44 para os serviços gerais das administrações públicas, sem as operações relacionadas com a dívida pública, 12,54 para a proteção social e 7,17 para a educação. A maior fatia é a da saúde.",
-        "linhas": [
-          "oe-2027-cem-euros-funcao-01-mapa",
-          "oe-2027-calendario-entrega",
-          "verbatim:pf1-mapa-2027-numero",
-          "oe-2027-despesa-total-mapa",
-          "oe-2027-despesa-subfuncao-01-7-mapa",
-          "oe-2027-despesa-sem-divida-mapa",
-          "oe-2027-cem-euros-funcao-07-sem-divida-mapa",
-          "oe-2027-cem-euros-funcao-04-sem-divida-mapa",
-          "oe-2027-cem-euros-funcao-01-sem-divida-mapa",
-          "oe-2027-cem-euros-funcao-10-sem-divida-mapa",
-          "oe-2027-cem-euros-funcao-09-sem-divida-mapa"
-        ]
-      },
-      {
-        "onde": "secao:como-o-mapa-a-escreve",
-        "texto": "Por função, como o mapa a escreve",
-        "linhas": []
-      },
-      {
-        "onde": "seccoes[0].conteudo[0].paragrafo",
-        "texto": "Lido como o mapa o escreve, 58,17 de cada cem euros vão para os serviços gerais das administrações públicas, porque a subfunção das operações relacionadas com a dívida pública está dentro dessa função; a saúde leva 13,23, os assuntos económicos 12,93, a proteção social 6,59 e a educação 3,77. A segurança e ordem pública leva 1,73, a defesa 1,24, a habitação e infraestruturas coletivas 1,18, a proteção do ambiente 0,76 e o desporto, recreação, cultura e religião 0,41.",
-        "linhas": [
-          "oe-2027-cem-euros-funcao-01-mapa",
-          "oe-2027-cem-euros-funcao-07-mapa",
-          "oe-2027-cem-euros-funcao-04-mapa",
-          "oe-2027-cem-euros-funcao-10-mapa",
-          "oe-2027-cem-euros-funcao-09-mapa",
-          "oe-2027-cem-euros-funcao-03-mapa",
-          "oe-2027-cem-euros-funcao-02-mapa",
-          "oe-2027-cem-euros-funcao-06-mapa",
-          "oe-2027-cem-euros-funcao-05-mapa",
-          "oe-2027-cem-euros-funcao-08-mapa"
-        ]
-      },
-      {
-        "onde": "secao:sem-a-divida",
-        "texto": "Sem as operações relacionadas com a dívida pública",
-        "linhas": []
-      },
-      {
-        "onde": "seccoes[1].conteudo[0].paragrafo",
-        "texto": "Esta conta é deste projeto: a despesa total do mapa menos a subfunção 01.7, e cada função a dividir por esse resto; o recibo de cada linha mostra a conta. A segurança e ordem pública leva 3,30 de cada cem euros, a defesa 2,35, a habitação e infraestruturas coletivas 2,24, a proteção do ambiente 1,45 e o desporto, recreação, cultura e religião 0,77.",
-        "linhas": [
-          "verbatim:pf1-subfuncao-01-7-codigo",
-          "oe-2027-cem-euros-funcao-03-sem-divida-mapa",
-          "oe-2027-cem-euros-funcao-02-sem-divida-mapa",
-          "oe-2027-cem-euros-funcao-06-sem-divida-mapa",
-          "oe-2027-cem-euros-funcao-05-sem-divida-mapa",
-          "oe-2027-cem-euros-funcao-08-sem-divida-mapa"
-        ]
-      },
-      {
-        "onde": "secao:o-que-muda",
-        "texto": "O que muda da lei de 2026 para a proposta de 2027",
-        "linhas": [
-          "oe-2026-cem-euros-funcao-01-mapa",
-          "oe-2027-cem-euros-funcao-01-mapa"
-        ]
-      },
-      {
-        "onde": "seccoes[2].conteudo[0].paragrafo",
-        "texto": "A comparação certa é o Mapa 2 da Lei do Orçamento para 2026: o mesmo mapa, o mesmo perímetro, a mesma unidade. A despesa total do mapa passa de 352 472 389 960 euros para 372 293 363 352 euros, uma variação de 5,6 %; sem as operações relacionadas com a dívida pública, passa de 177 454 923 960 euros para 195 763 054 352 euros, 10,3 %. Por função, em euros: os assuntos económicos variam 32,2 %, a saúde 3,6 %, a proteção social 4,7 %, a educação −0,2 %, a defesa −8,0 %, a proteção do ambiente −10,2 % e o desporto, recreação, cultura e religião −6,4 %. A função que mais cresce é a dos assuntos económicos. O que está dentro de cada função, medida a medida, lê-se no estudo do Orçamento.",
-        "linhas": [
-          "verbatim:pf1-mapa-2026-numero",
-          "oe-2026-cem-euros-funcao-01-mapa",
-          "oe-2026-despesa-total-mapa",
-          "oe-2027-despesa-total-mapa",
-          "der-oe2027-despesa-total-mapa-variacao-pct",
-          "oe-2026-despesa-sem-divida-mapa",
-          "oe-2027-despesa-sem-divida-mapa",
-          "der-oe2027-despesa-sem-divida-variacao-pct",
-          "der-oe2027-funcao-04-variacao-pct",
-          "der-oe2027-funcao-07-variacao-pct",
-          "der-oe2027-funcao-10-variacao-pct",
-          "der-oe2027-funcao-09-variacao-pct",
-          "der-oe2027-funcao-02-variacao-pct",
-          "der-oe2027-funcao-05-variacao-pct",
-          "der-oe2027-funcao-08-variacao-pct"
-        ]
-      },
-      {
-        "onde": "secao:saude",
-        "texto": "A Saúde: a função e o programa",
-        "linhas": []
-      },
-      {
-        "onde": "seccoes[3].conteudo[0].paragrafo",
-        "texto": "A função saúde do mapa, 49 259 868 205 euros, não é o programa Saúde do Orçamento, 17 858,4 milhões de euros em 2027: o programa é consolidado e é um programa orçamental; a função é uma classificação da despesa, não consolidada, que conta as transferências entre serviços. As duas contas medem coisas diferentes, e nenhuma está errada.",
-        "linhas": [
-          "oe-2027-cem-euros-funcao-07-mapa",
-          "oe-2027-despesa-funcao-07-mapa",
-          "oe-2027-saude-despesa-total-consolidada-2027"
-        ]
-      },
-      {
-        "onde": "naoDiz[0]",
-        "texto": "Esta explicação lê o Mapa 2 de uma proposta: o que o Parlamento aprovar pode ser diferente, e o que se gasta de facto lê-se depois, na execução. Os valores não são consolidados, contam as transferências entre serviços, e por isso a despesa total do mapa é maior do que a despesa total consolidada, 259 633 860 562 euros em 2027. A conta «sem as operações relacionadas com a dívida pública» é deste projeto, declarada no recibo de cada linha; o mapa só dá o nome a essa subfunção, e esta explicação não diz o que entra nela. A base da explicação de 2026, a despesa efetiva consolidada por função dos dados abertos, ainda não existe para 2027; quando existir, esta explicação passa a essa base.",
-        "linhas": [
-          "verbatim:pf1-mapa-2027-numero",
-          "oe-2027-despesa-total-consolidada-mapa",
-          "oe-2026-cem-euros-funcao-01",
-          "oe-2027-cem-euros-funcao-01-mapa"
-        ]
-      },
-      {
-        "onde": "porta:livro",
-        "texto": "Números e fontes → /livro-razao",
-        "linhas": []
-      },
-      {
-        "onde": "porta:estudo",
-        "texto": "O Orçamento de 2027: o que muda e para quem → /estudos/orcamento-2027-o-que-muda-e-para-quem",
-        "linhas": []
-      },
-      {
-        "onde": "porta:explicacao",
-        "texto": "Para onde vai o dinheiro do Estado em 2026 → /explicacoes/dinheiro-do-estado-2026",
-        "linhas": []
-      }
-    ],
-    "sinais": []
+    "pagina": "dist/explicacoes/dinheiro-do-estado-2027/index.html",
+    "ausente": true,
+    "resolvedor": [
+      "Para onde vai o dinheiro do Estado em 2027, pela proposta de Orçamento",
+      "A proposta de Orçamento do Estado para 2027, entregue ao Parlamento a 08.10.2026, traz, entre os seus mapas, o da classificação funcional das despesas da Administração Central. Esse mapa soma 372 293 363 352 euros, e 176 530 309 000 euros desse total são a subfunção a que o mapa chama «operações relacionadas com a dívida pública». Tirando essa subfunção, sobram 195 763 054 352 euros. De cada cem euros desses, 25,16 vão para a saúde, 24,58 para os assuntos económicos, 20,44 para os serviços gerais das administrações públicas, sem as operações relacionadas com a dívida pública, 12,54 para a proteção social e 7,17 para a educação. A maior fatia é a da saúde.",
+      "Por função, como o mapa a escreve",
+      "As dez funções, de cada cem euros da despesa total do mapa funcional da proposta (a Administração Central, não consolidada, com as operações relacionadas com a dívida pública)",
+      "Lido como o mapa o escreve, 58,17 de cada cem euros vão para os serviços gerais das administrações públicas, porque a subfunção das operações relacionadas com a dívida pública está dentro dessa função; a saúde leva 13,23, os assuntos económicos 12,93, a proteção social 6,59 e a educação 3,77. A segurança e ordem pública leva 1,73, a defesa 1,24, a habitação e infraestruturas coletivas 1,18, a proteção do ambiente 0,76 e o desporto, recreação, cultura e religião 0,41.",
+      "Sem as operações relacionadas com a dívida pública",
+      "As dez funções, de cada cem euros da despesa do mapa sem a subfunção das operações relacionadas com a dívida pública (a conta deste projeto, declarada no recibo de cada linha)",
+      "Esta conta é deste projeto: a despesa total do mapa menos a subfunção das operações relacionadas com a dívida pública, e cada função a dividir por esse resto; o recibo de cada linha mostra a conta. A segurança e ordem pública leva 3,30 de cada cem euros, a defesa 2,35, a habitação e infraestruturas coletivas 2,24, a proteção do ambiente 1,45 e o desporto, recreação, cultura e religião 0,77.",
+      "O que muda da lei de 2026 para a proposta de 2027",
+      "A comparação certa é o mesmo mapa da Lei do Orçamento para 2026: o mesmo perímetro, a mesma unidade. A despesa total do mapa passa de 352 472 389 960 euros para 372 293 363 352 euros, uma variação de 5,6 %; sem as operações relacionadas com a dívida pública, passa de 177 454 923 960 euros para 195 763 054 352 euros, 10,3 %. Por função, em euros: os assuntos económicos variam 32,2 %, a saúde 3,6 %, a proteção social 4,7 %, a educação −0,2 %, a defesa −8,0 %, a proteção do ambiente −10,2 % e o desporto, recreação, cultura e religião −6,4 %. A função que mais cresce é a dos assuntos económicos. O que está dentro de cada função, medida a medida, lê-se no estudo do Orçamento.",
+      "A Saúde: a função e o programa",
+      "A função saúde do mapa, 49 259 868 205 euros, não é o programa Saúde do Orçamento, 17 858,4 milhões de euros em 2027: o programa é consolidado e é um programa orçamental; a função é uma classificação da despesa, não consolidada, que conta as transferências entre serviços. As duas contas medem coisas diferentes, e nenhuma está errada.",
+      "Esta explicação lê o mapa de uma proposta: o que o Parlamento aprovar pode ser diferente, e o que se gasta de facto lê-se depois, na execução. O mapa é só o subsetor da Administração Central: a Segurança Social, com as pensões, tem o seu próprio mapa funcional, que não está aqui. Os valores não são consolidados, contam as transferências entre serviços, e por isso a despesa total do mapa é maior do que a despesa total consolidada, 259 633 860 562 euros em 2027. A conta «sem as operações relacionadas com a dívida pública» é deste projeto, declarada no recibo de cada linha; o mapa só dá o nome a essa subfunção, e esta explicação não diz o que entra nela. A base da explicação de 2026, a despesa efetiva consolidada por função dos dados abertos, ainda não existe para 2027; quando existir, esta explicação passa a essa base."
+    ]
   },
   "en": {
+    "pagina": "dist/en/explainers/dinheiro-do-estado-2027/index.html",
     "blocos": [
       {
-        "onde": "titulo",
-        "texto": "Where the State’s money goes in 2027, by the Budget proposal",
-        "linhas": [
-          "oe-2027-cem-euros-funcao-01-mapa"
-        ]
+        "tag": "p",
+        "texto": "Text generated by artificial intelligence, according to the Method."
       },
       {
-        "onde": "abertura[0]",
-        "texto": "The State Budget proposal for 2027, delivered to Parliament on 08.10.2026, carries a map of central administration expenditure by function, Map 2. That map adds up to 372 293 363 352 euros, and less than half of that total, 176 530 309 000 euros, is the subfunction the map calls «operations related to public debt». Taking that subfunction out, 195 763 054 352 euros remain. Of every hundred euros of those, 25,16 go to health, 24,58 to economic affairs, 20,44 to general public services, without the operations related to public debt, 12,54 to social protection and 7,17 to education. The largest share is health.",
-        "linhas": [
-          "oe-2027-cem-euros-funcao-01-mapa",
-          "oe-2027-calendario-entrega",
-          "verbatim:pf1-mapa-2027-numero",
-          "oe-2027-despesa-total-mapa",
-          "oe-2027-despesa-subfuncao-01-7-mapa",
-          "oe-2027-despesa-sem-divida-mapa",
-          "oe-2027-cem-euros-funcao-07-sem-divida-mapa",
-          "oe-2027-cem-euros-funcao-04-sem-divida-mapa",
-          "oe-2027-cem-euros-funcao-01-sem-divida-mapa",
-          "oe-2027-cem-euros-funcao-10-sem-divida-mapa",
-          "oe-2027-cem-euros-funcao-09-sem-divida-mapa"
-        ]
+        "tag": "h1",
+        "texto": "Where the State’s money goes in 2027, by the Budget proposal"
       },
       {
-        "onde": "secao:como-o-mapa-a-escreve",
-        "texto": "By function, as the map writes it",
-        "linhas": []
+        "tag": "p",
+        "texto": "The State Budget proposal for 2027, delivered to Parliament on 08.10.2026, carries, among its maps, the one of the functional classification of central administration expenditure. That map adds up to 372 293 363 352 eurossource · Ministério das Finanças / Entidade Orçamental (MF/EO), and 176 530 309 000 eurossource · Ministério das Finanças / Entidade Orçamental (MF/EO) of that total are the subfunction the map calls «operations related to public debt». Taking that subfunction out, 195 763 054 352 eurossource · calculated remain. Of every hundred euros of those, 25,16source · calculated go to health, 24,58source · calculated to economic affairs, 20,44source · calculated to general public services, without the operations related to public debt, 12,54source · calculated to social protection and 7,17source · calculated to education. The largest share is health."
       },
       {
-        "onde": "seccoes[0].conteudo[0].paragrafo",
-        "texto": "Read as the map writes it, 58,17 of every hundred euros go to general public services, because the subfunction of the operations related to public debt sits inside that function; Health takes 13,23, economic affairs 12,93, social protection 6,59 and education 3,77. Public order and safety takes 1,73, defence 1,24, housing and community amenities 1,18, environmental protection 0,76 and recreation, culture and religion 0,41.",
-        "linhas": [
-          "oe-2027-cem-euros-funcao-01-mapa",
-          "oe-2027-cem-euros-funcao-07-mapa",
-          "oe-2027-cem-euros-funcao-04-mapa",
-          "oe-2027-cem-euros-funcao-10-mapa",
-          "oe-2027-cem-euros-funcao-09-mapa",
-          "oe-2027-cem-euros-funcao-03-mapa",
-          "oe-2027-cem-euros-funcao-02-mapa",
-          "oe-2027-cem-euros-funcao-06-mapa",
-          "oe-2027-cem-euros-funcao-05-mapa",
-          "oe-2027-cem-euros-funcao-08-mapa"
-        ]
+        "tag": "h2",
+        "texto": "By function, as the map writes it"
       },
       {
-        "onde": "secao:sem-a-divida",
-        "texto": "Without the operations related to public debt",
-        "linhas": []
+        "tag": "figcaption",
+        "texto": "The ten functions, of every hundred euros of the total expenditure in the proposal’s functional map (central administration, unconsolidated, with the operations related to public debt)"
       },
       {
-        "onde": "seccoes[1].conteudo[0].paragrafo",
-        "texto": "This calculation is this project’s: the map’s total expenditure minus subfunction 01.7, and each function divided by that remainder; each row’s receipt shows the calculation. Public order and safety takes 3,30 of every hundred euros, defence 2,35, housing and community amenities 2,24, environmental protection 1,45 and recreation, culture and religion 0,77.",
-        "linhas": [
-          "verbatim:pf1-subfuncao-01-7-codigo",
-          "oe-2027-cem-euros-funcao-03-sem-divida-mapa",
-          "oe-2027-cem-euros-funcao-02-sem-divida-mapa",
-          "oe-2027-cem-euros-funcao-06-sem-divida-mapa",
-          "oe-2027-cem-euros-funcao-05-sem-divida-mapa",
-          "oe-2027-cem-euros-funcao-08-sem-divida-mapa"
-        ]
+        "tag": "p",
+        "texto": "Read as the map writes it, 58,17source · calculated of every hundred euros go to general public services, because the subfunction of the operations related to public debt sits inside that function; Health takes 13,23source · calculated, economic affairs 12,93source · calculated, social protection 6,59source · calculated and education 3,77source · calculated. Public order and safety takes 1,73source · calculated, defence 1,24source · calculated, housing and community amenities 1,18source · calculated, environmental protection 0,76source · calculated and recreation, culture and religion 0,41source · calculated."
       },
       {
-        "onde": "secao:o-que-muda",
-        "texto": "What changes from the 2026 law to the 2027 proposal",
-        "linhas": [
-          "oe-2026-cem-euros-funcao-01-mapa",
-          "oe-2027-cem-euros-funcao-01-mapa"
-        ]
+        "tag": "h2",
+        "texto": "Without the operations related to public debt"
       },
       {
-        "onde": "seccoes[2].conteudo[0].paragrafo",
-        "texto": "The right comparison is Map 2 of the Budget Law for 2026: the same map, the same perimeter, the same unit. The map’s total expenditure goes from 352 472 389 960 euros to 372 293 363 352 euros, a change of 5,6 %; without the operations related to public debt, it goes from 177 454 923 960 euros to 195 763 054 352 euros, 10,3 %. By function, in euros: Economic affairs change by 32,2 %, health by 3,6 %, social protection by 4,7 %, education by −0,2 %, defence by −8,0 %, environmental protection by −10,2 % and recreation, culture and religion by −6,4 %. The function that grows most is economic affairs. What sits inside each function, measure by measure, is read in the Budget study.",
-        "linhas": [
-          "verbatim:pf1-mapa-2026-numero",
-          "oe-2026-cem-euros-funcao-01-mapa",
-          "oe-2026-despesa-total-mapa",
-          "oe-2027-despesa-total-mapa",
-          "der-oe2027-despesa-total-mapa-variacao-pct",
-          "oe-2026-despesa-sem-divida-mapa",
-          "oe-2027-despesa-sem-divida-mapa",
-          "der-oe2027-despesa-sem-divida-variacao-pct",
-          "der-oe2027-funcao-04-variacao-pct",
-          "der-oe2027-funcao-07-variacao-pct",
-          "der-oe2027-funcao-10-variacao-pct",
-          "der-oe2027-funcao-09-variacao-pct",
-          "der-oe2027-funcao-02-variacao-pct",
-          "der-oe2027-funcao-05-variacao-pct",
-          "der-oe2027-funcao-08-variacao-pct"
-        ]
+        "tag": "figcaption",
+        "texto": "The ten functions, of every hundred euros of the map’s expenditure without the subfunction of the operations related to public debt (this project’s calculation, declared in each row’s receipt)"
       },
       {
-        "onde": "secao:saude",
-        "texto": "Health: the function and the programme",
-        "linhas": []
+        "tag": "p",
+        "texto": "This calculation is this project’s: the map’s total expenditure minus the subfunction of the operations related to public debt, and each function divided by that remainder; each row’s receipt shows the calculation. Public order and safety takes 3,30source · calculated of every hundred euros, defence 2,35source · calculated, housing and community amenities 2,24source · calculated, environmental protection 1,45source · calculated and recreation, culture and religion 0,77source · calculated."
       },
       {
-        "onde": "seccoes[3].conteudo[0].paragrafo",
-        "texto": "The map’s health function, 49 259 868 205 euros, is not the Budget’s Health programme, 17 858,4 million euros in 2027: the programme is consolidated and is a budget programme; the function is a classification of expenditure, unconsolidated, which counts the transfers between services. The two accounts measure different things, and neither is wrong.",
-        "linhas": [
-          "oe-2027-cem-euros-funcao-07-mapa",
-          "oe-2027-despesa-funcao-07-mapa",
-          "oe-2027-saude-despesa-total-consolidada-2027"
-        ]
+        "tag": "h2",
+        "texto": "What changes from the 2026 law to the 2027 proposal"
       },
       {
-        "onde": "naoDiz[0]",
-        "texto": "This explainer reads Map 2 of a proposal: what Parliament approves may differ, and what is actually spent is read afterwards, in the budget execution. The values are unconsolidated, they count the transfers between services, and so the map’s total expenditure is larger than the consolidated total expenditure, 259 633 860 562 euros in 2027. The calculation «without the operations related to public debt» is this project’s, declared in each row’s receipt; the map only names that subfunction, and this explainer does not say what goes into it. The basis of the 2026 explainer, consolidated effective expenditure by function from the open data, does not yet exist for 2027; when it does, this explainer moves to that basis.",
-        "linhas": [
-          "verbatim:pf1-mapa-2027-numero",
-          "oe-2027-despesa-total-consolidada-mapa",
-          "oe-2026-cem-euros-funcao-01",
-          "oe-2027-cem-euros-funcao-01-mapa"
-        ]
+        "tag": "p",
+        "texto": "The right comparison is the same map of the Budget Law for 2026: the same perimeter, the same unit. The map’s total expenditure goes from 352 472 389 960 eurossource · Ministério das Finanças / Entidade Orçamental (MF/EO) to 372 293 363 352 eurossource · Ministério das Finanças / Entidade Orçamental (MF/EO), a change of 5,6 %source · calculated; without the operations related to public debt, it goes from 177 454 923 960 eurossource · calculated to 195 763 054 352 eurossource · calculated, 10,3 %source · calculated. By function, in euros: Economic affairs change by 32,2 %source · calculated, health by 3,6 %source · calculated, social protection by 4,7 %source · calculated, education by −0,2 %source · calculated, defence by −8,0 %source · calculated, environmental protection by −10,2 %source · calculated and recreation, culture and religion by −6,4 %source · calculated. The function that grows most is economic affairs. What sits inside each function, measure by measure, is read in the Budget study."
       },
       {
-        "onde": "porta:livro",
-        "texto": "Numbers and sources → /en/ledger",
-        "linhas": []
+        "tag": "h2",
+        "texto": "Health: the function and the programme"
       },
       {
-        "onde": "porta:estudo",
-        "texto": "The 2027 Budget: what changes, and for whom → /en/studies/orcamento-2027-o-que-muda-e-para-quem",
-        "linhas": []
+        "tag": "p",
+        "texto": "The map’s health function, 49 259 868 205 eurossource · Ministério das Finanças / Entidade Orçamental (MF/EO), is not the Budget’s Health programme, 17 858,4 million eurossource · Ministério das Finanças in 2027: the programme is consolidated and is a budget programme; the function is a classification of expenditure, unconsolidated, which counts the transfers between services. The two accounts measure different things, and neither is wrong."
       },
       {
-        "onde": "porta:explicacao",
-        "texto": "Where the State’s money goes in 2026 → /en/explainers/dinheiro-do-estado-2026",
-        "linhas": []
+        "tag": "p",
+        "texto": "What is being discussed about this → The Health budget for 2027: 3,0 % without the RRP or −1,5 % in total? Both counts, what changes inside it, and what went unsaid"
+      },
+      {
+        "tag": "h2",
+        "texto": "What this does not say"
+      },
+      {
+        "tag": "p",
+        "texto": "This explainer reads the map of a proposal: what Parliament approves may differ, and what is actually spent is read afterwards, in the budget execution. The map is only the central administration subsector: Social Security, with pensions, has its own functional map, which is not here. The values are unconsolidated, they count the transfers between services, and so the map’s total expenditure is larger than the consolidated total expenditure, 259 633 860 562 eurossource · Ministério das Finanças / Entidade Orçamental (MF/EO) in 2027. The calculation «without the operations related to public debt» is this project’s, declared in each row’s receipt; the map only names that subfunction, and this explainer does not say what goes into it. The basis of the 2026 explainer, consolidated effective expenditure by function from the open data, does not yet exist for 2027; when it does, this explainer moves to that basis."
+      },
+      {
+        "tag": "p",
+        "texto": "Numbers and sources → The 2027 Budget: what changes, and for whom → Where the State’s money goes in 2026 →"
       }
     ],
-    "sinais": []
+    "resolvedor": [
+      "Where the State’s money goes in 2027, by the Budget proposal",
+      "The State Budget proposal for 2027, delivered to Parliament on 08.10.2026, carries, among its maps, the one of the functional classification of central administration expenditure. That map adds up to 372 293 363 352 euros, and 176 530 309 000 euros of that total are the subfunction the map calls «operations related to public debt». Taking that subfunction out, 195 763 054 352 euros remain. Of every hundred euros of those, 25,16 go to health, 24,58 to economic affairs, 20,44 to general public services, without the operations related to public debt, 12,54 to social protection and 7,17 to education. The largest share is health.",
+      "By function, as the map writes it",
+      "The ten functions, of every hundred euros of the total expenditure in the proposal’s functional map (central administration, unconsolidated, with the operations related to public debt)",
+      "Read as the map writes it, 58,17 of every hundred euros go to general public services, because the subfunction of the operations related to public debt sits inside that function; Health takes 13,23, economic affairs 12,93, social protection 6,59 and education 3,77. Public order and safety takes 1,73, defence 1,24, housing and community amenities 1,18, environmental protection 0,76 and recreation, culture and religion 0,41.",
+      "Without the operations related to public debt",
+      "The ten functions, of every hundred euros of the map’s expenditure without the subfunction of the operations related to public debt (this project’s calculation, declared in each row’s receipt)",
+      "This calculation is this project’s: the map’s total expenditure minus the subfunction of the operations related to public debt, and each function divided by that remainder; each row’s receipt shows the calculation. Public order and safety takes 3,30 of every hundred euros, defence 2,35, housing and community amenities 2,24, environmental protection 1,45 and recreation, culture and religion 0,77.",
+      "What changes from the 2026 law to the 2027 proposal",
+      "The right comparison is the same map of the Budget Law for 2026: the same perimeter, the same unit. The map’s total expenditure goes from 352 472 389 960 euros to 372 293 363 352 euros, a change of 5,6 %; without the operations related to public debt, it goes from 177 454 923 960 euros to 195 763 054 352 euros, 10,3 %. By function, in euros: Economic affairs change by 32,2 %, health by 3,6 %, social protection by 4,7 %, education by −0,2 %, defence by −8,0 %, environmental protection by −10,2 % and recreation, culture and religion by −6,4 %. The function that grows most is economic affairs. What sits inside each function, measure by measure, is read in the Budget study.",
+      "Health: the function and the programme",
+      "The map’s health function, 49 259 868 205 euros, is not the Budget’s Health programme, 17 858,4 million euros in 2027: the programme is consolidated and is a budget programme; the function is a classification of expenditure, unconsolidated, which counts the transfers between services. The two accounts measure different things, and neither is wrong.",
+      "This explainer reads the map of a proposal: what Parliament approves may differ, and what is actually spent is read afterwards, in the budget execution. The map is only the central administration subsector: Social Security, with pensions, has its own functional map, which is not here. The values are unconsolidated, they count the transfers between services, and so the map’s total expenditure is larger than the consolidated total expenditure, 259 633 860 562 euros in 2027. The calculation «without the operations related to public debt» is this project’s, declared in each row’s receipt; the map only names that subfunction, and this explainer does not say what goes into it. The basis of the 2026 explainer, consolidated effective expenditure by function from the open data, does not yet exist for 2027; when it does, this explainer moves to that basis."
+    ]
   }
 }
