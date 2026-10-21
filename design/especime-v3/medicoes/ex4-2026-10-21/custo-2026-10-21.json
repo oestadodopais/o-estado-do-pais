@@ -1,0 +1,72 @@
+{
+ "bloco": "EX4 · a explicação «Para onde vai o dinheiro do Estado em 2027, pela proposta de Orçamento» (com a pesquisa PF1 no motor)",
+ "data": "2026-10-21",
+ "passagens": [
+  {
+   "nome": "PF1 (pesquisa, motor)",
+   "modelo": "Claude Opus 5.5",
+   "esforco": "high",
+   "simbolos": 173444,
+   "chamadas": 42,
+   "minutos": 11
+  },
+  {
+   "nome": "PF1-b (derivadas sem a dívida, manifesto, portão)",
+   "modelo": "Claude Opus 5.5",
+   "esforco": "high",
+   "simbolos": 131200,
+   "chamadas": 27,
+   "minutos": 7
+  },
+  {
+   "nome": "PF1-c (manifesto sem period)",
+   "modelo": "Claude Opus 5.5",
+   "esforco": "medium",
+   "simbolos": 61765,
+   "chamadas": 9,
+   "minutos": 1
+  },
+  {
+   "nome": "EX4 (construção)",
+   "modelo": "Claude Opus 5.5",
+   "esforco": "high",
+   "simbolos": 318196,
+   "chamadas": 74,
+   "minutos": 21
+  },
+  {
+   "nome": "EX4-b (correção)",
+   "modelo": "Claude Opus 5.5",
+   "esforco": "high",
+   "simbolos": 242089,
+   "chamadas": 69,
+   "minutos": 12
+  },
+  {
+   "nome": "EX4-c (correção)",
+   "modelo": "Claude Opus 5.5",
+   "esforco": "high",
+   "simbolos": 128658,
+   "chamadas": 40,
+   "minutos": 14
+  },
+  {
+   "nome": "leitura a frio",
+   "modelo": "Codex gpt-6-astra",
+   "esforco": "medium",
+   "simbolos": null,
+   "chamadas": null,
+   "minutos": null,
+   "pontos_do_codex": "por ler (a semana ficou a 96 %)"
+  }
+ ],
+ "corridas_de_conferencias": {
+  "build_inteiro": 4,
+  "core_gate": 3,
+  "conferencias_uma_a_uma_pelo_lugar_de_direcao": 19
+ },
+ "capturas": 50,
+ "simbolos_do_claude_nas_passagens": 1055352,
+ "chamadas_nas_passagens": 261,
+ "nota": "Os símbolos são o total cumulativo que a ferramenta reporta para cada agente; os do lugar de direção (Fable) não se medem por bloco. A escada da §1.202 mede-se em pontos do Codex quando ele construir; aqui construiu o Opus."
+}

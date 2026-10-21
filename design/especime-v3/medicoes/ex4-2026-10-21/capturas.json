@@ -1,0 +1,1552 @@
+{
+  "cabeca": "81eade95fd1f01baa770b6b14c4c72d3289b411b",
+  "capturador_sha256": "0befc596ce06466e936573ac45841b8cc16391fb39efc0cc3a54001bc156d812",
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "resultados": [
+    {
+      "ficheiro": "explicacao-pt-390.png",
+      "rota": "/explicacoes/dinheiro-do-estado-2027/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 5384,
+      "sha256": "033874d4c38996752591349737e08ce32054c41457db6f4e1e7f259608d52435",
+      "recortes": [
+        {
+          "ficheiro": "explicacao-pt-390-titulo.png",
+          "seletor": "main h1",
+          "origem": "explicacao-pt-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 317,
+            "width": 354,
+            "height": 95
+          },
+          "sha256": "622f76586735197cbe420682c75de0d3f8d7a54f2c38e3b14e1a77f7d6ffca4f"
+        },
+        {
+          "ficheiro": "explicacao-pt-390-figura-funcoes.png",
+          "seletor": "figure[data-barras-do-livro=\"funcoes\"]",
+          "origem": "explicacao-pt-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 1090,
+            "width": 354,
+            "height": 508
+          },
+          "sha256": "2a1cf72af54f601347866f3c676b78e304e77a0f3f41b17496bab758dc41d435"
+        },
+        {
+          "ficheiro": "explicacao-pt-390-figura-sem-divida.png",
+          "seletor": "figure[data-barras-do-livro=\"funcoes-sem-divida\"]",
+          "origem": "explicacao-pt-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 2190,
+            "width": 354,
+            "height": 524
+          },
+          "sha256": "3cdd2d9c2c48ce45ccc0e78edeb4daa6815daee9d3878f76a593d31fc713a974"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "explicacao-pt-768.png",
+      "rota": "/explicacoes/dinheiro-do-estado-2027/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3797,
+      "sha256": "b08200eacc926a6d3323c820b275fd4d18d53f0923683e34ea5905f97a53739b",
+      "recortes": [
+        {
+          "ficheiro": "explicacao-pt-768-titulo.png",
+          "seletor": "main h1",
+          "origem": "explicacao-pt-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 267,
+            "width": 708,
+            "height": 77
+          },
+          "sha256": "0e89c1146cddb8c9d0875a66fbd901cfd30f3381c136cbb818655bcd25dae745"
+        },
+        {
+          "ficheiro": "explicacao-pt-768-figura-funcoes.png",
+          "seletor": "figure[data-barras-do-livro=\"funcoes\"]",
+          "origem": "explicacao-pt-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 791,
+            "width": 529,
+            "height": 327
+          },
+          "sha256": "95818f8a4f6b73a1b6cee09a0bd285598862afa4e9215393715e37521b771ddb"
+        },
+        {
+          "ficheiro": "explicacao-pt-768-figura-sem-divida.png",
+          "seletor": "figure[data-barras-do-livro=\"funcoes-sem-divida\"]",
+          "origem": "explicacao-pt-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 1549,
+            "width": 529,
+            "height": 344
+          },
+          "sha256": "5091b157492ebee06296039a8c270ed61efe9f5f945ba629669ed307ab97f1f0"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "explicacao-pt-1024.png",
+      "rota": "/explicacoes/dinheiro-do-estado-2027/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 3787,
+      "sha256": "fa827038e1adff4eee09b93a634dc4c2e5eb33bcacc7e5a073d3646ba47f8fb4",
+      "recortes": [
+        {
+          "ficheiro": "explicacao-pt-1024-titulo.png",
+          "seletor": "main h1",
+          "origem": "explicacao-pt-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 239,
+            "width": 925,
+            "height": 95
+          },
+          "sha256": "0c05056e05237767a6f34e759d6ef22334946c9d6d0e67e720c028761906e1e5"
+        },
+        {
+          "ficheiro": "explicacao-pt-1024-figura-funcoes.png",
+          "seletor": "figure[data-barras-do-livro=\"funcoes\"]",
+          "origem": "explicacao-pt-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 803,
+            "width": 529,
+            "height": 327
+          },
+          "sha256": "f03a0589bffb8692581c30384b9e135897e4505f038e110a3e36815088804921"
+        },
+        {
+          "ficheiro": "explicacao-pt-1024-figura-sem-divida.png",
+          "seletor": "figure[data-barras-do-livro=\"funcoes-sem-divida\"]",
+          "origem": "explicacao-pt-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 1575,
+            "width": 529,
+            "height": 344
+          },
+          "sha256": "4ec5fa13c4db01cdffcdb2791a4dd5039f5c437bf81377f66bb1a9016b351b21"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "explicacao-pt-1280.png",
+      "rota": "/explicacoes/dinheiro-do-estado-2027/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 3883,
+      "sha256": "68027d93dbf7bee6509520690e5095f499f83b4057e8731e96ea1c86b3bcaa05",
+      "recortes": [
+        {
+          "ficheiro": "explicacao-pt-1280-titulo.png",
+          "seletor": "main h1",
+          "origem": "explicacao-pt-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 240,
+            "width": 924,
+            "height": 95
+          },
+          "sha256": "70ffaa6073fa8a2e1181622c0aaa549ffedfe8ff111e333ea9d468348964fce4"
+        },
+        {
+          "ficheiro": "explicacao-pt-1280-figura-funcoes.png",
+          "seletor": "figure[data-barras-do-livro=\"funcoes\"]",
+          "origem": "explicacao-pt-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 820,
+            "width": 528,
+            "height": 327
+          },
+          "sha256": "6c7b331d200b74fa78dd43f9a1bbddb60e08c413277d375164df0da9760cee1d"
+        },
+        {
+          "ficheiro": "explicacao-pt-1280-figura-sem-divida.png",
+          "seletor": "figure[data-barras-do-livro=\"funcoes-sem-divida\"]",
+          "origem": "explicacao-pt-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 1607,
+            "width": 528,
+            "height": 344
+          },
+          "sha256": "75acbf0084e15fc24ea6e89ed6e4fb631ae2719cb51ba88f88d44e1c7a49a168"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "explicacao-pt-1600.png",
+      "rota": "/explicacoes/dinheiro-do-estado-2027/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 3905,
+      "sha256": "5deadd0878ff0789cab3696a0240c871724489972fdbc6b4247c28b98f526ea0",
+      "recortes": [
+        {
+          "ficheiro": "explicacao-pt-1600-titulo.png",
+          "seletor": "main h1",
+          "origem": "explicacao-pt-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 240,
+            "width": 924,
+            "height": 95
+          },
+          "sha256": "70ffaa6073fa8a2e1181622c0aaa549ffedfe8ff111e333ea9d468348964fce4"
+        },
+        {
+          "ficheiro": "explicacao-pt-1600-figura-funcoes.png",
+          "seletor": "figure[data-barras-do-livro=\"funcoes\"]",
+          "origem": "explicacao-pt-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 823,
+            "width": 528,
+            "height": 327
+          },
+          "sha256": "6c7b331d200b74fa78dd43f9a1bbddb60e08c413277d375164df0da9760cee1d"
+        },
+        {
+          "ficheiro": "explicacao-pt-1600-figura-sem-divida.png",
+          "seletor": "figure[data-barras-do-livro=\"funcoes-sem-divida\"]",
+          "origem": "explicacao-pt-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 1613,
+            "width": 528,
+            "height": 344
+          },
+          "sha256": "75acbf0084e15fc24ea6e89ed6e4fb631ae2719cb51ba88f88d44e1c7a49a168"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "explicacao-en-390.png",
+      "rota": "/en/explainers/dinheiro-do-estado-2027/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 5451,
+      "sha256": "48150edb254e5a170271d557d7fb66b2c17dfdeb935bbd3c0303f740dc2e06d2",
+      "recortes": [
+        {
+          "ficheiro": "explicacao-en-390-titulo.png",
+          "seletor": "main h1",
+          "origem": "explicacao-en-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 299,
+            "width": 354,
+            "height": 95
+          },
+          "sha256": "6a356feb529ef7b4a11a28479f3fc9b9c68eb81833e9d23de1050d87e492138b"
+        },
+        {
+          "ficheiro": "explicacao-en-390-figura-funcoes.png",
+          "seletor": "figure[data-barras-do-livro=\"funcoes\"]",
+          "origem": "explicacao-en-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 1102,
+            "width": 354,
+            "height": 507
+          },
+          "sha256": "8f005645e144c99a3f50097f338561e6471e68a20b5f4dec52c98662558d0e0a"
+        },
+        {
+          "ficheiro": "explicacao-en-390-figura-sem-divida.png",
+          "seletor": "figure[data-barras-do-livro=\"funcoes-sem-divida\"]",
+          "origem": "explicacao-en-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 2174,
+            "width": 354,
+            "height": 524
+          },
+          "sha256": "4b80eab1b0cde07a83cd08815f5f58394d3f7d68b56d7b9b77c4fd89346095af"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "explicacao-en-768.png",
+      "rota": "/en/explainers/dinheiro-do-estado-2027/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3768,
+      "sha256": "05f5e154f114761e6c07883f362883700e008125696720efc3766a22c0b2eac7",
+      "recortes": [
+        {
+          "ficheiro": "explicacao-en-768-titulo.png",
+          "seletor": "main h1",
+          "origem": "explicacao-en-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 267,
+            "width": 708,
+            "height": 77
+          },
+          "sha256": "aa7c79f70346e5db45c2046bddce7d5bb5ffa341ff7fc3a5504acc42b5b2d499"
+        },
+        {
+          "ficheiro": "explicacao-en-768-figura-funcoes.png",
+          "seletor": "figure[data-barras-do-livro=\"funcoes\"]",
+          "origem": "explicacao-en-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 791,
+            "width": 529,
+            "height": 315
+          },
+          "sha256": "c0cb22288052a03492c7f4049b944a389d402047fb11c4f00e489cc6a72c17ce"
+        },
+        {
+          "ficheiro": "explicacao-en-768-figura-sem-divida.png",
+          "seletor": "figure[data-barras-do-livro=\"funcoes-sem-divida\"]",
+          "origem": "explicacao-en-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 1537,
+            "width": 529,
+            "height": 327
+          },
+          "sha256": "3729d00e6f5b810c7674cf5cba9dee406a4a3302e6b4c39c8b65907464ec0b7a"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "explicacao-en-1024.png",
+      "rota": "/en/explainers/dinheiro-do-estado-2027/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 3759,
+      "sha256": "5b332feb1ac38f70aff01ef9f86bf7d3611c5e54ba70af42a6bcbf3b6b702fba",
+      "recortes": [
+        {
+          "ficheiro": "explicacao-en-1024-titulo.png",
+          "seletor": "main h1",
+          "origem": "explicacao-en-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 239,
+            "width": 925,
+            "height": 95
+          },
+          "sha256": "a4fd47db18e3f2fc3e708e9ef6a56115713fa96582d9b04ec6c8cc4cde4414d5"
+        },
+        {
+          "ficheiro": "explicacao-en-1024-figura-funcoes.png",
+          "seletor": "figure[data-barras-do-livro=\"funcoes\"]",
+          "origem": "explicacao-en-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 803,
+            "width": 529,
+            "height": 314
+          },
+          "sha256": "f73c036869c79ee1cdc9648174be04639d49422258c05d24c891b8e52e9ff418"
+        },
+        {
+          "ficheiro": "explicacao-en-1024-figura-sem-divida.png",
+          "seletor": "figure[data-barras-do-livro=\"funcoes-sem-divida\"]",
+          "origem": "explicacao-en-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 1563,
+            "width": 529,
+            "height": 327
+          },
+          "sha256": "01ad70a0c328f3f1f568d33ec51967effc71b582500daae0b89c731deaafb5c2"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "explicacao-en-1280.png",
+      "rota": "/en/explainers/dinheiro-do-estado-2027/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 3883,
+      "sha256": "f6904b44b9e61c4421ba71ea65f146c9084c3b654eb3d290f3564fb709de5b07",
+      "recortes": [
+        {
+          "ficheiro": "explicacao-en-1280-titulo.png",
+          "seletor": "main h1",
+          "origem": "explicacao-en-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 240,
+            "width": 924,
+            "height": 95
+          },
+          "sha256": "cdeae784c5697f6546622748cc7180ce54fd2738417d9517a974944789c864d0"
+        },
+        {
+          "ficheiro": "explicacao-en-1280-figura-funcoes.png",
+          "seletor": "figure[data-barras-do-livro=\"funcoes\"]",
+          "origem": "explicacao-en-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 820,
+            "width": 528,
+            "height": 314
+          },
+          "sha256": "0e2d87dd999483485c5b1695f49f4b3cb62d554ca2e5f9aee0ac0567a8cdce87"
+        },
+        {
+          "ficheiro": "explicacao-en-1280-figura-sem-divida.png",
+          "seletor": "figure[data-barras-do-livro=\"funcoes-sem-divida\"]",
+          "origem": "explicacao-en-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 1595,
+            "width": 528,
+            "height": 327
+          },
+          "sha256": "8423b5be96f0863049a91ed06ccb3ee5e63e51d3467140be9bf21d44ae090022"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "explicacao-en-1600.png",
+      "rota": "/en/explainers/dinheiro-do-estado-2027/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 3905,
+      "sha256": "dc4de886dd9ec73b42461b9bc2fdc29c4bab02b774ec75012dc21a6e4862ec0c",
+      "recortes": [
+        {
+          "ficheiro": "explicacao-en-1600-titulo.png",
+          "seletor": "main h1",
+          "origem": "explicacao-en-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 240,
+            "width": 924,
+            "height": 95
+          },
+          "sha256": "cdeae784c5697f6546622748cc7180ce54fd2738417d9517a974944789c864d0"
+        },
+        {
+          "ficheiro": "explicacao-en-1600-figura-funcoes.png",
+          "seletor": "figure[data-barras-do-livro=\"funcoes\"]",
+          "origem": "explicacao-en-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 823,
+            "width": 528,
+            "height": 314
+          },
+          "sha256": "0e2d87dd999483485c5b1695f49f4b3cb62d554ca2e5f9aee0ac0567a8cdce87"
+        },
+        {
+          "ficheiro": "explicacao-en-1600-figura-sem-divida.png",
+          "seletor": "figure[data-barras-do-livro=\"funcoes-sem-divida\"]",
+          "origem": "explicacao-en-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 1601,
+            "width": 528,
+            "height": 327
+          },
+          "sha256": "8423b5be96f0863049a91ed06ccb3ee5e63e51d3467140be9bf21d44ae090022"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "lista-das-explicacoes-pt-390.png",
+      "rota": "/explicacoes/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 1097,
+      "sha256": "f6596e739cbb5eab3381c55c8ffef547054c088bc29d3cff0043b454125f20cc",
+      "recortes": [
+        {
+          "ficheiro": "lista-das-explicacoes-pt-390-lista.png",
+          "seletor": "main",
+          "origem": "lista-das-explicacoes-pt-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 233,
+            "width": 354,
+            "height": 510
+          },
+          "sha256": "d227634d84d9fca4a46d2fcdf39b03a5ef4d99afc772e0b651ad63cebe6d48f0"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "lista-das-explicacoes-pt-768.png",
+      "rota": "/explicacoes/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 941,
+      "sha256": "7e95bb55ed437dff06550064811de0336561ebf812b5f41c8b016796a5832b78",
+      "recortes": [
+        {
+          "ficheiro": "lista-das-explicacoes-pt-768-lista.png",
+          "seletor": "main",
+          "origem": "lista-das-explicacoes-pt-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 216,
+            "width": 708,
+            "height": 468
+          },
+          "sha256": "101b80cfbcdb12e3f0bf240d98c749a649cff7ae48e50f69f3edce97504fc574"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "lista-das-explicacoes-pt-1024.png",
+      "rota": "/explicacoes/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 900,
+      "sha256": "c724d96cea438c08a9e8446c1778bee0f92f5c4d284c67c86247c3e0e4aa2aae",
+      "recortes": [
+        {
+          "ficheiro": "lista-das-explicacoes-pt-1024-lista.png",
+          "seletor": "main",
+          "origem": "lista-das-explicacoes-pt-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 185,
+            "width": 944,
+            "height": 509
+          },
+          "sha256": "36273cf6bce4540eacbe432f94a5b40838e026d581df388daaf82711035621bd"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "lista-das-explicacoes-pt-1280.png",
+      "rota": "/explicacoes/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 944,
+      "sha256": "55fc3131423adc1c46a586129bf715fd83a84c4c94a5c60ff906951c33fa09f0",
+      "recortes": [
+        {
+          "ficheiro": "lista-das-explicacoes-pt-1280-lista.png",
+          "seletor": "main",
+          "origem": "lista-das-explicacoes-pt-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 186,
+            "width": 1092,
+            "height": 539
+          },
+          "sha256": "8595322b12cc6537ae2ee357909d02fda9e8ad8bd1f86373f2db7ec991b21b00"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "lista-das-explicacoes-pt-1600.png",
+      "rota": "/explicacoes/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 957,
+      "sha256": "254431dab2fadf66c85ef892b96dd841dbff9f8ebb221037444a334a6e4f93af",
+      "recortes": [
+        {
+          "ficheiro": "lista-das-explicacoes-pt-1600-lista.png",
+          "seletor": "main",
+          "origem": "lista-das-explicacoes-pt-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 186,
+            "width": 1092,
+            "height": 545
+          },
+          "sha256": "beb8da450f8dc7806ec3f4be0cc71fa87aff555afc96654ed4e3dbe4c14019c5"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "lista-das-explicacoes-en-390.png",
+      "rota": "/en/explainers/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 1120,
+      "sha256": "1e452d32fbc37f0c3ab4fea74b351b8f23505c3f67b93a18403efac5b9598732",
+      "recortes": [
+        {
+          "ficheiro": "lista-das-explicacoes-en-390-lista.png",
+          "seletor": "main",
+          "origem": "lista-das-explicacoes-en-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 233,
+            "width": 354,
+            "height": 485
+          },
+          "sha256": "bad9924e94b072a866dbabd3f02a7c44c8427dc65cc98f6fb3f2cc4c36fe63e6"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "lista-das-explicacoes-en-768.png",
+      "rota": "/en/explainers/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 917,
+      "sha256": "33a4194e4af8a98df60ad10f814fdd52c80ec1dff3e907b93df4b4e6c1ba7394",
+      "recortes": [
+        {
+          "ficheiro": "lista-das-explicacoes-en-768-lista.png",
+          "seletor": "main",
+          "origem": "lista-das-explicacoes-en-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 216,
+            "width": 708,
+            "height": 443
+          },
+          "sha256": "f22068dc9791e2a948c65e943e0ee9085e2a130db58b7f5e2ce9192f78f06ca1"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "lista-das-explicacoes-en-1024.png",
+      "rota": "/en/explainers/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 900,
+      "sha256": "db71fd14e456333491bc999612b023aa46349cac94d31b5f410e2d60a751f7b2",
+      "recortes": [
+        {
+          "ficheiro": "lista-das-explicacoes-en-1024-lista.png",
+          "seletor": "main",
+          "origem": "lista-das-explicacoes-en-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 185,
+            "width": 944,
+            "height": 484
+          },
+          "sha256": "77192e8dd1bdf77b51a487bf831e7405fa5e7a1de812cc4ff7f0eeb47a65b2d8"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "lista-das-explicacoes-en-1280.png",
+      "rota": "/en/explainers/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 919,
+      "sha256": "6ef42a11e0285d39d54409d06142481073eff643584bef953a12ead86b44330a",
+      "recortes": [
+        {
+          "ficheiro": "lista-das-explicacoes-en-1280-lista.png",
+          "seletor": "main",
+          "origem": "lista-das-explicacoes-en-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 186,
+            "width": 1092,
+            "height": 514
+          },
+          "sha256": "491ecaa4009cade24d23c8f8353f0f156b88b227a00979368ef85afd1942f1b7"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "lista-das-explicacoes-en-1600.png",
+      "rota": "/en/explainers/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 932,
+      "sha256": "bd70db32cdbd6551e03be9d34747109aec20bd523ee1937247647183a8854373",
+      "recortes": [
+        {
+          "ficheiro": "lista-das-explicacoes-en-1600-lista.png",
+          "seletor": "main",
+          "origem": "lista-das-explicacoes-en-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 186,
+            "width": 1092,
+            "height": 520
+          },
+          "sha256": "3bfadc07bf8398c90bcdbb29b8b361a655cb1fcdfa92bad700925d95d1537485"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "pais-pt-390.png",
+      "rota": "/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 8387,
+      "sha256": "861b307281a2535628a0567cefe55f65937fd89d544cdaa8e59a7eac830198c1",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "pais-pt-768.png",
+      "rota": "/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 6597,
+      "sha256": "f833714748c5fcc426c6b1eaa2f3aa8cf63773eeb30aa82081ee95f6f6ba327c",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "pais-pt-1024.png",
+      "rota": "/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 5930,
+      "sha256": "fc9517910a02a59a864c445c5b7d0400404a765d8295133b4a4b5680d989d3e3",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "pais-pt-1280.png",
+      "rota": "/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 5830,
+      "sha256": "4cc359d1cfb69d34d020ea1195436d1ca02b2974935fe385c3e9a0bba3f41800",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "pais-pt-1600.png",
+      "rota": "/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 5847,
+      "sha256": "31850cc304baaf178788c4e2b475ef849478bd4872788bc9a9149b328da8d566",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "pais-en-390.png",
+      "rota": "/en/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 8266,
+      "sha256": "3c7bd1b0b877ad1d798ef7f6d41beeea81b6c6c45408e3525e12dbc1e9efa038",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "pais-en-768.png",
+      "rota": "/en/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 6661,
+      "sha256": "fb05986c60002b8e6199a366f594c39ce6eadee05f40e5bbf84688dd84f804af",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "pais-en-1024.png",
+      "rota": "/en/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 6032,
+      "sha256": "2bd0d1eeeaa61bf7b3e9aad1b222d74ea682c3762b8f7649e20f3344d1451df0",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "pais-en-1280.png",
+      "rota": "/en/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 5900,
+      "sha256": "4a5f9379dcb2e53c3af169512a13f86957b49615adf436ace5d19c902afc2251",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "pais-en-1600.png",
+      "rota": "/en/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 5917,
+      "sha256": "732d9d265b5b9b21aa70eb50877ae71bc3a5467e1da7882eba962fcdc68fb2bf",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-funcao-07-pt-390.png",
+      "rota": "/livro-razao/oe-2027-despesa-funcao-07-mapa/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3371,
+      "sha256": "594954455b19f951d7b5f7ec0961793f5e6ad45f4b1826652b7e7a049903fdc7",
+      "recortes": [
+        {
+          "ficheiro": "recibo-funcao-07-pt-390-titulo.png",
+          "seletor": ".linha-titulo",
+          "origem": "recibo-funcao-07-pt-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 325,
+            "width": 354,
+            "height": 91
+          },
+          "sha256": "16c7ad838cb60111cdb8e7decf71ba5179ff673ea948e80eadf92dc95d7cde9d"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-funcao-07-pt-768.png",
+      "rota": "/livro-razao/oe-2027-despesa-funcao-07-mapa/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 2919,
+      "sha256": "e16d0228f8e6babfdc1117a44b8a2f62bdea4586db1d4d45959fc024600f45a1",
+      "recortes": [
+        {
+          "ficheiro": "recibo-funcao-07-pt-768-titulo.png",
+          "seletor": ".linha-titulo",
+          "origem": "recibo-funcao-07-pt-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 315,
+            "width": 545,
+            "height": 72
+          },
+          "sha256": "be8ee0e302a0f32ba4b0553cbbe4520784defd6597fe6a4383d9ffd57344825a"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-funcao-07-pt-1024.png",
+      "rota": "/livro-razao/oe-2027-despesa-funcao-07-mapa/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2266,
+      "sha256": "89c5eb7c1826cb1f98758eee61f2ad6c7ee1526addbe4d786d9ed461106a9f23",
+      "recortes": [
+        {
+          "ficheiro": "recibo-funcao-07-pt-1024-titulo.png",
+          "seletor": ".linha-titulo",
+          "origem": "recibo-funcao-07-pt-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 293,
+            "width": 545,
+            "height": 132
+          },
+          "sha256": "c7a3a6aab947245cda93cfda54f1cba1fdb9fba42fb6f98b37c551548c399941"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-funcao-07-pt-1280.png",
+      "rota": "/livro-razao/oe-2027-despesa-funcao-07-mapa/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2301,
+      "sha256": "9233b9457c5511b7a0cf148f54f7c92f2a412a50b4a39d42b1223fb6c2de5cba",
+      "recortes": [
+        {
+          "ficheiro": "recibo-funcao-07-pt-1280-titulo.png",
+          "seletor": ".linha-titulo",
+          "origem": "recibo-funcao-07-pt-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 296,
+            "width": 544,
+            "height": 132
+          },
+          "sha256": "942b0a19717c73555f6902ed5688daaa6c2ad629536ad71e1735600750e6db59"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-funcao-07-pt-1600.png",
+      "rota": "/livro-razao/oe-2027-despesa-funcao-07-mapa/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2307,
+      "sha256": "63a33244abd7f5907012f6bc65667efdb12f580b7fdaaf783508e5bec55d90bb",
+      "recortes": [
+        {
+          "ficheiro": "recibo-funcao-07-pt-1600-titulo.png",
+          "seletor": ".linha-titulo",
+          "origem": "recibo-funcao-07-pt-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 296,
+            "width": 544,
+            "height": 132
+          },
+          "sha256": "942b0a19717c73555f6902ed5688daaa6c2ad629536ad71e1735600750e6db59"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-funcao-07-en-390.png",
+      "rota": "/en/ledger/oe-2027-despesa-funcao-07-mapa/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3419,
+      "sha256": "c4fb80a00a65f3c700cf6d8bb0a9668eb1bf203fdbdd7fe5189ea28217963f73",
+      "recortes": [
+        {
+          "ficheiro": "recibo-funcao-07-en-390-titulo.png",
+          "seletor": ".linha-titulo",
+          "origem": "recibo-funcao-07-en-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 325,
+            "width": 354,
+            "height": 91
+          },
+          "sha256": "7430cebc142d1b91b3ae285c69225efbdd53a00630c2062a1c80b0b1d3b4e987"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-funcao-07-en-768.png",
+      "rota": "/en/ledger/oe-2027-despesa-funcao-07-mapa/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 2919,
+      "sha256": "6188b933089fcb01033b2ff423d339b0a07af7a8dd4ec12265997af28b41c6f0",
+      "recortes": [
+        {
+          "ficheiro": "recibo-funcao-07-en-768-titulo.png",
+          "seletor": ".linha-titulo",
+          "origem": "recibo-funcao-07-en-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 315,
+            "width": 545,
+            "height": 72
+          },
+          "sha256": "845def5f8b43c8655ef63960dfb8280dc42ad33db9bfb0a50fea14f98e33cdd6"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-funcao-07-en-1024.png",
+      "rota": "/en/ledger/oe-2027-despesa-funcao-07-mapa/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2266,
+      "sha256": "bfbb4349641d2a001ac20394549d8b41675399eb1b565a26b8207b4ddbd72b35",
+      "recortes": [
+        {
+          "ficheiro": "recibo-funcao-07-en-1024-titulo.png",
+          "seletor": ".linha-titulo",
+          "origem": "recibo-funcao-07-en-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 293,
+            "width": 545,
+            "height": 132
+          },
+          "sha256": "0f2dccdd62ddce3cffaef23d438ad583b7ff48dd4cb8bd20ea47734f8d80cf86"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-funcao-07-en-1280.png",
+      "rota": "/en/ledger/oe-2027-despesa-funcao-07-mapa/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2301,
+      "sha256": "1627bc899f677a831549e2fc16587012fedbe2c0d215aa2a7cf1f1571f289b12",
+      "recortes": [
+        {
+          "ficheiro": "recibo-funcao-07-en-1280-titulo.png",
+          "seletor": ".linha-titulo",
+          "origem": "recibo-funcao-07-en-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 296,
+            "width": 544,
+            "height": 132
+          },
+          "sha256": "c951b53ce5df2c0576833ea414f9a9b6b6e907d20dfb1c4f6caec4d019289c5f"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-funcao-07-en-1600.png",
+      "rota": "/en/ledger/oe-2027-despesa-funcao-07-mapa/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2307,
+      "sha256": "56540955e4f5a5f912824bf985bb93d9ac34f0b31b90f94c007d27e86cde96c7",
+      "recortes": [
+        {
+          "ficheiro": "recibo-funcao-07-en-1600-titulo.png",
+          "seletor": ".linha-titulo",
+          "origem": "recibo-funcao-07-en-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 296,
+            "width": 544,
+            "height": 132
+          },
+          "sha256": "c951b53ce5df2c0576833ea414f9a9b6b6e907d20dfb1c4f6caec4d019289c5f"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-sem-divida-07-pt-390.png",
+      "rota": "/livro-razao/oe-2027-cem-euros-funcao-07-sem-divida-mapa/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 2760,
+      "sha256": "b1c3365667b9d8b69979be3890ae630a1f5495925eb01c9f11b77acbb1e93ffd",
+      "recortes": [
+        {
+          "ficheiro": "recibo-sem-divida-07-pt-390-titulo.png",
+          "seletor": ".linha-titulo",
+          "origem": "recibo-sem-divida-07-pt-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 325,
+            "width": 354,
+            "height": 121
+          },
+          "sha256": "3734f47f9a9c2c742b61857a898a76203afa4090fc1c353f8b724ff192720f78"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-sem-divida-07-pt-768.png",
+      "rota": "/livro-razao/oe-2027-cem-euros-funcao-07-sem-divida-mapa/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 2476,
+      "sha256": "a69943973edf7cf482b0f09f70d65d010fefdfa7a86067fd7fa30711a6821801",
+      "recortes": [
+        {
+          "ficheiro": "recibo-sem-divida-07-pt-768-titulo.png",
+          "seletor": ".linha-titulo",
+          "origem": "recibo-sem-divida-07-pt-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 315,
+            "width": 545,
+            "height": 107
+          },
+          "sha256": "b403ca18f018c14cac42eda31e9758e5f321bb66f7af0dc99c878945db6d6070"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-sem-divida-07-pt-1024.png",
+      "rota": "/livro-razao/oe-2027-cem-euros-funcao-07-sem-divida-mapa/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 1771,
+      "sha256": "17d01dca6da0ff6be85bcf825216fd9cb5cd358c655a9a3c1818a24b1f378718",
+      "recortes": [
+        {
+          "ficheiro": "recibo-sem-divida-07-pt-1024-titulo.png",
+          "seletor": ".linha-titulo",
+          "origem": "recibo-sem-divida-07-pt-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 293,
+            "width": 545,
+            "height": 175
+          },
+          "sha256": "dbabd241daa4179e817d0fa9b40db6e9dc4d5583b87b83a295a6f610d593fec6"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-sem-divida-07-pt-1280.png",
+      "rota": "/livro-razao/oe-2027-cem-euros-funcao-07-sem-divida-mapa/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 1806,
+      "sha256": "a95762aeb0ceec22b021adf7a25961609fae19181e4bba0b1ad79d6d7ff687c7",
+      "recortes": [
+        {
+          "ficheiro": "recibo-sem-divida-07-pt-1280-titulo.png",
+          "seletor": ".linha-titulo",
+          "origem": "recibo-sem-divida-07-pt-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 296,
+            "width": 544,
+            "height": 176
+          },
+          "sha256": "31f35b2ab612f6f4c859279979da56efd2aafe4eee85ef444e5de06b58067dd4"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-sem-divida-07-pt-1600.png",
+      "rota": "/livro-razao/oe-2027-cem-euros-funcao-07-sem-divida-mapa/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 1812,
+      "sha256": "44dd2f0b138c9fb51669a90b61327f1068039ba662cdc7e4a722ace1814ad8f0",
+      "recortes": [
+        {
+          "ficheiro": "recibo-sem-divida-07-pt-1600-titulo.png",
+          "seletor": ".linha-titulo",
+          "origem": "recibo-sem-divida-07-pt-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 296,
+            "width": 544,
+            "height": 176
+          },
+          "sha256": "31f35b2ab612f6f4c859279979da56efd2aafe4eee85ef444e5de06b58067dd4"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-sem-divida-07-en-390.png",
+      "rota": "/en/ledger/oe-2027-cem-euros-funcao-07-sem-divida-mapa/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 2863,
+      "sha256": "609429756ca35f12156f4a9bd2f35ec71dbe5ab7402521ead6d3fd0797bc7f15",
+      "recortes": [
+        {
+          "ficheiro": "recibo-sem-divida-07-en-390-titulo.png",
+          "seletor": ".linha-titulo",
+          "origem": "recibo-sem-divida-07-en-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 325,
+            "width": 354,
+            "height": 151
+          },
+          "sha256": "c199a1e932075eeaa90306b074385f614133190e43671f33e62cd9b29c751ae6"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-sem-divida-07-en-768.png",
+      "rota": "/en/ledger/oe-2027-cem-euros-funcao-07-sem-divida-mapa/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 2476,
+      "sha256": "ffdb70a79ea1cf22eee3ca2ceb28115b439a5fbffd14c9bfdac0e2d91c6acf1f",
+      "recortes": [
+        {
+          "ficheiro": "recibo-sem-divida-07-en-768-titulo.png",
+          "seletor": ".linha-titulo",
+          "origem": "recibo-sem-divida-07-en-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 315,
+            "width": 545,
+            "height": 107
+          },
+          "sha256": "14870ffc51137c5ca3e8b341b08c5fd1942b2983eabc1de73b9978aa51e6313b"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-sem-divida-07-en-1024.png",
+      "rota": "/en/ledger/oe-2027-cem-euros-funcao-07-sem-divida-mapa/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 1771,
+      "sha256": "03a2905973de7d03374644b6fbb2f6cc482ecbcc33f468876b9f5aedeee5cc62",
+      "recortes": [
+        {
+          "ficheiro": "recibo-sem-divida-07-en-1024-titulo.png",
+          "seletor": ".linha-titulo",
+          "origem": "recibo-sem-divida-07-en-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 293,
+            "width": 545,
+            "height": 175
+          },
+          "sha256": "56cfe3be1626d712a1ad0876f4b8bc0c52cce51f31246096863fbff18440c04d"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-sem-divida-07-en-1280.png",
+      "rota": "/en/ledger/oe-2027-cem-euros-funcao-07-sem-divida-mapa/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 1806,
+      "sha256": "07d5104d2deeb41040d16e952b6541f381d4689498e1a88601c8d8e99189edbb",
+      "recortes": [
+        {
+          "ficheiro": "recibo-sem-divida-07-en-1280-titulo.png",
+          "seletor": ".linha-titulo",
+          "origem": "recibo-sem-divida-07-en-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 296,
+            "width": 544,
+            "height": 176
+          },
+          "sha256": "58a09b62cf9dbe6fe13d8589a97412ddb0c9051499c715fc43c426120d18f089"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-sem-divida-07-en-1600.png",
+      "rota": "/en/ledger/oe-2027-cem-euros-funcao-07-sem-divida-mapa/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 1812,
+      "sha256": "42bb43912472e91becee4e8c7686bb6fde18c94c9e94643426b9e96942aa8ecd",
+      "recortes": [
+        {
+          "ficheiro": "recibo-sem-divida-07-en-1600-titulo.png",
+          "seletor": ".linha-titulo",
+          "origem": "recibo-sem-divida-07-en-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 296,
+            "width": 544,
+            "height": 176
+          },
+          "sha256": "58a09b62cf9dbe6fe13d8589a97412ddb0c9051499c715fc43c426120d18f089"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    }
+  ],
+  "recursos": {
+    "version.json": "3e28873825842cd117ce5eb7820444ff13803e4aac7563ab7634641b179cac05",
+    "explicacoes/dinheiro-do-estado-2027/index.html": "138b3fb286ad0e2782e025fe1bb43f477e3b4536e68f52d5b86a7c24962ce586",
+    "tipos/spectral/Spectral-Regular.woff2": "3c846b032ad614e02ebc439087bbcbb7371cfbdea6c8a4b568efa859537e9c43",
+    "tipos/bitter/Bitter[wght].woff2": "b4ad17520d0ce8bd1aa98af06e07ca94145522f868b5a010732eb5eee3ba2ea0",
+    "_astro/Base.CQ2WVYKH.css": "413aa149b5d8f4c49fbedde1b385476bf7766e5886b0731be4e0dc5fada4667b",
+    "js/tema.js": "855bcee3ec1223b43e0f3e9a94c1fbdf1451e53830dcc022962b48e8d3340757",
+    "js/interacao-dos-graficos.js": "c5e42b905d26d12581e292acfec8957fbbf20604e674bee321f4aa1b39ebd989",
+    "tipos/spectral-sc/SpectralSC-SemiBold.woff2": "b847fe8f1fe1a862ce15e288958d132940a8204951ef0dbe2c9ad8fd997f29e2",
+    "tipos/spectral/Spectral-SemiBold.woff2": "91eef1143e31196ec762c00b566b9f628a851db348eb524cbfb36bfba9b22f2d",
+    "tipos/spectral-sc/SpectralSC-Regular.woff2": "afa69dd2e7aaca2733883133745fd84c18dfac6a08d5999e69705ea7277240b8",
+    "en/explainers/dinheiro-do-estado-2027/index.html": "7d924c5ab1a42d189c0de5726762e0165ec33eeb494371b6f754b239de3b919d",
+    "explicacoes/index.html": "7a80ef63a8d812c53bf81377c5fabee068cb678cccf6da01e68723fd083e93bd",
+    "en/explainers/index.html": "42f4f3cd6e73ea7ab7b5f2958f4bae070dd1dc293eee97e256dd1368367ac4f9",
+    "index.html": "aac4ff78c1f567a3a667be681023fafc8f196ca89dff2f9cbb838f28ccca399c",
+    "_astro/primeira-pagina.sUQIxm-E.css": "1d6224df77b82eec35063368cea406822f23ca540f819c078dee626d5cfadff2",
+    "_astro/inicio.DYisJLJ2.css": "1887d09fd2f5e2597bbe8b9ce00ee29695cd096d2db1486ff34d9b9013da3be9",
+    "_astro/lugar.bxF38FjU.css": "ca5ecb9c51f88f1c0f5c59652689ed2ca642ad4dee9eaf4fbc51328d9dd957fd",
+    "tipos/spectral/Spectral-Medium.woff2": "34f0ba222c28bc0ea816c693d05c528be4a5ee10c4b1765cdea774c6fb2502c2",
+    "en/index.html": "8910292028111e3b31d7baa4e5c9a9ef54a60436557c28a122eda531cd190097",
+    "livro-razao/oe-2027-despesa-funcao-07-mapa/index.html": "d9e1463518a43a3e8429685f093eaca8a92a26548d0d1f394b92c607dc9625da",
+    "_astro/linha.Dd7n1KyQ.css": "583639d016c39485e899ae4fffc401e64d1489306f153b3670a730698057d772",
+    "js/copiar-incorporacao.js": "b75e5f90efcd85ea94274191e44a48594932638df67377c0b91ff367df97ca13",
+    "en/ledger/oe-2027-despesa-funcao-07-mapa/index.html": "48e61d874c8c65f12ec2a6f7105328c4a1299fc15996eddbaaef078fb4d9aedf",
+    "livro-razao/oe-2027-cem-euros-funcao-07-sem-divida-mapa/index.html": "17569065a7d063eaa84dd8929169b8773fa8f834ad6aa018c86990369ee6b8fe",
+    "en/ledger/oe-2027-cem-euros-funcao-07-sem-divida-mapa/index.html": "2f93d9432f6f3a0d553d11531bff733b2084079c1306b393902bf1a0ff184a86"
+  },
+  "falhas": [],
+  "ok": true
+}
