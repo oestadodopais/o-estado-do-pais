@@ -252,7 +252,12 @@ function resolver(partes, lang, onde, ctx) {
         ['eurostat-pt-phys','eurostat-be-phys','eurostat-el-phys'].every(id =>
           ctx.linhas.has(id) && getClaim(id).reference_date === '2024') &&
         lista.some(t => t && typeof t === 'object' && 'periodo' in t && t.periodo === 'eurostat-pt-phys');
-      if (/\d/.test(p) && !contagemMedicos) throw defeito(aqui, `a palavra fixa «${p}» traz um algarismo; os algarismos entram por { claim } ou { periodo }.`);
+      if (contagemMedicos) {
+        const [antes,depois] = p.split('2024');
+        out.push(antes, {data:{id:'eurostat-pt-phys',campo:'reference_date',valor:String(getClaim('eurostat-pt-phys').reference_date)}}, depois);
+        return;
+      }
+      if (/\d/.test(p)) throw defeito(aqui, `a palavra fixa «${p}» traz um algarismo; os algarismos entram por { claim } ou { periodo }.`);
       out.push(p);
       return;
     }

@@ -1000,3 +1000,5 @@ A primeira exportação falhou por `ModuleNotFoundError`; a repetição pelo mó
 As frases renderizadas, os códigos e as capturas serão registados depois da corrida da cabeça comitada.
 
 - **V2E-68.** A primeira construção recusou o ano literal exigido pela frase (`build=1`, `verify=125`, `typecheck=0`, em `e/portoes-recusa-ano/`). O resolvedor admite só a frase exata nas duas línguas, com os três recibos no contexto, todos com período de 2024, e com o token de período português no próprio parágrafo. Plantas retiram o token, trocam o ano e acrescentam outro algarismo.
+
+A segunda corrida construiu as páginas, mas o portão do HTML recusou o ano sem marcação (`build=1`, `verify=125`, `typecheck=0`, em `e/portoes-recusa-marcacao/`). O resolvedor apresenta esse ano pela célula de data da linha portuguesa, conservando a frase e os tokens da declaração. A prova do período fica assim também no HTML. O guião de medição corrigiu ainda um seletor que esperava uma barra final inexistente no endereço do recibo.

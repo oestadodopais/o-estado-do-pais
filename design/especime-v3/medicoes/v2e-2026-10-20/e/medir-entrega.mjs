@@ -27,7 +27,7 @@ for(const lang of ['pt','en']){
  const textoPedidos=textoSemSelos(pedidos);
  assert(textoPedidos.includes(lang==='pt'?'com dados reportados a':'with data referenced to'));
  assert(pedidos.querySelector('[data-claim="ppp-oe2027-riscos-pedidos-rodoviarios"]'));
- assert(pedidos.querySelector('a[href$="/ppp-oe2027-riscos-pedidos-rodoviarios/"]'));
+ assert(pedidos.querySelector('a[data-discussao-periodo="ppp-oe2027-riscos-pedidos-rodoviarios"][href$="/ppp-oe2027-riscos-pedidos-rodoviarios"]'));
  r.edicoes[lang]={rota,frase:frase.trim(),pedidos:textoPedidos,html:p.innerHTML,html_pedidos:pedidos.innerHTML,sha256:sha(html),recibos:[]};
  for(const pais of ['pt','be','el']){
   const id=`eurostat-${pais}-phys`,pagina=`${lang==='pt'?'livro-razao':'en/ledger'}/${id}/index.html`;
