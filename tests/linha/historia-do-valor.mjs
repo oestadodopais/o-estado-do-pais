@@ -55,6 +55,7 @@ for(const id of ['pe-oe-beira-abolicao']){
 const entrega=linhas.get('oe-2027-calendario-entrega');
 const historiaData=entradasDoValor(entrega).map(assinaturaDoValor);
 for(const [nome,muda,falha] of [
+ ['data impossível',c=>{c.reference_date='2026-02-31';c.value='31 de fevereiro';c.excerpt=c.value;c.corrections.at(-1).new_value=c.value;},'data completa não coincide'],
  ['mês trocado',c=>{c.value='8 de novembro';c.corrections.at(-1).new_value=c.value;},'data completa não coincide'],
  ['texto medido disfarçado de data',c=>{c.value='820 euros';c.corrections.at(-1).new_value=c.value;},'forma de calendário'],
  ['história da data retirada',c=>{c.corrections=[];},'retirada ou alterada'],

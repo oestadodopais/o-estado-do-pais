@@ -6027,10 +6027,6 @@ for (const file of ficheirosHtml(DIST)) {
     if (modificador !== undefined && (modificador !== 'abs' || !valorNumerico || paginaDoLivro))
       err(`a afirmação "${id}" tem modificador inválido.`);
     let esperado = modificador === 'abs' && valorNumerico ? String(claim.value).replace(/^[+−-]/, '') : claim.value;
-    if (rota.lang === 'en' && claim.study === 'orcamento-2027-o-que-muda-e-para-quem' && claim.derivation && valorNumerico) {
-      const [whole, fraction] = String(esperado).replace(/\s/g, '').split(',');
-      esperado = whole.replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,') + (fraction === undefined ? '' : '.' + fraction);
-    }
     const renderizado = decodeEntities(textoDe(el));
     if (digitsOf(renderizado) !== digitsOf(esperado)) {
       err(

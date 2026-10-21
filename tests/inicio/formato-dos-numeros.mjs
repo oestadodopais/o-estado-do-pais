@@ -1,6 +1,4 @@
 #!/usr/bin/env node
-import {loadClaims as claimsEo1} from '../../src/lib/ledger.mjs';
-const derivadasEo1 = new Set([...claimsEo1().values()].filter(c=>c.study==='orcamento-2027-o-que-muda-e-para-quem'&&c.derivation).map(c=>c.id));
 /**
  * =============================================================================
  * O FORMATO DOS NÚMEROS · um só formato em todos os valores rendidos (bloco K2, 02.10.2026, item 5 do brief; e a
@@ -123,10 +121,7 @@ export function conferirFormatoDaPagina(html, rel) {
     if (!eNumero(numero)) { contas.nao_numericos++; continue; }
     if (deValor) {
       contas.valores++;
-      const inglesaEo1 = /^en\/ledger\//.test(rel) && marca === 'claim' && derivadasEo1.has(chave);
-      if (inglesaEo1) {
-        if (!/^−?\d{1,3}(?:,\d{3})*(?:\.\d+)?$/.test(numero)) desvios.push({ regra: 'F1', rel, valor: texto, contexto });
-      } else if (/^-/.test(numero)) desvios.push({ regra: 'F3', rel, valor: texto, contexto });
+      if (/^-/.test(numero)) desvios.push({ regra: 'F3', rel, valor: texto, contexto });
       else if (/\d\.\d/.test(numero) && !/^\d{1,3}(\.\d{3})+$/.test(numero)) desvios.push({ regra: 'F2', rel, valor: texto, contexto });
       else if (!daCasa(numero)) desvios.push({ regra: 'F1', rel, valor: texto, contexto });
     }
@@ -264,6 +259,6 @@ if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.ar
     (plantas.length ? ` · ${plantas.filter((p) => p.mordeu).length} de ${plantas.length} plantas a morder` : ''));
   for (const e of erros.slice(0, 40)) console.error(`  ✗ ${e}`);
   if (erros.length > 40) console.error(`  … e mais ${erros.length - 40}`);
-  if (!erros.length) console.log('  ✓ todos os valores rendidos seguem o formato da casa, com a forma inglesa nas derivadas EO1, o sinal menos, o espaço antes de «%» e o dinheiro com a palavra.');
+  if (!erros.length) console.log('  ✓ todos os valores rendidos seguem o formato da casa, com o sinal menos, o espaço antes de «%» e o dinheiro com a palavra.');
   process.exitCode = erros.length ? 1 : 0;
 }
