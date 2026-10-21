@@ -20,6 +20,8 @@ import PortaDoEstudoEO1 from '../components/PortaDoEstudoEO1.astro';
 import Base from '../layouts/Base.astro';
 import PortasDaDiscussao from '../components/discussao/PortasDaDiscussao.astro';
 import FraseDaExplicacao from '../components/explicacoes/FraseDaExplicacao.astro';
+/* EX4-c (21.10.2026): a porta do fim para um estudo leva o título como a casa o dá a um estudo, com a marca e a língua. */
+import TituloDeTrabalho from '../components/TituloDeTrabalho.astro';
 import BarrasDoLivro from '../components/formas/BarrasDoLivro.astro';
 import { explicacaoResolvida } from '../lib/explicacoes.mjs';
 import { routePath } from '../lib/routes.mjs';
@@ -59,7 +61,7 @@ const path = routePath('explicacao', lang, { slug });
     {/* AS PORTAS DO FIM (EX1-b, 06.10.2026): as que a explicação declara, pela ordem dela; os números e as fontes sempre, e,
         nesta, a página do tema «Estado e economia» (a decisão do lugar de direção sobre a I212). */}
     <p class="regra-portas explicacao-portas" data-explicacao-portas>
-      {e.portas.map((p, i) => <>{i > 0 && ' '}<a href={p.href} data-explicacao-porta-do-fim={p.entrada ?? p.rota}>{p.partes ? <FraseDaExplicacao partes={p.partes} lang={lang} selos={false} /> : p.texto} →</a></>)}
+      {e.portas.map((p, i) => <>{i > 0 && ' '}<a href={p.href} data-explicacao-porta-do-fim={p.entrada ?? p.rota}>{p.partes ? <FraseDaExplicacao partes={p.partes} lang={lang} selos={false} /> : p.rota === 'estudo' ? <TituloDeTrabalho titulo={p.texto} lang={lang} /> : p.texto} →</a></>)}
     </p>
     {slug === 'dinheiro-do-estado-2026' && <PortaDoEstudoEO1 lang={lang} />}
   </article>

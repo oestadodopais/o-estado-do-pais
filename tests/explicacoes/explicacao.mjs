@@ -872,6 +872,14 @@ export function conferirPaginaDaExplicacao(root, lang, slug, linhas = loadClaims
   const lidas = main.querySelectorAll('[data-explicacao-portas] a[href]').map((/** @type {any} */ a) => [a.getAttribute('href'), normal(a.textContent)]);
   if (!declaradas.some((/** @type {any} */ d) => d.rota === 'livro' && !d.entrada) || !lidas.some((/** @type {any} */ x) => x[0] === routePath('livro', lang))) erros.push('X8 · falta a porta para os números e as fontes no fim');
   if (JSON.stringify(lidas) !== JSON.stringify(esperadas)) erros.push(`X8 · as portas do fim (${lidas.map((/** @type {any} */ x) => x.join(' ')).join(' · ') || 'nenhuma'}) não são as declaradas (${esperadas.map((/** @type {any} */ x) => x.join(' ')).join(' · ')})`);
+  /* EX4-c (21.10.2026): a porta do fim para um estudo leva o título dentro da marca que a casa dá a um título de estudo
+     (`data-nonledger="titulo-de-estudo"`, como `TituloDeTrabalho.astro`), com o título declarado da edição. */
+  for (const d of declaradas.filter((/** @type {any} */ x) => x.rota === 'estudo' && !x.entrada)) {
+    const titulo = /** @type {any[]} */ (WORKS).find((w) => w.slug === d.slug)?.editions?.find((/** @type {any} */ x) => x.lang === lang)?.title;
+    const a = main.querySelectorAll('[data-explicacao-portas] a[data-explicacao-porta-do-fim="estudo"]').find((/** @type {any} */ x) => x.getAttribute('href') === routePath('estudo', lang, { slug: d.slug }));
+    const marca = a?.querySelector('[data-nonledger="titulo-de-estudo"]');
+    if (!marca || normal(marca.textContent) !== normal(String(titulo))) erros.push(`X8 · a porta do fim para o estudo «${d.slug}» não leva o título dentro da marca de título de estudo (${lang})`);
+  }
   /* Os selos (EX1-b, o destino «selos» de «aponta»): cada valor de um parágrafo tem ao lado o selo do seu recibo. */
   for (const c of main.querySelectorAll('[data-explicacao-paragrafo] [data-claim]')) {
     const id = c.getAttribute('data-claim');
@@ -1065,6 +1073,19 @@ export function plantasDaExplicacao(dist) {
     r.querySelectorAll('[data-instrumento]').filter((/** @type {any} */ x) => x.querySelector('figure[data-forma="barras-do-livro"]')).at(-1)?.remove();
     const q = figurasDeclaradasEmFalta(r, e.slug);
     out.push({ nome: 'uma figura declarada tirada da página', mordeu: figurasDeclaradasEmFalta(parse(html), e.slug).length === 0 && q.some((x) => /F22 · a figura declarada/.test(x)), queixa: q.join(' | ') || 'nenhuma' });
+  }
+  /* EX4-c (21.10.2026): a porta para um estudo sem a marca do título, na explicação que a declara. */
+  {
+    const e27 = /** @type {any} */ (EXPLICACOES.find((x) => Array.isArray(x.portas) && x.portas.some((/** @type {any} */ d) => d.rota === 'estudo')));
+    const h27 = e27 ? fs.readFileSync(path.join(dist, 'explicacoes', e27.slug, 'index.html'), 'utf8') : '';
+    if (e27) {
+      const c27 = conferirPaginaDaExplicacao(parse(h27), 'pt', e27.slug, linhas);
+      const r = parse(h27);
+      const m = r.querySelector('[data-explicacao-portas] a[data-explicacao-porta-do-fim="estudo"] [data-nonledger="titulo-de-estudo"]');
+      m?.replaceWith(m.textContent);
+      const q = conferirPaginaDaExplicacao(r, 'pt', e27.slug, linhas);
+      out.push({ nome: 'a porta para um estudo sem a marca do título', mordeu: Boolean(m) && c27.length === 0 && q.some((x) => /X8 · a porta do fim para o estudo/.test(x)), queixa: q.join(' | ') || 'nenhuma' });
+    } else out.push({ nome: 'a porta para um estudo sem a marca do título', mordeu: false, aplica: false, queixa: 'nenhuma explicação declara uma porta para um estudo: a planta não se aplica' });
   }
   naPagina('o selo de um valor tirado', (r) => { r.querySelector('[data-explicacao-paragrafo] .claim a.src-chip').remove(); }, /X8 · o valor de/);
   /* As plantas da declaração (X9): sobre uma cópia em memória. */
