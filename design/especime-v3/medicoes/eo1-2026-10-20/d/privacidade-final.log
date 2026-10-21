@@ -1,0 +1,1070 @@
+
+> o-estado-do-pais@0.1.0 check:privacidade
+> PYTHONDONTWRITEBYTECODE=1 python3 scripts/check-privacidade.py --prova
+
+{
+  "ficheiros": 21429,
+  "quantidade": 0,
+  "achados": [],
+  "plantas": [
+    {
+      "id": "transferida-nome-inteiro",
+      "mordeu": true
+    },
+    {
+      "id": "transferida-documento-alojado-for-abreviado",
+      "mordeu": true
+    },
+    {
+      "id": "transferida-documento-alojado-en",
+      "mordeu": true
+    },
+    {
+      "id": "transferida-atributo",
+      "mordeu": true
+    },
+    {
+      "id": "transferida-json-ld",
+      "mordeu": true
+    },
+    {
+      "id": "transferida-rotulo",
+      "mordeu": true
+    },
+    {
+      "id": "transferida-regra-do-metodo",
+      "mordeu": true
+    },
+    {
+      "id": "transferida-m5-pagina-com-comentario",
+      "mordeu": true
+    },
+    {
+      "id": "transferida-m5-vista",
+      "mordeu": true
+    },
+    {
+      "id": "transferida-fonte-publica",
+      "mordeu": true
+    },
+    {
+      "id": "transferida-controlo-publico",
+      "mordeu": true
+    },
+    {
+      "id": "nome-pessoal-1",
+      "pagina_base": "404.html",
+      "mordeu": true,
+      "falha": "nome pessoal ou caminho local na página construída"
+    },
+    {
+      "id": "nome-da-casa-real",
+      "nome_pessoal": true,
+      "esperado": "detetar",
+      "mordeu": true
+    },
+    {
+      "id": "nome-pessoal-portavel",
+      "mordeu": true
+    },
+    {
+      "id": "ligacao-home-na-conta-generica",
+      "mordeu": true
+    },
+    {
+      "id": "pasta-generica-raiz",
+      "mordeu": true
+    },
+    {
+      "id": "pasta-generica-root",
+      "mordeu": true
+    },
+    {
+      "id": "pasta-generica-runner",
+      "mordeu": true
+    },
+    {
+      "id": "pasta-generica-app",
+      "mordeu": true
+    },
+    {
+      "id": "pasta-generica-code",
+      "mordeu": true
+    },
+    {
+      "id": "caminho-1",
+      "mordeu": true
+    },
+    {
+      "id": "caminho-2",
+      "mordeu": true
+    },
+    {
+      "id": "caminho-3",
+      "mordeu": true
+    },
+    {
+      "id": "caminho-4",
+      "mordeu": true
+    },
+    {
+      "id": "caminho-5",
+      "mordeu": true
+    }
+  ],
+  "conhecido_positivo_de_nome": true,
+  "aviso": "",
+  "api": {
+    "ficheiros": 1,
+    "conhecido_positivo_de_nome": true,
+    "aviso": "",
+    "caminhos_e_nomes": 0,
+    "achados_de_caminhos": [],
+    "segredos": [],
+    "chaves_publicas_vistas": 1,
+    "plantas": [
+      {
+        "id": "segredo-chave-secreta",
+        "mordeu": true
+      },
+      {
+        "id": "segredo-papel-de-servico",
+        "mordeu": true
+      },
+      {
+        "id": "segredo-sal-com-valor",
+        "mordeu": true
+      },
+      {
+        "id": "segredo-sal-entre-aspas",
+        "mordeu": true
+      },
+      {
+        "id": "segredo-chave-com-valor",
+        "mordeu": true
+      },
+      {
+        "id": "segredo-chave-entre-aspas",
+        "mordeu": true
+      },
+      {
+        "id": "sal-lido-do-ambiente-sem-valor",
+        "mordeu": true
+      },
+      {
+        "id": "chave-lida-do-ambiente-sem-valor",
+        "mordeu": true
+      },
+      {
+        "id": "nome-vazio-entre-aspas-sem-valor",
+        "mordeu": true
+      },
+      {
+        "id": "api-caminho-1",
+        "mordeu": true
+      },
+      {
+        "id": "api-caminho-2",
+        "mordeu": true
+      },
+      {
+        "id": "api-caminho-3",
+        "mordeu": true
+      },
+      {
+        "id": "api-caminho-4",
+        "mordeu": true
+      },
+      {
+        "id": "api-caminho-5",
+        "mordeu": true
+      },
+      {
+        "id": "api-nome-pessoal",
+        "mordeu": true
+      }
+    ],
+    "passou": true
+  },
+  "rastreado": {
+    "ficheiros": 32454,
+    "quantidade": 0,
+    "achados": [],
+    "plantas": [
+      {
+        "id": "ramo-estrutura-1-texto",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-estrutura-1-gzip",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-estrutura-1-nome",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-estrutura-2-texto",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-estrutura-2-gzip",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-estrutura-2-nome",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-estrutura-inocua",
+        "mordeu": true,
+        "mensagem": "Registo comprimido dentro do âmbito, com marcadores portáveis, lido e aceite."
+      },
+      {
+        "id": "ramo-pessoal-texto",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-pessoal-gzip",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-pessoal-nome",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-pessoal-outra-caixa",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-pessoal-binario",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-pessoal-utf-16-le",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-pessoal-utf-16-be",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-pessoal-latin-1",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-pessoal-entidade-nome",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-pessoal-entidade-decimal",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-pessoal-entidade-hexadecimal",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-pessoal-escape-unicode",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-pessoal-decisao-estrutura",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-pessoal-decisao-inocua",
+        "mordeu": true
+      },
+      {
+        "id": "identidade-1-segredo",
+        "mordeu": true
+      },
+      {
+        "id": "identidade-1-autor",
+        "mordeu": true
+      },
+      {
+        "id": "identidade-2-segredo",
+        "mordeu": true
+      },
+      {
+        "id": "identidade-2-autor",
+        "mordeu": true
+      },
+      {
+        "id": "identidade-3-segredo",
+        "mordeu": true
+      },
+      {
+        "id": "identidade-3-autor",
+        "mordeu": true
+      },
+      {
+        "id": "identidade-4-segredo",
+        "mordeu": true
+      },
+      {
+        "id": "identidade-4-autor",
+        "mordeu": true
+      },
+      {
+        "id": "identidade-5-segredo",
+        "mordeu": true
+      },
+      {
+        "id": "identidade-5-autor",
+        "mordeu": true
+      },
+      {
+        "id": "identidade-6-segredo",
+        "mordeu": true
+      },
+      {
+        "id": "identidade-6-autor",
+        "mordeu": true
+      },
+      {
+        "id": "normalizacao-bom-pagina",
+        "mordeu": true
+      },
+      {
+        "id": "normalizacao-abreviada-limpa",
+        "mordeu": true
+      },
+      {
+        "id": "normalizacao-nfd-pagina",
+        "mordeu": true
+      },
+      {
+        "id": "normalizacao-formato-recusado",
+        "mordeu": true
+      },
+      {
+        "id": "espaco-segredo-duplo",
+        "mordeu": true
+      },
+      {
+        "id": "espaco-segredo-inseparavel",
+        "mordeu": true
+      },
+      {
+        "id": "espaco-segredo-tabulador",
+        "mordeu": true
+      },
+      {
+        "id": "espaco-pagina-duplo-utf-8",
+        "mordeu": true
+      },
+      {
+        "id": "espaco-pagina-duplo-utf-16-le",
+        "mordeu": true
+      },
+      {
+        "id": "espaco-pagina-duplo-utf-16-be",
+        "mordeu": true
+      },
+      {
+        "id": "espaco-pagina-duplo-latin-1",
+        "mordeu": true
+      },
+      {
+        "id": "espaco-pagina-inseparavel-utf-8",
+        "mordeu": true
+      },
+      {
+        "id": "espaco-pagina-inseparavel-utf-16-le",
+        "mordeu": true
+      },
+      {
+        "id": "espaco-pagina-inseparavel-utf-16-be",
+        "mordeu": true
+      },
+      {
+        "id": "espaco-pagina-inseparavel-latin-1",
+        "mordeu": true
+      },
+      {
+        "id": "espaco-pagina-quebra-utf-8",
+        "mordeu": true
+      },
+      {
+        "id": "espaco-pagina-quebra-utf-16-le",
+        "mordeu": true
+      },
+      {
+        "id": "espaco-pagina-quebra-utf-16-be",
+        "mordeu": true
+      },
+      {
+        "id": "espaco-pagina-quebra-latin-1",
+        "mordeu": true
+      },
+      {
+        "id": "espaco-pagina-entidade-utf-8",
+        "mordeu": true
+      },
+      {
+        "id": "espaco-pagina-entidade-utf-16-le",
+        "mordeu": true
+      },
+      {
+        "id": "espaco-pagina-entidade-utf-16-be",
+        "mordeu": true
+      },
+      {
+        "id": "espaco-pagina-entidade-latin-1",
+        "mordeu": true
+      },
+      {
+        "id": "espaco-pagina-decimal-utf-8",
+        "mordeu": true
+      },
+      {
+        "id": "espaco-pagina-decimal-utf-16-le",
+        "mordeu": true
+      },
+      {
+        "id": "espaco-pagina-decimal-utf-16-be",
+        "mordeu": true
+      },
+      {
+        "id": "espaco-pagina-decimal-latin-1",
+        "mordeu": true
+      },
+      {
+        "id": "espaco-pagina-hexadecimal-utf-8",
+        "mordeu": true
+      },
+      {
+        "id": "espaco-pagina-hexadecimal-utf-16-le",
+        "mordeu": true
+      },
+      {
+        "id": "espaco-pagina-hexadecimal-utf-16-be",
+        "mordeu": true
+      },
+      {
+        "id": "espaco-pagina-hexadecimal-latin-1",
+        "mordeu": true
+      },
+      {
+        "id": "forma-NFC-minusculas-utf-8",
+        "mordeu": true
+      },
+      {
+        "id": "forma-NFC-minusculas-utf-16-le",
+        "mordeu": true
+      },
+      {
+        "id": "forma-NFC-minusculas-utf-16-be",
+        "mordeu": true
+      },
+      {
+        "id": "forma-NFC-minusculas-latin-1",
+        "mordeu": true
+      },
+      {
+        "id": "forma-NFC-casefold-utf-8",
+        "mordeu": true
+      },
+      {
+        "id": "forma-NFC-casefold-utf-16-le",
+        "mordeu": true
+      },
+      {
+        "id": "forma-NFC-casefold-utf-16-be",
+        "mordeu": true
+      },
+      {
+        "id": "forma-NFC-casefold-latin-1",
+        "mordeu": true
+      },
+      {
+        "id": "forma-NFC-maiusculas-utf-8",
+        "mordeu": true
+      },
+      {
+        "id": "forma-NFC-maiusculas-utf-16-le",
+        "mordeu": true
+      },
+      {
+        "id": "forma-NFC-maiusculas-utf-16-be",
+        "mordeu": true
+      },
+      {
+        "id": "forma-NFC-maiusculas-latin-1",
+        "mordeu": true
+      },
+      {
+        "id": "forma-NFD-minusculas-utf-8",
+        "mordeu": true
+      },
+      {
+        "id": "forma-NFD-minusculas-utf-16-le",
+        "mordeu": true
+      },
+      {
+        "id": "forma-NFD-minusculas-utf-16-be",
+        "mordeu": true
+      },
+      {
+        "id": "forma-NFD-casefold-utf-8",
+        "mordeu": true
+      },
+      {
+        "id": "forma-NFD-casefold-utf-16-le",
+        "mordeu": true
+      },
+      {
+        "id": "forma-NFD-casefold-utf-16-be",
+        "mordeu": true
+      },
+      {
+        "id": "forma-NFD-maiusculas-utf-8",
+        "mordeu": true
+      },
+      {
+        "id": "forma-NFD-maiusculas-utf-16-le",
+        "mordeu": true
+      },
+      {
+        "id": "forma-NFD-maiusculas-utf-16-be",
+        "mordeu": true
+      },
+      {
+        "id": "espacos-controlo-inocuo",
+        "mordeu": true
+      },
+      {
+        "id": "e-nfc-nfd-mistos-utf-8",
+        "mordeu": true
+      },
+      {
+        "id": "e-nfc-nfd-mistos-utf-16-le",
+        "mordeu": true
+      },
+      {
+        "id": "e-nfc-nfd-mistos-utf-16-be",
+        "mordeu": true
+      },
+      {
+        "id": "e-nfc-nfd-mistos-latin-1-entidades-numericas",
+        "mordeu": true
+      },
+      {
+        "id": "e-entidade-sem-ponto-virgula-utf-8",
+        "mordeu": true
+      },
+      {
+        "id": "e-entidade-sem-ponto-virgula-utf-16-le",
+        "mordeu": true
+      },
+      {
+        "id": "e-entidade-sem-ponto-virgula-utf-16-be",
+        "mordeu": true
+      },
+      {
+        "id": "e-entidade-sem-ponto-virgula-latin-1",
+        "mordeu": true
+      },
+      {
+        "id": "e-entidade-apos-utf-8",
+        "mordeu": true
+      },
+      {
+        "id": "e-entidade-apos-utf-16-le",
+        "mordeu": true
+      },
+      {
+        "id": "e-entidade-apos-utf-16-be",
+        "mordeu": true
+      },
+      {
+        "id": "e-entidade-apos-latin-1",
+        "mordeu": true
+      },
+      {
+        "id": "e-entidade-ccaron-utf-8",
+        "mordeu": true
+      },
+      {
+        "id": "e-entidade-ccaron-utf-16-le",
+        "mordeu": true
+      },
+      {
+        "id": "e-entidade-ccaron-utf-16-be",
+        "mordeu": true
+      },
+      {
+        "id": "e-entidade-ccaron-latin-1",
+        "mordeu": true
+      },
+      {
+        "id": "e-ss-para-eszett-utf-8",
+        "mordeu": true
+      },
+      {
+        "id": "e-ss-para-eszett-utf-16-le",
+        "mordeu": true
+      },
+      {
+        "id": "e-ss-para-eszett-utf-16-be",
+        "mordeu": true
+      },
+      {
+        "id": "e-ss-para-eszett-latin-1",
+        "mordeu": true
+      },
+      {
+        "id": "e-ligatura-fi-utf-8",
+        "mordeu": true
+      },
+      {
+        "id": "e-ligatura-fi-utf-16-le",
+        "mordeu": true
+      },
+      {
+        "id": "e-ligatura-fi-utf-16-be",
+        "mordeu": true
+      },
+      {
+        "id": "e-ligatura-fi-latin-1-entidades-numericas",
+        "mordeu": true
+      },
+      {
+        "id": "e-ligatura-64257-utf-8",
+        "mordeu": true
+      },
+      {
+        "id": "e-ligatura-64257-utf-16-le",
+        "mordeu": true
+      },
+      {
+        "id": "e-ligatura-64257-utf-16-be",
+        "mordeu": true
+      },
+      {
+        "id": "e-ligatura-64257-latin-1-entidades-numericas",
+        "mordeu": true
+      },
+      {
+        "id": "e-ligatura-inversa-64257-utf-8",
+        "mordeu": true
+      },
+      {
+        "id": "e-ligatura-inversa-64257-utf-16-le",
+        "mordeu": true
+      },
+      {
+        "id": "e-ligatura-inversa-64257-utf-16-be",
+        "mordeu": true
+      },
+      {
+        "id": "e-ligatura-inversa-64257-latin-1",
+        "mordeu": true
+      },
+      {
+        "id": "e-ligatura-64258-utf-8",
+        "mordeu": true
+      },
+      {
+        "id": "e-ligatura-64258-utf-16-le",
+        "mordeu": true
+      },
+      {
+        "id": "e-ligatura-64258-utf-16-be",
+        "mordeu": true
+      },
+      {
+        "id": "e-ligatura-64258-latin-1-entidades-numericas",
+        "mordeu": true
+      },
+      {
+        "id": "e-ligatura-inversa-64258-utf-8",
+        "mordeu": true
+      },
+      {
+        "id": "e-ligatura-inversa-64258-utf-16-le",
+        "mordeu": true
+      },
+      {
+        "id": "e-ligatura-inversa-64258-utf-16-be",
+        "mordeu": true
+      },
+      {
+        "id": "e-ligatura-inversa-64258-latin-1",
+        "mordeu": true
+      },
+      {
+        "id": "e-ligatura-64256-utf-8",
+        "mordeu": true
+      },
+      {
+        "id": "e-ligatura-64256-utf-16-le",
+        "mordeu": true
+      },
+      {
+        "id": "e-ligatura-64256-utf-16-be",
+        "mordeu": true
+      },
+      {
+        "id": "e-ligatura-64256-latin-1-entidades-numericas",
+        "mordeu": true
+      },
+      {
+        "id": "e-ligatura-inversa-64256-utf-8",
+        "mordeu": true
+      },
+      {
+        "id": "e-ligatura-inversa-64256-utf-16-le",
+        "mordeu": true
+      },
+      {
+        "id": "e-ligatura-inversa-64256-utf-16-be",
+        "mordeu": true
+      },
+      {
+        "id": "e-ligatura-inversa-64256-latin-1",
+        "mordeu": true
+      },
+      {
+        "id": "e-ligatura-64259-utf-8",
+        "mordeu": true
+      },
+      {
+        "id": "e-ligatura-64259-utf-16-le",
+        "mordeu": true
+      },
+      {
+        "id": "e-ligatura-64259-utf-16-be",
+        "mordeu": true
+      },
+      {
+        "id": "e-ligatura-64259-latin-1-entidades-numericas",
+        "mordeu": true
+      },
+      {
+        "id": "e-ligatura-inversa-64259-utf-8",
+        "mordeu": true
+      },
+      {
+        "id": "e-ligatura-inversa-64259-utf-16-le",
+        "mordeu": true
+      },
+      {
+        "id": "e-ligatura-inversa-64259-utf-16-be",
+        "mordeu": true
+      },
+      {
+        "id": "e-ligatura-inversa-64259-latin-1",
+        "mordeu": true
+      },
+      {
+        "id": "e-ligatura-64260-utf-8",
+        "mordeu": true
+      },
+      {
+        "id": "e-ligatura-64260-utf-16-le",
+        "mordeu": true
+      },
+      {
+        "id": "e-ligatura-64260-utf-16-be",
+        "mordeu": true
+      },
+      {
+        "id": "e-ligatura-64260-latin-1-entidades-numericas",
+        "mordeu": true
+      },
+      {
+        "id": "e-ligatura-inversa-64260-utf-8",
+        "mordeu": true
+      },
+      {
+        "id": "e-ligatura-inversa-64260-utf-16-le",
+        "mordeu": true
+      },
+      {
+        "id": "e-ligatura-inversa-64260-utf-16-be",
+        "mordeu": true
+      },
+      {
+        "id": "e-ligatura-inversa-64260-latin-1",
+        "mordeu": true
+      },
+      {
+        "id": "e-ligatura-64261-utf-8",
+        "mordeu": true
+      },
+      {
+        "id": "e-ligatura-64261-utf-16-le",
+        "mordeu": true
+      },
+      {
+        "id": "e-ligatura-64261-utf-16-be",
+        "mordeu": true
+      },
+      {
+        "id": "e-ligatura-64261-latin-1-entidades-numericas",
+        "mordeu": true
+      },
+      {
+        "id": "e-ligatura-inversa-64261-utf-8",
+        "mordeu": true
+      },
+      {
+        "id": "e-ligatura-inversa-64261-utf-16-le",
+        "mordeu": true
+      },
+      {
+        "id": "e-ligatura-inversa-64261-utf-16-be",
+        "mordeu": true
+      },
+      {
+        "id": "e-ligatura-inversa-64261-latin-1",
+        "mordeu": true
+      },
+      {
+        "id": "e-ligatura-64262-utf-8",
+        "mordeu": true
+      },
+      {
+        "id": "e-ligatura-64262-utf-16-le",
+        "mordeu": true
+      },
+      {
+        "id": "e-ligatura-64262-utf-16-be",
+        "mordeu": true
+      },
+      {
+        "id": "e-ligatura-64262-latin-1-entidades-numericas",
+        "mordeu": true
+      },
+      {
+        "id": "e-ligatura-inversa-64262-utf-8",
+        "mordeu": true
+      },
+      {
+        "id": "e-ligatura-inversa-64262-utf-16-le",
+        "mordeu": true
+      },
+      {
+        "id": "e-ligatura-inversa-64262-utf-16-be",
+        "mordeu": true
+      },
+      {
+        "id": "e-ligatura-inversa-64262-latin-1",
+        "mordeu": true
+      },
+      {
+        "id": "e-eszett-para-ss-utf-8",
+        "mordeu": true
+      },
+      {
+        "id": "e-eszett-para-ss-utf-16-le",
+        "mordeu": true
+      },
+      {
+        "id": "e-eszett-para-ss-utf-16-be",
+        "mordeu": true
+      },
+      {
+        "id": "e-eszett-para-ss-latin-1",
+        "mordeu": true
+      },
+      {
+        "id": "e-casefold-por-caracter-utf-8",
+        "mordeu": true
+      },
+      {
+        "id": "e-casefold-por-caracter-utf-16-le",
+        "mordeu": true
+      },
+      {
+        "id": "e-casefold-por-caracter-utf-16-be",
+        "mordeu": true
+      },
+      {
+        "id": "e-casefold-por-caracter-latin-1",
+        "mordeu": true
+      },
+      {
+        "id": "e-sigma-final-utf-8",
+        "mordeu": true
+      },
+      {
+        "id": "e-sigma-final-utf-16-le",
+        "mordeu": true
+      },
+      {
+        "id": "e-sigma-final-utf-16-be",
+        "mordeu": true
+      },
+      {
+        "id": "e-sigma-final-latin-1-entidades-numericas",
+        "mordeu": true
+      },
+      {
+        "id": "e-s-longo-utf-8",
+        "mordeu": true
+      },
+      {
+        "id": "e-s-longo-utf-16-le",
+        "mordeu": true
+      },
+      {
+        "id": "e-s-longo-utf-16-be",
+        "mordeu": true
+      },
+      {
+        "id": "e-s-longo-latin-1-entidades-numericas",
+        "mordeu": true
+      },
+      {
+        "id": "e-apos-sem-ponto-virgula-utf-8",
+        "mordeu": true
+      },
+      {
+        "id": "e-apos-sem-ponto-virgula-utf-16-le",
+        "mordeu": true
+      },
+      {
+        "id": "e-apos-sem-ponto-virgula-utf-16-be",
+        "mordeu": true
+      },
+      {
+        "id": "e-apos-sem-ponto-virgula-latin-1",
+        "mordeu": true
+      },
+      {
+        "id": "e-ccaron-sem-ponto-virgula-utf-8",
+        "mordeu": true
+      },
+      {
+        "id": "e-ccaron-sem-ponto-virgula-utf-16-le",
+        "mordeu": true
+      },
+      {
+        "id": "e-ccaron-sem-ponto-virgula-utf-16-be",
+        "mordeu": true
+      },
+      {
+        "id": "e-ccaron-sem-ponto-virgula-latin-1",
+        "mordeu": true
+      },
+      {
+        "id": "e-separador-interior-cr",
+        "mordeu": true
+      },
+      {
+        "id": "e-separador-interior-linha",
+        "mordeu": true
+      },
+      {
+        "id": "e-separador-interior-paragrafo",
+        "mordeu": true
+      },
+      {
+        "id": "e-separador-interior-nel",
+        "mordeu": true
+      },
+      {
+        "id": "e-separador-interior-vt",
+        "mordeu": true
+      },
+      {
+        "id": "e-separador-interior-ff",
+        "mordeu": true
+      },
+      {
+        "id": "e-separador-interior-rs",
+        "mordeu": true
+      },
+      {
+        "id": "e-duas-entradas-com-cr-recusadas",
+        "mordeu": true
+      },
+      {
+        "id": "e-crlf-aceite",
+        "mordeu": true
+      },
+      {
+        "id": "e-controlo-inocuo",
+        "mordeu": true
+      },
+      {
+        "id": "guiao-com-casa-portavel",
+        "mordeu": true,
+        "mensagem": "Caminho relativo à casa permitido no guião."
+      }
+    ],
+    "passou": true
+  },
+  "incorporador": {
+    "erros": [],
+    "plantas": [
+      {
+        "nome": "pedido-de-fora",
+        "mensagem": "ER1 privacidade: endereço fora da origem fixa do projeto.",
+        "mordeu": true
+      },
+      {
+        "nome": "cookie",
+        "mensagem": "ER1 privacidade: API fora dos elementos próprios.",
+        "mordeu": true
+      },
+      {
+        "nome": "armazenamento",
+        "mensagem": "ER1 privacidade: API fora dos elementos próprios.",
+        "mordeu": true
+      },
+      {
+        "nome": "pagina-anfitria",
+        "mensagem": "ER1 privacidade: leitura fora dos parágrafos próprios.",
+        "mordeu": true
+      },
+      {
+        "nome": "postMessage",
+        "mensagem": "ER1 privacidade: API fora dos elementos próprios.",
+        "mordeu": true
+      },
+      {
+        "nome": "parent",
+        "mensagem": "ER1 privacidade: API fora dos elementos próprios.",
+        "mordeu": true
+      },
+      {
+        "nome": "top",
+        "mensagem": "ER1 privacidade: API fora dos elementos próprios.",
+        "mordeu": true
+      },
+      {
+        "nome": "innerText",
+        "mensagem": "ER1 privacidade: API fora dos elementos próprios.",
+        "mordeu": true
+      },
+      {
+        "nome": "getElementsBy",
+        "mensagem": "ER1 privacidade: API fora dos elementos próprios.",
+        "mordeu": true
+      },
+      {
+        "nome": "body",
+        "mensagem": "ER1 privacidade: API fora dos elementos próprios.",
+        "mordeu": true
+      },
+      {
+        "nome": "credenciais",
+        "mensagem": "ER1 privacidade: o pedido perdeu a opção credentials: 'omit'.",
+        "mordeu": true
+      },
+      {
+        "nome": "redirecionamento",
+        "mensagem": "ER1 privacidade: o pedido perdeu a opção redirect: 'error'.",
+        "mordeu": true
+      }
+    ],
+    "passou": true
+  },
+  "passou": true
+}

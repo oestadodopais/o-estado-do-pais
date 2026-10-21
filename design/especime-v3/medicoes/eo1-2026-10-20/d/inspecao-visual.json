@@ -1,0 +1,172 @@
+{
+  "cabeca": "8de3a83c96558a42af25e4f7a9f78504f062872b",
+  "topos": [
+    {
+      "ficheiro": "estudo-pt-390.png",
+      "altura_inspecionada": 900
+    },
+    {
+      "ficheiro": "estudo-pt-768.png",
+      "altura_inspecionada": 900
+    },
+    {
+      "ficheiro": "estudo-pt-1024.png",
+      "altura_inspecionada": 900
+    },
+    {
+      "ficheiro": "estudo-pt-1280.png",
+      "altura_inspecionada": 900
+    },
+    {
+      "ficheiro": "estudo-pt-1600.png",
+      "altura_inspecionada": 900
+    },
+    {
+      "ficheiro": "estudo-en-390.png",
+      "altura_inspecionada": 900
+    },
+    {
+      "ficheiro": "estudo-en-768.png",
+      "altura_inspecionada": 900
+    },
+    {
+      "ficheiro": "estudo-en-1024.png",
+      "altura_inspecionada": 900
+    },
+    {
+      "ficheiro": "estudo-en-1280.png",
+      "altura_inspecionada": 900
+    },
+    {
+      "ficheiro": "estudo-en-1600.png",
+      "altura_inspecionada": 900
+    },
+    {
+      "ficheiro": "documento-pt-390.png",
+      "altura_inspecionada": 900
+    },
+    {
+      "ficheiro": "documento-pt-768.png",
+      "altura_inspecionada": 900
+    },
+    {
+      "ficheiro": "documento-pt-1024.png",
+      "altura_inspecionada": 900
+    },
+    {
+      "ficheiro": "documento-pt-1280.png",
+      "altura_inspecionada": 900
+    },
+    {
+      "ficheiro": "documento-pt-1600.png",
+      "altura_inspecionada": 900
+    },
+    {
+      "ficheiro": "documento-en-390.png",
+      "altura_inspecionada": 900
+    },
+    {
+      "ficheiro": "documento-en-768.png",
+      "altura_inspecionada": 900
+    },
+    {
+      "ficheiro": "documento-en-1024.png",
+      "altura_inspecionada": 900
+    },
+    {
+      "ficheiro": "documento-en-1280.png",
+      "altura_inspecionada": 900
+    },
+    {
+      "ficheiro": "documento-en-1600.png",
+      "altura_inspecionada": 900
+    },
+    {
+      "ficheiro": "derivada-pt-390.png",
+      "altura_inspecionada": 900
+    },
+    {
+      "ficheiro": "derivada-pt-768.png",
+      "altura_inspecionada": 900
+    },
+    {
+      "ficheiro": "derivada-pt-1024.png",
+      "altura_inspecionada": 900
+    },
+    {
+      "ficheiro": "derivada-pt-1280.png",
+      "altura_inspecionada": 900
+    },
+    {
+      "ficheiro": "derivada-pt-1600.png",
+      "altura_inspecionada": 900
+    },
+    {
+      "ficheiro": "derivada-en-390.png",
+      "altura_inspecionada": 900
+    },
+    {
+      "ficheiro": "derivada-en-768.png",
+      "altura_inspecionada": 900
+    },
+    {
+      "ficheiro": "derivada-en-1024.png",
+      "altura_inspecionada": 900
+    },
+    {
+      "ficheiro": "derivada-en-1280.png",
+      "altura_inspecionada": 900
+    },
+    {
+      "ficheiro": "derivada-en-1600.png",
+      "altura_inspecionada": 900
+    },
+    {
+      "ficheiro": "imprensa-pt-390.png",
+      "altura_inspecionada": 900
+    },
+    {
+      "ficheiro": "imprensa-pt-768.png",
+      "altura_inspecionada": 900
+    },
+    {
+      "ficheiro": "imprensa-pt-1024.png",
+      "altura_inspecionada": 900
+    },
+    {
+      "ficheiro": "imprensa-pt-1280.png",
+      "altura_inspecionada": 900
+    },
+    {
+      "ficheiro": "imprensa-pt-1600.png",
+      "altura_inspecionada": 900
+    },
+    {
+      "ficheiro": "imprensa-en-390.png",
+      "altura_inspecionada": 900
+    },
+    {
+      "ficheiro": "imprensa-en-768.png",
+      "altura_inspecionada": 900
+    },
+    {
+      "ficheiro": "imprensa-en-1024.png",
+      "altura_inspecionada": 900
+    },
+    {
+      "ficheiro": "imprensa-en-1280.png",
+      "altura_inspecionada": 900
+    },
+    {
+      "ficheiro": "imprensa-en-1600.png",
+      "altura_inspecionada": 900
+    }
+  ],
+  "recortes_inspecionados": [
+    "derivada-pt-390-conta.png",
+    "imprensa-pt-390-estado.png",
+    "derivada-en-390-conta.png",
+    "imprensa-en-390-estado.png"
+  ],
+  "conclusao": "A inspeção visual cobriu o topo das páginas do estudo, do documento e dos dois recibos nas cinco larguras e nas duas edições, e os recortes da aritmética e do estado de proveniência a 390 píxeis nas duas línguas. Nos trechos vistos, os títulos, as definições e os valores mantêm-se dentro da coluna, sem sobreposição; a aritmética e o estado de proveniência quebram em linhas legíveis."
+}

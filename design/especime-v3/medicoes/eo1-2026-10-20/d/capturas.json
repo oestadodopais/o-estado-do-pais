@@ -1,0 +1,1639 @@
+{
+  "cabeca": "8de3a83c96558a42af25e4f7a9f78504f062872b",
+  "capturador_sha256": "909d23e15ab7fcb8bf855152503900aaeff0579b8b62da7aa1f1311b1268ecb1",
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "resultados": [
+    {
+      "ficheiro": "estudo-pt-390.png",
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 36230,
+      "sha256": "2bf02654048f09270c72592b7e986b0f3dc7b5a96cf7bf776ad65c192313c70a",
+      "recortes": [
+        {
+          "ficheiro": "estudo-pt-390-titulo.png",
+          "seletor": "[data-registo-unidade$=\"#0\"]",
+          "origem": "estudo-pt-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 299,
+            "width": 334,
+            "height": 61
+          },
+          "sha256": "d6425d81794bac9503e247f58f2ea58b51e8590ab9c687b7a74df72cfd9df194"
+        },
+        {
+          "ficheiro": "estudo-pt-390-resumo.png",
+          "seletor": "[data-registo-unidade$=\"#3\"]",
+          "origem": "estudo-pt-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 999,
+            "width": 354,
+            "height": 1009
+          },
+          "sha256": "3906a5134509a5a73ba969008e0d7d4dcd80112f0c4395be7d8e0cc8c14ddb22"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "estudo-pt-768.png",
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 28826,
+      "sha256": "f69abb0e83ed9f06d5b4e4eb21706117b989fce6c75882fc45e19f02baac4d36",
+      "recortes": [
+        {
+          "ficheiro": "estudo-pt-768-titulo.png",
+          "seletor": "[data-registo-unidade$=\"#0\"]",
+          "origem": "estudo-pt-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 267,
+            "width": 380,
+            "height": 70
+          },
+          "sha256": "6cf18b9ba815f0c70458e06c85f435f2c92fa070bf0af361f01b243d6b22765e"
+        },
+        {
+          "ficheiro": "estudo-pt-768-resumo.png",
+          "seletor": "[data-registo-unidade$=\"#3\"]",
+          "origem": "estudo-pt-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 899,
+            "width": 545,
+            "height": 766
+          },
+          "sha256": "604e9489a19b457a668a98082a7586a1021709d7ac3eb2fc33fbd77ff99fb194"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "estudo-pt-1024.png",
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 28069,
+      "sha256": "cf96284d111208a65b948074374b7d1b50ccb23122793f29e743a94102f5c91b",
+      "recortes": [
+        {
+          "ficheiro": "estudo-pt-1024-titulo.png",
+          "seletor": "[data-registo-unidade$=\"#0\"]",
+          "origem": "estudo-pt-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 239,
+            "width": 495,
+            "height": 91
+          },
+          "sha256": "47b260889cff0b9f65e9a5d3a727b85ef8bc401f416e69e63224b9b6b7e8bf69"
+        },
+        {
+          "ficheiro": "estudo-pt-1024-resumo.png",
+          "seletor": "[data-registo-unidade$=\"#3\"]",
+          "origem": "estudo-pt-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 916,
+            "width": 545,
+            "height": 767
+          },
+          "sha256": "3d26b2f154b79b343d613817e10adde6e6d08cd9705d634b0dc03aec62ba5504"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "estudo-pt-1280.png",
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 28238,
+      "sha256": "dd66acd838a3445fae0661d54158f731579b8129941a05510ee31ed7d3ac69b0",
+      "recortes": [
+        {
+          "ficheiro": "estudo-pt-1280-titulo.png",
+          "seletor": "[data-registo-unidade$=\"#0\"]",
+          "origem": "estudo-pt-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 240,
+            "width": 494,
+            "height": 90
+          },
+          "sha256": "31575d943ea6ce6e1167b2b85f364e606d820e48c5e60d1ef6a0ffde546e971b"
+        },
+        {
+          "ficheiro": "estudo-pt-1280-resumo.png",
+          "seletor": "[data-registo-unidade$=\"#3\"]",
+          "origem": "estudo-pt-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 922,
+            "width": 544,
+            "height": 767
+          },
+          "sha256": "8917fe0dc00c6b1b021afe4ce14ae0abad327c47430a80aeea9a4b2e3bf4be83"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "estudo-pt-1600.png",
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 28244,
+      "sha256": "dca59f2503483791115261486c8bfe7d89e1ad9716d47998aa436a0a52ae1ba7",
+      "recortes": [
+        {
+          "ficheiro": "estudo-pt-1600-titulo.png",
+          "seletor": "[data-registo-unidade$=\"#0\"]",
+          "origem": "estudo-pt-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 240,
+            "width": 494,
+            "height": 90
+          },
+          "sha256": "31575d943ea6ce6e1167b2b85f364e606d820e48c5e60d1ef6a0ffde546e971b"
+        },
+        {
+          "ficheiro": "estudo-pt-1600-resumo.png",
+          "seletor": "[data-registo-unidade$=\"#3\"]",
+          "origem": "estudo-pt-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 922,
+            "width": 544,
+            "height": 767
+          },
+          "sha256": "8917fe0dc00c6b1b021afe4ce14ae0abad327c47430a80aeea9a4b2e3bf4be83"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "estudo-en-390.png",
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 36496,
+      "sha256": "7e42e37f438a56cd090f7d75747157cff9c9556e06036418544b529a793bf168",
+      "recortes": [
+        {
+          "ficheiro": "estudo-en-390-titulo.png",
+          "seletor": "[data-registo-unidade$=\"#0\"]",
+          "origem": "estudo-en-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 299,
+            "width": 334,
+            "height": 61
+          },
+          "sha256": "ef20c6fdfb32bb24f1e643aa7909e1ba7ec4bbc30b17c308ed3f9893f0956fa6"
+        },
+        {
+          "ficheiro": "estudo-en-390-resumo.png",
+          "seletor": "[data-registo-unidade$=\"#3\"]",
+          "origem": "estudo-en-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 999,
+            "width": 354,
+            "height": 1009
+          },
+          "sha256": "60aba336cf428dee96e2594b6208895f6fabdfbb2ae960c7e6ef6578fd33e3e3"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "estudo-en-768.png",
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 29014,
+      "sha256": "8939ab02b25484278ba84d5c6f93d8582ba3aa45f727bf9eb03dd8b0be58542a",
+      "recortes": [
+        {
+          "ficheiro": "estudo-en-768-titulo.png",
+          "seletor": "[data-registo-unidade$=\"#0\"]",
+          "origem": "estudo-en-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 267,
+            "width": 380,
+            "height": 70
+          },
+          "sha256": "aebafd1baecd97811b7e4eabf7ab59da7af99b0c9d86ca3a268d4cf9ea4cba85"
+        },
+        {
+          "ficheiro": "estudo-en-768-resumo.png",
+          "seletor": "[data-registo-unidade$=\"#3\"]",
+          "origem": "estudo-en-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 899,
+            "width": 545,
+            "height": 735
+          },
+          "sha256": "9dc95d8c1df93880df956c3d5a0381c0db78c6b6abc7a41143d075394eab7dd0"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "estudo-en-1024.png",
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 28256,
+      "sha256": "055b416f6f7372bfb06f00eb83181eaed136be84d475ef20eaa231f8b9206bcc",
+      "recortes": [
+        {
+          "ficheiro": "estudo-en-1024-titulo.png",
+          "seletor": "[data-registo-unidade$=\"#0\"]",
+          "origem": "estudo-en-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 239,
+            "width": 495,
+            "height": 91
+          },
+          "sha256": "49886b76cff2138cf3f0d7f8d7d606b15999f4e5bd735d9a0289fe65b2b473fe"
+        },
+        {
+          "ficheiro": "estudo-en-1024-resumo.png",
+          "seletor": "[data-registo-unidade$=\"#3\"]",
+          "origem": "estudo-en-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 916,
+            "width": 545,
+            "height": 736
+          },
+          "sha256": "0a939b703ddd6ca2c372f34229d4daf203e54cd2161108793eb0cfa63c311069"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "estudo-en-1280.png",
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 28394,
+      "sha256": "fa46d168c71673017955182b6c86732dabf3371c6fee3c64eca737d71312bb92",
+      "recortes": [
+        {
+          "ficheiro": "estudo-en-1280-titulo.png",
+          "seletor": "[data-registo-unidade$=\"#0\"]",
+          "origem": "estudo-en-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 240,
+            "width": 494,
+            "height": 90
+          },
+          "sha256": "d4c21f5973f23baa3ba7c380d8189e3b4d92986c120899de04811cf7aaa348ba"
+        },
+        {
+          "ficheiro": "estudo-en-1280-resumo.png",
+          "seletor": "[data-registo-unidade$=\"#3\"]",
+          "origem": "estudo-en-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 922,
+            "width": 544,
+            "height": 736
+          },
+          "sha256": "19eed4639dc8f50288dfef18e32b66accf648ec65aa5157aa5e36e8ae3d9482b"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "estudo-en-1600.png",
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 28400,
+      "sha256": "499fcd350de9e0f6084ea21723b3baa9dcc18e959d17ec9886eae66eea381ca0",
+      "recortes": [
+        {
+          "ficheiro": "estudo-en-1600-titulo.png",
+          "seletor": "[data-registo-unidade$=\"#0\"]",
+          "origem": "estudo-en-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 240,
+            "width": 494,
+            "height": 90
+          },
+          "sha256": "d4c21f5973f23baa3ba7c380d8189e3b4d92986c120899de04811cf7aaa348ba"
+        },
+        {
+          "ficheiro": "estudo-en-1600-resumo.png",
+          "seletor": "[data-registo-unidade$=\"#3\"]",
+          "origem": "estudo-en-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 922,
+            "width": 544,
+            "height": 736
+          },
+          "sha256": "19eed4639dc8f50288dfef18e32b66accf648ec65aa5157aa5e36e8ae3d9482b"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "documento-pt-390.png",
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/documento/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 27215,
+      "sha256": "730ddd5da2d7bd63efb1a06347a5cb5b2078e0787c0fe9cb9c22c718bcd606c5",
+      "recortes": [
+        {
+          "ficheiro": "documento-pt-390-titulo.png",
+          "seletor": "[data-oedp-moldura] h1",
+          "origem": "documento-pt-390.png",
+          "caixa": {
+            "left": 20,
+            "top": 216,
+            "width": 350,
+            "height": 115
+          },
+          "sha256": "f737692de5744af4659a2fb569b17347d8782a518e166a56dcc21e8d3a4a4766"
+        },
+        {
+          "ficheiro": "documento-pt-390-resumo.png",
+          "seletor": "[data-oedp-moldura] p:nth-of-type(2)",
+          "origem": "documento-pt-390.png",
+          "caixa": {
+            "left": 20,
+            "top": 810,
+            "width": 350,
+            "height": 856
+          },
+          "sha256": "a09c3ec52caba185d99ffff4d9f9c0800c2615668048afda47d04582d8e46ee0"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "documento-pt-768.png",
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/documento/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 13924,
+      "sha256": "c5aeb58acf6db5e4278fbb4ffed6e413a9e0ee3997dc22f7fc21277430e47f46",
+      "recortes": [
+        {
+          "ficheiro": "documento-pt-768-titulo.png",
+          "seletor": "[data-oedp-moldura] h1",
+          "origem": "documento-pt-768.png",
+          "caixa": {
+            "left": 20,
+            "top": 110,
+            "width": 728,
+            "height": 76
+          },
+          "sha256": "8e5a884285555b8fb8eaa2f0e27380709802d4900aec19e962a8618aa4ca0937"
+        },
+        {
+          "ficheiro": "documento-pt-768-resumo.png",
+          "seletor": "[data-oedp-moldura] p:nth-of-type(2)",
+          "origem": "documento-pt-768.png",
+          "caixa": {
+            "left": 20,
+            "top": 483,
+            "width": 728,
+            "height": 390
+          },
+          "sha256": "d4b57b52c945f8b0c14c8ba836bd7fb9de9f2232937ad3dde5387441af24bbbf"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "documento-pt-1024.png",
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/documento/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 904,
+      "altura": 12072,
+      "sha256": "515ac8d48ba008213256c9796fc39eaf9c480613c92e8a4ac4dd98a9f6d4f3a4",
+      "recortes": [
+        {
+          "ficheiro": "documento-pt-1024-titulo.png",
+          "seletor": "[data-oedp-moldura] h1",
+          "origem": "documento-pt-1024.png",
+          "caixa": {
+            "left": 80,
+            "top": 117,
+            "width": 864,
+            "height": 39
+          },
+          "sha256": "c4d69ee69afd242469bb2c500fda7c3bcc63fe8345657a6623b2582b886d1210"
+        },
+        {
+          "ficheiro": "documento-pt-1024-resumo.png",
+          "seletor": "[data-oedp-moldura] p:nth-of-type(2)",
+          "origem": "documento-pt-1024.png",
+          "caixa": {
+            "left": 80,
+            "top": 427,
+            "width": 864,
+            "height": 338
+          },
+          "sha256": "38b6efe68248359f969141bbb13dff497bdce089dac10ea2df1c9754b56b9462"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "documento-pt-1280.png",
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/documento/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 904,
+      "altura": 12072,
+      "sha256": "d4d9642a80729afbef5645c3df280b15c41ae1ec7eee5b53e710ff36c43f2385",
+      "recortes": [
+        {
+          "ficheiro": "documento-pt-1280-titulo.png",
+          "seletor": "[data-oedp-moldura] h1",
+          "origem": "documento-pt-1280.png",
+          "caixa": {
+            "left": 208,
+            "top": 117,
+            "width": 864,
+            "height": 39
+          },
+          "sha256": "c4d69ee69afd242469bb2c500fda7c3bcc63fe8345657a6623b2582b886d1210"
+        },
+        {
+          "ficheiro": "documento-pt-1280-resumo.png",
+          "seletor": "[data-oedp-moldura] p:nth-of-type(2)",
+          "origem": "documento-pt-1280.png",
+          "caixa": {
+            "left": 208,
+            "top": 427,
+            "width": 864,
+            "height": 338
+          },
+          "sha256": "38b6efe68248359f969141bbb13dff497bdce089dac10ea2df1c9754b56b9462"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "documento-pt-1600.png",
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/documento/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 904,
+      "altura": 12072,
+      "sha256": "e164debaef51a3fd41fd88d620973b721db7dd41cf1f0f44d7db612e96a42266",
+      "recortes": [
+        {
+          "ficheiro": "documento-pt-1600-titulo.png",
+          "seletor": "[data-oedp-moldura] h1",
+          "origem": "documento-pt-1600.png",
+          "caixa": {
+            "left": 368,
+            "top": 117,
+            "width": 864,
+            "height": 39
+          },
+          "sha256": "c4d69ee69afd242469bb2c500fda7c3bcc63fe8345657a6623b2582b886d1210"
+        },
+        {
+          "ficheiro": "documento-pt-1600-resumo.png",
+          "seletor": "[data-oedp-moldura] p:nth-of-type(2)",
+          "origem": "documento-pt-1600.png",
+          "caixa": {
+            "left": 368,
+            "top": 427,
+            "width": 864,
+            "height": 338
+          },
+          "sha256": "38b6efe68248359f969141bbb13dff497bdce089dac10ea2df1c9754b56b9462"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "documento-en-390.png",
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/document/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 26970,
+      "sha256": "37b62f25601d5916234538905518ac3347ff78e4269698e4894ec015ba201e84",
+      "recortes": [
+        {
+          "ficheiro": "documento-en-390-titulo.png",
+          "seletor": "[data-oedp-moldura] h1",
+          "origem": "documento-en-390.png",
+          "caixa": {
+            "left": 20,
+            "top": 197,
+            "width": 350,
+            "height": 115
+          },
+          "sha256": "32e0aac5bfd5bd80b16e6e0319b57bb27af434caf2d8213c2d28eca361386bd5"
+        },
+        {
+          "ficheiro": "documento-en-390-resumo.png",
+          "seletor": "[data-oedp-moldura] p:nth-of-type(2)",
+          "origem": "documento-en-390.png",
+          "caixa": {
+            "left": 20,
+            "top": 790,
+            "width": 350,
+            "height": 830
+          },
+          "sha256": "f917a284f71f2e22a6eb17384a06d219f5a67589e2293148d22d73c9ac07a415"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "documento-en-768.png",
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/document/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 13851,
+      "sha256": "ddb55e88f7238a61df312fb47674ba4e1c45d22836953bdec9e0b271cec18b26",
+      "recortes": [
+        {
+          "ficheiro": "documento-en-768-titulo.png",
+          "seletor": "[data-oedp-moldura] h1",
+          "origem": "documento-en-768.png",
+          "caixa": {
+            "left": 20,
+            "top": 110,
+            "width": 728,
+            "height": 38
+          },
+          "sha256": "c788c632515eb5467c2f6c132e80bd4fc74d643b337683495cfc6239031f191d"
+        },
+        {
+          "ficheiro": "documento-en-768-resumo.png",
+          "seletor": "[data-oedp-moldura] p:nth-of-type(2)",
+          "origem": "documento-en-768.png",
+          "caixa": {
+            "left": 20,
+            "top": 445,
+            "width": 728,
+            "height": 390
+          },
+          "sha256": "1fa64af28f8751084d5063f39ee0ab0d55361a12ffcc55c93b64db73fbc21e26"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "documento-en-1024.png",
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/document/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 904,
+      "altura": 12072,
+      "sha256": "e90164768e36af87b76d755cd7b9d6e4742bc326d80b3b6b0f4788d7e4b50ca0",
+      "recortes": [
+        {
+          "ficheiro": "documento-en-1024-titulo.png",
+          "seletor": "[data-oedp-moldura] h1",
+          "origem": "documento-en-1024.png",
+          "caixa": {
+            "left": 80,
+            "top": 117,
+            "width": 864,
+            "height": 39
+          },
+          "sha256": "7402773cc59509b0f61d8a588ecedb533be4d0baf46bade114852302acfab9e8"
+        },
+        {
+          "ficheiro": "documento-en-1024-resumo.png",
+          "seletor": "[data-oedp-moldura] p:nth-of-type(2)",
+          "origem": "documento-en-1024.png",
+          "caixa": {
+            "left": 80,
+            "top": 427,
+            "width": 864,
+            "height": 312
+          },
+          "sha256": "9bded4e0166b675660fb08440b6b93eb642e9ffe08969f59eca398e2b13c3274"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "documento-en-1280.png",
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/document/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 904,
+      "altura": 12072,
+      "sha256": "738aca3b9518c3ede0c3115feb743e3b81bba7b9aaedcc149dc2d6b4eb4051d6",
+      "recortes": [
+        {
+          "ficheiro": "documento-en-1280-titulo.png",
+          "seletor": "[data-oedp-moldura] h1",
+          "origem": "documento-en-1280.png",
+          "caixa": {
+            "left": 208,
+            "top": 117,
+            "width": 864,
+            "height": 39
+          },
+          "sha256": "7402773cc59509b0f61d8a588ecedb533be4d0baf46bade114852302acfab9e8"
+        },
+        {
+          "ficheiro": "documento-en-1280-resumo.png",
+          "seletor": "[data-oedp-moldura] p:nth-of-type(2)",
+          "origem": "documento-en-1280.png",
+          "caixa": {
+            "left": 208,
+            "top": 427,
+            "width": 864,
+            "height": 312
+          },
+          "sha256": "9bded4e0166b675660fb08440b6b93eb642e9ffe08969f59eca398e2b13c3274"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "documento-en-1600.png",
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/document/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 904,
+      "altura": 12072,
+      "sha256": "eac9ffa1050aadf0c4c9a00a4dda9382296955f90b42356f44c1588230952909",
+      "recortes": [
+        {
+          "ficheiro": "documento-en-1600-titulo.png",
+          "seletor": "[data-oedp-moldura] h1",
+          "origem": "documento-en-1600.png",
+          "caixa": {
+            "left": 368,
+            "top": 117,
+            "width": 864,
+            "height": 39
+          },
+          "sha256": "7402773cc59509b0f61d8a588ecedb533be4d0baf46bade114852302acfab9e8"
+        },
+        {
+          "ficheiro": "documento-en-1600-resumo.png",
+          "seletor": "[data-oedp-moldura] p:nth-of-type(2)",
+          "origem": "documento-en-1600.png",
+          "caixa": {
+            "left": 368,
+            "top": 427,
+            "width": 864,
+            "height": 312
+          },
+          "sha256": "9bded4e0166b675660fb08440b6b93eb642e9ffe08969f59eca398e2b13c3274"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "derivada-pt-390.png",
+      "rota": "/livro-razao/der-rmmg-2026-2027-pct/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 2821,
+      "sha256": "e4f00e7a3e57b38e7a44c4fb1991977a53a004697dcbaa1d7439e4555db84ea7",
+      "recortes": [
+        {
+          "ficheiro": "derivada-pt-390-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "origem": "derivada-pt-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 295,
+            "width": 354,
+            "height": 358
+          },
+          "sha256": "5a78ffb93870916a58fc6457679df85e96d69c1173522a2b67dc9bb159da8200"
+        },
+        {
+          "ficheiro": "derivada-pt-390-conta.png",
+          "seletor": "[data-linha-campo=\"derivation\"]",
+          "origem": "derivada-pt-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 873,
+            "width": 344,
+            "height": 95
+          },
+          "sha256": "66f5f49135c35425313e1322ed4aca4dbf9c111bd5da2d53e750cf8b53488790"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "derivada-pt-768.png",
+      "rota": "/livro-razao/der-rmmg-2026-2027-pct/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 2560,
+      "sha256": "1f4de95fb3dbd6fe9d4e29434795685f0ba29081dad4167eee75846642e7a72a",
+      "recortes": [
+        {
+          "ficheiro": "derivada-pt-768-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "origem": "derivada-pt-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 260,
+            "width": 545,
+            "height": 366
+          },
+          "sha256": "c74d9900ab9d74ebd2de330c66952fa13da3faca1f02d3175d7c5f45b5238b72"
+        },
+        {
+          "ficheiro": "derivada-pt-768-conta.png",
+          "seletor": "[data-linha-campo=\"derivation\"]",
+          "origem": "derivada-pt-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 844,
+            "width": 686,
+            "height": 49
+          },
+          "sha256": "68060e9888afe52576e1b0a4ad52713e6b829bc0d68c5c792d7261546c9a9f02"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "derivada-pt-1024.png",
+      "rota": "/livro-razao/der-rmmg-2026-2027-pct/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 1810,
+      "sha256": "959bfd301c9426722562b07c623a654c36191fe883ab7bab3b8b650125430e08",
+      "recortes": [
+        {
+          "ficheiro": "derivada-pt-1024-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "origem": "derivada-pt-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 229,
+            "width": 545,
+            "height": 403
+          },
+          "sha256": "9d1e09260b39ea88233163e94146bea360c543936c5456dd96a50d4493eeeaa7"
+        },
+        {
+          "ficheiro": "derivada-pt-1024-conta.png",
+          "seletor": "[data-linha-campo=\"derivation\"]",
+          "origem": "derivada-pt-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 867,
+            "width": 529,
+            "height": 74
+          },
+          "sha256": "6330b4c93b099e57e7e598ccffa872efa4650fb6849d71fd314a5279f682ba09"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "derivada-pt-1280.png",
+      "rota": "/livro-razao/der-rmmg-2026-2027-pct/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 1844,
+      "sha256": "b8c8217c9873b2a00a3618c129144bd0d61f0491de7ce43557eb3dbb55c191d6",
+      "recortes": [
+        {
+          "ficheiro": "derivada-pt-1280-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "origem": "derivada-pt-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 230,
+            "width": 544,
+            "height": 414
+          },
+          "sha256": "af7667b2beac93bf5f2789f0586012cd05b24f8c967ba7115e7947dff67fe1b7"
+        },
+        {
+          "ficheiro": "derivada-pt-1280-conta.png",
+          "seletor": "[data-linha-campo=\"derivation\"]",
+          "origem": "derivada-pt-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 887,
+            "width": 528,
+            "height": 74
+          },
+          "sha256": "ae674d0ee434abb5b1b064c12f7e1627e617cb3141a268dddc944bf5ca2df995"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "derivada-pt-1600.png",
+      "rota": "/livro-razao/der-rmmg-2026-2027-pct/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 1851,
+      "sha256": "b8b5a5cad8663e5742b1c3e9f4099912d45d7614b6edf88e0d28733cbe89a8db",
+      "recortes": [
+        {
+          "ficheiro": "derivada-pt-1600-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "origem": "derivada-pt-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 230,
+            "width": 544,
+            "height": 414
+          },
+          "sha256": "af7667b2beac93bf5f2789f0586012cd05b24f8c967ba7115e7947dff67fe1b7"
+        },
+        {
+          "ficheiro": "derivada-pt-1600-conta.png",
+          "seletor": "[data-linha-campo=\"derivation\"]",
+          "origem": "derivada-pt-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 887,
+            "width": 528,
+            "height": 74
+          },
+          "sha256": "ae674d0ee434abb5b1b064c12f7e1627e617cb3141a268dddc944bf5ca2df995"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "derivada-en-390.png",
+      "rota": "/en/ledger/der-rmmg-2026-2027-pct/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 2844,
+      "sha256": "a1c08ab8f75997a2bb482eaa563009ec2ae600905a4d7c6e3eecdae2509e456e",
+      "recortes": [
+        {
+          "ficheiro": "derivada-en-390-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "origem": "derivada-en-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 295,
+            "width": 354,
+            "height": 358
+          },
+          "sha256": "5ee199fcd35b9cdc220de06f3f3a05c37b70ec7015e96b03051b642af8039301"
+        },
+        {
+          "ficheiro": "derivada-en-390-conta.png",
+          "seletor": "[data-linha-campo=\"derivation\"]",
+          "origem": "derivada-en-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 873,
+            "width": 344,
+            "height": 70
+          },
+          "sha256": "06348fea7607c34a24afcb8e99ccad3001cb1b6f9aa20d6e1affffc93e8b8c69"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "derivada-en-768.png",
+      "rota": "/en/ledger/der-rmmg-2026-2027-pct/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 2560,
+      "sha256": "a2b1cff7096c99b46708670d390e796f5c2bb3aeaccf14e0ff835fd161e6cc07",
+      "recortes": [
+        {
+          "ficheiro": "derivada-en-768-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "origem": "derivada-en-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 260,
+            "width": 545,
+            "height": 366
+          },
+          "sha256": "0619babb1cb587287cac43e91e629110827c2c8e40e1fe3bcfb7563c6b0c852a"
+        },
+        {
+          "ficheiro": "derivada-en-768-conta.png",
+          "seletor": "[data-linha-campo=\"derivation\"]",
+          "origem": "derivada-en-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 844,
+            "width": 706,
+            "height": 49
+          },
+          "sha256": "c4ddb4129237e31f7aa75dd3113c51ba50fc526f9bcbb42a1c24fb9c57af4a2a"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "derivada-en-1024.png",
+      "rota": "/en/ledger/der-rmmg-2026-2027-pct/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 1810,
+      "sha256": "6dc433437e2daee28af8e0c6ad26b332889ef194480001ddeda835c453cf7854",
+      "recortes": [
+        {
+          "ficheiro": "derivada-en-1024-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "origem": "derivada-en-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 229,
+            "width": 545,
+            "height": 403
+          },
+          "sha256": "ffd1a5139df56cf8bd60e0b7fbb10a7c51b6907cfc81a5083960b01da363f160"
+        },
+        {
+          "ficheiro": "derivada-en-1024-conta.png",
+          "seletor": "[data-linha-campo=\"derivation\"]",
+          "origem": "derivada-en-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 867,
+            "width": 542,
+            "height": 74
+          },
+          "sha256": "766c841a0ca227e52f2c6849794f72cb1dc8d553c78c00c132d0ce2e257fbbf6"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "derivada-en-1280.png",
+      "rota": "/en/ledger/der-rmmg-2026-2027-pct/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 1844,
+      "sha256": "88cec422e2c8ba1fa8a1fcc33ad7fa382dc430f0c7cbbf36f21664756b2ea805",
+      "recortes": [
+        {
+          "ficheiro": "derivada-en-1280-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "origem": "derivada-en-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 230,
+            "width": 544,
+            "height": 414
+          },
+          "sha256": "76f7263b3dbc41fe8805144ee4698f686eaf7411900bdbc77e6b55b4217653a2"
+        },
+        {
+          "ficheiro": "derivada-en-1280-conta.png",
+          "seletor": "[data-linha-campo=\"derivation\"]",
+          "origem": "derivada-en-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 887,
+            "width": 541,
+            "height": 74
+          },
+          "sha256": "7513bdd498c01afaceb51d886ba1da7c305cb7eae578290b08f10c2d3dc6d7a9"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "derivada-en-1600.png",
+      "rota": "/en/ledger/der-rmmg-2026-2027-pct/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 1851,
+      "sha256": "42244b7b6667a1795b5aeeecd946f1ab7c5e966ff289850eeed09e6a091d3c83",
+      "recortes": [
+        {
+          "ficheiro": "derivada-en-1600-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "origem": "derivada-en-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 230,
+            "width": 544,
+            "height": 414
+          },
+          "sha256": "76f7263b3dbc41fe8805144ee4698f686eaf7411900bdbc77e6b55b4217653a2"
+        },
+        {
+          "ficheiro": "derivada-en-1600-conta.png",
+          "seletor": "[data-linha-campo=\"derivation\"]",
+          "origem": "derivada-en-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 887,
+            "width": 541,
+            "height": 74
+          },
+          "sha256": "7513bdd498c01afaceb51d886ba1da7c305cb7eae578290b08f10c2d3dc6d7a9"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "imprensa-pt-390.png",
+      "rota": "/livro-razao/posicao-be-rendimentos/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3308,
+      "sha256": "3517a3873927fae57a3515349ebdfef96e675c352c2f378afa715b32f42a2c4e",
+      "recortes": [
+        {
+          "ficheiro": "imprensa-pt-390-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "origem": "imprensa-pt-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 277,
+            "width": 354,
+            "height": 451
+          },
+          "sha256": "b15d4ea63a88644bc1c154b19ac1167b6acd285dd5e0d10691b3f1332d2fecc7"
+        },
+        {
+          "ficheiro": "imprensa-pt-390-estado.png",
+          "seletor": ".aparelho-estado",
+          "origem": "imprensa-pt-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 2339,
+            "width": 354,
+            "height": 99
+          },
+          "sha256": "f0f82d4ee9e875627c9aead02c8d8e88e6207f6aa15489c6b870f1da352cd8a3"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "imprensa-pt-768.png",
+      "rota": "/livro-razao/posicao-be-rendimentos/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 2894,
+      "sha256": "ae6bf28fc63b28f972771464ed7253a8c26de6213d7b60942aea85de2825ebd8",
+      "recortes": [
+        {
+          "ficheiro": "imprensa-pt-768-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "origem": "imprensa-pt-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 260,
+            "width": 545,
+            "height": 362
+          },
+          "sha256": "f8160c1aa6246d60fc887ae49ea8aae58f8894d9a59cf3a253e836d495e0f4ee"
+        },
+        {
+          "ficheiro": "imprensa-pt-768-estado.png",
+          "seletor": ".aparelho-estado",
+          "origem": "imprensa-pt-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 2041,
+            "width": 708,
+            "height": 79
+          },
+          "sha256": "3cfd526b827a089e5fc87458749a07355c82757ea7d02547817fef6a64dddfd6"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "imprensa-pt-1024.png",
+      "rota": "/livro-razao/posicao-be-rendimentos/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2256,
+      "sha256": "0ac82d101ec45ec2a665ca1a649e600fff665ebd7b3ab09725d5c9708b710f30",
+      "recortes": [
+        {
+          "ficheiro": "imprensa-pt-1024-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "origem": "imprensa-pt-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 229,
+            "width": 545,
+            "height": 379
+          },
+          "sha256": "3b0957e608e6485a2fd09039f8f570ecadaf945894ba1903d4dbb8e5eafa8a9b"
+        },
+        {
+          "ficheiro": "imprensa-pt-1024-estado.png",
+          "seletor": ".aparelho-estado",
+          "origem": "imprensa-pt-1024.png",
+          "caixa": {
+            "left": 625,
+            "top": 1439,
+            "width": 301,
+            "height": 99
+          },
+          "sha256": "28ddbbefe91daf05d4ac1eed24d30b3974c653bfcdb7fdd1ed64dcb22f7bab06"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "imprensa-pt-1280.png",
+      "rota": "/livro-razao/posicao-be-rendimentos/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2283,
+      "sha256": "14ccd5a276693d94601f784ec08c2f2faac56700675450892804c6f6b37b6296",
+      "recortes": [
+        {
+          "ficheiro": "imprensa-pt-1280-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "origem": "imprensa-pt-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 230,
+            "width": 544,
+            "height": 382
+          },
+          "sha256": "cc47870f025890e68fc023e7b2cafa670aec8e482d49cab63075a311bd639cf9"
+        },
+        {
+          "ficheiro": "imprensa-pt-1280-estado.png",
+          "seletor": ".aparelho-estado",
+          "origem": "imprensa-pt-1280.png",
+          "caixa": {
+            "left": 689,
+            "top": 1448,
+            "width": 301,
+            "height": 99
+          },
+          "sha256": "a5a44cd2ff9844495afa3a85bf70b6b8c565d74e22a43bdd5a1f397a6a52e67e"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "imprensa-pt-1600.png",
+      "rota": "/livro-razao/posicao-be-rendimentos/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2289,
+      "sha256": "717800de7475e07fd2aac69cf374f6e244e51384613837714b7230cc64186390",
+      "recortes": [
+        {
+          "ficheiro": "imprensa-pt-1600-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "origem": "imprensa-pt-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 230,
+            "width": 544,
+            "height": 382
+          },
+          "sha256": "cc47870f025890e68fc023e7b2cafa670aec8e482d49cab63075a311bd639cf9"
+        },
+        {
+          "ficheiro": "imprensa-pt-1600-estado.png",
+          "seletor": ".aparelho-estado",
+          "origem": "imprensa-pt-1600.png",
+          "caixa": {
+            "left": 850,
+            "top": 1448,
+            "width": 300,
+            "height": 99
+          },
+          "sha256": "a32fbffebc1aa771749d0f308d7a76148a6b079e5247907a851965239f6d01eb"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "imprensa-en-390.png",
+      "rota": "/en/ledger/posicao-be-rendimentos/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3306,
+      "sha256": "b97d59a15d46451353fef935fb1177dbf6e0b9b77bfc32456144accab002facf",
+      "recortes": [
+        {
+          "ficheiro": "imprensa-en-390-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "origem": "imprensa-en-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 277,
+            "width": 354,
+            "height": 402
+          },
+          "sha256": "005d48fed0f0e1069696bf23d8c4a307838096bc0f60152da053d42bdc4d237a"
+        },
+        {
+          "ficheiro": "imprensa-en-390-estado.png",
+          "seletor": ".aparelho-estado",
+          "origem": "imprensa-en-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 2289,
+            "width": 354,
+            "height": 99
+          },
+          "sha256": "3a4e970d442aa78b1e362020d4df402783667c2759b34045140cf6edbea5024f"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "imprensa-en-768.png",
+      "rota": "/en/ledger/posicao-be-rendimentos/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 2894,
+      "sha256": "e12b12db8a81f2c75f7db0755545d784350bd21dce2fcae9f723c765b42f0f7b",
+      "recortes": [
+        {
+          "ficheiro": "imprensa-en-768-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "origem": "imprensa-en-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 260,
+            "width": 545,
+            "height": 362
+          },
+          "sha256": "62145d4679dd5483987ec77c1a91c792ad44768116904d0dd28754fdf7366b1e"
+        },
+        {
+          "ficheiro": "imprensa-en-768-estado.png",
+          "seletor": ".aparelho-estado",
+          "origem": "imprensa-en-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 2041,
+            "width": 708,
+            "height": 79
+          },
+          "sha256": "a75f8374eb82efdcee95f502c8844bfdf19fdf7b3f11e44ffbdbd79796dfbbd5"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "imprensa-en-1024.png",
+      "rota": "/en/ledger/posicao-be-rendimentos/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2256,
+      "sha256": "79bf5bbc3ad045106131181b39d8ceba835df0e4ca13f8832baa005475f90feb",
+      "recortes": [
+        {
+          "ficheiro": "imprensa-en-1024-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "origem": "imprensa-en-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 229,
+            "width": 545,
+            "height": 379
+          },
+          "sha256": "6a5d3e243fd601eb9dc86912fcec5e3ac7c8ea2a0af1d390ce859abff91249ad"
+        },
+        {
+          "ficheiro": "imprensa-en-1024-estado.png",
+          "seletor": ".aparelho-estado",
+          "origem": "imprensa-en-1024.png",
+          "caixa": {
+            "left": 625,
+            "top": 1439,
+            "width": 301,
+            "height": 99
+          },
+          "sha256": "29b34885dc65e38296ccd337ac733a40a80f6474d203cebd94b2cfccb3447b58"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "imprensa-en-1280.png",
+      "rota": "/en/ledger/posicao-be-rendimentos/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2283,
+      "sha256": "a336c3ed26eb8954802773a87b6d32c55525a0343eb4736f03263eaaa18d70cc",
+      "recortes": [
+        {
+          "ficheiro": "imprensa-en-1280-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "origem": "imprensa-en-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 230,
+            "width": 544,
+            "height": 382
+          },
+          "sha256": "9aac036cc41e8536af38bf2ff06a9fe620b58d967e35bfe5b5bff3378a89bf16"
+        },
+        {
+          "ficheiro": "imprensa-en-1280-estado.png",
+          "seletor": ".aparelho-estado",
+          "origem": "imprensa-en-1280.png",
+          "caixa": {
+            "left": 689,
+            "top": 1448,
+            "width": 301,
+            "height": 99
+          },
+          "sha256": "baeef4dfd69c56cbbb9e0b5d50781d3475ce22f8160140752d4ae72600445072"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "imprensa-en-1600.png",
+      "rota": "/en/ledger/posicao-be-rendimentos/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2289,
+      "sha256": "2e42e1bc6eb18f1670786416350149a438fd8e2bac02f05b241692c07347fb86",
+      "recortes": [
+        {
+          "ficheiro": "imprensa-en-1600-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "origem": "imprensa-en-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 230,
+            "width": 544,
+            "height": 382
+          },
+          "sha256": "9aac036cc41e8536af38bf2ff06a9fe620b58d967e35bfe5b5bff3378a89bf16"
+        },
+        {
+          "ficheiro": "imprensa-en-1600-estado.png",
+          "seletor": ".aparelho-estado",
+          "origem": "imprensa-en-1600.png",
+          "caixa": {
+            "left": 850,
+            "top": 1448,
+            "width": 300,
+            "height": 99
+          },
+          "sha256": "87b504ea5134a1223ed6502c3ff4a3128bf57a0e0901652ef7e774e65e86b1ce"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    }
+  ],
+  "recursos": {
+    "version.json": "731a9cb4a3d604c149f7acf428814252a533c5c51b0a9c0fed417b7eca2a3d40",
+    "estudos/orcamento-2027-o-que-muda-e-para-quem/index.html": "708c58ce53a81c24118d9ef1d4ae8b7449fd7acde1ba1c58910dc35e49073bb9",
+    "tipos/spectral/Spectral-Regular.woff2": "3c846b032ad614e02ebc439087bbcbb7371cfbdea6c8a4b568efa859537e9c43",
+    "tipos/bitter/Bitter[wght].woff2": "b4ad17520d0ce8bd1aa98af06e07ca94145522f868b5a010732eb5eee3ba2ea0",
+    "_astro/Base.BQy_YmNS.css": "06b4c86e257c2b983d86f36cc39344cbd00581cdc5d4a92bb431772efbdb2220",
+    "_astro/EstudoView.CoBVk9FU.css": "da148598ea8f28d5309b1d77050569c250d0e02d507a3fe978e79c0387c3fd95",
+    "js/tema.js": "855bcee3ec1223b43e0f3e9a94c1fbdf1451e53830dcc022962b48e8d3340757",
+    "tipos/spectral/Spectral-Medium.woff2": "34f0ba222c28bc0ea816c693d05c528be4a5ee10c4b1765cdea774c6fb2502c2",
+    "tipos/spectral-sc/SpectralSC-SemiBold.woff2": "b847fe8f1fe1a862ce15e288958d132940a8204951ef0dbe2c9ad8fd997f29e2",
+    "tipos/spectral/Spectral-Italic.woff2": "4ba15b4bda78df3e8b755f0f12168c23c562707c921f74944e8ce638ee5ac7f1",
+    "tipos/spectral-sc/SpectralSC-Regular.woff2": "afa69dd2e7aaca2733883133745fd84c18dfac6a08d5999e69705ea7277240b8",
+    "tipos/spectral/Spectral-SemiBold.woff2": "91eef1143e31196ec762c00b566b9f628a851db348eb524cbfb36bfba9b22f2d",
+    "tipos/spectral/Spectral-Bold.woff2": "8710bb6e834a4ec2aa7a7b24a76e63ead0ba6649c81881aedf615cf37724664f",
+    "en/studies/orcamento-2027-o-que-muda-e-para-quem/index.html": "2ef55c188a3229fef0e018f1735e469d969f35c83c7acbc9eeaac220cbc44a52",
+    "estudos/orcamento-2027-o-que-muda-e-para-quem/documento/index.html": "0e89534cd3573fa535ca6caff45a42e40f4aea49de72ee598ec836c066cc6e89",
+    "en/studies/orcamento-2027-o-que-muda-e-para-quem/document/index.html": "9d5cbaf179e5dbad6e95bcf19da996ccc023103d00f464bbbb78f6ac70d7c0d9",
+    "livro-razao/der-rmmg-2026-2027-pct/index.html": "801503dfe4e7e75fe46464bd81aebc462344cc58d1ba7ea48c2443079f48b365",
+    "_astro/linha.Dd7n1KyQ.css": "583639d016c39485e899ae4fffc401e64d1489306f153b3670a730698057d772",
+    "js/copiar-incorporacao.js": "b75e5f90efcd85ea94274191e44a48594932638df67377c0b91ff367df97ca13",
+    "en/ledger/der-rmmg-2026-2027-pct/index.html": "77bff6606dcfb82d020ce2b62bb7bdc5eab77dc3caa6d079b1ebf617e67230f2",
+    "livro-razao/posicao-be-rendimentos/index.html": "dbb6978a7d52b9aff250a837f934c7bb2b6680355d3f672f15b9dd75b6bbaaab",
+    "en/ledger/posicao-be-rendimentos/index.html": "8118b3191bde77610f0dc17a1bc80ada94068b93e1eb33a2ed454ca34675186b"
+  },
+  "falhas": [],
+  "ok": true
+}

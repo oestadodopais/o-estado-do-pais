@@ -1036,3 +1036,300 @@ O caminho autorizado alternativo também não permite esta operação: `scripts/
 As cabeças verificadas antes deste registo são `8f88bfea65f4017c782f8160fc4b508f2dceb369` no motor e `71571c96ff6734ccf2b7c8ddb917f28de66382a9` no sítio. Nenhuma tem `MERGE_HEAD`; ambas estavam sem alterações. Este relatório conserva integralmente o conteúdo anterior de `LEIA-ME.md` obtido de `8b42bbf8f` e acrescenta apenas esta secção. Não houve `push`.
 
 Para retomar, o lugar de direção terá de disponibilizar uma operação autorizada que inicie a fusão de `eo1-2026-10-20` em cada worktree e conserve os conflitos para resolução. Depois será possível resolver os ficheiros, concluir os commits pelo escrivão e executar toda a verificação pedida. Mudar apenas o argumento permitido, mantendo o aborto automático dos conflitos, não basta.
+
+## A correção EO1-d
+
+A base desta correção é a fusão já concluída, no sítio em `b4dc4869c` e no motor em `a2e46ee`. A secção EO1-c anterior conserva o relato de uma tentativa impedida; não descreve o estado recebido nesta passagem. As frases não nomeadas no mandato são confrontadas com a edição recebida. O inventário completo, as frases extraídas do HTML e os recibos ficam em `d/html-extraido.json`.
+
+### Decisões
+
+- **EO1-d-1.** Anos, escalões e números de quadros nas definições são metadados. A família conserva os algarismos dos nomes, e o portão confere a definição inteira contra a declaração. Os valores medidos continuam a exigir a sua linha. A dispensa fica limitada às famílias EO1.
+- **EO1-d-2.** O estado da linha atravessa o exportador e a prova selada. Uma notícia pode ter o corpo integralmente conferido e continuar por confirmar na fonte primária. O recibo mostra essa distinção.
+- **EO1-d-3.** A aritmética conserva os perímetros reais. O exemplo de juros do mandato com `8 217` e `6 669` corresponde às linhas de contabilidade nacional do Quadro 3.1. Não foi rotulado como contabilidade pública. Nesta, o Quadro 4.1 dá `8 575` e `7 225`. Os anos e o perímetro acompanham as componentes; Portugal e União Europeia distinguem a comparação geográfica.
+- **EO1-d-4.** A remissão da abertura usa «secção das medidas» e «the measures section». O gabarito recebido não numera as secções; esta forma aponta para o título novo sem introduzir um algarismo manual fora dos anos, proibido pelo mandato. O número do Quadro 4.1 vem de um literal com apoio no localizador da linha citada.
+- **EO1-d-5.** A citação silenciosa acrescenta a linha às fontes do parágrafo e não cria texto nem um intervalo vazio. As plantas retiram a citação e exigem a recusa do literal sem apoio nas duas edições.
+- **EO1-d-6.** A data de edição do diploma é a publicação no Diário da República, não o ano de efeitos. A cópia citada é a de `content/25`, com recibo e direitos; o pacote prefere uma cópia com recibo quando os bytes coincidem. O ensaio usa cópias sintéticas; a comparação real dos dois corpos está em `d/fontes-conferidas.json`.
+- **EO1-d-7.** O achado 18 fica para a higiene. Mudar a gramática geral dos anos e validar a direção de todos os usos de `abs` excede a correção editorial mandatada. Não se apresenta esta passagem como resolução dessas duas permissividades.
+- **EO1-d-8.** O achado 20 fica para a higiene do pacote e do circuito de entrega: a inclusão de páginas de entrada e a completude das provas históricas da EO1-b são um problema diferente das frases corrigidas. Esta passagem conserva os seus próprios registos, códigos e cabeças, sem reconstituir provas ausentes da entrega anterior.
+
+### Resposta aos achados
+
+- Achado 6: **corrigido**. Anos e números de escalão em algarismos, incluindo as duas definições do IRC. Os exemplos são extraídos dos recibos construídos.
+- Achado 7: **corrigido**. As linhas derivadas chamam-se medidas invariantes, com definições explícitas e componentes coerentes; o título da secção acompanha a correção.
+- Achado 8: **corrigido**. O estado de proveniência da imprensa chega aos recibos e às duas atribuições que o tinham perdido. A planta altera o estado numa cópia dos dados.
+- Achado 9: **corrigido**. A abertura distingue a nota «invariante» da leitura das instituições e explica os componentes da dívida; a conclusão explica a taxa implícita. A remissão segue a decisão EO1-d-4.
+- Achado 10: **corrigido**. Cópia com recibo e direitos, preferência por essa cópia no pacote e edição de 2025 confirmada no Diário.
+- Achado 11: **corrigido**. Componentes com período e perímetro, números segundo a edição, hífenes preservados nos nomes e rótulo explícito de linha derivada do projeto.
+- Achado 12: **corrigido**. As linhas da UTAO têm nomes legíveis e o ano correspondente nas duas línguas.
+- Achado 13: **corrigido**. A conclusão salarial distingue contabilidade pública de contabilidade nacional; a nova linha numérica é selada na frase da UTAO e conferida na coluna da Tabela 7.
+- Achado 14: **corrigido**. Ponto final depois das três citações indicadas, nas duas edições.
+- Achado 15: **corrigido**. Frase inglesa das parcerias reparada e cláusulas do IRC alinhadas com o português.
+- Achado 16: **corrigido**. SIFIDE expandido na abertura e retirado das repetições; AP, AR e OE explicados na prosa de introdução; literais da abertura com apoio.
+- Achado 17: **corrigido**. Ressalva do arredondamento do Quadro 3.6 e qualificadores da UTAO conservados. Os identificadores e períodos do mandato foram confirmados.
+- Achado 18: **mantido com a decisão EO1-d-7**.
+- Achado 19: **corrigido**. Título sem repetição no caminho inglês, datas sem unidade «data/date», edição do diploma e definição do CFP corrigidas.
+- Achado 20: **mantido com a decisão EO1-d-8**.
+- Achado 21: **corrigido**. Citação do ministro fora do título a negrito e correções de legibilidade indicadas pelo leitor aplicadas.
+
+### Limites da medição
+
+Os símbolos gastos não são expostos nesta sessão. O custo em pontos pertence à medição do lançador. Nenhum PNG entra no diff e não há push.
+
+### Cabeças, portões e limites da entrega
+
+A construção, o `verify`, o `typecheck`, a extração do HTML e as capturas pertencem à cabeça do sítio `8de3a83c96558a42af25e4f7a9f78504f062872b`. O motor está em `be7f2bd698ebfcab37916e2f6b797a5d2abcc4e1`: o `core.gate` passou nessa cabeça e o motor não voltou a mudar. Os três portões finais do sítio estão em `d/portoes-finais/`; a corrida do motor está em `d/portoes-inventario/motor.log`, com o código e as cabeças inicial e final ao lado. A repetição do sítio não repetiu o motor inalterado.
+
+O commit de fecho acrescenta apenas este relatório, o guião de conferência das capturas e os registos de prova. Não altera os dados, as frases nem o código que produziu a construção conferida. As árvores foram conferidas limpas antes dos portões finais. Nenhum PNG é comitado e não há push.
+
+As corridas recusadas ficam conservadas: `d/portoes-preliminares/` mostra a importação colocada antes da linha que identifica o intérprete de dois guiões, corrigida antes da corrida seguinte; `d/portoes-inventario/` mostra as duas contagens antigas ainda declaradas vivas. A nova linha da UTAO mudou o total do livro. As declarações foram retiradas com razão e substituídas pelo texto medido no HTML. O controlo posterior encontrou também a sinopse inglesa a ser comparada com separadores portugueses; a comparação foi alinhada com a forma da edição e continuou a recusar a troca do separador. `d/voz-corrigida.log` e `d/voz-corrigida2.log` conservam a recusa e o controlo verde.
+
+A corrida em `d/portoes-controlos/` passou o build e recusou dois controlos antigos: a contagem de campos ainda não incluía `status`, e a planta do valor absoluto da sinopse inglesa ainda esperava separadores portugueses. Os controlos foram atualizados; novas plantas recusam o estado retirado ou duplicado e o separador português na sinopse inglesa. `d/guardas-final.log` e `d/eo1-final.log` conservam os controlos verdes antes da repetição integral do sítio.
+
+| Conferência | Código | Registo |
+| --- | --- | --- |
+| build | 0 | `d/portoes-finais/build.log` |
+| verify, pela união conferida com o build | 0 | `d/portoes-finais/verify.log` |
+| typecheck | 0 | `d/portoes-finais/typecheck.log` |
+| core.gate do motor | 0 | `d/portoes-inventario/motor.log` |
+| check:series, com RESEARCHHUB_DIR | 0 | `d/series-final.log` |
+| check:cruzamento --with-origin, com RESEARCHHUB_DIR | 0 | `d/cruzamento-final.log` |
+| check:privacidade | 0 | `d/privacidade-final.log` |
+| Extração das frases e recibos | 0 | `d/extracao-final.log` |
+| Capturas pelo escrivão | 0 | `d/capturas-final.log` |
+
+O cruzamento mantém dois avisos: os livros dos blocos `20 Orcamento do Estado` e `24 Orcamento 2027 Analise` têm resumos globais diferentes dos que atravessaram. A conferência de cada linha e de cada ficheiro contra a origem passa. O registo completo explica que a reconstrução pode alterar o resumo global sem alterar as linhas; os avisos não foram suprimidos.
+
+### Plantas e inventário
+
+| Ensaio | Código observado | Código esperado |
+| --- | --- | --- |
+| estado-planta | 1 | 1 |
+| cita-planta | 1 | 1 |
+| compositor-controlo | 0 | 0 |
+| pacote-controlo | 0 | 0 |
+
+O código um nas duas plantas é a recusa esperada da adulteração. A planta de proveniência troca o estado numa cópia dos dados; a da citação silenciosa retira o apoio do literal. O controlo do compositor cobre as duas edições. O ensaio do pacote confirma a preferência pela cópia com recibo. Os comandos e os resultados estão em `d/plantas.json`, com os registos completos ao lado.
+
+Na edição `pt`, foram conferidos 57 blocos nas duas rotas: 14 alterados pelo mandato e 43 conservados, com igualdade do texto original para os blocos não nomeados. Na edição `en`, foram conferidos 57 blocos nas duas rotas: 14 alterados pelo mandato e 43 conservados, com igualdade do texto original para os blocos não nomeados. O inventário integral das frases, fontes e literais, e as primeiras ocorrências das siglas, está em `d/html-extraido.json`. As contagens gerais do livro foram extraídas do HTML para `INVENTARIO-FRASES.md`; a entrada EO1-d em `REVISOES-DO-INVENTARIO.md` declara a leitura cruzada pendente, que pertence à direção.
+
+### Capturas e inspeção
+
+Foram conferidas 40 capturas e 80 recortes nas larguras 390, 768, 1024, 1280, 1600 píxeis: as quatro rotas do estudo e do documento, e os recibos de uma derivada e de uma posição de imprensa, nas duas edições. Os resumos SHA-256 foram refeitos; os píxeis de cada recorte coincidem com a caixa medida na página completa. Nenhuma página excedeu a largura da janela; não houve pedidos externos, recursos em falta ou erros do navegador. `d/capturas.json` guarda o manifesto e `d/capturas-conferencia.json` a conferência independente.
+
+A inspeção visual cobriu o topo das páginas do estudo, do documento e dos dois recibos nas cinco larguras e nas duas edições, e os recortes da aritmética e do estado de proveniência a 390 píxeis nas duas línguas. Nos trechos vistos, os títulos, as definições e os valores mantêm-se dentro da coluna, sem sobreposição; a aritmética e o estado de proveniência quebram em linhas legíveis. A inspeção visual não é uma leitura integral de todas as páginas longas; o confronto integral do texto foi feito no HTML. As imagens permanecem na pasta temporária e os seus resumos ficam no relatório.
+
+### Frases desta passagem, extraídas das quatro rotas
+
+#### pt
+
+**Unidade 3.** O Orçamento para 2027 muda pouco por si próprio. As três medidas novas que o relatório identifica, a receita esperada do combate à fraude nos combustíveis, a atualização do mínimo de existência no Imposto sobre o Rendimento das Pessoas Singulares (o IRS) e o reforço do Complemento Solidário para Idosos (o CSI), somam 79 milhões de euros a favor do saldo. O que pesa no saldo de 2027, 1 210 milhões de euros, são as dez linhas que o próprio quadro marca como «invariante» (a nota do quadro diz só isso, «Nota: (i) invariante.»; o que o relatório e a UTAO contam nelas está na secção das medidas): a atualização dos escalões e da dedução específica do IRS, o IRS das rendas moderadas e o Imposto sobre o Valor Acrescentado (o IVA) da construção de habitação, a descida de um ponto do Imposto sobre o Rendimento das Pessoas Coletivas (o IRC) e a reversão do SIFIDE (Sistema de Incentivos Fiscais à Investigação e Desenvolvimento Empresarial), a receita que o aumento dos salários traz em IRS e em contribuições, o acordo de rendimentos, o salário mínimo e os acordos salariais da função pública. E o que mais muda nas contas não está no quadro das medidas: os juros da dívida sobem 1 350 milhões de euros em contabilidade pública, para 8 575 milhões, e o investimento desce 2 347 milhões, para 10 417 milhões, porque o Plano de Recuperação e Resiliência (o PRR, o dinheiro europeu de recuperação pós-pandemia) acaba em 2026.
+
+**Unidade 5.** A dívida pública deve descer de 87,5 % do produto interno bruto (o PIB) em 2026 para 84,5 % em 2027, abaixo do nível que o ministro das Finanças anunciou para 2027, pela notícia «Miranda Sarmento: dívida pública abaixo dos 85% do PIB em 2027 é a "principal preocupação" do Governo», ao chamar à dívida pública a «principal preocupação». A descida de 3,0 pontos é maior do que a de 2026 sobretudo porque o Estado compra menos ativos financeiros, com o ajustamento défice-dívida (a parte da variação da dívida que o défice não explica, como a compra ou a venda de ativos financeiros) a cair de 3,1 pontos para 0,9 pontos do PIB; o excedente primário (o saldo antes dos juros) contribui um pouco mais (2,5 pontos contra 2,1 em 2026) e o efeito do crescimento e dos juros (o que o crescimento nominal do PIB e os juros pagos fazem ao rácio) menos (1,5 contra 2,6). A Comissão Europeia, na primavera, antes da proposta, previa 86,0 % para 2027.
+
+**Unidade 7.** O Orçamento de 2027 é um orçamento de continuação. As medidas novas valem 79 milhões de euros a favor do saldo, segundo o quadro das medidas do relatório e a UTAO; as dez linhas que o quadro marca como «invariante» pesam 1 210 milhões. A UTAO escreve que esta é a terceira proposta consecutiva com poucas medidas novas e lê isso como uma estratégia de decidir as medidas fora do Orçamento, antes da sua apresentação.
+
+**Unidade 10.** Os juros sobem mais depressa do que a despesa. Crescem 18,7 % em contabilidade pública, contra 2,8 % da despesa total e 5,4 % das despesas com pessoal; em contabilidade nacional sobem 1 548 milhões de euros, mais do que o custo de todas as medidas de 2027 para o saldo no mesmo perímetro, 1 132 milhões, e 23,2 % segundo a UTAO, com a taxa de juro implícita (os juros pagos a dividir pela dívida) a passar de 2,4 % para 2,9 %.
+
+**Unidade 11.** Para os trabalhadores do Estado, a atualização geral de 2027 iguala a inflação prevista. A atualização é de 2,3 %, pelo relatório; a inflação prevista pelo mesmo relatório para 2027 é de 2,3 %; o Conselho das Finanças Públicas vê o risco de a inflação estar subestimada em 2026 e em 2027. O que sobe acima da atualização geral vem das progressões, das promoções e dos acordos de carreira, que a UTAO conta dentro dos 1 231 milhões de euros da atualização salarial, de que 590 milhões voltam ao Estado em IRS e 471 milhões em contribuições, 86,2 % do total; com o emprego público estabilizado, a despesa com pessoal cresce 5,4 % em contabilidade pública, o perímetro do Quadro 4.1 do relatório, e 5,3 % em contabilidade nacional, pela UTAO.
+
+**Unidade 12.** A meta da dívida que o ministro das Finanças anunciou é alcançável, e a razão está sobretudo na tesouraria. O ministro disse, pela notícia «Miranda Sarmento: dívida pública abaixo dos 85% do PIB em 2027 é a "principal preocupação" do Governo»: «A dívida pública deve continuar a ser a nossa principal preocupação nas contas públicas. Temos uma redução de cerca de quatro pontos percentuais nos últimos anos e estaremos abaixo dos 85% do PIB [Produto Interno Bruto] em 2027» O excedente primário contribui com 2,5 pontos para a descida, o efeito do crescimento e dos juros com 1,5 pontos (menos do que em 2026, 2,6), e o que faz a descida acelerar é o ajustamento défice-dívida, que passa de 3,1 pontos para 0,9 pontos, sobretudo por menor aquisição de ativos financeiros, segundo a UTAO. É um movimento de tesouraria, não do orçamento do ano. A meta assenta também num crescimento de 2,1 % que, segundo a UTAO, está acima das previsões de todas as outras instituições que ela cita, e em 300 milhões de euros de receita do combate à fraude nos combustíveis para os quais o relatório não apresenta fundamento.
+
+**Unidade 25.** As medidas: o que é novo e o que o quadro marca como invariante
+
+**Unidade 26.** O quadro das principais medidas com impacto em 2027 (o Quadro 3.2 do relatório) soma −1 132 milhões de euros de impacto no saldo: −84 milhões do lado da receita e 1 048 milhões do lado da despesa. Do lado da receita: o IVA 206 milhões, que junta «Habitação - redução IVA construção de 23% para 6% (i)» (−94 milhões) e «Combate à fraude no setor dos combustíveis» (300 milhões); o IRS −477 milhões, que junta «Habitação - redução IRS rendas moderadas de 25% para 10% (i)» (−209 milhões), «Atualização dedução específica e escalões (i)» (−431 milhões), «Atualização do limite do mínimo de existência» (−121 milhões) e a receita que o aumento dos salários traz (284 milhões); o IRC −176 milhões, que junta «Redução taxa em 1 p.p. (i)» (−300 milhões) e «SIFIDE indireto (reversão) (i)» (124 milhões); e as contribuições sociais que o aumento dos salários traz (363 milhões). Do lado da despesa: as despesas com pessoal 948 milhões (o acordo de rendimentos 587 milhões, o aumento do salário mínimo 116 milhões, os acordos salariais 244 milhões) e as prestações sociais 100 milhões, que são o reforço do Complemento Solidário para Idosos (100 milhões).
+
+**Unidade 33.** As posições: o Juntos pelo Povo (JPP), pelo título da notícia: «JPP pede maior protecção das famílias não abrangidas pela descida de IRS». O Bloco de Esquerda (BE), pela notícia sobre o Orçamento do Estado (OE), «OE2027: BE diz que Orçamento “dá migalhas a quem trabalha” e beneficia os mais ricos»: «José Manuel Pureza considera que o Orçamento para 2027 “dá migalhas” aos trabalhadores, beneficia os mais ricos e ignora problemas estruturais.» O Partido Comunista Português (PCP), na declaração de Paula Santos de 12 de outubro: «Acrescem ainda outros benefícios fiscais contrários ao interesse nacional, como os 2228 milhões de euros atribuídos ao regime dos residentes não habituais; os 1067 milhões de euros associados ao IRS jovem (que favorece quem tem rendimentos mais elevados), ou os 209 milhões de euros de rendimentos prediais dos senhorios que apliquem rendas até 2300€.» Os números que o PCP cita (os benefícios do regime dos residentes não habituais, do IRS Jovem e das rendas) são do PCP; este estudo não os conferiu na fonte e por isso não os repete como seus. Da Iniciativa Liberal (IL) e do Pessoas-Animais-Natureza (PAN) não há, nos documentos deste estudo, uma posição datada depois da entrega da proposta; a pesquisa não a encontrou nas fontes primárias, o que não quer dizer que não exista.
+
+**Unidade 42.** A taxa do IRC desce para 18 % em 2027, depois de 19 % em 2026, pela lei de novembro de 2025 (Lei n.º 64/2025, de 7 de novembro): «Artigo 3.º Norma transitória 1 — A taxa prevista nos n.os 1 e 5 do artigo 87.º do Código do IRC, na redação conferida pela presente lei, aplica-se aos períodos de tributação que se iniciem em ou após 1 de janeiro de 2028. 2 — Nos períodos de tributação que se iniciem durante o ano de 2026, a taxa prevista nos n.os 1 e 5 do artigo 87.º do Código do IRC é de 19 %. 3 — Nos períodos de tributação que se iniciem durante o ano de 2027, a taxa prevista nos n.os 1 e 5 do artigo 87.º do Código do IRC é de 18 %. 4 — A taxa prevista no n.º 2 do artigo 87.º do Código do IRC, na redação conferida pela presente lei, aplica-se aos períodos de tributação que se iniciem em ou após 1 de janeiro de 2026.» O custo de 2027 no quadro das medidas é de 300 milhões de euros, em parte compensado pela reversão do SIFIDE indireto, 124 milhões, num total de 176 milhões. O primeiro-ministro: «Referiu também a redução do IRC e sublinhou que, nos 920 dias desde a primeira tomada de posse do Governo, não houve aumentos de impostos.» O líder do Partido Social Democrata (PSD) no Parlamento, pela notícia sobre o Orçamento na Assembleia da República (AR), «"Baile" na AR com OE em destaque: A "dança" de Montenegro e oposição»: «Enquanto o Governo do PS aumentava impostos, defendeu Hugo Soares, "este Governo não aumentou um único imposto nos orçamentos que apresentou".» O PS, por José Luís Carneiro: «Para o líder do PS, a redução deste imposto deve ser “dirigida a prioridades de política económica e não para todos e de forma cega”.» O PCP: «O Governo fala em descida de impostos, mas a realidade é esta: o único imposto cuja receita diminuiu foi o IRC (imposto que incide sobre os rendimentos de capital), no próximo ano – com uma taxa de 18% - voltará a descer e a que se somam os benefícios fiscais de 1868 milhões de euros (apenas 1% das empresas absorvem mais de 50% destes benefícios).» O CDS-Partido Popular (CDS), pelo título da notícia: «"Temos um bom Orçamento para 2027", garante o CDS-PP». Sobre a frase «não houve aumentos de impostos»: no quadro das medidas, as linhas de receita que crescem são a receita do combate à fraude (300 milhões), a receita que o aumento dos salários traz em IRS (284 milhões) e em contribuições (363 milhões), e a reversão do SIFIDE (124 milhões); nenhuma é uma subida de taxa.
+
+**Unidade 44.** O relatório: «A dívida pública, em percentagem do PIB, deverá manter assim a trajetória decrescente, passando de 87,5% em 2026 para 84,5% em 2027.» E o objetivo: «A dívida pública continuará a reduzir-se, visando ficar abaixo dos 80% do produto interno bruto (PIB) no final da década.» O ministro das Finanças, a 13 de outubro, pela notícia «Miranda Sarmento: dívida pública abaixo dos 85% do PIB em 2027 é a "principal preocupação" do Governo»: «A dívida pública deve continuar a ser a nossa principal preocupação nas contas públicas. Temos uma redução de cerca de quatro pontos percentuais nos últimos anos e estaremos abaixo dos 85% do PIB [Produto Interno Bruto] em 2027». Em 2025 a dívida foi de 89,2 % do PIB; desce 1,6 pontos em 2026 e 3,0 pontos em 2027, para 84,5 % (os valores do quadro estão arredondados à décima: 89,2 menos 1,6 não dá exatamente 87,5).
+
+**Unidade 45.** O quadro da dívida do relatório decompõe a descida de 2027: o saldo primário contribui com −2,5 pontos, o efeito dinâmico (o crescimento nominal menos os juros) com −1,5 pontos, de que o efeito dos juros são 2,4 pontos para cima e o efeito do PIB 3,9 pontos para baixo, e o ajustamento défice-dívida com 0,9 pontos para cima. Em 2026 o saldo primário contribuía com −2,1 pontos, o efeito dinâmico com −2,6 pontos e o ajustamento com 3,1 pontos. A UTAO explica: «O reforço do excedente primário em 2027 não será suficiente para compensar a menor redução do rácio da dívida proporcionada pelo efeito dinâmico. Segundo a POE/2027 (Tabela 16), o saldo primário contribuirá para uma redução de 2,5 p.p., face a 2,1 p.p. em 2026. Em contrapartida, o abrandamento do PIB nominal e o aumento do custo médio da dívida limitarão a redução proporcionada pelo efeito dinâmico a 1,5 p.p., face a 2,6 p.p. no ano anterior. O contributo do crescimento nominal para a descida do rácio passará de 4,6 p.p. para 3,9 p.p., sobretudo devido à desaceleração do deflator do PIB e, em menor medida, do crescimento real, enquanto os juros, em sentido contrário, aumentarão o rácio em 2,4 p.p., face a 2,0 p.p. O contributo do crescimento nominal continuará, assim, a superar o dos juros, mas com uma diferença menor, tornando a redução do rácio mais dependente do excedente primário. Em conjunto, estas duas componentes deverão reduzir o rácio em cerca de 4,0 p.p. em 2027, face a 4,7 p.p. em 2026, antes de considerado o ajustamento défice-dívida.» E: «Apesar do menor contributo redutor do efeito dinâmico, a descida do rácio deverá acelerar em 2027, sobretudo devido à redução do ajustamento défice-dívida, que inclui operações financeiras que alteram a dívida sem afetarem na mesma medida o saldo orçamental. Segundo a POE/2027, este ajustamento deverá acrescentar 0,9 p.p. ao rácio, face a 3,1 p.p. em 2026. Esta diminuição reflete sobretudo a redução da aquisição líquida de ativos financeiros, de 9,3 mil M€ para 0,9 mil M€, em particular as menores aplicações em numerário e depósitos e a ausência de aquisições líquidas de títulos exceto ações em 2027. O aumento dos restantes contributos para o ajustamento compensa parcialmente esta redução. Este ajustamento permanece positivo e superior ao excedente orçamental previsto (0,1% do PIB), pelo que o stock nominal da dívida continuará a aumentar.» Em euros, segundo a UTAO, o stock passa de aproximadamente 284,8 mil milhões no fim de 2026 para 287,8 mil milhões em 2027, com acréscimos de cerca de 9,7 e 2,9 mil milhões, nos números arredondados da UTAO: a dívida continua a subir em euros, e desce em percentagem porque o PIB sobe mais.
+
+**Unidade 50.** A UTAO, sobre o crescimento, compara as previsões com as do Banco de Portugal (o BdP), da Comissão Europeia (a CE), do CFP, da OCDE, a Organização para a Cooperação e Desenvolvimento Económico, e do Fundo Monetário Internacional (o FMI), e aponta a dependência da execução do Portugal 2030 (PT2030): «Um crescimento económico inferior ao projetado constitui um risco para a concretização do saldo orçamental, em particular num cenário para 2027 em que a despesa corrente cresce 6,6% e a receita corrente 4,5% (Tabela 13). A POE/2027 assenta num crescimento real do PIB de 2,1%, acima das previsões do BdP, da CE e do CFP (1,8%), da OCDE (1,7%) e do FMI (1,6%) (capítulo 2), num enquadramento marcado pela incerteza geopolítica e pelos riscos associados à evolução dos preços da energia. Um abrandamento da atividade económica superior ao implícito no cenário orçamental traduzir-se-ia numa arrecadação inferior à prevista de impostos sobre o rendimento e o consumo, bem como de contribuições sociais, condicionando a execução da receita e colocando pressão sobre o saldo orçamental. O cenário depende ainda da execução do PT2030, cujos recebimentos se prevê que aumentem 65% em 2027 (+1948 M€) quando, a 31 de agosto de 2026, a execução financeira era de 21,7% da dotação, e da conclusão do PRR, cujo último pedido de pagamento (96 marcos e metas) estava em avaliação (Caixa 1).» Sobre a receita da fraude: «Subexecução da medida de combate à fraude no setor dos combustíveis. A POE/2027 prevê uma receita adicional de 300 M€ associada a esta medida, sem, contudo, apresentar informação que permita fundamentar a estimativa ou avaliar a sua exequibilidade. Subsiste, assim, um risco de concretização inferior ao previsto, atendendo aos antecedentes de medidas de combate à fraude cuja execução efetiva se revelou menor, ou relativamente às quais a Conta Geral do Estado não disponibilizou informação suficiente para aferir os resultados alcançados.» Sobre o Serviço Nacional de Saúde e as Administrações Públicas (AP): «Existe um risco de pressão orçamental associado à execução do Serviço Nacional de Saúde (SNS). A persistência de défices na execução financeira do SNS, apesar dos sucessivos reforços das dotações orçamentais e das recorrentes injeções de capital destinadas a regularizar pagamentos em atraso, evidencia a manutenção de pressões sobre a despesa que poderão não estar integralmente acomodadas no financiamento previsto para 2027. Estas pressões incidem, designadamente, sobre as despesas com pessoal e os consumos intermédios (Tabela 15), podendo traduzir-se em necessidades adicionais de financiamento durante o ano e constituir um risco descendente para o saldo orçamental das AP.» Sobre os juros: «A despesa com juros cresce 23,2% em contabilidade nacional em 2027 (18,7% em contabilidade pública, Tabela 13). Persiste o risco de encargos superiores aos projetados, que depende do volume de dívida a refinanciar em 2027 e das taxas de juro das novas emissões.» Sobre as responsabilidades contingentes, onde entram as parcerias público-privadas (as PPP), incluindo as parcerias rodoviárias do item das parcerias de «O que se discute»: «As responsabilidades contingentes constituem outro risco: decisões arbitrais desfavoráveis no âmbito das PPP e garantias às linhas de crédito criadas na sequência das tempestades (2000 M€ de crédito e 571 M€ de encargos plurianuais potenciais, Caixa 3). A prorrogação até ao final de 2027 da garantia pessoal do Estado ao crédito à habitação de jovens agrava-o: o stock de garantias ao abrigo do regime mais do que duplicou entre dezembro de 2025 e maio de 2026, de 449 M€ para 926 M€ (Tabela 19).» Sobre os mercados: «A instabilidade política e a deterioração das finanças públicas francesas (défice de 5,1% do PIB em 2025 e de 5,4% previsto pelo Governo francês para 2026) poderão intensificar as tensões no mercado europeu de dívida soberana e elevar os prémios de risco e os custos de financiamento de Portugal. Acresce o risco quanto à trajetória da despesa líquida: a Comissão Europeia estima um desvio de 2,1% do PIB no final de 2027, acima do limiar de 0,6% (capítulo 3), e, na análise de sustentabilidade do MF, a probabilidade de o rácio da dívida em 2033 exceder o de 2028 é de 22,9% (capítulo 5).» Sobre os fenómenos naturais: «A ocorrência de novos fenómenos naturais extremos em 2027 poderá exigir a adoção de medidas extraordinárias de apoio público destinadas a mitigar os danos causados e a assegurar a recuperação dos setores e das infraestruturas afetados. A eventual necessidade de financiar estas medidas constituiria uma pressão adicional sobre a despesa pública, configurando um risco orçamental. A Caixa 3 apresenta os apoios já aprovados na sequência das tempestades de 2026.» O Conselho das Finanças Públicas, sobre o emprego e a receita: «A previsão para o emprego (1,4%) é a mais elevada de entre as instituições de referência e situa-se no limite superior do intervalo de confiança a 30%. Assenta num crescimento da população ativa (1,3%) superior ao da população em idade ativa (0,6%), o que pressupõe um aumento expressivo da taxa de participação. Também para as remunerações por trabalhador, a previsão do MF é a mais elevada de entre as instituições de referência. O efeito conjugado destes dois elementos pode resultar em riscos acrescidos para a receita decorrente da massa salarial.» E sobre as medidas: «O MF estima um impacto macroeconómico reduzido das medidas de apoio ao rendimento das famílias com efeito no final de 2026. As medidas previstas para 2027 terão um impacto reduzido.»
+
+**Unidade 52.** As «seis descidas consecutivas do IRS» da comunicação do Governo incluem as que o relatório situa antes de 2027: o IRS perde 477 milhões em 2027. O Bloco de Esquerda, pela notícia «OE2027: BE diz que Orçamento “dá migalhas a quem trabalha” e beneficia os mais ricos», diz que o Orçamento “dá migalhas”: a frase não tem número, e as medidas novas para as pessoas valem 121 milhões de euros de IRS a menos no mínimo de existência e 100 milhões no Complemento Solidário para Idosos, ao lado de 947 milhões já contados nos salários. «O único imposto cuja receita diminuiu foi o IRC»: no quadro das medidas, o IRC perde 176 milhões em 2027 e o IRS 477 milhões; na conta, os impostos diretos no seu conjunto crescem 1,7 %. Nenhum partido, nos documentos deste estudo, fala dos juros, que sobem 1 548 milhões de euros em 2027 em contabilidade nacional, mais do que todas as medidas juntas custam ao saldo no mesmo perímetro.
+
+#### en
+
+**Unidade 3.** The 2027 Budget changes little by itself. The three new measures the report identifies, the expected revenue from fighting fraud in the fuel sector, the update of the personal income-tax (IRS) exemption threshold (the «mínimo de existência») and the increase of the Solidarity Supplement for the Elderly (CSI), add 79 million euros to the balance. What weighs on the 2027 balance, 1,210 million euros, are the ten lines the table itself marks as «invariante» (invariant; the table's note says only that, «Nota: (i) invariante.»; what the report and the UTAO count in them is in the measures section): the update of the income-tax brackets and of the specific deduction, the reduced income tax on moderate rents and the reduced value added tax (VAT, IVA in Portuguese) on housing construction, the one-point cut in corporate income tax (IRC) and the reversal of the SIFIDE (the Portuguese system of tax incentives for business research and development), the revenue that wage growth brings in income tax and in contributions, the incomes agreement, the minimum wage and the public-sector wage agreements. And what changes most in the accounts is not in the table of measures: interest on the debt rises by 1,350 million euros in public accounting, to 8,575 million, and investment falls by 2,347 million, to 10,417 million, because the Recovery and Resilience Plan (the PRR, the European post-pandemic recovery money) ends in 2026.
+
+**Unidade 5.** Public debt is expected to fall from 87.5 % of gross domestic product (GDP) in 2026 to 84.5 % in 2027, below the level the finance minister announced for 2027, by the news report «Miranda Sarmento: dívida pública abaixo dos 85% do PIB em 2027 é a "principal preocupação" do Governo», when calling public debt the «principal preocupação» (main concern). The fall of 3.0 points is larger than in 2026 mainly because the State buys fewer financial assets, with the deficit-debt adjustment (the part of the change in debt that the deficit does not explain, such as the purchase or sale of financial assets) falling from 3.1 points to 0.9 points of GDP; the primary surplus (the balance before interest) contributes a little more (2.5 points against 2.1 in 2026) and the effect of growth and interest (what nominal GDP growth and the interest paid do to the ratio) less (1.5 against 2.6). The European Commission, in the spring, before the proposal, forecast 86.0 % for 2027.
+
+**Unidade 7.** The 2027 Budget is a continuation budget. The new measures are worth 79 million euros to the balance, by the report's table of measures and by the UTAO; the ten lines the table marks as «invariante» (invariant) weigh 1,210 million. The UTAO writes that this is the third consecutive proposal with few new measures, and reads it as a strategy of deciding measures outside the Budget, before its presentation.
+
+**Unidade 10.** Interest rises faster than expenditure. It grows 18.7 % in public accounting, against 2.8 % for total expenditure and 5.4 % for staff costs; in national accounts it rises 1,548 million euros, more than the cost of all the 2027 measures to the balance within the same perimeter, 1,132 million, and 23.2 % according to the UTAO, with the implicit interest rate (interest paid divided by the debt) moving from 2.4 % to 2.9 %.
+
+**Unidade 11.** For the State's employees, the general pay update for 2027 matches forecast inflation. The update is 2.3 %, by the report; the inflation the same report forecasts for 2027 is 2.3 %; the Public Finance Council sees a risk that inflation is underestimated in 2026 and in 2027. The rise above the general update comes from career progression, promotions and career agreements, which the UTAO includes in the 1,231 million euros of the wage update, of which 590 million return to the State in income tax and 471 million in contributions, 86.2 % of the total; with public employment stabilised, staff costs grow 5.4 % in public accounting, the perimeter of the report's table 4.1, and 5.3 % in national accounts, by the UTAO.
+
+**Unidade 12.** The debt target the finance minister stated is reachable, and the reason lies mainly in treasury operations. The minister said, by the news report «Miranda Sarmento: dívida pública abaixo dos 85% do PIB em 2027 é a "principal preocupação" do Governo»: «A dívida pública deve continuar a ser a nossa principal preocupação nas contas públicas. Temos uma redução de cerca de quatro pontos percentuais nos últimos anos e estaremos abaixo dos 85% do PIB [Produto Interno Bruto] em 2027» The primary surplus contributes 2.5 points to the fall, the effect of growth and interest 1.5 points (less than in 2026, 2.6), and what makes the fall accelerate is the deficit-debt adjustment, which goes from 3.1 points to 0.9 points, mostly through lower acquisition of financial assets, according to the UTAO. It is a treasury movement, not the year's budget. The target also rests on growth of 2.1 % which, according to the UTAO, is above the forecasts of every other institution it cites, and on 300 million euros of revenue from fighting fuel fraud for which the report gives no basis.
+
+**Unidade 25.** The measures: what is new and what the table marks as invariant
+
+**Unidade 26.** The report's table of main measures with an impact in 2027 (its Table 3.2) adds up to −1,132 million euros of impact on the balance: −84 million on the revenue side and 1,048 million on the expenditure side. On the revenue side: VAT 206 million, which joins «Housing: construction VAT cut from 23% to 6% (i)» (−94 million) and «Combating fraud in the fuel sector» (300 million); personal income tax −477 million, which joins «Housing: personal income tax on moderate rents cut from 25% to 10% (i)» (−209 million), «Updating the specific deduction and tax brackets (i)» (−431 million), «Updating the minimum subsistence threshold» (−121 million) and the revenue that wage growth brings (284 million); corporate income tax −176 million, which joins «Rate cut by 1 percentage point (i)» (−300 million) and «Indirect SIFIDE (reversal) (i)» (124 million); and the social contributions that wage growth brings (363 million). On the expenditure side: staff costs 948 million (the incomes agreement 587 million, the minimum wage rise 116 million, the wage agreements 244 million) and social benefits 100 million, which are the increase of the Solidarity Supplement for the Elderly (100 million).
+
+**Unidade 33.** The positions: Juntos pelo Povo (JPP), in the news headline: «JPP pede maior protecção das famílias não abrangidas pela descida de IRS». The Left Bloc (Bloco de Esquerda, BE), by the news report on the State Budget (Orçamento do Estado, OE), «OE2027: BE diz que Orçamento “dá migalhas a quem trabalha” e beneficia os mais ricos»: «José Manuel Pureza considera que o Orçamento para 2027 “dá migalhas” aos trabalhadores, beneficia os mais ricos e ignora problemas estruturais.» The Portuguese Communist Party (Partido Comunista Português, PCP), in the statement by Paula Santos of 12 October: «Acrescem ainda outros benefícios fiscais contrários ao interesse nacional, como os 2228 milhões de euros atribuídos ao regime dos residentes não habituais; os 1067 milhões de euros associados ao IRS jovem (que favorece quem tem rendimentos mais elevados), ou os 209 milhões de euros de rendimentos prediais dos senhorios que apliquem rendas até 2300€.» The numbers the PCP cites (the benefits of the non-habitual residents regime, of the young people's income tax and of rents) are the PCP's; this study did not check them at the source and therefore does not repeat them as its own. From Iniciativa Liberal (IL) and from Pessoas-Animais-Natureza (PAN) there is, in this study's documents, no position dated after the delivery of the proposal; the research did not find one in the primary sources, which does not mean there is none.
+
+**Unidade 42.** The corporate income tax rate falls to 18 % in 2027, after 19 % in 2026, by the law of November 2025 (Lei n.º 64/2025, de 7 de novembro): «Artigo 3.º Norma transitória 1 — A taxa prevista nos n.os 1 e 5 do artigo 87.º do Código do IRC, na redação conferida pela presente lei, aplica-se aos períodos de tributação que se iniciem em ou após 1 de janeiro de 2028. 2 — Nos períodos de tributação que se iniciem durante o ano de 2026, a taxa prevista nos n.os 1 e 5 do artigo 87.º do Código do IRC é de 19 %. 3 — Nos períodos de tributação que se iniciem durante o ano de 2027, a taxa prevista nos n.os 1 e 5 do artigo 87.º do Código do IRC é de 18 %. 4 — A taxa prevista no n.º 2 do artigo 87.º do Código do IRC, na redação conferida pela presente lei, aplica-se aos períodos de tributação que se iniciem em ou após 1 de janeiro de 2026.» The 2027 cost in the table of measures is 300 million euros, partly offset by the reversal of the indirect SIFIDE, 124 million, for a total of 176 million. The Prime Minister: «Referiu também a redução do IRC e sublinhou que, nos 920 dias desde a primeira tomada de posse do Governo, não houve aumentos de impostos.» The parliamentary leader of the Social Democratic Party (Partido Social Democrata, PSD), by the news report on the Budget in the Assembly of the Republic (Assembleia da República, AR), «"Baile" na AR com OE em destaque: A "dança" de Montenegro e oposição»: «Enquanto o Governo do PS aumentava impostos, defendeu Hugo Soares, "este Governo não aumentou um único imposto nos orçamentos que apresentou".» The PS, by José Luís Carneiro: «Para o líder do PS, a redução deste imposto deve ser “dirigida a prioridades de política económica e não para todos e de forma cega”.» The PCP: «O Governo fala em descida de impostos, mas a realidade é esta: o único imposto cuja receita diminuiu foi o IRC (imposto que incide sobre os rendimentos de capital), no próximo ano – com uma taxa de 18% - voltará a descer e a que se somam os benefícios fiscais de 1868 milhões de euros (apenas 1% das empresas absorvem mais de 50% destes benefícios).» CDS-Partido Popular (CDS), in the news headline: «"Temos um bom Orçamento para 2027", garante o CDS-PP». On the sentence «não houve aumentos de impostos»: in the table of measures, the revenue lines that grow are the fraud revenue (300 million), the revenue that wage growth brings in income tax (284 million) and in contributions (363 million), and the reversal of the SIFIDE (124 million); none is a rate increase.
+
+**Unidade 44.** The report: «A dívida pública, em percentagem do PIB, deverá manter assim a trajetória decrescente, passando de 87,5% em 2026 para 84,5% em 2027.» And the objective: «A dívida pública continuará a reduzir-se, visando ficar abaixo dos 80% do produto interno bruto (PIB) no final da década.» The finance minister, on 13 October, by the news report «Miranda Sarmento: dívida pública abaixo dos 85% do PIB em 2027 é a "principal preocupação" do Governo»: «A dívida pública deve continuar a ser a nossa principal preocupação nas contas públicas. Temos uma redução de cerca de quatro pontos percentuais nos últimos anos e estaremos abaixo dos 85% do PIB [Produto Interno Bruto] em 2027». In 2025 the debt was 89.2 % of GDP; it falls 1.6 points in 2026 and 3.0 points in 2027, to 84.5 % (the table's values are rounded to one decimal: 89.2 minus 1.6 does not give exactly 87.5).
+
+**Unidade 45.** The report's debt table breaks down the 2027 fall: the primary balance contributes −2.5 points, the dynamic effect (nominal growth minus interest) −1.5 points, of which the interest effect is 2.4 points upward and the GDP effect 3.9 points downward, and the deficit-debt adjustment 0.9 points upward. In 2026 the primary balance contributed −2.1 points, the dynamic effect −2.6 points and the adjustment 3.1 points. The UTAO explains: «O reforço do excedente primário em 2027 não será suficiente para compensar a menor redução do rácio da dívida proporcionada pelo efeito dinâmico. Segundo a POE/2027 (Tabela 16), o saldo primário contribuirá para uma redução de 2,5 p.p., face a 2,1 p.p. em 2026. Em contrapartida, o abrandamento do PIB nominal e o aumento do custo médio da dívida limitarão a redução proporcionada pelo efeito dinâmico a 1,5 p.p., face a 2,6 p.p. no ano anterior. O contributo do crescimento nominal para a descida do rácio passará de 4,6 p.p. para 3,9 p.p., sobretudo devido à desaceleração do deflator do PIB e, em menor medida, do crescimento real, enquanto os juros, em sentido contrário, aumentarão o rácio em 2,4 p.p., face a 2,0 p.p. O contributo do crescimento nominal continuará, assim, a superar o dos juros, mas com uma diferença menor, tornando a redução do rácio mais dependente do excedente primário. Em conjunto, estas duas componentes deverão reduzir o rácio em cerca de 4,0 p.p. em 2027, face a 4,7 p.p. em 2026, antes de considerado o ajustamento défice-dívida.» And: «Apesar do menor contributo redutor do efeito dinâmico, a descida do rácio deverá acelerar em 2027, sobretudo devido à redução do ajustamento défice-dívida, que inclui operações financeiras que alteram a dívida sem afetarem na mesma medida o saldo orçamental. Segundo a POE/2027, este ajustamento deverá acrescentar 0,9 p.p. ao rácio, face a 3,1 p.p. em 2026. Esta diminuição reflete sobretudo a redução da aquisição líquida de ativos financeiros, de 9,3 mil M€ para 0,9 mil M€, em particular as menores aplicações em numerário e depósitos e a ausência de aquisições líquidas de títulos exceto ações em 2027. O aumento dos restantes contributos para o ajustamento compensa parcialmente esta redução. Este ajustamento permanece positivo e superior ao excedente orçamental previsto (0,1% do PIB), pelo que o stock nominal da dívida continuará a aumentar.» In euros, according to the UTAO, the stock goes from aproximadamente (approximately) 284.8 thousand million at the end of 2026 to 287.8 thousand million in 2027, with increases of cerca de (about) 9.7 and 2.9 thousand million, in the UTAO's rounded figures: the debt keeps rising in euros, and falls as a percentage because GDP rises more.
+
+**Unidade 50.** The UTAO, on growth, compares the forecasts with those of the Bank of Portugal (BdP), the European Commission (CE), the CFP, the Organisation for Economic Co-operation and Development (OCDE) and the International Monetary Fund (FMI), and points to the dependence on the execution of Portugal 2030 (PT2030): «Um crescimento económico inferior ao projetado constitui um risco para a concretização do saldo orçamental, em particular num cenário para 2027 em que a despesa corrente cresce 6,6% e a receita corrente 4,5% (Tabela 13). A POE/2027 assenta num crescimento real do PIB de 2,1%, acima das previsões do BdP, da CE e do CFP (1,8%), da OCDE (1,7%) e do FMI (1,6%) (capítulo 2), num enquadramento marcado pela incerteza geopolítica e pelos riscos associados à evolução dos preços da energia. Um abrandamento da atividade económica superior ao implícito no cenário orçamental traduzir-se-ia numa arrecadação inferior à prevista de impostos sobre o rendimento e o consumo, bem como de contribuições sociais, condicionando a execução da receita e colocando pressão sobre o saldo orçamental. O cenário depende ainda da execução do PT2030, cujos recebimentos se prevê que aumentem 65% em 2027 (+1948 M€) quando, a 31 de agosto de 2026, a execução financeira era de 21,7% da dotação, e da conclusão do PRR, cujo último pedido de pagamento (96 marcos e metas) estava em avaliação (Caixa 1).» On the fraud revenue: «Subexecução da medida de combate à fraude no setor dos combustíveis. A POE/2027 prevê uma receita adicional de 300 M€ associada a esta medida, sem, contudo, apresentar informação que permita fundamentar a estimativa ou avaliar a sua exequibilidade. Subsiste, assim, um risco de concretização inferior ao previsto, atendendo aos antecedentes de medidas de combate à fraude cuja execução efetiva se revelou menor, ou relativamente às quais a Conta Geral do Estado não disponibilizou informação suficiente para aferir os resultados alcançados.» On the National Health Service and general government (Administrações Públicas, AP): «Existe um risco de pressão orçamental associado à execução do Serviço Nacional de Saúde (SNS). A persistência de défices na execução financeira do SNS, apesar dos sucessivos reforços das dotações orçamentais e das recorrentes injeções de capital destinadas a regularizar pagamentos em atraso, evidencia a manutenção de pressões sobre a despesa que poderão não estar integralmente acomodadas no financiamento previsto para 2027. Estas pressões incidem, designadamente, sobre as despesas com pessoal e os consumos intermédios (Tabela 15), podendo traduzir-se em necessidades adicionais de financiamento durante o ano e constituir um risco descendente para o saldo orçamental das AP.» On interest: «A despesa com juros cresce 23,2% em contabilidade nacional em 2027 (18,7% em contabilidade pública, Tabela 13). Persiste o risco de encargos superiores aos projetados, que depende do volume de dívida a refinanciar em 2027 e das taxas de juro das novas emissões.» On contingent liabilities, where the public-private partnerships (PPP) come in, among them the road partnerships of the partnerships item of «Under discussion»: «As responsabilidades contingentes constituem outro risco: decisões arbitrais desfavoráveis no âmbito das PPP e garantias às linhas de crédito criadas na sequência das tempestades (2000 M€ de crédito e 571 M€ de encargos plurianuais potenciais, Caixa 3). A prorrogação até ao final de 2027 da garantia pessoal do Estado ao crédito à habitação de jovens agrava-o: o stock de garantias ao abrigo do regime mais do que duplicou entre dezembro de 2025 e maio de 2026, de 449 M€ para 926 M€ (Tabela 19).» On the markets: «A instabilidade política e a deterioração das finanças públicas francesas (défice de 5,1% do PIB em 2025 e de 5,4% previsto pelo Governo francês para 2026) poderão intensificar as tensões no mercado europeu de dívida soberana e elevar os prémios de risco e os custos de financiamento de Portugal. Acresce o risco quanto à trajetória da despesa líquida: a Comissão Europeia estima um desvio de 2,1% do PIB no final de 2027, acima do limiar de 0,6% (capítulo 3), e, na análise de sustentabilidade do MF, a probabilidade de o rácio da dívida em 2033 exceder o de 2028 é de 22,9% (capítulo 5).» On extreme natural events: «A ocorrência de novos fenómenos naturais extremos em 2027 poderá exigir a adoção de medidas extraordinárias de apoio público destinadas a mitigar os danos causados e a assegurar a recuperação dos setores e das infraestruturas afetados. A eventual necessidade de financiar estas medidas constituiria uma pressão adicional sobre a despesa pública, configurando um risco orçamental. A Caixa 3 apresenta os apoios já aprovados na sequência das tempestades de 2026.» The Public Finance Council, on employment and revenue: «A previsão para o emprego (1,4%) é a mais elevada de entre as instituições de referência e situa-se no limite superior do intervalo de confiança a 30%. Assenta num crescimento da população ativa (1,3%) superior ao da população em idade ativa (0,6%), o que pressupõe um aumento expressivo da taxa de participação. Também para as remunerações por trabalhador, a previsão do MF é a mais elevada de entre as instituições de referência. O efeito conjugado destes dois elementos pode resultar em riscos acrescidos para a receita decorrente da massa salarial.» And on the measures: «O MF estima um impacto macroeconómico reduzido das medidas de apoio ao rendimento das famílias com efeito no final de 2026. As medidas previstas para 2027 terão um impacto reduzido.»
+
+**Unidade 52.** The «seis descidas consecutivas do IRS» in the Government’s communication include those the report places before 2027: personal income tax loses 477 million in 2027. The Left Bloc, by the news report «OE2027: BE diz que Orçamento “dá migalhas a quem trabalha” e beneficia os mais ricos», says the Budget “dá migalhas” (gives crumbs): the phrase has no number, and the new measures for people are worth 121 million euros less in income tax through the exemption threshold and 100 million in the Solidarity Supplement for the Elderly, alongside 947 million already counted in wages. «O único imposto cuja receita diminuiu foi o IRC»: in the table of measures, corporate income tax loses 176 million in 2027 and personal income tax 477 million; in the accounts, direct taxes as a whole grow 1.7 %. No party, in this study’s documents, speaks about interest, which rises 1,548 million euros in 2027 in national accounts, more than all the measures together cost the balance within the same perimeter.
+
+### Recibos tal como renderizam
+
+#### pt: irs-2027-escalao-1-limite
+
+titulo: IRS: limite superior do escalão 1 em 2027
+
+nome: O nome na fonte «IRS: limite superior do escalão 1 em 2027» · Proposta de Lei n.º 110/XVII/2.ª Orçamento do Estado para 2027
+
+definicao: É o valor de «IRS: limite superior do escalão 1 em 2027» no documento citado, para o período e na unidade indicados. Referência: 2027.
+
+valor: 8 666 euros
+
+proveniencia: Completa.
+
+#### pt: oe-2027-rmmg-2024
+
+titulo: Remuneração mínima mensal garantida: 2024
+
+nome: O nome na fonte «Remuneração mínima mensal garantida: 2024» · Orçamento do Estado 2027 RELATÓRIO
+
+definicao: É o valor de «Remuneração mínima mensal garantida: 2024» no documento citado, para o período e na unidade indicados. Referência: 2024.
+
+valor: 820 euros
+
+proveniencia: Completa.
+
+#### pt: irc-taxa-2027
+
+titulo: IRC: taxa geral em 2027
+
+nome: O nome na fonte «IRC: taxa geral em 2027» · Lei n.º 64/2025, de 7 de novembro
+
+definicao: É a taxa geral do IRC em 2027, pela lei de novembro de 2025.
+
+valor: 18 %
+
+proveniencia: Completa.
+
+#### en: irs-2027-escalao-1-limite
+
+titulo: Income tax: upper limit of bracket 1 in 2027
+
+nome: The name at the source «Income tax: upper limit of bracket 1 in 2027» · Proposta de Lei n.º 110/XVII/2.ª Orçamento do Estado para 2027
+
+definicao: It is the value of «Income tax: upper limit of bracket 1 in 2027» in the cited document, for the stated period and unit. Reference: 2027.
+
+valor: 8 666 euros
+
+proveniencia: Complete.
+
+#### en: oe-2027-rmmg-2024
+
+titulo: Minimum monthly wage: 2024
+
+nome: The name at the source «Minimum monthly wage: 2024» · Orçamento do Estado 2027 RELATÓRIO
+
+definicao: It is the value of «Minimum monthly wage: 2024» in the cited document, for the stated period and unit. Reference: 2024.
+
+valor: 820 euros
+
+proveniencia: Complete.
+
+#### en: irc-taxa-2027
+
+titulo: Corporate tax: general rate in 2027
+
+nome: The name at the source «Corporate tax: general rate in 2027» · Lei n.º 64/2025, de 7 de novembro
+
+definicao: It is the general corporate income tax rate in 2027, under the law of November 2025.
+
+valor: 18 %
+
+proveniencia: Complete.
+
+#### pt: der-oe2027-juros-variacao-cn
+
+titulo: Juros: variação em contabilidade nacional
+
+nome: Linha derivada deste projeto «Juros: variação em contabilidade nacional»
+
+definicao: É o resultado da conta para «Juros: variação em contabilidade nacional», feita com as componentes identificadas neste recibo. Referência: 2027.
+
+valor: 1 548 milhões de euros
+
+aritmetica: 8 217 (Juros, 2027, contabilidade nacional) − 6 669 (Juros, 2026, contabilidade nacional) = 1 548. O sinal indica a direção da variação ou do resultado da conta.
+
+proveniencia: Completa.
+
+#### pt: der-oe2027-medidas-soma-derivadas
+
+titulo: Soma dos impactos das linhas invariantes e das medidas novas no saldo
+
+nome: Linha derivada deste projeto «Soma dos impactos das linhas invariantes e das medidas novas no saldo»
+
+definicao: É o resultado da conta para «Soma dos impactos das linhas invariantes e das medidas novas no saldo», feita com as componentes identificadas neste recibo. Referência: 2027.
+
+valor: −1 131 milhões de euros
+
+aritmetica: −1 210 (Medidas invariantes: impacto no saldo, 2027) + 79 (Medidas novas: impacto no saldo, 2027) = −1 131. O sinal indica a direção da variação ou do resultado da conta.
+
+proveniencia: Completa.
+
+#### en: der-divida-pt-vs-ue-2025
+
+titulo: Debt: Portugal against the Union in 2025
+
+nome: Derived row of this project «Debt: Portugal against the Union in 2025»
+
+definicao: It is the result of the calculation for «Debt: Portugal against the Union in 2025», using the components identified in this receipt. Reference: 2025.
+
+valor: 8.0 percentage points
+
+aritmetica: 89.7 (General government consolidated gross debt, as a percentage of GDP, Portugal, 2025, % of GDP) − 81.7 (General government consolidated gross debt, as a percentage of GDP, European Union, 2025, % of GDP) = 8.0. The sign indicates the direction of the change or calculation result.
+
+proveniencia: Complete.
+
+#### en: der-rmmg-2026-2027-pct
+
+titulo: Minimum wage: percentage increase against 2026
+
+nome: Derived row of this project «Minimum wage: percentage increase against 2026»
+
+definicao: It is the result of the calculation for «Minimum wage: percentage increase against 2026», using the components identified in this receipt. Reference: 2027.
+
+valor: 5.4 %
+
+aritmetica: round ( ( 970 (Minimum monthly wage: 2027) ÷ 920.00 (Minimum monthly wage in 2026) − 1 ) × 100 , 1 ) = 5.4. The sign indicates the direction of the change or calculation result.
+
+proveniencia: Complete.
+
+#### pt: posicao-be-rendimentos
+
+titulo: Rendimentos dos trabalhadores
+
+nome: O nome na fonte «Rendimentos dos trabalhadores» · OE2027: BE diz que Orçamento “dá migalhas a quem trabalha” e beneficia os mais ricos
+
+definicao: É a posição atribuída no documento sobre «Rendimentos dos trabalhadores», transcrita no excerto. Referência: 09.10.2026.
+
+valor: José Manuel Pureza considera que o Orçamento para 2027 “dá migalhas” aos trabalhadores, beneficia os mais ricos e ignora problemas estruturais. afirmação
+
+proveniencia: Por confirmar na fonte primária: o que aqui está é o que a notícia escreveu
+
+#### en: posicao-governo-divida85-citacao
+
+titulo: Miranda Sarmento: debt, quotation in the news report
+
+nome: The name at the source «Miranda Sarmento: debt, quotation in the news report» · Miranda Sarmento: dívida pública abaixo dos 85% do PIB em 2027 é a "principal preocupação" do Governo
+
+definicao: It is the position attributed in the document on «Miranda Sarmento: debt, quotation in the news report», transcribed in the excerpt. Reference: 13.10.2026.
+
+valor: A dívida pública deve continuar a ser a nossa principal preocupação nas contas públicas. Temos uma redução de cerca de quatro pontos percentuais nos últimos anos e estaremos abaixo dos 85% do PIB [Produto Interno Bruto] em 2027 statement
+
+proveniencia: To be confirmed at the primary source: what is here is what the news report wrote

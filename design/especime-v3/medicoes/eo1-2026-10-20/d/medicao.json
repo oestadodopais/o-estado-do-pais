@@ -1,0 +1,19 @@
+{
+  "sitio": "8de3a83c96558a42af25e4f7a9f78504f062872b",
+  "motor": "be7f2bd698ebfcab37916e2f6b797a5d2abcc4e1",
+  "portoes_sitio": "d/portoes-finais",
+  "portao_motor": "d/portoes-inventario/motor.log",
+  "codigos": {
+    "build": 0,
+    "verify": 0,
+    "typecheck": 0,
+    "motor": 0,
+    "series": 0,
+    "cruzamento_com_origem": 0,
+    "extracao": 0,
+    "capturas": 0,
+    "privacidade": 0
+  },
+  "motor_inalterado_desde_a_corrida": true,
+  "commit_seguinte_apenas_relatorio_e_provas": true
+}

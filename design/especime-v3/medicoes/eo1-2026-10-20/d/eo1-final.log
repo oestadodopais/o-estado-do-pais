@@ -1,0 +1,31 @@
+
+> o-estado-do-pais@0.1.0 check:eo1
+> node tests/eo1/maquinaria.mjs && node tests/eo1/documento.mjs && node tests/eo1/lingua-nomes.mjs && node tests/eo1/recibos.mjs
+
+EO1 portas o-que-se-discute: 2/2
+EO1 portas explicacoes/dinheiro-do-estado-2026: 1/1
+EO1 portas en/under-discussion: 2/2
+EO1 portas en/explainers/dinheiro-do-estado-2026: 1/1
+B1 estudos/orcamento-2027-o-que-muda-e-para-quem: primeiro H2 conferido e planta recusada.
+B1 en/studies/orcamento-2027-o-que-muda-e-para-quem: primeiro H2 conferido e planta recusada.
+B1 estudos/evora-contas-da-camara-2010-2025: primeiro H2 conferido e planta recusada.
+B1 en/studies/evora-contas-da-camara-2010-2025: primeiro H2 conferido e planta recusada.
+B1 estudos/evora-quem-governou-a-camara-2009-2025: primeiro H2 conferido e planta recusada.
+B1 estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara: primeiro H2 conferido e planta recusada.
+B1 en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara: primeiro H2 conferido e planta recusada.
+B1 estudos/evora-2027-capital-europeia-da-cultura: primeiro H2 conferido e planta recusada.
+B1 en/studies/evora-2027-capital-europeia-da-cultura: primeiro H2 conferido e planta recusada.
+B1 estudos/evora-2027-prometido-painel-dinheiro: primeiro H2 conferido e planta recusada.
+B1 en/studies/evora-2027-prometido-painel-dinheiro: primeiro H2 conferido e planta recusada.
+EO1-b maquinaria: PASS; 41 plantas recusadas.
+EO1: 256 localizadores, nomes e períodos conferidos em todas as linhas, com alterações rejeitadas.
+EO1 pt: plantas valor, excerto e literal recusadas (código de recusa 1).
+EO1 en: plantas valor, excerto e literal recusadas (código de recusa 1).
+EO1: PASS 114 unidades do HTML, provas e três plantas por edição.
+
+[32m  língua ✓ [0m65 unidade(s) do livro-razão (63 das linhas, 14 das séries): 64 traduzida(s), 1 em português com razão escrita («factor») · 3210 localizador(es), todos dentro de documento português · 163 título(s) de documento com língua declarada (116 pt, 46 en) · 650 rótulo(s) da fonte com língua declarada (381 pt, 269 en) · 48 organismo(s) com língua declarada (44 pt, 3 en) · 116 edição(ões) com língua declarada (23 pt, 0 en, 93 sem língua)
+[90m        9116 página(s) lidas · unidades em «en»: 9829 (9827 traduzidas, 2 em português, todas com marca) · títulos com marca de língua: 8106 de 16205 rendidos · rótulos da fonte com marca de língua: 8138 de 17300 rendidos · organismos rendidos: 20145 (10041 de língua contrária: 9493 em «en» e 548 em «pt», 10041 com a marca certa) · edições rendidas: 10829 (3798 de língua contrária: 3798 em «en» e 0 em «pt», 3798 com a marca certa, 3233 sem língua nenhuma e sem marca) · localizadores em «en»: 3155 com marca · leis em «en»: 1049 com marca, 9 dentro de transcrição do motor · títulos de estudo portugueses em «en»: 104 à vista e 0 no oculto, todos com marca · rótulo de IA: 9116 linha(s) na língua da página · atributos repetidos: nenhum[0m
+[90m        9 nome(s) de lei dentro de texto transcrito (uma «derivation_en» do livro-razão, uma nota do registo da agenda): a casa não edita o que transcreve, e um campo transcrito só se marca inteiro, na língua do campo.[0m
+
+EO1-b: positivo real e cinco plantas de nome, língua, edição, campo e declaração; todas recusadas e controlo reposto.
+EO1-d recibos: 58 conferidos; 8 plantas de estado recusadas; controlo código 0.

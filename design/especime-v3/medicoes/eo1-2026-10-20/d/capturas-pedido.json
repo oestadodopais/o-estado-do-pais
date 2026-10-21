@@ -1,0 +1,65 @@
+{
+  "cabeca": "8de3a83c96558a42af25e4f7a9f78504f062872b",
+  "paginas": [
+    {
+      "nome": "estudo",
+      "pt": "/estudos/orcamento-2027-o-que-muda-e-para-quem/",
+      "en": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/",
+      "recortes": [
+        {
+          "nome": "titulo",
+          "seletor": "[data-registo-unidade$=\"#0\"]"
+        },
+        {
+          "nome": "resumo",
+          "seletor": "[data-registo-unidade$=\"#3\"]"
+        }
+      ]
+    },
+    {
+      "nome": "documento",
+      "pt": "/estudos/orcamento-2027-o-que-muda-e-para-quem/documento/",
+      "en": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/document/",
+      "recortes": [
+        {
+          "nome": "titulo",
+          "seletor": "[data-oedp-moldura] h1"
+        },
+        {
+          "nome": "resumo",
+          "seletor": "[data-oedp-moldura] p:nth-of-type(2)"
+        }
+      ]
+    },
+    {
+      "nome": "derivada",
+      "pt": "/livro-razao/der-rmmg-2026-2027-pct/",
+      "en": "/en/ledger/der-rmmg-2026-2027-pct/",
+      "recortes": [
+        {
+          "nome": "cabeca",
+          "seletor": ".linha-cabeca"
+        },
+        {
+          "nome": "conta",
+          "seletor": "[data-linha-campo=\"derivation\"]"
+        }
+      ]
+    },
+    {
+      "nome": "imprensa",
+      "pt": "/livro-razao/posicao-be-rendimentos/",
+      "en": "/en/ledger/posicao-be-rendimentos/",
+      "recortes": [
+        {
+          "nome": "cabeca",
+          "seletor": ".linha-cabeca"
+        },
+        {
+          "nome": "estado",
+          "seletor": ".aparelho-estado"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+
+> o-estado-do-pais@0.1.0 check:voz
+> node scripts/check-voz.mjs
+
+  B1: 38 páginas pela lista fechada; 7 temas conferidos.
+  EX1: 10 página(s) com as palavras das explicações e as frases da semana conferidas pelas suas células.
+
+[31m  PORTÃO DA VOZ · 2 problema(s)
+[0m
+[31m    · [0mB1 sinopse lista: en/studies: orcamento-2027-o-que-muda-e-para-quem difere das duas primeiras frases da leitura ou da descrição.
+[31m    · [0mB1 sinopse: orcamento-2027-o-que-muda-e-para-quem difere das duas primeiras frases.
+
