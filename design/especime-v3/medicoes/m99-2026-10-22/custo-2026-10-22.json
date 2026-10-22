@@ -1,0 +1,36 @@
+{
+ "bloco": "M99 · conferir-tudo.sh, a corrida inteira do verify sem parar",
+ "data": "2026-10-22",
+ "passagens": [
+  {
+   "nome": "M99 (construção)",
+   "modelo": "Claude Opus 5.5",
+   "esforco": "high",
+   "simbolos": 90652,
+   "chamadas": 25,
+   "minutos": 38
+  },
+  {
+   "nome": "M99-b (correção)",
+   "modelo": "Claude Opus 5.5",
+   "esforco": "medium",
+   "simbolos": null,
+   "chamadas": 9,
+   "minutos": null
+  },
+  {
+   "nome": "leitura a frio",
+   "modelo": "Gemini 4 Argon (High), CLI do Antigravity",
+   "esforco": "high",
+   "simbolos": null,
+   "chamadas": null,
+   "minutos": 7
+  }
+ ],
+ "corridas_de_conferencias": {
+  "verify_inteiro_pelo_guiao": 1,
+  "build_inteiro": 1
+ },
+ "capturas": 0,
+ "nota": "Os símbolos da M99-b não foram reportados pela ferramenta na entrega; o Gemini não os reporta na CLI."
+}

@@ -292,6 +292,7 @@ conservam a prova do que cada bloco correu; não são pontos de manutenção.
 | `scripts/leituras/captar.mjs` | `<pedido.json> <pasta nova> [dist]`. O pedido nomeia a cabeça completa, as rotas portuguesa e inglesa e os recortes opcionais. Captura nas cinco larguras, confere a cabeça e os recursos e escreve os sha256; as réguas de conteúdo continuam a ser as de cada bloco. |
 | `scripts/leituras/tempos.mjs` e `tempos-shell.py` | O primeiro mede, reúne e arruma os registos; o segundo é a shell do npm só na corrida instrumentada. `tempos.json` guarda início, fim, duração e código de cada passo. |
 | `scripts/leituras/portoes.sh` | `<worktree absoluta> <pasta nova>`, com `RESEARCHHUB_DIR` no ambiente. Toma a tranca, constrói, confere a união em paralelo e corre o typecheck; cada código vem do processo terminado. `OEDP_PARALELO` permite medir outro grau. |
+| `scripts/leituras/conferir-tudo.sh` | `<worktree absoluta> <pasta nova> [--build\|--sem-build]`, com `RESEARCHHUB_DIR` no ambiente. Toma a mesma tranca, recusa (9) um `dist/` que não seja da cabeça, corre todos os passos do `verify` sem parar e escreve um `.code` e um `.log` por passo, `resumo.json` (com as trinta últimas linhas de cada vermelho) e `resumo.md` (M99); o ensaio é `tests/leituras/ferramenta_conferir_tudo.sh`. |
 | `scripts/leituras/pacote.sh` | A interface está no cabeçalho. Os códigos e tempos acompanham só as linhas dos registos citadas por `<!-- portao: portoes/verify.log \| npm run check:series · -->` no relatório. A falta de uma linha citada fecha o pacote. |
 
 <!-- MA-TEMPOS-INICIO -->

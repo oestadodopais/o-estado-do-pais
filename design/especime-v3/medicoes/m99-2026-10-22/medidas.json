@@ -1,0 +1,58 @@
+[
+ {
+  "nome": "ensaio de três plantas",
+  "valor": 0,
+  "comando": "sh tests/leituras/ferramenta_conferir_tudo.sh",
+  "conhecido_positivo": {
+   "planta-sem-recusa (a recusa do dist/ retirada numa cópia)": 2,
+   "planta-para-no-vermelho (um break no primeiro vermelho, numa cópia)": 5
+  }
+ },
+ {
+  "nome": "ensaio de quatro plantas (M99-b, com o build falhado e a pasta relativa)",
+  "valor": 0,
+  "comando": "sh tests/leituras/ferramenta_conferir_tudo.sh",
+  "conhecido_positivo": {
+   "planta-build-falhado (o ensaio novo contra o guião da cabeça f39554fd8, antes da correção)": 4
+  }
+ },
+ {
+  "nome": "check:leituras",
+  "valor": 0,
+  "comando": "npm run check:leituras",
+  "conhecido_positivo": "não prende o ensaio .sh: o check:leituras só descobre tests/leituras/*.py"
+ },
+ {
+  "nome": "typecheck",
+  "valor": 0,
+  "comando": "npm run typecheck"
+ },
+ {
+  "nome": "conferir-mapa",
+  "valor": 0,
+  "comando": "python3 scripts/leituras/conferir-mapa.py design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md"
+ },
+ {
+  "nome": "corrida real, código de saída",
+  "valor": 0,
+  "comando": "RESEARCHHUB_DIR=<motor> sh scripts/leituras/conferir-tudo.sh <worktree> <pasta fora do repositório> --build"
+ },
+ {
+  "nome": "corrida real, cabeça",
+  "valor": "2635fc0e06302cf59b7085b5a2819d9d111aece0"
+ },
+ {
+  "nome": "corrida real, passos (build e verify)",
+  "valor": 51,
+  "ficheiros_code": 51
+ },
+ {
+  "nome": "corrida real, vermelhos",
+  "valor": 0,
+  "nao_zero": []
+ },
+ {
+  "nome": "corrida real, soma das durações dos passos (s)",
+  "valor": 1953
+ }
+]
