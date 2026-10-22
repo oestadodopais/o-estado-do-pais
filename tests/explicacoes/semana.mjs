@@ -320,8 +320,16 @@ export function provaNaCopiaPlantada(fim) {
     plantas.push({nome:'linha numérica disfarçada de documento não desaparece',pediu:'uma mudança numérica nos três leitores',viu:JSON.stringify([r.contagens.valor,c.contagens.valor,p.valor]),mordeu:r.contagens.valor===1&&c.contagens.valor===1&&p.valor===1});
   }
   for(const id of ['hab-imprensa-manif-euronews','hab-imprensa-tendas']) {
-    const l=structuredClone(base.get(id)),valor=l.corrections.find(c=>c.kind==='correcao');
-    l.corrections=[{...valor,date:fim}];
+    /* A HB1-c1 tirou as correções públicas destas duas linhas (I249: uma edição em preparação não escreve correções
+       públicas); a planta lia o valor textual dessa correção, o find passou a devolver undefined e a recusa deixou de
+       chegar (HB1-m2). A correção textual planta-se agora só na cópia, com as primeiras oito palavras do excerto como
+       valor antigo e o excerto inteiro como novo, a forma da correção HB1-b que existiu; nada se escreve no livro.
+       Uma linha com história pública, como despesa-por-funcao-2024-gf01-ue, não serve: os valores dela lêem-se como
+       número, o resolvedor conta um movimento e a recusa nunca chega (ensaiado na HB1-m2, as duas plantas falham). */
+    const l=structuredClone(base.get(id));
+    if(typeof l.value!=='string'||l.unit!=='texto'){erros.push(`W1 · a linha ${id} deixou de ser um excerto textual: a planta não tem onde morder`);continue;}
+    const valor={kind:'correcao',date:fim,old_value:l.value.split(' ').slice(0,8).join(' '),new_value:l.value,reason:'planta W1',reason_en:'W1 plant'};
+    l.corrections=[valor];
     const m=new Map([[id,l]]),r=doResolvedor(m),c=semanaPelaCelula(m,fim),portao=contasDaSemanaNoPortao(m,inicio,fim);
     const ok=r.mudancas.length===0&&c.mudancas.length===0&&r.formas.length===0&&c.formas.length===0&&portao.valor===0&&portao.forma===0;
     plantas.push({nome:`excerto textual sem movimento numérico: ${id}`,pediu:'nenhuma subida, descida ou reformatação numérica',viu:`resolvedor ${r.mudancas.length}/${r.formas.length}, célula ${c.mudancas.length}/${c.formas.length}`,mordeu:ok});
