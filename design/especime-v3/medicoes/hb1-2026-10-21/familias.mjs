@@ -426,7 +426,7 @@ export const FAMILIAS_HB1 = [
         "."
       ],
       "en": [
-        "; here, Portugal, in ",
+        "; here, Portugal, in the ",
         {
           "periodo": "hab-ine-preco-mediano"
         },
@@ -474,7 +474,7 @@ export const FAMILIAS_HB1 = [
         "."
       ],
       "en": [
-        "; here, Lisbon, in ",
+        "; here, Lisbon, in the ",
         {
           "periodo": "hab-ine-preco-lisboa"
         },
@@ -522,7 +522,7 @@ export const FAMILIAS_HB1 = [
         "."
       ],
       "en": [
-        "; here, Porto, in ",
+        "; here, Porto, in the ",
         {
           "periodo": "hab-ine-preco-porto"
         },
@@ -570,7 +570,7 @@ export const FAMILIAS_HB1 = [
         "."
       ],
       "en": [
-        "; here, Portugal, in ",
+        "; here, Portugal, in the ",
         {
           "periodo": "hab-ine-renda-portugal"
         },
@@ -623,7 +623,7 @@ export const FAMILIAS_HB1 = [
         "."
       ],
       "en": [
-        "; here, Lisbon, in ",
+        "; here, Lisbon, in the ",
         {
           "periodo": "hab-ine-renda-lisboa"
         },
@@ -676,7 +676,7 @@ export const FAMILIAS_HB1 = [
         "."
       ],
       "en": [
-        "; here, Porto, in ",
+        "; here, Porto, in the ",
         {
           "periodo": "hab-ine-renda-porto"
         },
@@ -2701,7 +2701,7 @@ export const FAMILIAS_HB1 = [
         "."
       ],
       "en": [
-        "; here, in ",
+        "; here, in the ",
         {
           "periodo": "hab-ine-iphab-homologa"
         },
@@ -5957,14 +5957,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        "; aqui, em ",
+        "; aqui, no mês que termina a ",
         {
           "periodo": "hab-bpstat-12533724"
         },
         "."
       ],
       "en": [
-        "; here, in ",
+        "; here, in the month ending on ",
         {
           "periodo": "hab-bpstat-12533724"
         },
@@ -6004,14 +6004,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        "; aqui, em ",
+        "; aqui, no mês que termina a ",
         {
           "periodo": "hab-bpstat-12533735"
         },
         "."
       ],
       "en": [
-        "; here, in ",
+        "; here, in the month ending on ",
         {
           "periodo": "hab-bpstat-12533735"
         },
@@ -6051,14 +6051,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        "; aqui, Portugal, em ",
+        "; aqui, Portugal, a ",
         {
           "periodo": "hab-bpstat-12557378"
         },
         "."
       ],
       "en": [
-        "; here, Portugal, in ",
+        "; here, Portugal, on ",
         {
           "periodo": "hab-bpstat-12557378"
         },

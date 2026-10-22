@@ -19736,14 +19736,14 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "complemento": {
       "pt": [
-        "; aqui, em ",
+        "; aqui, no mês que termina a ",
         {
           "periodo": "hab-bpstat-12533724"
         },
         "."
       ],
       "en": [
-        "; here, in ",
+        "; here, in the month ending on ",
         {
           "periodo": "hab-bpstat-12533724"
         },
@@ -19769,14 +19769,14 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "complemento": {
       "pt": [
-        "; aqui, em ",
+        "; aqui, no mês que termina a ",
         {
           "periodo": "hab-bpstat-12533735"
         },
         "."
       ],
       "en": [
-        "; here, in ",
+        "; here, in the month ending on ",
         {
           "periodo": "hab-bpstat-12533735"
         },
@@ -19802,14 +19802,14 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "complemento": {
       "pt": [
-        "; aqui, Portugal, em ",
+        "; aqui, Portugal, a ",
         {
           "periodo": "hab-bpstat-12557378"
         },
         "."
       ],
       "en": [
-        "; here, Portugal, in ",
+        "; here, Portugal, on ",
         {
           "periodo": "hab-bpstat-12557378"
         },
@@ -22401,7 +22401,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
         "."
       ],
       "en": [
-        "; here, in ",
+        "; here, in the ",
         {
           "periodo": "hab-ine-iphab-homologa"
         },
@@ -22464,7 +22464,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
         "."
       ],
       "en": [
-        "; here, Lisbon, in ",
+        "; here, Lisbon, in the ",
         {
           "periodo": "hab-ine-preco-lisboa"
         },
@@ -22498,7 +22498,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
         "."
       ],
       "en": [
-        "; here, Portugal, in ",
+        "; here, Portugal, in the ",
         {
           "periodo": "hab-ine-preco-mediano"
         },
@@ -22532,7 +22532,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
         "."
       ],
       "en": [
-        "; here, Porto, in ",
+        "; here, Porto, in the ",
         {
           "periodo": "hab-ine-preco-porto"
         },
@@ -22566,7 +22566,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
         "."
       ],
       "en": [
-        "; here, Lisbon, in ",
+        "; here, Lisbon, in the ",
         {
           "periodo": "hab-ine-renda-lisboa"
         },
@@ -22600,7 +22600,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
         "."
       ],
       "en": [
-        "; here, Porto, in ",
+        "; here, Porto, in the ",
         {
           "periodo": "hab-ine-renda-porto"
         },
@@ -22634,7 +22634,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
         "."
       ],
       "en": [
-        "; here, Portugal, in ",
+        "; here, Portugal, in the ",
         {
           "periodo": "hab-ine-renda-portugal"
         },
