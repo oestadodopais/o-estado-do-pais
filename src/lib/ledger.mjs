@@ -701,6 +701,23 @@ export function atribuicaoDaLinha(claim, lang = 'pt') {
 }
 
 /**
+ * HB1-g (22.10.2026): uma linha que só declara a última edição de uma página.
+ *
+ * A data da linha é a da última edição (`published_at_kind` last-edited), a linha
+ * não tem período de dados e tem a data. Nessas linhas a data diz-se com o seu nome
+ * («Página editada pela última vez a») e nunca como edição do documento, como
+ * período ou como «Dados de»: no recibo, na atribuição, no excerto para incorporar
+ * e na descrição da cabeça. Um predicado só, para que os lugares não se
+ * desencontrem; o ensaio é `tests/hb1/pagina-editada.mjs`.
+ *
+ * @param {Linha | null | undefined} claim
+ * @returns {boolean}
+ */
+export function paginaSoComEdicao(claim) {
+  return Boolean(claim && claim.published_at_kind === 'last-edited' && !claim.period && claim.published_at);
+}
+
+/**
  * Uma linha é derivada quando declara de que linhas deriva.
  *
  * @param {Linha | null | undefined} claim

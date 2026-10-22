@@ -69,6 +69,7 @@ import {
   verificacoesDaLinha,
   VERIFICACOES_MOSTRADAS,
   POR_VERIFICAR,
+  paginaSoComEdicao,
 } from '../lib/ledger.mjs';
 import { caminhoDaLinha, caminhoDoLivro, tituloDaLinha, descricaoDaLinha } from '../lib/livro.mjs';
 import { estadoDaFonte } from '../lib/prova.mjs';
@@ -508,8 +509,10 @@ function copiaArquivadaDe(caminho) {
 
 /** As linhas da ficha que existem nesta afirmação. Uma linha a null não se mostra. */
 /** HB1-f: uma linha cuja data é a da última edição de uma página (published_at_kind
-    last-edited) e que não tem período de dados. */
-const paginaEditada = /** @type {any} */ (claim).published_at_kind === 'last-edited' && !claim.period && Boolean(claim.published_at);
+    last-edited) e que não tem período de dados. HB1-g (22.10.2026): o predicado é um só,
+    o `paginaSoComEdicao` do livro, o mesmo da atribuição, do excerto para incorporar e da
+    descrição da cabeça. */
+const paginaEditada = paginaSoComEdicao(claim);
 const ficha = [
   /* O NOME DO ORGANISMO É UM NOME, E DIZ EM QUE LÍNGUA ESTÁ (I97, 29.08.2026):
      a tabela é `src/i18n/lingua-dos-titulos.mjs`, e a regra é a dos títulos. */
@@ -669,7 +672,9 @@ const atribuicaoPecas = [
         porta: typeof claim.document?.url === 'string' ? claim.document.url : null,
       }
     : null,
-  presente(claim.document?.edition) && !(/^\d{4}-\d{2}(?:\/\d{4}-\d{2})?$/.test(claim.document.edition) && claim.document.edition === (claim.period ?? claim.reference_date)) && !(typeof claim.document.edition === 'string' && /^\d{4}$/.test(claim.document.edition) && String(claim.document.title ?? '').split(/\D+/).includes(claim.document.edition))
+  /* HB1-g (22.10.2026): numa página editada, a data não é a edição do documento; diz-se
+     uma vez, com o seu nome, no bloco «O que foi conferido». */
+  presente(claim.document?.edition) && !paginaEditada && !(/^\d{4}-\d{2}(?:\/\d{4}-\d{2})?$/.test(claim.document.edition) && claim.document.edition === (claim.period ?? claim.reference_date)) && !(typeof claim.document.edition === 'string' && /^\d{4}$/.test(claim.document.edition) && String(claim.document.title ?? '').split(/\D+/).includes(claim.document.edition))
     ? {
         k: null,
         campo: 'document.edition',

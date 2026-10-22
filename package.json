@@ -17,7 +17,7 @@
     "check:registo": "node scripts/check-registo.mjs && node tests/hb1/edicoes.mjs && node tests/incorporar/dados.mjs && node tests/hb1/portas.mjs",
     "cartoes": "node scripts/cartoes.mjs",
     "gate:html": "node scripts/gate-html.mjs",
-    "check:datas": "node tests/hb1/publicacao.mjs --html-construido && node tests/hb1/periodos.mjs && node scripts/check-datas.mjs",
+    "check:datas": "node tests/hb1/publicacao.mjs --html-construido && node tests/hb1/periodos.mjs && node tests/hb1/pagina-editada.mjs && node scripts/check-datas.mjs",
     "datas": "node scripts/datas-de-publicacao.mjs",
     "check:dados": "node scripts/check-dados.mjs",
     "check:formas": "node scripts/check-formas.mjs",

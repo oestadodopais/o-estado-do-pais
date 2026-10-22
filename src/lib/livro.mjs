@@ -14,7 +14,7 @@
  */
 
 import { routePath } from './routes.mjs';
-import { eDerivada, documentoDaLinha, provenienciaIncompleta } from './ledger.mjs';
+import { eDerivada, documentoDaLinha, provenienciaIncompleta, paginaSoComEdicao } from './ledger.mjs';
 import { t } from '../i18n/strings.mjs';
 import { unidadeDaLinha } from '../i18n/unidades.mjs';
 import { textoDocumentalConferido } from './prova-efeitos.mjs';
@@ -128,14 +128,20 @@ export function descricaoDaLinha(claim, lang) {
   }
   const confirmado = (/** @type {unknown} */ v) => typeof v === 'string' && v.trim() && !/\[(?:a verificar|to verify)\]/i.test(v);
   if (confirmado(claim.source)) partes.push(`${s.prov.fonte}: ${claim.source}`);
+  /* HB1-g (22.10.2026): numa linha que só declara a última edição de uma página, essa
+     data não é a edição do documento nem «Dados de»: diz-se uma vez, com o seu nome, como
+     no bloco «O que foi conferido», e em ISO, como as outras datas desta descrição. */
+  const soEdicao = paginaSoComEdicao(claim);
   const doc = documentoDaLinha(claim);
   if (doc && confirmado(doc.title)) {
-    partes.push(confirmado(doc.edition) ? `${doc.title} (${doc.edition})` : String(doc.title));
+    partes.push(confirmado(doc.edition) && !soEdicao ? `${doc.title} (${doc.edition})` : String(doc.title));
   }
   /* «Lido a 2026-08-12», não «Lido a: 2026-08-12» — o rótulo já traz a
      preposição. A fonte leva dois pontos porque o rótulo é um substantivo. */
   if (confirmado(claim.access_date)) partes.push(`${claim.access_date_kind === 'hosted-copy' ? s.prov.copiaAlojada : s.prov.lido} ${claim.access_date}`);
-  if (confirmado(claim.reference_date)) partes.push(`${s.prov.referencia} ${claim.reference_date}`);
+  if (soEdicao) {
+    if (confirmado(claim.published_at)) partes.push(`${s.livro.linha.editadoEmK} ${String(claim.published_at)}`);
+  } else if (confirmado(claim.reference_date)) partes.push(`${s.prov.referencia} ${claim.reference_date}`);
   if (provenienciaIncompleta(claim)) partes.push(lang === 'en'
     ? 'Provenance fields unconfirmed at the source'
     : 'Campos da proveniência por confirmar na fonte');
