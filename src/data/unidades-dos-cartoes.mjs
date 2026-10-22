@@ -1,3 +1,4 @@
+import { UNIDADES_HB1 } from './unidades-hb1.mjs';
 /**
  * ---------------------------------------------------------------------------
  * AS UNIDADES QUE OS CARTÕES IMPRIMEM, NUMA FONTE SÓ (bloco R2, 03.10.2026)
@@ -61,6 +62,7 @@ const n = (nl) => ({ nl, motivo: 'escala-de-instrumento' });
  * @type {Record<string, UnidadeDoCartao>}
  */
 export const UNIDADES_DOS_CARTOES = {
+  ...UNIDADES_HB1,
   /* ------------------------------------------------ as populações (achados 1 e 9) */
   'jovens-nem-2025': {
     pt: ['% das pessoas dos ', n('15'), ' aos ', n('29'), ' anos'],

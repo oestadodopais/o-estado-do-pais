@@ -1,0 +1,14 @@
+PT nova: 23 páginas; frase: «vive em agregados onde a despesa total com a habitação, descontados os subsídios à habitação, passa de quarenta por cento do rendimento disponível, também descontados esses subsídios»
+    /livro-razao/hab-ilc-lvho07a-a-pc-total-y16-29-t-el-2025/
+    /livro-razao/hab-ilc-lvho07a-a-pc-total-y16-29-t-eu27_2020-2025/
+    /livro-razao/hab-ilc-lvho07a-a-pc-total-y16-29-t-pt-2025/
+EN nova: 23 páginas; frase: «where total housing costs, net of housing allowances, exceed forty percent of disposable income, also net of housing allowances»
+    /en/ledger/hab-ilc-lvho07a-a-pc-total-y16-29-t-el-2025/
+    /en/ledger/hab-ilc-lvho07a-a-pc-total-y16-29-t-eu27_2020-2025/
+    /en/ledger/hab-ilc-lvho07a-a-pc-total-y16-29-t-pt-2025/
+PT antiga: 0 páginas; frase: «descontados os subsídios, passa de quarenta por cento do rendimento disponível»
+EN antiga (sem o segundo desconto): 0 páginas; frase: «exceed forty percent of disposable income<»
+literal selado inteiro: 50 páginas; frase: «represent more than 40 % of disposable income ('net' of housing allowances)»
+    /en/european-union/
+    /en/ledger/hab-ilc-lvho07a-a-pc-total-y16-29-t-el-2025/
+    /en/ledger/hab-ilc-lvho07a-a-pc-total-y16-29-t-eu27_2020-2025/

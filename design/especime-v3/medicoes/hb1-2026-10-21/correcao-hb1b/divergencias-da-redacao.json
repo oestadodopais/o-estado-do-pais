@@ -1,0 +1,350 @@
+{
+  "codigo": 0,
+  "metodo": "Comparação das frases compostas com as linhas seladas; nenhuma prosa alterada nesta auditoria.",
+  "recusas": [
+    {
+      "decisao_anterior": "HB1-1",
+      "frases": {
+        "pt": [
+          {
+            "bloco": 9,
+            "texto": "3. Os jovens ficam em casa dos pais mais tempo do que quase todos os europeus. 42,1 % dos portugueses entre vinte e cinco e trinta e quatro anos vivem com os pais ou partilham o rendimento do agregado, 12,0 pontos acima da União; só a Croácia tem mais. A idade de saída, 28,8 anos, está onde estava em 2015 (28,9)."
+          }
+        ],
+        "en": [
+          {
+            "bloco": 9,
+            "texto": "3. The young stay in their parents' home longer than almost every European. 42.1 % of the Portuguese aged twenty-five to thirty-four live with their parents or share the household's income, 12.0 points above the Union; only Croatia has more. The age of leaving, 28.8 years, is where it was in 2015 (28.9)."
+          }
+        ]
+      },
+      "razao": "A frase «só a Croácia tem mais» é falsa: oito Estados-membros têm percentagem superior à portuguesa, não um. A medida não é apenas residência com os pais: inclui partilha do rendimento. O título também generaliza: cinco Estados-membros têm idade média de saída superior à portuguesa.",
+      "prova": {
+        "pais_com_percentagem_acima": [
+          {
+            "pais": "HR",
+            "valor": 62.3,
+            "id": "hab-ilc-lvps08-a-y25-34-t-pc-hr-2025"
+          },
+          {
+            "pais": "EL",
+            "valor": 56.3,
+            "id": "hab-ilc-lvps08-a-y25-34-t-pc-el-2025"
+          },
+          {
+            "pais": "SK",
+            "valor": 54.3,
+            "id": "hab-ilc-lvps08-a-y25-34-t-pc-sk-2025"
+          },
+          {
+            "pais": "PL",
+            "valor": 51.0,
+            "id": "hab-ilc-lvps08-a-y25-34-t-pc-pl-2025"
+          },
+          {
+            "pais": "IT",
+            "valor": 50.7,
+            "id": "hab-ilc-lvps08-a-y25-34-t-pc-it-2025"
+          },
+          {
+            "pais": "ES",
+            "valor": 50.2,
+            "id": "hab-ilc-lvps08-a-y25-34-t-pc-es-2025"
+          },
+          {
+            "pais": "CY",
+            "valor": 42.9,
+            "id": "hab-ilc-lvps08-a-y25-34-t-pc-cy-2025"
+          },
+          {
+            "pais": "BG",
+            "valor": 42.7,
+            "id": "hab-ilc-lvps08-a-y25-34-t-pc-bg-2025"
+          }
+        ],
+        "percentagem_pt": 42.1,
+        "paises_com_idade_acima": [
+          {
+            "pais": "HR",
+            "valor": 31.5,
+            "id": "hab-yth-demo-030-a-avg-t-hr-2025"
+          },
+          {
+            "pais": "EL",
+            "valor": 30.9,
+            "id": "hab-yth-demo-030-a-avg-t-el-2025"
+          },
+          {
+            "pais": "SK",
+            "valor": 30.9,
+            "id": "hab-yth-demo-030-a-avg-t-sk-2025"
+          },
+          {
+            "pais": "ES",
+            "valor": 30.2,
+            "id": "hab-yth-demo-030-a-avg-t-es-2025"
+          },
+          {
+            "pais": "IT",
+            "valor": 30.2,
+            "id": "hab-yth-demo-030-a-avg-t-it-2025"
+          }
+        ],
+        "idade_pt": 28.8,
+        "n_paises": 27
+      },
+      "prosa_alterada": false
+    },
+    {
+      "decisao_anterior": "HB1-2",
+      "frases": {
+        "pt": [
+          {
+            "bloco": 12,
+            "texto": "6. A rua e os números. A plataforma que convocou as manifestações de outubro diz que «a renda consome metade do salário»; os números dizem que isso é verdade para uma parte dos inquilinos a preços de mercado (os 27,2 % em sobrecarga gastam mais de quarenta por cento) e não para a média do país. Os feridos da intervenção policial no Porto são «37 feridos, dois em estado grave» segundo o movimento, «39 feridos, dois deles graves» segundo a organização e «35 feridos, pelo menos» segundo o dirigente do Bloco de Esquerda (o BE), José Soeiro, dirigente nacional do BE, com «um polícia ficou ferido» segundo a Polícia de Segurança Pública (a PSP), tudo pela imprensa; a Inspeção-Geral da Administração Interna (a IGAI) abriu um processo. Este estudo não soma nem escolhe uma contagem."
+          }
+        ],
+        "en": [
+          {
+            "bloco": 12,
+            "texto": "6. The street and the numbers. The platform that called the October demonstrations says that «a renda consome metade do salário» (rent eats half the wage); the numbers say that is true for a part of the tenants at market rents (the 27.2 % overburdened spend more than forty percent) and not for the country's average. The injured of the police intervention in Porto are «37 feridos, dois em estado grave» according to the movement, «39 feridos, dois deles graves» according to the organisers and «35 feridos, pelo menos» according to José Soeiro, of the Left Bloc's national leadership, with «um polícia ficou ferido» according to the Public Security Police (PSP), all through the press; the Inspectorate-General of Home Affairs (IGAI) opened a case. This study neither adds nor chooses a count."
+          }
+        ]
+      },
+      "razao": "Mais de quarenta por cento do rendimento disponível do agregado em custos totais de habitação não demonstra renda igual a metade do salário. Diferem limiar, denominador e numerador. A proporção em sobrecarga não permite contar quem gasta metade do salário em renda.",
+      "prova": {
+        "linhas": [
+          {
+            "id": "hab-ilc-lvho07c-a-pc-rent-mkt-pt-2025",
+            "valor": "27.2",
+            "unidade": "Percentage",
+            "periodo": "2025"
+          },
+          {
+            "id": "hab-ilc-mded01-a-total-total-pc-pt-2025",
+            "valor": "16.3",
+            "unidade": "Percentage",
+            "periodo": "2025"
+          }
+        ],
+        "repeticao_seccao_10": {
+          "pt": [
+            {
+              "bloco": 49,
+              "texto": "«A renda consome metade do salário»: é verdade para parte dos inquilinos a preços de mercado, 27,2 % dos quais gastam mais de quarenta por cento, e não para a média do país, que gasta 16,3 %. «Os aumentos com os custos na habitação foram superiores a 100 por cento na esmagadora maioria das cidades»: o índice nacional dos preços está em 301,43 com 2015 igual a cem, o que é mais do que o dobro; a frase não diz o período, e nenhuma fonte deste estudo dá a subida por cidade. «centenas de milhares de casas vazias em condições de serem habitadas», diz o PS: os Censos de 2021 contam 723 215 vagas; o Governo estima, pelos mesmos Censos, «quase 250 mil em boas condições» entre «cerca de 375 mil» vagas sem intenção de venda ou arrendamento. A afirmação do PS e a estimativa do Governo são da mesma ordem de grandeza; nenhuma das duas é uma contagem, e a estimativa é do Governo, não do INE. «5. A crise na habitação continua a agravar-se e os seus efeitos agudizam-se. Os despejos aumentaram 40% em 2025, e o Governo avança com medidas para os facilitar ainda mais.»: o aumento dos despejos não tem série pública nos documentos deste estudo. «Vão proteger as pessoas»: a reforma promete, nas palavras do Conselho de Ministros, «simplificação e aceleração dos mecanismos de despejo» e «reforço da responsabilidade social do Estado na proteção das situações de maior vulnerabilidade»; se o conjunto protege quem arrenda, nenhum documento deste estudo o mede."
+            }
+          ],
+          "en": [
+            {
+              "bloco": 49,
+              "texto": "«A renda consome metade do salário»: it is true for part of the tenants at market rents, 27.2 % of whom spend more than forty percent, and not for the country's average, which spends 16.3 %. «Os aumentos com os custos na habitação foram superiores a 100 por cento na esmagadora maioria das cidades»: the national price index stands at 301.43 with 2015 equal to one hundred, which is more than double; the sentence does not say the period, and no source in this study gives the rise by city. «centenas de milhares de casas vazias em condições de serem habitadas», says the PS: the 2021 Census counts 723,215 vacant; the Government estimates, from the same Census, «quase 250 mil em boas condições» among «cerca de 375 mil» vacant with no intention of sale or rental. The PS's claim and the Government's estimate are of the same order of magnitude; neither is a count, and the estimate is the Government's, not the INE's. «5. A crise na habitação continua a agravar-se e os seus efeitos agudizam-se. Os despejos aumentaram 40% em 2025, e o Governo avança com medidas para os facilitar ainda mais.»: the rise in evictions has no public series in this study's documents. «Vão proteger as pessoas» (they will protect people): the reform promises, in the Council of Ministers' words, «simplificação e aceleração dos mecanismos de despejo» and «reforço da responsabilidade social do Estado na proteção das situações de maior vulnerabilidade»; whether the whole protects those who rent, no document in this study measures."
+            }
+          ]
+        }
+      },
+      "prosa_alterada": false
+    },
+    {
+      "decisao_anterior": "HB1-3",
+      "frases": {
+        "pt": [
+          {
+            "bloco": 10,
+            "texto": "4. A oferta não é menor do que na Europa, por habitante. Em 2025 licenciaram-se 3,8 alojamentos por mil habitantes em Portugal (um valor provisório), contra 3,6 na União; e os Censos de 2021 contaram 723 215 alojamentos vagos, 12,1 % do parque. Quantos desses estão em condições de ser habitados, nenhuma estatística publicada nos documentos deste estudo diz; a única estimativa é a do próprio Governo, na exposição de motivos da reforma do arrendamento, pelos Censos de 2021: «cerca de 375 mil alojamentos familiares clássicos, dos quais quase 250 mil em boas condições» vagos «sem intenção de venda ou arrendamento»."
+          }
+        ],
+        "en": [
+          {
+            "bloco": 10,
+            "texto": "4. Supply is not smaller than in Europe, per inhabitant. In 2025 3.8 dwellings per thousand inhabitants were licensed in Portugal (a provisional value), against 3.6 in the Union; and the 2021 Census counted 723,215 vacant dwellings, 12.1 % of the stock. How many of those are fit to live in, no published statistic in this study's documents says; the only estimate is the Government's own, in the explanatory memorandum of the rental reform, from the 2021 Census: «cerca de 375 mil alojamentos familiares clássicos, dos quais quase 250 mil em boas condições» vacant «sem intenção de venda ou arrendamento» (about 375 thousand dwellings, of which almost 250 thousand in good condition, vacant with no intention of sale or rental)."
+          }
+        ]
+      },
+      "razao": "Licenças de construção não são casas concluídas, disponíveis para habitar, vender ou arrendar. O indicador suporta apenas a comparação dos licenciamentos por habitante, não a conclusão sobre oferta.",
+      "prova": {
+        "linhas": [
+          {
+            "id": "der-hab-licencas-por-mil-pt-2025",
+            "valor": "3.8",
+            "unidade": "por mil habitantes",
+            "periodo": "2025"
+          },
+          {
+            "id": "der-hab-licencas-por-mil-eu-2025",
+            "valor": "3.6",
+            "unidade": "por mil habitantes",
+            "periodo": "2025"
+          }
+        ]
+      },
+      "prosa_alterada": false
+    },
+    {
+      "decisao_anterior": "HB1-4",
+      "frases": {
+        "pt": [
+          {
+            "bloco": 8,
+            "texto": "2. A média esconde quem paga. A sobrecarga total é menor do que na União e desceu desde 2015 (de 9,1 % para 6,2 %), porque a maior parte do país é dona da casa e não tem empréstimo. Entre os inquilinos a preços de mercado a sobrecarga é de 27,2 %, 7,5 pontos acima de 2020, e eles são 16,3 % da população. O problema da habitação em Portugal é o problema de quem entra no mercado: os jovens, quem muda de cidade, quem chega."
+          }
+        ],
+        "en": [
+          {
+            "bloco": 8,
+            "texto": "2. The average hides who pays. Total overburden is lower than in the Union and has fallen since 2015 (from 9.1 % to 6.2 %), because most of the country owns its home and has no loan. Among tenants at market rents the overburden is 27.2 %, 7.5 points above 2020, and they are 16.3 % of the population. Portugal's housing problem is the problem of those entering the market: the young, those moving cities, those arriving."
+          }
+        ]
+      },
+      "razao": "Os proprietários são uma maioria, mas os proprietários sem empréstimo representam 39,7% da população, abaixo de metade. As linhas não dão data de aquisição ou herança, nem identificam causalmente a evolução da sobrecarga.",
+      "prova": {
+        "linhas": [
+          {
+            "id": "der-hab-proprietarios-pt-2025",
+            "valor": "71.2",
+            "unidade": "%",
+            "periodo": "2025"
+          },
+          {
+            "id": "hab-ilc-lvho02-a-total-total-own-nl-pc-pt-2025",
+            "valor": "39.7",
+            "unidade": "Percentage",
+            "periodo": "2025"
+          }
+        ],
+        "repeticao_abertura": {
+          "pt": [
+            {
+              "bloco": 4,
+              "texto": "E no entanto a família média portuguesa gasta na casa uma parte do rendimento menor do que a média da União (16,3 % contra 18,9 %) e a parte da população em sobrecarga, mais de quarenta por cento do rendimento na casa, é menor (6,2 % contra 7,7 %). A razão está em quem é dono: 71,2 % dos portugueses vivem em casa própria, e 39,7 % em casa própria sem empréstimo, comprada ou herdada antes da subida. O peso cai sobre quem precisa de casa agora: entre os inquilinos a preços de mercado, 27,2 % estão em sobrecarga, contra 18,6 % na União, e eram 19,7 % em 2020; e os jovens saem de casa dos pais aos 28,8 anos em média, contra 26,3 na União, com 42,1 % dos que têm entre vinte e cinco e trinta e quatro anos a viver com os pais ou a partilhar o rendimento do agregado, contra 30,1 %."
+            }
+          ],
+          "en": [
+            {
+              "bloco": 4,
+              "texto": "And yet the average Portuguese household spends on housing a smaller share of its income than the Union average (16.3 % against 18.9 %) and the share of the population overburdened, more than forty percent of income on housing, is smaller (6.2 % against 7.7 %). The reason lies in who owns: 71.2 % of the Portuguese live in their own home, and 39.7 % in their own home with no loan, bought or inherited before the rise. The weight falls on those who need a home now: among tenants at market rents, 27.2 % are overburdened, against 18.6 % in the Union, and they were 19.7 % in 2020; and the young leave their parents' home at 28.8 years on average, against 26.3 in the Union, with 42.1 % of those aged twenty-five to thirty-four living with their parents or sharing the household's income, against 30.1 %."
+            }
+          ]
+        }
+      },
+      "prosa_alterada": false
+    },
+    {
+      "decisao_anterior": "HB1-5",
+      "frases": {
+        "pt": [
+          {
+            "bloco": 7,
+            "texto": "1. O problema é de preço, e é o pior da União. Nos dois índices do Eurostat que comparam os vinte e sete, os preços reais desde 2015 e os preços face ao rendimento, Portugal está no primeiro lugar, e a subida de 16,5 % no segundo trimestre de 2026 é a maior entre os vinte e seis Estados-membros com dados trimestrais. As rendas sobem 5,2 % ao ano em setembro de 2026, contra 2,9 % na União."
+          }
+        ],
+        "en": [
+          {
+            "bloco": 7,
+            "texto": "1. The problem is price, and it is the worst in the Union. In the two Eurostat indices that compare the twenty-seven, real prices since 2015 and prices against income, Portugal is in first place, and the rise of 16.5 % in the second quarter of 2026 is the largest among the twenty-six member states with quarterly data. Rents rise 5.2 % a year in September 2026, against 2.9 % in the Union."
+          }
+        ]
+      },
+      "razao": "Índices com base em 2015 medem evolução relativa à base, não nível absoluto de preços nem acessibilidade entre países. A afirmação inicial sem qualificação real ou nominal é contrariada pelo índice nominal trimestral: Hungria 389,61, Portugal 301,43. Portugal é o máximo no índice real anual de 2025 e no índice preço-rendimento relativo a 2015, mas isso não demonstra «o pior da União».",
+      "prova": {
+        "linhas": [
+          {
+            "id": "hab-prc-hpi-q-q-total-i15-q-pt-2026-q2",
+            "valor": "301.43",
+            "unidade": "Quarterly index, 2015=100",
+            "periodo": "2026-Q2"
+          },
+          {
+            "id": "hab-prc-hpi-q-q-total-i15-q-hu-2026-q2",
+            "valor": "389.61",
+            "unidade": "Quarterly index, 2015=100",
+            "periodo": "2026-Q2"
+          },
+          {
+            "id": "hab-tipsho10-a-i15-a-avg-pt-2025",
+            "valor": "206.41",
+            "unidade": "Annual average index, 2015=100",
+            "periodo": "2025"
+          },
+          {
+            "id": "hab-tipsho60-a-ptir-i15-pt-2024",
+            "valor": "144.34",
+            "unidade": "Price-to-income ratio, index 2015=100",
+            "periodo": "2024"
+          }
+        ],
+        "repeticao_abertura": {
+          "pt": [
+            {
+              "bloco": 3,
+              "texto": "Os preços das casas em Portugal subiram mais do que em qualquer outro país da União Europeia na última década. Descontada a inflação, o índice dos preços está em 206,41 em 2025, com 2015 igual a cem, contra 124,75 na União; é o valor mais alto dos vinte e sete. No segundo trimestre de 2026 os preços subiram 16,5 % num ano, contra 4,7 % na União, outra vez a subida mais alta, entre os vinte e seis Estados-membros com dados trimestrais. Em relação ao rendimento das famílias, os preços estão em 144,34 (2015 igual a cem) contra 105,72 na União, também o valor mais alto: desde 2015, os preços subiram 44,3 % mais do que o rendimento em Portugal, e 5,7 % mais na União. Uma casa vendida em Portugal custava 2 337 euros por metro quadrado no 1.º trimestre de 2026, em Lisboa 5 292 e no Porto 3 729; uma renda nova, no 2.º trimestre de 2026, 10,17 euros por metro quadrado no país, 17,79 em Lisboa, 14,66 no Porto."
+            }
+          ],
+          "en": [
+            {
+              "bloco": 3,
+              "texto": "House prices in Portugal rose more than in any other country of the European Union over the last decade. Net of inflation, the price index stands at 206.41 in 2025, with 2015 equal to one hundred, against 124.75 in the Union; it is the highest value of the twenty-seven. In the second quarter of 2026 prices rose 16.5 % in a year, against 4.7 % in the Union, again the highest rise, among the twenty-six member states with quarterly data. Against household income, prices stand at 144.34 (2015 equal to one hundred) against 105.72 in the Union, also the highest value: since 2015, prices have risen 44.3 % more than income in Portugal, and 5.7 % more in the Union. A home sold in Portugal cost 2,337 euros per square metre in Q1 2026, in Lisbon 5,292 and in Porto 3,729; a new rent, in Q2 2026, 10.17 euros per square metre in the country, 17.79 in Lisbon, 14.66 in Porto."
+            }
+          ]
+        }
+      },
+      "prosa_alterada": false
+    },
+    {
+      "decisao_anterior": "HB1-6",
+      "frases": {
+        "pt": [
+          {
+            "bloco": 11,
+            "texto": "5. O que o Estado faz é pequeno ao pé do problema, e ninguém mediu o que faz. O programa da habitação tem 2 003 milhões de euros em 2027; as duas medidas fiscais têm um impacto de −303 milhões na receita; a reforma do arrendamento promete «maior liberdade contratual» e «simplificação e aceleração dos mecanismos de despejo», nas palavras do Conselho de Ministros. Nenhum dos documentos avalia o efeito nos preços ou nas rendas."
+          }
+        ],
+        "en": [
+          {
+            "bloco": 11,
+            "texto": "5. What the State does is small next to the problem, and nobody has measured what it does. The housing programme has 2,003 million euros in 2027; the two tax measures have an impact of −303 million on revenue; the rental reform promises «maior liberdade contratual» (more contractual freedom) and «simplificação e aceleração dos mecanismos de despejo» (simpler and faster eviction mechanisms), in the Council of Ministers' words. None of the documents assesses the effect on prices or rents."
+          }
+        ]
+      },
+      "razao": "«Pequeno ao pé do problema» não define um denominador, necessidade ou comparação de dimensão. A ausência de avaliação nos documentos deste estudo não prova que ninguém tenha medido o efeito. A frase final do parágrafo delimita corretamente a ausência; o título não.",
+      "prova": {
+        "linhas": [
+          {
+            "id": "hab-oe-habitacao-orcamento",
+            "valor": "2 003",
+            "unidade": "milhões de euros",
+            "periodo": "2027"
+          },
+          {
+            "id": "der-hab-fiscal-2027",
+            "valor": "-303",
+            "unidade": "milhões de euros",
+            "periodo": "2027"
+          }
+        ]
+      },
+      "prosa_alterada": false
+    },
+    {
+      "decisao_anterior": null,
+      "frase_prescrita_pt": "entre os vinte e seis com dados de 2025; a Dinamarca não os tem.",
+      "frase_prescrita_en": "among the twenty-six with 2025 data; Denmark has none.",
+      "razao": "O corpo novo ilc_lvho07c tem valor de 2025 para a Dinamarca e vinte e sete Estados-membros com valor total. A ressalva ainda é correta no ilc_lvho07a dos jovens, que tem vinte e seis.",
+      "prova": {
+        "ilc_lvho07c_total_2025": {
+          "paises": 27,
+          "dinamarca": [
+            {
+              "pais": "DK",
+              "valor": 14.7,
+              "id": "hab-ilc-lvho07c-a-pc-total-dk-2025"
+            }
+          ]
+        },
+        "ilc_lvho07a_y16_29_2025": {
+          "paises": 26
+        }
+      },
+      "prosa_alterada": false
+    }
+  ]
+}

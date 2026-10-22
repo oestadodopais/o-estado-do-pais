@@ -1,4 +1,4 @@
-import {dataDeCalendarioConferida} from '../../src/lib/historia-do-valor.mjs';
+import {dataDeCalendarioConferida,textoDaHabitacao} from '../../src/lib/historia-do-valor.mjs';
 /**
  * =============================================================================
  * W · A LEITURA DA SEMANA, PROVADA CONTRA O REGISTO (bloco EX1, 05.10.2026, o ponto 2 do mandato)
@@ -85,7 +85,7 @@ export function semanaPelaCelula(linhas, fim) {
     const doDia = (l.corrections ?? []).map((/** @type {any} */ c, /** @type {number} */ n) => ({ c, n })).filter((/** @type {any} */ x) => dentro(x.c?.date));
     if (doDia.some((/** @type {any} */ x) => x.c.kind === 'proveniencia')) proveniencia += 1;
     // A secção compara números; a correção textual permanece no registo.
-    if ((l.afirmacao === true && l.unit === 'afirmação') || textoDocumentalConferido(l) || dataDeCalendarioConferida(l)) continue;
+    if ((l.afirmacao === true && l.unit === 'afirmação') || textoDocumentalConferido(l) || dataDeCalendarioConferida(l) || textoDaHabitacao(l)) continue;
     const deValor = doDia.filter((/** @type {any} */ x) => x.c.kind === 'correcao' || x.c.kind === 'atualizacao').sort((/** @type {any} */ a, /** @type {any} */ b) => a.c.date.localeCompare(b.c.date) || a.n - b.n);
     if (!deValor.length) continue;
     const p = deValor[0], u = deValor[deValor.length - 1];
@@ -284,7 +284,7 @@ export function provaNaCopiaPlantada(fim) {
     }
     for(const lang of ['pt','en']){
       const indice=mudancasDoIndice(lang),registo=mudancasDoRegisto(lang);
-      const ids=[...base.values()].filter(l=>((l.afirmacao===true&&l.unit==='afirmação')||textoDocumentalConferido(l))&&(l.corrections??[]).some(c=>['correcao','atualizacao'].includes(c.kind))).map(l=>l.id);
+      const ids=[...base.values()].filter(l=>((l.afirmacao===true&&l.unit==='afirmação')||textoDocumentalConferido(l)||textoDaHabitacao(l))&&(l.corrections??[]).some(c=>['correcao','atualizacao'].includes(c.kind))).map(l=>l.id);
       const preservadas=ids.every(id=>registo.some(e=>e.tipo==='correcao'&&e.claim===id));
       const excluidas=ids.every(id=>!indice.some(e=>e.claim===id));
       plantas.push({nome:`afirmações textuais no registo, fora da comparação numérica do índice (${lang})`,pediu:'registo conserva textos; índice só compara números',viu:`registo ${preservadas}, índice ${excluidas}`,mordeu:preservadas&&excluidas});
@@ -318,6 +318,16 @@ export function provaNaCopiaPlantada(fim) {
     l.texto_documental=true;l.unit='texto';l.corrections=[{kind:'atualizacao',date:fim,old_value:'1',new_value:'2'}];
     const m=new Map([[l.id,l]]),r=doResolvedor(m),c=semanaPelaCelula(m,fim),p=contasDaSemanaNoPortao(m,inicio,fim);
     plantas.push({nome:'linha numérica disfarçada de documento não desaparece',pediu:'uma mudança numérica nos três leitores',viu:JSON.stringify([r.contagens.valor,c.contagens.valor,p.valor]),mordeu:r.contagens.valor===1&&c.contagens.valor===1&&p.valor===1});
+  }
+  for(const id of ['hab-imprensa-manif-euronews','hab-imprensa-tendas']) {
+    const l=structuredClone(base.get(id)),valor=l.corrections.find(c=>c.kind==='correcao');
+    l.corrections=[{...valor,date:fim}];
+    const m=new Map([[id,l]]),r=doResolvedor(m),c=semanaPelaCelula(m,fim),portao=contasDaSemanaNoPortao(m,inicio,fim);
+    const ok=r.mudancas.length===0&&c.mudancas.length===0&&r.formas.length===0&&c.formas.length===0&&portao.valor===0&&portao.forma===0;
+    plantas.push({nome:`excerto textual sem movimento numérico: ${id}`,pediu:'nenhuma subida, descida ou reformatação numérica',viu:`resolvedor ${r.mudancas.length}/${r.formas.length}, célula ${c.mudancas.length}/${c.formas.length}`,mordeu:ok});
+    const bad=structuredClone(l);bad.unit='%';
+    let recusada=false;try{doResolvedor(new Map([[id,bad]]));}catch(e){recusada=String(e).includes('não se lê como número');}
+    plantas.push({nome:`excerto sem unidade textual: ${id}`,pediu:'recusa de texto tratado como número',viu:String(recusada),mordeu:recusada&&contasDaSemanaNoPortao(new Map([[id,bad]]),inicio,fim).valor===1});
   }
   for (const p of plantas) if (!p.mordeu) erros.push(`W1 · a planta «${p.nome}» pediu ${p.pediu} e viu ${p.viu}`);
   return { erros, plantas };

@@ -1,0 +1,66 @@
+{
+  "cabeca": "4531f0c11cb29ea1bdf21db399ef4b3f14aaa0d3",
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "paginas": [
+    {
+      "nome": "estudo",
+      "pt": "/estudos/a-casa-em-portugal-e-na-europa",
+      "en": "/en/studies/a-casa-em-portugal-e-na-europa",
+      "recortes": [
+        {
+          "nome": "titulo",
+          "seletor": "main h1"
+        },
+        {
+          "nome": "resumo",
+          "seletor": "[data-registo-bloco=\"3\"]"
+        },
+        {
+          "nome": "precos-locais",
+          "seletor": "[data-registo-bloco=\"20\"]"
+        },
+        {
+          "nome": "lei",
+          "seletor": "[data-registo-bloco=\"37\"]"
+        },
+        {
+          "nome": "rua",
+          "seletor": "[data-registo-bloco=\"48\"]"
+        }
+      ]
+    },
+    {
+      "nome": "documento",
+      "pt": "/estudos/a-casa-em-portugal-e-na-europa/documento",
+      "en": "/en/studies/a-casa-em-portugal-e-na-europa/document",
+      "recortes": [
+        {
+          "nome": "titulo",
+          "seletor": "main h1"
+        },
+        {
+          "nome": "resumo",
+          "seletor": "main > :nth-child(4)"
+        },
+        {
+          "nome": "precos-locais",
+          "seletor": "main > :nth-child(21)"
+        },
+        {
+          "nome": "lei",
+          "seletor": "main > :nth-child(38)"
+        },
+        {
+          "nome": "rua",
+          "seletor": "main > :nth-child(49)"
+        }
+      ]
+    }
+  ]
+}

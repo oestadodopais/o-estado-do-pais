@@ -74,6 +74,20 @@
       }
     },
     {
+      "src": "/estudos/a-casa-em-portugal-e-na-europa/texto/?",
+      "status": 301,
+      "headers": {
+        "Location": "/estudos/a-casa-em-portugal-e-na-europa/"
+      }
+    },
+    {
+      "src": "/en/studies/a-casa-em-portugal-e-na-europa/text/?",
+      "status": 301,
+      "headers": {
+        "Location": "/en/studies/a-casa-em-portugal-e-na-europa/"
+      }
+    },
+    {
       "src": "/estudos/avaliacao-economica-regional-de-portugal-2026/texto/?",
       "status": 301,
       "headers": {

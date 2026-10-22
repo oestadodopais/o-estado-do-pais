@@ -314,7 +314,11 @@ export function auditarPerguntas({
     if (!/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$/.test(s.hora ?? '')) faltas.push('a hora (UTC, ao segundo)');
     if (typeof s.cliente !== 'string' || !s.cliente.startsWith('core.http.HttpClient')) faltas.push('o cliente da casa');
     if (!/^[0-9a-f]{64}$/.test(s.sha256 ?? '')) faltas.push('o sha256');
-    if (typeof s.motor !== 'string' || !s.motor.startsWith('indicators/out/')) faltas.push('o ficheiro no motor');
+    /* HB1-c4 (21.10.2026): o ficheiro no motor é uma saída dos indicadores ou
+       um corpo alojado na pasta de fontes de um conteúdo (as onze origens das
+       definições da habitação); nunca um caminho absoluto nem com «..». O
+       sha256 deste ficheiro confere-se contra o motor em scripts/afirmacoes-hb1.mjs. */
+    if (typeof s.motor !== 'string' || !/^(?:indicators\/out\/|content\/[^/]+\/source\/)[^\\]+$/.test(s.motor) || s.motor.split('/').includes('..')) faltas.push('o ficheiro no motor');
     if (typeof s.campo !== 'string' || !s.campo) faltas.push('o campo lido');
     if (faltas.length) {
       erros.push(`K16 · origem «${chave}»: o selo não diz ${faltas.join(', ')}`);

@@ -110,6 +110,81 @@ export const LEITURAS = {
     "en": "The 2027 Budget changes little by itself."
   }
 },
+
+  "a-casa-em-portugal-e-na-europa": {
+    "medidas": [
+      {
+        "claim": "hab-tipsho60-a-ptir-i15-pt-2024",
+        "nome": {
+          "pt": [
+            "é o rácio entre os preços das casas e o rendimento em Portugal, com ",
+            {
+              "ref": "2015"
+            },
+            " igual a cem, o mais alto da União"
+          ],
+          "en": [
+            "is the ratio of house prices to income in Portugal, ",
+            {
+              "ref": "2015"
+            },
+            " equal to one hundred, the highest in the Union"
+          ]
+        }
+      },
+      {
+        "claim": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
+        "nome": {
+          "pt": [
+            "dos inquilinos a preços de mercado gastam mais de quarenta por cento do rendimento na casa"
+          ],
+          "en": [
+            "of tenants at market rents spend more than forty percent of their income on housing"
+          ]
+        }
+      }
+    ],
+    "frase": {
+      "pt": [
+            "Descontada a inflação, os preços das casas em Portugal subiram desde ",
+            {
+                  "ref": "2015"
+            },
+            " mais do que em qualquer outro país da União, e a família média gasta na casa menos do que a média europeia: o peso cai sobre quem arrenda a preços de mercado, ",
+            {
+                  "claim": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
+                  "sufixo": " %"
+            },
+            " dos quais estão em sobrecarga, e sobre os jovens, que saem de casa dos pais aos ",
+            {
+                  "claim": "hab-yth-demo-030-a-avg-t-pt-2025"
+            },
+            " anos."
+      ],
+      "en": [
+            "Net of inflation, house prices in Portugal have risen since ",
+            {
+                  "ref": "2015"
+            },
+            " more than in any other country of the Union, and the average household spends less on housing than the European average: the weight falls on those renting at market prices, ",
+            {
+                  "claim": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
+                  "sufixo": " %"
+            },
+            " of whom are overburdened, and on the young, who leave their parents' home at ",
+            {
+                  "claim": "hab-yth-demo-030-a-avg-t-pt-2025"
+            },
+            " years."
+      ]
+},
+    "origem": {
+      "onde": "content/28 Habitacao Estudo/, abertura das duas edições",
+      "pt": "Descontada a inflação, os preços das casas em Portugal subiram desde 2015",
+      "en": "Net of inflation, house prices in Portugal have risen since 2015"
+    }
+  }
+,
   /* ----------------------------------------------------------------- 04 */
   'evora-prometido-pago-auditado-2026': {
     medidas: [

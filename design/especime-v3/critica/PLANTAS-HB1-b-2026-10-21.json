@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-21T02:56:48+00:00",
+ "copia": "<pacotes>/pacote-hb1-b-2026-10-21",
+ "plantas": [
+  {
+   "id": "X1",
+   "ficheiro": "built/en/studies/a-casa-em-portugal-e-na-europa/document/index.html",
+   "descricao": "a contagem dos Estados-membros com dados trimestrais passa de twenty-six a twenty-five na abertura inglesa construída; a referência é o corpo prc_hpi_q e o registo",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "f6b56cbbb8341b87710f381fcadf0e5383886f0295cd4db89f4e834068538449",
+   "sha256_depois": "447d53ca07c76ea3cd9149c7b3caa217e9c0bb340f4eb8a15dadf28f7f7d3f67",
+   "contexto_antes": "ainst 124.75 in the Union; it is the highest value of the twenty-seven. In the second quarter of 2026 prices rose 16.5 % in a year, against 4.7 % in the Union, again the highest rise, among the twenty-six member states with quarterly data. Against household income, prices stand at 144.34 (2015 equal to one hundred) against 105.72 in the Union, also the highest value: since 2015, prices have rise",
+   "contexto_depois": "ainst 124.75 in the Union; it is the highest value of the twenty-seven. In the second quarter of 2026 prices rose 16.5 % in a year, against 4.7 % in the Union, again the highest rise, among the twenty-five member states with quarterly data. Against household income, prices stand at 144.34 (2015 equal to one hundred) against 105.72 in the Union, also the highest value: since 2015, prices have rise"
+  },
+  {
+   "id": "X2",
+   "ficheiro": "built/estudos/a-casa-em-portugal-e-na-europa/documento/index.html",
+   "descricao": "a estimativa do Governo passa de «quase 250 mil» a «quase 350 mil» na conclusão 4 do documento português construído; a referência é a exposição de motivos alojada e a linha hab-arrendamento-exposicao-vagos",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "0380eb824ddfe746c26c1e95b3648a8eec27f6339d92bcae75f95f27fea85474",
+   "sha256_depois": "d4d83dab8640df14909fe243ccd03faa48bdac8b55978863eccb9acceab3acba",
+   "contexto_antes": "é a do próprio Governo, na exposição de motivos da reforma do arrendamento, pelos Censos de 2021: «cerca de 375 mil alojamentos familiares clássicos, dos quais quase 250 mil em boas condições» vagos «sem intenção de venda ou arrendamento».</p>\n<p>5. <strong>O que o Estado faz é pequeno ao pé do problema, e ninguém mediu o que faz.</strong> O programa da habi",
+   "contexto_depois": "é a do próprio Governo, na exposição de motivos da reforma do arrendamento, pelos Censos de 2021: «cerca de 375 mil alojamentos familiares clássicos, dos quais quase 350 mil em boas condições» vagos «sem intenção de venda ou arrendamento».</p>\n<p>5. <strong>O que o Estado faz é pequeno ao pé do problema, e ninguém mediu o que faz.</strong> O programa da habi"
+  },
+  {
+   "id": "X3",
+   "ficheiro": "ledger/claims/hab-tipsho60-a-ptir-lt-avg-ro-2024.yml",
+   "descricao": "o valor da Roménia face à sua média de longo prazo passa de 48,23 a 48,32 na cópia da linha nova; a referência é o corpo tipsho60 e o diff",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "2af823a3908e4cf947ca599b82d1c14b7bab0ac7e6628dd3ac0f970757de419e",
+   "sha256_depois": "d039141852f30334e4bf1c90008126066dd82f16841a2b22d01c28487e74a7ec",
+   "contexto_antes": "parte scripts/check-cruzamento.mjs.\n\nid: \"hab-tipsho60-a-ptir-lt-avg-ro-2024\"\n\n# O valor tal como é publicado, com formatação portuguesa. String, nunca número.\nvalue: \"48,23\"\nunit: \"Price-to-income ratio relative to long-term average\"\n\n# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,\n# e onde nele foi lid",
+   "contexto_depois": "parte scripts/check-cruzamento.mjs.\n\nid: \"hab-tipsho60-a-ptir-lt-avg-ro-2024\"\n\n# O valor tal como é publicado, com formatação portuguesa. String, nunca número.\nvalue: \"48,32\"\nunit: \"Price-to-income ratio relative to long-term average\"\n\n# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,\n# e onde nele foi lid"
+  },
+  {
+   "id": "X4",
+   "ficheiro": "ledger/claims/hab-arrendamento-exposicao-vagos.yml",
+   "descricao": "o excerto da linha nova da estimativa do Governo passa de «cerca de 375 mil» a «cerca de 475 mil» na cópia; a referência é o corpo alojado (PDF, página 1) e o diff",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "b4748dbdd8d1b056cd1e81c336eef46a0d1ef1642d8f09d8c908aed3ad3fa259",
+   "sha256_depois": "c978ca53e9f01d948176c87121ec6ba4f9a731e53ccc277dfa04d1d938518e2c",
+   "contexto_antes": "e7-412f0a38f7ec.docx&Inline=true\"\naccess_date: \"2026-10-19\"\nreference_date: \"2026-08-12\"\n\n# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.\nexcerpt: \"Considerando os dados dos Censos 2021, estima-se que cerca de 375 mil alojamentos familiares clássicos, dos quais quase 250 mil em boas condições, estejam vagos sem intenção de venda ou arrendamento.\"\n\n# null quando o valor é publicado; a aritmética explicada quando é calculado.\nderivation: null\nderivation_en: null\nderived_from: []\n# Expressão verificada no ",
+   "contexto_depois": "e7-412f0a38f7ec.docx&Inline=true\"\naccess_date: \"2026-10-19\"\nreference_date: \"2026-08-12\"\n\n# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.\nexcerpt: \"Considerando os dados dos Censos 2021, estima-se que cerca de 475 mil alojamentos familiares clássicos, dos quais quase 250 mil em boas condições, estejam vagos sem intenção de venda ou arrendamento.\"\n\n# null quando o valor é publicado; a aritmética explicada quando é calculado.\nderivation: null\nderivation_en: null\nderived_from: []\n# Expressão verificada no "
+  },
+  {
+   "id": "X5",
+   "ficheiro": "design/especime-v3/medicoes/hb1-2026-10-21/correcao-hb1b/portoes-finais/build.codigo",
+   "descricao": "o código de um portão da corrida final passa de 0 a 1 na cópia; a referência é o log ao lado e o relatório",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+   "sha256_depois": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865",
+   "contexto_antes": "0\n",
+   "contexto_depois": "1\n"
+  }
+ ]
+}

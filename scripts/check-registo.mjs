@@ -171,7 +171,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { loadClaims, contagensDoRegisto } from '../src/lib/ledger.mjs';
-import { WORKS, EDITIONS } from '../src/data/studies.mjs';
+import { PUBLISHED_WORKS, PUBLISHED_EDITIONS } from '../src/data/studies.mjs';
 import { MUNICIPIOS_COM_PAGINA } from '../src/data/municipios.mjs';
 import { todosOsDocumentos } from '../src/lib/documentos.mjs';
 import { VERIFICACAO } from '../src/data/verificacao.mjs';
@@ -295,18 +295,18 @@ const FACTOS = [
     id: 'estudos',
     nome: 'estudos (trabalhos) no arquivo',
     palavras: ['estudos', 'trabalhos'],
-    fonte: 'src/data/studies.mjs · WORKS',
-    comando: "node -e \"import('./src/data/studies.mjs').then(m=>console.log(m.WORKS.length))\"",
-    valor: WORKS.length,
+    fonte: 'src/data/studies.mjs · PUBLISHED_WORKS',
+    comando: "node -e \"import('./src/data/studies.mjs').then(m=>console.log(m.PUBLISHED_WORKS.length))\"",
+    valor: PUBLISHED_WORKS.length,
     linha: 'estudos-publicados',
   },
   {
     id: 'edicoes',
     nome: 'edições do arquivo',
     palavras: ['edições do arquivo', 'edições publicadas'],
-    fonte: 'src/data/studies.mjs · EDITIONS',
-    comando: "node -e \"import('./src/data/studies.mjs').then(m=>console.log(m.EDITIONS.length))\"",
-    valor: EDITIONS.length,
+    fonte: 'src/data/studies.mjs · PUBLISHED_EDITIONS',
+    comando: "node -e \"import('./src/data/studies.mjs').then(m=>console.log(m.PUBLISHED_EDITIONS.length))\"",
+    valor: PUBLISHED_EDITIONS.length,
     linha: 'edicoes-publicadas',
   },
   {
@@ -1040,7 +1040,7 @@ for (const { doc, minimo, avaliadas, conta } of relatorio) {
   for (const a of conta.ambiguas) {
     console.log(
       cinza(
-        `      ${a.onde} «${a.texto}» não conferida: «edições» diz o arquivo (${EDITIONS.length}) e as ` +
+        `      ${a.onde} «${a.texto}» não conferida: «edições» diz o arquivo (${PUBLISHED_EDITIONS.length}) e as ` +
           `páginas de leitura (${paginasDeLeitura()}); o facto escreve-se com o composto.`,
       ),
     );

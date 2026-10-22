@@ -70,6 +70,7 @@ import { loadClaims } from '../src/lib/ledger.mjs';
 import { matchPath } from '../src/lib/routes.mjs';
 import { lerPaginaComCodigo, tirarCodigoConferido } from './incorporar-do-portao.mjs';
 const linhasCitadas = loadClaims();
+import { WORKS } from '../src/data/studies.mjs';
 
 /**
  * As palavras, e o que se escreve em vez de cada uma.
@@ -87,8 +88,10 @@ export const PALAVRAS_PROIBIDAS = [
        sítio falava de si. Não apanha «casas» (a habitação, que o sítio mede) nem
        «casa decimal» (a posição de um algarismo), e as duas estão medidas: a
        página da área da habitação diz «casas compradas pelas famílias» e a das
-       correções diz «uma casa decimal que a fonte não sustenta». */
-    marca: /\b(?:a|da|à|na|pela|desta|nesta|esta)\s+casa\b(?!\s+decimal)/i,
+       correções diz «uma casa decimal que a fonte não sustenta». «Gasta na
+       casa» descreve despesa com habitação; esta fronteira local não dispensa
+       o resto da frase nem a autorreferência «a casa verifica tudo». */
+    marca: /\b(?:a|da|à|pela|desta|nesta|esta)\s+casa\b(?!\s+decimal)|(?<!\bgasta\s)\bna\s+casa\b(?!\s+decimal)/i,
     em_vez: '«este projeto» ou «O Estado do País»',
     porque:
       'em português «casa» é a habitação, que é uma das coisas que este projeto mede ' +
@@ -282,6 +285,12 @@ export function superficieDe(html, opcoes = {}) {
     const canonica = root.querySelector('link[rel="canonical"]')?.getAttribute('href');
     if (!canonica) throw Error('ER1: código sem página canónica para a conferência da voz.');
     tirarCodigoConferido(root, matchPath(new URL(canonica).pathname));
+  }
+  // O título sobre habitação não chama «casa» ao projeto. Só sai a cadeia
+  // exata de uma edição do arquivo, que o portão de HTML também confere.
+  const titulos = new Set(WORKS.flatMap(w => w.editions.map(e => e.title)));
+  for (const titulo of root.querySelectorAll('[data-nonledger="titulo-de-estudo"]')) {
+    if (titulos.has(titulo.textContent)) titulo.remove();
   }
   for (const fora of root.querySelectorAll('script, style')) fora.remove();
   // Um valor textual só sai como citação quando é o excerto integral da linha.

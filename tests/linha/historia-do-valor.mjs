@@ -63,6 +63,19 @@ for(const [nome,muda,falha] of [
  const c=structuredClone(entrega),erros=[];muda(c);conferirHistoriaDoValor(c,historiaData,'ensaio',erros);
  assert(erros.some(e=>e.includes(falha)),nome);plantas.push({nome,falha,erros,mordeu:true});
 }
+// HB1-c (o achado 15): uma linha de um estudo em preparação (`date: null`) não
+// tem correção pública nem história selada; a planta põe uma e tem de ficar vermelha.
+for(const id of ['hab-imprensa-manif-euronews','hab-imprensa-tendas']) {
+ const original=linhas.get(id);
+ assert.equal(original.unit,'texto');assert.deepEqual(original.corrections??[],[],`${id}: correção numa edição em preparação`);
+ const so=e=>e.startsWith(`[${id}.yml]`)&&e.includes('estudo em preparação');
+ assert.deepEqual(validateLedger().errors.filter(so),[]);
+ const c=structuredClone(original);c.corrections=[{date:'2026-10-21',kind:'correcao',old_value:'Texto anterior.',new_value:original.value,reason:'planta',reason_en:'plant'}];
+ linhas.set(id,c);
+ try { const erros=validateLedger().errors.filter(so);assert.ok(erros.length,`${id}: correção numa edição em preparação passou`);plantas.push({nome:`${id}: correção pública numa edição em preparação`,falha:'estudo em preparação',erros,mordeu:true}); }
+ finally { linhas.set(id,original); }
+}
+assert.equal(linhas.get('correcoes-publicadas').value,'12');
 const r = { controlos: 4, plantas };
 const i = process.argv.indexOf('--json');
 if (i >= 0) fs.writeFileSync(process.argv[i+1], JSON.stringify(r, null, 2)+'\n');

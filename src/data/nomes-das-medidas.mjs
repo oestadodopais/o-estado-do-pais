@@ -1,4 +1,5 @@
 import { NOMES_EO1 } from './nomes-eo1.mjs';
+import { NOMES_HB1 } from './nomes-hb1.mjs';
 import { NOMES_V2D } from './nomes-v2d.mjs';
 import { NOMES_V2E } from './nomes-v2e.mjs';
 import { getClaim } from '../lib/ledger.mjs';
@@ -79,6 +80,7 @@ import { NOMES_OE1 } from './medidas-oe1.mjs';
  * @type {Record<string, ParDeLinguas>}
  */
 export const NOMES_DO_PROJETO = {
+  ...NOMES_HB1,
   ...NOMES_V2D,
   ...NOMES_V2E,
   ...NOMES_EO1,

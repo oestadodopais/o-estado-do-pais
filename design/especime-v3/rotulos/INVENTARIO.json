@@ -1,25 +1,25 @@
 {
  "o_que": "O inventário declarado dos rótulos dos cartões de medida (bloco R2, 03.10.2026): por família, edição e chave, as formas distintas de cada campo e quantas vezes cada uma se rende, com os algarismos do período, do estado e da faixa apagados. Escrito por `node scripts/inventario-rotulos.mjs --escrever` sobre uma construção; a régua do `verify` compara o nome, a unidade e a dobra de cada construção com estas formas.",
- "cabeca": "793d2d7eba2ae075b89cdef47a29c409cced1244",
+ "cabeca": "7cc3543914edd0e9172f6409b12298e02bdd2a64",
  "contas": {
-  "paginas": 7902,
-  "paginas_com_cartoes": 704,
-  "cartoes": 5292,
+  "paginas": 8656,
+  "paginas_com_cartoes": 706,
+  "cartoes": 5672,
   "familias": {
-   "nacional": 320,
+   "nacional": 700,
    "uniao": 42,
    "concelho": 4928,
    "camaras": 2
   },
   "nomes": {
-   "projeto": 216,
+   "projeto": 596,
    "medidas": 24,
    "figuras": 66,
    "cartao": 14
   },
   "estados": 688,
   "unidades": {
-   "declaradas": 782,
+   "declaradas": 1162,
    "da_linha": 4442,
    "em_divida": 2,
    "na_faixa_dos_paises": 18
@@ -49,6 +49,62 @@
    "acumuladas": {
     "pt": 124,
     "en": 124
+   }
+  },
+  "jd1": {
+   "recibos": {
+    "pt": 15,
+    "en": 15
+   },
+   "entradas": {
+    "pt": 15,
+    "en": 15
+   },
+   "acumuladas": {
+    "pt": 0,
+    "en": 0
+   }
+  },
+  "v2a": {
+   "recibos": {
+    "pt": 18,
+    "en": 18
+   },
+   "entradas": {
+    "pt": 18,
+    "en": 18
+   },
+   "acumuladas": {
+    "pt": 0,
+    "en": 0
+   }
+  },
+  "v2d": {
+   "recibos": {
+    "pt": 142,
+    "en": 142
+   },
+   "entradas": {
+    "pt": 142,
+    "en": 142
+   },
+   "acumuladas": {
+    "pt": 0,
+    "en": 0
+   }
+  },
+  "ex3": {
+   "recibos": {
+    "pt": 8,
+    "en": 8
+   },
+   "entradas": {
+    "pt": 8,
+    "en": 8
+   },
+   "acumuladas": {
+    "pt": 0,
+    "en": 0
    }
   },
   "faixas_dos_paises": 20,
@@ -880,6 +936,215 @@
    },
    "unidade": {
     "% change over three years": 2
+   }
+  },
+  "nacional|en|der-hab-fiscal-2027": {
+   "nome": {
+    "Combined impact of housing tax measures": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "million euros": 1
+   }
+  },
+  "nacional|en|der-hab-inquilinos-eu-2025": {
+   "nome": {
+    "Population in rented homes, European Union": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of the population": 1
+   }
+  },
+  "nacional|en|der-hab-inquilinos-pt-2025": {
+   "nome": {
+    "Population in rented homes, Portugal": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of the population": 1
+   }
+  },
+  "nacional|en|der-hab-jovens-com-pais-pt-vs-eu-2025": {
+   "nome": {
+    "Gap from the Union in young people living with parents": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "percentage points": 1
+   }
+  },
+  "nacional|en|der-hab-licencas-por-mil-eu-2025": {
+   "nome": {
+    "Dwellings permitted per thousand inhabitants, European Union": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "permitted dwellings per thousand inhabitants": 1
+   }
+  },
+  "nacional|en|der-hab-licencas-por-mil-pt-2025": {
+   "nome": {
+    "Dwellings permitted per thousand inhabitants, Portugal": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "permitted dwellings per thousand inhabitants": 1
+   }
+  },
+  "nacional|en|der-hab-preco-lisboa-vs-portugal": {
+   "nome": {
+    "Median price in Lisbon relative to the country": 1
+   },
+   "periodo": {
+    "in the #st quarter of #": 1
+   },
+   "unidade": {
+    "times": 1
+   }
+  },
+  "nacional|en|der-hab-preco-rendimento-acima-2015-eu-2024": {
+   "nome": {
+    "Increase in prices relative to income since the base year": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "percentage points of the index": 1
+   }
+  },
+  "nacional|en|der-hab-preco-rendimento-acima-2015-pt-2024": {
+   "nome": {
+    "Increase in prices relative to income since the base year": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "percentage points of the index": 1
+   }
+  },
+  "nacional|en|der-hab-preco-rendimento-lt-eu-2024": {
+   "nome": {
+    "Distance of the price-to-income ratio from the long-term average": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "percentage points of the index": 1
+   }
+  },
+  "nacional|en|der-hab-preco-rendimento-lt-pt-2024": {
+   "nome": {
+    "Distance of the price-to-income ratio from the long-term average": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "percentage points of the index": 1
+   }
+  },
+  "nacional|en|der-hab-preco-rendimento-pt-vs-eu-2024": {
+   "nome": {
+    "Gap from the Union in the price-to-income index": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "index points": 1
+   }
+  },
+  "nacional|en|der-hab-precos-reais-pt-vs-eu-2025": {
+   "nome": {
+    "Gap from the Union in the real price index": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "index points": 1
+   }
+  },
+  "nacional|en|der-hab-proprietarios-eu-2025": {
+   "nome": {
+    "Population in owner-occupied homes, European Union": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of the population": 1
+   }
+  },
+  "nacional|en|der-hab-proprietarios-pt-2025": {
+   "nome": {
+    "Population in owner-occupied homes, Portugal": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of the population": 1
+   }
+  },
+  "nacional|en|der-hab-renda-lisboa-vs-portugal": {
+   "nome": {
+    "Median rent in Lisbon relative to the country": 1
+   },
+   "periodo": {
+    "in the #nd quarter of #": 1
+   },
+   "unidade": {
+    "times": 1
+   }
+  },
+  "nacional|en|der-hab-saida-pt-vs-eu-2025": {
+   "nome": {
+    "Gap from the Union in the age of leaving the parental home": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "years": 1
+   }
+  },
+  "nacional|en|der-hab-sobrecarga-inquilinos-pt-2020-2025": {
+   "nome": {
+    "Change in tenant overburden in Portugal since the start of the decade": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "percentage points": 1
+   }
+  },
+  "nacional|en|der-hab-sobrecarga-inquilinos-pt-vs-eu-2025": {
+   "nome": {
+    "Gap from the Union in tenant overburden": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "percentage points": 1
    }
   },
   "nacional|en|desempenho-das-exportacoes-2025": {
@@ -1744,6 +2009,1854 @@
     "euros per month": 2
    }
   },
+  "nacional|en|hab-arrendamento-exposicao": {
+   "nome": {
+    "Explanatory memorandum of rental reform": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "source text": 1
+   }
+  },
+  "nacional|en|hab-arrendamento-exposicao-vagos": {
+   "nome": {
+    "Government estimate of vacant dwellings in good condition": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "source text": 1
+   }
+  },
+  "nacional|en|hab-be-despejos": {
+   "nome": {
+    "Left Bloc statement on evictions": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "quotation": 1
+   }
+  },
+  "nacional|en|hab-bpstat-12533724": {
+   "nome": {
+    "New housing loans": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "million euros": 1
+   }
+  },
+  "nacional|en|hab-bpstat-12533735": {
+   "nome": {
+    "Interest rate on new housing loans": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% interest": 1
+   }
+  },
+  "nacional|en|hab-bpstat-12557378": {
+   "nome": {
+    "Outstanding household housing loans": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "million euros": 1
+   }
+  },
+  "nacional|en|hab-cens-21dwob-r3-a-dw-total-nr-pt-2021": {
+   "nome": {
+    "Dwellings in the Census, Portugal": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "dwellings": 1
+   }
+  },
+  "nacional|en|hab-cgtp-convocatoria": {
+   "nome": {
+    "Call circulated by the union": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "quotation": 1
+   }
+  },
+  "nacional|en|hab-chega-reinvestimento": {
+   "nome": {
+    "Chega proposal on reinvestment": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "quotation": 1
+   }
+  },
+  "nacional|en|hab-demo-pjan-eu27_2020-2025": {
+   "nome": {
+    "Population at the start of the year, European Union": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "people": 1
+   }
+  },
+  "nacional|en|hab-demo-pjan-pt-2025": {
+   "nome": {
+    "Population at the start of the year, Portugal": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "people": 1
+   }
+  },
+  "nacional|en|hab-dl97-deducao": {
+   "nome": {
+    "Transitional rule for the rent deduction": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "source text": 1
+   }
+  },
+  "nacional|en|hab-dl97-deducao-2027": {
+   "nome": {
+    "Limit on the rent deduction": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "source text": 1
+   }
+  },
+  "nacional|en|hab-dl97-irs": {
+   "nome": {
+    "Income tax rate on rents": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "source text": 1
+   }
+  },
+  "nacional|en|hab-eurostat-privacao-severa-definicao": {
+   "nome": {
+    "Definition of severe housing deprivation": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "source text": 1
+   }
+  },
+  "nacional|en|hab-governo-arrendamento": {
+   "nome": {
+    "Announcement of rental reform": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "quotation": 1
+   }
+  },
+  "nacional|en|hab-governo-construir": {
+   "nome": {
+    "Announcement of construction incentives": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "quotation": 1
+   }
+  },
+  "nacional|en|hab-governo-feh": {
+   "nome": {
+    "Announcement of the housing emergency fund": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "quotation": 1
+   }
+  },
+  "nacional|en|hab-il-proposta": {
+   "nome": {
+    "Iniciativa Liberal housing proposal": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "quotation": 1
+   }
+  },
+  "nacional|en|hab-ilc-lvho02-a-total-total-own-l-pc-eu27_2020-2025": {
+   "nome": {
+    "Population by tenure status, owners with a loan, European Union": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of the population": 1
+   }
+  },
+  "nacional|en|hab-ilc-lvho02-a-total-total-own-l-pc-nl-2025": {
+   "nome": {
+    "Population by tenure status, owners with a loan, Netherlands": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of the population": 1
+   }
+  },
+  "nacional|en|hab-ilc-lvho02-a-total-total-own-l-pc-pt-2020": {
+   "nome": {
+    "Population by tenure status, owners with a loan, Portugal": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of the population": 1
+   }
+  },
+  "nacional|en|hab-ilc-lvho02-a-total-total-own-l-pc-pt-2025": {
+   "nome": {
+    "Population by tenure status, owners with a loan, Portugal": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of the population": 1
+   }
+  },
+  "nacional|en|hab-ilc-lvho02-a-total-total-own-l-pc-ro-2025": {
+   "nome": {
+    "Population by tenure status, owners with a loan, Romania": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of the population": 1
+   }
+  },
+  "nacional|en|hab-ilc-lvho02-a-total-total-own-nl-pc-eu27_2020-2025": {
+   "nome": {
+    "Population by tenure status, owners without a loan, European Union": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of the population": 1
+   }
+  },
+  "nacional|en|hab-ilc-lvho02-a-total-total-own-nl-pc-pt-2025": {
+   "nome": {
+    "Population by tenure status, owners without a loan, Portugal": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of the population": 1
+   }
+  },
+  "nacional|en|hab-ilc-lvho02-a-total-total-rent-fr-pc-eu27_2020-2025": {
+   "nome": {
+    "Population by tenure status, tenants at reduced or free rent, European Union": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of the population": 1
+   }
+  },
+  "nacional|en|hab-ilc-lvho02-a-total-total-rent-fr-pc-pt-2025": {
+   "nome": {
+    "Population by tenure status, tenants at reduced or free rent, Portugal": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of the population": 1
+   }
+  },
+  "nacional|en|hab-ilc-lvho02-a-total-total-rent-mkt-pc-de-2025": {
+   "nome": {
+    "Population by tenure status, tenants at market rents, Germany": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of the population": 1
+   }
+  },
+  "nacional|en|hab-ilc-lvho02-a-total-total-rent-mkt-pc-eu27_2020-2025": {
+   "nome": {
+    "Population by tenure status, tenants at market rents, European Union": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of the population": 1
+   }
+  },
+  "nacional|en|hab-ilc-lvho02-a-total-total-rent-mkt-pc-pt-2020": {
+   "nome": {
+    "Population by tenure status, tenants at market rents, Portugal": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of the population": 1
+   }
+  },
+  "nacional|en|hab-ilc-lvho02-a-total-total-rent-mkt-pc-pt-2025": {
+   "nome": {
+    "Population by tenure status, tenants at market rents, Portugal": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of the population": 1
+   }
+  },
+  "nacional|en|hab-ilc-lvho05a-a-pc-total-total-t-cy-2025": {
+   "nome": {
+    "Population in overcrowded homes, Cyprus": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of the population": 1
+   }
+  },
+  "nacional|en|hab-ilc-lvho05a-a-pc-total-total-t-eu27_2020-2025": {
+   "nome": {
+    "Population in overcrowded homes, European Union": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of the population": 1
+   }
+  },
+  "nacional|en|hab-ilc-lvho05a-a-pc-total-total-t-pt-2025": {
+   "nome": {
+    "Population in overcrowded homes, Portugal": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of the population": 1
+   }
+  },
+  "nacional|en|hab-ilc-lvho05a-a-pc-total-total-t-ro-2025": {
+   "nome": {
+    "Population in overcrowded homes, Romania": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of the population": 1
+   }
+  },
+  "nacional|en|hab-ilc-lvho05a-a-pc-total-y16-29-t-eu27_2020-2025": {
+   "nome": {
+    "Population in overcrowded homes, sixteen to twenty-nine years, European Union": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of people aged 16 to 29": 1
+   }
+  },
+  "nacional|en|hab-ilc-lvho05a-a-pc-total-y16-29-t-pt-2025": {
+   "nome": {
+    "Population in overcrowded homes, sixteen to twenty-nine years, Portugal": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of people aged 16 to 29": 1
+   }
+  },
+  "nacional|en|hab-ilc-lvho07a-a-pc-total-y16-29-t-el-2025": {
+   "nome": {
+    "Housing cost overburden, sixteen to twenty-nine years, Greece": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of people aged 16 to 29": 1
+   }
+  },
+  "nacional|en|hab-ilc-lvho07a-a-pc-total-y16-29-t-eu27_2020-2025": {
+   "nome": {
+    "Housing cost overburden, sixteen to twenty-nine years, European Union": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of people aged 16 to 29": 1
+   }
+  },
+  "nacional|en|hab-ilc-lvho07a-a-pc-total-y16-29-t-pt-2025": {
+   "nome": {
+    "Housing cost overburden, sixteen to twenty-nine years, Portugal": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of people aged 16 to 29": 1
+   }
+  },
+  "nacional|en|hab-ilc-lvho07c-a-pc-own-l-eu27_2020-2025": {
+   "nome": {
+    "Housing cost overburden, owners with a loan, European Union": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of owners with a mortgage": 1
+   }
+  },
+  "nacional|en|hab-ilc-lvho07c-a-pc-own-l-pt-2025": {
+   "nome": {
+    "Housing cost overburden, owners with a loan, Portugal": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of owners with a mortgage": 1
+   }
+  },
+  "nacional|en|hab-ilc-lvho07c-a-pc-own-nl-eu27_2020-2025": {
+   "nome": {
+    "Housing cost overburden, owners without a loan, European Union": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of owners without a mortgage": 1
+   }
+  },
+  "nacional|en|hab-ilc-lvho07c-a-pc-own-nl-pt-2025": {
+   "nome": {
+    "Housing cost overburden, owners without a loan, Portugal": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of owners without a mortgage": 1
+   }
+  },
+  "nacional|en|hab-ilc-lvho07c-a-pc-rent-fr-eu27_2020-2025": {
+   "nome": {
+    "Housing cost overburden, tenants at reduced or free rent, European Union": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of tenants at reduced rent or rent-free": 1
+   }
+  },
+  "nacional|en|hab-ilc-lvho07c-a-pc-rent-fr-pt-2025": {
+   "nome": {
+    "Housing cost overburden, tenants at reduced or free rent, Portugal": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of tenants at reduced rent or rent-free": 1
+   }
+  },
+  "nacional|en|hab-ilc-lvho07c-a-pc-rent-mkt-eu27_2020-2025": {
+   "nome": {
+    "Housing cost overburden, tenants at market rents, European Union": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of tenants at market rents": 1
+   }
+  },
+  "nacional|en|hab-ilc-lvho07c-a-pc-rent-mkt-fi-2025": {
+   "nome": {
+    "Housing cost overburden, tenants at market rents, Finland": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of tenants at market rents": 1
+   }
+  },
+  "nacional|en|hab-ilc-lvho07c-a-pc-rent-mkt-pt-2015": {
+   "nome": {
+    "Housing cost overburden, tenants at market rents, Portugal": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of tenants at market rents": 1
+   }
+  },
+  "nacional|en|hab-ilc-lvho07c-a-pc-rent-mkt-pt-2020": {
+   "nome": {
+    "Housing cost overburden, tenants at market rents, Portugal": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of tenants at market rents": 1
+   }
+  },
+  "nacional|en|hab-ilc-lvho07c-a-pc-rent-mkt-pt-2025": {
+   "nome": {
+    "Housing cost overburden, tenants at market rents, Portugal": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of tenants at market rents": 1
+   }
+  },
+  "nacional|en|hab-ilc-lvho07c-a-pc-rent-mkt-ro-2025": {
+   "nome": {
+    "Housing cost overburden, tenants at market rents, Romania": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of tenants at market rents": 1
+   }
+  },
+  "nacional|en|hab-ilc-lvho07c-a-pc-total-cy-2025": {
+   "nome": {
+    "Housing cost overburden, Cyprus": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of the population": 1
+   }
+  },
+  "nacional|en|hab-ilc-lvho07c-a-pc-total-el-2025": {
+   "nome": {
+    "Housing cost overburden, Greece": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of the population": 1
+   }
+  },
+  "nacional|en|hab-ilc-lvho07c-a-pc-total-eu27_2020-2015": {
+   "nome": {
+    "Housing cost overburden, European Union": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of the population": 1
+   }
+  },
+  "nacional|en|hab-ilc-lvho07c-a-pc-total-eu27_2020-2025": {
+   "nome": {
+    "Housing cost overburden, European Union": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of the population": 1
+   }
+  },
+  "nacional|en|hab-ilc-lvho07c-a-pc-total-pt-2015": {
+   "nome": {
+    "Housing cost overburden, Portugal": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of the population": 1
+   }
+  },
+  "nacional|en|hab-ilc-lvho07c-a-pc-total-pt-2025": {
+   "nome": {
+    "Housing cost overburden, Portugal": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of the population": 1
+   }
+  },
+  "nacional|en|hab-ilc-lvps08-a-y18-34-t-pc-eu27_2020-2025": {
+   "nome": {
+    "Young people living with parents or sharing household income, eighteen to thirty-four years, European Union": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of people aged 18 to 34": 1
+   }
+  },
+  "nacional|en|hab-ilc-lvps08-a-y18-34-t-pc-pt-2025": {
+   "nome": {
+    "Young people living with parents or sharing household income, eighteen to thirty-four years, Portugal": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of people aged 18 to 34": 1
+   }
+  },
+  "nacional|en|hab-ilc-lvps08-a-y25-34-t-pc-dk-2025": {
+   "nome": {
+    "Young people living with parents or sharing household income, twenty-five to thirty-four years, Denmark": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of people aged 25 to 34": 1
+   }
+  },
+  "nacional|en|hab-ilc-lvps08-a-y25-34-t-pc-eu27_2020-2025": {
+   "nome": {
+    "Young people living with parents or sharing household income, twenty-five to thirty-four years, European Union": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of people aged 25 to 34": 1
+   }
+  },
+  "nacional|en|hab-ilc-lvps08-a-y25-34-t-pc-hr-2025": {
+   "nome": {
+    "Young people living with parents or sharing household income, twenty-five to thirty-four years, Croatia": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of people aged 25 to 34": 1
+   }
+  },
+  "nacional|en|hab-ilc-lvps08-a-y25-34-t-pc-pt-2015": {
+   "nome": {
+    "Young people living with parents or sharing household income, twenty-five to thirty-four years, Portugal": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of people aged 25 to 34": 1
+   }
+  },
+  "nacional|en|hab-ilc-lvps08-a-y25-34-t-pc-pt-2020": {
+   "nome": {
+    "Young people living with parents or sharing household income, twenty-five to thirty-four years, Portugal": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of people aged 25 to 34": 1
+   }
+  },
+  "nacional|en|hab-ilc-lvps08-a-y25-34-t-pc-pt-2025": {
+   "nome": {
+    "Young people living with parents or sharing household income, twenty-five to thirty-four years, Portugal": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of people aged 25 to 34": 1
+   }
+  },
+  "nacional|en|hab-ilc-mded01-a-total-total-pc-cy-2025": {
+   "nome": {
+    "Share of income spent on housing, Cyprus": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of household disposable income": 1
+   }
+  },
+  "nacional|en|hab-ilc-mded01-a-total-total-pc-el-2025": {
+   "nome": {
+    "Share of income spent on housing, Greece": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of household disposable income": 1
+   }
+  },
+  "nacional|en|hab-ilc-mded01-a-total-total-pc-eu27_2020-2025": {
+   "nome": {
+    "Share of income spent on housing, European Union": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of household disposable income": 1
+   }
+  },
+  "nacional|en|hab-ilc-mded01-a-total-total-pc-pt-2015": {
+   "nome": {
+    "Share of income spent on housing, Portugal": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of household disposable income": 1
+   }
+  },
+  "nacional|en|hab-ilc-mded01-a-total-total-pc-pt-2025": {
+   "nome": {
+    "Share of income spent on housing, Portugal": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of household disposable income": 1
+   }
+  },
+  "nacional|en|hab-ilc-mdho06a-a-pc-total-t-total-eu27_2020-2023": {
+   "nome": {
+    "Severe housing deprivation, European Union": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of the population": 1
+   }
+  },
+  "nacional|en|hab-ilc-mdho06a-a-pc-total-t-total-lv-2023": {
+   "nome": {
+    "Severe housing deprivation, Latvia": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of the population": 1
+   }
+  },
+  "nacional|en|hab-ilc-mdho06a-a-pc-total-t-total-mt-2023": {
+   "nome": {
+    "Severe housing deprivation, Malta": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of the population": 1
+   }
+  },
+  "nacional|en|hab-ilc-mdho06a-a-pc-total-t-total-pt-2023": {
+   "nome": {
+    "Severe housing deprivation, Portugal": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of the population": 1
+   }
+  },
+  "nacional|en|hab-ilc-mdho06a-a-pc-total-t-y16-29-eu27_2020-2023": {
+   "nome": {
+    "Severe housing deprivation, sixteen to twenty-nine years, European Union": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of people aged 16 to 29": 1
+   }
+  },
+  "nacional|en|hab-ilc-mdho06a-a-pc-total-t-y16-29-pt-2023": {
+   "nome": {
+    "Severe housing deprivation, sixteen to twenty-nine years, Portugal": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of people aged 16 to 29": 1
+   }
+  },
+  "nacional|en|hab-imprensa-acampados": {
+   "nome": {
+    "Campers' statement, reported by the press": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "quotation": 1
+   }
+  },
+  "nacional|en|hab-imprensa-amorim": {
+   "nome": {
+    "Statement by the Minister for Parliamentary Affairs, reported by the press": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "quotation": 1
+   }
+  },
+  "nacional|en|hab-imprensa-assistidos": {
+   "nome": {
+    "People assisted, reported by the press": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "quotation": 1
+   }
+  },
+  "nacional|en|hab-imprensa-debate-custos": {
+   "nome": {
+    "Prime Minister's statement on prices, reported by the press": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "quotation": 1
+   }
+  },
+  "nacional|en|hab-imprensa-debate-protecao": {
+   "nome": {
+    "Prime Minister's statement on tenant protection, reported by the press": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "quotation": 1
+   }
+  },
+  "nacional|en|hab-imprensa-feridos35": {
+   "nome": {
+    "Injured according to a BE leader, via the press": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "quotation": 1
+   }
+  },
+  "nacional|en|hab-imprensa-feridos37": {
+   "nome": {
+    "Injured people according to the movement, reported by the press": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "quotation": 1
+   }
+  },
+  "nacional|en|hab-imprensa-feridos39": {
+   "nome": {
+    "Injured people according to the organisation, reported by the press": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "quotation": 1
+   }
+  },
+  "nacional|en|hab-imprensa-hospital": {
+   "nome": {
+    "People referred to hospital, reported by the press": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "quotation": 1
+   }
+  },
+  "nacional|en|hab-imprensa-igai": {
+   "nome": {
+    "Inspectorate case, reported by the press": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "quotation": 1
+   }
+  },
+  "nacional|en|hab-imprensa-mai": {
+   "nome": {
+    "Statement by the Minister of Home Affairs, reported by the press": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "quotation": 1
+   }
+  },
+  "nacional|en|hab-imprensa-manif-euronews": {
+   "nome": {
+    "Platform organisations, reported by Euronews": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "source text": 1
+   }
+  },
+  "nacional|en|hab-imprensa-manif-lusa": {
+   "nome": {
+    "Demonstrators in Lisbon, reported in an article citing Lusa": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "source text": 1
+   }
+  },
+  "nacional|en|hab-imprensa-manif-lusa-organizacoes": {
+   "nome": {
+    "Platform organisations, reported in an article citing Lusa": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "source text": 1
+   }
+  },
+  "nacional|en|hab-imprensa-manif-rtp": {
+   "nome": {
+    "Demonstrators in Porto, reported by RTP": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "source text": 1
+   }
+  },
+  "nacional|en|hab-imprensa-pm-15": {
+   "nome": {
+    "Prime Minister's statement after the intervention, reported by the press": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "quotation": 1
+   }
+  },
+  "nacional|en|hab-imprensa-pm-16": {
+   "nome": {
+    "Prime Minister's subsequent statement, reported by the press": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "quotation": 1
+   }
+  },
+  "nacional|en|hab-imprensa-psp-ferido": {
+   "nome": {
+    "Police officer injured, according to the PSP, reported by the press": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "quotation": 1
+   }
+  },
+  "nacional|en|hab-imprensa-renda-metade": {
+   "nome": {
+    "Platform statement on rent and pay, reported by the press": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "source text": 1
+   }
+  },
+  "nacional|en|hab-imprensa-tendas": {
+   "nome": {
+    "Removal of tents, reported by RTP": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "source text": 1
+   }
+  },
+  "nacional|en|hab-ine-calendario-juro": {
+   "nome": {
+    "Release of the implicit housing interest rate": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "announced date": 1
+   }
+  },
+  "nacional|en|hab-ine-calendario-precos-locais": {
+   "nome": {
+    "Release of local house prices": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "announced date": 1
+   }
+  },
+  "nacional|en|hab-ine-censos-0012501-40": {
+   "nome": {
+    "Dwellings vacant for sale or rent": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "dwellings": 1
+   }
+  },
+  "nacional|en|hab-ine-censos-0012501-41": {
+   "nome": {
+    "Dwellings vacant for other reasons": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "dwellings": 1
+   }
+  },
+  "nacional|en|hab-ine-censos-0012517-0": {
+   "nome": {
+    "Share of vacant dwellings in the Census": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of conventional family dwellings": 1
+   }
+  },
+  "nacional|en|hab-ine-iphab-homologa": {
+   "nome": {
+    "Annual change in house prices": 1
+   },
+   "periodo": {
+    "in the #nd quarter of #": 1
+   },
+   "unidade": {
+    "% year-on-year change": 1
+   }
+  },
+  "nacional|en|hab-ine-juro-implicito": {
+   "nome": {
+    "Implicit interest rate on housing loans": 1
+   },
+   "periodo": {
+    "in August #": 1
+   },
+   "unidade": {
+    "% interest": 1
+   }
+  },
+  "nacional|en|hab-ine-preco-lisboa": {
+   "nome": {
+    "Median sale price in Lisbon": 1
+   },
+   "periodo": {
+    "in the #st quarter of #": 1
+   },
+   "unidade": {
+    "euros per square metre": 1
+   }
+  },
+  "nacional|en|hab-ine-preco-mediano": {
+   "nome": {
+    "Median sale price in Portugal": 1
+   },
+   "periodo": {
+    "in the #st quarter of #": 1
+   },
+   "unidade": {
+    "euros per square metre": 1
+   }
+  },
+  "nacional|en|hab-ine-preco-porto": {
+   "nome": {
+    "Median sale price in Porto": 1
+   },
+   "periodo": {
+    "in the #st quarter of #": 1
+   },
+   "unidade": {
+    "euros per square metre": 1
+   }
+  },
+  "nacional|en|hab-ine-renda-lisboa": {
+   "nome": {
+    "Median rent of new contracts in Lisbon": 1
+   },
+   "periodo": {
+    "in the #nd quarter of #": 1
+   },
+   "unidade": {
+    "euros per square metre": 1
+   }
+  },
+  "nacional|en|hab-ine-renda-porto": {
+   "nome": {
+    "Median rent of new contracts in Porto": 1
+   },
+   "periodo": {
+    "in the #nd quarter of #": 1
+   },
+   "unidade": {
+    "euros per square metre": 1
+   }
+  },
+  "nacional|en|hab-ine-renda-portugal": {
+   "nome": {
+    "Median rent of new contracts in Portugal": 1
+   },
+   "periodo": {
+    "in the #nd quarter of #": 1
+   },
+   "unidade": {
+    "euros per square metre": 1
+   }
+  },
+  "nacional|en|hab-ine-vagos-total": {
+   "nome": {
+    "Vacant dwellings in the Census": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "dwellings": 1
+   }
+  },
+  "nacional|en|hab-livre-reinvestimento": {
+   "nome": {
+    "Livre proposal on reinvestment": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "quotation": 1
+   }
+  },
+  "nacional|en|hab-oe-apoio-arrendamento": {
+   "nome": {
+    "Budget for housing access and rental support": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "million euros": 1
+   }
+  },
+  "nacional|en|hab-oe-apoios-jovens": {
+   "nome": {
+    "Budget support for young people's housing": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "source text": 1
+   }
+  },
+  "nacional|en|hab-oe-fiscal": {
+   "nome": {
+    "Housing tax measures in the Budget": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "source text": 1
+   }
+  },
+  "nacional|en|hab-oe-habitacao-orcamento": {
+   "nome": {
+    "Housing programme budget": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "million euros": 1
+   }
+  },
+  "nacional|en|hab-oe-irs-rendas-impacto": {
+   "nome": {
+    "Revenue impact of reduced income tax on rents": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "million euros": 1
+   }
+  },
+  "nacional|en|hab-oe-iva-impacto": {
+   "nome": {
+    "Revenue impact of reduced VAT on construction": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "million euros": 1
+   }
+  },
+  "nacional|en|hab-oe-legenda-invariante": {
+   "nome": {
+    "Budget table legend for unchanged measures": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "source text": 1
+   }
+  },
+  "nacional|en|hab-oe-licenciamento": {
+   "nome": {
+    "Budget for urban management and building quality": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "million euros": 1
+   }
+  },
+  "nacional|en|hab-oe-oferta": {
+   "nome": {
+    "Housing supply in the Budget": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "source text": 1
+   }
+  },
+  "nacional|en|hab-oe-oferta-publica": {
+   "nome": {
+    "Budget for housing supply and rehabilitation": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "million euros": 1
+   }
+  },
+  "nacional|en|hab-pan-caucoes": {
+   "nome": {
+    "PAN proposal on deposits": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "quotation": 1
+   }
+  },
+  "nacional|en|hab-pan-controlo": {
+   "nome": {
+    "PAN proposal on rent control": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "quotation": 1
+   }
+  },
+  "nacional|en|hab-pan-tetos": {
+   "nome": {
+    "PAN proposal on rent limits": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "quotation": 1
+   }
+  },
+  "nacional|en|hab-pcp-rendas": {
+   "nome": {
+    "PCP proposal on rents": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "quotation": 1
+   }
+  },
+  "nacional|en|hab-plataforma-reivindicacoes": {
+   "nome": {
+    "Platform demands": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "source text": 1
+   }
+  },
+  "nacional|en|hab-prc-hicp-ainr-a-rch-a-avg-cp041-eu27_2020-2025": {
+   "nome": {
+    "Change in rents paid, European Union": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% annual average change": 1
+   }
+  },
+  "nacional|en|hab-prc-hicp-ainr-a-rch-a-avg-cp041-fi-2025": {
+   "nome": {
+    "Change in rents paid, Finland": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% annual average change": 1
+   }
+  },
+  "nacional|en|hab-prc-hicp-ainr-a-rch-a-avg-cp041-hr-2025": {
+   "nome": {
+    "Change in rents paid, Croatia": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% annual average change": 1
+   }
+  },
+  "nacional|en|hab-prc-hicp-ainr-a-rch-a-avg-cp041-pt-2025": {
+   "nome": {
+    "Change in rents paid, Portugal": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% annual average change": 1
+   }
+  },
+  "nacional|en|hab-prc-hicp-minr-m-rch-a-cp041-eu27_2020-2026-09": {
+   "nome": {
+    "Change in rents paid, European Union": 1
+   },
+   "periodo": {
+    "in September #": 1
+   },
+   "unidade": {
+    "% annual change": 1
+   }
+  },
+  "nacional|en|hab-prc-hicp-minr-m-rch-a-cp041-pt-2026-09": {
+   "nome": {
+    "Change in rents paid, Portugal": 1
+   },
+   "periodo": {
+    "in September #": 1
+   },
+   "unidade": {
+    "% annual change": 1
+   }
+  },
+  "nacional|en|hab-prc-hpi-q-q-total-i15-q-eu27_2020-2026-q2": {
+   "nome": {
+    "Index of house prices, European Union": 1
+   },
+   "periodo": {
+    "in the #nd quarter of #": 1
+   },
+   "unidade": {
+    "quarterly index, 2015 equals 100": 1
+   }
+  },
+  "nacional|en|hab-prc-hpi-q-q-total-i15-q-fi-2026-q2": {
+   "nome": {
+    "Index of house prices, Finland": 1
+   },
+   "periodo": {
+    "in the #nd quarter of #": 1
+   },
+   "unidade": {
+    "quarterly index, 2015 equals 100": 1
+   }
+  },
+  "nacional|en|hab-prc-hpi-q-q-total-i15-q-hu-2026-q2": {
+   "nome": {
+    "Index of house prices, Hungary": 1
+   },
+   "periodo": {
+    "in the #nd quarter of #": 1
+   },
+   "unidade": {
+    "quarterly index, 2015 equals 100": 1
+   }
+  },
+  "nacional|en|hab-prc-hpi-q-q-total-i15-q-pt-2026-q2": {
+   "nome": {
+    "Index of house prices, Portugal": 1
+   },
+   "periodo": {
+    "in the #nd quarter of #": 1
+   },
+   "unidade": {
+    "quarterly index, 2015 equals 100": 1
+   }
+  },
+  "nacional|en|hab-prc-hpi-q-q-total-rch-a-eu27_2020-2026-q2": {
+   "nome": {
+    "Annual change in house prices, European Union": 1
+   },
+   "periodo": {
+    "in the #nd quarter of #": 1
+   },
+   "unidade": {
+    "% annual change": 1
+   }
+  },
+  "nacional|en|hab-prc-hpi-q-q-total-rch-a-fi-2026-q2": {
+   "nome": {
+    "Annual change in house prices, Finland": 1
+   },
+   "periodo": {
+    "in the #nd quarter of #": 1
+   },
+   "unidade": {
+    "% annual change": 1
+   }
+  },
+  "nacional|en|hab-prc-hpi-q-q-total-rch-a-pt-2026-q2": {
+   "nome": {
+    "Annual change in house prices, Portugal": 1
+   },
+   "periodo": {
+    "in the #nd quarter of #": 1
+   },
+   "unidade": {
+    "% annual change": 1
+   }
+  },
+  "nacional|en|hab-ps-mais-valias": {
+   "nome": {
+    "PS proposal on capital gains": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "quotation": 1
+   }
+  },
+  "nacional|en|hab-ps-rendas": {
+   "nome": {
+    "PS proposal on rents": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "quotation": 1
+   }
+  },
+  "nacional|en|hab-ps-vazias": {
+   "nome": {
+    "PS statement on habitable vacant homes": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "quotation": 1
+   }
+  },
+  "nacional|en|hab-sts-cobp-a-a-bprm-dw-cpa-f41001-x-410014-nsa-ths-eu27_2020-2025": {
+   "nome": {
+    "Dwellings permitted, European Union": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "thousand permitted dwellings": 1
+   }
+  },
+  "nacional|en|hab-sts-cobp-a-a-bprm-dw-cpa-f41001-x-410014-nsa-ths-pt-2025": {
+   "nome": {
+    "Dwellings permitted, Portugal": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "thousand permitted dwellings": 1
+   }
+  },
+  "nacional|en|hab-tipsho10-a-i15-a-avg-eu27_2020-2025": {
+   "nome": {
+    "Index of house prices net of inflation, European Union": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "annual average index, 2015 equals 100": 1
+   }
+  },
+  "nacional|en|hab-tipsho10-a-i15-a-avg-fi-2025": {
+   "nome": {
+    "Index of house prices net of inflation, Finland": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "annual average index, 2015 equals 100": 1
+   }
+  },
+  "nacional|en|hab-tipsho10-a-i15-a-avg-pt-2020": {
+   "nome": {
+    "Index of house prices net of inflation, Portugal": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "annual average index, 2015 equals 100": 1
+   }
+  },
+  "nacional|en|hab-tipsho10-a-i15-a-avg-pt-2025": {
+   "nome": {
+    "Index of house prices net of inflation, Portugal": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "annual average index, 2015 equals 100": 1
+   }
+  },
+  "nacional|en|hab-tipsho10-a-rch-a-avg-eu27_2020-2025": {
+   "nome": {
+    "Annual change in house prices net of inflation, European Union": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% annual average change": 1
+   }
+  },
+  "nacional|en|hab-tipsho10-a-rch-a-avg-pt-2025": {
+   "nome": {
+    "Annual change in house prices net of inflation, Portugal": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% annual average change": 1
+   }
+  },
+  "nacional|en|hab-tipsho60-a-ptir-i15-eu27_2020-2024": {
+   "nome": {
+    "House prices relative to income, European Union": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "price-to-income ratio index, 2015 equals 100": 1
+   }
+  },
+  "nacional|en|hab-tipsho60-a-ptir-i15-pt-2019": {
+   "nome": {
+    "House prices relative to income, Portugal": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "price-to-income ratio index, 2015 equals 100": 1
+   }
+  },
+  "nacional|en|hab-tipsho60-a-ptir-i15-pt-2024": {
+   "nome": {
+    "House prices relative to income, Portugal": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "price-to-income ratio index, 2015 equals 100": 1
+   }
+  },
+  "nacional|en|hab-tipsho60-a-ptir-i15-ro-2024": {
+   "nome": {
+    "House prices relative to income, Romania": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "price-to-income ratio index, 2015 equals 100": 1
+   }
+  },
+  "nacional|en|hab-tipsho60-a-ptir-lt-avg-eu27_2020-2024": {
+   "nome": {
+    "Price-to-income ratio relative to the long-term average, European Union": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "price-to-income ratio relative to its long-term average": 1
+   }
+  },
+  "nacional|en|hab-tipsho60-a-ptir-lt-avg-pt-2024": {
+   "nome": {
+    "Price-to-income ratio relative to the long-term average, Portugal": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "price-to-income ratio relative to its long-term average": 1
+   }
+  },
+  "nacional|en|hab-tipsho60-a-ptir-lt-avg-ro-2024": {
+   "nome": {
+    "Price-to-income ratio relative to the long-term average, Romania": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "price-to-income ratio relative to its long-term average": 1
+   }
+  },
+  "nacional|en|hab-votacao-arrendamento": {
+   "nome": {
+    "Vote on rental reform": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "source text": 1
+   }
+  },
+  "nacional|en|hab-votacao-chega": {
+   "nome": {
+    "Vote on the Chega proposal": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "source text": 1
+   }
+  },
+  "nacional|en|hab-votacao-livre": {
+   "nome": {
+    "Vote on the Livre proposal": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "source text": 1
+   }
+  },
+  "nacional|en|hab-votacao-pan": {
+   "nome": {
+    "Vote on the PAN proposal": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "source text": 1
+   }
+  },
+  "nacional|en|hab-yth-demo-030-a-avg-t-eu27_2020-2025": {
+   "nome": {
+    "Average age of leaving the parental home, European Union": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "average age in years": 1
+   }
+  },
+  "nacional|en|hab-yth-demo-030-a-avg-t-fi-2025": {
+   "nome": {
+    "Average age of leaving the parental home, Finland": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "average age in years": 1
+   }
+  },
+  "nacional|en|hab-yth-demo-030-a-avg-t-hr-2025": {
+   "nome": {
+    "Average age of leaving the parental home, Croatia": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "average age in years": 1
+   }
+  },
+  "nacional|en|hab-yth-demo-030-a-avg-t-pt-2015": {
+   "nome": {
+    "Average age of leaving the parental home, Portugal": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "average age in years": 1
+   }
+  },
+  "nacional|en|hab-yth-demo-030-a-avg-t-pt-2025": {
+   "nome": {
+    "Average age of leaving the parental home, Portugal": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "average age in years": 1
+   }
+  },
   "nacional|en|ihpc-variacao-homologa": {
    "dobra": {
     "How much have consumer prices in Portugal changed since the same month a year earlier, on the harmonised measure used to compare European Union countries?": 1
@@ -2009,6 +4122,17 @@
     "% of people": 2
    }
   },
+  "nacional|en|oe-2027-calendario-generalidade": {
+   "nome": {
+    "Budget first-reading vote": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "announced date": 1
+   }
+  },
   "nacional|en|penalizacao-antecipacao-um-ano-com-factor-2026": {
    "nome": {
     "Pension cut for one year of early retirement, with the sustainability factor": 1
@@ -2225,6 +4349,17 @@
     "% of gross value added by enterprises": 1
    }
   },
+  "nacional|en|posicao-chega-habitacao": {
+   "nome": {
+    "Chega housing package, reported by the press": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "source text": 1
+   }
+  },
   "nacional|en|posicao-de-investimento-internacional-2025": {
    "dobra": {
     "What is the difference between what the country’s residents own in the rest of the world and what they owe to it (financial assets and liabilities relative to the rest of the world), as a percentage of the value of the final goods and services the economy produces in a year (GDP)?": 1
@@ -2243,6 +4378,17 @@
    },
    "unidade": {
     "% of GDP": 1
+   }
+  },
+  "nacional|en|posicao-ps-rendas": {
+   "nome": {
+    "PS proposal for the rent deduction": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "source text": 1
    }
   },
   "nacional|en|precos-da-habitacao-2025": {
@@ -2664,6 +4810,215 @@
    },
    "unidade": {
     "% de variação em três anos": 2
+   }
+  },
+  "nacional|pt|der-hab-fiscal-2027": {
+   "nome": {
+    "Impacto conjunto das medidas fiscais da habitação": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "milhões de euros": 1
+   }
+  },
+  "nacional|pt|der-hab-inquilinos-eu-2025": {
+   "nome": {
+    "População em casa arrendada, União Europeia": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% da população": 1
+   }
+  },
+  "nacional|pt|der-hab-inquilinos-pt-2025": {
+   "nome": {
+    "População em casa arrendada, Portugal": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% da população": 1
+   }
+  },
+  "nacional|pt|der-hab-jovens-com-pais-pt-vs-eu-2025": {
+   "nome": {
+    "Diferença face à União nos jovens que vivem com os pais": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "pontos percentuais": 1
+   }
+  },
+  "nacional|pt|der-hab-licencas-por-mil-eu-2025": {
+   "nome": {
+    "Alojamentos licenciados por mil habitantes, União Europeia": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "alojamentos licenciados por mil habitantes": 1
+   }
+  },
+  "nacional|pt|der-hab-licencas-por-mil-pt-2025": {
+   "nome": {
+    "Alojamentos licenciados por mil habitantes, Portugal": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "alojamentos licenciados por mil habitantes": 1
+   }
+  },
+  "nacional|pt|der-hab-preco-lisboa-vs-portugal": {
+   "nome": {
+    "Preço mediano em Lisboa em relação ao país": 1
+   },
+   "periodo": {
+    "no #.º trimestre de #": 1
+   },
+   "unidade": {
+    "vezes": 1
+   }
+  },
+  "nacional|pt|der-hab-preco-rendimento-acima-2015-eu-2024": {
+   "nome": {
+    "Aumento dos preços face ao rendimento desde o ano base": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "pontos percentuais do índice": 1
+   }
+  },
+  "nacional|pt|der-hab-preco-rendimento-acima-2015-pt-2024": {
+   "nome": {
+    "Aumento dos preços face ao rendimento desde o ano base": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "pontos percentuais do índice": 1
+   }
+  },
+  "nacional|pt|der-hab-preco-rendimento-lt-eu-2024": {
+   "nome": {
+    "Distância do rácio preço-rendimento à média de longo prazo": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "pontos percentuais do índice": 1
+   }
+  },
+  "nacional|pt|der-hab-preco-rendimento-lt-pt-2024": {
+   "nome": {
+    "Distância do rácio preço-rendimento à média de longo prazo": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "pontos percentuais do índice": 1
+   }
+  },
+  "nacional|pt|der-hab-preco-rendimento-pt-vs-eu-2024": {
+   "nome": {
+    "Diferença face à União no índice preço-rendimento": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "pontos de índice": 1
+   }
+  },
+  "nacional|pt|der-hab-precos-reais-pt-vs-eu-2025": {
+   "nome": {
+    "Diferença face à União no índice dos preços reais": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "pontos de índice": 1
+   }
+  },
+  "nacional|pt|der-hab-proprietarios-eu-2025": {
+   "nome": {
+    "População em casa própria, União Europeia": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% da população": 1
+   }
+  },
+  "nacional|pt|der-hab-proprietarios-pt-2025": {
+   "nome": {
+    "População em casa própria, Portugal": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% da população": 1
+   }
+  },
+  "nacional|pt|der-hab-renda-lisboa-vs-portugal": {
+   "nome": {
+    "Renda mediana em Lisboa em relação ao país": 1
+   },
+   "periodo": {
+    "no #.º trimestre de #": 1
+   },
+   "unidade": {
+    "vezes": 1
+   }
+  },
+  "nacional|pt|der-hab-saida-pt-vs-eu-2025": {
+   "nome": {
+    "Diferença face à União na idade de saída de casa dos pais": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "anos": 1
+   }
+  },
+  "nacional|pt|der-hab-sobrecarga-inquilinos-pt-2020-2025": {
+   "nome": {
+    "Variação da sobrecarga dos inquilinos em Portugal desde o início da década": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "pontos percentuais": 1
+   }
+  },
+  "nacional|pt|der-hab-sobrecarga-inquilinos-pt-vs-eu-2025": {
+   "nome": {
+    "Diferença face à União na sobrecarga dos inquilinos": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "pontos percentuais": 1
    }
   },
   "nacional|pt|desempenho-das-exportacoes-2025": {
@@ -3528,6 +5883,1854 @@
     "euros por mês": 2
    }
   },
+  "nacional|pt|hab-arrendamento-exposicao": {
+   "nome": {
+    "Exposição de motivos da reforma do arrendamento": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "texto da fonte": 1
+   }
+  },
+  "nacional|pt|hab-arrendamento-exposicao-vagos": {
+   "nome": {
+    "Estimativa do Governo de alojamentos vagos em boas condições": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "texto da fonte": 1
+   }
+  },
+  "nacional|pt|hab-be-despejos": {
+   "nome": {
+    "Afirmação do Bloco sobre os despejos": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "citação": 1
+   }
+  },
+  "nacional|pt|hab-bpstat-12533724": {
+   "nome": {
+    "Novas operações de crédito à habitação": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "milhões de euros": 1
+   }
+  },
+  "nacional|pt|hab-bpstat-12533735": {
+   "nome": {
+    "Taxa de juro das novas operações de crédito à habitação": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% de juro": 1
+   }
+  },
+  "nacional|pt|hab-bpstat-12557378": {
+   "nome": {
+    "Crédito à habitação das famílias em dívida": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "milhões de euros": 1
+   }
+  },
+  "nacional|pt|hab-cens-21dwob-r3-a-dw-total-nr-pt-2021": {
+   "nome": {
+    "Alojamentos nos Censos, Portugal": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "alojamentos": 1
+   }
+  },
+  "nacional|pt|hab-cgtp-convocatoria": {
+   "nome": {
+    "Convocatória divulgada pelo sindicato": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "citação": 1
+   }
+  },
+  "nacional|pt|hab-chega-reinvestimento": {
+   "nome": {
+    "Proposta do Chega sobre reinvestimento": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "citação": 1
+   }
+  },
+  "nacional|pt|hab-demo-pjan-eu27_2020-2025": {
+   "nome": {
+    "População no início do ano, União Europeia": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "pessoas": 1
+   }
+  },
+  "nacional|pt|hab-demo-pjan-pt-2025": {
+   "nome": {
+    "População no início do ano, Portugal": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "pessoas": 1
+   }
+  },
+  "nacional|pt|hab-dl97-deducao": {
+   "nome": {
+    "Norma transitória da dedução das rendas": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "texto da fonte": 1
+   }
+  },
+  "nacional|pt|hab-dl97-deducao-2027": {
+   "nome": {
+    "Limite da dedução das rendas": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "texto da fonte": 1
+   }
+  },
+  "nacional|pt|hab-dl97-irs": {
+   "nome": {
+    "Taxa de IRS das rendas": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "texto da fonte": 1
+   }
+  },
+  "nacional|pt|hab-eurostat-privacao-severa-definicao": {
+   "nome": {
+    "Definição de privação severa da habitação": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "texto da fonte": 1
+   }
+  },
+  "nacional|pt|hab-governo-arrendamento": {
+   "nome": {
+    "Anúncio da reforma do arrendamento": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "citação": 1
+   }
+  },
+  "nacional|pt|hab-governo-construir": {
+   "nome": {
+    "Anúncio dos incentivos à construção": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "citação": 1
+   }
+  },
+  "nacional|pt|hab-governo-feh": {
+   "nome": {
+    "Anúncio do fundo de emergência para a habitação": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "citação": 1
+   }
+  },
+  "nacional|pt|hab-il-proposta": {
+   "nome": {
+    "Proposta da Iniciativa Liberal sobre habitação": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "citação": 1
+   }
+  },
+  "nacional|pt|hab-ilc-lvho02-a-total-total-own-l-pc-eu27_2020-2025": {
+   "nome": {
+    "População por regime de ocupação, proprietários com empréstimo, União Europeia": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% da população": 1
+   }
+  },
+  "nacional|pt|hab-ilc-lvho02-a-total-total-own-l-pc-nl-2025": {
+   "nome": {
+    "População por regime de ocupação, proprietários com empréstimo, Países Baixos": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% da população": 1
+   }
+  },
+  "nacional|pt|hab-ilc-lvho02-a-total-total-own-l-pc-pt-2020": {
+   "nome": {
+    "População por regime de ocupação, proprietários com empréstimo, Portugal": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% da população": 1
+   }
+  },
+  "nacional|pt|hab-ilc-lvho02-a-total-total-own-l-pc-pt-2025": {
+   "nome": {
+    "População por regime de ocupação, proprietários com empréstimo, Portugal": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% da população": 1
+   }
+  },
+  "nacional|pt|hab-ilc-lvho02-a-total-total-own-l-pc-ro-2025": {
+   "nome": {
+    "População por regime de ocupação, proprietários com empréstimo, Roménia": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% da população": 1
+   }
+  },
+  "nacional|pt|hab-ilc-lvho02-a-total-total-own-nl-pc-eu27_2020-2025": {
+   "nome": {
+    "População por regime de ocupação, proprietários sem empréstimo, União Europeia": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% da população": 1
+   }
+  },
+  "nacional|pt|hab-ilc-lvho02-a-total-total-own-nl-pc-pt-2025": {
+   "nome": {
+    "População por regime de ocupação, proprietários sem empréstimo, Portugal": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% da população": 1
+   }
+  },
+  "nacional|pt|hab-ilc-lvho02-a-total-total-rent-fr-pc-eu27_2020-2025": {
+   "nome": {
+    "População por regime de ocupação, inquilinos a renda reduzida ou gratuita, União Europeia": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% da população": 1
+   }
+  },
+  "nacional|pt|hab-ilc-lvho02-a-total-total-rent-fr-pc-pt-2025": {
+   "nome": {
+    "População por regime de ocupação, inquilinos a renda reduzida ou gratuita, Portugal": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% da população": 1
+   }
+  },
+  "nacional|pt|hab-ilc-lvho02-a-total-total-rent-mkt-pc-de-2025": {
+   "nome": {
+    "População por regime de ocupação, inquilinos a preços de mercado, Alemanha": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% da população": 1
+   }
+  },
+  "nacional|pt|hab-ilc-lvho02-a-total-total-rent-mkt-pc-eu27_2020-2025": {
+   "nome": {
+    "População por regime de ocupação, inquilinos a preços de mercado, União Europeia": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% da população": 1
+   }
+  },
+  "nacional|pt|hab-ilc-lvho02-a-total-total-rent-mkt-pc-pt-2020": {
+   "nome": {
+    "População por regime de ocupação, inquilinos a preços de mercado, Portugal": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% da população": 1
+   }
+  },
+  "nacional|pt|hab-ilc-lvho02-a-total-total-rent-mkt-pc-pt-2025": {
+   "nome": {
+    "População por regime de ocupação, inquilinos a preços de mercado, Portugal": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% da população": 1
+   }
+  },
+  "nacional|pt|hab-ilc-lvho05a-a-pc-total-total-t-cy-2025": {
+   "nome": {
+    "População em habitações sobrelotadas, Chipre": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% da população": 1
+   }
+  },
+  "nacional|pt|hab-ilc-lvho05a-a-pc-total-total-t-eu27_2020-2025": {
+   "nome": {
+    "População em habitações sobrelotadas, União Europeia": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% da população": 1
+   }
+  },
+  "nacional|pt|hab-ilc-lvho05a-a-pc-total-total-t-pt-2025": {
+   "nome": {
+    "População em habitações sobrelotadas, Portugal": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% da população": 1
+   }
+  },
+  "nacional|pt|hab-ilc-lvho05a-a-pc-total-total-t-ro-2025": {
+   "nome": {
+    "População em habitações sobrelotadas, Roménia": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% da população": 1
+   }
+  },
+  "nacional|pt|hab-ilc-lvho05a-a-pc-total-y16-29-t-eu27_2020-2025": {
+   "nome": {
+    "População em habitações sobrelotadas, dezasseis a vinte e nove anos, União Europeia": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% das pessoas dos 16 aos 29 anos": 1
+   }
+  },
+  "nacional|pt|hab-ilc-lvho05a-a-pc-total-y16-29-t-pt-2025": {
+   "nome": {
+    "População em habitações sobrelotadas, dezasseis a vinte e nove anos, Portugal": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% das pessoas dos 16 aos 29 anos": 1
+   }
+  },
+  "nacional|pt|hab-ilc-lvho07a-a-pc-total-y16-29-t-el-2025": {
+   "nome": {
+    "Sobrecarga do custo da habitação, dezasseis a vinte e nove anos, Grécia": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% das pessoas dos 16 aos 29 anos": 1
+   }
+  },
+  "nacional|pt|hab-ilc-lvho07a-a-pc-total-y16-29-t-eu27_2020-2025": {
+   "nome": {
+    "Sobrecarga do custo da habitação, dezasseis a vinte e nove anos, União Europeia": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% das pessoas dos 16 aos 29 anos": 1
+   }
+  },
+  "nacional|pt|hab-ilc-lvho07a-a-pc-total-y16-29-t-pt-2025": {
+   "nome": {
+    "Sobrecarga do custo da habitação, dezasseis a vinte e nove anos, Portugal": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% das pessoas dos 16 aos 29 anos": 1
+   }
+  },
+  "nacional|pt|hab-ilc-lvho07c-a-pc-own-l-eu27_2020-2025": {
+   "nome": {
+    "Sobrecarga do custo da habitação, proprietários com empréstimo, União Europeia": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% de quem tem casa própria com empréstimo": 1
+   }
+  },
+  "nacional|pt|hab-ilc-lvho07c-a-pc-own-l-pt-2025": {
+   "nome": {
+    "Sobrecarga do custo da habitação, proprietários com empréstimo, Portugal": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% de quem tem casa própria com empréstimo": 1
+   }
+  },
+  "nacional|pt|hab-ilc-lvho07c-a-pc-own-nl-eu27_2020-2025": {
+   "nome": {
+    "Sobrecarga do custo da habitação, proprietários sem empréstimo, União Europeia": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% de quem tem casa própria sem empréstimo": 1
+   }
+  },
+  "nacional|pt|hab-ilc-lvho07c-a-pc-own-nl-pt-2025": {
+   "nome": {
+    "Sobrecarga do custo da habitação, proprietários sem empréstimo, Portugal": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% de quem tem casa própria sem empréstimo": 1
+   }
+  },
+  "nacional|pt|hab-ilc-lvho07c-a-pc-rent-fr-eu27_2020-2025": {
+   "nome": {
+    "Sobrecarga do custo da habitação, inquilinos a renda reduzida ou gratuita, União Europeia": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% de quem ocupa a renda reduzida ou sem renda": 1
+   }
+  },
+  "nacional|pt|hab-ilc-lvho07c-a-pc-rent-fr-pt-2025": {
+   "nome": {
+    "Sobrecarga do custo da habitação, inquilinos a renda reduzida ou gratuita, Portugal": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% de quem ocupa a renda reduzida ou sem renda": 1
+   }
+  },
+  "nacional|pt|hab-ilc-lvho07c-a-pc-rent-mkt-eu27_2020-2025": {
+   "nome": {
+    "Sobrecarga do custo da habitação, inquilinos a preços de mercado, União Europeia": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% de quem arrenda a preços de mercado": 1
+   }
+  },
+  "nacional|pt|hab-ilc-lvho07c-a-pc-rent-mkt-fi-2025": {
+   "nome": {
+    "Sobrecarga do custo da habitação, inquilinos a preços de mercado, Finlândia": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% de quem arrenda a preços de mercado": 1
+   }
+  },
+  "nacional|pt|hab-ilc-lvho07c-a-pc-rent-mkt-pt-2015": {
+   "nome": {
+    "Sobrecarga do custo da habitação, inquilinos a preços de mercado, Portugal": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% de quem arrenda a preços de mercado": 1
+   }
+  },
+  "nacional|pt|hab-ilc-lvho07c-a-pc-rent-mkt-pt-2020": {
+   "nome": {
+    "Sobrecarga do custo da habitação, inquilinos a preços de mercado, Portugal": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% de quem arrenda a preços de mercado": 1
+   }
+  },
+  "nacional|pt|hab-ilc-lvho07c-a-pc-rent-mkt-pt-2025": {
+   "nome": {
+    "Sobrecarga do custo da habitação, inquilinos a preços de mercado, Portugal": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% de quem arrenda a preços de mercado": 1
+   }
+  },
+  "nacional|pt|hab-ilc-lvho07c-a-pc-rent-mkt-ro-2025": {
+   "nome": {
+    "Sobrecarga do custo da habitação, inquilinos a preços de mercado, Roménia": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% de quem arrenda a preços de mercado": 1
+   }
+  },
+  "nacional|pt|hab-ilc-lvho07c-a-pc-total-cy-2025": {
+   "nome": {
+    "Sobrecarga do custo da habitação, Chipre": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% da população": 1
+   }
+  },
+  "nacional|pt|hab-ilc-lvho07c-a-pc-total-el-2025": {
+   "nome": {
+    "Sobrecarga do custo da habitação, Grécia": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% da população": 1
+   }
+  },
+  "nacional|pt|hab-ilc-lvho07c-a-pc-total-eu27_2020-2015": {
+   "nome": {
+    "Sobrecarga do custo da habitação, União Europeia": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% da população": 1
+   }
+  },
+  "nacional|pt|hab-ilc-lvho07c-a-pc-total-eu27_2020-2025": {
+   "nome": {
+    "Sobrecarga do custo da habitação, União Europeia": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% da população": 1
+   }
+  },
+  "nacional|pt|hab-ilc-lvho07c-a-pc-total-pt-2015": {
+   "nome": {
+    "Sobrecarga do custo da habitação, Portugal": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% da população": 1
+   }
+  },
+  "nacional|pt|hab-ilc-lvho07c-a-pc-total-pt-2025": {
+   "nome": {
+    "Sobrecarga do custo da habitação, Portugal": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% da população": 1
+   }
+  },
+  "nacional|pt|hab-ilc-lvps08-a-y18-34-t-pc-eu27_2020-2025": {
+   "nome": {
+    "Jovens que vivem com os pais ou partilham o rendimento do agregado, dezoito a trinta e quatro anos, União Europeia": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% das pessoas dos 18 aos 34 anos": 1
+   }
+  },
+  "nacional|pt|hab-ilc-lvps08-a-y18-34-t-pc-pt-2025": {
+   "nome": {
+    "Jovens que vivem com os pais ou partilham o rendimento do agregado, dezoito a trinta e quatro anos, Portugal": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% das pessoas dos 18 aos 34 anos": 1
+   }
+  },
+  "nacional|pt|hab-ilc-lvps08-a-y25-34-t-pc-dk-2025": {
+   "nome": {
+    "Jovens que vivem com os pais ou partilham o rendimento do agregado, vinte e cinco a trinta e quatro anos, Dinamarca": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% das pessoas dos 25 aos 34 anos": 1
+   }
+  },
+  "nacional|pt|hab-ilc-lvps08-a-y25-34-t-pc-eu27_2020-2025": {
+   "nome": {
+    "Jovens que vivem com os pais ou partilham o rendimento do agregado, vinte e cinco a trinta e quatro anos, União Europeia": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% das pessoas dos 25 aos 34 anos": 1
+   }
+  },
+  "nacional|pt|hab-ilc-lvps08-a-y25-34-t-pc-hr-2025": {
+   "nome": {
+    "Jovens que vivem com os pais ou partilham o rendimento do agregado, vinte e cinco a trinta e quatro anos, Croácia": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% das pessoas dos 25 aos 34 anos": 1
+   }
+  },
+  "nacional|pt|hab-ilc-lvps08-a-y25-34-t-pc-pt-2015": {
+   "nome": {
+    "Jovens que vivem com os pais ou partilham o rendimento do agregado, vinte e cinco a trinta e quatro anos, Portugal": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% das pessoas dos 25 aos 34 anos": 1
+   }
+  },
+  "nacional|pt|hab-ilc-lvps08-a-y25-34-t-pc-pt-2020": {
+   "nome": {
+    "Jovens que vivem com os pais ou partilham o rendimento do agregado, vinte e cinco a trinta e quatro anos, Portugal": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% das pessoas dos 25 aos 34 anos": 1
+   }
+  },
+  "nacional|pt|hab-ilc-lvps08-a-y25-34-t-pc-pt-2025": {
+   "nome": {
+    "Jovens que vivem com os pais ou partilham o rendimento do agregado, vinte e cinco a trinta e quatro anos, Portugal": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% das pessoas dos 25 aos 34 anos": 1
+   }
+  },
+  "nacional|pt|hab-ilc-mded01-a-total-total-pc-cy-2025": {
+   "nome": {
+    "Parte do rendimento gasta na habitação, Chipre": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% do rendimento disponível das famílias": 1
+   }
+  },
+  "nacional|pt|hab-ilc-mded01-a-total-total-pc-el-2025": {
+   "nome": {
+    "Parte do rendimento gasta na habitação, Grécia": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% do rendimento disponível das famílias": 1
+   }
+  },
+  "nacional|pt|hab-ilc-mded01-a-total-total-pc-eu27_2020-2025": {
+   "nome": {
+    "Parte do rendimento gasta na habitação, União Europeia": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% do rendimento disponível das famílias": 1
+   }
+  },
+  "nacional|pt|hab-ilc-mded01-a-total-total-pc-pt-2015": {
+   "nome": {
+    "Parte do rendimento gasta na habitação, Portugal": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% do rendimento disponível das famílias": 1
+   }
+  },
+  "nacional|pt|hab-ilc-mded01-a-total-total-pc-pt-2025": {
+   "nome": {
+    "Parte do rendimento gasta na habitação, Portugal": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% do rendimento disponível das famílias": 1
+   }
+  },
+  "nacional|pt|hab-ilc-mdho06a-a-pc-total-t-total-eu27_2020-2023": {
+   "nome": {
+    "Privação severa da habitação, União Europeia": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% da população": 1
+   }
+  },
+  "nacional|pt|hab-ilc-mdho06a-a-pc-total-t-total-lv-2023": {
+   "nome": {
+    "Privação severa da habitação, Letónia": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% da população": 1
+   }
+  },
+  "nacional|pt|hab-ilc-mdho06a-a-pc-total-t-total-mt-2023": {
+   "nome": {
+    "Privação severa da habitação, Malta": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% da população": 1
+   }
+  },
+  "nacional|pt|hab-ilc-mdho06a-a-pc-total-t-total-pt-2023": {
+   "nome": {
+    "Privação severa da habitação, Portugal": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% da população": 1
+   }
+  },
+  "nacional|pt|hab-ilc-mdho06a-a-pc-total-t-y16-29-eu27_2020-2023": {
+   "nome": {
+    "Privação severa da habitação, dezasseis a vinte e nove anos, União Europeia": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% das pessoas dos 16 aos 29 anos": 1
+   }
+  },
+  "nacional|pt|hab-ilc-mdho06a-a-pc-total-t-y16-29-pt-2023": {
+   "nome": {
+    "Privação severa da habitação, dezasseis a vinte e nove anos, Portugal": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% das pessoas dos 16 aos 29 anos": 1
+   }
+  },
+  "nacional|pt|hab-imprensa-acampados": {
+   "nome": {
+    "Comunicado dos acampados, pela imprensa": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "citação": 1
+   }
+  },
+  "nacional|pt|hab-imprensa-amorim": {
+   "nome": {
+    "Declaração do ministro dos Assuntos Parlamentares, pela imprensa": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "citação": 1
+   }
+  },
+  "nacional|pt|hab-imprensa-assistidos": {
+   "nome": {
+    "Pessoas assistidas, pela imprensa": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "citação": 1
+   }
+  },
+  "nacional|pt|hab-imprensa-debate-custos": {
+   "nome": {
+    "Afirmação do primeiro-ministro sobre os preços, pela imprensa": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "citação": 1
+   }
+  },
+  "nacional|pt|hab-imprensa-debate-protecao": {
+   "nome": {
+    "Afirmação do primeiro-ministro sobre a proteção dos inquilinos, pela imprensa": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "citação": 1
+   }
+  },
+  "nacional|pt|hab-imprensa-feridos35": {
+   "nome": {
+    "Feridos segundo um dirigente do BE, pela imprensa": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "citação": 1
+   }
+  },
+  "nacional|pt|hab-imprensa-feridos37": {
+   "nome": {
+    "Feridos segundo o movimento, pela imprensa": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "citação": 1
+   }
+  },
+  "nacional|pt|hab-imprensa-feridos39": {
+   "nome": {
+    "Feridos segundo a organização, pela imprensa": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "citação": 1
+   }
+  },
+  "nacional|pt|hab-imprensa-hospital": {
+   "nome": {
+    "Pessoas encaminhadas para o hospital, pela imprensa": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "citação": 1
+   }
+  },
+  "nacional|pt|hab-imprensa-igai": {
+   "nome": {
+    "Processo da inspeção, pela imprensa": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "citação": 1
+   }
+  },
+  "nacional|pt|hab-imprensa-mai": {
+   "nome": {
+    "Declaração do ministro da Administração Interna, pela imprensa": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "citação": 1
+   }
+  },
+  "nacional|pt|hab-imprensa-manif-euronews": {
+   "nome": {
+    "Organizações da plataforma, pela Euronews": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "texto da fonte": 1
+   }
+  },
+  "nacional|pt|hab-imprensa-manif-lusa": {
+   "nome": {
+    "Manifestantes em Lisboa, pela notícia que cita a Lusa": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "texto da fonte": 1
+   }
+  },
+  "nacional|pt|hab-imprensa-manif-lusa-organizacoes": {
+   "nome": {
+    "Organizações da plataforma, pela notícia que cita a Lusa": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "texto da fonte": 1
+   }
+  },
+  "nacional|pt|hab-imprensa-manif-rtp": {
+   "nome": {
+    "Manifestantes no Porto, pela RTP": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "texto da fonte": 1
+   }
+  },
+  "nacional|pt|hab-imprensa-pm-15": {
+   "nome": {
+    "Declaração do primeiro-ministro após a intervenção, pela imprensa": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "citação": 1
+   }
+  },
+  "nacional|pt|hab-imprensa-pm-16": {
+   "nome": {
+    "Declaração posterior do primeiro-ministro, pela imprensa": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "citação": 1
+   }
+  },
+  "nacional|pt|hab-imprensa-psp-ferido": {
+   "nome": {
+    "Polícia ferido, segundo a PSP, pela imprensa": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "citação": 1
+   }
+  },
+  "nacional|pt|hab-imprensa-renda-metade": {
+   "nome": {
+    "Afirmação da plataforma sobre renda e salário, pela imprensa": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "texto da fonte": 1
+   }
+  },
+  "nacional|pt|hab-imprensa-tendas": {
+   "nome": {
+    "Retirada das tendas, pela RTP": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "texto da fonte": 1
+   }
+  },
+  "nacional|pt|hab-ine-calendario-juro": {
+   "nome": {
+    "Divulgação do juro implícito na habitação": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "data anunciada": 1
+   }
+  },
+  "nacional|pt|hab-ine-calendario-precos-locais": {
+   "nome": {
+    "Divulgação dos preços locais da habitação": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "data anunciada": 1
+   }
+  },
+  "nacional|pt|hab-ine-censos-0012501-40": {
+   "nome": {
+    "Alojamentos vagos para venda ou arrendamento": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "alojamentos": 1
+   }
+  },
+  "nacional|pt|hab-ine-censos-0012501-41": {
+   "nome": {
+    "Alojamentos vagos por outros motivos": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "alojamentos": 1
+   }
+  },
+  "nacional|pt|hab-ine-censos-0012517-0": {
+   "nome": {
+    "Proporção de alojamentos vagos nos Censos": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% dos alojamentos familiares clássicos": 1
+   }
+  },
+  "nacional|pt|hab-ine-iphab-homologa": {
+   "nome": {
+    "Variação homóloga dos preços da habitação": 1
+   },
+   "periodo": {
+    "no #.º trimestre de #": 1
+   },
+   "unidade": {
+    "% de variação homóloga": 1
+   }
+  },
+  "nacional|pt|hab-ine-juro-implicito": {
+   "nome": {
+    "Taxa de juro implícita no crédito à habitação": 1
+   },
+   "periodo": {
+    "em agosto de #": 1
+   },
+   "unidade": {
+    "% de juro": 1
+   }
+  },
+  "nacional|pt|hab-ine-preco-lisboa": {
+   "nome": {
+    "Preço mediano das vendas em Lisboa": 1
+   },
+   "periodo": {
+    "no #.º trimestre de #": 1
+   },
+   "unidade": {
+    "euros por metro quadrado": 1
+   }
+  },
+  "nacional|pt|hab-ine-preco-mediano": {
+   "nome": {
+    "Preço mediano das vendas em Portugal": 1
+   },
+   "periodo": {
+    "no #.º trimestre de #": 1
+   },
+   "unidade": {
+    "euros por metro quadrado": 1
+   }
+  },
+  "nacional|pt|hab-ine-preco-porto": {
+   "nome": {
+    "Preço mediano das vendas no Porto": 1
+   },
+   "periodo": {
+    "no #.º trimestre de #": 1
+   },
+   "unidade": {
+    "euros por metro quadrado": 1
+   }
+  },
+  "nacional|pt|hab-ine-renda-lisboa": {
+   "nome": {
+    "Renda mediana dos novos contratos em Lisboa": 1
+   },
+   "periodo": {
+    "no #.º trimestre de #": 1
+   },
+   "unidade": {
+    "euros por metro quadrado": 1
+   }
+  },
+  "nacional|pt|hab-ine-renda-porto": {
+   "nome": {
+    "Renda mediana dos novos contratos no Porto": 1
+   },
+   "periodo": {
+    "no #.º trimestre de #": 1
+   },
+   "unidade": {
+    "euros por metro quadrado": 1
+   }
+  },
+  "nacional|pt|hab-ine-renda-portugal": {
+   "nome": {
+    "Renda mediana dos novos contratos em Portugal": 1
+   },
+   "periodo": {
+    "no #.º trimestre de #": 1
+   },
+   "unidade": {
+    "euros por metro quadrado": 1
+   }
+  },
+  "nacional|pt|hab-ine-vagos-total": {
+   "nome": {
+    "Alojamentos vagos nos Censos": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "alojamentos": 1
+   }
+  },
+  "nacional|pt|hab-livre-reinvestimento": {
+   "nome": {
+    "Proposta do Livre sobre reinvestimento": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "citação": 1
+   }
+  },
+  "nacional|pt|hab-oe-apoio-arrendamento": {
+   "nome": {
+    "Orçamento do acesso à habitação e apoio ao arrendamento": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "milhões de euros": 1
+   }
+  },
+  "nacional|pt|hab-oe-apoios-jovens": {
+   "nome": {
+    "Apoios à habitação dos jovens no Orçamento": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "texto da fonte": 1
+   }
+  },
+  "nacional|pt|hab-oe-fiscal": {
+   "nome": {
+    "Medidas fiscais da habitação no Orçamento": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "texto da fonte": 1
+   }
+  },
+  "nacional|pt|hab-oe-habitacao-orcamento": {
+   "nome": {
+    "Orçamento do programa Habitação": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "milhões de euros": 1
+   }
+  },
+  "nacional|pt|hab-oe-irs-rendas-impacto": {
+   "nome": {
+    "Impacto na receita da redução do IRS nas rendas": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "milhões de euros": 1
+   }
+  },
+  "nacional|pt|hab-oe-iva-impacto": {
+   "nome": {
+    "Impacto na receita da redução do IVA na construção": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "milhões de euros": 1
+   }
+  },
+  "nacional|pt|hab-oe-legenda-invariante": {
+   "nome": {
+    "Legenda das medidas invariantes do Orçamento": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "texto da fonte": 1
+   }
+  },
+  "nacional|pt|hab-oe-licenciamento": {
+   "nome": {
+    "Orçamento da gestão urbanística e qualidade do edificado": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "milhões de euros": 1
+   }
+  },
+  "nacional|pt|hab-oe-oferta": {
+   "nome": {
+    "Oferta de habitação no Orçamento": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "texto da fonte": 1
+   }
+  },
+  "nacional|pt|hab-oe-oferta-publica": {
+   "nome": {
+    "Orçamento da oferta e reabilitação habitacional": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "milhões de euros": 1
+   }
+  },
+  "nacional|pt|hab-pan-caucoes": {
+   "nome": {
+    "Proposta do PAN sobre cauções": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "citação": 1
+   }
+  },
+  "nacional|pt|hab-pan-controlo": {
+   "nome": {
+    "Proposta do PAN sobre controlo de rendas": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "citação": 1
+   }
+  },
+  "nacional|pt|hab-pan-tetos": {
+   "nome": {
+    "Proposta do PAN sobre limites às rendas": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "citação": 1
+   }
+  },
+  "nacional|pt|hab-pcp-rendas": {
+   "nome": {
+    "Proposta do PCP sobre rendas": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "citação": 1
+   }
+  },
+  "nacional|pt|hab-plataforma-reivindicacoes": {
+   "nome": {
+    "Reivindicações da plataforma": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "texto da fonte": 1
+   }
+  },
+  "nacional|pt|hab-prc-hicp-ainr-a-rch-a-avg-cp041-eu27_2020-2025": {
+   "nome": {
+    "Variação das rendas pagas, União Europeia": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% de variação média anual": 1
+   }
+  },
+  "nacional|pt|hab-prc-hicp-ainr-a-rch-a-avg-cp041-fi-2025": {
+   "nome": {
+    "Variação das rendas pagas, Finlândia": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% de variação média anual": 1
+   }
+  },
+  "nacional|pt|hab-prc-hicp-ainr-a-rch-a-avg-cp041-hr-2025": {
+   "nome": {
+    "Variação das rendas pagas, Croácia": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% de variação média anual": 1
+   }
+  },
+  "nacional|pt|hab-prc-hicp-ainr-a-rch-a-avg-cp041-pt-2025": {
+   "nome": {
+    "Variação das rendas pagas, Portugal": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% de variação média anual": 1
+   }
+  },
+  "nacional|pt|hab-prc-hicp-minr-m-rch-a-cp041-eu27_2020-2026-09": {
+   "nome": {
+    "Variação das rendas pagas, União Europeia": 1
+   },
+   "periodo": {
+    "em setembro de #": 1
+   },
+   "unidade": {
+    "% de variação anual": 1
+   }
+  },
+  "nacional|pt|hab-prc-hicp-minr-m-rch-a-cp041-pt-2026-09": {
+   "nome": {
+    "Variação das rendas pagas, Portugal": 1
+   },
+   "periodo": {
+    "em setembro de #": 1
+   },
+   "unidade": {
+    "% de variação anual": 1
+   }
+  },
+  "nacional|pt|hab-prc-hpi-q-q-total-i15-q-eu27_2020-2026-q2": {
+   "nome": {
+    "Índice dos preços da habitação, União Europeia": 1
+   },
+   "periodo": {
+    "no #.º trimestre de #": 1
+   },
+   "unidade": {
+    "índice trimestral, 2015 igual a 100": 1
+   }
+  },
+  "nacional|pt|hab-prc-hpi-q-q-total-i15-q-fi-2026-q2": {
+   "nome": {
+    "Índice dos preços da habitação, Finlândia": 1
+   },
+   "periodo": {
+    "no #.º trimestre de #": 1
+   },
+   "unidade": {
+    "índice trimestral, 2015 igual a 100": 1
+   }
+  },
+  "nacional|pt|hab-prc-hpi-q-q-total-i15-q-hu-2026-q2": {
+   "nome": {
+    "Índice dos preços da habitação, Hungria": 1
+   },
+   "periodo": {
+    "no #.º trimestre de #": 1
+   },
+   "unidade": {
+    "índice trimestral, 2015 igual a 100": 1
+   }
+  },
+  "nacional|pt|hab-prc-hpi-q-q-total-i15-q-pt-2026-q2": {
+   "nome": {
+    "Índice dos preços da habitação, Portugal": 1
+   },
+   "periodo": {
+    "no #.º trimestre de #": 1
+   },
+   "unidade": {
+    "índice trimestral, 2015 igual a 100": 1
+   }
+  },
+  "nacional|pt|hab-prc-hpi-q-q-total-rch-a-eu27_2020-2026-q2": {
+   "nome": {
+    "Variação anual dos preços da habitação, União Europeia": 1
+   },
+   "periodo": {
+    "no #.º trimestre de #": 1
+   },
+   "unidade": {
+    "% de variação anual": 1
+   }
+  },
+  "nacional|pt|hab-prc-hpi-q-q-total-rch-a-fi-2026-q2": {
+   "nome": {
+    "Variação anual dos preços da habitação, Finlândia": 1
+   },
+   "periodo": {
+    "no #.º trimestre de #": 1
+   },
+   "unidade": {
+    "% de variação anual": 1
+   }
+  },
+  "nacional|pt|hab-prc-hpi-q-q-total-rch-a-pt-2026-q2": {
+   "nome": {
+    "Variação anual dos preços da habitação, Portugal": 1
+   },
+   "periodo": {
+    "no #.º trimestre de #": 1
+   },
+   "unidade": {
+    "% de variação anual": 1
+   }
+  },
+  "nacional|pt|hab-ps-mais-valias": {
+   "nome": {
+    "Proposta do PS sobre mais-valias": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "citação": 1
+   }
+  },
+  "nacional|pt|hab-ps-rendas": {
+   "nome": {
+    "Proposta do PS sobre rendas": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "citação": 1
+   }
+  },
+  "nacional|pt|hab-ps-vazias": {
+   "nome": {
+    "Afirmação do PS sobre casas vazias habitáveis": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "citação": 1
+   }
+  },
+  "nacional|pt|hab-sts-cobp-a-a-bprm-dw-cpa-f41001-x-410014-nsa-ths-eu27_2020-2025": {
+   "nome": {
+    "Alojamentos licenciados, União Europeia": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "mil alojamentos licenciados": 1
+   }
+  },
+  "nacional|pt|hab-sts-cobp-a-a-bprm-dw-cpa-f41001-x-410014-nsa-ths-pt-2025": {
+   "nome": {
+    "Alojamentos licenciados, Portugal": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "mil alojamentos licenciados": 1
+   }
+  },
+  "nacional|pt|hab-tipsho10-a-i15-a-avg-eu27_2020-2025": {
+   "nome": {
+    "Índice dos preços da habitação descontada a inflação, União Europeia": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "índice médio anual, 2015 igual a 100": 1
+   }
+  },
+  "nacional|pt|hab-tipsho10-a-i15-a-avg-fi-2025": {
+   "nome": {
+    "Índice dos preços da habitação descontada a inflação, Finlândia": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "índice médio anual, 2015 igual a 100": 1
+   }
+  },
+  "nacional|pt|hab-tipsho10-a-i15-a-avg-pt-2020": {
+   "nome": {
+    "Índice dos preços da habitação descontada a inflação, Portugal": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "índice médio anual, 2015 igual a 100": 1
+   }
+  },
+  "nacional|pt|hab-tipsho10-a-i15-a-avg-pt-2025": {
+   "nome": {
+    "Índice dos preços da habitação descontada a inflação, Portugal": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "índice médio anual, 2015 igual a 100": 1
+   }
+  },
+  "nacional|pt|hab-tipsho10-a-rch-a-avg-eu27_2020-2025": {
+   "nome": {
+    "Variação anual dos preços da habitação descontada a inflação, União Europeia": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% de variação média anual": 1
+   }
+  },
+  "nacional|pt|hab-tipsho10-a-rch-a-avg-pt-2025": {
+   "nome": {
+    "Variação anual dos preços da habitação descontada a inflação, Portugal": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% de variação média anual": 1
+   }
+  },
+  "nacional|pt|hab-tipsho60-a-ptir-i15-eu27_2020-2024": {
+   "nome": {
+    "Preços das casas em relação ao rendimento, União Europeia": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "índice do rácio preços/rendimento, 2015 igual a 100": 1
+   }
+  },
+  "nacional|pt|hab-tipsho60-a-ptir-i15-pt-2019": {
+   "nome": {
+    "Preços das casas em relação ao rendimento, Portugal": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "índice do rácio preços/rendimento, 2015 igual a 100": 1
+   }
+  },
+  "nacional|pt|hab-tipsho60-a-ptir-i15-pt-2024": {
+   "nome": {
+    "Preços das casas em relação ao rendimento, Portugal": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "índice do rácio preços/rendimento, 2015 igual a 100": 1
+   }
+  },
+  "nacional|pt|hab-tipsho60-a-ptir-i15-ro-2024": {
+   "nome": {
+    "Preços das casas em relação ao rendimento, Roménia": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "índice do rácio preços/rendimento, 2015 igual a 100": 1
+   }
+  },
+  "nacional|pt|hab-tipsho60-a-ptir-lt-avg-eu27_2020-2024": {
+   "nome": {
+    "Rácio preço-rendimento face à média de longo prazo, União Europeia": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "rácio preços/rendimento face à média de longo prazo": 1
+   }
+  },
+  "nacional|pt|hab-tipsho60-a-ptir-lt-avg-pt-2024": {
+   "nome": {
+    "Rácio preço-rendimento face à média de longo prazo, Portugal": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "rácio preços/rendimento face à média de longo prazo": 1
+   }
+  },
+  "nacional|pt|hab-tipsho60-a-ptir-lt-avg-ro-2024": {
+   "nome": {
+    "Rácio preço-rendimento face à média de longo prazo, Roménia": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "rácio preços/rendimento face à média de longo prazo": 1
+   }
+  },
+  "nacional|pt|hab-votacao-arrendamento": {
+   "nome": {
+    "Votação da reforma do arrendamento": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "texto da fonte": 1
+   }
+  },
+  "nacional|pt|hab-votacao-chega": {
+   "nome": {
+    "Votação da proposta do Chega": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "texto da fonte": 1
+   }
+  },
+  "nacional|pt|hab-votacao-livre": {
+   "nome": {
+    "Votação da proposta do Livre": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "texto da fonte": 1
+   }
+  },
+  "nacional|pt|hab-votacao-pan": {
+   "nome": {
+    "Votação da proposta do PAN": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "texto da fonte": 1
+   }
+  },
+  "nacional|pt|hab-yth-demo-030-a-avg-t-eu27_2020-2025": {
+   "nome": {
+    "Idade média de saída de casa dos pais, União Europeia": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "idade média em anos": 1
+   }
+  },
+  "nacional|pt|hab-yth-demo-030-a-avg-t-fi-2025": {
+   "nome": {
+    "Idade média de saída de casa dos pais, Finlândia": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "idade média em anos": 1
+   }
+  },
+  "nacional|pt|hab-yth-demo-030-a-avg-t-hr-2025": {
+   "nome": {
+    "Idade média de saída de casa dos pais, Croácia": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "idade média em anos": 1
+   }
+  },
+  "nacional|pt|hab-yth-demo-030-a-avg-t-pt-2015": {
+   "nome": {
+    "Idade média de saída de casa dos pais, Portugal": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "idade média em anos": 1
+   }
+  },
+  "nacional|pt|hab-yth-demo-030-a-avg-t-pt-2025": {
+   "nome": {
+    "Idade média de saída de casa dos pais, Portugal": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "idade média em anos": 1
+   }
+  },
   "nacional|pt|ihpc-variacao-homologa": {
    "dobra": {
     "Quanto mudaram os preços no consumidor em Portugal face ao mesmo mês do ano anterior, na medida harmonizada que permite comparar os países da União Europeia?": 1
@@ -3793,6 +7996,17 @@
     "% das pessoas": 2
    }
   },
+  "nacional|pt|oe-2027-calendario-generalidade": {
+   "nome": {
+    "Votação do Orçamento na generalidade": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "data anunciada": 1
+   }
+  },
   "nacional|pt|penalizacao-antecipacao-um-ano-com-factor-2026": {
    "nome": {
     "Corte na pensão por um ano de antecipação, com o fator de sustentabilidade": 1
@@ -4009,6 +8223,17 @@
     "% do VAB empresarial": 1
    }
   },
+  "nacional|pt|posicao-chega-habitacao": {
+   "nome": {
+    "Pacote do Chega para a habitação, pela imprensa": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "texto da fonte": 1
+   }
+  },
   "nacional|pt|posicao-de-investimento-internacional-2025": {
    "dobra": {
     "Qual é a diferença entre o que os residentes do país têm no resto do mundo e o que lhe devem (os ativos financeiros e os passivos face ao exterior), em percentagem do valor dos bens e serviços finais que a economia produz num ano (o PIB)?": 1
@@ -4027,6 +8252,17 @@
    },
    "unidade": {
     "% do PIB": 1
+   }
+  },
+  "nacional|pt|posicao-ps-rendas": {
+   "nome": {
+    "Proposta do PS para a dedução das rendas": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "texto da fonte": 1
    }
   },
   "nacional|pt|precos-da-habitacao-2025": {

@@ -1,3 +1,5 @@
+import { hasSerie, getSerie, allSeries } from './series.mjs';
+import rotulosDasSeries from '../data/rotulos-das-series.json' with { type: 'json' };
 import { nomeDoProjeto } from '../data/nomes-das-medidas.mjs';
 import { routePath } from './routes.mjs';
 import { ROTULOS_B1 } from '../data/rotulos-b1.mjs';
@@ -602,7 +604,25 @@ export function pecasDoCorpo({
           const id = linhaDoSitio(row);
           if (!id) throw new FalhaDoRegisto(`linha citada sem recibo: ${row}`);
           const nome = nomeDoProjeto(id)?.[lang];
-          const label = nome ? `<span data-nome="projeto" data-de-linha="${escapaAtributo(id)}">${escapaTexto(nome)}</span>` : (lang === 'pt' ? 'Fonte' : 'Source');
+          let label;
+          if (nome) label = `<span data-nome="projeto" data-de-linha="${escapaAtributo(id)}">${escapaTexto(nome)}</span>`;
+          else {
+            // Uma citação silenciosa pode apontar para a linha nacional ou da
+            // União. A relação com a série é declarada, nunca deduzida do id;
+            // uma linha sem série fica com o rótulo genérico da fonte (EO1).
+            const candidatas = hasSerie(id) ? [getSerie(id)] : allSeries().filter(s => s.linha_de_portugal === id || s.linha_da_uniao === id);
+            if (candidatas.length > 1) throw new FalhaDoRegisto(`linha citada sem série unívoca para o rótulo: ${id}`);
+            if (candidatas.length === 0) label = lang === 'pt' ? 'Fonte' : 'Source';
+            else {
+              const serie = candidatas[0];
+              const rotulo = rotulosDasSeries.rotulos.find(r => r.serie === serie.id)?.documento;
+              if (!rotulo || rotulo !== /** @type {{title: string}} */ (serie.document).title) throw new FalhaDoRegisto(`série citada sem rótulo conferido: ${serie.id}`);
+              // HB1-c2 (o achado 23): a porta diz a geografia da linha citada, para
+              // que as portas de Portugal e da União da mesma série se distingam.
+              const geografia = id === serie.linha_de_portugal ? 'Portugal' : id === serie.linha_da_uniao ? (lang === 'pt' ? 'União Europeia' : 'European Union') : '';
+              label = `<span lang="en" data-serie="${escapaAtributo(serie.id)}" data-serie-campo="document.title">${escapaTexto(rotulo)}</span>${geografia ? `, <span data-geografia-da-porta>${escapaTexto(geografia)}</span>` : ''}`;
+            }
+          }
           saida.html(`<li><a href="${escapaAtributo(routePath('linha', lang, { slug: id }))}">${label}</a></li>`);
         }
         saida.html('</ul></details>');

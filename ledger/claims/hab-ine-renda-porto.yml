@@ -1,0 +1,49 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "hab-ine-renda-porto"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "14,66"
+unit: "€/m2"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Valor mediano das rendas por m2 de novos contratos de arrendamento de alojamentos familiares (€); Porto"
+name_source: "Trimestral1.csv; linha 18; coluna 3"
+measure: "Valor mediano das rendas por m2 de novos contratos de arrendamento de alojamentos familiares (€); Porto"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "INE"
+document:
+  title: "Valor mediano das rendas por m2 de novos contratos de arrendamento de alojamentos familiares (€)"
+  edition: "2026-Q2"
+  locator: "Trimestral1.csv; linha 18; coluna 3"
+  source_sha256: "0d0f452c8fadef57404d12f2723435b1566d190f3f5ac547e3f0fb4605eb8cea"
+  kind: "serie"
+source_url: "https://www.ine.pt/ngt_server/attachfileu.jsp?look_parentBoui=817241613&att_display=n&att_download=y"
+access_date: "2026-10-19"
+reference_date: "2026-T2"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "Valor mediano das rendas por m2 de novos contratos de arrendamento de alojamentos familiares (€); Porto; 2.ºT 2026; 14,66"
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+# A quem o valor é creditado. Lista de entidades, ou campo nenhum.
+attributed_to:
+  - "INE"
+
+study: "a-casa-em-portugal-e-na-europa"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] CSV do mesmo destaque de rendas. Coluna trimestral, não últimos doze meses. · Cruzado de ResearchHub content/23 Habitacao · hab-ine-renda-porto."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

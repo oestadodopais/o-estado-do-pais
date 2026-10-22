@@ -28,12 +28,19 @@ export function dataDeCalendarioConferida(linha) {
   return linha.value===esperado&&String(linha.excerpt).includes(esperado);
 }
 
+/** HB1: um excerto textual do estudo da habitação é citação literal, não uma quantidade.
+ * Fica limitado às linhas desse estudo e sem a marca documental do V2-e, que tem a sua prova.
+ * @param {Record<string, any> | null | undefined} linha */
+export function textoDaHabitacao(linha) {
+  return !!linha && linha.unit === 'texto' && linha.study === 'a-casa-em-portugal-e-na-europa' && linha.texto_documental !== true;
+}
+
 /** @param {Record<string, any>} linha @param {Array<Record<string, any>> | undefined} seladas
  * @param {string} onde @param {string[]} erros */
 export function conferirHistoriaDoValor(linha, seladas, onde, erros) {
   const entradas = entradasDoValor(linha);
   // Uma afirmação textual tem história literal, sem passar pelo normalizador numérico.
-  const textual = (linha.afirmacao === true && linha.unit === 'afirmação') || textoDocumentalConferido(linha);
+  const textual = (linha.afirmacao === true && linha.unit === 'afirmação') || textoDocumentalConferido(linha) || textoDaHabitacao(linha);
   const meses = ['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'];
   const data = linha.unit === 'data' && /^(?:19|20)\d{2}-\d{2}-\d{2}$/.test(linha.reference_date ?? '');
   const formaData = (/** @type {unknown} */ v) => {
@@ -45,7 +52,7 @@ export function conferirHistoriaDoValor(linha, seladas, onde, erros) {
   if(data && entradas.length){
     if(!dataDeCalendarioConferida(linha)) erros.push(`${onde} história do valor: a data completa não coincide com a referência e o excerto.`);
   }
-  if (linha.afirmacao === true && linha.unit === 'afirmação' && linha.value !== linha.excerpt) erros.push(`${onde} história do valor: a afirmação textual não coincide com o excerto.`);
+  if (((linha.afirmacao === true && linha.unit === 'afirmação') || textoDaHabitacao(linha)) && linha.value !== linha.excerpt) erros.push(`${onde} história do valor: a afirmação textual não coincide com o excerto.`);
   if (seladas && JSON.stringify(entradas.slice(0, seladas.length).map(assinaturaDoValor)) !== JSON.stringify(seladas)) {
     erros.push(`${onde} história do valor: uma entrada selada foi retirada ou alterada.`);
   }

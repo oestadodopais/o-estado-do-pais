@@ -4872,8 +4872,8 @@ ainda por explicar (o achado 7), fica aqui como retirada.*
 
 | classe | texto | bloco | estado | razão |
 | --- | --- | --- | --- | --- |
-| conteudo | 3 809 afirmações · 444 de 3 809 calculadas · 2 767 de 3 809 linhas de concelhos | eo1-d | retirada | EX4: a contagem do livro-razão subiu para 3 892 com as 83 linhas do Mapa 2 da proposta de 2027 e da lei de 2026 |
-| conteudo | 3 809 claims · 444 of 3 809 calculated · 2 767 of 3 809 municipality rows | eo1-d | retirada | EX4: a contagem do livro-razão subiu para 3 892 com as 83 linhas do Mapa 2 da proposta de 2027 e da lei de 2026 |
+| conteudo | 3 809 afirmações · 444 de 3 809 calculadas · 2 767 de 3 809 linhas de concelhos | eo1-d | retirada | Recolhida do HTML construído, com a nova linha de variação das despesas com pessoal em contabilidade nacional. Leitura cruzada pendente. HB1-c: a contagem do livro-razão subiu para 3 998 com as linhas do estudo da habitação sobre o EO1. EX4: a contagem do livro-razão subiu para 3 892 com as 83 linhas do Mapa 2 da proposta de 2027 e da lei de 2026. |
+| conteudo | 3 809 claims · 444 of 3 809 calculated · 2 767 of 3 809 municipality rows | eo1-d | retirada | Recolhida do HTML construído, com a nova linha de variação das despesas com pessoal em contabilidade nacional. Leitura cruzada pendente. HB1-c: a contagem do livro-razão subiu para 3 998 com as linhas do estudo da habitação sobre o EO1. EX4: a contagem do livro-razão subiu para 3 892 com as 83 linhas do Mapa 2 da proposta de 2027 e da lei de 2026. |
 
 ## EO1-e: sinopse inglesa
 
@@ -4882,5 +4882,40 @@ ainda por explicar (o achado 7), fica aqui como retirada.*
 | conteudo | The new measures of the Budget are worth million euros to the balance, the ten lines the table marks as «invariante» (invariant) weigh million, and interest rises million: what changes most in the accounts is not in the table of measures. | eo1-e | viva | Recolhida do HTML construído e conferida pelo portão da voz. Leitura cruzada pendente. |
 | conteudo | Para onde vai o dinheiro do Estado em 2027, pela proposta de Orçamento | ex4 | viva | Recolhida do HTML construído pela conferência da voz, na correção EX4-c (a explicação de 2027 e a contagem do livro-razão com as 83 linhas do PF1). Leitura cruzada pendente. |
 | conteudo | Where the State’s money goes in 2027, by the Budget proposal | ex4 | viva | Recolhida do HTML construído pela conferência da voz, na correção EX4-c (a explicação de 2027 e a contagem do livro-razão com as 83 linhas do PF1). Leitura cruzada pendente. |
-| conteudo | 3 892 afirmações · 501 de 3 892 calculadas · 2 767 de 3 892 linhas de concelhos | ex4 | viva | Recolhida do HTML construído pela conferência da voz, na correção EX4-c (a explicação de 2027 e a contagem do livro-razão com as 83 linhas do PF1). Leitura cruzada pendente. |
-| conteudo | 3 892 claims · 501 of 3 892 calculated · 2 767 of 3 892 municipality rows | ex4 | viva | Recolhida do HTML construído pela conferência da voz, na correção EX4-c (a explicação de 2027 e a contagem do livro-razão com as 83 linhas do PF1). Leitura cruzada pendente. |
+| conteudo | 3 892 afirmações · 501 de 3 892 calculadas · 2 767 de 3 892 linhas de concelhos | ex4 | retirada | HB1-m: a contagem do livro-razão mudou com a fusão das linhas do estudo da habitação. Recolhida do HTML construído pela conferência da voz, na correção EX4-c (a explicação de 2027 e a contagem do livro-razão com as 83 linhas do PF1). Leitura cruzada pendente. |
+| conteudo | 3 892 claims · 501 of 3 892 calculated · 2 767 of 3 892 municipality rows | ex4 | retirada | HB1-m: a contagem do livro-razão mudou com a fusão das linhas do estudo da habitação. Recolhida do HTML construído pela conferência da voz, na correção EX4-c (a explicação de 2027 e a contagem do livro-razão com as 83 linhas do PF1). Leitura cruzada pendente. |
+| conteudo | 3 376 afirmações · 408 de 3 376 calculadas · 2 767 de 3 376 linhas de concelhos | v2d | retirada | HB1: a nova entrada e as contagens medidas substituem esta cadeia na construção. |
+| conteudo | 3 376 claims · 408 of 3 376 calculated · 2 767 of 3 376 municipality rows | v2d | retirada | HB1: a nova entrada e as contagens medidas substituem esta cadeia na construção. |
+
+## HB1: o estudo da habitação
+
+| classe | texto | bloco | estado | razão |
+|---|---|---|---|---|
+| conteudo | 3 557 afirmações · 423 de 3 557 calculadas · 2 767 de 3 557 linhas de concelhos | hb1b | retirada | HB1-b: as novas linhas seladas alteram as contagens do livro, medidas no HTML. |
+| conteudo | 3 557 claims · 423 of 3 557 calculated · 2 767 of 3 557 municipality rows | hb1b | retirada | HB1-b: as novas linhas seladas alteram as contagens do livro, medidas no HTML. |
+| conteudo | Descontada a inflação, o índice dos preços da habitação em é de em Portugal e na União, com igual a cem. Entre os inquilinos a preços de mercado, % estão em sobrecarga; os jovens saem de casa dos pais aos anos. | hb1b | retirada | HB1-b: substituída pela frase do mandato, com os valores conferidos nos tokens. |
+| navegacao | Fontes deste parágrafo | hb1 | viva | Cadeia medida no HTML ou composta dos tokens HB1; os valores e os nomes continuam sujeitos às conferências próprias. |
+| conteudo | Net of inflation, the index of housing prices in is in Portugal and in the Union, with equal to one hundred. Among tenants at market rents, % are overburdened; the young leave their parents’ home at years. | hb1b | retirada | HB1-b: substituída pela frase do mandato, com os valores conferidos nos tokens. |
+| conteudo | Portugal Habitação publicado a | hb1b | retirada | HB1-b: a edição ainda sem data declarada fica em preparação; a publicação será declarada na aterragem. |
+| conteudo | Portugal Housing published on | hb1b | retirada | HB1-b: a edição ainda sem data declarada fica em preparação; a publicação será declarada na aterragem. |
+| conteudo | Quanto custa uma casa, quem a paga e quem fica de fora, ao lado da União Europeia. | hb1 | viva | Cadeia medida no HTML ou composta dos tokens HB1; os valores e os nomes continuam sujeitos às conferências próprias. |
+| navegacao | Sources for this paragraph | hb1 | viva | Cadeia medida no HTML ou composta dos tokens HB1; os valores e os nomes continuam sujeitos às conferências próprias. |
+| conteudo | What a home costs, who pays for it and who is left out, next to the European Union. | hb1 | viva | Cadeia medida no HTML ou composta dos tokens HB1; os valores e os nomes continuam sujeitos às conferências próprias. |
+
+
+## HB1-b: correção das frases e do estado de publicação
+
+Cadeias extraídas por `scripts/medir-defeitos.mjs` do HTML da cabeça `7cc3543914edd0e9172f6409b12298e02bdd2a64`. A extração diagnóstica usou o dicionário de unidades exato dessa cabeça, obtido por `git show`; o portão final volta a conferir a construção e os módulos da mesma versão.
+
+| classe | texto | bloco | estado | razão |
+|---|---|---|---|---|
+| conteudo | House prices in Portugal rose more than in any country of the Union since , and the average household spends less on housing than the European average: the weight falls on those renting at market prices, % of whom are overburdened, and on the young, who leave their parents&#39; home at years. | hb1b | retirada | Extraída do HTML em /en/housing; os campos de origem continuam sujeitos às conferências próprias. HB1-c: a frase de abertura da área mudou com o resumo do estudo (os achados 2 e 9 da leitura da HB1-b: a inflação descontada, os proprietários e a sobrecarga). |
+| conteudo | Portugal Housing Edition in preparation | hb1b | viva | Extraída do HTML em /en/housing; os campos de origem continuam sujeitos às conferências próprias. |
+| conteudo | 3 566 claims · 427 of 3 566 calculated · 2 767 of 3 566 municipality rows | hb1b | retirada | Extraída do HTML em /en/ledger; os campos de origem continuam sujeitos às conferências próprias. HB1-c: contagem da HB1-b antes da fusão com o EO1; a contagem em vigor é 3 998. |
+| conteudo | Os preços das casas em Portugal subiram mais do que em qualquer país da União desde , e a família média gasta na casa menos do que a média europeia: o peso cai sobre quem arrenda a preços de mercado, % dos quais estão em sobrecarga, e sobre os jovens, que saem de casa dos pais aos anos. | hb1b | retirada | Extraída do HTML em /habitacao; os campos de origem continuam sujeitos às conferências próprias. HB1-c: a frase de abertura da área mudou com o resumo do estudo (os achados 2 e 9 da leitura da HB1-b: a inflação descontada, os proprietários e a sobrecarga). |
+| conteudo | Portugal Habitação Edição em preparação | hb1b | viva | Extraída do HTML em /habitacao; os campos de origem continuam sujeitos às conferências próprias. |
+| conteudo | 3 566 afirmações · 427 de 3 566 calculadas · 2 767 de 3 566 linhas de concelhos | hb1b | retirada | Extraída do HTML em /livro-razao; os campos de origem continuam sujeitos às conferências próprias. HB1-c: contagem da HB1-b antes da fusão com o EO1; a contagem em vigor é 3 998. |
+| conteudo | Descontada a inflação, os preços das casas em Portugal subiram desde mais do que em qualquer outro país da União, e a família média gasta na casa menos do que a média europeia: o peso cai sobre quem arrenda a preços de mercado, % dos quais estão em sobrecarga, e sobre os jovens, que saem de casa dos pais aos anos. | hb1c | viva | Recolhida do HTML construído em /habitacao: a frase de abertura da área com o resumo do estudo (os achados 2 e 9 da leitura da HB1-b). Leitura cruzada pendente. |
+| conteudo | Net of inflation, house prices in Portugal have risen since more than in any other country of the Union, and the average household spends less on housing than the European average: the weight falls on those renting at market prices, % of whom are overburdened, and on the young, who leave their parents&#39; home at years. | hb1c | viva | Recolhida do HTML construído em /en/housing: a gémea inglesa da frase de abertura da área. Leitura cruzada pendente. |
+| conteudo | 3 998 afirmações · 463 de 3 998 calculadas · 2 767 de 3 998 linhas de concelhos | hb1c | retirada | HB1-m: a contagem do livro-razão mudou com a fusão das 83 linhas do PF1. Recolhida do HTML construído em /livro-razao, com as linhas do estudo da habitação sobre o EO1. Leitura cruzada pendente. |
+| conteudo | 3 998 claims · 463 of 3 998 calculated · 2 767 of 3 998 municipality rows | hb1c | retirada | HB1-m: a contagem do livro-razão mudou com a fusão das 83 linhas do PF1. Recolhida do HTML construído em /en/ledger, com as linhas do estudo da habitação sobre o EO1. Leitura cruzada pendente. |

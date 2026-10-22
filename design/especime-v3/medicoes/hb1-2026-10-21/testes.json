@@ -1,0 +1,59 @@
+{
+  "habitacao": {
+    "codigo": 0,
+    "registo": "habitacao.log"
+  },
+  "hb1": {
+    "codigo": 0,
+    "registo": "hb1.log"
+  },
+  "regressao-compositor": {
+    "codigo": 0,
+    "registo": "regressao-compositor.log"
+  },
+  "derivacoes": {
+    "codigo": 0,
+    "registo": "derivacoes.log"
+  },
+  "selagem": {
+    "codigo": 0,
+    "registo": "selagem.log"
+  },
+  "livro-do-sitio": {
+    "codigo": 0,
+    "registo": "livro-do-sitio.log"
+  },
+  "afirmacoes-do-sitio": {
+    "codigo": 0,
+    "registo": "afirmacoes-do-sitio.log"
+  },
+  "cruzamento": {
+    "codigo": 0,
+    "registo": "cruzamento.log"
+  },
+  "registos": {
+    "codigo": 0,
+    "registo": "registos.log"
+  },
+  "documentos": {
+    "codigo": 0,
+    "registo": "documentos.log"
+  },
+  "familias": {
+    "codigo": 0,
+    "registo": "familias.log"
+  },
+  "renderizador": {
+    "codigo": 0,
+    "registo": "renderizador.log"
+  },
+  "travessia": {
+    "codigo": 0,
+    "registo": "travessia.log"
+  },
+  "leituras": {
+    "codigo": 1,
+    "registo": "leituras.log",
+    "motivo": "tests/leituras/ferramentas.py tentou abrir Chromium na sandbox e foi recusado; os restantes guiões terminaram com código 0."
+  }
+}

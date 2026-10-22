@@ -1,0 +1,43 @@
+PASS: 11 conferências HB1
+{
+  "codigo": 0,
+  "plantas": [
+    {
+      "planta": "valor",
+      "lingua": "pt",
+      "codigo": 1,
+      "mordida": "R1 A casa em Portugal e na Europa: block 3 carries value '999999' for row hab-tipsho10-a-i15-a-avg-pt-2025, whose ledger forms are ['206.41']"
+    },
+    {
+      "planta": "excerto",
+      "lingua": "pt",
+      "codigo": 1,
+      "mordida": "texto alterado: 12"
+    },
+    {
+      "planta": "literal",
+      "lingua": "pt",
+      "codigo": 1,
+      "mordida": "documento.pt.md.tmpl:66: literal sem linha: 987654321"
+    },
+    {
+      "planta": "valor",
+      "lingua": "en",
+      "codigo": 1,
+      "mordida": "R1 Housing in Portugal and in Europe: block 3 carries value '999999' for row hab-tipsho10-a-i15-a-avg-pt-2025, whose ledger forms are ['206.41']"
+    },
+    {
+      "planta": "excerto",
+      "lingua": "en",
+      "codigo": 1,
+      "mordida": "texto alterado: 12"
+    },
+    {
+      "planta": "literal",
+      "lingua": "en",
+      "codigo": 1,
+      "mordida": "documento.en.md.tmpl:66: literal sem linha: 987654321"
+    }
+  ],
+  "periodos": "conferidos"
+}

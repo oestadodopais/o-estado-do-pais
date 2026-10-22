@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import {createHash} from 'node:crypto';
 /**
  * A cadeia de cada algarismo de uma página de leitura, percorrida até onde ela
  * chega, e recusada quando não chega a lado nenhum.
@@ -168,6 +169,17 @@ function linhasDoSitio() {
     const doc = leJson(path.join(CRUZAMENTOS, ficheiro), `ledger/cruzamentos/${ficheiro}`);
     for (const [siteId, linha] of Object.entries(doc?.rows ?? {})) {
       if (linha?.rh_study && linha?.rh_id) mapa.set(`${linha.rh_study} ${linha.rh_id}`, siteId);
+    }
+  }
+  const file = path.join(RAIZ, 'ledger/provas/hb1/series.json');
+  if (fs.existsSync(file)) {
+    const proof = leJson(file, 'séries HB1');
+    if (proof.rh_study !== '28 Habitacao Estudo') throw new Error('HB1: estudo da cópia divergente');
+    for (const [id, r] of Object.entries(proof.rows)) {
+      if (!/^[a-z0-9-]+$/.test(id) || r.file !== `ledger/claims/${id}.yml`) throw new Error('HB1: caminho inválido');
+      const digest = createHash('sha256').update(fs.readFileSync(path.join(CLAIMS, `${id}.yml`))).digest('hex');
+      if (digest !== r.sha256) throw new Error('HB1: a linha mudou sem recompor o documento: '+id);
+      mapa.set(`${proof.rh_study} ${id}`, id);
     }
   }
   return mapa;

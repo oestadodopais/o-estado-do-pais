@@ -81,6 +81,7 @@ import { getClaim, loadClaims } from './ledger.mjs';
 import { valorComUnidade } from './livro.mjs';
 import { nomeNoRecibo } from './o-que-e-o-numero.mjs';
 import { NOMES_EO1 } from '../data/nomes-eo1.mjs';
+import { NOMES_HB1 } from '../data/nomes-hb1.mjs';
 import { unidadeDaLinha } from '../i18n/unidades.mjs';
 import { estadoDaMedida, palavraDoEstado } from './estado.mjs';
 import { prova } from './prova.mjs';
@@ -404,7 +405,7 @@ function modeloDaLinha(id, lang) {
     throw new Error(`cartões: falta o nome documental conferido de ${id}.`);
   }
   const textual = (claim.unit === 'texto' || claim.unit === 'afirmação') && claim.value === claim.excerpt;
-  const nomeTextual = Object.entries(NOMES_EO1).find(([chave]) => chave === id)?.[1][lang];
+  const nomeTextual = Object.entries({ ...NOMES_EO1, ...NOMES_HB1 }).find(([chave]) => chave === id)?.[1][lang];
   const figura = FIGURAS_PDM.find((f) => f.claim === id) ?? null;
   const estado = figura ? (estadoDaMedida(claim, figura.limiar) ?? 'sem') : 'sem';
 
@@ -454,7 +455,7 @@ function modeloDaLinha(id, lang) {
     estado: textual ? null : { estado, palavra: PALAVRA[estado] },
     meta,
     valores: textual && nomeTextual ? [...valores, {
-      origem: 'nome-eo1', linha: id, texto: nomeTextual,
+      origem: Object.hasOwn(NOMES_HB1, id) ? 'nome-hb1' : 'nome-eo1', linha: id, texto: nomeTextual,
     }] : valores,
     quadrados: null,
   };

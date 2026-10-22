@@ -691,8 +691,171 @@ const LISTA_SOCIAL = [
  * abrevia («NFC», «incl. NPISH») e a definição em português escreve o nome por
  * extenso. O nome por extenso é do glossário do Eurostat, e é ele que o declara.
  */
+/* HB1-c2 (o achado 16 da leitura da HB1-b): as definições do Eurostat das famílias
+   do estudo da habitação, cada uma lida do corpo alojado no motor (o glossário
+   Statistics Explained, a metainformação ESMS dos Censos ou a descrição do
+   conjunto), com o selo do pedido; escritas por
+   `design/especime-v3/medicoes/hb1-2026-10-21/correcao-hb1c/origens-hb1c2.py`. */
+export const ORIGENS_HB1C = {
+  "hb1c-eurostat-sobrecarga": {
+    "publicador": "Eurostat",
+    "documento": "Glossary:Housing cost overburden rate",
+    "url": "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:Housing_cost_overburden_rate",
+    "lido": "2026-10-21",
+    "excerto": "The housing cost overburden rate is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income ('net' of housing allowances).",
+    "selo": {
+      "motor": "content/23 Habitacao/source/eurostat/hb1c-glossario-housing-cost-overburden-rate.html",
+      "campo": "Glossário, primeiro parágrafo da definição",
+      "hora": "2026-10-21T13:01:29Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "bc7a042469b800d98f0a65b3ac4ffd8563ecb7d73c2b830af9ab56032b0a0786"
+    }
+  },
+  "hb1c-eurostat-custos-habitacao": {
+    "publicador": "Eurostat",
+    "documento": "Glossary:Housing cost overburden rate",
+    "url": "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:Housing_cost_overburden_rate",
+    "lido": "2026-10-21",
+    "excerto": "Housing costs refer to the monthly expenses associated with the right to live in a dwelling.",
+    "selo": {
+      "motor": "content/23 Habitacao/source/eurostat/hb1c-glossario-housing-cost-overburden-rate.html",
+      "campo": "Glossário, segundo parágrafo da definição",
+      "hora": "2026-10-21T13:01:29Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "bc7a042469b800d98f0a65b3ac4ffd8563ecb7d73c2b830af9ab56032b0a0786"
+    }
+  },
+  "hb1c-eurostat-sobrelotacao": {
+    "publicador": "Eurostat",
+    "documento": "Glossary:Overcrowding rate",
+    "url": "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:Overcrowding_rate",
+    "lido": "2026-10-21",
+    "excerto": "The overcrowding rate is defined as the percentage of the population living in an overcrowded household. A person is considered as living in an overcrowded household if the household does not have at its disposal a minimum number of rooms equal to:",
+    "selo": {
+      "motor": "content/23 Habitacao/source/eurostat/hb1c-glossario-overcrowding-rate.html",
+      "campo": "Glossário, primeiro parágrafo da definição",
+      "hora": "2026-10-21T13:01:29Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "56d4bb10e350913a8a166f121818246a93eecedbf1cdb6d44860cd8e77a96028"
+    }
+  },
+  "hb1c-eurostat-licenca": {
+    "publicador": "Eurostat",
+    "documento": "Glossary:Building permit",
+    "url": "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:Building_permit",
+    "lido": "2026-10-21",
+    "excerto": "A building permit is the final authorisation to start work on a building project.",
+    "selo": {
+      "motor": "content/23 Habitacao/source/eurostat/hb1c-glossario-building-permit.html",
+      "campo": "Glossário, primeiro parágrafo da definição",
+      "hora": "2026-10-21T13:01:30Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "88450fd6ffd786ecede259cdd033a6c6ddfaa07c6178200dbf55a5098458567c"
+    }
+  },
+  "hb1c-eurostat-ipH": {
+    "publicador": "Eurostat",
+    "documento": "Glossary:House price index (HPI)",
+    "url": "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:House_price_index_(HPI)",
+    "lido": "2026-10-21",
+    "excerto": "The house price index, abbreviated as HPI, is an index that measures the changes in the transaction prices of dwellings purchased by households.",
+    "selo": {
+      "motor": "content/23 Habitacao/source/eurostat/hb1c-glossario-house-price-index.html",
+      "campo": "Glossário, primeiro parágrafo da definição",
+      "hora": "2026-10-21T13:01:32Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "2fd2f2e7300cf787eeb2493cf37e14757ca4ad053441a9145ec58e6a944910ae"
+    }
+  },
+  "hb1c-eurostat-ihpc": {
+    "publicador": "Eurostat",
+    "documento": "Glossary:Harmonised index of consumer prices (HICP)",
+    "url": "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:Harmonised_index_of_consumer_prices_(HICP)",
+    "lido": "2026-10-21",
+    "excerto": "The harmonised index of consumer prices, abbreviated as HICP, is the consumer price index as it is calculated in the European Union (EU), according to a harmonised approach and a single set of definitions.",
+    "selo": {
+      "motor": "content/23 Habitacao/source/eurostat/hb1c-glossario-hicp.html",
+      "campo": "Glossário, primeiro parágrafo da definição",
+      "hora": "2026-10-21T13:01:32Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "360d59a994a933b45485e169e9b0683205adbd9c94f7c9c67946978b6965e731"
+    }
+  },
+  "hb1c-eurostat-privacao-severa": {
+    "publicador": "Eurostat",
+    "documento": "Glossary:Severe housing deprivation rate",
+    "url": "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:Severe_housing_deprivation_rate",
+    "lido": "2026-10-21",
+    "excerto": "Severe housing deprivation rate is defined as the percentage of population living in the dwelling which is considered as overcrowded, while also exhibiting at least one of the housing deprivation measures. Housing deprivation is a measure of poor amenities and is calculated by referring to those households with a leaking roof, no bath/shower and no indoor toilet, or a dwelling considered too dark.",
+    "selo": {
+      "motor": "content/23 Habitacao/source/eurostat/hb1b-severe-housing-deprivation.html",
+      "campo": "Glossário, dois parágrafos da definição",
+      "hora": "2026-10-21T00:08:08Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "bf8da5fc3936c9dbee32f1a2aa32cc3c924385f42c295bd6f4fa2993a867e9de"
+    }
+  },
+  "hb1c-eurostat-censos-ocupacao": {
+    "publicador": "Eurostat",
+    "documento": "Census 2021 round (cens_21)",
+    "url": "https://ec.europa.eu/eurostat/cache/metadata/en/cens_21_esms.htm",
+    "lido": "2026-10-21",
+    "excerto": "‘Occupied conventional dwellings’ are conventional dwellings which are the usual residence of one or more persons at the time of the census. ‘Unoccupied conventional dwellings’ are conventional dwellings which are not the usual residence of any person at the time of the census.",
+    "selo": {
+      "motor": "content/23 Habitacao/source/eurostat/hb1c-cens-21-esms2.html",
+      "campo": "Metainformação ESMS, conceitos e definições, estado de ocupação dos alojamentos clássicos",
+      "hora": "2026-10-21T13:02:06Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "0fa7ed395febccf4a8f088d7014998671378ffc47630c61a3611f5a5373a8db9"
+    }
+  },
+  "hb1c-eurostat-precos-reais": {
+    "publicador": "Eurostat",
+    "documento": "House price index, deflated - annual data",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsho10?format=JSON&lang=EN&geo=AT&geo=BE&geo=BG&geo=CY&geo=CZ&geo=DE&geo=DK&geo=EE&geo=EL&geo=ES&geo=FI&geo=FR&geo=HR&geo=HU&geo=IE&geo=IT&geo=LT&geo=LU&geo=LV&geo=MT&geo=NL&geo=PL&geo=PT&geo=RO&geo=SE&geo=SI&geo=SK&geo=EU27_2020&sinceTimePeriod=2015",
+    "lido": "2026-10-19",
+    "excerto": "The deflated house price index (or real house price index) is the ratio between the house price index (HPI) and the national accounts deflator for private final consumption expenditure (households and non-profit institutions serving households (NPISHs) ).",
+    "selo": {
+      "motor": "content/23 Habitacao/source/eurostat/tipsho10.json",
+      "campo": "extension.description",
+      "hora": "2026-10-19T13:38:54Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "8170b1e60e84453724a4630d5b7136c93ff37b1bcf92853a4e149bb6a8f6b3db"
+    }
+  },
+  "hb1c-eurostat-preco-rendimento": {
+    "publicador": "Eurostat",
+    "documento": "Standardised house price-to-income ratio - annual data",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsho60?format=JSON&lang=EN&geo=AT&geo=BE&geo=BG&geo=CY&geo=CZ&geo=DE&geo=DK&geo=EE&geo=EL&geo=ES&geo=FI&geo=FR&geo=HR&geo=HU&geo=IE&geo=IT&geo=LT&geo=LU&geo=LV&geo=MT&geo=NL&geo=PL&geo=PT&geo=RO&geo=SE&geo=SI&geo=SK&geo=EU27_2020&sinceTimePeriod=2015",
+    "lido": "2026-10-19",
+    "excerto": "The standardised house price-to-income ratio is defined as the ratio of the current price to income ratio relative to the long-term average price-to-income ratio, calculated over the period 2000 to the most recent data available. If the ratio equals 100, it means the current price-to-income ratio is equal to its long term average. House prices are provided by Eurostat, and income is calculated as adjusted household gross disposable income (B7G) per head of population based on Eurostat data.",
+    "selo": {
+      "motor": "content/23 Habitacao/source/eurostat/tipsho60.json",
+      "campo": "extension.description",
+      "hora": "2026-10-19T13:38:53Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "85a9de42aa41ef015150da57af82802ea164b3bbde1f706ddb241204dc5cb1e6"
+    }
+  },
+  "hb1c-eurostat-saida": {
+    "publicador": "Eurostat",
+    "documento": "Estimated average age of young persons leaving the parental household",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/yth_demo_030?format=JSON&lang=EN&geo=AT&geo=BE&geo=BG&geo=CY&geo=CZ&geo=DE&geo=DK&geo=EE&geo=EL&geo=ES&geo=FI&geo=FR&geo=HR&geo=HU&geo=IE&geo=IT&geo=LT&geo=LU&geo=LV&geo=MT&geo=NL&geo=PL&geo=PT&geo=RO&geo=SE&geo=SI&geo=SK&geo=EU27_2020&sinceTimePeriod=2015&sex=T",
+    "lido": "2026-10-19",
+    "excerto": "The indicator represents the age at which 50 % of the population no longer live in a household with their parent(s) (Source: EU-LFS).",
+    "selo": {
+      "motor": "content/23 Habitacao/source/eurostat/yth_demo_030.json",
+      "campo": "extension.description",
+      "hora": "2026-10-19T13:38:51Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "0e73a05402f94eace4fa33981b9f2e770a27d289fb0af7b91ef68c9e2bec244b"
+    }
+  }
+};
+
 export const ORIGENS_DAS_DEFINICOES = /** @type {const} */ ({
   ...ORIGENS_EX3,
+  ...ORIGENS_HB1C,
   ...ORIGENS_PENSAO,
   ...ORIGENS_C1C,
   /* TRÊS ORIGENS SELADAS NO MOTOR (B2, peça 1, segunda passagem de correção,
