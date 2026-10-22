@@ -4919,3 +4919,12 @@ Cadeias extraídas por `scripts/medir-defeitos.mjs` do HTML da cabeça `7cc35439
 | conteudo | Net of inflation, house prices in Portugal have risen since more than in any other country of the Union, and the average household spends less on housing than the European average: the weight falls on those renting at market prices, % of whom are overburdened, and on the young, who leave their parents&#39; home at years. | hb1c | viva | Recolhida do HTML construído em /en/housing: a gémea inglesa da frase de abertura da área. Leitura cruzada pendente. |
 | conteudo | 3 998 afirmações · 463 de 3 998 calculadas · 2 767 de 3 998 linhas de concelhos | hb1c | retirada | HB1-m: a contagem do livro-razão mudou com a fusão das 83 linhas do PF1. Recolhida do HTML construído em /livro-razao, com as linhas do estudo da habitação sobre o EO1. Leitura cruzada pendente. |
 | conteudo | 3 998 claims · 463 of 3 998 calculated · 2 767 of 3 998 municipality rows | hb1c | retirada | HB1-m: a contagem do livro-razão mudou com a fusão das 83 linhas do PF1. Recolhida do HTML construído em /en/ledger, com as linhas do estudo da habitação sobre o EO1. Leitura cruzada pendente. |
+
+## HB1-m: a fusão dos ramos da habitação e de main
+
+Cadeias copiadas da saída da conferência da voz sobre o HTML construído da cabeça 8707a759ddf523a7492da6f18f88888a2034a9f5.
+
+| classe | texto | bloco | estado | razão |
+|---|---|---|---|---|
+| conteudo | 4 081 afirmações · 520 de 4 081 calculadas · 2 767 de 4 081 linhas de concelhos | hb1m | viva | Recolhida do HTML construído pela conferência da voz na fusão HB1-m: as 83 linhas do PF1 e as linhas do estudo da habitação sobre o EO1. Leitura cruzada pendente. |
+| conteudo | 4 081 claims · 520 of 4 081 calculated · 2 767 of 4 081 municipality rows | hb1m | viva | Recolhida do HTML construído pela conferência da voz na fusão HB1-m: as 83 linhas do PF1 e as linhas do estudo da habitação sobre o EO1. Leitura cruzada pendente. |
