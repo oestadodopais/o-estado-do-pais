@@ -4,7 +4,7 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import {execFileSync} from 'node:child_process';
 import {parse} from 'node-html-parser';
-import {ORIGENS_HB1C} from '../src/data/figuras.mjs';
+import {ORIGENS_HB1C,ORIGENS_HB1E} from '../src/data/figuras.mjs';
 const normal=s=>String(s??'').replace(/\s+/g,' ').trim();
 const sha=b=>crypto.createHash('sha256').update(b).digest('hex');
 const safe=f=>typeof f==='string'&&/^content\/(23 Habitacao|24 Orcamento 2027 Analise|25 Orcamento 2027 Medidas)\/source\//.test(f)&&!f.split('/').includes('..');
@@ -68,27 +68,34 @@ export function conferirHb1(c,p,raw,body,reference={}){
 const seguroNoMotor=(/** @type {unknown} */ f)=>typeof f==='string'&&/^content\/[^/]+\/source\/[^\\]+$/.test(f)&&!f.split('/').includes('..');
 /** @param {string} ficheiro @param {Buffer} raw @param {string} campo */
 export function textoDaOrigemHb1c(ficheiro,raw,campo){
+ /* HB1-e: um PDF lê-se pela camada de texto (pdftotext -layout), com os espaços normalizados. */
+ if(ficheiro.endsWith('.pdf'))return normal(execFileSync('pdftotext',['-layout',ficheiro,'-'],{encoding:'utf8',maxBuffer:32*1024*1024,stdio:['ignore','pipe','ignore']}));
  if(ficheiro.endsWith('.json')){/** @type {any} */ let v=JSON.parse(raw.toString('utf8'));for(const k of String(campo).split('.'))v=v?.[k];return typeof v==='string'?normal(v):'';}
  const t=parse(raw.toString('utf8'));t.querySelectorAll('head,script,style').forEach(e=>e.remove());return normal(t.textContent);
 }
 /** @param {any} o @param {Buffer|undefined} raw */
-export function conferirOrigemHb1c(o,raw){
+export function conferirOrigemHb1c(o,raw,pdf=''){
  const s=o?.selo;if(!seguroNoMotor(s?.motor))return ['HB1-c origem: o ficheiro do selo não está no motor'];
  if(!raw)return ['HB1-c origem: corpo indisponível no motor'];
  const errors=[];if(sha(raw)!==s.sha256)errors.push('HB1-c origem: o sha256 do selo não é o do ficheiro no motor');
- let t='';try{t=textoDaOrigemHb1c(s.motor,raw,s.campo);}catch{errors.push('HB1-c origem: corpo ilegível');}
+ let t='';try{t=textoDaOrigemHb1c(pdf||s.motor,raw,s.campo);}catch{errors.push('HB1-c origem: corpo ilegível');}
  if(!normal(o.excerto)||!t.includes(normal(o.excerto)))errors.push('HB1-c origem: o excerto não está no corpo');
  return errors;
 }
 /** @param {string|undefined} motor @param {boolean} plantar */
 function conferirOrigensHb1c(motor,plantar){
  const errors=[],plantas=[];let origens=0;if(!motor)return {errors,plantas,origens};
- for(const [chave,o] of Object.entries(ORIGENS_HB1C)){
+ /* HB1-e (22.10.2026): as origens do INE, do Banco de Portugal e do Orçamento entram no mesmo laço;
+    um PDF lê-se do ficheiro no motor, e as plantas mordem na primeira origem de cada bloco. */
+ const plantadas=new Set();
+ for(const [chave,o] of [...Object.entries(ORIGENS_HB1C),...Object.entries(ORIGENS_HB1E)]){
   let raw;try{if(seguroNoMotor(o.selo?.motor))raw=fs.readFileSync(path.join(motor,o.selo.motor));}catch{}
-  errors.push(...conferirOrigemHb1c(o,raw).map(e=>chave+': '+e));origens++;
-  if(plantar&&raw&&!plantas.length){
+  const ler=(/** @type {any} */ x,/** @type {Buffer|undefined} */ r)=>String(x?.selo?.motor??'').endsWith('.pdf')&&r&&seguroNoMotor(x.selo.motor)?conferirOrigemHb1c(x,r,path.join(motor,x.selo.motor)):conferirOrigemHb1c(x,r);
+  errors.push(...ler(o,raw).map(e=>chave+': '+e));origens++;
+  const bloco=chave.slice(0,4)+(String(o.selo?.motor).endsWith('.pdf')?'-pdf':'');
+  if(plantar&&raw&&!plantadas.has(bloco)){plantadas.add(bloco);
    for(const [nome,mudar] of [['o sha256 trocado',(/** @type {any} */ x)=>{x.selo.sha256='0'.repeat(64);}],['o excerto alterado',(/** @type {any} */ x)=>{x.excerto+=' Alterado na planta HB1-c4.';}]]){
-    const bad=structuredClone(o);mudar(bad);const mensagem=conferirOrigemHb1c(bad,raw)[0];plantas.push({nome:'HB1-c origem: '+nome,mensagem});if(!mensagem)errors.push('HB1-c planta de origem sem recusa: '+nome);
+    const bad=structuredClone(o);mudar(bad);const mensagem=ler(bad,raw)[0];plantas.push({nome:'HB1-c origem: '+nome+(bloco==='hb1c'?'':' ('+bloco+')'),mensagem});if(!mensagem)errors.push('HB1-c planta de origem sem recusa: '+nome);
    }
   }
  }

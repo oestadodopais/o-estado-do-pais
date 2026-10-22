@@ -19728,28 +19728,31 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra novas operações de crédito à habitação"
+        "O montante das novas operações de empréstimos à habitação, incluindo as renegociações, concedidos pelos bancos (outras instituições financeiras monetárias) aos particulares (famílias e instituições sem fim lucrativo ao serviço das famílias) residentes na área do euro e aos emigrantes portugueses fora dela, em valores mensais em milhões de euros"
       ],
       "en": [
-        "The measure shows new housing loans"
+        "The amount of new housing loans, including renegotiations, granted by banks (other monetary financial institutions) to individuals (households and non-profit institutions serving households) resident in the euro area and to Portuguese emigrants outside it, as monthly values in million euros"
       ]
     },
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, em ",
         {
           "periodo": "hab-bpstat-12533724"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, in ",
         {
           "periodo": "hab-bpstat-12533724"
         },
         "."
       ]
-    }
+    },
+    "origens": [
+      "hb1e-bpstat-12533724"
+    ]
   },
   "hab-bpstat-12533735": {
     "nome": {
@@ -19758,28 +19761,31 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra taxa de juro das novas operações de crédito à habitação"
+        "A taxa de juro acordada anualizada das novas operações de empréstimos à habitação, incluindo as renegociações, concedidos pelos bancos (outras instituições financeiras monetárias) aos particulares (famílias e instituições sem fim lucrativo ao serviço das famílias) residentes na área do euro e aos emigrantes portugueses fora dela, em taxa mensal em percentagem"
       ],
       "en": [
-        "The measure shows interest rate on new housing loans"
+        "The annualised agreed interest rate on new housing loans, including renegotiations, granted by banks (other monetary financial institutions) to individuals (households and non-profit institutions serving households) resident in the euro area and to Portuguese emigrants outside it, as a monthly rate in percent"
       ]
     },
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, em ",
         {
           "periodo": "hab-bpstat-12533735"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, in ",
         {
           "periodo": "hab-bpstat-12533735"
         },
         "."
       ]
-    }
+    },
+    "origens": [
+      "hb1e-bpstat-12533735"
+    ]
   },
   "hab-bpstat-12557378": {
     "nome": {
@@ -19788,28 +19794,31 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra crédito à habitação das famílias em dívida"
+        "Os empréstimos à habitação das outras instituições financeiras monetárias a famílias e instituições sem fim lucrativo ao serviço das famílias, nos ativos do balanço dessas instituições em dados não consolidados, em posições mensais em milhões de euros pelo valor em fim do período"
       ],
       "en": [
-        "The measure shows outstanding household housing loans"
+        "Housing loans by other monetary financial institutions to households and non-profit institutions serving households, among the assets on the balance sheet of those institutions as non-consolidated data, as monthly positions in million euros at end-of-period value"
       ]
     },
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, Portugal, em ",
         {
           "periodo": "hab-bpstat-12557378"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, Portugal, in ",
         {
           "periodo": "hab-bpstat-12557378"
         },
         "."
       ]
-    }
+    },
+    "origens": [
+      "hb1e-bpstat-12557378"
+    ]
   },
   "hab-cens-21dwob-r3-a-dw-total-nr-pt-2021": {
     "nome": {
@@ -22215,22 +22224,22 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra divulgação do juro implícito na habitação"
+        "A data anunciada no calendário de divulgação do INE para «INDICADOR DE TAXAS DE JURO IMPLÍCITAS NO CRÉDITO À HABITAÇÃO»"
       ],
       "en": [
-        "The measure shows release of the implicit housing interest rate"
+        "The date announced in the INE release calendar for «INDICADOR DE TAXAS DE JURO IMPLÍCITAS NO CRÉDITO À HABITAÇÃO»"
       ]
     },
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, ",
         {
           "periodo": "hab-ine-calendario-juro"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, ",
         {
           "periodo": "hab-ine-calendario-juro"
         },
@@ -22245,22 +22254,22 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra divulgação dos preços locais da habitação"
+        "A data anunciada no calendário de divulgação do INE para «ESTATÍSTICAS DE PREÇOS NA HABITAÇÃO AO NÍVEL LOCAL»"
       ],
       "en": [
-        "The measure shows release of local house prices"
+        "The date announced in the INE release calendar for «ESTATÍSTICAS DE PREÇOS NA HABITAÇÃO AO NÍVEL LOCAL»"
       ]
     },
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, ",
         {
           "periodo": "hab-ine-calendario-precos-locais"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, ",
         {
           "periodo": "hab-ine-calendario-precos-locais"
         },
@@ -22275,28 +22284,32 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra alojamentos vagos para venda ou arrendamento"
+        "O número de alojamentos familiares clássicos vagos para venda ou arrendamento, sendo, para o INE, um alojamento familiar clássico uma divisão ou conjunto de divisões e seus anexos num edifício de caráter permanente, ou numa parte estruturalmente distinta do edifício, com uma entrada independente, e um alojamento familiar vago um alojamento familiar desocupado e disponível para venda, arrendamento, demolição ou outra situação no momento de referência"
       ],
       "en": [
-        "The measure shows dwellings vacant for sale or rent"
+        "The number of conventional dwellings vacant for sale or rent, where, for INE, a conventional dwelling is a room or set of rooms and their annexes in a permanent building, or in a structurally separate part of the building, with an independent entrance, and a vacant dwelling is an unoccupied dwelling available for sale, rent, demolition or another situation at the reference time"
       ]
     },
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, Portugal, em ",
         {
           "periodo": "hab-ine-censos-0012501-40"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, Portugal, in ",
         {
           "periodo": "hab-ine-censos-0012501-40"
         },
         "."
       ]
-    }
+    },
+    "origens": [
+      "hb1e-ine-alojamento-classico",
+      "hb1e-ine-alojamento-vago"
+    ]
   },
   "hab-ine-censos-0012501-41": {
     "nome": {
@@ -22305,28 +22318,32 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra alojamentos vagos por outros motivos"
+        "O número de alojamentos familiares clássicos vagos por outros motivos, sendo, para o INE, um alojamento familiar clássico uma divisão ou conjunto de divisões e seus anexos num edifício de caráter permanente, ou numa parte estruturalmente distinta do edifício, com uma entrada independente, e um alojamento familiar vago um alojamento familiar desocupado e disponível para venda, arrendamento, demolição ou outra situação no momento de referência"
       ],
       "en": [
-        "The measure shows dwellings vacant for other reasons"
+        "The number of conventional dwellings vacant for other reasons, where, for INE, a conventional dwelling is a room or set of rooms and their annexes in a permanent building, or in a structurally separate part of the building, with an independent entrance, and a vacant dwelling is an unoccupied dwelling available for sale, rent, demolition or another situation at the reference time"
       ]
     },
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, Portugal, em ",
         {
           "periodo": "hab-ine-censos-0012501-41"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, Portugal, in ",
         {
           "periodo": "hab-ine-censos-0012501-41"
         },
         "."
       ]
-    }
+    },
+    "origens": [
+      "hb1e-ine-alojamento-classico",
+      "hb1e-ine-alojamento-vago"
+    ]
   },
   "hab-ine-censos-0012517-0": {
     "nome": {
@@ -22335,28 +22352,32 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra proporção de alojamentos vagos nos Censos"
+        "A proporção, em percentagem, dos alojamentos familiares clássicos que estavam vagos, sendo, para o INE, um alojamento familiar clássico uma divisão ou conjunto de divisões e seus anexos num edifício de caráter permanente, ou numa parte estruturalmente distinta do edifício, com uma entrada independente, e um alojamento familiar vago um alojamento familiar desocupado e disponível para venda, arrendamento, demolição ou outra situação no momento de referência"
       ],
       "en": [
-        "The measure shows share of vacant dwellings in the Census"
+        "The share, in percent, of conventional dwellings that were vacant, where, for INE, a conventional dwelling is a room or set of rooms and their annexes in a permanent building, or in a structurally separate part of the building, with an independent entrance, and a vacant dwelling is an unoccupied dwelling available for sale, rent, demolition or another situation at the reference time"
       ]
     },
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, Portugal, em ",
         {
           "periodo": "hab-ine-censos-0012517-0"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, Portugal, in ",
         {
           "periodo": "hab-ine-censos-0012517-0"
         },
         "."
       ]
-    }
+    },
+    "origens": [
+      "hb1e-ine-alojamento-classico",
+      "hb1e-ine-alojamento-vago"
+    ]
   },
   "hab-ine-iphab-homologa": {
     "nome": {
@@ -22365,22 +22386,22 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra variação homóloga dos preços da habitação"
+        "A taxa de variação homóloga do índice a que o documento alojado do INE chama «ÍNDICE DE PREÇOS DA HABITAÇÃO»"
       ],
       "en": [
-        "The measure shows annual change in house prices"
+        "The year-on-year rate of change of the index that the hosted INE document calls «ÍNDICE DE PREÇOS DA HABITAÇÃO»"
       ]
     },
     "complemento": {
       "pt": [
-        " no ",
+        "; aqui, no ",
         {
           "periodo": "hab-ine-iphab-homologa"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, in ",
         {
           "periodo": "hab-ine-iphab-homologa"
         },
@@ -22395,28 +22416,31 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra taxa de juro implícita no crédito à habitação"
+        "A taxa de juro implícita no crédito à habitação, que reflete a relação entre os juros totais vencidos no mês de referência e o capital em dívida no início desse mês, antes de amortização"
       ],
       "en": [
-        "The measure shows implicit interest rate on housing loans"
+        "The implicit interest rate on housing loans, which reflects the ratio between the total interest due in the reference month and the capital outstanding at the start of that month, before amortisation"
       ]
     },
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, o conjunto dos contratos, Portugal, em ",
         {
           "periodo": "hab-ine-juro-implicito"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, all contracts, Portugal, in ",
         {
           "periodo": "hab-ine-juro-implicito"
         },
         "."
       ]
-    }
+    },
+    "origens": [
+      "hb1e-ine-juro-implicito"
+    ]
   },
   "hab-ine-preco-lisboa": {
     "nome": {
@@ -22425,28 +22449,32 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra preço mediano das vendas em Lisboa"
+        "O valor mediano dos preços por metro quadrado das transações por venda de imóveis para habitação com área bruta privativa de vinte metros quadrados ou mais, apurado pelo INE dos dados fiscais anonimizados da Autoridade Tributária e Aduaneira"
       ],
       "en": [
-        "The measure shows median sale price in Lisbon"
+        "The median price per square metre of sales of residential properties with a private gross area of twenty square metres or more, compiled by INE from anonymised tax data from the Tax and Customs Authority"
       ]
     },
     "complemento": {
       "pt": [
-        " no ",
+        "; aqui, Lisboa, no ",
         {
           "periodo": "hab-ine-preco-lisboa"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, Lisbon, in ",
         {
           "periodo": "hab-ine-preco-lisboa"
         },
         "."
       ]
-    }
+    },
+    "origens": [
+      "hb1e-ine-preco-mediano",
+      "hb1e-ine-preco-fonte"
+    ]
   },
   "hab-ine-preco-mediano": {
     "nome": {
@@ -22455,28 +22483,32 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra preço mediano das vendas em Portugal"
+        "O valor mediano dos preços por metro quadrado das transações por venda de imóveis para habitação com área bruta privativa de vinte metros quadrados ou mais, apurado pelo INE dos dados fiscais anonimizados da Autoridade Tributária e Aduaneira"
       ],
       "en": [
-        "The measure shows median sale price in Portugal"
+        "The median price per square metre of sales of residential properties with a private gross area of twenty square metres or more, compiled by INE from anonymised tax data from the Tax and Customs Authority"
       ]
     },
     "complemento": {
       "pt": [
-        " no ",
+        "; aqui, Portugal, no ",
         {
           "periodo": "hab-ine-preco-mediano"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, Portugal, in ",
         {
           "periodo": "hab-ine-preco-mediano"
         },
         "."
       ]
-    }
+    },
+    "origens": [
+      "hb1e-ine-preco-mediano",
+      "hb1e-ine-preco-fonte"
+    ]
   },
   "hab-ine-preco-porto": {
     "nome": {
@@ -22485,28 +22517,32 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra preço mediano das vendas no Porto"
+        "O valor mediano dos preços por metro quadrado das transações por venda de imóveis para habitação com área bruta privativa de vinte metros quadrados ou mais, apurado pelo INE dos dados fiscais anonimizados da Autoridade Tributária e Aduaneira"
       ],
       "en": [
-        "The measure shows median sale price in Porto"
+        "The median price per square metre of sales of residential properties with a private gross area of twenty square metres or more, compiled by INE from anonymised tax data from the Tax and Customs Authority"
       ]
     },
     "complemento": {
       "pt": [
-        " no ",
+        "; aqui, Porto, no ",
         {
           "periodo": "hab-ine-preco-porto"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, Porto, in ",
         {
           "periodo": "hab-ine-preco-porto"
         },
         "."
       ]
-    }
+    },
+    "origens": [
+      "hb1e-ine-preco-mediano",
+      "hb1e-ine-preco-fonte"
+    ]
   },
   "hab-ine-renda-lisboa": {
     "nome": {
@@ -22515,28 +22551,32 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra renda mediana dos novos contratos em Lisboa"
+        "O valor mediano das rendas por metro quadrado dos novos contratos de arrendamento para habitação com área bruta privativa entre vinte e seiscentos metros quadrados e renda entre cem e seis mil euros, apurado pelo INE dos dados fiscais anonimizados da Autoridade Tributária e Aduaneira"
       ],
       "en": [
-        "The measure shows median rent of new contracts in Lisbon"
+        "The median rent per square metre of new residential lease contracts with a private gross area between twenty and six hundred square metres and a rent between one hundred and six thousand euros, compiled by INE from anonymised tax data from the Tax and Customs Authority"
       ]
     },
     "complemento": {
       "pt": [
-        " no ",
+        "; aqui, Lisboa, no ",
         {
           "periodo": "hab-ine-renda-lisboa"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, Lisbon, in ",
         {
           "periodo": "hab-ine-renda-lisboa"
         },
         "."
       ]
-    }
+    },
+    "origens": [
+      "hb1e-ine-renda-mediana",
+      "hb1e-ine-renda-fonte"
+    ]
   },
   "hab-ine-renda-porto": {
     "nome": {
@@ -22545,28 +22585,32 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra renda mediana dos novos contratos no Porto"
+        "O valor mediano das rendas por metro quadrado dos novos contratos de arrendamento para habitação com área bruta privativa entre vinte e seiscentos metros quadrados e renda entre cem e seis mil euros, apurado pelo INE dos dados fiscais anonimizados da Autoridade Tributária e Aduaneira"
       ],
       "en": [
-        "The measure shows median rent of new contracts in Porto"
+        "The median rent per square metre of new residential lease contracts with a private gross area between twenty and six hundred square metres and a rent between one hundred and six thousand euros, compiled by INE from anonymised tax data from the Tax and Customs Authority"
       ]
     },
     "complemento": {
       "pt": [
-        " no ",
+        "; aqui, Porto, no ",
         {
           "periodo": "hab-ine-renda-porto"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, Porto, in ",
         {
           "periodo": "hab-ine-renda-porto"
         },
         "."
       ]
-    }
+    },
+    "origens": [
+      "hb1e-ine-renda-mediana",
+      "hb1e-ine-renda-fonte"
+    ]
   },
   "hab-ine-renda-portugal": {
     "nome": {
@@ -22575,28 +22619,32 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra renda mediana dos novos contratos em Portugal"
+        "O valor mediano das rendas por metro quadrado dos novos contratos de arrendamento para habitação com área bruta privativa entre vinte e seiscentos metros quadrados e renda entre cem e seis mil euros, apurado pelo INE dos dados fiscais anonimizados da Autoridade Tributária e Aduaneira"
       ],
       "en": [
-        "The measure shows median rent of new contracts in Portugal"
+        "The median rent per square metre of new residential lease contracts with a private gross area between twenty and six hundred square metres and a rent between one hundred and six thousand euros, compiled by INE from anonymised tax data from the Tax and Customs Authority"
       ]
     },
     "complemento": {
       "pt": [
-        " no ",
+        "; aqui, Portugal, no ",
         {
           "periodo": "hab-ine-renda-portugal"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, Portugal, in ",
         {
           "periodo": "hab-ine-renda-portugal"
         },
         "."
       ]
-    }
+    },
+    "origens": [
+      "hb1e-ine-renda-mediana",
+      "hb1e-ine-renda-fonte"
+    ]
   },
   "hab-ine-vagos-total": {
     "nome": {
@@ -22605,28 +22653,32 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra alojamentos vagos nos Censos"
+        "O número de alojamentos familiares clássicos vagos, sendo, para o INE, um alojamento familiar clássico uma divisão ou conjunto de divisões e seus anexos num edifício de caráter permanente, ou numa parte estruturalmente distinta do edifício, com uma entrada independente, e um alojamento familiar vago um alojamento familiar desocupado e disponível para venda, arrendamento, demolição ou outra situação no momento de referência"
       ],
       "en": [
-        "The measure shows vacant dwellings in the Census"
+        "The number of vacant conventional dwellings, where, for INE, a conventional dwelling is a room or set of rooms and their annexes in a permanent building, or in a structurally separate part of the building, with an independent entrance, and a vacant dwelling is an unoccupied dwelling available for sale, rent, demolition or another situation at the reference time"
       ]
     },
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, Portugal, em ",
         {
           "periodo": "hab-ine-vagos-total"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, Portugal, in ",
         {
           "periodo": "hab-ine-vagos-total"
         },
         "."
       ]
-    }
+    },
+    "origens": [
+      "hb1e-ine-alojamento-classico",
+      "hb1e-ine-alojamento-vago"
+    ]
   },
   "hab-livre-reinvestimento": {
     "nome": {
@@ -22649,28 +22701,31 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra orçamento do acesso à habitação e apoio ao arrendamento"
+        "O que o relatório do Orçamento do Estado diz sobre a ação «Promoção do acesso à habitação e apoio ao arrendamento», na coluna do orçamento do quadro dos objetivos e indicadores da Missão de Base Orgânica Infraestruturas e Habitação, em milhões de euros"
       ],
       "en": [
-        "The measure shows budget for housing access and rental support"
+        "What the State Budget report says about the action «Promoção do acesso à habitação e apoio ao arrendamento», in the budget column of the table of objectives and indicators of the Infrastructure and Housing organic base mission, in million euros"
       ]
     },
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, em ",
         {
           "periodo": "hab-oe-apoio-arrendamento"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, in ",
         {
           "periodo": "hab-oe-apoio-arrendamento"
         },
         "."
       ]
-    }
+    },
+    "origens": [
+      "hb1e-oe-quadro-missao"
+    ]
   },
   "hab-oe-apoios-jovens": {
     "nome": {
@@ -22707,28 +22762,31 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra orçamento do programa Habitação"
+        "O que o relatório do Orçamento do Estado diz sobre a linha «Habitação», na coluna do orçamento do quadro dos objetivos e indicadores da Missão de Base Orgânica Infraestruturas e Habitação, em milhões de euros"
       ],
       "en": [
-        "The measure shows housing programme budget"
+        "What the State Budget report says about the line «Habitação», in the budget column of the table of objectives and indicators of the Infrastructure and Housing organic base mission, in million euros"
       ]
     },
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, em ",
         {
           "periodo": "hab-oe-habitacao-orcamento"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, in ",
         {
           "periodo": "hab-oe-habitacao-orcamento"
         },
         "."
       ]
-    }
+    },
+    "origens": [
+      "hb1e-oe-quadro-missao"
+    ]
   },
   "hab-oe-irs-rendas-impacto": {
     "nome": {
@@ -22737,28 +22795,31 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra impacto na receita da redução do IRS nas rendas"
+        "O que o relatório do Orçamento do Estado diz sobre a medida «Habitação - redução IRS rendas moderadas», no quadro das principais medidas de política orçamental, como impacto incremental em milhões de euros"
       ],
       "en": [
-        "The measure shows revenue impact of reduced income tax on rents"
+        "What the State Budget report says about the measure «Habitação - redução IRS rendas moderadas», in the table of the main budget policy measures, as an incremental impact in million euros"
       ]
     },
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, em ",
         {
           "periodo": "hab-oe-irs-rendas-impacto"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, in ",
         {
           "periodo": "hab-oe-irs-rendas-impacto"
         },
         "."
       ]
-    }
+    },
+    "origens": [
+      "hb1e-oe-quadro-medidas"
+    ]
   },
   "hab-oe-iva-impacto": {
     "nome": {
@@ -22767,28 +22828,31 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra impacto na receita da redução do IVA na construção"
+        "O que o relatório do Orçamento do Estado diz sobre a medida «Habitação - redução IVA construção», no quadro das principais medidas de política orçamental, como impacto incremental em milhões de euros"
       ],
       "en": [
-        "The measure shows revenue impact of reduced VAT on construction"
+        "What the State Budget report says about the measure «Habitação - redução IVA construção», in the table of the main budget policy measures, as an incremental impact in million euros"
       ]
     },
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, em ",
         {
           "periodo": "hab-oe-iva-impacto"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, in ",
         {
           "periodo": "hab-oe-iva-impacto"
         },
         "."
       ]
-    }
+    },
+    "origens": [
+      "hb1e-oe-quadro-medidas"
+    ]
   },
   "hab-oe-legenda-invariante": {
     "nome": {
@@ -22811,28 +22875,31 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra orçamento da gestão urbanística e qualidade do edificado"
+        "O que o relatório do Orçamento do Estado diz sobre a ação «Gestão urbanística e qualidade do edificiado», na coluna do orçamento do quadro dos objetivos e indicadores da Missão de Base Orgânica Infraestruturas e Habitação, em milhões de euros"
       ],
       "en": [
-        "The measure shows budget for urban management and building quality"
+        "What the State Budget report says about the action «Gestão urbanística e qualidade do edificiado», in the budget column of the table of objectives and indicators of the Infrastructure and Housing organic base mission, in million euros"
       ]
     },
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, em ",
         {
           "periodo": "hab-oe-licenciamento"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, in ",
         {
           "periodo": "hab-oe-licenciamento"
         },
         "."
       ]
-    }
+    },
+    "origens": [
+      "hb1e-oe-quadro-missao"
+    ]
   },
   "hab-oe-oferta": {
     "nome": {
@@ -22855,28 +22922,31 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "A medida mostra orçamento da oferta e reabilitação habitacional"
+        "O que o relatório do Orçamento do Estado diz sobre a ação «Promoção da oferta e reabilitação habitacional», na coluna do orçamento do quadro dos objetivos e indicadores da Missão de Base Orgânica Infraestruturas e Habitação, em milhões de euros"
       ],
       "en": [
-        "The measure shows budget for housing supply and rehabilitation"
+        "What the State Budget report says about the action «Promoção da oferta e reabilitação habitacional», in the budget column of the table of objectives and indicators of the Infrastructure and Housing organic base mission, in million euros"
       ]
     },
     "complemento": {
       "pt": [
-        " em ",
+        "; aqui, em ",
         {
           "periodo": "hab-oe-oferta-publica"
         },
         "."
       ],
       "en": [
-        " in ",
+        "; here, in ",
         {
           "periodo": "hab-oe-oferta-publica"
         },
         "."
       ]
-    }
+    },
+    "origens": [
+      "hb1e-oe-quadro-missao"
+    ]
   },
   "hab-pan-caucoes": {
     "nome": {

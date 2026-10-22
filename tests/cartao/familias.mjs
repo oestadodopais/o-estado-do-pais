@@ -920,6 +920,9 @@ export function conferirRecibosDasSeries(dist, porConfirmarLinhas = conferirAudi
  * ========================================================================= */
 
 /** @param {string} dist @returns {{ nome: string, mordeu: boolean, queixa: string|null }[]} */
+/* HB1-e (22.10.2026): as vinte e três famílias que passaram do rótulo à definição (ou à forma «chama-lhe»). */
+export const FAMILIAS_HB1E = ['hab-bpstat-12533724', 'hab-bpstat-12533735', 'hab-bpstat-12557378', 'hab-ine-calendario-juro', 'hab-ine-calendario-precos-locais', 'hab-ine-censos-0012501-40', 'hab-ine-censos-0012501-41', 'hab-ine-censos-0012517-0', 'hab-ine-iphab-homologa', 'hab-ine-juro-implicito', 'hab-ine-preco-lisboa', 'hab-ine-preco-mediano', 'hab-ine-preco-porto', 'hab-ine-renda-lisboa', 'hab-ine-renda-porto', 'hab-ine-renda-portugal', 'hab-ine-vagos-total', 'hab-oe-apoio-arrendamento', 'hab-oe-habitacao-orcamento', 'hab-oe-irs-rendas-impacto', 'hab-oe-iva-impacto', 'hab-oe-licenciamento', 'hab-oe-oferta-publica'];
+
 export function plantasDasFamilias(dist) {
   /** @type {{ nome: string, mordeu: boolean, queixa: string|null }[]} */
   const out = [];
@@ -974,6 +977,15 @@ export function plantasDasFamilias(dist) {
     const e = a.familias.find((/** @type {any} */ x) => x.concelho === 'limite');
     e.folhas[0].partes[0].apoios = [];
     regista('uma parte que diz sem apoio', conferirAuditoriaDasFamilias({ auditoria: a }).erros, 'não tem apoio nenhum');
+  }
+  /* HB1-e (22.10.2026): uma planta por família nova do INE, do Banco de Portugal e do Orçamento no estudo da
+     habitação: o primeiro apoio da frase com um literal que nem a linha nem a origem têm, recusado. */
+  for (const chave of FAMILIAS_HB1E) {
+    const a = structuredClone(base);
+    const e = a.familias.find((/** @type {any} */ x) => x.chaves?.includes(chave));
+    if (!e) { out.push({ nome: `HB1-e ${chave}`, mordeu: false, queixa: 'a família não está na auditoria' }); continue; }
+    e.folhas[0].partes[0].apoios[0].literal = 'Literal plantado na HB1-e que nenhum campo tem';
+    regista(`HB1-e ${chave}: um literal que a fonte não tem`, conferirAuditoriaDasFamilias({ auditoria: a }).erros, 'Literal plantado na HB1-e');
   }
   /* R4-b · A AUDITORIA DO QUE ESTÁ POR CONFIRMAR NA FONTE. */
   {

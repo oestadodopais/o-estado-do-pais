@@ -156,7 +156,46 @@ DER_WHAT={
  'sobrecarga-inquilinos':('O resultado é a diferença, em pontos percentuais, entre Portugal e a União na parte dos inquilinos a preços de mercado em sobrecarga','The result is the gap, in percentage points, between Portugal and the Union in the share of tenants at market rents in overburden'),
  'saida':('O resultado é a diferença, em anos, entre Portugal e a União na idade média de saída de casa dos pais','The result is the gap, in years, between Portugal and the Union in the average age of leaving the parental home'),
  'vagos':('O resultado é a parte, em percentagem, dos alojamentos do parque que estavam vagos nos Censos','The result is the share, in percent, of the dwellings in the stock that were vacant in the Census')}
+# HB1-e (22.10.2026): as famílias do INE, do Banco de Portugal e do Orçamento, traduzidas da definição
+# alojada (as origens ORIGENS_HB1E) ou, onde a fonte não a dá em forma selável, na forma «chama-lhe».
+# Cada entrada: (pt, en, apoios, origens, (geografia pt, geografia en) ou None, forma do complemento).
+def O(o,l):return dict(origem=o,campo='excerto',literal=l)
+def L(c,l):return dict(linha='propria',campo=c,literal=l)
+BPD=('concedidos pelos bancos (outras instituições financeiras monetárias) aos particulares (famílias e instituições sem fim lucrativo ao serviço das famílias) residentes na área do euro e aos emigrantes portugueses fora dela','granted by banks (other monetary financial institutions) to individuals (households and non-profit institutions serving households) resident in the euro area and to Portuguese emigrants outside it')
+PRECO=('O valor mediano dos preços por metro quadrado das transações por venda de imóveis para habitação com área bruta privativa de vinte metros quadrados ou mais, apurado pelo INE dos dados fiscais anonimizados da Autoridade Tributária e Aduaneira','The median price per square metre of sales of residential properties with a private gross area of twenty square metres or more, compiled by INE from anonymised tax data from the Tax and Customs Authority',[O('hb1e-ine-preco-mediano','Valor mediano dos preços por metro quadrado das transações por venda de imóveis para habitação com área bruta privativa maior ou igual a 20'),O('hb1e-ine-preco-fonte','dados fiscais anonimizados obtidos da Autoridade Tributária e Aduaneira (AT)')],['hb1e-ine-preco-mediano','hb1e-ine-preco-fonte'])
+RENDA=('O valor mediano das rendas por metro quadrado dos novos contratos de arrendamento para habitação com área bruta privativa entre vinte e seiscentos metros quadrados e renda entre cem e seis mil euros, apurado pelo INE dos dados fiscais anonimizados da Autoridade Tributária e Aduaneira','The median rent per square metre of new residential lease contracts with a private gross area between twenty and six hundred square metres and a rent between one hundred and six thousand euros, compiled by INE from anonymised tax data from the Tax and Customs Authority',[O('hb1e-ine-renda-mediana','Valor mediano das rendas por metro quadrado de novos contratos de arrendamento para habitação com área bruta privativa entre 20 m2 e 600 m2'),O('hb1e-ine-renda-mediana','valor da renda entre 100'),O('hb1e-ine-renda-fonte','dados fiscais anonimizados obtidos da Autoridade Tributária e Aduaneira (AT)')],['hb1e-ine-renda-mediana','hb1e-ine-renda-fonte'])
+VAGO=(', sendo, para o INE, um alojamento familiar clássico uma divisão ou conjunto de divisões e seus anexos num edifício de caráter permanente, ou numa parte estruturalmente distinta do edifício, com uma entrada independente, e um alojamento familiar vago um alojamento familiar desocupado e disponível para venda, arrendamento, demolição ou outra situação no momento de referência',', where, for INE, a conventional dwelling is a room or set of rooms and their annexes in a permanent building, or in a structurally separate part of the building, with an independent entrance, and a vacant dwelling is an unoccupied dwelling available for sale, rent, demolition or another situation at the reference time',[O('hb1e-ine-alojamento-classico','Alojamento familiar constituído por uma divisão ou conjunto de divisões e seus anexos num edifício de caráter permanente ou numa parte estruturalmente distinta do edifício, devendo ter uma entrada independente'),O('hb1e-ine-alojamento-vago','Alojamento familiar desocupado e que está disponível para venda, arrendamento, demolição ou outra situação no momento de referência')],['hb1e-ine-alojamento-classico','hb1e-ine-alojamento-vago'])
+PT=('Portugal','Portugal')
+def oe(pt_med,en_med,quadro,lit):
+ if quadro=='medidas':
+  return ('O que o relatório do Orçamento do Estado diz sobre a medida «'+lit+'», no quadro das principais medidas de política orçamental, como impacto incremental em milhões de euros','What the State Budget report says about the measure «'+lit+'», in the table of the main budget policy measures, as an incremental impact in million euros',[O('hb1e-oe-quadro-medidas','Principais medidas de política orçamental'),L('excerpt',lit)],['hb1e-oe-quadro-medidas'],None,'em')
+ return ('O que o relatório do Orçamento do Estado diz sobre '+pt_med+' «'+lit+'», na coluna do orçamento do quadro dos objetivos e indicadores da Missão de Base Orgânica Infraestruturas e Habitação, em milhões de euros','What the State Budget report says about '+en_med+' «'+lit+'», in the budget column of the table of objectives and indicators of the Infrastructure and Housing organic base mission, in million euros',[O('hb1e-oe-quadro-missao','Objetivos e indicadores da Missão de Base Orgânica Infraestruturas e Habitação'),L('excerpt',lit)],['hb1e-oe-quadro-missao'],None,'em')
+def cal(t):
+ return ('A data anunciada no calendário de divulgação do INE para «'+t+'»','The date announced in the INE release calendar for «'+t+'»',[L('excerpt',t)],[],None,'data')
+DEFS_E={
+ 'hab-bpstat-12533724':('O montante das novas operações de empréstimos à habitação, incluindo as renegociações, '+BPD[0]+', em valores mensais em milhões de euros','The amount of new housing loans, including renegotiations, '+BPD[1]+', as monthly values in million euros',[O('hb1e-bpstat-12533724','Novas operações de empréstimos (inclui renegociações) à habitação, concedidos por bancos (outras instituições financeiras monetárias) aos particulares (famílias e instituições sem fim lucrativo ao serviço das famílias) residentes na área euro e emigrantes portugueses fora da área euro - valores mensais em milhões de euros'),L('document.title','Montante de novas operações de empréstimos à habitação')],['hb1e-bpstat-12533724'],None,'em'),
+ 'hab-bpstat-12533735':('A taxa de juro acordada anualizada das novas operações de empréstimos à habitação, incluindo as renegociações, '+BPD[0]+', em taxa mensal em percentagem','The annualised agreed interest rate on new housing loans, including renegotiations, '+BPD[1]+', as a monthly rate in percent',[O('hb1e-bpstat-12533735','Taxa de juro acordada anualizada (TAA) de novas operações de empréstimos (inclui renegociações) à habitação'),O('hb1e-bpstat-12533735','residentes na área euro e emigrantes portugueses fora da área euro - taxa mensal em percentagem')],['hb1e-bpstat-12533735'],None,'em'),
+ 'hab-bpstat-12557378':('Os empréstimos à habitação das outras instituições financeiras monetárias a famílias e instituições sem fim lucrativo ao serviço das famílias, nos ativos do balanço dessas instituições em dados não consolidados, em posições mensais em milhões de euros pelo valor em fim do período','Housing loans by other monetary financial institutions to households and non-profit institutions serving households, among the assets on the balance sheet of those institutions as non-consolidated data, as monthly positions in million euros at end-of-period value',[O('hb1e-bpstat-12557378','Outras instituições financeiras monetárias - Dados não consolidados - Ativos - Portugal - Empréstimos - Famílias e instituições sem fim lucrativo ao serviço das famílias - Portugal - Habitação - Posições - Mensal - Milhões de euros - Valor em fim do período')],['hb1e-bpstat-12557378'],PT,'em'),
+ 'hab-ine-juro-implicito':('A taxa de juro implícita no crédito à habitação, que reflete a relação entre os juros totais vencidos no mês de referência e o capital em dívida no início desse mês, antes de amortização','The implicit interest rate on housing loans, which reflects the ratio between the total interest due in the reference month and the capital outstanding at the start of that month, before amortisation',[O('hb1e-ine-juro-implicito','A taxa de juro implícita no crédito à habitação reflete a relação entre os juros totais vencidos no mês de referência e o capital em dívida no início desse mês (antes de amortização).'),L('excerpt','no conjunto dos contratos de crédito à habitação')],['hb1e-ine-juro-implicito'],('o conjunto dos contratos, Portugal','all contracts, Portugal'),'em'),
+ 'hab-ine-preco-mediano':PRECO+(PT,'em'),'hab-ine-preco-lisboa':PRECO+(('Lisboa','Lisbon'),'em'),'hab-ine-preco-porto':PRECO+(('Porto','Porto'),'em'),
+ 'hab-ine-renda-portugal':RENDA+(PT,'em'),'hab-ine-renda-lisboa':RENDA+(('Lisboa','Lisbon'),'em'),'hab-ine-renda-porto':RENDA+(('Porto','Porto'),'em'),
+ 'hab-ine-iphab-homologa':('A taxa de variação homóloga do índice a que o documento alojado do INE chama «ÍNDICE DE PREÇOS DA HABITAÇÃO»','The year-on-year rate of change of the index that the hosted INE document calls «ÍNDICE DE PREÇOS DA HABITAÇÃO»',[L('document.title','ÍNDICE DE PREÇOS DA HABITAÇÃO'),L('excerpt','a taxa de variação homóloga do IPHab')],[],None,'em'),
+ 'hab-ine-censos-0012501-40':('O número de alojamentos familiares clássicos vagos para venda ou arrendamento'+VAGO[0],'The number of conventional dwellings vacant for sale or rent'+VAGO[1],VAGO[2]+[L('excerpt','Vago para venda ou arrendamento')],VAGO[3],PT,'em'),
+ 'hab-ine-censos-0012501-41':('O número de alojamentos familiares clássicos vagos por outros motivos'+VAGO[0],'The number of conventional dwellings vacant for other reasons'+VAGO[1],VAGO[2]+[L('excerpt','Vago por outros motivos')],VAGO[3],PT,'em'),
+ 'hab-ine-censos-0012517-0':('A proporção, em percentagem, dos alojamentos familiares clássicos que estavam vagos'+VAGO[0],'The share, in percent, of conventional dwellings that were vacant'+VAGO[1],VAGO[2]+[L('document.title','Proporção de alojamentos familiares clássicos vagos (%)')],VAGO[3],PT,'em'),
+ 'hab-ine-vagos-total':('O número de alojamentos familiares clássicos vagos'+VAGO[0],'The number of vacant conventional dwellings'+VAGO[1],VAGO[2]+[L('excerpt','os alojamentos vagos')],VAGO[3],PT,'em'),
+ 'hab-ine-calendario-juro':cal('INDICADOR DE TAXAS DE JURO IMPLÍCITAS NO CRÉDITO À HABITAÇÃO'),
+ 'hab-ine-calendario-precos-locais':cal('ESTATÍSTICAS DE PREÇOS NA HABITAÇÃO AO NÍVEL LOCAL'),
+ 'hab-oe-iva-impacto':oe('','', 'medidas','Habitação - redução IVA construção'),
+ 'hab-oe-irs-rendas-impacto':oe('','', 'medidas','Habitação - redução IRS rendas moderadas'),
+ 'hab-oe-habitacao-orcamento':oe('a linha','the line','missao','Habitação'),
+ 'hab-oe-oferta-publica':oe('a ação','the action','missao','Promoção da oferta e reabilitação habitacional'),
+ 'hab-oe-apoio-arrendamento':oe('a ação','the action','missao','Promoção do acesso à habitação e apoio ao arrendamento'),
+ 'hab-oe-licenciamento':oe('a ação','the action','missao','Gestão urbanística e qualidade do edificiado'),
+}
 def definicao(id,r):
+ if id in DEFS_E:
+  pt,en,ap,orig,qual,forma=DEFS_E[id];return pt,en,ap,orig
  u=(r.get('coords') or {}).get('unit')
  for pref,units,orig,pt,en,lits in DEFS:
   if id.startswith('hab-'+pref) and (units is None or u in units):
@@ -195,6 +234,7 @@ for r in b:
   pt,en=what
  elif (d:=definicao(id,r)):
   pt,en,apoios_def,origens=d
+  if id in DEFS_E:apoios_def=[dict(a) for a in apoios_def]
  else:
   pt='A medida mostra '+pair[0][0].lower()+pair[0][1:];en='The measure shows '+pair[1][0].lower()+pair[1][1:]
  if r.get('derivation'):field='derivation';literal=r.get('derivation_text',r['check'])
@@ -202,7 +242,11 @@ for r in b:
  elif len(r.get('name',''))>=4:field='name';literal=r[field]
  else:field='document.title';literal=r['document']['title']
  complemento={}
- if r.get('unit') not in ['texto','afirmação']:
+ if id in DEFS_E:
+  _,_,_,_,q,forma=DEFS_E[id];pre='no ' if '-Q' in str(r.get('reference_date','')) else 'em '
+  if forma=='data':complemento={'complemento':{'pt':['; aqui, ',{'periodo':id},'.'],'en':['; here, ',{'periodo':id},'.']}}
+  else:complemento={'complemento':{'pt':['; aqui, '+(q[0]+', ' if q else '')+pre,{'periodo':id},'.'],'en':['; here, '+(q[1]+', ' if q else '')+'in ',{'periodo':id},'.']}}
+ elif r.get('unit') not in ['texto','afirmação']:
   pre=' no ' if '-Q' in str(r.get('reference_date','')) else ' em '
   qual=[x.split(', ',1)[1] if ', ' in x else '' for x in pair]
   if d or r.get('derivation'):complemento={'complemento':{'pt':[('; aqui, '+qual[0]+',' if qual[0] else '')+pre,{'periodo':id},'.'],'en':[('; here, '+qual[1]+',' if qual[1] else '')+' in ',{'periodo':id},'.']}}
