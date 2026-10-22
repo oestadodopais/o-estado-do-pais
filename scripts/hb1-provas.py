@@ -15,10 +15,12 @@ b=[r for r in b if r['id'] not in outras]
 for r in b:
  if not (r.get('afirmacao') or r.get('unit') == 'texto' and (r['id'].startswith(('hab-imprensa-', 'hab-arrendamento-exposicao')) or r['id'] == 'hab-plataforma-reivindicacoes')):continue
  f=a.motor/r['document']['file'];receipt=json.loads(Path(str(f)+'.pedido.json').read_text())
- rows[r['id']]={'row':{k:r.get(k) for k in ['id','value','excerpt','unit','reference_date','period','published_at','attributed_to','attributed_to_en','afirmacao','source_url','document','document_checks']},'receipt':receipt}
+ rows[r['id']]={'row':{k:r.get(k) for k in ['id','value','excerpt','unit','reference_date','period','published_at','published_at_kind','attributed_to','attributed_to_en','afirmacao','source_url','document','document_checks']},'receipt':receipt}
  # HB1-c3: o período só segue quando é o ano dos dados ancorado no excerto; nas outras
  # linhas o motor copia a data de referência para o período, e o sítio não o publica.
  if 'period' not in (r.get('document_checks') or {}):rows[r['id']]['row'].pop('period')
+ # HB1-f: o que a data de published_at é, só quando o motor o diz.
+ if rows[r['id']]['row'].get('published_at_kind') is None:rows[r['id']]['row'].pop('published_at_kind')
  ref=r.get('document_checks',{}).get('reference_date',{})
  if ref.get('file'):
   rel=Path(ref['file'])

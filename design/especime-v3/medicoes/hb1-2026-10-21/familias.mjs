@@ -94,7 +94,7 @@ export const FAMILIAS_HB1 = [
         "."
       ],
       "en": [
-        "; here, Portugal, in ",
+        "; here, Portugal, in the ",
         {
           "periodo": "hab-prc-hpi-q-q-total-i15-q-pt-2026-q2"
         },
@@ -136,7 +136,7 @@ export const FAMILIAS_HB1 = [
         "."
       ],
       "en": [
-        "; here, Hungary, in ",
+        "; here, Hungary, in the ",
         {
           "periodo": "hab-prc-hpi-q-q-total-i15-q-hu-2026-q2"
         },
@@ -178,7 +178,7 @@ export const FAMILIAS_HB1 = [
         "."
       ],
       "en": [
-        "; here, Portugal, in ",
+        "; here, Portugal, in the ",
         {
           "periodo": "hab-prc-hpi-q-q-total-rch-a-pt-2026-q2"
         },
@@ -220,7 +220,7 @@ export const FAMILIAS_HB1 = [
         "."
       ],
       "en": [
-        "; here, European Union, in ",
+        "; here, European Union, in the ",
         {
           "periodo": "hab-prc-hpi-q-q-total-rch-a-eu27_2020-2026-q2"
         },
@@ -2575,7 +2575,7 @@ export const FAMILIAS_HB1 = [
         "."
       ],
       "en": [
-        "; here, European Union, in ",
+        "; here, European Union, in the ",
         {
           "periodo": "hab-prc-hpi-q-q-total-i15-q-eu27_2020-2026-q2"
         },
@@ -2617,7 +2617,7 @@ export const FAMILIAS_HB1 = [
         "."
       ],
       "en": [
-        "; here, Finland, in ",
+        "; here, Finland, in the ",
         {
           "periodo": "hab-prc-hpi-q-q-total-i15-q-fi-2026-q2"
         },
@@ -2659,7 +2659,7 @@ export const FAMILIAS_HB1 = [
         "."
       ],
       "en": [
-        "; here, Finland, in ",
+        "; here, Finland, in the ",
         {
           "periodo": "hab-prc-hpi-q-q-total-rch-a-fi-2026-q2"
         },
@@ -2694,14 +2694,14 @@ export const FAMILIAS_HB1 = [
   {
     "complemento": {
       "pt": [
-        "; aqui, no ",
+        "; aqui, Portugal, no ",
         {
           "periodo": "hab-ine-iphab-homologa"
         },
         "."
       ],
       "en": [
-        "; here, in the ",
+        "; here, Portugal, in the ",
         {
           "periodo": "hab-ine-iphab-homologa"
         },
@@ -3299,7 +3299,7 @@ export const FAMILIAS_HB1 = [
         "."
       ],
       "en": [
-        " in ",
+        " in the ",
         {
           "periodo": "der-hab-preco-lisboa-vs-portugal"
         },
@@ -3339,7 +3339,7 @@ export const FAMILIAS_HB1 = [
         "."
       ],
       "en": [
-        " in ",
+        " in the ",
         {
           "periodo": "der-hab-renda-lisboa-vs-portugal"
         },

@@ -507,6 +507,9 @@ function copiaArquivadaDe(caminho) {
 }
 
 /** As linhas da ficha que existem nesta afirmação. Uma linha a null não se mostra. */
+/** HB1-f: uma linha cuja data é a da última edição de uma página (published_at_kind
+    last-edited) e que não tem período de dados. */
+const paginaEditada = /** @type {any} */ (claim).published_at_kind === 'last-edited' && !claim.period && Boolean(claim.published_at);
 const ficha = [
   /* O NOME DO ORGANISMO É UM NOME, E DIZ EM QUE LÍNGUA ESTÁ (I97, 29.08.2026):
      a tabela é `src/i18n/lingua-dos-titulos.mjs`, e a regra é a dos títulos. */
@@ -549,7 +552,9 @@ const ficha = [
   {
     k: s.prov.edicao,
     campo: 'document.edition',
-    valor: /^\d{4}-\d{2}(?:\/\d{4}-\d{2})?$/.test(claim.document?.edition ?? '') && claim.document?.edition === (claim.period ?? claim.reference_date) ? null : claim.document?.edition ?? null,
+    /* HB1-f (o Major 6): numa página que só declara a última edição, a data dela
+       imprime-se uma vez, como «Página editada pela última vez a», e não como edição. */
+    valor: paginaEditada && claim.document?.edition === claim.published_at ? null : /^\d{4}-\d{2}(?:\/\d{4}-\d{2})?$/.test(claim.document?.edition ?? '') && claim.document?.edition === (claim.period ?? claim.reference_date) ? null : claim.document?.edition ?? null,
     lingua: linguaDaEdicao(claim.document?.edition ?? null, lang),
   },
   /* Onde no documento está o excerto. Opcional: a maior parte das fontes é uma
@@ -590,7 +595,9 @@ const ficha = [
   /* A DATA DE LEITURA NÃO ENTRA NA FICHA (09.09.2026, decisão 17): vive uma vez
      só, no bloco das verificações. O período de referência fica, porque é uma
      propriedade do número e não uma data da casa. */
-  { k: claim.period && lang === 'pt' ? (claim.period.includes('/') || /^\d{4}$/.test(claim.period) ? 'Dados de' : 'Dados do') : s.prov.referencia, campo: claim.period ? 'period' : 'reference_date', valor: claim.period ?? claim.reference_date },
+  paginaEditada
+    ? { k: s.livro.linha.editadoEmK, campo: 'published_at', valor: claim.published_at }
+    : { k: claim.period && lang === 'pt' ? (claim.period.includes('/') || /^\d{4}$/.test(claim.period) ? 'Dados de' : 'Dados do') : s.prov.referencia, campo: claim.period ? 'period' : 'reference_date', valor: claim.period ?? claim.reference_date },
 ].filter((l) => l.valor !== null && l.valor !== undefined);
 
 /**

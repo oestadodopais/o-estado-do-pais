@@ -1381,7 +1381,8 @@
         "excerpt": "propõe ao Governo medidas para colocar mais casas no mercado, desbloquear imóveis parados em heranças e tornar o arrendamento mais simples, seguro e funcional, tanto para inquilinos como para proprietários.",
         "unit": "afirmação",
         "reference_date": "2026-06-08",
-        "published_at": null,
+        "published_at": "2026-06-08",
+        "published_at_kind": "last-edited",
         "attributed_to": [
           "Iniciativa Liberal"
         ],
@@ -1403,8 +1404,8 @@
             "locator": null
           },
           "published_at": {
-            "status": "por confirmar",
-            "reason": "Sem data de publicação ancorada no documento; o período de referência e o acesso não provam a publicação."
+            "status": "conferido",
+            "text": "2026-06-08T15:16:52+01:00"
           },
           "attributed_to": {
             "status": "conferido",

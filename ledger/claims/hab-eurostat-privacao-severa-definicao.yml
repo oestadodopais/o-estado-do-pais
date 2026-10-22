@@ -45,7 +45,7 @@ attributed_to:
 
 study: "a-casa-em-portugal-e-na-europa"
 # Nota interna. NÃO é publicada: ver DECISIONS §1.24.
-note: "[note do motor] A data de publicação e a de modificação coincidem no JSON-LD do glossário. O rodapé identifica a mesma data de última edição. · Cruzado de ResearchHub content/23 Habitacao · hab-eurostat-privacao-severa-definicao."
+note: "[note do motor] A data de publicação e a de modificação coincidem no JSON-LD do glossário; a data de referência ancora-se no rodapé da última edição (published_at_kind last-edited). Sem período: uma definição não tem período de dados. · Cruzado de ResearchHub content/23 Habitacao · hab-eurostat-privacao-severa-definicao."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []

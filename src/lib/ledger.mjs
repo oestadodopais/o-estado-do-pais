@@ -1614,15 +1614,25 @@ export function validateLedger() {
       // A atualização declarada não permite preencher a publicação inicial desconhecida.
       const provaHb1=provasHb1[id],linhaHb1=provaHb1?.row,refHb1=linhaHb1?.document_checks?.reference_date,fonteHb1=provaHb1?.reference_source;
       const dataAtualizada=typeof refHb1?.text==='string'?refHb1.text.match(/^property="article:modified_time" content="(\d{4}-\d{2}-\d{2})T[^"\s]+"$/)?.[1]:null;
-      const semDataHB1 = id === 'hab-il-proposta' && c.published_at == null && linhaHb1?.published_at === null
-        && linhaHb1?.document_checks?.published_at?.status === 'por confirmar' && Boolean(linhaHb1.document_checks.published_at.reason)
+      // HB1-f (o Major 6): a prova da data da página da IL (article:modified_time,
+      // o corpo e o selo), comum às duas formas que a linha pode ter.
+      const provaIL = id === 'hab-il-proposta'
         && refHb1?.status === 'conferido' && Boolean(dataAtualizada) && dataAtualizada === c.reference_date
         && refHb1.date === c.reference_date && linhaHb1.reference_date === c.reference_date && doc?.edition === c.reference_date
         && refHb1.file === 'source/iniciativaliberal-pt-26.html' && fonteHb1?.file === 'content/23 Habitacao/'+refHb1.file
         && linhaHb1.document?.file === fonteHb1.file && fonteHb1.receipt?.estado === 200 && fonteHb1.receipt?.ficheiro === path.posix.basename(fonteHb1.file)
         && doc?.source_sha256 === '83424c50610cbac84b6cb675ff8a46547b10413fb0c8597f371a516adab2105c'
         && [linhaHb1.document?.source_sha256,refHb1.sha256,fonteHb1.sha256,fonteHb1.receipt?.sha256].every(hash=>hash===doc.source_sha256);
-      if(id === 'hab-il-proposta' && linhaHb1?.published_at === null && c.published_at != null)errors.push(`${onde} V2A data: atualização não prova a publicação inicial`);
+      const semDataHB1 = provaIL && c.published_at == null && linhaHb1?.published_at === null
+        && linhaHb1?.document_checks?.published_at?.status === 'por confirmar' && Boolean(linhaHb1.document_checks.published_at.reason);
+      // A data da última edição só entra em published_at marcada como tal
+      // (published_at_kind last-edited), igual à do article:modified_time e
+      // conferida pelo motor; a publicação inicial continua desconhecida.
+      const editadaHB1 = provaIL && c.published_at_kind === 'last-edited' && c.published_at === dataAtualizada
+        && linhaHb1?.published_at === c.published_at && linhaHb1?.published_at_kind === 'last-edited'
+        && linhaHb1?.document_checks?.published_at?.status === 'conferido' && String(linhaHb1.document_checks.published_at.text ?? '').slice(0, 10) === c.published_at;
+      if(id === 'hab-il-proposta' && c.published_at != null && !(c.published_at_kind === 'last-edited' && linhaHb1?.published_at_kind === 'last-edited'))errors.push(`${onde} V2A data: atualização não prova a publicação inicial`);
+      if(id === 'hab-il-proposta' && !semDataHB1 && !editadaHB1)errors.push(`${onde} V2A data: a data da página não tem prova no corpo`);
       if (!semDataHB1 && !/^\d{4}-\d{2}-\d{2}$/.test(String(c.published_at ?? ''))) errors.push(`${onde} V2A data: falta a data de publicação do documento`);
       const propostaHB1 = ['posicao-ps-rendas','posicao-chega-habitacao'].includes(id) && c.study === 'a-casa-em-portugal-e-na-europa';
       if (!semDataHB1 && !propostaHB1 && c.reference_date !== (textoDoOrcamento ? '2027' : c.published_at)) errors.push(`${onde} V2A data: período contrário ao documento`);

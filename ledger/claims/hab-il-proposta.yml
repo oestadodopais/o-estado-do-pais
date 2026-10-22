@@ -25,6 +25,8 @@ document:
   kind: "html"
 source_url: "https://iniciativaliberal.pt/ideias/habitacao-ja/"
 access_date: "2026-10-19"
+published_at: "2026-06-08"
+published_at_kind: "last-edited"
 afirmacao: true
 reference_date: "2026-06-08"
 
@@ -44,7 +46,7 @@ attributed_to:
 
 study: "a-casa-em-portugal-e-na-europa"
 # Nota interna. NÃO é publicada: ver DECISIONS §1.24.
-note: "[note do motor] Página e PDF próprio alojados. A edição é a atualização declarada por article:modified_time, confirmada no mesmo dia pelo elemento updated. A data de publicação inicial não está declarada; a página não habilita uma afirmação datada de outubro. · Cruzado de ResearchHub content/23 Habitacao · hab-il-proposta."
+note: "[note do motor] Página e PDF próprio alojados. A data é a da última edição declarada por article:modified_time (published_at_kind last-edited), confirmada no mesmo dia pelo elemento updated. A data de publicação inicial não está declarada; a página não habilita uma afirmação datada de outubro. Sem período: uma página editada não tem período de dados. · Cruzado de ResearchHub content/23 Habitacao · hab-il-proposta."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []
