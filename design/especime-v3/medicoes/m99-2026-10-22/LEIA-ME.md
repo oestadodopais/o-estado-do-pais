@@ -26,3 +26,12 @@ A corrida real, sobre a cabeça `2635fc0e0` com o motor ao lado: o `resumo.md` e
 
 - M99-1: o `check:leituras` só descobre `tests/leituras/*.py`, por isso não corre este ensaio `.sh` nem o do `com-teto.sh`; um embrulho `.py` prendê-los-ia (fica para quando a maquinaria descongelar).
 - M99-2: o Codex não corre o navegador dentro da sandbox (o prompt comum manda os portões pelo escrivão); `conferir-tudo.sh` não tem ainda um caminho pelo escrivão, e dentro da sandbox os passos com o navegador ficariam vermelhos.
+
+## A correção M99-b (22.10.2026), pelos quatro Minor da leitura do Gemini 4 Argon
+
+Construtor: Claude Opus 5.5 (`construtor`, `medium`).
+
+- Minor 8, corrigido: um `--build` falhado caía na recusa do `dist/` (9) sem resumo e perdia a cauda do `00-build.log`. Agora escreve `resumo.json` e `resumo.md` só com o passo `00-build`, o seu código e as trinta últimas linhas do registo, e sai com o código do build, sem correr os passos do `verify`. A pasta de saída relativa resolve-se contra o sítio da chamada, antes do `cd` para a worktree.
+- O ensaio ganhou a quarta planta (um projeto cujo `build` falha, chamado com `--build` e uma pasta relativa): `codigos/ensaio-b.code`. O conhecido-positivo é o ensaio novo contra o guião da cabeça `f39554fd8`, que falha os quatro testes da planta 4: `codigos/planta-build-falhado.code` (o número de falhas). Os valores em `medidas.json`, reescrito por `medir.py`.
+- Minor 7 (M99-1, o ensaio `.sh` fora do `check:leituras` e o caminho da tranca por omissão sem prova) e Minor 6 (M99-2, o guião sem caminho pelo escrivão no prompt do Codex): ficam para o bloco de higiene.
+- Minor 9, declarado: os números da corrida real neste relatório vêm do `resumo.md` (lido por `medir.py`) e não de um JSON de medidas próprio; a corrida real não se repetiu nesta correção.

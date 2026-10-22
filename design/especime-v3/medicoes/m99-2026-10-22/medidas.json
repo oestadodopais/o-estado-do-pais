@@ -9,6 +9,14 @@
   }
  },
  {
+  "nome": "ensaio de quatro plantas (M99-b, com o build falhado e a pasta relativa)",
+  "valor": 0,
+  "comando": "sh tests/leituras/ferramenta_conferir_tudo.sh",
+  "conhecido_positivo": {
+   "planta-build-falhado (o ensaio novo contra o guião da cabeça f39554fd8, antes da correção)": 4
+  }
+ },
+ {
   "nome": "check:leituras",
   "valor": 0,
   "comando": "npm run check:leituras",

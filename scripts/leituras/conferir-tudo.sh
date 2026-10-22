@@ -10,7 +10,10 @@
 # /tmp/oedp-construcao.lock; OEDP_TRANCA aponta-a para outro sítio só no ensaio), porque dois verify em
 # paralelo não cabem na máquina.
 # Uso: sh scripts/leituras/conferir-tudo.sh <worktree absoluta> <pasta de saída nova> [--build|--sem-build]
-# Saídas: 0 todos verdes; 1 algum vermelho; 9 recusa (nenhum passo correu); 130 interrompido.
+# Saídas: 0 todos verdes; 1 algum vermelho; 9 recusa (nenhum passo correu); 130 interrompido. Um --build
+# falhado (M99-b) escreve o resumo só com o passo 00-build, o seu código e a cauda, e sai com o código do build,
+# sem correr os outros passos nem cair na recusa do dist/. Uma pasta de saída relativa é relativa ao sítio de
+# onde se chamou o guião.
 set -u
 # RH1, como no portoes.sh: a máquina recebe a mesma lista privada do CI para o check:privacidade; nunca a imprime.
 if [ "${PRIVACIDADE_PROIBIDOS+x}" != x ] && [ "${GITHUB_ACTIONS+x}" != x ] && [ "${CI+x}" != x ] && [ -f "$HOME/.config/oestadodopais/proibidos.txt" ]; then
@@ -30,6 +33,8 @@ for a in "$@"; do
 done
 [ "$construir" -eq 0 ] || [ "$sem_build" -eq 0 ] || { echo 'conferir-tudo: --build e --sem-build não se juntam' >&2; exit 9; }
 case "$W" in /*) ;; *) echo 'conferir-tudo: a worktree tem de ser absoluta' >&2; exit 9;; esac
+# M99-b: a pasta de saída resolve-se antes do cd, contra o sítio de onde o guião foi chamado.
+case "$O" in /*) ;; *) O="$(pwd -P)/$O";; esac
 cd "$W" || exit 9
 [ -f package.json ] || { echo 'conferir-tudo: a worktree não tem package.json' >&2; exit 9; }
 if [ -e "$O" ] && [ -n "$(ls -A "$O" 2>/dev/null)" ]; then
@@ -93,38 +98,8 @@ correr() {
   filho=""
   return "$c"
 }
-cabeca="$(git rev-parse HEAD)" || exit 9
-printf '%s\n' "$cabeca" > "$O/cabeca"
-git status --porcelain --untracked-files=all > "$O/arvore.inicio"
-date -u +%Y-%m-%dT%H:%M:%SZ > "$O/inicio"
-printf 'n\tpasso\tcomando\tcodigo\tsegundos\n' > "$O/.tabela"
-if [ "$construir" -eq 1 ]; then
-  t0=$(date +%s)
-  correr "$O/00-build.log" 'npm run build'; c=$?
-  echo "$c" > "$O/00-build.code"
-  printf '00\tbuild\tnpm run build\t%s\t%s\n' "$c" "$(( $(date +%s) - t0 ))" >> "$O/.tabela"
-  [ "$c" -le 128 ] || exit "$c"
-fi
-if [ "$sem_build" -eq 0 ]; then
-  versao="$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1])).get("commit",""))' dist/version.json 2>/dev/null)"
-  if [ "$versao" != "$cabeca" ]; then
-    echo "conferir-tudo: dist/version.json (${versao:-ausente}) não é a cabeça da worktree ($cabeca); use --build ou --sem-build" >&2
-    echo "recusado: dist/version.json ${versao:-ausente} contra a cabeça $cabeca" > "$O/recusa"
-    rm -f "$O/.tabela"
-    exit 9
-  fi
-fi
-n=0
-while IFS= read -r comando; do
-  n=$((n + 1))
-  nome="$(printf '%s' "$comando" | sed -e 's/^npm run //' -e 's/ -- .*//' -e 's/[^A-Za-z0-9._-]/_/g')"
-  base="$(printf '%02d' "$n")-$nome"
-  t0=$(date +%s)
-  correr "$O/$base.log" "$comando" < /dev/null; c=$?
-  echo "$c" > "$O/$base.code"
-  printf '%02d\t%s\t%s\t%s\t%s\n' "$n" "$nome" "$comando" "$c" "$(( $(date +%s) - t0 ))" >> "$O/.tabela"
-  [ "$c" -le 128 ] || { echo "conferir-tudo: o passo $nome foi interrompido; a corrida para aqui" >&2; exit "$c"; }
-done < "$O/passos.txt"
+# O resumo (resumo.json e resumo.md) a partir da tabela dos passos que correram.
+escrever_resumo() {
 date -u +%Y-%m-%dT%H:%M:%SZ > "$O/fim"
 git rev-parse HEAD > "$O/cabeca.fim"
 python3 - "$O" <<'PY' || exit 9
@@ -152,5 +127,45 @@ md += [f'- {p["n"]} `{p["comando"]}`: {p["codigo"]} ({p["segundos"]} s)' for p i
 (o / 'resumo.md').write_text('\n'.join(md) + '\n')
 (o / '.tabela').unlink()
 PY
+}
+cabeca="$(git rev-parse HEAD)" || exit 9
+printf '%s\n' "$cabeca" > "$O/cabeca"
+git status --porcelain --untracked-files=all > "$O/arvore.inicio"
+date -u +%Y-%m-%dT%H:%M:%SZ > "$O/inicio"
+printf 'n\tpasso\tcomando\tcodigo\tsegundos\n' > "$O/.tabela"
+if [ "$construir" -eq 1 ]; then
+  t0=$(date +%s)
+  correr "$O/00-build.log" 'npm run build'; c=$?
+  echo "$c" > "$O/00-build.code"
+  printf '00\tbuild\tnpm run build\t%s\t%s\n' "$c" "$(( $(date +%s) - t0 ))" >> "$O/.tabela"
+  [ "$c" -le 128 ] || exit "$c"
+  if [ "$c" -ne 0 ]; then
+    echo "conferir-tudo: o build saiu com $c; nenhum passo do verify correu (a cauda em resumo.json)" >&2
+    escrever_resumo
+    echo "FIM $(cut -c1-9 "$O/cabeca") · build vermelho ($c)"
+    exit "$c"
+  fi
+fi
+if [ "$sem_build" -eq 0 ]; then
+  versao="$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1])).get("commit",""))' dist/version.json 2>/dev/null)"
+  if [ "$versao" != "$cabeca" ]; then
+    echo "conferir-tudo: dist/version.json (${versao:-ausente}) não é a cabeça da worktree ($cabeca); use --build ou --sem-build" >&2
+    echo "recusado: dist/version.json ${versao:-ausente} contra a cabeça $cabeca" > "$O/recusa"
+    rm -f "$O/.tabela"
+    exit 9
+  fi
+fi
+n=0
+while IFS= read -r comando; do
+  n=$((n + 1))
+  nome="$(printf '%s' "$comando" | sed -e 's/^npm run //' -e 's/ -- .*//' -e 's/[^A-Za-z0-9._-]/_/g')"
+  base="$(printf '%02d' "$n")-$nome"
+  t0=$(date +%s)
+  correr "$O/$base.log" "$comando" < /dev/null; c=$?
+  echo "$c" > "$O/$base.code"
+  printf '%02d\t%s\t%s\t%s\t%s\n' "$n" "$nome" "$comando" "$c" "$(( $(date +%s) - t0 ))" >> "$O/.tabela"
+  [ "$c" -le 128 ] || { echo "conferir-tudo: o passo $nome foi interrompido; a corrida para aqui" >&2; exit "$c"; }
+done < "$O/passos.txt"
+escrever_resumo
 echo "FIM $(cut -c1-9 "$O/cabeca") · $(grep -c '^- ' "$O/resumo.md") passos · vermelhos: $(python3 -c 'import json,sys; print(" ".join(json.load(open(sys.argv[1]))["vermelhos"]) or "nenhum")' "$O/resumo.json")"
 [ "$(python3 -c 'import json,sys; print(len(json.load(open(sys.argv[1]))["vermelhos"]))' "$O/resumo.json")" -eq 0 ] || exit 1
