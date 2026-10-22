@@ -1,0 +1,56 @@
+{
+ "bloco": "CR1 · as linhas do Eurostat de 2024 revistas, a ausência de 2025, a oração do PRR no item da Saúde",
+ "data": "2026-10-21",
+ "passagens": [
+  {
+   "nome": "CR1-a (motor)",
+   "modelo": "Claude Opus 5.5",
+   "esforco": "high",
+   "simbolos": 103146,
+   "chamadas": 28,
+   "minutos": 6
+  },
+  {
+   "nome": "CR1-b (sítio)",
+   "modelo": "Claude Opus 5.5",
+   "esforco": "high",
+   "simbolos": 156692,
+   "chamadas": 57,
+   "minutos": 37
+  },
+  {
+   "nome": "CR1-c (sítio)",
+   "modelo": "Claude Opus 5.5",
+   "esforco": "medium",
+   "simbolos": 78819,
+   "chamadas": 19,
+   "minutos": 13
+  },
+  {
+   "nome": "leitura a frio (tentativa)",
+   "modelo": "Codex gpt-6-astra",
+   "esforco": "medium",
+   "simbolos": 70989,
+   "chamadas": null,
+   "minutos": 1,
+   "nota": "esgotou a semana ao começar"
+  },
+  {
+   "nome": "leitura a frio (o ensaio M51)",
+   "modelo": "Gemini 4 Argon (High), CLI do Antigravity",
+   "esforco": "high",
+   "simbolos": null,
+   "chamadas": null,
+   "minutos": 11
+  }
+ ],
+ "corridas_de_conferencias": {
+  "build_inteiro": 3,
+  "verify_um_a_um": 1,
+  "core_gate": 1
+ },
+ "capturas": 0,
+ "simbolos_do_claude_nas_passagens": 338657,
+ "chamadas_nas_passagens": 104,
+ "nota": "Os símbolos são o total cumulativo que a ferramenta reporta para cada agente; o Gemini não os reporta na CLI."
+}
