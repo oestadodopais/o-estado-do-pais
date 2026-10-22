@@ -1,0 +1,183 @@
+{
+ "bloco": "HB1 · o estudo «A casa em Portugal e na Europa» (HB1, HB1-b, HB1-c1 a c6, HB1-m, HB1-m2, HB1-e, HB1-f; a HB1-d de sexta-feira junta-se aqui)",
+ "data": "2026-10-22",
+ "fonte": "o registo dos lançamentos da sessão (USO-2026-10-19.md, fora do repositório), as notificações da ferramenta e os ficheiros de custo das passagens; os valores em falta são null e não se estimam",
+ "passagens": [
+  {
+   "nome": "HB1 (construção)",
+   "modelo": "Codex gpt-6-astra",
+   "esforco": "xhigh",
+   "pontos_codex": 17,
+   "turnos": 234,
+   "simbolos_entrada": 36700000,
+   "simbolos": null,
+   "chamadas": null,
+   "minutos": 67
+  },
+  {
+   "nome": "leitura a frio do HB1",
+   "modelo": "Claude Opus 5.5 (leitor)",
+   "esforco": "xhigh",
+   "simbolos": 676910,
+   "chamadas": 171,
+   "minutos": 43
+  },
+  {
+   "nome": "HB1-b (continuação)",
+   "modelo": "Codex gpt-6-astra",
+   "esforco": "xhigh",
+   "pontos_codex": 22,
+   "turnos": 349,
+   "simbolos_entrada": 46700000,
+   "simbolos": null,
+   "chamadas": null,
+   "minutos": null
+  },
+  {
+   "nome": "leitura a frio da HB1-b",
+   "modelo": "Claude Opus 5.5 (leitor)",
+   "esforco": "xhigh",
+   "simbolos": 695616,
+   "chamadas": 202,
+   "minutos": 42
+  },
+  {
+   "nome": "a fusão do motor sobre master (f07b75e)",
+   "modelo": "Claude Opus 5.5",
+   "esforco": "high",
+   "simbolos": 103120,
+   "chamadas": null,
+   "minutos": null
+  },
+  {
+   "nome": "a fusão do sítio sobre main (db023e4b0)",
+   "modelo": "Claude Opus 5.5",
+   "esforco": "high",
+   "simbolos": 245775,
+   "chamadas": null,
+   "minutos": null
+  },
+  {
+   "nome": "HB1-c1",
+   "modelo": "Claude Opus 5.5",
+   "esforco": "high",
+   "simbolos": 248317,
+   "chamadas": null,
+   "minutos": null
+  },
+  {
+   "nome": "HB1-c2",
+   "modelo": "Claude Opus 5.5",
+   "esforco": "high",
+   "simbolos": null,
+   "chamadas": null,
+   "minutos": null
+  },
+  {
+   "nome": "HB1-c3",
+   "modelo": "Claude Opus 5.5",
+   "esforco": "high",
+   "simbolos": 188770,
+   "chamadas": 99,
+   "minutos": null
+  },
+  {
+   "nome": "HB1-c4",
+   "modelo": "Claude Opus 5.5",
+   "esforco": "high",
+   "simbolos": 121189,
+   "chamadas": 32,
+   "minutos": null
+  },
+  {
+   "nome": "HB1-c5",
+   "modelo": "Claude Opus 5.5",
+   "esforco": "high",
+   "simbolos": 92158,
+   "chamadas": 25,
+   "minutos": null
+  },
+  {
+   "nome": "leitura a frio da HB1-c inteira",
+   "modelo": "Codex gpt-6-astra (ler.sh)",
+   "esforco": "medium",
+   "simbolos": null,
+   "chamadas": null,
+   "minutos": 13
+  },
+  {
+   "nome": "HB1-c6",
+   "modelo": "Claude Opus 5.5",
+   "esforco": "high",
+   "simbolos": null,
+   "chamadas": 16,
+   "minutos": null
+  },
+  {
+   "nome": "HB1-m (a fusão com main e master)",
+   "modelo": "Claude Opus 5.5",
+   "esforco": "high",
+   "simbolos": 149000,
+   "chamadas": 60,
+   "minutos": null,
+   "nota": "arredondado ao milhar, lido da notificação da ferramenta"
+  },
+  {
+   "nome": "HB1-m2",
+   "modelo": "Claude Opus 5.5",
+   "esforco": "high",
+   "simbolos": 94000,
+   "chamadas": 24,
+   "minutos": null,
+   "nota": "arredondado ao milhar, lido da notificação da ferramenta"
+  },
+  {
+   "nome": "HB1-e (as definições das famílias)",
+   "modelo": "Claude Opus 5.5",
+   "esforco": "high",
+   "simbolos": 228000,
+   "chamadas": 66,
+   "minutos": null,
+   "nota": "arredondado ao milhar, lido da notificação da ferramenta"
+  },
+  {
+   "nome": "leitura a frio do estudo inteiro (HB1-m)",
+   "modelo": "Gemini 4 Argon (High), CLI do Antigravity",
+   "esforco": "high",
+   "simbolos": null,
+   "chamadas": null,
+   "minutos": 20,
+   "segundos": 1212
+  },
+  {
+   "nome": "HB1-f",
+   "modelo": "Claude Opus 5.5",
+   "esforco": "high",
+   "simbolos": 173436,
+   "chamadas": 52,
+   "minutos": 70,
+   "nota": "52 chamadas pela ferramenta, 48 no registo do construtor"
+  },
+  {
+   "nome": "leitura curta do diff da HB1-f (M48)",
+   "modelo": "Gemini 4 Argon (High), CLI do Antigravity",
+   "esforco": "high",
+   "simbolos": null,
+   "chamadas": null,
+   "minutos": 11,
+   "nota": "cinco plantas em cinco; um Major real, a HB1-g",
+   "segundos": 675
+  }
+ ],
+ "corridas_de_conferencias": {
+  "verify_inteiro_pelo_guiao": 1,
+  "build_inteiro": null,
+  "nota": "as corridas das passagens de 20 e 21.10 estão nos seus relatórios; a corrida inteira pelo conferir-tudo.sh foi uma, na HB1-f (51 passos, 2 076 segundos)"
+ },
+ "core_gate": {
+  "corridas": null,
+  "ultima": "7635564, PASS, 08:15 a 08:29 UTC de 22.10"
+ },
+ "capturas": null,
+ "nota": "A escada da §1.202 não se aplica a este bloco, que começou antes dela; serve de linha de base: os estudos ficam mais altos e dizem quanto."
+}
