@@ -1,25 +1,25 @@
 {
  "o_que": "O inventário declarado dos rótulos dos cartões de medida (bloco R2, 03.10.2026): por família, edição e chave, as formas distintas de cada campo e quantas vezes cada uma se rende, com os algarismos do período, do estado e da faixa apagados. Escrito por `node scripts/inventario-rotulos.mjs --escrever` sobre uma construção; a régua do `verify` compara o nome, a unidade e a dobra de cada construção com estas formas.",
- "cabeca": "7cc3543914edd0e9172f6409b12298e02bdd2a64",
+ "cabeca": "3b81746e0674496d7c8fda81ed52fb42c3921312",
  "contas": {
-  "paginas": 8656,
+  "paginas": 9692,
   "paginas_com_cartoes": 706,
-  "cartoes": 5672,
+  "cartoes": 5670,
   "familias": {
-   "nacional": 700,
+   "nacional": 698,
    "uniao": 42,
    "concelho": 4928,
    "camaras": 2
   },
   "nomes": {
-   "projeto": 596,
+   "projeto": 594,
    "medidas": 24,
    "figuras": 66,
    "cartao": 14
   },
   "estados": 688,
   "unidades": {
-   "declaradas": 1162,
+   "declaradas": 1160,
    "da_linha": 4442,
    "em_divida": 2,
    "na_faixa_dos_paises": 18
@@ -87,6 +87,20 @@
    "entradas": {
     "pt": 142,
     "en": 142
+   },
+   "acumuladas": {
+    "pt": 0,
+    "en": 0
+   }
+  },
+  "v2e": {
+   "recibos": {
+    "pt": 177,
+    "en": 177
+   },
+   "entradas": {
+    "pt": 177,
+    "en": 177
    },
    "acumuladas": {
     "pt": 0,
@@ -2407,7 +2421,7 @@
   },
   "nacional|en|hab-ilc-lvho05a-a-pc-total-y16-29-t-eu27_2020-2025": {
    "nome": {
-    "Population in overcrowded homes, sixteen to twenty-nine years, European Union": 1
+    "Population in overcrowded homes, aged sixteen to twenty-nine, European Union": 1
    },
    "periodo": {
     "in #": 1
@@ -2418,7 +2432,7 @@
   },
   "nacional|en|hab-ilc-lvho05a-a-pc-total-y16-29-t-pt-2025": {
    "nome": {
-    "Population in overcrowded homes, sixteen to twenty-nine years, Portugal": 1
+    "Population in overcrowded homes, aged sixteen to twenty-nine, Portugal": 1
    },
    "periodo": {
     "in #": 1
@@ -2429,7 +2443,7 @@
   },
   "nacional|en|hab-ilc-lvho07a-a-pc-total-y16-29-t-el-2025": {
    "nome": {
-    "Housing cost overburden, sixteen to twenty-nine years, Greece": 1
+    "Housing cost overburden, aged sixteen to twenty-nine, Greece": 1
    },
    "periodo": {
     "in #": 1
@@ -2440,7 +2454,7 @@
   },
   "nacional|en|hab-ilc-lvho07a-a-pc-total-y16-29-t-eu27_2020-2025": {
    "nome": {
-    "Housing cost overburden, sixteen to twenty-nine years, European Union": 1
+    "Housing cost overburden, aged sixteen to twenty-nine, European Union": 1
    },
    "periodo": {
     "in #": 1
@@ -2451,7 +2465,7 @@
   },
   "nacional|en|hab-ilc-lvho07a-a-pc-total-y16-29-t-pt-2025": {
    "nome": {
-    "Housing cost overburden, sixteen to twenty-nine years, Portugal": 1
+    "Housing cost overburden, aged sixteen to twenty-nine, Portugal": 1
    },
    "periodo": {
     "in #": 1
@@ -2660,7 +2674,7 @@
   },
   "nacional|en|hab-ilc-lvps08-a-y18-34-t-pc-eu27_2020-2025": {
    "nome": {
-    "Young people living with parents or sharing household income, eighteen to thirty-four years, European Union": 1
+    "Young people living with parents or sharing household income, aged eighteen to thirty-four, European Union": 1
    },
    "periodo": {
     "in #": 1
@@ -2671,7 +2685,7 @@
   },
   "nacional|en|hab-ilc-lvps08-a-y18-34-t-pc-pt-2025": {
    "nome": {
-    "Young people living with parents or sharing household income, eighteen to thirty-four years, Portugal": 1
+    "Young people living with parents or sharing household income, aged eighteen to thirty-four, Portugal": 1
    },
    "periodo": {
     "in #": 1
@@ -2682,7 +2696,7 @@
   },
   "nacional|en|hab-ilc-lvps08-a-y25-34-t-pc-dk-2025": {
    "nome": {
-    "Young people living with parents or sharing household income, twenty-five to thirty-four years, Denmark": 1
+    "Young people living with parents or sharing household income, aged twenty-five to thirty-four, Denmark": 1
    },
    "periodo": {
     "in #": 1
@@ -2693,7 +2707,7 @@
   },
   "nacional|en|hab-ilc-lvps08-a-y25-34-t-pc-eu27_2020-2025": {
    "nome": {
-    "Young people living with parents or sharing household income, twenty-five to thirty-four years, European Union": 1
+    "Young people living with parents or sharing household income, aged twenty-five to thirty-four, European Union": 1
    },
    "periodo": {
     "in #": 1
@@ -2704,7 +2718,7 @@
   },
   "nacional|en|hab-ilc-lvps08-a-y25-34-t-pc-hr-2025": {
    "nome": {
-    "Young people living with parents or sharing household income, twenty-five to thirty-four years, Croatia": 1
+    "Young people living with parents or sharing household income, aged twenty-five to thirty-four, Croatia": 1
    },
    "periodo": {
     "in #": 1
@@ -2715,7 +2729,7 @@
   },
   "nacional|en|hab-ilc-lvps08-a-y25-34-t-pc-pt-2015": {
    "nome": {
-    "Young people living with parents or sharing household income, twenty-five to thirty-four years, Portugal": 1
+    "Young people living with parents or sharing household income, aged twenty-five to thirty-four, Portugal": 1
    },
    "periodo": {
     "in #": 1
@@ -2726,7 +2740,7 @@
   },
   "nacional|en|hab-ilc-lvps08-a-y25-34-t-pc-pt-2020": {
    "nome": {
-    "Young people living with parents or sharing household income, twenty-five to thirty-four years, Portugal": 1
+    "Young people living with parents or sharing household income, aged twenty-five to thirty-four, Portugal": 1
    },
    "periodo": {
     "in #": 1
@@ -2737,7 +2751,7 @@
   },
   "nacional|en|hab-ilc-lvps08-a-y25-34-t-pc-pt-2025": {
    "nome": {
-    "Young people living with parents or sharing household income, twenty-five to thirty-four years, Portugal": 1
+    "Young people living with parents or sharing household income, aged twenty-five to thirty-four, Portugal": 1
    },
    "periodo": {
     "in #": 1
@@ -2847,7 +2861,7 @@
   },
   "nacional|en|hab-ilc-mdho06a-a-pc-total-t-y16-29-eu27_2020-2023": {
    "nome": {
-    "Severe housing deprivation, sixteen to twenty-nine years, European Union": 1
+    "Severe housing deprivation, aged sixteen to twenty-nine, European Union": 1
    },
    "periodo": {
     "in #": 1
@@ -2858,7 +2872,7 @@
   },
   "nacional|en|hab-ilc-mdho06a-a-pc-total-t-y16-29-pt-2023": {
    "nome": {
-    "Severe housing deprivation, sixteen to twenty-nine years, Portugal": 1
+    "Severe housing deprivation, aged sixteen to twenty-nine, Portugal": 1
    },
    "periodo": {
     "in #": 1
@@ -3615,6 +3629,28 @@
     "thousand permitted dwellings": 1
    }
   },
+  "nacional|en|hab-tespm140-a-pc-eu27_2020-2025": {
+   "nome": {
+    "Housing cost overburden, European Union": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of the population": 1
+   }
+  },
+  "nacional|en|hab-tespm140-a-pc-pt-2025": {
+   "nome": {
+    "Housing cost overburden, Portugal": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of the population": 1
+   }
+  },
   "nacional|en|hab-tipsho10-a-i15-a-avg-eu27_2020-2025": {
    "nome": {
     "Index of house prices net of inflation, European Union": 1
@@ -4122,17 +4158,6 @@
     "% of people": 2
    }
   },
-  "nacional|en|oe-2027-calendario-generalidade": {
-   "nome": {
-    "Budget first-reading vote": 1
-   },
-   "periodo": {
-    "in #": 1
-   },
-   "unidade": {
-    "announced date": 1
-   }
-  },
   "nacional|en|penalizacao-antecipacao-um-ano-com-factor-2026": {
    "nome": {
     "Pension cut for one year of early retirement, with the sustainability factor": 1
@@ -4349,17 +4374,6 @@
     "% of gross value added by enterprises": 1
    }
   },
-  "nacional|en|posicao-chega-habitacao": {
-   "nome": {
-    "Chega housing package, reported by the press": 1
-   },
-   "periodo": {
-    "in #": 1
-   },
-   "unidade": {
-    "source text": 1
-   }
-  },
   "nacional|en|posicao-de-investimento-internacional-2025": {
    "dobra": {
     "What is the difference between what the country’s residents own in the rest of the world and what they owe to it (financial assets and liabilities relative to the rest of the world), as a percentage of the value of the final goods and services the economy produces in a year (GDP)?": 1
@@ -4378,17 +4392,6 @@
    },
    "unidade": {
     "% of GDP": 1
-   }
-  },
-  "nacional|en|posicao-ps-rendas": {
-   "nome": {
-    "PS proposal for the rent deduction": 1
-   },
-   "periodo": {
-    "in #": 1
-   },
-   "unidade": {
-    "source text": 1
    }
   },
   "nacional|en|precos-da-habitacao-2025": {
@@ -6281,7 +6284,7 @@
   },
   "nacional|pt|hab-ilc-lvho05a-a-pc-total-y16-29-t-eu27_2020-2025": {
    "nome": {
-    "População em habitações sobrelotadas, dezasseis a vinte e nove anos, União Europeia": 1
+    "População em habitações sobrelotadas, dos dezasseis aos vinte e nove anos, União Europeia": 1
    },
    "periodo": {
     "em #": 1
@@ -6292,7 +6295,7 @@
   },
   "nacional|pt|hab-ilc-lvho05a-a-pc-total-y16-29-t-pt-2025": {
    "nome": {
-    "População em habitações sobrelotadas, dezasseis a vinte e nove anos, Portugal": 1
+    "População em habitações sobrelotadas, dos dezasseis aos vinte e nove anos, Portugal": 1
    },
    "periodo": {
     "em #": 1
@@ -6303,7 +6306,7 @@
   },
   "nacional|pt|hab-ilc-lvho07a-a-pc-total-y16-29-t-el-2025": {
    "nome": {
-    "Sobrecarga do custo da habitação, dezasseis a vinte e nove anos, Grécia": 1
+    "Sobrecarga do custo da habitação, dos dezasseis aos vinte e nove anos, Grécia": 1
    },
    "periodo": {
     "em #": 1
@@ -6314,7 +6317,7 @@
   },
   "nacional|pt|hab-ilc-lvho07a-a-pc-total-y16-29-t-eu27_2020-2025": {
    "nome": {
-    "Sobrecarga do custo da habitação, dezasseis a vinte e nove anos, União Europeia": 1
+    "Sobrecarga do custo da habitação, dos dezasseis aos vinte e nove anos, União Europeia": 1
    },
    "periodo": {
     "em #": 1
@@ -6325,7 +6328,7 @@
   },
   "nacional|pt|hab-ilc-lvho07a-a-pc-total-y16-29-t-pt-2025": {
    "nome": {
-    "Sobrecarga do custo da habitação, dezasseis a vinte e nove anos, Portugal": 1
+    "Sobrecarga do custo da habitação, dos dezasseis aos vinte e nove anos, Portugal": 1
    },
    "periodo": {
     "em #": 1
@@ -6534,7 +6537,7 @@
   },
   "nacional|pt|hab-ilc-lvps08-a-y18-34-t-pc-eu27_2020-2025": {
    "nome": {
-    "Jovens que vivem com os pais ou partilham o rendimento do agregado, dezoito a trinta e quatro anos, União Europeia": 1
+    "Jovens que vivem com os pais ou partilham o rendimento do agregado, dos dezoito aos trinta e quatro anos, União Europeia": 1
    },
    "periodo": {
     "em #": 1
@@ -6545,7 +6548,7 @@
   },
   "nacional|pt|hab-ilc-lvps08-a-y18-34-t-pc-pt-2025": {
    "nome": {
-    "Jovens que vivem com os pais ou partilham o rendimento do agregado, dezoito a trinta e quatro anos, Portugal": 1
+    "Jovens que vivem com os pais ou partilham o rendimento do agregado, dos dezoito aos trinta e quatro anos, Portugal": 1
    },
    "periodo": {
     "em #": 1
@@ -6556,7 +6559,7 @@
   },
   "nacional|pt|hab-ilc-lvps08-a-y25-34-t-pc-dk-2025": {
    "nome": {
-    "Jovens que vivem com os pais ou partilham o rendimento do agregado, vinte e cinco a trinta e quatro anos, Dinamarca": 1
+    "Jovens que vivem com os pais ou partilham o rendimento do agregado, dos vinte e cinco aos trinta e quatro anos, Dinamarca": 1
    },
    "periodo": {
     "em #": 1
@@ -6567,7 +6570,7 @@
   },
   "nacional|pt|hab-ilc-lvps08-a-y25-34-t-pc-eu27_2020-2025": {
    "nome": {
-    "Jovens que vivem com os pais ou partilham o rendimento do agregado, vinte e cinco a trinta e quatro anos, União Europeia": 1
+    "Jovens que vivem com os pais ou partilham o rendimento do agregado, dos vinte e cinco aos trinta e quatro anos, União Europeia": 1
    },
    "periodo": {
     "em #": 1
@@ -6578,7 +6581,7 @@
   },
   "nacional|pt|hab-ilc-lvps08-a-y25-34-t-pc-hr-2025": {
    "nome": {
-    "Jovens que vivem com os pais ou partilham o rendimento do agregado, vinte e cinco a trinta e quatro anos, Croácia": 1
+    "Jovens que vivem com os pais ou partilham o rendimento do agregado, dos vinte e cinco aos trinta e quatro anos, Croácia": 1
    },
    "periodo": {
     "em #": 1
@@ -6589,7 +6592,7 @@
   },
   "nacional|pt|hab-ilc-lvps08-a-y25-34-t-pc-pt-2015": {
    "nome": {
-    "Jovens que vivem com os pais ou partilham o rendimento do agregado, vinte e cinco a trinta e quatro anos, Portugal": 1
+    "Jovens que vivem com os pais ou partilham o rendimento do agregado, dos vinte e cinco aos trinta e quatro anos, Portugal": 1
    },
    "periodo": {
     "em #": 1
@@ -6600,7 +6603,7 @@
   },
   "nacional|pt|hab-ilc-lvps08-a-y25-34-t-pc-pt-2020": {
    "nome": {
-    "Jovens que vivem com os pais ou partilham o rendimento do agregado, vinte e cinco a trinta e quatro anos, Portugal": 1
+    "Jovens que vivem com os pais ou partilham o rendimento do agregado, dos vinte e cinco aos trinta e quatro anos, Portugal": 1
    },
    "periodo": {
     "em #": 1
@@ -6611,7 +6614,7 @@
   },
   "nacional|pt|hab-ilc-lvps08-a-y25-34-t-pc-pt-2025": {
    "nome": {
-    "Jovens que vivem com os pais ou partilham o rendimento do agregado, vinte e cinco a trinta e quatro anos, Portugal": 1
+    "Jovens que vivem com os pais ou partilham o rendimento do agregado, dos vinte e cinco aos trinta e quatro anos, Portugal": 1
    },
    "periodo": {
     "em #": 1
@@ -6721,7 +6724,7 @@
   },
   "nacional|pt|hab-ilc-mdho06a-a-pc-total-t-y16-29-eu27_2020-2023": {
    "nome": {
-    "Privação severa da habitação, dezasseis a vinte e nove anos, União Europeia": 1
+    "Privação severa da habitação, dos dezasseis aos vinte e nove anos, União Europeia": 1
    },
    "periodo": {
     "em #": 1
@@ -6732,7 +6735,7 @@
   },
   "nacional|pt|hab-ilc-mdho06a-a-pc-total-t-y16-29-pt-2023": {
    "nome": {
-    "Privação severa da habitação, dezasseis a vinte e nove anos, Portugal": 1
+    "Privação severa da habitação, dos dezasseis aos vinte e nove anos, Portugal": 1
    },
    "periodo": {
     "em #": 1
@@ -7489,6 +7492,28 @@
     "mil alojamentos licenciados": 1
    }
   },
+  "nacional|pt|hab-tespm140-a-pc-eu27_2020-2025": {
+   "nome": {
+    "Sobrecarga do custo da habitação, União Europeia": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% da população": 1
+   }
+  },
+  "nacional|pt|hab-tespm140-a-pc-pt-2025": {
+   "nome": {
+    "Sobrecarga do custo da habitação, Portugal": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% da população": 1
+   }
+  },
   "nacional|pt|hab-tipsho10-a-i15-a-avg-eu27_2020-2025": {
    "nome": {
     "Índice dos preços da habitação descontada a inflação, União Europeia": 1
@@ -7996,17 +8021,6 @@
     "% das pessoas": 2
    }
   },
-  "nacional|pt|oe-2027-calendario-generalidade": {
-   "nome": {
-    "Votação do Orçamento na generalidade": 1
-   },
-   "periodo": {
-    "em #": 1
-   },
-   "unidade": {
-    "data anunciada": 1
-   }
-  },
   "nacional|pt|penalizacao-antecipacao-um-ano-com-factor-2026": {
    "nome": {
     "Corte na pensão por um ano de antecipação, com o fator de sustentabilidade": 1
@@ -8223,17 +8237,6 @@
     "% do VAB empresarial": 1
    }
   },
-  "nacional|pt|posicao-chega-habitacao": {
-   "nome": {
-    "Pacote do Chega para a habitação, pela imprensa": 1
-   },
-   "periodo": {
-    "em #": 1
-   },
-   "unidade": {
-    "texto da fonte": 1
-   }
-  },
   "nacional|pt|posicao-de-investimento-internacional-2025": {
    "dobra": {
     "Qual é a diferença entre o que os residentes do país têm no resto do mundo e o que lhe devem (os ativos financeiros e os passivos face ao exterior), em percentagem do valor dos bens e serviços finais que a economia produz num ano (o PIB)?": 1
@@ -8252,17 +8255,6 @@
    },
    "unidade": {
     "% do PIB": 1
-   }
-  },
-  "nacional|pt|posicao-ps-rendas": {
-   "nome": {
-    "Proposta do PS para a dedução das rendas": 1
-   },
-   "periodo": {
-    "em #": 1
-   },
-   "unidade": {
-    "texto da fonte": 1
    }
   },
   "nacional|pt|precos-da-habitacao-2025": {
