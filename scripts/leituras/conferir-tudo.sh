@@ -12,6 +12,11 @@
 # Uso: sh scripts/leituras/conferir-tudo.sh <worktree absoluta> <pasta de saída nova> [--build|--sem-build]
 # Saídas: 0 todos verdes; 1 algum vermelho; 9 recusa (nenhum passo correu); 130 interrompido.
 set -u
+# RH1, como no portoes.sh: a máquina recebe a mesma lista privada do CI para o check:privacidade; nunca a imprime.
+if [ "${PRIVACIDADE_PROIBIDOS+x}" != x ] && [ "${GITHUB_ACTIONS+x}" != x ] && [ "${CI+x}" != x ] && [ -f "$HOME/.config/oestadodopais/proibidos.txt" ]; then
+  PRIVACIDADE_PROIBIDOS=$(cat "$HOME/.config/oestadodopais/proibidos.txt") || exit 9
+  export PRIVACIDADE_PROIBIDOS
+fi
 aqui="$(cd "$(dirname "$0")" && pwd -P)"
 [ "$#" -ge 2 ] || { echo 'conferir-tudo: uso: conferir-tudo.sh <worktree absoluta> <pasta nova> [--build|--sem-build]' >&2; exit 9; }
 W="$1"; O="$2"; shift 2
