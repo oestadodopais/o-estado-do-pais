@@ -167,6 +167,15 @@
    "minutos": 11,
    "nota": "cinco plantas em cinco; um Major real, a HB1-g",
    "segundos": 675
+  },
+  {
+   "nome": "HB1-g (o Major 6 da leitura curta: a atribuição, o excerto para incorporar e as descrições das cabeças das duas linhas só com edição)",
+   "modelo": "Claude Opus 5.5",
+   "esforco": "high",
+   "simbolos": 245143,
+   "chamadas": 20,
+   "minutos": 28,
+   "nota": "lido da notificação da ferramenta; a leitura curta deste diff junta-se à de sexta-feira (HB1-d)"
   }
  ],
  "corridas_de_conferencias": {
