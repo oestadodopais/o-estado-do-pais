@@ -6,31 +6,31 @@
 id: "hab-ine-preco-mediano"
 
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
-value: "2 337"
+value: "2 445"
 unit: "€/m2"
 
 # O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
-name: "preço mediano dos 35 953 alojamentos familiares transacionados em Portugal"
+name: "preço mediano dos 37 854 alojamentos familiares transacionados em Portugal"
 name_source: "PDF p. 1; parágrafo identificado pelo início; área física declarada"
-measure: "preço mediano dos 35 953 alojamentos familiares transacionados em Portugal"
+measure: "preço mediano dos 37 854 alojamentos familiares transacionados em Portugal"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "INE"
 document:
   title: "ESTATÍSTICAS DE PREÇOS DA HABITAÇÃO AO NÍVEL LOCAL"
-  edition: "2026-Q1"
+  edition: "2026-Q2"
   locator: "PDF p. 1; parágrafo identificado pelo início; área física declarada"
-  source_sha256: "edad0e60dfc15f44ad3116dfe3506f23ef054f473aaaf60e97dae4224067c917"
+  source_sha256: "9f3176072c9399b644acc8bf77ef701a7927382c6802eee3c0ae3996a40e5879"
   page: 1
   kind: "pdf"
-source_url: "https://www.ine.pt/ngt_server/attachfileu.jsp?look_parentBoui=804178838&att_display=n&att_download=y"
-access_date: "2026-10-19"
-published_at: "2026-07-17"
-reference_date: "2026-T1"
+source_url: "https://www.ine.pt/ngt_server/attachfileu.jsp?look_parentBoui=823114096&att_display=n&att_download=y"
+access_date: "2026-10-26"
+published_at: "2026-10-23"
+reference_date: "2026-T2"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "No 1.º trimestre de 2026, o preço mediano dos 35 953 alojamentos familiares transacionados em Portugal foi 2 337 €/m2, na sequência de uma taxa de variação de 19,8% em relação ao 1.º trimestre de 2025 (17,5% no trimestre anterior)."
+excerpt: "No 2.º trimestre de 2026, o preço mediano dos 37 854 alojamentos familiares transacionados em Portugal foi 2 445 €/m2, na sequência de uma taxa de variação de 18,4% em relação ao 2.º trimestre de 2025 (19,8% no trimestre anterior)."
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null
@@ -45,7 +45,7 @@ attributed_to:
 
 study: "a-casa-em-portugal-e-na-europa"
 # Nota interna. NÃO é publicada: ver DECISIONS §1.24.
-note: "[note do motor] Destaque anterior ao previsto para 23 de outubro. A versão corrigida da fonte é conservada. · Cruzado de ResearchHub content/23 Habitacao · hab-ine-preco-mediano."
+note: "[note do motor] Destaque de 23 de outubro de 2026 (2.º trimestre de 2026); a linha do 1.º trimestre de 2026 (destaque de 17 de julho de 2026) é substituída nesta edição. · Cruzado de ResearchHub content/23 Habitacao · hab-ine-preco-mediano."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []

@@ -348,8 +348,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-eurostat-privacao-severa-definicao",
-        "origin_row_sha256": "fae80eb32f777060d593119bbfd89b4e5e4107ef34381395c9380b6b11918ed0",
-        "exported_row_sha256": "d529fa9a9c285252e2a401f6c4a2a1065f4c2face7ec5fb58dec3def8b228f20"
+        "origin_row_sha256": "722933f3201401ff84a35500bc9f09ca5177d820ff892d798533506ea245399a",
+        "exported_row_sha256": "1a1148ab50f77340418338d49f585eace995e75def1b7e798ede40c294e6edf2"
       }
     },
     "hab-governo-arrendamento": {
@@ -440,8 +440,8 @@
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-il-proposta",
-        "origin_row_sha256": "8770b31a94668641a2359c4a06d132150a802e11f3be06f816e7b3682914398c",
-        "exported_row_sha256": "d64df398bb96f0de2cf0f344dc89271d4d8f81043d722a83ff61a6b24271d07e"
+        "origin_row_sha256": "61c9e1913b4d7b1b05623f8a5c31310e9cfd011c539c29cd707d03eee24e4b78",
+        "exported_row_sha256": "f0efa5ef0d197139206a4f6b5acc9b17fbd190492fa15d0b4b6c3d8c2be0cabc"
       }
     },
     "hab-ilc-lvho02-a-total-total-own-l-pc-eu27_2020-2025": {
@@ -2408,20 +2408,20 @@
         "name_source": "PDF p. 1; parágrafo identificado pelo início; área física declarada",
         "document": {
           "title": "TAXAS DE JURO IMPLÍCITAS NO CRÉDITO À HABITAÇÃO",
-          "edition": "2026-08",
+          "edition": "2026-09",
           "locator": "PDF p. 1; parágrafo identificado pelo início; área física declarada",
-          "source_sha256": "cd593ac7b3fe64498d80d8b52227a12917210f9a9bc731df019470c65e86122c",
+          "source_sha256": "ee4600b0fb179a51a20aeca9d5513efe4d3e9b6bd77cae623b7c8317c4140afa",
           "page": 1,
           "kind": "pdf"
         },
-        "excerpt": "A taxa de juro implícita no conjunto dos contratos de crédito à habitação subiu para 3,162% em agosto, traduzindo um aumento de 2,7 pontos base (p.b.) face ao mês anterior.",
-        "reference_date": "2026-08"
+        "excerpt": "A taxa de juro implícita no conjunto dos contratos de crédito à habitação subiu para 3,194% em setembro, traduzindo um aumento de 3,2 pontos base (p.b.) face ao mês anterior.",
+        "reference_date": "2026-09"
       },
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ine-juro-implicito",
-        "origin_row_sha256": "2cc97cb8e1617ae0a3d8616b3e70193dd8844761a7e336d880ab9331451f78ee",
-        "exported_row_sha256": "a0fa902941ff8c9c9f9f93a15979f411a32f80e7bf2ffd6c457d2ac5be42118e"
+        "origin_row_sha256": "1e68adb6a0e0f7990bb04fdf2327bd9908eb55d68ce3fb00c213c77db0d99875",
+        "exported_row_sha256": "66002fbaaa4dff8ee635eb60fdaea3976df9a3769064b63c605851f0a0940ab8"
       }
     },
     "hab-ine-preco-lisboa": {
@@ -2432,44 +2432,44 @@
         "name_source": "PDF p. 1; parágrafo identificado pelo início; área física declarada",
         "document": {
           "title": "ESTATÍSTICAS DE PREÇOS DA HABITAÇÃO AO NÍVEL LOCAL",
-          "edition": "2026-Q1",
+          "edition": "2026-Q2",
           "locator": "PDF p. 1; parágrafo identificado pelo início; área física declarada",
-          "source_sha256": "edad0e60dfc15f44ad3116dfe3506f23ef054f473aaaf60e97dae4224067c917",
+          "source_sha256": "9f3176072c9399b644acc8bf77ef701a7927382c6802eee3c0ae3996a40e5879",
           "page": 1,
           "kind": "pdf"
         },
-        "excerpt": "No 1.º trimestre de 2026, os preços da habitação aceleraram (isto é, registaram aumentos nas taxas de variação homóloga) em 11 dos 24 municípios com mais de 100 mil habitantes (em 13, no 4.º trimestre de 2025), tendo os municípios do Funchal (+25,2 pontos percentuais (p.p.)) e de Guimarães (+24,1 p.p.) apresentado os maiores acréscimos. O município de Matosinhos (-11,9 p.p.) registou a maior diminuição na taxa de variação homóloga. Os municípios de Lisboa e do Porto registaram acréscimos de 0,3 p.p. e 2,4 p.p. nas taxas de variação homólogas do 4.º trimestre de 2025 para o 1.º trimestre de 2026. Os municípios de Lisboa (5 292 €/m2), Cascais (5 000 €/m2) e Oeiras (4 511 €/m2) apresentaram os preços da habitação mais elevados.",
-        "reference_date": "2026-T1"
+        "excerpt": "No 2.º trimestre de 2026, os preços da habitação aceleraram (isto é, registaram aumentos nas taxas de variação homóloga) em 10 dos 24 municípios com mais de 100 mil habitantes (em 11, no 1.º trimestre de 2026), tendo os municípios de Loures (+9,7 pontos percentuais (p.p.)) e de Matosinhos (+9,5 p.p.) apresentado os maiores acréscimos. O município de Guimarães (-13,4 p.p.) registou a maior diminuição na taxa de variação homóloga. Os municípios de Lisboa e do Porto registaram decréscimos de 8,9 p.p. e 5,4 p.p. nas taxas de variação homólogas do 1.º para o 2.º trimestre de 2026. Os municípios de Lisboa (5 299 €/m2), Cascais (5 200 €/m2) e Oeiras (4 704 €/m2) apresentaram os preços da habitação mais elevados.",
+        "reference_date": "2026-T2"
       },
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ine-preco-lisboa",
-        "origin_row_sha256": "cdae2c9a8ca43ef08dc841c509a002969efbec425615d78fae5177f75602a742",
-        "exported_row_sha256": "ed551a1de2233b52acf01db3e2569eb06b7eb912dac57efd0e113ece85172616"
+        "origin_row_sha256": "b0175734500920dd5b1123739c380550aaff366d6e5e4ea460feece4c4ec4fdb",
+        "exported_row_sha256": "7a858f749a5f102073bc5a7f4689d42d619a6143916b61f73430fe0186d75d99"
       }
     },
     "hab-ine-preco-mediano": {
       "linha": {
         "id": "hab-ine-preco-mediano",
         "study": "a-casa-em-portugal-e-na-europa",
-        "name": "preço mediano dos 35 953 alojamentos familiares transacionados em Portugal",
+        "name": "preço mediano dos 37 854 alojamentos familiares transacionados em Portugal",
         "name_source": "PDF p. 1; parágrafo identificado pelo início; área física declarada",
         "document": {
           "title": "ESTATÍSTICAS DE PREÇOS DA HABITAÇÃO AO NÍVEL LOCAL",
-          "edition": "2026-Q1",
+          "edition": "2026-Q2",
           "locator": "PDF p. 1; parágrafo identificado pelo início; área física declarada",
-          "source_sha256": "edad0e60dfc15f44ad3116dfe3506f23ef054f473aaaf60e97dae4224067c917",
+          "source_sha256": "9f3176072c9399b644acc8bf77ef701a7927382c6802eee3c0ae3996a40e5879",
           "page": 1,
           "kind": "pdf"
         },
-        "excerpt": "No 1.º trimestre de 2026, o preço mediano dos 35 953 alojamentos familiares transacionados em Portugal foi 2 337 €/m2, na sequência de uma taxa de variação de 19,8% em relação ao 1.º trimestre de 2025 (17,5% no trimestre anterior).",
-        "reference_date": "2026-T1"
+        "excerpt": "No 2.º trimestre de 2026, o preço mediano dos 37 854 alojamentos familiares transacionados em Portugal foi 2 445 €/m2, na sequência de uma taxa de variação de 18,4% em relação ao 2.º trimestre de 2025 (19,8% no trimestre anterior).",
+        "reference_date": "2026-T2"
       },
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ine-preco-mediano",
-        "origin_row_sha256": "08a71ad9530691ae40e75b92da8895077ef2a3da3ee15ec38f14dad0ae93dfee",
-        "exported_row_sha256": "239b8f01a93dd4ff3fc1af89d08cab6e7b34356c0c099cedcaef5628faafd0ff"
+        "origin_row_sha256": "525d829cd82f795a28b716662068aa2956bcda02d06cf98306431d5f78bae4b5",
+        "exported_row_sha256": "d1288391b79516ac8836cab8dfd3eaad2c13ede97a8d90b6d4c0cc3ff60566f7"
       }
     },
     "hab-ine-preco-porto": {
@@ -2480,19 +2480,19 @@
         "name_source": "Trimestral1_N2024.csv; linha 22; coluna 3",
         "document": {
           "title": "Valor mediano das vendas por m² de alojamentos familiares",
-          "edition": "2026-Q1",
+          "edition": "2026-Q2",
           "locator": "Trimestral1_N2024.csv; linha 22; coluna 3",
-          "source_sha256": "e7ab81e756a3f838bb008e414c1b35b2ba1fb7a57a235c9ada05e6ee3a63aa8c",
+          "source_sha256": "99cdefcb77b4e221f2a8beb19b14303d251ad34735166f0717a8edcb9e946330",
           "kind": "serie"
         },
-        "excerpt": "Valor mediano das vendas por m² de alojamentos familiares; Porto; 1ºT2026; 3 729",
-        "reference_date": "2026-T1"
+        "excerpt": "Valor mediano das vendas por m² de alojamentos familiares; Porto; 2ºT2026; 3 846",
+        "reference_date": "2026-T2"
       },
       "origem": {
         "rh_study": "23 Habitacao",
         "rh_id": "hab-ine-preco-porto",
-        "origin_row_sha256": "45e9aa8eb616cedaf751ea5e5a4ca0214574c672eff51c884085bda98c31e315",
-        "exported_row_sha256": "7631144062653102bee1b6a5c210c2ea311053513c0d3017544de204cd15562d"
+        "origin_row_sha256": "ace4be132229fa253db2ccd7081193fac3b47a0a84b7b43a41a089512b3a9919",
+        "exported_row_sha256": "99c0d266158a4d23cf26e0bced4f1fa898a770e7285714ab4d21449327e4ef72"
       }
     },
     "hab-ine-renda-lisboa": {

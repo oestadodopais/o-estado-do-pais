@@ -120,7 +120,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "derivation",
-        "literal": "preços da habitação, Lisboa, 1.º trimestre de 2026 (5 292 euros por metro quadrado; INE) a dividir por preço mediano dos 35 953 alojamentos familiares transacionados em Portugal, 1.º trimestre de 2026 (2 337 euros por metro quadrado; INE), arredondado a uma casa decimal: 2,3."
+        "literal": "preços da habitação, Lisboa, 2.º trimestre de 2026 (5 299 euros por metro quadrado; INE) a dividir por preço mediano dos 37 854 alojamentos familiares transacionados em Portugal, 2.º trimestre de 2026 (2 445 euros por metro quadrado; INE), arredondado a uma casa decimal: 2,2."
       }
     ],
     "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
@@ -3020,7 +3020,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "excerpt",
-        "literal": "A taxa de juro implícita no conjunto dos contratos de crédito à habitação subiu para 3,162% em agosto, traduzindo um aumento de 2,7 pontos base (p.b.) face ao mês anterior."
+        "literal": "A taxa de juro implícita no conjunto dos contratos de crédito à habitação subiu para 3,194% em setembro, traduzindo um aumento de 3,2 pontos base (p.b.) face ao mês anterior."
       }
     ],
     "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
@@ -3043,7 +3043,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "excerpt",
-        "literal": "No 1.º trimestre de 2026, os preços da habitação aceleraram (isto é, registaram aumentos nas taxas de variação homóloga) em 11 dos 24 municípios com mais de 100 mil habitantes (em 13, no 4.º trimestre de 2025), tendo os municípios do Funchal (+25,2 pontos percentuais (p.p.)) e de Guimarães (+24,1 p.p.) apresentado os maiores acréscimos. O município de Matosinhos (-11,9 p.p.) registou a maior diminuição na taxa de variação homóloga. Os municípios de Lisboa e do Porto registaram acréscimos de 0,3 p.p. e 2,4 p.p. nas taxas de variação homólogas do 4.º trimestre de 2025 para o 1.º trimestre de 2026. Os municípios de Lisboa (5 292 €/m2), Cascais (5 000 €/m2) e Oeiras (4 511 €/m2) apresentaram os preços da habitação mais elevados."
+        "literal": "No 2.º trimestre de 2026, os preços da habitação aceleraram (isto é, registaram aumentos nas taxas de variação homóloga) em 10 dos 24 municípios com mais de 100 mil habitantes (em 11, no 1.º trimestre de 2026), tendo os municípios de Loures (+9,7 pontos percentuais (p.p.)) e de Matosinhos (+9,5 p.p.) apresentado os maiores acréscimos. O município de Guimarães (-13,4 p.p.) registou a maior diminuição na taxa de variação homóloga. Os municípios de Lisboa e do Porto registaram decréscimos de 8,9 p.p. e 5,4 p.p. nas taxas de variação homólogas do 1.º para o 2.º trimestre de 2026. Os municípios de Lisboa (5 299 €/m2), Cascais (5 200 €/m2) e Oeiras (4 704 €/m2) apresentaram os preços da habitação mais elevados."
       }
     ],
     "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
@@ -3062,11 +3062,11 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "name",
-        "literal": "preço mediano dos 35 953 alojamentos familiares transacionados em Portugal"
+        "literal": "preço mediano dos 37 854 alojamentos familiares transacionados em Portugal"
       },
       {
         "campo": "excerpt",
-        "literal": "No 1.º trimestre de 2026, o preço mediano dos 35 953 alojamentos familiares transacionados em Portugal foi 2 337 €/m2, na sequência de uma taxa de variação de 19,8% em relação ao 1.º trimestre de 2025 (17,5% no trimestre anterior)."
+        "literal": "No 2.º trimestre de 2026, o preço mediano dos 37 854 alojamentos familiares transacionados em Portugal foi 2 445 €/m2, na sequência de uma taxa de variação de 18,4% em relação ao 2.º trimestre de 2025 (19,8% no trimestre anterior)."
       }
     ],
     "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."
@@ -3089,7 +3089,7 @@ export const UNIDADES_HB1 = {
       },
       {
         "campo": "excerpt",
-        "literal": "Valor mediano das vendas por m² de alojamentos familiares; Porto; 1ºT2026; 3 729"
+        "literal": "Valor mediano das vendas por m² de alojamentos familiares; Porto; 2ºT2026; 3 846"
       }
     ],
     "achado": "HB1: unidade declarada com o objeto, denominador ou base que os campos da linha identificam; o recibo conserva a unidade original."

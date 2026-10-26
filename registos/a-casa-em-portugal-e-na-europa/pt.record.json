@@ -127,30 +127,30 @@
     },
     {
      "end": 873,
-     "printed": "2 337",
+     "printed": "2 445",
      "row": "hab-ine-preco-mediano",
-     "source_body": "content/23 Habitacao/source/ine-retoma-pt-32-2.pdf",
-     "source_sha256": "edad0e60dfc15f44ad3116dfe3506f23ef054f473aaaf60e97dae4224067c917",
+     "source_body": "content/23 Habitacao/source/hb1d-ine-precos-q2.pdf",
+     "source_sha256": "9f3176072c9399b644acc8bf77ef701a7927382c6802eee3c0ae3996a40e5879",
      "start": 868,
-     "value": "2 337"
+     "value": "2 445"
     },
     {
      "end": 940,
-     "printed": "5 292",
+     "printed": "5 299",
      "row": "hab-ine-preco-lisboa",
-     "source_body": "content/23 Habitacao/source/ine-retoma-pt-32-2.pdf",
-     "source_sha256": "edad0e60dfc15f44ad3116dfe3506f23ef054f473aaaf60e97dae4224067c917",
+     "source_body": "content/23 Habitacao/source/hb1d-ine-precos-q2.pdf",
+     "source_sha256": "9f3176072c9399b644acc8bf77ef701a7927382c6802eee3c0ae3996a40e5879",
      "start": 935,
-     "value": "5 292"
+     "value": "5 299"
     },
     {
      "end": 957,
-     "printed": "3 729",
+     "printed": "3 846",
      "row": "hab-ine-preco-porto",
-     "source_body": "content/23 Habitacao/source/ine-retoma-pt-32-6.zip",
-     "source_sha256": "e7ab81e756a3f838bb008e414c1b35b2ba1fb7a57a235c9ada05e6ee3a63aa8c",
+     "source_body": "content/23 Habitacao/source/hb1d-ine-precos-q2.zip",
+     "source_sha256": "99cdefcb77b4e221f2a8beb19b14303d251ad34735166f0717a8edcb9e946330",
      "start": 952,
-     "value": "3 729"
+     "value": "3 846"
     },
     {
      "end": 1006,
@@ -278,8 +278,8 @@
      "id": "hab-ine-preco-mediano",
      "inicio": 868,
      "livro": "HB",
-     "sha256_linha": "08a71ad9530691ae40e75b92da8895077ef2a3da3ee15ec38f14dad0ae93dfee",
-     "texto": "2 337",
+     "sha256_linha": "525d829cd82f795a28b716662068aa2956bcda02d06cf98306431d5f78bae4b5",
+     "texto": "2 445",
      "tipo": "valor"
     },
     {
@@ -287,8 +287,8 @@
      "id": "hab-ine-preco-mediano",
      "inicio": 902,
      "livro": "HB",
-     "sha256_linha": "08a71ad9530691ae40e75b92da8895077ef2a3da3ee15ec38f14dad0ae93dfee",
-     "texto": "1.º trimestre de 2026",
+     "sha256_linha": "525d829cd82f795a28b716662068aa2956bcda02d06cf98306431d5f78bae4b5",
+     "texto": "2.º trimestre de 2026",
      "tipo": "periodo"
     },
     {
@@ -296,8 +296,8 @@
      "id": "hab-ine-preco-lisboa",
      "inicio": 935,
      "livro": "HB",
-     "sha256_linha": "cdae2c9a8ca43ef08dc841c509a002969efbec425615d78fae5177f75602a742",
-     "texto": "5 292",
+     "sha256_linha": "b0175734500920dd5b1123739c380550aaff366d6e5e4ea460feece4c4ec4fdb",
+     "texto": "5 299",
      "tipo": "valor"
     },
     {
@@ -305,8 +305,8 @@
      "id": "hab-ine-preco-porto",
      "inicio": 952,
      "livro": "HB",
-     "sha256_linha": "45e9aa8eb616cedaf751ea5e5a4ca0214574c672eff51c884085bda98c31e315",
-     "texto": "3 729",
+     "sha256_linha": "ace4be132229fa253db2ccd7081193fac3b47a0a84b7b43a41a089512b3a9919",
+     "texto": "3 846",
      "tipo": "valor"
     },
     {
@@ -364,7 +364,7 @@
     "hab-ine-renda-lisboa",
     "hab-ine-renda-porto"
    ],
-   "text": "Descontada a inflação, os preços das casas em Portugal subiram desde 2015 mais do que em qualquer outro país da União Europeia: o índice real está em 206,41 em 2025, com 2015 igual a cem, contra 124,75 na União, o valor mais alto dos vinte e sete. Em termos nominais, o índice de Portugal, 301,43 no segundo trimestre de 2026, é o segundo mais alto dos vinte e seis Estados-membros com dados trimestrais, atrás da Hungria (389,61). No segundo trimestre de 2026 os preços subiram 16,5 % num ano, contra 4,7 % na União, outra vez a subida mais alta, entre os vinte e seis Estados-membros com dados trimestrais. Em relação ao rendimento das famílias, o rácio preço-rendimento do Eurostat está em 144,34 (2015 igual a cem) contra 105,72 na União, também o valor mais alto: o rácio subiu 44,3 % desde 2015 em Portugal e 5,7 % na União. Uma casa vendida em Portugal custava 2 337 euros por metro quadrado no 1.º trimestre de 2026, em Lisboa 5 292 e no Porto 3 729; uma renda nova, no 2.º trimestre de 2026, 10,17 euros por metro quadrado no país, 17,79 em Lisboa, 14,66 no Porto."
+   "text": "Descontada a inflação, os preços das casas em Portugal subiram desde 2015 mais do que em qualquer outro país da União Europeia: o índice real está em 206,41 em 2025, com 2015 igual a cem, contra 124,75 na União, o valor mais alto dos vinte e sete. Em termos nominais, o índice de Portugal, 301,43 no segundo trimestre de 2026, é o segundo mais alto dos vinte e seis Estados-membros com dados trimestrais, atrás da Hungria (389,61). No segundo trimestre de 2026 os preços subiram 16,5 % num ano, contra 4,7 % na União, outra vez a subida mais alta, entre os vinte e seis Estados-membros com dados trimestrais. Em relação ao rendimento das famílias, o rácio preço-rendimento do Eurostat está em 144,34 (2015 igual a cem) contra 105,72 na União, também o valor mais alto: o rácio subiu 44,3 % desde 2015 em Portugal e 5,7 % na União. Uma casa vendida em Portugal custava 2 445 euros por metro quadrado no 2.º trimestre de 2026, em Lisboa 5 299 e no Porto 3 846; uma renda nova, no 2.º trimestre de 2026, 10,17 euros por metro quadrado no país, 17,79 em Lisboa, 14,66 no Porto."
   },
   {
    "figures": [
@@ -1997,39 +1997,39 @@
    "figures": [
     {
      "end": 60,
-     "printed": "2 337",
+     "printed": "2 445",
      "row": "hab-ine-preco-mediano",
-     "source_body": "content/23 Habitacao/source/ine-retoma-pt-32-2.pdf",
-     "source_sha256": "edad0e60dfc15f44ad3116dfe3506f23ef054f473aaaf60e97dae4224067c917",
+     "source_body": "content/23 Habitacao/source/hb1d-ine-precos-q2.pdf",
+     "source_sha256": "9f3176072c9399b644acc8bf77ef701a7927382c6802eee3c0ae3996a40e5879",
      "start": 55,
-     "value": "2 337"
+     "value": "2 445"
     },
     {
      "end": 117,
-     "printed": "5 292",
+     "printed": "5 299",
      "row": "hab-ine-preco-lisboa",
-     "source_body": "content/23 Habitacao/source/ine-retoma-pt-32-2.pdf",
-     "source_sha256": "edad0e60dfc15f44ad3116dfe3506f23ef054f473aaaf60e97dae4224067c917",
+     "source_body": "content/23 Habitacao/source/hb1d-ine-precos-q2.pdf",
+     "source_sha256": "9f3176072c9399b644acc8bf77ef701a7927382c6802eee3c0ae3996a40e5879",
      "start": 112,
-     "value": "5 292"
+     "value": "5 299"
     },
     {
      "end": 135,
-     "printed": "3 729",
+     "printed": "3 846",
      "row": "hab-ine-preco-porto",
-     "source_body": "content/23 Habitacao/source/ine-retoma-pt-32-6.zip",
-     "source_sha256": "e7ab81e756a3f838bb008e414c1b35b2ba1fb7a57a235c9ada05e6ee3a63aa8c",
+     "source_body": "content/23 Habitacao/source/hb1d-ine-precos-q2.zip",
+     "source_sha256": "99cdefcb77b4e221f2a8beb19b14303d251ad34735166f0717a8edcb9e946330",
      "start": 130,
-     "value": "3 729"
+     "value": "3 846"
     },
     {
      "end": 162,
-     "printed": "2,3",
+     "printed": "2,2",
      "row": "der-hab-preco-lisboa-vs-portugal",
      "source_digest_kind": "derivado",
      "source_sha256": null,
      "start": 159,
-     "value": "2.3"
+     "value": "2.2"
     },
     {
      "end": 215,
@@ -2130,8 +2130,8 @@
      "id": "hab-ine-preco-mediano",
      "inicio": 55,
      "livro": "HB",
-     "sha256_linha": "08a71ad9530691ae40e75b92da8895077ef2a3da3ee15ec38f14dad0ae93dfee",
-     "texto": "2 337",
+     "sha256_linha": "525d829cd82f795a28b716662068aa2956bcda02d06cf98306431d5f78bae4b5",
+     "texto": "2 445",
      "tipo": "valor"
     },
     {
@@ -2139,8 +2139,8 @@
      "id": "hab-ine-preco-mediano",
      "inicio": 89,
      "livro": "HB",
-     "sha256_linha": "08a71ad9530691ae40e75b92da8895077ef2a3da3ee15ec38f14dad0ae93dfee",
-     "texto": "1.º trimestre de 2026",
+     "sha256_linha": "525d829cd82f795a28b716662068aa2956bcda02d06cf98306431d5f78bae4b5",
+     "texto": "2.º trimestre de 2026",
      "tipo": "periodo"
     },
     {
@@ -2148,8 +2148,8 @@
      "id": "hab-ine-preco-lisboa",
      "inicio": 112,
      "livro": "HB",
-     "sha256_linha": "cdae2c9a8ca43ef08dc841c509a002969efbec425615d78fae5177f75602a742",
-     "texto": "5 292",
+     "sha256_linha": "b0175734500920dd5b1123739c380550aaff366d6e5e4ea460feece4c4ec4fdb",
+     "texto": "5 299",
      "tipo": "valor"
     },
     {
@@ -2157,8 +2157,8 @@
      "id": "hab-ine-preco-porto",
      "inicio": 130,
      "livro": "HB",
-     "sha256_linha": "45e9aa8eb616cedaf751ea5e5a4ca0214574c672eff51c884085bda98c31e315",
-     "texto": "3 729",
+     "sha256_linha": "ace4be132229fa253db2ccd7081193fac3b47a0a84b7b43a41a089512b3a9919",
+     "texto": "3 846",
      "tipo": "valor"
     },
     {
@@ -2166,8 +2166,8 @@
      "id": "der-hab-preco-lisboa-vs-portugal",
      "inicio": 159,
      "livro": "HB",
-     "sha256_linha": "0689b227dc49b39106bc67a6f0a8ef4506c92fb63f6f5f38d14584b0d260e06e",
-     "texto": "2,3",
+     "sha256_linha": "85c3fb0c602c6a4ead5b3d0d6242bef223bc71bf1b345aeda5ed9903c37fc884",
+     "texto": "2,2",
      "tipo": "valor"
     },
     {
@@ -2286,7 +2286,7 @@
     "hab-prc-hicp-minr-m-rch-a-cp041-pt-2026-09",
     "hab-prc-hicp-minr-m-rch-a-cp041-eu27_2020-2026-09"
    ],
-   "text": "Em euros, o INE mede as vendas: o preço mediano foi de 2 337 euros por metro quadrado no 1.º trimestre de 2026, 5 292 em Lisboa e 3 729 no Porto; Lisboa custa 2,3 vezes o país. E as rendas dos contratos novos: 10,17 euros por metro quadrado no 2.º trimestre de 2026, 17,79 em Lisboa, 14,66 no Porto; Lisboa custa 1,7 vezes o país. Pelo índice harmonizado de preços, as rendas pagas subiram 5,3 % em 2025 em Portugal contra 3,2 % na União (a Finlândia 1,0 %, a Croácia 17,6 %), e em setembro de 2026 sobem 5,2 % ao ano contra 2,9 %."
+   "text": "Em euros, o INE mede as vendas: o preço mediano foi de 2 445 euros por metro quadrado no 2.º trimestre de 2026, 5 299 em Lisboa e 3 846 no Porto; Lisboa custa 2,2 vezes o país. E as rendas dos contratos novos: 10,17 euros por metro quadrado no 2.º trimestre de 2026, 17,79 em Lisboa, 14,66 no Porto; Lisboa custa 1,7 vezes o país. Pelo índice harmonizado de preços, as rendas pagas subiram 5,3 % em 2025 em Portugal contra 3,2 % na União (a Finlândia 1,0 %, a Croácia 17,6 %), e em setembro de 2026 sobem 5,2 % ao ano contra 2,9 %."
   },
   {
    "figures": [],
@@ -3400,7 +3400,7 @@
      "id": "hab-eurostat-privacao-severa-definicao",
      "inicio": 264,
      "livro": "HB",
-     "sha256_linha": "fae80eb32f777060d593119bbfd89b4e5e4107ef34381395c9380b6b11918ed0",
+     "sha256_linha": "722933f3201401ff84a35500bc9f09ca5177d820ff892d798533506ea245399a",
      "texto": "Severe housing deprivation rate is defined as the percentage of population living in the dwelling which is considered as overcrowded, while also exhibiting at least one of the housing deprivation measures. Housing deprivation is a measure of poor amenities and is calculated by referring to those households with a leaking roof, no bath/shower and no indoor toilet, or a dwelling considered too dark.",
      "tipo": "excerto"
     },
@@ -4070,12 +4070,12 @@
     },
     {
      "end": 302,
-     "printed": "3,162",
+     "printed": "3,194",
      "row": "hab-ine-juro-implicito",
-     "source_body": "content/23 Habitacao/source/ine-retoma-pt-35-2.pdf",
-     "source_sha256": "cd593ac7b3fe64498d80d8b52227a12917210f9a9bc731df019470c65e86122c",
+     "source_body": "content/23 Habitacao/source/hb1d-ine-juro-2026-09.pdf",
+     "source_sha256": "ee4600b0fb179a51a20aeca9d5513efe4d3e9b6bd77cae623b7c8317c4140afa",
      "start": 297,
-     "value": "3,162"
+     "value": "3,194"
     }
    ],
    "i": 32,
@@ -4113,17 +4113,17 @@
      "id": "hab-ine-juro-implicito",
      "inicio": 297,
      "livro": "HB",
-     "sha256_linha": "2cc97cb8e1617ae0a3d8616b3e70193dd8844761a7e336d880ab9331451f78ee",
-     "texto": "3,162",
+     "sha256_linha": "1e68adb6a0e0f7990bb04fdf2327bd9908eb55d68ce3fb00c213c77db0d99875",
+     "texto": "3,194",
      "tipo": "valor"
     },
     {
-     "fim": 322,
+     "fim": 324,
      "id": "hab-ine-juro-implicito",
      "inicio": 308,
      "livro": "HB",
-     "sha256_linha": "2cc97cb8e1617ae0a3d8616b3e70193dd8844761a7e336d880ab9331451f78ee",
-     "texto": "agosto de 2026",
+     "sha256_linha": "1e68adb6a0e0f7990bb04fdf2327bd9908eb55d68ce3fb00c213c77db0d99875",
+     "texto": "setembro de 2026",
      "tipo": "periodo"
     }
    ],
@@ -4133,7 +4133,7 @@
     "hab-bpstat-12557378",
     "hab-ine-juro-implicito"
    ],
-   "text": "Em agosto de 2026 os bancos emprestaram 2 553,0 milhões de euros em novas operações de crédito à habitação, a uma taxa de 3,0 %, segundo o Banco de Portugal; o stock de crédito à habitação das famílias era de 119 061,6 milhões. A taxa de juro implícita no conjunto dos contratos, pelo INE, era de 3,162 % em agosto de 2026."
+   "text": "Em agosto de 2026 os bancos emprestaram 2 553,0 milhões de euros em novas operações de crédito à habitação, a uma taxa de 3,0 %, segundo o Banco de Portugal; o stock de crédito à habitação das famílias era de 119 061,6 milhões. A taxa de juro implícita no conjunto dos contratos, pelo INE, era de 3,194 % em setembro de 2026."
   },
   {
    "figures": [],
@@ -4855,6 +4855,11 @@
        "campo": "reference_date",
        "id": "hab-il-proposta",
        "livro": "HB"
+      },
+      {
+       "campo": "published_at",
+       "id": "hab-il-proposta",
+       "livro": "HB"
       }
      ],
      "fim": 78,
@@ -4867,7 +4872,7 @@
      "id": "hab-il-proposta",
      "inicio": 129,
      "livro": "HB",
-     "sha256_linha": "8770b31a94668641a2359c4a06d132150a802e11f3be06f816e7b3682914398c",
+     "sha256_linha": "61c9e1913b4d7b1b05623f8a5c31310e9cfd011c539c29cd707d03eee24e4b78",
      "texto": "propõe ao Governo medidas para colocar mais casas no mercado, desbloquear imóveis parados em heranças e tornar o arrendamento mais simples, seguro e funcional, tanto para inquilinos como para proprietários.",
      "tipo": "excerto"
     }
@@ -6027,27 +6032,45 @@
    "kind": "paragraph",
    "proofs": [
     {
-     "fim": 71,
+     "fim": 44,
+     "id": "hab-ine-juro-implicito",
+     "inicio": 28,
+     "livro": "HB",
+     "sha256_linha": "1e68adb6a0e0f7990bb04fdf2327bd9908eb55d68ce3fb00c213c77db0d99875",
+     "texto": "setembro de 2026",
+     "tipo": "periodo"
+    },
+    {
+     "fim": 88,
+     "id": "hab-ine-preco-mediano",
+     "inicio": 67,
+     "livro": "HB",
+     "sha256_linha": "525d829cd82f795a28b716662068aa2956bcda02d06cf98306431d5f78bae4b5",
+     "texto": "2.º trimestre de 2026",
+     "tipo": "periodo"
+    },
+    {
+     "fim": 139,
      "id": "hab-ine-calendario-juro",
-     "inicio": 61,
+     "inicio": 129,
      "livro": "HB",
      "sha256_linha": "be1f6c88124df98c39cfb9b7e2a9f37364ab94c0c35b1244da9cdac15102ed42",
      "texto": "21.10.2026",
      "tipo": "valor"
     },
     {
-     "fim": 132,
+     "fim": 157,
      "id": "hab-ine-calendario-precos-locais",
-     "inicio": 122,
+     "inicio": 147,
      "livro": "HB",
      "sha256_linha": "4a7cbd3b0bedfffe4d96273e5eb3ff388c4cfc87171915ea5c41dbe24bf312f6",
      "texto": "23.10.2026",
      "tipo": "valor"
     },
     {
-     "fim": 253,
+     "fim": 375,
      "id": "oe-2027-calendario-generalidade",
-     "inicio": 235,
+     "inicio": 357,
      "livro": "AN",
      "sha256_linha": "0d05886d85314eed2c5b80e9b41efb8c1c5b5e3779b7d7815604b98242595c31",
      "texto": "27 e 28 de outubro",
@@ -6055,11 +6078,13 @@
     }
    ],
    "source_rows": [
+    "hab-ine-juro-implicito",
+    "hab-ine-preco-mediano",
     "hab-ine-calendario-juro",
     "hab-ine-calendario-precos-locais",
     "oe-2027-calendario-generalidade"
    ],
-   "text": "O INE publica a taxa de juro implícita de setembro de 2026 a 21.10.2026 e os preços locais do segundo trimestre de 2026 a 23.10.2026. A reforma do arrendamento segue para a especialidade; o Orçamento de 2027 é votado na generalidade a 27 e 28 de outubro (o estudo «O Orçamento de 2027: o que muda e para quem» deste projeto tem a conta inteira)."
+   "text": "A taxa de juro implícita de setembro de 2026 e os preços locais do 2.º trimestre de 2026, que o calendário do INE anunciava para 21.10.2026 e para 23.10.2026, já estão nesta edição (a secção «Quanto custa uma casa, e quanto subiu» e a secção «O crédito»). A reforma do arrendamento segue para a especialidade; o Orçamento de 2027 é votado na generalidade a 27 e 28 de outubro (o estudo «O Orçamento de 2027: o que muda e para quem» deste projeto tem a conta inteira)."
   }
  ],
  "edition": "A casa em Portugal e na Europa",
@@ -6225,7 +6250,7 @@
   "der-hab-preco-lisboa-vs-portugal": {
    "check": "round ( hab-ine-preco-lisboa / hab-ine-preco-mediano , 1 )",
    "derivation": {
-    "calculation": "hab-ine-preco-lisboa = 5292; hab-ine-preco-mediano = 2337; resultado = 2.264441591784338896020539153",
+    "calculation": "hab-ine-preco-lisboa = 5299; hab-ine-preco-mediano = 2445; resultado = 2.167280163599182004089979550",
     "components": [
      "hab-ine-preco-lisboa",
      "hab-ine-preco-mediano"
@@ -6233,20 +6258,20 @@
     "formula": "hab-ine-preco-lisboa / hab-ine-preco-mediano",
     "rounding_places": 1
    },
-   "derivation_en": "house prices, Lisbon, quarter 1 of 2026 (5 292 euros per square metre; INE) divided by median price of the 35 953 family dwellings transacted in Portugal, quarter 1 of 2026 (2 337 euros per square metre; INE), rounded to one decimal place: 2.3.",
-   "derivation_text": "preços da habitação, Lisboa, 1.º trimestre de 2026 (5 292 euros por metro quadrado; INE) a dividir por preço mediano dos 35 953 alojamentos familiares transacionados em Portugal, 1.º trimestre de 2026 (2 337 euros por metro quadrado; INE), arredondado a uma casa decimal: 2,3.",
+   "derivation_en": "house prices, Lisbon, quarter 2 of 2026 (5 299 euros per square metre; INE) divided by median price of the 37 854 family dwellings transacted in Portugal, quarter 2 of 2026 (2 445 euros per square metre; INE), rounded to one decimal place: 2.2.",
+   "derivation_text": "preços da habitação, Lisboa, 2.º trimestre de 2026 (5 299 euros por metro quadrado; INE) a dividir por preço mediano dos 37 854 alojamentos familiares transacionados em Portugal, 2.º trimestre de 2026 (2 445 euros por metro quadrado; INE), arredondado a uma casa decimal: 2,2.",
    "document": null,
-   "excerpt": "round ( hab-ine-preco-lisboa / hab-ine-preco-mediano , 1 ) = 2.3",
+   "excerpt": "round ( hab-ine-preco-lisboa / hab-ine-preco-mediano , 1 ) = 2.2",
    "id": "der-hab-preco-lisboa-vs-portugal",
    "locator": "Cálculo sobre as linhas identificadas",
    "measure": "Lisboa face a Portugal",
    "measure_en": "Lisbon relative to Portugal",
-   "period": "2026-Q1",
-   "reference_date": "2026-Q1",
+   "period": "2026-Q2",
+   "reference_date": "2026-Q2",
    "stage": "derivada",
    "status": "derivado",
    "unit": "vezes",
-   "value": "2.3"
+   "value": "2.2"
   },
   "der-hab-preco-rendimento-acima-2015-eu-2024": {
    "check": "round ( hab-tipsho60-a-ptir-i15-eu27_2020-2024 - 100 , 1 )",
@@ -7474,8 +7499,11 @@
      "text": "2021-04-13T20:01:11+00:00"
     },
     "reference_date": {
+     "date": "2021-04-13",
+     "file": "source/eurostat/hb1b-severe-housing-deprivation.html",
+     "sha256": "bf8da5fc3936c9dbee32f1a2aa32cc3c924385f42c295bd6f4fa2993a867e9de",
      "status": "conferido",
-     "text": "2021-04-13T20:01:11+00:00"
+     "text": "last edited on 13 April 2021, at 22:01."
     },
     "title": {
      "locator": null,
@@ -7503,9 +7531,9 @@
    "measure": "Glossary:Severe housing deprivation rate",
    "name": "Glossary:Severe housing deprivation rate",
    "name_source": "Glossário, dois parágrafos da definição",
-   "note": "A data de publicação e a de modificação coincidem no JSON-LD do glossário. O rodapé identifica a mesma data de última edição.",
-   "period": "2021-04-13",
+   "note": "A data de publicação e a de modificação coincidem no JSON-LD do glossário; a data de referência ancora-se no rodapé da última edição (published_at_kind last-edited). Sem período: uma definição não tem período de dados.",
    "published_at": "2021-04-13",
+   "published_at_kind": "last-edited",
    "reference_date": "2021-04-13",
    "source_excerpt": "Severe housing deprivation rate is defined as the percentage of population living in the dwelling which is considered as overcrowded, while also exhibiting at least one of the housing deprivation measures. Housing deprivation is a measure of poor amenities and is calculated by referring to those households with a leaking roof, no bath/shower and no indoor toilet, or a dwelling considered too dark.",
    "source_type": "government",
@@ -7734,8 +7762,8 @@
      "text": "Iniciativa Liberal"
     },
     "published_at": {
-     "reason": "Sem data de publicação ancorada no documento; o período de referência e o acesso não provam a publicação.",
-     "status": "por confirmar"
+     "status": "conferido",
+     "text": "2026-06-08T15:16:52+01:00"
     },
     "reference_date": {
      "date": "2026-06-08",
@@ -7770,9 +7798,9 @@
    "measure": "propõe ao Governo medidas para colocar mais casas no mercado, desbloquear imóveis parados em heranças e tornar o arrendamento mais simples, seguro e funcional, tanto para inquilinos como para proprietários.",
    "name": "propõe ao Governo medidas para colocar mais casas no mercado, desbloquear imóveis parados em heranças e tornar o arrendamento mais simples, seguro e funcional, tanto para inquilinos como para proprietários.",
    "name_source": "HTML; início literal único",
-   "note": "Página e PDF próprio alojados. A edição é a atualização declarada por article:modified_time, confirmada no mesmo dia pelo elemento updated. A data de publicação inicial não está declarada; a página não habilita uma afirmação datada de outubro.",
-   "period": "2026-06-08",
-   "published_at": null,
+   "note": "Página e PDF próprio alojados. A data é a da última edição declarada por article:modified_time (published_at_kind last-edited), confirmada no mesmo dia pelo elemento updated. A data de publicação inicial não está declarada; a página não habilita uma afirmação datada de outubro. Sem período: uma página editada não tem período de dados.",
+   "published_at": "2026-06-08",
+   "published_at_kind": "last-edited",
    "reference_date": "2026-06-08",
    "source_excerpt": "propõe ao Governo medidas para colocar mais casas no mercado, desbloquear imóveis parados em heranças e tornar o arrendamento mais simples, seguro e funcional, tanto para inquilinos como para proprietários.",
    "source_type": "political_party",
@@ -12519,25 +12547,25 @@
    "value": "16,5"
   },
   "hab-ine-juro-implicito": {
-   "access_date": "2026-10-19",
+   "access_date": "2026-10-26",
    "afirmacao": false,
    "attributed_to": [
     "INE"
    ],
    "document": {
-    "edition": "2026-08",
-    "file": "content/23 Habitacao/source/ine-retoma-pt-35-2.pdf",
+    "edition": "2026-09",
+    "file": "content/23 Habitacao/source/hb1d-ine-juro-2026-09.pdf",
     "kind": "ficheiro",
     "locator": "PDF p. 1; parágrafo identificado pelo início; área física declarada",
     "page": 1,
-    "source_sha256": "cd593ac7b3fe64498d80d8b52227a12917210f9a9bc731df019470c65e86122c",
+    "source_sha256": "ee4600b0fb179a51a20aeca9d5513efe4d3e9b6bd77cae623b7c8317c4140afa",
     "title": "TAXAS DE JURO IMPLÍCITAS NO CRÉDITO À HABITAÇÃO"
    },
    "document_checks": {
     "published_at": {
      "locator": 1,
      "status": "conferido",
-     "text": "18 de setembro de 2026"
+     "text": "21 de outubro de 2026"
     },
     "title": {
      "locator": 1,
@@ -12546,65 +12574,65 @@
     }
    },
    "evidence": {
-    "file": "source/ine-retoma-pt-35-2.pdf",
+    "file": "source/hb1d-ine-juro-2026-09.pdf",
     "locator": "PDF p. 1; parágrafo identificado pelo início; área física declarada",
-    "sha256": "cd593ac7b3fe64498d80d8b52227a12917210f9a9bc731df019470c65e86122c"
+    "sha256": "ee4600b0fb179a51a20aeca9d5513efe4d3e9b6bd77cae623b7c8317c4140afa"
    },
-   "excerpt": "A taxa de juro implícita no conjunto dos contratos de crédito à habitação subiu para 3,162% em agosto, traduzindo um aumento de 2,7 pontos base (p.b.) face ao mês anterior.",
+   "excerpt": "A taxa de juro implícita no conjunto dos contratos de crédito à habitação subiu para 3,194% em setembro, traduzindo um aumento de 3,2 pontos base (p.b.) face ao mês anterior.",
    "excerpt_parts": [
     {
      "box": [
-      41,
-      242,
-      557,
-      353
+      40,
+      255,
+      558,
+      367
      ],
      "method": "fitz",
      "page": 1,
-     "text": "A taxa de juro implícita no conjunto dos contratos de crédito à habitação subiu para 3,162% em agosto, traduzindo um aumento de 2,7 pontos base (p.b.) face ao mês anterior."
+     "text": "A taxa de juro implícita no conjunto dos contratos de crédito à habitação subiu para 3,194% em setembro, traduzindo um aumento de 3,2 pontos base (p.b.) face ao mês anterior."
     }
    ],
-   "fetched_at": "2026-10-19T13:42:36.878727+00:00",
+   "fetched_at": "2026-10-26T13:17:37.283913+00:00",
    "id": "hab-ine-juro-implicito",
    "invoca": [],
    "measure": "taxa de juro implícita no conjunto dos contratos de crédito à habitação",
    "name": "taxa de juro implícita no conjunto dos contratos de crédito à habitação",
    "name_source": "PDF p. 1; parágrafo identificado pelo início; área física declarada",
-   "note": "Anterior à divulgação prevista para 21 de outubro.",
-   "period": "2026-08",
-   "published_at": "2026-09-18",
-   "reference_date": "2026-08",
-   "source_excerpt": "A taxa de juro implícita no conjunto dos contratos de crédito à habitação subiu para 3,162% em agosto, traduzindo um aumento de 2,7 pontos base (p.b.) face ao mês anterior.",
+   "note": "Destaque de 21 de outubro de 2026 (setembro de 2026); a linha de agosto de 2026 (destaque de 18 de setembro de 2026) é substituída nesta edição.",
+   "period": "2026-09",
+   "published_at": "2026-10-21",
+   "reference_date": "2026-09",
+   "source_excerpt": "A taxa de juro implícita no conjunto dos contratos de crédito à habitação subiu para 3,194% em setembro, traduzindo um aumento de 3,2 pontos base (p.b.) face ao mês anterior.",
    "source_type": "government",
-   "source_url": "https://www.ine.pt/ngt_server/attachfileu.jsp?look_parentBoui=815490211&att_display=n&att_download=y",
-   "source_value": "3,162",
+   "source_url": "https://www.ine.pt/ngt_server/attachfileu.jsp?look_parentBoui=822585037&att_display=n&att_download=y",
+   "source_value": "3,194",
    "unit": "%",
    "unit_check": {
     "text": "%",
     "unit": "%"
    },
-   "value": "3,162"
+   "value": "3,194"
   },
   "hab-ine-preco-lisboa": {
-   "access_date": "2026-10-19",
+   "access_date": "2026-10-26",
    "afirmacao": false,
    "attributed_to": [
     "INE"
    ],
    "document": {
-    "edition": "2026-Q1",
-    "file": "content/23 Habitacao/source/ine-retoma-pt-32-2.pdf",
+    "edition": "2026-Q2",
+    "file": "content/23 Habitacao/source/hb1d-ine-precos-q2.pdf",
     "kind": "ficheiro",
     "locator": "PDF p. 1; parágrafo identificado pelo início; área física declarada",
     "page": 1,
-    "source_sha256": "edad0e60dfc15f44ad3116dfe3506f23ef054f473aaaf60e97dae4224067c917",
+    "source_sha256": "9f3176072c9399b644acc8bf77ef701a7927382c6802eee3c0ae3996a40e5879",
     "title": "ESTATÍSTICAS DE PREÇOS DA HABITAÇÃO AO NÍVEL LOCAL"
    },
    "document_checks": {
     "published_at": {
      "locator": 1,
      "status": "conferido",
-     "text": "17 de julho de 2026"
+     "text": "23 de outubro de 2026"
     },
     "title": {
      "locator": 1,
@@ -12613,65 +12641,65 @@
     }
    },
    "evidence": {
-    "file": "source/ine-retoma-pt-32-2.pdf",
+    "file": "source/hb1d-ine-precos-q2.pdf",
     "locator": "PDF p. 1; parágrafo identificado pelo início; área física declarada",
-    "sha256": "edad0e60dfc15f44ad3116dfe3506f23ef054f473aaaf60e97dae4224067c917"
+    "sha256": "9f3176072c9399b644acc8bf77ef701a7927382c6802eee3c0ae3996a40e5879"
    },
-   "excerpt": "No 1.º trimestre de 2026, os preços da habitação aceleraram (isto é, registaram aumentos nas taxas de variação homóloga) em 11 dos 24 municípios com mais de 100 mil habitantes (em 13, no 4.º trimestre de 2025), tendo os municípios do Funchal (+25,2 pontos percentuais (p.p.)) e de Guimarães (+24,1 p.p.) apresentado os maiores acréscimos. O município de Matosinhos (-11,9 p.p.) registou a maior diminuição na taxa de variação homóloga. Os municípios de Lisboa e do Porto registaram acréscimos de 0,3 p.p. e 2,4 p.p. nas taxas de variação homólogas do 4.º trimestre de 2025 para o 1.º trimestre de 2026. Os municípios de Lisboa (5 292 €/m2), Cascais (5 000 €/m2) e Oeiras (4 511 €/m2) apresentaram os preços da habitação mais elevados.",
+   "excerpt": "No 2.º trimestre de 2026, os preços da habitação aceleraram (isto é, registaram aumentos nas taxas de variação homóloga) em 10 dos 24 municípios com mais de 100 mil habitantes (em 11, no 1.º trimestre de 2026), tendo os municípios de Loures (+9,7 pontos percentuais (p.p.)) e de Matosinhos (+9,5 p.p.) apresentado os maiores acréscimos. O município de Guimarães (-13,4 p.p.) registou a maior diminuição na taxa de variação homóloga. Os municípios de Lisboa e do Porto registaram decréscimos de 8,9 p.p. e 5,4 p.p. nas taxas de variação homólogas do 1.º para o 2.º trimestre de 2026. Os municípios de Lisboa (5 299 €/m2), Cascais (5 200 €/m2) e Oeiras (4 704 €/m2) apresentaram os preços da habitação mais elevados.",
    "excerpt_parts": [
     {
      "box": [
-      32,
-      499,
-      546,
-      610
+      31,
+      490,
+      547,
+      602
      ],
      "method": "fitz",
      "page": 1,
-     "text": "No 1.º trimestre de 2026, os preços da habitação aceleraram (isto é, registaram aumentos nas taxas de variação homóloga) em 11 dos 24 municípios com mais de 100 mil habitantes (em 13, no 4.º trimestre de 2025), tendo os municípios do Funchal (+25,2 pontos percentuais (p.p.)) e de Guimarães (+24,1 p.p.) apresentado os maiores acréscimos. O município de Matosinhos (-11,9 p.p.) registou a maior diminuição na taxa de variação homóloga. Os municípios de Lisboa e do Porto registaram acréscimos de 0,3 p.p. e 2,4 p.p. nas taxas de variação homólogas do 4.º trimestre de 2025 para o 1.º trimestre de 2026. Os municípios de Lisboa (5 292 €/m2), Cascais (5 000 €/m2) e Oeiras (4 511 €/m2) apresentaram os preços da habitação mais elevados."
+     "text": "No 2.º trimestre de 2026, os preços da habitação aceleraram (isto é, registaram aumentos nas taxas de variação homóloga) em 10 dos 24 municípios com mais de 100 mil habitantes (em 11, no 1.º trimestre de 2026), tendo os municípios de Loures (+9,7 pontos percentuais (p.p.)) e de Matosinhos (+9,5 p.p.) apresentado os maiores acréscimos. O município de Guimarães (-13,4 p.p.) registou a maior diminuição na taxa de variação homóloga. Os municípios de Lisboa e do Porto registaram decréscimos de 8,9 p.p. e 5,4 p.p. nas taxas de variação homólogas do 1.º para o 2.º trimestre de 2026. Os municípios de Lisboa (5 299 €/m2), Cascais (5 200 €/m2) e Oeiras (4 704 €/m2) apresentaram os preços da habitação mais elevados."
     }
    ],
-   "fetched_at": "2026-10-19T13:42:25.872361+00:00",
+   "fetched_at": "2026-10-26T13:17:29.252416+00:00",
    "id": "hab-ine-preco-lisboa",
    "invoca": [],
    "measure": "preços da habitação",
    "name": "preços da habitação",
    "name_source": "PDF p. 1; parágrafo identificado pelo início; área física declarada",
-   "note": "Destaque anterior ao previsto para 23 de outubro. A versão corrigida da fonte é conservada.",
-   "period": "2026-Q1",
-   "published_at": "2026-07-17",
-   "reference_date": "2026-Q1",
-   "source_excerpt": "No 1.º trimestre de 2026, os preços da habitação aceleraram (isto é, registaram aumentos nas taxas de variação homóloga) em 11 dos 24 municípios com mais de 100 mil habitantes (em 13, no 4.º trimestre de 2025), tendo os municípios do Funchal (+25,2 pontos percentuais (p.p.)) e de Guimarães (+24,1 p.p.) apresentado os maiores acréscimos. O município de Matosinhos (-11,9 p.p.) registou a maior diminuição na taxa de variação homóloga. Os municípios de Lisboa e do Porto registaram acréscimos de 0,3 p.p. e 2,4 p.p. nas taxas de variação homólogas do 4.º trimestre de 2025 para o 1.º trimestre de 2026. Os municípios de Lisboa (5 292 €/m2), Cascais (5 000 €/m2) e Oeiras (4 511 €/m2) apresentaram os preços da habitação mais elevados.",
+   "note": "Destaque de 23 de outubro de 2026 (2.º trimestre de 2026); a linha do 1.º trimestre de 2026 (destaque de 17 de julho de 2026) é substituída nesta edição.",
+   "period": "2026-Q2",
+   "published_at": "2026-10-23",
+   "reference_date": "2026-Q2",
+   "source_excerpt": "No 2.º trimestre de 2026, os preços da habitação aceleraram (isto é, registaram aumentos nas taxas de variação homóloga) em 10 dos 24 municípios com mais de 100 mil habitantes (em 11, no 1.º trimestre de 2026), tendo os municípios de Loures (+9,7 pontos percentuais (p.p.)) e de Matosinhos (+9,5 p.p.) apresentado os maiores acréscimos. O município de Guimarães (-13,4 p.p.) registou a maior diminuição na taxa de variação homóloga. Os municípios de Lisboa e do Porto registaram decréscimos de 8,9 p.p. e 5,4 p.p. nas taxas de variação homólogas do 1.º para o 2.º trimestre de 2026. Os municípios de Lisboa (5 299 €/m2), Cascais (5 200 €/m2) e Oeiras (4 704 €/m2) apresentaram os preços da habitação mais elevados.",
    "source_type": "government",
-   "source_url": "https://www.ine.pt/ngt_server/attachfileu.jsp?look_parentBoui=804178838&att_display=n&att_download=y",
-   "source_value": "5 292",
+   "source_url": "https://www.ine.pt/ngt_server/attachfileu.jsp?look_parentBoui=823114096&att_display=n&att_download=y",
+   "source_value": "5 299",
    "unit": "€/m2",
    "unit_check": {
     "text": "€/m2",
     "unit": "€/m2"
    },
-   "value": "5 292"
+   "value": "5 299"
   },
   "hab-ine-preco-mediano": {
-   "access_date": "2026-10-19",
+   "access_date": "2026-10-26",
    "afirmacao": false,
    "attributed_to": [
     "INE"
    ],
    "document": {
-    "edition": "2026-Q1",
-    "file": "content/23 Habitacao/source/ine-retoma-pt-32-2.pdf",
+    "edition": "2026-Q2",
+    "file": "content/23 Habitacao/source/hb1d-ine-precos-q2.pdf",
     "kind": "ficheiro",
     "locator": "PDF p. 1; parágrafo identificado pelo início; área física declarada",
     "page": 1,
-    "source_sha256": "edad0e60dfc15f44ad3116dfe3506f23ef054f473aaaf60e97dae4224067c917",
+    "source_sha256": "9f3176072c9399b644acc8bf77ef701a7927382c6802eee3c0ae3996a40e5879",
     "title": "ESTATÍSTICAS DE PREÇOS DA HABITAÇÃO AO NÍVEL LOCAL"
    },
    "document_checks": {
     "published_at": {
      "locator": 1,
      "status": "conferido",
-     "text": "17 de julho de 2026"
+     "text": "23 de outubro de 2026"
     },
     "title": {
      "locator": 1,
@@ -12680,86 +12708,86 @@
     }
    },
    "evidence": {
-    "file": "source/ine-retoma-pt-32-2.pdf",
+    "file": "source/hb1d-ine-precos-q2.pdf",
     "locator": "PDF p. 1; parágrafo identificado pelo início; área física declarada",
-    "sha256": "edad0e60dfc15f44ad3116dfe3506f23ef054f473aaaf60e97dae4224067c917"
+    "sha256": "9f3176072c9399b644acc8bf77ef701a7927382c6802eee3c0ae3996a40e5879"
    },
-   "excerpt": "No 1.º trimestre de 2026, o preço mediano dos 35 953 alojamentos familiares transacionados em Portugal foi 2 337 €/m2, na sequência de uma taxa de variação de 19,8% em relação ao 1.º trimestre de 2025 (17,5% no trimestre anterior).",
+   "excerpt": "No 2.º trimestre de 2026, o preço mediano dos 37 854 alojamentos familiares transacionados em Portugal foi 2 445 €/m2, na sequência de uma taxa de variação de 18,4% em relação ao 2.º trimestre de 2025 (19,8% no trimestre anterior).",
    "excerpt_parts": [
     {
      "box": [
-      32,
-      311,
-      546,
-      389
+      31,
+      286,
+      547,
+      382
      ],
      "method": "fitz",
      "page": 1,
-     "text": "No 1.º trimestre de 2026, o preço mediano dos 35 953 alojamentos familiares transacionados em Portugal foi 2 337 €/m2, na sequência de uma taxa de variação de 19,8% em relação ao 1.º trimestre de 2025 (17,5% no trimestre anterior)."
+     "text": "No 2.º trimestre de 2026, o preço mediano dos 37 854 alojamentos familiares transacionados em Portugal foi 2 445 €/m2, na sequência de uma taxa de variação de 18,4% em relação ao 2.º trimestre de 2025 (19,8% no trimestre anterior)."
     }
    ],
-   "fetched_at": "2026-10-19T13:42:25.872361+00:00",
+   "fetched_at": "2026-10-26T13:17:29.252416+00:00",
    "id": "hab-ine-preco-mediano",
    "invoca": [],
-   "measure": "preço mediano dos 35 953 alojamentos familiares transacionados em Portugal",
-   "name": "preço mediano dos 35 953 alojamentos familiares transacionados em Portugal",
+   "measure": "preço mediano dos 37 854 alojamentos familiares transacionados em Portugal",
+   "name": "preço mediano dos 37 854 alojamentos familiares transacionados em Portugal",
    "name_source": "PDF p. 1; parágrafo identificado pelo início; área física declarada",
-   "note": "Destaque anterior ao previsto para 23 de outubro. A versão corrigida da fonte é conservada.",
-   "period": "2026-Q1",
-   "published_at": "2026-07-17",
-   "reference_date": "2026-Q1",
-   "source_excerpt": "No 1.º trimestre de 2026, o preço mediano dos 35 953 alojamentos familiares transacionados em Portugal foi 2 337 €/m2, na sequência de uma taxa de variação de 19,8% em relação ao 1.º trimestre de 2025 (17,5% no trimestre anterior).",
+   "note": "Destaque de 23 de outubro de 2026 (2.º trimestre de 2026); a linha do 1.º trimestre de 2026 (destaque de 17 de julho de 2026) é substituída nesta edição.",
+   "period": "2026-Q2",
+   "published_at": "2026-10-23",
+   "reference_date": "2026-Q2",
+   "source_excerpt": "No 2.º trimestre de 2026, o preço mediano dos 37 854 alojamentos familiares transacionados em Portugal foi 2 445 €/m2, na sequência de uma taxa de variação de 18,4% em relação ao 2.º trimestre de 2025 (19,8% no trimestre anterior).",
    "source_type": "government",
-   "source_url": "https://www.ine.pt/ngt_server/attachfileu.jsp?look_parentBoui=804178838&att_display=n&att_download=y",
-   "source_value": "2 337",
+   "source_url": "https://www.ine.pt/ngt_server/attachfileu.jsp?look_parentBoui=823114096&att_display=n&att_download=y",
+   "source_value": "2 445",
    "unit": "€/m2",
    "unit_check": {
     "text": "€/m2",
     "unit": "€/m2"
    },
-   "value": "2 337"
+   "value": "2 445"
   },
   "hab-ine-preco-porto": {
-   "access_date": "2026-10-19",
+   "access_date": "2026-10-26",
    "afirmacao": false,
    "attributed_to": [
     "INE"
    ],
    "document": {
-    "file": "content/23 Habitacao/source/ine-retoma-pt-32-6.zip",
+    "file": "content/23 Habitacao/source/hb1d-ine-precos-q2.zip",
     "kind": "serie",
     "locator": "Trimestral1_N2024.csv; linha 22; coluna 3",
-    "source_sha256": "e7ab81e756a3f838bb008e414c1b35b2ba1fb7a57a235c9ada05e6ee3a63aa8c",
+    "source_sha256": "99cdefcb77b4e221f2a8beb19b14303d251ad34735166f0717a8edcb9e946330",
     "title": "Valor mediano das vendas por m² de alojamentos familiares"
    },
    "evidence": {
-    "file": "source/ine-retoma-pt-32-6.zip",
+    "file": "source/hb1d-ine-precos-q2.zip",
     "locator": "Trimestral1_N2024.csv; linha 22; coluna 3",
-    "sha256": "e7ab81e756a3f838bb008e414c1b35b2ba1fb7a57a235c9ada05e6ee3a63aa8c"
+    "sha256": "99cdefcb77b4e221f2a8beb19b14303d251ad34735166f0717a8edcb9e946330"
    },
-   "excerpt": "Valor mediano das vendas por m² de alojamentos familiares; Porto; 1ºT2026; 3 729",
+   "excerpt": "Valor mediano das vendas por m² de alojamentos familiares; Porto; 2ºT2026; 3 846",
    "excerpt_kind": "célula CSV e cabeçalhos, transcrição estruturada",
-   "fetched_at": "2026-10-19T13:42:31.975309+00:00",
+   "fetched_at": "2026-10-26T13:17:32.292203+00:00",
    "id": "hab-ine-preco-porto",
    "measure": "Valor mediano das vendas por m² de alojamentos familiares; Porto",
    "name": "Valor mediano das vendas por m² de alojamentos familiares; Porto",
    "name_source": "Trimestral1_N2024.csv; linha 22; coluna 3",
-   "note": "Célula do anexo trimestral do destaque de 17 de julho de 2026. A unidade está no destaque, não no cabeçalho deste CSV. Não confundir com os últimos doze meses.",
-   "period": "2026-Q1",
-   "published_at": "2026-07-17",
-   "reference_date": "2026-Q1",
-   "source_excerpt": "Valor mediano das vendas por m² de alojamentos familiares; Porto; 1ºT2026; 3 729",
+   "note": "Célula do anexo trimestral do destaque de 23 de outubro de 2026. A unidade está no destaque, não no cabeçalho deste CSV. Não confundir com os últimos doze meses.",
+   "period": "2026-Q2",
+   "published_at": "2026-10-23",
+   "reference_date": "2026-Q2",
+   "source_excerpt": "Valor mediano das vendas por m² de alojamentos familiares; Porto; 2ºT2026; 3 846",
    "source_type": "government",
-   "source_url": "https://www.ine.pt/ngt_server/attachfileu.jsp?look_parentBoui=804179173&att_display=n&att_download=y",
-   "source_value": "3 729",
+   "source_url": "https://www.ine.pt/ngt_server/attachfileu.jsp?look_parentBoui=823114337&att_display=n&att_download=y",
+   "source_value": "3 846",
    "unit": "€/m2",
    "unit_evidence": {
-    "excerpt": "No 1.º trimestre de 2026, o preço mediano dos 35 953 alojamentos familiares transacionados em Portugal foi 2 337 €/m2, na sequência de uma taxa de variação de 19,8% em relação ao 1.º trimestre de 2025 (17,5% no trimestre anterior).",
-    "file": "source/ine-retoma-pt-32-2.pdf",
+    "excerpt": "No 2.º trimestre de 2026, o preço mediano dos 37 854 alojamentos familiares transacionados em Portugal foi 2 445 €/m2, na sequência de uma taxa de variação de 18,4% em relação ao 2.º trimestre de 2025 (19,8% no trimestre anterior).",
+    "file": "source/hb1d-ine-precos-q2.pdf",
     "locator": "PDF p. 1; parágrafo identificado pelo início; área física declarada",
-    "sha256": "edad0e60dfc15f44ad3116dfe3506f23ef054f473aaaf60e97dae4224067c917"
+    "sha256": "9f3176072c9399b644acc8bf77ef701a7927382c6802eee3c0ae3996a40e5879"
    },
-   "value": "3 729"
+   "value": "3 846"
   },
   "hab-ine-renda-lisboa": {
    "access_date": "2026-10-19",
