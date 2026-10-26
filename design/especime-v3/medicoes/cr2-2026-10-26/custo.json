@@ -149,5 +149,20 @@
     "pontos_semana_percentagem_depois": 5.0,
     "pontos_semana_diferenca": 0.0,
     "nota": "medido pelo lançador, fora da passagem"
+  },
+  "continuacao_cr2h": {
+    "turnos_lancador": 35,
+    "simbolos_entrada": 2953027,
+    "simbolos_entrada_cache": 2869376,
+    "simbolos_saida": 21317,
+    "pontos_semana_percentagem_antes": 7.0,
+    "pontos_semana_percentagem_depois": 8.0,
+    "pontos_semana_diferenca": 1.0,
+    "chamadas_construtor": 34,
+    "modelo": "gpt-6-astra",
+    "raciocinio": "high",
+    "inicio_utc": "2026-10-26T17:21:26Z",
+    "fim_utc": "2026-10-26T17:33:24Z",
+    "nota": "medido pelo lançador, fora da passagem; as 34 chamadas pela resposta final do construtor; a passagem parou pelo §2 e o lugar de direção acabou a cauda por guião"
   }
 }
