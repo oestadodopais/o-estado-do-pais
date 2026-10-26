@@ -1,0 +1,33 @@
+{
+  "momento": "antes do commit do relatório; não inclui esse pedido nem a inspeção final",
+  "chamadas": {
+    "exec": 43,
+    "request_user_input_async": 1,
+    "wait": 7
+  },
+  "total_chamadas": 51,
+  "ferramentas_internas_ao_exec": {
+    "exec_command": 55,
+    "write_stdin": 14,
+    "clock__curr_time": 2
+  },
+  "tokens": {
+    "input_tokens": 5184985,
+    "cached_input_tokens": 5054208,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 33675,
+    "reasoning_output_tokens": 10553,
+    "total_tokens": 5218660
+  },
+  "operacoes_com_codigo_guardado": 13,
+  "conferencias_do_ponto_6": 0,
+  "corridas_inteiras_do_sitio": 0,
+  "construcoes": 0,
+  "capturas": 0,
+  "core_gate_pedido_diretamente": 0,
+  "core_gate_corrido_pelo_hook": 1,
+  "conhecido_positivo": {
+    "passou": true,
+    "prova": "O registo contém a pergunta de clarificação e chamadas executadas pelo orquestrador."
+  }
+}

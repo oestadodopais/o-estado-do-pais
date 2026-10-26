@@ -1,0 +1,438 @@
+{
+  "gerado_por": "medir-cr2.py",
+  "estado": "paragem no ponto 4, entrega parcial",
+  "medidas": {
+    "linhas_relidas": {
+      "valor": 17,
+      "conhecido_positivo": {
+        "passou": true,
+        "prova": "A mesma contagem sobre a primeira linha dá uma linha."
+      }
+    },
+    "paragens": {
+      "valor": 0,
+      "conhecido_positivo": {
+        "passou": true,
+        "prova": "Uma paragem plantada conta como uma."
+      }
+    },
+    "pedidos_com_200": {
+      "valor": 12,
+      "conhecido_positivo": {
+        "passou": true,
+        "prova": "Um 200 e um 500 contam um sucesso."
+      }
+    },
+    "rede_e_corpos_iguais": {
+      "valor": true,
+      "conhecido_positivo": {
+        "passou": true,
+        "prova": "Um literal adulterado na cópia deixa de comparar igual."
+      }
+    },
+    "corpos_com_sha256_certo": {
+      "valor": 12,
+      "conhecido_positivo": {
+        "passou": true,
+        "prova": "Dois corpos diferentes têm resumos diferentes; cada corpo real foi comparado com o pedido."
+      }
+    },
+    "aplicacao_plantas_que_morderam": {
+      "valor": 136,
+      "conhecido_positivo": {
+        "passou": true,
+        "prova": "A mesma função distingue uma planta detetada de uma não detetada."
+      }
+    },
+    "publicacao_plantas_que_morderam": {
+      "valor": 102,
+      "conhecido_positivo": {
+        "passou": true,
+        "prova": "A mesma função distingue uma planta detetada de uma não detetada."
+      }
+    },
+    "entradas_atualizacao": {
+      "valor": 17,
+      "conhecido_positivo": {
+        "passou": true,
+        "prova": "Uma entrada do tipo pedido e outra de outro tipo contam uma."
+      }
+    },
+    "entradas_proveniencia": {
+      "valor": 34,
+      "conhecido_positivo": {
+        "passou": true,
+        "prova": "Uma entrada do tipo pedido e outra de outro tipo contam uma."
+      }
+    },
+    "historias_de_reconferencia_conservadas": {
+      "valor": 17,
+      "conhecido_positivo": {
+        "passou": true,
+        "prova": "Trocar a divergência por igualdade é detetado pela comparação das listas."
+      }
+    },
+    "ultimas_reconferencias_iguais": {
+      "valor": 91,
+      "conhecido_positivo": {
+        "passou": true,
+        "prova": "Uma igualdade e uma divergência contam uma igualdade."
+      }
+    },
+    "alarmes_do_painel": {
+      "valor": 4,
+      "conhecido_positivo": {
+        "passou": true,
+        "prova": "Um alarme e um aviso contam um alarme."
+      }
+    },
+    "alarmes_no_sinal_do_sitio": {
+      "valor": 17,
+      "conhecido_positivo": {
+        "passou": true,
+        "prova": "O extrator lê três num sinal de controlo."
+      }
+    },
+    "cartoes": {
+      "valor": 9,
+      "conhecido_positivo": {
+        "passou": true,
+        "prova": "A cópia com um ramo trocado foi detetada pelo comparador dos cartões."
+      }
+    },
+    "leituras_comparadas": {
+      "valor": 18,
+      "conhecido_positivo": {
+        "passou": true,
+        "prova": "A cópia com um ramo trocado foi detetada pelo comparador dos cartões."
+      }
+    },
+    "leituras_com_texto_mudado": {
+      "valor": 0,
+      "conhecido_positivo": {
+        "passou": true,
+        "prova": "A cópia com um ramo trocado foi detetada pelo comparador dos cartões."
+      }
+    },
+    "ramos_lidos": {
+      "valor": 50,
+      "conhecido_positivo": {
+        "passou": true,
+        "prova": "A cópia com um ramo trocado foi detetada pelo comparador dos cartões."
+      }
+    },
+    "ramos_que_mudaram_de_sentido": {
+      "valor": 0,
+      "conhecido_positivo": {
+        "passou": true,
+        "prova": "A cópia com um ramo trocado foi detetada pelo comparador dos cartões."
+      }
+    },
+    "codigo_aplicacao-ensaio-2": {
+      "valor": 0,
+      "conhecido_positivo": {
+        "passou": true,
+        "prova": "Os códigos são lidos dos ficheiros; o leitor distingue zero de um."
+      }
+    },
+    "codigo_aplicacao-ensaio": {
+      "valor": 1,
+      "conhecido_positivo": {
+        "passou": true,
+        "prova": "Os códigos são lidos dos ficheiros; o leitor distingue zero de um."
+      }
+    },
+    "codigo_aplicacao": {
+      "valor": 0,
+      "conhecido_positivo": {
+        "passou": true,
+        "prova": "Os códigos são lidos dos ficheiros; o leitor distingue zero de um."
+      }
+    },
+    "codigo_frases-antes": {
+      "valor": 0,
+      "conhecido_positivo": {
+        "passou": true,
+        "prova": "Os códigos são lidos dos ficheiros; o leitor distingue zero de um."
+      }
+    },
+    "codigo_leituras-antes": {
+      "valor": 0,
+      "conhecido_positivo": {
+        "passou": true,
+        "prova": "Os códigos são lidos dos ficheiros; o leitor distingue zero de um."
+      }
+    },
+    "codigo_leituras-comparadas": {
+      "valor": 0,
+      "conhecido_positivo": {
+        "passou": true,
+        "prova": "Os códigos são lidos dos ficheiros; o leitor distingue zero de um."
+      }
+    },
+    "codigo_leituras-depois": {
+      "valor": 0,
+      "conhecido_positivo": {
+        "passou": true,
+        "prova": "Os códigos são lidos dos ficheiros; o leitor distingue zero de um."
+      }
+    },
+    "codigo_motor-ensaio": {
+      "valor": 0,
+      "conhecido_positivo": {
+        "passou": true,
+        "prova": "Os códigos são lidos dos ficheiros; o leitor distingue zero de um."
+      }
+    },
+    "codigo_painel": {
+      "valor": 1,
+      "conhecido_positivo": {
+        "passou": true,
+        "prova": "Os códigos são lidos dos ficheiros; o leitor distingue zero de um."
+      }
+    },
+    "codigo_publicacao": {
+      "valor": 0,
+      "conhecido_positivo": {
+        "passou": true,
+        "prova": "Os códigos são lidos dos ficheiros; o leitor distingue zero de um."
+      }
+    },
+    "codigo_releitura-corpos": {
+      "valor": 0,
+      "conhecido_positivo": {
+        "passou": true,
+        "prova": "Os códigos são lidos dos ficheiros; o leitor distingue zero de um."
+      }
+    },
+    "codigo_releitura-rede": {
+      "valor": 0,
+      "conhecido_positivo": {
+        "passou": true,
+        "prova": "Os códigos são lidos dos ficheiros; o leitor distingue zero de um."
+      }
+    },
+    "codigo_selar": {
+      "valor": 0,
+      "conhecido_positivo": {
+        "passou": true,
+        "prova": "Os códigos são lidos dos ficheiros; o leitor distingue zero de um."
+      }
+    },
+    "ficheiros_protegidos_mudados_no_motor": {
+      "valor": 0,
+      "conhecido_positivo": {
+        "passou": true,
+        "prova": "A regra reconhece vintages.json como protegido e o leitor como permitido."
+      }
+    }
+  },
+  "linhas": [
+    {
+      "id": "custo-unitario-do-trabalho-2025-ue",
+      "valor_antigo": "15,2",
+      "valor_novo": "14,8",
+      "bandeira_antiga": "",
+      "bandeira_nova": "",
+      "carimbo_anterior": "2026-10-02T23:00:00+0200",
+      "carimbo_novo": "2026-10-22T23:00:00+0200"
+    },
+    {
+      "id": "divida-das-empresas-2024",
+      "valor_antigo": "67,1",
+      "valor_novo": "66,6",
+      "bandeira_antiga": "p",
+      "bandeira_nova": "",
+      "carimbo_anterior": "2026-10-03T11:00:00+0200",
+      "carimbo_novo": "2026-10-24T11:00:00+0200"
+    },
+    {
+      "id": "divida-das-empresas-2025",
+      "valor_antigo": "64,9",
+      "valor_novo": "65,1",
+      "bandeira_antiga": "p",
+      "bandeira_nova": "p",
+      "carimbo_anterior": "2026-10-03T11:00:00+0200",
+      "carimbo_novo": "2026-10-24T11:00:00+0200"
+    },
+    {
+      "id": "divida-das-empresas-2025-ue",
+      "valor_antigo": "70,0",
+      "valor_novo": "70,2",
+      "bandeira_antiga": "p",
+      "bandeira_nova": "p",
+      "carimbo_anterior": "2026-10-03T11:00:00+0200",
+      "carimbo_novo": "2026-10-24T11:00:00+0200"
+    },
+    {
+      "id": "divida-das-familias-2024",
+      "valor_antigo": "52,6",
+      "valor_novo": "52,3",
+      "bandeira_antiga": "p",
+      "bandeira_nova": "",
+      "carimbo_anterior": "2026-10-03T11:00:00+0200",
+      "carimbo_novo": "2026-10-24T11:00:00+0200"
+    },
+    {
+      "id": "divida-das-familias-2025",
+      "valor_antigo": "53,9",
+      "valor_novo": "54,4",
+      "bandeira_antiga": "p",
+      "bandeira_nova": "p",
+      "carimbo_anterior": "2026-10-03T11:00:00+0200",
+      "carimbo_novo": "2026-10-24T11:00:00+0200"
+    },
+    {
+      "id": "divida-publica-2024",
+      "valor_antigo": "93,5",
+      "valor_novo": "93,0",
+      "bandeira_antiga": "",
+      "bandeira_nova": "",
+      "carimbo_anterior": "2026-04-22T11:00:00+0200",
+      "carimbo_novo": "2026-10-21T11:00:00+0200"
+    },
+    {
+      "id": "divida-publica-2025",
+      "valor_antigo": "89,7",
+      "valor_novo": "89,2",
+      "bandeira_antiga": "",
+      "bandeira_nova": "",
+      "carimbo_anterior": "2026-04-22T11:00:00+0200",
+      "carimbo_novo": "2026-10-21T11:00:00+0200"
+    },
+    {
+      "id": "divida-publica-2025-ue",
+      "valor_antigo": "81,7",
+      "valor_novo": "81,5",
+      "bandeira_antiga": "",
+      "bandeira_nova": "",
+      "carimbo_anterior": "2026-04-22T11:00:00+0200",
+      "carimbo_novo": "2026-10-21T11:00:00+0200"
+    },
+    {
+      "id": "fluxo-de-credito-as-empresas-2024",
+      "valor_antigo": "2,4",
+      "valor_novo": "2,2",
+      "bandeira_antiga": "",
+      "bandeira_nova": "",
+      "carimbo_anterior": "2026-10-03T11:00:00+0200",
+      "carimbo_novo": "2026-10-24T11:00:00+0200"
+    },
+    {
+      "id": "fluxo-de-credito-as-empresas-2025",
+      "valor_antigo": "3,0",
+      "valor_novo": "3,4",
+      "bandeira_antiga": "",
+      "bandeira_nova": "",
+      "carimbo_anterior": "2026-10-03T11:00:00+0200",
+      "carimbo_novo": "2026-10-24T11:00:00+0200"
+    },
+    {
+      "id": "fluxo-de-credito-as-familias-2024",
+      "valor_antigo": "4,1",
+      "valor_novo": "4,0",
+      "bandeira_antiga": "",
+      "bandeira_nova": "",
+      "carimbo_anterior": "2026-10-03T11:00:00+0200",
+      "carimbo_novo": "2026-10-24T11:00:00+0200"
+    },
+    {
+      "id": "fluxo-de-credito-as-familias-2025",
+      "valor_antigo": "8,6",
+      "valor_novo": "9,0",
+      "bandeira_antiga": "",
+      "bandeira_nova": "",
+      "carimbo_anterior": "2026-10-03T11:00:00+0200",
+      "carimbo_novo": "2026-10-24T11:00:00+0200"
+    },
+    {
+      "id": "fluxo-de-credito-as-familias-2025-ue",
+      "valor_antigo": "2,9",
+      "valor_novo": "3,0",
+      "bandeira_antiga": "p",
+      "bandeira_nova": "p",
+      "carimbo_anterior": "2026-10-03T11:00:00+0200",
+      "carimbo_novo": "2026-10-24T11:00:00+0200"
+    },
+    {
+      "id": "formacao-bruta-de-capital-fixo-2025-ue",
+      "valor_antigo": "21,4",
+      "valor_novo": "21,5",
+      "bandeira_antiga": "",
+      "bandeira_nova": "",
+      "carimbo_anterior": "2026-10-02T23:00:00+0200",
+      "carimbo_novo": "2026-10-22T23:00:00+0200"
+    },
+    {
+      "id": "licencas-de-construcao-2025-ue",
+      "valor_antigo": "377,5",
+      "valor_novo": "377,6",
+      "bandeira_antiga": "",
+      "bandeira_nova": "",
+      "carimbo_anterior": "2026-10-02T23:00:00+0200",
+      "carimbo_novo": "2026-10-21T23:00:00+0200"
+    },
+    {
+      "id": "pib-real-per-capita-2025-ue",
+      "valor_antigo": "31 890",
+      "valor_novo": "31 980",
+      "bandeira_antiga": "",
+      "bandeira_nova": "",
+      "carimbo_anterior": "2026-10-02T23:00:00+0200",
+      "carimbo_novo": "2026-10-22T23:00:00+0200"
+    }
+  ],
+  "alarmes": [
+    {
+      "id": "pib-real-per-capita-2024",
+      "canary": "structure",
+      "severity": "alarm",
+      "message": "dimension sizes changed: {'unit': (1, 2)}"
+    },
+    {
+      "id": "pib-real-per-capita-2025-ue",
+      "canary": "structure",
+      "severity": "alarm",
+      "message": "dimension sizes changed: {'unit': (1, 2)}"
+    },
+    {
+      "id": "pib-real-per-capita-2025",
+      "canary": "structure",
+      "severity": "alarm",
+      "message": "dimension sizes changed: {'unit': (1, 2)}"
+    },
+    {
+      "id": null,
+      "canary": "threshold",
+      "severity": "alarm",
+      "message": "the numeric content of the Commission MIP scoreboard page changed — thresholds may have been revised. Read it before trusting any 'limiar' on the site."
+    }
+  ],
+  "codigos": {
+    "aplicacao-ensaio-2": 0,
+    "aplicacao-ensaio": 1,
+    "aplicacao": 0,
+    "frases-antes": 0,
+    "leituras-antes": 0,
+    "leituras-comparadas": 0,
+    "leituras-depois": 0,
+    "motor-ensaio": 0,
+    "painel": 1,
+    "publicacao": 0,
+    "releitura-corpos": 0,
+    "releitura-rede": 0,
+    "selar": 0
+  },
+  "nao_corridos": [
+    "build",
+    "ledger:check",
+    "check:registo",
+    "check:cruzamento -- --with-origin",
+    "check:explicacoes",
+    "check:discussao",
+    "check:cartao",
+    "typecheck",
+    "recibos no dist",
+    "frases no dist"
+  ]
+}

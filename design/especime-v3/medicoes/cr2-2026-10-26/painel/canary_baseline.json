@@ -1,0 +1,2884 @@
+{
+ "abandono-escolar-precoce-2024": {
+  "period": "2024",
+  "value": 6.6,
+  "unit": "Percentage",
+  "ultimo_periodo": "2025",
+  "label": "Early leavers from education and training by labour status",
+  "updated": "2026-09-10T23:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "sex": "T",
+   "wstatus": "POP",
+   "age": "Y18-24",
+   "unit": "PC",
+   "geo": "PT"
+  },
+  "shape": {
+   "freq": 1,
+   "sex": 1,
+   "wstatus": 1,
+   "age": 1,
+   "unit": 1,
+   "geo": 1,
+   "time": 34
+  },
+  "dims": [
+   "age",
+   "freq",
+   "geo",
+   "sex",
+   "time",
+   "unit",
+   "wstatus"
+  ]
+ },
+ "abandono-escolar-precoce-2025-ue": {
+  "period": "2025",
+  "value": 9.1,
+  "unit": "Percentage",
+  "ultimo_periodo": "2025",
+  "label": "Early leavers from education and training by labour status",
+  "updated": "2026-09-10T23:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "sex": "T",
+   "wstatus": "POP",
+   "age": "Y18-24",
+   "unit": "PC",
+   "geo": "EU27_2020"
+  },
+  "shape": {
+   "freq": 1,
+   "sex": 1,
+   "wstatus": 1,
+   "age": 1,
+   "unit": 1,
+   "geo": 1,
+   "time": 34
+  },
+  "dims": [
+   "age",
+   "freq",
+   "geo",
+   "sex",
+   "time",
+   "unit",
+   "wstatus"
+  ]
+ },
+ "abandono-escolar-precoce-2025": {
+  "period": "2025",
+  "value": 6.1,
+  "unit": "Percentage",
+  "ultimo_periodo": "2025",
+  "label": "Early leavers from education and training by labour status",
+  "updated": "2026-09-10T23:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "sex": "T",
+   "wstatus": "POP",
+   "age": "Y18-24",
+   "unit": "PC",
+   "geo": "PT"
+  },
+  "shape": {
+   "freq": 1,
+   "sex": 1,
+   "wstatus": 1,
+   "age": 1,
+   "unit": 1,
+   "geo": 1,
+   "time": 34
+  },
+  "dims": [
+   "age",
+   "freq",
+   "geo",
+   "sex",
+   "time",
+   "unit",
+   "wstatus"
+  ]
+ },
+ "competencias-digitais-2023": {
+  "period": "2023",
+  "value": 55.97,
+  "unit": "Percentage of individuals",
+  "ultimo_periodo": "2025",
+  "label": "Individuals who have basic or above basic overall digital skills by sex",
+  "updated": "2026-04-17T11:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "ind_type": "IND_TOTAL",
+   "indic_is": "I_DSK2_BAB",
+   "unit": "PC_IND",
+   "geo": "PT"
+  },
+  "shape": {
+   "freq": 1,
+   "ind_type": 1,
+   "indic_is": 1,
+   "unit": 1,
+   "geo": 1,
+   "time": 3
+  },
+  "dims": [
+   "freq",
+   "geo",
+   "ind_type",
+   "indic_is",
+   "time",
+   "unit"
+  ]
+ },
+ "competencias-digitais-2025-ue": {
+  "period": "2025",
+  "value": 60.4,
+  "unit": "Percentage of individuals",
+  "ultimo_periodo": "2025",
+  "label": "Individuals who have basic or above basic overall digital skills by sex",
+  "updated": "2026-04-17T11:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "ind_type": "IND_TOTAL",
+   "indic_is": "I_DSK2_BAB",
+   "unit": "PC_IND",
+   "geo": "EU27_2020"
+  },
+  "shape": {
+   "freq": 1,
+   "ind_type": 1,
+   "indic_is": 1,
+   "unit": 1,
+   "geo": 1,
+   "time": 3
+  },
+  "dims": [
+   "freq",
+   "geo",
+   "ind_type",
+   "indic_is",
+   "time",
+   "unit"
+  ]
+ },
+ "competencias-digitais-2025": {
+  "period": "2025",
+  "value": 59.15,
+  "unit": "Percentage of individuals",
+  "ultimo_periodo": "2025",
+  "label": "Individuals who have basic or above basic overall digital skills by sex",
+  "updated": "2026-04-17T11:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "ind_type": "IND_TOTAL",
+   "indic_is": "I_DSK2_BAB",
+   "unit": "PC_IND",
+   "geo": "PT"
+  },
+  "shape": {
+   "freq": 1,
+   "ind_type": 1,
+   "indic_is": 1,
+   "unit": 1,
+   "geo": 1,
+   "time": 3
+  },
+  "dims": [
+   "freq",
+   "geo",
+   "ind_type",
+   "indic_is",
+   "time",
+   "unit"
+  ]
+ },
+ "credito-malparado-2024": {
+  "period": "2024",
+  "value": 2.4,
+  "unit": "Percentage",
+  "ultimo_periodo": "2025",
+  "label": "Gross non-performing loans, domestic and foreign entities - % of gross loans",
+  "updated": "2026-09-30T23:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "unit": "PC",
+   "geo": "PT"
+  },
+  "shape": {
+   "freq": 1,
+   "unit": 1,
+   "geo": 1,
+   "time": 12
+  },
+  "dims": [
+   "freq",
+   "geo",
+   "time",
+   "unit"
+  ]
+ },
+ "credito-malparado-2025": {
+  "period": "2025",
+  "value": 2.1,
+  "unit": "Percentage",
+  "ultimo_periodo": "2025",
+  "label": "Gross non-performing loans, domestic and foreign entities - % of gross loans",
+  "updated": "2026-09-30T23:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "unit": "PC",
+   "geo": "PT"
+  },
+  "shape": {
+   "freq": 1,
+   "unit": 1,
+   "geo": 1,
+   "time": 12
+  },
+  "dims": [
+   "freq",
+   "geo",
+   "time",
+   "unit"
+  ]
+ },
+ "criancas-em-creche-2024": {
+  "period": "2024",
+  "value": 59.4,
+  "unit": "Percentage",
+  "ultimo_periodo": "2025",
+  "label": "Children aged less than 3 years in formal childcare",
+  "updated": "2026-10-20T23:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "unit": "PC",
+   "duration": "H_GE1",
+   "age": "Y_LT3",
+   "geo": "PT"
+  },
+  "shape": {
+   "freq": 1,
+   "unit": 1,
+   "duration": 1,
+   "age": 1,
+   "geo": 1,
+   "time": 21
+  },
+  "dims": [
+   "age",
+   "duration",
+   "freq",
+   "geo",
+   "time",
+   "unit"
+  ]
+ },
+ "criancas-em-creche-2025-ue": {
+  "period": "2025",
+  "value": 40.5,
+  "unit": "Percentage",
+  "ultimo_periodo": "2025",
+  "label": "Children aged less than 3 years in formal childcare",
+  "updated": "2026-10-20T23:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "unit": "PC",
+   "duration": "H_GE1",
+   "age": "Y_LT3",
+   "geo": "EU27_2020"
+  },
+  "shape": {
+   "freq": 1,
+   "unit": 1,
+   "duration": 1,
+   "age": 1,
+   "geo": 1,
+   "time": 21
+  },
+  "dims": [
+   "age",
+   "duration",
+   "freq",
+   "geo",
+   "time",
+   "unit"
+  ]
+ },
+ "criancas-em-creche-2025": {
+  "period": "2025",
+  "value": 57.9,
+  "unit": "Percentage",
+  "ultimo_periodo": "2025",
+  "label": "Children aged less than 3 years in formal childcare",
+  "updated": "2026-10-20T23:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "unit": "PC",
+   "duration": "H_GE1",
+   "age": "Y_LT3",
+   "geo": "PT"
+  },
+  "shape": {
+   "freq": 1,
+   "unit": 1,
+   "duration": 1,
+   "age": 1,
+   "geo": 1,
+   "time": 21
+  },
+  "dims": [
+   "age",
+   "duration",
+   "freq",
+   "geo",
+   "time",
+   "unit"
+  ]
+ },
+ "custo-unitario-do-trabalho-2024": {
+  "period": "2024",
+  "value": 17.9,
+  "unit": "Percentage change (t/t-3)",
+  "ultimo_periodo": "2025",
+  "label": "Nominal unit labour cost per hour worked",
+  "updated": "2026-10-22T23:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "na_item": "NULC_HW",
+   "unit": "PCH_3Y",
+   "geo": "PT"
+  },
+  "shape": {
+   "freq": 1,
+   "na_item": 1,
+   "unit": 1,
+   "geo": 1,
+   "time": 31
+  },
+  "dims": [
+   "freq",
+   "geo",
+   "na_item",
+   "time",
+   "unit"
+  ]
+ },
+ "custo-unitario-do-trabalho-2025-ue": {
+  "period": "2025",
+  "value": 14.8,
+  "unit": "Percentage change (t/t-3)",
+  "ultimo_periodo": "2025",
+  "label": "Nominal unit labour cost per hour worked",
+  "updated": "2026-10-22T23:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "na_item": "NULC_HW",
+   "unit": "PCH_3Y",
+   "geo": "EU27_2020"
+  },
+  "shape": {
+   "freq": 1,
+   "na_item": 1,
+   "unit": 1,
+   "geo": 1,
+   "time": 31
+  },
+  "dims": [
+   "freq",
+   "geo",
+   "na_item",
+   "time",
+   "unit"
+  ]
+ },
+ "custo-unitario-do-trabalho-2025": {
+  "period": "2025",
+  "value": 21.3,
+  "unit": "Percentage change (t/t-3)",
+  "ultimo_periodo": "2025",
+  "label": "Nominal unit labour cost per hour worked",
+  "updated": "2026-10-22T23:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "na_item": "NULC_HW",
+   "unit": "PCH_3Y",
+   "geo": "PT"
+  },
+  "shape": {
+   "freq": 1,
+   "na_item": 1,
+   "unit": 1,
+   "geo": 1,
+   "time": 31
+  },
+  "dims": [
+   "freq",
+   "geo",
+   "na_item",
+   "time",
+   "unit"
+  ]
+ },
+ "desempenho-das-exportacoes-2024": {
+  "period": "2024",
+  "value": 17.1,
+  "unit": "Percentage of OECD and non-OECD EU countries total - 3-year change",
+  "ultimo_periodo": "2025",
+  "label": "Share of exports of advanced economies",
+  "updated": "2026-07-15T11:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "unit": "PCH_OECD_EU_3Y",
+   "bop_item": "GS",
+   "stk_flow": "CRE",
+   "partner": "WRL_REST",
+   "geo": "PT"
+  },
+  "shape": {
+   "freq": 1,
+   "unit": 1,
+   "bop_item": 1,
+   "stk_flow": 1,
+   "partner": 1,
+   "geo": 1,
+   "time": 31
+  },
+  "dims": [
+   "bop_item",
+   "freq",
+   "geo",
+   "partner",
+   "stk_flow",
+   "time",
+   "unit"
+  ]
+ },
+ "desempenho-das-exportacoes-2025": {
+  "period": "2025",
+  "value": 8.2,
+  "unit": "Percentage of OECD and non-OECD EU countries total - 3-year change",
+  "ultimo_periodo": "2025",
+  "label": "Share of exports of advanced economies",
+  "updated": "2026-07-15T11:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "unit": "PCH_OECD_EU_3Y",
+   "bop_item": "GS",
+   "stk_flow": "CRE",
+   "partner": "WRL_REST",
+   "geo": "PT"
+  },
+  "shape": {
+   "freq": 1,
+   "unit": 1,
+   "bop_item": 1,
+   "stk_flow": 1,
+   "partner": 1,
+   "geo": 1,
+   "time": 31
+  },
+  "dims": [
+   "bop_item",
+   "freq",
+   "geo",
+   "partner",
+   "stk_flow",
+   "time",
+   "unit"
+  ]
+ },
+ "desemprego-de-longa-duracao-2024": {
+  "period": "2024",
+  "value": 2.4,
+  "unit": "Percentage of population in the labour force",
+  "ultimo_periodo": "2025",
+  "label": "Long-term unemployment rate by sex",
+  "updated": "2026-09-10T23:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "indic_em": "LTU",
+   "age": "Y15-74",
+   "sex": "T",
+   "unit": "PC_ACT",
+   "geo": "PT"
+  },
+  "shape": {
+   "freq": 1,
+   "indic_em": 1,
+   "age": 1,
+   "sex": 1,
+   "unit": 1,
+   "geo": 1,
+   "time": 21
+  },
+  "dims": [
+   "age",
+   "freq",
+   "geo",
+   "indic_em",
+   "sex",
+   "time",
+   "unit"
+  ]
+ },
+ "desemprego-de-longa-duracao-2025-ue": {
+  "period": "2025",
+  "value": 1.9,
+  "unit": "Percentage of population in the labour force",
+  "ultimo_periodo": "2025",
+  "label": "Long-term unemployment rate by sex",
+  "updated": "2026-09-10T23:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "indic_em": "LTU",
+   "age": "Y15-74",
+   "sex": "T",
+   "unit": "PC_ACT",
+   "geo": "EU27_2020"
+  },
+  "shape": {
+   "freq": 1,
+   "indic_em": 1,
+   "age": 1,
+   "sex": 1,
+   "unit": 1,
+   "geo": 1,
+   "time": 21
+  },
+  "dims": [
+   "age",
+   "freq",
+   "geo",
+   "indic_em",
+   "sex",
+   "time",
+   "unit"
+  ]
+ },
+ "desemprego-de-longa-duracao-2025": {
+  "period": "2025",
+  "value": 2.2,
+  "unit": "Percentage of population in the labour force",
+  "ultimo_periodo": "2025",
+  "label": "Long-term unemployment rate by sex",
+  "updated": "2026-09-10T23:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "indic_em": "LTU",
+   "age": "Y15-74",
+   "sex": "T",
+   "unit": "PC_ACT",
+   "geo": "PT"
+  },
+  "shape": {
+   "freq": 1,
+   "indic_em": 1,
+   "age": 1,
+   "sex": 1,
+   "unit": 1,
+   "geo": 1,
+   "time": 21
+  },
+  "dims": [
+   "age",
+   "freq",
+   "geo",
+   "indic_em",
+   "sex",
+   "time",
+   "unit"
+  ]
+ },
+ "despesa-em-id-2023": {
+  "period": "2023",
+  "value": 1.68,
+  "unit": "Percentage of gross domestic product (GDP)",
+  "ultimo_periodo": "2024",
+  "label": "Gross domestic expenditure on research and development (R&D)",
+  "updated": "2026-09-29T23:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "sectperf": "TOTAL",
+   "unit": "PC_GDP",
+   "geo": "PT"
+  },
+  "shape": {
+   "freq": 1,
+   "sectperf": 1,
+   "unit": 1,
+   "geo": 1,
+   "time": 30
+  },
+  "dims": [
+   "freq",
+   "geo",
+   "sectperf",
+   "time",
+   "unit"
+  ]
+ },
+ "despesa-em-id-2024-ue": {
+  "period": "2024",
+  "value": 2.26,
+  "unit": "Percentage of gross domestic product (GDP)",
+  "ultimo_periodo": "2024",
+  "label": "Gross domestic expenditure on research and development (R&D)",
+  "updated": "2026-09-29T23:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "sectperf": "TOTAL",
+   "unit": "PC_GDP",
+   "geo": "EU27_2020"
+  },
+  "shape": {
+   "freq": 1,
+   "sectperf": 1,
+   "unit": 1,
+   "geo": 1,
+   "time": 30
+  },
+  "dims": [
+   "freq",
+   "geo",
+   "sectperf",
+   "time",
+   "unit"
+  ]
+ },
+ "despesa-em-id-2024": {
+  "period": "2024",
+  "value": 1.73,
+  "unit": "Percentage of gross domestic product (GDP)",
+  "ultimo_periodo": "2024",
+  "label": "Gross domestic expenditure on research and development (R&D)",
+  "updated": "2026-09-29T23:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "sectperf": "TOTAL",
+   "unit": "PC_GDP",
+   "geo": "PT"
+  },
+  "shape": {
+   "freq": 1,
+   "sectperf": 1,
+   "unit": 1,
+   "geo": 1,
+   "time": 30
+  },
+  "dims": [
+   "freq",
+   "geo",
+   "sectperf",
+   "time",
+   "unit"
+  ]
+ },
+ "disparidade-de-emprego-entre-sexos-2024": {
+  "period": "2024",
+  "value": 5.7,
+  "unit": "Percentage of total population",
+  "ultimo_periodo": "2025",
+  "label": "Gender employment gap",
+  "updated": "2026-09-10T23:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "indic_em": "EMP_LFS",
+   "age": "Y20-64",
+   "unit": "PC_POP",
+   "geo": "PT"
+  },
+  "shape": {
+   "freq": 1,
+   "indic_em": 1,
+   "age": 1,
+   "unit": 1,
+   "geo": 1,
+   "time": 21
+  },
+  "dims": [
+   "age",
+   "freq",
+   "geo",
+   "indic_em",
+   "time",
+   "unit"
+  ]
+ },
+ "disparidade-de-emprego-entre-sexos-2025-ue": {
+  "period": "2025",
+  "value": 9.6,
+  "unit": "Percentage of total population",
+  "ultimo_periodo": "2025",
+  "label": "Gender employment gap",
+  "updated": "2026-09-10T23:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "indic_em": "EMP_LFS",
+   "age": "Y20-64",
+   "unit": "PC_POP",
+   "geo": "EU27_2020"
+  },
+  "shape": {
+   "freq": 1,
+   "indic_em": 1,
+   "age": 1,
+   "unit": 1,
+   "geo": 1,
+   "time": 21
+  },
+  "dims": [
+   "age",
+   "freq",
+   "geo",
+   "indic_em",
+   "time",
+   "unit"
+  ]
+ },
+ "disparidade-de-emprego-entre-sexos-2025": {
+  "period": "2025",
+  "value": 5.4,
+  "unit": "Percentage of total population",
+  "ultimo_periodo": "2025",
+  "label": "Gender employment gap",
+  "updated": "2026-09-10T23:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "indic_em": "EMP_LFS",
+   "age": "Y20-64",
+   "unit": "PC_POP",
+   "geo": "PT"
+  },
+  "shape": {
+   "freq": 1,
+   "indic_em": 1,
+   "age": 1,
+   "unit": 1,
+   "geo": 1,
+   "time": 21
+  },
+  "dims": [
+   "age",
+   "freq",
+   "geo",
+   "indic_em",
+   "time",
+   "unit"
+  ]
+ },
+ "divida-das-empresas-2024": {
+  "period": "2024",
+  "value": 66.6,
+  "unit": "Percentage of gross domestic product (GDP)",
+  "ultimo_periodo": "2025",
+  "label": "Non-financial corporations debt, consolidated - % of GDP",
+  "updated": "2026-10-24T11:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "unit": "PC_GDP",
+   "co_nco": "CO",
+   "sector": "S11",
+   "finpos": "LIAB",
+   "na_item": "F3_F4",
+   "geo": "PT"
+  },
+  "shape": {
+   "freq": 1,
+   "unit": 1,
+   "co_nco": 1,
+   "sector": 1,
+   "finpos": 1,
+   "na_item": 1,
+   "geo": 1,
+   "time": 31
+  },
+  "dims": [
+   "co_nco",
+   "finpos",
+   "freq",
+   "geo",
+   "na_item",
+   "sector",
+   "time",
+   "unit"
+  ]
+ },
+ "divida-das-empresas-2025-ue": {
+  "period": "2025",
+  "value": 70.2,
+  "unit": "Percentage of gross domestic product (GDP)",
+  "ultimo_periodo": "2025",
+  "label": "Non-financial corporations debt, consolidated - % of GDP",
+  "updated": "2026-10-24T11:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "unit": "PC_GDP",
+   "co_nco": "CO",
+   "sector": "S11",
+   "finpos": "LIAB",
+   "na_item": "F3_F4",
+   "geo": "EU27_2020"
+  },
+  "shape": {
+   "freq": 1,
+   "unit": 1,
+   "co_nco": 1,
+   "sector": 1,
+   "finpos": 1,
+   "na_item": 1,
+   "geo": 1,
+   "time": 31
+  },
+  "dims": [
+   "co_nco",
+   "finpos",
+   "freq",
+   "geo",
+   "na_item",
+   "sector",
+   "time",
+   "unit"
+  ]
+ },
+ "divida-das-empresas-2025": {
+  "period": "2025",
+  "value": 65.1,
+  "unit": "Percentage of gross domestic product (GDP)",
+  "ultimo_periodo": "2025",
+  "label": "Non-financial corporations debt, consolidated - % of GDP",
+  "updated": "2026-10-24T11:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "unit": "PC_GDP",
+   "co_nco": "CO",
+   "sector": "S11",
+   "finpos": "LIAB",
+   "na_item": "F3_F4",
+   "geo": "PT"
+  },
+  "shape": {
+   "freq": 1,
+   "unit": 1,
+   "co_nco": 1,
+   "sector": 1,
+   "finpos": 1,
+   "na_item": 1,
+   "geo": 1,
+   "time": 31
+  },
+  "dims": [
+   "co_nco",
+   "finpos",
+   "freq",
+   "geo",
+   "na_item",
+   "sector",
+   "time",
+   "unit"
+  ]
+ },
+ "divida-das-familias-2024": {
+  "period": "2024",
+  "value": 52.3,
+  "unit": "Percentage of gross domestic product (GDP)",
+  "ultimo_periodo": "2025",
+  "label": "Household debt including non-profit institutions serving households, consolidated",
+  "updated": "2026-10-24T11:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "unit": "PC_GDP",
+   "co_nco": "CO",
+   "sector": "S14_S15",
+   "finpos": "LIAB",
+   "na_item": "F3_F4",
+   "geo": "PT"
+  },
+  "shape": {
+   "freq": 1,
+   "unit": 1,
+   "co_nco": 1,
+   "sector": 1,
+   "finpos": 1,
+   "na_item": 1,
+   "geo": 1,
+   "time": 31
+  },
+  "dims": [
+   "co_nco",
+   "finpos",
+   "freq",
+   "geo",
+   "na_item",
+   "sector",
+   "time",
+   "unit"
+  ]
+ },
+ "divida-das-familias-2025-ue": {
+  "period": "2025",
+  "value": 49.2,
+  "unit": "Percentage of gross domestic product (GDP)",
+  "ultimo_periodo": "2025",
+  "label": "Household debt including non-profit institutions serving households, consolidated",
+  "updated": "2026-10-24T11:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "unit": "PC_GDP",
+   "co_nco": "CO",
+   "sector": "S14_S15",
+   "finpos": "LIAB",
+   "na_item": "F3_F4",
+   "geo": "EU27_2020"
+  },
+  "shape": {
+   "freq": 1,
+   "unit": 1,
+   "co_nco": 1,
+   "sector": 1,
+   "finpos": 1,
+   "na_item": 1,
+   "geo": 1,
+   "time": 31
+  },
+  "dims": [
+   "co_nco",
+   "finpos",
+   "freq",
+   "geo",
+   "na_item",
+   "sector",
+   "time",
+   "unit"
+  ]
+ },
+ "divida-das-familias-2025": {
+  "period": "2025",
+  "value": 54.4,
+  "unit": "Percentage of gross domestic product (GDP)",
+  "ultimo_periodo": "2025",
+  "label": "Household debt including non-profit institutions serving households, consolidated",
+  "updated": "2026-10-24T11:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "unit": "PC_GDP",
+   "co_nco": "CO",
+   "sector": "S14_S15",
+   "finpos": "LIAB",
+   "na_item": "F3_F4",
+   "geo": "PT"
+  },
+  "shape": {
+   "freq": 1,
+   "unit": 1,
+   "co_nco": 1,
+   "sector": 1,
+   "finpos": 1,
+   "na_item": 1,
+   "geo": 1,
+   "time": 31
+  },
+  "dims": [
+   "co_nco",
+   "finpos",
+   "freq",
+   "geo",
+   "na_item",
+   "sector",
+   "time",
+   "unit"
+  ]
+ },
+ "divida-publica-2024": {
+  "period": "2024",
+  "value": 93.0,
+  "unit": "Percentage of gross domestic product (GDP)",
+  "ultimo_periodo": "2025",
+  "label": "General government gross debt (EDP concept), consolidated - annual data",
+  "updated": "2026-10-21T11:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "na_item": "GD",
+   "sector": "S13",
+   "unit": "PC_GDP",
+   "geo": "PT"
+  },
+  "shape": {
+   "freq": 1,
+   "na_item": 1,
+   "sector": 1,
+   "unit": 1,
+   "geo": 1,
+   "time": 31
+  },
+  "dims": [
+   "freq",
+   "geo",
+   "na_item",
+   "sector",
+   "time",
+   "unit"
+  ]
+ },
+ "divida-publica-2025-ue": {
+  "period": "2025",
+  "value": 81.5,
+  "unit": "Percentage of gross domestic product (GDP)",
+  "ultimo_periodo": "2025",
+  "label": "General government gross debt (EDP concept), consolidated - annual data",
+  "updated": "2026-10-21T11:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "na_item": "GD",
+   "sector": "S13",
+   "unit": "PC_GDP",
+   "geo": "EU27_2020"
+  },
+  "shape": {
+   "freq": 1,
+   "na_item": 1,
+   "sector": 1,
+   "unit": 1,
+   "geo": 1,
+   "time": 31
+  },
+  "dims": [
+   "freq",
+   "geo",
+   "na_item",
+   "sector",
+   "time",
+   "unit"
+  ]
+ },
+ "divida-publica-2025": {
+  "period": "2025",
+  "value": 89.2,
+  "unit": "Percentage of gross domestic product (GDP)",
+  "ultimo_periodo": "2025",
+  "label": "General government gross debt (EDP concept), consolidated - annual data",
+  "updated": "2026-10-21T11:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "na_item": "GD",
+   "sector": "S13",
+   "unit": "PC_GDP",
+   "geo": "PT"
+  },
+  "shape": {
+   "freq": 1,
+   "na_item": 1,
+   "sector": 1,
+   "unit": 1,
+   "geo": 1,
+   "time": 31
+  },
+  "dims": [
+   "freq",
+   "geo",
+   "na_item",
+   "sector",
+   "time",
+   "unit"
+  ]
+ },
+ "fluxo-de-credito-as-empresas-2024": {
+  "period": "2024",
+  "value": 2.2,
+  "unit": "Percentage of stocks (closing balance sheet)",
+  "ultimo_periodo": "2025",
+  "label": "Non-financial corporations excluding foreign direct investments credit flow, consolidated",
+  "updated": "2026-10-24T11:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "unit": "PC_LE",
+   "co_nco": "CO",
+   "sector": "S11",
+   "finpos": "LIAB",
+   "na_item": "F3_F4_X_FDI",
+   "geo": "PT"
+  },
+  "shape": {
+   "freq": 1,
+   "unit": 1,
+   "co_nco": 1,
+   "sector": 1,
+   "finpos": 1,
+   "na_item": 1,
+   "geo": 1,
+   "time": 27
+  },
+  "dims": [
+   "co_nco",
+   "finpos",
+   "freq",
+   "geo",
+   "na_item",
+   "sector",
+   "time",
+   "unit"
+  ]
+ },
+ "fluxo-de-credito-as-empresas-2025": {
+  "period": "2025",
+  "value": 3.4,
+  "unit": "Percentage of stocks (closing balance sheet)",
+  "ultimo_periodo": "2025",
+  "label": "Non-financial corporations excluding foreign direct investments credit flow, consolidated",
+  "updated": "2026-10-24T11:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "unit": "PC_LE",
+   "co_nco": "CO",
+   "sector": "S11",
+   "finpos": "LIAB",
+   "na_item": "F3_F4_X_FDI",
+   "geo": "PT"
+  },
+  "shape": {
+   "freq": 1,
+   "unit": 1,
+   "co_nco": 1,
+   "sector": 1,
+   "finpos": 1,
+   "na_item": 1,
+   "geo": 1,
+   "time": 27
+  },
+  "dims": [
+   "co_nco",
+   "finpos",
+   "freq",
+   "geo",
+   "na_item",
+   "sector",
+   "time",
+   "unit"
+  ]
+ },
+ "fluxo-de-credito-as-familias-2024": {
+  "period": "2024",
+  "value": 4.0,
+  "unit": "Percentage of stocks (closing balance sheet)",
+  "ultimo_periodo": "2025",
+  "label": "Household including non-profit institutions serving households (NPISH) credit flow, consolidated",
+  "updated": "2026-10-24T11:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "na_item": "F3_F4",
+   "co_nco": "CO",
+   "sector": "S14_S15",
+   "finpos": "LIAB",
+   "unit": "PC_LE",
+   "geo": "PT"
+  },
+  "shape": {
+   "freq": 1,
+   "na_item": 1,
+   "co_nco": 1,
+   "sector": 1,
+   "finpos": 1,
+   "unit": 1,
+   "geo": 1,
+   "time": 31
+  },
+  "dims": [
+   "co_nco",
+   "finpos",
+   "freq",
+   "geo",
+   "na_item",
+   "sector",
+   "time",
+   "unit"
+  ]
+ },
+ "fluxo-de-credito-as-familias-2025-ue": {
+  "period": "2025",
+  "value": 3.0,
+  "unit": "Percentage of stocks (closing balance sheet)",
+  "ultimo_periodo": "2025",
+  "label": "Household including non-profit institutions serving households (NPISH) credit flow, consolidated",
+  "updated": "2026-10-24T11:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "na_item": "F3_F4",
+   "co_nco": "CO",
+   "sector": "S14_S15",
+   "finpos": "LIAB",
+   "unit": "PC_LE",
+   "geo": "EU27_2020"
+  },
+  "shape": {
+   "freq": 1,
+   "na_item": 1,
+   "co_nco": 1,
+   "sector": 1,
+   "finpos": 1,
+   "unit": 1,
+   "geo": 1,
+   "time": 31
+  },
+  "dims": [
+   "co_nco",
+   "finpos",
+   "freq",
+   "geo",
+   "na_item",
+   "sector",
+   "time",
+   "unit"
+  ]
+ },
+ "fluxo-de-credito-as-familias-2025": {
+  "period": "2025",
+  "value": 9.0,
+  "unit": "Percentage of stocks (closing balance sheet)",
+  "ultimo_periodo": "2025",
+  "label": "Household including non-profit institutions serving households (NPISH) credit flow, consolidated",
+  "updated": "2026-10-24T11:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "na_item": "F3_F4",
+   "co_nco": "CO",
+   "sector": "S14_S15",
+   "finpos": "LIAB",
+   "unit": "PC_LE",
+   "geo": "PT"
+  },
+  "shape": {
+   "freq": 1,
+   "na_item": 1,
+   "co_nco": 1,
+   "sector": 1,
+   "finpos": 1,
+   "unit": 1,
+   "geo": 1,
+   "time": 31
+  },
+  "dims": [
+   "co_nco",
+   "finpos",
+   "freq",
+   "geo",
+   "na_item",
+   "sector",
+   "time",
+   "unit"
+  ]
+ },
+ "formacao-bruta-de-capital-fixo-2024": {
+  "period": "2024",
+  "value": 20.5,
+  "unit": "Percentage of gross domestic product (GDP)",
+  "ultimo_periodo": "2025",
+  "label": "Gross fixed capital formation at current prices",
+  "updated": "2026-10-22T23:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "na_item": "P51G",
+   "unit": "PC_GDP",
+   "geo": "PT"
+  },
+  "shape": {
+   "freq": 1,
+   "na_item": 1,
+   "unit": 1,
+   "geo": 1,
+   "time": 31
+  },
+  "dims": [
+   "freq",
+   "geo",
+   "na_item",
+   "time",
+   "unit"
+  ]
+ },
+ "formacao-bruta-de-capital-fixo-2025-ue": {
+  "period": "2025",
+  "value": 21.5,
+  "unit": "Percentage of gross domestic product (GDP)",
+  "ultimo_periodo": "2025",
+  "label": "Gross fixed capital formation at current prices",
+  "updated": "2026-10-22T23:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "na_item": "P51G",
+   "unit": "PC_GDP",
+   "geo": "EU27_2020"
+  },
+  "shape": {
+   "freq": 1,
+   "na_item": 1,
+   "unit": 1,
+   "geo": 1,
+   "time": 31
+  },
+  "dims": [
+   "freq",
+   "geo",
+   "na_item",
+   "time",
+   "unit"
+  ]
+ },
+ "formacao-bruta-de-capital-fixo-2025": {
+  "period": "2025",
+  "value": 21.0,
+  "unit": "Percentage of gross domestic product (GDP)",
+  "ultimo_periodo": "2025",
+  "label": "Gross fixed capital formation at current prices",
+  "updated": "2026-10-22T23:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "na_item": "P51G",
+   "unit": "PC_GDP",
+   "geo": "PT"
+  },
+  "shape": {
+   "freq": 1,
+   "na_item": 1,
+   "unit": 1,
+   "geo": 1,
+   "time": 31
+  },
+  "dims": [
+   "freq",
+   "geo",
+   "na_item",
+   "time",
+   "unit"
+  ]
+ },
+ "independencia-da-justica-2024": {
+  "period": "2024",
+  "value": 53,
+  "unit": "Percentage",
+  "ultimo_periodo": "2025",
+  "label": "Perceived independence of the justice system",
+  "updated": "2026-01-08T23:00:00+0100",
+  "coordenadas": {
+   "freq": "A",
+   "lev_perc": "VG_FG",
+   "unit": "PC",
+   "geo": "PT"
+  },
+  "shape": {
+   "freq": 1,
+   "lev_perc": 1,
+   "unit": 1,
+   "geo": 1,
+   "time": 10
+  },
+  "dims": [
+   "freq",
+   "geo",
+   "lev_perc",
+   "time",
+   "unit"
+  ]
+ },
+ "independencia-da-justica-2025-ue": {
+  "period": "2025",
+  "value": 54,
+  "unit": "Percentage",
+  "ultimo_periodo": "2025",
+  "label": "Perceived independence of the justice system",
+  "updated": "2026-01-08T23:00:00+0100",
+  "coordenadas": {
+   "freq": "A",
+   "lev_perc": "VG_FG",
+   "unit": "PC",
+   "geo": "EU27_2020"
+  },
+  "shape": {
+   "freq": 1,
+   "lev_perc": 1,
+   "unit": 1,
+   "geo": 1,
+   "time": 10
+  },
+  "dims": [
+   "freq",
+   "geo",
+   "lev_perc",
+   "time",
+   "unit"
+  ]
+ },
+ "independencia-da-justica-2025": {
+  "period": "2025",
+  "value": 58,
+  "unit": "Percentage",
+  "ultimo_periodo": "2025",
+  "label": "Perceived independence of the justice system",
+  "updated": "2026-01-08T23:00:00+0100",
+  "coordenadas": {
+   "freq": "A",
+   "lev_perc": "VG_FG",
+   "unit": "PC",
+   "geo": "PT"
+  },
+  "shape": {
+   "freq": 1,
+   "lev_perc": 1,
+   "unit": 1,
+   "geo": 1,
+   "time": 10
+  },
+  "dims": [
+   "freq",
+   "geo",
+   "lev_perc",
+   "time",
+   "unit"
+  ]
+ },
+ "indice-de-percepcao-da-corrupcao-2024": {
+  "period": "2024",
+  "value": 57,
+  "unit": "Score",
+  "ultimo_periodo": "2025",
+  "label": "Corruption Perceptions Index",
+  "updated": "2026-03-04T23:00:00+0100",
+  "coordenadas": {
+   "freq": "A",
+   "unit": "SC",
+   "geo": "PT"
+  },
+  "shape": {
+   "freq": 1,
+   "unit": 1,
+   "geo": 1,
+   "time": 14
+  },
+  "dims": [
+   "freq",
+   "geo",
+   "time",
+   "unit"
+  ]
+ },
+ "indice-de-percepcao-da-corrupcao-2025-ue": {
+  "period": "2025",
+  "value": 62,
+  "unit": "Score",
+  "ultimo_periodo": "2025",
+  "label": "Corruption Perceptions Index",
+  "updated": "2026-03-04T23:00:00+0100",
+  "coordenadas": {
+   "freq": "A",
+   "unit": "SC",
+   "geo": "EU27_2020"
+  },
+  "shape": {
+   "freq": 1,
+   "unit": 1,
+   "geo": 1,
+   "time": 14
+  },
+  "dims": [
+   "freq",
+   "geo",
+   "time",
+   "unit"
+  ]
+ },
+ "indice-de-percepcao-da-corrupcao-2025": {
+  "period": "2025",
+  "value": 56,
+  "unit": "Score",
+  "ultimo_periodo": "2025",
+  "label": "Corruption Perceptions Index",
+  "updated": "2026-03-04T23:00:00+0100",
+  "coordenadas": {
+   "freq": "A",
+   "unit": "SC",
+   "geo": "PT"
+  },
+  "shape": {
+   "freq": 1,
+   "unit": 1,
+   "geo": 1,
+   "time": 14
+  },
+  "dims": [
+   "freq",
+   "geo",
+   "time",
+   "unit"
+  ]
+ },
+ "jovens-nem-2024": {
+  "period": "2024",
+  "value": 8.7,
+  "unit": "Percentage of total population",
+  "ultimo_periodo": "2025",
+  "label": "Young persons (aged 15-24) neither in employment nor in education and training - % of total population in private households in the same age group",
+  "updated": "2026-09-10T23:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "sex": "T",
+   "age": "Y15-29",
+   "unit": "PC_POP",
+   "geo": "PT"
+  },
+  "shape": {
+   "freq": 1,
+   "sex": 1,
+   "age": 1,
+   "unit": 1,
+   "geo": 1,
+   "time": 23
+  },
+  "dims": [
+   "age",
+   "freq",
+   "geo",
+   "sex",
+   "time",
+   "unit"
+  ]
+ },
+ "jovens-nem-2025-ue": {
+  "period": "2025",
+  "value": 11.0,
+  "unit": "Percentage of total population",
+  "ultimo_periodo": "2025",
+  "label": "Young persons (aged 15-24) neither in employment nor in education and training - % of total population in private households in the same age group",
+  "updated": "2026-09-10T23:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "sex": "T",
+   "age": "Y15-29",
+   "unit": "PC_POP",
+   "geo": "EU27_2020"
+  },
+  "shape": {
+   "freq": 1,
+   "sex": 1,
+   "age": 1,
+   "unit": 1,
+   "geo": 1,
+   "time": 23
+  },
+  "dims": [
+   "age",
+   "freq",
+   "geo",
+   "sex",
+   "time",
+   "unit"
+  ]
+ },
+ "jovens-nem-2025": {
+  "period": "2025",
+  "value": 8.0,
+  "unit": "Percentage of total population",
+  "ultimo_periodo": "2025",
+  "label": "Young persons (aged 15-24) neither in employment nor in education and training - % of total population in private households in the same age group",
+  "updated": "2026-09-10T23:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "sex": "T",
+   "age": "Y15-29",
+   "unit": "PC_POP",
+   "geo": "PT"
+  },
+  "shape": {
+   "freq": 1,
+   "sex": 1,
+   "age": 1,
+   "unit": 1,
+   "geo": 1,
+   "time": 23
+  },
+  "dims": [
+   "age",
+   "freq",
+   "geo",
+   "sex",
+   "time",
+   "unit"
+  ]
+ },
+ "licencas-de-construcao-2024": {
+  "period": "2024",
+  "value": 654.5,
+  "unit": "Square metres per 1000 inhabitants",
+  "ultimo_periodo": "2025",
+  "label": "Residential building permits - annual data",
+  "updated": "2026-10-21T23:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "s_adj": "NSA",
+   "unit": "M2_THAB",
+   "indic_bt": "BPRM_SQM",
+   "cpa2_1": "CPA_F41001",
+   "geo": "PT"
+  },
+  "shape": {
+   "freq": 1,
+   "s_adj": 1,
+   "unit": 1,
+   "indic_bt": 1,
+   "cpa2_1": 1,
+   "geo": 1,
+   "time": 21
+  },
+  "dims": [
+   "cpa2_1",
+   "freq",
+   "geo",
+   "indic_bt",
+   "s_adj",
+   "time",
+   "unit"
+  ]
+ },
+ "licencas-de-construcao-2025-ue": {
+  "period": "2025",
+  "value": 377.6,
+  "unit": "Square metres per 1000 inhabitants",
+  "ultimo_periodo": "2025",
+  "label": "Residential building permits - annual data",
+  "updated": "2026-10-21T23:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "s_adj": "NSA",
+   "unit": "M2_THAB",
+   "indic_bt": "BPRM_SQM",
+   "cpa2_1": "CPA_F41001",
+   "geo": "EU27_2020"
+  },
+  "shape": {
+   "freq": 1,
+   "s_adj": 1,
+   "unit": 1,
+   "indic_bt": 1,
+   "cpa2_1": 1,
+   "geo": 1,
+   "time": 21
+  },
+  "dims": [
+   "cpa2_1",
+   "freq",
+   "geo",
+   "indic_bt",
+   "s_adj",
+   "time",
+   "unit"
+  ]
+ },
+ "licencas-de-construcao-2025": {
+  "period": "2025",
+  "value": 749.7,
+  "unit": "Square metres per 1000 inhabitants",
+  "ultimo_periodo": "2025",
+  "label": "Residential building permits - annual data",
+  "updated": "2026-10-21T23:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "s_adj": "NSA",
+   "unit": "M2_THAB",
+   "indic_bt": "BPRM_SQM",
+   "cpa2_1": "CPA_F41001",
+   "geo": "PT"
+  },
+  "shape": {
+   "freq": 1,
+   "s_adj": 1,
+   "unit": 1,
+   "indic_bt": 1,
+   "cpa2_1": 1,
+   "geo": 1,
+   "time": 21
+  },
+  "dims": [
+   "cpa2_1",
+   "freq",
+   "geo",
+   "indic_bt",
+   "s_adj",
+   "time",
+   "unit"
+  ]
+ },
+ "necessidades-medicas-nao-satisfeitas-2024": {
+  "period": "2024",
+  "value": 2.5,
+  "unit": "Percentage",
+  "ultimo_periodo": "2025",
+  "label": "Self-reported unmet need for medical care by sex",
+  "updated": "2026-10-20T23:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "unit": "PC",
+   "quant_inc": "TOTAL",
+   "reason": "TXP_TFAR_WLIST",
+   "age": "Y_GE16",
+   "sex": "T",
+   "geo": "PT"
+  },
+  "shape": {
+   "freq": 1,
+   "unit": 1,
+   "quant_inc": 1,
+   "reason": 1,
+   "age": 1,
+   "sex": 1,
+   "geo": 1,
+   "time": 18
+  },
+  "dims": [
+   "age",
+   "freq",
+   "geo",
+   "quant_inc",
+   "reason",
+   "sex",
+   "time",
+   "unit"
+  ]
+ },
+ "necessidades-medicas-nao-satisfeitas-2025-ue": {
+  "period": "2025",
+  "value": 2.4,
+  "unit": "Percentage",
+  "ultimo_periodo": "2025",
+  "label": "Self-reported unmet need for medical care by sex",
+  "updated": "2026-10-20T23:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "unit": "PC",
+   "quant_inc": "TOTAL",
+   "reason": "TXP_TFAR_WLIST",
+   "age": "Y_GE16",
+   "sex": "T",
+   "geo": "EU27_2020"
+  },
+  "shape": {
+   "freq": 1,
+   "unit": 1,
+   "quant_inc": 1,
+   "reason": 1,
+   "age": 1,
+   "sex": 1,
+   "geo": 1,
+   "time": 18
+  },
+  "dims": [
+   "age",
+   "freq",
+   "geo",
+   "quant_inc",
+   "reason",
+   "sex",
+   "time",
+   "unit"
+  ]
+ },
+ "necessidades-medicas-nao-satisfeitas-2025": {
+  "period": "2025",
+  "value": 2.5,
+  "unit": "Percentage",
+  "ultimo_periodo": "2025",
+  "label": "Self-reported unmet need for medical care by sex",
+  "updated": "2026-10-20T23:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "unit": "PC",
+   "quant_inc": "TOTAL",
+   "reason": "TXP_TFAR_WLIST",
+   "age": "Y_GE16",
+   "sex": "T",
+   "geo": "PT"
+  },
+  "shape": {
+   "freq": 1,
+   "unit": 1,
+   "quant_inc": 1,
+   "reason": 1,
+   "age": 1,
+   "sex": 1,
+   "geo": 1,
+   "time": 18
+  },
+  "dims": [
+   "age",
+   "freq",
+   "geo",
+   "quant_inc",
+   "reason",
+   "sex",
+   "time",
+   "unit"
+  ]
+ },
+ "pib-real-per-capita-2024": {
+  "period": "2024",
+  "value": 20520,
+  "unit": "Chain linked volumes (2015), euro per capita",
+  "ultimo_periodo": "2025",
+  "label": "Real GDP per capita",
+  "updated": "2026-10-22T23:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "unit": "CLV15_EUR_HAB",
+   "na_item": "B1GQ",
+   "geo": "PT"
+  },
+  "shape": {
+   "freq": 1,
+   "unit": 2,
+   "na_item": 1,
+   "geo": 1,
+   "time": 31
+  },
+  "dims": [
+   "freq",
+   "geo",
+   "na_item",
+   "time",
+   "unit"
+  ]
+ },
+ "pib-real-per-capita-2025-ue": {
+  "period": "2025",
+  "value": 31980,
+  "unit": "Chain linked volumes (2015), euro per capita",
+  "ultimo_periodo": "2025",
+  "label": "Real GDP per capita",
+  "updated": "2026-10-22T23:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "unit": "CLV15_EUR_HAB",
+   "na_item": "B1GQ",
+   "geo": "EU27_2020"
+  },
+  "shape": {
+   "freq": 1,
+   "unit": 2,
+   "na_item": 1,
+   "geo": 1,
+   "time": 31
+  },
+  "dims": [
+   "freq",
+   "geo",
+   "na_item",
+   "time",
+   "unit"
+  ]
+ },
+ "pib-real-per-capita-2025": {
+  "period": "2025",
+  "value": 20700,
+  "unit": "Chain linked volumes (2015), euro per capita",
+  "ultimo_periodo": "2025",
+  "label": "Real GDP per capita",
+  "updated": "2026-10-22T23:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "unit": "CLV15_EUR_HAB",
+   "na_item": "B1GQ",
+   "geo": "PT"
+  },
+  "shape": {
+   "freq": 1,
+   "unit": 2,
+   "na_item": 1,
+   "geo": 1,
+   "time": 31
+  },
+  "dims": [
+   "freq",
+   "geo",
+   "na_item",
+   "time",
+   "unit"
+  ]
+ },
+ "posicao-de-investimento-internacional-2024": {
+  "period": "2024",
+  "value": -58.3,
+  "unit": "Percentage of gross domestic product (GDP)",
+  "ultimo_periodo": "2025",
+  "label": "Net international investment position - annual data",
+  "updated": "2026-10-02T23:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "s_adj": "NSA",
+   "bop_item": "FA",
+   "sector10": "S1",
+   "sectpart": "S1",
+   "stk_flow": "N_LE",
+   "partner": "WRL_REST",
+   "unit": "PC_GDP",
+   "geo": "PT"
+  },
+  "shape": {
+   "freq": 1,
+   "s_adj": 1,
+   "bop_item": 1,
+   "sector10": 1,
+   "sectpart": 1,
+   "stk_flow": 1,
+   "partner": 1,
+   "unit": 1,
+   "geo": 1,
+   "time": 31
+  },
+  "dims": [
+   "bop_item",
+   "freq",
+   "geo",
+   "partner",
+   "s_adj",
+   "sector10",
+   "sectpart",
+   "stk_flow",
+   "time",
+   "unit"
+  ]
+ },
+ "posicao-de-investimento-internacional-2025": {
+  "period": "2025",
+  "value": -49.6,
+  "unit": "Percentage of gross domestic product (GDP)",
+  "ultimo_periodo": "2025",
+  "label": "Net international investment position - annual data",
+  "updated": "2026-10-02T23:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "s_adj": "NSA",
+   "bop_item": "FA",
+   "sector10": "S1",
+   "sectpart": "S1",
+   "stk_flow": "N_LE",
+   "partner": "WRL_REST",
+   "unit": "PC_GDP",
+   "geo": "PT"
+  },
+  "shape": {
+   "freq": 1,
+   "s_adj": 1,
+   "bop_item": 1,
+   "sector10": 1,
+   "sectpart": 1,
+   "stk_flow": 1,
+   "partner": 1,
+   "unit": 1,
+   "geo": 1,
+   "time": 31
+  },
+  "dims": [
+   "bop_item",
+   "freq",
+   "geo",
+   "partner",
+   "s_adj",
+   "sector10",
+   "sectpart",
+   "stk_flow",
+   "time",
+   "unit"
+  ]
+ },
+ "precos-da-habitacao-2024": {
+  "period": "2024",
+  "value": 9.1,
+  "unit": "Annual average rate of change",
+  "ultimo_periodo": "2025",
+  "label": "House price index, nominal - annual data",
+  "updated": "2026-10-01T11:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "unit": "RCH_A_AVG",
+   "geo": "PT"
+  },
+  "shape": {
+   "freq": 1,
+   "unit": 1,
+   "geo": 1,
+   "time": 26
+  },
+  "dims": [
+   "freq",
+   "geo",
+   "time",
+   "unit"
+  ]
+ },
+ "precos-da-habitacao-2025-ue": {
+  "period": "2025",
+  "value": 5.5,
+  "unit": "Annual average rate of change",
+  "ultimo_periodo": "2025",
+  "label": "House price index, nominal - annual data",
+  "updated": "2026-10-01T11:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "unit": "RCH_A_AVG",
+   "geo": "EU27_2020"
+  },
+  "shape": {
+   "freq": 1,
+   "unit": 1,
+   "geo": 1,
+   "time": 26
+  },
+  "dims": [
+   "freq",
+   "geo",
+   "time",
+   "unit"
+  ]
+ },
+ "precos-da-habitacao-2025": {
+  "period": "2025",
+  "value": 17.6,
+  "unit": "Annual average rate of change",
+  "ultimo_periodo": "2025",
+  "label": "House price index, nominal - annual data",
+  "updated": "2026-10-01T11:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "unit": "RCH_A_AVG",
+   "geo": "PT"
+  },
+  "shape": {
+   "freq": 1,
+   "unit": 1,
+   "geo": 1,
+   "time": 26
+  },
+  "dims": [
+   "freq",
+   "geo",
+   "time",
+   "unit"
+  ]
+ },
+ "racio-s80-s20-2024": {
+  "period": "2024",
+  "value": 5.2,
+  "unit": "Ratio",
+  "ultimo_periodo": "2025",
+  "label": "Income quintile share ratio (S80/S20) by sex",
+  "updated": "2026-10-20T11:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "age": "TOTAL",
+   "sex": "T",
+   "unit": "RAT",
+   "geo": "PT"
+  },
+  "shape": {
+   "freq": 1,
+   "age": 1,
+   "sex": 1,
+   "unit": 1,
+   "geo": 1,
+   "time": 21
+  },
+  "dims": [
+   "age",
+   "freq",
+   "geo",
+   "sex",
+   "time",
+   "unit"
+  ]
+ },
+ "racio-s80-s20-2025-ue": {
+  "period": "2025",
+  "value": 4.62,
+  "unit": "Ratio",
+  "ultimo_periodo": "2025",
+  "label": "Income quintile share ratio (S80/S20) by sex",
+  "updated": "2026-10-20T11:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "age": "TOTAL",
+   "sex": "T",
+   "unit": "RAT",
+   "geo": "EU27_2020"
+  },
+  "shape": {
+   "freq": 1,
+   "age": 1,
+   "sex": 1,
+   "unit": 1,
+   "geo": 1,
+   "time": 21
+  },
+  "dims": [
+   "age",
+   "freq",
+   "geo",
+   "sex",
+   "time",
+   "unit"
+  ]
+ },
+ "racio-s80-s20-2025": {
+  "period": "2025",
+  "value": 4.86,
+  "unit": "Ratio",
+  "ultimo_periodo": "2025",
+  "label": "Income quintile share ratio (S80/S20) by sex",
+  "updated": "2026-10-20T11:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "age": "TOTAL",
+   "sex": "T",
+   "unit": "RAT",
+   "geo": "PT"
+  },
+  "shape": {
+   "freq": 1,
+   "age": 1,
+   "sex": 1,
+   "unit": 1,
+   "geo": 1,
+   "time": 21
+  },
+  "dims": [
+   "age",
+   "freq",
+   "geo",
+   "sex",
+   "time",
+   "unit"
+  ]
+ },
+ "risco-de-pobreza-ou-exclusao-2024": {
+  "period": "2024",
+  "value": 19.7,
+  "unit": "Percentage",
+  "ultimo_periodo": "2025",
+  "label": "People at risk of poverty or social exclusion",
+  "updated": "2026-10-20T11:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "sex": "T",
+   "unit": "PC",
+   "age": "TOTAL",
+   "geo": "PT"
+  },
+  "shape": {
+   "freq": 1,
+   "sex": 1,
+   "unit": 1,
+   "age": 1,
+   "geo": 1,
+   "time": 11
+  },
+  "dims": [
+   "age",
+   "freq",
+   "geo",
+   "sex",
+   "time",
+   "unit"
+  ]
+ },
+ "risco-de-pobreza-ou-exclusao-2025-ue": {
+  "period": "2025",
+  "value": 20.9,
+  "unit": "Percentage",
+  "ultimo_periodo": "2025",
+  "label": "People at risk of poverty or social exclusion",
+  "updated": "2026-10-20T11:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "sex": "T",
+   "unit": "PC",
+   "age": "TOTAL",
+   "geo": "EU27_2020"
+  },
+  "shape": {
+   "freq": 1,
+   "sex": 1,
+   "unit": 1,
+   "age": 1,
+   "geo": 1,
+   "time": 11
+  },
+  "dims": [
+   "age",
+   "freq",
+   "geo",
+   "sex",
+   "time",
+   "unit"
+  ]
+ },
+ "risco-de-pobreza-ou-exclusao-2025": {
+  "period": "2025",
+  "value": 18.6,
+  "unit": "Percentage",
+  "ultimo_periodo": "2025",
+  "label": "People at risk of poverty or social exclusion",
+  "updated": "2026-10-20T11:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "sex": "T",
+   "unit": "PC",
+   "age": "TOTAL",
+   "geo": "PT"
+  },
+  "shape": {
+   "freq": 1,
+   "sex": 1,
+   "unit": 1,
+   "age": 1,
+   "geo": 1,
+   "time": 11
+  },
+  "dims": [
+   "age",
+   "freq",
+   "geo",
+   "sex",
+   "time",
+   "unit"
+  ]
+ },
+ "saldo-da-balanca-corrente-2024": {
+  "period": "2024",
+  "value": 0.4,
+  "unit": "Percentage of GDP - three-year average",
+  "ultimo_periodo": "2025",
+  "label": "Current account balance - 3 year average",
+  "updated": "2026-10-02T11:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "unit": "PC_GDP_3Y",
+   "s_adj": "NSA",
+   "bop_item": "CA",
+   "stk_flow": "BAL",
+   "partner": "WRL_REST",
+   "geo": "PT"
+  },
+  "shape": {
+   "freq": 1,
+   "unit": 1,
+   "s_adj": 1,
+   "bop_item": 1,
+   "stk_flow": 1,
+   "partner": 1,
+   "geo": 1,
+   "time": 31
+  },
+  "dims": [
+   "bop_item",
+   "freq",
+   "geo",
+   "partner",
+   "s_adj",
+   "stk_flow",
+   "time",
+   "unit"
+  ]
+ },
+ "saldo-da-balanca-corrente-2025": {
+  "period": "2025",
+  "value": 1.4,
+  "unit": "Percentage of GDP - three-year average",
+  "ultimo_periodo": "2025",
+  "label": "Current account balance - 3 year average",
+  "updated": "2026-10-02T11:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "unit": "PC_GDP_3Y",
+   "s_adj": "NSA",
+   "bop_item": "CA",
+   "stk_flow": "BAL",
+   "partner": "WRL_REST",
+   "geo": "PT"
+  },
+  "shape": {
+   "freq": 1,
+   "unit": 1,
+   "s_adj": 1,
+   "bop_item": 1,
+   "stk_flow": 1,
+   "partner": 1,
+   "geo": 1,
+   "time": 31
+  },
+  "dims": [
+   "bop_item",
+   "freq",
+   "geo",
+   "partner",
+   "s_adj",
+   "stk_flow",
+   "time",
+   "unit"
+  ]
+ },
+ "sobrecarga-do-custo-da-habitacao-2024": {
+  "period": "2024",
+  "value": 6.9,
+  "unit": "Percentage",
+  "ultimo_periodo": "2025",
+  "label": "Housing cost overburden rate",
+  "updated": "2026-10-20T11:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "unit": "PC",
+   "rskpovth": "TOTAL",
+   "age": "TOTAL",
+   "sex": "T",
+   "geo": "PT"
+  },
+  "shape": {
+   "freq": 1,
+   "unit": 1,
+   "rskpovth": 1,
+   "age": 1,
+   "sex": 1,
+   "geo": 1,
+   "time": 12
+  },
+  "dims": [
+   "age",
+   "freq",
+   "geo",
+   "rskpovth",
+   "sex",
+   "time",
+   "unit"
+  ]
+ },
+ "sobrecarga-do-custo-da-habitacao-2025-ue": {
+  "period": "2025",
+  "value": 7.7,
+  "unit": "Percentage",
+  "ultimo_periodo": "2025",
+  "label": "Housing cost overburden rate",
+  "updated": "2026-10-20T11:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "unit": "PC",
+   "rskpovth": "TOTAL",
+   "age": "TOTAL",
+   "sex": "T",
+   "geo": "EU27_2020"
+  },
+  "shape": {
+   "freq": 1,
+   "unit": 1,
+   "rskpovth": 1,
+   "age": 1,
+   "sex": 1,
+   "geo": 1,
+   "time": 12
+  },
+  "dims": [
+   "age",
+   "freq",
+   "geo",
+   "rskpovth",
+   "sex",
+   "time",
+   "unit"
+  ]
+ },
+ "sobrecarga-do-custo-da-habitacao-2025": {
+  "period": "2025",
+  "value": 6.3,
+  "unit": "Percentage",
+  "ultimo_periodo": "2025",
+  "label": "Housing cost overburden rate",
+  "updated": "2026-10-20T11:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "unit": "PC",
+   "rskpovth": "TOTAL",
+   "age": "TOTAL",
+   "sex": "T",
+   "geo": "PT"
+  },
+  "shape": {
+   "freq": 1,
+   "unit": 1,
+   "rskpovth": 1,
+   "age": 1,
+   "sex": 1,
+   "geo": 1,
+   "time": 12
+  },
+  "dims": [
+   "age",
+   "freq",
+   "geo",
+   "rskpovth",
+   "sex",
+   "time",
+   "unit"
+  ]
+ },
+ "taxa-de-actividade-2024": {
+  "period": "2024",
+  "value": 3.2,
+  "unit": "Percentage point change (t-(t-3))",
+  "ultimo_periodo": "2025",
+  "label": "Labour force participation rate",
+  "updated": "2026-09-10T23:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "unit": "PPCH_3Y",
+   "age": "Y15-64",
+   "sex": "T",
+   "geo": "PT"
+  },
+  "shape": {
+   "freq": 1,
+   "unit": 1,
+   "age": 1,
+   "sex": 1,
+   "geo": 1,
+   "time": 23
+  },
+  "dims": [
+   "age",
+   "freq",
+   "geo",
+   "sex",
+   "time",
+   "unit"
+  ]
+ },
+ "taxa-de-actividade-2025-ue": {
+  "period": "2025",
+  "value": 1.1,
+  "unit": "Percentage point change (t-(t-3))",
+  "ultimo_periodo": "2025",
+  "label": "Labour force participation rate",
+  "updated": "2026-09-10T23:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "unit": "PPCH_3Y",
+   "age": "Y15-64",
+   "sex": "T",
+   "geo": "EU27_2020"
+  },
+  "shape": {
+   "freq": 1,
+   "unit": 1,
+   "age": 1,
+   "sex": 1,
+   "geo": 1,
+   "time": 23
+  },
+  "dims": [
+   "age",
+   "freq",
+   "geo",
+   "sex",
+   "time",
+   "unit"
+  ]
+ },
+ "taxa-de-actividade-2025": {
+  "period": "2025",
+  "value": 2.6,
+  "unit": "Percentage point change (t-(t-3))",
+  "ultimo_periodo": "2025",
+  "label": "Labour force participation rate",
+  "updated": "2026-09-10T23:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "unit": "PPCH_3Y",
+   "age": "Y15-64",
+   "sex": "T",
+   "geo": "PT"
+  },
+  "shape": {
+   "freq": 1,
+   "unit": 1,
+   "age": 1,
+   "sex": 1,
+   "geo": 1,
+   "time": 23
+  },
+  "dims": [
+   "age",
+   "freq",
+   "geo",
+   "sex",
+   "time",
+   "unit"
+  ]
+ },
+ "taxa-de-cambio-efectiva-real-2024": {
+  "period": "2024",
+  "value": 0.4,
+  "unit": "Percentage change (t/t-3)",
+  "ultimo_periodo": "2025",
+  "label": "Real effective exchange rate - percentage changes, 42 trading partners",
+  "updated": "2026-10-14T11:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "unit": "PCH_3Y",
+   "geo": "PT"
+  },
+  "shape": {
+   "freq": 1,
+   "unit": 1,
+   "geo": 1,
+   "time": 32
+  },
+  "dims": [
+   "freq",
+   "geo",
+   "time",
+   "unit"
+  ]
+ },
+ "taxa-de-cambio-efectiva-real-2025-ue": {
+  "period": "2025",
+  "value": 11.3,
+  "unit": "Percentage change (t/t-3)",
+  "ultimo_periodo": "2025",
+  "label": "Real effective exchange rate - percentage changes, 42 trading partners",
+  "updated": "2026-10-14T11:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "unit": "PCH_3Y",
+   "geo": "EU27_2020"
+  },
+  "shape": {
+   "freq": 1,
+   "unit": 1,
+   "geo": 1,
+   "time": 32
+  },
+  "dims": [
+   "freq",
+   "geo",
+   "time",
+   "unit"
+  ]
+ },
+ "taxa-de-cambio-efectiva-real-2025": {
+  "period": "2025",
+  "value": 2.8,
+  "unit": "Percentage change (t/t-3)",
+  "ultimo_periodo": "2025",
+  "label": "Real effective exchange rate - percentage changes, 42 trading partners",
+  "updated": "2026-10-14T11:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "unit": "PCH_3Y",
+   "geo": "PT"
+  },
+  "shape": {
+   "freq": 1,
+   "unit": 1,
+   "geo": 1,
+   "time": 32
+  },
+  "dims": [
+   "freq",
+   "geo",
+   "time",
+   "unit"
+  ]
+ },
+ "taxa-de-desemprego-2024": {
+  "period": "2024",
+  "value": 6.5,
+  "unit": "Percentage of population in the labour force",
+  "ultimo_periodo": "2025",
+  "label": "Unemployment by sex and age - annual data",
+  "updated": "2026-09-10T23:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "age": "Y15-74",
+   "unit": "PC_ACT",
+   "sex": "T",
+   "geo": "PT"
+  },
+  "shape": {
+   "freq": 1,
+   "age": 1,
+   "unit": 1,
+   "sex": 1,
+   "geo": 1,
+   "time": 23
+  },
+  "dims": [
+   "age",
+   "freq",
+   "geo",
+   "sex",
+   "time",
+   "unit"
+  ]
+ },
+ "taxa-de-desemprego-2025-ue": {
+  "period": "2025",
+  "value": 6.0,
+  "unit": "Percentage of population in the labour force",
+  "ultimo_periodo": "2025",
+  "label": "Unemployment by sex and age - annual data",
+  "updated": "2026-09-10T23:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "age": "Y15-74",
+   "unit": "PC_ACT",
+   "sex": "T",
+   "geo": "EU27_2020"
+  },
+  "shape": {
+   "freq": 1,
+   "age": 1,
+   "unit": 1,
+   "sex": 1,
+   "geo": 1,
+   "time": 23
+  },
+  "dims": [
+   "age",
+   "freq",
+   "geo",
+   "sex",
+   "time",
+   "unit"
+  ]
+ },
+ "taxa-de-desemprego-2025": {
+  "period": "2025",
+  "value": 6.0,
+  "unit": "Percentage of population in the labour force",
+  "ultimo_periodo": "2025",
+  "label": "Unemployment by sex and age - annual data",
+  "updated": "2026-09-10T23:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "age": "Y15-74",
+   "unit": "PC_ACT",
+   "sex": "T",
+   "geo": "PT"
+  },
+  "shape": {
+   "freq": 1,
+   "age": 1,
+   "unit": 1,
+   "sex": 1,
+   "geo": 1,
+   "time": 23
+  },
+  "dims": [
+   "age",
+   "freq",
+   "geo",
+   "sex",
+   "time",
+   "unit"
+  ]
+ },
+ "taxa-de-desemprego-mip-2024": {
+  "period": "2024",
+  "value": 6.5,
+  "unit": "Percentage of population in the labour force",
+  "ultimo_periodo": "2025",
+  "label": "Unemployment rate - annual data",
+  "updated": "2026-09-10T23:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "sex": "T",
+   "age": "Y15-74",
+   "unit": "PC_ACT",
+   "geo": "PT"
+  },
+  "shape": {
+   "freq": 1,
+   "sex": 1,
+   "age": 1,
+   "unit": 1,
+   "geo": 1,
+   "time": 23
+  },
+  "dims": [
+   "age",
+   "freq",
+   "geo",
+   "sex",
+   "time",
+   "unit"
+  ]
+ },
+ "taxa-de-desemprego-mip-2025-ue": {
+  "period": "2025",
+  "value": 6.0,
+  "unit": "Percentage of population in the labour force",
+  "ultimo_periodo": "2025",
+  "label": "Unemployment rate - annual data",
+  "updated": "2026-09-10T23:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "sex": "T",
+   "age": "Y15-74",
+   "unit": "PC_ACT",
+   "geo": "EU27_2020"
+  },
+  "shape": {
+   "freq": 1,
+   "sex": 1,
+   "age": 1,
+   "unit": 1,
+   "geo": 1,
+   "time": 23
+  },
+  "dims": [
+   "age",
+   "freq",
+   "geo",
+   "sex",
+   "time",
+   "unit"
+  ]
+ },
+ "taxa-de-desemprego-mip-2025": {
+  "period": "2025",
+  "value": 6.0,
+  "unit": "Percentage of population in the labour force",
+  "ultimo_periodo": "2025",
+  "label": "Unemployment rate - annual data",
+  "updated": "2026-09-10T23:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "sex": "T",
+   "age": "Y15-74",
+   "unit": "PC_ACT",
+   "geo": "PT"
+  },
+  "shape": {
+   "freq": 1,
+   "sex": 1,
+   "age": 1,
+   "unit": 1,
+   "geo": 1,
+   "time": 23
+  },
+  "dims": [
+   "age",
+   "freq",
+   "geo",
+   "sex",
+   "time",
+   "unit"
+  ]
+ },
+ "taxa-de-emprego-2024": {
+  "period": "2024",
+  "value": 78.5,
+  "unit": "Percentage of total population",
+  "ultimo_periodo": "2025",
+  "label": "Employment and labour force by sex and age - annual data",
+  "updated": "2026-09-10T23:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "indic_em": "EMP_LFS",
+   "sex": "T",
+   "age": "Y20-64",
+   "unit": "PC_POP",
+   "geo": "PT"
+  },
+  "shape": {
+   "freq": 1,
+   "indic_em": 1,
+   "sex": 1,
+   "age": 1,
+   "unit": 1,
+   "geo": 1,
+   "time": 23
+  },
+  "dims": [
+   "age",
+   "freq",
+   "geo",
+   "indic_em",
+   "sex",
+   "time",
+   "unit"
+  ]
+ },
+ "taxa-de-emprego-2025-ue": {
+  "period": "2025",
+  "value": 76.1,
+  "unit": "Percentage of total population",
+  "ultimo_periodo": "2025",
+  "label": "Employment and labour force by sex and age - annual data",
+  "updated": "2026-09-10T23:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "indic_em": "EMP_LFS",
+   "sex": "T",
+   "age": "Y20-64",
+   "unit": "PC_POP",
+   "geo": "EU27_2020"
+  },
+  "shape": {
+   "freq": 1,
+   "indic_em": 1,
+   "sex": 1,
+   "age": 1,
+   "unit": 1,
+   "geo": 1,
+   "time": 23
+  },
+  "dims": [
+   "age",
+   "freq",
+   "geo",
+   "indic_em",
+   "sex",
+   "time",
+   "unit"
+  ]
+ },
+ "taxa-de-emprego-2025": {
+  "period": "2025",
+  "value": 79.6,
+  "unit": "Percentage of total population",
+  "ultimo_periodo": "2025",
+  "label": "Employment and labour force by sex and age - annual data",
+  "updated": "2026-09-10T23:00:00+0200",
+  "coordenadas": {
+   "freq": "A",
+   "indic_em": "EMP_LFS",
+   "sex": "T",
+   "age": "Y20-64",
+   "unit": "PC_POP",
+   "geo": "PT"
+  },
+  "shape": {
+   "freq": 1,
+   "indic_em": 1,
+   "sex": 1,
+   "age": 1,
+   "unit": 1,
+   "geo": 1,
+   "time": 23
+  },
+  "dims": [
+   "age",
+   "freq",
+   "geo",
+   "indic_em",
+   "sex",
+   "time",
+   "unit"
+  ]
+ },
+ "_threshold_watch": "e9d4a58f786399413ab0d9857d3739b9edc199dbdd32b6519ff4c04c50988c67"
+}

@@ -1,0 +1,1052 @@
+{
+  "_": "Escrito por design/especime-v3/medicoes/cr2-2026-10-26/leituras-cr2.mjs comparar. Não se edita à mão.",
+  "cabeca_antes": "442b284e229408018e8c97c59dadd285a526bf3c",
+  "cabeca_depois": "442b284e229408018e8c97c59dadd285a526bf3c",
+  "linhas_do_livro_mudadas_antes": 0,
+  "linhas_do_livro_mudadas_depois": 17,
+  "cartoes": 9,
+  "leituras_comparadas": 18,
+  "leituras_com_texto_mudado": 0,
+  "leituras_com_valores_da_regua_mudados": 18,
+  "ramos_lidos": 50,
+  "ramos_que_mudaram_de_sentido": 0,
+  "conhecido_positivo": {
+    "o_que": "o mesmo comparador, sobre a corrida de antes contra uma cópia com um ramo trocado, vê exatamente um ramo mudado; e vê os valores da régua do PIB real por habitante mudados",
+    "encontrado": true,
+    "ramos_vistos_na_planta": 1
+  },
+  "leituras": [
+    {
+      "id": "pib-real-per-capita-2025",
+      "lang": "pt",
+      "texto_antes": "É o valor de tudo o que o país produziu no ano, por habitante, descontada a subida dos preços, a que a fonte chama volumes encadeados. Subiu face a 2024. Está abaixo da média da União Europeia.",
+      "texto_depois": "É o valor de tudo o que o país produziu no ano, por habitante, descontada a subida dos preços, a que a fonte chama volumes encadeados. Subiu face a 2024. Está abaixo da média da União Europeia.",
+      "texto_mudou": false,
+      "valores_mudaram": true,
+      "ramos": [
+        {
+          "no": "compara-anterior",
+          "caminho": "pt[1]",
+          "antes": "maior",
+          "depois": "maior",
+          "mudou": false,
+          "porque_antes": "20 700 contra 20 520 (pib-real-per-capita-2024)",
+          "porque_depois": "20 700 contra 20 520 (pib-real-per-capita-2024)"
+        },
+        {
+          "no": "compara-ue",
+          "caminho": "pt[2]",
+          "antes": "menor",
+          "depois": "menor",
+          "mudou": false,
+          "porque_antes": "20 700 contra 31 890 (pib-real-per-capita-2025-ue)",
+          "porque_depois": "20 700 contra 31 980 (pib-real-per-capita-2025-ue)"
+        }
+      ],
+      "ramos_que_mudaram_de_sentido": 0,
+      "valores_antes": {
+        "proprio": "20 700",
+        "anterior": {
+          "id": "pib-real-per-capita-2024",
+          "valor": "20 520"
+        },
+        "ue": {
+          "id": "pib-real-per-capita-2025-ue",
+          "valor": "31 890"
+        }
+      },
+      "valores_depois": {
+        "proprio": "20 700",
+        "anterior": {
+          "id": "pib-real-per-capita-2024",
+          "valor": "20 520"
+        },
+        "ue": {
+          "id": "pib-real-per-capita-2025-ue",
+          "valor": "31 980"
+        }
+      }
+    },
+    {
+      "id": "pib-real-per-capita-2025",
+      "lang": "en",
+      "texto_antes": "It is the value of everything the country produced in the year, per inhabitant, excluding the rise in prices, which the source calls chain linked volumes. Up from 2024. Below the European Union average.",
+      "texto_depois": "It is the value of everything the country produced in the year, per inhabitant, excluding the rise in prices, which the source calls chain linked volumes. Up from 2024. Below the European Union average.",
+      "texto_mudou": false,
+      "valores_mudaram": true,
+      "ramos": [
+        {
+          "no": "compara-anterior",
+          "caminho": "en[1]",
+          "antes": "maior",
+          "depois": "maior",
+          "mudou": false,
+          "porque_antes": "20 700 contra 20 520 (pib-real-per-capita-2024)",
+          "porque_depois": "20 700 contra 20 520 (pib-real-per-capita-2024)"
+        },
+        {
+          "no": "compara-ue",
+          "caminho": "en[2]",
+          "antes": "menor",
+          "depois": "menor",
+          "mudou": false,
+          "porque_antes": "20 700 contra 31 890 (pib-real-per-capita-2025-ue)",
+          "porque_depois": "20 700 contra 31 980 (pib-real-per-capita-2025-ue)"
+        }
+      ],
+      "ramos_que_mudaram_de_sentido": 0,
+      "valores_antes": {
+        "proprio": "20 700",
+        "anterior": {
+          "id": "pib-real-per-capita-2024",
+          "valor": "20 520"
+        },
+        "ue": {
+          "id": "pib-real-per-capita-2025-ue",
+          "valor": "31 890"
+        }
+      },
+      "valores_depois": {
+        "proprio": "20 700",
+        "anterior": {
+          "id": "pib-real-per-capita-2024",
+          "valor": "20 520"
+        },
+        "ue": {
+          "id": "pib-real-per-capita-2025-ue",
+          "valor": "31 980"
+        }
+      }
+    },
+    {
+      "id": "divida-publica-2025",
+      "lang": "pt",
+      "texto_antes": "É tudo o que as administrações públicas devem, em percentagem do PIB, o valor de tudo o que o país produz num ano. Pesa menos do que em 2024. Está acima da média da União Europeia. Para a Comissão Europeia, uma dívida acima de 60 % do PIB é sinal de possível desequilíbrio: Portugal está acima.",
+      "texto_depois": "É tudo o que as administrações públicas devem, em percentagem do PIB, o valor de tudo o que o país produz num ano. Pesa menos do que em 2024. Está acima da média da União Europeia. Para a Comissão Europeia, uma dívida acima de 60 % do PIB é sinal de possível desequilíbrio: Portugal está acima.",
+      "texto_mudou": false,
+      "valores_mudaram": true,
+      "ramos": [
+        {
+          "no": "compara-anterior",
+          "caminho": "pt[2]",
+          "antes": "menor",
+          "depois": "menor",
+          "mudou": false,
+          "porque_antes": "89,7 contra 93,5 (divida-publica-2024)",
+          "porque_depois": "89,2 contra 93,0 (divida-publica-2024)"
+        },
+        {
+          "no": "compara-ue",
+          "caminho": "pt[3]",
+          "antes": "maior",
+          "depois": "maior",
+          "mudou": false,
+          "porque_antes": "89,7 contra 81,7 (divida-publica-2025-ue)",
+          "porque_depois": "89,2 contra 81,5 (divida-publica-2025-ue)"
+        },
+        {
+          "no": "estado",
+          "caminho": "pt[9]",
+          "antes": "fora",
+          "depois": "fora",
+          "mudou": false,
+          "porque_antes": "estadoDaMedida() sobre 89,7",
+          "porque_depois": "estadoDaMedida() sobre 89,2"
+        }
+      ],
+      "ramos_que_mudaram_de_sentido": 0,
+      "valores_antes": {
+        "proprio": "89,7",
+        "anterior": {
+          "id": "divida-publica-2024",
+          "valor": "93,5"
+        },
+        "ue": {
+          "id": "divida-publica-2025-ue",
+          "valor": "81,7"
+        }
+      },
+      "valores_depois": {
+        "proprio": "89,2",
+        "anterior": {
+          "id": "divida-publica-2024",
+          "valor": "93,0"
+        },
+        "ue": {
+          "id": "divida-publica-2025-ue",
+          "valor": "81,5"
+        }
+      }
+    },
+    {
+      "id": "divida-publica-2025",
+      "lang": "en",
+      "texto_antes": "It is everything general government owes, as a percentage of GDP, the value of everything the country produces in a year. It weighs less than in 2024. Above the European Union average. For the European Commission, debt above 60 % of GDP is a sign of a possible imbalance: Portugal is above it.",
+      "texto_depois": "It is everything general government owes, as a percentage of GDP, the value of everything the country produces in a year. It weighs less than in 2024. Above the European Union average. For the European Commission, debt above 60 % of GDP is a sign of a possible imbalance: Portugal is above it.",
+      "texto_mudou": false,
+      "valores_mudaram": true,
+      "ramos": [
+        {
+          "no": "compara-anterior",
+          "caminho": "en[2]",
+          "antes": "menor",
+          "depois": "menor",
+          "mudou": false,
+          "porque_antes": "89,7 contra 93,5 (divida-publica-2024)",
+          "porque_depois": "89,2 contra 93,0 (divida-publica-2024)"
+        },
+        {
+          "no": "compara-ue",
+          "caminho": "en[3]",
+          "antes": "maior",
+          "depois": "maior",
+          "mudou": false,
+          "porque_antes": "89,7 contra 81,7 (divida-publica-2025-ue)",
+          "porque_depois": "89,2 contra 81,5 (divida-publica-2025-ue)"
+        },
+        {
+          "no": "estado",
+          "caminho": "en[9]",
+          "antes": "fora",
+          "depois": "fora",
+          "mudou": false,
+          "porque_antes": "estadoDaMedida() sobre 89,7",
+          "porque_depois": "estadoDaMedida() sobre 89,2"
+        }
+      ],
+      "ramos_que_mudaram_de_sentido": 0,
+      "valores_antes": {
+        "proprio": "89,7",
+        "anterior": {
+          "id": "divida-publica-2024",
+          "valor": "93,5"
+        },
+        "ue": {
+          "id": "divida-publica-2025-ue",
+          "valor": "81,7"
+        }
+      },
+      "valores_depois": {
+        "proprio": "89,2",
+        "anterior": {
+          "id": "divida-publica-2024",
+          "valor": "93,0"
+        },
+        "ue": {
+          "id": "divida-publica-2025-ue",
+          "valor": "81,5"
+        }
+      }
+    },
+    {
+      "id": "divida-das-empresas-2025",
+      "lang": "pt",
+      "texto_antes": "É o que as empresas devem em empréstimos e títulos de dívida, fora as financeiras, em percentagem do PIB, o valor de tudo o que o país produz num ano. Pesa menos do que em 2024. Está abaixo da média da União Europeia. Para a Comissão Europeia, uma dívida acima de 85 % do PIB é sinal de possível desequilíbrio: Portugal está abaixo ou no limite.",
+      "texto_depois": "É o que as empresas devem em empréstimos e títulos de dívida, fora as financeiras, em percentagem do PIB, o valor de tudo o que o país produz num ano. Pesa menos do que em 2024. Está abaixo da média da União Europeia. Para a Comissão Europeia, uma dívida acima de 85 % do PIB é sinal de possível desequilíbrio: Portugal está abaixo ou no limite.",
+      "texto_mudou": false,
+      "valores_mudaram": true,
+      "ramos": [
+        {
+          "no": "compara-anterior",
+          "caminho": "pt[2]",
+          "antes": "menor",
+          "depois": "menor",
+          "mudou": false,
+          "porque_antes": "64,9 contra 67,1 (divida-das-empresas-2024)",
+          "porque_depois": "65,1 contra 66,6 (divida-das-empresas-2024)"
+        },
+        {
+          "no": "compara-ue",
+          "caminho": "pt[3]",
+          "antes": "menor",
+          "depois": "menor",
+          "mudou": false,
+          "porque_antes": "64,9 contra 70,0 (divida-das-empresas-2025-ue)",
+          "porque_depois": "65,1 contra 70,2 (divida-das-empresas-2025-ue)"
+        },
+        {
+          "no": "estado",
+          "caminho": "pt[9]",
+          "antes": "dentro",
+          "depois": "dentro",
+          "mudou": false,
+          "porque_antes": "estadoDaMedida() sobre 64,9",
+          "porque_depois": "estadoDaMedida() sobre 65,1"
+        }
+      ],
+      "ramos_que_mudaram_de_sentido": 0,
+      "valores_antes": {
+        "proprio": "64,9",
+        "anterior": {
+          "id": "divida-das-empresas-2024",
+          "valor": "67,1"
+        },
+        "ue": {
+          "id": "divida-das-empresas-2025-ue",
+          "valor": "70,0"
+        }
+      },
+      "valores_depois": {
+        "proprio": "65,1",
+        "anterior": {
+          "id": "divida-das-empresas-2024",
+          "valor": "66,6"
+        },
+        "ue": {
+          "id": "divida-das-empresas-2025-ue",
+          "valor": "70,2"
+        }
+      }
+    },
+    {
+      "id": "divida-das-empresas-2025",
+      "lang": "en",
+      "texto_antes": "It is what companies owe in loans and debt securities, excluding financial companies, as a percentage of GDP, the value of everything the country produces in a year. It weighs less than in 2024. Below the European Union average. For the European Commission, debt above 85 % of GDP is a sign of a possible imbalance: Portugal is at or below it.",
+      "texto_depois": "It is what companies owe in loans and debt securities, excluding financial companies, as a percentage of GDP, the value of everything the country produces in a year. It weighs less than in 2024. Below the European Union average. For the European Commission, debt above 85 % of GDP is a sign of a possible imbalance: Portugal is at or below it.",
+      "texto_mudou": false,
+      "valores_mudaram": true,
+      "ramos": [
+        {
+          "no": "compara-anterior",
+          "caminho": "en[2]",
+          "antes": "menor",
+          "depois": "menor",
+          "mudou": false,
+          "porque_antes": "64,9 contra 67,1 (divida-das-empresas-2024)",
+          "porque_depois": "65,1 contra 66,6 (divida-das-empresas-2024)"
+        },
+        {
+          "no": "compara-ue",
+          "caminho": "en[3]",
+          "antes": "menor",
+          "depois": "menor",
+          "mudou": false,
+          "porque_antes": "64,9 contra 70,0 (divida-das-empresas-2025-ue)",
+          "porque_depois": "65,1 contra 70,2 (divida-das-empresas-2025-ue)"
+        },
+        {
+          "no": "estado",
+          "caminho": "en[9]",
+          "antes": "dentro",
+          "depois": "dentro",
+          "mudou": false,
+          "porque_antes": "estadoDaMedida() sobre 64,9",
+          "porque_depois": "estadoDaMedida() sobre 65,1"
+        }
+      ],
+      "ramos_que_mudaram_de_sentido": 0,
+      "valores_antes": {
+        "proprio": "64,9",
+        "anterior": {
+          "id": "divida-das-empresas-2024",
+          "valor": "67,1"
+        },
+        "ue": {
+          "id": "divida-das-empresas-2025-ue",
+          "valor": "70,0"
+        }
+      },
+      "valores_depois": {
+        "proprio": "65,1",
+        "anterior": {
+          "id": "divida-das-empresas-2024",
+          "valor": "66,6"
+        },
+        "ue": {
+          "id": "divida-das-empresas-2025-ue",
+          "valor": "70,2"
+        }
+      }
+    },
+    {
+      "id": "divida-das-familias-2025",
+      "lang": "pt",
+      "texto_antes": "É o que as famílias e as instituições sem fim lucrativo ao seu serviço devem em empréstimos e títulos de dívida, em percentagem do PIB, o valor de tudo o que o país produz num ano. Pesa mais do que em 2024. Está acima da média da União Europeia. Para a Comissão Europeia, uma dívida acima de 55 % do PIB é sinal de possível desequilíbrio: Portugal está abaixo ou no limite.",
+      "texto_depois": "É o que as famílias e as instituições sem fim lucrativo ao seu serviço devem em empréstimos e títulos de dívida, em percentagem do PIB, o valor de tudo o que o país produz num ano. Pesa mais do que em 2024. Está acima da média da União Europeia. Para a Comissão Europeia, uma dívida acima de 55 % do PIB é sinal de possível desequilíbrio: Portugal está abaixo ou no limite.",
+      "texto_mudou": false,
+      "valores_mudaram": true,
+      "ramos": [
+        {
+          "no": "compara-anterior",
+          "caminho": "pt[2]",
+          "antes": "maior",
+          "depois": "maior",
+          "mudou": false,
+          "porque_antes": "53,9 contra 52,6 (divida-das-familias-2024)",
+          "porque_depois": "54,4 contra 52,3 (divida-das-familias-2024)"
+        },
+        {
+          "no": "compara-ue",
+          "caminho": "pt[3]",
+          "antes": "maior",
+          "depois": "maior",
+          "mudou": false,
+          "porque_antes": "53,9 contra 49,2 (divida-das-familias-2025-ue)",
+          "porque_depois": "54,4 contra 49,2 (divida-das-familias-2025-ue)"
+        },
+        {
+          "no": "estado",
+          "caminho": "pt[9]",
+          "antes": "dentro",
+          "depois": "dentro",
+          "mudou": false,
+          "porque_antes": "estadoDaMedida() sobre 53,9",
+          "porque_depois": "estadoDaMedida() sobre 54,4"
+        }
+      ],
+      "ramos_que_mudaram_de_sentido": 0,
+      "valores_antes": {
+        "proprio": "53,9",
+        "anterior": {
+          "id": "divida-das-familias-2024",
+          "valor": "52,6"
+        },
+        "ue": {
+          "id": "divida-das-familias-2025-ue",
+          "valor": "49,2"
+        }
+      },
+      "valores_depois": {
+        "proprio": "54,4",
+        "anterior": {
+          "id": "divida-das-familias-2024",
+          "valor": "52,3"
+        },
+        "ue": {
+          "id": "divida-das-familias-2025-ue",
+          "valor": "49,2"
+        }
+      }
+    },
+    {
+      "id": "divida-das-familias-2025",
+      "lang": "en",
+      "texto_antes": "It is what households and non-profit institutions serving them owe in loans and debt securities, as a percentage of GDP, the value of everything the country produces in a year. It weighs more than in 2024. Above the European Union average. For the European Commission, debt above 55 % of GDP is a sign of a possible imbalance: Portugal is at or below it.",
+      "texto_depois": "It is what households and non-profit institutions serving them owe in loans and debt securities, as a percentage of GDP, the value of everything the country produces in a year. It weighs more than in 2024. Above the European Union average. For the European Commission, debt above 55 % of GDP is a sign of a possible imbalance: Portugal is at or below it.",
+      "texto_mudou": false,
+      "valores_mudaram": true,
+      "ramos": [
+        {
+          "no": "compara-anterior",
+          "caminho": "en[2]",
+          "antes": "maior",
+          "depois": "maior",
+          "mudou": false,
+          "porque_antes": "53,9 contra 52,6 (divida-das-familias-2024)",
+          "porque_depois": "54,4 contra 52,3 (divida-das-familias-2024)"
+        },
+        {
+          "no": "compara-ue",
+          "caminho": "en[3]",
+          "antes": "maior",
+          "depois": "maior",
+          "mudou": false,
+          "porque_antes": "53,9 contra 49,2 (divida-das-familias-2025-ue)",
+          "porque_depois": "54,4 contra 49,2 (divida-das-familias-2025-ue)"
+        },
+        {
+          "no": "estado",
+          "caminho": "en[9]",
+          "antes": "dentro",
+          "depois": "dentro",
+          "mudou": false,
+          "porque_antes": "estadoDaMedida() sobre 53,9",
+          "porque_depois": "estadoDaMedida() sobre 54,4"
+        }
+      ],
+      "ramos_que_mudaram_de_sentido": 0,
+      "valores_antes": {
+        "proprio": "53,9",
+        "anterior": {
+          "id": "divida-das-familias-2024",
+          "valor": "52,6"
+        },
+        "ue": {
+          "id": "divida-das-familias-2025-ue",
+          "valor": "49,2"
+        }
+      },
+      "valores_depois": {
+        "proprio": "54,4",
+        "anterior": {
+          "id": "divida-das-familias-2024",
+          "valor": "52,3"
+        },
+        "ue": {
+          "id": "divida-das-familias-2025-ue",
+          "valor": "49,2"
+        }
+      }
+    },
+    {
+      "id": "fluxo-de-credito-as-empresas-2025",
+      "lang": "pt",
+      "texto_antes": "É quanto crédito as empresas contraíram num ano, descontado o que reembolsaram, fora as financeiras e sem contar o investimento direto estrangeiro, em percentagem da dívida que já tinham no fim do ano anterior. Subiu face a 2024. Para a Comissão Europeia, um fluxo acima de 13 % é sinal de possível desequilíbrio: Portugal está abaixo ou no limite.",
+      "texto_depois": "É quanto crédito as empresas contraíram num ano, descontado o que reembolsaram, fora as financeiras e sem contar o investimento direto estrangeiro, em percentagem da dívida que já tinham no fim do ano anterior. Subiu face a 2024. Para a Comissão Europeia, um fluxo acima de 13 % é sinal de possível desequilíbrio: Portugal está abaixo ou no limite.",
+      "texto_mudou": false,
+      "valores_mudaram": true,
+      "ramos": [
+        {
+          "no": "compara-anterior",
+          "caminho": "pt[1]",
+          "antes": "maior",
+          "depois": "maior",
+          "mudou": false,
+          "porque_antes": "3,0 contra 2,4 (fluxo-de-credito-as-empresas-2024)",
+          "porque_depois": "3,4 contra 2,2 (fluxo-de-credito-as-empresas-2024)"
+        },
+        {
+          "no": "compara-ue",
+          "caminho": "pt[2]",
+          "antes": null,
+          "depois": null,
+          "mudou": false,
+          "porque_antes": "a régua do cartão não tem esta linha",
+          "porque_depois": "a régua do cartão não tem esta linha"
+        },
+        {
+          "no": "estado",
+          "caminho": "pt[8]",
+          "antes": "dentro",
+          "depois": "dentro",
+          "mudou": false,
+          "porque_antes": "estadoDaMedida() sobre 3,0",
+          "porque_depois": "estadoDaMedida() sobre 3,4"
+        }
+      ],
+      "ramos_que_mudaram_de_sentido": 0,
+      "valores_antes": {
+        "proprio": "3,0",
+        "anterior": {
+          "id": "fluxo-de-credito-as-empresas-2024",
+          "valor": "2,4"
+        },
+        "ue": null
+      },
+      "valores_depois": {
+        "proprio": "3,4",
+        "anterior": {
+          "id": "fluxo-de-credito-as-empresas-2024",
+          "valor": "2,2"
+        },
+        "ue": null
+      }
+    },
+    {
+      "id": "fluxo-de-credito-as-empresas-2025",
+      "lang": "en",
+      "texto_antes": "It is how much credit companies took on in a year, minus what they repaid, excluding financial companies and foreign direct investment, as a percentage of the debt they already had at the end of the previous year. Up from 2024. For the European Commission, a flow above 13 % is a sign of a possible imbalance: Portugal is at or below it.",
+      "texto_depois": "It is how much credit companies took on in a year, minus what they repaid, excluding financial companies and foreign direct investment, as a percentage of the debt they already had at the end of the previous year. Up from 2024. For the European Commission, a flow above 13 % is a sign of a possible imbalance: Portugal is at or below it.",
+      "texto_mudou": false,
+      "valores_mudaram": true,
+      "ramos": [
+        {
+          "no": "compara-anterior",
+          "caminho": "en[1]",
+          "antes": "maior",
+          "depois": "maior",
+          "mudou": false,
+          "porque_antes": "3,0 contra 2,4 (fluxo-de-credito-as-empresas-2024)",
+          "porque_depois": "3,4 contra 2,2 (fluxo-de-credito-as-empresas-2024)"
+        },
+        {
+          "no": "compara-ue",
+          "caminho": "en[2]",
+          "antes": null,
+          "depois": null,
+          "mudou": false,
+          "porque_antes": "a régua do cartão não tem esta linha",
+          "porque_depois": "a régua do cartão não tem esta linha"
+        },
+        {
+          "no": "estado",
+          "caminho": "en[8]",
+          "antes": "dentro",
+          "depois": "dentro",
+          "mudou": false,
+          "porque_antes": "estadoDaMedida() sobre 3,0",
+          "porque_depois": "estadoDaMedida() sobre 3,4"
+        }
+      ],
+      "ramos_que_mudaram_de_sentido": 0,
+      "valores_antes": {
+        "proprio": "3,0",
+        "anterior": {
+          "id": "fluxo-de-credito-as-empresas-2024",
+          "valor": "2,4"
+        },
+        "ue": null
+      },
+      "valores_depois": {
+        "proprio": "3,4",
+        "anterior": {
+          "id": "fluxo-de-credito-as-empresas-2024",
+          "valor": "2,2"
+        },
+        "ue": null
+      }
+    },
+    {
+      "id": "fluxo-de-credito-as-familias-2025",
+      "lang": "pt",
+      "texto_antes": "É quanto crédito as famílias e as instituições sem fim lucrativo ao seu serviço contraíram num ano, descontado o que reembolsaram, em percentagem da dívida que já tinham no fim do ano anterior. Subiu face a 2024. Está acima da média da União Europeia. Para a Comissão Europeia, um fluxo acima de 14 % é sinal de possível desequilíbrio: Portugal está abaixo ou no limite.",
+      "texto_depois": "É quanto crédito as famílias e as instituições sem fim lucrativo ao seu serviço contraíram num ano, descontado o que reembolsaram, em percentagem da dívida que já tinham no fim do ano anterior. Subiu face a 2024. Está acima da média da União Europeia. Para a Comissão Europeia, um fluxo acima de 14 % é sinal de possível desequilíbrio: Portugal está abaixo ou no limite.",
+      "texto_mudou": false,
+      "valores_mudaram": true,
+      "ramos": [
+        {
+          "no": "compara-anterior",
+          "caminho": "pt[1]",
+          "antes": "maior",
+          "depois": "maior",
+          "mudou": false,
+          "porque_antes": "8,6 contra 4,1 (fluxo-de-credito-as-familias-2024)",
+          "porque_depois": "9,0 contra 4,0 (fluxo-de-credito-as-familias-2024)"
+        },
+        {
+          "no": "compara-ue",
+          "caminho": "pt[2]",
+          "antes": "maior",
+          "depois": "maior",
+          "mudou": false,
+          "porque_antes": "8,6 contra 2,9 (fluxo-de-credito-as-familias-2025-ue)",
+          "porque_depois": "9,0 contra 3,0 (fluxo-de-credito-as-familias-2025-ue)"
+        },
+        {
+          "no": "estado",
+          "caminho": "pt[8]",
+          "antes": "dentro",
+          "depois": "dentro",
+          "mudou": false,
+          "porque_antes": "estadoDaMedida() sobre 8,6",
+          "porque_depois": "estadoDaMedida() sobre 9,0"
+        }
+      ],
+      "ramos_que_mudaram_de_sentido": 0,
+      "valores_antes": {
+        "proprio": "8,6",
+        "anterior": {
+          "id": "fluxo-de-credito-as-familias-2024",
+          "valor": "4,1"
+        },
+        "ue": {
+          "id": "fluxo-de-credito-as-familias-2025-ue",
+          "valor": "2,9"
+        }
+      },
+      "valores_depois": {
+        "proprio": "9,0",
+        "anterior": {
+          "id": "fluxo-de-credito-as-familias-2024",
+          "valor": "4,0"
+        },
+        "ue": {
+          "id": "fluxo-de-credito-as-familias-2025-ue",
+          "valor": "3,0"
+        }
+      }
+    },
+    {
+      "id": "fluxo-de-credito-as-familias-2025",
+      "lang": "en",
+      "texto_antes": "It is how much credit households and non-profit institutions serving them took on in a year, minus what they repaid, as a percentage of the debt they already had at the end of the previous year. Up from 2024. Above the European Union average. For the European Commission, a flow above 14 % is a sign of a possible imbalance: Portugal is at or below it.",
+      "texto_depois": "It is how much credit households and non-profit institutions serving them took on in a year, minus what they repaid, as a percentage of the debt they already had at the end of the previous year. Up from 2024. Above the European Union average. For the European Commission, a flow above 14 % is a sign of a possible imbalance: Portugal is at or below it.",
+      "texto_mudou": false,
+      "valores_mudaram": true,
+      "ramos": [
+        {
+          "no": "compara-anterior",
+          "caminho": "en[1]",
+          "antes": "maior",
+          "depois": "maior",
+          "mudou": false,
+          "porque_antes": "8,6 contra 4,1 (fluxo-de-credito-as-familias-2024)",
+          "porque_depois": "9,0 contra 4,0 (fluxo-de-credito-as-familias-2024)"
+        },
+        {
+          "no": "compara-ue",
+          "caminho": "en[2]",
+          "antes": "maior",
+          "depois": "maior",
+          "mudou": false,
+          "porque_antes": "8,6 contra 2,9 (fluxo-de-credito-as-familias-2025-ue)",
+          "porque_depois": "9,0 contra 3,0 (fluxo-de-credito-as-familias-2025-ue)"
+        },
+        {
+          "no": "estado",
+          "caminho": "en[8]",
+          "antes": "dentro",
+          "depois": "dentro",
+          "mudou": false,
+          "porque_antes": "estadoDaMedida() sobre 8,6",
+          "porque_depois": "estadoDaMedida() sobre 9,0"
+        }
+      ],
+      "ramos_que_mudaram_de_sentido": 0,
+      "valores_antes": {
+        "proprio": "8,6",
+        "anterior": {
+          "id": "fluxo-de-credito-as-familias-2024",
+          "valor": "4,1"
+        },
+        "ue": {
+          "id": "fluxo-de-credito-as-familias-2025-ue",
+          "valor": "2,9"
+        }
+      },
+      "valores_depois": {
+        "proprio": "9,0",
+        "anterior": {
+          "id": "fluxo-de-credito-as-familias-2024",
+          "valor": "4,0"
+        },
+        "ue": {
+          "id": "fluxo-de-credito-as-familias-2025-ue",
+          "valor": "3,0"
+        }
+      }
+    },
+    {
+      "id": "custo-unitario-do-trabalho-2025",
+      "lang": "pt",
+      "texto_antes": "É quanto subiu em três anos o custo do trabalho por cada unidade produzida: o que se paga pelo trabalho a dividir pelo que ele produz. A variação em três anos é maior do que a medida em 2024. A variação é maior do que a da União Europeia. Para a Comissão Europeia, uma subida acima de 9 % em três anos é sinal de possível desequilíbrio: Portugal está acima.",
+      "texto_depois": "É quanto subiu em três anos o custo do trabalho por cada unidade produzida: o que se paga pelo trabalho a dividir pelo que ele produz. A variação em três anos é maior do que a medida em 2024. A variação é maior do que a da União Europeia. Para a Comissão Europeia, uma subida acima de 9 % em três anos é sinal de possível desequilíbrio: Portugal está acima.",
+      "texto_mudou": false,
+      "valores_mudaram": true,
+      "ramos": [
+        {
+          "no": "sinal",
+          "caminho": "pt[1]",
+          "antes": "positivo",
+          "depois": "positivo",
+          "mudou": false,
+          "porque_antes": "o valor da linha é 21,3",
+          "porque_depois": "o valor da linha é 21,3"
+        },
+        {
+          "no": "compara-anterior",
+          "caminho": "pt[2]",
+          "antes": "maior",
+          "depois": "maior",
+          "mudou": false,
+          "porque_antes": "21,3 contra 17,9 (custo-unitario-do-trabalho-2024)",
+          "porque_depois": "21,3 contra 17,9 (custo-unitario-do-trabalho-2024)"
+        },
+        {
+          "no": "compara-ue",
+          "caminho": "pt[3]",
+          "antes": "maior",
+          "depois": "maior",
+          "mudou": false,
+          "porque_antes": "21,3 contra 15,2 (custo-unitario-do-trabalho-2025-ue)",
+          "porque_depois": "21,3 contra 14,8 (custo-unitario-do-trabalho-2025-ue)"
+        },
+        {
+          "no": "estado",
+          "caminho": "pt[9]",
+          "antes": "fora",
+          "depois": "fora",
+          "mudou": false,
+          "porque_antes": "estadoDaMedida() sobre 21,3",
+          "porque_depois": "estadoDaMedida() sobre 21,3"
+        }
+      ],
+      "ramos_que_mudaram_de_sentido": 0,
+      "valores_antes": {
+        "proprio": "21,3",
+        "anterior": {
+          "id": "custo-unitario-do-trabalho-2024",
+          "valor": "17,9"
+        },
+        "ue": {
+          "id": "custo-unitario-do-trabalho-2025-ue",
+          "valor": "15,2"
+        }
+      },
+      "valores_depois": {
+        "proprio": "21,3",
+        "anterior": {
+          "id": "custo-unitario-do-trabalho-2024",
+          "valor": "17,9"
+        },
+        "ue": {
+          "id": "custo-unitario-do-trabalho-2025-ue",
+          "valor": "14,8"
+        }
+      }
+    },
+    {
+      "id": "custo-unitario-do-trabalho-2025",
+      "lang": "en",
+      "texto_antes": "It is how much the cost of labour per unit produced rose over three years: what is paid for labour divided by what it produces. The three-year change is larger than the one measured in 2024. The change is larger than the European Union’s. For the European Commission, a rise above 9 % over three years is a sign of a possible imbalance: Portugal is above it.",
+      "texto_depois": "It is how much the cost of labour per unit produced rose over three years: what is paid for labour divided by what it produces. The three-year change is larger than the one measured in 2024. The change is larger than the European Union’s. For the European Commission, a rise above 9 % over three years is a sign of a possible imbalance: Portugal is above it.",
+      "texto_mudou": false,
+      "valores_mudaram": true,
+      "ramos": [
+        {
+          "no": "sinal",
+          "caminho": "en[1]",
+          "antes": "positivo",
+          "depois": "positivo",
+          "mudou": false,
+          "porque_antes": "o valor da linha é 21,3",
+          "porque_depois": "o valor da linha é 21,3"
+        },
+        {
+          "no": "compara-anterior",
+          "caminho": "en[2]",
+          "antes": "maior",
+          "depois": "maior",
+          "mudou": false,
+          "porque_antes": "21,3 contra 17,9 (custo-unitario-do-trabalho-2024)",
+          "porque_depois": "21,3 contra 17,9 (custo-unitario-do-trabalho-2024)"
+        },
+        {
+          "no": "compara-ue",
+          "caminho": "en[3]",
+          "antes": "maior",
+          "depois": "maior",
+          "mudou": false,
+          "porque_antes": "21,3 contra 15,2 (custo-unitario-do-trabalho-2025-ue)",
+          "porque_depois": "21,3 contra 14,8 (custo-unitario-do-trabalho-2025-ue)"
+        },
+        {
+          "no": "estado",
+          "caminho": "en[9]",
+          "antes": "fora",
+          "depois": "fora",
+          "mudou": false,
+          "porque_antes": "estadoDaMedida() sobre 21,3",
+          "porque_depois": "estadoDaMedida() sobre 21,3"
+        }
+      ],
+      "ramos_que_mudaram_de_sentido": 0,
+      "valores_antes": {
+        "proprio": "21,3",
+        "anterior": {
+          "id": "custo-unitario-do-trabalho-2024",
+          "valor": "17,9"
+        },
+        "ue": {
+          "id": "custo-unitario-do-trabalho-2025-ue",
+          "valor": "15,2"
+        }
+      },
+      "valores_depois": {
+        "proprio": "21,3",
+        "anterior": {
+          "id": "custo-unitario-do-trabalho-2024",
+          "valor": "17,9"
+        },
+        "ue": {
+          "id": "custo-unitario-do-trabalho-2025-ue",
+          "valor": "14,8"
+        }
+      }
+    },
+    {
+      "id": "licencas-de-construcao-2025",
+      "lang": "pt",
+      "texto_antes": "É a área de habitação nova licenciada num ano, em metros quadrados por cada 1000 habitantes: quanto mais alta, mais construção de casas foi autorizada. Subiu face a 2024. Está acima da média da União Europeia.",
+      "texto_depois": "É a área de habitação nova licenciada num ano, em metros quadrados por cada 1000 habitantes: quanto mais alta, mais construção de casas foi autorizada. Subiu face a 2024. Está acima da média da União Europeia.",
+      "texto_mudou": false,
+      "valores_mudaram": true,
+      "ramos": [
+        {
+          "no": "compara-anterior",
+          "caminho": "pt[3]",
+          "antes": "maior",
+          "depois": "maior",
+          "mudou": false,
+          "porque_antes": "749,7 contra 654,5 (licencas-de-construcao-2024)",
+          "porque_depois": "749,7 contra 654,5 (licencas-de-construcao-2024)"
+        },
+        {
+          "no": "compara-ue",
+          "caminho": "pt[4]",
+          "antes": "maior",
+          "depois": "maior",
+          "mudou": false,
+          "porque_antes": "749,7 contra 377,5 (licencas-de-construcao-2025-ue)",
+          "porque_depois": "749,7 contra 377,6 (licencas-de-construcao-2025-ue)"
+        }
+      ],
+      "ramos_que_mudaram_de_sentido": 0,
+      "valores_antes": {
+        "proprio": "749,7",
+        "anterior": {
+          "id": "licencas-de-construcao-2024",
+          "valor": "654,5"
+        },
+        "ue": {
+          "id": "licencas-de-construcao-2025-ue",
+          "valor": "377,5"
+        }
+      },
+      "valores_depois": {
+        "proprio": "749,7",
+        "anterior": {
+          "id": "licencas-de-construcao-2024",
+          "valor": "654,5"
+        },
+        "ue": {
+          "id": "licencas-de-construcao-2025-ue",
+          "valor": "377,6"
+        }
+      }
+    },
+    {
+      "id": "licencas-de-construcao-2025",
+      "lang": "en",
+      "texto_antes": "It is the floor area of new housing permitted in a year, in square metres per 1000 inhabitants: the higher it is, the more housing construction was authorised. Up from 2024. Above the European Union average.",
+      "texto_depois": "It is the floor area of new housing permitted in a year, in square metres per 1000 inhabitants: the higher it is, the more housing construction was authorised. Up from 2024. Above the European Union average.",
+      "texto_mudou": false,
+      "valores_mudaram": true,
+      "ramos": [
+        {
+          "no": "compara-anterior",
+          "caminho": "en[3]",
+          "antes": "maior",
+          "depois": "maior",
+          "mudou": false,
+          "porque_antes": "749,7 contra 654,5 (licencas-de-construcao-2024)",
+          "porque_depois": "749,7 contra 654,5 (licencas-de-construcao-2024)"
+        },
+        {
+          "no": "compara-ue",
+          "caminho": "en[4]",
+          "antes": "maior",
+          "depois": "maior",
+          "mudou": false,
+          "porque_antes": "749,7 contra 377,5 (licencas-de-construcao-2025-ue)",
+          "porque_depois": "749,7 contra 377,6 (licencas-de-construcao-2025-ue)"
+        }
+      ],
+      "ramos_que_mudaram_de_sentido": 0,
+      "valores_antes": {
+        "proprio": "749,7",
+        "anterior": {
+          "id": "licencas-de-construcao-2024",
+          "valor": "654,5"
+        },
+        "ue": {
+          "id": "licencas-de-construcao-2025-ue",
+          "valor": "377,5"
+        }
+      },
+      "valores_depois": {
+        "proprio": "749,7",
+        "anterior": {
+          "id": "licencas-de-construcao-2024",
+          "valor": "654,5"
+        },
+        "ue": {
+          "id": "licencas-de-construcao-2025-ue",
+          "valor": "377,6"
+        }
+      }
+    },
+    {
+      "id": "formacao-bruta-de-capital-fixo-2025",
+      "lang": "pt",
+      "texto_antes": "É o que as empresas, o Estado, as famílias e as instituições sem fim lucrativo que produzem no país compraram num ano, descontado o que venderam, em bens que duram mais de um ano, como edifícios, máquinas e programas informáticos, em percentagem do PIB, o valor de tudo o que o país produz num ano. Subiu face a 2024. Está abaixo da média da União Europeia.",
+      "texto_depois": "É o que as empresas, o Estado, as famílias e as instituições sem fim lucrativo que produzem no país compraram num ano, descontado o que venderam, em bens que duram mais de um ano, como edifícios, máquinas e programas informáticos, em percentagem do PIB, o valor de tudo o que o país produz num ano. Subiu face a 2024. Está abaixo da média da União Europeia.",
+      "texto_mudou": false,
+      "valores_mudaram": true,
+      "ramos": [
+        {
+          "no": "compara-anterior",
+          "caminho": "pt[2]",
+          "antes": "maior",
+          "depois": "maior",
+          "mudou": false,
+          "porque_antes": "21,0 contra 20,5 (formacao-bruta-de-capital-fixo-2024)",
+          "porque_depois": "21,0 contra 20,5 (formacao-bruta-de-capital-fixo-2024)"
+        },
+        {
+          "no": "compara-ue",
+          "caminho": "pt[3]",
+          "antes": "menor",
+          "depois": "menor",
+          "mudou": false,
+          "porque_antes": "21,0 contra 21,4 (formacao-bruta-de-capital-fixo-2025-ue)",
+          "porque_depois": "21,0 contra 21,5 (formacao-bruta-de-capital-fixo-2025-ue)"
+        }
+      ],
+      "ramos_que_mudaram_de_sentido": 0,
+      "valores_antes": {
+        "proprio": "21,0",
+        "anterior": {
+          "id": "formacao-bruta-de-capital-fixo-2024",
+          "valor": "20,5"
+        },
+        "ue": {
+          "id": "formacao-bruta-de-capital-fixo-2025-ue",
+          "valor": "21,4"
+        }
+      },
+      "valores_depois": {
+        "proprio": "21,0",
+        "anterior": {
+          "id": "formacao-bruta-de-capital-fixo-2024",
+          "valor": "20,5"
+        },
+        "ue": {
+          "id": "formacao-bruta-de-capital-fixo-2025-ue",
+          "valor": "21,5"
+        }
+      }
+    },
+    {
+      "id": "formacao-bruta-de-capital-fixo-2025",
+      "lang": "en",
+      "texto_antes": "It is what companies, the State, households and non-profit institutions that produce in the country acquired in a year, less what they disposed of, in assets that last more than a year, such as buildings, machinery and software, as a percentage of GDP, the value of everything the country produces in a year. Up from 2024. Below the European Union average.",
+      "texto_depois": "It is what companies, the State, households and non-profit institutions that produce in the country acquired in a year, less what they disposed of, in assets that last more than a year, such as buildings, machinery and software, as a percentage of GDP, the value of everything the country produces in a year. Up from 2024. Below the European Union average.",
+      "texto_mudou": false,
+      "valores_mudaram": true,
+      "ramos": [
+        {
+          "no": "compara-anterior",
+          "caminho": "en[2]",
+          "antes": "maior",
+          "depois": "maior",
+          "mudou": false,
+          "porque_antes": "21,0 contra 20,5 (formacao-bruta-de-capital-fixo-2024)",
+          "porque_depois": "21,0 contra 20,5 (formacao-bruta-de-capital-fixo-2024)"
+        },
+        {
+          "no": "compara-ue",
+          "caminho": "en[3]",
+          "antes": "menor",
+          "depois": "menor",
+          "mudou": false,
+          "porque_antes": "21,0 contra 21,4 (formacao-bruta-de-capital-fixo-2025-ue)",
+          "porque_depois": "21,0 contra 21,5 (formacao-bruta-de-capital-fixo-2025-ue)"
+        }
+      ],
+      "ramos_que_mudaram_de_sentido": 0,
+      "valores_antes": {
+        "proprio": "21,0",
+        "anterior": {
+          "id": "formacao-bruta-de-capital-fixo-2024",
+          "valor": "20,5"
+        },
+        "ue": {
+          "id": "formacao-bruta-de-capital-fixo-2025-ue",
+          "valor": "21,4"
+        }
+      },
+      "valores_depois": {
+        "proprio": "21,0",
+        "anterior": {
+          "id": "formacao-bruta-de-capital-fixo-2024",
+          "valor": "20,5"
+        },
+        "ue": {
+          "id": "formacao-bruta-de-capital-fixo-2025-ue",
+          "valor": "21,5"
+        }
+      }
+    }
+  ]
+}

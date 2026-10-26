@@ -1,0 +1,103 @@
+  sítio: <worktree>
+  91 claims in study 'quadro-institucional'
+
+  ok      abandono-escolar-precoce-2024
+  ok      abandono-escolar-precoce-2025-ue
+  ok      abandono-escolar-precoce-2025
+  ok      competencias-digitais-2023
+  ok      competencias-digitais-2025-ue
+  ok      competencias-digitais-2025
+  notice  credito-malparado-2024: metadata — dataset updated stamp: 2026-06-29T23:00:00+0200 -> 2026-09-30T23:00:00+0200
+  notice  credito-malparado-2025: metadata — dataset updated stamp: 2026-06-29T23:00:00+0200 -> 2026-09-30T23:00:00+0200
+  notice  criancas-em-creche-2024: metadata — dataset updated stamp: 2026-09-17T23:00:00+0200 -> 2026-10-20T23:00:00+0200
+  notice  criancas-em-creche-2025-ue: metadata — dataset updated stamp: 2026-09-17T23:00:00+0200 -> 2026-10-20T23:00:00+0200
+  notice  criancas-em-creche-2025: metadata — dataset updated stamp: 2026-09-17T23:00:00+0200 -> 2026-10-20T23:00:00+0200
+  notice  custo-unitario-do-trabalho-2024: metadata — dataset updated stamp: 2026-09-21T23:00:00+0200 -> 2026-10-22T23:00:00+0200
+  notice  custo-unitario-do-trabalho-2025-ue: metadata — dataset updated stamp: 2026-09-21T23:00:00+0200 -> 2026-10-22T23:00:00+0200
+  notice  custo-unitario-do-trabalho-2025: metadata — dataset updated stamp: 2026-09-21T23:00:00+0200 -> 2026-10-22T23:00:00+0200
+  ok      desempenho-das-exportacoes-2024
+  ok      desempenho-das-exportacoes-2025
+  ok      desemprego-de-longa-duracao-2024
+  ok      desemprego-de-longa-duracao-2025-ue
+  ok      desemprego-de-longa-duracao-2025
+  notice  despesa-em-id-2023: metadata — dataset updated stamp: 2026-03-18T23:00:00+0100 -> 2026-09-29T23:00:00+0200
+  notice  despesa-em-id-2024-ue: metadata — dataset updated stamp: 2026-03-18T23:00:00+0100 -> 2026-09-29T23:00:00+0200
+  notice  despesa-em-id-2024: metadata — dataset updated stamp: 2026-03-18T23:00:00+0100 -> 2026-09-29T23:00:00+0200
+  ok      disparidade-de-emprego-entre-sexos-2024
+  ok      disparidade-de-emprego-entre-sexos-2025-ue
+  ok      disparidade-de-emprego-entre-sexos-2025
+  notice  divida-das-empresas-2024: metadata — dataset updated stamp: 2026-09-26T11:00:00+0200 -> 2026-10-24T11:00:00+0200
+  notice  divida-das-empresas-2025-ue: metadata — dataset updated stamp: 2026-09-26T11:00:00+0200 -> 2026-10-24T11:00:00+0200
+  notice  divida-das-empresas-2025: metadata — dataset updated stamp: 2026-09-26T11:00:00+0200 -> 2026-10-24T11:00:00+0200
+  notice  divida-das-familias-2024: metadata — dataset updated stamp: 2026-09-26T11:00:00+0200 -> 2026-10-24T11:00:00+0200
+  notice  divida-das-familias-2025-ue: metadata — dataset updated stamp: 2026-09-26T11:00:00+0200 -> 2026-10-24T11:00:00+0200
+  notice  divida-das-familias-2025: metadata — dataset updated stamp: 2026-09-26T11:00:00+0200 -> 2026-10-24T11:00:00+0200
+  notice  divida-publica-2024: metadata — dataset updated stamp: 2026-04-22T11:00:00+0200 -> 2026-10-21T11:00:00+0200
+  notice  divida-publica-2025-ue: metadata — dataset updated stamp: 2026-04-22T11:00:00+0200 -> 2026-10-21T11:00:00+0200
+  notice  divida-publica-2025: metadata — dataset updated stamp: 2026-04-22T11:00:00+0200 -> 2026-10-21T11:00:00+0200
+  notice  fluxo-de-credito-as-empresas-2024: metadata — dataset updated stamp: 2026-09-26T11:00:00+0200 -> 2026-10-24T11:00:00+0200
+  notice  fluxo-de-credito-as-empresas-2025: metadata — dataset updated stamp: 2026-09-26T11:00:00+0200 -> 2026-10-24T11:00:00+0200
+  notice  fluxo-de-credito-as-familias-2024: metadata — dataset updated stamp: 2026-09-26T11:00:00+0200 -> 2026-10-24T11:00:00+0200
+  notice  fluxo-de-credito-as-familias-2025-ue: metadata — dataset updated stamp: 2026-09-26T11:00:00+0200 -> 2026-10-24T11:00:00+0200
+  notice  fluxo-de-credito-as-familias-2025: metadata — dataset updated stamp: 2026-09-26T11:00:00+0200 -> 2026-10-24T11:00:00+0200
+  notice  formacao-bruta-de-capital-fixo-2024: metadata — dataset updated stamp: 2026-09-21T23:00:00+0200 -> 2026-10-22T23:00:00+0200
+  notice  formacao-bruta-de-capital-fixo-2025-ue: metadata — dataset updated stamp: 2026-09-21T23:00:00+0200 -> 2026-10-22T23:00:00+0200
+  notice  formacao-bruta-de-capital-fixo-2025: metadata — dataset updated stamp: 2026-09-21T23:00:00+0200 -> 2026-10-22T23:00:00+0200
+  ok      independencia-da-justica-2024
+  ok      independencia-da-justica-2025-ue
+  ok      independencia-da-justica-2025
+  ok      indice-de-percepcao-da-corrupcao-2024
+  ok      indice-de-percepcao-da-corrupcao-2025-ue
+  ok      indice-de-percepcao-da-corrupcao-2025
+  ok      jovens-nem-2024
+  ok      jovens-nem-2025-ue
+  ok      jovens-nem-2025
+  notice  licencas-de-construcao-2024: metadata — dataset updated stamp: 2026-09-24T11:00:00+0200 -> 2026-10-21T23:00:00+0200
+  notice  licencas-de-construcao-2025-ue: metadata — dataset updated stamp: 2026-09-24T11:00:00+0200 -> 2026-10-21T23:00:00+0200
+  notice  licencas-de-construcao-2025: metadata — dataset updated stamp: 2026-09-24T11:00:00+0200 -> 2026-10-21T23:00:00+0200
+  notice  necessidades-medicas-nao-satisfeitas-2024: metadata — dataset updated stamp: 2026-09-17T23:00:00+0200 -> 2026-10-20T23:00:00+0200
+  notice  necessidades-medicas-nao-satisfeitas-2025-ue: metadata — dataset updated stamp: 2026-09-17T23:00:00+0200 -> 2026-10-20T23:00:00+0200
+  notice  necessidades-medicas-nao-satisfeitas-2025: metadata — dataset updated stamp: 2026-09-17T23:00:00+0200 -> 2026-10-20T23:00:00+0200
+  ALARM   pib-real-per-capita-2024: structure — dimension sizes changed: {'unit': (1, 2)}
+  notice  pib-real-per-capita-2024: metadata — dataset updated stamp: 2026-09-18T23:00:00+0200 -> 2026-10-22T23:00:00+0200
+  ALARM   pib-real-per-capita-2025-ue: structure — dimension sizes changed: {'unit': (1, 2)}
+  notice  pib-real-per-capita-2025-ue: metadata — dataset updated stamp: 2026-09-18T23:00:00+0200 -> 2026-10-22T23:00:00+0200
+  ALARM   pib-real-per-capita-2025: structure — dimension sizes changed: {'unit': (1, 2)}
+  notice  pib-real-per-capita-2025: metadata — dataset updated stamp: 2026-09-18T23:00:00+0200 -> 2026-10-22T23:00:00+0200
+  notice  posicao-de-investimento-internacional-2024: metadata — dataset updated stamp: 2026-09-11T23:00:00+0200 -> 2026-10-02T23:00:00+0200
+  notice  posicao-de-investimento-internacional-2025: metadata — dataset updated stamp: 2026-09-11T23:00:00+0200 -> 2026-10-02T23:00:00+0200
+  notice  precos-da-habitacao-2024: metadata — dataset updated stamp: 2026-07-02T11:00:00+0200 -> 2026-10-01T11:00:00+0200
+  notice  precos-da-habitacao-2025-ue: metadata — dataset updated stamp: 2026-07-02T11:00:00+0200 -> 2026-10-01T11:00:00+0200
+  notice  precos-da-habitacao-2025: metadata — dataset updated stamp: 2026-07-02T11:00:00+0200 -> 2026-10-01T11:00:00+0200
+  notice  racio-s80-s20-2024: metadata — dataset updated stamp: 2026-09-17T23:00:00+0200 -> 2026-10-20T11:00:00+0200
+  notice  racio-s80-s20-2025-ue: metadata — dataset updated stamp: 2026-09-17T23:00:00+0200 -> 2026-10-20T11:00:00+0200
+  notice  racio-s80-s20-2025: metadata — dataset updated stamp: 2026-09-17T23:00:00+0200 -> 2026-10-20T11:00:00+0200
+  notice  risco-de-pobreza-ou-exclusao-2024: metadata — dataset updated stamp: 2026-09-17T23:00:00+0200 -> 2026-10-20T11:00:00+0200
+  notice  risco-de-pobreza-ou-exclusao-2025-ue: metadata — dataset updated stamp: 2026-09-17T23:00:00+0200 -> 2026-10-20T11:00:00+0200
+  notice  risco-de-pobreza-ou-exclusao-2025: metadata — dataset updated stamp: 2026-09-17T23:00:00+0200 -> 2026-10-20T11:00:00+0200
+  notice  saldo-da-balanca-corrente-2024: metadata — dataset updated stamp: 2026-07-08T11:00:00+0200 -> 2026-10-02T11:00:00+0200
+  notice  saldo-da-balanca-corrente-2025: metadata — dataset updated stamp: 2026-07-08T11:00:00+0200 -> 2026-10-02T11:00:00+0200
+  notice  sobrecarga-do-custo-da-habitacao-2024: metadata — dataset updated stamp: 2026-09-17T23:00:00+0200 -> 2026-10-20T11:00:00+0200
+  notice  sobrecarga-do-custo-da-habitacao-2025-ue: metadata — dataset updated stamp: 2026-09-17T23:00:00+0200 -> 2026-10-20T11:00:00+0200
+  notice  sobrecarga-do-custo-da-habitacao-2025: metadata — dataset updated stamp: 2026-09-17T23:00:00+0200 -> 2026-10-20T11:00:00+0200
+  ok      taxa-de-actividade-2024
+  ok      taxa-de-actividade-2025-ue
+  ok      taxa-de-actividade-2025
+  notice  taxa-de-cambio-efectiva-real-2024: metadata — dataset updated stamp: 2026-09-18T11:00:00+0200 -> 2026-10-14T11:00:00+0200
+  notice  taxa-de-cambio-efectiva-real-2025-ue: metadata — dataset updated stamp: 2026-09-18T11:00:00+0200 -> 2026-10-14T11:00:00+0200
+  notice  taxa-de-cambio-efectiva-real-2025: metadata — dataset updated stamp: 2026-09-18T11:00:00+0200 -> 2026-10-14T11:00:00+0200
+  ok      taxa-de-desemprego-2024
+  ok      taxa-de-desemprego-2025-ue
+  ok      taxa-de-desemprego-2025
+  ok      taxa-de-desemprego-mip-2024
+  ok      taxa-de-desemprego-mip-2025-ue
+  ok      taxa-de-desemprego-mip-2025
+  ok      taxa-de-emprego-2024
+  ok      taxa-de-emprego-2025-ue
+  ok      taxa-de-emprego-2025
+  ALARM   (all): threshold — the numeric content of the Commission MIP scoreboard page changed — thresholds may have been revised. Read it before trusting any 'limiar' on the site.
+  vintages: 91 linha(s) com história · 56 entrada(s) nova(s) · 211 no total
+  corrida delimitada: sem carimbo global do sítio
+  reconferências escritas: 17 igual · 0 diverge · 0 inacessível · 74 já escrita(s) hoje
+
+  4 alarm(s) · 56 notice(s) · heartbeat stamped 2026-10-26T14:26:58+00:00
