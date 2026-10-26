@@ -6,7 +6,7 @@
 id: "licencas-de-construcao-2025-ue"
 
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
-value: "377,5"
+value: "377,6"
 unit: "m² por 1000 habitantes"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
@@ -17,11 +17,12 @@ document:
   kind: "serie"
   url: "https://ec.europa.eu/eurostat/databrowser/view/tipsho50/default/table?lang=en"
 source_url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsho50?format=JSON&lang=EN&geo=EU27_2020"
-access_date: "2026-09-15"
+access_date: "2026-10-26"
+published_at: "2026-10-21"
 reference_date: "2025"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "Residential building permits - annual data — Square metres per 1000 inhabitants — European Union - 27 countries (from 2020) — 2025: 377.5"
+excerpt: "Residential building permits - annual data — Square metres per 1000 inhabitants — European Union - 27 countries (from 2020) — 2025: 377.6"
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null
@@ -33,7 +34,33 @@ study: "quadro-institucional"
 note: "Agregado da União Europeia (EU27_2020) da medida «licencas-de-construcao-2025», no mesmo período e na mesma unidade, pelo mesmo pedido com outra geografia. Excerto composto a partir das etiquetas da própria resposta do Eurostat; o endereço em source_url devolve o mesmo valor."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
-corrections: []
+corrections:
+- date: '2026-10-26'
+  kind: atualizacao
+  old_value: 377,5
+  new_value: 377,6
+  reason: O Eurostat reviu o valor da União a 21.10.2026 (o carimbo do conjunto passou de 02.10.2026 a 21.10.2026); a reconferência
+    semanal de 26.10.2026 viu a revisão.
+  reason_en: Eurostat revised the EU value on 21.10.2026 (the dataset stamp moved from 02.10.2026 to 21.10.2026); the weekly
+    check of 26.10.2026 caught the revision.
+- date: '2026-10-26'
+  kind: proveniencia
+  field: access_date
+  old_value: '2026-09-15'
+  new_value: '2026-10-26'
+  reason: O valor novo foi lido a 26.10.2026, no dia da reconferência que viu a revisão; a leitura anterior, de 15.09.2026,
+    é a do valor 377,5.
+  reason_en: The new value was read on 26.10.2026, the day of the check that caught the revision; the earlier reading, of
+    15.09.2026, is that of the value 377,5.
+- date: '2026-10-26'
+  kind: proveniencia
+  field: excerpt
+  old_value: 'Residential building permits - annual data — Square metres per 1000 inhabitants — European Union - 27 countries
+    (from 2020) — 2025: 377.5'
+  new_value: 'Residential building permits - annual data — Square metres per 1000 inhabitants — European Union - 27 countries
+    (from 2020) — 2025: 377.6'
+  reason: O excerto passa a transcrever o valor revisto que a fonte imprime na mesma observação, lida a 26.10.2026.
+  reason_en: The excerpt now transcribes the revised value the source prints for the same observation, read on 26.10.2026.
 
 # Reconferências. Escritas por indicators/refresh.py, nunca à mão.
 
@@ -65,3 +92,7 @@ verifications:
     result: "diverge"
     by: "painel-semanal"
     found: "377.6"
+  - date: "2026-10-26"
+    path: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsho50?format=JSON&lang=EN&geo=EU27_2020"
+    result: "igual"
+    by: "painel-semanal"

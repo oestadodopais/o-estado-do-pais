@@ -221,6 +221,12 @@
       "kind": "correcao",
       "old_value": "3",
       "new_value": "3,0"
+    },
+    {
+      "date": "2026-10-26",
+      "kind": "atualizacao",
+      "old_value": "3,0",
+      "new_value": "3,4"
     }
   ],
   "custo-unitario-do-trabalho-2024": [
@@ -350,6 +356,134 @@
       "kind": "atualizacao",
       "old_value": "19,6",
       "new_value": "19,5"
+    }
+  ],
+  "custo-unitario-do-trabalho-2025-ue": [
+    {
+      "date": "2026-10-26",
+      "kind": "atualizacao",
+      "old_value": "15,2",
+      "new_value": "14,8"
+    }
+  ],
+  "divida-das-empresas-2024": [
+    {
+      "date": "2026-10-26",
+      "kind": "atualizacao",
+      "old_value": "67,1",
+      "new_value": "66,6"
+    }
+  ],
+  "divida-das-empresas-2025": [
+    {
+      "date": "2026-10-26",
+      "kind": "atualizacao",
+      "old_value": "64,9",
+      "new_value": "65,1"
+    }
+  ],
+  "divida-das-empresas-2025-ue": [
+    {
+      "date": "2026-10-26",
+      "kind": "atualizacao",
+      "old_value": "70,0",
+      "new_value": "70,2"
+    }
+  ],
+  "divida-das-familias-2024": [
+    {
+      "date": "2026-10-26",
+      "kind": "atualizacao",
+      "old_value": "52,6",
+      "new_value": "52,3"
+    }
+  ],
+  "divida-das-familias-2025": [
+    {
+      "date": "2026-10-26",
+      "kind": "atualizacao",
+      "old_value": "53,9",
+      "new_value": "54,4"
+    }
+  ],
+  "divida-publica-2024": [
+    {
+      "date": "2026-10-26",
+      "kind": "atualizacao",
+      "old_value": "93,5",
+      "new_value": "93,0"
+    }
+  ],
+  "divida-publica-2025": [
+    {
+      "date": "2026-10-26",
+      "kind": "atualizacao",
+      "old_value": "89,7",
+      "new_value": "89,2"
+    }
+  ],
+  "divida-publica-2025-ue": [
+    {
+      "date": "2026-10-26",
+      "kind": "atualizacao",
+      "old_value": "81,7",
+      "new_value": "81,5"
+    }
+  ],
+  "fluxo-de-credito-as-empresas-2024": [
+    {
+      "date": "2026-10-26",
+      "kind": "atualizacao",
+      "old_value": "2,4",
+      "new_value": "2,2"
+    }
+  ],
+  "fluxo-de-credito-as-familias-2024": [
+    {
+      "date": "2026-10-26",
+      "kind": "atualizacao",
+      "old_value": "4,1",
+      "new_value": "4,0"
+    }
+  ],
+  "fluxo-de-credito-as-familias-2025": [
+    {
+      "date": "2026-10-26",
+      "kind": "atualizacao",
+      "old_value": "8,6",
+      "new_value": "9,0"
+    }
+  ],
+  "fluxo-de-credito-as-familias-2025-ue": [
+    {
+      "date": "2026-10-26",
+      "kind": "atualizacao",
+      "old_value": "2,9",
+      "new_value": "3,0"
+    }
+  ],
+  "formacao-bruta-de-capital-fixo-2025-ue": [
+    {
+      "date": "2026-10-26",
+      "kind": "atualizacao",
+      "old_value": "21,4",
+      "new_value": "21,5"
+    }
+  ],
+  "licencas-de-construcao-2025-ue": [
+    {
+      "date": "2026-10-26",
+      "kind": "atualizacao",
+      "old_value": "377,5",
+      "new_value": "377,6"
+    }
+  ],
+  "pib-real-per-capita-2025-ue": [
+    {
+      "date": "2026-10-26",
+      "kind": "atualizacao",
+      "old_value": "31 890",
+      "new_value": "31 980"
     }
   ]
 }

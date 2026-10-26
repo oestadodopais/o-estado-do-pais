@@ -6,7 +6,7 @@
 id: "fluxo-de-credito-as-empresas-2024"
 
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
-value: "2,4"
+value: "2,2"
 unit: "% do stock no final do período anterior"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
@@ -17,11 +17,12 @@ document:
   kind: "serie"
   url: "https://ec.europa.eu/eurostat/databrowser/view/tipspc30/default/table?lang=en"
 source_url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipspc30?format=JSON&lang=EN&geo=PT&unit=PC_LE"
-access_date: "2026-09-15"
+access_date: "2026-10-26"
+published_at: "2026-10-24"
 reference_date: "2024"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "Non-financial corporations excluding foreign direct investments credit flow, consolidated — Percentage of stocks (closing balance sheet) — Portugal — 2024: 2.4"
+excerpt: "Non-financial corporations excluding foreign direct investments credit flow, consolidated — Percentage of stocks (closing balance sheet) — Portugal — 2024: 2.2"
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null
@@ -33,7 +34,33 @@ study: "quadro-institucional"
 note: "Período anterior da medida «fluxo-de-credito-as-empresas-2025»: o mesmo pedido ao Eurostat devolve a série inteira, e esta linha é o período 2024. Limiar do Procedimento relativo aos Desequilíbrios Macroeconómicos: 13%. Excerto composto a partir das etiquetas da própria resposta do Eurostat; o endereço em source_url devolve o mesmo valor."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
-corrections: []
+corrections:
+- date: '2026-10-26'
+  kind: atualizacao
+  old_value: 2,4
+  new_value: 2,2
+  reason: O Eurostat reviu o valor de Portugal a 24.10.2026 (o carimbo do conjunto passou de 03.10.2026 a 24.10.2026); a reconferência
+    semanal de 26.10.2026 viu a revisão.
+  reason_en: Eurostat revised Portugal's value on 24.10.2026 (the dataset stamp moved from 03.10.2026 to 24.10.2026); the
+    weekly check of 26.10.2026 caught the revision.
+- date: '2026-10-26'
+  kind: proveniencia
+  field: access_date
+  old_value: '2026-09-15'
+  new_value: '2026-10-26'
+  reason: O valor novo foi lido a 26.10.2026, no dia da reconferência que viu a revisão; a leitura anterior, de 15.09.2026,
+    é a do valor 2,4.
+  reason_en: The new value was read on 26.10.2026, the day of the check that caught the revision; the earlier reading, of
+    15.09.2026, is that of the value 2,4.
+- date: '2026-10-26'
+  kind: proveniencia
+  field: excerpt
+  old_value: 'Non-financial corporations excluding foreign direct investments credit flow, consolidated — Percentage of stocks
+    (closing balance sheet) — Portugal — 2024: 2.4'
+  new_value: 'Non-financial corporations excluding foreign direct investments credit flow, consolidated — Percentage of stocks
+    (closing balance sheet) — Portugal — 2024: 2.2'
+  reason: O excerto passa a transcrever o valor revisto que a fonte imprime na mesma observação, lida a 26.10.2026.
+  reason_en: The excerpt now transcribes the revised value the source prints for the same observation, read on 26.10.2026.
 
 # Reconferências. Escritas por indicators/refresh.py, nunca à mão.
 
@@ -66,3 +93,7 @@ verifications:
     result: "diverge"
     by: "painel-semanal"
     found: "2.2"
+  - date: "2026-10-26"
+    path: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipspc30?format=JSON&lang=EN&geo=PT&unit=PC_LE"
+    result: "igual"
+    by: "painel-semanal"
