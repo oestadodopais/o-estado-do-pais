@@ -1,0 +1,183 @@
+{
+  "passagens": [
+    {
+      "passagem": "OG1-A",
+      "fonte": "og1a-pontos.txt",
+      "lancador": {
+        "antes": 8.0,
+        "depois": 9.0,
+        "diferença": 1.0,
+        "turnos": 27,
+        "entrada": 2877421,
+        "cache": 2744448,
+        "saída": 19209,
+        "raciocínio": 5771,
+        "contexto_médio": 106571,
+        "custo_antigo": 1
+      }
+    },
+    {
+      "passagem": "OG1-A2",
+      "fonte": "og1a-pontos.txt",
+      "lancador": {
+        "antes": 9.0,
+        "depois": 10.0,
+        "diferença": 1.0,
+        "turnos": 3,
+        "entrada": 420558,
+        "cache": 414592,
+        "saída": 1930,
+        "raciocínio": 673,
+        "contexto_médio": 140186,
+        "custo_antigo": 7896
+      }
+    },
+    {
+      "passagem": "OG1-A3",
+      "fonte": "og1a-pontos.txt",
+      "lancador": {
+        "antes": 10.0,
+        "depois": 10.0,
+        "diferença": 0.0,
+        "turnos": 4,
+        "entrada": 357602,
+        "cache": 355584,
+        "saída": 3832,
+        "raciocínio": 779,
+        "contexto_médio": 89400,
+        "custo_antigo": 5850
+      }
+    },
+    {
+      "passagem": "OG1-A4",
+      "fonte": "og1a-pontos.txt",
+      "lancador": {
+        "antes": 10.0,
+        "depois": 11.0,
+        "diferença": 1.0,
+        "turnos": 3,
+        "entrada": 304412,
+        "cache": 301824,
+        "saída": 930,
+        "raciocínio": 172,
+        "contexto_médio": 101470,
+        "custo_antigo": 3518
+      },
+      "chamadas_ferramentas": 36,
+      "fonte_chamadas": "Mandato OG1-A8, §2.5"
+    },
+    {
+      "passagem": "OG1-A5",
+      "fonte": "og1a-pontos.txt",
+      "lancador": {
+        "antes": 11.0,
+        "depois": 11.0,
+        "diferença": 0.0,
+        "turnos": 19,
+        "entrada": 1456017,
+        "cache": 1373568,
+        "saída": 10403,
+        "raciocínio": 2051,
+        "contexto_médio": 76632
+      }
+    },
+    {
+      "passagem": "OG1-A6",
+      "fonte": "og1a-pontos.txt",
+      "lancador": {
+        "antes": 11.0,
+        "depois": 15.0,
+        "diferença": 4.0,
+        "turnos": 4,
+        "entrada": 406487,
+        "cache": 404864,
+        "saída": 1034,
+        "raciocínio": 134,
+        "contexto_médio": 101621,
+        "custo_antigo": 2657
+      },
+      "corridas_conferencias": 45,
+      "fonte_corridas": "Mandato OG1-A8, §2.5"
+    },
+    {
+      "passagem": "OG1-A7",
+      "fonte": "og1a-pontos.txt",
+      "lancador": {
+        "antes": 15.0,
+        "depois": 17.0,
+        "diferença": 2.0,
+        "turnos": 74,
+        "entrada": 8619224,
+        "cache": 8488064,
+        "saída": 33813,
+        "raciocínio": 11981,
+        "contexto_médio": 116476
+      }
+    },
+    {
+      "passagem": "OG1-A8",
+      "chamadas_ferramentas_antes_relatorio": 18,
+      "criterio_chamadas": "Chamadas diretas a functions.exec. A preparação do relatório, o commit e a inspeção final são posteriores; o total final consta da resposta.",
+      "corridas_conferencias": 2,
+      "geracoes": 2,
+      "corridas_inteiras": 0,
+      "capturas": 0,
+      "turnos": null,
+      "entrada": null,
+      "saida": null,
+      "pontos": null,
+      "tokens_used": null,
+      "ausencias": "Turnos, tokens e pontos finais não disponibilizados nesta passagem.",
+      "corridas": [
+        {
+          "label": "gerar",
+          "code": 0,
+          "seconds": 0.28,
+          "command": [
+            "python3",
+            "-m",
+            "publisher.oe2027_generalidade",
+            "--write"
+          ]
+        },
+        {
+          "label": "pesquisa",
+          "code": 0,
+          "seconds": 0.93,
+          "command": [
+            "python3",
+            "-m",
+            "publisher.oe2027_generalidade_test",
+            "--record"
+          ]
+        },
+        {
+          "label": "preparar",
+          "code": 0,
+          "seconds": 0.26,
+          "command": [
+            "python3",
+            "-m",
+            "publisher.og1a_export"
+          ]
+        },
+        {
+          "label": "travessia",
+          "code": 1,
+          "seconds": 0.29,
+          "command": [
+            "python3",
+            "-m",
+            "publisher.export_site_rows",
+            "--manifest",
+            "publisher/manifest.og1a.json",
+            "--site",
+            "<worktree>",
+            "--write"
+          ]
+        }
+      ]
+    }
+  ],
+  "nota": "As contagens do lançador e as chamadas de ferramentas são medidas diferentes e não se substituem."
+}

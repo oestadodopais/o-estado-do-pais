@@ -1,3 +1,48 @@
+# OG1-A8
+
+A passagem parou na proteção da fonte do exportador, abrangida pelo §3 do mandato. O gerador separa agora quem publica o documento de quem fala, e passou 92 verificações. A travessia recusou a primeira afirmação e não escreveu nenhum ficheiro no sítio. As alterações incompletas do item, dos nomes, da vista e da conferência foram repostas à cabeça inicial; não se apresenta a correção como construída.
+
+## A recusa e a decisão necessária
+
+`publisher/export_site_rows.py:2320` exige que `source` contenha uma entidade obtida por `engine_entities`: atribuições da linha ou das suas irmãs no mesmo endereço, e aliases. Não lê o campo `source` do motor. A mensagem foi:
+
+> og1-ps-abstencao: source 'PS' names no entity the engine row stands behind (Comissão Política Nacional do Partido Socialista)
+
+O editor do documento e a pessoa citada são entidades com funções diferentes. Declarar o jornal como alias de quem fala falsificaria essa relação. Não se alterou a régua nem a atribuição para ultrapassar a recusa. É necessária uma decisão do lugar de direção sobre a representação e a verificação do editor no exportador comum, mantendo a verificação independente de `attributed_to`.
+
+## Preparação no motor
+
+O gerador resolve o editor pelo anfitrião do recibo alojado: PS, PCP, Diário de Notícias, ECO, Correio da Manhã, RTP e Observador. Conserva as pessoas em `attributed_to`. O manifesto e as provas transportam `source`. O ensaio ganhou a separação entre editor e pessoa e uma planta de editor adulterado. O livro foi regenerado; `invariantes-a8.json` confirma que os únicos campos alterados nas linhas são `source`, incluindo a declaração de UTAO nas suas linhas. Valores, excertos, datas, localizadores e atribuições permanecem iguais.
+
+O `comitar.sh` não transmite `OEDP_GATE=adiado`. Pela alternativa expressa do §2.6, o motor fica por comitar, com esta lista:
+
+- `content/30 Orcamento 2027 Generalidade/ledger.json`.
+- `content/30 Orcamento 2027 Generalidade/verificacao.json`.
+- `publisher/manifest.og1a.json`.
+- `publisher/oe2027_generalidade.py`.
+- `publisher/oe2027_generalidade_test.py`.
+- `publisher/og1a_export.py`.
+- `publisher/recortes/og1a/provas.json`.
+
+## Códigos e trabalho por fazer
+
+- `gerar-a8.codigo`: 0.
+- `pesquisa-a8.codigo`: 0, 92 verificações.
+- `preparar-a8.codigo`: 0, 33 linhas selecionadas.
+- `travessia-a8.codigo`: 1, nada escrito.
+
+Não correram build, voz, língua, discussão, lugares, livro, registo, typecheck ou cruzamento local depois da paragem. Não correram portões integrais nem capturas. As duas plantas da data e do partido, a ausência de provas como erro, os recibos e as correções das frases continuam por entregar. Não há novos recibos nem nova transcrição das seis partes: o `dist/` existente é anterior à passagem e não foi reconstruído. A transcrição da A7 abaixo permanece como registo dessa construção, não como resultado A8.
+
+As frases pendentes são as do §1: fontes 1, 4 e 5; comparação; conclusão; recomendação; opinião; e data do comunicado do PCP. A frase 3 das fontes não precisava de alteração. Os rótulos de partido ainda precisam de conferência contra os corpos alojados. A fase B continua prevista para 28.10.2026, depois do voto.
+
+## Cabeças e custo
+
+Cabeça inicial do sítio: `8103731c4a646596ed0f6a934cc910da7ec70a13`. Cabeça do motor: `c740ed32cd51c784d8ed99dd9a5d18d1f9c0205d`. Só este relatório e as provas da paragem são pedidos ao escrivão; a cabeça resultante é confirmada na resposta final.
+
+`custo.json` reúne as sete passagens anteriores a partir de `og1a-pontos.txt`, acrescenta as 36 chamadas da A4 e as 45 corridas da A6 indicadas no mandato, e regista esta passagem. Foram duas corridas de conferências (ensaio e travessia), duas gerações, zero portões integrais e zero capturas. Houve 18 chamadas diretas de ferramentas antes da preparação do relatório; a preparação, o commit e a inspeção final são posteriores. `medidas-a8.json` guarda códigos e durações medidos. `tokens used`: não disponibilizado.
+
+---
+
 # OG1-A7
 
 A voz, a língua e o build passaram. A verificação integral com a origem no motor conserva oito divergências preexistentes de séries europeias, fora da seleção OG1. O commit do motor fica pendente porque o escrivão não transmite `OEDP_GATE=adiado`, conforme a exceção expressa do mandato. Não se declara a worktree do motor limpa nem a verificação integral a zero.

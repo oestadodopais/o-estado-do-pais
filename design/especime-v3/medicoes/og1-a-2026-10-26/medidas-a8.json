@@ -1,0 +1,82 @@
+{
+  "passagem": "OG1-A8",
+  "chamadas_ferramentas_antes_relatorio": 18,
+  "criterio_chamadas": "Chamadas diretas a functions.exec. A preparação do relatório, o commit e a inspeção final são posteriores; o total final consta da resposta.",
+  "corridas_conferencias": 2,
+  "geracoes": 2,
+  "corridas_inteiras": 0,
+  "capturas": 0,
+  "turnos": null,
+  "entrada": null,
+  "saida": null,
+  "pontos": null,
+  "tokens_used": null,
+  "ausencias": "Turnos, tokens e pontos finais não disponibilizados nesta passagem.",
+  "corridas": [
+    {
+      "label": "gerar",
+      "code": 0,
+      "seconds": 0.28,
+      "command": [
+        "python3",
+        "-m",
+        "publisher.oe2027_generalidade",
+        "--write"
+      ]
+    },
+    {
+      "label": "pesquisa",
+      "code": 0,
+      "seconds": 0.93,
+      "command": [
+        "python3",
+        "-m",
+        "publisher.oe2027_generalidade_test",
+        "--record"
+      ]
+    },
+    {
+      "label": "preparar",
+      "code": 0,
+      "seconds": 0.26,
+      "command": [
+        "python3",
+        "-m",
+        "publisher.og1a_export"
+      ]
+    },
+    {
+      "label": "travessia",
+      "code": 1,
+      "seconds": 0.29,
+      "command": [
+        "python3",
+        "-m",
+        "publisher.export_site_rows",
+        "--manifest",
+        "publisher/manifest.og1a.json",
+        "--site",
+        "<worktree>",
+        "--write"
+      ]
+    }
+  ],
+  "cabeca_inicial_sitio": "8103731c4a646596ed0f6a934cc910da7ec70a13",
+  "cabeca_motor": "c740ed32cd51c784d8ed99dd9a5d18d1f9c0205d",
+  "codigos": {
+    "gerar": 0,
+    "pesquisa": 0,
+    "preparar": 0,
+    "travessia": 1
+  },
+  "motor_por_comitar": [
+    "content/30 Orcamento 2027 Generalidade/ledger.json",
+    "content/30 Orcamento 2027 Generalidade/verificacao.json",
+    "publisher/manifest.og1a.json",
+    "publisher/oe2027_generalidade.py",
+    "publisher/oe2027_generalidade_test.py",
+    "publisher/og1a_export.py",
+    "publisher/recortes/og1a/provas.json"
+  ],
+  "estado": "Paragem mandatada: a travessia protege source através de attributed_to e aliases."
+}

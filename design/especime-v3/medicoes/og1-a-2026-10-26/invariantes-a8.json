@@ -1,0 +1,281 @@
+{
+  "linhas_pesquisa": 88,
+  "campos_alterados": {
+    "og1-utao-p1": [
+      "source"
+    ],
+    "og1-utao-p5": [
+      "source"
+    ],
+    "og1-utao-p15": [
+      "source"
+    ],
+    "og1-utao-p24": [
+      "source"
+    ],
+    "og1-utao-p26": [
+      "source"
+    ],
+    "og1-utao-p34": [
+      "source"
+    ],
+    "og1-utao-p35": [
+      "source"
+    ],
+    "og1-utao-p37": [
+      "source"
+    ],
+    "og1-utao-p40": [
+      "source"
+    ],
+    "og1-utao-p42": [
+      "source"
+    ],
+    "og1-utao-p50": [
+      "source"
+    ],
+    "og1-utao-p51": [
+      "source"
+    ],
+    "og1-utao-p68": [
+      "source"
+    ],
+    "og1-utao-p76": [
+      "source"
+    ],
+    "og1-utao-p81": [
+      "source"
+    ],
+    "og1-utao-p99": [
+      "source"
+    ],
+    "og1-utao-p101": [
+      "source"
+    ],
+    "og1-utao-p102": [
+      "source"
+    ],
+    "og1-utao-p103": [
+      "source"
+    ],
+    "og1-utao-pib-2027": [
+      "source"
+    ],
+    "og1-utao-pib-2026": [
+      "source"
+    ],
+    "og1-utao-emprego-2027": [
+      "source"
+    ],
+    "og1-utao-saldo-2026": [
+      "source"
+    ],
+    "og1-utao-saldo-2027": [
+      "source"
+    ],
+    "og1-utao-saldo-primario-2027": [
+      "source"
+    ],
+    "og1-utao-saldo-primario-poenmp-2027": [
+      "source"
+    ],
+    "og1-utao-politicas-peso": [
+      "source"
+    ],
+    "og1-utao-juros-variacao": [
+      "source"
+    ],
+    "og1-utao-juros-montante": [
+      "source"
+    ],
+    "og1-utao-taxa-implicita-2026": [
+      "source"
+    ],
+    "og1-utao-taxa-implicita-2027": [
+      "source"
+    ],
+    "og1-utao-novas-saldo": [
+      "source"
+    ],
+    "og1-utao-combustiveis-iva": [
+      "source"
+    ],
+    "og1-utao-despesa-liquida-ce": [
+      "source"
+    ],
+    "og1-utao-despesa-liquida-limiar": [
+      "source"
+    ],
+    "og1-utao-despesa-liquida-mf-defesa": [
+      "source"
+    ],
+    "og1-utao-despesa-liquida-mf-antes": [
+      "source"
+    ],
+    "og1-utao-despesa-total-poe": [
+      "source"
+    ],
+    "og1-utao-despesa-total-qpdp": [
+      "source"
+    ],
+    "og1-utao-despesa-qpdp-diferenca": [
+      "source"
+    ],
+    "og1-utao-despesa-qpdp-variacao": [
+      "source"
+    ],
+    "og1-utao-divida-2026": [
+      "source"
+    ],
+    "og1-utao-divida-2027": [
+      "source"
+    ],
+    "og1-utao-divida-2025-revista": [
+      "source"
+    ],
+    "og1-utao-divida-2025-anterior": [
+      "source"
+    ],
+    "og1-utao-divida-fmi-2027": [
+      "source"
+    ],
+    "og1-utao-brent-16out": [
+      "source"
+    ],
+    "og1-utao-brent-contratos-2027": [
+      "source"
+    ],
+    "og1-utao-brent-mf-2027": [
+      "source"
+    ],
+    "og1-utao-brent-diferenca": [
+      "source"
+    ],
+    "og1-utao-emprego-publico-2027": [
+      "source"
+    ],
+    "og1-utao-rmmg-impacto": [
+      "source"
+    ],
+    "og1-utao-pensoes-impacto": [
+      "source"
+    ],
+    "og1-utao-habitacao-irs": [
+      "source"
+    ],
+    "og1-utao-politicas-saldo": [
+      "source"
+    ],
+    "og1-utao-habitacao-iva": [
+      "source"
+    ],
+    "og1-utao-csi-qpi": [
+      "source"
+    ],
+    "og1-utao-csi-nova": [
+      "source"
+    ],
+    "og1-utao-saude-programa": [
+      "source"
+    ],
+    "og1-utao-saude-variacao": [
+      "source"
+    ],
+    "og1-utao-saude-sem-prr": [
+      "source"
+    ],
+    "og1-utao-trabalho-programa": [
+      "source"
+    ],
+    "og1-utao-trabalho-variacao": [
+      "source"
+    ],
+    "og1-utao-superior-programa": [
+      "source"
+    ],
+    "og1-utao-superior-estimativa": [
+      "source"
+    ],
+    "og1-utao-superior-variacao": [
+      "source"
+    ],
+    "og1-utao-infraestruturas-programa": [
+      "source"
+    ],
+    "og1-utao-infraestruturas-variacao": [
+      "source"
+    ],
+    "og1-utao-saude-oe2026": [
+      "source"
+    ],
+    "og1-utao-saude-est2026": [
+      "source"
+    ],
+    "og1-utao-saude-poe2027": [
+      "source"
+    ],
+    "og1-utao-saldo-me-2026": [
+      "source"
+    ],
+    "og1-utao-saldo-me-2027": [
+      "source"
+    ],
+    "og1-ps-abstencao": [
+      "source"
+    ],
+    "og1-pcp-comite": [
+      "source"
+    ],
+    "og1-pcp-raimundo": [
+      "source"
+    ],
+    "og1-be-voto": [
+      "source"
+    ],
+    "og1-il-prioridades": [
+      "source"
+    ],
+    "og1-livre-posicao": [
+      "source"
+    ],
+    "og1-governo-rtp-combustiveis": [
+      "source"
+    ],
+    "og1-governo-rtp-previsoes": [
+      "source"
+    ],
+    "og1-governo-rtp-habitacao": [
+      "source"
+    ],
+    "og1-governo-eco-juros": [
+      "source"
+    ],
+    "og1-governo-observador-saldo": [
+      "source"
+    ]
+  },
+  "publicadores_das_afirmacoes": {
+    "og1-ps-abstencao": "PS",
+    "og1-pcp-comite": "PCP",
+    "og1-pcp-raimundo": "PCP",
+    "og1-be-voto": "Diário de Notícias",
+    "og1-il-prioridades": "ECO",
+    "og1-livre-posicao": "Correio da Manhã",
+    "og1-governo-rtp-combustiveis": "RTP",
+    "og1-governo-rtp-previsoes": "RTP",
+    "og1-governo-rtp-habitacao": "RTP",
+    "og1-governo-eco-juros": "ECO",
+    "og1-governo-observador-saldo": "Observador"
+  },
+  "travessia_escreveu": false,
+  "sitio_reposto": true,
+  "motor_por_comitar": [
+    "content/30 Orcamento 2027 Generalidade/ledger.json",
+    "content/30 Orcamento 2027 Generalidade/verificacao.json",
+    "publisher/manifest.og1a.json",
+    "publisher/oe2027_generalidade.py",
+    "publisher/oe2027_generalidade_test.py",
+    "publisher/og1a_export.py",
+    "publisher/recortes/og1a/provas.json"
+  ]
+}
