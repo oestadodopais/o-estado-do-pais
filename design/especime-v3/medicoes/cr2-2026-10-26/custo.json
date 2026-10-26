@@ -1,33 +1,66 @@
 {
-  "momento": "antes do commit do relatório; não inclui esse pedido nem a inspeção final",
-  "chamadas": {
-    "exec": 43,
-    "request_user_input_async": 1,
-    "wait": 7
+  "passagem_original": {
+    "momento": "antes do commit do relatório; não inclui esse pedido nem a inspeção final",
+    "chamadas": {
+      "exec": 43,
+      "request_user_input_async": 1,
+      "wait": 7
+    },
+    "total_chamadas": 51,
+    "ferramentas_internas_ao_exec": {
+      "exec_command": 55,
+      "write_stdin": 14,
+      "clock__curr_time": 2
+    },
+    "tokens": {
+      "input_tokens": 5184985,
+      "cached_input_tokens": 5054208,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 33675,
+      "reasoning_output_tokens": 10553,
+      "total_tokens": 5218660
+    },
+    "operacoes_com_codigo_guardado": 13,
+    "conferencias_do_ponto_6": 0,
+    "corridas_inteiras_do_sitio": 0,
+    "construcoes": 0,
+    "capturas": 0,
+    "core_gate_pedido_diretamente": 0,
+    "core_gate_corrido_pelo_hook": 1,
+    "conhecido_positivo": {
+      "passou": true,
+      "prova": "O registo contém a pergunta de clarificação e chamadas executadas pelo orquestrador."
+    }
   },
-  "total_chamadas": 51,
-  "ferramentas_internas_ao_exec": {
-    "exec_command": 55,
-    "write_stdin": 14,
-    "clock__curr_time": 2
-  },
-  "tokens": {
-    "input_tokens": 5184985,
-    "cached_input_tokens": 5054208,
-    "cache_write_input_tokens": 0,
-    "output_tokens": 33675,
-    "reasoning_output_tokens": 10553,
-    "total_tokens": 5218660
-  },
-  "operacoes_com_codigo_guardado": 13,
-  "conferencias_do_ponto_6": 0,
-  "corridas_inteiras_do_sitio": 0,
-  "construcoes": 0,
-  "capturas": 0,
-  "core_gate_pedido_diretamente": 0,
-  "core_gate_corrido_pelo_hook": 1,
-  "conhecido_positivo": {
-    "passou": true,
-    "prova": "O registo contém a pergunta de clarificação e chamadas executadas pelo orquestrador."
+  "continuacao_cr2b": {
+    "momento": "antes do commit do relatório; não inclui esse pedido nem a inspeção final",
+    "chamadas": {
+      "exec": 15,
+      "request_user_input_async": 1
+    },
+    "total_chamadas": 16,
+    "ferramentas_internas_ao_exec": {
+      "exec_command": 14,
+      "write_stdin": 2
+    },
+    "tokens": {
+      "input_tokens": 823149,
+      "cached_input_tokens": 761344,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 5991,
+      "reasoning_output_tokens": 868,
+      "total_tokens": 829140
+    },
+    "operacoes_com_codigo_guardado": 22,
+    "conferencias_do_ponto_6": 7,
+    "corridas_inteiras_do_sitio": 0,
+    "construcoes": 1,
+    "capturas": 0,
+    "core_gate_pedido_diretamente": 0,
+    "core_gate_corrido_pelo_hook": 0,
+    "conhecido_positivo": {
+      "passou": true,
+      "prova": "O registo contém a pergunta de clarificação e chamadas executadas pelo orquestrador."
+    }
   }
 }

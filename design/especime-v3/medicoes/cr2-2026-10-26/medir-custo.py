@@ -17,7 +17,9 @@ for linha in a.sessao.open():
     if d['type']=='event_msg' and q.get('type')=='token_count':tokens=q.get('info',{}).get('total_token_usage')
 p=Path(__file__).resolve().parent
 codigos={f.stem:int(f.read_text().strip()) for f in p.glob('*.codigo')}
-r={'momento':'antes do commit do relatório; não inclui esse pedido nem a inspeção final','chamadas':chamadas,'total_chamadas':sum(chamadas.values()),'ferramentas_internas_ao_exec':internas,'tokens':tokens,'operacoes_com_codigo_guardado':len(codigos),'conferencias_do_ponto_6':0,'corridas_inteiras_do_sitio':0,'construcoes':0,'capturas':0,'core_gate_pedido_diretamente':0,'core_gate_corrido_pelo_hook':1,'conhecido_positivo':{'passou':bool(chamadas.get('request_user_input_async')==1 and internas.get('exec_command',0)>0),'prova':'O registo contém a pergunta de clarificação e chamadas executadas pelo orquestrador.'}}
+r={'momento':'antes do commit do relatório; não inclui esse pedido nem a inspeção final','chamadas':chamadas,'total_chamadas':sum(chamadas.values()),'ferramentas_internas_ao_exec':internas,'tokens':tokens,'operacoes_com_codigo_guardado':len(codigos),'conferencias_do_ponto_6':7,'corridas_inteiras_do_sitio':0,'construcoes':1,'capturas':0,'core_gate_pedido_diretamente':0,'core_gate_corrido_pelo_hook':0,'conhecido_positivo':{'passou':bool(chamadas.get('request_user_input_async')==1 and internas.get('exec_command',0)>0),'prova':'O registo contém a pergunta de clarificação e chamadas executadas pelo orquestrador.'}}
 assert r['conhecido_positivo']['passou']
-(p/'custo.json').write_text(json.dumps(r,ensure_ascii=False,indent=2)+'\n')
-print(json.dumps(r,ensure_ascii=False))
+anterior=json.loads((p/'custo.json').read_text())
+original=anterior.get('passagem_original',anterior)
+(p/'custo.json').write_text(json.dumps({'passagem_original':original,'continuacao_cr2b':r},ensure_ascii=False,indent=2)+'\n')
+print(json.dumps({'chamadas':r['total_chamadas'],'tokens':tokens,'conferencias':r['conferencias_do_ponto_6'],'construcoes':r['construcoes']},ensure_ascii=False))

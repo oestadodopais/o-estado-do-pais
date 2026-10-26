@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Mede a entrega parcial a partir dos corpos, das linhas e dos códigos guardados."""
+"""Mede a entrega a partir dos corpos, das linhas e dos códigos guardados."""
 import argparse
 import copy
 import hashlib
@@ -71,6 +71,16 @@ def main():
     extrair=lambda s:int(re.search(r'alarmes:\s*(\d+)',s).group(1))
     sinal=(SITE/'src/data/verificacao.mjs').read_text()
     medida('alarmes_no_sinal_do_sitio',extrair(sinal),extrair('alarmes: 3,')==3,'O extrator lê três num sinal de controlo.')
+    raiz=(P/'painel-raiz.resumo.txt').read_text()
+    numero_raiz=lambda s:int(re.search(r'(\d+) alarm\(s\)',s).group(1))
+    medida('alarmes_do_painel_pela_raiz',numero_raiz(raiz),numero_raiz('3 alarm(s)')==3,'O mesmo leitor encontra três alarmes num resumo de controlo.')
+    codigo_raiz=lambda s:int(re.search(r'exit=(\d+)',s).group(1))
+    medida('codigo_painel_pela_raiz',codigo_raiz(raiz),codigo_raiz('exit=1')==1,'O mesmo leitor encontra código um num resumo de controlo.')
+    ja_escritas=lambda s:int(re.search(r'(\d+) já escrita\(s\) hoje',s).group(1))
+    medida('reconferencias_ja_escritas_pela_raiz',ja_escritas(raiz),ja_escritas('2 já escrita(s) hoje')==2,'O mesmo leitor encontra duas reconferências num resumo de controlo.')
+    erros_serie=lambda s:len(re.findall(r'S6: o ponto ',s))
+    medida('desacordos_da_serie_na_construcao',erros_serie((P/'build.log').read_text()),erros_serie('S6: o ponto PT')==1,'Um desacordo de controlo conta uma ocorrência.')
+    medida('dist_disponivel',(SITE/'dist/index.html').is_file(),not (P/'dist-ausente-de-controlo/index.html').is_file(),'Um caminho de controlo ausente não é contado como HTML disponível.')
     comparacao=ler(P/'leituras-comparadas.json')
     for chave in ['cartoes','leituras_comparadas','leituras_com_texto_mudado','ramos_lidos','ramos_que_mudaram_de_sentido']:
         medida(chave,comparacao[chave],comparacao['conhecido_positivo']['encontrado'],'A cópia com um ramo trocado foi detetada pelo comparador dos cartões.')
@@ -80,7 +90,7 @@ def main():
     proibido=lambda f:bool(re.fullmatch(r'indicators/[^/]+\.json',f) or f.startswith(('.maintenance-locks/','sweeps/')) or f=='publisher/recortes/manifest.regioes.json')
     mudados=subprocess.check_output(['git','-C',str(args.motor),'diff','--name-only','b34a675','HEAD'],text=True).splitlines()
     medida('ficheiros_protegidos_mudados_no_motor',contar(mudados,proibido),proibido('indicators/vintages.json') and not proibido('indicators/reler_linhas.py'),'A regra reconhece vintages.json como protegido e o leitor como permitido.')
-    saida={'gerado_por':'medir-cr2.py','estado':'paragem no ponto 4, entrega parcial','medidas':medidas,'linhas':[{k:x[k] for k in ['id','valor_antigo','valor_novo','bandeira_antiga','bandeira_nova','carimbo_anterior','carimbo_novo']} for x in r['linhas']],'alarmes':[x for x in alarme if x.get('severity')=='alarm'],'codigos':codigos,'nao_corridos':['build','ledger:check','check:registo','check:cruzamento -- --with-origin','check:explicacoes','check:discussao','check:cartao','typecheck','recibos no dist','frases no dist']}
+    saida={'gerado_por':'medir-cr2.py','estado':'CR2-b: construção recusada por desacordo da série da dívida pública' ,'medidas':medidas,'linhas':[{k:x[k] for k in ['id','valor_antigo','valor_novo','bandeira_antiga','bandeira_nova','carimbo_anterior','carimbo_novo']} for x in r['linhas']],'alarmes':[x for x in alarme if x.get('severity')=='alarm'],'codigos':codigos,'nao_corridos':['recibos no dist','frases no dist'],'conferencias_sem_dist':['check:explicacoes','check:discussao','check:cartao']}
     (P/'medidas.json').write_text(json.dumps(saida,ensure_ascii=False,indent=2)+'\n')
     print(json.dumps({'medidas':len(medidas),'conhecidos_positivos':sum(x['conhecido_positivo']['passou'] for x in medidas.values()),'estado':saida['estado']},ensure_ascii=False))
 

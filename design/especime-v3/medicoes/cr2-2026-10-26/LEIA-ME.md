@@ -1,17 +1,14 @@
-# CR2: entrega parcial, parada no ponto 4
+# CR2: continuação CR2-b, construção recusada pela série da dívida pública
 
-O mandato exige parar se o painel escrever outro resultado. A corrida delimitada terminou com **91 últimas reconferências iguais, zero divergentes e zero inacessíveis**, mas deu **quatro alarmes e código 1**. O sinal global ficou com os **17 alarmes anteriores**. Não houve construção, capturas ou corrida inteira; as conferências do ponto 6 e a leitura dos recibos no `dist/` ficaram por fazer.
+A paragem do ponto 4 foi esclarecida pelo lugar de direção. Nesta continuação, a construção única foi tentada e recusada antes de produzir `dist/`: a série `divida-publica-2025-paises` conserva 89,7 para Portugal e 81,7 para a União, contra 89,2 e 81,5 nas linhas atualizadas. O `ledger:check` confirma os mesmos dois erros S6. Não há recibos ou frases do HTML novo que se possam declarar conferidos.
 
-## A razão da paragem
+## A razão da paragem anterior e a verificação pela raiz
 
-`indicators/refresh.py`, nas linhas 1475 a 1479 da base do motor, só chama `escreve_sinal_do_sitio` quando não recebe uma seleção de linhas. Com `--linhas`, imprime «corrida delimitada: sem carimbo global do sítio». Portanto, o comando do ponto 4 não pode, por si só, deixar `src/data/verificacao.mjs` com zero alarmes. O ficheiro não foi alterado.
+Os quatro alarmes anteriores eram um artefacto da base da corrida: `refresh.py` executado na worktree do motor compara com os `indicators/*.json` comitados em `master`, cuja linha de base é de 28.09.2026. A regra 11 conserva esses ficheiros. A corrida semanal escreve as linhas de base vivas apenas na árvore principal do motor.
 
-Além disso, a corrida deu estes alarmes, conservados em `painel/refresh_report.json`:
+O lugar de direção repetiu a corrida delimitada a partir da árvore principal, com as linhas de base vivas de 26.10 às 09:31, contra esta worktree do sítio. O resumo em `painel-raiz.resumo.txt` regista às 14:50 UTC: «0 alarm(s) · 0 notice(s)», «91 já escrita(s) hoje» e `exit=0`. Os três alarmes da dimensão `unit` de `tipsna40` e o da página da Comissão já tinham sido absorvidos pela corrida semanal de hoje. O histórico da corrida na worktree, incluindo o seu código 1, fica conservado como prova da base usada nessa tentativa.
 
-- `pib-real-per-capita-2024`, `pib-real-per-capita-2025` e `pib-real-per-capita-2025-ue`: a dimensão `unit` passou de uma para duas categorias contra a base usada pelo painel.
-- A página dos limiares da Comissão: o vigia encontrou mudança no conteúdo numérico. A causa não foi investigada nesta passagem, por força da paragem. Não se presume que seja apenas grafia.
-
-A corrida escreveu 17 reconferências iguais e encontrou 74 já escritas hoje. Os quatro alarmes não são divergências dos valores das linhas. O relatório histórico do C2 descreve alarmes das mesmas categorias; isso não prova que a causa de hoje seja a mesma.
+A corrida delimitada não escreve o sinal global. `src/data/verificacao.mjs` conserva os 17 alarmes da corrida semanal, como no C2 de 05.10. A corrida semanal seguinte, prevista para 02.11, reconfere e reescreve o sinal.
 
 ## O que mudou no livro
 
@@ -19,7 +16,7 @@ As 17 linhas foram relidas pelo cliente da casa, em 12 pedidos com resposta 200.
 
 Cada linha recebeu uma atualização e duas entradas de proveniência, 51 entradas no total: valor, acesso e excerto. As correções antigas ficaram intactas. A divergência de 26.10 foi conservada e o painel acrescentou a igualdade. O `published_at` veio do carimbo do corpo; o dia local do carimbo e o dia UTC coincidem nas 17 linhas. Saíram as marcas provisórias das dívidas das empresas e das famílias de 2024. As histórias dos valores foram seladas pelo guião existente.
 
-Isto descreve o livro na worktree, não uma publicação. Os recibos e as frases construídas ainda não foram conferidos.
+Isto descreve o livro na worktree, não uma publicação. A recusa da construção impede a conferência dos recibos e das frases no HTML.
 
 ## As linhas, medidas de `releitura.json`
 
@@ -53,12 +50,13 @@ O carimbo anterior é o do último corpo alojado que contém o valor selado. Pod
 | Atualização e duas proveniências por linha | Aplicadas; 136 plantas da composição detetadas |
 | Valor, excerto, acesso e divergência conservada | Conferidos pelo guião da aplicação e pela medição das linhas |
 | Data de publicação | Atualizada; 102 plantas detetadas |
-| Recibos nas duas edições | Pendente: não houve construção após a paragem |
+| Recibos nas duas edições | Pendente: a construção CR2-b recusou a série desatualizada |
 | Frases e comparações | Parcial: nove cartões, 18 leituras, nenhuma mudança de texto; nenhum dos 50 ramos inverteu; o comparador detetou a planta de um ramo trocado |
-| Livro-razão e conferências do ponto 6 | Pendentes: não correram após a paragem |
-| Painel delimitado | 91 últimas reconferências iguais, mas quatro alarmes; código 1 |
+| Livro-razão e conferências do ponto 6 | Executadas; códigos e impedimentos na tabela abaixo |
+| Painel delimitado | Corrida anterior: quatro alarmes, código 1; corrida pela raiz: 91 já escritas, zero alarmes, código 0 |
 | Sinal global | Intacto, com 17 alarmes; o comando delimitado não o escreve |
-| Construção, capturas e corrida inteira | Não correram |
+| Construção | Uma tentativa, código 1; sem `dist/` |
+| Capturas e corrida inteira | Não correram; pertencem ao lugar de direção |
 
 ## As duas ferramentas
 
@@ -72,7 +70,7 @@ Os guiões históricos do C2 ficaram intactos. A origem das frases inglesas das 
 
 `leituras-cr2.mjs` mediu antes e depois pelos resolvedores do sítio. Os nove cartões têm valores de régua diferentes, mas as 18 leituras nas duas edições têm texto igual e os 50 ramos conservam o sentido. A planta do comparador alterou exatamente um ramo e foi detetada.
 
-`frases-cr2.mjs antes` guardou 50 frases e encontrou 21 ficheiros de `src/` que contêm identificadores das linhas. A fotografia anterior vem dos resolvedores: não existia `dist/` nesta worktree. A fotografia posterior no HTML, as explicações do Orçamento, os itens de discussão e os recibos não foram medidos. Não se declara nenhuma frase do `dist/` como conferida. Os guiões `frases-cr2.mjs` e `recibos-cr2.mjs` estão preparados, mas os seus modos posteriores à construção não foram executados.
+`frases-cr2.mjs antes` guardou 50 frases e encontrou 21 ficheiros de `src/` que contêm identificadores das linhas. A fotografia anterior vem dos resolvedores: não existia `dist/` nesta worktree. A construção CR2-b parou no desacordo da série antes de gerar HTML. A fotografia posterior no HTML, as explicações do Orçamento, os itens de discussão e os recibos não puderam ser medidos. Não se declara nenhuma frase do `dist/` como conferida. Os guiões `frases-cr2.mjs` e `recibos-cr2.mjs` estão preparados, mas os seus modos posteriores à construção não foram executados. A contagem de frases iguais no HTML permanece por verificar; as 18 leituras iguais e os 50 ramos conservados acima são medidas dos resolvedores anteriores, não do `dist/`.
 
 ## Códigos lidos dos ficheiros
 
@@ -91,22 +89,31 @@ Os guiões históricos do C2 ficaram intactos. A origem das frases inglesas das 
 | `releitura-corpos` | 0 |
 | `releitura-rede` | 0 |
 | `selar` | 0 |
+| `build` (CR2-b) | 1 |
+| `ledger-check` (CR2-b) | 1 |
+| `check-registo` (CR2-b) | 0 |
+| `check-cruzamento -- --with-origin` (CR2-b) | 0 |
+| `check-explicacoes` (CR2-b) | 1 |
+| `check-discussao` (CR2-b) | 1 |
+| `check-cartao` (CR2-b) | 1 |
+| `typecheck` (CR2-b) | 0 |
 
-O primeiro ensaio da aplicação saiu a 1 por uma lista de correções com margem diferente. Não escreveu linhas. A correção da composição passou no segundo ensaio. O painel saiu a 1 pelos quatro alarmes descritos. Os restantes códigos desta tabela são zero.
+O primeiro ensaio da aplicação saiu a 1 por uma lista de correções com margem diferente. Não escreveu linhas. A correção da composição passou no segundo ensaio. O painel saiu a 1 pelos quatro alarmes descritos. Na CR2-b, `build` e `ledger-check` recusam os dois pontos desatualizados da série; `check-explicacoes` e `check-discussao` terminam com `ENOENT` por falta de HTML; `check-cartao` anuncia «não existe dist/». Não são resultados de aprovação dessas três conferências. O cruzamento usou `RESEARCHHUB_DIR` na worktree do motor e passou com dois avisos sobre `built_at` de outros estudos, sem nenhuma linha alterada nomeada.
 
 `medidas.json` foi escrito por `medir-cr2.py`, com um conhecido-positivo para cada medida. Os códigos são os dos ficheiros, não inferidos de mensagens. Os registos têm os caminhos locais substituídos. A pasta `painel/` conserva os pedidos, os corpos e os resultados da corrida delimitada; os corpos da releitura vivem no motor. Os ficheiros de estado protegidos do motor não foram alterados.
 
-## Continuação necessária pelo lugar de direção
+## O que ficou aberto
 
-1. Resolver o desacordo do ponto 4: confirmar a base de comparação dos três alarmes de estrutura, reler a página da Comissão e definir como publicar o sinal global depois de uma corrida delimitada completa. A pergunta enviada durante a passagem sobre gerar o sinal pela função existente não autorizava ignorar alarmes; não foi executada.
-2. Só depois, retomar a construção única e as conferências pedidas. O inventário das frases ainda contém a contagem anterior das revisões de proveniência e terá de ser atualizado com a contagem medida. As mudanças das marcas provisórias também precisam da conferência dos rótulos.
-3. Conferir as frases do HTML, os recibos nas duas edições e completar o relatório. A corrida inteira, a leitura a frio, as capturas e a aterragem continuam a pertencer ao lugar de direção.
+1. A série da dívida pública por país tem de ser relida e atualizada pelo motor, incluindo a proveniência e as correções exigidas pelo exportador, e voltar a atravessar. Não se alteraram à mão os dois pontos para contornar S6. Esta dependência não estava prevista nos pontos 5 e 6; exige alargar a continuação e permitir outra tentativa de construção. Foi pedida uma decisão sobre essa extensão.
+2. Sem essa construção, os 34 recibos e as frases das duas edições no `dist/` permanecem por verificar. As três conferências que precisam do HTML têm de voltar a correr depois de existir uma construção válida. O `ledger:check` tem de confirmar a série corrigida.
+3. A leitura a frio, a corrida inteira, as capturas e a aterragem pertencem ao lugar de direção.
+4. Nota para as ferramentas: `reler_linhas.py` e a corrida delimitada do painel precisam das linhas de base vivas. Devem correr a partir da árvore principal do motor ou receber a pasta das linhas de base por parâmetro.
 
 ## Custo e commits
 
-A contagem das chamadas até à medição final está em `custo.json`, extraída do registo desta sessão. Houve uma corrida de ensaios do motor, duas tentativas de ensaio da aplicação, uma aplicação, um passo de publicação, duas releituras, uma selagem e uma corrida delimitada do painel. As medições dos cartões e das frases têm os seus códigos na tabela. Não houve nenhuma corrida inteira, construção ou captura.
+`custo.json` conserva a medição da passagem original e mede separadamente esta continuação a partir do registo da sessão. A CR2-b tentou uma construção e executou uma vez cada uma das sete conferências pedidas. Não houve corrida inteira, captura, gate do motor ou alteração do motor nesta continuação. Os códigos estão nos ficheiros; `medidas.json` foi regenerado pelo guião com as novas medidas e os seus controlos positivos.
 
-Os recibos de commit e as cabeças verificadas ficam em `entrega.json`. A entrega é parcial e não está pronta para aterragem.
+Os recibos anteriores ficam em `entrega.json`. O commit desta continuação guarda o relatório e as provas do novo bloqueio; a entrega continua sem condições de aterragem.
 
 ### Recibos aceites
 

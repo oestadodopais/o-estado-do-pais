@@ -1,6 +1,6 @@
 {
   "gerado_por": "medir-cr2.py",
-  "estado": "paragem no ponto 4, entrega parcial",
+  "estado": "CR2-b: construção recusada por desacordo da série da dívida pública",
   "medidas": {
     "linhas_relidas": {
       "valor": 17,
@@ -93,6 +93,41 @@
         "prova": "O extrator lê três num sinal de controlo."
       }
     },
+    "alarmes_do_painel_pela_raiz": {
+      "valor": 0,
+      "conhecido_positivo": {
+        "passou": true,
+        "prova": "O mesmo leitor encontra três alarmes num resumo de controlo."
+      }
+    },
+    "codigo_painel_pela_raiz": {
+      "valor": 0,
+      "conhecido_positivo": {
+        "passou": true,
+        "prova": "O mesmo leitor encontra código um num resumo de controlo."
+      }
+    },
+    "reconferencias_ja_escritas_pela_raiz": {
+      "valor": 91,
+      "conhecido_positivo": {
+        "passou": true,
+        "prova": "O mesmo leitor encontra duas reconferências num resumo de controlo."
+      }
+    },
+    "desacordos_da_serie_na_construcao": {
+      "valor": 2,
+      "conhecido_positivo": {
+        "passou": true,
+        "prova": "Um desacordo de controlo conta uma ocorrência."
+      }
+    },
+    "dist_disponivel": {
+      "valor": false,
+      "conhecido_positivo": {
+        "passou": true,
+        "prova": "Um caminho de controlo ausente não é contado como HTML disponível."
+      }
+    },
     "cartoes": {
       "valor": 9,
       "conhecido_positivo": {
@@ -149,8 +184,57 @@
         "prova": "Os códigos são lidos dos ficheiros; o leitor distingue zero de um."
       }
     },
+    "codigo_build": {
+      "valor": 1,
+      "conhecido_positivo": {
+        "passou": true,
+        "prova": "Os códigos são lidos dos ficheiros; o leitor distingue zero de um."
+      }
+    },
+    "codigo_check-cartao": {
+      "valor": 1,
+      "conhecido_positivo": {
+        "passou": true,
+        "prova": "Os códigos são lidos dos ficheiros; o leitor distingue zero de um."
+      }
+    },
+    "codigo_check-cruzamento": {
+      "valor": 0,
+      "conhecido_positivo": {
+        "passou": true,
+        "prova": "Os códigos são lidos dos ficheiros; o leitor distingue zero de um."
+      }
+    },
+    "codigo_check-discussao": {
+      "valor": 1,
+      "conhecido_positivo": {
+        "passou": true,
+        "prova": "Os códigos são lidos dos ficheiros; o leitor distingue zero de um."
+      }
+    },
+    "codigo_check-explicacoes": {
+      "valor": 1,
+      "conhecido_positivo": {
+        "passou": true,
+        "prova": "Os códigos são lidos dos ficheiros; o leitor distingue zero de um."
+      }
+    },
+    "codigo_check-registo": {
+      "valor": 0,
+      "conhecido_positivo": {
+        "passou": true,
+        "prova": "Os códigos são lidos dos ficheiros; o leitor distingue zero de um."
+      }
+    },
     "codigo_frases-antes": {
       "valor": 0,
+      "conhecido_positivo": {
+        "passou": true,
+        "prova": "Os códigos são lidos dos ficheiros; o leitor distingue zero de um."
+      }
+    },
+    "codigo_ledger-check": {
+      "valor": 1,
       "conhecido_positivo": {
         "passou": true,
         "prova": "Os códigos são lidos dos ficheiros; o leitor distingue zero de um."
@@ -213,6 +297,13 @@
       }
     },
     "codigo_selar": {
+      "valor": 0,
+      "conhecido_positivo": {
+        "passou": true,
+        "prova": "Os códigos são lidos dos ficheiros; o leitor distingue zero de um."
+      }
+    },
+    "codigo_typecheck": {
       "valor": 0,
       "conhecido_positivo": {
         "passou": true,
@@ -412,7 +503,14 @@
     "aplicacao-ensaio-2": 0,
     "aplicacao-ensaio": 1,
     "aplicacao": 0,
+    "build": 1,
+    "check-cartao": 1,
+    "check-cruzamento": 0,
+    "check-discussao": 1,
+    "check-explicacoes": 1,
+    "check-registo": 0,
     "frases-antes": 0,
+    "ledger-check": 1,
     "leituras-antes": 0,
     "leituras-comparadas": 0,
     "leituras-depois": 0,
@@ -421,18 +519,16 @@
     "publicacao": 0,
     "releitura-corpos": 0,
     "releitura-rede": 0,
-    "selar": 0
+    "selar": 0,
+    "typecheck": 0
   },
   "nao_corridos": [
-    "build",
-    "ledger:check",
-    "check:registo",
-    "check:cruzamento -- --with-origin",
-    "check:explicacoes",
-    "check:discussao",
-    "check:cartao",
-    "typecheck",
     "recibos no dist",
     "frases no dist"
+  ],
+  "conferencias_sem_dist": [
+    "check:explicacoes",
+    "check:discussao",
+    "check:cartao"
   ]
 }
