@@ -1,0 +1,72 @@
+{
+  "petroleo": {
+    "frase_na_fonte": "a média dos contratos de 2027 era de cerca de 95 USD, 11% acima dos 86,1 USD assumidos pelo MF",
+    "valores": [
+      "86,1",
+      "95",
+      "11"
+    ],
+    "decisao_a6": "Os contratos estão 11% acima do pressuposto da proposta.",
+    "codigo": 0
+  },
+  "eurostat": {
+    "data_na_fonte": "2026-10-21",
+    "linha": "og1-eurostat-portugal-2025",
+    "integra_selecao_autorizada": false,
+    "limite": "A fonte existe; a data do item usa published_at da linha existente divida-publica-2024, conferida em data-a6.json."
+  },
+  "provas": [
+    {
+      "id": "og1-utao-brent-mf-2027",
+      "document": {
+        "title": "Relatório UTAO n.º 17/2026: Apreciação preliminar da Proposta de Orçamento do Estado para 2027",
+        "file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
+        "source_sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
+        "locator": "§99; p. 52 PDF (51 impressa)",
+        "page": 52,
+        "printed_page": 51
+      },
+      "recibo": {
+        "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=x5W9DWX1SUUrDgk87wy5NMatoUULSng56w1Z%252bMjyitbqKuz9bknk5nU1q8XRioztkHFMhGG4FLPAmD72hlT02%252f97l3x04zLtts1eMFSzdTkZcuvshggWj%252bb2DxFmmytGD7sWkqEG45EKYHIpiz4VN2nJy10c5jVu05uMKmsnrXIoOjhtQDQgm%252fAE2JRps%252baBtht6712ce3RiDaG1%252bDvMtFwxKEv2GT9Y53kK3%252fuz%252bm85BxEfyUi4DmQi3Fu4ratBblL0ejKZO6OhdyI5gE31XJwy7qyjFBLZVtwN3oK0iuhhIEel72IU9lcgQER0Vz%252fVWVabSmbSJY%252b5f6%252fhsTr1DcFcw36k70SLwg%252fwWhCaP6jwyCm6%252f45Z6Xhy5GkIUmf7LtdBvPX0qLmEWGTTuPTYlx9Btvr5JiggjHGLibAfRX8%253d&fich=9b53fcf7-72f9-4134-ad44-ebb6655f3760.pdf&Inline=true",
+        "endereco_final": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=x5W9DWX1SUUrDgk87wy5NMatoUULSng56w1Z%252bMjyitbqKuz9bknk5nU1q8XRioztkHFMhGG4FLPAmD72hlT02%252f97l3x04zLtts1eMFSzdTkZcuvshggWj%252bb2DxFmmytGD7sWkqEG45EKYHIpiz4VN2nJy10c5jVu05uMKmsnrXIoOjhtQDQgm%252fAE2JRps%252baBtht6712ce3RiDaG1%252bDvMtFwxKEv2GT9Y53kK3%252fuz%252bm85BxEfyUi4DmQi3Fu4ratBblL0ejKZO6OhdyI5gE31XJwy7qyjFBLZVtwN3oK0iuhhIEel72IU9lcgQER0Vz%252fVWVabSmbSJY%252b5f6%252fhsTr1DcFcw36k70SLwg%252fwWhCaP6jwyCm6%252f45Z6Xhy5GkIUmf7LtdBvPX0qLmEWGTTuPTYlx9Btvr5JiggjHGLibAfRX8%253d&fich=9b53fcf7-72f9-4134-ad44-ebb6655f3760.pdf&Inline=true",
+        "acedido_em": "2026-10-26T13:48:23.699914+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "ficheiro": "utao-iniciativa.pdf",
+        "estado": 200,
+        "tipo": "application/pdf",
+        "segundos": 2.662,
+        "erro": null,
+        "redirecionamentos": [],
+        "bytes": 2323048,
+        "sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8"
+      }
+    },
+    {
+      "id": "og1-eurostat-portugal-2025",
+      "document": {
+        "title": "Euro area government deficit at 3.0% and EU at 3.1% of GDP",
+        "file": "content/30 Orcamento 2027 Generalidade/source/eurostat.html",
+        "source_sha256": "7077cd8c3258184e4c1244998718b396106681479531dd2c1da3d6088d92cd52",
+        "locator": "Corpo da página; excerto localizado por texto"
+      },
+      "recibo": {
+        "pedido": "https://ec.europa.eu/eurostat/web/products-euro-indicators/w/2-21102026-ap",
+        "endereco_final": "https://ec.europa.eu/eurostat/web/products-euro-indicators/w/2-21102026-ap",
+        "acedido_em": "2026-10-26T13:46:44.172098+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "ficheiro": "eurostat.html",
+        "estado": 200,
+        "tipo": "text/html;charset=UTF-8",
+        "segundos": 0.295,
+        "erro": null,
+        "redirecionamentos": [],
+        "bytes": 725519,
+        "sha256": "7077cd8c3258184e4c1244998718b396106681479531dd2c1da3d6088d92cd52"
+      }
+    }
+  ],
+  "manifest_sha256": "301372344c8e5e453d3997b6abfc94c1f100fa9857c08e7578f724ac6c4374ec",
+  "codigo": 0
+}

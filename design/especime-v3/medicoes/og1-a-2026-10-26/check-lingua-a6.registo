@@ -1,0 +1,97 @@
+
+> o-estado-do-pais@0.1.0 check:lingua
+> node tests/hb1/lingua.mjs && node scripts/check-lingua.mjs
+
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
++ actual - expected
+
++ [
++   'o rótulo da fonte «be-voto» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
++   'o rótulo da fonte «governo-eco-juros» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
++   'o rótulo da fonte «governo-observador-saldo» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
++   'o rótulo da fonte «governo-rtp-combustiveis» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
++   'o rótulo da fonte «governo-rtp-habitacao» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
++   'o rótulo da fonte «governo-rtp-previsoes» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
++   'o rótulo da fonte «il-prioridades» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
++   'o rótulo da fonte «livre-posicao» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
++   'o rótulo da fonte «pcp-comite» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
++   'o rótulo da fonte «pcp-raimundo» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
++   'o rótulo da fonte «ps-abstencao» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
++   'o rótulo da fonte «brent-contratos-2027» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
++   'o rótulo da fonte «brent-diferenca» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
++   'o rótulo da fonte «brent-mf-2027» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
++   'o rótulo da fonte «despesa-liquida-ce» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
++   'o rótulo da fonte «despesa-liquida-limiar» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
++   'o rótulo da fonte «despesa-liquida-mf-antes» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
++   'o rótulo da fonte «despesa-liquida-mf-defesa» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
++   'o rótulo da fonte «divida-2025-revista» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
++   'o rótulo da fonte «juros-montante» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
++   'o rótulo da fonte «juros-variacao» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
++   'o rótulo da fonte «impacto das novas medidas de política orçamental no saldo de 2027, a favor do saldo» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
++   'o rótulo da fonte «impact of new fiscal policy measures on the 2027 balance, in favour of the balance» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
++   'o rótulo da fonte «UTAO, §15» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
++   'o rótulo da fonte «UTAO, §42» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
++   'o rótulo da fonte «pib-2026» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
++   'o rótulo da fonte «politicas-peso» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
++   'o rótulo da fonte «politicas-saldo» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
++   'o rótulo da fonte «saldo-2026» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
++   'o rótulo da fonte «Saldo em contabilidade nacional 2027» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
++   'o rótulo da fonte «saude-sem-prr» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
++   'o rótulo da fonte «saude-variacao» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
++   'o rótulo da fonte «taxa-implicita-2026» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
++   'o rótulo da fonte «taxa-implicita-2027» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.'
++ ]
+- []
+
+    at file://<worktree>/tests/hb1/lingua.mjs:6:8
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5) {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: [
+    'o rótulo da fonte «be-voto» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
+    'o rótulo da fonte «governo-eco-juros» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
+    'o rótulo da fonte «governo-observador-saldo» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
+    'o rótulo da fonte «governo-rtp-combustiveis» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
+    'o rótulo da fonte «governo-rtp-habitacao» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
+    'o rótulo da fonte «governo-rtp-previsoes» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
+    'o rótulo da fonte «il-prioridades» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
+    'o rótulo da fonte «livre-posicao» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
+    'o rótulo da fonte «pcp-comite» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
+    'o rótulo da fonte «pcp-raimundo» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
+    'o rótulo da fonte «ps-abstencao» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
+    'o rótulo da fonte «brent-contratos-2027» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
+    'o rótulo da fonte «brent-diferenca» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
+    'o rótulo da fonte «brent-mf-2027» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
+    'o rótulo da fonte «despesa-liquida-ce» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
+    'o rótulo da fonte «despesa-liquida-limiar» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
+    'o rótulo da fonte «despesa-liquida-mf-antes» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
+    'o rótulo da fonte «despesa-liquida-mf-defesa» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
+    'o rótulo da fonte «divida-2025-revista» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
+    'o rótulo da fonte «juros-montante» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
+    'o rótulo da fonte «juros-variacao» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
+    'o rótulo da fonte «impacto das novas medidas de política orçamental no saldo de 2027, a favor do saldo» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
+    'o rótulo da fonte «impact of new fiscal policy measures on the 2027 balance, in favour of the balance» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
+    'o rótulo da fonte «UTAO, §15» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
+    'o rótulo da fonte «UTAO, §42» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
+    'o rótulo da fonte «pib-2026» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
+    'o rótulo da fonte «politicas-peso» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
+    'o rótulo da fonte «politicas-saldo» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
+    'o rótulo da fonte «saldo-2026» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
+    'o rótulo da fonte «Saldo em contabilidade nacional 2027» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
+    'o rótulo da fonte «saude-sem-prr» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
+    'o rótulo da fonte «saude-variacao» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
+    'o rótulo da fonte «taxa-implicita-2026» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.',
+    'o rótulo da fonte «taxa-implicita-2027» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.'
+  ],
+  expected: [],
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}
+
+Node.js v22.23.1

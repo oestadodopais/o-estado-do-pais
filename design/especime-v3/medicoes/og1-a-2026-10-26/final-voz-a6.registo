@@ -1,0 +1,19 @@
+
+> o-estado-do-pais@0.1.0 check:voz
+> node tests/hb1/voz-portas.mjs && node scripts/check-voz.mjs
+
+{"controlos":550,"plantas":1650,"catalogo":0,"nomeadas":550,"de_serie":{"portugal":12,"uniao":4},"pares_distintos":2,"plantas_recusadas":["o rótulo trocado","o href para /","o data-de-linha tirado"],"erros":0}
+  B1: 40 páginas pela lista fechada; 8 temas conferidos.
+  EX1: 12 página(s) com as palavras das explicações e as frases da semana conferidas pelas suas células.
+
+  PORTÃO DA VOZ · 2 problema(s)
+
+    · PALAVRA PROIBIDA «limiar» em 4 página(s) da superfície.
+      primeiro: en/ledger/og1-utao-despesa-liquida-limiar/index.html
+      «…esholdThe name at the source «»What this number isIt is the threshold as a share of GDP used to assess compliance with the net ex…»
+      escreve-se «valor de referência» · decisão do diretor de 15.09.2026 de manhã, aplicada pelo bloco P1
+    · PALAVRA PROIBIDA «toque em» em 1 página(s) da superfície.
+      primeiro: o-que-se-discute/index.html
+      «…ois.A recomendaçãoAo leitor: a apreciação da UTAO está a um toque em cada número desta página, e lê-se antes das intervenções do…»
+      escreve-se nada, ou «escolha» · decalque de «tap», e é uma frase de instrução numa página de conteúdo
+

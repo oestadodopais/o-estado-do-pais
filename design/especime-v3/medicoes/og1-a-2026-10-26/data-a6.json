@@ -1,0 +1,68 @@
+{
+  "codigo": 0,
+  "selecao": [
+    "og1-utao-p15",
+    "og1-utao-p42",
+    "og1-utao-pib-2026",
+    "og1-utao-saldo-2026",
+    "og1-utao-politicas-peso",
+    "og1-utao-juros-variacao",
+    "og1-utao-juros-montante",
+    "og1-utao-taxa-implicita-2026",
+    "og1-utao-taxa-implicita-2027",
+    "og1-utao-novas-saldo",
+    "og1-utao-despesa-liquida-ce",
+    "og1-utao-despesa-liquida-limiar",
+    "og1-utao-despesa-liquida-mf-defesa",
+    "og1-utao-despesa-liquida-mf-antes",
+    "og1-utao-divida-2025-revista",
+    "og1-utao-brent-contratos-2027",
+    "og1-utao-brent-mf-2027",
+    "og1-utao-brent-diferenca",
+    "og1-utao-politicas-saldo",
+    "og1-utao-saude-variacao",
+    "og1-utao-saude-sem-prr",
+    "og1-utao-saldo-me-2027",
+    "og1-ps-abstencao",
+    "og1-pcp-comite",
+    "og1-pcp-raimundo",
+    "og1-be-voto",
+    "og1-il-prioridades",
+    "og1-livre-posicao",
+    "og1-governo-rtp-combustiveis",
+    "og1-governo-rtp-previsoes",
+    "og1-governo-rtp-habitacao",
+    "og1-governo-eco-juros",
+    "og1-governo-observador-saldo"
+  ],
+  "linhaDaData": "divida-publica-2024",
+  "campo": "published_at",
+  "data": "2026-10-21",
+  "linhaDaDataSha256": "06f427c6a41434969b894317eeb728ed96eabd0dfdb1429fd1a6282afb5a5447",
+  "respostaEurostat": {
+    "ficheiro": "indicators/out/series-paises/2026-10-26/002-divida-publica-2025-paises.json",
+    "sha256": "ba616d618f4127157b1d390cbe341820963a6ba561759dfd8e9f79f2c530f25c",
+    "updated": "2026-10-21T11:00:00+0200",
+    "coordenadas": {
+      "freq": "A",
+      "na_item": "GD",
+      "sector": "S13",
+      "unit": "PC_GDP",
+      "geo": "PT",
+      "time": "2025"
+    },
+    "valor": 89.2
+  },
+  "confirmacaoNaPesquisa": {
+    "id": "og1-eurostat-portugal-2025",
+    "data": "2026-10-21",
+    "document": {
+      "title": "Euro area government deficit at 3.0% and EU at 3.1% of GDP",
+      "file": "content/30 Orcamento 2027 Generalidade/source/eurostat.html",
+      "source_sha256": "7077cd8c3258184e4c1244998718b396106681479531dd2c1da3d6088d92cd52",
+      "locator": "Corpo da página; excerto localizado por texto"
+    }
+  },
+  "limite": "A data vem do campo published_at de uma linha de dívida já existente. A resposta alojada da série de dívida e o comunicado do Eurostat confirmam essa data e os 89,2% de Portugal em 2025. O período 2024 dessa linha não é usado como ano dos dados de 2025.",
+  "diagnosticoInicial": "A seleção de 33 linhas não continha a data. A pesquisa posterior encontrou a data já publicada no sítio; a pergunta sobre retirar a data ou alargar a seleção foi retirada. Nenhuma dessas alterações foi feita."
+}

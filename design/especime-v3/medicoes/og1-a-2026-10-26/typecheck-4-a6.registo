@@ -1,0 +1,6 @@
+
+> o-estado-do-pais@0.1.0 typecheck
+> tsc -p tsconfig.check.json
+
+src/lib/discussao.mjs(28,42): error TS2339: Property 'apenasDatas' does not exist on type '{ slug: string; escrita: string; titulo: { pt: (string | { periodo: string; })[]; en: (string | { periodo: string; })[]; }; afirmacoes: string[]; abertura: never[]; naoDiz: never[]; linhas: never[]; recibos: {}; seccoes: ({ ...; } | ... 1 more ... | { ...; })[]; apenasDatas: string[]; } | { ...; }'.
+  Property 'apenasDatas' does not exist on type '{ slug: string; escrita: string; titulo: { pt: any[]; en: any[]; }; afirmacoes: string[]; abertura: never[]; naoDiz: never[]; recibos: { [k: string]: string[]; }; linhas: string[]; seccoes: { id: string; titulo: { pt: string; en: string; }; conteudo: any[]; }[]; }'.

@@ -1,0 +1,40 @@
+
+> o-estado-do-pais@0.1.0 check:pais
+> node scripts/check-pais.mjs && node tests/inicio/linhas-da-casa.mjs --prova && node tests/inicio/estudos-em-curso.mjs
+
+E1: prazo e razão conferidos pela chamada da check:pais.
+T9: 30 cartões com valor de referência nos temas e nas entradas, 10 fora e 20 dentro, cada um com a cor do seu estado.
+B1 país: 47 medidas, 9 temas, 9730 menus, 4 mudanças declaradas, 4 listas com teto 8, 2 registos de 88 mudanças, 114 títulos de edição.
+A1: og1-utao-pib-2026 está em lugar-das-linhas.mjs e não deriva lugar nenhum.
+A1: og1-utao-saldo-2026 está em lugar-das-linhas.mjs e não deriva lugar nenhum.
+A1: og1-utao-saldo-me-2027 está em lugar-das-linhas.mjs e não deriva lugar nenhum.
+A1: og1-utao-divida-2025-revista está em lugar-das-linhas.mjs e não deriva lugar nenhum.
+A1: og1-utao-politicas-saldo está em lugar-das-linhas.mjs e não deriva lugar nenhum.
+A1: og1-utao-politicas-peso está em lugar-das-linhas.mjs e não deriva lugar nenhum.
+A1: og1-utao-juros-variacao está em lugar-das-linhas.mjs e não deriva lugar nenhum.
+A1: og1-utao-juros-montante está em lugar-das-linhas.mjs e não deriva lugar nenhum.
+A1: og1-utao-taxa-implicita-2026 está em lugar-das-linhas.mjs e não deriva lugar nenhum.
+A1: og1-utao-taxa-implicita-2027 está em lugar-das-linhas.mjs e não deriva lugar nenhum.
+A1: og1-utao-novas-saldo está em lugar-das-linhas.mjs e não deriva lugar nenhum.
+A1: og1-utao-brent-mf-2027 está em lugar-das-linhas.mjs e não deriva lugar nenhum.
+A1: og1-utao-brent-contratos-2027 está em lugar-das-linhas.mjs e não deriva lugar nenhum.
+A1: og1-utao-brent-diferenca está em lugar-das-linhas.mjs e não deriva lugar nenhum.
+A1: og1-utao-despesa-liquida-ce está em lugar-das-linhas.mjs e não deriva lugar nenhum.
+A1: og1-utao-despesa-liquida-limiar está em lugar-das-linhas.mjs e não deriva lugar nenhum.
+A1: og1-utao-despesa-liquida-mf-antes está em lugar-das-linhas.mjs e não deriva lugar nenhum.
+A1: og1-utao-despesa-liquida-mf-defesa está em lugar-das-linhas.mjs e não deriva lugar nenhum.
+A1: og1-utao-saude-variacao está em lugar-das-linhas.mjs e não deriva lugar nenhum.
+A1: og1-utao-saude-sem-prr está em lugar-das-linhas.mjs e não deriva lugar nenhum.
+A1: og1-utao-p15 está em lugar-das-linhas.mjs e não deriva lugar nenhum.
+A1: og1-utao-p42 está em lugar-das-linhas.mjs e não deriva lugar nenhum.
+A1: og1-ps-abstencao está em lugar-das-linhas.mjs e não deriva lugar nenhum.
+A1: og1-pcp-comite está em lugar-das-linhas.mjs e não deriva lugar nenhum.
+A1: og1-pcp-raimundo está em lugar-das-linhas.mjs e não deriva lugar nenhum.
+A1: og1-be-voto está em lugar-das-linhas.mjs e não deriva lugar nenhum.
+A1: og1-il-prioridades está em lugar-das-linhas.mjs e não deriva lugar nenhum.
+A1: og1-livre-posicao está em lugar-das-linhas.mjs e não deriva lugar nenhum.
+A1: og1-governo-rtp-previsoes está em lugar-das-linhas.mjs e não deriva lugar nenhum.
+A1: og1-governo-rtp-combustiveis está em lugar-das-linhas.mjs e não deriva lugar nenhum.
+A1: og1-governo-rtp-habitacao está em lugar-das-linhas.mjs e não deriva lugar nenhum.
+A1: og1-governo-eco-juros está em lugar-das-linhas.mjs e não deriva lugar nenhum.
+A1: og1-governo-observador-saldo está em lugar-das-linhas.mjs e não deriva lugar nenhum.

@@ -1,0 +1,73 @@
+código 1 · 8 s · 34 linhas em <temporario>/og1a6-final-lingua.log
+--- linhas de falha ou aviso (até quarenta) ---
+5:HB1 língua: name_en sem declaração e declaração inglesa órfã recusados; vermelho 1, verde 0.
+--- últimas oito linhas ---
+      Uma edição declara-se «pt», «en», ou «null» quando não está em língua nenhuma: um ano, uma data, um código de série. «null» ESCRITO é uma decisão; a chave em falta é ninguém ter olhado.
+    · a edição «2026-10-06» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+      Uma edição declara-se «pt», «en», ou «null» quando não está em língua nenhuma: um ano, uma data, um código de série. «null» ESCRITO é uma decisão; a chave em falta é ninguém ter olhado.
+    · a edição «2026-09-28» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+      Uma edição declara-se «pt», «en», ou «null» quando não está em língua nenhuma: um ano, uma data, um código de série. «null» ESCRITO é uma decisão; a chave em falta é ninguém ter olhado.
+    · a edição «2026-10-22» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+      Uma edição declara-se «pt», «en», ou «null» quando não está em língua nenhuma: um ano, uma data, um código de série. «null» ESCRITO é uma decisão; a chave em falta é ninguém ter olhado.
+
+código 0 · 4 s · 7 linhas em <temporario>/og1a6-final-nomes.log
+--- linhas de falha ou aviso (até quarenta) ---
+6:  nomes oficiais · 9759 página(s) lidas, 49 analisadas · 44 nome(s) em recibo (44 esperados, derivados do ficheiro), 0 em título de cartão · confirmados pela marca por fonte: 7 do INE, 15 da PORDATA · recusados: 19
+7:  ✓ nenhuma página rende um nome oficial que o motor não confirme como a mesma medida, e as 40 plantas foram recusadas ou aceites como deviam.
+--- últimas oito linhas ---
+
+> o-estado-do-pais@0.1.0 check:nomes
+> node scripts/check-nomes-oficiais.mjs --prova
+
+
+  nomes oficiais · 9759 página(s) lidas, 49 analisadas · 44 nome(s) em recibo (44 esperados, derivados do ficheiro), 0 em título de cartão · confirmados pela marca por fonte: 7 do INE, 15 da PORDATA · recusados: 19
+  ✓ nenhuma página rende um nome oficial que o motor não confirme como a mesma medida, e as 40 plantas foram recusadas ou aceites como deviam.
+código 0 · 1 s · 6 linhas em <temporario>/og1a6-final-formato.log
+--- últimas oito linhas ---
+
+> o-estado-do-pais@0.1.0 check:formato
+> node tests/inicio/formato-dos-numeros.mjs --prova
+
+formato dos números · 9730 páginas, 64069 valores, 67833 algarismos declarados vistos à procura do símbolo ao lado («%» 17062 com espaço e 0 colado(s); «€» 0 depois e 0 antes) · 10 de 10 plantas a morder
+  ✓ todos os valores rendidos seguem o formato da casa, com o sinal menos, o espaço antes de «%» e o dinheiro com a palavra.
+código 0 · 13 s · 685 linhas em <temporario>/og1a6-final-navegacao.log
+--- linhas de falha ou aviso (até quarenta) ---
+6:  "erros": [],
+--- últimas oito linhas ---
+    {
+      "nome": "r2-base-do-indice-trocada",
+      "celula": "FC5",
+      "mordeu": true,
+      "queixa": "FC5 · /municipios/evora/ · poderDeCompra: a comparação diz «Está acima da média de Portugal (101).» e a recomposição dá «Está acima da média de Portugal (100).»"
+    }
+  ]
+}
+código 0 · 1 s · 10 linhas em <temporario>/og1a6-final-sinais.log
+--- linhas de falha ou aviso (até quarenta) ---
+9:  mordeu · um resolvedor que recusa tudo (código 1)
+10:  mordeu · o passo da cadeia do build com um resolvedor que recusa tudo (código 1)
+--- últimas oito linhas ---
+> node scripts/sinais-da-primeira-pagina.mjs --prova
+
+sinais · 5 de 5 blocos na primeira página, 0 saída(s); o registo está em .sinais/primeira-pagina.json.
+  SINAL · na explicação «dinheiro-do-estado-2026», as palavras em naoDiz[0][1] saíram da página: nenhuma linha casa com /juros|servico-da-divida|encargos-da-divida/ (15 casam)
+sinais · 2 explicação(ões), 1 frase(s) guardada(s) fora da página; o registo está em .sinais/explicacoes.json.
+  mordeu · uma condição falsa numa cópia das declarações (código 0)
+  mordeu · um resolvedor que recusa tudo (código 1)
+  mordeu · o passo da cadeia do build com um resolvedor que recusa tudo (código 1)
+código 0 · 35 s · 6 linhas em <temporario>/og1a6-final-discussao.log
+--- linhas de falha ou aviso (até quarenta) ---
+5:V2B · 0 erro(s), 736 de 736 plantas, 700 portas de integração.
+--- últimas oito linhas ---
+
+> o-estado-do-pais@0.1.0 check:discussao
+> node tests/discussao/itens.mjs && node tests/discussao/og1.mjs
+
+V2B · 0 erro(s), 736 de 736 plantas, 700 portas de integração.
+PASS: 50 conferências OG1 das formas, fontes e recibos nas duas edições.
+código 0 · 0 s · 4 linhas em <temporario>/og1a6-final-typecheck.log
+--- últimas oito linhas ---
+
+> o-estado-do-pais@0.1.0 typecheck
+> tsc -p tsconfig.check.json
+

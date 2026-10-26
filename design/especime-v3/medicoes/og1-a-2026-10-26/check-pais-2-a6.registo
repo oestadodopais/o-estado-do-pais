@@ -1,0 +1,26 @@
+
+> o-estado-do-pais@0.1.0 check:pais
+> node scripts/check-pais.mjs && node tests/inicio/linhas-da-casa.mjs --prova && node tests/inicio/estudos-em-curso.mjs
+
+E1: prazo e razão conferidos pela chamada da check:pais.
+T9: 30 cartões com valor de referência nos temas e nas entradas, 10 fora e 20 dentro, cada um com a cor do seu estado.
+B1 país: 47 medidas, 9 temas, 9730 menus, 4 mudanças declaradas, 4 listas com teto 8, 2 registos de 88 mudanças, 114 títulos de edição.
+B1 país: todas as conferências a 0.
+node:fs:440
+    return binding.readFileUtf8(path, stringToFlags(options.flag));
+                   ^
+
+Error: ENOENT: no such file or directory, open 'dist/correcoes/index.html'
+    at Object.readFileSync (node:fs:440:20)
+    at plantasDasLinhasDaCasa (file://<worktree>/tests/inicio/linhas-da-casa.mjs:140:28)
+    at file://<worktree>/tests/inicio/linhas-da-casa.mjs:172:50
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'dist/correcoes/index.html'
+}
+
+Node.js v22.23.1

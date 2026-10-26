@@ -1,0 +1,5 @@
+
+> o-estado-do-pais@0.1.0 typecheck
+> tsc -p tsconfig.check.json
+
+src/lib/explicacoes.mjs(299,95): error TS2339: Property 'title' does not exist on type '{}'.

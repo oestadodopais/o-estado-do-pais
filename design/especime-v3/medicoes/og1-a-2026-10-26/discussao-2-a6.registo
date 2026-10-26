@@ -1,0 +1,113 @@
+
+> o-estado-do-pais@0.1.0 check:discussao
+> node tests/discussao/itens.mjs && node tests/discussao/og1.mjs
+
+V2B · 108 erro(s), 736 de 736 plantas, 692 portas de integração.
+V2E unidade depois do selo: pt seccoes[2].conteudo[0].paragrafo /livro-razao/og1-governo-observador-saldo
+V2E unidade depois do selo: en seccoes[2].conteudo[0].paragrafo /en/ledger/og1-governo-observador-saldo
+V2D percurso: recibo de divida-publica-2024 sem porta completa para orcamento-2027-generalidade
+V2D percurso: recibo de divida-publica-2024 sem porta completa para orcamento-2027-generalidade
+V2B integração: presença ou ausência errada em en/explainers/weekly-reading/index.html
+V2D título: falta uma origem de valor ou período
+V2B integração: destino ou título errado em en/explainers/weekly-reading/index.html
+V2B integração: exceção temática não autorizada
+V2B integração: presença ou ausência errada em en/index/index.html
+V2D título: falta uma origem de valor ou período
+V2B integração: destino ou título errado em en/index/index.html
+V2B integração: exceção temática não autorizada
+V2B integração: presença ou ausência errada em en/index.html
+V2D título: falta uma origem de valor ou período
+V2B integração: destino ou título errado em en/index.html
+V2B integração: exceção temática não autorizada
+V2B integração: presença ou ausência errada em en/ledger/afirmacao-leitao-amaro-saude-oe2027-2026-10-09/index.html
+V2D título: falta uma origem de valor ou período
+V2B integração: destino ou título errado em en/ledger/afirmacao-leitao-amaro-saude-oe2027-2026-10-09/index.html
+V2B integração: porta fora da secção da prova
+V2B integração: exceção temática não autorizada
+V2B integração: presença ou ausência errada em en/ledger/divida-publica-2025/index.html
+V2D título: falta uma origem de valor ou período
+V2B integração: destino ou título errado em en/ledger/divida-publica-2025/index.html
+V2B integração: porta fora da secção da prova
+V2B integração: exceção temática não autorizada
+V2B integração: presença ou ausência errada em en/ledger/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026/index.html
+V2D título: falta uma origem de valor ou período
+V2B integração: destino ou título errado em en/ledger/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026/index.html
+V2B integração: porta fora da secção da prova
+V2B integração: exceção temática não autorizada
+V2B integração: presença ou ausência errada em en/ledger/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027/index.html
+V2D título: falta uma origem de valor ou período
+V2B integração: destino ou título errado em en/ledger/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027/index.html
+V2B integração: porta fora da secção da prova
+V2B integração: exceção temática não autorizada
+V2B integração: presença ou ausência errada em en/ledger/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao/index.html
+V2D título: falta uma origem de valor ou período
+V2B integração: destino ou título errado em en/ledger/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao/index.html
+V2B integração: porta fora da secção da prova
+V2B integração: exceção temática não autorizada
+V2B integração: presença ou ausência errada em en/ledger/oe-2027-saude-despesa-efetiva-consolidada-variacao/index.html
+V2D título: falta uma origem de valor ou período
+V2B integração: destino ou título errado em en/ledger/oe-2027-saude-despesa-efetiva-consolidada-variacao/index.html
+V2B integração: porta fora da secção da prova
+V2B integração: exceção temática não autorizada
+V2B integração: presença ou ausência errada em en/state-and-economy/index.html
+V2D título: falta uma origem de valor ou período
+V2B integração: destino ou título errado em en/state-and-economy/index.html
+V2B integração: exceção temática não autorizada
+V2B integração: presença ou ausência errada em en/studies/a-casa-em-portugal-e-na-europa/index.html
+V2D título: falta uma origem de valor ou período
+V2B integração: destino ou título errado em en/studies/a-casa-em-portugal-e-na-europa/index.html
+V2B integração: exceção temática não autorizada
+V2B integração: presença ou ausência errada em en/studies/orcamento-2027-o-que-muda-e-para-quem/index.html
+EO1 integração: porta temática diferente do documento em en/studies/orcamento-2027-o-que-muda-e-para-quem/index.html
+V2B integração: presença ou ausência errada em estado-e-economia/index.html
+V2D título: falta uma origem de valor ou período
+V2B integração: destino ou título errado em estado-e-economia/index.html
+V2B integração: exceção temática não autorizada
+V2B integração: presença ou ausência errada em estudos/a-casa-em-portugal-e-na-europa/index.html
+V2D título: falta uma origem de valor ou período
+V2B integração: destino ou título errado em estudos/a-casa-em-portugal-e-na-europa/index.html
+V2B integração: exceção temática não autorizada
+V2B integração: presença ou ausência errada em estudos/orcamento-2027-o-que-muda-e-para-quem/index.html
+EO1 integração: porta temática diferente do documento em estudos/orcamento-2027-o-que-muda-e-para-quem/index.html
+V2B integração: presença ou ausência errada em explicacoes/leitura-da-semana/index.html
+V2D título: falta uma origem de valor ou período
+V2B integração: destino ou título errado em explicacoes/leitura-da-semana/index.html
+V2B integração: exceção temática não autorizada
+V2B integração: presença ou ausência errada em index.html
+V2D título: falta uma origem de valor ou período
+V2B integração: destino ou título errado em index.html
+V2B integração: exceção temática não autorizada
+V2B integração: presença ou ausência errada em indice/index.html
+V2D título: falta uma origem de valor ou período
+V2B integração: destino ou título errado em indice/index.html
+V2B integração: exceção temática não autorizada
+V2B integração: presença ou ausência errada em livro-razao/afirmacao-leitao-amaro-saude-oe2027-2026-10-09/index.html
+V2D título: falta uma origem de valor ou período
+V2B integração: destino ou título errado em livro-razao/afirmacao-leitao-amaro-saude-oe2027-2026-10-09/index.html
+V2B integração: porta fora da secção da prova
+V2B integração: exceção temática não autorizada
+V2B integração: presença ou ausência errada em livro-razao/divida-publica-2025/index.html
+V2D título: falta uma origem de valor ou período
+V2B integração: destino ou título errado em livro-razao/divida-publica-2025/index.html
+V2B integração: porta fora da secção da prova
+V2B integração: exceção temática não autorizada
+V2B integração: presença ou ausência errada em livro-razao/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026/index.html
+V2D título: falta uma origem de valor ou período
+V2B integração: destino ou título errado em livro-razao/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026/index.html
+V2B integração: porta fora da secção da prova
+V2B integração: exceção temática não autorizada
+V2B integração: presença ou ausência errada em livro-razao/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027/index.html
+V2D título: falta uma origem de valor ou período
+V2B integração: destino ou título errado em livro-razao/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027/index.html
+V2B integração: porta fora da secção da prova
+V2B integração: exceção temática não autorizada
+V2B integração: presença ou ausência errada em livro-razao/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao/index.html
+V2D título: falta uma origem de valor ou período
+V2B integração: destino ou título errado em livro-razao/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao/index.html
+V2B integração: porta fora da secção da prova
+V2B integração: exceção temática não autorizada
+V2B integração: presença ou ausência errada em livro-razao/oe-2027-saude-despesa-efetiva-consolidada-variacao/index.html
+V2D título: falta uma origem de valor ou período
+V2B integração: destino ou título errado em livro-razao/oe-2027-saude-despesa-efetiva-consolidada-variacao/index.html
+V2B integração: porta fora da secção da prova
+V2B integração: exceção temática não autorizada

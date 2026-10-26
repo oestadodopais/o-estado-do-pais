@@ -1,0 +1,94 @@
+PLANTA OG1 value adulterado: OG1 value: diferente da prova
+PLANTA OG1 excerpt adulterado: OG1 excerpt: diferente da prova
+PLANTA OG1 attributed_to adulterado: OG1 atribuição: pessoa ou data diferente
+PLANTA OG1 published_at adulterado: OG1 atribuição: pessoa ou data diferente
+PLANTA OG1 source_url adulterado: OG1 porta: diferente da origem
+PLANTA OG1 document adulterado: OG1 documento: source_sha256 diferente
+PLANTA corpo integral pagina.html.gz: V2A direitos: a prova pública só admite excertos e referências em provas.json
+PLANTA corpo integral parecer.pdf: V2A direitos: a prova pública só admite excertos e referências em provas.json
+PLANTA caminho fora do motor: V2A referência: falta o selo, a data ou o caminho relativo no motor
+PLANTA mês PCP janeiro: V2A data: difere da data do documento
+PLANTA mês PCP fevereiro: V2A data: difere da data do documento
+PLANTA mês PCP março: V2A data: difere da data do documento
+PLANTA mês PCP abril: V2A data: difere da data do documento
+PLANTA mês PCP maio: V2A data: difere da data do documento
+PLANTA mês PCP junho: V2A data: difere da data do documento
+PLANTA mês PCP julho: V2A data: difere da data do documento
+PLANTA mês PCP agosto: V2A data: difere da data do documento
+PLANTA mês PCP setembro: V2A data: difere da data do documento
+PLANTA mês PCP novembro: V2A data: difere da data do documento
+PLANTA mês PCP dezembro: V2A data: difere da data do documento
+PLANTA dia impossível no PCP: V2A data: difere da data do documento
+PLANTA âncora trocada por texto ausente: V2A atribuição: difere da autoria no documento
+PLANTA hifenização só no fim da linha do PDF: V2D PDF: forma esperada preservada
+PLANTA hífen seguido de espaço corrido conserva-se: V2D PDF: forma esperada preservada
+PLANTA hífen lexical conserva-se: V2D PDF: forma esperada preservada
+PLANTA excerto V2D alterado: V2D excerto: palavras diferentes da prova ou da página citada
+PLANTA autor V2D trocado: V2D atribuição: autor diferente do documento
+PLANTA data V2D trocada: V2D data: diferente da publicação selada ou da data conferida no documento
+PLANTA porta V2D trocada: V2D porta: diferente do pedido registado
+PLANTA valor V2D fora do excerto: V2D valor: não coincide com o excerto selado
+PLANTA unidade V2D trocada: V2D medida: unidade ou tipo de documento diferente
+PLANTA hash V2D trocado: V2D selo: hash diferente do corpo alojado
+PLANTA caminho V2D fora do motor: V2D selo: referência ou recibo incompleto
+PLANTA período do orçamento trocado pela publicação: oe-2027-outras-despesas-dotacoes-execucao: V2D data: diferente da publicação selada ou da data conferida no documento
+PLANTA período adulterado também na prova: oe-2027-outras-despesas-dotacoes-execucao: V2D data: diferente da publicação selada ou da data conferida no documento
+PLANTA período do orçamento trocado pela publicação: oe-2027-saude-dotacao-reforco-contratos-programa: V2D data: diferente da publicação selada ou da data conferida no documento
+PLANTA período adulterado também na prova: oe-2027-saude-dotacao-reforco-contratos-programa: V2D data: diferente da publicação selada ou da data conferida no documento
+PLANTA período do orçamento trocado pela publicação: oe-2027-saude-contrato-programa-acss: V2D data: diferente da publicação selada ou da data conferida no documento
+PLANTA período adulterado também na prova: oe-2027-saude-contrato-programa-acss: V2D data: diferente da publicação selada ou da data conferida no documento
+PLANTA EO1 excerto: EO1 excerto: citação divergente
+PLANTA EO1 valor: EO1 excerto: citação divergente
+PLANTA EO1 atribuição: EO1 atribuição: nome divergente
+PLANTA EO1 data: EO1 data: publicação divergente
+PLANTA EO1 porta: EO1 porta: endereço divergente
+PLANTA EO1 selo: EO1 selo: recibo divergente
+PLANTA HB1 excerto: HB1 excerto: citação divergente
+PLANTA HB1 valor: HB1 excerto: citação divergente
+PLANTA HB1 atribuição: HB1 atribuição: nome divergente
+PLANTA HB1 atribuição inglesa: HB1 atribuição: nome divergente
+PLANTA HB1 data: HB1 data: publicação ou período divergente
+PLANTA HB1 referência: HB1 data: publicação ou período divergente
+PLANTA HB1 edição: HB1 data: publicação ou período divergente
+PLANTA HB1 porta: HB1 porta: endereço divergente
+PLANTA HB1 selo: HB1 selo: recibo ou linha divergente
+PLANTA HB1 referência suplementar: recibo: HB1 referência: recibo ou caminho suplementar divergente
+PLANTA HB1 referência suplementar: caminho: HB1 referência: recibo ou caminho suplementar divergente
+PLANTA HB1 referência suplementar: data: HB1 referência: data suplementar divergente
+PLANTA HB1 referência suplementar: data e referência: HB1 referência: data não provada pela âncora suplementar
+PLANTA HB1 referência suplementar: corpo: HB1 referência: corpo suplementar divergente
+PLANTA HB1 referência suplementar: âncora: HB1 referência: data não provada pela âncora suplementar
+PLANTA HB1 período do sítio trocado: HB1 data: período dos dados divergente
+PLANTA HB1 período sem âncora: HB1 data: período dos dados sem âncora no excerto
+PLANTA HB1 período do motor e do sítio trocados juntos: HB1 data: período dos dados sem âncora no excerto
+PLANTA HB1-c origem: o sha256 trocado: HB1-c origem: o sha256 do selo não é o do ficheiro no motor
+PLANTA HB1-c origem: o excerto alterado: HB1-c origem: o excerto não está no corpo
+PLANTA HB1-c origem: o sha256 trocado (hb1e): HB1-c origem: o sha256 do selo não é o do ficheiro no motor
+PLANTA HB1-c origem: o excerto alterado (hb1e): HB1-c origem: o excerto não está no corpo
+PLANTA HB1-c origem: o sha256 trocado (hb1e-pdf): HB1-c origem: o sha256 do selo não é o do ficheiro no motor
+PLANTA HB1-c origem: o excerto alterado (hb1e-pdf): HB1-c origem: o excerto não está no corpo
+og1-utao-p15: OG1 porta: diferente da origem
+og1-utao-p42: OG1 porta: diferente da origem
+og1-utao-pib-2026: OG1 porta: diferente da origem
+og1-utao-saldo-2026: OG1 porta: diferente da origem
+og1-utao-politicas-peso: OG1 porta: diferente da origem
+og1-utao-juros-variacao: OG1 porta: diferente da origem
+og1-utao-juros-montante: OG1 porta: diferente da origem
+og1-utao-taxa-implicita-2026: OG1 porta: diferente da origem
+og1-utao-taxa-implicita-2027: OG1 porta: diferente da origem
+og1-utao-novas-saldo: OG1 porta: diferente da origem
+og1-utao-despesa-liquida-ce: OG1 porta: diferente da origem
+og1-utao-despesa-liquida-limiar: OG1 porta: diferente da origem
+og1-utao-despesa-liquida-mf-defesa: OG1 porta: diferente da origem
+og1-utao-despesa-liquida-mf-antes: OG1 porta: diferente da origem
+og1-utao-divida-2025-revista: OG1 porta: diferente da origem
+og1-utao-brent-contratos-2027: OG1 porta: diferente da origem
+og1-utao-brent-mf-2027: OG1 porta: diferente da origem
+og1-utao-brent-diferenca: OG1 porta: diferente da origem
+og1-utao-politicas-saldo: OG1 value: diferente da prova
+og1-utao-politicas-saldo: OG1 porta: diferente da origem
+og1-utao-saude-variacao: OG1 value: diferente da prova
+og1-utao-saude-variacao: OG1 porta: diferente da origem
+og1-utao-saude-sem-prr: OG1 porta: diferente da origem
+og1-utao-saldo-me-2027: OG1 porta: diferente da origem
+V2A: 103 afirmações conferidas, 105 corpos lidos, 23 origens HB1-c conferidas no motor, 69 plantas, 24 erros.
