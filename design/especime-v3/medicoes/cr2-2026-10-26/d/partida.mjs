@@ -21,5 +21,5 @@ const linhas=JSON.parse(fs.readFileSync(`${pasta}/ids.json`)).map(id=>{
  return {id,valor:d.value,corrections_26_10:c.length,diverge_26_10:v.length,pendente:id in pendentes};
 });
 const resultado={linhas,atualizadas:linhas.filter(x=>!x.pendente).length,pendentes:linhas.filter(x=>x.pendente).length,entradas:linhas.reduce((n,x)=>n+x.corrections_26_10,0)};
-fs.writeFileSync(`${pasta}/d/partida.json`,JSON.stringify(resultado,null,2)+'\n');
+fs.writeFileSync(`${process.argv[2] ?? `${pasta}/d`}/partida.json`,JSON.stringify(resultado,null,2)+'\n');
 console.log(`${resultado.atualizadas} atualizadas, ${resultado.pendentes} pendentes, ${resultado.entradas} entradas`);

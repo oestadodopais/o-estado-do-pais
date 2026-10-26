@@ -612,8 +612,8 @@
       ]
     }
   },
-  "gerado_por": "d/medir.py",
-  "estado": "CR2-d: quinze revisões aplicadas; duas pendentes da UE1-c",
+  "gerado_por": "e/medir.py",
+  "estado": "CR2-e: construção recusada por falta de lugar declarado numa das quinze linhas",
   "continuacao_cr2d": {
     "partida": {
       "linhas": [
@@ -762,6 +762,180 @@
       "estado": "não conferidos: construção recusada antes de gerar dist",
       "atualizados_esperados": 30,
       "pendentes_esperados": 4
+    }
+  },
+  "continuacao_cr2e": {
+    "partida": {
+      "linhas": [
+        {
+          "id": "custo-unitario-do-trabalho-2025-ue",
+          "valor": "14,8",
+          "corrections_26_10": 3,
+          "diverge_26_10": 1,
+          "pendente": false
+        },
+        {
+          "id": "divida-das-empresas-2024",
+          "valor": "66,6",
+          "corrections_26_10": 3,
+          "diverge_26_10": 1,
+          "pendente": false
+        },
+        {
+          "id": "divida-das-empresas-2025",
+          "valor": "65,1",
+          "corrections_26_10": 3,
+          "diverge_26_10": 1,
+          "pendente": false
+        },
+        {
+          "id": "divida-das-empresas-2025-ue",
+          "valor": "70,2",
+          "corrections_26_10": 3,
+          "diverge_26_10": 1,
+          "pendente": false
+        },
+        {
+          "id": "divida-das-familias-2024",
+          "valor": "52,3",
+          "corrections_26_10": 3,
+          "diverge_26_10": 1,
+          "pendente": false
+        },
+        {
+          "id": "divida-das-familias-2025",
+          "valor": "54,4",
+          "corrections_26_10": 3,
+          "diverge_26_10": 1,
+          "pendente": false
+        },
+        {
+          "id": "divida-publica-2024",
+          "valor": "93,0",
+          "corrections_26_10": 3,
+          "diverge_26_10": 1,
+          "pendente": false
+        },
+        {
+          "id": "divida-publica-2025",
+          "valor": "89,7",
+          "corrections_26_10": 0,
+          "diverge_26_10": 1,
+          "pendente": true
+        },
+        {
+          "id": "divida-publica-2025-ue",
+          "valor": "81,7",
+          "corrections_26_10": 0,
+          "diverge_26_10": 1,
+          "pendente": true
+        },
+        {
+          "id": "fluxo-de-credito-as-empresas-2024",
+          "valor": "2,2",
+          "corrections_26_10": 3,
+          "diverge_26_10": 1,
+          "pendente": false
+        },
+        {
+          "id": "fluxo-de-credito-as-empresas-2025",
+          "valor": "3,4",
+          "corrections_26_10": 3,
+          "diverge_26_10": 1,
+          "pendente": false
+        },
+        {
+          "id": "fluxo-de-credito-as-familias-2024",
+          "valor": "4,0",
+          "corrections_26_10": 3,
+          "diverge_26_10": 1,
+          "pendente": false
+        },
+        {
+          "id": "fluxo-de-credito-as-familias-2025",
+          "valor": "9,0",
+          "corrections_26_10": 3,
+          "diverge_26_10": 1,
+          "pendente": false
+        },
+        {
+          "id": "fluxo-de-credito-as-familias-2025-ue",
+          "valor": "3,0",
+          "corrections_26_10": 3,
+          "diverge_26_10": 1,
+          "pendente": false
+        },
+        {
+          "id": "formacao-bruta-de-capital-fixo-2025-ue",
+          "valor": "21,5",
+          "corrections_26_10": 3,
+          "diverge_26_10": 1,
+          "pendente": false
+        },
+        {
+          "id": "licencas-de-construcao-2025-ue",
+          "valor": "377,6",
+          "corrections_26_10": 3,
+          "diverge_26_10": 1,
+          "pendente": false
+        },
+        {
+          "id": "pib-real-per-capita-2025-ue",
+          "valor": "31 980",
+          "corrections_26_10": 3,
+          "diverge_26_10": 1,
+          "pendente": false
+        }
+      ],
+      "atualizadas": 15,
+      "pendentes": 2,
+      "entradas": 45
+    },
+    "codigos": {
+      "build": 1,
+      "check-cartao": 1,
+      "check-cruzamento": 0,
+      "check-discussao": 1,
+      "check-explicacoes": 1,
+      "check-registo": 0,
+      "frases-resolvedores": 0,
+      "historia-do-valor": 0,
+      "ledger-check": 0,
+      "partida": 0,
+      "typecheck": 0
+    },
+    "dist": {
+      "construcao_completa": false,
+      "ficheiros": {
+        "index.html": false,
+        "version.json": false,
+        "livro-razao/custo-unitario-do-trabalho-2025-ue/index.html": false,
+        "en/ledger/custo-unitario-do-trabalho-2025-ue/index.html": false,
+        "explicacoes/dinheiro-do-estado-2026/index.html": false,
+        "precos/index.html": false
+      }
+    },
+    "frases_sem_html": {
+      "origem": "resolvedores, sem conferência do HTML",
+      "total": 50,
+      "iguais": 50,
+      "mudadas": [],
+      "fontes": 21
+    },
+    "recibos": {
+      "estado": "não conferidos: construção incompleta, sem recibos nem version.json",
+      "atualizados_esperados": 30,
+      "pendentes_esperados": 4
+    },
+    "selos": {
+      "reposicao_pela_direcao": "c63fa86e7",
+      "artefactos_adicionais_alterados": []
+    },
+    "motor": {
+      "cabeca_observada": "d8f0513b0713bedbd73f0c510bed875659a2f04f",
+      "cabeca_indicada_no_mandato": "e4628c173dd4ffd155ba58ad8fa2cd74f8fe7e93",
+      "arvore_limpa": true,
+      "alterado_nesta_passagem": false
     }
   }
 }

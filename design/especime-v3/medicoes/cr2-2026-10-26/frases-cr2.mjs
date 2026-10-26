@@ -62,5 +62,5 @@ if(modo==='depois') {
   resultado.conhecido_positivo={explicacao_achada:resultado.comparacao.some(f=>f.familia==='explicacao'&&f.citadas.includes('divida-publica-2025')),recibo_achado:resultado.paginas.some(p=>p.ficheiro==='dist/livro-razao/divida-publica-2025/index.html'),comparador_ve_planta:normal(resultado.comparacao[0].antes)!==normal(resultado.comparacao[0].antes+' planta')};
   assert(Object.values(resultado.conhecido_positivo).every(Boolean));
 }
-fs.writeFileSync(`${pasta}/${modo==='antes'?'':'d/'}frases-${modo}.json`,JSON.stringify(resultado,null,2)+'\n');
+fs.writeFileSync(`${process.argv[3] ?? (modo==='antes'?pasta:`${pasta}/d`)}/frases-${modo}.json`,JSON.stringify(resultado,null,2)+'\n');
 console.log(JSON.stringify({frases:frases.length,fontes:fontes.length,mudadas:resultado.comparacao?.filter(f=>f.mudou).length,paginas:resultado.paginas?.length}));

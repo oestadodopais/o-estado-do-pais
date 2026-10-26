@@ -1,0 +1,643 @@
+{
+  "origem": "resolvedores, sem conferência do HTML",
+  "total": 50,
+  "iguais": 50,
+  "mudadas": [],
+  "fontes": 21,
+  "comparacao": [
+    {
+      "familia": "explicacao",
+      "id": "dinheiro-do-estado-2026",
+      "lang": "pt",
+      "rota": "/explicacoes/dinheiro-do-estado-2026",
+      "caminho": "abertura[0]",
+      "citadas": [
+        "divida-publica-2025",
+        "divida-publica-2025-ue"
+      ],
+      "texto": "O Orçamento do Estado para 2026 diz, euro a euro, para onde vai o dinheiro. De cada cem euros da despesa efetiva consolidada da administração central (a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços), 17,07 vão para a saúde, 13,73 para a proteção social, 10,91 para a educação e 11,77 para os assuntos económicos. A maior fatia, 33,18, é a dos serviços gerais das administrações públicas, onde a classificação das funções conta as transferências entre administrações.",
+      "antes": "O Orçamento do Estado para 2026 diz, euro a euro, para onde vai o dinheiro. De cada cem euros da despesa efetiva consolidada da administração central (a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços), 17,07 vão para a saúde, 13,73 para a proteção social, 10,91 para a educação e 11,77 para os assuntos económicos. A maior fatia, 33,18, é a dos serviços gerais das administrações públicas, onde a classificação das funções conta as transferências entre administrações.",
+      "mudou": false
+    },
+    {
+      "familia": "explicacao",
+      "id": "dinheiro-do-estado-2026",
+      "lang": "pt",
+      "rota": "/explicacoes/dinheiro-do-estado-2026",
+      "caminho": "seccoes[0].conteudo[1].paragrafo",
+      "citadas": [
+        "divida-publica-2025",
+        "divida-publica-2025-ue"
+      ],
+      "texto": "A defesa leva 3,25, a segurança e ordem pública 5,27, a proteção do ambiente 2,29, a habitação e infraestruturas coletivas 1,47 e o desporto, recreação, cultura e religião 1,05.",
+      "antes": "A defesa leva 3,25, a segurança e ordem pública 5,27, a proteção do ambiente 2,29, a habitação e infraestruturas coletivas 1,47 e o desporto, recreação, cultura e religião 1,05.",
+      "mudou": false
+    },
+    {
+      "familia": "explicacao",
+      "id": "dinheiro-do-estado-2026",
+      "lang": "pt",
+      "rota": "/explicacoes/dinheiro-do-estado-2026",
+      "caminho": "seccoes[0].conteudo[2].paragrafo",
+      "citadas": [
+        "divida-publica-2025",
+        "divida-publica-2025-ue"
+      ],
+      "texto": "3,25 de cada cem euros desta página são a função «Defesa» da despesa efetiva consolidada da administração central (a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços), em contabilidade pública. A despesa em defesa em percentagem do PIB que a NATO publica é outra medida, pela definição da própria NATO: os pagamentos feitos por um governo nacional, sem as administrações regionais, locais e municipais, especificamente para satisfazer as necessidades das suas forças armadas, das dos outros aliados ou da Aliança no seu todo; a definição da NATO inclui as pensões de reforma pagas diretamente pelo governo aos militares na reforma e aos funcionários civis dos departamentos militares, e as relativas ao pessoal no ativo. Para Portugal, a NATO publica 1,55 % do PIB em 2024 e, como estimativas, 2,01 % em 2025 e 2,10 % em 2026 (a tabela a preços constantes), e 6 748 milhões de euros em 2026 (a tabela a preços correntes, também uma estimativa). A referência da própria NATO é a dos seus compromissos: 2 % do PIB desde a cimeira de Gales de 2014, e, desde a cimeira de Haia de 2025, 5 % do PIB por ano até 2035, dos quais pelo menos 3,5 % em requisitos essenciais de defesa pela definição da NATO.",
+      "antes": "3,25 de cada cem euros desta página são a função «Defesa» da despesa efetiva consolidada da administração central (a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços), em contabilidade pública. A despesa em defesa em percentagem do PIB que a NATO publica é outra medida, pela definição da própria NATO: os pagamentos feitos por um governo nacional, sem as administrações regionais, locais e municipais, especificamente para satisfazer as necessidades das suas forças armadas, das dos outros aliados ou da Aliança no seu todo; a definição da NATO inclui as pensões de reforma pagas diretamente pelo governo aos militares na reforma e aos funcionários civis dos departamentos militares, e as relativas ao pessoal no ativo. Para Portugal, a NATO publica 1,55 % do PIB em 2024 e, como estimativas, 2,01 % em 2025 e 2,10 % em 2026 (a tabela a preços constantes), e 6 748 milhões de euros em 2026 (a tabela a preços correntes, também uma estimativa). A referência da própria NATO é a dos seus compromissos: 2 % do PIB desde a cimeira de Gales de 2014, e, desde a cimeira de Haia de 2025, 5 % do PIB por ano até 2035, dos quais pelo menos 3,5 % em requisitos essenciais de defesa pela definição da NATO.",
+      "mudou": false
+    },
+    {
+      "familia": "explicacao",
+      "id": "dinheiro-do-estado-2026",
+      "lang": "pt",
+      "rota": "/explicacoes/dinheiro-do-estado-2026",
+      "caminho": "seccoes[0].conteudo[3].paragrafo",
+      "citadas": [
+        "divida-publica-2025",
+        "divida-publica-2025-ue"
+      ],
+      "texto": "Noutra conta, a de todas as administrações públicas, com as regionais e as locais, em percentagem do PIB e em contabilidade nacional, o Eurostat publica para 2024: serviços gerais das administrações públicas 5,8 %, defesa 0,9 %, segurança e ordem pública 1,6 %, assuntos económicos 3,6 %, proteção do ambiente 0,7 %, habitação e infraestruturas coletivas 0,6 %, saúde 6,8 %, desporto, recreação, cultura e religião 0,8 %, educação 4,3 % e proteção social 17,1 % do PIB. Estas percentagens do Eurostat referem-se a 2024 e usam o PIB como denominador. As fatias por função do Orçamento referem-se a 2026 e usam a despesa efetiva consolidada da administração central. Também diferem o perímetro e a contabilidade. As duas percentagens do PIB não medem a mesma despesa: a do Eurostat é a função «Defesa» de todas as administrações públicas, em contabilidade nacional, e a da NATO é a definição acima, que inclui as pensões. No mesmo ano de 2024, a NATO publica 1,55 % do PIB para Portugal e o Eurostat conta 0,9 %. Esta página mostra as duas medidas, cada uma com a sua definição, e não as soma nem corrige nenhuma.",
+      "antes": "Noutra conta, a de todas as administrações públicas, com as regionais e as locais, em percentagem do PIB e em contabilidade nacional, o Eurostat publica para 2024: serviços gerais das administrações públicas 5,8 %, defesa 0,9 %, segurança e ordem pública 1,6 %, assuntos económicos 3,6 %, proteção do ambiente 0,7 %, habitação e infraestruturas coletivas 0,6 %, saúde 6,8 %, desporto, recreação, cultura e religião 0,8 %, educação 4,3 % e proteção social 17,1 % do PIB. Estas percentagens do Eurostat referem-se a 2024 e usam o PIB como denominador. As fatias por função do Orçamento referem-se a 2026 e usam a despesa efetiva consolidada da administração central. Também diferem o perímetro e a contabilidade. As duas percentagens do PIB não medem a mesma despesa: a do Eurostat é a função «Defesa» de todas as administrações públicas, em contabilidade nacional, e a da NATO é a definição acima, que inclui as pensões. No mesmo ano de 2024, a NATO publica 1,55 % do PIB para Portugal e o Eurostat conta 0,9 %. Esta página mostra as duas medidas, cada uma com a sua definição, e não as soma nem corrige nenhuma.",
+      "mudou": false
+    },
+    {
+      "familia": "explicacao",
+      "id": "dinheiro-do-estado-2026",
+      "lang": "pt",
+      "rota": "/explicacoes/dinheiro-do-estado-2026",
+      "caminho": "seccoes[1].conteudo[0].paragrafo",
+      "citadas": [
+        "divida-publica-2025",
+        "divida-publica-2025-ue"
+      ],
+      "texto": "Visto pelos ministérios, o maior é o Ministério das Finanças, com 60,12 de cada cem euros, 211 891 565 579 euros, da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central (o total antes da consolidação, 352 472 389 960 euros). Seguem-se o Ministério da Saúde (13,28), o Ministério do Trabalho, Solidariedade e Segurança Social (10,69) e o Ministério da Educação, Ciência e Inovação (4,16).",
+      "antes": "Visto pelos ministérios, o maior é o Ministério das Finanças, com 60,12 de cada cem euros, 211 891 565 579 euros, da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central (o total antes da consolidação, 352 472 389 960 euros). Seguem-se o Ministério da Saúde (13,28), o Ministério do Trabalho, Solidariedade e Segurança Social (10,69) e o Ministério da Educação, Ciência e Inovação (4,16).",
+      "mudou": false
+    },
+    {
+      "familia": "explicacao",
+      "id": "dinheiro-do-estado-2026",
+      "lang": "pt",
+      "rota": "/explicacoes/dinheiro-do-estado-2026",
+      "caminho": "seccoes[1].conteudo[2].paragrafo",
+      "citadas": [
+        "divida-publica-2025",
+        "divida-publica-2025-ue"
+      ],
+      "texto": "A conta por função organiza a despesa da administração central por finalidade, como a saúde ou a educação.",
+      "antes": "A conta por função organiza a despesa da administração central por finalidade, como a saúde ou a educação.",
+      "mudou": false
+    },
+    {
+      "familia": "explicacao",
+      "id": "dinheiro-do-estado-2026",
+      "lang": "pt",
+      "rota": "/explicacoes/dinheiro-do-estado-2026",
+      "caminho": "seccoes[2].conteudo[0].paragrafo",
+      "citadas": [
+        "divida-publica-2025",
+        "divida-publica-2025-ue"
+      ],
+      "texto": "Até agosto de 2026, a administração central e a segurança social tinham gasto 80 464,5 milhões de euros e recebido 79 618,7 milhões; os programas que mais gastaram foram o de Trabalho, Solidariedade e Segurança Social (17 636,8 milhões), o de Saúde (11 822,6) e o de Finanças (5 337,6).",
+      "antes": "Até agosto de 2026, a administração central e a segurança social tinham gasto 80 464,5 milhões de euros e recebido 79 618,7 milhões; os programas que mais gastaram foram o de Trabalho, Solidariedade e Segurança Social (17 636,8 milhões), o de Saúde (11 822,6) e o de Finanças (5 337,6).",
+      "mudou": false
+    },
+    {
+      "familia": "explicacao",
+      "id": "dinheiro-do-estado-2026",
+      "lang": "pt",
+      "rota": "/explicacoes/dinheiro-do-estado-2026",
+      "caminho": "seccoes[2].conteudo[1].paragrafo",
+      "citadas": [
+        "divida-publica-2025",
+        "divida-publica-2025-ue"
+      ],
+      "texto": "No fim de agosto de 2026, as contas da administração central e da segurança social apresentavam um saldo acumulado de −845,8 milhões de euros, um défice (gastou mais do que recebeu); é um défice menor do que o que o Orçamento previa para o ano inteiro (−1 789,8 milhões de euros), e ainda faltam os meses de setembro a dezembro. Estas contas abrangem a administração central e a segurança social; as contas públicas de 2025 incluem também as administrações regional e local.",
+      "antes": "No fim de agosto de 2026, as contas da administração central e da segurança social apresentavam um saldo acumulado de −845,8 milhões de euros, um défice (gastou mais do que recebeu); é um défice menor do que o que o Orçamento previa para o ano inteiro (−1 789,8 milhões de euros), e ainda faltam os meses de setembro a dezembro. Estas contas abrangem a administração central e a segurança social; as contas públicas de 2025 incluem também as administrações regional e local.",
+      "mudou": false
+    },
+    {
+      "familia": "explicacao",
+      "id": "dinheiro-do-estado-2026",
+      "lang": "pt",
+      "rota": "/explicacoes/dinheiro-do-estado-2026",
+      "caminho": "seccoes[3].conteudo[0].paragrafo",
+      "citadas": [
+        "divida-publica-2025",
+        "divida-publica-2025-ue"
+      ],
+      "texto": "No fim de 2025, a dívida pública valia 89,7 % do que o país produz num ano, acima dos 81,7 % da média da União Europeia, e as contas públicas fecharam o ano com um saldo de 0,7 % do produto, um excedente (recebeu mais do que gastou).",
+      "antes": "No fim de 2025, a dívida pública valia 89,7 % do que o país produz num ano, acima dos 81,7 % da média da União Europeia, e as contas públicas fecharam o ano com um saldo de 0,7 % do produto, um excedente (recebeu mais do que gastou).",
+      "mudou": false
+    },
+    {
+      "familia": "explicacao",
+      "id": "dinheiro-do-estado-2026",
+      "lang": "pt",
+      "rota": "/explicacoes/dinheiro-do-estado-2026",
+      "caminho": "naoDiz[0]",
+      "citadas": [
+        "divida-publica-2025",
+        "divida-publica-2025-ue"
+      ],
+      "texto": "O orçamento é uma previsão: o que se gasta de facto lê-se na execução, mês a mês, e a execução até agosto é a que esta explicação mostra acima. O detalhe por programa e por ministério, com a fonte de cada número, está no recibo de cada um, a um toque.",
+      "antes": "O orçamento é uma previsão: o que se gasta de facto lê-se na execução, mês a mês, e a execução até agosto é a que esta explicação mostra acima. O detalhe por programa e por ministério, com a fonte de cada número, está no recibo de cada um, a um toque.",
+      "mudou": false
+    },
+    {
+      "familia": "inicio",
+      "id": "precos",
+      "lang": "pt",
+      "rota": "/",
+      "caminho": "frase",
+      "citadas": [],
+      "texto": "Em agosto de 2026, os combustíveis estavam 23,78 % mais caros do que um ano antes. Os preços no seu conjunto subiram 3,30 %.",
+      "antes": "Em agosto de 2026, os combustíveis estavam 23,78 % mais caros do que um ano antes. Os preços no seu conjunto subiram 3,30 %.",
+      "mudou": false
+    },
+    {
+      "familia": "inicio",
+      "id": "precos",
+      "lang": "pt",
+      "rota": "/",
+      "caminho": "ressalva",
+      "citadas": [],
+      "texto": "Os preços no seu conjunto medem-se num cabaz de bens e serviços que representa o que as famílias compram.",
+      "antes": "Os preços no seu conjunto medem-se num cabaz de bens e serviços que representa o que as famílias compram.",
+      "mudou": false
+    },
+    {
+      "familia": "inicio",
+      "id": "precos",
+      "lang": "pt",
+      "rota": "/",
+      "caminho": "peca:uniao",
+      "citadas": [],
+      "texto": "Na medida harmonizada que compara os países da União, os preços subiram 3,6 % em Portugal e 3,2 % na União.",
+      "antes": "Na medida harmonizada que compara os países da União, os preços subiram 3,6 % em Portugal e 3,2 % na União.",
+      "mudou": false
+    },
+    {
+      "familia": "inicio",
+      "id": "casa",
+      "lang": "pt",
+      "rota": "/",
+      "caminho": "frase",
+      "citadas": [],
+      "texto": "Em Portugal, a parte das pessoas que gastam mais de 40 % do rendimento disponível com a habitação é menor do que na União. Entre quem arrenda a preço de mercado, é maior.",
+      "antes": "Em Portugal, a parte das pessoas que gastam mais de 40 % do rendimento disponível com a habitação é menor do que na União. Entre quem arrenda a preço de mercado, é maior.",
+      "mudou": false
+    },
+    {
+      "familia": "inicio",
+      "id": "casa",
+      "lang": "pt",
+      "rota": "/",
+      "caminho": "ressalva",
+      "citadas": [],
+      "texto": "Este total mistura situações muito diferentes, e a Comissão Europeia diz que deve ler-se com a estrutura por regime de ocupação.",
+      "antes": "Este total mistura situações muito diferentes, e a Comissão Europeia diz que deve ler-se com a estrutura por regime de ocupação.",
+      "mudou": false
+    },
+    {
+      "familia": "inicio",
+      "id": "casa",
+      "lang": "pt",
+      "rota": "/",
+      "caminho": "peca:precos-das-casas",
+      "citadas": [],
+      "texto": "Os preços das casas subiram 17,6 % em 2025, na média do ano, contra 5,5 % na União. Para a Comissão Europeia, uma subida acima de 9 % num ano é sinal de possível desequilíbrio.",
+      "antes": "Os preços das casas subiram 17,6 % em 2025, na média do ano, contra 5,5 % na União. Para a Comissão Europeia, uma subida acima de 9 % num ano é sinal de possível desequilíbrio.",
+      "mudou": false
+    },
+    {
+      "familia": "inicio",
+      "id": "casa",
+      "lang": "pt",
+      "rota": "/",
+      "caminho": "peca:rendas",
+      "citadas": [],
+      "texto": "A referência para a atualização das rendas no próximo ano ficou em 2,56 %: é a variação média de doze meses dos preços sem a habitação, em agosto de 2026.",
+      "antes": "A referência para a atualização das rendas no próximo ano ficou em 2,56 %: é a variação média de doze meses dos preços sem a habitação, em agosto de 2026.",
+      "mudou": false
+    },
+    {
+      "familia": "inicio",
+      "id": "trabalho",
+      "lang": "pt",
+      "rota": "/",
+      "caminho": "frase",
+      "citadas": [],
+      "texto": "Em 2025, a parte das pessoas dos 20 aos 64 anos com emprego era maior em Portugal do que na União, e o desemprego era o mesmo. Mas era maior a parte de quem procura trabalho há um ano ou mais.",
+      "antes": "Em 2025, a parte das pessoas dos 20 aos 64 anos com emprego era maior em Portugal do que na União, e o desemprego era o mesmo. Mas era maior a parte de quem procura trabalho há um ano ou mais.",
+      "mudou": false
+    },
+    {
+      "familia": "inicio",
+      "id": "trabalho",
+      "lang": "pt",
+      "rota": "/",
+      "caminho": "ressalva",
+      "citadas": [],
+      "texto": "O emprego conta-se entre as pessoas dos 20 aos 64 anos; o desemprego, entre as que trabalham ou procuram trabalho, dos 15 aos 74.",
+      "antes": "O emprego conta-se entre as pessoas dos 20 aos 64 anos; o desemprego, entre as que trabalham ou procuram trabalho, dos 15 aos 74.",
+      "mudou": false
+    },
+    {
+      "familia": "inicio",
+      "id": "trabalho",
+      "lang": "pt",
+      "rota": "/",
+      "caminho": "peca:salario",
+      "citadas": [],
+      "texto": "A remuneração média antes de descontos de quem trabalha por conta de outrem passou de 1 746 euros por mês no 2.º trimestre de 2025 para 1 835 euros por mês (dado provisório) no 2.º trimestre de 2026.",
+      "antes": "A remuneração média antes de descontos de quem trabalha por conta de outrem passou de 1 746 euros por mês no 2.º trimestre de 2025 para 1 835 euros por mês (dado provisório) no 2.º trimestre de 2026.",
+      "mudou": false
+    },
+    {
+      "familia": "inicio",
+      "id": "estado",
+      "lang": "pt",
+      "rota": "/",
+      "caminho": "frase",
+      "citadas": [
+        "divida-publica-2024",
+        "divida-publica-2025",
+        "divida-publica-2025-ue"
+      ],
+      "texto": "A dívida pública desceu de 2024 para 2025 e está acima da média da União. Para a Comissão Europeia, uma dívida acima de 60 % do PIB é sinal de possível desequilíbrio, e a de Portugal está acima.",
+      "antes": "A dívida pública desceu de 2024 para 2025 e está acima da média da União. Para a Comissão Europeia, uma dívida acima de 60 % do PIB é sinal de possível desequilíbrio, e a de Portugal está acima.",
+      "mudou": false
+    },
+    {
+      "familia": "inicio",
+      "id": "estado",
+      "lang": "pt",
+      "rota": "/",
+      "caminho": "ressalva",
+      "citadas": [
+        "divida-publica-2024",
+        "divida-publica-2025",
+        "divida-publica-2025-ue"
+      ],
+      "texto": "É tudo o que as administrações públicas devem, em percentagem do PIB, o valor de tudo o que o país produz num ano.",
+      "antes": "É tudo o que as administrações públicas devem, em percentagem do PIB, o valor de tudo o que o país produz num ano.",
+      "mudou": false
+    },
+    {
+      "familia": "inicio",
+      "id": "estado",
+      "lang": "pt",
+      "rota": "/",
+      "caminho": "peca:revisao-do-ine",
+      "citadas": [
+        "divida-publica-2024",
+        "divida-publica-2025",
+        "divida-publica-2025-ue"
+      ],
+      "texto": "A notificação do INE de 23.09.2026 já revê a dívida de 2025 para 89,2 % do PIB.",
+      "antes": "A notificação do INE de 23.09.2026 já revê a dívida de 2025 para 89,2 % do PIB.",
+      "mudou": false
+    },
+    {
+      "familia": "inicio",
+      "id": "pobreza",
+      "lang": "pt",
+      "rota": "/",
+      "caminho": "frase",
+      "citadas": [],
+      "texto": "Em 2025, a parte das pessoas em risco de pobreza ou exclusão social era menor em Portugal do que na União. Mas os 20 % com mais rendimento recebiam 4,86 vezes o que recebiam os 20 % com menos, contra 4,62 na União.",
+      "antes": "Em 2025, a parte das pessoas em risco de pobreza ou exclusão social era menor em Portugal do que na União. Mas os 20 % com mais rendimento recebiam 4,86 vezes o que recebiam os 20 % com menos, contra 4,62 na União.",
+      "mudou": false
+    },
+    {
+      "familia": "inicio",
+      "id": "pobreza",
+      "lang": "pt",
+      "rota": "/",
+      "caminho": "ressalva",
+      "citadas": [],
+      "texto": "Os dois números, o de Portugal e o da União, contam quem está em pelo menos uma de três situações: rendimento abaixo de 60 % do rendimento mediano do seu país, o do meio; privação material e social grave; ou viver num agregado com intensidade de trabalho muito baixa. Cada pessoa conta uma só vez.",
+      "antes": "Os dois números, o de Portugal e o da União, contam quem está em pelo menos uma de três situações: rendimento abaixo de 60 % do rendimento mediano do seu país, o do meio; privação material e social grave; ou viver num agregado com intensidade de trabalho muito baixa. Cada pessoa conta uma só vez.",
+      "mudou": false
+    },
+    {
+      "familia": "explicacao",
+      "id": "dinheiro-do-estado-2026",
+      "lang": "en",
+      "rota": "/en/explainers/dinheiro-do-estado-2026",
+      "caminho": "abertura[0]",
+      "citadas": [
+        "divida-publica-2025",
+        "divida-publica-2025-ue"
+      ],
+      "texto": "The State Budget for 2026 says, euro by euro, where the money goes. Of every hundred euros of central administration's consolidated effective expenditure (spending without transactions in financial assets and liabilities or transfers between its own services), 17,07 go to health, 13,73 to social protection, 10,91 to education and 11,77 to economic affairs. The largest share, 33,18, is general public services, where the classification of functions counts the transfers between levels of government.",
+      "antes": "The State Budget for 2026 says, euro by euro, where the money goes. Of every hundred euros of central administration's consolidated effective expenditure (spending without transactions in financial assets and liabilities or transfers between its own services), 17,07 go to health, 13,73 to social protection, 10,91 to education and 11,77 to economic affairs. The largest share, 33,18, is general public services, where the classification of functions counts the transfers between levels of government.",
+      "mudou": false
+    },
+    {
+      "familia": "explicacao",
+      "id": "dinheiro-do-estado-2026",
+      "lang": "en",
+      "rota": "/en/explainers/dinheiro-do-estado-2026",
+      "caminho": "seccoes[0].conteudo[1].paragrafo",
+      "citadas": [
+        "divida-publica-2025",
+        "divida-publica-2025-ue"
+      ],
+      "texto": "Defence takes 3,25, public order and safety 5,27, environmental protection 2,29, housing and community amenities 1,47 and recreation, culture and religion 1,05.",
+      "antes": "Defence takes 3,25, public order and safety 5,27, environmental protection 2,29, housing and community amenities 1,47 and recreation, culture and religion 1,05.",
+      "mudou": false
+    },
+    {
+      "familia": "explicacao",
+      "id": "dinheiro-do-estado-2026",
+      "lang": "en",
+      "rota": "/en/explainers/dinheiro-do-estado-2026",
+      "caminho": "seccoes[0].conteudo[2].paragrafo",
+      "citadas": [
+        "divida-publica-2025",
+        "divida-publica-2025-ue"
+      ],
+      "texto": "3,25 of every hundred euros on this page are the «Defence» function of central administration's consolidated effective expenditure (spending without transactions in financial assets and liabilities or transfers between its own services), in public accounting. Defence spending as a share of GDP, as NATO publishes it, is another measure, under NATO's own definition: payments made by an Allied national government (excluding regional, local and municipal authorities) specifically to meet the needs of its own armed forces, those of other Allies or the needs of the Alliance as a whole; NATO's definition includes retirement pension payments made directly by the government to retired military and civilian employees of military departments and for active personnel. For Portugal, NATO publishes 1,55 % of GDP in 2024 and, as estimates, 2,01 % in 2025 and 2,10 % in 2026 (the table at constant prices), and 6 748 million euros in 2026 (the table at current prices, also an estimate). NATO's own reference is its commitments: 2 % of GDP since the 2014 Wales Summit, and, since the 2025 Hague Summit, 5 % of GDP a year by 2035, of which at least 3,5 % for core defence requirements under NATO's definition.",
+      "antes": "3,25 of every hundred euros on this page are the «Defence» function of central administration's consolidated effective expenditure (spending without transactions in financial assets and liabilities or transfers between its own services), in public accounting. Defence spending as a share of GDP, as NATO publishes it, is another measure, under NATO's own definition: payments made by an Allied national government (excluding regional, local and municipal authorities) specifically to meet the needs of its own armed forces, those of other Allies or the needs of the Alliance as a whole; NATO's definition includes retirement pension payments made directly by the government to retired military and civilian employees of military departments and for active personnel. For Portugal, NATO publishes 1,55 % of GDP in 2024 and, as estimates, 2,01 % in 2025 and 2,10 % in 2026 (the table at constant prices), and 6 748 million euros in 2026 (the table at current prices, also an estimate). NATO's own reference is its commitments: 2 % of GDP since the 2014 Wales Summit, and, since the 2025 Hague Summit, 5 % of GDP a year by 2035, of which at least 3,5 % for core defence requirements under NATO's definition.",
+      "mudou": false
+    },
+    {
+      "familia": "explicacao",
+      "id": "dinheiro-do-estado-2026",
+      "lang": "en",
+      "rota": "/en/explainers/dinheiro-do-estado-2026",
+      "caminho": "seccoes[0].conteudo[3].paragrafo",
+      "citadas": [
+        "divida-publica-2025",
+        "divida-publica-2025-ue"
+      ],
+      "texto": "In another count, that of all public administrations, with the regional and local ones, as a share of GDP and in national accounts, Eurostat publishes for 2024: general public services 5,8 %, defence 0,9 %, public order and safety 1,6 %, economic affairs 3,6 %, environmental protection 0,7 %, housing and community amenities 0,6 %, health 6,8 %, recreation, culture and religion 0,8 %, education 4,3 % and social protection 17,1 % of GDP. These Eurostat percentages refer to 2024 and use GDP as their denominator. The Budget shares by function refer to 2026 and use central administration's consolidated effective expenditure. Their coverage and accounting basis also differ. The two shares of GDP do not measure the same expenditure: Eurostat's is the «Defence» function of all public administrations, in national accounting, and NATO's is the definition above, which includes pensions. In the same year, 2024, NATO publishes 1,55 % of GDP for Portugal and Eurostat counts 0,9 %. This page shows both measures, each with its definition, and neither adds them up nor corrects either.",
+      "antes": "In another count, that of all public administrations, with the regional and local ones, as a share of GDP and in national accounts, Eurostat publishes for 2024: general public services 5,8 %, defence 0,9 %, public order and safety 1,6 %, economic affairs 3,6 %, environmental protection 0,7 %, housing and community amenities 0,6 %, health 6,8 %, recreation, culture and religion 0,8 %, education 4,3 % and social protection 17,1 % of GDP. These Eurostat percentages refer to 2024 and use GDP as their denominator. The Budget shares by function refer to 2026 and use central administration's consolidated effective expenditure. Their coverage and accounting basis also differ. The two shares of GDP do not measure the same expenditure: Eurostat's is the «Defence» function of all public administrations, in national accounting, and NATO's is the definition above, which includes pensions. In the same year, 2024, NATO publishes 1,55 % of GDP for Portugal and Eurostat counts 0,9 %. This page shows both measures, each with its definition, and neither adds them up nor corrects either.",
+      "mudou": false
+    },
+    {
+      "familia": "explicacao",
+      "id": "dinheiro-do-estado-2026",
+      "lang": "en",
+      "rota": "/en/explainers/dinheiro-do-estado-2026",
+      "caminho": "seccoes[1].conteudo[0].paragrafo",
+      "citadas": [
+        "divida-publica-2025",
+        "divida-publica-2025-ue"
+      ],
+      "texto": "Seen by ministry, the largest is the Ministry of Finance, with 60,12 of every hundred euros, 211 891 565 579 euros, of the “DESPESA TOTAL” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector (the total before consolidation, 352 472 389 960 euros). Then come the Ministry of Health (13,28), the Ministry of Labour, Solidarity and Social Security (10,69) and the Ministry of Education, Science and Innovation (4,16).",
+      "antes": "Seen by ministry, the largest is the Ministry of Finance, with 60,12 of every hundred euros, 211 891 565 579 euros, of the “DESPESA TOTAL” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector (the total before consolidation, 352 472 389 960 euros). Then come the Ministry of Health (13,28), the Ministry of Labour, Solidarity and Social Security (10,69) and the Ministry of Education, Science and Innovation (4,16).",
+      "mudou": false
+    },
+    {
+      "familia": "explicacao",
+      "id": "dinheiro-do-estado-2026",
+      "lang": "en",
+      "rota": "/en/explainers/dinheiro-do-estado-2026",
+      "caminho": "seccoes[1].conteudo[2].paragrafo",
+      "citadas": [
+        "divida-publica-2025",
+        "divida-publica-2025-ue"
+      ],
+      "texto": "The count by function organises central government expenditure by purpose, such as health or education.",
+      "antes": "The count by function organises central government expenditure by purpose, such as health or education.",
+      "mudou": false
+    },
+    {
+      "familia": "explicacao",
+      "id": "dinheiro-do-estado-2026",
+      "lang": "en",
+      "rota": "/en/explainers/dinheiro-do-estado-2026",
+      "caminho": "seccoes[2].conteudo[0].paragrafo",
+      "citadas": [
+        "divida-publica-2025",
+        "divida-publica-2025-ue"
+      ],
+      "texto": "By August 2026, central government and social security had spent 80 464,5 million euros and taken in 79 618,7 million; the programmes that spent the most were Labour, Solidarity and Social Security (17 636,8 million), Health (11 822,6) and Finance (5 337,6).",
+      "antes": "By August 2026, central government and social security had spent 80 464,5 million euros and taken in 79 618,7 million; the programmes that spent the most were Labour, Solidarity and Social Security (17 636,8 million), Health (11 822,6) and Finance (5 337,6).",
+      "mudou": false
+    },
+    {
+      "familia": "explicacao",
+      "id": "dinheiro-do-estado-2026",
+      "lang": "en",
+      "rota": "/en/explainers/dinheiro-do-estado-2026",
+      "caminho": "seccoes[2].conteudo[1].paragrafo",
+      "citadas": [
+        "divida-publica-2025",
+        "divida-publica-2025-ue"
+      ],
+      "texto": "By the end of August 2026, the accounts of central government and social security showed a cumulative balance of −845,8 million euros, a deficit (it spent more than it took in); it is a smaller deficit than the one the Budget forecast for the full year (−1 789,8 million euros), and September to December are still to come. These accounts cover central government and social security; the public accounts of 2025 also include regional and local government.",
+      "antes": "By the end of August 2026, the accounts of central government and social security showed a cumulative balance of −845,8 million euros, a deficit (it spent more than it took in); it is a smaller deficit than the one the Budget forecast for the full year (−1 789,8 million euros), and September to December are still to come. These accounts cover central government and social security; the public accounts of 2025 also include regional and local government.",
+      "mudou": false
+    },
+    {
+      "familia": "explicacao",
+      "id": "dinheiro-do-estado-2026",
+      "lang": "en",
+      "rota": "/en/explainers/dinheiro-do-estado-2026",
+      "caminho": "seccoes[3].conteudo[0].paragrafo",
+      "citadas": [
+        "divida-publica-2025",
+        "divida-publica-2025-ue"
+      ],
+      "texto": "At the end of 2025, public debt was worth 89,7 % of what the country produces in a year, above the 81,7 % average of the European Union, and the public accounts closed the year with a balance of 0,7 % of output, a surplus (it took in more than it spent).",
+      "antes": "At the end of 2025, public debt was worth 89,7 % of what the country produces in a year, above the 81,7 % average of the European Union, and the public accounts closed the year with a balance of 0,7 % of output, a surplus (it took in more than it spent).",
+      "mudou": false
+    },
+    {
+      "familia": "explicacao",
+      "id": "dinheiro-do-estado-2026",
+      "lang": "en",
+      "rota": "/en/explainers/dinheiro-do-estado-2026",
+      "caminho": "naoDiz[0]",
+      "citadas": [
+        "divida-publica-2025",
+        "divida-publica-2025-ue"
+      ],
+      "texto": "The budget is a forecast: what is actually spent is read in the budget execution, month by month, and the execution to August is the one this explainer shows above. The detail by programme and by ministry, with the source of each figure, is in each one’s receipt, one tap away.",
+      "antes": "The budget is a forecast: what is actually spent is read in the budget execution, month by month, and the execution to August is the one this explainer shows above. The detail by programme and by ministry, with the source of each figure, is in each one’s receipt, one tap away.",
+      "mudou": false
+    },
+    {
+      "familia": "inicio",
+      "id": "precos",
+      "lang": "en",
+      "rota": "/en/",
+      "caminho": "frase",
+      "citadas": [],
+      "texto": "In August 2026, fuel was 23,78 % more expensive than a year earlier. Prices as a whole rose 3,30 %.",
+      "antes": "In August 2026, fuel was 23,78 % more expensive than a year earlier. Prices as a whole rose 3,30 %.",
+      "mudou": false
+    },
+    {
+      "familia": "inicio",
+      "id": "precos",
+      "lang": "en",
+      "rota": "/en/",
+      "caminho": "ressalva",
+      "citadas": [],
+      "texto": "Prices as a whole are measured on a basket of goods and services that represents what households buy.",
+      "antes": "Prices as a whole are measured on a basket of goods and services that represents what households buy.",
+      "mudou": false
+    },
+    {
+      "familia": "inicio",
+      "id": "precos",
+      "lang": "en",
+      "rota": "/en/",
+      "caminho": "peca:uniao",
+      "citadas": [],
+      "texto": "On the harmonised measure that compares the countries of the Union, prices rose 3,6 % in Portugal and 3,2 % in the Union.",
+      "antes": "On the harmonised measure that compares the countries of the Union, prices rose 3,6 % in Portugal and 3,2 % in the Union.",
+      "mudou": false
+    },
+    {
+      "familia": "inicio",
+      "id": "casa",
+      "lang": "en",
+      "rota": "/en/",
+      "caminho": "frase",
+      "citadas": [],
+      "texto": "In Portugal, the share of people spending more than 40 % of their disposable income on housing is smaller than in the Union. Among people renting at market price, it is larger.",
+      "antes": "In Portugal, the share of people spending more than 40 % of their disposable income on housing is smaller than in the Union. Among people renting at market price, it is larger.",
+      "mudou": false
+    },
+    {
+      "familia": "inicio",
+      "id": "casa",
+      "lang": "en",
+      "rota": "/en/",
+      "caminho": "ressalva",
+      "citadas": [],
+      "texto": "This total mixes very different situations, and the European Commission says it should be read together with the breakdown by tenure status.",
+      "antes": "This total mixes very different situations, and the European Commission says it should be read together with the breakdown by tenure status.",
+      "mudou": false
+    },
+    {
+      "familia": "inicio",
+      "id": "casa",
+      "lang": "en",
+      "rota": "/en/",
+      "caminho": "peca:precos-das-casas",
+      "citadas": [],
+      "texto": "House prices rose 17,6 % in 2025, on the year’s average, against 5,5 % in the Union. For the European Commission, a rise above 9 % in a year is a sign of a possible imbalance.",
+      "antes": "House prices rose 17,6 % in 2025, on the year’s average, against 5,5 % in the Union. For the European Commission, a rise above 9 % in a year is a sign of a possible imbalance.",
+      "mudou": false
+    },
+    {
+      "familia": "inicio",
+      "id": "casa",
+      "lang": "en",
+      "rota": "/en/",
+      "caminho": "peca:rendas",
+      "citadas": [],
+      "texto": "The reference for updating rents next year stood at 2,56 %: it is the twelve-month average change in prices excluding housing, in August 2026.",
+      "antes": "The reference for updating rents next year stood at 2,56 %: it is the twelve-month average change in prices excluding housing, in August 2026.",
+      "mudou": false
+    },
+    {
+      "familia": "inicio",
+      "id": "trabalho",
+      "lang": "en",
+      "rota": "/en/",
+      "caminho": "frase",
+      "citadas": [],
+      "texto": "In 2025, the share of people aged 20 to 64 in work was larger in Portugal than in the Union, and unemployment was the same. But the share of people who had been looking for work for a year or more was larger.",
+      "antes": "In 2025, the share of people aged 20 to 64 in work was larger in Portugal than in the Union, and unemployment was the same. But the share of people who had been looking for work for a year or more was larger.",
+      "mudou": false
+    },
+    {
+      "familia": "inicio",
+      "id": "trabalho",
+      "lang": "en",
+      "rota": "/en/",
+      "caminho": "ressalva",
+      "citadas": [],
+      "texto": "Employment is counted among people aged 20 to 64; unemployment, among those working or looking for work, aged 15 to 74.",
+      "antes": "Employment is counted among people aged 20 to 64; unemployment, among those working or looking for work, aged 15 to 74.",
+      "mudou": false
+    },
+    {
+      "familia": "inicio",
+      "id": "trabalho",
+      "lang": "en",
+      "rota": "/en/",
+      "caminho": "peca:salario",
+      "citadas": [],
+      "texto": "Average pay before deductions for employees went from 1 746 euros a month in the 2nd quarter of 2025 to 1 835 euros a month (provisional data) in the 2nd quarter of 2026.",
+      "antes": "Average pay before deductions for employees went from 1 746 euros a month in the 2nd quarter of 2025 to 1 835 euros a month (provisional data) in the 2nd quarter of 2026.",
+      "mudou": false
+    },
+    {
+      "familia": "inicio",
+      "id": "estado",
+      "lang": "en",
+      "rota": "/en/",
+      "caminho": "frase",
+      "citadas": [
+        "divida-publica-2024",
+        "divida-publica-2025",
+        "divida-publica-2025-ue"
+      ],
+      "texto": "Public debt fell from 2024 to 2025 and is above the Union average. For the European Commission, debt above 60 % of GDP is a sign of a possible imbalance, and Portugal’s is above it.",
+      "antes": "Public debt fell from 2024 to 2025 and is above the Union average. For the European Commission, debt above 60 % of GDP is a sign of a possible imbalance, and Portugal’s is above it.",
+      "mudou": false
+    },
+    {
+      "familia": "inicio",
+      "id": "estado",
+      "lang": "en",
+      "rota": "/en/",
+      "caminho": "ressalva",
+      "citadas": [
+        "divida-publica-2024",
+        "divida-publica-2025",
+        "divida-publica-2025-ue"
+      ],
+      "texto": "It is everything general government owes, as a percentage of GDP, the value of everything the country produces in a year.",
+      "antes": "It is everything general government owes, as a percentage of GDP, the value of everything the country produces in a year.",
+      "mudou": false
+    },
+    {
+      "familia": "inicio",
+      "id": "estado",
+      "lang": "en",
+      "rota": "/en/",
+      "caminho": "peca:revisao-do-ine",
+      "citadas": [
+        "divida-publica-2024",
+        "divida-publica-2025",
+        "divida-publica-2025-ue"
+      ],
+      "texto": "INE’s notification of 23.09.2026 already revises the 2025 debt to 89,2 % of GDP.",
+      "antes": "INE’s notification of 23.09.2026 already revises the 2025 debt to 89,2 % of GDP.",
+      "mudou": false
+    },
+    {
+      "familia": "inicio",
+      "id": "pobreza",
+      "lang": "en",
+      "rota": "/en/",
+      "caminho": "frase",
+      "citadas": [],
+      "texto": "In 2025, the share of people at risk of poverty or social exclusion was smaller in Portugal than in the Union. But the 20 % with the highest income received 4,86 times what the 20 % with the lowest income received, against 4,62 in the Union.",
+      "antes": "In 2025, the share of people at risk of poverty or social exclusion was smaller in Portugal than in the Union. But the 20 % with the highest income received 4,86 times what the 20 % with the lowest income received, against 4,62 in the Union.",
+      "mudou": false
+    },
+    {
+      "familia": "inicio",
+      "id": "pobreza",
+      "lang": "en",
+      "rota": "/en/",
+      "caminho": "ressalva",
+      "citadas": [],
+      "texto": "Both figures, Portugal’s and the Union’s, count the people in at least one of three situations: income below 60 % of their country’s median income, the one in the middle; severe material and social deprivation; or living in a household with very low work intensity. Each person counts only once.",
+      "antes": "Both figures, Portugal’s and the Union’s, count the people in at least one of three situations: income below 60 % of their country’s median income, the one in the middle; severe material and social deprivation; or living in a household with very low work intensity. Each person counts only once.",
+      "mudou": false
+    }
+  ]
+}

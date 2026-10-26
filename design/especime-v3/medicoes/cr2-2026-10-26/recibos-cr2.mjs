@@ -65,7 +65,7 @@ const saida = {
   pendentes_certos: recibos.filter(x => x.pendente && x.todas).length,
   recibos,
 };
-fs.writeFileSync(path.join(PASTA, 'd/recibos-cr2.json'), JSON.stringify(saida, null, 2) + '\n');
+fs.writeFileSync(path.join(process.argv[3] ?? `${PASTA}/d`, 'recibos-cr2.json'), JSON.stringify(saida, null, 2) + '\n');
 console.log(`C2 recibos: ${saida.recibos_certos} de ${saida.recibos_lidos} certos (construção ${String(versao.commit).slice(0, 8)})`);
 for (const x of recibos.filter((y) => !y.todas)) console.log(`  · ${x.rota}: ${JSON.stringify(x.ok)}`);
 process.exit(saida.recibos_certos === saida.recibos_lidos && vePortaTirada ? 0 : 1);
