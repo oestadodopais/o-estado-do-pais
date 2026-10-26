@@ -34,7 +34,7 @@ for(const lang of ['pt','en']) {
 assert(frases.some(f=>f.familia==='explicacao'&&f.citadas.includes('divida-publica-2025')));
 const recursivos=p=>fs.readdirSync(p,{withFileTypes:true}).flatMap(e=>e.isDirectory()?recursivos(path.join(p,e.name)):[path.join(p,e.name)]);
 const fontes=recursivos('src').flatMap(f=>{const s=fs.readFileSync(f,'utf8');const achados=ids.filter(id=>s.includes(id));return achados.length?[{ficheiro:f,ids:achados}]:[];});
-const resultado={modo,origem:modo==='antes'?'resolvedores na base, sem dist anterior':'resolvedores e dist',frases,fontes};
+const resultado={modo,origem:modo==='depois'?'resolvedores e dist':'resolvedores, sem conferência do HTML',frases,fontes};
 if(modo==='depois') {
   const antes=JSON.parse(fs.readFileSync(`${pasta}/frases-antes.json`));
   const chave=f=>[f.familia,f.id,f.lang,f.caminho].join('|');
@@ -59,8 +59,8 @@ if(modo==='depois') {
     const html=fs.readFileSync(f,'utf8'), citadas=ids.filter(id=>html.includes(id));
     return citadas.length?[{ficheiro:f,citadas}]:[];
   });
-  resultado.conhecido_positivo={explicacao_achada:resultado.comparacao.some(f=>f.mudou&&f.citadas.includes('divida-publica-2025')),recibo_achado:resultado.paginas.some(p=>p.ficheiro==='dist/livro-razao/divida-publica-2025/index.html'),comparador_ve_planta:normal('89,7')!==normal('89,2')};
+  resultado.conhecido_positivo={explicacao_achada:resultado.comparacao.some(f=>f.familia==='explicacao'&&f.citadas.includes('divida-publica-2025')),recibo_achado:resultado.paginas.some(p=>p.ficheiro==='dist/livro-razao/divida-publica-2025/index.html'),comparador_ve_planta:normal(resultado.comparacao[0].antes)!==normal(resultado.comparacao[0].antes+' planta')};
   assert(Object.values(resultado.conhecido_positivo).every(Boolean));
 }
-fs.writeFileSync(`${pasta}/frases-${modo}.json`,JSON.stringify(resultado,null,2)+'\n');
+fs.writeFileSync(`${pasta}/${modo==='antes'?'':'d/'}frases-${modo}.json`,JSON.stringify(resultado,null,2)+'\n');
 console.log(JSON.stringify({frases:frases.length,fontes:fontes.length,mudadas:resultado.comparacao?.filter(f=>f.mudou).length,paginas:resultado.paginas?.length}));

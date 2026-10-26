@@ -75,5 +75,20 @@
     "capturas": 0,
     "core_gate": 0,
     "tokens_used": "não exposto"
+  },
+  "continuacao_cr2d": {
+    "momento": "preparação do commit; exclui pedido de commit e inspeção final",
+    "chamadas_ferramentas": 21,
+    "chamadas_exec": 19,
+    "chamadas_request_user_input_async": 1,
+    "chamadas_sleep": 1,
+    "comandos_exec_command": 24,
+    "chamadas_write_stdin": 1,
+    "construcoes": 1,
+    "conferencias_pedidas": 7,
+    "corridas_inteiras": 0,
+    "capturas": 0,
+    "core_gate": 0,
+    "tokens_used": "não exposto"
   }
 }
