@@ -191,9 +191,9 @@
    "modelo": "Claude Opus 5.5",
    "esforco": "high",
    "simbolos": null,
-   "chamadas": 89,
-   "minutos": 77,
-   "nota": "quatro passagens (cerca de 19, 22, 6 e 42 chamadas), das 14:18 às 15:35 UTC com as esperas pelas decisões; os símbolos não foram lidos"
+   "chamadas": 88,
+   "minutos": 69,
+   "nota": "quatro passagens (cerca de 19, 22, 6 e 41 chamadas), das 14:18 às 15:27 UTC com as esperas pelas decisões; os símbolos não foram lidos"
   }
  ],
  "corridas_de_conferencias": {
