@@ -1,4 +1,4 @@
-import {dataDeCalendarioConferida} from './historia-do-valor.mjs';
+import {dataDeCalendarioConferida,textoDaHabitacao} from './historia-do-valor.mjs';
 /**
  * ===========================================================================
  * A LEITURA DA SEMANA · o resolvedor (bloco EX1, 05.10.2026, o ponto 2 do mandato)
@@ -115,7 +115,7 @@ export function leituraDaSemana({ fim = diaDaConstrucao(), linhas = allClaims() 
     if (entradas.some((/** @type {any} */ c) => c.kind === 'proveniencia')) deProveniencia.add(String(l.id));
     // Uma correção de uma frase continua no registo e no recibo. Só os valores
     // numéricos entram nas comparações «subiu», «desceu» e «mesmo número».
-    if ((l.afirmacao === true && l.unit === 'afirmação') || textoDocumentalConferido(l) || dataDeCalendarioConferida(l)) continue;
+    if ((l.afirmacao === true && l.unit === 'afirmação') || textoDocumentalConferido(l) || dataDeCalendarioConferida(l) || textoDaHabitacao(l)) continue;
     const deValorAqui = entradas.filter((/** @type {any} */ c) => NATUREZAS_DE_VALOR.includes(c.kind))
       .sort((/** @type {any} */ a, /** @type {any} */ b) => a.date.localeCompare(b.date) || a.n - b.n);
     if (!deValorAqui.length) continue;

@@ -50,6 +50,11 @@ export const LUGAR_DECLARADO_DAS_LINHAS = {
      perante o Estado, incluindo a negociação da Beira Interior. */
   'pe-oe-beira-abolicao': 'portugal',
   'pe-oe-riscos-nao-reconhecimento': 'portugal',
+  /* HB1-b: a Euronews descreve manifestações em cidades de Portugal; a RTP
+     situa a acampada e a retirada das tendas na Praça D. João I, no Porto.
+     As correções completam esses excertos, sem mudar o seu âmbito geográfico. */
+  'hab-imprensa-manif-euronews': 'portugal',
+  'hab-imprensa-tendas': 'porto',
   /* V2-d-b: as correções completam citações da UTAO sobre o orçamento
      nacional, os riscos das parcerias e a execução do SNS em Portugal. */
   'utao-ppp-contingencias-natureza-2026': 'portugal',

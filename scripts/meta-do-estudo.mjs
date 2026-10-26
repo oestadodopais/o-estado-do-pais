@@ -13,17 +13,17 @@ export function metaDoEstudoConferida(el, lang, works = WORKS) {
   const w = works.find(w => w.slug === artigo?.getAttribute('data-estudo'));
   if (!w || !['pt', 'en'].includes(lang)) return false;
   const e = w.editions.find(e => e.lang === lang) ?? w.editions[0];
-  const data = datas.find(d => d.slug === w.slug && d.lang === e.lang)?.data;
+  const data = w.publication === 'declared' ? e.date : datas.find(d => d.slug === w.slug && d.lang === e.lang)?.data;
   const tema = DOMINIOS.find(d => d.slug === w.tema)?.nome[lang];
-  if (!data || !tema) return false;
+  if (!tema) return false;
   const spans = el.children;
   const esperado = [w.subject ? SUBJECTS[w.subject]?.[lang] : 'Portugal', tema,
-    `${ROTULOS_B1[lang].publicado} ${data.split('-').reverse().join('.')}`,
+    data ? `${ROTULOS_B1[lang].publicado} ${data.split('-').reverse().join('.')}` : ROTULOS_B1[lang].edicaoPreparacao,
     ...(w.emCurso ? [`${lang === 'pt' ? 'em curso até' : 'ongoing until'} ${w.emCurso.ate?.slice(0, 4)}`] : [])];
   const time = spans[2]?.querySelectorAll('time') ?? [];
   return spans.length === esperado.length && spans.every((s, i) => s.rawTagName === 'span' && norm(s.textContent) === esperado[i])
     && norm(el.textContent) === norm(spans.map(s => s.textContent).join(''))
-    && time.length === 1 && time[0].getAttribute('datetime') === data
+    && (data ? time.length === 1 && time[0].getAttribute('datetime') === data : time.length === 0)
     && el.querySelectorAll('[data-estudo-em-curso]').length === (w.emCurso ? 1 : 0)
     && (!w.emCurso || spans[3].hasAttribute('data-estudo-em-curso'));
 }

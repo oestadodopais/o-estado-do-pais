@@ -1,0 +1,2360 @@
+{
+  "rows": {
+    "hab-governo-feh": {
+      "row": {
+        "id": "hab-governo-feh",
+        "value": "2. Aprovou um Decreto-Lei que cria o Fundo de Emergência para a Habitação (FEH) destinado a apoiar pessoas e famílias em situação de emergência habitacional, tais como despejos motivados por carência económica ou situações de violência doméstica. O FEH introduz um apoio financeiro direto, não reembolsável, para garantir um realojamento rápido, temporário ou permanente, permitindo que ninguém fique sem solução imediata em caso de perda de casa. O FEH visa assegurar que é o Estado, e não os proprietários, a assumir os custos sociais das situações de emergência habitacional.",
+        "excerpt": "2. Aprovou um Decreto-Lei que cria o Fundo de Emergência para a Habitação (FEH) destinado a apoiar pessoas e famílias em situação de emergência habitacional, tais como despejos motivados por carência económica ou situações de violência doméstica. O FEH introduz um apoio financeiro direto, não reembolsável, para garantir um realojamento rápido, temporário ou permanente, permitindo que ninguém fique sem solução imediata em caso de perda de casa. O FEH visa assegurar que é o Estado, e não os proprietários, a assumir os custos sociais das situações de emergência habitacional.",
+        "unit": "afirmação",
+        "reference_date": "2026-07-10",
+        "published_at": "2026-07-10",
+        "attributed_to": [
+          "Conselho de Ministros"
+        ],
+        "attributed_to_en": null,
+        "afirmacao": true,
+        "source_url": "https://portugal.gov.pt/gc25/governo/comunicados-do-conselho-de-ministros/comunicado-do-conselho-de-ministros-de-9-de-julho-de-2026-1",
+        "document": {
+          "title": "Comunicado do Conselho de Ministros de 9 de julho de 2026",
+          "edition": null,
+          "kind": "html",
+          "locator": "HTML; início literal único",
+          "source_sha256": "2e944e4fd1db3b94cfc743712e719f59d06c7be9c46b547c4619749b82bf705d",
+          "file": "content/23 Habitacao/source/portugal-gov-pt-6.html"
+        },
+        "document_checks": {
+          "title": {
+            "status": "conferido",
+            "text": "Comunicado do Conselho de Ministros de 9 de julho de 2026",
+            "locator": null
+          },
+          "published_at": {
+            "status": "conferido",
+            "text": "2026-07-10 às 12h26"
+          },
+          "attributed_to": {
+            "status": "conferido",
+            "text": "Conselho de Ministros",
+            "locator": "atribuição literal no documento"
+          },
+          "reference_date": {
+            "status": "conferido",
+            "text": "2026-07-10 às 12h26"
+          }
+        }
+      },
+      "receipt": {
+        "pedido": "https://portugal.gov.pt/gc25/governo/comunicados-do-conselho-de-ministros/comunicado-do-conselho-de-ministros-de-9-de-julho-de-2026-1",
+        "endereco_final": "https://portugal.gov.pt/gc25/governo/comunicados-do-conselho-de-ministros/comunicado-do-conselho-de-ministros-de-9-de-julho-de-2026-1",
+        "acedido_em": "2026-10-19T13:38:50.670699+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "estado": 200,
+        "tipo": "text/html; charset=utf-8",
+        "segundos": 0.386,
+        "erro": null,
+        "redirecionamentos": [],
+        "ficheiro": "portugal-gov-pt-6.html",
+        "bytes": 216134,
+        "sha256": "2e944e4fd1db3b94cfc743712e719f59d06c7be9c46b547c4619749b82bf705d"
+      }
+    },
+    "hab-imprensa-manif-euronews": {
+      "row": {
+        "id": "hab-imprensa-manif-euronews",
+        "value": "Cinco cidades de Portugal vão acolher, este sábado, uma manifestação contra a crise na habitação, organizada por uma plataforma que reúne cerca de 40 organizações da sociedade civil.",
+        "excerpt": "Cinco cidades de Portugal vão acolher, este sábado, uma manifestação contra a crise na habitação, organizada por uma plataforma que reúne cerca de 40 organizações da sociedade civil.",
+        "unit": "texto",
+        "reference_date": "2026-10-10",
+        "published_at": "2026-10-10",
+        "attributed_to": [
+          "Euronews"
+        ],
+        "attributed_to_en": null,
+        "afirmacao": false,
+        "source_url": "https://pt.euronews.com/2026/10/10/plataforma-nao-da-mais-organiza-protestos-por-todo-o-pais-devido-a-crise-na-habitacao",
+        "document": {
+          "title": "Plataforma “Não dá mais” organiza protestos por todo o país devido à crise na habitação",
+          "edition": "2026-10-10",
+          "kind": "html",
+          "locator": "HTML; início literal único",
+          "source_sha256": "2d64b9e9cd6983b0bdd12c971154583773825299cca67672966ce73277049ef6",
+          "file": "content/23 Habitacao/source/hb1-euronews.html"
+        },
+        "document_checks": {
+          "title": {
+            "status": "conferido",
+            "text": "Plataforma “Não dá mais” organiza protestos por todo o país devido à crise na habitação",
+            "locator": null
+          },
+          "published_at": {
+            "status": "conferido",
+            "text": "10/10/2026",
+            "locator": null
+          },
+          "reference_date": {
+            "status": "conferido",
+            "text": "10/10/2026",
+            "locator": null
+          }
+        }
+      },
+      "receipt": {
+        "pedido": "https://pt.euronews.com/2026/10/10/plataforma-nao-da-mais-organiza-protestos-por-todo-o-pais-devido-a-crise-na-habitacao",
+        "endereco_final": "https://pt.euronews.com/2026/10/10/plataforma-nao-da-mais-organiza-protestos-por-todo-o-pais-devido-a-crise-na-habitacao",
+        "acedido_em": "2026-10-20T19:12:05.598686+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "estado": 200,
+        "tipo": "text/html; charset=UTF-8",
+        "segundos": 0.091,
+        "erro": null,
+        "redirecionamentos": [],
+        "ficheiro": "hb1-euronews.html",
+        "bytes": 300514,
+        "sha256": "2d64b9e9cd6983b0bdd12c971154583773825299cca67672966ce73277049ef6"
+      }
+    },
+    "hab-imprensa-feridos37": {
+      "row": {
+        "id": "hab-imprensa-feridos37",
+        "value": "37 feridos, dois em estado grave",
+        "excerpt": "37 feridos, dois em estado grave",
+        "unit": "afirmação",
+        "reference_date": "2026-10-15",
+        "published_at": "2026-10-15",
+        "attributed_to": [
+          "Movimento pela Habitação"
+        ],
+        "attributed_to_en": null,
+        "afirmacao": true,
+        "source_url": "https://www.rtp.pt/noticias/pais/dezenas-de-feridos-em-confrontos-entre-manifestantes-e-policia-no-porto_n1771773",
+        "document": {
+          "title": "Montenegro afasta \"país em turbulência\". Dezenas de feridos em investida da polícia contra manifestantes no Porto",
+          "edition": "2026-10-15",
+          "kind": "html",
+          "locator": "HTML; início literal único",
+          "source_sha256": "cb9da346a7b2f62547c7d2788e2b7067fcf04aab16658546ea8488d876e13559",
+          "file": "content/23 Habitacao/source/imprensa-7.html"
+        },
+        "document_checks": {
+          "title": {
+            "status": "conferido",
+            "text": "Montenegro afasta \"país em turbulência\". Dezenas de feridos em investida da polícia contra manifestantes no Porto",
+            "locator": null
+          },
+          "published_at": {
+            "status": "conferido",
+            "text": "2026-10-15T09:40:33Z"
+          },
+          "attributed_to": {
+            "status": "conferido",
+            "text": "Em comunicado, o Movimento pela Habitação",
+            "locator": "atribuição literal no documento"
+          },
+          "reference_date": {
+            "status": "conferido",
+            "text": "2026-10-15T09:40:33Z"
+          }
+        }
+      },
+      "receipt": {
+        "pedido": "https://www.rtp.pt/noticias/pais/dezenas-de-feridos-em-confrontos-entre-manifestantes-e-policia-no-porto_n1771773",
+        "endereco_final": "https://www.rtp.pt/noticias/pais/dezenas-de-feridos-em-confrontos-entre-manifestantes-e-policia-no-porto_n1771773",
+        "acedido_em": "2026-10-19T13:45:08.352610+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "estado": 200,
+        "tipo": "text/html; charset=UTF-8",
+        "segundos": 0.333,
+        "erro": null,
+        "redirecionamentos": [],
+        "ficheiro": "imprensa-7.html",
+        "bytes": 110394,
+        "sha256": "cb9da346a7b2f62547c7d2788e2b7067fcf04aab16658546ea8488d876e13559"
+      }
+    },
+    "hab-imprensa-feridos39": {
+      "row": {
+        "id": "hab-imprensa-feridos39",
+        "value": "39 feridos, dois deles graves",
+        "excerpt": "39 feridos, dois deles graves",
+        "unit": "afirmação",
+        "reference_date": "2026-10-15",
+        "published_at": "2026-10-15",
+        "attributed_to": [
+          "organização"
+        ],
+        "attributed_to_en": [
+          "the organisers"
+        ],
+        "afirmacao": true,
+        "source_url": "https://www.dn.pt/sociedade/manifestantes-levam-protesto-at-porta-da-cmara-do-porto",
+        "document": {
+          "title": "Manifestantes pela habitação voltam à Praça D. João I e atiram a Pedro Duarte",
+          "edition": null,
+          "kind": "html",
+          "locator": "HTML; início literal único",
+          "source_sha256": "ee80288a4412a61cca9a62d93fa7f3b910608b71a1658e76a948c87ccdb69aa8",
+          "file": "content/23 Habitacao/source/imprensa-9.html"
+        },
+        "document_checks": {
+          "title": {
+            "status": "conferido",
+            "text": "Manifestantes pela habitação voltam à Praça D. João I e atiram a Pedro Duarte",
+            "locator": null
+          },
+          "published_at": {
+            "status": "conferido",
+            "text": "15 Out 2026",
+            "locator": null
+          },
+          "attributed_to": {
+            "status": "conferido",
+            "text": "segundo contas da organização",
+            "locator": "atribuição literal no documento"
+          },
+          "reference_date": {
+            "status": "conferido",
+            "text": "15 Out 2026",
+            "locator": null
+          }
+        }
+      },
+      "receipt": {
+        "pedido": "https://www.dn.pt/sociedade/manifestantes-levam-protesto-at-porta-da-cmara-do-porto",
+        "endereco_final": "https://www.dn.pt/sociedade/manifestantes-levam-protesto-at-porta-da-cmara-do-porto",
+        "acedido_em": "2026-10-19T13:45:08.960374+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "estado": 200,
+        "tipo": "text/html; charset=utf-8",
+        "segundos": 0.427,
+        "erro": null,
+        "redirecionamentos": [],
+        "ficheiro": "imprensa-9.html",
+        "bytes": 999009,
+        "sha256": "ee80288a4412a61cca9a62d93fa7f3b910608b71a1658e76a948c87ccdb69aa8"
+      }
+    },
+    "hab-imprensa-feridos35": {
+      "row": {
+        "id": "hab-imprensa-feridos35",
+        "value": "35 feridos, pelo menos",
+        "excerpt": "35 feridos, pelo menos",
+        "unit": "afirmação",
+        "reference_date": "2026-10-15",
+        "published_at": "2026-10-15",
+        "attributed_to": [
+          "José Soeiro, dirigente nacional do BE"
+        ],
+        "attributed_to_en": [
+          "José Soeiro, of the Left Bloc's national leadership"
+        ],
+        "afirmacao": true,
+        "source_url": "https://www.dn.pt/sociedade/confrontos-nos-protestos-pela-habitao-no-porto-manifestantes-denunciam-37-feridos",
+        "document": {
+          "title": "Confrontos nos protestos pela habitação no Porto. Manifestantes denunciam 37 feridos",
+          "edition": null,
+          "kind": "html",
+          "locator": "HTML; início literal único",
+          "source_sha256": "b91b5eb99d5e016890e7acfa8cbb47b1ab80ca0487a1d6b4e8647f43c0636087",
+          "file": "content/23 Habitacao/source/imprensa-8.html"
+        },
+        "document_checks": {
+          "title": {
+            "status": "conferido",
+            "text": "Confrontos nos protestos pela habitação no Porto. Manifestantes denunciam 37 feridos",
+            "locator": null
+          },
+          "published_at": {
+            "status": "conferido",
+            "text": "15 Out 2026",
+            "locator": null
+          },
+          "attributed_to": {
+            "status": "conferido",
+            "text": "José Soeiro, dirigente nacional do BE",
+            "locator": "atribuição literal no documento"
+          },
+          "reference_date": {
+            "status": "conferido",
+            "text": "15 Out 2026",
+            "locator": null
+          }
+        }
+      },
+      "receipt": {
+        "pedido": "https://www.dn.pt/sociedade/confrontos-nos-protestos-pela-habitao-no-porto-manifestantes-denunciam-37-feridos",
+        "endereco_final": "https://www.dn.pt/sociedade/confrontos-nos-protestos-pela-habitao-no-porto-manifestantes-denunciam-37-feridos",
+        "acedido_em": "2026-10-19T13:45:08.697591+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "estado": 200,
+        "tipo": "text/html; charset=utf-8",
+        "segundos": 0.251,
+        "erro": null,
+        "redirecionamentos": [],
+        "ficheiro": "imprensa-8.html",
+        "bytes": 941298,
+        "sha256": "b91b5eb99d5e016890e7acfa8cbb47b1ab80ca0487a1d6b4e8647f43c0636087"
+      }
+    },
+    "hab-arrendamento-exposicao-vagos": {
+      "row": {
+        "id": "hab-arrendamento-exposicao-vagos",
+        "value": "Considerando os dados dos Censos 2021, estima-se que cerca de 375 mil alojamentos familiares clássicos, dos quais quase 250 mil em boas condições, estejam vagos sem intenção de venda ou arrendamento.",
+        "excerpt": "Considerando os dados dos Censos 2021, estima-se que cerca de 375 mil alojamentos familiares clássicos, dos quais quase 250 mil em boas condições, estejam vagos sem intenção de venda ou arrendamento.",
+        "unit": "texto",
+        "reference_date": "2026-08-12",
+        "period": "2021",
+        "published_at": null,
+        "attributed_to": [
+          "Presidência do Conselho de Ministros"
+        ],
+        "attributed_to_en": null,
+        "afirmacao": false,
+        "source_url": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=PGqkJsL2G6lw3G9uygQPf1N1JH%252f%252b39M7GvgOIuNn9FNOwLO2SXVEvaHNII0zNl6xllstU3XfW8EfQWjgG%252buXWe1twkFNl7yALPxVM6Oml0ddQcK1qlunYed5let%252frSf5xjXbX4x3l2s1Z5Pvfiuu97KvT7AuI9IaGBhl3R1hzcZy7OvFxWrW6bWmDRQxr305vP52XJEjNNWGIbewa93ACJFq0UY%252fRon1UT94WBH%252fetlGKnHQOaVjs1V5brjBOhOzv%252f4HGHzYfSHk6w1cBu3faH2cgkTbVJLe%252f8rW%252fs4RtACxzeZ%252bgfFaWH74JS526shFMH5GuLqS8UlNBDDhmAvPvzOVHjFDu1B2p8lnJVx8PG0gA7MGYhCwpx0ajx8ooMJ%252b&fich=c0c6e27a-3ce4-49b8-a2e7-412f0a38f7ec.docx&Inline=true",
+        "document": {
+          "title": "Proposta de Lei n.º 103/XVII",
+          "edition": "2026-08-12",
+          "kind": "ficheiro",
+          "locator": "PDF p. 1; Exposição de Motivos; estimativa pelos Censos de 2021; autoria na folha de rosto; data da proposta na página do Parlamento",
+          "source_sha256": "505b9d5fbeed485dd107377bbae07003f9f7fa4cd3f949534f6154f3b854d7bf",
+          "page": 1,
+          "file": "content/23 Habitacao/source/parlamento-pt-7-texto.pdf"
+        },
+        "document_checks": {
+          "title": {
+            "status": "conferido",
+            "text": "Proposta de Lei n.º 103/XVII",
+            "locator": 1
+          },
+          "published_at": {
+            "status": "por confirmar",
+            "reason": "Sem data de publicação ancorada no documento; o período de referência e o acesso não provam a publicação."
+          },
+          "period": {
+            "status": "conferido",
+            "text": "Considerando os dados dos Censos 2021,",
+            "file": "source/parlamento-pt-7-texto.pdf",
+            "sha256": "505b9d5fbeed485dd107377bbae07003f9f7fa4cd3f949534f6154f3b854d7bf",
+            "date": "2021"
+          },
+          "reference_date": {
+            "status": "conferido",
+            "text": "2026-08-12 | Entrada",
+            "file": "source/parlamento-pt-7.html",
+            "sha256": "f45c11ca5b327ba931433166a6a739dd9d0cadb039344d78b581cc08be8afba9",
+            "date": "2026-08-12"
+          }
+        }
+      },
+      "receipt": {
+        "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=PGqkJsL2G6lw3G9uygQPf1N1JH%252f%252b39M7GvgOIuNn9FNOwLO2SXVEvaHNII0zNl6xllstU3XfW8EfQWjgG%252buXWe1twkFNl7yALPxVM6Oml0ddQcK1qlunYed5let%252frSf5xjXbX4x3l2s1Z5Pvfiuu97KvT7AuI9IaGBhl3R1hzcZy7OvFxWrW6bWmDRQxr305vP52XJEjNNWGIbewa93ACJFq0UY%252fRon1UT94WBH%252fetlGKnHQOaVjs1V5brjBOhOzv%252f4HGHzYfSHk6w1cBu3faH2cgkTbVJLe%252f8rW%252fs4RtACxzeZ%252bgfFaWH74JS526shFMH5GuLqS8UlNBDDhmAvPvzOVHjFDu1B2p8lnJVx8PG0gA7MGYhCwpx0ajx8ooMJ%252b&fich=c0c6e27a-3ce4-49b8-a2e7-412f0a38f7ec.docx&Inline=true",
+        "endereco_final": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=PGqkJsL2G6lw3G9uygQPf1N1JH%252f%252b39M7GvgOIuNn9FNOwLO2SXVEvaHNII0zNl6xllstU3XfW8EfQWjgG%252buXWe1twkFNl7yALPxVM6Oml0ddQcK1qlunYed5let%252frSf5xjXbX4x3l2s1Z5Pvfiuu97KvT7AuI9IaGBhl3R1hzcZy7OvFxWrW6bWmDRQxr305vP52XJEjNNWGIbewa93ACJFq0UY%252fRon1UT94WBH%252fetlGKnHQOaVjs1V5brjBOhOzv%252f4HGHzYfSHk6w1cBu3faH2cgkTbVJLe%252f8rW%252fs4RtACxzeZ%252bgfFaWH74JS526shFMH5GuLqS8UlNBDDhmAvPvzOVHjFDu1B2p8lnJVx8PG0gA7MGYhCwpx0ajx8ooMJ%252b&fich=c0c6e27a-3ce4-49b8-a2e7-412f0a38f7ec.docx&Inline=true",
+        "acedido_em": "2026-10-19T13:42:38.925409+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "estado": 200,
+        "tipo": "application/pdf",
+        "segundos": 10.931,
+        "erro": null,
+        "redirecionamentos": [],
+        "ficheiro": "parlamento-pt-7-texto.pdf",
+        "bytes": 286641,
+        "sha256": "505b9d5fbeed485dd107377bbae07003f9f7fa4cd3f949534f6154f3b854d7bf"
+      },
+      "reference_source": {
+        "file": "content/23 Habitacao/source/parlamento-pt-7.html",
+        "sha256": "f45c11ca5b327ba931433166a6a739dd9d0cadb039344d78b581cc08be8afba9",
+        "receipt": {
+          "pedido": "https://www.parlamento.pt/ActividadeParlamentar/Paginas/DetalheIniciativa.aspx?BID=377135",
+          "endereco_final": "https://www.parlamento.pt/ActividadeParlamentar/Paginas/DetalheIniciativa.aspx?BID=377135",
+          "acedido_em": "2026-10-19T13:38:51.069873+00:00",
+          "cliente": "core.http.HttpClient.condicional",
+          "user_agent": "OEstadoDoPais/corredor",
+          "estado": 200,
+          "tipo": "text/html; charset=utf-8",
+          "segundos": 9.466,
+          "erro": null,
+          "redirecionamentos": [],
+          "ficheiro": "parlamento-pt-7.html",
+          "bytes": 389349,
+          "sha256": "f45c11ca5b327ba931433166a6a739dd9d0cadb039344d78b581cc08be8afba9"
+        }
+      }
+    },
+    "hab-governo-arrendamento": {
+      "row": {
+        "id": "hab-governo-arrendamento",
+        "value": "A reforma assenta em quatro eixos principais: maior liberdade contratual, reforço da segurança e do cumprimento dos contratos, simplificação e aceleração dos mecanismos de despejo e resolução de litígios, e reforço da responsabilidade social do Estado na proteção das situações de maior vulnerabilidade.",
+        "excerpt": "A reforma assenta em quatro eixos principais: maior liberdade contratual, reforço da segurança e do cumprimento dos contratos, simplificação e aceleração dos mecanismos de despejo e resolução de litígios, e reforço da responsabilidade social do Estado na proteção das situações de maior vulnerabilidade.",
+        "unit": "afirmação",
+        "reference_date": "2026-07-10",
+        "published_at": "2026-07-10",
+        "attributed_to": [
+          "Conselho de Ministros"
+        ],
+        "attributed_to_en": null,
+        "afirmacao": true,
+        "source_url": "https://portugal.gov.pt/gc25/governo/comunicados-do-conselho-de-ministros/comunicado-do-conselho-de-ministros-de-9-de-julho-de-2026-1",
+        "document": {
+          "title": "Comunicado do Conselho de Ministros de 9 de julho de 2026",
+          "edition": null,
+          "kind": "html",
+          "locator": "HTML; início literal único",
+          "source_sha256": "2e944e4fd1db3b94cfc743712e719f59d06c7be9c46b547c4619749b82bf705d",
+          "file": "content/23 Habitacao/source/portugal-gov-pt-6.html"
+        },
+        "document_checks": {
+          "title": {
+            "status": "conferido",
+            "text": "Comunicado do Conselho de Ministros de 9 de julho de 2026",
+            "locator": null
+          },
+          "published_at": {
+            "status": "conferido",
+            "text": "2026-07-10 às 12h26"
+          },
+          "attributed_to": {
+            "status": "conferido",
+            "text": "O Conselho de Ministros, reunido no dia 09 de julho de 2026, na Residência Oficial do Primeiro-Ministro:",
+            "locator": "atribuição literal no documento"
+          },
+          "reference_date": {
+            "status": "conferido",
+            "text": "2026-07-10 às 12h26"
+          }
+        }
+      },
+      "receipt": {
+        "pedido": "https://portugal.gov.pt/gc25/governo/comunicados-do-conselho-de-ministros/comunicado-do-conselho-de-ministros-de-9-de-julho-de-2026-1",
+        "endereco_final": "https://portugal.gov.pt/gc25/governo/comunicados-do-conselho-de-ministros/comunicado-do-conselho-de-ministros-de-9-de-julho-de-2026-1",
+        "acedido_em": "2026-10-19T13:38:50.670699+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "estado": 200,
+        "tipo": "text/html; charset=utf-8",
+        "segundos": 0.386,
+        "erro": null,
+        "redirecionamentos": [],
+        "ficheiro": "portugal-gov-pt-6.html",
+        "bytes": 216134,
+        "sha256": "2e944e4fd1db3b94cfc743712e719f59d06c7be9c46b547c4619749b82bf705d"
+      }
+    },
+    "hab-imprensa-igai": {
+      "row": {
+        "id": "hab-imprensa-igai",
+        "value": "a IGAI abriu um processo administrativo, com solicitação de informações à PSP",
+        "excerpt": "a IGAI abriu um processo administrativo, com solicitação de informações à PSP",
+        "unit": "afirmação",
+        "reference_date": "2026-10-16",
+        "published_at": "2026-10-16",
+        "attributed_to": [
+          "IGAI"
+        ],
+        "attributed_to_en": null,
+        "afirmacao": true,
+        "source_url": "https://www.rtp.pt/noticias/pais/igai-abre-processo-sobre-carga-policial-contra-protesto-pela-habitacao-no-porto_n1772069",
+        "document": {
+          "title": "IGAI abre processo sobre carga policial contra protesto pela habitação no Porto",
+          "edition": "2026-10-16",
+          "kind": "html",
+          "locator": "HTML; início literal único",
+          "source_sha256": "43349a8cafe3dc16df098e9f28cdc1211dfe2883cc45083f9d36bf37129f93bf",
+          "file": "content/23 Habitacao/source/imprensa-5.html"
+        },
+        "document_checks": {
+          "title": {
+            "status": "conferido",
+            "text": "IGAI abre processo sobre carga policial contra protesto pela habitação no Porto",
+            "locator": null
+          },
+          "published_at": {
+            "status": "conferido",
+            "text": "2026-10-16T12:36:50Z"
+          },
+          "attributed_to": {
+            "status": "conferido",
+            "text": "A IGAI informa",
+            "locator": "atribuição literal no documento"
+          },
+          "reference_date": {
+            "status": "conferido",
+            "text": "2026-10-16T12:36:50Z"
+          }
+        }
+      },
+      "receipt": {
+        "pedido": "https://www.rtp.pt/noticias/pais/igai-abre-processo-sobre-carga-policial-contra-protesto-pela-habitacao-no-porto_n1772069",
+        "endereco_final": "https://www.rtp.pt/noticias/pais/igai-abre-processo-sobre-carga-policial-contra-protesto-pela-habitacao-no-porto_n1772069",
+        "acedido_em": "2026-10-19T13:45:07.633696+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "estado": 200,
+        "tipo": "text/html; charset=UTF-8",
+        "segundos": 0.364,
+        "erro": null,
+        "redirecionamentos": [],
+        "ficheiro": "imprensa-5.html",
+        "bytes": 93922,
+        "sha256": "43349a8cafe3dc16df098e9f28cdc1211dfe2883cc45083f9d36bf37129f93bf"
+      }
+    },
+    "hab-imprensa-renda-metade": {
+      "row": {
+        "id": "hab-imprensa-renda-metade",
+        "value": "a renda consome metade do salário",
+        "excerpt": "a renda consome metade do salário",
+        "unit": "texto",
+        "reference_date": "2026-10-10",
+        "published_at": "2026-10-10",
+        "attributed_to": [
+          "Euronews"
+        ],
+        "attributed_to_en": null,
+        "afirmacao": false,
+        "source_url": "https://pt.euronews.com/2026/10/10/plataforma-nao-da-mais-organiza-protestos-por-todo-o-pais-devido-a-crise-na-habitacao",
+        "document": {
+          "title": "Plataforma “Não dá mais” organiza protestos por todo o país devido à crise na habitação",
+          "edition": "2026-10-10",
+          "kind": "html",
+          "locator": "HTML; início literal único",
+          "source_sha256": "2d64b9e9cd6983b0bdd12c971154583773825299cca67672966ce73277049ef6",
+          "file": "content/23 Habitacao/source/hb1-euronews.html"
+        },
+        "document_checks": {
+          "title": {
+            "status": "conferido",
+            "text": "Plataforma “Não dá mais” organiza protestos por todo o país devido à crise na habitação",
+            "locator": null
+          },
+          "published_at": {
+            "status": "conferido",
+            "text": "10/10/2026",
+            "locator": null
+          },
+          "reference_date": {
+            "status": "conferido",
+            "text": "10/10/2026",
+            "locator": null
+          }
+        }
+      },
+      "receipt": {
+        "pedido": "https://pt.euronews.com/2026/10/10/plataforma-nao-da-mais-organiza-protestos-por-todo-o-pais-devido-a-crise-na-habitacao",
+        "endereco_final": "https://pt.euronews.com/2026/10/10/plataforma-nao-da-mais-organiza-protestos-por-todo-o-pais-devido-a-crise-na-habitacao",
+        "acedido_em": "2026-10-20T19:12:05.598686+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "estado": 200,
+        "tipo": "text/html; charset=UTF-8",
+        "segundos": 0.091,
+        "erro": null,
+        "redirecionamentos": [],
+        "ficheiro": "hb1-euronews.html",
+        "bytes": 300514,
+        "sha256": "2d64b9e9cd6983b0bdd12c971154583773825299cca67672966ce73277049ef6"
+      }
+    },
+    "hab-imprensa-psp-ferido": {
+      "row": {
+        "id": "hab-imprensa-psp-ferido",
+        "value": "um polícia ficou ferido",
+        "excerpt": "um polícia ficou ferido",
+        "unit": "afirmação",
+        "reference_date": "2026-10-15",
+        "published_at": "2026-10-15",
+        "attributed_to": [
+          "PSP"
+        ],
+        "attributed_to_en": [
+          "the PSP"
+        ],
+        "afirmacao": true,
+        "source_url": "https://www.dn.pt/sociedade/manifestantes-levam-protesto-at-porta-da-cmara-do-porto",
+        "document": {
+          "title": "Manifestantes pela habitação voltam à Praça D. João I e atiram a Pedro Duarte",
+          "edition": null,
+          "kind": "html",
+          "locator": "HTML; início literal único",
+          "source_sha256": "ee80288a4412a61cca9a62d93fa7f3b910608b71a1658e76a948c87ccdb69aa8",
+          "file": "content/23 Habitacao/source/imprensa-9.html"
+        },
+        "document_checks": {
+          "title": {
+            "status": "conferido",
+            "text": "Manifestantes pela habitação voltam à Praça D. João I e atiram a Pedro Duarte",
+            "locator": null
+          },
+          "published_at": {
+            "status": "conferido",
+            "text": "15 Out 2026",
+            "locator": null
+          },
+          "attributed_to": {
+            "status": "conferido",
+            "text": "anunciando a PSP",
+            "locator": "atribuição literal no documento"
+          },
+          "reference_date": {
+            "status": "conferido",
+            "text": "15 Out 2026",
+            "locator": null
+          }
+        }
+      },
+      "receipt": {
+        "pedido": "https://www.dn.pt/sociedade/manifestantes-levam-protesto-at-porta-da-cmara-do-porto",
+        "endereco_final": "https://www.dn.pt/sociedade/manifestantes-levam-protesto-at-porta-da-cmara-do-porto",
+        "acedido_em": "2026-10-19T13:45:08.960374+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "estado": 200,
+        "tipo": "text/html; charset=utf-8",
+        "segundos": 0.427,
+        "erro": null,
+        "redirecionamentos": [],
+        "ficheiro": "imprensa-9.html",
+        "bytes": 999009,
+        "sha256": "ee80288a4412a61cca9a62d93fa7f3b910608b71a1658e76a948c87ccdb69aa8"
+      }
+    },
+    "hab-be-despejos": {
+      "row": {
+        "id": "hab-be-despejos",
+        "value": "5. A crise na habitação continua a agravar-se e os seus efeitos agudizam-se. Os despejos aumentaram 40% em 2025, e o Governo avança com medidas para os facilitar ainda mais.",
+        "excerpt": "5. A crise na habitação continua a agravar-se e os seus efeitos agudizam-se. Os despejos aumentaram 40% em 2025, e o Governo avança com medidas para os facilitar ainda mais.",
+        "unit": "afirmação",
+        "reference_date": "2026-03-28",
+        "published_at": "2026-03-28",
+        "attributed_to": [
+          "Bloco de Esquerda"
+        ],
+        "attributed_to_en": null,
+        "afirmacao": true,
+        "source_url": "https://bloco.org/sites/default/files/2026-03/20260328resolmn.pdf",
+        "document": {
+          "title": "Defender a maioria que vive do seu salário contra os ataques da direita",
+          "edition": null,
+          "kind": "ficheiro",
+          "locator": "PDF p. 2; parágrafo identificado pelo início; área física declarada",
+          "source_sha256": "576f73d110bda4d4b06804929b3f831732a95bab496918ceb4bbe3d716999b72",
+          "page": 2,
+          "file": "content/23 Habitacao/source/bloco-resolucao.pdf"
+        },
+        "document_checks": {
+          "title": {
+            "status": "conferido",
+            "text": "Defender a maioria que vive do seu salário contra os ataques da direita",
+            "locator": 1
+          },
+          "published_at": {
+            "status": "conferido",
+            "text": "28.03.2026",
+            "locator": 1
+          },
+          "attributed_to": {
+            "status": "conferido",
+            "text": "Bloco de Esquerda",
+            "locator": "entidade que emite o documento"
+          },
+          "reference_date": {
+            "status": "conferido",
+            "text": "28.03.2026",
+            "locator": 1
+          }
+        }
+      },
+      "receipt": {
+        "pedido": "https://bloco.org/sites/default/files/2026-03/20260328resolmn.pdf",
+        "endereco_final": "https://bloco.org/sites/default/files/2026-03/20260328resolmn.pdf",
+        "acedido_em": "2026-10-19T13:43:34.415280+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "estado": 200,
+        "tipo": "application/pdf",
+        "segundos": 0.325,
+        "erro": null,
+        "redirecionamentos": [],
+        "ficheiro": "bloco-resolucao.pdf",
+        "bytes": 99133,
+        "sha256": "576f73d110bda4d4b06804929b3f831732a95bab496918ceb4bbe3d716999b72"
+      }
+    },
+    "hab-governo-construir": {
+      "row": {
+        "id": "hab-governo-construir",
+        "value": "Redução da taxa de IVA para 6% na construção de habitações para venda até 648 mil euros ou, no caso de arrendamento, para rendas até 2.300 euros. Este regime fiscal vigora até 2029.",
+        "excerpt": "Redução da taxa de IVA para 6% na construção de habitações para venda até 648 mil euros ou, no caso de arrendamento, para rendas até 2.300 euros. Este regime fiscal vigora até 2029.",
+        "unit": "afirmação",
+        "reference_date": "2025-09-25",
+        "published_at": "2025-09-25",
+        "attributed_to": [
+          "Conselho de Ministros"
+        ],
+        "attributed_to_en": null,
+        "afirmacao": true,
+        "source_url": "https://portugal.gov.pt/gc25/comunicacao/noticias/conselho-de-ministros-aprova-medidas-no-ambito-da-habitacao",
+        "document": {
+          "title": "Construir Portugal - Arrendamento e simplificação",
+          "edition": null,
+          "kind": "html",
+          "locator": "HTML; início literal único",
+          "source_sha256": "a5e849583f565981009c3261d2ae05b14145f6dad64cb3ed809de15445da212d",
+          "file": "content/23 Habitacao/source/portugal-gov-pt-8.html"
+        },
+        "document_checks": {
+          "title": {
+            "status": "conferido",
+            "text": "Construir Portugal - Arrendamento e simplificação",
+            "locator": null
+          },
+          "published_at": {
+            "status": "conferido",
+            "text": "2025-09-25 às 17h27"
+          },
+          "attributed_to": {
+            "status": "conferido",
+            "text": "Conselho de Ministros",
+            "locator": "atribuição literal no documento"
+          },
+          "reference_date": {
+            "status": "conferido",
+            "text": "2025-09-25 às 17h27"
+          }
+        }
+      },
+      "receipt": {
+        "pedido": "https://portugal.gov.pt/gc25/comunicacao/noticias/conselho-de-ministros-aprova-medidas-no-ambito-da-habitacao",
+        "endereco_final": "https://portugal.gov.pt/gc25/comunicacao/noticias/conselho-de-ministros-aprova-medidas-no-ambito-da-habitacao",
+        "acedido_em": "2026-10-19T13:39:00.548783+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "estado": 200,
+        "tipo": "text/html; charset=utf-8",
+        "segundos": 0.326,
+        "erro": null,
+        "redirecionamentos": [],
+        "ficheiro": "portugal-gov-pt-8.html",
+        "bytes": 223820,
+        "sha256": "a5e849583f565981009c3261d2ae05b14145f6dad64cb3ed809de15445da212d"
+      }
+    },
+    "hab-ps-vazias": {
+      "row": {
+        "id": "hab-ps-vazias",
+        "value": "centenas de milhares de casas vazias em condições de serem habitadas. Para as trazer para o mercado, o PS vai propor um regime excecional, válido durante três anos:",
+        "excerpt": "centenas de milhares de casas vazias em condições de serem habitadas. Para as trazer para o mercado, o PS vai propor um regime excecional, válido durante três anos:",
+        "unit": "afirmação",
+        "reference_date": "2026-10-19",
+        "published_at": "2026-10-19",
+        "attributed_to": [
+          "José Luís Carneiro"
+        ],
+        "attributed_to_en": null,
+        "afirmacao": true,
+        "source_url": "https://ps.pt/habitacao-o-que-propusemos-e-o-que-vamos-propor/",
+        "document": {
+          "title": "Habitação: o que propusemos e o que vamos propor",
+          "edition": null,
+          "kind": "html",
+          "locator": "HTML; início literal único",
+          "source_sha256": "e07a1aa4ec2c0ffb3a202ace8166dc62d29b2e94ad3888c6f50e84b658f56f0d",
+          "file": "content/23 Habitacao/source/ps-pt-14.html"
+        },
+        "document_checks": {
+          "title": {
+            "status": "conferido",
+            "text": "Habitação: o que propusemos e o que vamos propor",
+            "locator": null
+          },
+          "published_at": {
+            "status": "conferido",
+            "text": "19/10/2026",
+            "locator": null
+          },
+          "attributed_to": {
+            "status": "conferido",
+            "text": "José Luís Carneiro Secretário-Geral",
+            "locator": "atribuição literal no documento"
+          },
+          "reference_date": {
+            "status": "conferido",
+            "text": "19/10/2026",
+            "locator": null
+          }
+        }
+      },
+      "receipt": {
+        "pedido": "https://ps.pt/habitacao-o-que-propusemos-e-o-que-vamos-propor/",
+        "endereco_final": "https://ps.pt/habitacao-o-que-propusemos-e-o-que-vamos-propor/",
+        "acedido_em": "2026-10-19T13:39:04.344437+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "estado": 200,
+        "tipo": "text/html; charset=UTF-8",
+        "segundos": 0.345,
+        "erro": null,
+        "redirecionamentos": [],
+        "ficheiro": "ps-pt-14.html",
+        "bytes": 148753,
+        "sha256": "e07a1aa4ec2c0ffb3a202ace8166dc62d29b2e94ad3888c6f50e84b658f56f0d"
+      }
+    },
+    "hab-arrendamento-exposicao": {
+      "row": {
+        "id": "hab-arrendamento-exposicao",
+        "value": "Nomeadamente, propõe-se que a resolução do contrato possa ocorrer quando haja mora igual ou superior a dois meses no pagamento da renda ou quando exista atraso superior a oito dias no pagamento de rendas, por mais de três vezes, seguidas ou interpoladas, num período de 12 meses, ou por mais de quatro vezes num período de 18 meses.",
+        "excerpt": "Nomeadamente, propõe-se que a resolução do contrato possa ocorrer quando haja mora igual ou superior a dois meses no pagamento da renda ou quando exista atraso superior a oito dias no pagamento de rendas, por mais de três vezes, seguidas ou interpoladas, num período de 12 meses, ou por mais de quatro vezes num período de 18 meses.",
+        "unit": "texto",
+        "reference_date": "2026-08-12",
+        "published_at": null,
+        "attributed_to": [
+          "Governo"
+        ],
+        "attributed_to_en": null,
+        "afirmacao": false,
+        "source_url": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=PGqkJsL2G6lw3G9uygQPf1N1JH%252f%252b39M7GvgOIuNn9FNOwLO2SXVEvaHNII0zNl6xllstU3XfW8EfQWjgG%252buXWe1twkFNl7yALPxVM6Oml0ddQcK1qlunYed5let%252frSf5xjXbX4x3l2s1Z5Pvfiuu97KvT7AuI9IaGBhl3R1hzcZy7OvFxWrW6bWmDRQxr305vP52XJEjNNWGIbewa93ACJFq0UY%252fRon1UT94WBH%252fetlGKnHQOaVjs1V5brjBOhOzv%252f4HGHzYfSHk6w1cBu3faH2cgkTbVJLe%252f8rW%252fs4RtACxzeZ%252bgfFaWH74JS526shFMH5GuLqS8UlNBDDhmAvPvzOVHjFDu1B2p8lnJVx8PG0gA7MGYhCwpx0ajx8ooMJ%252b&fich=c0c6e27a-3ce4-49b8-a2e7-412f0a38f7ec.docx&Inline=true",
+        "document": {
+          "title": "Proposta de Lei n.º 103/XVII",
+          "edition": "2026-08-12",
+          "kind": "ficheiro",
+          "locator": "PDF p. 3; parágrafo identificado pelo início; área física declarada",
+          "source_sha256": "505b9d5fbeed485dd107377bbae07003f9f7fa4cd3f949534f6154f3b854d7bf",
+          "page": 3,
+          "file": "content/23 Habitacao/source/parlamento-pt-7-texto.pdf"
+        },
+        "document_checks": {
+          "title": {
+            "status": "conferido",
+            "text": "Proposta de Lei n.º 103/XVII",
+            "locator": 1
+          },
+          "published_at": {
+            "status": "por confirmar",
+            "reason": "Sem data de publicação ancorada no documento; o período de referência e o acesso não provam a publicação."
+          },
+          "reference_date": {
+            "status": "conferido",
+            "text": "2026-08-12 | Entrada",
+            "file": "source/parlamento-pt-7.html",
+            "sha256": "f45c11ca5b327ba931433166a6a739dd9d0cadb039344d78b581cc08be8afba9",
+            "date": "2026-08-12"
+          }
+        }
+      },
+      "receipt": {
+        "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=PGqkJsL2G6lw3G9uygQPf1N1JH%252f%252b39M7GvgOIuNn9FNOwLO2SXVEvaHNII0zNl6xllstU3XfW8EfQWjgG%252buXWe1twkFNl7yALPxVM6Oml0ddQcK1qlunYed5let%252frSf5xjXbX4x3l2s1Z5Pvfiuu97KvT7AuI9IaGBhl3R1hzcZy7OvFxWrW6bWmDRQxr305vP52XJEjNNWGIbewa93ACJFq0UY%252fRon1UT94WBH%252fetlGKnHQOaVjs1V5brjBOhOzv%252f4HGHzYfSHk6w1cBu3faH2cgkTbVJLe%252f8rW%252fs4RtACxzeZ%252bgfFaWH74JS526shFMH5GuLqS8UlNBDDhmAvPvzOVHjFDu1B2p8lnJVx8PG0gA7MGYhCwpx0ajx8ooMJ%252b&fich=c0c6e27a-3ce4-49b8-a2e7-412f0a38f7ec.docx&Inline=true",
+        "endereco_final": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=PGqkJsL2G6lw3G9uygQPf1N1JH%252f%252b39M7GvgOIuNn9FNOwLO2SXVEvaHNII0zNl6xllstU3XfW8EfQWjgG%252buXWe1twkFNl7yALPxVM6Oml0ddQcK1qlunYed5let%252frSf5xjXbX4x3l2s1Z5Pvfiuu97KvT7AuI9IaGBhl3R1hzcZy7OvFxWrW6bWmDRQxr305vP52XJEjNNWGIbewa93ACJFq0UY%252fRon1UT94WBH%252fetlGKnHQOaVjs1V5brjBOhOzv%252f4HGHzYfSHk6w1cBu3faH2cgkTbVJLe%252f8rW%252fs4RtACxzeZ%252bgfFaWH74JS526shFMH5GuLqS8UlNBDDhmAvPvzOVHjFDu1B2p8lnJVx8PG0gA7MGYhCwpx0ajx8ooMJ%252b&fich=c0c6e27a-3ce4-49b8-a2e7-412f0a38f7ec.docx&Inline=true",
+        "acedido_em": "2026-10-19T13:42:38.925409+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "estado": 200,
+        "tipo": "application/pdf",
+        "segundos": 10.931,
+        "erro": null,
+        "redirecionamentos": [],
+        "ficheiro": "parlamento-pt-7-texto.pdf",
+        "bytes": 286641,
+        "sha256": "505b9d5fbeed485dd107377bbae07003f9f7fa4cd3f949534f6154f3b854d7bf"
+      },
+      "reference_source": {
+        "file": "content/23 Habitacao/source/parlamento-pt-7.html",
+        "sha256": "f45c11ca5b327ba931433166a6a739dd9d0cadb039344d78b581cc08be8afba9",
+        "receipt": {
+          "pedido": "https://www.parlamento.pt/ActividadeParlamentar/Paginas/DetalheIniciativa.aspx?BID=377135",
+          "endereco_final": "https://www.parlamento.pt/ActividadeParlamentar/Paginas/DetalheIniciativa.aspx?BID=377135",
+          "acedido_em": "2026-10-19T13:38:51.069873+00:00",
+          "cliente": "core.http.HttpClient.condicional",
+          "user_agent": "OEstadoDoPais/corredor",
+          "estado": 200,
+          "tipo": "text/html; charset=utf-8",
+          "segundos": 9.466,
+          "erro": null,
+          "redirecionamentos": [],
+          "ficheiro": "parlamento-pt-7.html",
+          "bytes": 389349,
+          "sha256": "f45c11ca5b327ba931433166a6a739dd9d0cadb039344d78b581cc08be8afba9"
+        }
+      }
+    },
+    "hab-ps-mais-valias": {
+      "row": {
+        "id": "hab-ps-mais-valias",
+        "value": "Isenção de mais-valias na venda de casas já existentes, até 300 mil euros, para habitação própria, e tributação reduzida entre 300 e 500 mil euros.",
+        "excerpt": "Isenção de mais-valias na venda de casas já existentes, até 300 mil euros, para habitação própria, e tributação reduzida entre 300 e 500 mil euros.",
+        "unit": "afirmação",
+        "reference_date": "2026-10-19",
+        "published_at": "2026-10-19",
+        "attributed_to": [
+          "José Luís Carneiro"
+        ],
+        "attributed_to_en": null,
+        "afirmacao": true,
+        "source_url": "https://ps.pt/habitacao-o-que-propusemos-e-o-que-vamos-propor/",
+        "document": {
+          "title": "Habitação: o que propusemos e o que vamos propor",
+          "edition": null,
+          "kind": "html",
+          "locator": "HTML; início literal único",
+          "source_sha256": "e07a1aa4ec2c0ffb3a202ace8166dc62d29b2e94ad3888c6f50e84b658f56f0d",
+          "file": "content/23 Habitacao/source/ps-pt-14.html"
+        },
+        "document_checks": {
+          "title": {
+            "status": "conferido",
+            "text": "Habitação: o que propusemos e o que vamos propor",
+            "locator": null
+          },
+          "published_at": {
+            "status": "conferido",
+            "text": "19/10/2026",
+            "locator": null
+          },
+          "attributed_to": {
+            "status": "conferido",
+            "text": "José Luís Carneiro Secretário-Geral",
+            "locator": "atribuição literal no documento"
+          },
+          "reference_date": {
+            "status": "conferido",
+            "text": "19/10/2026",
+            "locator": null
+          }
+        }
+      },
+      "receipt": {
+        "pedido": "https://ps.pt/habitacao-o-que-propusemos-e-o-que-vamos-propor/",
+        "endereco_final": "https://ps.pt/habitacao-o-que-propusemos-e-o-que-vamos-propor/",
+        "acedido_em": "2026-10-19T13:39:04.344437+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "estado": 200,
+        "tipo": "text/html; charset=UTF-8",
+        "segundos": 0.345,
+        "erro": null,
+        "redirecionamentos": [],
+        "ficheiro": "ps-pt-14.html",
+        "bytes": 148753,
+        "sha256": "e07a1aa4ec2c0ffb3a202ace8166dc62d29b2e94ad3888c6f50e84b658f56f0d"
+      }
+    },
+    "hab-ps-rendas": {
+      "row": {
+        "id": "hab-ps-rendas",
+        "value": "Um contrato de arrendamento de cinco anos, por opção das partes, com as rendas tributadas a uma taxa de 5% e com garantia pública para o senhorio em caso de falta de pagamento.",
+        "excerpt": "Um contrato de arrendamento de cinco anos, por opção das partes, com as rendas tributadas a uma taxa de 5% e com garantia pública para o senhorio em caso de falta de pagamento.",
+        "unit": "afirmação",
+        "reference_date": "2026-10-19",
+        "published_at": "2026-10-19",
+        "attributed_to": [
+          "José Luís Carneiro"
+        ],
+        "attributed_to_en": null,
+        "afirmacao": true,
+        "source_url": "https://ps.pt/habitacao-o-que-propusemos-e-o-que-vamos-propor/",
+        "document": {
+          "title": "Habitação: o que propusemos e o que vamos propor",
+          "edition": null,
+          "kind": "html",
+          "locator": "HTML; início literal único",
+          "source_sha256": "e07a1aa4ec2c0ffb3a202ace8166dc62d29b2e94ad3888c6f50e84b658f56f0d",
+          "file": "content/23 Habitacao/source/ps-pt-14.html"
+        },
+        "document_checks": {
+          "title": {
+            "status": "conferido",
+            "text": "Habitação: o que propusemos e o que vamos propor",
+            "locator": null
+          },
+          "published_at": {
+            "status": "conferido",
+            "text": "19/10/2026",
+            "locator": null
+          },
+          "attributed_to": {
+            "status": "conferido",
+            "text": "José Luís Carneiro Secretário-Geral",
+            "locator": "atribuição literal no documento"
+          },
+          "reference_date": {
+            "status": "conferido",
+            "text": "19/10/2026",
+            "locator": null
+          }
+        }
+      },
+      "receipt": {
+        "pedido": "https://ps.pt/habitacao-o-que-propusemos-e-o-que-vamos-propor/",
+        "endereco_final": "https://ps.pt/habitacao-o-que-propusemos-e-o-que-vamos-propor/",
+        "acedido_em": "2026-10-19T13:39:04.344437+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "estado": 200,
+        "tipo": "text/html; charset=UTF-8",
+        "segundos": 0.345,
+        "erro": null,
+        "redirecionamentos": [],
+        "ficheiro": "ps-pt-14.html",
+        "bytes": 148753,
+        "sha256": "e07a1aa4ec2c0ffb3a202ace8166dc62d29b2e94ad3888c6f50e84b658f56f0d"
+      }
+    },
+    "hab-pcp-rendas": {
+      "row": {
+        "id": "hab-pcp-rendas",
+        "value": "Propomos critérios para a limitação dos valores de renda dos novos contratos, nomeadamente a possibilidade de aumento até 2% do valor de renda do novo contrato, ou caso tenha tido mais de um contrato nos últimos cinco anos, o aumento até 2% aplica-se ao valor de renda mais baixo nesse período.",
+        "excerpt": "Propomos critérios para a limitação dos valores de renda dos novos contratos, nomeadamente a possibilidade de aumento até 2% do valor de renda do novo contrato, ou caso tenha tido mais de um contrato nos últimos cinco anos, o aumento até 2% aplica-se ao valor de renda mais baixo nesse período.",
+        "unit": "afirmação",
+        "reference_date": "2026-03-13",
+        "published_at": "2026-03-13",
+        "attributed_to": [
+          "Paula Santos"
+        ],
+        "attributed_to_en": null,
+        "afirmacao": true,
+        "source_url": "https://www.pcp.pt/rendas-despejos-governo-quer-ainda-mais-selvajaria-pcp-quer-defender-tua-seguranca-estabilidade",
+        "document": {
+          "title": "Rendas e despejos: o governo quer ainda mais selvajaria, o PCP quer defender a tua segurança e estabilidade",
+          "edition": null,
+          "kind": "html",
+          "locator": "HTML; início literal único",
+          "source_sha256": "7cb2ccb342cb008a13616d7ef3fa08c6cb57223a6a7ab1aa98462397b18f0841",
+          "file": "content/23 Habitacao/source/pcp-pt-18.html"
+        },
+        "document_checks": {
+          "title": {
+            "status": "conferido",
+            "text": "Rendas e despejos: o governo quer ainda mais selvajaria, o PCP quer defender a tua segurança e estabilidade",
+            "locator": null
+          },
+          "published_at": {
+            "status": "conferido",
+            "text": "13 Março 2026",
+            "locator": null
+          },
+          "attributed_to": {
+            "status": "conferido",
+            "text": "Intervenção de Paula Santos na Assembleia de República",
+            "locator": "atribuição literal no documento"
+          },
+          "reference_date": {
+            "status": "conferido",
+            "text": "13 Março 2026",
+            "locator": null
+          }
+        }
+      },
+      "receipt": {
+        "pedido": "https://www.pcp.pt/rendas-despejos-governo-quer-ainda-mais-selvajaria-pcp-quer-defender-tua-seguranca-estabilidade",
+        "endereco_final": "https://www.pcp.pt/rendas-despejos-governo-quer-ainda-mais-selvajaria-pcp-quer-defender-tua-seguranca-estabilidade",
+        "acedido_em": "2026-10-19T13:39:12.382412+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "estado": 200,
+        "tipo": "text/html; charset=utf-8",
+        "segundos": 0.21,
+        "erro": null,
+        "redirecionamentos": [],
+        "ficheiro": "pcp-pt-18.html",
+        "bytes": 153257,
+        "sha256": "7cb2ccb342cb008a13616d7ef3fa08c6cb57223a6a7ab1aa98462397b18f0841"
+      }
+    },
+    "hab-pan-controlo": {
+      "row": {
+        "id": "hab-pan-controlo",
+        "value": "Em primeiro lugar, é urgente manter e estudar o alargamento do controlo de rendas para novos contratos. A incerteza na situação política internacional tem levado ao aumento generalizado do custo de vida, ao aumento das taxas de juro e dos custos de arrendamento. Face a este contexto, é necessário garantir previsibilidade para quem tem e procura casa para arrendar.",
+        "excerpt": "Em primeiro lugar, é urgente manter e estudar o alargamento do controlo de rendas para novos contratos. A incerteza na situação política internacional tem levado ao aumento generalizado do custo de vida, ao aumento das taxas de juro e dos custos de arrendamento. Face a este contexto, é necessário garantir previsibilidade para quem tem e procura casa para arrendar.",
+        "unit": "afirmação",
+        "reference_date": "2026-09-19",
+        "published_at": "2026-09-19",
+        "attributed_to": [
+          "Inês de Sousa Real"
+        ],
+        "attributed_to_en": null,
+        "afirmacao": true,
+        "source_url": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=X9dkUSBh45fBVVZc2CChuRT172e%252ffPGwkVcgLHri3eRVD7I0wOf766s9vP9n9a%252bPddeJIOeT6T812ngbeb5vH8a%252b7g9adxaDQlzsNQD5%252fpN0eokf5i3ZHD5PNvse0E2tBFS%252bm9k8wT0u85h19WyvzDsxWPj12rvccz877dhjyriH%252b6yGnV5OjJnhaBik0fxVnxEQrX1KJORuhhfoZjM3pgmhRd5pYI9NS2NbMT8ArmidnVyVoAxwCLQg2rH5qGoqYaoIgygfCOCxkKfChZ%252bLlLOqcHa8%252f%252bDt0ox1RJmWpwV6m4ceYbY5jS5e4BcqE0L1k5GywaepD4WwIAbJfhyTOKapnKO%252fQ7rKJbV1etPpeUw%253d&fich=f9be3800-dd59-4e47-b2b8-658c4aa2faa3.docx&Inline=true",
+        "document": {
+          "title": "Projeto de Resolução n.º 1272/XVII/2ª",
+          "edition": null,
+          "kind": "ficheiro",
+          "locator": "PDF p. 3; parágrafo identificado pelo início; área física declarada",
+          "source_sha256": "1c60e611ee96a75243282982c0cbfcf339104521a1fcd0b60c78b1b4df11b50b",
+          "page": 3,
+          "file": "content/23 Habitacao/source/parlamento-pt-20-texto.pdf"
+        },
+        "document_checks": {
+          "title": {
+            "status": "conferido",
+            "text": "Projeto de Resolução n.º 1272/XVII/2ª",
+            "locator": 1
+          },
+          "published_at": {
+            "status": "conferido",
+            "text": "19 de setembro de 2026",
+            "locator": 4
+          },
+          "attributed_to": {
+            "status": "conferido",
+            "text": "A Deputada, Inês de Sousa Real",
+            "locator": "assinatura da iniciativa"
+          },
+          "reference_date": {
+            "status": "conferido",
+            "text": "19 de setembro de 2026",
+            "locator": 4
+          }
+        }
+      },
+      "receipt": {
+        "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=X9dkUSBh45fBVVZc2CChuRT172e%252ffPGwkVcgLHri3eRVD7I0wOf766s9vP9n9a%252bPddeJIOeT6T812ngbeb5vH8a%252b7g9adxaDQlzsNQD5%252fpN0eokf5i3ZHD5PNvse0E2tBFS%252bm9k8wT0u85h19WyvzDsxWPj12rvccz877dhjyriH%252b6yGnV5OjJnhaBik0fxVnxEQrX1KJORuhhfoZjM3pgmhRd5pYI9NS2NbMT8ArmidnVyVoAxwCLQg2rH5qGoqYaoIgygfCOCxkKfChZ%252bLlLOqcHa8%252f%252bDt0ox1RJmWpwV6m4ceYbY5jS5e4BcqE0L1k5GywaepD4WwIAbJfhyTOKapnKO%252fQ7rKJbV1etPpeUw%253d&fich=f9be3800-dd59-4e47-b2b8-658c4aa2faa3.docx&Inline=true",
+        "endereco_final": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=X9dkUSBh45fBVVZc2CChuRT172e%252ffPGwkVcgLHri3eRVD7I0wOf766s9vP9n9a%252bPddeJIOeT6T812ngbeb5vH8a%252b7g9adxaDQlzsNQD5%252fpN0eokf5i3ZHD5PNvse0E2tBFS%252bm9k8wT0u85h19WyvzDsxWPj12rvccz877dhjyriH%252b6yGnV5OjJnhaBik0fxVnxEQrX1KJORuhhfoZjM3pgmhRd5pYI9NS2NbMT8ArmidnVyVoAxwCLQg2rH5qGoqYaoIgygfCOCxkKfChZ%252bLlLOqcHa8%252f%252bDt0ox1RJmWpwV6m4ceYbY5jS5e4BcqE0L1k5GywaepD4WwIAbJfhyTOKapnKO%252fQ7rKJbV1etPpeUw%253d&fich=f9be3800-dd59-4e47-b2b8-658c4aa2faa3.docx&Inline=true",
+        "acedido_em": "2026-10-19T13:42:58.075122+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "estado": 200,
+        "tipo": "application/pdf",
+        "segundos": 26.735,
+        "erro": null,
+        "redirecionamentos": [],
+        "ficheiro": "parlamento-pt-20-texto.pdf",
+        "bytes": 110881,
+        "sha256": "1c60e611ee96a75243282982c0cbfcf339104521a1fcd0b60c78b1b4df11b50b"
+      }
+    },
+    "hab-pan-caucoes": {
+      "row": {
+        "id": "hab-pan-caucoes",
+        "value": "Em segundo lugar, o PAN propõe o estabelecimento de tetos às cauções, que devem estar ajustados à realidade económica das famílias. Estes devem ter em conta os rendimentos familiares e respetiva taxa de esforço dos arrendatários, evitando abusos por parte dos senhorios e garantindo que a caução não exceda o que é comportável pelos respectivos orçamentos familiares.",
+        "excerpt": "Em segundo lugar, o PAN propõe o estabelecimento de tetos às cauções, que devem estar ajustados à realidade económica das famílias. Estes devem ter em conta os rendimentos familiares e respetiva taxa de esforço dos arrendatários, evitando abusos por parte dos senhorios e garantindo que a caução não exceda o que é comportável pelos respectivos orçamentos familiares.",
+        "unit": "afirmação",
+        "reference_date": "2026-09-19",
+        "published_at": "2026-09-19",
+        "attributed_to": [
+          "Inês de Sousa Real"
+        ],
+        "attributed_to_en": null,
+        "afirmacao": true,
+        "source_url": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=X9dkUSBh45fBVVZc2CChuRT172e%252ffPGwkVcgLHri3eRVD7I0wOf766s9vP9n9a%252bPddeJIOeT6T812ngbeb5vH8a%252b7g9adxaDQlzsNQD5%252fpN0eokf5i3ZHD5PNvse0E2tBFS%252bm9k8wT0u85h19WyvzDsxWPj12rvccz877dhjyriH%252b6yGnV5OjJnhaBik0fxVnxEQrX1KJORuhhfoZjM3pgmhRd5pYI9NS2NbMT8ArmidnVyVoAxwCLQg2rH5qGoqYaoIgygfCOCxkKfChZ%252bLlLOqcHa8%252f%252bDt0ox1RJmWpwV6m4ceYbY5jS5e4BcqE0L1k5GywaepD4WwIAbJfhyTOKapnKO%252fQ7rKJbV1etPpeUw%253d&fich=f9be3800-dd59-4e47-b2b8-658c4aa2faa3.docx&Inline=true",
+        "document": {
+          "title": "Projeto de Resolução n.º 1272/XVII/2ª",
+          "edition": null,
+          "kind": "ficheiro",
+          "locator": "PDF p. 3; parágrafo identificado pelo início; área física declarada",
+          "source_sha256": "1c60e611ee96a75243282982c0cbfcf339104521a1fcd0b60c78b1b4df11b50b",
+          "page": 3,
+          "file": "content/23 Habitacao/source/parlamento-pt-20-texto.pdf"
+        },
+        "document_checks": {
+          "title": {
+            "status": "conferido",
+            "text": "Projeto de Resolução n.º 1272/XVII/2ª",
+            "locator": 1
+          },
+          "published_at": {
+            "status": "conferido",
+            "text": "19 de setembro de 2026",
+            "locator": 4
+          },
+          "attributed_to": {
+            "status": "conferido",
+            "text": "A Deputada, Inês de Sousa Real",
+            "locator": "assinatura da iniciativa"
+          },
+          "reference_date": {
+            "status": "conferido",
+            "text": "19 de setembro de 2026",
+            "locator": 4
+          }
+        }
+      },
+      "receipt": {
+        "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=X9dkUSBh45fBVVZc2CChuRT172e%252ffPGwkVcgLHri3eRVD7I0wOf766s9vP9n9a%252bPddeJIOeT6T812ngbeb5vH8a%252b7g9adxaDQlzsNQD5%252fpN0eokf5i3ZHD5PNvse0E2tBFS%252bm9k8wT0u85h19WyvzDsxWPj12rvccz877dhjyriH%252b6yGnV5OjJnhaBik0fxVnxEQrX1KJORuhhfoZjM3pgmhRd5pYI9NS2NbMT8ArmidnVyVoAxwCLQg2rH5qGoqYaoIgygfCOCxkKfChZ%252bLlLOqcHa8%252f%252bDt0ox1RJmWpwV6m4ceYbY5jS5e4BcqE0L1k5GywaepD4WwIAbJfhyTOKapnKO%252fQ7rKJbV1etPpeUw%253d&fich=f9be3800-dd59-4e47-b2b8-658c4aa2faa3.docx&Inline=true",
+        "endereco_final": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=X9dkUSBh45fBVVZc2CChuRT172e%252ffPGwkVcgLHri3eRVD7I0wOf766s9vP9n9a%252bPddeJIOeT6T812ngbeb5vH8a%252b7g9adxaDQlzsNQD5%252fpN0eokf5i3ZHD5PNvse0E2tBFS%252bm9k8wT0u85h19WyvzDsxWPj12rvccz877dhjyriH%252b6yGnV5OjJnhaBik0fxVnxEQrX1KJORuhhfoZjM3pgmhRd5pYI9NS2NbMT8ArmidnVyVoAxwCLQg2rH5qGoqYaoIgygfCOCxkKfChZ%252bLlLOqcHa8%252f%252bDt0ox1RJmWpwV6m4ceYbY5jS5e4BcqE0L1k5GywaepD4WwIAbJfhyTOKapnKO%252fQ7rKJbV1etPpeUw%253d&fich=f9be3800-dd59-4e47-b2b8-658c4aa2faa3.docx&Inline=true",
+        "acedido_em": "2026-10-19T13:42:58.075122+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "estado": 200,
+        "tipo": "application/pdf",
+        "segundos": 26.735,
+        "erro": null,
+        "redirecionamentos": [],
+        "ficheiro": "parlamento-pt-20-texto.pdf",
+        "bytes": 110881,
+        "sha256": "1c60e611ee96a75243282982c0cbfcf339104521a1fcd0b60c78b1b4df11b50b"
+      }
+    },
+    "hab-pan-tetos": {
+      "row": {
+        "id": "hab-pan-tetos",
+        "value": "Por fim, urge travar, a curto prazo, o aumento do valor das rendas. Por isso, o PAN propõe a criação de um projeto piloto de aplicação de tetos às rendas. Este deve ser considerado para pessoas e famílias em situação económica desfavorável e a requerimento das mesmas. Esta medida deverá ser temporária e excecional, de forma a resolver os problemas com a subida do valor das rendas a curto prazo mas sem levar a efeitos perversos que se poderão revelar com a manutenção desta medida a longo prazo e de forma generalizada.",
+        "excerpt": "Por fim, urge travar, a curto prazo, o aumento do valor das rendas. Por isso, o PAN propõe a criação de um projeto piloto de aplicação de tetos às rendas. Este deve ser considerado para pessoas e famílias em situação económica desfavorável e a requerimento das mesmas. Esta medida deverá ser temporária e excecional, de forma a resolver os problemas com a subida do valor das rendas a curto prazo mas sem levar a efeitos perversos que se poderão revelar com a manutenção desta medida a longo prazo e de forma generalizada.",
+        "unit": "afirmação",
+        "reference_date": "2026-09-19",
+        "published_at": "2026-09-19",
+        "attributed_to": [
+          "Inês de Sousa Real"
+        ],
+        "attributed_to_en": null,
+        "afirmacao": true,
+        "source_url": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=X9dkUSBh45fBVVZc2CChuRT172e%252ffPGwkVcgLHri3eRVD7I0wOf766s9vP9n9a%252bPddeJIOeT6T812ngbeb5vH8a%252b7g9adxaDQlzsNQD5%252fpN0eokf5i3ZHD5PNvse0E2tBFS%252bm9k8wT0u85h19WyvzDsxWPj12rvccz877dhjyriH%252b6yGnV5OjJnhaBik0fxVnxEQrX1KJORuhhfoZjM3pgmhRd5pYI9NS2NbMT8ArmidnVyVoAxwCLQg2rH5qGoqYaoIgygfCOCxkKfChZ%252bLlLOqcHa8%252f%252bDt0ox1RJmWpwV6m4ceYbY5jS5e4BcqE0L1k5GywaepD4WwIAbJfhyTOKapnKO%252fQ7rKJbV1etPpeUw%253d&fich=f9be3800-dd59-4e47-b2b8-658c4aa2faa3.docx&Inline=true",
+        "document": {
+          "title": "Projeto de Resolução n.º 1272/XVII/2ª",
+          "edition": null,
+          "kind": "ficheiro",
+          "locator": "PDF p. 4; parágrafo identificado pelo início; área física declarada",
+          "source_sha256": "1c60e611ee96a75243282982c0cbfcf339104521a1fcd0b60c78b1b4df11b50b",
+          "page": 4,
+          "file": "content/23 Habitacao/source/parlamento-pt-20-texto.pdf"
+        },
+        "document_checks": {
+          "title": {
+            "status": "conferido",
+            "text": "Projeto de Resolução n.º 1272/XVII/2ª",
+            "locator": 1
+          },
+          "published_at": {
+            "status": "conferido",
+            "text": "19 de setembro de 2026",
+            "locator": 4
+          },
+          "attributed_to": {
+            "status": "conferido",
+            "text": "A Deputada, Inês de Sousa Real",
+            "locator": "assinatura da iniciativa"
+          },
+          "reference_date": {
+            "status": "conferido",
+            "text": "19 de setembro de 2026",
+            "locator": 4
+          }
+        }
+      },
+      "receipt": {
+        "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=X9dkUSBh45fBVVZc2CChuRT172e%252ffPGwkVcgLHri3eRVD7I0wOf766s9vP9n9a%252bPddeJIOeT6T812ngbeb5vH8a%252b7g9adxaDQlzsNQD5%252fpN0eokf5i3ZHD5PNvse0E2tBFS%252bm9k8wT0u85h19WyvzDsxWPj12rvccz877dhjyriH%252b6yGnV5OjJnhaBik0fxVnxEQrX1KJORuhhfoZjM3pgmhRd5pYI9NS2NbMT8ArmidnVyVoAxwCLQg2rH5qGoqYaoIgygfCOCxkKfChZ%252bLlLOqcHa8%252f%252bDt0ox1RJmWpwV6m4ceYbY5jS5e4BcqE0L1k5GywaepD4WwIAbJfhyTOKapnKO%252fQ7rKJbV1etPpeUw%253d&fich=f9be3800-dd59-4e47-b2b8-658c4aa2faa3.docx&Inline=true",
+        "endereco_final": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=X9dkUSBh45fBVVZc2CChuRT172e%252ffPGwkVcgLHri3eRVD7I0wOf766s9vP9n9a%252bPddeJIOeT6T812ngbeb5vH8a%252b7g9adxaDQlzsNQD5%252fpN0eokf5i3ZHD5PNvse0E2tBFS%252bm9k8wT0u85h19WyvzDsxWPj12rvccz877dhjyriH%252b6yGnV5OjJnhaBik0fxVnxEQrX1KJORuhhfoZjM3pgmhRd5pYI9NS2NbMT8ArmidnVyVoAxwCLQg2rH5qGoqYaoIgygfCOCxkKfChZ%252bLlLOqcHa8%252f%252bDt0ox1RJmWpwV6m4ceYbY5jS5e4BcqE0L1k5GywaepD4WwIAbJfhyTOKapnKO%252fQ7rKJbV1etPpeUw%253d&fich=f9be3800-dd59-4e47-b2b8-658c4aa2faa3.docx&Inline=true",
+        "acedido_em": "2026-10-19T13:42:58.075122+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "estado": 200,
+        "tipo": "application/pdf",
+        "segundos": 26.735,
+        "erro": null,
+        "redirecionamentos": [],
+        "ficheiro": "parlamento-pt-20-texto.pdf",
+        "bytes": 110881,
+        "sha256": "1c60e611ee96a75243282982c0cbfcf339104521a1fcd0b60c78b1b4df11b50b"
+      }
+    },
+    "hab-livre-reinvestimento": {
+      "row": {
+        "id": "hab-livre-reinvestimento",
+        "value": "[NOVO] g) Sem prejuízo do disposto nas alíneas b) a e) do número anterior, são igualmente excluídos da tributação os ganhos provenientes da transmissão onerosa de imóveis destinados a habitação própria e permanente do sujeito passivo ou do seu agregado familiar, quando o valor de realização, deduzido da amortização de eventual empréstimo contraído para a aquisição do imóvel, seja reinvestido na aquisição do direito de habitação em fogo que pertença a cooperativa em regime de propriedade coletiva e que se destine à sua habitação própria e permanente.",
+        "excerpt": "[NOVO] g) Sem prejuízo do disposto nas alíneas b) a e) do número anterior, são igualmente excluídos da tributação os ganhos provenientes da transmissão onerosa de imóveis destinados a habitação própria e permanente do sujeito passivo ou do seu agregado familiar, quando o valor de realização, deduzido da amortização de eventual empréstimo contraído para a aquisição do imóvel, seja reinvestido na aquisição do direito de habitação em fogo que pertença a cooperativa em regime de propriedade coletiva e que se destine à sua habitação própria e permanente.",
+        "unit": "afirmação",
+        "reference_date": "2026-09-25",
+        "published_at": "2026-09-25",
+        "attributed_to": [
+          "LIVRE"
+        ],
+        "attributed_to_en": null,
+        "afirmacao": true,
+        "source_url": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=H3IrR81fN9VFZrsCQTkTN5AkghiceZuLiS1BHt0rQRiRm%252brftgJqna3ABc3tQfSjxEfdODQstenjg%252bXz4PnfjZHLyGLvuwlJ%252fYVLdL5ZGHKXsQFqgHY6z15G3PUcVDRuX6BvxTEFoOFaK%252fOPQJIuOGUM%252f9oD5pECtQr0FElbK%252fxgjaPdG26iuVmKfSBbO%252f%252ba0NytZQKFXXwZvY4%252bb%252fVSrNc%252fL%252bwm5JGbgzP7UaaCzHAZWk6hXYjhU1QZa2gPSs5e9PbLU0FxXakzKZyn0GhTxNA8q1zWWn6MNOXefwJn%252fctNxq%252bk2WsmiFpEAyU%252bjZ3%252f8%252fq1xwgqZA6mfYVdNDviKKSgWZ2R8Jgt6UkKLac8SWKrajCIJzlmvqnqVw7oiZiP&fich=d607abf1-e8a6-4b65-984c-885fee6bc75e.pdf&Inline=true",
+        "document": {
+          "title": "Projeto de Lei",
+          "edition": null,
+          "kind": "ficheiro",
+          "locator": "PDF p. 4; parágrafo identificado pelo início; área física declarada",
+          "source_sha256": "e3ea510aea165b6eb9363e71dd1d34adc08a2099510d56e9f58d9b493db9f009",
+          "page": 4,
+          "file": "content/23 Habitacao/source/parlamento-pt-21-texto.pdf"
+        },
+        "document_checks": {
+          "title": {
+            "status": "conferido",
+            "text": "Projeto de Lei",
+            "locator": 1
+          },
+          "published_at": {
+            "status": "conferido",
+            "text": "25 de setembro de 2026",
+            "locator": 7
+          },
+          "attributed_to": {
+            "status": "conferido",
+            "text": "As Deputadas e os Deputados do LIVRE",
+            "locator": "assinaturas da iniciativa"
+          },
+          "reference_date": {
+            "status": "conferido",
+            "text": "25 de setembro de 2026",
+            "locator": 7
+          }
+        }
+      },
+      "receipt": {
+        "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=H3IrR81fN9VFZrsCQTkTN5AkghiceZuLiS1BHt0rQRiRm%252brftgJqna3ABc3tQfSjxEfdODQstenjg%252bXz4PnfjZHLyGLvuwlJ%252fYVLdL5ZGHKXsQFqgHY6z15G3PUcVDRuX6BvxTEFoOFaK%252fOPQJIuOGUM%252f9oD5pECtQr0FElbK%252fxgjaPdG26iuVmKfSBbO%252f%252ba0NytZQKFXXwZvY4%252bb%252fVSrNc%252fL%252bwm5JGbgzP7UaaCzHAZWk6hXYjhU1QZa2gPSs5e9PbLU0FxXakzKZyn0GhTxNA8q1zWWn6MNOXefwJn%252fctNxq%252bk2WsmiFpEAyU%252bjZ3%252f8%252fq1xwgqZA6mfYVdNDviKKSgWZ2R8Jgt6UkKLac8SWKrajCIJzlmvqnqVw7oiZiP&fich=d607abf1-e8a6-4b65-984c-885fee6bc75e.pdf&Inline=true",
+        "endereco_final": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=H3IrR81fN9VFZrsCQTkTN5AkghiceZuLiS1BHt0rQRiRm%252brftgJqna3ABc3tQfSjxEfdODQstenjg%252bXz4PnfjZHLyGLvuwlJ%252fYVLdL5ZGHKXsQFqgHY6z15G3PUcVDRuX6BvxTEFoOFaK%252fOPQJIuOGUM%252f9oD5pECtQr0FElbK%252fxgjaPdG26iuVmKfSBbO%252f%252ba0NytZQKFXXwZvY4%252bb%252fVSrNc%252fL%252bwm5JGbgzP7UaaCzHAZWk6hXYjhU1QZa2gPSs5e9PbLU0FxXakzKZyn0GhTxNA8q1zWWn6MNOXefwJn%252fctNxq%252bk2WsmiFpEAyU%252bjZ3%252f8%252fq1xwgqZA6mfYVdNDviKKSgWZ2R8Jgt6UkKLac8SWKrajCIJzlmvqnqVw7oiZiP&fich=d607abf1-e8a6-4b65-984c-885fee6bc75e.pdf&Inline=true",
+        "acedido_em": "2026-10-19T13:43:24.820263+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "estado": 200,
+        "tipo": "application/pdf",
+        "segundos": 12.69,
+        "erro": null,
+        "redirecionamentos": [],
+        "ficheiro": "parlamento-pt-21-texto.pdf",
+        "bytes": 180398,
+        "sha256": "e3ea510aea165b6eb9363e71dd1d34adc08a2099510d56e9f58d9b493db9f009"
+      }
+    },
+    "hab-chega-reinvestimento": {
+      "row": {
+        "id": "hab-chega-reinvestimento",
+        "value": "O propósito da presente iniciativa é o de tornar essa norma de isenção temporária em norma definitiva, inserindo-a no próprio CIRS, pela importância de que se pode revestir.",
+        "excerpt": "O propósito da presente iniciativa é o de tornar essa norma de isenção temporária em norma definitiva, inserindo-a no próprio CIRS, pela importância de que se pode revestir.",
+        "unit": "afirmação",
+        "reference_date": "2026-09-25",
+        "published_at": "2026-09-25",
+        "attributed_to": [
+          "Chega"
+        ],
+        "attributed_to_en": null,
+        "afirmacao": true,
+        "source_url": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=GdHrgDO6SMir8yv4xE%252fOSEV4FRZez3R8DDwnK6viH6WUlbR%252f4Nu6ogEEHTngPOtwE3KKKdiDW6ujlbDWdENvwNp%252bj0veys9oVgFDkM3FtVYM3Bw9M%252bPFlbXhchtImYwpYpBOqqVcgvtwIY3G1AA4kzsnJkh5zjaDH9PW0HhqEleZMgwkCy%252b%252bNWqK5ZYJ6wEEwFXL9CdxuwAN%252fJphyyfvFeYSuClyA%252bACHE%252fgh%252fJ6KzycLCU25NGwX14GbGdcHmpk68BFch7nWe%252bBEDQt5zlxAB28yWg6YT4Ds3byEAlBZjxQ%252bSsDKrf0RHF83DumExV1XEw9QYmLuRy7mfjd1k7FqdcM%252bFOX2fSyBfNsJibFZAEnYpzMECCh%252blF16RTadmbs&fich=e23a2255-4241-4d36-be4b-6f5bfc9c5f20.docx&Inline=true",
+        "document": {
+          "title": "Altera o regime de tributação das mais-valias imobiliárias, em caso de reinvestimento",
+          "edition": null,
+          "kind": "ficheiro",
+          "locator": "PDF p. 2; parágrafo identificado pelo início; área física declarada",
+          "source_sha256": "41407449c007c49095ed5845ab5961acc9ec01f0f668dbb2225f099d9f52aae9",
+          "page": 2,
+          "file": "content/23 Habitacao/source/parlamento-pt-16-texto.pdf"
+        },
+        "document_checks": {
+          "title": {
+            "status": "conferido",
+            "text": "Altera o regime de tributação das mais-valias imobiliárias, em caso de reinvestimento",
+            "locator": 1
+          },
+          "published_at": {
+            "status": "conferido",
+            "text": "25 de setembro de 2026",
+            "locator": 5
+          },
+          "attributed_to": {
+            "status": "conferido",
+            "text": "Os Deputados do Chega",
+            "locator": "assinaturas da iniciativa"
+          },
+          "reference_date": {
+            "status": "conferido",
+            "text": "25 de setembro de 2026",
+            "locator": 5
+          }
+        }
+      },
+      "receipt": {
+        "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=GdHrgDO6SMir8yv4xE%252fOSEV4FRZez3R8DDwnK6viH6WUlbR%252f4Nu6ogEEHTngPOtwE3KKKdiDW6ujlbDWdENvwNp%252bj0veys9oVgFDkM3FtVYM3Bw9M%252bPFlbXhchtImYwpYpBOqqVcgvtwIY3G1AA4kzsnJkh5zjaDH9PW0HhqEleZMgwkCy%252b%252bNWqK5ZYJ6wEEwFXL9CdxuwAN%252fJphyyfvFeYSuClyA%252bACHE%252fgh%252fJ6KzycLCU25NGwX14GbGdcHmpk68BFch7nWe%252bBEDQt5zlxAB28yWg6YT4Ds3byEAlBZjxQ%252bSsDKrf0RHF83DumExV1XEw9QYmLuRy7mfjd1k7FqdcM%252bFOX2fSyBfNsJibFZAEnYpzMECCh%252blF16RTadmbs&fich=e23a2255-4241-4d36-be4b-6f5bfc9c5f20.docx&Inline=true",
+        "endereco_final": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=GdHrgDO6SMir8yv4xE%252fOSEV4FRZez3R8DDwnK6viH6WUlbR%252f4Nu6ogEEHTngPOtwE3KKKdiDW6ujlbDWdENvwNp%252bj0veys9oVgFDkM3FtVYM3Bw9M%252bPFlbXhchtImYwpYpBOqqVcgvtwIY3G1AA4kzsnJkh5zjaDH9PW0HhqEleZMgwkCy%252b%252bNWqK5ZYJ6wEEwFXL9CdxuwAN%252fJphyyfvFeYSuClyA%252bACHE%252fgh%252fJ6KzycLCU25NGwX14GbGdcHmpk68BFch7nWe%252bBEDQt5zlxAB28yWg6YT4Ds3byEAlBZjxQ%252bSsDKrf0RHF83DumExV1XEw9QYmLuRy7mfjd1k7FqdcM%252bFOX2fSyBfNsJibFZAEnYpzMECCh%252blF16RTadmbs&fich=e23a2255-4241-4d36-be4b-6f5bfc9c5f20.docx&Inline=true",
+        "acedido_em": "2026-10-19T13:42:49.867270+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "estado": 200,
+        "tipo": "application/pdf",
+        "segundos": 8.198,
+        "erro": null,
+        "redirecionamentos": [],
+        "ficheiro": "parlamento-pt-16-texto.pdf",
+        "bytes": 109924,
+        "sha256": "41407449c007c49095ed5845ab5961acc9ec01f0f668dbb2225f099d9f52aae9"
+      }
+    },
+    "hab-il-proposta": {
+      "row": {
+        "id": "hab-il-proposta",
+        "value": "propõe ao Governo medidas para colocar mais casas no mercado, desbloquear imóveis parados em heranças e tornar o arrendamento mais simples, seguro e funcional, tanto para inquilinos como para proprietários.",
+        "excerpt": "propõe ao Governo medidas para colocar mais casas no mercado, desbloquear imóveis parados em heranças e tornar o arrendamento mais simples, seguro e funcional, tanto para inquilinos como para proprietários.",
+        "unit": "afirmação",
+        "reference_date": "2026-06-08",
+        "published_at": "2026-06-08",
+        "published_at_kind": "last-edited",
+        "attributed_to": [
+          "Iniciativa Liberal"
+        ],
+        "attributed_to_en": null,
+        "afirmacao": true,
+        "source_url": "https://iniciativaliberal.pt/ideias/habitacao-ja/",
+        "document": {
+          "title": "Habitação Já",
+          "edition": "2026-06-08",
+          "kind": "html",
+          "locator": "HTML; início literal único",
+          "source_sha256": "83424c50610cbac84b6cb675ff8a46547b10413fb0c8597f371a516adab2105c",
+          "file": "content/23 Habitacao/source/iniciativaliberal-pt-26.html"
+        },
+        "document_checks": {
+          "title": {
+            "status": "conferido",
+            "text": "Habitação Já",
+            "locator": null
+          },
+          "published_at": {
+            "status": "conferido",
+            "text": "2026-06-08T15:16:52+01:00"
+          },
+          "attributed_to": {
+            "status": "conferido",
+            "text": "Iniciativa Liberal",
+            "locator": "atribuição literal no documento"
+          },
+          "reference_date": {
+            "status": "conferido",
+            "text": "property=\"article:modified_time\" content=\"2026-06-08T15:16:52+01:00\"",
+            "file": "source/iniciativaliberal-pt-26.html",
+            "sha256": "83424c50610cbac84b6cb675ff8a46547b10413fb0c8597f371a516adab2105c",
+            "date": "2026-06-08"
+          }
+        }
+      },
+      "receipt": {
+        "pedido": "https://iniciativaliberal.pt/ideias/habitacao-ja/",
+        "endereco_final": "https://iniciativaliberal.pt/ideias/habitacao-ja/",
+        "acedido_em": "2026-10-19T13:39:30.428953+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "estado": 200,
+        "tipo": "text/html; charset=utf-8",
+        "segundos": 0.446,
+        "erro": null,
+        "redirecionamentos": [],
+        "ficheiro": "iniciativaliberal-pt-26.html",
+        "bytes": 128744,
+        "sha256": "83424c50610cbac84b6cb675ff8a46547b10413fb0c8597f371a516adab2105c"
+      },
+      "reference_source": {
+        "file": "content/23 Habitacao/source/iniciativaliberal-pt-26.html",
+        "sha256": "83424c50610cbac84b6cb675ff8a46547b10413fb0c8597f371a516adab2105c",
+        "receipt": {
+          "pedido": "https://iniciativaliberal.pt/ideias/habitacao-ja/",
+          "endereco_final": "https://iniciativaliberal.pt/ideias/habitacao-ja/",
+          "acedido_em": "2026-10-19T13:39:30.428953+00:00",
+          "cliente": "core.http.HttpClient.condicional",
+          "user_agent": "OEstadoDoPais/corredor",
+          "estado": 200,
+          "tipo": "text/html; charset=utf-8",
+          "segundos": 0.446,
+          "erro": null,
+          "redirecionamentos": [],
+          "ficheiro": "iniciativaliberal-pt-26.html",
+          "bytes": 128744,
+          "sha256": "83424c50610cbac84b6cb675ff8a46547b10413fb0c8597f371a516adab2105c"
+        }
+      }
+    },
+    "hab-imprensa-manif-rtp": {
+      "row": {
+        "id": "hab-imprensa-manif-rtp",
+        "value": "cerca de 1.500 pessoas",
+        "excerpt": "cerca de 1.500 pessoas",
+        "unit": "texto",
+        "reference_date": "2026-10-12",
+        "published_at": "2026-10-12",
+        "attributed_to": [
+          "RTP"
+        ],
+        "attributed_to_en": [
+          "RTP"
+        ],
+        "afirmacao": false,
+        "source_url": "https://www.rtp.pt/noticias/pais/nao-consegues-pagar-renda-traz-tenda-policia-desmonta-acampamento-no-porto_n1771142",
+        "document": {
+          "title": "\"Não consegues pagar renda? Traz tenda\". Polícia desmonta acampamento no Porto",
+          "edition": "2026-10-12",
+          "kind": "html",
+          "locator": "HTML; início literal único",
+          "source_sha256": "c67d11f5413d705e61f63614ad523cf7103800551e9a02c75735ba2409955b81",
+          "file": "content/23 Habitacao/source/hb1-rtp-tendas.html"
+        },
+        "document_checks": {
+          "title": {
+            "status": "conferido",
+            "text": "\"Não consegues pagar renda? Traz tenda\". Polícia desmonta acampamento no Porto",
+            "locator": null
+          },
+          "published_at": {
+            "status": "conferido",
+            "text": "2026-10-12T12:40:44Z"
+          },
+          "reference_date": {
+            "status": "conferido",
+            "text": "2026-10-12T12:40:44Z"
+          }
+        }
+      },
+      "receipt": {
+        "pedido": "https://www.rtp.pt/noticias/pais/nao-consegues-pagar-renda-traz-tenda-policia-desmonta-acampamento-no-porto_n1771142",
+        "endereco_final": "https://www.rtp.pt/noticias/pais/nao-consegues-pagar-renda-traz-tenda-policia-desmonta-acampamento-no-porto_n1771142",
+        "acedido_em": "2026-10-20T19:12:05.199403+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "estado": 200,
+        "tipo": "text/html; charset=UTF-8",
+        "segundos": 0.39,
+        "erro": null,
+        "redirecionamentos": [],
+        "ficheiro": "hb1-rtp-tendas.html",
+        "bytes": 89013,
+        "sha256": "c67d11f5413d705e61f63614ad523cf7103800551e9a02c75735ba2409955b81"
+      }
+    },
+    "hab-imprensa-manif-lusa": {
+      "row": {
+        "id": "hab-imprensa-manif-lusa",
+        "value": "Vários milhares de pessoas",
+        "excerpt": "Vários milhares de pessoas",
+        "unit": "texto",
+        "reference_date": "2026-10-10",
+        "published_at": "2026-10-10",
+        "attributed_to": [
+          "Postal"
+        ],
+        "attributed_to_en": null,
+        "afirmacao": false,
+        "source_url": "https://postal.pt/nacional/milhares-saem-a-rua-em-lisboa-contra-o-custo-de-vida-nao-da-mais-para-viver-assim/",
+        "document": {
+          "title": "Milhares saem à rua em Lisboa contra o custo de vida: “Não dá mais para viver assim”",
+          "edition": "2026-10-10",
+          "kind": "html",
+          "locator": "HTML; expressão literal na notícia que cita a Lusa",
+          "source_sha256": "46ccb73acbe599d698cd3909de0d820432b31d99fb8367052fd2f5115f097bdb",
+          "file": "content/23 Habitacao/source/hb1-postal-lusa.html"
+        },
+        "document_checks": {
+          "title": {
+            "status": "conferido",
+            "text": "Milhares saem à rua em Lisboa contra o custo de vida: “Não dá mais para viver assim”",
+            "locator": null
+          },
+          "published_at": {
+            "status": "conferido",
+            "text": "2026-10-10T17:30:00+00:00"
+          },
+          "reference_date": {
+            "status": "conferido",
+            "text": "2026-10-10T17:30:00+00:00"
+          }
+        }
+      },
+      "receipt": {
+        "pedido": "https://postal.pt/nacional/milhares-saem-a-rua-em-lisboa-contra-o-custo-de-vida-nao-da-mais-para-viver-assim/",
+        "endereco_final": "https://postal.pt/nacional/milhares-saem-a-rua-em-lisboa-contra-o-custo-de-vida-nao-da-mais-para-viver-assim/",
+        "acedido_em": "2026-10-20T19:44:50.262823+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "estado": 200,
+        "tipo": "text/html; charset=UTF-8",
+        "segundos": 0.341,
+        "erro": null,
+        "redirecionamentos": [],
+        "ficheiro": "hb1-postal-lusa.html",
+        "bytes": 311722,
+        "sha256": "46ccb73acbe599d698cd3909de0d820432b31d99fb8367052fd2f5115f097bdb"
+      }
+    },
+    "hab-imprensa-manif-lusa-organizacoes": {
+      "row": {
+        "id": "hab-imprensa-manif-lusa-organizacoes",
+        "value": "mais de 30 organizações",
+        "excerpt": "mais de 30 organizações",
+        "unit": "texto",
+        "reference_date": "2026-10-10",
+        "published_at": "2026-10-10",
+        "attributed_to": [
+          "Postal"
+        ],
+        "attributed_to_en": null,
+        "afirmacao": false,
+        "source_url": "https://postal.pt/nacional/milhares-saem-a-rua-em-lisboa-contra-o-custo-de-vida-nao-da-mais-para-viver-assim/",
+        "document": {
+          "title": "Milhares saem à rua em Lisboa contra o custo de vida: “Não dá mais para viver assim”",
+          "edition": "2026-10-10",
+          "kind": "html",
+          "locator": "HTML; expressão literal na notícia que cita a Lusa",
+          "source_sha256": "46ccb73acbe599d698cd3909de0d820432b31d99fb8367052fd2f5115f097bdb",
+          "file": "content/23 Habitacao/source/hb1-postal-lusa.html"
+        },
+        "document_checks": {
+          "title": {
+            "status": "conferido",
+            "text": "Milhares saem à rua em Lisboa contra o custo de vida: “Não dá mais para viver assim”",
+            "locator": null
+          },
+          "published_at": {
+            "status": "conferido",
+            "text": "2026-10-10T17:30:00+00:00"
+          },
+          "reference_date": {
+            "status": "conferido",
+            "text": "2026-10-10T17:30:00+00:00"
+          }
+        }
+      },
+      "receipt": {
+        "pedido": "https://postal.pt/nacional/milhares-saem-a-rua-em-lisboa-contra-o-custo-de-vida-nao-da-mais-para-viver-assim/",
+        "endereco_final": "https://postal.pt/nacional/milhares-saem-a-rua-em-lisboa-contra-o-custo-de-vida-nao-da-mais-para-viver-assim/",
+        "acedido_em": "2026-10-20T19:44:50.262823+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "estado": 200,
+        "tipo": "text/html; charset=UTF-8",
+        "segundos": 0.341,
+        "erro": null,
+        "redirecionamentos": [],
+        "ficheiro": "hb1-postal-lusa.html",
+        "bytes": 311722,
+        "sha256": "46ccb73acbe599d698cd3909de0d820432b31d99fb8367052fd2f5115f097bdb"
+      }
+    },
+    "hab-cgtp-convocatoria": {
+      "row": {
+        "id": "hab-cgtp-convocatoria",
+        "value": "CONTRA O AUMENTO DO CUSTO DE VIDA! DIVULGA E PARTICIPA! LISBOA- 14H30 CAIS SODRÉ/ROSSIO",
+        "excerpt": "CONTRA O AUMENTO DO CUSTO DE VIDA! DIVULGA E PARTICIPA! LISBOA- 14H30 CAIS SODRÉ/ROSSIO",
+        "unit": "afirmação",
+        "reference_date": "2026-09-15",
+        "published_at": "2026-09-15",
+        "attributed_to": [
+          "hotelariasul"
+        ],
+        "attributed_to_en": null,
+        "afirmacao": true,
+        "source_url": "https://sindicatos.cgtp.pt/hotelaria-sul/2026/09/15/manifestacao-nacional-dia-17-de-outubro/",
+        "document": {
+          "title": "MANIFESTAÇÃO NACIONAL DIA 17 DE OUTUBRO",
+          "edition": "2026-09-15",
+          "kind": "html",
+          "locator": "HTML; início literal único",
+          "source_sha256": "6b0691041e034d039facd8e4beed2c471b25d9e1ef4ea804c3699037b9874070",
+          "file": "content/23 Habitacao/source/cgtp-convocatoria.html"
+        },
+        "document_checks": {
+          "title": {
+            "status": "conferido",
+            "text": "MANIFESTAÇÃO NACIONAL DIA 17 DE OUTUBRO",
+            "locator": null
+          },
+          "published_at": {
+            "status": "conferido",
+            "text": "15 de Setembro de 2026",
+            "locator": null
+          },
+          "attributed_to": {
+            "status": "conferido",
+            "text": "hotelariasul",
+            "locator": "atribuição literal no documento"
+          },
+          "reference_date": {
+            "status": "conferido",
+            "text": "15 de Setembro de 2026",
+            "locator": null
+          }
+        }
+      },
+      "receipt": {
+        "pedido": "https://sindicatos.cgtp.pt/hotelaria-sul/2026/09/15/manifestacao-nacional-dia-17-de-outubro/",
+        "endereco_final": "https://sindicatos.cgtp.pt/hotelaria-sul/2026/09/15/manifestacao-nacional-dia-17-de-outubro/",
+        "acedido_em": "2026-10-19T13:44:07.960811+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "estado": 200,
+        "tipo": "text/html; charset=UTF-8",
+        "segundos": 0.798,
+        "erro": null,
+        "redirecionamentos": [],
+        "ficheiro": "cgtp-convocatoria.html",
+        "bytes": 46888,
+        "sha256": "6b0691041e034d039facd8e4beed2c471b25d9e1ef4ea804c3699037b9874070"
+      }
+    },
+    "hab-plataforma-reivindicacoes": {
+      "row": {
+        "id": "hab-plataforma-reivindicacoes",
+        "value": "Precisamos de tectos às rendas e limites ao aumento das prestações, de mais habitação pública e do fim dos benefícios fiscais para especulação financeira.",
+        "excerpt": "Precisamos de tectos às rendas e limites ao aumento das prestações, de mais habitação pública e do fim dos benefícios fiscais para especulação financeira.",
+        "unit": "texto",
+        "reference_date": "2026-10-10",
+        "published_at": null,
+        "attributed_to": [
+          "Não dá mais para viver assim"
+        ],
+        "attributed_to_en": null,
+        "afirmacao": false,
+        "source_url": "https://eventos.coletivos.org/event/manifestacao-ja-nao-da-mais-para-viver-assim",
+        "document": {
+          "title": "Manifestação - Já não dá mais para viver assim!",
+          "edition": "2026-10-10",
+          "kind": "html",
+          "locator": "HTML; início literal único",
+          "source_sha256": "bc347ecd05d35ec837e29569f4371bbdf942e5711b7bfb3a8d6a801e16c2f127",
+          "file": "content/23 Habitacao/source/eventos-coletivos-org-1.html"
+        },
+        "document_checks": {
+          "title": {
+            "status": "conferido",
+            "text": "Manifestação - Já não dá mais para viver assim!",
+            "locator": null
+          },
+          "published_at": {
+            "status": "por confirmar",
+            "reason": "Sem data de publicação ancorada no documento; o período de referência e o acesso não provam a publicação."
+          },
+          "reference_date": {
+            "status": "conferido",
+            "text": "itemprop=\"startDate\" content=\"2026-10-10T17:00\"",
+            "file": "source/eventos-coletivos-org-1.html",
+            "sha256": "bc347ecd05d35ec837e29569f4371bbdf942e5711b7bfb3a8d6a801e16c2f127",
+            "date": "2026-10-10"
+          }
+        }
+      },
+      "receipt": {
+        "pedido": "https://eventos.coletivos.org/event/manifestacao-ja-nao-da-mais-para-viver-assim",
+        "endereco_final": "https://eventos.coletivos.org/event/manifestacao-ja-nao-da-mais-para-viver-assim",
+        "acedido_em": "2026-10-19T13:38:46.020669+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "estado": 200,
+        "tipo": "text/html; charset=utf-8",
+        "segundos": 0.383,
+        "erro": null,
+        "redirecionamentos": [],
+        "ficheiro": "eventos-coletivos-org-1.html",
+        "bytes": 115585,
+        "sha256": "bc347ecd05d35ec837e29569f4371bbdf942e5711b7bfb3a8d6a801e16c2f127"
+      },
+      "reference_source": {
+        "file": "content/23 Habitacao/source/eventos-coletivos-org-1.html",
+        "sha256": "bc347ecd05d35ec837e29569f4371bbdf942e5711b7bfb3a8d6a801e16c2f127",
+        "receipt": {
+          "pedido": "https://eventos.coletivos.org/event/manifestacao-ja-nao-da-mais-para-viver-assim",
+          "endereco_final": "https://eventos.coletivos.org/event/manifestacao-ja-nao-da-mais-para-viver-assim",
+          "acedido_em": "2026-10-19T13:38:46.020669+00:00",
+          "cliente": "core.http.HttpClient.condicional",
+          "user_agent": "OEstadoDoPais/corredor",
+          "estado": 200,
+          "tipo": "text/html; charset=utf-8",
+          "segundos": 0.383,
+          "erro": null,
+          "redirecionamentos": [],
+          "ficheiro": "eventos-coletivos-org-1.html",
+          "bytes": 115585,
+          "sha256": "bc347ecd05d35ec837e29569f4371bbdf942e5711b7bfb3a8d6a801e16c2f127"
+        }
+      }
+    },
+    "hab-imprensa-tendas": {
+      "row": {
+        "id": "hab-imprensa-tendas",
+        "value": "Foram retiradas, ao início da manhã desta segunda-feira, as tendas de dezenas de pessoas que permaneciam acampadas na Praça D. João I, no centro do Porto, em protesto contra o aumento do custo de vida e a crise da habitação.O acampamento foi promovido pelo movimento \"Não consegues pagar renda? Traz tenda\". O acampamento mantinha-se no local desde sábado, dia em que cerca de 1.500 pessoas se manifestaram no Porto contra o agravamento do custo de vida.",
+        "excerpt": "Foram retiradas, ao início da manhã desta segunda-feira, as tendas de dezenas de pessoas que permaneciam acampadas na Praça D. João I, no centro do Porto, em protesto contra o aumento do custo de vida e a crise da habitação.O acampamento foi promovido pelo movimento \"Não consegues pagar renda? Traz tenda\". O acampamento mantinha-se no local desde sábado, dia em que cerca de 1.500 pessoas se manifestaram no Porto contra o agravamento do custo de vida.",
+        "unit": "texto",
+        "reference_date": "2026-10-12",
+        "published_at": "2026-10-12",
+        "attributed_to": [
+          "RTP"
+        ],
+        "attributed_to_en": [
+          "RTP"
+        ],
+        "afirmacao": false,
+        "source_url": "https://www.rtp.pt/noticias/pais/nao-consegues-pagar-renda-traz-tenda-policia-desmonta-acampamento-no-porto_n1771142",
+        "document": {
+          "title": "\"Não consegues pagar renda? Traz tenda\". Polícia desmonta acampamento no Porto",
+          "edition": "2026-10-12",
+          "kind": "html",
+          "locator": "HTML; início literal único",
+          "source_sha256": "c67d11f5413d705e61f63614ad523cf7103800551e9a02c75735ba2409955b81",
+          "file": "content/23 Habitacao/source/hb1-rtp-tendas.html"
+        },
+        "document_checks": {
+          "title": {
+            "status": "conferido",
+            "text": "\"Não consegues pagar renda? Traz tenda\". Polícia desmonta acampamento no Porto",
+            "locator": null
+          },
+          "published_at": {
+            "status": "conferido",
+            "text": "2026-10-12T12:40:44Z"
+          },
+          "reference_date": {
+            "status": "conferido",
+            "text": "2026-10-12T12:40:44Z"
+          }
+        }
+      },
+      "receipt": {
+        "pedido": "https://www.rtp.pt/noticias/pais/nao-consegues-pagar-renda-traz-tenda-policia-desmonta-acampamento-no-porto_n1771142",
+        "endereco_final": "https://www.rtp.pt/noticias/pais/nao-consegues-pagar-renda-traz-tenda-policia-desmonta-acampamento-no-porto_n1771142",
+        "acedido_em": "2026-10-20T19:12:05.199403+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "estado": 200,
+        "tipo": "text/html; charset=UTF-8",
+        "segundos": 0.39,
+        "erro": null,
+        "redirecionamentos": [],
+        "ficheiro": "hb1-rtp-tendas.html",
+        "bytes": 89013,
+        "sha256": "c67d11f5413d705e61f63614ad523cf7103800551e9a02c75735ba2409955b81"
+      }
+    },
+    "hab-imprensa-acampados": {
+      "row": {
+        "id": "hab-imprensa-acampados",
+        "value": "não como uma escolha de lazer, ou de campismo, mas como ato de desespero político",
+        "excerpt": "não como uma escolha de lazer, ou de campismo, mas como ato de desespero político",
+        "unit": "afirmação",
+        "reference_date": "2026-10-14",
+        "published_at": "2026-10-14",
+        "attributed_to": [
+          "manifestantes"
+        ],
+        "attributed_to_en": null,
+        "afirmacao": true,
+        "source_url": "https://www.rtp.pt/noticias/economia/manifestantes-pela-habitacao-no-porto-justificam-protesto-por-desespero-politico_n1771701",
+        "document": {
+          "title": "Manifestantes pela habitação no Porto justificam protesto por \"desespero político\"",
+          "edition": "2026-10-14",
+          "kind": "html",
+          "locator": "HTML; início literal único",
+          "source_sha256": "3db4c92b85aff4e6bf445060c7c460f41504e0b3578b0a238e1a68ff83106dcd",
+          "file": "content/23 Habitacao/source/imprensa-6.html"
+        },
+        "document_checks": {
+          "title": {
+            "status": "conferido",
+            "text": "Manifestantes pela habitação no Porto justificam protesto por \"desespero político\"",
+            "locator": null
+          },
+          "published_at": {
+            "status": "conferido",
+            "text": "2026-10-14T22:14:34Z"
+          },
+          "attributed_to": {
+            "status": "conferido",
+            "text": "manifestantes",
+            "locator": "atribuição literal no documento"
+          },
+          "reference_date": {
+            "status": "conferido",
+            "text": "2026-10-14T22:14:34Z"
+          }
+        }
+      },
+      "receipt": {
+        "pedido": "https://www.rtp.pt/noticias/economia/manifestantes-pela-habitacao-no-porto-justificam-protesto-por-desespero-politico_n1771701",
+        "endereco_final": "https://www.rtp.pt/noticias/economia/manifestantes-pela-habitacao-no-porto-justificam-protesto-por-desespero-politico_n1771701",
+        "acedido_em": "2026-10-19T13:45:08.008862+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "estado": 200,
+        "tipo": "text/html; charset=UTF-8",
+        "segundos": 0.335,
+        "erro": null,
+        "redirecionamentos": [],
+        "ficheiro": "imprensa-6.html",
+        "bytes": 87479,
+        "sha256": "3db4c92b85aff4e6bf445060c7c460f41504e0b3578b0a238e1a68ff83106dcd"
+      }
+    },
+    "hab-imprensa-assistidos": {
+      "row": {
+        "id": "hab-imprensa-assistidos",
+        "value": "oito pessoas foram assistidas no seu quartel",
+        "excerpt": "oito pessoas foram assistidas no seu quartel",
+        "unit": "afirmação",
+        "reference_date": "2026-10-15",
+        "published_at": "2026-10-15",
+        "attributed_to": [
+          "Luís Silva, comandante dos Bombeiros Voluntários do Porto"
+        ],
+        "attributed_to_en": [
+          "Luís Silva, commander of the Porto volunteer firefighters"
+        ],
+        "afirmacao": true,
+        "source_url": "https://www.rtp.pt/noticias/pais/dezenas-de-feridos-em-confrontos-entre-manifestantes-e-policia-no-porto_n1771773",
+        "document": {
+          "title": "Montenegro afasta \"país em turbulência\". Dezenas de feridos em investida da polícia contra manifestantes no Porto",
+          "edition": "2026-10-15",
+          "kind": "html",
+          "locator": "HTML; início literal único",
+          "source_sha256": "cb9da346a7b2f62547c7d2788e2b7067fcf04aab16658546ea8488d876e13559",
+          "file": "content/23 Habitacao/source/imprensa-7.html"
+        },
+        "document_checks": {
+          "title": {
+            "status": "conferido",
+            "text": "Montenegro afasta \"país em turbulência\". Dezenas de feridos em investida da polícia contra manifestantes no Porto",
+            "locator": null
+          },
+          "published_at": {
+            "status": "conferido",
+            "text": "2026-10-15T09:40:33Z"
+          },
+          "attributed_to": {
+            "status": "conferido",
+            "text": "O comandante dos Bombeiros Voluntários do Porto confirma à RTP Antena 1 que oito pessoas foram assistidas no seu quartel, localizado perto da Praça D. João I. Foi já depois das 4h00 que os manifestantes foram até ao quartel, descreve Luís Silva, para procurar assistência.",
+            "locator": "comandante, segundo a RTP Antena 1"
+          },
+          "reference_date": {
+            "status": "conferido",
+            "text": "2026-10-15T09:40:33Z"
+          }
+        }
+      },
+      "receipt": {
+        "pedido": "https://www.rtp.pt/noticias/pais/dezenas-de-feridos-em-confrontos-entre-manifestantes-e-policia-no-porto_n1771773",
+        "endereco_final": "https://www.rtp.pt/noticias/pais/dezenas-de-feridos-em-confrontos-entre-manifestantes-e-policia-no-porto_n1771773",
+        "acedido_em": "2026-10-19T13:45:08.352610+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "estado": 200,
+        "tipo": "text/html; charset=UTF-8",
+        "segundos": 0.333,
+        "erro": null,
+        "redirecionamentos": [],
+        "ficheiro": "imprensa-7.html",
+        "bytes": 110394,
+        "sha256": "cb9da346a7b2f62547c7d2788e2b7067fcf04aab16658546ea8488d876e13559"
+      }
+    },
+    "hab-imprensa-hospital": {
+      "row": {
+        "id": "hab-imprensa-hospital",
+        "value": "Duas pessoas foram encaminhadas para o hospital.",
+        "excerpt": "Duas pessoas foram encaminhadas para o hospital.",
+        "unit": "afirmação",
+        "reference_date": "2026-10-15",
+        "published_at": "2026-10-15",
+        "attributed_to": [
+          "RTP"
+        ],
+        "attributed_to_en": [
+          "RTP"
+        ],
+        "afirmacao": true,
+        "source_url": "https://www.rtp.pt/noticias/pais/dezenas-de-feridos-em-confrontos-entre-manifestantes-e-policia-no-porto_n1771773",
+        "document": {
+          "title": "Montenegro afasta \"país em turbulência\". Dezenas de feridos em investida da polícia contra manifestantes no Porto",
+          "edition": "2026-10-15",
+          "kind": "html",
+          "locator": "HTML; início literal único",
+          "source_sha256": "cb9da346a7b2f62547c7d2788e2b7067fcf04aab16658546ea8488d876e13559",
+          "file": "content/23 Habitacao/source/imprensa-7.html"
+        },
+        "document_checks": {
+          "title": {
+            "status": "conferido",
+            "text": "Montenegro afasta \"país em turbulência\". Dezenas de feridos em investida da polícia contra manifestantes no Porto",
+            "locator": null
+          },
+          "published_at": {
+            "status": "conferido",
+            "text": "2026-10-15T09:40:33Z"
+          },
+          "attributed_to": {
+            "status": "conferido",
+            "text": "RTP",
+            "locator": "narração jornalística da RTP; não atribuída pelo artigo a Luís Silva"
+          },
+          "reference_date": {
+            "status": "conferido",
+            "text": "2026-10-15T09:40:33Z"
+          }
+        }
+      },
+      "receipt": {
+        "pedido": "https://www.rtp.pt/noticias/pais/dezenas-de-feridos-em-confrontos-entre-manifestantes-e-policia-no-porto_n1771773",
+        "endereco_final": "https://www.rtp.pt/noticias/pais/dezenas-de-feridos-em-confrontos-entre-manifestantes-e-policia-no-porto_n1771773",
+        "acedido_em": "2026-10-19T13:45:08.352610+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "estado": 200,
+        "tipo": "text/html; charset=UTF-8",
+        "segundos": 0.333,
+        "erro": null,
+        "redirecionamentos": [],
+        "ficheiro": "imprensa-7.html",
+        "bytes": 110394,
+        "sha256": "cb9da346a7b2f62547c7d2788e2b7067fcf04aab16658546ea8488d876e13559"
+      }
+    },
+    "hab-imprensa-pm-15": {
+      "row": {
+        "id": "hab-imprensa-pm-15",
+        "value": "Espero que os partidos políticos, movimentos associativos, organizações portuguesas, não caiam na tentação, por razões meramente egoísticas da sua própria ação, importarem para Portugal climas de instabilidade, de contestação, que não tenham de facto respaldo na sociedade portuguesa.",
+        "excerpt": "Espero que os partidos políticos, movimentos associativos, organizações portuguesas, não caiam na tentação, por razões meramente egoísticas da sua própria ação, importarem para Portugal climas de instabilidade, de contestação, que não tenham de facto respaldo na sociedade portuguesa.",
+        "unit": "afirmação",
+        "reference_date": "2026-10-15",
+        "published_at": "2026-10-15",
+        "attributed_to": [
+          "Luís Montenegro"
+        ],
+        "attributed_to_en": null,
+        "afirmacao": true,
+        "source_url": "https://www.dn.pt/sociedade/montenegro-defende-foras-policiais-e-pede-a-manifestantes-que-no-sejam-egostas",
+        "document": {
+          "title": "Montenegro defende forças policiais e pede a manifestantes que não sejam egoístas",
+          "edition": null,
+          "kind": "html",
+          "locator": "HTML; início literal único",
+          "source_sha256": "0bd1b5c1d2eeb426a87b8960d5e8338586bde369730037c49518ff614e9e63d2",
+          "file": "content/23 Habitacao/source/imprensa-2.html"
+        },
+        "document_checks": {
+          "title": {
+            "status": "conferido",
+            "text": "Montenegro defende forças policiais e pede a manifestantes que não sejam egoístas",
+            "locator": null
+          },
+          "published_at": {
+            "status": "conferido",
+            "text": "15 Out 2026",
+            "locator": null
+          },
+          "attributed_to": {
+            "status": "conferido",
+            "text": "O primeiro-ministro, Luís Montenegro",
+            "locator": "atribuição literal no documento"
+          },
+          "reference_date": {
+            "status": "conferido",
+            "text": "15 Out 2026",
+            "locator": null
+          }
+        }
+      },
+      "receipt": {
+        "pedido": "https://www.dn.pt/sociedade/montenegro-defende-foras-policiais-e-pede-a-manifestantes-que-no-sejam-egostas",
+        "endereco_final": "https://www.dn.pt/sociedade/montenegro-defende-foras-policiais-e-pede-a-manifestantes-que-no-sejam-egostas",
+        "acedido_em": "2026-10-19T13:45:06.788404+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "estado": 200,
+        "tipo": "text/html; charset=utf-8",
+        "segundos": 0.394,
+        "erro": null,
+        "redirecionamentos": [],
+        "ficheiro": "imprensa-2.html",
+        "bytes": 964742,
+        "sha256": "0bd1b5c1d2eeb426a87b8960d5e8338586bde369730037c49518ff614e9e63d2"
+      }
+    },
+    "hab-imprensa-pm-16": {
+      "row": {
+        "id": "hab-imprensa-pm-16",
+        "value": "Eu dirigi-me a partidos políticos, a movimentos associativos e organizações no desenvolvimento da sua ação, dessas organizações.",
+        "excerpt": "Eu dirigi-me a partidos políticos, a movimentos associativos e organizações no desenvolvimento da sua ação, dessas organizações.",
+        "unit": "afirmação",
+        "reference_date": "2026-10-16",
+        "published_at": "2026-10-16",
+        "attributed_to": [
+          "Luís Montenegro"
+        ],
+        "attributed_to_en": null,
+        "afirmacao": true,
+        "source_url": "https://www.dn.pt/política/lus-montenegro-nega-ter-acusado-manifestantes-de-egosmo-dirigi-me-a-partidos-polticos",
+        "document": {
+          "title": "Montenegro nega ter acusado manifestantes de egoísmo e revela que ameaçaram a sua casa (com vídeo)",
+          "edition": null,
+          "kind": "html",
+          "locator": "HTML; início literal único",
+          "source_sha256": "5bc230f214d9e5196f2ce1c480d0e6eb23d0eb1d73a45dd7452d4cb73cb057b0",
+          "file": "content/23 Habitacao/source/imprensa-3.html"
+        },
+        "document_checks": {
+          "title": {
+            "status": "conferido",
+            "text": "Montenegro nega ter acusado manifestantes de egoísmo e revela que ameaçaram a sua casa (com vídeo)",
+            "locator": null
+          },
+          "published_at": {
+            "status": "conferido",
+            "text": "16 Out 2026",
+            "locator": null
+          },
+          "attributed_to": {
+            "status": "conferido",
+            "text": "Luís Montenegro",
+            "locator": "atribuição literal no documento"
+          },
+          "reference_date": {
+            "status": "conferido",
+            "text": "16 Out 2026",
+            "locator": null
+          }
+        }
+      },
+      "receipt": {
+        "pedido": "https://www.dn.pt/política/lus-montenegro-nega-ter-acusado-manifestantes-de-egosmo-dirigi-me-a-partidos-polticos",
+        "endereco_final": "https://www.dn.pt/política/lus-montenegro-nega-ter-acusado-manifestantes-de-egosmo-dirigi-me-a-partidos-polticos",
+        "acedido_em": "2026-10-19T13:45:07.192381+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "estado": 200,
+        "tipo": "text/html; charset=utf-8",
+        "segundos": 0.221,
+        "erro": null,
+        "redirecionamentos": [],
+        "ficheiro": "imprensa-3.html",
+        "bytes": 974807,
+        "sha256": "5bc230f214d9e5196f2ce1c480d0e6eb23d0eb1d73a45dd7452d4cb73cb057b0"
+      }
+    },
+    "hab-imprensa-mai": {
+      "row": {
+        "id": "hab-imprensa-mai",
+        "value": "há lei e ordem que têm de ser cumpridas",
+        "excerpt": "há lei e ordem que têm de ser cumpridas",
+        "unit": "afirmação",
+        "reference_date": "2026-10-15",
+        "published_at": "2026-10-15",
+        "attributed_to": [
+          "Luís Neves"
+        ],
+        "attributed_to_en": null,
+        "afirmacao": true,
+        "source_url": "https://www.dn.pt/política/ministro-da-administrao-interna-diz-que-interveno-policial-no-porto-foi-legtima",
+        "document": {
+          "title": "Ministro da Administração Interna diz que intervenção policial no Porto foi legítima",
+          "edition": null,
+          "kind": "html",
+          "locator": "HTML; início literal único",
+          "source_sha256": "14c6e8795eea3e4b99495c604e4108e50b5283a965ebed1960ee613375061d72",
+          "file": "content/23 Habitacao/source/imprensa-4.html"
+        },
+        "document_checks": {
+          "title": {
+            "status": "conferido",
+            "text": "Ministro da Administração Interna diz que intervenção policial no Porto foi legítima",
+            "locator": null
+          },
+          "published_at": {
+            "status": "conferido",
+            "text": "15 Out 2026",
+            "locator": null
+          },
+          "attributed_to": {
+            "status": "conferido",
+            "text": "Luís Neves",
+            "locator": "atribuição literal no documento"
+          },
+          "reference_date": {
+            "status": "conferido",
+            "text": "15 Out 2026",
+            "locator": null
+          }
+        }
+      },
+      "receipt": {
+        "pedido": "https://www.dn.pt/política/ministro-da-administrao-interna-diz-que-interveno-policial-no-porto-foi-legtima",
+        "endereco_final": "https://www.dn.pt/política/ministro-da-administrao-interna-diz-que-interveno-policial-no-porto-foi-legtima",
+        "acedido_em": "2026-10-19T13:45:07.422462+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "estado": 200,
+        "tipo": "text/html; charset=utf-8",
+        "segundos": 0.202,
+        "erro": null,
+        "redirecionamentos": [],
+        "ficheiro": "imprensa-4.html",
+        "bytes": 978498,
+        "sha256": "14c6e8795eea3e4b99495c604e4108e50b5283a965ebed1960ee613375061d72"
+      }
+    },
+    "hab-imprensa-amorim": {
+      "row": {
+        "id": "hab-imprensa-amorim",
+        "value": "o Governo \"não vai ceder aos gritos que vêm da rua\".",
+        "excerpt": "o Governo \"não vai ceder aos gritos que vêm da rua\".",
+        "unit": "afirmação",
+        "reference_date": "2026-10-16",
+        "published_at": "2026-10-16",
+        "attributed_to": [
+          "Carlos Abreu Amorim"
+        ],
+        "attributed_to_en": null,
+        "afirmacao": true,
+        "source_url": "https://www.dnoticias.pt/2026/10/16/509246-habitacao-governo-avisa-que-nao-vai-ceder-aos-gritos-que-vem-da-rua/",
+        "document": {
+          "title": "Habitação: Governo avisa que \"não vai ceder aos gritos que vêm da rua\"",
+          "edition": null,
+          "kind": "html",
+          "locator": "HTML; início literal único",
+          "source_sha256": "f4c32b6e977d07cc217f9bbfaef00c6513455b139fddb067849a15c5a9c22f0c",
+          "file": "content/23 Habitacao/source/imprensa-1.html"
+        },
+        "document_checks": {
+          "title": {
+            "status": "conferido",
+            "text": "Habitação: Governo avisa que \"não vai ceder aos gritos que vêm da rua\"",
+            "locator": null
+          },
+          "published_at": {
+            "status": "conferido",
+            "text": "16 out 2026",
+            "locator": null
+          },
+          "attributed_to": {
+            "status": "conferido",
+            "text": "O ministro dos Assuntos Parlamentares, Carlos Abreu Amorim",
+            "locator": "atribuição literal no documento"
+          },
+          "reference_date": {
+            "status": "conferido",
+            "text": "16 out 2026",
+            "locator": null
+          }
+        }
+      },
+      "receipt": {
+        "pedido": "https://www.dnoticias.pt/2026/10/16/509246-habitacao-governo-avisa-que-nao-vai-ceder-aos-gritos-que-vem-da-rua/",
+        "endereco_final": "https://www.dnoticias.pt/2026/10/16/509246-habitacao-governo-avisa-que-nao-vai-ceder-aos-gritos-que-vem-da-rua/",
+        "acedido_em": "2026-10-19T13:45:06.422628+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "estado": 200,
+        "tipo": "text/html",
+        "segundos": 0.356,
+        "erro": null,
+        "redirecionamentos": [],
+        "ficheiro": "imprensa-1.html",
+        "bytes": 236270,
+        "sha256": "f4c32b6e977d07cc217f9bbfaef00c6513455b139fddb067849a15c5a9c22f0c"
+      }
+    },
+    "hab-imprensa-debate-custos": {
+      "row": {
+        "id": "hab-imprensa-debate-custos",
+        "value": "Os aumentos com os custos na habitação foram superiores a 100 por cento na esmagadora maioria das cidades",
+        "excerpt": "Os aumentos com os custos na habitação foram superiores a 100 por cento na esmagadora maioria das cidades",
+        "unit": "afirmação",
+        "reference_date": "2026-10-09",
+        "published_at": "2026-10-09",
+        "attributed_to": [
+          "Luís Montenegro"
+        ],
+        "attributed_to_en": null,
+        "afirmacao": true,
+        "source_url": "https://www.rtp.pt/noticias/politica/habitacao-e-proposta-de-orcamento-do-estado-dominam-debate-quinzenal_e1770559",
+        "document": {
+          "title": "Governo \"de parabéns\" ou em \"bolha\"? Habitação e Orçamento do Estado dominam debate quinzenal",
+          "edition": "2026-10-09",
+          "kind": "html",
+          "locator": "HTML; cobertura do debate quinzenal; início literal único",
+          "source_sha256": "99642cf15dc6a5f8d3279a002bbb49d4620c0e9c2f51129957df7e82596b370d",
+          "file": "content/23 Habitacao/source/imprensa-debate-quinzenal.html"
+        },
+        "document_checks": {
+          "title": {
+            "status": "conferido",
+            "text": "Governo \"de parabéns\" ou em \"bolha\"? Habitação e Orçamento do Estado dominam debate quinzenal",
+            "locator": null
+          },
+          "published_at": {
+            "status": "conferido",
+            "text": "2026-10-09T15:23:52Z"
+          },
+          "attributed_to": {
+            "status": "conferido",
+            "text": "Luís Montenegro",
+            "locator": "primeiro-ministro, segundo a RTP"
+          },
+          "reference_date": {
+            "status": "conferido",
+            "text": "2026-10-09T15:23:52Z"
+          }
+        }
+      },
+      "receipt": {
+        "pedido": "https://www.rtp.pt/noticias/politica/habitacao-e-proposta-de-orcamento-do-estado-dominam-debate-quinzenal_e1770559",
+        "endereco_final": "https://www.rtp.pt/noticias/politica/habitacao-e-proposta-de-orcamento-do-estado-dominam-debate-quinzenal_e1770559",
+        "acedido_em": "2026-10-19T14:01:20.091116+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "estado": 200,
+        "tipo": "text/html; charset=UTF-8",
+        "segundos": 0.823,
+        "erro": null,
+        "redirecionamentos": [],
+        "ficheiro": "imprensa-debate-quinzenal.html",
+        "bytes": 419783,
+        "sha256": "99642cf15dc6a5f8d3279a002bbb49d4620c0e9c2f51129957df7e82596b370d"
+      }
+    },
+    "hab-imprensa-debate-protecao": {
+      "row": {
+        "id": "hab-imprensa-debate-protecao",
+        "value": "vão proteger as pessoas",
+        "excerpt": "vão proteger as pessoas",
+        "unit": "afirmação",
+        "reference_date": "2026-10-09",
+        "published_at": "2026-10-09",
+        "attributed_to": [
+          "Luís Montenegro"
+        ],
+        "attributed_to_en": null,
+        "afirmacao": true,
+        "source_url": "https://www.rtp.pt/noticias/politica/habitacao-e-proposta-de-orcamento-do-estado-dominam-debate-quinzenal_e1770559",
+        "document": {
+          "title": "Governo \"de parabéns\" ou em \"bolha\"? Habitação e Orçamento do Estado dominam debate quinzenal",
+          "edition": "2026-10-09",
+          "kind": "html",
+          "locator": "HTML; cobertura do debate quinzenal; início literal único",
+          "source_sha256": "99642cf15dc6a5f8d3279a002bbb49d4620c0e9c2f51129957df7e82596b370d",
+          "file": "content/23 Habitacao/source/imprensa-debate-quinzenal.html"
+        },
+        "document_checks": {
+          "title": {
+            "status": "conferido",
+            "text": "Governo \"de parabéns\" ou em \"bolha\"? Habitação e Orçamento do Estado dominam debate quinzenal",
+            "locator": null
+          },
+          "published_at": {
+            "status": "conferido",
+            "text": "2026-10-09T15:23:52Z"
+          },
+          "attributed_to": {
+            "status": "conferido",
+            "text": "Luís Montenegro",
+            "locator": "primeiro-ministro, segundo a RTP"
+          },
+          "reference_date": {
+            "status": "conferido",
+            "text": "2026-10-09T15:23:52Z"
+          }
+        }
+      },
+      "receipt": {
+        "pedido": "https://www.rtp.pt/noticias/politica/habitacao-e-proposta-de-orcamento-do-estado-dominam-debate-quinzenal_e1770559",
+        "endereco_final": "https://www.rtp.pt/noticias/politica/habitacao-e-proposta-de-orcamento-do-estado-dominam-debate-quinzenal_e1770559",
+        "acedido_em": "2026-10-19T14:01:20.091116+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "estado": 200,
+        "tipo": "text/html; charset=UTF-8",
+        "segundos": 0.823,
+        "erro": null,
+        "redirecionamentos": [],
+        "ficheiro": "imprensa-debate-quinzenal.html",
+        "bytes": 419783,
+        "sha256": "99642cf15dc6a5f8d3279a002bbb49d4620c0e9c2f51129957df7e82596b370d"
+      }
+    }
+  }
+}

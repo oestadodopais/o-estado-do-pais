@@ -1,0 +1,42 @@
+{
+  "comando": "AMOSTRA=5000 node scripts/check-lugar.mjs",
+  "contagens": {
+    "estudos": 3336,
+    "do_ex4": 2950,
+    "do_hb1": 3170,
+    "em_comum": 2782,
+    "entram_hb1": [
+      "/livro-razao/hab-tespm140-a-pc-eu27_2020-2025",
+      "/en/ledger/hab-tespm140-a-pc-eu27_2020-2025",
+      "/livro-razao/hab-tespm140-a-pc-pt-2025",
+      "/en/ledger/hab-tespm140-a-pc-pt-2025"
+    ],
+    "saem_hb1": [
+      "/livro-razao/oe-2027-calendario-generalidade",
+      "/en/ledger/oe-2027-calendario-generalidade",
+      "/livro-razao/posicao-chega-habitacao",
+      "/en/ledger/posicao-chega-habitacao",
+      "/livro-razao/posicao-ps-rendas",
+      "/en/ledger/posicao-ps-rendas"
+    ]
+  },
+  "plantas": [
+    {
+      "nome": "página de um dos lados retirada",
+      "mordeu": true
+    },
+    {
+      "nome": "página declarada como saída de volta",
+      "mordeu": true
+    },
+    {
+      "nome": "página alheia acrescentada",
+      "mordeu": true
+    },
+    {
+      "nome": "contagem diferente da régua",
+      "mordeu": true
+    }
+  ],
+  "razao": "A L1 da cabeça fundida enumera exatamente a união das páginas medidas pelo EX4 e pelo HB1, cada uma sobre o seu ramo, com as dez mudanças do HB1 posteriores à medição dele declaradas por nome (quatro entram, seis saem); nenhuma página do EX4 muda; a regra da contagem não muda."
+}

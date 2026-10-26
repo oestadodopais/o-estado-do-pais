@@ -1,0 +1,2588 @@
+check:leituras · tests/leituras/apoio_ferramentas.py · código 0
+check:leituras · tests/leituras/aterrar.py · código 0
+{
+  "ok": true,
+  "casos": [
+    {
+      "planta": "sem-ramo",
+      "codigo": 14,
+      "mensagem": "PAROU: o ramo ramo-sintetico não existe (código 14)",
+      "passou": true
+    },
+    {
+      "planta": "cabeca-errada",
+      "codigo": 15,
+      "mensagem": "PAROU: a cabeça de ramo-sintetico é aaaaaaaa, e não bbbb (código 15)",
+      "passou": true
+    },
+    {
+      "planta": "sem-main",
+      "codigo": 16,
+      "mensagem": "PAROU: main não está dentro de ramo-sintetico: a fusão não seria um avanço rápido (código 16)",
+      "passou": true
+    },
+    {
+      "planta": "sem-origin",
+      "codigo": 17,
+      "mensagem": "PAROU: origin/main não está dentro de ramo-sintetico (código 17)",
+      "passou": true
+    },
+    {
+      "planta": "sem-check",
+      "codigo": 18,
+      "mensagem": "PAROU: a verificação portao da cabeça aaaaaaaa não está verde (diz «nada») (código 18)",
+      "passou": true
+    },
+    {
+      "planta": "vermelho",
+      "codigo": 18,
+      "mensagem": "PAROU: a verificação portao da cabeça aaaaaaaa não está verde (diz «failure») (código 18)",
+      "passou": true
+    },
+    {
+      "planta": "verde",
+      "codigo": 0,
+      "mensagem": "ATERROU: aaaaaaaa no ar, verify:deploy verde, portao já conferido nesta cabeça · 20:11:18 UTC",
+      "passou": true
+    }
+  ]
+}
+check:leituras · tests/leituras/briefs-presos.py · código 0
+{
+  "ok": true,
+  "casos": [
+    {
+      "planta": "controlo preso não volta a executar o guião",
+      "mensagem": "bytes iguais; §0 e JSON conferidos",
+      "passou": true
+    },
+    {
+      "planta": "a gravação executa mesmo com selo válido",
+      "mensagem": "Só se selam guiões verdes desta invocação.",
+      "passou": true
+    },
+    {
+      "planta": "selo escrito à mão sem execução",
+      "mensagens": [
+        "BRIEF-ENSAIO-prova.md: selo recusado: falta o registo de execução verde com cabeça, hora e invocação."
+      ],
+      "passou": true
+    },
+    {
+      "planta": "GITHUB_ACTIONS ignora um selo válido",
+      "mensagem": "O guião correu com a variável de GitHub/CI no ambiente.",
+      "passou": true
+    },
+    {
+      "planta": "CI ignora um selo válido",
+      "mensagem": "O guião correu com a variável de GitHub/CI no ambiente.",
+      "passou": true
+    },
+    {
+      "planta": "número alterado no brief preso",
+      "mensagens": [
+        "BRIEF-ENSAIO-prova.md: o §0 escreve «14» e esse número não é o valor de nenhuma das medições nomeadas na sua frase (`objetos`=13).\n      «Há 14 objetos (`objetos`).»"
+      ],
+      "passou": true
+    },
+    {
+      "planta": "número alterado no guião preso",
+      "mensagens": [
+        "BRIEF-ENSAIO-prova.md: a medição «objetos» vale 14 hoje e o ficheiro diz 13.\n      comando: ensaio sintético"
+      ],
+      "passou": true
+    },
+    {
+      "planta": "JSON alterado com os selos antigos",
+      "mensagens": [
+        "BRIEF-ENSAIO-prova.md: a medição «objetos» vale 13 hoje e o ficheiro diz 14.\n      comando: ensaio sintético",
+        "BRIEF-ENSAIO-prova.md: o §0 escreve «13» e esse número não é o valor de nenhuma das medições nomeadas na sua frase (`objetos`=14).\n      «Há 13 objetos (`objetos`).»"
+      ],
+      "passou": true
+    },
+    {
+      "planta": "corrida vermelha não produz selo",
+      "mensagens": [
+        "BRIEF-ENSAIO-prova.md: a medição «objetos» vale 13 hoje e o ficheiro diz 14.\n      comando: ensaio sintético",
+        "BRIEF-ENSAIO-prova.md: o §0 escreve «13» e esse número não é o valor de nenhuma das medições nomeadas na sua frase (`objetos`=14).\n      «Há 13 objetos (`objetos`).»"
+      ],
+      "passou": true
+    }
+  ]
+}
+check:leituras · tests/leituras/comparar-alvos.py · código 0
+{"ok": true, "casos": [{"planta": "página alterada", "mensagem": "paginas: comparação diferente", "passou": true}]}
+check:leituras · tests/leituras/ferramenta_aterrar.py · código 0
+...............
+----------------------------------------------------------------------
+Ran 15 tests in 18.493s
+
+OK
+check:leituras · tests/leituras/ferramenta_fundir.py · código 0
+.......
+----------------------------------------------------------------------
+Ran 7 tests in 5.486s
+
+OK
+check:leituras · tests/leituras/ferramenta_pre_voo.py · código 0
+.......
+----------------------------------------------------------------------
+Ran 7 tests in 5.486s
+
+OK
+check:leituras · tests/leituras/ferramentas.py · código 1
+Traceback (most recent call last):
+  File "<worktree>/tests/leituras/ferramentas.py", line 113, in <module>
+    r=captar('limpo'); assert r.returncode==0,r.stdout+r.stderr
+                              ^^^^^^^^^^^^^^^
+AssertionError: {"ok":false,"capturas":0,"falhas":["browserType.launch: Target page, context or browser has been closed\nBrowser logs:\n\n<launching> <utilizador>/Library/Caches/ms-playwright/chromium_headless_shell-1223/chrome-headless-shell-mac-arm64/chrome-headless-shell --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=/var/folders/st/9ys1198j2qbbhjh282gzntkh0000gn/T/playwright_chromiumdev_profile-aRYOWx --remote-debugging-pipe --no-startup-window\n<launched> pid=66817\n[pid=66817][err] [1020/211148.557945:ERROR:base/power_monitor/thermal_state_observer_mac.mm:140] ThermalStateObserverMac unable to register to power notifications. Result: 9\n[pid=66817][err] [1020/211148.570391:ERROR:net/dns/dns_config_service_posix.cc:138] DNS config watch failed to start.\n[pid=66817][err] [1020/211148.576512:FATAL:base/apple/mach_port_rendezvous_mac.cc:159] Check failed: kr == KERN_SUCCESS. bootstrap_check_in org.chromium.Chromium.MachPortRendezvousServer.66817: Permission denied (1100)\nCall log:\n\u001b[2m  - <launching> <utilizador>/Library/Caches/ms-playwright/chromium_headless_shell-1223/chrome-headless-shell-mac-arm64/chrome-headless-shell --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=/var/folders/st/9ys1198j2qbbhjh282gzntkh0000gn/T/playwright_chromiumdev_profile-aRYOWx --remote-debugging-pipe --no-startup-window\u001b[22m\n\u001b[2m  - <launched> pid=66817\u001b[22m\n\u001b[2m  - [pid=66817][err] [1020/211148.557945:ERROR:base/power_monitor/thermal_state_observer_mac.mm:140] ThermalStateObserverMac unable to register to power notifications. Result: 9\u001b[22m\n\u001b[2m  - [pid=66817][err] [1020/211148.570391:ERROR:net/dns/dns_config_service_posix.cc:138] DNS config watch failed to start.\u001b[22m\n\u001b[2m  - [pid=66817][err] [1020/211148.576512:FATAL:base/apple/mach_port_rendezvous_mac.cc:159] Check failed: kr == KERN_SUCCESS. bootstrap_check_in org.chromium.Chromium.MachPortRendezvousServer.66817: Permission denied (1100)\u001b[22m\n\u001b[2m  - [pid=66817] <gracefully close start>\u001b[22m\n\u001b[2m  - [pid=66817] <kill>\u001b[22m\n\u001b[2m  - [pid=66817] <will force kill>\u001b[22m\n\u001b[2m  - [pid=66817] exception while trying to kill process: Error: kill EPERM\u001b[22m\n\u001b[2m  - [pid=66817] <process did exit: exitCode=null, signal=SIGTRAP>\u001b[22m\n\u001b[2m  - [pid=66817] starting temporary directories cleanup\u001b[22m\n\u001b[2m  - [pid=66817] finished temporary directories cleanup\u001b[22m\n\u001b[2m  - [pid=66817] <gracefully close end>\u001b[22m\n"]}
+
+check:leituras · tests/leituras/pacote-portoes.py · código 0
+{
+  "ok": true,
+  "casos": [
+    {
+      "planta": "controlo com PACOTE_EXTRA",
+      "mensagem": "Só as linhas citadas, os três códigos e os tempos chegaram.",
+      "passou": true
+    },
+    {
+      "planta": "registos omitidos são ditos com o tamanho",
+      "mensagem": "Pacote: registo reduzido ou deixado de fora: med/portoes/build.log (22 bytes; 0 conservados).\nPacote: registo reduzido ou deixado de fora: med/portoes/verify.log (104 bytes; 76 conservados).",
+      "passou": true
+    },
+    {
+      "planta": "PACOTE_LOGS conserva os registos inteiros",
+      "mensagem": "Os registos citados e sem citação chegaram byte a byte.",
+      "passou": true
+    },
+    {
+      "planta": "linha retirada durante a montagem normal",
+      "mensagem": "O pacote recusa a entrega: faltam as linhas citadas de med/portoes/verify.log.",
+      "passou": true
+    },
+    {
+      "planta": "citação sem linha de origem",
+      "mensagem": "O pacote recusa a citação: med/portoes/verify.log: não existe uma linha que comece por «npm run check:ausente ·».",
+      "passou": true
+    }
+  ]
+}
+check:leituras · tests/leituras/pacote.py · código 0
+{
+  "ok": true,
+  "casos": [
+    {
+      "nome": "a montagem corre a zero",
+      "passou": true
+    },
+    {
+      "nome": "controlo sem variáveis conserva o diff gerado",
+      "passou": true
+    },
+    {
+      "nome": "controlo limpo: a cópia conserva os bytes esperados",
+      "passou": true
+    },
+    {
+      "nome": "a página construída chega",
+      "passou": true
+    },
+    {
+      "nome": "planta do argumento ponto: a montagem conserva a pontuação",
+      "passou": true
+    },
+    {
+      "nome": "planta: bytes do sítio diferentes da cabeça são recusados antes da cópia",
+      "passou": true,
+      "codigo": 1,
+      "queixa": "ValueError: O pacote recusa a árvore do repositório: há modificações em ficheiros seguidos por comitar."
+    },
+    {
+      "nome": "planta: bytes do motor diferentes da cabeça são recusados antes da cópia",
+      "passou": true,
+      "codigo": 1,
+      "queixa": "ValueError: O pacote recusa a árvore do motor: há modificações em ficheiros seguidos por comitar."
+    },
+    {
+      "nome": "a montagem corre a zero",
+      "passou": true
+    },
+    {
+      "nome": "os dois lados e as exclusões conferem",
+      "passou": true
+    },
+    {
+      "nome": "a tabela nomeia o caminho e as linhas retiradas",
+      "passou": true
+    },
+    {
+      "nome": "o diff do motor declara as exclusões na primeira linha",
+      "passou": true
+    },
+    {
+      "nome": "a conferência dos números chega ao pacote",
+      "passou": true
+    },
+    {
+      "nome": "PACOTE_EXTRA conserva os bytes",
+      "passou": true
+    },
+    {
+      "nome": "planta: uma secção excluída que volte ao diff morde",
+      "passou": true
+    },
+    {
+      "nome": "planta: ficheiro do motor alterado morde",
+      "passou": true
+    },
+    {
+      "nome": "reposição dos dois lados",
+      "passou": true
+    },
+    {
+      "nome": "nenhum caminho temporário foi guardado",
+      "passou": true
+    },
+    {
+      "nome": "a montagem corre a zero",
+      "passou": true
+    },
+    {
+      "nome": "um relatório não conferido chega com o código de aviso",
+      "passou": true
+    },
+    {
+      "nome": "planta: relatório inexistente recusa pela conferência do relatório",
+      "passou": true,
+      "codigo": 1,
+      "queixa": "conferir-relatorio.py: não existe o relatório <ensaio>/sitio/medicoes/relatorio-ausente.md"
+    },
+    {
+      "nome": "a montagem corre a zero",
+      "passou": true
+    },
+    {
+      "nome": "o corpo alojado da linha mudada chega ao pacote, byte a byte, sem estar no diff do motor",
+      "passou": true
+    },
+    {
+      "nome": "o recibo do pedido e os direitos vêm ao lado do corpo",
+      "passou": true
+    },
+    {
+      "nome": "o corpo que nenhuma linha cita não vem",
+      "passou": true
+    },
+    {
+      "nome": "o manifesto diz a linha, o sha256 e o caminho, e a linha derivada sem documento",
+      "passou": true
+    },
+    {
+      "nome": "a página construída da linha mudada entra sozinha de dist/, e a que falta fica dita",
+      "passou": true
+    },
+    {
+      "nome": "o manifesto não guarda caminhos da máquina",
+      "passou": true
+    },
+    {
+      "nome": "planta: linha com documento alojado e sem PACOTE_MOTOR recusa antes de criar a pasta",
+      "passou": true,
+      "codigo": 1,
+      "queixa": "ValueError: O pacote recusa: o bloco toca 1 linha(s) com documento alojado e PACOTE_MOTOR não foi dado; os corpos alojados têm de vir da cabeça do motor (M83): linha-sintetica (0c7cf42484dd)."
+    },
+    {
+      "nome": "planta: o corpo com outro sha256 na cabeça do motor recusa, e diz a linha e o estudo percorrido",
+      "passou": true,
+      "codigo": 1,
+      "queixa": "ValueError: O pacote recusa: corpo alojado não encontrado na cabeça do motor para 1 linha(s) (M83): linha-sintetica (0c7cf42484dd); estudos percorridos: content/Estudo sintético."
+    },
+    {
+      "nome": "planta: uma razão curta não abre a exceção",
+      "passou": true
+    },
+    {
+      "nome": "a montagem corre a zero",
+      "passou": true
+    },
+    {
+      "nome": "conhecido-positivo: com a razão declarada o pacote monta-se e diz a falta ao leitor",
+      "passou": true
+    },
+    {
+      "nome": "controlo: só uma linha derivada mudada não exige o motor, e o manifesto diz que não tem documento",
+      "passou": true
+    },
+    {
+      "nome": "a montagem corre a zero",
+      "passou": true
+    },
+    {
+      "nome": "o sha256 com aspas simples, sem aspas, em fluxo e com a chave entre aspas resolve, e null é «sem documento»",
+      "passou": true
+    },
+    {
+      "nome": "uma chave parecida fora de document e um sha256 dentro de crop não contam como documento",
+      "passou": true
+    },
+    {
+      "nome": "o manifesto diz por onde cada linha se resolveu e que estudos percorreu",
+      "passou": true
+    },
+    {
+      "nome": "planta: 64 hexadecimais com lixo atrás recusam, em vez de passarem truncados",
+      "passou": true,
+      "codigo": 1,
+      "queixa": "ValueError: O pacote recusa: a linha linha-lixo-atras declara document.source_sha256 numa forma que o guião não aceita ('0c7cf42484ddc9ed5436d47e1207815920f77365a87ade98'); esperam-se 64 hexadecimais entre aspas, ou null."
+    },
+    {
+      "nome": "planta: uma chave source_sha256 repetida recusa a linha, em vez de ficar com a última em silêncio",
+      "passou": true,
+      "codigo": 1,
+      "queixa": "ValueError: O pacote recusa: a linha linha-duplicada não é YAML que o guião aceite (ValueError: chave duplicada «source_sha256»)."
+    },
+    {
+      "nome": "planta: uma declaração de sha256 que o guião não lê recusa, em vez de passar por «sem documento»",
+      "passou": true,
+      "codigo": 1,
+      "queixa": "ValueError: O pacote recusa: a linha linha-ilegivel declara document.source_sha256 numa forma que o guião não aceita ('abc'); esperam-se 64 hexadecimais entre aspas, ou null."
+    },
+    {
+      "nome": "um corpo sem recibo do pedido nem direitos ao lado chega, mas o estado di-lo, linha a linha, e a montagem avisa",
+      "passou": true
+    },
+    {
+      "nome": "uma página pedida à mão conta nas páginas das linhas e não nas acrescentadas",
+      "passou": true
+    },
+    {
+      "nome": "o manifesto diz porquê cada linha entra: a mudada, e a mudada cuja página também se pediu",
+      "passou": true
+    },
+    {
+      "nome": "M83-b: a página pedida de uma linha que não mudou traz o corpo dela, byte a byte, e o manifesto diz «página pedida»",
+      "passou": true
+    },
+    {
+      "nome": "controlo: sem página pedida e sem linha mudada, nenhum corpo vem e não há manifesto",
+      "passou": true
+    },
+    {
+      "nome": "controlo: uma página pedida que não é de uma linha do livro não traz corpo nenhum",
+      "passou": true
+    },
+    {
+      "nome": "M83-b: a página inglesa pedida de uma linha que não mudou traz o corpo dela, com «página pedida» no manifesto",
+      "passou": true
+    }
+  ]
+}
+check:leituras · tests/leituras/portoes.py · código 0
+{
+  "ok": true,
+  "casos": [
+    {
+      "planta": "árvore suja recusada antes da tranca e dos portões",
+      "codigo": 9,
+      "mensagem": "portoes: árvore suja; registe as mudanças antes de conferir a cabeça do código"
+    },
+    {
+      "planta": "v2d",
+      "codigo": 1
+    },
+    {
+      "planta": "v2c",
+      "codigo": 1
+    },
+    {
+      "planta": "perfil-invalido",
+      "codigo": 9
+    },
+    {
+      "planta": "seleção verde exata sem motor",
+      "codigo": 0
+    },
+    {
+      "planta": "seleção V2-d exata",
+      "codigo": 0
+    },
+    {
+      "planta": "build vermelho não paga conferências",
+      "codigo": 1,
+      "codigos": {
+        "build": 7,
+        "verify": 125,
+        "typecheck": 0
+      },
+      "mensagem": "verify: não correu; o build não ficou verde e não pode pagar passos da união"
+    },
+    {
+      "planta": "escrita da tranca recusada",
+      "codigo": 9,
+      "mensagem": "portoes: não foi possível tomar a tranca; nenhum portão correu"
+    },
+    {
+      "planta": "tranca de outra corrida não é substituída nem solta",
+      "mensagem": "à espera da tranca da máquina: tranca de ensaio",
+      "codigo": -15
+    },
+    {
+      "planta": "tranca caducada deixa correr",
+      "codigo": 1,
+      "mensagem": "tranca com mais de quarenta minutos (tranca de ensaio); ignora-se"
+    },
+    {
+      "planta": "partes de corrida morta",
+      "codigo": 9,
+      "mensagem": "portoes: a pasta já tem códigos ou partes .tempos; escolha uma pasta nova"
+    },
+    {
+      "planta": "TERM depois de tomar a tranca",
+      "codigo": 130,
+      "mensagem": "portoes: corrida interrompida; os portões seguintes não correm"
+    },
+    {
+      "planta": "motor exercido sob a tranca comum",
+      "codigo": 0,
+      "mensagem": "Motor e sítio conferidos antes de soltar a tranca."
+    }
+  ]
+}
+check:leituras · tests/leituras/privacidade-jd1.py · código 0
+{
+  "passou": true,
+  "casos": [
+    "A guarda lê a lista real do Git e recusa ambos os fragmentos, incluindo gzip.",
+    "A limpeza rastreada só altera a lista do Git; guarda verde, gzip legível e segunda passagem sem mudanças.",
+    "A worktree e a pasta principal do sítio têm marcas distintas, sem raiz local.",
+    "As raízes históricas, também mascaradas, desaparecem sem perder caminhos dentro do repositório."
+  ]
+}
+check:leituras · tests/leituras/privacidade-rh1b.py · código 0
+{
+  "passou": true,
+  "casos": [
+    {
+      "id": "transferida-nome-inteiro",
+      "mordeu": true
+    },
+    {
+      "id": "transferida-documento-alojado-for-abreviado",
+      "mordeu": true
+    },
+    {
+      "id": "transferida-documento-alojado-en",
+      "mordeu": true
+    },
+    {
+      "id": "transferida-atributo",
+      "mordeu": true
+    },
+    {
+      "id": "transferida-json-ld",
+      "mordeu": true
+    },
+    {
+      "id": "transferida-rotulo",
+      "mordeu": true
+    },
+    {
+      "id": "transferida-regra-do-metodo",
+      "mordeu": true
+    },
+    {
+      "id": "transferida-m5-pagina-com-comentario",
+      "mordeu": true
+    },
+    {
+      "id": "transferida-m5-vista",
+      "mordeu": true
+    },
+    {
+      "id": "transferida-fonte-publica",
+      "mordeu": true
+    },
+    {
+      "id": "transferida-controlo-publico",
+      "mordeu": true
+    },
+    {
+      "id": "detetor-cego-recusa-as-plantas",
+      "mordeu": true
+    },
+    {
+      "id": "repositorio-limpo",
+      "mordeu": true
+    },
+    {
+      "id": "corrida-dist/estudos/ensaio/documento/index.html",
+      "mordeu": true
+    },
+    {
+      "id": "json-sem-cadeias-dist/estudos/ensaio/documento/index.html",
+      "mordeu": true
+    },
+    {
+      "id": "corrida-dist/en/studies/ensaio/document/index.html",
+      "mordeu": true
+    },
+    {
+      "id": "json-sem-cadeias-dist/en/studies/ensaio/document/index.html",
+      "mordeu": true
+    },
+    {
+      "id": "corrida-dist/sobre/index.html",
+      "mordeu": true
+    },
+    {
+      "id": "json-sem-cadeias-dist/sobre/index.html",
+      "mordeu": true
+    },
+    {
+      "id": "corrida-dist/metodo/index.html",
+      "mordeu": true
+    },
+    {
+      "id": "json-sem-cadeias-dist/metodo/index.html",
+      "mordeu": true
+    },
+    {
+      "id": "corrida-src/views/Ensaio.astro",
+      "mordeu": true
+    },
+    {
+      "id": "json-sem-cadeias-src/views/Ensaio.astro",
+      "mordeu": true
+    },
+    {
+      "id": "reposicao-limpa",
+      "mordeu": true
+    },
+    {
+      "id": "forma-abreviada-do-git",
+      "mordeu": true
+    },
+    {
+      "id": "saida-recusa-forma-abreviada",
+      "mordeu": true
+    },
+    {
+      "id": "oraculo-sem-campos-pessoais",
+      "mordeu": true
+    },
+    {
+      "id": "alvos-ignorados",
+      "mordeu": true
+    },
+    {
+      "id": "regra-dos-alvos-limitada-as-medicoes",
+      "mordeu": true
+    }
+  ]
+}
+check:leituras · tests/leituras/privacidade-rh1c.py · código 0
+{
+  "passou": true,
+  "casos": [
+    {
+      "id": "ramo-pessoal-texto",
+      "mordeu": true
+    },
+    {
+      "id": "ramo-pessoal-gzip",
+      "mordeu": true
+    },
+    {
+      "id": "ramo-pessoal-nome",
+      "mordeu": true
+    },
+    {
+      "id": "ramo-pessoal-outra-caixa",
+      "mordeu": true
+    },
+    {
+      "id": "ramo-pessoal-binario",
+      "mordeu": true
+    },
+    {
+      "id": "ramo-pessoal-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "ramo-pessoal-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "ramo-pessoal-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "ramo-pessoal-entidade-nome",
+      "mordeu": true
+    },
+    {
+      "id": "ramo-pessoal-entidade-decimal",
+      "mordeu": true
+    },
+    {
+      "id": "ramo-pessoal-entidade-hexadecimal",
+      "mordeu": true
+    },
+    {
+      "id": "ramo-pessoal-escape-unicode",
+      "mordeu": true
+    },
+    {
+      "id": "ramo-pessoal-decisao-estrutura",
+      "mordeu": true
+    },
+    {
+      "id": "ramo-pessoal-decisao-inocua",
+      "mordeu": true
+    },
+    {
+      "id": "identidade-1-segredo",
+      "mordeu": true
+    },
+    {
+      "id": "identidade-1-autor",
+      "mordeu": true
+    },
+    {
+      "id": "identidade-2-segredo",
+      "mordeu": true
+    },
+    {
+      "id": "identidade-2-autor",
+      "mordeu": true
+    },
+    {
+      "id": "identidade-3-segredo",
+      "mordeu": true
+    },
+    {
+      "id": "identidade-3-autor",
+      "mordeu": true
+    },
+    {
+      "id": "identidade-4-segredo",
+      "mordeu": true
+    },
+    {
+      "id": "identidade-4-autor",
+      "mordeu": true
+    },
+    {
+      "id": "identidade-5-segredo",
+      "mordeu": true
+    },
+    {
+      "id": "identidade-5-autor",
+      "mordeu": true
+    },
+    {
+      "id": "identidade-6-segredo",
+      "mordeu": true
+    },
+    {
+      "id": "identidade-6-autor",
+      "mordeu": true
+    },
+    {
+      "id": "normalizacao-bom-pagina",
+      "mordeu": true
+    },
+    {
+      "id": "normalizacao-abreviada-limpa",
+      "mordeu": true
+    },
+    {
+      "id": "normalizacao-nfd-pagina",
+      "mordeu": true
+    },
+    {
+      "id": "normalizacao-formato-recusado",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-segredo-duplo",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-segredo-inseparavel",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-segredo-tabulador",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-duplo-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-duplo-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-duplo-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-duplo-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-inseparavel-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-inseparavel-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-inseparavel-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-inseparavel-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-quebra-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-quebra-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-quebra-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-quebra-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-entidade-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-entidade-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-entidade-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-entidade-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-decimal-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-decimal-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-decimal-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-decimal-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-hexadecimal-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-hexadecimal-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-hexadecimal-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-hexadecimal-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFC-minusculas-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFC-minusculas-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFC-minusculas-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFC-minusculas-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFC-casefold-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFC-casefold-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFC-casefold-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFC-casefold-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFC-maiusculas-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFC-maiusculas-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFC-maiusculas-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFC-maiusculas-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFD-minusculas-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFD-minusculas-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFD-minusculas-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFD-casefold-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFD-casefold-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFD-casefold-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFD-maiusculas-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFD-maiusculas-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFD-maiusculas-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "espacos-controlo-inocuo",
+      "mordeu": true
+    },
+    {
+      "id": "e-nfc-nfd-mistos-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-nfc-nfd-mistos-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-nfc-nfd-mistos-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-nfc-nfd-mistos-latin-1-entidades-numericas",
+      "mordeu": true
+    },
+    {
+      "id": "e-entidade-sem-ponto-virgula-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-entidade-sem-ponto-virgula-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-entidade-sem-ponto-virgula-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-entidade-sem-ponto-virgula-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-entidade-apos-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-entidade-apos-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-entidade-apos-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-entidade-apos-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-entidade-ccaron-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-entidade-ccaron-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-entidade-ccaron-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-entidade-ccaron-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-ss-para-eszett-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ss-para-eszett-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ss-para-eszett-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ss-para-eszett-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-fi-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-fi-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-fi-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-fi-latin-1-entidades-numericas",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64257-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64257-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64257-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64257-latin-1-entidades-numericas",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64257-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64257-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64257-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64257-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64258-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64258-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64258-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64258-latin-1-entidades-numericas",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64258-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64258-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64258-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64258-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64256-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64256-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64256-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64256-latin-1-entidades-numericas",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64256-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64256-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64256-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64256-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64259-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64259-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64259-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64259-latin-1-entidades-numericas",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64259-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64259-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64259-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64259-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64260-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64260-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64260-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64260-latin-1-entidades-numericas",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64260-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64260-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64260-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64260-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64261-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64261-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64261-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64261-latin-1-entidades-numericas",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64261-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64261-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64261-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64261-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64262-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64262-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64262-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64262-latin-1-entidades-numericas",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64262-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64262-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64262-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64262-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-eszett-para-ss-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-eszett-para-ss-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-eszett-para-ss-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-eszett-para-ss-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-casefold-por-caracter-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-casefold-por-caracter-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-casefold-por-caracter-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-casefold-por-caracter-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-sigma-final-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-sigma-final-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-sigma-final-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-sigma-final-latin-1-entidades-numericas",
+      "mordeu": true
+    },
+    {
+      "id": "e-s-longo-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-s-longo-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-s-longo-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-s-longo-latin-1-entidades-numericas",
+      "mordeu": true
+    },
+    {
+      "id": "e-apos-sem-ponto-virgula-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-apos-sem-ponto-virgula-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-apos-sem-ponto-virgula-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-apos-sem-ponto-virgula-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-ccaron-sem-ponto-virgula-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ccaron-sem-ponto-virgula-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ccaron-sem-ponto-virgula-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ccaron-sem-ponto-virgula-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-separador-interior-cr",
+      "mordeu": true
+    },
+    {
+      "id": "e-separador-interior-linha",
+      "mordeu": true
+    },
+    {
+      "id": "e-separador-interior-paragrafo",
+      "mordeu": true
+    },
+    {
+      "id": "e-separador-interior-nel",
+      "mordeu": true
+    },
+    {
+      "id": "e-separador-interior-vt",
+      "mordeu": true
+    },
+    {
+      "id": "e-separador-interior-ff",
+      "mordeu": true
+    },
+    {
+      "id": "e-separador-interior-rs",
+      "mordeu": true
+    },
+    {
+      "id": "e-duas-entradas-com-cr-recusadas",
+      "mordeu": true
+    },
+    {
+      "id": "e-crlf-aceite",
+      "mordeu": true
+    },
+    {
+      "id": "e-controlo-inocuo",
+      "mordeu": true
+    },
+    {
+      "id": "interior-1",
+      "mordeu": true
+    },
+    {
+      "id": "interior-2-recusa-corrida",
+      "mordeu": true
+    },
+    {
+      "id": "interior-3-recusa-corrida",
+      "mordeu": true
+    },
+    {
+      "id": "interior-4-recusa-corrida",
+      "mordeu": true
+    },
+    {
+      "id": "interior-5-recusa-corrida",
+      "mordeu": true
+    },
+    {
+      "id": "interior-6-recusa-corrida",
+      "mordeu": true
+    },
+    {
+      "id": "interior-7-recusa-corrida",
+      "mordeu": true
+    },
+    {
+      "id": "interior-8-recusa-corrida",
+      "mordeu": true
+    },
+    {
+      "id": "interior-9-recusa-corrida",
+      "mordeu": true
+    },
+    {
+      "id": "linhas-crlf",
+      "mordeu": true
+    },
+    {
+      "id": "minimo-depois-de-nfc",
+      "mordeu": true
+    },
+    {
+      "id": "controlo-inocuo",
+      "mordeu": true
+    },
+    {
+      "id": "sem-entidades-nao-descodifica",
+      "mordeu": true
+    },
+    {
+      "id": "mutacao-or-and-recusa-no-portao",
+      "mordeu": true
+    },
+    {
+      "id": "mutacao-isola-cadeia",
+      "mordeu": true
+    },
+    {
+      "id": "mutacao-isola-estrutura",
+      "mordeu": true
+    },
+    {
+      "id": "mutacao-identidades-no-segredo",
+      "mordeu": true
+    },
+    {
+      "id": "mutacao-identidades-nos-autores",
+      "mordeu": true
+    }
+  ]
+}
+check:leituras · tests/leituras/privacidade-rh1d.py · código 0
+{
+  "passou": true,
+  "casos": [
+    {
+      "id": "espaco-segredo-duplo",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-segredo-inseparavel",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-segredo-tabulador",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-duplo-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-duplo-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-duplo-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-duplo-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-inseparavel-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-inseparavel-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-inseparavel-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-inseparavel-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-quebra-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-quebra-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-quebra-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-quebra-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-entidade-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-entidade-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-entidade-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-entidade-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-decimal-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-decimal-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-decimal-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-decimal-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-hexadecimal-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-hexadecimal-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-hexadecimal-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-pagina-hexadecimal-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFC-minusculas-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFC-minusculas-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFC-minusculas-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFC-minusculas-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFC-casefold-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFC-casefold-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFC-casefold-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFC-casefold-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFC-maiusculas-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFC-maiusculas-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFC-maiusculas-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFC-maiusculas-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFD-minusculas-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFD-minusculas-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFD-minusculas-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFD-casefold-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFD-casefold-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFD-casefold-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFD-maiusculas-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFD-maiusculas-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "forma-NFD-maiusculas-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "espacos-controlo-inocuo",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-unicode-0",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-na-pagina-0",
+      "mordeu": true
+    },
+    {
+      "id": "separador-recusado-2",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-na-pagina-2",
+      "mordeu": true
+    },
+    {
+      "id": "separador-recusado-3",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-na-pagina-3",
+      "mordeu": true
+    },
+    {
+      "id": "separador-recusado-4",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-na-pagina-4",
+      "mordeu": true
+    },
+    {
+      "id": "separador-recusado-5",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-na-pagina-5",
+      "mordeu": true
+    },
+    {
+      "id": "separador-recusado-6",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-na-pagina-6",
+      "mordeu": true
+    },
+    {
+      "id": "separador-recusado-7",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-na-pagina-7",
+      "mordeu": true
+    },
+    {
+      "id": "separador-recusado-8",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-na-pagina-8",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-unicode-9",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-na-pagina-9",
+      "mordeu": true
+    },
+    {
+      "id": "separador-recusado-10",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-na-pagina-10",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-unicode-11",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-na-pagina-11",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-unicode-12",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-na-pagina-12",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-unicode-13",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-na-pagina-13",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-unicode-14",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-na-pagina-14",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-unicode-15",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-na-pagina-15",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-unicode-16",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-na-pagina-16",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-unicode-17",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-na-pagina-17",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-unicode-18",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-na-pagina-18",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-unicode-19",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-na-pagina-19",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-unicode-20",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-na-pagina-20",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-unicode-21",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-na-pagina-21",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-unicode-22",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-na-pagina-22",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-unicode-23",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-na-pagina-23",
+      "mordeu": true
+    },
+    {
+      "id": "separador-recusado-24",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-na-pagina-24",
+      "mordeu": true
+    },
+    {
+      "id": "separador-recusado-25",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-na-pagina-25",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-unicode-26",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-na-pagina-26",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-unicode-27",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-na-pagina-27",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-unicode-28",
+      "mordeu": true
+    },
+    {
+      "id": "espaco-na-pagina-28",
+      "mordeu": true
+    },
+    {
+      "id": "entidade-nome",
+      "mordeu": true
+    },
+    {
+      "id": "entidade-decimal",
+      "mordeu": true
+    },
+    {
+      "id": "entidade-hexadecimal",
+      "mordeu": true
+    },
+    {
+      "id": "escape",
+      "mordeu": true
+    },
+    {
+      "id": "formas-misturadas",
+      "mordeu": true
+    },
+    {
+      "id": "ascii-em-entidade",
+      "mordeu": true
+    },
+    {
+      "id": "ascii-em-escape",
+      "mordeu": true
+    },
+    {
+      "id": "caixa-mista",
+      "mordeu": true
+    },
+    {
+      "id": "corpo-em-bytes-uma-copia",
+      "mordeu": true
+    },
+    {
+      "id": "formas-em-cache",
+      "mordeu": true
+    },
+    {
+      "id": "detetor-cego-recusa-plantas",
+      "mordeu": true
+    }
+  ]
+}
+check:leituras · tests/leituras/privacidade-rh1e.py · código 0
+{
+  "passou": true,
+  "casos": [
+    {
+      "id": "e-nfc-nfd-mistos-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-nfc-nfd-mistos-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-nfc-nfd-mistos-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-nfc-nfd-mistos-latin-1-entidades-numericas",
+      "mordeu": true
+    },
+    {
+      "id": "e-entidade-sem-ponto-virgula-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-entidade-sem-ponto-virgula-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-entidade-sem-ponto-virgula-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-entidade-sem-ponto-virgula-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-entidade-apos-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-entidade-apos-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-entidade-apos-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-entidade-apos-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-entidade-ccaron-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-entidade-ccaron-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-entidade-ccaron-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-entidade-ccaron-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-ss-para-eszett-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ss-para-eszett-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ss-para-eszett-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ss-para-eszett-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-fi-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-fi-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-fi-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-fi-latin-1-entidades-numericas",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64257-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64257-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64257-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64257-latin-1-entidades-numericas",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64257-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64257-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64257-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64257-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64258-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64258-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64258-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64258-latin-1-entidades-numericas",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64258-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64258-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64258-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64258-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64256-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64256-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64256-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64256-latin-1-entidades-numericas",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64256-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64256-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64256-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64256-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64259-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64259-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64259-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64259-latin-1-entidades-numericas",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64259-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64259-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64259-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64259-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64260-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64260-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64260-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64260-latin-1-entidades-numericas",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64260-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64260-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64260-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64260-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64261-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64261-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64261-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64261-latin-1-entidades-numericas",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64261-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64261-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64261-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64261-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64262-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64262-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64262-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64262-latin-1-entidades-numericas",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64262-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64262-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64262-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64262-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-eszett-para-ss-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-eszett-para-ss-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-eszett-para-ss-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-eszett-para-ss-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-casefold-por-caracter-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-casefold-por-caracter-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-casefold-por-caracter-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-casefold-por-caracter-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-sigma-final-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-sigma-final-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-sigma-final-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-sigma-final-latin-1-entidades-numericas",
+      "mordeu": true
+    },
+    {
+      "id": "e-s-longo-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-s-longo-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-s-longo-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-s-longo-latin-1-entidades-numericas",
+      "mordeu": true
+    },
+    {
+      "id": "e-apos-sem-ponto-virgula-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-apos-sem-ponto-virgula-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-apos-sem-ponto-virgula-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-apos-sem-ponto-virgula-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-ccaron-sem-ponto-virgula-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ccaron-sem-ponto-virgula-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ccaron-sem-ponto-virgula-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ccaron-sem-ponto-virgula-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-separador-interior-cr",
+      "mordeu": true
+    },
+    {
+      "id": "e-separador-interior-linha",
+      "mordeu": true
+    },
+    {
+      "id": "e-separador-interior-paragrafo",
+      "mordeu": true
+    },
+    {
+      "id": "e-separador-interior-nel",
+      "mordeu": true
+    },
+    {
+      "id": "e-separador-interior-vt",
+      "mordeu": true
+    },
+    {
+      "id": "e-separador-interior-ff",
+      "mordeu": true
+    },
+    {
+      "id": "e-separador-interior-rs",
+      "mordeu": true
+    },
+    {
+      "id": "e-duas-entradas-com-cr-recusadas",
+      "mordeu": true
+    },
+    {
+      "id": "e-crlf-aceite",
+      "mordeu": true
+    },
+    {
+      "id": "e-controlo-inocuo",
+      "mordeu": true
+    },
+    {
+      "id": "regressao-e-nfc-nfd",
+      "mordeu": true
+    },
+    {
+      "id": "regressao-e-sem-ponto-virgula",
+      "mordeu": true
+    },
+    {
+      "id": "regressao-e-apos",
+      "mordeu": true
+    },
+    {
+      "id": "regressao-e-ccaron",
+      "mordeu": true
+    },
+    {
+      "id": "regressao-e-eszett",
+      "mordeu": true
+    },
+    {
+      "id": "regressao-e-ligatura",
+      "mordeu": true
+    },
+    {
+      "id": "bytes-sem-descodificacao-nfc-nfd",
+      "mordeu": true
+    },
+    {
+      "id": "bytes-sem-descodificacao-sem-ponto-virgula",
+      "mordeu": true
+    },
+    {
+      "id": "bytes-sem-descodificacao-apos",
+      "mordeu": true
+    },
+    {
+      "id": "bytes-sem-descodificacao-ccaron",
+      "mordeu": true
+    },
+    {
+      "id": "bytes-sem-descodificacao-eszett",
+      "mordeu": true
+    },
+    {
+      "id": "bytes-sem-descodificacao-ligatura",
+      "mordeu": true
+    },
+    {
+      "id": "detetor-cego-recusa-seis-regressoes",
+      "mordeu": true
+    },
+    {
+      "id": "colapso-prematuro-recusa-oito-plantas",
+      "mordeu": true
+    }
+  ]
+}
+check:leituras · tests/leituras/privacidade-segredo.py · código 0
+{
+  "passou": true,
+  "cadeias_sinteticas_lidas": 2,
+  "ficheiros_sinteticos_conferidos": 7,
+  "plantas": [
+    {
+      "id": "GITHUB_ACTIONS-ausente",
+      "mordeu": true
+    },
+    {
+      "id": "GITHUB_ACTIONS-vazio",
+      "mordeu": true
+    },
+    {
+      "id": "CI-ausente",
+      "mordeu": true
+    },
+    {
+      "id": "CI-vazio",
+      "mordeu": true
+    },
+    {
+      "id": "segredo-invalido-0",
+      "mordeu": true
+    },
+    {
+      "id": "segredo-invalido-1",
+      "mordeu": true
+    },
+    {
+      "id": "segredo-invalido-2",
+      "mordeu": true
+    },
+    {
+      "id": "segredo-invalido-3",
+      "mordeu": true
+    },
+    {
+      "id": "segredo-invalido-4",
+      "mordeu": true
+    },
+    {
+      "id": "segredo-invalido-5",
+      "mordeu": true
+    },
+    {
+      "id": "segredo-invalido-6",
+      "mordeu": true
+    },
+    {
+      "id": "repositorio-limpo-e-json",
+      "mordeu": true
+    },
+    {
+      "id": "plantas-dist-api-rastreado",
+      "mordeu": true
+    },
+    {
+      "id": "linhas-limpas",
+      "mordeu": true
+    },
+    {
+      "id": "git-reescrito-sem-base",
+      "mordeu": true
+    },
+    {
+      "id": "autores-do-projeto-excluidos",
+      "mordeu": true
+    },
+    {
+      "id": "positivo-do-segredo",
+      "mordeu": true
+    },
+    {
+      "id": "positivo-do-autor-conservado",
+      "mordeu": true
+    },
+    {
+      "id": "rastreado-texto",
+      "mordeu": true
+    },
+    {
+      "id": "saida-texto",
+      "mordeu": true
+    },
+    {
+      "id": "rastreado-gzip",
+      "mordeu": true
+    },
+    {
+      "id": "saida-gzip",
+      "mordeu": true
+    },
+    {
+      "id": "rastreado-nome",
+      "mordeu": true
+    },
+    {
+      "id": "saida-nome",
+      "mordeu": true
+    },
+    {
+      "id": "json-recusado-antes-da-escrita",
+      "mordeu": true
+    },
+    {
+      "id": "rastreado-caixa",
+      "mordeu": true
+    },
+    {
+      "id": "saida-caixa",
+      "mordeu": true
+    },
+    {
+      "id": "rastreado-binario",
+      "mordeu": true
+    },
+    {
+      "id": "saida-binario",
+      "mordeu": true
+    },
+    {
+      "id": "segredo-em-dist",
+      "mordeu": true
+    },
+    {
+      "id": "segredo-em-api",
+      "mordeu": true
+    },
+    {
+      "id": "identidades-publicas-passam",
+      "mordeu": true
+    },
+    {
+      "id": "sem-fontes-recusa-dist-api",
+      "mordeu": true
+    },
+    {
+      "id": "positivo-da-casa",
+      "mordeu": true
+    },
+    {
+      "id": "identidade-publica-na-casa",
+      "mordeu": true
+    },
+    {
+      "id": "segredo-antes-das-excecoes-de-caminhos",
+      "mordeu": true
+    },
+    {
+      "id": "carregamento-local",
+      "mordeu": true
+    },
+    {
+      "id": "ambiente-prevalece",
+      "mordeu": true
+    },
+    {
+      "id": "ci-nao-le-casa",
+      "mordeu": true
+    }
+  ]
+}
+check:leituras · tests/leituras/tempos.py · código 0
+tempos: a chamada por ligação escreveu os mesmos tempos.json.
+tempos: o ambiente chegou; o código 7 foi conservado; o passo seguinte não correu; cada passo tem início, fim e duração.

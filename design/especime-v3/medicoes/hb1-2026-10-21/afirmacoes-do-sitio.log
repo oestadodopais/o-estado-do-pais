@@ -1,0 +1,45 @@
+PLANTA excerto alterado: V2A excerto: palavras diferentes do corpo alojado
+PLANTA atribuição trocada: V2A atribuição: difere da autoria no documento
+PLANTA data errada: V2A data: difere da data do documento
+PLANTA porta trocada: V2A porta: difere do pedido registado
+PLANTA valor fora do excerto: V2A valor: não aparece no excerto selado
+PLANTA corpo integral pagina.html.gz: V2A direitos: a prova pública só admite excertos e referências em provas.json
+PLANTA corpo integral parecer.pdf: V2A direitos: a prova pública só admite excertos e referências em provas.json
+PLANTA caminho fora do motor: V2A referência: falta o selo, a data ou o caminho relativo no motor
+PLANTA mês PCP janeiro: V2A data: difere da data do documento
+PLANTA mês PCP fevereiro: V2A data: difere da data do documento
+PLANTA mês PCP março: V2A data: difere da data do documento
+PLANTA mês PCP abril: V2A data: difere da data do documento
+PLANTA mês PCP maio: V2A data: difere da data do documento
+PLANTA mês PCP junho: V2A data: difere da data do documento
+PLANTA mês PCP julho: V2A data: difere da data do documento
+PLANTA mês PCP agosto: V2A data: difere da data do documento
+PLANTA mês PCP setembro: V2A data: difere da data do documento
+PLANTA mês PCP novembro: V2A data: difere da data do documento
+PLANTA mês PCP dezembro: V2A data: difere da data do documento
+PLANTA dia impossível no PCP: V2A data: difere da data do documento
+PLANTA âncora trocada por texto ausente: V2A atribuição: difere da autoria no documento
+PLANTA hifenização só no fim da linha do PDF: V2D PDF: forma esperada preservada
+PLANTA hífen seguido de espaço corrido conserva-se: V2D PDF: forma esperada preservada
+PLANTA hífen lexical conserva-se: V2D PDF: forma esperada preservada
+PLANTA excerto V2D alterado: V2D excerto: palavras diferentes da prova ou da página citada
+PLANTA autor V2D trocado: V2D atribuição: autor diferente do documento
+PLANTA data V2D trocada: V2D data: diferente da publicação selada ou da data conferida no documento
+PLANTA porta V2D trocada: V2D porta: diferente do pedido registado
+PLANTA valor V2D fora do excerto: V2D valor: não coincide com o excerto selado
+PLANTA unidade V2D trocada: V2D medida: unidade ou tipo de documento diferente
+PLANTA hash V2D trocado: V2D selo: hash diferente do corpo alojado
+PLANTA caminho V2D fora do motor: V2D selo: referência ou recibo incompleto
+PLANTA período do orçamento trocado pela publicação: oe-2027-outras-despesas-dotacoes-execucao: V2D data: diferente da publicação selada ou da data conferida no documento
+PLANTA período adulterado também na prova: oe-2027-outras-despesas-dotacoes-execucao: V2D data: diferente da publicação selada ou da data conferida no documento
+PLANTA período do orçamento trocado pela publicação: oe-2027-saude-dotacao-reforco-contratos-programa: V2D data: diferente da publicação selada ou da data conferida no documento
+PLANTA período adulterado também na prova: oe-2027-saude-dotacao-reforco-contratos-programa: V2D data: diferente da publicação selada ou da data conferida no documento
+PLANTA período do orçamento trocado pela publicação: oe-2027-saude-contrato-programa-acss: V2D data: diferente da publicação selada ou da data conferida no documento
+PLANTA período adulterado também na prova: oe-2027-saude-contrato-programa-acss: V2D data: diferente da publicação selada ou da data conferida no documento
+PLANTA HB1 excerto: HB1 excerto: citação divergente
+PLANTA HB1 valor: HB1 excerto: citação divergente
+PLANTA HB1 atribuição: HB1 atribuição: nome divergente
+PLANTA HB1 data: HB1 data: publicação ou período divergente
+PLANTA HB1 porta: HB1 porta: endereço divergente
+PLANTA HB1 selo: HB1 selo: recibo ou linha divergente
+V2A: 43 afirmações conferidas, 43 corpos lidos, 44 plantas, 0 erros.

@@ -1,0 +1,491 @@
+{
+ "cabeca": "0b7e58cd2029963316ec74569f5a4f97fd2f3104",
+ "cabeca_fim": "0b7e58cd2029963316ec74569f5a4f97fd2f3104",
+ "arvore_limpa_no_inicio": true,
+ "inicio": "2026-10-26T14:48:29Z",
+ "fim": "2026-10-26T15:22:05Z",
+ "segundos": 2016,
+ "passos": [
+  {
+   "n": "00",
+   "passo": "build",
+   "comando": "npm run build",
+   "codigo": 0,
+   "segundos": 369,
+   "code": "00-build.code",
+   "log": "00-build.log"
+  },
+  {
+   "n": "01",
+   "passo": "ledger_check",
+   "comando": "npm run ledger:check",
+   "codigo": 0,
+   "segundos": 13,
+   "code": "01-ledger_check.code",
+   "log": "01-ledger_check.log"
+  },
+  {
+   "n": "02",
+   "passo": "check_registo",
+   "comando": "npm run check:registo",
+   "codigo": 0,
+   "segundos": 2,
+   "code": "02-check_registo.code",
+   "log": "02-check_registo.log"
+  },
+  {
+   "n": "03",
+   "passo": "check_cruzamento",
+   "comando": "npm run check:cruzamento",
+   "codigo": 0,
+   "segundos": 0,
+   "code": "03-check_cruzamento.code",
+   "log": "03-check_cruzamento.log"
+  },
+  {
+   "n": "04",
+   "passo": "check_documentos",
+   "comando": "npm run check:documentos",
+   "codigo": 0,
+   "segundos": 0,
+   "code": "04-check_documentos.code",
+   "log": "04-check_documentos.log"
+  },
+  {
+   "n": "05",
+   "passo": "check_briefs",
+   "comando": "npm run check:briefs",
+   "codigo": 0,
+   "segundos": 167,
+   "code": "05-check_briefs.code",
+   "log": "05-check_briefs.log"
+  },
+  {
+   "n": "06",
+   "passo": "check_leituras",
+   "comando": "npm run check:leituras",
+   "codigo": 0,
+   "segundos": 104,
+   "code": "06-check_leituras.code",
+   "log": "06-check_leituras.log"
+  },
+  {
+   "n": "07",
+   "passo": "gate_html",
+   "comando": "npm run gate:html",
+   "codigo": 0,
+   "segundos": 50,
+   "code": "07-gate_html.code",
+   "log": "07-gate_html.log"
+  },
+  {
+   "n": "08",
+   "passo": "check_css",
+   "comando": "npm run check:css",
+   "codigo": 0,
+   "segundos": 8,
+   "code": "08-check_css.code",
+   "log": "08-check_css.log"
+  },
+  {
+   "n": "09",
+   "passo": "check_datas",
+   "comando": "npm run check:datas",
+   "codigo": 0,
+   "segundos": 2,
+   "code": "09-check_datas.code",
+   "log": "09-check_datas.log"
+  },
+  {
+   "n": "10",
+   "passo": "check_moldura",
+   "comando": "npm run check:moldura",
+   "codigo": 0,
+   "segundos": 152,
+   "code": "10-check_moldura.code",
+   "log": "10-check_moldura.log"
+  },
+  {
+   "n": "11",
+   "passo": "check_alvos",
+   "comando": "npm run check:alvos",
+   "codigo": 0,
+   "segundos": 278,
+   "code": "11-check_alvos.code",
+   "log": "11-check_alvos.log"
+  },
+  {
+   "n": "12",
+   "passo": "check_cabeca",
+   "comando": "npm run check:cabeca",
+   "codigo": 0,
+   "segundos": 5,
+   "code": "12-check_cabeca.code",
+   "log": "12-check_cabeca.log"
+  },
+  {
+   "n": "13",
+   "passo": "check_fontes",
+   "comando": "npm run check:fontes",
+   "codigo": 0,
+   "segundos": 2,
+   "code": "13-check_fontes.code",
+   "log": "13-check_fontes.log"
+  },
+  {
+   "n": "14",
+   "passo": "check_cadeia",
+   "comando": "npm run check:cadeia",
+   "codigo": 0,
+   "segundos": 0,
+   "code": "14-check_cadeia.code",
+   "log": "14-check_cadeia.log"
+  },
+  {
+   "n": "15",
+   "passo": "check_dados",
+   "comando": "npm run check:dados",
+   "codigo": 0,
+   "segundos": 3,
+   "code": "15-check_dados.code",
+   "log": "15-check_dados.log"
+  },
+  {
+   "n": "16",
+   "passo": "mapa_unidades",
+   "comando": "npm run mapa:unidades -- --verifica",
+   "codigo": 0,
+   "segundos": 0,
+   "code": "16-mapa_unidades.code",
+   "log": "16-mapa_unidades.log"
+  },
+  {
+   "n": "17",
+   "passo": "check_mapa",
+   "comando": "npm run check:mapa",
+   "codigo": 0,
+   "segundos": 0,
+   "code": "17-check_mapa.code",
+   "log": "17-check_mapa.log"
+  },
+  {
+   "n": "18",
+   "passo": "check_regioes",
+   "comando": "npm run check:regioes",
+   "codigo": 0,
+   "segundos": 1,
+   "code": "18-check_regioes.code",
+   "log": "18-check_regioes.log"
+  },
+  {
+   "n": "19",
+   "passo": "check_areas",
+   "comando": "npm run check:areas",
+   "codigo": 0,
+   "segundos": 0,
+   "code": "19-check_areas.code",
+   "log": "19-check_areas.log"
+  },
+  {
+   "n": "20",
+   "passo": "check_formas",
+   "comando": "npm run check:formas",
+   "codigo": 0,
+   "segundos": 10,
+   "code": "20-check_formas.code",
+   "log": "20-check_formas.log"
+  },
+  {
+   "n": "21",
+   "passo": "check_alcance",
+   "comando": "npm run check:alcance",
+   "codigo": 0,
+   "segundos": 5,
+   "code": "21-check_alcance.code",
+   "log": "21-check_alcance.log"
+  },
+  {
+   "n": "22",
+   "passo": "check_lugares",
+   "comando": "npm run check:lugares",
+   "codigo": 0,
+   "segundos": 1,
+   "code": "22-check_lugares.code",
+   "log": "22-check_lugares.log"
+  },
+  {
+   "n": "23",
+   "passo": "check_pais",
+   "comando": "npm run check:pais",
+   "codigo": 0,
+   "segundos": 70,
+   "code": "23-check_pais.code",
+   "log": "23-check_pais.log"
+  },
+  {
+   "n": "24",
+   "passo": "check_pais_auto-teste",
+   "comando": "npm run check:pais:auto-teste",
+   "codigo": 0,
+   "segundos": 2,
+   "code": "24-check_pais_auto-teste.code",
+   "log": "24-check_pais_auto-teste.log"
+  },
+  {
+   "n": "25",
+   "passo": "check_voz",
+   "comando": "npm run check:voz",
+   "codigo": 0,
+   "segundos": 49,
+   "code": "25-check_voz.code",
+   "log": "25-check_voz.log"
+  },
+  {
+   "n": "26",
+   "passo": "check_lingua",
+   "comando": "npm run check:lingua",
+   "codigo": 0,
+   "segundos": 8,
+   "code": "26-check_lingua.code",
+   "log": "26-check_lingua.log"
+  },
+  {
+   "n": "27",
+   "passo": "check_formato",
+   "comando": "npm run check:formato",
+   "codigo": 0,
+   "segundos": 1,
+   "code": "27-check_formato.code",
+   "log": "27-check_formato.log"
+  },
+  {
+   "n": "28",
+   "passo": "check_lugar",
+   "comando": "npm run check:lugar",
+   "codigo": 0,
+   "segundos": 39,
+   "code": "28-check_lugar.code",
+   "log": "28-check_lugar.log"
+  },
+  {
+   "n": "29",
+   "passo": "provar_eyetext",
+   "comando": "npm run provar:eyetext",
+   "codigo": 0,
+   "segundos": 1,
+   "code": "29-provar_eyetext.code",
+   "log": "29-provar_eyetext.log"
+  },
+  {
+   "n": "30",
+   "passo": "provar_guardas",
+   "comando": "npm run provar:guardas",
+   "codigo": 0,
+   "segundos": 0,
+   "code": "30-provar_guardas.code",
+   "log": "30-provar_guardas.log"
+  },
+  {
+   "n": "31",
+   "passo": "check_mortos",
+   "comando": "npm run check:mortos",
+   "codigo": 0,
+   "segundos": 2,
+   "code": "31-check_mortos.code",
+   "log": "31-check_mortos.log"
+  },
+  {
+   "n": "32",
+   "passo": "check_indice",
+   "comando": "npm run check:indice",
+   "codigo": 0,
+   "segundos": 24,
+   "code": "32-check_indice.code",
+   "log": "32-check_indice.log"
+  },
+  {
+   "n": "33",
+   "passo": "check_cartao",
+   "comando": "npm run check:cartao",
+   "codigo": 0,
+   "segundos": 39,
+   "code": "33-check_cartao.code",
+   "log": "33-check_cartao.log"
+  },
+  {
+   "n": "34",
+   "passo": "check_navegacao",
+   "comando": "npm run check:navegacao",
+   "codigo": 0,
+   "segundos": 12,
+   "code": "34-check_navegacao.code",
+   "log": "34-check_navegacao.log"
+  },
+  {
+   "n": "35",
+   "passo": "check_primeira",
+   "comando": "npm run check:primeira",
+   "codigo": 0,
+   "segundos": 134,
+   "code": "35-check_primeira.code",
+   "log": "35-check_primeira.log"
+  },
+  {
+   "n": "36",
+   "passo": "sinais",
+   "comando": "npm run sinais",
+   "codigo": 0,
+   "segundos": 1,
+   "code": "36-sinais.code",
+   "log": "36-sinais.log"
+  },
+  {
+   "n": "37",
+   "passo": "check_nomes",
+   "comando": "npm run check:nomes",
+   "codigo": 0,
+   "segundos": 4,
+   "code": "37-check_nomes.code",
+   "log": "37-check_nomes.log"
+  },
+  {
+   "n": "38",
+   "passo": "check_palavras",
+   "comando": "npm run check:palavras",
+   "codigo": 0,
+   "segundos": 206,
+   "code": "38-check_palavras.code",
+   "log": "38-check_palavras.log"
+  },
+  {
+   "n": "39",
+   "passo": "design_feixe",
+   "comando": "npm run design:feixe",
+   "codigo": 0,
+   "segundos": 2,
+   "code": "39-design_feixe.code",
+   "log": "39-design_feixe.log"
+  },
+  {
+   "n": "40",
+   "passo": "check_privacidade",
+   "comando": "npm run check:privacidade",
+   "codigo": 0,
+   "segundos": 80,
+   "code": "40-check_privacidade.code",
+   "log": "40-check_privacidade.log"
+  },
+  {
+   "n": "41",
+   "passo": "check_sugestoes",
+   "comando": "npm run check:sugestoes",
+   "codigo": 0,
+   "segundos": 0,
+   "code": "41-check_sugestoes.code",
+   "log": "41-check_sugestoes.log"
+  },
+  {
+   "n": "42",
+   "passo": "check_rotulos",
+   "comando": "npm run check:rotulos",
+   "codigo": 1,
+   "segundos": 6,
+   "code": "42-check_rotulos.code",
+   "log": "42-check_rotulos.log",
+   "cauda": [
+    "",
+    "> o-estado-do-pais@0.1.0 check:rotulos",
+    "> node scripts/inventario-rotulos.mjs --prova",
+    "",
+    "R2-declarado · «nacional|en|der-hab-preco-lisboa-vs-portugal» · periodo: «in the #nd quarter of #» rende-se 1 vez(es) e o inventário declarado diz 0: um rótulo ou uma contagem que muda entra pela declaração (corre-se --escrever depois de o ler)",
+    "R2-declarado · «nacional|en|der-hab-preco-lisboa-vs-portugal» · periodo: «in the #st quarter of #» rende-se 0 vez(es) e o inventário declarado diz 1: um rótulo ou uma contagem que muda entra pela declaração (corre-se --escrever depois de o ler)",
+    "R2-declarado · «nacional|en|hab-ine-juro-implicito» · periodo: «in August #» rende-se 0 vez(es) e o inventário declarado diz 1: um rótulo ou uma contagem que muda entra pela declaração (corre-se --escrever depois de o ler)",
+    "R2-declarado · «nacional|en|hab-ine-juro-implicito» · periodo: «in September #» rende-se 1 vez(es) e o inventário declarado diz 0: um rótulo ou uma contagem que muda entra pela declaração (corre-se --escrever depois de o ler)",
+    "R2-declarado · «nacional|en|hab-ine-preco-lisboa» · periodo: «in the #nd quarter of #» rende-se 1 vez(es) e o inventário declarado diz 0: um rótulo ou uma contagem que muda entra pela declaração (corre-se --escrever depois de o ler)",
+    "R2-declarado · «nacional|en|hab-ine-preco-lisboa» · periodo: «in the #st quarter of #» rende-se 0 vez(es) e o inventário declarado diz 1: um rótulo ou uma contagem que muda entra pela declaração (corre-se --escrever depois de o ler)",
+    "R2-declarado · «nacional|en|hab-ine-preco-mediano» · periodo: «in the #nd quarter of #» rende-se 1 vez(es) e o inventário declarado diz 0: um rótulo ou uma contagem que muda entra pela declaração (corre-se --escrever depois de o ler)",
+    "R2-declarado · «nacional|en|hab-ine-preco-mediano» · periodo: «in the #st quarter of #» rende-se 0 vez(es) e o inventário declarado diz 1: um rótulo ou uma contagem que muda entra pela declaração (corre-se --escrever depois de o ler)",
+    "R2-declarado · «nacional|en|hab-ine-preco-porto» · periodo: «in the #nd quarter of #» rende-se 1 vez(es) e o inventário declarado diz 0: um rótulo ou uma contagem que muda entra pela declaração (corre-se --escrever depois de o ler)",
+    "R2-declarado · «nacional|en|hab-ine-preco-porto» · periodo: «in the #st quarter of #» rende-se 0 vez(es) e o inventário declarado diz 1: um rótulo ou uma contagem que muda entra pela declaração (corre-se --escrever depois de o ler)",
+    "R2-declarado · «nacional|pt|hab-ine-juro-implicito» · periodo: «em agosto de #» rende-se 0 vez(es) e o inventário declarado diz 1: um rótulo ou uma contagem que muda entra pela declaração (corre-se --escrever depois de o ler)",
+    "R2-declarado · «nacional|pt|hab-ine-juro-implicito» · periodo: «em setembro de #» rende-se 1 vez(es) e o inventário declarado diz 0: um rótulo ou uma contagem que muda entra pela declaração (corre-se --escrever depois de o ler)",
+    "R2 · rótulos: 9692 página(s) lidas, 706 com cartões, 5670 cartão(ões) (nacional 698, uniao 42, concelho 4928, camaras 2), 756 chave(s); unidades declaradas 1160, da linha 4442, em dívida 2; estados 688; frases da faixa 2464+2464 (2464 cartões com a faixa inteira); contra o declarado: 756 chave(s), 2502 campo(s), 2557 forma(s) com a contagem, 27984 ocorrência(s), 12 diferença(s); dobras 138 perguntas, 4928 notas, 12 referências, 42 na União; OE1: unidades em 186+186 recibos, 186+186 entradas do livro; JD1: unidades em 15+15 recibos, 15+15 entradas do livro; V2A: unidades em 18+18 recibos, 18+18 entradas do livro; V2D: unidades em 142+142 recibos, 142+142 entradas do livro; V2E: unidades em 177+177 recibos, 177+177 entradas do livro; EX3: unidades em 8+8 recibos, 8+8 entradas do livro; 69 de 69 plantas a morder; 12 erro(s)."
+   ]
+  },
+  {
+   "n": "43",
+   "passo": "check_series",
+   "comando": "npm run check:series",
+   "codigo": 0,
+   "segundos": 3,
+   "code": "43-check_series.code",
+   "log": "43-check_series.log"
+  },
+  {
+   "n": "44",
+   "passo": "check_indice-do-sitio",
+   "comando": "npm run check:indice-do-sitio",
+   "codigo": 0,
+   "segundos": 20,
+   "code": "44-check_indice-do-sitio.code",
+   "log": "44-check_indice-do-sitio.log"
+  },
+  {
+   "n": "45",
+   "passo": "check_explicacoes",
+   "comando": "npm run check:explicacoes",
+   "codigo": 0,
+   "segundos": 7,
+   "code": "45-check_explicacoes.code",
+   "log": "45-check_explicacoes.log"
+  },
+  {
+   "n": "46",
+   "passo": "check_frases-compostas",
+   "comando": "npm run check:frases-compostas",
+   "codigo": 0,
+   "segundos": 63,
+   "code": "46-check_frases-compostas.code",
+   "log": "46-check_frases-compostas.log"
+  },
+  {
+   "n": "47",
+   "passo": "check_incorporar",
+   "comando": "npm run check:incorporar",
+   "codigo": 0,
+   "segundos": 25,
+   "code": "47-check_incorporar.code",
+   "log": "47-check_incorporar.log"
+  },
+  {
+   "n": "48",
+   "passo": "check_discussao",
+   "comando": "npm run check:discussao",
+   "codigo": 0,
+   "segundos": 32,
+   "code": "48-check_discussao.code",
+   "log": "48-check_discussao.log"
+  },
+  {
+   "n": "49",
+   "passo": "check_eo1",
+   "comando": "npm run check:eo1",
+   "codigo": 0,
+   "segundos": 10,
+   "code": "49-check_eo1.code",
+   "log": "49-check_eo1.log"
+  },
+  {
+   "n": "50",
+   "passo": "check_graficos",
+   "comando": "npm run check:graficos",
+   "codigo": 0,
+   "segundos": 4,
+   "code": "50-check_graficos.code",
+   "log": "50-check_graficos.log"
+  }
+ ],
+ "vermelhos": [
+  "check_rotulos"
+ ]
+}

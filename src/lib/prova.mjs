@@ -56,9 +56,10 @@ import {
 import { ROUTES, routePath } from './routes.mjs';
 import { estadoDaMedida } from './estado.mjs';
 import { todosOsRegistos, registoDaEdicao } from './registos.mjs';
+import { linhaDoSitioDoEstudo } from './cruzamento.mjs';
 import { unidadesDoBloco, MOTIVOS_SEM_RESUMO } from './registo-html.mjs';
 import { FIGURAS_PDM, FIGURAS_SOCIAL } from '../data/figuras.mjs';
-import { WORKS, EDITIONS, SUBJECTS } from '../data/studies.mjs';
+import { PUBLISHED_WORKS, PUBLISHED_EDITIONS, WORKS, SUBJECTS } from '../data/studies.mjs';
 import { portaDoLugar } from './estudos-b1.mjs';
 import { indexavel } from '../data/leituras.mjs';
 import { MUNICIPIOS_COM_PAGINA } from '../data/municipios.mjs';
@@ -322,7 +323,7 @@ function contagensDosRegistos(doMotor) {
             c.resolvidos++;
             const e = /** @type {{ rh_study?: unknown, rh_origens?: Record<string, string> }} */ (entrada);
             const rh = e.rh_origens?.[figura.row] ?? e.rh_study;
-            if (doMotor.has(`${rh} ${figura.row}`)) c.com_linha_do_sitio++;
+            if (typeof rh === 'string' && linhaDoSitioDoEstudo(rh)(figura.row)) c.com_linha_do_sitio++;
           } else {
             c.por_resolver++;
           }
@@ -839,8 +840,8 @@ export function prova(lang = 'pt') {
       origem: lang === 'pt' ? 'estudos sobre este lugar' : 'studies about this place',
       porta: portaDoLugar(lugar, lang),
     }])),
-    estudos: k('estudos', WORKS.length, routePath('estudos', lang)),
-    edicoes: k('edicoes', EDITIONS.length, routePath('estudos', lang)),
+    estudos: k('estudos', PUBLISHED_WORKS.length, routePath('estudos', lang)),
+    edicoes: k('edicoes', PUBLISHED_EDITIONS.length, routePath('estudos', lang)),
     leituras: k('leituras', WORKS.filter((w) => indexavel(w)).length, routePath('estudos', lang)),
 
     /* ---- o painel da primeira página (v3, etapa 2a) ----

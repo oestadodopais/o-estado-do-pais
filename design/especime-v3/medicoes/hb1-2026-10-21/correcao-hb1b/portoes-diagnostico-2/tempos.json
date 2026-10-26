@@ -1,0 +1,72 @@
+{
+  "cabeca": "f8f4a4d9528f4df1c2b78c992af8df405f65dfd7",
+  "inicio": "2026-10-21T01:37:19.950Z",
+  "fim": "2026-10-21T01:37:34.224Z",
+  "segundos": 14.274,
+  "passos": [
+    {
+      "passo": "cadeia:build",
+      "cadeia": "build",
+      "inicio": "2026-10-21T01:37:19.950+00:00",
+      "fim": "2026-10-21T01:37:33.846+00:00",
+      "segundos": 13.895851792069152,
+      "codigo": 1
+    },
+    {
+      "passo": "npm run mapa:unidades",
+      "cadeia": "build",
+      "inicio": "2026-10-21T01:37:19.950+00:00",
+      "fim": "2026-10-21T01:37:20.088+00:00",
+      "segundos": 0.138005374930799,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run ledger:check",
+      "cadeia": "build",
+      "inicio": "2026-10-21T01:37:20.088+00:00",
+      "fim": "2026-10-21T01:37:28.605+00:00",
+      "segundos": 8.516235249931924,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:registo",
+      "cadeia": "build",
+      "inicio": "2026-10-21T01:37:28.605+00:00",
+      "fim": "2026-10-21T01:37:29.238+00:00",
+      "segundos": 0.6333537920145318,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:cruzamento",
+      "cadeia": "build",
+      "inicio": "2026-10-21T01:37:29.238+00:00",
+      "fim": "2026-10-21T01:37:29.678+00:00",
+      "segundos": 0.4395781670464203,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:documentos",
+      "cadeia": "build",
+      "inicio": "2026-10-21T01:37:29.678+00:00",
+      "fim": "2026-10-21T01:37:29.840+00:00",
+      "segundos": 0.16222379205282778,
+      "codigo": 0
+    },
+    {
+      "passo": "astro build",
+      "cadeia": "build",
+      "inicio": "2026-10-21T01:37:29.840+00:00",
+      "fim": "2026-10-21T01:37:33.846+00:00",
+      "segundos": 4.005331667023711,
+      "codigo": 1
+    },
+    {
+      "passo": "npm run typecheck",
+      "cadeia": "typecheck",
+      "inicio": "2026-10-21T01:37:34.016+00:00",
+      "fim": "2026-10-21T01:37:34.224+00:00",
+      "segundos": 0.2084576670313254,
+      "codigo": 0
+    }
+  ]
+}

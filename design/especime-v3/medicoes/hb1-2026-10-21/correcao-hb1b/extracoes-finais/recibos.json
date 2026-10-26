@@ -1,0 +1,1039 @@
+{
+  "schema": "oedp/recibos-hb1b/1",
+  "codigo": 0,
+  "estado": "extraido-da-cabeca-indicada",
+  "cabeca": "3474743dc3d1b3241a584c58141f3fa53f5bc08e",
+  "construido_em": "2026-10-21T02:27:43.664Z",
+  "criterio": "Texto extraído de textContent sem normalizar pontuação, casas decimais ou espaços. Campos ausentes no HTML são null; uma linha calculada não tem nome nem localização na fonte. As datas vêm dos campos renderizados, não do YAML.",
+  "tipos": {
+    "eurostat": [
+      {
+        "id": "hab-prc-hpi-q-q-total-rch-a-pt-2026-q2",
+        "edicoes": {
+          "pt": {
+            "rota": "/livro-razao/hab-prc-hpi-q-q-total-rch-a-pt-2026-q2",
+            "html_sha256": "4927b9b73d426606077a9bcf179c0de1f97bf194b35b078823b311efc9e9b790",
+            "titulo": "Variação anual dos preços da habitação, Portugal",
+            "valor": "16,5",
+            "unidade": "taxa de variação anual",
+            "nome_na_fonte": "Índice de preços da habitação, variação homóloga, Portugal, 2.º trimestre de 2026",
+            "publicado_por": "Eurostat",
+            "documento": "House price index - quarterly data",
+            "edicao": "2026-Q2",
+            "onde_no_ficheiro": "label; dimension.unit.category.label.RCH_A; dimension.geo.category.label.PT; dimension.time.category.label.2026-Q2",
+            "onde_no_documento": "freq=Q; purchase=TOTAL; unit=RCH_A; geo=PT; time=2026-Q2; value[3495]",
+            "o_que_e_este_numero": "A medida mostra variação anual dos preços da habitação, Portugal no 2.º trimestre de 2026.",
+            "datas": {
+              "published_at": null,
+              "access_date": "19.10.2026",
+              "reference_date": "2.º trimestre de 2026"
+            },
+            "aritmetica": null,
+            "expressao_conferida": null,
+            "excerto": "{\"coordinates\": {\"freq\": \"Q\", \"purchase\": \"TOTAL\", \"unit\": \"RCH_A\", \"geo\": \"PT\", \"time\": \"2026-Q2\"}, \"value\": \"16.5\", \"status\": null}",
+            "ressalva": "O conjunto trimestral tem valores de vinte e seis Estados-membros; a Grécia não está no conjunto.",
+            "proveniencia": [
+              {
+                "rotulo": "Publicado por",
+                "texto": "Eurostat"
+              },
+              {
+                "rotulo": "sha256 do documento",
+                "texto": "139967be9abc6524df81b488dbf675ed6f717552e798e0113f758a0fb805083e"
+              },
+              {
+                "rotulo": "Série",
+                "texto": "House price index - quarterly data"
+              },
+              {
+                "rotulo": "Edição",
+                "texto": "2026-Q2"
+              },
+              {
+                "rotulo": "Onde no documento",
+                "texto": "freq=Q; purchase=TOTAL; unit=RCH_A; geo=PT; time=2026-Q2; value[3495]"
+              },
+              {
+                "rotulo": "Nome na fonte",
+                "texto": "Índice de preços da habitação, variação homóloga, Portugal, 2.º trimestre de 2026"
+              },
+              {
+                "rotulo": "Onde no ficheiro",
+                "texto": "label; dimension.unit.category.label.RCH_A; dimension.geo.category.label.PT; dimension.time.category.label.2026-Q2"
+              },
+              {
+                "rotulo": "Dados de",
+                "texto": "2.º trimestre de 2026"
+              },
+              {
+                "rotulo": "Estudo",
+                "texto": "A casa em Portugal e na Europa"
+              },
+              {
+                "rotulo": "Atribuído a",
+                "texto": "Eurostat"
+              }
+            ]
+          },
+          "en": {
+            "rota": "/en/ledger/hab-prc-hpi-q-q-total-rch-a-pt-2026-q2",
+            "html_sha256": "a7c116684cc0c4924aa43d99b5da2ff5ca918975321221f6d43d2548471d66b9",
+            "titulo": "Annual change in house prices, Portugal",
+            "valor": "16,5",
+            "unidade": "Annual rate of change",
+            "nome_na_fonte": "House price index, Annual rate of change, Portugal, quarter 2 of 2026",
+            "publicado_por": "Eurostat",
+            "documento": "House price index - quarterly data",
+            "edicao": "2026-Q2",
+            "onde_no_ficheiro": "label; dimension.unit.category.label.RCH_A; dimension.geo.category.label.PT; dimension.time.category.label.2026-Q2",
+            "onde_no_documento": "freq=Q; purchase=TOTAL; unit=RCH_A; geo=PT; time=2026-Q2; value[3495]",
+            "o_que_e_este_numero": "The measure shows annual change in house prices, Portugal in 2nd quarter of 2026.",
+            "datas": {
+              "published_at": null,
+              "access_date": "19.10.2026",
+              "reference_date": "2nd quarter of 2026"
+            },
+            "aritmetica": null,
+            "expressao_conferida": null,
+            "excerto": "{\"coordinates\": {\"freq\": \"Q\", \"purchase\": \"TOTAL\", \"unit\": \"RCH_A\", \"geo\": \"PT\", \"time\": \"2026-Q2\"}, \"value\": \"16.5\", \"status\": null}",
+            "ressalva": "The quarterly dataset has values for twenty-six member states; Greece is absent from the dataset.",
+            "proveniencia": [
+              {
+                "rotulo": "Published by",
+                "texto": "Eurostat"
+              },
+              {
+                "rotulo": "Document sha256",
+                "texto": "139967be9abc6524df81b488dbf675ed6f717552e798e0113f758a0fb805083e"
+              },
+              {
+                "rotulo": "Series",
+                "texto": "House price index - quarterly data"
+              },
+              {
+                "rotulo": "Edition",
+                "texto": "2026-Q2"
+              },
+              {
+                "rotulo": "Where in the document",
+                "texto": "freq=Q; purchase=TOTAL; unit=RCH_A; geo=PT; time=2026-Q2; value[3495]"
+              },
+              {
+                "rotulo": "Name at the source",
+                "texto": "House price index, Annual rate of change, Portugal, quarter 2 of 2026"
+              },
+              {
+                "rotulo": "Where in the file",
+                "texto": "label; dimension.unit.category.label.RCH_A; dimension.geo.category.label.PT; dimension.time.category.label.2026-Q2"
+              },
+              {
+                "rotulo": "Data for",
+                "texto": "2nd quarter of 2026"
+              },
+              {
+                "rotulo": "Study",
+                "texto": "Housing in Portugal and in Europe"
+              },
+              {
+                "rotulo": "Attributed to",
+                "texto": "Eurostat"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "hab-ilc-lvho07c-a-pc-rent-mkt-pt-2025",
+        "edicoes": {
+          "pt": {
+            "rota": "/livro-razao/hab-ilc-lvho07c-a-pc-rent-mkt-pt-2025",
+            "html_sha256": "ab6a0749e3eab7630940094caafc4ca96ce0e7a2f12275f061cc72130cdc2f62",
+            "titulo": "Sobrecarga do custo da habitação, inquilinos a preços de mercado, Portugal",
+            "valor": "27,2",
+            "unidade": "percentagem",
+            "nome_na_fonte": "Taxa de sobrecarga dos custos da habitação, inquilinos a preços de mercado, Portugal, 2025",
+            "publicado_por": "Eurostat",
+            "documento": "Housing cost overburden rate by tenure status",
+            "edicao": "2025",
+            "onde_no_ficheiro": "label; dimension.tenure.category.label.RENT_MKT; dimension.geo.category.label.PT; dimension.time.category.label.2025",
+            "onde_no_documento": "freq=A; unit=PC; tenure=RENT_MKT; geo=PT; time=2025; value[1176]",
+            "o_que_e_este_numero": "A medida mostra sobrecarga do custo da habitação, inquilinos a preços de mercado, Portugal em 2025.",
+            "datas": {
+              "published_at": "20.10.2026",
+              "access_date": "21.10.2026",
+              "reference_date": "2025"
+            },
+            "aritmetica": null,
+            "expressao_conferida": null,
+            "excerto": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"tenure\": \"RENT_MKT\", \"geo\": \"PT\", \"time\": \"2025\"}, \"value\": \"27.2\", \"status\": null}",
+            "ressalva": null,
+            "proveniencia": [
+              {
+                "rotulo": "Publicado por",
+                "texto": "Eurostat"
+              },
+              {
+                "rotulo": "sha256 do documento",
+                "texto": "7310cd96ce090cd8e488c715c0e5c43ae7d7d0833763e4bc4a9fd91c602c7f64"
+              },
+              {
+                "rotulo": "Série",
+                "texto": "Housing cost overburden rate by tenure status"
+              },
+              {
+                "rotulo": "Edição",
+                "texto": "2025"
+              },
+              {
+                "rotulo": "Onde no documento",
+                "texto": "freq=A; unit=PC; tenure=RENT_MKT; geo=PT; time=2025; value[1176]"
+              },
+              {
+                "rotulo": "Nome na fonte",
+                "texto": "Taxa de sobrecarga dos custos da habitação, inquilinos a preços de mercado, Portugal, 2025"
+              },
+              {
+                "rotulo": "Onde no ficheiro",
+                "texto": "label; dimension.tenure.category.label.RENT_MKT; dimension.geo.category.label.PT; dimension.time.category.label.2025"
+              },
+              {
+                "rotulo": "Dados de",
+                "texto": "2025"
+              },
+              {
+                "rotulo": "Estudo",
+                "texto": "A casa em Portugal e na Europa"
+              },
+              {
+                "rotulo": "Atribuído a",
+                "texto": "Eurostat"
+              }
+            ]
+          },
+          "en": {
+            "rota": "/en/ledger/hab-ilc-lvho07c-a-pc-rent-mkt-pt-2025",
+            "html_sha256": "251f85d91a32390bf2a9a64c0f5ce89f38733f7e5a2f5b4e45de5f0a71bd5b5c",
+            "titulo": "Housing cost overburden, tenants at market rents, Portugal",
+            "valor": "27,2",
+            "unidade": "Percentage",
+            "nome_na_fonte": "Housing cost overburden rate, Tenant, rent at market price, Portugal, 2025",
+            "publicado_por": "Eurostat",
+            "documento": "Housing cost overburden rate by tenure status",
+            "edicao": "2025",
+            "onde_no_ficheiro": "label; dimension.tenure.category.label.RENT_MKT; dimension.geo.category.label.PT; dimension.time.category.label.2025",
+            "onde_no_documento": "freq=A; unit=PC; tenure=RENT_MKT; geo=PT; time=2025; value[1176]",
+            "o_que_e_este_numero": "The measure shows housing cost overburden, tenants at market rents, Portugal in 2025.",
+            "datas": {
+              "published_at": "20.10.2026",
+              "access_date": "21.10.2026",
+              "reference_date": "2025"
+            },
+            "aritmetica": null,
+            "expressao_conferida": null,
+            "excerto": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"PC\", \"tenure\": \"RENT_MKT\", \"geo\": \"PT\", \"time\": \"2025\"}, \"value\": \"27.2\", \"status\": null}",
+            "ressalva": null,
+            "proveniencia": [
+              {
+                "rotulo": "Published by",
+                "texto": "Eurostat"
+              },
+              {
+                "rotulo": "Document sha256",
+                "texto": "7310cd96ce090cd8e488c715c0e5c43ae7d7d0833763e4bc4a9fd91c602c7f64"
+              },
+              {
+                "rotulo": "Series",
+                "texto": "Housing cost overburden rate by tenure status"
+              },
+              {
+                "rotulo": "Edition",
+                "texto": "2025"
+              },
+              {
+                "rotulo": "Where in the document",
+                "texto": "freq=A; unit=PC; tenure=RENT_MKT; geo=PT; time=2025; value[1176]"
+              },
+              {
+                "rotulo": "Name at the source",
+                "texto": "Housing cost overburden rate, Tenant, rent at market price, Portugal, 2025"
+              },
+              {
+                "rotulo": "Where in the file",
+                "texto": "label; dimension.tenure.category.label.RENT_MKT; dimension.geo.category.label.PT; dimension.time.category.label.2025"
+              },
+              {
+                "rotulo": "Data for",
+                "texto": "2025"
+              },
+              {
+                "rotulo": "Study",
+                "texto": "Housing in Portugal and in Europe"
+              },
+              {
+                "rotulo": "Attributed to",
+                "texto": "Eurostat"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "hab-ilc-lvps08-a-y25-34-t-pc-pt-2025",
+        "edicoes": {
+          "pt": {
+            "rota": "/livro-razao/hab-ilc-lvps08-a-y25-34-t-pc-pt-2025",
+            "html_sha256": "29496e0f3a4740942f35851ee5277490c03317fd720f08a7f9ef13b32a90b760",
+            "titulo": "Jovens que vivem com os pais ou partilham o rendimento do agregado, vinte e cinco a trinta e quatro anos, Portugal",
+            "valor": "42,1",
+            "unidade": "percentagem",
+            "nome_na_fonte": "Pessoas que vivem com os pais ou contribuem para o rendimento do agregado ou dele beneficiam, vinte e cinco a trinta e quatro anos, Portugal, 2025",
+            "publicado_por": "Eurostat",
+            "documento": "Persons living with their parents or contributing/benefiting from the household income (population aged 18 to 34 years)",
+            "edicao": "2025",
+            "onde_no_ficheiro": "label; dimension.age.category.label.Y25-34; dimension.geo.category.label.PT; dimension.time.category.label.2025",
+            "onde_no_documento": "freq=A; age=Y25-34; sex=T; unit=PC; geo=PT; time=2025; value[560]",
+            "o_que_e_este_numero": "A medida mostra jovens que vivem com os pais ou partilham o rendimento do agregado, vinte e cinco a trinta e quatro anos, Portugal em 2025.",
+            "datas": {
+              "published_at": null,
+              "access_date": "19.10.2026",
+              "reference_date": "2025"
+            },
+            "aritmetica": null,
+            "expressao_conferida": null,
+            "excerto": "{\"coordinates\": {\"freq\": \"A\", \"age\": \"Y25-34\", \"sex\": \"T\", \"unit\": \"PC\", \"geo\": \"PT\", \"time\": \"2025\"}, \"value\": \"42.1\", \"status\": null}",
+            "ressalva": null,
+            "proveniencia": [
+              {
+                "rotulo": "Publicado por",
+                "texto": "Eurostat"
+              },
+              {
+                "rotulo": "sha256 do documento",
+                "texto": "678b2197d76cdd853c335e29795f4e8095c1f979f6f52573132c531c9e643f8d"
+              },
+              {
+                "rotulo": "Série",
+                "texto": "Persons living with their parents or contributing/benefiting from the household income (population aged 18 to 34 years)"
+              },
+              {
+                "rotulo": "Edição",
+                "texto": "2025"
+              },
+              {
+                "rotulo": "Onde no documento",
+                "texto": "freq=A; age=Y25-34; sex=T; unit=PC; geo=PT; time=2025; value[560]"
+              },
+              {
+                "rotulo": "Nome na fonte",
+                "texto": "Pessoas que vivem com os pais ou contribuem para o rendimento do agregado ou dele beneficiam, vinte e cinco a trinta e quatro anos, Portugal, 2025"
+              },
+              {
+                "rotulo": "Onde no ficheiro",
+                "texto": "label; dimension.age.category.label.Y25-34; dimension.geo.category.label.PT; dimension.time.category.label.2025"
+              },
+              {
+                "rotulo": "Dados de",
+                "texto": "2025"
+              },
+              {
+                "rotulo": "Estudo",
+                "texto": "A casa em Portugal e na Europa"
+              },
+              {
+                "rotulo": "Atribuído a",
+                "texto": "Eurostat"
+              }
+            ]
+          },
+          "en": {
+            "rota": "/en/ledger/hab-ilc-lvps08-a-y25-34-t-pc-pt-2025",
+            "html_sha256": "9cba2629434744d21f6cdac744f8ac2fbf7b6153d351af2b949b58235d6eec93",
+            "titulo": "Young people living with parents or sharing household income, twenty-five to thirty-four years, Portugal",
+            "valor": "42,1",
+            "unidade": "Percentage",
+            "nome_na_fonte": "Persons living with their parents or contributing/benefiting from the household income, From 25 to 34 years, Portugal, 2025",
+            "publicado_por": "Eurostat",
+            "documento": "Persons living with their parents or contributing/benefiting from the household income (population aged 18 to 34 years)",
+            "edicao": "2025",
+            "onde_no_ficheiro": "label; dimension.age.category.label.Y25-34; dimension.geo.category.label.PT; dimension.time.category.label.2025",
+            "onde_no_documento": "freq=A; age=Y25-34; sex=T; unit=PC; geo=PT; time=2025; value[560]",
+            "o_que_e_este_numero": "The measure shows young people living with parents or sharing household income, twenty-five to thirty-four years, Portugal in 2025.",
+            "datas": {
+              "published_at": null,
+              "access_date": "19.10.2026",
+              "reference_date": "2025"
+            },
+            "aritmetica": null,
+            "expressao_conferida": null,
+            "excerto": "{\"coordinates\": {\"freq\": \"A\", \"age\": \"Y25-34\", \"sex\": \"T\", \"unit\": \"PC\", \"geo\": \"PT\", \"time\": \"2025\"}, \"value\": \"42.1\", \"status\": null}",
+            "ressalva": null,
+            "proveniencia": [
+              {
+                "rotulo": "Published by",
+                "texto": "Eurostat"
+              },
+              {
+                "rotulo": "Document sha256",
+                "texto": "678b2197d76cdd853c335e29795f4e8095c1f979f6f52573132c531c9e643f8d"
+              },
+              {
+                "rotulo": "Series",
+                "texto": "Persons living with their parents or contributing/benefiting from the household income (population aged 18 to 34 years)"
+              },
+              {
+                "rotulo": "Edition",
+                "texto": "2025"
+              },
+              {
+                "rotulo": "Where in the document",
+                "texto": "freq=A; age=Y25-34; sex=T; unit=PC; geo=PT; time=2025; value[560]"
+              },
+              {
+                "rotulo": "Name at the source",
+                "texto": "Persons living with their parents or contributing/benefiting from the household income, From 25 to 34 years, Portugal, 2025"
+              },
+              {
+                "rotulo": "Where in the file",
+                "texto": "label; dimension.age.category.label.Y25-34; dimension.geo.category.label.PT; dimension.time.category.label.2025"
+              },
+              {
+                "rotulo": "Data for",
+                "texto": "2025"
+              },
+              {
+                "rotulo": "Study",
+                "texto": "Housing in Portugal and in Europe"
+              },
+              {
+                "rotulo": "Attributed to",
+                "texto": "Eurostat"
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "ine": [
+      {
+        "id": "hab-ine-preco-mediano",
+        "edicoes": {
+          "pt": {
+            "rota": "/livro-razao/hab-ine-preco-mediano",
+            "html_sha256": "04156e075e96da5a6f8e79a221d21735da93571b95058927cfe545514c056afa",
+            "titulo": "Preço mediano das vendas em Portugal",
+            "valor": "2 337",
+            "unidade": "euros/m2",
+            "nome_na_fonte": "preço mediano dos 35 953 alojamentos familiares transacionados em Portugal",
+            "publicado_por": "INE",
+            "documento": "ESTATÍSTICAS DE PREÇOS DA HABITAÇÃO AO NÍVEL LOCAL",
+            "edicao": "2026-Q1",
+            "onde_no_ficheiro": "PDF p. 1; parágrafo identificado pelo início; área física declarada",
+            "onde_no_documento": "PDF p. 1; parágrafo identificado pelo início; área física declarada",
+            "o_que_e_este_numero": "A medida mostra preço mediano das vendas em Portugal no 1.º trimestre de 2026.",
+            "datas": {
+              "published_at": "17.07.2026",
+              "access_date": "19.10.2026",
+              "reference_date": "1.º trimestre de 2026"
+            },
+            "aritmetica": null,
+            "expressao_conferida": null,
+            "excerto": "No 1.º trimestre de 2026, o preço mediano dos 35 953 alojamentos familiares transacionados em Portugal foi 2 337 €/m2, na sequência de uma taxa de variação de 19,8% em relação ao 1.º trimestre de 2025 (17,5% no trimestre anterior).",
+            "ressalva": null,
+            "proveniencia": [
+              {
+                "rotulo": "Publicado por",
+                "texto": "INE"
+              },
+              {
+                "rotulo": "sha256 do documento",
+                "texto": "edad0e60dfc15f44ad3116dfe3506f23ef054f473aaaf60e97dae4224067c917"
+              },
+              {
+                "rotulo": "Documento",
+                "texto": "ESTATÍSTICAS DE PREÇOS DA HABITAÇÃO AO NÍVEL LOCAL"
+              },
+              {
+                "rotulo": "Edição",
+                "texto": "2026-Q1"
+              },
+              {
+                "rotulo": "Onde no documento",
+                "texto": "PDF p. 1; parágrafo identificado pelo início; área física declarada"
+              },
+              {
+                "rotulo": "Nome na fonte",
+                "texto": "preço mediano dos 35 953 alojamentos familiares transacionados em Portugal"
+              },
+              {
+                "rotulo": "Onde no ficheiro",
+                "texto": "PDF p. 1; parágrafo identificado pelo início; área física declarada"
+              },
+              {
+                "rotulo": "Dados de",
+                "texto": "1.º trimestre de 2026"
+              },
+              {
+                "rotulo": "Estudo",
+                "texto": "A casa em Portugal e na Europa"
+              },
+              {
+                "rotulo": "Atribuído a",
+                "texto": "INE"
+              }
+            ]
+          },
+          "en": {
+            "rota": "/en/ledger/hab-ine-preco-mediano",
+            "html_sha256": "037e3b6a00dec93933415c9582abaff18465775ba4aff732fdfe65a642f5add1",
+            "titulo": "Median sale price in Portugal",
+            "valor": "2 337",
+            "unidade": "euros per square metre",
+            "nome_na_fonte": "preço mediano dos 35 953 alojamentos familiares transacionados em Portugal",
+            "publicado_por": "INE",
+            "documento": "ESTATÍSTICAS DE PREÇOS DA HABITAÇÃO AO NÍVEL LOCAL",
+            "edicao": "2026-Q1",
+            "onde_no_ficheiro": "PDF p. 1; parágrafo identificado pelo início; área física declarada",
+            "onde_no_documento": "PDF p. 1; parágrafo identificado pelo início; área física declarada",
+            "o_que_e_este_numero": "The measure shows median sale price in Portugal in 1st quarter of 2026.",
+            "datas": {
+              "published_at": "17.07.2026",
+              "access_date": "19.10.2026",
+              "reference_date": "1st quarter of 2026"
+            },
+            "aritmetica": null,
+            "expressao_conferida": null,
+            "excerto": "No 1.º trimestre de 2026, o preço mediano dos 35 953 alojamentos familiares transacionados em Portugal foi 2 337 €/m2, na sequência de uma taxa de variação de 19,8% em relação ao 1.º trimestre de 2025 (17,5% no trimestre anterior).",
+            "ressalva": null,
+            "proveniencia": [
+              {
+                "rotulo": "Published by",
+                "texto": "INE"
+              },
+              {
+                "rotulo": "Document sha256",
+                "texto": "edad0e60dfc15f44ad3116dfe3506f23ef054f473aaaf60e97dae4224067c917"
+              },
+              {
+                "rotulo": "Document",
+                "texto": "ESTATÍSTICAS DE PREÇOS DA HABITAÇÃO AO NÍVEL LOCAL"
+              },
+              {
+                "rotulo": "Edition",
+                "texto": "2026-Q1"
+              },
+              {
+                "rotulo": "Where in the document",
+                "texto": "PDF p. 1; parágrafo identificado pelo início; área física declarada"
+              },
+              {
+                "rotulo": "Name at the source",
+                "texto": "preço mediano dos 35 953 alojamentos familiares transacionados em Portugal"
+              },
+              {
+                "rotulo": "Where in the file",
+                "texto": "PDF p. 1; parágrafo identificado pelo início; área física declarada"
+              },
+              {
+                "rotulo": "Data for",
+                "texto": "1st quarter of 2026"
+              },
+              {
+                "rotulo": "Study",
+                "texto": "Housing in Portugal and in Europe"
+              },
+              {
+                "rotulo": "Attributed to",
+                "texto": "INE"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "hab-ine-renda-portugal",
+        "edicoes": {
+          "pt": {
+            "rota": "/livro-razao/hab-ine-renda-portugal",
+            "html_sha256": "4d1117a55930ee759a8d21b554013b14a7c7e79a8bc26cf2697af8dda0d6339f",
+            "titulo": "Renda mediana dos novos contratos em Portugal",
+            "valor": "10,17",
+            "unidade": "euros/m2",
+            "nome_na_fonte": "renda mediana dos 35 407 novos contratos de arrendamento em Portugal",
+            "publicado_por": "INE",
+            "documento": "ESTATÍSTICAS DE RENDAS DA HABITAÇÃO AO NÍVEL LOCAL",
+            "edicao": "2026-Q2",
+            "onde_no_ficheiro": "PDF p. 1; parágrafo identificado pelo início; área física declarada",
+            "onde_no_documento": "PDF p. 1; parágrafo identificado pelo início; área física declarada",
+            "o_que_e_este_numero": "A medida mostra renda mediana dos novos contratos em Portugal no 2.º trimestre de 2026.",
+            "datas": {
+              "published_at": "29.09.2026",
+              "access_date": "19.10.2026",
+              "reference_date": "2.º trimestre de 2026"
+            },
+            "aritmetica": null,
+            "expressao_conferida": null,
+            "excerto": "No 2.º trimestre de 2026, a renda mediana dos 35 407 novos contratos de arrendamento em Portugal atingiu 10,17 €/m2.",
+            "ressalva": null,
+            "proveniencia": [
+              {
+                "rotulo": "Publicado por",
+                "texto": "INE"
+              },
+              {
+                "rotulo": "sha256 do documento",
+                "texto": "8be6b068ef8c95a55f1269e20f19b2cfbea864c9e0838872d0b70758d91c9b84"
+              },
+              {
+                "rotulo": "Documento",
+                "texto": "ESTATÍSTICAS DE RENDAS DA HABITAÇÃO AO NÍVEL LOCAL"
+              },
+              {
+                "rotulo": "Edição",
+                "texto": "2026-Q2"
+              },
+              {
+                "rotulo": "Onde no documento",
+                "texto": "PDF p. 1; parágrafo identificado pelo início; área física declarada"
+              },
+              {
+                "rotulo": "Nome na fonte",
+                "texto": "renda mediana dos 35 407 novos contratos de arrendamento em Portugal"
+              },
+              {
+                "rotulo": "Onde no ficheiro",
+                "texto": "PDF p. 1; parágrafo identificado pelo início; área física declarada"
+              },
+              {
+                "rotulo": "Dados de",
+                "texto": "2.º trimestre de 2026"
+              },
+              {
+                "rotulo": "Estudo",
+                "texto": "A casa em Portugal e na Europa"
+              },
+              {
+                "rotulo": "Atribuído a",
+                "texto": "INE"
+              }
+            ]
+          },
+          "en": {
+            "rota": "/en/ledger/hab-ine-renda-portugal",
+            "html_sha256": "5aa347952d220ca67b470d250dd6a588ca2924901dc6651287763b26adc9f603",
+            "titulo": "Median rent of new contracts in Portugal",
+            "valor": "10,17",
+            "unidade": "euros per square metre",
+            "nome_na_fonte": "renda mediana dos 35 407 novos contratos de arrendamento em Portugal",
+            "publicado_por": "INE",
+            "documento": "ESTATÍSTICAS DE RENDAS DA HABITAÇÃO AO NÍVEL LOCAL",
+            "edicao": "2026-Q2",
+            "onde_no_ficheiro": "PDF p. 1; parágrafo identificado pelo início; área física declarada",
+            "onde_no_documento": "PDF p. 1; parágrafo identificado pelo início; área física declarada",
+            "o_que_e_este_numero": "The measure shows median rent of new contracts in Portugal in 2nd quarter of 2026.",
+            "datas": {
+              "published_at": "29.09.2026",
+              "access_date": "19.10.2026",
+              "reference_date": "2nd quarter of 2026"
+            },
+            "aritmetica": null,
+            "expressao_conferida": null,
+            "excerto": "No 2.º trimestre de 2026, a renda mediana dos 35 407 novos contratos de arrendamento em Portugal atingiu 10,17 €/m2.",
+            "ressalva": null,
+            "proveniencia": [
+              {
+                "rotulo": "Published by",
+                "texto": "INE"
+              },
+              {
+                "rotulo": "Document sha256",
+                "texto": "8be6b068ef8c95a55f1269e20f19b2cfbea864c9e0838872d0b70758d91c9b84"
+              },
+              {
+                "rotulo": "Document",
+                "texto": "ESTATÍSTICAS DE RENDAS DA HABITAÇÃO AO NÍVEL LOCAL"
+              },
+              {
+                "rotulo": "Edition",
+                "texto": "2026-Q2"
+              },
+              {
+                "rotulo": "Where in the document",
+                "texto": "PDF p. 1; parágrafo identificado pelo início; área física declarada"
+              },
+              {
+                "rotulo": "Name at the source",
+                "texto": "renda mediana dos 35 407 novos contratos de arrendamento em Portugal"
+              },
+              {
+                "rotulo": "Where in the file",
+                "texto": "PDF p. 1; parágrafo identificado pelo início; área física declarada"
+              },
+              {
+                "rotulo": "Data for",
+                "texto": "2nd quarter of 2026"
+              },
+              {
+                "rotulo": "Study",
+                "texto": "Housing in Portugal and in Europe"
+              },
+              {
+                "rotulo": "Attributed to",
+                "texto": "INE"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "hab-ine-vagos-total",
+        "edicoes": {
+          "pt": {
+            "rota": "/livro-razao/hab-ine-vagos-total",
+            "html_sha256": "73fc994428047498810025fa65432c701fd39266427896cf711448dc4b3566e5",
+            "titulo": "Alojamentos vagos nos Censos",
+            "valor": "723 215",
+            "unidade": "alojamentos",
+            "nome_na_fonte": "alojamentos vagos",
+            "publicado_por": "INE",
+            "documento": "Revista Eletrónica do INE - agosto de 2024",
+            "edicao": "2021",
+            "onde_no_ficheiro": "HTML; início literal único",
+            "onde_no_documento": "HTML; início literal único",
+            "o_que_e_este_numero": "A medida mostra alojamentos vagos nos Censos em 2021.",
+            "datas": {
+              "published_at": null,
+              "access_date": "19.10.2026",
+              "reference_date": "2021"
+            },
+            "aritmetica": null,
+            "expressao_conferida": null,
+            "excerto": "Dos 5 970 677 alojamentos familiares clássicos que constituíam o parque habitacional, 69,4% encontravam-se ocupados como residência habitual (4 142 581 alojamentos). As residências secundárias representavam 18,5% do total de alojamentos (1 104 881 alojamentos) e os alojamentos vagos 12,1% (723 215 alojamentos).",
+            "ressalva": null,
+            "proveniencia": [
+              {
+                "rotulo": "Publicado por",
+                "texto": "INE"
+              },
+              {
+                "rotulo": "sha256 do documento",
+                "texto": "59195c01c07d9c46fdd79176c1be00c2b63e4395a81bd98df63938b530e3e69d"
+              },
+              {
+                "rotulo": "Documento",
+                "texto": "Revista Eletrónica do INE - agosto de 2024"
+              },
+              {
+                "rotulo": "Edição",
+                "texto": "2021"
+              },
+              {
+                "rotulo": "Onde no documento",
+                "texto": "HTML; início literal único"
+              },
+              {
+                "rotulo": "Nome na fonte",
+                "texto": "alojamentos vagos"
+              },
+              {
+                "rotulo": "Onde no ficheiro",
+                "texto": "HTML; início literal único"
+              },
+              {
+                "rotulo": "Dados de",
+                "texto": "2021"
+              },
+              {
+                "rotulo": "Estudo",
+                "texto": "A casa em Portugal e na Europa"
+              },
+              {
+                "rotulo": "Atribuído a",
+                "texto": "INE"
+              }
+            ]
+          },
+          "en": {
+            "rota": "/en/ledger/hab-ine-vagos-total",
+            "html_sha256": "cfb7ec5178352e394fdf163308bf1ce58a33e1bd9c2784dfc991aec17c9fbce0",
+            "titulo": "Vacant dwellings in the Census",
+            "valor": "723 215",
+            "unidade": "dwellings",
+            "nome_na_fonte": "alojamentos vagos",
+            "publicado_por": "INE",
+            "documento": "Revista Eletrónica do INE - agosto de 2024",
+            "edicao": "2021",
+            "onde_no_ficheiro": "HTML; início literal único",
+            "onde_no_documento": "HTML; início literal único",
+            "o_que_e_este_numero": "The measure shows vacant dwellings in the Census in 2021.",
+            "datas": {
+              "published_at": null,
+              "access_date": "19.10.2026",
+              "reference_date": "2021"
+            },
+            "aritmetica": null,
+            "expressao_conferida": null,
+            "excerto": "Dos 5 970 677 alojamentos familiares clássicos que constituíam o parque habitacional, 69,4% encontravam-se ocupados como residência habitual (4 142 581 alojamentos). As residências secundárias representavam 18,5% do total de alojamentos (1 104 881 alojamentos) e os alojamentos vagos 12,1% (723 215 alojamentos).",
+            "ressalva": null,
+            "proveniencia": [
+              {
+                "rotulo": "Published by",
+                "texto": "INE"
+              },
+              {
+                "rotulo": "Document sha256",
+                "texto": "59195c01c07d9c46fdd79176c1be00c2b63e4395a81bd98df63938b530e3e69d"
+              },
+              {
+                "rotulo": "Document",
+                "texto": "Revista Eletrónica do INE - agosto de 2024"
+              },
+              {
+                "rotulo": "Edition",
+                "texto": "2021"
+              },
+              {
+                "rotulo": "Where in the document",
+                "texto": "HTML; início literal único"
+              },
+              {
+                "rotulo": "Name at the source",
+                "texto": "alojamentos vagos"
+              },
+              {
+                "rotulo": "Where in the file",
+                "texto": "HTML; início literal único"
+              },
+              {
+                "rotulo": "Data for",
+                "texto": "2021"
+              },
+              {
+                "rotulo": "Study",
+                "texto": "Housing in Portugal and in Europe"
+              },
+              {
+                "rotulo": "Attributed to",
+                "texto": "INE"
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "derivado": [
+      {
+        "id": "der-hab-licencas-por-mil-pt-2025",
+        "edicoes": {
+          "pt": {
+            "rota": "/livro-razao/der-hab-licencas-por-mil-pt-2025",
+            "html_sha256": "50b839677100f65fd4fc6411644370412781afbddff843f2320c169f10453136",
+            "titulo": "Alojamentos licenciados por mil habitantes, Portugal",
+            "valor": "3,8",
+            "unidade": "por mil habitantes",
+            "nome_na_fonte": null,
+            "publicado_por": null,
+            "documento": null,
+            "edicao": null,
+            "onde_no_ficheiro": null,
+            "onde_no_documento": null,
+            "o_que_e_este_numero": "A conta calcula alojamentos licenciados por mil habitantes, Portugal pelas componentes identificadas em 2025.",
+            "datas": {
+              "published_at": null,
+              "access_date": null,
+              "reference_date": "2025"
+            },
+            "aritmetica": "Alojamentos licenciados, milhares, Portugal, 2025 (40,9 mil; Eurostat, sts_cobp_a, provisório) a dividir por População residente a um de janeiro, número, Portugal, 2025 (10 749 635 habitantes; Eurostat, demo_pjan), convertendo as licenças de milhares para unidades e multiplicando por mil, arredondado a uma casa decimal: 3,8.",
+            "expressao_conferida": "round ( hab-sts-cobp-a-a-bprm-dw-cpa-f41001-x-410014-nsa-ths-pt-2025 * 1000000 / hab-demo-pjan-pt-2025 , 1 )",
+            "excerto": null,
+            "ressalva": null,
+            "proveniencia": [
+              {
+                "rotulo": "Dados de",
+                "texto": "2025"
+              },
+              {
+                "rotulo": "Estudo",
+                "texto": "A casa em Portugal e na Europa"
+              }
+            ]
+          },
+          "en": {
+            "rota": "/en/ledger/der-hab-licencas-por-mil-pt-2025",
+            "html_sha256": "a54b23d775199b6bf1d7e6a4c14554c01f553082680074bde706c36a950162cf",
+            "titulo": "Dwellings permitted per thousand inhabitants, Portugal",
+            "valor": "3,8",
+            "unidade": "per thousand inhabitants",
+            "nome_na_fonte": null,
+            "publicado_por": null,
+            "documento": null,
+            "edicao": null,
+            "onde_no_ficheiro": null,
+            "onde_no_documento": null,
+            "o_que_e_este_numero": "The calculation gives dwellings permitted per thousand inhabitants, Portugal from the identified components in 2025.",
+            "datas": {
+              "published_at": null,
+              "access_date": null,
+              "reference_date": "2025"
+            },
+            "aritmetica": "Dwellings permitted, Thousand, Portugal, 2025 (40.9 thousand; Eurostat, sts_cobp_a, provisional) divided by Population on one January, Number, Portugal, 2025 (10749635 inhabitants; Eurostat, demo_pjan), converting permits from thousands to units and multiplying by one thousand, rounded to one decimal place: 3.8.",
+            "expressao_conferida": "round ( hab-sts-cobp-a-a-bprm-dw-cpa-f41001-x-410014-nsa-ths-pt-2025 * 1000000 / hab-demo-pjan-pt-2025 , 1 )",
+            "excerto": null,
+            "ressalva": null,
+            "proveniencia": [
+              {
+                "rotulo": "Data for",
+                "texto": "2025"
+              },
+              {
+                "rotulo": "Study",
+                "texto": "Housing in Portugal and in Europe"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "der-hab-fiscal-2027",
+        "edicoes": {
+          "pt": {
+            "rota": "/livro-razao/der-hab-fiscal-2027",
+            "html_sha256": "dec190089b4fa64d1c893217696bb47b2184f5a9026f17fa188ee45043aa2248",
+            "titulo": "Impacto conjunto das medidas fiscais da habitação",
+            "valor": "−303",
+            "unidade": "milhões de euros",
+            "nome_na_fonte": null,
+            "publicado_por": null,
+            "documento": null,
+            "edicao": null,
+            "onde_no_ficheiro": null,
+            "onde_no_documento": null,
+            "o_que_e_este_numero": "A conta calcula impacto conjunto das medidas fiscais da habitação pelas componentes identificadas em 2027.",
+            "datas": {
+              "published_at": null,
+              "access_date": null,
+              "reference_date": "2027"
+            },
+            "aritmetica": "Habitação - redução IVA construção de 23% para 6% (i) (-94 milhões de euros; Governo) mais Habitação - redução IRS rendas moderadas de 25% para 10% (i) (-209 milhões de euros; Governo), arredondado à unidade: -303.",
+            "expressao_conferida": "round ( hab-oe-iva-impacto + hab-oe-irs-rendas-impacto , 0 )",
+            "excerto": null,
+            "ressalva": null,
+            "proveniencia": [
+              {
+                "rotulo": "Dados de",
+                "texto": "2027"
+              },
+              {
+                "rotulo": "Estudo",
+                "texto": "A casa em Portugal e na Europa"
+              }
+            ]
+          },
+          "en": {
+            "rota": "/en/ledger/der-hab-fiscal-2027",
+            "html_sha256": "6894b4712ae97cb33bd558fc290c06ca6aee9c68c6112e0df8d2ce1debdfaa58",
+            "titulo": "Combined impact of housing tax measures",
+            "valor": "−303",
+            "unidade": "million euros",
+            "nome_na_fonte": null,
+            "publicado_por": null,
+            "documento": null,
+            "edicao": null,
+            "onde_no_ficheiro": null,
+            "onde_no_documento": null,
+            "o_que_e_este_numero": "The calculation gives combined impact of housing tax measures from the identified components in 2027.",
+            "datas": {
+              "published_at": null,
+              "access_date": null,
+              "reference_date": "2027"
+            },
+            "aritmetica": "Housing: construction VAT reduction from 23% to 6% (i) (-94 million euros; Government) plus Housing: personal income tax reduction on moderate rents from 25% to 10% (i) (-209 million euros; Government), rounded to the nearest integer: -303.",
+            "expressao_conferida": "round ( hab-oe-iva-impacto + hab-oe-irs-rendas-impacto , 0 )",
+            "excerto": null,
+            "ressalva": null,
+            "proveniencia": [
+              {
+                "rotulo": "Data for",
+                "texto": "2027"
+              },
+              {
+                "rotulo": "Study",
+                "texto": "Housing in Portugal and in Europe"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "der-hab-sobrecarga-inquilinos-pt-2020-2025",
+        "edicoes": {
+          "pt": {
+            "rota": "/livro-razao/der-hab-sobrecarga-inquilinos-pt-2020-2025",
+            "html_sha256": "74af3ff67ebddf3fd78d2d6115312fa7335f3bb5417f49d03c4eeb0824b21033",
+            "titulo": "Variação da sobrecarga dos inquilinos em Portugal desde o início da década",
+            "valor": "7,5",
+            "unidade": "pontos percentuais",
+            "nome_na_fonte": null,
+            "publicado_por": null,
+            "documento": null,
+            "edicao": null,
+            "onde_no_ficheiro": null,
+            "onde_no_documento": null,
+            "o_que_e_este_numero": "A conta calcula variação da sobrecarga dos inquilinos em Portugal desde o início da década pelas componentes identificadas em 2025.",
+            "datas": {
+              "published_at": null,
+              "access_date": null,
+              "reference_date": "2025"
+            },
+            "aritmetica": "Taxa de sobrecarga dos custos da habitação, inquilinos a preços de mercado, Portugal, 2025 (27,2 %; Eurostat, ilc_lvho07c) menos Taxa de sobrecarga dos custos da habitação, inquilinos a preços de mercado, Portugal, 2020 (19,7 %; Eurostat, ilc_lvho07c), arredondado a uma casa decimal: 7,5.",
+            "expressao_conferida": "round ( hab-ilc-lvho07c-a-pc-rent-mkt-pt-2025 - hab-ilc-lvho07c-a-pc-rent-mkt-pt-2020 , 1 )",
+            "excerto": null,
+            "ressalva": null,
+            "proveniencia": [
+              {
+                "rotulo": "Dados de",
+                "texto": "2025"
+              },
+              {
+                "rotulo": "Estudo",
+                "texto": "A casa em Portugal e na Europa"
+              }
+            ]
+          },
+          "en": {
+            "rota": "/en/ledger/der-hab-sobrecarga-inquilinos-pt-2020-2025",
+            "html_sha256": "1cbbea2c11cd0afbb9aeb81dee29e14638bc14b3b805f2ca3de644b19b4d3466",
+            "titulo": "Change in tenant overburden in Portugal since the start of the decade",
+            "valor": "7,5",
+            "unidade": "percentage points",
+            "nome_na_fonte": null,
+            "publicado_por": null,
+            "documento": null,
+            "edicao": null,
+            "onde_no_ficheiro": null,
+            "onde_no_documento": null,
+            "o_que_e_este_numero": "The calculation gives change in tenant overburden in Portugal since the start of the decade from the identified components in 2025.",
+            "datas": {
+              "published_at": null,
+              "access_date": null,
+              "reference_date": "2025"
+            },
+            "aritmetica": "Housing cost overburden rate, Tenant, rent at market price, Portugal, 2025 (27.2 %; Eurostat, ilc_lvho07c) minus Housing cost overburden rate, Tenant, rent at market price, Portugal, 2020 (19.7 %; Eurostat, ilc_lvho07c), rounded to one decimal place: 7.5.",
+            "expressao_conferida": "round ( hab-ilc-lvho07c-a-pc-rent-mkt-pt-2025 - hab-ilc-lvho07c-a-pc-rent-mkt-pt-2020 , 1 )",
+            "excerto": null,
+            "ressalva": null,
+            "proveniencia": [
+              {
+                "rotulo": "Data for",
+                "texto": "2025"
+              },
+              {
+                "rotulo": "Study",
+                "texto": "Housing in Portugal and in Europe"
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "hab-bpstat-12533724": {
+    "pt": "O montante das novas operações de empréstimos à habitação, incluindo as renegociações, concedidos pelos bancos (outras instituições financeiras monetárias) aos particulares (famílias e instituições sem fim lucrativo ao serviço das famílias) residentes na área do euro e aos emigrantes portugueses fora dela, em valores mensais em milhões de euros; aqui, no mês que termina a 31.08.2026.",
+    "en": "The amount of new housing loans, including renegotiations, granted by banks (other monetary financial institutions) to individuals (households and non-profit institutions serving households) resident in the euro area and to Portuguese emigrants outside it, as monthly values in million euros; here, in the month ending on 31.08.2026."
+  },
+  "hab-bpstat-12533735": {
+    "pt": "A taxa de juro acordada anualizada das novas operações de empréstimos à habitação, incluindo as renegociações, concedidos pelos bancos (outras instituições financeiras monetárias) aos particulares (famílias e instituições sem fim lucrativo ao serviço das famílias) residentes na área do euro e aos emigrantes portugueses fora dela, em taxa mensal em percentagem; aqui, no mês que termina a 31.08.2026.",
+    "en": "The annualised agreed interest rate on new housing loans, including renegotiations, granted by banks (other monetary financial institutions) to individuals (households and non-profit institutions serving households) resident in the euro area and to Portuguese emigrants outside it, as a monthly rate in percent; here, in the month ending on 31.08.2026."
+  },
+  "hab-bpstat-12557378": {
+    "pt": "Os empréstimos à habitação das outras instituições financeiras monetárias a famílias e instituições sem fim lucrativo ao serviço das famílias, nos ativos do balanço dessas instituições em dados não consolidados, em posições mensais em milhões de euros pelo valor em fim do período; aqui, Portugal, a 31.08.2026.",
+    "en": "Housing loans by other monetary financial institutions to households and non-profit institutions serving households, among the assets on the balance sheet of those institutions as non-consolidated data, as monthly positions in million euros at end-of-period value; here, Portugal, on 31.08.2026."
+  },
+  "hab-ine-calendario-juro": {
+    "pt": "A data anunciada no calendário de divulgação do INE para «INDICADOR DE TAXAS DE JURO IMPLÍCITAS NO CRÉDITO À HABITAÇÃO»; aqui, 21.10.2026.",
+    "en": "The date announced in the INE release calendar for «INDICADOR DE TAXAS DE JURO IMPLÍCITAS NO CRÉDITO À HABITAÇÃO»; here, 21.10.2026."
+  },
+  "hab-ine-calendario-precos-locais": {
+    "pt": "A data anunciada no calendário de divulgação do INE para «ESTATÍSTICAS DE PREÇOS NA HABITAÇÃO AO NÍVEL LOCAL»; aqui, 23.10.2026.",
+    "en": "The date announced in the INE release calendar for «ESTATÍSTICAS DE PREÇOS NA HABITAÇÃO AO NÍVEL LOCAL»; here, 23.10.2026."
+  },
+  "hab-ine-censos-0012501-40": {
+    "pt": "O número de alojamentos familiares clássicos vagos para venda ou arrendamento, sendo, para o INE, um alojamento familiar clássico uma divisão ou conjunto de divisões e seus anexos num edifício de caráter permanente, ou numa parte estruturalmente distinta do edifício, com uma entrada independente, e um alojamento familiar vago um alojamento familiar desocupado e disponível para venda, arrendamento, demolição ou outra situação no momento de referência; aqui, Portugal, em 2021.",
+    "en": "The number of conventional dwellings vacant for sale or rent, where, for INE, a conventional dwelling is a room or set of rooms and their annexes in a permanent building, or in a structurally separate part of the building, with an independent entrance, and a vacant dwelling is an unoccupied dwelling available for sale, rent, demolition or another situation at the reference time; here, Portugal, in 2021."
+  },
+  "hab-ine-censos-0012501-41": {
+    "pt": "O número de alojamentos familiares clássicos vagos por outros motivos, sendo, para o INE, um alojamento familiar clássico uma divisão ou conjunto de divisões e seus anexos num edifício de caráter permanente, ou numa parte estruturalmente distinta do edifício, com uma entrada independente, e um alojamento familiar vago um alojamento familiar desocupado e disponível para venda, arrendamento, demolição ou outra situação no momento de referência; aqui, Portugal, em 2021.",
+    "en": "The number of conventional dwellings vacant for other reasons, where, for INE, a conventional dwelling is a room or set of rooms and their annexes in a permanent building, or in a structurally separate part of the building, with an independent entrance, and a vacant dwelling is an unoccupied dwelling available for sale, rent, demolition or another situation at the reference time; here, Portugal, in 2021."
+  },
+  "hab-ine-censos-0012517-0": {
+    "pt": "A proporção, em percentagem, dos alojamentos familiares clássicos que estavam vagos, sendo, para o INE, um alojamento familiar clássico uma divisão ou conjunto de divisões e seus anexos num edifício de caráter permanente, ou numa parte estruturalmente distinta do edifício, com uma entrada independente, e um alojamento familiar vago um alojamento familiar desocupado e disponível para venda, arrendamento, demolição ou outra situação no momento de referência; aqui, Portugal, em 2021.",
+    "en": "The share, in percent, of conventional dwellings that were vacant, where, for INE, a conventional dwelling is a room or set of rooms and their annexes in a permanent building, or in a structurally separate part of the building, with an independent entrance, and a vacant dwelling is an unoccupied dwelling available for sale, rent, demolition or another situation at the reference time; here, Portugal, in 2021."
+  },
+  "hab-ine-iphab-homologa": {
+    "pt": "A taxa de variação homóloga do índice a que o documento alojado do INE chama «ÍNDICE DE PREÇOS DA HABITAÇÃO»; aqui, no 2.º trimestre de 2026.",
+    "en": "The year-on-year rate of change of the index that the hosted INE document calls «ÍNDICE DE PREÇOS DA HABITAÇÃO»; here, in the 2nd quarter of 2026."
+  },
+  "hab-ine-juro-implicito": {
+    "pt": "A taxa de juro implícita no crédito à habitação, que reflete a relação entre os juros totais vencidos no mês de referência e o capital em dívida no início desse mês, antes de amortização; aqui, o conjunto dos contratos, Portugal, em agosto de 2026.",
+    "en": "The implicit interest rate on housing loans, which reflects the ratio between the total interest due in the reference month and the capital outstanding at the start of that month, before amortisation; here, all contracts, Portugal, in August 2026."
+  },
+  "hab-ine-preco-lisboa": {
+    "pt": "O valor mediano dos preços por metro quadrado das transações por venda de imóveis para habitação com área bruta privativa de vinte metros quadrados ou mais, apurado pelo INE dos dados fiscais anonimizados da Autoridade Tributária e Aduaneira; aqui, Lisboa, no 1.º trimestre de 2026.",
+    "en": "The median price per square metre of sales of residential properties with a private gross area of twenty square metres or more, compiled by INE from anonymised tax data from the Tax and Customs Authority; here, Lisbon, in the 1st quarter of 2026."
+  },
+  "hab-ine-preco-mediano": {
+    "pt": "O valor mediano dos preços por metro quadrado das transações por venda de imóveis para habitação com área bruta privativa de vinte metros quadrados ou mais, apurado pelo INE dos dados fiscais anonimizados da Autoridade Tributária e Aduaneira; aqui, Portugal, no 1.º trimestre de 2026.",
+    "en": "The median price per square metre of sales of residential properties with a private gross area of twenty square metres or more, compiled by INE from anonymised tax data from the Tax and Customs Authority; here, Portugal, in the 1st quarter of 2026."
+  },
+  "hab-ine-preco-porto": {
+    "pt": "O valor mediano dos preços por metro quadrado das transações por venda de imóveis para habitação com área bruta privativa de vinte metros quadrados ou mais, apurado pelo INE dos dados fiscais anonimizados da Autoridade Tributária e Aduaneira; aqui, Porto, no 1.º trimestre de 2026.",
+    "en": "The median price per square metre of sales of residential properties with a private gross area of twenty square metres or more, compiled by INE from anonymised tax data from the Tax and Customs Authority; here, Porto, in the 1st quarter of 2026."
+  },
+  "hab-ine-renda-lisboa": {
+    "pt": "O valor mediano das rendas por metro quadrado dos novos contratos de arrendamento para habitação com área bruta privativa entre vinte e seiscentos metros quadrados e renda entre cem e seis mil euros, apurado pelo INE dos dados fiscais anonimizados da Autoridade Tributária e Aduaneira; aqui, Lisboa, no 2.º trimestre de 2026.",
+    "en": "The median rent per square metre of new residential lease contracts with a private gross area between twenty and six hundred square metres and a rent between one hundred and six thousand euros, compiled by INE from anonymised tax data from the Tax and Customs Authority; here, Lisbon, in the 2nd quarter of 2026."
+  },
+  "hab-ine-renda-porto": {
+    "pt": "O valor mediano das rendas por metro quadrado dos novos contratos de arrendamento para habitação com área bruta privativa entre vinte e seiscentos metros quadrados e renda entre cem e seis mil euros, apurado pelo INE dos dados fiscais anonimizados da Autoridade Tributária e Aduaneira; aqui, Porto, no 2.º trimestre de 2026.",
+    "en": "The median rent per square metre of new residential lease contracts with a private gross area between twenty and six hundred square metres and a rent between one hundred and six thousand euros, compiled by INE from anonymised tax data from the Tax and Customs Authority; here, Porto, in the 2nd quarter of 2026."
+  },
+  "hab-ine-renda-portugal": {
+    "pt": "O valor mediano das rendas por metro quadrado dos novos contratos de arrendamento para habitação com área bruta privativa entre vinte e seiscentos metros quadrados e renda entre cem e seis mil euros, apurado pelo INE dos dados fiscais anonimizados da Autoridade Tributária e Aduaneira; aqui, Portugal, no 2.º trimestre de 2026.",
+    "en": "The median rent per square metre of new residential lease contracts with a private gross area between twenty and six hundred square metres and a rent between one hundred and six thousand euros, compiled by INE from anonymised tax data from the Tax and Customs Authority; here, Portugal, in the 2nd quarter of 2026."
+  },
+  "hab-ine-vagos-total": {
+    "pt": "O número de alojamentos familiares clássicos vagos, sendo, para o INE, um alojamento familiar clássico uma divisão ou conjunto de divisões e seus anexos num edifício de caráter permanente, ou numa parte estruturalmente distinta do edifício, com uma entrada independente, e um alojamento familiar vago um alojamento familiar desocupado e disponível para venda, arrendamento, demolição ou outra situação no momento de referência; aqui, Portugal, em 2021.",
+    "en": "The number of vacant conventional dwellings, where, for INE, a conventional dwelling is a room or set of rooms and their annexes in a permanent building, or in a structurally separate part of the building, with an independent entrance, and a vacant dwelling is an unoccupied dwelling available for sale, rent, demolition or another situation at the reference time; here, Portugal, in 2021."
+  },
+  "hab-oe-apoio-arrendamento": {
+    "pt": "O que o relatório do Orçamento do Estado diz sobre a ação «Promoção do acesso à habitação e apoio ao arrendamento», na coluna do orçamento do quadro dos objetivos e indicadores da Missão de Base Orgânica Infraestruturas e Habitação, em milhões de euros; aqui, em 2027.",
+    "en": "What the State Budget report says about the action «Promoção do acesso à habitação e apoio ao arrendamento», in the budget column of the table of objectives and indicators of the Infrastructure and Housing organic base mission, in million euros; here, in 2027."
+  },
+  "hab-oe-habitacao-orcamento": {
+    "pt": "O que o relatório do Orçamento do Estado diz sobre a linha «Habitação», na coluna do orçamento do quadro dos objetivos e indicadores da Missão de Base Orgânica Infraestruturas e Habitação, em milhões de euros; aqui, em 2027.",
+    "en": "What the State Budget report says about the line «Habitação», in the budget column of the table of objectives and indicators of the Infrastructure and Housing organic base mission, in million euros; here, in 2027."
+  },
+  "hab-oe-irs-rendas-impacto": {
+    "pt": "O que o relatório do Orçamento do Estado diz sobre a medida «Habitação - redução IRS rendas moderadas», no quadro das principais medidas de política orçamental, como impacto incremental em milhões de euros; aqui, em 2027.",
+    "en": "What the State Budget report says about the measure «Habitação - redução IRS rendas moderadas», in the table of the main budget policy measures, as an incremental impact in million euros; here, in 2027."
+  },
+  "hab-oe-iva-impacto": {
+    "pt": "O que o relatório do Orçamento do Estado diz sobre a medida «Habitação - redução IVA construção», no quadro das principais medidas de política orçamental, como impacto incremental em milhões de euros; aqui, em 2027.",
+    "en": "What the State Budget report says about the measure «Habitação - redução IVA construção», in the table of the main budget policy measures, as an incremental impact in million euros; here, in 2027."
+  },
+  "hab-oe-licenciamento": {
+    "pt": "O que o relatório do Orçamento do Estado diz sobre a ação «Gestão urbanística e qualidade do edificiado», na coluna do orçamento do quadro dos objetivos e indicadores da Missão de Base Orgânica Infraestruturas e Habitação, em milhões de euros; aqui, em 2027.",
+    "en": "What the State Budget report says about the action «Gestão urbanística e qualidade do edificiado», in the budget column of the table of objectives and indicators of the Infrastructure and Housing organic base mission, in million euros; here, in 2027."
+  },
+  "hab-oe-oferta-publica": {
+    "pt": "O que o relatório do Orçamento do Estado diz sobre a ação «Promoção da oferta e reabilitação habitacional», na coluna do orçamento do quadro dos objetivos e indicadores da Missão de Base Orgânica Infraestruturas e Habitação, em milhões de euros; aqui, em 2027.",
+    "en": "What the State Budget report says about the action «Promoção da oferta e reabilitação habitacional», in the budget column of the table of objectives and indicators of the Infrastructure and Housing organic base mission, in million euros; here, in 2027."
+  }
+}

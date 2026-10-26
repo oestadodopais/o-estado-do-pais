@@ -1,0 +1,53 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "hab-ilc-lvho02-a-total-total-own-l-pc-eu27_2020-2025"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "24,8"
+unit: "Percentage"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Distribuição da população por regime de ocupação, proprietários com empréstimo, União Europeia, 2025"
+name_source: "label; dimension.tenure.category.label.OWN_L; dimension.geo.category.label.EU27_2020; dimension.time.category.label.2025"
+status: "conferido"
+name_en: "Distribution of population by tenure status, Owner, with mortgage or loan, European Union - 27 countries (from 2020), 2025"
+name_source_en: "label; dimension.tenure.category.label.OWN_L; dimension.geo.category.label.EU27_2020; dimension.time.category.label.2025"
+measure: "Distribuição da população por regime de ocupação, proprietários com empréstimo, União Europeia, 2025"
+measure_en: "Distribution of population by tenure status, Owner, with mortgage or loan, European Union - 27 countries (from 2020), 2025"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Eurostat"
+document:
+  title: "Distribution of population by tenure status, type of household and income group"
+  edition: "2025"
+  locator: "freq=A; rskpovth=TOTAL; hhcomp=TOTAL; tenure=OWN_L; unit=PC; geo=EU27_2020; time=2025; value[10]"
+  source_sha256: "ea4dcaa450b9a2b599d456b0bcbb6c5ebd0c6faaf90116762aaa74f59d0b3894"
+  kind: "serie"
+source_url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/ilc_lvho02?format=JSON&lang=EN&geo=AT&geo=BE&geo=BG&geo=CY&geo=CZ&geo=DE&geo=DK&geo=EE&geo=EL&geo=ES&geo=FI&geo=FR&geo=HR&geo=HU&geo=IE&geo=IT&geo=LT&geo=LU&geo=LV&geo=MT&geo=NL&geo=PL&geo=PT&geo=RO&geo=SE&geo=SI&geo=SK&geo=EU27_2020&sinceTimePeriod=2015&rskpovth=TOTAL&hhcomp=TOTAL&tenure=OWN_L&tenure=OWN_NL&tenure=RENT_MKT&tenure=RENT_FR"
+access_date: "2026-10-19"
+reference_date: "2025"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "{\"coordinates\": {\"freq\": \"A\", \"rskpovth\": \"TOTAL\", \"hhcomp\": \"TOTAL\", \"tenure\": \"OWN_L\", \"unit\": \"PC\", \"geo\": \"EU27_2020\", \"time\": \"2025\"}, \"value\": \"24.8\", \"status\": null}"
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+# A quem o valor é creditado. Lista de entidades, ou campo nenhum.
+attributed_to:
+  - "Eurostat"
+
+study: "a-casa-em-portugal-e-na-europa"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] A União é o agregado publicado, nunca a média simples dos países. A bandeira pertence à célula.  · Cruzado de ResearchHub content/23 Habitacao · hab-ilc-lvho02-a-total-total-own-l-pc-eu27_2020-2025."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

@@ -307,6 +307,13 @@ const TETOS = {
      das figuras para as mesmas linhas, como na de 2026); medido com AMOSTRA=5000 sobre o dist/
      da cabeça 81eade95f. ex4-2026-10-21/medir-l1-ex4.mjs confere que as 2782 páginas do V2-b
      ficam todas e que só estas 168 entram, com quatro plantas; o registo é l1-ex4.json. */
+  /* HB1: 2782 para 3152, medidos em l1-hb1.json. Entram 362 recibos das 181
+     linhas novas e oito páginas com as portas do estudo. As multiplicidades,
+     incluindo oito páginas anteriores alteradas, estão no contrato; cinco
+     plantas recusam um destino, uma multiplicidade ou uma página a mais ou a
+     menos. A regra de contagem permanece a mesma. */
+  /* HB1-m (22.10.2026): a fusão dos dois ramos; o teto é o número medido de novo sobre o dist/
+     da cabeça fundida, no registo design/especime-v3/medicoes/hb1-2026-10-21/fusao-m/l1-hb1m.json. */
   l1_paginas: TETO_B1.l1_paginas, // B1: o teto medido está escrito uma só vez no registo.
   /* L2a · páginas, fora de `/municipios`, que ligam a mais de `L2_LIMITE_NOMES`
      concelhos fora de uma lista fechada.

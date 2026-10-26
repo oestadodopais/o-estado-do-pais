@@ -19106,3 +19106,5227 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     }
   }
 });
+
+// HB1: declarações acrescentadas pelo compositor próprio.
+Object.assign(FAMILIAS_DAS_LINHAS, {
+  "der-hab-fiscal-2027": {
+    "nome": {
+      "pt": "Impacto conjunto das medidas fiscais da habitação",
+      "en": "Combined impact of housing tax measures"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é o impacto conjunto na receita, em milhões de euros, das duas medidas fiscais da habitação do Orçamento"
+      ],
+      "en": [
+        "The result is the combined impact on revenue, in million euros, of the two housing tax measures in the Budget"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "der-hab-fiscal-2027"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "der-hab-fiscal-2027"
+        },
+        "."
+      ]
+    }
+  },
+  "der-hab-inquilinos-eu-2025": {
+    "nome": {
+      "pt": "População em casa arrendada, União Europeia",
+      "en": "Population in rented homes, European Union"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é a parte da população que vive em casa arrendada, a preços de mercado ou a renda reduzida ou gratuita"
+      ],
+      "en": [
+        "The result is the share of the population living in a rented home, at market rent or at reduced or free rent"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, União Europeia, em ",
+        {
+          "periodo": "der-hab-inquilinos-eu-2025"
+        },
+        "."
+      ],
+      "en": [
+        "; here, European Union, in ",
+        {
+          "periodo": "der-hab-inquilinos-eu-2025"
+        },
+        "."
+      ]
+    }
+  },
+  "der-hab-inquilinos-pt-2025": {
+    "nome": {
+      "pt": "População em casa arrendada, Portugal",
+      "en": "Population in rented homes, Portugal"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é a parte da população que vive em casa arrendada, a preços de mercado ou a renda reduzida ou gratuita"
+      ],
+      "en": [
+        "The result is the share of the population living in a rented home, at market rent or at reduced or free rent"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, Portugal, em ",
+        {
+          "periodo": "der-hab-inquilinos-pt-2025"
+        },
+        "."
+      ],
+      "en": [
+        "; here, Portugal, in ",
+        {
+          "periodo": "der-hab-inquilinos-pt-2025"
+        },
+        "."
+      ]
+    }
+  },
+  "der-hab-jovens-com-pais-pt-vs-eu-2025": {
+    "nome": {
+      "pt": "Diferença face à União nos jovens que vivem com os pais",
+      "en": "Gap from the Union in young people living with parents"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é a diferença, em pontos percentuais, entre Portugal e a União na parte dos jovens que vivem com os pais ou partilham o rendimento do agregado"
+      ],
+      "en": [
+        "The result is the gap, in percentage points, between Portugal and the Union in the share of young people living with their parents or sharing household income"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "der-hab-jovens-com-pais-pt-vs-eu-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "der-hab-jovens-com-pais-pt-vs-eu-2025"
+        },
+        "."
+      ]
+    }
+  },
+  "der-hab-licencas-por-mil-eu-2025": {
+    "nome": {
+      "pt": "Alojamentos licenciados por mil habitantes, União Europeia",
+      "en": "Dwellings permitted per thousand inhabitants, European Union"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é o número de alojamentos licenciados por cada mil habitantes"
+      ],
+      "en": [
+        "The result is the number of dwellings permitted per thousand inhabitants"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, União Europeia, em ",
+        {
+          "periodo": "der-hab-licencas-por-mil-eu-2025"
+        },
+        "."
+      ],
+      "en": [
+        "; here, European Union, in ",
+        {
+          "periodo": "der-hab-licencas-por-mil-eu-2025"
+        },
+        "."
+      ]
+    }
+  },
+  "der-hab-licencas-por-mil-pt-2025": {
+    "nome": {
+      "pt": "Alojamentos licenciados por mil habitantes, Portugal",
+      "en": "Dwellings permitted per thousand inhabitants, Portugal"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é o número de alojamentos licenciados por cada mil habitantes"
+      ],
+      "en": [
+        "The result is the number of dwellings permitted per thousand inhabitants"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, Portugal, em ",
+        {
+          "periodo": "der-hab-licencas-por-mil-pt-2025"
+        },
+        "."
+      ],
+      "en": [
+        "; here, Portugal, in ",
+        {
+          "periodo": "der-hab-licencas-por-mil-pt-2025"
+        },
+        "."
+      ]
+    }
+  },
+  "der-hab-preco-lisboa-vs-portugal": {
+    "nome": {
+      "pt": "Preço mediano em Lisboa em relação ao país",
+      "en": "Median price in Lisbon relative to the country"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é quantas vezes o preço mediano das vendas em Lisboa é o do país"
+      ],
+      "en": [
+        "The result is how many times the median sale price in Lisbon is that of the country"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " no ",
+        {
+          "periodo": "der-hab-preco-lisboa-vs-portugal"
+        },
+        "."
+      ],
+      "en": [
+        " in the ",
+        {
+          "periodo": "der-hab-preco-lisboa-vs-portugal"
+        },
+        "."
+      ]
+    }
+  },
+  "der-hab-preco-rendimento-acima-2015-eu-2024": {
+    "nome": {
+      "pt": "Aumento dos preços face ao rendimento desde o ano base",
+      "en": "Increase in prices relative to income since the base year"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é quanto o rácio preço-rendimento está acima do valor do ano base, em pontos do índice, que é a subida em percentagem desde esse ano"
+      ],
+      "en": [
+        "The result is how far the price-to-income ratio is above its base-year value, in index points, which is the rise in percent since that year"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "der-hab-preco-rendimento-acima-2015-eu-2024"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "der-hab-preco-rendimento-acima-2015-eu-2024"
+        },
+        "."
+      ]
+    }
+  },
+  "der-hab-preco-rendimento-acima-2015-pt-2024": {
+    "nome": {
+      "pt": "Aumento dos preços face ao rendimento desde o ano base",
+      "en": "Increase in prices relative to income since the base year"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é quanto o rácio preço-rendimento está acima do valor do ano base, em pontos do índice, que é a subida em percentagem desde esse ano"
+      ],
+      "en": [
+        "The result is how far the price-to-income ratio is above its base-year value, in index points, which is the rise in percent since that year"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "der-hab-preco-rendimento-acima-2015-pt-2024"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "der-hab-preco-rendimento-acima-2015-pt-2024"
+        },
+        "."
+      ]
+    }
+  },
+  "der-hab-preco-rendimento-lt-eu-2024": {
+    "nome": {
+      "pt": "Distância do rácio preço-rendimento à média de longo prazo",
+      "en": "Distance of the price-to-income ratio from the long-term average"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é a distância, em pontos do índice, entre o rácio preço-rendimento e a sua média de longo prazo, positiva quando o rácio está acima dela"
+      ],
+      "en": [
+        "The result is the distance, in index points, between the price-to-income ratio and its long-term average, positive when the ratio is above it"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "der-hab-preco-rendimento-lt-eu-2024"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "der-hab-preco-rendimento-lt-eu-2024"
+        },
+        "."
+      ]
+    }
+  },
+  "der-hab-preco-rendimento-lt-pt-2024": {
+    "nome": {
+      "pt": "Distância do rácio preço-rendimento à média de longo prazo",
+      "en": "Distance of the price-to-income ratio from the long-term average"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é a distância, em pontos do índice, entre o rácio preço-rendimento e a sua média de longo prazo, positiva quando o rácio está acima dela"
+      ],
+      "en": [
+        "The result is the distance, in index points, between the price-to-income ratio and its long-term average, positive when the ratio is above it"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "der-hab-preco-rendimento-lt-pt-2024"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "der-hab-preco-rendimento-lt-pt-2024"
+        },
+        "."
+      ]
+    }
+  },
+  "der-hab-preco-rendimento-pt-vs-eu-2024": {
+    "nome": {
+      "pt": "Diferença face à União no índice preço-rendimento",
+      "en": "Gap from the Union in the price-to-income index"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é a diferença, em pontos do índice, entre Portugal e a União no índice do rácio preço-rendimento"
+      ],
+      "en": [
+        "The result is the gap, in index points, between Portugal and the Union in the price-to-income ratio index"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "der-hab-preco-rendimento-pt-vs-eu-2024"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "der-hab-preco-rendimento-pt-vs-eu-2024"
+        },
+        "."
+      ]
+    }
+  },
+  "der-hab-precos-reais-pt-vs-eu-2025": {
+    "nome": {
+      "pt": "Diferença face à União no índice dos preços reais",
+      "en": "Gap from the Union in the real price index"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é a diferença, em pontos do índice, entre Portugal e a União no índice dos preços das casas descontada a inflação"
+      ],
+      "en": [
+        "The result is the gap, in index points, between Portugal and the Union in the index of house prices net of inflation"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "der-hab-precos-reais-pt-vs-eu-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "der-hab-precos-reais-pt-vs-eu-2025"
+        },
+        "."
+      ]
+    }
+  },
+  "der-hab-proprietarios-eu-2025": {
+    "nome": {
+      "pt": "População em casa própria, União Europeia",
+      "en": "Population in owner-occupied homes, European Union"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é a parte da população que vive em casa própria, com ou sem empréstimo"
+      ],
+      "en": [
+        "The result is the share of the population living in an owner-occupied home, with or without a loan"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, União Europeia, em ",
+        {
+          "periodo": "der-hab-proprietarios-eu-2025"
+        },
+        "."
+      ],
+      "en": [
+        "; here, European Union, in ",
+        {
+          "periodo": "der-hab-proprietarios-eu-2025"
+        },
+        "."
+      ]
+    }
+  },
+  "der-hab-proprietarios-pt-2025": {
+    "nome": {
+      "pt": "População em casa própria, Portugal",
+      "en": "Population in owner-occupied homes, Portugal"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é a parte da população que vive em casa própria, com ou sem empréstimo"
+      ],
+      "en": [
+        "The result is the share of the population living in an owner-occupied home, with or without a loan"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, Portugal, em ",
+        {
+          "periodo": "der-hab-proprietarios-pt-2025"
+        },
+        "."
+      ],
+      "en": [
+        "; here, Portugal, in ",
+        {
+          "periodo": "der-hab-proprietarios-pt-2025"
+        },
+        "."
+      ]
+    }
+  },
+  "der-hab-renda-lisboa-vs-portugal": {
+    "nome": {
+      "pt": "Renda mediana em Lisboa em relação ao país",
+      "en": "Median rent in Lisbon relative to the country"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é quantas vezes a renda mediana dos novos contratos em Lisboa é a do país"
+      ],
+      "en": [
+        "The result is how many times the median rent of new contracts in Lisbon is that of the country"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " no ",
+        {
+          "periodo": "der-hab-renda-lisboa-vs-portugal"
+        },
+        "."
+      ],
+      "en": [
+        " in the ",
+        {
+          "periodo": "der-hab-renda-lisboa-vs-portugal"
+        },
+        "."
+      ]
+    }
+  },
+  "der-hab-saida-pt-vs-eu-2025": {
+    "nome": {
+      "pt": "Diferença face à União na idade de saída de casa dos pais",
+      "en": "Gap from the Union in the age of leaving the parental home"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é a diferença, em anos, entre Portugal e a União na idade média de saída de casa dos pais"
+      ],
+      "en": [
+        "The result is the gap, in years, between Portugal and the Union in the average age of leaving the parental home"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "der-hab-saida-pt-vs-eu-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "der-hab-saida-pt-vs-eu-2025"
+        },
+        "."
+      ]
+    }
+  },
+  "der-hab-sobrecarga-inquilinos-pt-2020-2025": {
+    "nome": {
+      "pt": "Variação da sobrecarga dos inquilinos em Portugal desde o início da década",
+      "en": "Change in tenant overburden in Portugal since the start of the decade"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é quanto mudou, em pontos percentuais, a parte dos inquilinos a preços de mercado em sobrecarga em Portugal"
+      ],
+      "en": [
+        "The result is how much the share of tenants at market rents in overburden changed in Portugal, in percentage points"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "der-hab-sobrecarga-inquilinos-pt-2020-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "der-hab-sobrecarga-inquilinos-pt-2020-2025"
+        },
+        "."
+      ]
+    }
+  },
+  "der-hab-sobrecarga-inquilinos-pt-vs-eu-2025": {
+    "nome": {
+      "pt": "Diferença face à União na sobrecarga dos inquilinos",
+      "en": "Gap from the Union in tenant overburden"
+    },
+    "frase": {
+      "pt": [
+        "O resultado é a diferença, em pontos percentuais, entre Portugal e a União na parte dos inquilinos a preços de mercado em sobrecarga"
+      ],
+      "en": [
+        "The result is the gap, in percentage points, between Portugal and the Union in the share of tenants at market rents in overburden"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "der-hab-sobrecarga-inquilinos-pt-vs-eu-2025"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "der-hab-sobrecarga-inquilinos-pt-vs-eu-2025"
+        },
+        "."
+      ]
+    }
+  },
+  "hab-arrendamento-exposicao": {
+    "nome": {
+      "pt": "Exposição de motivos da reforma do arrendamento",
+      "en": "Explanatory memorandum of rental reform"
+    },
+    "frase": {
+      "pt": [
+        "O excerto reproduz o documento indicado sobre exposição de motivos da reforma do arrendamento."
+      ],
+      "en": [
+        "The excerpt reproduces the indicated document about explanatory memorandum of rental reform."
+      ]
+    }
+  },
+  "hab-arrendamento-exposicao-vagos": {
+    "nome": {
+      "pt": "Estimativa do Governo de alojamentos vagos em boas condições",
+      "en": "Government estimate of vacant dwellings in good condition"
+    },
+    "frase": {
+      "pt": [
+        "O excerto reproduz o documento indicado sobre estimativa do Governo de alojamentos vagos em boas condições."
+      ],
+      "en": [
+        "The excerpt reproduces the indicated document about government estimate of vacant dwellings in good condition."
+      ]
+    }
+  },
+  "hab-be-despejos": {
+    "nome": {
+      "pt": "Afirmação do Bloco sobre os despejos",
+      "en": "Left Bloc statement on evictions"
+    },
+    "frase": {
+      "pt": [
+        "O excerto reproduz o documento indicado sobre afirmação do Bloco sobre os despejos."
+      ],
+      "en": [
+        "The excerpt reproduces the indicated document about left Bloc statement on evictions."
+      ]
+    }
+  },
+  "hab-bpstat-12533724": {
+    "nome": {
+      "pt": "Novas operações de crédito à habitação",
+      "en": "New housing loans"
+    },
+    "frase": {
+      "pt": [
+        "O montante das novas operações de empréstimos à habitação, incluindo as renegociações, concedidos pelos bancos (outras instituições financeiras monetárias) aos particulares (famílias e instituições sem fim lucrativo ao serviço das famílias) residentes na área do euro e aos emigrantes portugueses fora dela, em valores mensais em milhões de euros"
+      ],
+      "en": [
+        "The amount of new housing loans, including renegotiations, granted by banks (other monetary financial institutions) to individuals (households and non-profit institutions serving households) resident in the euro area and to Portuguese emigrants outside it, as monthly values in million euros"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, no mês que termina a ",
+        {
+          "periodo": "hab-bpstat-12533724"
+        },
+        "."
+      ],
+      "en": [
+        "; here, in the month ending on ",
+        {
+          "periodo": "hab-bpstat-12533724"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1e-bpstat-12533724"
+    ]
+  },
+  "hab-bpstat-12533735": {
+    "nome": {
+      "pt": "Taxa de juro das novas operações de crédito à habitação",
+      "en": "Interest rate on new housing loans"
+    },
+    "frase": {
+      "pt": [
+        "A taxa de juro acordada anualizada das novas operações de empréstimos à habitação, incluindo as renegociações, concedidos pelos bancos (outras instituições financeiras monetárias) aos particulares (famílias e instituições sem fim lucrativo ao serviço das famílias) residentes na área do euro e aos emigrantes portugueses fora dela, em taxa mensal em percentagem"
+      ],
+      "en": [
+        "The annualised agreed interest rate on new housing loans, including renegotiations, granted by banks (other monetary financial institutions) to individuals (households and non-profit institutions serving households) resident in the euro area and to Portuguese emigrants outside it, as a monthly rate in percent"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, no mês que termina a ",
+        {
+          "periodo": "hab-bpstat-12533735"
+        },
+        "."
+      ],
+      "en": [
+        "; here, in the month ending on ",
+        {
+          "periodo": "hab-bpstat-12533735"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1e-bpstat-12533735"
+    ]
+  },
+  "hab-bpstat-12557378": {
+    "nome": {
+      "pt": "Crédito à habitação das famílias em dívida",
+      "en": "Outstanding household housing loans"
+    },
+    "frase": {
+      "pt": [
+        "Os empréstimos à habitação das outras instituições financeiras monetárias a famílias e instituições sem fim lucrativo ao serviço das famílias, nos ativos do balanço dessas instituições em dados não consolidados, em posições mensais em milhões de euros pelo valor em fim do período"
+      ],
+      "en": [
+        "Housing loans by other monetary financial institutions to households and non-profit institutions serving households, among the assets on the balance sheet of those institutions as non-consolidated data, as monthly positions in million euros at end-of-period value"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, Portugal, a ",
+        {
+          "periodo": "hab-bpstat-12557378"
+        },
+        "."
+      ],
+      "en": [
+        "; here, Portugal, on ",
+        {
+          "periodo": "hab-bpstat-12557378"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1e-bpstat-12557378"
+    ]
+  },
+  "hab-cens-21dwob-r3-a-dw-total-nr-pt-2021": {
+    "nome": {
+      "pt": "Alojamentos nos Censos, Portugal",
+      "en": "Dwellings in the Census, Portugal"
+    },
+    "frase": {
+      "pt": [
+        "O número de alojamentos familiares clássicos recenseados, os ocupados, que são a residência habitual de uma ou mais pessoas à data dos Censos, e os não ocupados"
+      ],
+      "en": [
+        "The number of conventional dwellings counted, the occupied ones, which are the usual residence of one or more persons at the time of the census, and the unoccupied ones"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, Portugal, em ",
+        {
+          "periodo": "hab-cens-21dwob-r3-a-dw-total-nr-pt-2021"
+        },
+        "."
+      ],
+      "en": [
+        "; here, Portugal, in ",
+        {
+          "periodo": "hab-cens-21dwob-r3-a-dw-total-nr-pt-2021"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-censos-ocupacao"
+    ]
+  },
+  "hab-cgtp-convocatoria": {
+    "nome": {
+      "pt": "Convocatória divulgada pelo sindicato",
+      "en": "Call circulated by the union"
+    },
+    "frase": {
+      "pt": [
+        "O excerto reproduz o documento indicado sobre convocatória divulgada pelo sindicato."
+      ],
+      "en": [
+        "The excerpt reproduces the indicated document about call circulated by the union."
+      ]
+    }
+  },
+  "hab-chega-reinvestimento": {
+    "nome": {
+      "pt": "Proposta do Chega sobre reinvestimento",
+      "en": "Chega proposal on reinvestment"
+    },
+    "frase": {
+      "pt": [
+        "O excerto reproduz o documento indicado sobre proposta do Chega sobre reinvestimento."
+      ],
+      "en": [
+        "The excerpt reproduces the indicated document about chega proposal on reinvestment."
+      ]
+    }
+  },
+  "hab-demo-pjan-eu27_2020-2025": {
+    "nome": {
+      "pt": "População no início do ano, União Europeia",
+      "en": "Population at the start of the year, European Union"
+    },
+    "frase": {
+      "pt": [
+        "O número de pessoas que residem no território a um de janeiro do ano"
+      ],
+      "en": [
+        "The number of people resident in the territory on the first of January of the year"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, União Europeia, em ",
+        {
+          "periodo": "hab-demo-pjan-eu27_2020-2025"
+        },
+        "."
+      ],
+      "en": [
+        "; here, European Union, in ",
+        {
+          "periodo": "hab-demo-pjan-eu27_2020-2025"
+        },
+        "."
+      ]
+    }
+  },
+  "hab-demo-pjan-pt-2025": {
+    "nome": {
+      "pt": "População no início do ano, Portugal",
+      "en": "Population at the start of the year, Portugal"
+    },
+    "frase": {
+      "pt": [
+        "O número de pessoas que residem no território a um de janeiro do ano"
+      ],
+      "en": [
+        "The number of people resident in the territory on the first of January of the year"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, Portugal, em ",
+        {
+          "periodo": "hab-demo-pjan-pt-2025"
+        },
+        "."
+      ],
+      "en": [
+        "; here, Portugal, in ",
+        {
+          "periodo": "hab-demo-pjan-pt-2025"
+        },
+        "."
+      ]
+    }
+  },
+  "hab-dl97-deducao": {
+    "nome": {
+      "pt": "Norma transitória da dedução das rendas",
+      "en": "Transitional rule for the rent deduction"
+    },
+    "frase": {
+      "pt": [
+        "O excerto reproduz o documento indicado sobre norma transitória da dedução das rendas."
+      ],
+      "en": [
+        "The excerpt reproduces the indicated document about transitional rule for the rent deduction."
+      ]
+    }
+  },
+  "hab-dl97-deducao-2027": {
+    "nome": {
+      "pt": "Limite da dedução das rendas",
+      "en": "Limit on the rent deduction"
+    },
+    "frase": {
+      "pt": [
+        "O excerto reproduz o documento indicado sobre limite da dedução das rendas."
+      ],
+      "en": [
+        "The excerpt reproduces the indicated document about limit on the rent deduction."
+      ]
+    }
+  },
+  "hab-dl97-irs": {
+    "nome": {
+      "pt": "Taxa de IRS das rendas",
+      "en": "Income tax rate on rents"
+    },
+    "frase": {
+      "pt": [
+        "O excerto reproduz o documento indicado sobre taxa de IRS das rendas."
+      ],
+      "en": [
+        "The excerpt reproduces the indicated document about income tax rate on rents."
+      ]
+    }
+  },
+  "hab-eurostat-privacao-severa-definicao": {
+    "nome": {
+      "pt": "Definição de privação severa da habitação",
+      "en": "Definition of severe housing deprivation"
+    },
+    "frase": {
+      "pt": [
+        "O excerto reproduz o documento indicado sobre definição de privação severa da habitação."
+      ],
+      "en": [
+        "The excerpt reproduces the indicated document about definition of severe housing deprivation."
+      ]
+    }
+  },
+  "hab-governo-arrendamento": {
+    "nome": {
+      "pt": "Anúncio da reforma do arrendamento",
+      "en": "Announcement of rental reform"
+    },
+    "frase": {
+      "pt": [
+        "O excerto reproduz o documento indicado sobre anúncio da reforma do arrendamento."
+      ],
+      "en": [
+        "The excerpt reproduces the indicated document about announcement of rental reform."
+      ]
+    }
+  },
+  "hab-governo-construir": {
+    "nome": {
+      "pt": "Anúncio dos incentivos à construção",
+      "en": "Announcement of construction incentives"
+    },
+    "frase": {
+      "pt": [
+        "O excerto reproduz o documento indicado sobre anúncio dos incentivos à construção."
+      ],
+      "en": [
+        "The excerpt reproduces the indicated document about announcement of construction incentives."
+      ]
+    }
+  },
+  "hab-governo-feh": {
+    "nome": {
+      "pt": "Anúncio do fundo de emergência para a habitação",
+      "en": "Announcement of the housing emergency fund"
+    },
+    "frase": {
+      "pt": [
+        "O excerto reproduz o documento indicado sobre anúncio do fundo de emergência para a habitação."
+      ],
+      "en": [
+        "The excerpt reproduces the indicated document about announcement of the housing emergency fund."
+      ]
+    }
+  },
+  "hab-il-proposta": {
+    "nome": {
+      "pt": "Proposta da Iniciativa Liberal sobre habitação",
+      "en": "Iniciativa Liberal housing proposal"
+    },
+    "frase": {
+      "pt": [
+        "O excerto reproduz o documento indicado sobre proposta da Iniciativa Liberal sobre habitação."
+      ],
+      "en": [
+        "The excerpt reproduces the indicated document about iniciativa Liberal housing proposal."
+      ]
+    }
+  },
+  "hab-ilc-lvho02-a-total-total-own-l-pc-eu27_2020-2025": {
+    "nome": {
+      "pt": "População por regime de ocupação, proprietários com empréstimo, União Europeia",
+      "en": "Population by tenure status, owners with a loan, European Union"
+    },
+    "frase": {
+      "pt": [
+        "A parte da população que vive neste regime de ocupação da habitação"
+      ],
+      "en": [
+        "The share of the population living under this tenure status"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, proprietários com empréstimo, União Europeia, em ",
+        {
+          "periodo": "hab-ilc-lvho02-a-total-total-own-l-pc-eu27_2020-2025"
+        },
+        "."
+      ],
+      "en": [
+        "; here, owners with a loan, European Union, in ",
+        {
+          "periodo": "hab-ilc-lvho02-a-total-total-own-l-pc-eu27_2020-2025"
+        },
+        "."
+      ]
+    }
+  },
+  "hab-ilc-lvho02-a-total-total-own-l-pc-nl-2025": {
+    "nome": {
+      "pt": "População por regime de ocupação, proprietários com empréstimo, Países Baixos",
+      "en": "Population by tenure status, owners with a loan, Netherlands"
+    },
+    "frase": {
+      "pt": [
+        "A parte da população que vive neste regime de ocupação da habitação"
+      ],
+      "en": [
+        "The share of the population living under this tenure status"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, proprietários com empréstimo, Países Baixos, em ",
+        {
+          "periodo": "hab-ilc-lvho02-a-total-total-own-l-pc-nl-2025"
+        },
+        "."
+      ],
+      "en": [
+        "; here, owners with a loan, Netherlands, in ",
+        {
+          "periodo": "hab-ilc-lvho02-a-total-total-own-l-pc-nl-2025"
+        },
+        "."
+      ]
+    }
+  },
+  "hab-ilc-lvho02-a-total-total-own-l-pc-pt-2020": {
+    "nome": {
+      "pt": "População por regime de ocupação, proprietários com empréstimo, Portugal",
+      "en": "Population by tenure status, owners with a loan, Portugal"
+    },
+    "frase": {
+      "pt": [
+        "A parte da população que vive neste regime de ocupação da habitação"
+      ],
+      "en": [
+        "The share of the population living under this tenure status"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, proprietários com empréstimo, Portugal, em ",
+        {
+          "periodo": "hab-ilc-lvho02-a-total-total-own-l-pc-pt-2020"
+        },
+        "."
+      ],
+      "en": [
+        "; here, owners with a loan, Portugal, in ",
+        {
+          "periodo": "hab-ilc-lvho02-a-total-total-own-l-pc-pt-2020"
+        },
+        "."
+      ]
+    }
+  },
+  "hab-ilc-lvho02-a-total-total-own-l-pc-pt-2025": {
+    "nome": {
+      "pt": "População por regime de ocupação, proprietários com empréstimo, Portugal",
+      "en": "Population by tenure status, owners with a loan, Portugal"
+    },
+    "frase": {
+      "pt": [
+        "A parte da população que vive neste regime de ocupação da habitação"
+      ],
+      "en": [
+        "The share of the population living under this tenure status"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, proprietários com empréstimo, Portugal, em ",
+        {
+          "periodo": "hab-ilc-lvho02-a-total-total-own-l-pc-pt-2025"
+        },
+        "."
+      ],
+      "en": [
+        "; here, owners with a loan, Portugal, in ",
+        {
+          "periodo": "hab-ilc-lvho02-a-total-total-own-l-pc-pt-2025"
+        },
+        "."
+      ]
+    }
+  },
+  "hab-ilc-lvho02-a-total-total-own-l-pc-ro-2025": {
+    "nome": {
+      "pt": "População por regime de ocupação, proprietários com empréstimo, Roménia",
+      "en": "Population by tenure status, owners with a loan, Romania"
+    },
+    "frase": {
+      "pt": [
+        "A parte da população que vive neste regime de ocupação da habitação"
+      ],
+      "en": [
+        "The share of the population living under this tenure status"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, proprietários com empréstimo, Roménia, em ",
+        {
+          "periodo": "hab-ilc-lvho02-a-total-total-own-l-pc-ro-2025"
+        },
+        "."
+      ],
+      "en": [
+        "; here, owners with a loan, Romania, in ",
+        {
+          "periodo": "hab-ilc-lvho02-a-total-total-own-l-pc-ro-2025"
+        },
+        "."
+      ]
+    }
+  },
+  "hab-ilc-lvho02-a-total-total-own-nl-pc-eu27_2020-2025": {
+    "nome": {
+      "pt": "População por regime de ocupação, proprietários sem empréstimo, União Europeia",
+      "en": "Population by tenure status, owners without a loan, European Union"
+    },
+    "frase": {
+      "pt": [
+        "A parte da população que vive neste regime de ocupação da habitação"
+      ],
+      "en": [
+        "The share of the population living under this tenure status"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, proprietários sem empréstimo, União Europeia, em ",
+        {
+          "periodo": "hab-ilc-lvho02-a-total-total-own-nl-pc-eu27_2020-2025"
+        },
+        "."
+      ],
+      "en": [
+        "; here, owners without a loan, European Union, in ",
+        {
+          "periodo": "hab-ilc-lvho02-a-total-total-own-nl-pc-eu27_2020-2025"
+        },
+        "."
+      ]
+    }
+  },
+  "hab-ilc-lvho02-a-total-total-own-nl-pc-pt-2025": {
+    "nome": {
+      "pt": "População por regime de ocupação, proprietários sem empréstimo, Portugal",
+      "en": "Population by tenure status, owners without a loan, Portugal"
+    },
+    "frase": {
+      "pt": [
+        "A parte da população que vive neste regime de ocupação da habitação"
+      ],
+      "en": [
+        "The share of the population living under this tenure status"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, proprietários sem empréstimo, Portugal, em ",
+        {
+          "periodo": "hab-ilc-lvho02-a-total-total-own-nl-pc-pt-2025"
+        },
+        "."
+      ],
+      "en": [
+        "; here, owners without a loan, Portugal, in ",
+        {
+          "periodo": "hab-ilc-lvho02-a-total-total-own-nl-pc-pt-2025"
+        },
+        "."
+      ]
+    }
+  },
+  "hab-ilc-lvho02-a-total-total-rent-fr-pc-eu27_2020-2025": {
+    "nome": {
+      "pt": "População por regime de ocupação, inquilinos a renda reduzida ou gratuita, União Europeia",
+      "en": "Population by tenure status, tenants at reduced or free rent, European Union"
+    },
+    "frase": {
+      "pt": [
+        "A parte da população que vive neste regime de ocupação da habitação"
+      ],
+      "en": [
+        "The share of the population living under this tenure status"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, inquilinos a renda reduzida ou gratuita, União Europeia, em ",
+        {
+          "periodo": "hab-ilc-lvho02-a-total-total-rent-fr-pc-eu27_2020-2025"
+        },
+        "."
+      ],
+      "en": [
+        "; here, tenants at reduced or free rent, European Union, in ",
+        {
+          "periodo": "hab-ilc-lvho02-a-total-total-rent-fr-pc-eu27_2020-2025"
+        },
+        "."
+      ]
+    }
+  },
+  "hab-ilc-lvho02-a-total-total-rent-fr-pc-pt-2025": {
+    "nome": {
+      "pt": "População por regime de ocupação, inquilinos a renda reduzida ou gratuita, Portugal",
+      "en": "Population by tenure status, tenants at reduced or free rent, Portugal"
+    },
+    "frase": {
+      "pt": [
+        "A parte da população que vive neste regime de ocupação da habitação"
+      ],
+      "en": [
+        "The share of the population living under this tenure status"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, inquilinos a renda reduzida ou gratuita, Portugal, em ",
+        {
+          "periodo": "hab-ilc-lvho02-a-total-total-rent-fr-pc-pt-2025"
+        },
+        "."
+      ],
+      "en": [
+        "; here, tenants at reduced or free rent, Portugal, in ",
+        {
+          "periodo": "hab-ilc-lvho02-a-total-total-rent-fr-pc-pt-2025"
+        },
+        "."
+      ]
+    }
+  },
+  "hab-ilc-lvho02-a-total-total-rent-mkt-pc-de-2025": {
+    "nome": {
+      "pt": "População por regime de ocupação, inquilinos a preços de mercado, Alemanha",
+      "en": "Population by tenure status, tenants at market rents, Germany"
+    },
+    "frase": {
+      "pt": [
+        "A parte da população que vive neste regime de ocupação da habitação"
+      ],
+      "en": [
+        "The share of the population living under this tenure status"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, inquilinos a preços de mercado, Alemanha, em ",
+        {
+          "periodo": "hab-ilc-lvho02-a-total-total-rent-mkt-pc-de-2025"
+        },
+        "."
+      ],
+      "en": [
+        "; here, tenants at market rents, Germany, in ",
+        {
+          "periodo": "hab-ilc-lvho02-a-total-total-rent-mkt-pc-de-2025"
+        },
+        "."
+      ]
+    }
+  },
+  "hab-ilc-lvho02-a-total-total-rent-mkt-pc-eu27_2020-2025": {
+    "nome": {
+      "pt": "População por regime de ocupação, inquilinos a preços de mercado, União Europeia",
+      "en": "Population by tenure status, tenants at market rents, European Union"
+    },
+    "frase": {
+      "pt": [
+        "A parte da população que vive neste regime de ocupação da habitação"
+      ],
+      "en": [
+        "The share of the population living under this tenure status"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, inquilinos a preços de mercado, União Europeia, em ",
+        {
+          "periodo": "hab-ilc-lvho02-a-total-total-rent-mkt-pc-eu27_2020-2025"
+        },
+        "."
+      ],
+      "en": [
+        "; here, tenants at market rents, European Union, in ",
+        {
+          "periodo": "hab-ilc-lvho02-a-total-total-rent-mkt-pc-eu27_2020-2025"
+        },
+        "."
+      ]
+    }
+  },
+  "hab-ilc-lvho02-a-total-total-rent-mkt-pc-pt-2020": {
+    "nome": {
+      "pt": "População por regime de ocupação, inquilinos a preços de mercado, Portugal",
+      "en": "Population by tenure status, tenants at market rents, Portugal"
+    },
+    "frase": {
+      "pt": [
+        "A parte da população que vive neste regime de ocupação da habitação"
+      ],
+      "en": [
+        "The share of the population living under this tenure status"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, inquilinos a preços de mercado, Portugal, em ",
+        {
+          "periodo": "hab-ilc-lvho02-a-total-total-rent-mkt-pc-pt-2020"
+        },
+        "."
+      ],
+      "en": [
+        "; here, tenants at market rents, Portugal, in ",
+        {
+          "periodo": "hab-ilc-lvho02-a-total-total-rent-mkt-pc-pt-2020"
+        },
+        "."
+      ]
+    }
+  },
+  "hab-ilc-lvho02-a-total-total-rent-mkt-pc-pt-2025": {
+    "nome": {
+      "pt": "População por regime de ocupação, inquilinos a preços de mercado, Portugal",
+      "en": "Population by tenure status, tenants at market rents, Portugal"
+    },
+    "frase": {
+      "pt": [
+        "A parte da população que vive neste regime de ocupação da habitação"
+      ],
+      "en": [
+        "The share of the population living under this tenure status"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, inquilinos a preços de mercado, Portugal, em ",
+        {
+          "periodo": "hab-ilc-lvho02-a-total-total-rent-mkt-pc-pt-2025"
+        },
+        "."
+      ],
+      "en": [
+        "; here, tenants at market rents, Portugal, in ",
+        {
+          "periodo": "hab-ilc-lvho02-a-total-total-rent-mkt-pc-pt-2025"
+        },
+        "."
+      ]
+    }
+  },
+  "hab-ilc-lvho05a-a-pc-total-total-t-cy-2025": {
+    "nome": {
+      "pt": "População em habitações sobrelotadas, Chipre",
+      "en": "Population in overcrowded homes, Cyprus"
+    },
+    "frase": {
+      "pt": [
+        "A taxa de sobrelotação é a parte da população que vive num agregado sobrelotado, que não tem o número mínimo de divisões que o Eurostat fixa para a sua composição"
+      ],
+      "en": [
+        "The overcrowding rate is the share of the population living in an overcrowded household, one without the minimum number of rooms Eurostat sets for its composition"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, Chipre, em ",
+        {
+          "periodo": "hab-ilc-lvho05a-a-pc-total-total-t-cy-2025"
+        },
+        "."
+      ],
+      "en": [
+        "; here, Cyprus, in ",
+        {
+          "periodo": "hab-ilc-lvho05a-a-pc-total-total-t-cy-2025"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-sobrelotacao"
+    ]
+  },
+  "hab-ilc-lvho05a-a-pc-total-total-t-eu27_2020-2025": {
+    "nome": {
+      "pt": "População em habitações sobrelotadas, União Europeia",
+      "en": "Population in overcrowded homes, European Union"
+    },
+    "frase": {
+      "pt": [
+        "A taxa de sobrelotação é a parte da população que vive num agregado sobrelotado, que não tem o número mínimo de divisões que o Eurostat fixa para a sua composição"
+      ],
+      "en": [
+        "The overcrowding rate is the share of the population living in an overcrowded household, one without the minimum number of rooms Eurostat sets for its composition"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, União Europeia, em ",
+        {
+          "periodo": "hab-ilc-lvho05a-a-pc-total-total-t-eu27_2020-2025"
+        },
+        "."
+      ],
+      "en": [
+        "; here, European Union, in ",
+        {
+          "periodo": "hab-ilc-lvho05a-a-pc-total-total-t-eu27_2020-2025"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-sobrelotacao"
+    ]
+  },
+  "hab-ilc-lvho05a-a-pc-total-total-t-pt-2025": {
+    "nome": {
+      "pt": "População em habitações sobrelotadas, Portugal",
+      "en": "Population in overcrowded homes, Portugal"
+    },
+    "frase": {
+      "pt": [
+        "A taxa de sobrelotação é a parte da população que vive num agregado sobrelotado, que não tem o número mínimo de divisões que o Eurostat fixa para a sua composição"
+      ],
+      "en": [
+        "The overcrowding rate is the share of the population living in an overcrowded household, one without the minimum number of rooms Eurostat sets for its composition"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, Portugal, em ",
+        {
+          "periodo": "hab-ilc-lvho05a-a-pc-total-total-t-pt-2025"
+        },
+        "."
+      ],
+      "en": [
+        "; here, Portugal, in ",
+        {
+          "periodo": "hab-ilc-lvho05a-a-pc-total-total-t-pt-2025"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-sobrelotacao"
+    ]
+  },
+  "hab-ilc-lvho05a-a-pc-total-total-t-ro-2025": {
+    "nome": {
+      "pt": "População em habitações sobrelotadas, Roménia",
+      "en": "Population in overcrowded homes, Romania"
+    },
+    "frase": {
+      "pt": [
+        "A taxa de sobrelotação é a parte da população que vive num agregado sobrelotado, que não tem o número mínimo de divisões que o Eurostat fixa para a sua composição"
+      ],
+      "en": [
+        "The overcrowding rate is the share of the population living in an overcrowded household, one without the minimum number of rooms Eurostat sets for its composition"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, Roménia, em ",
+        {
+          "periodo": "hab-ilc-lvho05a-a-pc-total-total-t-ro-2025"
+        },
+        "."
+      ],
+      "en": [
+        "; here, Romania, in ",
+        {
+          "periodo": "hab-ilc-lvho05a-a-pc-total-total-t-ro-2025"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-sobrelotacao"
+    ]
+  },
+  "hab-ilc-lvho05a-a-pc-total-y16-29-t-eu27_2020-2025": {
+    "nome": {
+      "pt": "População em habitações sobrelotadas, dos dezasseis aos vinte e nove anos, União Europeia",
+      "en": "Population in overcrowded homes, aged sixteen to twenty-nine, European Union"
+    },
+    "frase": {
+      "pt": [
+        "A taxa de sobrelotação é a parte da população que vive num agregado sobrelotado, que não tem o número mínimo de divisões que o Eurostat fixa para a sua composição"
+      ],
+      "en": [
+        "The overcrowding rate is the share of the population living in an overcrowded household, one without the minimum number of rooms Eurostat sets for its composition"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, dos dezasseis aos vinte e nove anos, União Europeia, em ",
+        {
+          "periodo": "hab-ilc-lvho05a-a-pc-total-y16-29-t-eu27_2020-2025"
+        },
+        "."
+      ],
+      "en": [
+        "; here, aged sixteen to twenty-nine, European Union, in ",
+        {
+          "periodo": "hab-ilc-lvho05a-a-pc-total-y16-29-t-eu27_2020-2025"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-sobrelotacao"
+    ]
+  },
+  "hab-ilc-lvho05a-a-pc-total-y16-29-t-pt-2025": {
+    "nome": {
+      "pt": "População em habitações sobrelotadas, dos dezasseis aos vinte e nove anos, Portugal",
+      "en": "Population in overcrowded homes, aged sixteen to twenty-nine, Portugal"
+    },
+    "frase": {
+      "pt": [
+        "A taxa de sobrelotação é a parte da população que vive num agregado sobrelotado, que não tem o número mínimo de divisões que o Eurostat fixa para a sua composição"
+      ],
+      "en": [
+        "The overcrowding rate is the share of the population living in an overcrowded household, one without the minimum number of rooms Eurostat sets for its composition"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, dos dezasseis aos vinte e nove anos, Portugal, em ",
+        {
+          "periodo": "hab-ilc-lvho05a-a-pc-total-y16-29-t-pt-2025"
+        },
+        "."
+      ],
+      "en": [
+        "; here, aged sixteen to twenty-nine, Portugal, in ",
+        {
+          "periodo": "hab-ilc-lvho05a-a-pc-total-y16-29-t-pt-2025"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-sobrelotacao"
+    ]
+  },
+  "hab-ilc-lvho07a-a-pc-total-y16-29-t-el-2025": {
+    "nome": {
+      "pt": "Sobrecarga do custo da habitação, dos dezasseis aos vinte e nove anos, Grécia",
+      "en": "Housing cost overburden, aged sixteen to twenty-nine, Greece"
+    },
+    "frase": {
+      "pt": [
+        "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios à habitação, passa de quarenta por cento do rendimento disponível, também descontados esses subsídios"
+      ],
+      "en": [
+        "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income, also net of housing allowances"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, dos dezasseis aos vinte e nove anos, Grécia, em ",
+        {
+          "periodo": "hab-ilc-lvho07a-a-pc-total-y16-29-t-el-2025"
+        },
+        "."
+      ],
+      "en": [
+        "; here, aged sixteen to twenty-nine, Greece, in ",
+        {
+          "periodo": "hab-ilc-lvho07a-a-pc-total-y16-29-t-el-2025"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-sobrecarga"
+    ]
+  },
+  "hab-ilc-lvho07a-a-pc-total-y16-29-t-eu27_2020-2025": {
+    "nome": {
+      "pt": "Sobrecarga do custo da habitação, dos dezasseis aos vinte e nove anos, União Europeia",
+      "en": "Housing cost overburden, aged sixteen to twenty-nine, European Union"
+    },
+    "frase": {
+      "pt": [
+        "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios à habitação, passa de quarenta por cento do rendimento disponível, também descontados esses subsídios"
+      ],
+      "en": [
+        "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income, also net of housing allowances"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, dos dezasseis aos vinte e nove anos, União Europeia, em ",
+        {
+          "periodo": "hab-ilc-lvho07a-a-pc-total-y16-29-t-eu27_2020-2025"
+        },
+        "."
+      ],
+      "en": [
+        "; here, aged sixteen to twenty-nine, European Union, in ",
+        {
+          "periodo": "hab-ilc-lvho07a-a-pc-total-y16-29-t-eu27_2020-2025"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-sobrecarga"
+    ]
+  },
+  "hab-ilc-lvho07a-a-pc-total-y16-29-t-pt-2025": {
+    "nome": {
+      "pt": "Sobrecarga do custo da habitação, dos dezasseis aos vinte e nove anos, Portugal",
+      "en": "Housing cost overburden, aged sixteen to twenty-nine, Portugal"
+    },
+    "frase": {
+      "pt": [
+        "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios à habitação, passa de quarenta por cento do rendimento disponível, também descontados esses subsídios"
+      ],
+      "en": [
+        "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income, also net of housing allowances"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, dos dezasseis aos vinte e nove anos, Portugal, em ",
+        {
+          "periodo": "hab-ilc-lvho07a-a-pc-total-y16-29-t-pt-2025"
+        },
+        "."
+      ],
+      "en": [
+        "; here, aged sixteen to twenty-nine, Portugal, in ",
+        {
+          "periodo": "hab-ilc-lvho07a-a-pc-total-y16-29-t-pt-2025"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-sobrecarga"
+    ]
+  },
+  "hab-ilc-lvho07c-a-pc-own-l-eu27_2020-2025": {
+    "nome": {
+      "pt": "Sobrecarga do custo da habitação, proprietários com empréstimo, União Europeia",
+      "en": "Housing cost overburden, owners with a loan, European Union"
+    },
+    "frase": {
+      "pt": [
+        "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios à habitação, passa de quarenta por cento do rendimento disponível, também descontados esses subsídios"
+      ],
+      "en": [
+        "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income, also net of housing allowances"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, proprietários com empréstimo, União Europeia, em ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-own-l-eu27_2020-2025"
+        },
+        "."
+      ],
+      "en": [
+        "; here, owners with a loan, European Union, in ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-own-l-eu27_2020-2025"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-sobrecarga"
+    ]
+  },
+  "hab-ilc-lvho07c-a-pc-own-l-pt-2025": {
+    "nome": {
+      "pt": "Sobrecarga do custo da habitação, proprietários com empréstimo, Portugal",
+      "en": "Housing cost overburden, owners with a loan, Portugal"
+    },
+    "frase": {
+      "pt": [
+        "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios à habitação, passa de quarenta por cento do rendimento disponível, também descontados esses subsídios"
+      ],
+      "en": [
+        "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income, also net of housing allowances"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, proprietários com empréstimo, Portugal, em ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-own-l-pt-2025"
+        },
+        "."
+      ],
+      "en": [
+        "; here, owners with a loan, Portugal, in ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-own-l-pt-2025"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-sobrecarga"
+    ]
+  },
+  "hab-ilc-lvho07c-a-pc-own-nl-eu27_2020-2025": {
+    "nome": {
+      "pt": "Sobrecarga do custo da habitação, proprietários sem empréstimo, União Europeia",
+      "en": "Housing cost overburden, owners without a loan, European Union"
+    },
+    "frase": {
+      "pt": [
+        "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios à habitação, passa de quarenta por cento do rendimento disponível, também descontados esses subsídios"
+      ],
+      "en": [
+        "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income, also net of housing allowances"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, proprietários sem empréstimo, União Europeia, em ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-own-nl-eu27_2020-2025"
+        },
+        "."
+      ],
+      "en": [
+        "; here, owners without a loan, European Union, in ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-own-nl-eu27_2020-2025"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-sobrecarga"
+    ]
+  },
+  "hab-ilc-lvho07c-a-pc-own-nl-pt-2025": {
+    "nome": {
+      "pt": "Sobrecarga do custo da habitação, proprietários sem empréstimo, Portugal",
+      "en": "Housing cost overburden, owners without a loan, Portugal"
+    },
+    "frase": {
+      "pt": [
+        "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios à habitação, passa de quarenta por cento do rendimento disponível, também descontados esses subsídios"
+      ],
+      "en": [
+        "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income, also net of housing allowances"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, proprietários sem empréstimo, Portugal, em ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-own-nl-pt-2025"
+        },
+        "."
+      ],
+      "en": [
+        "; here, owners without a loan, Portugal, in ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-own-nl-pt-2025"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-sobrecarga"
+    ]
+  },
+  "hab-ilc-lvho07c-a-pc-rent-fr-eu27_2020-2025": {
+    "nome": {
+      "pt": "Sobrecarga do custo da habitação, inquilinos a renda reduzida ou gratuita, União Europeia",
+      "en": "Housing cost overburden, tenants at reduced or free rent, European Union"
+    },
+    "frase": {
+      "pt": [
+        "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios à habitação, passa de quarenta por cento do rendimento disponível, também descontados esses subsídios"
+      ],
+      "en": [
+        "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income, also net of housing allowances"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, inquilinos a renda reduzida ou gratuita, União Europeia, em ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-rent-fr-eu27_2020-2025"
+        },
+        "."
+      ],
+      "en": [
+        "; here, tenants at reduced or free rent, European Union, in ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-rent-fr-eu27_2020-2025"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-sobrecarga"
+    ]
+  },
+  "hab-ilc-lvho07c-a-pc-rent-fr-pt-2025": {
+    "nome": {
+      "pt": "Sobrecarga do custo da habitação, inquilinos a renda reduzida ou gratuita, Portugal",
+      "en": "Housing cost overburden, tenants at reduced or free rent, Portugal"
+    },
+    "frase": {
+      "pt": [
+        "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios à habitação, passa de quarenta por cento do rendimento disponível, também descontados esses subsídios"
+      ],
+      "en": [
+        "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income, also net of housing allowances"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, inquilinos a renda reduzida ou gratuita, Portugal, em ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-rent-fr-pt-2025"
+        },
+        "."
+      ],
+      "en": [
+        "; here, tenants at reduced or free rent, Portugal, in ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-rent-fr-pt-2025"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-sobrecarga"
+    ]
+  },
+  "hab-ilc-lvho07c-a-pc-rent-mkt-eu27_2020-2025": {
+    "nome": {
+      "pt": "Sobrecarga do custo da habitação, inquilinos a preços de mercado, União Europeia",
+      "en": "Housing cost overburden, tenants at market rents, European Union"
+    },
+    "frase": {
+      "pt": [
+        "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios à habitação, passa de quarenta por cento do rendimento disponível, também descontados esses subsídios"
+      ],
+      "en": [
+        "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income, also net of housing allowances"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, inquilinos a preços de mercado, União Europeia, em ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-rent-mkt-eu27_2020-2025"
+        },
+        "."
+      ],
+      "en": [
+        "; here, tenants at market rents, European Union, in ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-rent-mkt-eu27_2020-2025"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-sobrecarga"
+    ]
+  },
+  "hab-ilc-lvho07c-a-pc-rent-mkt-fi-2025": {
+    "nome": {
+      "pt": "Sobrecarga do custo da habitação, inquilinos a preços de mercado, Finlândia",
+      "en": "Housing cost overburden, tenants at market rents, Finland"
+    },
+    "frase": {
+      "pt": [
+        "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios à habitação, passa de quarenta por cento do rendimento disponível, também descontados esses subsídios"
+      ],
+      "en": [
+        "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income, also net of housing allowances"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, inquilinos a preços de mercado, Finlândia, em ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-rent-mkt-fi-2025"
+        },
+        "."
+      ],
+      "en": [
+        "; here, tenants at market rents, Finland, in ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-rent-mkt-fi-2025"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-sobrecarga"
+    ]
+  },
+  "hab-ilc-lvho07c-a-pc-rent-mkt-pt-2015": {
+    "nome": {
+      "pt": "Sobrecarga do custo da habitação, inquilinos a preços de mercado, Portugal",
+      "en": "Housing cost overburden, tenants at market rents, Portugal"
+    },
+    "frase": {
+      "pt": [
+        "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios à habitação, passa de quarenta por cento do rendimento disponível, também descontados esses subsídios"
+      ],
+      "en": [
+        "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income, also net of housing allowances"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, inquilinos a preços de mercado, Portugal, em ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-rent-mkt-pt-2015"
+        },
+        "."
+      ],
+      "en": [
+        "; here, tenants at market rents, Portugal, in ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-rent-mkt-pt-2015"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-sobrecarga"
+    ]
+  },
+  "hab-ilc-lvho07c-a-pc-rent-mkt-pt-2020": {
+    "nome": {
+      "pt": "Sobrecarga do custo da habitação, inquilinos a preços de mercado, Portugal",
+      "en": "Housing cost overburden, tenants at market rents, Portugal"
+    },
+    "frase": {
+      "pt": [
+        "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios à habitação, passa de quarenta por cento do rendimento disponível, também descontados esses subsídios"
+      ],
+      "en": [
+        "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income, also net of housing allowances"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, inquilinos a preços de mercado, Portugal, em ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-rent-mkt-pt-2020"
+        },
+        "."
+      ],
+      "en": [
+        "; here, tenants at market rents, Portugal, in ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-rent-mkt-pt-2020"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-sobrecarga"
+    ]
+  },
+  "hab-ilc-lvho07c-a-pc-rent-mkt-pt-2025": {
+    "nome": {
+      "pt": "Sobrecarga do custo da habitação, inquilinos a preços de mercado, Portugal",
+      "en": "Housing cost overburden, tenants at market rents, Portugal"
+    },
+    "frase": {
+      "pt": [
+        "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios à habitação, passa de quarenta por cento do rendimento disponível, também descontados esses subsídios"
+      ],
+      "en": [
+        "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income, also net of housing allowances"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, inquilinos a preços de mercado, Portugal, em ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-rent-mkt-pt-2025"
+        },
+        "."
+      ],
+      "en": [
+        "; here, tenants at market rents, Portugal, in ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-rent-mkt-pt-2025"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-sobrecarga"
+    ]
+  },
+  "hab-ilc-lvho07c-a-pc-rent-mkt-ro-2025": {
+    "nome": {
+      "pt": "Sobrecarga do custo da habitação, inquilinos a preços de mercado, Roménia",
+      "en": "Housing cost overburden, tenants at market rents, Romania"
+    },
+    "frase": {
+      "pt": [
+        "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios à habitação, passa de quarenta por cento do rendimento disponível, também descontados esses subsídios"
+      ],
+      "en": [
+        "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income, also net of housing allowances"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, inquilinos a preços de mercado, Roménia, em ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-rent-mkt-ro-2025"
+        },
+        "."
+      ],
+      "en": [
+        "; here, tenants at market rents, Romania, in ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-rent-mkt-ro-2025"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-sobrecarga"
+    ]
+  },
+  "hab-ilc-lvho07c-a-pc-total-cy-2025": {
+    "nome": {
+      "pt": "Sobrecarga do custo da habitação, Chipre",
+      "en": "Housing cost overburden, Cyprus"
+    },
+    "frase": {
+      "pt": [
+        "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios à habitação, passa de quarenta por cento do rendimento disponível, também descontados esses subsídios"
+      ],
+      "en": [
+        "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income, also net of housing allowances"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, Chipre, em ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-total-cy-2025"
+        },
+        "."
+      ],
+      "en": [
+        "; here, Cyprus, in ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-total-cy-2025"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-sobrecarga"
+    ]
+  },
+  "hab-ilc-lvho07c-a-pc-total-el-2025": {
+    "nome": {
+      "pt": "Sobrecarga do custo da habitação, Grécia",
+      "en": "Housing cost overburden, Greece"
+    },
+    "frase": {
+      "pt": [
+        "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios à habitação, passa de quarenta por cento do rendimento disponível, também descontados esses subsídios"
+      ],
+      "en": [
+        "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income, also net of housing allowances"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, Grécia, em ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-total-el-2025"
+        },
+        "."
+      ],
+      "en": [
+        "; here, Greece, in ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-total-el-2025"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-sobrecarga"
+    ]
+  },
+  "hab-ilc-lvho07c-a-pc-total-eu27_2020-2015": {
+    "nome": {
+      "pt": "Sobrecarga do custo da habitação, União Europeia",
+      "en": "Housing cost overburden, European Union"
+    },
+    "frase": {
+      "pt": [
+        "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios à habitação, passa de quarenta por cento do rendimento disponível, também descontados esses subsídios"
+      ],
+      "en": [
+        "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income, also net of housing allowances"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, União Europeia, em ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-total-eu27_2020-2015"
+        },
+        "."
+      ],
+      "en": [
+        "; here, European Union, in ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-total-eu27_2020-2015"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-sobrecarga"
+    ]
+  },
+  "hab-ilc-lvho07c-a-pc-total-eu27_2020-2025": {
+    "nome": {
+      "pt": "Sobrecarga do custo da habitação, União Europeia",
+      "en": "Housing cost overburden, European Union"
+    },
+    "frase": {
+      "pt": [
+        "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios à habitação, passa de quarenta por cento do rendimento disponível, também descontados esses subsídios"
+      ],
+      "en": [
+        "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income, also net of housing allowances"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, União Europeia, em ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-total-eu27_2020-2025"
+        },
+        "."
+      ],
+      "en": [
+        "; here, European Union, in ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-total-eu27_2020-2025"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-sobrecarga"
+    ]
+  },
+  "hab-ilc-lvho07c-a-pc-total-pt-2015": {
+    "nome": {
+      "pt": "Sobrecarga do custo da habitação, Portugal",
+      "en": "Housing cost overburden, Portugal"
+    },
+    "frase": {
+      "pt": [
+        "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios à habitação, passa de quarenta por cento do rendimento disponível, também descontados esses subsídios"
+      ],
+      "en": [
+        "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income, also net of housing allowances"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, Portugal, em ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-total-pt-2015"
+        },
+        "."
+      ],
+      "en": [
+        "; here, Portugal, in ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-total-pt-2015"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-sobrecarga"
+    ]
+  },
+  "hab-ilc-lvho07c-a-pc-total-pt-2025": {
+    "nome": {
+      "pt": "Sobrecarga do custo da habitação, Portugal",
+      "en": "Housing cost overburden, Portugal"
+    },
+    "frase": {
+      "pt": [
+        "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios à habitação, passa de quarenta por cento do rendimento disponível, também descontados esses subsídios"
+      ],
+      "en": [
+        "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income, also net of housing allowances"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, Portugal, em ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-total-pt-2025"
+        },
+        "."
+      ],
+      "en": [
+        "; here, Portugal, in ",
+        {
+          "periodo": "hab-ilc-lvho07c-a-pc-total-pt-2025"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-sobrecarga"
+    ]
+  },
+  "hab-ilc-lvps08-a-y18-34-t-pc-eu27_2020-2025": {
+    "nome": {
+      "pt": "Jovens que vivem com os pais ou partilham o rendimento do agregado, dos dezoito aos trinta e quatro anos, União Europeia",
+      "en": "Young people living with parents or sharing household income, aged eighteen to thirty-four, European Union"
+    },
+    "frase": {
+      "pt": [
+        "A parte das pessoas desta idade que vivem com os pais ou contribuem para o rendimento do agregado ou dele beneficiam"
+      ],
+      "en": [
+        "The share of people of this age who live with their parents or contribute to or benefit from the household income"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, dos dezoito aos trinta e quatro anos, União Europeia, em ",
+        {
+          "periodo": "hab-ilc-lvps08-a-y18-34-t-pc-eu27_2020-2025"
+        },
+        "."
+      ],
+      "en": [
+        "; here, aged eighteen to thirty-four, European Union, in ",
+        {
+          "periodo": "hab-ilc-lvps08-a-y18-34-t-pc-eu27_2020-2025"
+        },
+        "."
+      ]
+    }
+  },
+  "hab-ilc-lvps08-a-y18-34-t-pc-pt-2025": {
+    "nome": {
+      "pt": "Jovens que vivem com os pais ou partilham o rendimento do agregado, dos dezoito aos trinta e quatro anos, Portugal",
+      "en": "Young people living with parents or sharing household income, aged eighteen to thirty-four, Portugal"
+    },
+    "frase": {
+      "pt": [
+        "A parte das pessoas desta idade que vivem com os pais ou contribuem para o rendimento do agregado ou dele beneficiam"
+      ],
+      "en": [
+        "The share of people of this age who live with their parents or contribute to or benefit from the household income"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, dos dezoito aos trinta e quatro anos, Portugal, em ",
+        {
+          "periodo": "hab-ilc-lvps08-a-y18-34-t-pc-pt-2025"
+        },
+        "."
+      ],
+      "en": [
+        "; here, aged eighteen to thirty-four, Portugal, in ",
+        {
+          "periodo": "hab-ilc-lvps08-a-y18-34-t-pc-pt-2025"
+        },
+        "."
+      ]
+    }
+  },
+  "hab-ilc-lvps08-a-y25-34-t-pc-dk-2025": {
+    "nome": {
+      "pt": "Jovens que vivem com os pais ou partilham o rendimento do agregado, dos vinte e cinco aos trinta e quatro anos, Dinamarca",
+      "en": "Young people living with parents or sharing household income, aged twenty-five to thirty-four, Denmark"
+    },
+    "frase": {
+      "pt": [
+        "A parte das pessoas desta idade que vivem com os pais ou contribuem para o rendimento do agregado ou dele beneficiam"
+      ],
+      "en": [
+        "The share of people of this age who live with their parents or contribute to or benefit from the household income"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, dos vinte e cinco aos trinta e quatro anos, Dinamarca, em ",
+        {
+          "periodo": "hab-ilc-lvps08-a-y25-34-t-pc-dk-2025"
+        },
+        "."
+      ],
+      "en": [
+        "; here, aged twenty-five to thirty-four, Denmark, in ",
+        {
+          "periodo": "hab-ilc-lvps08-a-y25-34-t-pc-dk-2025"
+        },
+        "."
+      ]
+    }
+  },
+  "hab-ilc-lvps08-a-y25-34-t-pc-eu27_2020-2025": {
+    "nome": {
+      "pt": "Jovens que vivem com os pais ou partilham o rendimento do agregado, dos vinte e cinco aos trinta e quatro anos, União Europeia",
+      "en": "Young people living with parents or sharing household income, aged twenty-five to thirty-four, European Union"
+    },
+    "frase": {
+      "pt": [
+        "A parte das pessoas desta idade que vivem com os pais ou contribuem para o rendimento do agregado ou dele beneficiam"
+      ],
+      "en": [
+        "The share of people of this age who live with their parents or contribute to or benefit from the household income"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, dos vinte e cinco aos trinta e quatro anos, União Europeia, em ",
+        {
+          "periodo": "hab-ilc-lvps08-a-y25-34-t-pc-eu27_2020-2025"
+        },
+        "."
+      ],
+      "en": [
+        "; here, aged twenty-five to thirty-four, European Union, in ",
+        {
+          "periodo": "hab-ilc-lvps08-a-y25-34-t-pc-eu27_2020-2025"
+        },
+        "."
+      ]
+    }
+  },
+  "hab-ilc-lvps08-a-y25-34-t-pc-hr-2025": {
+    "nome": {
+      "pt": "Jovens que vivem com os pais ou partilham o rendimento do agregado, dos vinte e cinco aos trinta e quatro anos, Croácia",
+      "en": "Young people living with parents or sharing household income, aged twenty-five to thirty-four, Croatia"
+    },
+    "frase": {
+      "pt": [
+        "A parte das pessoas desta idade que vivem com os pais ou contribuem para o rendimento do agregado ou dele beneficiam"
+      ],
+      "en": [
+        "The share of people of this age who live with their parents or contribute to or benefit from the household income"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, dos vinte e cinco aos trinta e quatro anos, Croácia, em ",
+        {
+          "periodo": "hab-ilc-lvps08-a-y25-34-t-pc-hr-2025"
+        },
+        "."
+      ],
+      "en": [
+        "; here, aged twenty-five to thirty-four, Croatia, in ",
+        {
+          "periodo": "hab-ilc-lvps08-a-y25-34-t-pc-hr-2025"
+        },
+        "."
+      ]
+    }
+  },
+  "hab-ilc-lvps08-a-y25-34-t-pc-pt-2015": {
+    "nome": {
+      "pt": "Jovens que vivem com os pais ou partilham o rendimento do agregado, dos vinte e cinco aos trinta e quatro anos, Portugal",
+      "en": "Young people living with parents or sharing household income, aged twenty-five to thirty-four, Portugal"
+    },
+    "frase": {
+      "pt": [
+        "A parte das pessoas desta idade que vivem com os pais ou contribuem para o rendimento do agregado ou dele beneficiam"
+      ],
+      "en": [
+        "The share of people of this age who live with their parents or contribute to or benefit from the household income"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, dos vinte e cinco aos trinta e quatro anos, Portugal, em ",
+        {
+          "periodo": "hab-ilc-lvps08-a-y25-34-t-pc-pt-2015"
+        },
+        "."
+      ],
+      "en": [
+        "; here, aged twenty-five to thirty-four, Portugal, in ",
+        {
+          "periodo": "hab-ilc-lvps08-a-y25-34-t-pc-pt-2015"
+        },
+        "."
+      ]
+    }
+  },
+  "hab-ilc-lvps08-a-y25-34-t-pc-pt-2020": {
+    "nome": {
+      "pt": "Jovens que vivem com os pais ou partilham o rendimento do agregado, dos vinte e cinco aos trinta e quatro anos, Portugal",
+      "en": "Young people living with parents or sharing household income, aged twenty-five to thirty-four, Portugal"
+    },
+    "frase": {
+      "pt": [
+        "A parte das pessoas desta idade que vivem com os pais ou contribuem para o rendimento do agregado ou dele beneficiam"
+      ],
+      "en": [
+        "The share of people of this age who live with their parents or contribute to or benefit from the household income"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, dos vinte e cinco aos trinta e quatro anos, Portugal, em ",
+        {
+          "periodo": "hab-ilc-lvps08-a-y25-34-t-pc-pt-2020"
+        },
+        "."
+      ],
+      "en": [
+        "; here, aged twenty-five to thirty-four, Portugal, in ",
+        {
+          "periodo": "hab-ilc-lvps08-a-y25-34-t-pc-pt-2020"
+        },
+        "."
+      ]
+    }
+  },
+  "hab-ilc-lvps08-a-y25-34-t-pc-pt-2025": {
+    "nome": {
+      "pt": "Jovens que vivem com os pais ou partilham o rendimento do agregado, dos vinte e cinco aos trinta e quatro anos, Portugal",
+      "en": "Young people living with parents or sharing household income, aged twenty-five to thirty-four, Portugal"
+    },
+    "frase": {
+      "pt": [
+        "A parte das pessoas desta idade que vivem com os pais ou contribuem para o rendimento do agregado ou dele beneficiam"
+      ],
+      "en": [
+        "The share of people of this age who live with their parents or contribute to or benefit from the household income"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, dos vinte e cinco aos trinta e quatro anos, Portugal, em ",
+        {
+          "periodo": "hab-ilc-lvps08-a-y25-34-t-pc-pt-2025"
+        },
+        "."
+      ],
+      "en": [
+        "; here, aged twenty-five to thirty-four, Portugal, in ",
+        {
+          "periodo": "hab-ilc-lvps08-a-y25-34-t-pc-pt-2025"
+        },
+        "."
+      ]
+    }
+  },
+  "hab-ilc-mded01-a-total-total-pc-cy-2025": {
+    "nome": {
+      "pt": "Parte do rendimento gasta na habitação, Chipre",
+      "en": "Share of income spent on housing, Cyprus"
+    },
+    "frase": {
+      "pt": [
+        "A parte do rendimento disponível do agregado que vai para a despesa com a habitação, que o Eurostat define como os gastos mensais ligados ao direito de viver numa casa"
+      ],
+      "en": [
+        "The share of disposable household income that goes on housing costs, which Eurostat defines as the monthly expenses associated with the right to live in a dwelling"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, Chipre, em ",
+        {
+          "periodo": "hab-ilc-mded01-a-total-total-pc-cy-2025"
+        },
+        "."
+      ],
+      "en": [
+        "; here, Cyprus, in ",
+        {
+          "periodo": "hab-ilc-mded01-a-total-total-pc-cy-2025"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-custos-habitacao"
+    ]
+  },
+  "hab-ilc-mded01-a-total-total-pc-el-2025": {
+    "nome": {
+      "pt": "Parte do rendimento gasta na habitação, Grécia",
+      "en": "Share of income spent on housing, Greece"
+    },
+    "frase": {
+      "pt": [
+        "A parte do rendimento disponível do agregado que vai para a despesa com a habitação, que o Eurostat define como os gastos mensais ligados ao direito de viver numa casa"
+      ],
+      "en": [
+        "The share of disposable household income that goes on housing costs, which Eurostat defines as the monthly expenses associated with the right to live in a dwelling"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, Grécia, em ",
+        {
+          "periodo": "hab-ilc-mded01-a-total-total-pc-el-2025"
+        },
+        "."
+      ],
+      "en": [
+        "; here, Greece, in ",
+        {
+          "periodo": "hab-ilc-mded01-a-total-total-pc-el-2025"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-custos-habitacao"
+    ]
+  },
+  "hab-ilc-mded01-a-total-total-pc-eu27_2020-2025": {
+    "nome": {
+      "pt": "Parte do rendimento gasta na habitação, União Europeia",
+      "en": "Share of income spent on housing, European Union"
+    },
+    "frase": {
+      "pt": [
+        "A parte do rendimento disponível do agregado que vai para a despesa com a habitação, que o Eurostat define como os gastos mensais ligados ao direito de viver numa casa"
+      ],
+      "en": [
+        "The share of disposable household income that goes on housing costs, which Eurostat defines as the monthly expenses associated with the right to live in a dwelling"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, União Europeia, em ",
+        {
+          "periodo": "hab-ilc-mded01-a-total-total-pc-eu27_2020-2025"
+        },
+        "."
+      ],
+      "en": [
+        "; here, European Union, in ",
+        {
+          "periodo": "hab-ilc-mded01-a-total-total-pc-eu27_2020-2025"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-custos-habitacao"
+    ]
+  },
+  "hab-ilc-mded01-a-total-total-pc-pt-2015": {
+    "nome": {
+      "pt": "Parte do rendimento gasta na habitação, Portugal",
+      "en": "Share of income spent on housing, Portugal"
+    },
+    "frase": {
+      "pt": [
+        "A parte do rendimento disponível do agregado que vai para a despesa com a habitação, que o Eurostat define como os gastos mensais ligados ao direito de viver numa casa"
+      ],
+      "en": [
+        "The share of disposable household income that goes on housing costs, which Eurostat defines as the monthly expenses associated with the right to live in a dwelling"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, Portugal, em ",
+        {
+          "periodo": "hab-ilc-mded01-a-total-total-pc-pt-2015"
+        },
+        "."
+      ],
+      "en": [
+        "; here, Portugal, in ",
+        {
+          "periodo": "hab-ilc-mded01-a-total-total-pc-pt-2015"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-custos-habitacao"
+    ]
+  },
+  "hab-ilc-mded01-a-total-total-pc-pt-2025": {
+    "nome": {
+      "pt": "Parte do rendimento gasta na habitação, Portugal",
+      "en": "Share of income spent on housing, Portugal"
+    },
+    "frase": {
+      "pt": [
+        "A parte do rendimento disponível do agregado que vai para a despesa com a habitação, que o Eurostat define como os gastos mensais ligados ao direito de viver numa casa"
+      ],
+      "en": [
+        "The share of disposable household income that goes on housing costs, which Eurostat defines as the monthly expenses associated with the right to live in a dwelling"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, Portugal, em ",
+        {
+          "periodo": "hab-ilc-mded01-a-total-total-pc-pt-2025"
+        },
+        "."
+      ],
+      "en": [
+        "; here, Portugal, in ",
+        {
+          "periodo": "hab-ilc-mded01-a-total-total-pc-pt-2025"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-custos-habitacao"
+    ]
+  },
+  "hab-ilc-mdho06a-a-pc-total-t-total-eu27_2020-2023": {
+    "nome": {
+      "pt": "Privação severa da habitação, União Europeia",
+      "en": "Severe housing deprivation, European Union"
+    },
+    "frase": {
+      "pt": [
+        "A parte da população que vive numa casa sobrelotada e, ao mesmo tempo, com pelo menos um destes problemas: um telhado que mete água, sem banheira ou duche e sem retrete dentro de casa, ou uma casa considerada demasiado escura"
+      ],
+      "en": [
+        "The share of the population living in an overcrowded dwelling that also has at least one of these problems: a leaking roof, no bath or shower and no indoor toilet, or a dwelling considered too dark"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, União Europeia, em ",
+        {
+          "periodo": "hab-ilc-mdho06a-a-pc-total-t-total-eu27_2020-2023"
+        },
+        "."
+      ],
+      "en": [
+        "; here, European Union, in ",
+        {
+          "periodo": "hab-ilc-mdho06a-a-pc-total-t-total-eu27_2020-2023"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-privacao-severa"
+    ]
+  },
+  "hab-ilc-mdho06a-a-pc-total-t-total-lv-2023": {
+    "nome": {
+      "pt": "Privação severa da habitação, Letónia",
+      "en": "Severe housing deprivation, Latvia"
+    },
+    "frase": {
+      "pt": [
+        "A parte da população que vive numa casa sobrelotada e, ao mesmo tempo, com pelo menos um destes problemas: um telhado que mete água, sem banheira ou duche e sem retrete dentro de casa, ou uma casa considerada demasiado escura"
+      ],
+      "en": [
+        "The share of the population living in an overcrowded dwelling that also has at least one of these problems: a leaking roof, no bath or shower and no indoor toilet, or a dwelling considered too dark"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, Letónia, em ",
+        {
+          "periodo": "hab-ilc-mdho06a-a-pc-total-t-total-lv-2023"
+        },
+        "."
+      ],
+      "en": [
+        "; here, Latvia, in ",
+        {
+          "periodo": "hab-ilc-mdho06a-a-pc-total-t-total-lv-2023"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-privacao-severa"
+    ]
+  },
+  "hab-ilc-mdho06a-a-pc-total-t-total-mt-2023": {
+    "nome": {
+      "pt": "Privação severa da habitação, Malta",
+      "en": "Severe housing deprivation, Malta"
+    },
+    "frase": {
+      "pt": [
+        "A parte da população que vive numa casa sobrelotada e, ao mesmo tempo, com pelo menos um destes problemas: um telhado que mete água, sem banheira ou duche e sem retrete dentro de casa, ou uma casa considerada demasiado escura"
+      ],
+      "en": [
+        "The share of the population living in an overcrowded dwelling that also has at least one of these problems: a leaking roof, no bath or shower and no indoor toilet, or a dwelling considered too dark"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, Malta, em ",
+        {
+          "periodo": "hab-ilc-mdho06a-a-pc-total-t-total-mt-2023"
+        },
+        "."
+      ],
+      "en": [
+        "; here, Malta, in ",
+        {
+          "periodo": "hab-ilc-mdho06a-a-pc-total-t-total-mt-2023"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-privacao-severa"
+    ]
+  },
+  "hab-ilc-mdho06a-a-pc-total-t-total-pt-2023": {
+    "nome": {
+      "pt": "Privação severa da habitação, Portugal",
+      "en": "Severe housing deprivation, Portugal"
+    },
+    "frase": {
+      "pt": [
+        "A parte da população que vive numa casa sobrelotada e, ao mesmo tempo, com pelo menos um destes problemas: um telhado que mete água, sem banheira ou duche e sem retrete dentro de casa, ou uma casa considerada demasiado escura"
+      ],
+      "en": [
+        "The share of the population living in an overcrowded dwelling that also has at least one of these problems: a leaking roof, no bath or shower and no indoor toilet, or a dwelling considered too dark"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, Portugal, em ",
+        {
+          "periodo": "hab-ilc-mdho06a-a-pc-total-t-total-pt-2023"
+        },
+        "."
+      ],
+      "en": [
+        "; here, Portugal, in ",
+        {
+          "periodo": "hab-ilc-mdho06a-a-pc-total-t-total-pt-2023"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-privacao-severa"
+    ]
+  },
+  "hab-ilc-mdho06a-a-pc-total-t-y16-29-eu27_2020-2023": {
+    "nome": {
+      "pt": "Privação severa da habitação, dos dezasseis aos vinte e nove anos, União Europeia",
+      "en": "Severe housing deprivation, aged sixteen to twenty-nine, European Union"
+    },
+    "frase": {
+      "pt": [
+        "A parte da população que vive numa casa sobrelotada e, ao mesmo tempo, com pelo menos um destes problemas: um telhado que mete água, sem banheira ou duche e sem retrete dentro de casa, ou uma casa considerada demasiado escura"
+      ],
+      "en": [
+        "The share of the population living in an overcrowded dwelling that also has at least one of these problems: a leaking roof, no bath or shower and no indoor toilet, or a dwelling considered too dark"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, dos dezasseis aos vinte e nove anos, União Europeia, em ",
+        {
+          "periodo": "hab-ilc-mdho06a-a-pc-total-t-y16-29-eu27_2020-2023"
+        },
+        "."
+      ],
+      "en": [
+        "; here, aged sixteen to twenty-nine, European Union, in ",
+        {
+          "periodo": "hab-ilc-mdho06a-a-pc-total-t-y16-29-eu27_2020-2023"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-privacao-severa"
+    ]
+  },
+  "hab-ilc-mdho06a-a-pc-total-t-y16-29-pt-2023": {
+    "nome": {
+      "pt": "Privação severa da habitação, dos dezasseis aos vinte e nove anos, Portugal",
+      "en": "Severe housing deprivation, aged sixteen to twenty-nine, Portugal"
+    },
+    "frase": {
+      "pt": [
+        "A parte da população que vive numa casa sobrelotada e, ao mesmo tempo, com pelo menos um destes problemas: um telhado que mete água, sem banheira ou duche e sem retrete dentro de casa, ou uma casa considerada demasiado escura"
+      ],
+      "en": [
+        "The share of the population living in an overcrowded dwelling that also has at least one of these problems: a leaking roof, no bath or shower and no indoor toilet, or a dwelling considered too dark"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, dos dezasseis aos vinte e nove anos, Portugal, em ",
+        {
+          "periodo": "hab-ilc-mdho06a-a-pc-total-t-y16-29-pt-2023"
+        },
+        "."
+      ],
+      "en": [
+        "; here, aged sixteen to twenty-nine, Portugal, in ",
+        {
+          "periodo": "hab-ilc-mdho06a-a-pc-total-t-y16-29-pt-2023"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-privacao-severa"
+    ]
+  },
+  "hab-imprensa-acampados": {
+    "nome": {
+      "pt": "Comunicado dos acampados, pela imprensa",
+      "en": "Campers' statement, reported by the press"
+    },
+    "frase": {
+      "pt": [
+        "O excerto reproduz o documento indicado sobre comunicado dos acampados, pela imprensa."
+      ],
+      "en": [
+        "The excerpt reproduces the indicated document about campers' statement, reported by the press."
+      ]
+    }
+  },
+  "hab-imprensa-amorim": {
+    "nome": {
+      "pt": "Declaração do ministro dos Assuntos Parlamentares, pela imprensa",
+      "en": "Statement by the Minister for Parliamentary Affairs, reported by the press"
+    },
+    "frase": {
+      "pt": [
+        "O excerto reproduz o documento indicado sobre declaração do ministro dos Assuntos Parlamentares, pela imprensa."
+      ],
+      "en": [
+        "The excerpt reproduces the indicated document about statement by the Minister for Parliamentary Affairs, reported by the press."
+      ]
+    }
+  },
+  "hab-imprensa-assistidos": {
+    "nome": {
+      "pt": "Pessoas assistidas, pela imprensa",
+      "en": "People assisted, reported by the press"
+    },
+    "frase": {
+      "pt": [
+        "O excerto reproduz o documento indicado sobre pessoas assistidas, pela imprensa."
+      ],
+      "en": [
+        "The excerpt reproduces the indicated document about people assisted, reported by the press."
+      ]
+    }
+  },
+  "hab-imprensa-debate-custos": {
+    "nome": {
+      "pt": "Afirmação do primeiro-ministro sobre os preços, pela imprensa",
+      "en": "Prime Minister's statement on prices, reported by the press"
+    },
+    "frase": {
+      "pt": [
+        "O excerto reproduz o documento indicado sobre afirmação do primeiro-ministro sobre os preços, pela imprensa."
+      ],
+      "en": [
+        "The excerpt reproduces the indicated document about prime Minister's statement on prices, reported by the press."
+      ]
+    }
+  },
+  "hab-imprensa-debate-protecao": {
+    "nome": {
+      "pt": "Afirmação do primeiro-ministro sobre a proteção dos inquilinos, pela imprensa",
+      "en": "Prime Minister's statement on tenant protection, reported by the press"
+    },
+    "frase": {
+      "pt": [
+        "O excerto reproduz o documento indicado sobre afirmação do primeiro-ministro sobre a proteção dos inquilinos, pela imprensa."
+      ],
+      "en": [
+        "The excerpt reproduces the indicated document about prime Minister's statement on tenant protection, reported by the press."
+      ]
+    }
+  },
+  "hab-imprensa-feridos35": {
+    "nome": {
+      "pt": "Feridos segundo um dirigente do BE, pela imprensa",
+      "en": "Injured according to a BE leader, via the press"
+    },
+    "frase": {
+      "pt": [
+        "O excerto reproduz o documento indicado sobre feridos segundo um dirigente do BE, pela imprensa."
+      ],
+      "en": [
+        "The excerpt reproduces the indicated document about injured according to a BE leader, via the press."
+      ]
+    }
+  },
+  "hab-imprensa-feridos37": {
+    "nome": {
+      "pt": "Feridos segundo o movimento, pela imprensa",
+      "en": "Injured people according to the movement, reported by the press"
+    },
+    "frase": {
+      "pt": [
+        "O excerto reproduz o documento indicado sobre feridos segundo o movimento, pela imprensa."
+      ],
+      "en": [
+        "The excerpt reproduces the indicated document about injured people according to the movement, reported by the press."
+      ]
+    }
+  },
+  "hab-imprensa-feridos39": {
+    "nome": {
+      "pt": "Feridos segundo a organização, pela imprensa",
+      "en": "Injured people according to the organisation, reported by the press"
+    },
+    "frase": {
+      "pt": [
+        "O excerto reproduz o documento indicado sobre feridos segundo a organização, pela imprensa."
+      ],
+      "en": [
+        "The excerpt reproduces the indicated document about injured people according to the organisation, reported by the press."
+      ]
+    }
+  },
+  "hab-imprensa-hospital": {
+    "nome": {
+      "pt": "Pessoas encaminhadas para o hospital, pela imprensa",
+      "en": "People referred to hospital, reported by the press"
+    },
+    "frase": {
+      "pt": [
+        "O excerto reproduz o documento indicado sobre pessoas encaminhadas para o hospital, pela imprensa."
+      ],
+      "en": [
+        "The excerpt reproduces the indicated document about people referred to hospital, reported by the press."
+      ]
+    }
+  },
+  "hab-imprensa-igai": {
+    "nome": {
+      "pt": "Processo da inspeção, pela imprensa",
+      "en": "Inspectorate case, reported by the press"
+    },
+    "frase": {
+      "pt": [
+        "O excerto reproduz o documento indicado sobre processo da inspeção, pela imprensa."
+      ],
+      "en": [
+        "The excerpt reproduces the indicated document about inspectorate case, reported by the press."
+      ]
+    }
+  },
+  "hab-imprensa-mai": {
+    "nome": {
+      "pt": "Declaração do ministro da Administração Interna, pela imprensa",
+      "en": "Statement by the Minister of Home Affairs, reported by the press"
+    },
+    "frase": {
+      "pt": [
+        "O excerto reproduz o documento indicado sobre declaração do ministro da Administração Interna, pela imprensa."
+      ],
+      "en": [
+        "The excerpt reproduces the indicated document about statement by the Minister of Home Affairs, reported by the press."
+      ]
+    }
+  },
+  "hab-imprensa-manif-euronews": {
+    "nome": {
+      "pt": "Organizações da plataforma, pela Euronews",
+      "en": "Platform organisations, reported by Euronews"
+    },
+    "frase": {
+      "pt": [
+        "O excerto reproduz o documento indicado sobre organizações da plataforma, pela Euronews."
+      ],
+      "en": [
+        "The excerpt reproduces the indicated document about platform organisations, reported by Euronews."
+      ]
+    }
+  },
+  "hab-imprensa-manif-lusa": {
+    "nome": {
+      "pt": "Manifestantes em Lisboa, pela notícia que cita a Lusa",
+      "en": "Demonstrators in Lisbon, reported in an article citing Lusa"
+    },
+    "frase": {
+      "pt": [
+        "O excerto reproduz o documento indicado sobre manifestantes em Lisboa, pela notícia que cita a Lusa."
+      ],
+      "en": [
+        "The excerpt reproduces the indicated document about demonstrators in Lisbon, reported in an article citing Lusa."
+      ]
+    }
+  },
+  "hab-imprensa-manif-lusa-organizacoes": {
+    "nome": {
+      "pt": "Organizações da plataforma, pela notícia que cita a Lusa",
+      "en": "Platform organisations, reported in an article citing Lusa"
+    },
+    "frase": {
+      "pt": [
+        "O excerto reproduz o documento indicado sobre organizações da plataforma, pela notícia que cita a Lusa."
+      ],
+      "en": [
+        "The excerpt reproduces the indicated document about platform organisations, reported in an article citing Lusa."
+      ]
+    }
+  },
+  "hab-imprensa-manif-rtp": {
+    "nome": {
+      "pt": "Manifestantes no Porto, pela RTP",
+      "en": "Demonstrators in Porto, reported by RTP"
+    },
+    "frase": {
+      "pt": [
+        "O excerto reproduz o documento indicado sobre manifestantes no Porto, pela RTP."
+      ],
+      "en": [
+        "The excerpt reproduces the indicated document about demonstrators in Porto, reported by RTP."
+      ]
+    }
+  },
+  "hab-imprensa-pm-15": {
+    "nome": {
+      "pt": "Declaração do primeiro-ministro após a intervenção, pela imprensa",
+      "en": "Prime Minister's statement after the intervention, reported by the press"
+    },
+    "frase": {
+      "pt": [
+        "O excerto reproduz o documento indicado sobre declaração do primeiro-ministro após a intervenção, pela imprensa."
+      ],
+      "en": [
+        "The excerpt reproduces the indicated document about prime Minister's statement after the intervention, reported by the press."
+      ]
+    }
+  },
+  "hab-imprensa-pm-16": {
+    "nome": {
+      "pt": "Declaração posterior do primeiro-ministro, pela imprensa",
+      "en": "Prime Minister's subsequent statement, reported by the press"
+    },
+    "frase": {
+      "pt": [
+        "O excerto reproduz o documento indicado sobre declaração posterior do primeiro-ministro, pela imprensa."
+      ],
+      "en": [
+        "The excerpt reproduces the indicated document about prime Minister's subsequent statement, reported by the press."
+      ]
+    }
+  },
+  "hab-imprensa-psp-ferido": {
+    "nome": {
+      "pt": "Polícia ferido, segundo a PSP, pela imprensa",
+      "en": "Police officer injured, according to the PSP, reported by the press"
+    },
+    "frase": {
+      "pt": [
+        "O excerto reproduz o documento indicado sobre polícia ferido, segundo a PSP, pela imprensa."
+      ],
+      "en": [
+        "The excerpt reproduces the indicated document about police officer injured, according to the PSP, reported by the press."
+      ]
+    }
+  },
+  "hab-imprensa-renda-metade": {
+    "nome": {
+      "pt": "Afirmação da plataforma sobre renda e salário, pela imprensa",
+      "en": "Platform statement on rent and pay, reported by the press"
+    },
+    "frase": {
+      "pt": [
+        "O excerto reproduz o documento indicado sobre afirmação da plataforma sobre renda e salário, pela imprensa."
+      ],
+      "en": [
+        "The excerpt reproduces the indicated document about platform statement on rent and pay, reported by the press."
+      ]
+    }
+  },
+  "hab-imprensa-tendas": {
+    "nome": {
+      "pt": "Retirada das tendas, pela RTP",
+      "en": "Removal of tents, reported by RTP"
+    },
+    "frase": {
+      "pt": [
+        "O excerto reproduz o documento indicado sobre retirada das tendas, pela RTP."
+      ],
+      "en": [
+        "The excerpt reproduces the indicated document about removal of tents, reported by RTP."
+      ]
+    }
+  },
+  "hab-ine-calendario-juro": {
+    "nome": {
+      "pt": "Divulgação do juro implícito na habitação",
+      "en": "Release of the implicit housing interest rate"
+    },
+    "frase": {
+      "pt": [
+        "A data anunciada no calendário de divulgação do INE para «INDICADOR DE TAXAS DE JURO IMPLÍCITAS NO CRÉDITO À HABITAÇÃO»"
+      ],
+      "en": [
+        "The date announced in the INE release calendar for «INDICADOR DE TAXAS DE JURO IMPLÍCITAS NO CRÉDITO À HABITAÇÃO»"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, ",
+        {
+          "periodo": "hab-ine-calendario-juro"
+        },
+        "."
+      ],
+      "en": [
+        "; here, ",
+        {
+          "periodo": "hab-ine-calendario-juro"
+        },
+        "."
+      ]
+    }
+  },
+  "hab-ine-calendario-precos-locais": {
+    "nome": {
+      "pt": "Divulgação dos preços locais da habitação",
+      "en": "Release of local house prices"
+    },
+    "frase": {
+      "pt": [
+        "A data anunciada no calendário de divulgação do INE para «ESTATÍSTICAS DE PREÇOS NA HABITAÇÃO AO NÍVEL LOCAL»"
+      ],
+      "en": [
+        "The date announced in the INE release calendar for «ESTATÍSTICAS DE PREÇOS NA HABITAÇÃO AO NÍVEL LOCAL»"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, ",
+        {
+          "periodo": "hab-ine-calendario-precos-locais"
+        },
+        "."
+      ],
+      "en": [
+        "; here, ",
+        {
+          "periodo": "hab-ine-calendario-precos-locais"
+        },
+        "."
+      ]
+    }
+  },
+  "hab-ine-censos-0012501-40": {
+    "nome": {
+      "pt": "Alojamentos vagos para venda ou arrendamento",
+      "en": "Dwellings vacant for sale or rent"
+    },
+    "frase": {
+      "pt": [
+        "O número de alojamentos familiares clássicos vagos para venda ou arrendamento, sendo, para o INE, um alojamento familiar clássico uma divisão ou conjunto de divisões e seus anexos num edifício de caráter permanente, ou numa parte estruturalmente distinta do edifício, com uma entrada independente, e um alojamento familiar vago um alojamento familiar desocupado e disponível para venda, arrendamento, demolição ou outra situação no momento de referência"
+      ],
+      "en": [
+        "The number of conventional dwellings vacant for sale or rent, where, for INE, a conventional dwelling is a room or set of rooms and their annexes in a permanent building, or in a structurally separate part of the building, with an independent entrance, and a vacant dwelling is an unoccupied dwelling available for sale, rent, demolition or another situation at the reference time"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, Portugal, em ",
+        {
+          "periodo": "hab-ine-censos-0012501-40"
+        },
+        "."
+      ],
+      "en": [
+        "; here, Portugal, in ",
+        {
+          "periodo": "hab-ine-censos-0012501-40"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1e-ine-alojamento-classico",
+      "hb1e-ine-alojamento-vago"
+    ]
+  },
+  "hab-ine-censos-0012501-41": {
+    "nome": {
+      "pt": "Alojamentos vagos por outros motivos",
+      "en": "Dwellings vacant for other reasons"
+    },
+    "frase": {
+      "pt": [
+        "O número de alojamentos familiares clássicos vagos por outros motivos, sendo, para o INE, um alojamento familiar clássico uma divisão ou conjunto de divisões e seus anexos num edifício de caráter permanente, ou numa parte estruturalmente distinta do edifício, com uma entrada independente, e um alojamento familiar vago um alojamento familiar desocupado e disponível para venda, arrendamento, demolição ou outra situação no momento de referência"
+      ],
+      "en": [
+        "The number of conventional dwellings vacant for other reasons, where, for INE, a conventional dwelling is a room or set of rooms and their annexes in a permanent building, or in a structurally separate part of the building, with an independent entrance, and a vacant dwelling is an unoccupied dwelling available for sale, rent, demolition or another situation at the reference time"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, Portugal, em ",
+        {
+          "periodo": "hab-ine-censos-0012501-41"
+        },
+        "."
+      ],
+      "en": [
+        "; here, Portugal, in ",
+        {
+          "periodo": "hab-ine-censos-0012501-41"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1e-ine-alojamento-classico",
+      "hb1e-ine-alojamento-vago"
+    ]
+  },
+  "hab-ine-censos-0012517-0": {
+    "nome": {
+      "pt": "Proporção de alojamentos vagos nos Censos",
+      "en": "Share of vacant dwellings in the Census"
+    },
+    "frase": {
+      "pt": [
+        "A proporção, em percentagem, dos alojamentos familiares clássicos que estavam vagos, sendo, para o INE, um alojamento familiar clássico uma divisão ou conjunto de divisões e seus anexos num edifício de caráter permanente, ou numa parte estruturalmente distinta do edifício, com uma entrada independente, e um alojamento familiar vago um alojamento familiar desocupado e disponível para venda, arrendamento, demolição ou outra situação no momento de referência"
+      ],
+      "en": [
+        "The share, in percent, of conventional dwellings that were vacant, where, for INE, a conventional dwelling is a room or set of rooms and their annexes in a permanent building, or in a structurally separate part of the building, with an independent entrance, and a vacant dwelling is an unoccupied dwelling available for sale, rent, demolition or another situation at the reference time"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, Portugal, em ",
+        {
+          "periodo": "hab-ine-censos-0012517-0"
+        },
+        "."
+      ],
+      "en": [
+        "; here, Portugal, in ",
+        {
+          "periodo": "hab-ine-censos-0012517-0"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1e-ine-alojamento-classico",
+      "hb1e-ine-alojamento-vago"
+    ]
+  },
+  "hab-ine-iphab-homologa": {
+    "nome": {
+      "pt": "Variação homóloga dos preços da habitação",
+      "en": "Annual change in house prices"
+    },
+    "frase": {
+      "pt": [
+        "A taxa de variação homóloga do índice a que o documento alojado do INE chama «ÍNDICE DE PREÇOS DA HABITAÇÃO»"
+      ],
+      "en": [
+        "The year-on-year rate of change of the index that the hosted INE document calls «ÍNDICE DE PREÇOS DA HABITAÇÃO»"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, Portugal, no ",
+        {
+          "periodo": "hab-ine-iphab-homologa"
+        },
+        "."
+      ],
+      "en": [
+        "; here, Portugal, in the ",
+        {
+          "periodo": "hab-ine-iphab-homologa"
+        },
+        "."
+      ]
+    }
+  },
+  "hab-ine-juro-implicito": {
+    "nome": {
+      "pt": "Taxa de juro implícita no crédito à habitação",
+      "en": "Implicit interest rate on housing loans"
+    },
+    "frase": {
+      "pt": [
+        "A taxa de juro implícita no crédito à habitação, que reflete a relação entre os juros totais vencidos no mês de referência e o capital em dívida no início desse mês, antes de amortização"
+      ],
+      "en": [
+        "The implicit interest rate on housing loans, which reflects the ratio between the total interest due in the reference month and the capital outstanding at the start of that month, before amortisation"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, o conjunto dos contratos, Portugal, em ",
+        {
+          "periodo": "hab-ine-juro-implicito"
+        },
+        "."
+      ],
+      "en": [
+        "; here, all contracts, Portugal, in ",
+        {
+          "periodo": "hab-ine-juro-implicito"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1e-ine-juro-implicito"
+    ]
+  },
+  "hab-ine-preco-lisboa": {
+    "nome": {
+      "pt": "Preço mediano das vendas em Lisboa",
+      "en": "Median sale price in Lisbon"
+    },
+    "frase": {
+      "pt": [
+        "O valor mediano dos preços por metro quadrado das transações por venda de imóveis para habitação com área bruta privativa de vinte metros quadrados ou mais, apurado pelo INE dos dados fiscais anonimizados da Autoridade Tributária e Aduaneira"
+      ],
+      "en": [
+        "The median price per square metre of sales of residential properties with a private gross area of twenty square metres or more, compiled by INE from anonymised tax data from the Tax and Customs Authority"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, Lisboa, no ",
+        {
+          "periodo": "hab-ine-preco-lisboa"
+        },
+        "."
+      ],
+      "en": [
+        "; here, Lisbon, in the ",
+        {
+          "periodo": "hab-ine-preco-lisboa"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1e-ine-preco-mediano",
+      "hb1e-ine-preco-fonte"
+    ]
+  },
+  "hab-ine-preco-mediano": {
+    "nome": {
+      "pt": "Preço mediano das vendas em Portugal",
+      "en": "Median sale price in Portugal"
+    },
+    "frase": {
+      "pt": [
+        "O valor mediano dos preços por metro quadrado das transações por venda de imóveis para habitação com área bruta privativa de vinte metros quadrados ou mais, apurado pelo INE dos dados fiscais anonimizados da Autoridade Tributária e Aduaneira"
+      ],
+      "en": [
+        "The median price per square metre of sales of residential properties with a private gross area of twenty square metres or more, compiled by INE from anonymised tax data from the Tax and Customs Authority"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, Portugal, no ",
+        {
+          "periodo": "hab-ine-preco-mediano"
+        },
+        "."
+      ],
+      "en": [
+        "; here, Portugal, in the ",
+        {
+          "periodo": "hab-ine-preco-mediano"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1e-ine-preco-mediano",
+      "hb1e-ine-preco-fonte"
+    ]
+  },
+  "hab-ine-preco-porto": {
+    "nome": {
+      "pt": "Preço mediano das vendas no Porto",
+      "en": "Median sale price in Porto"
+    },
+    "frase": {
+      "pt": [
+        "O valor mediano dos preços por metro quadrado das transações por venda de imóveis para habitação com área bruta privativa de vinte metros quadrados ou mais, apurado pelo INE dos dados fiscais anonimizados da Autoridade Tributária e Aduaneira"
+      ],
+      "en": [
+        "The median price per square metre of sales of residential properties with a private gross area of twenty square metres or more, compiled by INE from anonymised tax data from the Tax and Customs Authority"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, Porto, no ",
+        {
+          "periodo": "hab-ine-preco-porto"
+        },
+        "."
+      ],
+      "en": [
+        "; here, Porto, in the ",
+        {
+          "periodo": "hab-ine-preco-porto"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1e-ine-preco-mediano",
+      "hb1e-ine-preco-fonte"
+    ]
+  },
+  "hab-ine-renda-lisboa": {
+    "nome": {
+      "pt": "Renda mediana dos novos contratos em Lisboa",
+      "en": "Median rent of new contracts in Lisbon"
+    },
+    "frase": {
+      "pt": [
+        "O valor mediano das rendas por metro quadrado dos novos contratos de arrendamento para habitação com área bruta privativa entre vinte e seiscentos metros quadrados e renda entre cem e seis mil euros, apurado pelo INE dos dados fiscais anonimizados da Autoridade Tributária e Aduaneira"
+      ],
+      "en": [
+        "The median rent per square metre of new residential lease contracts with a private gross area between twenty and six hundred square metres and a rent between one hundred and six thousand euros, compiled by INE from anonymised tax data from the Tax and Customs Authority"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, Lisboa, no ",
+        {
+          "periodo": "hab-ine-renda-lisboa"
+        },
+        "."
+      ],
+      "en": [
+        "; here, Lisbon, in the ",
+        {
+          "periodo": "hab-ine-renda-lisboa"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1e-ine-renda-mediana",
+      "hb1e-ine-renda-fonte"
+    ]
+  },
+  "hab-ine-renda-porto": {
+    "nome": {
+      "pt": "Renda mediana dos novos contratos no Porto",
+      "en": "Median rent of new contracts in Porto"
+    },
+    "frase": {
+      "pt": [
+        "O valor mediano das rendas por metro quadrado dos novos contratos de arrendamento para habitação com área bruta privativa entre vinte e seiscentos metros quadrados e renda entre cem e seis mil euros, apurado pelo INE dos dados fiscais anonimizados da Autoridade Tributária e Aduaneira"
+      ],
+      "en": [
+        "The median rent per square metre of new residential lease contracts with a private gross area between twenty and six hundred square metres and a rent between one hundred and six thousand euros, compiled by INE from anonymised tax data from the Tax and Customs Authority"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, Porto, no ",
+        {
+          "periodo": "hab-ine-renda-porto"
+        },
+        "."
+      ],
+      "en": [
+        "; here, Porto, in the ",
+        {
+          "periodo": "hab-ine-renda-porto"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1e-ine-renda-mediana",
+      "hb1e-ine-renda-fonte"
+    ]
+  },
+  "hab-ine-renda-portugal": {
+    "nome": {
+      "pt": "Renda mediana dos novos contratos em Portugal",
+      "en": "Median rent of new contracts in Portugal"
+    },
+    "frase": {
+      "pt": [
+        "O valor mediano das rendas por metro quadrado dos novos contratos de arrendamento para habitação com área bruta privativa entre vinte e seiscentos metros quadrados e renda entre cem e seis mil euros, apurado pelo INE dos dados fiscais anonimizados da Autoridade Tributária e Aduaneira"
+      ],
+      "en": [
+        "The median rent per square metre of new residential lease contracts with a private gross area between twenty and six hundred square metres and a rent between one hundred and six thousand euros, compiled by INE from anonymised tax data from the Tax and Customs Authority"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, Portugal, no ",
+        {
+          "periodo": "hab-ine-renda-portugal"
+        },
+        "."
+      ],
+      "en": [
+        "; here, Portugal, in the ",
+        {
+          "periodo": "hab-ine-renda-portugal"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1e-ine-renda-mediana",
+      "hb1e-ine-renda-fonte"
+    ]
+  },
+  "hab-ine-vagos-total": {
+    "nome": {
+      "pt": "Alojamentos vagos nos Censos",
+      "en": "Vacant dwellings in the Census"
+    },
+    "frase": {
+      "pt": [
+        "O número de alojamentos familiares clássicos vagos, sendo, para o INE, um alojamento familiar clássico uma divisão ou conjunto de divisões e seus anexos num edifício de caráter permanente, ou numa parte estruturalmente distinta do edifício, com uma entrada independente, e um alojamento familiar vago um alojamento familiar desocupado e disponível para venda, arrendamento, demolição ou outra situação no momento de referência"
+      ],
+      "en": [
+        "The number of vacant conventional dwellings, where, for INE, a conventional dwelling is a room or set of rooms and their annexes in a permanent building, or in a structurally separate part of the building, with an independent entrance, and a vacant dwelling is an unoccupied dwelling available for sale, rent, demolition or another situation at the reference time"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, Portugal, em ",
+        {
+          "periodo": "hab-ine-vagos-total"
+        },
+        "."
+      ],
+      "en": [
+        "; here, Portugal, in ",
+        {
+          "periodo": "hab-ine-vagos-total"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1e-ine-alojamento-classico",
+      "hb1e-ine-alojamento-vago"
+    ]
+  },
+  "hab-livre-reinvestimento": {
+    "nome": {
+      "pt": "Proposta do Livre sobre reinvestimento",
+      "en": "Livre proposal on reinvestment"
+    },
+    "frase": {
+      "pt": [
+        "O excerto reproduz o documento indicado sobre proposta do Livre sobre reinvestimento."
+      ],
+      "en": [
+        "The excerpt reproduces the indicated document about livre proposal on reinvestment."
+      ]
+    }
+  },
+  "hab-oe-apoio-arrendamento": {
+    "nome": {
+      "pt": "Orçamento do acesso à habitação e apoio ao arrendamento",
+      "en": "Budget for housing access and rental support"
+    },
+    "frase": {
+      "pt": [
+        "O que o relatório do Orçamento do Estado diz sobre a ação «Promoção do acesso à habitação e apoio ao arrendamento», na coluna do orçamento do quadro dos objetivos e indicadores da Missão de Base Orgânica Infraestruturas e Habitação, em milhões de euros"
+      ],
+      "en": [
+        "What the State Budget report says about the action «Promoção do acesso à habitação e apoio ao arrendamento», in the budget column of the table of objectives and indicators of the Infrastructure and Housing organic base mission, in million euros"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, em ",
+        {
+          "periodo": "hab-oe-apoio-arrendamento"
+        },
+        "."
+      ],
+      "en": [
+        "; here, in ",
+        {
+          "periodo": "hab-oe-apoio-arrendamento"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1e-oe-quadro-missao"
+    ]
+  },
+  "hab-oe-apoios-jovens": {
+    "nome": {
+      "pt": "Apoios à habitação dos jovens no Orçamento",
+      "en": "Budget support for young people's housing"
+    },
+    "frase": {
+      "pt": [
+        "O excerto reproduz o documento indicado sobre apoios à habitação dos jovens no Orçamento."
+      ],
+      "en": [
+        "The excerpt reproduces the indicated document about budget support for young people's housing."
+      ]
+    }
+  },
+  "hab-oe-fiscal": {
+    "nome": {
+      "pt": "Medidas fiscais da habitação no Orçamento",
+      "en": "Housing tax measures in the Budget"
+    },
+    "frase": {
+      "pt": [
+        "O excerto reproduz o documento indicado sobre medidas fiscais da habitação no Orçamento."
+      ],
+      "en": [
+        "The excerpt reproduces the indicated document about housing tax measures in the Budget."
+      ]
+    }
+  },
+  "hab-oe-habitacao-orcamento": {
+    "nome": {
+      "pt": "Orçamento do programa Habitação",
+      "en": "Housing programme budget"
+    },
+    "frase": {
+      "pt": [
+        "O que o relatório do Orçamento do Estado diz sobre a linha «Habitação», na coluna do orçamento do quadro dos objetivos e indicadores da Missão de Base Orgânica Infraestruturas e Habitação, em milhões de euros"
+      ],
+      "en": [
+        "What the State Budget report says about the line «Habitação», in the budget column of the table of objectives and indicators of the Infrastructure and Housing organic base mission, in million euros"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, em ",
+        {
+          "periodo": "hab-oe-habitacao-orcamento"
+        },
+        "."
+      ],
+      "en": [
+        "; here, in ",
+        {
+          "periodo": "hab-oe-habitacao-orcamento"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1e-oe-quadro-missao"
+    ]
+  },
+  "hab-oe-irs-rendas-impacto": {
+    "nome": {
+      "pt": "Impacto na receita da redução do IRS nas rendas",
+      "en": "Revenue impact of reduced income tax on rents"
+    },
+    "frase": {
+      "pt": [
+        "O que o relatório do Orçamento do Estado diz sobre a medida «Habitação - redução IRS rendas moderadas», no quadro das principais medidas de política orçamental, como impacto incremental em milhões de euros"
+      ],
+      "en": [
+        "What the State Budget report says about the measure «Habitação - redução IRS rendas moderadas», in the table of the main budget policy measures, as an incremental impact in million euros"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, em ",
+        {
+          "periodo": "hab-oe-irs-rendas-impacto"
+        },
+        "."
+      ],
+      "en": [
+        "; here, in ",
+        {
+          "periodo": "hab-oe-irs-rendas-impacto"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1e-oe-quadro-medidas"
+    ]
+  },
+  "hab-oe-iva-impacto": {
+    "nome": {
+      "pt": "Impacto na receita da redução do IVA na construção",
+      "en": "Revenue impact of reduced VAT on construction"
+    },
+    "frase": {
+      "pt": [
+        "O que o relatório do Orçamento do Estado diz sobre a medida «Habitação - redução IVA construção», no quadro das principais medidas de política orçamental, como impacto incremental em milhões de euros"
+      ],
+      "en": [
+        "What the State Budget report says about the measure «Habitação - redução IVA construção», in the table of the main budget policy measures, as an incremental impact in million euros"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, em ",
+        {
+          "periodo": "hab-oe-iva-impacto"
+        },
+        "."
+      ],
+      "en": [
+        "; here, in ",
+        {
+          "periodo": "hab-oe-iva-impacto"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1e-oe-quadro-medidas"
+    ]
+  },
+  "hab-oe-legenda-invariante": {
+    "nome": {
+      "pt": "Legenda das medidas invariantes do Orçamento",
+      "en": "Budget table legend for unchanged measures"
+    },
+    "frase": {
+      "pt": [
+        "O excerto reproduz o documento indicado sobre legenda das medidas invariantes do Orçamento."
+      ],
+      "en": [
+        "The excerpt reproduces the indicated document about budget table legend for unchanged measures."
+      ]
+    }
+  },
+  "hab-oe-licenciamento": {
+    "nome": {
+      "pt": "Orçamento da gestão urbanística e qualidade do edificado",
+      "en": "Budget for urban management and building quality"
+    },
+    "frase": {
+      "pt": [
+        "O que o relatório do Orçamento do Estado diz sobre a ação «Gestão urbanística e qualidade do edificiado», na coluna do orçamento do quadro dos objetivos e indicadores da Missão de Base Orgânica Infraestruturas e Habitação, em milhões de euros"
+      ],
+      "en": [
+        "What the State Budget report says about the action «Gestão urbanística e qualidade do edificiado», in the budget column of the table of objectives and indicators of the Infrastructure and Housing organic base mission, in million euros"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, em ",
+        {
+          "periodo": "hab-oe-licenciamento"
+        },
+        "."
+      ],
+      "en": [
+        "; here, in ",
+        {
+          "periodo": "hab-oe-licenciamento"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1e-oe-quadro-missao"
+    ]
+  },
+  "hab-oe-oferta": {
+    "nome": {
+      "pt": "Oferta de habitação no Orçamento",
+      "en": "Housing supply in the Budget"
+    },
+    "frase": {
+      "pt": [
+        "O excerto reproduz o documento indicado sobre oferta de habitação no Orçamento."
+      ],
+      "en": [
+        "The excerpt reproduces the indicated document about housing supply in the Budget."
+      ]
+    }
+  },
+  "hab-oe-oferta-publica": {
+    "nome": {
+      "pt": "Orçamento da oferta e reabilitação habitacional",
+      "en": "Budget for housing supply and rehabilitation"
+    },
+    "frase": {
+      "pt": [
+        "O que o relatório do Orçamento do Estado diz sobre a ação «Promoção da oferta e reabilitação habitacional», na coluna do orçamento do quadro dos objetivos e indicadores da Missão de Base Orgânica Infraestruturas e Habitação, em milhões de euros"
+      ],
+      "en": [
+        "What the State Budget report says about the action «Promoção da oferta e reabilitação habitacional», in the budget column of the table of objectives and indicators of the Infrastructure and Housing organic base mission, in million euros"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, em ",
+        {
+          "periodo": "hab-oe-oferta-publica"
+        },
+        "."
+      ],
+      "en": [
+        "; here, in ",
+        {
+          "periodo": "hab-oe-oferta-publica"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1e-oe-quadro-missao"
+    ]
+  },
+  "hab-pan-caucoes": {
+    "nome": {
+      "pt": "Proposta do PAN sobre cauções",
+      "en": "PAN proposal on deposits"
+    },
+    "frase": {
+      "pt": [
+        "O excerto reproduz o documento indicado sobre proposta do PAN sobre cauções."
+      ],
+      "en": [
+        "The excerpt reproduces the indicated document about pAN proposal on deposits."
+      ]
+    }
+  },
+  "hab-pan-controlo": {
+    "nome": {
+      "pt": "Proposta do PAN sobre controlo de rendas",
+      "en": "PAN proposal on rent control"
+    },
+    "frase": {
+      "pt": [
+        "O excerto reproduz o documento indicado sobre proposta do PAN sobre controlo de rendas."
+      ],
+      "en": [
+        "The excerpt reproduces the indicated document about pAN proposal on rent control."
+      ]
+    }
+  },
+  "hab-pan-tetos": {
+    "nome": {
+      "pt": "Proposta do PAN sobre limites às rendas",
+      "en": "PAN proposal on rent limits"
+    },
+    "frase": {
+      "pt": [
+        "O excerto reproduz o documento indicado sobre proposta do PAN sobre limites às rendas."
+      ],
+      "en": [
+        "The excerpt reproduces the indicated document about pAN proposal on rent limits."
+      ]
+    }
+  },
+  "hab-pcp-rendas": {
+    "nome": {
+      "pt": "Proposta do PCP sobre rendas",
+      "en": "PCP proposal on rents"
+    },
+    "frase": {
+      "pt": [
+        "O excerto reproduz o documento indicado sobre proposta do PCP sobre rendas."
+      ],
+      "en": [
+        "The excerpt reproduces the indicated document about pCP proposal on rents."
+      ]
+    }
+  },
+  "hab-plataforma-reivindicacoes": {
+    "nome": {
+      "pt": "Reivindicações da plataforma",
+      "en": "Platform demands"
+    },
+    "frase": {
+      "pt": [
+        "O excerto reproduz o documento indicado sobre reivindicações da plataforma."
+      ],
+      "en": [
+        "The excerpt reproduces the indicated document about platform demands."
+      ]
+    }
+  },
+  "hab-prc-hicp-ainr-a-rch-a-avg-cp041-eu27_2020-2025": {
+    "nome": {
+      "pt": "Variação das rendas pagas, União Europeia",
+      "en": "Change in rents paid, European Union"
+    },
+    "frase": {
+      "pt": [
+        "A variação dos preços das rendas pagas pelos inquilinos no índice harmonizado de preços no consumidor, o índice de preços no consumidor calculado na União Europeia com um método e definições comuns"
+      ],
+      "en": [
+        "The change in the prices of rents paid by tenants in the harmonised index of consumer prices, the consumer price index calculated in the European Union with a common method and definitions"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, União Europeia, em ",
+        {
+          "periodo": "hab-prc-hicp-ainr-a-rch-a-avg-cp041-eu27_2020-2025"
+        },
+        "."
+      ],
+      "en": [
+        "; here, European Union, in ",
+        {
+          "periodo": "hab-prc-hicp-ainr-a-rch-a-avg-cp041-eu27_2020-2025"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-ihpc"
+    ]
+  },
+  "hab-prc-hicp-ainr-a-rch-a-avg-cp041-fi-2025": {
+    "nome": {
+      "pt": "Variação das rendas pagas, Finlândia",
+      "en": "Change in rents paid, Finland"
+    },
+    "frase": {
+      "pt": [
+        "A variação dos preços das rendas pagas pelos inquilinos no índice harmonizado de preços no consumidor, o índice de preços no consumidor calculado na União Europeia com um método e definições comuns"
+      ],
+      "en": [
+        "The change in the prices of rents paid by tenants in the harmonised index of consumer prices, the consumer price index calculated in the European Union with a common method and definitions"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, Finlândia, em ",
+        {
+          "periodo": "hab-prc-hicp-ainr-a-rch-a-avg-cp041-fi-2025"
+        },
+        "."
+      ],
+      "en": [
+        "; here, Finland, in ",
+        {
+          "periodo": "hab-prc-hicp-ainr-a-rch-a-avg-cp041-fi-2025"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-ihpc"
+    ]
+  },
+  "hab-prc-hicp-ainr-a-rch-a-avg-cp041-hr-2025": {
+    "nome": {
+      "pt": "Variação das rendas pagas, Croácia",
+      "en": "Change in rents paid, Croatia"
+    },
+    "frase": {
+      "pt": [
+        "A variação dos preços das rendas pagas pelos inquilinos no índice harmonizado de preços no consumidor, o índice de preços no consumidor calculado na União Europeia com um método e definições comuns"
+      ],
+      "en": [
+        "The change in the prices of rents paid by tenants in the harmonised index of consumer prices, the consumer price index calculated in the European Union with a common method and definitions"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, Croácia, em ",
+        {
+          "periodo": "hab-prc-hicp-ainr-a-rch-a-avg-cp041-hr-2025"
+        },
+        "."
+      ],
+      "en": [
+        "; here, Croatia, in ",
+        {
+          "periodo": "hab-prc-hicp-ainr-a-rch-a-avg-cp041-hr-2025"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-ihpc"
+    ]
+  },
+  "hab-prc-hicp-ainr-a-rch-a-avg-cp041-pt-2025": {
+    "nome": {
+      "pt": "Variação das rendas pagas, Portugal",
+      "en": "Change in rents paid, Portugal"
+    },
+    "frase": {
+      "pt": [
+        "A variação dos preços das rendas pagas pelos inquilinos no índice harmonizado de preços no consumidor, o índice de preços no consumidor calculado na União Europeia com um método e definições comuns"
+      ],
+      "en": [
+        "The change in the prices of rents paid by tenants in the harmonised index of consumer prices, the consumer price index calculated in the European Union with a common method and definitions"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, Portugal, em ",
+        {
+          "periodo": "hab-prc-hicp-ainr-a-rch-a-avg-cp041-pt-2025"
+        },
+        "."
+      ],
+      "en": [
+        "; here, Portugal, in ",
+        {
+          "periodo": "hab-prc-hicp-ainr-a-rch-a-avg-cp041-pt-2025"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-ihpc"
+    ]
+  },
+  "hab-prc-hicp-minr-m-rch-a-cp041-eu27_2020-2026-09": {
+    "nome": {
+      "pt": "Variação das rendas pagas, União Europeia",
+      "en": "Change in rents paid, European Union"
+    },
+    "frase": {
+      "pt": [
+        "A variação dos preços das rendas pagas pelos inquilinos no índice harmonizado de preços no consumidor, o índice de preços no consumidor calculado na União Europeia com um método e definições comuns"
+      ],
+      "en": [
+        "The change in the prices of rents paid by tenants in the harmonised index of consumer prices, the consumer price index calculated in the European Union with a common method and definitions"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, União Europeia, em ",
+        {
+          "periodo": "hab-prc-hicp-minr-m-rch-a-cp041-eu27_2020-2026-09"
+        },
+        "."
+      ],
+      "en": [
+        "; here, European Union, in ",
+        {
+          "periodo": "hab-prc-hicp-minr-m-rch-a-cp041-eu27_2020-2026-09"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-ihpc"
+    ]
+  },
+  "hab-prc-hicp-minr-m-rch-a-cp041-pt-2026-09": {
+    "nome": {
+      "pt": "Variação das rendas pagas, Portugal",
+      "en": "Change in rents paid, Portugal"
+    },
+    "frase": {
+      "pt": [
+        "A variação dos preços das rendas pagas pelos inquilinos no índice harmonizado de preços no consumidor, o índice de preços no consumidor calculado na União Europeia com um método e definições comuns"
+      ],
+      "en": [
+        "The change in the prices of rents paid by tenants in the harmonised index of consumer prices, the consumer price index calculated in the European Union with a common method and definitions"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, Portugal, em ",
+        {
+          "periodo": "hab-prc-hicp-minr-m-rch-a-cp041-pt-2026-09"
+        },
+        "."
+      ],
+      "en": [
+        "; here, Portugal, in ",
+        {
+          "periodo": "hab-prc-hicp-minr-m-rch-a-cp041-pt-2026-09"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-ihpc"
+    ]
+  },
+  "hab-prc-hpi-q-q-total-i15-q-eu27_2020-2026-q2": {
+    "nome": {
+      "pt": "Índice dos preços da habitação, União Europeia",
+      "en": "Index of house prices, European Union"
+    },
+    "frase": {
+      "pt": [
+        "O índice dos preços das transações de casas compradas pelas famílias, com o ano base igual a cem"
+      ],
+      "en": [
+        "The index of the transaction prices of dwellings purchased by households, with the base year equal to one hundred"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, União Europeia, no ",
+        {
+          "periodo": "hab-prc-hpi-q-q-total-i15-q-eu27_2020-2026-q2"
+        },
+        "."
+      ],
+      "en": [
+        "; here, European Union, in the ",
+        {
+          "periodo": "hab-prc-hpi-q-q-total-i15-q-eu27_2020-2026-q2"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-ipH"
+    ]
+  },
+  "hab-prc-hpi-q-q-total-i15-q-fi-2026-q2": {
+    "nome": {
+      "pt": "Índice dos preços da habitação, Finlândia",
+      "en": "Index of house prices, Finland"
+    },
+    "frase": {
+      "pt": [
+        "O índice dos preços das transações de casas compradas pelas famílias, com o ano base igual a cem"
+      ],
+      "en": [
+        "The index of the transaction prices of dwellings purchased by households, with the base year equal to one hundred"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, Finlândia, no ",
+        {
+          "periodo": "hab-prc-hpi-q-q-total-i15-q-fi-2026-q2"
+        },
+        "."
+      ],
+      "en": [
+        "; here, Finland, in the ",
+        {
+          "periodo": "hab-prc-hpi-q-q-total-i15-q-fi-2026-q2"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-ipH"
+    ]
+  },
+  "hab-prc-hpi-q-q-total-i15-q-hu-2026-q2": {
+    "nome": {
+      "pt": "Índice dos preços da habitação, Hungria",
+      "en": "Index of house prices, Hungary"
+    },
+    "frase": {
+      "pt": [
+        "O índice dos preços das transações de casas compradas pelas famílias, com o ano base igual a cem"
+      ],
+      "en": [
+        "The index of the transaction prices of dwellings purchased by households, with the base year equal to one hundred"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, Hungria, no ",
+        {
+          "periodo": "hab-prc-hpi-q-q-total-i15-q-hu-2026-q2"
+        },
+        "."
+      ],
+      "en": [
+        "; here, Hungary, in the ",
+        {
+          "periodo": "hab-prc-hpi-q-q-total-i15-q-hu-2026-q2"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-ipH"
+    ]
+  },
+  "hab-prc-hpi-q-q-total-i15-q-pt-2026-q2": {
+    "nome": {
+      "pt": "Índice dos preços da habitação, Portugal",
+      "en": "Index of house prices, Portugal"
+    },
+    "frase": {
+      "pt": [
+        "O índice dos preços das transações de casas compradas pelas famílias, com o ano base igual a cem"
+      ],
+      "en": [
+        "The index of the transaction prices of dwellings purchased by households, with the base year equal to one hundred"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, Portugal, no ",
+        {
+          "periodo": "hab-prc-hpi-q-q-total-i15-q-pt-2026-q2"
+        },
+        "."
+      ],
+      "en": [
+        "; here, Portugal, in the ",
+        {
+          "periodo": "hab-prc-hpi-q-q-total-i15-q-pt-2026-q2"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-ipH"
+    ]
+  },
+  "hab-prc-hpi-q-q-total-rch-a-eu27_2020-2026-q2": {
+    "nome": {
+      "pt": "Variação anual dos preços da habitação, União Europeia",
+      "en": "Annual change in house prices, European Union"
+    },
+    "frase": {
+      "pt": [
+        "A variação num ano do índice dos preços das transações de casas compradas pelas famílias"
+      ],
+      "en": [
+        "The change over one year in the index of the transaction prices of dwellings purchased by households"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, União Europeia, no ",
+        {
+          "periodo": "hab-prc-hpi-q-q-total-rch-a-eu27_2020-2026-q2"
+        },
+        "."
+      ],
+      "en": [
+        "; here, European Union, in the ",
+        {
+          "periodo": "hab-prc-hpi-q-q-total-rch-a-eu27_2020-2026-q2"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-ipH"
+    ]
+  },
+  "hab-prc-hpi-q-q-total-rch-a-fi-2026-q2": {
+    "nome": {
+      "pt": "Variação anual dos preços da habitação, Finlândia",
+      "en": "Annual change in house prices, Finland"
+    },
+    "frase": {
+      "pt": [
+        "A variação num ano do índice dos preços das transações de casas compradas pelas famílias"
+      ],
+      "en": [
+        "The change over one year in the index of the transaction prices of dwellings purchased by households"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, Finlândia, no ",
+        {
+          "periodo": "hab-prc-hpi-q-q-total-rch-a-fi-2026-q2"
+        },
+        "."
+      ],
+      "en": [
+        "; here, Finland, in the ",
+        {
+          "periodo": "hab-prc-hpi-q-q-total-rch-a-fi-2026-q2"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-ipH"
+    ]
+  },
+  "hab-prc-hpi-q-q-total-rch-a-pt-2026-q2": {
+    "nome": {
+      "pt": "Variação anual dos preços da habitação, Portugal",
+      "en": "Annual change in house prices, Portugal"
+    },
+    "frase": {
+      "pt": [
+        "A variação num ano do índice dos preços das transações de casas compradas pelas famílias"
+      ],
+      "en": [
+        "The change over one year in the index of the transaction prices of dwellings purchased by households"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, Portugal, no ",
+        {
+          "periodo": "hab-prc-hpi-q-q-total-rch-a-pt-2026-q2"
+        },
+        "."
+      ],
+      "en": [
+        "; here, Portugal, in the ",
+        {
+          "periodo": "hab-prc-hpi-q-q-total-rch-a-pt-2026-q2"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-ipH"
+    ]
+  },
+  "hab-ps-mais-valias": {
+    "nome": {
+      "pt": "Proposta do PS sobre mais-valias",
+      "en": "PS proposal on capital gains"
+    },
+    "frase": {
+      "pt": [
+        "O excerto reproduz o documento indicado sobre proposta do PS sobre mais-valias."
+      ],
+      "en": [
+        "The excerpt reproduces the indicated document about pS proposal on capital gains."
+      ]
+    }
+  },
+  "hab-ps-rendas": {
+    "nome": {
+      "pt": "Proposta do PS sobre rendas",
+      "en": "PS proposal on rents"
+    },
+    "frase": {
+      "pt": [
+        "O excerto reproduz o documento indicado sobre proposta do PS sobre rendas."
+      ],
+      "en": [
+        "The excerpt reproduces the indicated document about pS proposal on rents."
+      ]
+    }
+  },
+  "hab-ps-vazias": {
+    "nome": {
+      "pt": "Afirmação do PS sobre casas vazias habitáveis",
+      "en": "PS statement on habitable vacant homes"
+    },
+    "frase": {
+      "pt": [
+        "O excerto reproduz o documento indicado sobre afirmação do PS sobre casas vazias habitáveis."
+      ],
+      "en": [
+        "The excerpt reproduces the indicated document about pS statement on habitable vacant homes."
+      ]
+    }
+  },
+  "hab-sts-cobp-a-a-bprm-dw-cpa-f41001-x-410014-nsa-ths-eu27_2020-2025": {
+    "nome": {
+      "pt": "Alojamentos licenciados, União Europeia",
+      "en": "Dwellings permitted, European Union"
+    },
+    "frase": {
+      "pt": [
+        "O número de alojamentos com licença de construção, a autorização final para começar a obra"
+      ],
+      "en": [
+        "The number of dwellings with a building permit, the final authorisation to start work"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, União Europeia, em ",
+        {
+          "periodo": "hab-sts-cobp-a-a-bprm-dw-cpa-f41001-x-410014-nsa-ths-eu27_2020-2025"
+        },
+        "."
+      ],
+      "en": [
+        "; here, European Union, in ",
+        {
+          "periodo": "hab-sts-cobp-a-a-bprm-dw-cpa-f41001-x-410014-nsa-ths-eu27_2020-2025"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-licenca"
+    ]
+  },
+  "hab-sts-cobp-a-a-bprm-dw-cpa-f41001-x-410014-nsa-ths-pt-2025": {
+    "nome": {
+      "pt": "Alojamentos licenciados, Portugal",
+      "en": "Dwellings permitted, Portugal"
+    },
+    "frase": {
+      "pt": [
+        "O número de alojamentos com licença de construção, a autorização final para começar a obra"
+      ],
+      "en": [
+        "The number of dwellings with a building permit, the final authorisation to start work"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, Portugal, em ",
+        {
+          "periodo": "hab-sts-cobp-a-a-bprm-dw-cpa-f41001-x-410014-nsa-ths-pt-2025"
+        },
+        "."
+      ],
+      "en": [
+        "; here, Portugal, in ",
+        {
+          "periodo": "hab-sts-cobp-a-a-bprm-dw-cpa-f41001-x-410014-nsa-ths-pt-2025"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-licenca"
+    ]
+  },
+  "hab-tespm140-a-pc-eu27_2020-2025": {
+    "nome": {
+      "pt": "Sobrecarga do custo da habitação, União Europeia",
+      "en": "Housing cost overburden, European Union"
+    },
+    "frase": {
+      "pt": [
+        "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios à habitação, passa de quarenta por cento do rendimento disponível, também descontados esses subsídios"
+      ],
+      "en": [
+        "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income, also net of housing allowances"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, União Europeia, em ",
+        {
+          "periodo": "hab-tespm140-a-pc-eu27_2020-2025"
+        },
+        "."
+      ],
+      "en": [
+        "; here, European Union, in ",
+        {
+          "periodo": "hab-tespm140-a-pc-eu27_2020-2025"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-sobrecarga"
+    ]
+  },
+  "hab-tespm140-a-pc-pt-2025": {
+    "nome": {
+      "pt": "Sobrecarga do custo da habitação, Portugal",
+      "en": "Housing cost overburden, Portugal"
+    },
+    "frase": {
+      "pt": [
+        "A taxa de sobrecarga dos custos da habitação é a parte da população que vive em agregados onde a despesa total com a habitação, descontados os subsídios à habitação, passa de quarenta por cento do rendimento disponível, também descontados esses subsídios"
+      ],
+      "en": [
+        "The housing cost overburden rate is the share of the population living in households where total housing costs, net of housing allowances, exceed forty percent of disposable income, also net of housing allowances"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, Portugal, em ",
+        {
+          "periodo": "hab-tespm140-a-pc-pt-2025"
+        },
+        "."
+      ],
+      "en": [
+        "; here, Portugal, in ",
+        {
+          "periodo": "hab-tespm140-a-pc-pt-2025"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-sobrecarga"
+    ]
+  },
+  "hab-tipsho10-a-i15-a-avg-eu27_2020-2025": {
+    "nome": {
+      "pt": "Índice dos preços da habitação descontada a inflação, União Europeia",
+      "en": "Index of house prices net of inflation, European Union"
+    },
+    "frase": {
+      "pt": [
+        "O índice dos preços das casas descontada a inflação, que é o índice dos preços da habitação dividido pelo deflator do consumo privado das contas nacionais, com o ano base igual a cem"
+      ],
+      "en": [
+        "The index of house prices net of inflation, which is the index of house prices divided by the national accounts deflator for private consumption, with the base year equal to one hundred"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, União Europeia, em ",
+        {
+          "periodo": "hab-tipsho10-a-i15-a-avg-eu27_2020-2025"
+        },
+        "."
+      ],
+      "en": [
+        "; here, European Union, in ",
+        {
+          "periodo": "hab-tipsho10-a-i15-a-avg-eu27_2020-2025"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-precos-reais"
+    ]
+  },
+  "hab-tipsho10-a-i15-a-avg-fi-2025": {
+    "nome": {
+      "pt": "Índice dos preços da habitação descontada a inflação, Finlândia",
+      "en": "Index of house prices net of inflation, Finland"
+    },
+    "frase": {
+      "pt": [
+        "O índice dos preços das casas descontada a inflação, que é o índice dos preços da habitação dividido pelo deflator do consumo privado das contas nacionais, com o ano base igual a cem"
+      ],
+      "en": [
+        "The index of house prices net of inflation, which is the index of house prices divided by the national accounts deflator for private consumption, with the base year equal to one hundred"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, Finlândia, em ",
+        {
+          "periodo": "hab-tipsho10-a-i15-a-avg-fi-2025"
+        },
+        "."
+      ],
+      "en": [
+        "; here, Finland, in ",
+        {
+          "periodo": "hab-tipsho10-a-i15-a-avg-fi-2025"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-precos-reais"
+    ]
+  },
+  "hab-tipsho10-a-i15-a-avg-pt-2020": {
+    "nome": {
+      "pt": "Índice dos preços da habitação descontada a inflação, Portugal",
+      "en": "Index of house prices net of inflation, Portugal"
+    },
+    "frase": {
+      "pt": [
+        "O índice dos preços das casas descontada a inflação, que é o índice dos preços da habitação dividido pelo deflator do consumo privado das contas nacionais, com o ano base igual a cem"
+      ],
+      "en": [
+        "The index of house prices net of inflation, which is the index of house prices divided by the national accounts deflator for private consumption, with the base year equal to one hundred"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, Portugal, em ",
+        {
+          "periodo": "hab-tipsho10-a-i15-a-avg-pt-2020"
+        },
+        "."
+      ],
+      "en": [
+        "; here, Portugal, in ",
+        {
+          "periodo": "hab-tipsho10-a-i15-a-avg-pt-2020"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-precos-reais"
+    ]
+  },
+  "hab-tipsho10-a-i15-a-avg-pt-2025": {
+    "nome": {
+      "pt": "Índice dos preços da habitação descontada a inflação, Portugal",
+      "en": "Index of house prices net of inflation, Portugal"
+    },
+    "frase": {
+      "pt": [
+        "O índice dos preços das casas descontada a inflação, que é o índice dos preços da habitação dividido pelo deflator do consumo privado das contas nacionais, com o ano base igual a cem"
+      ],
+      "en": [
+        "The index of house prices net of inflation, which is the index of house prices divided by the national accounts deflator for private consumption, with the base year equal to one hundred"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, Portugal, em ",
+        {
+          "periodo": "hab-tipsho10-a-i15-a-avg-pt-2025"
+        },
+        "."
+      ],
+      "en": [
+        "; here, Portugal, in ",
+        {
+          "periodo": "hab-tipsho10-a-i15-a-avg-pt-2025"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-precos-reais"
+    ]
+  },
+  "hab-tipsho10-a-rch-a-avg-eu27_2020-2025": {
+    "nome": {
+      "pt": "Variação anual dos preços da habitação descontada a inflação, União Europeia",
+      "en": "Annual change in house prices net of inflation, European Union"
+    },
+    "frase": {
+      "pt": [
+        "A variação num ano do índice dos preços das casas descontada a inflação, que é o índice dos preços da habitação dividido pelo deflator do consumo privado das contas nacionais"
+      ],
+      "en": [
+        "The change over one year in the index of house prices net of inflation, which is the index of house prices divided by the national accounts deflator for private consumption"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, União Europeia, em ",
+        {
+          "periodo": "hab-tipsho10-a-rch-a-avg-eu27_2020-2025"
+        },
+        "."
+      ],
+      "en": [
+        "; here, European Union, in ",
+        {
+          "periodo": "hab-tipsho10-a-rch-a-avg-eu27_2020-2025"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-precos-reais"
+    ]
+  },
+  "hab-tipsho10-a-rch-a-avg-pt-2025": {
+    "nome": {
+      "pt": "Variação anual dos preços da habitação descontada a inflação, Portugal",
+      "en": "Annual change in house prices net of inflation, Portugal"
+    },
+    "frase": {
+      "pt": [
+        "A variação num ano do índice dos preços das casas descontada a inflação, que é o índice dos preços da habitação dividido pelo deflator do consumo privado das contas nacionais"
+      ],
+      "en": [
+        "The change over one year in the index of house prices net of inflation, which is the index of house prices divided by the national accounts deflator for private consumption"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, Portugal, em ",
+        {
+          "periodo": "hab-tipsho10-a-rch-a-avg-pt-2025"
+        },
+        "."
+      ],
+      "en": [
+        "; here, Portugal, in ",
+        {
+          "periodo": "hab-tipsho10-a-rch-a-avg-pt-2025"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-precos-reais"
+    ]
+  },
+  "hab-tipsho60-a-ptir-i15-eu27_2020-2024": {
+    "nome": {
+      "pt": "Preços das casas em relação ao rendimento, União Europeia",
+      "en": "House prices relative to income, European Union"
+    },
+    "frase": {
+      "pt": [
+        "O rácio entre os preços das casas e o rendimento disponível bruto ajustado das famílias por habitante, em índice com o ano base igual a cem"
+      ],
+      "en": [
+        "The ratio of house prices to adjusted gross disposable household income per head, as an index with the base year equal to one hundred"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, União Europeia, em ",
+        {
+          "periodo": "hab-tipsho60-a-ptir-i15-eu27_2020-2024"
+        },
+        "."
+      ],
+      "en": [
+        "; here, European Union, in ",
+        {
+          "periodo": "hab-tipsho60-a-ptir-i15-eu27_2020-2024"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-preco-rendimento"
+    ]
+  },
+  "hab-tipsho60-a-ptir-i15-pt-2019": {
+    "nome": {
+      "pt": "Preços das casas em relação ao rendimento, Portugal",
+      "en": "House prices relative to income, Portugal"
+    },
+    "frase": {
+      "pt": [
+        "O rácio entre os preços das casas e o rendimento disponível bruto ajustado das famílias por habitante, em índice com o ano base igual a cem"
+      ],
+      "en": [
+        "The ratio of house prices to adjusted gross disposable household income per head, as an index with the base year equal to one hundred"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, Portugal, em ",
+        {
+          "periodo": "hab-tipsho60-a-ptir-i15-pt-2019"
+        },
+        "."
+      ],
+      "en": [
+        "; here, Portugal, in ",
+        {
+          "periodo": "hab-tipsho60-a-ptir-i15-pt-2019"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-preco-rendimento"
+    ]
+  },
+  "hab-tipsho60-a-ptir-i15-pt-2024": {
+    "nome": {
+      "pt": "Preços das casas em relação ao rendimento, Portugal",
+      "en": "House prices relative to income, Portugal"
+    },
+    "frase": {
+      "pt": [
+        "O rácio entre os preços das casas e o rendimento disponível bruto ajustado das famílias por habitante, em índice com o ano base igual a cem"
+      ],
+      "en": [
+        "The ratio of house prices to adjusted gross disposable household income per head, as an index with the base year equal to one hundred"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, Portugal, em ",
+        {
+          "periodo": "hab-tipsho60-a-ptir-i15-pt-2024"
+        },
+        "."
+      ],
+      "en": [
+        "; here, Portugal, in ",
+        {
+          "periodo": "hab-tipsho60-a-ptir-i15-pt-2024"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-preco-rendimento"
+    ]
+  },
+  "hab-tipsho60-a-ptir-i15-ro-2024": {
+    "nome": {
+      "pt": "Preços das casas em relação ao rendimento, Roménia",
+      "en": "House prices relative to income, Romania"
+    },
+    "frase": {
+      "pt": [
+        "O rácio entre os preços das casas e o rendimento disponível bruto ajustado das famílias por habitante, em índice com o ano base igual a cem"
+      ],
+      "en": [
+        "The ratio of house prices to adjusted gross disposable household income per head, as an index with the base year equal to one hundred"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, Roménia, em ",
+        {
+          "periodo": "hab-tipsho60-a-ptir-i15-ro-2024"
+        },
+        "."
+      ],
+      "en": [
+        "; here, Romania, in ",
+        {
+          "periodo": "hab-tipsho60-a-ptir-i15-ro-2024"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-preco-rendimento"
+    ]
+  },
+  "hab-tipsho60-a-ptir-lt-avg-eu27_2020-2024": {
+    "nome": {
+      "pt": "Rácio preço-rendimento face à média de longo prazo, União Europeia",
+      "en": "Price-to-income ratio relative to the long-term average, European Union"
+    },
+    "frase": {
+      "pt": [
+        "O rácio entre os preços das casas e o rendimento das famílias face à sua média de longo prazo, que vale cem quando o rácio está nessa média"
+      ],
+      "en": [
+        "The ratio of house prices to household income relative to its long-term average, which equals one hundred when the ratio is at that average"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, União Europeia, em ",
+        {
+          "periodo": "hab-tipsho60-a-ptir-lt-avg-eu27_2020-2024"
+        },
+        "."
+      ],
+      "en": [
+        "; here, European Union, in ",
+        {
+          "periodo": "hab-tipsho60-a-ptir-lt-avg-eu27_2020-2024"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-preco-rendimento"
+    ]
+  },
+  "hab-tipsho60-a-ptir-lt-avg-pt-2024": {
+    "nome": {
+      "pt": "Rácio preço-rendimento face à média de longo prazo, Portugal",
+      "en": "Price-to-income ratio relative to the long-term average, Portugal"
+    },
+    "frase": {
+      "pt": [
+        "O rácio entre os preços das casas e o rendimento das famílias face à sua média de longo prazo, que vale cem quando o rácio está nessa média"
+      ],
+      "en": [
+        "The ratio of house prices to household income relative to its long-term average, which equals one hundred when the ratio is at that average"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, Portugal, em ",
+        {
+          "periodo": "hab-tipsho60-a-ptir-lt-avg-pt-2024"
+        },
+        "."
+      ],
+      "en": [
+        "; here, Portugal, in ",
+        {
+          "periodo": "hab-tipsho60-a-ptir-lt-avg-pt-2024"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-preco-rendimento"
+    ]
+  },
+  "hab-tipsho60-a-ptir-lt-avg-ro-2024": {
+    "nome": {
+      "pt": "Rácio preço-rendimento face à média de longo prazo, Roménia",
+      "en": "Price-to-income ratio relative to the long-term average, Romania"
+    },
+    "frase": {
+      "pt": [
+        "O rácio entre os preços das casas e o rendimento das famílias face à sua média de longo prazo, que vale cem quando o rácio está nessa média"
+      ],
+      "en": [
+        "The ratio of house prices to household income relative to its long-term average, which equals one hundred when the ratio is at that average"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, Roménia, em ",
+        {
+          "periodo": "hab-tipsho60-a-ptir-lt-avg-ro-2024"
+        },
+        "."
+      ],
+      "en": [
+        "; here, Romania, in ",
+        {
+          "periodo": "hab-tipsho60-a-ptir-lt-avg-ro-2024"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-preco-rendimento"
+    ]
+  },
+  "hab-votacao-arrendamento": {
+    "nome": {
+      "pt": "Votação da reforma do arrendamento",
+      "en": "Vote on rental reform"
+    },
+    "frase": {
+      "pt": [
+        "O excerto reproduz o documento indicado sobre votação da reforma do arrendamento."
+      ],
+      "en": [
+        "The excerpt reproduces the indicated document about vote on rental reform."
+      ]
+    }
+  },
+  "hab-votacao-chega": {
+    "nome": {
+      "pt": "Votação da proposta do Chega",
+      "en": "Vote on the Chega proposal"
+    },
+    "frase": {
+      "pt": [
+        "O excerto reproduz o documento indicado sobre votação da proposta do Chega."
+      ],
+      "en": [
+        "The excerpt reproduces the indicated document about vote on the Chega proposal."
+      ]
+    }
+  },
+  "hab-votacao-livre": {
+    "nome": {
+      "pt": "Votação da proposta do Livre",
+      "en": "Vote on the Livre proposal"
+    },
+    "frase": {
+      "pt": [
+        "O excerto reproduz o documento indicado sobre votação da proposta do Livre."
+      ],
+      "en": [
+        "The excerpt reproduces the indicated document about vote on the Livre proposal."
+      ]
+    }
+  },
+  "hab-votacao-pan": {
+    "nome": {
+      "pt": "Votação da proposta do PAN",
+      "en": "Vote on the PAN proposal"
+    },
+    "frase": {
+      "pt": [
+        "O excerto reproduz o documento indicado sobre votação da proposta do PAN."
+      ],
+      "en": [
+        "The excerpt reproduces the indicated document about vote on the PAN proposal."
+      ]
+    }
+  },
+  "hab-yth-demo-030-a-avg-t-eu27_2020-2025": {
+    "nome": {
+      "pt": "Idade média de saída de casa dos pais, União Europeia",
+      "en": "Average age of leaving the parental home, European Union"
+    },
+    "frase": {
+      "pt": [
+        "A idade em que metade da população já não vive num agregado com os pais, estimada pelo inquérito ao emprego"
+      ],
+      "en": [
+        "The age at which half of the population no longer lives in a household with their parents, estimated from the Labour Force Survey"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, União Europeia, em ",
+        {
+          "periodo": "hab-yth-demo-030-a-avg-t-eu27_2020-2025"
+        },
+        "."
+      ],
+      "en": [
+        "; here, European Union, in ",
+        {
+          "periodo": "hab-yth-demo-030-a-avg-t-eu27_2020-2025"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-saida"
+    ]
+  },
+  "hab-yth-demo-030-a-avg-t-fi-2025": {
+    "nome": {
+      "pt": "Idade média de saída de casa dos pais, Finlândia",
+      "en": "Average age of leaving the parental home, Finland"
+    },
+    "frase": {
+      "pt": [
+        "A idade em que metade da população já não vive num agregado com os pais, estimada pelo inquérito ao emprego"
+      ],
+      "en": [
+        "The age at which half of the population no longer lives in a household with their parents, estimated from the Labour Force Survey"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, Finlândia, em ",
+        {
+          "periodo": "hab-yth-demo-030-a-avg-t-fi-2025"
+        },
+        "."
+      ],
+      "en": [
+        "; here, Finland, in ",
+        {
+          "periodo": "hab-yth-demo-030-a-avg-t-fi-2025"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-saida"
+    ]
+  },
+  "hab-yth-demo-030-a-avg-t-hr-2025": {
+    "nome": {
+      "pt": "Idade média de saída de casa dos pais, Croácia",
+      "en": "Average age of leaving the parental home, Croatia"
+    },
+    "frase": {
+      "pt": [
+        "A idade em que metade da população já não vive num agregado com os pais, estimada pelo inquérito ao emprego"
+      ],
+      "en": [
+        "The age at which half of the population no longer lives in a household with their parents, estimated from the Labour Force Survey"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, Croácia, em ",
+        {
+          "periodo": "hab-yth-demo-030-a-avg-t-hr-2025"
+        },
+        "."
+      ],
+      "en": [
+        "; here, Croatia, in ",
+        {
+          "periodo": "hab-yth-demo-030-a-avg-t-hr-2025"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-saida"
+    ]
+  },
+  "hab-yth-demo-030-a-avg-t-pt-2015": {
+    "nome": {
+      "pt": "Idade média de saída de casa dos pais, Portugal",
+      "en": "Average age of leaving the parental home, Portugal"
+    },
+    "frase": {
+      "pt": [
+        "A idade em que metade da população já não vive num agregado com os pais, estimada pelo inquérito ao emprego"
+      ],
+      "en": [
+        "The age at which half of the population no longer lives in a household with their parents, estimated from the Labour Force Survey"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, Portugal, em ",
+        {
+          "periodo": "hab-yth-demo-030-a-avg-t-pt-2015"
+        },
+        "."
+      ],
+      "en": [
+        "; here, Portugal, in ",
+        {
+          "periodo": "hab-yth-demo-030-a-avg-t-pt-2015"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-saida"
+    ]
+  },
+  "hab-yth-demo-030-a-avg-t-pt-2025": {
+    "nome": {
+      "pt": "Idade média de saída de casa dos pais, Portugal",
+      "en": "Average age of leaving the parental home, Portugal"
+    },
+    "frase": {
+      "pt": [
+        "A idade em que metade da população já não vive num agregado com os pais, estimada pelo inquérito ao emprego"
+      ],
+      "en": [
+        "The age at which half of the population no longer lives in a household with their parents, estimated from the Labour Force Survey"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "; aqui, Portugal, em ",
+        {
+          "periodo": "hab-yth-demo-030-a-avg-t-pt-2025"
+        },
+        "."
+      ],
+      "en": [
+        "; here, Portugal, in ",
+        {
+          "periodo": "hab-yth-demo-030-a-avg-t-pt-2025"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "hb1c-eurostat-saida"
+    ]
+  },
+  "oe-2027-calendario-generalidade": {
+    "nome": {
+      "pt": "Votação do Orçamento na generalidade",
+      "en": "Budget first-reading vote"
+    },
+    "frase": {
+      "pt": [
+        "A medida mostra votação do Orçamento na generalidade"
+      ],
+      "en": [
+        "The measure shows budget first-reading vote"
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " em ",
+        {
+          "periodo": "oe-2027-calendario-generalidade"
+        },
+        "."
+      ],
+      "en": [
+        " in ",
+        {
+          "periodo": "oe-2027-calendario-generalidade"
+        },
+        "."
+      ]
+    }
+  },
+  "posicao-chega-habitacao": {
+    "nome": {
+      "pt": "Pacote do Chega para a habitação, pela imprensa",
+      "en": "Chega housing package, reported by the press"
+    },
+    "frase": {
+      "pt": [
+        "O excerto reproduz o documento indicado sobre pacote do Chega para a habitação, pela imprensa."
+      ],
+      "en": [
+        "The excerpt reproduces the indicated document about chega housing package, reported by the press."
+      ]
+    }
+  },
+  "posicao-ps-rendas": {
+    "nome": {
+      "pt": "Proposta do PS para a dedução das rendas",
+      "en": "PS proposal for the rent deduction"
+    },
+    "frase": {
+      "pt": [
+        "O excerto reproduz o documento indicado sobre proposta do PS para a dedução das rendas."
+      ],
+      "en": [
+        "The excerpt reproduces the indicated document about pS proposal for the rent deduction."
+      ]
+    }
+  }
+});

@@ -1,0 +1,51 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "hab-ine-juro-implicito"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "3,194"
+unit: "%"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "taxa de juro implícita no conjunto dos contratos de crédito à habitação"
+name_source: "PDF p. 1; parágrafo identificado pelo início; área física declarada"
+measure: "taxa de juro implícita no conjunto dos contratos de crédito à habitação"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "INE"
+document:
+  title: "TAXAS DE JURO IMPLÍCITAS NO CRÉDITO À HABITAÇÃO"
+  edition: "2026-09"
+  locator: "PDF p. 1; parágrafo identificado pelo início; área física declarada"
+  source_sha256: "ee4600b0fb179a51a20aeca9d5513efe4d3e9b6bd77cae623b7c8317c4140afa"
+  page: 1
+  kind: "pdf"
+source_url: "https://www.ine.pt/ngt_server/attachfileu.jsp?look_parentBoui=822585037&att_display=n&att_download=y"
+access_date: "2026-10-26"
+published_at: "2026-10-21"
+reference_date: "2026-09"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "A taxa de juro implícita no conjunto dos contratos de crédito à habitação subiu para 3,194% em setembro, traduzindo um aumento de 3,2 pontos base (p.b.) face ao mês anterior."
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+# A quem o valor é creditado. Lista de entidades, ou campo nenhum.
+attributed_to:
+  - "INE"
+
+study: "a-casa-em-portugal-e-na-europa"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Destaque de 21 de outubro de 2026 (setembro de 2026); a linha de agosto de 2026 (destaque de 18 de setembro de 2026) é substituída nesta edição. · Cruzado de ResearchHub content/23 Habitacao · hab-ine-juro-implicito."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

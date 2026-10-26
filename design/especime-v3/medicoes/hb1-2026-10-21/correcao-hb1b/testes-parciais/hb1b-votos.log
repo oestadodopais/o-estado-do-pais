@@ -1,0 +1,213 @@
+{
+  "codigo": 0,
+  "edicoes": {
+    "pt": [
+      {
+        "id": "hab-votacao-arrendamento",
+        "frase": "Foi aprovada na generalidade a ⟦lit:30 de setembro⟧ de 2026, com os votos a favor do PSD, da IL e do CDS-PP, os votos contra do PS, do Livre, do Partido Comunista Português (o PCP), do BE, do Pessoas-Animais-Natureza (o PAN) e do Juntos pelo Povo (o JPP), e a abstenção do Chega.",
+        "grupos": {
+          "Contra": [
+            "BE",
+            "JPP",
+            "L",
+            "PAN",
+            "PCP",
+            "PS"
+          ],
+          "Abstenção": [
+            "CH"
+          ],
+          "A Favor": [
+            "CDS-PP",
+            "IL",
+            "PSD"
+          ]
+        }
+      },
+      {
+        "id": "hab-votacao-chega",
+        "frase": "Rejeitado a ⟦lit:16 de outubro⟧, com os votos contra do PSD, do Livre, do PCP, do CDS-PP e do BE, a abstenção do PS e do PAN e os votos a favor do Chega, da IL e do JPP.",
+        "grupos": {
+          "Contra": [
+            "BE",
+            "CDS-PP",
+            "L",
+            "PCP",
+            "PSD"
+          ],
+          "Abstenção": [
+            "PAN",
+            "PS"
+          ],
+          "A Favor": [
+            "CH",
+            "IL",
+            "JPP"
+          ]
+        }
+      },
+      {
+        "id": "hab-votacao-pan",
+        "frase": "Foi rejeitado a ⟦lit:30 de setembro⟧, com os votos contra do PSD, do Chega, da IL e do CDS-PP, a abstenção do PS e do PCP e os votos a favor do Livre, do BE, do PAN e do JPP.",
+        "grupos": {
+          "Contra": [
+            "CDS-PP",
+            "CH",
+            "IL",
+            "PSD"
+          ],
+          "Abstenção": [
+            "PCP",
+            "PS"
+          ],
+          "A Favor": [
+            "BE",
+            "JPP",
+            "L",
+            "PAN"
+          ]
+        }
+      },
+      {
+        "id": "hab-votacao-livre",
+        "frase": "Aprovado a ⟦lit:16 de outubro⟧, com os votos contra do PSD e do CDS-PP e os votos a favor de todos os outros: Chega, PS, IL, Livre, PCP, BE, PAN e JPP.",
+        "grupos": {
+          "Contra": [
+            "CDS-PP",
+            "PSD"
+          ],
+          "Abstenção": [],
+          "A Favor": [
+            "BE",
+            "CH",
+            "IL",
+            "JPP",
+            "L",
+            "PAN",
+            "PCP",
+            "PS"
+          ]
+        }
+      }
+    ],
+    "en": [
+      {
+        "id": "hab-votacao-arrendamento",
+        "frase": "It was approved in its first reading on ⟦lit:30 September 2026⟧, with the votes in favour of the PSD, IL and the CDS-PP, the votes against of the PS, Livre, the Portuguese Communist Party (PCP), the BE, People-Animals-Nature (PAN) and Juntos pelo Povo (JPP), and the abstention of Chega.",
+        "grupos": {
+          "Contra": [
+            "BE",
+            "JPP",
+            "L",
+            "PAN",
+            "PCP",
+            "PS"
+          ],
+          "Abstenção": [
+            "CH"
+          ],
+          "A Favor": [
+            "CDS-PP",
+            "IL",
+            "PSD"
+          ]
+        }
+      },
+      {
+        "id": "hab-votacao-chega",
+        "frase": "Rejected on ⟦lit:16 October⟧, with the votes against of the PSD, Livre, the PCP, the CDS-PP and the BE, the abstention of the PS and PAN and the votes in favour of Chega, IL and the JPP.",
+        "grupos": {
+          "Contra": [
+            "BE",
+            "CDS-PP",
+            "L",
+            "PCP",
+            "PSD"
+          ],
+          "Abstenção": [
+            "PAN",
+            "PS"
+          ],
+          "A Favor": [
+            "CH",
+            "IL",
+            "JPP"
+          ]
+        }
+      },
+      {
+        "id": "hab-votacao-pan",
+        "frase": "It was rejected on ⟦lit:30 September⟧, with the votes against of the PSD, Chega, IL and the CDS-PP, the abstention of the PS and the PCP and the votes in favour of Livre, the BE, PAN and the JPP.",
+        "grupos": {
+          "Contra": [
+            "CDS-PP",
+            "CH",
+            "IL",
+            "PSD"
+          ],
+          "Abstenção": [
+            "PCP",
+            "PS"
+          ],
+          "A Favor": [
+            "BE",
+            "JPP",
+            "L",
+            "PAN"
+          ]
+        }
+      },
+      {
+        "id": "hab-votacao-livre",
+        "frase": "Approved on ⟦lit:16 October⟧, with the votes against of the PSD and the CDS-PP and the votes in favour of all the others: Chega, the PS, IL, Livre, the PCP, the BE, PAN and the JPP.",
+        "grupos": {
+          "Contra": [
+            "CDS-PP",
+            "PSD"
+          ],
+          "Abstenção": [],
+          "A Favor": [
+            "BE",
+            "CH",
+            "IL",
+            "JPP",
+            "L",
+            "PAN",
+            "PCP",
+            "PS"
+          ]
+        }
+      }
+    ]
+  },
+  "plantas": [
+    {
+      "lingua": "pt",
+      "planta": "partido trocado de grupo",
+      "vermelho": 1,
+      "verde": 0,
+      "mordida": "hab-votacao-arrendamento: Contra"
+    },
+    {
+      "lingua": "pt",
+      "planta": "partido omitido",
+      "vermelho": 1,
+      "verde": 0,
+      "mordida": "hab-votacao-arrendamento: Contra"
+    },
+    {
+      "lingua": "en",
+      "planta": "partido trocado de grupo",
+      "vermelho": 1,
+      "verde": 0,
+      "mordida": "hab-votacao-arrendamento: Contra"
+    },
+    {
+      "lingua": "en",
+      "planta": "partido omitido",
+      "vermelho": 1,
+      "verde": 0,
+      "mordida": "hab-votacao-arrendamento: Contra"
+    }
+  ]
+}

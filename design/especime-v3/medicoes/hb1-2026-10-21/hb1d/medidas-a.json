@@ -1,0 +1,267 @@
+{
+  "medidas": [
+    {
+      "nome": "linha hab-ine-preco-mediano",
+      "motor": {
+        "value": "2 445",
+        "reference_date": "2026-Q2",
+        "published_at": "2026-10-23",
+        "file": "content/23 Habitacao/source/hb1d-ine-precos-q2.pdf",
+        "source_sha256": "9f3176072c9399b644acc8bf77ef701a7927382c6802eee3c0ae3996a40e5879"
+      },
+      "sitio": {
+        "value": "2 445",
+        "reference_date": "2026-T2",
+        "published_at": "2026-10-23",
+        "edition": "2026-Q2",
+        "corrections": 0
+      },
+      "comando": "python3 design/especime-v3/medicoes/hb1-2026-10-21/hb1d/medir-a.py <motor>",
+      "conhecido_positivo": "hab-ine-vagos-total"
+    },
+    {
+      "nome": "linha hab-ine-preco-lisboa",
+      "motor": {
+        "value": "5 299",
+        "reference_date": "2026-Q2",
+        "published_at": "2026-10-23",
+        "file": "content/23 Habitacao/source/hb1d-ine-precos-q2.pdf",
+        "source_sha256": "9f3176072c9399b644acc8bf77ef701a7927382c6802eee3c0ae3996a40e5879"
+      },
+      "sitio": {
+        "value": "5 299",
+        "reference_date": "2026-T2",
+        "published_at": "2026-10-23",
+        "edition": "2026-Q2",
+        "corrections": 0
+      },
+      "comando": "python3 design/especime-v3/medicoes/hb1-2026-10-21/hb1d/medir-a.py <motor>",
+      "conhecido_positivo": "hab-ine-vagos-total"
+    },
+    {
+      "nome": "linha hab-ine-preco-porto",
+      "motor": {
+        "value": "3 846",
+        "reference_date": "2026-Q2",
+        "published_at": "2026-10-23",
+        "file": "content/23 Habitacao/source/hb1d-ine-precos-q2.zip",
+        "source_sha256": "99cdefcb77b4e221f2a8beb19b14303d251ad34735166f0717a8edcb9e946330"
+      },
+      "sitio": {
+        "value": "3 846",
+        "reference_date": "2026-T2",
+        "published_at": "2026-10-23",
+        "edition": "2026-Q2",
+        "corrections": 0
+      },
+      "comando": "python3 design/especime-v3/medicoes/hb1-2026-10-21/hb1d/medir-a.py <motor>",
+      "conhecido_positivo": "hab-ine-vagos-total"
+    },
+    {
+      "nome": "linha hab-ine-juro-implicito",
+      "motor": {
+        "value": "3,194",
+        "reference_date": "2026-09",
+        "published_at": "2026-10-21",
+        "file": "content/23 Habitacao/source/hb1d-ine-juro-2026-09.pdf",
+        "source_sha256": "ee4600b0fb179a51a20aeca9d5513efe4d3e9b6bd77cae623b7c8317c4140afa"
+      },
+      "sitio": {
+        "value": "3,194",
+        "reference_date": "2026-09",
+        "published_at": "2026-10-21",
+        "edition": "2026-09",
+        "corrections": 0
+      },
+      "comando": "python3 design/especime-v3/medicoes/hb1-2026-10-21/hb1d/medir-a.py <motor>",
+      "conhecido_positivo": "hab-ine-vagos-total"
+    },
+    {
+      "nome": "linha der-hab-preco-lisboa-vs-portugal",
+      "motor": {
+        "value": "2.2",
+        "reference_date": "2026-Q2",
+        "published_at": null,
+        "file": null,
+        "source_sha256": null
+      },
+      "sitio": {
+        "value": "2,2",
+        "reference_date": "2026-T2",
+        "published_at": null,
+        "edition": null,
+        "corrections": 0
+      },
+      "comando": "python3 design/especime-v3/medicoes/hb1-2026-10-21/hb1d/medir-a.py <motor>",
+      "conhecido_positivo": "hab-ine-vagos-total"
+    },
+    {
+      "nome": "linha der-hab-renda-lisboa-vs-portugal",
+      "motor": {
+        "value": "1.7",
+        "reference_date": "2026-Q2",
+        "published_at": null,
+        "file": null,
+        "source_sha256": null
+      },
+      "sitio": {
+        "value": "1,7",
+        "reference_date": "2026-T2",
+        "published_at": null,
+        "edition": null,
+        "corrections": 0
+      },
+      "comando": "python3 design/especime-v3/medicoes/hb1-2026-10-21/hb1d/medir-a.py <motor>",
+      "conhecido_positivo": "hab-ine-vagos-total"
+    },
+    {
+      "nome": "linha hab-ine-vagos-total",
+      "motor": {
+        "value": "723 215",
+        "reference_date": "2021",
+        "published_at": null,
+        "file": "content/23 Habitacao/source/ine-casas-vagas.html",
+        "source_sha256": "59195c01c07d9c46fdd79176c1be00c2b63e4395a81bd98df63938b530e3e69d"
+      },
+      "sitio": {
+        "value": "723 215",
+        "reference_date": "2021",
+        "published_at": null,
+        "edition": "2021",
+        "corrections": 0
+      },
+      "comando": "python3 design/especime-v3/medicoes/hb1-2026-10-21/hb1d/medir-a.py <motor>",
+      "conhecido_positivo": "hab-ine-vagos-total"
+    },
+    {
+      "nome": "contador edicoes-publicadas",
+      "sitio": {
+        "value": "29",
+        "reference_date": "2026-10-26",
+        "published_at": null,
+        "edition": "26.10.2026",
+        "corrections": 3
+      },
+      "comando": "python3 design/especime-v3/medicoes/hb1-2026-10-21/hb1d/medir-a.py <motor>",
+      "conhecido_positivo": "correcoes-publicadas (não muda)"
+    },
+    {
+      "nome": "contador estudos-publicados",
+      "sitio": {
+        "value": "19",
+        "reference_date": "2026-10-26",
+        "published_at": null,
+        "edition": "26.10.2026",
+        "corrections": 3
+      },
+      "comando": "python3 design/especime-v3/medicoes/hb1-2026-10-21/hb1d/medir-a.py <motor>",
+      "conhecido_positivo": "correcoes-publicadas (não muda)"
+    },
+    {
+      "nome": "contador correcoes-publicadas",
+      "sitio": {
+        "value": "12",
+        "reference_date": "2026-10-21",
+        "published_at": null,
+        "edition": "21.10.2026",
+        "corrections": 6
+      },
+      "comando": "python3 design/especime-v3/medicoes/hb1-2026-10-21/hb1d/medir-a.py <motor>",
+      "conhecido_positivo": "correcoes-publicadas (não muda)"
+    },
+    {
+      "nome": "frase pt resumo",
+      "ocorrencias": 1,
+      "secao": "## Em resumo",
+      "valor": "Uma casa vendida em Portugal custava 2 445 euros por metro quadrado no 2.º trimestre de 2026, em Lisboa 5 299 e no Porto 3 846; uma renda nova, no 2.º trimestre de 2026, 10,17 euros por metro quadrado no país, 17,79 em Lisboa, 14,66 no Porto.",
+      "comando": "python3 design/especime-v3/medicoes/hb1-2026-10-21/hb1d/medir-a.py <motor>",
+      "conhecido_positivo": "a frase do Banco de Portugal da secção 6, de outras linhas, lida pela mesma função"
+    },
+    {
+      "nome": "frase pt secção 1",
+      "ocorrencias": 1,
+      "secao": "## 1. Quanto custa uma casa, e quanto subiu",
+      "valor": "Em euros, o INE mede as vendas: o preço mediano foi de 2 445 euros por metro quadrado no 2.º trimestre de 2026, 5 299 em Lisboa e 3 846 no Porto; Lisboa custa 2,2 vezes o país.",
+      "comando": "python3 design/especime-v3/medicoes/hb1-2026-10-21/hb1d/medir-a.py <motor>",
+      "conhecido_positivo": "a frase do Banco de Portugal da secção 6, de outras linhas, lida pela mesma função"
+    },
+    {
+      "nome": "frase pt secção 6",
+      "ocorrencias": 1,
+      "secao": "## 6. O crédito",
+      "valor": "A taxa de juro implícita no conjunto dos contratos, pelo INE, era de 3,194 % em setembro de 2026.",
+      "comando": "python3 design/especime-v3/medicoes/hb1-2026-10-21/hb1d/medir-a.py <motor>",
+      "conhecido_positivo": "a frase do Banco de Portugal da secção 6, de outras linhas, lida pela mesma função"
+    },
+    {
+      "nome": "frase pt secção 11",
+      "ocorrencias": 1,
+      "secao": "## 11. O calendário",
+      "valor": "A taxa de juro implícita de setembro de 2026 e os preços locais do 2.º trimestre de 2026, que o calendário do INE anunciava para 21.10.2026 e para 23.10.2026, já estão nesta edição (a secção «Quanto custa uma casa, e quanto subiu» e a secção «O crédito»).",
+      "comando": "python3 design/especime-v3/medicoes/hb1-2026-10-21/hb1d/medir-a.py <motor>",
+      "conhecido_positivo": "a frase do Banco de Portugal da secção 6, de outras linhas, lida pela mesma função"
+    },
+    {
+      "nome": "frase pt conhecido-positivo (secção 6, Banco de Portugal)",
+      "ocorrencias": 1,
+      "secao": "## 6. O crédito",
+      "valor": "Em agosto de 2026 os bancos emprestaram 2 553,0 milhões de euros em novas operações de crédito à habitação, a uma taxa de 3,0 %, segundo o Banco de Portugal; o stock de crédito à habitação das famílias era de 119 061,6 milhões.",
+      "comando": "python3 design/especime-v3/medicoes/hb1-2026-10-21/hb1d/medir-a.py <motor>",
+      "conhecido_positivo": "a frase do Banco de Portugal da secção 6, de outras linhas, lida pela mesma função"
+    },
+    {
+      "nome": "frases pt presas às quatro linhas com o período antigo",
+      "valor": 0,
+      "frases": [],
+      "comando": "python3 design/especime-v3/medicoes/hb1-2026-10-21/hb1d/medir-a.py <motor>",
+      "conhecido_positivo": "a mesma procura com os períodos antigos sem o filtro dos valores acha 1 frase(s), a do Banco de Portugal"
+    },
+    {
+      "nome": "frase en resumo",
+      "ocorrencias": 1,
+      "secao": "## In brief",
+      "valor": "A home sold in Portugal cost 2,445 euros per square metre in Q2 2026, in Lisbon 5,299 and in Porto 3,846; a new rent, in Q2 2026, 10.17 euros per square metre in the country, 17.79 in Lisbon, 14.66 in Porto.",
+      "comando": "python3 design/especime-v3/medicoes/hb1-2026-10-21/hb1d/medir-a.py <motor>",
+      "conhecido_positivo": "a frase do Banco de Portugal da secção 6, de outras linhas, lida pela mesma função"
+    },
+    {
+      "nome": "frase en secção 1",
+      "ocorrencias": 1,
+      "secao": "## 1. What a home costs, and how much it rose",
+      "valor": "In euros, the INE measures sales: the median price was 2,445 euros per square metre in Q2 2026, 5,299 in Lisbon and 3,846 in Porto; Lisbon costs 2.2 times the country.",
+      "comando": "python3 design/especime-v3/medicoes/hb1-2026-10-21/hb1d/medir-a.py <motor>",
+      "conhecido_positivo": "a frase do Banco de Portugal da secção 6, de outras linhas, lida pela mesma função"
+    },
+    {
+      "nome": "frase en secção 6",
+      "ocorrencias": 1,
+      "secao": "## 6. Credit",
+      "valor": "The implicit interest rate on all contracts, by the INE, was 3.194 % in September 2026.",
+      "comando": "python3 design/especime-v3/medicoes/hb1-2026-10-21/hb1d/medir-a.py <motor>",
+      "conhecido_positivo": "a frase do Banco de Portugal da secção 6, de outras linhas, lida pela mesma função"
+    },
+    {
+      "nome": "frase en secção 11",
+      "ocorrencias": 1,
+      "secao": "## 11. The calendar",
+      "valor": "The implicit interest rate for September 2026 and the local prices for Q2 2026, which the INE calendar announced for 21.10.2026 and for 23.10.2026, are already in this edition (the section «What a home costs, and how much it rose» and the section «Credit»).",
+      "comando": "python3 design/especime-v3/medicoes/hb1-2026-10-21/hb1d/medir-a.py <motor>",
+      "conhecido_positivo": "a frase do Banco de Portugal da secção 6, de outras linhas, lida pela mesma função"
+    },
+    {
+      "nome": "frase en conhecido-positivo (secção 6, Banco de Portugal)",
+      "ocorrencias": 1,
+      "secao": "## 6. Credit",
+      "valor": "In August 2026 the banks lent 2,553.0 million euros in new housing loans, at a rate of 3.0 %, according to the Bank of Portugal; the stock of households' housing credit was 119,061.6 million.",
+      "comando": "python3 design/especime-v3/medicoes/hb1-2026-10-21/hb1d/medir-a.py <motor>",
+      "conhecido_positivo": "a frase do Banco de Portugal da secção 6, de outras linhas, lida pela mesma função"
+    },
+    {
+      "nome": "frases en presas às quatro linhas com o período antigo",
+      "valor": 0,
+      "frases": [],
+      "comando": "python3 design/especime-v3/medicoes/hb1-2026-10-21/hb1d/medir-a.py <motor>",
+      "conhecido_positivo": "a mesma procura com os períodos antigos sem o filtro dos valores acha 1 frase(s), a do Banco de Portugal"
+    }
+  ]
+}
