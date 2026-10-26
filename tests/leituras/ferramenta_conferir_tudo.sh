@@ -7,6 +7,8 @@
 # 4. (M99-b) Um projeto cujo build falha, chamado com --build e uma pasta de saída relativa: o resumo escreve-se
 #    na pasta relativa ao sítio da chamada, só com o 00-build a 1 e a cauda do build, a saída é 1, sem recusa
 #    do dist/ e sem nenhum passo do verify.
+# 5. (M99-3) Um projeto que declara `typecheck`: o passo corre no fim da lista e um typecheck vermelho fica no
+#    resumo com a sua cauda; o projeto do ensaio 1, sem `typecheck`, não ganha o passo.
 set -u
 aqui="$(cd "$(dirname "$0")" && pwd -P)"
 ferramenta="$aqui/../../scripts/leituras/conferir-tudo.sh"
@@ -63,5 +65,24 @@ python3 -c 'import json,sys; r=json.load(open(sys.argv[1])); b=r["passos"]; asse
   || { echo '4 falhou: o resumo não traz o build vermelho com a cauda'; falhas=$((falhas+1)); }
 [ -f "$tmp/s4/resumo.md" ] || { echo '4 falhou: sem resumo.md'; falhas=$((falhas+1)); }
 [ ! -e "$OEDP_TRANCA" ] || { echo '4 falhou: a tranca ficou'; falhas=$((falhas+1)); }
-[ "$falhas" -eq 0 ] && echo "conferir-tudo: 4 ensaios verdes" || { echo "conferir-tudo: $falhas falha(s)"; cat "$tmp"/s*.out; }
+# 5. (M99-3) O typecheck declarado corre no fim e o vermelho fica no resumo; o projeto do ensaio 1 não o ganha.
+[ ! -e "$tmp/s1/04-typecheck.code" ] || { echo '5 falhou: o projeto sem typecheck ganhou o passo'; falhas=$((falhas+1)); }
+w5="$tmp/w5"; mkdir -p "$w5"
+cat > "$w5/package.json" <<'JSON'
+{"name":"brincar-typecheck","private":true,"scripts":{
+ "build":"mkdir -p dist && node -e \"require('fs').writeFileSync('dist/version.json', JSON.stringify({commit: require('child_process').execSync('git rev-parse HEAD').toString().trim()}))\"",
+ "a":"echo passo-a-verde",
+ "typecheck":"echo MARCA-DO-TYPECHECK; exit 1",
+ "verify":"npm run a"}}
+JSON
+printf 'dist/\n' > "$w5/.gitignore"
+git -C "$w5" init -q && git -C "$w5" add package.json .gitignore \
+  && git -C "$w5" -c user.name=ensaio -c user.email=ensaio@invalid commit -q -m ensaio || exit 9
+sh "$ferramenta" "$w5" "$tmp/s5" --build > "$tmp/s5.out" 2>&1; codigo=$?
+[ "$codigo" -eq 1 ] || { echo "5 falhou: esperava 1, veio $codigo"; falhas=$((falhas+1)); }
+[ "$(cat "$tmp/s5/01-a.code" 2>/dev/null) $(cat "$tmp/s5/02-typecheck.code" 2>/dev/null)" = '0 1' ] || { echo "5 falhou: códigos $(cat "$tmp/s5/01-a.code" 2>/dev/null) $(cat "$tmp/s5/02-typecheck.code" 2>/dev/null)"; falhas=$((falhas+1)); }
+python3 -c 'import json,sys; r=json.load(open(sys.argv[1])); b=[p for p in r["passos"] if p["passo"]=="typecheck"][0]; assert r["vermelhos"]==["typecheck"] and any("MARCA-DO-TYPECHECK" in l for l in b["cauda"])' "$tmp/s5/resumo.json" 2>/dev/null \
+  || { echo '5 falhou: o resumo não traz o typecheck vermelho com a cauda'; falhas=$((falhas+1)); }
+[ ! -e "$OEDP_TRANCA" ] || { echo '5 falhou: a tranca ficou'; falhas=$((falhas+1)); }
+[ "$falhas" -eq 0 ] && echo "conferir-tudo: 5 ensaios verdes" || { echo "conferir-tudo: $falhas falha(s)"; cat "$tmp"/s*.out; }
 exit "$falhas"

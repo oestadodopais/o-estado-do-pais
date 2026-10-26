@@ -1,6 +1,7 @@
 #!/bin/sh
 # A corrida inteira do `verify` sem parar na primeira vermelha, com um código por passo (M99, 22.10.2026).
 # Lê os passos de `scripts.verify` do package.json da worktree (a cadeia `npm run a && npm run b && ...`)
+# e, no fim, `npm run typecheck` quando o package.json o declara (M99-3, 26.10.2026: a corrida «portão» do GitHub corre-o)
 # e corre cada um, com RESEARCHHUB_DIR herdado, escrevendo na pasta de saída `NN-<passo>.code` (o código)
 # e `NN-<passo>.log` (o registo inteiro) e, no fim, `resumo.json` (cada passo com o comando, o código, a
 # duração e as trinta últimas linhas dos vermelhos) e `resumo.md` (uma linha por passo).
@@ -45,8 +46,13 @@ O="$(cd "$O" && pwd)"
 # Os passos, um por linha, como o package.json os escreve; uma peça que não seja `npm run` recusa.
 python3 - "$W/package.json" > "$O/passos.txt" <<'PY' || { echo 'conferir-tudo: a cadeia do verify não se lê' >&2; exit 9; }
 import json, re, sys
-cadeia = json.load(open(sys.argv[1]))['scripts']['verify']
+guioes = json.load(open(sys.argv[1]))['scripts']
+cadeia = guioes['verify']
 pecas = [p.strip() for p in cadeia.split('&&')]
+# M99-3 (26.10.2026): o typecheck corre no fim, como na corrida «portão» do GitHub, quando o projeto o declara;
+# uma chave repetida numa tabela só o typecheck a vê, e a aterragem da HB1-d perdeu 25 minutos de GitHub por ela.
+if 'typecheck' in guioes and 'npm run typecheck' not in pecas:
+    pecas.append('npm run typecheck')
 for p in pecas:
     if not re.fullmatch(r'npm run [A-Za-z0-9:._-]+( -- [^&|;<>`$]+)?', p):
         sys.exit(f'peça inesperada: {p!r}')
