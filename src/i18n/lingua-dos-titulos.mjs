@@ -1907,14 +1907,10 @@ Object.assign(LINGUA_DOS_ROTULOS, {
   "Impacto Total no Saldo Orçamental": "pt"
 });
 
-// OG1-A7: nomes próprios das atribuições e edições expressas por datas.
+// OG1-A9: nomes dos publicadores; as atribuições conservam a língua da citação.
 Object.assign(LINGUA_DAS_FONTES, {
-  "Comissão Política Nacional do Partido Socialista": "pt",
-  "Comité Central do PCP": "pt",
-  "José Manuel Pureza": "pt",
-  "Mariana Leitão": "pt",
-  "Isabel Mendes Lopes": "pt",
-  "Joaquim Miranda Sarmento": "pt"
+  "ECO": "pt",
+  "Correio da Manhã": "pt"
 });
 Object.assign(LINGUA_DAS_EDICOES, {
   "2026-10-22": null,

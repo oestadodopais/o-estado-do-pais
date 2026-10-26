@@ -49,6 +49,7 @@
  * `check:cartao` exige-a.
  */
 import Base from '../layouts/Base.astro';
+import PortasDaDiscussao from '../components/discussao/PortasDaDiscussao.astro';
 import NomeDaMedida from '../components/NomeDaMedida.astro';
 import PontoDaSerie from '../components/serie/PontoDaSerie.astro';
 import NomeDoPais from '../components/serie/NomeDoPais.astro';
@@ -247,4 +248,5 @@ const descricao = `${s.livro.serie.eyebrow} · ${nome.texto} ${s.livro.serie.nos
       </dl>
     </aside>
   </div>
+  <PortasDaDiscussao lang={lang} linhas={[linhaPt.id, linhaUe.id]} />
 </Base>

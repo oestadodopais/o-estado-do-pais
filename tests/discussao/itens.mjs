@@ -246,6 +246,7 @@ export function conferirIntegracao(root,lang,pagina,linhas=loadClaims(),{dist=pr
  if(portas.length!==esperados.length)erros.push(`V2B integração: presença ou ausência errada em ${pagina}`);
  for(const e of esperados){
   const p=portas.find(p=>p.getAttribute('data-discussao-integracao')===e.slug),a=p?.querySelector('a');
+  const tematicaDoItem=tematica&&e.slug==='saude-no-orcamento';
   if(estudoEo1&&PORTAS_EO1[e.slug]){
    if(p?.getAttribute('data-discussao-condicao')!=='estudo-eo1'||a?.getAttribute('href')!==destino(e.slug,lang)||normal(a?.text)!==PORTAS_EO1[e.slug]?.[lang])
     erros.push(`EO1 integração: porta temática diferente do documento em ${pagina}`);
@@ -253,10 +254,10 @@ export function conferirIntegracao(root,lang,pagina,linhas=loadClaims(),{dist=pr
   }
   erros.push(...conferirMarcasDoTitulo(a,e,lang,linhas));
   if(a?.getAttribute('href')!==destino(e.slug,lang)||normal(a?.text)!==normal(DISCUSSAO.porta[lang]+' '+explicacaoPelaCelula(e,lang,linhas).titulo))erros.push(`V2B integração: destino ou título errado em ${pagina}`);
-  if(tematica&&(p?.getAttribute('data-discussao-condicao')!=='tematica'||p?.closest('[data-explicacao-secao]')?.getAttribute('data-explicacao-secao')!=='por-funcao'))erros.push('V2B integração: porta temática fora da secção');
+  if(tematicaDoItem&&(p?.getAttribute('data-discussao-condicao')!=='tematica'||p?.closest('[data-explicacao-secao]')?.getAttribute('data-explicacao-secao')!=='por-funcao'))erros.push('V2B integração: porta temática fora da secção');
   if(/^(?:en\/ledger|livro-razao)\/[^/]+\/index.html$/.test(pagina)&&!p?.closest('#prova'))erros.push('V2B integração: porta fora da secção da prova');
   if(/^(?:en\/ledger|livro-razao)\/index.html$/.test(pagina)&&!p?.closest('[data-livro-lista]'))erros.push('V2B integração: porta fora da lista das linhas');
-  if(!tematica&&p?.getAttribute('data-discussao-condicao')!=='linhas')erros.push('V2B integração: exceção temática não autorizada');
+  if(!tematicaDoItem&&p?.getAttribute('data-discussao-condicao')!=='linhas')erros.push('V2B integração: exceção temática não autorizada');
  }
  return erros;
 }
@@ -311,6 +312,7 @@ export function conferirTudo(dist=path.join(raiz,'dist')){
   if(!fs.existsSync(file)){erros.push('V2B página: página ausente');continue;}
   const html=fs.readFileSync(file,'utf8');erros.push(...conferirPagina(parse(html),lang,loadClaims(),dist));provas.push(...plantas(html,lang));
   const home=parse(fs.readFileSync(path.join(dist,lang==='pt'?'index.html':'en/index.html'),'utf8'));erros.push(...conferirInicio(home,lang));
+  for(const [nome,mut] of [['título da porta alterado',p=>p.querySelector('a').set_content('Outro título')],['destino da porta alterado',p=>p.querySelector('a').setAttribute('href','#errado')]]){const r=parse(home.toString());mut(r.querySelector('[data-discussao-integracao]'));provas.push({nome:'OG1 primeira página: '+nome,lang,mordeu:conferirIntegracao(r,lang,lang==='pt'?'index.html':'en/index.html').length>0});}
   for(const [nome,estraga] of [
    ['bloco depois do painel',r=>{const b=r.querySelector('[data-discussao-inicio]');const html=b.toString();b.remove();r.querySelector('[data-o-que-se-passa]').insertAdjacentHTML('afterend',html);}],
    ...['data-discussao-inicio','data-o-que-se-passa','data-entradas'].map(m=>['marca ausente: '+m,r=>r.querySelector('['+m+']').removeAttribute(m)]),
@@ -332,6 +334,14 @@ export function conferirTudo(dist=path.join(raiz,'dist')){
  const intacta=`<main><section><span data-claim="${id}"></span><p data-discussao-integracao="${demo.slug}" data-discussao-condicao="linhas"><a href="${destino(demo.slug,'pt')}">${DISCUSSAO.porta.pt} ${tituloDeEnsaio(demo,'pt',loadClaims())}</a></p></section></main>`;
  if(conferirIntegracao(parse(intacta),'pt','exemplo').length)erros.push('V2B integração: conhecido positivo recusado');
  for(const [nome,html] of [['porta por coincidência ausente',intacta.replace(/<p .*<\/p>/,'')],['porta sem coincidência',intacta.replace(/<span .*?<\/span>/,'')],['destino de outro item',intacta.replace(destino(demo.slug,'pt'),'#outra')]])provas.push({nome,mordeu:conferirIntegracao(parse(html),'pt','exemplo').length>0});
+ for(const lang of ['pt','en']){
+  const pagina=`${lang==='pt'?'explicacoes':'en/explainers'}/dinheiro-do-estado-2026/index.html`,html=fs.readFileSync(path.join(dist,pagina),'utf8');
+  const integra=parse(html);if(conferirIntegracao(integra,lang,pagina).length)erros.push('OG1 integração: duas condições na mesma página recusadas');
+  const trocada=parse(html);trocada.querySelector('[data-discussao-integracao="orcamento-2027-generalidade"]').setAttribute('data-discussao-condicao','tematica');
+  provas.push({nome:'OG1 porta por linha marcada como temática',lang,mordeu:conferirIntegracao(trocada,lang,pagina).some(e=>e.includes('exceção temática não autorizada'))});
+  const deslocada=parse(html),porta=deslocada.querySelector('[data-discussao-integracao="saude-no-orcamento"]');porta.remove();deslocada.querySelector('[data-explicacao-secao="divida-e-saldo"]').appendChild(porta);
+  provas.push({nome:'Saúde temática fora da sua secção',lang,mordeu:conferirIntegracao(deslocada,lang,pagina).some(e=>e.includes('porta temática fora da secção'))});
+ }
  for(const lang of ['pt','en']){
   const pagina=`${lang==='pt'?'estudos':'en/studies'}/${ESTUDO_EO1}/index.html`;
   const html='<main>'+Object.entries(PORTAS_EO1).map(([id,n])=>`<p data-discussao-integracao="${id}" data-discussao-condicao="estudo-eo1"><a href="${destino(id,lang)}">${n[lang]}</a></p>`).join('')+'</main>';

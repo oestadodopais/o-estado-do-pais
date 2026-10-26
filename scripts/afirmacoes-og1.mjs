@@ -14,14 +14,16 @@ export function conferirLinhaOg1(c,p,relida){
  if(c.access_date!==r?.acedido_em?.slice(0,10))errors.push('OG1 acesso: diferente do recibo');
  if(c.reference_date!==(p.afirmacao?p.published_at:p.period))errors.push('OG1 período: diferente da origem');
  if(p.afirmacao&&(c.afirmacao!==true||JSON.stringify(c.attributed_to)!==JSON.stringify(p.attributed_to)||c.published_at!==p.published_at))errors.push('OG1 atribuição: pessoa ou data diferente');
+ const publicador=p.source??Object.keys(p.entity_aliases??{})[0];
+ if(c.source!==publicador)errors.push('OG1 editor: diferente da prova');
  const url=new URL(p.source_url);
  if(c.source_url!==url.href)errors.push('OG1 porta: diferente da origem');
- if(relida)for(const key of ['value','unit','excerpt','period','attributed_to','published_at','document'])if(JSON.stringify(relida[key]??null)!==JSON.stringify(p[key]??null))errors.push('OG1 corpo: '+key+' diferente da releitura');
+ if(relida)for(const key of ['value','unit','excerpt','period','attributed_to','published_at','document','source','entity_aliases'])if(JSON.stringify(relida[key]??null)!==JSON.stringify(p[key]??null))errors.push('OG1 corpo: '+key+' diferente da releitura');
  return errors;
 }
 export function conferirOg1(claims,{motor,plantar=true}={}){
  const file='ledger/provas/og1a/provas.json';
- if(!fs.existsSync(file))return {errors:[],checked:0,bodies:0,plantas:[],ids:new Set()};
+ if(!fs.existsSync(file))return {errors:['OG1 selo: ficheiro de provas ausente'],checked:0,bodies:0,plantas:[],ids:new Set()};
  const proofs=JSON.parse(fs.readFileSync(file)).rows,ids=new Set(Object.keys(proofs)),errors=[],plantas=[];
  const record=JSON.parse(fs.readFileSync('ledger/cruzamentos/og1a-provas.json')).files['provas.json'];
  if(crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex')!==record.exported_sha256)errors.push('OG1 selo: ficheiro de provas diferente do registo');

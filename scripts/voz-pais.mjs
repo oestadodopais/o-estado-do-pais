@@ -1,7 +1,7 @@
 /** A lista fechada do B1 para o país e os temas. Os blocos de dados são
  * comparados antes de saírem da leitura; uma marca sozinha não basta. */
 import fs from 'node:fs';
-import { conferirInicio } from '../tests/discussao/itens.mjs';
+import { conferirInicio, conferirIntegracao } from '../tests/discussao/itens.mjs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parse, NodeType } from 'node-html-parser';
@@ -110,6 +110,9 @@ export function verificaVozPais(raiz) {
         const queixas = conferirInicio(main.parentNode, lang);
         erros.push(...queixas);
         if (!queixas.length) for (const b of main.querySelectorAll('[data-discussao-inicio]')) dispensados.add(b);
+        const portas = conferirIntegracao(main.parentNode, lang, lang === 'pt' ? 'index.html' : 'en/index.html', undefined, {dist: path.join(raiz, 'dist')});
+        erros.push(...portas);
+        if (!portas.length) for (const porta of main.querySelectorAll('[data-discussao-integracao]')) dispensados.add(porta);
       }
       for (const c of main.querySelectorAll('[data-cartao-camaras]')) dispensados.add(c);
       /* A marca só sai da lista depois de a V1 conferir a frase inteira. */

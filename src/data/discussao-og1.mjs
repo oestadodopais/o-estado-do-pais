@@ -1,4 +1,4 @@
-/** OG1-A6: redação dos mandatos A, A4 e A6, ligada aos campos das fontes. */
+/** OG1-A9: redação do mandato A8, ligada aos campos das fontes. */
 export const OG1 = {
   "slug": "orcamento-2027-generalidade",
   "escrita": "2026-10-26",
@@ -88,21 +88,7 @@ export const OG1 = {
               },
               ", no comunicado de ",
               {
-                "fragmento": "og1-pcp-comite",
-                "campo": "document.title",
-                "texto": "18"
-              },
-              " e ",
-              {
-                "fragmento": "og1-pcp-comite",
-                "campo": "document.title",
-                "texto": "19"
-              },
-              " de outubro de ",
-              {
-                "fragmento": "og1-pcp-comite",
-                "campo": "document.title",
-                "texto": "2026"
+                "periodo": "og1-pcp-comite"
               },
               ": «",
               {
@@ -118,21 +104,7 @@ export const OG1 = {
               },
               ", in its communiqué of ",
               {
-                "fragmento": "og1-pcp-comite",
-                "campo": "document.title",
-                "texto": "18"
-              },
-              " and ",
-              {
-                "fragmento": "og1-pcp-comite",
-                "campo": "document.title",
-                "texto": "19"
-              },
-              " October ",
-              {
-                "fragmento": "og1-pcp-comite",
-                "campo": "document.title",
-                "texto": "2026"
+                "periodo": "og1-pcp-comite"
               },
               ": «",
               {
@@ -186,7 +158,7 @@ export const OG1 = {
                 "literal": "og1-be-voto",
                 "campo": "attributed_to"
               },
-              ", do BE, a ",
+              ", do Bloco de Esquerda, a ",
               {
                 "periodo": "og1-be-voto"
               },
@@ -202,7 +174,7 @@ export const OG1 = {
                 "literal": "og1-be-voto",
                 "campo": "attributed_to"
               },
-              ", of the BE, on ",
+              ", of Bloco de Esquerda, on ",
               {
                 "periodo": "og1-be-voto"
               },
@@ -222,7 +194,7 @@ export const OG1 = {
                 "literal": "og1-il-prioridades",
                 "campo": "attributed_to"
               },
-              ", da IL, no título de uma entrevista ao ECO a ",
+              ", da Iniciativa Liberal, no título de uma entrevista ao ECO a ",
               {
                 "periodo": "og1-il-prioridades"
               },
@@ -238,7 +210,7 @@ export const OG1 = {
                 "literal": "og1-il-prioridades",
                 "campo": "attributed_to"
               },
-              ", of the IL, in the title of an interview with ECO on ",
+              ", of Iniciativa Liberal, in the title of an interview with ECO on ",
               {
                 "periodo": "og1-il-prioridades"
               },
@@ -330,7 +302,11 @@ export const OG1 = {
                 "literal": "og1-governo-rtp-combustiveis",
                 "campo": "attributed_to"
               },
-              ", na mesma audição, segundo a RTP, sobre os ",
+              ", na mesma audição de ",
+              {
+                "periodo": "og1-governo-rtp-combustiveis"
+              },
+              ", segundo a RTP, sobre os ",
               {
                 "claim": "pm-q3-2-r8-c0",
                 "sufixo": " milhões de euros"
@@ -347,7 +323,11 @@ export const OG1 = {
                 "literal": "og1-governo-rtp-combustiveis",
                 "campo": "attributed_to"
               },
-              ", at the same hearing, as reported by RTP, on the ",
+              ", at the same hearing on ",
+              {
+                "periodo": "og1-governo-rtp-combustiveis"
+              },
+              ", as reported by RTP, on the ",
               {
                 "claim": "pm-q3-2-r8-c0",
                 "sufixo": " million euros"
@@ -368,7 +348,11 @@ export const OG1 = {
                 "literal": "og1-governo-rtp-habitacao",
                 "campo": "attributed_to"
               },
-              ", na mesma audição, segundo a RTP, sobre as medidas da habitação: «",
+              ", na mesma audição de ",
+              {
+                "periodo": "og1-governo-rtp-habitacao"
+              },
+              ", segundo a RTP, sobre as medidas da habitação: «",
               {
                 "literal": "og1-governo-rtp-habitacao",
                 "campo": "excerpt"
@@ -380,7 +364,11 @@ export const OG1 = {
                 "literal": "og1-governo-rtp-habitacao",
                 "campo": "attributed_to"
               },
-              ", at the same hearing, as reported by RTP, on the housing measures: «",
+              ", at the same hearing on ",
+              {
+                "periodo": "og1-governo-rtp-habitacao"
+              },
+              ", as reported by RTP, on the housing measures: «",
               {
                 "literal": "og1-governo-rtp-habitacao",
                 "campo": "excerpt"
@@ -396,7 +384,11 @@ export const OG1 = {
                 "literal": "og1-governo-eco-juros",
                 "campo": "attributed_to"
               },
-              ", na mesma audição, segundo o ECO, sobre os juros da dívida: «",
+              ", na mesma audição de ",
+              {
+                "periodo": "og1-governo-eco-juros"
+              },
+              ", segundo o ECO, sobre os juros da dívida: «",
               {
                 "literal": "og1-governo-eco-juros",
                 "campo": "excerpt"
@@ -408,7 +400,11 @@ export const OG1 = {
                 "literal": "og1-governo-eco-juros",
                 "campo": "attributed_to"
               },
-              ", at the same hearing, as reported by ECO, on the interest on the debt: «",
+              ", at the same hearing on ",
+              {
+                "periodo": "og1-governo-eco-juros"
+              },
+              ", as reported by ECO, on the interest on the debt: «",
               {
                 "literal": "og1-governo-eco-juros",
                 "campo": "excerpt"
@@ -424,7 +420,11 @@ export const OG1 = {
                 "literal": "og1-governo-observador-saldo",
                 "campo": "attributed_to"
               },
-              ", na mesma audição, segundo o Observador, na escolha entre o IRS Jovem e o prémio salarial: «",
+              ", na mesma audição de ",
+              {
+                "periodo": "og1-governo-observador-saldo"
+              },
+              ", segundo o Observador, na escolha entre o IRS Jovem e o prémio salarial: «",
               {
                 "literal": "og1-governo-observador-saldo",
                 "campo": "excerpt"
@@ -436,7 +436,11 @@ export const OG1 = {
                 "literal": "og1-governo-observador-saldo",
                 "campo": "attributed_to"
               },
-              ", at the same hearing, as reported by Observador, on the choice between the youth income tax and the wage premium: «",
+              ", at the same hearing on ",
+              {
+                "periodo": "og1-governo-observador-saldo"
+              },
+              ", as reported by Observador, on the choice between the youth income tax and the wage premium: «",
               {
                 "literal": "og1-governo-observador-saldo",
                 "campo": "excerpt"
@@ -457,7 +461,7 @@ export const OG1 = {
         {
           "paragrafo": {
             "pt": [
-              "A UTAO, na apreciação preliminar da proposta, lê um crescimento real do PIB de ",
+              "A proposta prevê um crescimento real do PIB de ",
               {
                 "claim": "oe-2027-cenario-pib-real-crescimento-2027",
                 "sufixo": " %"
@@ -498,7 +502,7 @@ export const OG1 = {
                 "claim": "og1-utao-saldo-me-2027",
                 "sufixo": " milhões de euros"
               },
-              "; e uma dívida pública de ",
+              " no relatório da proposta; e uma dívida pública de ",
               {
                 "claim": "pm-q3-6-r42-c2",
                 "sufixo": " %"
@@ -518,14 +522,14 @@ export const OG1 = {
               },
               ", depois de ",
               {
-                "claim": "og1-utao-divida-2025-revista",
+                "claim": "divida-publica-2025",
                 "sufixo": " %"
               },
               " em ",
               {
-                "periodo": "og1-utao-divida-2025-revista"
+                "periodo": "divida-publica-2025"
               },
-              " na revisão do Eurostat de ",
+              ", na revisão do Eurostat de ",
               {
                 "data": "divida-publica-2024",
                 "campo": "published_at"
@@ -533,7 +537,7 @@ export const OG1 = {
               "."
             ],
             "en": [
-              "The UTAO, in its preliminary appraisal of the proposal, reads real GDP growth of ",
+              "The proposal forecasts real GDP growth of ",
               {
                 "claim": "oe-2027-cenario-pib-real-crescimento-2027",
                 "sufixo": " %"
@@ -574,7 +578,7 @@ export const OG1 = {
                 "claim": "og1-utao-saldo-me-2027",
                 "sufixo": " million euros"
               },
-              "; and public debt of ",
+              " in the proposal's report; and public debt of ",
               {
                 "claim": "pm-q3-6-r42-c2",
                 "sufixo": " %"
@@ -594,14 +598,14 @@ export const OG1 = {
               },
               ", after ",
               {
-                "claim": "og1-utao-divida-2025-revista",
+                "claim": "divida-publica-2025",
                 "sufixo": " %"
               },
               " in ",
               {
-                "periodo": "og1-utao-divida-2025-revista"
+                "periodo": "divida-publica-2025"
               },
-              " in Eurostat's revision of ",
+              ", in Eurostat's revision of ",
               {
                 "data": "divida-publica-2024",
                 "campo": "published_at"
@@ -763,7 +767,7 @@ export const OG1 = {
                 "campo": "excerpt",
                 "texto": "16"
               },
-              " de outubro, era de ",
+              " de outubro, era de cerca de ",
               {
                 "claim": "og1-utao-brent-contratos-2027",
                 "sufixo": " dólares"
@@ -806,7 +810,7 @@ export const OG1 = {
                 "campo": "excerpt",
                 "texto": "16"
               },
-              " October, was ",
+              " October, was about ",
               {
                 "claim": "og1-utao-brent-contratos-2027",
                 "sufixo": " dollars"
@@ -832,12 +836,12 @@ export const OG1 = {
               {
                 "periodo": "pm-q3-3-r37-c3"
               },
-              ", acima do valor de referência de ",
+              ", acima dos ",
               {
                 "claim": "og1-utao-despesa-liquida-limiar",
                 "sufixo": " %"
               },
-              " do PIB; os dados do Ministério das Finanças dão ",
+              " do PIB fixados para aferir o cumprimento da trajetória; os dados do Ministério das Finanças dão ",
               {
                 "claim": "og1-utao-despesa-liquida-mf-antes",
                 "sufixo": " %"
@@ -864,7 +868,7 @@ export const OG1 = {
                 "claim": "og1-utao-despesa-liquida-limiar",
                 "sufixo": " %"
               },
-              " of GDP reference value; the Finance Ministry's figures give ",
+              " of GDP set for assessing compliance with the path; the Finance Ministry's figures give ",
               {
                 "claim": "og1-utao-despesa-liquida-mf-antes",
                 "sufixo": " %"
@@ -944,12 +948,7 @@ export const OG1 = {
                 "campo": "excerpt",
                 "texto": "perfeitamente alinhadas"
               },
-              "» e a apreciação da UTAO não dizem o mesmo. A UTAO não contesta o PIB de ",
-              {
-                "claim": "oe-2027-cenario-pib-real-crescimento-2027",
-                "sufixo": " %"
-              },
-              ", mas duvida do emprego, do preço do petróleo e da maior medida de receita, e conta um desvio na despesa líquida que só a flexibilidade para a defesa fecha. Os ",
+              "» e a apreciação da UTAO não dizem o mesmo. A UTAO não corrige o cenário do PIB, mas tem dificuldade em conciliar o emprego com a imigração, aponta o preço do petróleo abaixo dos contratos e a maior medida de receita sem a informação que a fundamente, e conta um desvio na despesa líquida que, nos números do próprio Ministério, só a flexibilidade para a defesa fecha; nos da Comissão Europeia, não fecha. Os ",
               {
                 "fragmento": "og1-governo-observador-saldo",
                 "campo": "excerpt",
@@ -962,11 +961,11 @@ export const OG1 = {
                 "campo": "excerpt",
                 "texto": "um saldo de 270 milhões"
               },
-              "» cabem na conta da UTAO: o saldo de ",
+              "» cabem na conta que a UTAO transcreve do relatório da proposta: o saldo de ",
               {
                 "periodo": "pm-q3-3-r37-c3"
               },
-              " em contabilidade nacional é de ",
+              " em contabilidade nacional é aí de ",
               {
                 "claim": "og1-utao-saldo-me-2027",
                 "sufixo": " milhões de euros"
@@ -986,7 +985,7 @@ export const OG1 = {
               {
                 "periodo": "pm-q3-3-r37-c3"
               },
-              ", venha de onde vier. Das posições anunciadas, a que pesa no voto é a do PS: a abstenção na generalidade."
+              ", venha de onde vier. Das posições anunciadas, o PS anunciou a abstenção na generalidade e o BE, segundo o Diário de Notícias, o voto contra; o PCP, a IL e o Livre não anunciaram o voto nos textos aqui citados. Este item não tem afirmações do PSD, do CDS e do Chega: a pesquisa não selou nenhuma; a fase B traz as intervenções do debate."
             ],
             "en": [
               "The forecasts the minister calls «",
@@ -995,12 +994,7 @@ export const OG1 = {
                 "campo": "excerpt",
                 "texto": "perfeitamente alinhadas"
               },
-              "» and the UTAO's appraisal do not say the same thing. The UTAO does not dispute GDP growth of ",
-              {
-                "claim": "oe-2027-cenario-pib-real-crescimento-2027",
-                "sufixo": " %"
-              },
-              ", but it doubts employment, the oil price and the largest revenue measure, and it counts a net expenditure deviation that only the defence flexibility closes. The ",
+              "» and the UTAO's appraisal do not say the same thing. The UTAO does not correct the GDP scenario, but it finds employment hard to reconcile with immigration, points to an oil price below the contracts and to the largest revenue measure without the information to support it, and it counts a net expenditure deviation that, on the Ministry's own figures, only the defence flexibility closes; on the European Commission's, it does not close. The ",
               {
                 "fragmento": "og1-governo-observador-saldo",
                 "campo": "excerpt",
@@ -1013,11 +1007,11 @@ export const OG1 = {
                 "campo": "excerpt",
                 "texto": "um saldo de 270 milhões"
               },
-              "» fit the UTAO's account: the ",
+              "» fit the account the UTAO transcribes from the proposal's report: the ",
               {
                 "periodo": "pm-q3-3-r37-c3"
               },
-              " balance in national accounts is ",
+              " balance in national accounts is there ",
               {
                 "claim": "og1-utao-saldo-me-2027",
                 "sufixo": " million euros"
@@ -1037,7 +1031,7 @@ export const OG1 = {
               {
                 "periodo": "pm-q3-3-r37-c3"
               },
-              ", wherever it comes from. Of the positions announced, the one that weighs on the vote is the PS's: abstention in the general vote."
+              ", wherever it comes from. Of the positions announced, the PS announced abstention in the general vote and the BE, as reported by Diário de Notícias, a vote against; the PCP, the IL and Livre did not announce their vote in the texts cited here. This item has no statements from the PSD, the CDS or Chega: the research sealed none; phase B brings the speeches of the debate."
             ]
           }
         }
@@ -1063,7 +1057,7 @@ export const OG1 = {
                 "claim": "pm-q3-2-r8-c0",
                 "sufixo": " milhões de euros"
               },
-              " sem base publicada, num emprego que a UTAO não concilia com a imigração e num petróleo cujos contratos para ",
+              " sem a informação que a fundamente, num emprego que a UTAO tem dificuldade em conciliar com a imigração e num petróleo cujos contratos para ",
               {
                 "periodo": "pm-q3-3-r37-c3"
               },
@@ -1095,7 +1089,7 @@ export const OG1 = {
                 "claim": "pm-q3-2-r8-c0",
                 "sufixo": " million euros"
               },
-              " of revenue with no published basis, on employment the UTAO cannot reconcile with immigration, and on oil whose ",
+              " of revenue without the information to support it, on employment the UTAO finds hard to reconcile with immigration, and on oil whose ",
               {
                 "periodo": "pm-q3-3-r37-c3"
               },
@@ -1130,20 +1124,20 @@ export const OG1 = {
         {
           "paragrafo": {
             "pt": [
-              "Ao leitor: a apreciação da UTAO está ligada a cada número desta página, e lê-se antes das intervenções do debate. Ao Ministério das Finanças: publicar a base da estimativa dos ",
+              "Ao leitor: cada número desta página tem a sua fonte a um passo, e a apreciação da UTAO lê-se antes das intervenções do debate. Ao Ministério das Finanças: publicar a informação que fundamenta a estimativa dos ",
               {
                 "claim": "pm-q3-2-r8-c0",
                 "sufixo": " milhões de euros"
               },
-              " dos combustíveis, que a UTAO pede. Ao Parlamento: pedir, na especialidade, o quadro da despesa líquida com e sem a flexibilidade para a defesa."
+              " dos combustíveis, que a UTAO não encontra na proposta. Ao Parlamento: pedir, na especialidade, o quadro da despesa líquida com e sem a flexibilidade para a defesa."
             ],
             "en": [
-              "To the reader: the UTAO's appraisal is linked from every number on this page, and it is worth reading before the speeches. To the Finance Ministry: publish the basis of the ",
+              "To the reader: every number on this page has its source one step away, and the UTAO's appraisal is worth reading before the speeches. To the Finance Ministry: publish the information behind the ",
               {
                 "claim": "pm-q3-2-r8-c0",
                 "sufixo": " million euro"
               },
-              " fuel estimate, which the UTAO asks for. To Parliament: ask, at the detailed stage, for the net expenditure table with and without the defence flexibility."
+              " fuel estimate, which the UTAO does not find in the proposal. To Parliament: ask, at the detailed stage, for the net expenditure table with and without the defence flexibility."
             ]
           }
         }
@@ -1159,38 +1153,28 @@ export const OG1 = {
         {
           "paragrafo": {
             "pt": [
-              "O ministro tem razão num ponto: a UTAO não contesta o cenário do PIB e o saldo positivo é real. Mas «",
-              {
-                "fragmento": "og1-governo-rtp-previsoes",
-                "campo": "excerpt",
-                "texto": "alinhadas"
-              },
-              "» não descreve uma apreciação que duvida do emprego, do petróleo e da maior medida de receita, e que conta um desvio de despesa que só a regra da defesa fecha. «",
+              "«Alinhadas",
+              "» não descreve uma apreciação que duvida do emprego, do petróleo e da maior medida de receita, e que só fecha o desvio da despesa com a flexibilidade para a defesa, e só nos números do Ministério. A frase «",
               {
                 "fragmento": "og1-pcp-comite",
                 "campo": "excerpt",
                 "texto": "um frete ao capital e um desastre para o País"
               },
-              "» não se mede, e este projeto não o avalia. O que se mede diz isto: um orçamento quase equilibrado, assente em pressupostos que a entidade técnica do próprio Parlamento considera frágeis. A ",
+              "» não se mede, e este projeto não a avalia. O que se mede diz isto: um orçamento quase equilibrado nas previsões do Governo, assente em pressupostos que a entidade técnica do próprio Parlamento põe em dúvida. A ",
               {
                 "periodo": "oe-2027-calendario-generalidade"
               },
               ", depois do voto, esta página ganha o registo da votação e as intervenções do Diário da Assembleia, e muda se os números mudarem."
             ],
             "en": [
-              "The minister is right on one point: the UTAO does not dispute the GDP scenario, and the positive balance is real. But «",
-              {
-                "fragmento": "og1-governo-rtp-previsoes",
-                "campo": "excerpt",
-                "texto": "alinhadas"
-              },
-              "» does not describe an appraisal that doubts employment, oil and the largest revenue measure, and that counts a spending deviation only the defence rule closes. «",
+              "«Aligned",
+              "» does not describe an appraisal that doubts employment, oil and the largest revenue measure, and that closes the spending deviation only with the defence flexibility, and only on the Ministry's figures. The sentence «",
               {
                 "fragmento": "og1-pcp-comite",
                 "campo": "excerpt",
                 "texto": "um frete ao capital e um desastre para o País"
               },
-              "» cannot be measured, and this project does not judge it. What can be measured says this: a budget close to balance, resting on assumptions that Parliament's own technical unit finds fragile. On ",
+              "» cannot be measured, and this project does not judge it. What can be measured says this: a budget close to balance in the Government's forecasts, resting on assumptions that Parliament's own technical unit calls into question. On ",
               {
                 "periodo": "oe-2027-calendario-generalidade"
               },

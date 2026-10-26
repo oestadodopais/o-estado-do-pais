@@ -21,6 +21,7 @@
  * outra maneira) saem da lista das mudanças de valor e têm a secção delas, a seguir.
  */
 import Base from '../layouts/Base.astro';
+import PortasDaDiscussao from '../components/discussao/PortasDaDiscussao.astro';
 import FraseDaSemana from '../components/explicacoes/FraseDaSemana.astro';
 import ResumoDaMudanca from '../components/explicacoes/ResumoDaMudanca.astro';
 import OQueENaMudanca from '../components/explicacoes/OQueENaMudanca.astro';
@@ -116,4 +117,5 @@ const formas = leitura.formas.map((f) => ({ ...f, linha: getClaim(f.linha), nome
     <p class="regra-portas semana-portas"><a href={routePath('correcoes', lang)}>{ROTULOS_B1[lang].todasAsMudancas} →</a></p>
     <p class="semana-fecho" data-semana-frase data-semana-janela={`${leitura.janela.inicio}/${leitura.janela.fim}`} data-semana-declarado><FraseDaSemana lang={lang} leitura={leitura} /></p>
   </article>
+  <PortasDaDiscussao lang={lang} linhas={[...ids, ...formas.map(f => f.linha.id)]} />
 </Base>

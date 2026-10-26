@@ -26,6 +26,7 @@
  * serve: a maior parte das linhas do Eurostat não a tem.
  */
 import Base from '../layouts/Base.astro';
+import PortasDaDiscussao from '../components/discussao/PortasDaDiscussao.astro';
 import BlocoDaDiscussao from '../components/discussao/BlocoDaDiscussao.astro';
 import '../styles/discussao.css';
 import IndiceDosAssuntos from '../components/IndiceDosAssuntos.astro';
@@ -175,4 +176,5 @@ const recente = periodoDosNumerosMaisRecentes(blocosDaPagina(ids, lang));
     <p class="regra-portas"><a href={routePath('livro', lang)}>{s.nav.livro} →</a></p>
     <p class="regra-portas"><a href={routePath('correcoes', lang)}>{r.mudou} →</a></p>
   </div>
+  <PortasDaDiscussao lang={lang} linhas={medidasDoPainel.map(m => m.claim)} />
 </Base>

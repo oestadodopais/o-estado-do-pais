@@ -70,6 +70,7 @@
  * definição, em todo o lado onde ela se rende (`DEFINICOES_DAS_MEDIDAS`).
  */
 import Base from '../layouts/Base.astro';
+import PortasDaDiscussao from '../components/discussao/PortasDaDiscussao.astro';
 import '../styles/pais.css';
 import Faixa from '../components/inicio/Faixa.astro';
 import LeituraBreve from '../components/inicio/LeituraBreve.astro';
@@ -368,4 +369,5 @@ const contaDosPaises = paisesDaUniao().length;
 
   <script src="/js/leituras.js" defer is:inline></script>
   <script src="/js/paises.js" defer is:inline></script>
+  <PortasDaDiscussao lang={lang} linhas={[...FIGURAS_PDM, ...FIGURAS_SOCIAL].map(f => f.claim)} />
 </Base>

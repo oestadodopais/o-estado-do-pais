@@ -61,8 +61,8 @@ export const NOMES_OG1 = {
     "en": "Net expenditure deviation forecast by the Commission"
   },
   "og1-utao-despesa-liquida-limiar": {
-    "pt": "Valor de referência do desvio da despesa líquida",
-    "en": "Net expenditure deviation reference value"
+    "pt": "Margem de aferição da trajetória da despesa líquida",
+    "en": "Assessment margin of the net expenditure path"
   },
   "og1-utao-despesa-liquida-mf-antes": {
     "pt": "Desvio da despesa líquida antes da flexibilidade",
@@ -346,15 +346,15 @@ export const FAMILIAS_OG1 = {
   },
   "og1-utao-despesa-liquida-limiar": {
     "nome": {
-      "pt": "Valor de referência do desvio da despesa líquida",
-      "en": "Net expenditure deviation reference value"
+      "pt": "Margem de aferição da trajetória da despesa líquida",
+      "en": "Assessment margin of the net expenditure path"
     },
     "frase": {
       "pt": [
-        "É o valor de referência em percentagem do PIB usado para aferir o cumprimento da trajetória da despesa líquida."
+        "É a margem de aferição da trajetória da despesa líquida, em percentagem do PIB."
       ],
       "en": [
-        "It is the reference value as a share of GDP used to assess compliance with the net expenditure path."
+        "It is the assessment margin of the net expenditure path, as a share of GDP."
       ]
     }
   },

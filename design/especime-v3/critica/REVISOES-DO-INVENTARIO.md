@@ -899,3 +899,5 @@ HB1-b, correção do diagnóstico: os três textos não eram rótulos rendidos; 
 | og1-a6 | Discussão da generalidade, portas e contagens das 33 linhas; retiradas as duas contagens anteriores | por ler | Codex, 26.10.2026: cadeias do HTML; a leitura cruzada pertence à direção. |
 
 | og1-a7 | Valor de referência e ligação à apreciação, nas duas edições; formas anteriores retiradas | por ler | Codex, 26.10.2026: redação do mandato OG1-A7; verificação pelo HTML construído e pela voz. |
+
+| og1-a9 | Proveniência das afirmações, datas e redação do mandato A8 nas duas edições | por ler | Codex, 26.10.2026: formas recolhidas do HTML; leitura cruzada pendente da direção. |

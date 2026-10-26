@@ -25,6 +25,7 @@
  * confere as definições e os sinais contra os recibos.
  */
 import Base from '../layouts/Base.astro';
+import PortasDaDiscussao from '../components/discussao/PortasDaDiscussao.astro';
 import Gaveta from '../components/inicio/Gaveta.astro';
 import PortasDoIndice from '../components/indice/PortasDoIndice.astro';
 import ResumoDaMudanca from '../components/explicacoes/ResumoDaMudanca.astro';
@@ -101,4 +102,5 @@ const seccoes = /** @type {const} */ (['pais', 'lugares', 'uniao', 'estudos', 'e
       </div>
     </section>
   )}
+  <PortasDaDiscussao lang={lang} linhas={ids} />
 </Base>
