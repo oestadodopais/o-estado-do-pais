@@ -1,3 +1,55 @@
+# OG1-A2
+
+A correção de `+79` está feita e verificada no motor. A continuação para perante a gémea da Saúde, conforme o §2: `og1-utao-saude-programa` contém **17 803 milhões de euros** e `oe-2027-saude-despesa-efetiva-consolidada-2027` contém **17 803,1 milhões de euros**. A comparação foi refeita contra os ficheiros atuais; `gemeas-a2.json` guarda os valores, o localizador e o resumo criptográfico do ficheiro do sítio. As outras oito correspondências do §0.5 coincidem numericamente.
+
+O mesmo §2 manda parar perante uma diferença e, entre parênteses, manda usar a linha do sítio com nota. Foi pedida clarificação dessa contradição. Sem resposta, não se toma a diferença como uma autorização para continuar. A continuação deverá usar a linha existente do sítio e explicitar a diferença de precisão, se o lugar de direção confirmar que esta gémea não impede a construção.
+
+## Correção e ensaios
+
+O seletor passa a ler `79`, em `milhões de euros`. O gerador conserva o nome português «impacto das novas medidas de política orçamental no saldo de 2027, a favor do saldo» e o inglês «impact of new fiscal policy measures on the 2027 balance, in favour of the balance». O excerto conserva `+79 M€ (+0,02% do PIB)`. A quinta correção e a razão constam de `correcoes-2026-10-26.json`. Só esta linha do livro mudou, nos campos `value`, `name`, `name_en` e `note`; nenhuma fonte ou régua do exportador mudou. O recibo da fonte foi relido e a prova da travessia foi regenerada.
+
+O ensaio da pesquisa passou com **85 controlos**. O ensaio do exportador comum passou para as **43 linhas preparadas**, sem escrever no sítio. O `-5 411` e o `-1,4` presentes nesta seleção foram aceites. Os restantes valores negativos indicados no mandato não pertencem à seleção; não se declara que atravessaram. Não há outro valor numérico com sinal positivo nos seletores da pesquisa.
+
+A quarta correção continua sem objeto: não existem `secondary_values` na pesquisa. As três correções anteriores e a regularização das atribuições permanecem na cabeça inicial do motor.
+
+| Corrida desta passagem | Código |
+| --- | --- |
+| Gerador da pesquisa | 0 |
+| `publisher.oe2027_generalidade_test --record` | 0 |
+| Gerador do relatório do motor | 0 |
+| Preparação das provas para a travessia | 0 |
+| Exportador comum, sem `--write` | 0 |
+| Comparação das nove gémeas do §0.5 | 1, Saúde diferente |
+
+Os códigos e registos têm o sufixo `-a2`. `medidas.json` conserva a medição anterior em `historico_og1_a`; `medidas-a2.json` contém apenas esta passagem. As conferências do sítio não correram, porque o conteúdo do sítio não foi alterado: `build`, `ledger:check`, `check:registo`, `check:discussao`, `check:lugares`, `typecheck` e `check:cruzamento` estão a `null`. Nenhuma corrida inteira de portões, nenhum `core.gate` e nenhuma captura.
+
+## Item, linhas e recibos
+
+Não houve travessia com escrita. Não há linhas novas, recibos públicos novos ou terceiro item em `src/data/discussao.mjs`. Por isso não há seis partes novas do `dist/` para transcrever, em nenhuma das edições. Não se apresenta a prosa do mandato como se tivesse sido construída. A promessa da fase B, na noite de 28.10.2026, continua no mandato e terá de entrar no último parágrafo da opinião quando o item for construído.
+
+## Commits e trabalho por fazer
+
+Cabeça inicial do sítio: `ede946972550b49186be7b3beee0487643e47219`. Cabeça do motor: `df277a39f3c295972315d754a40a269023b6a268`.
+
+O motor fica por comitar: o `comitar.sh` não transmite `OEDP_GATE=adiado`, e o escrivão não lê essa opção do pedido. A variável também não está definida no ambiente desta passagem. Não se lançou um commit sem poder garantir o adiamento exigido pelo mandato. Ficheiros por comitar:
+
+- `content/30 Orcamento 2027 Generalidade/LEIA-ME.md`
+- `content/30 Orcamento 2027 Generalidade/correcoes-2026-10-26.json`
+- `content/30 Orcamento 2027 Generalidade/extracoes.json`
+- `content/30 Orcamento 2027 Generalidade/ledger.json`
+- `content/30 Orcamento 2027 Generalidade/verificacao.json`
+- `publisher/oe2027_generalidade.py`
+- `publisher/oe2027_generalidade_test.py`
+- `publisher/recortes/og1a/provas.json`
+
+O commit do sítio guarda o relatório e as provas desta paragem. Ficam por fazer a travessia com escrita, o item bilingue, os nomes, as famílias, os lugares, os recibos públicos, as conferências do sítio e a transcrição do `dist/`.
+
+## Custo desta passagem
+
+17 chamadas de ferramentas até escrever este relatório, incluindo o pedido de clarificação; o commit e a inspeção final são posteriores. Três corridas de conferências (ensaio da pesquisa, ensaio do exportador e comparação das gémeas) e três gerações. Nenhuma delegação. `tokens used`: não disponibilizado nesta passagem; os pontos são medidos pelo lançador.
+
+---
+
 # OG1-A: paragem na travessia
 
 A fase A não foi construída. O exportador comum recusou o valor `+79` da linha `og1-utao-novas-saldo`: `cannot read '+79' as a number`. O §2 do mandato exige parar quando uma régua protege um número. Não se retirou o sinal, não se mudou o valor nem se alterou a régua.

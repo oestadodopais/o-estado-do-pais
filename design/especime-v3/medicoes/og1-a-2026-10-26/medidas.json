@@ -1,71 +1,20 @@
 {
-  "estado": "paragem obrigatória pelo §2; item não construído",
+  "estado": "OG1-A2: correção de +79 verificada; travessia em ensaio verde; paragem na gémea da Saúde pelo §2",
   "cabecas": {
-    "sitio": "8ee8b7105156e783d2dca5ea825ac5d75dc6cbd9",
-    "motor": "82d39267518a6fe4bb156108016df3042b2b85d5"
+    "sitio_antes": "ede946972550b49186be7b3beee0487643e47219",
+    "motor": "df277a39f3c295972315d754a40a269023b6a268"
   },
   "linhas_preparadas": 43,
-  "linhas_preparadas_ids": [
-    "og1-utao-p15",
-    "og1-utao-p24",
-    "og1-utao-p26",
-    "og1-utao-p34",
-    "og1-utao-p35",
-    "og1-utao-p37",
-    "og1-utao-p42",
-    "og1-utao-p50",
-    "og1-utao-p51",
-    "og1-utao-p76",
-    "og1-utao-p99",
-    "og1-utao-p101",
-    "og1-utao-pib-2026",
-    "og1-utao-saldo-2026",
-    "og1-utao-politicas-peso",
-    "og1-utao-juros-variacao",
-    "og1-utao-juros-montante",
-    "og1-utao-taxa-implicita-2026",
-    "og1-utao-taxa-implicita-2027",
-    "og1-utao-novas-saldo",
-    "og1-utao-despesa-liquida-ce",
-    "og1-utao-despesa-liquida-limiar",
-    "og1-utao-despesa-liquida-mf-defesa",
-    "og1-utao-despesa-liquida-mf-antes",
-    "og1-utao-divida-2025-revista",
-    "og1-utao-brent-contratos-2027",
-    "og1-utao-brent-mf-2027",
-    "og1-utao-brent-diferenca",
-    "og1-utao-politicas-saldo",
-    "og1-utao-saude-variacao",
-    "og1-utao-saude-sem-prr",
-    "og1-utao-saldo-me-2027",
-    "og1-ps-abstencao",
-    "og1-pcp-comite",
-    "og1-pcp-raimundo",
-    "og1-be-voto",
-    "og1-il-prioridades",
-    "og1-livre-posicao",
-    "og1-governo-rtp-combustiveis",
-    "og1-governo-rtp-previsoes",
-    "og1-governo-rtp-habitacao",
-    "og1-governo-eco-juros",
-    "og1-governo-observador-saldo"
-  ],
   "linhas_exportadas": 0,
   "recibos_publicos_novos": 0,
   "recusa": {
-    "linha": "og1-utao-novas-saldo",
-    "valor": "+79",
-    "excerto": "O MF prevê que em 2027 as novas medidas de política orçamental tenham um impacto residual no saldo orçamental avaliado em +79 M€ (+0,02% do PIB). Na receita, estas medidas terão um impacto positivo no saldo de +179 M€ (+0,05% do PIB); na despesa, o impacto das medidas, é negativo em 100 M€ (0,03% do PIB). Estes dados estão compilados na Tabela 9.",
-    "documento": {
-      "title": "Relatório UTAO n.º 17/2026: Apreciação preliminar da Proposta de Orçamento do Estado para 2027",
-      "file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
-      "source_sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
-      "locator": "§40; p. 22 PDF (21 impressa)",
-      "page": 22,
-      "printed_page": 21
-    },
-    "mensagem": "cannot read '+79' as a number",
-    "codigo": 1
+    "tipo": "gémea com valor diferente",
+    "pesquisa": "og1-utao-saude-programa",
+    "valor_pesquisa": "17 803",
+    "sitio": "oe-2027-saude-despesa-efetiva-consolidada-2027",
+    "valor_sitio": "17 803,1",
+    "unit": "milhões de euros",
+    "decisao": "Pendente a conciliação da ordem de parar com a instrução de usar a linha do sítio com nota."
   },
   "correcoes": {
     "corrections": [
@@ -498,9 +447,32 @@
         "source_sha256": "424c8a1e9f76dc6e5620849c9931cf14bcf551a9309cccf4323628c5ab319a3f",
         "source_unchanged": true,
         "locator": "Corpo da página; excerto localizado por texto"
+      },
+      {
+        "id": "og1-utao-novas-saldo",
+        "fields": [
+          "value",
+          "name",
+          "name_en",
+          "note"
+        ],
+        "value_changed": true,
+        "value_not_numeric": false,
+        "old_value": "+79",
+        "new_value": "79",
+        "old_name": "novas-saldo",
+        "new_name": "impacto das novas medidas de política orçamental no saldo de 2027, a favor do saldo",
+        "new_name_en": "impact of new fiscal policy measures on the 2027 balance, in favour of the balance",
+        "source_file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
+        "source_sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
+        "source_unchanged": true,
+        "excerpt_unchanged": true,
+        "locator": "§40; p. 22 PDF (21 impressa)",
+        "correction_number": 5,
+        "reason": "Quinta correção, OG1-A2: por decisão do lugar de direção, o valor de og1-utao-novas-saldo passa de +79 a 79 milhões de euros. O sentido positivo integra o nome nas duas línguas; o excerto conserva +79 M€ (+0,02% do PIB). A régua do exportador não muda."
       }
     ],
-    "numeric_values_changed": 0,
+    "numeric_values_changed": 1,
     "all_source_hashes_unchanged": true
   },
   "motor_por_comitar": [
@@ -509,43 +481,591 @@
     "content/30 Orcamento 2027 Generalidade/extracoes.json",
     "content/30 Orcamento 2027 Generalidade/ledger.json",
     "content/30 Orcamento 2027 Generalidade/verificacao.json",
-    "publisher/manifest.og1a.json",
     "publisher/oe2027_generalidade.py",
-    "publisher/oe2027_generalidade_report.py",
     "publisher/oe2027_generalidade_test.py",
-    "publisher/og1a_export.py",
     "publisher/recortes/og1a/provas.json"
   ],
+  "motivo_motor_por_comitar": "comitar.sh não transmite OEDP_GATE; o escrivão herda o próprio ambiente e não lê esta opção do pedido. OEDP_GATE ausente no ambiente desta passagem; não se pode garantir o adiamento.",
   "codigos": {
-    "travessia": 1,
-    "motor-ensaio-inicial": 0,
-    "motor-verificar": 0,
-    "motor-ensaio-final": 0,
-    "build": null,
-    "ledger-check": null,
-    "check-registo": null,
-    "check-discussao": null,
-    "check-lugares": null,
-    "typecheck": null,
-    "check-cruzamento": null,
-    "core-gate": null
+    "gemeas-a2": 1,
+    "preparar-a2": 0,
+    "travessia-ensaio-a2": 0,
+    "relatorio-motor-a2": 0,
+    "gerar-a2": 0,
+    "ensaio-a2": 0,
+    "build-a2": null,
+    "ledger-check-a2": null,
+    "check-registo-a2": null,
+    "check-discussao-a2": null,
+    "check-lugares-a2": null,
+    "typecheck-a2": null,
+    "check-cruzamento-a2": null,
+    "core-gate-a2": null
   },
-  "conferencias_executadas": 4,
-  "geracoes": 4,
+  "conferencias_executadas": 3,
+  "geracoes": 3,
   "portoes_inteiros": 0,
   "capturas": 0,
   "custo": {
-    "chamadas_ate_relatorio": 24,
-    "tokens_used": {
-      "input_tokens": 2321016,
-      "cached_input_tokens": 2195200,
-      "cache_write_input_tokens": 0,
-      "output_tokens": 14119,
-      "reasoning_output_tokens": 4611,
-      "total_tokens": 2335135
-    },
-    "instante_da_leitura": "2026-10-26T18:30:32.967Z",
-    "nota": "Contagem do registo da passagem até esta medição; o commit e a verificação final são posteriores. Pontos medidos pelo lançador."
+    "chamadas_ao_escrever": 17,
+    "conferencias": 3,
+    "geracoes": 3,
+    "tokens_used": null,
+    "pontos": "medidos pelo lançador"
   },
-  "fase_b": "2026-10-28, à noite, após o voto; pendente"
+  "fase_b": {
+    "data": "2026-10-28",
+    "estado": "Prevista no mandato; não declarada num item novo, porque não foi construído."
+  },
+  "historico_og1_a": {
+    "estado": "paragem obrigatória pelo §2; item não construído",
+    "cabecas": {
+      "sitio": "8ee8b7105156e783d2dca5ea825ac5d75dc6cbd9",
+      "motor": "82d39267518a6fe4bb156108016df3042b2b85d5"
+    },
+    "linhas_preparadas": 43,
+    "linhas_preparadas_ids": [
+      "og1-utao-p15",
+      "og1-utao-p24",
+      "og1-utao-p26",
+      "og1-utao-p34",
+      "og1-utao-p35",
+      "og1-utao-p37",
+      "og1-utao-p42",
+      "og1-utao-p50",
+      "og1-utao-p51",
+      "og1-utao-p76",
+      "og1-utao-p99",
+      "og1-utao-p101",
+      "og1-utao-pib-2026",
+      "og1-utao-saldo-2026",
+      "og1-utao-politicas-peso",
+      "og1-utao-juros-variacao",
+      "og1-utao-juros-montante",
+      "og1-utao-taxa-implicita-2026",
+      "og1-utao-taxa-implicita-2027",
+      "og1-utao-novas-saldo",
+      "og1-utao-despesa-liquida-ce",
+      "og1-utao-despesa-liquida-limiar",
+      "og1-utao-despesa-liquida-mf-defesa",
+      "og1-utao-despesa-liquida-mf-antes",
+      "og1-utao-divida-2025-revista",
+      "og1-utao-brent-contratos-2027",
+      "og1-utao-brent-mf-2027",
+      "og1-utao-brent-diferenca",
+      "og1-utao-politicas-saldo",
+      "og1-utao-saude-variacao",
+      "og1-utao-saude-sem-prr",
+      "og1-utao-saldo-me-2027",
+      "og1-ps-abstencao",
+      "og1-pcp-comite",
+      "og1-pcp-raimundo",
+      "og1-be-voto",
+      "og1-il-prioridades",
+      "og1-livre-posicao",
+      "og1-governo-rtp-combustiveis",
+      "og1-governo-rtp-previsoes",
+      "og1-governo-rtp-habitacao",
+      "og1-governo-eco-juros",
+      "og1-governo-observador-saldo"
+    ],
+    "linhas_exportadas": 0,
+    "recibos_publicos_novos": 0,
+    "recusa": {
+      "linha": "og1-utao-novas-saldo",
+      "valor": "+79",
+      "excerto": "O MF prevê que em 2027 as novas medidas de política orçamental tenham um impacto residual no saldo orçamental avaliado em +79 M€ (+0,02% do PIB). Na receita, estas medidas terão um impacto positivo no saldo de +179 M€ (+0,05% do PIB); na despesa, o impacto das medidas, é negativo em 100 M€ (0,03% do PIB). Estes dados estão compilados na Tabela 9.",
+      "documento": {
+        "title": "Relatório UTAO n.º 17/2026: Apreciação preliminar da Proposta de Orçamento do Estado para 2027",
+        "file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
+        "source_sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
+        "locator": "§40; p. 22 PDF (21 impressa)",
+        "page": 22,
+        "printed_page": 21
+      },
+      "mensagem": "cannot read '+79' as a number",
+      "codigo": 1
+    },
+    "correcoes": {
+      "corrections": [
+        {
+          "id": "og1-utao-p1",
+          "fields": [
+            "attributed_to"
+          ],
+          "value_changed": false,
+          "value_not_numeric": true,
+          "source_file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
+          "source_sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
+          "source_unchanged": true,
+          "locator": "§1; p. 4 PDF (3 impressa)"
+        },
+        {
+          "id": "og1-utao-p5",
+          "fields": [
+            "attributed_to"
+          ],
+          "value_changed": false,
+          "value_not_numeric": true,
+          "source_file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
+          "source_sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
+          "source_unchanged": true,
+          "locator": "§5; p. 5 PDF (4 impressa)"
+        },
+        {
+          "id": "og1-utao-p15",
+          "fields": [
+            "attributed_to"
+          ],
+          "value_changed": false,
+          "value_not_numeric": true,
+          "source_file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
+          "source_sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
+          "source_unchanged": true,
+          "locator": "§15; p. 10 PDF (9 impressa)"
+        },
+        {
+          "id": "og1-utao-p24",
+          "fields": [
+            "attributed_to"
+          ],
+          "value_changed": false,
+          "value_not_numeric": true,
+          "source_file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
+          "source_sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
+          "source_unchanged": true,
+          "locator": "§24; p. 15 PDF (14 impressa)"
+        },
+        {
+          "id": "og1-utao-p26",
+          "fields": [
+            "attributed_to"
+          ],
+          "value_changed": false,
+          "value_not_numeric": true,
+          "source_file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
+          "source_sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
+          "source_unchanged": true,
+          "locator": "§26; p. 15 PDF (14 impressa)"
+        },
+        {
+          "id": "og1-utao-p34",
+          "fields": [
+            "attributed_to"
+          ],
+          "value_changed": false,
+          "value_not_numeric": true,
+          "source_file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
+          "source_sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
+          "source_unchanged": true,
+          "locator": "§34; p. 21 PDF (20 impressa)"
+        },
+        {
+          "id": "og1-utao-p35",
+          "fields": [
+            "attributed_to"
+          ],
+          "value_changed": false,
+          "value_not_numeric": true,
+          "source_file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
+          "source_sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
+          "source_unchanged": true,
+          "locator": "§35; p. 21 PDF (20 impressa)"
+        },
+        {
+          "id": "og1-utao-p37",
+          "fields": [
+            "attributed_to"
+          ],
+          "value_changed": false,
+          "value_not_numeric": true,
+          "source_file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
+          "source_sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
+          "source_unchanged": true,
+          "locator": "§37; p. 22 PDF (21 impressa)"
+        },
+        {
+          "id": "og1-utao-p40",
+          "fields": [
+            "attributed_to"
+          ],
+          "value_changed": false,
+          "value_not_numeric": true,
+          "source_file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
+          "source_sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
+          "source_unchanged": true,
+          "locator": "§40; p. 22 PDF (21 impressa)"
+        },
+        {
+          "id": "og1-utao-p42",
+          "fields": [
+            "attributed_to"
+          ],
+          "value_changed": false,
+          "value_not_numeric": true,
+          "source_file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
+          "source_sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
+          "source_unchanged": true,
+          "locator": "§42; p. 23 PDF (22 impressa)"
+        },
+        {
+          "id": "og1-utao-p50",
+          "fields": [
+            "attributed_to"
+          ],
+          "value_changed": false,
+          "value_not_numeric": true,
+          "source_file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
+          "source_sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
+          "source_unchanged": true,
+          "locator": "§50; p. 27 PDF (26 impressa)"
+        },
+        {
+          "id": "og1-utao-p51",
+          "fields": [
+            "attributed_to"
+          ],
+          "value_changed": false,
+          "value_not_numeric": true,
+          "source_file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
+          "source_sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
+          "source_unchanged": true,
+          "locator": "§51; p. 27 PDF (26 impressa)"
+        },
+        {
+          "id": "og1-utao-p68",
+          "fields": [
+            "attributed_to"
+          ],
+          "value_changed": false,
+          "value_not_numeric": true,
+          "source_file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
+          "source_sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
+          "source_unchanged": true,
+          "locator": "§68; p. 38 PDF (37 impressa)"
+        },
+        {
+          "id": "og1-utao-p76",
+          "fields": [
+            "attributed_to"
+          ],
+          "value_changed": false,
+          "value_not_numeric": true,
+          "source_file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
+          "source_sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
+          "source_unchanged": true,
+          "locator": "§76; p. 44 PDF (43 impressa)"
+        },
+        {
+          "id": "og1-utao-p81",
+          "fields": [
+            "attributed_to"
+          ],
+          "value_changed": false,
+          "value_not_numeric": true,
+          "source_file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
+          "source_sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
+          "source_unchanged": true,
+          "locator": "§81; p. 46 PDF (45 impressa)"
+        },
+        {
+          "id": "og1-utao-p99",
+          "fields": [
+            "attributed_to"
+          ],
+          "value_changed": false,
+          "value_not_numeric": true,
+          "source_file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
+          "source_sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
+          "source_unchanged": true,
+          "locator": "§99; p. 52 PDF (51 impressa)"
+        },
+        {
+          "id": "og1-utao-p101",
+          "fields": [
+            "attributed_to"
+          ],
+          "value_changed": false,
+          "value_not_numeric": true,
+          "source_file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
+          "source_sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
+          "source_unchanged": true,
+          "locator": "§101; p. 53 PDF (52 impressa)"
+        },
+        {
+          "id": "og1-utao-p102",
+          "fields": [
+            "attributed_to",
+            "excerpt",
+            "source_excerpt",
+            "value"
+          ],
+          "value_changed": true,
+          "value_not_numeric": true,
+          "source_file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
+          "source_sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
+          "source_unchanged": true,
+          "locator": "§102; p. 53 PDF (52 impressa)"
+        },
+        {
+          "id": "og1-utao-p103",
+          "fields": [
+            "attributed_to"
+          ],
+          "value_changed": false,
+          "value_not_numeric": true,
+          "source_file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
+          "source_sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
+          "source_unchanged": true,
+          "locator": "§103; p. 53 PDF (52 impressa)"
+        },
+        {
+          "id": "og1-utao-emprego-publico-2027",
+          "fields": [
+            "excerpt",
+            "source_excerpt"
+          ],
+          "value_changed": false,
+          "value_not_numeric": false,
+          "source_file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
+          "source_sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
+          "source_unchanged": true,
+          "locator": "§102; p. 53 PDF (52 impressa)"
+        },
+        {
+          "id": "og1-utao-superior-programa",
+          "fields": [
+            "document",
+            "evidence",
+            "excerpt",
+            "locator",
+            "name_source",
+            "source_excerpt"
+          ],
+          "value_changed": false,
+          "value_not_numeric": false,
+          "source_file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
+          "source_sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
+          "source_unchanged": true,
+          "locator": "p. 39 PDF (38 impressa); Tabela 14; Ensino Superior, Ciência e Inovação; coluna POE/2027"
+        },
+        {
+          "id": "og1-utao-superior-estimativa",
+          "fields": [
+            "document",
+            "evidence",
+            "excerpt",
+            "locator",
+            "name_source",
+            "source_excerpt"
+          ],
+          "value_changed": false,
+          "value_not_numeric": false,
+          "source_file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
+          "source_sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
+          "source_unchanged": true,
+          "locator": "p. 39 PDF (38 impressa); Tabela 14; Ensino Superior, Ciência e Inovação; coluna Estimativa 2026"
+        },
+        {
+          "id": "og1-utao-superior-variacao",
+          "fields": [
+            "document",
+            "evidence",
+            "excerpt",
+            "locator",
+            "name_source",
+            "source_excerpt"
+          ],
+          "value_changed": false,
+          "value_not_numeric": false,
+          "source_file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
+          "source_sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
+          "source_unchanged": true,
+          "locator": "p. 39 PDF (38 impressa); Tabela 14; Ensino Superior, Ciência e Inovação; coluna POE/2027 face a Est/2026"
+        },
+        {
+          "id": "og1-ps-abstencao",
+          "fields": [
+            "attributed_to"
+          ],
+          "value_changed": false,
+          "value_not_numeric": true,
+          "source_file": "content/30 Orcamento 2027 Generalidade/source/ps.html",
+          "source_sha256": "62ec78731be0bddee6c55a4d463bb130100dee48e9fdcf129b7d8b4334b75f4f",
+          "source_unchanged": true,
+          "locator": "Corpo da página; excerto localizado por texto"
+        },
+        {
+          "id": "og1-pcp-comite",
+          "fields": [
+            "attributed_to"
+          ],
+          "value_changed": false,
+          "value_not_numeric": true,
+          "source_file": "content/30 Orcamento 2027 Generalidade/source/pcp-comunicado.html",
+          "source_sha256": "0edf4b880ff0613e961e22f763e8bbd463d98e577759864319e92fdcddf5519c",
+          "source_unchanged": true,
+          "locator": "Corpo da página; excerto localizado por texto"
+        },
+        {
+          "id": "og1-pcp-raimundo",
+          "fields": [
+            "attributed_to",
+            "excerpt",
+            "source_excerpt",
+            "value"
+          ],
+          "value_changed": true,
+          "value_not_numeric": true,
+          "source_file": "content/30 Orcamento 2027 Generalidade/source/pcp-raimundo.html",
+          "source_sha256": "c477f5d594cb3f0e9b89e554ffab84f3f63ff651f5bce0564df4cc38304f8beb",
+          "source_unchanged": true,
+          "locator": "Corpo da página; excerto localizado por texto"
+        },
+        {
+          "id": "og1-be-voto",
+          "fields": [
+            "attributed_to"
+          ],
+          "value_changed": false,
+          "value_not_numeric": true,
+          "source_file": "content/30 Orcamento 2027 Generalidade/source/be-dn.html",
+          "source_sha256": "56f7b281b2e7e99715d301ea511ea195d72435c174ee0a14757f854966414c1f",
+          "source_unchanged": true,
+          "locator": "Corpo da página; excerto localizado por texto"
+        },
+        {
+          "id": "og1-il-prioridades",
+          "fields": [
+            "attributed_to"
+          ],
+          "value_changed": false,
+          "value_not_numeric": true,
+          "source_file": "content/30 Orcamento 2027 Generalidade/source/il-eco.html",
+          "source_sha256": "d4f0c94e2aa70bfa546ea8a41247c17c74f90b4364e6441e5c054c4751ffc3b0",
+          "source_unchanged": true,
+          "locator": "Corpo da página; excerto localizado por texto"
+        },
+        {
+          "id": "og1-livre-posicao",
+          "fields": [
+            "attributed_to"
+          ],
+          "value_changed": false,
+          "value_not_numeric": true,
+          "source_file": "content/30 Orcamento 2027 Generalidade/source/livre-cm.html",
+          "source_sha256": "34283df7052738118988c360194b50f20a0ae9388959d3ed534040d3727a0cf6",
+          "source_unchanged": true,
+          "locator": "Corpo da página; excerto localizado por texto"
+        },
+        {
+          "id": "og1-governo-rtp-combustiveis",
+          "fields": [
+            "attributed_to"
+          ],
+          "value_changed": false,
+          "value_not_numeric": true,
+          "source_file": "content/30 Orcamento 2027 Generalidade/source/rtp-audicao.html",
+          "source_sha256": "1e46c2edd7560cdc613468b1ebb7dc69aa9c6be07d7e07a151eda7f254579256",
+          "source_unchanged": true,
+          "locator": "Corpo da página; excerto localizado por texto"
+        },
+        {
+          "id": "og1-governo-rtp-previsoes",
+          "fields": [
+            "attributed_to"
+          ],
+          "value_changed": false,
+          "value_not_numeric": true,
+          "source_file": "content/30 Orcamento 2027 Generalidade/source/rtp-audicao.html",
+          "source_sha256": "1e46c2edd7560cdc613468b1ebb7dc69aa9c6be07d7e07a151eda7f254579256",
+          "source_unchanged": true,
+          "locator": "Corpo da página; excerto localizado por texto"
+        },
+        {
+          "id": "og1-governo-rtp-habitacao",
+          "fields": [
+            "attributed_to"
+          ],
+          "value_changed": false,
+          "value_not_numeric": true,
+          "source_file": "content/30 Orcamento 2027 Generalidade/source/rtp-audicao.html",
+          "source_sha256": "1e46c2edd7560cdc613468b1ebb7dc69aa9c6be07d7e07a151eda7f254579256",
+          "source_unchanged": true,
+          "locator": "Corpo da página; excerto localizado por texto"
+        },
+        {
+          "id": "og1-governo-eco-juros",
+          "fields": [
+            "attributed_to"
+          ],
+          "value_changed": false,
+          "value_not_numeric": true,
+          "source_file": "content/30 Orcamento 2027 Generalidade/source/eco-juros.html",
+          "source_sha256": "e3eba71523dc9da26abe80eef7f5cbcf0088572168e56f7d812a51b56fee1fe1",
+          "source_unchanged": true,
+          "locator": "Corpo da página; excerto localizado por texto"
+        },
+        {
+          "id": "og1-governo-observador-saldo",
+          "fields": [
+            "attributed_to"
+          ],
+          "value_changed": false,
+          "value_not_numeric": true,
+          "source_file": "content/30 Orcamento 2027 Generalidade/source/observador-audicao.html",
+          "source_sha256": "424c8a1e9f76dc6e5620849c9931cf14bcf551a9309cccf4323628c5ab319a3f",
+          "source_unchanged": true,
+          "locator": "Corpo da página; excerto localizado por texto"
+        }
+      ],
+      "numeric_values_changed": 0,
+      "all_source_hashes_unchanged": true
+    },
+    "motor_por_comitar": [
+      "content/30 Orcamento 2027 Generalidade/LEIA-ME.md",
+      "content/30 Orcamento 2027 Generalidade/correcoes-2026-10-26.json",
+      "content/30 Orcamento 2027 Generalidade/extracoes.json",
+      "content/30 Orcamento 2027 Generalidade/ledger.json",
+      "content/30 Orcamento 2027 Generalidade/verificacao.json",
+      "publisher/manifest.og1a.json",
+      "publisher/oe2027_generalidade.py",
+      "publisher/oe2027_generalidade_report.py",
+      "publisher/oe2027_generalidade_test.py",
+      "publisher/og1a_export.py",
+      "publisher/recortes/og1a/provas.json"
+    ],
+    "codigos": {
+      "travessia": 1,
+      "motor-ensaio-inicial": 0,
+      "motor-verificar": 0,
+      "motor-ensaio-final": 0,
+      "build": null,
+      "ledger-check": null,
+      "check-registo": null,
+      "check-discussao": null,
+      "check-lugares": null,
+      "typecheck": null,
+      "check-cruzamento": null,
+      "core-gate": null
+    },
+    "conferencias_executadas": 4,
+    "geracoes": 4,
+    "portoes_inteiros": 0,
+    "capturas": 0,
+    "custo": {
+      "chamadas_ate_relatorio": 24,
+      "tokens_used": {
+        "input_tokens": 2321016,
+        "cached_input_tokens": 2195200,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 14119,
+        "reasoning_output_tokens": 4611,
+        "total_tokens": 2335135
+      },
+      "instante_da_leitura": "2026-10-26T18:30:32.967Z",
+      "nota": "Contagem do registo da passagem até esta medição; o commit e a verificação final são posteriores. Pontos medidos pelo lançador."
+    },
+    "fase_b": "2026-10-28, à noite, após o voto; pendente"
+  }
 }

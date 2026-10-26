@@ -1,0 +1,95 @@
+{
+  "codigo": 1,
+  "conferencias": [
+    {
+      "pesquisa": "og1-utao-saldo-2027",
+      "sitio": "pm-q3-3-r37-c3",
+      "valor_pesquisa": "0,1",
+      "valor_sitio": "0,1",
+      "iguais": true,
+      "ficheiro_sitio": "ledger/claims/pm-q3-3-r37-c3.yml",
+      "sha256_sitio": "be69addd333451ebfb33cd5fd7de1a110f71208b925188b51fe9cdee0b00858d",
+      "localizador_pesquisa": "§24; p. 15 PDF (14 impressa)"
+    },
+    {
+      "pesquisa": "og1-utao-divida-2026",
+      "sitio": "pm-q3-6-r42-c2",
+      "valor_pesquisa": "87,5",
+      "valor_sitio": "87,5",
+      "iguais": true,
+      "ficheiro_sitio": "ledger/claims/pm-q3-6-r42-c2.yml",
+      "sha256_sitio": "7dd5aa12685dc91d450d43a776adcdee9378111075967d2d90c92e7587981742",
+      "localizador_pesquisa": "§76; p. 44 PDF (43 impressa)"
+    },
+    {
+      "pesquisa": "og1-utao-divida-2027",
+      "sitio": "pm-q3-6-r42-c3",
+      "valor_pesquisa": "84,5",
+      "valor_sitio": "84,5",
+      "iguais": true,
+      "ficheiro_sitio": "ledger/claims/pm-q3-6-r42-c3.yml",
+      "sha256_sitio": "316c1c693ff3ac88916cb1642d5bf180ed7c40d4319995a6e1a2ec4278ccddd1",
+      "localizador_pesquisa": "§76; p. 44 PDF (43 impressa)"
+    },
+    {
+      "pesquisa": "og1-utao-pib-2027",
+      "sitio": "oe-2027-cenario-pib-real-crescimento-2027",
+      "valor_pesquisa": "2,1",
+      "valor_sitio": "2,1",
+      "iguais": true,
+      "ficheiro_sitio": "ledger/claims/oe-2027-cenario-pib-real-crescimento-2027.yml",
+      "sha256_sitio": "5a8b8472a7df10f246245b269a64d476a04c5c41a4525affa578fe3fe732610c",
+      "localizador_pesquisa": "§5; p. 5 PDF (4 impressa)"
+    },
+    {
+      "pesquisa": "og1-utao-emprego-2027",
+      "sitio": "pm-q2-3-r21-c2",
+      "valor_pesquisa": "1,4",
+      "valor_sitio": "1,4",
+      "iguais": true,
+      "ficheiro_sitio": "ledger/claims/pm-q2-3-r21-c2.yml",
+      "sha256_sitio": "384e933bc591b56bf96abdea101f8f36ddd944b30673743c0892089ce9242553",
+      "localizador_pesquisa": "§15; p. 10 PDF (9 impressa)"
+    },
+    {
+      "pesquisa": "og1-utao-saude-programa",
+      "sitio": "oe-2027-saude-despesa-efetiva-consolidada-2027",
+      "valor_pesquisa": "17 803",
+      "valor_sitio": "17 803,1",
+      "iguais": false,
+      "ficheiro_sitio": "ledger/claims/oe-2027-saude-despesa-efetiva-consolidada-2027.yml",
+      "sha256_sitio": "f39679c845cdbdc35e37fb193ed49b5e18903530cd66e980374fe0dea883c0c3",
+      "localizador_pesquisa": "p. 39 PDF (38 impressa); Tabela 14; Saúde; coluna POE/2027"
+    },
+    {
+      "pesquisa": "og1-utao-combustiveis-iva",
+      "sitio": "pm-q3-2-r8-c0",
+      "valor_pesquisa": "300",
+      "valor_sitio": "300",
+      "iguais": true,
+      "ficheiro_sitio": "ledger/claims/pm-q3-2-r8-c0.yml",
+      "sha256_sitio": "8dce5f4b7429af74722cbeb7a50f2fdc2fc1c5c4e35e63d40ff600d0edbc385b",
+      "localizador_pesquisa": "§42; p. 23 PDF (22 impressa)"
+    },
+    {
+      "pesquisa": "og1-utao-csi-nova",
+      "sitio": "pm-q3-2-r25-c0",
+      "valor_pesquisa": "100",
+      "valor_sitio": "100",
+      "iguais": true,
+      "ficheiro_sitio": "ledger/claims/pm-q3-2-r25-c0.yml",
+      "sha256_sitio": "6d3c4a86d886385c8842f264377a6a2230ba50b5953f9f05742958ffd80c8cd6",
+      "localizador_pesquisa": "p. 22 PDF (21 impressa); Tabela 9; Reforço ao Complemento Solidário para Idosos em 2027; coluna POE/2027, M€"
+    },
+    {
+      "pesquisa": "og1-utao-rmmg-impacto",
+      "sitio": "pm-q3-2-r22-c0",
+      "valor_pesquisa": "116",
+      "valor_sitio": "116",
+      "iguais": true,
+      "ficheiro_sitio": "ledger/claims/pm-q3-2-r22-c0.yml",
+      "sha256_sitio": "584a05b805f8016489d7ae565cfc63b99644601903d7cd701f851943fd65a60f",
+      "localizador_pesquisa": "p. 21 PDF (20 impressa); Tabela 8; Aumento da RMMG; coluna POE/2027, M€"
+    }
+  ]
+}
