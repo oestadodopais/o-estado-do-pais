@@ -6,7 +6,7 @@
 id: "divida-das-familias-2024"
 
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
-value: "52,6"
+value: "52,3"
 unit: "% do PIB"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
@@ -17,11 +17,12 @@ document:
   kind: "serie"
   url: "https://ec.europa.eu/eurostat/databrowser/view/tipspd22/default/table?lang=en"
 source_url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipspd22?format=JSON&lang=EN&geo=PT&unit=PC_GDP"
-access_date: "2026-09-15"
+access_date: "2026-10-26"
+published_at: "2026-10-24"
 reference_date: "2024"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "Household debt including non-profit institutions serving households, consolidated — Percentage of gross domestic product (GDP) — Portugal — 2024: 52.6 p"
+excerpt: "Household debt including non-profit institutions serving households, consolidated — Percentage of gross domestic product (GDP) — Portugal — 2024: 52.3"
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null
@@ -45,6 +46,32 @@ corrections:
     o valor não mudou.
   reason_en: The excerpt now carries the status mark the source prints for the same observation, read on 28.09.2026;
     the value has not changed.
+- date: '2026-10-26'
+  kind: atualizacao
+  old_value: 52,6
+  new_value: 52,3
+  reason: "O Eurostat reviu o valor de 52,6 para 52,3 na atualização do conjunto de dados de 17.10.2026 (a versão anterior era de 09.10.2026). A comparação semanal com a fonte de 19.10.2026 encontrou a revisão, a de 26.10.2026 leu o mesmo valor na versão de 24.10.2026, e este projeto releu a fonte a 26.10.2026; até aí publicava-se o valor da leitura anterior."
+  reason_en: "Eurostat revised the value from 52.6 to 52.3 in the dataset update of 17.10.2026 (the previous version was of 09.10.2026). The weekly comparison with the source of 19.10.2026 found the revision, the one of 26.10.2026 read the same value in the version of 24.10.2026, and this project re-read the source on 26.10.2026; until then the value of the earlier reading was published."
+- date: '2026-10-26'
+  kind: proveniencia
+  field: access_date
+  old_value: '2026-09-15'
+  new_value: '2026-10-26'
+  reason: O valor novo foi lido a 26.10.2026, o dia em que este projeto releu a fonte; a leitura anterior, de 15.09.2026,
+    é a do valor 52,6.
+  reason_en: The new value was read on 26.10.2026, the day this project re-read the source; the earlier reading, of
+    15.09.2026, is that of the value 52,6.
+- date: '2026-10-26'
+  kind: proveniencia
+  field: excerpt
+  old_value: 'Household debt including non-profit institutions serving households, consolidated — Percentage of gross domestic
+    product (GDP) — Portugal — 2024: 52.6 p'
+  new_value: 'Household debt including non-profit institutions serving households, consolidated — Percentage of gross domestic
+    product (GDP) — Portugal — 2024: 52.3'
+  reason: O excerto passa a transcrever o valor revisto que a fonte imprime na mesma observação, lida a 26.10.2026, e a fonte
+    deixou de a marcar como provisória.
+  reason_en: The excerpt now transcribes the revised value the source prints for the same observation, read on 26.10.2026,
+    and the source no longer marks it as provisional.
 
 # Reconferências. Escritas por indicators/refresh.py, nunca à mão.
 
@@ -77,9 +104,7 @@ verifications:
     result: "diverge"
     by: "painel-semanal"
     found: "52.3"
-
-source_flag: "p"
-
-source_flag_note: "dado provisório"
-
-source_flag_note_en: "provisional data"
+  - date: "2026-10-26"
+    path: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipspd22?format=JSON&lang=EN&geo=PT&unit=PC_GDP"
+    result: "igual"
+    by: "painel-semanal"

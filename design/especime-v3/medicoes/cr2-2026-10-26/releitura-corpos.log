@@ -1,0 +1,19 @@
+Linhas selecionadas: custo-unitario-do-trabalho-2025-ue,divida-das-empresas-2024,divida-das-empresas-2025,divida-das-empresas-2025-ue,divida-das-familias-2024,divida-das-familias-2025,divida-publica-2024,divida-publica-2025,divida-publica-2025-ue,fluxo-de-credito-as-empresas-2024,fluxo-de-credito-as-empresas-2025,fluxo-de-credito-as-familias-2024,fluxo-de-credito-as-familias-2025,fluxo-de-credito-as-familias-2025-ue,formacao-bruta-de-capital-fixo-2025-ue,licencas-de-construcao-2025-ue,pib-real-per-capita-2025-ue
+  custo-unitario-do-trabalho-2025-ue: 15,2 -> 14,8 · carimbo 2026-10-02T23:00:00+0200 -> 2026-10-22T23:00:00+0200 · bandeira - -> -
+  divida-das-empresas-2024: 67,1 -> 66,6 · carimbo 2026-10-03T11:00:00+0200 -> 2026-10-24T11:00:00+0200 · bandeira p -> -
+  divida-das-empresas-2025: 64,9 -> 65,1 · carimbo 2026-10-03T11:00:00+0200 -> 2026-10-24T11:00:00+0200 · bandeira p -> p
+  divida-das-empresas-2025-ue: 70,0 -> 70,2 · carimbo 2026-10-03T11:00:00+0200 -> 2026-10-24T11:00:00+0200 · bandeira p -> p
+  divida-das-familias-2024: 52,6 -> 52,3 · carimbo 2026-10-03T11:00:00+0200 -> 2026-10-24T11:00:00+0200 · bandeira p -> -
+  divida-das-familias-2025: 53,9 -> 54,4 · carimbo 2026-10-03T11:00:00+0200 -> 2026-10-24T11:00:00+0200 · bandeira p -> p
+  divida-publica-2024: 93,5 -> 93,0 · carimbo 2026-04-22T11:00:00+0200 -> 2026-10-21T11:00:00+0200 · bandeira - -> -
+  divida-publica-2025: 89,7 -> 89,2 · carimbo 2026-04-22T11:00:00+0200 -> 2026-10-21T11:00:00+0200 · bandeira - -> -
+  divida-publica-2025-ue: 81,7 -> 81,5 · carimbo 2026-04-22T11:00:00+0200 -> 2026-10-21T11:00:00+0200 · bandeira - -> -
+  fluxo-de-credito-as-empresas-2024: 2,4 -> 2,2 · carimbo 2026-10-03T11:00:00+0200 -> 2026-10-24T11:00:00+0200 · bandeira - -> -
+  fluxo-de-credito-as-empresas-2025: 3,0 -> 3,4 · carimbo 2026-10-03T11:00:00+0200 -> 2026-10-24T11:00:00+0200 · bandeira - -> -
+  fluxo-de-credito-as-familias-2024: 4,1 -> 4,0 · carimbo 2026-10-03T11:00:00+0200 -> 2026-10-24T11:00:00+0200 · bandeira - -> -
+  fluxo-de-credito-as-familias-2025: 8,6 -> 9,0 · carimbo 2026-10-03T11:00:00+0200 -> 2026-10-24T11:00:00+0200 · bandeira - -> -
+  fluxo-de-credito-as-familias-2025-ue: 2,9 -> 3,0 · carimbo 2026-10-03T11:00:00+0200 -> 2026-10-24T11:00:00+0200 · bandeira p -> p
+  formacao-bruta-de-capital-fixo-2025-ue: 21,4 -> 21,5 · carimbo 2026-10-02T23:00:00+0200 -> 2026-10-22T23:00:00+0200 · bandeira - -> -
+  licencas-de-construcao-2025-ue: 377,5 -> 377,6 · carimbo 2026-10-02T23:00:00+0200 -> 2026-10-21T23:00:00+0200 · bandeira - -> -
+  pib-real-per-capita-2025-ue: 31 890 -> 31 980 · carimbo 2026-10-02T23:00:00+0200 -> 2026-10-22T23:00:00+0200 · bandeira - -> -
+{"linhas": 17, "pedidos": 12, "pedidos_com_200": 12, "relidas": 17, "paradas": 0, "com_valor_novo": 17, "com_a_guarda_do_excerto": 17, "com_o_found_do_painel": 17, "com_corpo_anterior": 17}

@@ -1,0 +1,1601 @@
+{
+  "_": "Escrito por scripts/aplicar-releituras.py. Não se edita à mão.",
+  "cabeca_presa": "442b284e229408018e8c97c59dadd285a526bf3c",
+  "releitura_do_motor": "indicators/out/releituras/2026-10-26/releitura.json",
+  "releitura_quando": "2026-10-26T14:22:04+00:00",
+  "releitura_cabeca_do_motor": "b34a675dddf5c7d25159bb5b0bd858eb7d01cbe7",
+  "linhas": [
+    {
+      "id": "custo-unitario-do-trabalho-2025-ue",
+      "antes_sha256": "e54da8c2e4ad78bedd121cdfd61d5eccc03dc99107f7bad479527ab2ae155a21",
+      "depois_sha256": "52492e46bd184a3b88894a64c5724863b3a4a0663b7fc5ad2ca60ec29d4cb464",
+      "valor_antigo": "15,2",
+      "valor_novo": "14,8",
+      "acesso_antigo": "2026-09-15",
+      "acesso_novo": "2026-10-26",
+      "bandeira_antiga": "",
+      "bandeira_nova": "",
+      "carimbo_anterior": "2026-10-02T23:00:00+0200",
+      "carimbo_novo": "2026-10-22T23:00:00+0200",
+      "entradas_novas": [
+        {
+          "date": "2026-10-26",
+          "kind": "atualizacao",
+          "old_value": "15,2",
+          "new_value": "14,8",
+          "reason": "O Eurostat reviu o valor da União a 22.10.2026 (o carimbo do conjunto passou de 02.10.2026 a 22.10.2026); a reconferência semanal de 26.10.2026 viu a revisão.",
+          "reason_en": "Eurostat revised the EU value on 22.10.2026 (the dataset stamp moved from 02.10.2026 to 22.10.2026); the weekly check of 26.10.2026 caught the revision."
+        },
+        {
+          "date": "2026-10-26",
+          "kind": "proveniencia",
+          "field": "access_date",
+          "old_value": "2026-09-15",
+          "new_value": "2026-10-26",
+          "reason": "O valor novo foi lido a 26.10.2026, no dia da reconferência que viu a revisão; a leitura anterior, de 15.09.2026, é a do valor 15,2.",
+          "reason_en": "The new value was read on 26.10.2026, the day of the check that caught the revision; the earlier reading, of 15.09.2026, is that of the value 15,2."
+        },
+        {
+          "date": "2026-10-26",
+          "kind": "proveniencia",
+          "field": "excerpt",
+          "old_value": "Nominal unit labour cost per hour worked — Percentage change (t/t-3) — European Union - 27 countries (from 2020) — 2025: 15.2",
+          "new_value": "Nominal unit labour cost per hour worked — Percentage change (t/t-3) — European Union - 27 countries (from 2020) — 2025: 14.8",
+          "reason": "O excerto passa a transcrever o valor revisto que a fonte imprime na mesma observação, lida a 26.10.2026.",
+          "reason_en": "The excerpt now transcribes the revised value the source prints for the same observation, read on 26.10.2026."
+        }
+      ],
+      "correcoes_antes": 0,
+      "correcoes_depois": 3,
+      "reconferencias": 6,
+      "aplicada": false
+    },
+    {
+      "id": "divida-das-empresas-2024",
+      "antes_sha256": "7aca2b09a515595f855fcd103a6f4a555a825182b8d9122e957159ff53bf9c4a",
+      "depois_sha256": "98cd80aee0557849a7f43ed747f55dde28ae91a3252baef5cd061e1deee71c45",
+      "valor_antigo": "67,1",
+      "valor_novo": "66,6",
+      "acesso_antigo": "2026-09-15",
+      "acesso_novo": "2026-10-26",
+      "bandeira_antiga": "p",
+      "bandeira_nova": "",
+      "carimbo_anterior": "2026-10-03T11:00:00+0200",
+      "carimbo_novo": "2026-10-24T11:00:00+0200",
+      "entradas_novas": [
+        {
+          "date": "2026-10-26",
+          "kind": "atualizacao",
+          "old_value": "67,1",
+          "new_value": "66,6",
+          "reason": "O Eurostat reviu o valor de Portugal a 24.10.2026 (o carimbo do conjunto passou de 03.10.2026 a 24.10.2026); a reconferência semanal de 26.10.2026 viu a revisão.",
+          "reason_en": "Eurostat revised Portugal's value on 24.10.2026 (the dataset stamp moved from 03.10.2026 to 24.10.2026); the weekly check of 26.10.2026 caught the revision."
+        },
+        {
+          "date": "2026-10-26",
+          "kind": "proveniencia",
+          "field": "access_date",
+          "old_value": "2026-09-15",
+          "new_value": "2026-10-26",
+          "reason": "O valor novo foi lido a 26.10.2026, no dia da reconferência que viu a revisão; a leitura anterior, de 15.09.2026, é a do valor 67,1.",
+          "reason_en": "The new value was read on 26.10.2026, the day of the check that caught the revision; the earlier reading, of 15.09.2026, is that of the value 67,1."
+        },
+        {
+          "date": "2026-10-26",
+          "kind": "proveniencia",
+          "field": "excerpt",
+          "old_value": "Non-financial corporations debt, consolidated - % of GDP — Percentage of gross domestic product (GDP) — Portugal — 2024: 67.1 p",
+          "new_value": "Non-financial corporations debt, consolidated - % of GDP — Percentage of gross domestic product (GDP) — Portugal — 2024: 66.6",
+          "reason": "O excerto passa a transcrever o valor revisto que a fonte imprime na mesma observação, lida a 26.10.2026, e a fonte deixou de a marcar como provisória.",
+          "reason_en": "The excerpt now transcribes the revised value the source prints for the same observation, read on 26.10.2026, and the source no longer marks it as provisional."
+        }
+      ],
+      "correcoes_antes": 1,
+      "correcoes_depois": 4,
+      "reconferencias": 6,
+      "aplicada": false
+    },
+    {
+      "id": "divida-das-empresas-2025",
+      "antes_sha256": "02b89e9ab189b5a34d49ceef09616a6701aa3034e0eae03eb846e3959a36c1bd",
+      "depois_sha256": "057cd577b01ec6ed3105c8dcd308cc7c2a5f2ad0bbfd9d99723cc7531ae0bd25",
+      "valor_antigo": "64,9",
+      "valor_novo": "65,1",
+      "acesso_antigo": "2026-08-12",
+      "acesso_novo": "2026-10-26",
+      "bandeira_antiga": "p",
+      "bandeira_nova": "p",
+      "carimbo_anterior": "2026-10-03T11:00:00+0200",
+      "carimbo_novo": "2026-10-24T11:00:00+0200",
+      "entradas_novas": [
+        {
+          "date": "2026-10-26",
+          "kind": "atualizacao",
+          "old_value": "64,9",
+          "new_value": "65,1",
+          "reason": "O Eurostat reviu o valor de Portugal a 24.10.2026 (o carimbo do conjunto passou de 03.10.2026 a 24.10.2026); a reconferência semanal de 26.10.2026 viu a revisão.",
+          "reason_en": "Eurostat revised Portugal's value on 24.10.2026 (the dataset stamp moved from 03.10.2026 to 24.10.2026); the weekly check of 26.10.2026 caught the revision."
+        },
+        {
+          "date": "2026-10-26",
+          "kind": "proveniencia",
+          "field": "access_date",
+          "old_value": "2026-08-12",
+          "new_value": "2026-10-26",
+          "reason": "O valor novo foi lido a 26.10.2026, no dia da reconferência que viu a revisão; a leitura anterior, de 12.08.2026, é a do valor 64,9.",
+          "reason_en": "The new value was read on 26.10.2026, the day of the check that caught the revision; the earlier reading, of 12.08.2026, is that of the value 64,9."
+        },
+        {
+          "date": "2026-10-26",
+          "kind": "proveniencia",
+          "field": "excerpt",
+          "old_value": "Non-financial corporations debt, consolidated - % of GDP — Percentage of gross domestic product (GDP) — Portugal — 2025: 64.9 p",
+          "new_value": "Non-financial corporations debt, consolidated - % of GDP — Percentage of gross domestic product (GDP) — Portugal — 2025: 65.1 p",
+          "reason": "O excerto passa a transcrever o valor revisto que a fonte imprime na mesma observação, lida a 26.10.2026.",
+          "reason_en": "The excerpt now transcribes the revised value the source prints for the same observation, read on 26.10.2026."
+        }
+      ],
+      "correcoes_antes": 1,
+      "correcoes_depois": 4,
+      "reconferencias": 6,
+      "aplicada": false
+    },
+    {
+      "id": "divida-das-empresas-2025-ue",
+      "antes_sha256": "10a21bcb2e858e116556869cafb8f6e59057dee2f1a7bb10a975b1223736fd66",
+      "depois_sha256": "5a5ca57463bf399b4a949eaf1fd8026eabd06527b02ad6b51eb64b90ccd1e68f",
+      "valor_antigo": "70,0",
+      "valor_novo": "70,2",
+      "acesso_antigo": "2026-09-15",
+      "acesso_novo": "2026-10-26",
+      "bandeira_antiga": "p",
+      "bandeira_nova": "p",
+      "carimbo_anterior": "2026-10-03T11:00:00+0200",
+      "carimbo_novo": "2026-10-24T11:00:00+0200",
+      "entradas_novas": [
+        {
+          "date": "2026-10-26",
+          "kind": "atualizacao",
+          "old_value": "70,0",
+          "new_value": "70,2",
+          "reason": "O Eurostat reviu o valor da União a 24.10.2026 (o carimbo do conjunto passou de 03.10.2026 a 24.10.2026); a reconferência semanal de 26.10.2026 viu a revisão.",
+          "reason_en": "Eurostat revised the EU value on 24.10.2026 (the dataset stamp moved from 03.10.2026 to 24.10.2026); the weekly check of 26.10.2026 caught the revision."
+        },
+        {
+          "date": "2026-10-26",
+          "kind": "proveniencia",
+          "field": "access_date",
+          "old_value": "2026-09-15",
+          "new_value": "2026-10-26",
+          "reason": "O valor novo foi lido a 26.10.2026, no dia da reconferência que viu a revisão; a leitura anterior, de 15.09.2026, é a do valor 70,0.",
+          "reason_en": "The new value was read on 26.10.2026, the day of the check that caught the revision; the earlier reading, of 15.09.2026, is that of the value 70,0."
+        },
+        {
+          "date": "2026-10-26",
+          "kind": "proveniencia",
+          "field": "excerpt",
+          "old_value": "Non-financial corporations debt, consolidated - % of GDP — Percentage of gross domestic product (GDP) — European Union - 27 countries (from 2020) — 2025: 70.0 p",
+          "new_value": "Non-financial corporations debt, consolidated - % of GDP — Percentage of gross domestic product (GDP) — European Union - 27 countries (from 2020) — 2025: 70.2 p",
+          "reason": "O excerto passa a transcrever o valor revisto que a fonte imprime na mesma observação, lida a 26.10.2026.",
+          "reason_en": "The excerpt now transcribes the revised value the source prints for the same observation, read on 26.10.2026."
+        }
+      ],
+      "correcoes_antes": 1,
+      "correcoes_depois": 4,
+      "reconferencias": 6,
+      "aplicada": false
+    },
+    {
+      "id": "divida-das-familias-2024",
+      "antes_sha256": "0e31436a951fc34dd95da36370274af4faff643a35877f70a060f2b25f573c38",
+      "depois_sha256": "3de5a8ca31817252e8b32cb58d1f181a47e007d4fe8bad22f4982c65fae7e4c7",
+      "valor_antigo": "52,6",
+      "valor_novo": "52,3",
+      "acesso_antigo": "2026-09-15",
+      "acesso_novo": "2026-10-26",
+      "bandeira_antiga": "p",
+      "bandeira_nova": "",
+      "carimbo_anterior": "2026-10-03T11:00:00+0200",
+      "carimbo_novo": "2026-10-24T11:00:00+0200",
+      "entradas_novas": [
+        {
+          "date": "2026-10-26",
+          "kind": "atualizacao",
+          "old_value": "52,6",
+          "new_value": "52,3",
+          "reason": "O Eurostat reviu o valor de Portugal a 24.10.2026 (o carimbo do conjunto passou de 03.10.2026 a 24.10.2026); a reconferência semanal de 26.10.2026 viu a revisão.",
+          "reason_en": "Eurostat revised Portugal's value on 24.10.2026 (the dataset stamp moved from 03.10.2026 to 24.10.2026); the weekly check of 26.10.2026 caught the revision."
+        },
+        {
+          "date": "2026-10-26",
+          "kind": "proveniencia",
+          "field": "access_date",
+          "old_value": "2026-09-15",
+          "new_value": "2026-10-26",
+          "reason": "O valor novo foi lido a 26.10.2026, no dia da reconferência que viu a revisão; a leitura anterior, de 15.09.2026, é a do valor 52,6.",
+          "reason_en": "The new value was read on 26.10.2026, the day of the check that caught the revision; the earlier reading, of 15.09.2026, is that of the value 52,6."
+        },
+        {
+          "date": "2026-10-26",
+          "kind": "proveniencia",
+          "field": "excerpt",
+          "old_value": "Household debt including non-profit institutions serving households, consolidated — Percentage of gross domestic product (GDP) — Portugal — 2024: 52.6 p",
+          "new_value": "Household debt including non-profit institutions serving households, consolidated — Percentage of gross domestic product (GDP) — Portugal — 2024: 52.3",
+          "reason": "O excerto passa a transcrever o valor revisto que a fonte imprime na mesma observação, lida a 26.10.2026, e a fonte deixou de a marcar como provisória.",
+          "reason_en": "The excerpt now transcribes the revised value the source prints for the same observation, read on 26.10.2026, and the source no longer marks it as provisional."
+        }
+      ],
+      "correcoes_antes": 1,
+      "correcoes_depois": 4,
+      "reconferencias": 6,
+      "aplicada": false
+    },
+    {
+      "id": "divida-das-familias-2025",
+      "antes_sha256": "84663e63388429be592a99a4e6d29e6eba1f2659ee01ca46629c630c0a02dadc",
+      "depois_sha256": "620e3dd30e68bcef4358f4c72a00dc32226747efedfda11d395680719431dbed",
+      "valor_antigo": "53,9",
+      "valor_novo": "54,4",
+      "acesso_antigo": "2026-08-12",
+      "acesso_novo": "2026-10-26",
+      "bandeira_antiga": "p",
+      "bandeira_nova": "p",
+      "carimbo_anterior": "2026-10-03T11:00:00+0200",
+      "carimbo_novo": "2026-10-24T11:00:00+0200",
+      "entradas_novas": [
+        {
+          "date": "2026-10-26",
+          "kind": "atualizacao",
+          "old_value": "53,9",
+          "new_value": "54,4",
+          "reason": "O Eurostat reviu o valor de Portugal a 24.10.2026 (o carimbo do conjunto passou de 03.10.2026 a 24.10.2026); a reconferência semanal de 26.10.2026 viu a revisão.",
+          "reason_en": "Eurostat revised Portugal's value on 24.10.2026 (the dataset stamp moved from 03.10.2026 to 24.10.2026); the weekly check of 26.10.2026 caught the revision."
+        },
+        {
+          "date": "2026-10-26",
+          "kind": "proveniencia",
+          "field": "access_date",
+          "old_value": "2026-08-12",
+          "new_value": "2026-10-26",
+          "reason": "O valor novo foi lido a 26.10.2026, no dia da reconferência que viu a revisão; a leitura anterior, de 12.08.2026, é a do valor 53,9.",
+          "reason_en": "The new value was read on 26.10.2026, the day of the check that caught the revision; the earlier reading, of 12.08.2026, is that of the value 53,9."
+        },
+        {
+          "date": "2026-10-26",
+          "kind": "proveniencia",
+          "field": "excerpt",
+          "old_value": "Household debt including non-profit institutions serving households, consolidated — Percentage of gross domestic product (GDP) — Portugal — 2025: 53.9 p",
+          "new_value": "Household debt including non-profit institutions serving households, consolidated — Percentage of gross domestic product (GDP) — Portugal — 2025: 54.4 p",
+          "reason": "O excerto passa a transcrever o valor revisto que a fonte imprime na mesma observação, lida a 26.10.2026.",
+          "reason_en": "The excerpt now transcribes the revised value the source prints for the same observation, read on 26.10.2026."
+        }
+      ],
+      "correcoes_antes": 1,
+      "correcoes_depois": 4,
+      "reconferencias": 6,
+      "aplicada": false
+    },
+    {
+      "id": "divida-publica-2024",
+      "antes_sha256": "e8b5cf4edaae518f0b9c3f486341c869b534771040d3f2339af35ab3bfd19a78",
+      "depois_sha256": "c1dc039c61e7fdae472c333e63ffd1fbd70a89153d0cc9f792b342435dcd2b29",
+      "valor_antigo": "93,5",
+      "valor_novo": "93,0",
+      "acesso_antigo": "2026-09-15",
+      "acesso_novo": "2026-10-26",
+      "bandeira_antiga": "",
+      "bandeira_nova": "",
+      "carimbo_anterior": "2026-04-22T11:00:00+0200",
+      "carimbo_novo": "2026-10-21T11:00:00+0200",
+      "entradas_novas": [
+        {
+          "date": "2026-10-26",
+          "kind": "atualizacao",
+          "old_value": "93,5",
+          "new_value": "93,0",
+          "reason": "O Eurostat reviu o valor de Portugal a 21.10.2026 (o carimbo do conjunto passou de 22.04.2026 a 21.10.2026); a reconferência semanal de 26.10.2026 viu a revisão.",
+          "reason_en": "Eurostat revised Portugal's value on 21.10.2026 (the dataset stamp moved from 22.04.2026 to 21.10.2026); the weekly check of 26.10.2026 caught the revision."
+        },
+        {
+          "date": "2026-10-26",
+          "kind": "proveniencia",
+          "field": "access_date",
+          "old_value": "2026-09-15",
+          "new_value": "2026-10-26",
+          "reason": "O valor novo foi lido a 26.10.2026, no dia da reconferência que viu a revisão; a leitura anterior, de 15.09.2026, é a do valor 93,5.",
+          "reason_en": "The new value was read on 26.10.2026, the day of the check that caught the revision; the earlier reading, of 15.09.2026, is that of the value 93,5."
+        },
+        {
+          "date": "2026-10-26",
+          "kind": "proveniencia",
+          "field": "excerpt",
+          "old_value": "General government gross debt (EDP concept), consolidated - annual data — Percentage of gross domestic product (GDP) — Portugal — 2024: 93.5",
+          "new_value": "General government gross debt (EDP concept), consolidated - annual data — Percentage of gross domestic product (GDP) — Portugal — 2024: 93.0",
+          "reason": "O excerto passa a transcrever o valor revisto que a fonte imprime na mesma observação, lida a 26.10.2026.",
+          "reason_en": "The excerpt now transcribes the revised value the source prints for the same observation, read on 26.10.2026."
+        }
+      ],
+      "correcoes_antes": 0,
+      "correcoes_depois": 3,
+      "reconferencias": 6,
+      "aplicada": false
+    },
+    {
+      "id": "divida-publica-2025",
+      "antes_sha256": "d1b16fd8ee213e49163cb524c4fb02fd52613a42d31df8b8a7f876bfb4f60908",
+      "depois_sha256": "7ec5e458d2695f08b8927e82bea7795833724b191cc114d5dfa3ca507a126634",
+      "valor_antigo": "89,7",
+      "valor_novo": "89,2",
+      "acesso_antigo": "2026-08-12",
+      "acesso_novo": "2026-10-26",
+      "bandeira_antiga": "",
+      "bandeira_nova": "",
+      "carimbo_anterior": "2026-04-22T11:00:00+0200",
+      "carimbo_novo": "2026-10-21T11:00:00+0200",
+      "entradas_novas": [
+        {
+          "date": "2026-10-26",
+          "kind": "atualizacao",
+          "old_value": "89,7",
+          "new_value": "89,2",
+          "reason": "O Eurostat reviu o valor de Portugal a 21.10.2026 (o carimbo do conjunto passou de 22.04.2026 a 21.10.2026); a reconferência semanal de 26.10.2026 viu a revisão.",
+          "reason_en": "Eurostat revised Portugal's value on 21.10.2026 (the dataset stamp moved from 22.04.2026 to 21.10.2026); the weekly check of 26.10.2026 caught the revision."
+        },
+        {
+          "date": "2026-10-26",
+          "kind": "proveniencia",
+          "field": "access_date",
+          "old_value": "2026-08-12",
+          "new_value": "2026-10-26",
+          "reason": "O valor novo foi lido a 26.10.2026, no dia da reconferência que viu a revisão; a leitura anterior, de 12.08.2026, é a do valor 89,7.",
+          "reason_en": "The new value was read on 26.10.2026, the day of the check that caught the revision; the earlier reading, of 12.08.2026, is that of the value 89,7."
+        },
+        {
+          "date": "2026-10-26",
+          "kind": "proveniencia",
+          "field": "excerpt",
+          "old_value": "General government gross debt (EDP concept), consolidated - annual data — Percentage of gross domestic product (GDP) — Portugal — 2025: 89.7",
+          "new_value": "General government gross debt (EDP concept), consolidated - annual data — Percentage of gross domestic product (GDP) — Portugal — 2025: 89.2",
+          "reason": "O excerto passa a transcrever o valor revisto que a fonte imprime na mesma observação, lida a 26.10.2026.",
+          "reason_en": "The excerpt now transcribes the revised value the source prints for the same observation, read on 26.10.2026."
+        }
+      ],
+      "correcoes_antes": 0,
+      "correcoes_depois": 3,
+      "reconferencias": 6,
+      "aplicada": false
+    },
+    {
+      "id": "divida-publica-2025-ue",
+      "antes_sha256": "8650a977bd4134944c39a7bde8a546ae20c33f4e0a8ad926299ba999bc86fcc4",
+      "depois_sha256": "297b27336ef821fc64a626354c1701c35762e2c34c130b87b9b5fd04fdde6133",
+      "valor_antigo": "81,7",
+      "valor_novo": "81,5",
+      "acesso_antigo": "2026-09-15",
+      "acesso_novo": "2026-10-26",
+      "bandeira_antiga": "",
+      "bandeira_nova": "",
+      "carimbo_anterior": "2026-04-22T11:00:00+0200",
+      "carimbo_novo": "2026-10-21T11:00:00+0200",
+      "entradas_novas": [
+        {
+          "date": "2026-10-26",
+          "kind": "atualizacao",
+          "old_value": "81,7",
+          "new_value": "81,5",
+          "reason": "O Eurostat reviu o valor da União a 21.10.2026 (o carimbo do conjunto passou de 22.04.2026 a 21.10.2026); a reconferência semanal de 26.10.2026 viu a revisão.",
+          "reason_en": "Eurostat revised the EU value on 21.10.2026 (the dataset stamp moved from 22.04.2026 to 21.10.2026); the weekly check of 26.10.2026 caught the revision."
+        },
+        {
+          "date": "2026-10-26",
+          "kind": "proveniencia",
+          "field": "access_date",
+          "old_value": "2026-09-15",
+          "new_value": "2026-10-26",
+          "reason": "O valor novo foi lido a 26.10.2026, no dia da reconferência que viu a revisão; a leitura anterior, de 15.09.2026, é a do valor 81,7.",
+          "reason_en": "The new value was read on 26.10.2026, the day of the check that caught the revision; the earlier reading, of 15.09.2026, is that of the value 81,7."
+        },
+        {
+          "date": "2026-10-26",
+          "kind": "proveniencia",
+          "field": "excerpt",
+          "old_value": "General government gross debt (EDP concept), consolidated - annual data — Percentage of gross domestic product (GDP) — European Union - 27 countries (from 2020) — 2025: 81.7",
+          "new_value": "General government gross debt (EDP concept), consolidated - annual data — Percentage of gross domestic product (GDP) — European Union - 27 countries (from 2020) — 2025: 81.5",
+          "reason": "O excerto passa a transcrever o valor revisto que a fonte imprime na mesma observação, lida a 26.10.2026.",
+          "reason_en": "The excerpt now transcribes the revised value the source prints for the same observation, read on 26.10.2026."
+        }
+      ],
+      "correcoes_antes": 0,
+      "correcoes_depois": 3,
+      "reconferencias": 6,
+      "aplicada": false
+    },
+    {
+      "id": "fluxo-de-credito-as-empresas-2024",
+      "antes_sha256": "8a390ad65195a3f1f74c45050e15a37653e89b9e2423e8cf2da75f71c52bb8a6",
+      "depois_sha256": "27d728c12e63460002b0c24509f78bd1385e84aada644a69cce9977e50af3d4c",
+      "valor_antigo": "2,4",
+      "valor_novo": "2,2",
+      "acesso_antigo": "2026-09-15",
+      "acesso_novo": "2026-10-26",
+      "bandeira_antiga": "",
+      "bandeira_nova": "",
+      "carimbo_anterior": "2026-10-03T11:00:00+0200",
+      "carimbo_novo": "2026-10-24T11:00:00+0200",
+      "entradas_novas": [
+        {
+          "date": "2026-10-26",
+          "kind": "atualizacao",
+          "old_value": "2,4",
+          "new_value": "2,2",
+          "reason": "O Eurostat reviu o valor de Portugal a 24.10.2026 (o carimbo do conjunto passou de 03.10.2026 a 24.10.2026); a reconferência semanal de 26.10.2026 viu a revisão.",
+          "reason_en": "Eurostat revised Portugal's value on 24.10.2026 (the dataset stamp moved from 03.10.2026 to 24.10.2026); the weekly check of 26.10.2026 caught the revision."
+        },
+        {
+          "date": "2026-10-26",
+          "kind": "proveniencia",
+          "field": "access_date",
+          "old_value": "2026-09-15",
+          "new_value": "2026-10-26",
+          "reason": "O valor novo foi lido a 26.10.2026, no dia da reconferência que viu a revisão; a leitura anterior, de 15.09.2026, é a do valor 2,4.",
+          "reason_en": "The new value was read on 26.10.2026, the day of the check that caught the revision; the earlier reading, of 15.09.2026, is that of the value 2,4."
+        },
+        {
+          "date": "2026-10-26",
+          "kind": "proveniencia",
+          "field": "excerpt",
+          "old_value": "Non-financial corporations excluding foreign direct investments credit flow, consolidated — Percentage of stocks (closing balance sheet) — Portugal — 2024: 2.4",
+          "new_value": "Non-financial corporations excluding foreign direct investments credit flow, consolidated — Percentage of stocks (closing balance sheet) — Portugal — 2024: 2.2",
+          "reason": "O excerto passa a transcrever o valor revisto que a fonte imprime na mesma observação, lida a 26.10.2026.",
+          "reason_en": "The excerpt now transcribes the revised value the source prints for the same observation, read on 26.10.2026."
+        }
+      ],
+      "correcoes_antes": 0,
+      "correcoes_depois": 3,
+      "reconferencias": 6,
+      "aplicada": false
+    },
+    {
+      "id": "fluxo-de-credito-as-empresas-2025",
+      "antes_sha256": "d8f587cabb0e18b909830f270c5b9ca2da3fa9cfae058bed13c6779aed0412b1",
+      "depois_sha256": "4bbae7bd88b4615d8e605cc137bf9594e4b72f34bdcd3bf685e8685738db93e2",
+      "valor_antigo": "3,0",
+      "valor_novo": "3,4",
+      "acesso_antigo": "2026-08-12",
+      "acesso_novo": "2026-10-26",
+      "bandeira_antiga": "",
+      "bandeira_nova": "",
+      "carimbo_anterior": "2026-10-03T11:00:00+0200",
+      "carimbo_novo": "2026-10-24T11:00:00+0200",
+      "entradas_novas": [
+        {
+          "date": "2026-10-26",
+          "kind": "atualizacao",
+          "old_value": "3,0",
+          "new_value": "3,4",
+          "reason": "O Eurostat reviu o valor de Portugal a 24.10.2026 (o carimbo do conjunto passou de 03.10.2026 a 24.10.2026); a reconferência semanal de 26.10.2026 viu a revisão.",
+          "reason_en": "Eurostat revised Portugal's value on 24.10.2026 (the dataset stamp moved from 03.10.2026 to 24.10.2026); the weekly check of 26.10.2026 caught the revision."
+        },
+        {
+          "date": "2026-10-26",
+          "kind": "proveniencia",
+          "field": "access_date",
+          "old_value": "2026-08-12",
+          "new_value": "2026-10-26",
+          "reason": "O valor novo foi lido a 26.10.2026, no dia da reconferência que viu a revisão; a leitura anterior, de 12.08.2026, é a do valor 3,0.",
+          "reason_en": "The new value was read on 26.10.2026, the day of the check that caught the revision; the earlier reading, of 12.08.2026, is that of the value 3,0."
+        },
+        {
+          "date": "2026-10-26",
+          "kind": "proveniencia",
+          "field": "excerpt",
+          "old_value": "Non-financial corporations excluding foreign direct investments credit flow, consolidated — Percentage of stocks (closing balance sheet) — Portugal — 2025: 3.0",
+          "new_value": "Non-financial corporations excluding foreign direct investments credit flow, consolidated — Percentage of stocks (closing balance sheet) — Portugal — 2025: 3.4",
+          "reason": "O excerto passa a transcrever o valor revisto que a fonte imprime na mesma observação, lida a 26.10.2026.",
+          "reason_en": "The excerpt now transcribes the revised value the source prints for the same observation, read on 26.10.2026."
+        }
+      ],
+      "correcoes_antes": 1,
+      "correcoes_depois": 4,
+      "reconferencias": 6,
+      "aplicada": false
+    },
+    {
+      "id": "fluxo-de-credito-as-familias-2024",
+      "antes_sha256": "1e3f6dcd241b00934b9df20db37ca41b170ad7ca688772a5c65faad8e7b1f530",
+      "depois_sha256": "758a453d46397d66b157d47194d472ccc4f15258379f441e9f7f6165813bd993",
+      "valor_antigo": "4,1",
+      "valor_novo": "4,0",
+      "acesso_antigo": "2026-09-15",
+      "acesso_novo": "2026-10-26",
+      "bandeira_antiga": "",
+      "bandeira_nova": "",
+      "carimbo_anterior": "2026-10-03T11:00:00+0200",
+      "carimbo_novo": "2026-10-24T11:00:00+0200",
+      "entradas_novas": [
+        {
+          "date": "2026-10-26",
+          "kind": "atualizacao",
+          "old_value": "4,1",
+          "new_value": "4,0",
+          "reason": "O Eurostat reviu o valor de Portugal a 24.10.2026 (o carimbo do conjunto passou de 03.10.2026 a 24.10.2026); a reconferência semanal de 26.10.2026 viu a revisão.",
+          "reason_en": "Eurostat revised Portugal's value on 24.10.2026 (the dataset stamp moved from 03.10.2026 to 24.10.2026); the weekly check of 26.10.2026 caught the revision."
+        },
+        {
+          "date": "2026-10-26",
+          "kind": "proveniencia",
+          "field": "access_date",
+          "old_value": "2026-09-15",
+          "new_value": "2026-10-26",
+          "reason": "O valor novo foi lido a 26.10.2026, no dia da reconferência que viu a revisão; a leitura anterior, de 15.09.2026, é a do valor 4,1.",
+          "reason_en": "The new value was read on 26.10.2026, the day of the check that caught the revision; the earlier reading, of 15.09.2026, is that of the value 4,1."
+        },
+        {
+          "date": "2026-10-26",
+          "kind": "proveniencia",
+          "field": "excerpt",
+          "old_value": "Household including non-profit institutions serving households (NPISH) credit flow, consolidated — Percentage of stocks (closing balance sheet) — Portugal — 2024: 4.1",
+          "new_value": "Household including non-profit institutions serving households (NPISH) credit flow, consolidated — Percentage of stocks (closing balance sheet) — Portugal — 2024: 4.0",
+          "reason": "O excerto passa a transcrever o valor revisto que a fonte imprime na mesma observação, lida a 26.10.2026.",
+          "reason_en": "The excerpt now transcribes the revised value the source prints for the same observation, read on 26.10.2026."
+        }
+      ],
+      "correcoes_antes": 0,
+      "correcoes_depois": 3,
+      "reconferencias": 6,
+      "aplicada": false
+    },
+    {
+      "id": "fluxo-de-credito-as-familias-2025",
+      "antes_sha256": "7a14a4d6ab82f5ae9bc4f2606223bfe6affbbcab1ce621565807797fb0d11b9d",
+      "depois_sha256": "a80ff143537b35c2b77602640c1e8b310ddd91b38417bcf6f9e258cb307edff2",
+      "valor_antigo": "8,6",
+      "valor_novo": "9,0",
+      "acesso_antigo": "2026-08-12",
+      "acesso_novo": "2026-10-26",
+      "bandeira_antiga": "",
+      "bandeira_nova": "",
+      "carimbo_anterior": "2026-10-03T11:00:00+0200",
+      "carimbo_novo": "2026-10-24T11:00:00+0200",
+      "entradas_novas": [
+        {
+          "date": "2026-10-26",
+          "kind": "atualizacao",
+          "old_value": "8,6",
+          "new_value": "9,0",
+          "reason": "O Eurostat reviu o valor de Portugal a 24.10.2026 (o carimbo do conjunto passou de 03.10.2026 a 24.10.2026); a reconferência semanal de 26.10.2026 viu a revisão.",
+          "reason_en": "Eurostat revised Portugal's value on 24.10.2026 (the dataset stamp moved from 03.10.2026 to 24.10.2026); the weekly check of 26.10.2026 caught the revision."
+        },
+        {
+          "date": "2026-10-26",
+          "kind": "proveniencia",
+          "field": "access_date",
+          "old_value": "2026-08-12",
+          "new_value": "2026-10-26",
+          "reason": "O valor novo foi lido a 26.10.2026, no dia da reconferência que viu a revisão; a leitura anterior, de 12.08.2026, é a do valor 8,6.",
+          "reason_en": "The new value was read on 26.10.2026, the day of the check that caught the revision; the earlier reading, of 12.08.2026, is that of the value 8,6."
+        },
+        {
+          "date": "2026-10-26",
+          "kind": "proveniencia",
+          "field": "excerpt",
+          "old_value": "Household including non-profit institutions serving households (NPISH) credit flow, consolidated — Percentage of stocks (closing balance sheet) — Portugal — 2025: 8.6",
+          "new_value": "Household including non-profit institutions serving households (NPISH) credit flow, consolidated — Percentage of stocks (closing balance sheet) — Portugal — 2025: 9.0",
+          "reason": "O excerto passa a transcrever o valor revisto que a fonte imprime na mesma observação, lida a 26.10.2026.",
+          "reason_en": "The excerpt now transcribes the revised value the source prints for the same observation, read on 26.10.2026."
+        }
+      ],
+      "correcoes_antes": 0,
+      "correcoes_depois": 3,
+      "reconferencias": 6,
+      "aplicada": false
+    },
+    {
+      "id": "fluxo-de-credito-as-familias-2025-ue",
+      "antes_sha256": "bf33a831e11606016dd6924fee2a6eef4ab9bdddd4e1e0087057da7570e0f000",
+      "depois_sha256": "6717676a173f40c0414e45c6fcf19f052fd87a5d8b48a444d99ad301b9dca252",
+      "valor_antigo": "2,9",
+      "valor_novo": "3,0",
+      "acesso_antigo": "2026-09-15",
+      "acesso_novo": "2026-10-26",
+      "bandeira_antiga": "p",
+      "bandeira_nova": "p",
+      "carimbo_anterior": "2026-10-03T11:00:00+0200",
+      "carimbo_novo": "2026-10-24T11:00:00+0200",
+      "entradas_novas": [
+        {
+          "date": "2026-10-26",
+          "kind": "atualizacao",
+          "old_value": "2,9",
+          "new_value": "3,0",
+          "reason": "O Eurostat reviu o valor da União a 24.10.2026 (o carimbo do conjunto passou de 03.10.2026 a 24.10.2026); a reconferência semanal de 26.10.2026 viu a revisão.",
+          "reason_en": "Eurostat revised the EU value on 24.10.2026 (the dataset stamp moved from 03.10.2026 to 24.10.2026); the weekly check of 26.10.2026 caught the revision."
+        },
+        {
+          "date": "2026-10-26",
+          "kind": "proveniencia",
+          "field": "access_date",
+          "old_value": "2026-09-15",
+          "new_value": "2026-10-26",
+          "reason": "O valor novo foi lido a 26.10.2026, no dia da reconferência que viu a revisão; a leitura anterior, de 15.09.2026, é a do valor 2,9.",
+          "reason_en": "The new value was read on 26.10.2026, the day of the check that caught the revision; the earlier reading, of 15.09.2026, is that of the value 2,9."
+        },
+        {
+          "date": "2026-10-26",
+          "kind": "proveniencia",
+          "field": "excerpt",
+          "old_value": "Household including non-profit institutions serving households (NPISH) credit flow, consolidated — Percentage of stocks (closing balance sheet) — European Union - 27 countries (from 2020) — 2025: 2.9 p",
+          "new_value": "Household including non-profit institutions serving households (NPISH) credit flow, consolidated — Percentage of stocks (closing balance sheet) — European Union - 27 countries (from 2020) — 2025: 3.0 p",
+          "reason": "O excerto passa a transcrever o valor revisto que a fonte imprime na mesma observação, lida a 26.10.2026.",
+          "reason_en": "The excerpt now transcribes the revised value the source prints for the same observation, read on 26.10.2026."
+        }
+      ],
+      "correcoes_antes": 1,
+      "correcoes_depois": 4,
+      "reconferencias": 6,
+      "aplicada": false
+    },
+    {
+      "id": "formacao-bruta-de-capital-fixo-2025-ue",
+      "antes_sha256": "7d62856717fbb44ccd5e6eac7442e9fc9500fed91251d9326e16783cf1b59d15",
+      "depois_sha256": "7514383569fd6268b84512859298d39fd939f0cf94461e02ef1c490c6cef6ce3",
+      "valor_antigo": "21,4",
+      "valor_novo": "21,5",
+      "acesso_antigo": "2026-09-15",
+      "acesso_novo": "2026-10-26",
+      "bandeira_antiga": "",
+      "bandeira_nova": "",
+      "carimbo_anterior": "2026-10-02T23:00:00+0200",
+      "carimbo_novo": "2026-10-22T23:00:00+0200",
+      "entradas_novas": [
+        {
+          "date": "2026-10-26",
+          "kind": "atualizacao",
+          "old_value": "21,4",
+          "new_value": "21,5",
+          "reason": "O Eurostat reviu o valor da União a 22.10.2026 (o carimbo do conjunto passou de 02.10.2026 a 22.10.2026); a reconferência semanal de 26.10.2026 viu a revisão.",
+          "reason_en": "Eurostat revised the EU value on 22.10.2026 (the dataset stamp moved from 02.10.2026 to 22.10.2026); the weekly check of 26.10.2026 caught the revision."
+        },
+        {
+          "date": "2026-10-26",
+          "kind": "proveniencia",
+          "field": "access_date",
+          "old_value": "2026-09-15",
+          "new_value": "2026-10-26",
+          "reason": "O valor novo foi lido a 26.10.2026, no dia da reconferência que viu a revisão; a leitura anterior, de 15.09.2026, é a do valor 21,4.",
+          "reason_en": "The new value was read on 26.10.2026, the day of the check that caught the revision; the earlier reading, of 15.09.2026, is that of the value 21,4."
+        },
+        {
+          "date": "2026-10-26",
+          "kind": "proveniencia",
+          "field": "excerpt",
+          "old_value": "Gross fixed capital formation at current prices — Percentage of gross domestic product (GDP) — European Union - 27 countries (from 2020) — 2025: 21.4",
+          "new_value": "Gross fixed capital formation at current prices — Percentage of gross domestic product (GDP) — European Union - 27 countries (from 2020) — 2025: 21.5",
+          "reason": "O excerto passa a transcrever o valor revisto que a fonte imprime na mesma observação, lida a 26.10.2026.",
+          "reason_en": "The excerpt now transcribes the revised value the source prints for the same observation, read on 26.10.2026."
+        }
+      ],
+      "correcoes_antes": 0,
+      "correcoes_depois": 3,
+      "reconferencias": 6,
+      "aplicada": false
+    },
+    {
+      "id": "licencas-de-construcao-2025-ue",
+      "antes_sha256": "f378e604d707696e71227188609a0618b7fff0187bf67e23cf922ae451033393",
+      "depois_sha256": "bb5895e6577084939e12dcd6b34cba7f22a93cc4443cb7cc0bbb084025db4043",
+      "valor_antigo": "377,5",
+      "valor_novo": "377,6",
+      "acesso_antigo": "2026-09-15",
+      "acesso_novo": "2026-10-26",
+      "bandeira_antiga": "",
+      "bandeira_nova": "",
+      "carimbo_anterior": "2026-10-02T23:00:00+0200",
+      "carimbo_novo": "2026-10-21T23:00:00+0200",
+      "entradas_novas": [
+        {
+          "date": "2026-10-26",
+          "kind": "atualizacao",
+          "old_value": "377,5",
+          "new_value": "377,6",
+          "reason": "O Eurostat reviu o valor da União a 21.10.2026 (o carimbo do conjunto passou de 02.10.2026 a 21.10.2026); a reconferência semanal de 26.10.2026 viu a revisão.",
+          "reason_en": "Eurostat revised the EU value on 21.10.2026 (the dataset stamp moved from 02.10.2026 to 21.10.2026); the weekly check of 26.10.2026 caught the revision."
+        },
+        {
+          "date": "2026-10-26",
+          "kind": "proveniencia",
+          "field": "access_date",
+          "old_value": "2026-09-15",
+          "new_value": "2026-10-26",
+          "reason": "O valor novo foi lido a 26.10.2026, no dia da reconferência que viu a revisão; a leitura anterior, de 15.09.2026, é a do valor 377,5.",
+          "reason_en": "The new value was read on 26.10.2026, the day of the check that caught the revision; the earlier reading, of 15.09.2026, is that of the value 377,5."
+        },
+        {
+          "date": "2026-10-26",
+          "kind": "proveniencia",
+          "field": "excerpt",
+          "old_value": "Residential building permits - annual data — Square metres per 1000 inhabitants — European Union - 27 countries (from 2020) — 2025: 377.5",
+          "new_value": "Residential building permits - annual data — Square metres per 1000 inhabitants — European Union - 27 countries (from 2020) — 2025: 377.6",
+          "reason": "O excerto passa a transcrever o valor revisto que a fonte imprime na mesma observação, lida a 26.10.2026.",
+          "reason_en": "The excerpt now transcribes the revised value the source prints for the same observation, read on 26.10.2026."
+        }
+      ],
+      "correcoes_antes": 0,
+      "correcoes_depois": 3,
+      "reconferencias": 6,
+      "aplicada": false
+    },
+    {
+      "id": "pib-real-per-capita-2025-ue",
+      "antes_sha256": "58467cdf9270f634173210c5f52c68b47013c4f36b33065eae626526f6c7d5cf",
+      "depois_sha256": "391298075f7113fd9145563136dfca03bd99015eb466b2a8a9d92305b9a4ed86",
+      "valor_antigo": "31 890",
+      "valor_novo": "31 980",
+      "acesso_antigo": "2026-09-15",
+      "acesso_novo": "2026-10-26",
+      "bandeira_antiga": "",
+      "bandeira_nova": "",
+      "carimbo_anterior": "2026-10-02T23:00:00+0200",
+      "carimbo_novo": "2026-10-22T23:00:00+0200",
+      "entradas_novas": [
+        {
+          "date": "2026-10-26",
+          "kind": "atualizacao",
+          "old_value": "31 890",
+          "new_value": "31 980",
+          "reason": "O Eurostat reviu o valor da União a 22.10.2026 (o carimbo do conjunto passou de 02.10.2026 a 22.10.2026); a reconferência semanal de 26.10.2026 viu a revisão.",
+          "reason_en": "Eurostat revised the EU value on 22.10.2026 (the dataset stamp moved from 02.10.2026 to 22.10.2026); the weekly check of 26.10.2026 caught the revision."
+        },
+        {
+          "date": "2026-10-26",
+          "kind": "proveniencia",
+          "field": "access_date",
+          "old_value": "2026-09-15",
+          "new_value": "2026-10-26",
+          "reason": "O valor novo foi lido a 26.10.2026, no dia da reconferência que viu a revisão; a leitura anterior, de 15.09.2026, é a do valor 31 890.",
+          "reason_en": "The new value was read on 26.10.2026, the day of the check that caught the revision; the earlier reading, of 15.09.2026, is that of the value 31 890."
+        },
+        {
+          "date": "2026-10-26",
+          "kind": "proveniencia",
+          "field": "excerpt",
+          "old_value": "Real GDP per capita — Chain linked volumes (2015), euro per capita — European Union - 27 countries (from 2020) — 2025: 31890",
+          "new_value": "Real GDP per capita — Chain linked volumes (2015), euro per capita — European Union - 27 countries (from 2020) — 2025: 31980",
+          "reason": "O excerto passa a transcrever o valor revisto que a fonte imprime na mesma observação, lida a 26.10.2026.",
+          "reason_en": "The excerpt now transcribes the revised value the source prints for the same observation, read on 26.10.2026."
+        }
+      ],
+      "correcoes_antes": 0,
+      "correcoes_depois": 3,
+      "reconferencias": 6,
+      "aplicada": false
+    }
+  ],
+  "plantas": [
+    {
+      "linha": "custo-unitario-do-trabalho-2025-ue",
+      "planta": "atualização retirada",
+      "mordeu": true,
+      "razao": "o valor novo exige a atualização tipada do valor antigo para o novo"
+    },
+    {
+      "linha": "custo-unitario-do-trabalho-2025-ue",
+      "planta": "valor antigo inventado",
+      "mordeu": true,
+      "razao": "o valor novo exige a atualização tipada do valor antigo para o novo"
+    },
+    {
+      "linha": "custo-unitario-do-trabalho-2025-ue",
+      "planta": "valor novo diferente do da linha",
+      "mordeu": true,
+      "razao": "o valor novo exige a atualização tipada do valor antigo para o novo"
+    },
+    {
+      "linha": "custo-unitario-do-trabalho-2025-ue",
+      "planta": "proveniência do acesso retirada",
+      "mordeu": true,
+      "razao": "o acesso novo exige a proveniência do acesso"
+    },
+    {
+      "linha": "custo-unitario-do-trabalho-2025-ue",
+      "planta": "proveniência do excerto retirada",
+      "mordeu": true,
+      "razao": "o excerto novo exige a proveniência do excerto"
+    },
+    {
+      "linha": "custo-unitario-do-trabalho-2025-ue",
+      "planta": "reconferência apagada",
+      "mordeu": true,
+      "razao": "as reconferências mudaram"
+    },
+    {
+      "linha": "custo-unitario-do-trabalho-2025-ue",
+      "planta": "bandeira declarada fora da célula",
+      "mordeu": true,
+      "razao": "a bandeira não é a da célula"
+    },
+    {
+      "linha": "custo-unitario-do-trabalho-2025-ue",
+      "planta": "nota mudada",
+      "mordeu": true,
+      "razao": "mudou um campo fora do mandato: ['note']"
+    },
+    {
+      "linha": "divida-das-empresas-2024",
+      "planta": "atualização retirada",
+      "mordeu": true,
+      "razao": "o valor novo exige a atualização tipada do valor antigo para o novo"
+    },
+    {
+      "linha": "divida-das-empresas-2024",
+      "planta": "valor antigo inventado",
+      "mordeu": true,
+      "razao": "o valor novo exige a atualização tipada do valor antigo para o novo"
+    },
+    {
+      "linha": "divida-das-empresas-2024",
+      "planta": "valor novo diferente do da linha",
+      "mordeu": true,
+      "razao": "o valor novo exige a atualização tipada do valor antigo para o novo"
+    },
+    {
+      "linha": "divida-das-empresas-2024",
+      "planta": "proveniência do acesso retirada",
+      "mordeu": true,
+      "razao": "o acesso novo exige a proveniência do acesso"
+    },
+    {
+      "linha": "divida-das-empresas-2024",
+      "planta": "proveniência do excerto retirada",
+      "mordeu": true,
+      "razao": "o excerto novo exige a proveniência do excerto"
+    },
+    {
+      "linha": "divida-das-empresas-2024",
+      "planta": "reconferência apagada",
+      "mordeu": true,
+      "razao": "as reconferências mudaram"
+    },
+    {
+      "linha": "divida-das-empresas-2024",
+      "planta": "bandeira declarada fora da célula",
+      "mordeu": true,
+      "razao": "a bandeira não é a da célula"
+    },
+    {
+      "linha": "divida-das-empresas-2024",
+      "planta": "nota mudada",
+      "mordeu": true,
+      "razao": "mudou um campo fora do mandato: ['note']"
+    },
+    {
+      "linha": "divida-das-empresas-2025",
+      "planta": "atualização retirada",
+      "mordeu": true,
+      "razao": "o valor novo exige a atualização tipada do valor antigo para o novo"
+    },
+    {
+      "linha": "divida-das-empresas-2025",
+      "planta": "valor antigo inventado",
+      "mordeu": true,
+      "razao": "o valor novo exige a atualização tipada do valor antigo para o novo"
+    },
+    {
+      "linha": "divida-das-empresas-2025",
+      "planta": "valor novo diferente do da linha",
+      "mordeu": true,
+      "razao": "o valor novo exige a atualização tipada do valor antigo para o novo"
+    },
+    {
+      "linha": "divida-das-empresas-2025",
+      "planta": "proveniência do acesso retirada",
+      "mordeu": true,
+      "razao": "o acesso novo exige a proveniência do acesso"
+    },
+    {
+      "linha": "divida-das-empresas-2025",
+      "planta": "proveniência do excerto retirada",
+      "mordeu": true,
+      "razao": "o excerto novo exige a proveniência do excerto"
+    },
+    {
+      "linha": "divida-das-empresas-2025",
+      "planta": "reconferência apagada",
+      "mordeu": true,
+      "razao": "as reconferências mudaram"
+    },
+    {
+      "linha": "divida-das-empresas-2025",
+      "planta": "bandeira declarada fora da célula",
+      "mordeu": true,
+      "razao": "a bandeira não é a da célula"
+    },
+    {
+      "linha": "divida-das-empresas-2025",
+      "planta": "nota mudada",
+      "mordeu": true,
+      "razao": "mudou um campo fora do mandato: ['note']"
+    },
+    {
+      "linha": "divida-das-empresas-2025-ue",
+      "planta": "atualização retirada",
+      "mordeu": true,
+      "razao": "o valor novo exige a atualização tipada do valor antigo para o novo"
+    },
+    {
+      "linha": "divida-das-empresas-2025-ue",
+      "planta": "valor antigo inventado",
+      "mordeu": true,
+      "razao": "o valor novo exige a atualização tipada do valor antigo para o novo"
+    },
+    {
+      "linha": "divida-das-empresas-2025-ue",
+      "planta": "valor novo diferente do da linha",
+      "mordeu": true,
+      "razao": "o valor novo exige a atualização tipada do valor antigo para o novo"
+    },
+    {
+      "linha": "divida-das-empresas-2025-ue",
+      "planta": "proveniência do acesso retirada",
+      "mordeu": true,
+      "razao": "o acesso novo exige a proveniência do acesso"
+    },
+    {
+      "linha": "divida-das-empresas-2025-ue",
+      "planta": "proveniência do excerto retirada",
+      "mordeu": true,
+      "razao": "o excerto novo exige a proveniência do excerto"
+    },
+    {
+      "linha": "divida-das-empresas-2025-ue",
+      "planta": "reconferência apagada",
+      "mordeu": true,
+      "razao": "as reconferências mudaram"
+    },
+    {
+      "linha": "divida-das-empresas-2025-ue",
+      "planta": "bandeira declarada fora da célula",
+      "mordeu": true,
+      "razao": "a bandeira não é a da célula"
+    },
+    {
+      "linha": "divida-das-empresas-2025-ue",
+      "planta": "nota mudada",
+      "mordeu": true,
+      "razao": "mudou um campo fora do mandato: ['note']"
+    },
+    {
+      "linha": "divida-das-familias-2024",
+      "planta": "atualização retirada",
+      "mordeu": true,
+      "razao": "o valor novo exige a atualização tipada do valor antigo para o novo"
+    },
+    {
+      "linha": "divida-das-familias-2024",
+      "planta": "valor antigo inventado",
+      "mordeu": true,
+      "razao": "o valor novo exige a atualização tipada do valor antigo para o novo"
+    },
+    {
+      "linha": "divida-das-familias-2024",
+      "planta": "valor novo diferente do da linha",
+      "mordeu": true,
+      "razao": "o valor novo exige a atualização tipada do valor antigo para o novo"
+    },
+    {
+      "linha": "divida-das-familias-2024",
+      "planta": "proveniência do acesso retirada",
+      "mordeu": true,
+      "razao": "o acesso novo exige a proveniência do acesso"
+    },
+    {
+      "linha": "divida-das-familias-2024",
+      "planta": "proveniência do excerto retirada",
+      "mordeu": true,
+      "razao": "o excerto novo exige a proveniência do excerto"
+    },
+    {
+      "linha": "divida-das-familias-2024",
+      "planta": "reconferência apagada",
+      "mordeu": true,
+      "razao": "as reconferências mudaram"
+    },
+    {
+      "linha": "divida-das-familias-2024",
+      "planta": "bandeira declarada fora da célula",
+      "mordeu": true,
+      "razao": "a bandeira não é a da célula"
+    },
+    {
+      "linha": "divida-das-familias-2024",
+      "planta": "nota mudada",
+      "mordeu": true,
+      "razao": "mudou um campo fora do mandato: ['note']"
+    },
+    {
+      "linha": "divida-das-familias-2025",
+      "planta": "atualização retirada",
+      "mordeu": true,
+      "razao": "o valor novo exige a atualização tipada do valor antigo para o novo"
+    },
+    {
+      "linha": "divida-das-familias-2025",
+      "planta": "valor antigo inventado",
+      "mordeu": true,
+      "razao": "o valor novo exige a atualização tipada do valor antigo para o novo"
+    },
+    {
+      "linha": "divida-das-familias-2025",
+      "planta": "valor novo diferente do da linha",
+      "mordeu": true,
+      "razao": "o valor novo exige a atualização tipada do valor antigo para o novo"
+    },
+    {
+      "linha": "divida-das-familias-2025",
+      "planta": "proveniência do acesso retirada",
+      "mordeu": true,
+      "razao": "o acesso novo exige a proveniência do acesso"
+    },
+    {
+      "linha": "divida-das-familias-2025",
+      "planta": "proveniência do excerto retirada",
+      "mordeu": true,
+      "razao": "o excerto novo exige a proveniência do excerto"
+    },
+    {
+      "linha": "divida-das-familias-2025",
+      "planta": "reconferência apagada",
+      "mordeu": true,
+      "razao": "as reconferências mudaram"
+    },
+    {
+      "linha": "divida-das-familias-2025",
+      "planta": "bandeira declarada fora da célula",
+      "mordeu": true,
+      "razao": "a bandeira não é a da célula"
+    },
+    {
+      "linha": "divida-das-familias-2025",
+      "planta": "nota mudada",
+      "mordeu": true,
+      "razao": "mudou um campo fora do mandato: ['note']"
+    },
+    {
+      "linha": "divida-publica-2024",
+      "planta": "atualização retirada",
+      "mordeu": true,
+      "razao": "o valor novo exige a atualização tipada do valor antigo para o novo"
+    },
+    {
+      "linha": "divida-publica-2024",
+      "planta": "valor antigo inventado",
+      "mordeu": true,
+      "razao": "o valor novo exige a atualização tipada do valor antigo para o novo"
+    },
+    {
+      "linha": "divida-publica-2024",
+      "planta": "valor novo diferente do da linha",
+      "mordeu": true,
+      "razao": "o valor novo exige a atualização tipada do valor antigo para o novo"
+    },
+    {
+      "linha": "divida-publica-2024",
+      "planta": "proveniência do acesso retirada",
+      "mordeu": true,
+      "razao": "o acesso novo exige a proveniência do acesso"
+    },
+    {
+      "linha": "divida-publica-2024",
+      "planta": "proveniência do excerto retirada",
+      "mordeu": true,
+      "razao": "o excerto novo exige a proveniência do excerto"
+    },
+    {
+      "linha": "divida-publica-2024",
+      "planta": "reconferência apagada",
+      "mordeu": true,
+      "razao": "as reconferências mudaram"
+    },
+    {
+      "linha": "divida-publica-2024",
+      "planta": "bandeira declarada fora da célula",
+      "mordeu": true,
+      "razao": "a bandeira não é a da célula"
+    },
+    {
+      "linha": "divida-publica-2024",
+      "planta": "nota mudada",
+      "mordeu": true,
+      "razao": "mudou um campo fora do mandato: ['note']"
+    },
+    {
+      "linha": "divida-publica-2025",
+      "planta": "atualização retirada",
+      "mordeu": true,
+      "razao": "o valor novo exige a atualização tipada do valor antigo para o novo"
+    },
+    {
+      "linha": "divida-publica-2025",
+      "planta": "valor antigo inventado",
+      "mordeu": true,
+      "razao": "o valor novo exige a atualização tipada do valor antigo para o novo"
+    },
+    {
+      "linha": "divida-publica-2025",
+      "planta": "valor novo diferente do da linha",
+      "mordeu": true,
+      "razao": "o valor novo exige a atualização tipada do valor antigo para o novo"
+    },
+    {
+      "linha": "divida-publica-2025",
+      "planta": "proveniência do acesso retirada",
+      "mordeu": true,
+      "razao": "o acesso novo exige a proveniência do acesso"
+    },
+    {
+      "linha": "divida-publica-2025",
+      "planta": "proveniência do excerto retirada",
+      "mordeu": true,
+      "razao": "o excerto novo exige a proveniência do excerto"
+    },
+    {
+      "linha": "divida-publica-2025",
+      "planta": "reconferência apagada",
+      "mordeu": true,
+      "razao": "as reconferências mudaram"
+    },
+    {
+      "linha": "divida-publica-2025",
+      "planta": "bandeira declarada fora da célula",
+      "mordeu": true,
+      "razao": "a bandeira não é a da célula"
+    },
+    {
+      "linha": "divida-publica-2025",
+      "planta": "nota mudada",
+      "mordeu": true,
+      "razao": "mudou um campo fora do mandato: ['note']"
+    },
+    {
+      "linha": "divida-publica-2025-ue",
+      "planta": "atualização retirada",
+      "mordeu": true,
+      "razao": "o valor novo exige a atualização tipada do valor antigo para o novo"
+    },
+    {
+      "linha": "divida-publica-2025-ue",
+      "planta": "valor antigo inventado",
+      "mordeu": true,
+      "razao": "o valor novo exige a atualização tipada do valor antigo para o novo"
+    },
+    {
+      "linha": "divida-publica-2025-ue",
+      "planta": "valor novo diferente do da linha",
+      "mordeu": true,
+      "razao": "o valor novo exige a atualização tipada do valor antigo para o novo"
+    },
+    {
+      "linha": "divida-publica-2025-ue",
+      "planta": "proveniência do acesso retirada",
+      "mordeu": true,
+      "razao": "o acesso novo exige a proveniência do acesso"
+    },
+    {
+      "linha": "divida-publica-2025-ue",
+      "planta": "proveniência do excerto retirada",
+      "mordeu": true,
+      "razao": "o excerto novo exige a proveniência do excerto"
+    },
+    {
+      "linha": "divida-publica-2025-ue",
+      "planta": "reconferência apagada",
+      "mordeu": true,
+      "razao": "as reconferências mudaram"
+    },
+    {
+      "linha": "divida-publica-2025-ue",
+      "planta": "bandeira declarada fora da célula",
+      "mordeu": true,
+      "razao": "a bandeira não é a da célula"
+    },
+    {
+      "linha": "divida-publica-2025-ue",
+      "planta": "nota mudada",
+      "mordeu": true,
+      "razao": "mudou um campo fora do mandato: ['note']"
+    },
+    {
+      "linha": "fluxo-de-credito-as-empresas-2024",
+      "planta": "atualização retirada",
+      "mordeu": true,
+      "razao": "o valor novo exige a atualização tipada do valor antigo para o novo"
+    },
+    {
+      "linha": "fluxo-de-credito-as-empresas-2024",
+      "planta": "valor antigo inventado",
+      "mordeu": true,
+      "razao": "o valor novo exige a atualização tipada do valor antigo para o novo"
+    },
+    {
+      "linha": "fluxo-de-credito-as-empresas-2024",
+      "planta": "valor novo diferente do da linha",
+      "mordeu": true,
+      "razao": "o valor novo exige a atualização tipada do valor antigo para o novo"
+    },
+    {
+      "linha": "fluxo-de-credito-as-empresas-2024",
+      "planta": "proveniência do acesso retirada",
+      "mordeu": true,
+      "razao": "o acesso novo exige a proveniência do acesso"
+    },
+    {
+      "linha": "fluxo-de-credito-as-empresas-2024",
+      "planta": "proveniência do excerto retirada",
+      "mordeu": true,
+      "razao": "o excerto novo exige a proveniência do excerto"
+    },
+    {
+      "linha": "fluxo-de-credito-as-empresas-2024",
+      "planta": "reconferência apagada",
+      "mordeu": true,
+      "razao": "as reconferências mudaram"
+    },
+    {
+      "linha": "fluxo-de-credito-as-empresas-2024",
+      "planta": "bandeira declarada fora da célula",
+      "mordeu": true,
+      "razao": "a bandeira não é a da célula"
+    },
+    {
+      "linha": "fluxo-de-credito-as-empresas-2024",
+      "planta": "nota mudada",
+      "mordeu": true,
+      "razao": "mudou um campo fora do mandato: ['note']"
+    },
+    {
+      "linha": "fluxo-de-credito-as-empresas-2025",
+      "planta": "atualização retirada",
+      "mordeu": true,
+      "razao": "o valor novo exige a atualização tipada do valor antigo para o novo"
+    },
+    {
+      "linha": "fluxo-de-credito-as-empresas-2025",
+      "planta": "valor antigo inventado",
+      "mordeu": true,
+      "razao": "o valor novo exige a atualização tipada do valor antigo para o novo"
+    },
+    {
+      "linha": "fluxo-de-credito-as-empresas-2025",
+      "planta": "valor novo diferente do da linha",
+      "mordeu": true,
+      "razao": "o valor novo exige a atualização tipada do valor antigo para o novo"
+    },
+    {
+      "linha": "fluxo-de-credito-as-empresas-2025",
+      "planta": "proveniência do acesso retirada",
+      "mordeu": true,
+      "razao": "o acesso novo exige a proveniência do acesso"
+    },
+    {
+      "linha": "fluxo-de-credito-as-empresas-2025",
+      "planta": "proveniência do excerto retirada",
+      "mordeu": true,
+      "razao": "o excerto novo exige a proveniência do excerto"
+    },
+    {
+      "linha": "fluxo-de-credito-as-empresas-2025",
+      "planta": "reconferência apagada",
+      "mordeu": true,
+      "razao": "as reconferências mudaram"
+    },
+    {
+      "linha": "fluxo-de-credito-as-empresas-2025",
+      "planta": "bandeira declarada fora da célula",
+      "mordeu": true,
+      "razao": "a bandeira não é a da célula"
+    },
+    {
+      "linha": "fluxo-de-credito-as-empresas-2025",
+      "planta": "nota mudada",
+      "mordeu": true,
+      "razao": "mudou um campo fora do mandato: ['note']"
+    },
+    {
+      "linha": "fluxo-de-credito-as-familias-2024",
+      "planta": "atualização retirada",
+      "mordeu": true,
+      "razao": "o valor novo exige a atualização tipada do valor antigo para o novo"
+    },
+    {
+      "linha": "fluxo-de-credito-as-familias-2024",
+      "planta": "valor antigo inventado",
+      "mordeu": true,
+      "razao": "o valor novo exige a atualização tipada do valor antigo para o novo"
+    },
+    {
+      "linha": "fluxo-de-credito-as-familias-2024",
+      "planta": "valor novo diferente do da linha",
+      "mordeu": true,
+      "razao": "o valor novo exige a atualização tipada do valor antigo para o novo"
+    },
+    {
+      "linha": "fluxo-de-credito-as-familias-2024",
+      "planta": "proveniência do acesso retirada",
+      "mordeu": true,
+      "razao": "o acesso novo exige a proveniência do acesso"
+    },
+    {
+      "linha": "fluxo-de-credito-as-familias-2024",
+      "planta": "proveniência do excerto retirada",
+      "mordeu": true,
+      "razao": "o excerto novo exige a proveniência do excerto"
+    },
+    {
+      "linha": "fluxo-de-credito-as-familias-2024",
+      "planta": "reconferência apagada",
+      "mordeu": true,
+      "razao": "as reconferências mudaram"
+    },
+    {
+      "linha": "fluxo-de-credito-as-familias-2024",
+      "planta": "bandeira declarada fora da célula",
+      "mordeu": true,
+      "razao": "a bandeira não é a da célula"
+    },
+    {
+      "linha": "fluxo-de-credito-as-familias-2024",
+      "planta": "nota mudada",
+      "mordeu": true,
+      "razao": "mudou um campo fora do mandato: ['note']"
+    },
+    {
+      "linha": "fluxo-de-credito-as-familias-2025",
+      "planta": "atualização retirada",
+      "mordeu": true,
+      "razao": "o valor novo exige a atualização tipada do valor antigo para o novo"
+    },
+    {
+      "linha": "fluxo-de-credito-as-familias-2025",
+      "planta": "valor antigo inventado",
+      "mordeu": true,
+      "razao": "o valor novo exige a atualização tipada do valor antigo para o novo"
+    },
+    {
+      "linha": "fluxo-de-credito-as-familias-2025",
+      "planta": "valor novo diferente do da linha",
+      "mordeu": true,
+      "razao": "o valor novo exige a atualização tipada do valor antigo para o novo"
+    },
+    {
+      "linha": "fluxo-de-credito-as-familias-2025",
+      "planta": "proveniência do acesso retirada",
+      "mordeu": true,
+      "razao": "o acesso novo exige a proveniência do acesso"
+    },
+    {
+      "linha": "fluxo-de-credito-as-familias-2025",
+      "planta": "proveniência do excerto retirada",
+      "mordeu": true,
+      "razao": "o excerto novo exige a proveniência do excerto"
+    },
+    {
+      "linha": "fluxo-de-credito-as-familias-2025",
+      "planta": "reconferência apagada",
+      "mordeu": true,
+      "razao": "as reconferências mudaram"
+    },
+    {
+      "linha": "fluxo-de-credito-as-familias-2025",
+      "planta": "bandeira declarada fora da célula",
+      "mordeu": true,
+      "razao": "a bandeira não é a da célula"
+    },
+    {
+      "linha": "fluxo-de-credito-as-familias-2025",
+      "planta": "nota mudada",
+      "mordeu": true,
+      "razao": "mudou um campo fora do mandato: ['note']"
+    },
+    {
+      "linha": "fluxo-de-credito-as-familias-2025-ue",
+      "planta": "atualização retirada",
+      "mordeu": true,
+      "razao": "o valor novo exige a atualização tipada do valor antigo para o novo"
+    },
+    {
+      "linha": "fluxo-de-credito-as-familias-2025-ue",
+      "planta": "valor antigo inventado",
+      "mordeu": true,
+      "razao": "o valor novo exige a atualização tipada do valor antigo para o novo"
+    },
+    {
+      "linha": "fluxo-de-credito-as-familias-2025-ue",
+      "planta": "valor novo diferente do da linha",
+      "mordeu": true,
+      "razao": "o valor novo exige a atualização tipada do valor antigo para o novo"
+    },
+    {
+      "linha": "fluxo-de-credito-as-familias-2025-ue",
+      "planta": "proveniência do acesso retirada",
+      "mordeu": true,
+      "razao": "o acesso novo exige a proveniência do acesso"
+    },
+    {
+      "linha": "fluxo-de-credito-as-familias-2025-ue",
+      "planta": "proveniência do excerto retirada",
+      "mordeu": true,
+      "razao": "o excerto novo exige a proveniência do excerto"
+    },
+    {
+      "linha": "fluxo-de-credito-as-familias-2025-ue",
+      "planta": "reconferência apagada",
+      "mordeu": true,
+      "razao": "as reconferências mudaram"
+    },
+    {
+      "linha": "fluxo-de-credito-as-familias-2025-ue",
+      "planta": "bandeira declarada fora da célula",
+      "mordeu": true,
+      "razao": "a bandeira não é a da célula"
+    },
+    {
+      "linha": "fluxo-de-credito-as-familias-2025-ue",
+      "planta": "nota mudada",
+      "mordeu": true,
+      "razao": "mudou um campo fora do mandato: ['note']"
+    },
+    {
+      "linha": "formacao-bruta-de-capital-fixo-2025-ue",
+      "planta": "atualização retirada",
+      "mordeu": true,
+      "razao": "o valor novo exige a atualização tipada do valor antigo para o novo"
+    },
+    {
+      "linha": "formacao-bruta-de-capital-fixo-2025-ue",
+      "planta": "valor antigo inventado",
+      "mordeu": true,
+      "razao": "o valor novo exige a atualização tipada do valor antigo para o novo"
+    },
+    {
+      "linha": "formacao-bruta-de-capital-fixo-2025-ue",
+      "planta": "valor novo diferente do da linha",
+      "mordeu": true,
+      "razao": "o valor novo exige a atualização tipada do valor antigo para o novo"
+    },
+    {
+      "linha": "formacao-bruta-de-capital-fixo-2025-ue",
+      "planta": "proveniência do acesso retirada",
+      "mordeu": true,
+      "razao": "o acesso novo exige a proveniência do acesso"
+    },
+    {
+      "linha": "formacao-bruta-de-capital-fixo-2025-ue",
+      "planta": "proveniência do excerto retirada",
+      "mordeu": true,
+      "razao": "o excerto novo exige a proveniência do excerto"
+    },
+    {
+      "linha": "formacao-bruta-de-capital-fixo-2025-ue",
+      "planta": "reconferência apagada",
+      "mordeu": true,
+      "razao": "as reconferências mudaram"
+    },
+    {
+      "linha": "formacao-bruta-de-capital-fixo-2025-ue",
+      "planta": "bandeira declarada fora da célula",
+      "mordeu": true,
+      "razao": "a bandeira não é a da célula"
+    },
+    {
+      "linha": "formacao-bruta-de-capital-fixo-2025-ue",
+      "planta": "nota mudada",
+      "mordeu": true,
+      "razao": "mudou um campo fora do mandato: ['note']"
+    },
+    {
+      "linha": "licencas-de-construcao-2025-ue",
+      "planta": "atualização retirada",
+      "mordeu": true,
+      "razao": "o valor novo exige a atualização tipada do valor antigo para o novo"
+    },
+    {
+      "linha": "licencas-de-construcao-2025-ue",
+      "planta": "valor antigo inventado",
+      "mordeu": true,
+      "razao": "o valor novo exige a atualização tipada do valor antigo para o novo"
+    },
+    {
+      "linha": "licencas-de-construcao-2025-ue",
+      "planta": "valor novo diferente do da linha",
+      "mordeu": true,
+      "razao": "o valor novo exige a atualização tipada do valor antigo para o novo"
+    },
+    {
+      "linha": "licencas-de-construcao-2025-ue",
+      "planta": "proveniência do acesso retirada",
+      "mordeu": true,
+      "razao": "o acesso novo exige a proveniência do acesso"
+    },
+    {
+      "linha": "licencas-de-construcao-2025-ue",
+      "planta": "proveniência do excerto retirada",
+      "mordeu": true,
+      "razao": "o excerto novo exige a proveniência do excerto"
+    },
+    {
+      "linha": "licencas-de-construcao-2025-ue",
+      "planta": "reconferência apagada",
+      "mordeu": true,
+      "razao": "as reconferências mudaram"
+    },
+    {
+      "linha": "licencas-de-construcao-2025-ue",
+      "planta": "bandeira declarada fora da célula",
+      "mordeu": true,
+      "razao": "a bandeira não é a da célula"
+    },
+    {
+      "linha": "licencas-de-construcao-2025-ue",
+      "planta": "nota mudada",
+      "mordeu": true,
+      "razao": "mudou um campo fora do mandato: ['note']"
+    },
+    {
+      "linha": "pib-real-per-capita-2025-ue",
+      "planta": "atualização retirada",
+      "mordeu": true,
+      "razao": "o valor novo exige a atualização tipada do valor antigo para o novo"
+    },
+    {
+      "linha": "pib-real-per-capita-2025-ue",
+      "planta": "valor antigo inventado",
+      "mordeu": true,
+      "razao": "o valor novo exige a atualização tipada do valor antigo para o novo"
+    },
+    {
+      "linha": "pib-real-per-capita-2025-ue",
+      "planta": "valor novo diferente do da linha",
+      "mordeu": true,
+      "razao": "o valor novo exige a atualização tipada do valor antigo para o novo"
+    },
+    {
+      "linha": "pib-real-per-capita-2025-ue",
+      "planta": "proveniência do acesso retirada",
+      "mordeu": true,
+      "razao": "o acesso novo exige a proveniência do acesso"
+    },
+    {
+      "linha": "pib-real-per-capita-2025-ue",
+      "planta": "proveniência do excerto retirada",
+      "mordeu": true,
+      "razao": "o excerto novo exige a proveniência do excerto"
+    },
+    {
+      "linha": "pib-real-per-capita-2025-ue",
+      "planta": "reconferência apagada",
+      "mordeu": true,
+      "razao": "as reconferências mudaram"
+    },
+    {
+      "linha": "pib-real-per-capita-2025-ue",
+      "planta": "bandeira declarada fora da célula",
+      "mordeu": true,
+      "razao": "a bandeira não é a da célula"
+    },
+    {
+      "linha": "pib-real-per-capita-2025-ue",
+      "planta": "nota mudada",
+      "mordeu": true,
+      "razao": "mudou um campo fora do mandato: ['note']"
+    }
+  ],
+  "contagens": {
+    "linhas": 17,
+    "aplicadas": 0,
+    "entradas_novas": 51,
+    "atualizacoes_novas": 17,
+    "bandeiras_que_sairam": 2,
+    "plantas": 136,
+    "plantas_que_morderam": 136
+  }
+}

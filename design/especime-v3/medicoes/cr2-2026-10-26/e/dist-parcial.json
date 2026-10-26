@@ -1,0 +1,11 @@
+{
+  "construcao_completa": false,
+  "ficheiros": {
+    "index.html": false,
+    "version.json": false,
+    "livro-razao/custo-unitario-do-trabalho-2025-ue/index.html": false,
+    "en/ledger/custo-unitario-do-trabalho-2025-ue/index.html": false,
+    "explicacoes/dinheiro-do-estado-2026/index.html": false,
+    "precos/index.html": false
+  }
+}

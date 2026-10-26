@@ -25,6 +25,7 @@ leu **só o diff do inventário**. É essa a leitura que esta tabela regista.
 
 | bloco | linhas | leitura | quem, quando |
 | --- | --- | --- | --- |
+| cr2 | 2 novas; 2 retiradas | por ler | Codex, 26.10.2026: contagem medida de 102 revisões de proveniência, após as trinta entradas das quinze releituras; leitura cruzada pendente antes da fusão. |
 | v2a | 28 novas; 2 retiradas | por ler | Codex gpt-6-astra, 13.10.2026: frases das famílias apoiadas nas fontes e contagens do índice lidas da construção. A leitura cruzada pelo Opus prevista no brief fica pendente antes da fusão. |
 | er1 | rótulo e comando nas duas edições | por ler | Codex gpt-6-astra: código recomposto dos dados antes de sair da prosa; leitura a frio do Opus pendente. |
 | oe1-d | 2 novas | por ler | Codex gpt-6-astra, 04.10.2026: os rótulos de navegação «Ressalva» e «Caveat» identificam o aviso publicado de cada linha nos recibos e no índice. A leitura cruzada deste diff fica pendente antes da fusão. |

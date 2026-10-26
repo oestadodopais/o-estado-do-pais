@@ -1,0 +1,19 @@
+Duas tabelas iguais a main, chave a chave e texto a texto.
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+17 !== 15
+
+    at file://<worktree>/design/especime-v3/medicoes/cr2-2026-10-26/h/conferir-nomes.mjs:56:9 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: 17,
+  expected: 15,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v22.23.1

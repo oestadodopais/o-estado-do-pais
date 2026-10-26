@@ -5,6 +5,9 @@ Recebe --motor, --releitura (pasta relativa ao motor) e --saida (pasta das prova
 Sem --aplicar compõe e confere, incluindo as plantas, sem alterar as linhas.
 --published-at atualiza a data de publicação pelo carimbo do corpo depois da aplicação.
 As funções e as razões seguem o C2, cujo guião histórico fica intacto.
+O passo --published-at lê a árvore de trabalho porque a aplicação anterior pode
+ainda não estar em HEAD; confere-a contra a base selada e o registo da aplicação.
+Recusa uma linha que já tenha published_at, sem reescrever a data existente.
 """
 from __future__ import annotations
 
@@ -166,7 +169,7 @@ def com_published_at(texto: str, dia: str) -> str:
     """Põe `published_at: "<dia>"` logo a seguir ao `access_date`, na forma das linhas (`json.dumps`)."""
     linhas = texto.split("\n")
     if any(l.startswith("published_at: ") for l in linhas):
-        return campo(texto, "published_at", dia)
+        raise SystemExit("PARAGEM: a linha já tem published_at; este passo não o reescreve")
     onde = [i for i, l in enumerate(linhas) if l.startswith("access_date: ")]
     if len(onde) != 1:
         raise SystemExit(f"PARAGEM: a linha tem {len(onde)} campos access_date de topo")
@@ -185,7 +188,7 @@ def conferir_published_at(antes: dict, depois: dict, dia: str, hoje: str) -> Non
     assert v <= hoje, "o published_at é posterior ao dia de hoje (UTC)"
     assert v == dia, "o published_at não é o dia do carimbo do corpo"
     mudados = {k for k in set(antes) | set(depois) if antes.get(k) != depois.get(k)}
-    assert mudados <= {"published_at"}, f"mudou um campo fora do published_at: {sorted(mudados - {'published_at'})}"
+    assert mudados == {"published_at"}, f"mudou um campo fora do published_at: {sorted(mudados - {'published_at'})}"
 
 
 def passo_do_published_at(args, reg: dict, reler, pasta: Path) -> int:
@@ -201,6 +204,8 @@ def passo_do_published_at(args, reg: dict, reler, pasta: Path) -> int:
         assert sha(corpo) == p["sha256"] == r["pedido"]["sha256"], f"{cid}: o corpo não tem o sha256 do registo"
         na_cabeca = (SITIO / "ledger/claims" / f"{cid}.yml").read_text(encoding="utf-8")
         antes = yaml.safe_load(na_cabeca)
+        if "published_at" in antes:
+            raise SystemExit(f"PARAGEM: {cid}: a linha já tem published_at; este passo não o reescreve")
         aplicada = next(x for x in json.loads(SAIDA.read_text())["linhas"] if x["id"] == cid)
         sem_data = dict(antes)
         base = yaml.safe_load(selado(cid))
@@ -219,7 +224,7 @@ def passo_do_published_at(args, reg: dict, reler, pasta: Path) -> int:
         conferir_published_at(antes, depois, d["dia"], hoje)
         amanha = (datetime.strptime(hoje, "%Y-%m-%d") + timedelta(days=1)).date().isoformat()
         for nome, estraga, razao in (
-            ("outro dia no lugar do carimbo", lambda c: c.update(published_at="2000-01-01" if d["dia"] != "2000-01-01" else "2000-01-02"), "não é o dia do carimbo"),
+            ("o dia do acesso no lugar do dia do carimbo", lambda c: c.update(published_at=c["access_date"] if str(c["access_date"]) != d["dia"] else (datetime.strptime(d["dia"], "%Y-%m-%d") - timedelta(days=1)).date().isoformat()), "não é o dia do carimbo"),
             ("a forma da casa no lugar de AAAA-MM-DD", lambda c: c.update(published_at=data_pt(d["dia"])), "AAAA-MM-DD"),
             ("um dia que não existe", lambda c: c.update(published_at="2026-02-31"), "não é um dia que existe"),
             ("um dia depois de hoje", lambda c: c.update(published_at=amanha), "posterior ao dia de hoje"),
@@ -273,7 +278,6 @@ def selecionar_linhas(reg: dict, selecao: str | None) -> dict:
     if not ids or len(set(ids)) != len(ids) or any(i not in disponiveis for i in ids):
         raise SystemExit("PARAGEM: --linhas tem identificadores repetidos ou sem releitura válida")
     return {**reg, "linhas": [r for r in reg["linhas"] if r["id"] in ids]}
-
 
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)

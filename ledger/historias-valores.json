@@ -1,10 +1,172 @@
 {
+  "correcoes-publicadas": [
+    {
+      "date": "2026-09-30",
+      "kind": "atualizacao",
+      "old_value": "3",
+      "new_value": "5"
+    },
+    {
+      "date": "2026-10-02",
+      "kind": "atualizacao",
+      "old_value": "5",
+      "new_value": "7"
+    },
+    {
+      "date": "2026-10-20",
+      "kind": "atualizacao",
+      "old_value": "7",
+      "new_value": "9"
+    },
+    {
+      "date": "2026-10-20",
+      "kind": "atualizacao",
+      "old_value": "9",
+      "new_value": "10"
+    },
+    {
+      "date": "2026-10-20",
+      "kind": "atualizacao",
+      "old_value": "10",
+      "new_value": "11"
+    },
+    {
+      "date": "2026-10-21",
+      "kind": "atualizacao",
+      "old_value": "11",
+      "new_value": "12"
+    }
+  ],
+  "custo-unitario-do-trabalho-2024": [
+    {
+      "date": "2026-10-05",
+      "kind": "atualizacao",
+      "old_value": "17,7",
+      "new_value": "17,9"
+    }
+  ],
+  "custo-unitario-do-trabalho-2025-ue": [
+    {
+      "date": "2026-10-26",
+      "kind": "atualizacao",
+      "old_value": "15,2",
+      "new_value": "14,8"
+    }
+  ],
+  "despesa-em-id-2024-ue": [
+    {
+      "date": "2026-10-05",
+      "kind": "atualizacao",
+      "old_value": "2,24",
+      "new_value": "2,26"
+    }
+  ],
+  "despesa-por-funcao-2024-gf01-ue": [
+    {
+      "date": "2026-10-21",
+      "kind": "atualizacao",
+      "old_value": "6,1",
+      "new_value": "6,0"
+    }
+  ],
+  "despesa-por-funcao-2024-gf10-ue": [
+    {
+      "date": "2026-10-21",
+      "kind": "atualizacao",
+      "old_value": "19,6",
+      "new_value": "19,5"
+    }
+  ],
+  "divida-das-empresas-2024": [
+    {
+      "date": "2026-10-26",
+      "kind": "atualizacao",
+      "old_value": "67,1",
+      "new_value": "66,6"
+    }
+  ],
+  "divida-das-empresas-2025": [
+    {
+      "date": "2026-10-26",
+      "kind": "atualizacao",
+      "old_value": "64,9",
+      "new_value": "65,1"
+    }
+  ],
+  "divida-das-empresas-2025-ue": [
+    {
+      "date": "2026-10-26",
+      "kind": "atualizacao",
+      "old_value": "70,0",
+      "new_value": "70,2"
+    }
+  ],
+  "divida-das-familias-2024": [
+    {
+      "date": "2026-10-26",
+      "kind": "atualizacao",
+      "old_value": "52,6",
+      "new_value": "52,3"
+    }
+  ],
+  "divida-das-familias-2025": [
+    {
+      "date": "2026-10-26",
+      "kind": "atualizacao",
+      "old_value": "53,9",
+      "new_value": "54,4"
+    }
+  ],
   "divida-das-familias-2025-ue": [
     {
       "date": "2026-09-28",
       "kind": "atualizacao",
       "old_value": "49,3",
       "new_value": "49,2"
+    }
+  ],
+  "divida-publica-2024": [
+    {
+      "date": "2026-10-26",
+      "kind": "atualizacao",
+      "old_value": "93,5",
+      "new_value": "93,0"
+    }
+  ],
+  "divida-publica-2025": [
+    {
+      "date": "2026-10-26",
+      "kind": "atualizacao",
+      "old_value": "89,7",
+      "new_value": "89,2"
+    }
+  ],
+  "divida-publica-2025-ue": [
+    {
+      "date": "2026-10-26",
+      "kind": "atualizacao",
+      "old_value": "81,7",
+      "new_value": "81,5"
+    }
+  ],
+  "edicoes-publicadas": [
+    {
+      "date": "2026-10-01",
+      "kind": "atualizacao",
+      "old_value": "18",
+      "new_value": "25"
+    },
+    {
+      "date": "2026-10-20",
+      "kind": "atualizacao",
+      "old_value": "25",
+      "new_value": "27"
+    },
+    {
+      "date": "2026-10-26",
+      "kind": "atualizacao",
+      "old_value": "27",
+      "new_value": "29"
     }
   ],
   "estudos-evora-publicados": [
@@ -37,6 +199,26 @@
       "kind": "atualizacao",
       "old_value": "6",
       "new_value": "4"
+    }
+  ],
+  "estudos-publicados": [
+    {
+      "date": "2026-10-01",
+      "kind": "atualizacao",
+      "old_value": "13",
+      "new_value": "17"
+    },
+    {
+      "date": "2026-10-20",
+      "kind": "atualizacao",
+      "old_value": "17",
+      "new_value": "18"
+    },
+    {
+      "date": "2026-10-26",
+      "kind": "atualizacao",
+      "old_value": "18",
+      "new_value": "19"
     }
   ],
   "evora-prr-aprovado-2026": [
@@ -109,122 +291,12 @@
       "new_value": "61,32"
     }
   ],
-  "pib-pc-alentejo-2000": [
-    {
-      "date": "2026-08-13",
-      "kind": "correcao",
-      "old_value": "78,3",
-      "new_value": "78"
-    }
-  ],
-  "pib-pc-alentejo-2024": [
-    {
-      "date": "2026-08-13",
-      "kind": "correcao",
-      "old_value": "77,2",
-      "new_value": "77"
-    }
-  ],
-  "taxa-de-desemprego-2025": [
-    {
-      "date": "2026-09-30",
-      "kind": "correcao",
-      "old_value": "6",
-      "new_value": "6,0"
-    }
-  ],
-  "taxa-de-desemprego-mip-2025": [
-    {
-      "date": "2026-09-30",
-      "kind": "correcao",
-      "old_value": "6",
-      "new_value": "6,0"
-    }
-  ],
-  "correcoes-publicadas": [
-    {
-      "date": "2026-09-30",
-      "kind": "atualizacao",
-      "old_value": "3",
-      "new_value": "5"
-    },
-    {
-      "date": "2026-10-02",
-      "kind": "atualizacao",
-      "old_value": "5",
-      "new_value": "7"
-    },
-    {
-      "date": "2026-10-20",
-      "kind": "atualizacao",
-      "old_value": "7",
-      "new_value": "9"
-    },
-    {
-      "date": "2026-10-20",
-      "kind": "atualizacao",
-      "old_value": "9",
-      "new_value": "10"
-    },
-    {
-      "date": "2026-10-20",
-      "kind": "atualizacao",
-      "old_value": "10",
-      "new_value": "11"
-    },
-    {
-      "date": "2026-10-21",
-      "kind": "atualizacao",
-      "old_value": "11",
-      "new_value": "12"
-    }
-  ],
-  "estudos-publicados": [
-    {
-      "date": "2026-10-01",
-      "kind": "atualizacao",
-      "old_value": "13",
-      "new_value": "17"
-    },
-    {
-      "date": "2026-10-20",
-      "kind": "atualizacao",
-      "old_value": "17",
-      "new_value": "18"
-    },
+  "fluxo-de-credito-as-empresas-2024": [
     {
       "date": "2026-10-26",
       "kind": "atualizacao",
-      "old_value": "18",
-      "new_value": "19"
-    }
-  ],
-  "edicoes-publicadas": [
-    {
-      "date": "2026-10-01",
-      "kind": "atualizacao",
-      "old_value": "18",
-      "new_value": "25"
-    },
-    {
-      "date": "2026-10-20",
-      "kind": "atualizacao",
-      "old_value": "25",
-      "new_value": "27"
-    },
-    {
-      "date": "2026-10-26",
-      "kind": "atualizacao",
-      "old_value": "27",
-      "new_value": "29"
-    }
-  ],
-  "jovens-nem-2025": [
-    {
-      "date": "2026-10-02",
-      "kind": "correcao",
-      "old_value": "8",
-      "new_value": "8,0"
+      "old_value": "2,4",
+      "new_value": "2,2"
     }
   ],
   "fluxo-de-credito-as-empresas-2025": [
@@ -233,22 +305,36 @@
       "kind": "correcao",
       "old_value": "3",
       "new_value": "3,0"
+    },
+    {
+      "date": "2026-10-26",
+      "kind": "atualizacao",
+      "old_value": "3,0",
+      "new_value": "3,4"
     }
   ],
-  "custo-unitario-do-trabalho-2024": [
+  "fluxo-de-credito-as-familias-2024": [
     {
-      "date": "2026-10-05",
+      "date": "2026-10-26",
       "kind": "atualizacao",
-      "old_value": "17,7",
-      "new_value": "17,9"
+      "old_value": "4,1",
+      "new_value": "4,0"
     }
   ],
-  "despesa-em-id-2024-ue": [
+  "fluxo-de-credito-as-familias-2025": [
     {
-      "date": "2026-10-05",
+      "date": "2026-10-26",
       "kind": "atualizacao",
-      "old_value": "2,24",
-      "new_value": "2,26"
+      "old_value": "8,6",
+      "new_value": "9,0"
+    }
+  ],
+  "fluxo-de-credito-as-familias-2025-ue": [
+    {
+      "date": "2026-10-26",
+      "kind": "atualizacao",
+      "old_value": "2,9",
+      "new_value": "3,0"
     }
   ],
   "formacao-bruta-de-capital-fixo-2024": [
@@ -267,6 +353,71 @@
       "new_value": "21,0"
     }
   ],
+  "formacao-bruta-de-capital-fixo-2025-ue": [
+    {
+      "date": "2026-10-26",
+      "kind": "atualizacao",
+      "old_value": "21,4",
+      "new_value": "21,5"
+    }
+  ],
+  "jovens-nem-2025": [
+    {
+      "date": "2026-10-02",
+      "kind": "correcao",
+      "old_value": "8",
+      "new_value": "8,0"
+    }
+  ],
+  "licencas-de-construcao-2025-ue": [
+    {
+      "date": "2026-10-26",
+      "kind": "atualizacao",
+      "old_value": "377,5",
+      "new_value": "377,6"
+    }
+  ],
+  "oe-2027-calendario-entrega": [
+    {
+      "date": "2026-10-21",
+      "kind": "correcao",
+      "old_value": "8",
+      "new_value": "8 de outubro"
+    }
+  ],
+  "oe-2027-saude-contrato-programa-acss": [
+    {
+      "date": "2026-10-20",
+      "kind": "correcao",
+      "old_value": "Neste montante incluem-se as verbas do contrato-programa a celebrar entre a Administração Central do Sistema de Saúde, IP (ACSS) e as entidades do Serviço Nacional de Saúde (SNS), destinadas ao financiamento centralizado da Rede Nacional de Cuidados Continuados, das parcerias público-privadas, entre outros.",
+      "new_value": "Do total da despesa consolidada afeta ao Programa Legado, a maior parte é financiada por receitas de impostos (15 452,2 milhões de euros). Neste montante incluem-se as verbas do contrato-programa a celebrar entre a Administração Central do Sistema de Saúde, IP (ACSS) e as entidades do Serviço Nacional de Saúde (SNS), destinadas ao financiamento centralizado da Rede Nacional de Cuidados Continuados, das parcerias público-privadas, entre outros."
+    }
+  ],
+  "pe-oe-beira-abolicao": [
+    {
+      "date": "2026-10-20",
+      "kind": "correcao",
+      "old_value": "Salienta-se ainda o desenvolvimento dos trabalhos de negociação 38 no âmbito do contrato de concessão da Beira Interior, na sequência do pedido apresentado pela concessionária no contexto da abolição das portagens, tendo em vista verificar se estão reunidas as condições para a reposição do equilíbrio financeiro do contrato e para negociar os respetivos termos, abrangendo ainda a renegociação de outros aspetos contratuais relevantes e a avaliação de eventuais novos investimentos a realizar.",
+      "new_value": "Salienta-se ainda o desenvolvimento dos trabalhos de negociação no âmbito do contrato de concessão da Beira Interior, na sequência do pedido apresentado pela concessionária no contexto da abolição das portagens, tendo em vista verificar se estão reunidas as condições para a reposição do equilíbrio financeiro do contrato e para negociar os respetivos termos, abrangendo ainda a renegociação de outros aspetos contratuais relevantes e a avaliação de eventuais novos investimentos a realizar."
+    }
+  ],
+  "pe-oe-riscos-nao-reconhecimento": [],
+  "pib-pc-alentejo-2000": [
+    {
+      "date": "2026-08-13",
+      "kind": "correcao",
+      "old_value": "78,3",
+      "new_value": "78"
+    }
+  ],
+  "pib-pc-alentejo-2024": [
+    {
+      "date": "2026-08-13",
+      "kind": "correcao",
+      "old_value": "77,2",
+      "new_value": "77"
+    }
+  ],
   "pib-real-per-capita-2024": [
     {
       "date": "2026-10-05",
@@ -281,6 +432,14 @@
       "kind": "atualizacao",
       "old_value": "20 600",
       "new_value": "20 700"
+    }
+  ],
+  "pib-real-per-capita-2025-ue": [
+    {
+      "date": "2026-10-26",
+      "kind": "atualizacao",
+      "old_value": "31 890",
+      "new_value": "31 980"
     }
   ],
   "posicao-de-investimento-internacional-2024": [
@@ -307,12 +466,20 @@
       "new_value": "0,4"
     }
   ],
-  "utao-risco-execucao-sns-2027": [
+  "taxa-de-desemprego-2025": [
     {
-      "date": "2026-10-20",
+      "date": "2026-09-30",
       "kind": "correcao",
-      "old_value": "Existe um risco de pressão orçamental",
-      "new_value": "Existe um risco de pressão orçamental associado à execução do Serviço Nacional de Saúde (SNS)."
+      "old_value": "6",
+      "new_value": "6,0"
+    }
+  ],
+  "taxa-de-desemprego-mip-2025": [
+    {
+      "date": "2026-09-30",
+      "kind": "correcao",
+      "old_value": "6",
+      "new_value": "6,0"
     }
   ],
   "utao-ppp-contingencias-natureza-2026": [
@@ -323,61 +490,12 @@
       "new_value": "São pretensões dos parceiros privados, e não encargos já reconhecidos; a sua concretização, total ou parcial, oneraria o saldo orçamental de anos futuros."
     }
   ],
-  "oe-2027-saude-contrato-programa-acss": [
+  "utao-risco-execucao-sns-2027": [
     {
       "date": "2026-10-20",
       "kind": "correcao",
-      "old_value": "Neste montante incluem-se as verbas do contrato-programa a celebrar entre a Administração Central do Sistema de Saúde, IP (ACSS) e as entidades do Serviço Nacional de Saúde (SNS), destinadas ao financiamento centralizado da Rede Nacional de Cuidados Continuados, das parcerias público-privadas, entre outros.",
-      "new_value": "Do total da despesa consolidada afeta ao Programa Legado, a maior parte é financiada por receitas de impostos (15 452,2 milhões de euros). Neste montante incluem-se as verbas do contrato-programa a celebrar entre a Administração Central do Sistema de Saúde, IP (ACSS) e as entidades do Serviço Nacional de Saúde (SNS), destinadas ao financiamento centralizado da Rede Nacional de Cuidados Continuados, das parcerias público-privadas, entre outros."
-    }
-  ],
-  "pe-oe-beira-abolicao": [
-    {
-      "date": "2026-10-20",
-      "kind": "correcao",
-      "old_value": "Salienta-se ainda o desenvolvimento dos trabalhos de negociação 38 no âmbito do contrato de concessão da Beira Interior, na sequência do pedido apresentado pela concessionária no contexto da abolição das portagens, tendo em vista verificar se estão reunidas as condições para a reposição do equilíbrio financeiro do contrato e para negociar os respetivos termos, abrangendo ainda a renegociação de outros aspetos contratuais relevantes e a avaliação de eventuais novos investimentos a realizar.",
-      "new_value": "Salienta-se ainda o desenvolvimento dos trabalhos de negociação no âmbito do contrato de concessão da Beira Interior, na sequência do pedido apresentado pela concessionária no contexto da abolição das portagens, tendo em vista verificar se estão reunidas as condições para a reposição do equilíbrio financeiro do contrato e para negociar os respetivos termos, abrangendo ainda a renegociação de outros aspetos contratuais relevantes e a avaliação de eventuais novos investimentos a realizar."
-    }
-  ],
-  "pe-oe-riscos-nao-reconhecimento": [],
-  "oe-2027-calendario-entrega": [
-    {
-      "date": "2026-10-21",
-      "kind": "correcao",
-      "old_value": "8",
-      "new_value": "8 de outubro"
-    }
-  ],
-  "despesa-por-funcao-2024-gf01-ue": [
-    {
-      "date": "2026-10-21",
-      "kind": "atualizacao",
-      "old_value": "6,1",
-      "new_value": "6,0"
-    }
-  ],
-  "despesa-por-funcao-2024-gf10-ue": [
-    {
-      "date": "2026-10-21",
-      "kind": "atualizacao",
-      "old_value": "19,6",
-      "new_value": "19,5"
-    }
-  ],
-  "divida-publica-2025": [
-    {
-      "date": "2026-10-26",
-      "kind": "atualizacao",
-      "old_value": "89,7",
-      "new_value": "89,2"
-    }
-  ],
-  "divida-publica-2025-ue": [
-    {
-      "date": "2026-10-26",
-      "kind": "atualizacao",
-      "old_value": "81,7",
-      "new_value": "81,5"
+      "old_value": "Existe um risco de pressão orçamental",
+      "new_value": "Existe um risco de pressão orçamental associado à execução do Serviço Nacional de Saúde (SNS)."
     }
   ]
 }

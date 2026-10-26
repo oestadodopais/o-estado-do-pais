@@ -1,0 +1,89 @@
+{
+  "base": "71420a8f4",
+  "recibos": [
+    {
+      "lang": "pt",
+      "id": "custo-unitario-do-trabalho-2025-ue",
+      "main": "Custo do trabalho por unidade produzida na União Europeia (custo unitário do trabalho)",
+      "atual": "Custo do trabalho por unidade produzida na União Europeia (custo unitário do trabalho)",
+      "igual": true
+    },
+    {
+      "lang": "pt",
+      "id": "divida-das-empresas-2025-ue",
+      "main": "Dívida das empresas (não financeiras) na União Europeia",
+      "atual": "Dívida das empresas (não financeiras) na União Europeia",
+      "igual": true
+    },
+    {
+      "lang": "pt",
+      "id": "fluxo-de-credito-as-familias-2025-ue",
+      "main": "Fluxo de crédito às famílias na União Europeia",
+      "atual": "Fluxo de crédito às famílias na União Europeia",
+      "igual": true
+    },
+    {
+      "lang": "pt",
+      "id": "formacao-bruta-de-capital-fixo-2025-ue",
+      "main": "Investimento em bens duradouros para produzir na União Europeia (formação bruta de capital fixo)",
+      "atual": "Investimento em bens duradouros para produzir na União Europeia (formação bruta de capital fixo)",
+      "igual": true
+    },
+    {
+      "lang": "pt",
+      "id": "licencas-de-construcao-2025-ue",
+      "main": "Área licenciada para habitação na União Europeia",
+      "atual": "Área licenciada para habitação na União Europeia",
+      "igual": true
+    },
+    {
+      "lang": "pt",
+      "id": "pib-real-per-capita-2025-ue",
+      "main": "PIB real por habitante na União Europeia",
+      "atual": "PIB real por habitante na União Europeia",
+      "igual": true
+    },
+    {
+      "lang": "en",
+      "id": "custo-unitario-do-trabalho-2025-ue",
+      "main": "Labour cost per unit of output in the European Union (unit labour cost)",
+      "atual": "Labour cost per unit of output in the European Union (unit labour cost)",
+      "igual": true
+    },
+    {
+      "lang": "en",
+      "id": "divida-das-empresas-2025-ue",
+      "main": "Debt of (non-financial) companies in the European Union",
+      "atual": "Debt of (non-financial) companies in the European Union",
+      "igual": true
+    },
+    {
+      "lang": "en",
+      "id": "fluxo-de-credito-as-familias-2025-ue",
+      "main": "Credit flow to households in the European Union",
+      "atual": "Credit flow to households in the European Union",
+      "igual": true
+    },
+    {
+      "lang": "en",
+      "id": "formacao-bruta-de-capital-fixo-2025-ue",
+      "main": "Investment in durable goods used for production in the European Union (gross fixed capital formation)",
+      "atual": "Investment in durable goods used for production in the European Union (gross fixed capital formation)",
+      "igual": true
+    },
+    {
+      "lang": "en",
+      "id": "licencas-de-construcao-2025-ue",
+      "main": "Floor area licensed for housing in the European Union",
+      "atual": "Floor area licensed for housing in the European Union",
+      "igual": true
+    },
+    {
+      "lang": "en",
+      "id": "pib-real-per-capita-2025-ue",
+      "main": "Real GDP per capita in the European Union",
+      "atual": "Real GDP per capita in the European Union",
+      "igual": true
+    }
+  ]
+}
