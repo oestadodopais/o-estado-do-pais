@@ -1236,8 +1236,9 @@ export const LINGUA_DAS_EDICOES = {
      A edição passou de 02.10.2026 para 20.10.2026 na correção V2-d-b, e para
      21.10.2026 com a recontagem que está no ar; as duas contagens do arquivo
      passaram a 26.10.2026 com a publicação do estudo da habitação (HB1-d), e a
-     data delas entra pela tabela gerada abaixo. */
-  '21.10.2026': null,
+     data delas entra pela tabela gerada abaixo; a de 21.10.2026 é a chave da
+     EO1-e, logo abaixo, uma só vez (a corrida portão de 26.10 recusou a
+     chave repetida no typecheck). */
   // EO1-e: edição da contagem refeita das correções, uma data sem língua.
   '21.10.2026': null,
   '01.10.2026': null,
