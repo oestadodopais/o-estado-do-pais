@@ -1902,39 +1902,24 @@ Object.assign(LINGUA_DOS_TITULOS, {
   "Subida dos juros da dívida “é risco de mercado e não risco de país”, diz Miranda Sarmento": "pt",
   "Em debate orçamental com habitação em destaque, Miranda Sarmento lembra caso Robles e a sua \"decisão de investimento, totalmente legítima\"": "pt"
 });
+// OG1-A7: rótulo literal da Tabela 8 da UTAO, separado do código da linha.
 Object.assign(LINGUA_DOS_ROTULOS, {
-  "UTAO, §15": "pt",
-  "UTAO, §42": "pt",
-  "pib-2026": "pt",
-  "saldo-2026": "pt",
-  "politicas-peso": "pt",
-  "juros-variacao": "pt",
-  "juros-montante": "pt",
-  "taxa-implicita-2026": "pt",
-  "taxa-implicita-2027": "pt",
-  "impacto das novas medidas de política orçamental no saldo de 2027, a favor do saldo": "pt",
-  "impact of new fiscal policy measures on the 2027 balance, in favour of the balance": "en",
-  "despesa-liquida-ce": "pt",
-  "despesa-liquida-limiar": "pt",
-  "despesa-liquida-mf-defesa": "pt",
-  "despesa-liquida-mf-antes": "pt",
-  "divida-2025-revista": "pt",
-  "brent-contratos-2027": "pt",
-  "brent-mf-2027": "pt",
-  "brent-diferenca": "pt",
-  "politicas-saldo": "pt",
-  "saude-variacao": "pt",
-  "saude-sem-prr": "pt",
-  "Saldo em contabilidade nacional 2027": "pt",
-  "ps-abstencao": "pt",
-  "pcp-comite": "pt",
-  "pcp-raimundo": "pt",
-  "be-voto": "pt",
-  "il-prioridades": "pt",
-  "livre-posicao": "pt",
-  "governo-rtp-combustiveis": "pt",
-  "governo-rtp-previsoes": "pt",
-  "governo-rtp-habitacao": "pt",
-  "governo-eco-juros": "pt",
-  "governo-observador-saldo": "pt"
+  "Impacto Total no Saldo Orçamental": "pt"
+});
+
+// OG1-A7: nomes próprios das atribuições e edições expressas por datas.
+Object.assign(LINGUA_DAS_FONTES, {
+  "Comissão Política Nacional do Partido Socialista": "pt",
+  "Comité Central do PCP": "pt",
+  "José Manuel Pureza": "pt",
+  "Mariana Leitão": "pt",
+  "Isabel Mendes Lopes": "pt",
+  "Joaquim Miranda Sarmento": "pt"
+});
+Object.assign(LINGUA_DAS_EDICOES, {
+  "2026-10-22": null,
+  "2026-10-08": null,
+  "2026-10-06": null,
+  "2026-09-28": null,
+  "2026-10-23": null
 });

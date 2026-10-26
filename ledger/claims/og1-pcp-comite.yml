@@ -9,12 +9,6 @@ id: "og1-pcp-comite"
 value: "O Orçamento do Estado para 2027 é um frete ao capital e um desastre para o País."
 unit: "texto"
 
-# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
-# e onde nele foi lido. Escrito pelo motor, nunca à mão.
-name: "pcp-comite"
-name_source: "Corpo da página; excerto localizado por texto"
-status: "selado; leitura a frio pendente"
-
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Comité Central do PCP"
 document:

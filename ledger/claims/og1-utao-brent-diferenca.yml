@@ -9,12 +9,6 @@ id: "og1-utao-brent-diferenca"
 value: "11"
 unit: "%"
 
-# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
-# e onde nele foi lido. Escrito pelo motor, nunca à mão.
-name: "brent-diferenca"
-name_source: "§99; p. 52 PDF (51 impressa)"
-status: "selado; leitura a frio pendente"
-
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "UTAO"
 document:

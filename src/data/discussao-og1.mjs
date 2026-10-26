@@ -832,7 +832,7 @@ export const OG1 = {
               {
                 "periodo": "pm-q3-3-r37-c3"
               },
-              ", acima do limiar de ",
+              ", acima do valor de referência de ",
               {
                 "claim": "og1-utao-despesa-liquida-limiar",
                 "sufixo": " %"
@@ -864,7 +864,7 @@ export const OG1 = {
                 "claim": "og1-utao-despesa-liquida-limiar",
                 "sufixo": " %"
               },
-              " of GDP threshold; the Finance Ministry's figures give ",
+              " of GDP reference value; the Finance Ministry's figures give ",
               {
                 "claim": "og1-utao-despesa-liquida-mf-antes",
                 "sufixo": " %"
@@ -1130,7 +1130,7 @@ export const OG1 = {
         {
           "paragrafo": {
             "pt": [
-              "Ao leitor: a apreciação da UTAO está a um toque em cada número desta página, e lê-se antes das intervenções do debate. Ao Ministério das Finanças: publicar a base da estimativa dos ",
+              "Ao leitor: a apreciação da UTAO está ligada a cada número desta página, e lê-se antes das intervenções do debate. Ao Ministério das Finanças: publicar a base da estimativa dos ",
               {
                 "claim": "pm-q3-2-r8-c0",
                 "sufixo": " milhões de euros"
@@ -1138,7 +1138,7 @@ export const OG1 = {
               " dos combustíveis, que a UTAO pede. Ao Parlamento: pedir, na especialidade, o quadro da despesa líquida com e sem a flexibilidade para a defesa."
             ],
             "en": [
-              "To the reader: the UTAO's appraisal is one tap away from every number on this page, and it is worth reading before the speeches. To the Finance Ministry: publish the basis of the ",
+              "To the reader: the UTAO's appraisal is linked from every number on this page, and it is worth reading before the speeches. To the Finance Ministry: publish the basis of the ",
               {
                 "claim": "pm-q3-2-r8-c0",
                 "sufixo": " million euro"

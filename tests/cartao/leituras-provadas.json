@@ -50711,12 +50711,12 @@
       "origens": [],
       "folhas": [
         {
-          "pt": "É o limiar em percentagem do PIB usado para aferir o cumprimento da trajetória da despesa líquida.",
-          "en": "It is the threshold as a share of GDP used to assess compliance with the net expenditure path.",
+          "pt": "É o valor de referência em percentagem do PIB usado para aferir o cumprimento da trajetória da despesa líquida.",
+          "en": "It is the reference value as a share of GDP used to assess compliance with the net expenditure path.",
           "partes": [
             {
-              "pt": "É o limiar em percentagem do PIB usado para aferir o cumprimento da trajetória da despesa líquida.",
-              "en": "It is the threshold as a share of GDP used to assess compliance with the net expenditure path.",
+              "pt": "É o valor de referência em percentagem do PIB usado para aferir o cumprimento da trajetória da despesa líquida.",
+              "en": "It is the reference value as a share of GDP used to assess compliance with the net expenditure path.",
               "classe": "diz",
               "apoios": [
                 {

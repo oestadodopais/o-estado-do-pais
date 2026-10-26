@@ -9,12 +9,6 @@ id: "og1-governo-eco-juros"
 value: "a nossa subida das taxas de juro é risco de mercado e não risco de país"
 unit: "texto"
 
-# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
-# e onde nele foi lido. Escrito pelo motor, nunca à mão.
-name: "governo-eco-juros"
-name_source: "Corpo da página; excerto localizado por texto"
-status: "selado; leitura a frio pendente"
-
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Joaquim Miranda Sarmento"
 document:

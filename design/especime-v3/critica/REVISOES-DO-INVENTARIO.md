@@ -897,3 +897,5 @@ HB1-b, correção do diagnóstico: os três textos não eram rótulos rendidos; 
 | hb1d | HB1-d, 26.10.2026: a publicação do estudo da habitação; as duas frases «publicado a» da área reativadas, as duas «Edição em preparação» e as duas do estudo de Évora que saiu da primeira página retiradas com a razão; a abertura do estudo reescrita pelo lugar de direção (a regra F0.9), as duas formas antigas retiradas e as duas novas | por ler | Claude Opus 5.5, 26.10.2026: as seis linhas reclassificadas pela saída da conferência da voz sobre o HTML construído da cabeça 7cbb6bd0f; as duas frases novas da abertura escritas pela declaração em src/data/leituras.mjs, conferidas pela conferência da voz na construção seguinte. |
 
 | og1-a6 | Discussão da generalidade, portas e contagens das 33 linhas; retiradas as duas contagens anteriores | por ler | Codex, 26.10.2026: cadeias do HTML; a leitura cruzada pertence à direção. |
+
+| og1-a7 | Valor de referência e ligação à apreciação, nas duas edições; formas anteriores retiradas | por ler | Codex, 26.10.2026: redação do mandato OG1-A7; verificação pelo HTML construído e pela voz. |

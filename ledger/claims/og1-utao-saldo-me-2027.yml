@@ -9,12 +9,6 @@ id: "og1-utao-saldo-me-2027"
 value: "275"
 unit: "milhões de euros"
 
-# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
-# e onde nele foi lido. Escrito pelo motor, nunca à mão.
-name: "Saldo em contabilidade nacional 2027"
-name_source: "§66; p. 37 PDF (36 impressa)"
-status: "selado; leitura a frio pendente"
-
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "UTAO"
 document:

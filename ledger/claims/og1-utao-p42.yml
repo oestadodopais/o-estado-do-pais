@@ -9,12 +9,6 @@ id: "og1-utao-p42"
 value: "A medida de combate à fraude no setor dos combustíveis, com um impacto orçamental estimado de 300 M€ em 2027, constitui a medida de maior dimensão do lado da receita. Contudo, a POE/2027 não disponibiliza informação suficientemente detalhada sobre o seu conteúdo e os mecanismos de implementação, o que limita a avaliação da robustez da medida e a aferição da razoabilidade do impacto orçamental projetado."
 unit: "texto"
 
-# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
-# e onde nele foi lido. Escrito pelo motor, nunca à mão.
-name: "UTAO, §42"
-name_source: "§42; p. 23 PDF (22 impressa)"
-status: "selado; leitura a frio pendente"
-
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "UTAO"
 document:

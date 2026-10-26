@@ -9,12 +9,6 @@ id: "og1-ps-abstencao"
 value: "viabilizar o Orçamento do Estado para 2027 mediante a abstenção na votação na generalidade do documento"
 unit: "texto"
 
-# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
-# e onde nele foi lido. Escrito pelo motor, nunca à mão.
-name: "ps-abstencao"
-name_source: "Corpo da página; excerto localizado por texto"
-status: "selado; leitura a frio pendente"
-
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Comissão Política Nacional do Partido Socialista"
 document:

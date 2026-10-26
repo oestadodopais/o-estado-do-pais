@@ -9,13 +9,6 @@ id: "og1-utao-novas-saldo"
 value: "79"
 unit: "milhões de euros"
 
-# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
-# e onde nele foi lido. Escrito pelo motor, nunca à mão.
-name: "impacto das novas medidas de política orçamental no saldo de 2027, a favor do saldo"
-name_source: "§40; p. 22 PDF (21 impressa)"
-status: "selado; leitura a frio pendente"
-name_en: "impact of new fiscal policy measures on the 2027 balance, in favour of the balance"
-
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "UTAO"
 document:

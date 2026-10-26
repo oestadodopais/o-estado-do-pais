@@ -9,12 +9,6 @@ id: "og1-governo-observador-saldo"
 value: "esta é uma medida que custa 300 milhões no próximo ano, para um saldo de 270 milhões"
 unit: "texto"
 
-# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
-# e onde nele foi lido. Escrito pelo motor, nunca à mão.
-name: "governo-observador-saldo"
-name_source: "Corpo da página; excerto localizado por texto"
-status: "selado; leitura a frio pendente"
-
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Joaquim Miranda Sarmento"
 document:

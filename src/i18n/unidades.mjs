@@ -68,6 +68,8 @@ const UNIDADES_EUROSTAT_PT = {
 };
 
 export const UNIDADES = {
+  // OG1: facto de dicionário, «por barril» é «per barrel»; USD conserva o código.
+  "USD por barril": "USD per barrel",
   // V2-e: traduções das unidades documentais e assistenciais.
   "marcos e metas": "milestones and targets",
   "Per hundred thousand inhabitants": "per hundred thousand inhabitants",

@@ -61,8 +61,8 @@ export const NOMES_OG1 = {
     "en": "Net expenditure deviation forecast by the Commission"
   },
   "og1-utao-despesa-liquida-limiar": {
-    "pt": "Limiar do desvio da despesa líquida",
-    "en": "Net expenditure deviation threshold"
+    "pt": "Valor de referência do desvio da despesa líquida",
+    "en": "Net expenditure deviation reference value"
   },
   "og1-utao-despesa-liquida-mf-antes": {
     "pt": "Desvio da despesa líquida antes da flexibilidade",
@@ -346,15 +346,15 @@ export const FAMILIAS_OG1 = {
   },
   "og1-utao-despesa-liquida-limiar": {
     "nome": {
-      "pt": "Limiar do desvio da despesa líquida",
-      "en": "Net expenditure deviation threshold"
+      "pt": "Valor de referência do desvio da despesa líquida",
+      "en": "Net expenditure deviation reference value"
     },
     "frase": {
       "pt": [
-        "É o limiar em percentagem do PIB usado para aferir o cumprimento da trajetória da despesa líquida."
+        "É o valor de referência em percentagem do PIB usado para aferir o cumprimento da trajetória da despesa líquida."
       ],
       "en": [
-        "It is the threshold as a share of GDP used to assess compliance with the net expenditure path."
+        "It is the reference value as a share of GDP used to assess compliance with the net expenditure path."
       ]
     }
   },

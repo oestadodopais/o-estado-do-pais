@@ -38075,12 +38075,12 @@
         },
         {
           "caminho": "seccoes[1].conteudo[4].paragrafo[4]",
-          "pt": ", acima do limiar de ",
+          "pt": ", acima do valor de referência de ",
           "en": ", above the ",
           "ramo": null,
           "partes": [
             {
-              "pt": ", acima do limiar de ",
+              "pt": ", acima do valor de referência de ",
               "en": ", above the ",
               "classe": "leitura",
               "sobre": "Leitura do lugar de direção sobre as afirmações, as contas e os limites documentados nesta parte.",
@@ -38178,12 +38178,12 @@
         {
           "caminho": "seccoes[1].conteudo[4].paragrafo[6]",
           "pt": " do PIB; os dados do Ministério das Finanças dão ",
-          "en": " of GDP threshold; the Finance Ministry's figures give ",
+          "en": " of GDP reference value; the Finance Ministry's figures give ",
           "ramo": null,
           "partes": [
             {
               "pt": " do PIB; os dados do Ministério das Finanças dão ",
-              "en": " of GDP threshold; the Finance Ministry's figures give ",
+              "en": " of GDP reference value; the Finance Ministry's figures give ",
               "classe": "leitura",
               "sobre": "Leitura do lugar de direção sobre as afirmações, as contas e os limites documentados nesta parte.",
               "apoios": [
@@ -40487,13 +40487,13 @@
         },
         {
           "caminho": "seccoes[4].conteudo[0].paragrafo[0]",
-          "pt": "Ao leitor: a apreciação da UTAO está a um toque em cada número desta página, e lê-se antes das intervenções do debate. Ao Ministério das Finanças: publicar a base da estimativa dos ",
-          "en": "To the reader: the UTAO's appraisal is one tap away from every number on this page, and it is worth reading before the speeches. To the Finance Ministry: publish the basis of the ",
+          "pt": "Ao leitor: a apreciação da UTAO está ligada a cada número desta página, e lê-se antes das intervenções do debate. Ao Ministério das Finanças: publicar a base da estimativa dos ",
+          "en": "To the reader: the UTAO's appraisal is linked from every number on this page, and it is worth reading before the speeches. To the Finance Ministry: publish the basis of the ",
           "ramo": null,
           "partes": [
             {
-              "pt": "Ao leitor: a apreciação da UTAO está a um toque em cada número desta página, e lê-se antes das intervenções do debate. Ao Ministério das Finanças: publicar a base da estimativa dos ",
-              "en": "To the reader: the UTAO's appraisal is one tap away from every number on this page, and it is worth reading before the speeches. To the Finance Ministry: publish the basis of the ",
+              "pt": "Ao leitor: a apreciação da UTAO está ligada a cada número desta página, e lê-se antes das intervenções do debate. Ao Ministério das Finanças: publicar a base da estimativa dos ",
+              "en": "To the reader: the UTAO's appraisal is linked from every number on this page, and it is worth reading before the speeches. To the Finance Ministry: publish the basis of the ",
               "classe": "leitura",
               "sobre": "Leitura do lugar de direção sobre as afirmações, as contas e os limites documentados nesta parte.",
               "apoios": [

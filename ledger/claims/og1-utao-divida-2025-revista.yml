@@ -9,12 +9,6 @@ id: "og1-utao-divida-2025-revista"
 value: "89,2"
 unit: "% do PIB"
 
-# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
-# e onde nele foi lido. Escrito pelo motor, nunca à mão.
-name: "divida-2025-revista"
-name_source: "§76; p. 44 PDF (43 impressa)"
-status: "selado; leitura a frio pendente"
-
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "UTAO"
 document:
