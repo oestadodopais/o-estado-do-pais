@@ -83,7 +83,10 @@ jobs:
     # build 12 m 25 s, verify 9 m 54 s com check:alvos, check:indice e check:moldura)
     # contra os 30 de teto, medido pelo construtor do F1.1b; 62 segundos de folga
     # não são folga. O teto sobe; o que entra no verify a seguir mede o seu custo.
-    timeout-minutes: 45
+    # 26.10.2026 (§1.205): a corrida do ramo do CR2 levou 44 min 15 s e a de main sobre o mesmo
+    # commit 46 min, cancelada pelo teto de 45; o teto sobe para 90, com a mesma lista de
+    # conferências, e a GARGALOS mede o que fazer com o tempo (os passos em paralelo).
+    timeout-minutes: 90
     steps:
       # `fetch-depth: 0` E NÃO A CÓPIA RASA (bloco F1.4, segunda passagem,
       # 04.09.2026). A data de publicação de cada edição de um trabalho é o dia
