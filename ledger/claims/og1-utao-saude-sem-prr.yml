@@ -12,7 +12,7 @@ unit: "%"
 # O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "Saúde"
-name_source: "Saúde"
+name_source: "p. 39 PDF (38 impressa); Tabela 14; Saúde; coluna POE/2027 face a Est/2026, sem PRR"
 status: "selado; leitura a frio pendente"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.

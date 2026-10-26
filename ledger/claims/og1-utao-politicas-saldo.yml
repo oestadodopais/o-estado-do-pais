@@ -12,7 +12,7 @@ unit: "milhões de euros"
 # O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "Impacto Total no Saldo Orçamental"
-name_source: "Impacto Total no Saldo Orçamental"
+name_source: "p. 21 PDF (20 impressa); Tabela 8; 3.=(1-2); coluna POE/2027, M€"
 status: "selado; leitura a frio pendente"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.

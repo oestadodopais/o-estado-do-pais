@@ -594,6 +594,133 @@
       "pontos_semana_percentagem_depois": 20.0,
       "pontos_semana_diferenca": 3.0,
       "nota": "medido pelo lançador, fora da passagem; as 92 chamadas pela resposta final do construtor"
+    },
+    {
+      "passagem": "OG1-A10",
+      "modelo": "Claude Fable 5.1, o lugar de direção, por guião (nenhum construtor lançado)",
+      "fonte": "os registos da sessão (.claude/sessao-2026-10-26/CONFERIR-og1a-2026-10-26.log, CONFERENCIAS-og1-a10-2026-10-26.log, GATE-og1-a10-2026-10-26.log) e o resumo da corrida inteira em _aterragens/og1a-conferir-2026-10-26/resumo.json",
+      "corridas_conferencias": 17,
+      "geracoes": 3,
+      "corridas_inteiras": 1,
+      "capturas": 0,
+      "chamadas_ferramentas_ate_relatorio": null,
+      "criterio_chamadas": "As chamadas e os símbolos do lugar de direção não se medem por passagem; o uso da sessão lê-se no fecho pelo uso.py.",
+      "turnos": null,
+      "entrada": null,
+      "saida": null,
+      "pontos": 0.0,
+      "tokens_used": null,
+      "ausencias": "Sem construtor nem leitor nesta passagem até à leitura curta; os pontos do Codex não se moveram (0,0).",
+      "o_que": "A corrida inteira do verify na cabeça 46dab82c2 (1 702 s) deu quatro vermelhos que as passagens A a A9 não tinham corrido: check:indice (I1: três linhas de tabela da UTAO com o rótulo no lugar do localizador), check:rotulos (as 33 linhas sem conjunto do livro), check:indice-do-sitio (I7: a porta da discussão abaixo de «O que mudou» repetia o destino da entrada de «O país») e check:lugar (L1: 3 404 páginas contra o teto 3 336). Corrigidos nesta passagem: o gerador do motor escreve name_source do localizador selado (624b651, gate PASS em 806 s), as três linhas reexportadas com as provas; a forma «OG1, rótulo da linha nas tabelas da UTAO» na lista fechada da I1 com a conferência da página e do rótulo e sete plantas por linha; o conjunto og1a (33) nos blocos do livro; a I7 conta só as entradas do índice (a porta da discussão não é uma entrada; a I1 continua a exigir que resolva); o teto da L1 sobe para 3 404 com a medição medir-l1-og1a.mjs (a base lida do dist de main aa4ef6627, as 68 páginas novas e as 16 agravadas justificadas, sete plantas).",
+      "corridas": [
+        {
+          "nome": "corrida inteira do verify (conferir-tudo --sem-build, cabeça 46dab82c2)",
+          "codigo": 1,
+          "duracao_segundos": 1702,
+          "comando": [
+            "sh",
+            "scripts/leituras/conferir-tudo.sh",
+            "<worktree>",
+            "<saida>",
+            "--sem-build"
+          ]
+        },
+        {
+          "nome": "gate do motor (624b651)",
+          "codigo": 0,
+          "duracao_segundos": 806,
+          "comando": [
+            "python3",
+            "-m",
+            "core.gate"
+          ]
+        },
+        {
+          "nome": "ensaio do gerador OG1 (106 conferências)",
+          "codigo": 0,
+          "duracao_segundos": null,
+          "comando": [
+            "python3",
+            "-m",
+            "publisher.oe2027_generalidade_test"
+          ]
+        },
+        {
+          "nome": "exportador og1a, ensaio e escrita (33 linhas)",
+          "codigo": 0,
+          "duracao_segundos": null,
+          "comando": [
+            "python3",
+            "-m",
+            "publisher.export_site_rows",
+            "--manifest",
+            "publisher/manifest.og1a.json",
+            "--site",
+            "<worktree>",
+            "--write"
+          ]
+        },
+        {
+          "nome": "check:indice",
+          "codigo": 0,
+          "duracao_segundos": 30,
+          "comando": [
+            "npm",
+            "run",
+            "check:indice"
+          ]
+        },
+        {
+          "nome": "check:rotulos",
+          "codigo": 0,
+          "duracao_segundos": 6,
+          "comando": [
+            "npm",
+            "run",
+            "check:rotulos"
+          ]
+        },
+        {
+          "nome": "check:indice-do-sitio (segunda corrida)",
+          "codigo": 0,
+          "duracao_segundos": 21,
+          "comando": [
+            "npm",
+            "run",
+            "check:indice-do-sitio"
+          ]
+        },
+        {
+          "nome": "check:lugar (quarta corrida, teto 3 404)",
+          "codigo": 0,
+          "duracao_segundos": 40,
+          "comando": [
+            "npm",
+            "run",
+            "check:lugar"
+          ]
+        },
+        {
+          "nome": "medição da L1 (base em main aa4ef6627 e a cabeça; cinco corridas da régua com AMOSTRA=5000)",
+          "codigo": 0,
+          "duracao_segundos": null,
+          "comando": [
+            "node",
+            "design/especime-v3/medicoes/og1-a-2026-10-26/medir-l1-og1a.mjs",
+            "--escrever"
+          ]
+        },
+        {
+          "nome": "ledger:check, check:registo, check:discussao, check:lingua, typecheck, check:cruzamento --with-origin",
+          "codigo": 0,
+          "duracao_segundos": 57,
+          "comando": [
+            "npm",
+            "run",
+            "<cada um>"
+          ]
+        }
+      ]
     }
   ],
   "nota": "As contagens do lançador e as chamadas de ferramentas são medidas diferentes e não se substituem."

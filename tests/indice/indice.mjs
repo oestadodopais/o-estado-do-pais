@@ -140,11 +140,17 @@ export function resolve(caminho, existe = (f) => fs.existsSync(f) && fs.statSync
 /** As portas do corpo de uma página do índice, com as dispensas da L1 e sem as da lista das mudanças. */
 function portasDoIndice(doc, lang) {
   const main = doc.querySelector('main');
-  if (!main) return { portas: [], seccoes: [], todas: [] };
+  if (!main) return { portas: [], seccoes: [], todas: [], entradas: [] };
   const dispensada = (a) => a.closest('[data-rotulo-ia="topo"]') !== null;
   const todas = main.querySelectorAll('a[href]').filter((a) => !dispensada(a));
-  const portas = todas.filter((a) => a.closest('[data-mudou-ambito]') === null);
-  return { portas, todas, seccoes: main.querySelectorAll('[data-indice-seccao]').map((s) => s.getAttribute('data-indice-seccao')) };
+  // AS ENTRADAS DO ÍNDICE são tudo menos as portas da discussão («O que se discute sobre isto →»,
+  // `[data-discussao-integracao]`), que nascem das linhas que a página imprime, como a lista das mudanças, e
+  // não são entradas: a primeira vez que «O que mudou» listou linhas de um item (o Orçamento de 2027,
+  // 26.10.2026) a porta repetiu o destino da entrada de «O país». A I1 continua a exigir que a porta resolva
+  // (`todas`), e a I7 continua a recusar duas ENTRADAS para o mesmo destino (`entradas`).
+  const entradas = todas.filter((a) => a.closest('[data-discussao-integracao]') === null);
+  const portas = entradas.filter((a) => a.closest('[data-mudou-ambito]') === null);
+  return { portas, todas, entradas, seccoes: main.querySelectorAll('[data-indice-seccao]').map((s) => s.getAttribute('data-indice-seccao')) };
 }
 
 /** Os caminhos do mapa do sítio construído. */
@@ -205,7 +211,7 @@ export function conferirIndice({ indice, mapa, paginas, existe, lerPagina = ler 
     const cru = indice[lang];
     if (!cru) { erros.push(`I0 ${lang}: a página do índice ${proprio} não foi construída.`); continue; }
     const doc = parse(cru);
-    const { portas, todas, seccoes } = portasDoIndice(doc, lang);
+    const { portas, todas, entradas, seccoes } = portasDoIndice(doc, lang);
     const destinos = portas.map((a) => destino(a.getAttribute('href')));
     const noIndice = new Set(destinos);
     contas[lang] = { portas: portas.length, destinos: noIndice.size, seccoes };
@@ -380,8 +386,8 @@ export function conferirIndice({ indice, mapa, paginas, existe, lerPagina = ler 
     }
     contas[lang].mudou = lidas.length;
 
-    /* I7 · nenhum destino repetido no corpo. */
-    const todasOsDestinos = todas.map((x) => destino(x.getAttribute('href')));
+    /* I7 · nenhum destino repetido no corpo (entre as entradas: a porta da discussão não é uma entrada). */
+    const todasOsDestinos = entradas.map((x) => destino(x.getAttribute('href')));
     const repetidos = [...new Set(todasOsDestinos.filter((d, i) => todasOsDestinos.indexOf(d) !== i))];
     if (repetidos.length) erros.push(`I7 ${lang}: ${repetidos.length} destino(s) repetido(s) no corpo do índice, por exemplo ${repetidos.slice(0, 3).join(', ')}.`);
   }

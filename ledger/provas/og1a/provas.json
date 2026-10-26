@@ -1198,7 +1198,7 @@
       "unit": "milhões de euros",
       "period": "2027",
       "name": "Impacto Total no Saldo Orçamental",
-      "name_source": "Impacto Total no Saldo Orçamental",
+      "name_source": "p. 21 PDF (20 impressa); Tabela 8; 3.=(1-2); coluna POE/2027, M€",
       "locator": "p. 21 PDF (20 impressa); Tabela 8; 3.=(1-2); coluna POE/2027, M€",
       "excerpt": "3.=(1-2) Impacto Total no Saldo Orçamental -4783 -1,40 -5 411 -1,59",
       "document": {
@@ -1264,7 +1264,7 @@
       "unit": "%",
       "period": "2027",
       "name": "Saúde",
-      "name_source": "Saúde",
+      "name_source": "p. 39 PDF (38 impressa); Tabela 14; Saúde; coluna POE/2027 face a Est/2026",
       "locator": "p. 39 PDF (38 impressa); Tabela 14; Saúde; coluna POE/2027 face a Est/2026",
       "excerpt": "Saúde 17 190 18 062 17 803 16,6 5,1 5,3 -1,4 3,0",
       "document": {
@@ -1330,7 +1330,7 @@
       "unit": "%",
       "period": "2027",
       "name": "Saúde",
-      "name_source": "Saúde",
+      "name_source": "p. 39 PDF (38 impressa); Tabela 14; Saúde; coluna POE/2027 face a Est/2026, sem PRR",
       "locator": "p. 39 PDF (38 impressa); Tabela 14; Saúde; coluna POE/2027 face a Est/2026, sem PRR",
       "excerpt": "Saúde 17 190 18 062 17 803 16,6 5,1 5,3 -1,4 3,0",
       "document": {

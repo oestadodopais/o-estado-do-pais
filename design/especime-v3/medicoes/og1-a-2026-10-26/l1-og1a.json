@@ -1,0 +1,471 @@
+{
+  "comando": "AMOSTRA=5000 node scripts/check-lugar.mjs",
+  "base": {
+    "worktree_commit": "aa4ef66276af3fc20bfeceaca7c430a82ec88e83",
+    "paginas": 3336,
+    "teto": 3336
+  },
+  "contagens": {
+    "estudos": 3404,
+    "antigas": 3336,
+    "novas": 68,
+    "recibos": 66,
+    "indice": 2,
+    "agravadas": 16
+  },
+  "agravadas": {
+    "/en/explainers/dinheiro-do-estado-2026": {
+      "antes": 16,
+      "agora": 17,
+      "razao": "a segunda porta da discussão"
+    },
+    "/en/ledger/afirmacao-leitao-amaro-saude-oe2027-2026-10-09": {
+      "antes": 2,
+      "agora": 3,
+      "razao": "a segunda porta da discussão"
+    },
+    "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-2027": {
+      "antes": 1,
+      "agora": 2,
+      "razao": "a segunda porta da discussão"
+    },
+    "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026": {
+      "antes": 1,
+      "agora": 2,
+      "razao": "a segunda porta da discussão"
+    },
+    "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027": {
+      "antes": 1,
+      "agora": 2,
+      "razao": "a segunda porta da discussão"
+    },
+    "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao": {
+      "antes": 1,
+      "agora": 2,
+      "razao": "a segunda porta da discussão"
+    },
+    "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-variacao": {
+      "antes": 1,
+      "agora": 2,
+      "razao": "a segunda porta da discussão"
+    },
+    "/en/under-discussion": {
+      "antes": 77,
+      "agora": 97,
+      "razao": "o artigo do item acrescenta 20 destinos repetidos"
+    },
+    "/explicacoes/dinheiro-do-estado-2026": {
+      "antes": 16,
+      "agora": 17,
+      "razao": "a segunda porta da discussão"
+    },
+    "/livro-razao/afirmacao-leitao-amaro-saude-oe2027-2026-10-09": {
+      "antes": 2,
+      "agora": 3,
+      "razao": "a segunda porta da discussão"
+    },
+    "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-2027": {
+      "antes": 1,
+      "agora": 2,
+      "razao": "a segunda porta da discussão"
+    },
+    "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026": {
+      "antes": 1,
+      "agora": 2,
+      "razao": "a segunda porta da discussão"
+    },
+    "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027": {
+      "antes": 1,
+      "agora": 2,
+      "razao": "a segunda porta da discussão"
+    },
+    "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao": {
+      "antes": 1,
+      "agora": 2,
+      "razao": "a segunda porta da discussão"
+    },
+    "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-variacao": {
+      "antes": 1,
+      "agora": 2,
+      "razao": "a segunda porta da discussão"
+    },
+    "/o-que-se-discute": {
+      "antes": 77,
+      "agora": 97,
+      "razao": "o artigo do item acrescenta 20 destinos repetidos"
+    }
+  },
+  "novas": {
+    "/en/index": {
+      "destinos": 1,
+      "exemplo": "/en/under-discussion",
+      "vezes": 2
+    },
+    "/en/ledger/og1-be-voto": {
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2
+    },
+    "/en/ledger/og1-governo-eco-juros": {
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2
+    },
+    "/en/ledger/og1-governo-observador-saldo": {
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2
+    },
+    "/en/ledger/og1-governo-rtp-combustiveis": {
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2
+    },
+    "/en/ledger/og1-governo-rtp-habitacao": {
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2
+    },
+    "/en/ledger/og1-governo-rtp-previsoes": {
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2
+    },
+    "/en/ledger/og1-il-prioridades": {
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2
+    },
+    "/en/ledger/og1-livre-posicao": {
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2
+    },
+    "/en/ledger/og1-pcp-comite": {
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2
+    },
+    "/en/ledger/og1-pcp-raimundo": {
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2
+    },
+    "/en/ledger/og1-ps-abstencao": {
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2
+    },
+    "/en/ledger/og1-utao-brent-contratos-2027": {
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2
+    },
+    "/en/ledger/og1-utao-brent-diferenca": {
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2
+    },
+    "/en/ledger/og1-utao-brent-mf-2027": {
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2
+    },
+    "/en/ledger/og1-utao-despesa-liquida-ce": {
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2
+    },
+    "/en/ledger/og1-utao-despesa-liquida-limiar": {
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2
+    },
+    "/en/ledger/og1-utao-despesa-liquida-mf-antes": {
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2
+    },
+    "/en/ledger/og1-utao-despesa-liquida-mf-defesa": {
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2
+    },
+    "/en/ledger/og1-utao-divida-2025-revista": {
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2
+    },
+    "/en/ledger/og1-utao-juros-montante": {
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2
+    },
+    "/en/ledger/og1-utao-juros-variacao": {
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2
+    },
+    "/en/ledger/og1-utao-novas-saldo": {
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2
+    },
+    "/en/ledger/og1-utao-p15": {
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2
+    },
+    "/en/ledger/og1-utao-p42": {
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2
+    },
+    "/en/ledger/og1-utao-pib-2026": {
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2
+    },
+    "/en/ledger/og1-utao-politicas-peso": {
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2
+    },
+    "/en/ledger/og1-utao-politicas-saldo": {
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2
+    },
+    "/en/ledger/og1-utao-saldo-2026": {
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2
+    },
+    "/en/ledger/og1-utao-saldo-me-2027": {
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2
+    },
+    "/en/ledger/og1-utao-saude-sem-prr": {
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2
+    },
+    "/en/ledger/og1-utao-saude-variacao": {
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2
+    },
+    "/en/ledger/og1-utao-taxa-implicita-2026": {
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2
+    },
+    "/en/ledger/og1-utao-taxa-implicita-2027": {
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2
+    },
+    "/indice": {
+      "destinos": 1,
+      "exemplo": "/o-que-se-discute",
+      "vezes": 2
+    },
+    "/livro-razao/og1-be-voto": {
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2
+    },
+    "/livro-razao/og1-governo-eco-juros": {
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2
+    },
+    "/livro-razao/og1-governo-observador-saldo": {
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2
+    },
+    "/livro-razao/og1-governo-rtp-combustiveis": {
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2
+    },
+    "/livro-razao/og1-governo-rtp-habitacao": {
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2
+    },
+    "/livro-razao/og1-governo-rtp-previsoes": {
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2
+    },
+    "/livro-razao/og1-il-prioridades": {
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2
+    },
+    "/livro-razao/og1-livre-posicao": {
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2
+    },
+    "/livro-razao/og1-pcp-comite": {
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2
+    },
+    "/livro-razao/og1-pcp-raimundo": {
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2
+    },
+    "/livro-razao/og1-ps-abstencao": {
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2
+    },
+    "/livro-razao/og1-utao-brent-contratos-2027": {
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2
+    },
+    "/livro-razao/og1-utao-brent-diferenca": {
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2
+    },
+    "/livro-razao/og1-utao-brent-mf-2027": {
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2
+    },
+    "/livro-razao/og1-utao-despesa-liquida-ce": {
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2
+    },
+    "/livro-razao/og1-utao-despesa-liquida-limiar": {
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2
+    },
+    "/livro-razao/og1-utao-despesa-liquida-mf-antes": {
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2
+    },
+    "/livro-razao/og1-utao-despesa-liquida-mf-defesa": {
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2
+    },
+    "/livro-razao/og1-utao-divida-2025-revista": {
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2
+    },
+    "/livro-razao/og1-utao-juros-montante": {
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2
+    },
+    "/livro-razao/og1-utao-juros-variacao": {
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2
+    },
+    "/livro-razao/og1-utao-novas-saldo": {
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2
+    },
+    "/livro-razao/og1-utao-p15": {
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2
+    },
+    "/livro-razao/og1-utao-p42": {
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2
+    },
+    "/livro-razao/og1-utao-pib-2026": {
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2
+    },
+    "/livro-razao/og1-utao-politicas-peso": {
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2
+    },
+    "/livro-razao/og1-utao-politicas-saldo": {
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2
+    },
+    "/livro-razao/og1-utao-saldo-2026": {
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2
+    },
+    "/livro-razao/og1-utao-saldo-me-2027": {
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2
+    },
+    "/livro-razao/og1-utao-saude-sem-prr": {
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2
+    },
+    "/livro-razao/og1-utao-saude-variacao": {
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2
+    },
+    "/livro-razao/og1-utao-taxa-implicita-2026": {
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2
+    },
+    "/livro-razao/og1-utao-taxa-implicita-2027": {
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2
+    }
+  },
+  "plantas": [
+    {
+      "nome": "página do item retirada",
+      "mordeu": true
+    },
+    {
+      "nome": "página antiga retirada",
+      "mordeu": true
+    },
+    {
+      "nome": "página alheia acrescentada",
+      "mordeu": true
+    },
+    {
+      "nome": "página antiga sem a porta do item agravada",
+      "mordeu": true
+    },
+    {
+      "nome": "página com a porta agravada em dois destinos",
+      "mordeu": true
+    },
+    {
+      "nome": "página do item agravada além do seu artigo",
+      "mordeu": true
+    },
+    {
+      "nome": "contagem diferente da régua",
+      "mordeu": true
+    }
+  ],
+  "razao": "A L1 da cabeça da fase A enumera exatamente as 3336 páginas da base (main aa4ef6627, o dist/ da aterragem dos registos de 26.10.2026) mais 68 páginas novas: os 66 recibos das 33 linhas do item do Orçamento de 2027 nas duas edições (o par que todos os recibos trazem, a porta do Método no rótulo e no recibo) e as duas páginas do índice, onde «O que mudou» lista pela primeira vez linhas de um item e a porta da discussão abaixo da lista é a segunda porta para a página do item. As duas páginas do item já estavam na base. Nenhuma página antiga entrou ou saiu; as 16 páginas antigas que passaram a ter um destino repetido a mais («agravadas») são as que já tinham a porta do item da Saúde e ganharam a do item do Orçamento (duas portas para duas âncoras da mesma página) e as duas páginas do item, que crescem exatamente pelo que o artigo novo repete; nenhuma piorou por outra razão. O horizonte continua a zero."
+}

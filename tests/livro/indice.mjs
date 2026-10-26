@@ -347,6 +347,17 @@ const LOCALIZADORES_CONHECIDOS = [
     confere: localizadorNatoConfere,
   },
   { nome: 'compromissos e cimeira na página HTML da NATO', forma: /^(?:2014 Wales Summit|The 5% Hague defence commitment|Core defence requirements)$/, onde: 'publisher/ex3.py: excertos literais da página alojada da NATO', confere: localizadorCompromissoNatoConfere },
+  {
+    // OG1-A (26.10.2026): os rótulos das linhas das tabelas do relatório da UTAO n.º 17/2026 sobre a
+    // POE/2027. O localizador diz a página do PDF (e a impressa), a tabela, a linha como a tabela a
+    // identifica (o rótulo, ou o código da linha quando a tabela o imprime à frente do rótulo) e a
+    // coluna. A conferência exige a página do documento da linha e o rótulo que a linha traz; a única
+    // linha com código está declarada pelo identificador em `localizadorOg1Confere`.
+    nome: 'OG1, rótulo da linha nas tabelas da UTAO',
+    forma: /^p\. \d+ PDF \(\d+ impressa\); Tabela \d+; .+; coluna .+$/,
+    onde: 'publisher/oe2027_generalidade.py: rótulo da linha nas tabelas do relatório da UTAO n.º 17/2026 (OG1-A)',
+    confere: localizadorOg1Confere,
+  },
 ];
 
 /** V2-a: identidade, rótulo, período, página e coluna lidos nas fontes alojadas.
@@ -407,6 +418,20 @@ function localizadorV2aConfere(onde, linha) {
 }
 
 /** @param {string} onde @param {ContextoDoLocalizador} [linha] */
+/** OG1-A: o localizador de um rótulo de tabela da UTAO confere com a linha que o traz (página, título, rótulo). */
+function localizadorOg1Confere(onde, linha) {
+  if (!linha || typeof linha.id !== 'string' || !linha.id.startsWith('og1-utao-') || typeof linha.name !== 'string') return false;
+  const d = linha.document;
+  if (!d || d.kind !== 'pdf' || d.locator !== onde ||
+    d.title !== 'Relatório UTAO n.º 17/2026: Apreciação preliminar da Proposta de Orçamento do Estado para 2027') return false;
+  const m = /^p\. (\d+) PDF \(\d+ impressa\); Tabela \d+; (.+); coluna .+$/.exec(onde);
+  if (!m || Number(m[1]) !== d.page) return false;
+  // A Tabela 8 imprime o código da linha à frente do rótulo; a linha total é a única que o localizador nomeia pelo código.
+  const comCodigo = { 'og1-utao-politicas-saldo': ['3.=(1-2)', 'Impacto Total no Saldo Orçamental'] };
+  const codigo = comCodigo[linha.id];
+  return codigo ? m[2] === codigo[0] && linha.name === codigo[1] : m[2] === linha.name;
+}
+
 function localizadorJd1Confere(onde, linha) {
   if (!linha || typeof linha.id !== 'string') return false;
   const id = linha.id, d = linha.document;
@@ -2056,6 +2081,22 @@ function provaLocalizadores() {
       }
     }
     console.log(`HB1: ${Object.keys(PROVAS_HB1_ROTULOS).length} rótulos com ${plantasHb1} plantas de origem.`);
+    const og1 = [...LINHAS_DA_REGUA.values()].filter(l => typeof l.id === 'string' && l.id.startsWith('og1-utao-') && typeof l.name === 'string');
+    if (!og1.length) falhas.push('OG1: nenhum rótulo de tabela da UTAO para conferir');
+    let plantasOg1 = 0;
+    for (const original of og1) {
+      if (!localizadorOg1Confere(original.name_source, original)) falhas.push(`OG1: rótulo válido recusado em ${original.id}`);
+      for (const [campo, mudar] of [
+        ['rótulo', l => l.name += ' alterado'], ['origem', l => l.name_source = 'origem desconhecida'],
+        ['localizador', l => l.name_source += ' alterado'], ['coordenada', l => l.document.locator += ' alterado'],
+        ['página', l => l.document.page = (l.document.page ?? 0) + 1], ['título', l => l.document.title += ' alterado'],
+        ['identidade', l => l.id = 'outra-linha'],
+      ]) {
+        const l = structuredClone(original); mudar(l); plantasOg1++;
+        if (localizadorConhecido(l.name_source, l)) falhas.push(`OG1: planta de ${campo} passou em ${original.id}`);
+      }
+    }
+    console.log(`OG1: ${og1.length} rótulos de tabela da UTAO com ${plantasOg1} plantas de origem.`);
     for(const id of ['nato-defesa-portugal-pib-2024','nato-defesa-portugal-pib-2025','nato-defesa-portugal-pib-2026','nato-defesa-portugal-eur-2026']) {
       const original=LINHAS_DA_REGUA.get(id);
       if (!localizadorNatoConfere(original.name_source,original)) falhas.push('EX3: cabeçalho válido recusado');
