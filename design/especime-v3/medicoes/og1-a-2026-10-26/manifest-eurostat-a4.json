@@ -1,0 +1,27 @@
+{
+  "site_ledger_dir": "ledger/claims",
+  "site_record": "ledger/cruzamentos/og1a4-eurostat.json",
+  "rows": [
+    {
+      "rh_study": "30 Orcamento 2027 Generalidade",
+      "rh_id": "og1-eurostat-portugal-2025",
+      "site_id": "og1-eurostat-portugal-2025",
+      "study": "oe-2027",
+      "unit": "texto",
+      "reference_date": "2026-10-21",
+      "value_mode": "rh_value",
+      "source": "Eurostat",
+      "document": {
+        "title": "Euro area government deficit at 3.0% and EU at 3.1% of GDP",
+        "locator": "Corpo da página; excerto localizado por texto",
+        "source_sha256": "7077cd8c3258184e4c1244998718b396106681479531dd2c1da3d6088d92cd52",
+        "kind": "html",
+        "edition": "2026-10-21"
+      },
+      "excerpt_override": "Portugal GDP mp (million euro) 243 957 270 353 291 153 308 538 Government deficit (-) / surplus (+) (million euro) -757 3 030 2 107 2 045 (% of GDP) -0.3 1.1 0.7 0.7 Government expenditure (% of GDP) 43.9 42.0 42.2 42.3 Government revenue (% of GDP) 43.6 43.2 42.9 43.0 Government debt (million euro) 271 358 261 889 270 859 275 075 (% of GDP) 111.2 96.9 93.0 89.2 memo: intergovernmental lending (million euro) 953 852 701 602 (% of GDP) 0.4 0.3 0.2 0.2",
+      "locator_from": "ledger.json",
+      "texto_documental": true
+    }
+  ],
+  "excluded": []
+}

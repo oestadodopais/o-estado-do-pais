@@ -1,3 +1,47 @@
+# OG1-A4
+
+A fase A continua por construir. A paragem desta passagem é uma recusa de proveniência na tentativa de sustentar a data da revisão do Eurostat, na primeira frase de «O que as fontes dizem». A linha `og1-eurostat-portugal-2025` existe no motor, mas não declara uma entidade publicadora que o exportador reconheça. O ensaio isolado, sem escrita e com `source: Eurostat`, devolveu:
+
+> og1-eurostat-portugal-2025: source 'Eurostat' names no entity the engine row stands behind (none)
+
+O §2 do mandato original inclui uma régua que protege uma fonte entre as paragens. Esta recusa não é a forma de uma atribuição já presente: falta a declaração da entidade no motor. Não se acrescentou uma atribuição à pesquisa nem se mudou a régua. Esta constatação limita-se ao caminho de exportação ensaiado; não prova que não exista outra forma de sustentar a data.
+
+## O que correu e o erro do construtor
+
+A separação em onze parágrafos da OG1-A4 não foi recusada nem implementada. A leitura do mecanismo mostrou ainda a necessidade de ligar datas e fragmentos aos seus campos. A seleção anterior tinha quarenta e três linhas e não incluía `og1-utao-saude-programa`, expressamente pedida na OG1-A3. Foi preparada uma seleção com essa linha e, para as datas, duas linhas auxiliares, `og1-agenda-votacoes-28` e `og1-eurostat-portugal-2025`.
+
+A primeira tentativa tinha um erro do construtor: o valor por omissão de `source` escreveu «Assembleia da República» na linha do Eurostat. A recusa inicial não demonstra um problema com os valores da pesquisa. O ensaio isolado posterior corrigiu esse campo para «Eurostat» e confirmou que o motor não declara qualquer entidade para essa linha. Não se apresenta a primeira tentativa como prova suficiente da paragem.
+
+Retiradas as duas linhas auxiliares, a seleção principal de quarenta e quatro linhas atravessou com código zero. A ligação das provas ao exportador também foi ensaiada. Essa escrita ocorreu antes do ensaio isolado final. Depois da recusa de proveniência, todas as quarenta e quatro linhas, os dois registos de travessia e a prova criados no sítio foram retirados. As quatro alterações do motor foram repostas byte a byte na cabeça inicial. Não fica uma exportação incompleta apresentada como entrega verificada. Os identificadores da travessia retirada estão em `medidas-a4.json`.
+
+## Códigos
+
+| Corrida | Código |
+| --- | --- |
+| Preparação da seleção ampliada, `preparar-a4` | 0 |
+| Travessia ampliada, `travessia-ampliada-a4` | 1 |
+| Preparação da seleção principal, `preparar-44-a4` | 0 |
+| Travessia principal, `travessia-44-a4` | 0, escrita retirada |
+| Ensaio isolado com publicador Eurostat, `eurostat-a4` | 1 |
+
+Três corridas do exportador e duas gerações da seleção. Não correram o ensaio da pesquisa, `build`, `ledger:check`, `check:registo`, `check:discussao`, `check:lugares`, `typecheck`, `check:cruzamento` ou `core.gate`; os códigos são `null`, não sucesso presumido. Nenhuma corrida inteira de portões e nenhuma captura. `manifest-eurostat-a4.json` conserva o pedido isolado sem caminhos locais; pode ser passado ao exportador com `--manifest`, o sítio em `--site` e sem `--write`.
+
+## Item, correções e continuação
+
+Não há terceiro item construído no `dist/`, pelo que não existem seis partes desta passagem para transcrever em português ou inglês. Nenhuma alteração de forma foi aplicada à prosa, frase a frase ou de outro modo. Não há novos nomes, famílias, lugares ou recibos entregues. Não se apresenta a prosa do mandato como saída construída.
+
+As correções anteriores permanecem na cabeça inicial do motor, incluindo o valor 79, com o sinal positivo no excerto, e a frase completa de Paulo Raimundo. A quarta correção continua sem objeto, conforme a OG1-A2. A diferença da Saúde continua resolvida: o item deve usar os 17 803,1 milhões da linha existente, enquanto a linha da UTAO conserva 17 803 milhões. Não houve nova alteração destes conteúdos.
+
+Fica por resolver a proveniência da linha auxiliar do Eurostat ou autorizar outro caminho verificado para a data. Ficam por fazer a travessia definitiva, o item com as seis partes nas duas edições, os nomes, as famílias, os lugares, os recibos, as auditorias, as conferências e a transcrição do `dist/`. A fase B continua prevista para a noite de 28.10.2026, depois do voto; essa promessa ainda não entrou num terceiro item construído.
+
+## Cabeças, commit e custo
+
+Cabeça inicial do sítio: `a8bbcad262a61a4244abc931cb383ccc246a01ba`. Cabeça do motor: `5965102dd460815c92c777d06e3e8f755944cd1b`. O motor não tem alterações desta passagem por comitar. O commit do sítio guarda apenas o relatório, os códigos, os registos sanitizados, o manifesto do ensaio isolado e as medidas.
+
+34 chamadas de ferramentas até esta escrita, incluindo-a. Três corridas de conferências, duas gerações, nenhuma delegação. O commit e a inspeção final entram na contagem final da resposta. `tokens used`: 2510492 no último evento de utilização consultado antes desta escrita; não é a contagem final do lançador. `medidas.json` preserva a medição anterior em `historico_antes_og1_a4`.
+
+---
+
 # OG1-A3
 
 A fase A continua por construir. A paragem desta passagem é a atribuição conjunta da sexta frase de «Como foi dito»: o mandato escreve o nome do ministro uma vez para cinco citações, mas a régua de `tests/discussao/itens.mjs`, linha 112, exige exatamente um token `attributed_to` por afirmação e por língua. O §2 manda parar quando uma régua protege uma pessoa. Não se alterou essa régua nem se repetiu o nome na prosa mandatada para a contornar.
