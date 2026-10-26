@@ -1,0 +1,2 @@
+ALARM   divida-publica-2025-ue: value — revisão da fonte: carimbo 2026-04-22T11:00:00+0200 -> 2026-10-21T11:00:00+0200, valor 81.7 -> 81.5  kind=atualizacao (a fonte foi revista)
+ALARM   divida-publica-2025: value — revisão da fonte: carimbo 2026-04-22T11:00:00+0200 -> 2026-10-21T11:00:00+0200, valor 89.7 -> 89.2  kind=atualizacao (a fonte foi revista)

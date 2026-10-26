@@ -166,5 +166,5 @@ corrections:
     kind: "atualizacao"
     old_value: "23,4"
     new_value: "14,7"
-    reason: "O Eurostat reviu o valor de DK; o carimbo do conjunto passou de 2026-09-17T23:00:00+0200 a 2026-10-20T11:00:00+0200. A releitura de 2026-10-26 confirmou a revisão."
-    reason_en: "Eurostat revised the value for DK; the dataset stamp moved from 2026-09-17T23:00:00+0200 to 2026-10-20T11:00:00+0200. The rereading on 2026-10-26 confirmed the revision."
+    reason: "O Eurostat reviu o valor de Dinamarca de 23,4 para 14,7 na atualização do conjunto de dados de 20.10.2026 (a versão anterior era de 17.09.2026); este projeto releu a fonte a 26.10.2026."
+    reason_en: "Eurostat revised the value for Denmark from 23.4 to 14.7 in the dataset update of 20.10.2026 (the previous version was of 17.09.2026); this project re-read the source on 26.10.2026."

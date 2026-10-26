@@ -1,0 +1,316 @@
+{
+  "revisoes": 29,
+  "series_reexportadas": [
+    "divida-publica-2025-paises",
+    "precos-da-habitacao-2025-paises",
+    "racio-s80-s20-2025-paises",
+    "risco-de-pobreza-ou-exclusao-2025-paises",
+    "sobrecarga-do-custo-da-habitacao-2025-paises",
+    "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises"
+  ],
+  "manifesto": {
+    "ficheiros": 6,
+    "entradas": 6,
+    "sobras": 0,
+    "faltas": 0
+  },
+  "retirados": [
+    "corredor-series-paises/2026-10-26/894d93f0368f930cf4db9b06673a6b6b6b798335a3e286c6012876e127ea3c62/001-desemprego-de-longa-duracao-2025-paises.json",
+    "corredor-series-paises/2026-10-26/f1c492a9017814bc6dd12d6a8b734670c05d717ca72f5aa31c353827e44796fe/003-ihpc-variacao-homologa-paises.json",
+    "corredor-series-paises/2026-10-26/9d13cee1e7c5e117399ab87bb57db7de8701a833f018bb575a1e31b16ffff835/009-taxa-de-desemprego-mip-2025-paises.json",
+    "corredor-series-paises/2026-10-26/e8980462017674c76b20e2fa80ee1f98405886f1ef2446eef57836aa61510115/010-taxa-de-emprego-2025-paises.json"
+  ],
+  "razoes": [
+    {
+      "serie": "divida-publica-2025-paises",
+      "geo": "BE",
+      "date": "2026-10-26",
+      "kind": "atualizacao",
+      "old_value": "107,9",
+      "new_value": "108,1",
+      "reason": "O Eurostat reviu o valor de Bélgica de 107,9 para 108,1 na atualização do conjunto de dados de 21.10.2026 (a versão anterior era de 22.04.2026); este projeto releu a fonte a 26.10.2026.",
+      "reason_en": "Eurostat revised the value for Belgium from 107.9 to 108.1 in the dataset update of 21.10.2026 (the previous version was of 22.04.2026); this project re-read the source on 26.10.2026."
+    },
+    {
+      "serie": "divida-publica-2025-paises",
+      "geo": "CZ",
+      "date": "2026-10-26",
+      "kind": "atualizacao",
+      "old_value": "44,3",
+      "new_value": "44,2",
+      "reason": "O Eurostat reviu o valor de Chéquia de 44,3 para 44,2 na atualização do conjunto de dados de 21.10.2026 (a versão anterior era de 22.04.2026); este projeto releu a fonte a 26.10.2026.",
+      "reason_en": "Eurostat revised the value for Czechia from 44.3 to 44.2 in the dataset update of 21.10.2026 (the previous version was of 22.04.2026); this project re-read the source on 26.10.2026."
+    },
+    {
+      "serie": "divida-publica-2025-paises",
+      "geo": "DK",
+      "date": "2026-10-26",
+      "kind": "atualizacao",
+      "old_value": "27,9",
+      "new_value": "27,2",
+      "reason": "O Eurostat reviu o valor de Dinamarca de 27,9 para 27,2 na atualização do conjunto de dados de 21.10.2026 (a versão anterior era de 22.04.2026); este projeto releu a fonte a 26.10.2026.",
+      "reason_en": "Eurostat revised the value for Denmark from 27.9 to 27.2 in the dataset update of 21.10.2026 (the previous version was of 22.04.2026); this project re-read the source on 26.10.2026."
+    },
+    {
+      "serie": "divida-publica-2025-paises",
+      "geo": "DE",
+      "date": "2026-10-26",
+      "kind": "atualizacao",
+      "old_value": "63,5",
+      "new_value": "62,8",
+      "reason": "O Eurostat reviu o valor de Alemanha de 63,5 para 62,8 na atualização do conjunto de dados de 21.10.2026 (a versão anterior era de 22.04.2026); este projeto releu a fonte a 26.10.2026.",
+      "reason_en": "Eurostat revised the value for Germany from 63.5 to 62.8 in the dataset update of 21.10.2026 (the previous version was of 22.04.2026); this project re-read the source on 26.10.2026."
+    },
+    {
+      "serie": "divida-publica-2025-paises",
+      "geo": "EE",
+      "date": "2026-10-26",
+      "kind": "atualizacao",
+      "old_value": "24,1",
+      "new_value": "24,0",
+      "reason": "O Eurostat reviu o valor de Estónia de 24,1 para 24,0 na atualização do conjunto de dados de 21.10.2026 (a versão anterior era de 22.04.2026); este projeto releu a fonte a 26.10.2026.",
+      "reason_en": "Eurostat revised the value for Estonia from 24.1 to 24.0 in the dataset update of 21.10.2026 (the previous version was of 22.04.2026); this project re-read the source on 26.10.2026."
+    },
+    {
+      "serie": "divida-publica-2025-paises",
+      "geo": "IE",
+      "date": "2026-10-26",
+      "kind": "atualizacao",
+      "old_value": "32,9",
+      "new_value": "34,8",
+      "reason": "O Eurostat reviu o valor de Irlanda de 32,9 para 34,8 na atualização do conjunto de dados de 21.10.2026 (a versão anterior era de 22.04.2026); este projeto releu a fonte a 26.10.2026.",
+      "reason_en": "Eurostat revised the value for Ireland from 32.9 to 34.8 in the dataset update of 21.10.2026 (the previous version was of 22.04.2026); this project re-read the source on 26.10.2026."
+    },
+    {
+      "serie": "divida-publica-2025-paises",
+      "geo": "EL",
+      "date": "2026-10-26",
+      "kind": "atualizacao",
+      "old_value": "146,1",
+      "new_value": "145,4",
+      "reason": "O Eurostat reviu o valor de Grécia de 146,1 para 145,4 na atualização do conjunto de dados de 21.10.2026 (a versão anterior era de 22.04.2026); este projeto releu a fonte a 26.10.2026.",
+      "reason_en": "Eurostat revised the value for Greece from 146.1 to 145.4 in the dataset update of 21.10.2026 (the previous version was of 22.04.2026); this project re-read the source on 26.10.2026."
+    },
+    {
+      "serie": "divida-publica-2025-paises",
+      "geo": "ES",
+      "date": "2026-10-26",
+      "kind": "atualizacao",
+      "old_value": "100,7",
+      "new_value": "100,5",
+      "reason": "O Eurostat reviu o valor de Espanha de 100,7 para 100,5 na atualização do conjunto de dados de 21.10.2026 (a versão anterior era de 22.04.2026); este projeto releu a fonte a 26.10.2026.",
+      "reason_en": "Eurostat revised the value for Spain from 100.7 to 100.5 in the dataset update of 21.10.2026 (the previous version was of 22.04.2026); this project re-read the source on 26.10.2026."
+    },
+    {
+      "serie": "divida-publica-2025-paises",
+      "geo": "FR",
+      "date": "2026-10-26",
+      "kind": "atualizacao",
+      "old_value": "115,6",
+      "new_value": "115,7",
+      "reason": "O Eurostat reviu o valor de França de 115,6 para 115,7 na atualização do conjunto de dados de 21.10.2026 (a versão anterior era de 22.04.2026); este projeto releu a fonte a 26.10.2026.",
+      "reason_en": "Eurostat revised the value for France from 115.6 to 115.7 in the dataset update of 21.10.2026 (the previous version was of 22.04.2026); this project re-read the source on 26.10.2026."
+    },
+    {
+      "serie": "divida-publica-2025-paises",
+      "geo": "HR",
+      "date": "2026-10-26",
+      "kind": "atualizacao",
+      "old_value": "56,3",
+      "new_value": "55,7",
+      "reason": "O Eurostat reviu o valor de Croácia de 56,3 para 55,7 na atualização do conjunto de dados de 21.10.2026 (a versão anterior era de 22.04.2026); este projeto releu a fonte a 26.10.2026.",
+      "reason_en": "Eurostat revised the value for Croatia from 56.3 to 55.7 in the dataset update of 21.10.2026 (the previous version was of 22.04.2026); this project re-read the source on 26.10.2026."
+    },
+    {
+      "serie": "divida-publica-2025-paises",
+      "geo": "IT",
+      "date": "2026-10-26",
+      "kind": "atualizacao",
+      "old_value": "137,1",
+      "new_value": "136,7",
+      "reason": "O Eurostat reviu o valor de Itália de 137,1 para 136,7 na atualização do conjunto de dados de 21.10.2026 (a versão anterior era de 22.04.2026); este projeto releu a fonte a 26.10.2026.",
+      "reason_en": "Eurostat revised the value for Italy from 137.1 to 136.7 in the dataset update of 21.10.2026 (the previous version was of 22.04.2026); this project re-read the source on 26.10.2026."
+    },
+    {
+      "serie": "divida-publica-2025-paises",
+      "geo": "CY",
+      "date": "2026-10-26",
+      "kind": "atualizacao",
+      "old_value": "55,0",
+      "new_value": "52,3",
+      "reason": "O Eurostat reviu o valor de Chipre de 55,0 para 52,3 na atualização do conjunto de dados de 21.10.2026 (a versão anterior era de 22.04.2026); este projeto releu a fonte a 26.10.2026.",
+      "reason_en": "Eurostat revised the value for Cyprus from 55.0 to 52.3 in the dataset update of 21.10.2026 (the previous version was of 22.04.2026); this project re-read the source on 26.10.2026."
+    },
+    {
+      "serie": "divida-publica-2025-paises",
+      "geo": "LV",
+      "date": "2026-10-26",
+      "kind": "atualizacao",
+      "old_value": "46,9",
+      "new_value": "46,2",
+      "reason": "O Eurostat reviu o valor de Letónia de 46,9 para 46,2 na atualização do conjunto de dados de 21.10.2026 (a versão anterior era de 22.04.2026); este projeto releu a fonte a 26.10.2026.",
+      "reason_en": "Eurostat revised the value for Latvia from 46.9 to 46.2 in the dataset update of 21.10.2026 (the previous version was of 22.04.2026); this project re-read the source on 26.10.2026."
+    },
+    {
+      "serie": "divida-publica-2025-paises",
+      "geo": "LT",
+      "date": "2026-10-26",
+      "kind": "atualizacao",
+      "old_value": "39,5",
+      "new_value": "39,3",
+      "reason": "O Eurostat reviu o valor de Lituânia de 39,5 para 39,3 na atualização do conjunto de dados de 21.10.2026 (a versão anterior era de 22.04.2026); este projeto releu a fonte a 26.10.2026.",
+      "reason_en": "Eurostat revised the value for Lithuania from 39.5 to 39.3 in the dataset update of 21.10.2026 (the previous version was of 22.04.2026); this project re-read the source on 26.10.2026."
+    },
+    {
+      "serie": "divida-publica-2025-paises",
+      "geo": "LU",
+      "date": "2026-10-26",
+      "kind": "atualizacao",
+      "old_value": "26,5",
+      "new_value": "26,0",
+      "reason": "O Eurostat reviu o valor de Luxemburgo de 26,5 para 26,0 na atualização do conjunto de dados de 21.10.2026 (a versão anterior era de 22.04.2026); este projeto releu a fonte a 26.10.2026.",
+      "reason_en": "Eurostat revised the value for Luxembourg from 26.5 to 26.0 in the dataset update of 21.10.2026 (the previous version was of 22.04.2026); this project re-read the source on 26.10.2026."
+    },
+    {
+      "serie": "divida-publica-2025-paises",
+      "geo": "HU",
+      "date": "2026-10-26",
+      "kind": "atualizacao",
+      "old_value": "74,6",
+      "new_value": "74,4",
+      "reason": "O Eurostat reviu o valor de Hungria de 74,6 para 74,4 na atualização do conjunto de dados de 21.10.2026 (a versão anterior era de 22.04.2026); este projeto releu a fonte a 26.10.2026.",
+      "reason_en": "Eurostat revised the value for Hungary from 74.6 to 74.4 in the dataset update of 21.10.2026 (the previous version was of 22.04.2026); this project re-read the source on 26.10.2026."
+    },
+    {
+      "serie": "divida-publica-2025-paises",
+      "geo": "MT",
+      "date": "2026-10-26",
+      "kind": "atualizacao",
+      "old_value": "46,4",
+      "new_value": "46,3",
+      "reason": "O Eurostat reviu o valor de Malta de 46,4 para 46,3 na atualização do conjunto de dados de 21.10.2026 (a versão anterior era de 22.04.2026); este projeto releu a fonte a 26.10.2026.",
+      "reason_en": "Eurostat revised the value for Malta from 46.4 to 46.3 in the dataset update of 21.10.2026 (the previous version was of 22.04.2026); this project re-read the source on 26.10.2026."
+    },
+    {
+      "serie": "divida-publica-2025-paises",
+      "geo": "NL",
+      "date": "2026-10-26",
+      "kind": "atualizacao",
+      "old_value": "44,4",
+      "new_value": "44,7",
+      "reason": "O Eurostat reviu o valor de Países Baixos de 44,4 para 44,7 na atualização do conjunto de dados de 21.10.2026 (a versão anterior era de 22.04.2026); este projeto releu a fonte a 26.10.2026.",
+      "reason_en": "Eurostat revised the value for Netherlands from 44.4 to 44.7 in the dataset update of 21.10.2026 (the previous version was of 22.04.2026); this project re-read the source on 26.10.2026."
+    },
+    {
+      "serie": "divida-publica-2025-paises",
+      "geo": "AT",
+      "date": "2026-10-26",
+      "kind": "atualizacao",
+      "old_value": "81,5",
+      "new_value": "80,7",
+      "reason": "O Eurostat reviu o valor de Áustria de 81,5 para 80,7 na atualização do conjunto de dados de 21.10.2026 (a versão anterior era de 22.04.2026); este projeto releu a fonte a 26.10.2026.",
+      "reason_en": "Eurostat revised the value for Austria from 81.5 to 80.7 in the dataset update of 21.10.2026 (the previous version was of 22.04.2026); this project re-read the source on 26.10.2026."
+    },
+    {
+      "serie": "divida-publica-2025-paises",
+      "geo": "PL",
+      "date": "2026-10-26",
+      "kind": "atualizacao",
+      "old_value": "59,7",
+      "new_value": "59,6",
+      "reason": "O Eurostat reviu o valor de Polónia de 59,7 para 59,6 na atualização do conjunto de dados de 21.10.2026 (a versão anterior era de 22.04.2026); este projeto releu a fonte a 26.10.2026.",
+      "reason_en": "Eurostat revised the value for Poland from 59.7 to 59.6 in the dataset update of 21.10.2026 (the previous version was of 22.04.2026); this project re-read the source on 26.10.2026."
+    },
+    {
+      "serie": "divida-publica-2025-paises",
+      "geo": "PT",
+      "date": "2026-10-26",
+      "kind": "atualizacao",
+      "old_value": "89,7",
+      "new_value": "89,2",
+      "reason": "O Eurostat reviu o valor de Portugal de 89,7 para 89,2 na atualização do conjunto de dados de 21.10.2026 (a versão anterior era de 22.04.2026); este projeto releu a fonte a 26.10.2026.",
+      "reason_en": "Eurostat revised the value for Portugal from 89.7 to 89.2 in the dataset update of 21.10.2026 (the previous version was of 22.04.2026); this project re-read the source on 26.10.2026."
+    },
+    {
+      "serie": "divida-publica-2025-paises",
+      "geo": "RO",
+      "date": "2026-10-26",
+      "kind": "atualizacao",
+      "old_value": "59,3",
+      "new_value": "58,9",
+      "reason": "O Eurostat reviu o valor de Roménia de 59,3 para 58,9 na atualização do conjunto de dados de 21.10.2026 (a versão anterior era de 22.04.2026); este projeto releu a fonte a 26.10.2026.",
+      "reason_en": "Eurostat revised the value for Romania from 59.3 to 58.9 in the dataset update of 21.10.2026 (the previous version was of 22.04.2026); this project re-read the source on 26.10.2026."
+    },
+    {
+      "serie": "divida-publica-2025-paises",
+      "geo": "SI",
+      "date": "2026-10-26",
+      "kind": "atualizacao",
+      "old_value": "65,7",
+      "new_value": "65,1",
+      "reason": "O Eurostat reviu o valor de Eslovénia de 65,7 para 65,1 na atualização do conjunto de dados de 21.10.2026 (a versão anterior era de 22.04.2026); este projeto releu a fonte a 26.10.2026.",
+      "reason_en": "Eurostat revised the value for Slovenia from 65.7 to 65.1 in the dataset update of 21.10.2026 (the previous version was of 22.04.2026); this project re-read the source on 26.10.2026."
+    },
+    {
+      "serie": "divida-publica-2025-paises",
+      "geo": "SK",
+      "date": "2026-10-26",
+      "kind": "atualizacao",
+      "old_value": "61,4",
+      "new_value": "60,5",
+      "reason": "O Eurostat reviu o valor de Eslováquia de 61,4 para 60,5 na atualização do conjunto de dados de 21.10.2026 (a versão anterior era de 22.04.2026); este projeto releu a fonte a 26.10.2026.",
+      "reason_en": "Eurostat revised the value for Slovakia from 61.4 to 60.5 in the dataset update of 21.10.2026 (the previous version was of 22.04.2026); this project re-read the source on 26.10.2026."
+    },
+    {
+      "serie": "divida-publica-2025-paises",
+      "geo": "FI",
+      "date": "2026-10-26",
+      "kind": "atualizacao",
+      "old_value": "88,5",
+      "new_value": "88,4",
+      "reason": "O Eurostat reviu o valor de Finlândia de 88,5 para 88,4 na atualização do conjunto de dados de 21.10.2026 (a versão anterior era de 22.04.2026); este projeto releu a fonte a 26.10.2026.",
+      "reason_en": "Eurostat revised the value for Finland from 88.5 to 88.4 in the dataset update of 21.10.2026 (the previous version was of 22.04.2026); this project re-read the source on 26.10.2026."
+    },
+    {
+      "serie": "divida-publica-2025-paises",
+      "geo": "EU27_2020",
+      "date": "2026-10-26",
+      "kind": "atualizacao",
+      "old_value": "81,7",
+      "new_value": "81,5",
+      "reason": "O Eurostat reviu o valor de União Europeia de 81,7 para 81,5 na atualização do conjunto de dados de 21.10.2026 (a versão anterior era de 22.04.2026); este projeto releu a fonte a 26.10.2026.",
+      "reason_en": "Eurostat revised the value for European Union from 81.7 to 81.5 in the dataset update of 21.10.2026 (the previous version was of 22.04.2026); this project re-read the source on 26.10.2026."
+    },
+    {
+      "serie": "precos-da-habitacao-2025-paises",
+      "geo": "AT",
+      "date": "2026-10-26",
+      "kind": "atualizacao",
+      "old_value": "2,6",
+      "new_value": "2,5",
+      "reason": "O Eurostat reviu o valor de Áustria de 2,6 para 2,5 na atualização do conjunto de dados de 01.10.2026 (a versão anterior era de 02.07.2026); este projeto releu a fonte a 26.10.2026.",
+      "reason_en": "Eurostat revised the value for Austria from 2.6 to 2.5 in the dataset update of 01.10.2026 (the previous version was of 02.07.2026); this project re-read the source on 26.10.2026."
+    },
+    {
+      "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
+      "geo": "DK",
+      "date": "2026-10-26",
+      "kind": "atualizacao",
+      "old_value": "23,4",
+      "new_value": "14,7",
+      "reason": "O Eurostat reviu o valor de Dinamarca de 23,4 para 14,7 na atualização do conjunto de dados de 20.10.2026 (a versão anterior era de 17.09.2026); este projeto releu a fonte a 26.10.2026.",
+      "reason_en": "Eurostat revised the value for Denmark from 23.4 to 14.7 in the dataset update of 20.10.2026 (the previous version was of 17.09.2026); this project re-read the source on 26.10.2026."
+    },
+    {
+      "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
+      "geo": "DK",
+      "date": "2026-10-26",
+      "kind": "atualizacao",
+      "old_value": "23,6",
+      "new_value": "23,0",
+      "reason": "O Eurostat reviu o valor de Dinamarca de 23,6 para 23,0 na atualização do conjunto de dados de 20.10.2026 (a versão anterior era de 17.09.2026); este projeto releu a fonte a 26.10.2026.",
+      "reason_en": "Eurostat revised the value for Denmark from 23.6 to 23.0 in the dataset update of 20.10.2026 (the previous version was of 17.09.2026); this project re-read the source on 26.10.2026."
+    }
+  ],
+  "autoridade": "publisher.series_paises.tabela_dos_paises, conferida contra src/data/paises-da-uniao.json"
+}

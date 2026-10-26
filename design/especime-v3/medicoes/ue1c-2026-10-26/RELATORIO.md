@@ -5,7 +5,7 @@
 - **29 valores revistos:** dívida pública, 26 pontos, incluindo Portugal **89,7 → 89,2** e União **81,7 → 81,5**; preços da habitação, AT **2,6 → 2,5**; sobrecarga habitacional, DK **23,4 → 14,7**; inquilinos, DK **23,6 → 23,0**.
 - As duas linhas foram aplicadas, com atualização nos quatro recibos.
 - As oito conferências específicas deram **0**. O build inicial deu **1**; as causas foram corrigidas e conferidas isoladamente, sem repetir o comando inteiro.
-- Corredor: **11 plantas aprovadas**. Repetição sem escrita canónica.
+- Corredor: **11 plantas aprovadas**. A afirmação original «Repetição sem escrita canónica» estava errada: quatro corpos chegaram à fonte através de ligações. A UE1-c-b corrige a cópia e prova a repetição sem alterações canónicas; ver a secção no topo do LEIA-ME.
 
 Frases confirmadas no HTML:
 

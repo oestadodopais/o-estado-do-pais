@@ -1,0 +1,13 @@
+{
+  "comando": [
+    "python3",
+    "-m",
+    "publisher.export_series",
+    "--site",
+    "<worktree>",
+    "--write"
+  ],
+  "pasta": "<motor>",
+  "codigo": 0,
+  "duracao_segundos": 26.073
+}

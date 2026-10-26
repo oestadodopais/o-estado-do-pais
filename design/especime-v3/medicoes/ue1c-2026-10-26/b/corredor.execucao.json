@@ -1,0 +1,10 @@
+{
+  "comando": [
+    "python3",
+    "-m",
+    "publisher.series_paises_corredor_test"
+  ],
+  "pasta": "<motor>",
+  "codigo": 0,
+  "duracao_segundos": 1.536
+}

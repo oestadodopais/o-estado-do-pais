@@ -166,5 +166,5 @@ corrections:
     kind: "atualizacao"
     old_value: "2,6"
     new_value: "2,5"
-    reason: "O Eurostat reviu o valor de AT; o carimbo do conjunto passou de 2026-07-02T11:00:00+0200 a 2026-10-01T11:00:00+0200. A releitura de 2026-10-26 confirmou a revisão."
-    reason_en: "Eurostat revised the value for AT; the dataset stamp moved from 2026-07-02T11:00:00+0200 to 2026-10-01T11:00:00+0200. The rereading on 2026-10-26 confirmed the revision."
+    reason: "O Eurostat reviu o valor de Áustria de 2,6 para 2,5 na atualização do conjunto de dados de 01.10.2026 (a versão anterior era de 02.07.2026); este projeto releu a fonte a 26.10.2026."
+    reason_en: "Eurostat revised the value for Austria from 2.6 to 2.5 in the dataset update of 01.10.2026 (the previous version was of 02.07.2026); this project re-read the source on 26.10.2026."

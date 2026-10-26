@@ -1,5 +1,91 @@
 # UE1-c: releitura das séries por país, 26.10.2026
 
+## UE1-c-b: correção depois da leitura a frio, 26.10.2026
+
+### O leitor e a prova no HTML
+
+As duas linhas da dívida de 2025 dizem agora quando o Eurostat atualizou o conjunto, qual era a versão anterior e quando este projeto releu a fonte. Só mudaram `reason` e `reason_en` das entradas `atualizacao` e `access_date` de 26.10; os valores, as datas, a natureza e os motivos do `excerpt` ficaram intactos. O guião leu os valores e os carimbos das duas linhas ALARM transcritas do §0.3 do mandato em `b/alarmes.txt` e recusa outra forma ou conteúdo. Não é uma nova corrida do painel.
+
+Transcrições dos quatro recibos construídos, com os resumos do HTML em `b/recibos.json`. A medição leu as 12 razões, incluindo os quatro motivos dos excertos preservados:
+
+- `/livro-razao/divida-publica-2025/`:
+
+  > O Eurostat reviu o valor de 89,7 para 89,2 na atualização do conjunto de dados de 21.10.2026 (a versão anterior era de 22.04.2026). A comparação semanal com a fonte de 26.10.2026 encontrou a revisão e este projeto releu a fonte nesse dia; até aí publicava-se o valor da leitura anterior.
+
+  > O valor novo foi lido a 26.10.2026, o dia em que este projeto releu a fonte; a leitura anterior, de 12.08.2026, é a do valor 89,7.
+- `/livro-razao/divida-publica-2025-ue/`:
+
+  > O Eurostat reviu o valor de 81,7 para 81,5 na atualização do conjunto de dados de 21.10.2026 (a versão anterior era de 22.04.2026). A comparação semanal com a fonte de 26.10.2026 encontrou a revisão e este projeto releu a fonte nesse dia; até aí publicava-se o valor da leitura anterior.
+
+  > O valor novo foi lido a 26.10.2026, o dia em que este projeto releu a fonte; a leitura anterior, de 15.09.2026, é a do valor 81,7.
+- `/en/ledger/divida-publica-2025/`:
+
+  > Eurostat revised the value from 89.7 to 89.2 in the dataset update of 21.10.2026 (the previous version was of 22.04.2026). The weekly comparison with the source of 26.10.2026 found the revision and this project re-read the source that day; until then the value of the earlier reading was published.
+
+  > The new value was read on 26.10.2026, the day this project re-read the source; the earlier reading, of 12.08.2026, is that of the value 89,7.
+- `/en/ledger/divida-publica-2025-ue/`:
+
+  > Eurostat revised the value from 81.7 to 81.5 in the dataset update of 21.10.2026 (the previous version was of 22.04.2026). The weekly comparison with the source of 26.10.2026 found the revision and this project re-read the source that day; until then the value of the earlier reading was published.
+
+  > The new value was read on 26.10.2026, the day this project re-read the source; the earlier reading, of 15.09.2026, is that of the value 81,7.
+
+### O motor, o manifesto e a história das séries
+
+`copia_da_fonte` copia agora a árvore de `corredor-series-paises/`, em vez de ligar as pastas de dia. A conferência do manifesto recusa sobras, faltas e corpos com outro sha256. Só o passo final publica corpos das séries que mudaram. O comentário «Só os corpos realmente publicados entram no inventário canónico» era falso na entrega anterior, porque as escritas podiam atravessar as ligações; passa a corresponder ao caminho conferido.
+
+Saíram os quatro corpos sem registo: 001, desemprego de longa duração; 003, IHPC; 009, desemprego MIP; 010, emprego. A correspondência foi lida de `pedidos.jsonl`. Os dez corpos e recibos da corrida continuam intactos. `FETCH.json` e `MANIFEST.sha256` estão byte a byte como na cabeça de partida. A auditoria em `b/auditoria.json` contou **6 ficheiros e 6 entradas do manifesto no corredor, zero sobras, zero faltas**, todos com o sha256 correto. A lista dos seis caminhos e resumos fica nesse ficheiro.
+
+O ensaio do corredor deu **código 0, 14 plantas**: as 11 anteriores, a repetição de dois corpos no mesmo dia (uma medida revista e outra igual), o ficheiro não registado plantado durante a corrida, e o país sem nome. O intruso foi recusado com «ficheiro não registado no manifesto do corredor». O módulo continua em `TEST_MODULES` do `core.gate`; correu individualmente nesta passagem. O `core.gate` inteiro fica para a aterragem, conforme o §1.5. O construtor e exportador passaram 27 conferências e 12 plantas. A repetição adicional dos dez recibos deu zero recusas, zero séries mudadas e zero ficheiros canónicos alterados.
+
+As **29 revisões** foram regeneradas por `comparar` a partir dos corpos anteriores e novos, com os nomes de `publisher.series_paises.tabela_dos_paises`, lidos dos RDF da autoridade dos países do Serviço das Publicações da União Europeia. O guião confirmou a igualdade dos 27 pares de nomes com `src/data/paises-da-uniao.json`, a tabela de `nomeDoPais`. A União usa «União Europeia» e «European Union». Datas e decimais seguem os moldes do mandato. Todas as 29 formas foram conferidas nas duas línguas. Exemplos:
+
+> O Eurostat reviu o valor de Portugal de 89,7 para 89,2 na atualização do conjunto de dados de 21.10.2026 (a versão anterior era de 22.04.2026); este projeto releu a fonte a 26.10.2026.
+
+> Eurostat revised the value for European Union from 81.7 to 81.5 in the dataset update of 21.10.2026 (the previous version was of 22.04.2026); this project re-read the source on 26.10.2026.
+
+As seis séries da entrega foram renderizadas pelo exportador habitual; duas não tinham revisões de valores e conservaram os mesmos bytes. Quatro YAML mudaram. A travessia integral habitual passou depois, com as 35 séries, e atualizou os resumos de `ledger/cruzamentos/series.json`. A VS6 permanece intacta. A emenda autorizada foi precedida pela comparação que só permite mudar as razões. Nenhum ponto, marca, `geo`, `date`, `kind`, `old_value` ou `new_value` mudou. A auditoria confirmou ainda que `indicators/reler_linhas.py` é igual ao de `master`.
+
+### Conferências e limites
+
+| Operação ou conferência | Código | Prova em `b/` |
+|---|---|---|
+| `auditoria` | 0 | [`auditoria.log`](b/auditoria.log), [`auditoria.codigo`](b/auditoria.codigo) |
+| `build` | 0 | [`build.log`](b/build.log), [`build.codigo`](b/build.codigo) |
+| `construtor` | 0 | [`construtor.log`](b/construtor.log), [`construtor.codigo`](b/construtor.codigo) |
+| `corredor` | 0 | [`corredor.log`](b/corredor.log), [`corredor.codigo`](b/corredor.codigo) |
+| `exportar` | 0 | [`exportar.log`](b/exportar.log), [`exportar.codigo`](b/exportar.codigo) |
+| `ledger` | 0 | [`ledger.log`](b/ledger.log), [`ledger.codigo`](b/ledger.codigo) |
+| `palavras` | 0 | [`palavras.log`](b/palavras.log), [`palavras.codigo`](b/palavras.codigo) |
+| `recibos` | 0 | [`recibos.log`](b/recibos.log), [`recibos.codigo`](b/recibos.codigo) |
+| `regenerar` | 0 | [`regenerar.log`](b/regenerar.log), [`regenerar.codigo`](b/regenerar.codigo) |
+| `registo` | 0 | [`registo.log`](b/registo.log), [`registo.codigo`](b/registo.codigo) |
+| `repeticao-corrigida` | 0 | [`repeticao-corrigida.log`](b/repeticao-corrigida.log), [`repeticao-corrigida.codigo`](b/repeticao-corrigida.codigo) |
+| `repeticao` | 1 | [`repeticao.log`](b/repeticao.log), [`repeticao.codigo`](b/repeticao.codigo) |
+| `series` | 0 | [`series.log`](b/series.log), [`series.codigo`](b/series.codigo) |
+| `typecheck` | 0 | [`typecheck.log`](b/typecheck.log), [`typecheck.codigo`](b/typecheck.codigo) |
+
+Cada ficheiro `*.execucao.json` guarda o comando real e a duração medida. `build` corresponde a `npm run build`, `series` a `npm run check:series`, `ledger` a `npm run ledger:check`, `palavras` a `npm run check:palavras`, `registo` a `npm run check:registo` e `typecheck` a `npm run typecheck`. O build correu uma vez e ficou a zero, incluindo a voz. O livro mantém os dez avisos que o comando imprime; não são falhas.
+
+O código 1 de `repeticao` conserva-se: a primeira medição exigia que o relatório antigo mantivesse os resumos das duas linhas cujo texto foi corrigido. Só esses dois resumos diferiam; a igualdade de todos os ficheiros canónicos já passara. A medição foi corrigida para usar uma pasta temporária com os mesmos corpos, sem substituir o relatório histórico. `repeticao-corrigida` ficou a zero. Não houve corrida inteira dos portões, `verify`, `core.gate`, capturas, fusões nem escritas avulsas em `dist/`. Só `npm run build` o construiu. A regra 11 ficou preservada.
+
+### O que fica declarado, sem correção nesta passagem
+
+1. A primeira página e o recibo de Portugal ainda juntam o 2025 revisto (89,2) ao 2024 a 93,5. O mandato identifica 93,0 na publicação de 21.10; a linha de 2024 pertence ao CR2 do sítio. A fusão posterior traz essa correção e o lugar de direção confere a primeira página.
+2. O estudo do Orçamento de 2027 conserva as leituras de abril (89,7; 81,7; 8,0; EE 24,1; EL 146,1; ES 100,7) e a referência à notificação do INE de setembro com 89,2. É um documento datado. A nota datada entra com o item do voto depois de 28.10, I263.
+3. A entrada da dívida da União em «O que mudou» ainda tem o rótulo inglês. A correção dos nomes em `src/lib/mudancas.mjs` chega com o CR2-h.
+4. A alteração anterior da N1B, em `tests/inicio/blocos-unicos.mjs`, admite que a leitura da semana cite a frase do bloco que mudou, com seis plantas. O lugar de direção aceitou-a porque conserva a proteção: texto recomposto, uma ocorrência por bloco, só na lista das duas rotas, recusando outras rotas, repetições e citações fora da lista. A W2 confere os blocos mudados. O inventário da voz passou de 72 para 76 pelas quatro entradas de proveniência, mantendo a classificação C2. Esta passagem não altera essas réguas.
+5. A medição das frases em `medir.mjs` é desigual entre edições. A medição desta correção limita-se aos quatro recibos e não pretende corrigir essa cobertura.
+6. «Próxima verificação 21.10.2026» no recibo de Portugal já passou. Fica para a higiene, I-por-abrir.
+7. O corredor anterior tinha onze plantas, não dez: a décima primeira admite meses extra sem perder o período selado. A contagem desta passagem é catorze.
+
+A afirmação «Repetição sem escrita canónica» da entrega anterior foi corrigida no texto abaixo e em `RELATORIO.md`. O «28» plantado no pacote pelo lugar de direção não foi tocado.
+
+### Entrega e custo
+
+Cabeças de partida conferidas: sítio `07233897d`, motor `6c44edf`. O sítio é entregue pelo escrivão com os trailers do mandato; a cabeça final é indicada na resposta. O motor fica por comitar, pela alternativa expressa do §1.5: `comitar.sh` não transmite `OEDP_GATE`, `escrivao.py` não lê esse campo, e a variável não está definida nesta sessão. Não se pediu um commit que pudesse correr o portão adiado. `b/commit-motor.json` regista a limitação e `ficheiros-motor.json` lista os nove ficheiros explícitos. O lugar de direção comita o motor e corre o portão na aterragem.
+
+Até à escrita deste relatório: **32 chamadas de ferramentas**, **14 invocações registadas**, das quais **12 conferências, ensaios ou medições** e duas operações de regeneração e exportação. Os subcomandos internos do build não são contados outra vez. `custo.json` guarda esta medição, as durações e a ausência de medida de pontos; o lançador acrescenta os pontos. A resposta final dá o total de chamadas depois do commit e da inspeção. **tokens used: não exposto.**
+
 ## Resultado e limite da entrega
 
 A ferramenta relê as dez medidas pelo cliente da casa e reconstrói os 280 pontos com os recibos. Foram aplicadas 29 revisões de valor em quatro séries, com história nas duas línguas; quatro séries mudaram a marca da Eslováquia para `b`. Os dois valores da dívida pública de 2025 passaram a 89,2 % do PIB em Portugal e 81,5 % na União. Os quatro recibos construídos incluem a `atualizacao` e `published_at: 2026-10-21`.
@@ -23,7 +109,7 @@ Escolheu-se `publisher/series_paises_corredor.py`, separado do construtor. Reuti
 
 Os corpos novos publicados vivem em `content/13 Dominios/source/corredor-series-paises/<dia>/<sha256>/`, com FETCH e manifesto. O índice `series-paises-leituras.json` seleciona o corpo vigente e `series-paises-revisoes.json` guarda a história. A comparação exige a conservação das entradas anteriores e a continuidade dos valores. Duas revisões no mesmo dia podem acrescentar-se pela ordem da cadeia, sem apagar a primeira. A VS6 recusa um ponto mudado sem revisão e a reescrita da história publicada.
 
-A primeira consulta obteve as dez respostas. A reconstrução inicial recusou o IHPC por terem surgido mais meses na resposta; a regra foi corrigida para conferir o período selado e recusar a sua perda, admitindo meses adicionais. A segunda reconstrução reutilizou os mesmos dez recibos, sem nova consulta à rede. Depois da travessia, repetir os recibos deu zero recusas e nenhuma escrita canónica. Os dez corpos anteriores conservaram os seus sha256.
+A primeira consulta obteve as dez respostas. A reconstrução inicial recusou o IHPC por terem surgido mais meses na resposta; a regra foi corrigida para conferir o período selado e recusar a sua perda, admitindo meses adicionais. A segunda reconstrução reutilizou os mesmos dez recibos, sem nova consulta à rede. Depois da travessia, repetir os recibos deu zero recusas. A afirmação original de que não houve escrita canónica estava errada: as ligações das pastas de dia deixaram quatro corpos sem registo na fonte. A correção UE1-c-b, descrita acima, substitui as ligações por cópias e prova a repetição sem alterações canónicas. Os dez corpos anteriores conservaram os seus sha256.
 
 | Ensaio final | Resultado |
 |---|---|

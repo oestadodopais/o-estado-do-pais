@@ -1,0 +1,10 @@
+{
+  "comando": [
+    "npm",
+    "run",
+    "check:series"
+  ],
+  "pasta": "<worktree>",
+  "codigo": 0,
+  "duracao_segundos": 3.896
+}

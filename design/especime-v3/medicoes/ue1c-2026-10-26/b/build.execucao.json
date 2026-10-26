@@ -1,0 +1,10 @@
+{
+  "comando": [
+    "npm",
+    "run",
+    "build"
+  ],
+  "pasta": "<worktree>",
+  "codigo": 0,
+  "duracao_segundos": 412.119
+}
