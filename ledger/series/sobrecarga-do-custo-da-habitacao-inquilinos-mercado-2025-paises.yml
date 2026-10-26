@@ -166,5 +166,5 @@ corrections:
     kind: "atualizacao"
     old_value: "23,6"
     new_value: "23,0"
-    reason: "O Eurostat reviu o valor de Dinamarca de 23,6 para 23,0 na atualização do conjunto de dados de 20.10.2026 (a versão anterior era de 17.09.2026); este projeto releu a fonte a 26.10.2026."
-    reason_en: "Eurostat revised the value for Denmark from 23.6 to 23.0 in the dataset update of 20.10.2026 (the previous version was of 17.09.2026); this project re-read the source on 26.10.2026."
+    reason: "Dinamarca: o Eurostat reviu o valor de 23,6 para 23,0 na atualização do conjunto de dados de 20.10.2026 (a versão anterior era de 17.09.2026); este projeto releu a fonte a 26.10.2026."
+    reason_en: "Denmark: Eurostat revised the value from 23.6 to 23.0 in the dataset update of 20.10.2026 (the previous version was of 17.09.2026); this project re-read the source on 26.10.2026."

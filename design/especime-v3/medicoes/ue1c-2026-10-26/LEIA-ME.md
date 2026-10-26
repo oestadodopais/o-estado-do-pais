@@ -1,5 +1,7 @@
 # UE1-c: releitura das séries por país, 26.10.2026
 
+**UE1-c-c (o lugar de direção, 26.10.2026, 18:2x UTC), depois de ler as razões regeneradas pela UE1-c-b:** o molde do mandato («O Eurostat reviu o valor de {país} de … para …») pedia o artigo que cada país tem ou não tem em português («da Bélgica», «de Espanha», «dos Países Baixos») e saiu «o valor de Bélgica». O erro do molde é do lugar de direção. A forma passa a ter o nome do país à frente, como rótulo, nas duas línguas: «Bélgica: o Eurostat reviu o valor de 107,9 para 108,1 na atualização do conjunto de dados de 21.10.2026 (a versão anterior era de 22.04.2026); este projeto releu a fonte a 26.10.2026.» / «Belgium: Eurostat revised the value from 107.9 to 108.1 in the dataset update of 21.10.2026 (the previous version was of 22.04.2026); this project re-read the source on 26.10.2026.» O molde do corredor mudou no motor e as 29 razões já escritas foram reescritas por guião no motor (`series.json`, `series-paises-revisoes.json`, `primeira-releitura.json`) e nas quatro séries do sítio com revisões, só nas linhas `reason` e `reason_en` (conferido linha a linha); os valores, as datas e as chaves são os mesmos; a prova de que a forma escrita é a que o gerador escreve agora: `comparar()` sobre o ponto da Bélgica dá a mesma frase. O exportador passou sem escrever as séries (VS6 conservada) e reescreveu `ledger/cruzamentos/series.json`; `ledger:check` 0 e `check:series` 0 com o motor ao lado.
+
 ## UE1-c-b: correção depois da leitura a frio, 26.10.2026
 
 ### O leitor e a prova no HTML

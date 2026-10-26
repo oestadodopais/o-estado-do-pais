@@ -166,5 +166,5 @@ corrections:
     kind: "atualizacao"
     old_value: "2,6"
     new_value: "2,5"
-    reason: "O Eurostat reviu o valor de Áustria de 2,6 para 2,5 na atualização do conjunto de dados de 01.10.2026 (a versão anterior era de 02.07.2026); este projeto releu a fonte a 26.10.2026."
-    reason_en: "Eurostat revised the value for Austria from 2.6 to 2.5 in the dataset update of 01.10.2026 (the previous version was of 02.07.2026); this project re-read the source on 26.10.2026."
+    reason: "Áustria: o Eurostat reviu o valor de 2,6 para 2,5 na atualização do conjunto de dados de 01.10.2026 (a versão anterior era de 02.07.2026); este projeto releu a fonte a 26.10.2026."
+    reason_en: "Austria: Eurostat revised the value from 2.6 to 2.5 in the dataset update of 01.10.2026 (the previous version was of 02.07.2026); this project re-read the source on 26.10.2026."

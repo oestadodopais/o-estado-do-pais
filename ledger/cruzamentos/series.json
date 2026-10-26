@@ -13,7 +13,7 @@
       "exported_sha256": "05fcb40a6ea3e191a24c2680cd51b48a76ef353706de918c903339b744c957b1",
       "exporter": "ResearchHub/publisher/export_series.py",
       "origin_path": "content/13 Dominios/series.json",
-      "origin_sha256": "800482925ca4604211d148616d246101463a0ca3fbdf6ad2f3b63582f55d6783"
+      "origin_sha256": "9bc212a08be98a3cdf46d60598ed2c793c6aa1634cd2199a1c258c8ed04abed6"
     },
     "rotulos-das-series.json": {
       "destino": "src/data",
@@ -32,17 +32,17 @@
       "exporter": "ResearchHub/publisher/export_series.py",
       "origin_row_sha256": "71b0def86db1c54ca069c2e263f02334e5edd027e3b354987e65a2d2224854dd",
       "rh_id": "desemprego-de-longa-duracao-2025-paises",
-      "rh_ledger_sha256": "800482925ca4604211d148616d246101463a0ca3fbdf6ad2f3b63582f55d6783",
+      "rh_ledger_sha256": "9bc212a08be98a3cdf46d60598ed2c793c6aa1634cd2199a1c258c8ed04abed6",
       "rh_study": "13 Dominios"
     },
     "divida-publica-2025-paises": {
       "corrections_at_export": 26,
       "exported_at": "2026-10-26",
-      "exported_row_sha256": "baeebc5daa52414bdc7fc318f0bd5d97c44e9ae7f263b02eb58ca0e88cdca885",
+      "exported_row_sha256": "ed33630d8f5b0bd7c9190bb847808f75b706b838f2fcf9034dd48a36c0b3d491",
       "exporter": "ResearchHub/publisher/export_series.py",
-      "origin_row_sha256": "f860d6058b587c0c42a9cecd55b538fc70d3e95aeb5ccd4e876223827dc71644",
+      "origin_row_sha256": "3fde12590b5ea4d322c188bb7d48c92cd13340e63d104c8f12b6d569306b5988",
       "rh_id": "divida-publica-2025-paises",
-      "rh_ledger_sha256": "800482925ca4604211d148616d246101463a0ca3fbdf6ad2f3b63582f55d6783",
+      "rh_ledger_sha256": "9bc212a08be98a3cdf46d60598ed2c793c6aa1634cd2199a1c258c8ed04abed6",
       "rh_study": "13 Dominios"
     },
     "ihpc-variacao-homologa-paises": {
@@ -52,17 +52,17 @@
       "exporter": "ResearchHub/publisher/export_series.py",
       "origin_row_sha256": "ff1a8307aa5c9d0832b95ed817411f9f49021cc5a1e2d20fe7a55d00e174b9bf",
       "rh_id": "ihpc-variacao-homologa-paises",
-      "rh_ledger_sha256": "800482925ca4604211d148616d246101463a0ca3fbdf6ad2f3b63582f55d6783",
+      "rh_ledger_sha256": "9bc212a08be98a3cdf46d60598ed2c793c6aa1634cd2199a1c258c8ed04abed6",
       "rh_study": "13 Dominios"
     },
     "precos-da-habitacao-2025-paises": {
       "corrections_at_export": 1,
       "exported_at": "2026-10-26",
-      "exported_row_sha256": "4bb22679d076a3766dc594ffd5c2cddb9f10af080c49cf41142a330e5c5a1216",
+      "exported_row_sha256": "9d4add0f9298ce6c11e15d605c2211980a474c4db7e32f4e08f7712bb7d14909",
       "exporter": "ResearchHub/publisher/export_series.py",
-      "origin_row_sha256": "5957d08f4fbb3cd246479807e05b1a6821ddb11a22eae591dd1fc439c9e8023e",
+      "origin_row_sha256": "86960868fd3298a11d06db589ab3e9e468169547598b0ed1c0c1e4a44ff6e3da",
       "rh_id": "precos-da-habitacao-2025-paises",
-      "rh_ledger_sha256": "800482925ca4604211d148616d246101463a0ca3fbdf6ad2f3b63582f55d6783",
+      "rh_ledger_sha256": "9bc212a08be98a3cdf46d60598ed2c793c6aa1634cd2199a1c258c8ed04abed6",
       "rh_study": "13 Dominios"
     },
     "racio-s80-s20-2025-paises": {
@@ -72,7 +72,7 @@
       "exporter": "ResearchHub/publisher/export_series.py",
       "origin_row_sha256": "fcf6345fec5640ef96d3388c0379652795944ff20f8aee0155978689fbc4eb0d",
       "rh_id": "racio-s80-s20-2025-paises",
-      "rh_ledger_sha256": "800482925ca4604211d148616d246101463a0ca3fbdf6ad2f3b63582f55d6783",
+      "rh_ledger_sha256": "9bc212a08be98a3cdf46d60598ed2c793c6aa1634cd2199a1c258c8ed04abed6",
       "rh_study": "13 Dominios"
     },
     "risco-de-pobreza-ou-exclusao-2025-paises": {
@@ -82,7 +82,7 @@
       "exporter": "ResearchHub/publisher/export_series.py",
       "origin_row_sha256": "59b0561a3d56bdc03d40b83f27701a93164bbc6e48ab36bf82296c62db2d0168",
       "rh_id": "risco-de-pobreza-ou-exclusao-2025-paises",
-      "rh_ledger_sha256": "800482925ca4604211d148616d246101463a0ca3fbdf6ad2f3b63582f55d6783",
+      "rh_ledger_sha256": "9bc212a08be98a3cdf46d60598ed2c793c6aa1634cd2199a1c258c8ed04abed6",
       "rh_study": "13 Dominios"
     },
     "serie-beneficiarios-do-rsi-por-mil": {
@@ -338,21 +338,21 @@
     "sobrecarga-do-custo-da-habitacao-2025-paises": {
       "corrections_at_export": 1,
       "exported_at": "2026-10-26",
-      "exported_row_sha256": "a73901ca1ea683e6f048345f80bc9f268bd2f6862fe6d78fdc028bc8183d82a9",
+      "exported_row_sha256": "a81b168828dd6e537bbef9730f05b29d275ef755277a51d5df86308de0f3eab0",
       "exporter": "ResearchHub/publisher/export_series.py",
-      "origin_row_sha256": "7459d6e01783cd5695e987ff1abfdcc62729c10eeb900b7fdf9e69133826830b",
+      "origin_row_sha256": "f9e1deb3f88258ee6cbc056c85bb7cf6e20f604fca9cf3c06af836d77ed86b8c",
       "rh_id": "sobrecarga-do-custo-da-habitacao-2025-paises",
-      "rh_ledger_sha256": "800482925ca4604211d148616d246101463a0ca3fbdf6ad2f3b63582f55d6783",
+      "rh_ledger_sha256": "9bc212a08be98a3cdf46d60598ed2c793c6aa1634cd2199a1c258c8ed04abed6",
       "rh_study": "13 Dominios"
     },
     "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises": {
       "corrections_at_export": 1,
       "exported_at": "2026-10-26",
-      "exported_row_sha256": "d06285957ec6fdf8489f43f79dbbd3894a344d276af14c728b86ec4efc5bd793",
+      "exported_row_sha256": "7e253acc7ec1ac3669e038c10174642cfc321338cccda5e66ad8fb655e3a60a3",
       "exporter": "ResearchHub/publisher/export_series.py",
-      "origin_row_sha256": "92e7960e27c1d5b7b89a678bdeae29a3566bdd720b6e50867f36d2f9e0666c47",
+      "origin_row_sha256": "b2ae48a239a95d08fa49bc30a504f6497783e412e2243c825e4e0e10c35e7ed6",
       "rh_id": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
-      "rh_ledger_sha256": "800482925ca4604211d148616d246101463a0ca3fbdf6ad2f3b63582f55d6783",
+      "rh_ledger_sha256": "9bc212a08be98a3cdf46d60598ed2c793c6aa1634cd2199a1c258c8ed04abed6",
       "rh_study": "13 Dominios"
     },
     "taxa-de-desemprego-mip-2025-paises": {
@@ -362,7 +362,7 @@
       "exporter": "ResearchHub/publisher/export_series.py",
       "origin_row_sha256": "1cc03797bedf034f60644dfe3aab2cc067e6a70f0b2c68bdebc4e33de3d6fea1",
       "rh_id": "taxa-de-desemprego-mip-2025-paises",
-      "rh_ledger_sha256": "800482925ca4604211d148616d246101463a0ca3fbdf6ad2f3b63582f55d6783",
+      "rh_ledger_sha256": "9bc212a08be98a3cdf46d60598ed2c793c6aa1634cd2199a1c258c8ed04abed6",
       "rh_study": "13 Dominios"
     },
     "taxa-de-emprego-2025-paises": {
@@ -372,7 +372,7 @@
       "exporter": "ResearchHub/publisher/export_series.py",
       "origin_row_sha256": "30d5a67cac8f669e433137d039a3f972acaabebb7648bb6a91f3377c31733051",
       "rh_id": "taxa-de-emprego-2025-paises",
-      "rh_ledger_sha256": "800482925ca4604211d148616d246101463a0ca3fbdf6ad2f3b63582f55d6783",
+      "rh_ledger_sha256": "9bc212a08be98a3cdf46d60598ed2c793c6aa1634cd2199a1c258c8ed04abed6",
       "rh_study": "13 Dominios"
     }
   }
