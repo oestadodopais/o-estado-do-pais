@@ -1,0 +1,17 @@
+Duas tabelas iguais a main, chave a chave e texto a texto.
+12 títulos iguais a main; 30 entradas de 26.10 iguais aos recibos.
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: PARAGEM: há nomes de entradas anteriores a 26.10 que mudaram; ver historico-nomes.json
+    at file://<worktree>/design/especime-v3/medicoes/cr2-2026-10-26/h/conferir-nomes.mjs:73:1 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}
+
+Node.js v22.23.1

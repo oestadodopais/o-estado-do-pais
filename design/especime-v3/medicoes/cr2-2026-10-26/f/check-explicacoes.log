@@ -1,0 +1,13 @@
+
+> o-estado-do-pais@0.1.0 check:explicacoes
+> node tests/explicacoes/explicacao.mjs --prova && node tests/explicacoes/semana.mjs --prova && node tests/explicacoes/ex3.mjs
+
+X · a explicação: 2 explicação(ões), 292 folhas e 347 partes auditadas (179 diz, 29 leitura, 26 conta, 4 aponta, 109 liga), 13 origens usadas; 2 token(s) «maiores» conferidos nas duas edições; 8 token(s) de ramos (sinal, compara e comparaSaldos) com todos os ramos; 2 origens das explicações, 2 lidas no motor; 4 página(s) recontadas; 43 de 44 plantas em memória.
+W · a leitura da semana: janela 2026-10-20 a 2026-10-26, 90 relidas, 17 mudadas de valor, 0 só na forma de escrever, 15 de proveniência; W1 19 de 19 plantas na cópia do livro; 4 porta(s) da semana conferidas; 90 de 90 plantas na página (1 não se aplicam: a semana não tem mudanças de valor).
+PLANTAS: marcadores da voz fora dos contextos e da rota continuam a morder.
+PLANTAS: ponto decimal recusado nas duas edições; vírgula aceite nas duas percentagens.
+PLANTA: parte da definição sem apoio recusada pela X2.
+PLANTAS X13: apoio dos euros, percentagem e sufixo trocados recusados.
+PLANTA: token sobre linha inexistente recusado pelo resolvedor.
+PLANTAS: valor NATO trocado e precisão reduzida recusados pela X6 nas duas edições.
+PASS EX3: auditoria, dez nomes ingleses, marcas e precisão.

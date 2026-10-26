@@ -30,6 +30,7 @@ import { ROTULOS_B1 } from '../data/rotulos-b1.mjs';
 import { entradasDoRegisto, getClaim, motivoDaEntrada } from './ledger.mjs';
 import { textoDocumentalConferido } from './prova-efeitos.mjs';
 import { nomeDoCartao, nomeDaLinhaDerivada } from './nomes.mjs';
+import { nomeNoRecibo } from './o-que-e-o-numero.mjs';
 import { estudosRecentes, LINHAS_DA_LEITURA_DO_PAIS, MEDIDA_REUNIDA } from './pais.mjs';
 import { routePath } from './routes.mjs';
 
@@ -225,6 +226,7 @@ function correcoesDasLinhas(lang) {
             `Escreva-o em src/data/lugar-das-linhas.mjs, com a razão.`,
         );
       }
+      const nome = nomeDaLinhaDerivada(linha, lang) ?? nomeDoCartao(linha, lang);
       return {
         tipo: /** @type {const} */ ('correcao'),
         kind: e.kind,
@@ -233,8 +235,9 @@ function correcoesDasLinhas(lang) {
         claim: e.claimId,
         /* O nome da medida pela escada do cartão, com o nome declarado da linha
            derivada à frente: é ele que diz «Estudos publicados sobre Évora» onde
-           o título do documento diria «Arquivo de estudos». */
-        nome: nomeDaLinhaDerivada(linha, lang) ?? nomeDoCartao(linha, lang),
+           o título do documento diria «Arquivo de estudos». Sem nome declarado,
+           usa o nome do recibo e conserva a família que o fundamenta. */
+        nome: nome?.fonte ? nome : nomeNoRecibo(linha.id, lang),
         antes: e.old_value,
         depois: e.new_value,
         unidade: typeof linha.unit === 'string' ? linha.unit : null,

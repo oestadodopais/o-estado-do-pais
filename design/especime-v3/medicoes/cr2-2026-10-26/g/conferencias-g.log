@@ -1,0 +1,108 @@
+código 1 · 282 s · 16328 linhas em design/especime-v3/medicoes/cr2-2026-10-26/g/build-g.log
+--- linhas de falha ou aviso (até quarenta) ---
+387:  "erros_do_livro": [],
+388:  "avisos_do_livro": [
+401:PASS: operações documentais, valores alterados e plantas recusadas
+408:[33m  10 aviso(s):[0m
+491:V2A: 32 afirmações conferidas, 32 corpos lidos, 44 plantas, 0 erros.
+3944:16:28:04   ├─ /en/ledger/ppp-oe2027-ferroviario-2027/index.html (+1ms) 
+8587:16:28:08   ├─ /livro-razao/ppp-oe2027-ferroviario-2027.json (+0ms) 
+12479:16:28:10   ├─ /livro-razao/ppp-oe2027-ferroviario-2027/index.html (+1ms) 
+13912:  R2-b, o autoteste da unidade: «dos 21 aos 65 anos» recusada (4 falta(s)), a origem de outra linha recusada, a declaração certa aceite.
+13971:  RP4N recusadas · o-que-e-linha: 0 ocorrência(s)
+13972:  RP4N recusadas · o-que-e-familia: 0 ocorrência(s)
+13973:  RP4N recusadas · o-que-e-serie: 0 ocorrência(s)
+13974:  RP4N recusadas · nome-medida: 0 ocorrência(s)
+13975:  RP4N recusadas · nome-serie: 0 ocorrência(s)
+13976:  RP4N recusadas · nome-lugar: 0 ocorrência(s)
+13977:  RP4N recusadas · titulo-estudo: 0 ocorrência(s)
+13978:  RP4N recusadas · leitura-cartao: 0 ocorrência(s)
+13979:  RP4N recusadas · primeira-pagina: 0 ocorrência(s)
+13980:  RP4N recusadas · explicacao: 0 ocorrência(s)
+13981:  RP4N recusadas · fora-dos-tipos: 0 ocorrência(s)
+13990:[33m  1002 aviso(s):[0m
+15002:[32mcheck-datas[0m · 27 edição(ões) datadas, 118 data(s) impressa(s) em 48 página(s), 118 laço(s) data-edição em 662 página(s) conferida(s), 0 edição(ões) sem data e nenhuma caixa de aviso; 12 nota(s) do sucessor com a frase da reconciliação.
+15038:[90m  das 1007 figuras com linha do sítio, 415 imprimem o valor que a linha guarda e 592 imprimem outra cadeia. Não é erro: é a medição que decidiu esta página (plano §0.3).[0m
+15117:F1 · plantas «em 2.º trimestre» e «in 2nd quarter» recusadas; controlos íntegros aceites.
+15150:  "erros": [],
+16210:      "queixa": "    \u001b[31m✗\u001b[0m data-linha-claim=\"divida-das-familias-2025-ue\" numa página que não é do livro-razão. Esta marca é dos campos de uma linha, na página dessa linha ou no índice.",
+16217:      "queixa": "A porta estreita do portão recusa o contexto plantado.",
+16223:      "queixa": "A porta estreita do portão recusa o contexto plantado.",
+16230:      "queixa": "    \u001b[31m✗\u001b[0m [taxa-de-desemprego-2025.yml] história do valor: a lista tem 1 entradas e o registo sela 0.",
+16238:      "queixa": "    \u001b[31m✗\u001b[0m [taxa-de-desemprego-mip-2025.yml] história do valor: a lista tem 1 entradas e o registo sela 0.",
+16246:      "queixa": "    \u001b[31m✗\u001b[0m [correcoes-publicadas.yml] história do valor: a lista tem 6 entradas e o registo sela 0.",
+--- últimas oito linhas ---
+[31m    · [0m/en/index: «data-nome="figuras"» sobre «Labour cost per unit of output (unit labour cost)» · a marca diz que o nome é da linha "custo-unitario-do-trabalho-2025-ue", que src/data/figuras.mjs não nomeia. Só o nome de uma entrada de um ficheiro de dados com fonte declarada pode levar esta marca.
+[31m    · [0m/en/index: «data-nome="figuras"» sobre «Debt of (non-financial) companies» · a marca diz que o nome é da linha "divida-das-empresas-2024", que src/data/figuras.mjs não nomeia. Só o nome de uma entrada de um ficheiro de dados com fonte declarada pode levar esta marca.
+[31m    · [0m/en/index: «data-nome="figuras"» sobre «Debt of (non-financial) companies» · a marca diz que o nome é da linha "divida-das-empresas-2025-ue", que src/data/figuras.mjs não nomeia. Só o nome de uma entrada de um ficheiro de dados com fonte declarada pode levar esta marca.
+[31m    · [0m/en/index: «data-nome="figuras"» sobre «Household debt» · a marca diz que o nome é da linha "divida-das-familias-2024", que src/data/figuras.mjs não nomeia. Só o nome de uma entrada de um ficheiro de dados com fonte declarada pode levar esta marca.
+[31m    · [0m/en/index: «data-nome="figuras"» sobre «Government debt» · a marca diz que o nome é da linha "divida-publica-2024", que src/data/figuras.mjs não nomeia. Só o nome de uma entrada de um ficheiro de dados com fonte declarada pode levar esta marca.
+[31m    · [0m/en/index: «data-nome="figuras"» sobre «Credit flow to (non-financial) companies» · a marca diz que o nome é da linha "fluxo-de-credito-as-empresas-2024", que src/data/figuras.mjs não nomeia. Só o nome de uma entrada de um ficheiro de dados com fonte declarada pode levar esta marca.
+[90m    … e mais 87[0m
+
+código 0 · 8 s · 482 linhas em design/especime-v3/medicoes/cr2-2026-10-26/g/ledger-check-g.log
+--- linhas de falha ou aviso (até quarenta) ---
+378:  "erros_do_livro": [],
+379:  "avisos_do_livro": [
+392:PASS: operações documentais, valores alterados e plantas recusadas
+399:[33m  10 aviso(s):[0m
+482:V2A: 32 afirmações conferidas, 32 corpos lidos, 44 plantas, 0 erros.
+--- últimas oito linhas ---
+PLANTA período adulterado também na prova: oe-2027-saude-contrato-programa-acss: V2D data: diferente da publicação selada ou da data conferida no documento
+PLANTA EO1 excerto: EO1 excerto: citação divergente
+PLANTA EO1 valor: EO1 excerto: citação divergente
+PLANTA EO1 atribuição: EO1 atribuição: nome divergente
+PLANTA EO1 data: EO1 data: publicação divergente
+PLANTA EO1 porta: EO1 porta: endereço divergente
+PLANTA EO1 selo: EO1 selo: recibo divergente
+V2A: 32 afirmações conferidas, 32 corpos lidos, 44 plantas, 0 erros.
+código 1 · 48 s · 51 linhas em design/especime-v3/medicoes/cr2-2026-10-26/g/check-voz-g.log
+--- últimas oito linhas ---
+[31m    · [0m/en/index: «data-nome="figuras"» sobre «Labour cost per unit of output (unit labour cost)» · a marca diz que o nome é da linha "custo-unitario-do-trabalho-2025-ue", que src/data/figuras.mjs não nomeia. Só o nome de uma entrada de um ficheiro de dados com fonte declarada pode levar esta marca.
+[31m    · [0m/en/index: «data-nome="figuras"» sobre «Debt of (non-financial) companies» · a marca diz que o nome é da linha "divida-das-empresas-2024", que src/data/figuras.mjs não nomeia. Só o nome de uma entrada de um ficheiro de dados com fonte declarada pode levar esta marca.
+[31m    · [0m/en/index: «data-nome="figuras"» sobre «Debt of (non-financial) companies» · a marca diz que o nome é da linha "divida-das-empresas-2025-ue", que src/data/figuras.mjs não nomeia. Só o nome de uma entrada de um ficheiro de dados com fonte declarada pode levar esta marca.
+[31m    · [0m/en/index: «data-nome="figuras"» sobre «Household debt» · a marca diz que o nome é da linha "divida-das-familias-2024", que src/data/figuras.mjs não nomeia. Só o nome de uma entrada de um ficheiro de dados com fonte declarada pode levar esta marca.
+[31m    · [0m/en/index: «data-nome="figuras"» sobre «Government debt» · a marca diz que o nome é da linha "divida-publica-2024", que src/data/figuras.mjs não nomeia. Só o nome de uma entrada de um ficheiro de dados com fonte declarada pode levar esta marca.
+[31m    · [0m/en/index: «data-nome="figuras"» sobre «Credit flow to (non-financial) companies» · a marca diz que o nome é da linha "fluxo-de-credito-as-empresas-2024", que src/data/figuras.mjs não nomeia. Só o nome de uma entrada de um ficheiro de dados com fonte declarada pode levar esta marca.
+[90m    … e mais 87[0m
+
+código 0 · 0 s · 74 linhas em design/especime-v3/medicoes/cr2-2026-10-26/g/check-registo-g.log
+--- últimas oito linhas ---
+[90m      CLAUDE.md:56 «duas edições» não conferida: «edições» diz o arquivo (27) e as páginas de leitura (19); o facto escreve-se com o composto.[0m
+[90m      CLAUDE.md:64 «duas edições» não conferida: «edições» diz o arquivo (27) e as páginas de leitura (19); o facto escreve-se com o composto.[0m
+  [32m✓[0m design/observatorio/PLANO-fiabilidade-2026-09-02.md  0 corrente(s) ·  1 datada(s) ·  0 subconjunto(s) ·  0 valor(es) do sítio · 1 avaliada(s), chão 1
+[90m      design/observatorio/PLANO-fiabilidade-2026-09-02.md:11 «32 linhas» saltada pela forma (ii) · 02.09.2026[0m
+
+  [32m✓[0m 8 facto(s) medidos na fonte (3 com segunda medição, 4 reconciliados com a linha que os publica) · 7 afirmação(ões) corrente(s) conferida(s) · 19 datada(s) saltada(s) · 0 subconjunto(s) · 1 valor(es) do sítio com o id ao lado
+[90m        5 documento(s) lidos · 62 unidade(s) no vocabulário do livro-razão · chão total 23 · prosa não se lê: «hoje só `evora`» e «o arquivo vazio» são do check:prosa (F3.1).[0m
+
+código 1 · 14 s · 68 linhas em design/especime-v3/medicoes/cr2-2026-10-26/g/check-cartao-g.log
+--- linhas de falha ou aviso (até quarenta) ---
+5:JD1-b registo: duas leituras R4 presentes; mesma data preservada; idempotência; autor distinto; filtro antigo recusado.
+--- últimas oito linhas ---
+    K17 · recibo · en · fluxo-de-credito-as-familias-2025-ue: o título não é o nome do recibo da linha («Credit flow to households» contra «Credit flow to households in the European Union»)
+    K17 · recibo · pt · formacao-bruta-de-capital-fixo-2025-ue: o título não é o nome do recibo da linha («Investimento em bens duradouros para produzir (formação b…» contra «Investimento em bens duradouros para produzir na União Eu…»)
+    K17 · recibo · en · formacao-bruta-de-capital-fixo-2025-ue: o título não é o nome do recibo da linha («Investment in durable goods used for production (gross fi…» contra «Investment in durable goods used for production in the Eu…»)
+    K17 · recibo · pt · licencas-de-construcao-2025-ue: o título não é o nome do recibo da linha («Área licenciada para habitação» contra «Área licenciada para habitação na União Europeia»)
+    K17 · recibo · en · licencas-de-construcao-2025-ue: o título não é o nome do recibo da linha («Floor area licensed for housing» contra «Floor area licensed for housing in the European Union»)
+    K17 · recibo · pt · pib-real-per-capita-2025-ue: o título não é o nome do recibo da linha («PIB real por habitante» contra «PIB real por habitante na União Europeia»)
+    K17 · recibo · en · pib-real-per-capita-2025-ue: o título não é o nome do recibo da linha («Real GDP per capita» contra «Real GDP per capita in the European Union»)
+
+código 0 · 0 s · 27 linhas em design/especime-v3/medicoes/cr2-2026-10-26/g/check-cruzamento-g.log
+--- linhas de falha ou aviso (até quarenta) ---
+22:[33m  2 aviso(s):[0m
+--- últimas oito linhas ---
+[90m    orcamento-2027-o-que-muda-e-para-quem: 256[0m
+
+[33m  2 aviso(s):[0m
+[90m    · o ledger.json de "20 Orcamento do Estado" já não é o que atravessou. Por si só isto não quer dizer nada: o ficheiro traz um "built_at" que muda a cada reconstrução. O que prende é o resumo de cada LINHA — se nenhuma foi nomeada acima, nenhuma mudou.[0m
+[90m    · o ledger.json de "24 Orcamento 2027 Analise" já não é o que atravessou. Por si só isto não quer dizer nada: o ficheiro traz um "built_at" que muda a cada reconstrução. O que prende é o resumo de cada LINHA — se nenhuma foi nomeada acima, nenhuma mudou.[0m
+
+  [32m✓[0m cada linha e cada ficheiro vindos do motor são, byte a byte, o que atravessou, e são ainda o que o motor tem.
+
+código 0 · 1 s · 4 linhas em design/especime-v3/medicoes/cr2-2026-10-26/g/typecheck-g.log
+--- últimas oito linhas ---
+
+> o-estado-do-pais@0.1.0 typecheck
+> tsc -p tsconfig.check.json
+

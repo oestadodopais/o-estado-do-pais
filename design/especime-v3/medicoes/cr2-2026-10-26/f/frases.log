@@ -1,0 +1,18 @@
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Texto diferente: explicacao|dinheiro-do-estado-2026|pt|seccoes[0].conteudo[2].paragrafo: 3,25 de cada cem euros desta página são a função «Defesa» da despesa efetiva consolidada da administração central (a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços), em contabilidade pública. A despesa em defesa em percentagem do PIB que a NATO publica é outra medida, pela definição da própria NATO: os pagamentos feitos por um governo nacional, sem as administrações regionais, locais e municipais, especificamente para satisfazer as necessidades das suas forças armadas, das dos outros aliados ou da Aliança no seu todo; a definição da NATO inclui as pensões de reforma pagas diretamente pelo governo aos militares na reforma e aos funcionários civis dos departamentos militares, e as relativas ao pessoal no ativo. Para Portugal, a NATO publica 1,55 % do PIB em 2024 e, como estimativas, 2,01 % (estimativa da NATO) em 2025 e 2,10 % (estimativa da NATO) em 2026 (a tabela a preços constantes), e 6 748 (estimativa da NATO) milhões de euros em 2026 (a tabela a preços correntes, também uma estimativa). A referência da própria NATO é a dos seus compromissos: 2 % do PIB desde a cimeira de Gales de 2014, e, desde a cimeira de Haia de 2025, 5 % do PIB por ano até 2035, dos quais pelo menos 3,5 % em requisitos essenciais de defesa pela definição da NATO. / 3,25 de cada cem euros desta página são a função «Defesa» da despesa efetiva consolidada da administração central (a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços), em contabilidade pública. A despesa em defesa em percentagem do PIB que a NATO publica é outra medida, pela definição da própria NATO: os pagamentos feitos por um governo nacional, sem as administrações regionais, locais e municipais, especificamente para satisfazer as necessidades das suas forças armadas, das dos outros aliados ou da Aliança no seu todo; a definição da NATO inclui as pensões de reforma pagas diretamente pelo governo aos militares na reforma e aos funcionários civis dos departamentos militares, e as relativas ao pessoal no ativo. Para Portugal, a NATO publica 1,55 % do PIB em 2024 e, como estimativas, 2,01 % em 2025 e 2,10 % em 2026 (a tabela a preços constantes), e 6 748 milhões de euros em 2026 (a tabela a preços correntes, também uma estimativa). A referência da própria NATO é a dos seus compromissos: 2 % do PIB desde a cimeira de Gales de 2014, e, desde a cimeira de Haia de 2025, 5 % do PIB por ano até 2035, dos quais pelo menos 3,5 % em requisitos essenciais de defesa pela definição da NATO.
+    at file://<worktree>/design/especime-v3/medicoes/cr2-2026-10-26/frases-cr2.mjs:56:5
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5) {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}
+
+Node.js v22.23.1

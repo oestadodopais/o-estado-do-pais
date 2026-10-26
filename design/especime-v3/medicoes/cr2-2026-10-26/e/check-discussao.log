@@ -1,0 +1,1065 @@
+
+> o-estado-do-pais@0.1.0 check:discussao
+> node tests/discussao/itens.mjs
+
+V2B · 1060 erro(s), 252 de 252 plantas, 0 portas de integração.
+V2D Método: recibo ausente afirmacao-pcp-paula-investimento-saude-2026-10-12 (pt)
+V2D Método: recibo ausente afirmacao-pcp-paula-ppp-2026-10-12 (pt)
+V2D Método: recibo ausente afirmacao-pcp-ppp-2026-10-15 (pt)
+V2D Método: recibo ausente der-ambiente-e-energia-prr-2026 (pt)
+V2D Método: recibo ausente der-coesao-territorial-variacao-sem-prr-pct (pt)
+V2D Método: recibo ausente der-economia-prr-2026 (pt)
+V2D Método: recibo ausente der-economia-variacao-sem-prr-pct (pt)
+V2D Método: recibo ausente der-educacao-variacao-sem-prr (pt)
+V2D Método: recibo ausente der-educacao-variacao-sem-prr-pct (pt)
+V2D Método: recibo ausente der-financas-prr-2026 (pt)
+V2D Método: recibo ausente der-financas-variacao-sem-prr-pct (pt)
+V2D Método: recibo ausente der-infraestruturas-e-habitacao-prr-2026 (pt)
+V2D Método: recibo ausente der-infraestruturas-e-habitacao-variacao-sem-prr (pt)
+V2D Método: recibo ausente der-infraestruturas-e-habitacao-variacao-sem-prr-pct (pt)
+V2D Método: recibo ausente der-justica-variacao-sem-prr (pt)
+V2D Método: recibo ausente der-justica-variacao-sem-prr-pct (pt)
+V2D Método: recibo ausente der-ppp-brutos-todos-2027 (pt)
+V2D Método: recibo ausente der-ppp-pcp-vs-brutos (pt)
+V2D Método: recibo ausente der-ppp-pcp-vs-liquidos (pt)
+V2D Método: recibo ausente der-ppp-quota-rodoviario (pt)
+V2D Método: recibo ausente der-ppp-rodoviario-2027-vs-2021-pct (pt)
+V2D Método: recibo ausente der-saude-2027-vs-execucao-2025-pct (pt)
+V2D Método: recibo ausente der-saude-bens-servicos-reducao-abs (pt)
+V2D Método: recibo ausente der-saude-bens-servicos-variacao-abs (pt)
+V2D Método: recibo ausente der-saude-investimento-reducao-abs (pt)
+V2D Método: recibo ausente der-saude-investimento-variacao-abs (pt)
+V2D Método: recibo ausente der-saude-outras-correntes-variacao-abs (pt)
+V2D Método: recibo ausente der-saude-pessoal-variacao-abs (pt)
+V2D Método: recibo ausente der-saude-prr-2026 (pt)
+V2D Método: recibo ausente der-saude-razao-compensacao-prr (pt)
+V2D Método: recibo ausente der-saude-razao-compensacao-prr-pct (pt)
+V2D Método: recibo ausente der-saude-receitas-proprias-variacao-pct (pt)
+V2D Método: recibo ausente der-saude-reforco-total-2026 (pt)
+V2D Método: recibo ausente der-saude-total-reducao-abs (pt)
+V2D Método: recibo ausente der-saude-variacao-efetiva (pt)
+V2D Método: recibo ausente der-saude-variacao-sem-prr (pt)
+V2D Método: recibo ausente der-saude-variacao-sem-prr-pct (pt)
+V2D Método: recibo ausente der-saude-variacao-total-abs (pt)
+V2D Método: recibo ausente der-seguranca-interna-variacao-sem-prr (pt)
+V2D Método: recibo ausente der-seguranca-interna-variacao-sem-prr-pct (pt)
+V2D Método: recibo ausente der-trabalho-solidariedade-e-seguranca-social-variacao-sem-prr (pt)
+V2D Método: recibo ausente der-trabalho-solidariedade-e-seguranca-social-variacao-sem-prr-pct (pt)
+V2D Método: recibo ausente der-utao-saude-reforco-2026 (pt)
+V2D Método: recibo ausente dgo-2026-08-saude-efetiva-jan-ago-2025 (pt)
+V2D Método: recibo ausente dgo-2026-08-saude-efetiva-jan-ago-2026 (pt)
+V2D Método: recibo ausente dgo-2026-08-saude-efetiva-variacao-homologa (pt)
+V2D Método: recibo ausente dgo-2026-08-sns-despesa-variacao-homologa (pt)
+V2D Método: recibo ausente dgo-2026-08-sns-saldo-jan-ago-2026 (pt)
+V2D Método: recibo ausente eurostat-hlth-sha11-hf-a-eur_hab-tot_hf-eu27_2020-2024 (pt)
+V2D Método: recibo ausente eurostat-hlth-sha11-hf-a-eur_hab-tot_hf-pt-2024 (pt)
+V2D Método: recibo ausente eurostat-hlth-sha11-hf-a-pc_gdp-hf1-eu27_2020-2024 (pt)
+V2D Método: recibo ausente eurostat-hlth-sha11-hf-a-pc_gdp-hf1-pt-2024 (pt)
+V2D Método: recibo ausente eurostat-hlth-sha11-hf-a-pc_gdp-tot_hf-eu27_2020-2024 (pt)
+V2D Método: recibo ausente eurostat-hlth-sha11-hf-a-pc_gdp-tot_hf-pt-2024 (pt)
+V2D Método: recibo ausente oe-2027-ambiente-e-energia-efetiva-2026 (pt)
+V2D Método: recibo ausente oe-2027-ambiente-e-energia-sem-prr-2026 (pt)
+V2D Método: recibo ausente oe-2027-coesao-territorial-sem-prr-2026 (pt)
+V2D Método: recibo ausente oe-2027-coesao-territorial-sem-prr-2027 (pt)
+V2D Método: recibo ausente oe-2027-economia-efetiva-2026 (pt)
+V2D Método: recibo ausente oe-2027-economia-sem-prr-2026 (pt)
+V2D Método: recibo ausente oe-2027-economia-sem-prr-2027 (pt)
+V2D Método: recibo ausente oe-2027-educacao-sem-prr-2026 (pt)
+V2D Método: recibo ausente oe-2027-educacao-sem-prr-2027 (pt)
+V2D Método: recibo ausente oe-2027-financas-efetiva-2026 (pt)
+V2D Método: recibo ausente oe-2027-financas-sem-prr-2026 (pt)
+V2D Método: recibo ausente oe-2027-financas-sem-prr-2027 (pt)
+V2D Método: recibo ausente oe-2027-infraestruturas-e-habitacao-efetiva-2026 (pt)
+V2D Método: recibo ausente oe-2027-infraestruturas-e-habitacao-sem-prr-2026 (pt)
+V2D Método: recibo ausente oe-2027-infraestruturas-e-habitacao-sem-prr-2027 (pt)
+V2D Método: recibo ausente oe-2027-justica-sem-prr-2026 (pt)
+V2D Método: recibo ausente oe-2027-justica-sem-prr-2027 (pt)
+V2D Método: recibo ausente oe-2027-outras-despesas-dotacoes-execucao (pt)
+V2D Método: recibo ausente oe-2027-saude-bens-servicos-2026 (pt)
+V2D Método: recibo ausente oe-2027-saude-bens-servicos-2027 (pt)
+V2D Método: recibo ausente oe-2027-saude-bens-servicos-variacao (pt)
+V2D Método: recibo ausente oe-2027-saude-contrato-programa-acss (pt)
+V2D Método: recibo ausente oe-2027-saude-dotacao-reforco-contratos-programa (pt)
+V2D Método: recibo ausente oe-2027-saude-fonte-fundos-europeus-2026 (pt)
+V2D Método: recibo ausente oe-2027-saude-fonte-fundos-europeus-2027 (pt)
+V2D Método: recibo ausente oe-2027-saude-fonte-impostos-2026 (pt)
+V2D Método: recibo ausente oe-2027-saude-fonte-impostos-2027 (pt)
+V2D Método: recibo ausente oe-2027-saude-fonte-receitas-proprias-2026 (pt)
+V2D Método: recibo ausente oe-2027-saude-fonte-receitas-proprias-2027 (pt)
+V2D Método: recibo ausente oe-2027-saude-investimento-2026 (pt)
+V2D Método: recibo ausente oe-2027-saude-investimento-2027 (pt)
+V2D Método: recibo ausente oe-2027-saude-investimento-variacao (pt)
+V2D Método: recibo ausente oe-2027-saude-investimento-variacao-sem-prr (pt)
+V2D Método: recibo ausente oe-2027-saude-outras-correntes-2026 (pt)
+V2D Método: recibo ausente oe-2027-saude-outras-correntes-2027 (pt)
+V2D Método: recibo ausente oe-2027-saude-pessoal-2026 (pt)
+V2D Método: recibo ausente oe-2027-saude-pessoal-2027 (pt)
+V2D Método: recibo ausente oe-2027-saude-pessoal-variacao (pt)
+V2D Método: recibo ausente oe-2027-saude-transferencias-capital-2026 (pt)
+V2D Método: recibo ausente oe-2027-saude-transferencias-capital-2027 (pt)
+V2D Método: recibo ausente oe-2027-saude-transferencias-sns-2026 (pt)
+V2D Método: recibo ausente oe-2027-saude-transferencias-sns-2027 (pt)
+V2D Método: recibo ausente oe-2027-saude-transferencias-sns-variacao (pt)
+V2D Método: recibo ausente oe-2027-seguranca-interna-sem-prr-2026 (pt)
+V2D Método: recibo ausente oe-2027-seguranca-interna-sem-prr-2027 (pt)
+V2D Método: recibo ausente oe-2027-trabalho-solidariedade-e-seguranca-social-sem-prr-2026 (pt)
+V2D Método: recibo ausente oe-2027-trabalho-solidariedade-e-seguranca-social-sem-prr-2027 (pt)
+V2D Método: recibo ausente ppp-oe2022-liquidos-2021 (pt)
+V2D Método: recibo ausente ppp-oe2023-liquidos-2022 (pt)
+V2D Método: recibo ausente ppp-oe2024-liquidos-2023 (pt)
+V2D Método: recibo ausente ppp-oe2025-liquidos-2024 (pt)
+V2D Método: recibo ausente ppp-oe2026-brutos-2025 (pt)
+V2D Método: recibo ausente ppp-oe2026-liquidos-2025 (pt)
+V2D Método: recibo ausente ppp-oe2026-receitas-2025 (pt)
+V2D Método: recibo ausente ppp-oe2027-brutos-2027 (pt)
+V2D Método: recibo ausente ppp-oe2027-ferroviario-2027 (pt)
+V2D Método: recibo ausente ppp-oe2027-liquidos-2026 (pt)
+V2D Método: recibo ausente ppp-oe2027-liquidos-2027-previsao-oe2026 (pt)
+V2D Método: recibo ausente ppp-oe2027-liquidos-2028 (pt)
+V2D Método: recibo ausente ppp-oe2027-liquidos-2029 (pt)
+V2D Método: recibo ausente ppp-oe2027-liquidos-2030 (pt)
+V2D Método: recibo ausente ppp-oe2027-liquidos-2035 (pt)
+V2D Método: recibo ausente ppp-oe2027-liquidos-2040 (pt)
+V2D Método: recibo ausente ppp-oe2027-receitas-2027 (pt)
+V2D Método: recibo ausente ppp-oe2027-riscos-acrescimo (pt)
+V2D Método: recibo ausente ppp-oe2027-riscos-brisa (pt)
+V2D Método: recibo ausente ppp-oe2027-riscos-pedidos-rodoviarios (pt)
+V2D Método: recibo ausente ppp-oe2027-riscos-rotas-algarve-mensal (pt)
+V2D Método: recibo ausente ppp-oe2027-riscos-rotas-algarve-principal (pt)
+V2D Método: recibo ausente ppp-oe2027-saude-2027 (pt)
+V2D Método: recibo ausente saude-total-2020-execucao-cge2020 (pt)
+V2D Método: recibo ausente saude-total-2020-orcamento-oe2020 (pt)
+V2D Método: recibo ausente saude-total-2021-execucao-cge2021 (pt)
+V2D Método: recibo ausente saude-total-2021-orcamento-oe2021 (pt)
+V2D Método: recibo ausente saude-total-2022-execucao-cge2022 (pt)
+V2D Método: recibo ausente saude-total-2022-orcamento-oe2022 (pt)
+V2D Método: recibo ausente saude-total-2023-execucao-cge2023 (pt)
+V2D Método: recibo ausente saude-total-2023-orcamento-oe2023 (pt)
+V2D Método: recibo ausente saude-total-2024-execucao-cge2024 (pt)
+V2D Método: recibo ausente saude-total-2024-orcamento-oe2024 (pt)
+V2D Método: recibo ausente saude-total-2025-execucao-cge2025 (pt)
+V2D Método: recibo ausente saude-total-2025-orcamento-oe2025 (pt)
+V2D Método: recibo ausente saude-total-2026-orcamento-oe2026 (pt)
+V2D Método: recibo ausente utao-ppp-contingencias-natureza-2026 (pt)
+V2D Método: recibo ausente utao-risco-execucao-sns-2027 (pt)
+V2D Método: recibo ausente utao-saude-efetiva-2026-estimativa (pt)
+V2D Método: recibo ausente utao-saude-efetiva-2026-orcamento (pt)
+V2D Método: recibo ausente utao-saude-sem-prr-2027 (pt)
+V2D Método: recibo ausente afirmacao-pcp-paula-investimento-saude-2026-10-12 (en)
+V2D Método: recibo ausente afirmacao-pcp-paula-ppp-2026-10-12 (en)
+V2D Método: recibo ausente afirmacao-pcp-ppp-2026-10-15 (en)
+V2D Método: recibo ausente der-ambiente-e-energia-prr-2026 (en)
+V2D Método: recibo ausente der-coesao-territorial-variacao-sem-prr-pct (en)
+V2D Método: recibo ausente der-economia-prr-2026 (en)
+V2D Método: recibo ausente der-economia-variacao-sem-prr-pct (en)
+V2D Método: recibo ausente der-educacao-variacao-sem-prr (en)
+V2D Método: recibo ausente der-educacao-variacao-sem-prr-pct (en)
+V2D Método: recibo ausente der-financas-prr-2026 (en)
+V2D Método: recibo ausente der-financas-variacao-sem-prr-pct (en)
+V2D Método: recibo ausente der-infraestruturas-e-habitacao-prr-2026 (en)
+V2D Método: recibo ausente der-infraestruturas-e-habitacao-variacao-sem-prr (en)
+V2D Método: recibo ausente der-infraestruturas-e-habitacao-variacao-sem-prr-pct (en)
+V2D Método: recibo ausente der-justica-variacao-sem-prr (en)
+V2D Método: recibo ausente der-justica-variacao-sem-prr-pct (en)
+V2D Método: recibo ausente der-ppp-brutos-todos-2027 (en)
+V2D Método: recibo ausente der-ppp-pcp-vs-brutos (en)
+V2D Método: recibo ausente der-ppp-pcp-vs-liquidos (en)
+V2D Método: recibo ausente der-ppp-quota-rodoviario (en)
+V2D Método: recibo ausente der-ppp-rodoviario-2027-vs-2021-pct (en)
+V2D Método: recibo ausente der-saude-2027-vs-execucao-2025-pct (en)
+V2D Método: recibo ausente der-saude-bens-servicos-reducao-abs (en)
+V2D Método: recibo ausente der-saude-bens-servicos-variacao-abs (en)
+V2D Método: recibo ausente der-saude-investimento-reducao-abs (en)
+V2D Método: recibo ausente der-saude-investimento-variacao-abs (en)
+V2D Método: recibo ausente der-saude-outras-correntes-variacao-abs (en)
+V2D Método: recibo ausente der-saude-pessoal-variacao-abs (en)
+V2D Método: recibo ausente der-saude-prr-2026 (en)
+V2D Método: recibo ausente der-saude-razao-compensacao-prr (en)
+V2D Método: recibo ausente der-saude-razao-compensacao-prr-pct (en)
+V2D Método: recibo ausente der-saude-receitas-proprias-variacao-pct (en)
+V2D Método: recibo ausente der-saude-reforco-total-2026 (en)
+V2D Método: recibo ausente der-saude-total-reducao-abs (en)
+V2D Método: recibo ausente der-saude-variacao-efetiva (en)
+V2D Método: recibo ausente der-saude-variacao-sem-prr (en)
+V2D Método: recibo ausente der-saude-variacao-sem-prr-pct (en)
+V2D Método: recibo ausente der-saude-variacao-total-abs (en)
+V2D Método: recibo ausente der-seguranca-interna-variacao-sem-prr (en)
+V2D Método: recibo ausente der-seguranca-interna-variacao-sem-prr-pct (en)
+V2D Método: recibo ausente der-trabalho-solidariedade-e-seguranca-social-variacao-sem-prr (en)
+V2D Método: recibo ausente der-trabalho-solidariedade-e-seguranca-social-variacao-sem-prr-pct (en)
+V2D Método: recibo ausente der-utao-saude-reforco-2026 (en)
+V2D Método: recibo ausente dgo-2026-08-saude-efetiva-jan-ago-2025 (en)
+V2D Método: recibo ausente dgo-2026-08-saude-efetiva-jan-ago-2026 (en)
+V2D Método: recibo ausente dgo-2026-08-saude-efetiva-variacao-homologa (en)
+V2D Método: recibo ausente dgo-2026-08-sns-despesa-variacao-homologa (en)
+V2D Método: recibo ausente dgo-2026-08-sns-saldo-jan-ago-2026 (en)
+V2D Método: recibo ausente eurostat-hlth-sha11-hf-a-eur_hab-tot_hf-eu27_2020-2024 (en)
+V2D Método: recibo ausente eurostat-hlth-sha11-hf-a-eur_hab-tot_hf-pt-2024 (en)
+V2D Método: recibo ausente eurostat-hlth-sha11-hf-a-pc_gdp-hf1-eu27_2020-2024 (en)
+V2D Método: recibo ausente eurostat-hlth-sha11-hf-a-pc_gdp-hf1-pt-2024 (en)
+V2D Método: recibo ausente eurostat-hlth-sha11-hf-a-pc_gdp-tot_hf-eu27_2020-2024 (en)
+V2D Método: recibo ausente eurostat-hlth-sha11-hf-a-pc_gdp-tot_hf-pt-2024 (en)
+V2D Método: recibo ausente oe-2027-ambiente-e-energia-efetiva-2026 (en)
+V2D Método: recibo ausente oe-2027-ambiente-e-energia-sem-prr-2026 (en)
+V2D Método: recibo ausente oe-2027-coesao-territorial-sem-prr-2026 (en)
+V2D Método: recibo ausente oe-2027-coesao-territorial-sem-prr-2027 (en)
+V2D Método: recibo ausente oe-2027-economia-efetiva-2026 (en)
+V2D Método: recibo ausente oe-2027-economia-sem-prr-2026 (en)
+V2D Método: recibo ausente oe-2027-economia-sem-prr-2027 (en)
+V2D Método: recibo ausente oe-2027-educacao-sem-prr-2026 (en)
+V2D Método: recibo ausente oe-2027-educacao-sem-prr-2027 (en)
+V2D Método: recibo ausente oe-2027-financas-efetiva-2026 (en)
+V2D Método: recibo ausente oe-2027-financas-sem-prr-2026 (en)
+V2D Método: recibo ausente oe-2027-financas-sem-prr-2027 (en)
+V2D Método: recibo ausente oe-2027-infraestruturas-e-habitacao-efetiva-2026 (en)
+V2D Método: recibo ausente oe-2027-infraestruturas-e-habitacao-sem-prr-2026 (en)
+V2D Método: recibo ausente oe-2027-infraestruturas-e-habitacao-sem-prr-2027 (en)
+V2D Método: recibo ausente oe-2027-justica-sem-prr-2026 (en)
+V2D Método: recibo ausente oe-2027-justica-sem-prr-2027 (en)
+V2D Método: recibo ausente oe-2027-outras-despesas-dotacoes-execucao (en)
+V2D Método: recibo ausente oe-2027-saude-bens-servicos-2026 (en)
+V2D Método: recibo ausente oe-2027-saude-bens-servicos-2027 (en)
+V2D Método: recibo ausente oe-2027-saude-bens-servicos-variacao (en)
+V2D Método: recibo ausente oe-2027-saude-contrato-programa-acss (en)
+V2D Método: recibo ausente oe-2027-saude-dotacao-reforco-contratos-programa (en)
+V2D Método: recibo ausente oe-2027-saude-fonte-fundos-europeus-2026 (en)
+V2D Método: recibo ausente oe-2027-saude-fonte-fundos-europeus-2027 (en)
+V2D Método: recibo ausente oe-2027-saude-fonte-impostos-2026 (en)
+V2D Método: recibo ausente oe-2027-saude-fonte-impostos-2027 (en)
+V2D Método: recibo ausente oe-2027-saude-fonte-receitas-proprias-2026 (en)
+V2D Método: recibo ausente oe-2027-saude-fonte-receitas-proprias-2027 (en)
+V2D Método: recibo ausente oe-2027-saude-investimento-2026 (en)
+V2D Método: recibo ausente oe-2027-saude-investimento-2027 (en)
+V2D Método: recibo ausente oe-2027-saude-investimento-variacao (en)
+V2D Método: recibo ausente oe-2027-saude-investimento-variacao-sem-prr (en)
+V2D Método: recibo ausente oe-2027-saude-outras-correntes-2026 (en)
+V2D Método: recibo ausente oe-2027-saude-outras-correntes-2027 (en)
+V2D Método: recibo ausente oe-2027-saude-pessoal-2026 (en)
+V2D Método: recibo ausente oe-2027-saude-pessoal-2027 (en)
+V2D Método: recibo ausente oe-2027-saude-pessoal-variacao (en)
+V2D Método: recibo ausente oe-2027-saude-transferencias-capital-2026 (en)
+V2D Método: recibo ausente oe-2027-saude-transferencias-capital-2027 (en)
+V2D Método: recibo ausente oe-2027-saude-transferencias-sns-2026 (en)
+V2D Método: recibo ausente oe-2027-saude-transferencias-sns-2027 (en)
+V2D Método: recibo ausente oe-2027-saude-transferencias-sns-variacao (en)
+V2D Método: recibo ausente oe-2027-seguranca-interna-sem-prr-2026 (en)
+V2D Método: recibo ausente oe-2027-seguranca-interna-sem-prr-2027 (en)
+V2D Método: recibo ausente oe-2027-trabalho-solidariedade-e-seguranca-social-sem-prr-2026 (en)
+V2D Método: recibo ausente oe-2027-trabalho-solidariedade-e-seguranca-social-sem-prr-2027 (en)
+V2D Método: recibo ausente ppp-oe2022-liquidos-2021 (en)
+V2D Método: recibo ausente ppp-oe2023-liquidos-2022 (en)
+V2D Método: recibo ausente ppp-oe2024-liquidos-2023 (en)
+V2D Método: recibo ausente ppp-oe2025-liquidos-2024 (en)
+V2D Método: recibo ausente ppp-oe2026-brutos-2025 (en)
+V2D Método: recibo ausente ppp-oe2026-liquidos-2025 (en)
+V2D Método: recibo ausente ppp-oe2026-receitas-2025 (en)
+V2D Método: recibo ausente ppp-oe2027-brutos-2027 (en)
+V2D Método: recibo ausente ppp-oe2027-ferroviario-2027 (en)
+V2D Método: recibo ausente ppp-oe2027-liquidos-2026 (en)
+V2D Método: recibo ausente ppp-oe2027-liquidos-2027-previsao-oe2026 (en)
+V2D Método: recibo ausente ppp-oe2027-liquidos-2028 (en)
+V2D Método: recibo ausente ppp-oe2027-liquidos-2029 (en)
+V2D Método: recibo ausente ppp-oe2027-liquidos-2030 (en)
+V2D Método: recibo ausente ppp-oe2027-liquidos-2035 (en)
+V2D Método: recibo ausente ppp-oe2027-liquidos-2040 (en)
+V2D Método: recibo ausente ppp-oe2027-receitas-2027 (en)
+V2D Método: recibo ausente ppp-oe2027-riscos-acrescimo (en)
+V2D Método: recibo ausente ppp-oe2027-riscos-brisa (en)
+V2D Método: recibo ausente ppp-oe2027-riscos-pedidos-rodoviarios (en)
+V2D Método: recibo ausente ppp-oe2027-riscos-rotas-algarve-mensal (en)
+V2D Método: recibo ausente ppp-oe2027-riscos-rotas-algarve-principal (en)
+V2D Método: recibo ausente ppp-oe2027-saude-2027 (en)
+V2D Método: recibo ausente saude-total-2020-execucao-cge2020 (en)
+V2D Método: recibo ausente saude-total-2020-orcamento-oe2020 (en)
+V2D Método: recibo ausente saude-total-2021-execucao-cge2021 (en)
+V2D Método: recibo ausente saude-total-2021-orcamento-oe2021 (en)
+V2D Método: recibo ausente saude-total-2022-execucao-cge2022 (en)
+V2D Método: recibo ausente saude-total-2022-orcamento-oe2022 (en)
+V2D Método: recibo ausente saude-total-2023-execucao-cge2023 (en)
+V2D Método: recibo ausente saude-total-2023-orcamento-oe2023 (en)
+V2D Método: recibo ausente saude-total-2024-execucao-cge2024 (en)
+V2D Método: recibo ausente saude-total-2024-orcamento-oe2024 (en)
+V2D Método: recibo ausente saude-total-2025-execucao-cge2025 (en)
+V2D Método: recibo ausente saude-total-2025-orcamento-oe2025 (en)
+V2D Método: recibo ausente saude-total-2026-orcamento-oe2026 (en)
+V2D Método: recibo ausente utao-ppp-contingencias-natureza-2026 (en)
+V2D Método: recibo ausente utao-risco-execucao-sns-2027 (en)
+V2D Método: recibo ausente utao-saude-efetiva-2026-estimativa (en)
+V2D Método: recibo ausente utao-saude-efetiva-2026-orcamento (en)
+V2D Método: recibo ausente utao-saude-sem-prr-2027 (en)
+V2E recibo ausente: der-infarmed-total-2025-jan-jul (pt)
+V2E recibo ausente: der-infarmed-total-2025-jan-jul (en)
+V2E recibo ausente: der-infarmed-total-2026-jan-jul (pt)
+V2E recibo ausente: der-infarmed-total-2026-jan-jul (en)
+V2E recibo ausente: der-infarmed-variacao-pct (pt)
+V2E recibo ausente: der-infarmed-variacao-pct (en)
+V2E recibo ausente: der-prr-saude-contratado-numerico (pt)
+V2E recibo ausente: der-prr-saude-contratado-numerico (en)
+V2E recibo ausente: der-prr-saude-marcos-completos (pt)
+V2E recibo ausente: der-prr-saude-marcos-completos (en)
+V2E recibo ausente: der-prr-saude-marcos-total (pt)
+V2E recibo ausente: der-prr-saude-marcos-total (en)
+V2E recibo ausente: der-prr-saude-pago-numerico (pt)
+V2E recibo ausente: der-prr-saude-pago-numerico (en)
+V2E recibo ausente: der-prr-saude-por-pagar-pct (pt)
+V2E recibo ausente: der-prr-saude-por-pagar-pct (en)
+V2E recibo ausente: der-prr-saude-por-pagar (pt)
+V2E recibo ausente: der-prr-saude-por-pagar (en)
+V2E recibo ausente: der-prr-saude-taxa-numerico (pt)
+V2E recibo ausente: der-prr-saude-taxa-numerico (en)
+V2E recibo ausente: der-sns-cirurgias-variacao-pct (pt)
+V2E recibo ausente: der-sns-cirurgias-variacao-pct (en)
+V2E recibo ausente: der-sns-consultas-csp-variacao-pct (pt)
+V2E recibo ausente: der-sns-consultas-csp-variacao-pct (en)
+V2E recibo ausente: der-sns-divida-fornecedores-2026-07 (pt)
+V2E recibo ausente: der-sns-divida-fornecedores-2026-07 (en)
+V2E recibo ausente: der-sns-espera-rncci-variacao-pct (pt)
+V2E recibo ausente: der-sns-espera-rncci-variacao-pct (en)
+V2E recibo ausente: der-sns-lista-cirurgia-variacao-pct (pt)
+V2E recibo ausente: der-sns-lista-cirurgia-variacao-pct (en)
+V2E recibo ausente: dgo-atraso-45-p (pt)
+V2E recibo ausente: dgo-atraso-45-p (en)
+V2E recibo ausente: dgo-regularizacao-ae (pt)
+V2E recibo ausente: dgo-regularizacao-ae (en)
+V2E recibo ausente: eurostat-be-phys (pt)
+V2E recibo ausente: eurostat-be-phys (en)
+V2E recibo ausente: eurostat-el-phys (pt)
+V2E recibo ausente: eurostat-el-phys (en)
+V2E recibo ausente: eurostat-lu-nrs (pt)
+V2E recibo ausente: eurostat-lu-nrs (en)
+V2E recibo ausente: eurostat-pt-nrs (pt)
+V2E recibo ausente: eurostat-pt-nrs (en)
+V2E recibo ausente: eurostat-pt-phys (pt)
+V2E recibo ausente: eurostat-pt-phys (en)
+V2E recibo ausente: eurostat-ro-nrs (pt)
+V2E recibo ausente: eurostat-ro-nrs (en)
+V2E recibo ausente: infarmed-ambulatorio-2026-07-p5-acumulado-encargo (pt)
+V2E recibo ausente: infarmed-ambulatorio-2026-07-p5-acumulado-encargo (en)
+V2E recibo ausente: infarmed-ambulatorio-2026-07-p5-homologo-encargo (pt)
+V2E recibo ausente: infarmed-ambulatorio-2026-07-p5-homologo-encargo (en)
+V2E recibo ausente: infarmed-ambulatorio-limitacao (pt)
+V2E recibo ausente: infarmed-ambulatorio-limitacao (en)
+V2E recibo ausente: infarmed-hospitalar-2026-07-p5-acumulado-encargo (pt)
+V2E recibo ausente: infarmed-hospitalar-2026-07-p5-acumulado-encargo (en)
+V2E recibo ausente: infarmed-hospitalar-2026-07-p5-homologo-encargo (pt)
+V2E recibo ausente: infarmed-hospitalar-2026-07-p5-homologo-encargo (en)
+V2E recibo ausente: oe2027-compromisso-cirurgias (pt)
+V2E recibo ausente: oe2027-compromisso-cirurgias (en)
+V2E recibo ausente: oe2027-compromisso-consultas (pt)
+V2E recibo ausente: oe2027-compromisso-consultas (en)
+V2E recibo ausente: oe2027-indicador-medico (pt)
+V2E recibo ausente: oe2027-indicador-medico (en)
+V2E recibo ausente: pe-brisa-minuta-ano (pt)
+V2E recibo ausente: pe-brisa-minuta-ano (en)
+V2E recibo ausente: pe-brisa-periodo-imt (pt)
+V2E recibo ausente: pe-brisa-periodo-imt (en)
+V2E recibo ausente: pe-brisa-prazo-minuta (pt)
+V2E recibo ausente: pe-brisa-prazo-minuta (en)
+V2E recibo ausente: pe-brisa-vias-minuta (pt)
+V2E recibo ausente: pe-brisa-vias-minuta (en)
+V2E recibo ausente: pe-despacho-alargamentos (pt)
+V2E recibo ausente: pe-despacho-alargamentos (en)
+V2E recibo ausente: pe-despacho-braga (pt)
+V2E recibo ausente: pe-despacho-braga (en)
+V2E recibo ausente: pe-despacho-comparticipacoes (pt)
+V2E recibo ausente: pe-despacho-comparticipacoes (en)
+V2E recibo ausente: pe-despacho-equilibrio (pt)
+V2E recibo ausente: pe-despacho-equilibrio (en)
+V2E recibo ausente: pe-despacho-investimentos-novos (pt)
+V2E recibo ausente: pe-despacho-investimentos-novos (en)
+V2E recibo ausente: pe-despacho-investimentos-previstos (pt)
+V2E recibo ausente: pe-despacho-investimentos-previstos (en)
+V2E recibo ausente: pe-despacho-limites (pt)
+V2E recibo ausente: pe-despacho-limites (en)
+V2E recibo ausente: pe-despacho-qualidade (pt)
+V2E recibo ausente: pe-despacho-qualidade (en)
+V2E recibo ausente: pe-dl87a-apoio-retificado (pt)
+V2E recibo ausente: pe-dl87a-apoio-retificado (en)
+V2E recibo ausente: pe-dl87a-apoio (pt)
+V2E recibo ausente: pe-dl87a-apoio (en)
+V2E recibo ausente: pe-dl87a-atualizacao (pt)
+V2E recibo ausente: pe-dl87a-atualizacao (en)
+V2E recibo ausente: pe-dl87a-descontos (pt)
+V2E recibo ausente: pe-dl87a-descontos (en)
+V2E recibo ausente: pe-dl87a-efeitos (pt)
+V2E recibo ausente: pe-dl87a-efeitos (en)
+V2E recibo ausente: pe-dl87a-financiamento (pt)
+V2E recibo ausente: pe-dl87a-financiamento (en)
+V2E recibo ausente: pe-dl87a-publicacao-ano (pt)
+V2E recibo ausente: pe-dl87a-publicacao-ano (en)
+V2E recibo ausente: pe-oe-algarve-cautelar (pt)
+V2E recibo ausente: pe-oe-algarve-cautelar (en)
+V2E recibo ausente: pe-oe-algarve-provisorio (pt)
+V2E recibo ausente: pe-oe-algarve-provisorio (en)
+V2E recibo ausente: pe-oe-apoio-dl87a (pt)
+V2E recibo ausente: pe-oe-apoio-dl87a (en)
+V2E recibo ausente: pe-oe-beira-abolicao (pt)
+V2E recibo ausente: pe-oe-beira-abolicao (en)
+V2E recibo ausente: pe-oe-brisa-negociacao (pt)
+V2E recibo ausente: pe-oe-brisa-negociacao (en)
+V2E recibo ausente: pe-oe-brisa-pedido (pt)
+V2E recibo ausente: pe-oe-brisa-pedido (en)
+V2E recibo ausente: pe-oe-contingentes (pt)
+V2E recibo ausente: pe-oe-contingentes (en)
+V2E recibo ausente: pe-oe-riscos-nao-reconhecimento (pt)
+V2E recibo ausente: pe-oe-riscos-nao-reconhecimento (en)
+V2E recibo ausente: pe-oe-riscos-total (pt)
+V2E recibo ausente: pe-oe-riscos-total (en)
+V2E recibo ausente: pe-scut-trocos (pt)
+V2E recibo ausente: pe-scut-trocos (en)
+V2E recibo ausente: pe-scut-vigencia (pt)
+V2E recibo ausente: pe-scut-vigencia (en)
+V2E recibo ausente: pe-tc15-acordos (pt)
+V2E recibo ausente: pe-tc15-acordos (en)
+V2E recibo ausente: pe-tc15-fundamento (pt)
+V2E recibo ausente: pe-tc15-fundamento (en)
+V2E recibo ausente: pe-tc15-futuros (pt)
+V2E recibo ausente: pe-tc15-futuros (en)
+V2E recibo ausente: pe-tc15-infracoes (pt)
+V2E recibo ausente: pe-tc15-infracoes (en)
+V2E recibo ausente: pe-tc15-remuneracao (pt)
+V2E recibo ausente: pe-tc15-remuneracao (en)
+V2E recibo ausente: prr-complemento-p3-1-24-estado (pt)
+V2E recibo ausente: prr-complemento-p3-1-24-estado (en)
+V2E recibo ausente: prr-complemento-p3-1-3-estado (pt)
+V2E recibo ausente: prr-complemento-p3-1-3-estado (en)
+V2E recibo ausente: prr-complemento-p3-1-32-estado (pt)
+V2E recibo ausente: prr-complemento-p3-1-32-estado (en)
+V2E recibo ausente: prr-complemento-p3-1-33-estado (pt)
+V2E recibo ausente: prr-complemento-p3-1-33-estado (en)
+V2E recibo ausente: prr-complemento-p3-1-8-estado (pt)
+V2E recibo ausente: prr-complemento-p3-1-8-estado (en)
+V2E recibo ausente: prr-complemento-p4-1-1-estado (pt)
+V2E recibo ausente: prr-complemento-p4-1-1-estado (en)
+V2E recibo ausente: prr-complemento-p4-1-12-estado (pt)
+V2E recibo ausente: prr-complemento-p4-1-12-estado (en)
+V2E recibo ausente: prr-complemento-p4-1-2-estado (pt)
+V2E recibo ausente: prr-complemento-p4-1-2-estado (en)
+V2E recibo ausente: prr-complemento-p4-1-40-estado (pt)
+V2E recibo ausente: prr-complemento-p4-1-40-estado (en)
+V2E recibo ausente: prr-complemento-p4-1-41-estado (pt)
+V2E recibo ausente: prr-complemento-p4-1-41-estado (en)
+V2E recibo ausente: prr-complemento-p4-1-5-estado (pt)
+V2E recibo ausente: prr-complemento-p4-1-5-estado (en)
+V2E recibo ausente: prr-complemento-p5-1-11-estado (pt)
+V2E recibo ausente: prr-complemento-p5-1-11-estado (en)
+V2E recibo ausente: prr-complemento-p5-1-22-estado (pt)
+V2E recibo ausente: prr-complemento-p5-1-22-estado (en)
+V2E recibo ausente: prr-complemento-p5-1-28-estado (pt)
+V2E recibo ausente: prr-complemento-p5-1-28-estado (en)
+V2E recibo ausente: prr-complemento-p5-1-7-estado (pt)
+V2E recibo ausente: prr-complemento-p5-1-7-estado (en)
+V2E recibo ausente: prr-complemento-p5-1-9-estado (pt)
+V2E recibo ausente: prr-complemento-p5-1-9-estado (en)
+V2E recibo ausente: prr-complemento-p6-1-10-estado (pt)
+V2E recibo ausente: prr-complemento-p6-1-10-estado (en)
+V2E recibo ausente: prr-complemento-p6-1-37-estado (pt)
+V2E recibo ausente: prr-complemento-p6-1-37-estado (en)
+V2E recibo ausente: prr-complemento-p6-1-42-estado (pt)
+V2E recibo ausente: prr-complemento-p6-1-42-estado (en)
+V2E recibo ausente: prr-complemento-p7-1-34-estado (pt)
+V2E recibo ausente: prr-complemento-p7-1-34-estado (en)
+V2E recibo ausente: prr-complemento-p7-1-35-estado (pt)
+V2E recibo ausente: prr-complemento-p7-1-35-estado (en)
+V2E recibo ausente: prr-complemento-p7-1-36-estado (pt)
+V2E recibo ausente: prr-complemento-p7-1-36-estado (en)
+V2E recibo ausente: prr-complemento-p7-1-38-estado (pt)
+V2E recibo ausente: prr-complemento-p7-1-38-estado (en)
+V2E recibo ausente: prr-complemento-p7-1-39-estado (pt)
+V2E recibo ausente: prr-complemento-p7-1-39-estado (en)
+V2E recibo ausente: prr-complemento-p8-1-21-estado (pt)
+V2E recibo ausente: prr-complemento-p8-1-21-estado (en)
+V2E recibo ausente: prr-complemento-p8-1-25-estado (pt)
+V2E recibo ausente: prr-complemento-p8-1-25-estado (en)
+V2E recibo ausente: prr-complemento-p9-1-17-estado (pt)
+V2E recibo ausente: prr-complemento-p9-1-17-estado (en)
+V2E recibo ausente: prr-complemento-p9-1-18-estado (pt)
+V2E recibo ausente: prr-complemento-p9-1-18-estado (en)
+V2E recibo ausente: prr-complemento-p9-1-26-estado (pt)
+V2E recibo ausente: prr-complemento-p9-1-26-estado (en)
+V2E recibo ausente: prr-complemento-p9-1-30-estado (pt)
+V2E recibo ausente: prr-complemento-p9-1-30-estado (en)
+V2E recibo ausente: prr-complemento-p9-1-43-estado (pt)
+V2E recibo ausente: prr-complemento-p9-1-43-estado (en)
+V2E recibo ausente: prr-complemento-p9-1-44-estado (pt)
+V2E recibo ausente: prr-complemento-p9-1-44-estado (en)
+V2E recibo ausente: prr-marcos-metas-2025-p2-1-13-estado (pt)
+V2E recibo ausente: prr-marcos-metas-2025-p2-1-13-estado (en)
+V2E recibo ausente: prr-marcos-metas-2025-p2-1-20-estado (pt)
+V2E recibo ausente: prr-marcos-metas-2025-p2-1-20-estado (en)
+V2E recibo ausente: prr-marcos-metas-2025-p2-1-29-estado (pt)
+V2E recibo ausente: prr-marcos-metas-2025-p2-1-29-estado (en)
+V2E recibo ausente: prr-marcos-metas-2025-p2-1-4-estado (pt)
+V2E recibo ausente: prr-marcos-metas-2025-p2-1-4-estado (en)
+V2E recibo ausente: prr-marcos-metas-2025-p2-1-6-estado (pt)
+V2E recibo ausente: prr-marcos-metas-2025-p2-1-6-estado (en)
+V2E recibo ausente: prr-monitorizacao-20261014-p2-c01-contratado (pt)
+V2E recibo ausente: prr-monitorizacao-20261014-p2-c01-contratado (en)
+V2E recibo ausente: prr-monitorizacao-20261014-p2-c01-pago (pt)
+V2E recibo ausente: prr-monitorizacao-20261014-p2-c01-pago (en)
+V2E recibo ausente: prr-monitorizacao-20261014-p2-c01-taxa (pt)
+V2E recibo ausente: prr-monitorizacao-20261014-p2-c01-taxa (en)
+V2E recibo ausente: sns-catalogo-acumulados (pt)
+V2E recibo ausente: sns-catalogo-acumulados (en)
+V2E recibo ausente: sns-cirurgias-2025-07 (pt)
+V2E recibo ausente: sns-cirurgias-2025-07 (en)
+V2E recibo ausente: sns-cirurgias-2026-07 (pt)
+V2E recibo ausente: sns-cirurgias-2026-07 (en)
+V2E recibo ausente: sns-consultas-csp-2025-08 (pt)
+V2E recibo ausente: sns-consultas-csp-2025-08 (en)
+V2E recibo ausente: sns-consultas-csp-2026-08 (pt)
+V2E recibo ausente: sns-consultas-csp-2026-08 (en)
+V2E recibo ausente: sns-consultas-csp-descricao (pt)
+V2E recibo ausente: sns-consultas-csp-descricao (en)
+V2E recibo ausente: sns-consultas-hospitalares-2025-07 (pt)
+V2E recibo ausente: sns-consultas-hospitalares-2025-07 (en)
+V2E recibo ausente: sns-consultas-hospitalares-2026-07 (pt)
+V2E recibo ausente: sns-consultas-hospitalares-2026-07 (en)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-0 (pt)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-0 (en)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-1 (pt)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-1 (en)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-10 (pt)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-10 (en)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-11 (pt)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-11 (en)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-12 (pt)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-12 (en)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-13 (pt)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-13 (en)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-14 (pt)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-14 (en)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-15 (pt)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-15 (en)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-16 (pt)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-16 (en)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-17 (pt)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-17 (en)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-18 (pt)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-18 (en)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-19 (pt)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-19 (en)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-2 (pt)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-2 (en)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-20 (pt)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-20 (en)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-21 (pt)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-21 (en)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-22 (pt)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-22 (en)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-23 (pt)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-23 (en)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-24 (pt)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-24 (en)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-25 (pt)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-25 (en)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-26 (pt)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-26 (en)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-27 (pt)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-27 (en)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-28 (pt)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-28 (en)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-29 (pt)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-29 (en)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-3 (pt)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-3 (en)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-30 (pt)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-30 (en)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-31 (pt)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-31 (en)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-32 (pt)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-32 (en)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-33 (pt)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-33 (en)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-34 (pt)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-34 (en)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-35 (pt)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-35 (en)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-36 (pt)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-36 (en)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-37 (pt)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-37 (en)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-38 (pt)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-38 (en)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-39 (pt)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-39 (en)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-4 (pt)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-4 (en)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-40 (pt)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-40 (en)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-41 (pt)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-41 (en)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-42 (pt)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-42 (en)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-43 (pt)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-43 (en)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-44 (pt)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-44 (en)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-45 (pt)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-45 (en)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-46 (pt)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-46 (en)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-47 (pt)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-47 (en)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-48 (pt)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-48 (en)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-49 (pt)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-49 (en)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-5 (pt)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-5 (en)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-50 (pt)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-50 (en)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-51 (pt)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-51 (en)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-52 (pt)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-52 (en)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-6 (pt)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-6 (en)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-7 (pt)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-7 (en)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-8 (pt)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-8 (en)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-9 (pt)
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-9 (en)
+V2E recibo ausente: sns-espera-rncci-2025-10-19 (pt)
+V2E recibo ausente: sns-espera-rncci-2025-10-19 (en)
+V2E recibo ausente: sns-espera-rncci-2026-10-19 (pt)
+V2E recibo ausente: sns-espera-rncci-2026-10-19 (en)
+V2E recibo ausente: sns-lista-cirurgia-2025-07 (pt)
+V2E recibo ausente: sns-lista-cirurgia-2025-07 (en)
+V2E recibo ausente: sns-lista-cirurgia-2026-07 (pt)
+V2E recibo ausente: sns-lista-cirurgia-2026-07 (en)
+V2E recibo ausente: sns-sem-medico-elegibilidade (pt)
+V2E recibo ausente: sns-sem-medico-elegibilidade (en)
+V2E recibo ausente: sns-sem-medico-serie-antiga-2025-06 (pt)
+V2E recibo ausente: sns-sem-medico-serie-antiga-2025-06 (en)
+V2E recibo ausente: sns-sem-medico-serie-antiga-2026-06 (pt)
+V2E recibo ausente: sns-sem-medico-serie-antiga-2026-06 (en)
+V2E recibo ausente: sns-sem-medico-serie-nova-2026-08 (pt)
+V2E recibo ausente: sns-sem-medico-serie-nova-2026-08 (en)
+V2E recibo ausente: sns-urgencias-2025-07 (pt)
+V2E recibo ausente: sns-urgencias-2025-07 (en)
+V2E recibo ausente: sns-urgencias-2026-07 (pt)
+V2E recibo ausente: sns-urgencias-2026-07 (en)
+V2D recibo: recibo corrigido ausente oe-2027-saude-contrato-programa-acss (pt)
+V2D recibo: recibo corrigido ausente pe-oe-beira-abolicao (pt)
+V2D recibo: recibo corrigido ausente ppp-oe2022-liquidos-2021 (pt)
+V2D recibo: recibo corrigido ausente ppp-oe2023-liquidos-2022 (pt)
+V2D recibo: recibo corrigido ausente ppp-oe2024-liquidos-2023 (pt)
+V2D recibo: recibo corrigido ausente ppp-oe2025-liquidos-2024 (pt)
+V2D recibo: recibo corrigido ausente ppp-oe2026-liquidos-2025 (pt)
+V2D recibo: recibo corrigido ausente ppp-oe2027-liquidos-2026 (pt)
+V2D recibo: recibo corrigido ausente ppp-oe2027-liquidos-2028 (pt)
+V2D recibo: recibo corrigido ausente ppp-oe2027-liquidos-2029 (pt)
+V2D recibo: recibo corrigido ausente ppp-oe2027-liquidos-2030 (pt)
+V2D recibo: recibo corrigido ausente ppp-oe2027-liquidos-2035 (pt)
+V2D recibo: recibo corrigido ausente ppp-oe2027-liquidos-2040 (pt)
+V2D recibo: recibo corrigido ausente ppp-oe2027-riscos-acrescimo (pt)
+V2D recibo: recibo corrigido ausente ppp-oe2027-riscos-brisa (pt)
+V2D recibo: recibo corrigido ausente ppp-oe2027-riscos-pedidos-rodoviarios (pt)
+V2D recibo: recibo corrigido ausente ppp-oe2027-riscos-rotas-algarve-mensal (pt)
+V2D recibo: recibo corrigido ausente ppp-oe2027-riscos-rotas-algarve-principal (pt)
+V2D recibo: recibo corrigido ausente saude-total-2020-execucao-cge2020 (pt)
+V2D recibo: recibo corrigido ausente saude-total-2020-orcamento-oe2020 (pt)
+V2D recibo: recibo corrigido ausente saude-total-2021-execucao-cge2021 (pt)
+V2D recibo: recibo corrigido ausente saude-total-2021-orcamento-oe2021 (pt)
+V2D recibo: recibo corrigido ausente saude-total-2022-execucao-cge2022 (pt)
+V2D recibo: recibo corrigido ausente saude-total-2022-orcamento-oe2022 (pt)
+V2D recibo: recibo corrigido ausente saude-total-2023-execucao-cge2023 (pt)
+V2D recibo: recibo corrigido ausente saude-total-2023-orcamento-oe2023 (pt)
+V2D recibo: recibo corrigido ausente saude-total-2024-execucao-cge2024 (pt)
+V2D recibo: recibo corrigido ausente saude-total-2024-orcamento-oe2024 (pt)
+V2D recibo: recibo corrigido ausente saude-total-2025-execucao-cge2025 (pt)
+V2D recibo: recibo corrigido ausente saude-total-2025-orcamento-oe2025 (pt)
+V2D recibo: recibo corrigido ausente saude-total-2026-orcamento-oe2026 (pt)
+V2D recibo: recibo corrigido ausente utao-ppp-contingencias-natureza-2026 (pt)
+V2D recibo: recibo corrigido ausente utao-risco-execucao-sns-2027 (pt)
+V2D recibo: recibo corrigido ausente oe-2027-saude-contrato-programa-acss (en)
+V2D recibo: recibo corrigido ausente pe-oe-beira-abolicao (en)
+V2D recibo: recibo corrigido ausente ppp-oe2022-liquidos-2021 (en)
+V2D recibo: recibo corrigido ausente ppp-oe2023-liquidos-2022 (en)
+V2D recibo: recibo corrigido ausente ppp-oe2024-liquidos-2023 (en)
+V2D recibo: recibo corrigido ausente ppp-oe2025-liquidos-2024 (en)
+V2D recibo: recibo corrigido ausente ppp-oe2026-liquidos-2025 (en)
+V2D recibo: recibo corrigido ausente ppp-oe2027-liquidos-2026 (en)
+V2D recibo: recibo corrigido ausente ppp-oe2027-liquidos-2028 (en)
+V2D recibo: recibo corrigido ausente ppp-oe2027-liquidos-2029 (en)
+V2D recibo: recibo corrigido ausente ppp-oe2027-liquidos-2030 (en)
+V2D recibo: recibo corrigido ausente ppp-oe2027-liquidos-2035 (en)
+V2D recibo: recibo corrigido ausente ppp-oe2027-liquidos-2040 (en)
+V2D recibo: recibo corrigido ausente ppp-oe2027-riscos-acrescimo (en)
+V2D recibo: recibo corrigido ausente ppp-oe2027-riscos-brisa (en)
+V2D recibo: recibo corrigido ausente ppp-oe2027-riscos-pedidos-rodoviarios (en)
+V2D recibo: recibo corrigido ausente ppp-oe2027-riscos-rotas-algarve-mensal (en)
+V2D recibo: recibo corrigido ausente ppp-oe2027-riscos-rotas-algarve-principal (en)
+V2D recibo: recibo corrigido ausente saude-total-2020-execucao-cge2020 (en)
+V2D recibo: recibo corrigido ausente saude-total-2020-orcamento-oe2020 (en)
+V2D recibo: recibo corrigido ausente saude-total-2021-execucao-cge2021 (en)
+V2D recibo: recibo corrigido ausente saude-total-2021-orcamento-oe2021 (en)
+V2D recibo: recibo corrigido ausente saude-total-2022-execucao-cge2022 (en)
+V2D recibo: recibo corrigido ausente saude-total-2022-orcamento-oe2022 (en)
+V2D recibo: recibo corrigido ausente saude-total-2023-execucao-cge2023 (en)
+V2D recibo: recibo corrigido ausente saude-total-2023-orcamento-oe2023 (en)
+V2D recibo: recibo corrigido ausente saude-total-2024-execucao-cge2024 (en)
+V2D recibo: recibo corrigido ausente saude-total-2024-orcamento-oe2024 (en)
+V2D recibo: recibo corrigido ausente saude-total-2025-execucao-cge2025 (en)
+V2D recibo: recibo corrigido ausente saude-total-2025-orcamento-oe2025 (en)
+V2D recibo: recibo corrigido ausente saude-total-2026-orcamento-oe2026 (en)
+V2D recibo: recibo corrigido ausente utao-ppp-contingencias-natureza-2026 (en)
+V2D recibo: recibo corrigido ausente utao-risco-execucao-sns-2027 (en)
+V2E recibo ausente: oe2027-indicador-medico pt
+V2E recibo ausente: oe2027-compromisso-consultas pt
+V2E recibo ausente: oe2027-compromisso-cirurgias pt
+V2E recibo ausente: dgo-atraso-45-p pt
+V2E recibo ausente: dgo-regularizacao-ae pt
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-0 pt
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-1 pt
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-2 pt
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-3 pt
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-4 pt
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-5 pt
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-6 pt
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-7 pt
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-8 pt
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-9 pt
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-10 pt
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-11 pt
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-12 pt
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-13 pt
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-14 pt
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-15 pt
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-16 pt
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-17 pt
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-18 pt
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-19 pt
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-20 pt
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-21 pt
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-22 pt
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-23 pt
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-24 pt
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-25 pt
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-26 pt
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-27 pt
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-28 pt
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-29 pt
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-30 pt
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-31 pt
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-32 pt
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-33 pt
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-34 pt
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-35 pt
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-36 pt
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-37 pt
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-38 pt
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-39 pt
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-40 pt
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-41 pt
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-42 pt
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-43 pt
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-44 pt
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-45 pt
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-46 pt
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-47 pt
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-48 pt
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-49 pt
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-50 pt
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-51 pt
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-52 pt
+V2E recibo ausente: pe-oe-brisa-negociacao pt
+V2E recibo ausente: pe-oe-brisa-pedido pt
+V2E recibo ausente: pe-oe-riscos-total pt
+V2E recibo ausente: pe-oe-riscos-nao-reconhecimento pt
+V2E recibo ausente: pe-oe-algarve-cautelar pt
+V2E recibo ausente: pe-oe-algarve-provisorio pt
+V2E recibo ausente: pe-oe-contingentes pt
+V2E recibo ausente: pe-oe-beira-abolicao pt
+V2E recibo ausente: pe-oe-apoio-dl87a pt
+V2E recibo ausente: pe-despacho-alargamentos pt
+V2E recibo ausente: pe-despacho-investimentos-previstos pt
+V2E recibo ausente: pe-despacho-equilibrio pt
+V2E recibo ausente: pe-despacho-comparticipacoes pt
+V2E recibo ausente: pe-despacho-braga pt
+V2E recibo ausente: pe-despacho-investimentos-novos pt
+V2E recibo ausente: pe-despacho-limites pt
+V2E recibo ausente: pe-despacho-qualidade pt
+V2E recibo ausente: pe-scut-trocos pt
+V2E recibo ausente: pe-scut-vigencia pt
+V2E recibo ausente: pe-dl87a-atualizacao pt
+V2E recibo ausente: pe-dl87a-apoio pt
+V2E recibo ausente: pe-dl87a-financiamento pt
+V2E recibo ausente: pe-dl87a-efeitos pt
+V2E recibo ausente: pe-tc15-acordos pt
+V2E recibo ausente: pe-tc15-remuneracao pt
+V2E recibo ausente: pe-tc15-infracoes pt
+V2E recibo ausente: pe-tc15-fundamento pt
+V2E recibo ausente: pe-tc15-futuros pt
+V2E recibo ausente: pe-brisa-prazo-minuta pt
+V2E recibo ausente: pe-brisa-periodo-imt pt
+V2E recibo ausente: pe-brisa-vias-minuta pt
+V2E recibo ausente: pe-dl87a-apoio-retificado pt
+V2E recibo ausente: pe-dl87a-descontos pt
+V2E recibo ausente: pe-brisa-minuta-ano pt
+V2E recibo ausente: pe-dl87a-publicacao-ano pt
+V2E recibo ausente: prr-complemento-p3-1-24-estado pt
+V2E recibo ausente: prr-complemento-p3-1-32-estado pt
+V2E recibo ausente: prr-complemento-p3-1-33-estado pt
+V2E recibo ausente: prr-complemento-p3-1-3-estado pt
+V2E recibo ausente: prr-complemento-p3-1-8-estado pt
+V2E recibo ausente: prr-complemento-p4-1-1-estado pt
+V2E recibo ausente: prr-complemento-p4-1-5-estado pt
+V2E recibo ausente: prr-complemento-p4-1-12-estado pt
+V2E recibo ausente: prr-complemento-p4-1-40-estado pt
+V2E recibo ausente: prr-complemento-p4-1-41-estado pt
+V2E recibo ausente: prr-complemento-p4-1-2-estado pt
+V2E recibo ausente: prr-complemento-p5-1-22-estado pt
+V2E recibo ausente: prr-complemento-p5-1-28-estado pt
+V2E recibo ausente: prr-complemento-p5-1-11-estado pt
+V2E recibo ausente: prr-complemento-p5-1-7-estado pt
+V2E recibo ausente: prr-complemento-p5-1-9-estado pt
+V2E recibo ausente: prr-complemento-p6-1-37-estado pt
+V2E recibo ausente: prr-complemento-p6-1-42-estado pt
+V2E recibo ausente: prr-complemento-p6-1-10-estado pt
+V2E recibo ausente: prr-complemento-p7-1-34-estado pt
+V2E recibo ausente: prr-complemento-p7-1-35-estado pt
+V2E recibo ausente: prr-complemento-p7-1-36-estado pt
+V2E recibo ausente: prr-complemento-p7-1-38-estado pt
+V2E recibo ausente: prr-complemento-p7-1-39-estado pt
+V2E recibo ausente: prr-complemento-p8-1-21-estado pt
+V2E recibo ausente: prr-complemento-p8-1-25-estado pt
+V2E recibo ausente: prr-complemento-p9-1-17-estado pt
+V2E recibo ausente: prr-complemento-p9-1-18-estado pt
+V2E recibo ausente: prr-complemento-p9-1-26-estado pt
+V2E recibo ausente: prr-complemento-p9-1-30-estado pt
+V2E recibo ausente: prr-complemento-p9-1-43-estado pt
+V2E recibo ausente: prr-complemento-p9-1-44-estado pt
+V2E recibo ausente: sns-sem-medico-serie-antiga-2025-06 pt
+V2E recibo ausente: sns-sem-medico-serie-antiga-2026-06 pt
+V2E recibo ausente: sns-sem-medico-serie-nova-2026-08 pt
+V2E recibo ausente: sns-consultas-csp-2026-08 pt
+V2E recibo ausente: sns-consultas-csp-2025-08 pt
+V2E recibo ausente: sns-consultas-hospitalares-2026-07 pt
+V2E recibo ausente: sns-consultas-hospitalares-2025-07 pt
+V2E recibo ausente: sns-cirurgias-2026-07 pt
+V2E recibo ausente: sns-cirurgias-2025-07 pt
+V2E recibo ausente: sns-lista-cirurgia-2026-07 pt
+V2E recibo ausente: sns-lista-cirurgia-2025-07 pt
+V2E recibo ausente: sns-urgencias-2026-07 pt
+V2E recibo ausente: sns-urgencias-2025-07 pt
+V2E recibo ausente: sns-espera-rncci-2026-10-19 pt
+V2E recibo ausente: sns-espera-rncci-2025-10-19 pt
+V2E recibo ausente: eurostat-be-phys pt
+V2E recibo ausente: eurostat-el-phys pt
+V2E recibo ausente: eurostat-lu-nrs pt
+V2E recibo ausente: eurostat-pt-phys pt
+V2E recibo ausente: eurostat-pt-nrs pt
+V2E recibo ausente: eurostat-ro-nrs pt
+V2E recibo ausente: prr-monitorizacao-20261014-p2-c01-contratado pt
+V2E recibo ausente: prr-monitorizacao-20261014-p2-c01-pago pt
+V2E recibo ausente: prr-monitorizacao-20261014-p2-c01-taxa pt
+V2E recibo ausente: infarmed-ambulatorio-2026-07-p5-acumulado-encargo pt
+V2E recibo ausente: infarmed-ambulatorio-2026-07-p5-homologo-encargo pt
+V2E recibo ausente: infarmed-ambulatorio-limitacao pt
+V2E recibo ausente: infarmed-hospitalar-2026-07-p5-acumulado-encargo pt
+V2E recibo ausente: infarmed-hospitalar-2026-07-p5-homologo-encargo pt
+V2E recibo ausente: prr-marcos-metas-2025-p2-1-29-estado pt
+V2E recibo ausente: prr-marcos-metas-2025-p2-1-4-estado pt
+V2E recibo ausente: prr-marcos-metas-2025-p2-1-13-estado pt
+V2E recibo ausente: prr-marcos-metas-2025-p2-1-20-estado pt
+V2E recibo ausente: prr-marcos-metas-2025-p2-1-6-estado pt
+V2E recibo ausente: sns-sem-medico-elegibilidade pt
+V2E recibo ausente: sns-consultas-csp-descricao pt
+V2E recibo ausente: sns-catalogo-acumulados pt
+V2E recibo ausente: der-sns-consultas-csp-variacao-pct pt
+V2E recibo ausente: der-sns-cirurgias-variacao-pct pt
+V2E recibo ausente: der-sns-lista-cirurgia-variacao-pct pt
+V2E recibo ausente: der-sns-espera-rncci-variacao-pct pt
+V2E recibo ausente: der-infarmed-total-2026-jan-jul pt
+V2E recibo ausente: der-infarmed-total-2025-jan-jul pt
+V2E recibo ausente: der-infarmed-variacao-pct pt
+V2E recibo ausente: der-prr-saude-contratado-numerico pt
+V2E recibo ausente: der-prr-saude-pago-numerico pt
+V2E recibo ausente: der-prr-saude-taxa-numerico pt
+V2E recibo ausente: der-prr-saude-por-pagar pt
+V2E recibo ausente: der-prr-saude-por-pagar-pct pt
+V2E recibo ausente: der-prr-saude-marcos-total pt
+V2E recibo ausente: der-prr-saude-marcos-completos pt
+V2E recibo ausente: der-sns-divida-fornecedores-2026-07 pt
+V2E recibo ausente: oe2027-indicador-medico en
+V2E recibo ausente: oe2027-compromisso-consultas en
+V2E recibo ausente: oe2027-compromisso-cirurgias en
+V2E recibo ausente: dgo-atraso-45-p en
+V2E recibo ausente: dgo-regularizacao-ae en
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-0 en
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-1 en
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-2 en
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-3 en
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-4 en
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-5 en
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-6 en
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-7 en
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-8 en
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-9 en
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-10 en
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-11 en
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-12 en
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-13 en
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-14 en
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-15 en
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-16 en
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-17 en
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-18 en
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-19 en
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-20 en
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-21 en
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-22 en
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-23 en
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-24 en
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-25 en
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-26 en
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-27 en
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-28 en
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-29 en
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-30 en
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-31 en
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-32 en
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-33 en
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-34 en
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-35 en
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-36 en
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-37 en
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-38 en
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-39 en
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-40 en
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-41 en
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-42 en
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-43 en
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-44 en
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-45 en
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-46 en
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-47 en
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-48 en
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-49 en
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-50 en
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-51 en
+V2E recibo ausente: sns-divida-2026-divida-total-fornecedores-externos-52 en
+V2E recibo ausente: pe-oe-brisa-negociacao en
+V2E recibo ausente: pe-oe-brisa-pedido en
+V2E recibo ausente: pe-oe-riscos-total en
+V2E recibo ausente: pe-oe-riscos-nao-reconhecimento en
+V2E recibo ausente: pe-oe-algarve-cautelar en
+V2E recibo ausente: pe-oe-algarve-provisorio en
+V2E recibo ausente: pe-oe-contingentes en
+V2E recibo ausente: pe-oe-beira-abolicao en
+V2E recibo ausente: pe-oe-apoio-dl87a en
+V2E recibo ausente: pe-despacho-alargamentos en
+V2E recibo ausente: pe-despacho-investimentos-previstos en
+V2E recibo ausente: pe-despacho-equilibrio en
+V2E recibo ausente: pe-despacho-comparticipacoes en
+V2E recibo ausente: pe-despacho-braga en
+V2E recibo ausente: pe-despacho-investimentos-novos en
+V2E recibo ausente: pe-despacho-limites en
+V2E recibo ausente: pe-despacho-qualidade en
+V2E recibo ausente: pe-scut-trocos en
+V2E recibo ausente: pe-scut-vigencia en
+V2E recibo ausente: pe-dl87a-atualizacao en
+V2E recibo ausente: pe-dl87a-apoio en
+V2E recibo ausente: pe-dl87a-financiamento en
+V2E recibo ausente: pe-dl87a-efeitos en
+V2E recibo ausente: pe-tc15-acordos en
+V2E recibo ausente: pe-tc15-remuneracao en
+V2E recibo ausente: pe-tc15-infracoes en
+V2E recibo ausente: pe-tc15-fundamento en
+V2E recibo ausente: pe-tc15-futuros en
+V2E recibo ausente: pe-brisa-prazo-minuta en
+V2E recibo ausente: pe-brisa-periodo-imt en
+V2E recibo ausente: pe-brisa-vias-minuta en
+V2E recibo ausente: pe-dl87a-apoio-retificado en
+V2E recibo ausente: pe-dl87a-descontos en
+V2E recibo ausente: pe-brisa-minuta-ano en
+V2E recibo ausente: pe-dl87a-publicacao-ano en
+V2E recibo ausente: prr-complemento-p3-1-24-estado en
+V2E recibo ausente: prr-complemento-p3-1-32-estado en
+V2E recibo ausente: prr-complemento-p3-1-33-estado en
+V2E recibo ausente: prr-complemento-p3-1-3-estado en
+V2E recibo ausente: prr-complemento-p3-1-8-estado en
+V2E recibo ausente: prr-complemento-p4-1-1-estado en
+V2E recibo ausente: prr-complemento-p4-1-5-estado en
+V2E recibo ausente: prr-complemento-p4-1-12-estado en
+V2E recibo ausente: prr-complemento-p4-1-40-estado en
+V2E recibo ausente: prr-complemento-p4-1-41-estado en
+V2E recibo ausente: prr-complemento-p4-1-2-estado en
+V2E recibo ausente: prr-complemento-p5-1-22-estado en
+V2E recibo ausente: prr-complemento-p5-1-28-estado en
+V2E recibo ausente: prr-complemento-p5-1-11-estado en
+V2E recibo ausente: prr-complemento-p5-1-7-estado en
+V2E recibo ausente: prr-complemento-p5-1-9-estado en
+V2E recibo ausente: prr-complemento-p6-1-37-estado en
+V2E recibo ausente: prr-complemento-p6-1-42-estado en
+V2E recibo ausente: prr-complemento-p6-1-10-estado en
+V2E recibo ausente: prr-complemento-p7-1-34-estado en
+V2E recibo ausente: prr-complemento-p7-1-35-estado en
+V2E recibo ausente: prr-complemento-p7-1-36-estado en
+V2E recibo ausente: prr-complemento-p7-1-38-estado en
+V2E recibo ausente: prr-complemento-p7-1-39-estado en
+V2E recibo ausente: prr-complemento-p8-1-21-estado en
+V2E recibo ausente: prr-complemento-p8-1-25-estado en
+V2E recibo ausente: prr-complemento-p9-1-17-estado en
+V2E recibo ausente: prr-complemento-p9-1-18-estado en
+V2E recibo ausente: prr-complemento-p9-1-26-estado en
+V2E recibo ausente: prr-complemento-p9-1-30-estado en
+V2E recibo ausente: prr-complemento-p9-1-43-estado en
+V2E recibo ausente: prr-complemento-p9-1-44-estado en
+V2E recibo ausente: sns-sem-medico-serie-antiga-2025-06 en
+V2E recibo ausente: sns-sem-medico-serie-antiga-2026-06 en
+V2E recibo ausente: sns-sem-medico-serie-nova-2026-08 en
+V2E recibo ausente: sns-consultas-csp-2026-08 en
+V2E recibo ausente: sns-consultas-csp-2025-08 en
+V2E recibo ausente: sns-consultas-hospitalares-2026-07 en
+V2E recibo ausente: sns-consultas-hospitalares-2025-07 en
+V2E recibo ausente: sns-cirurgias-2026-07 en
+V2E recibo ausente: sns-cirurgias-2025-07 en
+V2E recibo ausente: sns-lista-cirurgia-2026-07 en
+V2E recibo ausente: sns-lista-cirurgia-2025-07 en
+V2E recibo ausente: sns-urgencias-2026-07 en
+V2E recibo ausente: sns-urgencias-2025-07 en
+V2E recibo ausente: sns-espera-rncci-2026-10-19 en
+V2E recibo ausente: sns-espera-rncci-2025-10-19 en
+V2E recibo ausente: eurostat-be-phys en
+V2E recibo ausente: eurostat-el-phys en
+V2E recibo ausente: eurostat-lu-nrs en
+V2E recibo ausente: eurostat-pt-phys en
+V2E recibo ausente: eurostat-pt-nrs en
+V2E recibo ausente: eurostat-ro-nrs en
+V2E recibo ausente: prr-monitorizacao-20261014-p2-c01-contratado en
+V2E recibo ausente: prr-monitorizacao-20261014-p2-c01-pago en
+V2E recibo ausente: prr-monitorizacao-20261014-p2-c01-taxa en
+V2E recibo ausente: infarmed-ambulatorio-2026-07-p5-acumulado-encargo en
+V2E recibo ausente: infarmed-ambulatorio-2026-07-p5-homologo-encargo en
+V2E recibo ausente: infarmed-ambulatorio-limitacao en
+V2E recibo ausente: infarmed-hospitalar-2026-07-p5-acumulado-encargo en
+V2E recibo ausente: infarmed-hospitalar-2026-07-p5-homologo-encargo en
+V2E recibo ausente: prr-marcos-metas-2025-p2-1-29-estado en
+V2E recibo ausente: prr-marcos-metas-2025-p2-1-4-estado en
+V2E recibo ausente: prr-marcos-metas-2025-p2-1-13-estado en
+V2E recibo ausente: prr-marcos-metas-2025-p2-1-20-estado en
+V2E recibo ausente: prr-marcos-metas-2025-p2-1-6-estado en
+V2E recibo ausente: sns-sem-medico-elegibilidade en
+V2E recibo ausente: sns-consultas-csp-descricao en
+V2E recibo ausente: sns-catalogo-acumulados en
+V2E recibo ausente: der-sns-consultas-csp-variacao-pct en
+V2E recibo ausente: der-sns-cirurgias-variacao-pct en
+V2E recibo ausente: der-sns-lista-cirurgia-variacao-pct en
+V2E recibo ausente: der-sns-espera-rncci-variacao-pct en
+V2E recibo ausente: der-infarmed-total-2026-jan-jul en
+V2E recibo ausente: der-infarmed-total-2025-jan-jul en
+V2E recibo ausente: der-infarmed-variacao-pct en
+V2E recibo ausente: der-prr-saude-contratado-numerico en
+V2E recibo ausente: der-prr-saude-pago-numerico en
+V2E recibo ausente: der-prr-saude-taxa-numerico en
+V2E recibo ausente: der-prr-saude-por-pagar en
+V2E recibo ausente: der-prr-saude-por-pagar-pct en
+V2E recibo ausente: der-prr-saude-marcos-total en
+V2E recibo ausente: der-prr-saude-marcos-completos en
+V2E recibo ausente: der-sns-divida-fornecedores-2026-07 en
+V2B página: página ausente
+V2B página: página ausente

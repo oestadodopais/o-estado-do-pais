@@ -6,7 +6,7 @@
 id: "pib-real-per-capita-2025-ue"
 
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
-value: "31 890"
+value: "31 980"
 unit: "euros por habitante · volumes encadeados (2015)"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
@@ -17,11 +17,12 @@ document:
   kind: "serie"
   url: "https://ec.europa.eu/eurostat/databrowser/view/tipsna40/default/table?lang=en"
 source_url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=EU27_2020"
-access_date: "2026-09-15"
+access_date: "2026-10-26"
+published_at: "2026-10-22"
 reference_date: "2025"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "Real GDP per capita — Chain linked volumes (2015), euro per capita — European Union - 27 countries (from 2020) — 2025: 31890"
+excerpt: "Real GDP per capita — Chain linked volumes (2015), euro per capita — European Union - 27 countries (from 2020) — 2025: 31980"
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null
@@ -33,7 +34,31 @@ study: "quadro-institucional"
 note: "Agregado da União Europeia (EU27_2020) da medida «pib-real-per-capita-2025», no mesmo período e na mesma unidade, pelo mesmo pedido com outra geografia. Excerto composto a partir das etiquetas da própria resposta do Eurostat; o endereço em source_url devolve o mesmo valor."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
-corrections: []
+corrections:
+- date: '2026-10-26'
+  kind: atualizacao
+  old_value: 31 890
+  new_value: 31 980
+  reason: "O Eurostat reviu o valor de 31 890 para 31 980 na atualização do conjunto de dados de 22.10.2026 (a versão anterior era de 15.10.2026). A comparação semanal com a fonte de 26.10.2026 encontrou a revisão e este projeto releu a fonte nesse dia; até aí publicava-se o valor da leitura anterior."
+  reason_en: "Eurostat revised the value from 31 890 to 31 980 in the dataset update of 22.10.2026 (the previous version was of 15.10.2026). The weekly comparison with the source of 26.10.2026 found the revision and this project re-read the source that day; until then the value of the earlier reading was published."
+- date: '2026-10-26'
+  kind: proveniencia
+  field: access_date
+  old_value: '2026-09-15'
+  new_value: '2026-10-26'
+  reason: O valor novo foi lido a 26.10.2026, o dia em que este projeto releu a fonte; a leitura anterior, de 15.09.2026,
+    é a do valor 31 890.
+  reason_en: The new value was read on 26.10.2026, the day this project re-read the source; the earlier reading, of
+    15.09.2026, is that of the value 31 890.
+- date: '2026-10-26'
+  kind: proveniencia
+  field: excerpt
+  old_value: 'Real GDP per capita — Chain linked volumes (2015), euro per capita — European Union - 27 countries (from 2020)
+    — 2025: 31890'
+  new_value: 'Real GDP per capita — Chain linked volumes (2015), euro per capita — European Union - 27 countries (from 2020)
+    — 2025: 31980'
+  reason: O excerto passa a transcrever o valor revisto que a fonte imprime na mesma observação, lida a 26.10.2026.
+  reason_en: The excerpt now transcribes the revised value the source prints for the same observation, read on 26.10.2026.
 
 # Reconferências. Escritas por indicators/refresh.py, nunca à mão.
 
@@ -65,3 +90,7 @@ verifications:
     result: "diverge"
     by: "painel-semanal"
     found: "31980"
+  - date: "2026-10-26"
+    path: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=EU27_2020"
+    result: "igual"
+    by: "painel-semanal"

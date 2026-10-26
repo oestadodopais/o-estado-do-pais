@@ -19,6 +19,30 @@
  */
 /** @type {Record<string, string>} */
 export const LUGAR_DECLARADO_DAS_LINHAS = {
+  /* CR2-f, 26.10.2026: seis agregados com geo=EU27_2020, como a dívida
+     das famílias da União já declarada abaixo. São as comparações europeias
+     dos cartões de Emprego (custo do trabalho), Habitação (licenças), Pobreza
+     e desigualdade (crédito às famílias) e Estado e economia (dívida das
+     empresas, investimento e PIB). As réguas são lidas por enquadramento.mjs;
+     as páginas estão declaradas em primeira-pagina.mjs. O inventário medido
+     de src e dist fica em design/especime-v3/medicoes/
+     cr2-2026-10-26/f/lugares.json. */
+  'custo-unitario-do-trabalho-2025-ue': 'uniao-europeia',
+  'divida-das-empresas-2025-ue': 'uniao-europeia',
+  'fluxo-de-credito-as-familias-2025-ue': 'uniao-europeia',
+  'formacao-bruta-de-capital-fixo-2025-ue': 'uniao-europeia',
+  'licencas-de-construcao-2025-ue': 'uniao-europeia',
+  'pib-real-per-capita-2025-ue': 'uniao-europeia',
+  /* Os cinco pontos de 2024 têm PT como única geografia do pedido, como as
+     cinco linhas de 2024 do C2 abaixo. São o período anterior das réguas dos
+     cartões de dívida e crédito: empresas e Estado em Estado e economia;
+     famílias em Pobreza e desigualdade. Os quatro cartões de 2025 que mudaram
+     já têm lugar pela tabela DOMINIO_DAS_MEDIDAS, sem entrada adicional. */
+  'divida-das-empresas-2024': 'portugal',
+  'divida-das-familias-2024': 'portugal',
+  'divida-publica-2024': 'portugal',
+  'fluxo-de-credito-as-empresas-2024': 'portugal',
+  'fluxo-de-credito-as-familias-2024': 'portugal',
   /* EO1-e: a entrega pertence ao calendário do Orçamento nacional, na página parlamentar selada. */
   'oe-2027-calendario-entrega': 'portugal',
   /* V2-e-b: os excertos corrigidos do relatório do orçamento nacional

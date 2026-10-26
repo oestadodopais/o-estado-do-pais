@@ -1,0 +1,12 @@
+Duas tabelas iguais a main, chave a chave e texto a texto.
+file://<worktree>/design/especime-v3/medicoes/cr2-2026-10-26/h/conferir-nomes.mjs:45
+ const extrair=dist=>ler(dist,rota).querySelectorAll('[data-correcao-entrada]').map(e=>({id:e.getAttribute('data-correcao-entrada'),data:e.querySelector('time').getAttribute('datetime'),nome:norm(e.querySelector('.registo-mudanca-nome').textContent),fonte:e.querySelector('.registo-mudanca-nome').getAttribute('data-nome'),familia:e.querySelector('.registo-mudanca-nome').getAttribute('data-de-familia')}));
+                                                                                                                                                                ^
+
+TypeError: Cannot read properties of null (reading 'getAttribute')
+    at file://<worktree>/design/especime-v3/medicoes/cr2-2026-10-26/h/conferir-nomes.mjs:45:161
+    at Array.map (<anonymous>)
+    at extrair (file://<worktree>/design/especime-v3/medicoes/cr2-2026-10-26/h/conferir-nomes.mjs:45:81)
+    at file://<worktree>/design/especime-v3/medicoes/cr2-2026-10-26/h/conferir-nomes.mjs:46:14
+
+Node.js v22.23.1

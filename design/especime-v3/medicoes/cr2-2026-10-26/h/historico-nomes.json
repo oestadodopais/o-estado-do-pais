@@ -1,0 +1,177 @@
+{
+  "base": "71420a8f4",
+  "historico": [
+    {
+      "lang": "pt",
+      "entradas_main": 50,
+      "entradas_anteriores": 48,
+      "entradas_anteriores_atual": 48,
+      "divergencias": [
+        {
+          "antes": {
+            "id": "custo-unitario-do-trabalho-2024",
+            "data": "2026-10-05",
+            "nome": "Nominal unit labour cost per hour worked"
+          },
+          "depois": {
+            "id": "custo-unitario-do-trabalho-2024",
+            "data": "2026-10-05",
+            "nome": "Custo do trabalho por unidade produzida (custo unitário do trabalho)",
+            "fonte": "familia",
+            "familia": "custo-unitario-do-trabalho"
+          }
+        },
+        {
+          "antes": {
+            "id": "despesa-em-id-2024-ue",
+            "data": "2026-10-05",
+            "nome": "Gross domestic expenditure on research and development (R&D)"
+          },
+          "depois": {
+            "id": "despesa-em-id-2024-ue",
+            "data": "2026-10-05",
+            "nome": "Despesa em investigação e desenvolvimento na União Europeia",
+            "fonte": "familia",
+            "familia": "despesa-em-id-ue"
+          }
+        },
+        {
+          "antes": {
+            "id": "formacao-bruta-de-capital-fixo-2024",
+            "data": "2026-10-05",
+            "nome": "Gross fixed capital formation at current prices"
+          },
+          "depois": {
+            "id": "formacao-bruta-de-capital-fixo-2024",
+            "data": "2026-10-05",
+            "nome": "Investimento em bens duradouros para produzir (formação bruta de capital fixo)",
+            "fonte": "familia",
+            "familia": "formacao-bruta-de-capital-fixo"
+          }
+        },
+        {
+          "antes": {
+            "id": "pib-real-per-capita-2024",
+            "data": "2026-10-05",
+            "nome": "Real GDP per capita"
+          },
+          "depois": {
+            "id": "pib-real-per-capita-2024",
+            "data": "2026-10-05",
+            "nome": "PIB real por habitante",
+            "fonte": "familia",
+            "familia": "pib-real-per-capita"
+          }
+        },
+        {
+          "antes": {
+            "id": "posicao-de-investimento-internacional-2024",
+            "data": "2026-10-05",
+            "nome": "Net international investment position - annual data"
+          },
+          "depois": {
+            "id": "posicao-de-investimento-internacional-2024",
+            "data": "2026-10-05",
+            "nome": "O que o país tem no exterior menos o que deve (posição de investimento internacional)",
+            "fonte": "familia",
+            "familia": "posicao-de-investimento-internacional"
+          }
+        },
+        {
+          "antes": {
+            "id": "saldo-da-balanca-corrente-2024",
+            "data": "2026-10-05",
+            "nome": "Current account balance - 3 year average"
+          },
+          "depois": {
+            "id": "saldo-da-balanca-corrente-2024",
+            "data": "2026-10-05",
+            "nome": "Saldo da balança corrente",
+            "fonte": "familia",
+            "familia": "saldo-da-balanca-corrente"
+          }
+        }
+      ],
+      "outras_26_iguais": 2
+    },
+    {
+      "lang": "en",
+      "entradas_main": 50,
+      "entradas_anteriores": 48,
+      "entradas_anteriores_atual": 48,
+      "divergencias": [
+        {
+          "antes": {
+            "id": "custo-unitario-do-trabalho-2024",
+            "data": "2026-10-05",
+            "nome": "Nominal unit labour cost per hour worked"
+          },
+          "depois": {
+            "id": "custo-unitario-do-trabalho-2024",
+            "data": "2026-10-05",
+            "nome": "Labour cost per unit of output (unit labour cost)",
+            "fonte": "familia",
+            "familia": "custo-unitario-do-trabalho"
+          }
+        },
+        {
+          "antes": {
+            "id": "despesa-em-id-2024-ue",
+            "data": "2026-10-05",
+            "nome": "Gross domestic expenditure on research and development (R&D)"
+          },
+          "depois": {
+            "id": "despesa-em-id-2024-ue",
+            "data": "2026-10-05",
+            "nome": "Spending on research and development in the European Union",
+            "fonte": "familia",
+            "familia": "despesa-em-id-ue"
+          }
+        },
+        {
+          "antes": {
+            "id": "formacao-bruta-de-capital-fixo-2024",
+            "data": "2026-10-05",
+            "nome": "Gross fixed capital formation at current prices"
+          },
+          "depois": {
+            "id": "formacao-bruta-de-capital-fixo-2024",
+            "data": "2026-10-05",
+            "nome": "Investment in durable goods used for production (gross fixed capital formation)",
+            "fonte": "familia",
+            "familia": "formacao-bruta-de-capital-fixo"
+          }
+        },
+        {
+          "antes": {
+            "id": "posicao-de-investimento-internacional-2024",
+            "data": "2026-10-05",
+            "nome": "Net international investment position - annual data"
+          },
+          "depois": {
+            "id": "posicao-de-investimento-internacional-2024",
+            "data": "2026-10-05",
+            "nome": "What the country owns abroad minus what it owes (net international investment position)",
+            "fonte": "familia",
+            "familia": "posicao-de-investimento-internacional"
+          }
+        },
+        {
+          "antes": {
+            "id": "saldo-da-balanca-corrente-2024",
+            "data": "2026-10-05",
+            "nome": "Current account balance - 3 year average"
+          },
+          "depois": {
+            "id": "saldo-da-balanca-corrente-2024",
+            "data": "2026-10-05",
+            "nome": "Current account balance",
+            "fonte": "familia",
+            "familia": "saldo-da-balanca-corrente"
+          }
+        }
+      ],
+      "outras_26_iguais": 2
+    }
+  ]
+}

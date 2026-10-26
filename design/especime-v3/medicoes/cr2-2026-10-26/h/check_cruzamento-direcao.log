@@ -1,0 +1,28 @@
+
+> o-estado-do-pais@0.1.0 check:cruzamento
+> node scripts/check-cruzamento.mjs --with-origin
+
+
+[90m  cruzamentos · 3959 linha(s) de origem externa em 14 registo(s) · 3959 conferida(s) contra o motor · 2155 com reconferência de programa acrescentada (3077 entrada(s)) · 5 planta(s) vista(s)[0m
+[90m  rótulos da fonte · 2634 de 4084 linha(s) com "name", todas vindas do motor · 3 planta(s) vista(s)[0m
+[90m  séries · 35 linha(s) de série em 1 registo(s) · 35 conferida(s) contra o motor · 4 planta(s) vista(s)[0m
+[90m  cruzamentos · 19 ficheiro(s) inteiro(s) em 13 registo(s) · 19 conferido(s) contra o motor · 5 item(ns) da agenda reconferidos[0m
+[90m    a-casa-em-portugal-e-na-europa: 189[0m
+[90m    agua-nao-faturada: 1[0m
+[90m    avaliacao-economica-regional-de-portugal-2026: 8[0m
+[90m    concelhos-2026: 2767[0m
+[90m    dominios-2026: 40[0m
+[90m    evora-contas-da-camara-2010-2025: 33[0m
+[90m    evora-economia-e-dinheiro-publico-de-fora-da-camara: 17[0m
+[90m    evora-quem-governou-a-camara-2009-2025: 19[0m
+[90m    oe-2026: 209[0m
+[90m    oe-2027: 337[0m
+[90m    oe-2027-funcoes: 83[0m
+[90m    orcamento-2027-o-que-muda-e-para-quem: 256[0m
+
+[33m  2 aviso(s):[0m
+[90m    · o ledger.json de "20 Orcamento do Estado" já não é o que atravessou. Por si só isto não quer dizer nada: o ficheiro traz um "built_at" que muda a cada reconstrução. O que prende é o resumo de cada LINHA — se nenhuma foi nomeada acima, nenhuma mudou.[0m
+[90m    · o ledger.json de "24 Orcamento 2027 Analise" já não é o que atravessou. Por si só isto não quer dizer nada: o ficheiro traz um "built_at" que muda a cada reconstrução. O que prende é o resumo de cada LINHA — se nenhuma foi nomeada acima, nenhuma mudou.[0m
+
+  [32m✓[0m cada linha e cada ficheiro vindos do motor são, byte a byte, o que atravessou, e são ainda o que o motor tem.
+

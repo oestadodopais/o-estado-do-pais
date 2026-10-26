@@ -1,0 +1,18 @@
+{
+  "estado": "paragem no ponto 4, sem construção nem publicação",
+  "commits": {
+    "sitio": {
+      "codigo": 0,
+      "cabeca": "8bb4d10187e221e6609e49e935d6d849350370b4"
+    },
+    "motor": {
+      "codigo": 0,
+      "cabeca": "e4628c173dd4ffd155ba58ad8fa2cd74f8fe7e93"
+    }
+  },
+  "core_gate_no_hook": {
+    "correu": true,
+    "resultado": "GATE: PASS",
+    "nota": "O cliente recebeu OEDP_GATE=adiado, mas o recibo prova que o hook correu. Não houve pedido direto do core.gate nem repetição."
+  }
+}

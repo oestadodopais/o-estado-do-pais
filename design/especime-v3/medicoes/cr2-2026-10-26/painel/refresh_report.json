@@ -1,0 +1,362 @@
+[
+ {
+  "id": "credito-malparado-2024",
+  "canary": "metadata",
+  "severity": "notice",
+  "message": "dataset updated stamp: 2026-06-29T23:00:00+0200 -> 2026-09-30T23:00:00+0200"
+ },
+ {
+  "id": "credito-malparado-2025",
+  "canary": "metadata",
+  "severity": "notice",
+  "message": "dataset updated stamp: 2026-06-29T23:00:00+0200 -> 2026-09-30T23:00:00+0200"
+ },
+ {
+  "id": "criancas-em-creche-2024",
+  "canary": "metadata",
+  "severity": "notice",
+  "message": "dataset updated stamp: 2026-09-17T23:00:00+0200 -> 2026-10-20T23:00:00+0200"
+ },
+ {
+  "id": "criancas-em-creche-2025-ue",
+  "canary": "metadata",
+  "severity": "notice",
+  "message": "dataset updated stamp: 2026-09-17T23:00:00+0200 -> 2026-10-20T23:00:00+0200"
+ },
+ {
+  "id": "criancas-em-creche-2025",
+  "canary": "metadata",
+  "severity": "notice",
+  "message": "dataset updated stamp: 2026-09-17T23:00:00+0200 -> 2026-10-20T23:00:00+0200"
+ },
+ {
+  "id": "custo-unitario-do-trabalho-2024",
+  "canary": "metadata",
+  "severity": "notice",
+  "message": "dataset updated stamp: 2026-09-21T23:00:00+0200 -> 2026-10-22T23:00:00+0200"
+ },
+ {
+  "id": "custo-unitario-do-trabalho-2025-ue",
+  "canary": "metadata",
+  "severity": "notice",
+  "message": "dataset updated stamp: 2026-09-21T23:00:00+0200 -> 2026-10-22T23:00:00+0200"
+ },
+ {
+  "id": "custo-unitario-do-trabalho-2025",
+  "canary": "metadata",
+  "severity": "notice",
+  "message": "dataset updated stamp: 2026-09-21T23:00:00+0200 -> 2026-10-22T23:00:00+0200"
+ },
+ {
+  "id": "despesa-em-id-2023",
+  "canary": "metadata",
+  "severity": "notice",
+  "message": "dataset updated stamp: 2026-03-18T23:00:00+0100 -> 2026-09-29T23:00:00+0200"
+ },
+ {
+  "id": "despesa-em-id-2024-ue",
+  "canary": "metadata",
+  "severity": "notice",
+  "message": "dataset updated stamp: 2026-03-18T23:00:00+0100 -> 2026-09-29T23:00:00+0200"
+ },
+ {
+  "id": "despesa-em-id-2024",
+  "canary": "metadata",
+  "severity": "notice",
+  "message": "dataset updated stamp: 2026-03-18T23:00:00+0100 -> 2026-09-29T23:00:00+0200"
+ },
+ {
+  "id": "divida-das-empresas-2024",
+  "canary": "metadata",
+  "severity": "notice",
+  "message": "dataset updated stamp: 2026-09-26T11:00:00+0200 -> 2026-10-24T11:00:00+0200"
+ },
+ {
+  "id": "divida-das-empresas-2025-ue",
+  "canary": "metadata",
+  "severity": "notice",
+  "message": "dataset updated stamp: 2026-09-26T11:00:00+0200 -> 2026-10-24T11:00:00+0200"
+ },
+ {
+  "id": "divida-das-empresas-2025",
+  "canary": "metadata",
+  "severity": "notice",
+  "message": "dataset updated stamp: 2026-09-26T11:00:00+0200 -> 2026-10-24T11:00:00+0200"
+ },
+ {
+  "id": "divida-das-familias-2024",
+  "canary": "metadata",
+  "severity": "notice",
+  "message": "dataset updated stamp: 2026-09-26T11:00:00+0200 -> 2026-10-24T11:00:00+0200"
+ },
+ {
+  "id": "divida-das-familias-2025-ue",
+  "canary": "metadata",
+  "severity": "notice",
+  "message": "dataset updated stamp: 2026-09-26T11:00:00+0200 -> 2026-10-24T11:00:00+0200"
+ },
+ {
+  "id": "divida-das-familias-2025",
+  "canary": "metadata",
+  "severity": "notice",
+  "message": "dataset updated stamp: 2026-09-26T11:00:00+0200 -> 2026-10-24T11:00:00+0200"
+ },
+ {
+  "id": "divida-publica-2024",
+  "canary": "metadata",
+  "severity": "notice",
+  "message": "dataset updated stamp: 2026-04-22T11:00:00+0200 -> 2026-10-21T11:00:00+0200"
+ },
+ {
+  "id": "divida-publica-2025-ue",
+  "canary": "metadata",
+  "severity": "notice",
+  "message": "dataset updated stamp: 2026-04-22T11:00:00+0200 -> 2026-10-21T11:00:00+0200"
+ },
+ {
+  "id": "divida-publica-2025",
+  "canary": "metadata",
+  "severity": "notice",
+  "message": "dataset updated stamp: 2026-04-22T11:00:00+0200 -> 2026-10-21T11:00:00+0200"
+ },
+ {
+  "id": "fluxo-de-credito-as-empresas-2024",
+  "canary": "metadata",
+  "severity": "notice",
+  "message": "dataset updated stamp: 2026-09-26T11:00:00+0200 -> 2026-10-24T11:00:00+0200"
+ },
+ {
+  "id": "fluxo-de-credito-as-empresas-2025",
+  "canary": "metadata",
+  "severity": "notice",
+  "message": "dataset updated stamp: 2026-09-26T11:00:00+0200 -> 2026-10-24T11:00:00+0200"
+ },
+ {
+  "id": "fluxo-de-credito-as-familias-2024",
+  "canary": "metadata",
+  "severity": "notice",
+  "message": "dataset updated stamp: 2026-09-26T11:00:00+0200 -> 2026-10-24T11:00:00+0200"
+ },
+ {
+  "id": "fluxo-de-credito-as-familias-2025-ue",
+  "canary": "metadata",
+  "severity": "notice",
+  "message": "dataset updated stamp: 2026-09-26T11:00:00+0200 -> 2026-10-24T11:00:00+0200"
+ },
+ {
+  "id": "fluxo-de-credito-as-familias-2025",
+  "canary": "metadata",
+  "severity": "notice",
+  "message": "dataset updated stamp: 2026-09-26T11:00:00+0200 -> 2026-10-24T11:00:00+0200"
+ },
+ {
+  "id": "formacao-bruta-de-capital-fixo-2024",
+  "canary": "metadata",
+  "severity": "notice",
+  "message": "dataset updated stamp: 2026-09-21T23:00:00+0200 -> 2026-10-22T23:00:00+0200"
+ },
+ {
+  "id": "formacao-bruta-de-capital-fixo-2025-ue",
+  "canary": "metadata",
+  "severity": "notice",
+  "message": "dataset updated stamp: 2026-09-21T23:00:00+0200 -> 2026-10-22T23:00:00+0200"
+ },
+ {
+  "id": "formacao-bruta-de-capital-fixo-2025",
+  "canary": "metadata",
+  "severity": "notice",
+  "message": "dataset updated stamp: 2026-09-21T23:00:00+0200 -> 2026-10-22T23:00:00+0200"
+ },
+ {
+  "id": "licencas-de-construcao-2024",
+  "canary": "metadata",
+  "severity": "notice",
+  "message": "dataset updated stamp: 2026-09-24T11:00:00+0200 -> 2026-10-21T23:00:00+0200"
+ },
+ {
+  "id": "licencas-de-construcao-2025-ue",
+  "canary": "metadata",
+  "severity": "notice",
+  "message": "dataset updated stamp: 2026-09-24T11:00:00+0200 -> 2026-10-21T23:00:00+0200"
+ },
+ {
+  "id": "licencas-de-construcao-2025",
+  "canary": "metadata",
+  "severity": "notice",
+  "message": "dataset updated stamp: 2026-09-24T11:00:00+0200 -> 2026-10-21T23:00:00+0200"
+ },
+ {
+  "id": "necessidades-medicas-nao-satisfeitas-2024",
+  "canary": "metadata",
+  "severity": "notice",
+  "message": "dataset updated stamp: 2026-09-17T23:00:00+0200 -> 2026-10-20T23:00:00+0200"
+ },
+ {
+  "id": "necessidades-medicas-nao-satisfeitas-2025-ue",
+  "canary": "metadata",
+  "severity": "notice",
+  "message": "dataset updated stamp: 2026-09-17T23:00:00+0200 -> 2026-10-20T23:00:00+0200"
+ },
+ {
+  "id": "necessidades-medicas-nao-satisfeitas-2025",
+  "canary": "metadata",
+  "severity": "notice",
+  "message": "dataset updated stamp: 2026-09-17T23:00:00+0200 -> 2026-10-20T23:00:00+0200"
+ },
+ {
+  "id": "pib-real-per-capita-2024",
+  "canary": "structure",
+  "severity": "alarm",
+  "message": "dimension sizes changed: {'unit': (1, 2)}"
+ },
+ {
+  "id": "pib-real-per-capita-2024",
+  "canary": "metadata",
+  "severity": "notice",
+  "message": "dataset updated stamp: 2026-09-18T23:00:00+0200 -> 2026-10-22T23:00:00+0200"
+ },
+ {
+  "id": "pib-real-per-capita-2025-ue",
+  "canary": "structure",
+  "severity": "alarm",
+  "message": "dimension sizes changed: {'unit': (1, 2)}"
+ },
+ {
+  "id": "pib-real-per-capita-2025-ue",
+  "canary": "metadata",
+  "severity": "notice",
+  "message": "dataset updated stamp: 2026-09-18T23:00:00+0200 -> 2026-10-22T23:00:00+0200"
+ },
+ {
+  "id": "pib-real-per-capita-2025",
+  "canary": "structure",
+  "severity": "alarm",
+  "message": "dimension sizes changed: {'unit': (1, 2)}"
+ },
+ {
+  "id": "pib-real-per-capita-2025",
+  "canary": "metadata",
+  "severity": "notice",
+  "message": "dataset updated stamp: 2026-09-18T23:00:00+0200 -> 2026-10-22T23:00:00+0200"
+ },
+ {
+  "id": "posicao-de-investimento-internacional-2024",
+  "canary": "metadata",
+  "severity": "notice",
+  "message": "dataset updated stamp: 2026-09-11T23:00:00+0200 -> 2026-10-02T23:00:00+0200"
+ },
+ {
+  "id": "posicao-de-investimento-internacional-2025",
+  "canary": "metadata",
+  "severity": "notice",
+  "message": "dataset updated stamp: 2026-09-11T23:00:00+0200 -> 2026-10-02T23:00:00+0200"
+ },
+ {
+  "id": "precos-da-habitacao-2024",
+  "canary": "metadata",
+  "severity": "notice",
+  "message": "dataset updated stamp: 2026-07-02T11:00:00+0200 -> 2026-10-01T11:00:00+0200"
+ },
+ {
+  "id": "precos-da-habitacao-2025-ue",
+  "canary": "metadata",
+  "severity": "notice",
+  "message": "dataset updated stamp: 2026-07-02T11:00:00+0200 -> 2026-10-01T11:00:00+0200"
+ },
+ {
+  "id": "precos-da-habitacao-2025",
+  "canary": "metadata",
+  "severity": "notice",
+  "message": "dataset updated stamp: 2026-07-02T11:00:00+0200 -> 2026-10-01T11:00:00+0200"
+ },
+ {
+  "id": "racio-s80-s20-2024",
+  "canary": "metadata",
+  "severity": "notice",
+  "message": "dataset updated stamp: 2026-09-17T23:00:00+0200 -> 2026-10-20T11:00:00+0200"
+ },
+ {
+  "id": "racio-s80-s20-2025-ue",
+  "canary": "metadata",
+  "severity": "notice",
+  "message": "dataset updated stamp: 2026-09-17T23:00:00+0200 -> 2026-10-20T11:00:00+0200"
+ },
+ {
+  "id": "racio-s80-s20-2025",
+  "canary": "metadata",
+  "severity": "notice",
+  "message": "dataset updated stamp: 2026-09-17T23:00:00+0200 -> 2026-10-20T11:00:00+0200"
+ },
+ {
+  "id": "risco-de-pobreza-ou-exclusao-2024",
+  "canary": "metadata",
+  "severity": "notice",
+  "message": "dataset updated stamp: 2026-09-17T23:00:00+0200 -> 2026-10-20T11:00:00+0200"
+ },
+ {
+  "id": "risco-de-pobreza-ou-exclusao-2025-ue",
+  "canary": "metadata",
+  "severity": "notice",
+  "message": "dataset updated stamp: 2026-09-17T23:00:00+0200 -> 2026-10-20T11:00:00+0200"
+ },
+ {
+  "id": "risco-de-pobreza-ou-exclusao-2025",
+  "canary": "metadata",
+  "severity": "notice",
+  "message": "dataset updated stamp: 2026-09-17T23:00:00+0200 -> 2026-10-20T11:00:00+0200"
+ },
+ {
+  "id": "saldo-da-balanca-corrente-2024",
+  "canary": "metadata",
+  "severity": "notice",
+  "message": "dataset updated stamp: 2026-07-08T11:00:00+0200 -> 2026-10-02T11:00:00+0200"
+ },
+ {
+  "id": "saldo-da-balanca-corrente-2025",
+  "canary": "metadata",
+  "severity": "notice",
+  "message": "dataset updated stamp: 2026-07-08T11:00:00+0200 -> 2026-10-02T11:00:00+0200"
+ },
+ {
+  "id": "sobrecarga-do-custo-da-habitacao-2024",
+  "canary": "metadata",
+  "severity": "notice",
+  "message": "dataset updated stamp: 2026-09-17T23:00:00+0200 -> 2026-10-20T11:00:00+0200"
+ },
+ {
+  "id": "sobrecarga-do-custo-da-habitacao-2025-ue",
+  "canary": "metadata",
+  "severity": "notice",
+  "message": "dataset updated stamp: 2026-09-17T23:00:00+0200 -> 2026-10-20T11:00:00+0200"
+ },
+ {
+  "id": "sobrecarga-do-custo-da-habitacao-2025",
+  "canary": "metadata",
+  "severity": "notice",
+  "message": "dataset updated stamp: 2026-09-17T23:00:00+0200 -> 2026-10-20T11:00:00+0200"
+ },
+ {
+  "id": "taxa-de-cambio-efectiva-real-2024",
+  "canary": "metadata",
+  "severity": "notice",
+  "message": "dataset updated stamp: 2026-09-18T11:00:00+0200 -> 2026-10-14T11:00:00+0200"
+ },
+ {
+  "id": "taxa-de-cambio-efectiva-real-2025-ue",
+  "canary": "metadata",
+  "severity": "notice",
+  "message": "dataset updated stamp: 2026-09-18T11:00:00+0200 -> 2026-10-14T11:00:00+0200"
+ },
+ {
+  "id": "taxa-de-cambio-efectiva-real-2025",
+  "canary": "metadata",
+  "severity": "notice",
+  "message": "dataset updated stamp: 2026-09-18T11:00:00+0200 -> 2026-10-14T11:00:00+0200"
+ },
+ {
+  "id": null,
+  "canary": "threshold",
+  "severity": "alarm",
+  "message": "the numeric content of the Commission MIP scoreboard page changed — thresholds may have been revised. Read it before trusting any 'limiar' on the site."
+ }
+]
