@@ -1,0 +1,2011 @@
+{
+  "rows": {
+    "og1-utao-p15": {
+      "id": "og1-utao-p15",
+      "value": "O crescimento do emprego de 1,4% em 2027 é difícil de conciliar com o abrandamento recente da imigração líquida. O MF assume um crescimento da população em idade ativa de 0,6% em 2026 e em 2027, o que já incorpora algum abrandamento, mas projeta um crescimento da população ativa de 1,3% em 2027, o que exige uma subida da taxa de participação para 70,2% (+0,5 p.p.; 69,7% em 2026). Os dados mais recentes apontam em sentido oposto: a população em idade ativa aumentou, em média, 28 mil pessoas por trimestre em 2025 e apenas 10 mil em 2026, o que deverá refletir um menor saldo migratório; o BdP estima que a entrada líquida de imigrantes tenha diminuído de cerca de 13 200 pessoas por mês em 2024 para cerca de 6200 em 2025 (Boletim Económico de junho de 2026). No 1.º semestre de 2026, o aumento do emprego resultou sobretudo da redução da população inativa. A previsão do MF é a mais elevada das instituições de referência (entre 0,4% e 1,3%; BdP: 0,7%) e a sua concretização depende de aumentos continuados da participação e da manutenção de saldos migratórios positivos. Se o emprego crescer menos, as bases da receita fiscal e contributiva ficarão abaixo do previsto.",
+      "unit": "texto",
+      "period": "2027",
+      "excerpt": "O crescimento do emprego de 1,4% em 2027 é difícil de conciliar com o abrandamento recente da imigração líquida. O MF assume um crescimento da população em idade ativa de 0,6% em 2026 e em 2027, o que já incorpora algum abrandamento, mas projeta um crescimento da população ativa de 1,3% em 2027, o que exige uma subida da taxa de participação para 70,2% (+0,5 p.p.; 69,7% em 2026). Os dados mais recentes apontam em sentido oposto: a população em idade ativa aumentou, em média, 28 mil pessoas por trimestre em 2025 e apenas 10 mil em 2026, o que deverá refletir um menor saldo migratório; o BdP estima que a entrada líquida de imigrantes tenha diminuído de cerca de 13 200 pessoas por mês em 2024 para cerca de 6200 em 2025 (Boletim Económico de junho de 2026). No 1.º semestre de 2026, o aumento do emprego resultou sobretudo da redução da população inativa. A previsão do MF é a mais elevada das instituições de referência (entre 0,4% e 1,3%; BdP: 0,7%) e a sua concretização depende de aumentos continuados da participação e da manutenção de saldos migratórios positivos. Se o emprego crescer menos, as bases da receita fiscal e contributiva ficarão abaixo do previsto.",
+      "document": {
+        "title": "Relatório UTAO n.º 17/2026: Apreciação preliminar da Proposta de Orçamento do Estado para 2027",
+        "file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
+        "source_sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
+        "locator": "§15; p. 10 PDF (9 impressa)",
+        "page": 10,
+        "printed_page": 9
+      },
+      "evidence": {
+        "file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
+        "sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
+        "locator": "§15; p. 10 PDF (9 impressa)"
+      },
+      "afirmacao": true,
+      "attributed_to": [
+        "UTAO"
+      ],
+      "published_at": "2026-10-19",
+      "source_url": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=x5W9DWX1SUUrDgk87wy5NMatoUULSng56w1Z%252bMjyitbqKuz9bknk5nU1q8XRioztkHFMhGG4FLPAmD72hlT02%252f97l3x04zLtts1eMFSzdTkZcuvshggWj%252bb2DxFmmytGD7sWkqEG45EKYHIpiz4VN2nJy10c5jVu05uMKmsnrXIoOjhtQDQgm%252fAE2JRps%252baBtht6712ce3RiDaG1%252bDvMtFwxKEv2GT9Y53kK3%252fuz%252bm85BxEfyUi4DmQi3Fu4ratBblL0ejKZO6OhdyI5gE31XJwy7qyjFBLZVtwN3oK0iuhhIEel72IU9lcgQER0Vz%252fVWVabSmbSJY%252b5f6%252fhsTr1DcFcw36k70SLwg%252fwWhCaP6jwyCm6%252f45Z6Xhy5GkIUmf7LtdBvPX0qLmEWGTTuPTYlx9Btvr5JiggjHGLibAfRX8%253d&fich=9b53fcf7-72f9-4134-ad44-ebb6655f3760.pdf&Inline=true",
+      "receipt": {
+        "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=x5W9DWX1SUUrDgk87wy5NMatoUULSng56w1Z%252bMjyitbqKuz9bknk5nU1q8XRioztkHFMhGG4FLPAmD72hlT02%252f97l3x04zLtts1eMFSzdTkZcuvshggWj%252bb2DxFmmytGD7sWkqEG45EKYHIpiz4VN2nJy10c5jVu05uMKmsnrXIoOjhtQDQgm%252fAE2JRps%252baBtht6712ce3RiDaG1%252bDvMtFwxKEv2GT9Y53kK3%252fuz%252bm85BxEfyUi4DmQi3Fu4ratBblL0ejKZO6OhdyI5gE31XJwy7qyjFBLZVtwN3oK0iuhhIEel72IU9lcgQER0Vz%252fVWVabSmbSJY%252b5f6%252fhsTr1DcFcw36k70SLwg%252fwWhCaP6jwyCm6%252f45Z6Xhy5GkIUmf7LtdBvPX0qLmEWGTTuPTYlx9Btvr5JiggjHGLibAfRX8%253d&fich=9b53fcf7-72f9-4134-ad44-ebb6655f3760.pdf&Inline=true",
+        "endereco_final": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=x5W9DWX1SUUrDgk87wy5NMatoUULSng56w1Z%252bMjyitbqKuz9bknk5nU1q8XRioztkHFMhGG4FLPAmD72hlT02%252f97l3x04zLtts1eMFSzdTkZcuvshggWj%252bb2DxFmmytGD7sWkqEG45EKYHIpiz4VN2nJy10c5jVu05uMKmsnrXIoOjhtQDQgm%252fAE2JRps%252baBtht6712ce3RiDaG1%252bDvMtFwxKEv2GT9Y53kK3%252fuz%252bm85BxEfyUi4DmQi3Fu4ratBblL0ejKZO6OhdyI5gE31XJwy7qyjFBLZVtwN3oK0iuhhIEel72IU9lcgQER0Vz%252fVWVabSmbSJY%252b5f6%252fhsTr1DcFcw36k70SLwg%252fwWhCaP6jwyCm6%252f45Z6Xhy5GkIUmf7LtdBvPX0qLmEWGTTuPTYlx9Btvr5JiggjHGLibAfRX8%253d&fich=9b53fcf7-72f9-4134-ad44-ebb6655f3760.pdf&Inline=true",
+        "acedido_em": "2026-10-26T13:48:23.699914+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "ficheiro": "utao-iniciativa.pdf",
+        "estado": 200,
+        "tipo": "application/pdf",
+        "segundos": 2.662,
+        "erro": null,
+        "redirecionamentos": [],
+        "bytes": 2323048,
+        "sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8"
+      },
+      "rights": {
+        "redistributed": "Excerto, referência e recibo; o corpo permanece no motor.",
+        "assessment": {
+          "anfitriao": "app.parlamento.pt",
+          "publicar_corpos": false,
+          "alojamento": "Cópia privada de investigação pedida no mandato. Não autoriza publicar ou distribuir o corpo.",
+          "reutilizacao": "Licença de republicação integral não estabelecida. Acesso público, caráter oficial ou política de privacidade não equivalem a licença.",
+          "prova": {
+            "file": "content/23 Habitacao/source/direitos/parlamento.html",
+            "receipt": "content/23 Habitacao/source/direitos/parlamento.html.pedido.json",
+            "sha256": "42b5ebc0fe02bd0e0a8d883a72da452edd07e58342aeb47967cfade3fdcf1073"
+          },
+          "pedidos": [
+            "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf.pedido.json",
+            "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf.pedido.json"
+          ],
+          "limite": "A avaliação regista a evidência consultada; não declara autorização jurídica de republicação.",
+          "robots": "Não usado como licença."
+        },
+        "origin_path": "content/30 Orcamento 2027 Generalidade/source/direitos/app.parlamento.pt/avaliacao.json",
+        "sha256": "4f0eab4807038569b383ddc4a2358afe7a0ce49cedd4d0c3830a1fb1c134e597"
+      }
+    },
+    "og1-utao-p42": {
+      "id": "og1-utao-p42",
+      "value": "A medida de combate à fraude no setor dos combustíveis, com um impacto orçamental estimado de 300 M€ em 2027, constitui a medida de maior dimensão do lado da receita. Contudo, a POE/2027 não disponibiliza informação suficientemente detalhada sobre o seu conteúdo e os mecanismos de implementação, o que limita a avaliação da robustez da medida e a aferição da razoabilidade do impacto orçamental projetado.",
+      "unit": "texto",
+      "period": "2027",
+      "excerpt": "A medida de combate à fraude no setor dos combustíveis, com um impacto orçamental estimado de 300 M€ em 2027, constitui a medida de maior dimensão do lado da receita. Contudo, a POE/2027 não disponibiliza informação suficientemente detalhada sobre o seu conteúdo e os mecanismos de implementação, o que limita a avaliação da robustez da medida e a aferição da razoabilidade do impacto orçamental projetado.",
+      "document": {
+        "title": "Relatório UTAO n.º 17/2026: Apreciação preliminar da Proposta de Orçamento do Estado para 2027",
+        "file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
+        "source_sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
+        "locator": "§42; p. 23 PDF (22 impressa)",
+        "page": 23,
+        "printed_page": 22
+      },
+      "evidence": {
+        "file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
+        "sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
+        "locator": "§42; p. 23 PDF (22 impressa)"
+      },
+      "afirmacao": true,
+      "attributed_to": [
+        "UTAO"
+      ],
+      "published_at": "2026-10-19",
+      "source_url": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=x5W9DWX1SUUrDgk87wy5NMatoUULSng56w1Z%252bMjyitbqKuz9bknk5nU1q8XRioztkHFMhGG4FLPAmD72hlT02%252f97l3x04zLtts1eMFSzdTkZcuvshggWj%252bb2DxFmmytGD7sWkqEG45EKYHIpiz4VN2nJy10c5jVu05uMKmsnrXIoOjhtQDQgm%252fAE2JRps%252baBtht6712ce3RiDaG1%252bDvMtFwxKEv2GT9Y53kK3%252fuz%252bm85BxEfyUi4DmQi3Fu4ratBblL0ejKZO6OhdyI5gE31XJwy7qyjFBLZVtwN3oK0iuhhIEel72IU9lcgQER0Vz%252fVWVabSmbSJY%252b5f6%252fhsTr1DcFcw36k70SLwg%252fwWhCaP6jwyCm6%252f45Z6Xhy5GkIUmf7LtdBvPX0qLmEWGTTuPTYlx9Btvr5JiggjHGLibAfRX8%253d&fich=9b53fcf7-72f9-4134-ad44-ebb6655f3760.pdf&Inline=true",
+      "receipt": {
+        "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=x5W9DWX1SUUrDgk87wy5NMatoUULSng56w1Z%252bMjyitbqKuz9bknk5nU1q8XRioztkHFMhGG4FLPAmD72hlT02%252f97l3x04zLtts1eMFSzdTkZcuvshggWj%252bb2DxFmmytGD7sWkqEG45EKYHIpiz4VN2nJy10c5jVu05uMKmsnrXIoOjhtQDQgm%252fAE2JRps%252baBtht6712ce3RiDaG1%252bDvMtFwxKEv2GT9Y53kK3%252fuz%252bm85BxEfyUi4DmQi3Fu4ratBblL0ejKZO6OhdyI5gE31XJwy7qyjFBLZVtwN3oK0iuhhIEel72IU9lcgQER0Vz%252fVWVabSmbSJY%252b5f6%252fhsTr1DcFcw36k70SLwg%252fwWhCaP6jwyCm6%252f45Z6Xhy5GkIUmf7LtdBvPX0qLmEWGTTuPTYlx9Btvr5JiggjHGLibAfRX8%253d&fich=9b53fcf7-72f9-4134-ad44-ebb6655f3760.pdf&Inline=true",
+        "endereco_final": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=x5W9DWX1SUUrDgk87wy5NMatoUULSng56w1Z%252bMjyitbqKuz9bknk5nU1q8XRioztkHFMhGG4FLPAmD72hlT02%252f97l3x04zLtts1eMFSzdTkZcuvshggWj%252bb2DxFmmytGD7sWkqEG45EKYHIpiz4VN2nJy10c5jVu05uMKmsnrXIoOjhtQDQgm%252fAE2JRps%252baBtht6712ce3RiDaG1%252bDvMtFwxKEv2GT9Y53kK3%252fuz%252bm85BxEfyUi4DmQi3Fu4ratBblL0ejKZO6OhdyI5gE31XJwy7qyjFBLZVtwN3oK0iuhhIEel72IU9lcgQER0Vz%252fVWVabSmbSJY%252b5f6%252fhsTr1DcFcw36k70SLwg%252fwWhCaP6jwyCm6%252f45Z6Xhy5GkIUmf7LtdBvPX0qLmEWGTTuPTYlx9Btvr5JiggjHGLibAfRX8%253d&fich=9b53fcf7-72f9-4134-ad44-ebb6655f3760.pdf&Inline=true",
+        "acedido_em": "2026-10-26T13:48:23.699914+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "ficheiro": "utao-iniciativa.pdf",
+        "estado": 200,
+        "tipo": "application/pdf",
+        "segundos": 2.662,
+        "erro": null,
+        "redirecionamentos": [],
+        "bytes": 2323048,
+        "sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8"
+      },
+      "rights": {
+        "redistributed": "Excerto, referência e recibo; o corpo permanece no motor.",
+        "assessment": {
+          "anfitriao": "app.parlamento.pt",
+          "publicar_corpos": false,
+          "alojamento": "Cópia privada de investigação pedida no mandato. Não autoriza publicar ou distribuir o corpo.",
+          "reutilizacao": "Licença de republicação integral não estabelecida. Acesso público, caráter oficial ou política de privacidade não equivalem a licença.",
+          "prova": {
+            "file": "content/23 Habitacao/source/direitos/parlamento.html",
+            "receipt": "content/23 Habitacao/source/direitos/parlamento.html.pedido.json",
+            "sha256": "42b5ebc0fe02bd0e0a8d883a72da452edd07e58342aeb47967cfade3fdcf1073"
+          },
+          "pedidos": [
+            "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf.pedido.json",
+            "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf.pedido.json"
+          ],
+          "limite": "A avaliação regista a evidência consultada; não declara autorização jurídica de republicação.",
+          "robots": "Não usado como licença."
+        },
+        "origin_path": "content/30 Orcamento 2027 Generalidade/source/direitos/app.parlamento.pt/avaliacao.json",
+        "sha256": "4f0eab4807038569b383ddc4a2358afe7a0ce49cedd4d0c3830a1fb1c134e597"
+      }
+    },
+    "og1-utao-pib-2026": {
+      "id": "og1-utao-pib-2026",
+      "value": "2,3",
+      "unit": "%",
+      "period": "2026",
+      "excerpt": "A POE/2027 prevê um crescimento real do PIB de 2,1% em 2027, ligeiramente inferior aos 2,3% estimados para 2026, com o menor contributo da procura interna parcialmente compensado pela melhoria do contributo das exportações líquidas. O consumo privado, o consumo público e o investimento deverão crescer a um ritmo mais moderado, sendo o abrandamento mais acentuado no investimento. O MF associa esta evolução à conclusão do PRR e ao menor impacto das aquisições de equipamento que impulsionaram o investimento em 2026, admitindo ainda uma compensação parcial pela execução dos restantes fundos europeus e pelo investimento direto estrangeiro. No setor externo, o MF prevê que as exportações abrandem, apesar da aceleração da procura externa dirigida à economia portuguesa. O cenário aponta, assim, para um crescimento das exportações próximo do dos mercados de destino em 2027, após os ganhos de quota implícitos em 2026. A melhoria do contributo das exportações líquidas, que passa de negativo em 2026 para próximo de zero em 2027, resulta sobretudo do abrandamento mais acentuado das importações, coerente com o menor dinamismo de componentes da procura com elevado conteúdo importado, como o investimento.",
+      "document": {
+        "title": "Relatório UTAO n.º 17/2026: Apreciação preliminar da Proposta de Orçamento do Estado para 2027",
+        "file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
+        "source_sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
+        "locator": "§5; p. 5 PDF (4 impressa)",
+        "page": 5,
+        "printed_page": 4
+      },
+      "evidence": {
+        "file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
+        "sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
+        "locator": "§5; p. 5 PDF (4 impressa)"
+      },
+      "afirmacao": null,
+      "attributed_to": null,
+      "published_at": "2026-10-19",
+      "source_url": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=x5W9DWX1SUUrDgk87wy5NMatoUULSng56w1Z%252bMjyitbqKuz9bknk5nU1q8XRioztkHFMhGG4FLPAmD72hlT02%252f97l3x04zLtts1eMFSzdTkZcuvshggWj%252bb2DxFmmytGD7sWkqEG45EKYHIpiz4VN2nJy10c5jVu05uMKmsnrXIoOjhtQDQgm%252fAE2JRps%252baBtht6712ce3RiDaG1%252bDvMtFwxKEv2GT9Y53kK3%252fuz%252bm85BxEfyUi4DmQi3Fu4ratBblL0ejKZO6OhdyI5gE31XJwy7qyjFBLZVtwN3oK0iuhhIEel72IU9lcgQER0Vz%252fVWVabSmbSJY%252b5f6%252fhsTr1DcFcw36k70SLwg%252fwWhCaP6jwyCm6%252f45Z6Xhy5GkIUmf7LtdBvPX0qLmEWGTTuPTYlx9Btvr5JiggjHGLibAfRX8%253d&fich=9b53fcf7-72f9-4134-ad44-ebb6655f3760.pdf&Inline=true",
+      "receipt": {
+        "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=x5W9DWX1SUUrDgk87wy5NMatoUULSng56w1Z%252bMjyitbqKuz9bknk5nU1q8XRioztkHFMhGG4FLPAmD72hlT02%252f97l3x04zLtts1eMFSzdTkZcuvshggWj%252bb2DxFmmytGD7sWkqEG45EKYHIpiz4VN2nJy10c5jVu05uMKmsnrXIoOjhtQDQgm%252fAE2JRps%252baBtht6712ce3RiDaG1%252bDvMtFwxKEv2GT9Y53kK3%252fuz%252bm85BxEfyUi4DmQi3Fu4ratBblL0ejKZO6OhdyI5gE31XJwy7qyjFBLZVtwN3oK0iuhhIEel72IU9lcgQER0Vz%252fVWVabSmbSJY%252b5f6%252fhsTr1DcFcw36k70SLwg%252fwWhCaP6jwyCm6%252f45Z6Xhy5GkIUmf7LtdBvPX0qLmEWGTTuPTYlx9Btvr5JiggjHGLibAfRX8%253d&fich=9b53fcf7-72f9-4134-ad44-ebb6655f3760.pdf&Inline=true",
+        "endereco_final": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=x5W9DWX1SUUrDgk87wy5NMatoUULSng56w1Z%252bMjyitbqKuz9bknk5nU1q8XRioztkHFMhGG4FLPAmD72hlT02%252f97l3x04zLtts1eMFSzdTkZcuvshggWj%252bb2DxFmmytGD7sWkqEG45EKYHIpiz4VN2nJy10c5jVu05uMKmsnrXIoOjhtQDQgm%252fAE2JRps%252baBtht6712ce3RiDaG1%252bDvMtFwxKEv2GT9Y53kK3%252fuz%252bm85BxEfyUi4DmQi3Fu4ratBblL0ejKZO6OhdyI5gE31XJwy7qyjFBLZVtwN3oK0iuhhIEel72IU9lcgQER0Vz%252fVWVabSmbSJY%252b5f6%252fhsTr1DcFcw36k70SLwg%252fwWhCaP6jwyCm6%252f45Z6Xhy5GkIUmf7LtdBvPX0qLmEWGTTuPTYlx9Btvr5JiggjHGLibAfRX8%253d&fich=9b53fcf7-72f9-4134-ad44-ebb6655f3760.pdf&Inline=true",
+        "acedido_em": "2026-10-26T13:48:23.699914+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "ficheiro": "utao-iniciativa.pdf",
+        "estado": 200,
+        "tipo": "application/pdf",
+        "segundos": 2.662,
+        "erro": null,
+        "redirecionamentos": [],
+        "bytes": 2323048,
+        "sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8"
+      },
+      "rights": {
+        "redistributed": "Excerto, referência e recibo; o corpo permanece no motor.",
+        "assessment": {
+          "anfitriao": "app.parlamento.pt",
+          "publicar_corpos": false,
+          "alojamento": "Cópia privada de investigação pedida no mandato. Não autoriza publicar ou distribuir o corpo.",
+          "reutilizacao": "Licença de republicação integral não estabelecida. Acesso público, caráter oficial ou política de privacidade não equivalem a licença.",
+          "prova": {
+            "file": "content/23 Habitacao/source/direitos/parlamento.html",
+            "receipt": "content/23 Habitacao/source/direitos/parlamento.html.pedido.json",
+            "sha256": "42b5ebc0fe02bd0e0a8d883a72da452edd07e58342aeb47967cfade3fdcf1073"
+          },
+          "pedidos": [
+            "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf.pedido.json",
+            "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf.pedido.json"
+          ],
+          "limite": "A avaliação regista a evidência consultada; não declara autorização jurídica de republicação.",
+          "robots": "Não usado como licença."
+        },
+        "origin_path": "content/30 Orcamento 2027 Generalidade/source/direitos/app.parlamento.pt/avaliacao.json",
+        "sha256": "4f0eab4807038569b383ddc4a2358afe7a0ce49cedd4d0c3830a1fb1c134e597"
+      }
+    },
+    "og1-utao-saldo-2026": {
+      "id": "og1-utao-saldo-2026",
+      "value": "0,0",
+      "unit": "% do PIB",
+      "period": "2026",
+      "excerpt": "O MF prevê um saldo orçamental de 0,0% do PIB em 2026 e de 0,1% do PIB em 2027 (Gráfico 7). Estes resultados correspondem ao quarto e ao quinto anos consecutivos com saldo positivo ou nulo, na sequência dos excedentes de 2023, 2024 e 2025. Numa perspetiva de longo prazo, o saldo orçamental médio no período 2005–2025 foi de −3,9% do PIB.",
+      "document": {
+        "title": "Relatório UTAO n.º 17/2026: Apreciação preliminar da Proposta de Orçamento do Estado para 2027",
+        "file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
+        "source_sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
+        "locator": "§24; p. 15 PDF (14 impressa)",
+        "page": 15,
+        "printed_page": 14
+      },
+      "evidence": {
+        "file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
+        "sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
+        "locator": "§24; p. 15 PDF (14 impressa)"
+      },
+      "afirmacao": null,
+      "attributed_to": null,
+      "published_at": "2026-10-19",
+      "source_url": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=x5W9DWX1SUUrDgk87wy5NMatoUULSng56w1Z%252bMjyitbqKuz9bknk5nU1q8XRioztkHFMhGG4FLPAmD72hlT02%252f97l3x04zLtts1eMFSzdTkZcuvshggWj%252bb2DxFmmytGD7sWkqEG45EKYHIpiz4VN2nJy10c5jVu05uMKmsnrXIoOjhtQDQgm%252fAE2JRps%252baBtht6712ce3RiDaG1%252bDvMtFwxKEv2GT9Y53kK3%252fuz%252bm85BxEfyUi4DmQi3Fu4ratBblL0ejKZO6OhdyI5gE31XJwy7qyjFBLZVtwN3oK0iuhhIEel72IU9lcgQER0Vz%252fVWVabSmbSJY%252b5f6%252fhsTr1DcFcw36k70SLwg%252fwWhCaP6jwyCm6%252f45Z6Xhy5GkIUmf7LtdBvPX0qLmEWGTTuPTYlx9Btvr5JiggjHGLibAfRX8%253d&fich=9b53fcf7-72f9-4134-ad44-ebb6655f3760.pdf&Inline=true",
+      "receipt": {
+        "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=x5W9DWX1SUUrDgk87wy5NMatoUULSng56w1Z%252bMjyitbqKuz9bknk5nU1q8XRioztkHFMhGG4FLPAmD72hlT02%252f97l3x04zLtts1eMFSzdTkZcuvshggWj%252bb2DxFmmytGD7sWkqEG45EKYHIpiz4VN2nJy10c5jVu05uMKmsnrXIoOjhtQDQgm%252fAE2JRps%252baBtht6712ce3RiDaG1%252bDvMtFwxKEv2GT9Y53kK3%252fuz%252bm85BxEfyUi4DmQi3Fu4ratBblL0ejKZO6OhdyI5gE31XJwy7qyjFBLZVtwN3oK0iuhhIEel72IU9lcgQER0Vz%252fVWVabSmbSJY%252b5f6%252fhsTr1DcFcw36k70SLwg%252fwWhCaP6jwyCm6%252f45Z6Xhy5GkIUmf7LtdBvPX0qLmEWGTTuPTYlx9Btvr5JiggjHGLibAfRX8%253d&fich=9b53fcf7-72f9-4134-ad44-ebb6655f3760.pdf&Inline=true",
+        "endereco_final": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=x5W9DWX1SUUrDgk87wy5NMatoUULSng56w1Z%252bMjyitbqKuz9bknk5nU1q8XRioztkHFMhGG4FLPAmD72hlT02%252f97l3x04zLtts1eMFSzdTkZcuvshggWj%252bb2DxFmmytGD7sWkqEG45EKYHIpiz4VN2nJy10c5jVu05uMKmsnrXIoOjhtQDQgm%252fAE2JRps%252baBtht6712ce3RiDaG1%252bDvMtFwxKEv2GT9Y53kK3%252fuz%252bm85BxEfyUi4DmQi3Fu4ratBblL0ejKZO6OhdyI5gE31XJwy7qyjFBLZVtwN3oK0iuhhIEel72IU9lcgQER0Vz%252fVWVabSmbSJY%252b5f6%252fhsTr1DcFcw36k70SLwg%252fwWhCaP6jwyCm6%252f45Z6Xhy5GkIUmf7LtdBvPX0qLmEWGTTuPTYlx9Btvr5JiggjHGLibAfRX8%253d&fich=9b53fcf7-72f9-4134-ad44-ebb6655f3760.pdf&Inline=true",
+        "acedido_em": "2026-10-26T13:48:23.699914+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "ficheiro": "utao-iniciativa.pdf",
+        "estado": 200,
+        "tipo": "application/pdf",
+        "segundos": 2.662,
+        "erro": null,
+        "redirecionamentos": [],
+        "bytes": 2323048,
+        "sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8"
+      },
+      "rights": {
+        "redistributed": "Excerto, referência e recibo; o corpo permanece no motor.",
+        "assessment": {
+          "anfitriao": "app.parlamento.pt",
+          "publicar_corpos": false,
+          "alojamento": "Cópia privada de investigação pedida no mandato. Não autoriza publicar ou distribuir o corpo.",
+          "reutilizacao": "Licença de republicação integral não estabelecida. Acesso público, caráter oficial ou política de privacidade não equivalem a licença.",
+          "prova": {
+            "file": "content/23 Habitacao/source/direitos/parlamento.html",
+            "receipt": "content/23 Habitacao/source/direitos/parlamento.html.pedido.json",
+            "sha256": "42b5ebc0fe02bd0e0a8d883a72da452edd07e58342aeb47967cfade3fdcf1073"
+          },
+          "pedidos": [
+            "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf.pedido.json",
+            "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf.pedido.json"
+          ],
+          "limite": "A avaliação regista a evidência consultada; não declara autorização jurídica de republicação.",
+          "robots": "Não usado como licença."
+        },
+        "origin_path": "content/30 Orcamento 2027 Generalidade/source/direitos/app.parlamento.pt/avaliacao.json",
+        "sha256": "4f0eab4807038569b383ddc4a2358afe7a0ce49cedd4d0c3830a1fb1c134e597"
+      }
+    },
+    "og1-utao-politicas-peso": {
+      "id": "og1-utao-politicas-peso",
+      "value": "1,6",
+      "unit": "% do PIB",
+      "period": "2027",
+      "excerpt": "No contexto das alterações introduzidas pelo MF no relatório da POE/2027, as medidas em vigor, incluídas no cenário de políticas invariantes, têm um impacto adicional líquido para o saldo orçamental de 2027 negativo em 5411 M€ (1,6% do PIB). Este resultado decorre, essencialmente, do acréscimo de medidas com impacto bruto no lado da despesa (5562 M€) visto que as medidas do lado da receita (Tabela 8), apesar de apresentarem valores absolutos elevados, apresentam no seu conjunto um montante significativamente inferior (151 M€).",
+      "document": {
+        "title": "Relatório UTAO n.º 17/2026: Apreciação preliminar da Proposta de Orçamento do Estado para 2027",
+        "file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
+        "source_sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
+        "locator": "§35; p. 21 PDF (20 impressa)",
+        "page": 21,
+        "printed_page": 20
+      },
+      "evidence": {
+        "file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
+        "sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
+        "locator": "§35; p. 21 PDF (20 impressa)"
+      },
+      "afirmacao": null,
+      "attributed_to": null,
+      "published_at": "2026-10-19",
+      "source_url": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=x5W9DWX1SUUrDgk87wy5NMatoUULSng56w1Z%252bMjyitbqKuz9bknk5nU1q8XRioztkHFMhGG4FLPAmD72hlT02%252f97l3x04zLtts1eMFSzdTkZcuvshggWj%252bb2DxFmmytGD7sWkqEG45EKYHIpiz4VN2nJy10c5jVu05uMKmsnrXIoOjhtQDQgm%252fAE2JRps%252baBtht6712ce3RiDaG1%252bDvMtFwxKEv2GT9Y53kK3%252fuz%252bm85BxEfyUi4DmQi3Fu4ratBblL0ejKZO6OhdyI5gE31XJwy7qyjFBLZVtwN3oK0iuhhIEel72IU9lcgQER0Vz%252fVWVabSmbSJY%252b5f6%252fhsTr1DcFcw36k70SLwg%252fwWhCaP6jwyCm6%252f45Z6Xhy5GkIUmf7LtdBvPX0qLmEWGTTuPTYlx9Btvr5JiggjHGLibAfRX8%253d&fich=9b53fcf7-72f9-4134-ad44-ebb6655f3760.pdf&Inline=true",
+      "receipt": {
+        "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=x5W9DWX1SUUrDgk87wy5NMatoUULSng56w1Z%252bMjyitbqKuz9bknk5nU1q8XRioztkHFMhGG4FLPAmD72hlT02%252f97l3x04zLtts1eMFSzdTkZcuvshggWj%252bb2DxFmmytGD7sWkqEG45EKYHIpiz4VN2nJy10c5jVu05uMKmsnrXIoOjhtQDQgm%252fAE2JRps%252baBtht6712ce3RiDaG1%252bDvMtFwxKEv2GT9Y53kK3%252fuz%252bm85BxEfyUi4DmQi3Fu4ratBblL0ejKZO6OhdyI5gE31XJwy7qyjFBLZVtwN3oK0iuhhIEel72IU9lcgQER0Vz%252fVWVabSmbSJY%252b5f6%252fhsTr1DcFcw36k70SLwg%252fwWhCaP6jwyCm6%252f45Z6Xhy5GkIUmf7LtdBvPX0qLmEWGTTuPTYlx9Btvr5JiggjHGLibAfRX8%253d&fich=9b53fcf7-72f9-4134-ad44-ebb6655f3760.pdf&Inline=true",
+        "endereco_final": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=x5W9DWX1SUUrDgk87wy5NMatoUULSng56w1Z%252bMjyitbqKuz9bknk5nU1q8XRioztkHFMhGG4FLPAmD72hlT02%252f97l3x04zLtts1eMFSzdTkZcuvshggWj%252bb2DxFmmytGD7sWkqEG45EKYHIpiz4VN2nJy10c5jVu05uMKmsnrXIoOjhtQDQgm%252fAE2JRps%252baBtht6712ce3RiDaG1%252bDvMtFwxKEv2GT9Y53kK3%252fuz%252bm85BxEfyUi4DmQi3Fu4ratBblL0ejKZO6OhdyI5gE31XJwy7qyjFBLZVtwN3oK0iuhhIEel72IU9lcgQER0Vz%252fVWVabSmbSJY%252b5f6%252fhsTr1DcFcw36k70SLwg%252fwWhCaP6jwyCm6%252f45Z6Xhy5GkIUmf7LtdBvPX0qLmEWGTTuPTYlx9Btvr5JiggjHGLibAfRX8%253d&fich=9b53fcf7-72f9-4134-ad44-ebb6655f3760.pdf&Inline=true",
+        "acedido_em": "2026-10-26T13:48:23.699914+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "ficheiro": "utao-iniciativa.pdf",
+        "estado": 200,
+        "tipo": "application/pdf",
+        "segundos": 2.662,
+        "erro": null,
+        "redirecionamentos": [],
+        "bytes": 2323048,
+        "sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8"
+      },
+      "rights": {
+        "redistributed": "Excerto, referência e recibo; o corpo permanece no motor.",
+        "assessment": {
+          "anfitriao": "app.parlamento.pt",
+          "publicar_corpos": false,
+          "alojamento": "Cópia privada de investigação pedida no mandato. Não autoriza publicar ou distribuir o corpo.",
+          "reutilizacao": "Licença de republicação integral não estabelecida. Acesso público, caráter oficial ou política de privacidade não equivalem a licença.",
+          "prova": {
+            "file": "content/23 Habitacao/source/direitos/parlamento.html",
+            "receipt": "content/23 Habitacao/source/direitos/parlamento.html.pedido.json",
+            "sha256": "42b5ebc0fe02bd0e0a8d883a72da452edd07e58342aeb47967cfade3fdcf1073"
+          },
+          "pedidos": [
+            "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf.pedido.json",
+            "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf.pedido.json"
+          ],
+          "limite": "A avaliação regista a evidência consultada; não declara autorização jurídica de republicação.",
+          "robots": "Não usado como licença."
+        },
+        "origin_path": "content/30 Orcamento 2027 Generalidade/source/direitos/app.parlamento.pt/avaliacao.json",
+        "sha256": "4f0eab4807038569b383ddc4a2358afe7a0ce49cedd4d0c3830a1fb1c134e597"
+      }
+    },
+    "og1-utao-juros-variacao": {
+      "id": "og1-utao-juros-variacao",
+      "value": "23,2",
+      "unit": "%",
+      "period": "2027",
+      "excerpt": "A despesa com juros apresenta uma subida prevista de 23,2% em 2027, o que reflete uma variação nominal de 1,5 mil M€, ascendendo a 8,2 mil M€. Caso se concretize a previsão, a taxa de juro implícita (juros em percentagem da dívida pública) deverá subir de 2,4% em 2026 para 2,9% em 2027. É de referir que o máximo da série estatística para os juros foi atingido em 2014, acima do valor previsto para 2027 (a taxa de juro implícita foi de 3,6% em 2014).",
+      "document": {
+        "title": "Relatório UTAO n.º 17/2026: Apreciação preliminar da Proposta de Orçamento do Estado para 2027",
+        "file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
+        "source_sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
+        "locator": "§37; p. 22 PDF (21 impressa)",
+        "page": 22,
+        "printed_page": 21
+      },
+      "evidence": {
+        "file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
+        "sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
+        "locator": "§37; p. 22 PDF (21 impressa)"
+      },
+      "afirmacao": null,
+      "attributed_to": null,
+      "published_at": "2026-10-19",
+      "source_url": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=x5W9DWX1SUUrDgk87wy5NMatoUULSng56w1Z%252bMjyitbqKuz9bknk5nU1q8XRioztkHFMhGG4FLPAmD72hlT02%252f97l3x04zLtts1eMFSzdTkZcuvshggWj%252bb2DxFmmytGD7sWkqEG45EKYHIpiz4VN2nJy10c5jVu05uMKmsnrXIoOjhtQDQgm%252fAE2JRps%252baBtht6712ce3RiDaG1%252bDvMtFwxKEv2GT9Y53kK3%252fuz%252bm85BxEfyUi4DmQi3Fu4ratBblL0ejKZO6OhdyI5gE31XJwy7qyjFBLZVtwN3oK0iuhhIEel72IU9lcgQER0Vz%252fVWVabSmbSJY%252b5f6%252fhsTr1DcFcw36k70SLwg%252fwWhCaP6jwyCm6%252f45Z6Xhy5GkIUmf7LtdBvPX0qLmEWGTTuPTYlx9Btvr5JiggjHGLibAfRX8%253d&fich=9b53fcf7-72f9-4134-ad44-ebb6655f3760.pdf&Inline=true",
+      "receipt": {
+        "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=x5W9DWX1SUUrDgk87wy5NMatoUULSng56w1Z%252bMjyitbqKuz9bknk5nU1q8XRioztkHFMhGG4FLPAmD72hlT02%252f97l3x04zLtts1eMFSzdTkZcuvshggWj%252bb2DxFmmytGD7sWkqEG45EKYHIpiz4VN2nJy10c5jVu05uMKmsnrXIoOjhtQDQgm%252fAE2JRps%252baBtht6712ce3RiDaG1%252bDvMtFwxKEv2GT9Y53kK3%252fuz%252bm85BxEfyUi4DmQi3Fu4ratBblL0ejKZO6OhdyI5gE31XJwy7qyjFBLZVtwN3oK0iuhhIEel72IU9lcgQER0Vz%252fVWVabSmbSJY%252b5f6%252fhsTr1DcFcw36k70SLwg%252fwWhCaP6jwyCm6%252f45Z6Xhy5GkIUmf7LtdBvPX0qLmEWGTTuPTYlx9Btvr5JiggjHGLibAfRX8%253d&fich=9b53fcf7-72f9-4134-ad44-ebb6655f3760.pdf&Inline=true",
+        "endereco_final": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=x5W9DWX1SUUrDgk87wy5NMatoUULSng56w1Z%252bMjyitbqKuz9bknk5nU1q8XRioztkHFMhGG4FLPAmD72hlT02%252f97l3x04zLtts1eMFSzdTkZcuvshggWj%252bb2DxFmmytGD7sWkqEG45EKYHIpiz4VN2nJy10c5jVu05uMKmsnrXIoOjhtQDQgm%252fAE2JRps%252baBtht6712ce3RiDaG1%252bDvMtFwxKEv2GT9Y53kK3%252fuz%252bm85BxEfyUi4DmQi3Fu4ratBblL0ejKZO6OhdyI5gE31XJwy7qyjFBLZVtwN3oK0iuhhIEel72IU9lcgQER0Vz%252fVWVabSmbSJY%252b5f6%252fhsTr1DcFcw36k70SLwg%252fwWhCaP6jwyCm6%252f45Z6Xhy5GkIUmf7LtdBvPX0qLmEWGTTuPTYlx9Btvr5JiggjHGLibAfRX8%253d&fich=9b53fcf7-72f9-4134-ad44-ebb6655f3760.pdf&Inline=true",
+        "acedido_em": "2026-10-26T13:48:23.699914+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "ficheiro": "utao-iniciativa.pdf",
+        "estado": 200,
+        "tipo": "application/pdf",
+        "segundos": 2.662,
+        "erro": null,
+        "redirecionamentos": [],
+        "bytes": 2323048,
+        "sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8"
+      },
+      "rights": {
+        "redistributed": "Excerto, referência e recibo; o corpo permanece no motor.",
+        "assessment": {
+          "anfitriao": "app.parlamento.pt",
+          "publicar_corpos": false,
+          "alojamento": "Cópia privada de investigação pedida no mandato. Não autoriza publicar ou distribuir o corpo.",
+          "reutilizacao": "Licença de republicação integral não estabelecida. Acesso público, caráter oficial ou política de privacidade não equivalem a licença.",
+          "prova": {
+            "file": "content/23 Habitacao/source/direitos/parlamento.html",
+            "receipt": "content/23 Habitacao/source/direitos/parlamento.html.pedido.json",
+            "sha256": "42b5ebc0fe02bd0e0a8d883a72da452edd07e58342aeb47967cfade3fdcf1073"
+          },
+          "pedidos": [
+            "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf.pedido.json",
+            "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf.pedido.json"
+          ],
+          "limite": "A avaliação regista a evidência consultada; não declara autorização jurídica de republicação.",
+          "robots": "Não usado como licença."
+        },
+        "origin_path": "content/30 Orcamento 2027 Generalidade/source/direitos/app.parlamento.pt/avaliacao.json",
+        "sha256": "4f0eab4807038569b383ddc4a2358afe7a0ce49cedd4d0c3830a1fb1c134e597"
+      }
+    },
+    "og1-utao-juros-montante": {
+      "id": "og1-utao-juros-montante",
+      "value": "8,2",
+      "unit": "mil milhões de euros",
+      "period": "2027",
+      "excerpt": "A despesa com juros apresenta uma subida prevista de 23,2% em 2027, o que reflete uma variação nominal de 1,5 mil M€, ascendendo a 8,2 mil M€. Caso se concretize a previsão, a taxa de juro implícita (juros em percentagem da dívida pública) deverá subir de 2,4% em 2026 para 2,9% em 2027. É de referir que o máximo da série estatística para os juros foi atingido em 2014, acima do valor previsto para 2027 (a taxa de juro implícita foi de 3,6% em 2014).",
+      "document": {
+        "title": "Relatório UTAO n.º 17/2026: Apreciação preliminar da Proposta de Orçamento do Estado para 2027",
+        "file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
+        "source_sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
+        "locator": "§37; p. 22 PDF (21 impressa)",
+        "page": 22,
+        "printed_page": 21
+      },
+      "evidence": {
+        "file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
+        "sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
+        "locator": "§37; p. 22 PDF (21 impressa)"
+      },
+      "afirmacao": null,
+      "attributed_to": null,
+      "published_at": "2026-10-19",
+      "source_url": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=x5W9DWX1SUUrDgk87wy5NMatoUULSng56w1Z%252bMjyitbqKuz9bknk5nU1q8XRioztkHFMhGG4FLPAmD72hlT02%252f97l3x04zLtts1eMFSzdTkZcuvshggWj%252bb2DxFmmytGD7sWkqEG45EKYHIpiz4VN2nJy10c5jVu05uMKmsnrXIoOjhtQDQgm%252fAE2JRps%252baBtht6712ce3RiDaG1%252bDvMtFwxKEv2GT9Y53kK3%252fuz%252bm85BxEfyUi4DmQi3Fu4ratBblL0ejKZO6OhdyI5gE31XJwy7qyjFBLZVtwN3oK0iuhhIEel72IU9lcgQER0Vz%252fVWVabSmbSJY%252b5f6%252fhsTr1DcFcw36k70SLwg%252fwWhCaP6jwyCm6%252f45Z6Xhy5GkIUmf7LtdBvPX0qLmEWGTTuPTYlx9Btvr5JiggjHGLibAfRX8%253d&fich=9b53fcf7-72f9-4134-ad44-ebb6655f3760.pdf&Inline=true",
+      "receipt": {
+        "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=x5W9DWX1SUUrDgk87wy5NMatoUULSng56w1Z%252bMjyitbqKuz9bknk5nU1q8XRioztkHFMhGG4FLPAmD72hlT02%252f97l3x04zLtts1eMFSzdTkZcuvshggWj%252bb2DxFmmytGD7sWkqEG45EKYHIpiz4VN2nJy10c5jVu05uMKmsnrXIoOjhtQDQgm%252fAE2JRps%252baBtht6712ce3RiDaG1%252bDvMtFwxKEv2GT9Y53kK3%252fuz%252bm85BxEfyUi4DmQi3Fu4ratBblL0ejKZO6OhdyI5gE31XJwy7qyjFBLZVtwN3oK0iuhhIEel72IU9lcgQER0Vz%252fVWVabSmbSJY%252b5f6%252fhsTr1DcFcw36k70SLwg%252fwWhCaP6jwyCm6%252f45Z6Xhy5GkIUmf7LtdBvPX0qLmEWGTTuPTYlx9Btvr5JiggjHGLibAfRX8%253d&fich=9b53fcf7-72f9-4134-ad44-ebb6655f3760.pdf&Inline=true",
+        "endereco_final": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=x5W9DWX1SUUrDgk87wy5NMatoUULSng56w1Z%252bMjyitbqKuz9bknk5nU1q8XRioztkHFMhGG4FLPAmD72hlT02%252f97l3x04zLtts1eMFSzdTkZcuvshggWj%252bb2DxFmmytGD7sWkqEG45EKYHIpiz4VN2nJy10c5jVu05uMKmsnrXIoOjhtQDQgm%252fAE2JRps%252baBtht6712ce3RiDaG1%252bDvMtFwxKEv2GT9Y53kK3%252fuz%252bm85BxEfyUi4DmQi3Fu4ratBblL0ejKZO6OhdyI5gE31XJwy7qyjFBLZVtwN3oK0iuhhIEel72IU9lcgQER0Vz%252fVWVabSmbSJY%252b5f6%252fhsTr1DcFcw36k70SLwg%252fwWhCaP6jwyCm6%252f45Z6Xhy5GkIUmf7LtdBvPX0qLmEWGTTuPTYlx9Btvr5JiggjHGLibAfRX8%253d&fich=9b53fcf7-72f9-4134-ad44-ebb6655f3760.pdf&Inline=true",
+        "acedido_em": "2026-10-26T13:48:23.699914+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "ficheiro": "utao-iniciativa.pdf",
+        "estado": 200,
+        "tipo": "application/pdf",
+        "segundos": 2.662,
+        "erro": null,
+        "redirecionamentos": [],
+        "bytes": 2323048,
+        "sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8"
+      },
+      "rights": {
+        "redistributed": "Excerto, referência e recibo; o corpo permanece no motor.",
+        "assessment": {
+          "anfitriao": "app.parlamento.pt",
+          "publicar_corpos": false,
+          "alojamento": "Cópia privada de investigação pedida no mandato. Não autoriza publicar ou distribuir o corpo.",
+          "reutilizacao": "Licença de republicação integral não estabelecida. Acesso público, caráter oficial ou política de privacidade não equivalem a licença.",
+          "prova": {
+            "file": "content/23 Habitacao/source/direitos/parlamento.html",
+            "receipt": "content/23 Habitacao/source/direitos/parlamento.html.pedido.json",
+            "sha256": "42b5ebc0fe02bd0e0a8d883a72da452edd07e58342aeb47967cfade3fdcf1073"
+          },
+          "pedidos": [
+            "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf.pedido.json",
+            "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf.pedido.json"
+          ],
+          "limite": "A avaliação regista a evidência consultada; não declara autorização jurídica de republicação.",
+          "robots": "Não usado como licença."
+        },
+        "origin_path": "content/30 Orcamento 2027 Generalidade/source/direitos/app.parlamento.pt/avaliacao.json",
+        "sha256": "4f0eab4807038569b383ddc4a2358afe7a0ce49cedd4d0c3830a1fb1c134e597"
+      }
+    },
+    "og1-utao-taxa-implicita-2026": {
+      "id": "og1-utao-taxa-implicita-2026",
+      "value": "2,4",
+      "unit": "%",
+      "period": "2026",
+      "excerpt": "A despesa com juros apresenta uma subida prevista de 23,2% em 2027, o que reflete uma variação nominal de 1,5 mil M€, ascendendo a 8,2 mil M€. Caso se concretize a previsão, a taxa de juro implícita (juros em percentagem da dívida pública) deverá subir de 2,4% em 2026 para 2,9% em 2027. É de referir que o máximo da série estatística para os juros foi atingido em 2014, acima do valor previsto para 2027 (a taxa de juro implícita foi de 3,6% em 2014).",
+      "document": {
+        "title": "Relatório UTAO n.º 17/2026: Apreciação preliminar da Proposta de Orçamento do Estado para 2027",
+        "file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
+        "source_sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
+        "locator": "§37; p. 22 PDF (21 impressa)",
+        "page": 22,
+        "printed_page": 21
+      },
+      "evidence": {
+        "file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
+        "sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
+        "locator": "§37; p. 22 PDF (21 impressa)"
+      },
+      "afirmacao": null,
+      "attributed_to": null,
+      "published_at": "2026-10-19",
+      "source_url": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=x5W9DWX1SUUrDgk87wy5NMatoUULSng56w1Z%252bMjyitbqKuz9bknk5nU1q8XRioztkHFMhGG4FLPAmD72hlT02%252f97l3x04zLtts1eMFSzdTkZcuvshggWj%252bb2DxFmmytGD7sWkqEG45EKYHIpiz4VN2nJy10c5jVu05uMKmsnrXIoOjhtQDQgm%252fAE2JRps%252baBtht6712ce3RiDaG1%252bDvMtFwxKEv2GT9Y53kK3%252fuz%252bm85BxEfyUi4DmQi3Fu4ratBblL0ejKZO6OhdyI5gE31XJwy7qyjFBLZVtwN3oK0iuhhIEel72IU9lcgQER0Vz%252fVWVabSmbSJY%252b5f6%252fhsTr1DcFcw36k70SLwg%252fwWhCaP6jwyCm6%252f45Z6Xhy5GkIUmf7LtdBvPX0qLmEWGTTuPTYlx9Btvr5JiggjHGLibAfRX8%253d&fich=9b53fcf7-72f9-4134-ad44-ebb6655f3760.pdf&Inline=true",
+      "receipt": {
+        "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=x5W9DWX1SUUrDgk87wy5NMatoUULSng56w1Z%252bMjyitbqKuz9bknk5nU1q8XRioztkHFMhGG4FLPAmD72hlT02%252f97l3x04zLtts1eMFSzdTkZcuvshggWj%252bb2DxFmmytGD7sWkqEG45EKYHIpiz4VN2nJy10c5jVu05uMKmsnrXIoOjhtQDQgm%252fAE2JRps%252baBtht6712ce3RiDaG1%252bDvMtFwxKEv2GT9Y53kK3%252fuz%252bm85BxEfyUi4DmQi3Fu4ratBblL0ejKZO6OhdyI5gE31XJwy7qyjFBLZVtwN3oK0iuhhIEel72IU9lcgQER0Vz%252fVWVabSmbSJY%252b5f6%252fhsTr1DcFcw36k70SLwg%252fwWhCaP6jwyCm6%252f45Z6Xhy5GkIUmf7LtdBvPX0qLmEWGTTuPTYlx9Btvr5JiggjHGLibAfRX8%253d&fich=9b53fcf7-72f9-4134-ad44-ebb6655f3760.pdf&Inline=true",
+        "endereco_final": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=x5W9DWX1SUUrDgk87wy5NMatoUULSng56w1Z%252bMjyitbqKuz9bknk5nU1q8XRioztkHFMhGG4FLPAmD72hlT02%252f97l3x04zLtts1eMFSzdTkZcuvshggWj%252bb2DxFmmytGD7sWkqEG45EKYHIpiz4VN2nJy10c5jVu05uMKmsnrXIoOjhtQDQgm%252fAE2JRps%252baBtht6712ce3RiDaG1%252bDvMtFwxKEv2GT9Y53kK3%252fuz%252bm85BxEfyUi4DmQi3Fu4ratBblL0ejKZO6OhdyI5gE31XJwy7qyjFBLZVtwN3oK0iuhhIEel72IU9lcgQER0Vz%252fVWVabSmbSJY%252b5f6%252fhsTr1DcFcw36k70SLwg%252fwWhCaP6jwyCm6%252f45Z6Xhy5GkIUmf7LtdBvPX0qLmEWGTTuPTYlx9Btvr5JiggjHGLibAfRX8%253d&fich=9b53fcf7-72f9-4134-ad44-ebb6655f3760.pdf&Inline=true",
+        "acedido_em": "2026-10-26T13:48:23.699914+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "ficheiro": "utao-iniciativa.pdf",
+        "estado": 200,
+        "tipo": "application/pdf",
+        "segundos": 2.662,
+        "erro": null,
+        "redirecionamentos": [],
+        "bytes": 2323048,
+        "sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8"
+      },
+      "rights": {
+        "redistributed": "Excerto, referência e recibo; o corpo permanece no motor.",
+        "assessment": {
+          "anfitriao": "app.parlamento.pt",
+          "publicar_corpos": false,
+          "alojamento": "Cópia privada de investigação pedida no mandato. Não autoriza publicar ou distribuir o corpo.",
+          "reutilizacao": "Licença de republicação integral não estabelecida. Acesso público, caráter oficial ou política de privacidade não equivalem a licença.",
+          "prova": {
+            "file": "content/23 Habitacao/source/direitos/parlamento.html",
+            "receipt": "content/23 Habitacao/source/direitos/parlamento.html.pedido.json",
+            "sha256": "42b5ebc0fe02bd0e0a8d883a72da452edd07e58342aeb47967cfade3fdcf1073"
+          },
+          "pedidos": [
+            "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf.pedido.json",
+            "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf.pedido.json"
+          ],
+          "limite": "A avaliação regista a evidência consultada; não declara autorização jurídica de republicação.",
+          "robots": "Não usado como licença."
+        },
+        "origin_path": "content/30 Orcamento 2027 Generalidade/source/direitos/app.parlamento.pt/avaliacao.json",
+        "sha256": "4f0eab4807038569b383ddc4a2358afe7a0ce49cedd4d0c3830a1fb1c134e597"
+      }
+    },
+    "og1-utao-taxa-implicita-2027": {
+      "id": "og1-utao-taxa-implicita-2027",
+      "value": "2,9",
+      "unit": "%",
+      "period": "2027",
+      "excerpt": "A despesa com juros apresenta uma subida prevista de 23,2% em 2027, o que reflete uma variação nominal de 1,5 mil M€, ascendendo a 8,2 mil M€. Caso se concretize a previsão, a taxa de juro implícita (juros em percentagem da dívida pública) deverá subir de 2,4% em 2026 para 2,9% em 2027. É de referir que o máximo da série estatística para os juros foi atingido em 2014, acima do valor previsto para 2027 (a taxa de juro implícita foi de 3,6% em 2014).",
+      "document": {
+        "title": "Relatório UTAO n.º 17/2026: Apreciação preliminar da Proposta de Orçamento do Estado para 2027",
+        "file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
+        "source_sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
+        "locator": "§37; p. 22 PDF (21 impressa)",
+        "page": 22,
+        "printed_page": 21
+      },
+      "evidence": {
+        "file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
+        "sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
+        "locator": "§37; p. 22 PDF (21 impressa)"
+      },
+      "afirmacao": null,
+      "attributed_to": null,
+      "published_at": "2026-10-19",
+      "source_url": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=x5W9DWX1SUUrDgk87wy5NMatoUULSng56w1Z%252bMjyitbqKuz9bknk5nU1q8XRioztkHFMhGG4FLPAmD72hlT02%252f97l3x04zLtts1eMFSzdTkZcuvshggWj%252bb2DxFmmytGD7sWkqEG45EKYHIpiz4VN2nJy10c5jVu05uMKmsnrXIoOjhtQDQgm%252fAE2JRps%252baBtht6712ce3RiDaG1%252bDvMtFwxKEv2GT9Y53kK3%252fuz%252bm85BxEfyUi4DmQi3Fu4ratBblL0ejKZO6OhdyI5gE31XJwy7qyjFBLZVtwN3oK0iuhhIEel72IU9lcgQER0Vz%252fVWVabSmbSJY%252b5f6%252fhsTr1DcFcw36k70SLwg%252fwWhCaP6jwyCm6%252f45Z6Xhy5GkIUmf7LtdBvPX0qLmEWGTTuPTYlx9Btvr5JiggjHGLibAfRX8%253d&fich=9b53fcf7-72f9-4134-ad44-ebb6655f3760.pdf&Inline=true",
+      "receipt": {
+        "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=x5W9DWX1SUUrDgk87wy5NMatoUULSng56w1Z%252bMjyitbqKuz9bknk5nU1q8XRioztkHFMhGG4FLPAmD72hlT02%252f97l3x04zLtts1eMFSzdTkZcuvshggWj%252bb2DxFmmytGD7sWkqEG45EKYHIpiz4VN2nJy10c5jVu05uMKmsnrXIoOjhtQDQgm%252fAE2JRps%252baBtht6712ce3RiDaG1%252bDvMtFwxKEv2GT9Y53kK3%252fuz%252bm85BxEfyUi4DmQi3Fu4ratBblL0ejKZO6OhdyI5gE31XJwy7qyjFBLZVtwN3oK0iuhhIEel72IU9lcgQER0Vz%252fVWVabSmbSJY%252b5f6%252fhsTr1DcFcw36k70SLwg%252fwWhCaP6jwyCm6%252f45Z6Xhy5GkIUmf7LtdBvPX0qLmEWGTTuPTYlx9Btvr5JiggjHGLibAfRX8%253d&fich=9b53fcf7-72f9-4134-ad44-ebb6655f3760.pdf&Inline=true",
+        "endereco_final": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=x5W9DWX1SUUrDgk87wy5NMatoUULSng56w1Z%252bMjyitbqKuz9bknk5nU1q8XRioztkHFMhGG4FLPAmD72hlT02%252f97l3x04zLtts1eMFSzdTkZcuvshggWj%252bb2DxFmmytGD7sWkqEG45EKYHIpiz4VN2nJy10c5jVu05uMKmsnrXIoOjhtQDQgm%252fAE2JRps%252baBtht6712ce3RiDaG1%252bDvMtFwxKEv2GT9Y53kK3%252fuz%252bm85BxEfyUi4DmQi3Fu4ratBblL0ejKZO6OhdyI5gE31XJwy7qyjFBLZVtwN3oK0iuhhIEel72IU9lcgQER0Vz%252fVWVabSmbSJY%252b5f6%252fhsTr1DcFcw36k70SLwg%252fwWhCaP6jwyCm6%252f45Z6Xhy5GkIUmf7LtdBvPX0qLmEWGTTuPTYlx9Btvr5JiggjHGLibAfRX8%253d&fich=9b53fcf7-72f9-4134-ad44-ebb6655f3760.pdf&Inline=true",
+        "acedido_em": "2026-10-26T13:48:23.699914+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "ficheiro": "utao-iniciativa.pdf",
+        "estado": 200,
+        "tipo": "application/pdf",
+        "segundos": 2.662,
+        "erro": null,
+        "redirecionamentos": [],
+        "bytes": 2323048,
+        "sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8"
+      },
+      "rights": {
+        "redistributed": "Excerto, referência e recibo; o corpo permanece no motor.",
+        "assessment": {
+          "anfitriao": "app.parlamento.pt",
+          "publicar_corpos": false,
+          "alojamento": "Cópia privada de investigação pedida no mandato. Não autoriza publicar ou distribuir o corpo.",
+          "reutilizacao": "Licença de republicação integral não estabelecida. Acesso público, caráter oficial ou política de privacidade não equivalem a licença.",
+          "prova": {
+            "file": "content/23 Habitacao/source/direitos/parlamento.html",
+            "receipt": "content/23 Habitacao/source/direitos/parlamento.html.pedido.json",
+            "sha256": "42b5ebc0fe02bd0e0a8d883a72da452edd07e58342aeb47967cfade3fdcf1073"
+          },
+          "pedidos": [
+            "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf.pedido.json",
+            "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf.pedido.json"
+          ],
+          "limite": "A avaliação regista a evidência consultada; não declara autorização jurídica de republicação.",
+          "robots": "Não usado como licença."
+        },
+        "origin_path": "content/30 Orcamento 2027 Generalidade/source/direitos/app.parlamento.pt/avaliacao.json",
+        "sha256": "4f0eab4807038569b383ddc4a2358afe7a0ce49cedd4d0c3830a1fb1c134e597"
+      }
+    },
+    "og1-utao-novas-saldo": {
+      "id": "og1-utao-novas-saldo",
+      "value": "79",
+      "unit": "milhões de euros",
+      "period": "2027",
+      "excerpt": "O MF prevê que em 2027 as novas medidas de política orçamental tenham um impacto residual no saldo orçamental avaliado em +79 M€ (+0,02% do PIB). Na receita, estas medidas terão um impacto positivo no saldo de +179 M€ (+0,05% do PIB); na despesa, o impacto das medidas, é negativo em 100 M€ (0,03% do PIB). Estes dados estão compilados na Tabela 9.",
+      "document": {
+        "title": "Relatório UTAO n.º 17/2026: Apreciação preliminar da Proposta de Orçamento do Estado para 2027",
+        "file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
+        "source_sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
+        "locator": "§40; p. 22 PDF (21 impressa)",
+        "page": 22,
+        "printed_page": 21
+      },
+      "evidence": {
+        "file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
+        "sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
+        "locator": "§40; p. 22 PDF (21 impressa)"
+      },
+      "afirmacao": null,
+      "attributed_to": null,
+      "published_at": "2026-10-19",
+      "source_url": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=x5W9DWX1SUUrDgk87wy5NMatoUULSng56w1Z%252bMjyitbqKuz9bknk5nU1q8XRioztkHFMhGG4FLPAmD72hlT02%252f97l3x04zLtts1eMFSzdTkZcuvshggWj%252bb2DxFmmytGD7sWkqEG45EKYHIpiz4VN2nJy10c5jVu05uMKmsnrXIoOjhtQDQgm%252fAE2JRps%252baBtht6712ce3RiDaG1%252bDvMtFwxKEv2GT9Y53kK3%252fuz%252bm85BxEfyUi4DmQi3Fu4ratBblL0ejKZO6OhdyI5gE31XJwy7qyjFBLZVtwN3oK0iuhhIEel72IU9lcgQER0Vz%252fVWVabSmbSJY%252b5f6%252fhsTr1DcFcw36k70SLwg%252fwWhCaP6jwyCm6%252f45Z6Xhy5GkIUmf7LtdBvPX0qLmEWGTTuPTYlx9Btvr5JiggjHGLibAfRX8%253d&fich=9b53fcf7-72f9-4134-ad44-ebb6655f3760.pdf&Inline=true",
+      "receipt": {
+        "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=x5W9DWX1SUUrDgk87wy5NMatoUULSng56w1Z%252bMjyitbqKuz9bknk5nU1q8XRioztkHFMhGG4FLPAmD72hlT02%252f97l3x04zLtts1eMFSzdTkZcuvshggWj%252bb2DxFmmytGD7sWkqEG45EKYHIpiz4VN2nJy10c5jVu05uMKmsnrXIoOjhtQDQgm%252fAE2JRps%252baBtht6712ce3RiDaG1%252bDvMtFwxKEv2GT9Y53kK3%252fuz%252bm85BxEfyUi4DmQi3Fu4ratBblL0ejKZO6OhdyI5gE31XJwy7qyjFBLZVtwN3oK0iuhhIEel72IU9lcgQER0Vz%252fVWVabSmbSJY%252b5f6%252fhsTr1DcFcw36k70SLwg%252fwWhCaP6jwyCm6%252f45Z6Xhy5GkIUmf7LtdBvPX0qLmEWGTTuPTYlx9Btvr5JiggjHGLibAfRX8%253d&fich=9b53fcf7-72f9-4134-ad44-ebb6655f3760.pdf&Inline=true",
+        "endereco_final": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=x5W9DWX1SUUrDgk87wy5NMatoUULSng56w1Z%252bMjyitbqKuz9bknk5nU1q8XRioztkHFMhGG4FLPAmD72hlT02%252f97l3x04zLtts1eMFSzdTkZcuvshggWj%252bb2DxFmmytGD7sWkqEG45EKYHIpiz4VN2nJy10c5jVu05uMKmsnrXIoOjhtQDQgm%252fAE2JRps%252baBtht6712ce3RiDaG1%252bDvMtFwxKEv2GT9Y53kK3%252fuz%252bm85BxEfyUi4DmQi3Fu4ratBblL0ejKZO6OhdyI5gE31XJwy7qyjFBLZVtwN3oK0iuhhIEel72IU9lcgQER0Vz%252fVWVabSmbSJY%252b5f6%252fhsTr1DcFcw36k70SLwg%252fwWhCaP6jwyCm6%252f45Z6Xhy5GkIUmf7LtdBvPX0qLmEWGTTuPTYlx9Btvr5JiggjHGLibAfRX8%253d&fich=9b53fcf7-72f9-4134-ad44-ebb6655f3760.pdf&Inline=true",
+        "acedido_em": "2026-10-26T13:48:23.699914+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "ficheiro": "utao-iniciativa.pdf",
+        "estado": 200,
+        "tipo": "application/pdf",
+        "segundos": 2.662,
+        "erro": null,
+        "redirecionamentos": [],
+        "bytes": 2323048,
+        "sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8"
+      },
+      "rights": {
+        "redistributed": "Excerto, referência e recibo; o corpo permanece no motor.",
+        "assessment": {
+          "anfitriao": "app.parlamento.pt",
+          "publicar_corpos": false,
+          "alojamento": "Cópia privada de investigação pedida no mandato. Não autoriza publicar ou distribuir o corpo.",
+          "reutilizacao": "Licença de republicação integral não estabelecida. Acesso público, caráter oficial ou política de privacidade não equivalem a licença.",
+          "prova": {
+            "file": "content/23 Habitacao/source/direitos/parlamento.html",
+            "receipt": "content/23 Habitacao/source/direitos/parlamento.html.pedido.json",
+            "sha256": "42b5ebc0fe02bd0e0a8d883a72da452edd07e58342aeb47967cfade3fdcf1073"
+          },
+          "pedidos": [
+            "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf.pedido.json",
+            "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf.pedido.json"
+          ],
+          "limite": "A avaliação regista a evidência consultada; não declara autorização jurídica de republicação.",
+          "robots": "Não usado como licença."
+        },
+        "origin_path": "content/30 Orcamento 2027 Generalidade/source/direitos/app.parlamento.pt/avaliacao.json",
+        "sha256": "4f0eab4807038569b383ddc4a2358afe7a0ce49cedd4d0c3830a1fb1c134e597"
+      }
+    },
+    "og1-utao-despesa-liquida-ce": {
+      "id": "og1-utao-despesa-liquida-ce",
+      "value": "2,1",
+      "unit": "% do PIB",
+      "period": "2027",
+      "excerpt": "De acordo com a Comissão Europeia em junho de 2026, a despesa líquida deverá subir 5,6% e 5,5% em 2026 e 2027, respetivamente. Assim, o desvio previsto no final de 2027 é de 2,1% do PIB, o que é superior ao limiar de 0,6% do PIB estabelecido para efeitos de aferição do cumprimento da trajetória da despesa líquida — Tabela 11.",
+      "document": {
+        "title": "Relatório UTAO n.º 17/2026: Apreciação preliminar da Proposta de Orçamento do Estado para 2027",
+        "file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
+        "source_sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
+        "locator": "§50; p. 27 PDF (26 impressa)",
+        "page": 27,
+        "printed_page": 26
+      },
+      "evidence": {
+        "file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
+        "sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
+        "locator": "§50; p. 27 PDF (26 impressa)"
+      },
+      "afirmacao": null,
+      "attributed_to": null,
+      "published_at": "2026-10-19",
+      "source_url": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=x5W9DWX1SUUrDgk87wy5NMatoUULSng56w1Z%252bMjyitbqKuz9bknk5nU1q8XRioztkHFMhGG4FLPAmD72hlT02%252f97l3x04zLtts1eMFSzdTkZcuvshggWj%252bb2DxFmmytGD7sWkqEG45EKYHIpiz4VN2nJy10c5jVu05uMKmsnrXIoOjhtQDQgm%252fAE2JRps%252baBtht6712ce3RiDaG1%252bDvMtFwxKEv2GT9Y53kK3%252fuz%252bm85BxEfyUi4DmQi3Fu4ratBblL0ejKZO6OhdyI5gE31XJwy7qyjFBLZVtwN3oK0iuhhIEel72IU9lcgQER0Vz%252fVWVabSmbSJY%252b5f6%252fhsTr1DcFcw36k70SLwg%252fwWhCaP6jwyCm6%252f45Z6Xhy5GkIUmf7LtdBvPX0qLmEWGTTuPTYlx9Btvr5JiggjHGLibAfRX8%253d&fich=9b53fcf7-72f9-4134-ad44-ebb6655f3760.pdf&Inline=true",
+      "receipt": {
+        "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=x5W9DWX1SUUrDgk87wy5NMatoUULSng56w1Z%252bMjyitbqKuz9bknk5nU1q8XRioztkHFMhGG4FLPAmD72hlT02%252f97l3x04zLtts1eMFSzdTkZcuvshggWj%252bb2DxFmmytGD7sWkqEG45EKYHIpiz4VN2nJy10c5jVu05uMKmsnrXIoOjhtQDQgm%252fAE2JRps%252baBtht6712ce3RiDaG1%252bDvMtFwxKEv2GT9Y53kK3%252fuz%252bm85BxEfyUi4DmQi3Fu4ratBblL0ejKZO6OhdyI5gE31XJwy7qyjFBLZVtwN3oK0iuhhIEel72IU9lcgQER0Vz%252fVWVabSmbSJY%252b5f6%252fhsTr1DcFcw36k70SLwg%252fwWhCaP6jwyCm6%252f45Z6Xhy5GkIUmf7LtdBvPX0qLmEWGTTuPTYlx9Btvr5JiggjHGLibAfRX8%253d&fich=9b53fcf7-72f9-4134-ad44-ebb6655f3760.pdf&Inline=true",
+        "endereco_final": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=x5W9DWX1SUUrDgk87wy5NMatoUULSng56w1Z%252bMjyitbqKuz9bknk5nU1q8XRioztkHFMhGG4FLPAmD72hlT02%252f97l3x04zLtts1eMFSzdTkZcuvshggWj%252bb2DxFmmytGD7sWkqEG45EKYHIpiz4VN2nJy10c5jVu05uMKmsnrXIoOjhtQDQgm%252fAE2JRps%252baBtht6712ce3RiDaG1%252bDvMtFwxKEv2GT9Y53kK3%252fuz%252bm85BxEfyUi4DmQi3Fu4ratBblL0ejKZO6OhdyI5gE31XJwy7qyjFBLZVtwN3oK0iuhhIEel72IU9lcgQER0Vz%252fVWVabSmbSJY%252b5f6%252fhsTr1DcFcw36k70SLwg%252fwWhCaP6jwyCm6%252f45Z6Xhy5GkIUmf7LtdBvPX0qLmEWGTTuPTYlx9Btvr5JiggjHGLibAfRX8%253d&fich=9b53fcf7-72f9-4134-ad44-ebb6655f3760.pdf&Inline=true",
+        "acedido_em": "2026-10-26T13:48:23.699914+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "ficheiro": "utao-iniciativa.pdf",
+        "estado": 200,
+        "tipo": "application/pdf",
+        "segundos": 2.662,
+        "erro": null,
+        "redirecionamentos": [],
+        "bytes": 2323048,
+        "sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8"
+      },
+      "rights": {
+        "redistributed": "Excerto, referência e recibo; o corpo permanece no motor.",
+        "assessment": {
+          "anfitriao": "app.parlamento.pt",
+          "publicar_corpos": false,
+          "alojamento": "Cópia privada de investigação pedida no mandato. Não autoriza publicar ou distribuir o corpo.",
+          "reutilizacao": "Licença de republicação integral não estabelecida. Acesso público, caráter oficial ou política de privacidade não equivalem a licença.",
+          "prova": {
+            "file": "content/23 Habitacao/source/direitos/parlamento.html",
+            "receipt": "content/23 Habitacao/source/direitos/parlamento.html.pedido.json",
+            "sha256": "42b5ebc0fe02bd0e0a8d883a72da452edd07e58342aeb47967cfade3fdcf1073"
+          },
+          "pedidos": [
+            "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf.pedido.json",
+            "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf.pedido.json"
+          ],
+          "limite": "A avaliação regista a evidência consultada; não declara autorização jurídica de republicação.",
+          "robots": "Não usado como licença."
+        },
+        "origin_path": "content/30 Orcamento 2027 Generalidade/source/direitos/app.parlamento.pt/avaliacao.json",
+        "sha256": "4f0eab4807038569b383ddc4a2358afe7a0ce49cedd4d0c3830a1fb1c134e597"
+      }
+    },
+    "og1-utao-despesa-liquida-limiar": {
+      "id": "og1-utao-despesa-liquida-limiar",
+      "value": "0,6",
+      "unit": "% do PIB",
+      "period": "2027",
+      "excerpt": "De acordo com a Comissão Europeia em junho de 2026, a despesa líquida deverá subir 5,6% e 5,5% em 2026 e 2027, respetivamente. Assim, o desvio previsto no final de 2027 é de 2,1% do PIB, o que é superior ao limiar de 0,6% do PIB estabelecido para efeitos de aferição do cumprimento da trajetória da despesa líquida — Tabela 11.",
+      "document": {
+        "title": "Relatório UTAO n.º 17/2026: Apreciação preliminar da Proposta de Orçamento do Estado para 2027",
+        "file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
+        "source_sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
+        "locator": "§50; p. 27 PDF (26 impressa)",
+        "page": 27,
+        "printed_page": 26
+      },
+      "evidence": {
+        "file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
+        "sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
+        "locator": "§50; p. 27 PDF (26 impressa)"
+      },
+      "afirmacao": null,
+      "attributed_to": null,
+      "published_at": "2026-10-19",
+      "source_url": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=x5W9DWX1SUUrDgk87wy5NMatoUULSng56w1Z%252bMjyitbqKuz9bknk5nU1q8XRioztkHFMhGG4FLPAmD72hlT02%252f97l3x04zLtts1eMFSzdTkZcuvshggWj%252bb2DxFmmytGD7sWkqEG45EKYHIpiz4VN2nJy10c5jVu05uMKmsnrXIoOjhtQDQgm%252fAE2JRps%252baBtht6712ce3RiDaG1%252bDvMtFwxKEv2GT9Y53kK3%252fuz%252bm85BxEfyUi4DmQi3Fu4ratBblL0ejKZO6OhdyI5gE31XJwy7qyjFBLZVtwN3oK0iuhhIEel72IU9lcgQER0Vz%252fVWVabSmbSJY%252b5f6%252fhsTr1DcFcw36k70SLwg%252fwWhCaP6jwyCm6%252f45Z6Xhy5GkIUmf7LtdBvPX0qLmEWGTTuPTYlx9Btvr5JiggjHGLibAfRX8%253d&fich=9b53fcf7-72f9-4134-ad44-ebb6655f3760.pdf&Inline=true",
+      "receipt": {
+        "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=x5W9DWX1SUUrDgk87wy5NMatoUULSng56w1Z%252bMjyitbqKuz9bknk5nU1q8XRioztkHFMhGG4FLPAmD72hlT02%252f97l3x04zLtts1eMFSzdTkZcuvshggWj%252bb2DxFmmytGD7sWkqEG45EKYHIpiz4VN2nJy10c5jVu05uMKmsnrXIoOjhtQDQgm%252fAE2JRps%252baBtht6712ce3RiDaG1%252bDvMtFwxKEv2GT9Y53kK3%252fuz%252bm85BxEfyUi4DmQi3Fu4ratBblL0ejKZO6OhdyI5gE31XJwy7qyjFBLZVtwN3oK0iuhhIEel72IU9lcgQER0Vz%252fVWVabSmbSJY%252b5f6%252fhsTr1DcFcw36k70SLwg%252fwWhCaP6jwyCm6%252f45Z6Xhy5GkIUmf7LtdBvPX0qLmEWGTTuPTYlx9Btvr5JiggjHGLibAfRX8%253d&fich=9b53fcf7-72f9-4134-ad44-ebb6655f3760.pdf&Inline=true",
+        "endereco_final": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=x5W9DWX1SUUrDgk87wy5NMatoUULSng56w1Z%252bMjyitbqKuz9bknk5nU1q8XRioztkHFMhGG4FLPAmD72hlT02%252f97l3x04zLtts1eMFSzdTkZcuvshggWj%252bb2DxFmmytGD7sWkqEG45EKYHIpiz4VN2nJy10c5jVu05uMKmsnrXIoOjhtQDQgm%252fAE2JRps%252baBtht6712ce3RiDaG1%252bDvMtFwxKEv2GT9Y53kK3%252fuz%252bm85BxEfyUi4DmQi3Fu4ratBblL0ejKZO6OhdyI5gE31XJwy7qyjFBLZVtwN3oK0iuhhIEel72IU9lcgQER0Vz%252fVWVabSmbSJY%252b5f6%252fhsTr1DcFcw36k70SLwg%252fwWhCaP6jwyCm6%252f45Z6Xhy5GkIUmf7LtdBvPX0qLmEWGTTuPTYlx9Btvr5JiggjHGLibAfRX8%253d&fich=9b53fcf7-72f9-4134-ad44-ebb6655f3760.pdf&Inline=true",
+        "acedido_em": "2026-10-26T13:48:23.699914+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "ficheiro": "utao-iniciativa.pdf",
+        "estado": 200,
+        "tipo": "application/pdf",
+        "segundos": 2.662,
+        "erro": null,
+        "redirecionamentos": [],
+        "bytes": 2323048,
+        "sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8"
+      },
+      "rights": {
+        "redistributed": "Excerto, referência e recibo; o corpo permanece no motor.",
+        "assessment": {
+          "anfitriao": "app.parlamento.pt",
+          "publicar_corpos": false,
+          "alojamento": "Cópia privada de investigação pedida no mandato. Não autoriza publicar ou distribuir o corpo.",
+          "reutilizacao": "Licença de republicação integral não estabelecida. Acesso público, caráter oficial ou política de privacidade não equivalem a licença.",
+          "prova": {
+            "file": "content/23 Habitacao/source/direitos/parlamento.html",
+            "receipt": "content/23 Habitacao/source/direitos/parlamento.html.pedido.json",
+            "sha256": "42b5ebc0fe02bd0e0a8d883a72da452edd07e58342aeb47967cfade3fdcf1073"
+          },
+          "pedidos": [
+            "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf.pedido.json",
+            "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf.pedido.json"
+          ],
+          "limite": "A avaliação regista a evidência consultada; não declara autorização jurídica de republicação.",
+          "robots": "Não usado como licença."
+        },
+        "origin_path": "content/30 Orcamento 2027 Generalidade/source/direitos/app.parlamento.pt/avaliacao.json",
+        "sha256": "4f0eab4807038569b383ddc4a2358afe7a0ce49cedd4d0c3830a1fb1c134e597"
+      }
+    },
+    "og1-utao-despesa-liquida-mf-defesa": {
+      "id": "og1-utao-despesa-liquida-mf-defesa",
+      "value": "0,5",
+      "unit": "% do PIB",
+      "period": "2027",
+      "excerpt": "Os dados do MF constantes no relatório da POE/2027 apontam igualmente para um crescimento da despesa líquida acima da trajetória de referência no triénio 2025–2027, mas assegurando o cumprimento da regra da despesa líquida após a margem de flexibilidade permitida pela despesa com Defesa. O desvio acumulado previsto pelo MF no final de 2027 é de 0,5% do PIB após a flexibilidade da defesa (0,9% antes) (Tabela 11 e Gráfico 13), o qual fica abaixo do limiar de 0,6% do PIB estabelecido para efeitos de aferição do cumprimento da trajetória da despesa líquida.",
+      "document": {
+        "title": "Relatório UTAO n.º 17/2026: Apreciação preliminar da Proposta de Orçamento do Estado para 2027",
+        "file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
+        "source_sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
+        "locator": "§51; p. 27 PDF (26 impressa)",
+        "page": 27,
+        "printed_page": 26
+      },
+      "evidence": {
+        "file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
+        "sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
+        "locator": "§51; p. 27 PDF (26 impressa)"
+      },
+      "afirmacao": null,
+      "attributed_to": null,
+      "published_at": "2026-10-19",
+      "source_url": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=x5W9DWX1SUUrDgk87wy5NMatoUULSng56w1Z%252bMjyitbqKuz9bknk5nU1q8XRioztkHFMhGG4FLPAmD72hlT02%252f97l3x04zLtts1eMFSzdTkZcuvshggWj%252bb2DxFmmytGD7sWkqEG45EKYHIpiz4VN2nJy10c5jVu05uMKmsnrXIoOjhtQDQgm%252fAE2JRps%252baBtht6712ce3RiDaG1%252bDvMtFwxKEv2GT9Y53kK3%252fuz%252bm85BxEfyUi4DmQi3Fu4ratBblL0ejKZO6OhdyI5gE31XJwy7qyjFBLZVtwN3oK0iuhhIEel72IU9lcgQER0Vz%252fVWVabSmbSJY%252b5f6%252fhsTr1DcFcw36k70SLwg%252fwWhCaP6jwyCm6%252f45Z6Xhy5GkIUmf7LtdBvPX0qLmEWGTTuPTYlx9Btvr5JiggjHGLibAfRX8%253d&fich=9b53fcf7-72f9-4134-ad44-ebb6655f3760.pdf&Inline=true",
+      "receipt": {
+        "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=x5W9DWX1SUUrDgk87wy5NMatoUULSng56w1Z%252bMjyitbqKuz9bknk5nU1q8XRioztkHFMhGG4FLPAmD72hlT02%252f97l3x04zLtts1eMFSzdTkZcuvshggWj%252bb2DxFmmytGD7sWkqEG45EKYHIpiz4VN2nJy10c5jVu05uMKmsnrXIoOjhtQDQgm%252fAE2JRps%252baBtht6712ce3RiDaG1%252bDvMtFwxKEv2GT9Y53kK3%252fuz%252bm85BxEfyUi4DmQi3Fu4ratBblL0ejKZO6OhdyI5gE31XJwy7qyjFBLZVtwN3oK0iuhhIEel72IU9lcgQER0Vz%252fVWVabSmbSJY%252b5f6%252fhsTr1DcFcw36k70SLwg%252fwWhCaP6jwyCm6%252f45Z6Xhy5GkIUmf7LtdBvPX0qLmEWGTTuPTYlx9Btvr5JiggjHGLibAfRX8%253d&fich=9b53fcf7-72f9-4134-ad44-ebb6655f3760.pdf&Inline=true",
+        "endereco_final": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=x5W9DWX1SUUrDgk87wy5NMatoUULSng56w1Z%252bMjyitbqKuz9bknk5nU1q8XRioztkHFMhGG4FLPAmD72hlT02%252f97l3x04zLtts1eMFSzdTkZcuvshggWj%252bb2DxFmmytGD7sWkqEG45EKYHIpiz4VN2nJy10c5jVu05uMKmsnrXIoOjhtQDQgm%252fAE2JRps%252baBtht6712ce3RiDaG1%252bDvMtFwxKEv2GT9Y53kK3%252fuz%252bm85BxEfyUi4DmQi3Fu4ratBblL0ejKZO6OhdyI5gE31XJwy7qyjFBLZVtwN3oK0iuhhIEel72IU9lcgQER0Vz%252fVWVabSmbSJY%252b5f6%252fhsTr1DcFcw36k70SLwg%252fwWhCaP6jwyCm6%252f45Z6Xhy5GkIUmf7LtdBvPX0qLmEWGTTuPTYlx9Btvr5JiggjHGLibAfRX8%253d&fich=9b53fcf7-72f9-4134-ad44-ebb6655f3760.pdf&Inline=true",
+        "acedido_em": "2026-10-26T13:48:23.699914+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "ficheiro": "utao-iniciativa.pdf",
+        "estado": 200,
+        "tipo": "application/pdf",
+        "segundos": 2.662,
+        "erro": null,
+        "redirecionamentos": [],
+        "bytes": 2323048,
+        "sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8"
+      },
+      "rights": {
+        "redistributed": "Excerto, referência e recibo; o corpo permanece no motor.",
+        "assessment": {
+          "anfitriao": "app.parlamento.pt",
+          "publicar_corpos": false,
+          "alojamento": "Cópia privada de investigação pedida no mandato. Não autoriza publicar ou distribuir o corpo.",
+          "reutilizacao": "Licença de republicação integral não estabelecida. Acesso público, caráter oficial ou política de privacidade não equivalem a licença.",
+          "prova": {
+            "file": "content/23 Habitacao/source/direitos/parlamento.html",
+            "receipt": "content/23 Habitacao/source/direitos/parlamento.html.pedido.json",
+            "sha256": "42b5ebc0fe02bd0e0a8d883a72da452edd07e58342aeb47967cfade3fdcf1073"
+          },
+          "pedidos": [
+            "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf.pedido.json",
+            "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf.pedido.json"
+          ],
+          "limite": "A avaliação regista a evidência consultada; não declara autorização jurídica de republicação.",
+          "robots": "Não usado como licença."
+        },
+        "origin_path": "content/30 Orcamento 2027 Generalidade/source/direitos/app.parlamento.pt/avaliacao.json",
+        "sha256": "4f0eab4807038569b383ddc4a2358afe7a0ce49cedd4d0c3830a1fb1c134e597"
+      }
+    },
+    "og1-utao-despesa-liquida-mf-antes": {
+      "id": "og1-utao-despesa-liquida-mf-antes",
+      "value": "0,9",
+      "unit": "% do PIB",
+      "period": "2027",
+      "excerpt": "Os dados do MF constantes no relatório da POE/2027 apontam igualmente para um crescimento da despesa líquida acima da trajetória de referência no triénio 2025–2027, mas assegurando o cumprimento da regra da despesa líquida após a margem de flexibilidade permitida pela despesa com Defesa. O desvio acumulado previsto pelo MF no final de 2027 é de 0,5% do PIB após a flexibilidade da defesa (0,9% antes) (Tabela 11 e Gráfico 13), o qual fica abaixo do limiar de 0,6% do PIB estabelecido para efeitos de aferição do cumprimento da trajetória da despesa líquida.",
+      "document": {
+        "title": "Relatório UTAO n.º 17/2026: Apreciação preliminar da Proposta de Orçamento do Estado para 2027",
+        "file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
+        "source_sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
+        "locator": "§51; p. 27 PDF (26 impressa)",
+        "page": 27,
+        "printed_page": 26
+      },
+      "evidence": {
+        "file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
+        "sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
+        "locator": "§51; p. 27 PDF (26 impressa)"
+      },
+      "afirmacao": null,
+      "attributed_to": null,
+      "published_at": "2026-10-19",
+      "source_url": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=x5W9DWX1SUUrDgk87wy5NMatoUULSng56w1Z%252bMjyitbqKuz9bknk5nU1q8XRioztkHFMhGG4FLPAmD72hlT02%252f97l3x04zLtts1eMFSzdTkZcuvshggWj%252bb2DxFmmytGD7sWkqEG45EKYHIpiz4VN2nJy10c5jVu05uMKmsnrXIoOjhtQDQgm%252fAE2JRps%252baBtht6712ce3RiDaG1%252bDvMtFwxKEv2GT9Y53kK3%252fuz%252bm85BxEfyUi4DmQi3Fu4ratBblL0ejKZO6OhdyI5gE31XJwy7qyjFBLZVtwN3oK0iuhhIEel72IU9lcgQER0Vz%252fVWVabSmbSJY%252b5f6%252fhsTr1DcFcw36k70SLwg%252fwWhCaP6jwyCm6%252f45Z6Xhy5GkIUmf7LtdBvPX0qLmEWGTTuPTYlx9Btvr5JiggjHGLibAfRX8%253d&fich=9b53fcf7-72f9-4134-ad44-ebb6655f3760.pdf&Inline=true",
+      "receipt": {
+        "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=x5W9DWX1SUUrDgk87wy5NMatoUULSng56w1Z%252bMjyitbqKuz9bknk5nU1q8XRioztkHFMhGG4FLPAmD72hlT02%252f97l3x04zLtts1eMFSzdTkZcuvshggWj%252bb2DxFmmytGD7sWkqEG45EKYHIpiz4VN2nJy10c5jVu05uMKmsnrXIoOjhtQDQgm%252fAE2JRps%252baBtht6712ce3RiDaG1%252bDvMtFwxKEv2GT9Y53kK3%252fuz%252bm85BxEfyUi4DmQi3Fu4ratBblL0ejKZO6OhdyI5gE31XJwy7qyjFBLZVtwN3oK0iuhhIEel72IU9lcgQER0Vz%252fVWVabSmbSJY%252b5f6%252fhsTr1DcFcw36k70SLwg%252fwWhCaP6jwyCm6%252f45Z6Xhy5GkIUmf7LtdBvPX0qLmEWGTTuPTYlx9Btvr5JiggjHGLibAfRX8%253d&fich=9b53fcf7-72f9-4134-ad44-ebb6655f3760.pdf&Inline=true",
+        "endereco_final": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=x5W9DWX1SUUrDgk87wy5NMatoUULSng56w1Z%252bMjyitbqKuz9bknk5nU1q8XRioztkHFMhGG4FLPAmD72hlT02%252f97l3x04zLtts1eMFSzdTkZcuvshggWj%252bb2DxFmmytGD7sWkqEG45EKYHIpiz4VN2nJy10c5jVu05uMKmsnrXIoOjhtQDQgm%252fAE2JRps%252baBtht6712ce3RiDaG1%252bDvMtFwxKEv2GT9Y53kK3%252fuz%252bm85BxEfyUi4DmQi3Fu4ratBblL0ejKZO6OhdyI5gE31XJwy7qyjFBLZVtwN3oK0iuhhIEel72IU9lcgQER0Vz%252fVWVabSmbSJY%252b5f6%252fhsTr1DcFcw36k70SLwg%252fwWhCaP6jwyCm6%252f45Z6Xhy5GkIUmf7LtdBvPX0qLmEWGTTuPTYlx9Btvr5JiggjHGLibAfRX8%253d&fich=9b53fcf7-72f9-4134-ad44-ebb6655f3760.pdf&Inline=true",
+        "acedido_em": "2026-10-26T13:48:23.699914+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "ficheiro": "utao-iniciativa.pdf",
+        "estado": 200,
+        "tipo": "application/pdf",
+        "segundos": 2.662,
+        "erro": null,
+        "redirecionamentos": [],
+        "bytes": 2323048,
+        "sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8"
+      },
+      "rights": {
+        "redistributed": "Excerto, referência e recibo; o corpo permanece no motor.",
+        "assessment": {
+          "anfitriao": "app.parlamento.pt",
+          "publicar_corpos": false,
+          "alojamento": "Cópia privada de investigação pedida no mandato. Não autoriza publicar ou distribuir o corpo.",
+          "reutilizacao": "Licença de republicação integral não estabelecida. Acesso público, caráter oficial ou política de privacidade não equivalem a licença.",
+          "prova": {
+            "file": "content/23 Habitacao/source/direitos/parlamento.html",
+            "receipt": "content/23 Habitacao/source/direitos/parlamento.html.pedido.json",
+            "sha256": "42b5ebc0fe02bd0e0a8d883a72da452edd07e58342aeb47967cfade3fdcf1073"
+          },
+          "pedidos": [
+            "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf.pedido.json",
+            "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf.pedido.json"
+          ],
+          "limite": "A avaliação regista a evidência consultada; não declara autorização jurídica de republicação.",
+          "robots": "Não usado como licença."
+        },
+        "origin_path": "content/30 Orcamento 2027 Generalidade/source/direitos/app.parlamento.pt/avaliacao.json",
+        "sha256": "4f0eab4807038569b383ddc4a2358afe7a0ce49cedd4d0c3830a1fb1c134e597"
+      }
+    },
+    "og1-utao-divida-2025-revista": {
+      "id": "og1-utao-divida-2025-revista",
+      "value": "89,2",
+      "unit": "% do PIB",
+      "period": "2025",
+      "excerpt": "A POE/2027 prevê a continuação da redução do rácio da dívida pública, para 87,5% do PIB em 2026 e 84,5% em 2027. Segundo o Ministério das Finanças, as reduções anuais deverão atingir 1,6 p.p. e 3,0 p.p., respetivamente. A estimativa para 2026 mantém o nível previsto no RAP/2026, embora o rácio de 2025 tenha sido revisto de 89,7% para 89,2%, pelo que a descida anual (1,6 p.p.) é inferior à implícita naquele exercício (de 89,7% para 87,5%). Face ao POENMP, os rácios agora projetados situam-se 2,9 p.p. abaixo em 2026 e 2,7 p.p. em 2027. Estas diferenças refletem, contudo, revisões da base estatística e do cenário macroeconómico e orçamental subjacente às projeções, não podendo ser integralmente atribuídas a um maior esforço orçamental.",
+      "document": {
+        "title": "Relatório UTAO n.º 17/2026: Apreciação preliminar da Proposta de Orçamento do Estado para 2027",
+        "file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
+        "source_sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
+        "locator": "§76; p. 44 PDF (43 impressa)",
+        "page": 44,
+        "printed_page": 43
+      },
+      "evidence": {
+        "file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
+        "sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
+        "locator": "§76; p. 44 PDF (43 impressa)"
+      },
+      "afirmacao": null,
+      "attributed_to": null,
+      "published_at": "2026-10-19",
+      "source_url": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=x5W9DWX1SUUrDgk87wy5NMatoUULSng56w1Z%252bMjyitbqKuz9bknk5nU1q8XRioztkHFMhGG4FLPAmD72hlT02%252f97l3x04zLtts1eMFSzdTkZcuvshggWj%252bb2DxFmmytGD7sWkqEG45EKYHIpiz4VN2nJy10c5jVu05uMKmsnrXIoOjhtQDQgm%252fAE2JRps%252baBtht6712ce3RiDaG1%252bDvMtFwxKEv2GT9Y53kK3%252fuz%252bm85BxEfyUi4DmQi3Fu4ratBblL0ejKZO6OhdyI5gE31XJwy7qyjFBLZVtwN3oK0iuhhIEel72IU9lcgQER0Vz%252fVWVabSmbSJY%252b5f6%252fhsTr1DcFcw36k70SLwg%252fwWhCaP6jwyCm6%252f45Z6Xhy5GkIUmf7LtdBvPX0qLmEWGTTuPTYlx9Btvr5JiggjHGLibAfRX8%253d&fich=9b53fcf7-72f9-4134-ad44-ebb6655f3760.pdf&Inline=true",
+      "receipt": {
+        "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=x5W9DWX1SUUrDgk87wy5NMatoUULSng56w1Z%252bMjyitbqKuz9bknk5nU1q8XRioztkHFMhGG4FLPAmD72hlT02%252f97l3x04zLtts1eMFSzdTkZcuvshggWj%252bb2DxFmmytGD7sWkqEG45EKYHIpiz4VN2nJy10c5jVu05uMKmsnrXIoOjhtQDQgm%252fAE2JRps%252baBtht6712ce3RiDaG1%252bDvMtFwxKEv2GT9Y53kK3%252fuz%252bm85BxEfyUi4DmQi3Fu4ratBblL0ejKZO6OhdyI5gE31XJwy7qyjFBLZVtwN3oK0iuhhIEel72IU9lcgQER0Vz%252fVWVabSmbSJY%252b5f6%252fhsTr1DcFcw36k70SLwg%252fwWhCaP6jwyCm6%252f45Z6Xhy5GkIUmf7LtdBvPX0qLmEWGTTuPTYlx9Btvr5JiggjHGLibAfRX8%253d&fich=9b53fcf7-72f9-4134-ad44-ebb6655f3760.pdf&Inline=true",
+        "endereco_final": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=x5W9DWX1SUUrDgk87wy5NMatoUULSng56w1Z%252bMjyitbqKuz9bknk5nU1q8XRioztkHFMhGG4FLPAmD72hlT02%252f97l3x04zLtts1eMFSzdTkZcuvshggWj%252bb2DxFmmytGD7sWkqEG45EKYHIpiz4VN2nJy10c5jVu05uMKmsnrXIoOjhtQDQgm%252fAE2JRps%252baBtht6712ce3RiDaG1%252bDvMtFwxKEv2GT9Y53kK3%252fuz%252bm85BxEfyUi4DmQi3Fu4ratBblL0ejKZO6OhdyI5gE31XJwy7qyjFBLZVtwN3oK0iuhhIEel72IU9lcgQER0Vz%252fVWVabSmbSJY%252b5f6%252fhsTr1DcFcw36k70SLwg%252fwWhCaP6jwyCm6%252f45Z6Xhy5GkIUmf7LtdBvPX0qLmEWGTTuPTYlx9Btvr5JiggjHGLibAfRX8%253d&fich=9b53fcf7-72f9-4134-ad44-ebb6655f3760.pdf&Inline=true",
+        "acedido_em": "2026-10-26T13:48:23.699914+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "ficheiro": "utao-iniciativa.pdf",
+        "estado": 200,
+        "tipo": "application/pdf",
+        "segundos": 2.662,
+        "erro": null,
+        "redirecionamentos": [],
+        "bytes": 2323048,
+        "sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8"
+      },
+      "rights": {
+        "redistributed": "Excerto, referência e recibo; o corpo permanece no motor.",
+        "assessment": {
+          "anfitriao": "app.parlamento.pt",
+          "publicar_corpos": false,
+          "alojamento": "Cópia privada de investigação pedida no mandato. Não autoriza publicar ou distribuir o corpo.",
+          "reutilizacao": "Licença de republicação integral não estabelecida. Acesso público, caráter oficial ou política de privacidade não equivalem a licença.",
+          "prova": {
+            "file": "content/23 Habitacao/source/direitos/parlamento.html",
+            "receipt": "content/23 Habitacao/source/direitos/parlamento.html.pedido.json",
+            "sha256": "42b5ebc0fe02bd0e0a8d883a72da452edd07e58342aeb47967cfade3fdcf1073"
+          },
+          "pedidos": [
+            "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf.pedido.json",
+            "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf.pedido.json"
+          ],
+          "limite": "A avaliação regista a evidência consultada; não declara autorização jurídica de republicação.",
+          "robots": "Não usado como licença."
+        },
+        "origin_path": "content/30 Orcamento 2027 Generalidade/source/direitos/app.parlamento.pt/avaliacao.json",
+        "sha256": "4f0eab4807038569b383ddc4a2358afe7a0ce49cedd4d0c3830a1fb1c134e597"
+      }
+    },
+    "og1-utao-brent-contratos-2027": {
+      "id": "og1-utao-brent-contratos-2027",
+      "value": "95",
+      "unit": "USD por barril",
+      "period": "2027",
+      "excerpt": "A evolução dos preços da energia poderá originar pressões adicionais sobre a despesa pública e a receita. O prolongamento das tensões geopolíticas poderá manter a inflação acima do pressuposto no cenário orçamental (que aponta para um nível 0,6 p.p. inferior ao estimado para 2026) e justificar a adoção ou prorrogação de medidas de apoio às famílias e às empresas. A 16 de outubro, o Brent cotava cerca de 110 USD por barril e a média dos contratos de 2027 era de cerca de 95 USD, 11% acima dos 86,1 USD assumidos pelo MF (Capítulo 2). O efeito de uma inflação mais elevada sobre a receita é tratado nos riscos ascendentes. A Caixa 2 descreve o choque energético de 2026 e as respostas orçamentais na União Europeia e em Portugal.",
+      "document": {
+        "title": "Relatório UTAO n.º 17/2026: Apreciação preliminar da Proposta de Orçamento do Estado para 2027",
+        "file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
+        "source_sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
+        "locator": "§99; p. 52 PDF (51 impressa)",
+        "page": 52,
+        "printed_page": 51
+      },
+      "evidence": {
+        "file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
+        "sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
+        "locator": "§99; p. 52 PDF (51 impressa)"
+      },
+      "afirmacao": null,
+      "attributed_to": null,
+      "published_at": "2026-10-19",
+      "source_url": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=x5W9DWX1SUUrDgk87wy5NMatoUULSng56w1Z%252bMjyitbqKuz9bknk5nU1q8XRioztkHFMhGG4FLPAmD72hlT02%252f97l3x04zLtts1eMFSzdTkZcuvshggWj%252bb2DxFmmytGD7sWkqEG45EKYHIpiz4VN2nJy10c5jVu05uMKmsnrXIoOjhtQDQgm%252fAE2JRps%252baBtht6712ce3RiDaG1%252bDvMtFwxKEv2GT9Y53kK3%252fuz%252bm85BxEfyUi4DmQi3Fu4ratBblL0ejKZO6OhdyI5gE31XJwy7qyjFBLZVtwN3oK0iuhhIEel72IU9lcgQER0Vz%252fVWVabSmbSJY%252b5f6%252fhsTr1DcFcw36k70SLwg%252fwWhCaP6jwyCm6%252f45Z6Xhy5GkIUmf7LtdBvPX0qLmEWGTTuPTYlx9Btvr5JiggjHGLibAfRX8%253d&fich=9b53fcf7-72f9-4134-ad44-ebb6655f3760.pdf&Inline=true",
+      "receipt": {
+        "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=x5W9DWX1SUUrDgk87wy5NMatoUULSng56w1Z%252bMjyitbqKuz9bknk5nU1q8XRioztkHFMhGG4FLPAmD72hlT02%252f97l3x04zLtts1eMFSzdTkZcuvshggWj%252bb2DxFmmytGD7sWkqEG45EKYHIpiz4VN2nJy10c5jVu05uMKmsnrXIoOjhtQDQgm%252fAE2JRps%252baBtht6712ce3RiDaG1%252bDvMtFwxKEv2GT9Y53kK3%252fuz%252bm85BxEfyUi4DmQi3Fu4ratBblL0ejKZO6OhdyI5gE31XJwy7qyjFBLZVtwN3oK0iuhhIEel72IU9lcgQER0Vz%252fVWVabSmbSJY%252b5f6%252fhsTr1DcFcw36k70SLwg%252fwWhCaP6jwyCm6%252f45Z6Xhy5GkIUmf7LtdBvPX0qLmEWGTTuPTYlx9Btvr5JiggjHGLibAfRX8%253d&fich=9b53fcf7-72f9-4134-ad44-ebb6655f3760.pdf&Inline=true",
+        "endereco_final": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=x5W9DWX1SUUrDgk87wy5NMatoUULSng56w1Z%252bMjyitbqKuz9bknk5nU1q8XRioztkHFMhGG4FLPAmD72hlT02%252f97l3x04zLtts1eMFSzdTkZcuvshggWj%252bb2DxFmmytGD7sWkqEG45EKYHIpiz4VN2nJy10c5jVu05uMKmsnrXIoOjhtQDQgm%252fAE2JRps%252baBtht6712ce3RiDaG1%252bDvMtFwxKEv2GT9Y53kK3%252fuz%252bm85BxEfyUi4DmQi3Fu4ratBblL0ejKZO6OhdyI5gE31XJwy7qyjFBLZVtwN3oK0iuhhIEel72IU9lcgQER0Vz%252fVWVabSmbSJY%252b5f6%252fhsTr1DcFcw36k70SLwg%252fwWhCaP6jwyCm6%252f45Z6Xhy5GkIUmf7LtdBvPX0qLmEWGTTuPTYlx9Btvr5JiggjHGLibAfRX8%253d&fich=9b53fcf7-72f9-4134-ad44-ebb6655f3760.pdf&Inline=true",
+        "acedido_em": "2026-10-26T13:48:23.699914+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "ficheiro": "utao-iniciativa.pdf",
+        "estado": 200,
+        "tipo": "application/pdf",
+        "segundos": 2.662,
+        "erro": null,
+        "redirecionamentos": [],
+        "bytes": 2323048,
+        "sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8"
+      },
+      "rights": {
+        "redistributed": "Excerto, referência e recibo; o corpo permanece no motor.",
+        "assessment": {
+          "anfitriao": "app.parlamento.pt",
+          "publicar_corpos": false,
+          "alojamento": "Cópia privada de investigação pedida no mandato. Não autoriza publicar ou distribuir o corpo.",
+          "reutilizacao": "Licença de republicação integral não estabelecida. Acesso público, caráter oficial ou política de privacidade não equivalem a licença.",
+          "prova": {
+            "file": "content/23 Habitacao/source/direitos/parlamento.html",
+            "receipt": "content/23 Habitacao/source/direitos/parlamento.html.pedido.json",
+            "sha256": "42b5ebc0fe02bd0e0a8d883a72da452edd07e58342aeb47967cfade3fdcf1073"
+          },
+          "pedidos": [
+            "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf.pedido.json",
+            "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf.pedido.json"
+          ],
+          "limite": "A avaliação regista a evidência consultada; não declara autorização jurídica de republicação.",
+          "robots": "Não usado como licença."
+        },
+        "origin_path": "content/30 Orcamento 2027 Generalidade/source/direitos/app.parlamento.pt/avaliacao.json",
+        "sha256": "4f0eab4807038569b383ddc4a2358afe7a0ce49cedd4d0c3830a1fb1c134e597"
+      }
+    },
+    "og1-utao-brent-mf-2027": {
+      "id": "og1-utao-brent-mf-2027",
+      "value": "86,1",
+      "unit": "USD por barril",
+      "period": "2027",
+      "excerpt": "A evolução dos preços da energia poderá originar pressões adicionais sobre a despesa pública e a receita. O prolongamento das tensões geopolíticas poderá manter a inflação acima do pressuposto no cenário orçamental (que aponta para um nível 0,6 p.p. inferior ao estimado para 2026) e justificar a adoção ou prorrogação de medidas de apoio às famílias e às empresas. A 16 de outubro, o Brent cotava cerca de 110 USD por barril e a média dos contratos de 2027 era de cerca de 95 USD, 11% acima dos 86,1 USD assumidos pelo MF (Capítulo 2). O efeito de uma inflação mais elevada sobre a receita é tratado nos riscos ascendentes. A Caixa 2 descreve o choque energético de 2026 e as respostas orçamentais na União Europeia e em Portugal.",
+      "document": {
+        "title": "Relatório UTAO n.º 17/2026: Apreciação preliminar da Proposta de Orçamento do Estado para 2027",
+        "file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
+        "source_sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
+        "locator": "§99; p. 52 PDF (51 impressa)",
+        "page": 52,
+        "printed_page": 51
+      },
+      "evidence": {
+        "file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
+        "sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
+        "locator": "§99; p. 52 PDF (51 impressa)"
+      },
+      "afirmacao": null,
+      "attributed_to": null,
+      "published_at": "2026-10-19",
+      "source_url": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=x5W9DWX1SUUrDgk87wy5NMatoUULSng56w1Z%252bMjyitbqKuz9bknk5nU1q8XRioztkHFMhGG4FLPAmD72hlT02%252f97l3x04zLtts1eMFSzdTkZcuvshggWj%252bb2DxFmmytGD7sWkqEG45EKYHIpiz4VN2nJy10c5jVu05uMKmsnrXIoOjhtQDQgm%252fAE2JRps%252baBtht6712ce3RiDaG1%252bDvMtFwxKEv2GT9Y53kK3%252fuz%252bm85BxEfyUi4DmQi3Fu4ratBblL0ejKZO6OhdyI5gE31XJwy7qyjFBLZVtwN3oK0iuhhIEel72IU9lcgQER0Vz%252fVWVabSmbSJY%252b5f6%252fhsTr1DcFcw36k70SLwg%252fwWhCaP6jwyCm6%252f45Z6Xhy5GkIUmf7LtdBvPX0qLmEWGTTuPTYlx9Btvr5JiggjHGLibAfRX8%253d&fich=9b53fcf7-72f9-4134-ad44-ebb6655f3760.pdf&Inline=true",
+      "receipt": {
+        "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=x5W9DWX1SUUrDgk87wy5NMatoUULSng56w1Z%252bMjyitbqKuz9bknk5nU1q8XRioztkHFMhGG4FLPAmD72hlT02%252f97l3x04zLtts1eMFSzdTkZcuvshggWj%252bb2DxFmmytGD7sWkqEG45EKYHIpiz4VN2nJy10c5jVu05uMKmsnrXIoOjhtQDQgm%252fAE2JRps%252baBtht6712ce3RiDaG1%252bDvMtFwxKEv2GT9Y53kK3%252fuz%252bm85BxEfyUi4DmQi3Fu4ratBblL0ejKZO6OhdyI5gE31XJwy7qyjFBLZVtwN3oK0iuhhIEel72IU9lcgQER0Vz%252fVWVabSmbSJY%252b5f6%252fhsTr1DcFcw36k70SLwg%252fwWhCaP6jwyCm6%252f45Z6Xhy5GkIUmf7LtdBvPX0qLmEWGTTuPTYlx9Btvr5JiggjHGLibAfRX8%253d&fich=9b53fcf7-72f9-4134-ad44-ebb6655f3760.pdf&Inline=true",
+        "endereco_final": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=x5W9DWX1SUUrDgk87wy5NMatoUULSng56w1Z%252bMjyitbqKuz9bknk5nU1q8XRioztkHFMhGG4FLPAmD72hlT02%252f97l3x04zLtts1eMFSzdTkZcuvshggWj%252bb2DxFmmytGD7sWkqEG45EKYHIpiz4VN2nJy10c5jVu05uMKmsnrXIoOjhtQDQgm%252fAE2JRps%252baBtht6712ce3RiDaG1%252bDvMtFwxKEv2GT9Y53kK3%252fuz%252bm85BxEfyUi4DmQi3Fu4ratBblL0ejKZO6OhdyI5gE31XJwy7qyjFBLZVtwN3oK0iuhhIEel72IU9lcgQER0Vz%252fVWVabSmbSJY%252b5f6%252fhsTr1DcFcw36k70SLwg%252fwWhCaP6jwyCm6%252f45Z6Xhy5GkIUmf7LtdBvPX0qLmEWGTTuPTYlx9Btvr5JiggjHGLibAfRX8%253d&fich=9b53fcf7-72f9-4134-ad44-ebb6655f3760.pdf&Inline=true",
+        "acedido_em": "2026-10-26T13:48:23.699914+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "ficheiro": "utao-iniciativa.pdf",
+        "estado": 200,
+        "tipo": "application/pdf",
+        "segundos": 2.662,
+        "erro": null,
+        "redirecionamentos": [],
+        "bytes": 2323048,
+        "sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8"
+      },
+      "rights": {
+        "redistributed": "Excerto, referência e recibo; o corpo permanece no motor.",
+        "assessment": {
+          "anfitriao": "app.parlamento.pt",
+          "publicar_corpos": false,
+          "alojamento": "Cópia privada de investigação pedida no mandato. Não autoriza publicar ou distribuir o corpo.",
+          "reutilizacao": "Licença de republicação integral não estabelecida. Acesso público, caráter oficial ou política de privacidade não equivalem a licença.",
+          "prova": {
+            "file": "content/23 Habitacao/source/direitos/parlamento.html",
+            "receipt": "content/23 Habitacao/source/direitos/parlamento.html.pedido.json",
+            "sha256": "42b5ebc0fe02bd0e0a8d883a72da452edd07e58342aeb47967cfade3fdcf1073"
+          },
+          "pedidos": [
+            "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf.pedido.json",
+            "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf.pedido.json"
+          ],
+          "limite": "A avaliação regista a evidência consultada; não declara autorização jurídica de republicação.",
+          "robots": "Não usado como licença."
+        },
+        "origin_path": "content/30 Orcamento 2027 Generalidade/source/direitos/app.parlamento.pt/avaliacao.json",
+        "sha256": "4f0eab4807038569b383ddc4a2358afe7a0ce49cedd4d0c3830a1fb1c134e597"
+      }
+    },
+    "og1-utao-brent-diferenca": {
+      "id": "og1-utao-brent-diferenca",
+      "value": "11",
+      "unit": "%",
+      "period": "2027",
+      "excerpt": "A evolução dos preços da energia poderá originar pressões adicionais sobre a despesa pública e a receita. O prolongamento das tensões geopolíticas poderá manter a inflação acima do pressuposto no cenário orçamental (que aponta para um nível 0,6 p.p. inferior ao estimado para 2026) e justificar a adoção ou prorrogação de medidas de apoio às famílias e às empresas. A 16 de outubro, o Brent cotava cerca de 110 USD por barril e a média dos contratos de 2027 era de cerca de 95 USD, 11% acima dos 86,1 USD assumidos pelo MF (Capítulo 2). O efeito de uma inflação mais elevada sobre a receita é tratado nos riscos ascendentes. A Caixa 2 descreve o choque energético de 2026 e as respostas orçamentais na União Europeia e em Portugal.",
+      "document": {
+        "title": "Relatório UTAO n.º 17/2026: Apreciação preliminar da Proposta de Orçamento do Estado para 2027",
+        "file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
+        "source_sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
+        "locator": "§99; p. 52 PDF (51 impressa)",
+        "page": 52,
+        "printed_page": 51
+      },
+      "evidence": {
+        "file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
+        "sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
+        "locator": "§99; p. 52 PDF (51 impressa)"
+      },
+      "afirmacao": null,
+      "attributed_to": null,
+      "published_at": "2026-10-19",
+      "source_url": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=x5W9DWX1SUUrDgk87wy5NMatoUULSng56w1Z%252bMjyitbqKuz9bknk5nU1q8XRioztkHFMhGG4FLPAmD72hlT02%252f97l3x04zLtts1eMFSzdTkZcuvshggWj%252bb2DxFmmytGD7sWkqEG45EKYHIpiz4VN2nJy10c5jVu05uMKmsnrXIoOjhtQDQgm%252fAE2JRps%252baBtht6712ce3RiDaG1%252bDvMtFwxKEv2GT9Y53kK3%252fuz%252bm85BxEfyUi4DmQi3Fu4ratBblL0ejKZO6OhdyI5gE31XJwy7qyjFBLZVtwN3oK0iuhhIEel72IU9lcgQER0Vz%252fVWVabSmbSJY%252b5f6%252fhsTr1DcFcw36k70SLwg%252fwWhCaP6jwyCm6%252f45Z6Xhy5GkIUmf7LtdBvPX0qLmEWGTTuPTYlx9Btvr5JiggjHGLibAfRX8%253d&fich=9b53fcf7-72f9-4134-ad44-ebb6655f3760.pdf&Inline=true",
+      "receipt": {
+        "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=x5W9DWX1SUUrDgk87wy5NMatoUULSng56w1Z%252bMjyitbqKuz9bknk5nU1q8XRioztkHFMhGG4FLPAmD72hlT02%252f97l3x04zLtts1eMFSzdTkZcuvshggWj%252bb2DxFmmytGD7sWkqEG45EKYHIpiz4VN2nJy10c5jVu05uMKmsnrXIoOjhtQDQgm%252fAE2JRps%252baBtht6712ce3RiDaG1%252bDvMtFwxKEv2GT9Y53kK3%252fuz%252bm85BxEfyUi4DmQi3Fu4ratBblL0ejKZO6OhdyI5gE31XJwy7qyjFBLZVtwN3oK0iuhhIEel72IU9lcgQER0Vz%252fVWVabSmbSJY%252b5f6%252fhsTr1DcFcw36k70SLwg%252fwWhCaP6jwyCm6%252f45Z6Xhy5GkIUmf7LtdBvPX0qLmEWGTTuPTYlx9Btvr5JiggjHGLibAfRX8%253d&fich=9b53fcf7-72f9-4134-ad44-ebb6655f3760.pdf&Inline=true",
+        "endereco_final": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=x5W9DWX1SUUrDgk87wy5NMatoUULSng56w1Z%252bMjyitbqKuz9bknk5nU1q8XRioztkHFMhGG4FLPAmD72hlT02%252f97l3x04zLtts1eMFSzdTkZcuvshggWj%252bb2DxFmmytGD7sWkqEG45EKYHIpiz4VN2nJy10c5jVu05uMKmsnrXIoOjhtQDQgm%252fAE2JRps%252baBtht6712ce3RiDaG1%252bDvMtFwxKEv2GT9Y53kK3%252fuz%252bm85BxEfyUi4DmQi3Fu4ratBblL0ejKZO6OhdyI5gE31XJwy7qyjFBLZVtwN3oK0iuhhIEel72IU9lcgQER0Vz%252fVWVabSmbSJY%252b5f6%252fhsTr1DcFcw36k70SLwg%252fwWhCaP6jwyCm6%252f45Z6Xhy5GkIUmf7LtdBvPX0qLmEWGTTuPTYlx9Btvr5JiggjHGLibAfRX8%253d&fich=9b53fcf7-72f9-4134-ad44-ebb6655f3760.pdf&Inline=true",
+        "acedido_em": "2026-10-26T13:48:23.699914+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "ficheiro": "utao-iniciativa.pdf",
+        "estado": 200,
+        "tipo": "application/pdf",
+        "segundos": 2.662,
+        "erro": null,
+        "redirecionamentos": [],
+        "bytes": 2323048,
+        "sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8"
+      },
+      "rights": {
+        "redistributed": "Excerto, referência e recibo; o corpo permanece no motor.",
+        "assessment": {
+          "anfitriao": "app.parlamento.pt",
+          "publicar_corpos": false,
+          "alojamento": "Cópia privada de investigação pedida no mandato. Não autoriza publicar ou distribuir o corpo.",
+          "reutilizacao": "Licença de republicação integral não estabelecida. Acesso público, caráter oficial ou política de privacidade não equivalem a licença.",
+          "prova": {
+            "file": "content/23 Habitacao/source/direitos/parlamento.html",
+            "receipt": "content/23 Habitacao/source/direitos/parlamento.html.pedido.json",
+            "sha256": "42b5ebc0fe02bd0e0a8d883a72da452edd07e58342aeb47967cfade3fdcf1073"
+          },
+          "pedidos": [
+            "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf.pedido.json",
+            "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf.pedido.json"
+          ],
+          "limite": "A avaliação regista a evidência consultada; não declara autorização jurídica de republicação.",
+          "robots": "Não usado como licença."
+        },
+        "origin_path": "content/30 Orcamento 2027 Generalidade/source/direitos/app.parlamento.pt/avaliacao.json",
+        "sha256": "4f0eab4807038569b383ddc4a2358afe7a0ce49cedd4d0c3830a1fb1c134e597"
+      }
+    },
+    "og1-utao-politicas-saldo": {
+      "id": "og1-utao-politicas-saldo",
+      "value": "-5 411",
+      "unit": "milhões de euros",
+      "period": "2027",
+      "excerpt": "3.=(1-2) Impacto Total no Saldo Orçamental -4783 -1,40 -5 411 -1,59",
+      "document": {
+        "title": "Relatório UTAO n.º 17/2026: Apreciação preliminar da Proposta de Orçamento do Estado para 2027",
+        "file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
+        "source_sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
+        "locator": "p. 21 PDF (20 impressa); Tabela 8; 3.=(1-2); coluna POE/2027, M€",
+        "page": 21,
+        "printed_page": 20
+      },
+      "evidence": {
+        "file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
+        "sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
+        "locator": "p. 21 PDF (20 impressa); Tabela 8; 3.=(1-2); coluna POE/2027, M€"
+      },
+      "afirmacao": null,
+      "attributed_to": null,
+      "published_at": "2026-10-19",
+      "source_url": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=x5W9DWX1SUUrDgk87wy5NMatoUULSng56w1Z%252bMjyitbqKuz9bknk5nU1q8XRioztkHFMhGG4FLPAmD72hlT02%252f97l3x04zLtts1eMFSzdTkZcuvshggWj%252bb2DxFmmytGD7sWkqEG45EKYHIpiz4VN2nJy10c5jVu05uMKmsnrXIoOjhtQDQgm%252fAE2JRps%252baBtht6712ce3RiDaG1%252bDvMtFwxKEv2GT9Y53kK3%252fuz%252bm85BxEfyUi4DmQi3Fu4ratBblL0ejKZO6OhdyI5gE31XJwy7qyjFBLZVtwN3oK0iuhhIEel72IU9lcgQER0Vz%252fVWVabSmbSJY%252b5f6%252fhsTr1DcFcw36k70SLwg%252fwWhCaP6jwyCm6%252f45Z6Xhy5GkIUmf7LtdBvPX0qLmEWGTTuPTYlx9Btvr5JiggjHGLibAfRX8%253d&fich=9b53fcf7-72f9-4134-ad44-ebb6655f3760.pdf&Inline=true",
+      "receipt": {
+        "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=x5W9DWX1SUUrDgk87wy5NMatoUULSng56w1Z%252bMjyitbqKuz9bknk5nU1q8XRioztkHFMhGG4FLPAmD72hlT02%252f97l3x04zLtts1eMFSzdTkZcuvshggWj%252bb2DxFmmytGD7sWkqEG45EKYHIpiz4VN2nJy10c5jVu05uMKmsnrXIoOjhtQDQgm%252fAE2JRps%252baBtht6712ce3RiDaG1%252bDvMtFwxKEv2GT9Y53kK3%252fuz%252bm85BxEfyUi4DmQi3Fu4ratBblL0ejKZO6OhdyI5gE31XJwy7qyjFBLZVtwN3oK0iuhhIEel72IU9lcgQER0Vz%252fVWVabSmbSJY%252b5f6%252fhsTr1DcFcw36k70SLwg%252fwWhCaP6jwyCm6%252f45Z6Xhy5GkIUmf7LtdBvPX0qLmEWGTTuPTYlx9Btvr5JiggjHGLibAfRX8%253d&fich=9b53fcf7-72f9-4134-ad44-ebb6655f3760.pdf&Inline=true",
+        "endereco_final": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=x5W9DWX1SUUrDgk87wy5NMatoUULSng56w1Z%252bMjyitbqKuz9bknk5nU1q8XRioztkHFMhGG4FLPAmD72hlT02%252f97l3x04zLtts1eMFSzdTkZcuvshggWj%252bb2DxFmmytGD7sWkqEG45EKYHIpiz4VN2nJy10c5jVu05uMKmsnrXIoOjhtQDQgm%252fAE2JRps%252baBtht6712ce3RiDaG1%252bDvMtFwxKEv2GT9Y53kK3%252fuz%252bm85BxEfyUi4DmQi3Fu4ratBblL0ejKZO6OhdyI5gE31XJwy7qyjFBLZVtwN3oK0iuhhIEel72IU9lcgQER0Vz%252fVWVabSmbSJY%252b5f6%252fhsTr1DcFcw36k70SLwg%252fwWhCaP6jwyCm6%252f45Z6Xhy5GkIUmf7LtdBvPX0qLmEWGTTuPTYlx9Btvr5JiggjHGLibAfRX8%253d&fich=9b53fcf7-72f9-4134-ad44-ebb6655f3760.pdf&Inline=true",
+        "acedido_em": "2026-10-26T13:48:23.699914+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "ficheiro": "utao-iniciativa.pdf",
+        "estado": 200,
+        "tipo": "application/pdf",
+        "segundos": 2.662,
+        "erro": null,
+        "redirecionamentos": [],
+        "bytes": 2323048,
+        "sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8"
+      },
+      "rights": {
+        "redistributed": "Excerto, referência e recibo; o corpo permanece no motor.",
+        "assessment": {
+          "anfitriao": "app.parlamento.pt",
+          "publicar_corpos": false,
+          "alojamento": "Cópia privada de investigação pedida no mandato. Não autoriza publicar ou distribuir o corpo.",
+          "reutilizacao": "Licença de republicação integral não estabelecida. Acesso público, caráter oficial ou política de privacidade não equivalem a licença.",
+          "prova": {
+            "file": "content/23 Habitacao/source/direitos/parlamento.html",
+            "receipt": "content/23 Habitacao/source/direitos/parlamento.html.pedido.json",
+            "sha256": "42b5ebc0fe02bd0e0a8d883a72da452edd07e58342aeb47967cfade3fdcf1073"
+          },
+          "pedidos": [
+            "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf.pedido.json",
+            "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf.pedido.json"
+          ],
+          "limite": "A avaliação regista a evidência consultada; não declara autorização jurídica de republicação.",
+          "robots": "Não usado como licença."
+        },
+        "origin_path": "content/30 Orcamento 2027 Generalidade/source/direitos/app.parlamento.pt/avaliacao.json",
+        "sha256": "4f0eab4807038569b383ddc4a2358afe7a0ce49cedd4d0c3830a1fb1c134e597"
+      }
+    },
+    "og1-utao-saude-variacao": {
+      "id": "og1-utao-saude-variacao",
+      "value": "-1,4",
+      "unit": "%",
+      "period": "2027",
+      "excerpt": "Saúde 17 190 18 062 17 803 16,6 5,1 5,3 -1,4 3,0",
+      "document": {
+        "title": "Relatório UTAO n.º 17/2026: Apreciação preliminar da Proposta de Orçamento do Estado para 2027",
+        "file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
+        "source_sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
+        "locator": "p. 39 PDF (38 impressa); Tabela 14; Saúde; coluna POE/2027 face a Est/2026",
+        "page": 39,
+        "printed_page": 38
+      },
+      "evidence": {
+        "file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
+        "sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
+        "locator": "p. 39 PDF (38 impressa); Tabela 14; Saúde; coluna POE/2027 face a Est/2026"
+      },
+      "afirmacao": null,
+      "attributed_to": null,
+      "published_at": "2026-10-19",
+      "source_url": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=x5W9DWX1SUUrDgk87wy5NMatoUULSng56w1Z%252bMjyitbqKuz9bknk5nU1q8XRioztkHFMhGG4FLPAmD72hlT02%252f97l3x04zLtts1eMFSzdTkZcuvshggWj%252bb2DxFmmytGD7sWkqEG45EKYHIpiz4VN2nJy10c5jVu05uMKmsnrXIoOjhtQDQgm%252fAE2JRps%252baBtht6712ce3RiDaG1%252bDvMtFwxKEv2GT9Y53kK3%252fuz%252bm85BxEfyUi4DmQi3Fu4ratBblL0ejKZO6OhdyI5gE31XJwy7qyjFBLZVtwN3oK0iuhhIEel72IU9lcgQER0Vz%252fVWVabSmbSJY%252b5f6%252fhsTr1DcFcw36k70SLwg%252fwWhCaP6jwyCm6%252f45Z6Xhy5GkIUmf7LtdBvPX0qLmEWGTTuPTYlx9Btvr5JiggjHGLibAfRX8%253d&fich=9b53fcf7-72f9-4134-ad44-ebb6655f3760.pdf&Inline=true",
+      "receipt": {
+        "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=x5W9DWX1SUUrDgk87wy5NMatoUULSng56w1Z%252bMjyitbqKuz9bknk5nU1q8XRioztkHFMhGG4FLPAmD72hlT02%252f97l3x04zLtts1eMFSzdTkZcuvshggWj%252bb2DxFmmytGD7sWkqEG45EKYHIpiz4VN2nJy10c5jVu05uMKmsnrXIoOjhtQDQgm%252fAE2JRps%252baBtht6712ce3RiDaG1%252bDvMtFwxKEv2GT9Y53kK3%252fuz%252bm85BxEfyUi4DmQi3Fu4ratBblL0ejKZO6OhdyI5gE31XJwy7qyjFBLZVtwN3oK0iuhhIEel72IU9lcgQER0Vz%252fVWVabSmbSJY%252b5f6%252fhsTr1DcFcw36k70SLwg%252fwWhCaP6jwyCm6%252f45Z6Xhy5GkIUmf7LtdBvPX0qLmEWGTTuPTYlx9Btvr5JiggjHGLibAfRX8%253d&fich=9b53fcf7-72f9-4134-ad44-ebb6655f3760.pdf&Inline=true",
+        "endereco_final": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=x5W9DWX1SUUrDgk87wy5NMatoUULSng56w1Z%252bMjyitbqKuz9bknk5nU1q8XRioztkHFMhGG4FLPAmD72hlT02%252f97l3x04zLtts1eMFSzdTkZcuvshggWj%252bb2DxFmmytGD7sWkqEG45EKYHIpiz4VN2nJy10c5jVu05uMKmsnrXIoOjhtQDQgm%252fAE2JRps%252baBtht6712ce3RiDaG1%252bDvMtFwxKEv2GT9Y53kK3%252fuz%252bm85BxEfyUi4DmQi3Fu4ratBblL0ejKZO6OhdyI5gE31XJwy7qyjFBLZVtwN3oK0iuhhIEel72IU9lcgQER0Vz%252fVWVabSmbSJY%252b5f6%252fhsTr1DcFcw36k70SLwg%252fwWhCaP6jwyCm6%252f45Z6Xhy5GkIUmf7LtdBvPX0qLmEWGTTuPTYlx9Btvr5JiggjHGLibAfRX8%253d&fich=9b53fcf7-72f9-4134-ad44-ebb6655f3760.pdf&Inline=true",
+        "acedido_em": "2026-10-26T13:48:23.699914+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "ficheiro": "utao-iniciativa.pdf",
+        "estado": 200,
+        "tipo": "application/pdf",
+        "segundos": 2.662,
+        "erro": null,
+        "redirecionamentos": [],
+        "bytes": 2323048,
+        "sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8"
+      },
+      "rights": {
+        "redistributed": "Excerto, referência e recibo; o corpo permanece no motor.",
+        "assessment": {
+          "anfitriao": "app.parlamento.pt",
+          "publicar_corpos": false,
+          "alojamento": "Cópia privada de investigação pedida no mandato. Não autoriza publicar ou distribuir o corpo.",
+          "reutilizacao": "Licença de republicação integral não estabelecida. Acesso público, caráter oficial ou política de privacidade não equivalem a licença.",
+          "prova": {
+            "file": "content/23 Habitacao/source/direitos/parlamento.html",
+            "receipt": "content/23 Habitacao/source/direitos/parlamento.html.pedido.json",
+            "sha256": "42b5ebc0fe02bd0e0a8d883a72da452edd07e58342aeb47967cfade3fdcf1073"
+          },
+          "pedidos": [
+            "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf.pedido.json",
+            "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf.pedido.json"
+          ],
+          "limite": "A avaliação regista a evidência consultada; não declara autorização jurídica de republicação.",
+          "robots": "Não usado como licença."
+        },
+        "origin_path": "content/30 Orcamento 2027 Generalidade/source/direitos/app.parlamento.pt/avaliacao.json",
+        "sha256": "4f0eab4807038569b383ddc4a2358afe7a0ce49cedd4d0c3830a1fb1c134e597"
+      }
+    },
+    "og1-utao-saude-sem-prr": {
+      "id": "og1-utao-saude-sem-prr",
+      "value": "3,0",
+      "unit": "%",
+      "period": "2027",
+      "excerpt": "Saúde 17 190 18 062 17 803 16,6 5,1 5,3 -1,4 3,0",
+      "document": {
+        "title": "Relatório UTAO n.º 17/2026: Apreciação preliminar da Proposta de Orçamento do Estado para 2027",
+        "file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
+        "source_sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
+        "locator": "p. 39 PDF (38 impressa); Tabela 14; Saúde; coluna POE/2027 face a Est/2026, sem PRR",
+        "page": 39,
+        "printed_page": 38
+      },
+      "evidence": {
+        "file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
+        "sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
+        "locator": "p. 39 PDF (38 impressa); Tabela 14; Saúde; coluna POE/2027 face a Est/2026, sem PRR"
+      },
+      "afirmacao": null,
+      "attributed_to": null,
+      "published_at": "2026-10-19",
+      "source_url": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=x5W9DWX1SUUrDgk87wy5NMatoUULSng56w1Z%252bMjyitbqKuz9bknk5nU1q8XRioztkHFMhGG4FLPAmD72hlT02%252f97l3x04zLtts1eMFSzdTkZcuvshggWj%252bb2DxFmmytGD7sWkqEG45EKYHIpiz4VN2nJy10c5jVu05uMKmsnrXIoOjhtQDQgm%252fAE2JRps%252baBtht6712ce3RiDaG1%252bDvMtFwxKEv2GT9Y53kK3%252fuz%252bm85BxEfyUi4DmQi3Fu4ratBblL0ejKZO6OhdyI5gE31XJwy7qyjFBLZVtwN3oK0iuhhIEel72IU9lcgQER0Vz%252fVWVabSmbSJY%252b5f6%252fhsTr1DcFcw36k70SLwg%252fwWhCaP6jwyCm6%252f45Z6Xhy5GkIUmf7LtdBvPX0qLmEWGTTuPTYlx9Btvr5JiggjHGLibAfRX8%253d&fich=9b53fcf7-72f9-4134-ad44-ebb6655f3760.pdf&Inline=true",
+      "receipt": {
+        "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=x5W9DWX1SUUrDgk87wy5NMatoUULSng56w1Z%252bMjyitbqKuz9bknk5nU1q8XRioztkHFMhGG4FLPAmD72hlT02%252f97l3x04zLtts1eMFSzdTkZcuvshggWj%252bb2DxFmmytGD7sWkqEG45EKYHIpiz4VN2nJy10c5jVu05uMKmsnrXIoOjhtQDQgm%252fAE2JRps%252baBtht6712ce3RiDaG1%252bDvMtFwxKEv2GT9Y53kK3%252fuz%252bm85BxEfyUi4DmQi3Fu4ratBblL0ejKZO6OhdyI5gE31XJwy7qyjFBLZVtwN3oK0iuhhIEel72IU9lcgQER0Vz%252fVWVabSmbSJY%252b5f6%252fhsTr1DcFcw36k70SLwg%252fwWhCaP6jwyCm6%252f45Z6Xhy5GkIUmf7LtdBvPX0qLmEWGTTuPTYlx9Btvr5JiggjHGLibAfRX8%253d&fich=9b53fcf7-72f9-4134-ad44-ebb6655f3760.pdf&Inline=true",
+        "endereco_final": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=x5W9DWX1SUUrDgk87wy5NMatoUULSng56w1Z%252bMjyitbqKuz9bknk5nU1q8XRioztkHFMhGG4FLPAmD72hlT02%252f97l3x04zLtts1eMFSzdTkZcuvshggWj%252bb2DxFmmytGD7sWkqEG45EKYHIpiz4VN2nJy10c5jVu05uMKmsnrXIoOjhtQDQgm%252fAE2JRps%252baBtht6712ce3RiDaG1%252bDvMtFwxKEv2GT9Y53kK3%252fuz%252bm85BxEfyUi4DmQi3Fu4ratBblL0ejKZO6OhdyI5gE31XJwy7qyjFBLZVtwN3oK0iuhhIEel72IU9lcgQER0Vz%252fVWVabSmbSJY%252b5f6%252fhsTr1DcFcw36k70SLwg%252fwWhCaP6jwyCm6%252f45Z6Xhy5GkIUmf7LtdBvPX0qLmEWGTTuPTYlx9Btvr5JiggjHGLibAfRX8%253d&fich=9b53fcf7-72f9-4134-ad44-ebb6655f3760.pdf&Inline=true",
+        "acedido_em": "2026-10-26T13:48:23.699914+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "ficheiro": "utao-iniciativa.pdf",
+        "estado": 200,
+        "tipo": "application/pdf",
+        "segundos": 2.662,
+        "erro": null,
+        "redirecionamentos": [],
+        "bytes": 2323048,
+        "sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8"
+      },
+      "rights": {
+        "redistributed": "Excerto, referência e recibo; o corpo permanece no motor.",
+        "assessment": {
+          "anfitriao": "app.parlamento.pt",
+          "publicar_corpos": false,
+          "alojamento": "Cópia privada de investigação pedida no mandato. Não autoriza publicar ou distribuir o corpo.",
+          "reutilizacao": "Licença de republicação integral não estabelecida. Acesso público, caráter oficial ou política de privacidade não equivalem a licença.",
+          "prova": {
+            "file": "content/23 Habitacao/source/direitos/parlamento.html",
+            "receipt": "content/23 Habitacao/source/direitos/parlamento.html.pedido.json",
+            "sha256": "42b5ebc0fe02bd0e0a8d883a72da452edd07e58342aeb47967cfade3fdcf1073"
+          },
+          "pedidos": [
+            "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf.pedido.json",
+            "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf.pedido.json"
+          ],
+          "limite": "A avaliação regista a evidência consultada; não declara autorização jurídica de republicação.",
+          "robots": "Não usado como licença."
+        },
+        "origin_path": "content/30 Orcamento 2027 Generalidade/source/direitos/app.parlamento.pt/avaliacao.json",
+        "sha256": "4f0eab4807038569b383ddc4a2358afe7a0ce49cedd4d0c3830a1fb1c134e597"
+      }
+    },
+    "og1-utao-saldo-me-2027": {
+      "id": "og1-utao-saldo-me-2027",
+      "value": "275",
+      "unit": "milhões de euros",
+      "period": "2027",
+      "excerpt": "Os ajustamentos para contas nacionais somam – 84 M€ em 2026 e + 676 M€ em 2027 (0,2% do PIB), o que conduz aos saldos de 86 M€ e 275 M€ em contabilidade nacional (Quadro 3.3, pág. 45, do Relatório da POE/2027).",
+      "document": {
+        "title": "Relatório UTAO n.º 17/2026: Apreciação preliminar da Proposta de Orçamento do Estado para 2027",
+        "file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
+        "source_sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
+        "locator": "§66; p. 37 PDF (36 impressa)",
+        "page": 37,
+        "printed_page": 36
+      },
+      "evidence": {
+        "file": "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf",
+        "sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8",
+        "locator": "§66; p. 37 PDF (36 impressa)"
+      },
+      "afirmacao": null,
+      "attributed_to": null,
+      "published_at": "2026-10-19",
+      "source_url": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=x5W9DWX1SUUrDgk87wy5NMatoUULSng56w1Z%252bMjyitbqKuz9bknk5nU1q8XRioztkHFMhGG4FLPAmD72hlT02%252f97l3x04zLtts1eMFSzdTkZcuvshggWj%252bb2DxFmmytGD7sWkqEG45EKYHIpiz4VN2nJy10c5jVu05uMKmsnrXIoOjhtQDQgm%252fAE2JRps%252baBtht6712ce3RiDaG1%252bDvMtFwxKEv2GT9Y53kK3%252fuz%252bm85BxEfyUi4DmQi3Fu4ratBblL0ejKZO6OhdyI5gE31XJwy7qyjFBLZVtwN3oK0iuhhIEel72IU9lcgQER0Vz%252fVWVabSmbSJY%252b5f6%252fhsTr1DcFcw36k70SLwg%252fwWhCaP6jwyCm6%252f45Z6Xhy5GkIUmf7LtdBvPX0qLmEWGTTuPTYlx9Btvr5JiggjHGLibAfRX8%253d&fich=9b53fcf7-72f9-4134-ad44-ebb6655f3760.pdf&Inline=true",
+      "receipt": {
+        "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=x5W9DWX1SUUrDgk87wy5NMatoUULSng56w1Z%252bMjyitbqKuz9bknk5nU1q8XRioztkHFMhGG4FLPAmD72hlT02%252f97l3x04zLtts1eMFSzdTkZcuvshggWj%252bb2DxFmmytGD7sWkqEG45EKYHIpiz4VN2nJy10c5jVu05uMKmsnrXIoOjhtQDQgm%252fAE2JRps%252baBtht6712ce3RiDaG1%252bDvMtFwxKEv2GT9Y53kK3%252fuz%252bm85BxEfyUi4DmQi3Fu4ratBblL0ejKZO6OhdyI5gE31XJwy7qyjFBLZVtwN3oK0iuhhIEel72IU9lcgQER0Vz%252fVWVabSmbSJY%252b5f6%252fhsTr1DcFcw36k70SLwg%252fwWhCaP6jwyCm6%252f45Z6Xhy5GkIUmf7LtdBvPX0qLmEWGTTuPTYlx9Btvr5JiggjHGLibAfRX8%253d&fich=9b53fcf7-72f9-4134-ad44-ebb6655f3760.pdf&Inline=true",
+        "endereco_final": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=x5W9DWX1SUUrDgk87wy5NMatoUULSng56w1Z%252bMjyitbqKuz9bknk5nU1q8XRioztkHFMhGG4FLPAmD72hlT02%252f97l3x04zLtts1eMFSzdTkZcuvshggWj%252bb2DxFmmytGD7sWkqEG45EKYHIpiz4VN2nJy10c5jVu05uMKmsnrXIoOjhtQDQgm%252fAE2JRps%252baBtht6712ce3RiDaG1%252bDvMtFwxKEv2GT9Y53kK3%252fuz%252bm85BxEfyUi4DmQi3Fu4ratBblL0ejKZO6OhdyI5gE31XJwy7qyjFBLZVtwN3oK0iuhhIEel72IU9lcgQER0Vz%252fVWVabSmbSJY%252b5f6%252fhsTr1DcFcw36k70SLwg%252fwWhCaP6jwyCm6%252f45Z6Xhy5GkIUmf7LtdBvPX0qLmEWGTTuPTYlx9Btvr5JiggjHGLibAfRX8%253d&fich=9b53fcf7-72f9-4134-ad44-ebb6655f3760.pdf&Inline=true",
+        "acedido_em": "2026-10-26T13:48:23.699914+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "ficheiro": "utao-iniciativa.pdf",
+        "estado": 200,
+        "tipo": "application/pdf",
+        "segundos": 2.662,
+        "erro": null,
+        "redirecionamentos": [],
+        "bytes": 2323048,
+        "sha256": "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8"
+      },
+      "rights": {
+        "redistributed": "Excerto, referência e recibo; o corpo permanece no motor.",
+        "assessment": {
+          "anfitriao": "app.parlamento.pt",
+          "publicar_corpos": false,
+          "alojamento": "Cópia privada de investigação pedida no mandato. Não autoriza publicar ou distribuir o corpo.",
+          "reutilizacao": "Licença de republicação integral não estabelecida. Acesso público, caráter oficial ou política de privacidade não equivalem a licença.",
+          "prova": {
+            "file": "content/23 Habitacao/source/direitos/parlamento.html",
+            "receipt": "content/23 Habitacao/source/direitos/parlamento.html.pedido.json",
+            "sha256": "42b5ebc0fe02bd0e0a8d883a72da452edd07e58342aeb47967cfade3fdcf1073"
+          },
+          "pedidos": [
+            "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf.pedido.json",
+            "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf.pedido.json"
+          ],
+          "limite": "A avaliação regista a evidência consultada; não declara autorização jurídica de republicação.",
+          "robots": "Não usado como licença."
+        },
+        "origin_path": "content/30 Orcamento 2027 Generalidade/source/direitos/app.parlamento.pt/avaliacao.json",
+        "sha256": "4f0eab4807038569b383ddc4a2358afe7a0ce49cedd4d0c3830a1fb1c134e597"
+      }
+    },
+    "og1-ps-abstencao": {
+      "id": "og1-ps-abstencao",
+      "value": "viabilizar o Orçamento do Estado para 2027 mediante a abstenção na votação na generalidade do documento",
+      "unit": "texto",
+      "period": "2026-10-22",
+      "excerpt": "viabilizar o Orçamento do Estado para 2027 mediante a abstenção na votação na generalidade do documento",
+      "document": {
+        "title": "OE2027: PS confirma consenso na abstenção e reafirma compromisso com a estabilidade do país",
+        "file": "content/30 Orcamento 2027 Generalidade/source/ps.html",
+        "source_sha256": "62ec78731be0bddee6c55a4d463bb130100dee48e9fdcf129b7d8b4334b75f4f",
+        "locator": "Corpo da página; excerto localizado por texto"
+      },
+      "evidence": {
+        "file": "content/30 Orcamento 2027 Generalidade/source/ps.html",
+        "sha256": "62ec78731be0bddee6c55a4d463bb130100dee48e9fdcf129b7d8b4334b75f4f",
+        "locator": "Corpo da página; excerto localizado por texto"
+      },
+      "afirmacao": true,
+      "attributed_to": [
+        "Comissão Política Nacional do Partido Socialista"
+      ],
+      "published_at": "2026-10-22",
+      "source_url": "https://ps.pt/oe2027-ps-confirma-consenso-na-abstencao-e-reafirma-compromisso-com-a-estabilidade-do-pais/",
+      "receipt": {
+        "pedido": "https://ps.pt/oe2027-ps-confirma-consenso-na-abstencao-e-reafirma-compromisso-com-a-estabilidade-do-pais/",
+        "endereco_final": "https://ps.pt/oe2027-ps-confirma-consenso-na-abstencao-e-reafirma-compromisso-com-a-estabilidade-do-pais/",
+        "acedido_em": "2026-10-26T13:46:10.648629+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "ficheiro": "ps.html",
+        "estado": 200,
+        "tipo": "text/html; charset=UTF-8",
+        "segundos": 1.17,
+        "erro": null,
+        "redirecionamentos": [],
+        "bytes": 148502,
+        "sha256": "62ec78731be0bddee6c55a4d463bb130100dee48e9fdcf129b7d8b4334b75f4f"
+      },
+      "rights": {
+        "redistributed": "Excerto, referência e recibo; o corpo permanece no motor.",
+        "assessment": {
+          "anfitriao": "ps.pt",
+          "publicar_corpos": false,
+          "alojamento": "Cópia privada de investigação pedida no mandato. Não autoriza publicar ou distribuir o corpo.",
+          "reutilizacao": "Licença de republicação integral não estabelecida. Acesso público, caráter oficial ou política de privacidade não equivalem a licença.",
+          "prova": {
+            "file": "content/22 TAP/source/direitos/ps-privacidade.html",
+            "receipt": "content/22 TAP/source/direitos/ps-privacidade.html.pedido.json",
+            "sha256": "8c9400dcacff3d8ba092dcf249720ee277e46bfa620f2ed5a5c862a825b82cf5"
+          },
+          "pedidos": [
+            "content/30 Orcamento 2027 Generalidade/source/ps.html.pedido.json",
+            "content/22 TAP/source/direitos/ps-privacidade.html.pedido.json"
+          ],
+          "limite": "A avaliação regista a evidência consultada; não declara autorização jurídica de republicação.",
+          "robots": "Não usado como licença."
+        },
+        "origin_path": "content/30 Orcamento 2027 Generalidade/source/direitos/ps.pt/avaliacao.json",
+        "sha256": "3ee183f0d961c69a8c7e2890064f2cfd58855b76d09ae73bbf5043d99473e14f"
+      }
+    },
+    "og1-pcp-comite": {
+      "id": "og1-pcp-comite",
+      "value": "O Orçamento do Estado para 2027 é um frete ao capital e um desastre para o País.",
+      "unit": "texto",
+      "period": "2026-10-19",
+      "excerpt": "O Orçamento do Estado para 2027 é um frete ao capital e um desastre para o País.",
+      "document": {
+        "title": "Comunicado do Comité Central do PCP de 18 e 19 Outubro de 2026",
+        "file": "content/30 Orcamento 2027 Generalidade/source/pcp-comunicado.html",
+        "source_sha256": "0edf4b880ff0613e961e22f763e8bbd463d98e577759864319e92fdcddf5519c",
+        "locator": "Corpo da página; excerto localizado por texto"
+      },
+      "evidence": {
+        "file": "content/30 Orcamento 2027 Generalidade/source/pcp-comunicado.html",
+        "sha256": "0edf4b880ff0613e961e22f763e8bbd463d98e577759864319e92fdcddf5519c",
+        "locator": "Corpo da página; excerto localizado por texto"
+      },
+      "afirmacao": true,
+      "attributed_to": [
+        "Comité Central do PCP"
+      ],
+      "published_at": "2026-10-19",
+      "source_url": "https://pcp.pt/comunicado-do-comite-central-do-pcp-de-18-19-outubro-de-2026",
+      "receipt": {
+        "pedido": "https://pcp.pt/comunicado-do-comite-central-do-pcp-de-18-19-outubro-de-2026",
+        "endereco_final": "https://pcp.pt/comunicado-do-comite-central-do-pcp-de-18-19-outubro-de-2026",
+        "acedido_em": "2026-10-26T13:48:21.341309+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "ficheiro": "pcp-comunicado.html",
+        "estado": 200,
+        "tipo": "text/html; charset=utf-8",
+        "segundos": 0.516,
+        "erro": null,
+        "redirecionamentos": [],
+        "bytes": 157207,
+        "sha256": "0edf4b880ff0613e961e22f763e8bbd463d98e577759864319e92fdcddf5519c"
+      },
+      "rights": {
+        "redistributed": "Excerto, referência e recibo; o corpo permanece no motor.",
+        "assessment": {
+          "anfitriao": "pcp.pt",
+          "publicar_corpos": false,
+          "alojamento": "Cópia privada de investigação pedida no mandato. Não autoriza publicar ou distribuir o corpo.",
+          "reutilizacao": "Licença de republicação integral não estabelecida. Acesso público, caráter oficial ou política de privacidade não equivalem a licença.",
+          "prova": {
+            "file": "content/22 TAP/source/direitos/pcp-privacidade.html",
+            "receipt": "content/22 TAP/source/direitos/pcp-privacidade.html.pedido.json",
+            "sha256": "80d8ce7a9cc45dd6b9eafa0175c34b7885ab1336a55d1dfcf4db5ef2b58a4a2e"
+          },
+          "pedidos": [
+            "content/30 Orcamento 2027 Generalidade/source/pcp-comite.html.pedido.json",
+            "content/30 Orcamento 2027 Generalidade/source/pcp-comunicado.html.pedido.json",
+            "content/30 Orcamento 2027 Generalidade/source/pcp-indice.html.pedido.json",
+            "content/30 Orcamento 2027 Generalidade/source/pcp-raimundo.html.pedido.json"
+          ],
+          "limite": "A avaliação regista a evidência consultada; não declara autorização jurídica de republicação.",
+          "robots": "Não usado como licença."
+        },
+        "origin_path": "content/30 Orcamento 2027 Generalidade/source/direitos/pcp.pt/avaliacao.json",
+        "sha256": "9ab7c0cec4bf219d0fe27051d666707bd497847d4f58a8670a5acecd08b787f8"
+      }
+    },
+    "og1-pcp-raimundo": {
+      "id": "og1-pcp-raimundo",
+      "value": "Sim, está em curso, de facto, um assalto às nossas vidas, um assalto aos nossos direitos, um assalto a Abril, um assalto ao Estado e aos recursos públicos, que são nossos, e o Orçamento do Estado é um instrumento deste assalto em curso, é um frete ao capital e um desastre para o País.",
+      "unit": "texto",
+      "period": "2026-10-15",
+      "excerpt": "Sim, está em curso, de facto, um assalto às nossas vidas, um assalto aos nossos direitos, um assalto a Abril, um assalto ao Estado e aos recursos públicos, que são nossos, e o Orçamento do Estado é um instrumento deste assalto em curso, é um frete ao capital e um desastre para o País.",
+      "document": {
+        "title": "OE 2027: Um assalto às nossas vidas. É preciso romper com esta política e abrir um novo rumo para Portugal",
+        "file": "content/30 Orcamento 2027 Generalidade/source/pcp-raimundo.html",
+        "source_sha256": "c477f5d594cb3f0e9b89e554ffab84f3f63ff651f5bce0564df4cc38304f8beb",
+        "locator": "Corpo da página; excerto localizado por texto"
+      },
+      "evidence": {
+        "file": "content/30 Orcamento 2027 Generalidade/source/pcp-raimundo.html",
+        "sha256": "c477f5d594cb3f0e9b89e554ffab84f3f63ff651f5bce0564df4cc38304f8beb",
+        "locator": "Corpo da página; excerto localizado por texto"
+      },
+      "afirmacao": true,
+      "attributed_to": [
+        "Paulo Raimundo"
+      ],
+      "published_at": "2026-10-15",
+      "source_url": "https://pcp.pt/oe-2027-um-assalto-nossas-vidas-preciso-romper-com-esta-politica-abrir-um-novo-rumo-para-portugal",
+      "receipt": {
+        "pedido": "https://pcp.pt/oe-2027-um-assalto-nossas-vidas-preciso-romper-com-esta-politica-abrir-um-novo-rumo-para-portugal",
+        "endereco_final": "https://pcp.pt/oe-2027-um-assalto-nossas-vidas-preciso-romper-com-esta-politica-abrir-um-novo-rumo-para-portugal",
+        "acedido_em": "2026-10-26T13:46:41.484566+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "ficheiro": "pcp-raimundo.html",
+        "estado": 200,
+        "tipo": "text/html; charset=utf-8",
+        "segundos": 0.486,
+        "erro": null,
+        "redirecionamentos": [],
+        "bytes": 163024,
+        "sha256": "c477f5d594cb3f0e9b89e554ffab84f3f63ff651f5bce0564df4cc38304f8beb"
+      },
+      "rights": {
+        "redistributed": "Excerto, referência e recibo; o corpo permanece no motor.",
+        "assessment": {
+          "anfitriao": "pcp.pt",
+          "publicar_corpos": false,
+          "alojamento": "Cópia privada de investigação pedida no mandato. Não autoriza publicar ou distribuir o corpo.",
+          "reutilizacao": "Licença de republicação integral não estabelecida. Acesso público, caráter oficial ou política de privacidade não equivalem a licença.",
+          "prova": {
+            "file": "content/22 TAP/source/direitos/pcp-privacidade.html",
+            "receipt": "content/22 TAP/source/direitos/pcp-privacidade.html.pedido.json",
+            "sha256": "80d8ce7a9cc45dd6b9eafa0175c34b7885ab1336a55d1dfcf4db5ef2b58a4a2e"
+          },
+          "pedidos": [
+            "content/30 Orcamento 2027 Generalidade/source/pcp-comite.html.pedido.json",
+            "content/30 Orcamento 2027 Generalidade/source/pcp-comunicado.html.pedido.json",
+            "content/30 Orcamento 2027 Generalidade/source/pcp-indice.html.pedido.json",
+            "content/30 Orcamento 2027 Generalidade/source/pcp-raimundo.html.pedido.json"
+          ],
+          "limite": "A avaliação regista a evidência consultada; não declara autorização jurídica de republicação.",
+          "robots": "Não usado como licença."
+        },
+        "origin_path": "content/30 Orcamento 2027 Generalidade/source/direitos/pcp.pt/avaliacao.json",
+        "sha256": "9ab7c0cec4bf219d0fe27051d666707bd497847d4f58a8670a5acecd08b787f8"
+      }
+    },
+    "og1-be-voto": {
+      "id": "og1-be-voto",
+      "value": "Nós não hesitamos. Nós não assinamos o cheque da má governação de Luís Montenegro",
+      "unit": "texto",
+      "period": "2026-10-08",
+      "excerpt": "Nós não hesitamos. Nós não assinamos o cheque da má governação de Luís Montenegro",
+      "document": {
+        "title": "OE2027. BE recusa assinar cheque da má governação de Montenegro e vota contra proposta",
+        "file": "content/30 Orcamento 2027 Generalidade/source/be-dn.html",
+        "source_sha256": "56f7b281b2e7e99715d301ea511ea195d72435c174ee0a14757f854966414c1f",
+        "locator": "Corpo da página; excerto localizado por texto"
+      },
+      "evidence": {
+        "file": "content/30 Orcamento 2027 Generalidade/source/be-dn.html",
+        "sha256": "56f7b281b2e7e99715d301ea511ea195d72435c174ee0a14757f854966414c1f",
+        "locator": "Corpo da página; excerto localizado por texto"
+      },
+      "afirmacao": true,
+      "attributed_to": [
+        "José Manuel Pureza"
+      ],
+      "published_at": "2026-10-08",
+      "source_url": "https://www.dn.pt/pol%C3%ADtica/oe2027-be-recusa-assinar-cheque-da-m-governao-de-montenegro-e-vota-contra-proposta",
+      "receipt": {
+        "pedido": "https://www.dn.pt/pol%C3%ADtica/oe2027-be-recusa-assinar-cheque-da-m-governao-de-montenegro-e-vota-contra-proposta",
+        "endereco_final": "https://www.dn.pt/pol%C3%ADtica/oe2027-be-recusa-assinar-cheque-da-m-governao-de-montenegro-e-vota-contra-proposta",
+        "acedido_em": "2026-10-26T13:47:43.209002+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "ficheiro": "be-dn.html",
+        "estado": 200,
+        "tipo": "text/html; charset=utf-8",
+        "segundos": 0.442,
+        "erro": null,
+        "redirecionamentos": [],
+        "bytes": 983231,
+        "sha256": "56f7b281b2e7e99715d301ea511ea195d72435c174ee0a14757f854966414c1f"
+      },
+      "rights": {
+        "redistributed": "Excerto, referência e recibo; o corpo permanece no motor.",
+        "assessment": {
+          "anfitriao": "www.dn.pt",
+          "publicar_corpos": false,
+          "alojamento": "Cópia privada de investigação pedida no mandato. Não autoriza publicar ou distribuir o corpo.",
+          "reutilizacao": "Condições de propriedade intelectual consultadas. Sem licença aberta estabelecida; não se publica o corpo.",
+          "prova": {
+            "file": "content/30 Orcamento 2027 Generalidade/source/direitos/dn.html",
+            "receipt": "content/30 Orcamento 2027 Generalidade/source/direitos/dn.html.pedido.json",
+            "sha256": "9b6785917296690af77b158958a51fbfdd3a1d04c045a3ab9c2896313638b71d"
+          },
+          "pedidos": [
+            "content/30 Orcamento 2027 Generalidade/source/be-dn.html.pedido.json",
+            "content/30 Orcamento 2027 Generalidade/source/direitos/dn.html.pedido.json"
+          ],
+          "limite": "A avaliação regista a evidência consultada; não declara autorização jurídica de republicação.",
+          "robots": "Não usado como licença."
+        },
+        "origin_path": "content/30 Orcamento 2027 Generalidade/source/direitos/www.dn.pt/avaliacao.json",
+        "sha256": "830910af6bd27709ea5027a2244f05c81174c02fc28cfe74a54e2bb7395b2d13"
+      }
+    },
+    "og1-il-prioridades": {
+      "id": "og1-il-prioridades",
+      "value": "A prioridade é baixar o IRS e o ISP",
+      "unit": "texto",
+      "period": "2026-10-06",
+      "excerpt": "A prioridade é baixar o IRS e o ISP",
+      "document": {
+        "title": "“A prioridade é baixar o IRS e o ISP” no Orçamento do Estado para 2027",
+        "file": "content/30 Orcamento 2027 Generalidade/source/il-eco.html",
+        "source_sha256": "d4f0c94e2aa70bfa546ea8a41247c17c74f90b4364e6441e5c054c4751ffc3b0",
+        "locator": "Corpo da página; excerto localizado por texto"
+      },
+      "evidence": {
+        "file": "content/30 Orcamento 2027 Generalidade/source/il-eco.html",
+        "sha256": "d4f0c94e2aa70bfa546ea8a41247c17c74f90b4364e6441e5c054c4751ffc3b0",
+        "locator": "Corpo da página; excerto localizado por texto"
+      },
+      "afirmacao": true,
+      "attributed_to": [
+        "Mariana Leitão"
+      ],
+      "published_at": "2026-10-06",
+      "source_url": "https://eco.sapo.pt/entrevista/a-prioridade-e-baixar-o-irs-e-o-isp-no-orcamento-do-estado-para-2027/",
+      "receipt": {
+        "pedido": "https://eco.sapo.pt/entrevista/a-prioridade-e-baixar-o-irs-e-o-isp-no-orcamento-do-estado-para-2027/",
+        "endereco_final": "https://eco.sapo.pt/entrevista/a-prioridade-e-baixar-o-irs-e-o-isp-no-orcamento-do-estado-para-2027/",
+        "acedido_em": "2026-10-26T13:46:13.158170+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "ficheiro": "il-eco.html",
+        "estado": 200,
+        "tipo": "text/html; charset=UTF-8",
+        "segundos": 0.663,
+        "erro": null,
+        "redirecionamentos": [],
+        "bytes": 315604,
+        "sha256": "d4f0c94e2aa70bfa546ea8a41247c17c74f90b4364e6441e5c054c4751ffc3b0"
+      },
+      "rights": {
+        "redistributed": "Excerto, referência e recibo; o corpo permanece no motor.",
+        "assessment": {
+          "anfitriao": "eco.sapo.pt",
+          "publicar_corpos": false,
+          "alojamento": "Cópia privada de investigação pedida no mandato. Não autoriza publicar ou distribuir o corpo.",
+          "reutilizacao": "Condições de propriedade intelectual consultadas. Sem licença aberta estabelecida; não se publica o corpo.",
+          "prova": {
+            "file": "content/30 Orcamento 2027 Generalidade/source/direitos/eco.html",
+            "receipt": "content/30 Orcamento 2027 Generalidade/source/direitos/eco.html.pedido.json",
+            "sha256": "8249edb6c79de0e4f18e6e1fc16c218744d1fe2e4b6c0578ab6f5de21a13a948"
+          },
+          "pedidos": [
+            "content/30 Orcamento 2027 Generalidade/source/direitos/eco.html.pedido.json",
+            "content/30 Orcamento 2027 Generalidade/source/eco-juros.html.pedido.json",
+            "content/30 Orcamento 2027 Generalidade/source/il-eco.html.pedido.json"
+          ],
+          "limite": "A avaliação regista a evidência consultada; não declara autorização jurídica de republicação.",
+          "robots": "Não usado como licença."
+        },
+        "origin_path": "content/30 Orcamento 2027 Generalidade/source/direitos/eco.sapo.pt/avaliacao.json",
+        "sha256": "76e200f830cc62db1df6320b1a369486a2280162f7782b1cd2c264356ae4a267"
+      }
+    },
+    "og1-livre-posicao": {
+      "id": "og1-livre-posicao",
+      "value": "dificilmente o acompanharemos, como é óbvio",
+      "unit": "texto",
+      "period": "2026-09-28",
+      "excerpt": "dificilmente o acompanharemos, como é óbvio",
+      "document": {
+        "title": "Livre antecipa que \"dificilmente acompanhará\" proposta de Orçamento do Estado para 2027 do Governo",
+        "file": "content/30 Orcamento 2027 Generalidade/source/livre-cm.html",
+        "source_sha256": "34283df7052738118988c360194b50f20a0ae9388959d3ed534040d3727a0cf6",
+        "locator": "Corpo da página; excerto localizado por texto"
+      },
+      "evidence": {
+        "file": "content/30 Orcamento 2027 Generalidade/source/livre-cm.html",
+        "sha256": "34283df7052738118988c360194b50f20a0ae9388959d3ed534040d3727a0cf6",
+        "locator": "Corpo da página; excerto localizado por texto"
+      },
+      "afirmacao": true,
+      "attributed_to": [
+        "Isabel Mendes Lopes"
+      ],
+      "published_at": "2026-09-28",
+      "source_url": "https://www.cmjornal.pt/politica/detalhe/livre-antecipa-que-dificilmente-acompanhara-proposta-de-orcamento-do-estado-para-2027-do-governo",
+      "receipt": {
+        "pedido": "https://www.cmjornal.pt/politica/detalhe/livre-antecipa-que-dificilmente-acompanhara-proposta-de-orcamento-do-estado-para-2027-do-governo",
+        "endereco_final": "https://www.cmjornal.pt/politica/detalhe/livre-antecipa-que-dificilmente-acompanhara-proposta-de-orcamento-do-estado-para-2027-do-governo",
+        "acedido_em": "2026-10-26T13:48:21.868026+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "ficheiro": "livre-cm.html",
+        "estado": 200,
+        "tipo": "text/html; charset=utf-8",
+        "segundos": 0.355,
+        "erro": null,
+        "redirecionamentos": [],
+        "bytes": 186016,
+        "sha256": "34283df7052738118988c360194b50f20a0ae9388959d3ed534040d3727a0cf6"
+      },
+      "rights": {
+        "redistributed": "Excerto, referência e recibo; o corpo permanece no motor.",
+        "assessment": {
+          "anfitriao": "www.cmjornal.pt",
+          "publicar_corpos": false,
+          "alojamento": "Cópia privada de investigação pedida no mandato. Não autoriza publicar ou distribuir o corpo.",
+          "reutilizacao": "Condições de propriedade intelectual consultadas. Sem licença aberta estabelecida; não se publica o corpo.",
+          "prova": {
+            "file": "content/30 Orcamento 2027 Generalidade/source/direitos/cm.html",
+            "receipt": "content/30 Orcamento 2027 Generalidade/source/direitos/cm.html.pedido.json",
+            "sha256": "fdf00bb569091e56381bf8c5db60a7049b8cecdd39ddcc3cb91edcfd65773196"
+          },
+          "pedidos": [
+            "content/30 Orcamento 2027 Generalidade/source/livre-cm.html.pedido.json"
+          ],
+          "limite": "A avaliação regista a evidência consultada; não declara autorização jurídica de republicação.",
+          "robots": "Não usado como licença."
+        },
+        "origin_path": "content/30 Orcamento 2027 Generalidade/source/direitos/www.cmjornal.pt/avaliacao.json",
+        "sha256": "d4cc19533fafe39631d431e84f03d92088d967bbdbb945312ba106dabbf602e3"
+      }
+    },
+    "og1-governo-rtp-combustiveis": {
+      "id": "og1-governo-rtp-combustiveis",
+      "value": "são receita do Estado",
+      "unit": "texto",
+      "period": "2026-10-23",
+      "excerpt": "são receita do Estado",
+      "document": {
+        "title": "OE2027: ministro das Finanças ouvido no Parlamento no arranque da discussão na generalidade",
+        "file": "content/30 Orcamento 2027 Generalidade/source/rtp-audicao.html",
+        "source_sha256": "1e46c2edd7560cdc613468b1ebb7dc69aa9c6be07d7e07a151eda7f254579256",
+        "locator": "Corpo da página; excerto localizado por texto"
+      },
+      "evidence": {
+        "file": "content/30 Orcamento 2027 Generalidade/source/rtp-audicao.html",
+        "sha256": "1e46c2edd7560cdc613468b1ebb7dc69aa9c6be07d7e07a151eda7f254579256",
+        "locator": "Corpo da página; excerto localizado por texto"
+      },
+      "afirmacao": true,
+      "attributed_to": [
+        "Joaquim Miranda Sarmento"
+      ],
+      "published_at": "2026-10-23",
+      "source_url": "https://www.rtp.pt/noticias/economia/oe2027-ministro-das-financas-ouvido-no-parlamento-no-arranque-da-discussao-na-generalidade_n1773704",
+      "receipt": {
+        "pedido": "https://www.rtp.pt/noticias/economia/oe2027-ministro-das-financas-ouvido-no-parlamento-no-arranque-da-discussao-na-generalidade_n1773704",
+        "endereco_final": "https://www.rtp.pt/noticias/economia/oe2027-ministro-das-financas-ouvido-no-parlamento-no-arranque-da-discussao-na-generalidade_n1773704",
+        "acedido_em": "2026-10-26T13:46:43.774898+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "ficheiro": "rtp-audicao.html",
+        "estado": 200,
+        "tipo": "text/html; charset=UTF-8",
+        "segundos": 0.366,
+        "erro": null,
+        "redirecionamentos": [],
+        "bytes": 103222,
+        "sha256": "1e46c2edd7560cdc613468b1ebb7dc69aa9c6be07d7e07a151eda7f254579256"
+      },
+      "rights": {
+        "redistributed": "Excerto, referência e recibo; o corpo permanece no motor.",
+        "assessment": {
+          "anfitriao": "www.rtp.pt",
+          "publicar_corpos": false,
+          "alojamento": "Cópia privada de investigação pedida no mandato. Não autoriza publicar ou distribuir o corpo.",
+          "reutilizacao": "Licença de republicação integral não estabelecida. Acesso público, caráter oficial ou política de privacidade não equivalem a licença.",
+          "prova": null,
+          "pedidos": [
+            "content/30 Orcamento 2027 Generalidade/source/rtp-audicao.html.pedido.json"
+          ],
+          "limite": "A avaliação regista a evidência consultada; não declara autorização jurídica de republicação. A ligação de termos consultada respondeu HTTP 404.",
+          "robots": "Não usado como licença."
+        },
+        "origin_path": "content/30 Orcamento 2027 Generalidade/source/direitos/www.rtp.pt/avaliacao.json",
+        "sha256": "8f069eeb81476f4ad8735c6892bb3a9e5f50cf35e02209c17250153d52a8fbd1"
+      }
+    },
+    "og1-governo-rtp-previsoes": {
+      "id": "og1-governo-rtp-previsoes",
+      "value": "estão perfeitamente alinhadas com as previsões do Governo, têm diferenças muito pequenas",
+      "unit": "texto",
+      "period": "2026-10-23",
+      "excerpt": "estão perfeitamente alinhadas com as previsões do Governo, têm diferenças muito pequenas",
+      "document": {
+        "title": "OE2027: ministro das Finanças ouvido no Parlamento no arranque da discussão na generalidade",
+        "file": "content/30 Orcamento 2027 Generalidade/source/rtp-audicao.html",
+        "source_sha256": "1e46c2edd7560cdc613468b1ebb7dc69aa9c6be07d7e07a151eda7f254579256",
+        "locator": "Corpo da página; excerto localizado por texto"
+      },
+      "evidence": {
+        "file": "content/30 Orcamento 2027 Generalidade/source/rtp-audicao.html",
+        "sha256": "1e46c2edd7560cdc613468b1ebb7dc69aa9c6be07d7e07a151eda7f254579256",
+        "locator": "Corpo da página; excerto localizado por texto"
+      },
+      "afirmacao": true,
+      "attributed_to": [
+        "Joaquim Miranda Sarmento"
+      ],
+      "published_at": "2026-10-23",
+      "source_url": "https://www.rtp.pt/noticias/economia/oe2027-ministro-das-financas-ouvido-no-parlamento-no-arranque-da-discussao-na-generalidade_n1773704",
+      "receipt": {
+        "pedido": "https://www.rtp.pt/noticias/economia/oe2027-ministro-das-financas-ouvido-no-parlamento-no-arranque-da-discussao-na-generalidade_n1773704",
+        "endereco_final": "https://www.rtp.pt/noticias/economia/oe2027-ministro-das-financas-ouvido-no-parlamento-no-arranque-da-discussao-na-generalidade_n1773704",
+        "acedido_em": "2026-10-26T13:46:43.774898+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "ficheiro": "rtp-audicao.html",
+        "estado": 200,
+        "tipo": "text/html; charset=UTF-8",
+        "segundos": 0.366,
+        "erro": null,
+        "redirecionamentos": [],
+        "bytes": 103222,
+        "sha256": "1e46c2edd7560cdc613468b1ebb7dc69aa9c6be07d7e07a151eda7f254579256"
+      },
+      "rights": {
+        "redistributed": "Excerto, referência e recibo; o corpo permanece no motor.",
+        "assessment": {
+          "anfitriao": "www.rtp.pt",
+          "publicar_corpos": false,
+          "alojamento": "Cópia privada de investigação pedida no mandato. Não autoriza publicar ou distribuir o corpo.",
+          "reutilizacao": "Licença de republicação integral não estabelecida. Acesso público, caráter oficial ou política de privacidade não equivalem a licença.",
+          "prova": null,
+          "pedidos": [
+            "content/30 Orcamento 2027 Generalidade/source/rtp-audicao.html.pedido.json"
+          ],
+          "limite": "A avaliação regista a evidência consultada; não declara autorização jurídica de republicação. A ligação de termos consultada respondeu HTTP 404.",
+          "robots": "Não usado como licença."
+        },
+        "origin_path": "content/30 Orcamento 2027 Generalidade/source/direitos/www.rtp.pt/avaliacao.json",
+        "sha256": "8f069eeb81476f4ad8735c6892bb3a9e5f50cf35e02209c17250153d52a8fbd1"
+      }
+    },
+    "og1-governo-rtp-habitacao": {
+      "id": "og1-governo-rtp-habitacao",
+      "value": "foi praticamente tudo feito",
+      "unit": "texto",
+      "period": "2026-10-23",
+      "excerpt": "foi praticamente tudo feito",
+      "document": {
+        "title": "OE2027: ministro das Finanças ouvido no Parlamento no arranque da discussão na generalidade",
+        "file": "content/30 Orcamento 2027 Generalidade/source/rtp-audicao.html",
+        "source_sha256": "1e46c2edd7560cdc613468b1ebb7dc69aa9c6be07d7e07a151eda7f254579256",
+        "locator": "Corpo da página; excerto localizado por texto"
+      },
+      "evidence": {
+        "file": "content/30 Orcamento 2027 Generalidade/source/rtp-audicao.html",
+        "sha256": "1e46c2edd7560cdc613468b1ebb7dc69aa9c6be07d7e07a151eda7f254579256",
+        "locator": "Corpo da página; excerto localizado por texto"
+      },
+      "afirmacao": true,
+      "attributed_to": [
+        "Joaquim Miranda Sarmento"
+      ],
+      "published_at": "2026-10-23",
+      "source_url": "https://www.rtp.pt/noticias/economia/oe2027-ministro-das-financas-ouvido-no-parlamento-no-arranque-da-discussao-na-generalidade_n1773704",
+      "receipt": {
+        "pedido": "https://www.rtp.pt/noticias/economia/oe2027-ministro-das-financas-ouvido-no-parlamento-no-arranque-da-discussao-na-generalidade_n1773704",
+        "endereco_final": "https://www.rtp.pt/noticias/economia/oe2027-ministro-das-financas-ouvido-no-parlamento-no-arranque-da-discussao-na-generalidade_n1773704",
+        "acedido_em": "2026-10-26T13:46:43.774898+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "ficheiro": "rtp-audicao.html",
+        "estado": 200,
+        "tipo": "text/html; charset=UTF-8",
+        "segundos": 0.366,
+        "erro": null,
+        "redirecionamentos": [],
+        "bytes": 103222,
+        "sha256": "1e46c2edd7560cdc613468b1ebb7dc69aa9c6be07d7e07a151eda7f254579256"
+      },
+      "rights": {
+        "redistributed": "Excerto, referência e recibo; o corpo permanece no motor.",
+        "assessment": {
+          "anfitriao": "www.rtp.pt",
+          "publicar_corpos": false,
+          "alojamento": "Cópia privada de investigação pedida no mandato. Não autoriza publicar ou distribuir o corpo.",
+          "reutilizacao": "Licença de republicação integral não estabelecida. Acesso público, caráter oficial ou política de privacidade não equivalem a licença.",
+          "prova": null,
+          "pedidos": [
+            "content/30 Orcamento 2027 Generalidade/source/rtp-audicao.html.pedido.json"
+          ],
+          "limite": "A avaliação regista a evidência consultada; não declara autorização jurídica de republicação. A ligação de termos consultada respondeu HTTP 404.",
+          "robots": "Não usado como licença."
+        },
+        "origin_path": "content/30 Orcamento 2027 Generalidade/source/direitos/www.rtp.pt/avaliacao.json",
+        "sha256": "8f069eeb81476f4ad8735c6892bb3a9e5f50cf35e02209c17250153d52a8fbd1"
+      }
+    },
+    "og1-governo-eco-juros": {
+      "id": "og1-governo-eco-juros",
+      "value": "a nossa subida das taxas de juro é risco de mercado e não risco de país",
+      "unit": "texto",
+      "period": "2026-10-23",
+      "excerpt": "a nossa subida das taxas de juro é risco de mercado e não risco de país",
+      "document": {
+        "title": "Subida dos juros da dívida “é risco de mercado e não risco de país”, diz Miranda Sarmento",
+        "file": "content/30 Orcamento 2027 Generalidade/source/eco-juros.html",
+        "source_sha256": "e3eba71523dc9da26abe80eef7f5cbcf0088572168e56f7d812a51b56fee1fe1",
+        "locator": "Corpo da página; excerto localizado por texto"
+      },
+      "evidence": {
+        "file": "content/30 Orcamento 2027 Generalidade/source/eco-juros.html",
+        "sha256": "e3eba71523dc9da26abe80eef7f5cbcf0088572168e56f7d812a51b56fee1fe1",
+        "locator": "Corpo da página; excerto localizado por texto"
+      },
+      "afirmacao": true,
+      "attributed_to": [
+        "Joaquim Miranda Sarmento"
+      ],
+      "published_at": "2026-10-23",
+      "source_url": "https://eco.sapo.pt/2026/10/23/subida-dos-juros-da-divida-e-risco-de-mercado-e-nao-risco-de-pais-diz-miranda-sarmento/",
+      "receipt": {
+        "pedido": "https://eco.sapo.pt/2026/10/23/subida-dos-juros-da-divida-e-risco-de-mercado-e-nao-risco-de-pais-diz-miranda-sarmento/",
+        "endereco_final": "https://eco.sapo.pt/2026/10/23/subida-dos-juros-da-divida-e-risco-de-mercado-e-nao-risco-de-pais-diz-miranda-sarmento/",
+        "acedido_em": "2026-10-26T13:46:13.829766+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "ficheiro": "eco-juros.html",
+        "estado": 200,
+        "tipo": "text/html; charset=UTF-8",
+        "segundos": 0.163,
+        "erro": null,
+        "redirecionamentos": [],
+        "bytes": 330170,
+        "sha256": "e3eba71523dc9da26abe80eef7f5cbcf0088572168e56f7d812a51b56fee1fe1"
+      },
+      "rights": {
+        "redistributed": "Excerto, referência e recibo; o corpo permanece no motor.",
+        "assessment": {
+          "anfitriao": "eco.sapo.pt",
+          "publicar_corpos": false,
+          "alojamento": "Cópia privada de investigação pedida no mandato. Não autoriza publicar ou distribuir o corpo.",
+          "reutilizacao": "Condições de propriedade intelectual consultadas. Sem licença aberta estabelecida; não se publica o corpo.",
+          "prova": {
+            "file": "content/30 Orcamento 2027 Generalidade/source/direitos/eco.html",
+            "receipt": "content/30 Orcamento 2027 Generalidade/source/direitos/eco.html.pedido.json",
+            "sha256": "8249edb6c79de0e4f18e6e1fc16c218744d1fe2e4b6c0578ab6f5de21a13a948"
+          },
+          "pedidos": [
+            "content/30 Orcamento 2027 Generalidade/source/direitos/eco.html.pedido.json",
+            "content/30 Orcamento 2027 Generalidade/source/eco-juros.html.pedido.json",
+            "content/30 Orcamento 2027 Generalidade/source/il-eco.html.pedido.json"
+          ],
+          "limite": "A avaliação regista a evidência consultada; não declara autorização jurídica de republicação.",
+          "robots": "Não usado como licença."
+        },
+        "origin_path": "content/30 Orcamento 2027 Generalidade/source/direitos/eco.sapo.pt/avaliacao.json",
+        "sha256": "76e200f830cc62db1df6320b1a369486a2280162f7782b1cd2c264356ae4a267"
+      }
+    },
+    "og1-governo-observador-saldo": {
+      "id": "og1-governo-observador-saldo",
+      "value": "esta é uma medida que custa 300 milhões no próximo ano, para um saldo de 270 milhões",
+      "unit": "texto",
+      "period": "2026-10-23",
+      "excerpt": "esta é uma medida que custa 300 milhões no próximo ano, para um saldo de 270 milhões",
+      "document": {
+        "title": "Em debate orçamental com habitação em destaque, Miranda Sarmento lembra caso Robles e a sua \"decisão de investimento, totalmente legítima\"",
+        "file": "content/30 Orcamento 2027 Generalidade/source/observador-audicao.html",
+        "source_sha256": "424c8a1e9f76dc6e5620849c9931cf14bcf551a9309cccf4323628c5ab319a3f",
+        "locator": "Corpo da página; excerto localizado por texto"
+      },
+      "evidence": {
+        "file": "content/30 Orcamento 2027 Generalidade/source/observador-audicao.html",
+        "sha256": "424c8a1e9f76dc6e5620849c9931cf14bcf551a9309cccf4323628c5ab319a3f",
+        "locator": "Corpo da página; excerto localizado por texto"
+      },
+      "afirmacao": true,
+      "attributed_to": [
+        "Joaquim Miranda Sarmento"
+      ],
+      "published_at": "2026-10-23",
+      "source_url": "https://observador.pt/2026/10/23/em-debate-orcamental-com-habitacao-em-destaque-miranda-sarmento-lembra-caso-robles-e-a-sua-decisao-de-investimento-totalmente-legitima/",
+      "receipt": {
+        "pedido": "https://observador.pt/2026/10/23/em-debate-orcamental-com-habitacao-em-destaque-miranda-sarmento-lembra-caso-robles-e-a-sua-decisao-de-investimento-totalmente-legitima/",
+        "endereco_final": "https://observador.pt/2026/10/23/em-debate-orcamental-com-habitacao-em-destaque-miranda-sarmento-lembra-caso-robles-e-a-sua-decisao-de-investimento-totalmente-legitima/",
+        "acedido_em": "2026-10-26T13:47:43.661309+00:00",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "ficheiro": "observador-audicao.html",
+        "estado": 200,
+        "tipo": "text/html; charset=UTF-8",
+        "segundos": 0.725,
+        "erro": null,
+        "redirecionamentos": [],
+        "bytes": 309663,
+        "sha256": "424c8a1e9f76dc6e5620849c9931cf14bcf551a9309cccf4323628c5ab319a3f"
+      },
+      "rights": {
+        "redistributed": "Excerto, referência e recibo; o corpo permanece no motor.",
+        "assessment": {
+          "anfitriao": "observador.pt",
+          "publicar_corpos": false,
+          "alojamento": "Cópia privada de investigação pedida no mandato. Não autoriza publicar ou distribuir o corpo.",
+          "reutilizacao": "Condições de propriedade intelectual consultadas. Sem licença aberta estabelecida; não se publica o corpo.",
+          "prova": {
+            "file": "content/30 Orcamento 2027 Generalidade/source/direitos/observador.html",
+            "receipt": "content/30 Orcamento 2027 Generalidade/source/direitos/observador.html.pedido.json",
+            "sha256": "e7765d84ab2d44258282300e7498ef5a687e0a3800fe37cf7692ce4eed24a6e4"
+          },
+          "pedidos": [
+            "content/30 Orcamento 2027 Generalidade/source/direitos/observador.html.pedido.json",
+            "content/30 Orcamento 2027 Generalidade/source/observador-audicao.html.pedido.json"
+          ],
+          "limite": "A avaliação regista a evidência consultada; não declara autorização jurídica de republicação.",
+          "robots": "Não usado como licença."
+        },
+        "origin_path": "content/30 Orcamento 2027 Generalidade/source/direitos/observador.pt/avaliacao.json",
+        "sha256": "a50696503d32f002b4dab9d26f8c8a374abea56db73110d2cd6bcb00bcd56aec"
+      }
+    }
+  }
+}

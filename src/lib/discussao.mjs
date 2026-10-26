@@ -25,12 +25,12 @@ export function itensResolvidos(lang) {
       const componentes = getClaim(id).derived_from;
       if (Array.isArray(componentes)) for (const componente of componentes) linhas.add(componente);
     }
-    return {...resolvido, linhas: [...linhas], afirmacoes: e.afirmacoes, recibos: e.recibos};
+    return {...resolvido, apenasDatas: 'apenasDatas' in e ? e.apenasDatas : [], linhas: [...linhas], afirmacoes: e.afirmacoes, recibos: e.recibos};
   });
 }
 /** @param {string} slug @param {'pt'|'en'} lang */
 export function portaDoItem(slug, lang) { return `${routePath('discussao', lang)}#${slug}`; }
 /** @param {string[]} linhas @param {'pt'|'en'} lang @param {boolean} tematica */
 export function itensSobreLinhas(linhas, lang, tematica = false) {
-  return itensResolvidos(lang).filter(e => e.linhas.some(id => linhas.includes(id)) || (tematica && e.slug === 'saude-no-orcamento'));
+  return itensResolvidos(lang).filter(e => e.linhas.some(id => !e.apenasDatas.includes(id) && linhas.includes(id)) || (tematica && e.slug === 'saude-no-orcamento'));
 }

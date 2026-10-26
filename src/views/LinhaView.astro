@@ -137,6 +137,7 @@ const fontesDaDefinicao = [...new Set(FAMILIAS_DAS_LINHAS[oQueE.chave]?.origens 
 
 const parcelaFinanciamento = parcelaDoFinanciamento(id, lang);
 const comparacaoDoCartao = familiaRecibo.tipo === 'cartao' ? partesDaLeitura(id, lang).comparacao : null;
+const linhasDaProva = [...new Set([id, ...[oQueE.pedacos, comparacaoDoCartao?.pedacos ?? [], resolverPeriodosV2a(contaV2a(id,lang))].flat().flatMap(p => typeof p === 'string' ? [] : p.claim ? [p.claim] : [])])];
 /* As perguntas das medidas fora dos painéis europeus têm as origens no
    recibo que o cartão abre. A célula 8.4 confere a pergunta e cada campo das
    origens; as medidas dos painéis conservam o seu lugar anterior. */
@@ -1342,7 +1343,7 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
             </>
           )
         }
-        <PortasDaDiscussao lang={lang} linhas={[id]} />
+        <PortasDaDiscussao lang={lang} linhas={linhasDaProva} />
       </section>
 
       {

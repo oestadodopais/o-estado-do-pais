@@ -1888,3 +1888,53 @@ Object.assign(LINGUA_DOS_LOCALIZADORES, {
   "HTML; expressão literal na notícia que cita a Lusa": "pt-PT",
   "HTML; cobertura do debate quinzenal; início literal único": "pt-PT"
 });
+
+// OG1-A6: títulos e rótulos das 33 origens exportadas.
+Object.assign(LINGUA_DOS_TITULOS, {
+  "Relatório UTAO n.º 17/2026: Apreciação preliminar da Proposta de Orçamento do Estado para 2027": "pt",
+  "OE2027: PS confirma consenso na abstenção e reafirma compromisso com a estabilidade do país": "pt",
+  "Comunicado do Comité Central do PCP de 18 e 19 Outubro de 2026": "pt",
+  "OE 2027: Um assalto às nossas vidas. É preciso romper com esta política e abrir um novo rumo para Portugal": "pt",
+  "OE2027. BE recusa assinar cheque da má governação de Montenegro e vota contra proposta": "pt",
+  "“A prioridade é baixar o IRS e o ISP” no Orçamento do Estado para 2027": "pt",
+  "Livre antecipa que \"dificilmente acompanhará\" proposta de Orçamento do Estado para 2027 do Governo": "pt",
+  "OE2027: ministro das Finanças ouvido no Parlamento no arranque da discussão na generalidade": "pt",
+  "Subida dos juros da dívida “é risco de mercado e não risco de país”, diz Miranda Sarmento": "pt",
+  "Em debate orçamental com habitação em destaque, Miranda Sarmento lembra caso Robles e a sua \"decisão de investimento, totalmente legítima\"": "pt"
+});
+Object.assign(LINGUA_DOS_ROTULOS, {
+  "UTAO, §15": "pt",
+  "UTAO, §42": "pt",
+  "pib-2026": "pt",
+  "saldo-2026": "pt",
+  "politicas-peso": "pt",
+  "juros-variacao": "pt",
+  "juros-montante": "pt",
+  "taxa-implicita-2026": "pt",
+  "taxa-implicita-2027": "pt",
+  "impacto das novas medidas de política orçamental no saldo de 2027, a favor do saldo": "pt",
+  "impact of new fiscal policy measures on the 2027 balance, in favour of the balance": "en",
+  "despesa-liquida-ce": "pt",
+  "despesa-liquida-limiar": "pt",
+  "despesa-liquida-mf-defesa": "pt",
+  "despesa-liquida-mf-antes": "pt",
+  "divida-2025-revista": "pt",
+  "brent-contratos-2027": "pt",
+  "brent-mf-2027": "pt",
+  "brent-diferenca": "pt",
+  "politicas-saldo": "pt",
+  "saude-variacao": "pt",
+  "saude-sem-prr": "pt",
+  "Saldo em contabilidade nacional 2027": "pt",
+  "ps-abstencao": "pt",
+  "pcp-comite": "pt",
+  "pcp-raimundo": "pt",
+  "be-voto": "pt",
+  "il-prioridades": "pt",
+  "livre-posicao": "pt",
+  "governo-rtp-combustiveis": "pt",
+  "governo-rtp-previsoes": "pt",
+  "governo-rtp-habitacao": "pt",
+  "governo-eco-juros": "pt",
+  "governo-observador-saldo": "pt"
+});

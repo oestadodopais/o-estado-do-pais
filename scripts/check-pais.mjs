@@ -2,6 +2,7 @@
 /** B1, peça 3. Leitor próprio do HTML, da tabela declarada e do livro.
  * Não importa a seleção nem as funções da página que está a conferir. */
 import fs from 'node:fs';
+import { conferirLinhaOg1 } from './afirmacoes-og1.mjs';
 import path from 'node:path';
 import { parse } from 'node-html-parser';
 import { load } from 'js-yaml';
@@ -185,6 +186,31 @@ const CONTAGENS_DO_PROJETO = new Set(['correcoes_publicadas', 'estudos_no_arquiv
    sem consultar a declaração de lugar nem o nome editorial da linha. */
 const provasOrcamentais = JSON.parse(fs.readFileSync('ledger/provas/v2d/provas.json', 'utf8')).rows;
 const provasEfeitos = JSON.parse(fs.readFileSync('ledger/provas/v2e/provas.json', 'utf8')).rows;
+
+// OG1-A6: documentos nacionais identificados, confrontados com as provas seladas.
+const documentosOg1 = {
+  "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf": "Relatório UTAO n.º 17/2026: Apreciação preliminar da Proposta de Orçamento do Estado para 2027",
+  "content/30 Orcamento 2027 Generalidade/source/ps.html": "OE2027: PS confirma consenso na abstenção e reafirma compromisso com a estabilidade do país",
+  "content/30 Orcamento 2027 Generalidade/source/pcp-comunicado.html": "Comunicado do Comité Central do PCP de 18 e 19 Outubro de 2026",
+  "content/30 Orcamento 2027 Generalidade/source/pcp-raimundo.html": "OE 2027: Um assalto às nossas vidas. É preciso romper com esta política e abrir um novo rumo para Portugal",
+  "content/30 Orcamento 2027 Generalidade/source/be-dn.html": "OE2027. BE recusa assinar cheque da má governação de Montenegro e vota contra proposta",
+  "content/30 Orcamento 2027 Generalidade/source/il-eco.html": "“A prioridade é baixar o IRS e o ISP” no Orçamento do Estado para 2027",
+  "content/30 Orcamento 2027 Generalidade/source/livre-cm.html": "Livre antecipa que \"dificilmente acompanhará\" proposta de Orçamento do Estado para 2027 do Governo",
+  "content/30 Orcamento 2027 Generalidade/source/rtp-audicao.html": "OE2027: ministro das Finanças ouvido no Parlamento no arranque da discussão na generalidade",
+  "content/30 Orcamento 2027 Generalidade/source/eco-juros.html": "Subida dos juros da dívida “é risco de mercado e não risco de país”, diz Miranda Sarmento",
+  "content/30 Orcamento 2027 Generalidade/source/observador-audicao.html": "Em debate orçamental com habitação em destaque, Miranda Sarmento lembra caso Robles e a sua \"decisão de investimento, totalmente legítima\""
+};
+const provasOg1=JSON.parse(fs.readFileSync('ledger/provas/og1a/provas.json','utf8')).rows;
+function lugarOg1(c){
+ const p=provasOg1[c?.id];
+ if(!p||documentosOg1[p.document?.file]!==p.document?.title||c.study!=='oe-2027'||conferirLinhaOg1(c,p).length)return null;
+ return PAIS;
+}
+for(const id of Object.keys(provasOg1)){
+ const c=linha(id);if(lugarOg1(c)!==PAIS)erros.push('A1: OG1 sem origem nacional: '+id);
+ for(const campo of ['excerpt','source_url']){const bad=structuredClone(c);bad[campo]+=' adulterado';if(lugarOg1(bad)!==null)erros.push('A1: planta OG1 não fechou: '+campo);}
+}
+
 const provasEo1 = JSON.parse(fs.readFileSync('ledger/provas/eo1/provas.json', 'utf8')).rows;
 function lugarDoCalendarioParlamentar(c) {
   const p = provasEo1[c?.id];
@@ -336,7 +362,7 @@ function lugarDerivado(id) {
   let geos = [];
   try { geos = c.source_url ? new URL(c.source_url).searchParams.getAll('geo') : []; } catch { geos = []; }
   const doPais = geos.length === 1 && geos[0] === 'PT' ? PAIS : undefined;
-  const d = [...new Set([doEstudo, doId, doPais, lugarDaAfirmacaoOrcamental(c), lugarDoTextoOrcamental(c), lugarDoCalendarioParlamentar(c), lugarDaNoticiaHb1(c)].filter(x => typeof x === 'string'))];
+  const d = [...new Set([doEstudo, doId, doPais, lugarOg1(c),lugarDaAfirmacaoOrcamental(c), lugarDoTextoOrcamental(c), lugarDoCalendarioParlamentar(c), lugarDaNoticiaHb1(c)].filter(x => typeof x === 'string'))];
   if (d.length > 1) {
     erros.push(`A1: a linha ${id} deriva dois lugares diferentes (${d.join(', ')}).`);
     return null;

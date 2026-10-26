@@ -1,5 +1,6 @@
 ---
 /** B1: uma página por estudo, corpo do registo e edição fixada no fim. */
+import PortasDaDiscussao from '../components/discussao/PortasDaDiscussao.astro';
 import Base from '../layouts/Base.astro';
 import TituloDeTrabalho from '../components/TituloDeTrabalho.astro';
 import PecasDoEstudo from '../components/PecasDoEstudo.astro';
@@ -179,4 +180,5 @@ const jsonld = {
       <EdicaoPublicada work={work} lang={lang} />
     </div>
   )}
+  {slug === 'orcamento-2027-o-que-muda-e-para-quem' && <PortasDaDiscussao lang={lang} linhas={['pm-q3-3-r37-c3']} /> }
 </Base>

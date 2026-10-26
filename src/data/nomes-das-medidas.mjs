@@ -1,3 +1,4 @@
+import {NOMES_OG1} from './nomes-og1.mjs';
 import { NOMES_EO1 } from './nomes-eo1.mjs';
 import { NOMES_HB1 } from './nomes-hb1.mjs';
 import { NOMES_V2D } from './nomes-v2d.mjs';
@@ -83,6 +84,7 @@ export const NOMES_DO_PROJETO = {
   ...NOMES_HB1,
   ...NOMES_V2D,
   ...NOMES_V2E,
+  ...NOMES_OG1,
   ...NOMES_EO1,
   /* E0c: o mesmo nome corrente do cartão; a entrada já diz o lugar da União. */
   'divida-das-familias-2025-ue': {

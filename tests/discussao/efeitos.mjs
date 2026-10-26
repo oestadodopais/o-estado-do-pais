@@ -28,7 +28,7 @@ export function linhasImpressasOuDerivadas(item,linhas){
   if(Array.isArray(x))x.forEach(anda);
   else if(x&&typeof x==='object')for(const [k,v] of Object.entries(x)){
    if(k==='linhas')continue;
-   if(['claim','literal','periodo','nome','sinal','selo'].includes(k)&&typeof v==='string')ids.add(v);
+   if(['claim','literal','fragmento','data','periodo','nome','sinal','selo'].includes(k)&&typeof v==='string')ids.add(v);
    else if(k==='recibos')Object.values(v).flat().forEach(id=>ids.add(id));
    else anda(v);
   }
@@ -37,6 +37,11 @@ export function linhasImpressasOuDerivadas(item,linhas){
  const palavras=auditoria.explicacoes.find(e=>e.slug===item?.slug);
  for(const folha of palavras?.folhas??[])for(const parte of folha.partes??[])for(const apoio of parte.apoios??[])if(apoio.linha)ids.add(apoio.linha);
  for(const id of ids)for(const componente of linhas.get(id)?.derived_from??[])ids.add(componente);
+ for(const id of item.apenasDatas??[]){
+  const usos=[];const percorre=x=>{if(Array.isArray(x))x.forEach(percorre);else if(x&&typeof x==='object')for(const[k,v]of Object.entries(x)){if(['claim','literal','fragmento','nome','selo'].includes(k)&&v===id)usos.push(k);else if(k!=='apenasDatas')percorre(v);}};percorre(item);
+  if(usos.length)throw new Error('OG1: uma medida não pode ser escondida como data de contexto');
+  ids.delete(id);
+ }
  return ids;
 }
 export function conferirEfeitos(linhas,itens,nomes=NOMES_V2E){

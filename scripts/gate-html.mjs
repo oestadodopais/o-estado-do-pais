@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import {ITENS} from '../src/data/discussao.mjs';
 import {errosDaDefinicaoEo1} from '../src/lib/definicoes-eo1.mjs';
 import { FAMILIAS_DAS_LINHAS as FAMILIAS_EO1_GATE } from '../src/data/o-que-e-das-familias.mjs';
 import { conferirAberturaB1 } from './abertura-b1-do-portao.mjs';
@@ -6782,7 +6783,10 @@ for (const file of ficheirosHtml(DIST)) {
       mapaDaUnidade.querySelectorAll('tbody [data-claim]').some((n) => n.getAttribute('data-claim') === id);
     const campoDaDiscussao = rota?.key === 'discussao' && ['excerpt', 'attributed_to', 'ressalva'].includes(String(campo)) &&
       el.closest('[data-discussao]') !== null && el.closest('[data-discussao-literal]')?.getAttribute('data-discussao-literal') === campo;
-    if (!campoDaDiscussao && !paginaDoLivro && !unidadeDeCartaoDoLugar && !unidadeDeCartaoDoPais && !unidadeDeCorrecaoDoPais && !nomeDeCorrecao && !campoDeBloco && !unidadeDeMapaDosLugares) {
+    const fragmentoDeclarado = rota?.key === 'discussao' && ['excerpt','document.title'].includes(String(campo)) && el.hasAttribute('data-linha-trecho') &&
+      el.closest('[data-discussao-fragmento]')?.getAttribute('data-discussao-fragmento')===campo &&
+      ITENS.find(e=>e.slug===el.closest('[data-discussao]')?.getAttribute('data-discussao'))?.seccoes.some(s=>s.conteudo.some(b=>b.paragrafo?.[linguaPagina]?.some(t=>t?.fragmento===id&&t.campo===campo&&t.texto===el.getAttribute('data-linha-trecho'))));
+    if (!fragmentoDeclarado && !campoDaDiscussao && !paginaDoLivro && !unidadeDeCartaoDoLugar && !unidadeDeCartaoDoPais && !unidadeDeCorrecaoDoPais && !nomeDeCorrecao && !campoDeBloco && !unidadeDeMapaDosLugares) {
       err(
         `data-linha-claim="${id}" numa página que não é do livro-razão. ` +
           `Esta marca é dos campos de uma linha, na página dessa linha ou no índice.\n` +
@@ -6828,7 +6832,11 @@ for (const file of ficheirosHtml(DIST)) {
     }
 
     const bruto = campoDaLinha(claim, campo, linguaPagina);
-    const esperado = bruto === POR_VERIFICAR && linguaPagina === 'en' ? '[to verify]' : bruto;
+    const trecho=el.getAttribute('data-linha-trecho');
+    if (trecho!==undefined && trecho!==null && (!fragmentoDeclarado || typeof bruto!=='string' || !trecho.trim() || !bruto.includes(trecho))) {
+      err(`fragmento de "${id}" não corresponde ao campo e à declaração do item.`); continue;
+    }
+    const esperado = fragmentoDeclarado ? trecho : bruto === POR_VERIFICAR && linguaPagina === 'en' ? '[to verify]' : bruto;
     if (esperado === null || esperado === undefined) {
       err(
         `a página renderiza o campo "${campo}" de "${id}", mas a linha não tem esse campo` +

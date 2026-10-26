@@ -1,3 +1,4 @@
+import {OG1} from './discussao-og1.mjs';
 /** V2-d e V2-e: análise dos dois itens, apoiada nas linhas e nos excertos do livro. */
 import {acrescentarEfeitos} from './discussao-efeitos.mjs';
 export const DISCUSSAO = {
@@ -111,5 +112,6 @@ export const ITENS = [
     [p(['O PCP tem razão ao chamar a atenção para o custo das parcerias, mas erra ao atribuir às rodoviárias um número que ultrapassa os seus encargos brutos. As parcerias custam ao Estado mais de mil milhões brutos no ano orçamentado; a afirmação posterior já abrange as rodoviárias, as ferroviárias e as da saúde, mas o seu montante, ', {claim:PAULA_PPP,sufixo:' milhões de euros'}, ', também excede a soma do quadro. O Governo, por sua vez, apresenta um quadro dos pagamentos contratados e remete para um capítulo de riscos os pedidos que podem mudar a conta. Entre os dois, o leitor fica a saber os pagamentos previstos às concessionárias; fica por saber quanto dos pedidos pendentes se tornará encargo efetivo, e o que o pedido da concessionária da Beira Interior ligado à eliminação das portagens, e os que vierem, vão custar: é essa a conta que o Parlamento devia pedir antes de votar.'],
        ['The PCP is right to draw attention to the cost of partnerships, but wrong to attribute to road partnerships a figure exceeding their gross charges. Partnerships cost the State over a billion gross in the budgeted year; the later claim already covers road, rail and health partnerships, but its amount, ', {claim:PAULA_PPP,sufixo:' million euros'}, ', also exceeds the sum in the table. The Government, for its part, presents a table of contracted payments and sends the claims that could change the bill to a risks chapter. Between the two, the reader learns the payments forecast for concessionaires; how much of the pending claims will become an actual charge remains unknown, and what the Beira Interior concessionaire\'s claim linked to the toll abolition, and those that may follow, will cost: that is the bill Parliament should ask for before voting.'])],
   ]),
+  OG1,
 ];
 acrescentarEfeitos(ITENS);

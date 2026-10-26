@@ -33,6 +33,8 @@ const renderizadas = partes.map((/** @type {any} */ p, /** @type {number} */ i) 
     if (p.selo) return selos && <Provenance id={p.selo} lang={lang} inline={true} />;
     if (p.literal) {
       const l = p.literal;
+      if (l.fragmento) return <Fragment><span class="discussao-literal" data-discussao-fragmento={l.campo}><span data-linha-claim={l.id} data-linha-campo={l.campo} data-linha-trecho={l.texto} lang={l.lingua}>{l.texto}</span>{l.sufixo}</span>{p.fecho}{recibos && selos && <Provenance id={l.id} lang={lang} />}</Fragment>;
+
       return <Fragment><a class="discussao-literal" href={l.campo === 'excerpt' ? getClaim(l.id).source_url : routePath('linha', lang, {slug:l.id})} data-discussao-literal={l.campo}><CampoDaLinha id={l.id} campo={l.campo} valor={l.texto} lang={lang} lingua={l.lingua} /></a>{p.fecho}{recibos && selos && l.campo === 'excerpt' && <Provenance id={l.id} lang={lang} />}</Fragment>;
     }
     if (p.verbatim) return <span data-verbatim={p.verbatim} set:text={p.texto} />;

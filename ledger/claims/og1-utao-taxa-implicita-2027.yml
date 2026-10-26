@@ -1,0 +1,46 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "og1-utao-taxa-implicita-2027"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "2,9"
+unit: "%"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "taxa-implicita-2027"
+name_source: "§37; p. 22 PDF (21 impressa)"
+status: "selado; leitura a frio pendente"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "UTAO"
+document:
+  title: "Relatório UTAO n.º 17/2026: Apreciação preliminar da Proposta de Orçamento do Estado para 2027"
+  edition: "2027"
+  locator: "§37; p. 22 PDF (21 impressa)"
+  source_sha256: "d4f15f7e8bf7635ee381bfa969d4c2a66bc2329bca53b8d87e17631618a66fc8"
+  page: 22
+  kind: "pdf"
+source_url: "https://app.parlamento.pt/webutils/docs/doc.pdf?path=x5W9DWX1SUUrDgk87wy5NMatoUULSng56w1Z%252bMjyitbqKuz9bknk5nU1q8XRioztkHFMhGG4FLPAmD72hlT02%252f97l3x04zLtts1eMFSzdTkZcuvshggWj%252bb2DxFmmytGD7sWkqEG45EKYHIpiz4VN2nJy10c5jVu05uMKmsnrXIoOjhtQDQgm%252fAE2JRps%252baBtht6712ce3RiDaG1%252bDvMtFwxKEv2GT9Y53kK3%252fuz%252bm85BxEfyUi4DmQi3Fu4ratBblL0ejKZO6OhdyI5gE31XJwy7qyjFBLZVtwN3oK0iuhhIEel72IU9lcgQER0Vz%252fVWVabSmbSJY%252b5f6%252fhsTr1DcFcw36k70SLwg%252fwWhCaP6jwyCm6%252f45Z6Xhy5GkIUmf7LtdBvPX0qLmEWGTTuPTYlx9Btvr5JiggjHGLibAfRX8%253d&fich=9b53fcf7-72f9-4134-ad44-ebb6655f3760.pdf&Inline=true"
+access_date: "2026-10-26"
+reference_date: "2027"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "A despesa com juros apresenta uma subida prevista de 23,2% em 2027, o que reflete uma variação nominal de 1,5 mil M€, ascendendo a 8,2 mil M€. Caso se concretize a previsão, a taxa de juro implícita (juros em percentagem da dívida pública) deverá subir de 2,4% em 2026 para 2,9% em 2027. É de referir que o máximo da série estatística para os juros foi atingido em 2014, acima do valor previsto para 2027 (a taxa de juro implícita foi de 3,6% em 2014)."
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "oe-2027"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Juros em percentagem da dívida do mesmo ano. · Cruzado de ResearchHub content/30 Orcamento 2027 Generalidade · og1-utao-taxa-implicita-2027."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

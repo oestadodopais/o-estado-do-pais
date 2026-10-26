@@ -1,3 +1,4 @@
+import {conferirOg1} from './afirmacoes-og1.mjs';
 import {conferirAfirmacoesEo1} from './afirmacoes-eo1.mjs';
 import {conferirAfirmacoesHb1} from './afirmacoes-hb1.mjs';
 /** V2-a: palavras, atribuição, data, porta e valor contra o corpo HTTP selado. */
@@ -46,14 +47,15 @@ export function conferirPublicacao(nomes) {
   return nomes.every(n=>n==='provas.json') ? [] : ['V2A direitos: a prova pública só admite excertos e referências em provas.json'];
 }
 export function conferirAfirmacoes(claims,{plantar=true,motor=process.env.RESEARCHHUB_DIR}={}) {
+  const og1=conferirOg1(claims,{plantar,motor});
   const prova=JSON.parse(fs.readFileSync('ledger/provas/v2a/provas.json','utf8'));
   const v2d=conferirAfirmacoesV2d(claims,{plantar,motor,excluir:new Set(Object.keys(prova.rows))});
   const eo1=conferirAfirmacoesEo1(claims,{plantar,motor});
   const hb1=conferirAfirmacoesHb1(claims,{plantar,motor});
-  const errors=[...eo1.errors,...hb1.errors,...conferirPublicacao(fs.readdirSync('ledger/provas/v2a')),...v2d.errors], plantas=[];
-  let checked=v2d.checked+eo1.checked+hb1.checked, bodies=v2d.bodies+eo1.bodies+hb1.bodies;
+  const errors=[...og1.errors,...eo1.errors,...hb1.errors,...conferirPublicacao(fs.readdirSync('ledger/provas/v2a')),...v2d.errors], plantas=[...og1.plantas];
+  let checked=og1.checked+v2d.checked+eo1.checked+hb1.checked, bodies=og1.bodies+v2d.bodies+eo1.bodies+hb1.bodies;
   for(const c of claims.values()) {
-    if(!c.afirmacao||v2d.ids.has(c.id)||eo1.ids.has(c.id)||hb1.ids.has(c.id)) continue;
+    if(!c.afirmacao||og1.ids.has(c.id)||v2d.ids.has(c.id)||eo1.ids.has(c.id)||hb1.ids.has(c.id)) continue;
     const p=prova.rows[c.id];
     let raw;
     if(motor && p && p.motor_path===`content/15 Orcamento do Estado 2027/source/v2a/${path.basename(p.file)}`) {

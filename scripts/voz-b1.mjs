@@ -6,6 +6,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { parse, NodeType } from 'node-html-parser';
+import { ITENS, DISCUSSAO } from '../src/data/discussao.mjs';
 import { WORKS, SUBJECTS } from '../src/data/studies.mjs';
 import { DOMINIOS } from '../src/data/dominios.mjs';
 import { ROTULOS_B1 } from '../src/data/rotulos-b1.mjs';
@@ -99,6 +100,13 @@ export function verificaB1(raiz) {
       // Os nomes das portas HB1 são comparados à declaração por medir-defeitos.
       const verificados = '[data-rotulo-ia="topo"], [data-registo-unidade], [data-registo-indice], [data-registo-posicao], [data-registo-linha], [data-claim], .src-chip, [data-prova], [data-verbatim], .texto-fontes [data-nome]';
       const dispensados = new Set(main.querySelectorAll(verificados));
+      // OG1-A6: a porta viva tem título e destino conferidos fora do corpo fixo.
+      for(const el of main.querySelectorAll('[data-discussao-integracao="orcamento-2027-generalidade"]')){
+        const slug=el.getAttribute('data-discussao-integracao'),item=ITENS.find(e=>e.slug===slug),a=el.querySelector('a');
+        const titulo=item?.titulo[lang].map(x=>typeof x==='string'?x:x.claim?getClaim(x.claim).value+(x.sufixo??''):x.periodo?getClaim(x.periodo).reference_date:'').join('');
+        if(w?.slug==='orcamento-2027-o-que-muda-e-para-quem'&&slug==='orcamento-2027-generalidade'&&a&&el.querySelectorAll('a').length===1&&a.getAttribute('href')===routePath('discussao',lang)+'#'+slug&&normal(el.textContent)===normal(DISCUSSAO.porta[lang]+' '+titulo))dispensados.add(el);
+        else erros.push(`B1 discussão: ${rota}: título ou destino sem correspondência.`);
+      }
       const portas = main.querySelectorAll('[data-fontes-da-unidade]');
       if (portas.length) {
         const record = JSON.parse(fs.readFileSync(path.join(raiz, 'registos', w.slug, `${lang}.record.json`), 'utf8'));

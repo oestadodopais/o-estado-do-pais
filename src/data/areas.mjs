@@ -711,6 +711,12 @@ export const AREAS = [
  * motivo }`.
  */
 export const SEM_AREA = [
+  {
+    estudos: ['oe-2027'],
+    id: /^og1-(?:utao-(?:p15|p42|pib-2026|saldo-2026|saldo-me-2027|divida-2025-revista|politicas-saldo|politicas-peso|juros-variacao|juros-montante|taxa-implicita-2026|taxa-implicita-2027|novas-saldo|brent-mf-2027|brent-diferenca|brent-contratos-2027|despesa-liquida-ce|despesa-liquida-limiar|despesa-liquida-mf-antes|despesa-liquida-mf-defesa|saude-variacao|saude-sem-prr)|ps-abstencao|pcp-comite|pcp-raimundo|be-voto|il-prioridades|livre-posicao|governo-rtp-previsoes|governo-rtp-combustiveis|governo-rtp-habitacao|governo-eco-juros|governo-observador-saldo)$/,
+    assunto: 'Pressupostos, contas e posições públicas sobre a proposta do Orçamento antes do voto na generalidade',
+    motivo: 'Estas fontes sustentam o item da discussão orçamental. Como nos itens da Saúde e das parcerias, a leitura das afirmações e das contas não cria cartões ministeriais nem atribui a posição de um partido à atuação de um ministério.',
+  },
   ...SEM_AREA_V2E,
   {
     estudos: ['orcamento-2027-o-que-muda-e-para-quem'],

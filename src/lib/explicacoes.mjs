@@ -72,7 +72,7 @@ import { ENTRADAS } from '../data/primeira-pagina.mjs';
 export const NOMES_DAS_EXPLICACOES = { ...NOMES_OE1, ...NOMES_PF1 };
 for (const id of Object.keys(NOMES_PF1)) if (id in NOMES_OE1) throw new Error(`explicações: a linha «${id}» tem nome nos dois módulos.`);
 /** Os pedaços calculados que a gramática das explicações conhece, e mais nenhum. */
-export const CHAVES_DA_EXPLICACAO = /** @type {const} */ (['claim', 'selo', 'literal', 'verbatim', 'termo', 'periodo', 'nome', 'sinal', 'se', 'maiores', 'compara', 'comparaSaldos']);
+export const CHAVES_DA_EXPLICACAO = /** @type {const} */ (['claim', 'selo', 'literal', 'fragmento', 'data', 'verbatim', 'termo', 'periodo', 'nome', 'sinal', 'se', 'maiores', 'compara', 'comparaSaldos']);
 /** O prefixo que separa, no nome do projeto de uma linha, a família do nome da função ou do ministério. */
 export const PREFIXO_DO_NOME = /** @type {const} */ ({ pt: ' que vai para ', en: ' going to ' });
 /**
@@ -95,10 +95,10 @@ export const FORMAS_DAS_FIGURAS = /** @type {const} */ (['barras-do-livro']);
  * @typedef {string
  *   | { claim: string, sufixo?: string }
  *   | { selo: string, texto?: string }
- *   | { literal: { id: string, campo: string, texto: string, lingua: string|null } }
+ *   | { literal: { id: string, campo: string, texto: string, lingua: string|null, fragmento?: boolean, sufixo?: string } }
  *   | { verbatim: string, texto: string }
  *   | { termo: string, lingua: string }
- *   | { data: { id: string, campo: 'reference_date'|'period', valor: string } }
+ *   | { data: { id: string, campo: 'reference_date'|'period'|'published_at', valor: string } }
  *   | { nome: { id: string, texto: string } }
  * } PedacoDaExplicacao
  * @typedef {{ caminho: string, pedacos: PedacoDaExplicacao[] }} ParagrafoResolvido
@@ -283,6 +283,27 @@ function resolver(partes, lang, onde, ctx) {
       if (!['selo','selo,texto'].includes(Object.keys(o).sort().join(',')) || (o.texto !== undefined && (typeof o.texto !== 'string' || !o.texto.trim() || /\d/.test(o.texto))) || !hasClaim(o.selo)) throw defeito(aqui, 'selo sem linha válida.');
       ctx.linhas.add(o.selo);
       out.push({selo:o.selo,...(o.texto?{texto:o.texto}:{})});
+      return;
+    }
+    // OG1-A6: datas publicadas e fragmentos literais conservam a linha e o campo.
+    if (chave === 'data') {
+      if (Object.keys(o).sort().join(',') !== 'campo,data' || o.campo !== 'published_at') throw defeito(aqui, 'campo de data não autorizado.');
+      const row=getClaim(o.data), valor=row.published_at;
+      if (typeof valor !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(valor)) throw defeito(aqui, 'data publicada ausente.');
+      ctx.linhas.add(o.data);
+      out.push({data:{id:o.data,campo:'published_at',valor}});
+      return;
+    }
+    if (chave === 'fragmento') {
+      if (!['campo,fragmento,texto','campo,fragmento,sufixo,texto'].includes(Object.keys(o).sort().join(',')) || !['excerpt','document.title'].includes(o.campo)) throw defeito(aqui, 'campo de fragmento não autorizado.');
+      const row=getClaim(o.fragmento), original=o.campo==='excerpt'?row.excerpt:/** @type {any} */(row.document)?.title;
+      if (typeof o.texto !== 'string' || !o.texto.trim() || typeof original !== 'string' || !original.includes(o.texto)) throw defeito(aqui, 'fragmento ausente da fonte.');
+      // Um fragmento numérico não pode cortar os algarismos de outro número.
+      if (o.sufixo!==undefined && (typeof o.sufixo!=='string'||/\d/.test(o.sufixo))) throw defeito(aqui, 'sufixo de fragmento inválido.');
+      const pos=original.indexOf(o.texto), antes=original[pos-1]??'', depois=original[pos+o.texto.length]??'';
+      if ((/^\d/.test(o.texto)&&/[\d.,]/.test(antes)) || (/\d$/.test(o.texto)&&/[\d.,]/.test(depois))) throw defeito(aqui, 'fragmento corta um número.');
+      ctx.linhas.add(o.fragmento);
+      out.push({literal:{id:o.fragmento,campo:o.campo,texto:o.texto,lingua:'pt-PT',fragmento:true,...(o.sufixo?{sufixo:o.sufixo}:{})}});
       return;
     }
     if (chave === 'literal') {
@@ -472,7 +493,7 @@ export function textoDosPedacosDaExplicacao(pedacos, lang) {
   return pedacos.map((p) => {
     if (typeof p === 'string') return p;
     if ('selo' in p) return p.texto ?? '';
-    if ('literal' in p) return p.literal.texto;
+    if ('literal' in p) return p.literal.texto+(p.literal.sufixo??'');
     if ('verbatim' in p) return p.texto;
     if ('termo' in p) return p.termo;
     if ('claim' in p) return `${valorNaLingua(getClaim(p.claim), lang)}${p.sufixo ?? ''}`;

@@ -1,3 +1,4 @@
+import {FAMILIAS_OG1} from './nomes-og1.mjs';
 /**
  * O QUE É CADA NÚMERO · as frases das famílias (bloco R4, 05.10.2026, o ponto 2 do brief
  * `design/observatorio/BRIEF-R4-as-palavras-correntes-em-cada-numero.md`).
@@ -13,6 +14,7 @@
  * da medida em `src/data/concelhos.mjs`.
  */
 export const FAMILIAS_DAS_LINHAS = {
+  ...FAMILIAS_OG1,
   "nato-cimeira-haia-2025": {
   "nome": {
     "pt": "Cimeira de Haia em que a NATO assumiu o compromisso",

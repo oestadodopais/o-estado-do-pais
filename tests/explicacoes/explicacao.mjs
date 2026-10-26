@@ -203,6 +203,11 @@ export function folhasDaExplicacao(e) {
       out.push({caminho:`${c}.texto`,pt:a.texto,en:b.texto,ramo});
       return;
     }
+    if ('fragmento' in a) {
+      if(a.fragmento!==b.fragmento||a.campo!==b.campo||a.texto!==b.texto)throw new Error('X1 · fragmentos diferentes');
+      if(typeof a.sufixo==='string')out.push({caminho:`${c}.sufixo`,pt:a.sufixo,en:b.sufixo,ramo});
+      return;
+    }
     if ('claim' in a) {
       if (a.claim !== b.claim) throw new Error(`X1 · as duas edições citam linhas diferentes em ${c}`);
       if (typeof a.sufixo === 'string') out.push({ caminho: `${c}.sufixo`, pt: a.sufixo, en: b.sufixo, ramo });
@@ -244,7 +249,7 @@ export function linhasDaExplicacao(e, linhas) {
     if (Array.isArray(x)) x.forEach(anda);
     else if (x && typeof x === 'object') {
       for (const [k, v] of Object.entries(x)) {
-        if (['claim', 'literal', 'periodo', 'nome', 'sinal', 'selo'].includes(k) && typeof v === 'string') out.add(v);
+        if (['claim', 'literal', 'fragmento', 'data', 'periodo', 'nome', 'sinal', 'selo'].includes(k) && typeof v === 'string') out.add(v);
         else if (['linhas', 'primeiros', 'de', 'maiores', 'compara', 'comparaSaldos'].includes(k) && Array.isArray(v)) v.forEach((id) => typeof id === 'string' && out.add(id));
         else anda(v);
       }
@@ -676,6 +681,8 @@ function textoAqui(partes, lang, linhas) {
   };
   return (Array.isArray(partes) ? partes : [partes]).map((p) => {
     if (typeof p === 'string') return p;
+    if ('fragmento' in p) { const r=linhas.get(p.fragmento), v=p.campo==='excerpt'?r?.excerpt:r?.document?.title; if(typeof v!=='string'||!v.includes(p.texto)) throw new Error('X6 · fragmento ausente'); return p.texto+(p.sufixo??''); }
+    if ('data' in p) return periodoAqui(String(linhas.get(p.data)?.published_at??''),lang)??'';
     if ('literal' in p) {
       const row = linhas.get(p.literal);
       if (p.campo === 'attributed_to') return row.attributed_to.join(' · ');

@@ -19,6 +19,41 @@
  */
 /** @type {Record<string, string>} */
 export const LUGAR_DECLARADO_DAS_LINHAS = {
+  /* OG1-A6: proposta do Orçamento nacional e afirmações sobre essa proposta. */
+  'og1-utao-pib-2026': 'portugal',
+  'og1-utao-saldo-2026': 'portugal',
+  'og1-utao-saldo-me-2027': 'portugal',
+  'og1-utao-divida-2025-revista': 'portugal',
+  'og1-utao-politicas-saldo': 'portugal',
+  'og1-utao-politicas-peso': 'portugal',
+  'og1-utao-juros-variacao': 'portugal',
+  'og1-utao-juros-montante': 'portugal',
+  'og1-utao-taxa-implicita-2026': 'portugal',
+  'og1-utao-taxa-implicita-2027': 'portugal',
+  'og1-utao-novas-saldo': 'portugal',
+  'og1-utao-brent-mf-2027': 'portugal',
+  'og1-utao-brent-contratos-2027': 'portugal',
+  'og1-utao-brent-diferenca': 'portugal',
+  'og1-utao-despesa-liquida-ce': 'portugal',
+  'og1-utao-despesa-liquida-limiar': 'portugal',
+  'og1-utao-despesa-liquida-mf-antes': 'portugal',
+  'og1-utao-despesa-liquida-mf-defesa': 'portugal',
+  'og1-utao-saude-variacao': 'portugal',
+  'og1-utao-saude-sem-prr': 'portugal',
+  'og1-utao-p15': 'portugal',
+  'og1-utao-p42': 'portugal',
+  'og1-ps-abstencao': 'portugal',
+  'og1-pcp-comite': 'portugal',
+  'og1-pcp-raimundo': 'portugal',
+  'og1-be-voto': 'portugal',
+  'og1-il-prioridades': 'portugal',
+  'og1-livre-posicao': 'portugal',
+  'og1-governo-rtp-previsoes': 'portugal',
+  'og1-governo-rtp-combustiveis': 'portugal',
+  'og1-governo-rtp-habitacao': 'portugal',
+  'og1-governo-eco-juros': 'portugal',
+  'og1-governo-observador-saldo': 'portugal',
+
   /* CR2-f, 26.10.2026: seis agregados com geo=EU27_2020, como a dívida
      das famílias da União já declarada abaixo. São as comparações europeias
      dos cartões de Emprego (custo do trabalho), Habitação (licenças), Pobreza
