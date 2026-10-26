@@ -417,8 +417,7 @@ function localizadorV2aConfere(onde, linha) {
     linha.reference_date === '2026-10-09' && d.edition === '2026-10-09' && d.kind === 'html';
 }
 
-/** @param {string} onde @param {ContextoDoLocalizador} [linha] */
-/** OG1-A: o localizador de um rótulo de tabela da UTAO confere com a linha que o traz (página, título, rótulo). */
+/** OG1-A: o localizador de um rótulo de tabela da UTAO confere com a linha que o traz (página, título, rótulo). @param {string} onde @param {ContextoDoLocalizador} [linha] */
 function localizadorOg1Confere(onde, linha) {
   if (!linha || typeof linha.id !== 'string' || !linha.id.startsWith('og1-utao-') || typeof linha.name !== 'string') return false;
   const d = linha.document;
@@ -432,6 +431,7 @@ function localizadorOg1Confere(onde, linha) {
   return codigo ? m[2] === codigo[0] && linha.name === codigo[1] : m[2] === linha.name;
 }
 
+/** @param {string} onde @param {ContextoDoLocalizador} [linha] */
 function localizadorJd1Confere(onde, linha) {
   if (!linha || typeof linha.id !== 'string') return false;
   const id = linha.id, d = linha.document;

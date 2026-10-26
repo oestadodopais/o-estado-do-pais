@@ -599,8 +599,8 @@
       "passagem": "OG1-A10",
       "modelo": "Claude Fable 5.1, o lugar de direção, por guião (nenhum construtor lançado)",
       "fonte": "os registos da sessão (.claude/sessao-2026-10-26/CONFERIR-og1a-2026-10-26.log, CONFERENCIAS-og1-a10-2026-10-26.log, GATE-og1-a10-2026-10-26.log) e o resumo da corrida inteira em _aterragens/og1a-conferir-2026-10-26/resumo.json",
-      "corridas_conferencias": 17,
-      "geracoes": 3,
+      "corridas_conferencias": 28,
+      "geracoes": 4,
       "corridas_inteiras": 1,
       "capturas": 0,
       "chamadas_ferramentas_ate_relatorio": null,
@@ -610,8 +610,8 @@
       "saida": null,
       "pontos": 0.0,
       "tokens_used": null,
-      "ausencias": "Sem construtor nem leitor nesta passagem até à leitura curta; os pontos do Codex não se moveram (0,0).",
-      "o_que": "A corrida inteira do verify na cabeça 46dab82c2 (1 702 s) deu quatro vermelhos que as passagens A a A9 não tinham corrido: check:indice (I1: três linhas de tabela da UTAO com o rótulo no lugar do localizador), check:rotulos (as 33 linhas sem conjunto do livro), check:indice-do-sitio (I7: a porta da discussão abaixo de «O que mudou» repetia o destino da entrada de «O país») e check:lugar (L1: 3 404 páginas contra o teto 3 336). Corrigidos nesta passagem: o gerador do motor escreve name_source do localizador selado (624b651, gate PASS em 806 s), as três linhas reexportadas com as provas; a forma «OG1, rótulo da linha nas tabelas da UTAO» na lista fechada da I1 com a conferência da página e do rótulo e sete plantas por linha; o conjunto og1a (33) nos blocos do livro; a I7 conta só as entradas do índice (a porta da discussão não é uma entrada; a I1 continua a exigir que resolva); o teto da L1 sobe para 3 404 com a medição medir-l1-og1a.mjs (a base lida do dist de main aa4ef6627, as 68 páginas novas e as 16 agravadas justificadas, sete plantas).",
+      "ausencias": "Sem construtor nesta passagem; a leitura curta pelo Opus (leitor, 23:04 a 23:17 UTC, 35 chamadas, 134 285 símbolos) apanhou um Major e quatro Minor; os pontos do Codex não se moveram (0,0).",
+      "o_que": "A corrida inteira do verify na cabeça 46dab82c2 (1 702 s) deu quatro vermelhos que as passagens A a A9 não tinham corrido: check:indice (I1: três linhas de tabela da UTAO com o rótulo no lugar do localizador), check:rotulos (as 33 linhas sem conjunto do livro), check:indice-do-sitio (I7: a porta da discussão abaixo de «O que mudou» repetia o destino da entrada de «O país») e check:lugar (L1: 3 404 páginas contra o teto 3 336). Corrigidos nesta passagem: o gerador do motor escreve name_source do localizador selado (624b651, gate PASS em 806 s), as três linhas reexportadas com as provas; a forma «OG1, rótulo da linha nas tabelas da UTAO» na lista fechada da I1 com a conferência da página e do rótulo e sete plantas por linha; o conjunto og1a (33) nos blocos do livro; a I7 conta só as entradas do índice (a porta da discussão não é uma entrada; a I1 continua a exigir que resolva); o teto da L1 sobe para 3 404 com a medição medir-l1-og1a.mjs (a base lida do dist de main aa4ef6627, as 68 páginas novas e as 16 agravadas justificadas, sete plantas). A leitura curta (M48) apanhou que name_source se imprime no recibo e nos descarregáveis e que as conferências tinham corrido sobre o dist/ de 46dab82c2: a aterragem das 23:09 foi parada antes do portão acabar, o sítio construído de novo na cabeça fundida f3d52de84 (368 s), o gate:html e as conferências do dist/ corridas sobre ela (todas a zero), os seis recibos lidos nas duas edições, a I7 reposta a ler as entradas só na sua conta, a medição da L1 a conferir as razões na própria página (oito plantas, o dist/ medido registado) e o relatório corrigido.",
       "corridas": [
         {
           "nome": "corrida inteira do verify (conferir-tudo --sem-build, cabeça 46dab82c2)",
@@ -718,6 +718,56 @@
             "npm",
             "run",
             "<cada um>"
+          ]
+        },
+        {
+          "nome": "construção na cabeça fundida f3d52de84 (depois da leitura curta)",
+          "codigo": 0,
+          "duracao_segundos": 368,
+          "comando": [
+            "npm",
+            "run",
+            "build"
+          ]
+        },
+        {
+          "nome": "gate:html sobre o dist/ da cabeça",
+          "codigo": 0,
+          "duracao_segundos": 54,
+          "comando": [
+            "npm",
+            "run",
+            "gate:html"
+          ]
+        },
+        {
+          "nome": "check:discussao, check:rotulos, check:lugar, check:indice, check:cartao, ledger:check, check:registo, typecheck sobre o dist/ da cabeça",
+          "codigo": 0,
+          "duracao_segundos": 143,
+          "comando": [
+            "npm",
+            "run",
+            "<cada um>"
+          ]
+        },
+        {
+          "nome": "check:indice-do-sitio (a declaração das entradas reposta)",
+          "codigo": 0,
+          "duracao_segundos": null,
+          "comando": [
+            "npm",
+            "run",
+            "check:indice-do-sitio"
+          ]
+        },
+        {
+          "nome": "medição da L1 sobre o dist/ da cabeça (oito plantas)",
+          "codigo": 0,
+          "duracao_segundos": null,
+          "comando": [
+            "node",
+            "design/especime-v3/medicoes/og1-a-2026-10-26/medir-l1-og1a.mjs",
+            "--escrever"
           ]
         }
       ]

@@ -1,5 +1,8 @@
 {
   "comando": "AMOSTRA=5000 node scripts/check-lugar.mjs",
+  "cabeca": {
+    "dist_commit": "f3d52de84ec87e3e286fe77aaa8b21cfe2da0059"
+  },
   "base": {
     "worktree_commit": "aa4ef66276af3fc20bfeceaca7c430a82ec88e83",
     "paginas": 3336,
@@ -17,37 +20,37 @@
     "/en/explainers/dinheiro-do-estado-2026": {
       "antes": 16,
       "agora": 17,
-      "razao": "a segunda porta da discussão"
+      "razao": "a segunda porta da discussão (a da Saúde já lá estava; o destino repetido a mais é /en/under-discussion)"
     },
     "/en/ledger/afirmacao-leitao-amaro-saude-oe2027-2026-10-09": {
       "antes": 2,
       "agora": 3,
-      "razao": "a segunda porta da discussão"
+      "razao": "a segunda porta da discussão (a da Saúde já lá estava; o destino repetido a mais é /en/under-discussion)"
     },
     "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-2027": {
       "antes": 1,
       "agora": 2,
-      "razao": "a segunda porta da discussão"
+      "razao": "a segunda porta da discussão (a da Saúde já lá estava; o destino repetido a mais é /en/under-discussion)"
     },
     "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026": {
       "antes": 1,
       "agora": 2,
-      "razao": "a segunda porta da discussão"
+      "razao": "a segunda porta da discussão (a da Saúde já lá estava; o destino repetido a mais é /en/under-discussion)"
     },
     "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027": {
       "antes": 1,
       "agora": 2,
-      "razao": "a segunda porta da discussão"
+      "razao": "a segunda porta da discussão (a da Saúde já lá estava; o destino repetido a mais é /en/under-discussion)"
     },
     "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao": {
       "antes": 1,
       "agora": 2,
-      "razao": "a segunda porta da discussão"
+      "razao": "a segunda porta da discussão (a da Saúde já lá estava; o destino repetido a mais é /en/under-discussion)"
     },
     "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-variacao": {
       "antes": 1,
       "agora": 2,
-      "razao": "a segunda porta da discussão"
+      "razao": "a segunda porta da discussão (a da Saúde já lá estava; o destino repetido a mais é /en/under-discussion)"
     },
     "/en/under-discussion": {
       "antes": 77,
@@ -57,37 +60,37 @@
     "/explicacoes/dinheiro-do-estado-2026": {
       "antes": 16,
       "agora": 17,
-      "razao": "a segunda porta da discussão"
+      "razao": "a segunda porta da discussão (a da Saúde já lá estava; o destino repetido a mais é /o-que-se-discute)"
     },
     "/livro-razao/afirmacao-leitao-amaro-saude-oe2027-2026-10-09": {
       "antes": 2,
       "agora": 3,
-      "razao": "a segunda porta da discussão"
+      "razao": "a segunda porta da discussão (a da Saúde já lá estava; o destino repetido a mais é /o-que-se-discute)"
     },
     "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-2027": {
       "antes": 1,
       "agora": 2,
-      "razao": "a segunda porta da discussão"
+      "razao": "a segunda porta da discussão (a da Saúde já lá estava; o destino repetido a mais é /o-que-se-discute)"
     },
     "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026": {
       "antes": 1,
       "agora": 2,
-      "razao": "a segunda porta da discussão"
+      "razao": "a segunda porta da discussão (a da Saúde já lá estava; o destino repetido a mais é /o-que-se-discute)"
     },
     "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027": {
       "antes": 1,
       "agora": 2,
-      "razao": "a segunda porta da discussão"
+      "razao": "a segunda porta da discussão (a da Saúde já lá estava; o destino repetido a mais é /o-que-se-discute)"
     },
     "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao": {
       "antes": 1,
       "agora": 2,
-      "razao": "a segunda porta da discussão"
+      "razao": "a segunda porta da discussão (a da Saúde já lá estava; o destino repetido a mais é /o-que-se-discute)"
     },
     "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-variacao": {
       "antes": 1,
       "agora": 2,
-      "razao": "a segunda porta da discussão"
+      "razao": "a segunda porta da discussão (a da Saúde já lá estava; o destino repetido a mais é /o-que-se-discute)"
     },
     "/o-que-se-discute": {
       "antes": 77,
@@ -465,7 +468,11 @@
     {
       "nome": "contagem diferente da régua",
       "mordeu": true
+    },
+    {
+      "nome": "recibo novo com outro par",
+      "mordeu": true
     }
   ],
-  "razao": "A L1 da cabeça da fase A enumera exatamente as 3336 páginas da base (main aa4ef6627, o dist/ da aterragem dos registos de 26.10.2026) mais 68 páginas novas: os 66 recibos das 33 linhas do item do Orçamento de 2027 nas duas edições (o par que todos os recibos trazem, a porta do Método no rótulo e no recibo) e as duas páginas do índice, onde «O que mudou» lista pela primeira vez linhas de um item e a porta da discussão abaixo da lista é a segunda porta para a página do item. As duas páginas do item já estavam na base. Nenhuma página antiga entrou ou saiu; as 16 páginas antigas que passaram a ter um destino repetido a mais («agravadas») são as que já tinham a porta do item da Saúde e ganharam a do item do Orçamento (duas portas para duas âncoras da mesma página) e as duas páginas do item, que crescem exatamente pelo que o artigo novo repete; nenhuma piorou por outra razão. O horizonte continua a zero."
+  "razao": "A L1 da cabeça da fase A enumera exatamente as 3336 páginas da base (main aa4ef6627, o dist/ da aterragem dos registos de 26.10.2026) mais 68 páginas novas: os 66 recibos das 33 linhas do item do Orçamento de 2027 nas duas edições (o par que todos os recibos trazem, a porta do Método no rótulo e no recibo, conferido no exemplo da régua) e as duas páginas do índice, onde «O que mudou» lista pela primeira vez linhas de um item e a porta da discussão abaixo da lista é a segunda porta para a página do item (conferido na própria página, com e sem a porta). As duas páginas do item já estavam na base. Nenhuma página antiga entrou ou saiu; as 16 páginas antigas que passaram a ter um destino repetido a mais («agravadas») são as que já tinham a porta do item da Saúde e ganharam a do item do Orçamento (duas portas para duas âncoras da mesma página; o destino repetido a mais é a página do item, conferido na própria página com e sem a porta) e as duas páginas do item, que crescem exatamente pelo que o artigo novo repete; nenhuma piorou por outra razão. O horizonte continua a zero."
 }

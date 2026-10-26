@@ -143,13 +143,13 @@ function portasDoIndice(doc, lang) {
   if (!main) return { portas: [], seccoes: [], todas: [], entradas: [] };
   const dispensada = (a) => a.closest('[data-rotulo-ia="topo"]') !== null;
   const todas = main.querySelectorAll('a[href]').filter((a) => !dispensada(a));
-  // AS ENTRADAS DO ÍNDICE são tudo menos as portas da discussão («O que se discute sobre isto →»,
-  // `[data-discussao-integracao]`), que nascem das linhas que a página imprime, como a lista das mudanças, e
-  // não são entradas: a primeira vez que «O que mudou» listou linhas de um item (o Orçamento de 2027,
-  // 26.10.2026) a porta repetiu o destino da entrada de «O país». A I1 continua a exigir que a porta resolva
-  // (`todas`), e a I7 continua a recusar duas ENTRADAS para o mesmo destino (`entradas`).
+  const portas = todas.filter((a) => a.closest('[data-mudou-ambito]') === null);
+  // AS ENTRADAS, só para a I7: tudo menos as portas da discussão («O que se discute sobre isto →»,
+  // `[data-discussao-integracao]`), que nascem das linhas que a página imprime e não são entradas do índice. A
+  // primeira vez que «O que mudou» listou linhas de um item (o Orçamento de 2027, 26.10.2026) a porta repetiu o
+  // destino da entrada de «O país». A I1 continua a exigir que a porta resolva (`todas`), a I2 e a I3 continuam
+  // a ler `portas` como antes, e a I7 continua a recusar duas ENTRADAS para o mesmo destino.
   const entradas = todas.filter((a) => a.closest('[data-discussao-integracao]') === null);
-  const portas = entradas.filter((a) => a.closest('[data-mudou-ambito]') === null);
   return { portas, todas, entradas, seccoes: main.querySelectorAll('[data-indice-seccao]').map((s) => s.getAttribute('data-indice-seccao')) };
 }
 
