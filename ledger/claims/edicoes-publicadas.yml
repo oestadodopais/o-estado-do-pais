@@ -47,5 +47,5 @@ corrections:
     kind: "atualizacao"
     old_value: "27"
     new_value: "29"
-    reason: "Entrada do estudo da habitação, «A casa em Portugal e na Europa», e das suas edições portuguesa e inglesa, publicadas a 26.10.2026 pela data declarada, contada no registo do arquivo."
-    reason_en: "The housing study, «A casa em Portugal e na Europa», and its Portuguese and English editions, published on 26.10.2026 by their declared date, entered the archive, counted from its registry."
+    reason: "Entrada do estudo da habitação e das suas edições portuguesa e inglesa, publicadas a 26.10.2026 pela data declarada, contada no registo do arquivo."
+    reason_en: "The housing study and its Portuguese and English editions, published on 26.10.2026 by their declared date, entered the archive, counted from its registry."
