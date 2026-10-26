@@ -1,0 +1,42 @@
+
+> o-estado-do-pais@0.1.0 check:voz
+> node scripts/check-voz.mjs
+
+  B1: 38 páginas pela lista fechada; 8 temas conferidos.
+  EX1: 10 página(s) com as palavras das explicações e as frases da semana conferidas pelas suas células.
+
+[31m  PORTÃO DA VOZ · 19 problema(s)
+[0m
+[31m    · [0mB1 lista fechada: estudos/a-casa-em-portugal-e-na-europa: «Housing cost overburden rate».
+[31m    · [0mB1 lista fechada: estudos/a-casa-em-portugal-e-na-europa: «Housing cost overburden rate».
+[31m    · [0mB1 lista fechada: en/studies/a-casa-em-portugal-e-na-europa: «Housing cost overburden rate».
+[31m    · [0mB1 lista fechada: en/studies/a-casa-em-portugal-e-na-europa: «Housing cost overburden rate».
+[31m    · [0mbloco por classificar em /en/housing: «House prices in Portugal rose more than in any country of the Union since , and the average household spends less on housing than the European average: the weight falls on those renting at market prices, % of whom are overburdened, and on the young, who leave their parents&#39; home at years.»
+[31m    · [0mbloco por classificar em /en/housing: «Portugal Housing Edition in preparation»
+[31m    · [0mbloco por classificar em /en/ledger: «3 566 claims · 427 of 3 566 calculated · 2 767 of 3 566 municipality rows»
+[31m    · [0mbloco por classificar em /habitacao: «Os preços das casas em Portugal subiram mais do que em qualquer país da União desde , e a família média gasta na casa menos do que a média europeia: o peso cai sobre quem arrenda a preços de mercado, % dos quais estão em sobrecarga, e sobre os jovens, que saem de casa dos pais aos anos.»
+[31m    · [0mbloco por classificar em /habitacao: «Portugal Habitação Edição em preparação»
+[31m    · [0mbloco por classificar em /livro-razao: «3 566 afirmações · 427 de 3 566 calculadas · 2 767 de 3 566 linhas de concelhos»
+[31m    · [0mdesign/especime-v3/INVENTARIO-FRASES.md:4754: linha «viva» que não se rende em rota nenhuma. Ou a frase mudou e a linha ficou para trás, ou a rota saiu: nos dois casos a linha sai do ficheiro, ou passa a «retirada» com a razão escrita.
+      «3 557 afirmações · 423 de 3 557 calculadas · 2 767 de 3 557 linhas de concelhos»
+[31m    · [0mdesign/especime-v3/INVENTARIO-FRASES.md:4755: linha «viva» que não se rende em rota nenhuma. Ou a frase mudou e a linha ficou para trás, ou a rota saiu: nos dois casos a linha sai do ficheiro, ou passa a «retirada» com a razão escrita.
+      «3 557 claims · 423 of 3 557 calculated · 2 767 of 3 557 municipality rows»
+[31m    · [0mdesign/especime-v3/INVENTARIO-FRASES.md:4756: linha «viva» que não se rende em rota nenhuma. Ou a frase mudou e a linha ficou para trás, ou a rota saiu: nos dois casos a linha sai do ficheiro, ou passa a «retirada» com a razão escrita.
+      «Descontada a inflação, o índice dos preços da habitação em é de em Portugal e na União, com igual a cem. Entre»
+[31m    · [0mdesign/especime-v3/INVENTARIO-FRASES.md:4758: linha «viva» que não se rende em rota nenhuma. Ou a frase mudou e a linha ficou para trás, ou a rota saiu: nos dois casos a linha sai do ficheiro, ou passa a «retirada» com a razão escrita.
+      «Net of inflation, the index of housing prices in is in Portugal and in the Union, with equal to one hundred. A»
+[31m    · [0mdesign/especime-v3/INVENTARIO-FRASES.md:4759: linha «viva» que não se rende em rota nenhuma. Ou a frase mudou e a linha ficou para trás, ou a rota saiu: nos dois casos a linha sai do ficheiro, ou passa a «retirada» com a razão escrita.
+      «Portugal Habitação publicado a»
+[31m    · [0mdesign/especime-v3/INVENTARIO-FRASES.md:4760: linha «viva» que não se rende em rota nenhuma. Ou a frase mudou e a linha ficou para trás, ou a rota saiu: nos dois casos a linha sai do ficheiro, ou passa a «retirada» com a razão escrita.
+      «Portugal Housing published on»
+[31m    · [0mdesign/especime-v3/INVENTARIO-FRASES.md:3017: FRASE RETIRADA QUE VOLTOU A RENDER-SE.
+      razão da retirada: HB1: a nova entrada e as contagens medidas substituem esta cadeia na construção.
+      «Évora Governo e democracia publicado a»
+[31m    · [0mdesign/especime-v3/INVENTARIO-FRASES.md:3018: FRASE RETIRADA QUE VOLTOU A RENDER-SE.
+      razão da retirada: HB1: a nova entrada e as contagens medidas substituem esta cadeia na construção.
+      «Évora Government and democracy published on»
+[31m    · [0mPALAVRA PROIBIDA «a casa» em 2 página(s) da superfície.
+      primeiro: estudos/index.html
+      «…qualquer país da União desde 2015, e a família média gasta na casa menos do que a média europeia: o peso cai sobre quem arrend…»
+      escreve-se «este projeto» ou «O Estado do País» · em português «casa» é a habitação, que é uma das coisas que este projeto mede (decisão do diretor de 15.09.2026 às 16:35 UTC; norma §1.3)
+

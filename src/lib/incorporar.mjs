@@ -8,7 +8,7 @@ import { linguaDaFonte } from '../i18n/lingua-dos-titulos.mjs';
 import { t } from '../i18n/strings.mjs';
 import { LICENCA } from '../data/licenca.mjs';
 import { SITE_HOST_DISPLAY } from '../../site.config.mjs';
-import { provenienciaIncompleta } from './ledger.mjs';
+import { provenienciaIncompleta, paginaSoComEdicao } from './ledger.mjs';
 import { leituraDaIncorporacao } from './leitura-da-incorporacao.mjs';
 import { caminhoDaLinha } from './livro.mjs';
 import { textoDocumentalConferido, valorImpressoDoPainelConferido } from './prova-efeitos.mjs';
@@ -23,6 +23,12 @@ export function escaparIncorporacao(valor) {
  * @param {any} c */
 export function podeIncorporar(c) {
   return !!c && !provenienciaIncompleta(c);
+}
+
+/** A frase de um rótulo dentro de outra frase começa em minúscula.
+ * @param {string} texto */
+function minusculaInicial(texto) {
+  return texto.charAt(0).toLocaleLowerCase('pt-PT') + texto.slice(1);
 }
 
 /** @param {any} c @param {'pt'|'en'} lang */
@@ -46,7 +52,12 @@ export function dadosDaIncorporacao(c, lang) {
     lang === 'en' ? c.ressalva_en : c.ressalva].filter(Boolean).join(' ');
   return {
     nome: nome + (lugar ? ` · ${lugar.nome}` : ''),
-    periodo: (c.period ?? c.reference_date) ? dataDaCasa(c.period ?? c.reference_date, lang) : s.periodoEmFalta,
+    /* HB1-g (22.10.2026): numa linha que só declara a última edição de uma página, a data
+       diz-se com o seu nome (a frase do bloco «O que foi conferido», em minúscula inicial)
+       e não ocupa o lugar do período. */
+    periodo: paginaSoComEdicao(c)
+      ? `${minusculaInicial(t(lang).livro.linha.editadoEmK)} ${dataDaCasa(c.published_at, lang)}`
+      : (c.period ?? c.reference_date) ? dataDaCasa(c.period ?? c.reference_date, lang) : s.periodoEmFalta,
     valor: String(c.value), unidade: unidadeNoValor ? '' : unidade.texto, unidadeLang: unidade.lingua ?? t(lang).lang,
     fonte, fonteLang: (c.source ? linguaDaFonte(c.source, lang) : null) ?? t(lang).lang,
     data, leitura: leituraDaIncorporacao(c, lang, data),

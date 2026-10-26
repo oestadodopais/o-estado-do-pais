@@ -1,0 +1,13 @@
+import assert from 'node:assert/strict';
+import {loadClaims} from '../../src/lib/ledger.mjs';
+import {LINGUA_DOS_ROTULOS} from '../../src/i18n/lingua-dos-titulos.mjs';
+import {conferirRotulosDaLingua} from '../../scripts/rotulos-da-lingua.mjs';
+const lines=[...loadClaims().values()],declared=LINGUA_DOS_ROTULOS;
+assert.deepEqual(conferirRotulosDaLingua(lines,declared).erros,[]);
+const target=lines.find(c=>c.name_en&&c.name_en!==c.name&&lines.filter(x=>x.name_en===c.name_en||x.name===c.name_en).length===1);
+assert(target,'falta controlo de nome inglês distinto e único');
+const missing={...declared};delete missing[target.name_en];
+assert(conferirRotulosDaLingua(lines,missing).erros.some(e=>e.includes('não tem língua declarada')));
+const orphan=lines.map(c=>c===target?{...c,name_en:undefined}:c);
+assert(conferirRotulosDaLingua(orphan,declared).erros.some(e=>e.includes('nenhuma linha do livro-razão traz')));
+console.log('HB1 língua: name_en sem declaração e declaração inglesa órfã recusados; vermelho 1, verde 0.');

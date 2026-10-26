@@ -1,0 +1,181 @@
+{
+  "code": 0,
+  "totals": [
+    {
+      "dataset": "ilc_lvho07c",
+      "updated": "2026-10-20T23:00:00+0200",
+      "values": {
+        "PT": "6.2",
+        "EU27_2020": "7.7"
+      },
+      "accessed": "2026-10-21T00:08:06.429315+00:00",
+      "sha256": "7310cd96ce090cd8e488c715c0e5c43ae7d7d0833763e4bc4a9fd91c602c7f64"
+    },
+    {
+      "dataset": "tespm140",
+      "updated": "2026-10-20T11:00:00+0200",
+      "values": {
+        "PT": "6.3",
+        "EU27_2020": "7.7"
+      },
+      "accessed": "2026-10-21T00:08:07.935699+00:00",
+      "sha256": "1a6506dbefe39efa0d97ce2fa561bc40e31e7e387a042ba3263a2cee5b6a0a4d"
+    }
+  ],
+  "coverage": [
+    {
+      "dataset": "ilc_lvho07c",
+      "coordinates": {
+        "freq": "A",
+        "unit": "PC",
+        "tenure": "TOTAL",
+        "time": "2025"
+      },
+      "countries_with_value": 27,
+      "absent": []
+    },
+    {
+      "dataset": "ilc_lvho07c",
+      "coordinates": {
+        "freq": "A",
+        "unit": "PC",
+        "tenure": "OWN_L",
+        "time": "2025"
+      },
+      "countries_with_value": 27,
+      "absent": []
+    },
+    {
+      "dataset": "ilc_lvho07c",
+      "coordinates": {
+        "freq": "A",
+        "unit": "PC",
+        "tenure": "OWN_NL",
+        "time": "2025"
+      },
+      "countries_with_value": 27,
+      "absent": []
+    },
+    {
+      "dataset": "ilc_lvho07c",
+      "coordinates": {
+        "freq": "A",
+        "unit": "PC",
+        "tenure": "RENT_FR",
+        "time": "2025"
+      },
+      "countries_with_value": 26,
+      "absent": [
+        "DK"
+      ]
+    },
+    {
+      "dataset": "ilc_lvho07a",
+      "coordinates": {
+        "freq": "A",
+        "unit": "PC",
+        "rskpovth": "TOTAL",
+        "age": "Y16-29",
+        "sex": "T",
+        "time": "2025"
+      },
+      "countries_with_value": 26,
+      "absent": [
+        "DK"
+      ]
+    },
+    {
+      "dataset": "ilc_mdho06a",
+      "coordinates": {
+        "freq": "A",
+        "unit": "PC",
+        "rskpovth": "TOTAL",
+        "sex": "T",
+        "age": "TOTAL",
+        "time": "2023"
+      },
+      "countries_with_value": 26,
+      "absent": [
+        "IE"
+      ]
+    },
+    {
+      "dataset": "ilc_mdho06a",
+      "coordinates": {
+        "freq": "A",
+        "unit": "PC",
+        "rskpovth": "TOTAL",
+        "sex": "T",
+        "age": "Y16-29",
+        "time": "2023"
+      },
+      "countries_with_value": 26,
+      "absent": [
+        "IE"
+      ]
+    },
+    {
+      "dataset": "prc_hpi_q",
+      "coordinates": {
+        "freq": "Q",
+        "purchase": "TOTAL",
+        "unit": "I15_Q",
+        "time": "2026-Q2"
+      },
+      "countries_with_value": 26,
+      "absent": [
+        "EL"
+      ]
+    },
+    {
+      "dataset": "prc_hpi_q",
+      "coordinates": {
+        "freq": "Q",
+        "purchase": "TOTAL",
+        "unit": "RCH_Q",
+        "time": "2026-Q2"
+      },
+      "countries_with_value": 26,
+      "absent": [
+        "EL"
+      ]
+    },
+    {
+      "dataset": "prc_hpi_q",
+      "coordinates": {
+        "freq": "Q",
+        "purchase": "TOTAL",
+        "unit": "RCH_A",
+        "time": "2026-Q2"
+      },
+      "countries_with_value": 26,
+      "absent": [
+        "EL"
+      ]
+    },
+    {
+      "dataset": "ilc_lvho07c",
+      "coordinates": {
+        "freq": "A",
+        "unit": "PC",
+        "tenure": "RENT_MKT",
+        "time": "2025"
+      },
+      "countries_with_value": 27,
+      "absent": []
+    }
+  ],
+  "forms": {
+    "euronews": "A",
+    "tents": "A",
+    "deprivation": "A",
+    "rental_committee": "A",
+    "overburden": "B"
+  },
+  "limitations": [
+    "As duas publicações do Eurostat foram atualizadas no mesmo dia, a horas diferentes.",
+    "O corpo novo ilc_lvho07c tem valores para a Dinamarca em 2025 e vinte e sete Estados-membros; a frase mandatada de ausência não se confirma.",
+    "A página do calendário do INE não declara data de edição."
+  ],
+  "derived_rows": 20
+}

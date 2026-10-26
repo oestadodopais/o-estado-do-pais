@@ -1,0 +1,49 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "hab-ine-vagos-total"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "723 215"
+unit: "alojamentos"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "alojamentos vagos"
+name_source: "HTML; início literal único"
+measure: "alojamentos vagos"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "INE"
+document:
+  title: "Revista Eletrónica do INE - agosto de 2024"
+  edition: "2021"
+  locator: "HTML; início literal único"
+  source_sha256: "59195c01c07d9c46fdd79176c1be00c2b63e4395a81bd98df63938b530e3e69d"
+  kind: "html"
+source_url: "https://www.ine.pt/ine_novidades/semin/INEWS60/82-83/"
+access_date: "2026-10-19"
+reference_date: "2021"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "Dos 5 970 677 alojamentos familiares clássicos que constituíam o parque habitacional, 69,4% encontravam-se ocupados como residência habitual (4 142 581 alojamentos). As residências secundárias representavam 18,5% do total de alojamentos (1 104 881 alojamentos) e os alojamentos vagos 12,1% (723 215 alojamentos)."
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+# A quem o valor é creditado. Lista de entidades, ou campo nenhum.
+attributed_to:
+  - "INE"
+
+study: "a-casa-em-portugal-e-na-europa"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Revista do INE, páginas 82 e 83, Censos 2021. Número diretamente publicado; não calculado pela soma. Universo: alojamentos familiares clássicos vagos dos Censos 2021; o excerto inclui a definição do parque habitacional. · Cruzado de ResearchHub content/23 Habitacao · hab-ine-vagos-total."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

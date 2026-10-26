@@ -1,0 +1,6 @@
+{
+  "codigo": 0,
+  "comando": "sh scripts/leituras/capturar-pelo-escrivao.sh <temporario>/hb1b-pedido-capturas-8.json <temporario>/hb1b-capturas-8",
+  "saida": "capturas código 0; ok: true; capturas: 20; falhas: []",
+  "cabeca": "3474743dc3d1b3241a584c58141f3fa53f5bc08e"
+}

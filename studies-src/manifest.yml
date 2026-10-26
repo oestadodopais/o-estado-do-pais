@@ -407,3 +407,25 @@ edicoes:
     bytes_normalized: 46763
     sha256_raw: "eb77d5f73016b45c939a17f0502dd074ffc5740f8a3173ef0debe36d32093979"
     sha256_normalized: "eb77d5f73016b45c939a17f0502dd074ffc5740f8a3173ef0debe36d32093979"
+  - slug: a-casa-em-portugal-e-na-europa
+    lang: "pt"
+    title: "A casa em Portugal e na Europa"
+    origin: "researchhub"
+    origin_ref: "content/28 Habitacao Estudo/A casa em Portugal e na Europa.html @ 22c3e5acfb13beb15c9e5d5857ce3649648930d1"
+    raw_file: "_raw/a-casa-em-portugal-e-na-europa.pt.html"
+    fetched_utc: "2026-10-26T13:28:16Z"
+    bytes_raw: 34100
+    bytes_normalized: 34100
+    sha256_raw: "ed560088a00832c06d24f956edfd9f3b922da9c2bbf81a137a8964332531c07f"
+    sha256_normalized: "ed560088a00832c06d24f956edfd9f3b922da9c2bbf81a137a8964332531c07f"
+  - slug: a-casa-em-portugal-e-na-europa
+    lang: "en"
+    title: "Housing in Portugal and in Europe"
+    origin: "researchhub"
+    origin_ref: "content/28 Habitacao Estudo/Housing in Portugal and in Europe.html @ 22c3e5acfb13beb15c9e5d5857ce3649648930d1"
+    raw_file: "_raw/a-casa-em-portugal-e-na-europa.en.html"
+    fetched_utc: "2026-10-26T13:28:16Z"
+    bytes_raw: 33800
+    bytes_normalized: 33800
+    sha256_raw: "fc7fe5c8fb130d79bb06cdb347e3dde9c0d82b8b5ec42f866aad570e9446a1d5"
+    sha256_normalized: "fc7fe5c8fb130d79bb06cdb347e3dde9c0d82b8b5ec42f866aad570e9446a1d5"

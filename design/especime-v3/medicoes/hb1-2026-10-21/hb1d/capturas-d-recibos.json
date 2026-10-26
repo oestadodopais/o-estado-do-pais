@@ -1,0 +1,302 @@
+{
+  "cabeca": "0b7e58cd2029963316ec74569f5a4f97fd2f3104",
+  "capturador_sha256": "0befc596ce06466e936573ac45841b8cc16391fb39efc0cc3a54001bc156d812",
+  "larguras": [
+    390
+  ],
+  "resultados": [
+    {
+      "ficheiro": "recibo-preco-mediano-pt-390.png",
+      "rota": "/livro-razao/hab-ine-preco-mediano",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3635,
+      "sha256": "d9cf06407caa15e6419275697384a83ad88ce08d3bb26f9f0941bfd8508bcf58",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-preco-mediano-en-390.png",
+      "rota": "/en/ledger/hab-ine-preco-mediano",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3611,
+      "sha256": "943cbfc26b40399559e2b3211ac6c7b9714458929aef5be44029261eb911d798",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-preco-lisboa-pt-390.png",
+      "rota": "/livro-razao/hab-ine-preco-lisboa",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3808,
+      "sha256": "2e2fe3ca720aaa2baba22689798023565730ea55c5068c796ed47f2bef27f40f",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-preco-lisboa-en-390.png",
+      "rota": "/en/ledger/hab-ine-preco-lisboa",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3784,
+      "sha256": "f43c39e74abcb7a38d703a5536f2aba782a6b7e760f1150abad5c40e4eaf6d9e",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-preco-porto-pt-390.png",
+      "rota": "/livro-razao/hab-ine-preco-porto",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3547,
+      "sha256": "0cb65219d633f664911ab1de3ad6f5005a96169c75042e281afe55a632e5e43c",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-preco-porto-en-390.png",
+      "rota": "/en/ledger/hab-ine-preco-porto",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3540,
+      "sha256": "2526bfab31e4b8e07d65f5e3b7c35d76c27e080a107c3efc6a3fc3cc652993f3",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-juro-implicito-pt-390.png",
+      "rota": "/livro-razao/hab-ine-juro-implicito",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3412,
+      "sha256": "7a34aee55738e567c905210b951ff1b14a6eaac023258cf9b4b4379803e972e2",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-juro-implicito-en-390.png",
+      "rota": "/en/ledger/hab-ine-juro-implicito",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3435,
+      "sha256": "a13ea2acc9d44c15690cd98af3898eba3a6cd763e7066271e3b1674d0c8efbad",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "serie-precos-da-habitacao-pt-390.png",
+      "rota": "/livro-razao/series/serie-precos-da-habitacao-variacao-homologa",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3194,
+      "toque": {
+        "encontrado": true,
+        "ultimo": false,
+        "ativo": "4.º trimestre de 2016: 7,6 %",
+        "etiqueta": "7,6 %4.º trimestre de 2016",
+        "etiquetaDentro": {
+          "dentroDoSvg": {
+            "horizontal": true,
+            "vertical": true,
+            "svg": {
+              "left": 18,
+              "right": 372,
+              "top": 351.36,
+              "bottom": 548.02
+            },
+            "transform": null
+          },
+          "forma": "svg",
+          "horizontal": true,
+          "vertical": true,
+          "caixa": {
+            "left": 236.67,
+            "right": 354.29,
+            "top": 361.99,
+            "bottom": 389.76
+          },
+          "janela": {
+            "largura": 390,
+            "altura": 900
+          }
+        },
+        "geometria": {
+          "xDoToqueNoViewBox": 180,
+          "maisProximo": {
+            "periodo": "4.º trimestre de 2016",
+            "cx": 180.087
+          },
+          "ativoPeriodo": "4.º trimestre de 2016",
+          "bate": true
+        }
+      },
+      "sha256": "acf2b905b12aaf38d58049e2caf9e9dd9ab957816d2f35c62ebaa91c2f824ffa",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "serie-precos-da-habitacao-en-390.png",
+      "rota": "/en/ledger/series/serie-precos-da-habitacao-variacao-homologa",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3242,
+      "toque": {
+        "encontrado": true,
+        "ultimo": false,
+        "ativo": "4th quarter of 2016: 7,6 %",
+        "etiqueta": "7,6 %4th quarter of 2016",
+        "etiquetaDentro": {
+          "dentroDoSvg": {
+            "horizontal": true,
+            "vertical": true,
+            "svg": {
+              "left": 18,
+              "right": 372,
+              "top": 351.36,
+              "bottom": 548.02
+            },
+            "transform": null
+          },
+          "forma": "svg",
+          "horizontal": true,
+          "vertical": true,
+          "caixa": {
+            "left": 246.15,
+            "right": 354.29,
+            "top": 361.99,
+            "bottom": 389.76
+          },
+          "janela": {
+            "largura": 390,
+            "altura": 900
+          }
+        },
+        "geometria": {
+          "xDoToqueNoViewBox": 180,
+          "maisProximo": {
+            "periodo": "4th quarter of 2016",
+            "cx": 180.087
+          },
+          "ativoPeriodo": "4th quarter of 2016",
+          "bate": true
+        }
+      },
+      "sha256": "69bb0442edc2be68771ca9e3abeec67d28bb0fc55151f23a6994f61a81efa403",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "primeira-pt-390.png",
+      "rota": "/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 8430,
+      "sha256": "19e3ab1a67978a750ef23d37a34456953de4c809613ab4de4cc4cc386f7d3d6c",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "primeira-en-390.png",
+      "rota": "/en/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 8310,
+      "sha256": "6b8ce59e6c24e75f8eb47b359da047dfdac5628d55e67e08ef3b64b5ed689c7e",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    }
+  ],
+  "recursos": {
+    "version.json": "1d4b5a7f0e2e55a011cc527a4805f4118f05617307fd6564651fce4a2e461c8d",
+    "livro-razao/hab-ine-preco-mediano/index.html": "365074745a195932759402517b2ca072fbdbe9bc30ccf40e48e1c9fe96847d1f",
+    "tipos/spectral/Spectral-Regular.woff2": "3c846b032ad614e02ebc439087bbcbb7371cfbdea6c8a4b568efa859537e9c43",
+    "tipos/bitter/Bitter[wght].woff2": "b4ad17520d0ce8bd1aa98af06e07ca94145522f868b5a010732eb5eee3ba2ea0",
+    "_astro/Base.CQ2WVYKH.css": "413aa149b5d8f4c49fbedde1b385476bf7766e5886b0731be4e0dc5fada4667b",
+    "_astro/linha.Dd7n1KyQ.css": "583639d016c39485e899ae4fffc401e64d1489306f153b3670a730698057d772",
+    "js/copiar-incorporacao.js": "b75e5f90efcd85ea94274191e44a48594932638df67377c0b91ff367df97ca13",
+    "js/tema.js": "855bcee3ec1223b43e0f3e9a94c1fbdf1451e53830dcc022962b48e8d3340757",
+    "js/interacao-dos-graficos.js": "c5e42b905d26d12581e292acfec8957fbbf20604e674bee321f4aa1b39ebd989",
+    "tipos/spectral/Spectral-Medium.woff2": "34f0ba222c28bc0ea816c693d05c528be4a5ee10c4b1765cdea774c6fb2502c2",
+    "tipos/spectral-sc/SpectralSC-Regular.woff2": "afa69dd2e7aaca2733883133745fd84c18dfac6a08d5999e69705ea7277240b8",
+    "tipos/spectral-sc/SpectralSC-SemiBold.woff2": "b847fe8f1fe1a862ce15e288958d132940a8204951ef0dbe2c9ad8fd997f29e2",
+    "en/ledger/hab-ine-preco-mediano/index.html": "adfc0bd343d70d8d1cb7ea4da9a14ff62df36b32368f9739735423e4b61e61c7",
+    "livro-razao/hab-ine-preco-lisboa/index.html": "ce5468a4c860dc3c4b40075a6504b6f6dfe314e83081d7b173299ded375f1234",
+    "en/ledger/hab-ine-preco-lisboa/index.html": "e38b5e49cb2ff98ed1ad26c4227311317e0c162501f62c21a27ea89ed00a9e04",
+    "livro-razao/hab-ine-preco-porto/index.html": "2c5bac67295daed4288ee3449699fbb9856b852673583334cf8f6abe1cb03318",
+    "en/ledger/hab-ine-preco-porto/index.html": "ba20207e2c6f2d8728940fa70535c2d892de455f6b6daff86e992fcee3a0ecf2",
+    "livro-razao/hab-ine-juro-implicito/index.html": "7ce7d52094729ed70ef1532e6d3373edda96560e972613980b566d907c5b7b28",
+    "en/ledger/hab-ine-juro-implicito/index.html": "9f5c67cc71f935f2e3759feee796829a13da31a9ef0ddb11d223eac23c18de71",
+    "livro-razao/series/serie-precos-da-habitacao-variacao-homologa/index.html": "946c54d01f047c135fb177c7b2717e323cd343508604decb5b01ac332ee60b2a",
+    "en/ledger/series/serie-precos-da-habitacao-variacao-homologa/index.html": "fb4235b40b4512a8561dbe8c296f73452dad5c3738d530ca3052604204cac688",
+    "index.html": "6f50d9d752886d52f44d9b6c8b43e7fc7181705f3bb02a749bcc6245edff622b",
+    "_astro/primeira-pagina.sUQIxm-E.css": "1d6224df77b82eec35063368cea406822f23ca540f819c078dee626d5cfadff2",
+    "_astro/inicio.DYisJLJ2.css": "1887d09fd2f5e2597bbe8b9ce00ee29695cd096d2db1486ff34d9b9013da3be9",
+    "_astro/lugar.bxF38FjU.css": "ca5ecb9c51f88f1c0f5c59652689ed2ca642ad4dee9eaf4fbc51328d9dd957fd",
+    "tipos/spectral/Spectral-SemiBold.woff2": "91eef1143e31196ec762c00b566b9f628a851db348eb524cbfb36bfba9b22f2d",
+    "en/index.html": "adafceb26e40e1cfcf7f493ffbef32caf77b2b7aabe2db1acb9ec0859bf4b2c8"
+  },
+  "falhas": [],
+  "ok": true
+}

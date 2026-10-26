@@ -1,4 +1,4 @@
-import {dataDeCalendarioConferida} from '../src/lib/historia-do-valor.mjs';
+import {dataDeCalendarioConferida,textoDaHabitacao} from '../src/lib/historia-do-valor.mjs';
 /**
  * ===========================================================================
  * AS EXPLICAÇÕES E A LEITURA DA SEMANA, LIDAS PELO PORTÃO DE HTML (bloco EX1, 05.10.2026)
@@ -96,7 +96,7 @@ export function contasDaSemanaNoPortao(claims, inicio, fim) {
     (l.corrections ?? []).forEach((/** @type {any} */ c, /** @type {number} */ n) => {
       if (!dentro(c?.date)) return;
       if (c.kind === 'proveniencia') proveniencia.add(id);
-      if (NATUREZAS_DE_VALOR.has(c.kind) && !((l.afirmacao === true && l.unit === 'afirmação') || textoDocumentalConferido(l) || dataDeCalendarioConferida(l))) deValor.push({ c, n });
+      if (NATUREZAS_DE_VALOR.has(c.kind) && !((l.afirmacao === true && l.unit === 'afirmação') || textoDocumentalConferido(l) || dataDeCalendarioConferida(l) || textoDaHabitacao(l))) deValor.push({ c, n });
     });
     if (!deValor.length) continue;
     deValor.sort((a, b) => String(a.c.date).localeCompare(String(b.c.date)) || a.n - b.n);

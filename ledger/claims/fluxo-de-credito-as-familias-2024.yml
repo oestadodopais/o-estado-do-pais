@@ -61,3 +61,8 @@ verifications:
     result: "diverge"
     by: "painel-semanal"
     found: "4.0"
+  - date: "2026-10-26"
+    path: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipspc40?format=JSON&lang=EN&geo=PT&unit=PC_LE"
+    result: "diverge"
+    by: "painel-semanal"
+    found: "4.0"

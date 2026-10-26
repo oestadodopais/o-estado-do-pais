@@ -1,0 +1,210 @@
+[
+ {
+  "nome": "prc_hpi_q I15_Q 2026-Q2: Estados-membros com dados",
+  "valor": 26,
+  "comando": "python3 design/especime-v3/medicoes/hb1-2026-10-21/correcao-hb1c/medir-hb1c.py <motor>",
+  "corpo": "content/23 Habitacao/source/eurostat/prc_hpi_q.json",
+  "sha256": "139967be9abc6524df81b488dbf675ed6f717552e798e0113f758a0fb805083e",
+  "conhecido_positivo": {
+   "linha": "hab-prc-hpi-q-q-total-i15-q-pt-2026-q2",
+   "valor_selado": "301.43",
+   "valor_lido": 301.43,
+   "igual": true
+  },
+  "sem_dados": [
+   "EL"
+  ]
+ },
+ {
+  "nome": "prc_hpi_q I15_Q 2026-Q2: acima de Portugal, por ordem",
+  "valor": [
+   [
+    "HU",
+    389.61
+   ]
+  ],
+  "comando": "python3 design/especime-v3/medicoes/hb1-2026-10-21/correcao-hb1c/medir-hb1c.py <motor>",
+  "corpo": "content/23 Habitacao/source/eurostat/prc_hpi_q.json",
+  "sha256": "139967be9abc6524df81b488dbf675ed6f717552e798e0113f758a0fb805083e",
+  "conhecido_positivo": null,
+  "ordinal_de_portugal": 2,
+  "portugal": 301.43
+ },
+ {
+  "nome": "prc_hpi_q RCH_A 2026-Q2: acima de Portugal",
+  "valor": [],
+  "comando": "python3 design/especime-v3/medicoes/hb1-2026-10-21/correcao-hb1c/medir-hb1c.py <motor>",
+  "corpo": "content/23 Habitacao/source/eurostat/prc_hpi_q.json",
+  "sha256": "139967be9abc6524df81b488dbf675ed6f717552e798e0113f758a0fb805083e",
+  "conhecido_positivo": {
+   "linha": "hab-prc-hpi-q-q-total-rch-a-pt-2026-q2",
+   "valor_selado": "16.5",
+   "valor_lido": 16.5,
+   "igual": true
+  },
+  "com_dados": 26,
+  "empatados": [],
+  "portugal": 16.5
+ },
+ {
+  "nome": "tipsho10 I15_A_AVG 2025: acima de Portugal",
+  "valor": [],
+  "comando": "python3 design/especime-v3/medicoes/hb1-2026-10-21/correcao-hb1c/medir-hb1c.py <motor>",
+  "corpo": "content/23 Habitacao/source/eurostat/tipsho10.json",
+  "sha256": "8170b1e60e84453724a4630d5b7136c93ff37b1bcf92853a4e149bb6a8f6b3db",
+  "conhecido_positivo": {
+   "linha": "hab-tipsho10-a-i15-a-avg-pt-2025",
+   "valor_selado": "206.41",
+   "valor_lido": 206.41,
+   "igual": true
+  },
+  "com_dados": 27,
+  "segundo": [
+   "HU",
+   203.75
+  ]
+ },
+ {
+  "nome": "tipsho60 PTIR_I15 2024: acima de Portugal",
+  "valor": [],
+  "comando": "python3 design/especime-v3/medicoes/hb1-2026-10-21/correcao-hb1c/medir-hb1c.py <motor>",
+  "corpo": "content/23 Habitacao/source/eurostat/tipsho60.json",
+  "sha256": "85a9de42aa41ef015150da57af82802ea164b3bbde1f706ddb241204dc5cb1e6",
+  "conhecido_positivo": {
+   "linha": "hab-tipsho60-a-ptir-i15-pt-2024",
+   "valor_selado": "144.34",
+   "valor_lido": 144.34,
+   "igual": true
+  },
+  "com_dados": 27
+ },
+ {
+  "nome": "ilc_lvps08 Y25-34 2025: acima de Portugal, por ordem",
+  "valor": [
+   [
+    "HR",
+    62.3
+   ],
+   [
+    "EL",
+    56.3
+   ],
+   [
+    "SK",
+    54.3
+   ],
+   [
+    "PL",
+    51.0
+   ],
+   [
+    "IT",
+    50.7
+   ],
+   [
+    "ES",
+    50.2
+   ],
+   [
+    "CY",
+    42.9
+   ],
+   [
+    "BG",
+    42.7
+   ]
+  ],
+  "comando": "python3 design/especime-v3/medicoes/hb1-2026-10-21/correcao-hb1c/medir-hb1c.py <motor>",
+  "corpo": "content/23 Habitacao/source/eurostat/ilc_lvps08.json",
+  "sha256": "678b2197d76cdd853c335e29795f4e8095c1f979f6f52573132c531c9e643f8d",
+  "conhecido_positivo": {
+   "linha": "hab-ilc-lvps08-a-y25-34-t-pc-pt-2025",
+   "valor_selado": "42.1",
+   "valor_lido": 42.1,
+   "igual": true
+  },
+  "ordinal_de_portugal": 9,
+  "com_dados": 27,
+  "empatados": [],
+  "mais_alto": [
+   "HR",
+   62.3
+  ]
+ },
+ {
+  "nome": "yth_demo_030 2025: acima de Portugal, por ordem",
+  "valor": [
+   [
+    "HR",
+    31.5
+   ],
+   [
+    "EL",
+    30.9
+   ],
+   [
+    "SK",
+    30.9
+   ],
+   [
+    "ES",
+    30.2
+   ],
+   [
+    "IT",
+    30.2
+   ]
+  ],
+  "comando": "python3 design/especime-v3/medicoes/hb1-2026-10-21/correcao-hb1c/medir-hb1c.py <motor>",
+  "corpo": "content/23 Habitacao/source/eurostat/yth_demo_030.json",
+  "sha256": "0e73a05402f94eace4fa33981b9f2e770a27d289fb0af7b91ef68c9e2bec244b",
+  "conhecido_positivo": {
+   "linha": "hab-yth-demo-030-a-avg-t-pt-2025",
+   "valor_selado": "28.8",
+   "valor_lido": 28.8,
+   "igual": true
+  },
+  "ordinal_de_portugal": 6,
+  "com_dados": 27,
+  "empatados": [
+   "SI"
+  ]
+ },
+ {
+  "nome": "ilc_lvho07c TOTAL 2025: Estados-membros com dados",
+  "valor": 27,
+  "comando": "python3 design/especime-v3/medicoes/hb1-2026-10-21/correcao-hb1c/medir-hb1c.py <motor>",
+  "corpo": "content/23 Habitacao/source/eurostat/hb1b-ilc_lvho07c.json",
+  "sha256": "7310cd96ce090cd8e488c715c0e5c43ae7d7d0833763e4bc4a9fd91c602c7f64",
+  "conhecido_positivo": {
+   "linha": "hab-ilc-lvho07c-a-pc-total-pt-2025",
+   "valor_selado": "6.2",
+   "valor_lido": 6.2,
+   "igual": true
+  },
+  "sem_dados": [],
+  "mais_baixa": [
+   "CY",
+   2.4
+  ],
+  "mais_alta": [
+   "EL",
+   26.4
+  ],
+  "empatados_com_a_mais_baixa": [],
+  "empatados_com_a_mais_alta": []
+ },
+ {
+  "nome": "updated dos dois corpos da sobrecarga",
+  "valor": {
+   "ilc_lvho07c": "2026-10-20T23:00:00+0200",
+   "tespm140": "2026-10-20T11:00:00+0200",
+   "mesmo_dia": true,
+   "por_regime_mais_recente": true
+  },
+  "comando": "python3 design/especime-v3/medicoes/hb1-2026-10-21/correcao-hb1c/medir-hb1c.py <motor>",
+  "corpo": "content/23 Habitacao/source/eurostat/hb1b-ilc_lvho07c.json + hb1b-tespm140.json",
+  "sha256": "7310cd96ce090cd8e488c715c0e5c43ae7d7d0833763e4bc4a9fd91c602c7f64 / 1a6506dbefe39efa0d97ce2fa561bc40e31e7e387a042ba3263a2cee5b6a0a4d",
+  "conhecido_positivo": null
+ }
+]

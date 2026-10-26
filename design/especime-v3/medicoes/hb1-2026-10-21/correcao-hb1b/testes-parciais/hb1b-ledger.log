@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "<motor>/publisher/habitacao.py", line 172, in <module>
+    result=build();(STUDY/'ledger.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n')
+  File "<motor>/publisher/habitacao.py", line 102, in build
+    documents=D.build(specs['rows'])['claims']
+              ~~~~~~~^^^^^^^^^^^^^^^
+  File "<motor>/publisher/habitacao_documentos.py", line 283, in build
+    excerpt,value=extract(s);fields=document_fields(s)
+                  ~~~~~~~^^^
+  File "<motor>/publisher/habitacao_documentos.py", line 260, in extract
+    excerpt=select(spec)
+  File "<motor>/publisher/habitacao_documentos.py", line 162, in select
+    check_area(spec)
+    ~~~~~~~~~~^^^^^^
+  File "<motor>/publisher/habitacao_documentos.py", line 97, in check_area
+    require(a>=x and c<=xx and b>=y and d<=yy,'HAB corte: token numérico cortado '+spec['id'])
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<motor>/publisher/oe1_common.py", line 30, in require
+    raise Fail(mensagem)
+publisher.oe1_common.Fail: HAB corte: token numérico cortado hab-oe-apoio-arrendamento

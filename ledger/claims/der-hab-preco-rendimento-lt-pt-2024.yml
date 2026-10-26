@@ -1,0 +1,37 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "der-hab-preco-rendimento-lt-pt-2024"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "22,9"
+unit: "pontos percentuais do índice"
+measure: "Distância do rácio preço-rendimento à base cem"
+measure_en: "Distance of the price-to-income ratio from the base of one hundred"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: null
+document: null
+source_url: null
+access_date: null
+reference_date: "2024"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: null
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: "Rácio padronizado entre preços da habitação e rendimento, índice, média de longo prazo igual a cem, Portugal, 2024 (122,92 índice do rácio preço-rendimento face à média de longo prazo; Eurostat, tipsho60) menos cem, arredondado a uma casa decimal: 22,9."
+derivation_en: "Standardised house price-to-income ratio, Price-to-income ratio relative to long-term average, Portugal, 2024 (122.92 price-to-income ratio index relative to the long-term average; Eurostat, tipsho60) minus one hundred, rounded to one decimal place: 22.9."
+derived_from:
+  - "hab-tipsho60-a-ptir-lt-avg-pt-2024"
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: "round ( hab-tipsho60-a-ptir-lt-avg-pt-2024 - 100 , 1 )"
+
+study: "a-casa-em-portugal-e-na-europa"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[derivation do motor] {'components': ['hab-tipsho60-a-ptir-lt-avg-pt-2024'], 'formula': 'hab-tipsho60-a-ptir-lt-avg-pt-2024 - 100', 'calculation': 'hab-tipsho60-a-ptir-lt-avg-pt-2024 = 122.92; resultado = 22.92', 'rounding_places': 1} · Cruzado de ResearchHub content/23 Habitacao · der-hab-preco-rendimento-lt-pt-2024."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

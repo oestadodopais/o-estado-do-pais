@@ -1,0 +1,852 @@
+{
+  "cabeca": "4531f0c11cb29ea1bdf21db399ef4b3f14aaa0d3",
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "resultados": [
+    {
+      "ficheiro": "estudo-pt-390.png",
+      "rota": "/estudos/a-casa-em-portugal-e-na-europa",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 23411,
+      "sha256": "6fc18bad67cc6b29d09d58fe14e22697073a42d7e7dc50f250e8fbd15abf625b",
+      "recortes": [
+        {
+          "ficheiro": "estudo-pt-390-titulo.png",
+          "seletor": "main h1",
+          "sha256": "3a9b5b6d9f948788f48bc84afa922e9227ec69ecb031535051c4f5fbdde012ca"
+        },
+        {
+          "ficheiro": "estudo-pt-390-resumo.png",
+          "seletor": "[data-registo-bloco=\"3\"]",
+          "sha256": "8f6189e64c2f994a34a237f6cf33c057cbc4bfcb09c1922adba9b6046dc4f831"
+        },
+        {
+          "ficheiro": "estudo-pt-390-precos-locais.png",
+          "seletor": "[data-registo-bloco=\"20\"]",
+          "sha256": "7f014abf1ec252920829d1261bc4114e0af2827966eb79b9d8907bf49354bd89"
+        },
+        {
+          "ficheiro": "estudo-pt-390-lei.png",
+          "seletor": "[data-registo-bloco=\"37\"]",
+          "sha256": "e85dc60d5e02af283470709202dfa3762a3215588324617edff69d97276fbd6a"
+        },
+        {
+          "ficheiro": "estudo-pt-390-rua.png",
+          "seletor": "[data-registo-bloco=\"48\"]",
+          "sha256": "6f5dd6694fb650ca0fefddcaa1998f95eb401b96fba09f2e743cb977e1cbdc55"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "estudo-pt-768.png",
+      "rota": "/estudos/a-casa-em-portugal-e-na-europa",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 19182,
+      "sha256": "657d59caaec1067d3794926aa0dddc12317cebd424b07b86462b3afc85c8bd54",
+      "recortes": [
+        {
+          "ficheiro": "estudo-pt-768-titulo.png",
+          "seletor": "main h1",
+          "sha256": "7824b0152fb3a42533db29935f18acd38168bdc621c076deb933ef86e11d6f70"
+        },
+        {
+          "ficheiro": "estudo-pt-768-resumo.png",
+          "seletor": "[data-registo-bloco=\"3\"]",
+          "sha256": "fe5bc2237cf0a1634f13af7f364fd49568c4952e441097caefb8f9791a5773e1"
+        },
+        {
+          "ficheiro": "estudo-pt-768-precos-locais.png",
+          "seletor": "[data-registo-bloco=\"20\"]",
+          "sha256": "25a443c8f07defe2aec1b5f9b3190b1f969c18f2724554c6e3c5998cb4d65d49"
+        },
+        {
+          "ficheiro": "estudo-pt-768-lei.png",
+          "seletor": "[data-registo-bloco=\"37\"]",
+          "sha256": "f4ea43ca6701745490f5564d3860ae04c078e26d1aa87e0b071bdf832b51441a"
+        },
+        {
+          "ficheiro": "estudo-pt-768-rua.png",
+          "seletor": "[data-registo-bloco=\"48\"]",
+          "sha256": "3781e19b8c0342a44261bd3769b02606ea5078ecf1fe63ae59abcf9b3ce071a6"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "estudo-pt-1024.png",
+      "rota": "/estudos/a-casa-em-portugal-e-na-europa",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 18425,
+      "sha256": "e95ffa3a78e22c25067c9925a6de55ea624661ae4fca0e7a12cfc5840e2b1e46",
+      "recortes": [
+        {
+          "ficheiro": "estudo-pt-1024-titulo.png",
+          "seletor": "main h1",
+          "sha256": "d1d86786fb3c6c3b3bc15dfef16a8a9bb3780d886fb37de832a17acec7611b5a"
+        },
+        {
+          "ficheiro": "estudo-pt-1024-resumo.png",
+          "seletor": "[data-registo-bloco=\"3\"]",
+          "sha256": "d5defbe82eda18051d3d826cd8fc60b322f3908ba13f2b3a9babe5ec7ef3a0e1"
+        },
+        {
+          "ficheiro": "estudo-pt-1024-precos-locais.png",
+          "seletor": "[data-registo-bloco=\"20\"]",
+          "sha256": "9db2a8a0cff0e0a211d90c7aea59737a9e7d0469eecb3ac67b7f407cffef3ed6"
+        },
+        {
+          "ficheiro": "estudo-pt-1024-lei.png",
+          "seletor": "[data-registo-bloco=\"37\"]",
+          "sha256": "653e6ade4bdb25d9afe7b2365d94332c414dbfdf35c1581da6016c651eca6f88"
+        },
+        {
+          "ficheiro": "estudo-pt-1024-rua.png",
+          "seletor": "[data-registo-bloco=\"48\"]",
+          "sha256": "bb793525d41d6a1f60f416223b414ec4285ddf2a5d24d0346ea55aa00511628d"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "estudo-pt-1280.png",
+      "rota": "/estudos/a-casa-em-portugal-e-na-europa",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 18563,
+      "sha256": "49d3332939ff7af3f387205a64bed4857629c4b2a68600be8f8cbea31b434d17",
+      "recortes": [
+        {
+          "ficheiro": "estudo-pt-1280-titulo.png",
+          "seletor": "main h1",
+          "sha256": "fde073f5b56cd5be9d6408280344474f04b2b9cf800b84614cd68db8d8293898"
+        },
+        {
+          "ficheiro": "estudo-pt-1280-resumo.png",
+          "seletor": "[data-registo-bloco=\"3\"]",
+          "sha256": "c18ab0cc46fd5d008f457a1e999d036d53f488b4867ea53274c6f3c53a7aa5b8"
+        },
+        {
+          "ficheiro": "estudo-pt-1280-precos-locais.png",
+          "seletor": "[data-registo-bloco=\"20\"]",
+          "sha256": "b2225ade256e11a33c8c8d49eef2ec7c2bc0b6a72471109c93ef7f12f7244546"
+        },
+        {
+          "ficheiro": "estudo-pt-1280-lei.png",
+          "seletor": "[data-registo-bloco=\"37\"]",
+          "sha256": "a3691b1fa59111f264e843a6039b095f12e5a585373e2cb73144998fcb621c4b"
+        },
+        {
+          "ficheiro": "estudo-pt-1280-rua.png",
+          "seletor": "[data-registo-bloco=\"48\"]",
+          "sha256": "da298518526cf8fae7b2197ca0d98aa177d86b407def12dd239ed06aa472eba4"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "estudo-pt-1600.png",
+      "rota": "/estudos/a-casa-em-portugal-e-na-europa",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 18569,
+      "sha256": "2967dced49c88eb60dfd9280c2fc6a1e64c8ead5581873f07165c3a13747253c",
+      "recortes": [
+        {
+          "ficheiro": "estudo-pt-1600-titulo.png",
+          "seletor": "main h1",
+          "sha256": "fde073f5b56cd5be9d6408280344474f04b2b9cf800b84614cd68db8d8293898"
+        },
+        {
+          "ficheiro": "estudo-pt-1600-resumo.png",
+          "seletor": "[data-registo-bloco=\"3\"]",
+          "sha256": "c18ab0cc46fd5d008f457a1e999d036d53f488b4867ea53274c6f3c53a7aa5b8"
+        },
+        {
+          "ficheiro": "estudo-pt-1600-precos-locais.png",
+          "seletor": "[data-registo-bloco=\"20\"]",
+          "sha256": "b2225ade256e11a33c8c8d49eef2ec7c2bc0b6a72471109c93ef7f12f7244546"
+        },
+        {
+          "ficheiro": "estudo-pt-1600-lei.png",
+          "seletor": "[data-registo-bloco=\"37\"]",
+          "sha256": "a3691b1fa59111f264e843a6039b095f12e5a585373e2cb73144998fcb621c4b"
+        },
+        {
+          "ficheiro": "estudo-pt-1600-rua.png",
+          "seletor": "[data-registo-bloco=\"48\"]",
+          "sha256": "da298518526cf8fae7b2197ca0d98aa177d86b407def12dd239ed06aa472eba4"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "estudo-en-390.png",
+      "rota": "/en/studies/a-casa-em-portugal-e-na-europa",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 23401,
+      "sha256": "27672b6956f133087d9dcda79f7bfe04f04631357d6589a8508aad8364f2b548",
+      "recortes": [
+        {
+          "ficheiro": "estudo-en-390-titulo.png",
+          "seletor": "main h1",
+          "sha256": "7630a7eecf6f174a93689241b5a4d6f691dd4acf00c09006df22cd834a5450bc"
+        },
+        {
+          "ficheiro": "estudo-en-390-resumo.png",
+          "seletor": "[data-registo-bloco=\"3\"]",
+          "sha256": "6a584eed41a5a26fc877377988b8ce1becd41cb4eb05a7dc0a61a97db9d2c874"
+        },
+        {
+          "ficheiro": "estudo-en-390-precos-locais.png",
+          "seletor": "[data-registo-bloco=\"20\"]",
+          "sha256": "2197d3d166d29e1717679e28f707a5a48f7c130a394911a6e4bdcbb795a63700"
+        },
+        {
+          "ficheiro": "estudo-en-390-lei.png",
+          "seletor": "[data-registo-bloco=\"37\"]",
+          "sha256": "8a0d29d39261b2064287a92561a66631942a16f6a7f28c0d8411e325f7837b51"
+        },
+        {
+          "ficheiro": "estudo-en-390-rua.png",
+          "seletor": "[data-registo-bloco=\"48\"]",
+          "sha256": "480e293c8e1d20529c1160c5c9291e7081665b350e8a68b5324e72398509fc10"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "estudo-en-768.png",
+      "rota": "/en/studies/a-casa-em-portugal-e-na-europa",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 19151,
+      "sha256": "1411cc0de0f1ff9c77edc057759d9191af86877aaeabae896923c1fa7bdab7d3",
+      "recortes": [
+        {
+          "ficheiro": "estudo-en-768-titulo.png",
+          "seletor": "main h1",
+          "sha256": "21c4a86882f7ce09d7bb92eeaf69eced2cc7b86029d86de65a593e64710b94d7"
+        },
+        {
+          "ficheiro": "estudo-en-768-resumo.png",
+          "seletor": "[data-registo-bloco=\"3\"]",
+          "sha256": "f845a4a24385785ca31b99251ffda1a681a11e4e34c06c3008fa8580966730eb"
+        },
+        {
+          "ficheiro": "estudo-en-768-precos-locais.png",
+          "seletor": "[data-registo-bloco=\"20\"]",
+          "sha256": "1a91dd699472a50b9a162b117ede100d9187fa133dbb0d41752af23db8e0765f"
+        },
+        {
+          "ficheiro": "estudo-en-768-lei.png",
+          "seletor": "[data-registo-bloco=\"37\"]",
+          "sha256": "d5157c234ef48567133de5dbc719e5455aa1b3de444536dbcf5d92458c392c22"
+        },
+        {
+          "ficheiro": "estudo-en-768-rua.png",
+          "seletor": "[data-registo-bloco=\"48\"]",
+          "sha256": "3c2fde94331035db8d624a4ec5c82c913029733d9ba5942968e4502e910d5671"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "estudo-en-1024.png",
+      "rota": "/en/studies/a-casa-em-portugal-e-na-europa",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 18393,
+      "sha256": "660cc877248d959c908e2a5fa2bf6685e28cbbe90373a514c8573f6aa919b508",
+      "recortes": [
+        {
+          "ficheiro": "estudo-en-1024-titulo.png",
+          "seletor": "main h1",
+          "sha256": "e6a8a26d093472733527a8eda43673c8196daa36a1a841b06af0668030fc42f3"
+        },
+        {
+          "ficheiro": "estudo-en-1024-resumo.png",
+          "seletor": "[data-registo-bloco=\"3\"]",
+          "sha256": "1313d7c875b374464e37ca96df49ef592a230c57ae502f27b9224f0011cf9454"
+        },
+        {
+          "ficheiro": "estudo-en-1024-precos-locais.png",
+          "seletor": "[data-registo-bloco=\"20\"]",
+          "sha256": "c6747db2cd8317bff57fccfd3c412c675cb732dbfd0985a137ea42e502a412c4"
+        },
+        {
+          "ficheiro": "estudo-en-1024-lei.png",
+          "seletor": "[data-registo-bloco=\"37\"]",
+          "sha256": "173f18a3afcce8a7a62f4fd4a228a0de0997cd59f46ca31dcdf60ece6226be34"
+        },
+        {
+          "ficheiro": "estudo-en-1024-rua.png",
+          "seletor": "[data-registo-bloco=\"48\"]",
+          "sha256": "8f6c3a84595a045280b595c365f4d53774cfe8ae633fe6a00137b77019898275"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "estudo-en-1280.png",
+      "rota": "/en/studies/a-casa-em-portugal-e-na-europa",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 18531,
+      "sha256": "632d80fbaf27a1bfdf7fcb699f1fd2fa93e1dff543315128896b44beb8299158",
+      "recortes": [
+        {
+          "ficheiro": "estudo-en-1280-titulo.png",
+          "seletor": "main h1",
+          "sha256": "8acb10255a5218f9633443faa896e04d5008bb03023690c7d00fe9aac251e4f5"
+        },
+        {
+          "ficheiro": "estudo-en-1280-resumo.png",
+          "seletor": "[data-registo-bloco=\"3\"]",
+          "sha256": "38aabfb32d6bd8d98f45ae88400c42d9b5bb3cc3b5b65e3c1e303f9e54ad24df"
+        },
+        {
+          "ficheiro": "estudo-en-1280-precos-locais.png",
+          "seletor": "[data-registo-bloco=\"20\"]",
+          "sha256": "9a983a64e8171488d85fedfd7ecaa39bc099b39b4f07a65871c77fa3bf92a449"
+        },
+        {
+          "ficheiro": "estudo-en-1280-lei.png",
+          "seletor": "[data-registo-bloco=\"37\"]",
+          "sha256": "ab0d6022d4cc8f1b364c99d3257bb0d59b332b8284802542254f6b32b117ffab"
+        },
+        {
+          "ficheiro": "estudo-en-1280-rua.png",
+          "seletor": "[data-registo-bloco=\"48\"]",
+          "sha256": "ace665e07bcec11cc6759d130d7f8d7e54b7b91904dfaa6769b1e4b70297d133"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "estudo-en-1600.png",
+      "rota": "/en/studies/a-casa-em-portugal-e-na-europa",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 18538,
+      "sha256": "bd76b1c4a742322193c37850e1613c884deb88490f997c588735addc3416f3b1",
+      "recortes": [
+        {
+          "ficheiro": "estudo-en-1600-titulo.png",
+          "seletor": "main h1",
+          "sha256": "8acb10255a5218f9633443faa896e04d5008bb03023690c7d00fe9aac251e4f5"
+        },
+        {
+          "ficheiro": "estudo-en-1600-resumo.png",
+          "seletor": "[data-registo-bloco=\"3\"]",
+          "sha256": "38aabfb32d6bd8d98f45ae88400c42d9b5bb3cc3b5b65e3c1e303f9e54ad24df"
+        },
+        {
+          "ficheiro": "estudo-en-1600-precos-locais.png",
+          "seletor": "[data-registo-bloco=\"20\"]",
+          "sha256": "9a983a64e8171488d85fedfd7ecaa39bc099b39b4f07a65871c77fa3bf92a449"
+        },
+        {
+          "ficheiro": "estudo-en-1600-lei.png",
+          "seletor": "[data-registo-bloco=\"37\"]",
+          "sha256": "ab0d6022d4cc8f1b364c99d3257bb0d59b332b8284802542254f6b32b117ffab"
+        },
+        {
+          "ficheiro": "estudo-en-1600-rua.png",
+          "seletor": "[data-registo-bloco=\"48\"]",
+          "sha256": "ace665e07bcec11cc6759d130d7f8d7e54b7b91904dfaa6769b1e4b70297d133"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "documento-pt-390.png",
+      "rota": "/estudos/a-casa-em-portugal-e-na-europa/documento",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 16713,
+      "sha256": "26abcd88f26bde7609dc75faac18afa917db6bdb937f97a9b4030ab6a19769dd",
+      "recortes": [
+        {
+          "ficheiro": "documento-pt-390-titulo.png",
+          "seletor": "main h1",
+          "sha256": "5b6784bfb56a74521544da99a32402a621dc9024301a49214ab062f6e257a743"
+        },
+        {
+          "ficheiro": "documento-pt-390-resumo.png",
+          "seletor": "main > :nth-child(4)",
+          "sha256": "ef57b4d70a63b84309cea488f61160985ac568932f449b55e2ee6ddc4d62e8fe"
+        },
+        {
+          "ficheiro": "documento-pt-390-precos-locais.png",
+          "seletor": "main > :nth-child(21)",
+          "sha256": "ba4633e69c8e817c2e9d060bc2cf2d305a91bf7a57d851593c5676c504877945"
+        },
+        {
+          "ficheiro": "documento-pt-390-lei.png",
+          "seletor": "main > :nth-child(38)",
+          "sha256": "b8ece329df1bf2d17824770f45440abc0a76c042881eb7e6eaf6ae172f4bf2e6"
+        },
+        {
+          "ficheiro": "documento-pt-390-rua.png",
+          "seletor": "main > :nth-child(49)",
+          "sha256": "7e8ad8ced6495a794537b107dc45ef451ad63928f5ad55747b5b4708fca2a84e"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "documento-pt-768.png",
+      "rota": "/estudos/a-casa-em-portugal-e-na-europa/documento",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 8879,
+      "sha256": "1a3ef4c2d0c1c0d3e89f76e9d4038b215160bde81373ba72abb0fe7d8f456088",
+      "recortes": [
+        {
+          "ficheiro": "documento-pt-768-titulo.png",
+          "seletor": "main h1",
+          "sha256": "184a4a781ff44d38c3041cfe5dd2b1051a54df3d82f79be1b028500778b5a252"
+        },
+        {
+          "ficheiro": "documento-pt-768-resumo.png",
+          "seletor": "main > :nth-child(4)",
+          "sha256": "b1bb472bb55ae3438ea67ac9dc032770626c81a168bc6a3ece75fd387668cd83"
+        },
+        {
+          "ficheiro": "documento-pt-768-precos-locais.png",
+          "seletor": "main > :nth-child(21)",
+          "sha256": "1ab92a6b822a66f7acc76b4d9b3d84d62222669b52d8539c9654434c7322c165"
+        },
+        {
+          "ficheiro": "documento-pt-768-lei.png",
+          "seletor": "main > :nth-child(38)",
+          "sha256": "24263bc0b3b76431e2a048dfba92f8c1c681fdcd37fc909f34d8052e7eb08a14"
+        },
+        {
+          "ficheiro": "documento-pt-768-rua.png",
+          "seletor": "main > :nth-child(49)",
+          "sha256": "0fd76c693ffc263aca7c6f105dcd2ff48e005d53dd5c7ed47a4ea7a65dc774ba"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "documento-pt-1024.png",
+      "rota": "/estudos/a-casa-em-portugal-e-na-europa/documento",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 904,
+      "altura": 7738,
+      "sha256": "c9006c8d5c73ac25647a3d0756992917aa78be731d890480143fc85e8a859869",
+      "recortes": [
+        {
+          "ficheiro": "documento-pt-1024-titulo.png",
+          "seletor": "main h1",
+          "sha256": "d54c75dd193b628b97b02e72fba942f03043566f56299a864f25347234e6a5fd"
+        },
+        {
+          "ficheiro": "documento-pt-1024-resumo.png",
+          "seletor": "main > :nth-child(4)",
+          "sha256": "489dc820997be284846640ea01301be0abfe1b7df13392ce28f9588d987d1b76"
+        },
+        {
+          "ficheiro": "documento-pt-1024-precos-locais.png",
+          "seletor": "main > :nth-child(21)",
+          "sha256": "0745b891f84f37f16f4f2ed90d98062a441bfb920343c93dcb6bf018018d4112"
+        },
+        {
+          "ficheiro": "documento-pt-1024-lei.png",
+          "seletor": "main > :nth-child(38)",
+          "sha256": "1372f661ba1eba042f14c42ebf302f4dff33f5834fbf64670fe4654359c577e6"
+        },
+        {
+          "ficheiro": "documento-pt-1024-rua.png",
+          "seletor": "main > :nth-child(49)",
+          "sha256": "426d046b07327cf87dbe148a9f74c9d2e764bacd47db56cc10c603c02ee7422a"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "documento-pt-1280.png",
+      "rota": "/estudos/a-casa-em-portugal-e-na-europa/documento",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 904,
+      "altura": 7738,
+      "sha256": "f53893addfb75220c16bbe32ed2b707a697f4e4c15c9829ebcb50ba1eaacefbc",
+      "recortes": [
+        {
+          "ficheiro": "documento-pt-1280-titulo.png",
+          "seletor": "main h1",
+          "sha256": "d54c75dd193b628b97b02e72fba942f03043566f56299a864f25347234e6a5fd"
+        },
+        {
+          "ficheiro": "documento-pt-1280-resumo.png",
+          "seletor": "main > :nth-child(4)",
+          "sha256": "489dc820997be284846640ea01301be0abfe1b7df13392ce28f9588d987d1b76"
+        },
+        {
+          "ficheiro": "documento-pt-1280-precos-locais.png",
+          "seletor": "main > :nth-child(21)",
+          "sha256": "0745b891f84f37f16f4f2ed90d98062a441bfb920343c93dcb6bf018018d4112"
+        },
+        {
+          "ficheiro": "documento-pt-1280-lei.png",
+          "seletor": "main > :nth-child(38)",
+          "sha256": "1372f661ba1eba042f14c42ebf302f4dff33f5834fbf64670fe4654359c577e6"
+        },
+        {
+          "ficheiro": "documento-pt-1280-rua.png",
+          "seletor": "main > :nth-child(49)",
+          "sha256": "426d046b07327cf87dbe148a9f74c9d2e764bacd47db56cc10c603c02ee7422a"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "documento-pt-1600.png",
+      "rota": "/estudos/a-casa-em-portugal-e-na-europa/documento",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 904,
+      "altura": 7738,
+      "sha256": "36f3b49f3dbbc3c729b7ade52d9460031eed0ce95be4c7912a691257ab30c575",
+      "recortes": [
+        {
+          "ficheiro": "documento-pt-1600-titulo.png",
+          "seletor": "main h1",
+          "sha256": "d54c75dd193b628b97b02e72fba942f03043566f56299a864f25347234e6a5fd"
+        },
+        {
+          "ficheiro": "documento-pt-1600-resumo.png",
+          "seletor": "main > :nth-child(4)",
+          "sha256": "489dc820997be284846640ea01301be0abfe1b7df13392ce28f9588d987d1b76"
+        },
+        {
+          "ficheiro": "documento-pt-1600-precos-locais.png",
+          "seletor": "main > :nth-child(21)",
+          "sha256": "0745b891f84f37f16f4f2ed90d98062a441bfb920343c93dcb6bf018018d4112"
+        },
+        {
+          "ficheiro": "documento-pt-1600-lei.png",
+          "seletor": "main > :nth-child(38)",
+          "sha256": "1372f661ba1eba042f14c42ebf302f4dff33f5834fbf64670fe4654359c577e6"
+        },
+        {
+          "ficheiro": "documento-pt-1600-rua.png",
+          "seletor": "main > :nth-child(49)",
+          "sha256": "426d046b07327cf87dbe148a9f74c9d2e764bacd47db56cc10c603c02ee7422a"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "documento-en-390.png",
+      "rota": "/en/studies/a-casa-em-portugal-e-na-europa/document",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 16305,
+      "sha256": "6eb2af7e4027e8233e4585f45239c46a4ce803f855b50bb895711a4cce26bce1",
+      "recortes": [
+        {
+          "ficheiro": "documento-en-390-titulo.png",
+          "seletor": "main h1",
+          "sha256": "59ea3248e7f0839d68e23ecce0ca1cf8829e87ed327cd8d2339b3fe345e3a75b"
+        },
+        {
+          "ficheiro": "documento-en-390-resumo.png",
+          "seletor": "main > :nth-child(4)",
+          "sha256": "92952a0ebea3d084bea346426ca819047bb0a676fe86db63fa972d0a84ebd547"
+        },
+        {
+          "ficheiro": "documento-en-390-precos-locais.png",
+          "seletor": "main > :nth-child(21)",
+          "sha256": "12efa80f4ac85aa8af2075a2e02716f617c45e275f3b221dfdf093dea741b4ea"
+        },
+        {
+          "ficheiro": "documento-en-390-lei.png",
+          "seletor": "main > :nth-child(38)",
+          "sha256": "31ae214c7bd2719dbdcf04345816ba45c42a92cfe2a9890d9af5150da6d60b38"
+        },
+        {
+          "ficheiro": "documento-en-390-rua.png",
+          "seletor": "main > :nth-child(49)",
+          "sha256": "88fd2198fe0cd04c13c262531be302f3b71a3b097b47f7af69005ded904c6031"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "documento-en-768.png",
+      "rota": "/en/studies/a-casa-em-portugal-e-na-europa/document",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 8775,
+      "sha256": "b02a4d846b2ddd94a83780d3765b07e30a44c4f49a49c6455e20a1f0e5120f8b",
+      "recortes": [
+        {
+          "ficheiro": "documento-en-768-titulo.png",
+          "seletor": "main h1",
+          "sha256": "7a8947e1ba426dd0e0b699954f18775f6e1c4e64708fc566cb151f33c9d7eba6"
+        },
+        {
+          "ficheiro": "documento-en-768-resumo.png",
+          "seletor": "main > :nth-child(4)",
+          "sha256": "66b0aaa664001eb813a47e8669903bfdc4ded98918812490e39792c9216bcc87"
+        },
+        {
+          "ficheiro": "documento-en-768-precos-locais.png",
+          "seletor": "main > :nth-child(21)",
+          "sha256": "7c9bef171201cf097ba09817c30915e7736475e14dcc286325166d3d37391ccd"
+        },
+        {
+          "ficheiro": "documento-en-768-lei.png",
+          "seletor": "main > :nth-child(38)",
+          "sha256": "9943830ec1f36df57378162711a754346e58efb31cdac316241adafed6949fdd"
+        },
+        {
+          "ficheiro": "documento-en-768-rua.png",
+          "seletor": "main > :nth-child(49)",
+          "sha256": "a9a90395bfa6c7a01eed38d9a1883088b6be786748e81bf178b34f82538b9092"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "documento-en-1024.png",
+      "rota": "/en/studies/a-casa-em-portugal-e-na-europa/document",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 904,
+      "altura": 7712,
+      "sha256": "f6ee2c40e83445c5791c0d20d073af348d7385d8b82ab4bf4e618d573fbb5bc4",
+      "recortes": [
+        {
+          "ficheiro": "documento-en-1024-titulo.png",
+          "seletor": "main h1",
+          "sha256": "e85d44e2ca36430f0de08067fa7ec886792d4d9eb18e5fbcd5051cae464f8885"
+        },
+        {
+          "ficheiro": "documento-en-1024-resumo.png",
+          "seletor": "main > :nth-child(4)",
+          "sha256": "a65425a7544625e31cf4f667dc703ce84c613476fdb396567dee89a9e20d0c1a"
+        },
+        {
+          "ficheiro": "documento-en-1024-precos-locais.png",
+          "seletor": "main > :nth-child(21)",
+          "sha256": "dbc5dc364edca2318d87243cea5b0f13dc2a1bb804f0cd812901aab8e73de5f0"
+        },
+        {
+          "ficheiro": "documento-en-1024-lei.png",
+          "seletor": "main > :nth-child(38)",
+          "sha256": "fe58927e0a9e9e54dd1094a432c7f44ab879005b48bf485f70a88884bdbd7e3a"
+        },
+        {
+          "ficheiro": "documento-en-1024-rua.png",
+          "seletor": "main > :nth-child(49)",
+          "sha256": "adf57f39cfd9ff17975ea66a1302a08e809572f522691c0c24e4896d02689373"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "documento-en-1280.png",
+      "rota": "/en/studies/a-casa-em-portugal-e-na-europa/document",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 904,
+      "altura": 7712,
+      "sha256": "a649b392739fb835fb36df98f0bd792d5af2b69bfbd25f69b412e9198189eb76",
+      "recortes": [
+        {
+          "ficheiro": "documento-en-1280-titulo.png",
+          "seletor": "main h1",
+          "sha256": "e85d44e2ca36430f0de08067fa7ec886792d4d9eb18e5fbcd5051cae464f8885"
+        },
+        {
+          "ficheiro": "documento-en-1280-resumo.png",
+          "seletor": "main > :nth-child(4)",
+          "sha256": "a65425a7544625e31cf4f667dc703ce84c613476fdb396567dee89a9e20d0c1a"
+        },
+        {
+          "ficheiro": "documento-en-1280-precos-locais.png",
+          "seletor": "main > :nth-child(21)",
+          "sha256": "dbc5dc364edca2318d87243cea5b0f13dc2a1bb804f0cd812901aab8e73de5f0"
+        },
+        {
+          "ficheiro": "documento-en-1280-lei.png",
+          "seletor": "main > :nth-child(38)",
+          "sha256": "fe58927e0a9e9e54dd1094a432c7f44ab879005b48bf485f70a88884bdbd7e3a"
+        },
+        {
+          "ficheiro": "documento-en-1280-rua.png",
+          "seletor": "main > :nth-child(49)",
+          "sha256": "adf57f39cfd9ff17975ea66a1302a08e809572f522691c0c24e4896d02689373"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "documento-en-1600.png",
+      "rota": "/en/studies/a-casa-em-portugal-e-na-europa/document",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 904,
+      "altura": 7712,
+      "sha256": "5850f167dd8a5220a0ddb9aad7e74b6a2fe9887a406cf4b3fadf99b2f5836ce4",
+      "recortes": [
+        {
+          "ficheiro": "documento-en-1600-titulo.png",
+          "seletor": "main h1",
+          "sha256": "e85d44e2ca36430f0de08067fa7ec886792d4d9eb18e5fbcd5051cae464f8885"
+        },
+        {
+          "ficheiro": "documento-en-1600-resumo.png",
+          "seletor": "main > :nth-child(4)",
+          "sha256": "a65425a7544625e31cf4f667dc703ce84c613476fdb396567dee89a9e20d0c1a"
+        },
+        {
+          "ficheiro": "documento-en-1600-precos-locais.png",
+          "seletor": "main > :nth-child(21)",
+          "sha256": "dbc5dc364edca2318d87243cea5b0f13dc2a1bb804f0cd812901aab8e73de5f0"
+        },
+        {
+          "ficheiro": "documento-en-1600-lei.png",
+          "seletor": "main > :nth-child(38)",
+          "sha256": "fe58927e0a9e9e54dd1094a432c7f44ab879005b48bf485f70a88884bdbd7e3a"
+        },
+        {
+          "ficheiro": "documento-en-1600-rua.png",
+          "seletor": "main > :nth-child(49)",
+          "sha256": "adf57f39cfd9ff17975ea66a1302a08e809572f522691c0c24e4896d02689373"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    }
+  ],
+  "recursos": {
+    "version.json": "fb661c2a953efc9325b1732498f1a5da085d965f86a3c5d67166433ad0e9af62",
+    "estudos/a-casa-em-portugal-e-na-europa/index.html": "f2188dc215b1a7dc684fe2aff63f06be4ab269c5592495f3e53a196c8c2d1198",
+    "tipos/spectral/Spectral-Regular.woff2": "3c846b032ad614e02ebc439087bbcbb7371cfbdea6c8a4b568efa859537e9c43",
+    "tipos/bitter/Bitter[wght].woff2": "b4ad17520d0ce8bd1aa98af06e07ca94145522f868b5a010732eb5eee3ba2ea0",
+    "_astro/Base.BHrCWcnd.css": "e131823b7f26169af951b3b7b4df44c7e5e864b5c4f84e7d35862e0ba4714548",
+    "_astro/EstudoView.CoBVk9FU.css": "da148598ea8f28d5309b1d77050569c250d0e02d507a3fe978e79c0387c3fd95",
+    "js/tema.js": "855bcee3ec1223b43e0f3e9a94c1fbdf1451e53830dcc022962b48e8d3340757",
+    "tipos/spectral/Spectral-Medium.woff2": "34f0ba222c28bc0ea816c693d05c528be4a5ee10c4b1765cdea774c6fb2502c2",
+    "tipos/spectral-sc/SpectralSC-SemiBold.woff2": "b847fe8f1fe1a862ce15e288958d132940a8204951ef0dbe2c9ad8fd997f29e2",
+    "tipos/spectral/Spectral-Italic.woff2": "4ba15b4bda78df3e8b755f0f12168c23c562707c921f74944e8ce638ee5ac7f1",
+    "tipos/spectral/Spectral-SemiBold.woff2": "91eef1143e31196ec762c00b566b9f628a851db348eb524cbfb36bfba9b22f2d",
+    "tipos/spectral-sc/SpectralSC-Regular.woff2": "afa69dd2e7aaca2733883133745fd84c18dfac6a08d5999e69705ea7277240b8",
+    "tipos/spectral/Spectral-Bold.woff2": "8710bb6e834a4ec2aa7a7b24a76e63ead0ba6649c81881aedf615cf37724664f",
+    "en/studies/a-casa-em-portugal-e-na-europa/index.html": "6065a7dc9c91e26a339b44f9386d2f73dc2f7c957197851c3ce08a5a9e906b68",
+    "estudos/a-casa-em-portugal-e-na-europa/documento/index.html": "5bb3d61167f4655fd3790344034c3a9d0ffdda47afe9944baf29cc5e32a05611",
+    "en/studies/a-casa-em-portugal-e-na-europa/document/index.html": "9aef9cc7f73379a3b88eaed721d29ed3723b45eea36da7b6bfd779dce8a8c44a"
+  },
+  "falhas": [],
+  "ok": true
+}

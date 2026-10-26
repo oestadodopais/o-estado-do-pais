@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-20T23:01:05+00:00",
+ "copia": "<pacotes>/pacote-hb1-2026-10-21",
+ "plantas": [
+  {
+   "id": "T4",
+   "ficheiro": "ledger/claims/hab-bpstat-12533724.yml",
+   "descricao": "o valor da linha hab-bpstat-12533724.yml passa de 2 553,0 a 2 553,1 na cópia exportada; a referência é a linha do motor no motor/diff.patch e o corpo alojado",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "07dd2bff1d8376e9ea28afd00ccb42316f18ad12aa18b44fe332b13e4cf4ca1e",
+   "sha256_depois": "b559d33559a0ceedb35ea6b8a5353f3dc851e4c3a799250d1211873c5fcc03e3",
+   "contexto_antes": "alteração aqui parte scripts/check-cruzamento.mjs.\n\nid: \"hab-bpstat-12533724\"\n\n# O valor tal como é publicado, com formatação portuguesa. String, nunca número.\nvalue: \"2 553,0\"\nunit: \"Milhões de euros\"\n\n# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,\n# e onde nele foi lido. Escrito pelo motor, nunca à mão.",
+   "contexto_depois": "alteração aqui parte scripts/check-cruzamento.mjs.\n\nid: \"hab-bpstat-12533724\"\n\n# O valor tal como é publicado, com formatação portuguesa. String, nunca número.\nvalue: \"2 553,1\"\nunit: \"Milhões de euros\"\n\n# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,\n# e onde nele foi lido. Escrito pelo motor, nunca à mão."
+  },
+  {
+   "id": "T5",
+   "ficheiro": "motor/content/23 Habitacao/ledger.json",
+   "descricao": "uma linha nova do livro do motor alterada (onze caracteres invertidos) na cópia do pacote; a referência é o corpo alojado",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "a0f5124f5c63e6f762a76583e39a1d522fdae4cf84fa3e7f76b0661b8816a854",
+   "sha256_depois": "ec06593c059e68560dde796679d499a3b0de41fe182b3993597d9f73e10593e9",
+   "contexto_antes": "lidade, de contestação, que não tenham de facto respaldo na sociedade portuguesa.\",\n      \"period\": \"2026-10-15\"\n    },\n    {\n      \"id\": \"hab-imprensa-pm-16\",\n      \"value\": \"Eu dirigi-me a partidos políticos, a movimentos associativos e organizações no desenvolvimento da sua ação, dessas organizações.\",\n      \"source_value\": null,\n      \"unit\": \"afirmação\",\n      \"name\": \"Eu dirigi-me a partidos políticos, a movimentos associativos e organizações no desenvolvi",
+   "contexto_depois": "lidade, de contestação, que não tenham de facto respaldo na sociedade portuguesa.\",\n      \"period\": \"2026-10-15\"\n    },\n    {\n      \"id\": \"hab-imprensa-pm-16\",\n      \"value\": \"Eu dirigi-me a partidos políticos, a movimentos associativos e oseõçazinagr no desenvolvimento da sua ação, dessas organizações.\",\n      \"source_value\": null,\n      \"unit\": \"afirmação\",\n      \"name\": \"Eu dirigi-me a partidos políticos, a movimentos associativos e organizações no desenvolvi"
+  },
+  {
+   "id": "T1",
+   "ficheiro": "built/estudos/a-casa-em-portugal-e-na-europa/documento/index.html",
+   "descricao": "a subida dos preços no segundo trimestre de 2026 passa de 16,5 % para 16,9 % na página construída em português; a referência é a linha do Eurostat (prc_hpi_q) e o corpo alojado",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "5bb3d61167f4655fd3790344034c3a9d0ffdda47afe9944baf29cc5e32a05611",
+   "sha256_depois": "323fadd9a62123995e0ed9a66124f86e68bf734a3f1464dad97dde3c8eed02c7",
+   "contexto_antes": "e dos preços está em 206,41 em 2025, com 2015 igual a cem, contra 124,75 na União; é o valor mais alto dos vinte e sete. No segundo trimestre de 2026 os preços subiram 16,5 % num ano, contra 4,7 % na União, outra vez a subida mais alta dos vinte e sete. Em relação ao rendimento das famílias, os preços estão em 144,34 (2015 igual a cem) cont",
+   "contexto_depois": "e dos preços está em 206,41 em 2025, com 2015 igual a cem, contra 124,75 na União; é o valor mais alto dos vinte e sete. No segundo trimestre de 2026 os preços subiram 16,9 % num ano, contra 4,7 % na União, outra vez a subida mais alta dos vinte e sete. Em relação ao rendimento das famílias, os preços estão em 144,34 (2015 igual a cem) cont"
+  },
+  {
+   "id": "T3",
+   "ficheiro": "built/estudos/a-casa-em-portugal-e-na-europa/documento/index.html",
+   "descricao": "os alojamentos vagos passam de 723 215 para 732 215 na página construída em português; a referência é a linha hab-ine-vagos-total e a revista do INE alojada",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "323fadd9a62123995e0ed9a66124f86e68bf734a3f1464dad97dde3c8eed02c7",
+   "sha256_depois": "e4a972dd085f93a7b5c4ab59e3e52a54cd07114fbe54cda749ec81f7f463c288",
+   "contexto_antes": "8 anos, está onde estava em 2015 (28,9).</p>\n<p>Em 2025 licenciaram-se 3,8 alojamentos por mil habitantes em Portugal, contra 3,6 na União; e os Censos de 2021 contaram 723 215 alojamentos vagos, 12,1 % do parque. Quantos desses estão em condições de ser habitados, como o Partido Socialista (o PS) afirma, nenhuma fonte deste estudo diz.</p>\n<p>O progra",
+   "contexto_depois": "8 anos, está onde estava em 2015 (28,9).</p>\n<p>Em 2025 licenciaram-se 3,8 alojamentos por mil habitantes em Portugal, contra 3,6 na União; e os Censos de 2021 contaram 732 215 alojamentos vagos, 12,1 % do parque. Quantos desses estão em condições de ser habitados, como o Partido Socialista (o PS) afirma, nenhuma fonte deste estudo diz.</p>\n<p>O progra"
+  },
+  {
+   "id": "T2",
+   "ficheiro": "built/en/studies/a-casa-em-portugal-e-na-europa/document/index.html",
+   "descricao": "a sobrecarga dos inquilinos a preços de mercado passa de 27.2 % para 27.7 % na página construída em inglês; a referência é a série do sítio e o corpo do Eurostat",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "9aef9cc7f73379a3b88eaed721d29ed3723b45eea36da7b6bfd779dce8a8c44a",
+   "sha256_depois": "c1b67729533c6ab455156e465cc8c67d43ad9b28821f907f2165670bb5754d57",
+   "contexto_antes": "rty percent of income on housing, is smaller (6.3 % against 7.7 %). 71.2 % of the Portuguese live in their own home, and 39.7 % in their own home with no loan. Among tenants at market rents, 27.2 % are overburdened, against 18.6 % in the Union, and they were 19.7 % in 2020; and the young leave their parents' home at 28.8 years on average, against 26.3 in the Union, with 4",
+   "contexto_depois": "rty percent of income on housing, is smaller (6.3 % against 7.7 %). 71.2 % of the Portuguese live in their own home, and 39.7 % in their own home with no loan. Among tenants at market rents, 27.7 % are overburdened, against 18.6 % in the Union, and they were 19.7 % in 2020; and the young leave their parents' home at 28.8 years on average, against 26.3 in the Union, with 4"
+  }
+ ]
+}

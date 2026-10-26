@@ -266,6 +266,15 @@ O arquivo tem dezoito trabalhos a 20.10.2026; dizia «dezassete trabalhos».
 Os estudos de Évora de agosto e setembro ficam como edições datadas, sucedidas
 pelos de 01.10.2026. A contagem anterior era de dezoito documentos a 16.09.2026,
 com dezoito edições a 16.09.2026 e treze trabalhos a 16.09.2026.
+Hoje estão alojados **vinte e sete documentos** a 20.10.2026: todas as vinte e
+sete edições do arquivo a 20.10.2026, dos seus dezoito trabalhos a 20.10.2026.
+Entraram as duas edições de «A casa em Portugal e na Europa». A frase dizia
+«vinte e cinco documentos a 01.10.2026: todas as vinte e cinco edições do arquivo,
+dos seus dezassete trabalhos». Não falta nenhuma. Os
+estudos de Évora de agosto e setembro ficam como edições datadas, sucedidas pelos
+de 01.10.2026. A frase dizia «dezoito
+documentos a 16.09.2026: todas as dezoito edições do arquivo, dos seus treze
+trabalhos».
 
 ### Pôr o documento de um estudo no sítio
 

@@ -1,4 +1,4 @@
-import {dataDeCalendarioConferida} from './historia-do-valor.mjs';
+import {dataDeCalendarioConferida,textoDaHabitacao} from './historia-do-valor.mjs';
 /**
  * «O QUE MUDOU» NO SEU LUGAR (B1c, 22.09.2026).
  *
@@ -188,7 +188,7 @@ function mudancasDeclaradas(lang) {
  * sem objeto é sobre o país.
  * @param {'pt'|'en'} lang */
 function publicacoes(lang) {
-  return estudosRecentes(lang).map((e) => {
+  return estudosRecentes(lang).filter(e => e.data !== null).map((e) => {
     if (!e.data) throw new Error(`Publicação sem data: ${e.work.slug}.`);
     return {
       tipo: /** @type {const} */ ('publicacao'),
@@ -350,7 +350,7 @@ export function mudancasDoIndice(lang) {
     // O resumo do índice compara valores numéricos. As frases corrigidas
     // conservam a entrada completa no registo e a história no recibo.
     const linha = getClaim(m.claim);
-    if ((linha.afirmacao === true && linha.unit === 'afirmação') || textoDocumentalConferido(linha) || dataDeCalendarioConferida(linha)) continue;
+    if ((linha.afirmacao === true && linha.unit === 'afirmação') || textoDocumentalConferido(linha) || dataDeCalendarioConferida(linha) || textoDaHabitacao(linha)) continue;
     const atual = maisRecente.get(m.claim);
     if (!atual || m.data > atual.data || (m.data === atual.data && m.n > atual.n)) maisRecente.set(m.claim, m);
   }
