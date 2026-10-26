@@ -176,7 +176,21 @@
         }
       ],
       "chamadas_ferramentas": 21,
-      "fonte_medidas_finais": "Mandato OG1-A9, §1"
+      "fonte_medidas_finais": "Mandato OG1-A9, §1",
+      "modelo": "gpt-6-astra",
+      "raciocinio": "high",
+      "inicio_utc": "2026-10-26T21:20:33Z",
+      "fim_utc": "2026-10-26T21:26:31Z",
+      "chamadas_construtor": 21,
+      "turnos_lancador": 22,
+      "simbolos_entrada": 1845509,
+      "simbolos_entrada_cache": null,
+      "simbolos_saida": null,
+      "simbolos_raciocinio": null,
+      "pontos_semana_percentagem_antes": 17.0,
+      "pontos_semana_percentagem_depois": 17.0,
+      "pontos_semana_diferenca": 0.0,
+      "nota": "medido pelo lançador, fora da passagem; a passagem parou no V6 do exportador; os símbolos de saída não lidos"
     },
     {
       "passagem": "OG1-A9",
@@ -187,10 +201,10 @@
       "capturas": 0,
       "chamadas_ferramentas_ate_relatorio": 91,
       "criterio_chamadas": "Chamadas diretas da sessão até à escrita do relatório. O commit do relatório e a inspeção final são posteriores.",
-      "turnos": null,
-      "entrada": null,
-      "saida": null,
-      "pontos": null,
+      "turnos": 93,
+      "entrada": 13614809,
+      "saida": 52949,
+      "pontos": 3.0,
       "tokens_used": null,
       "ausencias": "Totais finais de turnos, símbolos de entrada e saída, pontos e tokens used não disponibilizados; o lançador mede o custo final.",
       "corridas": [
@@ -565,7 +579,21 @@
             "typecheck"
           ]
         }
-      ]
+      ],
+      "modelo": "gpt-6-astra",
+      "raciocinio": "high",
+      "inicio_utc": "2026-10-26T21:30:35Z",
+      "fim_utc": "2026-10-26T22:04:01Z",
+      "chamadas_construtor": 92,
+      "turnos_lancador": 93,
+      "simbolos_entrada": 13614809,
+      "simbolos_entrada_cache": 13388928,
+      "simbolos_saida": 52949,
+      "simbolos_raciocinio": 20258,
+      "pontos_semana_percentagem_antes": 17.0,
+      "pontos_semana_percentagem_depois": 20.0,
+      "pontos_semana_diferenca": 3.0,
+      "nota": "medido pelo lançador, fora da passagem; as 92 chamadas pela resposta final do construtor"
     }
   ],
   "nota": "As contagens do lançador e as chamadas de ferramentas são medidas diferentes e não se substituem."

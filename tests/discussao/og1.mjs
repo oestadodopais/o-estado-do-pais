@@ -65,7 +65,7 @@ for(const[lang,route]of[['pt','o-que-se-discute'],['en','en/under-discussion']])
   const receipt=parse(fs.readFileSync(`dist/${lang==='pt'?'livro-razao':'en/ledger'}/${id}/index.html`,'utf8'));
   if(!p.name){assert.equal(receipt.querySelector('.linha-nome-da-fonte'),null,id+': título usado como rótulo');checks++;}
   if(lang==='en'&&id.startsWith('og1-utao-')){assert.equal(receipt.querySelector('.linha-excerto [data-linha-campo="excerpt"]')?.getAttribute('lang'),'pt-PT',id+': língua do excerto');checks++;}
-  if(p.entity_aliases){const publisher=Object.keys(p.entity_aliases)[0];assert.equal(claims.get(id).source,publisher);assert.equal(receipt.querySelector('.linha-atribuicao [data-linha-campo="source"]')?.text,publisher);assert(receipt.text.includes(p.attributed_to[0]));checks++;}
+  if(p.entity_aliases){const publisher=Object.keys(p.entity_aliases)[0];assert.equal(claims.get(id).source,publisher);const fontes=receipt.querySelectorAll('[data-linha-campo="source"]');assert(fontes.length>=2,id+': o recibo imprime o publicador em menos de dois lugares');for(const f of fontes){assert.equal(f.text,publisher,id+': publicador diferente num dos lugares do recibo');}assert(receipt.text.includes(p.attributed_to[0]));checks++;}
  }
 
  assert.equal(item.querySelector('[data-discussao-parte="como-foi-dito"]').querySelectorAll('[data-discussao-paragrafo]').length,11);checks++;
