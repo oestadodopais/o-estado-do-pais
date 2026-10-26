@@ -2,6 +2,7 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { loadClaims, validateLedger } from '../../src/lib/ledger.mjs';
+import { WORKS } from '../../src/data/studies.mjs';
 import {conferirHistoriaDoValor,entradasDoValor,assinaturaDoValor} from '../../src/lib/historia-do-valor.mjs';
 const linhas = loadClaims({includeWithdrawn:true});
 const id = 'divida-das-familias-2025-ue';
@@ -65,15 +66,20 @@ for(const [nome,muda,falha] of [
 }
 // HB1-c (o achado 15): uma linha de um estudo em preparação (`date: null`) não
 // tem correção pública nem história selada; a planta põe uma e tem de ficar vermelha.
+// HB1-d (26.10.2026): o estudo da habitação foi publicado e nenhum estudo do arquivo
+// fica em preparação; a planta devolve as edições do estudo da linha a `date: null`
+// enquanto corre (o estado em preparação), e repõe-nas no fim.
 for(const id of ['hab-imprensa-manif-euronews','hab-imprensa-tendas']) {
  const original=linhas.get(id);
- assert.equal(original.unit,'texto');assert.deepEqual(original.corrections??[],[],`${id}: correção numa edição em preparação`);
+ assert.equal(original.unit,'texto');assert.deepEqual(original.corrections??[],[],`${id}: correção numa linha que nunca chegou ao sítio`);
  const so=e=>e.startsWith(`[${id}.yml]`)&&e.includes('estudo em preparação');
  assert.deepEqual(validateLedger().errors.filter(so),[]);
+ const obra=WORKS.find(w=>w.id===original.study);assert.ok(obra&&obra.publication==='declared',`${id}: estudo com publicação declarada`);
+ const datas=obra.editions.map(e=>e.date);
  const c=structuredClone(original);c.corrections=[{date:'2026-10-21',kind:'correcao',old_value:'Texto anterior.',new_value:original.value,reason:'planta',reason_en:'plant'}];
- linhas.set(id,c);
+ linhas.set(id,c);for(const e of obra.editions)e.date=null;
  try { const erros=validateLedger().errors.filter(so);assert.ok(erros.length,`${id}: correção numa edição em preparação passou`);plantas.push({nome:`${id}: correção pública numa edição em preparação`,falha:'estudo em preparação',erros,mordeu:true}); }
- finally { linhas.set(id,original); }
+ finally { linhas.set(id,original);obra.editions.forEach((e,i)=>{e.date=datas[i];}); }
 }
 assert.equal(linhas.get('correcoes-publicadas').value,'12');
 const r = { controlos: 4, plantas };

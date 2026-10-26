@@ -129,13 +129,13 @@ export const WORKS = [
     {
       lang: 'pt',
       title: 'A casa em Portugal e na Europa',
-      date: null,
+      date: '2026-10-26',
       updated: null
     },
     {
       lang: 'en',
       title: 'Housing in Portugal and in Europe',
-      date: null,
+      date: '2026-10-26',
       updated: null
     }
   ],
