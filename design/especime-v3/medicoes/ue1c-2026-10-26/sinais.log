@@ -1,0 +1,11 @@
+
+> o-estado-do-pais@0.1.0 sinais
+> node scripts/sinais-da-primeira-pagina.mjs --prova
+
+  SINAL · a peça «revisao-do-ine» do bloco «estado» saiu da página: condição falsa: divida-publica-2025-notificacao-ine-2026-09 (89,2) != divida-publica-2025 (89,2)
+sinais · 5 de 5 blocos na primeira página, 1 saída(s); o registo está em .sinais/primeira-pagina.json.
+  SINAL · na explicação «dinheiro-do-estado-2026», as palavras em naoDiz[0][1] saíram da página: nenhuma linha casa com /juros|servico-da-divida|encargos-da-divida/ (12 casam)
+sinais · 2 explicação(ões), 1 frase(s) guardada(s) fora da página; o registo está em .sinais/explicacoes.json.
+  mordeu · uma condição falsa numa cópia das declarações (código 0)
+  mordeu · um resolvedor que recusa tudo (código 1)
+  mordeu · o passo da cadeia do build com um resolvedor que recusa tudo (código 1)

@@ -4058,8 +4058,8 @@ Os anos ingleses usam pares, como «nineteen ninety-two» e «twenty twenty-six�
 
 | Classe | Frase | Bloco | Estado | Razão |
 | --- | --- | --- | --- | --- |
-| conteudo | 72 revisões de proveniência | c2 | viva | Contagem do livro depois das dezoito entradas de proveniência das nove releituras (o acesso e o excerto de cada linha), que acompanham as nove atualizações. |
-| conteudo | 72 provenance revisions | c2 | viva | Contagem do livro depois das dezoito entradas de proveniência das nove releituras (o acesso e o excerto de cada linha), que acompanham as nove atualizações. |
+| conteudo | 76 revisões de proveniência | c2 | viva | UE1-c: contagem lida no HTML de /correcoes e /en/corrections após as quatro entradas de proveniência das duas releituras da dívida pública de 2025. |
+| conteudo | 76 provenance revisions | c2 | viva | UE1-c: contagem lida no HTML de /correcoes e /en/corrections após as quatro entradas de proveniência das duas releituras da dívida pública de 2025. |
 
 ## R4 · as palavras correntes em cada número, 05.10.2026
 

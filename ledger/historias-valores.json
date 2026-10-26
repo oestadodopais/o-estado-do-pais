@@ -351,5 +351,21 @@
       "old_value": "19,6",
       "new_value": "19,5"
     }
+  ],
+  "divida-publica-2025": [
+    {
+      "date": "2026-10-26",
+      "kind": "atualizacao",
+      "old_value": "89,7",
+      "new_value": "89,2"
+    }
+  ],
+  "divida-publica-2025-ue": [
+    {
+      "date": "2026-10-26",
+      "kind": "atualizacao",
+      "old_value": "81,7",
+      "new_value": "81,5"
+    }
   ]
 }

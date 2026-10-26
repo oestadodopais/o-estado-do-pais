@@ -21,8 +21,8 @@ document:
   kind: "serie"
   url: "https://ec.europa.eu/eurostat/databrowser/view/tespm140/default/table?lang=en"
 source_url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm140?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&sex=T"
-access_date: "2026-09-29"
-published_at: "2026-09-17"
+access_date: "2026-10-26"
+published_at: "2026-10-20"
 
 # O literal da série: as etiquetas do conjunto e das coordenadas, e o período,
 # como a resposta os escreve. O excerto de cada ponto começa por ele.
@@ -53,8 +53,8 @@ pontos:
     excerto: "Housing cost overburden rate — Percentage — Czechia — 2025: 8.2"
     bandeira: null
   - geo: "DK"
-    valor: "23,4"
-    excerto: "Housing cost overburden rate — Percentage — Denmark — 2025: 23.4 b"
+    valor: "14,7"
+    excerto: "Housing cost overburden rate — Percentage — Denmark — 2025: 14.7 b"
     bandeira: "b"
   - geo: "DE"
     valor: "11,2"
@@ -138,8 +138,8 @@ pontos:
     bandeira: null
   - geo: "SK"
     valor: "3,5"
-    excerto: "Housing cost overburden rate — Percentage — Slovakia — 2025: 3.5"
-    bandeira: null
+    excerto: "Housing cost overburden rate — Percentage — Slovakia — 2025: 3.5 b"
+    bandeira: "b"
   - geo: "FI"
     valor: "4,7"
     excerto: "Housing cost overburden rate — Percentage — Finland — 2025: 4.7"
@@ -157,7 +157,14 @@ attributed_to:
   - "Eurostat"
 study: "dominios-2026"
 # Nota interna. NÃO é publicada.
-note: "UE1. Linha de série por país (eixo: pais) da medida «sobrecarga-do-custo-da-habitacao-2025», pelo mesmo conjunto e pelas mesmas coordenadas seladas da linha «sobrecarga-do-custo-da-habitacao-2025-ue», com os 27 países no lugar da União. Coordenadas: freq=A, unit=PC, rskpovth=TOTAL, age=TOTAL, sex=T, time=2025. Corpo alojado: ue1/034-eurostat-sobrecarga-do-custo-da-habitacao-2025-paises.json (sha256 5848b25b94a6f530…). A data published_at é a da última atualização do conjunto, que a API publica por conjunto e não por ponto. Licença: Eurostat, CC BY 4.0."
+note: "UE1. Linha de série por país (eixo: pais) da medida «sobrecarga-do-custo-da-habitacao-2025», pelo mesmo conjunto e pelas mesmas coordenadas seladas da linha «sobrecarga-do-custo-da-habitacao-2025-ue», com os 27 países no lugar da União. Coordenadas: freq=A, unit=PC, rskpovth=TOTAL, age=TOTAL, sex=T, time=2025. Corpo alojado: corredor-series-paises/2026-10-26/f0612b1353f1c6dd8bfe3bd4a0a7623d283fbec6d53af6580a8d937b3fee05cc/007-sobrecarga-do-custo-da-habitacao-2025-paises.json (sha256 f0612b1353f1c6dd…). A data published_at é a da última atualização do conjunto, que a API publica por conjunto e não por ponto. Licença: Eurostat, CC BY 4.0."
 
 # Correcções datadas, por ponto. Nunca apagar um valor: acrescentar aqui.
-corrections: []
+corrections:
+  - geo: "DK"
+    date: "2026-10-26"
+    kind: "atualizacao"
+    old_value: "23,4"
+    new_value: "14,7"
+    reason: "O Eurostat reviu o valor de DK; o carimbo do conjunto passou de 2026-09-17T23:00:00+0200 a 2026-10-20T11:00:00+0200. A releitura de 2026-10-26 confirmou a revisão."
+    reason_en: "Eurostat revised the value for DK; the dataset stamp moved from 2026-09-17T23:00:00+0200 to 2026-10-20T11:00:00+0200. The rereading on 2026-10-26 confirmed the revision."
