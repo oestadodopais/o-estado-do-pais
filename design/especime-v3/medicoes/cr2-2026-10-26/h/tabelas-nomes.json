@@ -1,0 +1,15 @@
+{
+  "base": "71420a8f4",
+  "tabelas": [
+    {
+      "tabela": "NOMES_DO_PROJETO",
+      "chaves": 1069,
+      "igual": true
+    },
+    {
+      "tabela": "NOMES_DAS_LINHAS_DERIVADAS",
+      "chaves": 28,
+      "igual": true
+    }
+  ]
+}

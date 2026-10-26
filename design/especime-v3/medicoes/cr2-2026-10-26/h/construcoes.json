@@ -1,0 +1,147 @@
+{
+  "partida": "4f5c704599c87fc6ebf672ef04adc3c596f5a065",
+  "implementacao": "968ab154b383035db803141a0b6b00451be20ebd",
+  "main": "71420a8f44b3b66911a97c16077ae4f4e942a510",
+  "html": [
+    {
+      "edicao": "main",
+      "rota": "correcoes/index.html",
+      "sha256": "2c5be1137bb8ab5857813210c2c9033e7fa837fc9bba79561cf0119454366066"
+    },
+    {
+      "edicao": "main",
+      "rota": "en/corrections/index.html",
+      "sha256": "7ea5facdb739df1cc8a46ed445dbe41dcf8c728e1d88b99e84d31e381058fc96"
+    },
+    {
+      "edicao": "main",
+      "rota": "livro-razao/custo-unitario-do-trabalho-2025-ue/index.html",
+      "sha256": "1ed4da2422692dfbb3d7f5bc6da163b9a12776b1cbfca5398a343550c949545d"
+    },
+    {
+      "edicao": "main",
+      "rota": "livro-razao/divida-das-empresas-2025-ue/index.html",
+      "sha256": "ea65e080c5b318f0f4bf1f4f3d6be2c34345e8a9f2c43e26f0edd00c67efe41a"
+    },
+    {
+      "edicao": "main",
+      "rota": "livro-razao/fluxo-de-credito-as-familias-2025-ue/index.html",
+      "sha256": "afe574a24b0d9f86ccd196421c048be5f06111c89361c65d4a99fac9ee78ee5d"
+    },
+    {
+      "edicao": "main",
+      "rota": "livro-razao/formacao-bruta-de-capital-fixo-2025-ue/index.html",
+      "sha256": "b5869e4a1f84ad400a65811cb59938ec0c82f3915a7ddab37b13f2d27871f938"
+    },
+    {
+      "edicao": "main",
+      "rota": "livro-razao/licencas-de-construcao-2025-ue/index.html",
+      "sha256": "bf2c368515f97bd29cba854858dda41916aa9502df48377236d2165cf088b9f5"
+    },
+    {
+      "edicao": "main",
+      "rota": "livro-razao/pib-real-per-capita-2025-ue/index.html",
+      "sha256": "fc8729867a7367ab372bb5e66e49a66e45296660d65f97d336bbf415301f3520"
+    },
+    {
+      "edicao": "main",
+      "rota": "en/ledger/custo-unitario-do-trabalho-2025-ue/index.html",
+      "sha256": "dad12af8d1e5a143da98d705690983d0fe514d2e586301a4875ce4ae5beafa2f"
+    },
+    {
+      "edicao": "main",
+      "rota": "en/ledger/divida-das-empresas-2025-ue/index.html",
+      "sha256": "e9d3336067b40e819483bf58f24fe55bc7a0d620517f369c600b59c84c35e781"
+    },
+    {
+      "edicao": "main",
+      "rota": "en/ledger/fluxo-de-credito-as-familias-2025-ue/index.html",
+      "sha256": "c7d38667434b7ba1cb3ff91a8063a8e5a21ab67fa1d1f288868797f920725a76"
+    },
+    {
+      "edicao": "main",
+      "rota": "en/ledger/formacao-bruta-de-capital-fixo-2025-ue/index.html",
+      "sha256": "d60ae2c7d9d702e5e0558cf076dff1e3dbdb1562399c643c6ed9e2ee55fa4817"
+    },
+    {
+      "edicao": "main",
+      "rota": "en/ledger/licencas-de-construcao-2025-ue/index.html",
+      "sha256": "d0641ddfd5f5663353b51b534539fca99b80b7df35c726efc021ecf5b119b148"
+    },
+    {
+      "edicao": "main",
+      "rota": "en/ledger/pib-real-per-capita-2025-ue/index.html",
+      "sha256": "3a4f9a38e18f02dada1bab51653fbcef00b83a292c4f0c223003b5f301478eb0"
+    },
+    {
+      "edicao": "worktree",
+      "rota": "correcoes/index.html",
+      "sha256": "d98f9f807127999f1cd32bd531b87b7ffa4b6e38cc69e6ddded53b118bc2ef91"
+    },
+    {
+      "edicao": "worktree",
+      "rota": "en/corrections/index.html",
+      "sha256": "7a69bb79f84db53a9c9aafbaf45f237c04437e7ae22e229ca730104e084ebb43"
+    },
+    {
+      "edicao": "worktree",
+      "rota": "livro-razao/custo-unitario-do-trabalho-2025-ue/index.html",
+      "sha256": "95cecdabf3705f8c44cdd6e766e97590838041ca5a5398c11add175257b9ad10"
+    },
+    {
+      "edicao": "worktree",
+      "rota": "livro-razao/divida-das-empresas-2025-ue/index.html",
+      "sha256": "b5ccc0e6a45c306dd95828cc274efdb9002d355401dc3cdafb1d3b9eedbdf6ac"
+    },
+    {
+      "edicao": "worktree",
+      "rota": "livro-razao/fluxo-de-credito-as-familias-2025-ue/index.html",
+      "sha256": "d9cfe2eaaf6df171c991902e6e9d02511aa424d9f3a3f6f3e4ecc8be03ff7eae"
+    },
+    {
+      "edicao": "worktree",
+      "rota": "livro-razao/formacao-bruta-de-capital-fixo-2025-ue/index.html",
+      "sha256": "45a342054b6f87618620c8930c202056684b0735bda5d2020f00eaa011cc25a0"
+    },
+    {
+      "edicao": "worktree",
+      "rota": "livro-razao/licencas-de-construcao-2025-ue/index.html",
+      "sha256": "b597ff1e93d58e42663cb8beb26c6efe553c4f5038c8c26287b21942ce55b70a"
+    },
+    {
+      "edicao": "worktree",
+      "rota": "livro-razao/pib-real-per-capita-2025-ue/index.html",
+      "sha256": "d0a34eebbc83a567db404469c0f106346a13eb6a27cebb813809e504aff1e6f9"
+    },
+    {
+      "edicao": "worktree",
+      "rota": "en/ledger/custo-unitario-do-trabalho-2025-ue/index.html",
+      "sha256": "42adfe417212b898a0540889fe120a54e196b376dc6025c851d2022deafeb439"
+    },
+    {
+      "edicao": "worktree",
+      "rota": "en/ledger/divida-das-empresas-2025-ue/index.html",
+      "sha256": "36d6f6cdaad8495400a8e00e1f20ac64550b27570807f20febeb4b9f08fb55ec"
+    },
+    {
+      "edicao": "worktree",
+      "rota": "en/ledger/fluxo-de-credito-as-familias-2025-ue/index.html",
+      "sha256": "31a624b900daabff3bc94dbca6b3971e4c6f0b6379c4b08f7a0129fab0007602"
+    },
+    {
+      "edicao": "worktree",
+      "rota": "en/ledger/formacao-bruta-de-capital-fixo-2025-ue/index.html",
+      "sha256": "aba1ad9cf1283b732c053b54e229ea4d42c49b3fca39e92d24c06561f8fab6a4"
+    },
+    {
+      "edicao": "worktree",
+      "rota": "en/ledger/licencas-de-construcao-2025-ue/index.html",
+      "sha256": "c720eaf8d65c5a04ea22378d49664e6a02da49036f7daea31d2abeb55cd2b6d2"
+    },
+    {
+      "edicao": "worktree",
+      "rota": "en/ledger/pib-real-per-capita-2025-ue/index.html",
+      "sha256": "4f509bc042717a9fbbaac38496349d822d4548ebc9a6ac95e13449a81357f1d6"
+    }
+  ]
+}

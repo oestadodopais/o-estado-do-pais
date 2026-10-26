@@ -1,3 +1,234 @@
+# CR2-h: correções preparadas, paragem nos nomes anteriores a 26.10
+
+**Entrega bloqueada pelo §2 do mandato.** A mudança genérica para o nome do recibo altera seis entradas de 05.10.2026 em português e cinco em inglês. Não se acrescentou uma exceção por data nem se aprovou esse resultado. As alterações preparadas ficam conservadas para decisão do lugar de direção; esta passagem não está pronta para aterragem.
+
+Cabeça de partida: `4f5c70459`. Cabeça de chegada da implementação: `968ab154b383035db803141a0b6b00451be20ebd`. O commit seguinte contém este relatório e as provas; a sua cabeça é comunicada na resposta final. Referência da comparação: `main` em `71420a8f4`.
+
+## O que mudou e o que impediu a entrega
+
+O mapa e o laço das onze observações irmãs saíram de `nomes-das-medidas.mjs`. Os seis recibos da União recuperaram o lugar no título, nas duas edições. «O que mudou» usa o nome do recibo quando a escada anterior devolve um rótulo da fonte, e marca a família que o fundamenta. As quinze entradas autorizadas têm o nome do respetivo recibo, mas a regra alcança também entradas antigas, contrariando a condição de conservação do mandato.
+
+As quinze razões de atualização e as quinze razões de acesso foram reescritas nas duas línguas. O portão da voz tinha recusado «read at the source on», «the house» e «a casa». Os novos moldes usam «comparação semanal com a fonte» e «este projeto releu a fonte». Os valores e as datas vêm dos extratos do painel; o valor intermédio do caso B vem da linha 3 do extrato de 19.10. Os valores esperados no guião são guardas, não a origem do texto. O guião confirmou, para cada linha, que só `reason` e `reason_en` das duas entradas mudaram. O excerto e os restantes campos foram conservados.
+
+As razões anteriores do CR2-g continuam no histórico e em `g/razoes.json`. O `dist/` do CR2-g foi reescrito por `g/sincronizar-marcas.mjs`; os seus códigos 1 de `build`, `check:voz` e `check:cartao` ficaram vermelhos, sem repetição nessa passagem. Os dois guiões de marcas receberam o aviso de desuso e não correram nesta passagem. Nenhum guião desta passagem remendou `dist/`: apenas os comandos reais `npm run build` o escreveram.
+
+## Tabelas dos nomes exportados
+
+| Tabela | Chaves medidas | Comparação com main |
+|---|---:|---|
+| `NOMES_DO_PROJETO` | 1069 | Igual, chave a chave e texto a texto |
+| `NOMES_DAS_LINHAS_DERIVADAS` | 28 | Igual, chave a chave e texto a texto |
+
+`h/conferir-nomes.mjs` lê `git show 71420a8f4:src/data/nomes-das-medidas.mjs`, importa essa versão num ficheiro temporário fora do repositório e compara os objetos. Prova em `h/tabelas-nomes.json`.
+
+## Títulos dos recibos, edição pt
+
+| Linha | H1 de main e desta construção, iguais |
+|---|---|
+| `custo-unitario-do-trabalho-2025-ue` | Custo do trabalho por unidade produzida na União Europeia (custo unitário do trabalho) |
+| `divida-das-empresas-2025-ue` | Dívida das empresas (não financeiras) na União Europeia |
+| `fluxo-de-credito-as-familias-2025-ue` | Fluxo de crédito às famílias na União Europeia |
+| `formacao-bruta-de-capital-fixo-2025-ue` | Investimento em bens duradouros para produzir na União Europeia (formação bruta de capital fixo) |
+| `licencas-de-construcao-2025-ue` | Área licenciada para habitação na União Europeia |
+| `pib-real-per-capita-2025-ue` | PIB real por habitante na União Europeia |
+
+## Títulos dos recibos, edição en
+
+| Linha | H1 de main e desta construção, iguais |
+|---|---|
+| `custo-unitario-do-trabalho-2025-ue` | Labour cost per unit of output in the European Union (unit labour cost) |
+| `divida-das-empresas-2025-ue` | Debt of (non-financial) companies in the European Union |
+| `fluxo-de-credito-as-familias-2025-ue` | Credit flow to households in the European Union |
+| `formacao-bruta-de-capital-fixo-2025-ue` | Investment in durable goods used for production in the European Union (gross fixed capital formation) |
+| `licencas-de-construcao-2025-ue` | Floor area licensed for housing in the European Union |
+| `pib-real-per-capita-2025-ue` | Real GDP per capita in the European Union |
+
+## Os quinze nomes em «O que mudou»
+
+| Linha | PT, igual ao recibo | EN, igual ao recibo |
+|---|---|---|
+| `custo-unitario-do-trabalho-2025-ue` | Custo do trabalho por unidade produzida na União Europeia (custo unitário do trabalho) | Labour cost per unit of output in the European Union (unit labour cost) |
+| `divida-das-empresas-2024` | Dívida das empresas (não financeiras) | Debt of (non-financial) companies |
+| `divida-das-empresas-2025` | Dívida das empresas (não financeiras) | Debt of (non-financial) companies |
+| `divida-das-empresas-2025-ue` | Dívida das empresas (não financeiras) na União Europeia | Debt of (non-financial) companies in the European Union |
+| `divida-das-familias-2024` | Dívida das famílias | Household debt |
+| `divida-das-familias-2025` | Dívida das famílias | Household debt |
+| `divida-publica-2024` | Dívida pública | Government debt |
+| `fluxo-de-credito-as-empresas-2024` | Fluxo de crédito às empresas (não financeiras) | Credit flow to (non-financial) companies |
+| `fluxo-de-credito-as-empresas-2025` | Fluxo de crédito às empresas (não financeiras) | Credit flow to (non-financial) companies |
+| `fluxo-de-credito-as-familias-2024` | Fluxo de crédito às famílias | Credit flow to households |
+| `fluxo-de-credito-as-familias-2025` | Fluxo de crédito às famílias | Credit flow to households |
+| `fluxo-de-credito-as-familias-2025-ue` | Fluxo de crédito às famílias na União Europeia | Credit flow to households in the European Union |
+| `formacao-bruta-de-capital-fixo-2025-ue` | Investimento em bens duradouros para produzir na União Europeia (formação bruta de capital fixo) | Investment in durable goods used for production in the European Union (gross fixed capital formation) |
+| `licencas-de-construcao-2025-ue` | Área licenciada para habitação na União Europeia | Floor area licensed for housing in the European Union |
+| `pib-real-per-capita-2025-ue` | PIB real por habitante na União Europeia | Real GDP per capita in the European Union |
+
+Os quinze nomes portugueses são os nomes portugueses declarados do recibo, sem os rótulos ingleses da fonte. As seis linhas da União conservam o lugar nos nomes. As marcas de família foram conferidas contra o resolvedor. Provas em `h/recibos.json` e `h/mudancas.json`.
+
+## Comparação das entradas antigas com main, motivo da paragem
+
+A referência foi extraída com `git archive 71420a8f4` para uma pasta temporária fora do repositório e construída com `npm run build`, usando as dependências já instaladas. O HTML foi produzido por Astro. Essa construção de referência terminou com código 1 em `check:datas`, porque o arquivo temporário não tem `.git`: «fatal: not a git repository (or any of the parent directories): .git». Não se apresenta como construção aprovada. O HTML comparado vem dos ficheiros dessa referência, sem reconstruir nomes pelos resolvedores.
+
+Em cada edição há 48 entradas anteriores a 26.10 nos dois HTML. As duas outras entradas de 26.10, `edicoes-publicadas` e `estudos-publicados`, mantêm os nomes de main. As quinze atualizações desta passagem são entradas novas perante main. As diferenças de nome nas entradas antigas são todas as seguintes:
+
+| Edição | Linha, entrada de 05.10.2026 | Nome em main | Nome nesta construção |
+|---|---|---|
+| pt | `custo-unitario-do-trabalho-2024` | Nominal unit labour cost per hour worked | Custo do trabalho por unidade produzida (custo unitário do trabalho) |
+| pt | `despesa-em-id-2024-ue` | Gross domestic expenditure on research and development (R&D) | Despesa em investigação e desenvolvimento na União Europeia |
+| pt | `formacao-bruta-de-capital-fixo-2024` | Gross fixed capital formation at current prices | Investimento em bens duradouros para produzir (formação bruta de capital fixo) |
+| pt | `pib-real-per-capita-2024` | Real GDP per capita | PIB real por habitante |
+| pt | `posicao-de-investimento-internacional-2024` | Net international investment position - annual data | O que o país tem no exterior menos o que deve (posição de investimento internacional) |
+| pt | `saldo-da-balanca-corrente-2024` | Current account balance - 3 year average | Saldo da balança corrente |
+| en | `custo-unitario-do-trabalho-2024` | Nominal unit labour cost per hour worked | Labour cost per unit of output (unit labour cost) |
+| en | `despesa-em-id-2024-ue` | Gross domestic expenditure on research and development (R&D) | Spending on research and development in the European Union |
+| en | `formacao-bruta-de-capital-fixo-2024` | Gross fixed capital formation at current prices | Investment in durable goods used for production (gross fixed capital formation) |
+| en | `posicao-de-investimento-internacional-2024` | Net international investment position - annual data | What the country owns abroad minus what it owes (net international investment position) |
+| en | `saldo-da-balanca-corrente-2024` | Current account balance - 3 year average | Current account balance |
+
+O nome inglês de `pib-real-per-capita-2024` continua «Real GDP per capita», pelo que essa entrada não aparece entre as cinco divergências inglesas. `h/historico-nomes.json` conserva a lista completa. A conferência termina deliberadamente com código 1 perante estas divergências. A recolha foi completada nas duas edições para documentar a paragem; não se alterou a regra de aceitação.
+
+## Códigos reais e comandos não iniciados
+
+| Comando | Código | Registo ou motivo |
+|---|---|---|
+| npm run build | 0 | `h/build-h.log` |
+| npm run check:voz | Não executado isoladamente | Paragem do §2 antes de iniciar o comando |
+| npm run check:cartao | Não executado isoladamente | Paragem do §2 antes de iniciar o comando |
+| npm run ledger:check | Não executado isoladamente | Paragem do §2 antes de iniciar o comando |
+| npm run check:registo | Não executado isoladamente | Paragem do §2 antes de iniciar o comando |
+| npm run typecheck | 0 | `h/typecheck-h.log` |
+| npm run check:cruzamento | Não executado isoladamente | Paragem do §2 antes de iniciar o comando |
+| npm run check:palavras | Não executado isoladamente | Paragem do §2 antes de iniciar o comando |
+| npm run check:rotulos | Não executado isoladamente | Paragem do §2 antes de iniciar o comando |
+| Ensaio da ferramenta | 0 | `h/ferramenta-h.log` |
+| Comparação das tabelas exportadas | 0 | `h/tabelas-nomes-h.log` |
+| Comparação dos nomes no HTML | 1 | `h/nomes-html-h.log` |
+| npm run build da referência main | 1 | `h/build-main-h.log` |
+
+O `build` inclui conferências na sua própria cadeia; isso não se apresenta como execução isolada dos comandos da tabela. `RESEARCHHUB_DIR` apontou à worktree autorizada do motor. As duas construções já estavam em curso quando se encontrou a condição de paragem e terminaram para conservar os códigos reais. Não houve corrida inteira dos portões, capturas nem execução do gate do motor.
+
+O primeiro ensaio de HTML falhou porque o seletor também apanhava a marca de uma data; o seletor passou a escolher só as entradas da lista. A segunda execução detetou a paragem em português. A recolha bilingue encontrou ainda duas entradas de 26.10 que já existiam em main, pelo que a seleção das quinze foi delimitada pelos identificadores autorizados e as outras duas comparadas à parte. Os quatro registos ficam em `h/`, incluindo os erros do guião, sem substituir códigos vermelhos por zeros.
+
+## Ferramenta, inventário e limites
+
+A planta de `published_at` volta a escolher outro dia quando o acesso coincide com o dia do carimbo. O ensaio lê e executa a função real da planta em ambos os casos, além das três recusas do ensaio anterior; código 0. A gralha «do do» foi corrigida.
+
+No inventário dos rótulos mudaram apenas as réguas das quatro chaves nacionais de dívida das empresas e das famílias, em PT e EN: forma com provisório em Portugal a 0, forma sem essa nota a 1. Acrescentou-se `revisao_cr2h` com as quatro chaves e a razão pedida: «CR2-h, 26.10.2026: a nota de provisório do valor de Portugal de 2024 saiu com a revisão do Eurostat de 17.10.2026». A cabeça e as contagens gerais não foram alteradas. `check:rotulos` não foi iniciado devido à paragem.
+
+Ficam para higiene os achados Minor 9 e Minor 13 do mandato: o lado «antes» das duas frases de 2024 reconstruído pelos resolvedores e a remoção da nota de provisório antes da comparação em `frases-cr2.mjs`; as vírgulas decimais na edição inglesa, I242. Continuam também as pendências históricas já declaradas: datas de próxima verificação ultrapassadas, duas releituras no mesmo dia sem distinção, sinal global dos 17 alarmes e releitura das séries por país pela UE1-c. Nenhuma escrita foi feita no motor.
+
+## As quinze razões das atualizações, nas duas línguas
+
+**`custo-unitario-do-trabalho-2025-ue` (caso C)**
+
+PT: O Eurostat reviu o valor de 15,2 para 14,8 na atualização do conjunto de dados de 22.10.2026 (a versão anterior era de 16.10.2026). A comparação semanal com a fonte de 26.10.2026 encontrou a revisão e este projeto releu a fonte nesse dia; até aí publicava-se o valor da leitura anterior.
+
+EN: Eurostat revised the value from 15.2 to 14.8 in the dataset update of 22.10.2026 (the previous version was of 16.10.2026). The weekly comparison with the source of 26.10.2026 found the revision and this project re-read the source that day; until then the value of the earlier reading was published.
+
+**`divida-das-empresas-2024` (caso A)**
+
+PT: O Eurostat reviu o valor de 67,1 para 66,6 na atualização do conjunto de dados de 17.10.2026 (a versão anterior era de 09.10.2026). A comparação semanal com a fonte de 19.10.2026 encontrou a revisão, a de 26.10.2026 leu o mesmo valor na versão de 24.10.2026, e este projeto releu a fonte a 26.10.2026; até aí publicava-se o valor da leitura anterior.
+
+EN: Eurostat revised the value from 67.1 to 66.6 in the dataset update of 17.10.2026 (the previous version was of 09.10.2026). The weekly comparison with the source of 19.10.2026 found the revision, the one of 26.10.2026 read the same value in the version of 24.10.2026, and this project re-read the source on 26.10.2026; until then the value of the earlier reading was published.
+
+**`divida-das-empresas-2025` (caso A)**
+
+PT: O Eurostat reviu o valor de 64,9 para 65,1 na atualização do conjunto de dados de 17.10.2026 (a versão anterior era de 09.10.2026). A comparação semanal com a fonte de 19.10.2026 encontrou a revisão, a de 26.10.2026 leu o mesmo valor na versão de 24.10.2026, e este projeto releu a fonte a 26.10.2026; até aí publicava-se o valor da leitura anterior.
+
+EN: Eurostat revised the value from 64.9 to 65.1 in the dataset update of 17.10.2026 (the previous version was of 09.10.2026). The weekly comparison with the source of 19.10.2026 found the revision, the one of 26.10.2026 read the same value in the version of 24.10.2026, and this project re-read the source on 26.10.2026; until then the value of the earlier reading was published.
+
+**`divida-das-empresas-2025-ue` (caso B)**
+
+PT: O Eurostat reviu o valor de 70,0 para 70,3 na atualização do conjunto de dados de 17.10.2026 (a versão anterior era de 09.10.2026) e outra vez para 70,2 na de 24.10.2026. A comparação semanal com a fonte de 19.10.2026 encontrou a primeira revisão e a de 26.10.2026 a segunda; este projeto releu a fonte a 26.10.2026 e até aí publicava 70,0.
+
+EN: Eurostat revised the value from 70.0 to 70.3 in the dataset update of 17.10.2026 (the previous version was of 09.10.2026) and again to 70.2 in the one of 24.10.2026. The weekly comparison with the source of 19.10.2026 found the first revision and the one of 26.10.2026 the second; this project re-read the source on 26.10.2026 and until then published 70.0.
+
+**`divida-das-familias-2024` (caso A)**
+
+PT: O Eurostat reviu o valor de 52,6 para 52,3 na atualização do conjunto de dados de 17.10.2026 (a versão anterior era de 09.10.2026). A comparação semanal com a fonte de 19.10.2026 encontrou a revisão, a de 26.10.2026 leu o mesmo valor na versão de 24.10.2026, e este projeto releu a fonte a 26.10.2026; até aí publicava-se o valor da leitura anterior.
+
+EN: Eurostat revised the value from 52.6 to 52.3 in the dataset update of 17.10.2026 (the previous version was of 09.10.2026). The weekly comparison with the source of 19.10.2026 found the revision, the one of 26.10.2026 read the same value in the version of 24.10.2026, and this project re-read the source on 26.10.2026; until then the value of the earlier reading was published.
+
+**`divida-das-familias-2025` (caso A)**
+
+PT: O Eurostat reviu o valor de 53,9 para 54,4 na atualização do conjunto de dados de 17.10.2026 (a versão anterior era de 09.10.2026). A comparação semanal com a fonte de 19.10.2026 encontrou a revisão, a de 26.10.2026 leu o mesmo valor na versão de 24.10.2026, e este projeto releu a fonte a 26.10.2026; até aí publicava-se o valor da leitura anterior.
+
+EN: Eurostat revised the value from 53.9 to 54.4 in the dataset update of 17.10.2026 (the previous version was of 09.10.2026). The weekly comparison with the source of 19.10.2026 found the revision, the one of 26.10.2026 read the same value in the version of 24.10.2026, and this project re-read the source on 26.10.2026; until then the value of the earlier reading was published.
+
+**`divida-publica-2024` (caso C)**
+
+PT: O Eurostat reviu o valor de 93,5 para 93,0 na atualização do conjunto de dados de 21.10.2026 (a versão anterior era de 22.04.2026). A comparação semanal com a fonte de 26.10.2026 encontrou a revisão e este projeto releu a fonte nesse dia; até aí publicava-se o valor da leitura anterior.
+
+EN: Eurostat revised the value from 93.5 to 93.0 in the dataset update of 21.10.2026 (the previous version was of 22.04.2026). The weekly comparison with the source of 26.10.2026 found the revision and this project re-read the source that day; until then the value of the earlier reading was published.
+
+**`fluxo-de-credito-as-empresas-2024` (caso A)**
+
+PT: O Eurostat reviu o valor de 2,4 para 2,2 na atualização do conjunto de dados de 17.10.2026 (a versão anterior era de 09.10.2026). A comparação semanal com a fonte de 19.10.2026 encontrou a revisão, a de 26.10.2026 leu o mesmo valor na versão de 24.10.2026, e este projeto releu a fonte a 26.10.2026; até aí publicava-se o valor da leitura anterior.
+
+EN: Eurostat revised the value from 2.4 to 2.2 in the dataset update of 17.10.2026 (the previous version was of 09.10.2026). The weekly comparison with the source of 19.10.2026 found the revision, the one of 26.10.2026 read the same value in the version of 24.10.2026, and this project re-read the source on 26.10.2026; until then the value of the earlier reading was published.
+
+**`fluxo-de-credito-as-empresas-2025` (caso A)**
+
+PT: O Eurostat reviu o valor de 3,0 para 3,4 na atualização do conjunto de dados de 17.10.2026 (a versão anterior era de 09.10.2026). A comparação semanal com a fonte de 19.10.2026 encontrou a revisão, a de 26.10.2026 leu o mesmo valor na versão de 24.10.2026, e este projeto releu a fonte a 26.10.2026; até aí publicava-se o valor da leitura anterior.
+
+EN: Eurostat revised the value from 3.0 to 3.4 in the dataset update of 17.10.2026 (the previous version was of 09.10.2026). The weekly comparison with the source of 19.10.2026 found the revision, the one of 26.10.2026 read the same value in the version of 24.10.2026, and this project re-read the source on 26.10.2026; until then the value of the earlier reading was published.
+
+**`fluxo-de-credito-as-familias-2024` (caso A)**
+
+PT: O Eurostat reviu o valor de 4,1 para 4,0 na atualização do conjunto de dados de 17.10.2026 (a versão anterior era de 09.10.2026). A comparação semanal com a fonte de 19.10.2026 encontrou a revisão, a de 26.10.2026 leu o mesmo valor na versão de 24.10.2026, e este projeto releu a fonte a 26.10.2026; até aí publicava-se o valor da leitura anterior.
+
+EN: Eurostat revised the value from 4.1 to 4.0 in the dataset update of 17.10.2026 (the previous version was of 09.10.2026). The weekly comparison with the source of 19.10.2026 found the revision, the one of 26.10.2026 read the same value in the version of 24.10.2026, and this project re-read the source on 26.10.2026; until then the value of the earlier reading was published.
+
+**`fluxo-de-credito-as-familias-2025` (caso A)**
+
+PT: O Eurostat reviu o valor de 8,6 para 9,0 na atualização do conjunto de dados de 17.10.2026 (a versão anterior era de 09.10.2026). A comparação semanal com a fonte de 19.10.2026 encontrou a revisão, a de 26.10.2026 leu o mesmo valor na versão de 24.10.2026, e este projeto releu a fonte a 26.10.2026; até aí publicava-se o valor da leitura anterior.
+
+EN: Eurostat revised the value from 8.6 to 9.0 in the dataset update of 17.10.2026 (the previous version was of 09.10.2026). The weekly comparison with the source of 19.10.2026 found the revision, the one of 26.10.2026 read the same value in the version of 24.10.2026, and this project re-read the source on 26.10.2026; until then the value of the earlier reading was published.
+
+**`fluxo-de-credito-as-familias-2025-ue` (caso A)**
+
+PT: O Eurostat reviu o valor de 2,9 para 3,0 na atualização do conjunto de dados de 17.10.2026 (a versão anterior era de 09.10.2026). A comparação semanal com a fonte de 19.10.2026 encontrou a revisão, a de 26.10.2026 leu o mesmo valor na versão de 24.10.2026, e este projeto releu a fonte a 26.10.2026; até aí publicava-se o valor da leitura anterior.
+
+EN: Eurostat revised the value from 2.9 to 3.0 in the dataset update of 17.10.2026 (the previous version was of 09.10.2026). The weekly comparison with the source of 19.10.2026 found the revision, the one of 26.10.2026 read the same value in the version of 24.10.2026, and this project re-read the source on 26.10.2026; until then the value of the earlier reading was published.
+
+**`formacao-bruta-de-capital-fixo-2025-ue` (caso C)**
+
+PT: O Eurostat reviu o valor de 21,4 para 21,5 na atualização do conjunto de dados de 22.10.2026 (a versão anterior era de 15.10.2026). A comparação semanal com a fonte de 26.10.2026 encontrou a revisão e este projeto releu a fonte nesse dia; até aí publicava-se o valor da leitura anterior.
+
+EN: Eurostat revised the value from 21.4 to 21.5 in the dataset update of 22.10.2026 (the previous version was of 15.10.2026). The weekly comparison with the source of 26.10.2026 found the revision and this project re-read the source that day; until then the value of the earlier reading was published.
+
+**`licencas-de-construcao-2025-ue` (caso C)**
+
+PT: O Eurostat reviu o valor de 377,5 para 377,6 na atualização do conjunto de dados de 21.10.2026 (a versão anterior era de 17.10.2026). A comparação semanal com a fonte de 26.10.2026 encontrou a revisão e este projeto releu a fonte nesse dia; até aí publicava-se o valor da leitura anterior.
+
+EN: Eurostat revised the value from 377.5 to 377.6 in the dataset update of 21.10.2026 (the previous version was of 17.10.2026). The weekly comparison with the source of 26.10.2026 found the revision and this project re-read the source that day; until then the value of the earlier reading was published.
+
+**`pib-real-per-capita-2025-ue` (caso C)**
+
+PT: O Eurostat reviu o valor de 31 890 para 31 980 na atualização do conjunto de dados de 22.10.2026 (a versão anterior era de 15.10.2026). A comparação semanal com a fonte de 26.10.2026 encontrou a revisão e este projeto releu a fonte nesse dia; até aí publicava-se o valor da leitura anterior.
+
+EN: Eurostat revised the value from 31 890 to 31 980 in the dataset update of 22.10.2026 (the previous version was of 15.10.2026). The weekly comparison with the source of 26.10.2026 found the revision and this project re-read the source that day; until then the value of the earlier reading was published.
+
+### Exemplo da razão de proveniência
+
+`custo-unitario-do-trabalho-2025-ue`, `access_date`:
+
+PT: O valor novo foi lido a 26.10.2026, o dia em que este projeto releu a fonte; a leitura anterior, de 15.09.2026, é a do valor 15,2.
+
+EN: The new value was read on 26.10.2026, the day this project re-read the source; the earlier reading, of 15.09.2026, is that of the value 15,2.
+
+## Custo e conservação do trabalho
+
+Medição própria em `h/custo.json`: 33 chamadas até à preparação do relatório, antes do segundo commit e da inspeção final. Duas construções iniciadas, uma da worktree e uma da referência temporária; duas conferências pedidas fora da construção (`typecheck` e ferramenta); uma comparação isolada das tabelas e quatro execuções do guião de HTML. Total de nove execuções com código guardado. A reescrita das razões executou ainda a sua conferência integral, sem código em ficheiro separado. Nenhuma corrida inteira, captura ou gate do motor. `tokens used`: não exposto.
+
+Acrescentou-se `continuacao_cr2e` a `custo.json` com os números fornecidos pelo lançador: 2 turnos, 153 942 símbolos de entrada, 153 088 em cache, 604 de saída; semana de 5,0% a 5,0%, diferença 0,0 ponto. Medido pelo lançador, fora da passagem. O quadro histórico passa a incluir CR2-f e CR2-g com as medidas do mandato; os pontos desta passagem cabem ao lançador.
+
+Na partida já existiam sete relatórios não versionados, `RELATORIO.md` e `RELATORIO-b.md` a `RELATORIO-g.md`. Foram preservados e excluídos dos commits. A inspeção final distingue esses ficheiros de trabalho desta passagem; não se declara uma worktree absolutamente limpa enquanto eles existirem.
+
+---
+
+## Histórico CR2-g, conservado
+
 # CR2-g: datas das revisões, nomes da casa e notas de provisório
 
 A CR2-f confundia o dia em que o painel viu a revisão com o dia da releitura pelo cliente da casa. Corrigiram-se por guião as razões das quinze atualizações de 26.10, a partir dos dois registos ALARM fornecidos pela direção. `date`, `kind`, `old_value` e `new_value` ficaram iguais; o guião confere também todos os outros campos, admitindo apenas as substituições pedidas nas razões de proveniência. A história selada passou sem alteração: quatro controlos e dezoito plantas.
@@ -25,6 +256,8 @@ Os carimbos seguintes são os que os registos escrevem no seu próprio fuso, apr
 | `pib-real-per-capita-2025-ue` | C | Ausente | 15.10.2026 → 22.10.2026 (`painel-2026-10-26.alarmes.txt:18`) |
 
 ## As quinze razões novas, nas duas línguas
+
+Nota CR2-h: as razões desta secção foram substituídas na passagem CR2-h; conservam-se como registo do que a CR2-g escreveu.
 
 **`custo-unitario-do-trabalho-2025-ue` (caso C)**
 
@@ -372,6 +605,9 @@ Configuração indicada pelos mandatos: CR2 no Astra; CR2-b, CR2-c, CR2-d e CR2-
 | CR2-c | 10 | 0 | 0 |
 | CR2-d | 21 na medição de custo.json, antes do commit e da inspeção final | 1 | 7 |
 | CR2-e | 17, conforme o mandato CR2-g | 1 | 7 |
+| CR2-f | 47 chamadas; 110 402 símbolos pelo lançador | 1 | 7 |
+| CR2-g | 54 chamadas na medição do construtor; lançador: 58 turnos, 5 427 291 de entrada, 5 325 056 em cache, 27 679 de saída, 1,0 ponto | 1 | 6 |
+| CR2-h | 33 chamadas na medição de h/custo.json | 2, incluindo referência main | 2 fora da construção; paragem do §2 |
 
 A contagem CR2-e conta as chamadas `functions.exec`; os comandos internos são contados à parte. Além das sete conferências pedidas, correram partida, história do valor e frases nos resolvedores, uma vez cada. Sem corrida inteira, capturas ou gate do motor nesta passagem. `tokens used`: não exposto.
 

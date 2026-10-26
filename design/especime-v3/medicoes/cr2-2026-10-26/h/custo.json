@@ -1,0 +1,17 @@
+{
+  "momento": "à preparação do relatório, antes do segundo commit e da inspeção final",
+  "chamadas_ferramentas": 33,
+  "chamadas_exec": 33,
+  "construcoes_worktree": 1,
+  "construcoes_referencia_main": 1,
+  "conferencias_pedidas_fora_da_construcao": 2,
+  "comparacoes_tabelas_isoladas": 1,
+  "comparacoes_html": 4,
+  "execucoes_com_codigo": 9,
+  "corridas_inteiras": 0,
+  "capturas": 0,
+  "core_gate": 0,
+  "tokens_used": "não exposto",
+  "pontos_semana": "a medir pelo lançador",
+  "estado": "paragem do §2: nomes de entradas anteriores a 26.10 mudaram"
+}

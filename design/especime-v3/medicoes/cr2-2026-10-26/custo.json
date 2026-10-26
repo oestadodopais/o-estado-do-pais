@@ -139,5 +139,15 @@
     "corridas_inteiras": 0,
     "capturas": 0,
     "gate_motor": 0
+  },
+  "continuacao_cr2e": {
+    "turnos_lancador": 2,
+    "simbolos_entrada": 153942,
+    "simbolos_entrada_cache": 153088,
+    "simbolos_saida": 604,
+    "pontos_semana_percentagem_antes": 5.0,
+    "pontos_semana_percentagem_depois": 5.0,
+    "pontos_semana_diferenca": 0.0,
+    "nota": "medido pelo lançador, fora da passagem"
   }
 }

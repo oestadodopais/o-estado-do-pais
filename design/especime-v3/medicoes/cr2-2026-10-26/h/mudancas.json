@@ -1,0 +1,327 @@
+{
+  "base": "71420a8f4",
+  "mudancas": [
+    {
+      "lang": "pt",
+      "id": "custo-unitario-do-trabalho-2025-ue",
+      "data": "2026-10-26",
+      "nome": "Custo do trabalho por unidade produzida na União Europeia (custo unitário do trabalho)",
+      "fonte": "familia",
+      "familia": "custo-unitario-do-trabalho-ue",
+      "recibo": "Custo do trabalho por unidade produzida na União Europeia (custo unitário do trabalho)",
+      "igual": true,
+      "main": []
+    },
+    {
+      "lang": "pt",
+      "id": "divida-das-empresas-2024",
+      "data": "2026-10-26",
+      "nome": "Dívida das empresas (não financeiras)",
+      "fonte": "familia",
+      "familia": "divida-das-empresas",
+      "recibo": "Dívida das empresas (não financeiras)",
+      "igual": true,
+      "main": []
+    },
+    {
+      "lang": "pt",
+      "id": "divida-das-empresas-2025",
+      "data": "2026-10-26",
+      "nome": "Dívida das empresas (não financeiras)",
+      "fonte": "figuras",
+      "recibo": "Dívida das empresas (não financeiras)",
+      "igual": true,
+      "main": []
+    },
+    {
+      "lang": "pt",
+      "id": "divida-das-empresas-2025-ue",
+      "data": "2026-10-26",
+      "nome": "Dívida das empresas (não financeiras) na União Europeia",
+      "fonte": "familia",
+      "familia": "divida-das-empresas-ue",
+      "recibo": "Dívida das empresas (não financeiras) na União Europeia",
+      "igual": true,
+      "main": []
+    },
+    {
+      "lang": "pt",
+      "id": "divida-das-familias-2024",
+      "data": "2026-10-26",
+      "nome": "Dívida das famílias",
+      "fonte": "familia",
+      "familia": "divida-das-familias",
+      "recibo": "Dívida das famílias",
+      "igual": true,
+      "main": []
+    },
+    {
+      "lang": "pt",
+      "id": "divida-das-familias-2025",
+      "data": "2026-10-26",
+      "nome": "Dívida das famílias",
+      "fonte": "figuras",
+      "recibo": "Dívida das famílias",
+      "igual": true,
+      "main": []
+    },
+    {
+      "lang": "pt",
+      "id": "divida-publica-2024",
+      "data": "2026-10-26",
+      "nome": "Dívida pública",
+      "fonte": "familia",
+      "familia": "divida-publica",
+      "recibo": "Dívida pública",
+      "igual": true,
+      "main": []
+    },
+    {
+      "lang": "pt",
+      "id": "fluxo-de-credito-as-empresas-2024",
+      "data": "2026-10-26",
+      "nome": "Fluxo de crédito às empresas (não financeiras)",
+      "fonte": "familia",
+      "familia": "fluxo-de-credito-as-empresas",
+      "recibo": "Fluxo de crédito às empresas (não financeiras)",
+      "igual": true,
+      "main": []
+    },
+    {
+      "lang": "pt",
+      "id": "fluxo-de-credito-as-empresas-2025",
+      "data": "2026-10-26",
+      "nome": "Fluxo de crédito às empresas (não financeiras)",
+      "fonte": "figuras",
+      "recibo": "Fluxo de crédito às empresas (não financeiras)",
+      "igual": true,
+      "main": []
+    },
+    {
+      "lang": "pt",
+      "id": "fluxo-de-credito-as-familias-2024",
+      "data": "2026-10-26",
+      "nome": "Fluxo de crédito às famílias",
+      "fonte": "familia",
+      "familia": "fluxo-de-credito-as-familias",
+      "recibo": "Fluxo de crédito às famílias",
+      "igual": true,
+      "main": []
+    },
+    {
+      "lang": "pt",
+      "id": "fluxo-de-credito-as-familias-2025",
+      "data": "2026-10-26",
+      "nome": "Fluxo de crédito às famílias",
+      "fonte": "figuras",
+      "recibo": "Fluxo de crédito às famílias",
+      "igual": true,
+      "main": []
+    },
+    {
+      "lang": "pt",
+      "id": "fluxo-de-credito-as-familias-2025-ue",
+      "data": "2026-10-26",
+      "nome": "Fluxo de crédito às famílias na União Europeia",
+      "fonte": "familia",
+      "familia": "fluxo-de-credito-as-familias-ue",
+      "recibo": "Fluxo de crédito às famílias na União Europeia",
+      "igual": true,
+      "main": []
+    },
+    {
+      "lang": "pt",
+      "id": "formacao-bruta-de-capital-fixo-2025-ue",
+      "data": "2026-10-26",
+      "nome": "Investimento em bens duradouros para produzir na União Europeia (formação bruta de capital fixo)",
+      "fonte": "familia",
+      "familia": "formacao-bruta-de-capital-fixo-ue",
+      "recibo": "Investimento em bens duradouros para produzir na União Europeia (formação bruta de capital fixo)",
+      "igual": true,
+      "main": []
+    },
+    {
+      "lang": "pt",
+      "id": "licencas-de-construcao-2025-ue",
+      "data": "2026-10-26",
+      "nome": "Área licenciada para habitação na União Europeia",
+      "fonte": "familia",
+      "familia": "licencas-de-construcao-ue",
+      "recibo": "Área licenciada para habitação na União Europeia",
+      "igual": true,
+      "main": []
+    },
+    {
+      "lang": "pt",
+      "id": "pib-real-per-capita-2025-ue",
+      "data": "2026-10-26",
+      "nome": "PIB real por habitante na União Europeia",
+      "fonte": "familia",
+      "familia": "pib-real-per-capita-ue",
+      "recibo": "PIB real por habitante na União Europeia",
+      "igual": true,
+      "main": []
+    },
+    {
+      "lang": "en",
+      "id": "custo-unitario-do-trabalho-2025-ue",
+      "data": "2026-10-26",
+      "nome": "Labour cost per unit of output in the European Union (unit labour cost)",
+      "fonte": "familia",
+      "familia": "custo-unitario-do-trabalho-ue",
+      "recibo": "Labour cost per unit of output in the European Union (unit labour cost)",
+      "igual": true,
+      "main": []
+    },
+    {
+      "lang": "en",
+      "id": "divida-das-empresas-2024",
+      "data": "2026-10-26",
+      "nome": "Debt of (non-financial) companies",
+      "fonte": "familia",
+      "familia": "divida-das-empresas",
+      "recibo": "Debt of (non-financial) companies",
+      "igual": true,
+      "main": []
+    },
+    {
+      "lang": "en",
+      "id": "divida-das-empresas-2025",
+      "data": "2026-10-26",
+      "nome": "Debt of (non-financial) companies",
+      "fonte": "figuras",
+      "recibo": "Debt of (non-financial) companies",
+      "igual": true,
+      "main": []
+    },
+    {
+      "lang": "en",
+      "id": "divida-das-empresas-2025-ue",
+      "data": "2026-10-26",
+      "nome": "Debt of (non-financial) companies in the European Union",
+      "fonte": "familia",
+      "familia": "divida-das-empresas-ue",
+      "recibo": "Debt of (non-financial) companies in the European Union",
+      "igual": true,
+      "main": []
+    },
+    {
+      "lang": "en",
+      "id": "divida-das-familias-2024",
+      "data": "2026-10-26",
+      "nome": "Household debt",
+      "fonte": "familia",
+      "familia": "divida-das-familias",
+      "recibo": "Household debt",
+      "igual": true,
+      "main": []
+    },
+    {
+      "lang": "en",
+      "id": "divida-das-familias-2025",
+      "data": "2026-10-26",
+      "nome": "Household debt",
+      "fonte": "figuras",
+      "recibo": "Household debt",
+      "igual": true,
+      "main": []
+    },
+    {
+      "lang": "en",
+      "id": "divida-publica-2024",
+      "data": "2026-10-26",
+      "nome": "Government debt",
+      "fonte": "familia",
+      "familia": "divida-publica",
+      "recibo": "Government debt",
+      "igual": true,
+      "main": []
+    },
+    {
+      "lang": "en",
+      "id": "fluxo-de-credito-as-empresas-2024",
+      "data": "2026-10-26",
+      "nome": "Credit flow to (non-financial) companies",
+      "fonte": "familia",
+      "familia": "fluxo-de-credito-as-empresas",
+      "recibo": "Credit flow to (non-financial) companies",
+      "igual": true,
+      "main": []
+    },
+    {
+      "lang": "en",
+      "id": "fluxo-de-credito-as-empresas-2025",
+      "data": "2026-10-26",
+      "nome": "Credit flow to (non-financial) companies",
+      "fonte": "figuras",
+      "recibo": "Credit flow to (non-financial) companies",
+      "igual": true,
+      "main": []
+    },
+    {
+      "lang": "en",
+      "id": "fluxo-de-credito-as-familias-2024",
+      "data": "2026-10-26",
+      "nome": "Credit flow to households",
+      "fonte": "familia",
+      "familia": "fluxo-de-credito-as-familias",
+      "recibo": "Credit flow to households",
+      "igual": true,
+      "main": []
+    },
+    {
+      "lang": "en",
+      "id": "fluxo-de-credito-as-familias-2025",
+      "data": "2026-10-26",
+      "nome": "Credit flow to households",
+      "fonte": "figuras",
+      "recibo": "Credit flow to households",
+      "igual": true,
+      "main": []
+    },
+    {
+      "lang": "en",
+      "id": "fluxo-de-credito-as-familias-2025-ue",
+      "data": "2026-10-26",
+      "nome": "Credit flow to households in the European Union",
+      "fonte": "familia",
+      "familia": "fluxo-de-credito-as-familias-ue",
+      "recibo": "Credit flow to households in the European Union",
+      "igual": true,
+      "main": []
+    },
+    {
+      "lang": "en",
+      "id": "formacao-bruta-de-capital-fixo-2025-ue",
+      "data": "2026-10-26",
+      "nome": "Investment in durable goods used for production in the European Union (gross fixed capital formation)",
+      "fonte": "familia",
+      "familia": "formacao-bruta-de-capital-fixo-ue",
+      "recibo": "Investment in durable goods used for production in the European Union (gross fixed capital formation)",
+      "igual": true,
+      "main": []
+    },
+    {
+      "lang": "en",
+      "id": "licencas-de-construcao-2025-ue",
+      "data": "2026-10-26",
+      "nome": "Floor area licensed for housing in the European Union",
+      "fonte": "familia",
+      "familia": "licencas-de-construcao-ue",
+      "recibo": "Floor area licensed for housing in the European Union",
+      "igual": true,
+      "main": []
+    },
+    {
+      "lang": "en",
+      "id": "pib-real-per-capita-2025-ue",
+      "data": "2026-10-26",
+      "nome": "Real GDP per capita in the European Union",
+      "fonte": "familia",
+      "familia": "pib-real-per-capita-ue",
+      "recibo": "Real GDP per capita in the European Union",
+      "igual": true,
+      "main": []
+    }
+  ]
+}

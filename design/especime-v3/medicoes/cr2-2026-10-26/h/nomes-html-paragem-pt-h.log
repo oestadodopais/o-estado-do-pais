@@ -1,0 +1,555 @@
+Duas tabelas iguais a main, chave a chave e texto a texto.
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: pt: mudou uma entrada anterior a 26.10
++ actual - expected
+... Skipped lines
+
+  [
+    {
+      data: '2026-10-21',
+      id: 'correcoes-publicadas',
+      nome: 'Correções publicadas'
+...
+      id: 'custo-unitario-do-trabalho-2024',
++     nome: 'Custo do trabalho por unidade produzida (custo unitário do trabalho)'
+-     nome: 'Nominal unit labour cost per hour worked'
+    },
+    {
+      data: '2026-10-05',
+      id: 'despesa-em-id-2024-ue',
++     nome: 'Despesa em investigação e desenvolvimento na União Europeia'
+-     nome: 'Gross domestic expenditure on research and development (R&D)'
+    },
+    {
+      data: '2026-10-05',
+      id: 'formacao-bruta-de-capital-fixo-2024',
++     nome: 'Investimento em bens duradouros para produzir (formação bruta de capital fixo)'
+-     nome: 'Gross fixed capital formation at current prices'
+    },
+    {
+      data: '2026-10-05',
+      id: 'formacao-bruta-de-capital-fixo-2025',
+      nome: 'Investimento em bens duradouros para produzir (formação bruta de capital fixo)'
+...
+      id: 'pib-real-per-capita-2024',
++     nome: 'PIB real por habitante'
+-     nome: 'Real GDP per capita'
+    },
+    {
+      data: '2026-10-05',
+      id: 'pib-real-per-capita-2025',
+      nome: 'PIB real por habitante'
+...
+      id: 'posicao-de-investimento-internacional-2024',
++     nome: 'O que o país tem no exterior menos o que deve (posição de investimento internacional)'
+-     nome: 'Net international investment position - annual data'
+    },
+    {
+      data: '2026-10-05',
+      id: 'posicao-de-investimento-internacional-2025',
+      nome: 'O que o país tem no exterior menos o que deve (posição de investimento internacional)'
+...
+      id: 'saldo-da-balanca-corrente-2024',
++     nome: 'Saldo da balança corrente'
+-     nome: 'Current account balance - 3 year average'
+    },
+    {
+      data: '2026-10-02',
+      id: 'correcoes-publicadas',
+      nome: 'Correções publicadas'
+
+    at file://<worktree>/design/especime-v3/medicoes/cr2-2026-10-26/h/conferir-nomes.mjs:54:9 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: [
+    {
+      id: 'correcoes-publicadas',
+      data: '2026-10-21',
+      nome: 'Correções publicadas'
+    },
+    {
+      id: 'despesa-por-funcao-2024-gf01-ue',
+      data: '2026-10-21',
+      nome: 'Despesa pública em serviços gerais das administrações públicas, em percentagem do PIB, União Europeia'
+    },
+    {
+      id: 'despesa-por-funcao-2024-gf10-ue',
+      data: '2026-10-21',
+      nome: 'Despesa pública em proteção social, em percentagem do PIB, União Europeia'
+    },
+    {
+      id: 'oe-2027-calendario-entrega',
+      data: '2026-10-21',
+      nome: 'Entrega da proposta de Orçamento'
+    },
+    {
+      id: 'correcoes-publicadas',
+      data: '2026-10-20',
+      nome: 'Correções publicadas'
+    },
+    {
+      id: 'correcoes-publicadas',
+      data: '2026-10-20',
+      nome: 'Correções publicadas'
+    },
+    {
+      id: 'correcoes-publicadas',
+      data: '2026-10-20',
+      nome: 'Correções publicadas'
+    },
+    {
+      id: 'edicoes-publicadas',
+      data: '2026-10-20',
+      nome: 'Edições publicadas'
+    },
+    {
+      id: 'estudos-publicados',
+      data: '2026-10-20',
+      nome: 'Estudos publicados'
+    },
+    {
+      id: 'oe-2027-saude-contrato-programa-acss',
+      data: '2026-10-20',
+      nome: 'Contrato-programa entre a ACSS e as entidades do SNS'
+    },
+    {
+      id: 'pe-oe-beira-abolicao',
+      data: '2026-10-20',
+      nome: 'Beira Interior: pedido pela abolição de portagens'
+    },
+    {
+      id: 'utao-ppp-contingencias-natureza-2026',
+      data: '2026-10-20',
+      nome: 'Natureza dos pedidos contingentes das parcerias'
+    },
+    {
+      id: 'utao-risco-execucao-sns-2027',
+      data: '2026-10-20',
+      nome: 'Risco de pressão orçamental no Serviço Nacional de Saúde'
+    },
+    {
+      id: 'custo-unitario-do-trabalho-2024',
+      data: '2026-10-05',
+      nome: 'Custo do trabalho por unidade produzida (custo unitário do trabalho)'
+    },
+    {
+      id: 'despesa-em-id-2024-ue',
+      data: '2026-10-05',
+      nome: 'Despesa em investigação e desenvolvimento na União Europeia'
+    },
+    {
+      id: 'formacao-bruta-de-capital-fixo-2024',
+      data: '2026-10-05',
+      nome: 'Investimento em bens duradouros para produzir (formação bruta de capital fixo)'
+    },
+    {
+      id: 'formacao-bruta-de-capital-fixo-2025',
+      data: '2026-10-05',
+      nome: 'Investimento em bens duradouros para produzir (formação bruta de capital fixo)'
+    },
+    {
+      id: 'pib-real-per-capita-2024',
+      data: '2026-10-05',
+      nome: 'PIB real por habitante'
+    },
+    {
+      id: 'pib-real-per-capita-2025',
+      data: '2026-10-05',
+      nome: 'PIB real por habitante'
+    },
+    {
+      id: 'posicao-de-investimento-internacional-2024',
+      data: '2026-10-05',
+      nome: 'O que o país tem no exterior menos o que deve (posição de investimento internacional)'
+    },
+    {
+      id: 'posicao-de-investimento-internacional-2025',
+      data: '2026-10-05',
+      nome: 'O que o país tem no exterior menos o que deve (posição de investimento internacional)'
+    },
+    {
+      id: 'saldo-da-balanca-corrente-2024',
+      data: '2026-10-05',
+      nome: 'Saldo da balança corrente'
+    },
+    {
+      id: 'correcoes-publicadas',
+      data: '2026-10-02',
+      nome: 'Correções publicadas'
+    },
+    {
+      id: 'fluxo-de-credito-as-empresas-2025',
+      data: '2026-10-02',
+      nome: 'Fluxo de crédito às empresas (não financeiras)'
+    },
+    {
+      id: 'jovens-nem-2025',
+      data: '2026-10-02',
+      nome: 'Jovens sem emprego, escola ou formação'
+    },
+    {
+      id: 'edicoes-publicadas',
+      data: '2026-10-01',
+      nome: 'Edições publicadas'
+    },
+    {
+      id: 'estudos-evora-publicados',
+      data: '2026-10-01',
+      nome: 'Estudos publicados sobre Évora'
+    },
+    {
+      id: 'estudos-publicados',
+      data: '2026-10-01',
+      nome: 'Estudos publicados'
+    },
+    {
+      id: 'correcoes-publicadas',
+      data: '2026-09-30',
+      nome: 'Correções publicadas'
+    },
+    {
+      id: 'taxa-de-desemprego-2025',
+      data: '2026-09-30',
+      nome: 'Taxa de desemprego'
+    },
+    {
+      id: 'taxa-de-desemprego-mip-2025',
+      data: '2026-09-30',
+      nome: 'Taxa de desemprego'
+    },
+    {
+      id: 'divida-das-familias-2025-ue',
+      data: '2026-09-28',
+      nome: 'Dívida das famílias'
+    },
+    {
+      id: 'estudos-evora-publicados',
+      data: '2026-09-16',
+      nome: 'Estudos publicados sobre Évora'
+    },
+    {
+      id: 'evora-prr-aprovado-2026',
+      data: '2026-08-20',
+      nome: 'Verbas do Plano de Recuperação e Resiliência (PRR) contratadas por beneficiários intermediários e diretos com sede em Évora'
+    },
+    {
+      id: 'evora-prr-execucao-2026',
+      data: '2026-08-20',
+      nome: 'Parte das verbas contratadas por beneficiários intermediários e diretos com sede em Évora que já foi paga'
+    },
+    {
+      id: 'evora-prr-pago-2026',
+      data: '2026-08-20',
+      nome: 'Verbas do Plano de Recuperação e Resiliência (PRR) pagas a beneficiários intermediários e diretos com sede em Évora'
+    },
+    {
+      id: 'evora-prr-vencido-aprovado-2026',
+      data: '2026-08-20',
+      nome: 'Verbas contratadas por beneficiários intermediários e diretos com sede em Évora, em projetos com prazo de conclusão anterior à data do instantâneo e sem conclusão registada, no instantâneo de 19.08.2026'
+    },
+    {
+      id: 'evora-prr-vencido-quota-2026',
+      data: '2026-08-20',
+      nome: 'Parte das verbas contratadas em projetos com prazo anterior ao instantâneo e sem conclusão registada'
+    },
+    {
+      id: 'evora-prr-aprovado-2026',
+      data: '2026-08-18',
+      nome: 'Verbas do Plano de Recuperação e Resiliência (PRR) contratadas por beneficiários intermediários e diretos com sede em Évora'
+    },
+    {
+      id: 'evora-prr-execucao-2026',
+      data: '2026-08-18',
+      nome: 'Parte das verbas contratadas por beneficiários intermediários e diretos com sede em Évora que já foi paga'
+    },
+    {
+      id: 'evora-prr-pago-2026',
+      data: '2026-08-18',
+      nome: 'Verbas do Plano de Recuperação e Resiliência (PRR) pagas a beneficiários intermediários e diretos com sede em Évora'
+    },
+    {
+      id: 'evora-prr-vencido-aprovado-2026',
+      data: '2026-08-18',
+      nome: 'Verbas contratadas por beneficiários intermediários e diretos com sede em Évora, em projetos com prazo de conclusão anterior à data do instantâneo e sem conclusão registada, no instantâneo de 19.08.2026'
+    },
+    {
+      id: 'evora-prr-vencido-quota-2026',
+      data: '2026-08-18',
+      nome: 'Parte das verbas contratadas em projetos com prazo anterior ao instantâneo e sem conclusão registada'
+    },
+    {
+      id: 'estudos-evora-publicados',
+      data: '2026-08-15',
+      nome: 'Estudos publicados sobre Évora'
+    },
+    {
+      id: 'pib-pc-alentejo-2000',
+      data: '2026-08-13',
+      nome: 'Produto interno bruto por habitante no Alentejo'
+    },
+    {
+      id: 'pib-pc-alentejo-2024',
+      data: '2026-08-13',
+      nome: 'Produto interno bruto por habitante no Alentejo'
+    },
+    {
+      id: 'estudos-evora-publicados',
+      data: '2026-08-12',
+      nome: 'Estudos publicados sobre Évora'
+    },
+    {
+      id: 'estudos-evora-publicados',
+      data: '2026-08-12',
+      nome: 'Estudos publicados sobre Évora'
+    }
+  ],
+  expected: [
+    {
+      id: 'correcoes-publicadas',
+      data: '2026-10-21',
+      nome: 'Correções publicadas'
+    },
+    {
+      id: 'despesa-por-funcao-2024-gf01-ue',
+      data: '2026-10-21',
+      nome: 'Despesa pública em serviços gerais das administrações públicas, em percentagem do PIB, União Europeia'
+    },
+    {
+      id: 'despesa-por-funcao-2024-gf10-ue',
+      data: '2026-10-21',
+      nome: 'Despesa pública em proteção social, em percentagem do PIB, União Europeia'
+    },
+    {
+      id: 'oe-2027-calendario-entrega',
+      data: '2026-10-21',
+      nome: 'Entrega da proposta de Orçamento'
+    },
+    {
+      id: 'correcoes-publicadas',
+      data: '2026-10-20',
+      nome: 'Correções publicadas'
+    },
+    {
+      id: 'correcoes-publicadas',
+      data: '2026-10-20',
+      nome: 'Correções publicadas'
+    },
+    {
+      id: 'correcoes-publicadas',
+      data: '2026-10-20',
+      nome: 'Correções publicadas'
+    },
+    {
+      id: 'edicoes-publicadas',
+      data: '2026-10-20',
+      nome: 'Edições publicadas'
+    },
+    {
+      id: 'estudos-publicados',
+      data: '2026-10-20',
+      nome: 'Estudos publicados'
+    },
+    {
+      id: 'oe-2027-saude-contrato-programa-acss',
+      data: '2026-10-20',
+      nome: 'Contrato-programa entre a ACSS e as entidades do SNS'
+    },
+    {
+      id: 'pe-oe-beira-abolicao',
+      data: '2026-10-20',
+      nome: 'Beira Interior: pedido pela abolição de portagens'
+    },
+    {
+      id: 'utao-ppp-contingencias-natureza-2026',
+      data: '2026-10-20',
+      nome: 'Natureza dos pedidos contingentes das parcerias'
+    },
+    {
+      id: 'utao-risco-execucao-sns-2027',
+      data: '2026-10-20',
+      nome: 'Risco de pressão orçamental no Serviço Nacional de Saúde'
+    },
+    {
+      id: 'custo-unitario-do-trabalho-2024',
+      data: '2026-10-05',
+      nome: 'Nominal unit labour cost per hour worked'
+    },
+    {
+      id: 'despesa-em-id-2024-ue',
+      data: '2026-10-05',
+      nome: 'Gross domestic expenditure on research and development (R&D)'
+    },
+    {
+      id: 'formacao-bruta-de-capital-fixo-2024',
+      data: '2026-10-05',
+      nome: 'Gross fixed capital formation at current prices'
+    },
+    {
+      id: 'formacao-bruta-de-capital-fixo-2025',
+      data: '2026-10-05',
+      nome: 'Investimento em bens duradouros para produzir (formação bruta de capital fixo)'
+    },
+    {
+      id: 'pib-real-per-capita-2024',
+      data: '2026-10-05',
+      nome: 'Real GDP per capita'
+    },
+    {
+      id: 'pib-real-per-capita-2025',
+      data: '2026-10-05',
+      nome: 'PIB real por habitante'
+    },
+    {
+      id: 'posicao-de-investimento-internacional-2024',
+      data: '2026-10-05',
+      nome: 'Net international investment position - annual data'
+    },
+    {
+      id: 'posicao-de-investimento-internacional-2025',
+      data: '2026-10-05',
+      nome: 'O que o país tem no exterior menos o que deve (posição de investimento internacional)'
+    },
+    {
+      id: 'saldo-da-balanca-corrente-2024',
+      data: '2026-10-05',
+      nome: 'Current account balance - 3 year average'
+    },
+    {
+      id: 'correcoes-publicadas',
+      data: '2026-10-02',
+      nome: 'Correções publicadas'
+    },
+    {
+      id: 'fluxo-de-credito-as-empresas-2025',
+      data: '2026-10-02',
+      nome: 'Fluxo de crédito às empresas (não financeiras)'
+    },
+    {
+      id: 'jovens-nem-2025',
+      data: '2026-10-02',
+      nome: 'Jovens sem emprego, escola ou formação'
+    },
+    {
+      id: 'edicoes-publicadas',
+      data: '2026-10-01',
+      nome: 'Edições publicadas'
+    },
+    {
+      id: 'estudos-evora-publicados',
+      data: '2026-10-01',
+      nome: 'Estudos publicados sobre Évora'
+    },
+    {
+      id: 'estudos-publicados',
+      data: '2026-10-01',
+      nome: 'Estudos publicados'
+    },
+    {
+      id: 'correcoes-publicadas',
+      data: '2026-09-30',
+      nome: 'Correções publicadas'
+    },
+    {
+      id: 'taxa-de-desemprego-2025',
+      data: '2026-09-30',
+      nome: 'Taxa de desemprego'
+    },
+    {
+      id: 'taxa-de-desemprego-mip-2025',
+      data: '2026-09-30',
+      nome: 'Taxa de desemprego'
+    },
+    {
+      id: 'divida-das-familias-2025-ue',
+      data: '2026-09-28',
+      nome: 'Dívida das famílias'
+    },
+    {
+      id: 'estudos-evora-publicados',
+      data: '2026-09-16',
+      nome: 'Estudos publicados sobre Évora'
+    },
+    {
+      id: 'evora-prr-aprovado-2026',
+      data: '2026-08-20',
+      nome: 'Verbas do Plano de Recuperação e Resiliência (PRR) contratadas por beneficiários intermediários e diretos com sede em Évora'
+    },
+    {
+      id: 'evora-prr-execucao-2026',
+      data: '2026-08-20',
+      nome: 'Parte das verbas contratadas por beneficiários intermediários e diretos com sede em Évora que já foi paga'
+    },
+    {
+      id: 'evora-prr-pago-2026',
+      data: '2026-08-20',
+      nome: 'Verbas do Plano de Recuperação e Resiliência (PRR) pagas a beneficiários intermediários e diretos com sede em Évora'
+    },
+    {
+      id: 'evora-prr-vencido-aprovado-2026',
+      data: '2026-08-20',
+      nome: 'Verbas contratadas por beneficiários intermediários e diretos com sede em Évora, em projetos com prazo de conclusão anterior à data do instantâneo e sem conclusão registada, no instantâneo de 19.08.2026'
+    },
+    {
+      id: 'evora-prr-vencido-quota-2026',
+      data: '2026-08-20',
+      nome: 'Parte das verbas contratadas em projetos com prazo anterior ao instantâneo e sem conclusão registada'
+    },
+    {
+      id: 'evora-prr-aprovado-2026',
+      data: '2026-08-18',
+      nome: 'Verbas do Plano de Recuperação e Resiliência (PRR) contratadas por beneficiários intermediários e diretos com sede em Évora'
+    },
+    {
+      id: 'evora-prr-execucao-2026',
+      data: '2026-08-18',
+      nome: 'Parte das verbas contratadas por beneficiários intermediários e diretos com sede em Évora que já foi paga'
+    },
+    {
+      id: 'evora-prr-pago-2026',
+      data: '2026-08-18',
+      nome: 'Verbas do Plano de Recuperação e Resiliência (PRR) pagas a beneficiários intermediários e diretos com sede em Évora'
+    },
+    {
+      id: 'evora-prr-vencido-aprovado-2026',
+      data: '2026-08-18',
+      nome: 'Verbas contratadas por beneficiários intermediários e diretos com sede em Évora, em projetos com prazo de conclusão anterior à data do instantâneo e sem conclusão registada, no instantâneo de 19.08.2026'
+    },
+    {
+      id: 'evora-prr-vencido-quota-2026',
+      data: '2026-08-18',
+      nome: 'Parte das verbas contratadas em projetos com prazo anterior ao instantâneo e sem conclusão registada'
+    },
+    {
+      id: 'estudos-evora-publicados',
+      data: '2026-08-15',
+      nome: 'Estudos publicados sobre Évora'
+    },
+    {
+      id: 'pib-pc-alentejo-2000',
+      data: '2026-08-13',
+      nome: 'Produto interno bruto por habitante no Alentejo'
+    },
+    {
+      id: 'pib-pc-alentejo-2024',
+      data: '2026-08-13',
+      nome: 'Produto interno bruto por habitante no Alentejo'
+    },
+    {
+      id: 'estudos-evora-publicados',
+      data: '2026-08-12',
+      nome: 'Estudos publicados sobre Évora'
+    },
+    {
+      id: 'estudos-evora-publicados',
+      data: '2026-08-12',
+      nome: 'Estudos publicados sobre Évora'
+    }
+  ],
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}
+
+Node.js v22.23.1
