@@ -4,12 +4,12 @@
   "rows": {
     "sobrecarga-do-custo-da-habitacao-2025": {
       "file": "ledger/claims/sobrecarga-do-custo-da-habitacao-2025.yml",
-      "sha256": "4c25633f5ca7ef447aebda73482d38bd9910c40543d78bc52b63a4de5a60fe9a",
+      "sha256": "bfb3255df883efbdb9d23df5eac848c5e820d0c3c9185195fb2c411a43dc0696",
       "study": "quadro-institucional"
     },
     "sobrecarga-do-custo-da-habitacao-2025-ue": {
       "file": "ledger/claims/sobrecarga-do-custo-da-habitacao-2025-ue.yml",
-      "sha256": "df1f01cd54b3723ead97bcd86b091fe573bdda8d0b7e7aa0ffa8f76735755661",
+      "sha256": "3a9e18bde6e19ad98bfd0f0df2449f45d8d723dd889a18f5de78d9f025849708",
       "study": "quadro-institucional"
     },
     "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025": {
