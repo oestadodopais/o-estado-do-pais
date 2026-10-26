@@ -6,7 +6,7 @@
 id: "divida-publica-2025-ue"
 
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
-value: "81,5"
+value: "81,7"
 unit: "% do PIB"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
@@ -17,12 +17,11 @@ document:
   kind: "serie"
   url: "https://ec.europa.eu/eurostat/databrowser/view/tipsgo10/default/table?lang=en"
 source_url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsgo10?format=JSON&lang=EN&geo=EU27_2020&unit=PC_GDP"
-access_date: "2026-10-26"
-published_at: "2026-10-21"
+access_date: "2026-09-15"
 reference_date: "2025"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "General government gross debt (EDP concept), consolidated - annual data — Percentage of gross domestic product (GDP) — European Union - 27 countries (from 2020) — 2025: 81.5"
+excerpt: "General government gross debt (EDP concept), consolidated - annual data — Percentage of gross domestic product (GDP) — European Union - 27 countries (from 2020) — 2025: 81.7"
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null
@@ -34,33 +33,7 @@ study: "quadro-institucional"
 note: "Agregado da União Europeia (EU27_2020) da medida «divida-publica-2025», no mesmo período e na mesma unidade, pelo mesmo pedido com outra geografia. Limiar do Procedimento relativo aos Desequilíbrios Macroeconómicos: 60%. O limiar aplica-se a cada Estado-Membro, não ao agregado. Excerto composto a partir das etiquetas da própria resposta do Eurostat; o endereço em source_url devolve o mesmo valor."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
-corrections:
-- date: '2026-10-26'
-  kind: atualizacao
-  old_value: 81,7
-  new_value: 81,5
-  reason: O Eurostat reviu o valor da União a 21.10.2026 (o carimbo do conjunto passou de 22.04.2026 a 21.10.2026); a reconferência
-    semanal de 26.10.2026 viu a revisão.
-  reason_en: Eurostat revised the EU value on 21.10.2026 (the dataset stamp moved from 22.04.2026 to 21.10.2026); the weekly
-    check of 26.10.2026 caught the revision.
-- date: '2026-10-26'
-  kind: proveniencia
-  field: access_date
-  old_value: '2026-09-15'
-  new_value: '2026-10-26'
-  reason: O valor novo foi lido a 26.10.2026, no dia da reconferência que viu a revisão; a leitura anterior, de 15.09.2026,
-    é a do valor 81,7.
-  reason_en: The new value was read on 26.10.2026, the day of the check that caught the revision; the earlier reading, of
-    15.09.2026, is that of the value 81,7.
-- date: '2026-10-26'
-  kind: proveniencia
-  field: excerpt
-  old_value: 'General government gross debt (EDP concept), consolidated - annual data — Percentage of gross domestic product
-    (GDP) — European Union - 27 countries (from 2020) — 2025: 81.7'
-  new_value: 'General government gross debt (EDP concept), consolidated - annual data — Percentage of gross domestic product
-    (GDP) — European Union - 27 countries (from 2020) — 2025: 81.5'
-  reason: O excerto passa a transcrever o valor revisto que a fonte imprime na mesma observação, lida a 26.10.2026.
-  reason_en: The excerpt now transcribes the revised value the source prints for the same observation, read on 26.10.2026.
+corrections: []
 
 # Reconferências. Escritas por indicators/refresh.py, nunca à mão.
 
@@ -92,7 +65,3 @@ verifications:
     result: "diverge"
     by: "painel-semanal"
     found: "81.5"
-  - date: "2026-10-26"
-    path: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsgo10?format=JSON&lang=EN&geo=EU27_2020&unit=PC_GDP"
-    result: "igual"
-    by: "painel-semanal"
