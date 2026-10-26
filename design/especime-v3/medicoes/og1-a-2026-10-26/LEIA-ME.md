@@ -1,3 +1,41 @@
+# OG1-A3
+
+A fase A continua por construir. A paragem desta passagem é a atribuição conjunta da sexta frase de «Como foi dito»: o mandato escreve o nome do ministro uma vez para cinco citações, mas a régua de `tests/discussao/itens.mjs`, linha 112, exige exatamente um token `attributed_to` por afirmação e por língua. O §2 manda parar quando uma régua protege uma pessoa. Não se alterou essa régua nem se repetiu o nome na prosa mandatada para a contornar.
+
+## Prova da incompatibilidade
+
+`conferir-atribuicao-a3.mjs` chama a função real `conferirDeclaracoes`. Primeiro confere os dois itens existentes: zero erros. Depois acrescenta, apenas em memória, um candidato que isola a sexta frase nas duas línguas, com as cinco citações e um token de atribuição, ligado à primeira. As cinco linhas vêm do livro do motor e o ensaio confirma que todas são afirmações atribuídas a «Joaquim Miranda Sarmento». Isto não simula nem certifica uma travessia.
+
+Resultado: oito ocorrências de `V2B atribuição: falta o token da afirmação`, quatro por língua. As quatro linhas sem token próprio são `og1-governo-rtp-combustiveis`, `og1-governo-rtp-habitacao`, `og1-governo-eco-juros` e `og1-governo-observador-saldo`. O controlo acrescenta os quatro tokens em memória em cada língua e as queixas de atribuição desaparecem. Esse controlo repetiria o nome; não é a redação autorizada e não foi aplicado ao sítio.
+
+O candidato isolado também produz duas queixas esperadas: a lista da conferência só conhece os dois itens anteriores e o candidato ainda não tem auditoria de palavras. Essas duas queixas não motivam a paragem, nem se apresenta o ensaio como uma conferência do item completo. `atribuicao-a3.json` guarda todos os erros, o candidato, o controlo e o resumo criptográfico da régua intacta.
+
+## Saúde e correções anteriores
+
+A diferença entre 17 803 milhões na UTAO e 17 803,1 milhões no sítio está resolvida pelo mandato OG1-A3 e não motivou esta paragem. O item deverá usar `oe-2027-saude-despesa-efetiva-consolidada-2027`; `og1-utao-saude-programa` deverá atravessar como linha da UTAO com recibo próprio. Nenhuma delas mudou nesta passagem.
+
+A cabeça inicial do motor já contém as correções anteriores e a linha `og1-utao-novas-saldo` com valor 79. A quarta correção continua sem objeto, conforme a decisão OG1-A2. Não se repetiu a geração nem o ensaio da pesquisa, e não se declara uma nova verificação dos seus corpos nesta passagem.
+
+## Códigos, item e trabalho por fazer
+
+| Corrida desta passagem | Código |
+| --- | --- |
+| Ensaio isolado da atribuição, `atribuicao-a3.codigo` | 1, recusa confirmada |
+
+Uma corrida de conferência, com base, candidato e controlo em memória. Nenhuma geração, corrida inteira de portões, captura ou `core.gate`. A travessia, o ensaio da pesquisa, `build`, `ledger:check`, `check:registo`, `check:discussao`, `check:lugares`, `typecheck` e `check:cruzamento` não correram; os seus códigos são `null` em `medidas-a3.json`. `medidas.json` conserva a medição OG1-A2 e o seu histórico.
+
+Não houve travessia com escrita, linhas novas ou recibos públicos novos. Não se alteraram `src/data/discussao.mjs`, nomes, famílias, lugares ou réguas. Não existe terceiro item construído no `dist/`, pelo que não há seis partes novas para transcrever em português ou inglês. A frase do mandato não é apresentada como saída construída.
+
+Ficam por fazer a compatibilização autorizada entre a atribuição conjunta e a exigência de um token por afirmação, a travessia, o item bilingue, nomes, famílias, lugares, recibos e as conferências do §1.3. A fase B continua prevista para a noite de 28.10.2026, depois do voto, com o registo da votação e as intervenções do Diário; essa promessa ainda não entrou numa página construída.
+
+## Cabeças, commit e custo
+
+Cabeça inicial do sítio: `9ebd19bc232365ac7c8d0b14c8a3b2db5fec927a`. Cabeça do motor: `5965102dd460815c92c777d06e3e8f755944cd1b`. O motor está limpo e não tem ficheiros desta passagem por comitar. O commit do sítio pelo escrivão guarda apenas o ensaio, as medidas e este relatório. A cabeça resultante consta da resposta final.
+
+20 chamadas de ferramentas até escrever este relatório, incluindo esta escrita. Uma corrida de conferência. As inspeções e o commit posteriores entram na contagem final da resposta. Nenhuma delegação. `tokens used`: não disponibilizado nesta passagem; o lançador mede os pontos.
+
+---
+
 # OG1-A2
 
 A correção de `+79` está feita e verificada no motor. A continuação para perante a gémea da Saúde, conforme o §2: `og1-utao-saude-programa` contém **17 803 milhões de euros** e `oe-2027-saude-despesa-efetiva-consolidada-2027` contém **17 803,1 milhões de euros**. A comparação foi refeita contra os ficheiros atuais; `gemeas-a2.json` guarda os valores, o localizador e o resumo criptográfico do ficheiro do sítio. As outras oito correspondências do §0.5 coincidem numericamente.

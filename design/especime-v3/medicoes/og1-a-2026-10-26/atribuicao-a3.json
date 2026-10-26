@@ -1,0 +1,201 @@
+{
+  "ambito": "Só a atribuição da sexta frase, com linhas do motor em memória; não é a conferência de um item completo.",
+  "regua": "tests/discussao/itens.mjs",
+  "regua_sha256": "41d264ca735efae62a53d335409683dcd88afe897316a0af02743bdf5ecd2880",
+  "base_erros": [],
+  "afirmacoes": [
+    "og1-governo-rtp-previsoes",
+    "og1-governo-rtp-combustiveis",
+    "og1-governo-rtp-habitacao",
+    "og1-governo-eco-juros",
+    "og1-governo-observador-saldo"
+  ],
+  "atribuicao_comum": "Joaquim Miranda Sarmento",
+  "candidato": {
+    "slug": "orcamento-2027-generalidade",
+    "escrita": "2026-10-26",
+    "titulo": {
+      "pt": [
+        "Ensaio da atribuição conjunta"
+      ],
+      "en": [
+        "Joint attribution test"
+      ]
+    },
+    "afirmacoes": [
+      "og1-governo-rtp-previsoes",
+      "og1-governo-rtp-combustiveis",
+      "og1-governo-rtp-habitacao",
+      "og1-governo-eco-juros",
+      "og1-governo-observador-saldo"
+    ],
+    "abertura": [],
+    "naoDiz": [],
+    "linhas": [],
+    "recibos": {},
+    "seccoes": [
+      {
+        "id": "como-foi-dito",
+        "titulo": {
+          "pt": "Como foi dito",
+          "en": "As it was said"
+        },
+        "conteudo": [
+          {
+            "paragrafo": {
+              "pt": [
+                "O ministro das Finanças, ",
+                {
+                  "literal": "og1-governo-rtp-previsoes",
+                  "campo": "attributed_to"
+                },
+                ", na audição da comissão de Orçamento a ",
+                {
+                  "periodo": "og1-governo-rtp-previsoes"
+                },
+                ", segundo a RTP, o ECO e o Observador: sobre as previsões das entidades nacionais e internacionais, «",
+                {
+                  "literal": "og1-governo-rtp-previsoes",
+                  "campo": "excerpt"
+                },
+                "»; sobre os ",
+                {
+                  "claim": "pm-q3-2-r8-c0",
+                  "sufixo": " milhões de euros"
+                },
+                " do combate à fraude nos combustíveis, «",
+                {
+                  "literal": "og1-governo-rtp-combustiveis",
+                  "campo": "excerpt"
+                },
+                "»; sobre a habitação, «",
+                {
+                  "literal": "og1-governo-rtp-habitacao",
+                  "campo": "excerpt"
+                },
+                "»; sobre os juros da dívida, «",
+                {
+                  "literal": "og1-governo-eco-juros",
+                  "campo": "excerpt"
+                },
+                "»; e, na escolha entre o IRS Jovem e o prémio salarial, «",
+                {
+                  "literal": "og1-governo-observador-saldo",
+                  "campo": "excerpt"
+                },
+                "»."
+              ],
+              "en": [
+                "The Finance Minister, ",
+                {
+                  "literal": "og1-governo-rtp-previsoes",
+                  "campo": "attributed_to"
+                },
+                ", at the Budget committee hearing on ",
+                {
+                  "periodo": "og1-governo-rtp-previsoes"
+                },
+                ", as reported by RTP, ECO and Observador: on the forecasts of national and international bodies, «",
+                {
+                  "literal": "og1-governo-rtp-previsoes",
+                  "campo": "excerpt"
+                },
+                "»; on the ",
+                {
+                  "claim": "pm-q3-2-r8-c0",
+                  "sufixo": " million euros"
+                },
+                " from the fight against fuel fraud, «",
+                {
+                  "literal": "og1-governo-rtp-combustiveis",
+                  "campo": "excerpt"
+                },
+                "»; on housing, «",
+                {
+                  "literal": "og1-governo-rtp-habitacao",
+                  "campo": "excerpt"
+                },
+                "»; on the interest on the debt, «",
+                {
+                  "literal": "og1-governo-eco-juros",
+                  "campo": "excerpt"
+                },
+                "»; and, on the choice between the youth income tax and the wage premium, «",
+                {
+                  "literal": "og1-governo-observador-saldo",
+                  "campo": "excerpt"
+                },
+                "»."
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "fontes",
+        "titulo": {
+          "pt": "O que as fontes dizem",
+          "en": "What the sources say"
+        },
+        "conteudo": []
+      },
+      {
+        "id": "comparacao",
+        "titulo": {
+          "pt": "A comparação",
+          "en": "The comparison"
+        },
+        "conteudo": []
+      },
+      {
+        "id": "conclusao",
+        "titulo": {
+          "pt": "A conclusão",
+          "en": "The conclusion"
+        },
+        "conteudo": []
+      },
+      {
+        "id": "recomendacao",
+        "titulo": {
+          "pt": "A recomendação",
+          "en": "The recommendation"
+        },
+        "conteudo": []
+      },
+      {
+        "id": "opiniao",
+        "titulo": {
+          "pt": "A opinião do lugar de direção",
+          "en": "The editorial seat's opinion"
+        },
+        "conteudo": []
+      }
+    ]
+  },
+  "erros": [
+    "V2B itens: faltam os dois itens mandatados",
+    "X · orcamento-2027-generalidade: a explicação não tem auditoria",
+    "V2B atribuição: falta o token da afirmação",
+    "V2B atribuição: falta o token da afirmação",
+    "V2B atribuição: falta o token da afirmação",
+    "V2B atribuição: falta o token da afirmação",
+    "V2B atribuição: falta o token da afirmação",
+    "V2B atribuição: falta o token da afirmação",
+    "V2B atribuição: falta o token da afirmação",
+    "V2B atribuição: falta o token da afirmação"
+  ],
+  "erros_atribuicao": [
+    "V2B atribuição: falta o token da afirmação",
+    "V2B atribuição: falta o token da afirmação",
+    "V2B atribuição: falta o token da afirmação",
+    "V2B atribuição: falta o token da afirmação",
+    "V2B atribuição: falta o token da afirmação",
+    "V2B atribuição: falta o token da afirmação",
+    "V2B atribuição: falta o token da afirmação",
+    "V2B atribuição: falta o token da afirmação"
+  ],
+  "controlo": "Acrescentar em memória os quatro tokens de atribuição em falta por língua elimina apenas as queixas de atribuição. Repetiria o nome e não é a frase autorizada.",
+  "erros_atribuicao_controlo": [],
+  "codigo": 1
+}
