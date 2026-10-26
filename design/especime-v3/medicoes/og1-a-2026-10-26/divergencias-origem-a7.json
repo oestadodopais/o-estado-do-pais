@@ -1,0 +1,37 @@
+{
+  "prova": [
+    {
+      "repositorio": "sitio",
+      "ficheiro": "ledger/cruzamentos/series.json",
+      "igual_a_cabeca_inicial": true,
+      "sha256": "99087ea962e968f23078facaf529a620513b75297f7c7078ce7904008b698694"
+    },
+    {
+      "repositorio": "sitio",
+      "ficheiro": "src/data/paises-da-uniao.json",
+      "igual_a_cabeca_inicial": true,
+      "sha256": "05fcb40a6ea3e191a24c2680cd51b48a76ef353706de918c903339b744c957b1"
+    },
+    {
+      "repositorio": "sitio",
+      "ficheiro": "src/data/rotulos-das-series.json",
+      "igual_a_cabeca_inicial": true,
+      "sha256": "a26a9eac853e70461062bf353284b3d4982c32c9cf94a3a33493625a7f9a7eb0"
+    },
+    {
+      "repositorio": "motor",
+      "ficheiro": "content/13 Dominios/series.json",
+      "igual_a_cabeca_inicial": true,
+      "sha256": "9bc212a08be98a3cdf46d60598ed2c793c6aa1634cd2199a1c258c8ed04abed6"
+    },
+    {
+      "repositorio": "motor",
+      "ficheiro": "content/13 Dominios/rotulos-series.json",
+      "igual_a_cabeca_inicial": true,
+      "sha256": "27834a1f83dd964cfe74faae712757c6dc8628af808e7c0b8dd8f55d78b1dc1f"
+    }
+  ],
+  "conferencia": "check-cruzamento-a7.registo",
+  "erros": 8,
+  "scope": "Séries europeias fora da seleção OG1; não reexportadas nesta passagem."
+}

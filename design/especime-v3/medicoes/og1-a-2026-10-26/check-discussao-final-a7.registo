@@ -1,0 +1,6 @@
+
+> o-estado-do-pais@0.1.0 check:discussao
+> node tests/discussao/itens.mjs && node tests/discussao/og1.mjs
+
+V2B · 0 erro(s), 736 de 736 plantas, 700 portas de integração.
+PASS: 50 conferências OG1 das formas, fontes e recibos nas duas edições.

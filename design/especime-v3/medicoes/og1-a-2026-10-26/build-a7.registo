@@ -1,0 +1,40 @@
+
+> o-estado-do-pais@0.1.0 build
+> npm run mapa:unidades && npm run ledger:check && npm run check:registo && npm run check:cruzamento && npm run check:documentos && astro build && npm run stamp:version && npm run cartoes && npm run gate:html && npm run check:datas && npm run check:cadeia && npm run check:dados && npm run check:mapa && npm run check:regioes && npm run check:areas && npm run check:formas && npm run check:lugares && npm run check:pais && npm run check:voz && npm run check:nomes && npm run check:lingua && npm run check:formato && npm run check:navegacao && npm run sinais && npm run check:discussao
+
+
+> o-estado-do-pais@0.1.0 mapa:unidades
+> node scripts/mapa-unidades.mjs
+
+  ✓ mapa das unidades · 29 ficheiros · 308 concelhos · 394 614 B em public/dados/mapa/ · nenhum mudou
+
+> o-estado-do-pais@0.1.0 ledger:check
+> node tests/linha/cadeias-proveniencia.mjs && node scripts/check-ledger.mjs && node tests/hb1/bilingue.mjs && node tests/hb1/data-sem-publicacao.mjs && node tests/linha/historia-da-proveniencia.mjs && node tests/linha/historia-do-valor.mjs && node scripts/check-afirmacoes.mjs
+
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
++ actual - expected
+
++ [
++   '[og1-utao-politicas-saldo.yml] "name" ("3.=(1-2)") não tem nenhuma letra. Um rótulo feito só de algarismos e sinais é uma data ou um número lido no lugar do cabeçalho: a DGAL imprime "31/12/2025" por cima da coluna e "PMP (N.º dias)" por cima do grupo, e o rótulo é o segundo. O primeiro diz quando, e não o quê.'
++ ]
+- []
+
+    at file://<worktree>/tests/linha/cadeias-proveniencia.mjs:45:8
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5) {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: [
+    '[og1-utao-politicas-saldo.yml] "name" ("3.=(1-2)") não tem nenhuma letra. Um rótulo feito só de algarismos e sinais é uma data ou um número lido no lugar do cabeçalho: a DGAL imprime "31/12/2025" por cima da coluna e "PMP (N.º dias)" por cima do grupo, e o rótulo é o segundo. O primeiro diz quando, e não o quê.'
+  ],
+  expected: [],
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}
+
+Node.js v22.23.1

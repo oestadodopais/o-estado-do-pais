@@ -1,0 +1,17 @@
+{
+  "linhas_pesquisa": 88,
+  "campos_alterados": {
+    "name": 88,
+    "name_source": 88,
+    "name_en": 1
+  },
+  "valores_excertos_fontes_localizadores_identicos": true,
+  "linhas_exportadas": 33,
+  "rotulos_impressos": {
+    "og1-utao-politicas-saldo": "Impacto Total no Saldo Orçamental",
+    "og1-utao-saude-variacao": "Saúde",
+    "og1-utao-saude-sem-prr": "Saúde"
+  },
+  "sem_rotulo": 30,
+  "recibos_existentes": 66
+}

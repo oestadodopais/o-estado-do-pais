@@ -1,0 +1,74 @@
+
+  sítio: <worktree>
+
+  manifesto og1a · 33 linhas · 0 grupos excluídos
+
+    og1-utao-p15                                 as printed            O crescimento do emprego de 1,4% em 2027 é difícil de conciliar com o abrandamento recente da imigração líquida. O MF assume um crescimento da população em idade ativa de 0,6% em 2026 e em 2027, o que já incorpora algum abrandamento, mas projeta um crescimento da população ativa de 1,3% em 2027, o que exige uma subida da taxa de participação para 70,2% (+0,5 p.p.; 69,7% em 2026). Os dados mais recentes apontam em sentido oposto: a população em idade ativa aumentou, em média, 28 mil pessoas por trimestre em 2025 e apenas 10 mil em 2026, o que deverá refletir um menor saldo migratório; o BdP estima que a entrada líquida de imigrantes tenha diminuído de cerca de 13 200 pessoas por mês em 2024 para cerca de 6200 em 2025 (Boletim Económico de junho de 2026). No 1.º semestre de 2026, o aumento do emprego resultou sobretudo da redução da população inativa. A previsão do MF é a mais elevada das instituições de referência (entre 0,4% e 1,3%; BdP: 0,7%) e a sua concretização depende de aumentos continuados da participação e da manutenção de saldos migratórios positivos. Se o emprego crescer menos, as bases da receita fiscal e contributiva ficarão abaixo do previsto.
+    og1-utao-p42                                 as printed            A medida de combate à fraude no setor dos combustíveis, com um impacto orçamental estimado de 300 M€ em 2027, constitui a medida de maior dimensão do lado da receita. Contudo, a POE/2027 não disponibiliza informação suficientemente detalhada sobre o seu conteúdo e os mecanismos de implementação, o que limita a avaliação da robustez da medida e a aferição da razoabilidade do impacto orçamental projetado.
+    og1-utao-pib-2026                            engine value          2,3
+    og1-utao-saldo-2026                          engine value          0,0
+    og1-utao-politicas-peso                      engine value          1,6
+    og1-utao-juros-variacao                      engine value          23,2
+    og1-utao-juros-montante                      engine value          8,2
+    og1-utao-taxa-implicita-2026                 engine value          2,4
+    og1-utao-taxa-implicita-2027                 engine value          2,9
+    og1-utao-novas-saldo                         engine value          79
+    og1-utao-despesa-liquida-ce                  engine value          2,1
+    og1-utao-despesa-liquida-limiar              engine value          0,6
+    og1-utao-despesa-liquida-mf-defesa           engine value          0,5
+    og1-utao-despesa-liquida-mf-antes            engine value          0,9
+    og1-utao-divida-2025-revista                 engine value          89,2
+    og1-utao-brent-contratos-2027                engine value          95
+    og1-utao-brent-mf-2027                       engine value          86,1
+    og1-utao-brent-diferenca                     engine value          11
+    og1-utao-politicas-saldo                     engine value          −5 411
+    og1-utao-saude-variacao                      engine value          −1,4
+    og1-utao-saude-sem-prr                       engine value          3,0
+    og1-utao-saldo-me-2027                       engine value          275
+    og1-ps-abstencao                             as printed            viabilizar o Orçamento do Estado para 2027 mediante a abstenção na votação na generalidade do documento
+    og1-pcp-comite                               as printed            O Orçamento do Estado para 2027 é um frete ao capital e um desastre para o País.
+    og1-pcp-raimundo                             as printed            Sim, está em curso, de facto, um assalto às nossas vidas, um assalto aos nossos direitos, um assalto a Abril, um assalto ao Estado e aos recursos públicos, que são nossos, e o Orçamento do Estado é um instrumento deste assalto em curso, é um frete ao capital e um desastre para o País.
+    og1-be-voto                                  as printed            Nós não hesitamos. Nós não assinamos o cheque da má governação de Luís Montenegro
+    og1-il-prioridades                           as printed            A prioridade é baixar o IRS e o ISP
+    og1-livre-posicao                            as printed            dificilmente o acompanharemos, como é óbvio
+    og1-governo-rtp-combustiveis                 as printed            são receita do Estado
+    og1-governo-rtp-previsoes                    as printed            estão perfeitamente alinhadas com as previsões do Governo, têm diferenças muito pequenas
+    og1-governo-rtp-habitacao                    as printed            foi praticamente tudo feito
+    og1-governo-eco-juros                        as printed            a nossa subida das taxas de juro é risco de mercado e não risco de país
+    og1-governo-observador-saldo                 as printed            esta é uma medida que custa 300 milhões no próximo ano, para um saldo de 270 milhões
+      sem recorte: og1-utao-p15 · no record in the vertical's snippets.json
+      sem recorte: og1-utao-p42 · no record in the vertical's snippets.json
+      sem recorte: og1-utao-pib-2026 · no record in the vertical's snippets.json
+      sem recorte: og1-utao-saldo-2026 · no record in the vertical's snippets.json
+      sem recorte: og1-utao-politicas-peso · no record in the vertical's snippets.json
+      sem recorte: og1-utao-juros-variacao · no record in the vertical's snippets.json
+      sem recorte: og1-utao-juros-montante · no record in the vertical's snippets.json
+      sem recorte: og1-utao-taxa-implicita-2026 · no record in the vertical's snippets.json
+      sem recorte: og1-utao-taxa-implicita-2027 · no record in the vertical's snippets.json
+      sem recorte: og1-utao-novas-saldo · no record in the vertical's snippets.json
+      sem recorte: og1-utao-despesa-liquida-ce · no record in the vertical's snippets.json
+      sem recorte: og1-utao-despesa-liquida-limiar · no record in the vertical's snippets.json
+      sem recorte: og1-utao-despesa-liquida-mf-defesa · no record in the vertical's snippets.json
+      sem recorte: og1-utao-despesa-liquida-mf-antes · no record in the vertical's snippets.json
+      sem recorte: og1-utao-divida-2025-revista · no record in the vertical's snippets.json
+      sem recorte: og1-utao-brent-contratos-2027 · no record in the vertical's snippets.json
+      sem recorte: og1-utao-brent-mf-2027 · no record in the vertical's snippets.json
+      sem recorte: og1-utao-brent-diferenca · no record in the vertical's snippets.json
+      sem recorte: og1-utao-politicas-saldo · no record in the vertical's snippets.json
+      sem recorte: og1-utao-saude-variacao · no record in the vertical's snippets.json
+      sem recorte: og1-utao-saude-sem-prr · no record in the vertical's snippets.json
+      sem recorte: og1-utao-saldo-me-2027 · no record in the vertical's snippets.json
+
+  recortes: 0 de 22 linha(s) com página · 0 bytes
+
+  0 nova(s) · 33 alterada(s) · 0 inalterada(s) · registo a escrever
+  dívida de proveniência que atravessa: 0 linha(s) com excerto "[a verificar]" — nenhuma
+  rótulo da fonte: 3 de 33 linha(s), 2 rótulo(s) distinto(s): 3.=(1-2) · Saúde
+  sem rótulo impresso: 30 de 33 linha(s), a que a página chama pelo título do documento: og1-utao-p15, og1-utao-p42, og1-utao-pib-2026, og1-utao-saldo-2026, og1-utao-politicas-peso, og1-utao-juros-variacao, og1-utao-juros-montante, og1-utao-taxa-implicita-2026 e mais 22
+  pending_page: 0 linha(s) sem sítio desenhado onde ser impressa
+
+  Escritas 33 linhas em <worktree>/ledger/claims
+  Registo em <worktree>/ledger/cruzamentos/og1a.json
+  Recortes: 0 ficheiro(s) escrito(s) de 0 em <worktree>/public/recortes
+  Manifesto dos recortes em <motor>/publisher/recortes/manifest.og1a.json
+

@@ -1,0 +1,34 @@
+
+> o-estado-do-pais@0.1.0 check:lingua
+> node tests/hb1/lingua.mjs && node scripts/check-lingua.mjs
+
+HB1 língua: name_en sem declaração e declaração inglesa órfã recusados; vermelho 1, verde 0.
+
+  PORTÃO DA LÍNGUA · 12 problema(s)
+
+    · a unidade «USD por barril» (2 linha(s)) não tem entrada em src/i18n/unidades.mjs.
+      Ou entra no dicionário, com o facto de dicionário ou o inglês que a casa já escreve para a mesma coisa,
+      ou entra em UNIDADES_EM_PORTUGUES com a razão pela qual fica em português. Uma unidade nova não se traduz sozinha.
+    · o organismo «José Manuel Pureza» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+      O nome de quem publica é um nome: não se traduz, e diz em que língua está. Nem para os que têm nome inglês oficial: a linha guarda um nome, e é esse que se rende.
+    · o organismo «Joaquim Miranda Sarmento» (5 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+      O nome de quem publica é um nome: não se traduz, e diz em que língua está. Nem para os que têm nome inglês oficial: a linha guarda um nome, e é esse que se rende.
+    · o organismo «Mariana Leitão» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+      O nome de quem publica é um nome: não se traduz, e diz em que língua está. Nem para os que têm nome inglês oficial: a linha guarda um nome, e é esse que se rende.
+    · o organismo «Isabel Mendes Lopes» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+      O nome de quem publica é um nome: não se traduz, e diz em que língua está. Nem para os que têm nome inglês oficial: a linha guarda um nome, e é esse que se rende.
+    · o organismo «Comité Central do PCP» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+      O nome de quem publica é um nome: não se traduz, e diz em que língua está. Nem para os que têm nome inglês oficial: a linha guarda um nome, e é esse que se rende.
+    · o organismo «Comissão Política Nacional do Partido Socialista» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+      O nome de quem publica é um nome: não se traduz, e diz em que língua está. Nem para os que têm nome inglês oficial: a linha guarda um nome, e é esse que se rende.
+    · a edição «2026-10-08» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+      Uma edição declara-se «pt», «en», ou «null» quando não está em língua nenhuma: um ano, uma data, um código de série. «null» ESCRITO é uma decisão; a chave em falta é ninguém ter olhado.
+    · a edição «2026-10-23» (5 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+      Uma edição declara-se «pt», «en», ou «null» quando não está em língua nenhuma: um ano, uma data, um código de série. «null» ESCRITO é uma decisão; a chave em falta é ninguém ter olhado.
+    · a edição «2026-10-06» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+      Uma edição declara-se «pt», «en», ou «null» quando não está em língua nenhuma: um ano, uma data, um código de série. «null» ESCRITO é uma decisão; a chave em falta é ninguém ter olhado.
+    · a edição «2026-09-28» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+      Uma edição declara-se «pt», «en», ou «null» quando não está em língua nenhuma: um ano, uma data, um código de série. «null» ESCRITO é uma decisão; a chave em falta é ninguém ter olhado.
+    · a edição «2026-10-22» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+      Uma edição declara-se «pt», «en», ou «null» quando não está em língua nenhuma: um ano, uma data, um código de série. «null» ESCRITO é uma decisão; a chave em falta é ninguém ter olhado.
+

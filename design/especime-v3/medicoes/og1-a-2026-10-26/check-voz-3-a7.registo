@@ -1,0 +1,105 @@
+
+> o-estado-do-pais@0.1.0 check:voz
+> node tests/hb1/voz-portas.mjs && node scripts/check-voz.mjs
+
+{"controlos":550,"plantas":1650,"catalogo":0,"nomeadas":550,"de_serie":{"portugal":12,"uniao":4},"pares_distintos":2,"plantas_recusadas":["o rótulo trocado","o href para /","o data-de-linha tirado"],"erros":0}
+  B1: 40 páginas pela lista fechada; 8 temas conferidos.
+  EX1: 12 página(s) com as palavras das explicações e as frases da semana conferidas pelas suas células.
+
+  voz ✓ 65 marcadores · 32 exceções (0 de registo) · 3618 frases distintas, 34333 ocorrências em 1424 rotas · autorreferência 0 · nada por classificar · divulgação 1432 ocorrência(s) nas rotas medidas · 2291 linhas do inventário com bloco (1165 vivas, todas rendidas; 1126 retiradas, nenhuma rendida) · lida contra a Emenda 18 (a mais alta da voz é a 18) · rótulos em span: .eyebrow 9002 · nomes declarados: areas 54, regioes 0, dominios 1848, figuras 370, medidas 70, projeto 9144, oficial 0, cartao 16, concelho 9850, serie 76, familia 1030 · palavras proibidas: 0 em 9759 página(s) da superfície (14 palavras da norma §1.3; 67 página(s) de estudo com a superfície estreitada ao que é prosa deste projeto, e nenhuma página saltada)
+        92 bloco(s) do inventário por ler, e o registo di-lo:
+        · B1-peca1 · por ler pelo lugar de direção antes de aterrar
+        · b1-peca2 · por ler antes de aterrar, por outra família que não a que construiu
+        · b1-peca3 · por ler pelo lugar de direção antes de aterrar
+        · b1-peca3-correcao · por ler
+        · b1-peca3-correcao2 · por ler pelo lugar de direção antes de aterrar
+        · b1c · por ler pelo lugar de direção antes de aterrar
+        · b2-peca1 · por ler pelo lugar de direção antes de aterrar
+        · b2-peca1-correcao-2 · por ler pelo lugar de direção antes de aterrar
+        · c1 · por ler pelo lugar de direção antes de aterrar
+        · c1c · por ler pelo lugar de direção antes de aterrar
+        · c1d · por ler pelo lugar de direção antes de aterrar
+        · c1f · por ler pelo lugar de direção antes de aterrar
+        · c2 · por ler
+        · cartao · por ler
+        · cr1 · por ler
+        · cr2 · por ler
+        · e1 · por ler pelo lugar de direção antes de aterrar
+        · e1-evora-2027 · por ler
+        · e1b · por ler pelo lugar de direção antes de aterrar
+        · e1c · por ler pelo lugar de direção antes de aterrar
+        · eo1 · por ler
+        · eo1-b · por ler
+        · eo1-c · por ler
+        · eo1-d · por ler
+        · eo1-e · por ler
+        · er1 · por ler
+        · er1b · lida (as leituras ER1-b, ER1-c/d, ER1-e e ER1-f pelo Opus, 07 e 12.10.2026, cinco plantas mordidas em cada)
+        · ex1 · por ler
+        · ex3 · por ler
+        · ex4 · por ler
+        · frescura · leitura a frio (design/especime-v3/critica/2026-09-04-codex-leitura-f16-frescura.md, que o lugar de direção guarda na árvore principal e não neste ramo, e por isso esta coluna não o nomeia entre plicas: a conferência do portão exige que um ficheiro nomeado assim exista aqui), Codex `gpt-5.6-sol`, 04.09.2026, cinco plantas de três classes (5 de 5 vistas), doze achados
+        · h3 · por ler
+        · h4 · por ler
+        · hb1 · por ler
+        · hb1b · por ler
+        · hb1d · por ler
+        · higiene-rp4n20 · por ler
+        · k2 · lida pelo lugar de direção a 02.10.2026, aprovada como está
+        · l1 · por ler pelo lugar de direção antes de aterrar
+        · l1-correcao · por ler pelo lugar de direção antes de aterrar
+        · l2a · por ler pelo lugar de direção antes de aterrar
+        · l2b · por ler pelo lugar de direção antes de aterrar
+        · l2b-c · por ler pelo lugar de direção antes de aterrar
+        · lugar · por ler
+        · mapa · leitura a frio (design/especime-v3/critica/2026-09-08-codex-leitura-f11e-distritos.md, que o lugar de direção guarda na árvore principal e não neste ramo, e por isso esta coluna não o nomeia entre plicas: a conferência do portão exige que um ficheiro nomeado assim exista aqui)
+        · me1 · lida pelo Codex gpt-6-astra a 15.10.2026, cinco plantas em cinco, e pelo lugar de direção, e a leitura curta da passagem de correção, 15.10.2026, cinco plantas em cinco
+        · n1 · por ler antes de aterrar
+        · n1c · por ler antes de aterrar
+        · n1d · por ler antes de aterrar
+        · oe1-d · por ler
+        · oe1-e · por ler
+        · og1-a6 · por ler
+        · og1-a7 · por ler
+        · p4 · por ler
+        · p4-c · por ler
+        · p4-d · por ler
+        · pp1 · por ler pelo lugar de direção antes de aterrar
+        · r1 · por ler pelo lugar de direção antes de aterrar
+        · r2 · por ler
+        · r2b · por ler
+        · r3 · por ler
+        · r4 · por ler
+        · r4b · por ler
+        · rotulo-ia · na árvore principal, fora deste ramo
+        · rp1 · por ler pelo lugar de direção antes de aterrar
+        · rp1b · por ler pelo lugar de direção antes de aterrar
+        · rp1c · por ler pelo lugar de direção antes de aterrar
+        · rp4nc · por ler
+        · rp4nd · por ler
+        · rp4ne · por ler
+        · rp4ng · por ler
+        · rp4nj · por ler
+        · s1 · por ler
+        · s1-b · por ler
+        · s1-c · por ler
+        · ue1 · lida pelo lugar de direção a 29.09.2026 (as palavras declaradas no §3 do brief, com os acertos F0 a F4 do construtor e as quatro palavras novas das marcas da fonte, conferidas com as definições da resposta do Eurostat)
+        · ue1b · lida pelo lugar de direção a 29.09.2026 (as palavras declaradas no §3 do brief, com os acertos F0 a F4 do construtor e as quatro palavras novas das marcas da fonte, conferidas com as definições da resposta do Eurostat)
+        · ue1d · lida pelo lugar de direção a 29.09.2026 (a leitura do cartão acaba nas folhas comuns da comparação com a União, as mesmas das outras nove medidas; a ressalva é o texto da primeira página, de uma fonte só, e o cartão a 390 px diz a comparação, a faixa e a ressalva por esta ordem)
+        · ue2 · por ler
+        · ue2-b · por ler
+        · v2a · por ler
+        · v2ab · por ler
+        · v2ac · por ler
+        · v2ai · por ler
+        · v2ak · por ler
+        · v2b · por ler
+        · v2d · por ler
+        · v2e · por ler
+        · v2e-b · por ler
+        · v2e-c · por ler
+        · v2e-d · por ler
+        · v2e-e · por ler
+        1 exceção(ões) por exercer, e o ficheiro di-lo:
+        · «a verificar»
+

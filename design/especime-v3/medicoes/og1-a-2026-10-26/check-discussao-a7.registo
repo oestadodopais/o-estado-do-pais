@@ -1,0 +1,14 @@
+
+> o-estado-do-pais@0.1.0 check:discussao
+> node tests/discussao/itens.mjs && node tests/discussao/og1.mjs
+
+file://<worktree>/tests/discussao/contagem-medicos.mjs:24
+ if(auditarContagem().length)throw new Error('Controlo limpo da contagem recusado');
+                                   ^
+
+Error: Controlo limpo da contagem recusado
+    at plantasDaContagem (file://<worktree>/tests/discussao/contagem-medicos.mjs:24:36)
+    at conferirTudo (file://<worktree>/tests/discussao/itens.mjs:307:27)
+    at file://<worktree>/tests/discussao/itens.mjs:366:73
+
+Node.js v22.23.1

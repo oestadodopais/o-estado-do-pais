@@ -1,0 +1,10 @@
+{
+  "sha256_html": {
+    "pt": "58c3db3f8cf90408d9f18f216ea213c243f9b31fd7f8dc3ae4459926a82a1ed7",
+    "en": "f1073cb161c8f5d38f02ee3ab477e9d81e1978789df531bab4657fd8b5c3c5c0"
+  },
+  "paragrafos_alterados": 4,
+  "comparacao_com": "transcricao-a6.json",
+  "resto_do_item_identico": true,
+  "reconferencia_apos_construcao_final": true
+}

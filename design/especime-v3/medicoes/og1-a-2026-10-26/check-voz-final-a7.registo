@@ -1,0 +1,16 @@
+
+> o-estado-do-pais@0.1.0 check:voz
+> node tests/hb1/voz-portas.mjs && node scripts/check-voz.mjs
+
+{"controlos":550,"plantas":1650,"catalogo":0,"nomeadas":550,"de_serie":{"portugal":12,"uniao":4},"pares_distintos":2,"plantas_recusadas":["o rótulo trocado","o href para /","o data-de-linha tirado"],"erros":0}
+  B1: 40 páginas pela lista fechada; 8 temas conferidos.
+  EX1: 12 página(s) com as palavras das explicações e as frases da semana conferidas pelas suas células.
+
+  PORTÃO DA VOZ · 1 problema(s)
+
+    · frase com marcador da voz e sem declaração de autorreferência
+      marcador(es): sta página
+      rota: /o-que-se-discute
+      classe declarada: conteudo
+      «Ao leitor: a apreciação da UTAO está ligada a cada número desta página, e lê-se antes das intervenções do debate. Ao Ministério das Finanças: publicar a base da estimativa dos milhões de euros dos combustíveis, que a UTAO pede. Ao Parlamento: pedir, na especialidade, o quadro da despesa líquida com e sem a flexibilidade para a defesa.»
+

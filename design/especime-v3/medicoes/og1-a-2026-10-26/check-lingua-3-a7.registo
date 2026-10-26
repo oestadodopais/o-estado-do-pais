@@ -1,0 +1,12 @@
+
+> o-estado-do-pais@0.1.0 check:lingua
+> node tests/hb1/lingua.mjs && node scripts/check-lingua.mjs
+
+HB1 língua: name_en sem declaração e declaração inglesa órfã recusados; vermelho 1, verde 0.
+
+  PORTÃO DA LÍNGUA · 1 problema(s)
+
+    · a unidade «USD por barril» (2 linha(s)) não tem entrada em src/i18n/unidades.mjs.
+      Ou entra no dicionário, com o facto de dicionário ou o inglês que a casa já escreve para a mesma coisa,
+      ou entra em UNIDADES_EM_PORTUGUES com a razão pela qual fica em português. Uma unidade nova não se traduz sozinha.
+
