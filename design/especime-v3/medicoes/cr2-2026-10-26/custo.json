@@ -119,5 +119,25 @@
     "capturas": 0,
     "gate_motor": 0,
     "configuracao_declarada": "Sol 6.1 medium"
+  },
+  "continuacao_cr2g": {
+    "momento": "antes do commit; exclui pedido de commit e inspeção final",
+    "chamadas": {
+      "exec": 54
+    },
+    "total_chamadas": 54,
+    "tokens": {
+      "input_tokens": 4786766,
+      "cached_input_tokens": 4688384,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 22982,
+      "reasoning_output_tokens": 4893,
+      "total_tokens": 4809748
+    },
+    "construcoes": 1,
+    "conferencias_pedidas": 6,
+    "corridas_inteiras": 0,
+    "capturas": 0,
+    "gate_motor": 0
   }
 }

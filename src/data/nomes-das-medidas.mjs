@@ -1,3 +1,5 @@
+import { FIGURAS } from './figuras.mjs';
+import { MEDIDAS_DO_DOMINIO_1 } from './dominios.mjs';
 import { NOMES_EO1 } from './nomes-eo1.mjs';
 import { NOMES_V2D } from './nomes-v2d.mjs';
 import { NOMES_V2E } from './nomes-v2e.mjs';
@@ -678,4 +680,31 @@ function dataDoInstantaneoPRR() {
  const data=d[0]?.snapshot_date;
  if(!/^\d{4}-\d{2}-\d{2}$/.test(data ?? '') || !d.every((/** @type {{snapshot_date:string}} */ x)=>x.snapshot_date===data)) throw Error('PRR: falta uma data única do instantâneo');
  return data.split('-').reverse().join('.');
+}
+
+/* CR2-g: as observações irmãs recebem o nome da mesma medida, sem prosa nova.
+   O lugar continua declarado em lugar-das-linhas.mjs; o período e o lugar
+   distinguem as entradas na página das mudanças. */
+export const MEDIDA_DAS_LINHAS_IRMAS = {
+  'custo-unitario-do-trabalho-2025-ue': 'custo-unitario-do-trabalho-2025',
+  'divida-das-empresas-2024': 'divida-das-empresas-2025',
+  'divida-das-empresas-2025-ue': 'divida-das-empresas-2025',
+  'divida-das-familias-2024': 'divida-das-familias-2025',
+  'divida-publica-2024': 'divida-publica-2025',
+  'fluxo-de-credito-as-empresas-2024': 'fluxo-de-credito-as-empresas-2025',
+  'fluxo-de-credito-as-familias-2024': 'fluxo-de-credito-as-familias-2025',
+  'fluxo-de-credito-as-familias-2025-ue': 'fluxo-de-credito-as-familias-2025',
+  'formacao-bruta-de-capital-fixo-2025-ue': 'formacao-bruta-de-capital-fixo-2025',
+  'licencas-de-construcao-2025-ue': 'licencas-de-construcao-2025',
+  'pib-real-per-capita-2025-ue': 'pib-real-per-capita-2025',
+};
+
+/* Regista também o identificador da irmã na fonte declarada dos nomes.
+   Assim a marca data-nome="projeto" tem uma entrada própria para conferir. */
+for (const [id, principal] of Object.entries(MEDIDA_DAS_LINHAS_IRMAS)) {
+  const nome = FIGURAS.find(f => f.claim === principal)?.nome
+    ?? MEDIDAS_DO_DOMINIO_1.find(m => m.claim === principal)?.nome
+    ?? NOMES_DO_PROJETO[principal];
+  if (!nome) throw new Error(`nomes: falta o nome da medida ${principal}`);
+  NOMES_DO_PROJETO[id] = nome;
 }

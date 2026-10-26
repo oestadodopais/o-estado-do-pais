@@ -39,18 +39,16 @@ corrections:
   kind: atualizacao
   old_value: 377,5
   new_value: 377,6
-  reason: O Eurostat reviu o valor da União a 21.10.2026 (o carimbo do conjunto passou de 02.10.2026 a 21.10.2026); a reconferência
-    semanal de 26.10.2026 viu a revisão.
-  reason_en: Eurostat revised the EU value on 21.10.2026 (the dataset stamp moved from 02.10.2026 to 21.10.2026); the weekly
-    check of 26.10.2026 caught the revision.
+  reason: "O Eurostat reviu o valor de 377,5 para 377,6 na atualização do conjunto de 21.10.2026 (o carimbo passou de 17.10.2026 a 21.10.2026): a reconferência semanal de 26.10.2026 viu a revisão; a linha foi relida na fonte a 26.10.2026 (a resposta alojada com recibo); o sítio publicava o valor da leitura anterior."
+  reason_en: "Eurostat revised the value from 377.5 to 377.6 in the dataset update of 21.10.2026 (the dataset stamp moved from 17.10.2026 to 21.10.2026): the weekly check of 26.10.2026 caught the revision; the row was re-read at the source on 26.10.2026 (the hosted response with its receipt); the site published the value of the earlier reading."
 - date: '2026-10-26'
   kind: proveniencia
   field: access_date
   old_value: '2026-09-15'
   new_value: '2026-10-26'
-  reason: O valor novo foi lido a 26.10.2026, no dia da reconferência que viu a revisão; a leitura anterior, de 15.09.2026,
+  reason: O valor novo foi lido a 26.10.2026, o dia da releitura pelo cliente da casa; a leitura anterior, de 15.09.2026,
     é a do valor 377,5.
-  reason_en: The new value was read on 26.10.2026, the day of the check that caught the revision; the earlier reading, of
+  reason_en: The new value was read on 26.10.2026, the day of the re-read by the house client; the earlier reading, of
     15.09.2026, is that of the value 377,5.
 - date: '2026-10-26'
   kind: proveniencia
