@@ -116,18 +116,16 @@
     },
     {
       "passagem": "OG1-A8",
-      "chamadas_ferramentas_antes_relatorio": 18,
-      "criterio_chamadas": "Chamadas diretas a functions.exec. A preparação do relatório, o commit e a inspeção final são posteriores; o total final consta da resposta.",
       "corridas_conferencias": 2,
       "geracoes": 2,
       "corridas_inteiras": 0,
       "capturas": 0,
-      "turnos": null,
-      "entrada": null,
+      "turnos": 22,
+      "entrada": 1845509,
       "saida": null,
-      "pontos": null,
+      "pontos": 0,
       "tokens_used": null,
-      "ausencias": "Turnos, tokens e pontos finais não disponibilizados nesta passagem.",
+      "ausencias": "Tokens de saída e tokens used não disponibilizados.",
       "corridas": [
         {
           "label": "gerar",
@@ -174,6 +172,397 @@
             "--site",
             "<worktree>",
             "--write"
+          ]
+        }
+      ],
+      "chamadas_ferramentas": 21,
+      "fonte_medidas_finais": "Mandato OG1-A9, §1"
+    },
+    {
+      "passagem": "OG1-A9",
+      "fonte": "medidas-a9.json e contagem das chamadas na sessão",
+      "corridas_conferencias": 32,
+      "geracoes": 4,
+      "corridas_inteiras": 0,
+      "capturas": 0,
+      "chamadas_ferramentas_ate_relatorio": 91,
+      "criterio_chamadas": "Chamadas diretas da sessão até à escrita do relatório. O commit do relatório e a inspeção final são posteriores.",
+      "turnos": null,
+      "entrada": null,
+      "saida": null,
+      "pontos": null,
+      "tokens_used": null,
+      "ausencias": "Totais finais de turnos, símbolos de entrada e saída, pontos e tokens used não disponibilizados; o lançador mede o custo final.",
+      "corridas": [
+        {
+          "nome": "gerar",
+          "codigo": 0,
+          "duracao_segundos": 0.297,
+          "comando": [
+            "python3",
+            "-m",
+            "publisher.oe2027_generalidade",
+            "--write"
+          ]
+        },
+        {
+          "nome": "pesquisa",
+          "codigo": 0,
+          "duracao_segundos": 0.972,
+          "comando": [
+            "python3",
+            "-m",
+            "publisher.oe2027_generalidade_test",
+            "--record"
+          ]
+        },
+        {
+          "nome": "preparar",
+          "codigo": 0,
+          "duracao_segundos": 0.266,
+          "comando": [
+            "python3",
+            "-m",
+            "publisher.og1a_export"
+          ]
+        },
+        {
+          "nome": "travessia",
+          "codigo": 0,
+          "duracao_segundos": 0.571,
+          "comando": [
+            "python3",
+            "-m",
+            "publisher.export_site_rows",
+            "--manifest",
+            "publisher/manifest.og1a.json",
+            "--site",
+            "<worktree>",
+            "--write"
+          ]
+        },
+        {
+          "nome": "preparar-rotulos",
+          "codigo": 0,
+          "duracao_segundos": 0.349,
+          "comando": [
+            "python3",
+            "-m",
+            "publisher.og1a_export"
+          ]
+        },
+        {
+          "nome": "travessia-rotulos",
+          "codigo": 0,
+          "duracao_segundos": 0.655,
+          "comando": [
+            "python3",
+            "-m",
+            "publisher.export_site_rows",
+            "--manifest",
+            "publisher/manifest.og1a.json",
+            "--site",
+            "<worktree>",
+            "--write"
+          ]
+        },
+        {
+          "nome": "typecheck",
+          "codigo": 0,
+          "duracao_segundos": 0.396,
+          "comando": [
+            "npm",
+            "run",
+            "typecheck"
+          ]
+        },
+        {
+          "nome": "origem-og1",
+          "codigo": 0,
+          "duracao_segundos": 0.497,
+          "comando": [
+            "node",
+            "--input-type=module",
+            "-e",
+            "import {loadClaims} from \"./src/lib/ledger.mjs\"; import {conferirOg1} from \"./scripts/afirmacoes-og1.mjs\"; const r=conferirOg1(loadClaims(),{motor:process.env.RESEARCHHUB_DIR}); console.log(JSON.stringify({...r,ids:[...r.ids]})); if(r.errors.length) process.exit(1);"
+          ]
+        },
+        {
+          "nome": "check-discussao",
+          "codigo": 1,
+          "duracao_segundos": 39.699,
+          "comando": [
+            "npm",
+            "run",
+            "check:discussao"
+          ]
+        },
+        {
+          "nome": "check-lingua",
+          "codigo": 1,
+          "duracao_segundos": 10.53,
+          "comando": [
+            "npm",
+            "run",
+            "check:lingua"
+          ]
+        },
+        {
+          "nome": "og1",
+          "codigo": 1,
+          "duracao_segundos": 0.53,
+          "comando": [
+            "node",
+            "tests/discussao/og1.mjs"
+          ]
+        },
+        {
+          "nome": "medir-voz",
+          "codigo": 1,
+          "duracao_segundos": 11.252,
+          "comando": [
+            "python3",
+            "<temporario>/og1-a9-voz.py"
+          ]
+        },
+        {
+          "nome": "og1-2",
+          "codigo": 0,
+          "duracao_segundos": 0.548,
+          "comando": [
+            "node",
+            "tests/discussao/og1.mjs"
+          ]
+        },
+        {
+          "nome": "check-cruzamento-local",
+          "codigo": 0,
+          "duracao_segundos": 0.703,
+          "comando": [
+            "npm",
+            "run",
+            "check:cruzamento"
+          ]
+        },
+        {
+          "nome": "ledger-check",
+          "codigo": 0,
+          "duracao_segundos": 14.463,
+          "comando": [
+            "npm",
+            "run",
+            "ledger:check"
+          ]
+        },
+        {
+          "nome": "check-registo",
+          "codigo": 0,
+          "duracao_segundos": 1.516,
+          "comando": [
+            "npm",
+            "run",
+            "check:registo"
+          ]
+        },
+        {
+          "nome": "build",
+          "codigo": 1,
+          "duracao_segundos": 299.663,
+          "comando": [
+            "npm",
+            "run",
+            "build"
+          ]
+        },
+        {
+          "nome": "check-lugares",
+          "codigo": 0,
+          "duracao_segundos": 1.88,
+          "comando": [
+            "npm",
+            "run",
+            "check:lugares"
+          ]
+        },
+        {
+          "nome": "typecheck-final",
+          "codigo": 0,
+          "duracao_segundos": 0.39,
+          "comando": [
+            "npm",
+            "run",
+            "typecheck"
+          ]
+        },
+        {
+          "nome": "medir-voz-2",
+          "codigo": 0,
+          "duracao_segundos": 44.035,
+          "comando": [
+            "python3",
+            "<temporario>/og1-a9-voz.py"
+          ]
+        },
+        {
+          "nome": "check-lingua-final",
+          "codigo": 0,
+          "duracao_segundos": 10.867,
+          "comando": [
+            "npm",
+            "run",
+            "check:lingua"
+          ]
+        },
+        {
+          "nome": "pesquisa-final",
+          "codigo": 0,
+          "duracao_segundos": 1.246,
+          "comando": [
+            "python3",
+            "-m",
+            "publisher.oe2027_generalidade_test",
+            "--record"
+          ]
+        },
+        {
+          "nome": "check-voz",
+          "codigo": 1,
+          "duracao_segundos": 61.336,
+          "comando": [
+            "npm",
+            "run",
+            "check:voz"
+          ]
+        },
+        {
+          "nome": "check-discussao-final",
+          "codigo": 1,
+          "duracao_segundos": 39.972,
+          "comando": [
+            "npm",
+            "run",
+            "check:discussao"
+          ]
+        },
+        {
+          "nome": "check-voz-final",
+          "codigo": 0,
+          "duracao_segundos": 55.463,
+          "comando": [
+            "npm",
+            "run",
+            "check:voz"
+          ]
+        },
+        {
+          "nome": "typecheck-portas",
+          "codigo": 0,
+          "duracao_segundos": 0.368,
+          "comando": [
+            "npm",
+            "run",
+            "typecheck"
+          ]
+        },
+        {
+          "nome": "build-2",
+          "codigo": 1,
+          "duracao_segundos": 311.022,
+          "comando": [
+            "npm",
+            "run",
+            "build"
+          ]
+        },
+        {
+          "nome": "construir-portas",
+          "codigo": 0,
+          "duracao_segundos": 18.353,
+          "comando": [
+            "npm",
+            "exec",
+            "astro",
+            "build"
+          ]
+        },
+        {
+          "nome": "check-discussao-portas",
+          "codigo": 1,
+          "duracao_segundos": 34.531,
+          "comando": [
+            "npm",
+            "run",
+            "check:discussao"
+          ]
+        },
+        {
+          "nome": "check-discussao-condicoes",
+          "codigo": 0,
+          "duracao_segundos": 34.476,
+          "comando": [
+            "npm",
+            "run",
+            "check:discussao"
+          ]
+        },
+        {
+          "nome": "build-final",
+          "codigo": 1,
+          "duracao_segundos": 312.778,
+          "comando": [
+            "npm",
+            "run",
+            "build"
+          ]
+        },
+        {
+          "nome": "typecheck-verificado",
+          "codigo": 0,
+          "duracao_segundos": 0.334,
+          "comando": [
+            "npm",
+            "run",
+            "typecheck"
+          ]
+        },
+        {
+          "nome": "check-voz-verificado",
+          "codigo": 0,
+          "duracao_segundos": 48.267,
+          "comando": [
+            "npm",
+            "run",
+            "check:voz"
+          ]
+        },
+        {
+          "nome": "check-discussao-verificado",
+          "codigo": 0,
+          "duracao_segundos": 35.062,
+          "comando": [
+            "npm",
+            "run",
+            "check:discussao"
+          ]
+        },
+        {
+          "nome": "build-verificado",
+          "codigo": 0,
+          "duracao_segundos": 379.125,
+          "comando": [
+            "npm",
+            "run",
+            "build"
+          ]
+        },
+        {
+          "nome": "typecheck-ultima",
+          "codigo": 0,
+          "duracao_segundos": 0.368,
+          "comando": [
+            "npm",
+            "run",
+            "typecheck"
           ]
         }
       ]

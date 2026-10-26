@@ -1,0 +1,20 @@
+file://<worktree>/scripts/incorporar-do-portao.mjs:169
+  if (erros.length) throw Error(erros.join('\n'));
+                          ^
+
+Error: ER1 código: o pedaço difere da linha, carácter a carácter.
+    at tirarCodigoConferido (file://<worktree>/scripts/incorporar-do-portao.mjs:169:27)
+    at file://<worktree>/scripts/medir-defeitos.mjs:1310:3
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)
+
+Node.js v22.23.1
+Traceback (most recent call last):
+  File "<temporario>/og1-a9-voz.py", line 4, in <module>
+    with p.open('w') as f:r=subprocess.run(['node','scripts/medir-defeitos.mjs','--json'],stdout=f,check=True)
+                            ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<temporario>/python/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['node', 'scripts/medir-defeitos.mjs', '--json']' returned non-zero exit status 1.

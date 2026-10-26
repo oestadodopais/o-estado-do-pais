@@ -1,0 +1,3 @@
+Chaves da medição: ['inventario', 'inventario_existe', 'entradas_declaradas', 'por_rota', 'declaracoes']
+Por classificar: [('/en/under-discussion', 14), ('/o-que-se-discute', 14)]
+Declarações: ['total', 'vivas', 'retiradas', 'rendidas', 'sem_estado', 'retiradas_sem_razao', 'rendidas_nas_isentas', 'vivas_que_nao_rendem', 'retiradas_que_rendem']

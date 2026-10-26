@@ -1,0 +1,388 @@
+
+> o-estado-do-pais@0.1.0 check:discussao
+> node tests/discussao/itens.mjs && node tests/discussao/og1.mjs
+
+V2B · 383 erro(s), 395 de 426 plantas, 704 portas de integração.
+V2E recibo: nome da medida ausente junto do título do conjunto: dgo-atraso-45-p (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: dgo-atraso-45-p (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: infarmed-ambulatorio-2026-07-p5-acumulado-encargo (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: infarmed-ambulatorio-2026-07-p5-acumulado-encargo (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: infarmed-ambulatorio-2026-07-p5-homologo-encargo (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: infarmed-ambulatorio-2026-07-p5-homologo-encargo (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: infarmed-ambulatorio-limitacao (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: infarmed-ambulatorio-limitacao (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: infarmed-hospitalar-2026-07-p5-acumulado-encargo (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: infarmed-hospitalar-2026-07-p5-acumulado-encargo (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: infarmed-hospitalar-2026-07-p5-homologo-encargo (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: infarmed-hospitalar-2026-07-p5-homologo-encargo (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: oe2027-compromisso-cirurgias (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: oe2027-compromisso-cirurgias (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: oe2027-compromisso-consultas (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: oe2027-compromisso-consultas (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: oe2027-indicador-medico (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: oe2027-indicador-medico (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: pe-brisa-minuta-ano (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: pe-brisa-minuta-ano (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: pe-brisa-periodo-imt (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: pe-brisa-periodo-imt (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: pe-brisa-prazo-minuta (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: pe-brisa-prazo-minuta (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: pe-brisa-vias-minuta (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: pe-brisa-vias-minuta (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: pe-despacho-alargamentos (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: pe-despacho-alargamentos (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: pe-despacho-braga (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: pe-despacho-braga (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: pe-despacho-comparticipacoes (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: pe-despacho-comparticipacoes (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: pe-despacho-equilibrio (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: pe-despacho-equilibrio (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: pe-despacho-investimentos-novos (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: pe-despacho-investimentos-novos (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: pe-despacho-investimentos-previstos (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: pe-despacho-investimentos-previstos (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: pe-despacho-limites (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: pe-despacho-limites (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: pe-despacho-qualidade (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: pe-despacho-qualidade (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: pe-dl87a-apoio-retificado (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: pe-dl87a-apoio-retificado (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: pe-dl87a-apoio (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: pe-dl87a-apoio (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: pe-dl87a-atualizacao (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: pe-dl87a-atualizacao (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: pe-dl87a-descontos (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: pe-dl87a-descontos (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: pe-dl87a-efeitos (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: pe-dl87a-efeitos (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: pe-dl87a-financiamento (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: pe-dl87a-financiamento (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: pe-dl87a-publicacao-ano (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: pe-dl87a-publicacao-ano (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: pe-oe-algarve-cautelar (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: pe-oe-algarve-cautelar (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: pe-oe-algarve-provisorio (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: pe-oe-algarve-provisorio (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: pe-oe-apoio-dl87a (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: pe-oe-apoio-dl87a (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: pe-oe-beira-abolicao (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: pe-oe-beira-abolicao (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: pe-oe-brisa-negociacao (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: pe-oe-brisa-negociacao (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: pe-oe-brisa-pedido (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: pe-oe-brisa-pedido (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: pe-oe-contingentes (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: pe-oe-contingentes (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: pe-oe-riscos-nao-reconhecimento (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: pe-oe-riscos-nao-reconhecimento (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: pe-oe-riscos-total (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: pe-oe-riscos-total (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: pe-scut-trocos (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: pe-scut-trocos (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: pe-scut-vigencia (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: pe-scut-vigencia (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: pe-tc15-acordos (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: pe-tc15-acordos (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: pe-tc15-fundamento (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: pe-tc15-fundamento (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: pe-tc15-futuros (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: pe-tc15-futuros (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: pe-tc15-infracoes (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: pe-tc15-infracoes (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: pe-tc15-remuneracao (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: pe-tc15-remuneracao (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-complemento-p3-1-24-estado (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-complemento-p3-1-24-estado (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-complemento-p3-1-3-estado (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-complemento-p3-1-3-estado (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-complemento-p3-1-32-estado (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-complemento-p3-1-32-estado (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-complemento-p3-1-33-estado (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-complemento-p3-1-33-estado (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-complemento-p3-1-8-estado (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-complemento-p3-1-8-estado (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-complemento-p4-1-1-estado (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-complemento-p4-1-1-estado (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-complemento-p4-1-12-estado (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-complemento-p4-1-12-estado (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-complemento-p4-1-2-estado (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-complemento-p4-1-2-estado (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-complemento-p4-1-40-estado (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-complemento-p4-1-40-estado (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-complemento-p4-1-41-estado (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-complemento-p4-1-41-estado (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-complemento-p4-1-5-estado (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-complemento-p4-1-5-estado (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-complemento-p5-1-11-estado (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-complemento-p5-1-11-estado (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-complemento-p5-1-22-estado (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-complemento-p5-1-22-estado (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-complemento-p5-1-28-estado (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-complemento-p5-1-28-estado (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-complemento-p5-1-7-estado (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-complemento-p5-1-7-estado (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-complemento-p5-1-9-estado (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-complemento-p5-1-9-estado (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-complemento-p6-1-10-estado (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-complemento-p6-1-10-estado (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-complemento-p6-1-37-estado (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-complemento-p6-1-37-estado (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-complemento-p6-1-42-estado (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-complemento-p6-1-42-estado (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-complemento-p7-1-34-estado (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-complemento-p7-1-34-estado (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-complemento-p7-1-35-estado (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-complemento-p7-1-35-estado (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-complemento-p7-1-36-estado (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-complemento-p7-1-36-estado (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-complemento-p7-1-38-estado (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-complemento-p7-1-38-estado (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-complemento-p7-1-39-estado (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-complemento-p7-1-39-estado (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-complemento-p8-1-21-estado (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-complemento-p8-1-21-estado (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-complemento-p8-1-25-estado (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-complemento-p8-1-25-estado (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-complemento-p9-1-17-estado (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-complemento-p9-1-17-estado (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-complemento-p9-1-18-estado (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-complemento-p9-1-18-estado (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-complemento-p9-1-26-estado (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-complemento-p9-1-26-estado (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-complemento-p9-1-30-estado (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-complemento-p9-1-30-estado (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-complemento-p9-1-43-estado (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-complemento-p9-1-43-estado (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-complemento-p9-1-44-estado (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-complemento-p9-1-44-estado (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-marcos-metas-2025-p2-1-13-estado (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-marcos-metas-2025-p2-1-13-estado (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-marcos-metas-2025-p2-1-20-estado (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-marcos-metas-2025-p2-1-20-estado (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-marcos-metas-2025-p2-1-29-estado (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-marcos-metas-2025-p2-1-29-estado (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-marcos-metas-2025-p2-1-4-estado (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-marcos-metas-2025-p2-1-4-estado (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-marcos-metas-2025-p2-1-6-estado (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-marcos-metas-2025-p2-1-6-estado (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-monitorizacao-20261014-p2-c01-contratado (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-monitorizacao-20261014-p2-c01-contratado (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-monitorizacao-20261014-p2-c01-pago (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-monitorizacao-20261014-p2-c01-pago (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-monitorizacao-20261014-p2-c01-taxa (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: prr-monitorizacao-20261014-p2-c01-taxa (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-catalogo-acumulados (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-catalogo-acumulados (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-cirurgias-2025-07 (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-cirurgias-2025-07 (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-cirurgias-2026-07 (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-cirurgias-2026-07 (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-consultas-csp-2025-08 (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-consultas-csp-2025-08 (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-consultas-csp-2026-08 (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-consultas-csp-2026-08 (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-consultas-csp-descricao (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-consultas-csp-descricao (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-consultas-hospitalares-2025-07 (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-consultas-hospitalares-2025-07 (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-consultas-hospitalares-2026-07 (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-consultas-hospitalares-2026-07 (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-0 (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-0 (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-1 (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-1 (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-10 (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-10 (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-11 (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-11 (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-12 (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-12 (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-13 (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-13 (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-14 (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-14 (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-15 (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-15 (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-16 (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-16 (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-17 (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-17 (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-18 (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-18 (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-19 (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-19 (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-2 (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-2 (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-20 (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-20 (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-21 (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-21 (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-22 (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-22 (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-23 (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-23 (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-24 (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-24 (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-25 (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-25 (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-26 (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-26 (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-27 (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-27 (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-28 (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-28 (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-29 (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-29 (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-3 (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-3 (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-30 (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-30 (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-31 (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-31 (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-32 (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-32 (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-33 (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-33 (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-34 (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-34 (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-35 (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-35 (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-36 (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-36 (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-37 (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-37 (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-38 (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-38 (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-39 (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-39 (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-4 (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-4 (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-40 (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-40 (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-41 (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-41 (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-42 (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-42 (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-43 (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-43 (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-44 (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-44 (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-45 (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-45 (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-46 (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-46 (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-47 (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-47 (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-48 (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-48 (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-49 (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-49 (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-5 (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-5 (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-50 (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-50 (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-51 (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-51 (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-52 (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-52 (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-6 (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-6 (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-7 (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-7 (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-8 (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-8 (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-9 (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-divida-2026-divida-total-fornecedores-externos-9 (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-espera-rncci-2025-10-19 (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-espera-rncci-2025-10-19 (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-espera-rncci-2026-10-19 (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-espera-rncci-2026-10-19 (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-lista-cirurgia-2025-07 (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-lista-cirurgia-2025-07 (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-lista-cirurgia-2026-07 (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-lista-cirurgia-2026-07 (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-sem-medico-elegibilidade (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-sem-medico-elegibilidade (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-sem-medico-serie-antiga-2025-06 (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-sem-medico-serie-antiga-2025-06 (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-sem-medico-serie-antiga-2026-06 (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-sem-medico-serie-antiga-2026-06 (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-sem-medico-serie-nova-2026-08 (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-sem-medico-serie-nova-2026-08 (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-urgencias-2025-07 (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-urgencias-2025-07 (en)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-urgencias-2026-07 (pt)
+V2E recibo: nome da medida ausente junto do título do conjunto: sns-urgencias-2026-07 (en)
+V2B integração: presença ou ausência errada em en/european-union/index.html
+V2D título: falta uma origem de valor ou período
+V2B integração: destino ou título errado em en/european-union/index.html
+V2B integração: exceção temática não autorizada
+V2B integração: porta temática fora da secção
+V2B integração: presença ou ausência errada em en/explainers/weekly-reading/index.html
+V2D título: falta uma origem de valor ou período
+V2B integração: destino ou título errado em en/explainers/weekly-reading/index.html
+V2B integração: exceção temática não autorizada
+V2B integração: presença ou ausência errada em en/index/index.html
+V2D título: falta uma origem de valor ou período
+V2B integração: destino ou título errado em en/index/index.html
+V2B integração: exceção temática não autorizada
+V2B integração: presença ou ausência errada em en/index.html
+V2D título: falta uma origem de valor ou período
+V2B integração: destino ou título errado em en/index.html
+V2B integração: exceção temática não autorizada
+V2B integração: presença ou ausência errada em en/ledger/series/divida-publica-2025-paises/index.html
+V2D título: falta uma origem de valor ou período
+V2B integração: destino ou título errado em en/ledger/series/divida-publica-2025-paises/index.html
+V2B integração: exceção temática não autorizada
+V2B integração: porta temática fora da secção
+V2B integração: presença ou ausência errada em explicacoes/leitura-da-semana/index.html
+V2D título: falta uma origem de valor ou período
+V2B integração: destino ou título errado em explicacoes/leitura-da-semana/index.html
+V2B integração: exceção temática não autorizada
+V2B integração: presença ou ausência errada em index.html
+V2D título: falta uma origem de valor ou período
+V2B integração: destino ou título errado em index.html
+V2B integração: exceção temática não autorizada
+V2B integração: presença ou ausência errada em indice/index.html
+V2D título: falta uma origem de valor ou período
+V2B integração: destino ou título errado em indice/index.html
+V2B integração: exceção temática não autorizada
+V2B integração: presença ou ausência errada em livro-razao/series/divida-publica-2025-paises/index.html
+V2D título: falta uma origem de valor ou período
+V2B integração: destino ou título errado em livro-razao/series/divida-publica-2025-paises/index.html
+V2B integração: exceção temática não autorizada
+V2B integração: presença ou ausência errada em uniao-europeia/index.html
+V2D título: falta uma origem de valor ou período
+V2B integração: destino ou título errado em uniao-europeia/index.html
+V2B integração: exceção temática não autorizada
+V2B planta não mordeu: língua da citação retirada
+V2B planta não mordeu: período acumulado trocado pelo mês final
+V2B planta não mordeu: período acumulado trocado pelo mês final
+V2B planta não mordeu: período acumulado trocado pelo mês final
+V2B planta não mordeu: período acumulado trocado pelo mês final
+V2B planta não mordeu: período acumulado trocado pelo mês final
+V2B planta não mordeu: período acumulado trocado pelo mês final
+V2B planta não mordeu: período acumulado trocado pelo mês final
+V2B planta não mordeu: período acumulado trocado pelo mês final
+V2B planta não mordeu: período acumulado trocado pelo mês final
+V2B planta não mordeu: língua da citação retirada
+V2B planta não mordeu: período acumulado trocado pelo mês final
+V2B planta não mordeu: período acumulado trocado pelo mês final
+V2B planta não mordeu: língua da citação retirada
+V2B planta não mordeu: período acumulado trocado pelo mês final
+V2B planta não mordeu: língua da citação retirada
+V2B planta não mordeu: língua da citação retirada
+V2B planta não mordeu: período acumulado trocado pelo mês final
+V2B planta não mordeu: língua da citação retirada
+V2B planta não mordeu: período acumulado trocado pelo mês final
+V2B planta não mordeu: período acumulado trocado pelo mês final
+V2B planta não mordeu: língua da citação retirada
+V2B planta não mordeu: período acumulado trocado pelo mês final
+V2B planta não mordeu: língua da citação retirada
+V2B planta não mordeu: língua da citação retirada
+V2B planta não mordeu: período acumulado trocado pelo mês final
+V2B planta não mordeu: língua da citação retirada
+V2B planta não mordeu: período acumulado trocado pelo mês final
+V2B planta não mordeu: período acumulado trocado pelo mês final
+V2B planta não mordeu: língua da citação retirada
+V2B planta não mordeu: período acumulado trocado pelo mês final

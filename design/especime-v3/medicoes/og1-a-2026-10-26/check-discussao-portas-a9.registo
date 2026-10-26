@@ -1,0 +1,7 @@
+
+> o-estado-do-pais@0.1.0 check:discussao
+> node tests/discussao/itens.mjs && node tests/discussao/og1.mjs
+
+V2B · 2 erro(s), 736 de 736 plantas, 714 portas de integração.
+V2B integração: porta temática fora da secção
+V2B integração: porta temática fora da secção

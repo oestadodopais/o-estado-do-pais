@@ -1,0 +1,19 @@
+
+> o-estado-do-pais@0.1.0 check:lingua
+> node tests/hb1/lingua.mjs && node scripts/check-lingua.mjs
+
+HB1 língua: name_en sem declaração e declaração inglesa órfã recusados; vermelho 1, verde 0.
+
+[31m  PORTÃO DA LÍNGUA · 8 problema(s)
+[0m
+[31m    · [0mo organismo «ECO» (2 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+      O nome de quem publica é um nome: não se traduz, e diz em que língua está. Nem para os que têm nome inglês oficial: a linha guarda um nome, e é esse que se rende.
+[31m    · [0mo organismo «Correio da Manhã» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+      O nome de quem publica é um nome: não se traduz, e diz em que língua está. Nem para os que têm nome inglês oficial: a linha guarda um nome, e é esse que se rende.
+[31m    · [0ma declaração de língua nomeia o organismo «Comissão Política Nacional do Partido Socialista», que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+[31m    · [0ma declaração de língua nomeia o organismo «Comité Central do PCP», que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+[31m    · [0ma declaração de língua nomeia o organismo «José Manuel Pureza», que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+[31m    · [0ma declaração de língua nomeia o organismo «Mariana Leitão», que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+[31m    · [0ma declaração de língua nomeia o organismo «Isabel Mendes Lopes», que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+[31m    · [0ma declaração de língua nomeia o organismo «Joaquim Miranda Sarmento», que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+

@@ -1,0 +1,8 @@
+
+> o-estado-do-pais@0.1.0 check:discussao
+> node tests/discussao/itens.mjs && node tests/discussao/og1.mjs
+
+V2B · 0 erro(s), 744 de 744 plantas, 714 portas de integração.
+OG1 pt: planta de data trocada e planta de partido trocado recusadas.
+OG1 en: planta de data trocada e planta de partido trocado recusadas.
+PASS: 157 conferências OG1 das formas, fontes e recibos nas duas edições.

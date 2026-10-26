@@ -1,0 +1,84 @@
+{
+  "linhas": 88,
+  "alteracoes": [
+    {
+      "linha": "og1-ps-abstencao",
+      "campos": [
+        "entity_aliases",
+        "source"
+      ]
+    },
+    {
+      "linha": "og1-pcp-comite",
+      "campos": [
+        "entity_aliases",
+        "source"
+      ]
+    },
+    {
+      "linha": "og1-pcp-raimundo",
+      "campos": [
+        "entity_aliases",
+        "source"
+      ]
+    },
+    {
+      "linha": "og1-be-voto",
+      "campos": [
+        "entity_aliases",
+        "source"
+      ]
+    },
+    {
+      "linha": "og1-il-prioridades",
+      "campos": [
+        "entity_aliases",
+        "source"
+      ]
+    },
+    {
+      "linha": "og1-livre-posicao",
+      "campos": [
+        "entity_aliases",
+        "source"
+      ]
+    },
+    {
+      "linha": "og1-governo-rtp-combustiveis",
+      "campos": [
+        "entity_aliases",
+        "source"
+      ]
+    },
+    {
+      "linha": "og1-governo-rtp-previsoes",
+      "campos": [
+        "entity_aliases",
+        "source"
+      ]
+    },
+    {
+      "linha": "og1-governo-rtp-habitacao",
+      "campos": [
+        "entity_aliases",
+        "source"
+      ]
+    },
+    {
+      "linha": "og1-governo-eco-juros",
+      "campos": [
+        "entity_aliases",
+        "source"
+      ]
+    },
+    {
+      "linha": "og1-governo-observador-saldo",
+      "campos": [
+        "entity_aliases",
+        "source"
+      ]
+    }
+  ],
+  "restantes_campos": "iguais à cabeça inicial",
+  "exportador_comum": "sem alterações"
+}

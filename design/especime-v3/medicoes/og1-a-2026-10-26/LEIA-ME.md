@@ -1,3 +1,167 @@
+# OG1-A9
+
+A proveniência que bloqueou a A8 foi corrigida pelo gerador. O exportador comum, incluindo o V6, não mudou. As onze afirmações têm `source: null` no motor, apenas quem fala em `attributed_to` e o publicador em `entity_aliases`, na forma já usada pelos itens existentes. A travessia passou e escreveu as mesmas 33 linhas. No sítio, o recibo de José Manuel Pureza diz «Publicado por Diário de Notícias»; a afirmação continua atribuída a José Manuel Pureza. As linhas da UTAO mantêm `source: "UTAO"`.
+
+## Alterações e provas
+
+O ensaio do motor passou 105 verificações, incluindo a ausência de `entity_aliases` numa afirmação. `invariantes-a9.json` compara as 88 linhas com a cabeça inicial: só `source` e `entity_aliases` mudaram, nas onze afirmações. Valores, unidades, excertos, datas, rótulos e localizadores ficaram iguais. A releitura própria da OG1 conferiu os 33 corpos e as seis plantas de adulteração. Os sete ficheiros do motor por comitar estão listados abaixo.
+
+As oito correções editoriais do mandato A8 estão nas duas edições: fontes, frases 1, 4 e 5; comparação; conclusão; recomendação; opinião; data do comunicado do PCP. A frase 3 das fontes permaneceu igual. A dívida de 2025 usa agora `divida-publica-2025`, 89,2 %, com a revisão do Eurostat de 21.10.2026; a linha da UTAO conserva o seu recibo, sem ser usada no item. A Saúde continua na linha do sítio, com 17 803,1 milhões de euros. A margem da despesa líquida ganhou o nome e a definição do mandato nas duas edições.
+
+As formas mudaram onde a régua o exigia: o comunicado do PCP imprime uma só data, 19.10.2026, a sua `reference_date`; as quatro repetições da audição do ministro imprimem a data da própria linha; «BE» e «IL», junto das pessoas, passaram a «Bloco de Esquerda» e «Iniciativa Liberal», os rótulos das páginas alojadas. O exportador da seleção guarda pequenos excertos dessas páginas, selados pelo resumo do corpo. A conferência lê esses excertos e, com o motor presente, volta a encontrá-los no corpo. As plantas de data trocada e partido trocado são recusadas em português e em inglês. A retirada do ficheiro de provas também é recusada: zero conferências deixou de ser verde.
+
+Os 66 recibos foram reconstruídos. Sem rótulo, o título do documento deixou de ser apresentado como nome da medida. Conserva-se a composição anterior que já junta explicitamente uma medida ao documento. Os excertos portugueses dos vinte recibos numéricos da UTAO têm a marca de língua na edição inglesa; a mesma marca foi conferida nos dois parágrafos da UTAO. Bastou retirar a condição que limitava a marca aos valores textuais. A tabela da língua passou a declarar ECO e Correio da Manhã como publicadores e retirou as seis declarações de pessoas que já não são publicadores. As pessoas continuam citadas e marcadas em português.
+
+A troca para a linha comum da dívida exigiu portas para o item na primeira página, no índice, na leitura da semana, na União Europeia e no recibo da série de dívida. Foi usado o componente existente. Na régua da discussão, a exceção temática da Saúde ficou limitada ao seu item, como já estava na seleção das portas; a OG1 liga-se pela linha da dívida, na secção da dívida. Duas plantas por edição confirmam que uma porta por linha não pode passar por temática e que a Saúde não pode sair da sua secção. A lista fechada da primeira página só admite a nova porta depois de a conferir pelo leitor independente de integração; plantas de título e destino alterados são recusadas. A conferência passou 744 plantas e 157 verificações específicas OG1, com 714 portas de integração.
+
+As auditorias das frases e da definição foram atualizadas com os apoios dos documentos. O inventário retirou as 28 formas substituídas e recebeu as 28 novas. Duas exceções de voz já existentes foram ajustadas às palavras do mandato, conservando o âmbito da discussão: a indicação de navegação para as fontes e o orçamento assente em pressupostos. Não se alteraram regras do exportador.
+
+A fase B mantém-se para 28.10.2026, depois do voto, com o registo da votação e as intervenções do Diário da Assembleia.
+
+## Falhas intermédias
+
+A primeira alteração da vista ocultava também nomes de medidas já apresentados junto do documento. A discussão detetou a regressão e a condição foi corrigida. A língua detetou os dois publicadores sem declaração e as seis declarações antigas sem publicador. A primeira planta da data atingia o período do título do item, em vez da data de uma afirmação; o seletor foi corrigido e a planta passou a morder. A medição da voz e o primeiro build encontraram HTML anterior à alteração da língua. A segunda corrida do build foi invalidada por uma reconstrução concorrente do `dist/`, que causou um ficheiro ausente. A corrida seguinte detetou a porta ainda não integrada na lista fechada da primeira página. A correção usa a conferência independente da porta, antes de a admitir nessa lista. A última corrida correu sem alterações concorrentes ao código ou ao `dist/`.
+
+As portas em falta foram detetadas pela discussão; depois de acrescentadas, restavam duas recusas causadas pelo âmbito indevido da exceção temática da Saúde. A correção e as suas plantas estão descritas acima. Os registos das falhas foram conservados. Não correram portões integrais nem capturas.
+
+## Motor por comitar
+
+O escrivão não transmite `OEDP_GATE=adiado`. Aplica-se a alternativa expressa do mandato, sem pedir um commit que omita essa condição:
+
+- `content/30 Orcamento 2027 Generalidade/ledger.json`.
+- `content/30 Orcamento 2027 Generalidade/verificacao.json`.
+- `publisher/manifest.og1a.json`.
+- `publisher/oe2027_generalidade.py`.
+- `publisher/oe2027_generalidade_test.py`.
+- `publisher/og1a_export.py`.
+- `publisher/recortes/og1a/provas.json`.
+
+## Conferências, cabeças e custo
+
+Códigos finais: `build-verificado-a9.codigo`: 0, `check-voz-verificado-a9.codigo`: 0, `check-lingua-final-a9.codigo`: 0, `check-discussao-verificado-a9.codigo`: 0, `check-lugares-a9.codigo`: 0, `ledger-check-a9.codigo`: 0, `check-registo-a9.codigo`: 0, `typecheck-ultima-a9.codigo`: 0, `check-cruzamento-local-a9.codigo`: 0, `pesquisa-final-a9.codigo`: 0, `origem-og1-a9.codigo`: 0, `travessia-rotulos-a9.codigo`: 0.
+
+Implementação do sítio: `aa8625d40760bfa9139b671c78f7da7039afed19`. Motor: `f9bafc7db9a0ae190d56cafc5fb8f1b3ffa98b91`, com os sete ficheiros acima por comitar. O relatório será comitado separadamente; a cabeça final do sítio é confirmada na resposta.
+
+32 corridas de conferências e medições, 4 gerações, zero corridas dos portões integrais e zero capturas. 91 chamadas diretas até à escrita deste relatório; o commit do relatório e a inspeção final são posteriores. `medidas-a9.json` guarda cada código e duração, incluindo as falhas. `custo.json` conserva as sete passagens anteriores e corrige a A8 pelas medidas do mandato A9: 21 chamadas, 22 turnos, 1 845 509 símbolos de entrada e 0 pontos. `tokens used`: não disponibilizado.
+
+## Transcrição do dist, português
+
+O Orçamento de 2027 antes do voto na generalidade: o que os partidos e o Governo já disseram, ao lado do que a UTAO mede
+
+### Como foi dito
+
+Comissão Política Nacional do Partido Socialista, a 22.10.2026, na página do partido: «viabilizar o Orçamento do Estado para 2027 mediante a abstenção na votação na generalidade do documento».
+
+Comité Central do PCP, no comunicado de 19.10.2026: «O Orçamento do Estado para 2027 é um frete ao capital e um desastre para o País.» O comunicado não anuncia o voto.
+
+Paulo Raimundo, a 15.10.2026, numa intervenção publicada na página do PCP: «Sim, está em curso, de facto, um assalto às nossas vidas, um assalto aos nossos direitos, um assalto a Abril, um assalto ao Estado e aos recursos públicos, que são nossos, e o Orçamento do Estado é um instrumento deste assalto em curso, é um frete ao capital e um desastre para o País.» A intervenção não anuncia o voto.
+
+José Manuel Pureza, do Bloco de Esquerda, a 08.10.2026, segundo o Diário de Notícias: «Nós não hesitamos. Nós não assinamos o cheque da má governação de Luís Montenegro» A notícia relata o voto contra.
+
+Mariana Leitão, da Iniciativa Liberal, no título de uma entrevista ao ECO a 06.10.2026: «A prioridade é baixar o IRS e o ISP».
+
+Isabel Mendes Lopes, do Livre, a 28.09.2026, antes de a proposta dar entrada, segundo o Correio da Manhã: «dificilmente o acompanharemos, como é óbvio».
+
+Joaquim Miranda Sarmento, ministro das Finanças, na audição da comissão de Orçamento a 23.10.2026, segundo a RTP, sobre as previsões das entidades nacionais e internacionais: «estão perfeitamente alinhadas com as previsões do Governo, têm diferenças muito pequenas».
+
+Joaquim Miranda Sarmento, na mesma audição de 23.10.2026, segundo a RTP, sobre os 300 milhões de euros do combate à fraude nos combustíveis: «são receita do Estado».
+
+Joaquim Miranda Sarmento, na mesma audição de 23.10.2026, segundo a RTP, sobre as medidas da habitação: «foi praticamente tudo feito».
+
+Joaquim Miranda Sarmento, na mesma audição de 23.10.2026, segundo o ECO, sobre os juros da dívida: «a nossa subida das taxas de juro é risco de mercado e não risco de país».
+
+Joaquim Miranda Sarmento, na mesma audição de 23.10.2026, segundo o Observador, na escolha entre o IRS Jovem e o prémio salarial: «esta é uma medida que custa 300 milhões no próximo ano, para um saldo de 270 milhões».
+
+### O que as fontes dizem
+
+A proposta prevê um crescimento real do PIB de 2,1 % em 2027, depois de 2,3 % em 2026; um saldo orçamental de 0,0 % do PIB em 2026 e de 0,1 % em 2027, que em contabilidade nacional são 275 milhões de euros no relatório da proposta; e uma dívida pública de 87,5 % do PIB em 2026 e 84,5 % em 2027, depois de 89,2 % em 2025, na revisão do Eurostat de 21.10.2026.
+
+As medidas já em vigor pesam no saldo de 2027 −5 411 milhões de euros, 1,6 % do PIB. Os juros sobem 23,2 %, para 8,2 mil milhões de euros, e a taxa de juro implícita da dívida passa de 2,4 % para 2,9 %.
+
+As medidas novas valem 79 milhões de euros para o saldo. A maior, do lado da receita, é o combate à fraude nos combustíveis, 300 milhões de euros; a UTAO escreve que a proposta «não disponibiliza informação suficientemente detalhada sobre o seu conteúdo» e conta a subexecução entre os riscos.
+
+Sobre o emprego, a UTAO escreve que o crescimento de 1,4 % em 2027 «é difícil de conciliar com o abrandamento recente da imigração líquida». Sobre o petróleo, a proposta assume 86,1 dólares por barril em 2027, e a média dos contratos para esse ano, a 16 de outubro, era de cerca de 95 dólares, 11 % acima desse pressuposto.
+
+Pela regra europeia da despesa líquida, a Comissão Europeia previa em junho um desvio de 2,1 % do PIB no fim de 2027, acima dos 0,6 % do PIB fixados para aferir o cumprimento da trajetória; os dados do Ministério das Finanças dão 0,9 % antes da flexibilidade para a defesa e 0,5 % depois.
+
+O programa da Saúde tem 17 803,1 milhões de euros, −1,4 % face à estimativa de 2026 e 3,0 % sem o PRR: é a conta que o item da Saúde já explica.
+
+### A comparação
+
+As previsões que o ministro diz «perfeitamente alinhadas» e a apreciação da UTAO não dizem o mesmo. A UTAO não corrige o cenário do PIB, mas tem dificuldade em conciliar o emprego com a imigração, aponta o preço do petróleo abaixo dos contratos e a maior medida de receita sem a informação que a fundamente, e conta um desvio na despesa líquida que, nos números do próprio Ministério, só a flexibilidade para a defesa fecha; nos da Comissão Europeia, não fecha. Os 300 milhões de euros que o ministro pôs ao lado de «um saldo de 270 milhões» cabem na conta que a UTAO transcreve do relatório da proposta: o saldo de 2027 em contabilidade nacional é aí de 275 milhões de euros, e a medida de que falava custa mais do que ele. A subida dos juros, «risco de mercado e não risco de país» para o ministro, é na proposta mais 23,2 % de despesa em 2027, venha de onde vier. Das posições anunciadas, o PS anunciou a abstenção na generalidade e o BE, segundo o Diário de Notícias, o voto contra; o PCP, a IL e o Livre não anunciaram o voto nos textos aqui citados. Este item não tem afirmações do PSD, do CDS e do Chega: a pesquisa não selou nenhuma; a fase B traz as intervenções do debate.
+
+### A conclusão
+
+A proposta chega ao voto com um saldo de 0,1 % do PIB que assenta numa receita de 300 milhões de euros sem a informação que a fundamente, num emprego que a UTAO tem dificuldade em conciliar com a imigração e num petróleo cujos contratos para 2027 estavam, a 16 de outubro, 11 % acima do pressuposto da proposta. O que o Parlamento vota a 28.10.2026 é a generalidade; os números da especialidade vêm depois.
+
+### A recomendação
+
+Ao leitor: cada número desta página tem a sua fonte a um passo, e a apreciação da UTAO lê-se antes das intervenções do debate. Ao Ministério das Finanças: publicar a informação que fundamenta a estimativa dos 300 milhões de euros dos combustíveis, que a UTAO não encontra na proposta. Ao Parlamento: pedir, na especialidade, o quadro da despesa líquida com e sem a flexibilidade para a defesa.
+
+### A opinião do lugar de direção
+
+«Alinhadas» não descreve uma apreciação que duvida do emprego, do petróleo e da maior medida de receita, e que só fecha o desvio da despesa com a flexibilidade para a defesa, e só nos números do Ministério. A frase «um frete ao capital e um desastre para o País» não se mede, e este projeto não a avalia. O que se mede diz isto: um orçamento quase equilibrado nas previsões do Governo, assente em pressupostos que a entidade técnica do próprio Parlamento põe em dúvida. A 28.10.2026, depois do voto, esta página ganha o registo da votação e as intervenções do Diário da Assembleia, e muda se os números mudarem.
+
+## Transcrição do dist, inglês
+
+The 2027 Budget before the general vote: what the parties and the Government have said so far, next to what the UTAO measures
+
+### As it was said
+
+Comissão Política Nacional do Partido Socialista, on 22.10.2026, on the party's page: «viabilizar o Orçamento do Estado para 2027 mediante a abstenção na votação na generalidade do documento».
+
+Comité Central do PCP, in its communiqué of 19.10.2026: «O Orçamento do Estado para 2027 é um frete ao capital e um desastre para o País.» The communiqué does not announce the vote.
+
+Paulo Raimundo, on 15.10.2026, in a speech published on the PCP's page: «Sim, está em curso, de facto, um assalto às nossas vidas, um assalto aos nossos direitos, um assalto a Abril, um assalto ao Estado e aos recursos públicos, que são nossos, e o Orçamento do Estado é um instrumento deste assalto em curso, é um frete ao capital e um desastre para o País.» The speech does not announce the vote.
+
+José Manuel Pureza, of Bloco de Esquerda, on 08.10.2026, as reported by Diário de Notícias: «Nós não hesitamos. Nós não assinamos o cheque da má governação de Luís Montenegro» The report says the party votes against.
+
+Mariana Leitão, of Iniciativa Liberal, in the title of an interview with ECO on 06.10.2026: «A prioridade é baixar o IRS e o ISP».
+
+Isabel Mendes Lopes, of Livre, on 28.09.2026, before the proposal was tabled, as reported by Correio da Manhã: «dificilmente o acompanharemos, como é óbvio».
+
+Joaquim Miranda Sarmento, Finance Minister, at the Budget committee hearing on 23.10.2026, as reported by RTP, on the forecasts of national and international bodies: «estão perfeitamente alinhadas com as previsões do Governo, têm diferenças muito pequenas».
+
+Joaquim Miranda Sarmento, at the same hearing on 23.10.2026, as reported by RTP, on the 300 million euros from the fight against fuel fraud: «são receita do Estado».
+
+Joaquim Miranda Sarmento, at the same hearing on 23.10.2026, as reported by RTP, on the housing measures: «foi praticamente tudo feito».
+
+Joaquim Miranda Sarmento, at the same hearing on 23.10.2026, as reported by ECO, on the interest on the debt: «a nossa subida das taxas de juro é risco de mercado e não risco de país».
+
+Joaquim Miranda Sarmento, at the same hearing on 23.10.2026, as reported by Observador, on the choice between the youth income tax and the wage premium: «esta é uma medida que custa 300 milhões no próximo ano, para um saldo de 270 milhões».
+
+### What the sources say
+
+The proposal forecasts real GDP growth of 2,1 % in 2027, after 2,3 % in 2026; a budget balance of 0,0 % of GDP in 2026 and 0,1 % in 2027, which in national accounts is 275 million euros in the proposal's report; and public debt of 87,5 % of GDP in 2026 and 84,5 % in 2027, after 89,2 % in 2025, in Eurostat's revision of 21.10.2026.
+
+Measures already in force weigh on the 2027 balance by −5 411 million euros, 1,6 % of GDP. Interest rises 23,2 %, to 8,2 billion euros, and the implicit interest rate on the debt moves from 2,4 % to 2,9 %.
+
+New measures are worth 79 million euros to the balance. The largest, on the revenue side, is the fight against fuel fraud, 300 million euros; the UTAO writes that the proposal «não disponibiliza informação suficientemente detalhada sobre o seu conteúdo» and counts under-execution among the risks.
+
+On employment, the UTAO writes that growth of 1,4 % in 2027 «é difícil de conciliar com o abrandamento recente da imigração líquida». On oil, the proposal assumes 86,1 dollars a barrel in 2027, and the average of the contracts for that year, on 16 October, was about 95 dollars, 11 % above that assumption.
+
+Under the European net expenditure rule, the European Commission forecast in June a deviation of 2,1 % of GDP at the end of 2027, above the 0,6 % of GDP set for assessing compliance with the path; the Finance Ministry's figures give 0,9 % before the defence flexibility and 0,5 % after.
+
+The Health programme has 17 803,1 million euros, −1,4 % against the 2026 estimate and 3,0 % without the recovery plan: it is the account the Health item already explains.
+
+### The comparison
+
+The forecasts the minister calls «perfeitamente alinhadas» and the UTAO's appraisal do not say the same thing. The UTAO does not correct the GDP scenario, but it finds employment hard to reconcile with immigration, points to an oil price below the contracts and to the largest revenue measure without the information to support it, and it counts a net expenditure deviation that, on the Ministry's own figures, only the defence flexibility closes; on the European Commission's, it does not close. The 300 million euros the minister set beside «um saldo de 270 milhões» fit the account the UTAO transcribes from the proposal's report: the 2027 balance in national accounts is there 275 million euros, and the measure he spoke of costs more than that. The rise in interest, «risco de mercado e não risco de país» for the minister, is in the proposal 23,2 % more spending in 2027, wherever it comes from. Of the positions announced, the PS announced abstention in the general vote and the BE, as reported by Diário de Notícias, a vote against; the PCP, the IL and Livre did not announce their vote in the texts cited here. This item has no statements from the PSD, the CDS or Chega: the research sealed none; phase B brings the speeches of the debate.
+
+### The conclusion
+
+The proposal reaches the vote with a balance of 0,1 % of GDP that rests on 300 million euros of revenue without the information to support it, on employment the UTAO finds hard to reconcile with immigration, and on oil whose 2027 contracts were, on 16 October, 11 % above the proposal's assumption. What Parliament votes on 28.10.2026 is the general outline; the figures of the detailed stage come later.
+
+### The recommendation
+
+To the reader: every number on this page has its source one step away, and the UTAO's appraisal is worth reading before the speeches. To the Finance Ministry: publish the information behind the 300 million euro fuel estimate, which the UTAO does not find in the proposal. To Parliament: ask, at the detailed stage, for the net expenditure table with and without the defence flexibility.
+
+### The editorial seat's opinion
+
+«Aligned» does not describe an appraisal that doubts employment, oil and the largest revenue measure, and that closes the spending deviation only with the defence flexibility, and only on the Ministry's figures. The sentence «um frete ao capital e um desastre para o País» cannot be measured, and this project does not judge it. What can be measured says this: a budget close to balance in the Government's forecasts, resting on assumptions that Parliament's own technical unit calls into question. On 28.10.2026, after the vote, this page gains the voting record and the speeches from the Assembly's Diário, and changes if the numbers change.
+
+---
+
 # OG1-A8
 
 A passagem parou na proteção da fonte do exportador, abrangida pelo §3 do mandato. O gerador separa agora quem publica o documento de quem fala, e passou 92 verificações. A travessia recusou a primeira afirmação e não escreveu nenhum ficheiro no sítio. As alterações incompletas do item, dos nomes, da vista e da conferência foram repostas à cabeça inicial; não se apresenta a correção como construída.

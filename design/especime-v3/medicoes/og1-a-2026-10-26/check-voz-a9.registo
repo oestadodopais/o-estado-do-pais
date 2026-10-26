@@ -1,0 +1,31 @@
+
+> o-estado-do-pais@0.1.0 check:voz
+> node tests/hb1/voz-portas.mjs && node scripts/check-voz.mjs
+
+{"controlos":550,"plantas":1650,"catalogo":0,"nomeadas":550,"de_serie":{"portugal":12,"uniao":4},"pares_distintos":2,"plantas_recusadas":["o rótulo trocado","o href para /","o data-de-linha tirado"],"erros":0}
+  B1: 40 páginas pela lista fechada; 8 temas conferidos.
+  EX1: 12 página(s) com as palavras das explicações e as frases da semana conferidas pelas suas células.
+
+[31m  PORTÃO DA VOZ · 4 problema(s)
+[0m
+[31m    · [0mfrase com marcador da voz e sem declaração de autorreferência
+      marcador(es): this page
+      rota: /en/under-discussion
+      classe declarada: conteudo
+      «To the reader: every number on this page has its source one step away, and the UTAO&#39;s appraisal is worth reading before the speeches. To the Finance Ministry: publish the information behind the million euro fuel estimate, which the UTAO does not find in the proposal. To Parliament: ask, at the detailed stage, for the net expenditure table with and without the defence flexibility.»
+[31m    · [0mfrase com marcador da voz e sem declaração de autorreferência
+      marcador(es): resting on
+      rota: /en/under-discussion
+      classe declarada: conteudo
+      ««Aligned» does not describe an appraisal that doubts employment, oil and the largest revenue measure, and that closes the spending deviation only with the defence flexibility, and only on the Ministry&#39;s figures. The sentence « » cannot be measured, and this project does not judge it. What can be measured says this: a budget close to balance in the Government&#39;s forecasts, resting on assumptions that Parliament&#39;s own technical unit calls into question. On , after the vote, this page gains the voting record and the speeches from the Assembly&#39;s Diário, and changes if the numbers change.»
+[31m    · [0mfrase com marcador da voz e sem declaração de autorreferência
+      marcador(es): sta página
+      rota: /o-que-se-discute
+      classe declarada: conteudo
+      «Ao leitor: cada número desta página tem a sua fonte a um passo, e a apreciação da UTAO lê-se antes das intervenções do debate. Ao Ministério das Finanças: publicar a informação que fundamenta a estimativa dos milhões de euros dos combustíveis, que a UTAO não encontra na proposta. Ao Parlamento: pedir, na especialidade, o quadro da despesa líquida com e sem a flexibilidade para a defesa.»
+[31m    · [0mfrase com marcador da voz e sem declaração de autorreferência
+      marcador(es): assente
+      rota: /o-que-se-discute
+      classe declarada: conteudo
+      ««Alinhadas» não descreve uma apreciação que duvida do emprego, do petróleo e da maior medida de receita, e que só fecha o desvio da despesa com a flexibilidade para a defesa, e só nos números do Ministério. A frase « » não se mede, e este projeto não a avalia. O que se mede diz isto: um orçamento quase equilibrado nas previsões do Governo, assente em pressupostos que a entidade técnica do próprio Parlamento põe em dúvida. A , depois do voto, esta página ganha o registo da votação e as intervenções do Diário da Assembleia, e muda se os números mudarem.»
+

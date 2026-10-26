@@ -1,0 +1,47 @@
+
+> o-estado-do-pais@0.1.0 check:discussao
+> node tests/discussao/itens.mjs && node tests/discussao/og1.mjs
+
+V2B · 42 erro(s), 736 de 736 plantas, 704 portas de integração.
+V2B integração: presença ou ausência errada em en/european-union/index.html
+V2D título: falta uma origem de valor ou período
+V2B integração: destino ou título errado em en/european-union/index.html
+V2B integração: exceção temática não autorizada
+V2B integração: porta temática fora da secção
+V2B integração: presença ou ausência errada em en/explainers/weekly-reading/index.html
+V2D título: falta uma origem de valor ou período
+V2B integração: destino ou título errado em en/explainers/weekly-reading/index.html
+V2B integração: exceção temática não autorizada
+V2B integração: presença ou ausência errada em en/index/index.html
+V2D título: falta uma origem de valor ou período
+V2B integração: destino ou título errado em en/index/index.html
+V2B integração: exceção temática não autorizada
+V2B integração: presença ou ausência errada em en/index.html
+V2D título: falta uma origem de valor ou período
+V2B integração: destino ou título errado em en/index.html
+V2B integração: exceção temática não autorizada
+V2B integração: presença ou ausência errada em en/ledger/series/divida-publica-2025-paises/index.html
+V2D título: falta uma origem de valor ou período
+V2B integração: destino ou título errado em en/ledger/series/divida-publica-2025-paises/index.html
+V2B integração: exceção temática não autorizada
+V2B integração: porta temática fora da secção
+V2B integração: presença ou ausência errada em explicacoes/leitura-da-semana/index.html
+V2D título: falta uma origem de valor ou período
+V2B integração: destino ou título errado em explicacoes/leitura-da-semana/index.html
+V2B integração: exceção temática não autorizada
+V2B integração: presença ou ausência errada em index.html
+V2D título: falta uma origem de valor ou período
+V2B integração: destino ou título errado em index.html
+V2B integração: exceção temática não autorizada
+V2B integração: presença ou ausência errada em indice/index.html
+V2D título: falta uma origem de valor ou período
+V2B integração: destino ou título errado em indice/index.html
+V2B integração: exceção temática não autorizada
+V2B integração: presença ou ausência errada em livro-razao/series/divida-publica-2025-paises/index.html
+V2D título: falta uma origem de valor ou período
+V2B integração: destino ou título errado em livro-razao/series/divida-publica-2025-paises/index.html
+V2B integração: exceção temática não autorizada
+V2B integração: presença ou ausência errada em uniao-europeia/index.html
+V2D título: falta uma origem de valor ou período
+V2B integração: destino ou título errado em uniao-europeia/index.html
+V2B integração: exceção temática não autorizada
