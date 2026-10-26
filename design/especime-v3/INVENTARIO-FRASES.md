@@ -4058,8 +4058,8 @@ Os anos ingleses usam pares, como «nineteen ninety-two» e «twenty twenty-six�
 
 | Classe | Frase | Bloco | Estado | Razão |
 | --- | --- | --- | --- | --- |
-| conteudo | 72 revisões de proveniência | c2 | viva | Contagem do livro depois das dezoito entradas de proveniência das nove releituras (o acesso e o excerto de cada linha), que acompanham as nove atualizações. |
-| conteudo | 72 provenance revisions | c2 | viva | Contagem do livro depois das dezoito entradas de proveniência das nove releituras (o acesso e o excerto de cada linha), que acompanham as nove atualizações. |
+| conteudo | 72 revisões de proveniência | c2 | retirada | Substituída na CR2-f pela contagem medida de 102, após trinta entradas de proveniência das quinze releituras de 26.10.2026. Contagem do livro depois das dezoito entradas de proveniência das nove releituras (o acesso e o excerto de cada linha), que acompanham as nove atualizações. |
+| conteudo | 72 provenance revisions | c2 | retirada | Substituída na CR2-f pela contagem medida de 102, após trinta entradas de proveniência das quinze releituras de 26.10.2026. Contagem do livro depois das dezoito entradas de proveniência das nove releituras (o acesso e o excerto de cada linha), que acompanham as nove atualizações. |
 
 ## R4 · as palavras correntes em cada número, 05.10.2026
 
@@ -4884,3 +4884,10 @@ ainda por explicar (o achado 7), fica aqui como retirada.*
 | conteudo | Where the State’s money goes in 2027, by the Budget proposal | ex4 | viva | Recolhida do HTML construído pela conferência da voz, na correção EX4-c (a explicação de 2027 e a contagem do livro-razão com as 83 linhas do PF1). Leitura cruzada pendente. |
 | conteudo | 3 892 afirmações · 501 de 3 892 calculadas · 2 767 de 3 892 linhas de concelhos | ex4 | viva | Recolhida do HTML construído pela conferência da voz, na correção EX4-c (a explicação de 2027 e a contagem do livro-razão com as 83 linhas do PF1). Leitura cruzada pendente. |
 | conteudo | 3 892 claims · 501 of 3 892 calculated · 2 767 of 3 892 municipality rows | ex4 | viva | Recolhida do HTML construído pela conferência da voz, na correção EX4-c (a explicação de 2027 e a contagem do livro-razão com as 83 linhas do PF1). Leitura cruzada pendente. |
+
+## CR2-f · contagem das revisões de proveniência (26.10.2026)
+
+| Classe | Frase | Bloco | Estado | Razão |
+| --- | --- | --- | --- | --- |
+| conteudo | 102 revisões de proveniência | cr2 | viva | Contagem medida em /correcoes/: as 72 anteriores mais duas entradas por cada uma das quinze linhas atualizadas. |
+| conteudo | 102 provenance revisions | cr2 | viva | A mesma contagem medida em /en/corrections/, na edição inglesa. |

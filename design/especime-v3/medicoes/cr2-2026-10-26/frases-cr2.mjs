@@ -49,10 +49,15 @@ if(modo==='depois') {
     const el=r.querySelector(seletor);
     if(!f.texto&&!el){f.html_confere=true;f.texto_no_dist='';continue;}
     assert(el,`Falta ${seletor} em ${f.rota}`);
-    const copia=parse(el.outerHTML);
-    copia.querySelectorAll('.src-chip, .claim-provisorio-chip').forEach(x=>x.remove());
+    /* As peças em caixa têm um título separado do parágrafo resolvido. */
+    const copia=parse((el.querySelector('.pp-caixa-texto') ?? el).outerHTML);
+    /* As notas de estimativa da fonte são verificadas pela EX3; guardam-se
+       separadamente do texto do resolvedor, que só devolve os valores. */
+    f.notas_da_fonte=copia.querySelectorAll('.claim-provisorio').map(x=>normal(x.textContent));
+    copia.querySelectorAll('.src-chip, .claim-provisorio-chip, .claim-provisorio').forEach(x=>x.remove());
     f.texto_no_dist=normal(copia.textContent);
-    f.html_confere=f.texto_no_dist===f.texto;
+    f.texto_comparado=normal(f.notas_da_fonte.reduce((s,nota)=>s.split(nota).join(''),f.texto));
+    f.html_confere=f.texto_no_dist===f.texto_comparado;
     assert(f.html_confere,`Texto diferente: ${chave(f)}: ${f.texto_no_dist} / ${f.texto}`);
   }
   resultado.paginas=recursivos('dist').filter(f=>f.endsWith('.html')).flatMap(f=>{

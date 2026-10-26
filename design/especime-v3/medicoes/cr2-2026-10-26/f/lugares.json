@@ -1,0 +1,843 @@
+{
+  "linhas": [
+    {
+      "id": "custo-unitario-do-trabalho-2025-ue",
+      "geo": [
+        "EU27_2020"
+      ],
+      "lugar": "uniao-europeia",
+      "declaracao": "lugar-das-linhas",
+      "cartoes": [
+        "custo-unitario-do-trabalho-2025"
+      ],
+      "tematicas": [
+        {
+          "lang": "pt",
+          "ficheiro": "dist/emprego/index.html",
+          "elementos": 1,
+          "textos": [
+            "14,8"
+          ]
+        },
+        {
+          "lang": "en",
+          "ficheiro": "dist/en/employment/index.html",
+          "elementos": 1,
+          "textos": [
+            "14,8"
+          ]
+        }
+      ],
+      "paineis_html": [],
+      "paineis_declarados": [],
+      "fontes": [
+        "src/data/lugar-das-linhas.mjs"
+      ],
+      "paginas": [
+        "dist/areas/economia-e-coesao-territorial/index.html",
+        "dist/correcoes/index.html",
+        "dist/emprego/index.html",
+        "dist/en/areas/economia-e-coesao-territorial/index.html",
+        "dist/en/corrections/index.html",
+        "dist/en/employment/index.html",
+        "dist/en/explainers/weekly-reading/index.html",
+        "dist/en/index/index.html",
+        "dist/en/ledger/custo-unitario-do-trabalho-2025/index.html",
+        "dist/en/ledger/custo-unitario-do-trabalho-2025-ue/index.html",
+        "dist/en/ledger/index.html",
+        "dist/explicacoes/leitura-da-semana/index.html",
+        "dist/indice/index.html",
+        "dist/livro-razao/custo-unitario-do-trabalho-2025/index.html",
+        "dist/livro-razao/custo-unitario-do-trabalho-2025-ue/index.html",
+        "dist/livro-razao/index.html"
+      ]
+    },
+    {
+      "id": "divida-das-empresas-2024",
+      "geo": [
+        "PT"
+      ],
+      "lugar": "portugal",
+      "declaracao": "lugar-das-linhas",
+      "cartoes": [
+        "divida-das-empresas-2025"
+      ],
+      "tematicas": [
+        {
+          "lang": "pt",
+          "ficheiro": "dist/estado-e-economia/index.html",
+          "elementos": 1,
+          "textos": [
+            "66,6"
+          ]
+        },
+        {
+          "lang": "en",
+          "ficheiro": "dist/en/state-and-economy/index.html",
+          "elementos": 1,
+          "textos": [
+            "66,6"
+          ]
+        }
+      ],
+      "paineis_html": [],
+      "paineis_declarados": [],
+      "fontes": [
+        "src/data/figuras.mjs",
+        "src/data/lugar-das-linhas.mjs"
+      ],
+      "paginas": [
+        "dist/correcoes/index.html",
+        "dist/en/corrections/index.html",
+        "dist/en/explainers/weekly-reading/index.html",
+        "dist/en/index/index.html",
+        "dist/en/ledger/divida-das-empresas-2024/index.html",
+        "dist/en/ledger/divida-das-empresas-2025/index.html",
+        "dist/en/ledger/index.html",
+        "dist/en/state-and-economy/index.html",
+        "dist/estado-e-economia/index.html",
+        "dist/explicacoes/leitura-da-semana/index.html",
+        "dist/indice/index.html",
+        "dist/livro-razao/divida-das-empresas-2024/index.html",
+        "dist/livro-razao/divida-das-empresas-2025/index.html",
+        "dist/livro-razao/index.html"
+      ]
+    },
+    {
+      "id": "divida-das-empresas-2025",
+      "geo": [
+        "PT"
+      ],
+      "lugar": "portugal",
+      "declaracao": "DOMINIO_DAS_MEDIDAS",
+      "cartoes": [
+        "divida-das-empresas-2025"
+      ],
+      "tematicas": [
+        {
+          "lang": "pt",
+          "ficheiro": "dist/estado-e-economia/index.html",
+          "elementos": 1,
+          "textos": [
+            "65,1"
+          ]
+        },
+        {
+          "lang": "en",
+          "ficheiro": "dist/en/state-and-economy/index.html",
+          "elementos": 1,
+          "textos": [
+            "65,1"
+          ]
+        }
+      ],
+      "paineis_html": [],
+      "paineis_declarados": [],
+      "fontes": [
+        "src/data/calendario.json",
+        "src/data/dominios.mjs",
+        "src/data/enquadramento/nomes.json",
+        "src/data/enquadramento/referencias.json",
+        "src/data/figuras.mjs",
+        "src/data/leituras-das-medidas.mjs",
+        "src/data/lugar-das-linhas.mjs",
+        "src/data/o-que-e-das-familias.mjs",
+        "src/data/primeira-pagina.mjs"
+      ],
+      "paginas": [
+        "dist/agenda/index.html",
+        "dist/correcoes/index.html",
+        "dist/en/agenda/index.html",
+        "dist/en/corrections/index.html",
+        "dist/en/european-union/index.html",
+        "dist/en/explainers/weekly-reading/index.html",
+        "dist/en/index/index.html",
+        "dist/en/index.html",
+        "dist/en/ledger/divida-das-empresas-2025/index.html",
+        "dist/en/ledger/divida-das-empresas-2025-ue/index.html",
+        "dist/en/ledger/index.html",
+        "dist/en/state-and-economy/index.html",
+        "dist/estado-e-economia/index.html",
+        "dist/explicacoes/leitura-da-semana/index.html",
+        "dist/index.html",
+        "dist/indice/index.html",
+        "dist/livro-razao/divida-das-empresas-2025/index.html",
+        "dist/livro-razao/divida-das-empresas-2025-ue/index.html",
+        "dist/livro-razao/index.html",
+        "dist/uniao-europeia/index.html"
+      ]
+    },
+    {
+      "id": "divida-das-empresas-2025-ue",
+      "geo": [
+        "EU27_2020"
+      ],
+      "lugar": "uniao-europeia",
+      "declaracao": "lugar-das-linhas",
+      "cartoes": [
+        "divida-das-empresas-2025"
+      ],
+      "tematicas": [
+        {
+          "lang": "pt",
+          "ficheiro": "dist/estado-e-economia/index.html",
+          "elementos": 1,
+          "textos": [
+            "70,2"
+          ]
+        },
+        {
+          "lang": "en",
+          "ficheiro": "dist/en/state-and-economy/index.html",
+          "elementos": 1,
+          "textos": [
+            "70,2"
+          ]
+        }
+      ],
+      "paineis_html": [],
+      "paineis_declarados": [],
+      "fontes": [
+        "src/data/lugar-das-linhas.mjs"
+      ],
+      "paginas": [
+        "dist/correcoes/index.html",
+        "dist/en/corrections/index.html",
+        "dist/en/explainers/weekly-reading/index.html",
+        "dist/en/index/index.html",
+        "dist/en/ledger/divida-das-empresas-2025/index.html",
+        "dist/en/ledger/divida-das-empresas-2025-ue/index.html",
+        "dist/en/ledger/index.html",
+        "dist/en/state-and-economy/index.html",
+        "dist/estado-e-economia/index.html",
+        "dist/explicacoes/leitura-da-semana/index.html",
+        "dist/indice/index.html",
+        "dist/livro-razao/divida-das-empresas-2025/index.html",
+        "dist/livro-razao/divida-das-empresas-2025-ue/index.html",
+        "dist/livro-razao/index.html"
+      ]
+    },
+    {
+      "id": "divida-das-familias-2024",
+      "geo": [
+        "PT"
+      ],
+      "lugar": "portugal",
+      "declaracao": "lugar-das-linhas",
+      "cartoes": [
+        "divida-das-familias-2025"
+      ],
+      "tematicas": [
+        {
+          "lang": "pt",
+          "ficheiro": "dist/pobreza-e-desigualdade/index.html",
+          "elementos": 1,
+          "textos": [
+            "52,3"
+          ]
+        },
+        {
+          "lang": "en",
+          "ficheiro": "dist/en/poverty-and-inequality/index.html",
+          "elementos": 1,
+          "textos": [
+            "52,3"
+          ]
+        }
+      ],
+      "paineis_html": [],
+      "paineis_declarados": [],
+      "fontes": [
+        "src/data/lugar-das-linhas.mjs"
+      ],
+      "paginas": [
+        "dist/correcoes/index.html",
+        "dist/en/corrections/index.html",
+        "dist/en/explainers/weekly-reading/index.html",
+        "dist/en/index/index.html",
+        "dist/en/ledger/divida-das-familias-2024/index.html",
+        "dist/en/ledger/divida-das-familias-2025/index.html",
+        "dist/en/ledger/index.html",
+        "dist/en/poverty-and-inequality/index.html",
+        "dist/explicacoes/leitura-da-semana/index.html",
+        "dist/indice/index.html",
+        "dist/livro-razao/divida-das-familias-2024/index.html",
+        "dist/livro-razao/divida-das-familias-2025/index.html",
+        "dist/livro-razao/index.html",
+        "dist/pobreza-e-desigualdade/index.html"
+      ]
+    },
+    {
+      "id": "divida-das-familias-2025",
+      "geo": [
+        "PT"
+      ],
+      "lugar": "portugal",
+      "declaracao": "DOMINIO_DAS_MEDIDAS",
+      "cartoes": [
+        "divida-das-familias-2025"
+      ],
+      "tematicas": [
+        {
+          "lang": "pt",
+          "ficheiro": "dist/pobreza-e-desigualdade/index.html",
+          "elementos": 1,
+          "textos": [
+            "54,4"
+          ]
+        },
+        {
+          "lang": "en",
+          "ficheiro": "dist/en/poverty-and-inequality/index.html",
+          "elementos": 1,
+          "textos": [
+            "54,4"
+          ]
+        }
+      ],
+      "paineis_html": [],
+      "paineis_declarados": [],
+      "fontes": [
+        "src/data/calendario.json",
+        "src/data/dominios.mjs",
+        "src/data/enquadramento/nomes.json",
+        "src/data/enquadramento/referencias.json",
+        "src/data/figuras.mjs",
+        "src/data/leituras-das-medidas.mjs",
+        "src/data/lugar-das-linhas.mjs",
+        "src/data/nomes-das-medidas.mjs",
+        "src/data/o-que-e-das-familias.mjs",
+        "src/data/primeira-pagina.mjs"
+      ],
+      "paginas": [
+        "dist/agenda/index.html",
+        "dist/correcoes/index.html",
+        "dist/en/agenda/index.html",
+        "dist/en/corrections/index.html",
+        "dist/en/european-union/index.html",
+        "dist/en/explainers/weekly-reading/index.html",
+        "dist/en/index/index.html",
+        "dist/en/index.html",
+        "dist/en/ledger/divida-das-familias-2025/index.html",
+        "dist/en/ledger/divida-das-familias-2025-ue/index.html",
+        "dist/en/ledger/index.html",
+        "dist/en/poverty-and-inequality/index.html",
+        "dist/explicacoes/leitura-da-semana/index.html",
+        "dist/index.html",
+        "dist/indice/index.html",
+        "dist/livro-razao/divida-das-familias-2025/index.html",
+        "dist/livro-razao/divida-das-familias-2025-ue/index.html",
+        "dist/livro-razao/index.html",
+        "dist/pobreza-e-desigualdade/index.html",
+        "dist/uniao-europeia/index.html"
+      ]
+    },
+    {
+      "id": "divida-publica-2024",
+      "geo": [
+        "PT"
+      ],
+      "lugar": "portugal",
+      "declaracao": "lugar-das-linhas",
+      "cartoes": [
+        "divida-publica-2025"
+      ],
+      "tematicas": [
+        {
+          "lang": "pt",
+          "ficheiro": "dist/estado-e-economia/index.html",
+          "elementos": 1,
+          "textos": [
+            "93,0"
+          ]
+        },
+        {
+          "lang": "en",
+          "ficheiro": "dist/en/state-and-economy/index.html",
+          "elementos": 1,
+          "textos": [
+            "93,0"
+          ]
+        }
+      ],
+      "paineis_html": [
+        {
+          "ficheiro": "dist/en/index.html",
+          "bloco": "estado",
+          "valores": [
+            "93,0",
+            "93,0"
+          ]
+        },
+        {
+          "ficheiro": "dist/index.html",
+          "bloco": "estado",
+          "valores": [
+            "93,0",
+            "93,0"
+          ]
+        }
+      ],
+      "paineis_declarados": [
+        "estado"
+      ],
+      "fontes": [
+        "src/data/lugar-das-linhas.mjs",
+        "src/data/o-que-e-das-familias.mjs",
+        "src/data/primeira-pagina.mjs",
+        "src/lib/pais.mjs"
+      ],
+      "paginas": [
+        "dist/areas/financas/index.html",
+        "dist/correcoes/index.html",
+        "dist/en/areas/financas/index.html",
+        "dist/en/corrections/index.html",
+        "dist/en/explainers/weekly-reading/index.html",
+        "dist/en/index/index.html",
+        "dist/en/index.html",
+        "dist/en/ledger/divida-publica-2024/index.html",
+        "dist/en/ledger/divida-publica-2024-notificacao-ine-2026-09/index.html",
+        "dist/en/ledger/divida-publica-2025/index.html",
+        "dist/en/ledger/index.html",
+        "dist/en/state-and-economy/index.html",
+        "dist/estado-e-economia/index.html",
+        "dist/explicacoes/leitura-da-semana/index.html",
+        "dist/index.html",
+        "dist/indice/index.html",
+        "dist/livro-razao/divida-publica-2024/index.html",
+        "dist/livro-razao/divida-publica-2024-notificacao-ine-2026-09/index.html",
+        "dist/livro-razao/divida-publica-2025/index.html",
+        "dist/livro-razao/index.html"
+      ]
+    },
+    {
+      "id": "fluxo-de-credito-as-empresas-2024",
+      "geo": [
+        "PT"
+      ],
+      "lugar": "portugal",
+      "declaracao": "lugar-das-linhas",
+      "cartoes": [
+        "fluxo-de-credito-as-empresas-2025"
+      ],
+      "tematicas": [
+        {
+          "lang": "pt",
+          "ficheiro": "dist/estado-e-economia/index.html",
+          "elementos": 1,
+          "textos": [
+            "2,2"
+          ]
+        },
+        {
+          "lang": "en",
+          "ficheiro": "dist/en/state-and-economy/index.html",
+          "elementos": 1,
+          "textos": [
+            "2,2"
+          ]
+        }
+      ],
+      "paineis_html": [],
+      "paineis_declarados": [],
+      "fontes": [
+        "src/data/lugar-das-linhas.mjs"
+      ],
+      "paginas": [
+        "dist/correcoes/index.html",
+        "dist/en/corrections/index.html",
+        "dist/en/explainers/weekly-reading/index.html",
+        "dist/en/index/index.html",
+        "dist/en/ledger/fluxo-de-credito-as-empresas-2024/index.html",
+        "dist/en/ledger/fluxo-de-credito-as-empresas-2025/index.html",
+        "dist/en/ledger/index.html",
+        "dist/en/state-and-economy/index.html",
+        "dist/estado-e-economia/index.html",
+        "dist/explicacoes/leitura-da-semana/index.html",
+        "dist/indice/index.html",
+        "dist/livro-razao/fluxo-de-credito-as-empresas-2024/index.html",
+        "dist/livro-razao/fluxo-de-credito-as-empresas-2025/index.html",
+        "dist/livro-razao/index.html"
+      ]
+    },
+    {
+      "id": "fluxo-de-credito-as-empresas-2025",
+      "geo": [
+        "PT"
+      ],
+      "lugar": "portugal",
+      "declaracao": "DOMINIO_DAS_MEDIDAS",
+      "cartoes": [
+        "fluxo-de-credito-as-empresas-2025"
+      ],
+      "tematicas": [
+        {
+          "lang": "pt",
+          "ficheiro": "dist/estado-e-economia/index.html",
+          "elementos": 1,
+          "textos": [
+            "3,4"
+          ]
+        },
+        {
+          "lang": "en",
+          "ficheiro": "dist/en/state-and-economy/index.html",
+          "elementos": 1,
+          "textos": [
+            "3,4"
+          ]
+        }
+      ],
+      "paineis_html": [],
+      "paineis_declarados": [],
+      "fontes": [
+        "src/data/calendario.json",
+        "src/data/dominios.mjs",
+        "src/data/enquadramento/nomes.json",
+        "src/data/enquadramento/referencias.json",
+        "src/data/figuras.mjs",
+        "src/data/leituras-das-medidas.mjs",
+        "src/data/o-que-e-das-familias.mjs",
+        "src/data/primeira-pagina.mjs",
+        "src/data/unidades-dos-cartoes.mjs",
+        "src/i18n/unidades.mjs"
+      ],
+      "paginas": [
+        "dist/agenda/index.html",
+        "dist/correcoes/index.html",
+        "dist/en/agenda/index.html",
+        "dist/en/corrections/index.html",
+        "dist/en/european-union/index.html",
+        "dist/en/explainers/weekly-reading/index.html",
+        "dist/en/index/index.html",
+        "dist/en/index.html",
+        "dist/en/ledger/fluxo-de-credito-as-empresas-2025/index.html",
+        "dist/en/ledger/index.html",
+        "dist/en/state-and-economy/index.html",
+        "dist/estado-e-economia/index.html",
+        "dist/explicacoes/leitura-da-semana/index.html",
+        "dist/index.html",
+        "dist/indice/index.html",
+        "dist/livro-razao/fluxo-de-credito-as-empresas-2025/index.html",
+        "dist/livro-razao/index.html",
+        "dist/uniao-europeia/index.html"
+      ]
+    },
+    {
+      "id": "fluxo-de-credito-as-familias-2024",
+      "geo": [
+        "PT"
+      ],
+      "lugar": "portugal",
+      "declaracao": "lugar-das-linhas",
+      "cartoes": [
+        "fluxo-de-credito-as-familias-2025"
+      ],
+      "tematicas": [
+        {
+          "lang": "pt",
+          "ficheiro": "dist/pobreza-e-desigualdade/index.html",
+          "elementos": 1,
+          "textos": [
+            "4,0"
+          ]
+        },
+        {
+          "lang": "en",
+          "ficheiro": "dist/en/poverty-and-inequality/index.html",
+          "elementos": 1,
+          "textos": [
+            "4,0"
+          ]
+        }
+      ],
+      "paineis_html": [],
+      "paineis_declarados": [],
+      "fontes": [
+        "src/data/lugar-das-linhas.mjs"
+      ],
+      "paginas": [
+        "dist/correcoes/index.html",
+        "dist/en/corrections/index.html",
+        "dist/en/explainers/weekly-reading/index.html",
+        "dist/en/ledger/fluxo-de-credito-as-familias-2024/index.html",
+        "dist/en/ledger/fluxo-de-credito-as-familias-2025/index.html",
+        "dist/en/ledger/index.html",
+        "dist/en/poverty-and-inequality/index.html",
+        "dist/explicacoes/leitura-da-semana/index.html",
+        "dist/livro-razao/fluxo-de-credito-as-familias-2024/index.html",
+        "dist/livro-razao/fluxo-de-credito-as-familias-2025/index.html",
+        "dist/livro-razao/index.html",
+        "dist/pobreza-e-desigualdade/index.html"
+      ]
+    },
+    {
+      "id": "fluxo-de-credito-as-familias-2025",
+      "geo": [
+        "PT"
+      ],
+      "lugar": "portugal",
+      "declaracao": "DOMINIO_DAS_MEDIDAS",
+      "cartoes": [
+        "fluxo-de-credito-as-familias-2025"
+      ],
+      "tematicas": [
+        {
+          "lang": "pt",
+          "ficheiro": "dist/pobreza-e-desigualdade/index.html",
+          "elementos": 1,
+          "textos": [
+            "9,0"
+          ]
+        },
+        {
+          "lang": "en",
+          "ficheiro": "dist/en/poverty-and-inequality/index.html",
+          "elementos": 1,
+          "textos": [
+            "9,0"
+          ]
+        }
+      ],
+      "paineis_html": [],
+      "paineis_declarados": [],
+      "fontes": [
+        "src/data/calendario.json",
+        "src/data/dominios.mjs",
+        "src/data/enquadramento/nomes.json",
+        "src/data/enquadramento/referencias.json",
+        "src/data/figuras.mjs",
+        "src/data/leituras-das-medidas.mjs",
+        "src/data/lugar-das-linhas.mjs",
+        "src/data/o-que-e-das-familias.mjs",
+        "src/data/primeira-pagina.mjs",
+        "src/data/unidades-dos-cartoes.mjs"
+      ],
+      "paginas": [
+        "dist/agenda/index.html",
+        "dist/correcoes/index.html",
+        "dist/en/agenda/index.html",
+        "dist/en/corrections/index.html",
+        "dist/en/european-union/index.html",
+        "dist/en/explainers/weekly-reading/index.html",
+        "dist/en/index.html",
+        "dist/en/ledger/fluxo-de-credito-as-familias-2025/index.html",
+        "dist/en/ledger/fluxo-de-credito-as-familias-2025-ue/index.html",
+        "dist/en/ledger/index.html",
+        "dist/en/poverty-and-inequality/index.html",
+        "dist/explicacoes/leitura-da-semana/index.html",
+        "dist/index.html",
+        "dist/livro-razao/fluxo-de-credito-as-familias-2025/index.html",
+        "dist/livro-razao/fluxo-de-credito-as-familias-2025-ue/index.html",
+        "dist/livro-razao/index.html",
+        "dist/pobreza-e-desigualdade/index.html",
+        "dist/uniao-europeia/index.html"
+      ]
+    },
+    {
+      "id": "fluxo-de-credito-as-familias-2025-ue",
+      "geo": [
+        "EU27_2020"
+      ],
+      "lugar": "uniao-europeia",
+      "declaracao": "lugar-das-linhas",
+      "cartoes": [
+        "fluxo-de-credito-as-familias-2025"
+      ],
+      "tematicas": [
+        {
+          "lang": "pt",
+          "ficheiro": "dist/pobreza-e-desigualdade/index.html",
+          "elementos": 1,
+          "textos": [
+            "3,0"
+          ]
+        },
+        {
+          "lang": "en",
+          "ficheiro": "dist/en/poverty-and-inequality/index.html",
+          "elementos": 1,
+          "textos": [
+            "3,0"
+          ]
+        }
+      ],
+      "paineis_html": [],
+      "paineis_declarados": [],
+      "fontes": [
+        "src/data/lugar-das-linhas.mjs"
+      ],
+      "paginas": [
+        "dist/correcoes/index.html",
+        "dist/en/corrections/index.html",
+        "dist/en/explainers/weekly-reading/index.html",
+        "dist/en/ledger/fluxo-de-credito-as-familias-2025/index.html",
+        "dist/en/ledger/fluxo-de-credito-as-familias-2025-ue/index.html",
+        "dist/en/ledger/index.html",
+        "dist/en/poverty-and-inequality/index.html",
+        "dist/explicacoes/leitura-da-semana/index.html",
+        "dist/livro-razao/fluxo-de-credito-as-familias-2025/index.html",
+        "dist/livro-razao/fluxo-de-credito-as-familias-2025-ue/index.html",
+        "dist/livro-razao/index.html",
+        "dist/pobreza-e-desigualdade/index.html"
+      ]
+    },
+    {
+      "id": "formacao-bruta-de-capital-fixo-2025-ue",
+      "geo": [
+        "EU27_2020"
+      ],
+      "lugar": "uniao-europeia",
+      "declaracao": "lugar-das-linhas",
+      "cartoes": [
+        "formacao-bruta-de-capital-fixo-2025"
+      ],
+      "tematicas": [
+        {
+          "lang": "pt",
+          "ficheiro": "dist/estado-e-economia/index.html",
+          "elementos": 1,
+          "textos": [
+            "21,5"
+          ]
+        },
+        {
+          "lang": "en",
+          "ficheiro": "dist/en/state-and-economy/index.html",
+          "elementos": 1,
+          "textos": [
+            "21,5"
+          ]
+        }
+      ],
+      "paineis_html": [],
+      "paineis_declarados": [],
+      "fontes": [
+        "src/data/lugar-das-linhas.mjs"
+      ],
+      "paginas": [
+        "dist/areas/economia-e-coesao-territorial/index.html",
+        "dist/correcoes/index.html",
+        "dist/en/areas/economia-e-coesao-territorial/index.html",
+        "dist/en/corrections/index.html",
+        "dist/en/explainers/weekly-reading/index.html",
+        "dist/en/ledger/formacao-bruta-de-capital-fixo-2025/index.html",
+        "dist/en/ledger/formacao-bruta-de-capital-fixo-2025-ue/index.html",
+        "dist/en/ledger/index.html",
+        "dist/en/state-and-economy/index.html",
+        "dist/estado-e-economia/index.html",
+        "dist/explicacoes/leitura-da-semana/index.html",
+        "dist/livro-razao/formacao-bruta-de-capital-fixo-2025/index.html",
+        "dist/livro-razao/formacao-bruta-de-capital-fixo-2025-ue/index.html",
+        "dist/livro-razao/index.html"
+      ]
+    },
+    {
+      "id": "licencas-de-construcao-2025-ue",
+      "geo": [
+        "EU27_2020"
+      ],
+      "lugar": "uniao-europeia",
+      "declaracao": "lugar-das-linhas",
+      "cartoes": [
+        "licencas-de-construcao-2025"
+      ],
+      "tematicas": [
+        {
+          "lang": "pt",
+          "ficheiro": "dist/habitacao/index.html",
+          "elementos": 1,
+          "textos": [
+            "377,6"
+          ]
+        },
+        {
+          "lang": "en",
+          "ficheiro": "dist/en/housing/index.html",
+          "elementos": 1,
+          "textos": [
+            "377,6"
+          ]
+        }
+      ],
+      "paineis_html": [],
+      "paineis_declarados": [],
+      "fontes": [
+        "src/data/lugar-das-linhas.mjs"
+      ],
+      "paginas": [
+        "dist/areas/infraestruturas-e-habitacao/index.html",
+        "dist/correcoes/index.html",
+        "dist/en/areas/infraestruturas-e-habitacao/index.html",
+        "dist/en/corrections/index.html",
+        "dist/en/explainers/weekly-reading/index.html",
+        "dist/en/housing/index.html",
+        "dist/en/ledger/index.html",
+        "dist/en/ledger/licencas-de-construcao-2025/index.html",
+        "dist/en/ledger/licencas-de-construcao-2025-ue/index.html",
+        "dist/explicacoes/leitura-da-semana/index.html",
+        "dist/habitacao/index.html",
+        "dist/livro-razao/index.html",
+        "dist/livro-razao/licencas-de-construcao-2025/index.html",
+        "dist/livro-razao/licencas-de-construcao-2025-ue/index.html"
+      ]
+    },
+    {
+      "id": "pib-real-per-capita-2025-ue",
+      "geo": [
+        "EU27_2020"
+      ],
+      "lugar": "uniao-europeia",
+      "declaracao": "lugar-das-linhas",
+      "cartoes": [
+        "pib-real-per-capita-2025"
+      ],
+      "tematicas": [
+        {
+          "lang": "pt",
+          "ficheiro": "dist/estado-e-economia/index.html",
+          "elementos": 1,
+          "textos": [
+            "31 980"
+          ]
+        },
+        {
+          "lang": "en",
+          "ficheiro": "dist/en/state-and-economy/index.html",
+          "elementos": 1,
+          "textos": [
+            "31 980"
+          ]
+        }
+      ],
+      "paineis_html": [],
+      "paineis_declarados": [],
+      "fontes": [
+        "src/data/lugar-das-linhas.mjs"
+      ],
+      "paginas": [
+        "dist/areas/economia-e-coesao-territorial/index.html",
+        "dist/correcoes/index.html",
+        "dist/en/areas/economia-e-coesao-territorial/index.html",
+        "dist/en/corrections/index.html",
+        "dist/en/explainers/weekly-reading/index.html",
+        "dist/en/ledger/index.html",
+        "dist/en/ledger/pib-real-per-capita-2025/index.html",
+        "dist/en/ledger/pib-real-per-capita-2025-ue/index.html",
+        "dist/en/state-and-economy/index.html",
+        "dist/estado-e-economia/index.html",
+        "dist/explicacoes/leitura-da-semana/index.html",
+        "dist/livro-razao/index.html",
+        "dist/livro-razao/pib-real-per-capita-2025/index.html",
+        "dist/livro-razao/pib-real-per-capita-2025-ue/index.html"
+      ]
+    }
+  ],
+  "linhas_medidas": 15,
+  "declaracoes_explicitas": 11,
+  "ja_declaradas_no_dominio": 4,
+  "conhecido_positivo": {
+    "linha_portuguesa": true,
+    "linha_europeia": true
+  }
+}

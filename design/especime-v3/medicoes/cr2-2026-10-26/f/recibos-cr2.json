@@ -1,0 +1,905 @@
+{
+  "_": "Escrito por design/especime-v3/medicoes/cr2-2026-10-26/recibos-cr2.mjs. Não se edita à mão.",
+  "construcao": {
+    "commit": "2de092cd1c603ba3f158ab4e3a8859b8b94b42a8",
+    "ref": "cr2-2026-10-26",
+    "env": "local",
+    "origem": "git",
+    "motivo": null,
+    "construido_em": "2026-10-26T15:53:35.247Z"
+  },
+  "recibos_lidos": 34,
+  "recibos_certos": 34,
+  "conhecido_positivo": {
+    "o_que": "num recibo estragado em memória (a porta da atualização tirada, a frase do valor em uso posta, o dia da publicação trocado pelo do acesso e o valor adulterado), as quatro medidas dão falso",
+    "encontrado": true
+  },
+  "atualizados_certos": 30,
+  "pendentes_certos": 4,
+  "recibos": [
+    {
+      "id": "custo-unitario-do-trabalho-2025-ue",
+      "lang": "pt",
+      "rota": "livro-razao/custo-unitario-do-trabalho-2025-ue/index.html",
+      "pendente": false,
+      "titulo": "14,8",
+      "valor_da_linha": "14,8",
+      "entrada": 0,
+      "porta": "#alteracao-0",
+      "releituras_mostradas": [
+        6,
+        5
+      ],
+      "razao_lida": "O Eurostat reviu o valor da União a 22.10.2026 (o carimbo do conjunto passou de 02.10.2026 a 22.10.2026); a reconferência semanal de 26.10.2026 viu a revisão.",
+      "ok": {
+        "valor_no_titulo": true,
+        "entrada_da_atualizacao": true,
+        "razao_na_lingua_da_edicao": true,
+        "diverge_visivel": true,
+        "diverge_abre_a_atualizacao": true,
+        "ultima_reconferencia": true,
+        "aviso_do_valor_em_uso": true,
+        "published_at_no_recibo": true
+      },
+      "todas": true
+    },
+    {
+      "id": "custo-unitario-do-trabalho-2025-ue",
+      "lang": "en",
+      "rota": "en/ledger/custo-unitario-do-trabalho-2025-ue/index.html",
+      "pendente": false,
+      "titulo": "14,8",
+      "valor_da_linha": "14,8",
+      "entrada": 0,
+      "porta": "#alteracao-0",
+      "releituras_mostradas": [
+        6,
+        5
+      ],
+      "razao_lida": "Eurostat revised the EU value on 22.10.2026 (the dataset stamp moved from 02.10.2026 to 22.10.2026); the weekly check of 26.10.2026 caught the revision.",
+      "ok": {
+        "valor_no_titulo": true,
+        "entrada_da_atualizacao": true,
+        "razao_na_lingua_da_edicao": true,
+        "diverge_visivel": true,
+        "diverge_abre_a_atualizacao": true,
+        "ultima_reconferencia": true,
+        "aviso_do_valor_em_uso": true,
+        "published_at_no_recibo": true
+      },
+      "todas": true
+    },
+    {
+      "id": "divida-das-empresas-2024",
+      "lang": "pt",
+      "rota": "livro-razao/divida-das-empresas-2024/index.html",
+      "pendente": false,
+      "titulo": "66,6",
+      "valor_da_linha": "66,6",
+      "entrada": 1,
+      "porta": "#alteracao-1",
+      "releituras_mostradas": [
+        6,
+        5
+      ],
+      "razao_lida": "O Eurostat reviu o valor de Portugal a 24.10.2026 (o carimbo do conjunto passou de 03.10.2026 a 24.10.2026); a reconferência semanal de 26.10.2026 viu a revisão.",
+      "ok": {
+        "valor_no_titulo": true,
+        "entrada_da_atualizacao": true,
+        "razao_na_lingua_da_edicao": true,
+        "diverge_visivel": true,
+        "diverge_abre_a_atualizacao": true,
+        "ultima_reconferencia": true,
+        "aviso_do_valor_em_uso": true,
+        "published_at_no_recibo": true
+      },
+      "todas": true
+    },
+    {
+      "id": "divida-das-empresas-2024",
+      "lang": "en",
+      "rota": "en/ledger/divida-das-empresas-2024/index.html",
+      "pendente": false,
+      "titulo": "66,6",
+      "valor_da_linha": "66,6",
+      "entrada": 1,
+      "porta": "#alteracao-1",
+      "releituras_mostradas": [
+        6,
+        5
+      ],
+      "razao_lida": "Eurostat revised Portugal's value on 24.10.2026 (the dataset stamp moved from 03.10.2026 to 24.10.2026); the weekly check of 26.10.2026 caught the revision.",
+      "ok": {
+        "valor_no_titulo": true,
+        "entrada_da_atualizacao": true,
+        "razao_na_lingua_da_edicao": true,
+        "diverge_visivel": true,
+        "diverge_abre_a_atualizacao": true,
+        "ultima_reconferencia": true,
+        "aviso_do_valor_em_uso": true,
+        "published_at_no_recibo": true
+      },
+      "todas": true
+    },
+    {
+      "id": "divida-das-empresas-2025",
+      "lang": "pt",
+      "rota": "livro-razao/divida-das-empresas-2025/index.html",
+      "pendente": false,
+      "titulo": "65,1",
+      "valor_da_linha": "65,1",
+      "entrada": 1,
+      "porta": "#alteracao-1",
+      "releituras_mostradas": [
+        6,
+        5
+      ],
+      "razao_lida": "O Eurostat reviu o valor de Portugal a 24.10.2026 (o carimbo do conjunto passou de 03.10.2026 a 24.10.2026); a reconferência semanal de 26.10.2026 viu a revisão.",
+      "ok": {
+        "valor_no_titulo": true,
+        "entrada_da_atualizacao": true,
+        "razao_na_lingua_da_edicao": true,
+        "diverge_visivel": true,
+        "diverge_abre_a_atualizacao": true,
+        "ultima_reconferencia": true,
+        "aviso_do_valor_em_uso": true,
+        "published_at_no_recibo": true
+      },
+      "todas": true
+    },
+    {
+      "id": "divida-das-empresas-2025",
+      "lang": "en",
+      "rota": "en/ledger/divida-das-empresas-2025/index.html",
+      "pendente": false,
+      "titulo": "65,1",
+      "valor_da_linha": "65,1",
+      "entrada": 1,
+      "porta": "#alteracao-1",
+      "releituras_mostradas": [
+        6,
+        5
+      ],
+      "razao_lida": "Eurostat revised Portugal's value on 24.10.2026 (the dataset stamp moved from 03.10.2026 to 24.10.2026); the weekly check of 26.10.2026 caught the revision.",
+      "ok": {
+        "valor_no_titulo": true,
+        "entrada_da_atualizacao": true,
+        "razao_na_lingua_da_edicao": true,
+        "diverge_visivel": true,
+        "diverge_abre_a_atualizacao": true,
+        "ultima_reconferencia": true,
+        "aviso_do_valor_em_uso": true,
+        "published_at_no_recibo": true
+      },
+      "todas": true
+    },
+    {
+      "id": "divida-das-empresas-2025-ue",
+      "lang": "pt",
+      "rota": "livro-razao/divida-das-empresas-2025-ue/index.html",
+      "pendente": false,
+      "titulo": "70,2",
+      "valor_da_linha": "70,2",
+      "entrada": 1,
+      "porta": "#alteracao-1",
+      "releituras_mostradas": [
+        6,
+        5
+      ],
+      "razao_lida": "O Eurostat reviu o valor da União a 24.10.2026 (o carimbo do conjunto passou de 03.10.2026 a 24.10.2026); a reconferência semanal de 26.10.2026 viu a revisão.",
+      "ok": {
+        "valor_no_titulo": true,
+        "entrada_da_atualizacao": true,
+        "razao_na_lingua_da_edicao": true,
+        "diverge_visivel": true,
+        "diverge_abre_a_atualizacao": true,
+        "ultima_reconferencia": true,
+        "aviso_do_valor_em_uso": true,
+        "published_at_no_recibo": true
+      },
+      "todas": true
+    },
+    {
+      "id": "divida-das-empresas-2025-ue",
+      "lang": "en",
+      "rota": "en/ledger/divida-das-empresas-2025-ue/index.html",
+      "pendente": false,
+      "titulo": "70,2",
+      "valor_da_linha": "70,2",
+      "entrada": 1,
+      "porta": "#alteracao-1",
+      "releituras_mostradas": [
+        6,
+        5
+      ],
+      "razao_lida": "Eurostat revised the EU value on 24.10.2026 (the dataset stamp moved from 03.10.2026 to 24.10.2026); the weekly check of 26.10.2026 caught the revision.",
+      "ok": {
+        "valor_no_titulo": true,
+        "entrada_da_atualizacao": true,
+        "razao_na_lingua_da_edicao": true,
+        "diverge_visivel": true,
+        "diverge_abre_a_atualizacao": true,
+        "ultima_reconferencia": true,
+        "aviso_do_valor_em_uso": true,
+        "published_at_no_recibo": true
+      },
+      "todas": true
+    },
+    {
+      "id": "divida-das-familias-2024",
+      "lang": "pt",
+      "rota": "livro-razao/divida-das-familias-2024/index.html",
+      "pendente": false,
+      "titulo": "52,3",
+      "valor_da_linha": "52,3",
+      "entrada": 1,
+      "porta": "#alteracao-1",
+      "releituras_mostradas": [
+        6,
+        5
+      ],
+      "razao_lida": "O Eurostat reviu o valor de Portugal a 24.10.2026 (o carimbo do conjunto passou de 03.10.2026 a 24.10.2026); a reconferência semanal de 26.10.2026 viu a revisão.",
+      "ok": {
+        "valor_no_titulo": true,
+        "entrada_da_atualizacao": true,
+        "razao_na_lingua_da_edicao": true,
+        "diverge_visivel": true,
+        "diverge_abre_a_atualizacao": true,
+        "ultima_reconferencia": true,
+        "aviso_do_valor_em_uso": true,
+        "published_at_no_recibo": true
+      },
+      "todas": true
+    },
+    {
+      "id": "divida-das-familias-2024",
+      "lang": "en",
+      "rota": "en/ledger/divida-das-familias-2024/index.html",
+      "pendente": false,
+      "titulo": "52,3",
+      "valor_da_linha": "52,3",
+      "entrada": 1,
+      "porta": "#alteracao-1",
+      "releituras_mostradas": [
+        6,
+        5
+      ],
+      "razao_lida": "Eurostat revised Portugal's value on 24.10.2026 (the dataset stamp moved from 03.10.2026 to 24.10.2026); the weekly check of 26.10.2026 caught the revision.",
+      "ok": {
+        "valor_no_titulo": true,
+        "entrada_da_atualizacao": true,
+        "razao_na_lingua_da_edicao": true,
+        "diverge_visivel": true,
+        "diverge_abre_a_atualizacao": true,
+        "ultima_reconferencia": true,
+        "aviso_do_valor_em_uso": true,
+        "published_at_no_recibo": true
+      },
+      "todas": true
+    },
+    {
+      "id": "divida-das-familias-2025",
+      "lang": "pt",
+      "rota": "livro-razao/divida-das-familias-2025/index.html",
+      "pendente": false,
+      "titulo": "54,4",
+      "valor_da_linha": "54,4",
+      "entrada": 1,
+      "porta": "#alteracao-1",
+      "releituras_mostradas": [
+        6,
+        5
+      ],
+      "razao_lida": "O Eurostat reviu o valor de Portugal a 24.10.2026 (o carimbo do conjunto passou de 03.10.2026 a 24.10.2026); a reconferência semanal de 26.10.2026 viu a revisão.",
+      "ok": {
+        "valor_no_titulo": true,
+        "entrada_da_atualizacao": true,
+        "razao_na_lingua_da_edicao": true,
+        "diverge_visivel": true,
+        "diverge_abre_a_atualizacao": true,
+        "ultima_reconferencia": true,
+        "aviso_do_valor_em_uso": true,
+        "published_at_no_recibo": true
+      },
+      "todas": true
+    },
+    {
+      "id": "divida-das-familias-2025",
+      "lang": "en",
+      "rota": "en/ledger/divida-das-familias-2025/index.html",
+      "pendente": false,
+      "titulo": "54,4",
+      "valor_da_linha": "54,4",
+      "entrada": 1,
+      "porta": "#alteracao-1",
+      "releituras_mostradas": [
+        6,
+        5
+      ],
+      "razao_lida": "Eurostat revised Portugal's value on 24.10.2026 (the dataset stamp moved from 03.10.2026 to 24.10.2026); the weekly check of 26.10.2026 caught the revision.",
+      "ok": {
+        "valor_no_titulo": true,
+        "entrada_da_atualizacao": true,
+        "razao_na_lingua_da_edicao": true,
+        "diverge_visivel": true,
+        "diverge_abre_a_atualizacao": true,
+        "ultima_reconferencia": true,
+        "aviso_do_valor_em_uso": true,
+        "published_at_no_recibo": true
+      },
+      "todas": true
+    },
+    {
+      "id": "divida-publica-2024",
+      "lang": "pt",
+      "rota": "livro-razao/divida-publica-2024/index.html",
+      "pendente": false,
+      "titulo": "93,0",
+      "valor_da_linha": "93,0",
+      "entrada": 0,
+      "porta": "#alteracao-0",
+      "releituras_mostradas": [
+        6,
+        5
+      ],
+      "razao_lida": "O Eurostat reviu o valor de Portugal a 21.10.2026 (o carimbo do conjunto passou de 22.04.2026 a 21.10.2026); a reconferência semanal de 26.10.2026 viu a revisão.",
+      "ok": {
+        "valor_no_titulo": true,
+        "entrada_da_atualizacao": true,
+        "razao_na_lingua_da_edicao": true,
+        "diverge_visivel": true,
+        "diverge_abre_a_atualizacao": true,
+        "ultima_reconferencia": true,
+        "aviso_do_valor_em_uso": true,
+        "published_at_no_recibo": true
+      },
+      "todas": true
+    },
+    {
+      "id": "divida-publica-2024",
+      "lang": "en",
+      "rota": "en/ledger/divida-publica-2024/index.html",
+      "pendente": false,
+      "titulo": "93,0",
+      "valor_da_linha": "93,0",
+      "entrada": 0,
+      "porta": "#alteracao-0",
+      "releituras_mostradas": [
+        6,
+        5
+      ],
+      "razao_lida": "Eurostat revised Portugal's value on 21.10.2026 (the dataset stamp moved from 22.04.2026 to 21.10.2026); the weekly check of 26.10.2026 caught the revision.",
+      "ok": {
+        "valor_no_titulo": true,
+        "entrada_da_atualizacao": true,
+        "razao_na_lingua_da_edicao": true,
+        "diverge_visivel": true,
+        "diverge_abre_a_atualizacao": true,
+        "ultima_reconferencia": true,
+        "aviso_do_valor_em_uso": true,
+        "published_at_no_recibo": true
+      },
+      "todas": true
+    },
+    {
+      "id": "divida-publica-2025",
+      "lang": "pt",
+      "rota": "livro-razao/divida-publica-2025/index.html",
+      "pendente": true,
+      "titulo": "89,7",
+      "valor_da_linha": "89,7",
+      "entrada": -1,
+      "porta": null,
+      "releituras_mostradas": [
+        5,
+        4
+      ],
+      "razao_lida": null,
+      "ok": {
+        "valor_no_titulo": true,
+        "entrada_da_atualizacao": true,
+        "razao_na_lingua_da_edicao": true,
+        "diverge_visivel": true,
+        "diverge_abre_a_atualizacao": true,
+        "ultima_reconferencia": true,
+        "aviso_do_valor_em_uso": true,
+        "published_at_no_recibo": true
+      },
+      "todas": true
+    },
+    {
+      "id": "divida-publica-2025",
+      "lang": "en",
+      "rota": "en/ledger/divida-publica-2025/index.html",
+      "pendente": true,
+      "titulo": "89,7",
+      "valor_da_linha": "89,7",
+      "entrada": -1,
+      "porta": null,
+      "releituras_mostradas": [
+        5,
+        4
+      ],
+      "razao_lida": null,
+      "ok": {
+        "valor_no_titulo": true,
+        "entrada_da_atualizacao": true,
+        "razao_na_lingua_da_edicao": true,
+        "diverge_visivel": true,
+        "diverge_abre_a_atualizacao": true,
+        "ultima_reconferencia": true,
+        "aviso_do_valor_em_uso": true,
+        "published_at_no_recibo": true
+      },
+      "todas": true
+    },
+    {
+      "id": "divida-publica-2025-ue",
+      "lang": "pt",
+      "rota": "livro-razao/divida-publica-2025-ue/index.html",
+      "pendente": true,
+      "titulo": "81,7",
+      "valor_da_linha": "81,7",
+      "entrada": -1,
+      "porta": null,
+      "releituras_mostradas": [
+        5,
+        4
+      ],
+      "razao_lida": null,
+      "ok": {
+        "valor_no_titulo": true,
+        "entrada_da_atualizacao": true,
+        "razao_na_lingua_da_edicao": true,
+        "diverge_visivel": true,
+        "diverge_abre_a_atualizacao": true,
+        "ultima_reconferencia": true,
+        "aviso_do_valor_em_uso": true,
+        "published_at_no_recibo": true
+      },
+      "todas": true
+    },
+    {
+      "id": "divida-publica-2025-ue",
+      "lang": "en",
+      "rota": "en/ledger/divida-publica-2025-ue/index.html",
+      "pendente": true,
+      "titulo": "81,7",
+      "valor_da_linha": "81,7",
+      "entrada": -1,
+      "porta": null,
+      "releituras_mostradas": [
+        5,
+        4
+      ],
+      "razao_lida": null,
+      "ok": {
+        "valor_no_titulo": true,
+        "entrada_da_atualizacao": true,
+        "razao_na_lingua_da_edicao": true,
+        "diverge_visivel": true,
+        "diverge_abre_a_atualizacao": true,
+        "ultima_reconferencia": true,
+        "aviso_do_valor_em_uso": true,
+        "published_at_no_recibo": true
+      },
+      "todas": true
+    },
+    {
+      "id": "fluxo-de-credito-as-empresas-2024",
+      "lang": "pt",
+      "rota": "livro-razao/fluxo-de-credito-as-empresas-2024/index.html",
+      "pendente": false,
+      "titulo": "2,2",
+      "valor_da_linha": "2,2",
+      "entrada": 0,
+      "porta": "#alteracao-0",
+      "releituras_mostradas": [
+        6,
+        5
+      ],
+      "razao_lida": "O Eurostat reviu o valor de Portugal a 24.10.2026 (o carimbo do conjunto passou de 03.10.2026 a 24.10.2026); a reconferência semanal de 26.10.2026 viu a revisão.",
+      "ok": {
+        "valor_no_titulo": true,
+        "entrada_da_atualizacao": true,
+        "razao_na_lingua_da_edicao": true,
+        "diverge_visivel": true,
+        "diverge_abre_a_atualizacao": true,
+        "ultima_reconferencia": true,
+        "aviso_do_valor_em_uso": true,
+        "published_at_no_recibo": true
+      },
+      "todas": true
+    },
+    {
+      "id": "fluxo-de-credito-as-empresas-2024",
+      "lang": "en",
+      "rota": "en/ledger/fluxo-de-credito-as-empresas-2024/index.html",
+      "pendente": false,
+      "titulo": "2,2",
+      "valor_da_linha": "2,2",
+      "entrada": 0,
+      "porta": "#alteracao-0",
+      "releituras_mostradas": [
+        6,
+        5
+      ],
+      "razao_lida": "Eurostat revised Portugal's value on 24.10.2026 (the dataset stamp moved from 03.10.2026 to 24.10.2026); the weekly check of 26.10.2026 caught the revision.",
+      "ok": {
+        "valor_no_titulo": true,
+        "entrada_da_atualizacao": true,
+        "razao_na_lingua_da_edicao": true,
+        "diverge_visivel": true,
+        "diverge_abre_a_atualizacao": true,
+        "ultima_reconferencia": true,
+        "aviso_do_valor_em_uso": true,
+        "published_at_no_recibo": true
+      },
+      "todas": true
+    },
+    {
+      "id": "fluxo-de-credito-as-empresas-2025",
+      "lang": "pt",
+      "rota": "livro-razao/fluxo-de-credito-as-empresas-2025/index.html",
+      "pendente": false,
+      "titulo": "3,4",
+      "valor_da_linha": "3,4",
+      "entrada": 1,
+      "porta": "#alteracao-1",
+      "releituras_mostradas": [
+        6,
+        5
+      ],
+      "razao_lida": "O Eurostat reviu o valor de Portugal a 24.10.2026 (o carimbo do conjunto passou de 03.10.2026 a 24.10.2026); a reconferência semanal de 26.10.2026 viu a revisão.",
+      "ok": {
+        "valor_no_titulo": true,
+        "entrada_da_atualizacao": true,
+        "razao_na_lingua_da_edicao": true,
+        "diverge_visivel": true,
+        "diverge_abre_a_atualizacao": true,
+        "ultima_reconferencia": true,
+        "aviso_do_valor_em_uso": true,
+        "published_at_no_recibo": true
+      },
+      "todas": true
+    },
+    {
+      "id": "fluxo-de-credito-as-empresas-2025",
+      "lang": "en",
+      "rota": "en/ledger/fluxo-de-credito-as-empresas-2025/index.html",
+      "pendente": false,
+      "titulo": "3,4",
+      "valor_da_linha": "3,4",
+      "entrada": 1,
+      "porta": "#alteracao-1",
+      "releituras_mostradas": [
+        6,
+        5
+      ],
+      "razao_lida": "Eurostat revised Portugal's value on 24.10.2026 (the dataset stamp moved from 03.10.2026 to 24.10.2026); the weekly check of 26.10.2026 caught the revision.",
+      "ok": {
+        "valor_no_titulo": true,
+        "entrada_da_atualizacao": true,
+        "razao_na_lingua_da_edicao": true,
+        "diverge_visivel": true,
+        "diverge_abre_a_atualizacao": true,
+        "ultima_reconferencia": true,
+        "aviso_do_valor_em_uso": true,
+        "published_at_no_recibo": true
+      },
+      "todas": true
+    },
+    {
+      "id": "fluxo-de-credito-as-familias-2024",
+      "lang": "pt",
+      "rota": "livro-razao/fluxo-de-credito-as-familias-2024/index.html",
+      "pendente": false,
+      "titulo": "4,0",
+      "valor_da_linha": "4,0",
+      "entrada": 0,
+      "porta": "#alteracao-0",
+      "releituras_mostradas": [
+        6,
+        5
+      ],
+      "razao_lida": "O Eurostat reviu o valor de Portugal a 24.10.2026 (o carimbo do conjunto passou de 03.10.2026 a 24.10.2026); a reconferência semanal de 26.10.2026 viu a revisão.",
+      "ok": {
+        "valor_no_titulo": true,
+        "entrada_da_atualizacao": true,
+        "razao_na_lingua_da_edicao": true,
+        "diverge_visivel": true,
+        "diverge_abre_a_atualizacao": true,
+        "ultima_reconferencia": true,
+        "aviso_do_valor_em_uso": true,
+        "published_at_no_recibo": true
+      },
+      "todas": true
+    },
+    {
+      "id": "fluxo-de-credito-as-familias-2024",
+      "lang": "en",
+      "rota": "en/ledger/fluxo-de-credito-as-familias-2024/index.html",
+      "pendente": false,
+      "titulo": "4,0",
+      "valor_da_linha": "4,0",
+      "entrada": 0,
+      "porta": "#alteracao-0",
+      "releituras_mostradas": [
+        6,
+        5
+      ],
+      "razao_lida": "Eurostat revised Portugal's value on 24.10.2026 (the dataset stamp moved from 03.10.2026 to 24.10.2026); the weekly check of 26.10.2026 caught the revision.",
+      "ok": {
+        "valor_no_titulo": true,
+        "entrada_da_atualizacao": true,
+        "razao_na_lingua_da_edicao": true,
+        "diverge_visivel": true,
+        "diverge_abre_a_atualizacao": true,
+        "ultima_reconferencia": true,
+        "aviso_do_valor_em_uso": true,
+        "published_at_no_recibo": true
+      },
+      "todas": true
+    },
+    {
+      "id": "fluxo-de-credito-as-familias-2025",
+      "lang": "pt",
+      "rota": "livro-razao/fluxo-de-credito-as-familias-2025/index.html",
+      "pendente": false,
+      "titulo": "9,0",
+      "valor_da_linha": "9,0",
+      "entrada": 0,
+      "porta": "#alteracao-0",
+      "releituras_mostradas": [
+        6,
+        5
+      ],
+      "razao_lida": "O Eurostat reviu o valor de Portugal a 24.10.2026 (o carimbo do conjunto passou de 03.10.2026 a 24.10.2026); a reconferência semanal de 26.10.2026 viu a revisão.",
+      "ok": {
+        "valor_no_titulo": true,
+        "entrada_da_atualizacao": true,
+        "razao_na_lingua_da_edicao": true,
+        "diverge_visivel": true,
+        "diverge_abre_a_atualizacao": true,
+        "ultima_reconferencia": true,
+        "aviso_do_valor_em_uso": true,
+        "published_at_no_recibo": true
+      },
+      "todas": true
+    },
+    {
+      "id": "fluxo-de-credito-as-familias-2025",
+      "lang": "en",
+      "rota": "en/ledger/fluxo-de-credito-as-familias-2025/index.html",
+      "pendente": false,
+      "titulo": "9,0",
+      "valor_da_linha": "9,0",
+      "entrada": 0,
+      "porta": "#alteracao-0",
+      "releituras_mostradas": [
+        6,
+        5
+      ],
+      "razao_lida": "Eurostat revised Portugal's value on 24.10.2026 (the dataset stamp moved from 03.10.2026 to 24.10.2026); the weekly check of 26.10.2026 caught the revision.",
+      "ok": {
+        "valor_no_titulo": true,
+        "entrada_da_atualizacao": true,
+        "razao_na_lingua_da_edicao": true,
+        "diverge_visivel": true,
+        "diverge_abre_a_atualizacao": true,
+        "ultima_reconferencia": true,
+        "aviso_do_valor_em_uso": true,
+        "published_at_no_recibo": true
+      },
+      "todas": true
+    },
+    {
+      "id": "fluxo-de-credito-as-familias-2025-ue",
+      "lang": "pt",
+      "rota": "livro-razao/fluxo-de-credito-as-familias-2025-ue/index.html",
+      "pendente": false,
+      "titulo": "3,0",
+      "valor_da_linha": "3,0",
+      "entrada": 1,
+      "porta": "#alteracao-1",
+      "releituras_mostradas": [
+        6,
+        5
+      ],
+      "razao_lida": "O Eurostat reviu o valor da União a 24.10.2026 (o carimbo do conjunto passou de 03.10.2026 a 24.10.2026); a reconferência semanal de 26.10.2026 viu a revisão.",
+      "ok": {
+        "valor_no_titulo": true,
+        "entrada_da_atualizacao": true,
+        "razao_na_lingua_da_edicao": true,
+        "diverge_visivel": true,
+        "diverge_abre_a_atualizacao": true,
+        "ultima_reconferencia": true,
+        "aviso_do_valor_em_uso": true,
+        "published_at_no_recibo": true
+      },
+      "todas": true
+    },
+    {
+      "id": "fluxo-de-credito-as-familias-2025-ue",
+      "lang": "en",
+      "rota": "en/ledger/fluxo-de-credito-as-familias-2025-ue/index.html",
+      "pendente": false,
+      "titulo": "3,0",
+      "valor_da_linha": "3,0",
+      "entrada": 1,
+      "porta": "#alteracao-1",
+      "releituras_mostradas": [
+        6,
+        5
+      ],
+      "razao_lida": "Eurostat revised the EU value on 24.10.2026 (the dataset stamp moved from 03.10.2026 to 24.10.2026); the weekly check of 26.10.2026 caught the revision.",
+      "ok": {
+        "valor_no_titulo": true,
+        "entrada_da_atualizacao": true,
+        "razao_na_lingua_da_edicao": true,
+        "diverge_visivel": true,
+        "diverge_abre_a_atualizacao": true,
+        "ultima_reconferencia": true,
+        "aviso_do_valor_em_uso": true,
+        "published_at_no_recibo": true
+      },
+      "todas": true
+    },
+    {
+      "id": "formacao-bruta-de-capital-fixo-2025-ue",
+      "lang": "pt",
+      "rota": "livro-razao/formacao-bruta-de-capital-fixo-2025-ue/index.html",
+      "pendente": false,
+      "titulo": "21,5",
+      "valor_da_linha": "21,5",
+      "entrada": 0,
+      "porta": "#alteracao-0",
+      "releituras_mostradas": [
+        6,
+        5
+      ],
+      "razao_lida": "O Eurostat reviu o valor da União a 22.10.2026 (o carimbo do conjunto passou de 02.10.2026 a 22.10.2026); a reconferência semanal de 26.10.2026 viu a revisão.",
+      "ok": {
+        "valor_no_titulo": true,
+        "entrada_da_atualizacao": true,
+        "razao_na_lingua_da_edicao": true,
+        "diverge_visivel": true,
+        "diverge_abre_a_atualizacao": true,
+        "ultima_reconferencia": true,
+        "aviso_do_valor_em_uso": true,
+        "published_at_no_recibo": true
+      },
+      "todas": true
+    },
+    {
+      "id": "formacao-bruta-de-capital-fixo-2025-ue",
+      "lang": "en",
+      "rota": "en/ledger/formacao-bruta-de-capital-fixo-2025-ue/index.html",
+      "pendente": false,
+      "titulo": "21,5",
+      "valor_da_linha": "21,5",
+      "entrada": 0,
+      "porta": "#alteracao-0",
+      "releituras_mostradas": [
+        6,
+        5
+      ],
+      "razao_lida": "Eurostat revised the EU value on 22.10.2026 (the dataset stamp moved from 02.10.2026 to 22.10.2026); the weekly check of 26.10.2026 caught the revision.",
+      "ok": {
+        "valor_no_titulo": true,
+        "entrada_da_atualizacao": true,
+        "razao_na_lingua_da_edicao": true,
+        "diverge_visivel": true,
+        "diverge_abre_a_atualizacao": true,
+        "ultima_reconferencia": true,
+        "aviso_do_valor_em_uso": true,
+        "published_at_no_recibo": true
+      },
+      "todas": true
+    },
+    {
+      "id": "licencas-de-construcao-2025-ue",
+      "lang": "pt",
+      "rota": "livro-razao/licencas-de-construcao-2025-ue/index.html",
+      "pendente": false,
+      "titulo": "377,6",
+      "valor_da_linha": "377,6",
+      "entrada": 0,
+      "porta": "#alteracao-0",
+      "releituras_mostradas": [
+        6,
+        5
+      ],
+      "razao_lida": "O Eurostat reviu o valor da União a 21.10.2026 (o carimbo do conjunto passou de 02.10.2026 a 21.10.2026); a reconferência semanal de 26.10.2026 viu a revisão.",
+      "ok": {
+        "valor_no_titulo": true,
+        "entrada_da_atualizacao": true,
+        "razao_na_lingua_da_edicao": true,
+        "diverge_visivel": true,
+        "diverge_abre_a_atualizacao": true,
+        "ultima_reconferencia": true,
+        "aviso_do_valor_em_uso": true,
+        "published_at_no_recibo": true
+      },
+      "todas": true
+    },
+    {
+      "id": "licencas-de-construcao-2025-ue",
+      "lang": "en",
+      "rota": "en/ledger/licencas-de-construcao-2025-ue/index.html",
+      "pendente": false,
+      "titulo": "377,6",
+      "valor_da_linha": "377,6",
+      "entrada": 0,
+      "porta": "#alteracao-0",
+      "releituras_mostradas": [
+        6,
+        5
+      ],
+      "razao_lida": "Eurostat revised the EU value on 21.10.2026 (the dataset stamp moved from 02.10.2026 to 21.10.2026); the weekly check of 26.10.2026 caught the revision.",
+      "ok": {
+        "valor_no_titulo": true,
+        "entrada_da_atualizacao": true,
+        "razao_na_lingua_da_edicao": true,
+        "diverge_visivel": true,
+        "diverge_abre_a_atualizacao": true,
+        "ultima_reconferencia": true,
+        "aviso_do_valor_em_uso": true,
+        "published_at_no_recibo": true
+      },
+      "todas": true
+    },
+    {
+      "id": "pib-real-per-capita-2025-ue",
+      "lang": "pt",
+      "rota": "livro-razao/pib-real-per-capita-2025-ue/index.html",
+      "pendente": false,
+      "titulo": "31 980",
+      "valor_da_linha": "31 980",
+      "entrada": 0,
+      "porta": "#alteracao-0",
+      "releituras_mostradas": [
+        6,
+        5
+      ],
+      "razao_lida": "O Eurostat reviu o valor da União a 22.10.2026 (o carimbo do conjunto passou de 02.10.2026 a 22.10.2026); a reconferência semanal de 26.10.2026 viu a revisão.",
+      "ok": {
+        "valor_no_titulo": true,
+        "entrada_da_atualizacao": true,
+        "razao_na_lingua_da_edicao": true,
+        "diverge_visivel": true,
+        "diverge_abre_a_atualizacao": true,
+        "ultima_reconferencia": true,
+        "aviso_do_valor_em_uso": true,
+        "published_at_no_recibo": true
+      },
+      "todas": true
+    },
+    {
+      "id": "pib-real-per-capita-2025-ue",
+      "lang": "en",
+      "rota": "en/ledger/pib-real-per-capita-2025-ue/index.html",
+      "pendente": false,
+      "titulo": "31 980",
+      "valor_da_linha": "31 980",
+      "entrada": 0,
+      "porta": "#alteracao-0",
+      "releituras_mostradas": [
+        6,
+        5
+      ],
+      "razao_lida": "Eurostat revised the EU value on 22.10.2026 (the dataset stamp moved from 02.10.2026 to 22.10.2026); the weekly check of 26.10.2026 caught the revision.",
+      "ok": {
+        "valor_no_titulo": true,
+        "entrada_da_atualizacao": true,
+        "razao_na_lingua_da_edicao": true,
+        "diverge_visivel": true,
+        "diverge_abre_a_atualizacao": true,
+        "ultima_reconferencia": true,
+        "aviso_do_valor_em_uso": true,
+        "published_at_no_recibo": true
+      },
+      "todas": true
+    }
+  ]
+}

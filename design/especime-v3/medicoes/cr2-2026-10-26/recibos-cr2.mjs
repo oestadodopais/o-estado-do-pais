@@ -14,7 +14,7 @@ function conferir(r, linha, lang) {
   const n = linha.corrections.findIndex((c) => c.kind === 'atualizacao' && c.date === '2026-10-26');
   const iDiverge = linha.verifications.findIndex((v) => v.date === '2026-10-26' && v.result === 'diverge');
   const iIgual = linha.verifications.findIndex((v) => v.date === '2026-10-26' && v.result === 'igual');
-  const titulo = limpo(r.querySelector('h1.linha-valor [data-claim]')?.textContent);
+  const titulo = limpo(r.querySelector('.linha-valor [data-claim]')?.textContent);
   const alvo = r.querySelector(`#alteracao-${n}`);
   const razao = alvo ? limpo(alvo.querySelector('[data-correcao-campo="reason"]')?.textContent) : null;
   const esperada = limpo(lang === 'pt' ? linha.corrections[n]?.reason : linha.corrections[n]?.reason_en);
@@ -29,9 +29,13 @@ function conferir(r, linha, lang) {
     diverge_visivel: iDiverge >= 0 && Boolean(diverge) && limpo(diverge.textContent).includes('26.10.2026'),
     diverge_abre_a_atualizacao: pendente ? porta === null : porta === `#alteracao-${n}`,
     ultima_reconferencia: pendente ? mostradas[0] === iDiverge && iDiverge === linha.verifications.length - 1 : iIgual === linha.verifications.length - 1 && mostradas[0] === iIgual,
-    sem_valor_em_uso: r.querySelectorAll('[data-valor-em-uso]').length === 0,
+    aviso_do_valor_em_uso: pendente
+      ? r.querySelectorAll('[data-valor-em-uso]').length === 1 && limpo(r.querySelector('[data-valor-em-uso]')?.textContent) === (lang === 'pt' ? 'O valor do título é o que esta página usa.' : 'This page uses the value shown in the title.')
+      : r.querySelectorAll('[data-valor-em-uso]').length === 0,
     /* C2-b: o dia em que a fonte publicou, como a linha o declara, na forma da casa (DD.MM.AAAA), escrita aqui. */
-    published_at_no_recibo: typeof linha.published_at === 'string'
+    published_at_no_recibo: typeof linha.published_at !== 'string'
+      ? r.querySelectorAll('[data-de-campo="published_at"]').length === 0
+      : typeof linha.published_at === 'string'
       && r.querySelectorAll('[data-de-campo="published_at"]').length === 1
       && limpo(r.querySelector('[data-de-campo="published_at"]')?.textContent) === linha.published_at.split('-').reverse().join('.'),
   };
@@ -46,7 +50,8 @@ for (const id of NOVE) {
       releituras_mostradas: c.mostradas, razao_lida: c.razao, ok: c.ok, todas: Object.values(c.ok).every(Boolean) });
   }
 }
-/* O conhecido-positivo: a mesma conferência sobre um recibo estragado em memória (a porta da atualização tirada, e a
+/* A página põe o nome em h1 e o valor no parágrafo .linha-valor.
+   O conhecido-positivo: a mesma conferência sobre um recibo estragado em memória (a porta da atualização tirada, e a
    frase de que a página usa outro valor posta) tem de dar falso nas duas medidas, e o recibo intacto verdadeiro. */
 const primeiro = recibos[0];
 const linhaDoPrimeiro = load(fs.readFileSync(path.join('ledger', 'claims', `${primeiro.id}.yml`), 'utf8'));
@@ -55,12 +60,13 @@ estragado.querySelectorAll('[data-atualizacao-da-releitura]').forEach((e) => e.r
 estragado.querySelector('main')?.insertAdjacentHTML('beforeend', '<span data-valor-em-uso>O valor do título é o que esta página usa.</span>');
 /* C2-b: e o dia da publicação trocado pelo dia do acesso. */
 estragado.querySelectorAll('[data-de-campo="published_at"]').forEach((e) => e.set_content(linhaDoPrimeiro.access_date.split('-').reverse().join('.')));
+estragado.querySelector('.linha-valor [data-claim]')?.set_content('valor adulterado');
 const noEstragado = conferir(estragado, linhaDoPrimeiro, primeiro.lang).ok;
-const vePortaTirada = primeiro.todas && !noEstragado.diverge_abre_a_atualizacao && !noEstragado.sem_valor_em_uso && !noEstragado.published_at_no_recibo;
+const vePortaTirada = primeiro.todas && !noEstragado.diverge_abre_a_atualizacao && !noEstragado.aviso_do_valor_em_uso && !noEstragado.published_at_no_recibo && !noEstragado.valor_no_titulo;
 const saida = {
   _: 'Escrito por design/especime-v3/medicoes/cr2-2026-10-26/recibos-cr2.mjs. Não se edita à mão.',
   construcao: versao, recibos_lidos: recibos.length, recibos_certos: recibos.filter((x) => x.todas).length,
-  conhecido_positivo: { o_que: 'num recibo estragado em memória (a porta da atualização tirada, a frase do valor em uso posta, o dia da publicação trocado pelo do acesso), as três medidas dão falso', encontrado: vePortaTirada },
+  conhecido_positivo: { o_que: 'num recibo estragado em memória (a porta da atualização tirada, a frase do valor em uso posta, o dia da publicação trocado pelo do acesso e o valor adulterado), as quatro medidas dão falso', encontrado: vePortaTirada },
   atualizados_certos: recibos.filter(x => !x.pendente && x.todas).length,
   pendentes_certos: recibos.filter(x => x.pendente && x.todas).length,
   recibos,

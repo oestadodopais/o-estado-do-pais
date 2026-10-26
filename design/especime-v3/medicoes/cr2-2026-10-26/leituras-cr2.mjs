@@ -20,6 +20,7 @@ import { reguaDoCartao } from '../../../../src/lib/enquadramento.mjs';
 const PASTA = 'design/especime-v3/medicoes/cr2-2026-10-26';
 const NOVE = JSON.parse(fs.readFileSync(`${PASTA}/ids.json`, 'utf8'));
 const modo = process.argv[2];
+const saidaPasta = process.argv[3] ?? PASTA;
 
 if (modo === 'antes' || modo === 'depois') {
   const cartoes = [];
@@ -58,11 +59,11 @@ if (modo === 'antes' || modo === 'depois') {
     },
     cartoes,
   };
-  fs.writeFileSync(`${PASTA}/leituras-${modo}.json`, JSON.stringify(saida, null, 2) + '\n');
+  fs.writeFileSync(`${saidaPasta}/leituras-${modo}.json`, JSON.stringify(saida, null, 2) + '\n');
   console.log(`${modo}: ${cartoes.length} cartões com leitura usam as dezassete linhas (de ${lidas} leituras lidas)`);
 } else if (modo === 'comparar') {
   const a = JSON.parse(fs.readFileSync(`${PASTA}/leituras-antes.json`, 'utf8'));
-  const d = JSON.parse(fs.readFileSync(`${PASTA}/leituras-depois.json`, 'utf8'));
+  const d = JSON.parse(fs.readFileSync(`${saidaPasta}/leituras-depois.json`, 'utf8'));
   /** A comparação de duas corridas, cartão a cartão, edição a edição, ramo a ramo. */
   const comparar = (x, y) => {
     const porId = (z) => new Map(z.cartoes.map((c) => [c.id, c]));
@@ -113,7 +114,7 @@ if (modo === 'antes' || modo === 'depois') {
     },
     leituras: linhas,
   };
-  fs.writeFileSync(`${PASTA}/leituras-comparadas.json`, JSON.stringify(saida, null, 2) + '\n');
+  fs.writeFileSync(`${saidaPasta}/leituras-comparadas.json`, JSON.stringify(saida, null, 2) + '\n');
   console.log(`comparar: ${saida.leituras_comparadas} leituras, ${saida.leituras_com_texto_mudado} com texto mudado, ` +
     `${saida.leituras_com_valores_da_regua_mudados} com valores da régua mudados, ` +
     `${saida.ramos_que_mudaram_de_sentido} ramo(s) de ${saida.ramos_lidos} mudaram de sentido; planta: ${naPlanta}`);
