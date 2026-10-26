@@ -1,4 +1,41 @@
-# CR2: continuação CR2-b, construção recusada pela série da dívida pública
+# CR2: séries por país, contrato de revisão e estado da entrega
+
+## CR2-c: paragem exigida pelo ponto 1
+
+O gerador disponível não permite a atualização pedida com história por país. O ensaio terminou com código 1: `SERIES_PAISES: FAIL · divida-publica-2025: o ponto de uniao (81,7) não é, como número, a linha «divida-publica-2025-ue» (81,5)`. A primeira invocação tinha um caminho relativo incorreto, saiu a 2 e foi corrigida; não foi uma execução do gerador. Os dois códigos e registos estão em `c/`.
+
+A instrução aplicável do mandato é: «se não tiver e o sítio exigir a história de um ponto que muda, para e diz exatamente que regra o exige». A condição confirmou-se:
+
+- `publisher/series_paises.py:496` escreve sempre `corrections: []`; não lê nem regista revisões.
+- `publisher/export_series.py:234-247`, regra **VS6**, exige para cada ponto publicado que mude uma entrada em `corrections` com `geo`, `old_value` e `new_value` correspondentes. A mensagem é: «sem uma entrada em corrections que o diga».
+- `ledger/series/README.md`, regra **S8**, exige geografia, data, natureza, valor antigo, valor novo e motivo nas duas línguas.
+- O `series-revisoes.json` existente pertence às séries no tempo: `publisher/dominios_series.py:71-76` define entradas por `periodo`. O gerador de países não o importa nem o lê.
+
+Há ainda uma diferença entre o mandato e o programa disponível: `series_paises.py` não pede respostas novas ao Eurostat. `construir_serie()` lê por `alojado()`, que restringe a procura a `source/ue1/` e exige um único corpo por endereço. O ensaio lê assim o corpo antigo. Não foi feita nenhuma releitura de rede nesta passagem, nem medido qualquer carimbo novo.
+
+### Séries e pontos
+
+`c/resultado.json` guarda o inventário das dez séries existentes, os seus carimbos publicados e a contagem dos pontos. São dez séries de 28 pontos. Esses carimbos são históricos, não uma atualização medida hoje.
+
+| Série | País | Antes | Depois nesta passagem | Estado |
+|---|---|---|---|---|
+| `divida-publica-2025-paises` | PT | 89,7 | Sem escrita | O mandato pede 89,2; não relido nesta passagem |
+| `divida-publica-2025-paises` | EU27_2020 | 81,7 | Sem escrita | O ensaio confirma o desacordo com 81,5 na linha escalar |
+| Outras nove séries do inventário | Todos os pontos | Conservados | Sem escrita | Revisões atuais e carimbos novos não medidos |
+
+Nenhum ponto mudou. Não se executaram `--write`, exportação, construção ou conferências subsequentes. Não há commit do motor: a sua árvore está limpa e a cabeça continua `e4628c173dd4ffd155ba58ad8fa2cd74f8fe7e93`. A cabeça inicial do sítio é `0558afed2`; o commit desta passagem guarda apenas relatório e provas.
+
+### Frases, recibos, códigos e custo
+
+Não há `dist/index.html`. Nenhuma frase foi alterada nesta passagem; as frases e os 34 recibos das duas edições continuam por verificar no HTML. Os resultados CR2-b abaixo são históricos e não foram repetidos. `medidas.json` conserva essas medidas e acrescenta `continuacao_cr2c`, com os códigos e as ausências desta passagem.
+
+Códigos CR2-c: invocação inválida 2; ensaio do gerador 1. Construção, `ledger:check` e conferências: não executados. Zero corridas inteiras, capturas e gates do motor. `custo.json` discrimina as chamadas desta passagem. `tokens used`: não exposto.
+
+O passo necessário é dotar o caminho das séries por país de alojamento de respostas atuais e de revisões tipadas por geografia, conservando a história, antes de repetir o ensaio e atravessar. Essa implementação não foi feita porque o mandato manda parar nesta condição. A leitura a frio, a corrida inteira, as capturas e a aterragem continuam a cargo do lugar de direção.
+
+## Histórico anterior
+
+# Histórico CR2-b
 
 A paragem do ponto 4 foi esclarecida pelo lugar de direção. Nesta continuação, a construção única foi tentada e recusada antes de produzir `dist/`: a série `divida-publica-2025-paises` conserva 89,7 para Portugal e 81,7 para a União, contra 89,2 e 81,5 nas linhas atualizadas. O `ledger:check` confirma os mesmos dois erros S6. Não há recibos ou frases do HTML novo que se possam declarar conferidos.
 

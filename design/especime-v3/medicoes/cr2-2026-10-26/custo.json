@@ -62,5 +62,18 @@
       "passou": true,
       "prova": "O registo contém a pergunta de clarificação e chamadas executadas pelo orquestrador."
     }
+  },
+  "continuacao_cr2c": {
+    "chamadas_ferramentas": 10,
+    "chamadas_internas_exec_command": 18,
+    "criterio": "Total previsto até à inspeção final, discriminado entre invólucros exec e comandos internos.",
+    "ensaios_gerador": 1,
+    "invocacoes_invalidas": 1,
+    "conferencias": 0,
+    "construcoes": 0,
+    "corridas_inteiras": 0,
+    "capturas": 0,
+    "core_gate": 0,
+    "tokens_used": "não exposto"
   }
 }

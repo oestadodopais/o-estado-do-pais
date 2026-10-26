@@ -1,6 +1,6 @@
 {
   "gerado_por": "medir-cr2.py",
-  "estado": "CR2-b: construção recusada por desacordo da série da dívida pública",
+  "estado": "Paragem exigida pelo ponto 1 do mandato CR2-c: falta o mecanismo de revisão por país",
   "medidas": {
     "linhas_relidas": {
       "valor": 17,
@@ -530,5 +530,84 @@
     "check:explicacoes",
     "check:discussao",
     "check:cartao"
-  ]
+  ],
+  "continuacao_cr2c": {
+    "estado": "Paragem exigida pelo ponto 1 do mandato CR2-c: falta o mecanismo de revisão por país",
+    "codigo_ensaio": 1,
+    "motor": "e4628c173dd4ffd155ba58ad8fa2cd74f8fe7e93",
+    "sitio_base": "0558afed2c344a7d6a7226e36150a48db792a553",
+    "series_existentes": [
+      {
+        "id": "desemprego-de-longa-duracao-2025-paises",
+        "published_at": "2026-09-10",
+        "pontos": 28
+      },
+      {
+        "id": "divida-publica-2025-paises",
+        "published_at": "2026-04-22",
+        "pontos": 28
+      },
+      {
+        "id": "ihpc-variacao-homologa-paises",
+        "published_at": "2026-09-17",
+        "pontos": 28
+      },
+      {
+        "id": "precos-da-habitacao-2025-paises",
+        "published_at": "2026-07-02",
+        "pontos": 28
+      },
+      {
+        "id": "racio-s80-s20-2025-paises",
+        "published_at": "2026-09-17",
+        "pontos": 28
+      },
+      {
+        "id": "risco-de-pobreza-ou-exclusao-2025-paises",
+        "published_at": "2026-09-17",
+        "pontos": 28
+      },
+      {
+        "id": "sobrecarga-do-custo-da-habitacao-2025-paises",
+        "published_at": "2026-09-17",
+        "pontos": 28
+      },
+      {
+        "id": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
+        "published_at": "2026-09-17",
+        "pontos": 28
+      },
+      {
+        "id": "taxa-de-desemprego-mip-2025-paises",
+        "published_at": "2026-09-10",
+        "pontos": 28
+      },
+      {
+        "id": "taxa-de-emprego-2025-paises",
+        "published_at": "2026-09-10",
+        "pontos": 28
+      }
+    ],
+    "pontos_alterados": [],
+    "pontos_novos_verificados_na_fonte": false,
+    "frases_alteradas": [],
+    "frases_no_dist_verificadas": false,
+    "regra_bloqueante": {
+      "exportador": "publisher/export_series.py:234-247, VS6",
+      "gerador": "publisher/series_paises.py:496, corrections vazio",
+      "contrato_sitio": "ledger/series/README.md, S8"
+    },
+    "nao_corridos": [
+      "series_paises.py --write",
+      "export_series.py",
+      "build",
+      "ledger:check",
+      "conferências CR2-b",
+      "recibos no dist",
+      "frases no dist",
+      "core.gate",
+      "corrida inteira",
+      "capturas"
+    ]
+  }
 }
