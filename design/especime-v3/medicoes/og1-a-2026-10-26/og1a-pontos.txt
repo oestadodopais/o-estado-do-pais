@@ -1,0 +1,7 @@
+og1a: PONTOS antes=8.0 % depois=9.0 % diferença=1.0 turnos=27 entrada=2877421 cache=2744448 saída=19209 raciocínio=5771 contexto_médio=106571 custo_antigo=1
+og1a2: PONTOS antes=9.0 % depois=10.0 % diferença=1.0 turnos=3 entrada=420558 cache=414592 saída=1930 raciocínio=673 contexto_médio=140186 custo_antigo=7896 
+og1a3: PONTOS antes=10.0 % depois=10.0 % diferença=0.0 turnos=4 entrada=357602 cache=355584 saída=3832 raciocínio=779 contexto_médio=89400 custo_antigo=5850 
+og1a4: PONTOS antes=10.0 % depois=11.0 % diferença=1.0 turnos=3 entrada=304412 cache=301824 saída=930 raciocínio=172 contexto_médio=101470 custo_antigo=3518 
+og1a5: PONTOS antes=11.0 % depois=11.0 % diferença=0.0 turnos=19 entrada=1456017 cache=1373568 saída=10403 raciocínio=2051 contexto_médio=76632 custo_antigo=
+og1a6: PONTOS antes=11.0 % depois=15.0 % diferença=4.0 turnos=4 entrada=406487 cache=404864 saída=1034 raciocínio=134 contexto_médio=101621 custo_antigo=2657
+og1a7: PONTOS antes=15.0 % depois=17.0 % diferença=2.0 turnos=74 entrada=8619224 cache=8488064 saída=33813 raciocínio=11981 contexto_médio=116476 custo_antig
