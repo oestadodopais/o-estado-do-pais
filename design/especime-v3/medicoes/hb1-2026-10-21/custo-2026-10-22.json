@@ -176,17 +176,38 @@
    "chamadas": 20,
    "minutos": 28,
    "nota": "lido da notificação da ferramenta; a leitura curta deste diff junta-se à de sexta-feira (HB1-d)"
+  },
+  {
+   "nome": "HB1-d, Entrega A (os corpos do 2.º trimestre e de setembro no motor, a secção 11, a travessia, a publicação a 26.10.2026, os contadores)",
+   "modelo": "Claude Opus 5.5",
+   "esforco": "high",
+   "simbolos": null,
+   "chamadas": 60,
+   "minutos": 9,
+   "nota": "chamadas contadas pelo construtor no seu registo; os símbolos não foram lidos"
+  },
+  {
+   "nome": "HB1-d, Entrega B (a fusão de main, a cópia das séries no motor, o inventário, as razões e a abertura reescritas pelo lugar de direção, a língua das edições, os rótulos, quatro corridas pelo conferir-tudo, as capturas e o relatório)",
+   "modelo": "Claude Opus 5.5",
+   "esforco": "high",
+   "simbolos": null,
+   "chamadas": 89,
+   "minutos": 77,
+   "nota": "quatro passagens (cerca de 19, 22, 6 e 42 chamadas), das 14:18 às 15:35 UTC com as esperas pelas decisões; os símbolos não foram lidos"
   }
  ],
  "corridas_de_conferencias": {
-  "verify_inteiro_pelo_guiao": 1,
-  "build_inteiro": null,
-  "nota": "as corridas das passagens de 20 e 21.10 estão nos seus relatórios; a corrida inteira pelo conferir-tudo.sh foi uma, na HB1-f (51 passos, 2 076 segundos)"
+  "verify_inteiro_pelo_guiao": 2,
+  "build_inteiro": 4,
+  "nota": "as corridas das passagens de 20 e 21.10 estão nos seus relatórios; a corrida inteira pelo conferir-tudo.sh foi uma, na HB1-f (51 passos, 2 076 segundos); na HB1-d, quatro corridas pelo conferir-tudo.sh --build: três pararam no build (a guarda das séries depois da fusão do painel, o check:voz, o check:lingua) e a quarta correu os 51 passos (2 016 s, um vermelho, check:rotulos, corrigido pela declaração e repetido sozinho a 0)"
  },
  "core_gate": {
   "corridas": null,
   "ultima": "7635564, PASS, 08:15 a 08:29 UTC de 22.10"
  },
- "capturas": null,
+ "capturas": {
+  "hb1d": 32,
+  "nota": "20 capturas do estudo e do documento nas duas edições e nas cinco larguras (120 recortes) e 12 a 390 px (os quatro recibos, a série com o toque e a primeira página, nas duas edições)"
+ },
  "nota": "A escada da §1.202 não se aplica a este bloco, que começou antes dela; serve de linha de base: os estudos ficam mais altos e dizem quanto."
 }
