@@ -224,7 +224,7 @@ def passo_do_published_at(args, reg: dict, reler, pasta: Path) -> int:
         conferir_published_at(antes, depois, d["dia"], hoje)
         amanha = (datetime.strptime(hoje, "%Y-%m-%d") + timedelta(days=1)).date().isoformat()
         for nome, estraga, razao in (
-            ("o dia do acesso no lugar do do carimbo", lambda c: c.update(published_at=c["access_date"]), "não é o dia do carimbo"),
+            ("o dia do acesso no lugar do dia do carimbo", lambda c: c.update(published_at=c["access_date"] if str(c["access_date"]) != d["dia"] else (datetime.strptime(d["dia"], "%Y-%m-%d") - timedelta(days=1)).date().isoformat()), "não é o dia do carimbo"),
             ("a forma da casa no lugar de AAAA-MM-DD", lambda c: c.update(published_at=data_pt(d["dia"])), "AAAA-MM-DD"),
             ("um dia que não existe", lambda c: c.update(published_at="2026-02-31"), "não é um dia que existe"),
             ("um dia depois de hoje", lambda c: c.update(published_at=amanha), "posterior ao dia de hoje"),

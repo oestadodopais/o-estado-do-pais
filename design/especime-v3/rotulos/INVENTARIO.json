@@ -1263,7 +1263,8 @@
     "in #": 1
    },
    "regua": {
-    "#:# (provisional data)European Union:# (provisional data)within the Commission’s reference value (below # %)": 1
+    "#:# (provisional data)European Union:# (provisional data)within the Commission’s reference value (below # %)": 0,
+    "#:#European Union:# (provisional data)within the Commission’s reference value (below # %)": 1
    },
    "unidade": {
     "% of GDP": 1
@@ -1283,7 +1284,8 @@
     "in #": 1
    },
    "regua": {
-    "#:# (provisional data)European Union:# (provisional data)within the Commission’s reference value (below # %)": 1
+    "#:# (provisional data)European Union:# (provisional data)within the Commission’s reference value (below # %)": 0,
+    "#:#European Union:# (provisional data)within the Commission’s reference value (below # %)": 1
    },
    "unidade": {
     "% of GDP": 1
@@ -5126,7 +5128,8 @@
     "em #": 1
    },
    "regua": {
-    "#:# (dado provisório)União Europeia:# (dado provisório)dentro do valor de referência da Comissão (abaixo de # %)": 1
+    "#:# (dado provisório)União Europeia:# (dado provisório)dentro do valor de referência da Comissão (abaixo de # %)": 0,
+    "#:#União Europeia:# (dado provisório)dentro do valor de referência da Comissão (abaixo de # %)": 1
    },
    "unidade": {
     "% do PIB": 1
@@ -5146,7 +5149,8 @@
     "em #": 1
    },
    "regua": {
-    "#:# (dado provisório)União Europeia:# (dado provisório)dentro do valor de referência da Comissão (abaixo de # %)": 1
+    "#:# (dado provisório)União Europeia:# (dado provisório)dentro do valor de referência da Comissão (abaixo de # %)": 0,
+    "#:#União Europeia:# (dado provisório)dentro do valor de referência da Comissão (abaixo de # %)": 1
    },
    "unidade": {
     "% do PIB": 1
@@ -9192,5 +9196,14 @@
     "Percentagem da população dos # aos # anos · #": 1
    }
   }
+ },
+ "revisao_cr2h": {
+  "razao": "CR2-h, 26.10.2026: a nota de provisório do valor de Portugal de 2024 saiu com a revisão do Eurostat de 17.10.2026",
+  "chaves": [
+   "nacional|pt|divida-das-empresas-2025",
+   "nacional|pt|divida-das-familias-2025",
+   "nacional|en|divida-das-empresas-2025",
+   "nacional|en|divida-das-familias-2025"
+  ]
  }
 }

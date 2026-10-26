@@ -1,3 +1,4 @@
+// não se usa: reescrevia o dist/ (CR2-h, 26.10.2026)
 /** Diagnóstico das recusas da voz e K17, depois da correção da declaração. */
 import fs from 'node:fs';
 import path from 'node:path';

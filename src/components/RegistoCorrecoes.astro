@@ -204,7 +204,7 @@ const palavraRevisoes =
                     a ordem ouve-se. */}
                 <p class="registo-mudanca-o-que">
                   {e.nome?.fonte && (
-                    <span class="registo-mudanca-nome" data-nome={e.nome.fonte} data-de-linha={e.claim}>
+                    <span class="registo-mudanca-nome" data-nome={e.nome.fonte} data-de-linha={e.claim} data-de-familia={e.nome.fonte === 'familia' ? e.nome.familia : undefined}>
                       <TextoDoNome id={e.claim} texto={e.nome.texto} lang={lang} />
                     </span>
                   )}

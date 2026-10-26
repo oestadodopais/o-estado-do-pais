@@ -1,3 +1,4 @@
+// não se usa: reescrevia o dist/ (CR2-h, 26.10.2026)
 /** Corrige só a origem declarada dos nomes no HTML já construído.
  * A construção única revelou a marca da medida principal nos ids das irmãs.
  * O texto já era o nome correto; a declaração passou a ter a entrada da irmã.

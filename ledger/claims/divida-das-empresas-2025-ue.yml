@@ -50,16 +50,16 @@ corrections:
   kind: atualizacao
   old_value: 70,0
   new_value: 70,2
-  reason: "O Eurostat reviu o valor de 70,0 para 70,3 na atualização do conjunto de 17.10.2026 (o carimbo passou de 09.10.2026 a 17.10.2026) e outra vez para 70,2 na de 24.10.2026: a reconferência semanal de 19.10.2026 viu a primeira revisão e a de 26.10.2026 a segunda; a linha foi relida na fonte a 26.10.2026 (a resposta alojada com recibo); o sítio publicava 70,0."
-  reason_en: "Eurostat revised the value from 70.0 to 70.3 in the dataset update of 17.10.2026 (the dataset stamp moved from 09.10.2026 to 17.10.2026) and again to 70.2 in the one of 24.10.2026: the weekly check of 19.10.2026 caught the first revision and the one of 26.10.2026 the second; the row was re-read at the source on 26.10.2026 (the hosted response with its receipt); the site published 70.0."
+  reason: "O Eurostat reviu o valor de 70,0 para 70,3 na atualização do conjunto de dados de 17.10.2026 (a versão anterior era de 09.10.2026) e outra vez para 70,2 na de 24.10.2026. A comparação semanal com a fonte de 19.10.2026 encontrou a primeira revisão e a de 26.10.2026 a segunda; este projeto releu a fonte a 26.10.2026 e até aí publicava 70,0."
+  reason_en: "Eurostat revised the value from 70.0 to 70.3 in the dataset update of 17.10.2026 (the previous version was of 09.10.2026) and again to 70.2 in the one of 24.10.2026. The weekly comparison with the source of 19.10.2026 found the first revision and the one of 26.10.2026 the second; this project re-read the source on 26.10.2026 and until then published 70.0."
 - date: '2026-10-26'
   kind: proveniencia
   field: access_date
   old_value: '2026-09-15'
   new_value: '2026-10-26'
-  reason: O valor novo foi lido a 26.10.2026, o dia da releitura pelo cliente da casa; a leitura anterior, de 15.09.2026,
+  reason: O valor novo foi lido a 26.10.2026, o dia em que este projeto releu a fonte; a leitura anterior, de 15.09.2026,
     é a do valor 70,0.
-  reason_en: The new value was read on 26.10.2026, the day of the re-read by the house client; the earlier reading, of
+  reason_en: The new value was read on 26.10.2026, the day this project re-read the source; the earlier reading, of
     15.09.2026, is that of the value 70,0.
 - date: '2026-10-26'
   kind: proveniencia
