@@ -1,6 +1,6 @@
 {
  "o_que": "O inventário declarado dos rótulos dos cartões de medida (bloco R2, 03.10.2026): por família, edição e chave, as formas distintas de cada campo e quantas vezes cada uma se rende, com os algarismos do período, do estado e da faixa apagados. Escrito por `node scripts/inventario-rotulos.mjs --escrever` sobre uma construção; a régua do `verify` compara o nome, a unidade e a dobra de cada construção com estas formas.",
- "cabeca": "3b81746e0674496d7c8fda81ed52fb42c3921312",
+ "cabeca": "0b7e58cd2029963316ec74569f5a4f97fd2f3104",
  "contas": {
   "paginas": 9692,
   "paginas_com_cartoes": 706,
@@ -1023,7 +1023,7 @@
     "Median price in Lisbon relative to the country": 1
    },
    "periodo": {
-    "in the #st quarter of #": 1
+    "in the #nd quarter of #": 1
    },
    "unidade": {
     "times": 1
@@ -3172,7 +3172,7 @@
     "Implicit interest rate on housing loans": 1
    },
    "periodo": {
-    "in August #": 1
+    "in September #": 1
    },
    "unidade": {
     "% interest": 1
@@ -3183,7 +3183,7 @@
     "Median sale price in Lisbon": 1
    },
    "periodo": {
-    "in the #st quarter of #": 1
+    "in the #nd quarter of #": 1
    },
    "unidade": {
     "euros per square metre": 1
@@ -3194,7 +3194,7 @@
     "Median sale price in Portugal": 1
    },
    "periodo": {
-    "in the #st quarter of #": 1
+    "in the #nd quarter of #": 1
    },
    "unidade": {
     "euros per square metre": 1
@@ -3205,7 +3205,7 @@
     "Median sale price in Porto": 1
    },
    "periodo": {
-    "in the #st quarter of #": 1
+    "in the #nd quarter of #": 1
    },
    "unidade": {
     "euros per square metre": 1
@@ -7035,7 +7035,7 @@
     "Taxa de juro implícita no crédito à habitação": 1
    },
    "periodo": {
-    "em agosto de #": 1
+    "em setembro de #": 1
    },
    "unidade": {
     "% de juro": 1
