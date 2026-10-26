@@ -16,7 +16,7 @@ periodicidade: "mensal"
 
 # Proveniência.
 source: "Eurostat"
-definition_sources: [{"publisher": "IGCP", "url": "https://www.igcp.pt/pt/glossario", "receipt": {"motor": "indicators/out/jd1b-2026-10-07/004-igcp-glossario.html", "hora": "2026-10-07T09:49:11Z", "cliente": "core.http.HttpClient.condicional", "sha256": "fef4529244ff3f7af994b2a15d5b677be33250f1175749220729739085213b0c", "campo": "texto da entrada nomeada, extraído por HTMLParser", "extracao": {"ficheiro": "indicators/out/jd1b-2026-10-07/004-igcp-glossario.txt", "sha256": "491b2af65ed1ccbfd5d8c0d9e9aca88ca82ef27c38e76ebd806203dd0f625980", "ferramenta": "Python html.parser.HTMLParser"}}}]
+definition_sources: [{"publisher": "IGCP", "receipt": {"campo": "texto da entrada nomeada, extraído por HTMLParser", "cliente": "core.http.HttpClient.condicional", "extracao": {"ferramenta": "Python html.parser.HTMLParser", "ficheiro": "indicators/out/jd1b-2026-10-07/004-igcp-glossario.txt", "sha256": "491b2af65ed1ccbfd5d8c0d9e9aca88ca82ef27c38e76ebd806203dd0f625980"}, "hora": "2026-10-07T09:49:11Z", "motor": "indicators/out/jd1b-2026-10-07/004-igcp-glossario.html", "sha256": "fef4529244ff3f7af994b2a15d5b677be33250f1175749220729739085213b0c"}, "url": "https://www.igcp.pt/pt/glossario"}]
 document:
   title: "EMU convergence criterion series - monthly data"
   edition: "irt_lt_mcby_m, freq=M, int_rt=MCBY, geo=PT"

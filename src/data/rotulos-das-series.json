@@ -110,10 +110,10 @@
       ],
       "documento": "General government gross debt (EDP concept), consolidated - annual data",
       "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsgo10?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&unit=PC_GDP",
-      "lido_em": "2026-09-29T14:11:47Z",
-      "cliente": "core.http.HttpClient.condicional",
-      "sha256": "4d8d1f262722183533cb1b2687b75b3860c5894462a95c3eb04c15149923213c",
-      "motor": "content/13 Dominios/source/ue1/029-eurostat-divida-publica-2025-paises.json"
+      "lido_em": "2026-10-26T16:30:21Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "ba616d618f4127157b1d390cbe341820963a6ba561759dfd8e9f79f2c530f25c",
+      "motor": "content/13 Dominios/source/corredor-series-paises/2026-10-26/ba616d618f4127157b1d390cbe341820963a6ba561759dfd8e9f79f2c530f25c/002-divida-publica-2025-paises.json"
     },
     {
       "serie": "divida-publica-2025-paises",
@@ -129,10 +129,10 @@
       ],
       "documento": "General government gross debt (EDP concept), consolidated - annual data",
       "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsgo10?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&unit=PC_GDP",
-      "lido_em": "2026-09-29T14:11:47Z",
-      "cliente": "core.http.HttpClient.condicional",
-      "sha256": "4d8d1f262722183533cb1b2687b75b3860c5894462a95c3eb04c15149923213c",
-      "motor": "content/13 Dominios/source/ue1/029-eurostat-divida-publica-2025-paises.json"
+      "lido_em": "2026-10-26T16:30:21Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "ba616d618f4127157b1d390cbe341820963a6ba561759dfd8e9f79f2c530f25c",
+      "motor": "content/13 Dominios/source/corredor-series-paises/2026-10-26/ba616d618f4127157b1d390cbe341820963a6ba561759dfd8e9f79f2c530f25c/002-divida-publica-2025-paises.json"
     },
     {
       "serie": "divida-publica-2025-paises",
@@ -148,10 +148,10 @@
       ],
       "documento": "General government gross debt (EDP concept), consolidated - annual data",
       "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsgo10?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&unit=PC_GDP",
-      "lido_em": "2026-09-29T14:11:47Z",
-      "cliente": "core.http.HttpClient.condicional",
-      "sha256": "4d8d1f262722183533cb1b2687b75b3860c5894462a95c3eb04c15149923213c",
-      "motor": "content/13 Dominios/source/ue1/029-eurostat-divida-publica-2025-paises.json"
+      "lido_em": "2026-10-26T16:30:21Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "ba616d618f4127157b1d390cbe341820963a6ba561759dfd8e9f79f2c530f25c",
+      "motor": "content/13 Dominios/source/corredor-series-paises/2026-10-26/ba616d618f4127157b1d390cbe341820963a6ba561759dfd8e9f79f2c530f25c/002-divida-publica-2025-paises.json"
     },
     {
       "serie": "divida-publica-2025-paises",
@@ -167,10 +167,10 @@
       ],
       "documento": "General government gross debt (EDP concept), consolidated - annual data",
       "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsgo10?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&unit=PC_GDP",
-      "lido_em": "2026-09-29T14:11:47Z",
-      "cliente": "core.http.HttpClient.condicional",
-      "sha256": "4d8d1f262722183533cb1b2687b75b3860c5894462a95c3eb04c15149923213c",
-      "motor": "content/13 Dominios/source/ue1/029-eurostat-divida-publica-2025-paises.json"
+      "lido_em": "2026-10-26T16:30:21Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "ba616d618f4127157b1d390cbe341820963a6ba561759dfd8e9f79f2c530f25c",
+      "motor": "content/13 Dominios/source/corredor-series-paises/2026-10-26/ba616d618f4127157b1d390cbe341820963a6ba561759dfd8e9f79f2c530f25c/002-divida-publica-2025-paises.json"
     },
     {
       "serie": "ihpc-variacao-homologa-paises",
@@ -243,10 +243,10 @@
       ],
       "documento": "House price index, nominal - annual data",
       "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsho20?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&unit=RCH_A_AVG",
-      "lido_em": "2026-09-29T14:11:47Z",
-      "cliente": "core.http.HttpClient.condicional",
-      "sha256": "725fe353012ab916ee8e1b665adadc23650d3810b6beb83dd85d1cf575d062c8",
-      "motor": "content/13 Dominios/source/ue1/031-eurostat-precos-da-habitacao-2025-paises.json"
+      "lido_em": "2026-10-26T16:30:24Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "2fb9ebf4998261155e60e0fb5a87d4c722897c1fd31fb170a89646d86619ced7",
+      "motor": "content/13 Dominios/source/corredor-series-paises/2026-10-26/2fb9ebf4998261155e60e0fb5a87d4c722897c1fd31fb170a89646d86619ced7/004-precos-da-habitacao-2025-paises.json"
     },
     {
       "serie": "precos-da-habitacao-2025-paises",
@@ -262,10 +262,10 @@
       ],
       "documento": "House price index, nominal - annual data",
       "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsho20?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&unit=RCH_A_AVG",
-      "lido_em": "2026-09-29T14:11:47Z",
-      "cliente": "core.http.HttpClient.condicional",
-      "sha256": "725fe353012ab916ee8e1b665adadc23650d3810b6beb83dd85d1cf575d062c8",
-      "motor": "content/13 Dominios/source/ue1/031-eurostat-precos-da-habitacao-2025-paises.json"
+      "lido_em": "2026-10-26T16:30:24Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "2fb9ebf4998261155e60e0fb5a87d4c722897c1fd31fb170a89646d86619ced7",
+      "motor": "content/13 Dominios/source/corredor-series-paises/2026-10-26/2fb9ebf4998261155e60e0fb5a87d4c722897c1fd31fb170a89646d86619ced7/004-precos-da-habitacao-2025-paises.json"
     },
     {
       "serie": "racio-s80-s20-2025-paises",
@@ -281,10 +281,10 @@
       ],
       "documento": "Income quintile share ratio (S80/S20) by sex",
       "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tessi180?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&sex=T",
-      "lido_em": "2026-09-29T14:11:47Z",
-      "cliente": "core.http.HttpClient.condicional",
-      "sha256": "3d829dff83723da51d9cfda3781c1d5fc291964fef9575e8cb9c2988ff0425dc",
-      "motor": "content/13 Dominios/source/ue1/032-eurostat-racio-s80-s20-2025-paises.json"
+      "lido_em": "2026-10-26T16:30:27Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "7d9ee55a7539f240e13fb6aff1e69923effcf0181d9957c185aa206d3acb90b7",
+      "motor": "content/13 Dominios/source/corredor-series-paises/2026-10-26/7d9ee55a7539f240e13fb6aff1e69923effcf0181d9957c185aa206d3acb90b7/005-racio-s80-s20-2025-paises.json"
     },
     {
       "serie": "racio-s80-s20-2025-paises",
@@ -300,10 +300,10 @@
       ],
       "documento": "Income quintile share ratio (S80/S20) by sex",
       "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tessi180?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&sex=T",
-      "lido_em": "2026-09-29T14:11:47Z",
-      "cliente": "core.http.HttpClient.condicional",
-      "sha256": "3d829dff83723da51d9cfda3781c1d5fc291964fef9575e8cb9c2988ff0425dc",
-      "motor": "content/13 Dominios/source/ue1/032-eurostat-racio-s80-s20-2025-paises.json"
+      "lido_em": "2026-10-26T16:30:27Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "7d9ee55a7539f240e13fb6aff1e69923effcf0181d9957c185aa206d3acb90b7",
+      "motor": "content/13 Dominios/source/corredor-series-paises/2026-10-26/7d9ee55a7539f240e13fb6aff1e69923effcf0181d9957c185aa206d3acb90b7/005-racio-s80-s20-2025-paises.json"
     },
     {
       "serie": "racio-s80-s20-2025-paises",
@@ -319,10 +319,10 @@
       ],
       "documento": "Income quintile share ratio (S80/S20) by sex",
       "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tessi180?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&sex=T",
-      "lido_em": "2026-09-29T14:11:47Z",
-      "cliente": "core.http.HttpClient.condicional",
-      "sha256": "3d829dff83723da51d9cfda3781c1d5fc291964fef9575e8cb9c2988ff0425dc",
-      "motor": "content/13 Dominios/source/ue1/032-eurostat-racio-s80-s20-2025-paises.json"
+      "lido_em": "2026-10-26T16:30:27Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "7d9ee55a7539f240e13fb6aff1e69923effcf0181d9957c185aa206d3acb90b7",
+      "motor": "content/13 Dominios/source/corredor-series-paises/2026-10-26/7d9ee55a7539f240e13fb6aff1e69923effcf0181d9957c185aa206d3acb90b7/005-racio-s80-s20-2025-paises.json"
     },
     {
       "serie": "racio-s80-s20-2025-paises",
@@ -338,10 +338,10 @@
       ],
       "documento": "Income quintile share ratio (S80/S20) by sex",
       "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tessi180?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&sex=T",
-      "lido_em": "2026-09-29T14:11:47Z",
-      "cliente": "core.http.HttpClient.condicional",
-      "sha256": "3d829dff83723da51d9cfda3781c1d5fc291964fef9575e8cb9c2988ff0425dc",
-      "motor": "content/13 Dominios/source/ue1/032-eurostat-racio-s80-s20-2025-paises.json"
+      "lido_em": "2026-10-26T16:30:27Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "7d9ee55a7539f240e13fb6aff1e69923effcf0181d9957c185aa206d3acb90b7",
+      "motor": "content/13 Dominios/source/corredor-series-paises/2026-10-26/7d9ee55a7539f240e13fb6aff1e69923effcf0181d9957c185aa206d3acb90b7/005-racio-s80-s20-2025-paises.json"
     },
     {
       "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
@@ -357,10 +357,10 @@
       ],
       "documento": "People at risk of poverty or social exclusion",
       "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipslc10?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&unit=PC",
-      "lido_em": "2026-09-29T14:11:47Z",
-      "cliente": "core.http.HttpClient.condicional",
-      "sha256": "8317a25579e348240e8f0064abf3fa96a7a2ae2ee5432474c1da73552ad7eb3e",
-      "motor": "content/13 Dominios/source/ue1/033-eurostat-risco-de-pobreza-ou-exclusao-2025-paises.json"
+      "lido_em": "2026-10-26T16:30:28Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "803d3abb3ec469800ea76e7d9b25a55e6303b66967cfc0de19ece48db1858e9a",
+      "motor": "content/13 Dominios/source/corredor-series-paises/2026-10-26/803d3abb3ec469800ea76e7d9b25a55e6303b66967cfc0de19ece48db1858e9a/006-risco-de-pobreza-ou-exclusao-2025-paises.json"
     },
     {
       "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
@@ -376,10 +376,10 @@
       ],
       "documento": "People at risk of poverty or social exclusion",
       "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipslc10?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&unit=PC",
-      "lido_em": "2026-09-29T14:11:47Z",
-      "cliente": "core.http.HttpClient.condicional",
-      "sha256": "8317a25579e348240e8f0064abf3fa96a7a2ae2ee5432474c1da73552ad7eb3e",
-      "motor": "content/13 Dominios/source/ue1/033-eurostat-risco-de-pobreza-ou-exclusao-2025-paises.json"
+      "lido_em": "2026-10-26T16:30:28Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "803d3abb3ec469800ea76e7d9b25a55e6303b66967cfc0de19ece48db1858e9a",
+      "motor": "content/13 Dominios/source/corredor-series-paises/2026-10-26/803d3abb3ec469800ea76e7d9b25a55e6303b66967cfc0de19ece48db1858e9a/006-risco-de-pobreza-ou-exclusao-2025-paises.json"
     },
     {
       "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
@@ -395,10 +395,10 @@
       ],
       "documento": "People at risk of poverty or social exclusion",
       "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipslc10?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&unit=PC",
-      "lido_em": "2026-09-29T14:11:47Z",
-      "cliente": "core.http.HttpClient.condicional",
-      "sha256": "8317a25579e348240e8f0064abf3fa96a7a2ae2ee5432474c1da73552ad7eb3e",
-      "motor": "content/13 Dominios/source/ue1/033-eurostat-risco-de-pobreza-ou-exclusao-2025-paises.json"
+      "lido_em": "2026-10-26T16:30:28Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "803d3abb3ec469800ea76e7d9b25a55e6303b66967cfc0de19ece48db1858e9a",
+      "motor": "content/13 Dominios/source/corredor-series-paises/2026-10-26/803d3abb3ec469800ea76e7d9b25a55e6303b66967cfc0de19ece48db1858e9a/006-risco-de-pobreza-ou-exclusao-2025-paises.json"
     },
     {
       "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
@@ -414,10 +414,10 @@
       ],
       "documento": "People at risk of poverty or social exclusion",
       "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipslc10?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&unit=PC",
-      "lido_em": "2026-09-29T14:11:47Z",
-      "cliente": "core.http.HttpClient.condicional",
-      "sha256": "8317a25579e348240e8f0064abf3fa96a7a2ae2ee5432474c1da73552ad7eb3e",
-      "motor": "content/13 Dominios/source/ue1/033-eurostat-risco-de-pobreza-ou-exclusao-2025-paises.json"
+      "lido_em": "2026-10-26T16:30:28Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "803d3abb3ec469800ea76e7d9b25a55e6303b66967cfc0de19ece48db1858e9a",
+      "motor": "content/13 Dominios/source/corredor-series-paises/2026-10-26/803d3abb3ec469800ea76e7d9b25a55e6303b66967cfc0de19ece48db1858e9a/006-risco-de-pobreza-ou-exclusao-2025-paises.json"
     },
     {
       "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
@@ -433,10 +433,10 @@
       ],
       "documento": "Housing cost overburden rate",
       "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm140?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&sex=T",
-      "lido_em": "2026-09-29T14:11:48Z",
-      "cliente": "core.http.HttpClient.condicional",
-      "sha256": "5848b25b94a6f530caad906c496a9e853690e5f22c3876bff5aa072ae159bfa0",
-      "motor": "content/13 Dominios/source/ue1/034-eurostat-sobrecarga-do-custo-da-habitacao-2025-paises.json"
+      "lido_em": "2026-10-26T16:30:30Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "f0612b1353f1c6dd8bfe3bd4a0a7623d283fbec6d53af6580a8d937b3fee05cc",
+      "motor": "content/13 Dominios/source/corredor-series-paises/2026-10-26/f0612b1353f1c6dd8bfe3bd4a0a7623d283fbec6d53af6580a8d937b3fee05cc/007-sobrecarga-do-custo-da-habitacao-2025-paises.json"
     },
     {
       "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
@@ -452,10 +452,10 @@
       ],
       "documento": "Housing cost overburden rate",
       "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm140?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&sex=T",
-      "lido_em": "2026-09-29T14:11:48Z",
-      "cliente": "core.http.HttpClient.condicional",
-      "sha256": "5848b25b94a6f530caad906c496a9e853690e5f22c3876bff5aa072ae159bfa0",
-      "motor": "content/13 Dominios/source/ue1/034-eurostat-sobrecarga-do-custo-da-habitacao-2025-paises.json"
+      "lido_em": "2026-10-26T16:30:30Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "f0612b1353f1c6dd8bfe3bd4a0a7623d283fbec6d53af6580a8d937b3fee05cc",
+      "motor": "content/13 Dominios/source/corredor-series-paises/2026-10-26/f0612b1353f1c6dd8bfe3bd4a0a7623d283fbec6d53af6580a8d937b3fee05cc/007-sobrecarga-do-custo-da-habitacao-2025-paises.json"
     },
     {
       "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
@@ -471,10 +471,10 @@
       ],
       "documento": "Housing cost overburden rate",
       "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm140?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&sex=T",
-      "lido_em": "2026-09-29T14:11:48Z",
-      "cliente": "core.http.HttpClient.condicional",
-      "sha256": "5848b25b94a6f530caad906c496a9e853690e5f22c3876bff5aa072ae159bfa0",
-      "motor": "content/13 Dominios/source/ue1/034-eurostat-sobrecarga-do-custo-da-habitacao-2025-paises.json"
+      "lido_em": "2026-10-26T16:30:30Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "f0612b1353f1c6dd8bfe3bd4a0a7623d283fbec6d53af6580a8d937b3fee05cc",
+      "motor": "content/13 Dominios/source/corredor-series-paises/2026-10-26/f0612b1353f1c6dd8bfe3bd4a0a7623d283fbec6d53af6580a8d937b3fee05cc/007-sobrecarga-do-custo-da-habitacao-2025-paises.json"
     },
     {
       "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
@@ -490,10 +490,10 @@
       ],
       "documento": "Housing cost overburden rate",
       "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm140?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&sex=T",
-      "lido_em": "2026-09-29T14:11:48Z",
-      "cliente": "core.http.HttpClient.condicional",
-      "sha256": "5848b25b94a6f530caad906c496a9e853690e5f22c3876bff5aa072ae159bfa0",
-      "motor": "content/13 Dominios/source/ue1/034-eurostat-sobrecarga-do-custo-da-habitacao-2025-paises.json"
+      "lido_em": "2026-10-26T16:30:30Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "f0612b1353f1c6dd8bfe3bd4a0a7623d283fbec6d53af6580a8d937b3fee05cc",
+      "motor": "content/13 Dominios/source/corredor-series-paises/2026-10-26/f0612b1353f1c6dd8bfe3bd4a0a7623d283fbec6d53af6580a8d937b3fee05cc/007-sobrecarga-do-custo-da-habitacao-2025-paises.json"
     },
     {
       "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
@@ -509,10 +509,10 @@
       ],
       "documento": "Housing cost overburden rate",
       "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm140?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&sex=T",
-      "lido_em": "2026-09-29T14:11:48Z",
-      "cliente": "core.http.HttpClient.condicional",
-      "sha256": "5848b25b94a6f530caad906c496a9e853690e5f22c3876bff5aa072ae159bfa0",
-      "motor": "content/13 Dominios/source/ue1/034-eurostat-sobrecarga-do-custo-da-habitacao-2025-paises.json"
+      "lido_em": "2026-10-26T16:30:30Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "f0612b1353f1c6dd8bfe3bd4a0a7623d283fbec6d53af6580a8d937b3fee05cc",
+      "motor": "content/13 Dominios/source/corredor-series-paises/2026-10-26/f0612b1353f1c6dd8bfe3bd4a0a7623d283fbec6d53af6580a8d937b3fee05cc/007-sobrecarga-do-custo-da-habitacao-2025-paises.json"
     },
     {
       "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
@@ -528,10 +528,10 @@
       ],
       "documento": "Housing cost overburden rate by tenure status - EU-SILC survey",
       "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tessi164?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020",
-      "lido_em": "2026-09-29T14:11:48Z",
-      "cliente": "core.http.HttpClient.condicional",
-      "sha256": "8e482910fe1af17086a3d409ba8aea884fd8c1d1d0e3ac2da4e0c0facc16fb0b",
-      "motor": "content/13 Dominios/source/ue1/035-eurostat-sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises.json"
+      "lido_em": "2026-10-26T16:30:33Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "0d9b29aa8751fc2afc4388978c9ca132dd708d64ace6d5fe96836732d7abc98c",
+      "motor": "content/13 Dominios/source/corredor-series-paises/2026-10-26/0d9b29aa8751fc2afc4388978c9ca132dd708d64ace6d5fe96836732d7abc98c/008-sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises.json"
     },
     {
       "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
@@ -547,10 +547,10 @@
       ],
       "documento": "Housing cost overburden rate by tenure status - EU-SILC survey",
       "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tessi164?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020",
-      "lido_em": "2026-09-29T14:11:48Z",
-      "cliente": "core.http.HttpClient.condicional",
-      "sha256": "8e482910fe1af17086a3d409ba8aea884fd8c1d1d0e3ac2da4e0c0facc16fb0b",
-      "motor": "content/13 Dominios/source/ue1/035-eurostat-sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises.json"
+      "lido_em": "2026-10-26T16:30:33Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "0d9b29aa8751fc2afc4388978c9ca132dd708d64ace6d5fe96836732d7abc98c",
+      "motor": "content/13 Dominios/source/corredor-series-paises/2026-10-26/0d9b29aa8751fc2afc4388978c9ca132dd708d64ace6d5fe96836732d7abc98c/008-sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises.json"
     },
     {
       "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
@@ -566,10 +566,10 @@
       ],
       "documento": "Housing cost overburden rate by tenure status - EU-SILC survey",
       "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tessi164?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020",
-      "lido_em": "2026-09-29T14:11:48Z",
-      "cliente": "core.http.HttpClient.condicional",
-      "sha256": "8e482910fe1af17086a3d409ba8aea884fd8c1d1d0e3ac2da4e0c0facc16fb0b",
-      "motor": "content/13 Dominios/source/ue1/035-eurostat-sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises.json"
+      "lido_em": "2026-10-26T16:30:33Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "0d9b29aa8751fc2afc4388978c9ca132dd708d64ace6d5fe96836732d7abc98c",
+      "motor": "content/13 Dominios/source/corredor-series-paises/2026-10-26/0d9b29aa8751fc2afc4388978c9ca132dd708d64ace6d5fe96836732d7abc98c/008-sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises.json"
     },
     {
       "serie": "taxa-de-desemprego-mip-2025-paises",

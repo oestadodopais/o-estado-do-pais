@@ -1,0 +1,206 @@
+{
+  "_": "Escrito por scripts/aplicar-releituras.py. Não se edita à mão.",
+  "cabeca_presa": "442b284e229408018e8c97c59dadd285a526bf3c",
+  "releitura_do_motor": "indicators/out/releituras/2026-10-26/releitura.json",
+  "releitura_quando": "2026-10-26T14:22:04+00:00",
+  "releitura_cabeca_do_motor": "b34a675dddf5c7d25159bb5b0bd858eb7d01cbe7",
+  "linhas": [
+    {
+      "id": "divida-publica-2025",
+      "antes_sha256": "d1b16fd8ee213e49163cb524c4fb02fd52613a42d31df8b8a7f876bfb4f60908",
+      "depois_sha256": "7ec5e458d2695f08b8927e82bea7795833724b191cc114d5dfa3ca507a126634",
+      "valor_antigo": "89,7",
+      "valor_novo": "89,2",
+      "acesso_antigo": "2026-08-12",
+      "acesso_novo": "2026-10-26",
+      "bandeira_antiga": "",
+      "bandeira_nova": "",
+      "carimbo_anterior": "2026-04-22T11:00:00+0200",
+      "carimbo_novo": "2026-10-21T11:00:00+0200",
+      "entradas_novas": [
+        {
+          "date": "2026-10-26",
+          "kind": "atualizacao",
+          "old_value": "89,7",
+          "new_value": "89,2",
+          "reason": "O Eurostat reviu o valor de Portugal a 21.10.2026 (o carimbo do conjunto passou de 22.04.2026 a 21.10.2026); a reconferência semanal de 26.10.2026 viu a revisão.",
+          "reason_en": "Eurostat revised Portugal's value on 21.10.2026 (the dataset stamp moved from 22.04.2026 to 21.10.2026); the weekly check of 26.10.2026 caught the revision."
+        },
+        {
+          "date": "2026-10-26",
+          "kind": "proveniencia",
+          "field": "access_date",
+          "old_value": "2026-08-12",
+          "new_value": "2026-10-26",
+          "reason": "O valor novo foi lido a 26.10.2026, no dia da reconferência que viu a revisão; a leitura anterior, de 12.08.2026, é a do valor 89,7.",
+          "reason_en": "The new value was read on 26.10.2026, the day of the check that caught the revision; the earlier reading, of 12.08.2026, is that of the value 89,7."
+        },
+        {
+          "date": "2026-10-26",
+          "kind": "proveniencia",
+          "field": "excerpt",
+          "old_value": "General government gross debt (EDP concept), consolidated - annual data — Percentage of gross domestic product (GDP) — Portugal — 2025: 89.7",
+          "new_value": "General government gross debt (EDP concept), consolidated - annual data — Percentage of gross domestic product (GDP) — Portugal — 2025: 89.2",
+          "reason": "O excerto passa a transcrever o valor revisto que a fonte imprime na mesma observação, lida a 26.10.2026.",
+          "reason_en": "The excerpt now transcribes the revised value the source prints for the same observation, read on 26.10.2026."
+        }
+      ],
+      "correcoes_antes": 0,
+      "correcoes_depois": 3,
+      "reconferencias": 6,
+      "aplicada": true
+    },
+    {
+      "id": "divida-publica-2025-ue",
+      "antes_sha256": "8650a977bd4134944c39a7bde8a546ae20c33f4e0a8ad926299ba999bc86fcc4",
+      "depois_sha256": "297b27336ef821fc64a626354c1701c35762e2c34c130b87b9b5fd04fdde6133",
+      "valor_antigo": "81,7",
+      "valor_novo": "81,5",
+      "acesso_antigo": "2026-09-15",
+      "acesso_novo": "2026-10-26",
+      "bandeira_antiga": "",
+      "bandeira_nova": "",
+      "carimbo_anterior": "2026-04-22T11:00:00+0200",
+      "carimbo_novo": "2026-10-21T11:00:00+0200",
+      "entradas_novas": [
+        {
+          "date": "2026-10-26",
+          "kind": "atualizacao",
+          "old_value": "81,7",
+          "new_value": "81,5",
+          "reason": "O Eurostat reviu o valor da União a 21.10.2026 (o carimbo do conjunto passou de 22.04.2026 a 21.10.2026); a reconferência semanal de 26.10.2026 viu a revisão.",
+          "reason_en": "Eurostat revised the EU value on 21.10.2026 (the dataset stamp moved from 22.04.2026 to 21.10.2026); the weekly check of 26.10.2026 caught the revision."
+        },
+        {
+          "date": "2026-10-26",
+          "kind": "proveniencia",
+          "field": "access_date",
+          "old_value": "2026-09-15",
+          "new_value": "2026-10-26",
+          "reason": "O valor novo foi lido a 26.10.2026, no dia da reconferência que viu a revisão; a leitura anterior, de 15.09.2026, é a do valor 81,7.",
+          "reason_en": "The new value was read on 26.10.2026, the day of the check that caught the revision; the earlier reading, of 15.09.2026, is that of the value 81,7."
+        },
+        {
+          "date": "2026-10-26",
+          "kind": "proveniencia",
+          "field": "excerpt",
+          "old_value": "General government gross debt (EDP concept), consolidated - annual data — Percentage of gross domestic product (GDP) — European Union - 27 countries (from 2020) — 2025: 81.7",
+          "new_value": "General government gross debt (EDP concept), consolidated - annual data — Percentage of gross domestic product (GDP) — European Union - 27 countries (from 2020) — 2025: 81.5",
+          "reason": "O excerto passa a transcrever o valor revisto que a fonte imprime na mesma observação, lida a 26.10.2026.",
+          "reason_en": "The excerpt now transcribes the revised value the source prints for the same observation, read on 26.10.2026."
+        }
+      ],
+      "correcoes_antes": 0,
+      "correcoes_depois": 3,
+      "reconferencias": 6,
+      "aplicada": true
+    }
+  ],
+  "plantas": [
+    {
+      "linha": "divida-publica-2025",
+      "planta": "atualização retirada",
+      "mordeu": true,
+      "razao": "o valor novo exige a atualização tipada do valor antigo para o novo"
+    },
+    {
+      "linha": "divida-publica-2025",
+      "planta": "valor antigo inventado",
+      "mordeu": true,
+      "razao": "o valor novo exige a atualização tipada do valor antigo para o novo"
+    },
+    {
+      "linha": "divida-publica-2025",
+      "planta": "valor novo diferente do da linha",
+      "mordeu": true,
+      "razao": "o valor novo exige a atualização tipada do valor antigo para o novo"
+    },
+    {
+      "linha": "divida-publica-2025",
+      "planta": "proveniência do acesso retirada",
+      "mordeu": true,
+      "razao": "o acesso novo exige a proveniência do acesso"
+    },
+    {
+      "linha": "divida-publica-2025",
+      "planta": "proveniência do excerto retirada",
+      "mordeu": true,
+      "razao": "o excerto novo exige a proveniência do excerto"
+    },
+    {
+      "linha": "divida-publica-2025",
+      "planta": "reconferência apagada",
+      "mordeu": true,
+      "razao": "as reconferências mudaram"
+    },
+    {
+      "linha": "divida-publica-2025",
+      "planta": "bandeira declarada fora da célula",
+      "mordeu": true,
+      "razao": "a bandeira não é a da célula"
+    },
+    {
+      "linha": "divida-publica-2025",
+      "planta": "nota mudada",
+      "mordeu": true,
+      "razao": "mudou um campo fora do mandato: ['note']"
+    },
+    {
+      "linha": "divida-publica-2025-ue",
+      "planta": "atualização retirada",
+      "mordeu": true,
+      "razao": "o valor novo exige a atualização tipada do valor antigo para o novo"
+    },
+    {
+      "linha": "divida-publica-2025-ue",
+      "planta": "valor antigo inventado",
+      "mordeu": true,
+      "razao": "o valor novo exige a atualização tipada do valor antigo para o novo"
+    },
+    {
+      "linha": "divida-publica-2025-ue",
+      "planta": "valor novo diferente do da linha",
+      "mordeu": true,
+      "razao": "o valor novo exige a atualização tipada do valor antigo para o novo"
+    },
+    {
+      "linha": "divida-publica-2025-ue",
+      "planta": "proveniência do acesso retirada",
+      "mordeu": true,
+      "razao": "o acesso novo exige a proveniência do acesso"
+    },
+    {
+      "linha": "divida-publica-2025-ue",
+      "planta": "proveniência do excerto retirada",
+      "mordeu": true,
+      "razao": "o excerto novo exige a proveniência do excerto"
+    },
+    {
+      "linha": "divida-publica-2025-ue",
+      "planta": "reconferência apagada",
+      "mordeu": true,
+      "razao": "as reconferências mudaram"
+    },
+    {
+      "linha": "divida-publica-2025-ue",
+      "planta": "bandeira declarada fora da célula",
+      "mordeu": true,
+      "razao": "a bandeira não é a da célula"
+    },
+    {
+      "linha": "divida-publica-2025-ue",
+      "planta": "nota mudada",
+      "mordeu": true,
+      "razao": "mudou um campo fora do mandato: ['note']"
+    }
+  ],
+  "contagens": {
+    "linhas": 2,
+    "aplicadas": 2,
+    "entradas_novas": 6,
+    "atualizacoes_novas": 2,
+    "bandeiras_que_sairam": 0,
+    "plantas": 16,
+    "plantas_que_morderam": 16
+  }
+}

@@ -21,8 +21,8 @@ document:
   kind: "serie"
   url: "https://ec.europa.eu/eurostat/databrowser/view/tessi164/default/table?lang=en"
 source_url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tessi164?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020"
-access_date: "2026-09-29"
-published_at: "2026-09-17"
+access_date: "2026-10-26"
+published_at: "2026-10-20"
 
 # O literal da série: as etiquetas do conjunto e das coordenadas, e o período,
 # como a resposta os escreve. O excerto de cada ponto começa por ele.
@@ -53,8 +53,8 @@ pontos:
     excerto: "Housing cost overburden rate by tenure status - EU-SILC survey — Annual — Percentage — Tenure status: Tenant, rent at market price — Czechia — 2025: 26.0"
     bandeira: null
   - geo: "DK"
-    valor: "23,6"
-    excerto: "Housing cost overburden rate by tenure status - EU-SILC survey — Annual — Percentage — Tenure status: Tenant, rent at market price — Denmark — 2025: 23.6 b"
+    valor: "23,0"
+    excerto: "Housing cost overburden rate by tenure status - EU-SILC survey — Annual — Percentage — Tenure status: Tenant, rent at market price — Denmark — 2025: 23.0 b"
     bandeira: "b"
   - geo: "DE"
     valor: "13,2"
@@ -138,8 +138,8 @@ pontos:
     bandeira: null
   - geo: "SK"
     valor: "16,8"
-    excerto: "Housing cost overburden rate by tenure status - EU-SILC survey — Annual — Percentage — Tenure status: Tenant, rent at market price — Slovakia — 2025: 16.8"
-    bandeira: null
+    excerto: "Housing cost overburden rate by tenure status - EU-SILC survey — Annual — Percentage — Tenure status: Tenant, rent at market price — Slovakia — 2025: 16.8 b"
+    bandeira: "b"
   - geo: "FI"
     valor: "12,3"
     excerto: "Housing cost overburden rate by tenure status - EU-SILC survey — Annual — Percentage — Tenure status: Tenant, rent at market price — Finland — 2025: 12.3"
@@ -157,7 +157,14 @@ attributed_to:
   - "Eurostat"
 study: "dominios-2026"
 # Nota interna. NÃO é publicada.
-note: "UE1. Linha de série por país (eixo: pais) da medida «sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025», pelo mesmo conjunto e pelas mesmas coordenadas seladas da linha «sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue», com os 27 países no lugar da União. Coordenadas: freq=A, unit=PC, tenure=RENT_MKT, time=2025. Corpo alojado: ue1/035-eurostat-sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises.json (sha256 8e482910fe1af170…). A data published_at é a da última atualização do conjunto, que a API publica por conjunto e não por ponto. Licença: Eurostat, CC BY 4.0."
+note: "UE1. Linha de série por país (eixo: pais) da medida «sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025», pelo mesmo conjunto e pelas mesmas coordenadas seladas da linha «sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue», com os 27 países no lugar da União. Coordenadas: freq=A, unit=PC, tenure=RENT_MKT, time=2025. Corpo alojado: corredor-series-paises/2026-10-26/0d9b29aa8751fc2afc4388978c9ca132dd708d64ace6d5fe96836732d7abc98c/008-sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises.json (sha256 0d9b29aa8751fc2a…). A data published_at é a da última atualização do conjunto, que a API publica por conjunto e não por ponto. Licença: Eurostat, CC BY 4.0."
 
 # Correcções datadas, por ponto. Nunca apagar um valor: acrescentar aqui.
-corrections: []
+corrections:
+  - geo: "DK"
+    date: "2026-10-26"
+    kind: "atualizacao"
+    old_value: "23,6"
+    new_value: "23,0"
+    reason: "Dinamarca: o Eurostat reviu o valor de 23,6 para 23,0 na atualização do conjunto de dados de 20.10.2026 (a versão anterior era de 17.09.2026); este projeto releu a fonte a 26.10.2026."
+    reason_en: "Denmark: Eurostat revised the value from 23.6 to 23.0 in the dataset update of 20.10.2026 (the previous version was of 17.09.2026); this project re-read the source on 26.10.2026."

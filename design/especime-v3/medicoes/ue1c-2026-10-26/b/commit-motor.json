@@ -1,0 +1,7 @@
+{
+  "estado": "não pedido",
+  "cabeca": "6c44edf582fd24fc0897317dad167352a46ddd25",
+  "ficheiros": 9,
+  "razao": "comitar.sh não transmite OEDP_GATE; escrivao.py não lê esse campo e o subprocesso do commit herda o ambiente do escrivão; OEDP_GATE não está definida nesta sessão. Aplica-se a alternativa do §1.5, sem correr o core.gate nesta passagem.",
+  "lista": "../ficheiros-motor.json"
+}

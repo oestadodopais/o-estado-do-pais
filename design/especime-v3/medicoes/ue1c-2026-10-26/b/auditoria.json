@@ -1,0 +1,42 @@
+{
+  "revisoes": 29,
+  "manifesto": {
+    "ficheiros": 6,
+    "entradas": 6,
+    "sobras": 0,
+    "faltas": 0
+  },
+  "corpos_canónicos": [
+    {
+      "ficheiro": "corredor-series-paises/2026-10-26/0d9b29aa8751fc2afc4388978c9ca132dd708d64ace6d5fe96836732d7abc98c/008-sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises.json",
+      "sha256": "0d9b29aa8751fc2afc4388978c9ca132dd708d64ace6d5fe96836732d7abc98c"
+    },
+    {
+      "ficheiro": "corredor-series-paises/2026-10-26/2fb9ebf4998261155e60e0fb5a87d4c722897c1fd31fb170a89646d86619ced7/004-precos-da-habitacao-2025-paises.json",
+      "sha256": "2fb9ebf4998261155e60e0fb5a87d4c722897c1fd31fb170a89646d86619ced7"
+    },
+    {
+      "ficheiro": "corredor-series-paises/2026-10-26/7d9ee55a7539f240e13fb6aff1e69923effcf0181d9957c185aa206d3acb90b7/005-racio-s80-s20-2025-paises.json",
+      "sha256": "7d9ee55a7539f240e13fb6aff1e69923effcf0181d9957c185aa206d3acb90b7"
+    },
+    {
+      "ficheiro": "corredor-series-paises/2026-10-26/803d3abb3ec469800ea76e7d9b25a55e6303b66967cfc0de19ece48db1858e9a/006-risco-de-pobreza-ou-exclusao-2025-paises.json",
+      "sha256": "803d3abb3ec469800ea76e7d9b25a55e6303b66967cfc0de19ece48db1858e9a"
+    },
+    {
+      "ficheiro": "corredor-series-paises/2026-10-26/ba616d618f4127157b1d390cbe341820963a6ba561759dfd8e9f79f2c530f25c/002-divida-publica-2025-paises.json",
+      "sha256": "ba616d618f4127157b1d390cbe341820963a6ba561759dfd8e9f79f2c530f25c"
+    },
+    {
+      "ficheiro": "corredor-series-paises/2026-10-26/f0612b1353f1c6dd8bfe3bd4a0a7623d283fbec6d53af6580a8d937b3fee05cc/007-sobrecarga-do-custo-da-habitacao-2025-paises.json",
+      "sha256": "f0612b1353f1c6dd8bfe3bd4a0a7623d283fbec6d53af6580a8d937b3fee05cc"
+    }
+  ],
+  "corpos_da_corrida_preservados": 10,
+  "reler_linhas_igual_a_master": true,
+  "modulo_no_core_gate": true,
+  "campos_alterados": [
+    "reason",
+    "reason_en"
+  ]
+}

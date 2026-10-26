@@ -1,0 +1,96 @@
+{
+  "recibos": [
+    {
+      "rota": "/livro-razao/divida-publica-2025/",
+      "lang": "pt",
+      "id": "divida-publica-2025",
+      "sha256_html": "10c78239fdc66fc547a7edbe1700b98c879971c34683b35bad9a45e423736ccd",
+      "entradas": [
+        {
+          "kind": "atualizacao",
+          "field": null,
+          "motivo": "O Eurostat reviu o valor de 89,7 para 89,2 na atualização do conjunto de dados de 21.10.2026 (a versão anterior era de 22.04.2026). A comparação semanal com a fonte de 26.10.2026 encontrou a revisão e este projeto releu a fonte nesse dia; até aí publicava-se o valor da leitura anterior."
+        },
+        {
+          "kind": "proveniencia",
+          "field": "access_date",
+          "motivo": "O valor novo foi lido a 26.10.2026, o dia em que este projeto releu a fonte; a leitura anterior, de 12.08.2026, é a do valor 89,7."
+        },
+        {
+          "kind": "proveniencia",
+          "field": "excerpt",
+          "motivo": "O excerto passa a transcrever o valor revisto que a fonte imprime na mesma observação, lida a 26.10.2026."
+        }
+      ]
+    },
+    {
+      "rota": "/livro-razao/divida-publica-2025-ue/",
+      "lang": "pt",
+      "id": "divida-publica-2025-ue",
+      "sha256_html": "0436f527e8962f362ae3fd7816a87488b04c86c83b976cfdec94e2230ddbf0a2",
+      "entradas": [
+        {
+          "kind": "atualizacao",
+          "field": null,
+          "motivo": "O Eurostat reviu o valor de 81,7 para 81,5 na atualização do conjunto de dados de 21.10.2026 (a versão anterior era de 22.04.2026). A comparação semanal com a fonte de 26.10.2026 encontrou a revisão e este projeto releu a fonte nesse dia; até aí publicava-se o valor da leitura anterior."
+        },
+        {
+          "kind": "proveniencia",
+          "field": "access_date",
+          "motivo": "O valor novo foi lido a 26.10.2026, o dia em que este projeto releu a fonte; a leitura anterior, de 15.09.2026, é a do valor 81,7."
+        },
+        {
+          "kind": "proveniencia",
+          "field": "excerpt",
+          "motivo": "O excerto passa a transcrever o valor revisto que a fonte imprime na mesma observação, lida a 26.10.2026."
+        }
+      ]
+    },
+    {
+      "rota": "/en/ledger/divida-publica-2025/",
+      "lang": "en",
+      "id": "divida-publica-2025",
+      "sha256_html": "525c15b3744d4e6c4489669a3faf02a20a12e4d62f73ff4c1a0a5721d3a31d18",
+      "entradas": [
+        {
+          "kind": "atualizacao",
+          "field": null,
+          "motivo": "Eurostat revised the value from 89.7 to 89.2 in the dataset update of 21.10.2026 (the previous version was of 22.04.2026). The weekly comparison with the source of 26.10.2026 found the revision and this project re-read the source that day; until then the value of the earlier reading was published."
+        },
+        {
+          "kind": "proveniencia",
+          "field": "access_date",
+          "motivo": "The new value was read on 26.10.2026, the day this project re-read the source; the earlier reading, of 12.08.2026, is that of the value 89,7."
+        },
+        {
+          "kind": "proveniencia",
+          "field": "excerpt",
+          "motivo": "The excerpt now transcribes the revised value the source prints for the same observation, read on 26.10.2026."
+        }
+      ]
+    },
+    {
+      "rota": "/en/ledger/divida-publica-2025-ue/",
+      "lang": "en",
+      "id": "divida-publica-2025-ue",
+      "sha256_html": "31a0e18df544139311247d7023ac6ccd6eb2dd4e686b4337cc58aa7ce5cb7b24",
+      "entradas": [
+        {
+          "kind": "atualizacao",
+          "field": null,
+          "motivo": "Eurostat revised the value from 81.7 to 81.5 in the dataset update of 21.10.2026 (the previous version was of 22.04.2026). The weekly comparison with the source of 26.10.2026 found the revision and this project re-read the source that day; until then the value of the earlier reading was published."
+        },
+        {
+          "kind": "proveniencia",
+          "field": "access_date",
+          "motivo": "The new value was read on 26.10.2026, the day this project re-read the source; the earlier reading, of 15.09.2026, is that of the value 81,7."
+        },
+        {
+          "kind": "proveniencia",
+          "field": "excerpt",
+          "motivo": "The excerpt now transcribes the revised value the source prints for the same observation, read on 26.10.2026."
+        }
+      ]
+    }
+  ]
+}

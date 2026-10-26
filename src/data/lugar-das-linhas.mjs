@@ -78,6 +78,8 @@ export const LUGAR_DECLARADO_DAS_LINHAS = {
   'divida-publica-2024': 'portugal',
   'fluxo-de-credito-as-empresas-2024': 'portugal',
   'fluxo-de-credito-as-familias-2024': 'portugal',
+  /* UE1-c: a revisão da dívida do agregado da União pertence à União. */
+  'divida-publica-2025-ue': 'uniao-europeia',
   /* EO1-e: a entrega pertence ao calendário do Orçamento nacional, na página parlamentar selada. */
   'oe-2027-calendario-entrega': 'portugal',
   /* V2-e-b: os excertos corrigidos do relatório do orçamento nacional

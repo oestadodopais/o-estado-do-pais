@@ -270,12 +270,22 @@ def passo_do_published_at(args, reg: dict, reler, pasta: Path) -> int:
     return 0 if saida["contagens"]["plantas_que_morderam"] == len(plantas) else 1
 
 
+def selecionar_linhas(reg: dict, selecao: str | None) -> dict:
+    if selecao is None:
+        return reg
+    ids = selecao.split(",")
+    disponiveis = {r["id"] for r in reg["linhas"]}
+    if not ids or len(set(ids)) != len(ids) or any(i not in disponiveis for i in ids):
+        raise SystemExit("PARAGEM: --linhas tem identificadores repetidos ou sem releitura válida")
+    return {**reg, "linhas": [r for r in reg["linhas"] if r["id"] in ids]}
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--motor", type=Path, required=True)
     ap.add_argument("--releitura", required=True)
     ap.add_argument("--saida", type=Path, required=True)
     ap.add_argument("--aplicar", action="store_true")
+    ap.add_argument("--linhas", help="apenas estas linhas, separadas por vírgulas")
     ap.add_argument("--published-at", action="store_true", help="o passo do published_at (a passagem C2-b)")
     args = ap.parse_args()
     global CABECA, RELEITURA, SAIDA, SAIDA_DO_PUBLISHED_AT
@@ -288,6 +298,7 @@ def main() -> int:
     SAIDA = args.saida / "aplicacao.json"
     SAIDA_DO_PUBLISHED_AT = args.saida / "aplicacao-published-at.json"
     reg = json.loads((pasta / "releitura.json").read_text(encoding="utf-8"))
+    reg = selecionar_linhas(reg, args.linhas)
     CABECA = reg["cabeca_do_sitio"]
     principal = subprocess.check_output(["git", "-C", str(SITIO), "rev-parse", "main"], text=True).strip()
     if CABECA != principal:

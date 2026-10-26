@@ -1,0 +1,9 @@
+{
+  "comando": [
+    "python3",
+    "design/especime-v3/medicoes/ue1c-2026-10-26/b/repetir.py"
+  ],
+  "pasta": "<worktree>",
+  "codigo": 1,
+  "duracao_segundos": 0.867
+}

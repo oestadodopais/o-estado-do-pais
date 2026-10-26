@@ -713,9 +713,19 @@ export function plantasDosBlocos(dist) {
   const outro = new Map([...loadClaims()].map(([k, v]) => [k, structuredClone(v)]));
   outro.get('ipc-variacao-homologa').value = '-1,0';
   regista('um bloco rendido com a condição falsa', pagina(() => {}, { linhas: outro }), /precos: o bloco está na página e as condições dele são falsas/);
+  /* A peça «revisao-do-ine» sai sozinha quando o Eurostat iguala a notificação do INE (aconteceu a 26.10.2026, com
+     o UE1-c: 89,2 nas duas linhas). A planta vira a condição em memória para o lado contrário ao da página, nas duas
+     situações: com a peça na página, iguala as linhas e espera a queixa «rendida sem condição»; sem a peça, afasta as
+     linhas e espera a queixa «por render com a condição verdadeira». Assim morde antes e depois de uma revisão. */
   const semPeca = new Map([...loadClaims()].map(([k, v]) => [k, structuredClone(v)]));
-  semPeca.get('divida-publica-2025-notificacao-ine-2026-09').value = semPeca.get('divida-publica-2025').value;
-  regista('uma peça rendida com a condição falsa', pagina(() => {}, { linhas: semPeca }), /estado: as peças rendidas \(revisao-do-ine\) não são as que as condições deixam mostrar \(nenhuma\)/);
+  const pecaNaPagina = parse(html).querySelector('[data-bloco="estado"] [data-bloco-peca="revisao-do-ine"]') !== null;
+  if (pecaNaPagina) {
+    semPeca.get('divida-publica-2025-notificacao-ine-2026-09').value = semPeca.get('divida-publica-2025').value;
+    regista('uma peça rendida com a condição falsa', pagina(() => {}, { linhas: semPeca }), /estado: as peças rendidas \(revisao-do-ine\) não são as que as condições deixam mostrar \(nenhuma\)/);
+  } else {
+    semPeca.get('divida-publica-2025-notificacao-ine-2026-09').value = '99,9';
+    regista('uma peça por render com a condição verdadeira', pagina(() => {}, { linhas: semPeca }), /estado: as peças rendidas \(nenhuma\) não são as que as condições deixam mostrar \(revisao-do-ine\)/);
+  }
   return out;
 }
 
