@@ -1,0 +1,1406 @@
+{
+ "abandono-escolar-precoce-2025": [
+  {
+   "date": "2026-08-24",
+   "updated": "2026-06-11T23:00:00+0200",
+   "value": 6.1
+  },
+  {
+   "date": "2026-09-14",
+   "updated": "2026-09-10T23:00:00+0200",
+   "value": 6.1,
+   "observado_por": "Mac"
+  }
+ ],
+ "competencias-digitais-2025": [
+  {
+   "date": "2026-08-24",
+   "updated": "2026-04-17T11:00:00+0200",
+   "value": 59.15
+  }
+ ],
+ "credito-malparado-2025": [
+  {
+   "date": "2026-08-24",
+   "updated": "2026-06-29T23:00:00+0200",
+   "value": 2.1
+  },
+  {
+   "date": "2026-10-26",
+   "updated": "2026-09-30T23:00:00+0200",
+   "value": 2.1,
+   "observado_por": "Mac"
+  }
+ ],
+ "criancas-em-creche-2025": [
+  {
+   "date": "2026-08-24",
+   "updated": "2026-07-08T23:00:00+0200",
+   "value": 57.9
+  },
+  {
+   "date": "2026-09-21",
+   "updated": "2026-09-17T23:00:00+0200",
+   "value": 57.9,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-10-26",
+   "updated": "2026-10-20T23:00:00+0200",
+   "value": 57.9,
+   "observado_por": "Mac"
+  }
+ ],
+ "custo-unitario-do-trabalho-2025": [
+  {
+   "date": "2026-08-24",
+   "updated": "2026-08-20T23:00:00+0200",
+   "value": 21.3
+  },
+  {
+   "date": "2026-08-31",
+   "updated": "2026-08-28T23:00:00+0200",
+   "value": 21.3
+  },
+  {
+   "date": "2026-09-07",
+   "updated": "2026-09-07T11:00:00+0200",
+   "value": 21.3
+  },
+  {
+   "date": "2026-09-14",
+   "updated": "2026-09-09T23:00:00+0200",
+   "value": 21.3,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-09-21",
+   "updated": "2026-09-18T23:00:00+0200",
+   "value": 21.3,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-09-28",
+   "updated": "2026-09-21T23:00:00+0200",
+   "value": 21.3,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-10-26",
+   "updated": "2026-10-22T23:00:00+0200",
+   "value": 21.3,
+   "observado_por": "Mac"
+  }
+ ],
+ "desempenho-das-exportacoes-2025": [
+  {
+   "date": "2026-08-24",
+   "updated": "2026-07-15T11:00:00+0200",
+   "value": 8.2
+  }
+ ],
+ "desemprego-de-longa-duracao-2025": [
+  {
+   "date": "2026-08-24",
+   "updated": "2026-06-11T23:00:00+0200",
+   "value": 2.2
+  },
+  {
+   "date": "2026-09-14",
+   "updated": "2026-09-10T23:00:00+0200",
+   "value": 2.2,
+   "observado_por": "Mac"
+  }
+ ],
+ "despesa-em-id-2024": [
+  {
+   "date": "2026-08-24",
+   "updated": "2026-03-18T23:00:00+0100",
+   "value": 1.73
+  },
+  {
+   "date": "2026-10-26",
+   "updated": "2026-09-29T23:00:00+0200",
+   "value": 1.73,
+   "observado_por": "Mac"
+  }
+ ],
+ "disparidade-de-emprego-entre-sexos-2025": [
+  {
+   "date": "2026-08-24",
+   "updated": "2026-06-11T23:00:00+0200",
+   "value": 5.4
+  },
+  {
+   "date": "2026-09-14",
+   "updated": "2026-09-10T23:00:00+0200",
+   "value": 5.4,
+   "observado_por": "Mac"
+  }
+ ],
+ "divida-das-empresas-2025": [
+  {
+   "date": "2026-08-24",
+   "updated": "2026-08-22T11:00:00+0200",
+   "value": 64.9
+  },
+  {
+   "date": "2026-09-07",
+   "updated": "2026-09-07T11:00:00+0200",
+   "value": 64.9
+  },
+  {
+   "date": "2026-09-14",
+   "updated": "2026-09-10T11:00:00+0200",
+   "value": 64.9,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-09-21",
+   "updated": "2026-09-19T11:00:00+0200",
+   "value": 64.9,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-09-28",
+   "updated": "2026-09-26T11:00:00+0200",
+   "value": 64.9,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-10-26",
+   "updated": "2026-10-24T11:00:00+0200",
+   "value": 65.1,
+   "observado_por": "Mac"
+  }
+ ],
+ "divida-das-familias-2025": [
+  {
+   "date": "2026-08-24",
+   "updated": "2026-08-22T11:00:00+0200",
+   "value": 53.9
+  },
+  {
+   "date": "2026-09-07",
+   "updated": "2026-09-07T11:00:00+0200",
+   "value": 53.9
+  },
+  {
+   "date": "2026-09-14",
+   "updated": "2026-09-10T11:00:00+0200",
+   "value": 53.9,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-09-21",
+   "updated": "2026-09-19T11:00:00+0200",
+   "value": 53.9,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-09-28",
+   "updated": "2026-09-26T11:00:00+0200",
+   "value": 53.9,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-10-26",
+   "updated": "2026-10-24T11:00:00+0200",
+   "value": 54.4,
+   "observado_por": "Mac"
+  }
+ ],
+ "divida-publica-2025": [
+  {
+   "date": "2026-08-24",
+   "updated": "2026-04-22T11:00:00+0200",
+   "value": 89.7
+  },
+  {
+   "date": "2026-10-26",
+   "updated": "2026-10-21T11:00:00+0200",
+   "value": 89.2,
+   "observado_por": "Mac"
+  }
+ ],
+ "fluxo-de-credito-as-empresas-2025": [
+  {
+   "date": "2026-08-24",
+   "updated": "2026-08-22T11:00:00+0200",
+   "value": 3.0
+  },
+  {
+   "date": "2026-09-07",
+   "updated": "2026-09-07T11:00:00+0200",
+   "value": 3.0
+  },
+  {
+   "date": "2026-09-14",
+   "updated": "2026-09-10T11:00:00+0200",
+   "value": 3.0,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-09-21",
+   "updated": "2026-09-19T11:00:00+0200",
+   "value": 3.0,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-09-28",
+   "updated": "2026-09-26T11:00:00+0200",
+   "value": 3.0,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-10-26",
+   "updated": "2026-10-24T11:00:00+0200",
+   "value": 3.4,
+   "observado_por": "Mac"
+  }
+ ],
+ "fluxo-de-credito-as-familias-2025": [
+  {
+   "date": "2026-08-24",
+   "updated": "2026-08-22T11:00:00+0200",
+   "value": 8.6
+  },
+  {
+   "date": "2026-09-07",
+   "updated": "2026-09-07T11:00:00+0200",
+   "value": 8.6
+  },
+  {
+   "date": "2026-09-14",
+   "updated": "2026-09-10T11:00:00+0200",
+   "value": 8.6,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-09-21",
+   "updated": "2026-09-19T11:00:00+0200",
+   "value": 8.6,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-09-28",
+   "updated": "2026-09-26T11:00:00+0200",
+   "value": 8.6,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-10-26",
+   "updated": "2026-10-24T11:00:00+0200",
+   "value": 9.0,
+   "observado_por": "Mac"
+  }
+ ],
+ "formacao-bruta-de-capital-fixo-2025": [
+  {
+   "date": "2026-08-24",
+   "updated": "2026-08-20T23:00:00+0200",
+   "value": 20.7
+  },
+  {
+   "date": "2026-08-31",
+   "updated": "2026-08-28T23:00:00+0200",
+   "value": 20.7
+  },
+  {
+   "date": "2026-09-07",
+   "updated": "2026-09-07T11:00:00+0200",
+   "value": 20.7
+  },
+  {
+   "date": "2026-09-14",
+   "updated": "2026-09-08T11:00:00+0200",
+   "value": 20.7,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-09-21",
+   "updated": "2026-09-18T23:00:00+0200",
+   "value": 20.7,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-09-28",
+   "updated": "2026-09-21T23:00:00+0200",
+   "value": 20.7,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-10-26",
+   "updated": "2026-10-22T23:00:00+0200",
+   "value": 21.0,
+   "observado_por": "Mac"
+  }
+ ],
+ "independencia-da-justica-2025": [
+  {
+   "date": "2026-08-24",
+   "updated": "2026-01-08T23:00:00+0100",
+   "value": 58
+  }
+ ],
+ "indice-de-percepcao-da-corrupcao-2025": [
+  {
+   "date": "2026-08-24",
+   "updated": "2026-03-04T23:00:00+0100",
+   "value": 56
+  }
+ ],
+ "jovens-nem-2025": [
+  {
+   "date": "2026-08-24",
+   "updated": "2026-06-11T23:00:00+0200",
+   "value": 8.0
+  },
+  {
+   "date": "2026-09-14",
+   "updated": "2026-09-10T23:00:00+0200",
+   "value": 8.0,
+   "observado_por": "Mac"
+  }
+ ],
+ "licencas-de-construcao-2025": [
+  {
+   "date": "2026-08-24",
+   "updated": "2026-08-20T11:00:00+0200",
+   "value": 749.7
+  },
+  {
+   "date": "2026-08-31",
+   "updated": "2026-08-28T23:00:00+0200",
+   "value": 749.7
+  },
+  {
+   "date": "2026-09-07",
+   "updated": "2026-09-07T11:00:00+0200",
+   "value": 749.7
+  },
+  {
+   "date": "2026-09-14",
+   "updated": "2026-09-09T23:00:00+0200",
+   "value": 749.7,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-09-21",
+   "updated": "2026-09-19T11:00:00+0200",
+   "value": 749.7,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-09-28",
+   "updated": "2026-09-24T11:00:00+0200",
+   "value": 749.7,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-10-26",
+   "updated": "2026-10-21T23:00:00+0200",
+   "value": 749.7,
+   "observado_por": "Mac"
+  }
+ ],
+ "necessidades-medicas-nao-satisfeitas-2025": [
+  {
+   "date": "2026-08-24",
+   "updated": "2026-07-27T23:00:00+0200",
+   "value": 2.5
+  },
+  {
+   "date": "2026-09-21",
+   "updated": "2026-09-17T23:00:00+0200",
+   "value": 2.5,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-10-26",
+   "updated": "2026-10-20T23:00:00+0200",
+   "value": 2.5,
+   "observado_por": "Mac"
+  }
+ ],
+ "pib-real-per-capita-2025": [
+  {
+   "date": "2026-08-24",
+   "updated": "2026-08-20T23:00:00+0200",
+   "value": 20600
+  },
+  {
+   "date": "2026-08-31",
+   "updated": "2026-08-28T23:00:00+0200",
+   "value": 20600
+  },
+  {
+   "date": "2026-09-07",
+   "updated": "2026-09-07T11:00:00+0200",
+   "value": 20600
+  },
+  {
+   "date": "2026-09-14",
+   "updated": "2026-09-08T11:00:00+0200",
+   "value": 20600,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-09-21",
+   "updated": "2026-09-18T23:00:00+0200",
+   "value": 20600,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-10-26",
+   "updated": "2026-10-22T23:00:00+0200",
+   "value": 20700,
+   "observado_por": "Mac"
+  }
+ ],
+ "posicao-de-investimento-internacional-2025": [
+  {
+   "date": "2026-08-24",
+   "updated": "2026-07-08T11:00:00+0200",
+   "value": -50.2
+  },
+  {
+   "date": "2026-09-14",
+   "updated": "2026-09-11T23:00:00+0200",
+   "value": -50.2,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-10-26",
+   "updated": "2026-10-02T23:00:00+0200",
+   "value": -49.6,
+   "observado_por": "Mac"
+  }
+ ],
+ "precos-da-habitacao-2025": [
+  {
+   "date": "2026-08-24",
+   "updated": "2026-07-02T11:00:00+0200",
+   "value": 17.6
+  },
+  {
+   "date": "2026-10-26",
+   "updated": "2026-10-01T11:00:00+0200",
+   "value": 17.6,
+   "observado_por": "Mac"
+  }
+ ],
+ "racio-s80-s20-2025": [
+  {
+   "date": "2026-08-24",
+   "updated": "2026-06-08T23:00:00+0200",
+   "value": 4.86
+  },
+  {
+   "date": "2026-09-21",
+   "updated": "2026-09-17T23:00:00+0200",
+   "value": 4.86,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-10-26",
+   "updated": "2026-10-20T11:00:00+0200",
+   "value": 4.86,
+   "observado_por": "Mac"
+  }
+ ],
+ "risco-de-pobreza-ou-exclusao-2025": [
+  {
+   "date": "2026-08-24",
+   "updated": "2026-06-08T23:00:00+0200",
+   "value": 18.6
+  },
+  {
+   "date": "2026-09-14",
+   "updated": "2026-09-11T23:00:00+0200",
+   "value": 18.6,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-09-21",
+   "updated": "2026-09-17T23:00:00+0200",
+   "value": 18.6,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-10-26",
+   "updated": "2026-10-20T11:00:00+0200",
+   "value": 18.6,
+   "observado_por": "Mac"
+  }
+ ],
+ "saldo-da-balanca-corrente-2025": [
+  {
+   "date": "2026-08-24",
+   "updated": "2026-07-08T11:00:00+0200",
+   "value": 1.4
+  },
+  {
+   "date": "2026-10-26",
+   "updated": "2026-10-02T11:00:00+0200",
+   "value": 1.4,
+   "observado_por": "Mac"
+  }
+ ],
+ "sobrecarga-do-custo-da-habitacao-2025": [
+  {
+   "date": "2026-08-24",
+   "updated": "2026-06-08T23:00:00+0200",
+   "value": 6.3
+  },
+  {
+   "date": "2026-09-21",
+   "updated": "2026-09-17T23:00:00+0200",
+   "value": 6.3,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-10-26",
+   "updated": "2026-10-20T11:00:00+0200",
+   "value": 6.3,
+   "observado_por": "Mac"
+  }
+ ],
+ "taxa-de-actividade-2025": [
+  {
+   "date": "2026-08-24",
+   "updated": "2026-06-11T23:00:00+0200",
+   "value": 2.6
+  },
+  {
+   "date": "2026-09-14",
+   "updated": "2026-09-10T23:00:00+0200",
+   "value": 2.6,
+   "observado_por": "Mac"
+  }
+ ],
+ "taxa-de-cambio-efectiva-real-2025": [
+  {
+   "date": "2026-08-24",
+   "updated": "2026-08-08T11:00:00+0200",
+   "value": 2.8
+  },
+  {
+   "date": "2026-09-21",
+   "updated": "2026-09-18T11:00:00+0200",
+   "value": 2.8,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-10-26",
+   "updated": "2026-10-14T11:00:00+0200",
+   "value": 2.8,
+   "observado_por": "Mac"
+  }
+ ],
+ "taxa-de-desemprego-2025": [
+  {
+   "date": "2026-08-24",
+   "updated": "2026-06-11T23:00:00+0200",
+   "value": 6.0
+  },
+  {
+   "date": "2026-09-14",
+   "updated": "2026-09-10T23:00:00+0200",
+   "value": 6.0,
+   "observado_por": "Mac"
+  }
+ ],
+ "taxa-de-desemprego-mip-2025": [
+  {
+   "date": "2026-08-24",
+   "updated": "2026-06-11T23:00:00+0200",
+   "value": 6.0
+  },
+  {
+   "date": "2026-09-14",
+   "updated": "2026-09-10T23:00:00+0200",
+   "value": 6.0,
+   "observado_por": "Mac"
+  }
+ ],
+ "taxa-de-emprego-2025": [
+  {
+   "date": "2026-08-24",
+   "updated": "2026-06-11T23:00:00+0200",
+   "value": 79.6
+  },
+  {
+   "date": "2026-09-14",
+   "updated": "2026-09-10T23:00:00+0200",
+   "value": 79.6,
+   "observado_por": "Mac"
+  }
+ ],
+ "abandono-escolar-precoce-2024": [
+  {
+   "date": "2026-09-21",
+   "updated": "2026-09-10T23:00:00+0200",
+   "value": 6.6,
+   "observado_por": "Mac"
+  }
+ ],
+ "abandono-escolar-precoce-2025-ue": [
+  {
+   "date": "2026-09-21",
+   "updated": "2026-09-10T23:00:00+0200",
+   "value": 9.1,
+   "observado_por": "Mac"
+  }
+ ],
+ "competencias-digitais-2023": [
+  {
+   "date": "2026-09-21",
+   "updated": "2026-04-17T11:00:00+0200",
+   "value": 55.97,
+   "observado_por": "Mac"
+  }
+ ],
+ "competencias-digitais-2025-ue": [
+  {
+   "date": "2026-09-21",
+   "updated": "2026-04-17T11:00:00+0200",
+   "value": 60.4,
+   "observado_por": "Mac"
+  }
+ ],
+ "credito-malparado-2024": [
+  {
+   "date": "2026-09-21",
+   "updated": "2026-06-29T23:00:00+0200",
+   "value": 2.4,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-10-26",
+   "updated": "2026-09-30T23:00:00+0200",
+   "value": 2.4,
+   "observado_por": "Mac"
+  }
+ ],
+ "criancas-em-creche-2024": [
+  {
+   "date": "2026-09-21",
+   "updated": "2026-09-17T23:00:00+0200",
+   "value": 59.4,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-10-26",
+   "updated": "2026-10-20T23:00:00+0200",
+   "value": 59.4,
+   "observado_por": "Mac"
+  }
+ ],
+ "criancas-em-creche-2025-ue": [
+  {
+   "date": "2026-09-21",
+   "updated": "2026-09-17T23:00:00+0200",
+   "value": 40.5,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-10-26",
+   "updated": "2026-10-20T23:00:00+0200",
+   "value": 40.5,
+   "observado_por": "Mac"
+  }
+ ],
+ "custo-unitario-do-trabalho-2024": [
+  {
+   "date": "2026-09-21",
+   "updated": "2026-09-18T23:00:00+0200",
+   "value": 17.7,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-09-28",
+   "updated": "2026-09-21T23:00:00+0200",
+   "value": 17.7,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-10-26",
+   "updated": "2026-10-22T23:00:00+0200",
+   "value": 17.9,
+   "observado_por": "Mac"
+  }
+ ],
+ "custo-unitario-do-trabalho-2025-ue": [
+  {
+   "date": "2026-09-21",
+   "updated": "2026-09-18T23:00:00+0200",
+   "value": 15.2,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-09-28",
+   "updated": "2026-09-21T23:00:00+0200",
+   "value": 15.2,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-10-26",
+   "updated": "2026-10-22T23:00:00+0200",
+   "value": 14.8,
+   "observado_por": "Mac"
+  }
+ ],
+ "desempenho-das-exportacoes-2024": [
+  {
+   "date": "2026-09-21",
+   "updated": "2026-07-15T11:00:00+0200",
+   "value": 17.1,
+   "observado_por": "Mac"
+  }
+ ],
+ "desemprego-de-longa-duracao-2024": [
+  {
+   "date": "2026-09-21",
+   "updated": "2026-09-10T23:00:00+0200",
+   "value": 2.4,
+   "observado_por": "Mac"
+  }
+ ],
+ "desemprego-de-longa-duracao-2025-ue": [
+  {
+   "date": "2026-09-21",
+   "updated": "2026-09-10T23:00:00+0200",
+   "value": 1.9,
+   "observado_por": "Mac"
+  }
+ ],
+ "despesa-em-id-2023": [
+  {
+   "date": "2026-09-21",
+   "updated": "2026-03-18T23:00:00+0100",
+   "value": 1.68,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-10-26",
+   "updated": "2026-09-29T23:00:00+0200",
+   "value": 1.68,
+   "observado_por": "Mac"
+  }
+ ],
+ "despesa-em-id-2024-ue": [
+  {
+   "date": "2026-09-21",
+   "updated": "2026-03-18T23:00:00+0100",
+   "value": 2.24,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-10-26",
+   "updated": "2026-09-29T23:00:00+0200",
+   "value": 2.26,
+   "observado_por": "Mac"
+  }
+ ],
+ "disparidade-de-emprego-entre-sexos-2024": [
+  {
+   "date": "2026-09-21",
+   "updated": "2026-09-10T23:00:00+0200",
+   "value": 5.7,
+   "observado_por": "Mac"
+  }
+ ],
+ "disparidade-de-emprego-entre-sexos-2025-ue": [
+  {
+   "date": "2026-09-21",
+   "updated": "2026-09-10T23:00:00+0200",
+   "value": 9.6,
+   "observado_por": "Mac"
+  }
+ ],
+ "divida-das-empresas-2024": [
+  {
+   "date": "2026-09-21",
+   "updated": "2026-09-19T11:00:00+0200",
+   "value": 67.1,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-09-28",
+   "updated": "2026-09-26T11:00:00+0200",
+   "value": 67.1,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-10-26",
+   "updated": "2026-10-24T11:00:00+0200",
+   "value": 66.6,
+   "observado_por": "Mac"
+  }
+ ],
+ "divida-das-empresas-2025-ue": [
+  {
+   "date": "2026-09-21",
+   "updated": "2026-09-19T11:00:00+0200",
+   "value": 70.0,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-09-28",
+   "updated": "2026-09-26T11:00:00+0200",
+   "value": 70.0,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-10-26",
+   "updated": "2026-10-24T11:00:00+0200",
+   "value": 70.2,
+   "observado_por": "Mac"
+  }
+ ],
+ "divida-das-familias-2024": [
+  {
+   "date": "2026-09-21",
+   "updated": "2026-09-19T11:00:00+0200",
+   "value": 52.6,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-09-28",
+   "updated": "2026-09-26T11:00:00+0200",
+   "value": 52.6,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-10-26",
+   "updated": "2026-10-24T11:00:00+0200",
+   "value": 52.3,
+   "observado_por": "Mac"
+  }
+ ],
+ "divida-das-familias-2025-ue": [
+  {
+   "date": "2026-09-21",
+   "updated": "2026-09-19T11:00:00+0200",
+   "value": 49.3,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-09-28",
+   "updated": "2026-09-26T11:00:00+0200",
+   "value": 49.2,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-10-26",
+   "updated": "2026-10-24T11:00:00+0200",
+   "value": 49.2,
+   "observado_por": "Mac"
+  }
+ ],
+ "divida-publica-2024": [
+  {
+   "date": "2026-09-21",
+   "updated": "2026-04-22T11:00:00+0200",
+   "value": 93.5,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-10-26",
+   "updated": "2026-10-21T11:00:00+0200",
+   "value": 93.0,
+   "observado_por": "Mac"
+  }
+ ],
+ "divida-publica-2025-ue": [
+  {
+   "date": "2026-09-21",
+   "updated": "2026-04-22T11:00:00+0200",
+   "value": 81.7,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-10-26",
+   "updated": "2026-10-21T11:00:00+0200",
+   "value": 81.5,
+   "observado_por": "Mac"
+  }
+ ],
+ "fluxo-de-credito-as-empresas-2024": [
+  {
+   "date": "2026-09-21",
+   "updated": "2026-09-19T11:00:00+0200",
+   "value": 2.4,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-09-28",
+   "updated": "2026-09-26T11:00:00+0200",
+   "value": 2.4,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-10-26",
+   "updated": "2026-10-24T11:00:00+0200",
+   "value": 2.2,
+   "observado_por": "Mac"
+  }
+ ],
+ "fluxo-de-credito-as-familias-2024": [
+  {
+   "date": "2026-09-21",
+   "updated": "2026-09-19T11:00:00+0200",
+   "value": 4.1,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-09-28",
+   "updated": "2026-09-26T11:00:00+0200",
+   "value": 4.1,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-10-26",
+   "updated": "2026-10-24T11:00:00+0200",
+   "value": 4.0,
+   "observado_por": "Mac"
+  }
+ ],
+ "fluxo-de-credito-as-familias-2025-ue": [
+  {
+   "date": "2026-09-21",
+   "updated": "2026-09-19T11:00:00+0200",
+   "value": 2.9,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-09-28",
+   "updated": "2026-09-26T11:00:00+0200",
+   "value": 2.9,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-10-26",
+   "updated": "2026-10-24T11:00:00+0200",
+   "value": 3.0,
+   "observado_por": "Mac"
+  }
+ ],
+ "formacao-bruta-de-capital-fixo-2024": [
+  {
+   "date": "2026-09-21",
+   "updated": "2026-09-18T23:00:00+0200",
+   "value": 20.4,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-09-28",
+   "updated": "2026-09-21T23:00:00+0200",
+   "value": 20.4,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-10-26",
+   "updated": "2026-10-22T23:00:00+0200",
+   "value": 20.5,
+   "observado_por": "Mac"
+  }
+ ],
+ "formacao-bruta-de-capital-fixo-2025-ue": [
+  {
+   "date": "2026-09-21",
+   "updated": "2026-09-18T23:00:00+0200",
+   "value": 21.4,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-09-28",
+   "updated": "2026-09-21T23:00:00+0200",
+   "value": 21.4,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-10-26",
+   "updated": "2026-10-22T23:00:00+0200",
+   "value": 21.5,
+   "observado_por": "Mac"
+  }
+ ],
+ "independencia-da-justica-2024": [
+  {
+   "date": "2026-09-21",
+   "updated": "2026-01-08T23:00:00+0100",
+   "value": 53,
+   "observado_por": "Mac"
+  }
+ ],
+ "independencia-da-justica-2025-ue": [
+  {
+   "date": "2026-09-21",
+   "updated": "2026-01-08T23:00:00+0100",
+   "value": 54,
+   "observado_por": "Mac"
+  }
+ ],
+ "indice-de-percepcao-da-corrupcao-2024": [
+  {
+   "date": "2026-09-21",
+   "updated": "2026-03-04T23:00:00+0100",
+   "value": 57,
+   "observado_por": "Mac"
+  }
+ ],
+ "indice-de-percepcao-da-corrupcao-2025-ue": [
+  {
+   "date": "2026-09-21",
+   "updated": "2026-03-04T23:00:00+0100",
+   "value": 62,
+   "observado_por": "Mac"
+  }
+ ],
+ "jovens-nem-2024": [
+  {
+   "date": "2026-09-21",
+   "updated": "2026-09-10T23:00:00+0200",
+   "value": 8.7,
+   "observado_por": "Mac"
+  }
+ ],
+ "jovens-nem-2025-ue": [
+  {
+   "date": "2026-09-21",
+   "updated": "2026-09-10T23:00:00+0200",
+   "value": 11.0,
+   "observado_por": "Mac"
+  }
+ ],
+ "licencas-de-construcao-2024": [
+  {
+   "date": "2026-09-21",
+   "updated": "2026-09-19T11:00:00+0200",
+   "value": 654.5,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-09-28",
+   "updated": "2026-09-24T11:00:00+0200",
+   "value": 654.5,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-10-26",
+   "updated": "2026-10-21T23:00:00+0200",
+   "value": 654.5,
+   "observado_por": "Mac"
+  }
+ ],
+ "licencas-de-construcao-2025-ue": [
+  {
+   "date": "2026-09-21",
+   "updated": "2026-09-19T11:00:00+0200",
+   "value": 377.5,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-09-28",
+   "updated": "2026-09-24T11:00:00+0200",
+   "value": 377.5,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-10-26",
+   "updated": "2026-10-21T23:00:00+0200",
+   "value": 377.6,
+   "observado_por": "Mac"
+  }
+ ],
+ "necessidades-medicas-nao-satisfeitas-2024": [
+  {
+   "date": "2026-09-21",
+   "updated": "2026-09-17T23:00:00+0200",
+   "value": 2.5,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-10-26",
+   "updated": "2026-10-20T23:00:00+0200",
+   "value": 2.5,
+   "observado_por": "Mac"
+  }
+ ],
+ "necessidades-medicas-nao-satisfeitas-2025-ue": [
+  {
+   "date": "2026-09-21",
+   "updated": "2026-09-17T23:00:00+0200",
+   "value": 2.4,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-10-26",
+   "updated": "2026-10-20T23:00:00+0200",
+   "value": 2.4,
+   "observado_por": "Mac"
+  }
+ ],
+ "pib-real-per-capita-2024": [
+  {
+   "date": "2026-09-21",
+   "updated": "2026-09-18T23:00:00+0200",
+   "value": 20430,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-10-26",
+   "updated": "2026-10-22T23:00:00+0200",
+   "value": 20520,
+   "observado_por": "Mac"
+  }
+ ],
+ "pib-real-per-capita-2025-ue": [
+  {
+   "date": "2026-09-21",
+   "updated": "2026-09-18T23:00:00+0200",
+   "value": 31890,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-10-26",
+   "updated": "2026-10-22T23:00:00+0200",
+   "value": 31980,
+   "observado_por": "Mac"
+  }
+ ],
+ "posicao-de-investimento-internacional-2024": [
+  {
+   "date": "2026-09-21",
+   "updated": "2026-09-11T23:00:00+0200",
+   "value": -58.9,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-10-26",
+   "updated": "2026-10-02T23:00:00+0200",
+   "value": -58.3,
+   "observado_por": "Mac"
+  }
+ ],
+ "precos-da-habitacao-2024": [
+  {
+   "date": "2026-09-21",
+   "updated": "2026-07-02T11:00:00+0200",
+   "value": 9.1,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-10-26",
+   "updated": "2026-10-01T11:00:00+0200",
+   "value": 9.1,
+   "observado_por": "Mac"
+  }
+ ],
+ "precos-da-habitacao-2025-ue": [
+  {
+   "date": "2026-09-21",
+   "updated": "2026-07-02T11:00:00+0200",
+   "value": 5.5,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-10-26",
+   "updated": "2026-10-01T11:00:00+0200",
+   "value": 5.5,
+   "observado_por": "Mac"
+  }
+ ],
+ "racio-s80-s20-2024": [
+  {
+   "date": "2026-09-21",
+   "updated": "2026-09-17T23:00:00+0200",
+   "value": 5.2,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-10-26",
+   "updated": "2026-10-20T11:00:00+0200",
+   "value": 5.2,
+   "observado_por": "Mac"
+  }
+ ],
+ "racio-s80-s20-2025-ue": [
+  {
+   "date": "2026-09-21",
+   "updated": "2026-09-17T23:00:00+0200",
+   "value": 4.62,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-10-26",
+   "updated": "2026-10-20T11:00:00+0200",
+   "value": 4.62,
+   "observado_por": "Mac"
+  }
+ ],
+ "risco-de-pobreza-ou-exclusao-2024": [
+  {
+   "date": "2026-09-21",
+   "updated": "2026-09-17T23:00:00+0200",
+   "value": 19.7,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-10-26",
+   "updated": "2026-10-20T11:00:00+0200",
+   "value": 19.7,
+   "observado_por": "Mac"
+  }
+ ],
+ "risco-de-pobreza-ou-exclusao-2025-ue": [
+  {
+   "date": "2026-09-21",
+   "updated": "2026-09-17T23:00:00+0200",
+   "value": 20.9,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-10-26",
+   "updated": "2026-10-20T11:00:00+0200",
+   "value": 20.9,
+   "observado_por": "Mac"
+  }
+ ],
+ "saldo-da-balanca-corrente-2024": [
+  {
+   "date": "2026-09-21",
+   "updated": "2026-07-08T11:00:00+0200",
+   "value": 0.3,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-10-26",
+   "updated": "2026-10-02T11:00:00+0200",
+   "value": 0.4,
+   "observado_por": "Mac"
+  }
+ ],
+ "sobrecarga-do-custo-da-habitacao-2024": [
+  {
+   "date": "2026-09-21",
+   "updated": "2026-09-17T23:00:00+0200",
+   "value": 6.9,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-10-26",
+   "updated": "2026-10-20T11:00:00+0200",
+   "value": 6.9,
+   "observado_por": "Mac"
+  }
+ ],
+ "sobrecarga-do-custo-da-habitacao-2025-ue": [
+  {
+   "date": "2026-09-21",
+   "updated": "2026-09-17T23:00:00+0200",
+   "value": 7.7,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-10-26",
+   "updated": "2026-10-20T11:00:00+0200",
+   "value": 7.7,
+   "observado_por": "Mac"
+  }
+ ],
+ "taxa-de-actividade-2024": [
+  {
+   "date": "2026-09-21",
+   "updated": "2026-09-10T23:00:00+0200",
+   "value": 3.2,
+   "observado_por": "Mac"
+  }
+ ],
+ "taxa-de-actividade-2025-ue": [
+  {
+   "date": "2026-09-21",
+   "updated": "2026-09-10T23:00:00+0200",
+   "value": 1.1,
+   "observado_por": "Mac"
+  }
+ ],
+ "taxa-de-cambio-efectiva-real-2024": [
+  {
+   "date": "2026-09-21",
+   "updated": "2026-09-18T11:00:00+0200",
+   "value": 0.4,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-10-26",
+   "updated": "2026-10-14T11:00:00+0200",
+   "value": 0.4,
+   "observado_por": "Mac"
+  }
+ ],
+ "taxa-de-cambio-efectiva-real-2025-ue": [
+  {
+   "date": "2026-09-21",
+   "updated": "2026-09-18T11:00:00+0200",
+   "value": 11.3,
+   "observado_por": "Mac"
+  },
+  {
+   "date": "2026-10-26",
+   "updated": "2026-10-14T11:00:00+0200",
+   "value": 11.3,
+   "observado_por": "Mac"
+  }
+ ],
+ "taxa-de-desemprego-2024": [
+  {
+   "date": "2026-09-21",
+   "updated": "2026-09-10T23:00:00+0200",
+   "value": 6.5,
+   "observado_por": "Mac"
+  }
+ ],
+ "taxa-de-desemprego-2025-ue": [
+  {
+   "date": "2026-09-21",
+   "updated": "2026-09-10T23:00:00+0200",
+   "value": 6.0,
+   "observado_por": "Mac"
+  }
+ ],
+ "taxa-de-desemprego-mip-2024": [
+  {
+   "date": "2026-09-21",
+   "updated": "2026-09-10T23:00:00+0200",
+   "value": 6.5,
+   "observado_por": "Mac"
+  }
+ ],
+ "taxa-de-desemprego-mip-2025-ue": [
+  {
+   "date": "2026-09-21",
+   "updated": "2026-09-10T23:00:00+0200",
+   "value": 6.0,
+   "observado_por": "Mac"
+  }
+ ],
+ "taxa-de-emprego-2024": [
+  {
+   "date": "2026-09-21",
+   "updated": "2026-09-10T23:00:00+0200",
+   "value": 78.5,
+   "observado_por": "Mac"
+  }
+ ],
+ "taxa-de-emprego-2025-ue": [
+  {
+   "date": "2026-09-21",
+   "updated": "2026-09-10T23:00:00+0200",
+   "value": 76.1,
+   "observado_por": "Mac"
+  }
+ ]
+}

@@ -1,0 +1,41 @@
+/** Inventário medido das quinze linhas, das declarações e do HTML construído. */
+import fs from 'node:fs';
+import path from 'node:path';
+import assert from 'node:assert/strict';
+import {parse} from 'node-html-parser';
+import {getClaim} from '../../../../../src/lib/ledger.mjs';
+import {DOMINIO_DAS_MEDIDAS} from '../../../../../src/data/dominios.mjs';
+import {LUGAR_DECLARADO_DAS_LINHAS as lugares} from '../../../../../src/data/lugar-das-linhas.mjs';
+import {reguaDoCartao} from '../../../../../src/lib/enquadramento.mjs';
+import {ENTRADAS, BLOCOS_DA_PRIMEIRA_PAGINA} from '../../../../../src/data/primeira-pagina.mjs';
+const pasta=path.dirname(new URL(import.meta.url).pathname);
+const ids=JSON.parse(fs.readFileSync(path.join(pasta,'../ids.json'))).filter(id=>!['divida-publica-2025','divida-publica-2025-ue'].includes(id));
+const percorrer=p=>fs.readdirSync(p,{withFileTypes:true}).flatMap(e=>e.isDirectory()?percorrer(path.join(p,e.name)):[path.join(p,e.name)]);
+const html=percorrer('dist').filter(p=>p.endsWith('.html')).map(ficheiro=>({ficheiro,html:fs.readFileSync(ficheiro,'utf8')})).filter(p=>ids.some(id=>p.html.includes(id)));
+const fontes=percorrer('src').filter(p=>/\.(mjs|astro|json)$/.test(p)).map(ficheiro=>({ficheiro,texto:fs.readFileSync(ficheiro,'utf8')}));
+const linhas=ids.map(id=>{
+ const c=getClaim(id),geo=new URL(c.source_url).searchParams.getAll('geo');
+ assert.equal(geo.length,1);
+ const lugar=geo[0]==='PT'?'portugal':geo[0]==='EU27_2020'?'uniao-europeia':null;
+ assert(lugar);
+ const declaracao=lugares[id]??(DOMINIO_DAS_MEDIDAS[id]?'portugal':null);
+ assert.equal(declaracao,lugar,id);
+ const cartoes=Object.keys(DOMINIO_DAS_MEDIDAS).filter(k=>{const r=reguaDoCartao(k);return [k,r.anterior?.id,r.ue?.id].includes(id)});
+ const tematicas=ENTRADAS.filter(e=>e.seccoes.some(s=>s.cartoes.some(k=>cartoes.includes(k)))).flatMap(e=>Object.entries(e.rota).map(([lang,rota])=>{
+  const ficheiro=path.join('dist',rota,'index.html');
+  const pagina=html.find(p=>p.ficheiro===ficheiro);
+  assert(pagina,`${id}: ${ficheiro}`);
+  const r=parse(pagina.html);
+  const elementos=r.querySelectorAll(`[data-claim="${id}"]`);
+  assert(elementos.length,`${id} sem valor em ${ficheiro}`);
+  return {lang,ficheiro,elementos:elementos.length,textos:elementos.map(e=>e.textContent.trim())};
+ }));
+ assert(tematicas.length);
+ const paginas=html.filter(p=>p.html.includes(id)).map(p=>p.ficheiro);
+ const paineis_html=html.filter(p=>['dist/index.html','dist/en/index.html'].includes(p.ficheiro)).flatMap(p=>{const r=parse(p.html);return r.querySelectorAll('[data-bloco]').filter(b=>b.outerHTML.includes(id)).map(b=>({ficheiro:p.ficheiro,bloco:b.getAttribute('data-bloco'),valores:b.querySelectorAll(`[data-claim="${id}"]`).map(e=>e.textContent.trim())}));});
+ return {id,geo,lugar,declaracao:lugares[id]?'lugar-das-linhas':'DOMINIO_DAS_MEDIDAS',cartoes,tematicas,paineis_html,paineis_declarados:BLOCOS_DA_PRIMEIRA_PAGINA.filter(b=>JSON.stringify(b).includes(id)).map(b=>b.id),fontes:fontes.filter(p=>p.texto.includes(id)).map(p=>p.ficheiro),paginas};
+});
+const resultado={linhas,linhas_medidas:linhas.length,declaracoes_explicitas:linhas.filter(l=>l.declaracao==='lugar-das-linhas').length,ja_declaradas_no_dominio:linhas.filter(l=>l.declaracao==='DOMINIO_DAS_MEDIDAS').length,conhecido_positivo:{linha_portuguesa:linhas.some(l=>l.id==='divida-publica-2024'&&l.lugar==='portugal'),linha_europeia:linhas.some(l=>l.id==='custo-unitario-do-trabalho-2025-ue'&&l.lugar==='uniao-europeia')}};
+assert(Object.values(resultado.conhecido_positivo).every(Boolean));
+fs.writeFileSync(path.join(pasta,'lugares.json'),JSON.stringify(resultado,null,2)+'\n');
+console.log(JSON.stringify({linhas:resultado.linhas_medidas,explicitas:resultado.declaracoes_explicitas,dominio:resultado.ja_declaradas_no_dominio,tematicas:linhas.reduce((n,l)=>n+l.tematicas.length,0)}));

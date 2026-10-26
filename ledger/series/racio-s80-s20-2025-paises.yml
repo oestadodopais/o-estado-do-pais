@@ -21,8 +21,8 @@ document:
   kind: "serie"
   url: "https://ec.europa.eu/eurostat/databrowser/view/tessi180/default/table?lang=en"
 source_url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tessi180?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&sex=T"
-access_date: "2026-09-29"
-published_at: "2026-09-17"
+access_date: "2026-10-26"
+published_at: "2026-10-20"
 
 # O literal da série: as etiquetas do conjunto e das coordenadas, e o período,
 # como a resposta os escreve. O excerto de cada ponto começa por ele.
@@ -138,8 +138,8 @@ pontos:
     bandeira: null
   - geo: "SK"
     valor: "3,27"
-    excerto: "Income quintile share ratio (S80/S20) by sex — Ratio — Slovakia — 2025: 3.27"
-    bandeira: null
+    excerto: "Income quintile share ratio (S80/S20) by sex — Ratio — Slovakia — 2025: 3.27 b"
+    bandeira: "b"
   - geo: "FI"
     valor: "3,93"
     excerto: "Income quintile share ratio (S80/S20) by sex — Ratio — Finland — 2025: 3.93"
@@ -157,7 +157,7 @@ attributed_to:
   - "Eurostat"
 study: "dominios-2026"
 # Nota interna. NÃO é publicada.
-note: "UE1. Linha de série por país (eixo: pais) da medida «racio-s80-s20-2025», pelo mesmo conjunto e pelas mesmas coordenadas seladas da linha «racio-s80-s20-2025-ue», com os 27 países no lugar da União. Coordenadas: freq=A, age=TOTAL, sex=T, unit=RAT, time=2025. Corpo alojado: ue1/032-eurostat-racio-s80-s20-2025-paises.json (sha256 3d829dff83723da5…). A data published_at é a da última atualização do conjunto, que a API publica por conjunto e não por ponto. Licença: Eurostat, CC BY 4.0."
+note: "UE1. Linha de série por país (eixo: pais) da medida «racio-s80-s20-2025», pelo mesmo conjunto e pelas mesmas coordenadas seladas da linha «racio-s80-s20-2025-ue», com os 27 países no lugar da União. Coordenadas: freq=A, age=TOTAL, sex=T, unit=RAT, time=2025. Corpo alojado: corredor-series-paises/2026-10-26/7d9ee55a7539f240e13fb6aff1e69923effcf0181d9957c185aa206d3acb90b7/005-racio-s80-s20-2025-paises.json (sha256 7d9ee55a7539f240…). A data published_at é a da última atualização do conjunto, que a API publica por conjunto e não por ponto. Licença: Eurostat, CC BY 4.0."
 
 # Correcções datadas, por ponto. Nunca apagar um valor: acrescentar aqui.
 corrections: []

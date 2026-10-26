@@ -6,7 +6,7 @@
 id: "fluxo-de-credito-as-familias-2024"
 
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
-value: "4,1"
+value: "4,0"
 unit: "% do stock no final do período anterior"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
@@ -17,11 +17,12 @@ document:
   kind: "serie"
   url: "https://ec.europa.eu/eurostat/databrowser/view/tipspc40/default/table?lang=en"
 source_url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipspc40?format=JSON&lang=EN&geo=PT&unit=PC_LE"
-access_date: "2026-09-15"
+access_date: "2026-10-26"
+published_at: "2026-10-24"
 reference_date: "2024"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "Household including non-profit institutions serving households (NPISH) credit flow, consolidated — Percentage of stocks (closing balance sheet) — Portugal — 2024: 4.1"
+excerpt: "Household including non-profit institutions serving households (NPISH) credit flow, consolidated — Percentage of stocks (closing balance sheet) — Portugal — 2024: 4.0"
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null
@@ -33,7 +34,31 @@ study: "quadro-institucional"
 note: "Período anterior da medida «fluxo-de-credito-as-familias-2025»: o mesmo pedido ao Eurostat devolve a série inteira, e esta linha é o período 2024. Limiar do Procedimento relativo aos Desequilíbrios Macroeconómicos: 14%. Excerto composto a partir das etiquetas da própria resposta do Eurostat; o endereço em source_url devolve o mesmo valor."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
-corrections: []
+corrections:
+- date: '2026-10-26'
+  kind: atualizacao
+  old_value: 4,1
+  new_value: 4,0
+  reason: "O Eurostat reviu o valor de 4,1 para 4,0 na atualização do conjunto de dados de 17.10.2026 (a versão anterior era de 09.10.2026). A comparação semanal com a fonte de 19.10.2026 encontrou a revisão, a de 26.10.2026 leu o mesmo valor na versão de 24.10.2026, e este projeto releu a fonte a 26.10.2026; até aí publicava-se o valor da leitura anterior."
+  reason_en: "Eurostat revised the value from 4.1 to 4.0 in the dataset update of 17.10.2026 (the previous version was of 09.10.2026). The weekly comparison with the source of 19.10.2026 found the revision, the one of 26.10.2026 read the same value in the version of 24.10.2026, and this project re-read the source on 26.10.2026; until then the value of the earlier reading was published."
+- date: '2026-10-26'
+  kind: proveniencia
+  field: access_date
+  old_value: '2026-09-15'
+  new_value: '2026-10-26'
+  reason: O valor novo foi lido a 26.10.2026, o dia em que este projeto releu a fonte; a leitura anterior, de 15.09.2026,
+    é a do valor 4,1.
+  reason_en: The new value was read on 26.10.2026, the day this project re-read the source; the earlier reading, of
+    15.09.2026, is that of the value 4,1.
+- date: '2026-10-26'
+  kind: proveniencia
+  field: excerpt
+  old_value: 'Household including non-profit institutions serving households (NPISH) credit flow, consolidated — Percentage
+    of stocks (closing balance sheet) — Portugal — 2024: 4.1'
+  new_value: 'Household including non-profit institutions serving households (NPISH) credit flow, consolidated — Percentage
+    of stocks (closing balance sheet) — Portugal — 2024: 4.0'
+  reason: O excerto passa a transcrever o valor revisto que a fonte imprime na mesma observação, lida a 26.10.2026.
+  reason_en: The excerpt now transcribes the revised value the source prints for the same observation, read on 26.10.2026.
 
 # Reconferências. Escritas por indicators/refresh.py, nunca à mão.
 
@@ -66,3 +91,7 @@ verifications:
     result: "diverge"
     by: "painel-semanal"
     found: "4.0"
+  - date: "2026-10-26"
+    path: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipspc40?format=JSON&lang=EN&geo=PT&unit=PC_LE"
+    result: "igual"
+    by: "painel-semanal"

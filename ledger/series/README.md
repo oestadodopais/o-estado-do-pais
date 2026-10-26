@@ -149,3 +149,11 @@ O recibo de uma série no tempo (`src/views/SerieNoTempoView.astro`, na mesma ro
 ### Segundas fontes das definições
 
 Uma série no tempo pode declarar `definition_sources` imediatamente depois de `source`. A lista é opcional; quando existe, não é vazia e cada entrada traz `publisher`, `url` em HTTPS e `receipt` com o caminho relativo `motor`, `sha256`, `cliente` e `hora`. O motor confere os bytes antes de exportar; a conferência das definições compara o recibo com a origem citada. O campo não altera os pontos nem atribui a medida à fonte da definição.
+
+## A releitura das séries por país (UE1-c, 26.10.2026)
+
+`python3 -m publisher.series_paises_corredor --site <worktree> --pasta indicators/out/series-paises/<corrida> --write`, no motor, pede as dez séries pelo cliente da casa. A pasta de cada corrida guarda os corpos e `pedidos.jsonl`; repetir a mesma pasta reutiliza os recibos, e uma nova consulta à rede exige uma pasta nova. Os corpos publicados ficam em `content/13 Dominios/source/corredor-series-paises/<dia>/<sha256>/`, sem substituir os anteriores. O índice `series-paises-leituras.json` escolhe a edição vigente por pedido; `series-paises-revisoes.json` conserva a história por país. Ambos vivem na pasta da fonte.
+
+O construtor habitual recompõe os pontos. O corredor compara-os com os YAML publicados e acrescenta uma `atualizacao` por valor revisto, com os dois carimbos completos do conjunto e o dia da releitura nos motivos das duas línguas. As marcas da fonte também se atualizam, sem inventar uma revisão numérica. Perder um país ou o período selado, mudar uma unidade ou rótulo, apagar história ou divergir dos recibos recusa toda a escrita canónica. Meses adicionais na resposta não mudam o período selado. Sem mudanças nos pontos, só ficam os recibos e o relatório da consulta; os ficheiros canónicos não se escrevem.
+
+A travessia continua a ser `publisher.export_series --site <worktree> --write`. As linhas gémeas têm de ser atualizadas pela releitura das linhas antes de atravessar, porque a VS3 exige a concordância. A VS6 exige a revisão de cada ponto mudado e a conservação da história publicada. Um mandato de revisões do painel inclui a releitura das séries por país das medidas tocadas.

@@ -1,0 +1,996 @@
+{
+  "ferramenta": "medir.mjs",
+  "cabecas_lidas": {
+    "sitio": "442b284e229408018e8c97c59dadd285a526bf3c",
+    "motor": "8c0493f64ef689f57e16a4c401888b233f2a7678"
+  },
+  "series": [
+    {
+      "serie": "desemprego-de-longa-duracao-2025-paises",
+      "estado": "igual",
+      "carimbo_anterior": "2026-09-10T23:00:00+0200",
+      "carimbo_novo": "2026-09-10T23:00:00+0200",
+      "corpo_anterior": "ue1/028-eurostat-desemprego-de-longa-duracao-2025-paises.json",
+      "sha256_anterior": "894d93f0368f930cf4db9b06673a6b6b6b798335a3e286c6012876e127ea3c62",
+      "corpo_novo": "corredor-series-paises/2026-10-26/894d93f0368f930cf4db9b06673a6b6b6b798335a3e286c6012876e127ea3c62/001-desemprego-de-longa-duracao-2025-paises.json",
+      "sha256_novo": "894d93f0368f930cf4db9b06673a6b6b6b798335a3e286c6012876e127ea3c62",
+      "revisoes": [],
+      "comparacoes": {
+        "uniao": {
+          "linha": "desemprego-de-longa-duracao-2025-ue",
+          "valor_da_linha": "1,9",
+          "valor_do_ponto": "1,9",
+          "sha256_da_linha": "ebd7c811691ad666abc7767f3c22dd661d6454fbb6f64d31f32a1ec855d025a0"
+        },
+        "portugal": {
+          "linha": "desemprego-de-longa-duracao-2025",
+          "valor_da_linha": "2,2",
+          "valor_do_ponto": "2,2",
+          "sha256_da_linha": "26faa8605754664fb861dd9f0dd475feac0352ffff0e9b208e6e7007b2959880"
+        }
+      },
+      "pontos": 28,
+      "marcas": []
+    },
+    {
+      "serie": "divida-publica-2025-paises",
+      "estado": "mudou",
+      "carimbo_anterior": "2026-04-22T11:00:00+0200",
+      "carimbo_novo": "2026-10-21T11:00:00+0200",
+      "corpo_anterior": "ue1/029-eurostat-divida-publica-2025-paises.json",
+      "sha256_anterior": "4d8d1f262722183533cb1b2687b75b3860c5894462a95c3eb04c15149923213c",
+      "corpo_novo": "corredor-series-paises/2026-10-26/ba616d618f4127157b1d390cbe341820963a6ba561759dfd8e9f79f2c530f25c/002-divida-publica-2025-paises.json",
+      "sha256_novo": "ba616d618f4127157b1d390cbe341820963a6ba561759dfd8e9f79f2c530f25c",
+      "revisoes": [
+        {
+          "geo": "BE",
+          "date": "2026-10-26",
+          "kind": "atualizacao",
+          "old_value": "107,9",
+          "new_value": "108,1",
+          "reason": "O Eurostat reviu o valor de BE; o carimbo do conjunto passou de 2026-04-22T11:00:00+0200 a 2026-10-21T11:00:00+0200. A releitura de 2026-10-26 confirmou a revisão.",
+          "reason_en": "Eurostat revised the value for BE; the dataset stamp moved from 2026-04-22T11:00:00+0200 to 2026-10-21T11:00:00+0200. The rereading on 2026-10-26 confirmed the revision."
+        },
+        {
+          "geo": "CZ",
+          "date": "2026-10-26",
+          "kind": "atualizacao",
+          "old_value": "44,3",
+          "new_value": "44,2",
+          "reason": "O Eurostat reviu o valor de CZ; o carimbo do conjunto passou de 2026-04-22T11:00:00+0200 a 2026-10-21T11:00:00+0200. A releitura de 2026-10-26 confirmou a revisão.",
+          "reason_en": "Eurostat revised the value for CZ; the dataset stamp moved from 2026-04-22T11:00:00+0200 to 2026-10-21T11:00:00+0200. The rereading on 2026-10-26 confirmed the revision."
+        },
+        {
+          "geo": "DK",
+          "date": "2026-10-26",
+          "kind": "atualizacao",
+          "old_value": "27,9",
+          "new_value": "27,2",
+          "reason": "O Eurostat reviu o valor de DK; o carimbo do conjunto passou de 2026-04-22T11:00:00+0200 a 2026-10-21T11:00:00+0200. A releitura de 2026-10-26 confirmou a revisão.",
+          "reason_en": "Eurostat revised the value for DK; the dataset stamp moved from 2026-04-22T11:00:00+0200 to 2026-10-21T11:00:00+0200. The rereading on 2026-10-26 confirmed the revision."
+        },
+        {
+          "geo": "DE",
+          "date": "2026-10-26",
+          "kind": "atualizacao",
+          "old_value": "63,5",
+          "new_value": "62,8",
+          "reason": "O Eurostat reviu o valor de DE; o carimbo do conjunto passou de 2026-04-22T11:00:00+0200 a 2026-10-21T11:00:00+0200. A releitura de 2026-10-26 confirmou a revisão.",
+          "reason_en": "Eurostat revised the value for DE; the dataset stamp moved from 2026-04-22T11:00:00+0200 to 2026-10-21T11:00:00+0200. The rereading on 2026-10-26 confirmed the revision."
+        },
+        {
+          "geo": "EE",
+          "date": "2026-10-26",
+          "kind": "atualizacao",
+          "old_value": "24,1",
+          "new_value": "24,0",
+          "reason": "O Eurostat reviu o valor de EE; o carimbo do conjunto passou de 2026-04-22T11:00:00+0200 a 2026-10-21T11:00:00+0200. A releitura de 2026-10-26 confirmou a revisão.",
+          "reason_en": "Eurostat revised the value for EE; the dataset stamp moved from 2026-04-22T11:00:00+0200 to 2026-10-21T11:00:00+0200. The rereading on 2026-10-26 confirmed the revision."
+        },
+        {
+          "geo": "IE",
+          "date": "2026-10-26",
+          "kind": "atualizacao",
+          "old_value": "32,9",
+          "new_value": "34,8",
+          "reason": "O Eurostat reviu o valor de IE; o carimbo do conjunto passou de 2026-04-22T11:00:00+0200 a 2026-10-21T11:00:00+0200. A releitura de 2026-10-26 confirmou a revisão.",
+          "reason_en": "Eurostat revised the value for IE; the dataset stamp moved from 2026-04-22T11:00:00+0200 to 2026-10-21T11:00:00+0200. The rereading on 2026-10-26 confirmed the revision."
+        },
+        {
+          "geo": "EL",
+          "date": "2026-10-26",
+          "kind": "atualizacao",
+          "old_value": "146,1",
+          "new_value": "145,4",
+          "reason": "O Eurostat reviu o valor de EL; o carimbo do conjunto passou de 2026-04-22T11:00:00+0200 a 2026-10-21T11:00:00+0200. A releitura de 2026-10-26 confirmou a revisão.",
+          "reason_en": "Eurostat revised the value for EL; the dataset stamp moved from 2026-04-22T11:00:00+0200 to 2026-10-21T11:00:00+0200. The rereading on 2026-10-26 confirmed the revision."
+        },
+        {
+          "geo": "ES",
+          "date": "2026-10-26",
+          "kind": "atualizacao",
+          "old_value": "100,7",
+          "new_value": "100,5",
+          "reason": "O Eurostat reviu o valor de ES; o carimbo do conjunto passou de 2026-04-22T11:00:00+0200 a 2026-10-21T11:00:00+0200. A releitura de 2026-10-26 confirmou a revisão.",
+          "reason_en": "Eurostat revised the value for ES; the dataset stamp moved from 2026-04-22T11:00:00+0200 to 2026-10-21T11:00:00+0200. The rereading on 2026-10-26 confirmed the revision."
+        },
+        {
+          "geo": "FR",
+          "date": "2026-10-26",
+          "kind": "atualizacao",
+          "old_value": "115,6",
+          "new_value": "115,7",
+          "reason": "O Eurostat reviu o valor de FR; o carimbo do conjunto passou de 2026-04-22T11:00:00+0200 a 2026-10-21T11:00:00+0200. A releitura de 2026-10-26 confirmou a revisão.",
+          "reason_en": "Eurostat revised the value for FR; the dataset stamp moved from 2026-04-22T11:00:00+0200 to 2026-10-21T11:00:00+0200. The rereading on 2026-10-26 confirmed the revision."
+        },
+        {
+          "geo": "HR",
+          "date": "2026-10-26",
+          "kind": "atualizacao",
+          "old_value": "56,3",
+          "new_value": "55,7",
+          "reason": "O Eurostat reviu o valor de HR; o carimbo do conjunto passou de 2026-04-22T11:00:00+0200 a 2026-10-21T11:00:00+0200. A releitura de 2026-10-26 confirmou a revisão.",
+          "reason_en": "Eurostat revised the value for HR; the dataset stamp moved from 2026-04-22T11:00:00+0200 to 2026-10-21T11:00:00+0200. The rereading on 2026-10-26 confirmed the revision."
+        },
+        {
+          "geo": "IT",
+          "date": "2026-10-26",
+          "kind": "atualizacao",
+          "old_value": "137,1",
+          "new_value": "136,7",
+          "reason": "O Eurostat reviu o valor de IT; o carimbo do conjunto passou de 2026-04-22T11:00:00+0200 a 2026-10-21T11:00:00+0200. A releitura de 2026-10-26 confirmou a revisão.",
+          "reason_en": "Eurostat revised the value for IT; the dataset stamp moved from 2026-04-22T11:00:00+0200 to 2026-10-21T11:00:00+0200. The rereading on 2026-10-26 confirmed the revision."
+        },
+        {
+          "geo": "CY",
+          "date": "2026-10-26",
+          "kind": "atualizacao",
+          "old_value": "55,0",
+          "new_value": "52,3",
+          "reason": "O Eurostat reviu o valor de CY; o carimbo do conjunto passou de 2026-04-22T11:00:00+0200 a 2026-10-21T11:00:00+0200. A releitura de 2026-10-26 confirmou a revisão.",
+          "reason_en": "Eurostat revised the value for CY; the dataset stamp moved from 2026-04-22T11:00:00+0200 to 2026-10-21T11:00:00+0200. The rereading on 2026-10-26 confirmed the revision."
+        },
+        {
+          "geo": "LV",
+          "date": "2026-10-26",
+          "kind": "atualizacao",
+          "old_value": "46,9",
+          "new_value": "46,2",
+          "reason": "O Eurostat reviu o valor de LV; o carimbo do conjunto passou de 2026-04-22T11:00:00+0200 a 2026-10-21T11:00:00+0200. A releitura de 2026-10-26 confirmou a revisão.",
+          "reason_en": "Eurostat revised the value for LV; the dataset stamp moved from 2026-04-22T11:00:00+0200 to 2026-10-21T11:00:00+0200. The rereading on 2026-10-26 confirmed the revision."
+        },
+        {
+          "geo": "LT",
+          "date": "2026-10-26",
+          "kind": "atualizacao",
+          "old_value": "39,5",
+          "new_value": "39,3",
+          "reason": "O Eurostat reviu o valor de LT; o carimbo do conjunto passou de 2026-04-22T11:00:00+0200 a 2026-10-21T11:00:00+0200. A releitura de 2026-10-26 confirmou a revisão.",
+          "reason_en": "Eurostat revised the value for LT; the dataset stamp moved from 2026-04-22T11:00:00+0200 to 2026-10-21T11:00:00+0200. The rereading on 2026-10-26 confirmed the revision."
+        },
+        {
+          "geo": "LU",
+          "date": "2026-10-26",
+          "kind": "atualizacao",
+          "old_value": "26,5",
+          "new_value": "26,0",
+          "reason": "O Eurostat reviu o valor de LU; o carimbo do conjunto passou de 2026-04-22T11:00:00+0200 a 2026-10-21T11:00:00+0200. A releitura de 2026-10-26 confirmou a revisão.",
+          "reason_en": "Eurostat revised the value for LU; the dataset stamp moved from 2026-04-22T11:00:00+0200 to 2026-10-21T11:00:00+0200. The rereading on 2026-10-26 confirmed the revision."
+        },
+        {
+          "geo": "HU",
+          "date": "2026-10-26",
+          "kind": "atualizacao",
+          "old_value": "74,6",
+          "new_value": "74,4",
+          "reason": "O Eurostat reviu o valor de HU; o carimbo do conjunto passou de 2026-04-22T11:00:00+0200 a 2026-10-21T11:00:00+0200. A releitura de 2026-10-26 confirmou a revisão.",
+          "reason_en": "Eurostat revised the value for HU; the dataset stamp moved from 2026-04-22T11:00:00+0200 to 2026-10-21T11:00:00+0200. The rereading on 2026-10-26 confirmed the revision."
+        },
+        {
+          "geo": "MT",
+          "date": "2026-10-26",
+          "kind": "atualizacao",
+          "old_value": "46,4",
+          "new_value": "46,3",
+          "reason": "O Eurostat reviu o valor de MT; o carimbo do conjunto passou de 2026-04-22T11:00:00+0200 a 2026-10-21T11:00:00+0200. A releitura de 2026-10-26 confirmou a revisão.",
+          "reason_en": "Eurostat revised the value for MT; the dataset stamp moved from 2026-04-22T11:00:00+0200 to 2026-10-21T11:00:00+0200. The rereading on 2026-10-26 confirmed the revision."
+        },
+        {
+          "geo": "NL",
+          "date": "2026-10-26",
+          "kind": "atualizacao",
+          "old_value": "44,4",
+          "new_value": "44,7",
+          "reason": "O Eurostat reviu o valor de NL; o carimbo do conjunto passou de 2026-04-22T11:00:00+0200 a 2026-10-21T11:00:00+0200. A releitura de 2026-10-26 confirmou a revisão.",
+          "reason_en": "Eurostat revised the value for NL; the dataset stamp moved from 2026-04-22T11:00:00+0200 to 2026-10-21T11:00:00+0200. The rereading on 2026-10-26 confirmed the revision."
+        },
+        {
+          "geo": "AT",
+          "date": "2026-10-26",
+          "kind": "atualizacao",
+          "old_value": "81,5",
+          "new_value": "80,7",
+          "reason": "O Eurostat reviu o valor de AT; o carimbo do conjunto passou de 2026-04-22T11:00:00+0200 a 2026-10-21T11:00:00+0200. A releitura de 2026-10-26 confirmou a revisão.",
+          "reason_en": "Eurostat revised the value for AT; the dataset stamp moved from 2026-04-22T11:00:00+0200 to 2026-10-21T11:00:00+0200. The rereading on 2026-10-26 confirmed the revision."
+        },
+        {
+          "geo": "PL",
+          "date": "2026-10-26",
+          "kind": "atualizacao",
+          "old_value": "59,7",
+          "new_value": "59,6",
+          "reason": "O Eurostat reviu o valor de PL; o carimbo do conjunto passou de 2026-04-22T11:00:00+0200 a 2026-10-21T11:00:00+0200. A releitura de 2026-10-26 confirmou a revisão.",
+          "reason_en": "Eurostat revised the value for PL; the dataset stamp moved from 2026-04-22T11:00:00+0200 to 2026-10-21T11:00:00+0200. The rereading on 2026-10-26 confirmed the revision."
+        },
+        {
+          "geo": "PT",
+          "date": "2026-10-26",
+          "kind": "atualizacao",
+          "old_value": "89,7",
+          "new_value": "89,2",
+          "reason": "O Eurostat reviu o valor de PT; o carimbo do conjunto passou de 2026-04-22T11:00:00+0200 a 2026-10-21T11:00:00+0200. A releitura de 2026-10-26 confirmou a revisão.",
+          "reason_en": "Eurostat revised the value for PT; the dataset stamp moved from 2026-04-22T11:00:00+0200 to 2026-10-21T11:00:00+0200. The rereading on 2026-10-26 confirmed the revision."
+        },
+        {
+          "geo": "RO",
+          "date": "2026-10-26",
+          "kind": "atualizacao",
+          "old_value": "59,3",
+          "new_value": "58,9",
+          "reason": "O Eurostat reviu o valor de RO; o carimbo do conjunto passou de 2026-04-22T11:00:00+0200 a 2026-10-21T11:00:00+0200. A releitura de 2026-10-26 confirmou a revisão.",
+          "reason_en": "Eurostat revised the value for RO; the dataset stamp moved from 2026-04-22T11:00:00+0200 to 2026-10-21T11:00:00+0200. The rereading on 2026-10-26 confirmed the revision."
+        },
+        {
+          "geo": "SI",
+          "date": "2026-10-26",
+          "kind": "atualizacao",
+          "old_value": "65,7",
+          "new_value": "65,1",
+          "reason": "O Eurostat reviu o valor de SI; o carimbo do conjunto passou de 2026-04-22T11:00:00+0200 a 2026-10-21T11:00:00+0200. A releitura de 2026-10-26 confirmou a revisão.",
+          "reason_en": "Eurostat revised the value for SI; the dataset stamp moved from 2026-04-22T11:00:00+0200 to 2026-10-21T11:00:00+0200. The rereading on 2026-10-26 confirmed the revision."
+        },
+        {
+          "geo": "SK",
+          "date": "2026-10-26",
+          "kind": "atualizacao",
+          "old_value": "61,4",
+          "new_value": "60,5",
+          "reason": "O Eurostat reviu o valor de SK; o carimbo do conjunto passou de 2026-04-22T11:00:00+0200 a 2026-10-21T11:00:00+0200. A releitura de 2026-10-26 confirmou a revisão.",
+          "reason_en": "Eurostat revised the value for SK; the dataset stamp moved from 2026-04-22T11:00:00+0200 to 2026-10-21T11:00:00+0200. The rereading on 2026-10-26 confirmed the revision."
+        },
+        {
+          "geo": "FI",
+          "date": "2026-10-26",
+          "kind": "atualizacao",
+          "old_value": "88,5",
+          "new_value": "88,4",
+          "reason": "O Eurostat reviu o valor de FI; o carimbo do conjunto passou de 2026-04-22T11:00:00+0200 a 2026-10-21T11:00:00+0200. A releitura de 2026-10-26 confirmou a revisão.",
+          "reason_en": "Eurostat revised the value for FI; the dataset stamp moved from 2026-04-22T11:00:00+0200 to 2026-10-21T11:00:00+0200. The rereading on 2026-10-26 confirmed the revision."
+        },
+        {
+          "geo": "EU27_2020",
+          "date": "2026-10-26",
+          "kind": "atualizacao",
+          "old_value": "81,7",
+          "new_value": "81,5",
+          "reason": "O Eurostat reviu o valor de EU27_2020; o carimbo do conjunto passou de 2026-04-22T11:00:00+0200 a 2026-10-21T11:00:00+0200. A releitura de 2026-10-26 confirmou a revisão.",
+          "reason_en": "Eurostat revised the value for EU27_2020; the dataset stamp moved from 2026-04-22T11:00:00+0200 to 2026-10-21T11:00:00+0200. The rereading on 2026-10-26 confirmed the revision."
+        }
+      ],
+      "comparacoes": {
+        "uniao": {
+          "linha": "divida-publica-2025-ue",
+          "valor_da_linha": "81,5",
+          "valor_do_ponto": "81,5",
+          "sha256_da_linha": "5df27108f22a23369924e091a963a12cffff477a7f6a42b4db3fa4594067f587"
+        },
+        "portugal": {
+          "linha": "divida-publica-2025",
+          "valor_da_linha": "89,2",
+          "valor_do_ponto": "89,2",
+          "sha256_da_linha": "630993b3ba68b62e020e3787280369455f8b90c33787429f0f0bfe9344e558c2"
+        }
+      },
+      "pontos": 28,
+      "marcas": []
+    },
+    {
+      "serie": "ihpc-variacao-homologa-paises",
+      "estado": "igual",
+      "carimbo_anterior": "2026-09-17T11:00:00+0200",
+      "carimbo_novo": "2026-10-16T23:00:00+0200",
+      "corpo_anterior": "ue1/030-eurostat-ihpc-variacao-homologa-paises.json",
+      "sha256_anterior": "3b6f92ccf611d2a07b8ad1f04361bc4bbd967673136b2a103e23040595ae38ac",
+      "corpo_novo": "corredor-series-paises/2026-10-26/f1c492a9017814bc6dd12d6a8b734670c05d717ca72f5aa31c353827e44796fe/003-ihpc-variacao-homologa-paises.json",
+      "sha256_novo": "f1c492a9017814bc6dd12d6a8b734670c05d717ca72f5aa31c353827e44796fe",
+      "revisoes": [],
+      "comparacoes": {
+        "uniao": {
+          "linha": "ihpc-variacao-homologa-ue",
+          "valor_da_linha": "3,2",
+          "valor_do_ponto": "3,2",
+          "sha256_da_linha": "8f4b3583734f62aaca73f8100ebfda697f981209192171cb4be1c77a3c537da9"
+        },
+        "portugal": {
+          "linha": "ihpc-variacao-homologa",
+          "valor_da_linha": "3,6",
+          "valor_do_ponto": "3,6",
+          "sha256_da_linha": "341627ab54e2a16a7d2a944f81d4ed8b393aaf102dd246677f9a50a35ead9519"
+        }
+      },
+      "pontos": 28,
+      "marcas": []
+    },
+    {
+      "serie": "precos-da-habitacao-2025-paises",
+      "estado": "mudou",
+      "carimbo_anterior": "2026-07-02T11:00:00+0200",
+      "carimbo_novo": "2026-10-01T11:00:00+0200",
+      "corpo_anterior": "ue1/031-eurostat-precos-da-habitacao-2025-paises.json",
+      "sha256_anterior": "725fe353012ab916ee8e1b665adadc23650d3810b6beb83dd85d1cf575d062c8",
+      "corpo_novo": "corredor-series-paises/2026-10-26/2fb9ebf4998261155e60e0fb5a87d4c722897c1fd31fb170a89646d86619ced7/004-precos-da-habitacao-2025-paises.json",
+      "sha256_novo": "2fb9ebf4998261155e60e0fb5a87d4c722897c1fd31fb170a89646d86619ced7",
+      "revisoes": [
+        {
+          "geo": "AT",
+          "date": "2026-10-26",
+          "kind": "atualizacao",
+          "old_value": "2,6",
+          "new_value": "2,5",
+          "reason": "O Eurostat reviu o valor de AT; o carimbo do conjunto passou de 2026-07-02T11:00:00+0200 a 2026-10-01T11:00:00+0200. A releitura de 2026-10-26 confirmou a revisão.",
+          "reason_en": "Eurostat revised the value for AT; the dataset stamp moved from 2026-07-02T11:00:00+0200 to 2026-10-01T11:00:00+0200. The rereading on 2026-10-26 confirmed the revision."
+        }
+      ],
+      "comparacoes": {
+        "uniao": {
+          "linha": "precos-da-habitacao-2025-ue",
+          "valor_da_linha": "5,5",
+          "valor_do_ponto": "5,5",
+          "sha256_da_linha": "6d62e26e634054f1f6ea07a298efd353d857ecb5ba672d62a8934ca8751f7732"
+        },
+        "portugal": {
+          "linha": "precos-da-habitacao-2025",
+          "valor_da_linha": "17,6",
+          "valor_do_ponto": "17,6",
+          "sha256_da_linha": "47fcdb3c162052c1663bd2c1940f78f110ea945f3007af009efb177847b219ec"
+        }
+      },
+      "pontos": 28,
+      "marcas": []
+    },
+    {
+      "serie": "racio-s80-s20-2025-paises",
+      "estado": "mudou",
+      "carimbo_anterior": "2026-09-17T23:00:00+0200",
+      "carimbo_novo": "2026-10-20T11:00:00+0200",
+      "corpo_anterior": "ue1/032-eurostat-racio-s80-s20-2025-paises.json",
+      "sha256_anterior": "3d829dff83723da51d9cfda3781c1d5fc291964fef9575e8cb9c2988ff0425dc",
+      "corpo_novo": "corredor-series-paises/2026-10-26/7d9ee55a7539f240e13fb6aff1e69923effcf0181d9957c185aa206d3acb90b7/005-racio-s80-s20-2025-paises.json",
+      "sha256_novo": "7d9ee55a7539f240e13fb6aff1e69923effcf0181d9957c185aa206d3acb90b7",
+      "revisoes": [],
+      "comparacoes": {
+        "uniao": {
+          "linha": "racio-s80-s20-2025-ue",
+          "valor_da_linha": "4,62",
+          "valor_do_ponto": "4,62",
+          "sha256_da_linha": "2ad52444f4d035b32ce2c27bda97a5c823e1b745c189aaa4c644f753d950131e"
+        },
+        "portugal": {
+          "linha": "racio-s80-s20-2025",
+          "valor_da_linha": "4,86",
+          "valor_do_ponto": "4,86",
+          "sha256_da_linha": "800906f9bf017329211a5476328a3c2cb3dcd00f73fe66df86012f31fa10a39f"
+        }
+      },
+      "pontos": 28,
+      "marcas": [
+        {
+          "geo": "SK",
+          "antes": null,
+          "depois": "b"
+        }
+      ]
+    },
+    {
+      "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+      "estado": "mudou",
+      "carimbo_anterior": "2026-09-17T23:00:00+0200",
+      "carimbo_novo": "2026-10-20T11:00:00+0200",
+      "corpo_anterior": "ue1/033-eurostat-risco-de-pobreza-ou-exclusao-2025-paises.json",
+      "sha256_anterior": "8317a25579e348240e8f0064abf3fa96a7a2ae2ee5432474c1da73552ad7eb3e",
+      "corpo_novo": "corredor-series-paises/2026-10-26/803d3abb3ec469800ea76e7d9b25a55e6303b66967cfc0de19ece48db1858e9a/006-risco-de-pobreza-ou-exclusao-2025-paises.json",
+      "sha256_novo": "803d3abb3ec469800ea76e7d9b25a55e6303b66967cfc0de19ece48db1858e9a",
+      "revisoes": [],
+      "comparacoes": {
+        "uniao": {
+          "linha": "risco-de-pobreza-ou-exclusao-2025-ue",
+          "valor_da_linha": "20,9",
+          "valor_do_ponto": "20,9",
+          "sha256_da_linha": "d64910dab6a6aa35b1a6c701032c6a5ceb59b96ec6d47144a04e751b8930c83c"
+        },
+        "portugal": {
+          "linha": "risco-de-pobreza-ou-exclusao-2025",
+          "valor_da_linha": "18,6",
+          "valor_do_ponto": "18,6",
+          "sha256_da_linha": "4309dc084915adb6924ba5f1901ec384ce749854de54deb81c91bcc9b6387a0b"
+        }
+      },
+      "pontos": 28,
+      "marcas": [
+        {
+          "geo": "SK",
+          "antes": null,
+          "depois": "b"
+        }
+      ]
+    },
+    {
+      "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
+      "estado": "mudou",
+      "carimbo_anterior": "2026-09-17T23:00:00+0200",
+      "carimbo_novo": "2026-10-20T11:00:00+0200",
+      "corpo_anterior": "ue1/034-eurostat-sobrecarga-do-custo-da-habitacao-2025-paises.json",
+      "sha256_anterior": "5848b25b94a6f530caad906c496a9e853690e5f22c3876bff5aa072ae159bfa0",
+      "corpo_novo": "corredor-series-paises/2026-10-26/f0612b1353f1c6dd8bfe3bd4a0a7623d283fbec6d53af6580a8d937b3fee05cc/007-sobrecarga-do-custo-da-habitacao-2025-paises.json",
+      "sha256_novo": "f0612b1353f1c6dd8bfe3bd4a0a7623d283fbec6d53af6580a8d937b3fee05cc",
+      "revisoes": [
+        {
+          "geo": "DK",
+          "date": "2026-10-26",
+          "kind": "atualizacao",
+          "old_value": "23,4",
+          "new_value": "14,7",
+          "reason": "O Eurostat reviu o valor de DK; o carimbo do conjunto passou de 2026-09-17T23:00:00+0200 a 2026-10-20T11:00:00+0200. A releitura de 2026-10-26 confirmou a revisão.",
+          "reason_en": "Eurostat revised the value for DK; the dataset stamp moved from 2026-09-17T23:00:00+0200 to 2026-10-20T11:00:00+0200. The rereading on 2026-10-26 confirmed the revision."
+        }
+      ],
+      "comparacoes": {
+        "uniao": {
+          "linha": "sobrecarga-do-custo-da-habitacao-2025-ue",
+          "valor_da_linha": "7,7",
+          "valor_do_ponto": "7,7",
+          "sha256_da_linha": "3a9e18bde6e19ad98bfd0f0df2449f45d8d723dd889a18f5de78d9f025849708"
+        },
+        "portugal": {
+          "linha": "sobrecarga-do-custo-da-habitacao-2025",
+          "valor_da_linha": "6,3",
+          "valor_do_ponto": "6,3",
+          "sha256_da_linha": "bfb3255df883efbdb9d23df5eac848c5e820d0c3c9185195fb2c411a43dc0696"
+        }
+      },
+      "pontos": 28,
+      "marcas": [
+        {
+          "geo": "SK",
+          "antes": null,
+          "depois": "b"
+        }
+      ]
+    },
+    {
+      "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
+      "estado": "mudou",
+      "carimbo_anterior": "2026-09-17T23:00:00+0200",
+      "carimbo_novo": "2026-10-20T11:00:00+0200",
+      "corpo_anterior": "ue1/035-eurostat-sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises.json",
+      "sha256_anterior": "8e482910fe1af17086a3d409ba8aea884fd8c1d1d0e3ac2da4e0c0facc16fb0b",
+      "corpo_novo": "corredor-series-paises/2026-10-26/0d9b29aa8751fc2afc4388978c9ca132dd708d64ace6d5fe96836732d7abc98c/008-sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises.json",
+      "sha256_novo": "0d9b29aa8751fc2afc4388978c9ca132dd708d64ace6d5fe96836732d7abc98c",
+      "revisoes": [
+        {
+          "geo": "DK",
+          "date": "2026-10-26",
+          "kind": "atualizacao",
+          "old_value": "23,6",
+          "new_value": "23,0",
+          "reason": "O Eurostat reviu o valor de DK; o carimbo do conjunto passou de 2026-09-17T23:00:00+0200 a 2026-10-20T11:00:00+0200. A releitura de 2026-10-26 confirmou a revisão.",
+          "reason_en": "Eurostat revised the value for DK; the dataset stamp moved from 2026-09-17T23:00:00+0200 to 2026-10-20T11:00:00+0200. The rereading on 2026-10-26 confirmed the revision."
+        }
+      ],
+      "comparacoes": {
+        "uniao": {
+          "linha": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue",
+          "valor_da_linha": "18,6",
+          "valor_do_ponto": "18,6",
+          "sha256_da_linha": "aefb881e490194f29c5326f902f07c86861dfd07fb2be5e24ba4c86210721a1a"
+        },
+        "portugal": {
+          "linha": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
+          "valor_da_linha": "27,2",
+          "valor_do_ponto": "27,2",
+          "sha256_da_linha": "37447737f7517ff276cb18ef016f7cc0e9b887fbae67bf39405ee5d6164401be"
+        }
+      },
+      "pontos": 28,
+      "marcas": [
+        {
+          "geo": "SK",
+          "antes": null,
+          "depois": "b"
+        }
+      ]
+    },
+    {
+      "serie": "taxa-de-desemprego-mip-2025-paises",
+      "estado": "igual",
+      "carimbo_anterior": "2026-09-10T23:00:00+0200",
+      "carimbo_novo": "2026-09-10T23:00:00+0200",
+      "corpo_anterior": "ue1/036-eurostat-taxa-de-desemprego-mip-2025-paises.json",
+      "sha256_anterior": "9d13cee1e7c5e117399ab87bb57db7de8701a833f018bb575a1e31b16ffff835",
+      "corpo_novo": "corredor-series-paises/2026-10-26/9d13cee1e7c5e117399ab87bb57db7de8701a833f018bb575a1e31b16ffff835/009-taxa-de-desemprego-mip-2025-paises.json",
+      "sha256_novo": "9d13cee1e7c5e117399ab87bb57db7de8701a833f018bb575a1e31b16ffff835",
+      "revisoes": [],
+      "comparacoes": {
+        "uniao": {
+          "linha": "taxa-de-desemprego-mip-2025-ue",
+          "valor_da_linha": "6,0",
+          "valor_do_ponto": "6,0",
+          "sha256_da_linha": "ab5f2780e2be55dca3250ee073cf6042e6b792cc9df04705c7481c21755c62ea"
+        },
+        "portugal": {
+          "linha": "taxa-de-desemprego-mip-2025",
+          "valor_da_linha": "6,0",
+          "valor_do_ponto": "6,0",
+          "sha256_da_linha": "7a0db89be860a5f5d847f2647289e1ca19a25acdb9503b9acbd63434133534c7"
+        }
+      },
+      "pontos": 28,
+      "marcas": []
+    },
+    {
+      "serie": "taxa-de-emprego-2025-paises",
+      "estado": "igual",
+      "carimbo_anterior": "2026-09-10T23:00:00+0200",
+      "carimbo_novo": "2026-09-10T23:00:00+0200",
+      "corpo_anterior": "ue1/037-eurostat-taxa-de-emprego-2025-paises.json",
+      "sha256_anterior": "e8980462017674c76b20e2fa80ee1f98405886f1ef2446eef57836aa61510115",
+      "corpo_novo": "corredor-series-paises/2026-10-26/e8980462017674c76b20e2fa80ee1f98405886f1ef2446eef57836aa61510115/010-taxa-de-emprego-2025-paises.json",
+      "sha256_novo": "e8980462017674c76b20e2fa80ee1f98405886f1ef2446eef57836aa61510115",
+      "revisoes": [],
+      "comparacoes": {
+        "uniao": {
+          "linha": "taxa-de-emprego-2025-ue",
+          "valor_da_linha": "76,1",
+          "valor_do_ponto": "76,1",
+          "sha256_da_linha": "32148eae5cb237b05b54df443b8053dd19f79f485eabc1af01396e384b4cb433"
+        },
+        "portugal": {
+          "linha": "taxa-de-emprego-2025",
+          "valor_da_linha": "79,6",
+          "valor_do_ponto": "79,6",
+          "sha256_da_linha": "6ea8b1815069631c00427e466a107342b4678ea2e6dc0fd70d491d8b368d2f2a"
+        }
+      },
+      "pontos": 28,
+      "marcas": []
+    }
+  ],
+  "contagens": {
+    "series": 10,
+    "pontos": 280,
+    "revisoes": 29,
+    "series_com_revisoes": 4,
+    "series_com_marcas": 4,
+    "recibos": 4,
+    "frases": 68
+  },
+  "recibos": [
+    {
+      "rota": "/livro-razao/divida-publica-2025/",
+      "lang": "pt",
+      "id": "divida-publica-2025",
+      "valor": "89,2",
+      "published_at": "2026-10-21",
+      "sha256": "ae9fcde61d62e81b62c6394dd8ee72aa076b4435d77eb35c1d8daa08f9abed23",
+      "atualizacao": "26.10.2026atualização89,7 → 89,2O Eurostat reviu o valor de Portugal a 21.10.2026 (o carimbo do conjunto passou de 22.04.2026 a 21.10.2026); a reconferência semanal de 26.10.2026 viu a revisão."
+    },
+    {
+      "rota": "/livro-razao/divida-publica-2025-ue/",
+      "lang": "pt",
+      "id": "divida-publica-2025-ue",
+      "valor": "81,5",
+      "published_at": "2026-10-21",
+      "sha256": "c9b197dce09faa467e6021152855fc5af9b58efb0b335d78f61664df3b1ce948",
+      "atualizacao": "26.10.2026atualização81,7 → 81,5O Eurostat reviu o valor da União a 21.10.2026 (o carimbo do conjunto passou de 22.04.2026 a 21.10.2026); a reconferência semanal de 26.10.2026 viu a revisão."
+    },
+    {
+      "rota": "/en/ledger/divida-publica-2025/",
+      "lang": "en",
+      "id": "divida-publica-2025",
+      "valor": "89,2",
+      "published_at": "2026-10-21",
+      "sha256": "930f8ed93f1ab1b36dc442ce52658e569fde0c8c85e37d414050dd1b941fc868",
+      "atualizacao": "26.10.2026update89,7 → 89,2Eurostat revised Portugal's value on 21.10.2026 (the dataset stamp moved from 22.04.2026 to 21.10.2026); the weekly check of 26.10.2026 caught the revision."
+    },
+    {
+      "rota": "/en/ledger/divida-publica-2025-ue/",
+      "lang": "en",
+      "id": "divida-publica-2025-ue",
+      "valor": "81,5",
+      "published_at": "2026-10-21",
+      "sha256": "360bfdbfd8b9840e1373483e51ea821148bf43d23132e79a07c8ebaac1eb8631",
+      "atualizacao": "26.10.2026update81,7 → 81,5Eurostat revised the EU value on 21.10.2026 (the dataset stamp moved from 22.04.2026 to 21.10.2026); the weekly check of 26.10.2026 caught the revision."
+    }
+  ],
+  "frases": [
+    {
+      "rota": "/explicacoes/leitura-da-semana/",
+      "texto": "Dívida pública, 2025, % do PIB: de 89,7 para 89,2, a fonte reviu para baixo, em 26.10.2026.",
+      "sha256_html": "444c7a1a6a327984e2cc5a24b552a48e46327caf59c7d1f875822fd734e3a1e8"
+    },
+    {
+      "rota": "/explicacoes/leitura-da-semana/",
+      "texto": "Dívida pública, União Europeia, 2025, % do PIB: de 81,7 para 81,5, a fonte reviu para baixo, em 26.10.2026.",
+      "sha256_html": "444c7a1a6a327984e2cc5a24b552a48e46327caf59c7d1f875822fd734e3a1e8"
+    },
+    {
+      "rota": "/explicacoes/leitura-da-semana/",
+      "texto": "As contas do Estado: A dívida pública desceu de 2024 para 2025 e está acima da média da União. Para a Comissão Europeia, uma dívida acima de 60 % do PIB é sinal de possível desequilíbrio, e a de Portugal está acima.",
+      "sha256_html": "444c7a1a6a327984e2cc5a24b552a48e46327caf59c7d1f875822fd734e3a1e8"
+    },
+    {
+      "rota": "/",
+      "texto": "A dívida pública desceu de 2024 para 2025 e está acima da média da União. Para a Comissão Europeia, uma dívida acima de 60 % do PIB é sinal de possível desequilíbrio, e a de Portugal está acima.",
+      "sha256_html": "5bb124afe82ad35a2a2029da9d00d641964910478230255de971d57e2dee4e95"
+    },
+    {
+      "rota": "/",
+      "texto": "Dívida pública93,5 %2024",
+      "sha256_html": "5bb124afe82ad35a2a2029da9d00d641964910478230255de971d57e2dee4e95"
+    },
+    {
+      "rota": "/",
+      "texto": "Dívida pública89,2 %2025",
+      "sha256_html": "5bb124afe82ad35a2a2029da9d00d641964910478230255de971d57e2dee4e95"
+    },
+    {
+      "rota": "/",
+      "texto": "Dívida públicaUnião Europeia81,5 %2025",
+      "sha256_html": "5bb124afe82ad35a2a2029da9d00d641964910478230255de971d57e2dee4e95"
+    },
+    {
+      "rota": "/",
+      "texto": "Em 2025, Portugal ficou fora de 4 dos 13 valores de referência da Comissão Europeia e dentro de 9. Fora: a dívida pública, a posição de investimento internacional, a variação em três anos do custo unitário do trabalho e a variação anual dos preços da habitação.",
+      "sha256_html": "5bb124afe82ad35a2a2029da9d00d641964910478230255de971d57e2dee4e95"
+    },
+    {
+      "rota": "/",
+      "texto": "Dívida pública",
+      "sha256_html": "5bb124afe82ad35a2a2029da9d00d641964910478230255de971d57e2dee4e95"
+    },
+    {
+      "rota": "/correcoes/",
+      "texto": "Dívida pública89,7 → 89,2 % do PIB",
+      "sha256_html": "4cdc835eb81ca654995119c68f15d72cb3697d00d72ffbea160d12e8e9c742d5"
+    },
+    {
+      "rota": "/correcoes/",
+      "texto": "O INE reviu a dívida pública de 2025 para 89,2 % do PIB na segunda notificação de 2026 do procedimento dos défices excessivos, ainda provisória; a leitura do país passou a dizer as duas leituras oficiais, a do INE e a do Eurostat, e o valor do quadro do Eurostat muda a 21.10.2026.",
+      "sha256_html": "4cdc835eb81ca654995119c68f15d72cb3697d00d72ffbea160d12e8e9c742d5"
+    },
+    {
+      "rota": "/explicacoes/dinheiro-do-estado-2026/",
+      "texto": "No fim de 2025, a dívida pública valia 89,2 % do que o país produz num ano, acima dos 81,5 % da média da União Europeia, e as contas públicas fecharam o ano com um saldo de 0,7 % do produto, um excedente (recebeu mais do que gastou).",
+      "sha256_html": "74967adf1415213c3f21514957e82f9d0e44388bb7ac488620db83ecaa7bab44"
+    },
+    {
+      "rota": "/uniao-europeia/",
+      "texto": "Fora do valor de referência da Comissão: dívida pública, o que o país tem no exterior menos o que deve (posição de investimento internacional), variação em três anos do custo unitário do trabalho e variação anual dos preços da habitação, em 2025.",
+      "sha256_html": "d489bd30e95a7e4a83d6c643cb7c3aed0b423896100b6c56c90ebda41f3287d5"
+    },
+    {
+      "rota": "/uniao-europeia/",
+      "texto": "Dívida pública",
+      "sha256_html": "d489bd30e95a7e4a83d6c643cb7c3aed0b423896100b6c56c90ebda41f3287d5"
+    },
+    {
+      "rota": "/indice/",
+      "texto": "Dívida pública nos países da União",
+      "sha256_html": "93c3d0a06e34393e3e3d02206e0e7e8253634deaa8f20142964113f8a3c61d36"
+    },
+    {
+      "rota": "/indice/",
+      "texto": "Dívida pública, 2025, % do PIB: de 89,7 para 89,2, a fonte reviu para baixo, em 26.10.2026.",
+      "sha256_html": "93c3d0a06e34393e3e3d02206e0e7e8253634deaa8f20142964113f8a3c61d36"
+    },
+    {
+      "rota": "/indice/",
+      "texto": "Dívida pública, União Europeia, 2025, % do PIB: de 81,7 para 81,5, a fonte reviu para baixo, em 26.10.2026.",
+      "sha256_html": "93c3d0a06e34393e3e3d02206e0e7e8253634deaa8f20142964113f8a3c61d36"
+    },
+    {
+      "rota": "/en/corrections/",
+      "texto": "The INE revised public debt for 2025 to 89,2 % of GDP in the second notification of 2026 under the excessive deficit procedure, still provisional; the reading of the country now gives both official readings, the INE’s and Eurostat’s, and the value in the Eurostat table changes on 21.10.2026.",
+      "sha256_html": "4ed9540844ad2b841b40ce10230ce321097bf876186cc74859812f1a960593fc"
+    },
+    {
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/",
+      "texto": "A dívida pública deve descer de 87,5 % do produto interno bruto (o PIB) em 2026 para 84,5 % em 2027, abaixo do nível que o ministro das Finanças anunciou para 2027, pela notícia «Miranda Sarmento: dívida pública abaixo dos 85% do PIB em 2027 é a \"principal preocupação\" do Governo», ao chamar à dívida pública a «principal preocupação». A descida de 3,0 pontos é maior do que a de 2026 sobretudo porque o Estado compra menos ativos financeiros, com o ajustamento défice-dívida (a parte da variação da dívida que o défice não explica, como a compra ou a venda de ativos financeiros) a cair de 3,1 pontos para 0,9 pontos do PIB; o excedente primário (o saldo antes dos juros) contribui um pouco mais (2,5 pontos contra 2,1 em 2026) e o efeito do crescimento e dos juros (o que o crescimento nominal do PIB e os juros pagos fazem ao rácio) menos (1,5 contra 2,6). A Comissão Europeia, na primavera, antes da proposta, previa 86,0 % para 2027.",
+      "sha256_html": "8563b50c24fd4cfc3b90105b69cb6e733ffcacb0c5e983f3d3d2f7c44531c245"
+    },
+    {
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/",
+      "texto": "Dívida pública consolidada (%)",
+      "sha256_html": "8563b50c24fd4cfc3b90105b69cb6e733ffcacb0c5e983f3d3d2f7c44531c245"
+    },
+    {
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/",
+      "texto": "Dívida pública consolidada (%)",
+      "sha256_html": "8563b50c24fd4cfc3b90105b69cb6e733ffcacb0c5e983f3d3d2f7c44531c245"
+    },
+    {
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/",
+      "texto": "Dívida pública abaixo de 85% do PIB em 2027",
+      "sha256_html": "8563b50c24fd4cfc3b90105b69cb6e733ffcacb0c5e983f3d3d2f7c44531c245"
+    },
+    {
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/",
+      "texto": "Dívida pública bruta",
+      "sha256_html": "8563b50c24fd4cfc3b90105b69cb6e733ffcacb0c5e983f3d3d2f7c44531c245"
+    },
+    {
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/",
+      "texto": "A meta da dívida que o ministro das Finanças anunciou é alcançável, e a razão está sobretudo na tesouraria. O ministro disse, pela notícia «Miranda Sarmento: dívida pública abaixo dos 85% do PIB em 2027 é a \"principal preocupação\" do Governo»: «A dívida pública deve continuar a ser a nossa principal preocupação nas contas públicas. Temos uma redução de cerca de quatro pontos percentuais nos últimos anos e estaremos abaixo dos 85% do PIB [Produto Interno Bruto] em 2027». O excedente primário contribui com 2,5 pontos para a descida, o efeito do crescimento e dos juros com 1,5 pontos (menos do que em 2026, 2,6), e o que faz a descida acelerar é o ajustamento défice-dívida, que passa de 3,1 pontos para 0,9 pontos, sobretudo por menor aquisição de ativos financeiros, segundo a UTAO. É um movimento de tesouraria, não do orçamento do ano. A meta assenta também num crescimento de 2,1 % que, segundo a UTAO, está acima das previsões de todas as outras instituições que ela cita, e em 300 milhões de euros de receita do combate à fraude nos combustíveis para os quais o relatório não apresenta fundamento.",
+      "sha256_html": "8563b50c24fd4cfc3b90105b69cb6e733ffcacb0c5e983f3d3d2f7c44531c245"
+    },
+    {
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/",
+      "texto": "Dívida pública abaixo de 85% do PIB em 2027",
+      "sha256_html": "8563b50c24fd4cfc3b90105b69cb6e733ffcacb0c5e983f3d3d2f7c44531c245"
+    },
+    {
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/",
+      "texto": "O relatório: «A dívida pública, em percentagem do PIB, deverá manter assim a trajetória decrescente, passando de 87,5% em 2026 para 84,5% em 2027.» E o objetivo: «A dívida pública continuará a reduzir-se, visando ficar abaixo dos 80% do produto interno bruto (PIB) no final da década.» O ministro das Finanças, a 13 de outubro, pela notícia «Miranda Sarmento: dívida pública abaixo dos 85% do PIB em 2027 é a \"principal preocupação\" do Governo»: «A dívida pública deve continuar a ser a nossa principal preocupação nas contas públicas. Temos uma redução de cerca de quatro pontos percentuais nos últimos anos e estaremos abaixo dos 85% do PIB [Produto Interno Bruto] em 2027». Em 2025 a dívida foi de 89,2 % do PIB; desce 1,6 pontos em 2026 e 3,0 pontos em 2027, para 84,5 % (os valores do quadro estão arredondados à décima: 89,2 menos 1,6 não dá exatamente 87,5).",
+      "sha256_html": "8563b50c24fd4cfc3b90105b69cb6e733ffcacb0c5e983f3d3d2f7c44531c245"
+    },
+    {
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/",
+      "texto": "Trajetória da dívida pública",
+      "sha256_html": "8563b50c24fd4cfc3b90105b69cb6e733ffcacb0c5e983f3d3d2f7c44531c245"
+    },
+    {
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/",
+      "texto": "Dívida pública abaixo de 85% do PIB em 2027",
+      "sha256_html": "8563b50c24fd4cfc3b90105b69cb6e733ffcacb0c5e983f3d3d2f7c44531c245"
+    },
+    {
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/",
+      "texto": "Dívida pública consolidada (%)",
+      "sha256_html": "8563b50c24fd4cfc3b90105b69cb6e733ffcacb0c5e983f3d3d2f7c44531c245"
+    },
+    {
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/",
+      "texto": "Dívida pública consolidada (%)",
+      "sha256_html": "8563b50c24fd4cfc3b90105b69cb6e733ffcacb0c5e983f3d3d2f7c44531c245"
+    },
+    {
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/",
+      "texto": "Dívida pública consolidada (%)",
+      "sha256_html": "8563b50c24fd4cfc3b90105b69cb6e733ffcacb0c5e983f3d3d2f7c44531c245"
+    },
+    {
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/",
+      "texto": "UTAO: dívida pública em euros, fim de 2026",
+      "sha256_html": "8563b50c24fd4cfc3b90105b69cb6e733ffcacb0c5e983f3d3d2f7c44531c245"
+    },
+    {
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/",
+      "texto": "UTAO: dívida pública em euros, fim de 2027",
+      "sha256_html": "8563b50c24fd4cfc3b90105b69cb6e733ffcacb0c5e983f3d3d2f7c44531c245"
+    },
+    {
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/",
+      "texto": "UTAO: acréscimo anual da dívida pública, 2026",
+      "sha256_html": "8563b50c24fd4cfc3b90105b69cb6e733ffcacb0c5e983f3d3d2f7c44531c245"
+    },
+    {
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/",
+      "texto": "UTAO: acréscimo anual da dívida pública, 2027",
+      "sha256_html": "8563b50c24fd4cfc3b90105b69cb6e733ffcacb0c5e983f3d3d2f7c44531c245"
+    },
+    {
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/",
+      "texto": "Dívida pública bruta",
+      "sha256_html": "8563b50c24fd4cfc3b90105b69cb6e733ffcacb0c5e983f3d3d2f7c44531c245"
+    },
+    {
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/",
+      "texto": "Dívida pública bruta",
+      "sha256_html": "8563b50c24fd4cfc3b90105b69cb6e733ffcacb0c5e983f3d3d2f7c44531c245"
+    },
+    {
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/",
+      "texto": "Trajetória da dívida pública (POENMP)",
+      "sha256_html": "8563b50c24fd4cfc3b90105b69cb6e733ffcacb0c5e983f3d3d2f7c44531c245"
+    },
+    {
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/",
+      "texto": "Dívida pública bruta consolidada, em percentagem do PIB",
+      "sha256_html": "8563b50c24fd4cfc3b90105b69cb6e733ffcacb0c5e983f3d3d2f7c44531c245"
+    },
+    {
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/",
+      "texto": "Dívida pública bruta consolidada, em percentagem do PIB",
+      "sha256_html": "8563b50c24fd4cfc3b90105b69cb6e733ffcacb0c5e983f3d3d2f7c44531c245"
+    },
+    {
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/",
+      "texto": "Dívida pública bruta consolidada, em percentagem do PIB",
+      "sha256_html": "8563b50c24fd4cfc3b90105b69cb6e733ffcacb0c5e983f3d3d2f7c44531c245"
+    },
+    {
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/",
+      "texto": "Dívida pública bruta consolidada, em percentagem do PIB",
+      "sha256_html": "8563b50c24fd4cfc3b90105b69cb6e733ffcacb0c5e983f3d3d2f7c44531c245"
+    },
+    {
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/",
+      "texto": "Dívida pública bruta consolidada, em percentagem do PIB",
+      "sha256_html": "8563b50c24fd4cfc3b90105b69cb6e733ffcacb0c5e983f3d3d2f7c44531c245"
+    },
+    {
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/",
+      "texto": "Dívida pública bruta",
+      "sha256_html": "8563b50c24fd4cfc3b90105b69cb6e733ffcacb0c5e983f3d3d2f7c44531c245"
+    },
+    {
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/",
+      "texto": "Os juros: «A despesa com juros apresenta uma subida prevista de 23,2% em 2027, o que reflete uma variação nominal de 1,5 mil M€, ascendendo a 8,2 mil M€. Caso se concretize a previsão, a taxa de juro implícita (juros em percentagem da dívida pública) deverá subir de 2,4% em 2026 para 2,9% em 2027. É de referir que o máximo da série estatística para os juros foi atingido em 2014, acima do valor previsto para 2027 (a taxa de juro implícita foi de 3,6% em 2014).»",
+      "sha256_html": "8563b50c24fd4cfc3b90105b69cb6e733ffcacb0c5e983f3d3d2f7c44531c245"
+    },
+    {
+      "rota": "/en/explainers/weekly-reading/",
+      "texto": "The state’s accounts: Public debt fell from 2024 to 2025 and is above the Union average. For the European Commission, debt above 60 % of GDP is a sign of a possible imbalance, and Portugal’s is above it.",
+      "sha256_html": "a9c35bb425ae340f913e568cb6486b6e4438d0878cd1b1a2e5cb53615622deed"
+    },
+    {
+      "rota": "/en/explainers/dinheiro-do-estado-2026/",
+      "texto": "At the end of 2025, public debt was worth 89,2 % of what the country produces in a year, above the 81,5 % average of the European Union, and the public accounts closed the year with a balance of 0,7 % of output, a surplus (it took in more than it spent).",
+      "sha256_html": "0fdb5822b95236451f50bb6a15e45fae33dc6b0e122d362f899d45962dc26763"
+    },
+    {
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/",
+      "texto": "Public debt is expected to fall from 87.5 % of gross domestic product (GDP) in 2026 to 84.5 % in 2027, below the level the finance minister announced for 2027, by the news report «Miranda Sarmento: dívida pública abaixo dos 85% do PIB em 2027 é a \"principal preocupação\" do Governo», when calling public debt the «principal preocupação» (main concern). The fall of 3.0 points is larger than in 2026 mainly because the State buys fewer financial assets, with the deficit-debt adjustment (the part of the change in debt that the deficit does not explain, such as the purchase or sale of financial assets) falling from 3.1 points to 0.9 points of GDP; the primary surplus (the balance before interest) contributes a little more (2.5 points against 2.1 in 2026) and the effect of growth and interest (what nominal GDP growth and the interest paid do to the ratio) less (1.5 against 2.6). The European Commission, in the spring, before the proposal, forecast 86.0 % for 2027.",
+      "sha256_html": "14c18bd16da0d1978d32fc3176a91fc0422469716d0af9fbe702ec852f0faf35"
+    },
+    {
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/",
+      "texto": "Consolidated public debt (%)",
+      "sha256_html": "14c18bd16da0d1978d32fc3176a91fc0422469716d0af9fbe702ec852f0faf35"
+    },
+    {
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/",
+      "texto": "Consolidated public debt (%)",
+      "sha256_html": "14c18bd16da0d1978d32fc3176a91fc0422469716d0af9fbe702ec852f0faf35"
+    },
+    {
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/",
+      "texto": "Public debt below 85% of GDP in 2027",
+      "sha256_html": "14c18bd16da0d1978d32fc3176a91fc0422469716d0af9fbe702ec852f0faf35"
+    },
+    {
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/",
+      "texto": "The debt target the finance minister stated is reachable, and the reason lies mainly in treasury operations. The minister said, by the news report «Miranda Sarmento: dívida pública abaixo dos 85% do PIB em 2027 é a \"principal preocupação\" do Governo»: «A dívida pública deve continuar a ser a nossa principal preocupação nas contas públicas. Temos uma redução de cerca de quatro pontos percentuais nos últimos anos e estaremos abaixo dos 85% do PIB [Produto Interno Bruto] em 2027». The primary surplus contributes 2.5 points to the fall, the effect of growth and interest 1.5 points (less than in 2026, 2.6), and what makes the fall accelerate is the deficit-debt adjustment, which goes from 3.1 points to 0.9 points, mostly through lower acquisition of financial assets, according to the UTAO. It is a treasury movement, not the year's budget. The target also rests on growth of 2.1 % which, according to the UTAO, is above the forecasts of every other institution it cites, and on 300 million euros of revenue from fighting fuel fraud for which the report gives no basis.",
+      "sha256_html": "14c18bd16da0d1978d32fc3176a91fc0422469716d0af9fbe702ec852f0faf35"
+    },
+    {
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/",
+      "texto": "Public debt below 85% of GDP in 2027",
+      "sha256_html": "14c18bd16da0d1978d32fc3176a91fc0422469716d0af9fbe702ec852f0faf35"
+    },
+    {
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/",
+      "texto": "The report: «A dívida pública, em percentagem do PIB, deverá manter assim a trajetória decrescente, passando de 87,5% em 2026 para 84,5% em 2027.» And the objective: «A dívida pública continuará a reduzir-se, visando ficar abaixo dos 80% do produto interno bruto (PIB) no final da década.» The finance minister, on 13 October, by the news report «Miranda Sarmento: dívida pública abaixo dos 85% do PIB em 2027 é a \"principal preocupação\" do Governo»: «A dívida pública deve continuar a ser a nossa principal preocupação nas contas públicas. Temos uma redução de cerca de quatro pontos percentuais nos últimos anos e estaremos abaixo dos 85% do PIB [Produto Interno Bruto] em 2027». In 2025 the debt was 89.2 % of GDP; it falls 1.6 points in 2026 and 3.0 points in 2027, to 84.5 % (the table's values are rounded to one decimal: 89.2 minus 1.6 does not give exactly 87.5).",
+      "sha256_html": "14c18bd16da0d1978d32fc3176a91fc0422469716d0af9fbe702ec852f0faf35"
+    },
+    {
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/",
+      "texto": "Public debt path",
+      "sha256_html": "14c18bd16da0d1978d32fc3176a91fc0422469716d0af9fbe702ec852f0faf35"
+    },
+    {
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/",
+      "texto": "Public debt below 85% of GDP in 2027",
+      "sha256_html": "14c18bd16da0d1978d32fc3176a91fc0422469716d0af9fbe702ec852f0faf35"
+    },
+    {
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/",
+      "texto": "Consolidated public debt (%)",
+      "sha256_html": "14c18bd16da0d1978d32fc3176a91fc0422469716d0af9fbe702ec852f0faf35"
+    },
+    {
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/",
+      "texto": "Consolidated public debt (%)",
+      "sha256_html": "14c18bd16da0d1978d32fc3176a91fc0422469716d0af9fbe702ec852f0faf35"
+    },
+    {
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/",
+      "texto": "Consolidated public debt (%)",
+      "sha256_html": "14c18bd16da0d1978d32fc3176a91fc0422469716d0af9fbe702ec852f0faf35"
+    },
+    {
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/",
+      "texto": "UTAO: public debt in euros, end of 2026",
+      "sha256_html": "14c18bd16da0d1978d32fc3176a91fc0422469716d0af9fbe702ec852f0faf35"
+    },
+    {
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/",
+      "texto": "UTAO: public debt in euros, end of 2027",
+      "sha256_html": "14c18bd16da0d1978d32fc3176a91fc0422469716d0af9fbe702ec852f0faf35"
+    },
+    {
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/",
+      "texto": "UTAO: annual increase in public debt, 2026",
+      "sha256_html": "14c18bd16da0d1978d32fc3176a91fc0422469716d0af9fbe702ec852f0faf35"
+    },
+    {
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/",
+      "texto": "UTAO: annual increase in public debt, 2027",
+      "sha256_html": "14c18bd16da0d1978d32fc3176a91fc0422469716d0af9fbe702ec852f0faf35"
+    },
+    {
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/",
+      "texto": "Public debt path (POENMP)",
+      "sha256_html": "14c18bd16da0d1978d32fc3176a91fc0422469716d0af9fbe702ec852f0faf35"
+    },
+    {
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/",
+      "texto": "Interest: «A despesa com juros apresenta uma subida prevista de 23,2% em 2027, o que reflete uma variação nominal de 1,5 mil M€, ascendendo a 8,2 mil M€. Caso se concretize a previsão, a taxa de juro implícita (juros em percentagem da dívida pública) deverá subir de 2,4% em 2026 para 2,9% em 2027. É de referir que o máximo da série estatística para os juros foi atingido em 2014, acima do valor previsto para 2027 (a taxa de juro implícita foi de 3,6% em 2014).»",
+      "sha256_html": "14c18bd16da0d1978d32fc3176a91fc0422469716d0af9fbe702ec852f0faf35"
+    },
+    {
+      "rota": "/en/",
+      "texto": "Public debt fell from 2024 to 2025 and is above the Union average. For the European Commission, debt above 60 % of GDP is a sign of a possible imbalance, and Portugal’s is above it.",
+      "sha256_html": "6406691de0f228a139569b0f408d9650e404c69cf716edd33f4cc8547945fecb"
+    },
+    {
+      "rota": "/en/",
+      "texto": "Government debt89,2 %2025",
+      "sha256_html": "6406691de0f228a139569b0f408d9650e404c69cf716edd33f4cc8547945fecb"
+    },
+    {
+      "rota": "/en/",
+      "texto": "Government debtEuropean Union81,5 %2025",
+      "sha256_html": "6406691de0f228a139569b0f408d9650e404c69cf716edd33f4cc8547945fecb"
+    }
+  ],
+  "codigos": {
+    "aplicar": 0,
+    "blocos-unicos": 0,
+    "build": 1,
+    "cartao": 0,
+    "cartoes-corrigidos": 0,
+    "construtor-plantas": 0,
+    "corredor-plantas": 0,
+    "cruzamento": 0,
+    "discussao": 0,
+    "explicacoes": 0,
+    "exportar": 0,
+    "formato": 0,
+    "ledger": 0,
+    "lingua": 0,
+    "navegacao-corrigida": 1,
+    "navegacao-final": 0,
+    "navegacao": 1,
+    "nomes": 0,
+    "pais-corrigido": 0,
+    "published-at": 0,
+    "registo": 0,
+    "reler-plantas": 0,
+    "render-corrigido": 0,
+    "rotulos-plantas": 0,
+    "selecao-plantas": 0,
+    "series-tempo-plantas": 0,
+    "series": 0,
+    "sinais": 0,
+    "stamp": 0,
+    "typecheck": 0,
+    "voz-corrigida": 1,
+    "voz-final": 0,
+    "voz": 1
+  },
+  "custo": {
+    "pontos": null,
+    "razao": "Medidos pelo lançador, fora desta passagem."
+  }
+}

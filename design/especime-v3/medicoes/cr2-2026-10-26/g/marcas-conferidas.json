@@ -1,0 +1,15 @@
+{
+  "marcas": 124,
+  "recibos": {
+    "erros": [],
+    "contas": {
+      "recibos": 7784,
+      "com_frase": 7784,
+      "cartao": 96,
+      "concelho": 5544,
+      "familia": 2144,
+      "com_marcador": 0,
+      "com_sinal": 2
+    }
+  }
+}

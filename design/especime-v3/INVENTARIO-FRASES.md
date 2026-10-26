@@ -4058,8 +4058,10 @@ Os anos ingleses usam pares, como «nineteen ninety-two» e «twenty twenty-six�
 
 | Classe | Frase | Bloco | Estado | Razão |
 | --- | --- | --- | --- | --- |
-| conteudo | 72 revisões de proveniência | c2 | viva | Contagem do livro depois das dezoito entradas de proveniência das nove releituras (o acesso e o excerto de cada linha), que acompanham as nove atualizações. |
-| conteudo | 72 provenance revisions | c2 | viva | Contagem do livro depois das dezoito entradas de proveniência das nove releituras (o acesso e o excerto de cada linha), que acompanham as nove atualizações. |
+| conteudo | 72 revisões de proveniência | c2 | retirada | Substituída na CR2-f pela contagem medida de 102, após trinta entradas de proveniência das quinze releituras de 26.10.2026. Contagem do livro depois das dezoito entradas de proveniência das nove releituras (o acesso e o excerto de cada linha), que acompanham as nove atualizações. |
+| conteudo | 72 provenance revisions | c2 | retirada | Substituída na CR2-f pela contagem medida de 102, após trinta entradas de proveniência das quinze releituras de 26.10.2026. Contagem do livro depois das dezoito entradas de proveniência das nove releituras (o acesso e o excerto de cada linha), que acompanham as nove atualizações. |
+| conteudo | 106 revisões de proveniência | c2 | viva | UE1-c sobre a CR2-f (26.10.2026): as 102 da CR2-f mais as quatro entradas de proveniência das duas linhas da dívida de 2025, medidas no HTML de /correcoes. UE1-c: contagem lida no HTML de /correcoes e /en/corrections após as quatro entradas de proveniência das duas releituras da dívida pública de 2025. |
+| conteudo | 106 provenance revisions | c2 | viva | UE1-c sobre a CR2-f (26.10.2026): as 102 da CR2-f mais as quatro entradas das duas linhas da dívida de 2025, medidas no HTML de /en/corrections. UE1-c: contagem lida no HTML de /correcoes e /en/corrections após as quatro entradas de proveniência das duas releituras da dívida pública de 2025. |
 
 ## R4 · as palavras correntes em cada número, 05.10.2026
 
@@ -4886,6 +4888,13 @@ ainda por explicar (o achado 7), fica aqui como retirada.*
 | conteudo | 3 892 claims · 501 of 3 892 calculated · 2 767 of 3 892 municipality rows | ex4 | retirada | HB1-m: a contagem do livro-razão mudou com a fusão das linhas do estudo da habitação. Recolhida do HTML construído pela conferência da voz, na correção EX4-c (a explicação de 2027 e a contagem do livro-razão com as 83 linhas do PF1). Leitura cruzada pendente. |
 | conteudo | 3 376 afirmações · 408 de 3 376 calculadas · 2 767 de 3 376 linhas de concelhos | v2d | retirada | HB1: a nova entrada e as contagens medidas substituem esta cadeia na construção. |
 | conteudo | 3 376 claims · 408 of 3 376 calculated · 2 767 of 3 376 municipality rows | v2d | retirada | HB1: a nova entrada e as contagens medidas substituem esta cadeia na construção. |
+
+## CR2-f · contagem das revisões de proveniência (26.10.2026)
+
+| Classe | Frase | Bloco | Estado | Razão |
+| --- | --- | --- | --- | --- |
+| conteudo | 102 revisões de proveniência | cr2 | retirada | UE1-c (26.10.2026): substituída pela contagem de 106 depois das duas linhas da dívida de 2025. Contagem medida em /correcoes/: as 72 anteriores mais duas entradas por cada uma das quinze linhas atualizadas. |
+| conteudo | 102 provenance revisions | cr2 | retirada | UE1-c (26.10.2026): substituída pela contagem de 106 depois das duas linhas da dívida de 2025. A mesma contagem medida em /en/corrections/, na edição inglesa. |
 
 ## HB1: o estudo da habitação
 

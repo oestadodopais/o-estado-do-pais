@@ -21,8 +21,8 @@ document:
   kind: "serie"
   url: "https://ec.europa.eu/eurostat/databrowser/view/tipsho20/default/table?lang=en"
 source_url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsho20?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&unit=RCH_A_AVG"
-access_date: "2026-09-29"
-published_at: "2026-07-02"
+access_date: "2026-10-26"
+published_at: "2026-10-01"
 
 # O literal da série: as etiquetas do conjunto e das coordenadas, e o período,
 # como a resposta os escreve. O excerto de cada ponto começa por ele.
@@ -117,8 +117,8 @@ pontos:
     excerto: "House price index, nominal - annual data — Annual average rate of change — Netherlands — 2025: 8.5"
     bandeira: null
   - geo: "AT"
-    valor: "2,6"
-    excerto: "House price index, nominal - annual data — Annual average rate of change — Austria — 2025: 2.6"
+    valor: "2,5"
+    excerto: "House price index, nominal - annual data — Annual average rate of change — Austria — 2025: 2.5"
     bandeira: null
   - geo: "PL"
     valor: "4,9"
@@ -157,7 +157,14 @@ attributed_to:
   - "Eurostat"
 study: "dominios-2026"
 # Nota interna. NÃO é publicada.
-note: "UE1. Linha de série por país (eixo: pais) da medida «precos-da-habitacao-2025», pelo mesmo conjunto e pelas mesmas coordenadas seladas da linha «precos-da-habitacao-2025-ue», com os 27 países no lugar da União. Coordenadas: freq=A, unit=RCH_A_AVG, time=2025. Corpo alojado: ue1/031-eurostat-precos-da-habitacao-2025-paises.json (sha256 725fe353012ab916…). A data published_at é a da última atualização do conjunto, que a API publica por conjunto e não por ponto. Licença: Eurostat, CC BY 4.0."
+note: "UE1. Linha de série por país (eixo: pais) da medida «precos-da-habitacao-2025», pelo mesmo conjunto e pelas mesmas coordenadas seladas da linha «precos-da-habitacao-2025-ue», com os 27 países no lugar da União. Coordenadas: freq=A, unit=RCH_A_AVG, time=2025. Corpo alojado: corredor-series-paises/2026-10-26/2fb9ebf4998261155e60e0fb5a87d4c722897c1fd31fb170a89646d86619ced7/004-precos-da-habitacao-2025-paises.json (sha256 2fb9ebf499826115…). A data published_at é a da última atualização do conjunto, que a API publica por conjunto e não por ponto. Licença: Eurostat, CC BY 4.0."
 
 # Correcções datadas, por ponto. Nunca apagar um valor: acrescentar aqui.
-corrections: []
+corrections:
+  - geo: "AT"
+    date: "2026-10-26"
+    kind: "atualizacao"
+    old_value: "2,6"
+    new_value: "2,5"
+    reason: "Áustria: o Eurostat reviu o valor de 2,6 para 2,5 na atualização do conjunto de dados de 01.10.2026 (a versão anterior era de 02.07.2026); este projeto releu a fonte a 26.10.2026."
+    reason_en: "Austria: Eurostat revised the value from 2.6 to 2.5 in the dataset update of 01.10.2026 (the previous version was of 02.07.2026); this project re-read the source on 26.10.2026."

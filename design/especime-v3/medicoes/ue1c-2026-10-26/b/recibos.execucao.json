@@ -1,0 +1,9 @@
+{
+  "comando": [
+    "node",
+    "design/especime-v3/medicoes/ue1c-2026-10-26/b/medir.mjs"
+  ],
+  "pasta": "<worktree>",
+  "codigo": 0,
+  "duracao_segundos": 0.085
+}

@@ -1,0 +1,36 @@
+{
+  "passagens": [
+    {
+      "passagem": "UE1-c-b",
+      "data": "2026-10-26",
+      "chamadas_ferramentas_ate_relatorio": 32,
+      "criterio_chamadas": "Chamadas functions.exec da passagem até à escrita deste relatório; o total final, incluindo commit e inspeção, é dado na resposta.",
+      "invocacoes_registadas": 14,
+      "corridas_conferencias_ensaios_medicoes": 12,
+      "operacoes_regeneracao_exportacao": 2,
+      "corridas_portoes": 0,
+      "corridas_core_gate": 0,
+      "corridas_build": 1,
+      "duracoes_segundos": {
+        "auditoria": 0.661,
+        "build": 412.119,
+        "construtor": 1.597,
+        "corredor": 1.536,
+        "exportar": 26.073,
+        "ledger": 18.179,
+        "palavras": 236.626,
+        "recibos": 0.085,
+        "regenerar": 0.74,
+        "registo": 2.289,
+        "repeticao-corrigida": 0.857,
+        "repeticao": 0.867,
+        "series": 3.896,
+        "typecheck": 0.492
+      },
+      "tokens_used": null,
+      "tokens_razao": "Não expostos nesta sessão.",
+      "pontos": null,
+      "pontos_razao": "O lançador mede e escreve os pontos no fim."
+    }
+  ]
+}

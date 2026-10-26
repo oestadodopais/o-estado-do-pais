@@ -1,0 +1,10 @@
+{
+  "comando": [
+    "npm",
+    "run",
+    "ledger:check"
+  ],
+  "pasta": "<worktree>",
+  "codigo": 0,
+  "duracao_segundos": 18.179
+}

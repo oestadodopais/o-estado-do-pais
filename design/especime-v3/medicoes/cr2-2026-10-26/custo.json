@@ -1,0 +1,168 @@
+{
+  "passagem_original": {
+    "momento": "antes do commit do relatório; não inclui esse pedido nem a inspeção final",
+    "chamadas": {
+      "exec": 43,
+      "request_user_input_async": 1,
+      "wait": 7
+    },
+    "total_chamadas": 51,
+    "ferramentas_internas_ao_exec": {
+      "exec_command": 55,
+      "write_stdin": 14,
+      "clock__curr_time": 2
+    },
+    "tokens": {
+      "input_tokens": 5184985,
+      "cached_input_tokens": 5054208,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 33675,
+      "reasoning_output_tokens": 10553,
+      "total_tokens": 5218660
+    },
+    "operacoes_com_codigo_guardado": 13,
+    "conferencias_do_ponto_6": 0,
+    "corridas_inteiras_do_sitio": 0,
+    "construcoes": 0,
+    "capturas": 0,
+    "core_gate_pedido_diretamente": 0,
+    "core_gate_corrido_pelo_hook": 1,
+    "conhecido_positivo": {
+      "passou": true,
+      "prova": "O registo contém a pergunta de clarificação e chamadas executadas pelo orquestrador."
+    }
+  },
+  "continuacao_cr2b": {
+    "momento": "antes do commit do relatório; não inclui esse pedido nem a inspeção final",
+    "chamadas": {
+      "exec": 15,
+      "request_user_input_async": 1
+    },
+    "total_chamadas": 16,
+    "ferramentas_internas_ao_exec": {
+      "exec_command": 14,
+      "write_stdin": 2
+    },
+    "tokens": {
+      "input_tokens": 823149,
+      "cached_input_tokens": 761344,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 5991,
+      "reasoning_output_tokens": 868,
+      "total_tokens": 829140
+    },
+    "operacoes_com_codigo_guardado": 22,
+    "conferencias_do_ponto_6": 7,
+    "corridas_inteiras_do_sitio": 0,
+    "construcoes": 1,
+    "capturas": 0,
+    "core_gate_pedido_diretamente": 0,
+    "core_gate_corrido_pelo_hook": 0,
+    "conhecido_positivo": {
+      "passou": true,
+      "prova": "O registo contém a pergunta de clarificação e chamadas executadas pelo orquestrador."
+    }
+  },
+  "continuacao_cr2c": {
+    "chamadas_ferramentas": 10,
+    "chamadas_internas_exec_command": 18,
+    "criterio": "Total previsto até à inspeção final, discriminado entre invólucros exec e comandos internos.",
+    "ensaios_gerador": 1,
+    "invocacoes_invalidas": 1,
+    "conferencias": 0,
+    "construcoes": 0,
+    "corridas_inteiras": 0,
+    "capturas": 0,
+    "core_gate": 0,
+    "tokens_used": "não exposto"
+  },
+  "continuacao_cr2d": {
+    "momento": "preparação do commit; exclui pedido de commit e inspeção final",
+    "chamadas_ferramentas": 21,
+    "chamadas_exec": 19,
+    "chamadas_request_user_input_async": 1,
+    "chamadas_sleep": 1,
+    "comandos_exec_command": 24,
+    "chamadas_write_stdin": 1,
+    "construcoes": 1,
+    "conferencias_pedidas": 7,
+    "corridas_inteiras": 0,
+    "capturas": 0,
+    "core_gate": 0,
+    "tokens_used": "não exposto"
+  },
+  "continuacao_cr2f": {
+    "momento": "medição antes do commit; exclui o pedido de commit e a inspeção final",
+    "chamadas": {
+      "exec": 47
+    },
+    "total_chamadas": 47,
+    "ferramentas_internas": {
+      "exec_command": 44,
+      "apply_patch": 2,
+      "write_stdin": 23
+    },
+    "tokens": {
+      "input_tokens": 3395123,
+      "cached_input_tokens": 3311232,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 18522,
+      "reasoning_output_tokens": 3175,
+      "total_tokens": 3413645
+    },
+    "construcoes": 1,
+    "conferencias_pedidas": 7,
+    "conferencias_adicionais": 7,
+    "categorias_adicionais": 6,
+    "medicoes_auxiliares": 11,
+    "corridas_inteiras": 0,
+    "capturas": 0,
+    "gate_motor": 0,
+    "configuracao_declarada": "Sol 6.1 medium"
+  },
+  "continuacao_cr2g": {
+    "momento": "antes do commit; exclui pedido de commit e inspeção final",
+    "chamadas": {
+      "exec": 54
+    },
+    "total_chamadas": 54,
+    "tokens": {
+      "input_tokens": 4786766,
+      "cached_input_tokens": 4688384,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 22982,
+      "reasoning_output_tokens": 4893,
+      "total_tokens": 4809748
+    },
+    "construcoes": 1,
+    "conferencias_pedidas": 6,
+    "corridas_inteiras": 0,
+    "capturas": 0,
+    "gate_motor": 0
+  },
+  "continuacao_cr2e": {
+    "turnos_lancador": 2,
+    "simbolos_entrada": 153942,
+    "simbolos_entrada_cache": 153088,
+    "simbolos_saida": 604,
+    "pontos_semana_percentagem_antes": 5.0,
+    "pontos_semana_percentagem_depois": 5.0,
+    "pontos_semana_diferenca": 0.0,
+    "nota": "medido pelo lançador, fora da passagem"
+  },
+  "continuacao_cr2h": {
+    "turnos_lancador": 35,
+    "simbolos_entrada": 2953027,
+    "simbolos_entrada_cache": 2869376,
+    "simbolos_saida": 21317,
+    "pontos_semana_percentagem_antes": 7.0,
+    "pontos_semana_percentagem_depois": 8.0,
+    "pontos_semana_diferenca": 1.0,
+    "chamadas_construtor": 34,
+    "modelo": "gpt-6-astra",
+    "raciocinio": "high",
+    "inicio_utc": "2026-10-26T17:21:26Z",
+    "fim_utc": "2026-10-26T17:33:24Z",
+    "nota": "medido pelo lançador, fora da passagem; as 34 chamadas pela resposta final do construtor; a passagem parou pelo §2 e o lugar de direção acabou a cauda por guião"
+  }
+}

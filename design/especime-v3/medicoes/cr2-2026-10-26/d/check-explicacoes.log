@@ -1,0 +1,19 @@
+
+> o-estado-do-pais@0.1.0 check:explicacoes
+> node tests/explicacoes/explicacao.mjs --prova && node tests/explicacoes/semana.mjs --prova && node tests/explicacoes/ex3.mjs
+
+node:fs:440
+    return binding.readFileUtf8(path, stringToFlags(options.flag));
+                   ^
+
+Error: ENOENT: no such file or directory, open '<worktree>/dist/explicacoes/dinheiro-do-estado-2026/index.html'
+    at Object.readFileSync (node:fs:440:20)
+    at plantasDaExplicacao (file://<worktree>/tests/explicacoes/explicacao.mjs:967:19)
+    at file://<worktree>/tests/explicacoes/explicacao.mjs:1184:27 {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '<worktree>/dist/explicacoes/dinheiro-do-estado-2026/index.html'
+}
+
+Node.js v22.23.1

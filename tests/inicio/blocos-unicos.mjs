@@ -90,7 +90,21 @@ export function conferirBlocosUnicos(dist, trocar = new Map(), { paginas = pagin
       const repetidos = root.querySelectorAll('h1,h2,h3,h4').filter((h) => titulos.includes(h.textContent.trim()));
       contas.titulos_fora += repetidos.length;
       if (repetidos.length) erros.push(`N1B ${rel}: título de bloco fora da primeira página.`);
-      const textoDoCorpo = textoSemSelos(root.querySelector('main'));
+      // UE1-c: a W2 exige a citação da frase que mudou na leitura semanal.
+      // Só essa lista, nas duas rotas, com o texto recomposto e uma entrada por bloco.
+      let corpoSemCitacoes = root.querySelector('main');
+      if (['explicacoes/leitura-da-semana/index.html', 'en/explainers/weekly-reading/index.html'].includes(rel)) {
+        corpoSemCitacoes = parse(corpoSemCitacoes?.outerHTML ?? '');
+        const citacoes = corpoSemCitacoes.querySelectorAll('ul.semana-frases > li[data-semana-bloco][data-semana-declarado]');
+        for (const citacao of citacoes) {
+          const id = citacao.getAttribute('data-semana-bloco');
+          const declaracao = BLOCOS_DA_PRIMEIRA_PAGINA.find((b) => b.id === id);
+          if (!declaracao || citacoes.filter((e) => e.getAttribute('data-semana-bloco') === id).length !== 1) continue;
+          const esperado = `${declaracao.titulo[lang]}: ${textoDosPedacos(blocoResolvido(id, lang).frase, lang)}`;
+          if (textoSemSelos(citacao) === normal(esperado)) citacao.remove();
+        }
+      }
+      const textoDoCorpo = textoSemSelos(corpoSemCitacoes);
       const copiadas = frases.filter((f) => textoDoCorpo.includes(f));
       contas.frases_fora += copiadas.length;
       if (copiadas.length) erros.push(`N1B ${rel}: primeira frase de bloco fora da primeira página.`);
@@ -135,6 +149,25 @@ export function plantasDosBlocosUnicos(dist) {
       const r = conferirBlocosUnicos(dist, new Map([[destino, `<html><main>${copia}</main></html>`]]), { paginas: [destino] });
       const queixa = r.erros.find((e) => e.includes(destino) && e.includes(mordida));
       plantas.push({ nome: `${nome} (${lang})`, mordeu: Boolean(queixa), queixa: queixa ?? null, ...(nome.startsWith('primeira frase') ? { primeiraFrase: frase, frase_rendida: textoSemSelos(copiaDaFrase), iguais: textoSemSelos(copiaDaFrase) === frase, com_selo: true } : {}) });
+    }
+  }
+  // A exceção da W2 não autoriza uma cópia fora da lista nem noutra rota.
+  for (const [lang, rota] of [['pt', 'explicacoes/leitura-da-semana/index.html'], ['en', 'en/explainers/weekly-reading/index.html']]) {
+    const id = BLOCOS_DA_PRIMEIRA_PAGINA[0].id;
+    const b = blocoResolvido(id, lang);
+    const conteudo = `${BLOCOS_DA_PRIMEIRA_PAGINA[0].titulo[lang]}: ${textoDosPedacos(b.frase, lang)}`;
+    const li = `<li data-semana-bloco="${id}" data-semana-declarado>${conteudo}</li>`;
+    const citar = (conteudo, destino = rota) => conferirBlocosUnicos(dist,
+      new Map([[destino, `<html><main>${conteudo}</main></html>`]]), { paginas: [destino] });
+    const controlo = citar(`<ul class="semana-frases">${li}</ul>`);
+    assert.deepEqual(controlo.erros, [], 'A citação válida da leitura semanal deve passar.');
+    for (const [nome, conteudo, destino] of [
+      ['citação da semana fora da lista', li, rota],
+      ['citação da semana noutra rota', `<ul class="semana-frases">${li}</ul>`, lang === 'en' ? 'en/employment/index.html' : 'emprego/index.html'],
+      ['citação da semana repetida', `<ul class="semana-frases">${li}${li}</ul>`, rota],
+    ]) {
+      const queixa = citar(conteudo, destino).erros.find((e) => e.includes('primeira frase de bloco fora'));
+      plantas.push({nome: `${nome} (${lang})`, mordeu: Boolean(queixa), queixa: queixa ?? null});
     }
   }
   return plantas;

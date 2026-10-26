@@ -1,0 +1,11 @@
+
+> o-estado-do-pais@0.1.0 check:voz
+> node scripts/check-voz.mjs
+
+  B1: 38 páginas pela lista fechada; 7 temas conferidos.
+  EX1: 12 página(s) com as palavras das explicações e as frases da semana conferidas pelas suas células.
+
+[31m  PORTÃO DA VOZ · 1 problema(s)
+[0m
+[31m    · [0mo bloco «ue1c» tem linhas no inventário e não tem entrada em design/especime-v3/critica/REVISOES-DO-INVENTARIO.md. Uma linha nova do inventário pede a leitura cruzada do seu diff.
+

@@ -1,0 +1,118 @@
+{
+  "_": "Escrito por scripts/aplicar-releituras.py --published-at. Não se edita à mão.",
+  "cabeca_lida": "442b284e229408018e8c97c59dadd285a526bf3c",
+  "hoje_utc": "2026-10-26",
+  "regra_do_dia": "o dia como o carimbo do conjunto o escreve, no fuso do carimbo (updated[:10]), como publisher/dominios_rp1.py",
+  "linhas": [
+    {
+      "id": "divida-publica-2025",
+      "carimbo": "2026-10-21T11:00:00+0200",
+      "dia": "2026-10-21",
+      "fuso": "+0200",
+      "instante_utc": "2026-10-21T09:00:00+00:00",
+      "dia_utc": "2026-10-21",
+      "coincidem": true,
+      "published_at": "2026-10-21",
+      "antes_sha256": "7ec5e458d2695f08b8927e82bea7795833724b191cc114d5dfa3ca507a126634",
+      "depois_sha256": "630993b3ba68b62e020e3787280369455f8b90c33787429f0f0bfe9344e558c2",
+      "aplicada": true
+    },
+    {
+      "id": "divida-publica-2025-ue",
+      "carimbo": "2026-10-21T11:00:00+0200",
+      "dia": "2026-10-21",
+      "fuso": "+0200",
+      "instante_utc": "2026-10-21T09:00:00+00:00",
+      "dia_utc": "2026-10-21",
+      "coincidem": true,
+      "published_at": "2026-10-21",
+      "antes_sha256": "297b27336ef821fc64a626354c1701c35762e2c34c130b87b9b5fd04fdde6133",
+      "depois_sha256": "5df27108f22a23369924e091a963a12cffff477a7f6a42b4db3fa4594067f587",
+      "aplicada": true
+    }
+  ],
+  "plantas": [
+    {
+      "linha": "divida-publica-2025",
+      "planta": "outro dia no lugar do carimbo",
+      "mordeu": true,
+      "razao": "o published_at não é o dia do carimbo do corpo"
+    },
+    {
+      "linha": "divida-publica-2025",
+      "planta": "a forma da casa no lugar de AAAA-MM-DD",
+      "mordeu": true,
+      "razao": "o published_at não é AAAA-MM-DD"
+    },
+    {
+      "linha": "divida-publica-2025",
+      "planta": "um dia que não existe",
+      "mordeu": true,
+      "razao": "o published_at não é um dia que existe"
+    },
+    {
+      "linha": "divida-publica-2025",
+      "planta": "um dia depois de hoje",
+      "mordeu": true,
+      "razao": "o published_at é posterior ao dia de hoje (UTC)"
+    },
+    {
+      "linha": "divida-publica-2025",
+      "planta": "o campo tirado",
+      "mordeu": true,
+      "razao": "o published_at não é AAAA-MM-DD"
+    },
+    {
+      "linha": "divida-publica-2025",
+      "planta": "outro campo mudado",
+      "mordeu": true,
+      "razao": "mudou um campo fora do published_at: ['value']"
+    },
+    {
+      "linha": "divida-publica-2025-ue",
+      "planta": "outro dia no lugar do carimbo",
+      "mordeu": true,
+      "razao": "o published_at não é o dia do carimbo do corpo"
+    },
+    {
+      "linha": "divida-publica-2025-ue",
+      "planta": "a forma da casa no lugar de AAAA-MM-DD",
+      "mordeu": true,
+      "razao": "o published_at não é AAAA-MM-DD"
+    },
+    {
+      "linha": "divida-publica-2025-ue",
+      "planta": "um dia que não existe",
+      "mordeu": true,
+      "razao": "o published_at não é um dia que existe"
+    },
+    {
+      "linha": "divida-publica-2025-ue",
+      "planta": "um dia depois de hoje",
+      "mordeu": true,
+      "razao": "o published_at é posterior ao dia de hoje (UTC)"
+    },
+    {
+      "linha": "divida-publica-2025-ue",
+      "planta": "o campo tirado",
+      "mordeu": true,
+      "razao": "o published_at não é AAAA-MM-DD"
+    },
+    {
+      "linha": "divida-publica-2025-ue",
+      "planta": "outro campo mudado",
+      "mordeu": true,
+      "razao": "mudou um campo fora do published_at: ['value']"
+    }
+  ],
+  "contagens": {
+    "linhas": 2,
+    "aplicadas": 2,
+    "dias_iguais_ao_dia_utc": 2,
+    "dias": [
+      "2026-10-21"
+    ],
+    "plantas": 12,
+    "plantas_que_morderam": 12
+  }
+}

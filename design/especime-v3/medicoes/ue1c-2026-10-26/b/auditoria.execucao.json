@@ -1,0 +1,9 @@
+{
+  "comando": [
+    "python3",
+    "design/especime-v3/medicoes/ue1c-2026-10-26/b/conferir.py"
+  ],
+  "pasta": "<worktree>",
+  "codigo": 0,
+  "duracao_segundos": 0.661
+}

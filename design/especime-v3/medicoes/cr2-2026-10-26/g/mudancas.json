@@ -1,0 +1,212 @@
+[
+  {
+    "id": "custo-unitario-do-trabalho-2025-ue",
+    "lang": "pt",
+    "rota": "/correcoes",
+    "nome": "Custo do trabalho por unidade produzida (custo unitário do trabalho)",
+    "texto": "Custo do trabalho por unidade produzida (custo unitário do trabalho)15,2 → 14,8 variação em três anos, %fonte · Eurostat"
+  },
+  {
+    "id": "divida-das-empresas-2024",
+    "lang": "pt",
+    "rota": "/correcoes",
+    "nome": "Dívida das empresas (não financeiras)",
+    "texto": "Dívida das empresas (não financeiras)67,1 → 66,6 % do PIBfonte · Eurostat"
+  },
+  {
+    "id": "divida-das-empresas-2025",
+    "lang": "pt",
+    "rota": "/correcoes",
+    "nome": "Dívida das empresas (não financeiras)",
+    "texto": "Dívida das empresas (não financeiras)64,9 → 65,1 % do PIBfonte · Eurostat"
+  },
+  {
+    "id": "divida-das-empresas-2025-ue",
+    "lang": "pt",
+    "rota": "/correcoes",
+    "nome": "Dívida das empresas (não financeiras)",
+    "texto": "Dívida das empresas (não financeiras)70,0 → 70,2 % do PIBfonte · Eurostat"
+  },
+  {
+    "id": "divida-das-familias-2024",
+    "lang": "pt",
+    "rota": "/correcoes",
+    "nome": "Dívida das famílias",
+    "texto": "Dívida das famílias52,6 → 52,3 % do PIBfonte · Eurostat"
+  },
+  {
+    "id": "divida-das-familias-2025",
+    "lang": "pt",
+    "rota": "/correcoes",
+    "nome": "Dívida das famílias",
+    "texto": "Dívida das famílias53,9 → 54,4 % do PIBfonte · Eurostat"
+  },
+  {
+    "id": "divida-publica-2024",
+    "lang": "pt",
+    "rota": "/correcoes",
+    "nome": "Dívida pública",
+    "texto": "Dívida pública93,5 → 93,0 % do PIBfonte · Eurostat"
+  },
+  {
+    "id": "fluxo-de-credito-as-empresas-2024",
+    "lang": "pt",
+    "rota": "/correcoes",
+    "nome": "Fluxo de crédito às empresas (não financeiras)",
+    "texto": "Fluxo de crédito às empresas (não financeiras)2,4 → 2,2 % do stock no final do período anteriorfonte · Eurostat"
+  },
+  {
+    "id": "fluxo-de-credito-as-empresas-2025",
+    "lang": "pt",
+    "rota": "/correcoes",
+    "nome": "Fluxo de crédito às empresas (não financeiras)",
+    "texto": "Fluxo de crédito às empresas (não financeiras)3,0 → 3,4 % do stock no final do período anteriorfonte · Eurostat"
+  },
+  {
+    "id": "fluxo-de-credito-as-familias-2024",
+    "lang": "pt",
+    "rota": "/correcoes",
+    "nome": "Fluxo de crédito às famílias",
+    "texto": "Fluxo de crédito às famílias4,1 → 4,0 % do stock no final do período anteriorfonte · Eurostat"
+  },
+  {
+    "id": "fluxo-de-credito-as-familias-2025",
+    "lang": "pt",
+    "rota": "/correcoes",
+    "nome": "Fluxo de crédito às famílias",
+    "texto": "Fluxo de crédito às famílias8,6 → 9,0 % do stock no final do período anteriorfonte · Eurostat"
+  },
+  {
+    "id": "fluxo-de-credito-as-familias-2025-ue",
+    "lang": "pt",
+    "rota": "/correcoes",
+    "nome": "Fluxo de crédito às famílias",
+    "texto": "Fluxo de crédito às famílias2,9 → 3,0 % do stock no final do período anteriorfonte · Eurostat"
+  },
+  {
+    "id": "formacao-bruta-de-capital-fixo-2025-ue",
+    "lang": "pt",
+    "rota": "/correcoes",
+    "nome": "Investimento em bens duradouros para produzir (formação bruta de capital fixo)",
+    "texto": "Investimento em bens duradouros para produzir (formação bruta de capital fixo)21,4 → 21,5 % do PIBfonte · Eurostat"
+  },
+  {
+    "id": "licencas-de-construcao-2025-ue",
+    "lang": "pt",
+    "rota": "/correcoes",
+    "nome": "Área licenciada para habitação",
+    "texto": "Área licenciada para habitação377,5 → 377,6 m² por 1000 habitantesfonte · Eurostat"
+  },
+  {
+    "id": "pib-real-per-capita-2025-ue",
+    "lang": "pt",
+    "rota": "/correcoes",
+    "nome": "PIB real por habitante",
+    "texto": "PIB real por habitante31 890 → 31 980 euros por habitante · volumes encadeados (2015)fonte · Eurostat"
+  },
+  {
+    "id": "custo-unitario-do-trabalho-2025-ue",
+    "lang": "en",
+    "rota": "/en/corrections",
+    "nome": "Labour cost per unit of output (unit labour cost)",
+    "texto": "Labour cost per unit of output (unit labour cost)15,2 → 14,8 three-year change, %source · Eurostat"
+  },
+  {
+    "id": "divida-das-empresas-2024",
+    "lang": "en",
+    "rota": "/en/corrections",
+    "nome": "Debt of (non-financial) companies",
+    "texto": "Debt of (non-financial) companies67,1 → 66,6 % of GDPsource · Eurostat"
+  },
+  {
+    "id": "divida-das-empresas-2025",
+    "lang": "en",
+    "rota": "/en/corrections",
+    "nome": "Debt of (non-financial) companies",
+    "texto": "Debt of (non-financial) companies64,9 → 65,1 % of GDPsource · Eurostat"
+  },
+  {
+    "id": "divida-das-empresas-2025-ue",
+    "lang": "en",
+    "rota": "/en/corrections",
+    "nome": "Debt of (non-financial) companies",
+    "texto": "Debt of (non-financial) companies70,0 → 70,2 % of GDPsource · Eurostat"
+  },
+  {
+    "id": "divida-das-familias-2024",
+    "lang": "en",
+    "rota": "/en/corrections",
+    "nome": "Household debt",
+    "texto": "Household debt52,6 → 52,3 % of GDPsource · Eurostat"
+  },
+  {
+    "id": "divida-das-familias-2025",
+    "lang": "en",
+    "rota": "/en/corrections",
+    "nome": "Household debt",
+    "texto": "Household debt53,9 → 54,4 % of GDPsource · Eurostat"
+  },
+  {
+    "id": "divida-publica-2024",
+    "lang": "en",
+    "rota": "/en/corrections",
+    "nome": "Government debt",
+    "texto": "Government debt93,5 → 93,0 % of GDPsource · Eurostat"
+  },
+  {
+    "id": "fluxo-de-credito-as-empresas-2024",
+    "lang": "en",
+    "rota": "/en/corrections",
+    "nome": "Credit flow to (non-financial) companies",
+    "texto": "Credit flow to (non-financial) companies2,4 → 2,2 % of the stock at the end of the previous periodsource · Eurostat"
+  },
+  {
+    "id": "fluxo-de-credito-as-empresas-2025",
+    "lang": "en",
+    "rota": "/en/corrections",
+    "nome": "Credit flow to (non-financial) companies",
+    "texto": "Credit flow to (non-financial) companies3,0 → 3,4 % of the stock at the end of the previous periodsource · Eurostat"
+  },
+  {
+    "id": "fluxo-de-credito-as-familias-2024",
+    "lang": "en",
+    "rota": "/en/corrections",
+    "nome": "Credit flow to households",
+    "texto": "Credit flow to households4,1 → 4,0 % of the stock at the end of the previous periodsource · Eurostat"
+  },
+  {
+    "id": "fluxo-de-credito-as-familias-2025",
+    "lang": "en",
+    "rota": "/en/corrections",
+    "nome": "Credit flow to households",
+    "texto": "Credit flow to households8,6 → 9,0 % of the stock at the end of the previous periodsource · Eurostat"
+  },
+  {
+    "id": "fluxo-de-credito-as-familias-2025-ue",
+    "lang": "en",
+    "rota": "/en/corrections",
+    "nome": "Credit flow to households",
+    "texto": "Credit flow to households2,9 → 3,0 % of the stock at the end of the previous periodsource · Eurostat"
+  },
+  {
+    "id": "formacao-bruta-de-capital-fixo-2025-ue",
+    "lang": "en",
+    "rota": "/en/corrections",
+    "nome": "Investment in durable goods used for production (gross fixed capital formation)",
+    "texto": "Investment in durable goods used for production (gross fixed capital formation)21,4 → 21,5 % of GDPsource · Eurostat"
+  },
+  {
+    "id": "licencas-de-construcao-2025-ue",
+    "lang": "en",
+    "rota": "/en/corrections",
+    "nome": "Floor area licensed for housing",
+    "texto": "Floor area licensed for housing377,5 → 377,6 m² per 1000 inhabitantssource · Eurostat"
+  },
+  {
+    "id": "pib-real-per-capita-2025-ue",
+    "lang": "en",
+    "rota": "/en/corrections",
+    "nome": "Real GDP per capita",
+    "texto": "Real GDP per capita31 890 → 31 980 euro per capita · chain linked volumes (2015)source · Eurostat"
+  }
+]

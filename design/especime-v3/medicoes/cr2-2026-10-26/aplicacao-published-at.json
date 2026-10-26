@@ -1,0 +1,855 @@
+{
+  "_": "Escrito por scripts/aplicar-releituras.py --published-at. Não se edita à mão.",
+  "cabeca_lida": "442b284e229408018e8c97c59dadd285a526bf3c",
+  "hoje_utc": "2026-10-26",
+  "regra_do_dia": "o dia como o carimbo do conjunto o escreve, no fuso do carimbo (updated[:10]), como publisher/dominios_rp1.py",
+  "linhas": [
+    {
+      "id": "custo-unitario-do-trabalho-2025-ue",
+      "carimbo": "2026-10-22T23:00:00+0200",
+      "dia": "2026-10-22",
+      "fuso": "+0200",
+      "instante_utc": "2026-10-22T21:00:00+00:00",
+      "dia_utc": "2026-10-22",
+      "coincidem": true,
+      "published_at": "2026-10-22",
+      "antes_sha256": "52492e46bd184a3b88894a64c5724863b3a4a0663b7fc5ad2ca60ec29d4cb464",
+      "depois_sha256": "229114df8daad5d67635eb860b1db0b6ca919af01cf4c8dedffe5d20cdc2acd6",
+      "aplicada": true
+    },
+    {
+      "id": "divida-das-empresas-2024",
+      "carimbo": "2026-10-24T11:00:00+0200",
+      "dia": "2026-10-24",
+      "fuso": "+0200",
+      "instante_utc": "2026-10-24T09:00:00+00:00",
+      "dia_utc": "2026-10-24",
+      "coincidem": true,
+      "published_at": "2026-10-24",
+      "antes_sha256": "98cd80aee0557849a7f43ed747f55dde28ae91a3252baef5cd061e1deee71c45",
+      "depois_sha256": "d86af0c0fbc4005ca3eb611ec07f40f892e9cea6cc3f5d0f6277f5aa23fc3180",
+      "aplicada": true
+    },
+    {
+      "id": "divida-das-empresas-2025",
+      "carimbo": "2026-10-24T11:00:00+0200",
+      "dia": "2026-10-24",
+      "fuso": "+0200",
+      "instante_utc": "2026-10-24T09:00:00+00:00",
+      "dia_utc": "2026-10-24",
+      "coincidem": true,
+      "published_at": "2026-10-24",
+      "antes_sha256": "057cd577b01ec6ed3105c8dcd308cc7c2a5f2ad0bbfd9d99723cc7531ae0bd25",
+      "depois_sha256": "e0a728325465e189ec78f9e4cd334dc99ee5091cb96ce1b98b02b4d02fc9fe21",
+      "aplicada": true
+    },
+    {
+      "id": "divida-das-empresas-2025-ue",
+      "carimbo": "2026-10-24T11:00:00+0200",
+      "dia": "2026-10-24",
+      "fuso": "+0200",
+      "instante_utc": "2026-10-24T09:00:00+00:00",
+      "dia_utc": "2026-10-24",
+      "coincidem": true,
+      "published_at": "2026-10-24",
+      "antes_sha256": "5a5ca57463bf399b4a949eaf1fd8026eabd06527b02ad6b51eb64b90ccd1e68f",
+      "depois_sha256": "e7915a85a01a2606f9e0ed48c1f31808aa440fd3cc27e8d22144c0cb8fd0b25b",
+      "aplicada": true
+    },
+    {
+      "id": "divida-das-familias-2024",
+      "carimbo": "2026-10-24T11:00:00+0200",
+      "dia": "2026-10-24",
+      "fuso": "+0200",
+      "instante_utc": "2026-10-24T09:00:00+00:00",
+      "dia_utc": "2026-10-24",
+      "coincidem": true,
+      "published_at": "2026-10-24",
+      "antes_sha256": "3de5a8ca31817252e8b32cb58d1f181a47e007d4fe8bad22f4982c65fae7e4c7",
+      "depois_sha256": "f392f237d5aedd8f8a664afa0a4b6e5acceda2b286dc49e0be77ff740081f410",
+      "aplicada": true
+    },
+    {
+      "id": "divida-das-familias-2025",
+      "carimbo": "2026-10-24T11:00:00+0200",
+      "dia": "2026-10-24",
+      "fuso": "+0200",
+      "instante_utc": "2026-10-24T09:00:00+00:00",
+      "dia_utc": "2026-10-24",
+      "coincidem": true,
+      "published_at": "2026-10-24",
+      "antes_sha256": "620e3dd30e68bcef4358f4c72a00dc32226747efedfda11d395680719431dbed",
+      "depois_sha256": "f4b7212ae6ddfb05848c38dbbac257d7ed18903f830a1f0e6025a5c52a0611ea",
+      "aplicada": true
+    },
+    {
+      "id": "divida-publica-2024",
+      "carimbo": "2026-10-21T11:00:00+0200",
+      "dia": "2026-10-21",
+      "fuso": "+0200",
+      "instante_utc": "2026-10-21T09:00:00+00:00",
+      "dia_utc": "2026-10-21",
+      "coincidem": true,
+      "published_at": "2026-10-21",
+      "antes_sha256": "c1dc039c61e7fdae472c333e63ffd1fbd70a89153d0cc9f792b342435dcd2b29",
+      "depois_sha256": "020aadc0bdd5704e76a2d8b0425d402d16983ddd06874faf92a7800991e2152b",
+      "aplicada": true
+    },
+    {
+      "id": "divida-publica-2025",
+      "carimbo": "2026-10-21T11:00:00+0200",
+      "dia": "2026-10-21",
+      "fuso": "+0200",
+      "instante_utc": "2026-10-21T09:00:00+00:00",
+      "dia_utc": "2026-10-21",
+      "coincidem": true,
+      "published_at": "2026-10-21",
+      "antes_sha256": "7ec5e458d2695f08b8927e82bea7795833724b191cc114d5dfa3ca507a126634",
+      "depois_sha256": "630993b3ba68b62e020e3787280369455f8b90c33787429f0f0bfe9344e558c2",
+      "aplicada": true
+    },
+    {
+      "id": "divida-publica-2025-ue",
+      "carimbo": "2026-10-21T11:00:00+0200",
+      "dia": "2026-10-21",
+      "fuso": "+0200",
+      "instante_utc": "2026-10-21T09:00:00+00:00",
+      "dia_utc": "2026-10-21",
+      "coincidem": true,
+      "published_at": "2026-10-21",
+      "antes_sha256": "297b27336ef821fc64a626354c1701c35762e2c34c130b87b9b5fd04fdde6133",
+      "depois_sha256": "5df27108f22a23369924e091a963a12cffff477a7f6a42b4db3fa4594067f587",
+      "aplicada": true
+    },
+    {
+      "id": "fluxo-de-credito-as-empresas-2024",
+      "carimbo": "2026-10-24T11:00:00+0200",
+      "dia": "2026-10-24",
+      "fuso": "+0200",
+      "instante_utc": "2026-10-24T09:00:00+00:00",
+      "dia_utc": "2026-10-24",
+      "coincidem": true,
+      "published_at": "2026-10-24",
+      "antes_sha256": "27d728c12e63460002b0c24509f78bd1385e84aada644a69cce9977e50af3d4c",
+      "depois_sha256": "16bfb4947d3551434b3ac6f58eb08d3951988dff10901b379c25bc1faf3ac0d9",
+      "aplicada": true
+    },
+    {
+      "id": "fluxo-de-credito-as-empresas-2025",
+      "carimbo": "2026-10-24T11:00:00+0200",
+      "dia": "2026-10-24",
+      "fuso": "+0200",
+      "instante_utc": "2026-10-24T09:00:00+00:00",
+      "dia_utc": "2026-10-24",
+      "coincidem": true,
+      "published_at": "2026-10-24",
+      "antes_sha256": "4bbae7bd88b4615d8e605cc137bf9594e4b72f34bdcd3bf685e8685738db93e2",
+      "depois_sha256": "ed39c04fec4184ed62f4aaa680a35d3eb98347e7e2752c80b7e19788c3b8d200",
+      "aplicada": true
+    },
+    {
+      "id": "fluxo-de-credito-as-familias-2024",
+      "carimbo": "2026-10-24T11:00:00+0200",
+      "dia": "2026-10-24",
+      "fuso": "+0200",
+      "instante_utc": "2026-10-24T09:00:00+00:00",
+      "dia_utc": "2026-10-24",
+      "coincidem": true,
+      "published_at": "2026-10-24",
+      "antes_sha256": "758a453d46397d66b157d47194d472ccc4f15258379f441e9f7f6165813bd993",
+      "depois_sha256": "6ba88e5206a99d23e8c32fec3a79a2229b11a17c46026be734bee96c7cbf4f8e",
+      "aplicada": true
+    },
+    {
+      "id": "fluxo-de-credito-as-familias-2025",
+      "carimbo": "2026-10-24T11:00:00+0200",
+      "dia": "2026-10-24",
+      "fuso": "+0200",
+      "instante_utc": "2026-10-24T09:00:00+00:00",
+      "dia_utc": "2026-10-24",
+      "coincidem": true,
+      "published_at": "2026-10-24",
+      "antes_sha256": "a80ff143537b35c2b77602640c1e8b310ddd91b38417bcf6f9e258cb307edff2",
+      "depois_sha256": "c8454cd71edc7c56bac82666ad90e24effe033c35a9b42ea131a9b9e33569cc7",
+      "aplicada": true
+    },
+    {
+      "id": "fluxo-de-credito-as-familias-2025-ue",
+      "carimbo": "2026-10-24T11:00:00+0200",
+      "dia": "2026-10-24",
+      "fuso": "+0200",
+      "instante_utc": "2026-10-24T09:00:00+00:00",
+      "dia_utc": "2026-10-24",
+      "coincidem": true,
+      "published_at": "2026-10-24",
+      "antes_sha256": "6717676a173f40c0414e45c6fcf19f052fd87a5d8b48a444d99ad301b9dca252",
+      "depois_sha256": "e3bb748a6100603351902804f6fd2832a32b76e6d8e20ff56cab335e38c5b174",
+      "aplicada": true
+    },
+    {
+      "id": "formacao-bruta-de-capital-fixo-2025-ue",
+      "carimbo": "2026-10-22T23:00:00+0200",
+      "dia": "2026-10-22",
+      "fuso": "+0200",
+      "instante_utc": "2026-10-22T21:00:00+00:00",
+      "dia_utc": "2026-10-22",
+      "coincidem": true,
+      "published_at": "2026-10-22",
+      "antes_sha256": "7514383569fd6268b84512859298d39fd939f0cf94461e02ef1c490c6cef6ce3",
+      "depois_sha256": "e8964c401e8737d708d5819525e2b6e5231a50418900b7d00d079141538e2b7e",
+      "aplicada": true
+    },
+    {
+      "id": "licencas-de-construcao-2025-ue",
+      "carimbo": "2026-10-21T23:00:00+0200",
+      "dia": "2026-10-21",
+      "fuso": "+0200",
+      "instante_utc": "2026-10-21T21:00:00+00:00",
+      "dia_utc": "2026-10-21",
+      "coincidem": true,
+      "published_at": "2026-10-21",
+      "antes_sha256": "bb5895e6577084939e12dcd6b34cba7f22a93cc4443cb7cc0bbb084025db4043",
+      "depois_sha256": "6bb849df3dd87a93ca7e731d67dc454247f603f117934a0b10025d7b0c925e87",
+      "aplicada": true
+    },
+    {
+      "id": "pib-real-per-capita-2025-ue",
+      "carimbo": "2026-10-22T23:00:00+0200",
+      "dia": "2026-10-22",
+      "fuso": "+0200",
+      "instante_utc": "2026-10-22T21:00:00+00:00",
+      "dia_utc": "2026-10-22",
+      "coincidem": true,
+      "published_at": "2026-10-22",
+      "antes_sha256": "391298075f7113fd9145563136dfca03bd99015eb466b2a8a9d92305b9a4ed86",
+      "depois_sha256": "7cbebd1a4e4518b2da1dcc294bc1c5fbbfc1865343118128a8cbf2db4ceff06c",
+      "aplicada": true
+    }
+  ],
+  "plantas": [
+    {
+      "linha": "custo-unitario-do-trabalho-2025-ue",
+      "planta": "outro dia no lugar do carimbo",
+      "mordeu": true,
+      "razao": "o published_at não é o dia do carimbo do corpo"
+    },
+    {
+      "linha": "custo-unitario-do-trabalho-2025-ue",
+      "planta": "a forma da casa no lugar de AAAA-MM-DD",
+      "mordeu": true,
+      "razao": "o published_at não é AAAA-MM-DD"
+    },
+    {
+      "linha": "custo-unitario-do-trabalho-2025-ue",
+      "planta": "um dia que não existe",
+      "mordeu": true,
+      "razao": "o published_at não é um dia que existe"
+    },
+    {
+      "linha": "custo-unitario-do-trabalho-2025-ue",
+      "planta": "um dia depois de hoje",
+      "mordeu": true,
+      "razao": "o published_at é posterior ao dia de hoje (UTC)"
+    },
+    {
+      "linha": "custo-unitario-do-trabalho-2025-ue",
+      "planta": "o campo tirado",
+      "mordeu": true,
+      "razao": "o published_at não é AAAA-MM-DD"
+    },
+    {
+      "linha": "custo-unitario-do-trabalho-2025-ue",
+      "planta": "outro campo mudado",
+      "mordeu": true,
+      "razao": "mudou um campo fora do published_at: ['value']"
+    },
+    {
+      "linha": "divida-das-empresas-2024",
+      "planta": "outro dia no lugar do carimbo",
+      "mordeu": true,
+      "razao": "o published_at não é o dia do carimbo do corpo"
+    },
+    {
+      "linha": "divida-das-empresas-2024",
+      "planta": "a forma da casa no lugar de AAAA-MM-DD",
+      "mordeu": true,
+      "razao": "o published_at não é AAAA-MM-DD"
+    },
+    {
+      "linha": "divida-das-empresas-2024",
+      "planta": "um dia que não existe",
+      "mordeu": true,
+      "razao": "o published_at não é um dia que existe"
+    },
+    {
+      "linha": "divida-das-empresas-2024",
+      "planta": "um dia depois de hoje",
+      "mordeu": true,
+      "razao": "o published_at é posterior ao dia de hoje (UTC)"
+    },
+    {
+      "linha": "divida-das-empresas-2024",
+      "planta": "o campo tirado",
+      "mordeu": true,
+      "razao": "o published_at não é AAAA-MM-DD"
+    },
+    {
+      "linha": "divida-das-empresas-2024",
+      "planta": "outro campo mudado",
+      "mordeu": true,
+      "razao": "mudou um campo fora do published_at: ['value']"
+    },
+    {
+      "linha": "divida-das-empresas-2025",
+      "planta": "outro dia no lugar do carimbo",
+      "mordeu": true,
+      "razao": "o published_at não é o dia do carimbo do corpo"
+    },
+    {
+      "linha": "divida-das-empresas-2025",
+      "planta": "a forma da casa no lugar de AAAA-MM-DD",
+      "mordeu": true,
+      "razao": "o published_at não é AAAA-MM-DD"
+    },
+    {
+      "linha": "divida-das-empresas-2025",
+      "planta": "um dia que não existe",
+      "mordeu": true,
+      "razao": "o published_at não é um dia que existe"
+    },
+    {
+      "linha": "divida-das-empresas-2025",
+      "planta": "um dia depois de hoje",
+      "mordeu": true,
+      "razao": "o published_at é posterior ao dia de hoje (UTC)"
+    },
+    {
+      "linha": "divida-das-empresas-2025",
+      "planta": "o campo tirado",
+      "mordeu": true,
+      "razao": "o published_at não é AAAA-MM-DD"
+    },
+    {
+      "linha": "divida-das-empresas-2025",
+      "planta": "outro campo mudado",
+      "mordeu": true,
+      "razao": "mudou um campo fora do published_at: ['value']"
+    },
+    {
+      "linha": "divida-das-empresas-2025-ue",
+      "planta": "outro dia no lugar do carimbo",
+      "mordeu": true,
+      "razao": "o published_at não é o dia do carimbo do corpo"
+    },
+    {
+      "linha": "divida-das-empresas-2025-ue",
+      "planta": "a forma da casa no lugar de AAAA-MM-DD",
+      "mordeu": true,
+      "razao": "o published_at não é AAAA-MM-DD"
+    },
+    {
+      "linha": "divida-das-empresas-2025-ue",
+      "planta": "um dia que não existe",
+      "mordeu": true,
+      "razao": "o published_at não é um dia que existe"
+    },
+    {
+      "linha": "divida-das-empresas-2025-ue",
+      "planta": "um dia depois de hoje",
+      "mordeu": true,
+      "razao": "o published_at é posterior ao dia de hoje (UTC)"
+    },
+    {
+      "linha": "divida-das-empresas-2025-ue",
+      "planta": "o campo tirado",
+      "mordeu": true,
+      "razao": "o published_at não é AAAA-MM-DD"
+    },
+    {
+      "linha": "divida-das-empresas-2025-ue",
+      "planta": "outro campo mudado",
+      "mordeu": true,
+      "razao": "mudou um campo fora do published_at: ['value']"
+    },
+    {
+      "linha": "divida-das-familias-2024",
+      "planta": "outro dia no lugar do carimbo",
+      "mordeu": true,
+      "razao": "o published_at não é o dia do carimbo do corpo"
+    },
+    {
+      "linha": "divida-das-familias-2024",
+      "planta": "a forma da casa no lugar de AAAA-MM-DD",
+      "mordeu": true,
+      "razao": "o published_at não é AAAA-MM-DD"
+    },
+    {
+      "linha": "divida-das-familias-2024",
+      "planta": "um dia que não existe",
+      "mordeu": true,
+      "razao": "o published_at não é um dia que existe"
+    },
+    {
+      "linha": "divida-das-familias-2024",
+      "planta": "um dia depois de hoje",
+      "mordeu": true,
+      "razao": "o published_at é posterior ao dia de hoje (UTC)"
+    },
+    {
+      "linha": "divida-das-familias-2024",
+      "planta": "o campo tirado",
+      "mordeu": true,
+      "razao": "o published_at não é AAAA-MM-DD"
+    },
+    {
+      "linha": "divida-das-familias-2024",
+      "planta": "outro campo mudado",
+      "mordeu": true,
+      "razao": "mudou um campo fora do published_at: ['value']"
+    },
+    {
+      "linha": "divida-das-familias-2025",
+      "planta": "outro dia no lugar do carimbo",
+      "mordeu": true,
+      "razao": "o published_at não é o dia do carimbo do corpo"
+    },
+    {
+      "linha": "divida-das-familias-2025",
+      "planta": "a forma da casa no lugar de AAAA-MM-DD",
+      "mordeu": true,
+      "razao": "o published_at não é AAAA-MM-DD"
+    },
+    {
+      "linha": "divida-das-familias-2025",
+      "planta": "um dia que não existe",
+      "mordeu": true,
+      "razao": "o published_at não é um dia que existe"
+    },
+    {
+      "linha": "divida-das-familias-2025",
+      "planta": "um dia depois de hoje",
+      "mordeu": true,
+      "razao": "o published_at é posterior ao dia de hoje (UTC)"
+    },
+    {
+      "linha": "divida-das-familias-2025",
+      "planta": "o campo tirado",
+      "mordeu": true,
+      "razao": "o published_at não é AAAA-MM-DD"
+    },
+    {
+      "linha": "divida-das-familias-2025",
+      "planta": "outro campo mudado",
+      "mordeu": true,
+      "razao": "mudou um campo fora do published_at: ['value']"
+    },
+    {
+      "linha": "divida-publica-2024",
+      "planta": "outro dia no lugar do carimbo",
+      "mordeu": true,
+      "razao": "o published_at não é o dia do carimbo do corpo"
+    },
+    {
+      "linha": "divida-publica-2024",
+      "planta": "a forma da casa no lugar de AAAA-MM-DD",
+      "mordeu": true,
+      "razao": "o published_at não é AAAA-MM-DD"
+    },
+    {
+      "linha": "divida-publica-2024",
+      "planta": "um dia que não existe",
+      "mordeu": true,
+      "razao": "o published_at não é um dia que existe"
+    },
+    {
+      "linha": "divida-publica-2024",
+      "planta": "um dia depois de hoje",
+      "mordeu": true,
+      "razao": "o published_at é posterior ao dia de hoje (UTC)"
+    },
+    {
+      "linha": "divida-publica-2024",
+      "planta": "o campo tirado",
+      "mordeu": true,
+      "razao": "o published_at não é AAAA-MM-DD"
+    },
+    {
+      "linha": "divida-publica-2024",
+      "planta": "outro campo mudado",
+      "mordeu": true,
+      "razao": "mudou um campo fora do published_at: ['value']"
+    },
+    {
+      "linha": "divida-publica-2025",
+      "planta": "outro dia no lugar do carimbo",
+      "mordeu": true,
+      "razao": "o published_at não é o dia do carimbo do corpo"
+    },
+    {
+      "linha": "divida-publica-2025",
+      "planta": "a forma da casa no lugar de AAAA-MM-DD",
+      "mordeu": true,
+      "razao": "o published_at não é AAAA-MM-DD"
+    },
+    {
+      "linha": "divida-publica-2025",
+      "planta": "um dia que não existe",
+      "mordeu": true,
+      "razao": "o published_at não é um dia que existe"
+    },
+    {
+      "linha": "divida-publica-2025",
+      "planta": "um dia depois de hoje",
+      "mordeu": true,
+      "razao": "o published_at é posterior ao dia de hoje (UTC)"
+    },
+    {
+      "linha": "divida-publica-2025",
+      "planta": "o campo tirado",
+      "mordeu": true,
+      "razao": "o published_at não é AAAA-MM-DD"
+    },
+    {
+      "linha": "divida-publica-2025",
+      "planta": "outro campo mudado",
+      "mordeu": true,
+      "razao": "mudou um campo fora do published_at: ['value']"
+    },
+    {
+      "linha": "divida-publica-2025-ue",
+      "planta": "outro dia no lugar do carimbo",
+      "mordeu": true,
+      "razao": "o published_at não é o dia do carimbo do corpo"
+    },
+    {
+      "linha": "divida-publica-2025-ue",
+      "planta": "a forma da casa no lugar de AAAA-MM-DD",
+      "mordeu": true,
+      "razao": "o published_at não é AAAA-MM-DD"
+    },
+    {
+      "linha": "divida-publica-2025-ue",
+      "planta": "um dia que não existe",
+      "mordeu": true,
+      "razao": "o published_at não é um dia que existe"
+    },
+    {
+      "linha": "divida-publica-2025-ue",
+      "planta": "um dia depois de hoje",
+      "mordeu": true,
+      "razao": "o published_at é posterior ao dia de hoje (UTC)"
+    },
+    {
+      "linha": "divida-publica-2025-ue",
+      "planta": "o campo tirado",
+      "mordeu": true,
+      "razao": "o published_at não é AAAA-MM-DD"
+    },
+    {
+      "linha": "divida-publica-2025-ue",
+      "planta": "outro campo mudado",
+      "mordeu": true,
+      "razao": "mudou um campo fora do published_at: ['value']"
+    },
+    {
+      "linha": "fluxo-de-credito-as-empresas-2024",
+      "planta": "outro dia no lugar do carimbo",
+      "mordeu": true,
+      "razao": "o published_at não é o dia do carimbo do corpo"
+    },
+    {
+      "linha": "fluxo-de-credito-as-empresas-2024",
+      "planta": "a forma da casa no lugar de AAAA-MM-DD",
+      "mordeu": true,
+      "razao": "o published_at não é AAAA-MM-DD"
+    },
+    {
+      "linha": "fluxo-de-credito-as-empresas-2024",
+      "planta": "um dia que não existe",
+      "mordeu": true,
+      "razao": "o published_at não é um dia que existe"
+    },
+    {
+      "linha": "fluxo-de-credito-as-empresas-2024",
+      "planta": "um dia depois de hoje",
+      "mordeu": true,
+      "razao": "o published_at é posterior ao dia de hoje (UTC)"
+    },
+    {
+      "linha": "fluxo-de-credito-as-empresas-2024",
+      "planta": "o campo tirado",
+      "mordeu": true,
+      "razao": "o published_at não é AAAA-MM-DD"
+    },
+    {
+      "linha": "fluxo-de-credito-as-empresas-2024",
+      "planta": "outro campo mudado",
+      "mordeu": true,
+      "razao": "mudou um campo fora do published_at: ['value']"
+    },
+    {
+      "linha": "fluxo-de-credito-as-empresas-2025",
+      "planta": "outro dia no lugar do carimbo",
+      "mordeu": true,
+      "razao": "o published_at não é o dia do carimbo do corpo"
+    },
+    {
+      "linha": "fluxo-de-credito-as-empresas-2025",
+      "planta": "a forma da casa no lugar de AAAA-MM-DD",
+      "mordeu": true,
+      "razao": "o published_at não é AAAA-MM-DD"
+    },
+    {
+      "linha": "fluxo-de-credito-as-empresas-2025",
+      "planta": "um dia que não existe",
+      "mordeu": true,
+      "razao": "o published_at não é um dia que existe"
+    },
+    {
+      "linha": "fluxo-de-credito-as-empresas-2025",
+      "planta": "um dia depois de hoje",
+      "mordeu": true,
+      "razao": "o published_at é posterior ao dia de hoje (UTC)"
+    },
+    {
+      "linha": "fluxo-de-credito-as-empresas-2025",
+      "planta": "o campo tirado",
+      "mordeu": true,
+      "razao": "o published_at não é AAAA-MM-DD"
+    },
+    {
+      "linha": "fluxo-de-credito-as-empresas-2025",
+      "planta": "outro campo mudado",
+      "mordeu": true,
+      "razao": "mudou um campo fora do published_at: ['value']"
+    },
+    {
+      "linha": "fluxo-de-credito-as-familias-2024",
+      "planta": "outro dia no lugar do carimbo",
+      "mordeu": true,
+      "razao": "o published_at não é o dia do carimbo do corpo"
+    },
+    {
+      "linha": "fluxo-de-credito-as-familias-2024",
+      "planta": "a forma da casa no lugar de AAAA-MM-DD",
+      "mordeu": true,
+      "razao": "o published_at não é AAAA-MM-DD"
+    },
+    {
+      "linha": "fluxo-de-credito-as-familias-2024",
+      "planta": "um dia que não existe",
+      "mordeu": true,
+      "razao": "o published_at não é um dia que existe"
+    },
+    {
+      "linha": "fluxo-de-credito-as-familias-2024",
+      "planta": "um dia depois de hoje",
+      "mordeu": true,
+      "razao": "o published_at é posterior ao dia de hoje (UTC)"
+    },
+    {
+      "linha": "fluxo-de-credito-as-familias-2024",
+      "planta": "o campo tirado",
+      "mordeu": true,
+      "razao": "o published_at não é AAAA-MM-DD"
+    },
+    {
+      "linha": "fluxo-de-credito-as-familias-2024",
+      "planta": "outro campo mudado",
+      "mordeu": true,
+      "razao": "mudou um campo fora do published_at: ['value']"
+    },
+    {
+      "linha": "fluxo-de-credito-as-familias-2025",
+      "planta": "outro dia no lugar do carimbo",
+      "mordeu": true,
+      "razao": "o published_at não é o dia do carimbo do corpo"
+    },
+    {
+      "linha": "fluxo-de-credito-as-familias-2025",
+      "planta": "a forma da casa no lugar de AAAA-MM-DD",
+      "mordeu": true,
+      "razao": "o published_at não é AAAA-MM-DD"
+    },
+    {
+      "linha": "fluxo-de-credito-as-familias-2025",
+      "planta": "um dia que não existe",
+      "mordeu": true,
+      "razao": "o published_at não é um dia que existe"
+    },
+    {
+      "linha": "fluxo-de-credito-as-familias-2025",
+      "planta": "um dia depois de hoje",
+      "mordeu": true,
+      "razao": "o published_at é posterior ao dia de hoje (UTC)"
+    },
+    {
+      "linha": "fluxo-de-credito-as-familias-2025",
+      "planta": "o campo tirado",
+      "mordeu": true,
+      "razao": "o published_at não é AAAA-MM-DD"
+    },
+    {
+      "linha": "fluxo-de-credito-as-familias-2025",
+      "planta": "outro campo mudado",
+      "mordeu": true,
+      "razao": "mudou um campo fora do published_at: ['value']"
+    },
+    {
+      "linha": "fluxo-de-credito-as-familias-2025-ue",
+      "planta": "outro dia no lugar do carimbo",
+      "mordeu": true,
+      "razao": "o published_at não é o dia do carimbo do corpo"
+    },
+    {
+      "linha": "fluxo-de-credito-as-familias-2025-ue",
+      "planta": "a forma da casa no lugar de AAAA-MM-DD",
+      "mordeu": true,
+      "razao": "o published_at não é AAAA-MM-DD"
+    },
+    {
+      "linha": "fluxo-de-credito-as-familias-2025-ue",
+      "planta": "um dia que não existe",
+      "mordeu": true,
+      "razao": "o published_at não é um dia que existe"
+    },
+    {
+      "linha": "fluxo-de-credito-as-familias-2025-ue",
+      "planta": "um dia depois de hoje",
+      "mordeu": true,
+      "razao": "o published_at é posterior ao dia de hoje (UTC)"
+    },
+    {
+      "linha": "fluxo-de-credito-as-familias-2025-ue",
+      "planta": "o campo tirado",
+      "mordeu": true,
+      "razao": "o published_at não é AAAA-MM-DD"
+    },
+    {
+      "linha": "fluxo-de-credito-as-familias-2025-ue",
+      "planta": "outro campo mudado",
+      "mordeu": true,
+      "razao": "mudou um campo fora do published_at: ['value']"
+    },
+    {
+      "linha": "formacao-bruta-de-capital-fixo-2025-ue",
+      "planta": "outro dia no lugar do carimbo",
+      "mordeu": true,
+      "razao": "o published_at não é o dia do carimbo do corpo"
+    },
+    {
+      "linha": "formacao-bruta-de-capital-fixo-2025-ue",
+      "planta": "a forma da casa no lugar de AAAA-MM-DD",
+      "mordeu": true,
+      "razao": "o published_at não é AAAA-MM-DD"
+    },
+    {
+      "linha": "formacao-bruta-de-capital-fixo-2025-ue",
+      "planta": "um dia que não existe",
+      "mordeu": true,
+      "razao": "o published_at não é um dia que existe"
+    },
+    {
+      "linha": "formacao-bruta-de-capital-fixo-2025-ue",
+      "planta": "um dia depois de hoje",
+      "mordeu": true,
+      "razao": "o published_at é posterior ao dia de hoje (UTC)"
+    },
+    {
+      "linha": "formacao-bruta-de-capital-fixo-2025-ue",
+      "planta": "o campo tirado",
+      "mordeu": true,
+      "razao": "o published_at não é AAAA-MM-DD"
+    },
+    {
+      "linha": "formacao-bruta-de-capital-fixo-2025-ue",
+      "planta": "outro campo mudado",
+      "mordeu": true,
+      "razao": "mudou um campo fora do published_at: ['value']"
+    },
+    {
+      "linha": "licencas-de-construcao-2025-ue",
+      "planta": "outro dia no lugar do carimbo",
+      "mordeu": true,
+      "razao": "o published_at não é o dia do carimbo do corpo"
+    },
+    {
+      "linha": "licencas-de-construcao-2025-ue",
+      "planta": "a forma da casa no lugar de AAAA-MM-DD",
+      "mordeu": true,
+      "razao": "o published_at não é AAAA-MM-DD"
+    },
+    {
+      "linha": "licencas-de-construcao-2025-ue",
+      "planta": "um dia que não existe",
+      "mordeu": true,
+      "razao": "o published_at não é um dia que existe"
+    },
+    {
+      "linha": "licencas-de-construcao-2025-ue",
+      "planta": "um dia depois de hoje",
+      "mordeu": true,
+      "razao": "o published_at é posterior ao dia de hoje (UTC)"
+    },
+    {
+      "linha": "licencas-de-construcao-2025-ue",
+      "planta": "o campo tirado",
+      "mordeu": true,
+      "razao": "o published_at não é AAAA-MM-DD"
+    },
+    {
+      "linha": "licencas-de-construcao-2025-ue",
+      "planta": "outro campo mudado",
+      "mordeu": true,
+      "razao": "mudou um campo fora do published_at: ['value']"
+    },
+    {
+      "linha": "pib-real-per-capita-2025-ue",
+      "planta": "outro dia no lugar do carimbo",
+      "mordeu": true,
+      "razao": "o published_at não é o dia do carimbo do corpo"
+    },
+    {
+      "linha": "pib-real-per-capita-2025-ue",
+      "planta": "a forma da casa no lugar de AAAA-MM-DD",
+      "mordeu": true,
+      "razao": "o published_at não é AAAA-MM-DD"
+    },
+    {
+      "linha": "pib-real-per-capita-2025-ue",
+      "planta": "um dia que não existe",
+      "mordeu": true,
+      "razao": "o published_at não é um dia que existe"
+    },
+    {
+      "linha": "pib-real-per-capita-2025-ue",
+      "planta": "um dia depois de hoje",
+      "mordeu": true,
+      "razao": "o published_at é posterior ao dia de hoje (UTC)"
+    },
+    {
+      "linha": "pib-real-per-capita-2025-ue",
+      "planta": "o campo tirado",
+      "mordeu": true,
+      "razao": "o published_at não é AAAA-MM-DD"
+    },
+    {
+      "linha": "pib-real-per-capita-2025-ue",
+      "planta": "outro campo mudado",
+      "mordeu": true,
+      "razao": "mudou um campo fora do published_at: ['value']"
+    }
+  ],
+  "contagens": {
+    "linhas": 17,
+    "aplicadas": 17,
+    "dias_iguais_ao_dia_utc": 17,
+    "dias": [
+      "2026-10-21",
+      "2026-10-22",
+      "2026-10-24"
+    ],
+    "plantas": 102,
+    "plantas_que_morderam": 102
+  }
+}

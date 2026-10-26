@@ -1,0 +1,32 @@
+
+> o-estado-do-pais@0.1.0 cartoes
+> node scripts/cartoes.mjs
+
+[90m  cartões · lote 1 de 23 · 200 PNG escritos até aqui[0m
+[90m  cartões · lote 2 de 23 · 400 PNG escritos até aqui[0m
+[90m  cartões · lote 3 de 23 · 600 PNG escritos até aqui[0m
+[90m  cartões · lote 4 de 23 · 800 PNG escritos até aqui[0m
+[90m  cartões · lote 5 de 23 · 1000 PNG escritos até aqui[0m
+[90m  cartões · lote 6 de 23 · 1200 PNG escritos até aqui[0m
+[90m  cartões · lote 7 de 23 · 1400 PNG escritos até aqui[0m
+[90m  cartões · lote 8 de 23 · 1600 PNG escritos até aqui[0m
+[90m  cartões · lote 9 de 23 · 1800 PNG escritos até aqui[0m
+[90m  cartões · lote 10 de 23 · 2000 PNG escritos até aqui[0m
+[90m  cartões · lote 11 de 23 · 2200 PNG escritos até aqui[0m
+[90m  cartões · lote 12 de 23 · 2400 PNG escritos até aqui[0m
+[90m  cartões · lote 13 de 23 · 2600 PNG escritos até aqui[0m
+[90m  cartões · lote 14 de 23 · 2800 PNG escritos até aqui[0m
+[90m  cartões · lote 15 de 23 · 3000 PNG escritos até aqui[0m
+[90m  cartões · lote 16 de 23 · 3200 PNG escritos até aqui[0m
+[90m  cartões · lote 17 de 23 · 3400 PNG escritos até aqui[0m
+[90m  cartões · lote 18 de 23 · 3600 PNG escritos até aqui[0m
+[90m  cartões · lote 19 de 23 · 3800 PNG escritos até aqui[0m
+[90m  cartões · lote 20 de 23 · 4000 PNG escritos até aqui[0m
+[90m  cartões · lote 21 de 23 · 4200 PNG escritos até aqui[0m
+[90m  cartões · lote 22 de 23 · 4400 PNG escritos até aqui[0m
+[90m  cartões · lote 23 de 23 · 4508 PNG escritos até aqui[0m
+[90m
+  cartões · 2254 cartões × 2 medidas = 4508 PNG e 4508 registos · 78.85 MB · 14499 medições de texto · 71.6s[0m
+[90m  paleta · 4508 de 4508 PNG em paleta exacta (tipo de cor 3), no máximo 88 cores num cartão · 0 em RGBA[0m
+  [32m✓[0m os cartões estão em dist/cartoes/, e o portão vai conferi-los.
+

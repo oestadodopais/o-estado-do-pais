@@ -1,0 +1,19 @@
+{
+  "inicio": "2026-10-26T16:25:33.168Z",
+  "medido_ate": "2026-10-26T16:52:35.675Z",
+  "chamadas_por_ferramenta": {
+    "exec": 50,
+    "request_user_input_async": 2
+  },
+  "chamadas": 52,
+  "tokens_used": {
+    "input_tokens": 5716782,
+    "cached_input_tokens": 5594496,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 40937,
+    "reasoning_output_tokens": 12359,
+    "total_tokens": 5757719
+  },
+  "custo_em_pontos": null,
+  "nota": "Tokens acumulados do evento token_count, incluindo entrada em cache. O lançador mede o custo em pontos."
+}
