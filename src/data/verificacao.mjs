@@ -17,8 +17,8 @@
  * público por omissão.
  */
 export const VERIFICACAO = {
-  verificadoEm: '2026-10-19',
+  verificadoEm: '2026-10-26',
   afirmacoes: 91,
-  alarmes: 11,
+  alarmes: 17,
   validadeDias: 45,
 };
