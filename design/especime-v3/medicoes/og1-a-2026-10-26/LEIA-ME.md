@@ -1,3 +1,58 @@
+# OG1-A5
+
+A seleção fechada das 33 linhas foi preparada e aceite pelo exportador comum, sem escrita no sítio. A fase A continua por construir porque a releitura do §99 da UTAO confirmou uma divergência de conteúdo nas frases mandatadas sobre o petróleo. Não é uma recusa de proveniência nem um campo em falta.
+
+## A divergência e a decisão pendente
+
+A fonte alojada, na página física 52 (51 impressa), diz: «a média dos contratos de 2027 era de cerca de 95 USD, 11% acima dos 86,1 USD assumidos pelo MF». O mandato original escreve, na quarta frase de «O que as fontes dizem», «11 % abaixo dos contratos para esse ano» e, na conclusão, «um petróleo 11 % mais barato do que os contratos». As versões inglesas fazem a mesma inversão.
+
+A percentagem tem bases diferentes nas duas relações: estar 11% acima não equivale a estar 11% abaixo quando se troca a base. `petroleo-a5.json` guarda a frase extraída do corpo, o recibo e o SHA-256, as três linhas numéricas e a demonstração aritmética dessa mudança de base. A fonte diz «cerca de 95»; a demonstração não pretende recalcular a medição da UTAO nem substituir os seus valores.
+
+O §0 da OG1-A4 autoriza mudanças de forma sem mudar as palavras do lugar de direção, mas manda parar pelo conteúdo. Corrigir a relação percentual mudaria o conteúdo de duas frases nas duas línguas. Foi pedida essa decisão, sem resposta à data desta escrita. Não se alterou a redação, a fonte ou o número para fazer passar a conferência.
+
+A proposta concreta para continuação é atribuir à UTAO que os contratos estão 11% acima do pressuposto da proposta, tanto na frase das fontes como na conclusão. Esta é uma proposta de correção, não uma transcrição do `dist/`.
+
+## A seleção e os recibos
+
+`publisher/og1a_export.py` passa de doze para dois parágrafos textuais da UTAO: `og1-utao-p15` e `og1-utao-p42`. Mantém as vinte linhas numéricas e as onze afirmações do mandato A5. O manifesto e as provas foram regenerados. A comparação com a cabeça inicial confirma dez linhas retiradas da seleção, nenhuma acrescentada e nenhuma alteração nos campos das 33 linhas retidas. As linhas retiradas permanecem no livro da pesquisa.
+
+`conferir-petroleo-a5.py` verifica também a igualdade exata entre o manifesto e a lista fechada de 33 identificadores, independentemente das constantes do gerador. A lista completa está em `medidas-a5.json`, em `selecao_preparada`. Os recibos preparados permanecem em `publisher/recortes/og1a/provas.json`, no motor. O exportador aceitou as 33 linhas sem acrescentar entidades publicadoras ou outros campos. O Eurostat e as linhas auxiliares não fazem parte desta seleção.
+
+Não houve travessia com `--write`, novas linhas ou novos recibos no sítio. Não se retirou uma travessia já escrita. A seleção está preparada, mas não se apresenta como entrega publicada.
+
+## Códigos
+
+| Corrida | Código | Resultado |
+| --- | --- | --- |
+| Preparação, `preparar-a5` | 0 | 33 linhas e provas geradas |
+| Exportador comum, `travessia-a5` | 0 | 33 linhas aceites, sem escrita |
+| `publisher.oe2027_generalidade_test`, `pesquisa-a5` | 0 | 85 controlos |
+| Conferência da seleção e do petróleo, `petroleo-a5` | 1 | Seleção exata; divergência de conteúdo confirmada |
+
+O último código é uma recusa de conteúdo documentada pelo construtor, com prova reproduzível da fonte e da aritmética. Não é uma recusa do exportador nem uma régua preexistente do sítio. Três corridas de conferências e uma geração. Nenhuma corrida inteira de portões, nenhum `core.gate` e nenhuma captura. `build`, `ledger:check`, `check:registo`, `check:discussao`, `check:lugares`, `typecheck` e `check:cruzamento` não correram; os seus códigos são `null`, não sucesso presumido.
+
+## Item, correções e trabalho por fazer
+
+Não existe terceiro item construído no `dist/`, pelo que não há seis partes desta passagem para transcrever em português ou inglês. Não se apresenta a prosa do mandato como saída construída. Não foram alterados nomes, famílias, lugares ou auditorias.
+
+O ensaio da pesquisa voltou a conferir a frase completa do emprego público, a frase completa de Paulo Raimundo, a junção de «Inovação», as atribuições em lista e o valor 79 com o sinal positivo no excerto. A quarta correção continua sem objeto: não há `secondary_values` na pesquisa. A Saúde permanece resolvida conforme a OG1-A3: o item deve usar 17 803,1 milhões da linha do sítio; a linha da UTAO com 17 803 milhões fica na pesquisa, por não integrar a seleção fechada da OG1-A5.
+
+Ficam por fazer a decisão sobre as duas frases do petróleo, a travessia com escrita, o item bilingue, nomes, famílias, lugares, recibos públicos, auditorias, conferências do sítio e transcrição do `dist/`. A fase B continua prevista para a noite de 28.10.2026, depois do voto, com o registo da votação e as intervenções do Diário. Esta promessa ainda não entrou num terceiro item construído.
+
+## Cabeças, commits e custo
+
+Cabeça inicial do sítio: `842bc8ee25dc1df3722ae4794b26ef5397ad1d47`. Cabeça do motor: `853e079cb5e4fed760e84223e88f0f39f3099209`. O motor fica com três ficheiros por comitar:
+
+- `publisher/og1a_export.py`
+- `publisher/manifest.og1a.json`
+- `publisher/recortes/og1a/provas.json`
+
+O mandato exige `OEDP_GATE=adiado`, mas o `comitar.sh` não transmite essa variável e ela não está definida no ambiente desta passagem. Não se pediu um commit sem poder garantir o adiamento. O commit do sítio guarda apenas o relatório, o ensaio da divergência, os códigos, os registos sanitizados e as medidas. A cabeça resultante será indicada na resposta final.
+
+15 chamadas de ferramentas até à conferência do relatório; o commit e a inspeção final entram na contagem final da resposta. Três corridas de conferências, uma geração, nenhuma delegação. `tokens used`: não disponibilizado nesta passagem. `medidas.json` preserva a medição anterior em `historico_antes_og1_a5`.
+
+---
+
 # OG1-A4
 
 A fase A continua por construir. A paragem desta passagem é uma recusa de proveniência na tentativa de sustentar a data da revisão do Eurostat, na primeira frase de «O que as fontes dizem». A linha `og1-eurostat-portugal-2025` existe no motor, mas não declara uma entidade publicadora que o exportador reconheça. O ensaio isolado, sem escrita e com `source: Eurostat`, devolveu:
