@@ -1233,8 +1233,11 @@ export const LINGUA_DAS_EDICOES = {
      e a de 16.09.2026 saiu. */
   '12.08.2026': null,
   /* A recontagem de Correções publicadas usa a data da edição, sem língua.
-     A edição passou de 02.10.2026 para 20.10.2026 na correção V2-d-b. */
-  '20.10.2026': null,
+     A edição passou de 02.10.2026 para 20.10.2026 na correção V2-d-b, e para
+     21.10.2026 com a recontagem que está no ar; as duas contagens do arquivo
+     passaram a 26.10.2026 com a publicação do estudo da habitação (HB1-d), e a
+     data delas entra pela tabela gerada abaixo. */
+  '21.10.2026': null,
   // EO1-e: edição da contagem refeita das correções, uma data sem língua.
   '21.10.2026': null,
   '01.10.2026': null,
@@ -1749,7 +1752,7 @@ Object.assign(LINGUA_DAS_EDICOES, {
   "2026-10-14": null,
   "2026-10-09": null,
   "21.10.2026": null,
-  "20.10.2026": null,
+  "26.10.2026": null,
   "01.10.2026": null,
   "12.08.2026": null,
   "2035-12-31": null,
