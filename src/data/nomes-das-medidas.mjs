@@ -1,5 +1,3 @@
-import { FIGURAS } from './figuras.mjs';
-import { MEDIDAS_DO_DOMINIO_1 } from './dominios.mjs';
 import { NOMES_EO1 } from './nomes-eo1.mjs';
 import { NOMES_HB1 } from './nomes-hb1.mjs';
 import { NOMES_V2D } from './nomes-v2d.mjs';
