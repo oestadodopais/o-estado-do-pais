@@ -1,0 +1,280 @@
+
+  sítio: <worktree>
+
+  manifesto hb1 · 190 linhas · 0 grupos excluídos
+
+    hab-tipsho10-a-i15-a-avg-pt-2025             engine value          206,41
+    hab-tipsho10-a-i15-a-avg-eu27_2020-2025      engine value          124,75
+    hab-prc-hpi-q-q-total-rch-a-pt-2026-q2       engine value          16,5
+    hab-prc-hpi-q-q-total-rch-a-eu27_2020-2026-q2 engine value          4,7
+    hab-tipsho60-a-ptir-i15-pt-2024              engine value          144,34
+    hab-tipsho60-a-ptir-i15-eu27_2020-2024       engine value          105,72
+    hab-ine-preco-mediano                        engine value          2 337
+    hab-ine-preco-lisboa                         engine value          5 292
+    hab-ine-preco-porto                          engine value          3 729
+    hab-ine-renda-portugal                       engine value          10,17
+    hab-ine-renda-lisboa                         engine value          17,79
+    hab-ine-renda-porto                          engine value          14,66
+    hab-ilc-mded01-a-total-total-pc-pt-2025      engine value          16,3
+    hab-ilc-mded01-a-total-total-pc-eu27_2020-2025 engine value          18,9
+    hab-ilc-lvho07c-a-pc-total-pt-2025           engine value          6,2
+    hab-ilc-lvho07c-a-pc-total-eu27_2020-2025    engine value          7,7
+    hab-ilc-lvho02-a-total-total-own-l-pc-pt-2025 engine value          31,5
+    hab-ilc-lvho02-a-total-total-own-nl-pc-pt-2025 engine value          39,7
+    hab-ilc-lvho07c-a-pc-rent-mkt-pt-2020        engine value          19,7
+    hab-yth-demo-030-a-avg-t-pt-2025             engine value          28,8
+    hab-yth-demo-030-a-avg-t-eu27_2020-2025      engine value          26,3
+    hab-ilc-lvps08-a-y25-34-t-pc-pt-2025         engine value          42,1
+    hab-ilc-lvps08-a-y25-34-t-pc-eu27_2020-2025  engine value          30,1
+    hab-votacao-arrendamento                     as printed            2026-09-30 | Votação na generalidade Votação em 2026-09-30 na Reunião Plenária n.º 7 Aprovado Contra:PS, L, PCP, BE, PAN, JPP Abstenção:CH A Favor: PSD, IL, CDS-PP
+    hab-governo-feh                              as printed            2. Aprovou um Decreto-Lei que cria o Fundo de Emergência para a Habitação (FEH) destinado a apoiar pessoas e famílias em situação de emergência habitacional, tais como despejos motivados por carência económica ou situações de violência doméstica. O FEH introduz um apoio financeiro direto, não reembolsável, para garantir um realojamento rápido, temporário ou permanente, permitindo que ninguém fique sem solução imediata em caso de perda de casa. O FEH visa assegurar que é o Estado, e não os proprietários, a assumir os custos sociais das situações de emergência habitacional.
+    hab-imprensa-manif-euronews                  as printed            Cinco cidades de Portugal vão acolher, este sábado, uma manifestação contra a crise na habitação, organizada por uma plataforma que reúne cerca de 40 organizações da sociedade civil.
+    hab-imprensa-feridos37                       as printed            37 feridos, dois em estado grave
+    hab-imprensa-feridos39                       as printed            39 feridos, dois deles graves
+    hab-imprensa-feridos35                       as printed            35 feridos, pelo menos
+    hab-oe-habitacao-orcamento                   engine value          2 003
+    hab-oe-iva-impacto                           engine value          −94
+    hab-oe-irs-rendas-impacto                    engine value          −209
+    hab-prc-hicp-minr-m-rch-a-cp041-pt-2026-09   engine value          5,2
+    hab-prc-hicp-minr-m-rch-a-cp041-eu27_2020-2026-09 engine value          2,9
+    hab-ilc-lvho07c-a-pc-total-pt-2015           engine value          9,1
+    hab-ilc-lvho07c-a-pc-rent-mkt-pt-2025        engine value          27,2
+    hab-ilc-lvho02-a-total-total-rent-mkt-pc-pt-2025 engine value          16,3
+    hab-yth-demo-030-a-avg-t-pt-2015             engine value          28,9
+    hab-sts-cobp-a-a-bprm-dw-cpa-f41001-x-410014-nsa-ths-pt-2025 engine value          40,9
+    hab-demo-pjan-pt-2025                        engine value          10 749 635
+    hab-sts-cobp-a-a-bprm-dw-cpa-f41001-x-410014-nsa-ths-eu27_2020-2025 engine value          1 623,2
+    hab-demo-pjan-eu27_2020-2025                 engine value          450 646 971
+    hab-ine-vagos-total                          engine value          723 215
+    hab-ine-censos-0012517-0                     engine value          12,1
+    hab-arrendamento-exposicao-vagos             as printed            Considerando os dados dos Censos 2021, estima-se que cerca de 375 mil alojamentos familiares clássicos, dos quais quase 250 mil em boas condições, estejam vagos sem intenção de venda ou arrendamento.
+    hab-governo-arrendamento                     as printed            A reforma assenta em quatro eixos principais: maior liberdade contratual, reforço da segurança e do cumprimento dos contratos, simplificação e aceleração dos mecanismos de despejo e resolução de litígios, e reforço da responsabilidade social do Estado na proteção das situações de maior vulnerabilidade.
+    hab-imprensa-igai                            as printed            a IGAI abriu um processo administrativo, com solicitação de informações à PSP
+    hab-imprensa-renda-metade                    as printed            a renda consome metade do salário
+    hab-imprensa-psp-ferido                      as printed            um polícia ficou ferido
+    hab-be-despejos                              as printed            5. A crise na habitação continua a agravar-se e os seus efeitos agudizam-se. Os despejos aumentaram 40% em 2025, e o Governo avança com medidas para os facilitar ainda mais.
+      ↳ #page=2 from the declared document.page
+    hab-governo-construir                        as printed            Redução da taxa de IVA para 6% na construção de habitações para venda até 648 mil euros ou, no caso de arrendamento, para rendas até 2.300 euros. Este regime fiscal vigora até 2029.
+    hab-prc-hpi-q-q-total-i15-q-pt-2026-q2       engine value          301,43
+    hab-prc-hpi-q-q-total-i15-q-eu27_2020-2026-q2 engine value          168,56
+    hab-prc-hpi-q-q-total-i15-q-fi-2026-q2       engine value          97,50
+    hab-prc-hpi-q-q-total-i15-q-hu-2026-q2       engine value          389,61
+    hab-prc-hpi-q-q-total-rch-a-fi-2026-q2       engine value          −2,7
+    hab-ine-iphab-homologa                       engine value          16,5
+    hab-tipsho10-a-i15-a-avg-fi-2025             engine value          81,90
+    hab-tipsho10-a-i15-a-avg-pt-2020             engine value          145,91
+    hab-tipsho10-a-rch-a-avg-pt-2025             engine value          14,7
+    hab-tipsho10-a-rch-a-avg-eu27_2020-2025      engine value          2,9
+    hab-tipsho60-a-ptir-i15-ro-2024              engine value          55,88
+    hab-tipsho60-a-ptir-i15-pt-2019              engine value          121,65
+    hab-tipsho60-a-ptir-lt-avg-pt-2024           engine value          122,92
+    hab-tipsho60-a-ptir-lt-avg-eu27_2020-2024    engine value          98,94
+    hab-tipsho60-a-ptir-lt-avg-ro-2024           engine value          48,23
+    hab-prc-hicp-ainr-a-rch-a-avg-cp041-pt-2025  engine value          5,3
+    hab-prc-hicp-ainr-a-rch-a-avg-cp041-eu27_2020-2025 engine value          3,2
+    hab-prc-hicp-ainr-a-rch-a-avg-cp041-fi-2025  engine value          1,0
+    hab-prc-hicp-ainr-a-rch-a-avg-cp041-hr-2025  engine value          17,6
+    hab-ilc-lvho02-a-total-total-own-l-pc-eu27_2020-2025 engine value          24,8
+    hab-ilc-lvho02-a-total-total-own-nl-pc-eu27_2020-2025 engine value          43,7
+    hab-ilc-lvho02-a-total-total-own-l-pc-ro-2025 engine value          1,1
+    hab-ilc-lvho02-a-total-total-own-l-pc-nl-2025 engine value          57,9
+    hab-ilc-lvho02-a-total-total-rent-fr-pc-pt-2025 engine value          12,5
+    hab-ilc-lvho02-a-total-total-rent-mkt-pc-eu27_2020-2025 engine value          20,8
+    hab-ilc-lvho02-a-total-total-rent-fr-pc-eu27_2020-2025 engine value          10,7
+    hab-ilc-lvho02-a-total-total-rent-mkt-pc-de-2025 engine value          46,8
+    hab-ilc-lvho02-a-total-total-own-l-pc-pt-2020 engine value          38,9
+    hab-ilc-lvho02-a-total-total-rent-mkt-pc-pt-2020 engine value          11,5
+    hab-ilc-lvho07c-a-pc-total-cy-2025           engine value          2,4
+    hab-ilc-lvho07c-a-pc-total-el-2025           engine value          26,4
+    hab-ilc-mded01-a-total-total-pc-cy-2025      engine value          10,9
+    hab-ilc-mded01-a-total-total-pc-el-2025      engine value          34,6
+    hab-ilc-mded01-a-total-total-pc-pt-2015      engine value          18,9
+    hab-ilc-lvho07c-a-pc-total-eu27_2020-2015    engine value          11,2
+    hab-ilc-lvho07c-a-pc-own-l-pt-2025           engine value          3,0
+    hab-ilc-lvho07c-a-pc-own-l-eu27_2020-2025    engine value          5,0
+    hab-ilc-lvho07c-a-pc-own-nl-pt-2025          engine value          1,3
+    hab-ilc-lvho07c-a-pc-own-nl-eu27_2020-2025   engine value          3,8
+    hab-ilc-lvho07c-a-pc-rent-fr-pt-2025         engine value          2,8
+    hab-ilc-lvho07c-a-pc-rent-fr-eu27_2020-2025  engine value          9,2
+    hab-ilc-lvho07c-a-pc-rent-mkt-eu27_2020-2025 engine value          18,6
+    hab-ilc-lvho07c-a-pc-rent-mkt-pt-2015        engine value          35,4
+    hab-ilc-lvho07c-a-pc-rent-mkt-fi-2025        engine value          12,3
+    hab-ilc-lvho07c-a-pc-rent-mkt-ro-2025        engine value          56,0
+    hab-ilc-lvho07a-a-pc-total-y16-29-t-pt-2025  engine value          7,5
+    hab-ilc-lvho07a-a-pc-total-y16-29-t-eu27_2020-2025 engine value          9,3
+    hab-ilc-lvho07a-a-pc-total-y16-29-t-el-2025  engine value          25,5
+    hab-ilc-lvho05a-a-pc-total-total-t-pt-2025   engine value          12,7
+    hab-ilc-lvho05a-a-pc-total-total-t-eu27_2020-2025 engine value          16,8
+    hab-ilc-lvho05a-a-pc-total-total-t-cy-2025   engine value          2,2
+    hab-ilc-lvho05a-a-pc-total-total-t-ro-2025   engine value          40,4
+    hab-ilc-lvho05a-a-pc-total-y16-29-t-pt-2025  engine value          21,2
+    hab-ilc-lvho05a-a-pc-total-y16-29-t-eu27_2020-2025 engine value          26,6
+    hab-eurostat-privacao-severa-definicao       as printed            Severe housing deprivation rate is defined as the percentage of population living in the dwelling which is considered as overcrowded, while also exhibiting at least one of the housing deprivation measures. Housing deprivation is a measure of poor amenities and is calculated by referring to those households with a leaking roof, no bath/shower and no indoor toilet, or a dwelling considered too dark.
+    hab-ilc-mdho06a-a-pc-total-t-total-pt-2023   engine value          6,0
+    hab-ilc-mdho06a-a-pc-total-t-total-eu27_2020-2023 engine value          4,0
+    hab-ilc-mdho06a-a-pc-total-t-total-mt-2023   engine value          0,5
+    hab-ilc-mdho06a-a-pc-total-t-total-lv-2023   engine value          11,6
+    hab-ilc-mdho06a-a-pc-total-t-y16-29-pt-2023  engine value          9,5
+    hab-ilc-mdho06a-a-pc-total-t-y16-29-eu27_2020-2023 engine value          6,4
+    hab-yth-demo-030-a-avg-t-fi-2025             engine value          21,3
+    hab-yth-demo-030-a-avg-t-hr-2025             engine value          31,5
+    hab-ilc-lvps08-a-y25-34-t-pc-dk-2025         engine value          3,9
+    hab-ilc-lvps08-a-y25-34-t-pc-hr-2025         engine value          62,3
+    hab-ilc-lvps08-a-y25-34-t-pc-pt-2020         engine value          52,3
+    hab-ilc-lvps08-a-y25-34-t-pc-pt-2015         engine value          45,7
+    hab-ilc-lvps08-a-y18-34-t-pc-pt-2025         engine value          61,0
+    hab-ilc-lvps08-a-y18-34-t-pc-eu27_2020-2025  engine value          49,8
+    hab-cens-21dwob-r3-a-dw-total-nr-pt-2021     engine value          5 970 677
+    hab-ine-censos-0012501-40                    engine value          348 097
+    hab-ine-censos-0012501-41                    engine value          375 118
+    hab-ps-vazias                                as printed            centenas de milhares de casas vazias em condições de serem habitadas. Para as trazer para o mercado, o PS vai propor um regime excecional, válido durante três anos:
+    hab-bpstat-12533724                          engine value          2 553,0
+    hab-bpstat-12533735                          engine value          3,0
+    hab-bpstat-12557378                          engine value          119 061,6
+    hab-ine-juro-implicito                       engine value          3,162
+    hab-oe-oferta-publica                        engine value          1 071
+    hab-oe-apoio-arrendamento                    engine value          917
+    hab-oe-licenciamento                         engine value          15
+    hab-oe-apoios-jovens                         as printed            Para os jovens, manter-se-á a garantia pública na compra da primeira habitação, bem como as isenções de IMT e de IS na aquisição da primeira habitação própria e permanente, que já beneficiaram quase 120 mil jovens, para um valor médio de aquisição de imóvel de 200 mil euros. Adicionalmente, o Orçamento do Estado reforçará o programa Porta 65, através do qual o Estado apoia os jovens no arrendamento para habitação permanente.
+    hab-oe-fiscal                                as printed            Como o desafio não se circunscreve apenas a esta faixa etária, na frente fiscal, o Governo aprovou ainda a redução do IRS para 10% nas rendas até 2300 euros, o aumento da dedução à coleta de IRS relativa às despesas com o arrendamento e a redução do imposto sobre valor o acrescentado (IVA) da construção para 6%, como estímulo ao aumento da oferta num setor gravemente afetado pela crise económico-financeira de 2008-2014.
+    hab-oe-oferta                                as printed            Do lado da oferta pública, o Governo já concluiu mais de 30 mil casas, das quais cerca de mil no regime de arrendamento acessível. Para 2027, a prioridade será a mobilização de investimento privado, através de parcerias público-privadas com imóveis do Estado, e a execução do programa de financiamento das 45 mil habitações excluídas do PRR.
+    hab-oe-legenda-invariante                    as printed            Nota: (i) invariante.
+    hab-dl97-irs                                 as printed            1 — A taxa de tributação autónoma aplicável aos rendimentos prediais decorrentes de contratos de arrendamento destinados exclusivamente ao arrendamento para habitação cujo valor de renda mensal não exceda os limites a que se referem os n.os 2 e 3 do artigo 2.º do Decreto-Lei n.º 97/2026, de 20 de maio, auferidos até 31 de dezembro de 2029, é de 10 %, salvo quando seja aplicável uma taxa mais favorável.
+      ↳ #page=12 from the declared document.page
+    hab-dl97-deducao                             as printed            1 — O limite previsto no n.º 10 do artigo 78.º-E do Código do IRS, na redação conferida pelo presente decreto-lei, aplica-se a partir do ano de 2027, inclusive, aplicando-se no ano de 2026 o limite de 900,00 €.
+      ↳ #page=15 from the declared document.page
+    hab-dl97-deducao-2027                        as printed            10 — O limite a que se refere a alínea a) do n.º 1 é elevado para 1000,00 €, sem prejuízo da aplicação do n.º 4, quando o limite de dedução daí resultante seja superior.
+      ↳ #page=8 from the declared document.page
+    posicao-ps-rendas                            as printed            Arrendatários: dedução das rendas no IRS aumentada para 1.000 euros a partir de 2027.
+    hab-arrendamento-exposicao                   as printed            Nomeadamente, propõe-se que a resolução do contrato possa ocorrer quando haja mora igual ou superior a dois meses no pagamento da renda ou quando exista atraso superior a oito dias no pagamento de rendas, por mais de três vezes, seguidas ou interpoladas, num período de 12 meses, ou por mais de quatro vezes num período de 18 meses.
+    hab-ps-mais-valias                           as printed            Isenção de mais-valias na venda de casas já existentes, até 300 mil euros, para habitação própria, e tributação reduzida entre 300 e 500 mil euros.
+    hab-ps-rendas                                as printed            Um contrato de arrendamento de cinco anos, por opção das partes, com as rendas tributadas a uma taxa de 5% e com garantia pública para o senhorio em caso de falta de pagamento.
+    hab-pcp-rendas                               as printed            Propomos critérios para a limitação dos valores de renda dos novos contratos, nomeadamente a possibilidade de aumento até 2% do valor de renda do novo contrato, ou caso tenha tido mais de um contrato nos últimos cinco anos, o aumento até 2% aplica-se ao valor de renda mais baixo nesse período.
+    hab-pan-controlo                             as printed            Em primeiro lugar, é urgente manter e estudar o alargamento do controlo de rendas para novos contratos. A incerteza na situação política internacional tem levado ao aumento generalizado do custo de vida, ao aumento das taxas de juro e dos custos de arrendamento. Face a este contexto, é necessário garantir previsibilidade para quem tem e procura casa para arrendar.
+    hab-pan-caucoes                              as printed            Em segundo lugar, o PAN propõe o estabelecimento de tetos às cauções, que devem estar ajustados à realidade económica das famílias. Estes devem ter em conta os rendimentos familiares e respetiva taxa de esforço dos arrendatários, evitando abusos por parte dos senhorios e garantindo que a caução não exceda o que é comportável pelos respectivos orçamentos familiares.
+    hab-pan-tetos                                as printed            Por fim, urge travar, a curto prazo, o aumento do valor das rendas. Por isso, o PAN propõe a criação de um projeto piloto de aplicação de tetos às rendas. Este deve ser considerado para pessoas e famílias em situação económica desfavorável e a requerimento das mesmas. Esta medida deverá ser temporária e excecional, de forma a resolver os problemas com a subida do valor das rendas a curto prazo mas sem levar a efeitos perversos que se poderão revelar com a manutenção desta medida a longo prazo e de forma generalizada.
+    hab-votacao-pan                              as printed            2026-09-30 | Votação na generalidade Votação em 2026-09-30 na Reunião Plenária n.º 7 Rejeitado Contra:PSD, CH, IL, CDS-PP Abstenção:PS, PCP A Favor: L, BE, PAN, JPP
+    hab-livre-reinvestimento                     as printed            [NOVO] g) Sem prejuízo do disposto nas alíneas b) a e) do número anterior, são igualmente excluídos da tributação os ganhos provenientes da transmissão onerosa de imóveis destinados a habitação própria e permanente do sujeito passivo ou do seu agregado familiar, quando o valor de realização, deduzido da amortização de eventual empréstimo contraído para a aquisição do imóvel, seja reinvestido na aquisição do direito de habitação em fogo que pertença a cooperativa em regime de propriedade coletiva e que se destine à sua habitação própria e permanente.
+    hab-votacao-livre                            as printed            2026-10-16 | Votação na generalidade Votação em 2026-10-16 na Reunião Plenária n.º 13 Aprovado Contra:PSD, CDS-PP A Favor: CH, PS, IL, L, PCP, BE, PAN, JPP
+    hab-chega-reinvestimento                     as printed            O propósito da presente iniciativa é o de tornar essa norma de isenção temporária em norma definitiva, inserindo-a no próprio CIRS, pela importância de que se pode revestir.
+    hab-votacao-chega                            as printed            2026-10-16 | Votação na generalidade Votação em 2026-10-16 na Reunião Plenária n.º 13 Rejeitado Contra:PSD, L, PCP, CDS-PP, BE Abstenção:PS, PAN A Favor: CH, IL, JPP
+    posicao-chega-habitacao                      as printed            André Ventura defende um pacote de emergência com benefícios fiscais, apoios às rendas e menos burocracia.
+    hab-il-proposta                              as printed            propõe ao Governo medidas para colocar mais casas no mercado, desbloquear imóveis parados em heranças e tornar o arrendamento mais simples, seguro e funcional, tanto para inquilinos como para proprietários.
+    hab-imprensa-manif-rtp                       as printed            cerca de 1.500 pessoas
+    hab-imprensa-manif-lusa                      as printed            Vários milhares de pessoas
+    hab-imprensa-manif-lusa-organizacoes         as printed            mais de 30 organizações
+    hab-cgtp-convocatoria                        as printed            CONTRA O AUMENTO DO CUSTO DE VIDA! DIVULGA E PARTICIPA! LISBOA- 14H30 CAIS SODRÉ/ROSSIO
+    hab-plataforma-reivindicacoes                as printed            Precisamos de tectos às rendas e limites ao aumento das prestações, de mais habitação pública e do fim dos benefícios fiscais para especulação financeira.
+    hab-imprensa-tendas                          as printed            Foram retiradas, ao início da manhã desta segunda-feira, as tendas de dezenas de pessoas que permaneciam acampadas na Praça D. João I, no centro do Porto, em protesto contra o aumento do custo de vida e a crise da habitação.O acampamento foi promovido pelo movimento "Não consegues pagar renda? Traz tenda". O acampamento mantinha-se no local desde sábado, dia em que cerca de 1.500 pessoas se manifestaram no Porto contra o agravamento do custo de vida.
+    hab-imprensa-acampados                       as printed            não como uma escolha de lazer, ou de campismo, mas como ato de desespero político
+    hab-imprensa-assistidos                      as printed            oito pessoas foram assistidas no seu quartel
+    hab-imprensa-hospital                        as printed            Duas pessoas foram encaminhadas para o hospital.
+    hab-imprensa-pm-15                           as printed            Espero que os partidos políticos, movimentos associativos, organizações portuguesas, não caiam na tentação, por razões meramente egoísticas da sua própria ação, importarem para Portugal climas de instabilidade, de contestação, que não tenham de facto respaldo na sociedade portuguesa.
+    hab-imprensa-pm-16                           as printed            Eu dirigi-me a partidos políticos, a movimentos associativos e organizações no desenvolvimento da sua ação, dessas organizações.
+    hab-imprensa-mai                             as printed            há lei e ordem que têm de ser cumpridas
+    hab-imprensa-amorim                          as printed            o Governo "não vai ceder aos gritos que vêm da rua".
+    hab-imprensa-debate-custos                   as printed            Os aumentos com os custos na habitação foram superiores a 100 por cento na esmagadora maioria das cidades
+    hab-imprensa-debate-protecao                 as printed            vão proteger as pessoas
+    hab-ine-calendario-juro                      as printed            21/10/2026
+    hab-ine-calendario-precos-locais             as printed            23/10/2026
+    oe-2027-calendario-generalidade              as printed            27 e 28 de outubro
+      sem recorte: hab-ine-preco-mediano · no record in the vertical's snippets.json
+      sem recorte: hab-ine-preco-lisboa · no record in the vertical's snippets.json
+      sem recorte: hab-ine-renda-portugal · no record in the vertical's snippets.json
+      sem recorte: hab-ine-renda-lisboa · no record in the vertical's snippets.json
+      sem recorte: hab-oe-habitacao-orcamento · no record in the vertical's snippets.json
+      sem recorte: hab-oe-iva-impacto · no record in the vertical's snippets.json
+      sem recorte: hab-oe-irs-rendas-impacto · no record in the vertical's snippets.json
+      sem recorte: hab-arrendamento-exposicao-vagos · no record in the vertical's snippets.json
+      sem recorte: hab-be-despejos · no record in the vertical's snippets.json
+      sem recorte: hab-ine-iphab-homologa · no record in the vertical's snippets.json
+      sem recorte: hab-ine-juro-implicito · no record in the vertical's snippets.json
+      sem recorte: hab-oe-oferta-publica · no record in the vertical's snippets.json
+      sem recorte: hab-oe-apoio-arrendamento · no record in the vertical's snippets.json
+      sem recorte: hab-oe-licenciamento · no record in the vertical's snippets.json
+      sem recorte: hab-oe-apoios-jovens · no record in the vertical's snippets.json
+      sem recorte: hab-oe-fiscal · no record in the vertical's snippets.json
+      sem recorte: hab-oe-oferta · no record in the vertical's snippets.json
+      sem recorte: hab-oe-legenda-invariante · no record in the vertical's snippets.json
+      sem recorte: hab-dl97-irs · no record in the vertical's snippets.json
+      sem recorte: hab-dl97-deducao · no record in the vertical's snippets.json
+      sem recorte: hab-dl97-deducao-2027 · no record in the vertical's snippets.json
+      sem recorte: posicao-ps-rendas · no record in the vertical's snippets.json
+      sem recorte: hab-arrendamento-exposicao · no record in the vertical's snippets.json
+      sem recorte: hab-pan-controlo · no record in the vertical's snippets.json
+      sem recorte: hab-pan-caucoes · no record in the vertical's snippets.json
+      sem recorte: hab-pan-tetos · no record in the vertical's snippets.json
+      sem recorte: hab-livre-reinvestimento · no record in the vertical's snippets.json
+      sem recorte: hab-chega-reinvestimento · no record in the vertical's snippets.json
+      sem recorte: posicao-chega-habitacao · no record in the vertical's snippets.json
+      sem recorte: oe-2027-calendario-generalidade · no record in the vertical's snippets.json
+    der-hab-preco-rendimento-acima-2015-pt-2024  derived               44,3   (= 44.3, engine agrees)
+    der-hab-preco-rendimento-acima-2015-eu-2024  derived               5,7   (= 5.7, engine agrees)
+    der-hab-proprietarios-pt-2025                derived               71,2   (= 71.2, engine agrees)
+    der-hab-fiscal-2027                          derived               −303   (= -303, engine agrees)
+    der-hab-sobrecarga-inquilinos-pt-2020-2025   derived               7,5   (= 7.5, engine agrees)
+    der-hab-jovens-com-pais-pt-vs-eu-2025        derived               12,0   (= 12, engine agrees)
+    der-hab-licencas-por-mil-pt-2025             derived               3,8   (= 3.8, engine agrees)
+    der-hab-licencas-por-mil-eu-2025             derived               3,6   (= 3.6, engine agrees)
+    der-hab-precos-reais-pt-vs-eu-2025           derived               81,7   (= 81.7, engine agrees)
+    der-hab-preco-rendimento-pt-vs-eu-2024       derived               38,6   (= 38.6, engine agrees)
+    der-hab-preco-rendimento-lt-pt-2024          derived               22,9   (= 22.9, engine agrees)
+    der-hab-preco-rendimento-lt-eu-2024          derived               1,1   (= 1.1, engine agrees)
+    der-hab-preco-lisboa-vs-portugal             derived               2,3   (= 2.3, engine agrees)
+    der-hab-renda-lisboa-vs-portugal             derived               1,7   (= 1.7, engine agrees)
+    der-hab-proprietarios-eu-2025                derived               68,5   (= 68.5, engine agrees)
+    der-hab-inquilinos-pt-2025                   derived               28,8   (= 28.8, engine agrees)
+    der-hab-inquilinos-eu-2025                   derived               31,5   (= 31.5, engine agrees)
+    der-hab-sobrecarga-inquilinos-pt-vs-eu-2025  derived               8,6   (= 8.6, engine agrees)
+    der-hab-saida-pt-vs-eu-2025                  derived               2,5   (= 2.5, engine agrees)
+
+  recortes: 0 de 30 linha(s) com página · 0 bytes
+
+  0 nova(s) · 0 alterada(s) · 190 inalterada(s) · registo inalterado
+  dívida de proveniência que atravessa: 0 linha(s) com excerto "[a verificar]" — nenhuma
+  rótulo da fonte: 168 de 190 linha(s), 157 rótulo(s) distinto(s): "Não consegues pagar renda? Traz tenda". Polí… · 2. Aprovou um Decreto-Lei que cria o Fundo de… · 35 feridos, pelo menos · 37 feridos, dois em estado grave · 39 feridos, dois deles graves · 5. A crise na habitação continua a agravar-se… · A reforma assenta em quatro eixos principais:… · Alojamentos familiares clássicos (N.º) por Lo… · Alojamentos familiares clássicos, número, Por… · Alojamentos licenciados, milhares, Portugal, … · Alojamentos licenciados, milhares, União Euro… · Ação 1.1 Promoção da oferta e reabilitação ha… · Ação 1.2 Gestão urbanística e qualidade do ed… · Ação 1.3 Promoção do acesso à habitação e apo… · CONTRA O AUMENTO DO CUSTO DE VIDA! DIVULGA E … · Decreto-Lei n.º 97/2026, de 20 de maio · Distribuição da população por regime de ocupa… · Distribuição da população por regime de ocupa… · Distribuição da população por regime de ocupa… · Distribuição da população por regime de ocupa… · Distribuição da população por regime de ocupa… · Distribuição da população por regime de ocupa… · Distribuição da população por regime de ocupa… · Distribuição da população por regime de ocupa… · Distribuição da população por regime de ocupa… · Distribuição da população por regime de ocupa… · Distribuição da população por regime de ocupa… · Distribuição da população por regime de ocupa… · Distribuição da população por regime de ocupa… · Duas pessoas foram encaminhadas para o hospit… · Em primeiro lugar, é urgente manter e estudar… · Em segundo lugar, o PAN propõe o estabelecime… · Empréstimos-Particulares-PRT-Habitação-M€ (OI… · Espero que os partidos políticos, movimentos … · Eu dirigi-me a partidos políticos, a moviment… · Glossary:Severe housing deprivation rate · Habitação - redução IRS rendas moderadas de 2… · Habitação - redução IVA construção de 23% par… · Idade média estimada de saída de casa dos pai… · Idade média estimada de saída de casa dos pai… · Idade média estimada de saída de casa dos pai… · Idade média estimada de saída de casa dos pai… · Idade média estimada de saída de casa dos pai… · Isenção de mais-valias na venda de casas já e… · Manifestação - Já não dá mais para viver assi… · Milhares saem à rua em Lisboa contra o custo … · Montante de novas operações de empréstimos à … · O propósito da presente iniciativa é o de tor… · Os aumentos com os custos na habitação foram … · P1 Habitação · Peso dos custos da habitação no rendimento di… · Peso dos custos da habitação no rendimento di… · Peso dos custos da habitação no rendimento di… · Peso dos custos da habitação no rendimento di… · Peso dos custos da habitação no rendimento di… · Pessoas que vivem com os pais ou contribuem p… · Pessoas que vivem com os pais ou contribuem p… · Pessoas que vivem com os pais ou contribuem p… · Pessoas que vivem com os pais ou contribuem p… · Pessoas que vivem com os pais ou contribuem p… · Pessoas que vivem com os pais ou contribuem p… · Pessoas que vivem com os pais ou contribuem p… · Pessoas que vivem com os pais ou contribuem p… · Plataforma “Não dá mais” organiza protestos p… · População residente a um de janeiro, número, … · População residente a um de janeiro, número, … · Por fim, urge travar, a curto prazo, o aument… · Portal Oficial - Instituto Nacional de Estatí… · Projeto de Lei 788/XVII/2 Altera o regime de … · Projeto de Lei 793/XVII/2 Isenta de mais vali… · Projeto de Resolução 1272/XVII/2 Por uma polí… · Propomos critérios para a limitação dos valor… · Proporção de alojamentos familiares clássicos… · Proposta de Lei 103/XVII/1 Autoriza o Governo… · Proposta de Lei n.º 103/XVII · RELATÓRIO · Redução da taxa de IVA para 6% na construção … · Rácio padronizado entre preços da habitação e… · Rácio padronizado entre preços da habitação e… · Rácio padronizado entre preços da habitação e… · Rácio padronizado entre preços da habitação e… · Rácio padronizado entre preços da habitação e… · Rácio padronizado entre preços da habitação e… · Rácio padronizado entre preços da habitação e… · Taxa de juro (TAA) de novas operações de empr… · Taxa de privação severa das condições da habi… · Taxa de privação severa das condições da habi… · Taxa de privação severa das condições da habi… · Taxa de privação severa das condições da habi… · Taxa de privação severa das condições da habi… · Taxa de privação severa das condições da habi… · Taxa de sobrecarga dos custos da habitação, d… · Taxa de sobrecarga dos custos da habitação, d… · Taxa de sobrecarga dos custos da habitação, d… · Taxa de sobrecarga dos custos da habitação, i… · Taxa de sobrecarga dos custos da habitação, i… · Taxa de sobrecarga dos custos da habitação, i… · Taxa de sobrecarga dos custos da habitação, i… · Taxa de sobrecarga dos custos da habitação, i… · Taxa de sobrecarga dos custos da habitação, i… · Taxa de sobrecarga dos custos da habitação, i… · Taxa de sobrecarga dos custos da habitação, i… · Taxa de sobrecarga dos custos da habitação, p… · Taxa de sobrecarga dos custos da habitação, p… · Taxa de sobrecarga dos custos da habitação, p… · Taxa de sobrecarga dos custos da habitação, p… · Taxa de sobrecarga dos custos da habitação, t… · Taxa de sobrecarga dos custos da habitação, t… · Taxa de sobrecarga dos custos da habitação, t… · Taxa de sobrecarga dos custos da habitação, t… · Taxa de sobrecarga dos custos da habitação, t… · Taxa de sobrecarga dos custos da habitação, t… · Taxa de sobrelotação da habitação, Chipre, 20… · Taxa de sobrelotação da habitação, Portugal, … · Taxa de sobrelotação da habitação, Roménia, 2… · Taxa de sobrelotação da habitação, União Euro… · Taxa de sobrelotação da habitação, dezasseis … · Taxa de sobrelotação da habitação, dezasseis … · Um contrato de arrendamento de cinco anos, po… · Valor mediano das rendas por m2 de novos cont… · Valor mediano das vendas por m² de alojamento… · [NOVO] g) Sem prejuízo do disposto nas alínea… · a IGAI abriu um processo administrativo, com … · alojamentos vagos · centenas de milhares de casas vazias em condi… · há lei e ordem que têm de ser cumpridas · não como uma escolha de lazer, ou de campismo… · o Governo "não vai ceder aos gritos que vêm d… · oito pessoas foram assistidas no seu quartel · preço mediano dos 35 953 alojamentos familiar… · preços da habitação · propõe ao Governo medidas para colocar mais c… · renda mediana · renda mediana dos 35 407 novos contratos de a… · taxa de juro implícita no conjunto dos contra… · taxa de variação homóloga do IPHab · um polícia ficou ferido · vão proteger as pessoas · Índice de preços da habitação, descontada a i… · Índice de preços da habitação, descontada a i… · Índice de preços da habitação, descontada a i… · Índice de preços da habitação, descontada a i… · Índice de preços da habitação, descontada a i… · Índice de preços da habitação, descontada a i… · Índice de preços da habitação, variação homól… · Índice de preços da habitação, variação homól… · Índice de preços da habitação, variação homól… · Índice de preços da habitação, índice trimest… · Índice de preços da habitação, índice trimest… · Índice de preços da habitação, índice trimest… · Índice de preços da habitação, índice trimest… · Índice harmonizado de preços no consumidor, r… · Índice harmonizado de preços no consumidor, r… · Índice harmonizado de preços no consumidor, r… · Índice harmonizado de preços no consumidor, r… · Índice harmonizado de preços no consumidor, r… · Índice harmonizado de preços no consumidor, r…
+  sem rótulo impresso: 22 de 190 linha(s), a que a página chama pelo título do documento: posicao-ps-rendas, posicao-chega-habitacao, oe-2027-calendario-generalidade, der-hab-preco-rendimento-acima-2015-pt-2024, der-hab-preco-rendimento-acima-2015-eu-2024, der-hab-proprietarios-pt-2025, der-hab-fiscal-2027, der-hab-sobrecarga-inquilinos-pt-2020-2025 e mais 14
+  pending_page: 0 linha(s) sem sítio desenhado onde ser impressa
+
+  Escritas 190 linhas em <worktree>/ledger/claims
+  Registo em <worktree>/ledger/cruzamentos/hb1.json
+  Recortes: 0 ficheiro(s) escrito(s) de 0 em <worktree>/public/recortes
+  Manifesto dos recortes em <motor>/publisher/recortes/manifest.hb1.json
+
+HB1: duas edições copiadas e medidas contra os commits de origem.
+
+  travessia dos registos de conteúdo · motor e8d6f79ebbcb · destino <worktree>/registos
+
+  28 en  → a-casa-em-portugal-e-na-europa/en                       blocos  52 · refs 183 · edicao-html            · o D5 corre e bate
+  28 pt  → a-casa-em-portugal-e-na-europa/pt                       blocos  52 · refs 183 · edicao-html            · o D5 corre e bate
+  03 pt  → avaliacao-economica-regional-de-portugal-2026/pt        blocos  53 · refs 411 · edicao-html            · o D5 não corre: os bytes alojados são um artefacto do claude.ai e a edição que o motor prova é «Technical Source/artifact_pt.html», que o sítio não aloja
+  19 en  → evora-2027-capital-europeia-da-cultura/en               blocos 134 · refs 176 · edicao-html            · o D5 corre e bate
+  19 pt  → evora-2027-capital-europeia-da-cultura/pt               blocos 134 · refs 176 · edicao-html            · o D5 corre e bate
+  14 en  → evora-2027-prometido-painel-dinheiro/en                 blocos 130 · refs 190 · edicao-html            · o D5 corre e bate
+  14 pt  → evora-2027-prometido-painel-dinheiro/pt                 blocos 130 · refs 190 · edicao-html            · o D5 corre e bate
+  16 en  → evora-contas-da-camara-2010-2025/en                     blocos 171 · refs 486 · edicao-html            · o D5 corre e bate
+  16 pt  → evora-contas-da-camara-2010-2025/pt                     blocos 172 · refs 486 · edicao-html            · o D5 corre e bate
+  18 en  → evora-economia-e-dinheiro-publico-de-fora-da-camara/en  blocos 161 · refs 530 · edicao-html            · o D5 corre e bate
+  18 pt  → evora-economia-e-dinheiro-publico-de-fora-da-camara/pt  blocos 161 · refs 530 · edicao-html            · o D5 corre e bate
+  06 pt  → evora-economia-investidores-portas-abertas-2026/pt      blocos  49 · refs 171 · edicao-html            · o D5 corre e bate
+  07 en  → evora-orcamentado-pago-devido-2025/en                   blocos  87 · refs 194 · edicao-html            · o D5 corre e bate
+  07 pt  → evora-orcamentado-pago-devido-2025/pt                   blocos  88 · refs 194 · edicao-html            · o D5 corre e bate
+  09 pt  → evora-os-pelouros-quem-os-teve-o-que-fizeram/pt         blocos 138 · refs 296 · edicao-html            · o D5 corre e bate
+  04 en  → evora-prometido-pago-auditado-2026/en                   blocos  95 · refs 324 · render-sem-graficos    · o D5 corre e bate
+  04 pt  → evora-prometido-pago-auditado-2026/pt                   blocos  95 · refs 324 · render-sem-graficos    · o D5 corre e bate
+  17 pt  → evora-quem-governou-a-camara-2009-2025/pt               blocos 211 · refs 484 · edicao-html            · o D5 corre e bate
+  08 pt  → evora-quinze-anos-cinco-mandatos/pt                     blocos 173 · refs 682 · edicao-html            · o D5 corre e bate
+
+  «27 pt»: sem edição alojada no sítio
+  «27 en»: sem edição alojada no sítio
+  «03 en»: sem edição alojada no sítio
+  «06 en»: sem edição alojada no sítio
+  «08 en»: sem edição alojada no sítio
+  «09 en»: sem edição alojada no sítio
+
+  D5 corre em 18 edição(ões) e não corre em 1: avaliacao-economica-regional-de-portugal-2026/pt
+  0 nova(s) · 2 alterada(s) · 17 inalterada(s)
+
+  Escritos 38 ficheiro(s) em <worktree>/registos
+  Registo de travessia em <worktree>/registos/manifest.json
+

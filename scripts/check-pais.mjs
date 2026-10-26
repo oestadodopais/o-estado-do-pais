@@ -8,11 +8,11 @@ import { load } from 'js-yaml';
 import { DOMINIOS, DOMINIO_DAS_MEDIDAS } from '../src/data/dominios.mjs';
 import { MUDANCAS_DO_PROJETO } from '../src/data/mudancas-do-projeto.mjs';
 import { REFERENCIAS_DAS_MEDIDAS } from '../src/data/referencias-das-medidas.mjs';
-import { WORKS, SUBJECTS, linguaDoTitulo } from '../src/data/studies.mjs';
+import { PUBLISHED_WORKS, WORKS, SUBJECTS, linguaDoTitulo } from '../src/data/studies.mjs';
 import { REGIOES } from '../src/data/regioes.mjs';
 import { MUNICIPIOS_COM_PAGINA } from '../src/data/municipios.mjs';
 import { LUGAR_DECLARADO_DAS_LINHAS } from '../src/data/lugar-das-linhas.mjs';
-import {dataDeCalendarioConferida} from '../src/lib/historia-do-valor.mjs';
+import {dataDeCalendarioConferida,textoDaHabitacao} from '../src/lib/historia-do-valor.mjs';
 import { textoDocumentalConferido } from '../src/lib/prova-efeitos.mjs';
 import { ROTULOS_B1 } from '../src/data/rotulos-b1.mjs';
 import { matchPath, normalizePath, routePath } from '../src/lib/routes.mjs';
@@ -226,6 +226,38 @@ function lugarDoTextoOrcamental(c) {
   });
   return urls.includes(c.source_url) ? PAIS : null;
 }
+const provasHb1 = JSON.parse(fs.readFileSync('ledger/provas/hb1/provas.json','utf8')).rows;
+/* As notícias corrigidas nomeiam o âmbito no excerto selado. Esta segunda
+   leitura não consulta nenhuma das tabelas que declaram os lugares. */
+function lugarDaNoticiaHb1(c) {
+  const proof=provasHb1[c?.id],p=proof?.row;
+  if(!p||c?.unit!=='texto'||p.unit!=='texto'||c.study!=='a-casa-em-portugal-e-na-europa'
+    ||Boolean(c.afirmacao)!==Boolean(p.afirmacao)||c.value!==c.excerpt||c.excerpt!==p.excerpt||c.value!==p.value
+    ||c.document?.title!==p.document?.title||c.document?.kind!=='html'||c.document?.source_sha256!==p.document?.source_sha256
+    ||!/^[a-f0-9]{64}$/.test(p.document?.source_sha256??'')||proof.receipt?.sha256!==p.document.source_sha256||proof.receipt?.estado!==200
+    ||c.source_url!==p.source_url||![proof.receipt?.pedido,proof.receipt?.endereco_final].includes(p.source_url)
+    ||JSON.stringify(c.attributed_to)!==JSON.stringify(p.attributed_to))return null;
+  let url;try{url=new URL(c.source_url);}catch{return null;}
+  if(url.protocol!=='https:')return null;
+  if(c.source==='Euronews'&&url.hostname==='pt.euronews.com'&&p.document.file==='content/23 Habitacao/source/hb1-euronews.html'
+    &&JSON.stringify(p.attributed_to)===JSON.stringify(['Euronews'])&&c.excerpt.startsWith('Cinco cidades de Portugal vão acolher,'))return PAIS;
+  if(c.source==='RTP'&&url.hostname==='www.rtp.pt'&&p.document.file==='content/23 Habitacao/source/hb1-rtp-tendas.html'
+    &&JSON.stringify(p.attributed_to)===JSON.stringify(['RTP'])&&c.excerpt.includes('acampadas na Praça D. João I, no centro do Porto,'))return 'porto';
+  return null;
+}
+for(const [id,lugar] of [['hab-imprensa-manif-euronews',PAIS],['hab-imprensa-tendas','porto']]) {
+  const c=linha(id);
+  if(lugarDaNoticiaHb1(c)!==lugar)erros.push(`A1: notícia selada ${id} não prova o seu lugar.`);
+  for(const [campo,altera] of [
+    ['unidade',x=>{x.unit='%';}],['estudo',x=>{x.study='outro';}],['fonte',x=>{x.source='Outra';}],
+    ['atribuição',x=>{x.attributed_to=['Outra'];}],['corpo',x=>{x.document.source_sha256='0'.repeat(64);}],
+    ['título',x=>{x.document.title='Outro documento';}],['endereço',x=>{x.source_url='https://example.invalid/';}],
+    ['excerto',x=>{x.excerpt=x.excerpt.replace(/Portugal|Porto/,'Outro lugar');x.value=x.excerpt;}],
+  ]) {
+    const bad=structuredClone(c);altera(bad);
+    if(lugarDaNoticiaHb1(bad)!==null)erros.push(`A1: planta da notícia (${campo}) não fechou para ${id}.`);
+  }
+}
 function lugarDaAfirmacaoOrcamental(c) {
   const p = provasOrcamentais[c?.id];
   const autor = p?.document?.file === 'content/24 Orcamento 2027 Analise/source/debate/utao-oe2027-preliminar.pdf' ? 'UTAO'
@@ -304,7 +336,7 @@ function lugarDerivado(id) {
   let geos = [];
   try { geos = c.source_url ? new URL(c.source_url).searchParams.getAll('geo') : []; } catch { geos = []; }
   const doPais = geos.length === 1 && geos[0] === 'PT' ? PAIS : undefined;
-  const d = [...new Set([doEstudo, doId, doPais, lugarDaAfirmacaoOrcamental(c), lugarDoTextoOrcamental(c), lugarDoCalendarioParlamentar(c)].filter(x => typeof x === 'string'))];
+  const d = [...new Set([doEstudo, doId, doPais, lugarDaAfirmacaoOrcamental(c), lugarDoTextoOrcamental(c), lugarDoCalendarioParlamentar(c), lugarDaNoticiaHb1(c)].filter(x => typeof x === 'string'))];
   if (d.length > 1) {
     erros.push(`A1: a linha ${id} deriva dois lugares diferentes (${d.join(', ')}).`);
     return null;
@@ -380,7 +412,7 @@ function chaveDaMudanca(li) {
 }
 const chavesDoRegisto = new Set([
   ...chavesDoLivro,
-  ...WORKS.map(w => `publicacao|${w.slug}`),
+  ...PUBLISHED_WORKS.map(w => `publicacao|${w.slug}`),
   ...MUDANCAS_DO_PROJETO.map(m => `projeto|${m.id}`),
 ]);
 let listasMedidas = 0;
@@ -468,7 +500,7 @@ for (const lang of ['pt', 'en']) {
   }
   const recentes = WORKS.map((w,i) => {
     const e = w.editions.find(e => e.lang === lang) ?? w.editions[0];
-    return { slug: w.slug, i, emCurso: Boolean(w.emCurso), data: datas.find(d => d.slug === w.slug && d.lang === e.lang)?.data ?? '' };
+    return { slug: w.slug, i, emCurso: Boolean(w.emCurso), data: (w.publication === 'declared' ? e.date : datas.find(d => d.slug === w.slug && d.lang === e.lang)?.data) ?? '' };
   }).sort((a,b) => Number(b.emCurso) - Number(a.emCurso) || b.data.localeCompare(a.data) || a.i-b.i).slice(0,3).map(e=>e.slug);
   const rendidos = home.querySelectorAll('#trabalhos [data-estudo]').map(e => e.getAttribute('data-estudo'));
   if (JSON.stringify(recentes) !== JSON.stringify(rendidos)) erros.push(`E1 ${lang}: os três estudos não têm os em curso à cabeça, seguidos dos mais recentes.`);
@@ -490,7 +522,7 @@ for (const lang of ['pt', 'en']) {
      são edições datadas, e quem os lista são os estudos que lhes sucedem. */
   const todos = WORKS.map((w,i) => ({ w, i })).filter(({ w }) => !w.sucedidoPor).map(({ w, i }) => {
     const e = w.editions.find(e => e.lang === lang) ?? w.editions[0];
-    return { w, i, data: datas.find(d => d.slug === w.slug && d.lang === e.lang)?.data ?? '' };
+    return { w, i, data: (w.publication === 'declared' ? e.date : datas.find(d => d.slug === w.slug && d.lang === e.lang)?.data) ?? '' };
   }).sort((a,b) => b.data.localeCompare(a.data) || a.i-b.i);
   const entradas = listaDosEstudos.querySelectorAll('main [data-estudo]');
   if (JSON.stringify(entradas.map(e => e.getAttribute('data-estudo'))) !== JSON.stringify(todos.map(e => e.w.slug)))
@@ -717,7 +749,7 @@ function anda(dir) {
         const dentro = ambito === 'pais'
           ? (tipo === 'projeto' || (tipo === 'correcao' && doLugar === PAIS))
           : ambito === 'indice'
-            ? rotaDaPagina?.key === 'indice' && tipo === 'correcao' && doLugar !== null && !((linha(claim)?.afirmacao === true && linha(claim)?.unit === 'afirmação') || textoDocumentalConferido(linha(claim)) || dataDeCalendarioConferida(linha(claim)))
+            ? rotaDaPagina?.key === 'indice' && tipo === 'correcao' && doLugar !== null && !((linha(claim)?.afirmacao === true && linha(claim)?.unit === 'afirmação') || textoDocumentalConferido(linha(claim)) || dataDeCalendarioConferida(linha(claim)) || textoDaHabitacao(linha(claim)))
             : (tipo === 'correcao' && doLugar === ambito);
         if (!dentro)
           erros.push(`A1: ${onde}: a linha ${chave} é de «${doLugar ?? 'nenhum lugar'}» e a página é de «${ambito}».`);

@@ -1,0 +1,38 @@
+{
+  "cabeca_sitio": "4531f0c11cb29ea1bdf21db399ef4b3f14aaa0d3",
+  "cabeca_motor": "980a964ea9eee20f2765580b2b1efae1e4e0bd75",
+  "codigos": {
+    "selagem": 0,
+    "ex3": 0,
+    "cruzamento": 0,
+    "series": 0,
+    "verify": 0,
+    "plantas-datas": 0,
+    "motor": 0,
+    "typecheck": 0,
+    "extracao": 0,
+    "build": 0,
+    "capturas": 0,
+    "validacao-capturas": 0
+  },
+  "motor_origem": "Primeira corrida HB1-c, sobre a mesma cabeça do motor e com árvore do motor limpa. A repetição do sítio corrigiu apenas tests/explicacoes/ex3.mjs.",
+  "selagem_reproduzida": {
+    "partida.json": {
+      "sha256": "bad1dda40971c1ca6d6482ebeb725f25aea23ef5afb27e10f9af8914ecee5aed",
+      "reproducao_identica": true
+    },
+    "selagem.json": {
+      "sha256": "9a3cd8c6add71d2d21cebcd21a0949fd5a1274914f1f88c86b1107fc40bedce6",
+      "reproducao_identica": true
+    }
+  },
+  "capturas": {
+    "codigo": 0,
+    "paginas": 20,
+    "pngs_conferidos": 120,
+    "transbordos_horizontais": 0,
+    "erros_do_navegador": 0,
+    "recursos_em_falta": 0,
+    "pedidos_externos": 0
+  }
+}

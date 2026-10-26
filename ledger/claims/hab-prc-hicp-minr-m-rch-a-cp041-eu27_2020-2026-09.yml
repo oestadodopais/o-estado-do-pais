@@ -1,0 +1,53 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "hab-prc-hicp-minr-m-rch-a-cp041-eu27_2020-2026-09"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "2,9"
+unit: "Annual rate of change"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Índice harmonizado de preços no consumidor, rendas efetivas da habitação, variação homóloga, União Europeia, setembro de 2026"
+name_source: "label; dimension.unit.category.label.RCH_A; dimension.geo.category.label.EU27_2020; dimension.time.category.label.2026-09"
+status: "conferido"
+name_en: "Harmonised index of consumer prices, actual rentals for housing, Annual rate of change, European Union - 27 countries (from 2020), 2026-09"
+name_source_en: "label; dimension.unit.category.label.RCH_A; dimension.geo.category.label.EU27_2020; dimension.time.category.label.2026-09"
+measure: "Índice harmonizado de preços no consumidor, rendas efetivas da habitação, variação homóloga, União Europeia, setembro de 2026"
+measure_en: "Harmonised index of consumer prices, actual rentals for housing, Annual rate of change, European Union - 27 countries (from 2020), 2026-09"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Eurostat"
+document:
+  title: "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data"
+  edition: "2026-09"
+  locator: "freq=M; unit=RCH_A; coicop18=CP041; geo=EU27_2020; time=2026-09; value[4088]"
+  source_sha256: "bd654062c2749aec3ad455ed1eab8ea3a1234caa73f45dd5a51890e883d68c70"
+  kind: "serie"
+source_url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_minr?format=JSON&lang=EN&geo=AT&geo=BE&geo=BG&geo=CY&geo=CZ&geo=DE&geo=DK&geo=EE&geo=EL&geo=ES&geo=FI&geo=FR&geo=HR&geo=HU&geo=IE&geo=IT&geo=LT&geo=LU&geo=LV&geo=MT&geo=NL&geo=PL&geo=PT&geo=RO&geo=SE&geo=SI&geo=SK&geo=EU27_2020&sinceTimePeriod=2015&coicop18=CP041&unit=I25&unit=RCH_A"
+access_date: "2026-10-19"
+reference_date: "2026-09"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "{\"coordinates\": {\"freq\": \"M\", \"unit\": \"RCH_A\", \"coicop18\": \"CP041\", \"geo\": \"EU27_2020\", \"time\": \"2026-09\"}, \"value\": \"2.9\", \"status\": null}"
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+# A quem o valor é creditado. Lista de entidades, ou campo nenhum.
+attributed_to:
+  - "Eurostat"
+
+study: "a-casa-em-portugal-e-na-europa"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] A União é o agregado publicado, nunca a média simples dos países. A bandeira pertence à célula. ECOICOP ver.2. O conjunto prc_hicp_aind está descontinuado; aviso alojado separadamente. Índice base 2025=100.  · Cruzado de ResearchHub content/23 Habitacao · hab-prc-hicp-minr-m-rch-a-cp041-eu27_2020-2026-09."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

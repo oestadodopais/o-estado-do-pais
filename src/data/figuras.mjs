@@ -691,8 +691,348 @@ const LISTA_SOCIAL = [
  * abrevia («NFC», «incl. NPISH») e a definição em português escreve o nome por
  * extenso. O nome por extenso é do glossário do Eurostat, e é ele que o declara.
  */
+/* HB1-c2 (o achado 16 da leitura da HB1-b): as definições do Eurostat das famílias
+   do estudo da habitação, cada uma lida do corpo alojado no motor (o glossário
+   Statistics Explained, a metainformação ESMS dos Censos ou a descrição do
+   conjunto), com o selo do pedido; escritas por
+   `design/especime-v3/medicoes/hb1-2026-10-21/correcao-hb1c/origens-hb1c2.py`. */
+export const ORIGENS_HB1C = {
+  "hb1c-eurostat-sobrecarga": {
+    "publicador": "Eurostat",
+    "documento": "Glossary:Housing cost overburden rate",
+    "url": "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:Housing_cost_overburden_rate",
+    "lido": "2026-10-21",
+    "excerto": "The housing cost overburden rate is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income ('net' of housing allowances).",
+    "selo": {
+      "motor": "content/23 Habitacao/source/eurostat/hb1c-glossario-housing-cost-overburden-rate.html",
+      "campo": "Glossário, primeiro parágrafo da definição",
+      "hora": "2026-10-21T13:01:29Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "bc7a042469b800d98f0a65b3ac4ffd8563ecb7d73c2b830af9ab56032b0a0786"
+    }
+  },
+  "hb1c-eurostat-custos-habitacao": {
+    "publicador": "Eurostat",
+    "documento": "Glossary:Housing cost overburden rate",
+    "url": "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:Housing_cost_overburden_rate",
+    "lido": "2026-10-21",
+    "excerto": "Housing costs refer to the monthly expenses associated with the right to live in a dwelling.",
+    "selo": {
+      "motor": "content/23 Habitacao/source/eurostat/hb1c-glossario-housing-cost-overburden-rate.html",
+      "campo": "Glossário, segundo parágrafo da definição",
+      "hora": "2026-10-21T13:01:29Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "bc7a042469b800d98f0a65b3ac4ffd8563ecb7d73c2b830af9ab56032b0a0786"
+    }
+  },
+  "hb1c-eurostat-sobrelotacao": {
+    "publicador": "Eurostat",
+    "documento": "Glossary:Overcrowding rate",
+    "url": "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:Overcrowding_rate",
+    "lido": "2026-10-21",
+    "excerto": "The overcrowding rate is defined as the percentage of the population living in an overcrowded household. A person is considered as living in an overcrowded household if the household does not have at its disposal a minimum number of rooms equal to:",
+    "selo": {
+      "motor": "content/23 Habitacao/source/eurostat/hb1c-glossario-overcrowding-rate.html",
+      "campo": "Glossário, primeiro parágrafo da definição",
+      "hora": "2026-10-21T13:01:29Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "56d4bb10e350913a8a166f121818246a93eecedbf1cdb6d44860cd8e77a96028"
+    }
+  },
+  "hb1c-eurostat-licenca": {
+    "publicador": "Eurostat",
+    "documento": "Glossary:Building permit",
+    "url": "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:Building_permit",
+    "lido": "2026-10-21",
+    "excerto": "A building permit is the final authorisation to start work on a building project.",
+    "selo": {
+      "motor": "content/23 Habitacao/source/eurostat/hb1c-glossario-building-permit.html",
+      "campo": "Glossário, primeiro parágrafo da definição",
+      "hora": "2026-10-21T13:01:30Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "88450fd6ffd786ecede259cdd033a6c6ddfaa07c6178200dbf55a5098458567c"
+    }
+  },
+  "hb1c-eurostat-ipH": {
+    "publicador": "Eurostat",
+    "documento": "Glossary:House price index (HPI)",
+    "url": "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:House_price_index_(HPI)",
+    "lido": "2026-10-21",
+    "excerto": "The house price index, abbreviated as HPI, is an index that measures the changes in the transaction prices of dwellings purchased by households.",
+    "selo": {
+      "motor": "content/23 Habitacao/source/eurostat/hb1c-glossario-house-price-index.html",
+      "campo": "Glossário, primeiro parágrafo da definição",
+      "hora": "2026-10-21T13:01:32Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "2fd2f2e7300cf787eeb2493cf37e14757ca4ad053441a9145ec58e6a944910ae"
+    }
+  },
+  "hb1c-eurostat-ihpc": {
+    "publicador": "Eurostat",
+    "documento": "Glossary:Harmonised index of consumer prices (HICP)",
+    "url": "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:Harmonised_index_of_consumer_prices_(HICP)",
+    "lido": "2026-10-21",
+    "excerto": "The harmonised index of consumer prices, abbreviated as HICP, is the consumer price index as it is calculated in the European Union (EU), according to a harmonised approach and a single set of definitions.",
+    "selo": {
+      "motor": "content/23 Habitacao/source/eurostat/hb1c-glossario-hicp.html",
+      "campo": "Glossário, primeiro parágrafo da definição",
+      "hora": "2026-10-21T13:01:32Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "360d59a994a933b45485e169e9b0683205adbd9c94f7c9c67946978b6965e731"
+    }
+  },
+  "hb1c-eurostat-privacao-severa": {
+    "publicador": "Eurostat",
+    "documento": "Glossary:Severe housing deprivation rate",
+    "url": "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:Severe_housing_deprivation_rate",
+    "lido": "2026-10-21",
+    "excerto": "Severe housing deprivation rate is defined as the percentage of population living in the dwelling which is considered as overcrowded, while also exhibiting at least one of the housing deprivation measures. Housing deprivation is a measure of poor amenities and is calculated by referring to those households with a leaking roof, no bath/shower and no indoor toilet, or a dwelling considered too dark.",
+    "selo": {
+      "motor": "content/23 Habitacao/source/eurostat/hb1b-severe-housing-deprivation.html",
+      "campo": "Glossário, dois parágrafos da definição",
+      "hora": "2026-10-21T00:08:08Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "bf8da5fc3936c9dbee32f1a2aa32cc3c924385f42c295bd6f4fa2993a867e9de"
+    }
+  },
+  "hb1c-eurostat-censos-ocupacao": {
+    "publicador": "Eurostat",
+    "documento": "Census 2021 round (cens_21)",
+    "url": "https://ec.europa.eu/eurostat/cache/metadata/en/cens_21_esms.htm",
+    "lido": "2026-10-21",
+    "excerto": "‘Occupied conventional dwellings’ are conventional dwellings which are the usual residence of one or more persons at the time of the census. ‘Unoccupied conventional dwellings’ are conventional dwellings which are not the usual residence of any person at the time of the census.",
+    "selo": {
+      "motor": "content/23 Habitacao/source/eurostat/hb1c-cens-21-esms2.html",
+      "campo": "Metainformação ESMS, conceitos e definições, estado de ocupação dos alojamentos clássicos",
+      "hora": "2026-10-21T13:02:06Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "0fa7ed395febccf4a8f088d7014998671378ffc47630c61a3611f5a5373a8db9"
+    }
+  },
+  "hb1c-eurostat-precos-reais": {
+    "publicador": "Eurostat",
+    "documento": "House price index, deflated - annual data",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsho10?format=JSON&lang=EN&geo=AT&geo=BE&geo=BG&geo=CY&geo=CZ&geo=DE&geo=DK&geo=EE&geo=EL&geo=ES&geo=FI&geo=FR&geo=HR&geo=HU&geo=IE&geo=IT&geo=LT&geo=LU&geo=LV&geo=MT&geo=NL&geo=PL&geo=PT&geo=RO&geo=SE&geo=SI&geo=SK&geo=EU27_2020&sinceTimePeriod=2015",
+    "lido": "2026-10-19",
+    "excerto": "The deflated house price index (or real house price index) is the ratio between the house price index (HPI) and the national accounts deflator for private final consumption expenditure (households and non-profit institutions serving households (NPISHs) ).",
+    "selo": {
+      "motor": "content/23 Habitacao/source/eurostat/tipsho10.json",
+      "campo": "extension.description",
+      "hora": "2026-10-19T13:38:54Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "8170b1e60e84453724a4630d5b7136c93ff37b1bcf92853a4e149bb6a8f6b3db"
+    }
+  },
+  "hb1c-eurostat-preco-rendimento": {
+    "publicador": "Eurostat",
+    "documento": "Standardised house price-to-income ratio - annual data",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsho60?format=JSON&lang=EN&geo=AT&geo=BE&geo=BG&geo=CY&geo=CZ&geo=DE&geo=DK&geo=EE&geo=EL&geo=ES&geo=FI&geo=FR&geo=HR&geo=HU&geo=IE&geo=IT&geo=LT&geo=LU&geo=LV&geo=MT&geo=NL&geo=PL&geo=PT&geo=RO&geo=SE&geo=SI&geo=SK&geo=EU27_2020&sinceTimePeriod=2015",
+    "lido": "2026-10-19",
+    "excerto": "The standardised house price-to-income ratio is defined as the ratio of the current price to income ratio relative to the long-term average price-to-income ratio, calculated over the period 2000 to the most recent data available. If the ratio equals 100, it means the current price-to-income ratio is equal to its long term average. House prices are provided by Eurostat, and income is calculated as adjusted household gross disposable income (B7G) per head of population based on Eurostat data.",
+    "selo": {
+      "motor": "content/23 Habitacao/source/eurostat/tipsho60.json",
+      "campo": "extension.description",
+      "hora": "2026-10-19T13:38:53Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "85a9de42aa41ef015150da57af82802ea164b3bbde1f706ddb241204dc5cb1e6"
+    }
+  },
+  "hb1c-eurostat-saida": {
+    "publicador": "Eurostat",
+    "documento": "Estimated average age of young persons leaving the parental household",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/yth_demo_030?format=JSON&lang=EN&geo=AT&geo=BE&geo=BG&geo=CY&geo=CZ&geo=DE&geo=DK&geo=EE&geo=EL&geo=ES&geo=FI&geo=FR&geo=HR&geo=HU&geo=IE&geo=IT&geo=LT&geo=LU&geo=LV&geo=MT&geo=NL&geo=PL&geo=PT&geo=RO&geo=SE&geo=SI&geo=SK&geo=EU27_2020&sinceTimePeriod=2015&sex=T",
+    "lido": "2026-10-19",
+    "excerto": "The indicator represents the age at which 50 % of the population no longer live in a household with their parent(s) (Source: EU-LFS).",
+    "selo": {
+      "motor": "content/23 Habitacao/source/eurostat/yth_demo_030.json",
+      "campo": "extension.description",
+      "hora": "2026-10-19T13:38:51Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "0e73a05402f94eace4fa33981b9f2e770a27d289fb0af7b91ef68c9e2bec244b"
+    }
+  }
+};
+
+/* HB1-e (22.10.2026): as origens das definições das famílias do INE, do Banco de Portugal e do
+   Orçamento no estudo da habitação, cada uma com o excerto exato do corpo alojado no motor e o selo
+   do pedido (as fichas das séries do BPstat, os conceitos do SMI do INE, as notas metodológicas dos
+   destaques e os títulos dos quadros do relatório); escritas por
+   `design/especime-v3/medicoes/hb1-2026-10-21/hb1e/origens-hb1e.py`. */
+export const ORIGENS_HB1E = {
+  "hb1e-bpstat-12533724": {
+    "publicador": "Banco de Portugal",
+    "documento": "BPstat, série 12533724: Montante de novas operações de empréstimos à habitação",
+    "url": "https://bpstat.bportugal.pt/data/v1/series/?lang=PT&series_ids=12533724",
+    "lido": "2026-10-22",
+    "excerto": "Novas operações de empréstimos (inclui renegociações) à habitação, concedidos por bancos (outras instituições financeiras monetárias) aos particulares (famílias e instituições sem fim lucrativo ao serviço das famílias) residentes na área euro e emigrantes portugueses fora da área euro - valores mensais em milhões de euros",
+    "selo": {
+      "motor": "content/23 Habitacao/source/metainformacao/hb1e-bpstat-serie-12533724.json",
+      "campo": "0.description",
+      "hora": "2026-10-22T06:26:58Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "0f1846f7aa0e16bc12825a7f8493f4f5869abe6b88a4ba90a9946e3160132fde"
+    }
+  },
+  "hb1e-bpstat-12533735": {
+    "publicador": "Banco de Portugal",
+    "documento": "BPstat, série 12533735: Taxa de juro (TAA) de novas operações de empréstimos à habitação",
+    "url": "https://bpstat.bportugal.pt/data/v1/series/?lang=PT&series_ids=12533735",
+    "lido": "2026-10-22",
+    "excerto": "Taxa de juro acordada anualizada (TAA) de novas operações de empréstimos (inclui renegociações) à habitação, concedidos por bancos (outras instituições financeiras monetárias) aos particulares (famílias e instituições sem fim lucrativo ao serviço das famílias) residentes na área euro e emigrantes portugueses fora da área euro - taxa mensal em percentagem",
+    "selo": {
+      "motor": "content/23 Habitacao/source/metainformacao/hb1e-bpstat-serie-12533735.json",
+      "campo": "0.description",
+      "hora": "2026-10-22T06:28:28Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "0103ef65c4e0d3bc121a8971b615f8309d62526084d71a6a428b8402c9eb000f"
+    }
+  },
+  "hb1e-bpstat-12557378": {
+    "publicador": "Banco de Portugal",
+    "documento": "BPstat, série 12557378: Empréstimos-Particulares-PRT-Habitação-M€ (OIFM)",
+    "url": "https://bpstat.bportugal.pt/data/v1/series/?lang=PT&series_ids=12557378",
+    "lido": "2026-10-22",
+    "excerto": "Balanço das IFM: Outras instituições financeiras monetárias - Dados não consolidados - Ativos - Portugal - Empréstimos - Famílias e instituições sem fim lucrativo ao serviço das famílias - Portugal - Habitação - Posições - Mensal - Milhões de euros - Valor em fim do período",
+    "selo": {
+      "motor": "content/23 Habitacao/source/metainformacao/hb1e-bpstat-serie-12557378.json",
+      "campo": "0.description",
+      "hora": "2026-10-22T06:28:28Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "4b746cbf5471a77f78924ad3ce7a96c1c9de10760abc94387f462ff936ecb2c6"
+    }
+  },
+  "hb1e-ine-juro-implicito": {
+    "publicador": "INE",
+    "documento": "Taxas de Juro Implícitas no Crédito à Habitação, agosto de 2026 (destaque)",
+    "url": "https://www.ine.pt/ngt_server/attachfileu.jsp?look_parentBoui=815490211&att_display=n&att_download=y",
+    "lido": "2026-10-19",
+    "excerto": "A taxa de juro implícita no crédito à habitação reflete a relação entre os juros totais vencidos no mês de referência e o capital em dívida no início desse mês (antes de amortização).",
+    "selo": {
+      "motor": "content/23 Habitacao/source/ine-retoma-pt-35-2.pdf",
+      "campo": "Nota metodológica, «Taxa de juro implícita»",
+      "hora": "2026-10-19T13:42:36Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "cd593ac7b3fe64498d80d8b52227a12917210f9a9bc731df019470c65e86122c"
+    }
+  },
+  "hb1e-ine-preco-mediano": {
+    "publicador": "INE",
+    "documento": "Estatísticas de Preços da Habitação ao Nível Local, 1.º trimestre de 2026 (destaque)",
+    "url": "https://www.ine.pt/ngt_server/attachfileu.jsp?look_parentBoui=804178838&att_display=n&att_download=y",
+    "lido": "2026-10-19",
+    "excerto": "Valor mediano das vendas por m² de alojamentos familiares: Valor mediano dos preços por metro quadrado das transações por venda de imóveis para habitação com área bruta privativa maior ou igual a 20 m².",
+    "selo": {
+      "motor": "content/23 Habitacao/source/ine-retoma-pt-32-2.pdf",
+      "campo": "Nota metodológica, definição do valor mediano das vendas",
+      "hora": "2026-10-19T13:42:25Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "edad0e60dfc15f44ad3116dfe3506f23ef054f473aaaf60e97dae4224067c917"
+    }
+  },
+  "hb1e-ine-preco-fonte": {
+    "publicador": "INE",
+    "documento": "Estatísticas de Preços da Habitação ao Nível Local, 1.º trimestre de 2026 (destaque)",
+    "url": "https://www.ine.pt/ngt_server/attachfileu.jsp?look_parentBoui=804178838&att_display=n&att_download=y",
+    "lido": "2026-10-19",
+    "excerto": "As Estatísticas de Preços da Habitação ao nível local resultam do aproveitamento de fontes administrativas, nomeadamente dos dados fiscais anonimizados obtidos da Autoridade Tributária e Aduaneira (AT) ao abrigo de um protocolo celebrado com o INE, relativos ao Imposto Municipal sobre as Transmissões Onerosas de Imóveis (IMT) e ao Imposto Municipal sobre Imóveis (IMI).",
+    "selo": {
+      "motor": "content/23 Habitacao/source/ine-retoma-pt-32-2.pdf",
+      "campo": "Nota metodológica, as fontes administrativas",
+      "hora": "2026-10-19T13:42:25Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "edad0e60dfc15f44ad3116dfe3506f23ef054f473aaaf60e97dae4224067c917"
+    }
+  },
+  "hb1e-ine-renda-mediana": {
+    "publicador": "INE",
+    "documento": "Estatísticas de Rendas da Habitação ao Nível Local, 2.º trimestre de 2026 (destaque)",
+    "url": "https://www.ine.pt/ngt_server/attachfileu.jsp?look_parentBoui=817240652&att_display=n&att_download=y",
+    "lido": "2026-10-19",
+    "excerto": "Valor mediano da renda por m² de novos contratos de arrendamento em alojamentos familiares: Valor mediano das rendas por metro quadrado de novos contratos de arrendamento para habitação com área bruta privativa entre 20 m2 e 600 m2 e valor da renda entre 100 € e 6 000 €.",
+    "selo": {
+      "motor": "content/23 Habitacao/source/ine-retoma-pt-30-2.pdf",
+      "campo": "Nota metodológica, definição do valor mediano da renda",
+      "hora": "2026-10-19T13:43:03Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "8be6b068ef8c95a55f1269e20f19b2cfbea864c9e0838872d0b70758d91c9b84"
+    }
+  },
+  "hb1e-ine-renda-fonte": {
+    "publicador": "INE",
+    "documento": "Estatísticas de Rendas da Habitação ao Nível Local, 2.º trimestre de 2026 (destaque)",
+    "url": "https://www.ine.pt/ngt_server/attachfileu.jsp?look_parentBoui=817240652&att_display=n&att_download=y",
+    "lido": "2026-10-19",
+    "excerto": "As Estatísticas de Rendas da Habitação ao nível local resultam do aproveitamento de fontes administrativas, nomeadamente dos dados fiscais anonimizados obtidos da Autoridade Tributária e Aduaneira (AT), relativos à Declaração do Modelo 2 do Imposto do Selo – Comunicação de contratos de arrendamento (Modelo 2) e ao Imposto Municipal sobre Imóveis (IMI).",
+    "selo": {
+      "motor": "content/23 Habitacao/source/ine-retoma-pt-30-2.pdf",
+      "campo": "Nota metodológica, as fontes administrativas",
+      "hora": "2026-10-19T13:43:03Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "8be6b068ef8c95a55f1269e20f19b2cfbea864c9e0838872d0b70758d91c9b84"
+    }
+  },
+  "hb1e-ine-alojamento-classico": {
+    "publicador": "INE",
+    "documento": "SMI do INE, conceito 1486: Alojamento familiar clássico",
+    "url": "https://smi.ine.pt/Conceito/Detalhes/6511",
+    "lido": "2026-10-22",
+    "excerto": "Alojamento familiar constituído por uma divisão ou conjunto de divisões e seus anexos num edifício de caráter permanente ou numa parte estruturalmente distinta do edifício, devendo ter uma entrada independente que dê acesso direto ou através de um jardim ou terreno a uma via ou a uma passagem comum no interior do edifício (escada, corredor ou galeria, entre outros).",
+    "selo": {
+      "motor": "content/23 Habitacao/source/metainformacao/hb1e-ine-smi-conceito-6511.html",
+      "campo": "Definição",
+      "hora": "2026-10-22T06:29:02Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "7f9ed7734f1ba95aec8d423fffec6bcd29cd66e70aa26167f67bc1da78cf5ce2"
+    }
+  },
+  "hb1e-ine-alojamento-vago": {
+    "publicador": "INE",
+    "documento": "SMI do INE, conceito 1491: Alojamento familiar vago",
+    "url": "https://smi.ine.pt/Conceito/Detalhes/6669",
+    "lido": "2026-10-22",
+    "excerto": "Alojamento familiar desocupado e que está disponível para venda, arrendamento, demolição ou outra situação no momento de referência.",
+    "selo": {
+      "motor": "content/23 Habitacao/source/metainformacao/hb1e-ine-smi-conceito-6669.html",
+      "campo": "Definição",
+      "hora": "2026-10-22T06:29:02Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "14e64935a528c9304a92e58945a226b3b689917610f71c08848e9272fcf14f7e"
+    }
+  },
+  "hb1e-oe-quadro-medidas": {
+    "publicador": "Governo",
+    "documento": "Relatório do Orçamento do Estado para 2027",
+    "url": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+    "lido": "2026-10-13",
+    "excerto": "Quadro 3.2. Principais medidas de política orçamental com impacto em 2027",
+    "selo": {
+      "motor": "content/23 Habitacao/source/oe-relatorio.pdf",
+      "campo": "Título do Quadro 3.2 (página impressa 43)",
+      "hora": "2026-10-13T18:47:56Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12"
+    }
+  },
+  "hb1e-oe-quadro-missao": {
+    "publicador": "Governo",
+    "documento": "Relatório do Orçamento do Estado para 2027",
+    "url": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+    "lido": "2026-10-13",
+    "excerto": "Quadro 5.24. Objetivos e indicadores da Missão de Base Orgânica Infraestruturas e Habitação",
+    "selo": {
+      "motor": "content/23 Habitacao/source/oe-relatorio.pdf",
+      "campo": "Título do Quadro 5.24 (página impressa 227)",
+      "hora": "2026-10-13T18:47:56Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12"
+    }
+  }
+};
+
 export const ORIGENS_DAS_DEFINICOES = /** @type {const} */ ({
   ...ORIGENS_EX3,
+  ...ORIGENS_HB1C,
+  ...ORIGENS_HB1E,
   ...ORIGENS_PENSAO,
   ...ORIGENS_C1C,
   /* TRÊS ORIGENS SELADAS NO MOTOR (B2, peça 1, segunda passagem de correção,

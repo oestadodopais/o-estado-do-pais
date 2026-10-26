@@ -1,0 +1,234 @@
+{
+  "bloco": "HB1-g",
+  "cabeca_medida": "c09bd8602b16184bd75a1bf560dbf9582ff0e228",
+  "dist_antes": "o dist/ construído na cabeça 77c354ea1, copiado antes da construção desta passagem",
+  "medidas": [
+    {
+      "nome": "linhas do livro em que paginaSoComEdicao é verdadeiro (todas, com as retiradas)",
+      "valor": 2,
+      "ids": [
+        "hab-eurostat-privacao-severa-definicao",
+        "hab-il-proposta"
+      ],
+      "linhas_lidas": 4084,
+      "publicas": {
+        "valor": 2,
+        "ids": [
+          "hab-eurostat-privacao-severa-definicao",
+          "hab-il-proposta"
+        ],
+        "linhas_lidas": 4081
+      },
+      "comando": "node design/especime-v3/medicoes/hb1-2026-10-21/hb1g/medir.mjs <temporario>/dist-antes",
+      "conhecido_positivo": {
+        "descricao": "o predicado numa linha last-edited com data (verdadeiro), com período (falso) e sem a marca (falso)",
+        "resultado": [
+          true,
+          false,
+          false
+        ],
+        "esperado": [
+          true,
+          false,
+          false
+        ]
+      }
+    },
+    {
+      "nome": "ficheiros dos recibos (livro-razao/ e en/ledger/) que mudaram do dist/ de 77c354ea1 para o dist/ novo",
+      "valor": 6,
+      "ficheiros": [
+        "livro-razao/hab-eurostat-privacao-severa-definicao.json",
+        "livro-razao/hab-eurostat-privacao-severa-definicao/index.html",
+        "livro-razao/hab-il-proposta.json",
+        "livro-razao/hab-il-proposta/index.html",
+        "en/ledger/hab-eurostat-privacao-severa-definicao/index.html",
+        "en/ledger/hab-il-proposta/index.html"
+      ],
+      "comando": "node design/especime-v3/medicoes/hb1-2026-10-21/hb1g/medir.mjs <temporario>/dist-antes",
+      "conhecido_positivo": {
+        "descricao": "a mesma comparação em duas pastas de ensaio com um ficheiro igual, um mudado e um só de um lado",
+        "resultado": [
+          "novo.json (só agora)",
+          "sub/mudado.html"
+        ],
+        "esperado": [
+          "novo.json (só agora)",
+          "sub/mudado.html"
+        ]
+      }
+    },
+    {
+      "nome": "ficheiros do dist/ inteiro que mudaram",
+      "valor": 8,
+      "ficheiros": [
+        "en/ledger/hab-eurostat-privacao-severa-definicao/index.html",
+        "en/ledger/hab-il-proposta/index.html",
+        "livro-razao/hab-eurostat-privacao-severa-definicao.json",
+        "livro-razao/hab-eurostat-privacao-severa-definicao/index.html",
+        "livro-razao/hab-il-proposta.json",
+        "livro-razao/hab-il-proposta/index.html",
+        "prova.json",
+        "version.json"
+      ],
+      "comando": "node design/especime-v3/medicoes/hb1-2026-10-21/hb1g/medir.mjs <temporario>/dist-antes",
+      "conhecido_positivo": "o da medida anterior (a mesma função de comparação)"
+    },
+    {
+      "nome": "as frases das quatro páginas, do excerto para incorporar e do JSON, antes e agora",
+      "valor": {
+        "hab-eurostat-privacao-severa-definicao/pt": {
+          "antes": {
+            "atribuicao": "Publicado por Eurostat, em Glossary:Severe housing deprivation rate (13.04.2021)",
+            "descricao": "Linha do livro-razão hab-eurostat-privacao-severa-definicao · Definição de privação severa da habitação · Publicado por: Eurostat · Glossary:Severe housing deprivation rate (2021-04-13) · Lido na fonte a 2026-10-21 · Dados de 2021-04-13.",
+            "og_description": "Linha do livro-razão hab-eurostat-privacao-severa-definicao · Definição de privação severa da habitação · Publicado por: Eurostat · Glossary:Severe housing deprivation rate (2021-04-13) · Lido na fonte a 2026-10-21 · Dados de 2021-04-13.",
+            "excerto": "Definição de privação severa da habitação · Eurostat (definição), 13.04.2021: Severe housing deprivation rate is defined as the percentage of population living in the dwelling which is considered as overcrowded, while also exhibiting at least one of the housing deprivation measures. Housing deprivation is a measure of poor amenities and is calculated by referring to those households with a leaking roof, no bath/shower and no indoor toilet, or a dwelling considered too dark. texto",
+            "excerto_inteiro": "Definição de privação severa da habitação · Eurostat (definição), 13.04.2021: Severe housing deprivation rate is defined as the percentage of population living in the dwelling which is considered as overcrowded, while also exhibiting at least one of the housing deprivation measures. Housing deprivation is a measure of poor amenities and is calculated by referring to those households with a leaking roof, no bath/shower and no indoor toilet, or a dwelling considered too dark. texto · Eurostat, lido a 21.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+            "json_periodo": "13.04.2021"
+          },
+          "agora": {
+            "atribuicao": "Publicado por Eurostat, em Glossary:Severe housing deprivation rate",
+            "descricao": "Linha do livro-razão hab-eurostat-privacao-severa-definicao · Definição de privação severa da habitação · Publicado por: Eurostat · Glossary:Severe housing deprivation rate · Lido na fonte a 2026-10-21 · Página editada pela última vez a 2021-04-13.",
+            "og_description": "Linha do livro-razão hab-eurostat-privacao-severa-definicao · Definição de privação severa da habitação · Publicado por: Eurostat · Glossary:Severe housing deprivation rate · Lido na fonte a 2026-10-21 · Página editada pela última vez a 2021-04-13.",
+            "excerto": "Definição de privação severa da habitação · Eurostat (definição), página editada pela última vez a 13.04.2021: Severe housing deprivation rate is defined as the percentage of population living in the dwelling which is considered as overcrowded, while also exhibiting at least one of the housing deprivation measures. Housing deprivation is a measure of poor amenities and is calculated by referring to those households with a leaking roof, no bath/shower and no indoor toilet, or a dwelling considered too dark. texto",
+            "excerto_inteiro": "Definição de privação severa da habitação · Eurostat (definição), página editada pela última vez a 13.04.2021: Severe housing deprivation rate is defined as the percentage of population living in the dwelling which is considered as overcrowded, while also exhibiting at least one of the housing deprivation measures. Housing deprivation is a measure of poor amenities and is calculated by referring to those households with a leaking roof, no bath/shower and no indoor toilet, or a dwelling considered too dark. texto · Eurostat, lido a 21.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+            "json_periodo": "página editada pela última vez a 13.04.2021"
+          }
+        },
+        "hab-eurostat-privacao-severa-definicao/en": {
+          "antes": {
+            "atribuicao": "Published by Eurostat, in Glossary:Severe housing deprivation rate (13.04.2021)",
+            "descricao": "Ledger row hab-eurostat-privacao-severa-definicao · Definition of severe housing deprivation · Published by: Eurostat · Glossary:Severe housing deprivation rate (2021-04-13) · Read at the source on 2026-10-21 · Data for 2021-04-13.",
+            "og_description": "Ledger row hab-eurostat-privacao-severa-definicao · Definition of severe housing deprivation · Published by: Eurostat · Glossary:Severe housing deprivation rate (2021-04-13) · Read at the source on 2026-10-21 · Data for 2021-04-13.",
+            "excerto": "Definition of severe housing deprivation · Eurostat (definition), 13.04.2021: Severe housing deprivation rate is defined as the percentage of population living in the dwelling which is considered as overcrowded, while also exhibiting at least one of the housing deprivation measures. Housing deprivation is a measure of poor amenities and is calculated by referring to those households with a leaking roof, no bath/shower and no indoor toilet, or a dwelling considered too dark. text",
+            "excerto_inteiro": "Definition of severe housing deprivation · Eurostat (definition), 13.04.2021: Severe housing deprivation rate is defined as the percentage of population living in the dwelling which is considered as overcrowded, while also exhibiting at least one of the housing deprivation measures. Housing deprivation is a measure of poor amenities and is calculated by referring to those households with a leaking roof, no bath/shower and no indoor toilet, or a dwelling considered too dark. text · Eurostat, read on 21.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+            "json_periodo": "13.04.2021"
+          },
+          "agora": {
+            "atribuicao": "Published by Eurostat, in Glossary:Severe housing deprivation rate",
+            "descricao": "Ledger row hab-eurostat-privacao-severa-definicao · Definition of severe housing deprivation · Published by: Eurostat · Glossary:Severe housing deprivation rate · Read at the source on 2026-10-21 · Page last edited on 2021-04-13.",
+            "og_description": "Ledger row hab-eurostat-privacao-severa-definicao · Definition of severe housing deprivation · Published by: Eurostat · Glossary:Severe housing deprivation rate · Read at the source on 2026-10-21 · Page last edited on 2021-04-13.",
+            "excerto": "Definition of severe housing deprivation · Eurostat (definition), page last edited on 13.04.2021: Severe housing deprivation rate is defined as the percentage of population living in the dwelling which is considered as overcrowded, while also exhibiting at least one of the housing deprivation measures. Housing deprivation is a measure of poor amenities and is calculated by referring to those households with a leaking roof, no bath/shower and no indoor toilet, or a dwelling considered too dark. text",
+            "excerto_inteiro": "Definition of severe housing deprivation · Eurostat (definition), page last edited on 13.04.2021: Severe housing deprivation rate is defined as the percentage of population living in the dwelling which is considered as overcrowded, while also exhibiting at least one of the housing deprivation measures. Housing deprivation is a measure of poor amenities and is calculated by referring to those households with a leaking roof, no bath/shower and no indoor toilet, or a dwelling considered too dark. text · Eurostat, read on 21.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+            "json_periodo": "page last edited on 13.04.2021"
+          }
+        },
+        "hab-il-proposta/pt": {
+          "antes": {
+            "atribuicao": "Publicado por Iniciativa Liberal, em Habitação Já (08.06.2026)",
+            "descricao": "Linha do livro-razão hab-il-proposta · Proposta da Iniciativa Liberal sobre habitação · Publicado por: Iniciativa Liberal · Habitação Já (2026-06-08) · Lido na fonte a 2026-10-19 · Dados de 2026-06-08.",
+            "og_description": "Linha do livro-razão hab-il-proposta · Proposta da Iniciativa Liberal sobre habitação · Publicado por: Iniciativa Liberal · Habitação Já (2026-06-08) · Lido na fonte a 2026-10-19 · Dados de 2026-06-08.",
+            "excerto": "Proposta da Iniciativa Liberal sobre habitação · Portugal, 08.06.2026: propõe ao Governo medidas para colocar mais casas no mercado, desbloquear imóveis parados em heranças e tornar o arrendamento mais simples, seguro e funcional, tanto para inquilinos como para proprietários. afirmação",
+            "excerto_inteiro": "Proposta da Iniciativa Liberal sobre habitação · Portugal, 08.06.2026: propõe ao Governo medidas para colocar mais casas no mercado, desbloquear imóveis parados em heranças e tornar o arrendamento mais simples, seguro e funcional, tanto para inquilinos como para proprietários. afirmação · Iniciativa Liberal, lido a 19.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+            "json_periodo": "08.06.2026"
+          },
+          "agora": {
+            "atribuicao": "Publicado por Iniciativa Liberal, em Habitação Já",
+            "descricao": "Linha do livro-razão hab-il-proposta · Proposta da Iniciativa Liberal sobre habitação · Publicado por: Iniciativa Liberal · Habitação Já · Lido na fonte a 2026-10-19 · Página editada pela última vez a 2026-06-08.",
+            "og_description": "Linha do livro-razão hab-il-proposta · Proposta da Iniciativa Liberal sobre habitação · Publicado por: Iniciativa Liberal · Habitação Já · Lido na fonte a 2026-10-19 · Página editada pela última vez a 2026-06-08.",
+            "excerto": "Proposta da Iniciativa Liberal sobre habitação · Portugal, página editada pela última vez a 08.06.2026: propõe ao Governo medidas para colocar mais casas no mercado, desbloquear imóveis parados em heranças e tornar o arrendamento mais simples, seguro e funcional, tanto para inquilinos como para proprietários. afirmação",
+            "excerto_inteiro": "Proposta da Iniciativa Liberal sobre habitação · Portugal, página editada pela última vez a 08.06.2026: propõe ao Governo medidas para colocar mais casas no mercado, desbloquear imóveis parados em heranças e tornar o arrendamento mais simples, seguro e funcional, tanto para inquilinos como para proprietários. afirmação · Iniciativa Liberal, lido a 19.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+            "json_periodo": "página editada pela última vez a 08.06.2026"
+          }
+        },
+        "hab-il-proposta/en": {
+          "antes": {
+            "atribuicao": "Published by Iniciativa Liberal, in Habitação Já (08.06.2026)",
+            "descricao": "Ledger row hab-il-proposta · Iniciativa Liberal housing proposal · Published by: Iniciativa Liberal · Habitação Já (2026-06-08) · Read at the source on 2026-10-19 · Data for 2026-06-08.",
+            "og_description": "Ledger row hab-il-proposta · Iniciativa Liberal housing proposal · Published by: Iniciativa Liberal · Habitação Já (2026-06-08) · Read at the source on 2026-10-19 · Data for 2026-06-08.",
+            "excerto": "Iniciativa Liberal housing proposal · Portugal, 08.06.2026: propõe ao Governo medidas para colocar mais casas no mercado, desbloquear imóveis parados em heranças e tornar o arrendamento mais simples, seguro e funcional, tanto para inquilinos como para proprietários. statement",
+            "excerto_inteiro": "Iniciativa Liberal housing proposal · Portugal, 08.06.2026: propõe ao Governo medidas para colocar mais casas no mercado, desbloquear imóveis parados em heranças e tornar o arrendamento mais simples, seguro e funcional, tanto para inquilinos como para proprietários. statement · Iniciativa Liberal, read on 19.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+            "json_periodo": "08.06.2026"
+          },
+          "agora": {
+            "atribuicao": "Published by Iniciativa Liberal, in Habitação Já",
+            "descricao": "Ledger row hab-il-proposta · Iniciativa Liberal housing proposal · Published by: Iniciativa Liberal · Habitação Já · Read at the source on 2026-10-19 · Page last edited on 2026-06-08.",
+            "og_description": "Ledger row hab-il-proposta · Iniciativa Liberal housing proposal · Published by: Iniciativa Liberal · Habitação Já · Read at the source on 2026-10-19 · Page last edited on 2026-06-08.",
+            "excerto": "Iniciativa Liberal housing proposal · Portugal, page last edited on 08.06.2026: propõe ao Governo medidas para colocar mais casas no mercado, desbloquear imóveis parados em heranças e tornar o arrendamento mais simples, seguro e funcional, tanto para inquilinos como para proprietários. statement",
+            "excerto_inteiro": "Iniciativa Liberal housing proposal · Portugal, page last edited on 08.06.2026: propõe ao Governo medidas para colocar mais casas no mercado, desbloquear imóveis parados em heranças e tornar o arrendamento mais simples, seguro e funcional, tanto para inquilinos como para proprietários. statement · Iniciativa Liberal, read on 19.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+            "json_periodo": "page last edited on 08.06.2026"
+          }
+        }
+      },
+      "comando": "node design/especime-v3/medicoes/hb1-2026-10-21/hb1g/medir.mjs <temporario>/dist-antes",
+      "conhecido_positivo": {
+        "descricao": "a atribuição de antes da linha da IL tem «(08.06.2026)», como a leitura LEITURA-HB1-f-2026-10-22.md cita no achado 6",
+        "resultado": true,
+        "esperado": true
+      }
+    },
+    {
+      "nome": "tests/hb1/pagina-editada.mjs no dist/ novo",
+      "valor": {
+        "codigo": 0,
+        "plantas": 20,
+        "ultima_linha": "HB1-g: 2 linhas que só declaram a última edição de uma página, nas duas edições (a descrição, o excerto, o JSON e a atribuição); o controlo hab-ine-iphab-homologa como estava; 20 plantas."
+      },
+      "comando": "node tests/hb1/pagina-editada.mjs",
+      "conhecido_positivo": {
+        "descricao": "o mesmo ensaio contra o dist/ de antes da HB1-g (OEDP_DIST_HB1G) tem de fechar",
+        "codigo": 1,
+        "plantas_antes_de_fechar": 0,
+        "erro": "AssertionError [ERR_ASSERTION]: hab-eurostat-privacao-severa-definicao (pt): a descrição construída"
+      }
+    },
+    {
+      "nome": "as plantas de tests/hb1/data-sem-publicacao.mjs",
+      "valor": 5,
+      "nomes": [
+        "referência inventada",
+        "publicação inventada",
+        "edição trocada",
+        "página sem prova da edição",
+        "selo alterado"
+      ],
+      "controlo": true,
+      "comando": "node design/especime-v3/medicoes/hb1-2026-10-21/hb1g/medir.mjs <temporario>/dist-antes",
+      "conhecido_positivo": {
+        "descricao": "a mesma expressão numa linha de ensaio",
+        "resultado": 1,
+        "esperado": 1
+      }
+    },
+    {
+      "nome": "as chaves que mudaram em prova.json e version.json",
+      "comando": "node design/especime-v3/medicoes/hb1-2026-10-21/hb1g/medir.mjs <temporario>/dist-antes",
+      "valor": {
+        "prova.json": [
+          "commit",
+          "construido_em"
+        ],
+        "version.json": [
+          "commit",
+          "construido_em"
+        ]
+      },
+      "conhecido_positivo": {
+        "descricao": "a mesma comparação em {a:1,b:{c:2}} e {a:1,b:{c:3}}",
+        "resultado": [
+          "b.c"
+        ],
+        "esperado": [
+          "b.c"
+        ]
+      }
+    },
+    {
+      "nome": "os códigos das conferências tocadas e da construção",
+      "valor": {
+        "build": "0",
+        "check-cabeca": "0",
+        "check-cartao": "0",
+        "check-datas": "0",
+        "check-incorporar": "0",
+        "check-lugar": "0",
+        "check-voz": "0",
+        "gate-html": "0",
+        "pagina-editada": "0",
+        "typecheck": "0"
+      },
+      "comando": "node design/especime-v3/medicoes/hb1-2026-10-21/hb1g/medir.mjs <temporario>/dist-antes",
+      "conhecido_positivo": "cada código é a saída do seu comando, escrita num ficheiro acabado de escrever pela corrida"
+    }
+  ]
+}

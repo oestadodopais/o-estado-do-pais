@@ -19,7 +19,16 @@ import { POR_VERIFICAR } from '../src/data/marcador.mjs';
 import { nomeDoProjeto } from '../src/data/nomes-das-medidas.mjs';
 import { routePath } from '../src/lib/routes.mjs';
 import { sinopseEsperada, textoSemSelos } from './voz-pais.mjs';
+import {hasSerie,getSerie} from '../src/lib/series.mjs';
+import rotulosDasSeries from '../src/data/rotulos-das-series.json' with {type:'json'};
 const normal = s => s.replace(/\s+/g, ' ').trim();
+export function rotuloDaPortaDaSerieConferido(el,lang) {
+  const sid=el.getAttribute('data-serie');
+  if(!sid||!hasSerie(sid)||el.getAttribute('data-serie-campo')!=='document.title'||!el.closest('.texto-fontes[data-fontes-da-unidade]'))return false;
+  const serie=getSerie(sid),rotulo=rotulosDasSeries.rotulos.find(r=>r.serie===sid)?.documento,porta=el.closest('a');
+  if(!rotulo||rotulo!==serie.document?.title||el.textContent!==rotulo||!porta||normal(porta.textContent)!==rotulo)return false;
+  return [sid,serie.linha_de_portugal,serie.linha_da_uniao].filter(Boolean).some(id=>porta.getAttribute('href')===routePath('linha',lang,{slug:id}));
+}
 export function verificaB1(raiz) {
   const erros = [];
   const temas = new Set(DOMINIOS.map(d => d.slug));
@@ -87,7 +96,8 @@ export function verificaB1(raiz) {
         POR_VERIFICAR, '[to verify]',
       ].map(normal));
       const tecnicos = new Set(['textoLinhaK', 'textoValorK', 'textoImpressoK', 'textoOrigemK', 'textoLinhaDoLivro', 'textoRegistoK'].map(k => S[lang].estudos[k]));
-      const verificados = '[data-rotulo-ia="topo"], [data-registo-unidade], [data-registo-indice], [data-registo-posicao], [data-registo-linha], [data-claim], .src-chip, [data-prova], [data-verbatim]';
+      // Os nomes das portas HB1 são comparados à declaração por medir-defeitos.
+      const verificados = '[data-rotulo-ia="topo"], [data-registo-unidade], [data-registo-indice], [data-registo-posicao], [data-registo-linha], [data-claim], .src-chip, [data-prova], [data-verbatim], .texto-fontes [data-nome]';
       const dispensados = new Set(main.querySelectorAll(verificados));
       const portas = main.querySelectorAll('[data-fontes-da-unidade]');
       if (portas.length) {
@@ -103,13 +113,19 @@ export function verificaB1(raiz) {
           links.forEach((link, i) => {
             const id = block.source_rows[i], name = nomeDoProjeto(id)?.[lang];
             const marca = link.querySelector('[data-nome="projeto"]');
+            // HB1: sem nome do projeto, a porta pode levar o rótulo conferido da série.
+            const serie = name ? null : link.querySelector('[data-serie][data-serie-campo]');
             if (link.getAttribute('href') !== routePath('linha', lang, {slug:id}) ||
-                normal(link.textContent) !== normal(name ?? ROTULOS_B1[lang].fonte) ||
+                (serie ? !rotuloDaPortaDaSerieConferido(serie, lang) : normal(link.textContent) !== normal(name ?? ROTULOS_B1[lang].fonte)) ||
                 (name && marca?.getAttribute('data-de-linha') !== id))
               erros.push(`B1 fontes: ${base}: nome ou destino diferente da linha ${id}.`);
             else if (marca) dispensados.add(marca);
           });
         }
+      }
+      for(const el of main.querySelectorAll('.texto-fontes [data-serie][data-serie-campo]')) {
+        if(rotuloDaPortaDaSerieConferido(el,lang))dispensados.add(el);
+        else erros.push(`B1 fonte: ${rota}: rótulo da série sem correspondência no catálogo, no campo ou na porta.`);
       }
       for (const el of main.querySelectorAll('[data-nonledger]')) {
         const motivo = el.getAttribute('data-nonledger');

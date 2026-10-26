@@ -1,0 +1,464 @@
+{
+  "medidas": [
+    {
+      "nome": "dist/version.json",
+      "valor": {
+        "commit": "0b7e58cd2029963316ec74569f5a4f97fd2f3104",
+        "ref": "hb1-m-2026-10-22",
+        "env": "local",
+        "origem": "git",
+        "motivo": null,
+        "construido_em": "2026-10-26T14:49:02.950Z"
+      },
+      "comando": "python3 design/especime-v3/medicoes/hb1-2026-10-21/hb1d/medir-b.py",
+      "conhecido_positivo": "a cabeça da worktree"
+    },
+    {
+      "nome": "pt estudos/a-casa-em-portugal-e-na-europa/index.html: data de publicação",
+      "valor": {
+        "26.10.2026": "ão tal como foi publicada · publicado a 26.10.2026 Início · Números e fontes · Método · Correções · Agenda · Explicações · O que se discute · Portugal na União Europeia · Índice · English · correcoes@"
+      },
+      "comando": "python3 design/especime-v3/medicoes/hb1-2026-10-21/hb1d/medir-b.py",
+      "conhecido_positivo": "a página do estudo do Orçamento diz a sua data (20.10.2026)"
+    },
+    {
+      "nome": "pt estudos/a-casa-em-portugal-e-na-europa/index.html: «em preparação»",
+      "valor": 0,
+      "comando": "python3 design/especime-v3/medicoes/hb1-2026-10-21/hb1d/medir-b.py",
+      "conhecido_positivo": "contagem na página de antes (dist antigo dizia em preparação)"
+    },
+    {
+      "nome": "pt estudos/a-casa-em-portugal-e-na-europa/index.html: JSON-LD",
+      "valor": [
+        {
+          "@type": "Organization",
+          "datePublished": null,
+          "dateModified": null,
+          "creativeWorkStatus": null
+        },
+        {
+          "@type": "Article",
+          "datePublished": null,
+          "dateModified": null,
+          "creativeWorkStatus": "Published"
+        }
+      ],
+      "comando": "python3 design/especime-v3/medicoes/hb1-2026-10-21/hb1d/medir-b.py",
+      "conhecido_positivo": "o JSON-LD do estudo do Orçamento"
+    },
+    {
+      "nome": "pt estudos/a-casa-em-portugal-e-na-europa/documento/index.html: data de publicação",
+      "valor": {},
+      "comando": "python3 design/especime-v3/medicoes/hb1-2026-10-21/hb1d/medir-b.py",
+      "conhecido_positivo": "a página do estudo do Orçamento diz a sua data (20.10.2026)"
+    },
+    {
+      "nome": "pt estudos/a-casa-em-portugal-e-na-europa/documento/index.html: «em preparação»",
+      "valor": 0,
+      "comando": "python3 design/especime-v3/medicoes/hb1-2026-10-21/hb1d/medir-b.py",
+      "conhecido_positivo": "contagem na página de antes (dist antigo dizia em preparação)"
+    },
+    {
+      "nome": "pt estudos/a-casa-em-portugal-e-na-europa/documento/index.html: JSON-LD",
+      "valor": [],
+      "comando": "python3 design/especime-v3/medicoes/hb1-2026-10-21/hb1d/medir-b.py",
+      "conhecido_positivo": "o JSON-LD do estudo do Orçamento"
+    },
+    {
+      "nome": "pt estudo: «A taxa de juro implícita de setembro de 2026»",
+      "valor": "ubir ↑ Secção 14 de 14 11. O calendário A taxa de juro implícita de setembro de 2026 e os preços locais do 2.º trimestre de 2026, que o calendário do INE anunciava para 21.10.2026 e para 23.10.2026, já estão nesta edição (a secção «Quanto custa uma casa, e quanto subiu» e a secção «O crédito»). A reforma do arrendamento segue para a especialidade; o Orçamento de 2027 é votado na generalidade a 27 e 28 de outubro (o estudo «O Orçamento d",
+      "comando": "python3 design/especime-v3/medicoes/hb1-2026-10-21/hb1d/medir-b.py",
+      "conhecido_positivo": "a frase do Banco de Portugal da secção 6"
+    },
+    {
+      "nome": "pt estudo: «Lisboa custa 2,2 vezes o país»",
+      "valor": null,
+      "comando": "python3 design/especime-v3/medicoes/hb1-2026-10-21/hb1d/medir-b.py",
+      "conhecido_positivo": "a frase do Banco de Portugal da secção 6"
+    },
+    {
+      "nome": "pt estudo: períodos antigos",
+      "valor": {
+        "1.º trimestre de 2026": 0,
+        "agosto de 2026": 1
+      },
+      "comando": "python3 design/especime-v3/medicoes/hb1-2026-10-21/hb1d/medir-b.py",
+      "conhecido_positivo": "a frase do Banco de Portugal diz agosto (1)"
+    },
+    {
+      "nome": "en en/studies/a-casa-em-portugal-e-na-europa/index.html: data de publicação",
+      "valor": {
+        "26.10.2026": "udy Edition as published · published on 26.10.2026 Home · Numbers and sources · Method · Corrections · Agenda · Explainers · Under discussion · Portugal in the European Union · Index · Português · cor"
+      },
+      "comando": "python3 design/especime-v3/medicoes/hb1-2026-10-21/hb1d/medir-b.py",
+      "conhecido_positivo": "a página do estudo do Orçamento diz a sua data (20.10.2026)"
+    },
+    {
+      "nome": "en en/studies/a-casa-em-portugal-e-na-europa/index.html: «in preparation»",
+      "valor": 0,
+      "comando": "python3 design/especime-v3/medicoes/hb1-2026-10-21/hb1d/medir-b.py",
+      "conhecido_positivo": "contagem na página de antes (dist antigo dizia em preparação)"
+    },
+    {
+      "nome": "en en/studies/a-casa-em-portugal-e-na-europa/index.html: JSON-LD",
+      "valor": [
+        {
+          "@type": "Organization",
+          "datePublished": null,
+          "dateModified": null,
+          "creativeWorkStatus": null
+        },
+        {
+          "@type": "Article",
+          "datePublished": null,
+          "dateModified": null,
+          "creativeWorkStatus": "Published"
+        }
+      ],
+      "comando": "python3 design/especime-v3/medicoes/hb1-2026-10-21/hb1d/medir-b.py",
+      "conhecido_positivo": "o JSON-LD do estudo do Orçamento"
+    },
+    {
+      "nome": "en en/studies/a-casa-em-portugal-e-na-europa/document/index.html: data de publicação",
+      "valor": {},
+      "comando": "python3 design/especime-v3/medicoes/hb1-2026-10-21/hb1d/medir-b.py",
+      "conhecido_positivo": "a página do estudo do Orçamento diz a sua data (20.10.2026)"
+    },
+    {
+      "nome": "en en/studies/a-casa-em-portugal-e-na-europa/document/index.html: «in preparation»",
+      "valor": 0,
+      "comando": "python3 design/especime-v3/medicoes/hb1-2026-10-21/hb1d/medir-b.py",
+      "conhecido_positivo": "contagem na página de antes (dist antigo dizia em preparação)"
+    },
+    {
+      "nome": "en en/studies/a-casa-em-portugal-e-na-europa/document/index.html: JSON-LD",
+      "valor": [],
+      "comando": "python3 design/especime-v3/medicoes/hb1-2026-10-21/hb1d/medir-b.py",
+      "conhecido_positivo": "o JSON-LD do estudo do Orçamento"
+    },
+    {
+      "nome": "en estudo: «The implicit interest rate for September 2026»",
+      "valor": "top ↑ Section 14 of 14 11. The calendar The implicit interest rate for September 2026 and the local prices for Q2 2026, which the INE calendar announced for 21.10.2026 and for 23.10.2026, are already in this edition (the section «What a home costs, and how much it rose» and the section «Credit»). The rental reform goes to the committee stage; the 2027 Budget is voted in its first reading on 27 and 28 October (this project's study «O Orç",
+      "comando": "python3 design/especime-v3/medicoes/hb1-2026-10-21/hb1d/medir-b.py",
+      "conhecido_positivo": "a frase do Banco de Portugal da secção 6"
+    },
+    {
+      "nome": "en estudo: «Lisbon costs 2.2 times the country»",
+      "valor": null,
+      "comando": "python3 design/especime-v3/medicoes/hb1-2026-10-21/hb1d/medir-b.py",
+      "conhecido_positivo": "a frase do Banco de Portugal da secção 6"
+    },
+    {
+      "nome": "en estudo: períodos antigos",
+      "valor": {
+        "Q1 2026": 0,
+        "August 2026": 1
+      },
+      "comando": "python3 design/especime-v3/medicoes/hb1-2026-10-21/hb1d/medir-b.py",
+      "conhecido_positivo": "a frase do Banco de Portugal diz agosto (1)"
+    },
+    {
+      "nome": "páginas que ligam ao estudo (fora das dele e dos recibos)",
+      "valor": {
+        "areas/infraestruturas-e-habitacao/index.html": {
+          "em_preparacao_na_pagina": 0,
+          "junto_do_titulo": "ial, segundo o Método . Áreas de governo Infraestruturas e Habitação Os estudos A casa em Portugal e na Europa As medidas habitação Impacto conjunto das medidas fiscais da habitação −303 milhões de euros em 2027 fonte · calculado População em casa arrendada, União Europeia 31,5 % da população em 202"
+        },
+        "en/housing/index.html": {
+          "em_preparacao_na_pagina": 0,
+          "junto_do_titulo": "ial contributions (disposable income), also after deducting housing allowances? Housing in Portugal and in Europe Housing cost overburden 6,3 % of the population in 2025 source · Eurostat Down from 2024 . Below the European Union average. 2024 : 6,9 European Union : 7,7 Portugal EU average Cyprus 2,"
+        },
+        "en/index/index.html": {
+          "em_preparacao_na_pagina": 0,
+          "junto_do_titulo": "Viseu Vouzela The European Union Portugal in the European Union Studies Studies Housing in Portugal and in Europe 26.10.2026 How is housing in Portugal, and how does it compare with Europe? The 2027 Budget: what changes, and for whom 20.10.2026 What changes with the 2027 Budget, and for whom? The ac"
+        },
+        "en/index.html": {
+          "em_preparacao_na_pagina": 0,
+          "junto_do_titulo": "cause the protocol that divides the money between the parties is not published. Housing in Portugal and in Europe Portugal Housing published on 26.10.2026 Net of inflation, house prices in Portugal have risen since 2015 more than in any other country of the Union; overburdened by housing, more than "
+        },
+        "en/studies/index.html": {
+          "em_preparacao_na_pagina": 0,
+          "junto_do_titulo": "es Text generated by artificial intelligence, according to the Method . Studies Housing in Portugal and in Europe Portugal Housing 26.10.2026 How is housing in Portugal, and how does it compare with Europe? Net of inflation, house prices in Portugal have risen since 2015 more than in any other count"
+        },
+        "estudos/index.html": {
+          "em_preparacao_na_pagina": 0,
+          "junto_do_titulo": " › Estudos Texto gerado por inteligência artificial, segundo o Método . Estudos A casa em Portugal e na Europa Portugal Habitação 26.10.2026 Como está a casa em Portugal, e como se compara com a Europa? Descontada a inflação, os preços das casas em Portugal subiram desde 2015 mais do que em qualquer"
+        },
+        "habitacao/index.html": {
+          "em_preparacao_na_pagina": 0,
+          "junto_do_titulo": "es sociais (o rendimento disponível), também descontados os apoios à habitação? A casa em Portugal e na Europa Sobrecarga do custo da habitação 6,3 % da população em 2025 fonte · Eurostat Desceu face a 2024 . Está abaixo da média da União Europeia. 2024 : 6,9 União Europeia : 7,7 Portugal média da U"
+        },
+        "index.html": {
+          "em_preparacao_na_pagina": 0,
+          "junto_do_titulo": ", porque o protocolo que reparte o dinheiro entre as partes não está publicado. A casa em Portugal e na Europa Portugal Habitação publicado a 26.10.2026 Descontada a inflação, os preços das casas em Portugal subiram desde 2015 mais do que em qualquer outro país da União; 6,3 % fonte · Eurostat da po"
+        },
+        "indice/index.html": {
+          "em_preparacao_na_pagina": 0,
+          "junto_do_titulo": "va Viseu Vouzela A União Europeia Portugal na União Europeia Os estudos Estudos A casa em Portugal e na Europa 26.10.2026 Como está a casa em Portugal, e como se compara com a Europa? O Orçamento de 2027: o que muda e para quem 20.10.2026 O que muda com o Orçamento de 2027, e para quem? As contas da"
+        }
+      },
+      "comando": "python3 design/especime-v3/medicoes/hb1-2026-10-21/hb1d/medir-b.py",
+      "conhecido_positivo": "o arquivo /estudos liga ao estudo do Orçamento"
+    },
+    {
+      "nome": "pt recibo edicoes-publicadas",
+      "valor": {
+        "h1": "Edições publicadas",
+        "presentes": [
+          "Publicado",
+          "publicado",
+          "setembro de 2026",
+          "26.10.2026"
+        ],
+        "valor": " 29 edições · Números e fontes · O Estado do País Saltar para o conteúdo Portugal Lugares Temas Estudos Explicações O qu",
+        "antigos": []
+      },
+      "comando": "python3 design/especime-v3/medicoes/hb1-2026-10-21/hb1d/medir-b.py",
+      "conhecido_positivo": "o recibo de hab-ine-vagos-total diz 723 215"
+    },
+    {
+      "nome": "pt recibo estudos-publicados",
+      "valor": {
+        "h1": "Estudos publicados",
+        "presentes": [
+          "Publicado",
+          "publicado",
+          "setembro de 2026",
+          "26.10.2026"
+        ],
+        "valor": " 19 estudos · Números e fontes · O Estado do País Saltar para o conteúdo Portugal Lugares Temas Estudos Explicações O qu",
+        "antigos": []
+      },
+      "comando": "python3 design/especime-v3/medicoes/hb1-2026-10-21/hb1d/medir-b.py",
+      "conhecido_positivo": "o recibo de hab-ine-vagos-total diz 723 215"
+    },
+    {
+      "nome": "pt recibo hab-ine-preco-mediano",
+      "valor": {
+        "h1": "Preço mediano das vendas em Portugal",
+        "presentes": [
+          "Publicado",
+          "23.10.2026",
+          "2.º trimestre de 2026",
+          "26.10.2026"
+        ],
+        "valor": " 2 445 euros/m2 · Números e fontes · O Estado do País Saltar para o conteúdo Portugal Lugares Temas Estudos Explicações O",
+        "antigos": [
+          "1.º trimestre de 2026"
+        ]
+      },
+      "comando": "python3 design/especime-v3/medicoes/hb1-2026-10-21/hb1d/medir-b.py",
+      "conhecido_positivo": "o recibo de hab-ine-vagos-total diz 723 215"
+    },
+    {
+      "nome": "pt recibo hab-ine-preco-lisboa",
+      "valor": {
+        "h1": "Preço mediano das vendas em Lisboa",
+        "presentes": [
+          "Publicado",
+          "23.10.2026",
+          "2.º trimestre de 2026",
+          "26.10.2026"
+        ],
+        "valor": " 5 299 euros/m2 · Números e fontes · O Estado do País Saltar para o conteúdo Portugal Lugares Temas Estudos Explicações O",
+        "antigos": [
+          "1.º trimestre de 2026"
+        ]
+      },
+      "comando": "python3 design/especime-v3/medicoes/hb1-2026-10-21/hb1d/medir-b.py",
+      "conhecido_positivo": "o recibo de hab-ine-vagos-total diz 723 215"
+    },
+    {
+      "nome": "pt recibo hab-ine-preco-porto",
+      "valor": {
+        "h1": "Preço mediano das vendas no Porto",
+        "presentes": [
+          "Publicado",
+          "23.10.2026",
+          "2.º trimestre de 2026",
+          "26.10.2026"
+        ],
+        "valor": " 3 846 euros/m2 · Números e fontes · O Estado do País Saltar para o conteúdo Portugal Lugares Temas Estudos Explicações O",
+        "antigos": [
+          "1.º trimestre de 2026"
+        ]
+      },
+      "comando": "python3 design/especime-v3/medicoes/hb1-2026-10-21/hb1d/medir-b.py",
+      "conhecido_positivo": "o recibo de hab-ine-vagos-total diz 723 215"
+    },
+    {
+      "nome": "pt recibo hab-ine-juro-implicito",
+      "valor": {
+        "h1": "Taxa de juro implícita no crédito à habitação",
+        "presentes": [
+          "Publicado",
+          "21.10.2026",
+          "setembro de 2026",
+          "26.10.2026"
+        ],
+        "valor": " 3,194 % · Números e fontes · O Estado do País Saltar para o conteúdo Portugal Lugares Temas Estudos Explicações O que se",
+        "antigos": [
+          "agosto de 2026"
+        ]
+      },
+      "comando": "python3 design/especime-v3/medicoes/hb1-2026-10-21/hb1d/medir-b.py",
+      "conhecido_positivo": "o recibo de hab-ine-vagos-total diz 723 215"
+    },
+    {
+      "nome": "pt recibo der-hab-preco-lisboa-vs-portugal",
+      "valor": {
+        "h1": "Preço mediano em Lisboa em relação ao país",
+        "presentes": [
+          "publicado",
+          "2.º trimestre de 2026"
+        ],
+        "valor": " 2,2 vezes · Números e fontes · O Estado do País Saltar para o conteúdo Portugal Lugares Temas Estudos Explicações O que ",
+        "antigos": []
+      },
+      "comando": "python3 design/especime-v3/medicoes/hb1-2026-10-21/hb1d/medir-b.py",
+      "conhecido_positivo": "o recibo de hab-ine-vagos-total diz 723 215"
+    },
+    {
+      "nome": "en recibo edicoes-publicadas",
+      "valor": {
+        "h1": "Published editions",
+        "presentes": [
+          "Published",
+          "published",
+          "September 2026",
+          "26.10.2026"
+        ],
+        "valor": " 29 editions · Numbers and sources · O Estado do País Skip to content Portugal Places Themes Studies Explainers Under di",
+        "antigos": []
+      },
+      "comando": "python3 design/especime-v3/medicoes/hb1-2026-10-21/hb1d/medir-b.py",
+      "conhecido_positivo": "o recibo de hab-ine-vagos-total diz 723 215"
+    },
+    {
+      "nome": "en recibo estudos-publicados",
+      "valor": {
+        "h1": "Published studies",
+        "presentes": [
+          "Published",
+          "published",
+          "September 2026",
+          "26.10.2026"
+        ],
+        "valor": " 19 studies · Numbers and sources · O Estado do País Skip to content Portugal Places Themes Studies Explainers Under dis",
+        "antigos": []
+      },
+      "comando": "python3 design/especime-v3/medicoes/hb1-2026-10-21/hb1d/medir-b.py",
+      "conhecido_positivo": "o recibo de hab-ine-vagos-total diz 723 215"
+    },
+    {
+      "nome": "en recibo hab-ine-preco-mediano",
+      "valor": {
+        "h1": "Median sale price in Portugal",
+        "presentes": [
+          "Published",
+          "23.10.2026",
+          "2nd quarter of 2026",
+          "26.10.2026"
+        ],
+        "valor": null,
+        "antigos": [
+          "1.º trimestre de 2026"
+        ]
+      },
+      "comando": "python3 design/especime-v3/medicoes/hb1-2026-10-21/hb1d/medir-b.py",
+      "conhecido_positivo": "o recibo de hab-ine-vagos-total diz 723 215"
+    },
+    {
+      "nome": "en recibo hab-ine-preco-lisboa",
+      "valor": {
+        "h1": "Median sale price in Lisbon",
+        "presentes": [
+          "Published",
+          "23.10.2026",
+          "2nd quarter of 2026",
+          "26.10.2026"
+        ],
+        "valor": null,
+        "antigos": [
+          "1.º trimestre de 2026"
+        ]
+      },
+      "comando": "python3 design/especime-v3/medicoes/hb1-2026-10-21/hb1d/medir-b.py",
+      "conhecido_positivo": "o recibo de hab-ine-vagos-total diz 723 215"
+    },
+    {
+      "nome": "en recibo hab-ine-preco-porto",
+      "valor": {
+        "h1": "Median sale price in Porto",
+        "presentes": [
+          "Published",
+          "23.10.2026",
+          "2nd quarter of 2026",
+          "26.10.2026"
+        ],
+        "valor": null,
+        "antigos": [
+          "1.º trimestre de 2026"
+        ]
+      },
+      "comando": "python3 design/especime-v3/medicoes/hb1-2026-10-21/hb1d/medir-b.py",
+      "conhecido_positivo": "o recibo de hab-ine-vagos-total diz 723 215"
+    },
+    {
+      "nome": "en recibo hab-ine-juro-implicito",
+      "valor": {
+        "h1": "Implicit interest rate on housing loans",
+        "presentes": [
+          "Published",
+          "21.10.2026",
+          "September 2026",
+          "26.10.2026"
+        ],
+        "valor": null,
+        "antigos": [
+          "agosto de 2026"
+        ]
+      },
+      "comando": "python3 design/especime-v3/medicoes/hb1-2026-10-21/hb1d/medir-b.py",
+      "conhecido_positivo": "o recibo de hab-ine-vagos-total diz 723 215"
+    },
+    {
+      "nome": "en recibo der-hab-preco-lisboa-vs-portugal",
+      "valor": {
+        "h1": "Median price in Lisbon relative to the country",
+        "presentes": [
+          "published",
+          "2nd quarter of 2026"
+        ],
+        "valor": "re; INE), rounded to one decimal place: 2.2. Re-evaluated at every build round ( hab-ine-preco-lisboa / hab-ine-preco-mediano , 1 ) The same sum as an expressio",
+        "antigos": []
+      },
+      "comando": "python3 design/especime-v3/medicoes/hb1-2026-10-21/hb1d/medir-b.py",
+      "conhecido_positivo": "o recibo de hab-ine-vagos-total diz 723 215"
+    },
+    {
+      "nome": "pt index.html: a abertura do estudo",
+      "valor": "Descontada a inflação, os preços das casas em Portugal subiram desde 2015 mais do que em qualquer outro país da União; 6,3 % fonte · Eurostat da população gasta na casa mais de quarenta por cento do rendimento, contra 7,7 % fonte · Eurostat na União, e o peso cai sobre quem arrenda a preços de mercado, 27,2 % fonte · Eurostat dos quais estão em sobrecarga, e sobre os jovens, que saem de casa dos pais aos 28,8 fonte · Eurostat anos.",
+      "comando": "python3 design/especime-v3/medicoes/hb1-2026-10-21/hb1d/medir-b.py",
+      "conhecido_positivo": "a página da área imprime a mesma frase"
+    },
+    {
+      "nome": "pt index.html: «média europeia»/«European average»",
+      "valor": 0,
+      "comando": "python3 design/especime-v3/medicoes/hb1-2026-10-21/hb1d/medir-b.py",
+      "conhecido_positivo": "a página da área /habitacao diz «Está abaixo da média» (outra frase)"
+    },
+    {
+      "nome": "en en/index.html: a abertura do estudo",
+      "valor": "Net of inflation, house prices in Portugal have risen since 2015 more than in any other country of the Union; overburdened by housing, more than forty percent of income, is 6,3 % source · Eurostat of the population, against 7,7 % source · Eurostat in the Union, and the weight falls on those renting at market prices, 27,2 % source · Eurostat of whom are overburdened, and on the young, who leave their parents' home at 28,8 source · Eurostat years.",
+      "comando": "python3 design/especime-v3/medicoes/hb1-2026-10-21/hb1d/medir-b.py",
+      "conhecido_positivo": "a página da área imprime a mesma frase"
+    },
+    {
+      "nome": "en en/index.html: «média europeia»/«European average»",
+      "valor": 0,
+      "comando": "python3 design/especime-v3/medicoes/hb1-2026-10-21/hb1d/medir-b.py",
+      "conhecido_positivo": "a página da área /habitacao diz «Está abaixo da média» (outra frase)"
+    }
+  ]
+}

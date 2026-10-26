@@ -1,0 +1,19 @@
+{
+  "cabeca": "7cc3543914edd0e9172f6409b12298e02bdd2a64",
+  "edicoes": [
+    {
+      "route": "estudos/a-casa-em-portugal-e-na-europa",
+      "text": "Edição em preparação",
+      "dateElements": 0,
+      "creativeWorkStatus": "Draft",
+      "datePublished": null
+    },
+    {
+      "route": "en/studies/a-casa-em-portugal-e-na-europa",
+      "text": "Edition in preparation",
+      "dateElements": 0,
+      "creativeWorkStatus": "Draft",
+      "datePublished": null
+    }
+  ]
+}

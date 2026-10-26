@@ -1,0 +1,739 @@
+{
+  "codigo": 0,
+  "cabeca": "3474743dc3d1b3241a584c58141f3fa53f5bc08e",
+  "capturas_completas": 20,
+  "png": 120,
+  "recursos": 16,
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "transbordos": 0,
+  "pedidos_externos": 0,
+  "erros_navegador": 0,
+  "ficheiros": [
+    {
+      "ficheiro": "estudo-pt-390.png",
+      "largura": 390,
+      "altura": 26611,
+      "sha256": "3080e3f5072f4b5c10ff2689f8c5bf2c280542f199dbe5aacad43c97a07b79f1"
+    },
+    {
+      "ficheiro": "estudo-pt-390-titulo.png",
+      "largura": 334,
+      "altura": 61,
+      "sha256": "3a9b5b6d9f948788f48bc84afa922e9227ec69ecb031535051c4f5fbdde012ca"
+    },
+    {
+      "ficheiro": "estudo-pt-390-resumo.png",
+      "largura": 354,
+      "altura": 701,
+      "sha256": "629b7c70445c60f8db2e3ac84414ee07ff6ebfe40afa5f261d44cb49e2022909"
+    },
+    {
+      "ficheiro": "estudo-pt-390-precos-locais.png",
+      "largura": 354,
+      "altura": 421,
+      "sha256": "083154057b7c2af8798b03dc36553d34bc882ae3d2e8556fa0f79a54f423cc89"
+    },
+    {
+      "ficheiro": "estudo-pt-390-lei.png",
+      "largura": 354,
+      "altura": 729,
+      "sha256": "d108e007c3d740dc2a70694ae8e07af7ce5896c6305a200c5032b39e21899db7"
+    },
+    {
+      "ficheiro": "estudo-pt-390-rua.png",
+      "largura": 354,
+      "altura": 1877,
+      "sha256": "a4b73273c1170ce338a88f6529272b479cfa25414663d375541a1ad0cecb8575"
+    },
+    {
+      "ficheiro": "estudo-pt-768.png",
+      "largura": 768,
+      "altura": 21488,
+      "sha256": "3b0f211179c739feca3c13bc90db8b7991c38cdb798b189567082f72009b91b6"
+    },
+    {
+      "ficheiro": "estudo-pt-768-titulo.png",
+      "largura": 380,
+      "altura": 70,
+      "sha256": "7824b0152fb3a42533db29935f18acd38168bdc621c076deb933ef86e11d6f70"
+    },
+    {
+      "ficheiro": "estudo-pt-768-resumo.png",
+      "largura": 545,
+      "altura": 530,
+      "sha256": "dcdc63487164bd7a55cd3bd6844c8cdfe8b6b9dad765bef20e7996d780080ade"
+    },
+    {
+      "ficheiro": "estudo-pt-768-precos-locais.png",
+      "largura": 545,
+      "altura": 344,
+      "sha256": "e0e48a652e43b93df9b6623d1547d378bd353e62931d8307e97a686856165f10"
+    },
+    {
+      "ficheiro": "estudo-pt-768-lei.png",
+      "largura": 545,
+      "altura": 548,
+      "sha256": "9dde2ff630bd668750e1f510891c4318f85f8ada92c9f2867b372055158deb70"
+    },
+    {
+      "ficheiro": "estudo-pt-768-rua.png",
+      "largura": 545,
+      "altura": 1399,
+      "sha256": "311dfe068ba9aced0a8b05830f6c08c4feb08c63eafda3d3fc253e3724f200b1"
+    },
+    {
+      "ficheiro": "estudo-pt-1024.png",
+      "largura": 1024,
+      "altura": 20730,
+      "sha256": "9399f11ae46164d5f4c6654724449966d4986c73b92f20d4a8c3a76f956aecc2"
+    },
+    {
+      "ficheiro": "estudo-pt-1024-titulo.png",
+      "largura": 495,
+      "altura": 91,
+      "sha256": "d1d86786fb3c6c3b3bc15dfef16a8a9bb3780d886fb37de832a17acec7611b5a"
+    },
+    {
+      "ficheiro": "estudo-pt-1024-resumo.png",
+      "largura": 545,
+      "altura": 530,
+      "sha256": "ea9e454a36c8fcba53d55f004d90e8006b3bac55916ca0228d7bbfa2d9046a33"
+    },
+    {
+      "ficheiro": "estudo-pt-1024-precos-locais.png",
+      "largura": 545,
+      "altura": 344,
+      "sha256": "06856ca075ce6a89279e3e0384a5da42ee16e8f2114ef05bb3ef676fbf3684e3"
+    },
+    {
+      "ficheiro": "estudo-pt-1024-lei.png",
+      "largura": 545,
+      "altura": 548,
+      "sha256": "8cde13a0d8c12de808faba2cfd62445f2bc377e03e6a06260628d445bea5c06d"
+    },
+    {
+      "ficheiro": "estudo-pt-1024-rua.png",
+      "largura": 545,
+      "altura": 1399,
+      "sha256": "53dcb1e1b1a6674f88b92300e65667b72a029054188636ffcc53649d6de3078f"
+    },
+    {
+      "ficheiro": "estudo-pt-1280.png",
+      "largura": 1280,
+      "altura": 20868,
+      "sha256": "8e502e472e9c7891ef9aeb169051d4957649a1b067b8780c84d06710927891ba"
+    },
+    {
+      "ficheiro": "estudo-pt-1280-titulo.png",
+      "largura": 494,
+      "altura": 90,
+      "sha256": "fde073f5b56cd5be9d6408280344474f04b2b9cf800b84614cd68db8d8293898"
+    },
+    {
+      "ficheiro": "estudo-pt-1280-resumo.png",
+      "largura": 544,
+      "altura": 530,
+      "sha256": "c863cc49d7da4217f7a5c477488611c32d99cf71d826dcc8bbccb1938d9be097"
+    },
+    {
+      "ficheiro": "estudo-pt-1280-precos-locais.png",
+      "largura": 544,
+      "altura": 344,
+      "sha256": "3be72b1cc01640a97cb95739bdc2d0f410b9629e9f2b0bba8d0fa7e5c8a8779d"
+    },
+    {
+      "ficheiro": "estudo-pt-1280-lei.png",
+      "largura": 544,
+      "altura": 548,
+      "sha256": "c9b702ec7f513517a01792878696ff6817566458494bff8b3201f917db4a448a"
+    },
+    {
+      "ficheiro": "estudo-pt-1280-rua.png",
+      "largura": 544,
+      "altura": 1399,
+      "sha256": "b7930ebd6242e083d8bdc920718cc3319bd0ae9e51afe51c88fcd0f9a655f976"
+    },
+    {
+      "ficheiro": "estudo-pt-1600.png",
+      "largura": 1600,
+      "altura": 20875,
+      "sha256": "7e74ca59d93e5584648da35cb6a7537fe9dfabb9d8a03720bc07b519a5e6f42a"
+    },
+    {
+      "ficheiro": "estudo-pt-1600-titulo.png",
+      "largura": 494,
+      "altura": 90,
+      "sha256": "fde073f5b56cd5be9d6408280344474f04b2b9cf800b84614cd68db8d8293898"
+    },
+    {
+      "ficheiro": "estudo-pt-1600-resumo.png",
+      "largura": 544,
+      "altura": 530,
+      "sha256": "c863cc49d7da4217f7a5c477488611c32d99cf71d826dcc8bbccb1938d9be097"
+    },
+    {
+      "ficheiro": "estudo-pt-1600-precos-locais.png",
+      "largura": 544,
+      "altura": 344,
+      "sha256": "3be72b1cc01640a97cb95739bdc2d0f410b9629e9f2b0bba8d0fa7e5c8a8779d"
+    },
+    {
+      "ficheiro": "estudo-pt-1600-lei.png",
+      "largura": 544,
+      "altura": 548,
+      "sha256": "c9b702ec7f513517a01792878696ff6817566458494bff8b3201f917db4a448a"
+    },
+    {
+      "ficheiro": "estudo-pt-1600-rua.png",
+      "largura": 544,
+      "altura": 1399,
+      "sha256": "b7930ebd6242e083d8bdc920718cc3319bd0ae9e51afe51c88fcd0f9a655f976"
+    },
+    {
+      "ficheiro": "estudo-en-390.png",
+      "largura": 390,
+      "altura": 26909,
+      "sha256": "5dc4006a7c7ca6adc8110810c9390a283d9f87668789a8060d8d556dc6b1b5b9"
+    },
+    {
+      "ficheiro": "estudo-en-390-titulo.png",
+      "largura": 334,
+      "altura": 61,
+      "sha256": "7630a7eecf6f174a93689241b5a4d6f691dd4acf00c09006df22cd834a5450bc"
+    },
+    {
+      "ficheiro": "estudo-en-390-resumo.png",
+      "largura": 354,
+      "altura": 673,
+      "sha256": "8c9ef78d105d62c1e75d8e4f11ecb6bae2fddc8e6950e1c60fd9efbcb1256c0f"
+    },
+    {
+      "ficheiro": "estudo-en-390-precos-locais.png",
+      "largura": 354,
+      "altura": 421,
+      "sha256": "5b875b39ccaf924b3ffc91c19469e37263f1544559b45125aef73b9c1ca35e38"
+    },
+    {
+      "ficheiro": "estudo-en-390-lei.png",
+      "largura": 354,
+      "altura": 757,
+      "sha256": "014e4daddb07d6fc93403e82d30449b978f0a274d7053710859838f884ce0850"
+    },
+    {
+      "ficheiro": "estudo-en-390-rua.png",
+      "largura": 354,
+      "altura": 1961,
+      "sha256": "2750dc4517b8a1d0074076a546f1e9ec54a1a8daa500f7e0811f4979cc10fa54"
+    },
+    {
+      "ficheiro": "estudo-en-768.png",
+      "largura": 768,
+      "altura": 21700,
+      "sha256": "22638df882c1329fd8b49ffda3292a04c4d7b438356427ed2ca71f5aade11d40"
+    },
+    {
+      "ficheiro": "estudo-en-768-titulo.png",
+      "largura": 380,
+      "altura": 70,
+      "sha256": "21c4a86882f7ce09d7bb92eeaf69eced2cc7b86029d86de65a593e64710b94d7"
+    },
+    {
+      "ficheiro": "estudo-en-768-resumo.png",
+      "largura": 545,
+      "altura": 498,
+      "sha256": "98503ba0512a2dba316af14929ccdca6d3e5ba9c505d8982cdcf29bd3e1b6384"
+    },
+    {
+      "ficheiro": "estudo-en-768-precos-locais.png",
+      "largura": 545,
+      "altura": 345,
+      "sha256": "1f15cdfb895add9aea4c3da059c563be1f58dcaf9acfbb76600624568c62936e"
+    },
+    {
+      "ficheiro": "estudo-en-768-lei.png",
+      "largura": 545,
+      "altura": 548,
+      "sha256": "22e625a66b72b7960d78549269ea5c0840433ff31e06f3a63dda5daf0abd48a5"
+    },
+    {
+      "ficheiro": "estudo-en-768-rua.png",
+      "largura": 545,
+      "altura": 1459,
+      "sha256": "aabab6d8ae9a04f2fec6adb9ae7312ce58b709e4d3f3e8abdc8619dbe09e5d2c"
+    },
+    {
+      "ficheiro": "estudo-en-1024.png",
+      "largura": 1024,
+      "altura": 20942,
+      "sha256": "d279c231d1209cb0b8b17e1bafcea37f94f43e3462472bf0e85e3d7015d25ba9"
+    },
+    {
+      "ficheiro": "estudo-en-1024-titulo.png",
+      "largura": 495,
+      "altura": 91,
+      "sha256": "e6a8a26d093472733527a8eda43673c8196daa36a1a841b06af0668030fc42f3"
+    },
+    {
+      "ficheiro": "estudo-en-1024-resumo.png",
+      "largura": 545,
+      "altura": 498,
+      "sha256": "1a68de07ed76d2b77d2ae309217d5fb0a1c258db52d9029331ab12d7f86f2ee6"
+    },
+    {
+      "ficheiro": "estudo-en-1024-precos-locais.png",
+      "largura": 545,
+      "altura": 344,
+      "sha256": "461f1941953ccd47d0903a9f8dc6fc495cf65533e1f60fe771f890ecdc8a6175"
+    },
+    {
+      "ficheiro": "estudo-en-1024-lei.png",
+      "largura": 545,
+      "altura": 548,
+      "sha256": "b9fd2840a41c8a345a7ddb72528bb2f63449dfa94e010cb0c96689b31944f83b"
+    },
+    {
+      "ficheiro": "estudo-en-1024-rua.png",
+      "largura": 545,
+      "altura": 1460,
+      "sha256": "e6281bb5bdf0417ea311802293cae447ceecd004797b050eaa504997d7f7902e"
+    },
+    {
+      "ficheiro": "estudo-en-1280.png",
+      "largura": 1280,
+      "altura": 21080,
+      "sha256": "083558e861c587fa1061f615d2106e515502b111212ddecb4037f0b56c722d0d"
+    },
+    {
+      "ficheiro": "estudo-en-1280-titulo.png",
+      "largura": 494,
+      "altura": 90,
+      "sha256": "8acb10255a5218f9633443faa896e04d5008bb03023690c7d00fe9aac251e4f5"
+    },
+    {
+      "ficheiro": "estudo-en-1280-resumo.png",
+      "largura": 544,
+      "altura": 498,
+      "sha256": "e24fb93e95a9898c96a2e056514f112fc9ec201ae17ce6785d635f3a6e3770c7"
+    },
+    {
+      "ficheiro": "estudo-en-1280-precos-locais.png",
+      "largura": 544,
+      "altura": 344,
+      "sha256": "d2fd5f47effcf552033ed6542a4b0bcfbab28539a656d51f66c40cb02ce7aeb8"
+    },
+    {
+      "ficheiro": "estudo-en-1280-lei.png",
+      "largura": 544,
+      "altura": 549,
+      "sha256": "0afd5c18f18beadd1cf3f1fb0ad29e731bc7f55c682841ff3b38c253de4659c3"
+    },
+    {
+      "ficheiro": "estudo-en-1280-rua.png",
+      "largura": 544,
+      "altura": 1460,
+      "sha256": "ea7e12e5d7998ad253bff45f508cb8c8997d14c38b7d0e614c45d4d1d6dd38a7"
+    },
+    {
+      "ficheiro": "estudo-en-1600.png",
+      "largura": 1600,
+      "altura": 21086,
+      "sha256": "88ec18747f08d75409490ccc25ad32e92ff23de89c47a1b1590a7f755eb2deab"
+    },
+    {
+      "ficheiro": "estudo-en-1600-titulo.png",
+      "largura": 494,
+      "altura": 90,
+      "sha256": "8acb10255a5218f9633443faa896e04d5008bb03023690c7d00fe9aac251e4f5"
+    },
+    {
+      "ficheiro": "estudo-en-1600-resumo.png",
+      "largura": 544,
+      "altura": 498,
+      "sha256": "e24fb93e95a9898c96a2e056514f112fc9ec201ae17ce6785d635f3a6e3770c7"
+    },
+    {
+      "ficheiro": "estudo-en-1600-precos-locais.png",
+      "largura": 544,
+      "altura": 344,
+      "sha256": "d2fd5f47effcf552033ed6542a4b0bcfbab28539a656d51f66c40cb02ce7aeb8"
+    },
+    {
+      "ficheiro": "estudo-en-1600-lei.png",
+      "largura": 544,
+      "altura": 549,
+      "sha256": "0afd5c18f18beadd1cf3f1fb0ad29e731bc7f55c682841ff3b38c253de4659c3"
+    },
+    {
+      "ficheiro": "estudo-en-1600-rua.png",
+      "largura": 544,
+      "altura": 1460,
+      "sha256": "ea7e12e5d7998ad253bff45f508cb8c8997d14c38b7d0e614c45d4d1d6dd38a7"
+    },
+    {
+      "ficheiro": "documento-pt-390.png",
+      "largura": 390,
+      "altura": 19399,
+      "sha256": "b9b0314e35647c8d84946d83be1b4536416e19a1e43dc6f4bbba623060180378"
+    },
+    {
+      "ficheiro": "documento-pt-390-titulo.png",
+      "largura": 350,
+      "altura": 77,
+      "sha256": "5b6784bfb56a74521544da99a32402a621dc9024301a49214ab062f6e257a743"
+    },
+    {
+      "ficheiro": "documento-pt-390-resumo.png",
+      "largura": 350,
+      "altura": 519,
+      "sha256": "51cef4775e58ca65062264439886bd33dd2bd09d0806dae0faf23420c7d2f4e4"
+    },
+    {
+      "ficheiro": "documento-pt-390-precos-locais.png",
+      "largura": 350,
+      "altura": 312,
+      "sha256": "ade1c9bda720971afb4ac0cc01f10480ff2969c063e0f40ac4b05fc37285b097"
+    },
+    {
+      "ficheiro": "documento-pt-390-lei.png",
+      "largura": 350,
+      "altura": 623,
+      "sha256": "3ef606c351bd80d3c92f1704bfd36c7a82ae3cd5ce4c66de0498790e4ef70025"
+    },
+    {
+      "ficheiro": "documento-pt-390-rua.png",
+      "largura": 350,
+      "altura": 1607,
+      "sha256": "2e9340206ec15b6b2a3a0ba28aa87a4bd68e0af74c2a38d77ad556c938019c64"
+    },
+    {
+      "ficheiro": "documento-pt-768.png",
+      "largura": 768,
+      "altura": 10140,
+      "sha256": "42058d0925e76f59e7868f9d5d00767241836105bc89d7b5ce9046d937be4e26"
+    },
+    {
+      "ficheiro": "documento-pt-768-titulo.png",
+      "largura": 728,
+      "altura": 38,
+      "sha256": "184a4a781ff44d38c3041cfe5dd2b1051a54df3d82f79be1b028500778b5a252"
+    },
+    {
+      "ficheiro": "documento-pt-768-resumo.png",
+      "largura": 728,
+      "altura": 260,
+      "sha256": "1f802de8c64792e8fa797fd3d00ef542097ce8dd16de200cd18a278f513f203d"
+    },
+    {
+      "ficheiro": "documento-pt-768-precos-locais.png",
+      "largura": 728,
+      "altura": 156,
+      "sha256": "bacfa118185d2b596ca0a4cd2447498a02fd583590fc5162ab1450fd391fb24f"
+    },
+    {
+      "ficheiro": "documento-pt-768-lei.png",
+      "largura": 728,
+      "altura": 286,
+      "sha256": "7110e21fbd758b09aed65c20d32e9e96f9d1fe5dbd6ae3d84e8a4598108d2219"
+    },
+    {
+      "ficheiro": "documento-pt-768-rua.png",
+      "largura": 728,
+      "altura": 753,
+      "sha256": "1466a80a7c590d953ece200eead79d97b2f6dd87a7fb8a56ad87b341393939b0"
+    },
+    {
+      "ficheiro": "documento-pt-1024.png",
+      "largura": 1024,
+      "altura": 8844,
+      "sha256": "81169776cb1535a81c000f97ac5a52cf04575a207ec1f1a37f21a74002234386"
+    },
+    {
+      "ficheiro": "documento-pt-1024-titulo.png",
+      "largura": 864,
+      "altura": 39,
+      "sha256": "d54c75dd193b628b97b02e72fba942f03043566f56299a864f25347234e6a5fd"
+    },
+    {
+      "ficheiro": "documento-pt-1024-resumo.png",
+      "largura": 864,
+      "altura": 208,
+      "sha256": "d1ceba91266bf459fc48c81e6698aed6aba28bdc334dc43035cf3643fc8deee6"
+    },
+    {
+      "ficheiro": "documento-pt-1024-precos-locais.png",
+      "largura": 864,
+      "altura": 131,
+      "sha256": "6eb9b2f9b1792496806c031cc4f693d1994e83d7b0f8d7bb787b0dd65cefd997"
+    },
+    {
+      "ficheiro": "documento-pt-1024-lei.png",
+      "largura": 864,
+      "altura": 261,
+      "sha256": "c79af653f4d81e240748d6796c4e5699debfaccc1cc6314eec547f97deb9a50c"
+    },
+    {
+      "ficheiro": "documento-pt-1024-rua.png",
+      "largura": 864,
+      "altura": 623,
+      "sha256": "c3e524dc7cd4255ae15a012d0e66246c42055bfa5ba909efa015b8d3424b9238"
+    },
+    {
+      "ficheiro": "documento-pt-1280.png",
+      "largura": 1280,
+      "altura": 8844,
+      "sha256": "7f8454d7eea0c3949361acde83cf42c893955de0358dec2a96bbce8020389f8a"
+    },
+    {
+      "ficheiro": "documento-pt-1280-titulo.png",
+      "largura": 864,
+      "altura": 39,
+      "sha256": "d54c75dd193b628b97b02e72fba942f03043566f56299a864f25347234e6a5fd"
+    },
+    {
+      "ficheiro": "documento-pt-1280-resumo.png",
+      "largura": 864,
+      "altura": 208,
+      "sha256": "d1ceba91266bf459fc48c81e6698aed6aba28bdc334dc43035cf3643fc8deee6"
+    },
+    {
+      "ficheiro": "documento-pt-1280-precos-locais.png",
+      "largura": 864,
+      "altura": 131,
+      "sha256": "6eb9b2f9b1792496806c031cc4f693d1994e83d7b0f8d7bb787b0dd65cefd997"
+    },
+    {
+      "ficheiro": "documento-pt-1280-lei.png",
+      "largura": 864,
+      "altura": 261,
+      "sha256": "c79af653f4d81e240748d6796c4e5699debfaccc1cc6314eec547f97deb9a50c"
+    },
+    {
+      "ficheiro": "documento-pt-1280-rua.png",
+      "largura": 864,
+      "altura": 623,
+      "sha256": "c3e524dc7cd4255ae15a012d0e66246c42055bfa5ba909efa015b8d3424b9238"
+    },
+    {
+      "ficheiro": "documento-pt-1600.png",
+      "largura": 1600,
+      "altura": 8844,
+      "sha256": "0c67ccab44581b7176f315af3f13fcc31d4902374fbb360ca57ea0a6ab031331"
+    },
+    {
+      "ficheiro": "documento-pt-1600-titulo.png",
+      "largura": 864,
+      "altura": 39,
+      "sha256": "d54c75dd193b628b97b02e72fba942f03043566f56299a864f25347234e6a5fd"
+    },
+    {
+      "ficheiro": "documento-pt-1600-resumo.png",
+      "largura": 864,
+      "altura": 208,
+      "sha256": "d1ceba91266bf459fc48c81e6698aed6aba28bdc334dc43035cf3643fc8deee6"
+    },
+    {
+      "ficheiro": "documento-pt-1600-precos-locais.png",
+      "largura": 864,
+      "altura": 131,
+      "sha256": "6eb9b2f9b1792496806c031cc4f693d1994e83d7b0f8d7bb787b0dd65cefd997"
+    },
+    {
+      "ficheiro": "documento-pt-1600-lei.png",
+      "largura": 864,
+      "altura": 261,
+      "sha256": "c79af653f4d81e240748d6796c4e5699debfaccc1cc6314eec547f97deb9a50c"
+    },
+    {
+      "ficheiro": "documento-pt-1600-rua.png",
+      "largura": 864,
+      "altura": 623,
+      "sha256": "c3e524dc7cd4255ae15a012d0e66246c42055bfa5ba909efa015b8d3424b9238"
+    },
+    {
+      "ficheiro": "documento-en-390.png",
+      "largura": 390,
+      "altura": 19276,
+      "sha256": "93666a6213b9f821ab18e67af4c2f66e44c69c0ea3aebd0813c79ffd3b55acae"
+    },
+    {
+      "ficheiro": "documento-en-390-titulo.png",
+      "largura": 350,
+      "altura": 77,
+      "sha256": "59ea3248e7f0839d68e23ecce0ca1cf8829e87ed327cd8d2339b3fe345e3a75b"
+    },
+    {
+      "ficheiro": "documento-en-390-resumo.png",
+      "largura": 350,
+      "altura": 493,
+      "sha256": "709184947bb402316d332f5b250932cdee2f280c75a259a2c94c917922fcc5f4"
+    },
+    {
+      "ficheiro": "documento-en-390-precos-locais.png",
+      "largura": 350,
+      "altura": 312,
+      "sha256": "e76cb57210c5ece89a2fdba1feb2ab332280cb4fcecb9fdd98d83229c5f8faeb"
+    },
+    {
+      "ficheiro": "documento-en-390-lei.png",
+      "largura": 350,
+      "altura": 623,
+      "sha256": "1ab34a20c2a4082e7a5de7cf3c1408f063768b802c8534b446085627ad64495a"
+    },
+    {
+      "ficheiro": "documento-en-390-rua.png",
+      "largura": 350,
+      "altura": 1685,
+      "sha256": "bcfa912385e840a20322272ded4034ee235e37ac46684f684471a1c4acfa7f0f"
+    },
+    {
+      "ficheiro": "documento-en-768.png",
+      "largura": 768,
+      "altura": 10140,
+      "sha256": "c7ac6a8ca3a288a156dc7985726bb8813b9df275d7e4e70d83e749071865a17e"
+    },
+    {
+      "ficheiro": "documento-en-768-titulo.png",
+      "largura": 728,
+      "altura": 38,
+      "sha256": "7a8947e1ba426dd0e0b699954f18775f6e1c4e64708fc566cb151f33c9d7eba6"
+    },
+    {
+      "ficheiro": "documento-en-768-resumo.png",
+      "largura": 728,
+      "altura": 234,
+      "sha256": "825b27111a3612048ac686e404656ee406b07da908cb742769d5973829081cbb"
+    },
+    {
+      "ficheiro": "documento-en-768-precos-locais.png",
+      "largura": 728,
+      "altura": 157,
+      "sha256": "799ad1e768bbd4e9380cebba830a877fe8bab13a8e79fb06867a1e2ef05c70c5"
+    },
+    {
+      "ficheiro": "documento-en-768-lei.png",
+      "largura": 728,
+      "altura": 312,
+      "sha256": "60281e0c24d865d39108cf64fd067b1a132ae95188fd649db8802dfcef2c8ca2"
+    },
+    {
+      "ficheiro": "documento-en-768-rua.png",
+      "largura": 728,
+      "altura": 778,
+      "sha256": "cd09022f6eb2505bd7e6ac93d64f7a24a56566679dc8b8f7d7be91f4ee92f445"
+    },
+    {
+      "ficheiro": "documento-en-1024.png",
+      "largura": 1024,
+      "altura": 8870,
+      "sha256": "b770ad7bf527fc4db3b661a1210e49b7016162ec955e3814630b9791e0995912"
+    },
+    {
+      "ficheiro": "documento-en-1024-titulo.png",
+      "largura": 864,
+      "altura": 39,
+      "sha256": "e85d44e2ca36430f0de08067fa7ec886792d4d9eb18e5fbcd5051cae464f8885"
+    },
+    {
+      "ficheiro": "documento-en-1024-resumo.png",
+      "largura": 864,
+      "altura": 208,
+      "sha256": "b659807e64641888fbf58afc6a065fe523a219ed9287404983a0d8f9412c9d32"
+    },
+    {
+      "ficheiro": "documento-en-1024-precos-locais.png",
+      "largura": 864,
+      "altura": 131,
+      "sha256": "dac75d1e48c72a287f2a3b5b062b127f2ebc1f3de530bce66ce0a3671b40cd32"
+    },
+    {
+      "ficheiro": "documento-en-1024-lei.png",
+      "largura": 864,
+      "altura": 260,
+      "sha256": "1856e0a4805f29ffdf734990943bcd9235855c4813047a9fc2e5f07ff52ea1df"
+    },
+    {
+      "ficheiro": "documento-en-1024-rua.png",
+      "largura": 864,
+      "altura": 649,
+      "sha256": "1e77f3bcb4efb14427e15d57a0330794bc60b7db18f887c87706d76798554575"
+    },
+    {
+      "ficheiro": "documento-en-1280.png",
+      "largura": 1280,
+      "altura": 8870,
+      "sha256": "20f408d9dfd9ddb4069f8f8745a3dbb8046b0a08dcb7cca0e8bad844f1f2e984"
+    },
+    {
+      "ficheiro": "documento-en-1280-titulo.png",
+      "largura": 864,
+      "altura": 39,
+      "sha256": "e85d44e2ca36430f0de08067fa7ec886792d4d9eb18e5fbcd5051cae464f8885"
+    },
+    {
+      "ficheiro": "documento-en-1280-resumo.png",
+      "largura": 864,
+      "altura": 208,
+      "sha256": "b659807e64641888fbf58afc6a065fe523a219ed9287404983a0d8f9412c9d32"
+    },
+    {
+      "ficheiro": "documento-en-1280-precos-locais.png",
+      "largura": 864,
+      "altura": 131,
+      "sha256": "dac75d1e48c72a287f2a3b5b062b127f2ebc1f3de530bce66ce0a3671b40cd32"
+    },
+    {
+      "ficheiro": "documento-en-1280-lei.png",
+      "largura": 864,
+      "altura": 260,
+      "sha256": "1856e0a4805f29ffdf734990943bcd9235855c4813047a9fc2e5f07ff52ea1df"
+    },
+    {
+      "ficheiro": "documento-en-1280-rua.png",
+      "largura": 864,
+      "altura": 649,
+      "sha256": "1e77f3bcb4efb14427e15d57a0330794bc60b7db18f887c87706d76798554575"
+    },
+    {
+      "ficheiro": "documento-en-1600.png",
+      "largura": 1600,
+      "altura": 8870,
+      "sha256": "40af652608bec5154fb83e01c71d1821a5eae524fcdcdd827dfdd8b59f8259f0"
+    },
+    {
+      "ficheiro": "documento-en-1600-titulo.png",
+      "largura": 864,
+      "altura": 39,
+      "sha256": "e85d44e2ca36430f0de08067fa7ec886792d4d9eb18e5fbcd5051cae464f8885"
+    },
+    {
+      "ficheiro": "documento-en-1600-resumo.png",
+      "largura": 864,
+      "altura": 208,
+      "sha256": "b659807e64641888fbf58afc6a065fe523a219ed9287404983a0d8f9412c9d32"
+    },
+    {
+      "ficheiro": "documento-en-1600-precos-locais.png",
+      "largura": 864,
+      "altura": 131,
+      "sha256": "dac75d1e48c72a287f2a3b5b062b127f2ebc1f3de530bce66ce0a3671b40cd32"
+    },
+    {
+      "ficheiro": "documento-en-1600-lei.png",
+      "largura": 864,
+      "altura": 260,
+      "sha256": "1856e0a4805f29ffdf734990943bcd9235855c4813047a9fc2e5f07ff52ea1df"
+    },
+    {
+      "ficheiro": "documento-en-1600-rua.png",
+      "largura": 864,
+      "altura": 649,
+      "sha256": "1e77f3bcb4efb14427e15d57a0330794bc60b7db18f887c87706d76798554575"
+    }
+  ]
+}

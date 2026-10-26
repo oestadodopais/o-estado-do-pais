@@ -1,0 +1,114 @@
+{
+  "codigo": 0,
+  "sha256_teste": "7c717a67c17ef81a9ded80df8dd583099dd550d72752aa8e983f4e5685cf2d78",
+  "resultados": [
+    {
+      "planta": "controlo",
+      "lingua": "pt",
+      "linha": "hab-ine-calendario-juro",
+      "valor_original": "21/10/2026",
+      "valor_plantado": "21.10.2026",
+      "codigo": 0,
+      "esperado": 0
+    },
+    {
+      "planta": "dia",
+      "lingua": "pt",
+      "linha": "hab-ine-calendario-juro",
+      "valor_original": "21/10/2026",
+      "valor_plantado": "22.10.2026",
+      "codigo": 1,
+      "esperado": 1
+    },
+    {
+      "planta": "mes",
+      "lingua": "pt",
+      "linha": "hab-ine-calendario-juro",
+      "valor_original": "21/10/2026",
+      "valor_plantado": "21.11.2026",
+      "codigo": 1,
+      "esperado": 1
+    },
+    {
+      "planta": "ano",
+      "lingua": "pt",
+      "linha": "hab-ine-calendario-juro",
+      "valor_original": "21/10/2026",
+      "valor_plantado": "21.10.2027",
+      "codigo": 1,
+      "esperado": 1
+    },
+    {
+      "planta": "separador",
+      "lingua": "pt",
+      "linha": "hab-ine-calendario-juro",
+      "valor_original": "21/10/2026",
+      "valor_plantado": "21/10/2026",
+      "codigo": 1,
+      "esperado": 1
+    },
+    {
+      "planta": "precisao",
+      "lingua": "pt",
+      "linha": "nato-defesa-portugal-pib-2026",
+      "valor_original": "2,10",
+      "valor_plantado": "2,1",
+      "codigo": 1,
+      "esperado": 1
+    },
+    {
+      "planta": "controlo",
+      "lingua": "en",
+      "linha": "hab-ine-calendario-juro",
+      "valor_original": "21/10/2026",
+      "valor_plantado": "21.10.2026",
+      "codigo": 0,
+      "esperado": 0
+    },
+    {
+      "planta": "dia",
+      "lingua": "en",
+      "linha": "hab-ine-calendario-juro",
+      "valor_original": "21/10/2026",
+      "valor_plantado": "22.10.2026",
+      "codigo": 1,
+      "esperado": 1
+    },
+    {
+      "planta": "mes",
+      "lingua": "en",
+      "linha": "hab-ine-calendario-juro",
+      "valor_original": "21/10/2026",
+      "valor_plantado": "21.11.2026",
+      "codigo": 1,
+      "esperado": 1
+    },
+    {
+      "planta": "ano",
+      "lingua": "en",
+      "linha": "hab-ine-calendario-juro",
+      "valor_original": "21/10/2026",
+      "valor_plantado": "21.10.2027",
+      "codigo": 1,
+      "esperado": 1
+    },
+    {
+      "planta": "separador",
+      "lingua": "en",
+      "linha": "hab-ine-calendario-juro",
+      "valor_original": "21/10/2026",
+      "valor_plantado": "21/10/2026",
+      "codigo": 1,
+      "esperado": 1
+    },
+    {
+      "planta": "precisao",
+      "lingua": "en",
+      "linha": "nato-defesa-portugal-pib-2026",
+      "valor_original": "2,10",
+      "valor_plantado": "2,1",
+      "codigo": 1,
+      "esperado": 1
+    }
+  ]
+}

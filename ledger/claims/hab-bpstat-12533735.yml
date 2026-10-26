@@ -1,0 +1,50 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "hab-bpstat-12533735"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "3,0"
+unit: "Percentagem"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Taxa de juro (TAA) de novas operações de empréstimos à habitação"
+name_source: "label"
+status: "conferido"
+measure: "Taxa de juro (TAA) de novas operações de empréstimos à habitação"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Banco de Portugal"
+document:
+  title: "Taxa de juro (TAA) de novas operações de empréstimos à habitação"
+  edition: "2026-08-31"
+  locator: "17=2705; 18=35; 40=4264; 43=4427; 48=3777; 54=3019; 56=3118; 66=2799; 70=3327; reference_date=2026-08-31; 29=3648; 59=308; 63=349; value[283]"
+  source_sha256: "7be14fc3b6246343514b5f725129e8f93b76bb77642437d6f191d3f42c6b0cb1"
+  kind: "serie"
+source_url: "https://bpstat.bportugal.pt/data/v1/domains/21/datasets/6eaa8db94523f54733dddc22479c11a4/?lang=PT&series_ids=12533735&observation_date=2026-08-31"
+access_date: "2026-10-19"
+reference_date: "2026-08-31"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "{\"coordinates\": {\"17\": \"2705\", \"18\": \"35\", \"40\": \"4264\", \"43\": \"4427\", \"48\": \"3777\", \"54\": \"3019\", \"56\": \"3118\", \"66\": \"2799\", \"70\": \"3327\", \"reference_date\": \"2026-08-31\", \"29\": \"3648\", \"59\": \"308\", \"63\": \"349\"}, \"value\": \"3.0\", \"status\": \"F\"}"
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+# A quem o valor é creditado. Lista de entidades, ou campo nenhum.
+attributed_to:
+  - "Banco de Portugal"
+
+study: "a-casa-em-portugal-e-na-europa"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] A data lê-se na dimensão reference_date; não se infere pela posição inicial da série. Novas operações não são o stock. A bandeira F é conservada como código: o BPstat não a define nos corpos alojados. · Cruzado de ResearchHub content/23 Habitacao · hab-bpstat-12533735."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

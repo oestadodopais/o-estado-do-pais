@@ -27,6 +27,7 @@
  * HTML, pela K5, pela K17 e pela forma do valor do cartão. As plantas estragam uma cópia em memória de uma página
  * construída, uma por regra, e cada uma tem de morder com a queixa da sua regra.
  */
+import {portaHb1Valida} from './portas-hb1.mjs';
 import { parse } from 'node-html-parser';
 import { t } from '../../src/i18n/strings.mjs';
 
@@ -86,9 +87,9 @@ export function conferirOrdemDaPagina(root, lang, rota) {
     const resumo = filhos[0];
     if (!resumo || String(resumo.rawTagName).toLowerCase() !== 'summary') falha('O4 · a dobra não abre por um <summary> na primeira peça');
     else if (visivel(resumo) !== rotulo) falha(`O4 · a linha da dobra diz «${visivel(resumo)}», e diz «${rotulo}»`);
-    const dentro = filhos.slice(1).map((n) => pecaDoCartao(n));
-    if (!dentro.length) falha('O4 · a dobra não tem definição nenhuma');
-    for (const p of dentro) if (p !== 'definicao') falha(`O4 · a dobra leva uma peça que não é da definição («${p}»)`);
+    const dentro = filhos.slice(1).map((n) => portaHb1Valida(n,id,lang) ? 'estudo-hb1' : pecaDoCartao(n));
+    if (!dentro.includes('definicao')) falha('O4 · a dobra não tem definição nenhuma');
+    for (const p of dentro) if (p !== 'definicao' && p !== 'estudo-hb1') falha(`O4 · a dobra leva uma peça que não é da definição («${p}»)`);
   }
   for (const cartao of root.querySelectorAll('[data-faixa] li.cartao')) {
     const id = cartao.getAttribute('data-cartao') ?? '?';

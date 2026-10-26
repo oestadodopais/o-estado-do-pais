@@ -24,7 +24,7 @@
 export const ROTULOS_B1 = {
   pt: { valor: 'Valor', medida: 'Medida', fonte: 'Fonte', verificacao: 'Verificado a', estudos: 'Estudos', fontes: 'Fontes e verificação',
     fontesDoParagrafo: 'Fontes deste parágrafo',
-    edicao: 'Edição tal como foi publicada', publicado: 'publicado a', estudoPublicado: 'Estudo publicado',
+    edicao: 'Edição tal como foi publicada', edicaoPreparacao: 'Edição em preparação', publicado: 'publicado a', estudoPublicado: 'Estudo publicado',
     pais: 'Portugal', outraLingua: '(em inglês)', indice: 'Nesta página',
     temas: 'Temas', estudosDoLugar: 'Estudos sobre este lugar', estudosRecentes: 'Estudos recentes', mudou: 'O que mudou',
     lugares: 'Lugares', regioes: 'Regiões', distritos: 'Distritos e ilhas',
@@ -39,10 +39,14 @@ export const ROTULOS_B1 = {
        que é nele que o que esta edição escreveu se reconcilia. Uma frase para um sucessor, outra para vários. */
     reconcilia: 'O estudo que lhe sucedeu reconcilia o que esta edição escreveu.',
     reconciliamVarios: 'Os estudos que lhe sucederam reconciliam o que esta edição escreveu.',
+    /* A PORTA DO ESTUDO DA HABITAÇÃO PARA O ESTUDO DO ORÇAMENTO (bloco HB1-c, 21.10.2026). O estudo da habitação
+       cita três linhas do estudo do Orçamento, e a porta ao pé do fim dele leva o leitor até lá; o rótulo é declarado
+       aqui para a lista fechada da B1 o conhecer, em vez de escrito à mão na vista. */
+    estudoDoOrcamento: 'O estudo do Orçamento',
     sucedeA: 'Sucede a', e: 'e' },
   en: { valor: 'Value', medida: 'Measure', fonte: 'Source', verificacao: 'Verified on', estudos: 'Studies', fontes: 'Sources and verification',
     fontesDoParagrafo: 'Sources for this paragraph',
-    edicao: 'Edition as published', publicado: 'published on', estudoPublicado: 'Study published',
+    edicao: 'Edition as published', edicaoPreparacao: 'Edition in preparation', publicado: 'published on', estudoPublicado: 'Study published',
     pais: 'Portugal', outraLingua: '(in Portuguese)', indice: 'On this page',
     temas: 'Themes', estudosDoLugar: 'Studies about this place', estudosRecentes: 'Recent studies', mudou: 'What changed',
     lugares: 'Places', regioes: 'Regions', distritos: 'Districts and islands',
@@ -52,6 +56,7 @@ export const ROTULOS_B1 = {
     sucedidoPorVarios: 'by three studies:', sucedidoEm: 'in',
     reconcilia: 'The study that succeeded it reconciles what this edition wrote.',
     reconciliamVarios: 'The studies that succeeded it reconcile what this edition wrote.',
+    estudoDoOrcamento: 'The Budget study',
     sucedeA: 'Succeeds', e: 'and' },
 };
 

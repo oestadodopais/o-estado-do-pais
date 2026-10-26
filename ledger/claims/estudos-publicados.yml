@@ -4,17 +4,17 @@
 id: "estudos-publicados"
 
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
-value: "18"
+value: "19"
 unit: "estudos"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "O Estado do País"
 document:
   title: "Arquivo de estudos"
-  edition: "20.10.2026"
+  edition: "26.10.2026"
 source_url: null
-access_date: "2026-10-20"
-reference_date: "2026-10-20"
+access_date: "2026-10-26"
+reference_date: "2026-10-26"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
 excerpt: null
@@ -43,3 +43,9 @@ corrections:
     new_value: "18"
     reason: "Entrada do estudo do Orçamento e das suas edições portuguesa e inglesa, contada no registo do arquivo."
     reason_en: "The Budget study and its Portuguese and English editions entered the archive, counted from its registry."
+  - date: "2026-10-26"
+    kind: "atualizacao"
+    old_value: "18"
+    new_value: "19"
+    reason: "Entrada do estudo da habitação, publicado a 26.10.2026 pela data declarada, contado no registo do arquivo."
+    reason_en: "The housing study, published on 26.10.2026 by its declared date, entered the archive, counted from its registry."

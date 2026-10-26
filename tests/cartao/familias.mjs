@@ -1,6 +1,8 @@
 import {temAlgarismoLivreEo1,origemDaDefinicaoConfere,errosDaDefinicaoEo1} from '../../src/lib/definicoes-eo1.mjs';
+import { nomeDoCuboEmIngles } from '../../src/lib/o-que-e-o-numero.mjs';
 import {temAlgarismoLivre} from '../../src/lib/algarismos-definicoes.mjs';
 import {NOMES_EO1} from '../../src/data/nomes-eo1.mjs';
+import { periodoDoRecibo } from '../hb1/periodo-do-recibo.mjs';
 import {conferirPalavrasSaude} from './v2ah-palavras.mjs';
 import { conferirPublicador } from './publicador-da-definicao.mjs';
 import { conferirComputacaoPRR, conferirLiteralPRR } from './computacoes-rp4n.mjs';
@@ -506,7 +508,8 @@ export function conferirCabecaDoRecibo(cabeca, id, lang, { ctx, cartoes, porConf
   const falha = (/** @type {string} */ m) => erros.push(`K17 · recibo · ${lang} · ${id}: ${m}`);
   for(const m of conferirPalavrasSaude(cabeca,id,lang))falha(m);
   if (ctx.linhas.get(id)?.name && ctx.linhas.get(id)?.name_source) {
-    const campo = lang === 'en' && ctx.linhas.get(id)?.name_en ? 'name_en' : 'name';
+    // HB1-c (o achado 13): nos cubos do Eurostat do estudo da habitação o nome na fonte é o inglês, nas duas edições.
+    const campo = (lang === 'en' || nomeDoCuboEmIngles(ctx.linhas.get(id))) && ctx.linhas.get(id)?.name_en ? 'name_en' : 'name';
     const rotulo = cabeca.querySelector(`.linha-nome-da-fonte [data-linha-campo="${campo}"]`);
     if (!rotulo || normal(rotulo.textContent) !== normal(ctx.linhas.get(id)?.[campo])) falha('o nome na fonte não é o rótulo da medida conferido');
   }
@@ -588,7 +591,7 @@ export function conferirCabecaDoRecibo(cabeca, id, lang, { ctx, cartoes, porConf
           if(typeof p==='string')return p;
           if(p.apoio) {const {origem,campo}=p.apoio;tokens.push(['apoio',`origem-${origem}-${campo}`]);return ORIGENS_DAS_DEFINICOES[origem][campo];}
           const tipo=Object.keys(p)[0],c=ctx.linhas.get(p[tipo]);tokens.push([tipo,p[tipo]]);
-          return tipo==='periodo'?String(c.reference_date).split('-').reverse().join('.'):tipo==='excerto'?c.excerpt:c.value;
+          return tipo==='periodo'?periodoDoRecibo(c.reference_date, lang):tipo==='excerto'?c.excerpt:c.value;
         }).join(''));
         const rendidos=oQueE.querySelectorAll('[data-claim], [data-nonledger="data-da-linha"], [data-linha-campo="excerpt"], [data-verbatim]').map(x=>x.hasAttribute('data-verbatim')?['apoio',x.getAttribute('data-verbatim')]:x.hasAttribute('data-claim')?['claim',x.getAttribute('data-claim')]:x.hasAttribute('data-linha-campo')?['excerto',x.getAttribute('data-linha-claim')]:[x.getAttribute('data-de-campo')==='reference_date'?'periodo':'campo-errado',x.getAttribute('data-de-linha')]);
         if(JSON.stringify(rendidos)!==JSON.stringify(tokens))falha('o complemento não cita os campos pelos tokens auditados');
@@ -917,6 +920,9 @@ export function conferirRecibosDasSeries(dist, porConfirmarLinhas = conferirAudi
  * ========================================================================= */
 
 /** @param {string} dist @returns {{ nome: string, mordeu: boolean, queixa: string|null }[]} */
+/* HB1-e (22.10.2026): as vinte e três famílias que passaram do rótulo à definição (ou à forma «chama-lhe»). */
+export const FAMILIAS_HB1E = ['hab-bpstat-12533724', 'hab-bpstat-12533735', 'hab-bpstat-12557378', 'hab-ine-calendario-juro', 'hab-ine-calendario-precos-locais', 'hab-ine-censos-0012501-40', 'hab-ine-censos-0012501-41', 'hab-ine-censos-0012517-0', 'hab-ine-iphab-homologa', 'hab-ine-juro-implicito', 'hab-ine-preco-lisboa', 'hab-ine-preco-mediano', 'hab-ine-preco-porto', 'hab-ine-renda-lisboa', 'hab-ine-renda-porto', 'hab-ine-renda-portugal', 'hab-ine-vagos-total', 'hab-oe-apoio-arrendamento', 'hab-oe-habitacao-orcamento', 'hab-oe-irs-rendas-impacto', 'hab-oe-iva-impacto', 'hab-oe-licenciamento', 'hab-oe-oferta-publica'];
+
 export function plantasDasFamilias(dist) {
   /** @type {{ nome: string, mordeu: boolean, queixa: string|null }[]} */
   const out = [];
@@ -971,6 +977,15 @@ export function plantasDasFamilias(dist) {
     const e = a.familias.find((/** @type {any} */ x) => x.concelho === 'limite');
     e.folhas[0].partes[0].apoios = [];
     regista('uma parte que diz sem apoio', conferirAuditoriaDasFamilias({ auditoria: a }).erros, 'não tem apoio nenhum');
+  }
+  /* HB1-e (22.10.2026): uma planta por família nova do INE, do Banco de Portugal e do Orçamento no estudo da
+     habitação: o primeiro apoio da frase com um literal que nem a linha nem a origem têm, recusado. */
+  for (const chave of FAMILIAS_HB1E) {
+    const a = structuredClone(base);
+    const e = a.familias.find((/** @type {any} */ x) => x.chaves?.includes(chave));
+    if (!e) { out.push({ nome: `HB1-e ${chave}`, mordeu: false, queixa: 'a família não está na auditoria' }); continue; }
+    e.folhas[0].partes[0].apoios[0].literal = 'Literal plantado na HB1-e que nenhum campo tem';
+    regista(`HB1-e ${chave}: um literal que a fonte não tem`, conferirAuditoriaDasFamilias({ auditoria: a }).erros, 'Literal plantado na HB1-e');
   }
   /* R4-b · A AUDITORIA DO QUE ESTÁ POR CONFIRMAR NA FONTE. */
   {

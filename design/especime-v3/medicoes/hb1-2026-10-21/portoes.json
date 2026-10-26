@@ -1,0 +1,9 @@
+{
+  "pedido_codigo": 9,
+  "recusa": "portoes: árvore suja; registe as mudanças antes de conferir a cabeça do código",
+  "build": null,
+  "verify": null,
+  "typecheck": null,
+  "capturas": null,
+  "motivo": "Falta a linha Claude-Session exigida no commit do sítio."
+}

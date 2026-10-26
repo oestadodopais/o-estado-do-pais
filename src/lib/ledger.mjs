@@ -19,7 +19,7 @@ import { load } from 'js-yaml';
 import { DOCUMENT_FUNCTIONS, documentCall } from './document-checks.mjs';
 import {textoDocumentalConferido,valorImpressoDoPainelConferido,acumuladoConferido,fragmentosAuxiliaresConferidos,tituloAuxiliarConferido} from './prova-efeitos.mjs';
 
-import { STUDY_IDS, COUNTS } from '../data/studies.mjs';
+import { STUDY_IDS, COUNTS, WORKS, edicaoPublicada } from '../data/studies.mjs';
 import { KINDS, CAMPOS_DE_PROVENIENCIA } from '../data/correcoes.mjs';
 import { historiaDaProveniencia } from './historia-da-proveniencia.mjs';
 import { conferirHistoriaDoValor } from './historia-do-valor.mjs';
@@ -270,6 +270,9 @@ export const CAMPOS = /** @type {const} */ ([
   'status',
   'name_source',
   'name_source_en',
+  'measure',
+  'measure_en',
+  'attributed_to_en',
   'source',
   'document',
   'source_url',
@@ -307,6 +310,13 @@ export const CAMPOS = /** @type {const} */ ([
    * um campo que não existe.
    */
   'published_at',
+  /**
+   * O QUE A DATA DE `published_at` É, quando não é a da publicação (HB1-c2, o
+   * achado 25 da leitura da HB1-b): `last-edited` diz que a fonte só declara a
+   * data da última edição da página (o rodapé «This page was last edited on» do
+   * glossário Statistics Explained), e o recibo imprime-a como tal. Opcional.
+   */
+  'published_at_kind',
   'reference_date',
   /**
    * A SÉRIE NO TEMPO DE QUE A LINHA É O PONTO DO SEU PERÍODO (bloco RP3, 04.10.2026).
@@ -682,11 +692,29 @@ export const SEPARADOR_ATRIBUICAO = ' · ';
  * de direcção de 2026-08-15.
  *
  * @param {Linha | null | undefined} claim
+ * @param {'pt'|'en'} [lang]
  */
-export function atribuicaoDaLinha(claim) {
-  const lista = claim?.attributed_to;
+export function atribuicaoDaLinha(claim, lang = 'pt') {
+  const lista = lang === 'en' && claim?.attributed_to_en ? claim.attributed_to_en : claim?.attributed_to;
   if (!Array.isArray(lista) || lista.length === 0) return null;
   return lista.join(SEPARADOR_ATRIBUICAO);
+}
+
+/**
+ * HB1-g (22.10.2026): uma linha que só declara a última edição de uma página.
+ *
+ * A data da linha é a da última edição (`published_at_kind` last-edited), a linha
+ * não tem período de dados e tem a data. Nessas linhas a data diz-se com o seu nome
+ * («Página editada pela última vez a») e nunca como edição do documento, como
+ * período ou como «Dados de»: no recibo, na atribuição, no excerto para incorporar
+ * e na descrição da cabeça. Um predicado só, para que os lugares não se
+ * desencontrem; o ensaio é `tests/hb1/pagina-editada.mjs`.
+ *
+ * @param {Linha | null | undefined} claim
+ * @returns {boolean}
+ */
+export function paginaSoComEdicao(claim) {
+  return Boolean(claim && claim.published_at_kind === 'last-edited' && !claim.period && claim.published_at);
 }
 
 /**
@@ -1574,6 +1602,8 @@ function ausente(v) {
 export function validateLedger() {
   const claims = loadClaims({ includeWithdrawn: true });
   const historiasSeladas = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'ledger', 'historias-valores.json'), 'utf8'));
+  const provasHb1Path=path.join(process.cwd(),'ledger','provas','hb1','provas.json');
+  const provasHb1=fs.existsSync(provasHb1Path)?JSON.parse(fs.readFileSync(provasHb1Path,'utf8')).rows:{};
   // As expressões `check` também podem contar o próprio registo de correções.
   const env = { ...COUNTS, ...contagensDoRegisto(claims) };
   const errors = [];
@@ -1598,8 +1628,31 @@ export function validateLedger() {
       if (!Array.isArray(c.attributed_to) || !c.attributed_to.length) errors.push(`${onde} V2A atribuição: falta attributed_to`);
       if (!['html', 'pdf'].includes(String(doc?.kind))) errors.push(`${onde} V2A documento: exige html ou pdf`);
       const textoDoOrcamento = doc?.title === 'Orçamento do Estado 2027 · Relatório' && c.unit === 'afirmação';
-      if (!/^\d{4}-\d{2}-\d{2}$/.test(String(c.published_at ?? ''))) errors.push(`${onde} V2A data: falta a data de publicação do documento`);
-      if (c.reference_date !== (textoDoOrcamento ? '2027' : c.published_at)) errors.push(`${onde} V2A data: período contrário ao documento`);
+      // A atualização declarada não permite preencher a publicação inicial desconhecida.
+      const provaHb1=provasHb1[id],linhaHb1=provaHb1?.row,refHb1=linhaHb1?.document_checks?.reference_date,fonteHb1=provaHb1?.reference_source;
+      const dataAtualizada=typeof refHb1?.text==='string'?refHb1.text.match(/^property="article:modified_time" content="(\d{4}-\d{2}-\d{2})T[^"\s]+"$/)?.[1]:null;
+      // HB1-f (o Major 6): a prova da data da página da IL (article:modified_time,
+      // o corpo e o selo), comum às duas formas que a linha pode ter.
+      const provaIL = id === 'hab-il-proposta'
+        && refHb1?.status === 'conferido' && Boolean(dataAtualizada) && dataAtualizada === c.reference_date
+        && refHb1.date === c.reference_date && linhaHb1.reference_date === c.reference_date && doc?.edition === c.reference_date
+        && refHb1.file === 'source/iniciativaliberal-pt-26.html' && fonteHb1?.file === 'content/23 Habitacao/'+refHb1.file
+        && linhaHb1.document?.file === fonteHb1.file && fonteHb1.receipt?.estado === 200 && fonteHb1.receipt?.ficheiro === path.posix.basename(fonteHb1.file)
+        && doc?.source_sha256 === '83424c50610cbac84b6cb675ff8a46547b10413fb0c8597f371a516adab2105c'
+        && [linhaHb1.document?.source_sha256,refHb1.sha256,fonteHb1.sha256,fonteHb1.receipt?.sha256].every(hash=>hash===doc.source_sha256);
+      const semDataHB1 = provaIL && c.published_at == null && linhaHb1?.published_at === null
+        && linhaHb1?.document_checks?.published_at?.status === 'por confirmar' && Boolean(linhaHb1.document_checks.published_at.reason);
+      // A data da última edição só entra em published_at marcada como tal
+      // (published_at_kind last-edited), igual à do article:modified_time e
+      // conferida pelo motor; a publicação inicial continua desconhecida.
+      const editadaHB1 = provaIL && c.published_at_kind === 'last-edited' && c.published_at === dataAtualizada
+        && linhaHb1?.published_at === c.published_at && linhaHb1?.published_at_kind === 'last-edited'
+        && linhaHb1?.document_checks?.published_at?.status === 'conferido' && String(linhaHb1.document_checks.published_at.text ?? '').slice(0, 10) === c.published_at;
+      if(id === 'hab-il-proposta' && c.published_at != null && !(c.published_at_kind === 'last-edited' && linhaHb1?.published_at_kind === 'last-edited'))errors.push(`${onde} V2A data: atualização não prova a publicação inicial`);
+      if(id === 'hab-il-proposta' && !semDataHB1 && !editadaHB1)errors.push(`${onde} V2A data: a data da página não tem prova no corpo`);
+      if (!semDataHB1 && !/^\d{4}-\d{2}-\d{2}$/.test(String(c.published_at ?? ''))) errors.push(`${onde} V2A data: falta a data de publicação do documento`);
+      const propostaHB1 = ['posicao-ps-rendas','posicao-chega-habitacao'].includes(id) && c.study === 'a-casa-em-portugal-e-na-europa';
+      if (!semDataHB1 && !propostaHB1 && c.reference_date !== (textoDoOrcamento ? '2027' : c.published_at)) errors.push(`${onde} V2A data: período contrário ao documento`);
       if (!String(c.excerpt ?? '').trim() || c.excerpt === POR_VERIFICAR) errors.push(`${onde} V2A excerto: faltam as palavras exatas`);
       /** @param {unknown} v */
       const normal = v => String(v ?? '').replace(/[\s\u00a0\u202f]+/g, ' ').trim().replace(/(?<=\d) (?=\d)/g, '');
@@ -1616,7 +1669,7 @@ export function validateLedger() {
       errors.push(`${onde} o nome do ficheiro tem de ser o id: esperado "${esperado}".`);
     }
     if (!/^[a-z0-9]+(-[a-z0-9]+)*$/.test(String(id)) &&
-        !/^(?:eurostat|europa)-[a-z0-9]+(?:[-_][a-z0-9]+)*$/.test(String(id))) {
+        !/^(?:eurostat|europa|hab)-[a-z0-9]+(?:[-_][a-z0-9]+)*$/.test(String(id))) {
       errors.push(`${onde} id inválido "${id}": só minúsculas, algarismos e hífenes.`);
     }
 
@@ -1686,7 +1739,15 @@ export function validateLedger() {
       if (c.name_en !== undefined && (typeof c.name_en !== 'string' || !c.name_en.trim())) errors.push(`${onde} name_en precisa de tradução não vazia.`);
       if (c.study === 'orcamento-2027-o-que-muda-e-para-quem' && (!temNome || ausente(c.name_en))) errors.push(`${onde} EO1: linha sem nome nas duas línguas.`);
       if (c.access_date_kind !== undefined && !['hosted-copy', 'source-read'].includes(c.access_date_kind)) errors.push(`${onde} access_date_kind inválido.`);
+      if (c.published_at_kind !== undefined && (c.published_at_kind !== 'last-edited' || !c.published_at)) errors.push(`${onde} published_at_kind inválido.`);
       if (c.name_source_en !== undefined && (typeof c.name_source_en !== 'string' || !c.name_source_en.trim() || !temOnde)) errors.push(`${onde} name_source_en precisa de localizador original e tradução não vazia.`);
+      for (const campo of /** @type {const} */ (['name_en', 'measure', 'measure_en'])) {
+        const valor = c[campo];
+        if (valor === undefined) continue;
+        if (typeof valor !== 'string' || !valor.trim() || valor !== valor.trim() || /\s{2,}|[\r\n]/.test(valor) || valor === POR_VERIFICAR || !/\p{L}/u.test(valor)) errors.push(`${onde} ${campo} precisa de texto não vazio, numa linha e sem marcador.`);
+        if (campo === 'name_en' && !temNome) errors.push(`${onde} name_en precisa do rótulo original name.`);
+        if (campo === 'measure_en' && ausente(c.measure)) errors.push(`${onde} measure_en precisa da medida original measure.`);
+      }
       if (temNome) comRotulo++;
       if (c.name !== null && c.name !== undefined && typeof c.name !== 'string') {
         errors.push(
@@ -2524,6 +2585,11 @@ export function validateLedger() {
       }
     }
 
+    if (c.attributed_to_en !== undefined) {
+      if (!Array.isArray(c.attributed_to_en) || !Array.isArray(c.attributed_to) || c.attributed_to_en.length === 0 || c.attributed_to_en.length !== c.attributed_to.length || c.attributed_to_en.some(quem => typeof quem !== 'string' || !quem.trim() || quem.includes(SEPARADOR_ATRIBUICAO.trim())))
+        errors.push(`${onde} attributed_to_en precisa da lista original e de uma tradução não vazia por entidade.`);
+    }
+
     /* A data a que os dados se referem é obrigatória numa linha publicada.
        Sem ela, uma linha passava a contar como proveniência completa — selo
        cheio, indexada, no sitemap — sendo um registo citável sem data. Numa
@@ -2613,6 +2679,18 @@ export function validateLedger() {
     }
 
     if (Array.isArray(c.corrections)) conferirHistoriaDoValor(c, historiasSeladas[id], onde, errors);
+
+    /* HB1-c (o achado 15 da leitura da HB1-b, 21.10.2026): uma edição em
+       preparação (`publication: 'declared'` com `date: null`, `edicaoPublicada`
+       em `src/data/studies.mjs`) nunca escreve no registo das correções nem nos
+       contadores do arquivo; uma mudança a uma linha que nunca chegou ao sítio
+       não é uma correção pública. Uma linha de um estudo sem edição publicada
+       não traz entradas em `corrections` nem na história selada. */
+    const obraDaLinha = c.study ? WORKS.find((w) => w.id === c.study) : undefined;
+    if (obraDaLinha && !obraDaLinha.editions.some((e) => edicaoPublicada(obraDaLinha, e))) {
+      if (Array.isArray(c.corrections) && c.corrections.length) errors.push(`${onde} uma linha de um estudo em preparação (date: null) não tem correção pública: "corrections" tem ${c.corrections.length} entrada(s).`);
+      if (historiasSeladas[id]?.length) errors.push(`${onde} uma linha de um estudo em preparação (date: null) não tem história selada em ledger/historias-valores.json.`);
+    }
 
     const acessos = historiaDaProveniencia(c, 'access_date', onde, errors);
     /** @type {string[]} */
@@ -2770,7 +2848,12 @@ export function validateLedger() {
     if (c.period !== undefined) {
       const trimestre = /^(\d{4})-T([1-4])$/.exec(String(c.period));
       const fim = trimestre ? `${trimestre[1]}-${['03-31','06-30','09-30','12-31'][Number(trimestre[2])-1]}` : null;
-      if ((!trimestre || c.reference_date !== fim) && !acumuladoConferido(c)) errors.push(`${onde} "period": exige um trimestre com o último dia ou um acumulado selado com o mês final.`);
+      // HB1-c3: o ano dos dados que um documento diz usar (os Censos 2021 numa
+      // proposta de 12.08.2026) é um período anual; só passa com a data completa do
+      // documento na referência, o ano não posterior a ela e escrito no excerto selado.
+      const ano = /^\d{4}$/.test(String(c.period)) ? String(c.period) : null;
+      const anoDosDados = !!ano && /^\d{4}-\d{2}-\d{2}$/.test(String(c.reference_date ?? '')) && ano <= String(c.reference_date).slice(0, 4) && new RegExp(`(?<!\\d)${ano}(?!\\d)`).test(String(c.excerpt ?? ''));
+      if ((!trimestre || c.reference_date !== fim) && !acumuladoConferido(c) && !anoDosDados) errors.push(`${onde} "period": exige um trimestre com o último dia ou um acumulado selado com o mês final.`);
     }
     for (const campo of /** @type {const} */ (['access_date', 'reference_date'])) {
       const v = c[campo];

@@ -1,0 +1,128 @@
+[
+  {
+    "id": "hab-eurostat-privacao-severa-definicao",
+    "published_at": "2021-04-13",
+    "reference_date": "2021-04-13",
+    "document": {
+      "title": "Glossary:Severe housing deprivation rate",
+      "edition": "2021-04-13",
+      "kind": "html",
+      "locator": "Glossário, dois parágrafos da definição",
+      "source_sha256": "bf8da5fc3936c9dbee32f1a2aa32cc3c924385f42c295bd6f4fa2993a867e9de",
+      "file": "content/23 Habitacao/source/eurostat/hb1b-severe-housing-deprivation.html"
+    },
+    "document_checks": {
+      "title": {
+        "status": "conferido",
+        "text": "Glossary:Severe housing deprivation rate",
+        "locator": null
+      },
+      "published_at": {
+        "status": "conferido",
+        "text": "2021-04-13T20:01:11+00:00"
+      },
+      "reference_date": {
+        "status": "conferido",
+        "text": "2021-04-13T20:01:11+00:00"
+      }
+    }
+  },
+  {
+    "id": "hab-il-proposta",
+    "published_at": null,
+    "reference_date": "2026-06-08",
+    "document": {
+      "title": "Habitação Já",
+      "edition": "2026-06-08",
+      "kind": "html",
+      "locator": "HTML; início literal único",
+      "source_sha256": "83424c50610cbac84b6cb675ff8a46547b10413fb0c8597f371a516adab2105c",
+      "file": "content/23 Habitacao/source/iniciativaliberal-pt-26.html"
+    },
+    "document_checks": {
+      "title": {
+        "status": "conferido",
+        "text": "Habitação Já",
+        "locator": null
+      },
+      "published_at": {
+        "status": "por confirmar",
+        "reason": "Sem data de publicação ancorada no documento; o período de referência e o acesso não provam a publicação."
+      },
+      "attributed_to": {
+        "status": "conferido",
+        "text": "Iniciativa Liberal",
+        "locator": "atribuição literal no documento"
+      },
+      "reference_date": {
+        "status": "conferido",
+        "text": "property=\"article:modified_time\" content=\"2026-06-08T15:16:52+01:00\"",
+        "file": "source/iniciativaliberal-pt-26.html",
+        "sha256": "83424c50610cbac84b6cb675ff8a46547b10413fb0c8597f371a516adab2105c",
+        "date": "2026-06-08"
+      }
+    }
+  },
+  {
+    "id": "hab-ine-calendario-juro",
+    "published_at": null,
+    "reference_date": "2026-10-21",
+    "document": {
+      "title": "Portal Oficial - Instituto Nacional de Estatística",
+      "edition": "[a verificar]",
+      "kind": "html",
+      "locator": "HTML; início literal único",
+      "source_sha256": "74e73ab3b837f46944c24b048b8458dd457734002bb8244150c8726c77d32134",
+      "file": "content/23 Habitacao/source/ine-retoma-pt-36.html"
+    },
+    "document_checks": {
+      "title": {
+        "status": "conferido",
+        "text": "Portal Oficial - Instituto Nacional de Estatística",
+        "locator": null
+      },
+      "published_at": {
+        "status": "por confirmar",
+        "reason": "Sem data de publicação ancorada no documento; o período de referência e o acesso não provam a publicação."
+      },
+      "reference_date": {
+        "status": "conferido",
+        "text": "21/10/2026",
+        "file": "source/ine-retoma-pt-36.html",
+        "sha256": "74e73ab3b837f46944c24b048b8458dd457734002bb8244150c8726c77d32134",
+        "date": "2026-10-21"
+      }
+    }
+  },
+  {
+    "id": "hab-ine-calendario-precos-locais",
+    "published_at": null,
+    "reference_date": "2026-10-23",
+    "document": {
+      "title": "Portal Oficial - Instituto Nacional de Estatística",
+      "edition": "[a verificar]",
+      "kind": "html",
+      "locator": "HTML; início literal único",
+      "source_sha256": "74e73ab3b837f46944c24b048b8458dd457734002bb8244150c8726c77d32134",
+      "file": "content/23 Habitacao/source/ine-retoma-pt-36.html"
+    },
+    "document_checks": {
+      "title": {
+        "status": "conferido",
+        "text": "Portal Oficial - Instituto Nacional de Estatística",
+        "locator": null
+      },
+      "published_at": {
+        "status": "por confirmar",
+        "reason": "Sem data de publicação ancorada no documento; o período de referência e o acesso não provam a publicação."
+      },
+      "reference_date": {
+        "status": "conferido",
+        "text": "23/10/2026",
+        "file": "source/ine-retoma-pt-36.html",
+        "sha256": "74e73ab3b837f46944c24b048b8458dd457734002bb8244150c8726c77d32134",
+        "date": "2026-10-23"
+      }
+    }
+  }
+]

@@ -42,7 +42,13 @@ export function dadosEsperados(c, lang) {
   }
   return {
     nome: nomeNoRecibo(c.id, lang).texto + (lugar ? ` · ${lugar.nome}` : ''),
-    periodo: (c.period ?? c.reference_date) ? dataDaCasa(c.period ?? c.reference_date, lang) : palavras.periodoEmFalta,
+    /* HB1-g (22.10.2026): a data de uma linha que só declara a última edição de uma página
+       diz-se com o seu nome no lugar do período. A condição é recontada aqui, e não importada
+       do sítio, para que uma mudança no compositor não se confirme a si própria; o rótulo é a
+       declaração comum das traduções. */
+    periodo: c.published_at_kind === 'last-edited' && !c.period && c.published_at
+      ? t(lang).livro.linha.editadoEmK.replace(/^./u, (x) => x.toLocaleLowerCase('pt-PT')) + ' ' + dataDaCasa(c.published_at, lang)
+      : (c.period ?? c.reference_date) ? dataDaCasa(c.period ?? c.reference_date, lang) : palavras.periodoEmFalta,
     valor: String(c.value), unidade: (valorImpressoDoPainelConferido(c.id, c.value) || textoDocumentalConferido(c)) ? '' : un.texto, unidadeLang: un.lingua || t(lang).lang,
     fonte: c.source || palavras.calculado, fonteLang: (c.source && linguaDaFonte(c.source, lang)) || t(lang).lang,
     data: dia, leitura: leituraDaIncorporacao(c, lang, dia),
