@@ -21,3 +21,4 @@
 - O recibo inglês dos juros diz «thousand million euros» onde a opinião diz «billion» (anterior ao bloco).
 - O `custo.json` reescreveu as durações da passagem g sem o dizer e não soma os símbolos por passagem; a nota dos oradores nomeados pelos tokens de atribuição não estava no relatório.
 - O título da secção «A opinião do lugar de direção» é jargão da casa para um leitor de primeira vez.
+- `tests/cartao/rp4nh.mjs` lê a história do repositório (`git log --follow --diff-filter=A`) no `check:cartao`, só no `verify`, que corre no GitHub com `fetch-depth: 0`; se um dia entrar na cadeia do `build`, falha numa cópia rasa como a I272. Anotar no ficheiro, ou ler a data do ficheiro comitado quando as linhas do livro-razão tiverem uma (a VR1, 27.10.2026).
