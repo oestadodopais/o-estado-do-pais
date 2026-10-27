@@ -1,0 +1,42 @@
+{
+ "bloco": "FP2: a primeira página sem títulos nus (a data e a primeira frase da conclusão em cada entrada de «O que se discute»), o contador das secções fora do texto (I273), a régua das sobreposições (M118), a guarda dos marcadores de conflito (I274, M119)",
+ "data": "2026-10-27",
+ "fonte": "RELATORIO.pontos.json do lançador (pontos.py, antes e depois da passagem) e a linha «tokens used» do registo do Codex; as leituras e a aterragem acrescentadas pelo lugar de direção com os seus recibos",
+ "passagens": [
+  {
+   "nome": "fp2-a",
+   "construtor": "Codex gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-10-27T22:01:22+00:00",
+   "fim": "2026-10-27T22:43:55+00:00",
+   "pontos_antes": 33.0,
+   "pontos_depois": 35.0,
+   "pontos": 2.0,
+   "turnos": 86,
+   "chamadas_de_ferramenta_declaradas": 85,
+   "corridas_de_conferencias_declaradas": 22,
+   "corridas_inteiras_do_verify": 0,
+   "capturas": 40,
+   "entrada": 11669622,
+   "cache": 11524992,
+   "saida": 61378,
+   "raciocinio_simbolos": 31370,
+   "total": 11731000,
+   "contexto_medio": 135693,
+   "tokens_used_no_registo": 11323884,
+   "registo": "rollout-2026-10-27T22-01-24-01a17f61-e34a-7c02-9315-7b5d0e1a0f15.jsonl",
+   "outras_sessoes_no_intervalo": 0
+  }
+ ],
+ "direcao": {
+  "modelo": "Claude Fable 5.1",
+  "commits": [
+   "FP2-0 (o mandato e a varredura de base)",
+   "FP2-r (os registos, a guarda dos conflitos, a cópia limpa do prompt, este ficheiro)"
+  ],
+  "simbolos": "por somar no fecho da sessão (a linha de estado do Claude)"
+ },
+ "leituras": [],
+ "corrida_inteira": null,
+ "aterragem": null
+}
