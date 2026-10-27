@@ -1,6 +1,8 @@
 /** A lista fechada do B1 para o país e os temas. Os blocos de dados são
  * comparados antes de saírem da leitura; uma marca sozinha não basta. */
 import fs from 'node:fs';
+import { conferirNovidades } from '../tests/inicio/novidades.mjs';
+import { FP1 } from '../src/data/rotulos-fp1.mjs';
 import { conferirInicio, conferirIntegracao } from '../tests/discussao/itens.mjs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -107,6 +109,9 @@ export function verificaVozPais(raiz) {
         else for (const el of portas) dispensados.add(el);
       }
       if (primeira) {
+        const novas = conferirNovidades(main.parentNode, lang, path.join(raiz,'dist'));
+        erros.push(...novas);
+        if (!novas.length) for (const no of main.querySelectorAll('[data-novidades], [data-data-origem="version.construido_em"]')) dispensados.add(no);
         const queixas = conferirInicio(main.parentNode, lang);
         erros.push(...queixas);
         if (!queixas.length) for (const b of main.querySelectorAll('[data-discussao-inicio]')) dispensados.add(b);
@@ -136,7 +141,7 @@ export function verificaVozPais(raiz) {
         /* O marcador único do sítio, pela mesma razão do `voz-b1.mjs`: é uma
            cadeia declarada e não prosa da casa. */
         POR_VERIFICAR, '[to verify]',
-        '·','→',
+        '·','→', FP1[lang].novo, FP1[lang].sitio,
         /* A mobília da primeira página nova (bloco PP1): as cadeias declaradas em `strings.mjs`, as
            entradas das declarações do lugar de direção, e as três portas. As três cadeias da pesquisa
            dos lugares saíram com ela (L2a): a pesquisa vive em «Lugares», e aqui seria uma segunda cópia. */

@@ -1,0 +1,32 @@
+{
+  "cabeca": "6c6ae4313933e60531a75b6868cdace80a14fdc0",
+  "paginas": [
+    {
+      "nome": "primeira",
+      "pt": "/",
+      "en": "/en/",
+      "recortes": [
+        {
+          "nome": "topo",
+          "seletor": "[data-novidades]"
+        }
+      ]
+    },
+    {
+      "nome": "recibo",
+      "pt": "/livro-razao/divida-publica-2025",
+      "en": "/en/ledger/divida-publica-2025",
+      "recortes": [
+        {
+          "nome": "cabecalho",
+          "seletor": ".linha-cabeca"
+        }
+      ]
+    },
+    {
+      "nome": "estudos",
+      "pt": "/estudos",
+      "en": "/en/studies"
+    }
+  ]
+}

@@ -549,10 +549,16 @@ for (const lang of ['pt', 'en']) {
   const todos = WORKS.map((w,i) => ({ w, i })).filter(({ w }) => !w.sucedidoPor).map(({ w, i }) => {
     const e = w.editions.find(e => e.lang === lang) ?? w.editions[0];
     return { w, i, data: (w.publication === 'declared' ? e.date : datas.find(d => d.slug === w.slug && d.lang === e.lang)?.data) ?? '' };
-  }).sort((a,b) => b.data.localeCompare(a.data) || a.i-b.i);
+  }).sort((a,b) => Number(Boolean(b.w.emCurso)) - Number(Boolean(a.w.emCurso)) || b.data.localeCompare(a.data) || a.i-b.i);
   const entradas = listaDosEstudos.querySelectorAll('main [data-estudo]');
-  if (JSON.stringify(entradas.map(e => e.getAttribute('data-estudo'))) !== JSON.stringify(todos.map(e => e.w.slug)))
-    erros.push(`E2 ${lang}: a lista dos estudos não é uma só, com todos, do mais recente para o mais antigo.`);
+  // FP1: em curso primeiro; dentro de cada grupo, data decrescente e ordem do arquivo.
+  const ordemConferida = es => JSON.stringify(es.map(e => e.getAttribute('data-estudo'))) === JSON.stringify(todos.map(e => e.w.slug));
+  if (!ordemConferida(entradas)) erros.push(`E2 ${lang}: a lista dos estudos não tem os em curso primeiro e os grupos por data decrescente.`);
+  if (entradas.length > 1) {
+    const trocadas = [...entradas];
+    [trocadas[0], trocadas[1]] = [trocadas[1], trocadas[0]];
+    if (ordemConferida(trocadas)) erros.push(`E2 ${lang}: a planta da ordem trocada não mordeu.`);
+  }
   for (const [n, el] of entradas.entries()) {
     const w = todos[n]?.w;
     if (!w) continue;

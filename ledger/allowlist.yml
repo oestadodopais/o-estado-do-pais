@@ -26,6 +26,11 @@ contexts:
       uma data editorial, como a de publicação, e é uma afirmação diferente
       dela: enquanto não se souber, aparece como "[a verificar]" e não se
       preenche com a data de publicação.
+  - id: data-editorial
+    why: >-
+      FP1: datas declaradas de publicação, carimbo da construção, última leitura
+      do painel e próxima segunda-feira. tests/inicio/novidades.mjs compara cada
+      ocorrência com o campo declarado ou gerado, sem dispensar valores do livro.
   - id: data-da-conferencia
     why: >-
       A data e a hora em que o corredor diário perguntou às fontes, no cabeçalho

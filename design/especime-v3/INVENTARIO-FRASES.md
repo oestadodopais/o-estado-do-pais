@@ -3449,8 +3449,8 @@ leitura do país, nas duas edições. **E saem do ficheiro as duas linhas da fra
 | --- | --- | --- | --- | --- |
 | conteudo | O que se passa | pp1 | viva | o título da secção dos blocos da primeira página, declarado em `strings.mjs` (`primeira.oQueSePassa`) |
 | conteudo | What is happening | pp1 | viva | ver a razão na gémea portuguesa |
-| conteudo | Os números mais recentes são de | pp1 | viva | o rótulo da data de «O que se passa»: a data é o período de referência mais recente das linhas dos blocos mostrados, pelo fim do período, com a marca `data-da-linha`, e a célula dos blocos reconta-a |
-| conteudo | The most recent figures are for | pp1 | viva | ver a razão na gémea portuguesa |
+| conteudo | Os números mais recentes são de ; o sítio foi atualizado a | fp1 | viva | o rótulo da data de «O que se passa»: a data é o período de referência mais recente das linhas dos blocos mostrados, pelo fim do período, com a marca `data-da-linha`, e a célula dos blocos reconta-a |
+| conteudo | The most recent figures are from ; the site was updated on | fp1 | viva | ver a razão na gémea portuguesa |
 | navegacao | Por onde começar | pp1 | viva | o título da lista das seis entradas da primeira página; os nomes e as linhas das entradas vivem dentro das ligações |
 | navegacao | Where to start | pp1 | viva | ver a razão na gémea portuguesa |
 | conteudo | Os números deste bloco | pp1 | viva | o título da dobra de cada bloco com os números que ele mostra, cada um com o seu recibo e o seu período; o texto das linhas da lista sai do inventário com a marca dos blocos e a célula dos blocos confere-o fora das marcas |
@@ -5029,3 +5029,38 @@ Cadeias lidas no HTML construído. As citações e os valores ficam fora da voz 
 | conteudo | Under the European net expenditure rule, the European Commission forecast in June a deviation of % of GDP at the end of , above the % of GDP set for assessing compliance with the path; the Finance Ministry&#39;s figures give % before the defence flexibility and % after. | og1-a9 | viva | Redação do mandato A8; datas das linhas e rótulos relidos nas páginas alojadas, conferidos no HTML. |
 | conteudo | «Aligned» does not describe an appraisal that doubts employment, oil and the largest revenue measure, and that closes the spending deviation only with the defence flexibility, and only on the Ministry&#39;s figures. The sentence « » cannot be measured, and this project does not judge it. What can be measured says this: a budget close to balance in the Government&#39;s forecasts, resting on assumptions that Parliament&#39;s own technical unit calls into question. On , after the vote, this page gains the voting record and the speeches from the Assembly&#39;s Diário, and changes if the numbers change. | og1-a9 | viva | Redação do mandato A8; datas das linhas e rótulos relidos nas páginas alojadas, conferidos no HTML. |
 | conteudo | «Alinhadas» não descreve uma apreciação que duvida do emprego, do petróleo e da maior medida de receita, e que só fecha o desvio da despesa com a flexibilidade para a defesa, e só nos números do Ministério. A frase « » não se mede, e este projeto não a avalia. O que se mede diz isto: um orçamento quase equilibrado nas previsões do Governo, assente em pressupostos que a entidade técnica do próprio Parlamento põe em dúvida. A , depois do voto, esta página ganha o registo da votação e as intervenções do Diário da Assembleia, e muda se os números mudarem. | og1-a9 | viva | Redação do mandato A8; datas das linhas e rótulos relidos nas páginas alojadas, conferidos no HTML. |
+
+## FP1: as datas e as peças novas
+
+| classe | texto | bloco | estado | razão |
+|---|---|---|---|---|
+| conteudo | ; o sítio foi atualizado a | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
+| conteudo | ; the site was updated on | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
+| conteudo | Atualizado a | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
+| conteudo | Atualizado a · números relidos pela última vez a | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
+| conteudo | O que há de novo | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
+| conteudo | Updated on | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
+| conteudo | Updated on · figures last re-read on | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
+| conteudo | What is new | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
+| conteudo | atualização | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
+| conteudo | dados de | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
+| conteudo | data from | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
+| conteudo | estudo | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
+| conteudo | explainer | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
+| conteudo | explicação | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
+| conteudo | figures last re-read on | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
+| conteudo | last re-read on | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
+| conteudo | lidos por este projeto a | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
+| conteudo | new | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
+| conteudo | next reading on | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
+| conteudo | novo | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
+| conteudo | números relidos pela última vez a | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
+| conteudo | o que se discute | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
+| conteudo | próxima leitura a | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
+| conteudo | publicados pela fonte a | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
+| conteudo | published by the source on | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
+| conteudo | read by this project on | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
+| conteudo | relidos pela última vez a | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
+| conteudo | study | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
+| conteudo | under discussion | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
+| conteudo | update | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |

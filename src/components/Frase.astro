@@ -78,7 +78,7 @@ import { VERBATIM } from '../data/verbatim.mjs';
  * 15.08.2026 não o fazem e não se reescrevem aqui; tudo o que este bloco
  * constrói passa `selos`.
  */
-const { partes, lang = 'pt', selos = false, provas = null } = Astro.props;
+const { partes, lang = 'pt', selos = false, provas = null, periodos = false } = Astro.props;
 const s = t(lang);
 /* O ITEM DE UMA CHAVE DA PROVA DENTRO DE TEXTO CORRIDO (bloco ME1, 15.10.2026). O texto governado
    do Método escreve só a chave, porque `src/data/metodo.mjs` não pode importar a prova (a prova
@@ -96,8 +96,11 @@ const itemDaProva = (parte) => {
   partes.map((parte) => {
     if (typeof parte === 'string') return <Fragment set:text={parte} />;
     if (parte.excerto) return <CampoDaLinha id={parte.excerto} campo="excerpt" valor={getClaim(parte.excerto).excerpt} lang={lang} lingua="pt-PT" />;
-    if (parte.claim)
-      return <Claim id={parte.claim} lang={lang} chip={selos} abs={parte.abs === true} sufixo={parte.sufixo ?? ''} />;
+    if (parte.claim) {
+      const periodo = getClaim(parte.claim).reference_date;
+      const junto = periodos && periodo && !partes.some(p => p?.data?.campo === 'reference_date' && p.data.valor === periodo);
+      return <><Claim id={parte.claim} lang={lang} chip={selos} abs={parte.abs === true} sufixo={parte.sufixo ?? ''} />{junto && <span class="pp-periodo-inline" data-fp1-periodo={parte.claim}>{' ('}<DataDaLinha id={parte.claim} campo="reference_date" valor={periodo} lang={lang} />{')'}</span>}</>;
+    }
     if (parte.ponto)
       return (
         <>

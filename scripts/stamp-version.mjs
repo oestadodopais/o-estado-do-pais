@@ -8,8 +8,10 @@
  * atrasado. Este ficheiro é a metade do sítio dessa conferência;
  * `scripts/verify-deploy.mjs` é a outra.
  *
- * Não é uma afirmação do livro-razão: é metadado de construção, e por isso vai
- * para JSON e não para uma página. O portão de HTML varre `dist/**\/*.html` — um
+ * Não é uma afirmação do livro-razão: é metadado de construção. O FP1 prepara
+ * o carimbo em `.astro/version.json` antes do Astro e copia-o para a saída no
+ * fim, sem recalcular a hora. A página mostra o dia dessa mesma construção;
+ * o SHA continua apenas no JSON. O portão de HTML varre `dist/**\/*.html` — um
  * SHA em JSON não lhe passa pela frente, e não precisa de dispensa nenhuma.
  *
  * NUNCA inventar o commit. Se nem o Vercel nem o git o souberem dizer, escreve-se
@@ -45,7 +47,10 @@ const motivo = commit
     ? 'construído no Vercel sem VERCEL_GIT_COMMIT_SHA: as variáveis de sistema estão desligadas nas definições do projecto.'
     : 'sem VERCEL_GIT_COMMIT_SHA e sem repositório git legível a partir daqui.';
 
-const stamp = {
+// FP1: a preparação e a cópia partilham a hora, mesmo se o build atravessar a meia-noite.
+const preparado = path.join(process.cwd(), '.astro', 'version.json');
+const preparar = process.argv.includes('--preparar');
+const stamp = !preparar && fs.existsSync(preparado) ? JSON.parse(fs.readFileSync(preparado, 'utf8')) : {
   commit,
   ref: process.env.VERCEL_GIT_COMMIT_REF || doGit(['rev-parse', '--abbrev-ref', 'HEAD']) || null,
   env: process.env.VERCEL_ENV || 'local',
@@ -54,8 +59,11 @@ const stamp = {
   construido_em: new Date().toISOString(),
 };
 
-fs.mkdirSync(path.dirname(OUT), { recursive: true });
-fs.writeFileSync(OUT, JSON.stringify(stamp, null, 2) + '\n', 'utf8');
+if (!preparar && stamp.commit !== commit) throw new Error('FP1: o carimbo preparado pertence a outra cabeça; reconstrua o sítio.');
+
+const destino = preparar ? preparado : OUT;
+fs.mkdirSync(path.dirname(destino), { recursive: true });
+fs.writeFileSync(destino, JSON.stringify(stamp, null, 2) + '\n', 'utf8');
 
 const cinza = (s) => `\x1b[90m${s}\x1b[0m`;
 const amarelo = (s) => `\x1b[33m${s}\x1b[0m`;

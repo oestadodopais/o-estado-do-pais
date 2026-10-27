@@ -1,5 +1,6 @@
 /** V2-d: leitor independente dos itens, das contas e das portas, com estragos em memória. */
 import fs from 'node:fs';
+import {conferirNovidades} from '../inicio/novidades.mjs';
 import { routePath } from '../../src/lib/routes.mjs';
 import { ESTUDO_EO1, PORTAS_EO1 } from '../../src/data/portas-eo1.mjs';
 import path from 'node:path';
@@ -209,13 +210,28 @@ export function conferirInicio(root,lang){
  const content=root.querySelector('main')?.innerHTML??'';
  const marcas=['data-discussao-inicio','data-o-que-se-passa','data-entradas'].map(m=>content.indexOf(m));
  if(marcas.some(n=>n<0)||!(marcas[0]<marcas[1]&&marcas[1]<marcas[2]))erros.push('V2C início: marca ausente ou bloco fora do lugar');
- if(root.querySelectorAll('[data-discussao-inicio]').length!==1||root.querySelector('main > section')!==bloco)erros.push('V2C início: bloco não é a primeira secção única');
+ const seccoes=root.querySelectorAll('main > section');
+ if(root.querySelectorAll('[data-discussao-inicio]').length!==1||!seccoes[0]?.hasAttribute('data-novidades')||seccoes[1]!==bloco)erros.push('V2C início: discussão não é a secção única imediatamente depois das novidades');
  if(bloco.querySelector('h2 a')?.getAttribute('href')!==routePath('discussao',lang))erros.push('V2C início: destino do título errado');
  return erros;
 }
 export function conferirIntegracao(root,lang,pagina,linhas=loadClaims(),{dist=process.env.OEDP_DIST??path.join(raiz,'dist'),recibos=new Map()}={}){
  const erros=[];const main=root.querySelector('main');if(!main)return erros;
- const nos=main.querySelectorAll('[data-claim],[data-linha-claim],[data-de-linha],[data-explicacao-nome]').filter(n=>!n.closest('[data-discussao-integracao],[data-discussao-inicio],[data-discussao-porta],[data-discussao-titulo]'));
+ // FP1: as peças publicadas têm outra condição, comprovada pelas datas e destinos.
+ const caixa=main.querySelector('[data-novidades]');
+ let novidadesConferidas=false;
+ if(caixa && ['index.html','en/index.html'].includes(pagina)) {
+  const falhas=conferirNovidades(root,lang,dist);
+  for(const el of caixa.querySelectorAll('[data-novidade]')) {
+   const chave=el.getAttribute('data-novidade');if(!chave.startsWith('discussao:'))continue;
+   const e=ITENS.find(e=>'discussao:'+e.slug===chave),a=el.querySelector('[data-novidade-porta]');
+   if(!e||normal(a?.text)!==explicacaoPelaCelula(e,lang,linhas).titulo)falhas.push('FP1 discussão: título da peça diferente da declaração');
+   else falhas.push(...conferirMarcasDoTitulo(a,e,lang,linhas));
+  }
+  erros.push(...falhas);novidadesConferidas=!falhas.length;
+ }
+
+ const nos=main.querySelectorAll('[data-claim],[data-linha-claim],[data-de-linha],[data-explicacao-nome]').filter(n=>!n.closest('[data-discussao-integracao],[data-discussao-inicio],[data-discussao-porta],[data-discussao-titulo]')&&!(novidadesConferidas&&n.closest('[data-novidades]')));
  const idDoNo=n=>n.getAttribute('data-claim')??n.getAttribute('data-linha-claim')??n.getAttribute('data-de-linha')??n.getAttribute('data-explicacao-nome');
  const area=/^(?:en\/)?areas\/[^/]+\/index.html$/.test(pagina),registo=/^(?:correcoes|en\/corrections)\/index.html$/.test(pagina),ids=new Set(),vistos=new Map();
  for(const n of nos){
@@ -242,7 +258,7 @@ export function conferirIntegracao(root,lang,pagina,linhas=loadClaims(),{dist=pr
  const estudoEo1=pagina===`${lang==='pt'?'estudos':'en/studies'}/${ESTUDO_EO1}/index.html`;
  const esperados=[...ITENS].sort((a,b)=>b.escrita.localeCompare(a.escrita)).filter(e=>[...linhasImpressasOuDerivadas(e,linhas)].some(id=>ids.has(id))||(tematica&&e.slug==='saude-no-orcamento')||(estudoEo1&&PORTAS_EO1[e.slug]));
  const portas=main.querySelectorAll('[data-discussao-integracao]');
- for(const a of main.querySelectorAll('a'))if(ITENS.some(e=>a.getAttribute('href')===destino(e.slug,lang))&&!a.closest('[data-discussao-integracao],[data-discussao-inicio]'))erros.push('V2B integração: porta sem condição declarada');
+ for(const a of main.querySelectorAll('a'))if(ITENS.some(e=>a.getAttribute('href')===destino(e.slug,lang))&&!a.closest('[data-discussao-integracao],[data-discussao-inicio]')&&!(novidadesConferidas&&a.closest('[data-novidades]')))erros.push('V2B integração: porta sem condição declarada');
  if(portas.length!==esperados.length)erros.push(`V2B integração: presença ou ausência errada em ${pagina}`);
  for(const e of esperados){
   const p=portas.find(p=>p.getAttribute('data-discussao-integracao')===e.slug),a=p?.querySelector('a');
@@ -317,8 +333,14 @@ export function conferirTudo(dist=path.join(raiz,'dist')){
    ['bloco depois do painel',r=>{const b=r.querySelector('[data-discussao-inicio]');const html=b.toString();b.remove();r.querySelector('[data-o-que-se-passa]').insertAdjacentHTML('afterend',html);}],
    ...['data-discussao-inicio','data-o-que-se-passa','data-entradas'].map(m=>['marca ausente: '+m,r=>r.querySelector('['+m+']').removeAttribute(m)]),
    ['bloco duplicado',r=>r.querySelector('main').insertAdjacentHTML('beforeend',r.querySelector('[data-discussao-inicio]').toString())],
+   ['novidades retiradas do primeiro lugar',r=>r.querySelector('[data-novidades]').remove()],
    ['destino do título errado',r=>r.querySelector('[data-discussao-inicio] h2 a').setAttribute('href','#errado')]
   ]){const r=parse(home.toString());estraga(r);provas.push({nome,lang,mordeu:conferirInicio(r,lang).length>0});}
+  for(const [nome,mudar] of [
+   ['data da peça alterada',r=>r.querySelector('[data-novidade] time').setAttribute('datetime','9999-12-31')],
+   ['título da peça alterado',r=>r.querySelector('[data-novidade^="discussao:"] [data-novidade-porta]').set_content('Outro título')],
+   ['porta da peça fora da caixa',r=>r.querySelector('main').insertAdjacentHTML('beforeend',r.querySelector('[data-novidade^="discussao:"] [data-novidade-porta]').outerHTML)],
+  ]){const r=parse(home.toString());mudar(r);provas.push({nome:'FP1: '+nome,lang,mordeu:conferirIntegracao(r,lang,lang==='pt'?'index.html':'en/index.html').length>0});}
   const broken=parse(home.toString());broken.querySelector('[data-discussao-porta]')?.setAttribute('href','#errado');provas.push({nome:'porta inicial errada',lang,mordeu:conferirInicio(broken,lang).some(x=>x.includes('destino'))});
  }
  const idsDosItens=[...new Set(ITENS.flatMap(e=>[...linhasImpressasOuDerivadas(e,loadClaims())]))];

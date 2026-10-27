@@ -1,0 +1,162 @@
+{
+  "fp1": {
+    "build_base": 0,
+    "build_alterado": 1,
+    "check_formas_alterado": 1,
+    "check_primeira_estatico": 0,
+    "fp1_novidades": 0,
+    "medicao_l1_base": 0,
+    "medicao_l1_fp1": 0,
+    "inventario_medicao": 0,
+    "typecheck_antes_dos_ultimos_acertos": 0,
+    "check_voz_final": null,
+    "check_palavras": null,
+    "check_lingua_final": null,
+    "check_navegacao_final": null,
+    "check_cartao": null,
+    "check_lugar_codigo_completo_final": null,
+    "check_indice_do_sitio": null,
+    "check_indice": null,
+    "check_frases_compostas": null,
+    "capturas": null,
+    "commit": null
+  },
+  "fp1_b": {
+    "build_a": 1,
+    "build_b": 1,
+    "check_formas_build_b": 0,
+    "gate_html_build_b": 0,
+    "check_datas_build_b": 0,
+    "check_registo_build_b": 0,
+    "ledger_check_build_b": 0,
+    "check_voz_correcao": 0,
+    "datas_do_recibo": {
+      "codigo": 0,
+      "paginas": 8228,
+      "sem_periodo": 44,
+      "com_painel": 182,
+      "plantas": 3
+    },
+    "metodo_dos_codigos_internos": "A cadeia && avançou para o passo seguinte.",
+    "build_c": 0,
+    "conferencias_isoladas": {
+      "check:voz": {
+        "codigo": 0,
+        "segundos": 58.25,
+        "registo": "fp1b-check-voz.log"
+      },
+      "check:palavras": {
+        "codigo": 0,
+        "segundos": 245.89,
+        "registo": "fp1b-check-palavras.log"
+      },
+      "check:lingua": {
+        "codigo": 0,
+        "segundos": 8.92,
+        "registo": "fp1b-check-lingua.log"
+      },
+      "check:navegacao": {
+        "codigo": 0,
+        "segundos": 14.11,
+        "registo": "fp1b-check-navegacao.log"
+      },
+      "check:cartao": {
+        "codigo": 1,
+        "segundos": 26.57,
+        "registo": "fp1b-check-cartao.log"
+      }
+    },
+    "check_primeira_inteira": null,
+    "check_lugar_codigo_completo": null,
+    "check_indice_do_sitio": null,
+    "check_indice": null,
+    "check_frases_compostas": null,
+    "typecheck_final": null,
+    "capturas": null,
+    "commit": null,
+    "paragem": "RP4N-h: o recibo não distingue alojamento de leitura na fonte (pt)",
+    "codigos_na_cadeia_build_c": {
+      "check:formas": 0,
+      "gate:html": 0,
+      "check:datas": 0,
+      "check:registo": 0,
+      "ledger:check": 0,
+      "check:voz": 0,
+      "check:lingua": 0,
+      "check:navegacao": 0,
+      "check:discussao": 0
+    }
+  },
+  "fp1_c": {
+    "build": 0,
+    "build_segundos": 408,
+    "codigos_na_cadeia_build": {
+      "check:formas": 0,
+      "gate:html": 0,
+      "check:datas": 0,
+      "check:registo": 0,
+      "ledger:check": 0,
+      "check:voz": 0,
+      "check:lingua": 0,
+      "check:navegacao": 0,
+      "check:discussao": 0
+    },
+    "conferencias_isoladas": {
+      "check:cartao": {
+        "codigo": 0,
+        "segundos": 43.02,
+        "registo": "fp1c-check-cartao.log",
+        "recusa_permissao": false
+      },
+      "check:lugar": {
+        "codigo": 0,
+        "segundos": 44.03,
+        "registo": "fp1c-check-lugar.log",
+        "recusa_permissao": false
+      },
+      "check:indice-do-sitio": {
+        "codigo": 0,
+        "segundos": 22.22,
+        "registo": "fp1c-check-indice-do-sitio.log",
+        "recusa_permissao": false
+      },
+      "check:indice": {
+        "codigo": 1,
+        "segundos": 29.29,
+        "registo": "fp1c-check-indice.log",
+        "recusa_permissao": true
+      },
+      "typecheck": {
+        "codigo": 0,
+        "segundos": 0.39,
+        "registo": "fp1c-typecheck.log",
+        "recusa_permissao": false
+      },
+      "check:primeira": {
+        "codigo": 1,
+        "segundos": 6.14,
+        "registo": "fp1c-check-primeira.log",
+        "recusa_permissao": true
+      },
+      "check:frases-compostas": {
+        "codigo": 1,
+        "segundos": 0.26,
+        "registo": "fp1c-check-frases-compostas.log",
+        "recusa_permissao": true
+      }
+    },
+    "capturas": 0,
+    "paginas_capturadas": 30,
+    "recortes_capturados": 20,
+    "transbordos": 0,
+    "commit": "pedido ao escrivão depois de fechar este relatório; resultado na resposta da passagem",
+    "datas_do_recibo": {
+      "codigo": 0,
+      "paginas": 8228,
+      "sem_periodo": 44,
+      "com_painel": 182,
+      "copias_alojadas": 4,
+      "plantas": 5
+    }
+  }
+}

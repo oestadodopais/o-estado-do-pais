@@ -57,13 +57,14 @@ export function primeirasFrases(partes) {
  * estudo dizem-se na sua entrada. A data é a mesma que o índice já usava, a de
  * `datas-de-publicacao.json`; num empate, a ordem do arquivo.
  *
+ * FP1: os estudos em curso vêm primeiro; cada grupo conserva a data decrescente.
  * @param {'pt'|'en'} lang
  */
 export function todosOsEstudos(lang) {
   /* Os estudos com sucessor (bloco E1, 01.10.2026) ficam alojados como edições
      datadas e saem da lista: quem os lista agora são os estudos que lhes sucedem. */
   return WORKS.filter(w => !w.sucedidoPor).map(w => fichaDoEstudo(w, lang))
-    .sort((a, b) => (b.data ?? '').localeCompare(a.data ?? '') || WORKS.indexOf(a.work) - WORKS.indexOf(b.work));
+    .sort((a, b) => Number(Boolean(b.work.emCurso)) - Number(Boolean(a.work.emCurso)) || (b.data ?? '').localeCompare(a.data ?? '') || WORKS.indexOf(a.work) - WORKS.indexOf(b.work));
 }
 /** @param {string} lugar @param {'pt'|'en'} lang */
 export function portaDoLugar(lugar, lang) {

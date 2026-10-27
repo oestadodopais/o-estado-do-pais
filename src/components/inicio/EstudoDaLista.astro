@@ -5,6 +5,8 @@
  * o título com a língua da edição, o lugar, o tema, a data de publicação declarada e a sinopse com
  * os selos. A `A4` do `check:pais` confere o título de cada `[data-estudo-edicao]` contra o arquivo.
  */
+import { estudoNovo, carimboDaConstrucao } from '../../lib/construcao.mjs';
+import { FP1 } from '../../data/rotulos-fp1.mjs';
 import Frase from '../Frase.astro';
 import TituloDeTrabalho from '../TituloDeTrabalho.astro';
 import { dataDaCasa } from '../../lib/datas.mjs';
@@ -16,6 +18,7 @@ const r = ROTULOS_B1[lang];
 ---
 <article class="estudo-item pais-estudo" data-estudo={e.work.slug} data-estudo-edicao={`${e.work.slug}/${e.edicao.lang}`}>
   <h3 class="estudo-item-titulo"><TituloDeTrabalho as="a" href={e.rota} edicao={e.edicao} lang={lang} />
+    {mostrarEmCurso && estudoNovo(e.edicao.date, carimboDaConstrucao().construido_em) && <span class="estudo-lingua" data-estudo-novo data-voz>{FP1[lang].novo}</span>}
     {e.edicao.lang !== lang && <span class="estudo-lingua"> {r.outraLingua}</span>}
   </h3>
   <p class="estudo-meta"><span>{e.lugar}</span><span>{e.tema}</span><span>{e.data ? <>{r.publicado}{' '}<time datetime={e.data} data-nonledger="data-do-repositorio">{dataDaCasa(e.data)}</time></> : r.edicaoPreparacao}</span>{mostrarEmCurso && e.work.emCurso && <span data-estudo-em-curso>{t(lang).primeira.emCurso.replace('{ano}', e.work.emCurso.ate?.slice(0, 4) ?? '[verify]')}</span>}</p>

@@ -2,6 +2,7 @@
 export const OG1 = {
   "slug": "orcamento-2027-generalidade",
   "escrita": "2026-10-26",
+  "publicado": "2026-10-27",
   "titulo": {
     "pt": [
       "O Orçamento de ",

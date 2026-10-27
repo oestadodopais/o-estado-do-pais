@@ -40,7 +40,7 @@ const atribuicao = (id) => literal(id, 'attributed_to');
 const p = (pt, en) => ({ paragrafo: { pt: Array.isArray(pt) ? pt : [pt], en: Array.isArray(en) ? en : [en] } });
 /** @param {string} slug @param {[string|any[],string|any[]]} titulo @param {string[]} afirmacoes @param {any[][]} conteudos */
 const item = (slug, titulo, afirmacoes, conteudos) => ({
-  slug, escrita: '2026-10-20', titulo: { pt: Array.isArray(titulo[0]) ? titulo[0] : [titulo[0]], en: Array.isArray(titulo[1]) ? titulo[1] : [titulo[1]] },
+  slug, publicado: '2026-10-19', escrita: '2026-10-20', titulo: { pt: Array.isArray(titulo[0]) ? titulo[0] : [titulo[0]], en: Array.isArray(titulo[1]) ? titulo[1] : [titulo[1]] },
   afirmacoes, abertura: [], naoDiz: [],
   recibos: slug === 'saude-no-orcamento' ? Object.fromEntries(['seccoes[2].conteudo[2].paragrafo', 'seccoes[5].conteudo[0].paragrafo'].map(caminho => [caminho, ['oe-2027-saude-dotacao-reforco-contratos-programa', 'oe-2027-saude-contrato-programa-acss']])) : {},
   linhas: slug === 'saude-no-orcamento' ? ['oe-2027-saude-dotacao-reforco-contratos-programa', 'oe-2027-saude-contrato-programa-acss', ...[2020, 2021, 2022, 2023, 2024, 2025].flatMap(ano => [`saude-total-${ano}-orcamento-oe${ano}`, `saude-total-${ano}-execucao-cge${ano}`])] : [],

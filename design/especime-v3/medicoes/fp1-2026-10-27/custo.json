@@ -1,0 +1,77 @@
+{
+  "fp1": {
+    "chamadas_ate_medicao": 45,
+    "por_ferramenta": {
+      "exec": 44,
+      "request_user_input_async": 1
+    },
+    "tokens_ate_medicao": {
+      "input_tokens": 5317850,
+      "cached_input_tokens": 5177728,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 27198,
+      "reasoning_output_tokens": 8458,
+      "total_tokens": 5345048
+    },
+    "chamadas_previstas_no_fecho": 47,
+    "corridas_de_comandos": 8,
+    "builds": 2,
+    "portoes_completos": 0,
+    "capturas": 0,
+    "inicio_utc": "2026-10-27 11:01:11",
+    "medicao_utc": "2026-10-27 11:16:55",
+    "chamadas_no_fecho": 47,
+    "tokens_ultimo_evento_consultado": {
+      "input_tokens": 5668839,
+      "cached_input_tokens": 5526272,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 32691,
+      "reasoning_output_tokens": 10223,
+      "total_tokens": 5701530
+    }
+  },
+  "fp1_b": {
+    "inicio_utc": "2026-10-27 11:23:18",
+    "corridas_de_comandos": 9,
+    "builds": 3,
+    "conferencias_isoladas": 6,
+    "verificacoes_auxiliares_de_sintaxe": 1,
+    "portoes_completos": 0,
+    "capturas": 0,
+    "pedidos_de_commit": 0,
+    "estado": "paragem pela RP4N-h",
+    "chamadas_ate_medicao": 48,
+    "chamadas_acumuladas_ate_medicao": 95,
+    "medicao_utc": "2026-10-27T11:55:06.988680+00:00",
+    "tokens_ultimo_evento_consultado": {
+      "input_tokens": 15758888,
+      "cached_input_tokens": 15553408,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 70259,
+      "reasoning_output_tokens": 32021,
+      "total_tokens": 15829147
+    },
+    "tokens_acumulados_apos_fecho_fp1": 10127617
+  },
+  "fp1_c": {
+    "inicio_utc": "2026-10-27 11:56:31",
+    "medicao_utc": "2026-10-27T12:08:52.774338+00:00",
+    "chamadas_ate_medicao": 22,
+    "chamadas_acumuladas_ate_medicao": 117,
+    "corridas_de_comandos": 8,
+    "builds": 1,
+    "conferencias_isoladas": 7,
+    "capturas": 1,
+    "portoes_completos": 0,
+    "pedido_de_commit": "depois desta medição",
+    "tokens_ultimo_evento_consultado": {
+      "input_tokens": 17284450,
+      "cached_input_tokens": 17038848,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 79485,
+      "reasoning_output_tokens": 33922,
+      "total_tokens": 17363935
+    },
+    "tokens_acumulados_apos_fp1_b": 1534788
+  }
+}
