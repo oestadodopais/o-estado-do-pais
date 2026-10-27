@@ -1,0 +1,19 @@
+{
+ "modelo": "gemini-4-argon-high",
+ "inicio": "2026-10-27T18:11:25Z",
+ "fim": "2026-10-27T18:26:52Z",
+ "segundos_parede": 927,
+ "codigo": 0,
+ "estado": "SUCCESS",
+ "duration_seconds": 921.625279,
+ "num_turns": 1,
+ "usage": {
+  "input_tokens": 302648,
+  "output_tokens": 64206,
+  "thinking_tokens": 39435,
+  "cache_read_tokens": 3493876,
+  "total_tokens": 366854
+ },
+ "conversation_id": "64579412-6894-4f60-b1e2-e722025a9a5f",
+ "resposta_escrita": true
+}

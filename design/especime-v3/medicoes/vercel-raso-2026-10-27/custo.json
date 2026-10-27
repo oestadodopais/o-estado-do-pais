@@ -11,7 +11,13 @@
    "semana_pct": 27,
    "fonte": "uso.py, impresso pelo arranque da sessão"
   },
-  "fim": null
+  "fim": {
+   "quando": "2026-10-27T18:11Z",
+   "janela_5h_pct": 0,
+   "semana_pct": 27,
+   "nota": "a janela de 5 horas repôs-se às 18:10 UTC, a meio do bloco; a semana ficou em 27 por cento do início ao fim, pelo que o custo do bloco no Claude é inferior ao passo de 1 ponto percentual da semana",
+   "fonte": "uso.py, impresso pela guarda do lançamento da leitura"
+  }
  },
  "uso_codex": {
   "nota": "nenhuma passagem do Codex neste bloco",
@@ -39,6 +45,30 @@
    "fonte": "resumo-verify.md"
   }
  ],
- "leitura": null,
- "aterragem": null
+ "leitura": {
+  "modelo": "gemini-4-argon-high",
+  "inicio": "2026-10-27T18:11:25Z",
+  "fim": "2026-10-27T18:26:52Z",
+  "segundos_parede": 927,
+  "codigo": 0,
+  "usage": {
+   "input_tokens": 302648,
+   "output_tokens": 64206,
+   "thinking_tokens": 39435,
+   "cache_read_tokens": 3493876,
+   "total_tokens": 366854
+  },
+  "plantas": {
+   "plantadas": 5,
+   "apanhadas": 5
+  },
+  "achados_reais": {
+   "blocking": 0,
+   "major": 0,
+   "minor": 1
+  },
+  "fonte": "leitura-argon.md, leitura-argon.uso.json"
+ },
+ "aterragem": null,
+ "chamadas_de_ferramentas_do_lugar_de_direcao_ate_a_aterragem": 36
 }
