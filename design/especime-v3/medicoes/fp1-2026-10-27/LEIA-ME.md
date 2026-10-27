@@ -1,6 +1,6 @@
 # FP1: relatório das cinco passagens
 
-Estado da FP1-e antes do primeiro commit: implementação e conferências isoladas em fecho. A primeira construção terminou com código 1 nas declarações do inventário que deixaram de aparecer. A condição foi corrigida e a voz passou isoladamente. A construção da cabeça comitada, a medição L1 e as capturas finais seguem depois do primeiro commit; os seus resultados não são antecipados aqui.
+FP1-e implementada em `94dbf653d`. A construção dessa cabeça terminou com código 0. As conferências pedidas passaram, exceto `check:alvos`, que terminou com código 1 por `listen EPERM: operation not permitted 127.0.0.1`. A conferência dos alvos fica para execução fora da sandbox. A medição L1 e as capturas pertencem à cabeça comitada; entram neste segundo commit de comprovativos.
 
 ## O que mudou para o leitor
 
@@ -75,8 +75,9 @@ A soma das quatro passagens fechadas é 169 chamadas. Foi recontada no registo d
 
 A corrida inteira anterior encontrou C2 (marca colada) e H2 (alvos curtos). As duas réguas ficaram intactas. A primeira construção FP1-e parou na voz porque os rótulos condicionais eram tratados como frases sempre presentes; a primeira correção para «retirada» também foi recusada, por serem palavras que aparecem noutros textos. A forma final é a condição estreita descrita acima. Os códigos intermédios são conservados em `codigos.json`.
 
-| Conferência FP1-e | Código observado antes do primeiro commit |
+| Conferência FP1-e | Código observado |
 |---|---|
+| `build` da cabeça comitada | 0 |
 | `check:css` | 0 |
 | `check:alvos` | 1 por EPERM |
 | `check:primeira:estatica` | 0 |
@@ -98,4 +99,8 @@ Os passos da construção só são indicados como zero quando a cadeia `&&` avan
 
 A medição L1 exige uma worktree limpa, o código zero do processo filho e a cabeça de `dist/version.json` igual ao Git. Nesta passagem corre depois do commit da implementação. O `l1-fp1.json` e os comprovativos finais entram no segundo commit. Não se altera o `dist/` à mão para trocar a cabeça.
 
-As capturas finais serão feitas sobre essa construção comitada, nas duas edições e nas cinco larguras, pelo escrivão: primeira página, topo da caixa, recibo e arquivo de estudos. As imagens ficam fora do repositório; o manifesto entra no pacote. O resultado final, os identificadores dos commits e a contagem de fecho são comunicados depois de observados.
+As capturas foram refeitas pelo escrivão sobre `94dbf653d`: 30 páginas inteiras e 20 recortes, nas larguras 390, 768, 1024, 1280, 1600 px e nas duas edições. O manifesto `capturas.json` tem `ok: true`, sem falhas, e inclui os hashes das imagens. `pedido-capturas.json` conserva o pedido. As imagens ficam fora do repositório. A inspeção visual cobriu a caixa em português e inglês e as primeiras páginas e estudos nas cinco larguras.
+
+A L1 terminou com código 0, 3404 páginas contadas e zero páginas novas; o teto não subiu. As cinco plantas da medição morderam. `l1-fp1.json` identifica a cabeça `94dbf653d`, construída depois do primeiro commit com a worktree limpa. Os excertos dos registos FP1-e conservam os resultados sem caminhos da máquina.
+
+A contagem em `custo.json` é uma fotografia dos eventos já observados no registo do lançador. Não antecipa as chamadas do segundo commit nem da conferência final. A passagem gastou duas construções, 17 conferências isoladas, duas medições, dois controlos de sintaxe e uma corrida de capturas. Não correu os portões completos. O que fica aberto é a execução de `check:alvos` fora da sandbox.

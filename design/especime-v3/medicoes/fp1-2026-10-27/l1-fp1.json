@@ -5,12 +5,12 @@
     "paginas": 3404
   },
   "cabeca": {
-    "commit": "a157e83061b432d614167a5b3084362ef1e1738d",
+    "commit": "94dbf653d28708c3fbfbd0ab18cef24f5706e75f",
     "ref": "fp1-2026-10-27",
     "env": "local",
     "origem": "git",
     "motivo": null,
-    "construido_em": "2026-10-27T13:00:37.792Z"
+    "construido_em": "2026-10-27T14:51:46.123Z"
   },
   "contagens": {
     "estudos": 3404,
@@ -20,23 +20,21 @@
   "agravadas": {
     "/": {
       "antes": 20,
-      "agora": 24,
+      "agora": 23,
       "destinos": [
-        "/correcoes",
         "/estudos/a-casa-em-portugal-e-na-europa",
-        "/explicacoes/dinheiro-do-estado-2027",
-        "/estudos/orcamento-2027-o-que-muda-e-para-quem"
+        "/estudos/orcamento-2027-o-que-muda-e-para-quem",
+        "/explicacoes/dinheiro-do-estado-2027"
       ],
       "razao": "A caixa repete destinos de secções existentes; conserva as cinco peças mais recentes e a lista dos estudos."
     },
     "/en": {
       "antes": 20,
-      "agora": 24,
+      "agora": 23,
       "destinos": [
-        "/en/corrections",
         "/en/studies/a-casa-em-portugal-e-na-europa",
-        "/en/explainers/dinheiro-do-estado-2027",
-        "/en/studies/orcamento-2027-o-que-muda-e-para-quem"
+        "/en/studies/orcamento-2027-o-que-muda-e-para-quem",
+        "/en/explainers/dinheiro-do-estado-2027"
       ],
       "razao": "A caixa repete destinos de secções existentes; conserva as cinco peças mais recentes e a lista dos estudos."
     }

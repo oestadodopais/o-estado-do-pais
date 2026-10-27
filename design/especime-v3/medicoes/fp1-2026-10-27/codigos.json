@@ -351,8 +351,9 @@
         "recusa_permissao": false
       }
     },
-    "build_comitado": null,
-    "l1_medicao": null,
-    "capturas": null
+    "build_comitado": 0,
+    "l1_medicao": 0,
+    "capturas": 0,
+    "cabeca_conferida": "94dbf653d28708c3fbfbd0ab18cef24f5706e75f"
   }
 }

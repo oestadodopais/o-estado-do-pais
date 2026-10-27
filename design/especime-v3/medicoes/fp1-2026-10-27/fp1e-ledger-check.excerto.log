@@ -1,0 +1,16 @@
+PLANTA HB1 referência suplementar: recibo: HB1 referência: recibo ou caminho suplementar divergente
+PLANTA HB1 referência suplementar: caminho: HB1 referência: recibo ou caminho suplementar divergente
+PLANTA HB1 referência suplementar: data: HB1 referência: data suplementar divergente
+PLANTA HB1 referência suplementar: data e referência: HB1 referência: data não provada pela âncora suplementar
+PLANTA HB1 referência suplementar: corpo: HB1 referência: corpo suplementar divergente
+PLANTA HB1 referência suplementar: âncora: HB1 referência: data não provada pela âncora suplementar
+PLANTA HB1 período do sítio trocado: HB1 data: período dos dados divergente
+PLANTA HB1 período sem âncora: HB1 data: período dos dados sem âncora no excerto
+PLANTA HB1 período do motor e do sítio trocados juntos: HB1 data: período dos dados sem âncora no excerto
+PLANTA HB1-c origem: o sha256 trocado: HB1-c origem: o sha256 do selo não é o do ficheiro no motor
+PLANTA HB1-c origem: o excerto alterado: HB1-c origem: o excerto não está no corpo
+PLANTA HB1-c origem: o sha256 trocado (hb1e): HB1-c origem: o sha256 do selo não é o do ficheiro no motor
+PLANTA HB1-c origem: o excerto alterado (hb1e): HB1-c origem: o excerto não está no corpo
+PLANTA HB1-c origem: o sha256 trocado (hb1e-pdf): HB1-c origem: o sha256 do selo não é o do ficheiro no motor
+PLANTA HB1-c origem: o excerto alterado (hb1e-pdf): HB1-c origem: o excerto não está no corpo
+V2A: 83 afirmações conferidas, 105 corpos lidos, 23 origens HB1-c conferidas no motor, 69 plantas, 0 erros.

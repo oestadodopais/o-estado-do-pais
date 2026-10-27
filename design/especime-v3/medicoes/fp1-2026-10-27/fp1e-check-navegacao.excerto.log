@@ -1,0 +1,16 @@
+      "queixa": "FC4 · /municipios/evora/ · indice: a frase diz «Évora (105,5) está em 287.º lugar entre os 307 concelhos com valor, do mais baixo para o mais alto.» e a recomposição dá «Évora (105,5) está em 287.º lugar entre os 307 concelhos com valor no índice de dívida, do mais baixo para o mais alto.»"
+    },
+    {
+      "nome": "r2-comparacao-sem-a-unidade-de-portugal",
+      "celula": "FC5",
+      "mordeu": true,
+      "queixa": "FC5 · /municipios/evora/ · ganho: a comparação diz «Está abaixo de Portugal, onde o ganho médio é de 1 576,0.» e a recomposição dá «Está abaixo de Portugal, onde o ganho médio é de 1 576,0 euros por mês.»"
+    },
+    {
+      "nome": "r2-base-do-indice-trocada",
+      "celula": "FC5",
+      "mordeu": true,
+      "queixa": "FC5 · /municipios/evora/ · poderDeCompra: a comparação diz «Está acima da média de Portugal (101).» e a recomposição dá «Está acima da média de Portugal (100).»"
+    }
+  ]
+}
