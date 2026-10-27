@@ -14,7 +14,10 @@ for pasta in "$@"; do
   extras="$extras --add-dir $pasta"
 done
 modelo="${CODEX_CONSTRUTOR:-gpt-6-astra}"
-raciocinio="${CODEX_RACIOCINIO:-xhigh}"
+# O ESFORÇO ESCOLHE-SE POR TAREFA, NUNCA POR OMISSÃO (§1.202 regra 6; I270, 27.10.2026): este guião arrancava a xhigh
+# quando ninguém dizia nada, ao contrário da regra (high nas construções; xhigh só nas leituras que toquem números).
+raciocinio="${CODEX_RACIOCINIO:-}"
+[ -n "$raciocinio" ] || { echo "9 CODEX_RACIOCINIO por escolher, pela tarefa: high nas construções e nas correções que toquem réguas, nomes, frases ou dist/; medium no mecânico sem nada disso (Sol 6.1) e nas leituras do Astra; xhigh só nas leituras que toquem números ou fontes; nunca max (§1.202 regra 6)"; exit 9; }
 case "$raciocinio" in low|medium|high|xhigh) ;; *) echo "CODEX_RACIOCINIO tem de ser low, medium, high ou xhigh (recebi: ${raciocinio})" >&2; exit 9;; esac
 aqui="$(cd "$(dirname "$0")" && pwd -P)" || exit 9
 comum="$aqui/PROMPT-construtor-comum.md"

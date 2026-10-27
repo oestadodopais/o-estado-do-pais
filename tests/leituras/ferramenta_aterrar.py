@@ -22,6 +22,10 @@ class Aterrar(unittest.TestCase):
         self.main = repo(self.p / 'principal', 'main')
         self.w = worktree(self.main, self.p / 'ramo')
         (self.w / 'linha').write_text('cabeça a aterrar\n')
+        self.custo = self.w / 'design/especime-v3/medicoes/ensaio-2026-10-27/custo-2026-10-27.json'
+        self.custo.parent.mkdir(parents=True)
+        self.custo.write_text('{"passagens": []}\n')
+        git(self.w, 'add', '--', str(self.custo.relative_to(self.w)))  # commit() só adiciona .gitignore e linha
         commit(self.w, 'ramo pronto')
         self.cabeca = git(self.w, 'rev-parse', 'HEAD')
         self.main_antes = git(self.main, 'rev-parse', 'HEAD')
@@ -82,6 +86,34 @@ print('1m https://example.invalid/lancamento ● '+('Error' if modo=='vercel-fal
         self.assertNotIn(str(self.p), (self.saida / 'aterragem.json').read_text())
         chamadas = [json.loads(l)['cmd'] for l in self.chamadas.read_text().splitlines()]
         return r, recibo, chamadas
+
+    def sem_custo(self):
+        # O ramo sem nenhum custo-<data>.json em relação a main (o ficheiro entrou e saiu: o diff main...HEAD não o tem).
+        git(self.w, 'rm', '-q', str(self.custo.relative_to(self.w)))
+        commit(self.w, 'sem custo')
+        self.cabeca = git(self.w, 'rev-parse', 'HEAD')
+        self.env['CABECA'] = self.cabeca
+
+    def test_bloco_sem_custo_recusado(self):
+        self.sem_custo()
+        r, recibo, chamadas = self.correr()
+        self.assertEqual(r.returncode, 9)
+        self.assertEqual([p['passo'] for p in recibo['passos']], ['parou'])
+        self.assertIn('custo-<data>.json', recibo['passos'][-1]['motivo'])
+        self.assertFalse(any(c[0] == 'git' and c[1] in ('push', 'merge') for c in chamadas))
+
+    def test_ramo_sem_bloco_com_razao_no_recibo(self):
+        self.sem_custo()
+        self.env['ATERRAR_SEM_CUSTO'] = 'os registos do dia, sem bloco'
+        r, recibo, _ = self.correr()
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+        self.assertEqual(recibo['sem_custo'], 'os registos do dia, sem bloco')
+        self.assertNotIn('custo', recibo)
+
+    def test_bloco_com_custo_no_recibo(self):
+        r, recibo, _ = self.correr()
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+        self.assertEqual(recibo['custo'], ['design/especime-v3/medicoes/ensaio-2026-10-27/custo-2026-10-27.json'])
 
     def test_ficheiro_por_registar(self):
         (self.w / 'nao-seguido').write_text('planta')

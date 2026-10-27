@@ -16,7 +16,11 @@ start=$(date -u +%H:%M:%S)
 # O LEITOR É O ASTRA XHIGH (05.10.2026, a M51 e a §1.161): medido contra o Sol no mesmo pacote com cinco estragos,
 # cinco de cinco e mais achados por menos símbolos. O Sol fica para a segunda leitura dos blocos grandes (CODEX_MODELO).
 # O esforço vai por variável para uma troca deliberada e registada; por omissão xhigh (o high não se usa, M51).
-modelo="${CODEX_MODELO:-gpt-6-astra}"; raciocinio="${CODEX_RACIOCINIO:-xhigh}"
+modelo="${CODEX_MODELO:-gpt-6-astra}"
+# O ESFORÇO ESCOLHE-SE POR TAREFA, NUNCA POR OMISSÃO (§1.202 regra 6; I270, 27.10.2026): este guião arrancava a xhigh
+# quando ninguém dizia nada, ao contrário da regra (high nas construções; xhigh só nas leituras que toquem números).
+raciocinio="${CODEX_RACIOCINIO:-}"
+[ -n "$raciocinio" ] || { echo "9 CODEX_RACIOCINIO por escolher, pela tarefa: high nas construções e nas correções que toquem réguas, nomes, frases ou dist/; medium no mecânico sem nada disso (Sol 6.1) e nas leituras do Astra; xhigh só nas leituras que toquem números ou fontes; nunca max (§1.202 regra 6)"; exit 9; }
 codex exec -m "$modelo" -c "model_reasoning_effort=\"$raciocinio\"" -C "$pacote" -s read-only --skip-git-repo-check --ephemeral --color never -o "$saida" - < "$prompt" > "$saida.eventos.log" 2>&1
 code=$?
 end=$(date -u +%H:%M:%S)

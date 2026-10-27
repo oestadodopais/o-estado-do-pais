@@ -167,6 +167,26 @@ class Aterragem:
         if hasattr(self, 'cabeca_motor'):
             self.exigir(git(self.motor, 'rev-parse', 'HEAD') == self.cabeca_motor, 'a cabeça do motor mudou durante a aterragem')
 
+    def conferir_custo(self):
+        # A REGRA 3 DO CUSTO (§1.202, 21.10.2026): «a aterragem recusa um bloco sem o seu custo». Até 27.10.2026 nenhuma
+        # linha deste guião o conferia (I269): os blocos aterravam com ou sem o custo-<data>.json ao lado do relatório.
+        # O ramo tem de tocar pelo menos um `design/especime-v3/medicoes/<bloco>/custo*.json` em relação a `main`; um ramo
+        # que não é um bloco (os registos do dia) passa com ATERRAR_SEM_CUSTO="a razão", e a razão fica no recibo.
+        if git(self.sitio, 'rev-parse', 'main') == self.cabeca:
+            # main já está nesta cabeça: uma tentativa anterior fundiu-a (e passou por aqui) e parou depois, na Vercel ou no
+            # verify-deploy; o diff main...HEAD é vazio e não diz nada sobre o bloco. Regista-se e segue.
+            self.recibo['custo'] = 'main já está nesta cabeça: a conferência do custo correu na tentativa que a fundiu'
+            return
+        ficheiros = git(self.sitio, 'diff', '--name-only', 'main...HEAD').splitlines()
+        custos = [f for f in ficheiros if re.match(r'design/especime-v3/medicoes/[^/]+/custo[^/]*\.json$', f)]
+        razao = os.environ.get('ATERRAR_SEM_CUSTO', '').strip()
+        if custos:
+            self.recibo['custo'] = custos
+        elif razao:
+            self.recibo['sem_custo'] = razao
+        self.exigir(bool(custos) or bool(razao), 'o ramo não toca nenhum custo-<data>.json em design/especime-v3/medicoes/ (a regra 3 da §1.202); '
+                    'para um ramo que não é um bloco, ATERRAR_SEM_CUSTO="a razão" fica no recibo')
+
     def github(self):
         for tentativa in range(45):
             if tentativa:
@@ -231,6 +251,7 @@ class Aterragem:
         codigo = 9
         try:
             self.conferir_arvores()
+            self.conferir_custo()
             self.cabeca_motor = git(self.motor, 'rev-parse', 'HEAD')
             self.recibo['cabeca_motor'] = self.cabeca_motor
             self.registar('condicoes', 0)

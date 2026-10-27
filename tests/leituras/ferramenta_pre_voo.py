@@ -19,7 +19,7 @@ class PreVoo(unittest.TestCase):
         self.mw = worktree(self.m, self.p / 'motor-ramo')
         (self.sw / 'node_modules').mkdir()
         self.env = {k: v for k, v in os.environ.items() if k not in ('OEDP_RELATORIO', 'OEDP_LANCADOR_BASE', 'RESEARCHHUB_LOCK_DIR')}
-        self.env.update(OEDP_TRANCA=str(self.p / 'tranca'), RESEARCHHUB_DIR=str(self.mw))
+        self.env.update(OEDP_TRANCA=str(self.p / 'tranca'), RESEARCHHUB_DIR=str(self.mw), CODEX_RACIOCINIO='high')
 
     def correr(self):
         return subprocess.run(['sh', str(GUIOES / 'pre-voo.sh'), str(self.sw), str(self.mw)], env=self.env, capture_output=True, text=True)
@@ -73,6 +73,20 @@ class PreVoo(unittest.TestCase):
         self.assertEqual(self.correr().returncode, 9)
         self.env['OEDP_LANCADOR_BASE'] = str(self.p / 'externo/RELATORIO')
         self.assertEqual(self.correr().returncode, 0)
+
+    def test_lancador_recusa_sem_esforco_escolhido(self):
+        prompt = self.p / 'prompt.md'
+        prompt.write_text('ensaio')
+        env = {k: v for k, v in self.env.items() if k != 'CODEX_RACIOCINIO'}
+        r = subprocess.run(['sh', str(GUIOES / 'construir-codex.sh'), str(self.sw), str(prompt), str(self.p / 'relatorio.md')],
+                           env=env, capture_output=True, text=True, timeout=10)
+        self.assertEqual(r.returncode, 9, r.stdout + r.stderr)
+        self.assertIn('9 CODEX_RACIOCINIO por escolher', r.stdout + r.stderr)
+        self.assertNotIn('INICIO ', r.stdout)
+        r = subprocess.run(['sh', str(GUIOES / 'ler.sh'), str(self.p), str(prompt), str(self.p / 'saida.md')],
+                           env=env, capture_output=True, text=True, timeout=10)
+        self.assertEqual(r.returncode, 9, r.stdout + r.stderr)
+        self.assertIn('9 CODEX_RACIOCINIO por escolher', r.stdout + r.stderr)
 
     def test_lancador_recusa_antes_do_codex(self):
         (self.m / 'linha').write_text('master por fundir\n')

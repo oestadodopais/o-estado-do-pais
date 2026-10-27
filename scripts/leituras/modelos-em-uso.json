@@ -1,0 +1,62 @@
+{
+  "_nota": "Os lugares e os modelos em uso (§1.177, §1.202 regra 6, M109; atualizado a 27.10.2026). Um modelo novo entra num lugar só depois do ensaio com cinco plantas (M51) e sobe quando medido igual ou melhor e mais barato, por decisão do lugar de direção, registada no DECISIONS.md.",
+  "lugares": {
+    "direcao": {
+      "modelo": "claude-fable-5-1",
+      "esforco": "high; xhigh só nas decisões sobre números; nunca max"
+    },
+    "leitor": {
+      "modelo": "claude-opus-5-5",
+      "esforco": "xhigh nas leituras que toquem números ou fontes",
+      "definicao": "~/.claude/agents/leitor.md"
+    },
+    "construtor-de-recurso": {
+      "modelo": "claude-opus-5-5",
+      "definicao": "~/.claude/agents/construtor.md"
+    },
+    "construtor": {
+      "modelo": "gpt-6-astra",
+      "esforco": "high nas construções e nas correções que toquem réguas, nomes, frases ou dist/; medium nas leituras (5/5 plantas a 26.10)",
+      "cli": "codex"
+    },
+    "mecanico": {
+      "modelo": "gpt-6.1-sol",
+      "esforco": "medium, só sem réguas, nomes, frases nem dist/ (M109, I261)",
+      "cli": "codex"
+    },
+    "leitor-argon": {
+      "modelo": "gemini-4-argon-high",
+      "esforco": "High; só leitura; a quota individual é curta",
+      "cli": "agy"
+    },
+    "vigilancia": {
+      "modelo": "claude-sonnet-5-5",
+      "nota": "provisório: o Haiku ainda não fez o ensaio da M51; a varredura passa aos feeds por guião (M108)"
+    }
+  },
+  "por_medir": [
+    "codex: gpt-6-terra (nunca lançado)",
+    "claude: haiku na vigilância (ensaio M51 por fazer)",
+    "claude: sonnet na leitura às cegas (M52)"
+  ],
+  "listas_conhecidas": {
+    "agy": [
+      "gemini-4-argon-medium",
+      "gemini-4-argon-high",
+      "gemini-4-argon-low",
+      "gemini-3.8-flash-high",
+      "gemini-3.8-flash-medium",
+      "gemini-3.8-flash-low",
+      "claude-opus-5-5-low",
+      "claude-opus-5-5-medium",
+      "claude-opus-5-5-high",
+      "claude-sonnet-5-5-low",
+      "claude-sonnet-5-5-medium",
+      "claude-sonnet-5-5-high",
+      "gpt-oss-120b-medium"
+    ],
+    "agy_lida_a": "2026-10-27",
+    "codex": "a CLI não lista modelos; sondam-se por nome com sondar-modelo.sh quando um modelo for anunciado",
+    "claude": "a CLI não lista modelos; sondam-se por nome com sondar-modelo.sh quando um modelo for anunciado"
+  }
+}
