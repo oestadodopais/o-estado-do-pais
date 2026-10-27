@@ -1,0 +1,85 @@
+{
+ "bloco": "VR1",
+ "escrito_em": "2026-10-27T18:10:24Z",
+ "copia_rasa": {
+  "profundidade_pedida": 10,
+  "is_shallow_repository": "true",
+  "commits_visiveis": 17,
+  "cabeca": "ec391c323e85a60da99b93837f6f67cc01c19c84",
+  "entrada_do_orcamento_pelo_git_vivo": "2026-10-26"
+ },
+ "construcao_na_copia_rasa": {
+  "codigo": 0,
+  "inicio": "2026-10-27T17:28:10Z",
+  "fim": "2026-10-27T17:34:29Z",
+  "linhas_do_registo": 18193,
+  "segundos_de_parede": 379,
+  "linha_I9_integracao": "I9 integração: 4 edições reais verdes; 4 páginas sem scripts recusadas."
+ },
+ "vercel": {
+  "cabeca": "0995e02c1",
+  "linhas_do_registo": 10004,
+  "linha_da_assercao": 9981,
+  "linha_do_erro_final": 10002,
+  "hora_do_erro": "2026-10-27T17:14:29.170Z",
+  "ficheiro_e_linha": "tests/hb1/publicacao.mjs:61"
+ },
+ "aterragem_parada": {
+  "publicar-ramo": "2026-10-27T16:20:25Z",
+  "github-conclusao": "2026-10-27T17:03:36Z",
+  "fundir-main": "2026-10-27T17:03:41Z",
+  "publicar-main": "2026-10-27T17:03:42Z",
+  "vercel-12": "2026-10-27T17:14:57Z",
+  "parou_codigo": 1,
+  "minutos_do_portao_do_github": 43
+ },
+ "plantas_e_regua": [
+  {
+   "nome": "unidade",
+   "comando": "node tests/hb1/publicacao.mjs ",
+   "codigo": 0,
+   "esperado": 0,
+   "ultima_linha": "I9 publicação declarada: dois controlos verdes; sete adulterações recusadas."
+  },
+  {
+   "nome": "integracao",
+   "comando": "node tests/hb1/publicacao.mjs --html-construido",
+   "codigo": 0,
+   "esperado": 0,
+   "ultima_linha": "I9 integração: 4 edições reais verdes; 4 páginas sem scripts recusadas."
+  },
+  {
+   "nome": "planta-data",
+   "comando": "node tests/hb1/publicacao.mjs --planta-data",
+   "codigo": 1,
+   "esperado": 1,
+   "ultima_linha": "HB1 portão: data declarada anterior ao commit de entrada ou inválida"
+  },
+  {
+   "nome": "planta-entrada",
+   "comando": "node tests/hb1/publicacao.mjs --html-construido --planta-entrada",
+   "codigo": 1,
+   "esperado": 1,
+   "ultima_linha": "HB1 portão: a entrada posterior à data declarada recusada em 4 edições"
+  }
+ ],
+ "diff_da_regua": {
+  "ficheiros": 1,
+  "linhas_mais": 18,
+  "linhas_menos": 6
+ },
+ "ficheiro_das_datas": {
+  "entrada_do_orcamento": "2026-10-20",
+  "commit_de_entrada": "940685162",
+  "data_declarada": "2026-10-21"
+ },
+ "edicoes_declaradas": 4,
+ "corrida_inteira": {
+  "passos": 52,
+  "vermelhos": 0,
+  "build_codigo": 0,
+  "vermelhos_nomes": [],
+  "segundos_somados": 2061,
+  "typecheck_codigo": 0
+ }
+}

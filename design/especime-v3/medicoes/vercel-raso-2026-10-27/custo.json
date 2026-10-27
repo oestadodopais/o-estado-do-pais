@@ -1,0 +1,44 @@
+{
+ "bloco": "VR1",
+ "pasta": "design/especime-v3/medicoes/vercel-raso-2026-10-27",
+ "lugar": "o lugar de direção (Claude Fable 5.1) fez a correção dirigida e os mandatos; a leitura curta (M48) por outra família, o Gemini 4 Argon (High), pela CLI do Antigravity",
+ "inicio": "2026-10-27T17:20:00Z",
+ "fim": null,
+ "uso_claude": {
+  "inicio": {
+   "quando": "2026-10-27T17:18Z",
+   "janela_5h_pct": 17,
+   "semana_pct": 27,
+   "fonte": "uso.py, impresso pelo arranque da sessão"
+  },
+  "fim": null
+ },
+ "uso_codex": {
+  "nota": "nenhuma passagem do Codex neste bloco",
+  "semana_pct_na_ultima_leitura": 33.0
+ },
+ "chamadas_de_ferramentas_do_lugar_de_direcao_ate_ao_pacote": 28,
+ "corridas": [
+  {
+   "nome": "a régua e as duas plantas na árvore completa contra o dist/ da cabeça",
+   "vezes": 2,
+   "fonte": "plantas.log"
+  },
+  {
+   "nome": "npm run build numa cópia git clone --depth 10, fora das árvores",
+   "segundos_de_parede": 379,
+   "codigo": 0,
+   "fonte": "raso-build.excerto.log"
+  },
+  {
+   "nome": "conferir-tudo.sh --build (a corrida inteira do verify e o typecheck)",
+   "passos": 52,
+   "vermelhos": 0,
+   "segundos_somados": 2061,
+   "codigo": 0,
+   "fonte": "resumo-verify.md"
+  }
+ ],
+ "leitura": null,
+ "aterragem": null
+}
