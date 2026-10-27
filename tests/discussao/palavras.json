@@ -40463,7 +40463,7 @@
               "pt": "Ao Governo: publicar, antes da votação final, o conteúdo e os mecanismos da medida de combate à fraude nos combustíveis, ",
               "en": "To the Government: publish, before the final vote, the content and the mechanisms of the fuel anti-fraud measure, ",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-g: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-i: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
                   "linha": "pm-q3-2-r8-c0",
@@ -40494,7 +40494,7 @@
               "pt": " milhões de euros",
               "en": " million euros",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-g: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-i: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
                   "linha": "pm-q3-2-r8-c0",
@@ -40515,7 +40515,7 @@
               "pt": " de impacto em ",
               "en": " of impact in ",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-g: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-i: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
                   "linha": "pm-q3-2-r8-c0",
@@ -40546,7 +40546,7 @@
               "pt": " numa proposta com um excedente de ",
               "en": " in a proposal with a surplus of ",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-g: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-i: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
                   "linha": "pm-q3-2-r8-c0",
@@ -40577,7 +40577,7 @@
               "pt": " milhões de euros",
               "en": " million euros",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-g: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-i: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
                   "linha": "og1-utao-saldo-me-2027",
@@ -40598,7 +40598,7 @@
               "pt": ": sem essa informação fica limitada, nas palavras da UTAO, «",
               "en": ": without that information, in the UTAO's words, «",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-g: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-i: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
                   "linha": "pm-q3-2-r8-c0",
@@ -40621,15 +40621,15 @@
         },
         {
           "caminho": "seccoes[4].conteudo[0].paragrafo[8]",
-          "pt": "». Ao Parlamento: na especialidade, não aprovar a medida sem essa informação, e pedir ao Governo o cenário em que o emprego cresce menos do que o previsto, porque «",
-          "en": "» (the assessment of the measure's robustness) is limited. To Parliament: at the detailed stage, do not approve the measure without that information, and ask the Government for the scenario in which employment grows less than forecast, because «",
+          "pt": "». Ao Parlamento: na especialidade, pedir essa informação antes da votação final e não dar os ",
+          "en": "» (the assessment of the measure's robustness) is limited. To Parliament: at the detailed stage, ask for that information before the final vote and do not take the ",
           "ramo": null,
           "partes": [
             {
-              "pt": "». Ao Parlamento: na especialidade, não aprovar a medida sem essa informação, e pedir ao Governo o cenário em que o emprego cresce menos do que o previsto, porque «",
-              "en": "» (the assessment of the measure's robustness) is limited. To Parliament: at the detailed stage, do not approve the measure without that information, and ask the Government for the scenario in which employment grows less than forecast, because «",
+              "pt": "». Ao Parlamento: na especialidade, pedir essa informação antes da votação final e não dar os ",
+              "en": "» (the assessment of the measure's robustness) is limited. To Parliament: at the detailed stage, ask for that information before the final vote and do not take the ",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-g: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-i: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
                   "linha": "pm-q3-2-r8-c0",
@@ -40656,7 +40656,64 @@
           ]
         },
         {
+          "caminho": "seccoes[4].conteudo[0].paragrafo[9].sufixo",
+          "pt": " milhões de euros",
+          "en": " million euros",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": " milhões de euros",
+              "en": " million euros",
+              "classe": "leitura",
+              "sobre": "Redação do mandato OG1-B0-i: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "apoios": [
+                {
+                  "linha": "pm-q3-2-r8-c0",
+                  "campo": "excerpt",
+                  "literal": "           Quadro 3.2. Principais medidas de política orçamental com impacto em 2027\n                                                   (milhões de euros)\n                                                                                 Impacto incremental\n                                                                                      em 2027\nCombate à fraude no setor dos combustíveis                                    300\nSeleção: 2027; impacto incremental; milhões de euros"
+                }
+              ]
+            }
+          ]
+        },
+        {
           "caminho": "seccoes[4].conteudo[0].paragrafo[10]",
+          "pt": " por certos sem ela, e pedir ao Governo o cenário em que o emprego cresce menos do que o previsto, porque «",
+          "en": " as given without it, and ask the Government for the scenario in which employment grows less than forecast, because «",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": " por certos sem ela, e pedir ao Governo o cenário em que o emprego cresce menos do que o previsto, porque «",
+              "en": " as given without it, and ask the Government for the scenario in which employment grows less than forecast, because «",
+              "classe": "leitura",
+              "sobre": "Redação do mandato OG1-B0-i: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "apoios": [
+                {
+                  "linha": "pm-q3-2-r8-c0",
+                  "campo": "excerpt",
+                  "literal": "           Quadro 3.2. Principais medidas de política orçamental com impacto em 2027\n                                                   (milhões de euros)\n                                                                                 Impacto incremental\n                                                                                      em 2027\nCombate à fraude no setor dos combustíveis                                    300\nSeleção: 2027; impacto incremental; milhões de euros"
+                },
+                {
+                  "linha": "og1-utao-p42",
+                  "campo": "excerpt",
+                  "literal": "A medida de combate à fraude no setor dos combustíveis, com um impacto orçamental estimado de 300 M€ em 2027, constitui a medida de maior dimensão do lado da receita. Contudo, a POE/2027 não disponibiliza informação suficientemente detalhada sobre o seu conteúdo e os mecanismos de implementação, o que limita a avaliação da robustez da medida e a aferição da razoabilidade do impacto orçamental projetado."
+                },
+                {
+                  "linha": "og1-utao-saldo-me-2027",
+                  "campo": "excerpt",
+                  "literal": "Os ajustamentos para contas nacionais somam – 84 M€ em 2026 e + 676 M€ em 2027 (0,2% do PIB), o que conduz aos saldos de 86 M€ e 275 M€ em contabilidade nacional (Quadro 3.3, pág. 45, do Relatório da POE/2027)."
+                },
+                {
+                  "linha": "og1-utao-p15",
+                  "campo": "excerpt",
+                  "literal": "O crescimento do emprego de 1,4% em 2027 é difícil de conciliar com o abrandamento recente da imigração líquida. O MF assume um crescimento da população em idade ativa de 0,6% em 2026 e em 2027, o que já incorpora algum abrandamento, mas projeta um crescimento da população ativa de 1,3% em 2027, o que exige uma subida da taxa de participação para 70,2% (+0,5 p.p.; 69,7% em 2026). Os dados mais recentes apontam em sentido oposto: a população em idade ativa aumentou, em média, 28 mil pessoas por trimestre em 2025 e apenas 10 mil em 2026, o que deverá refletir um menor saldo migratório; o BdP estima que a entrada líquida de imigrantes tenha diminuído de cerca de 13 200 pessoas por mês em 2024 para cerca de 6200 em 2025 (Boletim Económico de junho de 2026). No 1.º semestre de 2026, o aumento do emprego resultou sobretudo da redução da população inativa. A previsão do MF é a mais elevada das instituições de referência (entre 0,4% e 1,3%; BdP: 0,7%) e a sua concretização depende de aumentos continuados da participação e da manutenção de saldos migratórios positivos. Se o emprego crescer menos, as bases da receita fiscal e contributiva ficarão abaixo do previsto."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[4].conteudo[0].paragrafo[12]",
           "pt": "».",
           "en": "» (if employment grows less, the tax and contribution revenue bases will fall short of the forecast).",
           "ramo": null,
@@ -40665,7 +40722,7 @@
               "pt": "».",
               "en": "» (if employment grows less, the tax and contribution revenue bases will fall short of the forecast).",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-g: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-i: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
                   "linha": "pm-q3-2-r8-c0",
@@ -40701,7 +40758,7 @@
               "pt": "O orçamento que vai a votos tem um excedente de ",
               "en": "The budget going to the vote has a surplus of ",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-h: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-i: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
                   "linha": "pm-q3-3-r37-c3",
@@ -40722,7 +40779,7 @@
               "pt": " %",
               "en": " %",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-h: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-i: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
                   "linha": "pm-q3-3-r37-c3",
@@ -40743,7 +40800,7 @@
               "pt": " do PIB (",
               "en": " of GDP (",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-h: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-i: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
                   "linha": "pm-q3-3-r37-c3",
@@ -40769,7 +40826,7 @@
               "pt": " milhões de euros",
               "en": " million euros",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-h: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-i: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
                   "linha": "og1-utao-saldo-me-2027",
@@ -40790,7 +40847,7 @@
               "pt": ") em contabilidade nacional, nas previsões do Governo, e assenta em três pressupostos que a UTAO põe em dúvida, os mesmos que a conclusão acima nomeia: uma receita de ",
               "en": ") in national accounts, in the Government's forecasts, and rests on three assumptions the UTAO calls into question, the same three the conclusion above names: ",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-h: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-i: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
                   "linha": "og1-utao-saldo-me-2027",
@@ -40841,7 +40898,7 @@
               "pt": " milhões de euros",
               "en": " million euros",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-h: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-i: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
                   "linha": "pm-q3-2-r8-c0",
@@ -40862,7 +40919,7 @@
               "pt": " da medida dos combustíveis sem «",
               "en": " of revenue from the fuel measure without «",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-h: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-i: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
                   "linha": "pm-q3-2-r8-c0",
@@ -40888,7 +40945,7 @@
               "pt": "»; um emprego cuja previsão («",
               "en": "» (sufficiently detailed information on its content and implementation mechanisms); employment whose forecast («",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-h: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-i: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
                   "linha": "og1-utao-p42",
@@ -40906,15 +40963,15 @@
         },
         {
           "caminho": "seccoes[5].conteudo[0].paragrafo[10]",
-          "pt": "») é «",
-          "en": "», employment growth in the budget year) is «",
+          "pt": "») a UTAO acha «",
+          "en": "», employment growth in the budget year) the UTAO finds «",
           "ramo": null,
           "partes": [
             {
-              "pt": "») é «",
-              "en": "», employment growth in the budget year) is «",
+              "pt": "») a UTAO acha «",
+              "en": "», employment growth in the budget year) the UTAO finds «",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-h: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-i: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
                   "linha": "og1-utao-p15",
@@ -40928,14 +40985,14 @@
         {
           "caminho": "seccoes[5].conteudo[0].paragrafo[12]",
           "pt": "»; e um petróleo a ",
-          "en": "» (the highest among the reference institutions); and oil at ",
+          "en": "» (hard to reconcile with the recent slowdown in net immigration); and oil at ",
           "ramo": null,
           "partes": [
             {
               "pt": "»; e um petróleo a ",
-              "en": "» (the highest among the reference institutions); and oil at ",
+              "en": "» (hard to reconcile with the recent slowdown in net immigration); and oil at ",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-h: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-i: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
                   "linha": "og1-utao-p15",
@@ -40961,7 +41018,7 @@
               "pt": " dólares por barril",
               "en": " dollars per barrel",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-h: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-i: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
                   "linha": "og1-utao-brent-mf-2027",
@@ -40982,7 +41039,7 @@
               "pt": ", quando os contratos para ",
               "en": ", when the ",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-h: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-i: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
                   "linha": "og1-utao-brent-mf-2027",
@@ -41008,7 +41065,7 @@
               "pt": " estavam ",
               "en": " contracts stood ",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-h: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-i: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
                   "linha": "pm-q3-3-r37-c3",
@@ -41034,7 +41091,7 @@
               "pt": " %",
               "en": " %",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-h: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-i: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
                   "linha": "og1-utao-brent-diferenca",
@@ -41055,7 +41112,7 @@
               "pt": " acima a ",
               "en": " above on ",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-h: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-i: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
                   "linha": "og1-utao-brent-diferenca",
@@ -41076,7 +41133,7 @@
               "pt": " de outubro. A previsão já tem os juros a subir ",
               "en": " October. The forecast already has interest rising ",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-h: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-i: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
                   "linha": "og1-utao-brent-diferenca",
@@ -41102,7 +41159,7 @@
               "pt": " %",
               "en": " %",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-h: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-i: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
                   "linha": "og1-utao-juros-variacao",
@@ -41123,7 +41180,7 @@
               "pt": ", para ",
               "en": ", to ",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-h: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-i: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
                   "linha": "og1-utao-juros-variacao",
@@ -41149,7 +41206,7 @@
               "pt": " mil milhões de euros",
               "en": " billion euros",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-h: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-i: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
                   "linha": "og1-utao-juros-montante",
@@ -41170,7 +41227,7 @@
               "pt": ". Quando ",
               "en": ". When ",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-h: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-i: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
                   "linha": "og1-utao-juros-montante",
@@ -41196,7 +41253,7 @@
               "pt": ", ministro das Finanças, diz que as previsões «",
               "en": ", Finance Minister, says the forecasts «",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-h: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-i: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
                   "linha": "og1-governo-rtp-previsoes",
@@ -41217,7 +41274,7 @@
               "pt": "», fala das revisões das previsões para a economia; no emprego, a previsão do Governo é, nas palavras da UTAO, «",
               "en": "» (are perfectly aligned with the Government's forecasts, with very small differences), he is speaking of the revisions of the forecasts for the economy; on employment, the Government's forecast is, in the UTAO's words, «",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-h: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-i: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
                   "linha": "og1-governo-rtp-previsoes",
@@ -41243,7 +41300,7 @@
               "pt": "». As medidas já em vigor têm um impacto adicional de ",
               "en": "» (the highest among the reference institutions). Measures already in force have an additional impact of ",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-h: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-i: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
                   "linha": "og1-utao-p15",
@@ -41269,7 +41326,7 @@
               "pt": " milhões de euros",
               "en": " million euros",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-h: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-i: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
                   "linha": "og1-utao-politicas-saldo",
@@ -41290,7 +41347,7 @@
               "pt": " no saldo de ",
               "en": " on the ",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-h: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-i: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
                   "linha": "og1-utao-politicas-saldo",
@@ -41316,7 +41373,7 @@
               "pt": " (",
               "en": " balance (",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-h: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-i: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
                   "linha": "pm-q3-3-r37-c3",
@@ -41342,7 +41399,7 @@
               "pt": " %",
               "en": " %",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-h: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-i: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
                   "linha": "og1-utao-politicas-peso",
@@ -41363,7 +41420,7 @@
               "pt": " do PIB) e as medidas novas valem ",
               "en": " of GDP) and the new measures are worth ",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-h: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-i: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
                   "linha": "og1-utao-politicas-peso",
@@ -41389,7 +41446,7 @@
               "pt": " milhões de euros",
               "en": " million euros",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-h: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-i: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
                   "linha": "og1-utao-novas-saldo",
@@ -41410,7 +41467,7 @@
               "pt": ": o que muda em ",
               "en": ": what changes in ",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-h: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-i: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
                   "linha": "og1-utao-novas-saldo",
@@ -41436,7 +41493,7 @@
               "pt": " vem sobretudo do que já estava em vigor. «",
               "en": " comes mostly from what was already in force. «",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-h: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-i: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
                   "linha": "pm-q3-3-r37-c3",
@@ -41462,7 +41519,7 @@
               "pt": "», diz o ",
               "en": "» (a favour to capital and a disaster for the country), says the ",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-h: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-i: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
                   "linha": "og1-pcp-comite",
@@ -41475,15 +41532,15 @@
         },
         {
           "caminho": "seccoes[5].conteudo[0].paragrafo[44]",
-          "pt": "; é um juízo, e um juízo não se mede. O que se mede diz que é um orçamento equilibrado por um fio. O que a UTAO escreve sobre os juros e as taxas de juro entra aqui a ",
-          "en": "; it is a judgement, and a judgement cannot be measured. What can be measured says this is a budget balanced by a thread. What the UTAO writes on interest and interest rates enters here on ",
+          "pt": "; é um juízo, e um juízo não se mede. O que se mede diz que é um orçamento equilibrado por um fio. O que a UTAO escreve sobre o risco dos juros e das taxas de juro entra aqui a ",
+          "en": "; it is a judgement, and a judgement cannot be measured. What can be measured says this is a budget balanced by a thread. What the UTAO writes on the risk from interest and interest rates enters here on ",
           "ramo": null,
           "partes": [
             {
-              "pt": "; é um juízo, e um juízo não se mede. O que se mede diz que é um orçamento equilibrado por um fio. O que a UTAO escreve sobre os juros e as taxas de juro entra aqui a ",
-              "en": "; it is a judgement, and a judgement cannot be measured. What can be measured says this is a budget balanced by a thread. What the UTAO writes on interest and interest rates enters here on ",
+              "pt": "; é um juízo, e um juízo não se mede. O que se mede diz que é um orçamento equilibrado por um fio. O que a UTAO escreve sobre o risco dos juros e das taxas de juro entra aqui a ",
+              "en": "; it is a judgement, and a judgement cannot be measured. What can be measured says this is a budget balanced by a thread. What the UTAO writes on the risk from interest and interest rates enters here on ",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-h: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-i: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
                   "linha": "og1-pcp-comite",
@@ -41564,7 +41621,7 @@
               "pt": ", depois do voto, com o registo da votação e as intervenções do Diário da Assembleia.",
               "en": ", after the vote, with the voting record and the speeches from the Assembly's Diário.",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-h: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-i: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
                   "linha": "oe-2027-calendario-generalidade",

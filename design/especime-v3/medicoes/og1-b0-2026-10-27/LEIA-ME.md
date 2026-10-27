@@ -1,27 +1,28 @@
-# OG1-B0 · opinião final após OG1-B0-h
+# OG1-B0 · redação final após OG1-B0-i
 
-## Os dois Major desta leitura e a sua resolução
+## O que mudou para o leitor
 
-A quarta leitura curta identificou dois Major, conforme o mandato OG1-B0-h. A opinião foi substituída nas duas edições pelas frases fornecidas pelo lugar de direção.
+A quinta leitura curta não identificou nenhum Major, conforme o mandato OG1-B0-i. Foram aplicadas as três alterações indicadas: a recomendação pede ao Parlamento informação antes da votação final e que não dê a receita por certa sem ela; o pressuposto do emprego usa a citação sobre a dificuldade de conciliação com o abrandamento da imigração líquida; o fecho especifica o risco dos juros e das taxas de juro. A citação «a mais elevada das instituições de referência» ficou apenas na frase que contrasta a previsão do emprego com a declaração do ministro.
 
-1. **O contraste com o ministro alcançava assuntos fora da declaração.** A nova frase enquadra a declaração nas revisões das previsões para a economia e limita o contraste ao emprego, citando a qualificação da UTAO para a previsão do Governo. Saíram a associação à receita e ao petróleo nesse contraste e as palavras «linha a linha».
-2. **O fecho continuava a excluir os juros.** O fecho conserva o juízo «equilibrado por um fio», sem nomear os elementos desse fio. A frase seguinte anuncia a entrada do que a UTAO escreve sobre juros e taxas de juro na data da votação. Os parágrafos §105 e §107 continuam destinados à pesquisa da fase B, com linhas seladas; esta passagem não acrescentou nenhuma linha.
+A recomendação não cita a declaração sobre a aprovação da medida, porque não há uma linha selada para a citar. As frases foram aplicadas como fornecidas pelo lugar de direção. A conclusão, as outras secções, a Saúde, a entrada pública da correção, a porta e a decisão §1.206 ficaram intactas. Não houve linhas novas, alteração de valores ou alteração de réguas.
 
-O excedente passou a apresentar o valor em euros entre parênteses junto da percentagem do PIB. Saíram o preço dos contratos e os valores da taxa implícita. A recomendação nas duas edições, a conclusão, «Como foi dito», «O que as fontes dizem», «A comparação», a Saúde, a entrada pública da correção, a porta e a decisão §1.206 ficaram intactas. As atribuições existentes continuam ligadas às fontes. A auditoria e o inventário acompanham apenas a opinião; nenhuma régua foi modificada.
+## Nomes dos oradores
+
+Os nomes vêm dos tokens de atribuição das linhas existentes, conservados nesta passagem: `og1-governo-rtp-previsoes`, campo `attributed_to`, rende «Joaquim Miranda Sarmento»; `og1-pcp-comite`, no mesmo campo, rende «Comité Central do PCP». O cargo do ministro acompanha o nome na língua da edição. As glosas não têm algarismos em texto fixo.
 
 ## Texto lido do HTML final
 
-Transcrição das páginas `/o-que-se-discute/`, `/en/under-discussion/`, `/correcoes/` e `/en/corrections/`, com os botões de fonte omitidos e os espaços normalizados. A recomendação, a Saúde, a correção e a porta são conservadas como contexto.
+Transcrição das páginas `/o-que-se-discute/`, `/en/under-discussion/`, `/correcoes/` e `/en/corrections/`, com os botões de fonte omitidos e os espaços normalizados. A Saúde, a correção e a porta são conservadas como contexto.
 
 ### Português
 
 **Recomendação do OG1**
 
-Ao Governo: publicar, antes da votação final, o conteúdo e os mecanismos da medida de combate à fraude nos combustíveis, 300 milhões de euros de impacto em 2027 numa proposta com um excedente de 275 milhões de euros: sem essa informação fica limitada, nas palavras da UTAO, «a avaliação da robustez da medida». Ao Parlamento: na especialidade, não aprovar a medida sem essa informação, e pedir ao Governo o cenário em que o emprego cresce menos do que o previsto, porque «Se o emprego crescer menos, as bases da receita fiscal e contributiva ficarão abaixo do previsto».
+Ao Governo: publicar, antes da votação final, o conteúdo e os mecanismos da medida de combate à fraude nos combustíveis, 300 milhões de euros de impacto em 2027 numa proposta com um excedente de 275 milhões de euros: sem essa informação fica limitada, nas palavras da UTAO, «a avaliação da robustez da medida». Ao Parlamento: na especialidade, pedir essa informação antes da votação final e não dar os 300 milhões de euros por certos sem ela, e pedir ao Governo o cenário em que o emprego cresce menos do que o previsto, porque «Se o emprego crescer menos, as bases da receita fiscal e contributiva ficarão abaixo do previsto».
 
 **Opinião do OG1**
 
-O orçamento que vai a votos tem um excedente de 0,1 % do PIB (275 milhões de euros) em contabilidade nacional, nas previsões do Governo, e assenta em três pressupostos que a UTAO põe em dúvida, os mesmos que a conclusão acima nomeia: uma receita de 300 milhões de euros da medida dos combustíveis sem «informação suficientemente detalhada sobre o seu conteúdo e os mecanismos de implementação»; um emprego cuja previsão («O crescimento do emprego de 1,4% em 2027») é «a mais elevada das instituições de referência»; e um petróleo a 86,1 dólares por barril, quando os contratos para 2027 estavam 11 % acima a 16 de outubro. A previsão já tem os juros a subir 23,2 %, para 8,2 mil milhões de euros. Quando Joaquim Miranda Sarmento, ministro das Finanças, diz que as previsões «estão perfeitamente alinhadas com as previsões do Governo, têm diferenças muito pequenas», fala das revisões das previsões para a economia; no emprego, a previsão do Governo é, nas palavras da UTAO, «a mais elevada das instituições de referência». As medidas já em vigor têm um impacto adicional de −5 411 milhões de euros no saldo de 2027 (1,6 % do PIB) e as medidas novas valem 79 milhões de euros: o que muda em 2027 vem sobretudo do que já estava em vigor. «um frete ao capital e um desastre para o País», diz o Comité Central do PCP; é um juízo, e um juízo não se mede. O que se mede diz que é um orçamento equilibrado por um fio. O que a UTAO escreve sobre os juros e as taxas de juro entra aqui a 28.10.2026, depois do voto, com o registo da votação e as intervenções do Diário da Assembleia.
+O orçamento que vai a votos tem um excedente de 0,1 % do PIB (275 milhões de euros) em contabilidade nacional, nas previsões do Governo, e assenta em três pressupostos que a UTAO põe em dúvida, os mesmos que a conclusão acima nomeia: uma receita de 300 milhões de euros da medida dos combustíveis sem «informação suficientemente detalhada sobre o seu conteúdo e os mecanismos de implementação»; um emprego cuja previsão («O crescimento do emprego de 1,4% em 2027») a UTAO acha «difícil de conciliar com o abrandamento recente da imigração líquida»; e um petróleo a 86,1 dólares por barril, quando os contratos para 2027 estavam 11 % acima a 16 de outubro. A previsão já tem os juros a subir 23,2 %, para 8,2 mil milhões de euros. Quando Joaquim Miranda Sarmento, ministro das Finanças, diz que as previsões «estão perfeitamente alinhadas com as previsões do Governo, têm diferenças muito pequenas», fala das revisões das previsões para a economia; no emprego, a previsão do Governo é, nas palavras da UTAO, «a mais elevada das instituições de referência». As medidas já em vigor têm um impacto adicional de −5 411 milhões de euros no saldo de 2027 (1,6 % do PIB) e as medidas novas valem 79 milhões de euros: o que muda em 2027 vem sobretudo do que já estava em vigor. «um frete ao capital e um desastre para o País», diz o Comité Central do PCP; é um juízo, e um juízo não se mede. O que se mede diz que é um orçamento equilibrado por um fio. O que a UTAO escreve sobre o risco dos juros e das taxas de juro entra aqui a 28.10.2026, depois do voto, com o registo da votação e as intervenções do Diário da Assembleia.
 
 **Conclusão da Saúde**
 
@@ -41,11 +42,11 @@ Destino: `/o-que-se-discute/#saude-no-orcamento`. Condição: `linhas`. Origens:
 
 **Recomendação do OG1**
 
-To the Government: publish, before the final vote, the content and the mechanisms of the fuel anti-fraud measure, 300 million euros of impact in 2027 in a proposal with a surplus of 275 million euros: without that information, in the UTAO's words, «a avaliação da robustez da medida» (the assessment of the measure's robustness) is limited. To Parliament: at the detailed stage, do not approve the measure without that information, and ask the Government for the scenario in which employment grows less than forecast, because «Se o emprego crescer menos, as bases da receita fiscal e contributiva ficarão abaixo do previsto» (if employment grows less, the tax and contribution revenue bases will fall short of the forecast).
+To the Government: publish, before the final vote, the content and the mechanisms of the fuel anti-fraud measure, 300 million euros of impact in 2027 in a proposal with a surplus of 275 million euros: without that information, in the UTAO's words, «a avaliação da robustez da medida» (the assessment of the measure's robustness) is limited. To Parliament: at the detailed stage, ask for that information before the final vote and do not take the 300 million euros as given without it, and ask the Government for the scenario in which employment grows less than forecast, because «Se o emprego crescer menos, as bases da receita fiscal e contributiva ficarão abaixo do previsto» (if employment grows less, the tax and contribution revenue bases will fall short of the forecast).
 
 **Opinião do OG1**
 
-The budget going to the vote has a surplus of 0,1 % of GDP (275 million euros) in national accounts, in the Government's forecasts, and rests on three assumptions the UTAO calls into question, the same three the conclusion above names: 300 million euros of revenue from the fuel measure without «informação suficientemente detalhada sobre o seu conteúdo e os mecanismos de implementação» (sufficiently detailed information on its content and implementation mechanisms); employment whose forecast («O crescimento do emprego de 1,4% em 2027», employment growth in the budget year) is «a mais elevada das instituições de referência» (the highest among the reference institutions); and oil at 86,1 dollars per barrel, when the 2027 contracts stood 11 % above on 16 October. The forecast already has interest rising 23,2 %, to 8,2 billion euros. When Joaquim Miranda Sarmento, Finance Minister, says the forecasts «estão perfeitamente alinhadas com as previsões do Governo, têm diferenças muito pequenas» (are perfectly aligned with the Government's forecasts, with very small differences), he is speaking of the revisions of the forecasts for the economy; on employment, the Government's forecast is, in the UTAO's words, «a mais elevada das instituições de referência» (the highest among the reference institutions). Measures already in force have an additional impact of −5 411 million euros on the 2027 balance (1,6 % of GDP) and the new measures are worth 79 million euros: what changes in 2027 comes mostly from what was already in force. «um frete ao capital e um desastre para o País» (a favour to capital and a disaster for the country), says the Comité Central do PCP; it is a judgement, and a judgement cannot be measured. What can be measured says this is a budget balanced by a thread. What the UTAO writes on interest and interest rates enters here on 28.10.2026, after the vote, with the voting record and the speeches from the Assembly's Diário.
+The budget going to the vote has a surplus of 0,1 % of GDP (275 million euros) in national accounts, in the Government's forecasts, and rests on three assumptions the UTAO calls into question, the same three the conclusion above names: 300 million euros of revenue from the fuel measure without «informação suficientemente detalhada sobre o seu conteúdo e os mecanismos de implementação» (sufficiently detailed information on its content and implementation mechanisms); employment whose forecast («O crescimento do emprego de 1,4% em 2027», employment growth in the budget year) the UTAO finds «difícil de conciliar com o abrandamento recente da imigração líquida» (hard to reconcile with the recent slowdown in net immigration); and oil at 86,1 dollars per barrel, when the 2027 contracts stood 11 % above on 16 October. The forecast already has interest rising 23,2 %, to 8,2 billion euros. When Joaquim Miranda Sarmento, Finance Minister, says the forecasts «estão perfeitamente alinhadas com as previsões do Governo, têm diferenças muito pequenas» (are perfectly aligned with the Government's forecasts, with very small differences), he is speaking of the revisions of the forecasts for the economy; on employment, the Government's forecast is, in the UTAO's words, «a mais elevada das instituições de referência» (the highest among the reference institutions). Measures already in force have an additional impact of −5 411 million euros on the 2027 balance (1,6 % of GDP) and the new measures are worth 79 million euros: what changes in 2027 comes mostly from what was already in force. «um frete ao capital e um desastre para o País» (a favour to capital and a disaster for the country), says the Comité Central do PCP; it is a judgement, and a judgement cannot be measured. What can be measured says this is a budget balanced by a thread. What the UTAO writes on the risk from interest and interest rates enters here on 28.10.2026, after the vote, with the voting record and the speeches from the Assembly's Diário.
 
 **Conclusão da Saúde**
 
@@ -75,10 +76,10 @@ Destino: `/en/under-discussion/#saude-no-orcamento`. Condição: `linhas`. Orige
 | `ledger:check` | 0 | Incluída no build. |
 | `check:pais` | 0 | Incluída no build. |
 | `typecheck` | 0 | Isolada. |
-| Transcrição e valores do HTML | 0 | 24 valores OG1, mais Saúde e correção. |
+| Transcrição e valores do HTML | 0 | 26 valores OG1, mais Saúde e correção. |
 | Porta da Saúde | 0 | Uma por edição; condição, destino e origens. |
 
-Os trechos finais das conferências estão em `conferencias-og1-b0-h.txt`. O verificador compara o texto renderizado com os tokens e os valores com as linhas existentes, além de conferir que as restantes secções OG1, incluindo a recomendação, não mudaram. As partes de navegador, `check:frases-compostas` e `check:primeira`, continuam reservadas à direção fora da sandbox. Não houve corrida inteira dos portões, `verify`, capturas, instalação de dependências ou edição manual de `dist/`.
+Os trechos finais das conferências estão em `conferencias-og1-b0-i.txt`. O verificador compara o texto renderizado com os tokens e os valores com as linhas existentes, além de conferir que as secções OG1 fora da recomendação e da opinião não mudaram. As partes de navegador, `check:frases-compostas` e `check:primeira`, continuam reservadas à direção fora da sandbox. Não houve corrida inteira dos portões, `verify`, capturas, instalação de dependências ou edição manual de `dist/`.
 
 ## Custo e entrega
 
@@ -93,12 +94,26 @@ A base de contagem é única: chamadas completas por passagem e invocações de 
 | OG1-B0-e | 8 | 1 |
 | OG1-B0-f | 18 | 6 |
 | OG1-B0-g | 21 | 6 |
-| OG1-B0-h | Em curso; 14 lidas até ao fecho do relatório | 6 |
+| OG1-B0-h | 16 | 6 |
+| OG1-B0-i | Em curso; 15 lidas até ao fecho do relatório | 6 |
 
-Totais das passagens concluídas: 173 turnos e 22475735 tokens registados pelo lançador, somados a partir dos ficheiros de pontos.
+Totais das passagens concluídas: 190 turnos e 24864902 tokens registados pelo lançador, somados a partir dos ficheiros de pontos.
 
-As sete passagens concluídas somam 160 chamadas, contadas nos registos de sessão entre o início e o fim de cada ficheiro de pontos. Os nomes dos ficheiros `.pontos.json`, `.escrivao.log` e dos registos de sessão, os intervalos, os resumos criptográficos e os turnos do lançador estão em `custo.json`. Os turnos não foram confundidos com chamadas.
+As oito passagens concluídas somam 176 chamadas, contadas nos registos de sessão entre o início e o fim de cada ficheiro de pontos. Os nomes dos ficheiros `.pontos.json`, `.escrivao.log` e dos registos de sessão, os intervalos, os resumos criptográficos e os turnos do lançador estão em `custo.json`. Os turnos não foram confundidos com chamadas.
 
-A passagem OG1-B0-h ainda não tem o ficheiro de pontos final: o lançador só o produz depois da resposta final. A contagem parcial foi lida do registo da sessão desde o arranque indicado pelo escrivão; o instante da última chamada lida está registado, sem estimar as chamadas seguintes. As seis corridas desta passagem incluem o build, palavras, tipos, transcrição, porta e âmbito.
+A passagem OG1-B0-i ainda não tem o ficheiro de pontos final: o lançador só o produz depois da resposta final. A contagem parcial foi lida do registo da sessão desde o arranque indicado pelo escrivão; o instante da última chamada lida está registado, sem estimar as chamadas seguintes. As seis corridas desta passagem incluem o build, palavras, tipos, transcrição, porta e âmbito.
 
 A entrega usa um commit pelo escrivão, com os dois trailers. Os totais de tokens das passagens concluídas foram lidos dos ficheiros de pontos e constam do custo; não foi exposta uma linha «tokens used» desta passagem. A publicação e a conferência inteira ficam com a direção.
+
+## Durações medidas nesta passagem
+
+| Execução | Segundos |
+| --- | --- |
+| build | 405 |
+| check-palavras | 221 |
+| typecheck | 0 |
+| renderizado | 1 |
+| porta | 0 |
+| Soma das execuções | 627 |
+
+Os tempos são os medidos por `curto.sh`. A duração parcial da passagem, desde o arranque do escrivão até à leitura, está no custo; a duração final depende do encerramento do lançador.

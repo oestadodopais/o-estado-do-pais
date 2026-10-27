@@ -1144,7 +1144,12 @@ export const OG1 = {
                 "campo": "excerpt",
                 "texto": "a avaliação da robustez da medida"
               },
-              "». Ao Parlamento: na especialidade, não aprovar a medida sem essa informação, e pedir ao Governo o cenário em que o emprego cresce menos do que o previsto, porque «",
+              "». Ao Parlamento: na especialidade, pedir essa informação antes da votação final e não dar os ",
+              {
+                "claim": "pm-q3-2-r8-c0",
+                "sufixo": " milhões de euros"
+              },
+              " por certos sem ela, e pedir ao Governo o cenário em que o emprego cresce menos do que o previsto, porque «",
               {
                 "fragmento": "og1-utao-p15",
                 "campo": "excerpt",
@@ -1173,7 +1178,12 @@ export const OG1 = {
                 "campo": "excerpt",
                 "texto": "a avaliação da robustez da medida"
               },
-              "» (the assessment of the measure's robustness) is limited. To Parliament: at the detailed stage, do not approve the measure without that information, and ask the Government for the scenario in which employment grows less than forecast, because «",
+              "» (the assessment of the measure's robustness) is limited. To Parliament: at the detailed stage, ask for that information before the final vote and do not take the ",
+              {
+                "claim": "pm-q3-2-r8-c0",
+                "sufixo": " million euros"
+              },
+              " as given without it, and ask the Government for the scenario in which employment grows less than forecast, because «",
               {
                 "fragmento": "og1-utao-p15",
                 "campo": "excerpt",
@@ -1222,11 +1232,11 @@ export const OG1 = {
                 "campo": "excerpt",
                 "texto": "O crescimento do emprego de 1,4% em 2027"
               },
-              "») é «",
+              "») a UTAO acha «",
               {
                 "fragmento": "og1-utao-p15",
                 "campo": "excerpt",
-                "texto": "a mais elevada das instituições de referência"
+                "texto": "difícil de conciliar com o abrandamento recente da imigração líquida"
               },
               "»; e um petróleo a ",
               {
@@ -1309,7 +1319,7 @@ export const OG1 = {
                 "literal": "og1-pcp-comite",
                 "campo": "attributed_to"
               },
-              "; é um juízo, e um juízo não se mede. O que se mede diz que é um orçamento equilibrado por um fio. O que a UTAO escreve sobre os juros e as taxas de juro entra aqui a ",
+              "; é um juízo, e um juízo não se mede. O que se mede diz que é um orçamento equilibrado por um fio. O que a UTAO escreve sobre o risco dos juros e das taxas de juro entra aqui a ",
               {
                 "periodo": "oe-2027-calendario-generalidade"
               },
@@ -1343,13 +1353,13 @@ export const OG1 = {
                 "campo": "excerpt",
                 "texto": "O crescimento do emprego de 1,4% em 2027"
               },
-              "», employment growth in the budget year) is «",
+              "», employment growth in the budget year) the UTAO finds «",
               {
                 "fragmento": "og1-utao-p15",
                 "campo": "excerpt",
-                "texto": "a mais elevada das instituições de referência"
+                "texto": "difícil de conciliar com o abrandamento recente da imigração líquida"
               },
-              "» (the highest among the reference institutions); and oil at ",
+              "» (hard to reconcile with the recent slowdown in net immigration); and oil at ",
               {
                 "claim": "og1-utao-brent-mf-2027",
                 "sufixo": " dollars per barrel"
@@ -1430,7 +1440,7 @@ export const OG1 = {
                 "literal": "og1-pcp-comite",
                 "campo": "attributed_to"
               },
-              "; it is a judgement, and a judgement cannot be measured. What can be measured says this is a budget balanced by a thread. What the UTAO writes on interest and interest rates enters here on ",
+              "; it is a judgement, and a judgement cannot be measured. What can be measured says this is a budget balanced by a thread. What the UTAO writes on the risk from interest and interest rates enters here on ",
               {
                 "periodo": "oe-2027-calendario-generalidade"
               },

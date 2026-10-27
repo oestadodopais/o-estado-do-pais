@@ -123,19 +123,37 @@
     },
     {
       "id": "OG1-B0-h",
-      "inicio_escrivao": "2026-10-27T14:27:49Z",
-      "chamadas_de_ferramentas": null,
-      "chamadas_ate_leitura": 14,
-      "ultima_chamada_lida": "2026-10-27T14:39:40.385Z",
-      "chamadas_por_ferramenta_ate_leitura": {
-        "exec": 14
-      },
-      "corridas_de_conferencias": 6,
+      "inicio": "2026-10-27T14:27:49+00:00",
+      "fim": "2026-10-27T14:40:05+00:00",
       "pontos_json": "RELATORIO-lancador-og1b0h.pontos.json",
-      "estado_pontos_json": "Ainda não produzido: o lançador escreve-o depois do fim da passagem.",
       "escrivao_log": "RELATORIO-lancador-og1b0h.escrivao.log",
       "registo_sessao": "rollout-2026-10-27T11-21-38-01a17d18-2982-7ac1-9eeb-f48c09be1e8f.jsonl",
-      "registo_conferencia": "conferencias-og1-b0-h.txt"
+      "chamadas_de_ferramentas": 16,
+      "turnos_do_lancador": 17,
+      "tokens_total_do_lancador": 2389167,
+      "chamadas_por_ferramenta": {
+        "exec": 16
+      },
+      "sha256_pontos": "d78e3bac1e7f381157e24dc1d52cd35a8620f0353e38901a493b52c8e01c0404",
+      "sha256_escrivao": "b80b3157b71efc54208f629cea91a3964ce7cdc107831cef47991a357305cd92",
+      "corridas_de_conferencias": 6
+    },
+    {
+      "id": "OG1-B0-i",
+      "inicio_escrivao": "2026-10-27T15:02:50Z",
+      "chamadas_de_ferramentas": null,
+      "chamadas_ate_leitura": 15,
+      "ultima_chamada_lida": "2026-10-27T15:14:29.076Z",
+      "chamadas_por_ferramenta_ate_leitura": {
+        "exec": 15
+      },
+      "corridas_de_conferencias": 6,
+      "pontos_json": "RELATORIO-lancador-og1b0i.pontos.json",
+      "estado_pontos_json": "Ainda não produzido: o lançador escreve-o depois do fim da passagem.",
+      "escrivao_log": "RELATORIO-lancador-og1b0i.escrivao.log",
+      "registo_sessao": "rollout-2026-10-27T11-21-38-01a17d18-2982-7ac1-9eeb-f48c09be1e8f.jsonl",
+      "registo_conferencia": "conferencias-og1-b0-i.txt",
+      "duracao_ate_leitura_segundos": 699
     }
   ],
   "criterio_corridas": "Invocações no topo: três build, ledger:check, typecheck, check:palavras, check:frases-compostas, primeira estática, duas tentativas do verificador do HTML e uma resolução dos tokens. Os subcomandos do build não são contados de novo. Acrescentam-se sete comandos na retoma da cadeia do build, desde check:voz até check:discussao; seis passaram, o último falhou.",
@@ -164,7 +182,7 @@
     "primeira_estatica": 6,
     "retoma_cadeia_build": 119
   },
-  "estado": "OG1-B0-h aplicada; conferências pedidas a zero; custo das passagens concluídas conferido nos registos nomeados.",
+  "estado": "OG1-B0-i aplicada; conferências pedidas a zero; custo das passagens concluídas conferido nos registos nomeados.",
   "historico_codigos_OG1_B0_b": {
     "build": 1,
     "check:discussao": 1,
@@ -228,7 +246,7 @@
     0
   ],
   "base_contagem": "Chamadas function_call/custom_tool_call dos registos de sessão nos intervalos inicio/fim dos pontos.json. Turnos são registados separadamente. As contagens concluídas não incluem estimativas das chamadas ainda por fazer.",
-  "total_corridas_de_conferencias": 54,
+  "total_corridas_de_conferencias": 60,
   "historico_codigos_OG1_B0_d": {
     "build": 0,
     "check:discussao": 0,
@@ -260,7 +278,7 @@
     1,
     0
   ],
-  "total_chamadas_passagens_concluidas": 160,
+  "total_chamadas_passagens_concluidas": 176,
   "criterio_corridas_OG1_B0_g": "Um build, check:palavras, typecheck, duas verificações do HTML e uma conferência de âmbito. Subcomandos do build não contam de novo.",
   "historico_codigos_OG1_B0_f": {
     "build": 0,
@@ -282,15 +300,32 @@
     0
   ],
   "segundos_medidos_OG1_B0_g": [
-    423,
-    212,
-    0,
+    389,
+    207,
     1,
+    0,
     0
   ],
-  "total_tokens_lancador_passagens_concluidas": 22475735,
-  "total_turnos_lancador_passagens_concluidas": 173,
+  "total_tokens_lancador_passagens_concluidas": 24864902,
+  "total_turnos_lancador_passagens_concluidas": 190,
   "historico_codigos_OG1_B0_g": {
+    "build": 0,
+    "check:discussao": 0,
+    "check:voz": 0,
+    "check:palavras": 0,
+    "check:lingua": 0,
+    "gate:html": 0,
+    "check:registo": 0,
+    "ledger:check": 0,
+    "check:pais": 0,
+    "typecheck": 0,
+    "verificacao_renderizado": 0,
+    "verificacao_porta": 0,
+    "check:frases-compostas": null,
+    "check:primeira": null
+  },
+  "criterio_corridas_OG1_B0_i": "Um build, check:palavras, typecheck, duas verificações do HTML e uma conferência de âmbito. Subcomandos do build não contam de novo.",
+  "historico_codigos_OG1_B0_h": {
     "build": 0,
     "check:discussao": 0,
     "check:voz": 0,
@@ -321,5 +356,33 @@
     "verificacao_porta": 0,
     "check:frases-compostas": null,
     "check:primeira": null
-  }
+  },
+  "tentativas_build_OG1_B0_i": [
+    0
+  ],
+  "segundos_medidos_OG1_B0_i": [
+    405,
+    221,
+    0,
+    1,
+    0
+  ],
+  "segundos_medidos_OG1_B0_h": [
+    423,
+    212,
+    0,
+    1,
+    0
+  ],
+  "tentativas_build_OG1_B0_h": [
+    0
+  ],
+  "duracoes_segundos_OG1_B0_i": {
+    "build": 405,
+    "check-palavras": 221,
+    "typecheck": 0,
+    "renderizado": 1,
+    "porta": 0
+  },
+  "duracao_conferencias_segundos_OG1_B0_i": 627
 }
