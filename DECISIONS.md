@@ -14246,7 +14246,9 @@ Tudo aterrou dormente, sem nenhum interruptor.
 
 ### 1.207 Terça-feira 27.10.2026: a fase A do Orçamento no ar de madrugada, o FP1 e a opinião do item reescritos em `main`, a aterragem parada numa cópia rasa e a VR1, as guardas que faltavam, e o `CLAUDE.md` só com as regras
 
-**Afecta:** `tests/hb1/publicacao.mjs` (a régua I9 de integração lê o ficheiro comitado das datas de entrada, I272); `CLAUDE.md` (a forma; nenhuma regra muda); `scripts/leituras/aterrar.py` (a regra 3 do custo passa a ser conferida); os lançadores do Codex (o esforço escolhido por tarefa, sem omissão); `design/observatorio/ARRANQUE.md` e os três hooks da máquina (M114, M115); a linha da `GARGALOS.md` sobre o portão do GitHub e a Vercel.
+**Afecta:** nenhum
+
+**Toca:** `tests/hb1/publicacao.mjs` (a régua I9 de integração lê o ficheiro comitado das datas de entrada, I272); `CLAUDE.md` (a forma; nenhuma regra muda, e a regra 14 ganha uma frase); `scripts/leituras/aterrar.py` (a regra 3 do custo passa a ser conferida); os lançadores do Codex (o esforço escolhido por tarefa, sem omissão); `design/observatorio/ARRANQUE.md` e os três hooks da máquina (M114, M115); a linha da `GARGALOS.md` sobre o portão do GitHub e a Vercel. Nenhum texto governado do sítio muda.
 
 **Data:** 27.10.2026, das 00:30 às 19:34 (o último registo do dia; a aterragem da higiene e o fecho da sessão vêm depois) UTC, o lugar de direção (Claude Fable 5.1), na continuação da sessão de 26.10 (a mesma sessão, por pedido do financiador, que não podia abrir outra).
 
