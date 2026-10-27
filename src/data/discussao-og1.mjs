@@ -1200,12 +1200,12 @@ export const OG1 = {
                 "claim": "pm-q3-3-r37-c3",
                 "sufixo": " %"
               },
-              " do PIB nas previsões do Governo, ",
+              " do PIB (",
               {
                 "claim": "og1-utao-saldo-me-2027",
                 "sufixo": " milhões de euros"
               },
-              " em contabilidade nacional, e assenta em três pressupostos que a UTAO põe em dúvida, os mesmos que a conclusão acima nomeia: uma receita de ",
+              ") em contabilidade nacional, nas previsões do Governo, e assenta em três pressupostos que a UTAO põe em dúvida, os mesmos que a conclusão acima nomeia: uma receita de ",
               {
                 "claim": "pm-q3-2-r8-c0",
                 "sufixo": " milhões de euros"
@@ -1237,23 +1237,18 @@ export const OG1 = {
               {
                 "periodo": "pm-q3-3-r37-c3"
               },
-              " estavam a cerca de ",
+              " estavam ",
               {
-                "claim": "og1-utao-brent-contratos-2027",
-                "sufixo": " dólares por barril"
+                "claim": "og1-utao-brent-diferenca",
+                "sufixo": " %"
               },
-              " a ",
+              " acima a ",
               {
                 "fragmento": "og1-utao-brent-diferenca",
                 "campo": "excerpt",
                 "texto": "16"
               },
-              " de outubro, ",
-              {
-                "claim": "og1-utao-brent-diferenca",
-                "sufixo": " %"
-              },
-              " acima. A previsão já tem os juros a subir ",
+              " de outubro. A previsão já tem os juros a subir ",
               {
                 "claim": "og1-utao-juros-variacao",
                 "sufixo": " %"
@@ -1262,22 +1257,6 @@ export const OG1 = {
               {
                 "claim": "og1-utao-juros-montante",
                 "sufixo": " mil milhões de euros"
-              },
-              ", e a «",
-              {
-                "fragmento": "og1-utao-juros-montante",
-                "campo": "excerpt",
-                "texto": "taxa de juro implícita (juros em percentagem da dívida pública)"
-              },
-              "» a passar de ",
-              {
-                "claim": "og1-utao-taxa-implicita-2026",
-                "sufixo": " %"
-              },
-              " para ",
-              {
-                "claim": "og1-utao-taxa-implicita-2027",
-                "sufixo": " %"
               },
               ". Quando ",
               {
@@ -1290,7 +1269,13 @@ export const OG1 = {
                 "campo": "excerpt",
                 "texto": "estão perfeitamente alinhadas com as previsões do Governo, têm diferenças muito pequenas"
               },
-              "», a entidade técnica do próprio Parlamento, que leu a proposta linha a linha, não diz o mesmo da receita, do emprego nem do petróleo. As medidas já em vigor têm um impacto adicional de ",
+              "», fala das revisões das previsões para a economia; no emprego, a previsão do Governo é, nas palavras da UTAO, «",
+              {
+                "fragmento": "og1-utao-p15",
+                "campo": "excerpt",
+                "texto": "a mais elevada das instituições de referência"
+              },
+              "». As medidas já em vigor têm um impacto adicional de ",
               {
                 "claim": "og1-utao-politicas-saldo",
                 "sufixo": " milhões de euros"
@@ -1299,12 +1284,12 @@ export const OG1 = {
               {
                 "periodo": "pm-q3-3-r37-c3"
               },
-              ", o equivalente a ",
+              " (",
               {
                 "claim": "og1-utao-politicas-peso",
                 "sufixo": " %"
               },
-              " do PIB, e as medidas novas valem ",
+              " do PIB) e as medidas novas valem ",
               {
                 "claim": "og1-utao-novas-saldo",
                 "sufixo": " milhões de euros"
@@ -1324,11 +1309,11 @@ export const OG1 = {
                 "literal": "og1-pcp-comite",
                 "campo": "attributed_to"
               },
-              "; é um juízo, e um juízo não se mede. O que se mede diz que é um orçamento equilibrado por um fio, e o fio são a receita por explicar e um emprego previsto acima do que as outras instituições esperam. A ",
+              "; é um juízo, e um juízo não se mede. O que se mede diz que é um orçamento equilibrado por um fio. O que a UTAO escreve sobre os juros e as taxas de juro entra aqui a ",
               {
                 "periodo": "oe-2027-calendario-generalidade"
               },
-              ", depois do voto, entram aqui o registo da votação e as intervenções do Diário da Assembleia, e o que mudar nos números."
+              ", depois do voto, com o registo da votação e as intervenções do Diário da Assembleia."
             ],
             "en": [
               "The budget going to the vote has a surplus of ",
@@ -1336,12 +1321,12 @@ export const OG1 = {
                 "claim": "pm-q3-3-r37-c3",
                 "sufixo": " %"
               },
-              " of GDP in the Government's forecasts, ",
+              " of GDP (",
               {
                 "claim": "og1-utao-saldo-me-2027",
                 "sufixo": " million euros"
               },
-              " in national accounts, and rests on three assumptions the UTAO calls into question, the same three the conclusion above names: ",
+              ") in national accounts, in the Government's forecasts, and rests on three assumptions the UTAO calls into question, the same three the conclusion above names: ",
               {
                 "claim": "pm-q3-2-r8-c0",
                 "sufixo": " million euros"
@@ -1373,23 +1358,18 @@ export const OG1 = {
               {
                 "periodo": "pm-q3-3-r37-c3"
               },
-              " contracts stood at about ",
+              " contracts stood ",
               {
-                "claim": "og1-utao-brent-contratos-2027",
-                "sufixo": " dollars per barrel"
+                "claim": "og1-utao-brent-diferenca",
+                "sufixo": " %"
               },
-              " on ",
+              " above on ",
               {
                 "fragmento": "og1-utao-brent-diferenca",
                 "campo": "excerpt",
                 "texto": "16"
               },
-              " October, ",
-              {
-                "claim": "og1-utao-brent-diferenca",
-                "sufixo": " %"
-              },
-              " above. The forecast already has interest rising ",
+              " October. The forecast already has interest rising ",
               {
                 "claim": "og1-utao-juros-variacao",
                 "sufixo": " %"
@@ -1398,22 +1378,6 @@ export const OG1 = {
               {
                 "claim": "og1-utao-juros-montante",
                 "sufixo": " billion euros"
-              },
-              ", and the «",
-              {
-                "fragmento": "og1-utao-juros-montante",
-                "campo": "excerpt",
-                "texto": "taxa de juro implícita (juros em percentagem da dívida pública)"
-              },
-              "» (implicit interest rate, interest as a share of public debt) moving from ",
-              {
-                "claim": "og1-utao-taxa-implicita-2026",
-                "sufixo": " %"
-              },
-              " to ",
-              {
-                "claim": "og1-utao-taxa-implicita-2027",
-                "sufixo": " %"
               },
               ". When ",
               {
@@ -1426,7 +1390,13 @@ export const OG1 = {
                 "campo": "excerpt",
                 "texto": "estão perfeitamente alinhadas com as previsões do Governo, têm diferenças muito pequenas"
               },
-              "» (are perfectly aligned with the Government's forecasts, with very small differences), Parliament's own technical unit, which read the proposal line by line, does not say the same of revenue, employment or oil. Measures already in force have an additional impact of ",
+              "» (are perfectly aligned with the Government's forecasts, with very small differences), he is speaking of the revisions of the forecasts for the economy; on employment, the Government's forecast is, in the UTAO's words, «",
+              {
+                "fragmento": "og1-utao-p15",
+                "campo": "excerpt",
+                "texto": "a mais elevada das instituições de referência"
+              },
+              "» (the highest among the reference institutions). Measures already in force have an additional impact of ",
               {
                 "claim": "og1-utao-politicas-saldo",
                 "sufixo": " million euros"
@@ -1435,12 +1405,12 @@ export const OG1 = {
               {
                 "periodo": "pm-q3-3-r37-c3"
               },
-              " balance, the equivalent of ",
+              " balance (",
               {
                 "claim": "og1-utao-politicas-peso",
                 "sufixo": " %"
               },
-              " of GDP, and the new measures are worth ",
+              " of GDP) and the new measures are worth ",
               {
                 "claim": "og1-utao-novas-saldo",
                 "sufixo": " million euros"
@@ -1460,11 +1430,11 @@ export const OG1 = {
                 "literal": "og1-pcp-comite",
                 "campo": "attributed_to"
               },
-              "; it is a judgement, and a judgement cannot be measured. What can be measured says this is a budget balanced by a thread, and the thread is a revenue still to be explained and an employment forecast above what the other institutions expect. On ",
+              "; it is a judgement, and a judgement cannot be measured. What can be measured says this is a budget balanced by a thread. What the UTAO writes on interest and interest rates enters here on ",
               {
                 "periodo": "oe-2027-calendario-generalidade"
               },
-              ", after the vote, the voting record and the speeches from the Assembly's Diário enter here, with whatever changes in the numbers."
+              ", after the vote, with the voting record and the speeches from the Assembly's Diário."
             ]
           }
         }

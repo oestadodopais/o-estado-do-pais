@@ -106,19 +106,36 @@
     },
     {
       "id": "OG1-B0-g",
-      "inicio_escrivao": "2026-10-27T13:50:01Z",
-      "chamadas_de_ferramentas": null,
-      "chamadas_ate_leitura": 19,
-      "ultima_chamada_lida": "2026-10-27T14:01:04.230Z",
-      "chamadas_por_ferramenta_ate_leitura": {
-        "exec": 19
-      },
-      "corridas_de_conferencias": 6,
+      "inicio": "2026-10-27T13:50:01+00:00",
+      "fim": "2026-10-27T14:01:57+00:00",
       "pontos_json": "RELATORIO-lancador-og1b0g.pontos.json",
-      "estado_pontos_json": "Ainda não produzido: o lançador escreve-o depois do fim da passagem.",
       "escrivao_log": "RELATORIO-lancador-og1b0g.escrivao.log",
       "registo_sessao": "rollout-2026-10-27T11-21-38-01a17d18-2982-7ac1-9eeb-f48c09be1e8f.jsonl",
-      "registo_conferencia": "conferencias-og1-b0-g.txt"
+      "chamadas_de_ferramentas": 21,
+      "turnos_do_lancador": 22,
+      "tokens_total_do_lancador": 2548286,
+      "chamadas_por_ferramenta": {
+        "exec": 21
+      },
+      "sha256_pontos": "201dd232197d456ac4d850ea6f172fd2f806d5e145267d2d63898b82106dbff2",
+      "sha256_escrivao": "04cdb8b7df5a335640d3937421f22167d2d4460f57dfe9afd986a794fdf8ede1",
+      "corridas_de_conferencias": 6
+    },
+    {
+      "id": "OG1-B0-h",
+      "inicio_escrivao": "2026-10-27T14:27:49Z",
+      "chamadas_de_ferramentas": null,
+      "chamadas_ate_leitura": 14,
+      "ultima_chamada_lida": "2026-10-27T14:39:40.385Z",
+      "chamadas_por_ferramenta_ate_leitura": {
+        "exec": 14
+      },
+      "corridas_de_conferencias": 6,
+      "pontos_json": "RELATORIO-lancador-og1b0h.pontos.json",
+      "estado_pontos_json": "Ainda não produzido: o lançador escreve-o depois do fim da passagem.",
+      "escrivao_log": "RELATORIO-lancador-og1b0h.escrivao.log",
+      "registo_sessao": "rollout-2026-10-27T11-21-38-01a17d18-2982-7ac1-9eeb-f48c09be1e8f.jsonl",
+      "registo_conferencia": "conferencias-og1-b0-h.txt"
     }
   ],
   "criterio_corridas": "Invocações no topo: três build, ledger:check, typecheck, check:palavras, check:frases-compostas, primeira estática, duas tentativas do verificador do HTML e uma resolução dos tokens. Os subcomandos do build não são contados de novo. Acrescentam-se sete comandos na retoma da cadeia do build, desde check:voz até check:discussao; seis passaram, o último falhou.",
@@ -147,7 +164,7 @@
     "primeira_estatica": 6,
     "retoma_cadeia_build": 119
   },
-  "estado": "OG1-B0-g aplicada; conferências pedidas a zero; custo das passagens concluídas conferido nos registos nomeados.",
+  "estado": "OG1-B0-h aplicada; conferências pedidas a zero; custo das passagens concluídas conferido nos registos nomeados.",
   "historico_codigos_OG1_B0_b": {
     "build": 1,
     "check:discussao": 1,
@@ -211,7 +228,7 @@
     0
   ],
   "base_contagem": "Chamadas function_call/custom_tool_call dos registos de sessão nos intervalos inicio/fim dos pontos.json. Turnos são registados separadamente. As contagens concluídas não incluem estimativas das chamadas ainda por fazer.",
-  "total_corridas_de_conferencias": 48,
+  "total_corridas_de_conferencias": 54,
   "historico_codigos_OG1_B0_d": {
     "build": 0,
     "check:discussao": 0,
@@ -243,9 +260,37 @@
     1,
     0
   ],
-  "total_chamadas_passagens_concluidas": 139,
+  "total_chamadas_passagens_concluidas": 160,
   "criterio_corridas_OG1_B0_g": "Um build, check:palavras, typecheck, duas verificações do HTML e uma conferência de âmbito. Subcomandos do build não contam de novo.",
   "historico_codigos_OG1_B0_f": {
+    "build": 0,
+    "check:discussao": 0,
+    "check:voz": 0,
+    "check:palavras": 0,
+    "check:lingua": 0,
+    "gate:html": 0,
+    "check:registo": 0,
+    "ledger:check": 0,
+    "check:pais": 0,
+    "typecheck": 0,
+    "verificacao_renderizado": 0,
+    "verificacao_porta": 0,
+    "check:frases-compostas": null,
+    "check:primeira": null
+  },
+  "tentativas_build_OG1_B0_g": [
+    0
+  ],
+  "segundos_medidos_OG1_B0_g": [
+    423,
+    212,
+    0,
+    1,
+    0
+  ],
+  "total_tokens_lancador_passagens_concluidas": 22475735,
+  "total_turnos_lancador_passagens_concluidas": 173,
+  "historico_codigos_OG1_B0_g": {
     "build": 0,
     "check:discussao": 0,
     "check:voz": 0,
@@ -276,15 +321,5 @@
     "verificacao_porta": 0,
     "check:frases-compostas": null,
     "check:primeira": null
-  },
-  "tentativas_build_OG1_B0_g": [
-    0
-  ],
-  "segundos_medidos_OG1_B0_g": [
-    389,
-    207,
-    1,
-    0,
-    0
-  ]
+  }
 }

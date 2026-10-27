@@ -909,3 +909,5 @@ HB1-b, correção do diagnóstico: os três textos não eram rótulos rendidos; 
 | og1-b0-f | Recomendação e opinião do Orçamento e unidades da Saúde nas duas edições após os três Major da M48 | por ler | Codex, 27.10.2026: redação do mandato OG1-B0-f; leitura curta final reservada à direção. |
 
 | og1-b0-g | Juros como facto selado e glosas da recomendação e opinião do Orçamento | por ler | Codex, 27.10.2026: redação do mandato OG1-B0-g; leitura curta final reservada à direção. |
+
+| og1-b0-h | Contraste limitado ao emprego, fecho revisto e opinião mais curta | por ler | Codex, 27.10.2026: redação do mandato OG1-B0-h; leitura curta final reservada à direção. |
