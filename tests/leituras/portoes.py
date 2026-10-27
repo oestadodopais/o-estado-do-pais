@@ -74,6 +74,7 @@ with tempfile.TemporaryDirectory(prefix='oedp-portoes-') as tmp:
     # FP2 mantém a base separada, sem build nem verify, e exige a planta vermelha.
     for perfil, nomes in [
         ('fp2-base', {'check:sobreposicao'}),
+        ('fp2-contadores', {'check:sobreposicao-contadores'}),
         ('fp2', {'build', 'check:discussao', 'check:primeira', 'check:css', 'check:frases-compostas',
                  'check:lugar', 'check:alvos', 'check:sobreposicao', 'check:sobreposicao-contadores', 'check:sobreposicao-planta', 'typecheck'}),
     ]:

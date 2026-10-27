@@ -98,7 +98,7 @@ usada=0
 # O recibo só escolhe este perfil fechado, nunca comandos arbitrários.
 portoes="build verify typecheck"
 if [ -f "$O/selecao.json" ]; then
-  perfil=$(python3 -c 'import json,sys; r=json.load(open(sys.argv[1])); assert r in ({"perfil":"v2c"}, {"perfil":"v2d"}, {"perfil":"fp2-base"}, {"perfil":"fp2"}); print(r["perfil"])' "$O/selecao.json") || exit 9
+  perfil=$(python3 -c 'import json,sys; r=json.load(open(sys.argv[1])); assert r in ({"perfil":"v2c"}, {"perfil":"v2d"}, {"perfil":"fp2-base"}, {"perfil":"fp2"}, {"perfil":"fp2-contadores"}); print(r["perfil"])' "$O/selecao.json") || exit 9
   [ "${OEDP_CONFERIR_MOTOR:-0}" = 0 ] || exit 9
   portoes="build check:discussao check:navegacao check:primeira check:cabeca gate:html check:alvos check:css check:frases-compostas check:lugar"
   if [ "$perfil" = v2d ]; then
@@ -109,6 +109,8 @@ fi
 if [ "${perfil:-}" = fp2-base ]; then
   portoes="check:sobreposicao"
   export OEDP_SOBREPOSICAO_JSON="$O/base.json"
+elif [ "${perfil:-}" = fp2-contadores ]; then
+  portoes="check:sobreposicao-contadores"
 elif [ "${perfil:-}" = fp2 ]; then
   portoes="build check:discussao check:primeira check:css check:frases-compostas check:lugar check:alvos check:sobreposicao check:sobreposicao-contadores check:sobreposicao-planta typecheck"
   export OEDP_SOBREPOSICAO_JSON="$O/sobreposicao.json"
@@ -130,11 +132,11 @@ git rev-parse HEAD > "$O/cabeca"
 printf 'limpa\n' > "$O/arvore.inicio"
 for g in $portoes; do
   date -u +%Y-%m-%dT%H:%M:%SZ > "$O/$g.inicio"
-  if [ -n "${perfil:-}" ] && [ "${perfil:-}" != fp2-base ] && [ "$g" != build ] && [ "$(cat "$O/build.codigo")" -ne 0 ]; then
+  if [ -n "${perfil:-}" ] && [ -f "$O/build.codigo" ] && [ "$g" != build ] && [ "$(cat "$O/build.codigo")" -ne 0 ]; then
     echo 'não correu: a construção não ficou verde' > "$O/$g.log"
     codigo=125
   elif [ "$g" = check:sobreposicao-contadores ]; then
-    rotas=$(rg -l 'class="texto-artigo' dist/estudos dist/en/studies --glob index.html | sed 's@^dist@@;s@/index.html$@/@' | sort | paste -sd, -)
+    rotas=$(find dist/estudos dist/en/studies -name index.html -exec grep -l 'class="texto-artigo' {} + | sed 's@^dist@@;s@/index.html$@/@' | sort | paste -sd, -)
     if [ -z "$rotas" ]; then
       echo 'FP2: nenhuma página com texto-artigo' > "$O/$g.log"; codigo=2
     else
