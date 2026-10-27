@@ -3449,8 +3449,6 @@ leitura do país, nas duas edições. **E saem do ficheiro as duas linhas da fra
 | --- | --- | --- | --- | --- |
 | conteudo | O que se passa | pp1 | viva | o título da secção dos blocos da primeira página, declarado em `strings.mjs` (`primeira.oQueSePassa`) |
 | conteudo | What is happening | pp1 | viva | ver a razão na gémea portuguesa |
-| conteudo | Os números mais recentes são de ; o sítio foi atualizado a | fp1 | viva | o rótulo da data de «O que se passa»: a data é o período de referência mais recente das linhas dos blocos mostrados, pelo fim do período, com a marca `data-da-linha`, e a célula dos blocos reconta-a |
-| conteudo | The most recent figures are from ; the site was updated on | fp1 | viva | ver a razão na gémea portuguesa |
 | navegacao | Por onde começar | pp1 | viva | o título da lista das seis entradas da primeira página; os nomes e as linhas das entradas vivem dentro das ligações |
 | navegacao | Where to start | pp1 | viva | ver a razão na gémea portuguesa |
 | conteudo | Os números deste bloco | pp1 | viva | o título da dobra de cada bloco com os números que ele mostra, cada um com o seu recibo e o seu período; o texto das linhas da lista sai do inventário com a marca dos blocos e a célula dos blocos confere-o fora das marcas |
@@ -5034,13 +5032,11 @@ Cadeias lidas no HTML construído. As citações e os valores ficam fora da voz 
 
 | classe | texto | bloco | estado | razão |
 |---|---|---|---|---|
-| conteudo | ; o sítio foi atualizado a | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
-| conteudo | ; the site was updated on | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
 | conteudo | Atualizado a | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
-| conteudo | Atualizado a · números relidos pela última vez a | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
+| conteudo | Atualizado a · números relidos na fonte a | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
 | conteudo | O que há de novo | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
 | conteudo | Updated on | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
-| conteudo | Updated on · figures last re-read on | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
+| conteudo | Updated on · figures re-read at the source on | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
 | conteudo | What is new | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
 | conteudo | atualização | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
 | conteudo | dados de | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
@@ -5048,13 +5044,13 @@ Cadeias lidas no HTML construído. As citações e os valores ficam fora da voz 
 | conteudo | estudo | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
 | conteudo | explainer | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
 | conteudo | explicação | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
-| conteudo | figures last re-read on | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
+| conteudo | figures re-read at the source on | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
 | conteudo | last re-read on | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
 | conteudo | lidos por este projeto a | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
 | conteudo | new | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
 | conteudo | next reading on | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
 | conteudo | novo | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
-| conteudo | números relidos pela última vez a | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
+| conteudo | números relidos na fonte a | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
 | conteudo | o que se discute | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
 | conteudo | próxima leitura a | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
 | conteudo | publicados pela fonte a | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
@@ -5064,3 +5060,6 @@ Cadeias lidas no HTML construído. As citações e os valores ficam fora da voz 
 | conteudo | study | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
 | conteudo | under discussion | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
 | conteudo | update | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
+
+| conteudo | Os números mais recentes são de | fp1 | viva | Período dos dados, sem repetir a data da construção. |
+| conteudo | The most recent figures are from | fp1 | viva | Período dos dados, sem repetir a data da construção. |

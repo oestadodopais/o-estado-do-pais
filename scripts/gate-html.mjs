@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+import { dataEditorialPermitida, plantasDatasEditoriais } from './datas-editoriais.mjs';
+plantasDatasEditoriais();
 import {ITENS} from '../src/data/discussao.mjs';
 import {errosDaDefinicaoEo1} from '../src/lib/definicoes-eo1.mjs';
 import { FAMILIAS_DAS_LINHAS as FAMILIAS_EO1_GATE } from '../src/data/o-que-e-das-familias.mjs';
@@ -5995,8 +5997,8 @@ for (const file of ficheirosHtml(DIST)) {
   /* H2-b: o ano do acompanhamento vem da ficha, não do livro de medições.
      Só sai do varrimento depois de conferir a composição inteira e a rota. */
   for (const el of body.querySelectorAll('[data-estudo-em-curso]')) {
-    if (rota?.key !== 'home' || !metaDoEstudoConferida(el.closest('.estudo-meta'), rota.lang))
-      err('H2-b: o horizonte do estudo em curso difere da ficha ou está fora da primeira página.');
+    if (!['home','estudos'].includes(rota?.key) || !metaDoEstudoConferida(el.closest('.estudo-meta'), rota.lang))
+      err('H2-b: o horizonte do estudo em curso difere da ficha ou está fora das listas autorizadas.');
     else aRemover.push(el);
   }
   /* B1, peça 3: datas de mudanças e de publicação, comparadas com os seus
@@ -7963,6 +7965,7 @@ for (const file of ficheirosHtml(DIST)) {
 
   for (const el of body.querySelectorAll('[data-nonledger]')) {
     const motivo = el.getAttribute('data-nonledger');
+    if (motivo === 'data-editorial' && !dataEditorialPermitida(el, rota?.key, rota?.key === 'linha' ? claims.get(rota.params?.slug) : null)) err('FP1-d: data-editorial fora dos contextos e origens permitidos.');
     if (!CONTEXTOS.has(motivo)) {
       err(
         `data-nonledger="${motivo}" não é um motivo declarado. ` +

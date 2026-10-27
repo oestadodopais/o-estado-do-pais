@@ -1,6 +1,7 @@
 /** OG1-A9: redação do mandato A8, ligada aos campos das fontes. */
 export const OG1 = {
   "slug": "orcamento-2027-generalidade",
+  // escrita é a última reescrita; publicado é a aterragem às 00:30 UTC de 27.10, pelo recibo da direção.
   "escrita": "2026-10-26",
   "publicado": "2026-10-27",
   "titulo": {

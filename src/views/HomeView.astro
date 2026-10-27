@@ -27,12 +27,9 @@
  * A DATA DE «O QUE SE PASSA» é o período de referência mais recente, pelo fim do período, das linhas
  * que os blocos mostrados usam, escrito como o sítio escreve os períodos. A data de publicação não
  * serve: a maior parte das linhas do Eurostat não a tem. A data de atualização
- * acrescentada pelo FP1 é outra data, lida de `version.json` pela preparação do build.
+ * aparece só na caixa de novidades, pelo carimbo preparado antes da construção.
  */
 import Novidades from '../components/inicio/Novidades.astro';
-import { carimboDaConstrucao } from '../lib/construcao.mjs';
-import { dataDaCasa } from '../lib/datas.mjs';
-import { FP1 } from '../data/rotulos-fp1.mjs';
 import Base from '../layouts/Base.astro';
 import PortasDaDiscussao from '../components/discussao/PortasDaDiscussao.astro';
 import BlocoDaDiscussao from '../components/discussao/BlocoDaDiscussao.astro';
@@ -66,7 +63,7 @@ import '../styles/pais.css';
 import '../styles/primeira-pagina.css';
 const { lang = 'pt' } = Astro.props;
 const s = t(lang);
-const diaDaConstrucao = carimboDaConstrucao().construido_em.slice(0,10);
+
 const r = ROTULOS_B1[lang];
 const path = routePath('home', lang);
 const recentes = estudosRecentes(lang).slice(0, 3);
@@ -124,7 +121,7 @@ const recente = periodoDosNumerosMaisRecentes(blocosDaPagina(ids, lang));
   <section class="pp-o-que-se-passa" data-o-que-se-passa aria-labelledby="o-que-se-passa-k">
     <h2 class="pp-o-que-se-passa-k" id="o-que-se-passa-k">{s.primeira.oQueSePassa}</h2>
     {recente && (
-      <p class="pp-data" data-numeros-mais-recentes>{s.primeira.numerosMaisRecentes}<DataDaLinha id={recente.linha} campo="reference_date" valor={recente.periodo} lang={lang} /><span data-voz>{FP1[lang].sitio}</span><time datetime={diaDaConstrucao} data-nonledger="data-editorial" data-data-origem="version.construido_em">{dataDaCasa(diaDaConstrucao)}</time></p>
+      <p class="pp-data" data-numeros-mais-recentes>{s.primeira.numerosMaisRecentes}<DataDaLinha id={recente.linha} campo="reference_date" valor={recente.periodo} lang={lang} /></p>
     )}
     <div class="pp-blocos">
       {ids.map((id) => <BlocoDaPrimeiraPagina id={id} lang={lang} nivel="h3" />)}

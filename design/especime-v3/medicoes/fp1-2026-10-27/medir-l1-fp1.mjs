@@ -7,6 +7,10 @@ import {parse} from 'node-html-parser';
 const AQUI='design/especime-v3/medicoes/fp1-2026-10-27';
 const base=JSON.parse(fs.readFileSync(`${AQUI}/l1-base.json`,'utf8'));
 const corrida=spawnSync('node',['scripts/check-lugar.mjs'],{encoding:'utf8',env:{...process.env,AMOSTRA:'5000'},maxBuffer:1<<28});
+if (corrida.status !== 0) { console.error('FP1: check:lugar recusou, código', corrida.status); process.exit(corrida.status ?? 1); }
+const versao=JSON.parse(fs.readFileSync('dist/version.json','utf8'));
+const git=spawnSync('git',['rev-parse','HEAD'],{encoding:'utf8'});
+assert.equal(versao.commit,git.stdout.trim(),'FP1: a construção não pertence à cabeça medida');
 const texto=(corrida.stdout+corrida.stderr).replace(/\x1b\[[0-9;]*m/g,'');
 const m=texto.match(/L1 · páginas com dois destinos iguais fora da mobília\s+(\d+)\s+\(teto (\d+)\)/);
 assert(m,'FP1: falta a medida L1');

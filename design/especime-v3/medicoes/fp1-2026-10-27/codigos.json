@@ -158,5 +158,108 @@
       "copias_alojadas": 4,
       "plantas": 5
     }
+  },
+  "fp1_d": {
+    "acertos": {
+      "typecheck_pre": 1,
+      "typecheck_pre2": 0,
+      "build_a": 1,
+      "gate_html_isolado": 0,
+      "check_datas_isolado": 0,
+      "check_voz_a": 1,
+      "check_voz_final": 0,
+      "sem_carimbo_auxiliar": 0
+    },
+    "build_final": 0,
+    "build_segundos": 417,
+    "codigos_na_cadeia_build": {
+      "check:formas": 0,
+      "gate:html": 0,
+      "check:datas": 0,
+      "check:registo": 0,
+      "ledger:check": 0,
+      "check:voz": 0,
+      "check:lingua": 0,
+      "check:navegacao": 0,
+      "check:discussao": 0
+    },
+    "conferencias_isoladas": {
+      "check:voz": {
+        "codigo": 0,
+        "segundos": 54.44,
+        "registo": "fp1d-check-voz.log",
+        "recusa_permissao": false
+      },
+      "check:palavras": {
+        "codigo": 0,
+        "segundos": 215.82,
+        "registo": "fp1d-check-palavras.log",
+        "recusa_permissao": false
+      },
+      "check:lingua": {
+        "codigo": 0,
+        "segundos": 8.53,
+        "registo": "fp1d-check-lingua.log",
+        "recusa_permissao": false
+      },
+      "check:navegacao": {
+        "codigo": 0,
+        "segundos": 13.5,
+        "registo": "fp1d-check-navegacao.log",
+        "recusa_permissao": false
+      },
+      "check:cartao": {
+        "codigo": 0,
+        "segundos": 38.94,
+        "registo": "fp1d-check-cartao.log",
+        "recusa_permissao": false
+      },
+      "check:lugar": {
+        "codigo": 0,
+        "segundos": 41.88,
+        "registo": "fp1d-check-lugar.log",
+        "recusa_permissao": false
+      },
+      "check:indice-do-sitio": {
+        "codigo": 0,
+        "segundos": 21.18,
+        "registo": "fp1d-check-indice-do-sitio.log",
+        "recusa_permissao": false
+      },
+      "check:indice": {
+        "codigo": 1,
+        "segundos": 22.93,
+        "registo": "fp1d-check-indice.log",
+        "recusa_permissao": true
+      },
+      "typecheck": {
+        "codigo": 0,
+        "segundos": 0.39,
+        "registo": "fp1d-typecheck.log",
+        "recusa_permissao": false
+      },
+      "check:primeira": {
+        "codigo": 1,
+        "segundos": 5.87,
+        "registo": "fp1d-check-primeira.log",
+        "recusa_permissao": true
+      },
+      "check:frases-compostas": {
+        "codigo": 1,
+        "segundos": 0.25,
+        "registo": "fp1d-check-frases-compostas.log",
+        "recusa_permissao": true
+      }
+    },
+    "medicao_l1": 0,
+    "capturas": 0,
+    "paginas_capturadas": 30,
+    "recortes_capturados": 20,
+    "transbordos": 0,
+    "plantas_novidades": 19,
+    "plantas_recibos": 8,
+    "plantas_editoriais": 2,
+    "plantas_l1": 5,
+    "commit": "pedido após fechar os artefactos; resultado na resposta final"
   }
 }

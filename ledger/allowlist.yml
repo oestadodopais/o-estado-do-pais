@@ -28,9 +28,11 @@ contexts:
       preenche com a data de publicação.
   - id: data-editorial
     why: >-
-      FP1: datas declaradas de publicação, carimbo da construção, última leitura
-      do painel e próxima segunda-feira. tests/inicio/novidades.mjs compara cada
-      ocorrência com o campo declarado ou gerado, sem dispensar valores do livro.
+      FP1-d: apenas elementos time nas novidades e na atualização da primeira
+      página, ou no cabeçalho do recibo, com origens fechadas pelo gate:html.
+      tests/inicio/novidades.mjs confere datas e títulos nas duas primeiras
+      páginas; tests/inicio/datas-do-recibo.mjs confere os campos e o calendário
+      nos recibos. Fora desses contextos, data-editorial não dispensa números.
   - id: data-da-conferencia
     why: >-
       A data e a hora em que o corredor diário perguntou às fontes, no cabeçalho

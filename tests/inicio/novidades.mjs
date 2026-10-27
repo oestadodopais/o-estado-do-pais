@@ -1,9 +1,14 @@
 /** FP1: datas da publicação e do calendário, relidas das declarações. */
 import fs from 'node:fs';
+import {PALAVRAS_PROIBIDAS} from '../../scripts/voz-palavras.mjs';
+import {metaDoEstudoConferida} from '../../scripts/meta-do-estudo.mjs';
 import path from 'node:path';
 import assert from 'node:assert/strict';
 import { pathToFileURL } from 'node:url';
 import { parse } from 'node-html-parser';
+import { dataPublicacao } from '../../src/lib/publicacao.mjs';
+import { resolverExplicacao, textoDosPedacosDaExplicacao } from '../../src/lib/explicacoes.mjs';
+import { ROTULOS_B1 } from '../../src/data/rotulos-b1.mjs';
 import { WORKS } from '../../src/data/studies.mjs';
 import { ITENS } from '../../src/data/discussao.mjs';
 import { EXPLICACOES } from '../../src/data/explicacoes/index.mjs';
@@ -16,15 +21,16 @@ const normal = s => s.replace(/\s+/g,' ').trim();
 export function publicacoesEsperadas(lang) {
   const saida = [];
   for (const w of WORKS) {
-    const e = w.editions.find(e => e.lang === lang) ?? w.editions.reduce((a,b) => (b.date ?? '') > (a.date ?? '') ? b : a);
-    if (e.date) saida.push({id:`estudo:${w.slug}`, tipo:'estudo', data:e.date, origem:`studies:${w.slug}/${e.lang}`, rota:routePath('estudo',lang,{slug:w.slug})});
+    const e = w.editions.find(e => e.lang === lang) ?? w.editions.reduce((a,b) => (dataPublicacao(w,b) ?? '') > (dataPublicacao(w,a) ?? '') ? b : a);
+    const data=dataPublicacao(w,e);
+    if (data) saida.push({id:`estudo:${w.slug}`, titulo:e.title, tipo:'estudo', data, origem:w.publication === 'declared' ? 'publicacao.declarada' : 'publicacao.gerada', rota:routePath('estudo',lang,{slug:w.slug})});
   }
   for (const [tipo,lista] of [['discussao',ITENS],['explicacao',EXPLICACOES]]) for (const e of lista) {
     if (!e.publicado) continue;
-    saida.push({id:`${tipo}:${e.slug}`, tipo, data:e.publicado, origem:`${tipo}:${e.slug}.publicado`, rota: tipo === 'discussao' ? `${routePath('discussao',lang)}#${e.slug}` : routePath('explicacao',lang,{slug:e.slug})});
+    saida.push({id:`${tipo}:${e.slug}`, tipo, data:e.publicado, origem:'publicacao.declarada', titulo:textoDosPedacosDaExplicacao(resolverExplicacao(e,lang).titulo,lang), rota: tipo === 'discussao' ? `${routePath('discussao',lang)}#${e.slug}` : routePath('explicacao',lang,{slug:e.slug})});
   }
-  const datas = mudancasDoRegisto(lang).map(e=>e.data).sort();
-  if (datas.length) saida.push({id:'atualizacao:registo', tipo:'atualizacao', data:datas.at(-1), origem:'mudancas:ultima', rota:routePath('correcoes',lang)});
+  const ultima=mudancasDoRegisto(lang)[0];
+  if (ultima) saida.push({id:'atualizacao:registo', tipo:'atualizacao', data:ultima.data, origem:'mudancas.ultima', titulo:ultima.tipo === 'publicacao' ? ROTULOS_B1[lang].estudoPublicado+' · '+ultima.estudo.edicao.title : String(ultima.tipo === 'correcao' ? ultima.motivo : ultima.texto[lang]).split(/(?<=[.!?])\s/)[0], rota:routePath('correcoes',lang)});
   return saida.sort((a,b)=>b.data.localeCompare(a.data)||a.id.localeCompare(b.id));
 }
 export function conferirNovidades(root, lang, dist='dist') {
@@ -56,6 +62,7 @@ export function conferirNovidades(root, lang, dist='dist') {
     if(!data || data.getAttribute('datetime')!==p.data || data.getAttribute('data-data-origem')!==p.origem || data.textContent!==forma(p.data)) erros.push('FP1: data escrita à mão ou diferente da declaração');
     if(data?.getAttribute('datetime')>dia) erros.push('FP1: data no futuro');
     if(el.querySelector('[data-novidade-porta]')?.getAttribute('href')!==p.rota) erros.push('FP1: entrada sem página declarada');
+    if(normal(el.querySelector('[data-novidade-porta]')?.textContent ?? '')!==normal(p.titulo)) erros.push('FP1: título da peça diferente da declaração');
     if(el.querySelector('.pp-novidade-tipo')?.textContent!==r[p.tipo]) erros.push('FP1: tipo diferente');
   }
   const linha=caixa.querySelector('[data-atualizacao]');
@@ -67,11 +74,22 @@ export function conferirNovidades(root, lang, dist='dist') {
     if(el.getAttribute('datetime')!==origens[origem] || el.textContent!==forma(origens[origem]) || origens[origem]>dia) erros.push('FP1: data gerada diferente dos ficheiros');
   }
   if(linha?.querySelectorAll('time[data-data-origem]').length!==2) erros.push('FP1: faltam as duas origens');
-  if(root.querySelector('[data-numeros-mais-recentes] [data-data-origem="version.construido_em"]')===null) erros.push('FP1: falta a data de atualização ao lado do período');
+  if(root.querySelectorAll('[data-data-origem="version.construido_em"]').length!==1) erros.push('FP1: carimbo repetido ou ausente');
+  for(const estudo of root.querySelectorAll('#trabalhos [data-estudo]')) {
+    const data=estudo.querySelector('.estudo-meta time')?.getAttribute('datetime');
+    const dias=(Date.parse(dia)-Date.parse(data??''))/86400000;
+    const esperado=Number(dias>=0&&dias<=7);
+    if(estudo.querySelectorAll('[data-estudo-novo]').length!==esperado)erros.push('FP1: marca novo diferente da data impressa');
+  }
   return erros;
 }
 export function plantasDasNovidades(html,lang,dist) {
+  const gerada=publicacoesEsperadas(lang).slice(0,5).find(p=>p.origem==='publicacao.gerada');
+  assert(gerada,'FP1-d: controlo do estudo com data gerada entre os cinco');
   const plantas=[
+    ['estudo com data gerada em falta',r=>r.querySelector(`[data-novidade="${gerada.id}"]`).remove(),/seleção/],
+    ['marca novo retirada',r=>r.querySelector('[data-estudo-novo]').remove(),/marca novo/],
+    ['título da peça trocado',r=>r.querySelector('[data-novidade-porta]').set_content('Título inventado'),/título da peça/],
     ['entrada sem página',r=>r.querySelector('[data-novidade-porta]').setAttribute('href','/pagina-fp1-inexistente'),/sem página/],
     ['data no futuro',r=>r.querySelector('[data-novidade] time').setAttribute('datetime','9999-12-31'),/futuro/],
     ['ordem trocada',r=>{const a=r.querySelectorAll('[data-novidade]');const s=a[0].outerHTML;a[0].replaceWith(a[1].outerHTML);a[1].replaceWith(s);},/ordem/],
@@ -82,10 +100,19 @@ export function plantasDasNovidades(html,lang,dist) {
 }
 if(process.argv[1] && import.meta.url===pathToFileURL(path.resolve(process.argv[1])).href) {
   const dist=process.env.OEDP_DIST ?? 'dist'; const plantas=[];
+  const palavra=PALAVRAS_PROIBIDAS.find(p=>p.chave==='lido na fonte a');
+  assert(palavra.marca.test('read at the source on'));
+  assert(!palavra.marca.test(FP1.en.relidos));
+  plantas.push({nome:'read continua proibido e re-read aprovado não é uma palavra parcial',mordeu:true});
   for(const lang of ['pt','en']) {
     const html=fs.readFileSync(path.join(dist,lang==='en'?'en':'','index.html'),'utf8');
     assert.deepEqual(conferirNovidades(parse(html),lang,dist),[]);
     plantas.push(...plantasDasNovidades(html,lang,dist));
+    const arquivo=parse(fs.readFileSync(path.join(dist,routePath('estudos',lang),'index.html'),'utf8'));
+    const meta=arquivo.querySelector('[data-estudo-em-curso]')?.closest('.estudo-meta');
+    assert(metaDoEstudoConferida(meta,lang),'FP1-d: estado declarado no arquivo');
+    meta.querySelector('[data-estudo-em-curso]').set_content('estado inventado 1999');
+    const mordeu=!metaDoEstudoConferida(meta,lang);assert(mordeu);plantas.push({nome:'estado em curso trocado no arquivo',lang,mordeu});
   }
   assert(plantas.every(p=>p.mordeu));
   console.log(JSON.stringify({fp1:'verde',plantas}));

@@ -111,7 +111,7 @@ export function verificaVozPais(raiz) {
       if (primeira) {
         const novas = conferirNovidades(main.parentNode, lang, path.join(raiz,'dist'));
         erros.push(...novas);
-        if (!novas.length) for (const no of main.querySelectorAll('[data-novidades], [data-data-origem="version.construido_em"]')) dispensados.add(no);
+        if (!novas.length) for (const no of main.querySelectorAll('[data-novidades] h2, [data-novidades] time, [data-novidades] .pp-novidade-tipo, [data-novidades] [data-novidade-porta], [data-atualizacao]')) dispensados.add(no);
         const queixas = conferirInicio(main.parentNode, lang);
         erros.push(...queixas);
         if (!queixas.length) for (const b of main.querySelectorAll('[data-discussao-inicio]')) dispensados.add(b);
@@ -141,7 +141,7 @@ export function verificaVozPais(raiz) {
         /* O marcador único do sítio, pela mesma razão do `voz-b1.mjs`: é uma
            cadeia declarada e não prosa da casa. */
         POR_VERIFICAR, '[to verify]',
-        '·','→', FP1[lang].novo, FP1[lang].sitio,
+        '·','→', FP1[lang].novo,
         /* A mobília da primeira página nova (bloco PP1): as cadeias declaradas em `strings.mjs`, as
            entradas das declarações do lugar de direção, e as três portas. As três cadeias da pesquisa
            dos lugares saíram com ela (L2a): a pesquisa vive em «Lugares», e aqui seria uma segunda cópia. */

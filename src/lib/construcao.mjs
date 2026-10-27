@@ -1,7 +1,9 @@
 import fs from 'node:fs';
 /** O mesmo carimbo preparado antes do Astro e copiado depois para version.json. */
 export function carimboDaConstrucao() {
-  const v = JSON.parse(fs.readFileSync(process.cwd() + '/.astro/version.json', 'utf8'));
+  const ficheiro = process.cwd() + '/.astro/version.json';
+  if (!fs.existsSync(ficheiro)) return null;
+  const v = JSON.parse(fs.readFileSync(ficheiro, 'utf8'));
   if (!v.construido_em || Number.isNaN(Date.parse(v.construido_em))) throw new Error('FP1: falta o carimbo da construção.');
   return v;
 }

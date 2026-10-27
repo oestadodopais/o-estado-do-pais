@@ -1,0 +1,8 @@
+
+> o-estado-do-pais@0.1.0 typecheck
+> tsc -p tsconfig.check.json
+
+src/lib/novidades.mjs(25,379): error TS2339: Property 'texto' does not exist on type '{ id: string; data: string; decisao: string; texto: { pt: string; en: string; }; tipo: "projeto"; lugar: { chave: string; nome: string; rota: string; }; chaveDaMudanca: string; } | { id: string; data: string; ... 4 more ...; chaveDaMudanca: string; } | { ...; }'.
+  Property 'texto' does not exist on type '{ tipo: "correcao"; kind: "atualizacao" | "correcao" | "proveniencia"; data: string; n: number; claim: string; nome: NomeDaMedida | { texto: string; fonte: "familia" | "figuras" | "medidas" | "projeto"; familia: string | null; }; ... 5 more ...; chaveDaMudanca: string; }'.
+src/lib/novidades.mjs(25,403): error TS2339: Property 'motivo' does not exist on type '{ id: string; data: string; decisao: string; texto: { pt: string; en: string; }; tipo: "projeto"; lugar: { chave: string; nome: string; rota: string; }; chaveDaMudanca: string; } | { id: string; data: string; ... 4 more ...; chaveDaMudanca: string; } | { ...; }'.
+  Property 'motivo' does not exist on type '{ id: string; data: string; decisao: string; texto: { pt: string; en: string; }; tipo: "projeto"; lugar: { chave: string; nome: string; rota: string; }; chaveDaMudanca: string; }'.

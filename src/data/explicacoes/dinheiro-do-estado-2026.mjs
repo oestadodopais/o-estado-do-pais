@@ -86,6 +86,7 @@ const SEM_LINHAS_DOS_JUROS = { sem_linhas: 'juros|servico-da-divida|encargos-da-
 
 export const DINHEIRO_DO_ESTADO_2026 = {
   slug: 'dinheiro-do-estado-2026',
+  // publicado: dia da aterragem, 753e7ff0b, §1.170; escrita: dia da última reescrita.
   publicado: '2026-10-06',
   /** A data de escrita, que dá a ordem da lista das explicações (a mais recente primeiro). */
   escrita: '2026-10-05',

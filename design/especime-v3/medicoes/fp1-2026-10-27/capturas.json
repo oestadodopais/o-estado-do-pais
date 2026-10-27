@@ -1,5 +1,5 @@
 {
-  "cabeca": "6c6ae4313933e60531a75b6868cdace80a14fdc0",
+  "cabeca": "a157e83061b432d614167a5b3084362ef1e1738d",
   "capturador_sha256": "0befc596ce06466e936573ac45841b8cc16391fb39efc0cc3a54001bc156d812",
   "larguras": [
     390,
@@ -17,8 +17,8 @@
       "janela": 390,
       "documento": 390,
       "corpo": 390,
-      "altura": 9390,
-      "sha256": "30d3cd2575dd5c0453070a2c1417e1cfae38695fa88bec67c7e3964d6ab9d37b",
+      "altura": 9395,
+      "sha256": "6b2e9d18c2af9dfef0adc58ab2b3472a766ffd811fbc0b7898be088a467f5e6e",
       "recortes": [
         {
           "ficheiro": "primeira-pt-390-topo.png",
@@ -30,7 +30,7 @@
             "width": 354,
             "height": 528
           },
-          "sha256": "b2d9f67f9c836fa75c1d53368e50d0894bad14ca028f7c6af11f2fed82da3e21"
+          "sha256": "d020bcb41bbcaaf9238f8094fce9c1b8d0cacf3e32c33fd8df6405bdd0fe6649"
         }
       ],
       "externos": [],
@@ -45,8 +45,8 @@
       "janela": 768,
       "documento": 768,
       "corpo": 768,
-      "altura": 7279,
-      "sha256": "944d08f8f288d46a539a885e42fb0d91c64be13d2659d5925620d65e771851ce",
+      "altura": 7233,
+      "sha256": "11404732569ed5d0a960c2a9dea4c96141e9a8c13f2ef6424c127b8f2b67b495",
       "recortes": [
         {
           "ficheiro": "primeira-pt-768-topo.png",
@@ -56,9 +56,9 @@
             "left": 30,
             "top": 266,
             "width": 708,
-            "height": 394
+            "height": 372
           },
-          "sha256": "4370600816b9354eb46986b228a9240248c8742373deb56cca65a7856b0597e5"
+          "sha256": "ae4741ff85eae9b6d7c0d9f10805718eb659d1ddbf9c84e63003a7fde1cd7635"
         }
       ],
       "externos": [],
@@ -73,8 +73,8 @@
       "janela": 1024,
       "documento": 1024,
       "corpo": 1024,
-      "altura": 6392,
-      "sha256": "06d8074ffc9173f8ee7495685dca1ccd5aaac6390b8547e9eb4a5f4320fa452d",
+      "altura": 6368,
+      "sha256": "337774e2435bfba9373a45d2dc8d0e06eced25ab4d13bca775fe0059143906c3",
       "recortes": [
         {
           "ficheiro": "primeira-pt-1024-topo.png",
@@ -86,7 +86,7 @@
             "width": 944,
             "height": 329
           },
-          "sha256": "81282f9f35e8b990f0e99ba677a4f44f52d983f7b6881b542bc53322d898d77d"
+          "sha256": "5eba93d19e939586d5acc54441354a82e75f8446792933d94b33550c574b6613"
         }
       ],
       "externos": [],
@@ -101,8 +101,8 @@
       "janela": 1280,
       "documento": 1280,
       "corpo": 1280,
-      "altura": 6303,
-      "sha256": "bd2974bc11f4e8d1b348f1243f8de49db669b8d307c36bdaa970ab2c124d076e",
+      "altura": 6280,
+      "sha256": "13f0cdedb60b1d0229141a74bb4c329f5b1bd59298f9069eb74c5d2e5da2242e",
       "recortes": [
         {
           "ficheiro": "primeira-pt-1280-topo.png",
@@ -114,7 +114,7 @@
             "width": 1092,
             "height": 337
           },
-          "sha256": "4c5d3bfa71a167f43436ba2d665d5c6bb59cc11e78ba76ae6cb23d7e94caf1c3"
+          "sha256": "97e4f0361afecca80d8332ceb57180f43581d2cc32c2b97c2db658f52bdd018a"
         }
       ],
       "externos": [],
@@ -129,8 +129,8 @@
       "janela": 1600,
       "documento": 1600,
       "corpo": 1600,
-      "altura": 6324,
-      "sha256": "8a750e200e76fce1bc68d42191eadc55b6b723ffbaa4e84cb516349e2b8375f2",
+      "altura": 6300,
+      "sha256": "7afaaa4994e6fbece8f7afa4fe8479ccd5611bc14c8e7c8cbf2c42405668dbe2",
       "recortes": [
         {
           "ficheiro": "primeira-pt-1600-topo.png",
@@ -142,7 +142,7 @@
             "width": 1092,
             "height": 340
           },
-          "sha256": "ad2e7ae8078c5e14b853fddc81f45b8c7c20723c48fc91a422d11d09a9198b93"
+          "sha256": "8d64f99c0ab4065585341cad2e550d2913e1bcf331fcf7d02bdfe26831a475b9"
         }
       ],
       "externos": [],
@@ -157,8 +157,8 @@
       "janela": 390,
       "documento": 390,
       "corpo": 390,
-      "altura": 9251,
-      "sha256": "f3834cccc20cbb8d99d4881de59162fcdc1e1ab9ae7455157ea2131c1922f2bf",
+      "altura": 9275,
+      "sha256": "ca68af2248ab8aa86f37b7edc2abde6bb286c4d659d53a27bce2d5912d1509e2",
       "recortes": [
         {
           "ficheiro": "primeira-en-390-topo.png",
@@ -168,9 +168,9 @@
             "left": 18,
             "top": 280,
             "width": 354,
-            "height": 509
+            "height": 528
           },
-          "sha256": "9592ce2b5f7951793cac525c881f67b84a37fd2f4fd610d053df148d45b78a22"
+          "sha256": "d20a2460e1cb8c566ed463530b9fd08a1821b77458ff697fb1f59a2bdb994a5f"
         }
       ],
       "externos": [],
@@ -185,8 +185,8 @@
       "janela": 768,
       "documento": 768,
       "corpo": 768,
-      "altura": 7352,
-      "sha256": "6dffa3370093114dcef72a68ef488985eb71ce5beacec6fd1ca463acdcd4fa36",
+      "altura": 7306,
+      "sha256": "83dea26074f3a5b24b76904b9836aadebf4abc384ff66c626a118daab3a04770",
       "recortes": [
         {
           "ficheiro": "primeira-en-768-topo.png",
@@ -196,9 +196,9 @@
             "left": 30,
             "top": 266,
             "width": 708,
-            "height": 394
+            "height": 372
           },
-          "sha256": "1bf4b40b328810333a84f66c75ba091df74c26c0ed2e87167357db7d582d598e"
+          "sha256": "3b4ea6fb941a030814de35a29807d2f952809dce66938a43328dd7f6c807c37d"
         }
       ],
       "externos": [],
@@ -213,8 +213,8 @@
       "janela": 1024,
       "documento": 1024,
       "corpo": 1024,
-      "altura": 6457,
-      "sha256": "6ba1c83a3f7c1de7700ee93ff7f85a4cab6ca10e80b720dbde766344816c4f06",
+      "altura": 6481,
+      "sha256": "7dd8d4f3c63c3e9dc9485ebf9a2d37d2cc957058f0167161ca1ac51189110d0c",
       "recortes": [
         {
           "ficheiro": "primeira-en-1024-topo.png",
@@ -226,7 +226,7 @@
             "width": 944,
             "height": 329
           },
-          "sha256": "55eb53a5e7f476148057fbdbe154f3e621a9cb16eae020c17174689581d52497"
+          "sha256": "93c7e7085f56fd4c580f8d495f6c365e71e6430280ceb5bb9e9add5f537fbc1a"
         }
       ],
       "externos": [],
@@ -242,7 +242,7 @@
       "documento": 1280,
       "corpo": 1280,
       "altura": 6360,
-      "sha256": "849db3731c8cd5df71b7e0d0c2887b56c3fd76386a75310bae810e294dd173a5",
+      "sha256": "dbacec962158bc07b8b67234c0e5dce46adf7719e8208aeb8d74723b36e91222",
       "recortes": [
         {
           "ficheiro": "primeira-en-1280-topo.png",
@@ -254,7 +254,7 @@
             "width": 1092,
             "height": 337
           },
-          "sha256": "cffd51278cca6124ce80862329c4fddeadd7bc7fa210a3e89c4fd344ad4a3ad1"
+          "sha256": "5d28cd60b7003037df5b6b757b0aee45a9e7513efa353eeed53660e0be56124f"
         }
       ],
       "externos": [],
@@ -270,7 +270,7 @@
       "documento": 1600,
       "corpo": 1600,
       "altura": 6381,
-      "sha256": "30040453ee6d17ca8ba302448b33927682bcc275b0ed9a8e36954a0c9c69c7bb",
+      "sha256": "1b1783539ebdc7d53d1328fd0a11e6a5a18f7e0cc49838616b70867a85da2b03",
       "recortes": [
         {
           "ficheiro": "primeira-en-1600-topo.png",
@@ -282,7 +282,7 @@
             "width": 1092,
             "height": 340
           },
-          "sha256": "ff3a93d642a36a0050598a4f57f5ffb2fec55f7228d309d1165600c4996bf706"
+          "sha256": "36c7b951d082ea0cff1e9c217bf37177b2075e2b7f130e8e965d8e4b87b53c48"
         }
       ],
       "externos": [],
@@ -297,8 +297,8 @@
       "janela": 390,
       "documento": 390,
       "corpo": 390,
-      "altura": 4333,
-      "sha256": "7234558d62638940f851e4e7278c070ed0e2061a1d04c9d9a1e9944edcdc7165",
+      "altura": 4312,
+      "sha256": "68de07af7cc861b37e5e68d2209911bfb42a3e1c09e83b64ddc7815e9b298f39",
       "recortes": [
         {
           "ficheiro": "recibo-pt-390-cabecalho.png",
@@ -308,9 +308,9 @@
             "left": 18,
             "top": 277,
             "width": 354,
-            "height": 613
+            "height": 592
           },
-          "sha256": "72efe77127951b5e2e1ef0ea8949518fecfb4624f3689d46e08aedbfb91de0ee"
+          "sha256": "c212605dcc45c37022de29ab20548164970b2fa313faf78164357e8af453e86c"
         }
       ],
       "externos": [],
@@ -325,8 +325,8 @@
       "janela": 768,
       "documento": 768,
       "corpo": 768,
-      "altura": 3713,
-      "sha256": "ce45092530c485825ac94f38100d94eca29eeb8277da90b1dbf8ecf6e6236108",
+      "altura": 3692,
+      "sha256": "86afef6b37a5b474d98209ae81200a58fd37e52d70e1dd0ab2058ec32b0e603a",
       "recortes": [
         {
           "ficheiro": "recibo-pt-768-cabecalho.png",
@@ -336,9 +336,9 @@
             "left": 30,
             "top": 260,
             "width": 545,
-            "height": 596
+            "height": 574
           },
-          "sha256": "1ceb33695c4c36e9e339b796ac0e289ffb4b945bfe8c2d970a39a1570d26c9aa"
+          "sha256": "a58db92dab0b454c7b65448c5abd8329181b74396d7769e35a86da6c2c1dcbde"
         }
       ],
       "externos": [],
@@ -353,8 +353,8 @@
       "janela": 1024,
       "documento": 1024,
       "corpo": 1024,
-      "altura": 2574,
-      "sha256": "a3266e707ad393dbae644aa6f55fc8d64d212f0e369cf10d0cda17082f7a7087",
+      "altura": 2553,
+      "sha256": "ff0e91128ed855b32ddf41eb96f22326f2b7a7f0f0dc626dd8908d9e71613edd",
       "recortes": [
         {
           "ficheiro": "recibo-pt-1024-cabecalho.png",
@@ -364,9 +364,9 @@
             "left": 40,
             "top": 229,
             "width": 545,
-            "height": 612
+            "height": 591
           },
-          "sha256": "9a98719d04441e348741606c84730a4c294a8ea0b3fa63355bc3f3b7cba4a283"
+          "sha256": "a3563bd246e315103557bfdf9557de92394d1ee5a7f1c2c4cf72b6bde335f831"
         }
       ],
       "externos": [],
@@ -381,8 +381,8 @@
       "janela": 1280,
       "documento": 1280,
       "corpo": 1280,
-      "altura": 2628,
-      "sha256": "b1520e4a2d5a66589729f9685dc542a7aa14ebf56a062f55ebaa07163ef25037",
+      "altura": 2606,
+      "sha256": "5f1fc14f3034a5ac81ea76bb9f48873a746abc0b23f1856ebefb8c38ae08bd02",
       "recortes": [
         {
           "ficheiro": "recibo-pt-1280-cabecalho.png",
@@ -392,9 +392,9 @@
             "left": 94,
             "top": 230,
             "width": 544,
-            "height": 623
+            "height": 601
           },
-          "sha256": "273f199126553f67bd3a17122841b961cf628de3754cc9f606c9149b6e761bf8"
+          "sha256": "2c8d1cf17bb14e036d1a5b05660d34a533c90d65e66ba1b4c9f5d4e5c42961aa"
         }
       ],
       "externos": [],
@@ -409,8 +409,8 @@
       "janela": 1600,
       "documento": 1600,
       "corpo": 1600,
-      "altura": 2634,
-      "sha256": "bb59525de954e48f727d5dab676f4163018b3956d8cd5f080a98c5d7cbb0ccab",
+      "altura": 2613,
+      "sha256": "d14a82a758cc53e88e9c58d651b04e826813068056f16f33118074a455197521",
       "recortes": [
         {
           "ficheiro": "recibo-pt-1600-cabecalho.png",
@@ -420,9 +420,9 @@
             "left": 254,
             "top": 230,
             "width": 544,
-            "height": 623
+            "height": 601
           },
-          "sha256": "61dd4ceb134332fe251931891011a94d799561af3ec474b5058eebe2260f4a2e"
+          "sha256": "a19f5b78db293856020d6b203e8d1e4f5d32cf0a6e44503f2fcf6f1547eb8aa4"
         }
       ],
       "externos": [],
@@ -437,8 +437,8 @@
       "janela": 390,
       "documento": 390,
       "corpo": 390,
-      "altura": 4403,
-      "sha256": "c9529c1e7abe05f14fccf418224ff387745164e218ec5bd77a3faaf4b8204090",
+      "altura": 4381,
+      "sha256": "eb1de830706888e135a51e9cbcd7a6ec0f763ad7ec83884bf61f0f92bea5e67c",
       "recortes": [
         {
           "ficheiro": "recibo-en-390-cabecalho.png",
@@ -448,9 +448,9 @@
             "left": 18,
             "top": 277,
             "width": 354,
-            "height": 613
+            "height": 592
           },
-          "sha256": "e4cc86acfd72700e35ef4aa5a82755777bdb93a00719945cbbf2ceff8115487c"
+          "sha256": "a532aee95a313265d87f3a4f38e5a2bf28c8a76f86ec2d9b3d5551cf6a20bb54"
         }
       ],
       "externos": [],
@@ -465,8 +465,8 @@
       "janela": 768,
       "documento": 768,
       "corpo": 768,
-      "altura": 3713,
-      "sha256": "2df29810bb7e4c2bb2dd2dda5665e20005f6bf0d7ec0c124df2241e6831b0fb1",
+      "altura": 3691,
+      "sha256": "9b1453ec608bfaea55c606df21694e0e115c80683d4b876b90e8f840127b407b",
       "recortes": [
         {
           "ficheiro": "recibo-en-768-cabecalho.png",
@@ -476,9 +476,9 @@
             "left": 30,
             "top": 260,
             "width": 545,
-            "height": 596
+            "height": 574
           },
-          "sha256": "9ec38bcb026024361e0f2dd5efdc4f0c4c12c00fd02fa383b0ecc431535c6926"
+          "sha256": "37ec7c2f85bad35167b1be03a058a967a17858cf1feab823b32a8e1662ea819a"
         }
       ],
       "externos": [],
@@ -493,8 +493,8 @@
       "janela": 1024,
       "documento": 1024,
       "corpo": 1024,
-      "altura": 2596,
-      "sha256": "e535f69dd12e43e4a92110a21c3f0b32b682d2d6fb30b6707128c2d4345b1045",
+      "altura": 2574,
+      "sha256": "2dbb59c825dfed0b1c8ee5b261cd42aaaa8b4f96968ed14269f80c90940dcc05",
       "recortes": [
         {
           "ficheiro": "recibo-en-1024-cabecalho.png",
@@ -504,9 +504,9 @@
             "left": 40,
             "top": 229,
             "width": 545,
-            "height": 612
+            "height": 591
           },
-          "sha256": "a20d28980202d0b4b1d18040db5a079348d152bd0a5ef15f76e139ad2f9bfcf2"
+          "sha256": "b7e7ef367a520edbac7e6ddd04320e11805497559aed6b5ffc5a3abbbd07d2b0"
         }
       ],
       "externos": [],
@@ -521,8 +521,8 @@
       "janela": 1280,
       "documento": 1280,
       "corpo": 1280,
-      "altura": 2650,
-      "sha256": "ee6372be770b1d4079fa323d35555bd8002f7114565aacbec2113f8ea435d3bb",
+      "altura": 2628,
+      "sha256": "a691cb2f1845b7bf880b6dd793693a6d6816741eea59aec164387f409f03c309",
       "recortes": [
         {
           "ficheiro": "recibo-en-1280-cabecalho.png",
@@ -532,9 +532,9 @@
             "left": 94,
             "top": 230,
             "width": 544,
-            "height": 623
+            "height": 601
           },
-          "sha256": "4b59cb7719ed7b802ec2616c889767d4bd06fb092d6a83348a6f5c3830262305"
+          "sha256": "48c40d7b7f7459660d96a0caa6207ee0b493e81a29315ce6fcd9b0734e2e13a0"
         }
       ],
       "externos": [],
@@ -549,8 +549,8 @@
       "janela": 1600,
       "documento": 1600,
       "corpo": 1600,
-      "altura": 2656,
-      "sha256": "a7d306bed304da928d6fb64af398c6c6d7b27eb151b7d4458024d73ba4d8b3cf",
+      "altura": 2635,
+      "sha256": "a6cc792289d2f1c30ec9f8612eba359e2d4ee785fcc619eb75bacf640be794dc",
       "recortes": [
         {
           "ficheiro": "recibo-en-1600-cabecalho.png",
@@ -560,9 +560,9 @@
             "left": 254,
             "top": 230,
             "width": 544,
-            "height": 623
+            "height": 601
           },
-          "sha256": "865d45d3be58f8df51338cf3ee1654f51f3efa39c4e033a695129a278eb28fdd"
+          "sha256": "b4a3ba363bc0ce0d14acc7b7159d0530670216c265521fb2205ae81728b643f2"
         }
       ],
       "externos": [],
@@ -577,8 +577,8 @@
       "janela": 390,
       "documento": 390,
       "corpo": 390,
-      "altura": 4347,
-      "sha256": "81de4049102159f1cac5f3ada28b214a324827e3c79fff8da50f648c1165e6cb",
+      "altura": 4368,
+      "sha256": "4cb38ca4d4f7a2fda01ec111b74d5c4e4ab37ffac6ad3b32a24c003b56675bba",
       "recortes": [],
       "externos": [],
       "erros": [],
@@ -593,7 +593,7 @@
       "documento": 768,
       "corpo": 768,
       "altura": 3571,
-      "sha256": "0a0348f1792bc57056d39ddd6598f60d76a2be8df081f82434b4dadead4ce6c0",
+      "sha256": "12399ffd2ae54e35f9dabff7f8309da5fb4160de2548d25c311aebe4e1b92cf3",
       "recortes": [],
       "externos": [],
       "erros": [],
@@ -608,7 +608,7 @@
       "documento": 1024,
       "corpo": 1024,
       "altura": 3635,
-      "sha256": "6e67d39b5ae45b0ec9b7513f4469bc76fa1e83f30aacb0d4203b3c5b6428bf0f",
+      "sha256": "ad73ad340a4a7a137bdd09b77f04c5d7882157233f85287dc1f61944e9207933",
       "recortes": [],
       "externos": [],
       "erros": [],
@@ -623,7 +623,7 @@
       "documento": 1280,
       "corpo": 1280,
       "altura": 3655,
-      "sha256": "454e466e7428e070353ab88b68e04fd5d42d7317774b96acf454ebbcd3037685",
+      "sha256": "e71bb8e10f4b81a5bc26701d57ea24bd73c2e6379797306b59a0a89946b0a446",
       "recortes": [],
       "externos": [],
       "erros": [],
@@ -638,7 +638,7 @@
       "documento": 1600,
       "corpo": 1600,
       "altura": 3661,
-      "sha256": "fb49ed07b553cb8a5680698929b0693ede9b1fb11d65c907bf4d66ffdf29dca7",
+      "sha256": "5abb169d4d73b30a2187bcff9b68020d2ac191ba1b7b52bc92326b91802fba07",
       "recortes": [],
       "externos": [],
       "erros": [],
@@ -652,8 +652,8 @@
       "janela": 390,
       "documento": 390,
       "corpo": 390,
-      "altura": 4556,
-      "sha256": "691941cb5c33afed1760bf2b116778f03d9284a050d66dcdfd58fcfc2254b235",
+      "altura": 4577,
+      "sha256": "9f439c37900a632f6eff7856086d5ac060101f55ec9419cef894e2a88fd743f0",
       "recortes": [],
       "externos": [],
       "erros": [],
@@ -668,7 +668,7 @@
       "documento": 768,
       "corpo": 768,
       "altura": 3665,
-      "sha256": "88002f8ae60ce1b12c2c4b622f64a82162d45665639897dbda04460c96ad6907",
+      "sha256": "59f39f5c04cf6318190ab7a3c4b25a6fac4246da7122809d57915ce50488e767",
       "recortes": [],
       "externos": [],
       "erros": [],
@@ -683,7 +683,7 @@
       "documento": 1024,
       "corpo": 1024,
       "altura": 3729,
-      "sha256": "807eccac8880402b01eecd6afa66b6a18429fca77e8b88c112fc09b7217f0a4b",
+      "sha256": "81ae017d2868a79d90162f9fb0107907d46c69ddc2784c5a409177feceb12087",
       "recortes": [],
       "externos": [],
       "erros": [],
@@ -698,7 +698,7 @@
       "documento": 1280,
       "corpo": 1280,
       "altura": 3749,
-      "sha256": "5f7f066819eadd703e8a8229db5c871954d6a09b61fcac8e873b6ab1cb8ec3d6",
+      "sha256": "5f7e3db85e288dd3c9e580aec39ad49cb8435e99f4fedb2475d5fc78791c344d",
       "recortes": [],
       "externos": [],
       "erros": [],
@@ -712,8 +712,8 @@
       "janela": 1600,
       "documento": 1600,
       "corpo": 1600,
-      "altura": 3755,
-      "sha256": "ce573954e348a015418b69eb6c692cbbd732398f4467df4bf86d29df728c4fcb",
+      "altura": 3634,
+      "sha256": "6474170b7a8487014511dfd0e29c336dd99d2a9a228bd721b70ab8e4b61057f5",
       "recortes": [],
       "externos": [],
       "erros": [],
@@ -721,8 +721,8 @@
     }
   ],
   "recursos": {
-    "version.json": "873d8143d508bd93e1b3ced7a88d6eb79f411f24e2c90cb5f407092a8b33b518",
-    "index.html": "8b79fe5eba0ddd58dc3708a09a7f7678b324f8a473b3444466823f57cd8647d8",
+    "version.json": "af29c04d632aa717c98c99b4e4239fe1018a2ed615eb929e13e1ecd0b14a6568",
+    "index.html": "57ac0a5266a4eff517a84bab2b4ff7363a5d21e99e1aaf1fe44e06801bf5445b",
     "tipos/spectral/Spectral-Regular.woff2": "3c846b032ad614e02ebc439087bbcbb7371cfbdea6c8a4b568efa859537e9c43",
     "tipos/bitter/Bitter[wght].woff2": "b4ad17520d0ce8bd1aa98af06e07ca94145522f868b5a010732eb5eee3ba2ea0",
     "_astro/primeira-pagina.Ckwx1zom.css": "13710ca63950a3dc9cea0397c3db26ae1ce1a221294811a293c30a21cd485c0a",
@@ -731,18 +731,18 @@
     "_astro/lugar.bxF38FjU.css": "ca5ecb9c51f88f1c0f5c59652689ed2ca642ad4dee9eaf4fbc51328d9dd957fd",
     "js/tema.js": "855bcee3ec1223b43e0f3e9a94c1fbdf1451e53830dcc022962b48e8d3340757",
     "js/interacao-dos-graficos.js": "c5e42b905d26d12581e292acfec8957fbbf20604e674bee321f4aa1b39ebd989",
-    "tipos/spectral/Spectral-SemiBold.woff2": "91eef1143e31196ec762c00b566b9f628a851db348eb524cbfb36bfba9b22f2d",
     "tipos/spectral-sc/SpectralSC-SemiBold.woff2": "b847fe8f1fe1a862ce15e288958d132940a8204951ef0dbe2c9ad8fd997f29e2",
     "tipos/spectral-sc/SpectralSC-Regular.woff2": "afa69dd2e7aaca2733883133745fd84c18dfac6a08d5999e69705ea7277240b8",
     "tipos/spectral/Spectral-Medium.woff2": "34f0ba222c28bc0ea816c693d05c528be4a5ee10c4b1765cdea774c6fb2502c2",
-    "en/index.html": "6a0eb2818c2e2241470a484c43e30646f46319d69812e267d2bc5195a48af673",
-    "livro-razao/divida-publica-2025/index.html": "c18dc8fc682af3f3bd9c147b90474483dbbd619270286a4a607006625f7d0c22",
+    "tipos/spectral/Spectral-SemiBold.woff2": "91eef1143e31196ec762c00b566b9f628a851db348eb524cbfb36bfba9b22f2d",
+    "en/index.html": "87c779b2dbb5cae88b421af8263965354c30679c30bef078d353589f1ebb3335",
+    "livro-razao/divida-publica-2025/index.html": "890b4971ebc02bb4a08c578b4b2a28902922983cdb5171590aada99cc9d9b2bf",
     "_astro/linha.DOdCy9TF.css": "99cb640e0f6cafe8bb8b68a992968df0ab42486b4006260f7657bdd3596f0e24",
     "js/copiar-incorporacao.js": "b75e5f90efcd85ea94274191e44a48594932638df67377c0b91ff367df97ca13",
-    "en/ledger/divida-publica-2025/index.html": "e6f39053fbbcbb0915102df45a4c206192905e080dfb6f59f04dfb8872bc94c4",
-    "estudos/index.html": "ee63a883f19c88c32b758bd2d433b43a7b5751b6cf37e3235c7a9b312cefc712",
+    "en/ledger/divida-publica-2025/index.html": "9f8ad9e6d590f319d4b79987de7dc32d3e0fcad84d0938b75f854bd04ce22a61",
+    "estudos/index.html": "e5ed89a99a83c92fc6e82e7e8df079ac6e10b0f7bb4a5876c4ea02c0fe4f2510",
     "tipos/spectral/Spectral-Italic.woff2": "4ba15b4bda78df3e8b755f0f12168c23c562707c921f74944e8ce638ee5ac7f1",
-    "en/studies/index.html": "a28eacf1f64ddb345059e5ce864193c5fa70a1ce0d3cea259212864de6623c01"
+    "en/studies/index.html": "8b71eba63370cec80636ebd2c755ad8d1023d66c71edc8e542350dca0251f466"
   },
   "falhas": [],
   "ok": true

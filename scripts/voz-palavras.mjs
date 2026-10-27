@@ -165,7 +165,7 @@ export const PALAVRAS_PROIBIDAS = [
   },
   {
     chave: 'lido na fonte a',
-    marca: /lido na fonte a\b|read at the source on\b/i,
+    marca: /(?<![a-zà-ú-])lido na fonte a\b|(?<![a-zà-ú-])read at the source on\b/i,
     em_vez: 'nada à vista: a data vive no recibo da linha',
     porque: 'idem: é um rótulo de recibo (plano das palavras, §4)',
   },

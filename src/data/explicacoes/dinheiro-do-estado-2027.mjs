@@ -47,6 +47,7 @@ const O_TOTAL_ACIMA_DO_CONSOLIDADO = { primeiros: [TOTAL27], de: [TOTAL27, CONS2
 
 export const DINHEIRO_DO_ESTADO_2027 = {
   slug: 'dinheiro-do-estado-2027',
+  // publicado: dia da aterragem, a68946d7d, §1.203; escrita: dia da última reescrita.
   publicado: '2026-10-21',
   escrita: '2026-10-21',
   titulo: {

@@ -73,5 +73,26 @@
       "total_tokens": 17363935
     },
     "tokens_acumulados_apos_fp1_b": 1534788
+  },
+  "fp1_d": {
+    "inicio_utc": "2026-10-27 12:48:49",
+    "medicao_utc": "2026-10-27T13:17:26.886133+00:00",
+    "chamadas_ate_medicao": 47,
+    "chamadas_acumuladas_ate_medicao": 166,
+    "corridas_construcao_conferencia_medicao": 21,
+    "builds": 2,
+    "conferencias_isoladas": 17,
+    "medicoes": 2,
+    "controlos_auxiliares": 2,
+    "capturas": 1,
+    "portoes_completos": 0,
+    "tokens_ultimo_evento_consultado": {
+      "input_tokens": 24249396,
+      "cached_input_tokens": 23937024,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 107917,
+      "reasoning_output_tokens": 44417,
+      "total_tokens": 24357313
+    }
   }
 }

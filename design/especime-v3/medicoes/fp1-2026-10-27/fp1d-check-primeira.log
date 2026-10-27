@@ -1,0 +1,26 @@
+
+> o-estado-do-pais@0.1.0 check:primeira
+> node tests/inicio/novidades.mjs && node tests/inicio/primeira-pagina.mjs --prova && node tests/inicio/geometria.mjs --prova && node tests/inicio/lugares-no-navegador.mjs --prova && node tests/inicio/tema-e-menu.mjs --prova
+
+{"fp1":"verde","plantas":[{"nome":"read continua proibido e re-read aprovado não é uma palavra parcial","mordeu":true},{"nome":"estudo com data gerada em falta","lang":"pt","mordeu":true},{"nome":"marca novo retirada","lang":"pt","mordeu":true},{"nome":"título da peça trocado","lang":"pt","mordeu":true},{"nome":"entrada sem página","lang":"pt","mordeu":true},{"nome":"data no futuro","lang":"pt","mordeu":true},{"nome":"ordem trocada","lang":"pt","mordeu":true},{"nome":"peça mais recente em falta","lang":"pt","mordeu":true},{"nome":"data escrita à mão no HTML","lang":"pt","mordeu":true},{"nome":"estado em curso trocado no arquivo","lang":"pt","mordeu":true},{"nome":"estudo com data gerada em falta","lang":"en","mordeu":true},{"nome":"marca novo retirada","lang":"en","mordeu":true},{"nome":"título da peça trocado","lang":"en","mordeu":true},{"nome":"entrada sem página","lang":"en","mordeu":true},{"nome":"data no futuro","lang":"en","mordeu":true},{"nome":"ordem trocada","lang":"en","mordeu":true},{"nome":"peça mais recente em falta","lang":"en","mordeu":true},{"nome":"data escrita à mão no HTML","lang":"en","mordeu":true},{"nome":"estado em curso trocado no arquivo","lang":"en","mordeu":true}]}
+check:primeira · auditoria: 81 folhas, 128 partes (76 diz, 24 conta, 28 liga), 103 apoios, 14 algarismos · 16 páginas, 10 blocos rendidos e recontados · entradas: 0 cartões nos temas, 94 nas entradas, 0 fora por declaração, 16 páginas das entradas no mapa do sítio · 76 de 76 plantas mordidas
+check:primeira · todas as conferências a 0.
+node:events:497
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EPERM: operation not permitted 127.0.0.1
+    at Server.setupListenHandle [as _listen2] (node:net:1919:21)
+    at listenInCluster (node:net:1998:12)
+    at node:net:2207:7
+    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1977:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:89:21) {
+  code: 'EPERM',
+  errno: -1,
+  syscall: 'listen',
+  address: '127.0.0.1'
+}
+
+Node.js v22.23.1

@@ -158,10 +158,10 @@ const derivacao = derivacaoDaLinha(claim, lang);
    a porta para aqui (§5.1). Sem cor nova (§2), sem segundo marcador (§6). */
 const bandeira = notaDeBandeira(claim, lang);
 const ressalvaPublicada = ressalvaPublicadaDaLinha(claim, lang);
-/* A SEGUNDA DATA DA NORMA (§2.5, bloco P2 item 2): quando a fonte volta a
-   publicar esta linha. Sai do calendário das fontes e é `null` onde a fonte não
-   anunciou dia nenhum, que é o caso da maior parte. */
-const proxima = proximaLeitura(carimboDaConstrucao().construido_em);
+/* FP1-d: próxima segunda-feira depois da construção, só para linhas não
+   derivadas acompanhadas pelo painel. Sem carimbo não se promete uma data. */
+const carimbo = carimboDaConstrucao();
+const proxima = carimbo && !derivada && (claim.verifications ?? []).some(v => v.by === 'painel-semanal') ? proximaLeitura(carimbo.construido_em) : null;
 const fp1 = FP1[lang];
 /* OS NOMES OFICIAIS DA MEDIDA (a norma §1.5, bloco P2 item 2): o do INE e o da
    PORDATA, lidos pelo motor com o endereço e a hora, e SÓ onde ele marca que é a
@@ -848,8 +848,8 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
       {!paginaEditada && periodoDoRecibo && <p><span data-voz>{fp1.dados}</span>{' '}<DataDaLinha id={id} campo={periodoDoRecibo.campo} valor={periodoDoRecibo.valor} lang={lang} /></p>}
       {presente(claim.published_at) && <p><span data-voz>{paginaEditada ? s.livro.linha.editadoEmK : fp1.publicados}</span>{' '}<CampoDaLinha id={id} campo="published_at" valor={claim.published_at} lang={lang} /></p>}
       {presente(claim.access_date) && claim.access_date_kind !== 'hosted-copy' && <p><span data-voz>{fp1.lidos}</span>{' '}<CampoDaLinha id={id} campo="access_date" valor={claim.access_date} lang={lang} /></p>}
-      {ultimaReleituraDoPainel && <p><span data-voz>{fp1.ultima}</span>{' '}<CampoDaLinha id={id} campo={`verifications.${ultimaReleituraDoPainel.__n}.date`} valor={ultimaReleituraDoPainel.date} lang={lang} /></p>}
-      <p><span data-voz>{fp1.proxima}</span>{' '}<time datetime={proxima} data-nonledger="data-editorial" data-data-origem="calendario.proxima-segunda">{dataDaCasa(proxima)}</time></p>
+      {ultimaReleituraDoPainel && !(presente(claim.access_date) && claim.access_date_kind !== 'hosted-copy' && String(claim.access_date).slice(0,10) === ultimaReleituraDoPainel.date.slice(0,10)) && <p><span data-voz>{fp1.ultima}</span>{' '}<CampoDaLinha id={id} campo={`verifications.${ultimaReleituraDoPainel.__n}.date`} valor={ultimaReleituraDoPainel.date} lang={lang} /></p>}
+      {proxima && <p><span data-voz>{fp1.proxima}</span>{' '}<time datetime={proxima} data-nonledger="data-editorial" data-data-origem="calendario.proxima-segunda">{dataDaCasa(proxima)}</time></p>}
     </div>
     {ressalvaPublicada && (
       <p class="linha-nota" id="ressalva">
