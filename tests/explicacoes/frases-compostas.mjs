@@ -82,7 +82,7 @@ const medir = () => {
      (de um valor conta a caixa do `<Claim>`, que leva o selo: o que tem de ser texto corrido é o pai dessa caixa). */
   const marcados = [...new Set([...document.querySelectorAll('main [data-semana], main [data-de-linha], main [data-explicacao-nome], main [data-claim], main [data-nonledger], main [data-correcao-campo], main [data-linha-campo]')]
     .map((x) => x.closest('.claim') ?? x))]
-    .filter((x) => x.closest('[data-discussao-paragrafo], [data-explicacao-declarado], [data-semana-declarado], [data-explicacao-porta], [data-semana-frase], [data-bloco-frase], [data-bloco-ressalva], [data-bloco-titulo], [data-bloco] p[data-bloco-declarado], [data-bloco-serie-unidade], [data-cartao-leitura], [data-o-que-e]'));
+    .filter((x) => x.closest('[data-discussao-resumo], [data-discussao-paragrafo], [data-explicacao-declarado], [data-semana-declarado], [data-explicacao-porta], [data-semana-frase], [data-bloco-frase], [data-bloco-ressalva], [data-bloco-titulo], [data-bloco] p[data-bloco-declarado], [data-bloco-serie-unidade], [data-cartao-leitura], [data-o-que-e]'));
   const pais = new Set(marcados.map((x) => /** @type {HTMLElement} */ (x.parentElement)));
   const flex = [...pais].filter((el) => /flex|grid/.test(getComputedStyle(el).display))
     .map((el) => ({ tag: el.tagName.toLowerCase(), classe: String(el.className), display: getComputedStyle(el).display, texto: (el.textContent ?? '').trim().slice(0, 70) }));
@@ -116,6 +116,8 @@ try {
     for (const [superficie, key, selector] of [
       ['explicações','explicacoes','.explicacoes-item a'],
       ['primeira página','home','[data-bloco-frase]'],
+      ['conclusão da discussão','home','[data-discussao-conclusao]'],
+      ['parágrafo da discussão','home','[data-discussao-resumo]'],
       ['comparação dos cartões','entradaDinheiro','[data-cartao-leitura][data-leitura-parte="comparacao"]'],
       ['definição dos cartões aberta','entradaDinheiro','[data-cartao-leitura][data-leitura-parte="o-que-e"]'],
     ]) for (const tipo of ['flex','largura']) {

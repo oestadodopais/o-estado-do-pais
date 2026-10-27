@@ -355,6 +355,7 @@ import {
 import { VERIFICACAO } from '../src/data/verificacao.mjs';
 import { SERIES_ATRASADAS } from '../src/data/frescura.mjs';
 import { seloDoValorDoCartao } from './selo-do-cartao.mjs';
+import { seloDaConclusaoDoInicio, fragmentoDaConclusaoDoInicio } from './porta-da-conclusao-discussao.mjs';
 import { portaDoTituloDaDiscussao, seloDoTituloDaDiscussao } from './porta-do-titulo-discussao.mjs';
 import { prova, CAMINHO_DA_PROVA } from '../src/lib/prova.mjs';
 import {
@@ -3610,6 +3611,7 @@ function auditaSelo(el, id, lang, err, rota) {
   // V2D: título navegável integral, com valores e ano presos às linhas, para o próprio item.
   if (portaDoTituloDaDiscussao(el, id, lang, claims, {dist:DIST})) return;
   if (seloDoTituloDaDiscussao(el, id, lang, claims)) return;
+  if (seloDaConclusaoDoInicio(el, id, lang, {dist:DIST})) return;
 
   if (dentroDeSvg(el)) {
     /* Um <a> dentro de um desenho não se lê como porta: o selo de um valor
@@ -6785,7 +6787,7 @@ for (const file of ficheirosHtml(DIST)) {
       mapaDaUnidade.querySelectorAll('tbody [data-claim]').some((n) => n.getAttribute('data-claim') === id);
     const campoDaDiscussao = rota?.key === 'discussao' && ['excerpt', 'attributed_to', 'ressalva'].includes(String(campo)) &&
       el.closest('[data-discussao]') !== null && el.closest('[data-discussao-literal]')?.getAttribute('data-discussao-literal') === campo;
-    const fragmentoDeclarado = rota?.key === 'discussao' && ['excerpt','document.title'].includes(String(campo)) && el.hasAttribute('data-linha-trecho') &&
+    const fragmentoDeclarado = (rota?.key === 'home' && fragmentoDaConclusaoDoInicio(el,id,campo,linguaPagina,{dist:DIST})) || rota?.key === 'discussao' && ['excerpt','document.title'].includes(String(campo)) && el.hasAttribute('data-linha-trecho') &&
       el.closest('[data-discussao-fragmento]')?.getAttribute('data-discussao-fragmento')===campo &&
       ITENS.find(e=>e.slug===el.closest('[data-discussao]')?.getAttribute('data-discussao'))?.seccoes.some(s=>s.conteudo.some(b=>b.paragrafo?.[linguaPagina]?.some(t=>t?.fragmento===id&&t.campo===campo&&t.texto===el.getAttribute('data-linha-trecho'))));
     if (!fragmentoDeclarado && !campoDaDiscussao && !paginaDoLivro && !unidadeDeCartaoDoLugar && !unidadeDeCartaoDoPais && !unidadeDeCorrecaoDoPais && !nomeDeCorrecao && !campoDeBloco && !unidadeDeMapaDosLugares) {

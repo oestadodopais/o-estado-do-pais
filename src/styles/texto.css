@@ -707,12 +707,14 @@
  * -------------------------------------------------------------------------- */
 .texto-artigo h2 {
   position: relative;
+  /* I273: reserva a altura do contador e o intervalo que antes saíam da caixa. */
+  padding-top: 16.2px;
 }
 .texto-artigo h2::before {
   counter-increment: seccao;
   content: counter(seccao) '/' counter(deQuantas);
   position: absolute;
-  top: -1.35em;
+  top: 0;
   left: 0;
   font-family: var(--f-instr);
   font-variant-numeric: tabular-nums lining-nums;

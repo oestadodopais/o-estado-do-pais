@@ -23,3 +23,7 @@
    em linha (V2-c) aparecia como uma marca só no segundo quando o primeiro título ocupava a linha inteira (o leitor,
    20.10.2026). Os números dos títulos não ficam a negrito aqui, para os dois títulos terem o mesmo peso. */
 .pp-discussao .discussao-sumario .claim-value { font-weight: inherit; }
+
+/* FP2: a conclusão é prosa em fluxo; só a data usa a letra instrumental da caixa. */
+.pp-discussao [data-discussao-resumo] { display: block; margin: 0 0 1rem; font-family: var(--f-prosa); font-size: 1rem; line-height: 1.5; color: var(--ink); }
+.pp-discussao [data-discussao-resumo] time { font-family: var(--f-instr); font-size: 12px; color: var(--muted); }

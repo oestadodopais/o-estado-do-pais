@@ -24,17 +24,20 @@ export function fichaDoEstudo(work, lang) {
        não a tem, e a ficha fica como estava. */
     pergunta: /** @type {Record<string, string> | undefined} */ (work.pergunta)?.[edicao.lang] ?? null,
     verbatimDaPergunta: /** @type {Record<string, string> | undefined} */ (work.verbatimDaPergunta)?.[edicao.lang] ?? null,
-    resumo: primeirasFrases(leitura?.frase[lang] ?? [work.description[lang]]).map(p =>
+    resumo: primeirasFrases(/** @type {PedacoDeFrase[]} */ (leitura?.frase[lang] ?? [work.description[lang]])).map(p =>
       typeof p !== 'string' && 'claim' in p && getClaim(p.claim).unit === '%' && !p.sufixo
         /* K2 (02.10.2026, item 5 do brief): o «%» leva o espaço antes dele, como em todos os valores do sítio. */
         ? { ...p, sufixo: ' %' } : p),
     rota: routePath('estudo', lang, { slug: work.slug }) };
 }
 /** Conserva os objetos Claim e recorta só prosa, sem cortar números de uma linha.
- * @param {PedacoDeFrase[]} partes
+ * @template {object} T
+ * @param {(string | T)[]} partes
+ * @param {number} [quantas]
  */
-export function primeirasFrases(partes) {
-  let faltam = 2;
+export function primeirasFrases(partes, quantas = 2) {
+  if (!Number.isInteger(quantas) || quantas < 1) throw new Error('primeirasFrases: quantidade inválida');
+  let faltam = quantas;
   const saida = [];
   for (const parte of partes) {
     if (!faltam) break;

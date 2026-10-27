@@ -1,5 +1,8 @@
 /** V2-d: leitor independente dos itens, das contas e das portas, com estragos em memória. */
 import fs from 'node:fs';
+import {conferirConclusaoDoInicio, conclusaoResolvida, seloDaConclusaoDoInicio, fragmentoDaConclusaoDoInicio} from '../../scripts/porta-da-conclusao-discussao.mjs';
+import {primeirasFrases} from '../../src/lib/estudos-b1.mjs';
+import {textoDosPedacosDaExplicacao} from '../../src/lib/explicacoes.mjs';
 import {conferirNovidades} from '../inicio/novidades.mjs';
 import { routePath } from '../../src/lib/routes.mjs';
 import { ESTUDO_EO1, PORTAS_EO1 } from '../../src/data/portas-eo1.mjs';
@@ -201,12 +204,12 @@ export function conferirPagina(root,lang,linhas=loadClaims(),dist=process.env.OE
  }
  return erros;
 }
-export function conferirInicio(root,lang){
+export function conferirInicio(root,lang,dist=process.env.OEDP_DIST??path.join(raiz,'dist')){
  const erros=[];const bloco=root.querySelector('[data-discussao-inicio]');
  if(!bloco)return ['V2B início: bloco ausente'];
  const links=bloco.querySelectorAll('[data-discussao-porta]');
  if(links.length!==ITENS.length)erros.push('V2B início: títulos em falta ou a mais');
- for(const [i,e] of [...ITENS].sort((a,b)=>b.escrita.localeCompare(a.escrita)).entries()){erros.push(...conferirMarcasDoTitulo(links[i],e,lang,loadClaims()));if(links[i]?.getAttribute('href')!==destino(e.slug,lang)||normal(links[i]?.text)!==explicacaoPelaCelula(e,lang,loadClaims()).titulo)erros.push('V2B início: destino ou título errado');}
+ for(const [i,e] of [...ITENS].sort((a,b)=>b.escrita.localeCompare(a.escrita)).entries()){erros.push(...conferirMarcasDoTitulo(links[i],e,lang,loadClaims()));if(links[i]?.getAttribute('href')!==destino(e.slug,lang)||normal(links[i]?.text)!==explicacaoPelaCelula(e,lang,loadClaims()).titulo)erros.push('V2B início: destino ou título errado');erros.push(...conferirConclusaoDoInicio(links[i],e,lang,{dist}));}
  const content=root.querySelector('main')?.innerHTML??'';
  const marcas=['data-discussao-inicio','data-o-que-se-passa','data-entradas'].map(m=>content.indexOf(m));
  if(marcas.some(n=>n<0)||!(marcas[0]<marcas[1]&&marcas[1]<marcas[2]))erros.push('V2C início: marca ausente ou bloco fora do lugar');
@@ -214,6 +217,33 @@ export function conferirInicio(root,lang){
  if(root.querySelectorAll('[data-discussao-inicio]').length!==1||!seccoes[0]?.hasAttribute('data-novidades')||seccoes[1]!==bloco)erros.push('V2C início: discussão não é a secção única imediatamente depois das novidades');
  if(bloco.querySelector('h2 a')?.getAttribute('href')!==routePath('discussao',lang))erros.push('V2C início: destino do título errado');
  return erros;
+}
+export function plantasDoInicio(home,lang,dist) {
+ const provas=[],limpo=conferirInicio(home,lang,dist).length===0;
+ const e=ITENS.find(e=>e.slug===home.querySelector('[data-discussao-porta]')?.getAttribute('data-discussao-porta'));
+ const seletor='[data-discussao-inicio] li';
+ const outra=home.querySelectorAll('[data-discussao-conclusao]')[1];
+ for(const [nome,mudar,padrao] of [
+  ['data diferente de publicado',p=>p.querySelector('time').setAttribute('datetime','9999-12-31'),/data diferente/],
+  ['duas frases em vez de uma',p=>p.querySelector('[data-discussao-conclusao]').set_content(textoDosPedacosDaExplicacao(primeirasFrases(conclusaoResolvida(e,lang),2),lang)),/frase diferente/],
+  ['frase de outro item',p=>p.querySelector('[data-discussao-conclusao]').set_content(outra.innerHTML),/frase diferente/],
+  ['valor trocado na frase',p=>p.querySelector('[data-discussao-conclusao] [data-claim]').set_content('999'),/valor ou linha/],
+  ['parágrafo em falta',p=>p.querySelector('p[data-discussao-resumo]').remove(),/parágrafo ausente/],
+ ]) {
+  const r=parse(home.toString());mudar(r.querySelector(seletor));
+  const erros=conferirInicio(r,lang,dist);
+  provas.push({nome:'FP2: '+nome,lang,mordeu:limpo&&r.toString()!==home.toString()&&erros.some(x=>padrao.test(x)),queixa:erros.find(x=>padrao.test(x))??null});
+ }
+ // A dispensa do selo também tem de recusar uma linha trocada, mesmo com o texto intacto.
+ const r=parse(home.toString()),n=r.querySelector('[data-discussao-conclusao] [data-claim]'),id=n.getAttribute('data-claim');
+ const antes=seloDaConclusaoDoInicio(n,id,lang,{dist});n.setAttribute('data-claim','linha-inventada');
+ provas.push({nome:'FP2: selo recusa linha trocada',lang,mordeu:limpo&&antes&&!seloDaConclusaoDoInicio(n,'linha-inventada',lang,{dist})});
+ const fragmento=parse(home.toString()).querySelector('[data-discussao-conclusao] [data-linha-trecho]');
+ const origem=fragmento.getAttribute('data-linha-claim'),campo=fragmento.getAttribute('data-linha-campo');
+ const aceite=fragmentoDaConclusaoDoInicio(fragmento,origem,campo,lang,{dist});
+ fragmento.setAttribute('data-linha-trecho','trecho inventado');
+ provas.push({nome:'FP2: fragmento recusa trecho trocado',lang,mordeu:limpo&&aceite&&!fragmentoDaConclusaoDoInicio(fragmento,origem,campo,lang,{dist})});
+ return provas;
 }
 export function conferirIntegracao(root,lang,pagina,linhas=loadClaims(),{dist=process.env.OEDP_DIST??path.join(raiz,'dist'),recibos=new Map()}={}){
  const erros=[];const main=root.querySelector('main');if(!main)return erros;
@@ -327,7 +357,8 @@ export function conferirTudo(dist=path.join(raiz,'dist')){
   const file=path.join(dist,lang==='pt'?'o-que-se-discute/index.html':'en/under-discussion/index.html');
   if(!fs.existsSync(file)){erros.push('V2B página: página ausente');continue;}
   const html=fs.readFileSync(file,'utf8');erros.push(...conferirPagina(parse(html),lang,loadClaims(),dist));provas.push(...plantas(html,lang));
-  const home=parse(fs.readFileSync(path.join(dist,lang==='pt'?'index.html':'en/index.html'),'utf8'));erros.push(...conferirInicio(home,lang));
+  const home=parse(fs.readFileSync(path.join(dist,lang==='pt'?'index.html':'en/index.html'),'utf8'));erros.push(...conferirInicio(home,lang,dist));
+  provas.push(...plantasDoInicio(home,lang,dist));
   for(const [nome,mut] of [['título da porta alterado',p=>p.querySelector('a').set_content('Outro título')],['destino da porta alterado',p=>p.querySelector('a').setAttribute('href','#errado')]]){const r=parse(home.toString());mut(r.querySelector('[data-discussao-integracao]'));provas.push({nome:'OG1 primeira página: '+nome,lang,mordeu:conferirIntegracao(r,lang,lang==='pt'?'index.html':'en/index.html').length>0});}
   for(const [nome,estraga] of [
    ['bloco depois do painel',r=>{const b=r.querySelector('[data-discussao-inicio]');const html=b.toString();b.remove();r.querySelector('[data-o-que-se-passa]').insertAdjacentHTML('afterend',html);}],
