@@ -1,0 +1,46 @@
+# excerto do registo da construção de produção da Vercel da cabeça 0995e02c1 (`vercel inspect --logs`, 27.10.2026); o registo inteiro ficou fora do repositório
+2026-10-27T17:14:18.037Z  · a afirmação "vimioso-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-10-27T17:14:18.037Z  · a afirmação "vinhais-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-10-27T17:14:18.037Z  · a afirmação "viseu-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-10-27T17:14:18.038Z  · a afirmação "vizela-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-10-27T17:14:18.038Z  · a afirmação "vouzela-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-10-27T17:14:18.038Z  
+2026-10-27T17:14:18.038Z  ✓ nenhum algarismo sem proveniência nas páginas construídas.
+2026-10-27T17:14:18.038Z  prova · 92 chaves reconferidas pelo portão · 96 números marcados nas páginas · 2 lista(s) de nomes recontada(s) · 380309 ligações internas (0 relativas, 21411 âncoras) · 80 recortes · 6 ficheiros alojados · 10 contas sobre ficheiros não alojados (12 com cópia arquivada) · 894 páginas de série · 5396 cartões de partilha (30168 valores recalculados, 5396 nomeados por páginas) · 2 manifestos (7 ícones medidos na cabeça do PNG) · escrito em /prova.json
+2026-10-27T17:14:18.038Z  
+2026-10-27T17:14:18.253Z  
+2026-10-27T17:14:18.253Z  > o-estado-do-pais@0.1.0 check:datas
+2026-10-27T17:14:18.254Z  > node tests/inicio/novidades.mjs && node tests/inicio/datas-do-recibo.mjs && node tests/hb1/publicacao.mjs --html-construido && node tests/hb1/periodos.mjs && node tests/hb1/pagina-editada.mjs && node scripts/check-datas.mjs
+2026-10-27T17:14:18.254Z  
+2026-10-27T17:14:20.537Z  {"fp1":"verde","plantas":[{"nome":"última publicação não gera atualização","lang":"pt","mordeu":true},{"nome":"correção gera texto selado e recusa selo retirado","lang":"pt","mordeu":true},{"nome":"última publicação não gera atualização","lang":"en","mordeu":true},{"nome":"correção gera texto selado e recusa selo retirado","lang":"en","mordeu":true},{"nome":"condição do inventário limitada aos dois rótulos FP1","mordeu":true},{"nome":"read continua proibido e re-read aprovado não é uma palavra parcial","mordeu":true},{"nome":"marca novo retirada","lang":"pt","mordeu":true},{"nome":"título da peça trocado","lang":"pt","mordeu":true},{"nome":"entrada sem página","lang":"pt","mordeu":true},{"nome":"data no futuro","lang":"pt","mordeu":true},{"nome":"ordem trocada","lang":"pt","mordeu":true},{"nome":"peça mais recente em falta","lang":"pt","mordeu":true},{"nome":"data escrita à mão no HTML","lang":"pt","mordeu":true},{"nome":"estudo com data gerada recente ausente","lang":"pt","mordeu":true},{"nome":"estado em curso trocado no arquivo","lang":"pt","mordeu":true},{"nome":"marca novo retirada","lang":"en","mordeu":true},{"nome":"título da peça trocado","lang":"en","mordeu":true},{"nome":"entrada sem página","lang":"en","mordeu":true},{"nome":"data no futuro","lang":"en","mordeu":true},{"nome":"ordem trocada","lang":"en","mordeu":true},{"nome":"peça mais recente em falta","lang":"en","mordeu":true},{"nome":"data escrita à mão no HTML","lang":"en","mordeu":true},{"nome":"estudo com data gerada recente ausente","lang":"en","mordeu":true},{"nome":"estado em curso trocado no arquivo","lang":"en","mordeu":true}]}
+2026-10-27T17:14:29.024Z  {"paginas":8228,"semPeriodo":44,"comPainel":182,"copiasAlojadas":4,"plantas":[{"nome":"undefined contra undefined recusado pela guarda da origem","mordeu":true},{"nome":"próxima leitura indevida derivada","mordeu":true},{"nome":"próxima leitura indevida semReleituras","mordeu":true},{"nome":"alojamento dito leitura (pt)","mordeu":true},{"nome":"alojamento dito leitura (en)","mordeu":true},{"nome":"campo ausente acrescentado","mordeu":true},{"nome":"próxima leitura no passado","mordeu":true},{"nome":"releitura do painel retirada","mordeu":true}],"calendario":"verde","marcaNovo":"verde"}
+2026-10-27T17:14:29.095Z  HB1 publicação: preparação, aterragem declarada, legado, planta anterior e abertura comum conferidos.
+2026-10-27T17:14:29.102Z  I9 publicação declarada: dois controlos verdes; sete adulterações recusadas.
+2026-10-27T17:14:29.133Z  node:internal/modules/run_main:123
+2026-10-27T17:14:29.133Z  triggerUncaughtException(
+2026-10-27T17:14:29.133Z  ^
+2026-10-27T17:14:29.133Z  
+2026-10-27T17:14:29.133Z  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+2026-10-27T17:14:29.133Z  + actual - expected
+2026-10-27T17:14:29.133Z  
+2026-10-27T17:14:29.133Z  + [
+2026-10-27T17:14:29.133Z  +   'data declarada anterior ao commit de entrada ou inválida'
+2026-10-27T17:14:29.133Z  + ]
+2026-10-27T17:14:29.133Z  - []
+2026-10-27T17:14:29.133Z  
+2026-10-27T17:14:29.133Z  at file:///vercel/path0/tests/hb1/publicacao.mjs:61:10
+2026-10-27T17:14:29.133Z  at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+2026-10-27T17:14:29.133Z  at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+2026-10-27T17:14:29.133Z  at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5) {
+2026-10-27T17:14:29.133Z  generatedMessage: true,
+2026-10-27T17:14:29.133Z  code: 'ERR_ASSERTION',
+2026-10-27T17:14:29.133Z  actual: [ 'data declarada anterior ao commit de entrada ou inválida' ],
+2026-10-27T17:14:29.133Z  expected: [],
+2026-10-27T17:14:29.133Z  operator: 'deepStrictEqual',
+2026-10-27T17:14:29.133Z  diff: 'simple'
+2026-10-27T17:14:29.133Z  }
+2026-10-27T17:14:29.133Z  
+2026-10-27T17:14:29.133Z  Node.js v22.23.4
+2026-10-27T17:14:29.170Z  Error: [BUILD_UTILS_SPAWN_1] Command "npm run build" exited with 1
+status	● Error
+

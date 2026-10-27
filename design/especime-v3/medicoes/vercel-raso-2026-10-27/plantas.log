@@ -1,0 +1,13 @@
+# a régua e as duas plantas, corridas na árvore com história completa contra o dist/ da cabeça (27.10.2026)
+$ node tests/hb1/publicacao.mjs 
+I9 publicação declarada: dois controlos verdes; sete adulterações recusadas.
+(código 0, esperado 0)
+$ node tests/hb1/publicacao.mjs --html-construido
+I9 integração: 4 edições reais verdes; 4 páginas sem scripts recusadas.
+(código 0, esperado 0)
+$ node tests/hb1/publicacao.mjs --planta-data
+HB1 portão: data declarada anterior ao commit de entrada ou inválida
+(código 1, esperado 1)
+$ node tests/hb1/publicacao.mjs --html-construido --planta-entrada
+HB1 portão: a entrada posterior à data declarada recusada em 4 edições
+(código 1, esperado 1)
