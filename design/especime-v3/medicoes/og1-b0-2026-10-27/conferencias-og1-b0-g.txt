@@ -1,0 +1,11 @@
+build: código 0
+PASS: operações documentais, valores alterados e plantas recusadas
+V2A: 83 afirmações conferidas, 105 corpos lidos, 23 origens HB1-c conferidas no motor, 69 plantas, 0 erros.
+V2B · 0 erro(s), 744 de 744 plantas, 716 portas de integração.
+PASS: 173 conferências OG1 das formas, fontes e recibos nas duas edições.
+check-palavras: código 0
+typecheck: código 0
+renderizado: código 0
+PASS: redação renderizada e valores nas duas edições; restantes secções OG1 intactas; entrada pública presente. Valores OG1 conferidos: 30
+porta: código 0
+PASS: uma porta da Saúde por edição, condição por linhas, destino e origens do título; sem linhas, nenhuma porta.

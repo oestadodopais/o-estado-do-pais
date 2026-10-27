@@ -1173,13 +1173,13 @@ export const OG1 = {
                 "campo": "excerpt",
                 "texto": "a avaliação da robustez da medida"
               },
-              "» is limited. To Parliament: at the detailed stage, do not approve the measure without that information, and ask the Government for the scenario in which employment grows less than forecast, because «",
+              "» (the assessment of the measure's robustness) is limited. To Parliament: at the detailed stage, do not approve the measure without that information, and ask the Government for the scenario in which employment grows less than forecast, because «",
               {
                 "fragmento": "og1-utao-p15",
                 "campo": "excerpt",
                 "texto": "Se o emprego crescer menos, as bases da receita fiscal e contributiva ficarão abaixo do previsto"
               },
-              "»."
+              "» (if employment grows less, the tax and contribution revenue bases will fall short of the forecast)."
             ]
           }
         }
@@ -1216,23 +1216,17 @@ export const OG1 = {
                 "campo": "excerpt",
                 "texto": "informação suficientemente detalhada sobre o seu conteúdo e os mecanismos de implementação"
               },
-              "»; um emprego cuja previsão, «",
+              "»; um emprego cuja previsão («",
               {
                 "fragmento": "og1-utao-p15",
                 "campo": "excerpt",
                 "texto": "O crescimento do emprego de 1,4% em 2027"
               },
-              "», é «",
+              "») é «",
               {
                 "fragmento": "og1-utao-p15",
                 "campo": "excerpt",
                 "texto": "a mais elevada das instituições de referência"
-              },
-              "», quando «",
-              {
-                "fragmento": "og1-utao-p15",
-                "campo": "excerpt",
-                "texto": "Se o emprego crescer menos, as bases da receita fiscal e contributiva ficarão abaixo do previsto"
               },
               "»; e um petróleo a ",
               {
@@ -1259,7 +1253,7 @@ export const OG1 = {
                 "claim": "og1-utao-brent-diferenca",
                 "sufixo": " %"
               },
-              " acima. Os juros não são um quarto risco: a previsão já os tem a subir ",
+              " acima. A previsão já tem os juros a subir ",
               {
                 "claim": "og1-utao-juros-variacao",
                 "sufixo": " %"
@@ -1269,7 +1263,13 @@ export const OG1 = {
                 "claim": "og1-utao-juros-montante",
                 "sufixo": " mil milhões de euros"
               },
-              ", com a taxa implícita de ",
+              ", e a «",
+              {
+                "fragmento": "og1-utao-juros-montante",
+                "campo": "excerpt",
+                "texto": "taxa de juro implícita (juros em percentagem da dívida pública)"
+              },
+              "» a passar de ",
               {
                 "claim": "og1-utao-taxa-implicita-2026",
                 "sufixo": " %"
@@ -1290,7 +1290,7 @@ export const OG1 = {
                 "campo": "excerpt",
                 "texto": "estão perfeitamente alinhadas com as previsões do Governo, têm diferenças muito pequenas"
               },
-              "», fala do crescimento; a entidade técnica do próprio Parlamento, que leu a proposta linha a linha, não diz o mesmo da receita, do emprego nem do petróleo. As medidas já em vigor têm um impacto de ",
+              "», a entidade técnica do próprio Parlamento, que leu a proposta linha a linha, não diz o mesmo da receita, do emprego nem do petróleo. As medidas já em vigor têm um impacto adicional de ",
               {
                 "claim": "og1-utao-politicas-saldo",
                 "sufixo": " milhões de euros"
@@ -1328,7 +1328,7 @@ export const OG1 = {
               {
                 "periodo": "oe-2027-calendario-generalidade"
               },
-              ", depois do voto, esta página ganha o registo da votação e as intervenções do Diário da Assembleia, e muda se os números mudarem."
+              ", depois do voto, entram aqui o registo da votação e as intervenções do Diário da Assembleia, e o que mudar nos números."
             ],
             "en": [
               "The budget going to the vote has a surplus of ",
@@ -1352,25 +1352,19 @@ export const OG1 = {
                 "campo": "excerpt",
                 "texto": "informação suficientemente detalhada sobre o seu conteúdo e os mecanismos de implementação"
               },
-              "» (sufficiently detailed information on its content and implementation); employment whose forecast, «",
+              "» (sufficiently detailed information on its content and implementation mechanisms); employment whose forecast («",
               {
                 "fragmento": "og1-utao-p15",
                 "campo": "excerpt",
                 "texto": "O crescimento do emprego de 1,4% em 2027"
               },
-              "» (the forecast growth of employment in that year), is «",
+              "», employment growth in the budget year) is «",
               {
                 "fragmento": "og1-utao-p15",
                 "campo": "excerpt",
                 "texto": "a mais elevada das instituições de referência"
               },
-              "» (the highest among the reference institutions), when «",
-              {
-                "fragmento": "og1-utao-p15",
-                "campo": "excerpt",
-                "texto": "Se o emprego crescer menos, as bases da receita fiscal e contributiva ficarão abaixo do previsto"
-              },
-              "» (if employment grows less, the tax and contribution bases will fall short of the forecast); and oil at ",
+              "» (the highest among the reference institutions); and oil at ",
               {
                 "claim": "og1-utao-brent-mf-2027",
                 "sufixo": " dollars per barrel"
@@ -1395,7 +1389,7 @@ export const OG1 = {
                 "claim": "og1-utao-brent-diferenca",
                 "sufixo": " %"
               },
-              " above. Interest is not a fourth risk: the forecast already has it rising ",
+              " above. The forecast already has interest rising ",
               {
                 "claim": "og1-utao-juros-variacao",
                 "sufixo": " %"
@@ -1405,7 +1399,13 @@ export const OG1 = {
                 "claim": "og1-utao-juros-montante",
                 "sufixo": " billion euros"
               },
-              ", with the implicit rate moving from ",
+              ", and the «",
+              {
+                "fragmento": "og1-utao-juros-montante",
+                "campo": "excerpt",
+                "texto": "taxa de juro implícita (juros em percentagem da dívida pública)"
+              },
+              "» (implicit interest rate, interest as a share of public debt) moving from ",
               {
                 "claim": "og1-utao-taxa-implicita-2026",
                 "sufixo": " %"
@@ -1426,7 +1426,7 @@ export const OG1 = {
                 "campo": "excerpt",
                 "texto": "estão perfeitamente alinhadas com as previsões do Governo, têm diferenças muito pequenas"
               },
-              "» (are perfectly aligned with the Government's forecasts, with very small differences), he is speaking of growth; Parliament's own technical unit, which read the proposal line by line, does not say the same of revenue, employment or oil. Measures already in force have an impact of ",
+              "» (are perfectly aligned with the Government's forecasts, with very small differences), Parliament's own technical unit, which read the proposal line by line, does not say the same of revenue, employment or oil. Measures already in force have an additional impact of ",
               {
                 "claim": "og1-utao-politicas-saldo",
                 "sufixo": " million euros"
@@ -1464,7 +1464,7 @@ export const OG1 = {
               {
                 "periodo": "oe-2027-calendario-generalidade"
               },
-              ", after the vote, this page gains the voting record and the speeches from the Assembly's Diário, and changes if the numbers change."
+              ", after the vote, the voting record and the speeches from the Assembly's Diário enter here, with whatever changes in the numbers."
             ]
           }
         }
