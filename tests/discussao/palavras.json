@@ -23308,6 +23308,27 @@
               ]
             }
           ]
+        },
+        {
+          "caminho": "seccoes[3].conteudo[0].paragrafo[9].sufixo",
+          "pt": " milhões de euros",
+          "en": " million euros",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": " milhões de euros",
+              "en": " million euros",
+              "classe": "leitura",
+              "sobre": "Unidade da variação da despesa efetiva fora do PRR.",
+              "apoios": [
+                {
+                  "linha": "der-saude-variacao-sem-prr",
+                  "campo": "derivation",
+                  "literal": "(oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027) − (oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026). 17 803,1 − 17 291,3 = 511,8"
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -40442,7 +40463,7 @@
               "pt": "Ao Governo: publicar, antes da votação final, o conteúdo e os mecanismos da medida de combate à fraude nos combustíveis, ",
               "en": "To the Government: publish, before the final vote, the content and the mechanisms of the fuel anti-fraud measure, ",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-d: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-f: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
                   "linha": "pm-q3-2-r8-c0",
@@ -40473,7 +40494,7 @@
               "pt": " milhões de euros",
               "en": " million euros",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-d: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-f: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
                   "linha": "pm-q3-2-r8-c0",
@@ -40494,7 +40515,7 @@
               "pt": " de impacto em ",
               "en": " of impact in ",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-d: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-f: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
                   "linha": "pm-q3-2-r8-c0",
@@ -40525,7 +40546,7 @@
               "pt": " numa proposta com um excedente de ",
               "en": " in a proposal with a surplus of ",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-d: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-f: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
                   "linha": "pm-q3-2-r8-c0",
@@ -40556,7 +40577,7 @@
               "pt": " milhões de euros",
               "en": " million euros",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-d: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-f: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
                   "linha": "og1-utao-saldo-me-2027",
@@ -40577,7 +40598,7 @@
               "pt": ": sem essa informação fica limitada, nas palavras da UTAO, «",
               "en": ": without that information, in the UTAO's words, «",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-d: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-f: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
                   "linha": "pm-q3-2-r8-c0",
@@ -40608,7 +40629,7 @@
               "pt": "». Ao Parlamento: na especialidade, não aprovar a medida sem essa informação, e pedir ao Governo o cenário em que o emprego cresce menos do que o previsto, porque «",
               "en": "» is limited. To Parliament: at the detailed stage, do not approve the measure without that information, and ask the Government for the scenario in which employment grows less than forecast, because «",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-d: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-f: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
                   "linha": "pm-q3-2-r8-c0",
@@ -40636,15 +40657,15 @@
         },
         {
           "caminho": "seccoes[4].conteudo[0].paragrafo[10]",
-          "pt": "». A quem segue o Orçamento até à votação final, dois números: a receita que a medida dos combustíveis vier a mostrar, e os juros, cuja previsão já é de ",
-          "en": "». For anyone following the Budget to the final vote, two numbers: the revenue the fuel measure turns out to show, and interest, already forecast at ",
+          "pt": "».",
+          "en": "».",
           "ramo": null,
           "partes": [
             {
-              "pt": "». A quem segue o Orçamento até à votação final, dois números: a receita que a medida dos combustíveis vier a mostrar, e os juros, cuja previsão já é de ",
-              "en": "». For anyone following the Budget to the final vote, two numbers: the revenue the fuel measure turns out to show, and interest, already forecast at ",
+              "pt": "».",
+              "en": "».",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-d: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-f: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
                   "linha": "pm-q3-2-r8-c0",
@@ -40662,96 +40683,9 @@
                   "literal": "Os ajustamentos para contas nacionais somam – 84 M€ em 2026 e + 676 M€ em 2027 (0,2% do PIB), o que conduz aos saldos de 86 M€ e 275 M€ em contabilidade nacional (Quadro 3.3, pág. 45, do Relatório da POE/2027)."
                 },
                 {
-                  "linha": "og1-utao-juros-variacao",
+                  "linha": "og1-utao-p15",
                   "campo": "excerpt",
-                  "literal": "A despesa com juros apresenta uma subida prevista de 23,2% em 2027, o que reflete uma variação nominal de 1,5 mil M€, ascendendo a 8,2 mil M€. Caso se concretize a previsão, a taxa de juro implícita (juros em percentagem da dívida pública) deverá subir de 2,4% em 2026 para 2,9% em 2027. É de referir que o máximo da série estatística para os juros foi atingido em 2014, acima do valor previsto para 2027 (a taxa de juro implícita foi de 3,6% em 2014)."
-                },
-                {
-                  "linha": "og1-utao-juros-montante",
-                  "campo": "excerpt",
-                  "literal": "A despesa com juros apresenta uma subida prevista de 23,2% em 2027, o que reflete uma variação nominal de 1,5 mil M€, ascendendo a 8,2 mil M€. Caso se concretize a previsão, a taxa de juro implícita (juros em percentagem da dívida pública) deverá subir de 2,4% em 2026 para 2,9% em 2027. É de referir que o máximo da série estatística para os juros foi atingido em 2014, acima do valor previsto para 2027 (a taxa de juro implícita foi de 3,6% em 2014)."
-                },
-                {
-                  "linha": "og1-utao-taxa-implicita-2026",
-                  "campo": "excerpt",
-                  "literal": "A despesa com juros apresenta uma subida prevista de 23,2% em 2027, o que reflete uma variação nominal de 1,5 mil M€, ascendendo a 8,2 mil M€. Caso se concretize a previsão, a taxa de juro implícita (juros em percentagem da dívida pública) deverá subir de 2,4% em 2026 para 2,9% em 2027. É de referir que o máximo da série estatística para os juros foi atingido em 2014, acima do valor previsto para 2027 (a taxa de juro implícita foi de 3,6% em 2014)."
-                },
-                {
-                  "linha": "og1-utao-taxa-implicita-2027",
-                  "campo": "excerpt",
-                  "literal": "A despesa com juros apresenta uma subida prevista de 23,2% em 2027, o que reflete uma variação nominal de 1,5 mil M€, ascendendo a 8,2 mil M€. Caso se concretize a previsão, a taxa de juro implícita (juros em percentagem da dívida pública) deverá subir de 2,4% em 2026 para 2,9% em 2027. É de referir que o máximo da série estatística para os juros foi atingido em 2014, acima do valor previsto para 2027 (a taxa de juro implícita foi de 3,6% em 2014)."
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "caminho": "seccoes[4].conteudo[0].paragrafo[11].sufixo",
-          "pt": " mil milhões de euros",
-          "en": " billion euros",
-          "ramo": null,
-          "partes": [
-            {
-              "pt": " mil milhões de euros",
-              "en": " billion euros",
-              "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-d: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
-              "apoios": [
-                {
-                  "linha": "og1-utao-juros-montante",
-                  "campo": "excerpt",
-                  "literal": "A despesa com juros apresenta uma subida prevista de 23,2% em 2027, o que reflete uma variação nominal de 1,5 mil M€, ascendendo a 8,2 mil M€. Caso se concretize a previsão, a taxa de juro implícita (juros em percentagem da dívida pública) deverá subir de 2,4% em 2026 para 2,9% em 2027. É de referir que o máximo da série estatística para os juros foi atingido em 2014, acima do valor previsto para 2027 (a taxa de juro implícita foi de 3,6% em 2014)."
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "caminho": "seccoes[4].conteudo[0].paragrafo[12]",
-          "pt": ".",
-          "en": ".",
-          "ramo": null,
-          "partes": [
-            {
-              "pt": ".",
-              "en": ".",
-              "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-d: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
-              "apoios": [
-                {
-                  "linha": "pm-q3-2-r8-c0",
-                  "campo": "excerpt",
-                  "literal": "           Quadro 3.2. Principais medidas de política orçamental com impacto em 2027\n                                                   (milhões de euros)\n                                                                                 Impacto incremental\n                                                                                      em 2027\nCombate à fraude no setor dos combustíveis                                    300\nSeleção: 2027; impacto incremental; milhões de euros"
-                },
-                {
-                  "linha": "og1-utao-p42",
-                  "campo": "excerpt",
-                  "literal": "A medida de combate à fraude no setor dos combustíveis, com um impacto orçamental estimado de 300 M€ em 2027, constitui a medida de maior dimensão do lado da receita. Contudo, a POE/2027 não disponibiliza informação suficientemente detalhada sobre o seu conteúdo e os mecanismos de implementação, o que limita a avaliação da robustez da medida e a aferição da razoabilidade do impacto orçamental projetado."
-                },
-                {
-                  "linha": "og1-utao-saldo-me-2027",
-                  "campo": "excerpt",
-                  "literal": "Os ajustamentos para contas nacionais somam – 84 M€ em 2026 e + 676 M€ em 2027 (0,2% do PIB), o que conduz aos saldos de 86 M€ e 275 M€ em contabilidade nacional (Quadro 3.3, pág. 45, do Relatório da POE/2027)."
-                },
-                {
-                  "linha": "og1-utao-juros-variacao",
-                  "campo": "excerpt",
-                  "literal": "A despesa com juros apresenta uma subida prevista de 23,2% em 2027, o que reflete uma variação nominal de 1,5 mil M€, ascendendo a 8,2 mil M€. Caso se concretize a previsão, a taxa de juro implícita (juros em percentagem da dívida pública) deverá subir de 2,4% em 2026 para 2,9% em 2027. É de referir que o máximo da série estatística para os juros foi atingido em 2014, acima do valor previsto para 2027 (a taxa de juro implícita foi de 3,6% em 2014)."
-                },
-                {
-                  "linha": "og1-utao-juros-montante",
-                  "campo": "excerpt",
-                  "literal": "A despesa com juros apresenta uma subida prevista de 23,2% em 2027, o que reflete uma variação nominal de 1,5 mil M€, ascendendo a 8,2 mil M€. Caso se concretize a previsão, a taxa de juro implícita (juros em percentagem da dívida pública) deverá subir de 2,4% em 2026 para 2,9% em 2027. É de referir que o máximo da série estatística para os juros foi atingido em 2014, acima do valor previsto para 2027 (a taxa de juro implícita foi de 3,6% em 2014)."
-                },
-                {
-                  "linha": "og1-utao-taxa-implicita-2026",
-                  "campo": "excerpt",
-                  "literal": "A despesa com juros apresenta uma subida prevista de 23,2% em 2027, o que reflete uma variação nominal de 1,5 mil M€, ascendendo a 8,2 mil M€. Caso se concretize a previsão, a taxa de juro implícita (juros em percentagem da dívida pública) deverá subir de 2,4% em 2026 para 2,9% em 2027. É de referir que o máximo da série estatística para os juros foi atingido em 2014, acima do valor previsto para 2027 (a taxa de juro implícita foi de 3,6% em 2014)."
-                },
-                {
-                  "linha": "og1-utao-taxa-implicita-2027",
-                  "campo": "excerpt",
-                  "literal": "A despesa com juros apresenta uma subida prevista de 23,2% em 2027, o que reflete uma variação nominal de 1,5 mil M€, ascendendo a 8,2 mil M€. Caso se concretize a previsão, a taxa de juro implícita (juros em percentagem da dívida pública) deverá subir de 2,4% em 2026 para 2,9% em 2027. É de referir que o máximo da série estatística para os juros foi atingido em 2014, acima do valor previsto para 2027 (a taxa de juro implícita foi de 3,6% em 2014)."
+                  "literal": "O crescimento do emprego de 1,4% em 2027 é difícil de conciliar com o abrandamento recente da imigração líquida. O MF assume um crescimento da população em idade ativa de 0,6% em 2026 e em 2027, o que já incorpora algum abrandamento, mas projeta um crescimento da população ativa de 1,3% em 2027, o que exige uma subida da taxa de participação para 70,2% (+0,5 p.p.; 69,7% em 2026). Os dados mais recentes apontam em sentido oposto: a população em idade ativa aumentou, em média, 28 mil pessoas por trimestre em 2025 e apenas 10 mil em 2026, o que deverá refletir um menor saldo migratório; o BdP estima que a entrada líquida de imigrantes tenha diminuído de cerca de 13 200 pessoas por mês em 2024 para cerca de 6200 em 2025 (Boletim Económico de junho de 2026). No 1.º semestre de 2026, o aumento do emprego resultou sobretudo da redução da população inativa. A previsão do MF é a mais elevada das instituições de referência (entre 0,4% e 1,3%; BdP: 0,7%) e a sua concretização depende de aumentos continuados da participação e da manutenção de saldos migratórios positivos. Se o emprego crescer menos, as bases da receita fiscal e contributiva ficarão abaixo do previsto."
                 }
               ]
             }
@@ -40767,17 +40701,12 @@
               "pt": "O orçamento que vai a votos tem um excedente de ",
               "en": "The budget going to the vote has a surplus of ",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-d: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-f: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
                   "linha": "pm-q3-3-r37-c3",
                   "campo": "excerpt",
                   "literal": "           Quadro 3.3. Passagem de saldos de contabilidade pública a contabilidade nacional\n                                                (milhões de euros; percentagem do PIB)\n                                                                                       2027                   2027\n                                                                          2026                    2026\n                                                                                    Orçamento              Orçamento\n                                                                          (milhões de euros)         (% do PIB)\n3. Saldo das AP em contabilidade nacional (1+2)                      86           275       0,0          0,1\nSeleção: 2027; orçamento; % do PIB"
-                },
-                {
-                  "linha": "og1-utao-saldo-me-2027",
-                  "campo": "excerpt",
-                  "literal": "Os ajustamentos para contas nacionais somam – 84 M€ em 2026 e + 676 M€ em 2027 (0,2% do PIB), o que conduz aos saldos de 86 M€ e 275 M€ em contabilidade nacional (Quadro 3.3, pág. 45, do Relatório da POE/2027)."
                 }
               ]
             }
@@ -40793,7 +40722,7 @@
               "pt": " %",
               "en": " %",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-d: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-f: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
                   "linha": "pm-q3-3-r37-c3",
@@ -40814,7 +40743,7 @@
               "pt": " do PIB nas previsões do Governo, ",
               "en": " of GDP in the Government's forecasts, ",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-d: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-f: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
                   "linha": "pm-q3-3-r37-c3",
@@ -40840,7 +40769,7 @@
               "pt": " milhões de euros",
               "en": " million euros",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-d: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-f: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
                   "linha": "og1-utao-saldo-me-2027",
@@ -40861,8 +40790,13 @@
               "pt": " em contabilidade nacional, e assenta em três pressupostos que a UTAO põe em dúvida, os mesmos que a conclusão acima nomeia: uma receita de ",
               "en": " in national accounts, and rests on three assumptions the UTAO calls into question, the same three the conclusion above names: ",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-d: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-f: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
+                {
+                  "linha": "og1-utao-saldo-me-2027",
+                  "campo": "excerpt",
+                  "literal": "Os ajustamentos para contas nacionais somam – 84 M€ em 2026 e + 676 M€ em 2027 (0,2% do PIB), o que conduz aos saldos de 86 M€ e 275 M€ em contabilidade nacional (Quadro 3.3, pág. 45, do Relatório da POE/2027)."
+                },
                 {
                   "linha": "pm-q3-2-r8-c0",
                   "campo": "excerpt",
@@ -40872,11 +40806,6 @@
                   "linha": "og1-utao-p42",
                   "campo": "excerpt",
                   "literal": "A medida de combate à fraude no setor dos combustíveis, com um impacto orçamental estimado de 300 M€ em 2027, constitui a medida de maior dimensão do lado da receita. Contudo, a POE/2027 não disponibiliza informação suficientemente detalhada sobre o seu conteúdo e os mecanismos de implementação, o que limita a avaliação da robustez da medida e a aferição da razoabilidade do impacto orçamental projetado."
-                },
-                {
-                  "linha": "og1-utao-saldo-me-2027",
-                  "campo": "excerpt",
-                  "literal": "Os ajustamentos para contas nacionais somam – 84 M€ em 2026 e + 676 M€ em 2027 (0,2% do PIB), o que conduz aos saldos de 86 M€ e 275 M€ em contabilidade nacional (Quadro 3.3, pág. 45, do Relatório da POE/2027)."
                 },
                 {
                   "linha": "og1-utao-p15",
@@ -40912,7 +40841,7 @@
               "pt": " milhões de euros",
               "en": " million euros",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-d: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-f: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
                   "linha": "pm-q3-2-r8-c0",
@@ -40933,7 +40862,7 @@
               "pt": " da medida dos combustíveis sem «",
               "en": " of revenue from the fuel measure without «",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-d: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-f: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
                   "linha": "pm-q3-2-r8-c0",
@@ -40944,11 +40873,6 @@
                   "linha": "og1-utao-p42",
                   "campo": "excerpt",
                   "literal": "A medida de combate à fraude no setor dos combustíveis, com um impacto orçamental estimado de 300 M€ em 2027, constitui a medida de maior dimensão do lado da receita. Contudo, a POE/2027 não disponibiliza informação suficientemente detalhada sobre o seu conteúdo e os mecanismos de implementação, o que limita a avaliação da robustez da medida e a aferição da razoabilidade do impacto orçamental projetado."
-                },
-                {
-                  "linha": "og1-utao-saldo-me-2027",
-                  "campo": "excerpt",
-                  "literal": "Os ajustamentos para contas nacionais somam – 84 M€ em 2026 e + 676 M€ em 2027 (0,2% do PIB), o que conduz aos saldos de 86 M€ e 275 M€ em contabilidade nacional (Quadro 3.3, pág. 45, do Relatório da POE/2027)."
                 }
               ]
             }
@@ -40956,16 +40880,21 @@
         },
         {
           "caminho": "seccoes[5].conteudo[0].paragrafo[8]",
-          "pt": "»; um crescimento do emprego que é «",
-          "en": "»; employment growth that is «",
+          "pt": "»; um emprego cuja previsão, «",
+          "en": "» (sufficiently detailed information on its content and implementation); employment whose forecast, «",
           "ramo": null,
           "partes": [
             {
-              "pt": "»; um crescimento do emprego que é «",
-              "en": "»; employment growth that is «",
+              "pt": "»; um emprego cuja previsão, «",
+              "en": "» (sufficiently detailed information on its content and implementation); employment whose forecast, «",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-d: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-f: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
+                {
+                  "linha": "og1-utao-p42",
+                  "campo": "excerpt",
+                  "literal": "A medida de combate à fraude no setor dos combustíveis, com um impacto orçamental estimado de 300 M€ em 2027, constitui a medida de maior dimensão do lado da receita. Contudo, a POE/2027 não disponibiliza informação suficientemente detalhada sobre o seu conteúdo e os mecanismos de implementação, o que limita a avaliação da robustez da medida e a aferição da razoabilidade do impacto orçamental projetado."
+                },
                 {
                   "linha": "og1-utao-p15",
                   "campo": "excerpt",
@@ -40977,15 +40906,15 @@
         },
         {
           "caminho": "seccoes[5].conteudo[0].paragrafo[10]",
-          "pt": "», quando «",
-          "en": "», when «",
+          "pt": "», é «",
+          "en": "» (the forecast growth of employment in that year), is «",
           "ramo": null,
           "partes": [
             {
-              "pt": "», quando «",
-              "en": "», when «",
+              "pt": "», é «",
+              "en": "» (the forecast growth of employment in that year), is «",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-d: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-f: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
                   "linha": "og1-utao-p15",
@@ -40998,28 +40927,44 @@
         },
         {
           "caminho": "seccoes[5].conteudo[0].paragrafo[12]",
+          "pt": "», quando «",
+          "en": "» (the highest among the reference institutions), when «",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": "», quando «",
+              "en": "» (the highest among the reference institutions), when «",
+              "classe": "leitura",
+              "sobre": "Redação do mandato OG1-B0-f: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "apoios": [
+                {
+                  "linha": "og1-utao-p15",
+                  "campo": "excerpt",
+                  "literal": "O crescimento do emprego de 1,4% em 2027 é difícil de conciliar com o abrandamento recente da imigração líquida. O MF assume um crescimento da população em idade ativa de 0,6% em 2026 e em 2027, o que já incorpora algum abrandamento, mas projeta um crescimento da população ativa de 1,3% em 2027, o que exige uma subida da taxa de participação para 70,2% (+0,5 p.p.; 69,7% em 2026). Os dados mais recentes apontam em sentido oposto: a população em idade ativa aumentou, em média, 28 mil pessoas por trimestre em 2025 e apenas 10 mil em 2026, o que deverá refletir um menor saldo migratório; o BdP estima que a entrada líquida de imigrantes tenha diminuído de cerca de 13 200 pessoas por mês em 2024 para cerca de 6200 em 2025 (Boletim Económico de junho de 2026). No 1.º semestre de 2026, o aumento do emprego resultou sobretudo da redução da população inativa. A previsão do MF é a mais elevada das instituições de referência (entre 0,4% e 1,3%; BdP: 0,7%) e a sua concretização depende de aumentos continuados da participação e da manutenção de saldos migratórios positivos. Se o emprego crescer menos, as bases da receita fiscal e contributiva ficarão abaixo do previsto."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[5].conteudo[0].paragrafo[14]",
           "pt": "»; e um petróleo a ",
-          "en": "»; and oil at ",
+          "en": "» (if employment grows less, the tax and contribution bases will fall short of the forecast); and oil at ",
           "ramo": null,
           "partes": [
             {
               "pt": "»; e um petróleo a ",
-              "en": "»; and oil at ",
+              "en": "» (if employment grows less, the tax and contribution bases will fall short of the forecast); and oil at ",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-d: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-f: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
-                  "linha": "og1-utao-brent-diferenca",
+                  "linha": "og1-utao-p15",
                   "campo": "excerpt",
-                  "literal": "A evolução dos preços da energia poderá originar pressões adicionais sobre a despesa pública e a receita. O prolongamento das tensões geopolíticas poderá manter a inflação acima do pressuposto no cenário orçamental (que aponta para um nível 0,6 p.p. inferior ao estimado para 2026) e justificar a adoção ou prorrogação de medidas de apoio às famílias e às empresas. A 16 de outubro, o Brent cotava cerca de 110 USD por barril e a média dos contratos de 2027 era de cerca de 95 USD, 11% acima dos 86,1 USD assumidos pelo MF (Capítulo 2). O efeito de uma inflação mais elevada sobre a receita é tratado nos riscos ascendentes. A Caixa 2 descreve o choque energético de 2026 e as respostas orçamentais na União Europeia e em Portugal."
+                  "literal": "O crescimento do emprego de 1,4% em 2027 é difícil de conciliar com o abrandamento recente da imigração líquida. O MF assume um crescimento da população em idade ativa de 0,6% em 2026 e em 2027, o que já incorpora algum abrandamento, mas projeta um crescimento da população ativa de 1,3% em 2027, o que exige uma subida da taxa de participação para 70,2% (+0,5 p.p.; 69,7% em 2026). Os dados mais recentes apontam em sentido oposto: a população em idade ativa aumentou, em média, 28 mil pessoas por trimestre em 2025 e apenas 10 mil em 2026, o que deverá refletir um menor saldo migratório; o BdP estima que a entrada líquida de imigrantes tenha diminuído de cerca de 13 200 pessoas por mês em 2024 para cerca de 6200 em 2025 (Boletim Económico de junho de 2026). No 1.º semestre de 2026, o aumento do emprego resultou sobretudo da redução da população inativa. A previsão do MF é a mais elevada das instituições de referência (entre 0,4% e 1,3%; BdP: 0,7%) e a sua concretização depende de aumentos continuados da participação e da manutenção de saldos migratórios positivos. Se o emprego crescer menos, as bases da receita fiscal e contributiva ficarão abaixo do previsto."
                 },
                 {
                   "linha": "og1-utao-brent-mf-2027",
-                  "campo": "excerpt",
-                  "literal": "A evolução dos preços da energia poderá originar pressões adicionais sobre a despesa pública e a receita. O prolongamento das tensões geopolíticas poderá manter a inflação acima do pressuposto no cenário orçamental (que aponta para um nível 0,6 p.p. inferior ao estimado para 2026) e justificar a adoção ou prorrogação de medidas de apoio às famílias e às empresas. A 16 de outubro, o Brent cotava cerca de 110 USD por barril e a média dos contratos de 2027 era de cerca de 95 USD, 11% acima dos 86,1 USD assumidos pelo MF (Capítulo 2). O efeito de uma inflação mais elevada sobre a receita é tratado nos riscos ascendentes. A Caixa 2 descreve o choque energético de 2026 e as respostas orçamentais na União Europeia e em Portugal."
-                },
-                {
-                  "linha": "og1-utao-brent-contratos-2027",
                   "campo": "excerpt",
                   "literal": "A evolução dos preços da energia poderá originar pressões adicionais sobre a despesa pública e a receita. O prolongamento das tensões geopolíticas poderá manter a inflação acima do pressuposto no cenário orçamental (que aponta para um nível 0,6 p.p. inferior ao estimado para 2026) e justificar a adoção ou prorrogação de medidas de apoio às famílias e às empresas. A 16 de outubro, o Brent cotava cerca de 110 USD por barril e a média dos contratos de 2027 era de cerca de 95 USD, 11% acima dos 86,1 USD assumidos pelo MF (Capítulo 2). O efeito de uma inflação mais elevada sobre a receita é tratado nos riscos ascendentes. A Caixa 2 descreve o choque energético de 2026 e as respostas orçamentais na União Europeia e em Portugal."
                 }
@@ -41028,7 +40973,7 @@
           ]
         },
         {
-          "caminho": "seccoes[5].conteudo[0].paragrafo[13].sufixo",
+          "caminho": "seccoes[5].conteudo[0].paragrafo[15].sufixo",
           "pt": " dólares por barril",
           "en": " dollars per barrel",
           "ramo": null,
@@ -41037,41 +40982,10 @@
               "pt": " dólares por barril",
               "en": " dollars per barrel",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-d: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-f: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
                   "linha": "og1-utao-brent-mf-2027",
-                  "campo": "excerpt",
-                  "literal": "A evolução dos preços da energia poderá originar pressões adicionais sobre a despesa pública e a receita. O prolongamento das tensões geopolíticas poderá manter a inflação acima do pressuposto no cenário orçamental (que aponta para um nível 0,6 p.p. inferior ao estimado para 2026) e justificar a adoção ou prorrogação de medidas de apoio às famílias e às empresas. A 16 de outubro, o Brent cotava cerca de 110 USD por barril e a média dos contratos de 2027 era de cerca de 95 USD, 11% acima dos 86,1 USD assumidos pelo MF (Capítulo 2). O efeito de uma inflação mais elevada sobre a receita é tratado nos riscos ascendentes. A Caixa 2 descreve o choque energético de 2026 e as respostas orçamentais na União Europeia e em Portugal."
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "caminho": "seccoes[5].conteudo[0].paragrafo[14]",
-          "pt": ", quando os contratos para ",
-          "en": ", when the ",
-          "ramo": null,
-          "partes": [
-            {
-              "pt": ", quando os contratos para ",
-              "en": ", when the ",
-              "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-d: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
-              "apoios": [
-                {
-                  "linha": "og1-utao-brent-diferenca",
-                  "campo": "excerpt",
-                  "literal": "A evolução dos preços da energia poderá originar pressões adicionais sobre a despesa pública e a receita. O prolongamento das tensões geopolíticas poderá manter a inflação acima do pressuposto no cenário orçamental (que aponta para um nível 0,6 p.p. inferior ao estimado para 2026) e justificar a adoção ou prorrogação de medidas de apoio às famílias e às empresas. A 16 de outubro, o Brent cotava cerca de 110 USD por barril e a média dos contratos de 2027 era de cerca de 95 USD, 11% acima dos 86,1 USD assumidos pelo MF (Capítulo 2). O efeito de uma inflação mais elevada sobre a receita é tratado nos riscos ascendentes. A Caixa 2 descreve o choque energético de 2026 e as respostas orçamentais na União Europeia e em Portugal."
-                },
-                {
-                  "linha": "og1-utao-brent-mf-2027",
-                  "campo": "excerpt",
-                  "literal": "A evolução dos preços da energia poderá originar pressões adicionais sobre a despesa pública e a receita. O prolongamento das tensões geopolíticas poderá manter a inflação acima do pressuposto no cenário orçamental (que aponta para um nível 0,6 p.p. inferior ao estimado para 2026) e justificar a adoção ou prorrogação de medidas de apoio às famílias e às empresas. A 16 de outubro, o Brent cotava cerca de 110 USD por barril e a média dos contratos de 2027 era de cerca de 95 USD, 11% acima dos 86,1 USD assumidos pelo MF (Capítulo 2). O efeito de uma inflação mais elevada sobre a receita é tratado nos riscos ascendentes. A Caixa 2 descreve o choque energético de 2026 e as respostas orçamentais na União Europeia e em Portugal."
-                },
-                {
-                  "linha": "og1-utao-brent-contratos-2027",
                   "campo": "excerpt",
                   "literal": "A evolução dos preços da energia poderá originar pressões adicionais sobre a despesa pública e a receita. O prolongamento das tensões geopolíticas poderá manter a inflação acima do pressuposto no cenário orçamental (que aponta para um nível 0,6 p.p. inferior ao estimado para 2026) e justificar a adoção ou prorrogação de medidas de apoio às famílias e às empresas. A 16 de outubro, o Brent cotava cerca de 110 USD por barril e a média dos contratos de 2027 era de cerca de 95 USD, 11% acima dos 86,1 USD assumidos pelo MF (Capítulo 2). O efeito de uma inflação mais elevada sobre a receita é tratado nos riscos ascendentes. A Caixa 2 descreve o choque energético de 2026 e as respostas orçamentais na União Europeia e em Portugal."
                 }
@@ -41081,6 +40995,32 @@
         },
         {
           "caminho": "seccoes[5].conteudo[0].paragrafo[16]",
+          "pt": ", quando os contratos para ",
+          "en": ", when the ",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": ", quando os contratos para ",
+              "en": ", when the ",
+              "classe": "leitura",
+              "sobre": "Redação do mandato OG1-B0-f: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "apoios": [
+                {
+                  "linha": "og1-utao-brent-mf-2027",
+                  "campo": "excerpt",
+                  "literal": "A evolução dos preços da energia poderá originar pressões adicionais sobre a despesa pública e a receita. O prolongamento das tensões geopolíticas poderá manter a inflação acima do pressuposto no cenário orçamental (que aponta para um nível 0,6 p.p. inferior ao estimado para 2026) e justificar a adoção ou prorrogação de medidas de apoio às famílias e às empresas. A 16 de outubro, o Brent cotava cerca de 110 USD por barril e a média dos contratos de 2027 era de cerca de 95 USD, 11% acima dos 86,1 USD assumidos pelo MF (Capítulo 2). O efeito de uma inflação mais elevada sobre a receita é tratado nos riscos ascendentes. A Caixa 2 descreve o choque energético de 2026 e as respostas orçamentais na União Europeia e em Portugal."
+                },
+                {
+                  "linha": "pm-q3-3-r37-c3",
+                  "campo": "excerpt",
+                  "literal": "           Quadro 3.3. Passagem de saldos de contabilidade pública a contabilidade nacional\n                                                (milhões de euros; percentagem do PIB)\n                                                                                       2027                   2027\n                                                                          2026                    2026\n                                                                                    Orçamento              Orçamento\n                                                                          (milhões de euros)         (% do PIB)\n3. Saldo das AP em contabilidade nacional (1+2)                      86           275       0,0          0,1\nSeleção: 2027; orçamento; % do PIB"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[5].conteudo[0].paragrafo[18]",
           "pt": " estavam a cerca de ",
           "en": " contracts stood at about ",
           "ramo": null,
@@ -41089,17 +41029,12 @@
               "pt": " estavam a cerca de ",
               "en": " contracts stood at about ",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-d: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-f: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
-                  "linha": "og1-utao-brent-diferenca",
+                  "linha": "pm-q3-3-r37-c3",
                   "campo": "excerpt",
-                  "literal": "A evolução dos preços da energia poderá originar pressões adicionais sobre a despesa pública e a receita. O prolongamento das tensões geopolíticas poderá manter a inflação acima do pressuposto no cenário orçamental (que aponta para um nível 0,6 p.p. inferior ao estimado para 2026) e justificar a adoção ou prorrogação de medidas de apoio às famílias e às empresas. A 16 de outubro, o Brent cotava cerca de 110 USD por barril e a média dos contratos de 2027 era de cerca de 95 USD, 11% acima dos 86,1 USD assumidos pelo MF (Capítulo 2). O efeito de uma inflação mais elevada sobre a receita é tratado nos riscos ascendentes. A Caixa 2 descreve o choque energético de 2026 e as respostas orçamentais na União Europeia e em Portugal."
-                },
-                {
-                  "linha": "og1-utao-brent-mf-2027",
-                  "campo": "excerpt",
-                  "literal": "A evolução dos preços da energia poderá originar pressões adicionais sobre a despesa pública e a receita. O prolongamento das tensões geopolíticas poderá manter a inflação acima do pressuposto no cenário orçamental (que aponta para um nível 0,6 p.p. inferior ao estimado para 2026) e justificar a adoção ou prorrogação de medidas de apoio às famílias e às empresas. A 16 de outubro, o Brent cotava cerca de 110 USD por barril e a média dos contratos de 2027 era de cerca de 95 USD, 11% acima dos 86,1 USD assumidos pelo MF (Capítulo 2). O efeito de uma inflação mais elevada sobre a receita é tratado nos riscos ascendentes. A Caixa 2 descreve o choque energético de 2026 e as respostas orçamentais na União Europeia e em Portugal."
+                  "literal": "           Quadro 3.3. Passagem de saldos de contabilidade pública a contabilidade nacional\n                                                (milhões de euros; percentagem do PIB)\n                                                                                       2027                   2027\n                                                                          2026                    2026\n                                                                                    Orçamento              Orçamento\n                                                                          (milhões de euros)         (% do PIB)\n3. Saldo das AP em contabilidade nacional (1+2)                      86           275       0,0          0,1\nSeleção: 2027; orçamento; % do PIB"
                 },
                 {
                   "linha": "og1-utao-brent-contratos-2027",
@@ -41111,27 +41046,17 @@
           ]
         },
         {
-          "caminho": "seccoes[5].conteudo[0].paragrafo[18]",
-          "pt": " a ",
-          "en": " on ",
+          "caminho": "seccoes[5].conteudo[0].paragrafo[19].sufixo",
+          "pt": " dólares por barril",
+          "en": " dollars per barrel",
           "ramo": null,
           "partes": [
             {
-              "pt": " a ",
-              "en": " on ",
+              "pt": " dólares por barril",
+              "en": " dollars per barrel",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-d: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-f: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
-                {
-                  "linha": "og1-utao-brent-diferenca",
-                  "campo": "excerpt",
-                  "literal": "A evolução dos preços da energia poderá originar pressões adicionais sobre a despesa pública e a receita. O prolongamento das tensões geopolíticas poderá manter a inflação acima do pressuposto no cenário orçamental (que aponta para um nível 0,6 p.p. inferior ao estimado para 2026) e justificar a adoção ou prorrogação de medidas de apoio às famílias e às empresas. A 16 de outubro, o Brent cotava cerca de 110 USD por barril e a média dos contratos de 2027 era de cerca de 95 USD, 11% acima dos 86,1 USD assumidos pelo MF (Capítulo 2). O efeito de uma inflação mais elevada sobre a receita é tratado nos riscos ascendentes. A Caixa 2 descreve o choque energético de 2026 e as respostas orçamentais na União Europeia e em Portugal."
-                },
-                {
-                  "linha": "og1-utao-brent-mf-2027",
-                  "campo": "excerpt",
-                  "literal": "A evolução dos preços da energia poderá originar pressões adicionais sobre a despesa pública e a receita. O prolongamento das tensões geopolíticas poderá manter a inflação acima do pressuposto no cenário orçamental (que aponta para um nível 0,6 p.p. inferior ao estimado para 2026) e justificar a adoção ou prorrogação de medidas de apoio às famílias e às empresas. A 16 de outubro, o Brent cotava cerca de 110 USD por barril e a média dos contratos de 2027 era de cerca de 95 USD, 11% acima dos 86,1 USD assumidos pelo MF (Capítulo 2). O efeito de uma inflação mais elevada sobre a receita é tratado nos riscos ascendentes. A Caixa 2 descreve o choque energético de 2026 e as respostas orçamentais na União Europeia e em Portugal."
-                },
                 {
                   "linha": "og1-utao-brent-contratos-2027",
                   "campo": "excerpt",
@@ -41143,47 +41068,21 @@
         },
         {
           "caminho": "seccoes[5].conteudo[0].paragrafo[20]",
-          "pt": " de outubro, ",
-          "en": " October, ",
+          "pt": " a ",
+          "en": " on ",
           "ramo": null,
           "partes": [
             {
-              "pt": " de outubro, ",
-              "en": " October, ",
+              "pt": " a ",
+              "en": " on ",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-d: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-f: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
-                {
-                  "linha": "og1-utao-brent-diferenca",
-                  "campo": "excerpt",
-                  "literal": "A evolução dos preços da energia poderá originar pressões adicionais sobre a despesa pública e a receita. O prolongamento das tensões geopolíticas poderá manter a inflação acima do pressuposto no cenário orçamental (que aponta para um nível 0,6 p.p. inferior ao estimado para 2026) e justificar a adoção ou prorrogação de medidas de apoio às famílias e às empresas. A 16 de outubro, o Brent cotava cerca de 110 USD por barril e a média dos contratos de 2027 era de cerca de 95 USD, 11% acima dos 86,1 USD assumidos pelo MF (Capítulo 2). O efeito de uma inflação mais elevada sobre a receita é tratado nos riscos ascendentes. A Caixa 2 descreve o choque energético de 2026 e as respostas orçamentais na União Europeia e em Portugal."
-                },
-                {
-                  "linha": "og1-utao-brent-mf-2027",
-                  "campo": "excerpt",
-                  "literal": "A evolução dos preços da energia poderá originar pressões adicionais sobre a despesa pública e a receita. O prolongamento das tensões geopolíticas poderá manter a inflação acima do pressuposto no cenário orçamental (que aponta para um nível 0,6 p.p. inferior ao estimado para 2026) e justificar a adoção ou prorrogação de medidas de apoio às famílias e às empresas. A 16 de outubro, o Brent cotava cerca de 110 USD por barril e a média dos contratos de 2027 era de cerca de 95 USD, 11% acima dos 86,1 USD assumidos pelo MF (Capítulo 2). O efeito de uma inflação mais elevada sobre a receita é tratado nos riscos ascendentes. A Caixa 2 descreve o choque energético de 2026 e as respostas orçamentais na União Europeia e em Portugal."
-                },
                 {
                   "linha": "og1-utao-brent-contratos-2027",
                   "campo": "excerpt",
                   "literal": "A evolução dos preços da energia poderá originar pressões adicionais sobre a despesa pública e a receita. O prolongamento das tensões geopolíticas poderá manter a inflação acima do pressuposto no cenário orçamental (que aponta para um nível 0,6 p.p. inferior ao estimado para 2026) e justificar a adoção ou prorrogação de medidas de apoio às famílias e às empresas. A 16 de outubro, o Brent cotava cerca de 110 USD por barril e a média dos contratos de 2027 era de cerca de 95 USD, 11% acima dos 86,1 USD assumidos pelo MF (Capítulo 2). O efeito de uma inflação mais elevada sobre a receita é tratado nos riscos ascendentes. A Caixa 2 descreve o choque energético de 2026 e as respostas orçamentais na União Europeia e em Portugal."
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "caminho": "seccoes[5].conteudo[0].paragrafo[21].sufixo",
-          "pt": " %",
-          "en": " %",
-          "ramo": null,
-          "partes": [
-            {
-              "pt": " %",
-              "en": " %",
-              "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-d: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
-              "apoios": [
+                },
                 {
                   "linha": "og1-utao-brent-diferenca",
                   "campo": "excerpt",
@@ -41195,35 +41094,20 @@
         },
         {
           "caminho": "seccoes[5].conteudo[0].paragrafo[22]",
-          "pt": " acima. Os juros não são um quarto risco: a previsão já os tem a subir ",
-          "en": " above. Interest is not a fourth risk: the forecast already has it rising ",
+          "pt": " de outubro, ",
+          "en": " October, ",
           "ramo": null,
           "partes": [
             {
-              "pt": " acima. Os juros não são um quarto risco: a previsão já os tem a subir ",
-              "en": " above. Interest is not a fourth risk: the forecast already has it rising ",
+              "pt": " de outubro, ",
+              "en": " October, ",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-d: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-f: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
-                  "linha": "og1-utao-juros-variacao",
+                  "linha": "og1-utao-brent-diferenca",
                   "campo": "excerpt",
-                  "literal": "A despesa com juros apresenta uma subida prevista de 23,2% em 2027, o que reflete uma variação nominal de 1,5 mil M€, ascendendo a 8,2 mil M€. Caso se concretize a previsão, a taxa de juro implícita (juros em percentagem da dívida pública) deverá subir de 2,4% em 2026 para 2,9% em 2027. É de referir que o máximo da série estatística para os juros foi atingido em 2014, acima do valor previsto para 2027 (a taxa de juro implícita foi de 3,6% em 2014)."
-                },
-                {
-                  "linha": "og1-utao-juros-montante",
-                  "campo": "excerpt",
-                  "literal": "A despesa com juros apresenta uma subida prevista de 23,2% em 2027, o que reflete uma variação nominal de 1,5 mil M€, ascendendo a 8,2 mil M€. Caso se concretize a previsão, a taxa de juro implícita (juros em percentagem da dívida pública) deverá subir de 2,4% em 2026 para 2,9% em 2027. É de referir que o máximo da série estatística para os juros foi atingido em 2014, acima do valor previsto para 2027 (a taxa de juro implícita foi de 3,6% em 2014)."
-                },
-                {
-                  "linha": "og1-utao-taxa-implicita-2026",
-                  "campo": "excerpt",
-                  "literal": "A despesa com juros apresenta uma subida prevista de 23,2% em 2027, o que reflete uma variação nominal de 1,5 mil M€, ascendendo a 8,2 mil M€. Caso se concretize a previsão, a taxa de juro implícita (juros em percentagem da dívida pública) deverá subir de 2,4% em 2026 para 2,9% em 2027. É de referir que o máximo da série estatística para os juros foi atingido em 2014, acima do valor previsto para 2027 (a taxa de juro implícita foi de 3,6% em 2014)."
-                },
-                {
-                  "linha": "og1-utao-taxa-implicita-2027",
-                  "campo": "excerpt",
-                  "literal": "A despesa com juros apresenta uma subida prevista de 23,2% em 2027, o que reflete uma variação nominal de 1,5 mil M€, ascendendo a 8,2 mil M€. Caso se concretize a previsão, a taxa de juro implícita (juros em percentagem da dívida pública) deverá subir de 2,4% em 2026 para 2,9% em 2027. É de referir que o máximo da série estatística para os juros foi atingido em 2014, acima do valor previsto para 2027 (a taxa de juro implícita foi de 3,6% em 2014)."
+                  "literal": "A evolução dos preços da energia poderá originar pressões adicionais sobre a despesa pública e a receita. O prolongamento das tensões geopolíticas poderá manter a inflação acima do pressuposto no cenário orçamental (que aponta para um nível 0,6 p.p. inferior ao estimado para 2026) e justificar a adoção ou prorrogação de medidas de apoio às famílias e às empresas. A 16 de outubro, o Brent cotava cerca de 110 USD por barril e a média dos contratos de 2027 era de cerca de 95 USD, 11% acima dos 86,1 USD assumidos pelo MF (Capítulo 2). O efeito de uma inflação mais elevada sobre a receita é tratado nos riscos ascendentes. A Caixa 2 descreve o choque energético de 2026 e as respostas orçamentais na União Europeia e em Portugal."
                 }
               ]
             }
@@ -41239,12 +41123,12 @@
               "pt": " %",
               "en": " %",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-d: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-f: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
-                  "linha": "og1-utao-juros-variacao",
+                  "linha": "og1-utao-brent-diferenca",
                   "campo": "excerpt",
-                  "literal": "A despesa com juros apresenta uma subida prevista de 23,2% em 2027, o que reflete uma variação nominal de 1,5 mil M€, ascendendo a 8,2 mil M€. Caso se concretize a previsão, a taxa de juro implícita (juros em percentagem da dívida pública) deverá subir de 2,4% em 2026 para 2,9% em 2027. É de referir que o máximo da série estatística para os juros foi atingido em 2014, acima do valor previsto para 2027 (a taxa de juro implícita foi de 3,6% em 2014)."
+                  "literal": "A evolução dos preços da energia poderá originar pressões adicionais sobre a despesa pública e a receita. O prolongamento das tensões geopolíticas poderá manter a inflação acima do pressuposto no cenário orçamental (que aponta para um nível 0,6 p.p. inferior ao estimado para 2026) e justificar a adoção ou prorrogação de medidas de apoio às famílias e às empresas. A 16 de outubro, o Brent cotava cerca de 110 USD por barril e a média dos contratos de 2027 era de cerca de 95 USD, 11% acima dos 86,1 USD assumidos pelo MF (Capítulo 2). O efeito de uma inflação mais elevada sobre a receita é tratado nos riscos ascendentes. A Caixa 2 descreve o choque energético de 2026 e as respostas orçamentais na União Europeia e em Portugal."
                 }
               ]
             }
@@ -41252,33 +41136,23 @@
         },
         {
           "caminho": "seccoes[5].conteudo[0].paragrafo[24]",
-          "pt": ", para ",
-          "en": ", to ",
+          "pt": " acima. Os juros não são um quarto risco: a previsão já os tem a subir ",
+          "en": " above. Interest is not a fourth risk: the forecast already has it rising ",
           "ramo": null,
           "partes": [
             {
-              "pt": ", para ",
-              "en": ", to ",
+              "pt": " acima. Os juros não são um quarto risco: a previsão já os tem a subir ",
+              "en": " above. Interest is not a fourth risk: the forecast already has it rising ",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-d: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-f: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
+                  "linha": "og1-utao-brent-diferenca",
+                  "campo": "excerpt",
+                  "literal": "A evolução dos preços da energia poderá originar pressões adicionais sobre a despesa pública e a receita. O prolongamento das tensões geopolíticas poderá manter a inflação acima do pressuposto no cenário orçamental (que aponta para um nível 0,6 p.p. inferior ao estimado para 2026) e justificar a adoção ou prorrogação de medidas de apoio às famílias e às empresas. A 16 de outubro, o Brent cotava cerca de 110 USD por barril e a média dos contratos de 2027 era de cerca de 95 USD, 11% acima dos 86,1 USD assumidos pelo MF (Capítulo 2). O efeito de uma inflação mais elevada sobre a receita é tratado nos riscos ascendentes. A Caixa 2 descreve o choque energético de 2026 e as respostas orçamentais na União Europeia e em Portugal."
+                },
+                {
                   "linha": "og1-utao-juros-variacao",
-                  "campo": "excerpt",
-                  "literal": "A despesa com juros apresenta uma subida prevista de 23,2% em 2027, o que reflete uma variação nominal de 1,5 mil M€, ascendendo a 8,2 mil M€. Caso se concretize a previsão, a taxa de juro implícita (juros em percentagem da dívida pública) deverá subir de 2,4% em 2026 para 2,9% em 2027. É de referir que o máximo da série estatística para os juros foi atingido em 2014, acima do valor previsto para 2027 (a taxa de juro implícita foi de 3,6% em 2014)."
-                },
-                {
-                  "linha": "og1-utao-juros-montante",
-                  "campo": "excerpt",
-                  "literal": "A despesa com juros apresenta uma subida prevista de 23,2% em 2027, o que reflete uma variação nominal de 1,5 mil M€, ascendendo a 8,2 mil M€. Caso se concretize a previsão, a taxa de juro implícita (juros em percentagem da dívida pública) deverá subir de 2,4% em 2026 para 2,9% em 2027. É de referir que o máximo da série estatística para os juros foi atingido em 2014, acima do valor previsto para 2027 (a taxa de juro implícita foi de 3,6% em 2014)."
-                },
-                {
-                  "linha": "og1-utao-taxa-implicita-2026",
-                  "campo": "excerpt",
-                  "literal": "A despesa com juros apresenta uma subida prevista de 23,2% em 2027, o que reflete uma variação nominal de 1,5 mil M€, ascendendo a 8,2 mil M€. Caso se concretize a previsão, a taxa de juro implícita (juros em percentagem da dívida pública) deverá subir de 2,4% em 2026 para 2,9% em 2027. É de referir que o máximo da série estatística para os juros foi atingido em 2014, acima do valor previsto para 2027 (a taxa de juro implícita foi de 3,6% em 2014)."
-                },
-                {
-                  "linha": "og1-utao-taxa-implicita-2027",
                   "campo": "excerpt",
                   "literal": "A despesa com juros apresenta uma subida prevista de 23,2% em 2027, o que reflete uma variação nominal de 1,5 mil M€, ascendendo a 8,2 mil M€. Caso se concretize a previsão, a taxa de juro implícita (juros em percentagem da dívida pública) deverá subir de 2,4% em 2026 para 2,9% em 2027. É de referir que o máximo da série estatística para os juros foi atingido em 2014, acima do valor previsto para 2027 (a taxa de juro implícita foi de 3,6% em 2014)."
                 }
@@ -41288,18 +41162,18 @@
         },
         {
           "caminho": "seccoes[5].conteudo[0].paragrafo[25].sufixo",
-          "pt": " mil milhões de euros",
-          "en": " billion euros",
+          "pt": " %",
+          "en": " %",
           "ramo": null,
           "partes": [
             {
-              "pt": " mil milhões de euros",
-              "en": " billion euros",
+              "pt": " %",
+              "en": " %",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-d: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-f: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
-                  "linha": "og1-utao-juros-montante",
+                  "linha": "og1-utao-juros-variacao",
                   "campo": "excerpt",
                   "literal": "A despesa com juros apresenta uma subida prevista de 23,2% em 2027, o que reflete uma variação nominal de 1,5 mil M€, ascendendo a 8,2 mil M€. Caso se concretize a previsão, a taxa de juro implícita (juros em percentagem da dívida pública) deverá subir de 2,4% em 2026 para 2,9% em 2027. É de referir que o máximo da série estatística para os juros foi atingido em 2014, acima do valor previsto para 2027 (a taxa de juro implícita foi de 3,6% em 2014)."
                 }
@@ -41309,15 +41183,15 @@
         },
         {
           "caminho": "seccoes[5].conteudo[0].paragrafo[26]",
-          "pt": ", com a taxa implícita a passar de ",
-          "en": ", with the implicit rate moving from ",
+          "pt": ", para ",
+          "en": ", to ",
           "ramo": null,
           "partes": [
             {
-              "pt": ", com a taxa implícita a passar de ",
-              "en": ", with the implicit rate moving from ",
+              "pt": ", para ",
+              "en": ", to ",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-d: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-f: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
                   "linha": "og1-utao-juros-variacao",
@@ -41326,16 +41200,6 @@
                 },
                 {
                   "linha": "og1-utao-juros-montante",
-                  "campo": "excerpt",
-                  "literal": "A despesa com juros apresenta uma subida prevista de 23,2% em 2027, o que reflete uma variação nominal de 1,5 mil M€, ascendendo a 8,2 mil M€. Caso se concretize a previsão, a taxa de juro implícita (juros em percentagem da dívida pública) deverá subir de 2,4% em 2026 para 2,9% em 2027. É de referir que o máximo da série estatística para os juros foi atingido em 2014, acima do valor previsto para 2027 (a taxa de juro implícita foi de 3,6% em 2014)."
-                },
-                {
-                  "linha": "og1-utao-taxa-implicita-2026",
-                  "campo": "excerpt",
-                  "literal": "A despesa com juros apresenta uma subida prevista de 23,2% em 2027, o que reflete uma variação nominal de 1,5 mil M€, ascendendo a 8,2 mil M€. Caso se concretize a previsão, a taxa de juro implícita (juros em percentagem da dívida pública) deverá subir de 2,4% em 2026 para 2,9% em 2027. É de referir que o máximo da série estatística para os juros foi atingido em 2014, acima do valor previsto para 2027 (a taxa de juro implícita foi de 3,6% em 2014)."
-                },
-                {
-                  "linha": "og1-utao-taxa-implicita-2027",
                   "campo": "excerpt",
                   "literal": "A despesa com juros apresenta uma subida prevista de 23,2% em 2027, o que reflete uma variação nominal de 1,5 mil M€, ascendendo a 8,2 mil M€. Caso se concretize a previsão, a taxa de juro implícita (juros em percentagem da dívida pública) deverá subir de 2,4% em 2026 para 2,9% em 2027. É de referir que o máximo da série estatística para os juros foi atingido em 2014, acima do valor previsto para 2027 (a taxa de juro implícita foi de 3,6% em 2014)."
                 }
@@ -41345,18 +41209,18 @@
         },
         {
           "caminho": "seccoes[5].conteudo[0].paragrafo[27].sufixo",
-          "pt": " %",
-          "en": " %",
+          "pt": " mil milhões de euros",
+          "en": " billion euros",
           "ramo": null,
           "partes": [
             {
-              "pt": " %",
-              "en": " %",
+              "pt": " mil milhões de euros",
+              "en": " billion euros",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-d: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-f: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
-                  "linha": "og1-utao-taxa-implicita-2026",
+                  "linha": "og1-utao-juros-montante",
                   "campo": "excerpt",
                   "literal": "A despesa com juros apresenta uma subida prevista de 23,2% em 2027, o que reflete uma variação nominal de 1,5 mil M€, ascendendo a 8,2 mil M€. Caso se concretize a previsão, a taxa de juro implícita (juros em percentagem da dívida pública) deverá subir de 2,4% em 2026 para 2,9% em 2027. É de referir que o máximo da série estatística para os juros foi atingido em 2014, acima do valor previsto para 2027 (a taxa de juro implícita foi de 3,6% em 2014)."
                 }
@@ -41366,21 +41230,16 @@
         },
         {
           "caminho": "seccoes[5].conteudo[0].paragrafo[28]",
-          "pt": " para ",
-          "en": " to ",
+          "pt": ", com a taxa implícita de ",
+          "en": ", with the implicit rate moving from ",
           "ramo": null,
           "partes": [
             {
-              "pt": " para ",
-              "en": " to ",
+              "pt": ", com a taxa implícita de ",
+              "en": ", with the implicit rate moving from ",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-d: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-f: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
-                {
-                  "linha": "og1-utao-juros-variacao",
-                  "campo": "excerpt",
-                  "literal": "A despesa com juros apresenta uma subida prevista de 23,2% em 2027, o que reflete uma variação nominal de 1,5 mil M€, ascendendo a 8,2 mil M€. Caso se concretize a previsão, a taxa de juro implícita (juros em percentagem da dívida pública) deverá subir de 2,4% em 2026 para 2,9% em 2027. É de referir que o máximo da série estatística para os juros foi atingido em 2014, acima do valor previsto para 2027 (a taxa de juro implícita foi de 3,6% em 2014)."
-                },
                 {
                   "linha": "og1-utao-juros-montante",
                   "campo": "excerpt",
@@ -41388,11 +41247,6 @@
                 },
                 {
                   "linha": "og1-utao-taxa-implicita-2026",
-                  "campo": "excerpt",
-                  "literal": "A despesa com juros apresenta uma subida prevista de 23,2% em 2027, o que reflete uma variação nominal de 1,5 mil M€, ascendendo a 8,2 mil M€. Caso se concretize a previsão, a taxa de juro implícita (juros em percentagem da dívida pública) deverá subir de 2,4% em 2026 para 2,9% em 2027. É de referir que o máximo da série estatística para os juros foi atingido em 2014, acima do valor previsto para 2027 (a taxa de juro implícita foi de 3,6% em 2014)."
-                },
-                {
-                  "linha": "og1-utao-taxa-implicita-2027",
                   "campo": "excerpt",
                   "literal": "A despesa com juros apresenta uma subida prevista de 23,2% em 2027, o que reflete uma variação nominal de 1,5 mil M€, ascendendo a 8,2 mil M€. Caso se concretize a previsão, a taxa de juro implícita (juros em percentagem da dívida pública) deverá subir de 2,4% em 2026 para 2,9% em 2027. É de referir que o máximo da série estatística para os juros foi atingido em 2014, acima do valor previsto para 2027 (a taxa de juro implícita foi de 3,6% em 2014)."
                 }
@@ -41410,10 +41264,10 @@
               "pt": " %",
               "en": " %",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-d: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-f: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
-                  "linha": "og1-utao-taxa-implicita-2027",
+                  "linha": "og1-utao-taxa-implicita-2026",
                   "campo": "excerpt",
                   "literal": "A despesa com juros apresenta uma subida prevista de 23,2% em 2027, o que reflete uma variação nominal de 1,5 mil M€, ascendendo a 8,2 mil M€. Caso se concretize a previsão, a taxa de juro implícita (juros em percentagem da dívida pública) deverá subir de 2,4% em 2026 para 2,9% em 2027. É de referir que o máximo da série estatística para os juros foi atingido em 2014, acima do valor previsto para 2027 (a taxa de juro implícita foi de 3,6% em 2014)."
                 }
@@ -41423,26 +41277,16 @@
         },
         {
           "caminho": "seccoes[5].conteudo[0].paragrafo[30]",
-          "pt": ", e o excedente só existe se não subirem mais do que isso. Quando ",
-          "en": ", and the surplus exists only if it rises no further. When ",
+          "pt": " para ",
+          "en": " to ",
           "ramo": null,
           "partes": [
             {
-              "pt": ", e o excedente só existe se não subirem mais do que isso. Quando ",
-              "en": ", and the surplus exists only if it rises no further. When ",
+              "pt": " para ",
+              "en": " to ",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-d: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-f: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
-                {
-                  "linha": "og1-utao-juros-variacao",
-                  "campo": "excerpt",
-                  "literal": "A despesa com juros apresenta uma subida prevista de 23,2% em 2027, o que reflete uma variação nominal de 1,5 mil M€, ascendendo a 8,2 mil M€. Caso se concretize a previsão, a taxa de juro implícita (juros em percentagem da dívida pública) deverá subir de 2,4% em 2026 para 2,9% em 2027. É de referir que o máximo da série estatística para os juros foi atingido em 2014, acima do valor previsto para 2027 (a taxa de juro implícita foi de 3,6% em 2014)."
-                },
-                {
-                  "linha": "og1-utao-juros-montante",
-                  "campo": "excerpt",
-                  "literal": "A despesa com juros apresenta uma subida prevista de 23,2% em 2027, o que reflete uma variação nominal de 1,5 mil M€, ascendendo a 8,2 mil M€. Caso se concretize a previsão, a taxa de juro implícita (juros em percentagem da dívida pública) deverá subir de 2,4% em 2026 para 2,9% em 2027. É de referir que o máximo da série estatística para os juros foi atingido em 2014, acima do valor previsto para 2027 (a taxa de juro implícita foi de 3,6% em 2014)."
-                },
                 {
                   "linha": "og1-utao-taxa-implicita-2026",
                   "campo": "excerpt",
@@ -41452,16 +41296,27 @@
                   "linha": "og1-utao-taxa-implicita-2027",
                   "campo": "excerpt",
                   "literal": "A despesa com juros apresenta uma subida prevista de 23,2% em 2027, o que reflete uma variação nominal de 1,5 mil M€, ascendendo a 8,2 mil M€. Caso se concretize a previsão, a taxa de juro implícita (juros em percentagem da dívida pública) deverá subir de 2,4% em 2026 para 2,9% em 2027. É de referir que o máximo da série estatística para os juros foi atingido em 2014, acima do valor previsto para 2027 (a taxa de juro implícita foi de 3,6% em 2014)."
-                },
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[5].conteudo[0].paragrafo[31].sufixo",
+          "pt": " %",
+          "en": " %",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": " %",
+              "en": " %",
+              "classe": "leitura",
+              "sobre": "Redação do mandato OG1-B0-f: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "apoios": [
                 {
-                  "linha": "og1-utao-saldo-me-2027",
+                  "linha": "og1-utao-taxa-implicita-2027",
                   "campo": "excerpt",
-                  "literal": "Os ajustamentos para contas nacionais somam – 84 M€ em 2026 e + 676 M€ em 2027 (0,2% do PIB), o que conduz aos saldos de 86 M€ e 275 M€ em contabilidade nacional (Quadro 3.3, pág. 45, do Relatório da POE/2027)."
-                },
-                {
-                  "linha": "og1-governo-rtp-previsoes",
-                  "campo": "excerpt",
-                  "literal": "estão perfeitamente alinhadas com as previsões do Governo, têm diferenças muito pequenas"
+                  "literal": "A despesa com juros apresenta uma subida prevista de 23,2% em 2027, o que reflete uma variação nominal de 1,5 mil M€, ascendendo a 8,2 mil M€. Caso se concretize a previsão, a taxa de juro implícita (juros em percentagem da dívida pública) deverá subir de 2,4% em 2026 para 2,9% em 2027. É de referir que o máximo da série estatística para os juros foi atingido em 2014, acima do valor previsto para 2027 (a taxa de juro implícita foi de 3,6% em 2014)."
                 }
               ]
             }
@@ -41469,16 +41324,21 @@
         },
         {
           "caminho": "seccoes[5].conteudo[0].paragrafo[32]",
-          "pt": ", ministro das Finanças, diz que as previsões «",
-          "en": ", Finance Minister, says the forecasts «",
+          "pt": ". Quando ",
+          "en": ". When ",
           "ramo": null,
           "partes": [
             {
-              "pt": ", ministro das Finanças, diz que as previsões «",
-              "en": ", Finance Minister, says the forecasts «",
+              "pt": ". Quando ",
+              "en": ". When ",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-d: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-f: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
+                {
+                  "linha": "og1-utao-taxa-implicita-2027",
+                  "campo": "excerpt",
+                  "literal": "A despesa com juros apresenta uma subida prevista de 23,2% em 2027, o que reflete uma variação nominal de 1,5 mil M€, ascendendo a 8,2 mil M€. Caso se concretize a previsão, a taxa de juro implícita (juros em percentagem da dívida pública) deverá subir de 2,4% em 2026 para 2,9% em 2027. É de referir que o máximo da série estatística para os juros foi atingido em 2014, acima do valor previsto para 2027 (a taxa de juro implícita foi de 3,6% em 2014)."
+                },
                 {
                   "linha": "og1-governo-rtp-previsoes",
                   "campo": "excerpt",
@@ -41490,20 +41350,46 @@
         },
         {
           "caminho": "seccoes[5].conteudo[0].paragrafo[34]",
-          "pt": "», fala do crescimento; a entidade técnica do próprio Parlamento, que leu a proposta linha a linha, não diz o mesmo da receita, do emprego nem do petróleo. As medidas já em vigor pesam no saldo de ",
-          "en": "», he is speaking of growth; Parliament's own technical unit, which read the proposal line by line, does not say the same of revenue, employment or oil. Measures already in force weigh on the ",
+          "pt": ", ministro das Finanças, diz que as previsões «",
+          "en": ", Finance Minister, says the forecasts «",
           "ramo": null,
           "partes": [
             {
-              "pt": "», fala do crescimento; a entidade técnica do próprio Parlamento, que leu a proposta linha a linha, não diz o mesmo da receita, do emprego nem do petróleo. As medidas já em vigor pesam no saldo de ",
-              "en": "», he is speaking of growth; Parliament's own technical unit, which read the proposal line by line, does not say the same of revenue, employment or oil. Measures already in force weigh on the ",
+              "pt": ", ministro das Finanças, diz que as previsões «",
+              "en": ", Finance Minister, says the forecasts «",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-d: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-f: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
                   "linha": "og1-governo-rtp-previsoes",
                   "campo": "excerpt",
                   "literal": "estão perfeitamente alinhadas com as previsões do Governo, têm diferenças muito pequenas"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[5].conteudo[0].paragrafo[36]",
+          "pt": "», fala do crescimento; a entidade técnica do próprio Parlamento, que leu a proposta linha a linha, não diz o mesmo da receita, do emprego nem do petróleo. As medidas já em vigor têm um impacto de ",
+          "en": "» (are perfectly aligned with the Government's forecasts, with very small differences), he is speaking of growth; Parliament's own technical unit, which read the proposal line by line, does not say the same of revenue, employment or oil. Measures already in force have an impact of ",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": "», fala do crescimento; a entidade técnica do próprio Parlamento, que leu a proposta linha a linha, não diz o mesmo da receita, do emprego nem do petróleo. As medidas já em vigor têm um impacto de ",
+              "en": "» (are perfectly aligned with the Government's forecasts, with very small differences), he is speaking of growth; Parliament's own technical unit, which read the proposal line by line, does not say the same of revenue, employment or oil. Measures already in force have an impact of ",
+              "classe": "leitura",
+              "sobre": "Redação do mandato OG1-B0-f: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "apoios": [
+                {
+                  "linha": "og1-governo-rtp-previsoes",
+                  "campo": "excerpt",
+                  "literal": "estão perfeitamente alinhadas com as previsões do Governo, têm diferenças muito pequenas"
+                },
+                {
+                  "linha": "og1-utao-politicas-saldo",
+                  "campo": "excerpt",
+                  "literal": "3.=(1-2) Impacto Total no Saldo Orçamental -4783 -1,40 -5 411 -1,59"
                 },
                 {
                   "linha": "pm-q3-2-r8-c0",
@@ -41539,52 +41425,6 @@
                   "linha": "og1-utao-brent-contratos-2027",
                   "campo": "excerpt",
                   "literal": "A evolução dos preços da energia poderá originar pressões adicionais sobre a despesa pública e a receita. O prolongamento das tensões geopolíticas poderá manter a inflação acima do pressuposto no cenário orçamental (que aponta para um nível 0,6 p.p. inferior ao estimado para 2026) e justificar a adoção ou prorrogação de medidas de apoio às famílias e às empresas. A 16 de outubro, o Brent cotava cerca de 110 USD por barril e a média dos contratos de 2027 era de cerca de 95 USD, 11% acima dos 86,1 USD assumidos pelo MF (Capítulo 2). O efeito de uma inflação mais elevada sobre a receita é tratado nos riscos ascendentes. A Caixa 2 descreve o choque energético de 2026 e as respostas orçamentais na União Europeia e em Portugal."
-                },
-                {
-                  "linha": "og1-utao-politicas-saldo",
-                  "campo": "excerpt",
-                  "literal": "3.=(1-2) Impacto Total no Saldo Orçamental -4783 -1,40 -5 411 -1,59"
-                },
-                {
-                  "linha": "og1-utao-politicas-peso",
-                  "campo": "excerpt",
-                  "literal": "No contexto das alterações introduzidas pelo MF no relatório da POE/2027, as medidas em vigor, incluídas no cenário de políticas invariantes, têm um impacto adicional líquido para o saldo orçamental de 2027 negativo em 5411 M€ (1,6% do PIB). Este resultado decorre, essencialmente, do acréscimo de medidas com impacto bruto no lado da despesa (5562 M€) visto que as medidas do lado da receita (Tabela 8), apesar de apresentarem valores absolutos elevados, apresentam no seu conjunto um montante significativamente inferior (151 M€)."
-                },
-                {
-                  "linha": "og1-utao-novas-saldo",
-                  "campo": "excerpt",
-                  "literal": "O MF prevê que em 2027 as novas medidas de política orçamental tenham um impacto residual no saldo orçamental avaliado em +79 M€ (+0,02% do PIB). Na receita, estas medidas terão um impacto positivo no saldo de +179 M€ (+0,05% do PIB); na despesa, o impacto das medidas, é negativo em 100 M€ (0,03% do PIB). Estes dados estão compilados na Tabela 9."
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "caminho": "seccoes[5].conteudo[0].paragrafo[36]",
-          "pt": " ",
-          "en": " balance by ",
-          "ramo": null,
-          "partes": [
-            {
-              "pt": " ",
-              "en": " balance by ",
-              "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-d: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
-              "apoios": [
-                {
-                  "linha": "og1-utao-politicas-saldo",
-                  "campo": "excerpt",
-                  "literal": "3.=(1-2) Impacto Total no Saldo Orçamental -4783 -1,40 -5 411 -1,59"
-                },
-                {
-                  "linha": "og1-utao-politicas-peso",
-                  "campo": "excerpt",
-                  "literal": "No contexto das alterações introduzidas pelo MF no relatório da POE/2027, as medidas em vigor, incluídas no cenário de políticas invariantes, têm um impacto adicional líquido para o saldo orçamental de 2027 negativo em 5411 M€ (1,6% do PIB). Este resultado decorre, essencialmente, do acréscimo de medidas com impacto bruto no lado da despesa (5562 M€) visto que as medidas do lado da receita (Tabela 8), apesar de apresentarem valores absolutos elevados, apresentam no seu conjunto um montante significativamente inferior (151 M€)."
-                },
-                {
-                  "linha": "og1-utao-novas-saldo",
-                  "campo": "excerpt",
-                  "literal": "O MF prevê que em 2027 as novas medidas de política orçamental tenham um impacto residual no saldo orçamental avaliado em +79 M€ (+0,02% do PIB). Na receita, estas medidas terão um impacto positivo no saldo de +179 M€ (+0,05% do PIB); na despesa, o impacto das medidas, é negativo em 100 M€ (0,03% do PIB). Estes dados estão compilados na Tabela 9."
                 }
               ]
             }
@@ -41600,7 +41440,7 @@
               "pt": " milhões de euros",
               "en": " million euros",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-d: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-f: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
                   "linha": "og1-utao-politicas-saldo",
@@ -41613,15 +41453,15 @@
         },
         {
           "caminho": "seccoes[5].conteudo[0].paragrafo[38]",
-          "pt": " (o equivalente a ",
-          "en": " (the equivalent of ",
+          "pt": " no saldo de ",
+          "en": " on the ",
           "ramo": null,
           "partes": [
             {
-              "pt": " (o equivalente a ",
-              "en": " (the equivalent of ",
+              "pt": " no saldo de ",
+              "en": " on the ",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-d: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-f: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
                   "linha": "og1-utao-politicas-saldo",
@@ -41629,21 +41469,42 @@
                   "literal": "3.=(1-2) Impacto Total no Saldo Orçamental -4783 -1,40 -5 411 -1,59"
                 },
                 {
-                  "linha": "og1-utao-politicas-peso",
+                  "linha": "pm-q3-3-r37-c3",
                   "campo": "excerpt",
-                  "literal": "No contexto das alterações introduzidas pelo MF no relatório da POE/2027, as medidas em vigor, incluídas no cenário de políticas invariantes, têm um impacto adicional líquido para o saldo orçamental de 2027 negativo em 5411 M€ (1,6% do PIB). Este resultado decorre, essencialmente, do acréscimo de medidas com impacto bruto no lado da despesa (5562 M€) visto que as medidas do lado da receita (Tabela 8), apesar de apresentarem valores absolutos elevados, apresentam no seu conjunto um montante significativamente inferior (151 M€)."
-                },
-                {
-                  "linha": "og1-utao-novas-saldo",
-                  "campo": "excerpt",
-                  "literal": "O MF prevê que em 2027 as novas medidas de política orçamental tenham um impacto residual no saldo orçamental avaliado em +79 M€ (+0,02% do PIB). Na receita, estas medidas terão um impacto positivo no saldo de +179 M€ (+0,05% do PIB); na despesa, o impacto das medidas, é negativo em 100 M€ (0,03% do PIB). Estes dados estão compilados na Tabela 9."
+                  "literal": "           Quadro 3.3. Passagem de saldos de contabilidade pública a contabilidade nacional\n                                                (milhões de euros; percentagem do PIB)\n                                                                                       2027                   2027\n                                                                          2026                    2026\n                                                                                    Orçamento              Orçamento\n                                                                          (milhões de euros)         (% do PIB)\n3. Saldo das AP em contabilidade nacional (1+2)                      86           275       0,0          0,1\nSeleção: 2027; orçamento; % do PIB"
                 }
               ]
             }
           ]
         },
         {
-          "caminho": "seccoes[5].conteudo[0].paragrafo[39].sufixo",
+          "caminho": "seccoes[5].conteudo[0].paragrafo[40]",
+          "pt": ", o equivalente a ",
+          "en": " balance, the equivalent of ",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": ", o equivalente a ",
+              "en": " balance, the equivalent of ",
+              "classe": "leitura",
+              "sobre": "Redação do mandato OG1-B0-f: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "apoios": [
+                {
+                  "linha": "pm-q3-3-r37-c3",
+                  "campo": "excerpt",
+                  "literal": "           Quadro 3.3. Passagem de saldos de contabilidade pública a contabilidade nacional\n                                                (milhões de euros; percentagem do PIB)\n                                                                                       2027                   2027\n                                                                          2026                    2026\n                                                                                    Orçamento              Orçamento\n                                                                          (milhões de euros)         (% do PIB)\n3. Saldo das AP em contabilidade nacional (1+2)                      86           275       0,0          0,1\nSeleção: 2027; orçamento; % do PIB"
+                },
+                {
+                  "linha": "og1-utao-politicas-peso",
+                  "campo": "excerpt",
+                  "literal": "No contexto das alterações introduzidas pelo MF no relatório da POE/2027, as medidas em vigor, incluídas no cenário de políticas invariantes, têm um impacto adicional líquido para o saldo orçamental de 2027 negativo em 5411 M€ (1,6% do PIB). Este resultado decorre, essencialmente, do acréscimo de medidas com impacto bruto no lado da despesa (5562 M€) visto que as medidas do lado da receita (Tabela 8), apesar de apresentarem valores absolutos elevados, apresentam no seu conjunto um montante significativamente inferior (151 M€)."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[5].conteudo[0].paragrafo[41].sufixo",
           "pt": " %",
           "en": " %",
           "ramo": null,
@@ -41652,7 +41513,7 @@
               "pt": " %",
               "en": " %",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-d: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-f: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
                   "linha": "og1-utao-politicas-peso",
@@ -41664,22 +41525,17 @@
           ]
         },
         {
-          "caminho": "seccoes[5].conteudo[0].paragrafo[40]",
-          "pt": " do PIB) e as medidas novas valem ",
-          "en": " of GDP) and the new measures are worth ",
+          "caminho": "seccoes[5].conteudo[0].paragrafo[42]",
+          "pt": " do PIB, e as medidas novas valem ",
+          "en": " of GDP, and the new measures are worth ",
           "ramo": null,
           "partes": [
             {
-              "pt": " do PIB) e as medidas novas valem ",
-              "en": " of GDP) and the new measures are worth ",
+              "pt": " do PIB, e as medidas novas valem ",
+              "en": " of GDP, and the new measures are worth ",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-d: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-f: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
-                {
-                  "linha": "og1-utao-politicas-saldo",
-                  "campo": "excerpt",
-                  "literal": "3.=(1-2) Impacto Total no Saldo Orçamental -4783 -1,40 -5 411 -1,59"
-                },
                 {
                   "linha": "og1-utao-politicas-peso",
                   "campo": "excerpt",
@@ -41695,7 +41551,7 @@
           ]
         },
         {
-          "caminho": "seccoes[5].conteudo[0].paragrafo[41].sufixo",
+          "caminho": "seccoes[5].conteudo[0].paragrafo[43].sufixo",
           "pt": " milhões de euros",
           "en": " million euros",
           "ramo": null,
@@ -41704,39 +41560,8 @@
               "pt": " milhões de euros",
               "en": " million euros",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-d: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-f: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
-                {
-                  "linha": "og1-utao-novas-saldo",
-                  "campo": "excerpt",
-                  "literal": "O MF prevê que em 2027 as novas medidas de política orçamental tenham um impacto residual no saldo orçamental avaliado em +79 M€ (+0,02% do PIB). Na receita, estas medidas terão um impacto positivo no saldo de +179 M€ (+0,05% do PIB); na despesa, o impacto das medidas, é negativo em 100 M€ (0,03% do PIB). Estes dados estão compilados na Tabela 9."
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "caminho": "seccoes[5].conteudo[0].paragrafo[42]",
-          "pt": ": o que muda em ",
-          "en": ": what changes in ",
-          "ramo": null,
-          "partes": [
-            {
-              "pt": ": o que muda em ",
-              "en": ": what changes in ",
-              "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-d: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
-              "apoios": [
-                {
-                  "linha": "og1-utao-politicas-saldo",
-                  "campo": "excerpt",
-                  "literal": "3.=(1-2) Impacto Total no Saldo Orçamental -4783 -1,40 -5 411 -1,59"
-                },
-                {
-                  "linha": "og1-utao-politicas-peso",
-                  "campo": "excerpt",
-                  "literal": "No contexto das alterações introduzidas pelo MF no relatório da POE/2027, as medidas em vigor, incluídas no cenário de políticas invariantes, têm um impacto adicional líquido para o saldo orçamental de 2027 negativo em 5411 M€ (1,6% do PIB). Este resultado decorre, essencialmente, do acréscimo de medidas com impacto bruto no lado da despesa (5562 M€) visto que as medidas do lado da receita (Tabela 8), apesar de apresentarem valores absolutos elevados, apresentam no seu conjunto um montante significativamente inferior (151 M€)."
-                },
                 {
                   "linha": "og1-utao-novas-saldo",
                   "campo": "excerpt",
@@ -41748,6 +41573,32 @@
         },
         {
           "caminho": "seccoes[5].conteudo[0].paragrafo[44]",
+          "pt": ": o que muda em ",
+          "en": ": what changes in ",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": ": o que muda em ",
+              "en": ": what changes in ",
+              "classe": "leitura",
+              "sobre": "Redação do mandato OG1-B0-f: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "apoios": [
+                {
+                  "linha": "og1-utao-novas-saldo",
+                  "campo": "excerpt",
+                  "literal": "O MF prevê que em 2027 as novas medidas de política orçamental tenham um impacto residual no saldo orçamental avaliado em +79 M€ (+0,02% do PIB). Na receita, estas medidas terão um impacto positivo no saldo de +179 M€ (+0,05% do PIB); na despesa, o impacto das medidas, é negativo em 100 M€ (0,03% do PIB). Estes dados estão compilados na Tabela 9."
+                },
+                {
+                  "linha": "pm-q3-3-r37-c3",
+                  "campo": "excerpt",
+                  "literal": "           Quadro 3.3. Passagem de saldos de contabilidade pública a contabilidade nacional\n                                                (milhões de euros; percentagem do PIB)\n                                                                                       2027                   2027\n                                                                          2026                    2026\n                                                                                    Orçamento              Orçamento\n                                                                          (milhões de euros)         (% do PIB)\n3. Saldo das AP em contabilidade nacional (1+2)                      86           275       0,0          0,1\nSeleção: 2027; orçamento; % do PIB"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[5].conteudo[0].paragrafo[46]",
           "pt": " vem sobretudo do que já estava em vigor. «",
           "en": " comes mostly from what was already in force. «",
           "ramo": null,
@@ -41756,39 +41607,13 @@
               "pt": " vem sobretudo do que já estava em vigor. «",
               "en": " comes mostly from what was already in force. «",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-d: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-f: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
-                  "linha": "og1-utao-politicas-saldo",
+                  "linha": "pm-q3-3-r37-c3",
                   "campo": "excerpt",
-                  "literal": "3.=(1-2) Impacto Total no Saldo Orçamental -4783 -1,40 -5 411 -1,59"
+                  "literal": "           Quadro 3.3. Passagem de saldos de contabilidade pública a contabilidade nacional\n                                                (milhões de euros; percentagem do PIB)\n                                                                                       2027                   2027\n                                                                          2026                    2026\n                                                                                    Orçamento              Orçamento\n                                                                          (milhões de euros)         (% do PIB)\n3. Saldo das AP em contabilidade nacional (1+2)                      86           275       0,0          0,1\nSeleção: 2027; orçamento; % do PIB"
                 },
-                {
-                  "linha": "og1-utao-politicas-peso",
-                  "campo": "excerpt",
-                  "literal": "No contexto das alterações introduzidas pelo MF no relatório da POE/2027, as medidas em vigor, incluídas no cenário de políticas invariantes, têm um impacto adicional líquido para o saldo orçamental de 2027 negativo em 5411 M€ (1,6% do PIB). Este resultado decorre, essencialmente, do acréscimo de medidas com impacto bruto no lado da despesa (5562 M€) visto que as medidas do lado da receita (Tabela 8), apesar de apresentarem valores absolutos elevados, apresentam no seu conjunto um montante significativamente inferior (151 M€)."
-                },
-                {
-                  "linha": "og1-utao-novas-saldo",
-                  "campo": "excerpt",
-                  "literal": "O MF prevê que em 2027 as novas medidas de política orçamental tenham um impacto residual no saldo orçamental avaliado em +79 M€ (+0,02% do PIB). Na receita, estas medidas terão um impacto positivo no saldo de +179 M€ (+0,05% do PIB); na despesa, o impacto das medidas, é negativo em 100 M€ (0,03% do PIB). Estes dados estão compilados na Tabela 9."
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "caminho": "seccoes[5].conteudo[0].paragrafo[46]",
-          "pt": "», diz o ",
-          "en": "», says the ",
-          "ramo": null,
-          "partes": [
-            {
-              "pt": "», diz o ",
-              "en": "», says the ",
-              "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-d: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
-              "apoios": [
                 {
                   "linha": "og1-pcp-comite",
                   "campo": "excerpt",
@@ -41800,20 +41625,46 @@
         },
         {
           "caminho": "seccoes[5].conteudo[0].paragrafo[48]",
-          "pt": "; é um juízo, e um juízo não se mede. O que se mede diz que é um orçamento equilibrado por um fio: uma receita por explicar, um emprego otimista e um petróleo já acima do pressuposto. A ",
-          "en": "; it is a judgement, and a judgement cannot be measured. What can be measured says this is a budget balanced by a thread: a revenue still to be explained, an optimistic employment path and oil already above the assumption. On ",
+          "pt": "», diz o ",
+          "en": "» (a favour to capital and a disaster for the country), says the ",
           "ramo": null,
           "partes": [
             {
-              "pt": "; é um juízo, e um juízo não se mede. O que se mede diz que é um orçamento equilibrado por um fio: uma receita por explicar, um emprego otimista e um petróleo já acima do pressuposto. A ",
-              "en": "; it is a judgement, and a judgement cannot be measured. What can be measured says this is a budget balanced by a thread: a revenue still to be explained, an optimistic employment path and oil already above the assumption. On ",
+              "pt": "», diz o ",
+              "en": "» (a favour to capital and a disaster for the country), says the ",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-d: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-f: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
                   "linha": "og1-pcp-comite",
                   "campo": "excerpt",
                   "literal": "O Orçamento do Estado para 2027 é um frete ao capital e um desastre para o País."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[5].conteudo[0].paragrafo[50]",
+          "pt": "; é um juízo, e um juízo não se mede. O que se mede diz que é um orçamento equilibrado por um fio, e o fio são a receita por explicar e um emprego previsto acima do que as outras instituições esperam. A ",
+          "en": "; it is a judgement, and a judgement cannot be measured. What can be measured says this is a budget balanced by a thread, and the thread is a revenue still to be explained and an employment forecast above what the other institutions expect. On ",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": "; é um juízo, e um juízo não se mede. O que se mede diz que é um orçamento equilibrado por um fio, e o fio são a receita por explicar e um emprego previsto acima do que as outras instituições esperam. A ",
+              "en": "; it is a judgement, and a judgement cannot be measured. What can be measured says this is a budget balanced by a thread, and the thread is a revenue still to be explained and an employment forecast above what the other institutions expect. On ",
+              "classe": "leitura",
+              "sobre": "Redação do mandato OG1-B0-f: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "apoios": [
+                {
+                  "linha": "og1-pcp-comite",
+                  "campo": "excerpt",
+                  "literal": "O Orçamento do Estado para 2027 é um frete ao capital e um desastre para o País."
+                },
+                {
+                  "linha": "oe-2027-calendario-generalidade",
+                  "campo": "excerpt",
+                  "literal": "Debate e votação na generalidade do Orçamento do Estado para 2027 | 27 e 28 de outubro "
                 },
                 {
                   "linha": "pm-q3-2-r8-c0",
@@ -41834,28 +41685,13 @@
                   "linha": "og1-utao-p15",
                   "campo": "excerpt",
                   "literal": "O crescimento do emprego de 1,4% em 2027 é difícil de conciliar com o abrandamento recente da imigração líquida. O MF assume um crescimento da população em idade ativa de 0,6% em 2026 e em 2027, o que já incorpora algum abrandamento, mas projeta um crescimento da população ativa de 1,3% em 2027, o que exige uma subida da taxa de participação para 70,2% (+0,5 p.p.; 69,7% em 2026). Os dados mais recentes apontam em sentido oposto: a população em idade ativa aumentou, em média, 28 mil pessoas por trimestre em 2025 e apenas 10 mil em 2026, o que deverá refletir um menor saldo migratório; o BdP estima que a entrada líquida de imigrantes tenha diminuído de cerca de 13 200 pessoas por mês em 2024 para cerca de 6200 em 2025 (Boletim Económico de junho de 2026). No 1.º semestre de 2026, o aumento do emprego resultou sobretudo da redução da população inativa. A previsão do MF é a mais elevada das instituições de referência (entre 0,4% e 1,3%; BdP: 0,7%) e a sua concretização depende de aumentos continuados da participação e da manutenção de saldos migratórios positivos. Se o emprego crescer menos, as bases da receita fiscal e contributiva ficarão abaixo do previsto."
-                },
-                {
-                  "linha": "og1-utao-brent-diferenca",
-                  "campo": "excerpt",
-                  "literal": "A evolução dos preços da energia poderá originar pressões adicionais sobre a despesa pública e a receita. O prolongamento das tensões geopolíticas poderá manter a inflação acima do pressuposto no cenário orçamental (que aponta para um nível 0,6 p.p. inferior ao estimado para 2026) e justificar a adoção ou prorrogação de medidas de apoio às famílias e às empresas. A 16 de outubro, o Brent cotava cerca de 110 USD por barril e a média dos contratos de 2027 era de cerca de 95 USD, 11% acima dos 86,1 USD assumidos pelo MF (Capítulo 2). O efeito de uma inflação mais elevada sobre a receita é tratado nos riscos ascendentes. A Caixa 2 descreve o choque energético de 2026 e as respostas orçamentais na União Europeia e em Portugal."
-                },
-                {
-                  "linha": "og1-utao-brent-mf-2027",
-                  "campo": "excerpt",
-                  "literal": "A evolução dos preços da energia poderá originar pressões adicionais sobre a despesa pública e a receita. O prolongamento das tensões geopolíticas poderá manter a inflação acima do pressuposto no cenário orçamental (que aponta para um nível 0,6 p.p. inferior ao estimado para 2026) e justificar a adoção ou prorrogação de medidas de apoio às famílias e às empresas. A 16 de outubro, o Brent cotava cerca de 110 USD por barril e a média dos contratos de 2027 era de cerca de 95 USD, 11% acima dos 86,1 USD assumidos pelo MF (Capítulo 2). O efeito de uma inflação mais elevada sobre a receita é tratado nos riscos ascendentes. A Caixa 2 descreve o choque energético de 2026 e as respostas orçamentais na União Europeia e em Portugal."
-                },
-                {
-                  "linha": "og1-utao-brent-contratos-2027",
-                  "campo": "excerpt",
-                  "literal": "A evolução dos preços da energia poderá originar pressões adicionais sobre a despesa pública e a receita. O prolongamento das tensões geopolíticas poderá manter a inflação acima do pressuposto no cenário orçamental (que aponta para um nível 0,6 p.p. inferior ao estimado para 2026) e justificar a adoção ou prorrogação de medidas de apoio às famílias e às empresas. A 16 de outubro, o Brent cotava cerca de 110 USD por barril e a média dos contratos de 2027 era de cerca de 95 USD, 11% acima dos 86,1 USD assumidos pelo MF (Capítulo 2). O efeito de uma inflação mais elevada sobre a receita é tratado nos riscos ascendentes. A Caixa 2 descreve o choque energético de 2026 e as respostas orçamentais na União Europeia e em Portugal."
                 }
               ]
             }
           ]
         },
         {
-          "caminho": "seccoes[5].conteudo[0].paragrafo[50]",
+          "caminho": "seccoes[5].conteudo[0].paragrafo[52]",
           "pt": ", depois do voto, esta página ganha o registo da votação e as intervenções do Diário da Assembleia, e muda se os números mudarem.",
           "en": ", after the vote, this page gains the voting record and the speeches from the Assembly's Diário, and changes if the numbers change.",
           "ramo": null,
@@ -41864,7 +41700,7 @@
               "pt": ", depois do voto, esta página ganha o registo da votação e as intervenções do Diário da Assembleia, e muda se os números mudarem.",
               "en": ", after the vote, this page gains the voting record and the speeches from the Assembly's Diário, and changes if the numbers change.",
               "classe": "leitura",
-              "sobre": "Redação do mandato OG1-B0-d: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
+              "sobre": "Redação do mandato OG1-B0-f: pressupostos questionados pela UTAO, previsão de juros e impacto no saldo.",
               "apoios": [
                 {
                   "linha": "oe-2027-calendario-generalidade",

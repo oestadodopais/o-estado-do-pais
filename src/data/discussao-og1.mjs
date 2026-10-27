@@ -1150,12 +1150,7 @@ export const OG1 = {
                 "campo": "excerpt",
                 "texto": "Se o emprego crescer menos, as bases da receita fiscal e contributiva ficarão abaixo do previsto"
               },
-              "». A quem segue o Orçamento até à votação final, dois números: a receita que a medida dos combustíveis vier a mostrar, e os juros, cuja previsão já é de ",
-              {
-                "claim": "og1-utao-juros-montante",
-                "sufixo": " mil milhões de euros"
-              },
-              "."
+              "»."
             ],
             "en": [
               "To the Government: publish, before the final vote, the content and the mechanisms of the fuel anti-fraud measure, ",
@@ -1184,12 +1179,7 @@ export const OG1 = {
                 "campo": "excerpt",
                 "texto": "Se o emprego crescer menos, as bases da receita fiscal e contributiva ficarão abaixo do previsto"
               },
-              "». For anyone following the Budget to the final vote, two numbers: the revenue the fuel measure turns out to show, and interest, already forecast at ",
-              {
-                "claim": "og1-utao-juros-montante",
-                "sufixo": " billion euros"
-              },
-              "."
+              "»."
             ]
           }
         }
@@ -1226,7 +1216,13 @@ export const OG1 = {
                 "campo": "excerpt",
                 "texto": "informação suficientemente detalhada sobre o seu conteúdo e os mecanismos de implementação"
               },
-              "»; um crescimento do emprego que é «",
+              "»; um emprego cuja previsão, «",
+              {
+                "fragmento": "og1-utao-p15",
+                "campo": "excerpt",
+                "texto": "O crescimento do emprego de 1,4% em 2027"
+              },
+              "», é «",
               {
                 "fragmento": "og1-utao-p15",
                 "campo": "excerpt",
@@ -1249,7 +1245,8 @@ export const OG1 = {
               },
               " estavam a cerca de ",
               {
-                "claim": "og1-utao-brent-contratos-2027"
+                "claim": "og1-utao-brent-contratos-2027",
+                "sufixo": " dólares por barril"
               },
               " a ",
               {
@@ -1272,7 +1269,7 @@ export const OG1 = {
                 "claim": "og1-utao-juros-montante",
                 "sufixo": " mil milhões de euros"
               },
-              ", com a taxa implícita a passar de ",
+              ", com a taxa implícita de ",
               {
                 "claim": "og1-utao-taxa-implicita-2026",
                 "sufixo": " %"
@@ -1282,7 +1279,7 @@ export const OG1 = {
                 "claim": "og1-utao-taxa-implicita-2027",
                 "sufixo": " %"
               },
-              ", e o excedente só existe se não subirem mais do que isso. Quando ",
+              ". Quando ",
               {
                 "literal": "og1-governo-rtp-previsoes",
                 "campo": "attributed_to"
@@ -1293,21 +1290,21 @@ export const OG1 = {
                 "campo": "excerpt",
                 "texto": "estão perfeitamente alinhadas com as previsões do Governo, têm diferenças muito pequenas"
               },
-              "», fala do crescimento; a entidade técnica do próprio Parlamento, que leu a proposta linha a linha, não diz o mesmo da receita, do emprego nem do petróleo. As medidas já em vigor pesam no saldo de ",
-              {
-                "periodo": "pm-q3-3-r37-c3"
-              },
-              " ",
+              "», fala do crescimento; a entidade técnica do próprio Parlamento, que leu a proposta linha a linha, não diz o mesmo da receita, do emprego nem do petróleo. As medidas já em vigor têm um impacto de ",
               {
                 "claim": "og1-utao-politicas-saldo",
                 "sufixo": " milhões de euros"
               },
-              " (o equivalente a ",
+              " no saldo de ",
+              {
+                "periodo": "pm-q3-3-r37-c3"
+              },
+              ", o equivalente a ",
               {
                 "claim": "og1-utao-politicas-peso",
                 "sufixo": " %"
               },
-              " do PIB) e as medidas novas valem ",
+              " do PIB, e as medidas novas valem ",
               {
                 "claim": "og1-utao-novas-saldo",
                 "sufixo": " milhões de euros"
@@ -1327,7 +1324,7 @@ export const OG1 = {
                 "literal": "og1-pcp-comite",
                 "campo": "attributed_to"
               },
-              "; é um juízo, e um juízo não se mede. O que se mede diz que é um orçamento equilibrado por um fio: uma receita por explicar, um emprego otimista e um petróleo já acima do pressuposto. A ",
+              "; é um juízo, e um juízo não se mede. O que se mede diz que é um orçamento equilibrado por um fio, e o fio são a receita por explicar e um emprego previsto acima do que as outras instituições esperam. A ",
               {
                 "periodo": "oe-2027-calendario-generalidade"
               },
@@ -1355,19 +1352,25 @@ export const OG1 = {
                 "campo": "excerpt",
                 "texto": "informação suficientemente detalhada sobre o seu conteúdo e os mecanismos de implementação"
               },
-              "»; employment growth that is «",
+              "» (sufficiently detailed information on its content and implementation); employment whose forecast, «",
+              {
+                "fragmento": "og1-utao-p15",
+                "campo": "excerpt",
+                "texto": "O crescimento do emprego de 1,4% em 2027"
+              },
+              "» (the forecast growth of employment in that year), is «",
               {
                 "fragmento": "og1-utao-p15",
                 "campo": "excerpt",
                 "texto": "a mais elevada das instituições de referência"
               },
-              "», when «",
+              "» (the highest among the reference institutions), when «",
               {
                 "fragmento": "og1-utao-p15",
                 "campo": "excerpt",
                 "texto": "Se o emprego crescer menos, as bases da receita fiscal e contributiva ficarão abaixo do previsto"
               },
-              "»; and oil at ",
+              "» (if employment grows less, the tax and contribution bases will fall short of the forecast); and oil at ",
               {
                 "claim": "og1-utao-brent-mf-2027",
                 "sufixo": " dollars per barrel"
@@ -1378,7 +1381,8 @@ export const OG1 = {
               },
               " contracts stood at about ",
               {
-                "claim": "og1-utao-brent-contratos-2027"
+                "claim": "og1-utao-brent-contratos-2027",
+                "sufixo": " dollars per barrel"
               },
               " on ",
               {
@@ -1411,7 +1415,7 @@ export const OG1 = {
                 "claim": "og1-utao-taxa-implicita-2027",
                 "sufixo": " %"
               },
-              ", and the surplus exists only if it rises no further. When ",
+              ". When ",
               {
                 "literal": "og1-governo-rtp-previsoes",
                 "campo": "attributed_to"
@@ -1422,21 +1426,21 @@ export const OG1 = {
                 "campo": "excerpt",
                 "texto": "estão perfeitamente alinhadas com as previsões do Governo, têm diferenças muito pequenas"
               },
-              "», he is speaking of growth; Parliament's own technical unit, which read the proposal line by line, does not say the same of revenue, employment or oil. Measures already in force weigh on the ",
-              {
-                "periodo": "pm-q3-3-r37-c3"
-              },
-              " balance by ",
+              "» (are perfectly aligned with the Government's forecasts, with very small differences), he is speaking of growth; Parliament's own technical unit, which read the proposal line by line, does not say the same of revenue, employment or oil. Measures already in force have an impact of ",
               {
                 "claim": "og1-utao-politicas-saldo",
                 "sufixo": " million euros"
               },
-              " (the equivalent of ",
+              " on the ",
+              {
+                "periodo": "pm-q3-3-r37-c3"
+              },
+              " balance, the equivalent of ",
               {
                 "claim": "og1-utao-politicas-peso",
                 "sufixo": " %"
               },
-              " of GDP) and the new measures are worth ",
+              " of GDP, and the new measures are worth ",
               {
                 "claim": "og1-utao-novas-saldo",
                 "sufixo": " million euros"
@@ -1451,12 +1455,12 @@ export const OG1 = {
                 "campo": "excerpt",
                 "texto": "um frete ao capital e um desastre para o País"
               },
-              "», says the ",
+              "» (a favour to capital and a disaster for the country), says the ",
               {
                 "literal": "og1-pcp-comite",
                 "campo": "attributed_to"
               },
-              "; it is a judgement, and a judgement cannot be measured. What can be measured says this is a budget balanced by a thread: a revenue still to be explained, an optimistic employment path and oil already above the assumption. On ",
+              "; it is a judgement, and a judgement cannot be measured. What can be measured says this is a budget balanced by a thread, and the thread is a revenue still to be explained and an employment forecast above what the other institutions expect. On ",
               {
                 "periodo": "oe-2027-calendario-generalidade"
               },

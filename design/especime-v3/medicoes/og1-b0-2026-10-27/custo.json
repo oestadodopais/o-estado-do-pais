@@ -3,26 +3,40 @@
     {
       "id": "OG1-B0",
       "chamadas_de_ferramentas": 11,
-      "corridas_de_conferencias": 0
+      "corridas_de_conferencias": 0,
+      "registo_contagem": "Fecho da passagem na sessão do lançador; valores das passagens concluídas, incluindo commit e verificação quando houve commit."
     },
     {
       "id": "OG1-B0-b",
       "chamadas_de_ferramentas": 46,
-      "contagem_ate": "fecho do relatório e verificação final desta passagem",
-      "corridas_de_conferencias": 18
+      "corridas_de_conferencias": 18,
+      "registo_contagem": "Fecho da passagem na sessão do lançador; valores das passagens concluídas, incluindo commit e verificação quando houve commit."
     },
     {
       "id": "OG1-B0-c",
       "chamadas_de_ferramentas": 34,
-      "contagem_ate": "resposta final da passagem OG1-B0-c, incluindo commit e verificação",
       "corridas_de_conferencias": 11,
-      "chamadas_ate_fecho_anterior": 32
+      "registo_contagem": "Fecho da passagem na sessão do lançador; valores das passagens concluídas, incluindo commit e verificação quando houve commit."
     },
     {
       "id": "OG1-B0-d",
-      "chamadas_de_ferramentas": 20,
-      "contagem_ate": "fecho do relatório, antes do pedido de commit e da sua verificação",
-      "corridas_de_conferencias": 6
+      "chamadas_de_ferramentas": 22,
+      "corridas_de_conferencias": 6,
+      "registo_contagem": "Fecho da passagem na sessão do lançador; valores das passagens concluídas, incluindo commit e verificação quando houve commit."
+    },
+    {
+      "id": "OG1-B0-e",
+      "chamadas_de_ferramentas": 8,
+      "corridas_de_conferencias": 1,
+      "registo_contagem": "Chamadas de ferramenta desta passagem, incluindo a escrita deste registo e a verificação final.",
+      "registo_conferencia": "bloqueio-og1-b0-e.json"
+    },
+    {
+      "id": "OG1-B0-f",
+      "chamadas_de_ferramentas": 18,
+      "corridas_de_conferencias": 6,
+      "registo_contagem": "Chamadas desta passagem na sessão do lançador, incluindo o commit e a verificação final.",
+      "registo_conferencia": "conferencias-og1-b0-f.txt"
     }
   ],
   "criterio_corridas": "Invocações no topo: três build, ledger:check, typecheck, check:palavras, check:frases-compostas, primeira estática, duas tentativas do verificador do HTML e uma resolução dos tokens. Os subcomandos do build não são contados de novo. Acrescentam-se sete comandos na retoma da cadeia do build, desde check:voz até check:discussao; seis passaram, o último falhou.",
@@ -31,22 +45,6 @@
     1,
     1
   ],
-  "codigos": {
-    "build": 0,
-    "check:discussao": 0,
-    "check:voz": 0,
-    "check:palavras": 0,
-    "check:lingua": 0,
-    "gate:html": 0,
-    "check:registo": 0,
-    "ledger:check": 0,
-    "check:pais": 0,
-    "typecheck": 0,
-    "verificacao_renderizado": 0,
-    "verificacao_porta": 0,
-    "check:frases-compostas": null,
-    "check:primeira": null
-  },
   "limites": {
     "check:frases-compostas": "Reservado pelo mandato OG1-B0-c à corrida da direção fora da sandbox. Na passagem anterior, listen EPERM: operation not permitted 127.0.0.1.",
     "check:primeira": "Reservado pelo mandato OG1-B0-c à corrida da direção fora da sandbox. A parte estática passou na passagem anterior."
@@ -56,7 +54,7 @@
   "simbolos": null,
   "pontos_semana": null,
   "tokens_used": null,
-  "nota": "Custo final em símbolos e pontos a medir pelo lançador. Verificador HTML: primeira tentativa falhou por resolução de módulo no guião temporário, segunda passou.",
+  "nota": "Contagem integral por passagem, com uma única base. Símbolos, pontos e tokens used não expostos.",
   "segundos_medidos": {
     "build_1": 3,
     "build_2": 20,
@@ -67,7 +65,7 @@
     "primeira_estatica": 6,
     "retoma_cadeia_build": 119
   },
-  "estado": "Três Major do mandato resolvidos na redação; conferências pedidas a zero; navegador reservado à direção.",
+  "estado": "OG1-B0-e implementada com a glosa sem algarismos da OG1-B0-f; conferências pedidas a zero; navegador reservado à direção.",
   "historico_codigos_OG1_B0_b": {
     "build": 1,
     "check:discussao": 1,
@@ -90,8 +88,6 @@
     "cadeia_build_retomada": 1
   },
   "nota_build_OG1_B0_b": "Três tentativas com código 1: forma de Afecta, anos em texto fixo, inventário desatualizado. As causas dessas tentativas foram corrigidas. A retoma passou seis comandos e parou em check:discussao. Não houve quarta invocação de npm run build.",
-  "chamadas_tres_passagens_ate_fecho": 89,
-  "corridas_tres_passagens": 29,
   "criterio_corridas_OG1_B0_c": "Duas invocações de build, duas de check:palavras, duas de typecheck, duas verificações da transcrição, duas da porta e uma seleção por valores editoriais. Os subcomandos do build não são contados de novo.",
   "tentativas_build_OG1_B0_c": [
     1,
@@ -121,8 +117,6 @@
     "verificacao_renderizado": 0,
     "verificacao_porta": 0
   },
-  "chamadas_quatro_passagens_ate_fecho": 111,
-  "corridas_quatro_passagens": 35,
   "criterio_corridas_OG1_B0_d": "Uma resolução dos tokens, um build integral, check:palavras, typecheck e duas verificações do HTML (transcrição e porta). Os subcomandos do build não são contados de novo.",
   "tentativas_build_OG1_B0_d": [
     0
@@ -130,6 +124,56 @@
   "segundos_medidos_OG1_B0_d": [
     405,
     227,
+    0,
+    1,
+    0
+  ],
+  "base_contagem": "Uma chamada por invocação de ferramenta na sessão; uma corrida por invocação de conferência no topo, sem voltar a contar subcomandos. As passagens usam a contagem completa até à resposta final.",
+  "total_chamadas_de_ferramentas": 139,
+  "total_corridas_de_conferencias": 42,
+  "historico_codigos_OG1_B0_d": {
+    "build": 0,
+    "check:discussao": 0,
+    "check:voz": 0,
+    "check:palavras": 0,
+    "check:lingua": 0,
+    "gate:html": 0,
+    "check:registo": 0,
+    "ledger:check": 0,
+    "check:pais": 0,
+    "typecheck": 0,
+    "verificacao_renderizado": 0,
+    "verificacao_porta": 0,
+    "check:frases-compostas": null,
+    "check:primeira": null
+  },
+  "codigos_OG1_B0_e": {
+    "diagnostico_bloqueio": 0,
+    "build": null
+  },
+  "criterio_corridas_OG1_B0_f": "Um build, check:palavras, typecheck, duas verificações do HTML e uma conferência do âmbito das alterações. Subcomandos do build não voltam a contar. A escrita das auditorias é edição, não uma invocação de conferência.",
+  "codigos": {
+    "build": 0,
+    "check:discussao": 0,
+    "check:voz": 0,
+    "check:palavras": 0,
+    "check:lingua": 0,
+    "gate:html": 0,
+    "check:registo": 0,
+    "ledger:check": 0,
+    "check:pais": 0,
+    "typecheck": 0,
+    "verificacao_renderizado": 0,
+    "verificacao_porta": 0,
+    "check:frases-compostas": null,
+    "check:primeira": null
+  },
+  "tentativas_build_OG1_B0_f": [
+    0
+  ],
+  "segundos_medidos_OG1_B0_f": [
+    390,
+    225,
     0,
     1,
     0
