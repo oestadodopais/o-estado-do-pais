@@ -1,0 +1,778 @@
+{
+  "planta": false,
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "rotas": [
+    "/en/studies/a-casa-em-portugal-e-na-europa/",
+    "/en/studies/evora-2027-capital-europeia-da-cultura/",
+    "/en/studies/evora-2027-prometido-painel-dinheiro/",
+    "/en/studies/evora-contas-da-camara-2010-2025/",
+    "/en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara/",
+    "/en/studies/evora-orcamentado-pago-devido-2025/",
+    "/en/studies/evora-prometido-pago-auditado-2026/",
+    "/en/studies/orcamento-2027-o-que-muda-e-para-quem/",
+    "/estudos/a-casa-em-portugal-e-na-europa/",
+    "/estudos/avaliacao-economica-regional-de-portugal-2026/",
+    "/estudos/evora-2027-capital-europeia-da-cultura/",
+    "/estudos/evora-2027-prometido-painel-dinheiro/",
+    "/estudos/evora-contas-da-camara-2010-2025/",
+    "/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara/",
+    "/estudos/evora-economia-investidores-portas-abertas-2026/",
+    "/estudos/evora-orcamentado-pago-devido-2025/",
+    "/estudos/evora-os-pelouros-quem-os-teve-o-que-fizeram/",
+    "/estudos/evora-prometido-pago-auditado-2026/",
+    "/estudos/evora-quem-governou-a-camara-2009-2025/",
+    "/estudos/evora-quinze-anos-cinco-mandatos/",
+    "/estudos/orcamento-2027-o-que-muda-e-para-quem/"
+  ],
+  "duracaoSegundos": 9.068670125,
+  "total": 0,
+  "erros": 0,
+  "conhecidoPositivo": false,
+  "ligacoes": {
+    "index.html": 111,
+    "en/index.html": 111
+  },
+  "paginas": [
+    {
+      "largura": 390,
+      "rota": "/en/studies/a-casa-em-portugal-e-na-europa/",
+      "linhas": 1426,
+      "pseudos": 14,
+      "achados": []
+    },
+    {
+      "largura": 390,
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/",
+      "linhas": 3346,
+      "pseudos": 11,
+      "achados": []
+    },
+    {
+      "largura": 390,
+      "rota": "/en/studies/evora-2027-prometido-painel-dinheiro/",
+      "linhas": 3240,
+      "pseudos": 11,
+      "achados": []
+    },
+    {
+      "largura": 390,
+      "rota": "/en/studies/evora-contas-da-camara-2010-2025/",
+      "linhas": 2471,
+      "pseudos": 16,
+      "achados": []
+    },
+    {
+      "largura": 390,
+      "rota": "/en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara/",
+      "linhas": 2534,
+      "pseudos": 19,
+      "achados": []
+    },
+    {
+      "largura": 390,
+      "rota": "/en/studies/evora-orcamentado-pago-devido-2025/",
+      "linhas": 1022,
+      "pseudos": 14,
+      "achados": []
+    },
+    {
+      "largura": 390,
+      "rota": "/en/studies/evora-prometido-pago-auditado-2026/",
+      "linhas": 1504,
+      "pseudos": 9,
+      "achados": []
+    },
+    {
+      "largura": 390,
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/",
+      "linhas": 1908,
+      "pseudos": 14,
+      "achados": []
+    },
+    {
+      "largura": 390,
+      "rota": "/estudos/a-casa-em-portugal-e-na-europa/",
+      "linhas": 1430,
+      "pseudos": 14,
+      "achados": []
+    },
+    {
+      "largura": 390,
+      "rota": "/estudos/avaliacao-economica-regional-de-portugal-2026/",
+      "linhas": 1176,
+      "pseudos": 8,
+      "achados": []
+    },
+    {
+      "largura": 390,
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura/",
+      "linhas": 3367,
+      "pseudos": 11,
+      "achados": []
+    },
+    {
+      "largura": 390,
+      "rota": "/estudos/evora-2027-prometido-painel-dinheiro/",
+      "linhas": 3251,
+      "pseudos": 11,
+      "achados": []
+    },
+    {
+      "largura": 390,
+      "rota": "/estudos/evora-contas-da-camara-2010-2025/",
+      "linhas": 2552,
+      "pseudos": 16,
+      "achados": []
+    },
+    {
+      "largura": 390,
+      "rota": "/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara/",
+      "linhas": 2611,
+      "pseudos": 19,
+      "achados": []
+    },
+    {
+      "largura": 390,
+      "rota": "/estudos/evora-economia-investidores-portas-abertas-2026/",
+      "linhas": 901,
+      "pseudos": 8,
+      "achados": []
+    },
+    {
+      "largura": 390,
+      "rota": "/estudos/evora-orcamentado-pago-devido-2025/",
+      "linhas": 1058,
+      "pseudos": 14,
+      "achados": []
+    },
+    {
+      "largura": 390,
+      "rota": "/estudos/evora-os-pelouros-quem-os-teve-o-que-fizeram/",
+      "linhas": 3215,
+      "pseudos": 8,
+      "achados": []
+    },
+    {
+      "largura": 390,
+      "rota": "/estudos/evora-prometido-pago-auditado-2026/",
+      "linhas": 1562,
+      "pseudos": 9,
+      "achados": []
+    },
+    {
+      "largura": 390,
+      "rota": "/estudos/evora-quem-governou-a-camara-2009-2025/",
+      "linhas": 4027,
+      "pseudos": 13,
+      "achados": []
+    },
+    {
+      "largura": 390,
+      "rota": "/estudos/evora-quinze-anos-cinco-mandatos/",
+      "linhas": 2908,
+      "pseudos": 9,
+      "achados": []
+    },
+    {
+      "largura": 390,
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/",
+      "linhas": 1903,
+      "pseudos": 14,
+      "achados": []
+    },
+    {
+      "largura": 768,
+      "rota": "/en/studies/a-casa-em-portugal-e-na-europa/",
+      "linhas": 1214,
+      "pseudos": 14,
+      "achados": []
+    },
+    {
+      "largura": 768,
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/",
+      "linhas": 2319,
+      "pseudos": 11,
+      "achados": []
+    },
+    {
+      "largura": 768,
+      "rota": "/en/studies/evora-2027-prometido-painel-dinheiro/",
+      "linhas": 2237,
+      "pseudos": 11,
+      "achados": []
+    },
+    {
+      "largura": 768,
+      "rota": "/en/studies/evora-contas-da-camara-2010-2025/",
+      "linhas": 2160,
+      "pseudos": 16,
+      "achados": []
+    },
+    {
+      "largura": 768,
+      "rota": "/en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara/",
+      "linhas": 2094,
+      "pseudos": 19,
+      "achados": []
+    },
+    {
+      "largura": 768,
+      "rota": "/en/studies/evora-orcamentado-pago-devido-2025/",
+      "linhas": 907,
+      "pseudos": 14,
+      "achados": []
+    },
+    {
+      "largura": 768,
+      "rota": "/en/studies/evora-prometido-pago-auditado-2026/",
+      "linhas": 1246,
+      "pseudos": 9,
+      "achados": []
+    },
+    {
+      "largura": 768,
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/",
+      "linhas": 1622,
+      "pseudos": 14,
+      "achados": []
+    },
+    {
+      "largura": 768,
+      "rota": "/estudos/a-casa-em-portugal-e-na-europa/",
+      "linhas": 1202,
+      "pseudos": 14,
+      "achados": []
+    },
+    {
+      "largura": 768,
+      "rota": "/estudos/avaliacao-economica-regional-de-portugal-2026/",
+      "linhas": 1067,
+      "pseudos": 8,
+      "achados": []
+    },
+    {
+      "largura": 768,
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura/",
+      "linhas": 2382,
+      "pseudos": 11,
+      "achados": []
+    },
+    {
+      "largura": 768,
+      "rota": "/estudos/evora-2027-prometido-painel-dinheiro/",
+      "linhas": 2295,
+      "pseudos": 11,
+      "achados": []
+    },
+    {
+      "largura": 768,
+      "rota": "/estudos/evora-contas-da-camara-2010-2025/",
+      "linhas": 2183,
+      "pseudos": 16,
+      "achados": []
+    },
+    {
+      "largura": 768,
+      "rota": "/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara/",
+      "linhas": 2172,
+      "pseudos": 19,
+      "achados": []
+    },
+    {
+      "largura": 768,
+      "rota": "/estudos/evora-economia-investidores-portas-abertas-2026/",
+      "linhas": 763,
+      "pseudos": 8,
+      "achados": []
+    },
+    {
+      "largura": 768,
+      "rota": "/estudos/evora-orcamentado-pago-devido-2025/",
+      "linhas": 915,
+      "pseudos": 14,
+      "achados": []
+    },
+    {
+      "largura": 768,
+      "rota": "/estudos/evora-os-pelouros-quem-os-teve-o-que-fizeram/",
+      "linhas": 2532,
+      "pseudos": 8,
+      "achados": []
+    },
+    {
+      "largura": 768,
+      "rota": "/estudos/evora-prometido-pago-auditado-2026/",
+      "linhas": 1295,
+      "pseudos": 9,
+      "achados": []
+    },
+    {
+      "largura": 768,
+      "rota": "/estudos/evora-quem-governou-a-camara-2009-2025/",
+      "linhas": 3255,
+      "pseudos": 13,
+      "achados": []
+    },
+    {
+      "largura": 768,
+      "rota": "/estudos/evora-quinze-anos-cinco-mandatos/",
+      "linhas": 2559,
+      "pseudos": 9,
+      "achados": []
+    },
+    {
+      "largura": 768,
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/",
+      "linhas": 1591,
+      "pseudos": 14,
+      "achados": []
+    },
+    {
+      "largura": 1024,
+      "rota": "/en/studies/a-casa-em-portugal-e-na-europa/",
+      "linhas": 1200,
+      "pseudos": 14,
+      "achados": []
+    },
+    {
+      "largura": 1024,
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/",
+      "linhas": 2308,
+      "pseudos": 11,
+      "achados": []
+    },
+    {
+      "largura": 1024,
+      "rota": "/en/studies/evora-2027-prometido-painel-dinheiro/",
+      "linhas": 2226,
+      "pseudos": 11,
+      "achados": []
+    },
+    {
+      "largura": 1024,
+      "rota": "/en/studies/evora-contas-da-camara-2010-2025/",
+      "linhas": 2145,
+      "pseudos": 16,
+      "achados": []
+    },
+    {
+      "largura": 1024,
+      "rota": "/en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara/",
+      "linhas": 2076,
+      "pseudos": 19,
+      "achados": []
+    },
+    {
+      "largura": 1024,
+      "rota": "/en/studies/evora-orcamentado-pago-devido-2025/",
+      "linhas": 894,
+      "pseudos": 14,
+      "achados": []
+    },
+    {
+      "largura": 1024,
+      "rota": "/en/studies/evora-prometido-pago-auditado-2026/",
+      "linhas": 1238,
+      "pseudos": 9,
+      "achados": []
+    },
+    {
+      "largura": 1024,
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/",
+      "linhas": 1608,
+      "pseudos": 14,
+      "achados": []
+    },
+    {
+      "largura": 1024,
+      "rota": "/estudos/a-casa-em-portugal-e-na-europa/",
+      "linhas": 1188,
+      "pseudos": 14,
+      "achados": []
+    },
+    {
+      "largura": 1024,
+      "rota": "/estudos/avaliacao-economica-regional-de-portugal-2026/",
+      "linhas": 1059,
+      "pseudos": 8,
+      "achados": []
+    },
+    {
+      "largura": 1024,
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura/",
+      "linhas": 2371,
+      "pseudos": 11,
+      "achados": []
+    },
+    {
+      "largura": 1024,
+      "rota": "/estudos/evora-2027-prometido-painel-dinheiro/",
+      "linhas": 2285,
+      "pseudos": 11,
+      "achados": []
+    },
+    {
+      "largura": 1024,
+      "rota": "/estudos/evora-contas-da-camara-2010-2025/",
+      "linhas": 2168,
+      "pseudos": 16,
+      "achados": []
+    },
+    {
+      "largura": 1024,
+      "rota": "/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara/",
+      "linhas": 2154,
+      "pseudos": 19,
+      "achados": []
+    },
+    {
+      "largura": 1024,
+      "rota": "/estudos/evora-economia-investidores-portas-abertas-2026/",
+      "linhas": 756,
+      "pseudos": 8,
+      "achados": []
+    },
+    {
+      "largura": 1024,
+      "rota": "/estudos/evora-orcamentado-pago-devido-2025/",
+      "linhas": 902,
+      "pseudos": 14,
+      "achados": []
+    },
+    {
+      "largura": 1024,
+      "rota": "/estudos/evora-os-pelouros-quem-os-teve-o-que-fizeram/",
+      "linhas": 2525,
+      "pseudos": 8,
+      "achados": []
+    },
+    {
+      "largura": 1024,
+      "rota": "/estudos/evora-prometido-pago-auditado-2026/",
+      "linhas": 1286,
+      "pseudos": 9,
+      "achados": []
+    },
+    {
+      "largura": 1024,
+      "rota": "/estudos/evora-quem-governou-a-camara-2009-2025/",
+      "linhas": 3243,
+      "pseudos": 13,
+      "achados": []
+    },
+    {
+      "largura": 1024,
+      "rota": "/estudos/evora-quinze-anos-cinco-mandatos/",
+      "linhas": 2550,
+      "pseudos": 9,
+      "achados": []
+    },
+    {
+      "largura": 1024,
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/",
+      "linhas": 1577,
+      "pseudos": 14,
+      "achados": []
+    },
+    {
+      "largura": 1280,
+      "rota": "/en/studies/a-casa-em-portugal-e-na-europa/",
+      "linhas": 1200,
+      "pseudos": 14,
+      "achados": []
+    },
+    {
+      "largura": 1280,
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/",
+      "linhas": 2308,
+      "pseudos": 11,
+      "achados": []
+    },
+    {
+      "largura": 1280,
+      "rota": "/en/studies/evora-2027-prometido-painel-dinheiro/",
+      "linhas": 2226,
+      "pseudos": 11,
+      "achados": []
+    },
+    {
+      "largura": 1280,
+      "rota": "/en/studies/evora-contas-da-camara-2010-2025/",
+      "linhas": 2145,
+      "pseudos": 16,
+      "achados": []
+    },
+    {
+      "largura": 1280,
+      "rota": "/en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara/",
+      "linhas": 2077,
+      "pseudos": 19,
+      "achados": []
+    },
+    {
+      "largura": 1280,
+      "rota": "/en/studies/evora-orcamentado-pago-devido-2025/",
+      "linhas": 894,
+      "pseudos": 14,
+      "achados": []
+    },
+    {
+      "largura": 1280,
+      "rota": "/en/studies/evora-prometido-pago-auditado-2026/",
+      "linhas": 1238,
+      "pseudos": 9,
+      "achados": []
+    },
+    {
+      "largura": 1280,
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/",
+      "linhas": 1608,
+      "pseudos": 14,
+      "achados": []
+    },
+    {
+      "largura": 1280,
+      "rota": "/estudos/a-casa-em-portugal-e-na-europa/",
+      "linhas": 1188,
+      "pseudos": 14,
+      "achados": []
+    },
+    {
+      "largura": 1280,
+      "rota": "/estudos/avaliacao-economica-regional-de-portugal-2026/",
+      "linhas": 1059,
+      "pseudos": 8,
+      "achados": []
+    },
+    {
+      "largura": 1280,
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura/",
+      "linhas": 2371,
+      "pseudos": 11,
+      "achados": []
+    },
+    {
+      "largura": 1280,
+      "rota": "/estudos/evora-2027-prometido-painel-dinheiro/",
+      "linhas": 2285,
+      "pseudos": 11,
+      "achados": []
+    },
+    {
+      "largura": 1280,
+      "rota": "/estudos/evora-contas-da-camara-2010-2025/",
+      "linhas": 2168,
+      "pseudos": 16,
+      "achados": []
+    },
+    {
+      "largura": 1280,
+      "rota": "/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara/",
+      "linhas": 2155,
+      "pseudos": 19,
+      "achados": []
+    },
+    {
+      "largura": 1280,
+      "rota": "/estudos/evora-economia-investidores-portas-abertas-2026/",
+      "linhas": 757,
+      "pseudos": 8,
+      "achados": []
+    },
+    {
+      "largura": 1280,
+      "rota": "/estudos/evora-orcamentado-pago-devido-2025/",
+      "linhas": 902,
+      "pseudos": 14,
+      "achados": []
+    },
+    {
+      "largura": 1280,
+      "rota": "/estudos/evora-os-pelouros-quem-os-teve-o-que-fizeram/",
+      "linhas": 2525,
+      "pseudos": 8,
+      "achados": []
+    },
+    {
+      "largura": 1280,
+      "rota": "/estudos/evora-prometido-pago-auditado-2026/",
+      "linhas": 1286,
+      "pseudos": 9,
+      "achados": []
+    },
+    {
+      "largura": 1280,
+      "rota": "/estudos/evora-quem-governou-a-camara-2009-2025/",
+      "linhas": 3243,
+      "pseudos": 13,
+      "achados": []
+    },
+    {
+      "largura": 1280,
+      "rota": "/estudos/evora-quinze-anos-cinco-mandatos/",
+      "linhas": 2550,
+      "pseudos": 9,
+      "achados": []
+    },
+    {
+      "largura": 1280,
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/",
+      "linhas": 1578,
+      "pseudos": 14,
+      "achados": []
+    },
+    {
+      "largura": 1600,
+      "rota": "/en/studies/a-casa-em-portugal-e-na-europa/",
+      "linhas": 1200,
+      "pseudos": 14,
+      "achados": []
+    },
+    {
+      "largura": 1600,
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/",
+      "linhas": 2308,
+      "pseudos": 11,
+      "achados": []
+    },
+    {
+      "largura": 1600,
+      "rota": "/en/studies/evora-2027-prometido-painel-dinheiro/",
+      "linhas": 2226,
+      "pseudos": 11,
+      "achados": []
+    },
+    {
+      "largura": 1600,
+      "rota": "/en/studies/evora-contas-da-camara-2010-2025/",
+      "linhas": 2145,
+      "pseudos": 16,
+      "achados": []
+    },
+    {
+      "largura": 1600,
+      "rota": "/en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara/",
+      "linhas": 2077,
+      "pseudos": 19,
+      "achados": []
+    },
+    {
+      "largura": 1600,
+      "rota": "/en/studies/evora-orcamentado-pago-devido-2025/",
+      "linhas": 894,
+      "pseudos": 14,
+      "achados": []
+    },
+    {
+      "largura": 1600,
+      "rota": "/en/studies/evora-prometido-pago-auditado-2026/",
+      "linhas": 1238,
+      "pseudos": 9,
+      "achados": []
+    },
+    {
+      "largura": 1600,
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem/",
+      "linhas": 1608,
+      "pseudos": 14,
+      "achados": []
+    },
+    {
+      "largura": 1600,
+      "rota": "/estudos/a-casa-em-portugal-e-na-europa/",
+      "linhas": 1188,
+      "pseudos": 14,
+      "achados": []
+    },
+    {
+      "largura": 1600,
+      "rota": "/estudos/avaliacao-economica-regional-de-portugal-2026/",
+      "linhas": 1059,
+      "pseudos": 8,
+      "achados": []
+    },
+    {
+      "largura": 1600,
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura/",
+      "linhas": 2371,
+      "pseudos": 11,
+      "achados": []
+    },
+    {
+      "largura": 1600,
+      "rota": "/estudos/evora-2027-prometido-painel-dinheiro/",
+      "linhas": 2285,
+      "pseudos": 11,
+      "achados": []
+    },
+    {
+      "largura": 1600,
+      "rota": "/estudos/evora-contas-da-camara-2010-2025/",
+      "linhas": 2168,
+      "pseudos": 16,
+      "achados": []
+    },
+    {
+      "largura": 1600,
+      "rota": "/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara/",
+      "linhas": 2155,
+      "pseudos": 19,
+      "achados": []
+    },
+    {
+      "largura": 1600,
+      "rota": "/estudos/evora-economia-investidores-portas-abertas-2026/",
+      "linhas": 757,
+      "pseudos": 8,
+      "achados": []
+    },
+    {
+      "largura": 1600,
+      "rota": "/estudos/evora-orcamentado-pago-devido-2025/",
+      "linhas": 902,
+      "pseudos": 14,
+      "achados": []
+    },
+    {
+      "largura": 1600,
+      "rota": "/estudos/evora-os-pelouros-quem-os-teve-o-que-fizeram/",
+      "linhas": 2525,
+      "pseudos": 8,
+      "achados": []
+    },
+    {
+      "largura": 1600,
+      "rota": "/estudos/evora-prometido-pago-auditado-2026/",
+      "linhas": 1286,
+      "pseudos": 9,
+      "achados": []
+    },
+    {
+      "largura": 1600,
+      "rota": "/estudos/evora-quem-governou-a-camara-2009-2025/",
+      "linhas": 3243,
+      "pseudos": 13,
+      "achados": []
+    },
+    {
+      "largura": 1600,
+      "rota": "/estudos/evora-quinze-anos-cinco-mandatos/",
+      "linhas": 2550,
+      "pseudos": 9,
+      "achados": []
+    },
+    {
+      "largura": 1600,
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem/",
+      "linhas": 1578,
+      "pseudos": 14,
+      "achados": []
+    }
+  ]
+}

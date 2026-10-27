@@ -1,0 +1,82 @@
+[
+  {
+    "nome": "FP2: data diferente de publicado",
+    "lang": "pt",
+    "mordeu": true,
+    "queixa": "FP2 início: data diferente da publicação declarada ou da caixa"
+  },
+  {
+    "nome": "FP2: duas frases em vez de uma",
+    "lang": "pt",
+    "mordeu": true,
+    "queixa": "FP2 início: frase diferente da primeira conclusão"
+  },
+  {
+    "nome": "FP2: frase de outro item",
+    "lang": "pt",
+    "mordeu": true,
+    "queixa": "FP2 início: frase diferente da primeira conclusão"
+  },
+  {
+    "nome": "FP2: valor trocado na frase",
+    "lang": "pt",
+    "mordeu": true,
+    "queixa": "FP2 início: valor ou linha diferente da conclusão"
+  },
+  {
+    "nome": "FP2: parágrafo em falta",
+    "lang": "pt",
+    "mordeu": true,
+    "queixa": "FP2 início: parágrafo ausente ou fora do item"
+  },
+  {
+    "nome": "FP2: selo recusa linha trocada",
+    "lang": "pt",
+    "mordeu": true
+  },
+  {
+    "nome": "FP2: fragmento recusa trecho trocado",
+    "lang": "pt",
+    "mordeu": true
+  },
+  {
+    "nome": "FP2: data diferente de publicado",
+    "lang": "en",
+    "mordeu": true,
+    "queixa": "FP2 início: data diferente da publicação declarada ou da caixa"
+  },
+  {
+    "nome": "FP2: duas frases em vez de uma",
+    "lang": "en",
+    "mordeu": true,
+    "queixa": "FP2 início: frase diferente da primeira conclusão"
+  },
+  {
+    "nome": "FP2: frase de outro item",
+    "lang": "en",
+    "mordeu": true,
+    "queixa": "FP2 início: frase diferente da primeira conclusão"
+  },
+  {
+    "nome": "FP2: valor trocado na frase",
+    "lang": "en",
+    "mordeu": true,
+    "queixa": "FP2 início: valor ou linha diferente da conclusão"
+  },
+  {
+    "nome": "FP2: parágrafo em falta",
+    "lang": "en",
+    "mordeu": true,
+    "queixa": "FP2 início: parágrafo ausente ou fora do item"
+  },
+  {
+    "nome": "FP2: selo recusa linha trocada",
+    "lang": "en",
+    "mordeu": true
+  },
+  {
+    "nome": "FP2: fragmento recusa trecho trocado",
+    "lang": "en",
+    "mordeu": true
+  }
+]

@@ -1,0 +1,28 @@
+{
+  "build-base": 0,
+  "perfis": 0,
+  "perfis-2": 0,
+  "perfis-3": 0,
+  "typecheck-inicial": 1,
+  "typecheck-2": 0,
+  "voz-retoma": 1,
+  "voz-corrigida": 0,
+  "construcao-interrompida": {
+    "build": 1,
+    "check:alvos": 125,
+    "check:css": 125,
+    "check:discussao": 125,
+    "check:frases-compostas": 125,
+    "check:lugar": 125,
+    "check:primeira": 125,
+    "check:sobreposicao-contadores": 125,
+    "check:sobreposicao-planta": 125,
+    "check:sobreposicao": 125,
+    "typecheck": 125
+  },
+  "selecao-contadores-inicial": {
+    "codigo": 2,
+    "motivo": "rg: command not found",
+    "retoma": 0
+  }
+}

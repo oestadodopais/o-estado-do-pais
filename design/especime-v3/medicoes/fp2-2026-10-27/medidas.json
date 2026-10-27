@@ -1,0 +1,173 @@
+[
+  {
+    "nome": "sobreposições na base",
+    "valor": 15,
+    "comando": "npm run check:sobreposicao",
+    "conhecido_positivo": "15 cruzamentos nas três rotas de habitação e Orçamento"
+  },
+  {
+    "nome": "sobreposições depois",
+    "valor": 0,
+    "comando": "npm run check:sobreposicao",
+    "conhecido_positivo": "base real e planta da folha anterior"
+  },
+  {
+    "nome": "duração da régua inteira, segundos",
+    "valor": 6.494242665999999,
+    "comando": "npm run check:sobreposicao",
+    "conhecido_positivo": true
+  },
+  {
+    "nome": "rotas da régua inteira",
+    "valor": 18,
+    "comando": "npm run check:sobreposicao",
+    "conhecido_positivo": 15
+  },
+  {
+    "nome": "combinações da régua inteira",
+    "valor": 90,
+    "comando": "npm run check:sobreposicao",
+    "conhecido_positivo": 15
+  },
+  {
+    "nome": "sobreposições em todas as páginas texto-artigo",
+    "valor": 0,
+    "comando": "npm run check:sobreposicao -- --rotas <rotas obtidas por find e grep>",
+    "conhecido_positivo": 10
+  },
+  {
+    "nome": "rotas com texto-artigo",
+    "valor": 21,
+    "comando": "rg -l 'class=\"texto-artigo' dist/estudos dist/en/studies --glob index.html",
+    "conhecido_positivo": 10
+  },
+  {
+    "nome": "planta da sobreposição",
+    "valor": 10,
+    "comando": "npm run check:sobreposicao -- --planta --rotas /estudos/a-casa-em-portugal-e-na-europa,/en/studies/a-casa-em-portugal-e-na-europa",
+    "conhecido_positivo": true
+  },
+  {
+    "nome": "ligações nas primeiras páginas",
+    "valor": {
+      "index.html": 111,
+      "en/index.html": 111
+    },
+    "comando": "node design/especime-v3/medicoes/fp2-2026-10-27/medir-fp2.mjs <base> <conferências> <capturas> <custo.json>",
+    "conhecido_positivo": {
+      "index.html": 111,
+      "en/index.html": 111
+    }
+  },
+  {
+    "nome": "plantas da conclusão",
+    "valor": [
+      {
+        "nome": "FP2: data diferente de publicado",
+        "lang": "pt",
+        "mordeu": true,
+        "queixa": "FP2 início: data diferente da publicação declarada ou da caixa"
+      },
+      {
+        "nome": "FP2: duas frases em vez de uma",
+        "lang": "pt",
+        "mordeu": true,
+        "queixa": "FP2 início: frase diferente da primeira conclusão"
+      },
+      {
+        "nome": "FP2: frase de outro item",
+        "lang": "pt",
+        "mordeu": true,
+        "queixa": "FP2 início: frase diferente da primeira conclusão"
+      },
+      {
+        "nome": "FP2: valor trocado na frase",
+        "lang": "pt",
+        "mordeu": true,
+        "queixa": "FP2 início: valor ou linha diferente da conclusão"
+      },
+      {
+        "nome": "FP2: parágrafo em falta",
+        "lang": "pt",
+        "mordeu": true,
+        "queixa": "FP2 início: parágrafo ausente ou fora do item"
+      },
+      {
+        "nome": "FP2: selo recusa linha trocada",
+        "lang": "pt",
+        "mordeu": true
+      },
+      {
+        "nome": "FP2: fragmento recusa trecho trocado",
+        "lang": "pt",
+        "mordeu": true
+      },
+      {
+        "nome": "FP2: data diferente de publicado",
+        "lang": "en",
+        "mordeu": true,
+        "queixa": "FP2 início: data diferente da publicação declarada ou da caixa"
+      },
+      {
+        "nome": "FP2: duas frases em vez de uma",
+        "lang": "en",
+        "mordeu": true,
+        "queixa": "FP2 início: frase diferente da primeira conclusão"
+      },
+      {
+        "nome": "FP2: frase de outro item",
+        "lang": "en",
+        "mordeu": true,
+        "queixa": "FP2 início: frase diferente da primeira conclusão"
+      },
+      {
+        "nome": "FP2: valor trocado na frase",
+        "lang": "en",
+        "mordeu": true,
+        "queixa": "FP2 início: valor ou linha diferente da conclusão"
+      },
+      {
+        "nome": "FP2: parágrafo em falta",
+        "lang": "en",
+        "mordeu": true,
+        "queixa": "FP2 início: parágrafo ausente ou fora do item"
+      },
+      {
+        "nome": "FP2: selo recusa linha trocada",
+        "lang": "en",
+        "mordeu": true
+      },
+      {
+        "nome": "FP2: fragmento recusa trecho trocado",
+        "lang": "en",
+        "mordeu": true
+      }
+    ],
+    "comando": "npm run check:discussao",
+    "conhecido_positivo": true
+  },
+  {
+    "nome": "códigos das conferências",
+    "valor": {
+      "build": 0,
+      "check:alvos": 0,
+      "check:css": 0,
+      "check:discussao": 0,
+      "check:frases-compostas": 0,
+      "check:lugar": 0,
+      "check:primeira": 0,
+      "check:sobreposicao-contadores": 0,
+      "check:sobreposicao-planta": 1,
+      "check:sobreposicao": 0,
+      "typecheck": 0
+    },
+    "comando": "sh scripts/leituras/portoes-pelo-escrivao.sh <saída nova> fp2",
+    "conhecido_positivo": 1
+  },
+  {
+    "nome": "capturas",
+    "valor": 40,
+    "comando": "sh scripts/leituras/capturar-pelo-escrivao.sh <pedido.json> <saída nova>",
+    "conhecido_positivo": true
+  }
+]

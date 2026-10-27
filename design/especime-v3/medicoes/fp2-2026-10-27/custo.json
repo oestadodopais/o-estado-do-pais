@@ -1,0 +1,7 @@
+{
+  "chamadas": 85,
+  "tokens_used": 11323884,
+  "tokens_em_cache": 11122816,
+  "descricao": "Foram registadas 85 chamadas de ferramenta nesta sessão até ao fecho deste recibo. tokens used: 11323884, no último registo disponível, incluindo 11122816 tokens de entrada em cache. A contagem final do lançador pode incluir a resposta de fecho. Foram 22 execuções principais de conferências com código em ficheiro, incluindo a base, as tentativas recusadas, as três provas dos perfis e as conferências finais; não conta cada subcomando interno do build nem os autotestes pontuais de sintaxe, corte e guardas. Os códigos 125 são passos não executados. As seleções do escrivão foram uma de base, duas de conferências afetadas, a primeira interrompida no build, e uma retoma só da seleção de contadores; corridas completas de verify: zero.",
+  "corridas_principais": 22
+}

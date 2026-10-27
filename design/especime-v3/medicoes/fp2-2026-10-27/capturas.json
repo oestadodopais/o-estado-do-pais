@@ -1,0 +1,1161 @@
+{
+  "cabeca": "09211a4030d7ca9a250b5993e5b987cf45b387d2",
+  "capturador_sha256": "0befc596ce06466e936573ac45841b8cc16391fb39efc0cc3a54001bc156d812",
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "resultados": [
+    {
+      "ficheiro": "inicio-pt-390.png",
+      "rota": "/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 9827,
+      "sha256": "d0c9ca1cbfabde68b777888e485233815dc62fa482821fc3cba583786a0cea93",
+      "recortes": [
+        {
+          "ficheiro": "inicio-pt-390-discussao.png",
+          "seletor": "section.pp-discussao",
+          "origem": "inicio-pt-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 831,
+            "width": 354,
+            "height": 710
+          },
+          "sha256": "0f93bdbd85fdbc6e83a083728e259c5902acca21e0c7547a2386d7141c0f0487"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "inicio-pt-768.png",
+      "rota": "/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 7563,
+      "sha256": "387614a67fbb9a96c8d492b3204aa09a88bac3d69eb9cb781ec2245d2841c3ae",
+      "recortes": [
+        {
+          "ficheiro": "inicio-pt-768-discussao.png",
+          "seletor": "section.pp-discussao",
+          "origem": "inicio-pt-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 726,
+            "width": 708,
+            "height": 481
+          },
+          "sha256": "73f36c9e2a81a5892fc98c39b59fd2fa9545169c5c0afad019fb50944d4e7469"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "inicio-pt-1024.png",
+      "rota": "/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 6584,
+      "sha256": "2f6462221959654bf2d4ff03b25e5342c8677c6e849f0d4a9ca47399143774df",
+      "recortes": [
+        {
+          "ficheiro": "inicio-pt-1024-discussao.png",
+          "seletor": "section.pp-discussao",
+          "origem": "inicio-pt-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 599,
+            "width": 944,
+            "height": 375
+          },
+          "sha256": "ac7221b3193c81c16d4e685dd489843be1e02ef54a53051ffcdd7f3dedd7ee87"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "inicio-pt-1280.png",
+      "rota": "/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 6495,
+      "sha256": "6c3b8bd719b01e6dbb5c0a7144abdaef54699abbb157a9a3e0ace48ee623b637",
+      "recortes": [
+        {
+          "ficheiro": "inicio-pt-1280-discussao.png",
+          "seletor": "section.pp-discussao",
+          "origem": "inicio-pt-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 612,
+            "width": 1092,
+            "height": 375
+          },
+          "sha256": "e7a412a9f8a119377619df02e3e0bd0b11ac86a0921790ed0f13d3fdf7bffaa8"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "inicio-pt-1600.png",
+      "rota": "/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 6516,
+      "sha256": "11a2d6d621365aae74cd60a2f77e1bf19727af6583bb0af491c585c706790a69",
+      "recortes": [
+        {
+          "ficheiro": "inicio-pt-1600-discussao.png",
+          "seletor": "section.pp-discussao",
+          "origem": "inicio-pt-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 615,
+            "width": 1092,
+            "height": 376
+          },
+          "sha256": "2a7fb45cc37cd795428508255c5862409bf3751f592062874f2df7cf4883dfb0"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "inicio-en-390.png",
+      "rota": "/en/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 9683,
+      "sha256": "f7de68c4214c19b0269901c042697b23d327d52a653f9f35782eda268a1d5eca",
+      "recortes": [
+        {
+          "ficheiro": "inicio-en-390-discussao.png",
+          "seletor": "section.pp-discussao",
+          "origem": "inicio-en-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 831,
+            "width": 354,
+            "height": 686
+          },
+          "sha256": "089145d4dd8824f5ae218f14e696c18c4ab93cc99f5c69d57d64ddb2a29bbf7a"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "inicio-en-768.png",
+      "rota": "/en/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 7659,
+      "sha256": "edaabe3b4eb3ea5c72c2df96fc5ecd416b40f891b6b7c0acbc535fd84912b1ed",
+      "recortes": [
+        {
+          "ficheiro": "inicio-en-768-discussao.png",
+          "seletor": "section.pp-discussao",
+          "origem": "inicio-en-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 726,
+            "width": 708,
+            "height": 481
+          },
+          "sha256": "b31df571ef7725727cfd0f169c004cc0c6ea2cbfe0d645bca4a3d65277bc636d"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "inicio-en-1024.png",
+      "rota": "/en/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 6673,
+      "sha256": "5592a1ce21f945b4eccb641a509f977f2d29137354facdfe019c5574f22ab5ab",
+      "recortes": [
+        {
+          "ficheiro": "inicio-en-1024-discussao.png",
+          "seletor": "section.pp-discussao",
+          "origem": "inicio-en-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 599,
+            "width": 944,
+            "height": 375
+          },
+          "sha256": "0662ecc4d4e6edf5c77136d2433a61f4af62234a335ca9230acaa0210eada9c4"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "inicio-en-1280.png",
+      "rota": "/en/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 6552,
+      "sha256": "79c670a0639a45ff290b3bccbd768c3305e2fd9b2728b25fa96d198fa8e1d35d",
+      "recortes": [
+        {
+          "ficheiro": "inicio-en-1280-discussao.png",
+          "seletor": "section.pp-discussao",
+          "origem": "inicio-en-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 612,
+            "width": 1092,
+            "height": 375
+          },
+          "sha256": "757b2f19a5acd503caedac9def767bcf7a6808283bb0cdac8f0a70452f34b97c"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "inicio-en-1600.png",
+      "rota": "/en/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 6573,
+      "sha256": "24f4bdd67fcf34d8decb8719a5d6ce9d86dc2ecdb267d06a41140e462e5fea2e",
+      "recortes": [
+        {
+          "ficheiro": "inicio-en-1600-discussao.png",
+          "seletor": "section.pp-discussao",
+          "origem": "inicio-en-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 615,
+            "width": 1092,
+            "height": 376
+          },
+          "sha256": "a551584e60c7720154f71283afaa0f83f7e3fff9dc76b114b980271e0c56ccb5"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "habitacao-pt-390.png",
+      "rota": "/estudos/a-casa-em-portugal-e-na-europa",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 27628,
+      "sha256": "69f715f9ced43d82682441fe463637d642d3915e8b02001150e5670da86af705",
+      "recortes": [
+        {
+          "ficheiro": "habitacao-pt-390-abertura.png",
+          "seletor": "article.texto-artigo.estudo-leitura",
+          "origem": "habitacao-pt-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 461,
+            "width": 354,
+            "height": 6611
+          },
+          "sha256": "142440d5965a761c5698dc1f170fa59f8328bb79b498673010d18ed2ef1ab7f5"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "habitacao-pt-768.png",
+      "rota": "/estudos/a-casa-em-portugal-e-na-europa",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 22310,
+      "sha256": "cd455c335fd616a84eff123e50dc44e88e522b03107242b0b75c8a77cd2dc4bd",
+      "recortes": [
+        {
+          "ficheiro": "habitacao-pt-768-abertura.png",
+          "seletor": "article.texto-artigo.estudo-leitura",
+          "origem": "habitacao-pt-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 462,
+            "width": 545,
+            "height": 5394
+          },
+          "sha256": "b5d9aedf87b2f0fe8921ad6d432f1e3430213819be4954d083db3a55457f9435"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "habitacao-pt-1024.png",
+      "rota": "/estudos/a-casa-em-portugal-e-na-europa",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 21552,
+      "sha256": "bd0861468054b74d8ed2a07c921de49f663b1fed232ce68bde33fde476f76598",
+      "recortes": [
+        {
+          "ficheiro": "habitacao-pt-1024-abertura.png",
+          "seletor": "article.texto-artigo.estudo-leitura",
+          "origem": "habitacao-pt-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 471,
+            "width": 545,
+            "height": 5247
+          },
+          "sha256": "2629edaee7397f94e419a3334427df4c5e61813b1304c93c7c0a1697772fdadb"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "habitacao-pt-1280.png",
+      "rota": "/estudos/a-casa-em-portugal-e-na-europa",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 21690,
+      "sha256": "91536847bf3bc3d75014cf6cc7008c42199c50af831624032dc0f743a4f21fec",
+      "recortes": [
+        {
+          "ficheiro": "habitacao-pt-1280-abertura.png",
+          "seletor": "article.texto-artigo.estudo-leitura",
+          "origem": "habitacao-pt-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 473,
+            "width": 544,
+            "height": 5268
+          },
+          "sha256": "480d7d4f51ea4eba7f02334372d4defe1de3ce3abe3e2ca26d809d211f446e5b"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "habitacao-pt-1600.png",
+      "rota": "/estudos/a-casa-em-portugal-e-na-europa",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 21696,
+      "sha256": "942aa8abedf410dba2af12a05861f09b66b0871375c83ffe7be2563950ed6e04",
+      "recortes": [
+        {
+          "ficheiro": "habitacao-pt-1600-abertura.png",
+          "seletor": "article.texto-artigo.estudo-leitura",
+          "origem": "habitacao-pt-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 473,
+            "width": 544,
+            "height": 5268
+          },
+          "sha256": "bbce44f2ea6c03269902b6a1ff08b6c85992f5cc72f1abd89aae74f061e842ef"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "habitacao-en-390.png",
+      "rota": "/en/studies/a-casa-em-portugal-e-na-europa",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 27786,
+      "sha256": "b1f5e33b7b708f1ef930aaed80f1eb4be36b7e57260f12cfbc486ce635995d77",
+      "recortes": [
+        {
+          "ficheiro": "habitacao-en-390-abertura.png",
+          "seletor": "article.texto-artigo.estudo-leitura",
+          "origem": "habitacao-en-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 461,
+            "width": 354,
+            "height": 6695
+          },
+          "sha256": "b9080c028b6e57e00959006cf08c54aae7a26b40c267473230813ea2b837217e"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "habitacao-en-768.png",
+      "rota": "/en/studies/a-casa-em-portugal-e-na-europa",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 22403,
+      "sha256": "7e0cf47e141dc1199d21b3f253079c88ca8eda86ed26a465d8a38fa502538dbb",
+      "recortes": [
+        {
+          "ficheiro": "habitacao-en-768-abertura.png",
+          "seletor": "article.texto-artigo.estudo-leitura",
+          "origem": "habitacao-en-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 462,
+            "width": 545,
+            "height": 5456
+          },
+          "sha256": "703f6424564ef2dadf6d9ca1c6f795eb6b4510bfb48696d908e0970077e40511"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "habitacao-en-1024.png",
+      "rota": "/en/studies/a-casa-em-portugal-e-na-europa",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 21645,
+      "sha256": "16106e0aa4f676660e8b6682833232ae3857a33dfa04a6409554fc474965ab5b",
+      "recortes": [
+        {
+          "ficheiro": "habitacao-en-1024-abertura.png",
+          "seletor": "article.texto-artigo.estudo-leitura",
+          "origem": "habitacao-en-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 471,
+            "width": 545,
+            "height": 5309
+          },
+          "sha256": "c471a77354b3a470c524cd3526237b3c310ee00c81477231a87eeb5151863720"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "habitacao-en-1280.png",
+      "rota": "/en/studies/a-casa-em-portugal-e-na-europa",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 21783,
+      "sha256": "0a9fd981ad658fadc810cc37523912a711d49b2d87ca56a3eb7349869045fe68",
+      "recortes": [
+        {
+          "ficheiro": "habitacao-en-1280-abertura.png",
+          "seletor": "article.texto-artigo.estudo-leitura",
+          "origem": "habitacao-en-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 473,
+            "width": 544,
+            "height": 5330
+          },
+          "sha256": "73b32de65a09ef4388b91c9a0999d75dde5388de8b2c4e234a34897d88937496"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "habitacao-en-1600.png",
+      "rota": "/en/studies/a-casa-em-portugal-e-na-europa",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 21789,
+      "sha256": "40c776da46c73a5796449b9e9f2facc3a992b79cd0b9136b51e5ab5de3e7b5b4",
+      "recortes": [
+        {
+          "ficheiro": "habitacao-en-1600-abertura.png",
+          "seletor": "article.texto-artigo.estudo-leitura",
+          "origem": "habitacao-en-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 473,
+            "width": 544,
+            "height": 5330
+          },
+          "sha256": "ade60d2ca4a8fdd81ca6e811f68b1a219821236a7ca99021bf383739b1015c1e"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "orcamento-pt-390.png",
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 36644,
+      "sha256": "e73dc1d7a0188305723fead5587a0f306d0afc4eec7607c40983d1c65131ce15",
+      "recortes": [
+        {
+          "ficheiro": "orcamento-pt-390-abertura.png",
+          "seletor": "article.texto-artigo.estudo-leitura",
+          "origem": "orcamento-pt-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 479,
+            "width": 354,
+            "height": 7583
+          },
+          "sha256": "717f47b7d82778073141afbe79235d9a154a198b3bfc84b01414d59845935d2d"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "orcamento-pt-768.png",
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 29161,
+      "sha256": "b6c511acd2a4a7607c2010fed1e74910e7dfdcbbd7d9f47ffa729dfbd60d983e",
+      "recortes": [
+        {
+          "ficheiro": "orcamento-pt-768-abertura.png",
+          "seletor": "article.texto-artigo.estudo-leitura",
+          "origem": "orcamento-pt-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 462,
+            "width": 545,
+            "height": 6173
+          },
+          "sha256": "94b529477c0525c1e02aa68d4d7c4adf8526617579529d0de95b2180b46ae471"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "orcamento-pt-1024.png",
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 28403,
+      "sha256": "43d07e6599efa03eb55bc1be80e423f50e0a4ff338fe143b8b9128dd82884e6c",
+      "recortes": [
+        {
+          "ficheiro": "orcamento-pt-1024-abertura.png",
+          "seletor": "article.texto-artigo.estudo-leitura",
+          "origem": "orcamento-pt-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 471,
+            "width": 545,
+            "height": 6026
+          },
+          "sha256": "3cbf7f374c832deea61603f5dbef477621e04885af4b70d4a3201d154a345b89"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "orcamento-pt-1280.png",
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 28572,
+      "sha256": "dee58bbedfbc6918067a8cdc2e8f3df7cb0340fd3c7ffe67d01c170320a3dd50",
+      "recortes": [
+        {
+          "ficheiro": "orcamento-pt-1280-abertura.png",
+          "seletor": "article.texto-artigo.estudo-leitura",
+          "origem": "orcamento-pt-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 473,
+            "width": 544,
+            "height": 6047
+          },
+          "sha256": "dc800d783336362049e7e93208aefc63da5f8b7104435924551ffbf66b64d1c6"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "orcamento-pt-1600.png",
+      "rota": "/estudos/orcamento-2027-o-que-muda-e-para-quem",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 28578,
+      "sha256": "d8827f978b1246e1bf4e219a640767f3a743d695e7e017b3f9f8855f277df503",
+      "recortes": [
+        {
+          "ficheiro": "orcamento-pt-1600-abertura.png",
+          "seletor": "article.texto-artigo.estudo-leitura",
+          "origem": "orcamento-pt-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 473,
+            "width": 544,
+            "height": 6047
+          },
+          "sha256": "235bfcb8513bb85096e1821ecac255bd76d2a56e4e0a5c21ca789f37c6602597"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "orcamento-en-390.png",
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 36854,
+      "sha256": "6d56b43770693cc393fc8375fd50e89c4c88119ffcd9dbeeba91076830632a45",
+      "recortes": [
+        {
+          "ficheiro": "orcamento-en-390-abertura.png",
+          "seletor": "article.texto-artigo.estudo-leitura",
+          "origem": "orcamento-en-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 479,
+            "width": 354,
+            "height": 7583
+          },
+          "sha256": "cc6d033e42ca2973f8328f1cad93f622e512e1861aa6cb54f6321cf893887a70"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "orcamento-en-768.png",
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 29348,
+      "sha256": "4c7294a947be58507ddf40c5a617a81c1a5d6ef0c6cba9f6e8296801438f6b10",
+      "recortes": [
+        {
+          "ficheiro": "orcamento-en-768-abertura.png",
+          "seletor": "article.texto-artigo.estudo-leitura",
+          "origem": "orcamento-en-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 462,
+            "width": 545,
+            "height": 6084
+          },
+          "sha256": "873ba8a848e71e10be9273f76340272ba2bd22952b502c068bfe447eb52b698a"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "orcamento-en-1024.png",
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 28590,
+      "sha256": "e6911f684b209bb2e5e5977afc9663ee021f662263c9d0ee66e02861bb6050cb",
+      "recortes": [
+        {
+          "ficheiro": "orcamento-en-1024-abertura.png",
+          "seletor": "article.texto-artigo.estudo-leitura",
+          "origem": "orcamento-en-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 471,
+            "width": 545,
+            "height": 5937
+          },
+          "sha256": "d54a93e21a61f475807a684899494918428d7acb7f93c88c90cdde45b36025a3"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "orcamento-en-1280.png",
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 28728,
+      "sha256": "7c34ff6c4c8cbe7333e8bfe7a8afe345ec579f9316bfbb097ae949a70c509a10",
+      "recortes": [
+        {
+          "ficheiro": "orcamento-en-1280-abertura.png",
+          "seletor": "article.texto-artigo.estudo-leitura",
+          "origem": "orcamento-en-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 473,
+            "width": 544,
+            "height": 5958
+          },
+          "sha256": "5c97279c895509ccdce2b980ff38a09ebb23b9861f19662eae421179cc8090fd"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "orcamento-en-1600.png",
+      "rota": "/en/studies/orcamento-2027-o-que-muda-e-para-quem",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 28735,
+      "sha256": "f63992d9b8c06719ab64ad135b55283c3ffdef1bfa97028f74f9c86a2a7bef9f",
+      "recortes": [
+        {
+          "ficheiro": "orcamento-en-1600-abertura.png",
+          "seletor": "article.texto-artigo.estudo-leitura",
+          "origem": "orcamento-en-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 473,
+            "width": 544,
+            "height": 5958
+          },
+          "sha256": "ac059c9914c86994a3792fa0a5f7cb5ff35d39846d472081593813e4c3999ef9"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-pt-390.png",
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 50146,
+      "sha256": "05f213661e35fe3b8da9f5097fed0fa9128305cf0a5f0dd2ab133e5575621ca4",
+      "recortes": [
+        {
+          "ficheiro": "evora-pt-390-abertura.png",
+          "seletor": "article.texto-artigo.estudo-leitura",
+          "origem": "evora-pt-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 636,
+            "width": 354,
+            "height": 3675
+          },
+          "sha256": "109beeba401071ec0279d98bc30bf0901b17cea2c542fee6b37b1e64115e14e7"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-pt-768.png",
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 33239,
+      "sha256": "8b833eb0d005914045a0a1ea37a890cc2091b76db2a100af36ab6a32ac3c879f",
+      "recortes": [
+        {
+          "ficheiro": "evora-pt-768-abertura.png",
+          "seletor": "article.texto-artigo.estudo-leitura",
+          "origem": "evora-pt-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 635,
+            "width": 545,
+            "height": 2997
+          },
+          "sha256": "7919e9d70ed9161b3163486c97dd81300ebffef9e71d73e14749e1b902f16fe9"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-pt-1024.png",
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 32445,
+      "sha256": "0e7de3993e580e5eee237abe498cdf22773e09bcf4f068fa5439cf74bf8b8812",
+      "recortes": [
+        {
+          "ficheiro": "evora-pt-1024-abertura.png",
+          "seletor": "article.texto-artigo.estudo-leitura",
+          "origem": "evora-pt-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 651,
+            "width": 545,
+            "height": 2849
+          },
+          "sha256": "ded110fdd92033ae5f9015695edcd50f4ca03e2273637376ec0af5656db91e2f"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-pt-1280.png",
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 32556,
+      "sha256": "0dc96cc61762090833268bfa96b214e576380193f2a952059d89b4e032e2b60a",
+      "recortes": [
+        {
+          "ficheiro": "evora-pt-1280-abertura.png",
+          "seletor": "article.texto-artigo.estudo-leitura",
+          "origem": "evora-pt-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 652,
+            "width": 544,
+            "height": 2871
+          },
+          "sha256": "98d60be7c433ba00ae89afe658c4791c5fb13d98593e568a219c2daea44a0247"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-pt-1600.png",
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 32563,
+      "sha256": "1f412e5c7d6b6f1c01e34e38aec8b4ff122c1f0c42ec4fd43efca3f24527517d",
+      "recortes": [
+        {
+          "ficheiro": "evora-pt-1600-abertura.png",
+          "seletor": "article.texto-artigo.estudo-leitura",
+          "origem": "evora-pt-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 652,
+            "width": 544,
+            "height": 2871
+          },
+          "sha256": "98d60be7c433ba00ae89afe658c4791c5fb13d98593e568a219c2daea44a0247"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-en-390.png",
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 50728,
+      "sha256": "f80496ae19c23fc08701abe84f12530c35bdf93c5806261806af2eec5b0ff034",
+      "recortes": [
+        {
+          "ficheiro": "evora-en-390-abertura.png",
+          "seletor": "article.texto-artigo.estudo-leitura",
+          "origem": "evora-en-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 618,
+            "width": 354,
+            "height": 3507
+          },
+          "sha256": "19405e01464d9e56f6bb53e37629740470507e9ba972d4ed5edcc0dc20b3aea1"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-en-768.png",
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 32574,
+      "sha256": "e1147fd66c7a90ea692727201dbc6e5438a4c931084ccd564da0ee51320df1b2",
+      "recortes": [
+        {
+          "ficheiro": "evora-en-768-abertura.png",
+          "seletor": "article.texto-artigo.estudo-leitura",
+          "origem": "evora-en-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 617,
+            "width": 545,
+            "height": 2906
+          },
+          "sha256": "44ba24a04fe7fe88e6c14e435af29c083810e02507f64ce4620e3b541ed45a70"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-en-1024.png",
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 31770,
+      "sha256": "0f6f0aecc7abb48ad37b08c140df2bbbb45461b1979f714a269eaa00afaac4cf",
+      "recortes": [
+        {
+          "ficheiro": "evora-en-1024-abertura.png",
+          "seletor": "article.texto-artigo.estudo-leitura",
+          "origem": "evora-en-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 651,
+            "width": 545,
+            "height": 2757
+          },
+          "sha256": "e1888b5b833a4c7e983521460f3890a62216248368487f376658e22f5c50676f"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-en-1280.png",
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 31878,
+      "sha256": "459e76561e0e2a4dff8bd89c22c3a45b1f790bbefc9368ba345bcdb99f92d849",
+      "recortes": [
+        {
+          "ficheiro": "evora-en-1280-abertura.png",
+          "seletor": "article.texto-artigo.estudo-leitura",
+          "origem": "evora-en-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 652,
+            "width": 544,
+            "height": 2780
+          },
+          "sha256": "0763b31c24975f8dd5149028d5c0a80485dcc92078b332a9ccde342424984a63"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "evora-en-1600.png",
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 31885,
+      "sha256": "277bd2a05928af45c3ea1ac36514b519d35cf0b73796b73665368d2958f84cd4",
+      "recortes": [
+        {
+          "ficheiro": "evora-en-1600-abertura.png",
+          "seletor": "article.texto-artigo.estudo-leitura",
+          "origem": "evora-en-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 652,
+            "width": 544,
+            "height": 2780
+          },
+          "sha256": "0763b31c24975f8dd5149028d5c0a80485dcc92078b332a9ccde342424984a63"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    }
+  ],
+  "recursos": {
+    "version.json": "dd9f71fecf943ba3fbeaff27a52707f9c2035e488def774c36f4c9b2d855d528",
+    "index.html": "887abeda62f9897bc64330d85c2cbd9529ecc39c2c27896fe7bd61fc704ce2ef",
+    "tipos/spectral/Spectral-Regular.woff2": "3c846b032ad614e02ebc439087bbcbb7371cfbdea6c8a4b568efa859537e9c43",
+    "_astro/primeira-pagina.BOaRc5DN.css": "6be10e0b03b7ad330e0b58fb554324339dda2f44e9a344e37991030b91dcbc8c",
+    "tipos/bitter/Bitter[wght].woff2": "b4ad17520d0ce8bd1aa98af06e07ca94145522f868b5a010732eb5eee3ba2ea0",
+    "_astro/Base.CQ2WVYKH.css": "413aa149b5d8f4c49fbedde1b385476bf7766e5886b0731be4e0dc5fada4667b",
+    "_astro/inicio.DYisJLJ2.css": "1887d09fd2f5e2597bbe8b9ce00ee29695cd096d2db1486ff34d9b9013da3be9",
+    "_astro/lugar.bxF38FjU.css": "ca5ecb9c51f88f1c0f5c59652689ed2ca642ad4dee9eaf4fbc51328d9dd957fd",
+    "js/tema.js": "855bcee3ec1223b43e0f3e9a94c1fbdf1451e53830dcc022962b48e8d3340757",
+    "js/interacao-dos-graficos.js": "c5e42b905d26d12581e292acfec8957fbbf20604e674bee321f4aa1b39ebd989",
+    "tipos/spectral/Spectral-SemiBold.woff2": "91eef1143e31196ec762c00b566b9f628a851db348eb524cbfb36bfba9b22f2d",
+    "tipos/spectral-sc/SpectralSC-SemiBold.woff2": "b847fe8f1fe1a862ce15e288958d132940a8204951ef0dbe2c9ad8fd997f29e2",
+    "tipos/spectral/Spectral-Medium.woff2": "34f0ba222c28bc0ea816c693d05c528be4a5ee10c4b1765cdea774c6fb2502c2",
+    "tipos/spectral-sc/SpectralSC-Regular.woff2": "afa69dd2e7aaca2733883133745fd84c18dfac6a08d5999e69705ea7277240b8",
+    "en/index.html": "bbe95436f036e1fbf891a6c6f4ac9d2483bb04e44d5fe522e1a79b70e84de80f",
+    "estudos/a-casa-em-portugal-e-na-europa/index.html": "296be1ed87a25c1d497c18659f828c9f530537e7782e64ce9326e39d4b0a0980",
+    "_astro/EstudoView.c5gGQ4fx.css": "0b740c1a7009c7269acaa4d85463c9007ca7b33dd7667b5a0b2c53d7ed192b83",
+    "tipos/spectral/Spectral-Italic.woff2": "4ba15b4bda78df3e8b755f0f12168c23c562707c921f74944e8ce638ee5ac7f1",
+    "tipos/spectral/Spectral-Bold.woff2": "8710bb6e834a4ec2aa7a7b24a76e63ead0ba6649c81881aedf615cf37724664f",
+    "en/studies/a-casa-em-portugal-e-na-europa/index.html": "9a4602bd5f1621da49df11be0af8bcb72070874c73a158ad6db231c8b130dd78",
+    "estudos/orcamento-2027-o-que-muda-e-para-quem/index.html": "5cbc29d60beb61d6a08b04f4d34050ca2ea2b87c0064e18672866f5e3dc5495e",
+    "en/studies/orcamento-2027-o-que-muda-e-para-quem/index.html": "044e862883428d53ec6627f443063bb46e99df34945537397a55b28cf3212036",
+    "estudos/evora-2027-capital-europeia-da-cultura/index.html": "1119bccbd4ed86194cd5426624111a3a8b88f36da7a980cb71dfb9db9ffd7e8e",
+    "en/studies/evora-2027-capital-europeia-da-cultura/index.html": "7065207287e9342d15fb63e22f192476e95a81cbb13946be81f300defe5e7c4b"
+  },
+  "falhas": [],
+  "ok": true
+}

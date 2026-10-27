@@ -1,0 +1,49 @@
+{
+  "cabeca": "09211a4030d7ca9a250b5993e5b987cf45b387d2",
+  "paginas": [
+    {
+      "nome": "inicio",
+      "pt": "/",
+      "en": "/en/",
+      "recortes": [
+        {
+          "nome": "discussao",
+          "seletor": "section.pp-discussao"
+        }
+      ]
+    },
+    {
+      "nome": "habitacao",
+      "pt": "/estudos/a-casa-em-portugal-e-na-europa",
+      "en": "/en/studies/a-casa-em-portugal-e-na-europa",
+      "recortes": [
+        {
+          "nome": "abertura",
+          "seletor": "article.texto-artigo.estudo-leitura"
+        }
+      ]
+    },
+    {
+      "nome": "orcamento",
+      "pt": "/estudos/orcamento-2027-o-que-muda-e-para-quem",
+      "en": "/en/studies/orcamento-2027-o-que-muda-e-para-quem",
+      "recortes": [
+        {
+          "nome": "abertura",
+          "seletor": "article.texto-artigo.estudo-leitura"
+        }
+      ]
+    },
+    {
+      "nome": "evora",
+      "pt": "/estudos/evora-2027-capital-europeia-da-cultura",
+      "en": "/en/studies/evora-2027-capital-europeia-da-cultura",
+      "recortes": [
+        {
+          "nome": "abertura",
+          "seletor": "article.texto-artigo.estudo-leitura"
+        }
+      ]
+    }
+  ]
+}

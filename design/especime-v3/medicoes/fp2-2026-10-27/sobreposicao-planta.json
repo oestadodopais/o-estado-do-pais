@@ -1,0 +1,234 @@
+{
+  "planta": true,
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "rotas": [
+    "/estudos/a-casa-em-portugal-e-na-europa",
+    "/en/studies/a-casa-em-portugal-e-na-europa"
+  ],
+  "duracaoSegundos": 1.0360659580000002,
+  "total": 10,
+  "erros": 0,
+  "conhecidoPositivo": true,
+  "ligacoes": {
+    "index.html": 111,
+    "en/index.html": 111
+  },
+  "paginas": [
+    {
+      "largura": 390,
+      "rota": "/estudos/a-casa-em-portugal-e-na-europa",
+      "linhas": 1430,
+      "pseudos": 14,
+      "achados": [
+        {
+          "area": 472,
+          "a": {
+            "caminho": "div#documento>article.texto-artigo.estudo-leitura>p>em",
+            "texto": "Quanto custa uma casa em Portugal, quanto subiu, quem a paga",
+            "y": 702
+          },
+          "b": {
+            "caminho": "div.estudo-b1.texto-corpo>div#documento>article.texto-artigo.estudo-leitura>h2#bloco-2",
+            "texto": "::before 00/00",
+            "y": 714
+          }
+        }
+      ]
+    },
+    {
+      "largura": 390,
+      "rota": "/en/studies/a-casa-em-portugal-e-na-europa",
+      "linhas": 1426,
+      "pseudos": 14,
+      "achados": [
+        {
+          "area": 472,
+          "a": {
+            "caminho": "div#documento>article.texto-artigo.estudo-leitura>p>em",
+            "texto": "What a home costs in Portugal, how much it rose, who pays fo",
+            "y": 702
+          },
+          "b": {
+            "caminho": "div.estudo-b1.texto-corpo>div#documento>article.texto-artigo.estudo-leitura>h2#bloco-2",
+            "texto": "::before 00/00",
+            "y": 714
+          }
+        }
+      ]
+    },
+    {
+      "largura": 768,
+      "rota": "/estudos/a-casa-em-portugal-e-na-europa",
+      "linhas": 1202,
+      "pseudos": 14,
+      "achados": [
+        {
+          "area": 472,
+          "a": {
+            "caminho": "div#documento>article.texto-artigo.estudo-leitura>p>em",
+            "texto": "Quanto custa uma casa em Portugal, quanto subiu, quem a paga",
+            "y": 634
+          },
+          "b": {
+            "caminho": "div.estudo-b1.texto-corpo>div#documento>article.texto-artigo.estudo-leitura>h2#bloco-2",
+            "texto": "::before 00/00",
+            "y": 648
+          }
+        }
+      ]
+    },
+    {
+      "largura": 768,
+      "rota": "/en/studies/a-casa-em-portugal-e-na-europa",
+      "linhas": 1214,
+      "pseudos": 14,
+      "achados": [
+        {
+          "area": 472,
+          "a": {
+            "caminho": "div#documento>article.texto-artigo.estudo-leitura>p>em",
+            "texto": "What a home costs in Portugal, how much it rose, who pays fo",
+            "y": 664
+          },
+          "b": {
+            "caminho": "div.estudo-b1.texto-corpo>div#documento>article.texto-artigo.estudo-leitura>h2#bloco-2",
+            "texto": "::before 00/00",
+            "y": 678
+          }
+        }
+      ]
+    },
+    {
+      "largura": 1024,
+      "rota": "/estudos/a-casa-em-portugal-e-na-europa",
+      "linhas": 1188,
+      "pseudos": 14,
+      "achados": [
+        {
+          "area": 472,
+          "a": {
+            "caminho": "div#documento>article.texto-artigo.estudo-leitura>p>em",
+            "texto": "Quanto custa uma casa em Portugal, quanto subiu, quem a paga",
+            "y": 649
+          },
+          "b": {
+            "caminho": "div.estudo-b1.texto-corpo>div#documento>article.texto-artigo.estudo-leitura>h2#bloco-2",
+            "texto": "::before 00/00",
+            "y": 664
+          }
+        }
+      ]
+    },
+    {
+      "largura": 1024,
+      "rota": "/en/studies/a-casa-em-portugal-e-na-europa",
+      "linhas": 1200,
+      "pseudos": 14,
+      "achados": [
+        {
+          "area": 472,
+          "a": {
+            "caminho": "div#documento>article.texto-artigo.estudo-leitura>p>em",
+            "texto": "What a home costs in Portugal, how much it rose, who pays fo",
+            "y": 680
+          },
+          "b": {
+            "caminho": "div.estudo-b1.texto-corpo>div#documento>article.texto-artigo.estudo-leitura>h2#bloco-2",
+            "texto": "::before 00/00",
+            "y": 694
+          }
+        }
+      ]
+    },
+    {
+      "largura": 1280,
+      "rota": "/estudos/a-casa-em-portugal-e-na-europa",
+      "linhas": 1188,
+      "pseudos": 14,
+      "achados": [
+        {
+          "area": 472,
+          "a": {
+            "caminho": "div#documento>article.texto-artigo.estudo-leitura>p>em",
+            "texto": "Quanto custa uma casa em Portugal, quanto subiu, quem a paga",
+            "y": 653
+          },
+          "b": {
+            "caminho": "div.estudo-b1.texto-corpo>div#documento>article.texto-artigo.estudo-leitura>h2#bloco-2",
+            "texto": "::before 00/00",
+            "y": 667
+          }
+        }
+      ]
+    },
+    {
+      "largura": 1280,
+      "rota": "/en/studies/a-casa-em-portugal-e-na-europa",
+      "linhas": 1200,
+      "pseudos": 14,
+      "achados": [
+        {
+          "area": 472,
+          "a": {
+            "caminho": "div#documento>article.texto-artigo.estudo-leitura>p>em",
+            "texto": "What a home costs in Portugal, how much it rose, who pays fo",
+            "y": 683
+          },
+          "b": {
+            "caminho": "div.estudo-b1.texto-corpo>div#documento>article.texto-artigo.estudo-leitura>h2#bloco-2",
+            "texto": "::before 00/00",
+            "y": 697
+          }
+        }
+      ]
+    },
+    {
+      "largura": 1600,
+      "rota": "/estudos/a-casa-em-portugal-e-na-europa",
+      "linhas": 1188,
+      "pseudos": 14,
+      "achados": [
+        {
+          "area": 472,
+          "a": {
+            "caminho": "div#documento>article.texto-artigo.estudo-leitura>p>em",
+            "texto": "Quanto custa uma casa em Portugal, quanto subiu, quem a paga",
+            "y": 653
+          },
+          "b": {
+            "caminho": "div.estudo-b1.texto-corpo>div#documento>article.texto-artigo.estudo-leitura>h2#bloco-2",
+            "texto": "::before 00/00",
+            "y": 667
+          }
+        }
+      ]
+    },
+    {
+      "largura": 1600,
+      "rota": "/en/studies/a-casa-em-portugal-e-na-europa",
+      "linhas": 1200,
+      "pseudos": 14,
+      "achados": [
+        {
+          "area": 472,
+          "a": {
+            "caminho": "div#documento>article.texto-artigo.estudo-leitura>p>em",
+            "texto": "What a home costs in Portugal, how much it rose, who pays fo",
+            "y": 683
+          },
+          "b": {
+            "caminho": "div.estudo-b1.texto-corpo>div#documento>article.texto-artigo.estudo-leitura>h2#bloco-2",
+            "texto": "::before 00/00",
+            "y": 697
+          }
+        }
+      ]
+    }
+  ]
+}
