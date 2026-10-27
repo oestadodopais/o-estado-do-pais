@@ -98,12 +98,20 @@ usada=0
 # O recibo só escolhe este perfil fechado, nunca comandos arbitrários.
 portoes="build verify typecheck"
 if [ -f "$O/selecao.json" ]; then
-  perfil=$(python3 -c 'import json,sys; r=json.load(open(sys.argv[1])); assert r in ({"perfil":"v2c"}, {"perfil":"v2d"}); print(r["perfil"])' "$O/selecao.json") || exit 9
+  perfil=$(python3 -c 'import json,sys; r=json.load(open(sys.argv[1])); assert r in ({"perfil":"v2c"}, {"perfil":"v2d"}, {"perfil":"fp2-base"}, {"perfil":"fp2"}); print(r["perfil"])' "$O/selecao.json") || exit 9
   [ "${OEDP_CONFERIR_MOTOR:-0}" = 0 ] || exit 9
   portoes="build check:discussao check:navegacao check:primeira check:cabeca gate:html check:alvos check:css check:frases-compostas check:lugar"
   if [ "$perfil" = v2d ]; then
     portoes="build check:discussao check:palavras check:frases-compostas gate:html check:alvos check:css check:lugar check:series typecheck"
   fi
+fi
+# FP2: seleções fechadas, sem verify; a base usa a construção já medida pelo construtor.
+if [ "${perfil:-}" = fp2-base ]; then
+  portoes="check:sobreposicao"
+  export OEDP_SOBREPOSICAO_JSON="$O/base.json"
+elif [ "${perfil:-}" = fp2 ]; then
+  portoes="build check:discussao check:primeira check:css check:frases-compostas check:lugar check:alvos check:sobreposicao check:sobreposicao-contadores check:sobreposicao-planta typecheck"
+  export OEDP_SOBREPOSICAO_JSON="$O/sobreposicao.json"
 fi
 for g in $portoes; do
   [ ! -e "$O/$g.codigo" ] || usada=1
@@ -122,9 +130,20 @@ git rev-parse HEAD > "$O/cabeca"
 printf 'limpa\n' > "$O/arvore.inicio"
 for g in $portoes; do
   date -u +%Y-%m-%dT%H:%M:%SZ > "$O/$g.inicio"
-  if [ -n "${perfil:-}" ] && [ "$g" != build ] && [ "$(cat "$O/build.codigo")" -ne 0 ]; then
+  if [ -n "${perfil:-}" ] && [ "${perfil:-}" != fp2-base ] && [ "$g" != build ] && [ "$(cat "$O/build.codigo")" -ne 0 ]; then
     echo 'não correu: a construção não ficou verde' > "$O/$g.log"
     codigo=125
+  elif [ "$g" = check:sobreposicao-contadores ]; then
+    rotas=$(rg -l 'class="texto-artigo' dist/estudos dist/en/studies --glob index.html | sed 's@^dist@@;s@/index.html$@/@' | sort | paste -sd, -)
+    if [ -z "$rotas" ]; then
+      echo 'FP2: nenhuma página com texto-artigo' > "$O/$g.log"; codigo=2
+    else
+      correr "$O/$g.log" npm run check:sobreposicao -- --rotas "$rotas" --json "$O/sobreposicao-contadores.json"
+      codigo=$?
+    fi
+  elif [ "$g" = check:sobreposicao-planta ]; then
+    correr "$O/$g.log" npm run check:sobreposicao -- --planta --rotas /estudos/a-casa-em-portugal-e-na-europa,/en/studies/a-casa-em-portugal-e-na-europa --json "$O/sobreposicao-planta.json"
+    codigo=$?
   elif [ "$g" = verify ]; then
     if [ "$(cat "$O/build.codigo")" -ne 0 ]; then
       echo 'verify: não correu; o build não ficou verde e não pode pagar passos da união' > "$O/verify.log"
@@ -164,7 +183,9 @@ for g in $portoes; do
   echo "$g=$(cat "$O/$g.codigo")"
 done
 for g in $portoes; do
-  [ "$(cat "$O/$g.codigo")" -eq 0 ] || exit 1
+  esperado=0
+  [ "$g" != check:sobreposicao-planta ] || esperado=1
+  [ "$(cat "$O/$g.codigo")" -eq "$esperado" ] || exit 1
 done
 if [ "${OEDP_CONFERIR_MOTOR:-0}" = 1 ]; then
   [ "$(cat "$O/motor.codigo")" -eq 0 ] || exit 1

@@ -68,6 +68,29 @@ with tempfile.TemporaryDirectory(prefix='oedp-portoes-') as tmp:
     assert nomes == {'build','check:discussao','check:palavras','check:frases-compostas','gate:html','check:alvos','check:css','check:lugar','check:series','typecheck'}
     assert all(f.read_text().strip() == '0' for f in (p / 'v2d-verde').glob('*.codigo'))
     casos.append({'planta': 'seleção V2-d exata', 'codigo': r.returncode})
+    (p / 'dist/estudos/exemplo').mkdir(parents=True)
+    (p / 'dist/en/studies/exemplo').mkdir(parents=True)
+    (p / 'dist/estudos/exemplo/index.html').write_text('<article class="texto-artigo"></article>')
+    # FP2 mantém a base separada, sem build nem verify, e exige a planta vermelha.
+    for perfil, nomes in [
+        ('fp2-base', {'check:sobreposicao'}),
+        ('fp2', {'build', 'check:discussao', 'check:primeira', 'check:css', 'check:frases-compostas',
+                 'check:lugar', 'check:alvos', 'check:sobreposicao', 'check:sobreposicao-contadores', 'check:sobreposicao-planta', 'typecheck'}),
+    ]:
+        comando('npm', 'echo "$*" >> "$CHAMADAS"\ncase "$*" in *--planta*) exit 1;; esac\n')
+        (p / perfil).mkdir()
+        (p / perfil / 'selecao.json').write_text(json.dumps({'perfil': perfil}))
+        r = correr(perfil)
+        assert r.returncode == 0, r.stderr
+        assert {f.stem for f in (p / perfil).glob('*.codigo')} == nomes
+        casos.append({'planta': 'seleção exata ' + perfil, 'codigo': r.returncode})
+    comando('npm', 'echo "$*" >> "$CHAMADAS"\ncase "$*" in *--planta*) exit 2;; esac\n')
+    (p / 'fp2-sem-mordida').mkdir()
+    (p / 'fp2-sem-mordida/selecao.json').write_text(json.dumps({'perfil': 'fp2'}))
+    r = correr('fp2-sem-mordida')
+    assert r.returncode == 1
+    assert (p / 'fp2-sem-mordida/check:sobreposicao-planta.codigo').read_text().strip() == '2'
+    casos.append({'planta': 'FP2 recusa planta sem mordida', 'codigo': r.returncode})
     comando('npm', 'echo "$PWD é a pasta de ensaio"\necho "$*" >> "$CHAMADAS"\n[ "$2" != build ] || exit 7\n')
     r = correr('vermelho')
     assert r.returncode == 1
