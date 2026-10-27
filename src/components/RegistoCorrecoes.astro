@@ -86,6 +86,7 @@ import { dataDaCasa } from '../lib/datas.mjs';
 import { textoDocumentalConferido } from '../lib/prova-efeitos.mjs';
 import { textoDaHabitacao } from '../lib/historia-do-valor.mjs';
 import { KIND_LABELS } from '../data/correcoes.mjs';
+import PortasDaDiscussao from './discussao/PortasDaDiscussao.astro';
 import { ROTULOS_B1 } from '../data/rotulos-b1.mjs';
 import { prova } from '../lib/prova.mjs';
 import Claim from './Claim.astro';
@@ -104,6 +105,10 @@ const r = ROTULOS_B1[lang];
 const p = prova(lang);
 
 const mudancas = mudancasDoRegisto(lang);
+const linhasDasMudancas = mudancas.flatMap(e => {
+  if (e.tipo !== 'projeto' || !Array.isArray(e.texto[lang])) return [];
+  return e.texto[lang].flatMap(p => typeof p === 'string' ? [] : [p.claim]);
+});
 /* A contagem das correções continua a ser a linha do livro-razão, e conta só as
    de natureza «correção»: é a confissão, e é o número que a política promete. */
 const correcoes = entradasDoRegisto('correcao');
@@ -308,6 +313,7 @@ const palavraRevisoes =
         ))
       }
     </ol>
+    <PortasDaDiscussao lang={lang} linhas={linhasDasMudancas} />
   </section>
 
   <!-- ============================ REVISÕES DE PROVENIÊNCIA -->

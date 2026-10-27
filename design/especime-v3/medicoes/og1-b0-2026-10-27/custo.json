@@ -1,0 +1,101 @@
+{
+  "passagens": [
+    {
+      "id": "OG1-B0",
+      "chamadas_de_ferramentas": 11,
+      "corridas_de_conferencias": 0
+    },
+    {
+      "id": "OG1-B0-b",
+      "chamadas_de_ferramentas": 46,
+      "contagem_ate": "fecho do relatório e verificação final desta passagem",
+      "corridas_de_conferencias": 18
+    },
+    {
+      "id": "OG1-B0-c",
+      "chamadas_de_ferramentas": 32,
+      "contagem_ate": "fecho do relatório, antes do pedido de commit e da sua verificação",
+      "corridas_de_conferencias": 11
+    }
+  ],
+  "criterio_corridas": "Invocações no topo: três build, ledger:check, typecheck, check:palavras, check:frases-compostas, primeira estática, duas tentativas do verificador do HTML e uma resolução dos tokens. Os subcomandos do build não são contados de novo. Acrescentam-se sete comandos na retoma da cadeia do build, desde check:voz até check:discussao; seis passaram, o último falhou.",
+  "tentativas_build": [
+    1,
+    1,
+    1
+  ],
+  "codigos": {
+    "build": 0,
+    "check:discussao": 0,
+    "check:voz": 0,
+    "check:palavras": 0,
+    "check:lingua": 0,
+    "gate:html": 0,
+    "check:registo": 0,
+    "ledger:check": 0,
+    "check:pais": 0,
+    "typecheck": 0,
+    "check:frases-compostas": null,
+    "check:primeira": null,
+    "verificacao_renderizado": 0,
+    "verificacao_porta": 0
+  },
+  "limites": {
+    "check:frases-compostas": "Reservado pelo mandato OG1-B0-c à corrida da direção fora da sandbox. Na passagem anterior, listen EPERM: operation not permitted 127.0.0.1.",
+    "check:primeira": "Reservado pelo mandato OG1-B0-c à corrida da direção fora da sandbox. A parte estática passou na passagem anterior."
+  },
+  "corridas_inteiras_dos_portoes": 0,
+  "capturas": 0,
+  "simbolos": null,
+  "pontos_semana": null,
+  "tokens_used": null,
+  "nota": "Custo final em símbolos e pontos a medir pelo lançador. Verificador HTML: primeira tentativa falhou por resolução de módulo no guião temporário, segunda passou.",
+  "segundos_medidos": {
+    "build_1": 3,
+    "build_2": 20,
+    "build_3": 334,
+    "ledger_check_isolado": 14,
+    "typecheck": 1,
+    "check_palavras": 231,
+    "primeira_estatica": 6,
+    "retoma_cadeia_build": 119
+  },
+  "estado": "Edição e verificações pedidas concluídas; partes de navegador reservadas à direção.",
+  "historico_codigos_OG1_B0_b": {
+    "build": 1,
+    "check:discussao": 1,
+    "check:voz": 0,
+    "check:palavras": 0,
+    "check:lingua": 0,
+    "check:frases-compostas": 1,
+    "gate:html": 0,
+    "check:registo": 0,
+    "ledger:check": 0,
+    "typecheck": 0,
+    "check:primeira": null,
+    "check:pais": 0,
+    "check:primeira_parte_estatica": 0,
+    "verificacao_renderizado": 0,
+    "check:nomes": 0,
+    "check:formato": 0,
+    "check:navegacao": 0,
+    "sinais": 0,
+    "cadeia_build_retomada": 1
+  },
+  "nota_build_OG1_B0_b": "Três tentativas com código 1: forma de Afecta, anos em texto fixo, inventário desatualizado. As causas dessas tentativas foram corrigidas. A retoma passou seis comandos e parou em check:discussao. Não houve quarta invocação de npm run build.",
+  "chamadas_tres_passagens_ate_fecho": 89,
+  "corridas_tres_passagens": 29,
+  "criterio_corridas_OG1_B0_c": "Duas invocações de build, duas de check:palavras, duas de typecheck, duas verificações da transcrição, duas da porta e uma seleção por valores editoriais. Os subcomandos do build não são contados de novo.",
+  "tentativas_build_OG1_B0_c": [
+    1,
+    0
+  ],
+  "segundos_medidos_OG1_B0_c": [
+    377,
+    225,
+    0,
+    0,
+    1
+  ],
+  "nota_OG1_B0_c": "O primeiro ensaio incluía identificadores de correções históricas e gerava três portas. A seleção foi restringida aos valores citados na prosa editorial. A construção final e todas as verificações pedidas passaram."
+}
