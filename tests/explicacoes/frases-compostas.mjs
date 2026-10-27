@@ -128,7 +128,7 @@ try {
         const el=[...document.querySelectorAll(selector)].find(e=>e.querySelector('[data-claim], [data-nonledger], [data-de-linha], [data-semana]'));
         if(!el) throw Error('a planta não encontrou uma frase com pedaços marcados');
         if(tipo==='flex') el.style.display='flex';
-        else el.style.width='2000px';
+        else { el.style.display='block'; el.style.width='2000px'; }
         if(tipo==='largura') el.style.maxWidth='none';
       }, {selector,tipo});
       await pagina.evaluate(doisFotogramas);

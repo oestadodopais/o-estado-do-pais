@@ -37,6 +37,7 @@ import { tirarCodigoConferido, lerPaginaComCodigo } from './incorporar-do-portao
  */
 
 import fs from 'node:fs';
+import {conferirInicio} from '../tests/discussao/itens.mjs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { NodeType } from 'node-html-parser';
@@ -1065,6 +1066,14 @@ function frasesDaCasa(root, rotaKey) {
     if (!marcaComparada(el, rotaKey)) continue;
     marcados.add(el);
     for (const d of el.querySelectorAll('*')) marcados.add(d);
+  }
+  /* FP2: o inventário só dispensa os resumos depois de conferir a data, a frase e o destino.
+     A varredura lexical continua a lê-los; uma marca isolada não dispensa prosa. */
+  if (rotaKey === 'home' && !conferirInicio(root, root.querySelector('html')?.getAttribute('lang') === 'en' ? 'en' : 'pt').length) {
+    for (const el of root.querySelectorAll('[data-discussao-inicio] [data-discussao-resumo]')) {
+      marcados.add(el);
+      for (const d of el.querySelectorAll('*')) marcados.add(d);
+    }
   }
   for (const el of root.querySelectorAll(BLOCOS_DA_VOZ)) {
     if (el.querySelector(BLOCOS_DA_VOZ)) continue;
