@@ -6,7 +6,7 @@ import { resolverExplicacao } from './explicacoes.mjs';
 import { mudancasDoRegisto } from './mudancas.mjs';
 import { routePath } from './routes.mjs';
 import { portaDoItem } from './discussao.mjs';
-import { ROTULOS_B1 } from '../data/rotulos-b1.mjs';
+import { atualizacaoDaNovidade } from './atualizacao-da-novidade.mjs';
 /** @param {'pt'|'en'} lang */
 export function pecasPublicadas(lang) {
   /** @type {any[]} */
@@ -21,7 +21,8 @@ export function pecasPublicadas(lang) {
     if (!e.publicado) continue;
     pecas.push({ id: `${tipo}:${e.slug}`, tipo, data: e.publicado, origem: 'publicacao.declarada', rota: tipo === 'discussao' ? portaDoItem(e.slug,lang) : routePath('explicacao',lang,{slug:e.slug}), titulo: resolverExplicacao(e,lang).titulo });
   }
-  const ultima = mudancasDoRegisto(lang)[0];
-  if (ultima) pecas.push({ id:'atualizacao:registo', tipo:'atualizacao', data:ultima.data, origem:'mudancas.ultima', rota:routePath('correcoes',lang), mudanca:ultima, edicao:ultima.tipo === 'publicacao' ? ultima.estudo.edicao : null, prefixo:ultima.tipo === 'publicacao' ? ROTULOS_B1[lang].estudoPublicado + ' · ' : '', titulo:ultima.tipo === 'publicacao' ? [] : [String(ultima.tipo === 'correcao' ? ultima.motivo : ultima.texto[lang]).split(/(?<=[.!?])\s/)[0]] });
-  return pecas.sort((a,b) => b.data.localeCompare(a.data) || a.id.localeCompare(b.id));
+  const atualizacao = atualizacaoDaNovidade(mudancasDoRegisto(lang)[0],lang);
+  if (atualizacao) pecas.push(atualizacao);
+  // Empate: estudo antes das outras peças; depois identidade, para uma ordem estável nas duas línguas.
+  return pecas.sort((a,b) => b.data.localeCompare(a.data) || Number(b.tipo==='estudo')-Number(a.tipo==='estudo') || a.id.localeCompare(b.id));
 }

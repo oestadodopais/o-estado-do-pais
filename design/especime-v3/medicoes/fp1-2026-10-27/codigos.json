@@ -261,5 +261,98 @@
     "plantas_editoriais": 2,
     "plantas_l1": 5,
     "commit": "pedido após fechar os artefactos; resultado na resposta final"
+  },
+  "fp1_e": {
+    "build_inicial": 1,
+    "check_voz_intermedio": 1,
+    "conferencias": {
+      "check:css": {
+        "codigo": 0,
+        "segundos": 6.77,
+        "registo": "fp1e-check-css.log",
+        "recusa_permissao": false
+      },
+      "check:alvos": {
+        "codigo": 1,
+        "segundos": 0.73,
+        "registo": "fp1e-check-alvos.log",
+        "recusa_permissao": true
+      },
+      "check:primeira:estatica": {
+        "codigo": 0,
+        "segundos": 5.11,
+        "registo": "fp1e-check-primeira-estatica.log",
+        "recusa_permissao": false
+      },
+      "check:datas": {
+        "codigo": 0,
+        "segundos": 7.63,
+        "registo": "fp1e-check-datas.log",
+        "recusa_permissao": false
+      },
+      "check:voz": {
+        "codigo": 0,
+        "segundos": 55.82,
+        "registo": "fp1e-check-voz.log",
+        "recusa_permissao": false
+      },
+      "check:palavras": {
+        "codigo": 0,
+        "segundos": 223.61,
+        "registo": "fp1e-check-palavras.log",
+        "recusa_permissao": false
+      },
+      "check:lingua": {
+        "codigo": 0,
+        "segundos": 8.92,
+        "registo": "fp1e-check-lingua.log",
+        "recusa_permissao": false
+      },
+      "check:navegacao": {
+        "codigo": 0,
+        "segundos": 14.06,
+        "registo": "fp1e-check-navegacao.log",
+        "recusa_permissao": false
+      },
+      "check:cartao": {
+        "codigo": 0,
+        "segundos": 40.43,
+        "registo": "fp1e-check-cartao.log",
+        "recusa_permissao": false
+      },
+      "check:lugar": {
+        "codigo": 0,
+        "segundos": 45.07,
+        "registo": "fp1e-check-lugar.log",
+        "recusa_permissao": false
+      },
+      "check:indice-do-sitio": {
+        "codigo": 0,
+        "segundos": 22.21,
+        "registo": "fp1e-check-indice-do-sitio.log",
+        "recusa_permissao": false
+      },
+      "check:registo": {
+        "codigo": 0,
+        "segundos": 1.63,
+        "registo": "fp1e-check-registo.log",
+        "recusa_permissao": false
+      },
+      "ledger:check": {
+        "codigo": 0,
+        "segundos": 14.15,
+        "registo": "fp1e-ledger-check.log",
+        "recusa_permissao": false
+      },
+      "typecheck": {
+        "codigo": 0,
+        "segundos": 0.35,
+        "registo": "fp1e-typecheck.log",
+        "recusa_permissao": false
+      }
+    },
+    "build_comitado": null,
+    "l1_medicao": null,
+    "capturas": null
   }
 }

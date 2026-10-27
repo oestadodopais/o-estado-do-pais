@@ -94,5 +94,43 @@
       "reasoning_output_tokens": 44417,
       "total_tokens": 24357313
     }
+  },
+  "recontagem_lancador": {
+    "origem": "registo de execução identificado pelo pontos.json do lançador",
+    "chamadas_por_passagem": {
+      "FP1": 47,
+      "FP1-b": 48,
+      "FP1-c": 24,
+      "FP1-d": 50,
+      "FP1-e": 32
+    },
+    "eventos_de_uso_por_passagem": {
+      "FP1": 48,
+      "FP1-b": 50,
+      "FP1-c": 25,
+      "FP1-d": 51,
+      "FP1-e": 32
+    },
+    "total_chamadas_ate_medicao": 201,
+    "distincao": "turnos do lançador são eventos de uso, não chamadas de ferramentas"
+  },
+  "fp1_e": {
+    "chamadas_ate_medicao": 32,
+    "chamadas_acumuladas_ate_medicao": 201,
+    "corridas_construcao_conferencia_medicao": 18,
+    "builds": 1,
+    "conferencias_isoladas": 17,
+    "controlos_auxiliares": 2,
+    "capturas": 0,
+    "portoes_completos": 0,
+    "tokens_ultimo_evento_consultado": {
+      "input_tokens": 31498148,
+      "cached_input_tokens": 31103488,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 141583,
+      "reasoning_output_tokens": 60372,
+      "total_tokens": 31639731
+    },
+    "nota": "Contagem observada no momento da escrita; o commit e as chamadas de fecho posteriores não estão antecipados."
   }
 }

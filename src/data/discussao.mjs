@@ -40,7 +40,7 @@ const atribuicao = (id) => literal(id, 'attributed_to');
 const p = (pt, en) => ({ paragrafo: { pt: Array.isArray(pt) ? pt : [pt], en: Array.isArray(en) ? en : [en] } });
 /** @param {string} slug @param {[string|any[],string|any[]]} titulo @param {string[]} afirmacoes @param {any[][]} conteudos */
 const item = (slug, titulo, afirmacoes, conteudos) => ({
-  // publicado: entrada no ar em f5ce0ef40 e §1.201 (19.10); escrita: última reescrita, usada na ordem.
+  // publicado: fusão com main ac663f373; V2-b no ar em main 39f0195c, §§1.200 e 1.201 (19.10); escrita: última reescrita, usada na ordem.
   slug, publicado: '2026-10-19', escrita: '2026-10-20', titulo: { pt: Array.isArray(titulo[0]) ? titulo[0] : [titulo[0]], en: Array.isArray(titulo[1]) ? titulo[1] : [titulo[1]] },
   afirmacoes, abertura: [], naoDiz: [],
   recibos: slug === 'saude-no-orcamento' ? Object.fromEntries(['seccoes[2].conteudo[2].paragrafo', 'seccoes[5].conteudo[0].paragrafo'].map(caminho => [caminho, ['oe-2027-saude-dotacao-reforco-contratos-programa', 'oe-2027-saude-contrato-programa-acss']])) : {},

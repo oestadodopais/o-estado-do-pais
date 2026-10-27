@@ -1,5 +1,6 @@
 /** FP1: datas da publicação e do calendário, relidas das declarações. */
 import fs from 'node:fs';
+import {estadoDoInventario} from '../../scripts/voz.mjs';
 import {PALAVRAS_PROIBIDAS} from '../../scripts/voz-palavras.mjs';
 import {metaDoEstudoConferida} from '../../scripts/meta-do-estudo.mjs';
 import path from 'node:path';
@@ -8,7 +9,7 @@ import { pathToFileURL } from 'node:url';
 import { parse } from 'node-html-parser';
 import { dataPublicacao } from '../../src/lib/publicacao.mjs';
 import { resolverExplicacao, textoDosPedacosDaExplicacao } from '../../src/lib/explicacoes.mjs';
-import { ROTULOS_B1 } from '../../src/data/rotulos-b1.mjs';
+import {atualizacaoDaNovidade,htmlDaAtualizacao,conferirAtualizacao} from '../../src/lib/atualizacao-da-novidade.mjs';
 import { WORKS } from '../../src/data/studies.mjs';
 import { ITENS } from '../../src/data/discussao.mjs';
 import { EXPLICACOES } from '../../src/data/explicacoes/index.mjs';
@@ -30,14 +31,14 @@ export function publicacoesEsperadas(lang) {
     saida.push({id:`${tipo}:${e.slug}`, tipo, data:e.publicado, origem:'publicacao.declarada', titulo:textoDosPedacosDaExplicacao(resolverExplicacao(e,lang).titulo,lang), rota: tipo === 'discussao' ? `${routePath('discussao',lang)}#${e.slug}` : routePath('explicacao',lang,{slug:e.slug})});
   }
   const ultima=mudancasDoRegisto(lang)[0];
-  if (ultima) saida.push({id:'atualizacao:registo', tipo:'atualizacao', data:ultima.data, origem:'mudancas.ultima', titulo:ultima.tipo === 'publicacao' ? ROTULOS_B1[lang].estudoPublicado+' · '+ultima.estudo.edicao.title : String(ultima.tipo === 'correcao' ? ultima.motivo : ultima.texto[lang]).split(/(?<=[.!?])\s/)[0], rota:routePath('correcoes',lang)});
-  return saida.sort((a,b)=>b.data.localeCompare(a.data)||a.id.localeCompare(b.id));
+  if (ultima?.tipo==='correcao' && ['correcao','atualizacao'].includes(ultima.kind)) saida.push({id:'atualizacao:registo',tipo:'atualizacao',data:ultima.data,origem:'mudancas.ultima',titulo:`${ultima.motivo} ${ultima.antes} → ${ultima.depois}`,atualizacao:ultima,rota:routePath('correcoes',lang)});
+  return saida.sort((a,b)=>b.data.localeCompare(a.data)||Number(b.tipo==='estudo')-Number(a.tipo==='estudo')||a.id.localeCompare(b.id));
 }
-export function conferirNovidades(root, lang, dist='dist') {
+export function conferirNovidades(root, lang, dist='dist', publicacoes=publicacoesEsperadas(lang)) {
   const erros=[];
   const v=JSON.parse(fs.readFileSync(path.join(dist,'version.json'),'utf8'));
   const dia=v.construido_em.slice(0,10), r=FP1[lang];
-  const todas=publicacoesEsperadas(lang), esperadas=todas.slice(0,5);
+  const todas=publicacoes, esperadas=todas.slice(0,5);
   const caixas=root.querySelectorAll('[data-novidades]');
   if(caixas.length!==1) return ['FP1: falta a caixa única'];
   const caixa=caixas[0], entradas=caixa.querySelectorAll('[data-novidade]');
@@ -62,6 +63,7 @@ export function conferirNovidades(root, lang, dist='dist') {
     if(!data || data.getAttribute('datetime')!==p.data || data.getAttribute('data-data-origem')!==p.origem || data.textContent!==forma(p.data)) erros.push('FP1: data escrita à mão ou diferente da declaração');
     if(data?.getAttribute('datetime')>dia) erros.push('FP1: data no futuro');
     if(el.querySelector('[data-novidade-porta]')?.getAttribute('href')!==p.rota) erros.push('FP1: entrada sem página declarada');
+    if(p.atualizacao&&!conferirAtualizacao(el.querySelector('[data-novidade-porta]'),p.atualizacao))erros.push('FP1-e: atualização sem valores selados');
     if(normal(el.querySelector('[data-novidade-porta]')?.textContent ?? '')!==normal(p.titulo)) erros.push('FP1: título da peça diferente da declaração');
     if(el.querySelector('.pp-novidade-tipo')?.textContent!==r[p.tipo]) erros.push('FP1: tipo diferente');
   }
@@ -84,10 +86,8 @@ export function conferirNovidades(root, lang, dist='dist') {
   return erros;
 }
 export function plantasDasNovidades(html,lang,dist) {
-  const gerada=publicacoesEsperadas(lang).slice(0,5).find(p=>p.origem==='publicacao.gerada');
-  assert(gerada,'FP1-d: controlo do estudo com data gerada entre os cinco');
+
   const plantas=[
-    ['estudo com data gerada em falta',r=>r.querySelector(`[data-novidade="${gerada.id}"]`).remove(),/seleção/],
     ['marca novo retirada',r=>r.querySelector('[data-estudo-novo]').remove(),/marca novo/],
     ['título da peça trocado',r=>r.querySelector('[data-novidade-porta]').set_content('Título inventado'),/título da peça/],
     ['entrada sem página',r=>r.querySelector('[data-novidade-porta]').setAttribute('href','/pagina-fp1-inexistente'),/sem página/],
@@ -96,10 +96,28 @@ export function plantasDasNovidades(html,lang,dist) {
     ['peça mais recente em falta',r=>r.querySelector('[data-novidade]').remove(),/mais recente/],
     ['data escrita à mão no HTML',r=>{const t=r.querySelector('[data-novidade] time');t.replaceWith(t.textContent);},/escrita à mão/],
   ];
-  return plantas.map(([nome,mudar,queixa])=>{const r=parse(html);mudar(r);const erros=conferirNovidades(r,lang,dist);return {nome,lang,mordeu:erros.some(e=>queixa.test(e))};});
+  const resultado=plantas.map(([nome,mudar,queixa])=>{const r=parse(html);mudar(r);const erros=conferirNovidades(r,lang,dist);return {nome,lang,mordeu:erros.some(e=>queixa.test(e))};});
+  const todas=publicacoesEsperadas(lang), gerada=todas.find(p=>p.origem==='publicacao.gerada');assert(gerada);
+  const fonte=todas.map(p=>p.id===gerada.id?{...p,data:todas[1].data}:p).sort((a,b)=>b.data.localeCompare(a.data)||Number(b.tipo==='estudo')-Number(a.tipo==='estudo')||a.id.localeCompare(b.id));
+  assert(fonte.slice(0,5).some(p=>p.id===gerada.id));
+  const erros=conferirNovidades(parse(html),lang,dist,fonte);
+  resultado.push({nome:'estudo com data gerada recente ausente',lang,mordeu:erros.some(e=>/seleção/.test(e))});
+  return resultado;
 }
 if(process.argv[1] && import.meta.url===pathToFileURL(path.resolve(process.argv[1])).href) {
   const dist=process.env.OEDP_DIST ?? 'dist'; const plantas=[];
+  for(const lang of ['pt','en']) {
+    const registo=mudancasDoRegisto(lang), publicacao=registo.find(m=>m.tipo==='publicacao'), correcao=registo.find(m=>m.tipo==='correcao');
+    assert.equal(atualizacaoDaNovidade(publicacao,lang),null);plantas.push({nome:'última publicação não gera atualização',lang,mordeu:true});
+    const peca=atualizacaoDaNovidade(correcao,lang);assert(peca);
+    const texto=parse('<a>'+htmlDaAtualizacao(correcao)+'</a>').querySelector('a');assert(conferirAtualizacao(texto,correcao));
+    texto.querySelector('[data-correcao-campo="new_value"]').removeAttribute('data-correcao-claim');
+    const mordeu=!conferirAtualizacao(texto,correcao);assert(mordeu);plantas.push({nome:'correção gera texto selado e recusa selo retirado',lang,mordeu});
+  }
+  assert.equal(estadoDoInventario('condicional-fp1','fp1','update'),'condicional-fp1');
+  assert.equal(estadoDoInventario('condicional-fp1','outro','update'),null);
+  assert.equal(estadoDoInventario('condicional-fp1','fp1','texto arbitrário'),null);
+  plantas.push({nome:'condição do inventário limitada aos dois rótulos FP1',mordeu:true});
   const palavra=PALAVRAS_PROIBIDAS.find(p=>p.chave==='lido na fonte a');
   assert(palavra.marca.test('read at the source on'));
   assert(!palavra.marca.test(FP1.en.relidos));

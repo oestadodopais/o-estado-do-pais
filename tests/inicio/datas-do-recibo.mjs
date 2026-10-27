@@ -17,6 +17,7 @@ const proxima=new Date(versao.construido_em.slice(0,10)+'T00:00:00Z');
 do {proxima.setUTCDate(proxima.getUTCDate()+1);} while(proxima.getUTCDay()!==1);
 const dia=proxima.toISOString().slice(0,10);
 const forma=v=>`${v.slice(8,10)}.${v.slice(5,7)}.${v.slice(0,4)}`;
+function dataIgualAOrigem(el,valor) { return Boolean(el) && valor!==undefined && valor!==null && el.textContent===valor; }
 function conferir(root,c,lang) {
  const erros=[], r=FP1[lang], cabeca=root.querySelector('[data-recibo-datas]');
  if(!cabeca)return ['FP1-b: cabeçalho de datas ausente'];
@@ -38,7 +39,7 @@ function conferir(root,c,lang) {
   if(origem!==e.campo)erros.push('FP1-b: origem diferente da linha');
   if(e.campo!=='calendario.proxima-segunda' && (el?.getAttribute('data-de-linha')??el?.getAttribute('data-linha-claim'))!==c.id)erros.push('FP1-b: identidade da linha diferente');
   const valor=e.campo==='calendario.proxima-segunda'?forma(e.valor):dataDaCasa(e.valor,lang);
-  if(!el || valor===undefined || valor===null || el.textContent!==valor)erros.push('FP1-b: data diferente da origem');
+  if(!dataIgualAOrigem(el,valor))erros.push('FP1-b: data diferente da origem');
   if(e.campo==='calendario.proxima-segunda'&&el?.getAttribute('datetime')!==dia)erros.push('FP1-b: calendário diferente da construção');
  }
  return erros;
@@ -62,9 +63,13 @@ for(const lang of ['pt','en']) {
  }
 }
 const plantas=[];
+assert(dataIgualAOrigem({textContent:'2026'},'2026'));
+assert.equal(undefined,undefined); // O erro antigo aceitaria a igualdade de duas ausências.
+assert.equal(dataIgualAOrigem(undefined,undefined),false);
+assert.equal(dataIgualAOrigem({textContent:undefined},undefined),false);
+plantas.push({nome:'undefined contra undefined recusado pela guarda da origem',mordeu:true});
 for(const [nome,chave,mudar,queixa] of [
  ...['derivada','semReleituras'].map(chave=>['próxima leitura indevida '+chave,chave,r=>r.querySelector('[data-recibo-datas]').insertAdjacentHTML('beforeend','<p><span data-voz>próxima leitura a</span><time data-data-origem="calendario.proxima-segunda">'+forma(dia)+'</time></p>'),/presença/]),
- ['período ausente comparado com undefined','ausencia',r=>r.querySelector('[data-recibo-datas]').insertAdjacentHTML('afterbegin','<p><span data-voz>dados de</span><span data-de-campo="period">undefined</span></p>'),/presença/],
  ...['pt','en'].map(lang=>['alojamento dito leitura ('+lang+')','alojada-'+lang,r=>r.querySelector('[data-recibo-datas]').insertAdjacentHTML('beforeend','<p><span data-voz>'+FP1[lang].lidos+'</span><span data-de-campo="access_date">01.01.2000</span></p>'),/presença/]),
  ['campo ausente acrescentado','ausencia',r=>r.querySelector('[data-recibo-datas]').insertAdjacentHTML('afterbegin','<p><span data-voz>dados de</span><span data-de-campo="reference_date">2026</span></p>'),/presença/],
  ['próxima leitura no passado','calendario',r=>r.querySelector('[data-data-origem="calendario.proxima-segunda"]').set_content('01.01.2000'),/data diferente/],

@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { dataEditorialPermitida, plantasDatasEditoriais } from './datas-editoriais.mjs';
+import { conferirDataEditorial, plantasDatasEditoriais } from './datas-editoriais.mjs';
 plantasDatasEditoriais();
 import {ITENS} from '../src/data/discussao.mjs';
 import {errosDaDefinicaoEo1} from '../src/lib/definicoes-eo1.mjs';
@@ -7965,7 +7965,7 @@ for (const file of ficheirosHtml(DIST)) {
 
   for (const el of body.querySelectorAll('[data-nonledger]')) {
     const motivo = el.getAttribute('data-nonledger');
-    if (motivo === 'data-editorial' && !dataEditorialPermitida(el, rota?.key, rota?.key === 'linha' ? claims.get(rota.params?.slug) : null)) err('FP1-d: data-editorial fora dos contextos e origens permitidos.');
+    if (motivo === 'data-editorial') conferirDataEditorial(el, rota?.key, rota?.key === 'linha' ? claims.get(rota.params?.slug) : null, err);
     if (!CONTEXTOS.has(motivo)) {
       err(
         `data-nonledger="${motivo}" não é um motivo declarado. ` +

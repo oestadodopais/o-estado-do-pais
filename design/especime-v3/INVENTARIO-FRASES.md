@@ -5033,24 +5033,24 @@ Cadeias lidas no HTML construído. As citações e os valores ficam fora da voz 
 | classe | texto | bloco | estado | razão |
 |---|---|---|---|---|
 | conteudo | Atualizado a | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
-| conteudo | Atualizado a · números relidos na fonte a | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
+| conteudo | Atualizado a · números do painel relidos na fonte a | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
 | conteudo | O que há de novo | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
 | conteudo | Updated on | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
-| conteudo | Updated on · figures re-read at the source on | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
+| conteudo | Updated on · panel figures re-read at the source on | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
 | conteudo | What is new | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
-| conteudo | atualização | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
+| conteudo | atualização | fp1 | condicional-fp1 | FP1-e: rótulo presente só quando a última entrada gera a peça; condição e texto conferidos por novidades.mjs. |
 | conteudo | dados de | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
 | conteudo | data from | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
 | conteudo | estudo | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
 | conteudo | explainer | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
 | conteudo | explicação | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
-| conteudo | figures re-read at the source on | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
+| conteudo | panel figures re-read at the source on | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
 | conteudo | last re-read on | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
 | conteudo | lidos por este projeto a | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
 | conteudo | new | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
 | conteudo | next reading on | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
 | conteudo | novo | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
-| conteudo | números relidos na fonte a | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
+| conteudo | números do painel relidos na fonte a | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
 | conteudo | o que se discute | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
 | conteudo | próxima leitura a | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
 | conteudo | publicados pela fonte a | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
@@ -5059,7 +5059,6 @@ Cadeias lidas no HTML construído. As citações e os valores ficam fora da voz 
 | conteudo | relidos pela última vez a | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
 | conteudo | study | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
 | conteudo | under discussion | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
-| conteudo | update | fp1 | viva | Mobília das datas; valores conferidos contra os campos declarados ou gerados. |
-
+| conteudo | update | fp1 | condicional-fp1 | FP1-e: rótulo presente só quando a última entrada gera a peça; condição e texto conferidos por novidades.mjs. |
 | conteudo | Os números mais recentes são de | fp1 | viva | Período dos dados, sem repetir a data da construção. |
 | conteudo | The most recent figures are from | fp1 | viva | Período dos dados, sem repetir a data da construção. |

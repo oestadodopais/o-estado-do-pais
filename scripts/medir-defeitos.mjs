@@ -1767,6 +1767,7 @@ function ondeVolta(frase) {
 const declaracoes = {
   total: INVENTARIO.linhas.length,
   vivas: INVENTARIO.linhas.filter((l) => l.estado === 'viva').length,
+  condicionais_fp1: INVENTARIO.linhas.filter(l=>l.estado==='condicional-fp1').length,
   retiradas: INVENTARIO.linhas.filter((l) => l.estado === 'retirada').length,
   rendidas: rendidas.size,
   sem_estado: INVENTARIO.linhas
@@ -1783,7 +1784,7 @@ const declaracoes = {
      da contagem (o Método e o Sobre): uma linha declarada para uma frase que só
      lá vive rende-se, e a lista não está a mentir sobre o sítio. */
   vivas_que_nao_rendem: INVENTARIO.linhas
-    .filter((l) => l.estado !== 'retirada' && !rendidas.has(l.texto) && !rendidasNasIsentas.has(l.texto))
+    .filter((l) => l.estado !== 'retirada' && l.estado !== 'condicional-fp1' && !rendidas.has(l.texto) && !rendidasNasIsentas.has(l.texto))
     .map((l) => ({ n: l.n, classe: l.classe, bloco: l.bloco, texto: l.texto })),
   retiradas_que_rendem: INVENTARIO.linhas
     .filter((l) => l.estado === 'retirada')

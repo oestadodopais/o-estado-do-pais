@@ -240,6 +240,12 @@ const CLASSES_DO_INVENTARIO = new Set(['conteudo', 'navegacao', 'autorreferencia
  * fecha na mesma. As linhas `viva` levam `—`.
  */
 const ESTADOS_DO_INVENTARIO = new Set(['viva', 'retirada']);
+// FP1-e: só estes dois rótulos dependem da presença da peça de atualização;
+// conferirNovidades verifica a condição, a origem e o texto em cada primeira página.
+export function estadoDoInventario(cru,bloco,texto) {
+  if (cru==='condicional-fp1') return bloco==='fp1' && ['atualização','update'].includes(texto) ? cru : null;
+  return ESTADOS_DO_INVENTARIO.has(cru) ? cru : null;
+}
 
 export function leInventario(raiz) {
   const ficheiro = path.join(raiz, FICHEIRO_DO_INVENTARIO);
@@ -267,12 +273,13 @@ export function leInventario(raiz) {
     if (!cel || cel.length < 2 || !CLASSES_DO_INVENTARIO.has(cel[0])) continue;
     const [classe, texto] = cel;
     const bloco = cel.length >= 3 ? cel[2] : null;
-    /* O estado só se lê quando é um dos dois nomes: uma célula com outra coisa
+    /* O estado só se lê quando é um dos nomes reconhecidos, incluindo a condição
+       estreita dos dois rótulos FP1: uma célula com outra coisa
        lá dentro fica `null`, e o portão diz que a linha não tem estado. Adivinhar
        o estado de uma linha mal escrita seria o contrário do que esta coluna
        existe para fazer. */
     const cru4 = cel.length >= 4 ? cel[3] : null;
-    const estado = cru4 && ESTADOS_DO_INVENTARIO.has(cru4) ? cru4 : null;
+    const estado = estadoDoInventario(cru4,bloco,texto);
     const razao = cel.length >= 5 && cel[4] && cel[4] !== '—' ? cel[4] : null;
     /* UMA FRASE RETIRADA NÃO ENTRA NO MAPA DAS CLASSES. O mapa é o que responde
        «esta frase está declarada, e com que classe»: uma frase retirada não está

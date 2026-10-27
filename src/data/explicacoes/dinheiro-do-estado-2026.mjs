@@ -86,9 +86,9 @@ const SEM_LINHAS_DOS_JUROS = { sem_linhas: 'juros|servico-da-divida|encargos-da-
 
 export const DINHEIRO_DO_ESTADO_2026 = {
   slug: 'dinheiro-do-estado-2026',
-  // publicado: dia da aterragem, 753e7ff0b, §1.170; escrita: dia da última reescrita.
+  // publicado: aterragem de 06.10, §1.170, fusão com main d51f831a9 (prova f3f988e70).
   publicado: '2026-10-06',
-  /** A data de escrita, que dá a ordem da lista das explicações (a mais recente primeiro). */
+  /** escrita conserva a redação inicial de 05.10 e ordena a lista; a reescrita aterrada a 12.10 está na §1.185. */
   escrita: '2026-10-05',
   titulo: {
     pt: ['Para onde vai o dinheiro do Estado em ', { periodo: F('01') }],

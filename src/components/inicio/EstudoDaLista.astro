@@ -18,7 +18,7 @@ const r = ROTULOS_B1[lang];
 ---
 <article class="estudo-item pais-estudo" data-estudo={e.work.slug} data-estudo-edicao={`${e.work.slug}/${e.edicao.lang}`}>
   <h3 class="estudo-item-titulo"><TituloDeTrabalho as="a" href={e.rota} edicao={e.edicao} lang={lang} />
-    {mostrarEmCurso && carimboDaConstrucao() && estudoNovo(e.data, carimboDaConstrucao().construido_em) && <span class="estudo-lingua" data-estudo-novo data-voz>{FP1[lang].novo}</span>}
+    {mostrarEmCurso && carimboDaConstrucao() && estudoNovo(e.data, carimboDaConstrucao().construido_em) && <Fragment>{' '}<span class="estudo-lingua" data-estudo-novo data-voz>{FP1[lang].novo}</span></Fragment>}
     {e.edicao.lang !== lang && <span class="estudo-lingua"> {r.outraLingua}</span>}
   </h3>
   <p class="estudo-meta"><span>{e.lugar}</span><span>{e.tema}</span><span>{e.data ? <>{r.publicado}{' '}<time datetime={e.data} data-nonledger="data-do-repositorio">{dataDaCasa(e.data)}</time></> : r.edicaoPreparacao}</span>{mostrarEmCurso && e.work.emCurso && <span data-estudo-em-curso>{t(lang).primeira.emCurso.replace('{ano}', e.work.emCurso.ate?.slice(0, 4) ?? '[verify]')}</span>}</p>

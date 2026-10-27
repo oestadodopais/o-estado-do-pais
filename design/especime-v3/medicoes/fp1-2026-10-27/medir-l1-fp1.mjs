@@ -6,6 +6,9 @@ import {spawnSync} from 'node:child_process';
 import {parse} from 'node-html-parser';
 const AQUI='design/especime-v3/medicoes/fp1-2026-10-27';
 const base=JSON.parse(fs.readFileSync(`${AQUI}/l1-base.json`,'utf8'));
+const estado=spawnSync('git',['status','--porcelain'],{encoding:'utf8'});
+assert.equal(estado.status,0,'FP1-e: não foi possível conferir o estado do Git');
+assert.equal(estado.stdout.trim(),'','FP1-e: a medição exige uma worktree limpa e comitada');
 const corrida=spawnSync('node',['scripts/check-lugar.mjs'],{encoding:'utf8',env:{...process.env,AMOSTRA:'5000'},maxBuffer:1<<28});
 if (corrida.status !== 0) { console.error('FP1: check:lugar recusou, código', corrida.status); process.exit(corrida.status ?? 1); }
 const versao=JSON.parse(fs.readFileSync('dist/version.json','utf8'));

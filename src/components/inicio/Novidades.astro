@@ -5,6 +5,8 @@ import { VERIFICACAO } from '../../data/verificacao.mjs';
 import { FP1 } from '../../data/rotulos-fp1.mjs';
 import { dataDaCasa } from '../../lib/datas.mjs';
 import TituloDeTrabalho from '../TituloDeTrabalho.astro';
+import Provenance from '../Provenance.astro';
+import { htmlDaAtualizacao } from '../../lib/atualizacao-da-novidade.mjs';
 import FraseDaExplicacao from '../explicacoes/FraseDaExplicacao.astro';
 const { lang = 'pt' } = Astro.props;
 const r = FP1[lang];
@@ -18,7 +20,7 @@ const dia = carimbo?.construido_em.slice(0,10);
     {pecas.map(e => <li data-novidade={e.id}>
       <time datetime={e.data} data-nonledger="data-editorial" data-data-origem={e.origem}>{dataDaCasa(e.data)}</time>
       <span class="pp-novidade-tipo" data-voz>{r[e.tipo]}</span>
-      <a href={e.rota} data-novidade-porta>{e.prefixo && <span data-voz>{e.prefixo}</span>}{e.edicao ? <TituloDeTrabalho edicao={e.edicao} lang={lang} /> : <FraseDaExplicacao partes={e.titulo} lang={lang} selos={false} />}</a>
+      {e.atualizacao ? <span data-correcao-entrada={e.atualizacao.claim}><a href={e.rota} data-novidade-porta set:html={htmlDaAtualizacao(e.atualizacao)} />{' '}<Provenance id={e.atualizacao.claim} lang={lang} inline /></span> : <a href={e.rota} data-novidade-porta>{e.edicao ? <TituloDeTrabalho edicao={e.edicao} lang={lang} /> : <FraseDaExplicacao partes={e.titulo} lang={lang} selos={false} />}</a>}
     </li>)}
   </ol>
   <p class="pp-data" data-atualizacao><span data-voz>{r.atualizado}</span>{' '}<time datetime={dia} data-nonledger="data-editorial" data-data-origem="version.construido_em">{dataDaCasa(dia)}</time>{' · '}<span data-voz>{r.relidos}</span>{' '}<time datetime={VERIFICACAO.verificadoEm} data-nonledger="data-editorial" data-data-origem="verificacao.verificadoEm">{dataDaCasa(VERIFICACAO.verificadoEm)}</time></p>
