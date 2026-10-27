@@ -58,4 +58,31 @@ export const MUDANCAS_DO_PROJETO = [
       en: 'In the study “Penalizações por Reforma Antecipada em Portugal”, the sentence explaining the multiple between the legal penalty with the sustainability factor and the neutral reduction made the calculation with the rounded value, and that calculation did not give the multiple the sentence announced; the sentence now makes the calculation with the value before rounding. A list of career brackets gained the word “anos” in two of them. No value in the study changed.',
     },
   },
+  {
+    /* A FRASE DA SAÚDE COM A MEDIDA DE CADA NÚMERO (OG1-B0, 27.10.2026, decisão da §1.206).
+       Nenhum valor mudou: a frase juntava duas medidas sem as nomear. */
+    id: 'saude-medidas-na-conclusao-2026-10-27',
+    data: '2026-10-27',
+    decisao: '1.206',
+    texto: {
+      pt: [
+        'A conclusão do item sobre o orçamento da Saúde juntava numa frase a descida da despesa total, ',
+        { claim: 'der-saude-total-reducao-abs', sufixo: ' milhões de euros' },
+        ', e a subida fora do PRR da despesa efetiva, ',
+        { claim: 'der-saude-variacao-sem-prr', sufixo: ' milhões' },
+        ', que são medidas diferentes; a frase passou a dizer a medida de cada número e a variação da despesa efetiva, ',
+        { claim: 'der-saude-variacao-efetiva', sufixo: ' milhões' },
+        '. Nenhum valor mudou. Apontado por uma leitura externa das páginas, dias antes.',
+      ],
+      en: [
+        'The conclusion of the item on the Health budget combined in one sentence the fall in total expenditure, ',
+        { claim: 'der-saude-total-reducao-abs', sufixo: ' million euros' },
+        ', and the rise outside the RRP of effective expenditure, ',
+        { claim: 'der-saude-variacao-sem-prr', sufixo: ' million' },
+        ', which are different measures; the sentence now names the measure of each figure and states the change in effective expenditure, ',
+        { claim: 'der-saude-variacao-efetiva', sufixo: ' million' },
+        '. No value changed. Pointed out by an external reading of the pages, days earlier.',
+      ],
+    },
+  },
 ];

@@ -1126,20 +1126,72 @@ export const OG1 = {
         {
           "paragrafo": {
             "pt": [
-              "Ao leitor: cada número desta página tem a sua fonte a um passo, e a apreciação da UTAO lê-se antes das intervenções do debate. Ao Ministério das Finanças: publicar a informação que fundamenta a estimativa dos ",
+              "Ao Governo: publicar, antes da votação final, o conteúdo e os mecanismos da medida de combate à fraude nos combustíveis, ",
               {
                 "claim": "pm-q3-2-r8-c0",
                 "sufixo": " milhões de euros"
               },
-              " dos combustíveis, que a UTAO não encontra na proposta. Ao Parlamento: pedir, na especialidade, o quadro da despesa líquida com e sem a flexibilidade para a defesa."
-            ],
-            "en": [
-              "To the reader: every number on this page has its source one step away, and the UTAO's appraisal is worth reading before the speeches. To the Finance Ministry: publish the information behind the ",
+              " de impacto em ",
+              {
+                "periodo": "pm-q3-3-r37-c3"
+              },
+              " numa proposta com um excedente de ",
+              {
+                "claim": "og1-utao-saldo-me-2027",
+                "sufixo": " milhões de euros"
+              },
+              ": sem essa informação fica limitada, nas palavras da UTAO, «",
+              {
+                "fragmento": "og1-utao-p42",
+                "campo": "excerpt",
+                "texto": "a avaliação da robustez da medida"
+              },
+              "». Ao Parlamento: na especialidade, pedir essa informação antes da votação final e não dar os ",
               {
                 "claim": "pm-q3-2-r8-c0",
-                "sufixo": " million euro"
+                "sufixo": " milhões de euros"
               },
-              " fuel estimate, which the UTAO does not find in the proposal. To Parliament: ask, at the detailed stage, for the net expenditure table with and without the defence flexibility."
+              " por certos sem ela, e pedir ao Governo o cenário em que o emprego cresce menos do que o previsto, porque «",
+              {
+                "fragmento": "og1-utao-p15",
+                "campo": "excerpt",
+                "texto": "Se o emprego crescer menos, as bases da receita fiscal e contributiva ficarão abaixo do previsto"
+              },
+              "»."
+            ],
+            "en": [
+              "To the Government: publish, before the final vote, the content and the mechanisms of the fuel anti-fraud measure, ",
+              {
+                "claim": "pm-q3-2-r8-c0",
+                "sufixo": " million euros"
+              },
+              " of impact in ",
+              {
+                "periodo": "pm-q3-3-r37-c3"
+              },
+              " in a proposal with a surplus of ",
+              {
+                "claim": "og1-utao-saldo-me-2027",
+                "sufixo": " million euros"
+              },
+              ": without that information, in the UTAO's words, «",
+              {
+                "fragmento": "og1-utao-p42",
+                "campo": "excerpt",
+                "texto": "a avaliação da robustez da medida"
+              },
+              "» (the assessment of the measure's robustness) is limited. To Parliament: at the detailed stage, ask for that information before the final vote and do not take the ",
+              {
+                "claim": "pm-q3-2-r8-c0",
+                "sufixo": " million euros"
+              },
+              " as given without it, and ask the Government for the scenario in which employment grows less than forecast, because «",
+              {
+                "fragmento": "og1-utao-p15",
+                "campo": "excerpt",
+                "texto": "Se o emprego crescer menos, as bases da receita fiscal e contributiva ficarão abaixo do previsto"
+              },
+              "» (if employment grows less, the tax and contribution revenue bases will fall short of the forecast)."
             ]
           }
         }
@@ -1155,32 +1207,246 @@ export const OG1 = {
         {
           "paragrafo": {
             "pt": [
-              "«Alinhadas",
-              "» não descreve uma apreciação que duvida do emprego, do petróleo e da maior medida de receita, e que só fecha o desvio da despesa com a flexibilidade para a defesa, e só nos números do Ministério. A frase «",
+              "O orçamento que vai a votos tem um excedente de ",
+              {
+                "claim": "pm-q3-3-r37-c3",
+                "sufixo": " %"
+              },
+              " do PIB (",
+              {
+                "claim": "og1-utao-saldo-me-2027",
+                "sufixo": " milhões de euros"
+              },
+              ") em contabilidade nacional, nas previsões do Governo, e assenta em três pressupostos que a UTAO põe em dúvida, os mesmos que a conclusão acima nomeia: uma receita de ",
+              {
+                "claim": "pm-q3-2-r8-c0",
+                "sufixo": " milhões de euros"
+              },
+              " da medida dos combustíveis sem «",
+              {
+                "fragmento": "og1-utao-p42",
+                "campo": "excerpt",
+                "texto": "informação suficientemente detalhada sobre o seu conteúdo e os mecanismos de implementação"
+              },
+              "»; um emprego cuja previsão («",
+              {
+                "fragmento": "og1-utao-p15",
+                "campo": "excerpt",
+                "texto": "O crescimento do emprego de 1,4% em 2027"
+              },
+              "») a UTAO acha «",
+              {
+                "fragmento": "og1-utao-p15",
+                "campo": "excerpt",
+                "texto": "difícil de conciliar com o abrandamento recente da imigração líquida"
+              },
+              "»; e um petróleo a ",
+              {
+                "claim": "og1-utao-brent-mf-2027",
+                "sufixo": " dólares por barril"
+              },
+              ", quando os contratos para ",
+              {
+                "periodo": "pm-q3-3-r37-c3"
+              },
+              " estavam ",
+              {
+                "claim": "og1-utao-brent-diferenca",
+                "sufixo": " %"
+              },
+              " acima a ",
+              {
+                "fragmento": "og1-utao-brent-diferenca",
+                "campo": "excerpt",
+                "texto": "16"
+              },
+              " de outubro. A previsão já tem os juros a subir ",
+              {
+                "claim": "og1-utao-juros-variacao",
+                "sufixo": " %"
+              },
+              ", para ",
+              {
+                "claim": "og1-utao-juros-montante",
+                "sufixo": " mil milhões de euros"
+              },
+              ". Quando ",
+              {
+                "literal": "og1-governo-rtp-previsoes",
+                "campo": "attributed_to"
+              },
+              ", ministro das Finanças, diz que as previsões «",
+              {
+                "fragmento": "og1-governo-rtp-previsoes",
+                "campo": "excerpt",
+                "texto": "estão perfeitamente alinhadas com as previsões do Governo, têm diferenças muito pequenas"
+              },
+              "», fala das revisões das previsões para a economia; no emprego, a previsão do Governo é, nas palavras da UTAO, «",
+              {
+                "fragmento": "og1-utao-p15",
+                "campo": "excerpt",
+                "texto": "a mais elevada das instituições de referência"
+              },
+              "». As medidas já em vigor têm um impacto adicional de ",
+              {
+                "claim": "og1-utao-politicas-saldo",
+                "sufixo": " milhões de euros"
+              },
+              " no saldo de ",
+              {
+                "periodo": "pm-q3-3-r37-c3"
+              },
+              " (",
+              {
+                "claim": "og1-utao-politicas-peso",
+                "sufixo": " %"
+              },
+              " do PIB) e as medidas novas valem ",
+              {
+                "claim": "og1-utao-novas-saldo",
+                "sufixo": " milhões de euros"
+              },
+              ": o que muda em ",
+              {
+                "periodo": "pm-q3-3-r37-c3"
+              },
+              " vem sobretudo do que já estava em vigor. «",
               {
                 "fragmento": "og1-pcp-comite",
                 "campo": "excerpt",
                 "texto": "um frete ao capital e um desastre para o País"
               },
-              "» não se mede, e este projeto não a avalia. O que se mede diz isto: um orçamento quase equilibrado nas previsões do Governo, assente em pressupostos que a entidade técnica do próprio Parlamento põe em dúvida. A ",
+              "», diz o ",
+              {
+                "literal": "og1-pcp-comite",
+                "campo": "attributed_to"
+              },
+              "; é um juízo, e um juízo não se mede. O que se mede diz que é um orçamento equilibrado por um fio. O que a UTAO escreve sobre o risco dos juros e das taxas de juro entra aqui a ",
               {
                 "periodo": "oe-2027-calendario-generalidade"
               },
-              ", depois do voto, esta página ganha o registo da votação e as intervenções do Diário da Assembleia, e muda se os números mudarem."
+              ", depois do voto, com o registo da votação e as intervenções do Diário da Assembleia."
             ],
             "en": [
-              "«Aligned",
-              "» does not describe an appraisal that doubts employment, oil and the largest revenue measure, and that closes the spending deviation only with the defence flexibility, and only on the Ministry's figures. The sentence «",
+              "The budget going to the vote has a surplus of ",
+              {
+                "claim": "pm-q3-3-r37-c3",
+                "sufixo": " %"
+              },
+              " of GDP (",
+              {
+                "claim": "og1-utao-saldo-me-2027",
+                "sufixo": " million euros"
+              },
+              ") in national accounts, in the Government's forecasts, and rests on three assumptions the UTAO calls into question, the same three the conclusion above names: ",
+              {
+                "claim": "pm-q3-2-r8-c0",
+                "sufixo": " million euros"
+              },
+              " of revenue from the fuel measure without «",
+              {
+                "fragmento": "og1-utao-p42",
+                "campo": "excerpt",
+                "texto": "informação suficientemente detalhada sobre o seu conteúdo e os mecanismos de implementação"
+              },
+              "» (sufficiently detailed information on its content and implementation mechanisms); employment whose forecast («",
+              {
+                "fragmento": "og1-utao-p15",
+                "campo": "excerpt",
+                "texto": "O crescimento do emprego de 1,4% em 2027"
+              },
+              "», employment growth in the budget year) the UTAO finds «",
+              {
+                "fragmento": "og1-utao-p15",
+                "campo": "excerpt",
+                "texto": "difícil de conciliar com o abrandamento recente da imigração líquida"
+              },
+              "» (hard to reconcile with the recent slowdown in net immigration); and oil at ",
+              {
+                "claim": "og1-utao-brent-mf-2027",
+                "sufixo": " dollars per barrel"
+              },
+              ", when the ",
+              {
+                "periodo": "pm-q3-3-r37-c3"
+              },
+              " contracts stood ",
+              {
+                "claim": "og1-utao-brent-diferenca",
+                "sufixo": " %"
+              },
+              " above on ",
+              {
+                "fragmento": "og1-utao-brent-diferenca",
+                "campo": "excerpt",
+                "texto": "16"
+              },
+              " October. The forecast already has interest rising ",
+              {
+                "claim": "og1-utao-juros-variacao",
+                "sufixo": " %"
+              },
+              ", to ",
+              {
+                "claim": "og1-utao-juros-montante",
+                "sufixo": " billion euros"
+              },
+              ". When ",
+              {
+                "literal": "og1-governo-rtp-previsoes",
+                "campo": "attributed_to"
+              },
+              ", Finance Minister, says the forecasts «",
+              {
+                "fragmento": "og1-governo-rtp-previsoes",
+                "campo": "excerpt",
+                "texto": "estão perfeitamente alinhadas com as previsões do Governo, têm diferenças muito pequenas"
+              },
+              "» (are perfectly aligned with the Government's forecasts, with very small differences), he is speaking of the revisions of the forecasts for the economy; on employment, the Government's forecast is, in the UTAO's words, «",
+              {
+                "fragmento": "og1-utao-p15",
+                "campo": "excerpt",
+                "texto": "a mais elevada das instituições de referência"
+              },
+              "» (the highest among the reference institutions). Measures already in force have an additional impact of ",
+              {
+                "claim": "og1-utao-politicas-saldo",
+                "sufixo": " million euros"
+              },
+              " on the ",
+              {
+                "periodo": "pm-q3-3-r37-c3"
+              },
+              " balance (",
+              {
+                "claim": "og1-utao-politicas-peso",
+                "sufixo": " %"
+              },
+              " of GDP) and the new measures are worth ",
+              {
+                "claim": "og1-utao-novas-saldo",
+                "sufixo": " million euros"
+              },
+              ": what changes in ",
+              {
+                "periodo": "pm-q3-3-r37-c3"
+              },
+              " comes mostly from what was already in force. «",
               {
                 "fragmento": "og1-pcp-comite",
                 "campo": "excerpt",
                 "texto": "um frete ao capital e um desastre para o País"
               },
-              "» cannot be measured, and this project does not judge it. What can be measured says this: a budget close to balance in the Government's forecasts, resting on assumptions that Parliament's own technical unit calls into question. On ",
+              "» (a favour to capital and a disaster for the country), says the ",
+              {
+                "literal": "og1-pcp-comite",
+                "campo": "attributed_to"
+              },
+              "; it is a judgement, and a judgement cannot be measured. What can be measured says this is a budget balanced by a thread. What the UTAO writes on the risk from interest and interest rates enters here on ",
               {
                 "periodo": "oe-2027-calendario-generalidade"
               },
-              ", after the vote, this page gains the voting record and the speeches from the Assembly's Diário, and changes if the numbers change."
+              ", after the vote, with the voting record and the speeches from the Assembly's Diário."
             ]
           }
         }

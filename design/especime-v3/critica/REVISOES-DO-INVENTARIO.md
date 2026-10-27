@@ -907,3 +907,15 @@ HB1-b, correção do diagnóstico: os três textos não eram rótulos rendidos; 
 | bloco | mudança | estado | nota |
 |---|---|---|---|
 | fp1 | Mobília da caixa de novidades e do cabeçalho do recibo nas duas línguas; a frase do período passa a incluir a data da construção | por ler | Cadeias recolhidas do HTML construído. `tests/inicio/novidades.mjs` confere as datas e as cinco plantas; a leitura cruzada pertence à direção. |
+
+| og1-b0 | Recomendação e opinião do Orçamento e conclusão da Saúde, nas duas edições; seis formas anteriores retiradas | por ler | Codex, 27.10.2026: redação dos mandatos OG1-B0 e OG1-B0-b, formas extraídas do HTML; leitura cruzada pendente da direção. |
+
+| og1-b0-d | Recomendação e opinião do Orçamento e frase portuguesa da Saúde após os três Major da M48 | por ler | Codex, 27.10.2026: redação do mandato OG1-B0-d; leitura curta final reservada à direção. |
+
+| og1-b0-f | Recomendação e opinião do Orçamento e unidades da Saúde nas duas edições após os três Major da M48 | por ler | Codex, 27.10.2026: redação do mandato OG1-B0-f; leitura curta final reservada à direção. |
+
+| og1-b0-g | Juros como facto selado e glosas da recomendação e opinião do Orçamento | por ler | Codex, 27.10.2026: redação do mandato OG1-B0-g; leitura curta final reservada à direção. |
+
+| og1-b0-h | Contraste limitado ao emprego, fecho revisto e opinião mais curta | por ler | Codex, 27.10.2026: redação do mandato OG1-B0-h; leitura curta final reservada à direção. |
+
+| og1-b0-i | Recomendação sobre a estimativa de receita, citação do emprego e risco no fecho | por ler | Codex, 27.10.2026: redação do mandato OG1-B0-i; leitura curta final reservada à direção. |

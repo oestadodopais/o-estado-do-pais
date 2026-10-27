@@ -1,0 +1,18 @@
+{
+  "passagem": "OG1-B0-e",
+  "ensaio": "Cópia em memória de OG1 com os tokens numéricos da glosa acrescentados apenas à edição inglesa; nenhum ficheiro de conteúdo alterado.",
+  "resultado": "X1 · as duas edições têm formas diferentes em seccoes[5].conteudo[0].paragrafo",
+  "regras": [
+    {
+      "ficheiro": "tests/explicacoes/explicacao.mjs",
+      "funcao": "folhasDaExplicacao",
+      "regra": "As duas edições exigem formas e fragmentos iguais."
+    },
+    {
+      "ficheiro": "src/lib/explicacoes.mjs",
+      "regra": "O texto fixo e o sufixo de fragmento recusam algarismos."
+    }
+  ],
+  "diagnostico_confirmado": true,
+  "build_executado": false
+}
