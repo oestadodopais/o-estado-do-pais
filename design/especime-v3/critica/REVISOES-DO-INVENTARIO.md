@@ -903,3 +903,5 @@ HB1-b, correção do diagnóstico: os três textos não eram rótulos rendidos; 
 | og1-a9 | Proveniência das afirmações, datas e redação do mandato A8 nas duas edições | por ler | Codex, 26.10.2026: formas recolhidas do HTML; leitura cruzada pendente da direção. |
 
 | og1-b0 | Recomendação e opinião do Orçamento e conclusão da Saúde, nas duas edições; seis formas anteriores retiradas | por ler | Codex, 27.10.2026: redação dos mandatos OG1-B0 e OG1-B0-b, formas extraídas do HTML; leitura cruzada pendente da direção. |
+
+| og1-b0-d | Recomendação e opinião do Orçamento e frase portuguesa da Saúde após os três Major da M48 | por ler | Codex, 27.10.2026: redação do mandato OG1-B0-d; leitura curta final reservada à direção. |

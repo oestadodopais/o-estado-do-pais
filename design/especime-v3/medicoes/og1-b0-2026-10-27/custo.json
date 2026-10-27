@@ -13,9 +13,16 @@
     },
     {
       "id": "OG1-B0-c",
-      "chamadas_de_ferramentas": 32,
+      "chamadas_de_ferramentas": 34,
+      "contagem_ate": "resposta final da passagem OG1-B0-c, incluindo commit e verificação",
+      "corridas_de_conferencias": 11,
+      "chamadas_ate_fecho_anterior": 32
+    },
+    {
+      "id": "OG1-B0-d",
+      "chamadas_de_ferramentas": 20,
       "contagem_ate": "fecho do relatório, antes do pedido de commit e da sua verificação",
-      "corridas_de_conferencias": 11
+      "corridas_de_conferencias": 6
     }
   ],
   "criterio_corridas": "Invocações no topo: três build, ledger:check, typecheck, check:palavras, check:frases-compostas, primeira estática, duas tentativas do verificador do HTML e uma resolução dos tokens. Os subcomandos do build não são contados de novo. Acrescentam-se sete comandos na retoma da cadeia do build, desde check:voz até check:discussao; seis passaram, o último falhou.",
@@ -35,10 +42,10 @@
     "ledger:check": 0,
     "check:pais": 0,
     "typecheck": 0,
-    "check:frases-compostas": null,
-    "check:primeira": null,
     "verificacao_renderizado": 0,
-    "verificacao_porta": 0
+    "verificacao_porta": 0,
+    "check:frases-compostas": null,
+    "check:primeira": null
   },
   "limites": {
     "check:frases-compostas": "Reservado pelo mandato OG1-B0-c à corrida da direção fora da sandbox. Na passagem anterior, listen EPERM: operation not permitted 127.0.0.1.",
@@ -60,7 +67,7 @@
     "primeira_estatica": 6,
     "retoma_cadeia_build": 119
   },
-  "estado": "Edição e verificações pedidas concluídas; partes de navegador reservadas à direção.",
+  "estado": "Três Major do mandato resolvidos na redação; conferências pedidas a zero; navegador reservado à direção.",
   "historico_codigos_OG1_B0_b": {
     "build": 1,
     "check:discussao": 1,
@@ -97,5 +104,34 @@
     0,
     1
   ],
-  "nota_OG1_B0_c": "O primeiro ensaio incluía identificadores de correções históricas e gerava três portas. A seleção foi restringida aos valores citados na prosa editorial. A construção final e todas as verificações pedidas passaram."
+  "nota_OG1_B0_c": "O primeiro ensaio incluía identificadores de correções históricas e gerava três portas. A seleção foi restringida aos valores citados na prosa editorial. A construção final e todas as verificações pedidas passaram.",
+  "historico_codigos_OG1_B0_c": {
+    "build": 0,
+    "check:discussao": 0,
+    "check:voz": 0,
+    "check:palavras": 0,
+    "check:lingua": 0,
+    "gate:html": 0,
+    "check:registo": 0,
+    "ledger:check": 0,
+    "check:pais": 0,
+    "typecheck": 0,
+    "check:frases-compostas": null,
+    "check:primeira": null,
+    "verificacao_renderizado": 0,
+    "verificacao_porta": 0
+  },
+  "chamadas_quatro_passagens_ate_fecho": 111,
+  "corridas_quatro_passagens": 35,
+  "criterio_corridas_OG1_B0_d": "Uma resolução dos tokens, um build integral, check:palavras, typecheck e duas verificações do HTML (transcrição e porta). Os subcomandos do build não são contados de novo.",
+  "tentativas_build_OG1_B0_d": [
+    0
+  ],
+  "segundos_medidos_OG1_B0_d": [
+    405,
+    227,
+    0,
+    1,
+    0
+  ]
 }
