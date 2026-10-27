@@ -1,0 +1,359 @@
+{
+  "fp1": {
+    "build_base": 0,
+    "build_alterado": 1,
+    "check_formas_alterado": 1,
+    "check_primeira_estatico": 0,
+    "fp1_novidades": 0,
+    "medicao_l1_base": 0,
+    "medicao_l1_fp1": 0,
+    "inventario_medicao": 0,
+    "typecheck_antes_dos_ultimos_acertos": 0,
+    "check_voz_final": null,
+    "check_palavras": null,
+    "check_lingua_final": null,
+    "check_navegacao_final": null,
+    "check_cartao": null,
+    "check_lugar_codigo_completo_final": null,
+    "check_indice_do_sitio": null,
+    "check_indice": null,
+    "check_frases_compostas": null,
+    "capturas": null,
+    "commit": null
+  },
+  "fp1_b": {
+    "build_a": 1,
+    "build_b": 1,
+    "check_formas_build_b": 0,
+    "gate_html_build_b": 0,
+    "check_datas_build_b": 0,
+    "check_registo_build_b": 0,
+    "ledger_check_build_b": 0,
+    "check_voz_correcao": 0,
+    "datas_do_recibo": {
+      "codigo": 0,
+      "paginas": 8228,
+      "sem_periodo": 44,
+      "com_painel": 182,
+      "plantas": 3
+    },
+    "metodo_dos_codigos_internos": "A cadeia && avançou para o passo seguinte.",
+    "build_c": 0,
+    "conferencias_isoladas": {
+      "check:voz": {
+        "codigo": 0,
+        "segundos": 58.25,
+        "registo": "fp1b-check-voz.log"
+      },
+      "check:palavras": {
+        "codigo": 0,
+        "segundos": 245.89,
+        "registo": "fp1b-check-palavras.log"
+      },
+      "check:lingua": {
+        "codigo": 0,
+        "segundos": 8.92,
+        "registo": "fp1b-check-lingua.log"
+      },
+      "check:navegacao": {
+        "codigo": 0,
+        "segundos": 14.11,
+        "registo": "fp1b-check-navegacao.log"
+      },
+      "check:cartao": {
+        "codigo": 1,
+        "segundos": 26.57,
+        "registo": "fp1b-check-cartao.log"
+      }
+    },
+    "check_primeira_inteira": null,
+    "check_lugar_codigo_completo": null,
+    "check_indice_do_sitio": null,
+    "check_indice": null,
+    "check_frases_compostas": null,
+    "typecheck_final": null,
+    "capturas": null,
+    "commit": null,
+    "paragem": "RP4N-h: o recibo não distingue alojamento de leitura na fonte (pt)",
+    "codigos_na_cadeia_build_c": {
+      "check:formas": 0,
+      "gate:html": 0,
+      "check:datas": 0,
+      "check:registo": 0,
+      "ledger:check": 0,
+      "check:voz": 0,
+      "check:lingua": 0,
+      "check:navegacao": 0,
+      "check:discussao": 0
+    }
+  },
+  "fp1_c": {
+    "build": 0,
+    "build_segundos": 408,
+    "codigos_na_cadeia_build": {
+      "check:formas": 0,
+      "gate:html": 0,
+      "check:datas": 0,
+      "check:registo": 0,
+      "ledger:check": 0,
+      "check:voz": 0,
+      "check:lingua": 0,
+      "check:navegacao": 0,
+      "check:discussao": 0
+    },
+    "conferencias_isoladas": {
+      "check:cartao": {
+        "codigo": 0,
+        "segundos": 43.02,
+        "registo": "fp1c-check-cartao.log",
+        "recusa_permissao": false
+      },
+      "check:lugar": {
+        "codigo": 0,
+        "segundos": 44.03,
+        "registo": "fp1c-check-lugar.log",
+        "recusa_permissao": false
+      },
+      "check:indice-do-sitio": {
+        "codigo": 0,
+        "segundos": 22.22,
+        "registo": "fp1c-check-indice-do-sitio.log",
+        "recusa_permissao": false
+      },
+      "check:indice": {
+        "codigo": 1,
+        "segundos": 29.29,
+        "registo": "fp1c-check-indice.log",
+        "recusa_permissao": true
+      },
+      "typecheck": {
+        "codigo": 0,
+        "segundos": 0.39,
+        "registo": "fp1c-typecheck.log",
+        "recusa_permissao": false
+      },
+      "check:primeira": {
+        "codigo": 1,
+        "segundos": 6.14,
+        "registo": "fp1c-check-primeira.log",
+        "recusa_permissao": true
+      },
+      "check:frases-compostas": {
+        "codigo": 1,
+        "segundos": 0.26,
+        "registo": "fp1c-check-frases-compostas.log",
+        "recusa_permissao": true
+      }
+    },
+    "capturas": 0,
+    "paginas_capturadas": 30,
+    "recortes_capturados": 20,
+    "transbordos": 0,
+    "commit": "pedido ao escrivão depois de fechar este relatório; resultado na resposta da passagem",
+    "datas_do_recibo": {
+      "codigo": 0,
+      "paginas": 8228,
+      "sem_periodo": 44,
+      "com_painel": 182,
+      "copias_alojadas": 4,
+      "plantas": 5
+    }
+  },
+  "fp1_d": {
+    "acertos": {
+      "typecheck_pre": 1,
+      "typecheck_pre2": 0,
+      "build_a": 1,
+      "gate_html_isolado": 0,
+      "check_datas_isolado": 0,
+      "check_voz_a": 1,
+      "check_voz_final": 0,
+      "sem_carimbo_auxiliar": 0
+    },
+    "build_final": 0,
+    "build_segundos": 417,
+    "codigos_na_cadeia_build": {
+      "check:formas": 0,
+      "gate:html": 0,
+      "check:datas": 0,
+      "check:registo": 0,
+      "ledger:check": 0,
+      "check:voz": 0,
+      "check:lingua": 0,
+      "check:navegacao": 0,
+      "check:discussao": 0
+    },
+    "conferencias_isoladas": {
+      "check:voz": {
+        "codigo": 0,
+        "segundos": 54.44,
+        "registo": "fp1d-check-voz.log",
+        "recusa_permissao": false
+      },
+      "check:palavras": {
+        "codigo": 0,
+        "segundos": 215.82,
+        "registo": "fp1d-check-palavras.log",
+        "recusa_permissao": false
+      },
+      "check:lingua": {
+        "codigo": 0,
+        "segundos": 8.53,
+        "registo": "fp1d-check-lingua.log",
+        "recusa_permissao": false
+      },
+      "check:navegacao": {
+        "codigo": 0,
+        "segundos": 13.5,
+        "registo": "fp1d-check-navegacao.log",
+        "recusa_permissao": false
+      },
+      "check:cartao": {
+        "codigo": 0,
+        "segundos": 38.94,
+        "registo": "fp1d-check-cartao.log",
+        "recusa_permissao": false
+      },
+      "check:lugar": {
+        "codigo": 0,
+        "segundos": 41.88,
+        "registo": "fp1d-check-lugar.log",
+        "recusa_permissao": false
+      },
+      "check:indice-do-sitio": {
+        "codigo": 0,
+        "segundos": 21.18,
+        "registo": "fp1d-check-indice-do-sitio.log",
+        "recusa_permissao": false
+      },
+      "check:indice": {
+        "codigo": 1,
+        "segundos": 22.93,
+        "registo": "fp1d-check-indice.log",
+        "recusa_permissao": true
+      },
+      "typecheck": {
+        "codigo": 0,
+        "segundos": 0.39,
+        "registo": "fp1d-typecheck.log",
+        "recusa_permissao": false
+      },
+      "check:primeira": {
+        "codigo": 1,
+        "segundos": 5.87,
+        "registo": "fp1d-check-primeira.log",
+        "recusa_permissao": true
+      },
+      "check:frases-compostas": {
+        "codigo": 1,
+        "segundos": 0.25,
+        "registo": "fp1d-check-frases-compostas.log",
+        "recusa_permissao": true
+      }
+    },
+    "medicao_l1": 0,
+    "capturas": 0,
+    "paginas_capturadas": 30,
+    "recortes_capturados": 20,
+    "transbordos": 0,
+    "plantas_novidades": 19,
+    "plantas_recibos": 8,
+    "plantas_editoriais": 2,
+    "plantas_l1": 5,
+    "commit": "pedido após fechar os artefactos; resultado na resposta final"
+  },
+  "fp1_e": {
+    "build_inicial": 1,
+    "check_voz_intermedio": 1,
+    "conferencias": {
+      "check:css": {
+        "codigo": 0,
+        "segundos": 6.77,
+        "registo": "fp1e-check-css.log",
+        "recusa_permissao": false
+      },
+      "check:alvos": {
+        "codigo": 1,
+        "segundos": 0.73,
+        "registo": "fp1e-check-alvos.log",
+        "recusa_permissao": true
+      },
+      "check:primeira:estatica": {
+        "codigo": 0,
+        "segundos": 5.11,
+        "registo": "fp1e-check-primeira-estatica.log",
+        "recusa_permissao": false
+      },
+      "check:datas": {
+        "codigo": 0,
+        "segundos": 7.63,
+        "registo": "fp1e-check-datas.log",
+        "recusa_permissao": false
+      },
+      "check:voz": {
+        "codigo": 0,
+        "segundos": 55.82,
+        "registo": "fp1e-check-voz.log",
+        "recusa_permissao": false
+      },
+      "check:palavras": {
+        "codigo": 0,
+        "segundos": 223.61,
+        "registo": "fp1e-check-palavras.log",
+        "recusa_permissao": false
+      },
+      "check:lingua": {
+        "codigo": 0,
+        "segundos": 8.92,
+        "registo": "fp1e-check-lingua.log",
+        "recusa_permissao": false
+      },
+      "check:navegacao": {
+        "codigo": 0,
+        "segundos": 14.06,
+        "registo": "fp1e-check-navegacao.log",
+        "recusa_permissao": false
+      },
+      "check:cartao": {
+        "codigo": 0,
+        "segundos": 40.43,
+        "registo": "fp1e-check-cartao.log",
+        "recusa_permissao": false
+      },
+      "check:lugar": {
+        "codigo": 0,
+        "segundos": 45.07,
+        "registo": "fp1e-check-lugar.log",
+        "recusa_permissao": false
+      },
+      "check:indice-do-sitio": {
+        "codigo": 0,
+        "segundos": 22.21,
+        "registo": "fp1e-check-indice-do-sitio.log",
+        "recusa_permissao": false
+      },
+      "check:registo": {
+        "codigo": 0,
+        "segundos": 1.63,
+        "registo": "fp1e-check-registo.log",
+        "recusa_permissao": false
+      },
+      "ledger:check": {
+        "codigo": 0,
+        "segundos": 14.15,
+        "registo": "fp1e-ledger-check.log",
+        "recusa_permissao": false
+      },
+      "typecheck": {
+        "codigo": 0,
+        "segundos": 0.35,
+        "registo": "fp1e-typecheck.log",
+        "recusa_permissao": false
+      }
+    },
+    "build_comitado": 0,
+    "l1_medicao": 0,
+    "capturas": 0,
+    "cabeca_conferida": "94dbf653d28708c3fbfbd0ab18cef24f5706e75f"
+  }
+}

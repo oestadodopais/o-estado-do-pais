@@ -639,3 +639,7 @@
   line-height: 1.62;
   letter-spacing: normal;
 }
+
+/* FP1: as datas do recibo, uma por linha. */
+.linha-datas { font-family: var(--f-instr); font-size: 13px; line-height: 1.5; color: var(--muted); margin: 12px 0; }
+.linha-datas p { margin: 2px 0; }

@@ -400,7 +400,7 @@ const foraDasMarcas = (el) => {
 const textoLido = (el) => {
   if (!el) return null;
   const c = parse(el.outerHTML);
-  c.querySelectorAll('.src-chip').forEach((n) => n.remove());
+  c.querySelectorAll('.src-chip, [data-fp1-periodo]').forEach((n) => n.remove());
   return normal(c.textContent);
 };
 /** As percentagens escritas num estilo: `margin-left`, `width`, `bottom`, `height`. @param {string} estilo */
@@ -446,6 +446,13 @@ export function conferirBlocosDaPagina(root, lang, rota, { ids, primeira = false
     const b = blocos.find((x) => x.id === id);
     if (!b || !esperados.includes(id)) continue;
     contas.blocos_mostrados++;
+    // FP1: só a data ligada ao valor sai da comparação da prosa, nunca palavras novas.
+    for (const p of el.querySelectorAll('[data-fp1-periodo], [data-fp1-barra-periodo]')) {
+      const linha = p.getAttribute('data-fp1-periodo') ?? p.getAttribute('data-fp1-barra-periodo');
+      const d = p.querySelector('[data-de-campo="reference_date"]');
+      const esperado = dataAqui(String(linhas.get(linha)?.reference_date), lang);
+      if (!d || d.getAttribute('data-de-linha') !== linha || normal(d.textContent) !== esperado || normal(p.textContent) !== (p.hasAttribute('data-fp1-periodo') ? `(${esperado})` : esperado)) falha(id, `FP1: período junto do valor de ${linha} diferente da linha`);
+    }
     const declaradas = linhasDeclaradasDoBloco(b);
     let resolvido;
     try { resolvido = blocoResolvido(id, lang); } catch (e) { falha(id, `o resolvedor não resolve o bloco: ${e instanceof Error ? e.message : e}`); continue; }

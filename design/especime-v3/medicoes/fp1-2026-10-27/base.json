@@ -1,0 +1,44 @@
+{
+  "versao": {
+    "commit": "6c6ae4313933e60531a75b6868cdace80a14fdc0",
+    "ref": "fp1-2026-10-27",
+    "env": "local",
+    "origem": "git",
+    "motivo": null,
+    "construido_em": "2026-10-27T11:02:00.207Z"
+  },
+  "blocos": [
+    {
+      "id": "precos",
+      "valores": 16,
+      "periodos": 10
+    },
+    {
+      "id": "casa",
+      "valores": 14,
+      "periodos": 12
+    },
+    {
+      "id": "trabalho",
+      "valores": 16,
+      "periodos": 14
+    },
+    {
+      "id": "estado",
+      "valores": 6,
+      "periodos": 10
+    },
+    {
+      "id": "pobreza",
+      "valores": 10,
+      "periodos": 6
+    }
+  ],
+  "cartoes": 0,
+  "estudos": [
+    "01.10.2026",
+    "26.10.2026",
+    "20.10.2026"
+  ],
+  "build_codigo": 0
+}

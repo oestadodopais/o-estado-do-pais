@@ -119,6 +119,7 @@ const colunas = modelo.forma === 'colunas';
                         ) : (
                           <span data-voz>{s.cartao.uniaoEuropeia}</span>
                         )}
+                        <span class="pp-barra-periodo" data-fp1-barra-periodo={barra.linha}><DataDaLinha id={barra.linha} campo="reference_date" valor={String(getClaim(barra.linha).reference_date)} lang={lang} /></span>
                       </span>
                       <span class="pp-traco">
                         <span

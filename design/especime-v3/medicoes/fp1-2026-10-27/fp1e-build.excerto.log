@@ -1,0 +1,19 @@
+      "nome": "Ressalva: número inventado",
+      "nome": "Catálogo: ano inventado na citação",
+      "nome": "Catálogo: número inventado fora da citação",
+PLANTA HB1 referência inventada: vermelho 1, verde 0
+PLANTA HB1 publicação inventada: vermelho 1, verde 0
+FP1-e: time com origem válida fora do contexto recusado pelo caminho do portão; controlo dentro aceite; origem inventada recusada.
+PLANTA período: dia inventado num ano, texto divergente recusado
+      "queixa": "    \u001b[31m✗\u001b[0m data-linha-claim=\"divida-das-familias-2025-ue\" numa página que não é do livro-razão. Esta marca é dos campos de uma linha, na página dessa linha ou no índice.",
+      "queixa": "    \u001b[31m✗\u001b[0m [taxa-de-desemprego-2025.yml] história do valor: a lista tem 1 entradas e o registo sela 0.",
+      "queixa": "    \u001b[31m✗\u001b[0m [taxa-de-desemprego-mip-2025.yml] história do valor: a lista tem 1 entradas e o registo sela 0.",
+      "queixa": "    \u001b[31m✗\u001b[0m [correcoes-publicadas.yml] história do valor: a lista tem 6 entradas e o registo sela 0.",
+
+[31m  PORTÃO DA VOZ · 2 problema(s)
+[0m
+[31m    · [0mdesign/especime-v3/INVENTARIO-FRASES.md:5041: linha «viva» que não se rende em rota nenhuma. Ou a frase mudou e a linha ficou para trás, ou a rota saiu: nos dois casos a linha sai do ficheiro, ou passa a «retirada» com a razão escrita.
+      «atualização»
+[31m    · [0mdesign/especime-v3/INVENTARIO-FRASES.md:5062: linha «viva» que não se rende em rota nenhuma. Ou a frase mudou e a linha ficou para trás, ou a rota saiu: nos dois casos a linha sai do ficheiro, ou passa a «retirada» com a razão escrita.
+      «update»
+

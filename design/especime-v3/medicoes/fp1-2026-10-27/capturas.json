@@ -1,0 +1,749 @@
+{
+  "cabeca": "94dbf653d28708c3fbfbd0ab18cef24f5706e75f",
+  "capturador_sha256": "0befc596ce06466e936573ac45841b8cc16391fb39efc0cc3a54001bc156d812",
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "resultados": [
+    {
+      "ficheiro": "primeira-pt-390.png",
+      "rota": "/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 9395,
+      "sha256": "c2899e15999a7283e91a77a6993c9df512c718f67c113f2a1b2df68c3a9379d1",
+      "recortes": [
+        {
+          "ficheiro": "primeira-pt-390-topo.png",
+          "seletor": "[data-novidades]",
+          "origem": "primeira-pt-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 280,
+            "width": 354,
+            "height": 528
+          },
+          "sha256": "7e76dd694dbe29986f6fa085c4cbc0ab9a31aef423c0eaffd7499ac8debb9a03"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "primeira-pt-768.png",
+      "rota": "/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 7323,
+      "sha256": "1145767f99b60bbb5b9c2b1d899503ed20448c747c152f57d6e6dcfc8093ffcb",
+      "recortes": [
+        {
+          "ficheiro": "primeira-pt-768-topo.png",
+          "seletor": "[data-novidades]",
+          "origem": "primeira-pt-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 266,
+            "width": 708,
+            "height": 437
+          },
+          "sha256": "a466c9b0e0b7c8f73384c6a1353970759c650a9af5997f6d7a5e87010cf2d48a"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "primeira-pt-1024.png",
+      "rota": "/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 6392,
+      "sha256": "954ded4444242216d6028c87dd69e81e20e8395703cd9e09c773e840c20cfe8f",
+      "recortes": [
+        {
+          "ficheiro": "primeira-pt-1024-topo.png",
+          "seletor": "[data-novidades]",
+          "origem": "primeira-pt-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 247,
+            "width": 944,
+            "height": 329
+          },
+          "sha256": "2a387abc198711414ecc9ca244667d79e4130c61f38d64822a8860b739a83d5a"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "primeira-pt-1280.png",
+      "rota": "/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 6280,
+      "sha256": "18da0dcbdb99779ea2ab3c93c6871dd0215f0d7f5f20bca93b7604b475c99c10",
+      "recortes": [
+        {
+          "ficheiro": "primeira-pt-1280-topo.png",
+          "seletor": "[data-novidades]",
+          "origem": "primeira-pt-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 252,
+            "width": 1092,
+            "height": 337
+          },
+          "sha256": "b0cb7b9710722607a354fcfe7109add80291f9ffaff10d45076514d1f4e674d8"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "primeira-pt-1600.png",
+      "rota": "/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 6324,
+      "sha256": "a4474a2424f0eccf3aa9b9c7014850c6e64859181d50877dccd331fbc14e1f27",
+      "recortes": [
+        {
+          "ficheiro": "primeira-pt-1600-topo.png",
+          "seletor": "[data-novidades]",
+          "origem": "primeira-pt-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 252,
+            "width": 1092,
+            "height": 340
+          },
+          "sha256": "e242fb94908f7f3a1f4a6855ab20e2a42e55ce67cff4433995422dba472a80fd"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "primeira-en-390.png",
+      "rota": "/en/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 9275,
+      "sha256": "bfc6e19215f4a57d63d7dd335f07dffe0a4a66cef59b28d9eb0680ead8fa7a15",
+      "recortes": [
+        {
+          "ficheiro": "primeira-en-390-topo.png",
+          "seletor": "[data-novidades]",
+          "origem": "primeira-en-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 280,
+            "width": 354,
+            "height": 528
+          },
+          "sha256": "f1bbc7c41834c0b6d534b9e96d2894d39f42cd66220c43e6a7fdbf6b70e7843f"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "primeira-en-768.png",
+      "rota": "/en/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 7371,
+      "sha256": "c374dd55f7d6b47d04bee28d3fe2059fd92b7a762ac9c8b377e3587f1aec8800",
+      "recortes": [
+        {
+          "ficheiro": "primeira-en-768-topo.png",
+          "seletor": "[data-novidades]",
+          "origem": "primeira-en-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 266,
+            "width": 708,
+            "height": 437
+          },
+          "sha256": "4fb00f7030ff30c2ddb1ebd057fc80b8f227af3374bd182f6b24284782aa17ea"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "primeira-en-1024.png",
+      "rota": "/en/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 6481,
+      "sha256": "5dbea9c22b57475ab44587dda22f1c860a095840206c2e385028e91c7901da9c",
+      "recortes": [
+        {
+          "ficheiro": "primeira-en-1024-topo.png",
+          "seletor": "[data-novidades]",
+          "origem": "primeira-en-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 247,
+            "width": 944,
+            "height": 329
+          },
+          "sha256": "073f0da0919df59a8d2ce0d4281c0832f5aee511340f849800e53f11f74883af"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "primeira-en-1280.png",
+      "rota": "/en/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 6337,
+      "sha256": "23e834f1bd48d6f91282e961e8e9424a2d36e213cd09a66a1b11a7d8c44d2e9f",
+      "recortes": [
+        {
+          "ficheiro": "primeira-en-1280-topo.png",
+          "seletor": "[data-novidades]",
+          "origem": "primeira-en-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 252,
+            "width": 1092,
+            "height": 337
+          },
+          "sha256": "ba3705e1c7fe31ae71190b5c1828a52d7b6624243d73f8dc29bb19c5864add08"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "primeira-en-1600.png",
+      "rota": "/en/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 6381,
+      "sha256": "c1ad3267bb44153703552d6259aba9ef085114dc4195dd5b7ce5d0d462ed6279",
+      "recortes": [
+        {
+          "ficheiro": "primeira-en-1600-topo.png",
+          "seletor": "[data-novidades]",
+          "origem": "primeira-en-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 252,
+            "width": 1092,
+            "height": 340
+          },
+          "sha256": "a71e35f15e40f41dbfd4e82b5286cff4f9326d750a5756e95965b2f6568128ab"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-pt-390.png",
+      "rota": "/livro-razao/divida-publica-2025",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 4312,
+      "sha256": "68de07af7cc861b37e5e68d2209911bfb42a3e1c09e83b64ddc7815e9b298f39",
+      "recortes": [
+        {
+          "ficheiro": "recibo-pt-390-cabecalho.png",
+          "seletor": ".linha-cabeca",
+          "origem": "recibo-pt-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 277,
+            "width": 354,
+            "height": 592
+          },
+          "sha256": "c212605dcc45c37022de29ab20548164970b2fa313faf78164357e8af453e86c"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-pt-768.png",
+      "rota": "/livro-razao/divida-publica-2025",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3692,
+      "sha256": "86afef6b37a5b474d98209ae81200a58fd37e52d70e1dd0ab2058ec32b0e603a",
+      "recortes": [
+        {
+          "ficheiro": "recibo-pt-768-cabecalho.png",
+          "seletor": ".linha-cabeca",
+          "origem": "recibo-pt-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 260,
+            "width": 545,
+            "height": 574
+          },
+          "sha256": "a58db92dab0b454c7b65448c5abd8329181b74396d7769e35a86da6c2c1dcbde"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-pt-1024.png",
+      "rota": "/livro-razao/divida-publica-2025",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2553,
+      "sha256": "ff0e91128ed855b32ddf41eb96f22326f2b7a7f0f0dc626dd8908d9e71613edd",
+      "recortes": [
+        {
+          "ficheiro": "recibo-pt-1024-cabecalho.png",
+          "seletor": ".linha-cabeca",
+          "origem": "recibo-pt-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 229,
+            "width": 545,
+            "height": 591
+          },
+          "sha256": "a3563bd246e315103557bfdf9557de92394d1ee5a7f1c2c4cf72b6bde335f831"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-pt-1280.png",
+      "rota": "/livro-razao/divida-publica-2025",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2606,
+      "sha256": "5f1fc14f3034a5ac81ea76bb9f48873a746abc0b23f1856ebefb8c38ae08bd02",
+      "recortes": [
+        {
+          "ficheiro": "recibo-pt-1280-cabecalho.png",
+          "seletor": ".linha-cabeca",
+          "origem": "recibo-pt-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 230,
+            "width": 544,
+            "height": 601
+          },
+          "sha256": "2c8d1cf17bb14e036d1a5b05660d34a533c90d65e66ba1b4c9f5d4e5c42961aa"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-pt-1600.png",
+      "rota": "/livro-razao/divida-publica-2025",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2613,
+      "sha256": "d14a82a758cc53e88e9c58d651b04e826813068056f16f33118074a455197521",
+      "recortes": [
+        {
+          "ficheiro": "recibo-pt-1600-cabecalho.png",
+          "seletor": ".linha-cabeca",
+          "origem": "recibo-pt-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 230,
+            "width": 544,
+            "height": 601
+          },
+          "sha256": "a19f5b78db293856020d6b203e8d1e4f5d32cf0a6e44503f2fcf6f1547eb8aa4"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-en-390.png",
+      "rota": "/en/ledger/divida-publica-2025",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 4381,
+      "sha256": "eb1de830706888e135a51e9cbcd7a6ec0f763ad7ec83884bf61f0f92bea5e67c",
+      "recortes": [
+        {
+          "ficheiro": "recibo-en-390-cabecalho.png",
+          "seletor": ".linha-cabeca",
+          "origem": "recibo-en-390.png",
+          "caixa": {
+            "left": 18,
+            "top": 277,
+            "width": 354,
+            "height": 592
+          },
+          "sha256": "a532aee95a313265d87f3a4f38e5a2bf28c8a76f86ec2d9b3d5551cf6a20bb54"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-en-768.png",
+      "rota": "/en/ledger/divida-publica-2025",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3691,
+      "sha256": "9b1453ec608bfaea55c606df21694e0e115c80683d4b876b90e8f840127b407b",
+      "recortes": [
+        {
+          "ficheiro": "recibo-en-768-cabecalho.png",
+          "seletor": ".linha-cabeca",
+          "origem": "recibo-en-768.png",
+          "caixa": {
+            "left": 30,
+            "top": 260,
+            "width": 545,
+            "height": 574
+          },
+          "sha256": "37ec7c2f85bad35167b1be03a058a967a17858cf1feab823b32a8e1662ea819a"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-en-1024.png",
+      "rota": "/en/ledger/divida-publica-2025",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2574,
+      "sha256": "2dbb59c825dfed0b1c8ee5b261cd42aaaa8b4f96968ed14269f80c90940dcc05",
+      "recortes": [
+        {
+          "ficheiro": "recibo-en-1024-cabecalho.png",
+          "seletor": ".linha-cabeca",
+          "origem": "recibo-en-1024.png",
+          "caixa": {
+            "left": 40,
+            "top": 229,
+            "width": 545,
+            "height": 591
+          },
+          "sha256": "b7e7ef367a520edbac7e6ddd04320e11805497559aed6b5ffc5a3abbbd07d2b0"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-en-1280.png",
+      "rota": "/en/ledger/divida-publica-2025",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2628,
+      "sha256": "a691cb2f1845b7bf880b6dd793693a6d6816741eea59aec164387f409f03c309",
+      "recortes": [
+        {
+          "ficheiro": "recibo-en-1280-cabecalho.png",
+          "seletor": ".linha-cabeca",
+          "origem": "recibo-en-1280.png",
+          "caixa": {
+            "left": 94,
+            "top": 230,
+            "width": 544,
+            "height": 601
+          },
+          "sha256": "48c40d7b7f7459660d96a0caa6207ee0b493e81a29315ce6fcd9b0734e2e13a0"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-en-1600.png",
+      "rota": "/en/ledger/divida-publica-2025",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2635,
+      "sha256": "a6cc792289d2f1c30ec9f8612eba359e2d4ee785fcc619eb75bacf640be794dc",
+      "recortes": [
+        {
+          "ficheiro": "recibo-en-1600-cabecalho.png",
+          "seletor": ".linha-cabeca",
+          "origem": "recibo-en-1600.png",
+          "caixa": {
+            "left": 254,
+            "top": 230,
+            "width": 544,
+            "height": 601
+          },
+          "sha256": "b4a3ba363bc0ce0d14acc7b7159d0530670216c265521fb2205ae81728b643f2"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "estudos-pt-390.png",
+      "rota": "/estudos",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 4368,
+      "sha256": "70afe8b62ed61643a29afb32c6335c60b603a0a4ea3b244788df97609cfe6f0b",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "estudos-pt-768.png",
+      "rota": "/estudos",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3571,
+      "sha256": "1e477781ad4de5fb6db3ba93f6a40a51d17efb471605441fa603ba3b5266f8ab",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "estudos-pt-1024.png",
+      "rota": "/estudos",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 3635,
+      "sha256": "b1c2fbe24c5c6748a6576215cf4554fad6b59d43e0f59f300832f120706752de",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "estudos-pt-1280.png",
+      "rota": "/estudos",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 3655,
+      "sha256": "6a3ff0047a0dc96348f991497b45c586816d1437fdb266fef0d87b05d5db0de1",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "estudos-pt-1600.png",
+      "rota": "/estudos",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 3661,
+      "sha256": "3500b8334583ce428048369d24cad2dd8bfbd72efc9e98f762a95e0d917b47aa",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "estudos-en-390.png",
+      "rota": "/en/studies",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 4577,
+      "sha256": "8e21c8ce6539f0ba391ab3be0e499cd5a643eeeb74a3d6686726e53d709edc67",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "estudos-en-768.png",
+      "rota": "/en/studies",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3665,
+      "sha256": "251c805634913a1dc659419342fb851c76a380565f151a5572622420a06114b9",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "estudos-en-1024.png",
+      "rota": "/en/studies",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 3729,
+      "sha256": "a17ef080c881535776f886fff08dea17c27fdb1f980ac633d5e7078cf0b58338",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "estudos-en-1280.png",
+      "rota": "/en/studies",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 3749,
+      "sha256": "b6c196b7a28f974429bcb0cb0ad466cf40c564d9953f13be196235ce4e721fcb",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "estudos-en-1600.png",
+      "rota": "/en/studies",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 3755,
+      "sha256": "0f1e4025141360c5d0d4ae57096a685e70ca7ca33fbb2aca6e210dec7c4c8c3c",
+      "recortes": [],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    }
+  ],
+  "recursos": {
+    "version.json": "877ac0591cc94db6cc0067d3507494b0797c362f0f1f5f1a80ecc027d27aadaa",
+    "index.html": "8109e8474d78e2197f7c16145fe6ac444b08e2fef60ad1aebb0b1f0e694369b3",
+    "tipos/spectral/Spectral-Regular.woff2": "3c846b032ad614e02ebc439087bbcbb7371cfbdea6c8a4b568efa859537e9c43",
+    "tipos/bitter/Bitter[wght].woff2": "b4ad17520d0ce8bd1aa98af06e07ca94145522f868b5a010732eb5eee3ba2ea0",
+    "_astro/primeira-pagina.BOaRc5DN.css": "6be10e0b03b7ad330e0b58fb554324339dda2f44e9a344e37991030b91dcbc8c",
+    "_astro/Base.CQ2WVYKH.css": "413aa149b5d8f4c49fbedde1b385476bf7766e5886b0731be4e0dc5fada4667b",
+    "_astro/lugar.bxF38FjU.css": "ca5ecb9c51f88f1c0f5c59652689ed2ca642ad4dee9eaf4fbc51328d9dd957fd",
+    "_astro/inicio.DYisJLJ2.css": "1887d09fd2f5e2597bbe8b9ce00ee29695cd096d2db1486ff34d9b9013da3be9",
+    "js/interacao-dos-graficos.js": "c5e42b905d26d12581e292acfec8957fbbf20604e674bee321f4aa1b39ebd989",
+    "js/tema.js": "855bcee3ec1223b43e0f3e9a94c1fbdf1451e53830dcc022962b48e8d3340757",
+    "tipos/spectral/Spectral-Medium.woff2": "34f0ba222c28bc0ea816c693d05c528be4a5ee10c4b1765cdea774c6fb2502c2",
+    "tipos/spectral-sc/SpectralSC-Regular.woff2": "afa69dd2e7aaca2733883133745fd84c18dfac6a08d5999e69705ea7277240b8",
+    "tipos/spectral/Spectral-SemiBold.woff2": "91eef1143e31196ec762c00b566b9f628a851db348eb524cbfb36bfba9b22f2d",
+    "tipos/spectral-sc/SpectralSC-SemiBold.woff2": "b847fe8f1fe1a862ce15e288958d132940a8204951ef0dbe2c9ad8fd997f29e2",
+    "en/index.html": "e9d93db41f7e92836cba668dc37a86563b9684f208ba9d69dfb85d3aa7614198",
+    "livro-razao/divida-publica-2025/index.html": "890b4971ebc02bb4a08c578b4b2a28902922983cdb5171590aada99cc9d9b2bf",
+    "_astro/linha.DOdCy9TF.css": "99cb640e0f6cafe8bb8b68a992968df0ab42486b4006260f7657bdd3596f0e24",
+    "js/copiar-incorporacao.js": "b75e5f90efcd85ea94274191e44a48594932638df67377c0b91ff367df97ca13",
+    "en/ledger/divida-publica-2025/index.html": "9f8ad9e6d590f319d4b79987de7dc32d3e0fcad84d0938b75f854bd04ce22a61",
+    "estudos/index.html": "5488f5b24ac84b4090b12c6b75af5d280b45ee2289a4a2c8c9ac4445e65e00dc",
+    "tipos/spectral/Spectral-Italic.woff2": "4ba15b4bda78df3e8b755f0f12168c23c562707c921f74944e8ce638ee5ac7f1",
+    "en/studies/index.html": "a21435ce7ea4e8cc6fdd859ac8e0b23747efbdf0b18486ae41bfad65794b196d"
+  },
+  "falhas": [],
+  "ok": true
+}

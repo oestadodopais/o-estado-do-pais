@@ -79,7 +79,8 @@ import { atrasoDaLinha } from '../lib/frescura.mjs';
 import { dataDaCasa } from '../lib/datas.mjs';
 import { valorImpressoDoPainelConferido, textoDocumentalConferido } from '../lib/prova-efeitos.mjs';
 import { NOMES_V2E } from '../data/nomes-v2e.mjs';
-import { proximaConferenciaDaLinha, ancoraDoEvento } from '../lib/agenda.mjs';
+import { carimboDaConstrucao, proximaLeitura } from '../lib/construcao.mjs';
+import { FP1 } from '../data/rotulos-fp1.mjs';
 import { nomeOficial, reguaDaMedida, temRegua, evolucaoJd1 } from '../lib/enquadramento.mjs';
 import { serieDaLinha } from '../lib/series.mjs';
 import { ressalvaDaUniao } from '../data/ressalvas-da-uniao.mjs';
@@ -157,10 +158,11 @@ const derivacao = derivacaoDaLinha(claim, lang);
    a porta para aqui (§5.1). Sem cor nova (§2), sem segundo marcador (§6). */
 const bandeira = notaDeBandeira(claim, lang);
 const ressalvaPublicada = ressalvaPublicadaDaLinha(claim, lang);
-/* A SEGUNDA DATA DA NORMA (§2.5, bloco P2 item 2): quando a fonte volta a
-   publicar esta linha. Sai do calendário das fontes e é `null` onde a fonte não
-   anunciou dia nenhum, que é o caso da maior parte. */
-const proximaConferencia = proximaConferenciaDaLinha(id);
+/* FP1-d: próxima segunda-feira depois da construção, só para linhas não
+   derivadas acompanhadas pelo painel. Sem carimbo não se promete uma data. */
+const carimbo = carimboDaConstrucao();
+const proxima = carimbo && !derivada && (claim.verifications ?? []).some(v => v.by === 'painel-semanal') ? proximaLeitura(carimbo.construido_em) : null;
+const fp1 = FP1[lang];
 /* OS NOMES OFICIAIS DA MEDIDA (a norma §1.5, bloco P2 item 2): o do INE e o da
    PORDATA, lidos pelo motor com o endereço e a hora, e SÓ onde ele marca que é a
    mesma medida. `null` em tudo o resto, que hoje são 115 das 132 linhas com
@@ -267,6 +269,8 @@ const paginaDoPdf = (claim.source_url ?? '').match(/#page=(\d+)$/)?.[1] ?? null;
    é a linha a dizer que o campo falta, e um campo que falta não entra numa frase
    composta. Usado pela frase de atribuição e pelo texto alternativo do recorte. */
 const presente = (v) => Boolean(v) && v !== POR_VERIFICAR;
+const periodoDoRecibo = presente(claim.period) ? { campo: 'period', valor: claim.period }
+  : presente(claim.reference_date) ? { campo: 'reference_date', valor: claim.reference_date } : null;
 
 /**
  * O recorte da linha impressa, quando a linha o tem.
@@ -357,6 +361,7 @@ const recorteAlt = recorte
  * linha: é por ele que o portão a vai buscar, e não pela ordem em que aparece.
  */
 const verificacoes = verificacoesDaLinha(claim).slice(0, VERIFICACOES_MOSTRADAS);
+const ultimaReleituraDoPainel = verificacoesDaLinha(claim).find(v => v.by === 'painel-semanal');
 const mudancaPosterior = (v) => v.result === 'igual' ? (claim.corrections ?? []).map((c, n) => ({ ...c, n })).filter(c => ['atualizacao', 'correcao'].includes(c.kind) && c.date > v.date).sort((a,b) => a.date.localeCompare(b.date) || a.n-b.n)[0] : null;
 /* C1: a divergência leva à atualização que regista o mesmo valor encontrado. */
 const numeroDaReleitura = (v) => Number(String(v).replace(/[\s\u202f]/g, '').replace('−', '-').replace(',', '.'));
@@ -839,6 +844,13 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
     </p>
     {/* O NOME DO ORÇAMENTO POR BAIXO DO VALOR SAIU (bloco R4, 05.10.2026): era o nome do projeto da linha, e passou a
         ser o título do recibo, por cima de tudo. */}
+    <div class="linha-datas" data-recibo-datas>
+      {!paginaEditada && periodoDoRecibo && <p><span data-voz>{fp1.dados}</span>{' '}<DataDaLinha id={id} campo={periodoDoRecibo.campo} valor={periodoDoRecibo.valor} lang={lang} /></p>}
+      {presente(claim.published_at) && <p><span data-voz>{paginaEditada ? s.livro.linha.editadoEmK : fp1.publicados}</span>{' '}<CampoDaLinha id={id} campo="published_at" valor={claim.published_at} lang={lang} /></p>}
+      {presente(claim.access_date) && claim.access_date_kind !== 'hosted-copy' && <p><span data-voz>{fp1.lidos}</span>{' '}<CampoDaLinha id={id} campo="access_date" valor={claim.access_date} lang={lang} /></p>}
+      {ultimaReleituraDoPainel && !(presente(claim.access_date) && claim.access_date_kind !== 'hosted-copy' && String(claim.access_date).slice(0,10) === ultimaReleituraDoPainel.date.slice(0,10)) && <p><span data-voz>{fp1.ultima}</span>{' '}<CampoDaLinha id={id} campo={`verifications.${ultimaReleituraDoPainel.__n}.date`} valor={ultimaReleituraDoPainel.date} lang={lang} /></p>}
+      {proxima && <p><span data-voz>{fp1.proxima}</span>{' '}<time datetime={proxima} data-nonledger="data-editorial" data-data-origem="calendario.proxima-segunda">{dataDaCasa(proxima)}</time></p>}
+    </div>
     {ressalvaPublicada && (
       <p class="linha-nota" id="ressalva">
         <CampoDaLinha id={id} campo="ressalva" valor={ressalvaPublicada} lang={lang} />
@@ -1586,18 +1598,6 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
               A PORTA É O ACONTECIMENTO na agenda, onde ele traz o título, a
               fonte e a evidência de onde a data veio. Sem porta, a data era um
               dia escrito sem dizer quem o anunciou. */}
-          {proximaConferencia && (
-            <>
-              <dt>{s.livro.linha.proximaConferenciaK}</dt>
-              <dd>
-                <a href={`${routePath('agenda', lang)}#${ancoraDoEvento(proximaConferencia.evento)}`}>
-                  <span data-nonledger="data-da-agenda">
-                    {dataDaCasa(proximaConferencia.data)}
-                  </span>
-                </a>
-              </dd>
-            </>
-          )}
           {/* -------------------------------------- o estado da fonte, quando há
 
               «Sem resposta desde dd.mm.aaaa». É uma DATA e não um adjectivo, e

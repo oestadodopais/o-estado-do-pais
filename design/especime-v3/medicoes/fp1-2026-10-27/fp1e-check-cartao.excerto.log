@@ -1,0 +1,16 @@
+PLANTA K17 algarismo: K17 · famílias · oe-2027-saude-despesa-total-consolidada-2027: complemento com algarismo fixo
+PLANTA K17 token sem origem: K17 · famílias · oe-2027-saude-despesa-total-consolidada-2027: complemento com token sem origem
+PLANTA K17 apoio sem origem: K17 · famílias · oe-2027-saude-despesa-total-consolidada-2027: complemento com campo de apoio sem origem
+V2AE: complementos auditados, origens seladas e total sem conta rodoviária.
+PLANTA K16 tradução trocada: V2AG origem: campo do apoio diferente da prova
+PLANTA K16 quadro indevido: V2AG origem: campo do apoio diferente da prova
+PLANTA K16 excerto fechado: V2AF origem: passagem da Saúde fechada
+PLANTA K16 tipo retirado: V2AF origem: apoio sem tipo de passagem
+PLANTA K16 selo retirado: V2AE origem: selo documental ausente
+PLANTA K16 SHA trocado: V2AE origem: selo diferente do recibo exportado
+PLANTA K16 hora trocada: V2AE origem: selo diferente do recibo exportado
+PLANTA K16 página da marca trocada: V2AE origem: excerto ou localizador diferente da prova
+PLANTA K16 localizador inglês trocado: V2AE origem: excerto ou localizador diferente da prova
+PLANTA K16 página trocada: V2AE origem: excerto ou localizador diferente da prova
+PLANTA K16 excerto trocado: V2AE origem: excerto ou localizador diferente da prova
+PLANTA K16 porta trocada: V2AE origem: excerto ou localizador diferente da prova

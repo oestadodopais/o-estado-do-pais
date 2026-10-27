@@ -1,0 +1,37 @@
+[
+  {
+    "id": "discussao:orcamento-2027-generalidade",
+    "data": "2026-10-27",
+    "origem": "discussao:orcamento-2027-generalidade.publicado",
+    "titulo": "O Orçamento de 2027 antes do voto na generalidade: o que os partidos e o Governo já disseram, ao lado do que a UTAO mede",
+    "rota": "/o-que-se-discute/#orcamento-2027-generalidade"
+  },
+  {
+    "id": "atualizacao:registo",
+    "data": "2026-10-26",
+    "origem": "mudancas:ultima",
+    "titulo": "O que mudou",
+    "rota": "/correcoes"
+  },
+  {
+    "id": "estudo:a-casa-em-portugal-e-na-europa",
+    "data": "2026-10-26",
+    "origem": "studies:a-casa-em-portugal-e-na-europa/pt",
+    "titulo": "A casa em Portugal e na Europa",
+    "rota": "/estudos/a-casa-em-portugal-e-na-europa"
+  },
+  {
+    "id": "explicacao:dinheiro-do-estado-2027",
+    "data": "2026-10-21",
+    "origem": "explicacao:dinheiro-do-estado-2027.publicado",
+    "titulo": "Para onde vai o dinheiro do Estado em 2027, pela proposta de Orçamento",
+    "rota": "/explicacoes/dinheiro-do-estado-2027"
+  },
+  {
+    "id": "discussao:parcerias-rodoviarias",
+    "data": "2026-10-19",
+    "origem": "discussao:parcerias-rodoviarias.publicado",
+    "titulo": "As parcerias rodoviárias: o que o Estado paga, o que vai pagar e o que não está no quadro",
+    "rota": "/o-que-se-discute/#parcerias-rodoviarias"
+  }
+]

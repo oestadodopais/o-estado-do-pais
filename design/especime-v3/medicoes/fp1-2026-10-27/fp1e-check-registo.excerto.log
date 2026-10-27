@@ -1,0 +1,16 @@
+
+PLANTA pt: partido trocado de grupo, vermelho 1, verde 0
+PLANTA pt: partido omitido, vermelho 1, verde 0
+PLANTA pt: expansão ausente, vermelho 1, verde 0
+PLANTA pt: expansão repetida, vermelho 1, verde 0
+PLANTA en: partido trocado de grupo, vermelho 1, verde 0
+PLANTA en: partido omitido, vermelho 1, verde 0
+PLANTA en: expansão ausente, vermelho 1, verde 0
+PLANTA en: expansão repetida, vermelho 1, verde 0
+HB1: 8 votações, 41 expansões de siglas, 10 plantas; origem conferida.
+{"incorporaveis":8216,"proveniencia_incompleta":12,"erros":0}
+PLANTA portas iguais de Portugal e da União: recusada
+PLANTA genérico na habitação: recusada
+PLANTA genérico numa linha com série: recusada
+PLANTA porta vazia: recusada
+{"edicoes":21,"blocos":148,"portas":1274,"rotulos_do_catalogo":0,"geografias":0,"portas_de_serie_pelo_nome":16,"portas_genericas":2,"erros":0}

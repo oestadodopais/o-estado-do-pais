@@ -3888,7 +3888,7 @@ export const STRINGS = {
     /* Ver a razão na edição portuguesa (bloco PP1, 28.09.2026). */
     primeira: {
       oQueSePassa: 'What is happening',
-      numerosMaisRecentes: 'The most recent figures are for ',
+      numerosMaisRecentes: 'The most recent figures are from ',
       emCurso: 'ongoing until {ano}',
       porOndeComecar: 'Where to start',
       numerosDoBloco: 'The figures in this block',

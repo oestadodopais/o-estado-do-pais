@@ -60,7 +60,7 @@ const destino = ENTRADAS.find((e) => e.id === porta.entrada);
 {b.mostra && (
   <section class="pp-bloco" data-bloco={b.id} data-instrumento={`bloco-${b.id}`} aria-labelledby={idDoTitulo}>
     <Titulo class="pp-titulo" id={idDoTitulo} data-bloco-titulo data-bloco-declarado><Frase partes={b.titulo} lang={lang} /></Titulo>
-    <p class="pp-frase" data-bloco-frase data-bloco-declarado><Frase partes={b.frase} lang={lang} selos /></p>
+    <p class="pp-frase" data-bloco-frase data-bloco-declarado><Frase partes={b.frase} lang={lang} selos periodos /></p>
     {b.serie ? <div class="pp-ilustracao">
       {b.desenho && <DesenhoDoBloco modelo={b.desenho} lang={lang} bloco={b.id} />}
       <div class="pp-serie" data-bloco-serie={b.serie}><a class="pp-serie-porta" href={routePath('serie', lang, { slug: b.serie })}><NomeDaSerie id={b.serie} lang={lang} class="pp-serie-nome" /><span class="pp-serie-unidade" data-bloco-serie-unidade={b.serie} data-bloco-declarado><Frase partes={unidadeDaSerie} lang={lang} /></span></a>{/* G1: o desenho sai da ligação, para que um toque nele leia o ponto em vez de abrir o recibo; a porta do recibo fica no nome e na unidade. */}<SerieDoPais ids={[b.serie]} lang={lang} nomeVisivel comLeitura /></div>
@@ -70,10 +70,10 @@ const destino = ENTRADAS.find((e) => e.id === porta.entrada);
     {b.pecas.filter((p) => p.mostra).map((p) => p.caixa ? (
       <aside class="pp-caixa" data-bloco-peca={p.id} aria-labelledby={`bloco-${b.id}-${p.id}-t`}>
         {p.titulo && <p class="pp-caixa-t" id={`bloco-${b.id}-${p.id}-t`} data-bloco-declarado><Frase partes={p.titulo} lang={lang} /></p>}
-        <p class="pp-caixa-texto" data-bloco-declarado><Frase partes={p.pedacos} lang={lang} selos /></p>
+        <p class="pp-caixa-texto" data-bloco-declarado><Frase partes={p.pedacos} lang={lang} selos periodos /></p>
       </aside>
     ) : (
-      <p class="pp-peca" data-bloco-peca={p.id} data-bloco-declarado><Frase partes={p.pedacos} lang={lang} selos /></p>
+      <p class="pp-peca" data-bloco-peca={p.id} data-bloco-declarado><Frase partes={p.pedacos} lang={lang} selos periodos /></p>
     ))}
     <p class="pp-fonte" data-bloco-fonte>
       <span class="pp-fonte-k" data-voz>{s.primeira.fonte}</span>

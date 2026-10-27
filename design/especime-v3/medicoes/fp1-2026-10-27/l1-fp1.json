@@ -1,0 +1,65 @@
+{
+  "comando": "AMOSTRA=5000 node scripts/check-lugar.mjs",
+  "base": {
+    "commit": "6c6ae4313933e60531a75b6868cdace80a14fdc0",
+    "paginas": 3404
+  },
+  "cabeca": {
+    "commit": "94dbf653d28708c3fbfbd0ab18cef24f5706e75f",
+    "ref": "fp1-2026-10-27",
+    "env": "local",
+    "origem": "git",
+    "motivo": null,
+    "construido_em": "2026-10-27T14:51:46.123Z"
+  },
+  "contagens": {
+    "estudos": 3404,
+    "novas": 0,
+    "agravadas": 2
+  },
+  "agravadas": {
+    "/": {
+      "antes": 20,
+      "agora": 23,
+      "destinos": [
+        "/estudos/a-casa-em-portugal-e-na-europa",
+        "/estudos/orcamento-2027-o-que-muda-e-para-quem",
+        "/explicacoes/dinheiro-do-estado-2027"
+      ],
+      "razao": "A caixa repete destinos de secções existentes; conserva as cinco peças mais recentes e a lista dos estudos."
+    },
+    "/en": {
+      "antes": 20,
+      "agora": 23,
+      "destinos": [
+        "/en/studies/a-casa-em-portugal-e-na-europa",
+        "/en/studies/orcamento-2027-o-que-muda-e-para-quem",
+        "/en/explainers/dinheiro-do-estado-2027"
+      ],
+      "razao": "A caixa repete destinos de secções existentes; conserva as cinco peças mais recentes e a lista dos estudos."
+    }
+  },
+  "plantas": [
+    {
+      "nome": "página alheia acrescentada",
+      "mordeu": true
+    },
+    {
+      "nome": "página antiga retirada",
+      "mordeu": true
+    },
+    {
+      "nome": "página alheia agravada",
+      "mordeu": true
+    },
+    {
+      "nome": "primeira página agravada além da caixa",
+      "mordeu": true
+    },
+    {
+      "nome": "contagem trocada",
+      "mordeu": true
+    }
+  ],
+  "razao": "As duas primeiras páginas já eram contadas na L1. O teto não sobe; a diferença em destinos é inteiramente a caixa."
+}

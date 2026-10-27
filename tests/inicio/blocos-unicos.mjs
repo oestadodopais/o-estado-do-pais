@@ -22,7 +22,7 @@ const textoSemSelos = (no) => {
   const texto = (n) => {
     if (!n) return '';
     if (n.nodeType === 3) return n.textContent;
-    if (n.classList?.contains('src-chip') || ['SCRIPT', 'STYLE'].includes(n.tagName)) return '';
+    if (n.hasAttribute?.('data-fp1-periodo') || n.classList?.contains('src-chip') || ['SCRIPT', 'STYLE'].includes(n.tagName)) return '';
     return (n.childNodes ?? []).map(texto).join('');
   };
   return normal(texto(no));
@@ -66,6 +66,7 @@ export function conferirBlocosUnicos(dist, trocar = new Map(), { paginas = pagin
     const primeira = ['index.html', 'en/index.html'].includes(rel);
     const blocos = root.querySelectorAll('[data-bloco]');
     if (primeira) {
+      for (const mobilia of root.querySelectorAll('[data-novidades], [data-atualizacao]')) if (mobilia.hasAttribute('data-bloco') || mobilia.querySelector('[data-bloco]')) erros.push(`N1B ${rel}: mobília das novidades marcada como bloco.`);
       contas.blocos_na_primeira += blocos.length;
       const ids = blocos.map((b) => b.getAttribute('data-bloco'));
       const esperados = BLOCOS_DA_PRIMEIRA_PAGINA.filter((b) => blocoResolvido(b.id, lang).mostra).map((b) => b.id);
@@ -130,6 +131,11 @@ export function plantasDosBlocosUnicos(dist) {
   for (const lang of ['pt', 'en']) {
     const destino = lang === 'pt' ? 'temas/index.html' : 'en/european-union/index.html';
     const homeDaEdicao = parse(fs.readFileSync(path.join(dist, lang === 'pt' ? 'index.html' : 'en/index.html'), 'utf8'));
+    const mobilia = parse(homeDaEdicao.outerHTML);
+    mobilia.querySelector('[data-novidades]').setAttribute('data-bloco', BLOCOS_DA_PRIMEIRA_PAGINA[0].id);
+    const rotaHome = lang === 'pt' ? 'index.html' : 'en/index.html';
+    const queixaMobilia = conferirBlocosUnicos(dist, new Map([[rotaHome, mobilia.outerHTML]]), {paginas:[rotaHome]}).erros.find(e=>e.includes('mobília das novidades marcada como bloco'));
+    plantas.push({nome:`novidades marcadas como bloco (${lang})`,mordeu:Boolean(queixaMobilia),queixa:queixaMobilia??null});
     const rendida = homeDaEdicao.querySelector(`[data-bloco="${BLOCOS_DA_PRIMEIRA_PAGINA[0].id}"] [data-bloco-frase]`);
     /* A primeira frase de Preços termina num nó de texto, depois do valor com selo.
        Copia-se o HTML rendido até ao primeiro ponto final seguido de espaço. */

@@ -416,3 +416,17 @@
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
 }
+
+/* FP1: a cronologia usa a tipografia e as regras existentes. */
+.pp-novidades { margin: 8px 0 24px; padding-bottom: 16px; border-bottom: 1px solid var(--rule); }
+.pp-novidades-lista { list-style: none; padding: 0; margin: 12px 0; }
+.pp-novidades-lista li { display: grid; grid-template-columns: 7.5em 8.5em minmax(0, 1fr); gap: 4px 12px; padding: 8px 0; border-top: 1px solid var(--rule); align-items: baseline; }
+.pp-novidades-lista time, .pp-novidade-tipo { font-family: var(--f-instr); font-size: 12px; color: var(--muted); }
+.pp-novidades-lista a { font-family: var(--f-prosa); font-size: 16px; line-height: 1.4; }
+@media (max-width: 600px) { .pp-novidades-lista li { grid-template-columns: auto 1fr; } .pp-novidades-lista a { grid-column: 1 / -1; } }
+
+.pp-barra-periodo { display: block; font-size: 12px; font-weight: 400; color: var(--muted); }
+.pp-periodo-inline { font-family: var(--f-instr); font-size: .8em; color: var(--muted); }
+
+/* FP1-e: alvo de leitura na faixa intermédia, conservando telefone e ecrã largo. */
+@media (min-width: 641px) and (max-width: 1023px) { .pp-novidades-lista [data-novidade-porta] { display: block; min-height: 44px; } }

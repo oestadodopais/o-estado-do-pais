@@ -1,4 +1,5 @@
 ---
+import { t } from '../i18n/strings.mjs';
 import Base from '../layouts/Base.astro';
 import Frase from '../components/Frase.astro';
 import TituloDeTrabalho from '../components/TituloDeTrabalho.astro';
@@ -11,6 +12,10 @@ const { lang = 'pt' } = Astro.props;
 const r = ROTULOS_B1[lang];
 const path = routePath('estudos', lang);
 const trabalhos = todosOsEstudos(lang);
+for (const e of trabalhos) {
+  if (!e.data) throw new Error(`FP1-e: edição sem data de publicação: ${e.work.slug}/${e.edicao.lang}`);
+  if (e.work.emCurso && !e.work.emCurso.ate) throw new Error(`FP1-e: estudo em curso sem data final: ${e.work.slug}`);
+}
 ---
 <Base lang={lang} path={path} title={r.estudos} description={r.estudos}>
   <h1 class="estudos-titulo">{r.estudos}</h1>
@@ -27,6 +32,7 @@ const trabalhos = todosOsEstudos(lang);
         </h2>
         <p class="estudo-meta"><span>{e.lugar}</span><span>{e.tema}</span>
           <time datetime={e.data} data-nonledger="data-do-repositorio">{dataDaCasa(e.data)}</time>
+          {e.work.emCurso && <span data-estudo-em-curso>{t(lang).primeira.emCurso.replace('{ano}', e.work.emCurso.ate.slice(0,4))}</span>}
         </p>
         {e.pergunta && <p class="estudo-pergunta" data-verbatim={e.verbatimDaPergunta}>{e.pergunta}</p>}
         {/* A marca do verbatim só vale quando o resumo é a descrição, como na

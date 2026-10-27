@@ -93,17 +93,19 @@ export const WORKS = [
   id: "orcamento-2027-o-que-muda-e-para-quem",
   slug: 'orcamento-2027-o-que-muda-e-para-quem',
   tema: "economia-e-financas-publicas",
+  // Publicação no ar: fusão 6ec741c2d e aterragem de 21.10.2026, DECISIONS §1.202.
+  publication: 'declared',
   editions: [
     {
       lang: 'pt',
       title: "O Orçamento de 2027: o que muda e para quem",
-      date: null,
+      date: '2026-10-21',
       updated: null
     },
     {
       lang: 'en',
       title: "The 2027 Budget: what changes, and for whom",
-      date: null,
+      date: '2026-10-21',
       updated: null
     }
   ],

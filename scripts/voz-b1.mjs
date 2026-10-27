@@ -4,6 +4,7 @@
  * qualquer frase acrescentada ao lado do corpo continuam a ser lidos.
  */
 import fs from 'node:fs';
+import {metaDoEstudoConferida} from './meta-do-estudo.mjs';
 import path from 'node:path';
 import { parse, NodeType } from 'node-html-parser';
 import { ITENS, DISCUSSAO } from '../src/data/discussao.mjs';
@@ -106,6 +107,10 @@ export function verificaB1(raiz) {
         const titulo=item?.titulo[lang].map(x=>typeof x==='string'?x:x.claim?getClaim(x.claim).value+(x.sufixo??''):x.periodo?getClaim(x.periodo).reference_date:'').join('');
         if(w?.slug==='orcamento-2027-o-que-muda-e-para-quem'&&slug==='orcamento-2027-generalidade'&&a&&el.querySelectorAll('a').length===1&&a.getAttribute('href')===routePath('discussao',lang)+'#'+slug&&normal(el.textContent)===normal(DISCUSSAO.porta[lang]+' '+titulo))dispensados.add(el);
         else erros.push(`B1 discussão: ${rota}: título ou destino sem correspondência.`);
+      }
+      for (const el of main.querySelectorAll('[data-estudo-em-curso]')) {
+        if (metaDoEstudoConferida(el.closest('.estudo-meta'),lang)) dispensados.add(el);
+        else erros.push('FP1-d: estado do estudo diferente da ficha.');
       }
       const portas = main.querySelectorAll('[data-fontes-da-unidade]');
       if (portas.length) {
