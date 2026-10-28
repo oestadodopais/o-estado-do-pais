@@ -68,13 +68,13 @@ for(const[lang,route]of[['pt','o-que-se-discute'],['en','en/under-discussion']])
   if(p.entity_aliases){const publisher=Object.keys(p.entity_aliases)[0];assert.equal(claims.get(id).source,publisher);const fontes=receipt.querySelectorAll('[data-linha-campo="source"]');assert(fontes.length>=2,id+': o recibo imprime o publicador em menos de dois lugares');for(const f of fontes){assert.equal(f.text,publisher,id+': publicador diferente num dos lugares do recibo');}assert(receipt.text.includes(p.attributed_to[0]));checks++;}
  }
 
- assert.equal(item.querySelector('[data-discussao-parte="como-foi-dito"]').querySelectorAll('[data-discussao-paragrafo]').length,11);checks++;
+ assert.equal(item.querySelector('[data-discussao-parte="como-foi-dito"]').querySelectorAll('[data-discussao-paragrafo]').length,16);checks++;
  for(const span of item.querySelectorAll('[data-linha-trecho]')){
   const row=claims.get(span.getAttribute('data-linha-claim')),field=span.getAttribute('data-linha-campo');
   const text=field==='excerpt'?row.excerpt:row.document.title;
   assert(text.includes(span.text));assert.equal(span.text,span.getAttribute('data-linha-trecho'));checks++;
  }
- for(const section of ['fontes','conclusao']){
+ for(const section of ['fontes','opiniao']){
   const copy=parse(item.querySelector(`[data-discussao-parte="${section}"]`).toString());copy.querySelectorAll('.src-chip').forEach(n=>n.remove());
   assert(copy.text.includes(lang==='pt'?'11 % acima':'11 % above'));checks++;
  }

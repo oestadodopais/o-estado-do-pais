@@ -3,6 +3,11 @@ import { ITENS } from '../data/discussao.mjs';
 import { resolverExplicacao } from './explicacoes.mjs';
 import { routePath } from './routes.mjs';
 import { getClaim, parsePtNumber } from './ledger.mjs';
+/** OG1-B: a reescrita ordena; a publicação desempata.
+ * @param {{escrita: string, publicado: string}} a @param {{escrita: string, publicado: string}} b */
+export function compararItens(a, b) {
+  return b.escrita.localeCompare(a.escrita) || b.publicado.localeCompare(a.publicado);
+}
 /** @param {'pt'|'en'} lang */
 export function itensResolvidos(lang) {
   // A comparação é feita dentro de cada ano; a quebra de perímetro entre anos não altera estes pares.
@@ -18,7 +23,7 @@ export function itensResolvidos(lang) {
   const a = parsePtNumber(getClaim('oe-2027-saude-despesa-efetiva-consolidada-variacao').value);
   const b = parsePtNumber(getClaim('oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao').value);
   if (a === null || b === null || a * b >= 0) throw new Error('V2B: a conclusão da Saúde deixou de ter sinais contrários.');
-  return [...ITENS].sort((a,b) => b.escrita.localeCompare(a.escrita)).map(e => {
+  return [...ITENS].sort(compararItens).map(e => {
     const resolvido = resolverExplicacao(e, lang);
     const linhas = new Set([...resolvido.linhas, ...(e.linhas ?? [])]);
     for (const id of linhas) {

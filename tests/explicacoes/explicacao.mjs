@@ -205,6 +205,10 @@ export function folhasDaExplicacao(e) {
     }
     if ('fragmento' in a) {
       if(a.fragmento!==b.fragmento||a.campo!==b.campo||a.texto!==b.texto)throw new Error('X1 · fragmentos diferentes');
+      if (JSON.stringify(a.glosa) !== JSON.stringify(b.glosa)) throw new Error('X1 · glosas diferentes');
+      if (a.glosa) a.glosa.forEach((t, i) => {
+        if (typeof t === 'string') out.push({caminho:`${c}.glosa[${i}]`,pt:'',en:t,ramo});
+      });
       if(typeof a.sufixo==='string')out.push({caminho:`${c}.sufixo`,pt:a.sufixo,en:b.sufixo,ramo});
       return;
     }
@@ -681,7 +685,7 @@ function textoAqui(partes, lang, linhas) {
   };
   return (Array.isArray(partes) ? partes : [partes]).map((p) => {
     if (typeof p === 'string') return p;
-    if ('fragmento' in p) { const r=linhas.get(p.fragmento), v=p.campo==='excerpt'?r?.excerpt:r?.document?.title; if(typeof v!=='string'||!v.includes(p.texto)) throw new Error('X6 · fragmento ausente'); return p.texto+(p.sufixo??''); }
+    if ('fragmento' in p) { const r=linhas.get(p.fragmento), v=p.campo==='excerpt'?r?.excerpt:r?.document?.title; if(typeof v!=='string'||!v.includes(p.texto)) throw new Error('X6 · fragmento ausente'); return p.texto+(p.sufixo??'')+(lang==='en'&&p.glosa?textoAqui(p.glosa,lang,linhas):''); }
     if ('data' in p) return periodoAqui(String(linhas.get(p.data)?.published_at??''),lang)??'';
     if ('literal' in p) {
       const row = linhas.get(p.literal);

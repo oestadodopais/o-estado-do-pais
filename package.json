@@ -68,7 +68,7 @@
     "check:rotulos": "node scripts/inventario-rotulos.mjs --prova",
     "check:incorporar": "node tests/incorporar/conferir.mjs && node tests/incorporar/navegador.mjs",
     "check:pais:auto-teste": "node tests/inicio/prazo-pela-celula.mjs",
-    "check:discussao": "node tests/discussao/itens.mjs && node tests/discussao/og1.mjs",
+    "check:discussao": "node tests/discussao/glosas.mjs && node tests/discussao/itens.mjs && node tests/discussao/og1.mjs",
     "check:graficos": "node tests/graficos/interacao.mjs",
     "graficos:inventario": "node scripts/graficos-inventario.mjs",
     "check:eo1": "node tests/eo1/maquinaria.mjs && node tests/eo1/documento.mjs && node tests/eo1/lingua-nomes.mjs && node tests/eo1/recibos.mjs && node tests/eo1/metades.mjs && node tests/eo1/definicoes.mjs"

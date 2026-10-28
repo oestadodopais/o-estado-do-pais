@@ -2,13 +2,14 @@
 import fs from 'node:fs';
 import {conferirConclusaoDoInicio, conclusaoResolvida, seloDaConclusaoDoInicio, fragmentoDaConclusaoDoInicio} from '../../scripts/porta-da-conclusao-discussao.mjs';
 import {primeirasFrases} from '../../src/lib/estudos-b1.mjs';
-import {textoDosPedacosDaExplicacao} from '../../src/lib/explicacoes.mjs';
+import {resolverExplicacao, textoDosPedacosDaExplicacao} from '../../src/lib/explicacoes.mjs';
 import {conferirNovidades} from '../inicio/novidades.mjs';
 import { routePath } from '../../src/lib/routes.mjs';
 import { ESTUDO_EO1, PORTAS_EO1 } from '../../src/data/portas-eo1.mjs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {parse} from 'node-html-parser';
+import {compararItens} from '../../src/lib/discussao.mjs';
 import {ITENS, DISCUSSAO, PCP} from '../../src/data/discussao.mjs';
 import {loadClaims} from '../../src/lib/ledger.mjs';
 import {plantasDaContagem} from './contagem-medicos.mjs';
@@ -136,8 +137,8 @@ export function conferirPagina(root,lang,linhas=loadClaims(),dist=process.env.OE
  const artigos=main?.querySelectorAll('[data-discussao]')??[];
  const menu=main?.querySelectorAll('[data-discussao-porta]')??[];
  if(menu.length!==ITENS.length)erros.push('V2D menu: número de títulos diferente');
- for(const [i,e] of [...ITENS].sort((a,b)=>b.escrita.localeCompare(a.escrita)).entries()){const m=menu[i];erros.push(...conferirMarcasDoTitulo(m,e,lang,linhas));if(m?.getAttribute('href')!==destino(e.slug,lang)||normal(m?.text)!==explicacaoPelaCelula(e,lang,linhas).titulo)erros.push('V2D menu: título ou destino diferente');}
- if(artigos.map(a=>a.getAttribute('data-discussao')).join('|')!==[...ITENS].sort((a,b)=>b.escrita.localeCompare(a.escrita)).map(e=>e.slug).join('|'))erros.push('V2B ordem: itens ausentes, repetidos ou fora de ordem');
+ for(const [i,e] of [...ITENS].sort(compararItens).entries()){const m=menu[i];erros.push(...conferirMarcasDoTitulo(m,e,lang,linhas));if(m?.getAttribute('href')!==destino(e.slug,lang)||normal(m?.text)!==explicacaoPelaCelula(e,lang,linhas).titulo)erros.push('V2D menu: título ou destino diferente');}
+ if(artigos.map(a=>a.getAttribute('data-discussao')).join('|')!==[...ITENS].sort(compararItens).map(e=>e.slug).join('|'))erros.push('V2B ordem: itens ausentes, repetidos ou fora de ordem');
  for(const e of ITENS){
   const a=artigos.find(a=>a.getAttribute('data-discussao')===e.slug);if(!a){erros.push('V2B partes: item ausente');continue;}
   const esperado=explicacaoPelaCelula(e,lang,linhas);
@@ -209,7 +210,7 @@ export function conferirInicio(root,lang,dist=process.env.OEDP_DIST??path.join(r
  if(!bloco)return ['V2B início: bloco ausente'];
  const links=bloco.querySelectorAll('[data-discussao-porta]');
  if(links.length!==ITENS.length)erros.push('V2B início: títulos em falta ou a mais');
- for(const [i,e] of [...ITENS].sort((a,b)=>b.escrita.localeCompare(a.escrita)).entries()){erros.push(...conferirMarcasDoTitulo(links[i],e,lang,loadClaims()));if(links[i]?.getAttribute('href')!==destino(e.slug,lang)||normal(links[i]?.text)!==explicacaoPelaCelula(e,lang,loadClaims()).titulo)erros.push('V2B início: destino ou título errado');erros.push(...conferirConclusaoDoInicio(links[i],e,lang,{dist}));}
+ for(const [i,e] of [...ITENS].sort(compararItens).entries()){erros.push(...conferirMarcasDoTitulo(links[i],e,lang,loadClaims()));if(links[i]?.getAttribute('href')!==destino(e.slug,lang)||normal(links[i]?.text)!==explicacaoPelaCelula(e,lang,loadClaims()).titulo)erros.push('V2B início: destino ou título errado');erros.push(...conferirConclusaoDoInicio(links[i],e,lang,{dist}));}
  const content=root.querySelector('main')?.innerHTML??'';
  const marcas=['data-discussao-inicio','data-o-que-se-passa','data-entradas'].map(m=>content.indexOf(m));
  if(marcas.some(n=>n<0)||!(marcas[0]<marcas[1]&&marcas[1]<marcas[2]))erros.push('V2C início: marca ausente ou bloco fora do lugar');
@@ -225,9 +226,9 @@ export function plantasDoInicio(home,lang,dist) {
  const outra=home.querySelectorAll('[data-discussao-conclusao]')[1];
  for(const [nome,mudar,padrao] of [
   ['data diferente de publicado',p=>p.querySelector('time').setAttribute('datetime','9999-12-31'),/data diferente/],
-  ['duas frases em vez de uma',p=>p.querySelector('[data-discussao-conclusao]').set_content(textoDosPedacosDaExplicacao(primeirasFrases(conclusaoResolvida(e,lang),2),lang)),/frase diferente/],
+  ['duas frases em vez de uma',p=>p.querySelector('[data-discussao-conclusao]').set_content(textoDosPedacosDaExplicacao(resolverExplicacao(e,lang).abertura.flatMap(p=>p.pedacos),lang)),/frase diferente/],
   ['frase de outro item',p=>p.querySelector('[data-discussao-conclusao]').set_content(outra.innerHTML),/frase diferente/],
-  ['valor trocado na frase',p=>p.querySelector('[data-discussao-conclusao] [data-claim]').set_content('999'),/valor ou linha/],
+  ['valor trocado na frase',p=>p.parentNode.querySelector('[data-discussao-conclusao] [data-claim]').set_content('999'),/valor ou linha/],
   ['parágrafo em falta',p=>p.querySelector('p[data-discussao-resumo]').remove(),/parágrafo ausente/],
  ]) {
   const r=parse(home.toString());mudar(r.querySelector(seletor));
@@ -238,11 +239,11 @@ export function plantasDoInicio(home,lang,dist) {
  const r=parse(home.toString()),n=r.querySelector('[data-discussao-conclusao] [data-claim]'),id=n.getAttribute('data-claim');
  const antes=seloDaConclusaoDoInicio(n,id,lang,{dist});n.setAttribute('data-claim','linha-inventada');
  provas.push({nome:'FP2: selo recusa linha trocada',lang,mordeu:limpo&&antes&&!seloDaConclusaoDoInicio(n,'linha-inventada',lang,{dist})});
- const fragmento=parse(home.toString()).querySelector('[data-discussao-conclusao] [data-linha-trecho]');
- const origem=fragmento.getAttribute('data-linha-claim'),campo=fragmento.getAttribute('data-linha-campo');
- const aceite=fragmentoDaConclusaoDoInicio(fragmento,origem,campo,lang,{dist});
- fragmento.setAttribute('data-linha-trecho','trecho inventado');
- provas.push({nome:'FP2: fragmento recusa trecho trocado',lang,mordeu:limpo&&aceite&&!fragmentoDaConclusaoDoInicio(fragmento,origem,campo,lang,{dist})});
+ // As aberturas atuais não têm fragmentos na primeira frase. Uma marca inventada não ganha dispensa.
+ const f=parse(home.toString()),frase=f.querySelector('[data-discussao-conclusao]');
+ frase.insertAdjacentHTML('beforeend','<span data-discussao-fragmento="excerpt"><span data-linha-claim="og1-utao-p42" data-linha-campo="excerpt" data-linha-trecho="trecho inventado">trecho inventado</span></span>');
+ const fragmento=frase.querySelector('[data-linha-trecho]');
+ provas.push({nome:'OG1-B: fragmento inventado na abertura recusado',lang,mordeu:limpo&&!fragmentoDaConclusaoDoInicio(fragmento,'og1-utao-p42','excerpt',lang,{dist})});
  return provas;
 }
 export function conferirIntegracao(root,lang,pagina,linhas=loadClaims(),{dist=process.env.OEDP_DIST??path.join(raiz,'dist'),recibos=new Map()}={}){
@@ -286,7 +287,7 @@ export function conferirIntegracao(root,lang,pagina,linhas=loadClaims(),{dist=pr
  }
  const tematica=pagina===`explicacoes/dinheiro-do-estado-2026/index.html`||pagina===`en/explainers/dinheiro-do-estado-2026/index.html`;
  const estudoEo1=pagina===`${lang==='pt'?'estudos':'en/studies'}/${ESTUDO_EO1}/index.html`;
- const esperados=[...ITENS].sort((a,b)=>b.escrita.localeCompare(a.escrita)).filter(e=>[...linhasImpressasOuDerivadas(e,linhas)].some(id=>ids.has(id))||(tematica&&e.slug==='saude-no-orcamento')||(estudoEo1&&PORTAS_EO1[e.slug]));
+ const esperados=[...ITENS].sort(compararItens).filter(e=>[...linhasImpressasOuDerivadas(e,linhas)].some(id=>ids.has(id))||(tematica&&e.slug==='saude-no-orcamento')||(estudoEo1&&PORTAS_EO1[e.slug]));
  const portas=main.querySelectorAll('[data-discussao-integracao]');
  for(const a of main.querySelectorAll('a'))if(ITENS.some(e=>a.getAttribute('href')===destino(e.slug,lang))&&!a.closest('[data-discussao-integracao],[data-discussao-inicio]')&&!(novidadesConferidas&&a.closest('[data-novidades]')))erros.push('V2B integração: porta sem condição declarada');
  if(portas.length!==esperados.length)erros.push(`V2B integração: presença ou ausência errada em ${pagina}`);

@@ -1,4 +1,5 @@
-/** FP2: a conclusão sem selo local só vale com a frase e a prova no item ligado. */
+/** OG1-B-2: nomes FP2 conservados; «conclusao» nesta API é a primeira frase da abertura.
+ * A frase sem selo local só vale com a frase e a prova no item ligado. */
 import fs from 'node:fs';
 import path from 'node:path';
 import {parse} from 'node-html-parser';
@@ -10,14 +11,14 @@ import {routePath} from '../src/lib/routes.mjs';
 const normal=x=>String(x??'').replace(/\s+/g,' ').trim();
 const destinos=new Map();
 export function conclusaoResolvida(e,lang) {
-  return resolverExplicacao(e,lang).seccoes.find(s=>s.id==='conclusao')?.blocos.find(b=>b.tipo==='paragrafo')?.pedacos;
+  return resolverExplicacao(e,lang).abertura[0]?.pedacos;
 }
 export function paragrafoDeDestino(e,lang,dist) {
   const ficheiro=path.join(dist,routePath('discussao',lang),'index.html');
   if(!fs.existsSync(ficheiro))return null;
   const mtime=fs.statSync(ficheiro).mtimeMs;
   if(destinos.get(ficheiro)?.mtime!==mtime)destinos.set(ficheiro,{mtime,root:parse(fs.readFileSync(ficheiro,'utf8'))});
-  return destinos.get(ficheiro).root.querySelector(`[data-discussao="${e.slug}"] [data-discussao-parte="conclusao"] [data-discussao-paragrafo]`);
+  return destinos.get(ficheiro).root.querySelector(`[data-discussao="${e.slug}"] [data-discussao-paragrafo="abertura[0]"]`);
 }
 export function semSelos(el) {
   if(!el)return '';

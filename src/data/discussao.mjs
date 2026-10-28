@@ -38,13 +38,197 @@ const excerto = (id) => literal(id, 'excerpt');
 const atribuicao = (id) => literal(id, 'attributed_to');
 /** @param {string|any[]} pt @param {string|any[]} en */
 const p = (pt, en) => ({ paragrafo: { pt: Array.isArray(pt) ? pt : [pt], en: Array.isArray(en) ? en : [en] } });
+// OG1-B: duas frases de abertura por item, com as definições documentadas.
+/** @type {Record<string, {pt: any[], en: any[]}[]>} */
+const ABERTURAS = {
+  "saude-no-orcamento": [
+    {
+      "pt": [
+        "Para ",
+        {
+          "periodo": "oe-2027-saude-despesa-total-consolidada-2027"
+        },
+        ", a despesa total da Saúde, que no relatório do Orçamento inclui os ativos e passivos financeiros, está orçamentada ",
+        {
+          "claim": "der-saude-total-reducao-abs",
+          "sufixo": " milhões de euros"
+        },
+        " abaixo da estimativa de ",
+        {
+          "periodo": "oe-2027-saude-despesa-total-consolidada-2026"
+        },
+        ", e a despesa efetiva, a mesma conta sem esses ativos e passivos, varia ",
+        {
+          "claim": "der-saude-variacao-efetiva",
+          "sufixo": " milhões de euros"
+        },
+        ", porque o PRR acaba."
+      ],
+      "en": [
+        "For ",
+        {
+          "periodo": "oe-2027-saude-despesa-total-consolidada-2027"
+        },
+        ", total Health expenditure, which in the Budget report includes financial assets and liabilities, is budgeted ",
+        {
+          "claim": "der-saude-total-reducao-abs",
+          "sufixo": " million euros"
+        },
+        " below the estimate for ",
+        {
+          "periodo": "oe-2027-saude-despesa-total-consolidada-2026"
+        },
+        ", and effective expenditure, the same count without those assets and liabilities, changes by ",
+        {
+          "claim": "der-saude-variacao-efetiva",
+          "sufixo": " million euros"
+        },
+        ", because the RRP ends."
+      ]
+    },
+    {
+      "pt": [
+        "Fora do PRR, a despesa efetiva sobe ",
+        {
+          "claim": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+          "sufixo": " %"
+        },
+        ", ",
+        {
+          "claim": "der-saude-variacao-sem-prr",
+          "sufixo": " milhões de euros"
+        },
+        " face aos ",
+        {
+          "claim": "der-saude-prr-2026"
+        },
+        " que o PRR deixa, e no total varia ",
+        {
+          "claim": "oe-2027-saude-despesa-total-consolidada-variacao",
+          "sufixo": " %"
+        },
+        ": as duas contas são verdadeiras e nenhuma mostra sozinha o que muda."
+      ],
+      "en": [
+        "Outside the RRP, effective expenditure rises ",
+        {
+          "claim": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+          "sufixo": " %"
+        },
+        ", ",
+        {
+          "claim": "der-saude-variacao-sem-prr",
+          "sufixo": " million euros"
+        },
+        " against the ",
+        {
+          "claim": "der-saude-prr-2026"
+        },
+        " the RRP leaves, and in total it changes by ",
+        {
+          "claim": "oe-2027-saude-despesa-total-consolidada-variacao",
+          "sufixo": " %"
+        },
+        ": both counts are true and neither shows on its own what changes."
+      ]
+    }
+  ],
+  "parcerias-rodoviarias": [
+    {
+      "pt": [
+        "O relatório do Orçamento prevê ",
+        {
+          "claim": "oe-2027-ppp-rodoviario-encargos-liquidos-2027",
+          "sufixo": " milhões de euros"
+        },
+        " de encargos líquidos com as parcerias rodoviárias em ",
+        {
+          "periodo": "oe-2027-ppp-rodoviario-encargos-liquidos-2027"
+        },
+        ": «líquidos» quer dizer o que o Estado paga às concessionárias depois de descontadas as receitas que lhe cabem, sobretudo as portagens cobradas nas vias portajadas."
+      ],
+      "en": [
+        "The Budget report forecasts ",
+        {
+          "claim": "oe-2027-ppp-rodoviario-encargos-liquidos-2027",
+          "sufixo": " million euros"
+        },
+        " in net charges for the road partnerships in ",
+        {
+          "periodo": "oe-2027-ppp-rodoviario-encargos-liquidos-2027"
+        },
+        ": «net» means what the State pays the concessionaires after deducting the revenue that falls to it, mostly the tolls collected on tolled roads."
+      ]
+    },
+    {
+      "pt": [
+        "Os encargos brutos de ",
+        {
+          "periodo": "oe-2027-ppp-rodoviario-encargos-brutos-2027"
+        },
+        " são ",
+        {
+          "claim": "oe-2027-ppp-rodoviario-encargos-brutos-2027",
+          "sufixo": " milhões de euros"
+        },
+        " e as receitas ",
+        {
+          "claim": "oe-2027-ppp-rodoviario-receitas-2027",
+          "sufixo": " milhões de euros"
+        },
+        "; o que pode mudar a conta não está no quadro: ",
+        {
+          "claim": "ppp-oe2027-riscos-pedidos-rodoviarios",
+          "sufixo": " milhões de euros"
+        },
+        " de pedidos das concessionárias, dos quais ",
+        {
+          "claim": "ppp-oe2027-riscos-brisa"
+        },
+        " numa negociação em curso."
+      ],
+      "en": [
+        "Gross charges for ",
+        {
+          "periodo": "oe-2027-ppp-rodoviario-encargos-brutos-2027"
+        },
+        " are ",
+        {
+          "claim": "oe-2027-ppp-rodoviario-encargos-brutos-2027",
+          "sufixo": " million euros"
+        },
+        " and revenue ",
+        {
+          "claim": "oe-2027-ppp-rodoviario-receitas-2027",
+          "sufixo": " million euros"
+        },
+        "; what could change the bill is not in the table: ",
+        {
+          "claim": "ppp-oe2027-riscos-pedidos-rodoviarios",
+          "sufixo": " million euros"
+        },
+        " in concessionaires' claims, ",
+        {
+          "claim": "ppp-oe2027-riscos-brisa"
+        },
+        " of them in a negotiation under way."
+      ]
+    }
+  ]
+};
+/** @type {Record<string, string[]>} */
+const RECIBOS_DA_ABERTURA = {
+  'saude-no-orcamento': ['og1-mf-despesa-total-efetiva-nota'],
+  'parcerias-rodoviarias': ['og1-mf-ppp-encargos-receitas', 'og1-mf-ppp-receitas-portagem'],
+};
+
 /** @param {string} slug @param {[string|any[],string|any[]]} titulo @param {string[]} afirmacoes @param {any[][]} conteudos */
 const item = (slug, titulo, afirmacoes, conteudos) => ({
   // publicado: fusão com main ac663f373; V2-b no ar em main 39f0195c, §§1.200 e 1.201 (19.10); escrita: última reescrita, usada na ordem.
-  slug, publicado: '2026-10-19', escrita: '2026-10-20', titulo: { pt: Array.isArray(titulo[0]) ? titulo[0] : [titulo[0]], en: Array.isArray(titulo[1]) ? titulo[1] : [titulo[1]] },
-  afirmacoes, abertura: [], naoDiz: [],
-  recibos: slug === 'saude-no-orcamento' ? Object.fromEntries(['seccoes[2].conteudo[2].paragrafo', 'seccoes[5].conteudo[0].paragrafo'].map(caminho => [caminho, ['oe-2027-saude-dotacao-reforco-contratos-programa', 'oe-2027-saude-contrato-programa-acss']])) : {},
-  linhas: slug === 'saude-no-orcamento' ? ['oe-2027-saude-dotacao-reforco-contratos-programa', 'oe-2027-saude-contrato-programa-acss', ...[2020, 2021, 2022, 2023, 2024, 2025].flatMap(ano => [`saude-total-${ano}-orcamento-oe${ano}`, `saude-total-${ano}-execucao-cge${ano}`])] : [],
+  slug, publicado: '2026-10-19', escrita: '2026-10-28', titulo: { pt: Array.isArray(titulo[0]) ? titulo[0] : [titulo[0]], en: Array.isArray(titulo[1]) ? titulo[1] : [titulo[1]] },
+  afirmacoes, abertura: ABERTURAS[slug], naoDiz: [],
+  recibos: {'abertura[0]': RECIBOS_DA_ABERTURA[slug], ...(slug === 'saude-no-orcamento' ? Object.fromEntries(['seccoes[2].conteudo[2].paragrafo', 'seccoes[5].conteudo[0].paragrafo'].map(caminho => [caminho, ['oe-2027-saude-dotacao-reforco-contratos-programa', 'oe-2027-saude-contrato-programa-acss']])) : {})},
+  linhas: [...RECIBOS_DA_ABERTURA[slug], ...(slug === 'saude-no-orcamento' ? ['oe-2027-saude-dotacao-reforco-contratos-programa', 'oe-2027-saude-contrato-programa-acss', ...[2020, 2021, 2022, 2023, 2024, 2025].flatMap(ano => [`saude-total-${ano}-orcamento-oe${ano}`, `saude-total-${ano}-execucao-cge${ano}`])] : [])],
   seccoes: PARTES.map(([id, pt, en], i) => ({ id, titulo: { pt, en }, conteudo: conteudos[i] })),
 });
 export const ITENS = [
@@ -116,3 +300,4 @@ export const ITENS = [
   OG1,
 ];
 acrescentarEfeitos(ITENS);
+

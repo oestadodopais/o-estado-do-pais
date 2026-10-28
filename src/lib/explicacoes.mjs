@@ -295,15 +295,30 @@ function resolver(partes, lang, onde, ctx) {
       return;
     }
     if (chave === 'fragmento') {
-      if (!['campo,fragmento,texto','campo,fragmento,sufixo,texto'].includes(Object.keys(o).sort().join(',')) || !['excerpt','document.title'].includes(o.campo)) throw defeito(aqui, 'campo de fragmento não autorizado.');
+      if (!['campo,fragmento,texto','campo,fragmento,sufixo,texto','campo,fragmento,glosa,texto'].includes(Object.keys(o).sort().join(',')) || !['excerpt','document.title'].includes(o.campo)) throw defeito(aqui, 'campo de fragmento não autorizado.');
       const row=getClaim(o.fragmento), original=o.campo==='excerpt'?row.excerpt:/** @type {any} */(row.document)?.title;
       if (typeof o.texto !== 'string' || !o.texto.trim() || typeof original !== 'string' || !original.includes(o.texto)) throw defeito(aqui, 'fragmento ausente da fonte.');
       // Um fragmento numérico não pode cortar os algarismos de outro número.
       if (o.sufixo!==undefined && (typeof o.sufixo!=='string'||/\d/.test(o.sufixo))) throw defeito(aqui, 'sufixo de fragmento inválido.');
-      const pos=original.indexOf(o.texto), antes=original[pos-1]??'', depois=original[pos+o.texto.length]??'';
-      if ((/^\d/.test(o.texto)&&/[\d.,]/.test(antes)) || (/\d$/.test(o.texto)&&/[\d.,]/.test(depois))) throw defeito(aqui, 'fragmento corta um número.');
+      const posicoes = [];
+      for (let pos=original.indexOf(o.texto); pos>=0; pos=original.indexOf(o.texto,pos+1)) posicoes.push(pos);
+      const inteiro = posicoes.some(pos => {
+        const antes=original[pos-1]??'', depois=original[pos+o.texto.length]??'';
+        return !((/^\d/.test(o.texto)&&(/\d/.test(antes)||(/[.,]/.test(antes)&&/\d/.test(original[pos-2]??'')))) ||
+          (/\d$/.test(o.texto)&&(/\d/.test(depois)||(/[.,]/.test(depois)&&/\d/.test(original[pos+o.texto.length+1]??'')))));
+      });
+      if (!inteiro) throw defeito(aqui, 'fragmento corta um número.');
+      if (o.glosa !== undefined) {
+        const numeros = o.texto.match(/\d+(?:[.,]\d+)*/g) ?? [];
+        if (!Array.isArray(o.glosa) || !numeros.length ||
+            o.glosa.some((/** @type {any} */ t) => typeof t === 'string'
+              ? /\d/.test(t)
+              : !t || Object.keys(t).sort().join(',') !== 'campo,fragmento,texto' || t.fragmento !== o.fragmento || t.campo !== o.campo || !/^\d+(?:[.,]\d+)*$/.test(t.texto)) ||
+            JSON.stringify(o.glosa.filter((/** @type {any} */ t) => typeof t !== 'string').map((/** @type {any} */ t) => t.texto)) !== JSON.stringify(numeros)) throw defeito(aqui, 'glosa altera os números ou a fonte do fragmento.');
+      }
       ctx.linhas.add(o.fragmento);
       out.push({literal:{id:o.fragmento,campo:o.campo,texto:o.texto,lingua:'pt-PT',fragmento:true,...(o.sufixo?{sufixo:o.sufixo}:{})}});
+      if (o.glosa && lang === 'en') out.push(...resolver(o.glosa, lang, `${aqui}.glosa`, ctx));
       return;
     }
     if (chave === 'literal') {

@@ -1,8 +1,7 @@
-/** OG1-A9: redação do mandato A8, ligada aos campos das fontes. */
+/** OG1-B: redação depois do voto, ligada aos campos das fontes. */
 export const OG1 = {
   "slug": "orcamento-2027-generalidade",
-  // escrita é a última reescrita; publicado é a aterragem às 00:30 UTC de 27.10, pelo recibo da direção.
-  "escrita": "2026-10-26",
+  "escrita": "2026-10-28",
   "publicado": "2026-10-27",
   "titulo": {
     "pt": [
@@ -10,14 +9,14 @@ export const OG1 = {
       {
         "periodo": "pm-q3-3-r37-c3"
       },
-      " antes do voto na generalidade: o que os partidos e o Governo já disseram, ao lado do que a UTAO mede"
+      " aprovado na generalidade: os votos de cada partido, o que o Conselho das Finanças Públicas e a UTAO medem e o que fica para a especialidade"
     ],
     "en": [
       "The ",
       {
         "periodo": "pm-q3-3-r37-c3"
       },
-      " Budget before the general vote: what the parties and the Government have said so far, next to what the UTAO measures"
+      " Budget passed at the general vote: how each party voted, what the Public Finance Council and the UTAO measure, and what is left for the detailed stage"
     ]
   },
   "afirmacoes": [
@@ -31,9 +30,105 @@ export const OG1 = {
     "og1-governo-rtp-combustiveis",
     "og1-governo-rtp-habitacao",
     "og1-governo-eco-juros",
-    "og1-governo-observador-saldo"
+    "og1-governo-observador-saldo",
+    "og1-livre-voto",
+    "og1-pan-abstencao",
+    "og1-jpp-abstencao",
+    "og1-chega-voto",
+    "og1-il-voto"
   ],
-  "abertura": [],
+  "abertura": [
+    {
+      "pt": [
+        "O Parlamento aprovou a proposta de Orçamento para ",
+        {
+          "periodo": "pm-q3-3-r37-c3"
+        },
+        " na generalidade a ",
+        {
+          "periodo": "og1-votacao-generalidade"
+        },
+        ", com os votos a favor do PSD e do CDS-PP, a abstenção do PS, do PAN e do JPP e os votos contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda, segundo o ECO e a RTP; o resultado oficial da votação ainda não estava publicado quando este item foi reescrito."
+      ],
+      "en": [
+        "Parliament passed the ",
+        {
+          "periodo": "pm-q3-3-r37-c3"
+        },
+        " Budget proposal at the general vote on ",
+        {
+          "periodo": "og1-votacao-generalidade"
+        },
+        ", with PSD and CDS-PP voting in favour, PS, PAN and JPP abstaining and Chega, Iniciativa Liberal, Livre, PCP and Bloco de Esquerda voting against, according to ECO and RTP; the official record of the vote had not been published when this item was rewritten."
+      ]
+    },
+    {
+      "pt": [
+        "A maior medida de receita da proposta, o combate à fraude nos combustíveis, vale ",
+        {
+          "claim": "pm-q3-2-r8-c0",
+          "sufixo": " milhões de euros"
+        },
+        " em ",
+        {
+          "periodo": "pm-q3-3-r37-c3"
+        },
+        " sem que a UTAO, a unidade técnica de apoio orçamental do Parlamento, encontre na proposta «",
+        {
+          "fragmento": "og1-utao-p42",
+          "campo": "excerpt",
+          "texto": "informação suficientemente detalhada sobre o seu conteúdo e os mecanismos de implementação"
+        },
+        "», e o Conselho das Finanças Públicas, que não a conta na sua projeção, prevê para ",
+        {
+          "periodo": "pm-q3-3-r37-c3"
+        },
+        " um défice de ",
+        {
+          "claim": "og1-cfp-saldo-2027",
+          "sufixo": " %"
+        },
+        " do PIB onde o Governo prevê um excedente de ",
+        {
+          "claim": "pm-q3-3-r37-c3",
+          "sufixo": " %"
+        },
+        "."
+      ],
+      "en": [
+        "The proposal's largest revenue measure, the fight against fuel fraud, is worth ",
+        {
+          "claim": "pm-q3-2-r8-c0",
+          "sufixo": " million euros"
+        },
+        " in ",
+        {
+          "periodo": "pm-q3-3-r37-c3"
+        },
+        " without the UTAO, Parliament's technical budget support unit, finding in the proposal «",
+        {
+          "fragmento": "og1-utao-p42",
+          "campo": "excerpt",
+          "texto": "informação suficientemente detalhada sobre o seu conteúdo e os mecanismos de implementação"
+        },
+        "» (sufficiently detailed information on its content and implementation mechanisms), and the Public Finance Council, which leaves it out of its projection, forecasts for ",
+        {
+          "periodo": "pm-q3-3-r37-c3"
+        },
+        " a deficit of ",
+        {
+          "claim": "og1-cfp-saldo-2027",
+          "sufixo": " %"
+        },
+        " of GDP where the Government forecasts a surplus of ",
+        {
+          "claim": "pm-q3-3-r37-c3",
+          "sufixo": " %"
+        },
+        "."
+      ]
+    }
+  ],
   "naoDiz": [],
   "linhas": [],
   "recibos": {},
@@ -448,6 +543,186 @@ export const OG1 = {
                 "campo": "excerpt"
               },
               "»."
+            ]
+          }
+        },
+        {
+          "paragrafo": {
+            "pt": [
+              {
+                "literal": "og1-livre-voto",
+                "campo": "attributed_to"
+              },
+              ", do Livre, a ",
+              {
+                "periodo": "og1-livre-voto"
+              },
+              ", aos jornalistas no Parlamento, segundo a RTP: «",
+              {
+                "literal": "og1-livre-voto",
+                "campo": "excerpt"
+              },
+              "». A RTP relata a decisão do partido de votar contra."
+            ],
+            "en": [
+              {
+                "literal": "og1-livre-voto",
+                "campo": "attributed_to"
+              },
+              ", of Livre, on ",
+              {
+                "periodo": "og1-livre-voto"
+              },
+              ", to journalists in Parliament, as reported by RTP: «",
+              {
+                "literal": "og1-livre-voto",
+                "campo": "excerpt"
+              },
+              "». RTP reports the party's decision to vote against."
+            ]
+          }
+        },
+        {
+          "paragrafo": {
+            "pt": [
+              {
+                "literal": "og1-pan-abstencao",
+                "campo": "attributed_to"
+              },
+              ", do PAN, no debate a ",
+              {
+                "periodo": "og1-pan-abstencao"
+              },
+              ", segundo a RTP: «",
+              {
+                "literal": "og1-pan-abstencao",
+                "campo": "excerpt"
+              },
+              "». A RTP relata a abstenção na generalidade."
+            ],
+            "en": [
+              {
+                "literal": "og1-pan-abstencao",
+                "campo": "attributed_to"
+              },
+              ", of PAN, in the debate on ",
+              {
+                "periodo": "og1-pan-abstencao"
+              },
+              ", as reported by RTP: «",
+              {
+                "literal": "og1-pan-abstencao",
+                "campo": "excerpt"
+              },
+              "». RTP reports the abstention at the general vote."
+            ]
+          }
+        },
+        {
+          "paragrafo": {
+            "pt": [
+              {
+                "literal": "og1-jpp-abstencao",
+                "campo": "attributed_to"
+              },
+              ", do JPP, no debate a ",
+              {
+                "periodo": "og1-jpp-abstencao"
+              },
+              ", segundo a RTP: «",
+              {
+                "literal": "og1-jpp-abstencao",
+                "campo": "excerpt"
+              },
+              "». A RTP relata a abstenção na generalidade."
+            ],
+            "en": [
+              {
+                "literal": "og1-jpp-abstencao",
+                "campo": "attributed_to"
+              },
+              ", of JPP, in the debate on ",
+              {
+                "periodo": "og1-jpp-abstencao"
+              },
+              ", as reported by RTP: «",
+              {
+                "literal": "og1-jpp-abstencao",
+                "campo": "excerpt"
+              },
+              "». RTP reports the abstention at the general vote."
+            ]
+          }
+        },
+        {
+          "paragrafo": {
+            "pt": [
+              {
+                "literal": "og1-chega-voto",
+                "campo": "attributed_to"
+              },
+              ", do Chega, a ",
+              {
+                "periodo": "og1-chega-voto"
+              },
+              ", aos jornalistas na Assembleia da República, segundo a RTP, sobre o Governo: «",
+              {
+                "literal": "og1-chega-voto",
+                "campo": "excerpt"
+              },
+              "». A RTP relata o anúncio do voto contra."
+            ],
+            "en": [
+              {
+                "literal": "og1-chega-voto",
+                "campo": "attributed_to"
+              },
+              ", of Chega, on ",
+              {
+                "periodo": "og1-chega-voto"
+              },
+              ", to journalists at the Assembly of the Republic, as reported by RTP, on the Government: «",
+              {
+                "literal": "og1-chega-voto",
+                "campo": "excerpt"
+              },
+              "». RTP reports the announcement of the vote against."
+            ]
+          }
+        },
+        {
+          "paragrafo": {
+            "pt": [
+              {
+                "literal": "og1-il-voto",
+                "campo": "attributed_to"
+              },
+              ", da Iniciativa Liberal, no encerramento do debate a ",
+              {
+                "periodo": "og1-il-voto"
+              },
+              ", segundo a RTP, sobre a proposta: «",
+              {
+                "literal": "og1-il-voto",
+                "campo": "excerpt"
+              },
+              "». O voto contra consta da notícia da votação."
+            ],
+            "en": [
+              {
+                "literal": "og1-il-voto",
+                "campo": "attributed_to"
+              },
+              ", of Iniciativa Liberal, at the close of the debate on ",
+              {
+                "periodo": "og1-il-voto"
+              },
+              ", as reported by RTP, on the proposal: «",
+              {
+                "literal": "og1-il-voto",
+                "campo": "excerpt"
+              },
+              "». The vote against is in the report of the vote."
             ]
           }
         }
@@ -931,6 +1206,560 @@ export const OG1 = {
               " without the recovery plan: it is the account the Health item already explains."
             ]
           }
+        },
+        {
+          "paragrafo": {
+            "pt": [
+              "A votação na generalidade, a ",
+              {
+                "periodo": "og1-votacao-generalidade"
+              },
+              ", segundo o ECO: a proposta «",
+              {
+                "fragmento": "og1-votacao-generalidade",
+                "campo": "excerpt",
+                "texto": "foi esta quarta-feira aprovada na generalidade"
+              },
+              "», com «",
+              {
+                "fragmento": "og1-votacao-generalidade",
+                "campo": "excerpt",
+                "texto": "os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP"
+              },
+              "», «",
+              {
+                "fragmento": "og1-votacao-generalidade",
+                "campo": "excerpt",
+                "texto": "a abstenção do PS"
+              },
+              "», «",
+              {
+                "fragmento": "og1-votacao-generalidade",
+                "campo": "excerpt",
+                "texto": "do PAN e do JPP"
+              },
+              "» e «",
+              {
+                "fragmento": "og1-votacao-generalidade",
+                "campo": "excerpt",
+                "texto": "o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda"
+              },
+              "»; a RTP: «",
+              {
+                "fragmento": "og1-votacao-generalidade-rtp",
+                "campo": "excerpt",
+                "texto": "O Orçamento do Estado foi aprovado na generalidade com votos a favor do PSD e do CDS. PS abstém-se."
+              },
+              "» O guião oficial das votações de ",
+              {
+                "periodo": "og1-guiao-votacoes-28"
+              },
+              " lista a «",
+              {
+                "fragmento": "og1-guiao-votacoes-28",
+                "campo": "excerpt",
+                "texto": "VOTAÇÃO NA GENERALIDADE"
+              },
+              "» da «",
+              {
+                "fragmento": "og1-guiao-votacoes-28",
+                "campo": "excerpt",
+                "texto": "Proposta de Lei n.º 110/XVII/2.ª (GOV)"
+              },
+              "»; o resultado oficial e o Diário da sessão não estavam publicados quando este item foi reescrito, e a votação final global está marcada para ",
+              {
+                "periodo": "oe-2027-calendario-final-global"
+              },
+              "."
+            ],
+            "en": [
+              "The general vote, on ",
+              {
+                "periodo": "og1-votacao-generalidade"
+              },
+              ", according to ECO: the proposal «",
+              {
+                "fragmento": "og1-votacao-generalidade",
+                "campo": "excerpt",
+                "texto": "foi esta quarta-feira aprovada na generalidade"
+              },
+              "» (was passed at the general vote this Wednesday), with «",
+              {
+                "fragmento": "og1-votacao-generalidade",
+                "campo": "excerpt",
+                "texto": "os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP"
+              },
+              "» (the votes in favour of the two parties that support the Government, PSD and CDS-PP), «",
+              {
+                "fragmento": "og1-votacao-generalidade",
+                "campo": "excerpt",
+                "texto": "a abstenção do PS"
+              },
+              "» (the abstention of PS), «",
+              {
+                "fragmento": "og1-votacao-generalidade",
+                "campo": "excerpt",
+                "texto": "do PAN e do JPP"
+              },
+              "» (of PAN and JPP) and «",
+              {
+                "fragmento": "og1-votacao-generalidade",
+                "campo": "excerpt",
+                "texto": "o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda"
+              },
+              "» (the vote against of Chega, Iniciativa Liberal, Livre, PCP and Bloco de Esquerda); RTP: «",
+              {
+                "fragmento": "og1-votacao-generalidade-rtp",
+                "campo": "excerpt",
+                "texto": "O Orçamento do Estado foi aprovado na generalidade com votos a favor do PSD e do CDS. PS abstém-se."
+              },
+              "» (the State Budget was passed at the general vote with PSD and CDS voting in favour; PS abstains). The official voting guide of ",
+              {
+                "periodo": "og1-guiao-votacoes-28"
+              },
+              " lists the «",
+              {
+                "fragmento": "og1-guiao-votacoes-28",
+                "campo": "excerpt",
+                "texto": "VOTAÇÃO NA GENERALIDADE"
+              },
+              "» (general vote) of «",
+              {
+                "fragmento": "og1-guiao-votacoes-28",
+                "campo": "excerpt",
+                "texto": "Proposta de Lei n.º 110/XVII/2.ª (GOV)"
+              },
+              "»; the official result and the record of the sitting had not been published when this item was rewritten, and the final global vote is scheduled for ",
+              {
+                "periodo": "oe-2027-calendario-final-global"
+              },
+              "."
+            ]
+          }
+        },
+        {
+          "paragrafo": {
+            "pt": [
+              "O Conselho das Finanças Públicas, a ",
+              {
+                "data": "og1-cfp-saldo-2027",
+                "campo": "published_at"
+              },
+              ", «",
+              {
+                "fragmento": "og1-cfp-saldo-2027",
+                "campo": "excerpt",
+                "texto": "antecipa agora um défice orçamental de 0,1% do PIB",
+                "glosa": [
+                  "» (now anticipates a budget deficit of ",
+                  {
+                    "fragmento": "og1-cfp-saldo-2027",
+                    "campo": "excerpt",
+                    "texto": "0,1"
+                  },
+                  "% of GDP)"
+                ]
+              },
+              "» para ",
+              {
+                "periodo": "pm-q3-3-r37-c3"
+              },
+              ": uma diferença de ",
+              {
+                "claim": "og1-cfp-diferenca-mf",
+                "sufixo": " p.p. do PIB"
+              },
+              " face à previsão do Ministério das Finanças que, escreve, «",
+              {
+                "fragmento": "og1-cfp-diferenca-mf",
+                "campo": "excerpt",
+                "texto": "não assume uma expressão materialmente significativa"
+              },
+              "». A projeção do Conselho «",
+              {
+                "fragmento": "og1-cfp-combustiveis",
+                "campo": "excerpt",
+                "texto": "não considera, contudo, o impacto na receita de IVA decorrente da medida do combate à fraude nos combustíveis"
+              },
+              "»; se contasse as medidas que a proposta não especifica, «",
+              {
+                "fragmento": "og1-cfp-plausivel",
+                "campo": "excerpt",
+                "texto": "resultaria um excedente próximo do valor da POE/2027"
+              },
+              "». Sobre os juros, o aumento previsto «",
+              {
+                "fragmento": "og1-cfp-juros",
+                "campo": "excerpt",
+                "texto": "sugere uma possível sobrestimação"
+              },
+              "»; sobre o emprego e as remunerações, as previsões do Ministério «",
+              {
+                "fragmento": "og1-cfp-emprego",
+                "campo": "excerpt",
+                "texto": "são as mais elevadas de entre as instituições de referência"
+              },
+              "»; e o défice da Administração Central sobe «",
+              {
+                "fragmento": "og1-cfp-ac-fss",
+                "campo": "excerpt",
+                "texto": "para 2,8% do PIB, o mais elevado desde 2017, excluindo o período pandémico",
+                "glosa": [
+                  "» (to ",
+                  {
+                    "fragmento": "og1-cfp-ac-fss",
+                    "campo": "excerpt",
+                    "texto": "2,8"
+                  },
+                  "% of GDP, the highest since ",
+                  {
+                    "fragmento": "og1-cfp-ac-fss",
+                    "campo": "excerpt",
+                    "texto": "2017"
+                  },
+                  " excluding the pandemic period)"
+                ]
+              },
+              "», compensado «",
+              {
+                "fragmento": "og1-cfp-ac-fss",
+                "campo": "excerpt",
+                "texto": "sobretudo pelo excedente dos Fundos da Segurança Social"
+              },
+              "»."
+            ],
+            "en": [
+              "The Public Finance Council, on ",
+              {
+                "data": "og1-cfp-saldo-2027",
+                "campo": "published_at"
+              },
+              ", «",
+              {
+                "fragmento": "og1-cfp-saldo-2027",
+                "campo": "excerpt",
+                "texto": "antecipa agora um défice orçamental de 0,1% do PIB",
+                "glosa": [
+                  "» (now anticipates a budget deficit of ",
+                  {
+                    "fragmento": "og1-cfp-saldo-2027",
+                    "campo": "excerpt",
+                    "texto": "0,1"
+                  },
+                  "% of GDP)"
+                ]
+              },
+              " for ",
+              {
+                "periodo": "pm-q3-3-r37-c3"
+              },
+              ": a difference of ",
+              {
+                "claim": "og1-cfp-diferenca-mf",
+                "sufixo": " p.p. of GDP"
+              },
+              " from the Finance Ministry's forecast which, it writes, «",
+              {
+                "fragmento": "og1-cfp-diferenca-mf",
+                "campo": "excerpt",
+                "texto": "não assume uma expressão materialmente significativa"
+              },
+              "» (is not materially significant). The Council's projection «",
+              {
+                "fragmento": "og1-cfp-combustiveis",
+                "campo": "excerpt",
+                "texto": "não considera, contudo, o impacto na receita de IVA decorrente da medida do combate à fraude nos combustíveis"
+              },
+              "» (does not, however, consider the impact on VAT revenue of the fuel anti-fraud measure); if it counted the measures the proposal does not specify, «",
+              {
+                "fragmento": "og1-cfp-plausivel",
+                "campo": "excerpt",
+                "texto": "resultaria um excedente próximo do valor da POE/2027"
+              },
+              "» (it would result in a surplus close to the proposal's figure). On interest, the forecast increase «",
+              {
+                "fragmento": "og1-cfp-juros",
+                "campo": "excerpt",
+                "texto": "sugere uma possível sobrestimação"
+              },
+              "» (suggests a possible overestimate); on employment and wages, the Ministry's forecasts «",
+              {
+                "fragmento": "og1-cfp-emprego",
+                "campo": "excerpt",
+                "texto": "são as mais elevadas de entre as instituições de referência"
+              },
+              "» (are the highest among the reference institutions); and the Central Administration deficit rises «",
+              {
+                "fragmento": "og1-cfp-ac-fss",
+                "campo": "excerpt",
+                "texto": "para 2,8% do PIB, o mais elevado desde 2017, excluindo o período pandémico",
+                "glosa": [
+                  "» (to ",
+                  {
+                    "fragmento": "og1-cfp-ac-fss",
+                    "campo": "excerpt",
+                    "texto": "2,8"
+                  },
+                  "% of GDP, the highest since ",
+                  {
+                    "fragmento": "og1-cfp-ac-fss",
+                    "campo": "excerpt",
+                    "texto": "2017"
+                  },
+                  " excluding the pandemic period)"
+                ]
+              },
+              ", offset «",
+              {
+                "fragmento": "og1-cfp-ac-fss",
+                "campo": "excerpt",
+                "texto": "sobretudo pelo excedente dos Fundos da Segurança Social"
+              },
+              "» (mostly by the Social Security Funds' surplus)."
+            ]
+          }
+        },
+        {
+          "paragrafo": {
+            "pt": [
+              "O Conselho conta «",
+              {
+                "fragmento": "og1-cfp-riscos",
+                "campo": "excerpt",
+                "texto": "riscos descendentes"
+              },
+              "», entre eles «",
+              {
+                "fragmento": "og1-cfp-riscos",
+                "campo": "excerpt",
+                "texto": "um crescimento da massa salarial da economia inferior ao previsto"
+              },
+              "», «",
+              {
+                "fragmento": "og1-cfp-riscos",
+                "campo": "excerpt",
+                "texto": "um impacto da medida de combate à fraude no sector dos combustíveis aquém do previsto"
+              },
+              "» e «",
+              {
+                "fragmento": "og1-cfp-riscos",
+                "campo": "excerpt",
+                "texto": "a materialização de despesa pública associada a passivos contingentes das AP"
+              },
+              "», onde entram as parcerias público-privadas."
+            ],
+            "en": [
+              "The Council counts «",
+              {
+                "fragmento": "og1-cfp-riscos",
+                "campo": "excerpt",
+                "texto": "riscos descendentes"
+              },
+              "» (downside risks), among them «",
+              {
+                "fragmento": "og1-cfp-riscos",
+                "campo": "excerpt",
+                "texto": "um crescimento da massa salarial da economia inferior ao previsto"
+              },
+              "» (wage bill growth below forecast), «",
+              {
+                "fragmento": "og1-cfp-riscos",
+                "campo": "excerpt",
+                "texto": "um impacto da medida de combate à fraude no sector dos combustíveis aquém do previsto"
+              },
+              "» (a smaller than forecast impact of the fuel anti-fraud measure) and «",
+              {
+                "fragmento": "og1-cfp-riscos",
+                "campo": "excerpt",
+                "texto": "a materialização de despesa pública associada a passivos contingentes das AP"
+              },
+              "» (public expenditure arising from the public administrations' contingent liabilities), where the public-private partnerships come in."
+            ]
+          }
+        },
+        {
+          "paragrafo": {
+            "pt": [
+              "Sobre os juros, a UTAO escreve que «",
+              {
+                "fragmento": "og1-utao-p105",
+                "campo": "excerpt",
+                "texto": "Persiste o risco de encargos superiores aos projetados"
+              },
+              "» e transcreve as sensibilidades do Ministério: «",
+              {
+                "fragmento": "og1-utao-p107",
+                "campo": "excerpt",
+                "texto": "uma subida de 2 p.p. das taxas de juro de curto prazo reduziria o PIB em cerca de 0,2 p.p. e o saldo em 0,5 p.p. do PIB",
+                "glosa": [
+                  "» (a ",
+                  {
+                    "fragmento": "og1-utao-p107",
+                    "campo": "excerpt",
+                    "texto": "2"
+                  },
+                  " p.p. rise in short-term interest rates would cut GDP by about ",
+                  {
+                    "fragmento": "og1-utao-p107",
+                    "campo": "excerpt",
+                    "texto": "0,2"
+                  },
+                  " p.p. and the balance by ",
+                  {
+                    "fragmento": "og1-utao-p107",
+                    "campo": "excerpt",
+                    "texto": "0,5"
+                  },
+                  " p.p. of GDP)"
+                ]
+              },
+              "»; o relatório da proposta diz que «",
+              {
+                "fragmento": "og1-mf-juros-choque-100pb",
+                "campo": "excerpt",
+                "texto": "No caso de um choque de 100 pb, a variação dos encargos com juros ascenderia a 293 milhões de euros e 505 milhões de euros, em contabilidade pública e contabilidade nacional, respetivamente",
+                "glosa": [
+                  "» (in a ",
+                  {
+                    "fragmento": "og1-mf-juros-choque-100pb",
+                    "campo": "excerpt",
+                    "texto": "100"
+                  },
+                  " bp shock, interest charges would change by ",
+                  {
+                    "fragmento": "og1-mf-juros-choque-100pb",
+                    "campo": "excerpt",
+                    "texto": "293"
+                  },
+                  " million euros and ",
+                  {
+                    "fragmento": "og1-mf-juros-choque-100pb",
+                    "campo": "excerpt",
+                    "texto": "505"
+                  },
+                  " million euros, in public and national accounts respectively)"
+                ]
+              },
+              "»; e uma despesa com juros abaixo da prevista «",
+              {
+                "fragmento": "og1-utao-p111",
+                "campo": "excerpt",
+                "texto": "constitui um risco ascendente para o saldo orçamental"
+              },
+              "». A ",
+              {
+                "fragmento": "og1-utao-p16",
+                "campo": "excerpt",
+                "texto": "16"
+              },
+              " de outubro, «",
+              {
+                "fragmento": "og1-utao-p16",
+                "campo": "excerpt",
+                "texto": "o contrato de dezembro do Brent cotava a cerca de 110 USD por barril",
+                "glosa": [
+                  "» (the December Brent contract traded at about ",
+                  {
+                    "fragmento": "og1-utao-p16",
+                    "campo": "excerpt",
+                    "texto": "110"
+                  },
+                  " USD a barrel)"
+                ]
+              },
+              "»."
+            ],
+            "en": [
+              "On interest, the UTAO writes that «",
+              {
+                "fragmento": "og1-utao-p105",
+                "campo": "excerpt",
+                "texto": "Persiste o risco de encargos superiores aos projetados"
+              },
+              "» (the risk of charges above projection persists) and transcribes the Ministry's sensitivities: «",
+              {
+                "fragmento": "og1-utao-p107",
+                "campo": "excerpt",
+                "texto": "uma subida de 2 p.p. das taxas de juro de curto prazo reduziria o PIB em cerca de 0,2 p.p. e o saldo em 0,5 p.p. do PIB",
+                "glosa": [
+                  "» (a ",
+                  {
+                    "fragmento": "og1-utao-p107",
+                    "campo": "excerpt",
+                    "texto": "2"
+                  },
+                  " p.p. rise in short-term interest rates would cut GDP by about ",
+                  {
+                    "fragmento": "og1-utao-p107",
+                    "campo": "excerpt",
+                    "texto": "0,2"
+                  },
+                  " p.p. and the balance by ",
+                  {
+                    "fragmento": "og1-utao-p107",
+                    "campo": "excerpt",
+                    "texto": "0,5"
+                  },
+                  " p.p. of GDP)"
+                ]
+              },
+              "; the proposal's report says that «",
+              {
+                "fragmento": "og1-mf-juros-choque-100pb",
+                "campo": "excerpt",
+                "texto": "No caso de um choque de 100 pb, a variação dos encargos com juros ascenderia a 293 milhões de euros e 505 milhões de euros, em contabilidade pública e contabilidade nacional, respetivamente",
+                "glosa": [
+                  "» (in a ",
+                  {
+                    "fragmento": "og1-mf-juros-choque-100pb",
+                    "campo": "excerpt",
+                    "texto": "100"
+                  },
+                  " bp shock, interest charges would change by ",
+                  {
+                    "fragmento": "og1-mf-juros-choque-100pb",
+                    "campo": "excerpt",
+                    "texto": "293"
+                  },
+                  " million euros and ",
+                  {
+                    "fragmento": "og1-mf-juros-choque-100pb",
+                    "campo": "excerpt",
+                    "texto": "505"
+                  },
+                  " million euros, in public and national accounts respectively)"
+                ]
+              },
+              "; and interest expenditure below forecast «",
+              {
+                "fragmento": "og1-utao-p111",
+                "campo": "excerpt",
+                "texto": "constitui um risco ascendente para o saldo orçamental"
+              },
+              "» (is an upside risk to the budget balance). On ",
+              {
+                "fragmento": "og1-utao-p16",
+                "campo": "excerpt",
+                "texto": "16"
+              },
+              " October, «",
+              {
+                "fragmento": "og1-utao-p16",
+                "campo": "excerpt",
+                "texto": "o contrato de dezembro do Brent cotava a cerca de 110 USD por barril",
+                "glosa": [
+                  "» (the December Brent contract traded at about ",
+                  {
+                    "fragmento": "og1-utao-p16",
+                    "campo": "excerpt",
+                    "texto": "110"
+                  },
+                  " USD a barrel)"
+                ]
+              },
+              "."
+            ]
+          }
         }
       ]
     },
@@ -961,7 +1790,16 @@ export const OG1 = {
               {
                 "fragmento": "og1-governo-observador-saldo",
                 "campo": "excerpt",
-                "texto": "um saldo de 270 milhões"
+                "texto": "um saldo de 270 milhões",
+                "glosa": [
+                  "» (a balance of ",
+                  {
+                    "fragmento": "og1-governo-observador-saldo",
+                    "campo": "excerpt",
+                    "texto": "270"
+                  },
+                  " million)"
+                ]
               },
               "» cabem na conta que a UTAO transcreve do relatório da proposta: o saldo de ",
               {
@@ -987,7 +1825,50 @@ export const OG1 = {
               {
                 "periodo": "pm-q3-3-r37-c3"
               },
-              ", venha de onde vier. Das posições anunciadas, o PS anunciou a abstenção na generalidade e o BE, segundo o Diário de Notícias, o voto contra; o PCP, a IL e o Livre não anunciaram o voto nos textos aqui citados. Este item não tem afirmações do PSD, do CDS e do Chega: a pesquisa não selou nenhuma; a fase B traz as intervenções do debate."
+              ", venha de onde vier. Na votação de ",
+              {
+                "periodo": "og1-votacao-generalidade"
+              },
+              ", segundo o ECO, o PSD e o CDS-PP votaram a favor, o PS, o PAN e o JPP abstiveram-se e o Chega, a Iniciativa Liberal, o Livre, o PCP e o Bloco de Esquerda votaram contra; o PS, o PAN e o JPP tinham anunciado a abstenção, e o Chega e o Livre o voto contra, nas intervenções aqui citadas. O Conselho das Finanças Públicas e o Governo divergem em ",
+              {
+                "claim": "og1-cfp-diferenca-mf",
+                "sufixo": " p.p. do PIB"
+              },
+              " no saldo de ",
+              {
+                "periodo": "pm-q3-3-r37-c3"
+              },
+              ", um défice de ",
+              {
+                "claim": "og1-cfp-saldo-2027",
+                "sufixo": " %"
+              },
+              " contra um excedente de ",
+              {
+                "claim": "pm-q3-3-r37-c3",
+                "sufixo": " %"
+              },
+              ", e a diferença está nas medidas que o Conselho não conta porque a proposta não as especifica, a começar pela dos combustíveis; nos juros, a UTAO vê o risco de encargos acima do previsto e o Conselho uma possível sobrestimação, e o relatório da proposta mede a incerteza: num «",
+              {
+                "fragmento": "og1-mf-juros-choque-100pb",
+                "campo": "excerpt",
+                "texto": "choque de 100 pb",
+                "glosa": [
+                  "» (",
+                  {
+                    "fragmento": "og1-mf-juros-choque-100pb",
+                    "campo": "excerpt",
+                    "texto": "100"
+                  },
+                  " bp shock)"
+                ]
+              },
+              "», ",
+              {
+                "claim": "og1-mf-juros-choque-100pb",
+                "sufixo": " milhões de euros"
+              },
+              " em contabilidade nacional."
             ],
             "en": [
               "The forecasts the minister calls «",
@@ -996,7 +1877,7 @@ export const OG1 = {
                 "campo": "excerpt",
                 "texto": "perfeitamente alinhadas"
               },
-              "» and the UTAO's appraisal do not say the same thing. The UTAO does not correct the GDP scenario, but it finds employment hard to reconcile with immigration, points to an oil price below the contracts and to the largest revenue measure without the information to support it, and it counts a net expenditure deviation that, on the Ministry's own figures, only the defence flexibility closes; on the European Commission's, it does not close. The ",
+              "» (perfectly aligned) and the UTAO's appraisal do not say the same. The UTAO does not correct the GDP scenario, but finds employment hard to reconcile with immigration, points to an oil price below the contracts and to the largest revenue measure without the information to support it, and counts a net expenditure deviation that, on the Ministry's own figures, only the defence flexibility closes; on the European Commission's, it does not close. The ",
               {
                 "fragmento": "og1-governo-observador-saldo",
                 "campo": "excerpt",
@@ -1007,9 +1888,18 @@ export const OG1 = {
               {
                 "fragmento": "og1-governo-observador-saldo",
                 "campo": "excerpt",
-                "texto": "um saldo de 270 milhões"
+                "texto": "um saldo de 270 milhões",
+                "glosa": [
+                  "» (a balance of ",
+                  {
+                    "fragmento": "og1-governo-observador-saldo",
+                    "campo": "excerpt",
+                    "texto": "270"
+                  },
+                  " million)"
+                ]
               },
-              "» fit the account the UTAO transcribes from the proposal's report: the ",
+              " fit the account the UTAO transcribes from the proposal's report: the ",
               {
                 "periodo": "pm-q3-3-r37-c3"
               },
@@ -1018,22 +1908,65 @@ export const OG1 = {
                 "claim": "og1-utao-saldo-me-2027",
                 "sufixo": " million euros"
               },
-              ", and the measure he spoke of costs more than that. The rise in interest, «",
+              ", and the measure he spoke of costs more than it. The rise in interest, «",
               {
                 "fragmento": "og1-governo-eco-juros",
                 "campo": "excerpt",
                 "texto": "risco de mercado e não risco de país"
               },
-              "» for the minister, is in the proposal ",
+              "» (market risk, not country risk) for the minister, is in the proposal ",
               {
                 "claim": "og1-utao-juros-variacao",
                 "sufixo": " %"
               },
-              " more spending in ",
+              " more expenditure in ",
               {
                 "periodo": "pm-q3-3-r37-c3"
               },
-              ", wherever it comes from. Of the positions announced, the PS announced abstention in the general vote and the BE, as reported by Diário de Notícias, a vote against; the PCP, the IL and Livre did not announce their vote in the texts cited here. This item has no statements from the PSD, the CDS or Chega: the research sealed none; phase B brings the speeches of the debate."
+              ", wherever it comes from. At the vote on ",
+              {
+                "periodo": "og1-votacao-generalidade"
+              },
+              ", according to ECO, PSD and CDS-PP voted in favour, PS, PAN and JPP abstained and Chega, Iniciativa Liberal, Livre, PCP and Bloco de Esquerda voted against; PS, PAN and JPP had announced the abstention, and Chega and Livre the vote against, in the statements quoted here. The Public Finance Council and the Government differ by ",
+              {
+                "claim": "og1-cfp-diferenca-mf",
+                "sufixo": " p.p. of GDP"
+              },
+              " on the ",
+              {
+                "periodo": "pm-q3-3-r37-c3"
+              },
+              " balance, a deficit of ",
+              {
+                "claim": "og1-cfp-saldo-2027",
+                "sufixo": " %"
+              },
+              " against a surplus of ",
+              {
+                "claim": "pm-q3-3-r37-c3",
+                "sufixo": " %"
+              },
+              ", and the difference lies in the measures the Council does not count because the proposal does not specify them, starting with the fuel one; on interest, the UTAO sees the risk of charges above forecast and the Council a possible overestimate, and the proposal's report measures the uncertainty: in a «",
+              {
+                "fragmento": "og1-mf-juros-choque-100pb",
+                "campo": "excerpt",
+                "texto": "choque de 100 pb",
+                "glosa": [
+                  "» (",
+                  {
+                    "fragmento": "og1-mf-juros-choque-100pb",
+                    "campo": "excerpt",
+                    "texto": "100"
+                  },
+                  " bp shock)"
+                ]
+              },
+              ", ",
+              {
+                "claim": "og1-mf-juros-choque-100pb",
+                "sufixo": " million euros"
+              },
+              " in national accounts."
             ]
           }
         }
@@ -1049,68 +1982,106 @@ export const OG1 = {
         {
           "paragrafo": {
             "pt": [
-              "A proposta chega ao voto com um excedente de ",
+              "A proposta passou na generalidade a ",
+              {
+                "periodo": "og1-votacao-generalidade"
+              },
+              " com os votos do PSD e do CDS-PP e a abstenção do PS, do PAN e do JPP, e chega à especialidade com um excedente de ",
               {
                 "claim": "pm-q3-3-r37-c3",
                 "sufixo": " %"
               },
-              " do PIB que assenta numa receita de ",
+              " do PIB nas previsões do Governo e um défice de ",
+              {
+                "claim": "og1-cfp-saldo-2027",
+                "sufixo": " %"
+              },
+              " nas do Conselho das Finanças Públicas: a diferença, ",
+              {
+                "claim": "og1-cfp-diferenca-mf",
+                "sufixo": " p.p. do PIB"
+              },
+              ", cabe nas medidas que o Conselho não conta porque a proposta não as especifica, a começar pelos ",
               {
                 "claim": "pm-q3-2-r8-c0",
                 "sufixo": " milhões de euros"
               },
-              " sem a informação que a fundamente, num emprego que a UTAO, a unidade técnica de apoio orçamental do Parlamento, tem dificuldade em conciliar com a imigração e num petróleo cujos contratos para ",
+              " do combate à fraude nos combustíveis. Nos juros, a UTAO vê o risco de encargos acima do previsto e o Conselho uma possível sobrestimação, e o relatório da proposta mede a incerteza: num «",
               {
-                "periodo": "pm-q3-3-r37-c3"
-              },
-              " estavam, a ",
-              {
-                "fragmento": "og1-utao-brent-diferenca",
+                "fragmento": "og1-mf-juros-choque-100pb",
                 "campo": "excerpt",
-                "texto": "16"
+                "texto": "choque de 100 pb",
+                "glosa": [
+                  "» (",
+                  {
+                    "fragmento": "og1-mf-juros-choque-100pb",
+                    "campo": "excerpt",
+                    "texto": "100"
+                  },
+                  " bp shock)"
+                ]
               },
-              " de outubro, ",
+              "», ",
               {
-                "claim": "og1-utao-brent-diferenca",
-                "sufixo": " %"
+                "claim": "og1-mf-juros-choque-100pb",
+                "sufixo": " milhões de euros"
               },
-              " acima do pressuposto da proposta. O que o Parlamento vota a ",
+              " em contabilidade nacional. Os números da especialidade vêm depois; a votação final global está marcada para ",
               {
-                "periodo": "oe-2027-calendario-generalidade"
+                "periodo": "oe-2027-calendario-final-global"
               },
-              " é a generalidade; os números da especialidade vêm depois."
+              "."
             ],
             "en": [
-              "The proposal reaches the vote with a surplus of ",
+              "The proposal passed at the general vote on ",
+              {
+                "periodo": "og1-votacao-generalidade"
+              },
+              " with the votes of PSD and CDS-PP and the abstention of PS, PAN and JPP, and reaches the detailed stage with a surplus of ",
               {
                 "claim": "pm-q3-3-r37-c3",
                 "sufixo": " %"
               },
-              " of GDP that rests on ",
+              " of GDP in the Government's forecasts and a deficit of ",
+              {
+                "claim": "og1-cfp-saldo-2027",
+                "sufixo": " %"
+              },
+              " in the Public Finance Council's: the difference, ",
+              {
+                "claim": "og1-cfp-diferenca-mf",
+                "sufixo": " p.p. of GDP"
+              },
+              ", fits in the measures the Council does not count because the proposal does not specify them, starting with the ",
               {
                 "claim": "pm-q3-2-r8-c0",
                 "sufixo": " million euros"
               },
-              " of revenue without the information to support it, on employment the UTAO, Parliament's technical budget support unit, finds hard to reconcile with immigration, and on oil whose ",
+              " of the fight against fuel fraud. On interest, the UTAO sees the risk of charges above forecast and the Council a possible overestimate, and the proposal's report measures the uncertainty: in a «",
               {
-                "periodo": "pm-q3-3-r37-c3"
-              },
-              " contracts were, on ",
-              {
-                "fragmento": "og1-utao-brent-diferenca",
+                "fragmento": "og1-mf-juros-choque-100pb",
                 "campo": "excerpt",
-                "texto": "16"
+                "texto": "choque de 100 pb",
+                "glosa": [
+                  "» (",
+                  {
+                    "fragmento": "og1-mf-juros-choque-100pb",
+                    "campo": "excerpt",
+                    "texto": "100"
+                  },
+                  " bp shock)"
+                ]
               },
-              " October, ",
+              ", ",
               {
-                "claim": "og1-utao-brent-diferenca",
-                "sufixo": " %"
+                "claim": "og1-mf-juros-choque-100pb",
+                "sufixo": " million euros"
               },
-              " above the proposal's assumption. What Parliament votes on ",
+              " in national accounts. The figures of the detailed stage come later; the final global vote is scheduled for ",
               {
-                "periodo": "oe-2027-calendario-generalidade"
+                "periodo": "oe-2027-calendario-final-global"
               },
-              " is the general outline; the figures of the detailed stage come later."
+              "."
             ]
           }
         }
@@ -1126,7 +2097,11 @@ export const OG1 = {
         {
           "paragrafo": {
             "pt": [
-              "Ao Governo: publicar, antes da votação final, o conteúdo e os mecanismos da medida de combate à fraude nos combustíveis, ",
+              "Ao Governo: publicar, antes da votação final global de ",
+              {
+                "periodo": "oe-2027-calendario-final-global"
+              },
+              ", o conteúdo e os mecanismos da medida de combate à fraude nos combustíveis, ",
               {
                 "claim": "pm-q3-2-r8-c0",
                 "sufixo": " milhões de euros"
@@ -1135,32 +2110,37 @@ export const OG1 = {
               {
                 "periodo": "pm-q3-3-r37-c3"
               },
-              " numa proposta com um excedente de ",
+              " que a UTAO não encontra fundamentados e que o Conselho das Finanças Públicas não conta na sua projeção; sem isso, o Parlamento vota um excedente de ",
               {
                 "claim": "og1-utao-saldo-me-2027",
                 "sufixo": " milhões de euros"
               },
-              ": sem essa informação fica limitada, nas palavras da UTAO, «",
-              {
-                "fragmento": "og1-utao-p42",
-                "campo": "excerpt",
-                "texto": "a avaliação da robustez da medida"
-              },
-              "». Ao Parlamento: na especialidade, pedir essa informação antes da votação final e não dar os ",
-              {
-                "claim": "pm-q3-2-r8-c0",
-                "sufixo": " milhões de euros"
-              },
-              " por certos sem ela, e pedir ao Governo o cenário em que o emprego cresce menos do que o previsto, porque «",
+              " em contabilidade nacional que depende de uma receita por explicar. Ao Parlamento: na especialidade, pedir essa informação e o cenário em que o emprego cresce menos do que o previsto, porque «",
               {
                 "fragmento": "og1-utao-p15",
                 "campo": "excerpt",
                 "texto": "Se o emprego crescer menos, as bases da receita fiscal e contributiva ficarão abaixo do previsto"
               },
+              "», e pedir ao Governo que diga qual das duas leituras dos juros segue, a da UTAO, que vê «",
+              {
+                "fragmento": "og1-utao-p105",
+                "campo": "excerpt",
+                "texto": "o risco de encargos superiores aos projetados"
+              },
+              "», ou a do Conselho, que vê «",
+              {
+                "fragmento": "og1-cfp-juros",
+                "campo": "excerpt",
+                "texto": "uma possível sobrestimação"
+              },
               "»."
             ],
             "en": [
-              "To the Government: publish, before the final vote, the content and the mechanisms of the fuel anti-fraud measure, ",
+              "To the Government: publish, before the final global vote on ",
+              {
+                "periodo": "oe-2027-calendario-final-global"
+              },
+              ", the content and the mechanisms of the fuel anti-fraud measure, ",
               {
                 "claim": "pm-q3-2-r8-c0",
                 "sufixo": " million euros"
@@ -1169,29 +2149,30 @@ export const OG1 = {
               {
                 "periodo": "pm-q3-3-r37-c3"
               },
-              " in a proposal with a surplus of ",
+              " that the UTAO does not find substantiated and that the Public Finance Council leaves out of its projection; without it, Parliament votes a surplus of ",
               {
                 "claim": "og1-utao-saldo-me-2027",
                 "sufixo": " million euros"
               },
-              ": without that information, in the UTAO's words, «",
-              {
-                "fragmento": "og1-utao-p42",
-                "campo": "excerpt",
-                "texto": "a avaliação da robustez da medida"
-              },
-              "» (the assessment of the measure's robustness) is limited. To Parliament: at the detailed stage, ask for that information before the final vote and do not take the ",
-              {
-                "claim": "pm-q3-2-r8-c0",
-                "sufixo": " million euros"
-              },
-              " as given without it, and ask the Government for the scenario in which employment grows less than forecast, because «",
+              " in national accounts that depends on an unexplained revenue. To Parliament: at the detailed stage, ask for that information and for the scenario in which employment grows less than forecast, because «",
               {
                 "fragmento": "og1-utao-p15",
                 "campo": "excerpt",
                 "texto": "Se o emprego crescer menos, as bases da receita fiscal e contributiva ficarão abaixo do previsto"
               },
-              "» (if employment grows less, the tax and contribution revenue bases will fall short of the forecast)."
+              "» (if employment grows less, the tax and contribution revenue bases will fall short of the forecast), and ask the Government to say which of the two readings of interest it follows, the UTAO's, which sees «",
+              {
+                "fragmento": "og1-utao-p105",
+                "campo": "excerpt",
+                "texto": "o risco de encargos superiores aos projetados"
+              },
+              "» (the risk of charges above projection), or the Council's, which sees «",
+              {
+                "fragmento": "og1-cfp-juros",
+                "campo": "excerpt",
+                "texto": "uma possível sobrestimação"
+              },
+              "» (a possible overestimate)."
             ]
           }
         }
@@ -1207,7 +2188,7 @@ export const OG1 = {
         {
           "paragrafo": {
             "pt": [
-              "O orçamento que vai a votos tem um excedente de ",
+              "O orçamento passou na generalidade com os votos de dois partidos e a abstenção de três, e tem um excedente de ",
               {
                 "claim": "pm-q3-3-r37-c3",
                 "sufixo": " %"
@@ -1217,7 +2198,7 @@ export const OG1 = {
                 "claim": "og1-utao-saldo-me-2027",
                 "sufixo": " milhões de euros"
               },
-              ") em contabilidade nacional, nas previsões do Governo, e assenta em três pressupostos que a UTAO põe em dúvida, os mesmos que a conclusão acima nomeia: uma receita de ",
+              ") em contabilidade nacional, nas previsões do Governo, que assenta em três pressupostos que a UTAO põe em dúvida: uma receita de ",
               {
                 "claim": "pm-q3-2-r8-c0",
                 "sufixo": " milhões de euros"
@@ -1260,7 +2241,17 @@ export const OG1 = {
                 "campo": "excerpt",
                 "texto": "16"
               },
-              " de outubro. A previsão já tem os juros a subir ",
+              " de outubro. O Conselho das Finanças Públicas chega a um défice de ",
+              {
+                "claim": "og1-cfp-saldo-2027",
+                "sufixo": " %"
+              },
+              " do PIB pelo mesmo caminho: não conta a medida dos combustíveis e diz que, se a contasse, chegaria a um excedente próximo do do Governo. É a mesma conta vista de dois lados: o excedente existe se os ",
+              {
+                "claim": "pm-q3-2-r8-c0",
+                "sufixo": " milhões de euros"
+              },
+              " existirem. O que está em jogo são os juros: a proposta já os tem a subir ",
               {
                 "claim": "og1-utao-juros-variacao",
                 "sufixo": " %"
@@ -1270,65 +2261,45 @@ export const OG1 = {
                 "claim": "og1-utao-juros-montante",
                 "sufixo": " mil milhões de euros"
               },
-              ". Quando ",
+              "; a UTAO vê o risco de encargos acima do previsto, o Conselho vê uma possível sobrestimação, e o relatório da proposta diz que um «",
               {
-                "literal": "og1-governo-rtp-previsoes",
-                "campo": "attributed_to"
-              },
-              ", ministro das Finanças, diz que as previsões «",
-              {
-                "fragmento": "og1-governo-rtp-previsoes",
+                "fragmento": "og1-mf-juros-choque-100pb",
                 "campo": "excerpt",
-                "texto": "estão perfeitamente alinhadas com as previsões do Governo, têm diferenças muito pequenas"
+                "texto": "choque de 100 pb",
+                "glosa": [
+                  "» (",
+                  {
+                    "fragmento": "og1-mf-juros-choque-100pb",
+                    "campo": "excerpt",
+                    "texto": "100"
+                  },
+                  " bp shock)"
+                ]
               },
-              "», fala das revisões das previsões para a economia; no emprego, a previsão do Governo é, nas palavras da UTAO, «",
+              "» são ",
               {
-                "fragmento": "og1-utao-p15",
-                "campo": "excerpt",
-                "texto": "a mais elevada das instituições de referência"
-              },
-              "». As medidas já em vigor têm um impacto adicional de ",
-              {
-                "claim": "og1-utao-politicas-saldo",
+                "claim": "og1-mf-juros-choque-100pb",
                 "sufixo": " milhões de euros"
               },
-              " no saldo de ",
+              " em contabilidade nacional, com o excedente em ",
               {
-                "periodo": "pm-q3-3-r37-c3"
-              },
-              " (",
-              {
-                "claim": "og1-utao-politicas-peso",
-                "sufixo": " %"
-              },
-              " do PIB) e as medidas novas valem ",
-              {
-                "claim": "og1-utao-novas-saldo",
+                "claim": "og1-utao-saldo-me-2027",
                 "sufixo": " milhões de euros"
               },
-              ": o que muda em ",
-              {
-                "periodo": "pm-q3-3-r37-c3"
-              },
-              " vem sobretudo do que já estava em vigor. «",
+              ". Os votos dizem o resto: o PS deixou passar o orçamento, e o Chega, a Iniciativa Liberal, o Livre, o PCP e o Bloco de Esquerda votaram contra por razões que não coincidem; «",
               {
                 "fragmento": "og1-pcp-comite",
                 "campo": "excerpt",
                 "texto": "um frete ao capital e um desastre para o País"
               },
-              "», diz o ",
+              "», diz o Comité Central do PCP, e isso é um juízo, que não se mede. O que se mede diz que é um orçamento equilibrado por um fio, e que o fio é a receita dos combustíveis e as taxas de juro. O que vigiar até ",
               {
-                "literal": "og1-pcp-comite",
-                "campo": "attributed_to"
+                "periodo": "oe-2027-calendario-final-global"
               },
-              "; é um juízo, e um juízo não se mede. O que se mede diz que é um orçamento equilibrado por um fio. O que a UTAO escreve sobre o risco dos juros e das taxas de juro entra aqui a ",
-              {
-                "periodo": "oe-2027-calendario-generalidade"
-              },
-              ", depois do voto, com o registo da votação e as intervenções do Diário da Assembleia."
+              ": a informação sobre a medida dos combustíveis, o cenário do emprego e as taxas das novas emissões de dívida."
             ],
             "en": [
-              "The budget going to the vote has a surplus of ",
+              "The budget passed at the general vote with the votes of two parties and the abstention of three, and has a surplus of ",
               {
                 "claim": "pm-q3-3-r37-c3",
                 "sufixo": " %"
@@ -1338,7 +2309,7 @@ export const OG1 = {
                 "claim": "og1-utao-saldo-me-2027",
                 "sufixo": " million euros"
               },
-              ") in national accounts, in the Government's forecasts, and rests on three assumptions the UTAO calls into question, the same three the conclusion above names: ",
+              ") in national accounts, in the Government's forecasts, resting on three assumptions the UTAO calls into question: ",
               {
                 "claim": "pm-q3-2-r8-c0",
                 "sufixo": " million euros"
@@ -1364,7 +2335,7 @@ export const OG1 = {
               "» (hard to reconcile with the recent slowdown in net immigration); and oil at ",
               {
                 "claim": "og1-utao-brent-mf-2027",
-                "sufixo": " dollars per barrel"
+                "sufixo": " dollars a barrel"
               },
               ", when the ",
               {
@@ -1381,7 +2352,17 @@ export const OG1 = {
                 "campo": "excerpt",
                 "texto": "16"
               },
-              " October. The forecast already has interest rising ",
+              " October. The Public Finance Council reaches a deficit of ",
+              {
+                "claim": "og1-cfp-saldo-2027",
+                "sufixo": " %"
+              },
+              " of GDP by the same road: it does not count the fuel measure and says that, if it did, it would reach a surplus close to the Government's. It is the same account seen from two sides: the surplus exists if the ",
+              {
+                "claim": "pm-q3-2-r8-c0",
+                "sufixo": " million euros"
+              },
+              " exist. What is at stake is interest: the proposal already has it rising ",
               {
                 "claim": "og1-utao-juros-variacao",
                 "sufixo": " %"
@@ -1391,62 +2372,42 @@ export const OG1 = {
                 "claim": "og1-utao-juros-montante",
                 "sufixo": " billion euros"
               },
-              ". When ",
+              "; the UTAO sees the risk of charges above forecast, the Council sees a possible overestimate, and the proposal's report says that a «",
               {
-                "literal": "og1-governo-rtp-previsoes",
-                "campo": "attributed_to"
-              },
-              ", Finance Minister, says the forecasts «",
-              {
-                "fragmento": "og1-governo-rtp-previsoes",
+                "fragmento": "og1-mf-juros-choque-100pb",
                 "campo": "excerpt",
-                "texto": "estão perfeitamente alinhadas com as previsões do Governo, têm diferenças muito pequenas"
+                "texto": "choque de 100 pb",
+                "glosa": [
+                  "» (",
+                  {
+                    "fragmento": "og1-mf-juros-choque-100pb",
+                    "campo": "excerpt",
+                    "texto": "100"
+                  },
+                  " bp shock)"
+                ]
               },
-              "» (are perfectly aligned with the Government's forecasts, with very small differences), he is speaking of the revisions of the forecasts for the economy; on employment, the Government's forecast is, in the UTAO's words, «",
+              " is ",
               {
-                "fragmento": "og1-utao-p15",
-                "campo": "excerpt",
-                "texto": "a mais elevada das instituições de referência"
-              },
-              "» (the highest among the reference institutions). Measures already in force have an additional impact of ",
-              {
-                "claim": "og1-utao-politicas-saldo",
+                "claim": "og1-mf-juros-choque-100pb",
                 "sufixo": " million euros"
               },
-              " on the ",
+              " in national accounts, with the surplus at ",
               {
-                "periodo": "pm-q3-3-r37-c3"
-              },
-              " balance (",
-              {
-                "claim": "og1-utao-politicas-peso",
-                "sufixo": " %"
-              },
-              " of GDP) and the new measures are worth ",
-              {
-                "claim": "og1-utao-novas-saldo",
+                "claim": "og1-utao-saldo-me-2027",
                 "sufixo": " million euros"
               },
-              ": what changes in ",
-              {
-                "periodo": "pm-q3-3-r37-c3"
-              },
-              " comes mostly from what was already in force. «",
+              ". The votes say the rest: PS let the budget through, and Chega, Iniciativa Liberal, Livre, PCP and Bloco de Esquerda voted against for reasons that do not coincide; «",
               {
                 "fragmento": "og1-pcp-comite",
                 "campo": "excerpt",
                 "texto": "um frete ao capital e um desastre para o País"
               },
-              "» (a favour to capital and a disaster for the country), says the ",
+              "» (a gift to capital and a disaster for the country), says the PCP's Central Committee, and that is a judgement, which is not measured. What is measured says this is a budget balanced by a thread, and that the thread is the fuel revenue and interest rates. What to watch until ",
               {
-                "literal": "og1-pcp-comite",
-                "campo": "attributed_to"
+                "periodo": "oe-2027-calendario-final-global"
               },
-              "; it is a judgement, and a judgement cannot be measured. What can be measured says this is a budget balanced by a thread. What the UTAO writes on the risk from interest and interest rates enters here on ",
-              {
-                "periodo": "oe-2027-calendario-generalidade"
-              },
-              ", after the vote, with the voting record and the speeches from the Assembly's Diário."
+              ": the information on the fuel measure, the employment scenario and the rates on new debt issues."
             ]
           }
         }
@@ -1455,6 +2416,6 @@ export const OG1 = {
   ],
   "apenasDatas": [
     "divida-publica-2024",
-    "oe-2027-calendario-generalidade"
+    "oe-2027-calendario-final-global"
   ]
 };

@@ -1,4 +1,4 @@
-/** OG1-A6: nomes e definições lidos nos excertos das linhas. */
+/** OG1: nomes e definições dos mandatos, apoiados nos excertos das linhas. */
 export const NOMES_OG1 = {
   "og1-utao-pib-2026": {
     "pt": "Crescimento real do PIB",
@@ -131,6 +131,102 @@ export const NOMES_OG1 = {
   "og1-governo-observador-saldo": {
     "pt": "Afirmação do ministro das Finanças sobre o IRS Jovem e o prémio salarial",
     "en": "Statement by the Finance Minister on youth income tax and the wage premium"
+  },
+  "og1-utao-p16": {
+    "pt": "Apreciação da UTAO sobre o preço do petróleo",
+    "en": "UTAO appraisal of the oil price"
+  },
+  "og1-utao-p105": {
+    "pt": "Apreciação da UTAO sobre a despesa com juros",
+    "en": "UTAO appraisal of interest expenditure"
+  },
+  "og1-utao-p107": {
+    "pt": "Sensibilidades do Ministério das Finanças transcritas pela UTAO",
+    "en": "Finance Ministry sensitivities transcribed by the UTAO"
+  },
+  "og1-utao-p111": {
+    "pt": "Apreciação da UTAO sobre o risco ascendente dos juros",
+    "en": "UTAO appraisal of the upside risk from interest"
+  },
+  "og1-cfp-plausivel": {
+    "pt": "Conclusão do Conselho das Finanças Públicas sobre a trajetória do saldo",
+    "en": "Public Finance Council conclusion on the balance path"
+  },
+  "og1-cfp-saldo-2027": {
+    "pt": "Saldo orçamental projetado pelo Conselho das Finanças Públicas",
+    "en": "Budget balance projected by the Public Finance Council"
+  },
+  "og1-cfp-diferenca-mf": {
+    "pt": "Diferença entre o Conselho das Finanças Públicas e o Ministério das Finanças no saldo",
+    "en": "Gap between the Public Finance Council and the Finance Ministry on the balance"
+  },
+  "og1-cfp-combustiveis": {
+    "pt": "Apreciação do Conselho das Finanças Públicas sobre a medida dos combustíveis",
+    "en": "Public Finance Council appraisal of the fuel measure"
+  },
+  "og1-cfp-ac-fss": {
+    "pt": "Apreciação do Conselho das Finanças Públicas sobre o défice da Administração Central",
+    "en": "Public Finance Council appraisal of the Central Administration deficit"
+  },
+  "og1-cfp-juros": {
+    "pt": "Apreciação do Conselho das Finanças Públicas sobre os encargos com juros",
+    "en": "Public Finance Council appraisal of interest charges"
+  },
+  "og1-cfp-riscos": {
+    "pt": "Riscos descendentes identificados pelo Conselho das Finanças Públicas",
+    "en": "Downside risks identified by the Public Finance Council"
+  },
+  "og1-cfp-emprego": {
+    "pt": "Apreciação do Conselho das Finanças Públicas sobre o emprego e as remunerações",
+    "en": "Public Finance Council appraisal of employment and wages"
+  },
+  "og1-mf-juros-choque-100pb": {
+    "pt": "Efeito de um choque nas taxas de juro sobre os encargos com juros",
+    "en": "Effect of an interest rate shock on interest charges"
+  },
+  "og1-votacao-generalidade": {
+    "pt": "Notícia do ECO sobre a votação na generalidade",
+    "en": "ECO report on the general vote"
+  },
+  "og1-votacao-generalidade-rtp": {
+    "pt": "Entrada da RTP sobre a aprovação na generalidade",
+    "en": "RTP entry on the approval at the general vote"
+  },
+  "og1-guiao-votacoes-28": {
+    "pt": "Guião oficial das votações do dia da votação na generalidade",
+    "en": "Official voting guide for the day of the general vote"
+  },
+  "og1-livre-voto": {
+    "pt": "Afirmação do Livre sobre o voto contra",
+    "en": "Statement by Livre on the vote against"
+  },
+  "og1-pan-abstencao": {
+    "pt": "Afirmação do PAN sobre a abstenção",
+    "en": "Statement by PAN on abstention"
+  },
+  "og1-jpp-abstencao": {
+    "pt": "Afirmação do JPP sobre a abstenção",
+    "en": "Statement by JPP on abstention"
+  },
+  "og1-chega-voto": {
+    "pt": "Afirmação do Chega sobre o voto contra",
+    "en": "Statement by Chega on the vote against"
+  },
+  "og1-il-voto": {
+    "pt": "Afirmação da Iniciativa Liberal no encerramento do debate",
+    "en": "Statement by Iniciativa Liberal at the close of the debate"
+  },
+  "og1-mf-despesa-total-efetiva-nota": {
+    "pt": "Definições de despesa total e despesa efetiva no relatório do Orçamento",
+    "en": "Definitions of total and effective expenditure in the Budget report"
+  },
+  "og1-mf-ppp-encargos-receitas": {
+    "pt": "Componentes dos encargos líquidos das parcerias rodoviárias",
+    "en": "Components of the road partnerships' net charges"
+  },
+  "og1-mf-ppp-receitas-portagem": {
+    "pt": "Receitas de portagem nas parcerias rodoviárias",
+    "en": "Toll revenue in the road partnerships"
   }
 };
 export const FAMILIAS_OG1 = {
@@ -593,6 +689,342 @@ export const FAMILIAS_OG1 = {
       ],
       "en": [
         "It is the statement by the Finance Minister on youth income tax and the wage premium, as recorded in the cited source."
+      ]
+    }
+  },
+  "og1-utao-p16": {
+    "nome": {
+      "pt": "Apreciação da UTAO sobre o preço do petróleo",
+      "en": "UTAO appraisal of the oil price"
+    },
+    "frase": {
+      "pt": [
+        "É o parágrafo da UTAO sobre a cotação do Brent e a média dos contratos para o ano seguinte face ao pressuposto do Ministério das Finanças."
+      ],
+      "en": [
+        "It is the UTAO paragraph on the Brent price and the average of the next year's contracts against the Finance Ministry's assumption."
+      ]
+    }
+  },
+  "og1-utao-p105": {
+    "nome": {
+      "pt": "Apreciação da UTAO sobre a despesa com juros",
+      "en": "UTAO appraisal of interest expenditure"
+    },
+    "frase": {
+      "pt": [
+        "É o parágrafo da UTAO sobre o crescimento da despesa com juros e o risco de encargos acima do projetado."
+      ],
+      "en": [
+        "It is the UTAO paragraph on the growth of interest expenditure and the risk of charges above projection."
+      ]
+    }
+  },
+  "og1-utao-p107": {
+    "nome": {
+      "pt": "Sensibilidades do Ministério das Finanças transcritas pela UTAO",
+      "en": "Finance Ministry sensitivities transcribed by the UTAO"
+    },
+    "frase": {
+      "pt": [
+        "É o parágrafo da UTAO que transcreve os quatro choques simulados pelo Ministério das Finanças e os seus efeitos no PIB e no saldo."
+      ],
+      "en": [
+        "It is the UTAO paragraph transcribing the four shocks simulated by the Finance Ministry and their effects on GDP and the balance."
+      ]
+    }
+  },
+  "og1-utao-p111": {
+    "nome": {
+      "pt": "Apreciação da UTAO sobre o risco ascendente dos juros",
+      "en": "UTAO appraisal of the upside risk from interest"
+    },
+    "frase": {
+      "pt": [
+        "É o parágrafo da UTAO sobre uma despesa com juros abaixo da projetada como risco ascendente para o saldo."
+      ],
+      "en": [
+        "It is the UTAO paragraph on interest expenditure below projection as an upside risk to the balance."
+      ]
+    }
+  },
+  "og1-cfp-plausivel": {
+    "nome": {
+      "pt": "Conclusão do Conselho das Finanças Públicas sobre a trajetória do saldo",
+      "en": "Public Finance Council conclusion on the balance path"
+    },
+    "frase": {
+      "pt": [
+        "É o parágrafo de conclusão do relatório do Conselho das Finanças Públicas sobre a plausibilidade da trajetória do saldo apresentada pelo Ministério das Finanças."
+      ],
+      "en": [
+        "It is the concluding paragraph of the Public Finance Council's report on the plausibility of the balance path presented by the Finance Ministry."
+      ]
+    }
+  },
+  "og1-cfp-saldo-2027": {
+    "nome": {
+      "pt": "Saldo orçamental projetado pelo Conselho das Finanças Públicas",
+      "en": "Budget balance projected by the Public Finance Council"
+    },
+    "frase": {
+      "pt": [
+        "É o saldo das administrações públicas em percentagem do PIB que o Conselho das Finanças Públicas projeta para o ano indicado, um défice."
+      ],
+      "en": [
+        "It is the general government balance as a share of GDP that the Public Finance Council projects for the stated year, a deficit."
+      ]
+    }
+  },
+  "og1-cfp-diferenca-mf": {
+    "nome": {
+      "pt": "Diferença entre o Conselho das Finanças Públicas e o Ministério das Finanças no saldo",
+      "en": "Gap between the Public Finance Council and the Finance Ministry on the balance"
+    },
+    "frase": {
+      "pt": [
+        "É a diferença, em pontos percentuais do PIB, entre a projeção do saldo do Conselho das Finanças Públicas e a previsão do Ministério das Finanças para o ano indicado."
+      ],
+      "en": [
+        "It is the gap, in percentage points of GDP, between the Public Finance Council's balance projection and the Finance Ministry's forecast for the stated year."
+      ]
+    }
+  },
+  "og1-cfp-combustiveis": {
+    "nome": {
+      "pt": "Apreciação do Conselho das Finanças Públicas sobre a medida dos combustíveis",
+      "en": "Public Finance Council appraisal of the fuel measure"
+    },
+    "frase": {
+      "pt": [
+        "É o parágrafo do Conselho das Finanças Públicas que diz que a sua projeção não considera a receita da medida de combate à fraude nos combustíveis nem o efeito da redução das retenções na fonte."
+      ],
+      "en": [
+        "It is the Public Finance Council paragraph stating that its projection leaves out the revenue of the fuel anti-fraud measure and the effect of the cut in withholding tax."
+      ]
+    }
+  },
+  "og1-cfp-ac-fss": {
+    "nome": {
+      "pt": "Apreciação do Conselho das Finanças Públicas sobre o défice da Administração Central",
+      "en": "Public Finance Council appraisal of the Central Administration deficit"
+    },
+    "frase": {
+      "pt": [
+        "É o parágrafo do Conselho das Finanças Públicas sobre o agravamento do défice da Administração Central e a sua compensação pelo excedente dos Fundos da Segurança Social."
+      ],
+      "en": [
+        "It is the Public Finance Council paragraph on the worsening Central Administration deficit and its offset by the Social Security Funds' surplus."
+      ]
+    }
+  },
+  "og1-cfp-juros": {
+    "nome": {
+      "pt": "Apreciação do Conselho das Finanças Públicas sobre os encargos com juros",
+      "en": "Public Finance Council appraisal of interest charges"
+    },
+    "frase": {
+      "pt": [
+        "É o parágrafo do Conselho das Finanças Públicas que compara o aumento dos encargos com juros previsto na proposta com o quadro de políticas invariantes e com a sua projeção."
+      ],
+      "en": [
+        "It is the Public Finance Council paragraph comparing the proposal's forecast increase in interest charges with the no-policy-change scenario and with its own projection."
+      ]
+    }
+  },
+  "og1-cfp-riscos": {
+    "nome": {
+      "pt": "Riscos descendentes identificados pelo Conselho das Finanças Públicas",
+      "en": "Downside risks identified by the Public Finance Council"
+    },
+    "frase": {
+      "pt": [
+        "É o parágrafo do Conselho das Finanças Públicas que enumera os riscos descendentes da previsão orçamental para o ano indicado."
+      ],
+      "en": [
+        "It is the Public Finance Council paragraph listing the downside risks to the budget forecast for the stated year."
+      ]
+    }
+  },
+  "og1-cfp-emprego": {
+    "nome": {
+      "pt": "Apreciação do Conselho das Finanças Públicas sobre o emprego e as remunerações",
+      "en": "Public Finance Council appraisal of employment and wages"
+    },
+    "frase": {
+      "pt": [
+        "É o parágrafo do Conselho das Finanças Públicas sobre as previsões do Ministério das Finanças para o emprego e as remunerações face às instituições de referência."
+      ],
+      "en": [
+        "It is the Public Finance Council paragraph on the Finance Ministry's employment and wage forecasts against the reference institutions."
+      ]
+    }
+  },
+  "og1-mf-juros-choque-100pb": {
+    "nome": {
+      "pt": "Efeito de um choque nas taxas de juro sobre os encargos com juros",
+      "en": "Effect of an interest rate shock on interest charges"
+    },
+    "frase": {
+      "pt": [
+        "É a variação dos encargos com juros, em contabilidade nacional e em milhões de euros, que o relatório da proposta estima para um choque de cem pontos base nas taxas de juro."
+      ],
+      "en": [
+        "It is the change in interest charges, in national accounts and in million euros, that the proposal's report estimates for a shock of one hundred basis points in interest rates."
+      ]
+    }
+  },
+  "og1-votacao-generalidade": {
+    "nome": {
+      "pt": "Notícia do ECO sobre a votação na generalidade",
+      "en": "ECO report on the general vote"
+    },
+    "frase": {
+      "pt": [
+        "É a frase da notícia do ECO que dá o resultado da votação na generalidade e o sentido de voto de cada partido."
+      ],
+      "en": [
+        "It is the sentence of the ECO report giving the result of the general vote and each party's vote."
+      ]
+    }
+  },
+  "og1-votacao-generalidade-rtp": {
+    "nome": {
+      "pt": "Entrada da RTP sobre a aprovação na generalidade",
+      "en": "RTP entry on the approval at the general vote"
+    },
+    "frase": {
+      "pt": [
+        "É a entrada da página ao minuto da RTP que regista a aprovação na generalidade, os votos a favor e a abstenção."
+      ],
+      "en": [
+        "It is the entry of RTP's live page recording the approval at the general vote, the votes in favour and the abstention."
+      ]
+    }
+  },
+  "og1-guiao-votacoes-28": {
+    "nome": {
+      "pt": "Guião oficial das votações do dia da votação na generalidade",
+      "en": "Official voting guide for the day of the general vote"
+    },
+    "frase": {
+      "pt": [
+        "É a entrada do guião de votações da Assembleia da República que lista a votação na generalidade da proposta de lei do Orçamento."
+      ],
+      "en": [
+        "It is the entry of the Assembly of the Republic's voting guide listing the general vote on the Budget bill."
+      ]
+    }
+  },
+  "og1-livre-voto": {
+    "nome": {
+      "pt": "Afirmação do Livre sobre o voto contra",
+      "en": "Statement by Livre on the vote against"
+    },
+    "frase": {
+      "pt": [
+        "É a afirmação do porta-voz do Livre sobre o voto contra, tal como consta da fonte citada."
+      ],
+      "en": [
+        "It is the statement by Livre's spokesperson on the vote against, as recorded in the cited source."
+      ]
+    }
+  },
+  "og1-pan-abstencao": {
+    "nome": {
+      "pt": "Afirmação do PAN sobre a abstenção",
+      "en": "Statement by PAN on abstention"
+    },
+    "frase": {
+      "pt": [
+        "É a afirmação da porta-voz do PAN sobre o orçamento e a abstenção, tal como consta da fonte citada."
+      ],
+      "en": [
+        "It is the statement by PAN's spokesperson on the budget and the abstention, as recorded in the cited source."
+      ]
+    }
+  },
+  "og1-jpp-abstencao": {
+    "nome": {
+      "pt": "Afirmação do JPP sobre a abstenção",
+      "en": "Statement by JPP on abstention"
+    },
+    "frase": {
+      "pt": [
+        "É a afirmação do deputado do JPP sobre a abstenção, tal como consta da fonte citada."
+      ],
+      "en": [
+        "It is the statement by the JPP member of parliament on the abstention, as recorded in the cited source."
+      ]
+    }
+  },
+  "og1-chega-voto": {
+    "nome": {
+      "pt": "Afirmação do Chega sobre o voto contra",
+      "en": "Statement by Chega on the vote against"
+    },
+    "frase": {
+      "pt": [
+        "É a afirmação do presidente do Chega sobre o Governo e o voto contra, tal como consta da fonte citada."
+      ],
+      "en": [
+        "It is the statement by Chega's president on the Government and the vote against, as recorded in the cited source."
+      ]
+    }
+  },
+  "og1-il-voto": {
+    "nome": {
+      "pt": "Afirmação da Iniciativa Liberal no encerramento do debate",
+      "en": "Statement by Iniciativa Liberal at the close of the debate"
+    },
+    "frase": {
+      "pt": [
+        "É a afirmação do deputado da Iniciativa Liberal sobre a proposta, no encerramento do debate, tal como consta da fonte citada."
+      ],
+      "en": [
+        "It is the statement by the Iniciativa Liberal member of parliament on the proposal, at the close of the debate, as recorded in the cited source."
+      ]
+    }
+  },
+  "og1-mf-despesa-total-efetiva-nota": {
+    "nome": {
+      "pt": "Definições de despesa total e despesa efetiva no relatório do Orçamento",
+      "en": "Definitions of total and effective expenditure in the Budget report"
+    },
+    "frase": {
+      "pt": [
+        "É a nota do relatório da proposta que define a despesa total e a despesa efetiva pelos ativos e passivos financeiros e pelas transferências para entidades com autonomia financeira."
+      ],
+      "en": [
+        "It is the note of the proposal's report defining total and effective expenditure by financial assets and liabilities and by transfers to financially autonomous entities."
+      ]
+    }
+  },
+  "og1-mf-ppp-encargos-receitas": {
+    "nome": {
+      "pt": "Componentes dos encargos líquidos das parcerias rodoviárias",
+      "en": "Components of the road partnerships' net charges"
+    },
+    "frase": {
+      "pt": [
+        "É o parágrafo do relatório da proposta que explica que os encargos líquidos das parcerias rodoviárias resultam dos encargos e das receitas consideradas."
+      ],
+      "en": [
+        "It is the paragraph of the proposal's report explaining that the road partnerships' net charges result from the charges and the revenue considered."
+      ]
+    }
+  },
+  "og1-mf-ppp-receitas-portagem": {
+    "nome": {
+      "pt": "Receitas de portagem nas parcerias rodoviárias",
+      "en": "Toll revenue in the road partnerships"
+    },
+    "frase": {
+      "pt": [
+        "É a componente das receitas das parcerias rodoviárias que o relatório da proposta enumera primeiro, a cobrança de portagens nas vias portajadas."
+      ],
+      "en": [
+        "It is the revenue component of the road partnerships that the proposal's report lists first, toll collection on tolled roads."
       ]
     }
   }
