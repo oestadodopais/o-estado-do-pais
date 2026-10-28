@@ -12,7 +12,8 @@ export function dataEditorialPermitida(el, rota, claim) {
     if(resumo?.closest('[data-discussao-inicio]')) {
       const porta=resumo.parentNode?.querySelector('a[data-discussao-porta]');
       const item=ITENS.find(e=>e.slug===porta?.getAttribute('data-discussao-porta'));
-      return Boolean(item && origem==='publicacao.declarada' && el.parentNode===resumo && el.getAttribute('datetime')===item.publicado && el.text.trim()===dataDaCasa(item.publicado));
+      // OG1-B-c: a data da frase mostrada é a da escrita; a caixa de novidades conserva a publicação.
+      return Boolean(item && origem==='escrita.declarada' && el.parentNode===resumo && el.getAttribute('datetime')===item.escrita && el.text.trim()===dataDaCasa(item.escrita));
     }
     if(el.closest('[data-atualizacao]')?.closest('[data-novidades]'))return ['verificacao.verificadoEm','version.construido_em'].includes(origem);
     return Boolean(el.closest('[data-novidades] [data-novidade]')) && ['publicacao.declarada','publicacao.gerada','mudancas.ultima'].includes(origem);
@@ -35,11 +36,12 @@ export function plantasDatasEditoriais() {
  const controlo=[];conferirDataEditorial(dentro,'home',null,e=>controlo.push(e));assert.deepEqual(controlo,[]);
  dentro.setAttribute('data-data-origem','origem-inventada');conferirDataEditorial(dentro,'home',null,e=>controlo.push(e));assert.equal(controlo.length,1);
  const item=ITENS[0];
- const resumo=parse(`<section data-discussao-inicio><li><a data-discussao-porta="${item.slug}"></a><p data-discussao-resumo><time datetime="${item.publicado}" data-nonledger="data-editorial" data-data-origem="publicacao.declarada">${dataDaCasa(item.publicado)}</time></p></li></section>`).querySelector('time');
+ const resumo=parse(`<section data-discussao-inicio><li><a data-discussao-porta="${item.slug}"></a><p data-discussao-resumo><time datetime="${item.escrita}" data-nonledger="data-editorial" data-data-origem="escrita.declarada">${dataDaCasa(item.escrita)}</time></p></li></section>`).querySelector('time');
  assert.equal(dataEditorialPermitida(resumo,'home',null),true);
+ const publicada=parse(resumo.outerHTML).querySelector('time');publicada.setAttribute('datetime',item.publicado);publicada.setAttribute('data-data-origem','publicacao.declarada');publicada.set_content(dataDaCasa(item.publicado));assert.equal(dataEditorialPermitida(publicada,'home',null),false);
  resumo.setAttribute('datetime','9999-12-31');assert.equal(dataEditorialPermitida(resumo,'home',null),false);
- resumo.setAttribute('datetime',item.publicado);resumo.setAttribute('data-data-origem','publicacao.gerada');assert.equal(dataEditorialPermitida(resumo,'home',null),false);
- resumo.setAttribute('data-data-origem','publicacao.declarada');assert.equal(dataEditorialPermitida(resumo,'discussao',null),false);
- console.log('FP2: publicação declarada no resumo aceite; data, origem e página trocadas recusadas.');
+ resumo.setAttribute('datetime',item.escrita);resumo.setAttribute('data-data-origem','publicacao.gerada');assert.equal(dataEditorialPermitida(resumo,'home',null),false);
+ resumo.setAttribute('data-data-origem','escrita.declarada');assert.equal(dataEditorialPermitida(resumo,'discussao',null),false);
+ console.log('FP2: escrita declarada no resumo aceite; data, origem e página trocadas recusadas.');
  console.log('FP1-e: time com origem válida fora do contexto recusado pelo caminho do portão; controlo dentro aceite; origem inventada recusada.');
 }

@@ -213,8 +213,8 @@ export const NOMES_OG1 = {
     "en": "Statement by Chega on the vote against"
   },
   "og1-il-voto": {
-    "pt": "Afirmação da Iniciativa Liberal no encerramento do debate",
-    "en": "Statement by Iniciativa Liberal at the close of the debate"
+    "pt": "Afirmação da Iniciativa Liberal no debate",
+    "en": "Statement by Iniciativa Liberal in the debate"
   },
   "og1-mf-despesa-total-efetiva-nota": {
     "pt": "Definições de despesa total e despesa efetiva no relatório do Orçamento",
@@ -974,15 +974,15 @@ export const FAMILIAS_OG1 = {
   },
   "og1-il-voto": {
     "nome": {
-      "pt": "Afirmação da Iniciativa Liberal no encerramento do debate",
-      "en": "Statement by Iniciativa Liberal at the close of the debate"
+      "pt": "Afirmação da Iniciativa Liberal no debate",
+      "en": "Statement by Iniciativa Liberal in the debate"
     },
     "frase": {
       "pt": [
-        "É a afirmação do deputado da Iniciativa Liberal sobre a proposta, no encerramento do debate, tal como consta da fonte citada."
+        "É a afirmação do deputado da Iniciativa Liberal sobre o que os portugueses precisam do Governo, tal como consta da fonte citada."
       ],
       "en": [
-        "It is the statement by the Iniciativa Liberal member of parliament on the proposal, at the close of the debate, as recorded in the cited source."
+        "It is the statement by the Iniciativa Liberal member of parliament on what the Portuguese need from the Government, as recorded in the cited source."
       ]
     }
   },

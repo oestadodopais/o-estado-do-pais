@@ -48,7 +48,7 @@ export const OG1 = {
         {
           "periodo": "og1-votacao-generalidade"
         },
-        ", com os votos a favor do PSD e do CDS-PP, a abstenção do PS, do PAN e do JPP e os votos contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda, segundo o ECO e a RTP; o resultado oficial da votação ainda não estava publicado quando este item foi reescrito."
+        ", com os votos a favor do PSD e do CDS-PP, a abstenção do PS, do PAN e do JPP e os votos contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda, segundo o ECO; a RTP registou a aprovação com os votos do PSD e do CDS e a abstenção do PS, e o resultado oficial da votação ainda não estava publicado quando este item foi reescrito."
       ],
       "en": [
         "Parliament passed the ",
@@ -59,12 +59,18 @@ export const OG1 = {
         {
           "periodo": "og1-votacao-generalidade"
         },
-        ", with PSD and CDS-PP voting in favour, PS, PAN and JPP abstaining and Chega, Iniciativa Liberal, Livre, PCP and Bloco de Esquerda voting against, according to ECO and RTP; the official record of the vote had not been published when this item was rewritten."
+        ", with PSD and CDS-PP voting in favour, PS, PAN and JPP abstaining and Chega, Iniciativa Liberal, Livre, PCP and Bloco de Esquerda voting against, according to ECO; RTP recorded the approval with the votes of PSD and CDS and the abstention of PS, and the official record of the vote had not been published when this item was rewritten."
       ]
     },
     {
       "pt": [
-        "A maior medida de receita da proposta, o combate à fraude nos combustíveis, vale ",
+        "O combate à fraude nos combustíveis, «",
+        {
+          "fragmento": "og1-utao-p42",
+          "campo": "excerpt",
+          "texto": "a medida de maior dimensão do lado da receita"
+        },
+        "» entre as medidas novas segundo a UTAO, a unidade técnica de apoio orçamental do Parlamento, vale ",
         {
           "claim": "pm-q3-2-r8-c0",
           "sufixo": " milhões de euros"
@@ -73,7 +79,7 @@ export const OG1 = {
         {
           "periodo": "pm-q3-3-r37-c3"
         },
-        " sem que a UTAO, a unidade técnica de apoio orçamental do Parlamento, encontre na proposta «",
+        " sem que a UTAO encontre na proposta «",
         {
           "fragmento": "og1-utao-p42",
           "campo": "excerpt",
@@ -96,7 +102,13 @@ export const OG1 = {
         "."
       ],
       "en": [
-        "The proposal's largest revenue measure, the fight against fuel fraud, is worth ",
+        "The fight against fuel fraud, «",
+        {
+          "fragmento": "og1-utao-p42",
+          "campo": "excerpt",
+          "texto": "a medida de maior dimensão do lado da receita"
+        },
+        "» (the largest measure on the revenue side) among the new measures according to the UTAO, Parliament's technical budget support unit, is worth ",
         {
           "claim": "pm-q3-2-r8-c0",
           "sufixo": " million euros"
@@ -105,7 +117,7 @@ export const OG1 = {
         {
           "periodo": "pm-q3-3-r37-c3"
         },
-        " without the UTAO, Parliament's technical budget support unit, finding in the proposal «",
+        " without the UTAO finding in the proposal «",
         {
           "fragmento": "og1-utao-p42",
           "campo": "excerpt",
@@ -131,7 +143,13 @@ export const OG1 = {
   ],
   "naoDiz": [],
   "linhas": [],
-  "recibos": {},
+  "recibos": {
+    "abertura[0]": [
+      "og1-votacao-generalidade",
+      "og1-votacao-generalidade-rtp",
+      "og1-guiao-votacoes-28"
+    ]
+  },
   "seccoes": [
     {
       "id": "como-foi-dito",
@@ -697,11 +715,11 @@ export const OG1 = {
                 "literal": "og1-il-voto",
                 "campo": "attributed_to"
               },
-              ", da Iniciativa Liberal, no encerramento do debate a ",
+              ", da Iniciativa Liberal, no debate a ",
               {
                 "periodo": "og1-il-voto"
               },
-              ", segundo a RTP, sobre a proposta: «",
+              ", segundo a RTP, sobre os portugueses e o Governo: «",
               {
                 "literal": "og1-il-voto",
                 "campo": "excerpt"
@@ -713,11 +731,11 @@ export const OG1 = {
                 "literal": "og1-il-voto",
                 "campo": "attributed_to"
               },
-              ", of Iniciativa Liberal, at the close of the debate on ",
+              ", of Iniciativa Liberal, in the debate on ",
               {
                 "periodo": "og1-il-voto"
               },
-              ", as reported by RTP, on the proposal: «",
+              ", as reported by RTP, on the Portuguese and the Government: «",
               {
                 "literal": "og1-il-voto",
                 "campo": "excerpt"
@@ -1381,7 +1399,7 @@ export const OG1 = {
                 "campo": "excerpt",
                 "texto": "não considera, contudo, o impacto na receita de IVA decorrente da medida do combate à fraude nos combustíveis"
               },
-              "»; se contasse as medidas que a proposta não especifica, «",
+              "»; se contasse as duas medidas que a proposta não especifica o suficiente, a dos combustíveis e o resto da receita da venda de imóveis, e o efeito no IRS da redução extraordinária das retenções na fonte, «",
               {
                 "fragmento": "og1-cfp-plausivel",
                 "campo": "excerpt",
@@ -1470,7 +1488,7 @@ export const OG1 = {
                 "campo": "excerpt",
                 "texto": "não considera, contudo, o impacto na receita de IVA decorrente da medida do combate à fraude nos combustíveis"
               },
-              "» (does not, however, consider the impact on VAT revenue of the fuel anti-fraud measure); if it counted the measures the proposal does not specify, «",
+              "» (does not, however, consider the impact on VAT revenue of the fuel anti-fraud measure); if it counted the two measures the proposal does not specify sufficiently, the fuel one and the rest of the revenue from property sales, and the effect on personal income tax of the extraordinary cut in withholding, «",
               {
                 "fragmento": "og1-cfp-plausivel",
                 "campo": "excerpt",
@@ -1829,7 +1847,7 @@ export const OG1 = {
               {
                 "periodo": "og1-votacao-generalidade"
               },
-              ", segundo o ECO, o PSD e o CDS-PP votaram a favor, o PS, o PAN e o JPP abstiveram-se e o Chega, a Iniciativa Liberal, o Livre, o PCP e o Bloco de Esquerda votaram contra; o PS, o PAN e o JPP tinham anunciado a abstenção, e o Chega e o Livre o voto contra, nas intervenções aqui citadas. O Conselho das Finanças Públicas e o Governo divergem em ",
+              ", segundo o ECO, o PSD e o CDS-PP votaram a favor, o PS, o PAN e o JPP abstiveram-se e o Chega, a Iniciativa Liberal, o Livre, o PCP e o Bloco de Esquerda votaram contra; o PS, o PAN e o JPP tinham anunciado a abstenção, e o Chega, o Livre e o Bloco de Esquerda o voto contra, nas intervenções e notícias aqui citadas. O Conselho das Finanças Públicas e o Governo divergem em ",
               {
                 "claim": "og1-cfp-diferenca-mf",
                 "sufixo": " p.p. do PIB"
@@ -1848,7 +1866,7 @@ export const OG1 = {
                 "claim": "pm-q3-3-r37-c3",
                 "sufixo": " %"
               },
-              ", e a diferença está nas medidas que o Conselho não conta porque a proposta não as especifica, a começar pela dos combustíveis; nos juros, a UTAO vê o risco de encargos acima do previsto e o Conselho uma possível sobrestimação, e o relatório da proposta mede a incerteza: num «",
+              ", e a diferença está no que o Conselho não conta: as duas medidas que a proposta não especifica o suficiente, a começar pela dos combustíveis, e o efeito no IRS da redução das retenções na fonte; nos juros, a UTAO vê o risco de encargos acima do previsto e o Conselho uma possível sobrestimação, e o relatório da proposta mede a incerteza: num «",
               {
                 "fragmento": "og1-mf-juros-choque-100pb",
                 "campo": "excerpt",
@@ -1927,7 +1945,7 @@ export const OG1 = {
               {
                 "periodo": "og1-votacao-generalidade"
               },
-              ", according to ECO, PSD and CDS-PP voted in favour, PS, PAN and JPP abstained and Chega, Iniciativa Liberal, Livre, PCP and Bloco de Esquerda voted against; PS, PAN and JPP had announced the abstention, and Chega and Livre the vote against, in the statements quoted here. The Public Finance Council and the Government differ by ",
+              ", according to ECO, PSD and CDS-PP voted in favour, PS, PAN and JPP abstained and Chega, Iniciativa Liberal, Livre, PCP and Bloco de Esquerda voted against; PS, PAN and JPP had announced the abstention, and Chega, Livre and Bloco de Esquerda the vote against, in the statements and reports quoted here. The Public Finance Council and the Government differ by ",
               {
                 "claim": "og1-cfp-diferenca-mf",
                 "sufixo": " p.p. of GDP"
@@ -1946,7 +1964,7 @@ export const OG1 = {
                 "claim": "pm-q3-3-r37-c3",
                 "sufixo": " %"
               },
-              ", and the difference lies in the measures the Council does not count because the proposal does not specify them, starting with the fuel one; on interest, the UTAO sees the risk of charges above forecast and the Council a possible overestimate, and the proposal's report measures the uncertainty: in a «",
+              ", and the difference lies in what the Council does not count: the two measures the proposal does not specify sufficiently, starting with the fuel one, and the effect on personal income tax of the cut in withholding; on interest, the UTAO sees the risk of charges above forecast and the Council a possible overestimate, and the proposal's report measures the uncertainty: in a «",
               {
                 "fragmento": "og1-mf-juros-choque-100pb",
                 "campo": "excerpt",
@@ -2001,12 +2019,12 @@ export const OG1 = {
                 "claim": "og1-cfp-diferenca-mf",
                 "sufixo": " p.p. do PIB"
               },
-              ", cabe nas medidas que o Conselho não conta porque a proposta não as especifica, a começar pelos ",
+              ", está no que o Conselho não conta, as duas medidas que a proposta não especifica o suficiente, a começar pelos ",
               {
                 "claim": "pm-q3-2-r8-c0",
                 "sufixo": " milhões de euros"
               },
-              " do combate à fraude nos combustíveis. Nos juros, a UTAO vê o risco de encargos acima do previsto e o Conselho uma possível sobrestimação, e o relatório da proposta mede a incerteza: num «",
+              " do combate à fraude nos combustíveis, e o efeito no IRS da redução das retenções na fonte. Nos juros, a UTAO vê o risco de encargos acima do previsto e o Conselho uma possível sobrestimação, e o relatório da proposta mede a incerteza: num «",
               {
                 "fragmento": "og1-mf-juros-choque-100pb",
                 "campo": "excerpt",
@@ -2052,12 +2070,12 @@ export const OG1 = {
                 "claim": "og1-cfp-diferenca-mf",
                 "sufixo": " p.p. of GDP"
               },
-              ", fits in the measures the Council does not count because the proposal does not specify them, starting with the ",
+              ", lies in what the Council does not count, the two measures the proposal does not specify sufficiently, starting with the ",
               {
                 "claim": "pm-q3-2-r8-c0",
                 "sufixo": " million euros"
               },
-              " of the fight against fuel fraud. On interest, the UTAO sees the risk of charges above forecast and the Council a possible overestimate, and the proposal's report measures the uncertainty: in a «",
+              " of the fight against fuel fraud, and the effect on personal income tax of the cut in withholding. On interest, the UTAO sees the risk of charges above forecast and the Council a possible overestimate, and the proposal's report measures the uncertainty: in a «",
               {
                 "fragmento": "og1-mf-juros-choque-100pb",
                 "campo": "excerpt",
@@ -2246,12 +2264,12 @@ export const OG1 = {
                 "claim": "og1-cfp-saldo-2027",
                 "sufixo": " %"
               },
-              " do PIB pelo mesmo caminho: não conta a medida dos combustíveis e diz que, se a contasse, chegaria a um excedente próximo do do Governo. É a mesma conta vista de dois lados: o excedente existe se os ",
+              " do PIB pelo mesmo caminho: não conta a medida dos combustíveis nem o resto da receita da venda de imóveis, porque a proposta não as especifica o suficiente, nem o efeito no IRS da redução das retenções na fonte, e diz que, se os contasse, chegaria a um excedente próximo do do Governo. É a mesma conta vista de dois lados: o excedente existe se existirem os ",
               {
                 "claim": "pm-q3-2-r8-c0",
                 "sufixo": " milhões de euros"
               },
-              " existirem. O que está em jogo são os juros: a proposta já os tem a subir ",
+              " e o resto do que o Conselho deixou de fora. O que está em jogo são os juros: a proposta já os tem a subir ",
               {
                 "claim": "og1-utao-juros-variacao",
                 "sufixo": " %"
@@ -2357,12 +2375,12 @@ export const OG1 = {
                 "claim": "og1-cfp-saldo-2027",
                 "sufixo": " %"
               },
-              " of GDP by the same road: it does not count the fuel measure and says that, if it did, it would reach a surplus close to the Government's. It is the same account seen from two sides: the surplus exists if the ",
+              " of GDP by the same road: it does not count the fuel measure nor the rest of the revenue from property sales, because the proposal does not specify them sufficiently, nor the effect on personal income tax of the cut in withholding, and says that, if it counted them, it would reach a surplus close to the Government's. It is the same account seen from two sides: the surplus exists if the ",
               {
                 "claim": "pm-q3-2-r8-c0",
                 "sufixo": " million euros"
               },
-              " exist. What is at stake is interest: the proposal already has it rising ",
+              " and the rest of what the Council left out exist. What is at stake is interest: the proposal already has it rising ",
               {
                 "claim": "og1-utao-juros-variacao",
                 "sufixo": " %"

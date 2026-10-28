@@ -98,11 +98,16 @@ const ABERTURAS = {
           "claim": "der-saude-variacao-sem-prr",
           "sufixo": " milhões de euros"
         },
-        " face aos ",
+        "; a parte do PRR, ",
         {
-          "claim": "der-saude-prr-2026"
+          "claim": "der-saude-prr-2026",
+          "sufixo": " milhões de euros"
         },
-        " que o PRR deixa, e no total varia ",
+        " na despesa efetiva de ",
+        {
+          "periodo": "oe-2027-saude-despesa-total-consolidada-2026"
+        },
+        ", acaba, e a despesa total varia ",
         {
           "claim": "oe-2027-saude-despesa-total-consolidada-variacao",
           "sufixo": " %"
@@ -120,11 +125,16 @@ const ABERTURAS = {
           "claim": "der-saude-variacao-sem-prr",
           "sufixo": " million euros"
         },
-        " against the ",
+        "; the RRP's share, ",
         {
-          "claim": "der-saude-prr-2026"
+          "claim": "der-saude-prr-2026",
+          "sufixo": " million euros"
         },
-        " the RRP leaves, and in total it changes by ",
+        " of effective expenditure in ",
+        {
+          "periodo": "oe-2027-saude-despesa-total-consolidada-2026"
+        },
+        ", ends, and total expenditure changes by ",
         {
           "claim": "oe-2027-saude-despesa-total-consolidada-variacao",
           "sufixo": " %"
@@ -145,7 +155,7 @@ const ABERTURAS = {
         {
           "periodo": "oe-2027-ppp-rodoviario-encargos-liquidos-2027"
         },
-        ": «líquidos» quer dizer o que o Estado paga às concessionárias depois de descontadas as receitas que lhe cabem, sobretudo as portagens cobradas nas vias portajadas."
+        ": «líquidos» quer dizer os encargos do Estado com estas parcerias depois de descontadas as receitas que lhe cabem, entre elas as portagens cobradas nas vias portajadas."
       ],
       "en": [
         "The Budget report forecasts ",
@@ -157,7 +167,7 @@ const ABERTURAS = {
         {
           "periodo": "oe-2027-ppp-rodoviario-encargos-liquidos-2027"
         },
-        ": «net» means what the State pays the concessionaires after deducting the revenue that falls to it, mostly the tolls collected on tolled roads."
+        ": «net» means the State's charges on these partnerships after deducting the revenue that falls to it, among them the tolls collected on tolled roads."
       ]
     },
     {
@@ -185,7 +195,7 @@ const ABERTURAS = {
         {
           "claim": "ppp-oe2027-riscos-brisa"
         },
-        " numa negociação em curso."
+        " numa negociação em curso com a Brisa."
       ],
       "en": [
         "Gross charges for ",
@@ -211,7 +221,7 @@ const ABERTURAS = {
         {
           "claim": "ppp-oe2027-riscos-brisa"
         },
-        " of them in a negotiation under way."
+        " of them in a negotiation under way with Brisa."
       ]
     }
   ]

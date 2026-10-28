@@ -1,3 +1,4 @@
+import {dataDaCasa} from '../../src/lib/datas.mjs';
 /** V2-d: leitor independente dos itens, das contas e das portas, com estragos em memória. */
 import fs from 'node:fs';
 import {conferirConclusaoDoInicio, conclusaoResolvida, seloDaConclusaoDoInicio, fragmentoDaConclusaoDoInicio} from '../../scripts/porta-da-conclusao-discussao.mjs';
@@ -225,7 +226,8 @@ export function plantasDoInicio(home,lang,dist) {
  const seletor='[data-discussao-inicio] li';
  const outra=home.querySelectorAll('[data-discussao-conclusao]')[1];
  for(const [nome,mudar,padrao] of [
-  ['data diferente de publicado',p=>p.querySelector('time').setAttribute('datetime','9999-12-31'),/data diferente/],
+  ['data diferente de escrita',p=>p.querySelector('time').setAttribute('datetime','9999-12-31'),/data diferente/],
+  ['publicação no lugar da escrita',p=>{const t=p.querySelector('time');t.setAttribute('datetime',e.publicado);t.set_content(dataDaCasa(e.publicado));},/data diferente/],
   ['duas frases em vez de uma',p=>p.querySelector('[data-discussao-conclusao]').set_content(textoDosPedacosDaExplicacao(resolverExplicacao(e,lang).abertura.flatMap(p=>p.pedacos),lang)),/frase diferente/],
   ['frase de outro item',p=>p.querySelector('[data-discussao-conclusao]').set_content(outra.innerHTML),/frase diferente/],
   ['valor trocado na frase',p=>p.parentNode.querySelector('[data-discussao-conclusao] [data-claim]').set_content('999'),/valor ou linha/],

@@ -2,6 +2,7 @@
 import fs from 'node:fs';
 import assert from 'node:assert/strict';
 import {parse} from 'node-html-parser';
+import {ITENS} from '../../../../src/data/discussao.mjs';
 import {loadClaims} from '../../../../src/lib/ledger.mjs';
 import {periodoAqui} from '../../../../tests/explicacoes/explicacao.mjs';
 const pasta=new URL('./',import.meta.url),linhas=loadClaims();
@@ -42,7 +43,9 @@ for(const lang of ['pt','en']){
     const li=home.querySelector(`[data-discussao-inicio] [data-discussao-porta="${slug}"]`)?.parentNode;
     const texto=limpo(li?.querySelector('[data-discussao-conclusao]'));
     assert.equal(texto,esperado(mandato[item+'.abertura.0'][lang],lang));
-    frases.push({rota:inicio,lang,slug,caminho:'primeira-frase-da-abertura',publicado:li.querySelector('time')?.getAttribute('datetime'),texto,igual_ao_mandato:true});
+    assert.equal(li.querySelector('time')?.getAttribute('datetime'),ITENS.find(e=>e.slug===slug).escrita);
+    assert.equal(li.querySelector('time')?.getAttribute('data-data-origem'),'escrita.declarada');
+    frases.push({rota:inicio,lang,slug,caminho:'primeira-frase-da-abertura',escrita:li.querySelector('time')?.getAttribute('datetime'),texto,igual_ao_mandato:true});
   }
 }
 const cabeca=JSON.parse(fs.readFileSync('dist/version.json')).commit;

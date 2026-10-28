@@ -32,11 +32,11 @@ export function conferirConclusaoDoInicio(a,e,lang,{dist=process.env.OEDP_DIST??
   if(ps.length!==1||p?.parentNode!==li||li.childNodes.indexOf(p)<li.childNodes.indexOf(a)||a?.tagName!=='A'||li?.tagName!=='LI'||!li.closest('[data-discussao-inicio]'))return ['FP2 início: parágrafo ausente ou fora do item'];
   const times=p.querySelectorAll('time'),time=times[0],frases=p.querySelectorAll('[data-discussao-conclusao]'),frase=frases[0];
   const caixa=a.closest('main')?.querySelector(`[data-novidade="discussao:${e.slug}"] time`);
-  if(times.length!==1||time?.parentNode!==p||time?.getAttribute('datetime')!==e.publicado||normal(time?.text)!==dataDaCasa(e.publicado)||time?.getAttribute('data-nonledger')!=='data-editorial'||time?.getAttribute('data-data-origem')!=='publicacao.declarada'||(caixa&&(caixa.getAttribute('datetime')!==time?.getAttribute('datetime')||normal(caixa.text)!==normal(time?.text))))erros.push('FP2 início: data diferente da publicação declarada ou da caixa');
+  if(times.length!==1||time?.parentNode!==p||time?.getAttribute('datetime')!==e.escrita||normal(time?.text)!==dataDaCasa(e.escrita)||time?.getAttribute('data-nonledger')!=='data-editorial'||time?.getAttribute('data-data-origem')!=='escrita.declarada'||(caixa&&(caixa.getAttribute('datetime')!==e.publicado||normal(caixa.text)!==dataDaCasa(e.publicado))))erros.push('FP2 início: data diferente da escrita declarada ou publicação diferente na caixa');
   const conclusao=conclusaoResolvida(e,lang);
   if(!conclusao)return [...erros,'FP2 início: conclusão declarada ausente'];
   const partes=primeirasFrases(conclusao,1),esperado=normal(textoDosPedacosDaExplicacao(partes,lang));
-  if(frases.length!==1||frase?.parentNode!==p||frase?.querySelector('a')||normal(frase?.text)!==esperado||!esperado.endsWith('.')||normal(p.text)!==`${dataDaCasa(e.publicado)} · ${esperado}`)erros.push('FP2 início: frase diferente da primeira conclusão');
+  if(frases.length!==1||frase?.parentNode!==p||frase?.querySelector('a')||normal(frase?.text)!==esperado||!esperado.endsWith('.')||normal(p.text)!==`${dataDaCasa(e.escrita)} · ${esperado}`)erros.push('FP2 início: frase diferente da primeira conclusão');
   const original=destino??paragrafoDeDestino(e,lang,dist);
   if(!original||!semSelos(original).startsWith(esperado))erros.push('FP2 início: frase não é prefixo da conclusão construída');
   const valores=partes.filter(x=>typeof x!=='string'&&x.claim),marcas=frase?.querySelectorAll('[data-claim]')??[];

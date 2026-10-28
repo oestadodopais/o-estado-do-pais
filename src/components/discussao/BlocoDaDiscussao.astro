@@ -12,10 +12,10 @@ const { lang = 'pt' } = Astro.props;
   <h2 class="pp-sec-k" id="discussao-inicio"><a href={routePath('discussao', lang)} data-voz>{DISCUSSAO.titulo[lang]} →</a></h2>
   <ul class="discussao-sumario">{itensResolvidos(lang).map(e => {
     const conclusao = e.abertura[0];
-    if (!conclusao || !e.publicado) throw new Error(`FP2: conclusão ou publicação ausente em ${e.slug}`);
+    if (!conclusao || !e.escrita) throw new Error(`FP2: abertura ou escrita ausente em ${e.slug}`);
     return <li>
       <a href={portaDoItem(e.slug, lang)} data-discussao-porta={e.slug}><FraseDaExplicacao partes={e.titulo} lang={lang} selos={false} /></a>
-      <p data-discussao-resumo><time datetime={e.publicado} data-nonledger="data-editorial" data-data-origem="publicacao.declarada">{dataDaCasa(e.publicado)}</time>{' · '}<span data-discussao-conclusao><FraseDaExplicacao partes={primeirasFrases(conclusao.pedacos, 1)} lang={lang} selos={false} /></span></p>
+      <p data-discussao-resumo><time datetime={e.escrita} data-nonledger="data-editorial" data-data-origem="escrita.declarada">{dataDaCasa(e.escrita)}</time>{' · '}<span data-discussao-conclusao><FraseDaExplicacao partes={primeirasFrases(conclusao.pedacos, 1)} lang={lang} selos={false} /></span></p>
     </li>;
   })}</ul>
 </section>

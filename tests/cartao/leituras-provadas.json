@@ -51845,24 +51845,24 @@
         "og1-il-voto"
       ],
       "nome": {
-        "pt": "Afirmação da Iniciativa Liberal no encerramento do debate",
-        "en": "Statement by Iniciativa Liberal at the close of the debate"
+        "pt": "Afirmação da Iniciativa Liberal no debate",
+        "en": "Statement by Iniciativa Liberal in the debate"
       },
       "origens": [],
       "folhas": [
         {
-          "pt": "É a afirmação do deputado da Iniciativa Liberal sobre a proposta, no encerramento do debate, tal como consta da fonte citada.",
-          "en": "It is the statement by the Iniciativa Liberal member of parliament on the proposal, at the close of the debate, as recorded in the cited source.",
+          "pt": "É a afirmação do deputado da Iniciativa Liberal sobre o que os portugueses precisam do Governo, tal como consta da fonte citada.",
+          "en": "It is the statement by the Iniciativa Liberal member of parliament on what the Portuguese need from the Government, as recorded in the cited source.",
           "partes": [
             {
-              "pt": "É a afirmação do deputado da Iniciativa Liberal sobre a proposta, no encerramento do debate, tal como consta da fonte citada.",
-              "en": "It is the statement by the Iniciativa Liberal member of parliament on the proposal, at the close of the debate, as recorded in the cited source.",
+              "pt": "É a afirmação do deputado da Iniciativa Liberal sobre o que os portugueses precisam do Governo, tal como consta da fonte citada.",
+              "en": "It is the statement by the Iniciativa Liberal member of parliament on what the Portuguese need from the Government, as recorded in the cited source.",
               "classe": "diz",
               "apoios": [
                 {
                   "linha": "propria",
                   "campo": "excerpt",
-                  "literal": "moderado no alívio de impostos, moderado na vontade de reformar o país, moderado na ambição para Portugal"
+                  "literal": "não precisam que o Governo lhes recorde que não têm dinheiro, precisam de um Governo que faça a sua parte para viverem melhor"
                 }
               ]
             }
