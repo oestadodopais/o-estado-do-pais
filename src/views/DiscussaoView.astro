@@ -36,5 +36,6 @@ const itens = itensResolvidos(lang);
 </Base>
 
 <style>
-  .discussao-seccao :global(.claim-sufixo) { white-space: pre; }
+  /* OG1-B (28.10.2026): a abertura de cada item leva a mesma regra das secções, senão o espaço antes do sufixo («889 milhões de euros») colapsa e o valor cola-se à unidade. */
+  .discussao-seccao :global(.claim-sufixo), .discussao-abertura :global(.claim-sufixo) { white-space: pre; }
 </style>
