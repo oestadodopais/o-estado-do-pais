@@ -189,6 +189,12 @@ const provasEfeitos = JSON.parse(fs.readFileSync('ledger/provas/v2e/provas.json'
 
 // OG1-A6: documentos nacionais identificados, confrontados com as provas seladas.
 const documentosOg1 = {
+  "content/30 Orcamento 2027 Generalidade/source/cfp-rel-08-2026.pdf": "Relatório do CFP n.º 08/2026: Análise da Proposta de Orçamento do Estado para 2027",
+  "content/30 Orcamento 2027 Generalidade/source/eco-aprovado-generalidade.html": "Orçamento do Estado para 2027 aprovado na generalidade com abstenção do PS",
+  "content/30 Orcamento 2027 Generalidade/source/rtp-aominuto-28.html": "OE2027 foi aprovado na generalidade com votos do PSD e CDS, PS abstém-se",
+  "content/30 Orcamento 2027 Generalidade/source/guiao-votacoes-28.pdf": "Guião de Votações: votações a efetuar em 28-10-2026, versão 2",
+  "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf": "Orçamento do Estado 2027 RELATÓRIO",
+
   "content/30 Orcamento 2027 Generalidade/source/utao-iniciativa.pdf": "Relatório UTAO n.º 17/2026: Apreciação preliminar da Proposta de Orçamento do Estado para 2027",
   "content/30 Orcamento 2027 Generalidade/source/ps.html": "OE2027: PS confirma consenso na abstenção e reafirma compromisso com a estabilidade do país",
   "content/30 Orcamento 2027 Generalidade/source/pcp-comunicado.html": "Comunicado do Comité Central do PCP de 18 e 19 Outubro de 2026",
