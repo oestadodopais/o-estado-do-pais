@@ -1,5 +1,5 @@
 {
-  "cabeca": "aa7d0b1fe76c5d83de2653eb25287a55a02d35ab",
+  "cabeca": "076514863610676d0e2283b55d755f5f97a37f0d",
   "paginas": [
     {
       "nome": "inicio",
@@ -18,16 +18,28 @@
       "en": "/en/under-discussion/",
       "recortes": [
         {
-          "nome": "orcamento-2027-generalidade",
+          "nome": "orcamento-2027-generalidade-0",
           "seletor": "[data-discussao=\"orcamento-2027-generalidade\"] [data-discussao-paragrafo=\"abertura[0]\"]"
         },
         {
-          "nome": "saude-no-orcamento",
+          "nome": "orcamento-2027-generalidade-1",
+          "seletor": "[data-discussao=\"orcamento-2027-generalidade\"] [data-discussao-paragrafo=\"abertura[1]\"]"
+        },
+        {
+          "nome": "saude-no-orcamento-0",
           "seletor": "[data-discussao=\"saude-no-orcamento\"] [data-discussao-paragrafo=\"abertura[0]\"]"
         },
         {
-          "nome": "parcerias-rodoviarias",
+          "nome": "saude-no-orcamento-1",
+          "seletor": "[data-discussao=\"saude-no-orcamento\"] [data-discussao-paragrafo=\"abertura[1]\"]"
+        },
+        {
+          "nome": "parcerias-rodoviarias-0",
           "seletor": "[data-discussao=\"parcerias-rodoviarias\"] [data-discussao-paragrafo=\"abertura[0]\"]"
+        },
+        {
+          "nome": "parcerias-rodoviarias-1",
+          "seletor": "[data-discussao=\"parcerias-rodoviarias\"] [data-discussao-paragrafo=\"abertura[1]\"]"
         }
       ]
     }

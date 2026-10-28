@@ -1,5 +1,7 @@
 # OG1-B: as aberturas dos três itens e o Orçamento depois do voto
 
+Estado atual: a correção OG1-B-c está concluída na cabeça `076514863610676d0e2283b55d755f5f97a37f0d`. A secção «OG1-B-c: a correção depois da leitura a frio», no fim deste recibo, descreve a entrega corrigida. O relato anterior fica abaixo como histórico; os ficheiros `frases-construidas.json`, `mandato-frases.json` e `capturas.json` foram atualizados para a correção. A versão anterior deste recibo está em `LEIA-ME-antes-og1-b-c.md`.
+
 A passagem ficou concluída no âmbito do mandato e das três adendas. A construção de cabeça limpa e todas as conferências finais pedidas passaram. A leitura a frio e a corrida inteira antes da publicação do ramo continuam a cargo do lugar de direção.
 
 ## O que mudou para o leitor
@@ -100,3 +102,77 @@ A implementação desta retoma está em `aa7d0b1fe`. O último commit entrega ap
 Nenhuma alteração ao motor, ao registo público das correções, à identidade, à navegação, ao Método ou aos estudos. Nenhuma régua de número, fonte ou pessoa foi dispensada. A subida autorizada da catraca L1 está medida e explicada acima.
 
 Sem push.
+
+## OG1-B-c: a correção depois da leitura a frio
+
+A redação dirigida foi aplicada nas duas edições. As verificações finais pedidas estão aprovadas, incluindo `check:cartao`, que relê a linha reselada da IL. A leitura curta do diff é o passo seguinte do lugar de direção; os outros Minor ficam para a higiene, como determina o mandato.
+
+### Achados e alterações
+
+O mandato identifica expressamente os números Major 4 e Major 8 da leitura a frio. Não fornece a numeração original dos restantes achados; esses são identificados abaixo pelo número do §0 do mandato, sem inventar equivalências.
+
+| Referência | O que mudou |
+| --- | --- |
+| Major 4, §0.1 | As fontes, a comparação, a conclusão e a opinião passaram a dizer as três condições do CFP: os combustíveis, o resto da receita da venda de imóveis e o efeito no IRS da redução das retenções na fonte. |
+| §0.2 | O parágrafo da IL usa a frase atribuída ao deputado na linha reselada, diz «no debate» e refere os portugueses e o Governo. A família e a auditoria usam o novo nome, a nova frase e o novo excerto. |
+| §0.3 | «Líquidos» passou a referir os encargos do Estado com as parcerias; as portagens são uma das receitas, sem predomínio não medido. |
+| §0.4 | A dimensão da medida dos combustíveis é citada da UTAO e limitada às medidas novas. |
+| Major 8, §0.5 | Os três resumos mostram a data de escrita, 28.10.2026, com `escrita.declarada`. A caixa de novidades conserva `publicado`. |
+| §0.6 | O segundo parágrafo da Saúde identifica a parcela do PRR na despesa efetiva, com unidade e ano, e distingue-a da variação da despesa total. |
+| §0.7 | A comparação inclui o Bloco de Esquerda entre os anúncios de voto contra relatados nas intervenções e notícias citadas. |
+| §0.8 | A abertura atribui a lista completa dos votos ao ECO e distingue o relato parcial da RTP. O parágrafo recebe os três recibos pedidos. |
+| §0.9 | A negociação em curso na abertura das parcerias é identificada como sendo com a Brisa. |
+
+Nenhuma linha do livro ou dos cruzamentos foi editada à mão. A nova linha da IL já estava cruzada pelo lugar de direção em `69208d162`. Não se alteraram `LINHAS_ESPERADAS`, a L1, as áreas, o lugar das linhas ou o mapa `documentosOg1`.
+
+### Construção, texto e prova da data
+
+A redação, os recibos, as famílias, os 20 esqueletos do inventário e as 754 folhas regeneradas da auditoria foram comitados em `1925ceba2`. A primeira construção de cabeça limpa passou. O `typecheck` isolado apanhou depois a inferência de `apenasDatas` como `unknown` na união dos itens. O commit `07651486` acrescenta somente a anotação `string[]` nessa expressão, sem mudar o comportamento ou as palavras, e guarda o primeiro confronto do HTML.
+
+O `typecheck` seguinte passou. Foi feita uma segunda construção de cabeça limpa, também com código 0, na cabeça `076514863610676d0e2283b55d755f5f97a37f0d`. `cabeca-limpa-og1-b-c.json` confirma a limpeza antes e depois e o carimbo do HTML. A segunda construção repetiu a cadeia de conferências do `build`; não foi repetido o `verify` completo nem o perfil de navegador. As corridas isoladas e o navegador usaram a redação de `1925ceba2`; a única alteração posterior de código é a anotação de tipo descrita acima.
+
+`frases-construidas.json` contém as 46 entradas extraídas da construção final, com as frases tal como renderizam e o caminho de cada parágrafo, nas duas edições. Todas coincidem com `mandato-frases.json`, que incorpora a redação original, as adendas anteriores e esta correção. Os seis resumos da primeira página têm `escrita` igual a 2026-10-28. As plantas adicionais recusam a publicação no lugar da escrita e a origem editorial antiga, mantendo a conferência independente da data de publicação da caixa de novidades.
+
+A discussão passou com 768 de 768 plantas, 764 portas de integração e 636 conferências OG1 nas duas edições. As nove glosas e as 60 plantas numéricas passaram. O navegador mediu 4 048 pedaços marcados em 32 passagens por 16 páginas, sem contentores flexíveis indevidos nem documentos mais largos do que a janela; as 52 plantas morderam. A revisão `og1-b` continua «por ler», para a leitura curta prevista.
+
+### Códigos da correção
+
+`conferencias-og1-b-c.json` liga cada execução ao seu `.codigo` e ao registo. A falha inicial do `typecheck` fica preservada; a repetição corrigida é `typecheck-2`.
+
+| Execução | Código |
+| --- | ---: |
+| `auditoria` | 0 |
+| `build-2` | 0 |
+| `build` | 0 |
+| `capturas-2` | 0 |
+| `capturas` | 0 |
+| `check-cartao` | 0 |
+| `check-cruzamento` | 0 |
+| `check-discussao` | 0 |
+| `check-lingua` | 0 |
+| `check-palavras` | 0 |
+| `check-registo` | 0 |
+| `check-rotulos` | 0 |
+| `check-voz` | 0 |
+| `datas` | 0 |
+| `declaracoes` | 0 |
+| `frases-2` | 0 |
+| `frases` | 0 |
+| `gate-html` | 0 |
+| `ledger-check` | 0 |
+| `typecheck-2` | 0 |
+| `typecheck` | 1 |
+| `check:frases-compostas` | 0 |
+| `check:primeira` | 0 |
+
+Foram 21 execuções de verificação e duas execuções de capturas. Os passos internos do `build` não são contados de novo. O perfil fechado `og1-b-navegador` correu uma vez pelo escrivão, apenas com as duas conferências pedidas. Não houve corrida inteira dos portões, `verify` ou `conferir-tudo.sh` nesta correção.
+
+### Capturas finais e fecho
+
+As capturas finais estão presas à cabeça `076514863610676d0e2283b55d755f5f97a37f0d`: 20 páginas e 70 recortes, nas cinco larguras e nas duas edições. Os recortes cobrem a caixa da discussão na primeira página e os dois parágrafos de abertura de cada item. Não houve erros, pedidos externos, respostas recusadas ou transbordo horizontal.
+
+Foram inspecionados oito recortes da primeira corrida de capturas, em português a 390 px e inglês a 1 280 px. As datas de escrita, as aberturas e os selos estão legíveis. Os oito recortes finais são idênticos aos inspecionados por SHA-256, como regista `inspecao-visual-og1-b-c.json`. `capturas.json` e `pedido-capturas.json` são os manifestos finais; os PNG ficaram em `<temporario>/og1-b-c-capturas-final`, fora do repositório.
+
+Esta correção usou 41 chamadas até à conferência final das imagens e códigos. A escrita deste recibo, o pedido de commit e a inspeção final acrescentam três, totalizando 44 chamadas. O custo é escrito pelo lançador; não foi exposta uma linha «tokens used».
+
+O último commit entrega este recibo e os artefactos. A leitura curta do diff permanece a cargo do lugar de direção. Sem push.

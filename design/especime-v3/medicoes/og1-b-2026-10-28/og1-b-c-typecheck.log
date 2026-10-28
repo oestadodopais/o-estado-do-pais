@@ -1,0 +1,5 @@
+
+> o-estado-do-pais@0.1.0 typecheck
+> tsc -p tsconfig.check.json
+
+src/lib/discussao.mjs(40,65): error TS18046: 'e.apenasDatas' is of type 'unknown'.

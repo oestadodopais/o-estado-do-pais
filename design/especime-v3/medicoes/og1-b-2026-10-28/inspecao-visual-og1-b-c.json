@@ -1,0 +1,49 @@
+{
+  "cabeca": "076514863610676d0e2283b55d755f5f97a37f0d",
+  "amostra": [
+    {
+      "ficheiro": "inicio-pt-390-discussao.png",
+      "sha256": "26e45aeec6f38036ee90d704c7fba5c0c87db3328f5028e3b778417e9ebc5f39",
+      "igual_a_amostra_inspecionada": true
+    },
+    {
+      "ficheiro": "inicio-en-1280-discussao.png",
+      "sha256": "49e609b155896916184365fcfe188deaf8608ebf95d472f545d47338c97b1155",
+      "igual_a_amostra_inspecionada": true
+    },
+    {
+      "ficheiro": "discussao-pt-390-orcamento-2027-generalidade-0.png",
+      "sha256": "bbd40e0d092843fd67a906aca390936fc512ee621d29a558d1a4269352657c4b",
+      "igual_a_amostra_inspecionada": true
+    },
+    {
+      "ficheiro": "discussao-en-1280-orcamento-2027-generalidade-1.png",
+      "sha256": "6754db3345485119200c2f36e5542a655f99c73e5d45c1f036eb736c117a12f3",
+      "igual_a_amostra_inspecionada": true
+    },
+    {
+      "ficheiro": "discussao-pt-390-saude-no-orcamento-1.png",
+      "sha256": "22994dc129c23aa8b1432d361855276ddebd11a34cab9a4fa378435336103a02",
+      "igual_a_amostra_inspecionada": true
+    },
+    {
+      "ficheiro": "discussao-en-1280-saude-no-orcamento-1.png",
+      "sha256": "165c89ab2c2ba60f2ba06025b3fd42ee25afa59f59dfbd00e8518c9f002e574d",
+      "igual_a_amostra_inspecionada": true
+    },
+    {
+      "ficheiro": "discussao-pt-390-parcerias-rodoviarias-0.png",
+      "sha256": "ea06e50dd9b1816f6af329952f1cc8c432c29ac39e513ca4d76a043705473f22",
+      "igual_a_amostra_inspecionada": true
+    },
+    {
+      "ficheiro": "discussao-en-1280-parcerias-rodoviarias-1.png",
+      "sha256": "a0b9ca5e1aca35070a6710869c050b40c7da06d33a9cff4fd0de5b11e966445b",
+      "igual_a_amostra_inspecionada": true
+    }
+  ],
+  "resultado": "Os oito recortes finais são idênticos, por SHA-256, aos oito recortes inspecionados visualmente. As datas, aberturas e selos estão legíveis.",
+  "paginas": 20,
+  "recortes": 70,
+  "transbordos": 0
+}
