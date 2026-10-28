@@ -48,6 +48,17 @@
    "fonte": "o uso do agente na notificação do lançamento (subagent_tokens, tool_uses, duration_ms)",
    "plantas": "5 de 5",
    "achados_reais": "0 Blocking, 2 Major (as frases das conclusões na primeira página), 9 Minor"
+  },
+  {
+   "nome": "fp2-c (leitura curta M48)",
+   "leitor": "Codex gpt-6-astra (ler.sh, xhigh, só leitura)",
+   "inicio": "2026-10-28T00:16:08Z",
+   "fim": "2026-10-28T00:21:17Z",
+   "segundos": 309,
+   "simbolos": "não expostos no registo do ler.sh (eventos.log sem contadores); os pontos da semana do Codex leem-se no uso.py do fecho",
+   "plantas": "5 de 5",
+   "achados_reais": "0 Blocking, 1 Major editorial (adiado para a fase B do item, com a razão no relatório), 1 Minor (o alcance do brief)",
+   "ficheiro": "leitura-curta-fp2c-astra.md"
   }
  ],
  "corrida_inteira": {
@@ -67,7 +78,19 @@
    "nome": "FP2-c",
    "quem": "o lugar de direção (correção dirigida, §1.202 (1))",
    "o_que": "as frases das conclusões da Saúde, do Orçamento e das parcerias nos dados dos itens",
-   "leitura_curta": "Codex gpt-6-astra por ler.sh (M48), por preencher"
+   "leitura_curta": "Codex gpt-6-astra por ler.sh (M48), 00:16 a 00:21 UTC de 28.10: cinco plantas em cinco; as seis frases conferidas palavra por palavra nas duas edições"
+  }
+ ],
+ "construcoes_do_lugar_de_direcao": [
+  {
+   "cadeia": "build + check:primeira + check:frases-compostas + check:sobreposicao + check:discussao",
+   "corridas": 3,
+   "horas": [
+    "23:40 a 23:49 (build vermelho no portão da voz; check:discussao vermelho pela auditoria atrasada)",
+    "23:53 a 00:03 (build vermelho só no rasto da revisão do inventário)",
+    "00:04 a 00:15 (tudo verde)"
+   ],
+   "nota": "três construções de cerca de seis minutos por uma correção de frases: as duas primeiras por listas fechadas que o mandato não nomeava (a lição na regra 14)"
   }
  ]
 }

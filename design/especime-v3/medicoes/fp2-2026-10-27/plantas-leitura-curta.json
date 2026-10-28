@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-28T00:16:08+00:00",
+ "copia": "<pasta-dos-projetos>/_aterragens/pacote-fp2c-2026-10-27",
+ "plantas": [
+  {
+   "id": "Z1",
+   "ficheiro": "built/index.html",
+   "descricao": "a primeira página portuguesa imprime 276,5 milhões de euros na frase da Saúde onde a linha e a página dos itens dizem 267,5",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "9095c5651feac5feb6bf893c3351f15d6ed69eb4abb9e5bfb1d7e4b943dea6e6",
+   "sha256_depois": "3795f9fb37a437fe6c80894164f478337204afe3fd723577383d7f8c7583aa90",
+   "contexto_antes": "ata-nonledger=\"data-da-linha\" data-de-linha=\"oe-2027-saude-despesa-total-consolidada-2027\" data-de-campo=\"reference_date\">2027</span>, a despesa total da Saúde está orçamentada <span class=\"claim\"><span data-claim=\"der-saude-total-reducao-abs\" class=\"claim-value\">267,5</span><span class=\"claim-sufixo\"> milhões de euros</span></span> abaixo da estimativa de <span class=\"data-da-linha\" data-nonledger=\"data-da-linha\" data-de-linha=\"oe-",
+   "contexto_depois": "ata-nonledger=\"data-da-linha\" data-de-linha=\"oe-2027-saude-despesa-total-consolidada-2027\" data-de-campo=\"reference_date\">2027</span>, a despesa total da Saúde está orçamentada <span class=\"claim\"><span data-claim=\"der-saude-total-reducao-abs\" class=\"claim-value\">276,5</span><span class=\"claim-sufixo\"> milhões de euros</span></span> abaixo da estimativa de <span class=\"data-da-linha\" data-nonledger=\"data-da-linha\" data-de-linha=\"oe-"
+  },
+  {
+   "id": "Z2",
+   "ficheiro": "diff.patch",
+   "descricao": "o diff de discussao-og1.mjs escreve «a deficit of» na conclusão inglesa onde a cópia do ficheiro e as páginas construídas dizem «a surplus of», e a linha é positiva",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "ba2a4df2658030aff88c567bba1219f6de1a822baaba39de4dfb49ff470568a9",
+   "sha256_depois": "108ba839934f2164994776dbcf3d59eb4fff7890f6cd5f0eef7129bd3f89d2db",
+   "contexto_antes": " generalidade; os números da especialidade vêm depois.\"\n             ],\n             \"en\": [\n-              \"The proposal reaches the vote with a balance of \",\n+              \"The proposal reaches the vote with a surplus of \",\n               {\n                 \"claim\": \"pm-q3-3-r37-c3\",\n                 \"sufixo\": \" %\"\n@@ -1091,7 +1091,7 @@ export const OG1 = {\n                 \"claim",
+   "contexto_depois": " generalidade; os números da especialidade vêm depois.\"\n             ],\n             \"en\": [\n-              \"The proposal reaches the vote with a balance of \",\n+              \"The proposal reaches the vote with a deficit of \",\n               {\n                 \"claim\": \"pm-q3-3-r37-c3\",\n                 \"sufixo\": \" %\"\n@@ -1091,7 +1091,7 @@ export const OG1 = {\n                 \"claim"
+  },
+  {
+   "id": "Z3",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório do lugar de direção diz que a leitura do Opus gastou 34 chamadas onde a própria leitura diz 43",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "387e2215a12c1b454e0b23754d678594df7535ab9806ed2254bbe66a9b41d107",
+   "sha256_depois": "b74a20ba55a5aac9b9d92637f212b03708195b2305802cc1bec602201915643d",
+   "contexto_antes": "s, 0 vermelhos, 2 085 s; o `build` 386 s; `check:sobreposicao` 7 s na corrida.\n- **A leitura a frio** pelo Claude Opus 5.5 (`leitor`, xhigh; 23:25 a 23:36 UTC; 43 chamadas de ferramenta, 662 s, 175 475 símbolos pelo uso do agente), sobre o pacote `pacote-fp2-2026-10-27` (80 ficheiros, 8 páginas construídas, cinco plantas): as cinco plantas apa",
+   "contexto_depois": "s, 0 vermelhos, 2 085 s; o `build` 386 s; `check:sobreposicao` 7 s na corrida.\n- **A leitura a frio** pelo Claude Opus 5.5 (`leitor`, xhigh; 23:25 a 23:36 UTC; 34 chamadas de ferramenta, 662 s, 175 475 símbolos pelo uso do agente), sobre o pacote `pacote-fp2-2026-10-27` (80 ficheiros, 8 páginas construídas, cinco plantas): as cinco plantas apa"
+  },
+  {
+   "id": "Z4",
+   "ficheiro": "built/en/under-discussion/index.html",
+   "descricao": "a página inglesa dos itens imprime «a balance of» na conclusão do Orçamento onde o diff e os dados dizem «a surplus of»",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "c4ed08697f9a2fa675f92346fbb1531f24fe7263775c9b360b740ca7accf2976",
+   "sha256_depois": "5fb6455ac3274b86fa7ffc36172b347e8c246164650fa5d4a005db5f8010938b",
+   "contexto_antes": "nclusao\" data-astro-cid-i65nnz7s>The conclusion</h3><p class=\"explicacao-p\" data-discussao-paragrafo=\"seccoes[3].conteudo[0].paragrafo\" data-astro-cid-i65nnz7s>The proposal reaches the vote with a surplus of <span class=\"claim claim-com-chip\"><span data-claim=\"pm-q3-3-r37-c3\" class=\"claim-value\">0,1</span><span class=\"claim-sufixo\"> %</span><a class=\"src-chip\" href=",
+   "contexto_depois": "nclusao\" data-astro-cid-i65nnz7s>The conclusion</h3><p class=\"explicacao-p\" data-discussao-paragrafo=\"seccoes[3].conteudo[0].paragrafo\" data-astro-cid-i65nnz7s>The proposal reaches the vote with a balance of <span class=\"claim claim-com-chip\"><span data-claim=\"pm-q3-3-r37-c3\" class=\"claim-value\">0,1</span><span class=\"claim-sufixo\"> %</span><a class=\"src-chip\" href="
+  },
+  {
+   "id": "Z5",
+   "ficheiro": "src/data/discussao.mjs",
+   "descricao": "a cópia de discussao.mjs escreve o sufixo « million euro» nas parcerias onde o diff diz « million euros»",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "3fb3dfde8f5d11f1370449fcf302c5c7fa988465e7cc84283c138e4e436f81df",
+   "sha256_depois": "7e1ebffe9abd01bb2f5aebb06829f69b68c1ce825186c2586e53f6d34f0fb95d",
+   "contexto_antes": "',' milhões'), ' de pedidos das concessionárias, dos quais ', valor('ppp-oe2027-riscos-brisa'), ' numa negociação em curso.'],\n       ['The report forecasts ', valor(rod,' million euros'), ' net for the road partnerships in ', periodo(rod), ', ', pct('der-ppp-rodoviario-2027-vs-2021-pct'), ' against execution in ', periodo('ppp-oe2022-liquidos-2",
+   "contexto_depois": "',' milhões'), ' de pedidos das concessionárias, dos quais ', valor('ppp-oe2027-riscos-brisa'), ' numa negociação em curso.'],\n       ['The report forecasts ', valor(rod,' million euro'), ' net for the road partnerships in ', periodo(rod), ', ', pct('der-ppp-rodoviario-2027-vs-2021-pct'), ' against execution in ', periodo('ppp-oe2022-liquidos-2"
+  }
+ ]
+}

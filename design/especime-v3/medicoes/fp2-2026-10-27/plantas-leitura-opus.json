@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-27T23:24:44+00:00",
+ "copia": "<pasta-dos-projetos>/_aterragens/pacote-fp2-2026-10-27",
+ "plantas": [
+  {
+   "id": "Z1",
+   "ficheiro": "built/index.html",
+   "descricao": "o bloco «O que se discute» da primeira página portuguesa imprime 26.10.2026 para o item do Orçamento onde publicado e a caixa dizem 27.10.2026",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "887abeda62f9897bc64330d85c2cbd9529ecc39c2c27896fe7bd61fc704ce2ef",
+   "sha256_depois": "10b2ae5a6ce0d646b615f9aa47f4dec102fe4be9c550967ab47b9e8e1d34396d",
+   "contexto_antes": "q3-3-r37-c3\" data-de-campo=\"reference_date\">2027</span> antes do voto na generalidade: o que os partidos e o Governo já disseram, ao lado do que a UTAO mede</a><p data-discussao-resumo><time datetime=\"2026-10-27\" data-nonledger=\"data-editorial\" data-data-origem=\"publicacao.declarada\">27.10.2026</time> · <span data-discussao-conclusao>A proposta chega ao voto com um saldo de <span class=\"claim\"><span data-claim=\"pm-q3-3-r37-c3\" class=\"claim-value\">0,1</span><",
+   "contexto_depois": "q3-3-r37-c3\" data-de-campo=\"reference_date\">2027</span> antes do voto na generalidade: o que os partidos e o Governo já disseram, ao lado do que a UTAO mede</a><p data-discussao-resumo><time datetime=\"2026-10-27\" data-nonledger=\"data-editorial\" data-data-origem=\"publicacao.declarada\">26.10.2026</time> · <span data-discussao-conclusao>A proposta chega ao voto com um saldo de <span class=\"claim\"><span data-claim=\"pm-q3-3-r37-c3\" class=\"claim-value\">0,1</span><"
+  },
+  {
+   "id": "Z2",
+   "ficheiro": "diff.patch",
+   "descricao": "o diff de BlocoDaDiscussao.astro corta a conclusão em duas frases (primeirasFrases(..., 2)) onde o mandato pede a primeira frase e a cópia do ficheiro diz 1",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "43f6bbb73dbd048665152de5651c9a1ec55f706c019aa24d151305fa9d3d8aef",
+   "sha256_depois": "1e251c2601b3f52e207d0a7cba733fbd69b13f11703956784864c2ba05c2e9da",
+   "contexto_antes": "edger=\"data-editorial\" data-data-origem=\"publicacao.declarada\">{dataDaCasa(e.publicado)}</time>{' · '}<span data-discussao-conclusao><FraseDaExplicacao partes={primeirasFrases(conclusao.pedacos, 1)} lang={lang} selos={false} /></span></p>\n+    </li>;\n+  })}</ul>\n </section>\ndiff --git a/src/lib/discussao.mjs b/src/lib/discussao.mjs\nindex 258deeda1..e250e2",
+   "contexto_depois": "edger=\"data-editorial\" data-data-origem=\"publicacao.declarada\">{dataDaCasa(e.publicado)}</time>{' · '}<span data-discussao-conclusao><FraseDaExplicacao partes={primeirasFrases(conclusao.pedacos, 2)} lang={lang} selos={false} /></span></p>\n+    </li>;\n+  })}</ul>\n </section>\ndiff --git a/src/lib/discussao.mjs b/src/lib/discussao.mjs\nindex 258deeda1..e250e2"
+  },
+  {
+   "id": "Z3",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz que o detetor achou 12 cruzamentos na construção de base onde base.json diz 15",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "20e670a29bf90b7851f24ab07c4d9f4ed6b1044c3a6539354da91503f0639c1d",
+   "sha256_depois": "8e18db24569db9545f0ad729ea013984a34386ebbc1f5cd71cbea838da9cd485",
+   "contexto_antes": " and the table projects a downward trend, with fluctuations, to the end of the contracts.\n\n## Prova de geometria\n\nA construção limpa de base saiu com código 0. O detetor deu código 1: 15 cruzamentos, 0 erros, nas três rotas esperadas, em 6.81 segundos. base.json inclui os achados e as contagens de ligações.\n\nDepois: 0 cruzamentos e 0 erros em 18 rotas e ci",
+   "contexto_depois": " and the table projects a downward trend, with fluctuations, to the end of the contracts.\n\n## Prova de geometria\n\nA construção limpa de base saiu com código 0. O detetor deu código 1: 12 cruzamentos, 0 erros, nas três rotas esperadas, em 6.81 segundos. base.json inclui os achados e as contagens de ligações.\n\nDepois: 0 cruzamentos e 0 erros em 18 rotas e ci"
+  },
+  {
+   "id": "Z4",
+   "ficheiro": "built/en/index.html",
+   "descricao": "a primeira página inglesa imprime 898 milhões para as parcerias rodoviárias onde a linha e a página dos itens dizem 889",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "bbe95436f036e1fbf891a6c6f4ac9d2483bb04e44d5fe522e1a79b70e84de80f",
+   "sha256_depois": "70c022d328a4c2d30aeedfe5dd739545bfe7ecf3776901e1c7bae556252e5dd3",
+   "contexto_antes": "o-resumo><time datetime=\"2026-10-19\" data-nonledger=\"data-editorial\" data-data-origem=\"publicacao.declarada\">19.10.2026</time> · <span data-discussao-conclusao>The report forecasts <span class=\"claim\"><span data-claim=\"oe-2027-ppp-rodoviario-encargos-liquidos-2027\" class=\"claim-value\">889</span><span class=\"claim-sufixo\"> million</span></span> net for the road partnerships in <span class=\"data-da-linha\" data-nonledger=\"data-da-linha\" data-de-linha=\"oe-",
+   "contexto_depois": "o-resumo><time datetime=\"2026-10-19\" data-nonledger=\"data-editorial\" data-data-origem=\"publicacao.declarada\">19.10.2026</time> · <span data-discussao-conclusao>The report forecasts <span class=\"claim\"><span data-claim=\"oe-2027-ppp-rodoviario-encargos-liquidos-2027\" class=\"claim-value\">898</span><span class=\"claim-sufixo\"> million</span></span> net for the road partnerships in <span class=\"data-da-linha\" data-nonledger=\"data-da-linha\" data-de-linha=\"oe-"
+  },
+  {
+   "id": "Z5",
+   "ficheiro": "tests/documentos/sobreposicao.mjs",
+   "descricao": "a cópia de tests/documentos/sobreposicao.mjs exige 30 px de cruzamento vertical onde o diff e o mandato dizem 3 px: a régua deixaria passar o contador sobre uma linha",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "9822effa80bf1b0a494effde8a7302711fe4396e2f7871b93f98b0188060224e",
+   "sha256_depois": "412ddf908615f7ae5fc62cf0f9f44ee80c15ddd4162140b8df45a17bfe078630",
+   "contexto_antes": "  }\n  const cruza = (a, b) => { const ix = Math.min(a.x + a.w, b.x + b.w) - Math.max(a.x, b.x); const iy = Math.min(a.y + a.h, b.y + b.h) - Math.max(a.y, b.y); return ix >= 3 && iy >= 3 ? ix * iy : 0; };\n  const achados = []; const vistos = new Set();\n  const todos = linhas.concat(pseudos);\n  for (let i = 0; i < todos.length; i++) for (let j = i + 1; j < tod",
+   "contexto_depois": "  }\n  const cruza = (a, b) => { const ix = Math.min(a.x + a.w, b.x + b.w) - Math.max(a.x, b.x); const iy = Math.min(a.y + a.h, b.y + b.h) - Math.max(a.y, b.y); return ix >= 3 && iy >= 30 ? ix * iy : 0; };\n  const achados = []; const vistos = new Set();\n  const todos = linhas.concat(pseudos);\n  for (let i = 0; i < todos.length; i++) for (let j = i + 1; j < tod"
+  }
+ ]
+}
