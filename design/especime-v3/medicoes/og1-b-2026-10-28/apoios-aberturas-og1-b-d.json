@@ -1,0 +1,37 @@
+{
+  "cabeca": "41f09be50ce24ff7388275c1d6bc4aadeaa1eefb",
+  "linhas": [
+    {
+      "lang": "pt",
+      "ano": "2026",
+      "linha": "oe-2027-saude-despesa-efetiva-consolidada-2026",
+      "href": "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-2026",
+      "recibos_do_orcamento": [
+        [
+          "og1-votacao-generalidade"
+        ],
+        [
+          "og1-votacao-generalidade",
+          "og1-votacao-generalidade-rtp",
+          "og1-guiao-votacoes-28"
+        ]
+      ]
+    },
+    {
+      "lang": "en",
+      "ano": "2026",
+      "linha": "oe-2027-saude-despesa-efetiva-consolidada-2026",
+      "href": "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-2026",
+      "recibos_do_orcamento": [
+        [
+          "og1-votacao-generalidade"
+        ],
+        [
+          "og1-votacao-generalidade",
+          "og1-votacao-generalidade-rtp",
+          "og1-guiao-votacoes-28"
+        ]
+      ]
+    }
+  ]
+}

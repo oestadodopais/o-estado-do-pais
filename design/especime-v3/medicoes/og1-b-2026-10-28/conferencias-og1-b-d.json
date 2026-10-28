@@ -1,0 +1,128 @@
+[
+  {
+    "conferencia": "apoios-aberturas-2",
+    "codigo": 0,
+    "ficheiro_codigo": "og1-b-d-apoios-aberturas-2.codigo",
+    "registo": "og1-b-d-apoios-aberturas-2.log"
+  },
+  {
+    "conferencia": "apoios-aberturas",
+    "codigo": 1,
+    "ficheiro_codigo": "og1-b-d-apoios-aberturas.codigo",
+    "registo": "og1-b-d-apoios-aberturas.log"
+  },
+  {
+    "conferencia": "auditoria",
+    "codigo": 0,
+    "ficheiro_codigo": "og1-b-d-auditoria.codigo",
+    "registo": "og1-b-d-auditoria.log"
+  },
+  {
+    "conferencia": "build",
+    "codigo": 0,
+    "ficheiro_codigo": "og1-b-d-build.codigo",
+    "registo": "og1-b-d-build.log.gz"
+  },
+  {
+    "conferencia": "capturas",
+    "codigo": 0,
+    "ficheiro_codigo": "og1-b-d-capturas.codigo",
+    "registo": null
+  },
+  {
+    "conferencia": "check-cartao",
+    "codigo": 0,
+    "ficheiro_codigo": "og1-b-d-check-cartao.codigo",
+    "registo": "og1-b-d-check-cartao.log.gz"
+  },
+  {
+    "conferencia": "check-cruzamento",
+    "codigo": 0,
+    "ficheiro_codigo": "og1-b-d-check-cruzamento.codigo",
+    "registo": "og1-b-d-check-cruzamento.log"
+  },
+  {
+    "conferencia": "check-discussao",
+    "codigo": 0,
+    "ficheiro_codigo": "og1-b-d-check-discussao.codigo",
+    "registo": "og1-b-d-check-discussao.log"
+  },
+  {
+    "conferencia": "check-lingua",
+    "codigo": 0,
+    "ficheiro_codigo": "og1-b-d-check-lingua.codigo",
+    "registo": "og1-b-d-check-lingua.log"
+  },
+  {
+    "conferencia": "check-palavras",
+    "codigo": 0,
+    "ficheiro_codigo": "og1-b-d-check-palavras.codigo",
+    "registo": "og1-b-d-check-palavras.log"
+  },
+  {
+    "conferencia": "check-registo",
+    "codigo": 0,
+    "ficheiro_codigo": "og1-b-d-check-registo.codigo",
+    "registo": "og1-b-d-check-registo.log"
+  },
+  {
+    "conferencia": "check-rotulos",
+    "codigo": 0,
+    "ficheiro_codigo": "og1-b-d-check-rotulos.codigo",
+    "registo": "og1-b-d-check-rotulos.log"
+  },
+  {
+    "conferencia": "check-voz",
+    "codigo": 0,
+    "ficheiro_codigo": "og1-b-d-check-voz.codigo",
+    "registo": "og1-b-d-check-voz.log"
+  },
+  {
+    "conferencia": "declaracoes",
+    "codigo": 0,
+    "ficheiro_codigo": "og1-b-d-declaracoes.codigo",
+    "registo": "og1-b-d-declaracoes.log"
+  },
+  {
+    "conferencia": "frases",
+    "codigo": 0,
+    "ficheiro_codigo": "og1-b-d-frases.codigo",
+    "registo": "og1-b-d-frases.log"
+  },
+  {
+    "conferencia": "gate-html",
+    "codigo": 0,
+    "ficheiro_codigo": "og1-b-d-gate-html.codigo",
+    "registo": "og1-b-d-gate-html.log.gz"
+  },
+  {
+    "conferencia": "ledger-check",
+    "codigo": 0,
+    "ficheiro_codigo": "og1-b-d-ledger-check.codigo",
+    "registo": "og1-b-d-ledger-check.log.gz"
+  },
+  {
+    "conferencia": "typecheck-previo",
+    "codigo": 0,
+    "ficheiro_codigo": "og1-b-d-typecheck-previo.codigo",
+    "registo": "og1-b-d-typecheck-previo.log"
+  },
+  {
+    "conferencia": "typecheck",
+    "codigo": 0,
+    "ficheiro_codigo": "og1-b-d-typecheck.codigo",
+    "registo": "og1-b-d-typecheck.log"
+  },
+  {
+    "conferencia": "check:frases-compostas",
+    "codigo": 0,
+    "ficheiro_codigo": "og1-b-d-check-frases-compostas.codigo",
+    "registo": "og1-b-d-check-frases-compostas.log"
+  },
+  {
+    "conferencia": "check:primeira",
+    "codigo": 0,
+    "ficheiro_codigo": "og1-b-d-check-primeira.codigo",
+    "registo": "og1-b-d-check-primeira.log"
+  }
+]

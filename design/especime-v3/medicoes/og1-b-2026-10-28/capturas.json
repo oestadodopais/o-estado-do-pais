@@ -1,5 +1,5 @@
 {
-  "cabeca": "076514863610676d0e2283b55d755f5f97a37f0d",
+  "cabeca": "41f09be50ce24ff7388275c1d6bc4aadeaa1eefb",
   "capturador_sha256": "0befc596ce06466e936573ac45841b8cc16391fb39efc0cc3a54001bc156d812",
   "larguras": [
     390,
@@ -17,8 +17,8 @@
       "janela": 390,
       "documento": 390,
       "corpo": 390,
-      "altura": 10082,
-      "sha256": "01024dbc0ca310fc7a08e2b35cc74b5feb2b1480b3c55e97b0998bc5254036cc",
+      "altura": 10010,
+      "sha256": "10fa6297dcd24c9cb8823f08a5bfb9795b306e9059c3a945e90480c535b29c96",
       "recortes": [
         {
           "ficheiro": "inicio-pt-390-discussao.png",
@@ -28,9 +28,9 @@
             "left": 18,
             "top": 853,
             "width": 354,
-            "height": 925
+            "height": 853
           },
-          "sha256": "26e45aeec6f38036ee90d704c7fba5c0c87db3328f5028e3b778417e9ebc5f39"
+          "sha256": "b092780deb25031851b48733a229071cfc8e1a88b87971ddeaaa28f51e8027f6"
         }
       ],
       "externos": [],
@@ -45,8 +45,8 @@
       "janela": 768,
       "documento": 768,
       "corpo": 768,
-      "altura": 7698,
-      "sha256": "d13f9a36ec4927806995739e8a4a2b1f8d7b8ef5697ddf0535b5904fc27ebc11",
+      "altura": 7674,
+      "sha256": "079f6103019b2724cbeddcb5da6036da681388879625ca9899e9221f312c053f",
       "recortes": [
         {
           "ficheiro": "inicio-pt-768-discussao.png",
@@ -56,9 +56,9 @@
             "left": 30,
             "top": 726,
             "width": 708,
-            "height": 577
+            "height": 553
           },
-          "sha256": "c58ba0fa9bbb01fed1234c7e158502565b01d5d39f355bf946291be26e2f4463"
+          "sha256": "56002b2e06c477a4a5d8ed24be346a5b9eb433218103f824ae3c8fe2424ba3e7"
         }
       ],
       "externos": [],
@@ -74,7 +74,7 @@
       "documento": 1024,
       "corpo": 1024,
       "altura": 6689,
-      "sha256": "deb817b5d150e5df8f11281b44eccf2451031555de24936f5582f0e86997f4d3",
+      "sha256": "d2c42071b121193dfac44837b22d2dd04b0c154b496be922e09b522a9b5c3d83",
       "recortes": [
         {
           "ficheiro": "inicio-pt-1024-discussao.png",
@@ -84,9 +84,9 @@
             "left": 40,
             "top": 599,
             "width": 944,
-            "height": 488
+            "height": 464
           },
-          "sha256": "7ddc185fc7edbd7ecc14f7a710961b9e8fb01b279cabf2b12f0a79db8445ed77"
+          "sha256": "d93bc6919a2cd9eca4e9fdc8c2eb963b8836e6257eaa84bc31c245d5f9f453fc"
         }
       ],
       "externos": [],
@@ -102,7 +102,7 @@
       "documento": 1280,
       "corpo": 1280,
       "altura": 6576,
-      "sha256": "2aa0ca27575aad37930782ac9d0a04eea584f1af6175d64f1a50b0be7614016f",
+      "sha256": "d134db04eaa1eb72feff33154ce88492d6179ac0af44c05df55812525dd6b062",
       "recortes": [
         {
           "ficheiro": "inicio-pt-1280-discussao.png",
@@ -114,7 +114,7 @@
             "width": 1092,
             "height": 440
           },
-          "sha256": "5e329de8a0fef0cb1b414e04124c904148b4e7880b2c71c1ec0b6d89c9caaf8d"
+          "sha256": "d8f60e68491f8354645777b5ef86e4117ae0dda42228a5c7cb19766186c3ce3a"
         }
       ],
       "externos": [],
@@ -130,7 +130,7 @@
       "documento": 1600,
       "corpo": 1600,
       "altura": 6596,
-      "sha256": "a39776a85ef75e4bd6f537a7e93f95655b3aec6a35eb7c70917046e16ba0009a",
+      "sha256": "9720a8b06bd89c0a8d97b6a2a6fc691bd3c88c5b54728c4413db2be028f7a75d",
       "recortes": [
         {
           "ficheiro": "inicio-pt-1600-discussao.png",
@@ -142,7 +142,7 @@
             "width": 1092,
             "height": 440
           },
-          "sha256": "5e329de8a0fef0cb1b414e04124c904148b4e7880b2c71c1ec0b6d89c9caaf8d"
+          "sha256": "d8f60e68491f8354645777b5ef86e4117ae0dda42228a5c7cb19766186c3ce3a"
         }
       ],
       "externos": [],
@@ -157,8 +157,8 @@
       "janela": 390,
       "documento": 390,
       "corpo": 390,
-      "altura": 9938,
-      "sha256": "935414be193cd43c89cdd2c22425e9d949b371b7f237dfa14ba60b1cd8e12fa0",
+      "altura": 9866,
+      "sha256": "1fbb7c97da58a00e43c04af2ebfcea2e0d971e1508899e3cfe5ba2e7318b91c1",
       "recortes": [
         {
           "ficheiro": "inicio-en-390-discussao.png",
@@ -168,9 +168,9 @@
             "left": 18,
             "top": 853,
             "width": 354,
-            "height": 901
+            "height": 829
           },
-          "sha256": "6684f475943e6b3ae75caa9bd5db86d3bb513f6a043e95b2660e34f8f2f97208"
+          "sha256": "c433eb0c592628b7640b7ccf2c12a48e713339ba5d3d1c506a4740d8000917fa"
         }
       ],
       "externos": [],
@@ -185,8 +185,8 @@
       "janela": 768,
       "documento": 768,
       "corpo": 768,
-      "altura": 7747,
-      "sha256": "4e7e251af468cb00c24244ffe962180163ed140462995270b7c691d61ab69b5f",
+      "altura": 7699,
+      "sha256": "44c264703aa5d6f3f7c4be87fe05dca8026db335ca8cb984d540c7246ba78ede",
       "recortes": [
         {
           "ficheiro": "inicio-en-768-discussao.png",
@@ -196,9 +196,9 @@
             "left": 30,
             "top": 726,
             "width": 708,
-            "height": 553
+            "height": 505
           },
-          "sha256": "7e6f1754d2c70ce252d1ed29f98683a3f24d2f4eb645ffdcea2aec207cd8975c"
+          "sha256": "7285557c9e0172cc311ca9d8324ff79df8157c9fcdf017525f4b3f120bf37107"
         }
       ],
       "externos": [],
@@ -213,8 +213,8 @@
       "janela": 1024,
       "documento": 1024,
       "corpo": 1024,
-      "altura": 6778,
-      "sha256": "e21a673ce362ca84dd944bd3d54827197537471e8b6c4c191ee7b0798bb2f6c6",
+      "altura": 6730,
+      "sha256": "107a0cb26e2942a1fa212156f12b089e64e993255873f73d2b2fe00641fe99ec",
       "recortes": [
         {
           "ficheiro": "inicio-en-1024-discussao.png",
@@ -224,9 +224,9 @@
             "left": 40,
             "top": 599,
             "width": 944,
-            "height": 464
+            "height": 440
           },
-          "sha256": "0bb0fb616ddcec8e92282d20900a2ae6fd576228ba4e42ba099c115006ab5042"
+          "sha256": "137da3dab837365876efe68d0448f800b1e87015a1e27cc9f93c7692d02fce00"
         }
       ],
       "externos": [],
@@ -241,8 +241,8 @@
       "janela": 1280,
       "documento": 1280,
       "corpo": 1280,
-      "altura": 6633,
-      "sha256": "ee655d14ea27e86278c19c59ee25f6b3e659091e66f434f08c9c4cea96029599",
+      "altura": 6609,
+      "sha256": "f68e7a5caac9ce0653c16b21e11592a5ff42913c44da06faa07edaa032e189d1",
       "recortes": [
         {
           "ficheiro": "inicio-en-1280-discussao.png",
@@ -252,9 +252,9 @@
             "left": 94,
             "top": 612,
             "width": 1092,
-            "height": 440
+            "height": 416
           },
-          "sha256": "49e609b155896916184365fcfe188deaf8608ebf95d472f545d47338c97b1155"
+          "sha256": "1dd6d24f8212be654d77241716bcd26cb2bf663485837d0dbfebc09da7959c08"
         }
       ],
       "externos": [],
@@ -269,8 +269,8 @@
       "janela": 1600,
       "documento": 1600,
       "corpo": 1600,
-      "altura": 6653,
-      "sha256": "0b211c03ef58830d46ec1cda41624d228468d65ccc9524166510826bf11d096d",
+      "altura": 6629,
+      "sha256": "555e354a91c581bb6bbc9a47b9b7e625b40ccb5d13f36d95bdd223ca67a41c10",
       "recortes": [
         {
           "ficheiro": "inicio-en-1600-discussao.png",
@@ -280,9 +280,9 @@
             "left": 254,
             "top": 615,
             "width": 1092,
-            "height": 440
+            "height": 416
           },
-          "sha256": "5f58d37a88aca1c0a85a41e106fc9083dd89ed33ab75a5fc09aea233d448a7ac"
+          "sha256": "c797ad1514c007c5c70a3776d6ac0c0a1b87e811f59564fbf0bfd2606e795191"
         }
       ],
       "externos": [],
@@ -297,8 +297,8 @@
       "janela": 390,
       "documento": 390,
       "corpo": 390,
-      "altura": 29636,
-      "sha256": "599a42a3b6362a1524f19d5596e2c22e0a88d7083d9add7dc00e76118c5d511c",
+      "altura": 29691,
+      "sha256": "c1f2f51b8fad14b26fda8f7c21a304bebeb76ec36542e58ef8bec23969826f09",
       "recortes": [
         {
           "ficheiro": "discussao-pt-390-orcamento-2027-generalidade-0.png",
@@ -308,9 +308,9 @@
             "left": 18,
             "top": 975,
             "width": 354,
-            "height": 305
+            "height": 222
           },
-          "sha256": "bbd40e0d092843fd67a906aca390936fc512ee621d29a558d1a4269352657c4b"
+          "sha256": "fb5bc25e86be146ab4c8714a5afe7e5ae42bac97c5eceb9eb7107836b8351716"
         },
         {
           "ficheiro": "discussao-pt-390-orcamento-2027-generalidade-1.png",
@@ -318,11 +318,11 @@
           "origem": "discussao-pt-390.png",
           "caixa": {
             "left": 18,
-            "top": 1293,
+            "top": 1210,
             "width": 354,
-            "height": 388
+            "height": 498
           },
-          "sha256": "1f6e946d659f9f938fd32453673308a0bb5fd93ab7f37387e0458ffb15b5ffa9"
+          "sha256": "4e3fd7e899f7cfe58990d4e64986adf45d5a523501e52a2976581cb600b93e73"
         },
         {
           "ficheiro": "discussao-pt-390-saude-no-orcamento-0.png",
@@ -330,11 +330,11 @@
           "origem": "discussao-pt-390.png",
           "caixa": {
             "left": 18,
-            "top": 12605,
+            "top": 12661,
             "width": 354,
             "height": 222
           },
-          "sha256": "f84658589059ad60f5ef2c48e9dace6eac01ab9c0747e456784f727114f1ddf8"
+          "sha256": "d7a6cf006df13d787fe76265ecd3c1adaf6032f2b03d7176091e63957ef5c2ec"
         },
         {
           "ficheiro": "discussao-pt-390-saude-no-orcamento-1.png",
@@ -342,11 +342,11 @@
           "origem": "discussao-pt-390.png",
           "caixa": {
             "left": 18,
-            "top": 12840,
+            "top": 12896,
             "width": 354,
-            "height": 223
+            "height": 222
           },
-          "sha256": "22994dc129c23aa8b1432d361855276ddebd11a34cab9a4fa378435336103a02"
+          "sha256": "7b3c8f63c0ab301537c06c93b8269b1ddb3c65c4f0335c9292e5678426fadc71"
         },
         {
           "ficheiro": "discussao-pt-390-parcerias-rodoviarias-0.png",
@@ -354,11 +354,11 @@
           "origem": "discussao-pt-390.png",
           "caixa": {
             "left": 18,
-            "top": 22287,
+            "top": 22343,
             "width": 354,
-            "height": 223
+            "height": 222
           },
-          "sha256": "ea06e50dd9b1816f6af329952f1cc8c432c29ac39e513ca4d76a043705473f22"
+          "sha256": "887056d0c6f287574958dc46d90beb0b603217f2fd05ec79cfb0577865722b0e"
         },
         {
           "ficheiro": "discussao-pt-390-parcerias-rodoviarias-1.png",
@@ -366,11 +366,11 @@
           "origem": "discussao-pt-390.png",
           "caixa": {
             "left": 18,
-            "top": 22523,
+            "top": 22578,
             "width": 354,
             "height": 222
           },
-          "sha256": "1e593ccf83eff7b3969efe92af3ffa32e1848ec24efb72efb52a87362352e4a8"
+          "sha256": "9ac7cbfd1024aa119ec3657d8625e08052434fb0711c5df60952d09b73e96ca5"
         }
       ],
       "externos": [],
@@ -385,8 +385,8 @@
       "janela": 768,
       "documento": 768,
       "corpo": 768,
-      "altura": 20682,
-      "sha256": "292bc9630abfd3b59039a667239b9026c6048a1328b2608650b49c434571b20c",
+      "altura": 20737,
+      "sha256": "b1db122d5df78b652787310acbcdb7d086bbbd59b52524bb435d8aa21d01c3c2",
       "recortes": [
         {
           "ficheiro": "discussao-pt-768-orcamento-2027-generalidade-0.png",
@@ -396,9 +396,9 @@
             "left": 30,
             "top": 840,
             "width": 529,
-            "height": 222
+            "height": 167
           },
-          "sha256": "e7b99fc1d61d0e6e8a00ae17f75ada8fa8b3ee36365dcd47450f68ead6699547"
+          "sha256": "a63e44ad4db99cdcdd51c759674b571ad2c355e5e60b8df88e6087e03e5b1581"
         },
         {
           "ficheiro": "discussao-pt-768-orcamento-2027-generalidade-1.png",
@@ -406,11 +406,11 @@
           "origem": "discussao-pt-768.png",
           "caixa": {
             "left": 30,
-            "top": 1075,
+            "top": 1020,
             "width": 529,
-            "height": 250
+            "height": 305
           },
-          "sha256": "3274d79f61de88c11e4b732432e4d95b727b594211a60dac9e19339af9efd418"
+          "sha256": "38c08a8ac0436c29b72b59d7bf12e0e4d941401bd8a037b5d85c3d497b2992e3"
         },
         {
           "ficheiro": "discussao-pt-768-saude-no-orcamento-0.png",
@@ -418,11 +418,11 @@
           "origem": "discussao-pt-768.png",
           "caixa": {
             "left": 30,
-            "top": 8821,
+            "top": 8876,
             "width": 529,
             "height": 139
           },
-          "sha256": "bd04f8774495205c7c2d5ab3e5efb68a3d218f37a0c7c4369da1327166a7e69b"
+          "sha256": "e167423566eb5b78eeaf9304f379ee1eac45573a55b525c7371d0e147bf9c1ed"
         },
         {
           "ficheiro": "discussao-pt-768-saude-no-orcamento-1.png",
@@ -430,11 +430,11 @@
           "origem": "discussao-pt-768.png",
           "caixa": {
             "left": 30,
-            "top": 8973,
+            "top": 9028,
             "width": 529,
             "height": 139
           },
-          "sha256": "faa6b915a948e1b060395429ae415457d45a42313e95ebc1c56489856bfe0dd6"
+          "sha256": "e599e2ef386d220dd7d2ecd674229506ef1d4e98b8a62acb09346b42e594b530"
         },
         {
           "ficheiro": "discussao-pt-768-parcerias-rodoviarias-0.png",
@@ -442,11 +442,11 @@
           "origem": "discussao-pt-768.png",
           "caixa": {
             "left": 30,
-            "top": 15566,
+            "top": 15621,
             "width": 529,
             "height": 139
           },
-          "sha256": "7abe5eab5bc3e3c468bfef33e32e1320b5e6abf564282abce145db45ffc637ae"
+          "sha256": "2e6011c6aaaf32e13cc281fc639ec1ca7553c201950277b7b571684948f28e6f"
         },
         {
           "ficheiro": "discussao-pt-768-parcerias-rodoviarias-1.png",
@@ -454,11 +454,11 @@
           "origem": "discussao-pt-768.png",
           "caixa": {
             "left": 30,
-            "top": 15718,
+            "top": 15773,
             "width": 529,
-            "height": 139
+            "height": 140
           },
-          "sha256": "ae9d61f108f9125bacd407726a3387354f8969bd3ef1921db100e4c8dfafa054"
+          "sha256": "e533126dbcc2c974ecff5fa9c2d8a2f927b4342edf823f76219022dc2f7727ae"
         }
       ],
       "externos": [],
@@ -473,8 +473,8 @@
       "janela": 1024,
       "documento": 1024,
       "corpo": 1024,
-      "altura": 20899,
-      "sha256": "e395942ec0cf6aae47ab8929ec3b4dba1f2f03d9f3bd0efad898394c3a99d382",
+      "altura": 20954,
+      "sha256": "e96257bd85301eed41cc80faad466e0d4a1c7c211363fc7efb55d9efad8b6d6a",
       "recortes": [
         {
           "ficheiro": "discussao-pt-1024-orcamento-2027-generalidade-0.png",
@@ -484,9 +484,9 @@
             "left": 40,
             "top": 944,
             "width": 529,
-            "height": 222
+            "height": 167
           },
-          "sha256": "0a348e517107e8018bdc8ee4827a4f5fa792ea02ebb82c46922ba57cfd65ed3b"
+          "sha256": "fc09aa44d97ff0faa43bba81c18bd85a4853184834ee6dd5c745f4245e6ac8d0"
         },
         {
           "ficheiro": "discussao-pt-1024-orcamento-2027-generalidade-1.png",
@@ -494,11 +494,11 @@
           "origem": "discussao-pt-1024.png",
           "caixa": {
             "left": 40,
-            "top": 1179,
+            "top": 1124,
             "width": 529,
-            "height": 250
+            "height": 305
           },
-          "sha256": "18c3d1c59a68d0de2e3ad74b73e29441063b3a0175b3638923508a56873c16ad"
+          "sha256": "6b82e5bf3f43499a54e5edd428e2395db8d8b93cc0c803cf187e140876cd9b88"
         },
         {
           "ficheiro": "discussao-pt-1024-saude-no-orcamento-0.png",
@@ -506,11 +506,11 @@
           "origem": "discussao-pt-1024.png",
           "caixa": {
             "left": 40,
-            "top": 9008,
+            "top": 9063,
             "width": 529,
             "height": 139
           },
-          "sha256": "4565dbfecfc3d3ddcf0fd7f03862a3d13fa18fc8042c9b3c503082f7cfbeb57f"
+          "sha256": "5625f3b9deebbfddd7753f8d04b830b0275785a726733f3592597d35a2b1da1c"
         },
         {
           "ficheiro": "discussao-pt-1024-saude-no-orcamento-1.png",
@@ -518,11 +518,11 @@
           "origem": "discussao-pt-1024.png",
           "caixa": {
             "left": 40,
-            "top": 9160,
+            "top": 9215,
             "width": 529,
-            "height": 139
+            "height": 140
           },
-          "sha256": "099e021636ac23ca4afd498ee42adbec1ae8f4afb7dc69f66af154da7fd3beba"
+          "sha256": "c92517649fb14cb409c0ff27e22704393c9d4dcb7aa6decedc9c703f15084dd7"
         },
         {
           "ficheiro": "discussao-pt-1024-parcerias-rodoviarias-0.png",
@@ -530,11 +530,11 @@
           "origem": "discussao-pt-1024.png",
           "caixa": {
             "left": 40,
-            "top": 15825,
+            "top": 15881,
             "width": 529,
             "height": 139
           },
-          "sha256": "f3544ef7bb57fecdffb0284450561938c7db50afa0294963d5a94587a0c3e36b"
+          "sha256": "196be84d60ed95804befbecd4e813f59a12e7d8addd034b155b6dbc77620f757"
         },
         {
           "ficheiro": "discussao-pt-1024-parcerias-rodoviarias-1.png",
@@ -542,11 +542,11 @@
           "origem": "discussao-pt-1024.png",
           "caixa": {
             "left": 40,
-            "top": 15977,
+            "top": 16033,
             "width": 529,
-            "height": 140
+            "height": 139
           },
-          "sha256": "297f17f578955a95da7f0cb08e350888be7ba8c83eb5f31db1ddd843da53dca8"
+          "sha256": "bcbac6c0a4c37dae9fe1414832b11aa08016eebf3ce694bca0d0fab32cbc4578"
         }
       ],
       "externos": [],
@@ -561,8 +561,8 @@
       "janela": 1280,
       "documento": 1280,
       "corpo": 1280,
-      "altura": 21041,
-      "sha256": "a20b9cfe4c6f2bf997941812e8411985d72e9eb9cc1d3e906d706c42fad627a6",
+      "altura": 21097,
+      "sha256": "ac4ff078df7a50c671e6a635e51d9c5ea7e9d08c866fd0310760209716d8f6f0",
       "recortes": [
         {
           "ficheiro": "discussao-pt-1280-orcamento-2027-generalidade-0.png",
@@ -572,9 +572,9 @@
             "left": 94,
             "top": 946,
             "width": 528,
-            "height": 222
+            "height": 167
           },
-          "sha256": "b99f535293313788cb1f43b7c919b6b89a081d66ed40b1e6041342d52bdbe06d"
+          "sha256": "a8550f1e9e1ab5696c453ba063ca95fca4b8fff86748aabafc4730ab9d3d9014"
         },
         {
           "ficheiro": "discussao-pt-1280-orcamento-2027-generalidade-1.png",
@@ -582,11 +582,11 @@
           "origem": "discussao-pt-1280.png",
           "caixa": {
             "left": 94,
-            "top": 1181,
+            "top": 1126,
             "width": 528,
-            "height": 250
+            "height": 305
           },
-          "sha256": "0548323d7118c331a9bccd1d14bbe4d10ce4b97f92ddc970032e341998ab3868"
+          "sha256": "e551b0181f1073b6fbf84ab64804d1f94d207c46f4ed3c4e6d71d240d91c551d"
         },
         {
           "ficheiro": "discussao-pt-1280-saude-no-orcamento-0.png",
@@ -594,11 +594,11 @@
           "origem": "discussao-pt-1280.png",
           "caixa": {
             "left": 94,
-            "top": 9051,
+            "top": 9106,
             "width": 528,
             "height": 139
           },
-          "sha256": "00af42d861a25ec25341e476cabbb639b79f663a668b2c0d5bdd4d3356bbf31b"
+          "sha256": "eb8347bc42ec68d081817aaf793ab418fd6e40acea0f6769e9814ce614feb519"
         },
         {
           "ficheiro": "discussao-pt-1280-saude-no-orcamento-1.png",
@@ -606,11 +606,11 @@
           "origem": "discussao-pt-1280.png",
           "caixa": {
             "left": 94,
-            "top": 9203,
+            "top": 9258,
             "width": 528,
             "height": 139
           },
-          "sha256": "32a34cd2e8145e8c4890d48d13ad644623bb0882525e0cf7ddea0a4ffe3047a9"
+          "sha256": "34419b2c6ba102f51303d8cae87a9d8292b642072bcd5b4324b98a51358179fa"
         },
         {
           "ficheiro": "discussao-pt-1280-parcerias-rodoviarias-0.png",
@@ -618,11 +618,11 @@
           "origem": "discussao-pt-1280.png",
           "caixa": {
             "left": 94,
-            "top": 15909,
+            "top": 15964,
             "width": 528,
             "height": 139
           },
-          "sha256": "f7139d18d0395b72373f0f939a6cb3ce337a7073eed5ecc160c2ac96d89db1d2"
+          "sha256": "690bb503d7083cd72e010e253716ebe1641cf5101c60eebebc54dccbdd68e32f"
         },
         {
           "ficheiro": "discussao-pt-1280-parcerias-rodoviarias-1.png",
@@ -630,11 +630,11 @@
           "origem": "discussao-pt-1280.png",
           "caixa": {
             "left": 94,
-            "top": 16061,
+            "top": 16116,
             "width": 528,
-            "height": 139
+            "height": 140
           },
-          "sha256": "90f3138e9a9bef04988c3e1ea8a9256ac4c5eeccaadafff10d30ec95d9d81365"
+          "sha256": "769c807e9b073067b6dc4f6124c0fd8d68ae2260dd7aa9551982cf7f28d213a9"
         }
       ],
       "externos": [],
@@ -649,8 +649,8 @@
       "janela": 1600,
       "documento": 1600,
       "corpo": 1600,
-      "altura": 21093,
-      "sha256": "a0e67f3b33f236ecffdbdd63d94e78c76d9fee18f08475dd93be0a5b06d41022",
+      "altura": 21149,
+      "sha256": "958af957ef511abb7e133d42a75c59b2c27f2803dac7f9c054ecc6573db03e77",
       "recortes": [
         {
           "ficheiro": "discussao-pt-1600-orcamento-2027-generalidade-0.png",
@@ -660,9 +660,9 @@
             "left": 254,
             "top": 946,
             "width": 528,
-            "height": 222
+            "height": 167
           },
-          "sha256": "b99f535293313788cb1f43b7c919b6b89a081d66ed40b1e6041342d52bdbe06d"
+          "sha256": "a8550f1e9e1ab5696c453ba063ca95fca4b8fff86748aabafc4730ab9d3d9014"
         },
         {
           "ficheiro": "discussao-pt-1600-orcamento-2027-generalidade-1.png",
@@ -670,11 +670,11 @@
           "origem": "discussao-pt-1600.png",
           "caixa": {
             "left": 254,
-            "top": 1181,
+            "top": 1126,
             "width": 528,
-            "height": 250
+            "height": 305
           },
-          "sha256": "0548323d7118c331a9bccd1d14bbe4d10ce4b97f92ddc970032e341998ab3868"
+          "sha256": "e551b0181f1073b6fbf84ab64804d1f94d207c46f4ed3c4e6d71d240d91c551d"
         },
         {
           "ficheiro": "discussao-pt-1600-saude-no-orcamento-0.png",
@@ -682,11 +682,11 @@
           "origem": "discussao-pt-1600.png",
           "caixa": {
             "left": 254,
-            "top": 9066,
+            "top": 9121,
             "width": 528,
             "height": 139
           },
-          "sha256": "eb8347bc42ec68d081817aaf793ab418fd6e40acea0f6769e9814ce614feb519"
+          "sha256": "ace3910e48d67533f25dd449ddf2c3fc5fe29c43deaaa1228e32ba9f5df35b9f"
         },
         {
           "ficheiro": "discussao-pt-1600-saude-no-orcamento-1.png",
@@ -694,11 +694,11 @@
           "origem": "discussao-pt-1600.png",
           "caixa": {
             "left": 254,
-            "top": 9218,
+            "top": 9273,
             "width": 528,
-            "height": 139
+            "height": 140
           },
-          "sha256": "34419b2c6ba102f51303d8cae87a9d8292b642072bcd5b4324b98a51358179fa"
+          "sha256": "a8e16c2b2d00eda376001bcc7c4ef3a00b1546a60f5cced645606ecccda83327"
         },
         {
           "ficheiro": "discussao-pt-1600-parcerias-rodoviarias-0.png",
@@ -706,11 +706,11 @@
           "origem": "discussao-pt-1600.png",
           "caixa": {
             "left": 254,
-            "top": 15939,
+            "top": 15995,
             "width": 528,
-            "height": 140
+            "height": 139
           },
-          "sha256": "64e94fc57b0cc1404ba2ecb183a6746f9a836c7458d31f11c91df1133caa78e4"
+          "sha256": "c676dace8c1e346453a3d8d2dabdc64f0f4452cbe7a65a54d8bf82eee9c3fb7d"
         },
         {
           "ficheiro": "discussao-pt-1600-parcerias-rodoviarias-1.png",
@@ -718,11 +718,11 @@
           "origem": "discussao-pt-1600.png",
           "caixa": {
             "left": 254,
-            "top": 16092,
+            "top": 16147,
             "width": 528,
             "height": 139
           },
-          "sha256": "0dee4087ac00ea1f2684b35ba8c5408f4a8736d7fa16bbab4207f432462ea08a"
+          "sha256": "98fe2d7d56f94e014069a2b5bf4289c51ea8c22f4d8b8e9e028ba491c7d2d473"
         }
       ],
       "externos": [],
@@ -737,8 +737,8 @@
       "janela": 390,
       "documento": 390,
       "corpo": 390,
-      "altura": 30825,
-      "sha256": "a39c529f2f1a1510a26e19e2efa76e48d9ecfa3d8e3415b422f7010b72d9eaae",
+      "altura": 30908,
+      "sha256": "140cdef291566e480cc5bd7208db0ec21b902c0f04c7922431a51a1c22a45649",
       "recortes": [
         {
           "ficheiro": "discussao-en-390-orcamento-2027-generalidade-0.png",
@@ -748,9 +748,9 @@
             "left": 18,
             "top": 975,
             "width": 354,
-            "height": 277
+            "height": 222
           },
-          "sha256": "cddf8f39eef0f60d1214d4962aca6db179446cedb0c12451f1528724df6e6972"
+          "sha256": "bc48eadcf832bd0c76d6a8788c230cc135df7157777950176c02dbf3a5995d6b"
         },
         {
           "ficheiro": "discussao-en-390-orcamento-2027-generalidade-1.png",
@@ -758,11 +758,11 @@
           "origem": "discussao-en-390.png",
           "caixa": {
             "left": 18,
-            "top": 1265,
+            "top": 1210,
             "width": 354,
-            "height": 499
+            "height": 581
           },
-          "sha256": "f5b5698a6891ce13e77f361b587749d30b3f5f607eea52f78900580a8f26416f"
+          "sha256": "3224b54e5be2f20e953b989d1c99317be566f451ef15c958df9460dd0e9eb38d"
         },
         {
           "ficheiro": "discussao-en-390-saude-no-orcamento-0.png",
@@ -770,11 +770,11 @@
           "origem": "discussao-en-390.png",
           "caixa": {
             "left": 18,
-            "top": 14043,
+            "top": 14126,
             "width": 354,
             "height": 249
           },
-          "sha256": "acdbe852b1c5a7d4734f32ee2f7f64014f22b2b0c78bc4e0740c7c79ce47e41e"
+          "sha256": "00d50a5e2877ef9f8902f0312636a6fe27026268b1be39623085c94a75734011"
         },
         {
           "ficheiro": "discussao-en-390-saude-no-orcamento-1.png",
@@ -782,7 +782,7 @@
           "origem": "discussao-en-390.png",
           "caixa": {
             "left": 18,
-            "top": 14305,
+            "top": 14388,
             "width": 354,
             "height": 222
           },
@@ -794,7 +794,7 @@
           "origem": "discussao-en-390.png",
           "caixa": {
             "left": 18,
-            "top": 23816,
+            "top": 23899,
             "width": 354,
             "height": 194
           },
@@ -806,11 +806,11 @@
           "origem": "discussao-en-390.png",
           "caixa": {
             "left": 18,
-            "top": 24023,
+            "top": 24106,
             "width": 354,
             "height": 195
           },
-          "sha256": "25dec9934459d680b088d4b0e1960e19b9e7410d8c95ac6741f22d1ce4b1bd8f"
+          "sha256": "1bf4eb4b527af2750a517532bb3378ea7b52df87ee3b0d337ba5ee92e079b323"
         }
       ],
       "externos": [],
@@ -826,7 +826,7 @@
       "documento": 768,
       "corpo": 768,
       "altura": 21539,
-      "sha256": "3bc8bb81bbabfc2361eb0b4e674f81b4942181c6d73d431e286a6241502e1ad9",
+      "sha256": "9576ab3e3b4b472e546b313efb4c72655af0b7d260e857c3219007bd1d4033bd",
       "recortes": [
         {
           "ficheiro": "discussao-en-768-orcamento-2027-generalidade-0.png",
@@ -836,9 +836,9 @@
             "left": 30,
             "top": 840,
             "width": 529,
-            "height": 194
+            "height": 139
           },
-          "sha256": "8a770b7987189bc7a30ccd9ccc6e13b8f8d49e70270ea27c922501075e943d2e"
+          "sha256": "cca163c6f50a301e80f79271d553e0dc8cbd88d6540c066b626fdc22f51505c4"
         },
         {
           "ficheiro": "discussao-en-768-orcamento-2027-generalidade-1.png",
@@ -846,11 +846,11 @@
           "origem": "discussao-en-768.png",
           "caixa": {
             "left": 30,
-            "top": 1047,
+            "top": 992,
             "width": 529,
-            "height": 305
+            "height": 360
           },
-          "sha256": "e680cb52dcbdf6f5d89cacfb89feb94eb3721be1b1631f7313aa2851300af3cb"
+          "sha256": "8ce4c5031b19e1f5870ca22766ec0e45d0efad98f706c074265051ff7472ae0f"
         },
         {
           "ficheiro": "discussao-en-768-saude-no-orcamento-0.png",
@@ -914,7 +914,7 @@
       "documento": 1024,
       "corpo": 1024,
       "altura": 21718,
-      "sha256": "54c7f261de6c4aea11852a007de30a0b95bbe00dd3754d1140ee925c76f2e9db",
+      "sha256": "a1e8d4c9be6212008cea853228ece2ba88055f854745064c737f906328b82669",
       "recortes": [
         {
           "ficheiro": "discussao-en-1024-orcamento-2027-generalidade-0.png",
@@ -924,9 +924,9 @@
             "left": 40,
             "top": 904,
             "width": 529,
-            "height": 195
+            "height": 139
           },
-          "sha256": "f904acff02f187dcbe83ac5e7d1c9a5384aea27060361750f58cdef75ae5ad6e"
+          "sha256": "cee83a6e791a0cf5ac33606c08628afbab14ff0d00ace5f88453c6c2962d61a8"
         },
         {
           "ficheiro": "discussao-en-1024-orcamento-2027-generalidade-1.png",
@@ -934,11 +934,11 @@
           "origem": "discussao-en-1024.png",
           "caixa": {
             "left": 40,
-            "top": 1112,
+            "top": 1057,
             "width": 529,
-            "height": 305
+            "height": 360
           },
-          "sha256": "443284eab53d3ed9ba94adabb3b9b90e75d323e54a5351774ed53d05a6431256"
+          "sha256": "3c914d4640842e3165d6d356feb455e456bd415fea1ed967f90633e194d8bd74"
         },
         {
           "ficheiro": "discussao-en-1024-saude-no-orcamento-0.png",
@@ -1002,7 +1002,7 @@
       "documento": 1280,
       "corpo": 1280,
       "altura": 21860,
-      "sha256": "0e2a0485a2bf37cf98f7577a5dc857bf66aa4e5618fd6e324d6ea45162ca12e4",
+      "sha256": "27e05109310637b058fd7623be735589da402d61d4ba8f75f4a5ae6d7b6ffbb6",
       "recortes": [
         {
           "ficheiro": "discussao-en-1280-orcamento-2027-generalidade-0.png",
@@ -1012,9 +1012,9 @@
             "left": 94,
             "top": 906,
             "width": 528,
-            "height": 195
+            "height": 139
           },
-          "sha256": "c537bc0d695d9b5fa859bfa83dbe1ff4a9f4883a609abb309214afb289b622bc"
+          "sha256": "cfc538a1c1d3adeea822654e173605954bd49383eea03c36d96d10111cdd73c5"
         },
         {
           "ficheiro": "discussao-en-1280-orcamento-2027-generalidade-1.png",
@@ -1022,11 +1022,11 @@
           "origem": "discussao-en-1280.png",
           "caixa": {
             "left": 94,
-            "top": 1114,
+            "top": 1058,
             "width": 528,
-            "height": 305
+            "height": 361
           },
-          "sha256": "6754db3345485119200c2f36e5542a655f99c73e5d45c1f036eb736c117a12f3"
+          "sha256": "14283c8c60876a0bbd5ec7659f4db133505a79805182ed1d81049795b8cebeca"
         },
         {
           "ficheiro": "discussao-en-1280-saude-no-orcamento-0.png",
@@ -1090,7 +1090,7 @@
       "documento": 1600,
       "corpo": 1600,
       "altura": 21912,
-      "sha256": "039185a0d28141f7a5bbd09806fdac215b5185ebc01f6fcd8e21d839e867ec57",
+      "sha256": "2d427ae5739c2a9e9058b86e75399d22abc289944c276153b25694776112e637",
       "recortes": [
         {
           "ficheiro": "discussao-en-1600-orcamento-2027-generalidade-0.png",
@@ -1100,9 +1100,9 @@
             "left": 254,
             "top": 906,
             "width": 528,
-            "height": 195
+            "height": 139
           },
-          "sha256": "c537bc0d695d9b5fa859bfa83dbe1ff4a9f4883a609abb309214afb289b622bc"
+          "sha256": "cfc538a1c1d3adeea822654e173605954bd49383eea03c36d96d10111cdd73c5"
         },
         {
           "ficheiro": "discussao-en-1600-orcamento-2027-generalidade-1.png",
@@ -1110,11 +1110,11 @@
           "origem": "discussao-en-1600.png",
           "caixa": {
             "left": 254,
-            "top": 1114,
+            "top": 1058,
             "width": 528,
-            "height": 305
+            "height": 361
           },
-          "sha256": "6754db3345485119200c2f36e5542a655f99c73e5d45c1f036eb736c117a12f3"
+          "sha256": "14283c8c60876a0bbd5ec7659f4db133505a79805182ed1d81049795b8cebeca"
         },
         {
           "ficheiro": "discussao-en-1600-saude-no-orcamento-0.png",
@@ -1171,23 +1171,23 @@
     }
   ],
   "recursos": {
-    "version.json": "3ff13088e3bab857589965d181357076ffc564f27bbbf863a76f0fd40420b09f",
-    "index.html": "4a2f8a1207420168fbfb972c3fddb49ee3471a8e6af019483c51651ea2b3e8e1",
+    "version.json": "5e06615a8e5011a0f2163fdf674cc684f75fc7c3dc43d359974802d55bda6fa2",
+    "index.html": "05d4bc56bf420bca18144cbc77896368775ff019b84f05d950e20df9a7a63a20",
     "tipos/spectral/Spectral-Regular.woff2": "3c846b032ad614e02ebc439087bbcbb7371cfbdea6c8a4b568efa859537e9c43",
     "tipos/bitter/Bitter[wght].woff2": "b4ad17520d0ce8bd1aa98af06e07ca94145522f868b5a010732eb5eee3ba2ea0",
     "_astro/primeira-pagina.BOaRc5DN.css": "6be10e0b03b7ad330e0b58fb554324339dda2f44e9a344e37991030b91dcbc8c",
     "_astro/Base.CQ2WVYKH.css": "413aa149b5d8f4c49fbedde1b385476bf7766e5886b0731be4e0dc5fada4667b",
     "_astro/inicio.DYisJLJ2.css": "1887d09fd2f5e2597bbe8b9ce00ee29695cd096d2db1486ff34d9b9013da3be9",
     "_astro/lugar.bxF38FjU.css": "ca5ecb9c51f88f1c0f5c59652689ed2ca642ad4dee9eaf4fbc51328d9dd957fd",
-    "js/interacao-dos-graficos.js": "c5e42b905d26d12581e292acfec8957fbbf20604e674bee321f4aa1b39ebd989",
     "js/tema.js": "855bcee3ec1223b43e0f3e9a94c1fbdf1451e53830dcc022962b48e8d3340757",
+    "js/interacao-dos-graficos.js": "c5e42b905d26d12581e292acfec8957fbbf20604e674bee321f4aa1b39ebd989",
     "tipos/spectral/Spectral-SemiBold.woff2": "91eef1143e31196ec762c00b566b9f628a851db348eb524cbfb36bfba9b22f2d",
+    "tipos/spectral-sc/SpectralSC-SemiBold.woff2": "b847fe8f1fe1a862ce15e288958d132940a8204951ef0dbe2c9ad8fd997f29e2",
     "tipos/spectral-sc/SpectralSC-Regular.woff2": "afa69dd2e7aaca2733883133745fd84c18dfac6a08d5999e69705ea7277240b8",
     "tipos/spectral/Spectral-Medium.woff2": "34f0ba222c28bc0ea816c693d05c528be4a5ee10c4b1765cdea774c6fb2502c2",
-    "tipos/spectral-sc/SpectralSC-SemiBold.woff2": "b847fe8f1fe1a862ce15e288958d132940a8204951ef0dbe2c9ad8fd997f29e2",
-    "en/index.html": "5890bdd5af88d047b6e057684e7f9768003c2afff9c5ff56b71d67c7e64540da",
-    "o-que-se-discute/index.html": "e87bb426dd1dafa169a3b5672ffc8a6878dad4a4f582dca52c62bc007c855d68",
-    "en/under-discussion/index.html": "a793da2324e183b26d7b5bdbdb2a48d76163686e6ffbc23ed0decae9b118997b"
+    "en/index.html": "8806b1d73965c501e390016ea57d424b98e40f642685a594805c107060ec43e1",
+    "o-que-se-discute/index.html": "683e0f7661ce640eaaa1b7ad91ddd995d7531ca35f860abca8b694903d64b479",
+    "en/under-discussion/index.html": "d2ceb670d4b72119fafdc413fcafe4cd41c4fa02a154674358daa5099c551ae5"
   },
   "falhas": [],
   "ok": true

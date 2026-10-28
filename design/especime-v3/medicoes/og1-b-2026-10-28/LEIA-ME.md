@@ -1,6 +1,6 @@
 # OG1-B: as aberturas dos três itens e o Orçamento depois do voto
 
-Estado atual: a correção OG1-B-c está concluída na cabeça `076514863610676d0e2283b55d755f5f97a37f0d`. A secção «OG1-B-c: a correção depois da leitura a frio», no fim deste recibo, descreve a entrega corrigida. O relato anterior fica abaixo como histórico; os ficheiros `frases-construidas.json`, `mandato-frases.json` e `capturas.json` foram atualizados para a correção. A versão anterior deste recibo está em `LEIA-ME-antes-og1-b-c.md`.
+Estado atual: a correção OG1-B-d está concluída na cabeça `41f09be50ce24ff7388275c1d6bc4aadeaa1eefb`. A secção «OG1-B-d: a segunda correção, depois da leitura curta», no fim deste recibo, descreve a entrega atual. As secções anteriores ficam como histórico. Os ficheiros `frases-construidas.json`, `mandato-frases.json` e `capturas.json` foram atualizados; o recibo anterior está em `LEIA-ME-antes-og1-b-d.md`.
 
 A passagem ficou concluída no âmbito do mandato e das três adendas. A construção de cabeça limpa e todas as conferências finais pedidas passaram. A leitura a frio e a corrida inteira antes da publicação do ramo continuam a cargo do lugar de direção.
 
@@ -176,3 +176,64 @@ Foram inspecionados oito recortes da primeira corrida de capturas, em português
 Esta correção usou 41 chamadas até à conferência final das imagens e códigos. A escrita deste recibo, o pedido de commit e a inspeção final acrescentam três, totalizando 44 chamadas. O custo é escrito pelo lançador; não foi exposta uma linha «tokens used».
 
 O último commit entrega este recibo e os artefactos. A leitura curta do diff permanece a cargo do lugar de direção. Sem push.
+
+## OG1-B-d: a segunda correção, depois da leitura curta
+
+A correção dirigida ao **Major 5** e aos **Minor 8, 9 e 11** foi aplicada nas duas edições, juntamente com a reescrita editorial da abertura. As conferências finais pedidas passaram. A leitura curta do diff é o passo seguinte do lugar de direção.
+
+### O que mudou
+
+- A comparação passou a dizer «a maior das medidas novas de receita» e «the largest new revenue measure», conservando o âmbito que a UTAO dá ao superlativo.
+- A comparação, a conclusão e a opinião passaram a atribuir expressamente ao Conselho a apreciação sobre as medidas não suficientemente especificadas.
+- O ano da segunda abertura da Saúde passou a ligar à linha `oe-2027-saude-despesa-efetiva-consolidada-2026`. As palavras e o ano visível ficaram iguais. A ligação foi conferida no HTML nas duas edições, com o resultado em `apoios-aberturas-og1-b-d.json`.
+- A primeira abertura do Orçamento passou a dizer a aprovação, os votos a favor e as abstenções, e o contraste entre o excedente do Governo e o défice do CFP. A segunda passou a reunir os votos contra, os relatos do ECO e da RTP, a data em que o resultado oficial não estava publicado e a medida dos combustíveis. Os recibos são os pedidos no mandato: ECO no primeiro parágrafo; ECO, RTP e guião no segundo.
+
+A redação foi copiada do mandato; nenhuma frase adicional entrou no sítio. Foram reescritas dez linhas vivas do inventário, no bloco `og1-b`, e regeneradas 753 folhas da auditoria. A revisão permanece «por ler». Não se alteraram famílias, declarações de língua, áreas, L1, `LINHAS_ESPERADAS` ou linhas do livro.
+
+### Construção, frases e conferências
+
+O commit `41f09be5` contém os cinco ficheiros da alteração. A construção arrancou e terminou com árvore limpa, como regista `cabeca-limpa-og1-b-d.json`, e terminou com código 0. Todas as corridas finais, o confronto do HTML e as capturas usam a cabeça `41f09be50ce24ff7388275c1d6bc4aadeaa1eefb`.
+
+`frases-construidas.json` contém as 46 entradas do HTML nas duas edições, com o caminho de cada parágrafo e o texto rendido. Todas coincidem com `mandato-frases.json`, atualizado com esta adenda e os valores das linhas no lugar dos tokens. A data dos resumos continua a ser a escrita; a data da caixa de novidades continua a ser a publicação.
+
+A discussão passou com 768 de 768 plantas, 764 portas de integração e 636 conferências OG1. As nove glosas e as 60 plantas numéricas passaram. O navegador conferiu 32 passagens em 16 páginas e 4 056 pedaços marcados, sem contentores flexíveis indevidos ou documentos mais largos do que a janela; as 52 plantas morderam. Foram conferidos 472 caminhos por clique a 390 px.
+
+`conferencias-og1-b-d.json` liga as execuções aos códigos e registos. O ensaio inicial `apoios-aberturas` esperava uma barra final nas ligações; o sítio usa as rotas sem essa barra. Só a expectativa do guião temporário foi corrigida. O ensaio seguinte confirmou o identificador exato da despesa efetiva e os recibos nas duas edições. Esse código 1 não foi uma falha do sítio e fica preservado no histórico.
+
+| Execução | Código |
+| --- | ---: |
+| `apoios-aberturas-2` | 0 |
+| `apoios-aberturas` | 1 |
+| `auditoria` | 0 |
+| `build` | 0 |
+| `capturas` | 0 |
+| `check-cartao` | 0 |
+| `check-cruzamento` | 0 |
+| `check-discussao` | 0 |
+| `check-lingua` | 0 |
+| `check-palavras` | 0 |
+| `check-registo` | 0 |
+| `check-rotulos` | 0 |
+| `check-voz` | 0 |
+| `declaracoes` | 0 |
+| `frases` | 0 |
+| `gate-html` | 0 |
+| `ledger-check` | 0 |
+| `typecheck-previo` | 0 |
+| `typecheck` | 0 |
+| `check:frases-compostas` | 0 |
+| `check:primeira` | 0 |
+
+Foram vinte execuções de verificação e uma execução de capturas. Os passos internos do `build` não são contados de novo. O perfil fechado `og1-b-navegador` correu uma vez pelo escrivão, apenas com `check:frases-compostas` e `check:primeira`. Não se correu o `verify` completo, `conferir-tudo.sh` ou a corrida inteira dos portões.
+
+### Capturas, cabeça do relatório e fecho
+
+As capturas finais produziram 20 páginas e 70 recortes nas cinco larguras e nas duas edições, sem erros, pedidos externos, respostas recusadas ou transbordo horizontal. O manifesto `capturas.json` e o pedido `pedido-capturas.json` apontam para a cabeça `41f09be50ce24ff7388275c1d6bc4aadeaa1eefb`. Os PNG ficaram em `<temporario>/og1-b-d-capturas`, fora do repositório.
+
+Foram inspecionados oito recortes: a primeira página, os dois parágrafos do Orçamento e o segundo parágrafo da Saúde, em português a 390 px e em inglês a 1 280 px. O texto, as datas e os selos estão legíveis. `inspecao-visual-og1-b-d.json` identifica a amostra.
+
+**A cabeça das capturas difere do último commit do relatório.** As capturas pertencem à cabeça de implementação acima; o último commit acrescenta apenas este recibo e os artefactos de verificação, sem alteração ao sítio. Não se atribuem as imagens à cabeça posterior do recibo.
+
+Esta passagem usou 22 chamadas até à inspeção final das imagens e códigos. A escrita do recibo, o pedido de commit e a inspeção do resultado acrescentam três, totalizando 25 chamadas. O custo é escrito pelo lançador; não foi exposta uma linha «tokens used».
+
+Sem push. A leitura curta do diff permanece a cargo do lugar de direção.

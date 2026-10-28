@@ -1,0 +1,9 @@
+
+> o-estado-do-pais@0.1.0 check:discussao
+> node tests/discussao/glosas.mjs && node tests/discussao/itens.mjs && node tests/discussao/og1.mjs
+
+PASS: 9 glosas intactas nas duas edições; 60 plantas recusadas.
+V2B · 0 erro(s), 768 de 768 plantas, 764 portas de integração.
+OG1 pt: planta de data trocada e planta de partido trocado recusadas.
+OG1 en: planta de data trocada e planta de partido trocado recusadas.
+PASS: 636 conferências OG1 das formas, fontes e recibos nas duas edições.

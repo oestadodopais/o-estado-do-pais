@@ -1,0 +1,17 @@
+{
+  "cabeca": "41f09be50ce24ff7388275c1d6bc4aadeaa1eefb",
+  "recortes_inspecionados": [
+    "inicio-pt-390-discussao.png",
+    "inicio-en-1280-discussao.png",
+    "discussao-pt-390-orcamento-2027-generalidade-0.png",
+    "discussao-en-1280-orcamento-2027-generalidade-0.png",
+    "discussao-pt-390-orcamento-2027-generalidade-1.png",
+    "discussao-en-1280-orcamento-2027-generalidade-1.png",
+    "discussao-pt-390-saude-no-orcamento-1.png",
+    "discussao-en-1280-saude-no-orcamento-1.png"
+  ],
+  "resultado": "A nova primeira frase, os dois parágrafos do Orçamento e o segundo parágrafo da Saúde estão legíveis na amostra. Os selos e as datas estão visíveis.",
+  "paginas": 20,
+  "recortes": 70,
+  "transbordos": 0
+}
