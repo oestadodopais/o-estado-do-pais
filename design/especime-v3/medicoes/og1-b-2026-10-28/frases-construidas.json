@@ -1,5 +1,5 @@
 {
-  "cabeca": "aa7d0b1fe76c5d83de2653eb25287a55a02d35ab",
+  "cabeca": "1925ceba2a61869af603274e59af7b7b5489d131",
   "frases": [
     {
       "rota": "/o-que-se-discute/",
@@ -14,7 +14,7 @@
       "lang": "pt",
       "slug": "orcamento-2027-generalidade",
       "caminho": "abertura[0]",
-      "texto": "O Parlamento aprovou a proposta de Orçamento para 2027 na generalidade a 28.10.2026, com os votos a favor do PSD e do CDS-PP, a abstenção do PS, do PAN e do JPP e os votos contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda, segundo o ECO e a RTP; o resultado oficial da votação ainda não estava publicado quando este item foi reescrito.",
+      "texto": "O Parlamento aprovou a proposta de Orçamento para 2027 na generalidade a 28.10.2026, com os votos a favor do PSD e do CDS-PP, a abstenção do PS, do PAN e do JPP e os votos contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda, segundo o ECO; a RTP registou a aprovação com os votos do PSD e do CDS e a abstenção do PS, e o resultado oficial da votação ainda não estava publicado quando este item foi reescrito.",
       "igual_ao_mandato": true
     },
     {
@@ -22,7 +22,7 @@
       "lang": "pt",
       "slug": "orcamento-2027-generalidade",
       "caminho": "abertura[1]",
-      "texto": "A maior medida de receita da proposta, o combate à fraude nos combustíveis, vale 300 milhões de euros em 2027 sem que a UTAO, a unidade técnica de apoio orçamental do Parlamento, encontre na proposta «informação suficientemente detalhada sobre o seu conteúdo e os mecanismos de implementação», e o Conselho das Finanças Públicas, que não a conta na sua projeção, prevê para 2027 um défice de 0,1 % do PIB onde o Governo prevê um excedente de 0,1 %.",
+      "texto": "O combate à fraude nos combustíveis, «a medida de maior dimensão do lado da receita» entre as medidas novas segundo a UTAO, a unidade técnica de apoio orçamental do Parlamento, vale 300 milhões de euros em 2027 sem que a UTAO encontre na proposta «informação suficientemente detalhada sobre o seu conteúdo e os mecanismos de implementação», e o Conselho das Finanças Públicas, que não a conta na sua projeção, prevê para 2027 um défice de 0,1 % do PIB onde o Governo prevê um excedente de 0,1 %.",
       "igual_ao_mandato": true
     },
     {
@@ -38,7 +38,7 @@
       "lang": "pt",
       "slug": "saude-no-orcamento",
       "caminho": "abertura[1]",
-      "texto": "Fora do PRR, a despesa efetiva sobe 3,0 %, 511,8 milhões de euros face aos 771,1 que o PRR deixa, e no total varia −1,5 %: as duas contas são verdadeiras e nenhuma mostra sozinha o que muda.",
+      "texto": "Fora do PRR, a despesa efetiva sobe 3,0 %, 511,8 milhões de euros; a parte do PRR, 771,1 milhões de euros na despesa efetiva de 2026, acaba, e a despesa total varia −1,5 %: as duas contas são verdadeiras e nenhuma mostra sozinha o que muda.",
       "igual_ao_mandato": true
     },
     {
@@ -46,7 +46,7 @@
       "lang": "pt",
       "slug": "parcerias-rodoviarias",
       "caminho": "abertura[0]",
-      "texto": "O relatório do Orçamento prevê 889 milhões de euros de encargos líquidos com as parcerias rodoviárias em 2027: «líquidos» quer dizer o que o Estado paga às concessionárias depois de descontadas as receitas que lhe cabem, sobretudo as portagens cobradas nas vias portajadas.",
+      "texto": "O relatório do Orçamento prevê 889 milhões de euros de encargos líquidos com as parcerias rodoviárias em 2027: «líquidos» quer dizer os encargos do Estado com estas parcerias depois de descontadas as receitas que lhe cabem, entre elas as portagens cobradas nas vias portajadas.",
       "igual_ao_mandato": true
     },
     {
@@ -54,7 +54,7 @@
       "lang": "pt",
       "slug": "parcerias-rodoviarias",
       "caminho": "abertura[1]",
-      "texto": "Os encargos brutos de 2027 são 1 152 milhões de euros e as receitas 263 milhões de euros; o que pode mudar a conta não está no quadro: 2 388,2 milhões de euros de pedidos das concessionárias, dos quais 1 122,5 numa negociação em curso.",
+      "texto": "Os encargos brutos de 2027 são 1 152 milhões de euros e as receitas 263 milhões de euros; o que pode mudar a conta não está no quadro: 2 388,2 milhões de euros de pedidos das concessionárias, dos quais 1 122,5 numa negociação em curso com a Brisa.",
       "igual_ao_mandato": true
     },
     {
@@ -94,7 +94,7 @@
       "lang": "pt",
       "slug": "orcamento-2027-generalidade",
       "caminho": "seccoes[0].conteudo[15].paragrafo",
-      "texto": "Mário Amorim Lopes, da Iniciativa Liberal, no encerramento do debate a 28.10.2026, segundo a RTP, sobre a proposta: «moderado no alívio de impostos, moderado na vontade de reformar o país, moderado na ambição para Portugal». O voto contra consta da notícia da votação.",
+      "texto": "Mário Amorim Lopes, da Iniciativa Liberal, no debate a 28.10.2026, segundo a RTP, sobre os portugueses e o Governo: «não precisam que o Governo lhes recorde que não têm dinheiro, precisam de um Governo que faça a sua parte para viverem melhor». O voto contra consta da notícia da votação.",
       "igual_ao_mandato": true
     },
     {
@@ -110,7 +110,7 @@
       "lang": "pt",
       "slug": "orcamento-2027-generalidade",
       "caminho": "seccoes[1].conteudo[7].paragrafo",
-      "texto": "O Conselho das Finanças Públicas, a 26.10.2026, «antecipa agora um défice orçamental de 0,1% do PIB» para 2027: uma diferença de 0,2 p.p. do PIB face à previsão do Ministério das Finanças que, escreve, «não assume uma expressão materialmente significativa». A projeção do Conselho «não considera, contudo, o impacto na receita de IVA decorrente da medida do combate à fraude nos combustíveis»; se contasse as medidas que a proposta não especifica, «resultaria um excedente próximo do valor da POE/2027». Sobre os juros, o aumento previsto «sugere uma possível sobrestimação»; sobre o emprego e as remunerações, as previsões do Ministério «são as mais elevadas de entre as instituições de referência»; e o défice da Administração Central sobe «para 2,8% do PIB, o mais elevado desde 2017, excluindo o período pandémico», compensado «sobretudo pelo excedente dos Fundos da Segurança Social».",
+      "texto": "O Conselho das Finanças Públicas, a 26.10.2026, «antecipa agora um défice orçamental de 0,1% do PIB» para 2027: uma diferença de 0,2 p.p. do PIB face à previsão do Ministério das Finanças que, escreve, «não assume uma expressão materialmente significativa». A projeção do Conselho «não considera, contudo, o impacto na receita de IVA decorrente da medida do combate à fraude nos combustíveis»; se contasse as duas medidas que a proposta não especifica o suficiente, a dos combustíveis e o resto da receita da venda de imóveis, e o efeito no IRS da redução extraordinária das retenções na fonte, «resultaria um excedente próximo do valor da POE/2027». Sobre os juros, o aumento previsto «sugere uma possível sobrestimação»; sobre o emprego e as remunerações, as previsões do Ministério «são as mais elevadas de entre as instituições de referência»; e o défice da Administração Central sobe «para 2,8% do PIB, o mais elevado desde 2017, excluindo o período pandémico», compensado «sobretudo pelo excedente dos Fundos da Segurança Social».",
       "igual_ao_mandato": true
     },
     {
@@ -134,7 +134,7 @@
       "lang": "pt",
       "slug": "orcamento-2027-generalidade",
       "caminho": "seccoes[2].conteudo[0].paragrafo",
-      "texto": "As previsões que o ministro diz «perfeitamente alinhadas» e a apreciação da UTAO não dizem o mesmo. A UTAO não corrige o cenário do PIB, mas tem dificuldade em conciliar o emprego com a imigração, aponta o preço do petróleo abaixo dos contratos e a maior medida de receita sem a informação que a fundamente, e conta um desvio na despesa líquida que, nos números do próprio Ministério, só a flexibilidade para a defesa fecha; nos da Comissão Europeia, não fecha. Os 300 milhões de euros que o ministro pôs ao lado de «um saldo de 270 milhões» cabem na conta que a UTAO transcreve do relatório da proposta: o saldo de 2027 em contabilidade nacional é aí de 275 milhões de euros, e a medida de que falava custa mais do que ele. A subida dos juros, «risco de mercado e não risco de país» para o ministro, é na proposta mais 23,2 % de despesa em 2027, venha de onde vier. Na votação de 28.10.2026, segundo o ECO, o PSD e o CDS-PP votaram a favor, o PS, o PAN e o JPP abstiveram-se e o Chega, a Iniciativa Liberal, o Livre, o PCP e o Bloco de Esquerda votaram contra; o PS, o PAN e o JPP tinham anunciado a abstenção, e o Chega e o Livre o voto contra, nas intervenções aqui citadas. O Conselho das Finanças Públicas e o Governo divergem em 0,2 p.p. do PIB no saldo de 2027, um défice de 0,1 % contra um excedente de 0,1 %, e a diferença está nas medidas que o Conselho não conta porque a proposta não as especifica, a começar pela dos combustíveis; nos juros, a UTAO vê o risco de encargos acima do previsto e o Conselho uma possível sobrestimação, e o relatório da proposta mede a incerteza: num «choque de 100 pb», 505 milhões de euros em contabilidade nacional.",
+      "texto": "As previsões que o ministro diz «perfeitamente alinhadas» e a apreciação da UTAO não dizem o mesmo. A UTAO não corrige o cenário do PIB, mas tem dificuldade em conciliar o emprego com a imigração, aponta o preço do petróleo abaixo dos contratos e a maior medida de receita sem a informação que a fundamente, e conta um desvio na despesa líquida que, nos números do próprio Ministério, só a flexibilidade para a defesa fecha; nos da Comissão Europeia, não fecha. Os 300 milhões de euros que o ministro pôs ao lado de «um saldo de 270 milhões» cabem na conta que a UTAO transcreve do relatório da proposta: o saldo de 2027 em contabilidade nacional é aí de 275 milhões de euros, e a medida de que falava custa mais do que ele. A subida dos juros, «risco de mercado e não risco de país» para o ministro, é na proposta mais 23,2 % de despesa em 2027, venha de onde vier. Na votação de 28.10.2026, segundo o ECO, o PSD e o CDS-PP votaram a favor, o PS, o PAN e o JPP abstiveram-se e o Chega, a Iniciativa Liberal, o Livre, o PCP e o Bloco de Esquerda votaram contra; o PS, o PAN e o JPP tinham anunciado a abstenção, e o Chega, o Livre e o Bloco de Esquerda o voto contra, nas intervenções e notícias aqui citadas. O Conselho das Finanças Públicas e o Governo divergem em 0,2 p.p. do PIB no saldo de 2027, um défice de 0,1 % contra um excedente de 0,1 %, e a diferença está no que o Conselho não conta: as duas medidas que a proposta não especifica o suficiente, a começar pela dos combustíveis, e o efeito no IRS da redução das retenções na fonte; nos juros, a UTAO vê o risco de encargos acima do previsto e o Conselho uma possível sobrestimação, e o relatório da proposta mede a incerteza: num «choque de 100 pb», 505 milhões de euros em contabilidade nacional.",
       "igual_ao_mandato": true
     },
     {
@@ -142,7 +142,7 @@
       "lang": "pt",
       "slug": "orcamento-2027-generalidade",
       "caminho": "seccoes[3].conteudo[0].paragrafo",
-      "texto": "A proposta passou na generalidade a 28.10.2026 com os votos do PSD e do CDS-PP e a abstenção do PS, do PAN e do JPP, e chega à especialidade com um excedente de 0,1 % do PIB nas previsões do Governo e um défice de 0,1 % nas do Conselho das Finanças Públicas: a diferença, 0,2 p.p. do PIB, cabe nas medidas que o Conselho não conta porque a proposta não as especifica, a começar pelos 300 milhões de euros do combate à fraude nos combustíveis. Nos juros, a UTAO vê o risco de encargos acima do previsto e o Conselho uma possível sobrestimação, e o relatório da proposta mede a incerteza: num «choque de 100 pb», 505 milhões de euros em contabilidade nacional. Os números da especialidade vêm depois; a votação final global está marcada para 24.11.2026.",
+      "texto": "A proposta passou na generalidade a 28.10.2026 com os votos do PSD e do CDS-PP e a abstenção do PS, do PAN e do JPP, e chega à especialidade com um excedente de 0,1 % do PIB nas previsões do Governo e um défice de 0,1 % nas do Conselho das Finanças Públicas: a diferença, 0,2 p.p. do PIB, está no que o Conselho não conta, as duas medidas que a proposta não especifica o suficiente, a começar pelos 300 milhões de euros do combate à fraude nos combustíveis, e o efeito no IRS da redução das retenções na fonte. Nos juros, a UTAO vê o risco de encargos acima do previsto e o Conselho uma possível sobrestimação, e o relatório da proposta mede a incerteza: num «choque de 100 pb», 505 milhões de euros em contabilidade nacional. Os números da especialidade vêm depois; a votação final global está marcada para 24.11.2026.",
       "igual_ao_mandato": true
     },
     {
@@ -158,7 +158,7 @@
       "lang": "pt",
       "slug": "orcamento-2027-generalidade",
       "caminho": "seccoes[5].conteudo[0].paragrafo",
-      "texto": "O orçamento passou na generalidade com os votos de dois partidos e a abstenção de três, e tem um excedente de 0,1 % do PIB (275 milhões de euros) em contabilidade nacional, nas previsões do Governo, que assenta em três pressupostos que a UTAO põe em dúvida: uma receita de 300 milhões de euros da medida dos combustíveis sem «informação suficientemente detalhada sobre o seu conteúdo e os mecanismos de implementação»; um emprego cuja previsão («O crescimento do emprego de 1,4% em 2027») a UTAO acha «difícil de conciliar com o abrandamento recente da imigração líquida»; e um petróleo a 86,1 dólares por barril, quando os contratos para 2027 estavam 11 % acima a 16 de outubro. O Conselho das Finanças Públicas chega a um défice de 0,1 % do PIB pelo mesmo caminho: não conta a medida dos combustíveis e diz que, se a contasse, chegaria a um excedente próximo do do Governo. É a mesma conta vista de dois lados: o excedente existe se os 300 milhões de euros existirem. O que está em jogo são os juros: a proposta já os tem a subir 23,2 %, para 8,2 mil milhões de euros; a UTAO vê o risco de encargos acima do previsto, o Conselho vê uma possível sobrestimação, e o relatório da proposta diz que um «choque de 100 pb» são 505 milhões de euros em contabilidade nacional, com o excedente em 275 milhões de euros. Os votos dizem o resto: o PS deixou passar o orçamento, e o Chega, a Iniciativa Liberal, o Livre, o PCP e o Bloco de Esquerda votaram contra por razões que não coincidem; «um frete ao capital e um desastre para o País», diz o Comité Central do PCP, e isso é um juízo, que não se mede. O que se mede diz que é um orçamento equilibrado por um fio, e que o fio é a receita dos combustíveis e as taxas de juro. O que vigiar até 24.11.2026: a informação sobre a medida dos combustíveis, o cenário do emprego e as taxas das novas emissões de dívida.",
+      "texto": "O orçamento passou na generalidade com os votos de dois partidos e a abstenção de três, e tem um excedente de 0,1 % do PIB (275 milhões de euros) em contabilidade nacional, nas previsões do Governo, que assenta em três pressupostos que a UTAO põe em dúvida: uma receita de 300 milhões de euros da medida dos combustíveis sem «informação suficientemente detalhada sobre o seu conteúdo e os mecanismos de implementação»; um emprego cuja previsão («O crescimento do emprego de 1,4% em 2027») a UTAO acha «difícil de conciliar com o abrandamento recente da imigração líquida»; e um petróleo a 86,1 dólares por barril, quando os contratos para 2027 estavam 11 % acima a 16 de outubro. O Conselho das Finanças Públicas chega a um défice de 0,1 % do PIB pelo mesmo caminho: não conta a medida dos combustíveis nem o resto da receita da venda de imóveis, porque a proposta não as especifica o suficiente, nem o efeito no IRS da redução das retenções na fonte, e diz que, se os contasse, chegaria a um excedente próximo do do Governo. É a mesma conta vista de dois lados: o excedente existe se existirem os 300 milhões de euros e o resto do que o Conselho deixou de fora. O que está em jogo são os juros: a proposta já os tem a subir 23,2 %, para 8,2 mil milhões de euros; a UTAO vê o risco de encargos acima do previsto, o Conselho vê uma possível sobrestimação, e o relatório da proposta diz que um «choque de 100 pb» são 505 milhões de euros em contabilidade nacional, com o excedente em 275 milhões de euros. Os votos dizem o resto: o PS deixou passar o orçamento, e o Chega, a Iniciativa Liberal, o Livre, o PCP e o Bloco de Esquerda votaram contra por razões que não coincidem; «um frete ao capital e um desastre para o País», diz o Comité Central do PCP, e isso é um juízo, que não se mede. O que se mede diz que é um orçamento equilibrado por um fio, e que o fio é a receita dos combustíveis e as taxas de juro. O que vigiar até 24.11.2026: a informação sobre a medida dos combustíveis, o cenário do emprego e as taxas das novas emissões de dívida.",
       "igual_ao_mandato": true
     },
     {
@@ -166,8 +166,8 @@
       "lang": "pt",
       "slug": "orcamento-2027-generalidade",
       "caminho": "primeira-frase-da-abertura",
-      "publicado": "2026-10-27",
-      "texto": "O Parlamento aprovou a proposta de Orçamento para 2027 na generalidade a 28.10.2026, com os votos a favor do PSD e do CDS-PP, a abstenção do PS, do PAN e do JPP e os votos contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda, segundo o ECO e a RTP; o resultado oficial da votação ainda não estava publicado quando este item foi reescrito.",
+      "escrita": "2026-10-28",
+      "texto": "O Parlamento aprovou a proposta de Orçamento para 2027 na generalidade a 28.10.2026, com os votos a favor do PSD e do CDS-PP, a abstenção do PS, do PAN e do JPP e os votos contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda, segundo o ECO; a RTP registou a aprovação com os votos do PSD e do CDS e a abstenção do PS, e o resultado oficial da votação ainda não estava publicado quando este item foi reescrito.",
       "igual_ao_mandato": true
     },
     {
@@ -175,7 +175,7 @@
       "lang": "pt",
       "slug": "saude-no-orcamento",
       "caminho": "primeira-frase-da-abertura",
-      "publicado": "2026-10-19",
+      "escrita": "2026-10-28",
       "texto": "Para 2027, a despesa total da Saúde, que no relatório do Orçamento inclui os ativos e passivos financeiros, está orçamentada 267,5 milhões de euros abaixo da estimativa de 2026, e a despesa efetiva, a mesma conta sem esses ativos e passivos, varia −259,3 milhões de euros, porque o PRR acaba.",
       "igual_ao_mandato": true
     },
@@ -184,8 +184,8 @@
       "lang": "pt",
       "slug": "parcerias-rodoviarias",
       "caminho": "primeira-frase-da-abertura",
-      "publicado": "2026-10-19",
-      "texto": "O relatório do Orçamento prevê 889 milhões de euros de encargos líquidos com as parcerias rodoviárias em 2027: «líquidos» quer dizer o que o Estado paga às concessionárias depois de descontadas as receitas que lhe cabem, sobretudo as portagens cobradas nas vias portajadas.",
+      "escrita": "2026-10-28",
+      "texto": "O relatório do Orçamento prevê 889 milhões de euros de encargos líquidos com as parcerias rodoviárias em 2027: «líquidos» quer dizer os encargos do Estado com estas parcerias depois de descontadas as receitas que lhe cabem, entre elas as portagens cobradas nas vias portajadas.",
       "igual_ao_mandato": true
     },
     {
@@ -201,7 +201,7 @@
       "lang": "en",
       "slug": "orcamento-2027-generalidade",
       "caminho": "abertura[0]",
-      "texto": "Parliament passed the 2027 Budget proposal at the general vote on 28.10.2026, with PSD and CDS-PP voting in favour, PS, PAN and JPP abstaining and Chega, Iniciativa Liberal, Livre, PCP and Bloco de Esquerda voting against, according to ECO and RTP; the official record of the vote had not been published when this item was rewritten.",
+      "texto": "Parliament passed the 2027 Budget proposal at the general vote on 28.10.2026, with PSD and CDS-PP voting in favour, PS, PAN and JPP abstaining and Chega, Iniciativa Liberal, Livre, PCP and Bloco de Esquerda voting against, according to ECO; RTP recorded the approval with the votes of PSD and CDS and the abstention of PS, and the official record of the vote had not been published when this item was rewritten.",
       "igual_ao_mandato": true
     },
     {
@@ -209,7 +209,7 @@
       "lang": "en",
       "slug": "orcamento-2027-generalidade",
       "caminho": "abertura[1]",
-      "texto": "The proposal's largest revenue measure, the fight against fuel fraud, is worth 300 million euros in 2027 without the UTAO, Parliament's technical budget support unit, finding in the proposal «informação suficientemente detalhada sobre o seu conteúdo e os mecanismos de implementação» (sufficiently detailed information on its content and implementation mechanisms), and the Public Finance Council, which leaves it out of its projection, forecasts for 2027 a deficit of 0,1 % of GDP where the Government forecasts a surplus of 0,1 %.",
+      "texto": "The fight against fuel fraud, «a medida de maior dimensão do lado da receita» (the largest measure on the revenue side) among the new measures according to the UTAO, Parliament's technical budget support unit, is worth 300 million euros in 2027 without the UTAO finding in the proposal «informação suficientemente detalhada sobre o seu conteúdo e os mecanismos de implementação» (sufficiently detailed information on its content and implementation mechanisms), and the Public Finance Council, which leaves it out of its projection, forecasts for 2027 a deficit of 0,1 % of GDP where the Government forecasts a surplus of 0,1 %.",
       "igual_ao_mandato": true
     },
     {
@@ -225,7 +225,7 @@
       "lang": "en",
       "slug": "saude-no-orcamento",
       "caminho": "abertura[1]",
-      "texto": "Outside the RRP, effective expenditure rises 3,0 %, 511,8 million euros against the 771,1 the RRP leaves, and in total it changes by −1,5 %: both counts are true and neither shows on its own what changes.",
+      "texto": "Outside the RRP, effective expenditure rises 3,0 %, 511,8 million euros; the RRP's share, 771,1 million euros of effective expenditure in 2026, ends, and total expenditure changes by −1,5 %: both counts are true and neither shows on its own what changes.",
       "igual_ao_mandato": true
     },
     {
@@ -233,7 +233,7 @@
       "lang": "en",
       "slug": "parcerias-rodoviarias",
       "caminho": "abertura[0]",
-      "texto": "The Budget report forecasts 889 million euros in net charges for the road partnerships in 2027: «net» means what the State pays the concessionaires after deducting the revenue that falls to it, mostly the tolls collected on tolled roads.",
+      "texto": "The Budget report forecasts 889 million euros in net charges for the road partnerships in 2027: «net» means the State's charges on these partnerships after deducting the revenue that falls to it, among them the tolls collected on tolled roads.",
       "igual_ao_mandato": true
     },
     {
@@ -241,7 +241,7 @@
       "lang": "en",
       "slug": "parcerias-rodoviarias",
       "caminho": "abertura[1]",
-      "texto": "Gross charges for 2027 are 1 152 million euros and revenue 263 million euros; what could change the bill is not in the table: 2 388,2 million euros in concessionaires' claims, 1 122,5 of them in a negotiation under way.",
+      "texto": "Gross charges for 2027 are 1 152 million euros and revenue 263 million euros; what could change the bill is not in the table: 2 388,2 million euros in concessionaires' claims, 1 122,5 of them in a negotiation under way with Brisa.",
       "igual_ao_mandato": true
     },
     {
@@ -281,7 +281,7 @@
       "lang": "en",
       "slug": "orcamento-2027-generalidade",
       "caminho": "seccoes[0].conteudo[15].paragrafo",
-      "texto": "Mário Amorim Lopes, of Iniciativa Liberal, at the close of the debate on 28.10.2026, as reported by RTP, on the proposal: «moderado no alívio de impostos, moderado na vontade de reformar o país, moderado na ambição para Portugal». The vote against is in the report of the vote.",
+      "texto": "Mário Amorim Lopes, of Iniciativa Liberal, in the debate on 28.10.2026, as reported by RTP, on the Portuguese and the Government: «não precisam que o Governo lhes recorde que não têm dinheiro, precisam de um Governo que faça a sua parte para viverem melhor». The vote against is in the report of the vote.",
       "igual_ao_mandato": true
     },
     {
@@ -297,7 +297,7 @@
       "lang": "en",
       "slug": "orcamento-2027-generalidade",
       "caminho": "seccoes[1].conteudo[7].paragrafo",
-      "texto": "The Public Finance Council, on 26.10.2026, «antecipa agora um défice orçamental de 0,1% do PIB» (now anticipates a budget deficit of 0,1% of GDP) for 2027: a difference of 0,2 p.p. of GDP from the Finance Ministry's forecast which, it writes, «não assume uma expressão materialmente significativa» (is not materially significant). The Council's projection «não considera, contudo, o impacto na receita de IVA decorrente da medida do combate à fraude nos combustíveis» (does not, however, consider the impact on VAT revenue of the fuel anti-fraud measure); if it counted the measures the proposal does not specify, «resultaria um excedente próximo do valor da POE/2027» (it would result in a surplus close to the proposal's figure). On interest, the forecast increase «sugere uma possível sobrestimação» (suggests a possible overestimate); on employment and wages, the Ministry's forecasts «são as mais elevadas de entre as instituições de referência» (are the highest among the reference institutions); and the Central Administration deficit rises «para 2,8% do PIB, o mais elevado desde 2017, excluindo o período pandémico» (to 2,8% of GDP, the highest since 2017 excluding the pandemic period), offset «sobretudo pelo excedente dos Fundos da Segurança Social» (mostly by the Social Security Funds' surplus).",
+      "texto": "The Public Finance Council, on 26.10.2026, «antecipa agora um défice orçamental de 0,1% do PIB» (now anticipates a budget deficit of 0,1% of GDP) for 2027: a difference of 0,2 p.p. of GDP from the Finance Ministry's forecast which, it writes, «não assume uma expressão materialmente significativa» (is not materially significant). The Council's projection «não considera, contudo, o impacto na receita de IVA decorrente da medida do combate à fraude nos combustíveis» (does not, however, consider the impact on VAT revenue of the fuel anti-fraud measure); if it counted the two measures the proposal does not specify sufficiently, the fuel one and the rest of the revenue from property sales, and the effect on personal income tax of the extraordinary cut in withholding, «resultaria um excedente próximo do valor da POE/2027» (it would result in a surplus close to the proposal's figure). On interest, the forecast increase «sugere uma possível sobrestimação» (suggests a possible overestimate); on employment and wages, the Ministry's forecasts «são as mais elevadas de entre as instituições de referência» (are the highest among the reference institutions); and the Central Administration deficit rises «para 2,8% do PIB, o mais elevado desde 2017, excluindo o período pandémico» (to 2,8% of GDP, the highest since 2017 excluding the pandemic period), offset «sobretudo pelo excedente dos Fundos da Segurança Social» (mostly by the Social Security Funds' surplus).",
       "igual_ao_mandato": true
     },
     {
@@ -321,7 +321,7 @@
       "lang": "en",
       "slug": "orcamento-2027-generalidade",
       "caminho": "seccoes[2].conteudo[0].paragrafo",
-      "texto": "The forecasts the minister calls «perfeitamente alinhadas» (perfectly aligned) and the UTAO's appraisal do not say the same. The UTAO does not correct the GDP scenario, but finds employment hard to reconcile with immigration, points to an oil price below the contracts and to the largest revenue measure without the information to support it, and counts a net expenditure deviation that, on the Ministry's own figures, only the defence flexibility closes; on the European Commission's, it does not close. The 300 million euros the minister set beside «um saldo de 270 milhões» (a balance of 270 million) fit the account the UTAO transcribes from the proposal's report: the 2027 balance in national accounts is there 275 million euros, and the measure he spoke of costs more than it. The rise in interest, «risco de mercado e não risco de país» (market risk, not country risk) for the minister, is in the proposal 23,2 % more expenditure in 2027, wherever it comes from. At the vote on 28.10.2026, according to ECO, PSD and CDS-PP voted in favour, PS, PAN and JPP abstained and Chega, Iniciativa Liberal, Livre, PCP and Bloco de Esquerda voted against; PS, PAN and JPP had announced the abstention, and Chega and Livre the vote against, in the statements quoted here. The Public Finance Council and the Government differ by 0,2 p.p. of GDP on the 2027 balance, a deficit of 0,1 % against a surplus of 0,1 %, and the difference lies in the measures the Council does not count because the proposal does not specify them, starting with the fuel one; on interest, the UTAO sees the risk of charges above forecast and the Council a possible overestimate, and the proposal's report measures the uncertainty: in a «choque de 100 pb» (100 bp shock), 505 million euros in national accounts.",
+      "texto": "The forecasts the minister calls «perfeitamente alinhadas» (perfectly aligned) and the UTAO's appraisal do not say the same. The UTAO does not correct the GDP scenario, but finds employment hard to reconcile with immigration, points to an oil price below the contracts and to the largest revenue measure without the information to support it, and counts a net expenditure deviation that, on the Ministry's own figures, only the defence flexibility closes; on the European Commission's, it does not close. The 300 million euros the minister set beside «um saldo de 270 milhões» (a balance of 270 million) fit the account the UTAO transcribes from the proposal's report: the 2027 balance in national accounts is there 275 million euros, and the measure he spoke of costs more than it. The rise in interest, «risco de mercado e não risco de país» (market risk, not country risk) for the minister, is in the proposal 23,2 % more expenditure in 2027, wherever it comes from. At the vote on 28.10.2026, according to ECO, PSD and CDS-PP voted in favour, PS, PAN and JPP abstained and Chega, Iniciativa Liberal, Livre, PCP and Bloco de Esquerda voted against; PS, PAN and JPP had announced the abstention, and Chega, Livre and Bloco de Esquerda the vote against, in the statements and reports quoted here. The Public Finance Council and the Government differ by 0,2 p.p. of GDP on the 2027 balance, a deficit of 0,1 % against a surplus of 0,1 %, and the difference lies in what the Council does not count: the two measures the proposal does not specify sufficiently, starting with the fuel one, and the effect on personal income tax of the cut in withholding; on interest, the UTAO sees the risk of charges above forecast and the Council a possible overestimate, and the proposal's report measures the uncertainty: in a «choque de 100 pb» (100 bp shock), 505 million euros in national accounts.",
       "igual_ao_mandato": true
     },
     {
@@ -329,7 +329,7 @@
       "lang": "en",
       "slug": "orcamento-2027-generalidade",
       "caminho": "seccoes[3].conteudo[0].paragrafo",
-      "texto": "The proposal passed at the general vote on 28.10.2026 with the votes of PSD and CDS-PP and the abstention of PS, PAN and JPP, and reaches the detailed stage with a surplus of 0,1 % of GDP in the Government's forecasts and a deficit of 0,1 % in the Public Finance Council's: the difference, 0,2 p.p. of GDP, fits in the measures the Council does not count because the proposal does not specify them, starting with the 300 million euros of the fight against fuel fraud. On interest, the UTAO sees the risk of charges above forecast and the Council a possible overestimate, and the proposal's report measures the uncertainty: in a «choque de 100 pb» (100 bp shock), 505 million euros in national accounts. The figures of the detailed stage come later; the final global vote is scheduled for 24.11.2026.",
+      "texto": "The proposal passed at the general vote on 28.10.2026 with the votes of PSD and CDS-PP and the abstention of PS, PAN and JPP, and reaches the detailed stage with a surplus of 0,1 % of GDP in the Government's forecasts and a deficit of 0,1 % in the Public Finance Council's: the difference, 0,2 p.p. of GDP, lies in what the Council does not count, the two measures the proposal does not specify sufficiently, starting with the 300 million euros of the fight against fuel fraud, and the effect on personal income tax of the cut in withholding. On interest, the UTAO sees the risk of charges above forecast and the Council a possible overestimate, and the proposal's report measures the uncertainty: in a «choque de 100 pb» (100 bp shock), 505 million euros in national accounts. The figures of the detailed stage come later; the final global vote is scheduled for 24.11.2026.",
       "igual_ao_mandato": true
     },
     {
@@ -345,7 +345,7 @@
       "lang": "en",
       "slug": "orcamento-2027-generalidade",
       "caminho": "seccoes[5].conteudo[0].paragrafo",
-      "texto": "The budget passed at the general vote with the votes of two parties and the abstention of three, and has a surplus of 0,1 % of GDP (275 million euros) in national accounts, in the Government's forecasts; that surplus depends on three assumptions the UTAO calls into question: 300 million euros of revenue from the fuel measure without «informação suficientemente detalhada sobre o seu conteúdo e os mecanismos de implementação» (sufficiently detailed information on its content and implementation mechanisms); employment whose forecast («O crescimento do emprego de 1,4% em 2027», employment growth in the budget year) the UTAO finds «difícil de conciliar com o abrandamento recente da imigração líquida» (hard to reconcile with the recent slowdown in net immigration); and oil at 86,1 dollars a barrel, when the 2027 contracts stood 11 % above on 16 October. The Public Finance Council reaches a deficit of 0,1 % of GDP by the same road: it does not count the fuel measure and says that, if it did, it would reach a surplus close to the Government's. It is the same account seen from two sides: the surplus exists if the 300 million euros exist. What is at stake is interest: the proposal already has it rising 23,2 %, to 8,2 billion euros; the UTAO sees the risk of charges above forecast, the Council sees a possible overestimate, and the proposal's report says that a «choque de 100 pb» (100 bp shock) is 505 million euros in national accounts, with the surplus at 275 million euros. The votes say the rest: PS let the budget through, and Chega, Iniciativa Liberal, Livre, PCP and Bloco de Esquerda voted against for reasons that do not coincide; «um frete ao capital e um desastre para o País» (a gift to capital and a disaster for the country), says the PCP's Central Committee, and that is a judgement, which is not measured. What is measured says this is a budget balanced by a thread, and that the thread is the fuel revenue and interest rates. What to watch until 24.11.2026: the information on the fuel measure, the employment scenario and the rates on new debt issues.",
+      "texto": "The budget passed at the general vote with the votes of two parties and the abstention of three, and has a surplus of 0,1 % of GDP (275 million euros) in national accounts, in the Government's forecasts; that surplus depends on three assumptions the UTAO calls into question: 300 million euros of revenue from the fuel measure without «informação suficientemente detalhada sobre o seu conteúdo e os mecanismos de implementação» (sufficiently detailed information on its content and implementation mechanisms); employment whose forecast («O crescimento do emprego de 1,4% em 2027», employment growth in the budget year) the UTAO finds «difícil de conciliar com o abrandamento recente da imigração líquida» (hard to reconcile with the recent slowdown in net immigration); and oil at 86,1 dollars a barrel, when the 2027 contracts stood 11 % above on 16 October. The Public Finance Council reaches a deficit of 0,1 % of GDP by the same road: it does not count the fuel measure nor the rest of the revenue from property sales, because the proposal does not specify them sufficiently, nor the effect on personal income tax of the cut in withholding, and says that, if it counted them, it would reach a surplus close to the Government's. It is the same account seen from two sides: the surplus exists if the 300 million euros and the rest of what the Council left out exist. What is at stake is interest: the proposal already has it rising 23,2 %, to 8,2 billion euros; the UTAO sees the risk of charges above forecast, the Council sees a possible overestimate, and the proposal's report says that a «choque de 100 pb» (100 bp shock) is 505 million euros in national accounts, with the surplus at 275 million euros. The votes say the rest: PS let the budget through, and Chega, Iniciativa Liberal, Livre, PCP and Bloco de Esquerda voted against for reasons that do not coincide; «um frete ao capital e um desastre para o País» (a gift to capital and a disaster for the country), says the PCP's Central Committee, and that is a judgement, which is not measured. What is measured says this is a budget balanced by a thread, and that the thread is the fuel revenue and interest rates. What to watch until 24.11.2026: the information on the fuel measure, the employment scenario and the rates on new debt issues.",
       "igual_ao_mandato": true
     },
     {
@@ -353,8 +353,8 @@
       "lang": "en",
       "slug": "orcamento-2027-generalidade",
       "caminho": "primeira-frase-da-abertura",
-      "publicado": "2026-10-27",
-      "texto": "Parliament passed the 2027 Budget proposal at the general vote on 28.10.2026, with PSD and CDS-PP voting in favour, PS, PAN and JPP abstaining and Chega, Iniciativa Liberal, Livre, PCP and Bloco de Esquerda voting against, according to ECO and RTP; the official record of the vote had not been published when this item was rewritten.",
+      "escrita": "2026-10-28",
+      "texto": "Parliament passed the 2027 Budget proposal at the general vote on 28.10.2026, with PSD and CDS-PP voting in favour, PS, PAN and JPP abstaining and Chega, Iniciativa Liberal, Livre, PCP and Bloco de Esquerda voting against, according to ECO; RTP recorded the approval with the votes of PSD and CDS and the abstention of PS, and the official record of the vote had not been published when this item was rewritten.",
       "igual_ao_mandato": true
     },
     {
@@ -362,7 +362,7 @@
       "lang": "en",
       "slug": "saude-no-orcamento",
       "caminho": "primeira-frase-da-abertura",
-      "publicado": "2026-10-19",
+      "escrita": "2026-10-28",
       "texto": "For 2027, total Health expenditure, which in the Budget report includes financial assets and liabilities, is budgeted 267,5 million euros below the estimate for 2026, and effective expenditure, the same count without those assets and liabilities, changes by −259,3 million euros, because the RRP ends.",
       "igual_ao_mandato": true
     },
@@ -371,8 +371,8 @@
       "lang": "en",
       "slug": "parcerias-rodoviarias",
       "caminho": "primeira-frase-da-abertura",
-      "publicado": "2026-10-19",
-      "texto": "The Budget report forecasts 889 million euros in net charges for the road partnerships in 2027: «net» means what the State pays the concessionaires after deducting the revenue that falls to it, mostly the tolls collected on tolled roads.",
+      "escrita": "2026-10-28",
+      "texto": "The Budget report forecasts 889 million euros in net charges for the road partnerships in 2027: «net» means the State's charges on these partnerships after deducting the revenue that falls to it, among them the tolls collected on tolled roads.",
       "igual_ao_mandato": true
     }
   ]
