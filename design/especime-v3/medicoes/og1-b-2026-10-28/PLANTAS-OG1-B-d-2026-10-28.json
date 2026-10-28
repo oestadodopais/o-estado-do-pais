@@ -1,0 +1,57 @@
+{
+ "registado_em": "2026-10-28T23:32:20+00:00",
+ "copia": "_aterragens/pacote-og1bd-2026-10-28",
+ "plantas": [
+  {
+   "id": "Z1",
+   "ficheiro": "built/en/index.html",
+   "descricao": "a primeira página inglesa imprime «a deficit of 0,2 %» onde a linha og1-cfp-saldo-2027, a edição portuguesa e a página dos itens dizem 0,1",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "8806b1d73965c501e390016ea57d424b98e40f642685a594805c107060ec43e1",
+   "sha256_depois": "bcf9560e0600ac8295e97fcab0c74c5851ad48757348bad4a3e5959f8f7848b4",
+   "contexto_antes": "claim-sufixo\"> %</span></span> of GDP the Government forecasts for that year is, in the Public Finance Council&#39;s accounts, a deficit of <span class=\"claim\"><span data-claim=\"og1-cfp-saldo-2027\" class=\"claim-value\">0,1</span><span class=\"claim-sufixo\"> %</span></span>.</span></p></li><li><a href=\"/en/under-discussion/#saude-no-orcamento\" data-discussao-porta=\"saude-no-orcamento\">The",
+   "contexto_depois": "claim-sufixo\"> %</span></span> of GDP the Government forecasts for that year is, in the Public Finance Council&#39;s accounts, a deficit of <span class=\"claim\"><span data-claim=\"og1-cfp-saldo-2027\" class=\"claim-value\">0,2</span><span class=\"claim-sufixo\"> %</span></span>.</span></p></li><li><a href=\"/en/under-discussion/#saude-no-orcamento\" data-discussao-porta=\"saude-no-orcamento\">The"
+  },
+  {
+   "id": "Z4",
+   "ficheiro": "built/o-que-se-discute/index.html",
+   "descricao": "a conclusão portuguesa diz «as duas medidas que a proposta não especifica o suficiente», na voz do sítio, onde a adenda e a comparação dizem «segundo o Conselho»",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "683e0f7661ce640eaaa1b7ad91ddd995d7531ca35f860abca8b694903d64b479",
+   "sha256_depois": "0482267d981402789b98de1d54ccbfe2f43b55f31930145598ddb71f08b96df8",
+   "contexto_antes": "-nonledger=\"proveniencia\" data-selo-etiqueta=\"CFP\" title=\"CFP\"><span class=\"src-chip-texto\">fonte</span><span class=\"vh\"> · <span>CFP</span></span></a></span>, está no que o Conselho não conta, as duas medidas que, segundo o Conselho, a proposta não especifica o suficiente, a começar pelos <span class=\"claim claim-com-chip\"><span data-claim=\"pm-q3-2-r8-c0\" class=\"claim-value\">300</span><span class=\"claim-sufixo\"> milhões de euros",
+   "contexto_depois": "-nonledger=\"proveniencia\" data-selo-etiqueta=\"CFP\" title=\"CFP\"><span class=\"src-chip-texto\">fonte</span><span class=\"vh\"> · <span>CFP</span></span></a></span>, está no que o Conselho não conta, as duas medidas que a proposta não especifica o suficiente, a começar pelos <span class=\"claim claim-com-chip\"><span data-claim=\"pm-q3-2-r8-c0\" class=\"claim-value\">300</span><span class=\"claim-sufixo\"> milhões de euros"
+  },
+  {
+   "id": "Z2",
+   "ficheiro": "diff.patch",
+   "descricao": "o diff de discussao-og1.mjs diz «a maior medida de receita sem a informação que a fundamente» na comparação onde a adenda, a UTAO e a cópia do ficheiro dizem «a maior das medidas novas de receita»",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "f3254adeee53909993f6290fe418dfaf1e7051b167561d4540bb2807d3e497bb",
+   "sha256_depois": "bc9e41ce890636f5e3fd51620525ef869c1f77ba5b6b4104487d541a5eea6163",
+   "contexto_antes": "e conta um desvio na despesa líquida que, nos números do próprio Ministério, só a flexibilidade para a defesa fecha; nos da Comissão Europeia, não fecha. Os \",\n+              \"» e a apreciação da UTAO não dizem o mesmo. A UTAO não corrige o cenário do PIB, mas tem dificuldade em conciliar o emprego com a imigração, aponta o preço do petróleo abaixo dos contratos e a maior das medidas novas de receita sem a informação que a fundamente, e conta um desvio na despesa líquida que, nos números do próprio Ministério, só a flexibilidade para a defesa fecha; nos da Comissão Europeia, não fecha. Os \",\n               {\n                 \"fragmento\": \"og1-governo-observador-saldo\",\n                 \"campo\": \"excerpt\",\n@@ -1866,7 +1861,7 @@ export const OG1 = {\n",
+   "contexto_depois": "e conta um desvio na despesa líquida que, nos números do próprio Ministério, só a flexibilidade para a defesa fecha; nos da Comissão Europeia, não fecha. Os \",\n+              \"» e a apreciação da UTAO não dizem o mesmo. A UTAO não corrige o cenário do PIB, mas tem dificuldade em conciliar o emprego com a imigração, aponta o preço do petróleo abaixo dos contratos e a maior medida de receita sem a informação que a fundamente, e conta um desvio na despesa líquida que, nos números do próprio Ministério, só a flexibilidade para a defesa fecha; nos da Comissão Europeia, não fecha. Os \",\n               {\n                 \"fragmento\": \"og1-governo-observador-saldo\",\n                 \"campo\": \"excerpt\",\n@@ -1866,7 +1861,7 @@ export const OG1 = {\n"
+  },
+  {
+   "id": "Z3",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz «27 chamadas» onde os registos dizem «25 chamadas»",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "24773674a07e4d879d0dc8f6e2a094604ba15670b52acfac53fdbe92ce1c9197",
+   "sha256_depois": "68d6802117d4971fcfda7183996c6d7bad4abc64f4f2eb6139900bcaaf7aa4a0",
+   "contexto_antes": "em usou 22 chamadas até à inspeção final das imagens e códigos. A escrita do recibo, o pedido de commit e a inspeção do resultado acrescentam três, totalizando 25 chamadas. O custo é escrito pelo lançador; não foi exposta uma linha «tokens used».\n\nSem push. A leitura curta do diff permanece a cargo do lugar de direção.\n",
+   "contexto_depois": "em usou 22 chamadas até à inspeção final das imagens e códigos. A escrita do recibo, o pedido de commit e a inspeção do resultado acrescentam três, totalizando 27 chamadas. O custo é escrito pelo lançador; não foi exposta uma linha «tokens used».\n\nSem push. A leitura curta do diff permanece a cargo do lugar de direção.\n"
+  },
+  {
+   "id": "Z5",
+   "ficheiro": "src/data/discussao-og1.mjs",
+   "descricao": "a cópia de discussao-og1.mjs liga o défice da abertura portuguesa à linha og1-cfp-diferenca-mf (0,2 p.p.) onde o diff, a página e a adenda dizem og1-cfp-saldo-2027 (0,1 %)",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "d31235a4849e2f53769f4481242ad8160d2ed0f11050ac076a16fcf71d3236e1",
+   "sha256_depois": "c386aa45469bebf648f6fe69bbdd6f0d3293fbff83e0659fa2e01bb44257a6aa",
+   "contexto_antes": "P, e o excedente de \",\n        {\n          \"claim\": \"pm-q3-3-r37-c3\",\n          \"sufixo\": \" %\"\n        },\n        \" do PIB que o Governo prevê para esse ano é, nas contas do Conselho das Finanças Públicas, um défice de \",\n        {\n          \"claim\": \"og1-cfp-saldo-2027\",\n          \"sufixo\": \" %\"\n        },\n        \".\"\n      ],\n      \"en\": [\n        \"Parliament passed the \",\n        {\n          \"periodo\": \"pm-q3-3-r37-c3\"\n     ",
+   "contexto_depois": "P, e o excedente de \",\n        {\n          \"claim\": \"pm-q3-3-r37-c3\",\n          \"sufixo\": \" %\"\n        },\n        \" do PIB que o Governo prevê para esse ano é, nas contas do Conselho das Finanças Públicas, um défice de \",\n        {\n          \"claim\": \"og1-cfp-diferenca-mf\",\n          \"sufixo\": \" %\"\n        },\n        \".\"\n      ],\n      \"en\": [\n        \"Parliament passed the \",\n        {\n          \"periodo\": \"pm-q3-3-r37-c3\"\n     "
+  }
+ ],
+ "nota": "o caminho da cópia foi reduzido ao nome do pacote antes de entrar no repositório (regra 9)"
+}

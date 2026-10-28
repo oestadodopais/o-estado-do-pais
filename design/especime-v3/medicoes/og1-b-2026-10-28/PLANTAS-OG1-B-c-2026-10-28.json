@@ -1,0 +1,57 @@
+{
+ "registado_em": "2026-10-28T22:55:36+00:00",
+ "copia": "_aterragens/pacote-og1bc-2026-10-28",
+ "plantas": [
+  {
+   "id": "Z4",
+   "ficheiro": "built/o-que-se-discute/index.html",
+   "descricao": "a página dos itens portuguesa diz «numa negociação em curso com a Ascendi» onde a linha ppp-oe2027-riscos-brisa, a adenda e a conclusão do item dizem Brisa",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "e87bb426dd1dafa169a3b5672ffc8a6878dad4a4f582dca52c62bc007c855d68",
+   "sha256_depois": "d580e21fc7a6afb273c34480e4bb1665e3b0ae2d836182afe7b19bac9cb11b80",
+   "contexto_antes": "s Finanças\" title=\"Ministério das Finanças\"><span class=\"src-chip-texto\">fonte</span><span class=\"vh\"> · <span>Ministério das Finanças</span></span></a></span> numa negociação em curso com a Brisa.</p><section class=\"discussao-seccao\" data-discussao-parte=\"como-foi-dito\" aria-labelledby=\"parcerias-rodoviarias-titulo parcerias-rodoviarias-como-foi-dito\" d",
+   "contexto_depois": "s Finanças\" title=\"Ministério das Finanças\"><span class=\"src-chip-texto\">fonte</span><span class=\"vh\"> · <span>Ministério das Finanças</span></span></a></span> numa negociação em curso com a Ascendi.</p><section class=\"discussao-seccao\" data-discussao-parte=\"como-foi-dito\" aria-labelledby=\"parcerias-rodoviarias-titulo parcerias-rodoviarias-como-foi-dito\" d"
+  },
+  {
+   "id": "Z5",
+   "ficheiro": "ledger/claims/og1-il-voto.yml",
+   "descricao": "a cópia da linha og1-il-voto cita «precisam que o Governo lhes recorde que não têm dinheiro» onde a RTP, a prova e a página dizem «não precisam que o Governo lhes recorde»",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "5f55fb8b1106b2b3a862aa2e9357262ab8b111bcd95007dd46075a64631b694e",
+   "sha256_depois": "6ce6a6d6a897642d17fc1ede8c64be9b7bccfa284dee633adefb5daac5c79fe3",
+   "contexto_antes": "te: \"2026-10-28\"\npublished_at: \"2026-10-28\"\nafirmacao: true\nreference_date: \"2026-10-28\"\n\n# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.\nexcerpt: \"não precisam que o Governo lhes recorde que não têm dinheiro, precisam de um Governo que faça a sua parte para viverem melhor\"\n\n# null quando o valor é publicado; a aritmética explicada quando é calc",
+   "contexto_depois": "te: \"2026-10-28\"\npublished_at: \"2026-10-28\"\nafirmacao: true\nreference_date: \"2026-10-28\"\n\n# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.\nexcerpt: \"precisam que o Governo lhes recorde que não têm dinheiro, precisam de um Governo que faça a sua parte para viverem melhor\"\n\n# null quando o valor é publicado; a aritmética explicada quando é calc"
+  },
+  {
+   "id": "Z1",
+   "ficheiro": "built/en/index.html",
+   "descricao": "a primeira página inglesa imprime 27.10.2026 debaixo do título do item do Orçamento onde escrita, o datetime e a regra dizem 28.10.2026",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "5890bdd5af88d047b6e057684e7f9768003c2afff9c5ff56b71d67c7e64540da",
+   "sha256_depois": "2841382fd8b4496c9fdebee17d9860f9641cf07ab1bd007170c3989c1500ae0a",
+   "contexto_antes": "e general vote: how each party voted, what the Public Finance Council and the UTAO measure, and what is left for the detailed stage</a><p data-discussao-resumo><time datetime=\"2026-10-28\" data-nonledger=\"data-editorial\" data-data-origem=\"escrita.declarada\">28.10.2026</time> · <span data-discussao-conclusao>Parliament passed the <span class=\"data-da-linha\" data-nonledger=\"data-da-linha\" data-de-linha=\"pm-q3-3-r37-c3\" data-de-campo=\"reference_date\">2027</span> Budget proposal at the",
+   "contexto_depois": "e general vote: how each party voted, what the Public Finance Council and the UTAO measure, and what is left for the detailed stage</a><p data-discussao-resumo><time datetime=\"2026-10-28\" data-nonledger=\"data-editorial\" data-data-origem=\"escrita.declarada\">27.10.2026</time> · <span data-discussao-conclusao>Parliament passed the <span class=\"data-da-linha\" data-nonledger=\"data-da-linha\" data-de-linha=\"pm-q3-3-r37-c3\" data-de-campo=\"reference_date\">2027</span> Budget proposal at the"
+  },
+  {
+   "id": "Z3",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz «760 de 768 plantas» onde os registos da conferência dizem «768 de 768 plantas»",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "17ee0328b7007ea903940adecf96ff8074ab04d73bf1752ca783440d90d37c8f",
+   "sha256_depois": "c441e4c8328301827806a0e91cbcd7df7881f40e6e31a087398f705596626e6a",
+   "contexto_antes": "cação no lugar da escrita e a origem editorial antiga, mantendo a conferência independente da data de publicação da caixa de novidades.\n\nA discussão passou com 768 de 768 plantas, 764 portas de integração e 636 conferências OG1 nas duas edições. As nove glosas e as 60 plantas numéricas passaram. O navegador mediu 4 048 pedaços marcados ",
+   "contexto_depois": "cação no lugar da escrita e a origem editorial antiga, mantendo a conferência independente da data de publicação da caixa de novidades.\n\nA discussão passou com 760 de 768 plantas, 764 portas de integração e 636 conferências OG1 nas duas edições. As nove glosas e as 60 plantas numéricas passaram. O navegador mediu 4 048 pedaços marcados "
+  },
+  {
+   "id": "Z2",
+   "ficheiro": "diff.patch",
+   "descricao": "o diff de discussao-og1.mjs diz «» entre todas as medidas segundo a UTAO» onde a adenda, a UTAO e a cópia do ficheiro dizem «entre as medidas novas»",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "e7d3dbf455287927c07bd3a03739887109cb1e3dd4f68217c0135c588ce629ca",
+   "sha256_depois": "6f6d255da9e466cc3f8cf4b76cc4fcfff965740f6d7ab2caf81a440cc4b62718",
+   "contexto_antes": "       {\n+          \"fragmento\": \"og1-utao-p42\",\n+          \"campo\": \"excerpt\",\n+          \"texto\": \"a medida de maior dimensão do lado da receita\"\n+        },\n+        \"» entre as medidas novas segundo a UTAO, a unidade técnica de apoio orçamental do Parlamento, vale \",\n         {\n           \"claim\": \"pm-q3-2-r8-c0\",\n           \"sufixo\": \" milhões de euros\"\n@@ -73,7 +79,7 @@ export const OG1 = {\n         {\n           \"periodo\"",
+   "contexto_depois": "       {\n+          \"fragmento\": \"og1-utao-p42\",\n+          \"campo\": \"excerpt\",\n+          \"texto\": \"a medida de maior dimensão do lado da receita\"\n+        },\n+        \"» entre todas as medidas segundo a UTAO, a unidade técnica de apoio orçamental do Parlamento, vale \",\n         {\n           \"claim\": \"pm-q3-2-r8-c0\",\n           \"sufixo\": \" milhões de euros\"\n@@ -73,7 +79,7 @@ export const OG1 = {\n         {\n           \"periodo\""
+  }
+ ],
+ "nota": "o caminho da cópia foi reduzido ao nome do pacote antes de entrar no repositório (regra 9)"
+}

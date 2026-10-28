@@ -1,0 +1,57 @@
+{
+ "registado_em": "2026-10-28T21:50:26+00:00",
+ "copia": "_aterragens/pacote-og1b-2026-10-28-b",
+ "plantas": [
+  {
+   "id": "Z2",
+   "ficheiro": "diff.patch",
+   "descricao": "o diff de scripts/inventario-rotulos.mjs declara 56 linhas esperadas para og1a onde o mandato, a travessia e a cópia do ficheiro dizem 57",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "3b7d6fa124a17990c444edc5e05fe6d7084134e698e6a6aaa58c97e005bb5335",
+   "sha256_depois": "a42d6faed4592d6d571c9733f61ab726fac0f39614d38fab3742afec2dd7faa5",
+   "contexto_antes": "DAS = { oe1: 186, jd1: 15, v2a: 18, v2d: 142, v2e: 177, ex3: 8, og1a: 33 };\n+const LINHAS_ESPERADAS = { oe1: 186, jd1: 15, v2a: 18, v2d: 142, v2e: 177, ex3: 8, og1a: 57 };\n /** O estudo recebe outros blocos; a pertença vem do cruzamento de cada entrega. */\n const BLOCOS_DO_LIVRO = Object.fromEntries(['oe1', 'jd1', 'v2a', 'v2d', '",
+   "contexto_depois": "DAS = { oe1: 186, jd1: 15, v2a: 18, v2d: 142, v2e: 177, ex3: 8, og1a: 33 };\n+const LINHAS_ESPERADAS = { oe1: 186, jd1: 15, v2a: 18, v2d: 142, v2e: 177, ex3: 8, og1a: 56 };\n /** O estudo recebe outros blocos; a pertença vem do cruzamento de cada entrega. */\n const BLOCOS_DO_LIVRO = Object.fromEntries(['oe1', 'jd1', 'v2a', 'v2d', '"
+  },
+  {
+   "id": "Z3",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz 760 de 766 plantas V2B com mordida onde o registo da conferência diz 766 de 766",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "955736ac70e212d83c32c486e69ace12060fca0fcaf47ee47bae28efe3d0ab81",
+   "sha256_depois": "7f5470bdb8feed1b16ef0291a0c648816d0490596ee7261c7668563b9b9e2469",
+   "contexto_antes": "o pedido de portões ao escrivão usou o perfil fechado `og1-b-navegador`, com `check:frases-compostas` e `check:primeira`.\n\n- A discussão passou com zero erros, 766 de 766 plantas com mordida e 764 portas de integração. Inclui as plantas FP2 de data diferente, duas frases, frase de outro item, valor trocado e parágrafo em falta, nas duas",
+   "contexto_depois": "o pedido de portões ao escrivão usou o perfil fechado `og1-b-navegador`, com `check:frases-compostas` e `check:primeira`.\n\n- A discussão passou com zero erros, 760 de 766 plantas com mordida e 764 portas de integração. Inclui as plantas FP2 de data diferente, duas frases, frase de outro item, valor trocado e parágrafo em falta, nas duas"
+  },
+  {
+   "id": "Z5",
+   "ficheiro": "ledger/claims/og1-cfp-saldo-2027.yml",
+   "descricao": "a cópia da linha og1-cfp-saldo-2027 cita «antecipa agora um excedente orçamental de 0,1% do PIB» onde o relatório do Conselho (p. 22), a prova e a página dizem «défice orçamental»",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "b7e293fafc4b030743d936fbfef0eb94f3945c26fbadac3a310e9a82b94f13c6",
+   "sha256_depois": "38d3deb99c562e3d7a873493f7ad940329aa7ec7f17ec748053e73d6df33833a",
+   "contexto_antes": "date: \"2026-10-26\"\n\n# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.\nexcerpt: \"Para 2027, incorporando as novas medidas de política, o CFP antecipa agora um défice orçamental de 0,1% do PIB.\"\n\n# null quando o valor é publicado; a aritmética explicada quando é calculado.\nderivation: null\nderivation_en: null\nderived_from: []\n# Expressão verificada n",
+   "contexto_depois": "date: \"2026-10-26\"\n\n# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.\nexcerpt: \"Para 2027, incorporando as novas medidas de política, o CFP antecipa agora um excedente orçamental de 0,1% do PIB.\"\n\n# null quando o valor é publicado; a aritmética explicada quando é calculado.\nderivation: null\nderivation_en: null\nderived_from: []\n# Expressão verificada n"
+  },
+  {
+   "id": "Z1",
+   "ficheiro": "built/en/index.html",
+   "descricao": "a primeira página inglesa imprime 276,5 million euros como a descida da despesa total da Saúde onde a linha der-saude-total-reducao-abs, a página dos itens e a edição portuguesa dizem 267,5",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "b4c2f907e25264161c4d0f2b9ecacf9f040f6368aa0fbd0d388d7dbd78863bad",
+   "sha256_depois": "bcc0d611cc2e8d0102c848aa0067cc6f24841c765412a0ae325f0db4454c33f2",
+   "contexto_antes": "o=\"reference_date\">2027</span>, total Health expenditure, which in the Budget report includes financial assets and liabilities, is budgeted <span class=\"claim\"><span data-claim=\"der-saude-total-reducao-abs\" class=\"claim-value\">267,5</span><span class=\"claim-sufixo\"> million euros</span></span> below the estimate for <span class=\"data-da-linha\" data-nonledger=\"data-da-linha\" data-de-linha=\"oe-2027",
+   "contexto_depois": "o=\"reference_date\">2027</span>, total Health expenditure, which in the Budget report includes financial assets and liabilities, is budgeted <span class=\"claim\"><span data-claim=\"der-saude-total-reducao-abs\" class=\"claim-value\">276,5</span><span class=\"claim-sufixo\"> million euros</span></span> below the estimate for <span class=\"data-da-linha\" data-nonledger=\"data-da-linha\" data-de-linha=\"oe-2027"
+  },
+  {
+   "id": "Z4",
+   "ficheiro": "built/o-que-se-discute/index.html",
+   "descricao": "a página dos itens portuguesa diz «Jorge Pinto, do PAN, a 28.10.2026» onde a linha og1-livre-voto, a prova e a RTP dizem Livre",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "5fc3a214de49d8487f65abdc704758678165bfb4457775ce7ed09a5ffb1c3b5a",
+   "sha256_depois": "58bb8ed93a57fdc92d2b1e15cdcfb984a3db75e78a0b8a7a4fb5d0db596558b1",
+   "contexto_antes": "stro-cid-i65nnz7s><a class=\"discussao-literal\" href=\"/livro-razao/og1-livre-voto\" data-discussao-literal=\"attributed_to\"><span class=\"campo-valor\" lang=\"pt-PT\" data-linha-claim=\"og1-livre-voto\" data-linha-campo=\"attributed_to\">Jorge Pinto</span></a>, do Livre, a <a class=\"discussao-periodo\" data-discussao-periodo=\"og1-livre-voto\" href=\"/livro-razao/og1-livre-voto\"><span class=\"data-da-linha\" data-nonledger=\"data-da-linh",
+   "contexto_depois": "stro-cid-i65nnz7s><a class=\"discussao-literal\" href=\"/livro-razao/og1-livre-voto\" data-discussao-literal=\"attributed_to\"><span class=\"campo-valor\" lang=\"pt-PT\" data-linha-claim=\"og1-livre-voto\" data-linha-campo=\"attributed_to\">Jorge Pinto</span></a>, do PAN, a <a class=\"discussao-periodo\" data-discussao-periodo=\"og1-livre-voto\" href=\"/livro-razao/og1-livre-voto\"><span class=\"data-da-linha\" data-nonledger=\"data-da-linh"
+  }
+ ],
+ "nota": "o caminho da cópia foi reduzido ao nome do pacote antes de entrar no repositório (regra 9)"
+}
