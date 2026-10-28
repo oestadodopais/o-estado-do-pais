@@ -6,7 +6,7 @@
 id: "og1-il-voto"
 
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
-value: "moderado no alívio de impostos, moderado na vontade de reformar o país, moderado na ambição para Portugal"
+value: "não precisam que o Governo lhes recorde que não têm dinheiro, precisam de um Governo que faça a sua parte para viverem melhor"
 unit: "texto"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
@@ -14,7 +14,7 @@ source: "RTP"
 document:
   title: "OE2027 foi aprovado na generalidade com votos do PSD e CDS, PS abstém-se"
   edition: "2026-10-28"
-  locator: "Corpo da página; entrada «IL contra o orçamento \"moderado\" do Estado»; excerto localizado por texto"
+  locator: "Corpo da página; entrada «IL contra o orçamento \"moderado\" do Estado»; a frase que a RTP atribui a Mário Amorim Lopes; excerto localizado por texto"
   source_sha256: "d12ab4171c6de8c8719c82f5584e767bbae60d7d51908e826b08238f0691d3db"
   kind: "html"
 source_url: "https://www.rtp.pt/noticias/politica/debate-e-votacao-na-generalidade-da-proposta-de-orcamento-do-estado-para-2027_e1774900"
@@ -24,7 +24,7 @@ afirmacao: true
 reference_date: "2026-10-28"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "moderado no alívio de impostos, moderado na vontade de reformar o país, moderado na ambição para Portugal"
+excerpt: "não precisam que o Governo lhes recorde que não têm dinheiro, precisam de um Governo que faça a sua parte para viverem melhor"
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null
@@ -39,7 +39,7 @@ attributed_to:
 
 study: "oe-2027"
 # Nota interna. NÃO é publicada: ver DECISIONS §1.24.
-note: "[note do motor] Intervenção de encerramento relatada pela RTP. O voto contra da IL consta da notícia da votação (og1-votacao-generalidade); o anúncio do partido a 27.10 não tem documento próprio alojado (il-voto). · Cruzado de ResearchHub content/30 Orcamento 2027 Generalidade · og1-il-voto."
+note: "[note do motor] Intervenção relatada pela RTP na entrada «IL contra o orçamento \"moderado\" do Estado». A RTP atribui ao partido a frase «moderado no alívio de impostos, moderado na vontade de reformar o país, moderado na ambição para Portugal» («A Iniciativa Liberal considera este orçamento …») e a Mário Amorim Lopes a frase selada, sobre os portugueses e o Governo; a leitura a frio de 28.10 (Opus) apanhou a atribuição errada da primeira ao deputado, corrigida aqui (OG1-B3). O voto contra da IL consta da notícia da votação (og1-votacao-generalidade); o documento próprio do partido não está alojado (il-voto). · Cruzado de ResearchHub content/30 Orcamento 2027 Generalidade · og1-il-voto."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []
