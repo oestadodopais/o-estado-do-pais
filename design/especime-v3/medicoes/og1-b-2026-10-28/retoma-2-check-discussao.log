@@ -1,0 +1,18 @@
+
+> o-estado-do-pais@0.1.0 check:discussao
+> node tests/discussao/glosas.mjs && node tests/discussao/itens.mjs && node tests/discussao/og1.mjs
+
+PASS: 9 glosas intactas nas duas edições; 60 plantas recusadas.
+V2B · 0 erro(s), 766 de 766 plantas, 764 portas de integração.
+OG1 pt: planta de data trocada e planta de partido trocado recusadas.
+<worktree>/tests/discussao/og1.mjs:69
+  if(p.entity_aliases){const publisher=Object.keys(p.entity_aliases)[0];assert.equal(claims.get(id).source,publisher);const fontes=receipt.querySelectorAll('[data-linha-campo="source"]');assert(fontes.length>=2,id+': o recibo imprime o publicador em menos de dois lugares');for(const f of fontes){assert.equal(f.text,publisher,id+': publicador diferente num dos lugares do recibo');}assert(receipt.text.includes(p.attributed_to[0]));checks++;}
+                                                                                                                                                                                                                                                                                                                                                                                                                                           ^
+
+TypeError: Cannot read properties of null (reading '0')
+    at <worktree>/tests/discussao/og1.mjs:69:428
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)
+
+Node.js v22.23.1

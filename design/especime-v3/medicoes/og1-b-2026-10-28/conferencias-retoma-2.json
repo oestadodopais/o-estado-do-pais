@@ -1,0 +1,26 @@
+[
+  {
+    "conferencia": "auditoria",
+    "codigo": 0,
+    "ficheiro_codigo": "retoma-2-auditoria.codigo",
+    "registo": "retoma-2-auditoria.log"
+  },
+  {
+    "conferencia": "auditoria-prova",
+    "codigo": 0,
+    "ficheiro_codigo": "retoma-2-auditoria-prova.codigo",
+    "registo": "retoma-2-auditoria-prova.log"
+  },
+  {
+    "conferencia": "build",
+    "codigo": 1,
+    "ficheiro_codigo": "retoma-2-build.codigo",
+    "registo": "retoma-2-build.log.gz"
+  },
+  {
+    "conferencia": "check-discussao",
+    "codigo": 1,
+    "ficheiro_codigo": "retoma-2-check-discussao.codigo",
+    "registo": "retoma-2-check-discussao.log"
+  }
+]
