@@ -1,0 +1,2 @@
+{"planta": "Pessoa inventada no recibo da votação", "celula": "gate:html, campo da linha ausente", "codigo_do_portao": 1, "mordeu": true, "diagnostico": "a página renderiza o campo \"attributed_to\" de \"og1-votacao-generalidade\", mas a linha não tem esse campo"}
+Recibo original restaurado byte a byte.

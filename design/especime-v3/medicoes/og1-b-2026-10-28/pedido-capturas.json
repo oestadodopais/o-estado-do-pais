@@ -1,0 +1,35 @@
+{
+  "cabeca": "aa7d0b1fe76c5d83de2653eb25287a55a02d35ab",
+  "paginas": [
+    {
+      "nome": "inicio",
+      "pt": "/",
+      "en": "/en/",
+      "recortes": [
+        {
+          "nome": "discussao",
+          "seletor": "section.pp-discussao"
+        }
+      ]
+    },
+    {
+      "nome": "discussao",
+      "pt": "/o-que-se-discute/",
+      "en": "/en/under-discussion/",
+      "recortes": [
+        {
+          "nome": "orcamento-2027-generalidade",
+          "seletor": "[data-discussao=\"orcamento-2027-generalidade\"] [data-discussao-paragrafo=\"abertura[0]\"]"
+        },
+        {
+          "nome": "saude-no-orcamento",
+          "seletor": "[data-discussao=\"saude-no-orcamento\"] [data-discussao-paragrafo=\"abertura[0]\"]"
+        },
+        {
+          "nome": "parcerias-rodoviarias",
+          "seletor": "[data-discussao=\"parcerias-rodoviarias\"] [data-discussao-paragrafo=\"abertura[0]\"]"
+        }
+      ]
+    }
+  ]
+}

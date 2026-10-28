@@ -1,0 +1,122 @@
+[
+  {
+    "conferencia": "build",
+    "codigo": 0,
+    "ficheiro_codigo": "retoma-3-build.codigo",
+    "registo": "retoma-3-build.log.gz"
+  },
+  {
+    "conferencia": "capturas",
+    "codigo": 0,
+    "ficheiro_codigo": "retoma-3-capturas.codigo",
+    "registo": null
+  },
+  {
+    "conferencia": "check-cruzamento",
+    "codigo": 0,
+    "ficheiro_codigo": "retoma-3-check-cruzamento.codigo",
+    "registo": "retoma-3-check-cruzamento.log"
+  },
+  {
+    "conferencia": "check-discussao",
+    "codigo": 0,
+    "ficheiro_codigo": "retoma-3-check-discussao.codigo",
+    "registo": "retoma-3-check-discussao.log"
+  },
+  {
+    "conferencia": "check-lingua",
+    "codigo": 0,
+    "ficheiro_codigo": "retoma-3-check-lingua.codigo",
+    "registo": "retoma-3-check-lingua.log"
+  },
+  {
+    "conferencia": "check-lugar",
+    "codigo": 0,
+    "ficheiro_codigo": "retoma-3-check-lugar.codigo",
+    "registo": "retoma-3-check-lugar.log"
+  },
+  {
+    "conferencia": "check-pais",
+    "codigo": 0,
+    "ficheiro_codigo": "retoma-3-check-pais.codigo",
+    "registo": "retoma-3-check-pais.log.gz"
+  },
+  {
+    "conferencia": "check-palavras",
+    "codigo": 0,
+    "ficheiro_codigo": "retoma-3-check-palavras.codigo",
+    "registo": "retoma-3-check-palavras.log"
+  },
+  {
+    "conferencia": "check-registo",
+    "codigo": 0,
+    "ficheiro_codigo": "retoma-3-check-registo.codigo",
+    "registo": "retoma-3-check-registo.log"
+  },
+  {
+    "conferencia": "check-rotulos",
+    "codigo": 0,
+    "ficheiro_codigo": "retoma-3-check-rotulos.codigo",
+    "registo": "retoma-3-check-rotulos.log"
+  },
+  {
+    "conferencia": "check-voz",
+    "codigo": 0,
+    "ficheiro_codigo": "retoma-3-check-voz.codigo",
+    "registo": "retoma-3-check-voz.log"
+  },
+  {
+    "conferencia": "frases",
+    "codigo": 0,
+    "ficheiro_codigo": "retoma-3-frases.codigo",
+    "registo": "retoma-3-frases.log"
+  },
+  {
+    "conferencia": "gate-html",
+    "codigo": 0,
+    "ficheiro_codigo": "retoma-3-gate-html.codigo",
+    "registo": "retoma-3-gate-html.log.gz"
+  },
+  {
+    "conferencia": "l1-base",
+    "codigo": 1,
+    "ficheiro_codigo": "retoma-3-l1-base.codigo",
+    "registo": "retoma-3-l1-base.log.gz"
+  },
+  {
+    "conferencia": "ledger-check",
+    "codigo": 0,
+    "ficheiro_codigo": "retoma-3-ledger-check.codigo",
+    "registo": "retoma-3-ledger-check.log.gz"
+  },
+  {
+    "conferencia": "planta-pessoa",
+    "codigo": 0,
+    "ficheiro_codigo": "retoma-3-planta-pessoa.codigo",
+    "registo": "retoma-3-planta-pessoa.log"
+  },
+  {
+    "conferencia": "typecheck",
+    "codigo": 0,
+    "ficheiro_codigo": "retoma-3-typecheck.codigo",
+    "registo": "retoma-3-typecheck.log"
+  },
+  {
+    "conferencia": "voz-base",
+    "codigo": 1,
+    "ficheiro_codigo": "retoma-3-voz-base.codigo",
+    "registo": "retoma-3-voz-base.log"
+  },
+  {
+    "conferencia": "check:frases-compostas",
+    "codigo": 0,
+    "ficheiro_codigo": "retoma-3-check-frases-compostas.codigo",
+    "registo": "retoma-3-check-frases-compostas.log"
+  },
+  {
+    "conferencia": "check:primeira",
+    "codigo": 0,
+    "ficheiro_codigo": "retoma-3-check-primeira.codigo",
+    "registo": "retoma-3-check-primeira.log"
+  }
+]

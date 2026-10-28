@@ -1,0 +1,15 @@
+{
+  "cabeca": "aa7d0b1fe76c5d83de2653eb25287a55a02d35ab",
+  "recortes_inspecionados": [
+    "inicio-pt-390-discussao.png",
+    "inicio-en-1280-discussao.png",
+    "discussao-pt-390-orcamento-2027-generalidade.png",
+    "discussao-en-1280-orcamento-2027-generalidade.png",
+    "discussao-pt-390-saude-no-orcamento.png",
+    "discussao-en-1280-saude-no-orcamento.png",
+    "discussao-pt-390-parcerias-rodoviarias.png",
+    "discussao-en-1280-parcerias-rodoviarias.png"
+  ],
+  "resultado": "As aberturas e os selos estão legíveis nos oito recortes inspecionados. A medição das vinte páginas não encontrou transbordo horizontal.",
+  "limite": "A inspeção visual amostrou os recortes indicados; não é uma leitura a frio de todos os parágrafos."
+}
