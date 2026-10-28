@@ -8574,6 +8574,14 @@
                   "linha": "eurostat-el-phys",
                   "campo": "excerpt",
                   "literal": "{\"coordinates\": {\"freq\": \"A\", \"unit\": \"P_HTHAB\", \"wstatus\": \"PRACT\", \"med_spec\": \"PHYS\", \"geo\": \"EL\", \"time\": \"2024\"}, \"value\": \"626.89\", \"status\": null}"
+                },
+                {
+                  "forma": "contagem-medicos-2024",
+                  "ficheiro": "design/especime-v3/medicoes/v2e-2026-10-20/d/final/medicos.json",
+                  "com_valor": 26,
+                  "ausentes": [
+                    "SK"
+                  ]
                 }
               ]
             }
@@ -62631,12 +62639,12 @@
         {
           "caminho": "seccoes[5].conteudo[0].paragrafo[4]",
           "pt": ") em contabilidade nacional, nas previsões do Governo, que assenta em três pressupostos que a UTAO põe em dúvida: uma receita de ",
-          "en": ") in national accounts, in the Government's forecasts, resting on three assumptions the UTAO calls into question: ",
+          "en": ") in national accounts, in the Government's forecasts; that surplus depends on three assumptions the UTAO calls into question: ",
           "ramo": null,
           "partes": [
             {
               "pt": ") em contabilidade nacional, nas previsões do Governo, que assenta em três pressupostos que a UTAO põe em dúvida: uma receita de ",
-              "en": ") in national accounts, in the Government's forecasts, resting on three assumptions the UTAO calls into question: ",
+              "en": ") in national accounts, in the Government's forecasts; that surplus depends on three assumptions the UTAO calls into question: ",
               "classe": "leitura",
               "sobre": "Redação do mandato OG1-B, com os apoios das linhas que o parágrafo cita.",
               "apoios": [

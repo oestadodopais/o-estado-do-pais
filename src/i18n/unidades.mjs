@@ -68,6 +68,7 @@ const UNIDADES_EUROSTAT_PT = {
 };
 
 export const UNIDADES = {
+  "p.p. do PIB": "p.p. of GDP",
   // OG1: facto de dicionário, «por barril» é «per barrel»; USD conserva o código.
   "USD por barril": "USD per barrel",
   // V2-e: traduções das unidades documentais e assistenciais.

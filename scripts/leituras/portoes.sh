@@ -98,7 +98,7 @@ usada=0
 # O recibo só escolhe este perfil fechado, nunca comandos arbitrários.
 portoes="build verify typecheck"
 if [ -f "$O/selecao.json" ]; then
-  perfil=$(python3 -c 'import json,sys; r=json.load(open(sys.argv[1])); assert r in ({"perfil":"v2c"}, {"perfil":"v2d"}, {"perfil":"fp2-base"}, {"perfil":"fp2"}, {"perfil":"fp2-contadores"}); print(r["perfil"])' "$O/selecao.json") || exit 9
+  perfil=$(python3 -c 'import json,sys; r=json.load(open(sys.argv[1])); assert r in ({"perfil":"v2c"}, {"perfil":"v2d"}, {"perfil":"fp2-base"}, {"perfil":"fp2"}, {"perfil":"fp2-contadores"}, {"perfil":"og1-b-navegador"}); print(r["perfil"])' "$O/selecao.json") || exit 9
   [ "${OEDP_CONFERIR_MOTOR:-0}" = 0 ] || exit 9
   portoes="build check:discussao check:navegacao check:primeira check:cabeca gate:html check:alvos check:css check:frases-compostas check:lugar"
   if [ "$perfil" = v2d ]; then
@@ -106,7 +106,9 @@ if [ -f "$O/selecao.json" ]; then
   fi
 fi
 # FP2: seleções fechadas, sem verify; a base usa a construção já medida pelo construtor.
-if [ "${perfil:-}" = fp2-base ]; then
+if [ "${perfil:-}" = og1-b-navegador ]; then
+  portoes="check:frases-compostas check:primeira"
+elif [ "${perfil:-}" = fp2-base ]; then
   portoes="check:sobreposicao"
   export OEDP_SOBREPOSICAO_JSON="$O/base.json"
 elif [ "${perfil:-}" = fp2-contadores ]; then

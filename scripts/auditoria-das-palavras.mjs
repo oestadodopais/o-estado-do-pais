@@ -26,7 +26,7 @@ function apoiosDoCaminho(item,caminho,antes){
   for(const p of antes?.partes??[]) for(const a of p.apoios??[]) if(a.linha) ids.add(a.linha);
   // Os títulos das secções apoiam-se nos parágrafos da própria secção.
   for(const id of ids) for(const origem of linhas.get(id)?.derived_from??[]) ids.add(origem);
-  return [...ids].filter(id=>{
+  const apoios = [...ids].filter(id=>{
     const row=linhas.get(id);
     assert(row?.excerpt || row?.derived_from?.length,`Excerto ou derivação ausente: ${id}`);
     return Boolean(row.excerpt);
@@ -35,6 +35,9 @@ function apoiosDoCaminho(item,caminho,antes){
     assert(typeof literal==='string'&&literal.length,`Excerto ausente: ${id}`);
     return {linha:id,campo:'excerpt',literal};
   });
+  // A contagem já auditada conserva a prova numérica que as plantas adulteram.
+  for(const p of antes?.partes??[]) for(const a of p.apoios??[]) if(a.forma==='contagem-medicos-2024') apoios.push(a);
+  return apoios;
 }
 const auditoria={explicacoes:ITENS.map(item=>{
   const antiga=anterior.explicacoes.find(e=>e.slug===item.slug);

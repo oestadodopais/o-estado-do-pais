@@ -43,6 +43,11 @@
 
 /** `pt` ou `en`, para cada título distinto do campo `document.title`. */
 export const LINGUA_DOS_TITULOS = {
+  "Relatório do CFP n.º 08/2026: Análise da Proposta de Orçamento do Estado para 2027": "pt",
+  "OE2027 foi aprovado na generalidade com votos do PSD e CDS, PS abstém-se": "pt",
+  "Guião de Votações: votações a efetuar em 28-10-2026, versão 2": "pt",
+  "Orçamento do Estado para 2027 aprovado na generalidade com abstenção do PS": "pt",
+
   // V2-e: cadeias lidas nos documentos e nas respostas das fontes.
   "Relatório Semanal de Monitorização | 14-10-2026": "pt",
   "Anexo III - Listagem de Marcos e Metas": "pt",
@@ -1004,6 +1009,7 @@ export function linguaDoRotuloDaFonte(rotulo, lang = 'pt') {
 
 /** `pt` ou `en`, para cada valor distinto do campo `source`. */
 export const LINGUA_DAS_FONTES = {
+  "CFP": "pt",
   // V2-e: cadeias lidas nos documentos e nas respostas das fontes.
   "Recuperar Portugal": "pt",
   "INFARMED": "pt",
@@ -1128,6 +1134,7 @@ export function linguaDaFonte(fonte, lang = 'pt') {
 
 /** `pt`, `en`, ou `null` para uma edição que não está em língua nenhuma. */
 export const LINGUA_DAS_EDICOES = {
+  "2026-10-28": null,
   // V2-e: cadeias lidas nos documentos e nas respostas das fontes.
   "2026-10-14": null,
   "2026-08": null,

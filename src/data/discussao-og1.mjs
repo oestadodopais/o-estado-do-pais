@@ -2309,7 +2309,7 @@ export const OG1 = {
                 "claim": "og1-utao-saldo-me-2027",
                 "sufixo": " million euros"
               },
-              ") in national accounts, in the Government's forecasts, resting on three assumptions the UTAO calls into question: ",
+              ") in national accounts, in the Government's forecasts; that surplus depends on three assumptions the UTAO calls into question: ",
               {
                 "claim": "pm-q3-2-r8-c0",
                 "sufixo": " million euros"

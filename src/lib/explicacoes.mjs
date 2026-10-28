@@ -318,7 +318,17 @@ function resolver(partes, lang, onde, ctx) {
       }
       ctx.linhas.add(o.fragmento);
       out.push({literal:{id:o.fragmento,campo:o.campo,texto:o.texto,lingua:'pt-PT',fragmento:true,...(o.sufixo?{sufixo:o.sufixo}:{})}});
-      if (o.glosa && lang === 'en') out.push(...resolver(o.glosa, lang, `${aqui}.glosa`, ctx));
+      if (o.glosa && lang === 'en') {
+        const glosa = resolver(o.glosa, lang, `${aqui}.glosa`, ctx);
+        // A unidade fica antes do selo, como nos valores; as palavras não mudam.
+        for (let j=0; j<glosa.length-1; j++) {
+          const numero=glosa[j], seguinte=glosa[j+1];
+          if (typeof numero==='string' || !('literal' in numero) || typeof seguinte!=='string') continue;
+          const unidade=/^\s*(?:%|p\.p\.|(?:billion|million)(?: euros)?|bp|USD(?: a barrel)?)(?=[\s),.;]|$)/.exec(seguinte)?.[0];
+          if (unidade) { numero.literal.sufixo=unidade; glosa[j+1]=seguinte.slice(unidade.length); }
+        }
+        out.push(...glosa);
+      }
       return;
     }
     if (chave === 'literal') {

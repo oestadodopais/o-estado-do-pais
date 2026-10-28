@@ -51239,6 +51239,726 @@
           ]
         }
       ]
+    },
+    {
+      "chaves": [
+        "og1-utao-p16"
+      ],
+      "nome": {
+        "pt": "Apreciação da UTAO sobre o preço do petróleo",
+        "en": "UTAO appraisal of the oil price"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o parágrafo da UTAO sobre a cotação do Brent e a média dos contratos para o ano seguinte face ao pressuposto do Ministério das Finanças.",
+          "en": "It is the UTAO paragraph on the Brent price and the average of the next year's contracts against the Finance Ministry's assumption.",
+          "partes": [
+            {
+              "pt": "É o parágrafo da UTAO sobre a cotação do Brent e a média dos contratos para o ano seguinte face ao pressuposto do Ministério das Finanças.",
+              "en": "It is the UTAO paragraph on the Brent price and the average of the next year's contracts against the Finance Ministry's assumption.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Em 16 de outubro de 2026, o contrato de dezembro do Brent cotava a cerca de 110 USD por barril, enquanto a média dos contratos com vencimento em 2027 se situava em 95,4 USD, cerca de 11% acima dos 86,1 USD assumidos pelo MF. Esta diferença evidencia os riscos associados à persistência do choque energético (Caixa 2)."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "og1-utao-p105"
+      ],
+      "nome": {
+        "pt": "Apreciação da UTAO sobre a despesa com juros",
+        "en": "UTAO appraisal of interest expenditure"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o parágrafo da UTAO sobre o crescimento da despesa com juros e o risco de encargos acima do projetado.",
+          "en": "It is the UTAO paragraph on the growth of interest expenditure and the risk of charges above projection.",
+          "partes": [
+            {
+              "pt": "É o parágrafo da UTAO sobre o crescimento da despesa com juros e o risco de encargos acima do projetado.",
+              "en": "It is the UTAO paragraph on the growth of interest expenditure and the risk of charges above projection.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "A despesa com juros cresce 23,2% em contabilidade nacional em 2027 (18,7% em contabilidade pública, Tabela 13). Persiste o risco de encargos superiores aos projetados, que depende do volume de dívida a refinanciar em 2027 e das taxas de juro das novas emissões."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "og1-utao-p107"
+      ],
+      "nome": {
+        "pt": "Sensibilidades do Ministério das Finanças transcritas pela UTAO",
+        "en": "Finance Ministry sensitivities transcribed by the UTAO"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o parágrafo da UTAO que transcreve os quatro choques simulados pelo Ministério das Finanças e os seus efeitos no PIB e no saldo.",
+          "en": "It is the UTAO paragraph transcribing the four shocks simulated by the Finance Ministry and their effects on GDP and the balance.",
+          "partes": [
+            {
+              "pt": "É o parágrafo da UTAO que transcreve os quatro choques simulados pelo Ministério das Finanças e os seus efeitos no PIB e no saldo.",
+              "en": "It is the UTAO paragraph transcribing the four shocks simulated by the Finance Ministry and their effects on GDP and the balance.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Sensibilidades quantificadas pelo MF. O MF simulou, para 2027, quatro choques estilizados face ao cenário central. Uma redução de 2 p.p. no crescimento da procura externa diminuiria o crescimento real do PIB em 0,4 p.p. e o saldo orçamental em 0,1 p.p. do PIB; um aumento de 20% no preço do petróleo reduziria o PIB em 0,1 p.p., com impacto residual nas finanças públicas; uma subida de 2 p.p. das taxas de juro de curto prazo reduziria o PIB em cerca de 0,2 p.p. e o saldo em 0,5 p.p. do PIB; e um crescimento da procura interna inferior em 1 p.p. reduziria o PIB em 0,6 p.p. e o saldo em 0,2 p.p. do PIB."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "og1-utao-p111"
+      ],
+      "nome": {
+        "pt": "Apreciação da UTAO sobre o risco ascendente dos juros",
+        "en": "UTAO appraisal of the upside risk from interest"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o parágrafo da UTAO sobre uma despesa com juros abaixo da projetada como risco ascendente para o saldo.",
+          "en": "It is the UTAO paragraph on interest expenditure below projection as an upside risk to the balance.",
+          "partes": [
+            {
+              "pt": "É o parágrafo da UTAO sobre uma despesa com juros abaixo da projetada como risco ascendente para o saldo.",
+              "en": "It is the UTAO paragraph on interest expenditure below projection as an upside risk to the balance.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Uma despesa com juros inferior à projetada na POE/2027 constitui um risco ascendente para o saldo orçamental, caso a evolução das taxas de juro e as condições de financiamento da República sejam mais favoráveis do que previsto."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "og1-cfp-plausivel"
+      ],
+      "nome": {
+        "pt": "Conclusão do Conselho das Finanças Públicas sobre a trajetória do saldo",
+        "en": "Public Finance Council conclusion on the balance path"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o parágrafo de conclusão do relatório do Conselho das Finanças Públicas sobre a plausibilidade da trajetória do saldo apresentada pelo Ministério das Finanças.",
+          "en": "It is the concluding paragraph of the Public Finance Council's report on the plausibility of the balance path presented by the Finance Ministry.",
+          "partes": [
+            {
+              "pt": "É o parágrafo de conclusão do relatório do Conselho das Finanças Públicas sobre a plausibilidade da trajetória do saldo apresentada pelo Ministério das Finanças.",
+              "en": "It is the concluding paragraph of the Public Finance Council's report on the plausibility of the balance path presented by the Finance Ministry.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Em conclusão, da avaliação da previsão orçamental subjacente à POE/2027 resulta ser plausível a trajetória do saldo orçamental apresentada pelo MF, embora subsistam aspetos suscetíveis de influenciar a sua concretização. Com efeito, em 2027, a diferença de 0,2 p.p. do PIB entre a projeção do CFP e a previsão do MF não assume uma expressão materialmente significativa, atendendo a que ambas apontam para uma posição orçamental próxima do equilíbrio, divergindo na composição e na quantificação de alguns agregados da receita e da despesa. Com base na informação disponível, se a projeção do CFP incorporasse os efeitos de medidas não suficientemente especificadas (combate à fraude no IVA no sector dos combustíveis e a restante receita proveniente da alienação de imóveis), bem como o impacto na liquidação de IRS decorrente da redução extraordinária das retenções na fonte de novembro de 2026, a projeção do CFP resultaria um excedente próximo do valor da POE/2027."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "og1-cfp-saldo-2027"
+      ],
+      "nome": {
+        "pt": "Saldo orçamental projetado pelo Conselho das Finanças Públicas",
+        "en": "Budget balance projected by the Public Finance Council"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o saldo das administrações públicas em percentagem do PIB que o Conselho das Finanças Públicas projeta para o ano indicado, um défice.",
+          "en": "It is the general government balance as a share of GDP that the Public Finance Council projects for the stated year, a deficit.",
+          "partes": [
+            {
+              "pt": "É o saldo das administrações públicas em percentagem do PIB que o Conselho das Finanças Públicas projeta para o ano indicado, um défice.",
+              "en": "It is the general government balance as a share of GDP that the Public Finance Council projects for the stated year, a deficit.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Para 2027, incorporando as novas medidas de política, o CFP antecipa agora um défice orçamental de 0,1% do PIB."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "og1-cfp-diferenca-mf"
+      ],
+      "nome": {
+        "pt": "Diferença entre o Conselho das Finanças Públicas e o Ministério das Finanças no saldo",
+        "en": "Gap between the Public Finance Council and the Finance Ministry on the balance"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a diferença, em pontos percentuais do PIB, entre a projeção do saldo do Conselho das Finanças Públicas e a previsão do Ministério das Finanças para o ano indicado.",
+          "en": "It is the gap, in percentage points of GDP, between the Public Finance Council's balance projection and the Finance Ministry's forecast for the stated year.",
+          "partes": [
+            {
+              "pt": "É a diferença, em pontos percentuais do PIB, entre a projeção do saldo do Conselho das Finanças Públicas e a previsão do Ministério das Finanças para o ano indicado.",
+              "en": "It is the gap, in percentage points of GDP, between the Public Finance Council's balance projection and the Finance Ministry's forecast for the stated year.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Com efeito, em 2027, a diferença de 0,2 p.p. do PIB entre a projeção do CFP e a previsão do MF não assume uma expressão materialmente significativa, atendendo a que ambas apontam para uma posição orçamental próxima do equilíbrio, divergindo na composição e na quantificação de alguns agregados da receita e da despesa."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "og1-cfp-combustiveis"
+      ],
+      "nome": {
+        "pt": "Apreciação do Conselho das Finanças Públicas sobre a medida dos combustíveis",
+        "en": "Public Finance Council appraisal of the fuel measure"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o parágrafo do Conselho das Finanças Públicas que diz que a sua projeção não considera a receita da medida de combate à fraude nos combustíveis nem o efeito da redução das retenções na fonte.",
+          "en": "It is the Public Finance Council paragraph stating that its projection leaves out the revenue of the fuel anti-fraud measure and the effect of the cut in withholding tax.",
+          "partes": [
+            {
+              "pt": "É o parágrafo do Conselho das Finanças Públicas que diz que a sua projeção não considera a receita da medida de combate à fraude nos combustíveis nem o efeito da redução das retenções na fonte.",
+              "en": "It is the Public Finance Council paragraph stating that its projection leaves out the revenue of the fuel anti-fraud measure and the effect of the cut in withholding tax.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Diferentemente da POE/2027, esta atualização não considera, contudo, o impacto na receita de IVA decorrente da medida do combate à fraude nos combustíveis, quantificada pelo governo em 300 M€ (0,1% do PIB), nem tem em conta o efeito positivo, na receita de IRS, decorrente da redução extraordinária das retenções na fonte aplicada em 2026, a qual poderá traduzir-se, aquando da liquidação do imposto, num menor volume de reembolsos e num aumento das notas de cobrança, contribuindo para elevar a receita líquida de IRS no ano de 2027."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "og1-cfp-ac-fss"
+      ],
+      "nome": {
+        "pt": "Apreciação do Conselho das Finanças Públicas sobre o défice da Administração Central",
+        "en": "Public Finance Council appraisal of the Central Administration deficit"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o parágrafo do Conselho das Finanças Públicas sobre o agravamento do défice da Administração Central e a sua compensação pelo excedente dos Fundos da Segurança Social.",
+          "en": "It is the Public Finance Council paragraph on the worsening Central Administration deficit and its offset by the Social Security Funds' surplus.",
+          "partes": [
+            {
+              "pt": "É o parágrafo do Conselho das Finanças Públicas sobre o agravamento do défice da Administração Central e a sua compensação pelo excedente dos Fundos da Segurança Social.",
+              "en": "It is the Public Finance Council paragraph on the worsening Central Administration deficit and its offset by the Social Security Funds' surplus.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "A POE/2027 prevê um novo agravamento do défice da Administração Central, para 2,8% do PIB, o mais elevado desde 2017, excluindo o período pandémico. Tal como no ano anterior, este agravamento é compensado sobretudo pelo excedente dos Fundos da Segurança Social (FSS), e em menor medida pelo excedente da Administração Regional e Local. Contudo, ao contrário do que se verificou em 2025, o excedente dos FSS não é suficiente para compensar integralmente o défice da Administração Central. Mantém-se, assim, a dependência do desempenho orçamental em relação ao subsector dos FSS, um subsector particularmente exposto às contingências do ciclo económico."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "og1-cfp-juros"
+      ],
+      "nome": {
+        "pt": "Apreciação do Conselho das Finanças Públicas sobre os encargos com juros",
+        "en": "Public Finance Council appraisal of interest charges"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o parágrafo do Conselho das Finanças Públicas que compara o aumento dos encargos com juros previsto na proposta com o quadro de políticas invariantes e com a sua projeção.",
+          "en": "It is the Public Finance Council paragraph comparing the proposal's forecast increase in interest charges with the no-policy-change scenario and with its own projection.",
+          "partes": [
+            {
+              "pt": "É o parágrafo do Conselho das Finanças Públicas que compara o aumento dos encargos com juros previsto na proposta com o quadro de políticas invariantes e com a sua projeção.",
+              "en": "It is the Public Finance Council paragraph comparing the proposal's forecast increase in interest charges with the no-policy-change scenario and with its own projection.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Quanto aos encargos com juros, a POE/2027 aponta para um aumento de 1,5 mil M€, quase o dobro do indicado no quadro de políticas invariantes disponibilizado pelo MF à Assembleia da República em 31 de agosto e acima da projeção do CFP, o que sugere uma possível sobrestimação."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "og1-cfp-riscos"
+      ],
+      "nome": {
+        "pt": "Riscos descendentes identificados pelo Conselho das Finanças Públicas",
+        "en": "Downside risks identified by the Public Finance Council"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o parágrafo do Conselho das Finanças Públicas que enumera os riscos descendentes da previsão orçamental para o ano indicado.",
+          "en": "It is the Public Finance Council paragraph listing the downside risks to the budget forecast for the stated year.",
+          "partes": [
+            {
+              "pt": "É o parágrafo do Conselho das Finanças Públicas que enumera os riscos descendentes da previsão orçamental para o ano indicado.",
+              "en": "It is the Public Finance Council paragraph listing the downside risks to the budget forecast for the stated year.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "A previsão orçamental para 2027 encerra riscos descendentes. Entre os riscos identificados destacam-se: (i) um crescimento da massa salarial da economia inferior ao previsto, com reflexo na receita de IRS e de contribuições sociais; (ii) um impacto da medida de combate à fraude no sector dos combustíveis aquém do previsto; (iii) a aprovação de medidas de política que possam colocar em causa as metas orçamentais estabelecidas na POE/2027; (iv) a possibilidade de o Fundo de Resolução ter de compensar determinados credores comuns do BES; (v) a materialização de despesa pública associada a passivos contingentes das AP, relacionadas com as pretensões dos parceiros privados no âmbito de parcerias público-privadas (PPP) e com outras decisões judiciais em curso, bem como garantias públicas, designadamente a relativa ao pacote habitação jovem, as concedidas à SATA pelo Governo Regional dos Açores e as associadas a linhas de crédito às empresas privadas."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "og1-cfp-emprego"
+      ],
+      "nome": {
+        "pt": "Apreciação do Conselho das Finanças Públicas sobre o emprego e as remunerações",
+        "en": "Public Finance Council appraisal of employment and wages"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o parágrafo do Conselho das Finanças Públicas sobre as previsões do Ministério das Finanças para o emprego e as remunerações face às instituições de referência.",
+          "en": "It is the Public Finance Council paragraph on the Finance Ministry's employment and wage forecasts against the reference institutions.",
+          "partes": [
+            {
+              "pt": "É o parágrafo do Conselho das Finanças Públicas sobre as previsões do Ministério das Finanças para o emprego e as remunerações face às instituições de referência.",
+              "en": "It is the Public Finance Council paragraph on the Finance Ministry's employment and wage forecasts against the reference institutions.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Porém, e conforme assinalado no parecer do CFP, as previsões do MF para o crescimento do emprego e das remunerações por trabalhador são as mais elevadas de entre as instituições de referência, pelo que o efeito conjugado destes dois fatores pode resultar em riscos acrescidos para a receita decorrente da massa salarial."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "og1-mf-juros-choque-100pb"
+      ],
+      "nome": {
+        "pt": "Efeito de um choque nas taxas de juro sobre os encargos com juros",
+        "en": "Effect of an interest rate shock on interest charges"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a variação dos encargos com juros, em contabilidade nacional e em milhões de euros, que o relatório da proposta estima para um choque de cem pontos base nas taxas de juro.",
+          "en": "It is the change in interest charges, in national accounts and in million euros, that the proposal's report estimates for a shock of one hundred basis points in interest rates.",
+          "partes": [
+            {
+              "pt": "É a variação dos encargos com juros, em contabilidade nacional e em milhões de euros, que o relatório da proposta estima para um choque de cem pontos base nas taxas de juro.",
+              "en": "It is the change in interest charges, in national accounts and in million euros, that the proposal's report estimates for a shock of one hundred basis points in interest rates.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "No caso de um choque de 100 pb, a variação dos encargos com juros ascenderia a 293 milhões de euros e 505 milhões de euros, em contabilidade pública e contabilidade nacional, respetivamente."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "og1-votacao-generalidade"
+      ],
+      "nome": {
+        "pt": "Notícia do ECO sobre a votação na generalidade",
+        "en": "ECO report on the general vote"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a frase da notícia do ECO que dá o resultado da votação na generalidade e o sentido de voto de cada partido.",
+          "en": "It is the sentence of the ECO report giving the result of the general vote and each party's vote.",
+          "partes": [
+            {
+              "pt": "É a frase da notícia do ECO que dá o resultado da votação na generalidade e o sentido de voto de cada partido.",
+              "en": "It is the sentence of the ECO report giving the result of the general vote and each party's vote.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "A proposta do Orçamento do Estado para 2027 (OE2027) foi esta quarta-feira aprovada na generalidade , com os votos favoráveis dos dois partidos que apoiam o Governo, o PSD e o CDS-PP, a abstenção do PS , do PAN e do JPP e o voto contra do Chega, da Iniciativa Liberal, do Livre, do PCP e do Bloco de Esquerda."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "og1-votacao-generalidade-rtp"
+      ],
+      "nome": {
+        "pt": "Entrada da RTP sobre a aprovação na generalidade",
+        "en": "RTP entry on the approval at the general vote"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a entrada da página ao minuto da RTP que regista a aprovação na generalidade, os votos a favor e a abstenção.",
+          "en": "It is the entry of RTP's live page recording the approval at the general vote, the votes in favour and the abstention.",
+          "partes": [
+            {
+              "pt": "É a entrada da página ao minuto da RTP que regista a aprovação na generalidade, os votos a favor e a abstenção.",
+              "en": "It is the entry of RTP's live page recording the approval at the general vote, the votes in favour and the abstention.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "O Orçamento do Estado foi aprovado na generalidade com votos a favor do PSD e do CDS. PS abstém-se."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "og1-guiao-votacoes-28"
+      ],
+      "nome": {
+        "pt": "Guião oficial das votações do dia da votação na generalidade",
+        "en": "Official voting guide for the day of the general vote"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a entrada do guião de votações da Assembleia da República que lista a votação na generalidade da proposta de lei do Orçamento.",
+          "en": "It is the entry of the Assembly of the Republic's voting guide listing the general vote on the Budget bill.",
+          "partes": [
+            {
+              "pt": "É a entrada do guião de votações da Assembleia da República que lista a votação na generalidade da proposta de lei do Orçamento.",
+              "en": "It is the entry of the Assembly of the Republic's voting guide listing the general vote on the Budget bill.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "VOTAÇÃO NA GENERALIDADE Proposta de Lei n.º 110/XVII/2.ª (GOV) - Orçamento do Estado para 2027"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "og1-livre-voto"
+      ],
+      "nome": {
+        "pt": "Afirmação do Livre sobre o voto contra",
+        "en": "Statement by Livre on the vote against"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a afirmação do porta-voz do Livre sobre o voto contra, tal como consta da fonte citada.",
+          "en": "It is the statement by Livre's spokesperson on the vote against, as recorded in the cited source.",
+          "partes": [
+            {
+              "pt": "É a afirmação do porta-voz do Livre sobre o voto contra, tal como consta da fonte citada.",
+              "en": "It is the statement by Livre's spokesperson on the vote against, as recorded in the cited source.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Um Orçamento que é contra o país tem apenas um voto possível que é o voto contra"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "og1-pan-abstencao"
+      ],
+      "nome": {
+        "pt": "Afirmação do PAN sobre a abstenção",
+        "en": "Statement by PAN on abstention"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a afirmação da porta-voz do PAN sobre o orçamento e a abstenção, tal como consta da fonte citada.",
+          "en": "It is the statement by PAN's spokesperson on the budget and the abstention, as recorded in the cited source.",
+          "partes": [
+            {
+              "pt": "É a afirmação da porta-voz do PAN sobre o orçamento e a abstenção, tal como consta da fonte citada.",
+              "en": "It is the statement by PAN's spokesperson on the budget and the abstention, as recorded in the cited source.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Este orçamento tem um problema: contas certas, mas prioridades trocadas"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "og1-jpp-abstencao"
+      ],
+      "nome": {
+        "pt": "Afirmação do JPP sobre a abstenção",
+        "en": "Statement by JPP on abstention"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a afirmação do deputado do JPP sobre a abstenção, tal como consta da fonte citada.",
+          "en": "It is the statement by the JPP member of parliament on the abstention, as recorded in the cited source.",
+          "partes": [
+            {
+              "pt": "É a afirmação do deputado do JPP sobre a abstenção, tal como consta da fonte citada.",
+              "en": "It is the statement by the JPP member of parliament on the abstention, as recorded in the cited source.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "há muito por resolver"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "og1-chega-voto"
+      ],
+      "nome": {
+        "pt": "Afirmação do Chega sobre o voto contra",
+        "en": "Statement by Chega on the vote against"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a afirmação do presidente do Chega sobre o Governo e o voto contra, tal como consta da fonte citada.",
+          "en": "It is the statement by Chega's president on the Government and the vote against, as recorded in the cited source.",
+          "partes": [
+            {
+              "pt": "É a afirmação do presidente do Chega sobre o Governo e o voto contra, tal como consta da fonte citada.",
+              "en": "It is the statement by Chega's president on the Government and the vote against, as recorded in the cited source.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "não consegue reconhecer o momento de dificuldade"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "og1-il-voto"
+      ],
+      "nome": {
+        "pt": "Afirmação da Iniciativa Liberal no encerramento do debate",
+        "en": "Statement by Iniciativa Liberal at the close of the debate"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a afirmação do deputado da Iniciativa Liberal sobre a proposta, no encerramento do debate, tal como consta da fonte citada.",
+          "en": "It is the statement by the Iniciativa Liberal member of parliament on the proposal, at the close of the debate, as recorded in the cited source.",
+          "partes": [
+            {
+              "pt": "É a afirmação do deputado da Iniciativa Liberal sobre a proposta, no encerramento do debate, tal como consta da fonte citada.",
+              "en": "It is the statement by the Iniciativa Liberal member of parliament on the proposal, at the close of the debate, as recorded in the cited source.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "moderado no alívio de impostos, moderado na vontade de reformar o país, moderado na ambição para Portugal"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "og1-mf-despesa-total-efetiva-nota"
+      ],
+      "nome": {
+        "pt": "Definições de despesa total e despesa efetiva no relatório do Orçamento",
+        "en": "Definitions of total and effective expenditure in the Budget report"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a nota do relatório da proposta que define a despesa total e a despesa efetiva pelos ativos e passivos financeiros e pelas transferências para entidades com autonomia financeira.",
+          "en": "It is the note of the proposal's report defining total and effective expenditure by financial assets and liabilities and by transfers to financially autonomous entities.",
+          "partes": [
+            {
+              "pt": "É a nota do relatório da proposta que define a despesa total e a despesa efetiva pelos ativos e passivos financeiros e pelas transferências para entidades com autonomia financeira.",
+              "en": "It is the note of the proposal's report defining total and effective expenditure by financial assets and liabilities and by transfers to financially autonomous entities.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "A despesa total inclui ativos e passivos financeiros e exclui transferências do Orçamento do Estado para entidades com autonomia financeira. A despesa efetiva exclui ativos e passivos financeiros e transferências do Orçamento do Estado para entidades com autonomia financeira."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "og1-mf-ppp-encargos-receitas"
+      ],
+      "nome": {
+        "pt": "Componentes dos encargos líquidos das parcerias rodoviárias",
+        "en": "Components of the road partnerships' net charges"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o parágrafo do relatório da proposta que explica que os encargos líquidos das parcerias rodoviárias resultam dos encargos e das receitas consideradas.",
+          "en": "It is the paragraph of the proposal's report explaining that the road partnerships' net charges result from the charges and the revenue considered.",
+          "partes": [
+            {
+              "pt": "É o parágrafo do relatório da proposta que explica que os encargos líquidos das parcerias rodoviárias resultam dos encargos e das receitas consideradas.",
+              "en": "It is the paragraph of the proposal's report explaining that the road partnerships' net charges result from the charges and the revenue considered.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "No setor rodoviário, os encargos líquidos plurianuais apresentados foram estimados com base no quadro remuneratório aplicável. Para esse efeito, foram considerados os respetivos fluxos financeiros, designadamente os encargos e as receitas, cujas principais componentes são as seguintes."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "og1-mf-ppp-receitas-portagem"
+      ],
+      "nome": {
+        "pt": "Receitas de portagem nas parcerias rodoviárias",
+        "en": "Toll revenue in the road partnerships"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a componente das receitas das parcerias rodoviárias que o relatório da proposta enumera primeiro, a cobrança de portagens nas vias portajadas.",
+          "en": "It is the revenue component of the road partnerships that the proposal's report lists first, toll collection on tolled roads.",
+          "partes": [
+            {
+              "pt": "É a componente das receitas das parcerias rodoviárias que o relatório da proposta enumera primeiro, a cobrança de portagens nas vias portajadas.",
+              "en": "It is the revenue component of the road partnerships that the proposal's report lists first, toll collection on tolled roads.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Receitas oriundas da cobrança de taxas de portagem nas parcerias com vias portajadas, com exceção das parcerias em que a titularidade destas receitas pertence ao respetivo parceiro privado"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "series": [

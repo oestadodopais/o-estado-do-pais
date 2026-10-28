@@ -357,8 +357,8 @@ export function conferirAuditoriaDasExplicacoes({
               if (ap.ficheiro !== ficheiro || presentes !== prova.com_valor || presentes !== ap.com_valor || presentes !== 26 ||
                   prova.ano !== '2024' || prova.categoria !== 'PRACT' || JSON.stringify(ausentes) !== '["SK"]' ||
                   JSON.stringify(prova.ausentes) !== JSON.stringify(ausentes) || JSON.stringify(ap.ausentes) !== JSON.stringify(ausentes) ||
-                  p.pt !== 'nos vinte e seis Estados-membros com dados de 2024; a Eslováquia não os tem.' ||
-                  p.en !== 'among the twenty-six member states with 2024 data; Slovakia has none.') falha(`X2 · ${qp}: contagem ou ausência dos médicos sem apoio conferido`);
+                  p.pt.replace(/^\), /, '') !== 'nos vinte e seis Estados-membros com dados de 2024; a Eslováquia não os tem.' ||
+                  p.en.replace(/^\), /, '') !== 'among the twenty-six member states with 2024 data; Slovakia has none.') falha(`X2 · ${qp}: contagem ou ausência dos médicos sem apoio conferido`);
               continue;
             }
             if (ap?.forma === 'ano') {

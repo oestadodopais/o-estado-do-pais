@@ -2,6 +2,7 @@
 import fs from 'node:fs';
 import {execFileSync} from 'node:child_process';
 import {dataDaCasa} from '../../src/lib/datas.mjs';
+import {fragmentoDoItem} from '../../scripts/fragmento-do-item.mjs';
 import {conferirOg1} from '../../scripts/afirmacoes-og1.mjs';
 import assert from 'node:assert/strict';
 import {parse} from 'node-html-parser';
@@ -73,6 +74,11 @@ for(const[lang,route]of[['pt','o-que-se-discute'],['en','en/under-discussion']])
   const row=claims.get(span.getAttribute('data-linha-claim')),field=span.getAttribute('data-linha-campo');
   const text=field==='excerpt'?row.excerpt:row.document.title;
   assert(text.includes(span.text));assert.equal(span.text,span.getAttribute('data-linha-trecho'));checks++;
+  assert(fragmentoDoItem(span,row.id,field,lang));checks++;
+  const trecho=span.getAttribute('data-linha-trecho');span.setAttribute('data-linha-trecho','trecho inventado');
+  assert(!fragmentoDoItem(span,row.id,field,lang));span.setAttribute('data-linha-trecho',trecho);checks++;
+  const par=span.closest('[data-discussao-paragrafo]'),caminho=par.getAttribute('data-discussao-paragrafo');
+  par.setAttribute('data-discussao-paragrafo','abertura[999]');assert(!fragmentoDoItem(span,row.id,field,lang));par.setAttribute('data-discussao-paragrafo',caminho);checks++;
  }
  for(const section of ['fontes','opiniao']){
   const copy=parse(item.querySelector(`[data-discussao-parte="${section}"]`).toString());copy.querySelectorAll('.src-chip').forEach(n=>n.remove());

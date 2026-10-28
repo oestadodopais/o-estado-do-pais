@@ -332,8 +332,8 @@ export function plantas(html,lang){
   const r=parse(html),a=r.querySelector('[data-discussao-recibo="pe-scut-trocos"]');muda(a);
   out.push({nome,lang,mordeu:inlineIntacto&&conferirSelosInline(r,lang).some(e=>e.startsWith('V2E porta textual:'))});
  }
- run('citação sem token',r=>r.querySelector('[data-linha-campo="excerpt"]').removeAttribute('data-linha-campo'),/citação/);
- run('citação alterada',r=>r.querySelector('[data-linha-campo="excerpt"]').set_content('Uma citação adulterada.'),/literal/);
+ run('citação sem token',r=>r.querySelector('[data-discussao-parte="como-foi-dito"] [data-linha-campo="excerpt"]').removeAttribute('data-linha-campo'),/citação/);
+ run('citação alterada',r=>r.querySelector('[data-discussao-parte="como-foi-dito"] [data-linha-campo="excerpt"]').set_content('Uma citação adulterada.'),/literal/);
  const semAcss=parse(html);semAcss.querySelector('#saude-no-orcamento [data-discussao-parte="comparacao"] a[href*="oe-2027-saude-contrato-programa-acss"]')?.remove();
  const errosAcss=conferirPagina(semAcss,lang);
  out.push({nome:'recibo do contrato-programa ausente',item:'saude-no-orcamento',lang,mordeu:errosAcss.some(x=>x.includes('V2D apoio textual')),queixa:errosAcss.find(x=>x.includes('V2D apoio textual'))??null});

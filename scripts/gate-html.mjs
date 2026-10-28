@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import { conferirDataEditorial, plantasDatasEditoriais } from './datas-editoriais.mjs';
 plantasDatasEditoriais();
-import {ITENS} from '../src/data/discussao.mjs';
+import {fragmentoDoItem} from './fragmento-do-item.mjs';
 import {errosDaDefinicaoEo1} from '../src/lib/definicoes-eo1.mjs';
 import { FAMILIAS_DAS_LINHAS as FAMILIAS_EO1_GATE } from '../src/data/o-que-e-das-familias.mjs';
 import { conferirAberturaB1 } from './abertura-b1-do-portao.mjs';
@@ -6787,9 +6787,7 @@ for (const file of ficheirosHtml(DIST)) {
       mapaDaUnidade.querySelectorAll('tbody [data-claim]').some((n) => n.getAttribute('data-claim') === id);
     const campoDaDiscussao = rota?.key === 'discussao' && ['excerpt', 'attributed_to', 'ressalva'].includes(String(campo)) &&
       el.closest('[data-discussao]') !== null && el.closest('[data-discussao-literal]')?.getAttribute('data-discussao-literal') === campo;
-    const fragmentoDeclarado = (rota?.key === 'home' && fragmentoDaConclusaoDoInicio(el,id,campo,linguaPagina,{dist:DIST})) || rota?.key === 'discussao' && ['excerpt','document.title'].includes(String(campo)) && el.hasAttribute('data-linha-trecho') &&
-      el.closest('[data-discussao-fragmento]')?.getAttribute('data-discussao-fragmento')===campo &&
-      ITENS.find(e=>e.slug===el.closest('[data-discussao]')?.getAttribute('data-discussao'))?.seccoes.some(s=>s.conteudo.some(b=>b.paragrafo?.[linguaPagina]?.some(t=>t?.fragmento===id&&t.campo===campo&&t.texto===el.getAttribute('data-linha-trecho'))));
+    const fragmentoDeclarado = (rota?.key === 'home' && fragmentoDaConclusaoDoInicio(el,id,campo,linguaPagina,{dist:DIST})) || (rota?.key === 'discussao' && fragmentoDoItem(el,id,campo,linguaPagina));
     if (!fragmentoDeclarado && !campoDaDiscussao && !paginaDoLivro && !unidadeDeCartaoDoLugar && !unidadeDeCartaoDoPais && !unidadeDeCorrecaoDoPais && !nomeDeCorrecao && !campoDeBloco && !unidadeDeMapaDosLugares) {
       err(
         `data-linha-claim="${id}" numa página que não é do livro-razão. ` +
