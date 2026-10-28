@@ -1,0 +1,305 @@
+{
+  "controlos": 9,
+  "plantas": [
+    {
+      "nome": "valor trocado",
+      "linha": "og1-cfp-saldo-2027",
+      "mordeu": true
+    },
+    {
+      "nome": "fonte trocada",
+      "linha": "og1-cfp-saldo-2027",
+      "mordeu": true
+    },
+    {
+      "nome": "campo trocado",
+      "linha": "og1-cfp-saldo-2027",
+      "mordeu": true
+    },
+    {
+      "nome": "número retirado",
+      "linha": "og1-cfp-saldo-2027",
+      "mordeu": true
+    },
+    {
+      "nome": "número em texto fixo",
+      "linha": "og1-cfp-saldo-2027",
+      "mordeu": true
+    },
+    {
+      "nome": "número duplicado",
+      "linha": "og1-cfp-saldo-2027",
+      "mordeu": true
+    },
+    {
+      "nome": "valor trocado",
+      "linha": "og1-cfp-ac-fss",
+      "mordeu": true
+    },
+    {
+      "nome": "fonte trocada",
+      "linha": "og1-cfp-ac-fss",
+      "mordeu": true
+    },
+    {
+      "nome": "campo trocado",
+      "linha": "og1-cfp-ac-fss",
+      "mordeu": true
+    },
+    {
+      "nome": "número retirado",
+      "linha": "og1-cfp-ac-fss",
+      "mordeu": true
+    },
+    {
+      "nome": "número em texto fixo",
+      "linha": "og1-cfp-ac-fss",
+      "mordeu": true
+    },
+    {
+      "nome": "número duplicado",
+      "linha": "og1-cfp-ac-fss",
+      "mordeu": true
+    },
+    {
+      "nome": "ordem dos números trocada",
+      "linha": "og1-cfp-ac-fss",
+      "mordeu": true
+    },
+    {
+      "nome": "valor trocado",
+      "linha": "og1-utao-p107",
+      "mordeu": true
+    },
+    {
+      "nome": "fonte trocada",
+      "linha": "og1-utao-p107",
+      "mordeu": true
+    },
+    {
+      "nome": "campo trocado",
+      "linha": "og1-utao-p107",
+      "mordeu": true
+    },
+    {
+      "nome": "número retirado",
+      "linha": "og1-utao-p107",
+      "mordeu": true
+    },
+    {
+      "nome": "número em texto fixo",
+      "linha": "og1-utao-p107",
+      "mordeu": true
+    },
+    {
+      "nome": "número duplicado",
+      "linha": "og1-utao-p107",
+      "mordeu": true
+    },
+    {
+      "nome": "ordem dos números trocada",
+      "linha": "og1-utao-p107",
+      "mordeu": true
+    },
+    {
+      "nome": "valor trocado",
+      "linha": "og1-mf-juros-choque-100pb",
+      "mordeu": true
+    },
+    {
+      "nome": "fonte trocada",
+      "linha": "og1-mf-juros-choque-100pb",
+      "mordeu": true
+    },
+    {
+      "nome": "campo trocado",
+      "linha": "og1-mf-juros-choque-100pb",
+      "mordeu": true
+    },
+    {
+      "nome": "número retirado",
+      "linha": "og1-mf-juros-choque-100pb",
+      "mordeu": true
+    },
+    {
+      "nome": "número em texto fixo",
+      "linha": "og1-mf-juros-choque-100pb",
+      "mordeu": true
+    },
+    {
+      "nome": "número duplicado",
+      "linha": "og1-mf-juros-choque-100pb",
+      "mordeu": true
+    },
+    {
+      "nome": "ordem dos números trocada",
+      "linha": "og1-mf-juros-choque-100pb",
+      "mordeu": true
+    },
+    {
+      "nome": "valor trocado",
+      "linha": "og1-utao-p16",
+      "mordeu": true
+    },
+    {
+      "nome": "fonte trocada",
+      "linha": "og1-utao-p16",
+      "mordeu": true
+    },
+    {
+      "nome": "campo trocado",
+      "linha": "og1-utao-p16",
+      "mordeu": true
+    },
+    {
+      "nome": "número retirado",
+      "linha": "og1-utao-p16",
+      "mordeu": true
+    },
+    {
+      "nome": "número em texto fixo",
+      "linha": "og1-utao-p16",
+      "mordeu": true
+    },
+    {
+      "nome": "número duplicado",
+      "linha": "og1-utao-p16",
+      "mordeu": true
+    },
+    {
+      "nome": "valor trocado",
+      "linha": "og1-governo-observador-saldo",
+      "mordeu": true
+    },
+    {
+      "nome": "fonte trocada",
+      "linha": "og1-governo-observador-saldo",
+      "mordeu": true
+    },
+    {
+      "nome": "campo trocado",
+      "linha": "og1-governo-observador-saldo",
+      "mordeu": true
+    },
+    {
+      "nome": "número retirado",
+      "linha": "og1-governo-observador-saldo",
+      "mordeu": true
+    },
+    {
+      "nome": "número em texto fixo",
+      "linha": "og1-governo-observador-saldo",
+      "mordeu": true
+    },
+    {
+      "nome": "número duplicado",
+      "linha": "og1-governo-observador-saldo",
+      "mordeu": true
+    },
+    {
+      "nome": "valor trocado",
+      "linha": "og1-mf-juros-choque-100pb",
+      "mordeu": true
+    },
+    {
+      "nome": "fonte trocada",
+      "linha": "og1-mf-juros-choque-100pb",
+      "mordeu": true
+    },
+    {
+      "nome": "campo trocado",
+      "linha": "og1-mf-juros-choque-100pb",
+      "mordeu": true
+    },
+    {
+      "nome": "número retirado",
+      "linha": "og1-mf-juros-choque-100pb",
+      "mordeu": true
+    },
+    {
+      "nome": "número em texto fixo",
+      "linha": "og1-mf-juros-choque-100pb",
+      "mordeu": true
+    },
+    {
+      "nome": "número duplicado",
+      "linha": "og1-mf-juros-choque-100pb",
+      "mordeu": true
+    },
+    {
+      "nome": "valor trocado",
+      "linha": "og1-mf-juros-choque-100pb",
+      "mordeu": true
+    },
+    {
+      "nome": "fonte trocada",
+      "linha": "og1-mf-juros-choque-100pb",
+      "mordeu": true
+    },
+    {
+      "nome": "campo trocado",
+      "linha": "og1-mf-juros-choque-100pb",
+      "mordeu": true
+    },
+    {
+      "nome": "número retirado",
+      "linha": "og1-mf-juros-choque-100pb",
+      "mordeu": true
+    },
+    {
+      "nome": "número em texto fixo",
+      "linha": "og1-mf-juros-choque-100pb",
+      "mordeu": true
+    },
+    {
+      "nome": "número duplicado",
+      "linha": "og1-mf-juros-choque-100pb",
+      "mordeu": true
+    },
+    {
+      "nome": "valor trocado",
+      "linha": "og1-mf-juros-choque-100pb",
+      "mordeu": true
+    },
+    {
+      "nome": "fonte trocada",
+      "linha": "og1-mf-juros-choque-100pb",
+      "mordeu": true
+    },
+    {
+      "nome": "campo trocado",
+      "linha": "og1-mf-juros-choque-100pb",
+      "mordeu": true
+    },
+    {
+      "nome": "número retirado",
+      "linha": "og1-mf-juros-choque-100pb",
+      "mordeu": true
+    },
+    {
+      "nome": "número em texto fixo",
+      "linha": "og1-mf-juros-choque-100pb",
+      "mordeu": true
+    },
+    {
+      "nome": "número duplicado",
+      "linha": "og1-mf-juros-choque-100pb",
+      "mordeu": true
+    },
+    {
+      "nome": "fragmento corta número: 30",
+      "linha": "og1-governo-observador-saldo",
+      "mordeu": true
+    },
+    {
+      "nome": "fragmento corta número: 0",
+      "linha": "og1-cfp-saldo-2027",
+      "mordeu": true
+    },
+    {
+      "nome": "fragmento corta número: 1",
+      "linha": "og1-cfp-saldo-2027",
+      "mordeu": true
+    }
+  ]
+}

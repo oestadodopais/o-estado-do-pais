@@ -1,0 +1,18 @@
+
+> o-estado-do-pais@0.1.0 check:discussao
+> node tests/discussao/glosas.mjs && node tests/discussao/itens.mjs && node tests/discussao/og1.mjs
+
+PASS: 9 glosas intactas nas duas edições; 60 plantas recusadas.
+V2B · 12 erro(s), 761 de 766 plantas, 764 portas de integração.
+V2E unidade depois do selo: en seccoes[1].conteudo[7].paragrafo /en/ledger/og1-cfp-saldo-2027
+V2E unidade depois do selo: en seccoes[1].conteudo[7].paragrafo /en/ledger/og1-cfp-ac-fss
+V2E unidade depois do selo: en seccoes[1].conteudo[9].paragrafo /en/ledger/og1-utao-p107
+V2E unidade depois do selo: en seccoes[1].conteudo[9].paragrafo /en/ledger/og1-utao-p107
+V2E unidade depois do selo: en seccoes[1].conteudo[9].paragrafo /en/ledger/og1-utao-p107
+V2E unidade depois do selo: en seccoes[1].conteudo[9].paragrafo /en/ledger/og1-mf-juros-choque-100pb
+V2E unidade depois do selo: en seccoes[1].conteudo[9].paragrafo /en/ledger/og1-mf-juros-choque-100pb
+V2B planta não mordeu: contagem dos médicos adulterada: apoio
+V2B planta não mordeu: citação sem token
+V2B planta não mordeu: citação alterada
+V2B planta não mordeu: citação sem token
+V2B planta não mordeu: citação alterada

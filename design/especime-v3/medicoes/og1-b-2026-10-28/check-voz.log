@@ -1,0 +1,58 @@
+
+> o-estado-do-pais@0.1.0 check:voz
+> node tests/hb1/voz-portas.mjs && node scripts/check-voz.mjs
+
+{"controlos":550,"plantas":1650,"catalogo":0,"nomeadas":550,"de_serie":{"portugal":12,"uniao":4},"pares_distintos":2,"plantas_recusadas":["o rótulo trocado","o href para /","o data-de-linha tirado"],"erros":0}
+  B1: 40 páginas pela lista fechada; 8 temas conferidos.
+  EX1: 12 página(s) com as palavras das explicações e as frases da semana conferidas pelas suas células.
+
+[31m  PORTÃO DA VOZ · 197 problema(s)
+[0m
+[31m    · [0mfrase com marcador da voz e sem declaração de autorreferência
+      marcador(es): resting on
+      rota: /en/under-discussion
+      classe declarada: conteudo
+      «The budget passed at the general vote with the votes of two parties and the abstention of three, and has a surplus of % of GDP ( million euros ) in national accounts, in the Government&#39;s forecasts, resting on three assumptions the UTAO calls into question: million euros of revenue from the fuel measure without « » (sufficiently detailed information on its content and implementation mechanisms); employment whose forecast (« » , employment growth in the budget year) the UTAO finds « » (hard to reconcile with the recent slowdown in net immigration); and oil at dollars a barrel , when the contracts stood % above on October. The Public Finance Council reaches a deficit of % of GDP by the same road: it does not count the fuel measure and says that, if it did, it would reach a surplus close to the Government&#39;s. It is the same account seen from two sides: the surplus exists if the million euros exist. What is at stake is interest: the proposal already has it rising % , to billion euros ; the UTAO sees the risk of charges above forecast, the Council sees a possible overestimate, and the proposal&#39;s report says that a « » ( bp shock) is million euros in national accounts, with the surplus at million euros . The votes say the rest: PS let the budget through, and Chega, Iniciativa Liberal, Livre, PCP and Bloco de Esquerda voted against for reasons that do not coincide; « » (a gift to capital and a disaster for the country), says the PCP&#39;s Central Committee, and that is a judgement, which is not measured. What is measured says this is a budget balanced by a thread, and that the thread is the fuel revenue and interest rates. What to watch until : the information on the fuel measure, the employment scenario and the rates on new debt issues.»
+[31m    · [0mbloco por classificar em /en/ledger: «4 138 claims · 520 of 4 138 calculated · 2 767 of 4 138 municipality rows»
+[31m    · [0mbloco por classificar em /livro-razao: «4 138 afirmações · 520 de 4 138 calculadas · 2 767 de 4 138 linhas de concelhos»
+[31m    · [0mdesign/especime-v3/INVENTARIO-FRASES.md:4969: linha «viva» que não se rende em rota nenhuma. Ou a frase mudou e a linha ficou para trás, ou a rota saiu: nos dois casos a linha sai do ficheiro, ou passa a «retirada» com a razão escrita.
+      «4 114 afirmações · 520 de 4 114 calculadas · 2 767 de 4 114 linhas de concelhos»
+[31m    · [0mdesign/especime-v3/INVENTARIO-FRASES.md:4970: linha «viva» que não se rende em rota nenhuma. Ou a frase mudou e a linha ficou para trás, ou a rota saiu: nos dois casos a linha sai do ficheiro, ou passa a «retirada» com a razão escrita.
+      «4 114 claims · 520 of 4 114 calculated · 2 767 of 4 114 municipality rows»
+[31m    · [0mas frases da leitura da semana só saem do inventário conferidas, e a célula da semana recusou-as em index.html: K17 · famílias · a linha «og1-cfp-ac-fss» (família «og1-cfp-ac-fss») não tem frase auditada
+[31m    · [0mas frases da leitura da semana só saem do inventário conferidas, e a célula da semana recusou-as em index.html: K17 · famílias · a linha «og1-cfp-combustiveis» (família «og1-cfp-combustiveis») não tem frase auditada
+[31m    · [0mas frases da leitura da semana só saem do inventário conferidas, e a célula da semana recusou-as em index.html: K17 · famílias · a linha «og1-cfp-diferenca-mf» (família «og1-cfp-diferenca-mf») não tem frase auditada
+[31m    · [0mas frases da leitura da semana só saem do inventário conferidas, e a célula da semana recusou-as em index.html: K17 · famílias · a linha «og1-cfp-emprego» (família «og1-cfp-emprego») não tem frase auditada
+[31m    · [0mas frases da leitura da semana só saem do inventário conferidas, e a célula da semana recusou-as em index.html: K17 · famílias · a linha «og1-cfp-juros» (família «og1-cfp-juros») não tem frase auditada
+[31m    · [0mas frases da leitura da semana só saem do inventário conferidas, e a célula da semana recusou-as em index.html: K17 · famílias · a linha «og1-cfp-plausivel» (família «og1-cfp-plausivel») não tem frase auditada
+[31m    · [0mas frases da leitura da semana só saem do inventário conferidas, e a célula da semana recusou-as em index.html: K17 · famílias · a linha «og1-cfp-riscos» (família «og1-cfp-riscos») não tem frase auditada
+[31m    · [0mas frases da leitura da semana só saem do inventário conferidas, e a célula da semana recusou-as em index.html: K17 · famílias · a linha «og1-cfp-saldo-2027» (família «og1-cfp-saldo-2027») não tem frase auditada
+[31m    · [0mas frases da leitura da semana só saem do inventário conferidas, e a célula da semana recusou-as em index.html: K17 · famílias · a linha «og1-chega-voto» (família «og1-chega-voto») não tem frase auditada
+[31m    · [0mas frases da leitura da semana só saem do inventário conferidas, e a célula da semana recusou-as em index.html: K17 · famílias · a linha «og1-guiao-votacoes-28» (família «og1-guiao-votacoes-28») não tem frase auditada
+[31m    · [0mas frases da leitura da semana só saem do inventário conferidas, e a célula da semana recusou-as em index.html: K17 · famílias · a linha «og1-il-voto» (família «og1-il-voto») não tem frase auditada
+[31m    · [0mas frases da leitura da semana só saem do inventário conferidas, e a célula da semana recusou-as em index.html: K17 · famílias · a linha «og1-jpp-abstencao» (família «og1-jpp-abstencao») não tem frase auditada
+[31m    · [0mas frases da leitura da semana só saem do inventário conferidas, e a célula da semana recusou-as em index.html: K17 · famílias · a linha «og1-livre-voto» (família «og1-livre-voto») não tem frase auditada
+[31m    · [0mas frases da leitura da semana só saem do inventário conferidas, e a célula da semana recusou-as em index.html: K17 · famílias · a linha «og1-mf-despesa-total-efetiva-nota» (família «og1-mf-despesa-total-efetiva-nota») não tem frase auditada
+[31m    · [0mas frases da leitura da semana só saem do inventário conferidas, e a célula da semana recusou-as em index.html: K17 · famílias · a linha «og1-mf-juros-choque-100pb» (família «og1-mf-juros-choque-100pb») não tem frase auditada
+[31m    · [0mas frases da leitura da semana só saem do inventário conferidas, e a célula da semana recusou-as em index.html: K17 · famílias · a linha «og1-mf-ppp-encargos-receitas» (família «og1-mf-ppp-encargos-receitas») não tem frase auditada
+[31m    · [0mas frases da leitura da semana só saem do inventário conferidas, e a célula da semana recusou-as em index.html: K17 · famílias · a linha «og1-mf-ppp-receitas-portagem» (família «og1-mf-ppp-receitas-portagem») não tem frase auditada
+[31m    · [0mas frases da leitura da semana só saem do inventário conferidas, e a célula da semana recusou-as em index.html: K17 · famílias · a linha «og1-pan-abstencao» (família «og1-pan-abstencao») não tem frase auditada
+[31m    · [0mas frases da leitura da semana só saem do inventário conferidas, e a célula da semana recusou-as em index.html: K17 · famílias · a linha «og1-utao-p105» (família «og1-utao-p105») não tem frase auditada
+[31m    · [0mas frases da leitura da semana só saem do inventário conferidas, e a célula da semana recusou-as em index.html: K17 · famílias · a linha «og1-utao-p107» (família «og1-utao-p107») não tem frase auditada
+[31m    · [0mas frases da leitura da semana só saem do inventário conferidas, e a célula da semana recusou-as em index.html: K17 · famílias · a linha «og1-utao-p111» (família «og1-utao-p111») não tem frase auditada
+[31m    · [0mas frases da leitura da semana só saem do inventário conferidas, e a célula da semana recusou-as em index.html: K17 · famílias · a linha «og1-utao-p16» (família «og1-utao-p16») não tem frase auditada
+[31m    · [0mas frases da leitura da semana só saem do inventário conferidas, e a célula da semana recusou-as em index.html: K17 · famílias · a linha «og1-votacao-generalidade-rtp» (família «og1-votacao-generalidade-rtp») não tem frase auditada
+[31m    · [0mas frases da leitura da semana só saem do inventário conferidas, e a célula da semana recusou-as em index.html: K17 · famílias · a linha «og1-votacao-generalidade» (família «og1-votacao-generalidade») não tem frase auditada
+[31m    · [0mas frases da leitura da semana só saem do inventário conferidas, e a célula da semana recusou-as em en/index.html: K17 · famílias · a linha «og1-cfp-ac-fss» (família «og1-cfp-ac-fss») não tem frase auditada
+[31m    · [0mas frases da leitura da semana só saem do inventário conferidas, e a célula da semana recusou-as em en/index.html: K17 · famílias · a linha «og1-cfp-combustiveis» (família «og1-cfp-combustiveis») não tem frase auditada
+[31m    · [0mas frases da leitura da semana só saem do inventário conferidas, e a célula da semana recusou-as em en/index.html: K17 · famílias · a linha «og1-cfp-diferenca-mf» (família «og1-cfp-diferenca-mf») não tem frase auditada
+[31m    · [0mas frases da leitura da semana só saem do inventário conferidas, e a célula da semana recusou-as em en/index.html: K17 · famílias · a linha «og1-cfp-emprego» (família «og1-cfp-emprego») não tem frase auditada
+[31m    · [0mas frases da leitura da semana só saem do inventário conferidas, e a célula da semana recusou-as em en/index.html: K17 · famílias · a linha «og1-cfp-juros» (família «og1-cfp-juros») não tem frase auditada
+[31m    · [0mas frases da leitura da semana só saem do inventário conferidas, e a célula da semana recusou-as em en/index.html: K17 · famílias · a linha «og1-cfp-plausivel» (família «og1-cfp-plausivel») não tem frase auditada
+[31m    · [0mas frases da leitura da semana só saem do inventário conferidas, e a célula da semana recusou-as em en/index.html: K17 · famílias · a linha «og1-cfp-riscos» (família «og1-cfp-riscos») não tem frase auditada
+[31m    · [0mas frases da leitura da semana só saem do inventário conferidas, e a célula da semana recusou-as em en/index.html: K17 · famílias · a linha «og1-cfp-saldo-2027» (família «og1-cfp-saldo-2027») não tem frase auditada
+[31m    · [0mas frases da leitura da semana só saem do inventário conferidas, e a célula da semana recusou-as em en/index.html: K17 · famílias · a linha «og1-chega-voto» (família «og1-chega-voto») não tem frase auditada
+[31m    · [0mas frases da leitura da semana só saem do inventário conferidas, e a célula da semana recusou-as em en/index.html: K17 · famílias · a linha «og1-guiao-votacoes-28» (família «og1-guiao-votacoes-28») não tem frase auditada
+[31m    · [0mas frases da leitura da semana só saem do inventário conferidas, e a célula da semana recusou-as em en/index.html: K17 · famílias · a linha «og1-il-voto» (família «og1-il-voto») não tem frase auditada
+[90m    … e mais 157[0m
+

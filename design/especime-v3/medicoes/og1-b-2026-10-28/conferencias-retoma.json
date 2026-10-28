@@ -1,0 +1,159 @@
+{
+  "execucoes": 22,
+  "conferencias": [
+    {
+      "nome": "familias-retoma",
+      "conferencia": "Cobertura das famílias",
+      "codigo": 0,
+      "vermelho_esperado": false,
+      "registo": "familias-retoma.log"
+    },
+    {
+      "nome": "glosas",
+      "conferencia": "Plantas das glosas",
+      "codigo": 0,
+      "vermelho_esperado": false,
+      "registo": "glosas.log"
+    },
+    {
+      "nome": "declaracoes",
+      "conferencia": "Declarações dos itens, primeira tentativa",
+      "codigo": 1,
+      "vermelho_esperado": false,
+      "registo": "declaracoes.log"
+    },
+    {
+      "nome": "auditoria-retoma",
+      "conferencia": "Gerador da auditoria",
+      "codigo": 0,
+      "vermelho_esperado": false,
+      "registo": "auditoria-retoma.log"
+    },
+    {
+      "nome": "declaracoes-2",
+      "conferencia": "Declarações dos itens, depois de conservar apoios",
+      "codigo": 0,
+      "vermelho_esperado": false,
+      "registo": "declaracoes-2.log"
+    },
+    {
+      "nome": "build-1",
+      "conferencia": "npm run build, primeira tentativa",
+      "codigo": 1,
+      "vermelho_esperado": false,
+      "registo": "build-1.log.gz"
+    },
+    {
+      "nome": "ledger-check",
+      "conferencia": "npm run ledger:check",
+      "codigo": 0,
+      "vermelho_esperado": false,
+      "registo": "ledger-check.log"
+    },
+    {
+      "nome": "build-2",
+      "conferencia": "npm run build, segunda tentativa",
+      "codigo": 1,
+      "vermelho_esperado": false,
+      "registo": "build-2.log.gz"
+    },
+    {
+      "nome": "perfis",
+      "conferencia": "Prova dos perfis do escrivão",
+      "codigo": 0,
+      "vermelho_esperado": false,
+      "registo": "perfis.log"
+    },
+    {
+      "nome": "frases-1",
+      "conferencia": "Confronto do HTML com o mandato",
+      "codigo": 0,
+      "vermelho_esperado": false,
+      "registo": "frases-1.log"
+    },
+    {
+      "nome": "typecheck-final",
+      "conferencia": "npm run typecheck",
+      "codigo": 0,
+      "vermelho_esperado": false,
+      "registo": "typecheck-final.log"
+    },
+    {
+      "nome": "check-rotulos",
+      "conferencia": "npm run check:rotulos",
+      "codigo": 0,
+      "vermelho_esperado": false,
+      "registo": "check-rotulos.log"
+    },
+    {
+      "nome": "gate-html",
+      "conferencia": "npm run gate:html",
+      "codigo": 0,
+      "vermelho_esperado": false,
+      "registo": "gate-html.log"
+    },
+    {
+      "nome": "check-discussao",
+      "conferencia": "npm run check:discussao",
+      "codigo": 1,
+      "vermelho_esperado": false,
+      "registo": "check-discussao.log"
+    },
+    {
+      "nome": "check-voz",
+      "conferencia": "npm run check:voz",
+      "codigo": 1,
+      "vermelho_esperado": false,
+      "registo": "check-voz.log"
+    },
+    {
+      "nome": "check-palavras",
+      "conferencia": "npm run check:palavras",
+      "codigo": 0,
+      "vermelho_esperado": false,
+      "registo": "check-palavras.log"
+    },
+    {
+      "nome": "check-lingua",
+      "conferencia": "npm run check:lingua",
+      "codigo": 1,
+      "vermelho_esperado": false,
+      "registo": "check-lingua.log"
+    },
+    {
+      "nome": "check-registo",
+      "conferencia": "npm run check:registo",
+      "codigo": 0,
+      "vermelho_esperado": false,
+      "registo": "check-registo.log"
+    },
+    {
+      "nome": "check-cruzamento",
+      "conferencia": "npm run check:cruzamento",
+      "codigo": 0,
+      "vermelho_esperado": false,
+      "registo": "check-cruzamento.log"
+    },
+    {
+      "nome": "auditoria-2",
+      "conferencia": "Gerador com a prova da contagem conservada",
+      "codigo": 0,
+      "vermelho_esperado": false,
+      "registo": "auditoria-2.log"
+    },
+    {
+      "nome": "contagem-planta",
+      "conferencia": "Planta da contagem adulterada",
+      "codigo": 1,
+      "vermelho_esperado": true,
+      "registo": "contagem-planta.log"
+    },
+    {
+      "nome": "familias-auditoria",
+      "conferencia": "Auditoria das famílias",
+      "codigo": 0,
+      "vermelho_esperado": false,
+      "registo": "familias-auditoria.log"
+    }
+  ]
+}

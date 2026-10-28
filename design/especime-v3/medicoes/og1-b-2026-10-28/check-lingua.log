@@ -1,0 +1,70 @@
+
+> o-estado-do-pais@0.1.0 check:lingua
+> node tests/hb1/lingua.mjs && node scripts/check-lingua.mjs
+
+HB1 língua: name_en sem declaração e declaração inglesa órfã recusados; vermelho 1, verde 0.
+
+[31m  PORTÃO DA LÍNGUA · 37 problema(s)
+[0m
+[31m    · [0ma unidade «p.p. do PIB» (1 linha(s)) não tem entrada em src/i18n/unidades.mjs.
+      Ou entra no dicionário, com o facto de dicionário ou o inglês que a casa já escreve para a mesma coisa,
+      ou entra em UNIDADES_EM_PORTUGUES com a razão pela qual fica em português. Uma unidade nova não se traduz sozinha.
+[31m    · [0mo título «Relatório do CFP n.º 08/2026: Análise da Proposta de Orçamento do Estado para 2027» (8 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+      A língua de um nome não se adivinha por acentos nem por palavras: escreve-se, uma vez, por quem olhou para ele.
+[31m    · [0mo título «OE2027 foi aprovado na generalidade com votos do PSD e CDS, PS abstém-se» (6 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+      A língua de um nome não se adivinha por acentos nem por palavras: escreve-se, uma vez, por quem olhou para ele.
+[31m    · [0mo título «Guião de Votações: votações a efetuar em 28-10-2026, versão 2» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+      A língua de um nome não se adivinha por acentos nem por palavras: escreve-se, uma vez, por quem olhou para ele.
+[31m    · [0mo título «Orçamento do Estado para 2027 aprovado na generalidade com abstenção do PS» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+      A língua de um nome não se adivinha por acentos nem por palavras: escreve-se, uma vez, por quem olhou para ele.
+[31m    · [0mo organismo «CFP» (8 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+      O nome de quem publica é um nome: não se traduz, e diz em que língua está. Nem para os que têm nome inglês oficial: a linha guarda um nome, e é esse que se rende.
+[31m    · [0ma edição «2026-10-28» (8 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+      Uma edição declara-se «pt», «en», ou «null» quando não está em língua nenhuma: um ano, uma data, um código de série. «null» ESCRITO é uma decisão; a chave em falta é ninguém ter olhado.
+[31m    · [0ma linha "og1-cfp-ac-fss" tem "document.locator" e o seu documento não está declarado português (sem declaração).
+      O localizador recebe a marca de língua do título do documento, porque é na língua dele que está escrito. Um localizador dentro de um documento inglês quebra essa regra: ou ele leva a sua própria declaração, ou o documento é português e a tabela di-lo.
+[31m    · [0ma linha "og1-cfp-combustiveis" tem "document.locator" e o seu documento não está declarado português (sem declaração).
+      O localizador recebe a marca de língua do título do documento, porque é na língua dele que está escrito. Um localizador dentro de um documento inglês quebra essa regra: ou ele leva a sua própria declaração, ou o documento é português e a tabela di-lo.
+[31m    · [0ma linha "og1-cfp-diferenca-mf" tem "document.locator" e o seu documento não está declarado português (sem declaração).
+      O localizador recebe a marca de língua do título do documento, porque é na língua dele que está escrito. Um localizador dentro de um documento inglês quebra essa regra: ou ele leva a sua própria declaração, ou o documento é português e a tabela di-lo.
+[31m    · [0ma linha "og1-cfp-emprego" tem "document.locator" e o seu documento não está declarado português (sem declaração).
+      O localizador recebe a marca de língua do título do documento, porque é na língua dele que está escrito. Um localizador dentro de um documento inglês quebra essa regra: ou ele leva a sua própria declaração, ou o documento é português e a tabela di-lo.
+[31m    · [0ma linha "og1-cfp-juros" tem "document.locator" e o seu documento não está declarado português (sem declaração).
+      O localizador recebe a marca de língua do título do documento, porque é na língua dele que está escrito. Um localizador dentro de um documento inglês quebra essa regra: ou ele leva a sua própria declaração, ou o documento é português e a tabela di-lo.
+[31m    · [0ma linha "og1-cfp-plausivel" tem "document.locator" e o seu documento não está declarado português (sem declaração).
+      O localizador recebe a marca de língua do título do documento, porque é na língua dele que está escrito. Um localizador dentro de um documento inglês quebra essa regra: ou ele leva a sua própria declaração, ou o documento é português e a tabela di-lo.
+[31m    · [0ma linha "og1-cfp-riscos" tem "document.locator" e o seu documento não está declarado português (sem declaração).
+      O localizador recebe a marca de língua do título do documento, porque é na língua dele que está escrito. Um localizador dentro de um documento inglês quebra essa regra: ou ele leva a sua própria declaração, ou o documento é português e a tabela di-lo.
+[31m    · [0ma linha "og1-cfp-saldo-2027" tem "document.locator" e o seu documento não está declarado português (sem declaração).
+      O localizador recebe a marca de língua do título do documento, porque é na língua dele que está escrito. Um localizador dentro de um documento inglês quebra essa regra: ou ele leva a sua própria declaração, ou o documento é português e a tabela di-lo.
+[31m    · [0ma linha "og1-chega-voto" tem "document.locator" e o seu documento não está declarado português (sem declaração).
+      O localizador recebe a marca de língua do título do documento, porque é na língua dele que está escrito. Um localizador dentro de um documento inglês quebra essa regra: ou ele leva a sua própria declaração, ou o documento é português e a tabela di-lo.
+[31m    · [0ma linha "og1-guiao-votacoes-28" tem "document.locator" e o seu documento não está declarado português (sem declaração).
+      O localizador recebe a marca de língua do título do documento, porque é na língua dele que está escrito. Um localizador dentro de um documento inglês quebra essa regra: ou ele leva a sua própria declaração, ou o documento é português e a tabela di-lo.
+[31m    · [0ma linha "og1-il-voto" tem "document.locator" e o seu documento não está declarado português (sem declaração).
+      O localizador recebe a marca de língua do título do documento, porque é na língua dele que está escrito. Um localizador dentro de um documento inglês quebra essa regra: ou ele leva a sua própria declaração, ou o documento é português e a tabela di-lo.
+[31m    · [0ma linha "og1-jpp-abstencao" tem "document.locator" e o seu documento não está declarado português (sem declaração).
+      O localizador recebe a marca de língua do título do documento, porque é na língua dele que está escrito. Um localizador dentro de um documento inglês quebra essa regra: ou ele leva a sua própria declaração, ou o documento é português e a tabela di-lo.
+[31m    · [0ma linha "og1-livre-voto" tem "document.locator" e o seu documento não está declarado português (sem declaração).
+      O localizador recebe a marca de língua do título do documento, porque é na língua dele que está escrito. Um localizador dentro de um documento inglês quebra essa regra: ou ele leva a sua própria declaração, ou o documento é português e a tabela di-lo.
+[31m    · [0ma linha "og1-pan-abstencao" tem "document.locator" e o seu documento não está declarado português (sem declaração).
+      O localizador recebe a marca de língua do título do documento, porque é na língua dele que está escrito. Um localizador dentro de um documento inglês quebra essa regra: ou ele leva a sua própria declaração, ou o documento é português e a tabela di-lo.
+[31m    · [0ma linha "og1-votacao-generalidade-rtp" tem "document.locator" e o seu documento não está declarado português (sem declaração).
+      O localizador recebe a marca de língua do título do documento, porque é na língua dele que está escrito. Um localizador dentro de um documento inglês quebra essa regra: ou ele leva a sua própria declaração, ou o documento é português e a tabela di-lo.
+[31m    · [0ma linha "og1-votacao-generalidade" tem "document.locator" e o seu documento não está declarado português (sem declaração).
+      O localizador recebe a marca de língua do título do documento, porque é na língua dele que está escrito. Um localizador dentro de um documento inglês quebra essa regra: ou ele leva a sua própria declaração, ou o documento é português e a tabela di-lo.
+[31m    · [0mlocalizador em português sem lang="pt-PT" na edição inglesa: «p. 6 PDF (6 impressa)…» (1 ocorrência(s), ex.: dist/en/ledger/og1-cfp-ac-fss/index.html).
+[31m    · [0mlocalizador em português sem lang="pt-PT" na edição inglesa: «p. 22 PDF (22 impressa)…» (2 ocorrência(s), ex.: dist/en/ledger/og1-cfp-combustiveis/index.html).
+[31m    · [0mlocalizador em português sem lang="pt-PT" na edição inglesa: «p. 24 PDF (24 impressa)…» (2 ocorrência(s), ex.: dist/en/ledger/og1-cfp-diferenca-mf/index.html).
+[31m    · [0mlocalizador em português sem lang="pt-PT" na edição inglesa: «p. 16 PDF (16 impressa)…» (1 ocorrência(s), ex.: dist/en/ledger/og1-cfp-emprego/index.html).
+[31m    · [0mlocalizador em português sem lang="pt-PT" na edição inglesa: «p. 7 PDF (7 impressa)…» (1 ocorrência(s), ex.: dist/en/ledger/og1-cfp-juros/index.html).
+[31m    · [0mlocalizador em português sem lang="pt-PT" na edição inglesa: «p. 8 PDF (8 impressa)…» (1 ocorrência(s), ex.: dist/en/ledger/og1-cfp-riscos/index.html).
+[31m    · [0mlocalizador em português sem lang="pt-PT" na edição inglesa: «Corpo da página; entrada «Chega anuncia voto contra na generalidade»; …» (1 ocorrência(s), ex.: dist/en/ledger/og1-chega-voto/index.html).
+[31m    · [0mlocalizador em português sem lang="pt-PT" na edição inglesa: «p. 1 PDF (1 impressa)…» (1 ocorrência(s), ex.: dist/en/ledger/og1-guiao-votacoes-28/index.html).
+[31m    · [0mlocalizador em português sem lang="pt-PT" na edição inglesa: «Corpo da página; entrada «IL contra o orçamento "moderado" do Estado»;…» (1 ocorrência(s), ex.: dist/en/ledger/og1-il-voto/index.html).
+[31m    · [0mlocalizador em português sem lang="pt-PT" na edição inglesa: «Corpo da página; entrada «JPP viabiliza OE2027 na generalidade com exi…» (1 ocorrência(s), ex.: dist/en/ledger/og1-jpp-abstencao/index.html).
+[31m    · [0mlocalizador em português sem lang="pt-PT" na edição inglesa: «Corpo da página; entrada «Livre vai votar contra proposta do Governo n…» (1 ocorrência(s), ex.: dist/en/ledger/og1-livre-voto/index.html).
+[31m    · [0mlocalizador em português sem lang="pt-PT" na edição inglesa: «Corpo da página; entrada «PAN abstém-se na generalidade»; excerto loca…» (1 ocorrência(s), ex.: dist/en/ledger/og1-pan-abstencao/index.html).
+[31m    · [0mlocalizador em português sem lang="pt-PT" na edição inglesa: «Corpo da página; excerto localizado por texto…» (1 ocorrência(s), ex.: dist/en/ledger/og1-votacao-generalidade/index.html).
+[31m    · [0mlocalizador em português sem lang="pt-PT" na edição inglesa: «Corpo da página; entrada «Orçamento do Estado aprovado»; excerto local…» (1 ocorrência(s), ex.: dist/en/ledger/og1-votacao-generalidade-rtp/index.html).
+
